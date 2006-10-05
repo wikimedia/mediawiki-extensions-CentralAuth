@@ -230,6 +230,12 @@ class CentralAuthUser {
 	function attemptAutoMigration( $password='' ) {
 		$rows = $this->fetchUnattached();
 		
+		if( !$rows ) {
+			wfDebugLog( 'CentralAuth',
+				"Attempted migration with no unattahced for '$this->mName'" );
+			return false;
+		}
+		
 		$winner = false;
 		$max = -1;
 		$attach = array();
@@ -503,6 +509,7 @@ class CentralAuthUser {
 				'lu_attached' => 0,
 			),
 			__METHOD__ );
+		$rows = array();
 		while( $row = $dbw->fetchObject( $result ) ) {
 			$rows[] = $row;
 		}

@@ -3,7 +3,7 @@
 // pass 1: go through all usernames in 'localuser' and create 'globaluser' rows
 //         for those that can be automatically migrated, go ahead and do it.
 
-require_once 'commandLine.inc';
+require '../../maintenance/commandLine.inc';
 
 function migratePassOne() {
 	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs

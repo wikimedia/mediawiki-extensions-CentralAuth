@@ -6,7 +6,7 @@
 // * generate 'globaluser' entries for each username
 // --> enable 
 
-require_once 'commandLine.inc';
+require '../../maintenance/commandLine.inc';
 
 
 /**
