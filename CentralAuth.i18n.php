@@ -1,5 +1,7 @@
 <?php
 
+global $wgCentralAuthMessages;
+
 $wgCentralAuthMessages = array();
 $wgCentralAuthMessages['en'] = array(
 	// Big text on completion
@@ -35,6 +37,8 @@ $wgCentralAuthMessages['en'] = array(
 		'Some accounts could not be automatically confirmed ' .
 		'as belonging to you; most likely they have a different ' .
 		'password from your primary account.',
+	'centralauth-foreign-link' =>
+		'User $1 on $2',
 	
 	// When not complete, offer to finish...
 	'centralauth-finish-text' =>
