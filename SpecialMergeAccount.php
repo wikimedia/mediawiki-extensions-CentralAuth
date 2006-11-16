@@ -13,25 +13,100 @@ Things we need:
 
 */
 
-class CentralAuth {
-	static function foreignHostname( $dbname ) {
-		$map = array(
-			'enwiki' => 'en.wikipedia.org',
-			'enwikisource' => 'en.wikisource.org',
-			'frwiki' => 'fr.wikipedia.org',
+global $wgSecureUrlHost;
+$wgSecureUrlHost = 'secure.wikimedia.org';
+
+class WikiMap {
+	function byDatabase( $dbname ) {
+		$suffixes = array(
+			'wiki'       => 'wikipedia',
+			'wikisource' => 'wikisource',
+			'wikinews'   => 'wikinews',
+			'wiktionary' => 'wiktionary',
+		);
+		$overrides = array(
 			'metawiki' => 'meta.wikimedia.org',
 			'mediawikiwiki' => 'www.mediawiki.org',
-			'enwikinews' => 'en.wikinews.org',
-			'frwikisource' => 'fr.wikisource.org',
-			'zhwiktionary' => 'zh.wiktionary.org',
 		);
-		return $map[$dbname];
+		foreach( $suffixes as $suffix => $family ) {
+			if( substr( $dbname, -strlen( $suffix ) ) == $suffix ) {
+				$major = $family;
+				$minor = substr( $dbname, 0, strlen( $dbname ) - strlen( $suffix ) );
+				break;
+			}
+		}
+		if( !isset( $major ) ) {
+			return null;
+		}
+		$hostname = @$overrides[$dbname];
+		return new WikiReference( $major, $minor, $hostname );
+	}
+}
+
+class WikiReference {
+	private $mMinor; ///< 'en', 'meta', 'mediawiki', etc
+	private $mMajor; ///< 'wiki', 'wiktionary', etc
+	private $mHostname; ///< hostname override, 'www.mediawiki.org'
+	
+	function __construct( $major, $minor, $hostname=null ) {
+		$this->mMajor = $major;
+		$this->mMinor = $minor;
+		$this->mHostname = $hostname;
 	}
 	
-	static function foreignUrl( $dbname, $title ) {
-		$host = self::foreignHostname( $dbname );
-		return "http://$host/wiki/" .
-			wfUrlencode( $title );
+	function getHostname() {
+		if( $this->mHostname ) {
+			return $this->mHostname;
+		} else {
+			return $this->mMinor .
+				'.' .
+				$this->mMajor .
+				'.org';
+		}
+	}
+	
+	private function getLocalUrl( $page ) {
+		// FIXME: this may be generalized...
+		return '/wiki/' . urlencode( $page );
+	}
+	
+	function getCanonicalUrl( $page ) {
+		return
+			'http://' .
+			$this->getHostname() .
+			$this->getLocalUrl( $page );
+	}
+	
+	function getSecureUrl( $page ) {
+		global $wgSecureUrlHost;
+		if( $wgSecureUrlHost ) {
+			// For the current secure.wikimedia.org hack
+			// In the future we'll want to move to a nice
+			// clean https://en.wikipedia.org/ etc
+			return
+				'https://' .
+				$wgSecureUrlHost .
+				'/' . $this->mMajor .
+				'/' . $this->mMinor .
+				$this->getLocalUrl( $page );
+		} else {
+			return
+				'https://' .
+				$this->getHostname() .
+				$this->getLocalUrl( $page );
+		}
+	}
+	
+	/**
+	 * If the current user is coming over HTTPS, return
+	 * the secure URL to match...
+	 */
+	function getUrl( $page ) {
+		if( isset( $_SERVER['HTTPS'] ) ) {
+			return $this->getSecureUrl( $page );
+		} else {
+			return $this->getCanonicalUrl( $page );
+		}
 	}
 }
 
@@ -104,9 +179,14 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 	
 	function foreignUserLink( $dbname ) {
-		$hostname = CentralAuth::foreignHostname( $dbname );
+		$wiki = WikiMap::byDatabase( $dbname );
+		if( !$wiki ) {
+			throw new MWException( "no wiki for $dbname" );
+		}
+		
+		$hostname = $wiki->getHostname();
 		$userPageName = 'User:' . $this->mUserName;
-		$url = CentralAuth::foreignUrl( $dbname, $userPageName );
+		$url = $wiki->getUrl( $userPageName );
 		return wfElement( 'a',
 			array(
 				'href' => $url,

@@ -31,7 +31,7 @@ $wgCentralAuthMessages['en'] = array(
 	
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
-		'The accounts named "$1" on the following Wikimedia sites ' .
+		'The accounts named "$1" on the following sites ' .
 		'have been automatically merged:',
 	'centralauth-list-unmerged' =>
 		'Some accounts could not be automatically confirmed ' .
