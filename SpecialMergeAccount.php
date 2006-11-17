@@ -18,50 +18,36 @@ $wgSecureUrlHost = 'secure.wikimedia.org';
 
 class WikiMap {
 	function byDatabase( $dbname ) {
-		$suffixes = array(
-			'wiki'       => 'wikipedia',
-			'wikisource' => 'wikisource',
-			'wikinews'   => 'wikinews',
-			'wiktionary' => 'wiktionary',
-		);
-		$overrides = array(
-			'metawiki' => 'meta.wikimedia.org',
-			'mediawikiwiki' => 'www.mediawiki.org',
-		);
-		foreach( $suffixes as $suffix => $family ) {
-			if( substr( $dbname, -strlen( $suffix ) ) == $suffix ) {
-				$major = $family;
-				$minor = substr( $dbname, 0, strlen( $dbname ) - strlen( $suffix ) );
-				break;
-			}
-		}
-		if( !isset( $major ) ) {
+		global $wgConf;
+		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
+		if( isset( $major ) ) {
+			$server = $wgConf->get( 'wgServer', $dbname,
+				null,
+				array( 'lang' => $minor, 'site' => $major ) );
+			return new WikiReference( $major, $minor, $server );
+		} else {
 			return null;
 		}
-		$hostname = @$overrides[$dbname];
-		return new WikiReference( $major, $minor, $hostname );
+		
 	}
 }
 
 class WikiReference {
 	private $mMinor; ///< 'en', 'meta', 'mediawiki', etc
 	private $mMajor; ///< 'wiki', 'wiktionary', etc
-	private $mHostname; ///< hostname override, 'www.mediawiki.org'
+	private $mServer; ///< server override, 'www.mediawiki.org'
 	
-	function __construct( $major, $minor, $hostname=null ) {
+	function __construct( $major, $minor, $server ) {
 		$this->mMajor = $major;
 		$this->mMinor = $minor;
-		$this->mHostname = $hostname;
+		$this->mServer = $server;
 	}
 	
 	function getHostname() {
-		if( $this->mHostname ) {
-			return $this->mHostname;
+		if( substr( $this->mServer, 0, 7 ) === 'http://' ) {
+			return substr( $this->mServer, 7 );
 		} else {
-			return $this->mMinor .
-				'.' .
-				$this->mMajor .
-				'.org';
+			throw new MWException( "wtf" );
 		}
 	}
 	
