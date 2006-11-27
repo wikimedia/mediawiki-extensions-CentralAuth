@@ -100,8 +100,11 @@ class SpecialMergeAccount extends SpecialPage {
 	
 	function __construct() {
 		parent::__construct( 'MergeAccount', 'MergeAccount' );
-		global $wgUser;
+		global $wgUser, $wgRequest;
 		$this->mUserName = $wgUser->getName();
+		
+		$this->mAttemptMerge = $wgRequest->wasPosted();
+		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
 	}
 
 	function execute( $subpage ) {
@@ -136,8 +139,17 @@ class SpecialMergeAccount extends SpecialPage {
 		global $wgUser;
 		$globalUser = CentralAuthUser::newFromUser( $wgUser );
 		
-		$merged = array();
-		$remainder = $globalUser->listUnattached();
+		// Have we requested a merge?
+		if( $this->mAttemptMerge ) {
+			$merged = $remainder = array();
+			$ok = $globalUser->attemptPasswordMigration(
+				$this->mPassword,
+				$merged,
+				$remainder );
+		} else {
+			$merged = array();
+			$remainder = $globalUser->listUnattached();
+		}
 		$this->complete( $merged, $remainder );
 	}
 	
@@ -158,6 +170,9 @@ class SpecialMergeAccount extends SpecialPage {
 			$wgOut->addWikiText( wfMsg( 'centralauth-list-unmerged',
 				$this->mUserName ) );
 			$wgOut->addHtml( $this->listWikis( $remainder ) );
+			
+			// Try the password form!
+			$wgOut->addHtml( $this->passwordForm() );
 		}
 	}
 	
@@ -190,6 +205,54 @@ class SpecialMergeAccount extends SpecialPage {
 					$hostname ),
 			),
 			$hostname );
+	}
+	
+	function passwordForm() {
+		return
+			'<div id="userloginForm">' .
+			Xml::openElement( 'form',
+				array(
+					'method' => 'post',
+					'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) ) .
+			
+			wfMsgExt( 'centralauth-finish-text', array( 'parse' ) ) .
+			
+			'<table>' .
+				'<tr>' .
+					'<td>' .
+						Xml::label(
+							wfMsg( 'centralauth-finish-password' ),
+							'wpPassword1' ) .
+					'</td>' .
+					'<td>' .
+						Xml::input( 
+							'wpPassword', 20, '',
+								array(
+									'type' => 'password',
+									'id' => 'wpPassword1' ) ) .
+					'</td>' .
+				'</tr>' .
+				'<tr>' .
+					'<td></td>' .
+					'<td>' .
+						Xml::submitButton( wfMsg( 'centralauth-finish-login' ),
+							array( 'name' => 'wpLogin' ) ) .
+				#Xml::label( wfMsg( 'centralauth-finish-forgot' ),
+				#	'wpMailmypassword' ) .
+				#		Xml::submitButton(
+				#			wfMsg( 'centralauth-finish-send-confirmation' ),
+				#			array(
+				#				'name' => 'wpMailmypassword',
+				#				'id' => 'wpMailmypassword' ) ) .
+					'</td>' .
+				'</tr>' .
+			'</table>' .
+			
+			Xml::closeElement( 'form' ) .
+			
+			wfMsgExt( 'centralauth-finish-notmine', array( 'parse' ) ) .
+			
+			'</div>';
 	}
 }
 
