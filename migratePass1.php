@@ -3,21 +3,23 @@
 // pass 1: go through all usernames in 'localuser' and create 'globaluser' rows
 //         for those that can be automatically migrated, go ahead and do it.
 
-require '../../maintenance/commandLine.inc';
+require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 
 function migratePassOne() {
 	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs
 	$result = $dbBackground->select(
 		'localuser',
-		array( 'lu_name' ),
+		array( 'lu_migrated_name' ),
 		'',
 		__METHOD__,
-		array( 'GROUP BY' => 'lu_name' ) );
+		array( 'GROUP BY' => 'lu_migrated_name' ) );
 	while( $row = $dbBackground->fetchObject( $result ) ) {
-		$name = $row->lu_name;
+		$name = $row->lu_migrated_name;
 		$central = new CentralAuthUser( $name );
 		if( $central->storeAndMigrate() ) {
 			echo "Migrated '$name'\n";
+		} else {
+			echo "NOOOO '$name'\n";
 		}
 	}
 	$dbBackground->freeResult( $result );

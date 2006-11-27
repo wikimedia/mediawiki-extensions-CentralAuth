@@ -6,7 +6,7 @@
 // * generate 'globaluser' entries for each username
 // --> enable 
 
-require '../../maintenance/commandLine.inc';
+require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 
 
 /**

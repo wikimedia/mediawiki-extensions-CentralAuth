@@ -119,6 +119,7 @@ class SpecialMergeAccount extends SpecialPage {
 		// did / did not merge some accounts
 		// do / don't have more accounts to merge
 		
+		/*
 		$merged = array(
 			'enwiki',
 			'enwikisource',
@@ -129,6 +130,14 @@ class SpecialMergeAccount extends SpecialPage {
 			'enwikinews',
 			'frwikisource',
 			'zhwiktionary' );
+		$this->complete( $merged, $remainder );
+		*/
+		
+		global $wgUser;
+		$globalUser = CentralAuthUser::newFromUser( $wgUser );
+		
+		$merged = array();
+		$remainder = $globalUser->listUnattached();
 		$this->complete( $merged, $remainder );
 	}
 	
