@@ -1,21 +1,5 @@
 <?php
 
-/**
-
-# BLAAAAR HEY DUDE
-
-Things we need:
-* map of databases <-> URLs
-* thingies!
-** NEAT THINGIES
-*** SHINY OMFGGGGG
-
-
-*/
-
-global $wgSecureUrlHost;
-$wgSecureUrlHost = 'secure.wikimedia.org';
-
 class WikiMap {
 	function byDatabase( $dbname ) {
 		global $wgConf;
@@ -137,7 +121,8 @@ class SpecialMergeAccount extends SpecialPage {
 		*/
 		
 		global $wgUser;
-		$globalUser = CentralAuthUser::newFromUser( $wgUser );
+		//$globalUser = CentralAuthUser::newFromUser( $wgUser );
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
 		
 		// Have we requested a merge?
 		if( $this->mAttemptMerge ) {
@@ -168,12 +153,14 @@ class SpecialMergeAccount extends SpecialPage {
 		$wgOut->addWikiText( wfMsg( 'centralauth-readmore-text' ) );
 		
 		if( $merged ) {
+			$wgOut->addHtml( '<hr />' );
 			$wgOut->addWikiText( wfMsg( 'centralauth-list-merged',
 				$this->mUserName ) );
 			$wgOut->addHtml( $this->listWikis( $merged ) );
 		}
 		
 		if( $remainder ) {
+			$wgOut->addHtml( '<hr />' );
 			$wgOut->addWikiText( wfMsg( 'centralauth-list-unmerged',
 				$this->mUserName ) );
 			$wgOut->addHtml( $this->listWikis( $remainder ) );

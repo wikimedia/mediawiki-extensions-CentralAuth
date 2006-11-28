@@ -62,7 +62,16 @@ CREATE TABLE localuser (
     -- A count of revisions and/or other actions made during migration
     -- May be null if it hasn't yet been checked
     lu_migrated_editcount int,
-  --
+  
+  -- Migration status/logging information, to help diagnose issues
+  lu_migration_timestamp char(14) binary,
+  lu_migration_method enum (
+    'primary',
+    'empty',
+    'mail',
+    'password',
+    'admin',
+    'new'),
   
   primary key (lu_dbname,lu_local_id),
   key (lu_global_id, lu_dbname),

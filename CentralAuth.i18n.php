@@ -31,8 +31,7 @@ $wgCentralAuthMessages['en'] = array(
 	
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|Read more about '''unified login''']]...''\n" .
-		"----\n",
+		":''[[meta:Help:Unified login|Read more about '''unified login''']]...''",
 	
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>

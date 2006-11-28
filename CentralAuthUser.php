@@ -68,6 +68,10 @@ class CentralAuthUser {
 		return $id;
 	}
 	
+	function exists() {
+		return (bool)$this->getId();
+	}
+	
 	/**
 	 * this code is crapper
 	 */
@@ -168,7 +172,6 @@ class CentralAuthUser {
 		$winner = false;
 		$max = -1;
 		$attach = array();
-		$unattach = array();
 		
 		// We have to pick a master account
 		// The winner is the one with the most edits, usually
@@ -180,39 +183,38 @@ class CentralAuthUser {
 		}
 		assert( isset( $winner ) );
 		
-		// Do they all match?
-		$allMatch = true;
-		$allMatchOrEmpty = true;
-		$allMatchOrUnused = true;
-		$isConflict = false;
+		// If the primary account has an e-mail address set,
+		// we can use it to match other accounts. If it doesn't,
+		// we can't be sure that the other accounts with no mail
+		// are the same person, so err on the side of caution.
 		$winningMail = ($winner->lu_migrated_email == ''
 			? false
 			: $winner->lu_migrated_email);
 		
 		foreach( $rows as $row ) {
 			if( $row->lu_dbname == $winner->lu_dbname ) {
-				$attach[] = $row;
+				// Primary account holder... duh
+				$attach[$row->lu_dbname] = 'primary';
+			} elseif( $row->lu_migrated_email === $winningMail ) {
+				// Same e-mail as primary means we know they could
+				// reset their password, so we give them the account.
+				$attach[$row->lu_dbname] = 'mail';
+			} elseif( $row->lu_migrated_editcount == 0 ) {
+				// Unused accounts are fair game for reclaiming
+				$attach[$row->lu_dbname] = 'empty';
 			} else {
-				if( $row->lu_migrated_email !== $winningMail ) {
-					$allMatch = false;
-					if( $row->lu_migrated_email !== '' ) {
-						$allMatchOrEmpty = false;
-					}
-					if( $row->lu_migrated_editcount == 0 ) {
-						// Unused accounts are fair game for reclaiming
-						$attach[] = $row;
-					} else {
-						$allMatchOrUnused = false;
-						$unattach[] = $row;
-						$isConflict = true;
-					}
-				} else {
-					$attach[] = $row;
-				}
+				// Can't automatically resolve this account.
+				//
+				// If the password matches, it will be automigrated
+				// at next login. If no match, user will have to input
+				// the conflicting password or deal with the conflict.
 			}
 		}
 		
-		if( $allMatch ) {
+		if( count( $attach ) < count( $rows ) ) {
+			wfDebugLog( 'CentralAuth',
+				"Incomplete migration for '$this->mName'" );
+		} else {
 			if( count( $rows ) == 1 ) {
 				wfDebugLog( 'CentralAuth',
 					"Singleton migration for '$this->mName' on $winner->lu_dbname" );
@@ -220,9 +222,6 @@ class CentralAuthUser {
 				wfDebugLog( 'CentralAuth',
 					"Full automatic migration for '$this->mName'" );
 			}
-		} else {
-			wfDebugLog( 'CentralAuth',
-				"Incomplete migration for '$this->mName'" );
 		}
 
 		$this->storeGlobalData(
@@ -231,10 +230,11 @@ class CentralAuthUser {
 			$winner->lu_migrated_email,
 			$winner->lu_migrated_email_authenticated );
 		
-		foreach( $attach as $row ) {
-			$this->attach( $row->lu_dbname );
+		foreach( $attach as $dbname => $method ) {
+			$this->attach( $dbname, $method );
 		}
-	
+		
+		return count( $attach ) == count( $rows );
 	}
 	
 	/**
@@ -265,7 +265,7 @@ class CentralAuthUser {
 			if( $this->matchHash( $password, $row->lu_local_id, $row->lu_migrated_password ) ) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $row->lu_dbname by password" );
-				$this->attach( $row->lu_dbname );
+				$this->attach( $row->lu_dbname, 'password' );
 				$migrated[] = $row->lu_dbname;
 			} else {
 				wfDebugLog( 'CentralAuth',
@@ -334,12 +334,14 @@ class CentralAuthUser {
 	 *
 	 * @return true on success
 	 */
-	public function attach( $dbname ) {
+	public function attach( $dbname, $method ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$dbw->update( 'localuser',
 			array(
 				// Boo-yah!
-				'lu_global_id' => $this->getId(),
+				'lu_global_id'           => $this->getId(),
+				'lu_migration_timestamp' => $dbw->timestamp(),
+				'lu_migration_method'    => $method,
 				),
 			array(
 				'lu_dbname'          => $dbname,

@@ -7,15 +7,22 @@ class CentralAuthPlugin extends AuthPlugin {
 	static function factory() {
 		global $wgCentralAuthState;
 		switch( $wgCentralAuthState ) {
-		case 'premigrate':
 		case 'testing':
-			// FIXME
+			// Pass through regular single-wiki behavior.
+			// This state is to do tests of migration scripts on live
+			// production data without interfering with behavior of
+			// the running wikis.
 			return new AuthPlugin();
-		case 'migration':
-		case 'production':
-			return new CentralAuth();
+		case 'pass0':
+		case 'pass1':
+			// FIXME
+			// Should disable some operations ... ?
+			return new AuthPlugin();
+		case 'pass2':
+		case 'complete':
+			return new CentralAuthPlugin();
 		default:
-			die('wtf');
+			throw new MWException( "Unexpected \$wgCentralAuthState value." );
 		}
 	}
 	
@@ -89,11 +96,12 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * Set the given password in the authentication database.
 	 * Return true if successful.
 	 *
+	 * @param $user User object.
 	 * @param $password String: password.
 	 * @return bool
 	 * @public
 	 */
-	function setPassword( $password ) {
+	function setPassword( $user, $password ) {
 		// Fixme: password changes should happen through central interface.
 		$global = CentralAuthUser( $user->getName() );
 		return $global->setPassword( $password );

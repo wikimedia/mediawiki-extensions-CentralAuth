@@ -19,13 +19,13 @@ function migratePassOne() {
 		if( $central->storeAndMigrate() ) {
 			echo "Migrated '$name'\n";
 		} else {
-			echo "NOOOO '$name'\n";
+			echo "Incomplete '$name'\n";
 		}
 	}
 	$dbBackground->freeResult( $result );
 }
 
-if( $wgCentralAuthState != 'premigrate' ) {
+if( $wgCentralAuthState != 'pass1' ) {
 	if( $wgCentralAuthState == 'testing' ) {
 		echo "WARNING: \$wgCentralAuthState is set to 'testing', generated data may be corrupt.\n";
 	} else {
