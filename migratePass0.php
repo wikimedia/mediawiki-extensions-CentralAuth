@@ -56,8 +56,12 @@ function migratePassZero() {
 		
 		$delta = microtime( true ) - $start;
 		$rate = ($delta == 0.0) ? 0.0 : $migrated / $delta;
-		printf( "%d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
-			$migrated, $migrated / $lastUser * 100.0, $delta, $rate );
+		printf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
+			$wgDBname,
+			$migrated,
+			min( $max, $lastUser ) / $lastUser * 100.0,
+			$delta,
+			$rate );
 	}
 }
 
