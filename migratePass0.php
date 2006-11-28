@@ -14,9 +14,11 @@ require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
  */
 function migratePassZero() {
 	global $wgDBname;
-	$dbr = wfGetDB( DB_SLAVE ); // fixme for large dbs
+	$dbr = wfGetDB( DB_SLAVE );
+	$chunkSize = 1000;
 	
 	$start = microtime( true );
+	$migrated = 0;
 	
 	// We're going to run two queries side-by-side here.
 	// The first fetches user data from 'user'
@@ -26,37 +28,37 @@ function migratePassZero() {
 	// central authentication server, which in theory might be
 	// on another continent.
 	
-	$user = $dbr->tableName( 'user' );
-	$revision = $dbr->tableName( 'revision' );
-	$result = $dbr->query(
-		"SELECT
-			user_id,
-			user_name,
-			user_password,
-			user_newpassword,
-			user_email,
-			user_email_authenticated,
-			COUNT(rev_user) AS user_editcount
-		FROM $user
-		LEFT OUTER JOIN $revision ON user_id=rev_user
-		GROUP BY user_id" );
-	
-	$migrated = 0;
-	while( $row = $dbr->fetchObject( $result ) ) {
-		CentralAuthUser::storeLocalData( $wgDBname, $row, $row->user_editcount );
-		if( ++$migrated % 100 == 0 ) {
-			$delta = microtime( true ) - $start;
-			$rate = ($delta == 0.0) ? 0.0 : $migrated / $delta;
-			printf( "%d done in %0.1f secs (%0.3f accounts/sec).\n",
-				$migrated, $delta, $rate );
+	$lastUser = $dbr->selectField( 'user', 'MAX(user_id)', '', __FUNCTION__ );
+	for( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
+		$max = $min + $chunkSize;
+		$user = $dbr->tableName( 'user' );
+		$revision = $dbr->tableName( 'revision' );
+		$result = $dbr->query(
+			"SELECT
+				user_id,
+				user_name,
+				user_password,
+				user_newpassword,
+				user_email,
+				user_email_authenticated,
+				COUNT(rev_user) AS user_editcount
+			FROM $user
+			LEFT OUTER JOIN $revision ON user_id=rev_user
+			WHERE user_id > $min AND user_id <= $max
+			GROUP BY user_id",
+			__FUNCTION__ );
+		
+		while( $row = $dbr->fetchObject( $result ) ) {
+			CentralAuthUser::storeLocalData( $wgDBname, $row, $row->user_editcount );
+			++$migrated;
 		}
+		$dbr->freeResult( $result );
+		
+		$delta = microtime( true ) - $start;
+		$rate = ($delta == 0.0) ? 0.0 : $migrated / $delta;
+		printf( "%d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
+			$migrated, $migrated / $lastUser * 100.0, $delta, $rate );
 	}
-	$dbr->freeResult( $result );
-	
-	$delta = microtime( true ) - $start;
-	$rate = ($delta == 0.0) ? 0.0 : $migrated / $delta;
-	printf( "%d done in %0.1f secs (%0.3f accounts/sec).\n",
-		$migrated, $delta, $rate );
 }
 
 function getEditCount( $userId ) {
