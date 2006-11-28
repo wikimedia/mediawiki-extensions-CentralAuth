@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Database name you keep central auth data in.
+ *
+ * If this is not on the primary database connection, don't forget
+ * to also set up $wgDBservers to have an entry with a groupLoads
+ * setting for the 'CentralAuth' group.
+ */
+$wgCentralAuthDatabase = 'centralauth';
 
 /**
  * For making pretty HTTPS links to other wikis

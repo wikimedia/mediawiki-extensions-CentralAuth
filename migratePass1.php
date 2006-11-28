@@ -8,7 +8,7 @@ require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 function migratePassOne() {
 	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs
 	$result = $dbBackground->select(
-		'localuser',
+		CentralAuthUser::tableName( 'localuser' ),
 		array( 'lu_migrated_name' ),
 		'',
 		__METHOD__,
