@@ -6,6 +6,11 @@
 require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 
 function migratePassOne() {
+	$migrated = 0;
+	$total = 0;
+	$chunkSize = 1000;
+	$start = microtime( true );
+	
 	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs
 	$result = $dbBackground->select(
 		CentralAuthUser::tableName( 'localuser' ),
@@ -17,12 +22,26 @@ function migratePassOne() {
 		$name = $row->lu_migrated_name;
 		$central = new CentralAuthUser( $name );
 		if( $central->storeAndMigrate() ) {
-			echo "Migrated '$name'\n";
-		} else {
-			echo "Incomplete '$name'\n";
+			$migrated++;
+		}
+		if( ++$total % $chunkSize == 0 ) {
+			migratePassOneReport( $migrated, $total, $start );
 		}
 	}
 	$dbBackground->freeResult( $result );
+	migratePassOneReport( $migrated, $total, $start );
+	echo "DONE\n";
+}
+
+function migratePassOneReport( $migrated, $total, $start ) {
+	$delta = microtime( true ) - $start;
+	printf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated\n",
+		wfTimestamp( TS_DB ),
+		$total,
+		$total / $delta,
+		$migrated,
+		$migrated / $total * 100.0 );
+		
 }
 
 if( $wgCentralAuthState != 'pass1' ) {

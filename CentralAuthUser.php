@@ -153,7 +153,10 @@ class CentralAuthUser {
 				'gu_email' => $email,
 				'gu_email_authenticated' => $emailAuth,
 			),
-			__METHOD__ );
+			__METHOD__,
+			array( 'IGNORE' ) );
+		
+		return $dbw->affectedRows() != 0;
 	}
 	
 	function storeAndMigrate() {
@@ -220,6 +223,18 @@ class CentralAuthUser {
 				// the conflicting password or deal with the conflict.
 			}
 		}
+
+		$ok = $this->storeGlobalData(
+				$winner->lu_local_id,
+				$winner->lu_migrated_password,
+				$winner->lu_migrated_email,
+				$winner->lu_migrated_email_authenticated );
+		
+		if( !$ok ) {
+			wfDebugLog( 'CentralAuth',
+				"attemptedAutoMigration for existing entry '$this->mName'" );
+			return false;
+		}
 		
 		if( count( $attach ) < count( $rows ) ) {
 			wfDebugLog( 'CentralAuth',
@@ -233,12 +248,6 @@ class CentralAuthUser {
 					"Full automatic migration for '$this->mName'" );
 			}
 		}
-
-		$this->storeGlobalData(
-			$winner->lu_local_id,
-			$winner->lu_migrated_password,
-			$winner->lu_migrated_email,
-			$winner->lu_migrated_email_authenticated );
 		
 		foreach( $attach as $dbname => $method ) {
 			$this->attach( $dbname, $method );
