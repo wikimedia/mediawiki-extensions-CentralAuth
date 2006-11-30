@@ -154,20 +154,20 @@ class CentralAuthUser {
 	/**
 	 * For use in migration pass zero.
 	 * Store local user data into the auth server's migration table.
+	 * @fixme batch inserts! this is hella inefficient
 	 */
-	static function storeLocalData( $dbname, $row, $editCount ) {
+	static function storeMigrationData( $dbname, $row, $editCount ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$ok = $dbw->insert(
-			self::tableName( 'localuser' ),
+			self::tableName( 'migrateuser' ),
 			array(
-				'lu_global_id'          => null, // Not yet migrated!
-				'lu_dbname'             => $dbname,
-				'lu_local_id'           => $row->user_id,
-				'lu_migrated_name'      => $row->user_name,
-				'lu_migrated_password'  => $row->user_password,
-				'lu_migrated_email'     => $row->user_email,
-				'lu_migrated_email_authenticated' => $row->user_email_authenticated,
-				'lu_migrated_editcount' => $editCount,
+				'mu_dbname'              => $dbname,
+				'mu_local_id'            => $row->user_id,
+				'mu_name'                => $row->user_name,
+				'mu_password'            => $row->user_password,
+				'mu_email'               => $row->user_email,
+				'mu_email_authenticated' => $row->user_email_authenticated,
+				'mu_editcount'           => $editCount,
 			),
 			__METHOD__ );
 		wfDebugLog( 'CentralAuth',
@@ -224,9 +224,9 @@ class CentralAuthUser {
 		// We have to pick a master account
 		// The winner is the one with the most edits, usually
 		foreach( $rows as $row ) {
-			if( $row->lu_migrated_editcount > $max ) {
+			if( $row->mu_editcount > $max ) {
 				$winner = $row;
-				$max = $row->lu_migrated_editcount;
+				$max = $row->mu_editcount;
 			}
 		}
 		assert( isset( $winner ) );
@@ -235,35 +235,37 @@ class CentralAuthUser {
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
-		$winningMail = ($winner->lu_migrated_email == ''
+		$winningMail = ($winner->mu_email == ''
 			? false
-			: $winner->lu_migrated_email);
+			: $winner->mu_email);
 		
 		foreach( $rows as $row ) {
-			if( $row->lu_dbname == $winner->lu_dbname ) {
+			if( $row->mu_dbname == $winner->mu_dbname ) {
 				// Primary account holder... duh
-				$attach[$row->lu_dbname] = 'primary';
-			} elseif( $row->lu_migrated_email === $winningMail ) {
+				$method = 'primary';
+			} elseif( $row->mu_email === $winningMail ) {
 				// Same e-mail as primary means we know they could
 				// reset their password, so we give them the account.
-				$attach[$row->lu_dbname] = 'mail';
-			} elseif( $row->lu_migrated_editcount == 0 ) {
+				$method = 'mail';
+			} elseif( $row->mu_editcount == 0 ) {
 				// Unused accounts are fair game for reclaiming
-				$attach[$row->lu_dbname] = 'empty';
+				$method = 'empty';
 			} else {
 				// Can't automatically resolve this account.
 				//
 				// If the password matches, it will be automigrated
 				// at next login. If no match, user will have to input
 				// the conflicting password or deal with the conflict.
+				break;
 			}
+			$attach[] = array( $row->mu_dbname, $row->mu_local_id, $method );
 		}
 
 		$ok = $this->storeGlobalData(
-				$winner->lu_local_id,
-				$winner->lu_migrated_password,
-				$winner->lu_migrated_email,
-				$winner->lu_migrated_email_authenticated );
+				$winner->mu_local_id,
+				$winner->mu_password,
+				$winner->mu_email,
+				$winner->mu_email_authenticated );
 		
 		if( !$ok ) {
 			wfDebugLog( 'CentralAuth',
@@ -277,15 +279,16 @@ class CentralAuthUser {
 		} else {
 			if( count( $rows ) == 1 ) {
 				wfDebugLog( 'CentralAuth',
-					"Singleton migration for '$this->mName' on $winner->lu_dbname" );
+					"Singleton migration for '$this->mName' on $winner->mu_dbname" );
 			} else {
 				wfDebugLog( 'CentralAuth',
 					"Full automatic migration for '$this->mName'" );
 			}
 		}
 		
-		foreach( $attach as $dbname => $method ) {
-			$this->attach( $dbname, $method );
+		foreach( $attach as $bits ) {
+			list( $dbname, $localid, $method ) = $bits;
+			$this->attach( $dbname, $localid, $method );
 		}
 		
 		return count( $attach ) == count( $rows );
@@ -316,15 +319,15 @@ class CentralAuthUser {
 		
 		// Look for accounts we can match by password
 		foreach( $rows as $key => $row ) {
-			if( $this->matchHash( $password, $row->lu_local_id, $row->lu_migrated_password ) ) {
+			if( $this->matchHash( $password, $row->mu_local_id, $row->mu_password ) ) {
 				wfDebugLog( 'CentralAuth',
-					"Attaching '$this->mName' on $row->lu_dbname by password" );
-				$this->attach( $row->lu_dbname, 'password' );
-				$migrated[] = $row->lu_dbname;
+					"Attaching '$this->mName' on $row->mu_dbname by password" );
+				$this->attach( $row->mu_dbname, $row->mu_local_id, 'password' );
+				$migrated[] = $row->mu_dbname;
 			} else {
 				wfDebugLog( 'CentralAuth',
-					"No password match for '$this->mName' on $row->lu_dbname" );
-				$remaining[] = $row->lu_dbname;
+					"No password match for '$this->mName' on $row->mu_dbname" );
+				$remaining[] = $row->mu_dbname;
 			}
 		}
 		
@@ -347,44 +350,16 @@ class CentralAuthUser {
 	 * Prerequisites:
 	 * - completed migration state
 	 */
-	function addLocal( $dbname, $localid ) {
+	function attach( $dbname, $localid, $method='new' ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$dbw->insert( self::tableName( 'localuser' ),
 			array(
-				'lu_global_id' => $this->getId(),
-				'lu_dbname'    => $dbname,
-				'lu_local_id'  => $localid ),
+				'lu_global_id'          => $this->getId(),
+				'lu_dbname'             => $dbname,
+				'lu_local_id'           => $localid,
+				'lu_attached_timestamp' => $dbw->timestamp(),
+				'lu_attached_method'    => $method ),
 			__METHOD__ );
-	}
-	
-	/**
-	 * Declare the local account for a given wiki to be attached
-	 * to the global account for the current username.
-	 *
-	 * @return true on success
-	 */
-	public function attach( $dbname, $method ) {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$dbw->update( self::tableName( 'localuser' ),
-			array(
-				// Boo-yah!
-				'lu_global_id'           => $this->getId(),
-				'lu_migration_timestamp' => $dbw->timestamp(),
-				'lu_migration_method'    => $method,
-				),
-			array(
-				'lu_dbname'          => $dbname,
-				'lu_migrated_name'   => $this->mName ),
-			__METHOD__ );
-		
-		$rows = $dbw->affectedRows();
-		if( $rows > 0 ) {
-			return true;
-		} else {
-			wfDebugLog( 'CentralAuth',
-				"failed to attach \"{$this->mName}@$dbname\", not in localuser\n" );
-			return false;
-		}
 	}
 	
 	/**
@@ -446,7 +421,11 @@ class CentralAuthUser {
 			if( $encrypted === $latinHash ) {
 				return true;
 			}
+		} else {
+			$latinHash = null;
 		}
+		wfDebugLog( 'CentralAuth',
+			"auth failed: expected $encrypted, got '$salt' + '$plaintext' -> '$hash' or '$latinHash'" );
 		return false;
 	}
 	
@@ -462,28 +441,26 @@ class CentralAuthUser {
 		$rows = $this->fetchUnattached();
 		$dbs = array();
 		foreach( $rows as $row ) {
-			$dbs[] = $row->lu_dbname;
+			$dbs[] = $row->mu_dbname;
 		}
 		return $dbs;
 	}
 	
-	function fetchUnattached() {
+	/**
+	 * Find any remaining migration records for this username
+	 * which haven't gotten attached to some global account.
+	 */
+	private function fetchUnattached() {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$result = $dbw->select( self::tableName( 'localuser' ),
-			array(
-				'lu_dbname',
-				'lu_local_id',
-				'lu_migrated_name',
-				'lu_migrated_password',
-				'lu_migrated_email',
-				'lu_migrated_email_authenticated',
-				'lu_migrated_editcount',
-			),
-			array(
-				'lu_migrated_name' => $this->mName,
-				'lu_global_id IS NULL',
-			),
-			__METHOD__ );
+		
+		$migrateuser = self::tableName( 'migrateuser' );
+		$localuser = self::tableName( 'localuser' );
+		$sql = "SELECT * FROM $migrateuser" .
+			" LEFT JOIN $localuser" .
+			" ON mu_dbname=lu_dbname AND mu_local_id=lu_local_id" .
+			" WHERE mu_name=" . $dbw->addQuotes( $this->mName ) .
+			" AND lu_dbname IS NULL";
+		$result = $dbw->query( $sql, __METHOD__ );
 		$rows = array();
 		while( $row = $dbw->fetchObject( $result ) ) {
 			$rows[] = $row;

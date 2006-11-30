@@ -13,13 +13,13 @@ function migratePassOne() {
 	
 	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs
 	$result = $dbBackground->select(
-		CentralAuthUser::tableName( 'localuser' ),
-		array( 'lu_migrated_name' ),
+		CentralAuthUser::tableName( 'migrateuser' ),
+		array( 'mu_name' ),
 		'',
 		__METHOD__,
-		array( 'GROUP BY' => 'lu_migrated_name' ) );
+		array( 'GROUP BY' => 'mu_name' ) );
 	while( $row = $dbBackground->fetchObject( $result ) ) {
-		$name = $row->lu_migrated_name;
+		$name = $row->mu_name;
 		$central = new CentralAuthUser( $name );
 		if( $central->storeAndMigrate() ) {
 			$migrated++;

@@ -1,3 +1,6 @@
+--
+-- Global account data.
+--
 CREATE TABLE globaluser (
   -- Internal unique ID for the authentication server
   gu_id int auto_increment,
@@ -31,41 +34,35 @@ CREATE TABLE globaluser (
   gu_password_reset_expiration char(14) binary,
   
   primary key (gu_id),
-  unique key (gu_name)
+  unique key (gu_name),
+  key (gu_email),
+  key (gu_password_reset_key)
 ) TYPE=InnoDB;
 
 
--- Migration state table
+--
+-- Local linkage table, to determine whether a given local account
+-- is attached to the global system, and to which global account.
+--
+-- Note there are no usernames in this table!
+-- Linkages are by id. Naming consistency after
+-- renames should be enforced by double-checks
+-- at login time.
+--
 CREATE TABLE localuser (
   -- gu_id key number of global account this local account has been
   -- successfully attached to.
-  -- May be NULL if account is not yet attached.
-  lu_global_id int,
+  lu_global_id int not null,
   
   -- Database name of the wiki
-  lu_dbname varchar(32) binary,
+  lu_dbname varchar(32) binary not null,
   
   -- user_id on the local wiki
-  lu_local_id int,
-  
-  -- Fields copied from local wikis, used for migration checks...
-    -- Username at migration time
-    lu_migrated_name varchar(255) binary,
-    
-    -- User'd old password hash; salt is lu_id
-    lu_migrated_password varchar(255) binary,
-    
-    -- The user_email and user_email_authenticated state from local wiki
-    lu_migrated_email varchar(255) binary,
-    lu_migrated_email_authenticated char(14) binary,
-    
-    -- A count of revisions and/or other actions made during migration
-    -- May be null if it hasn't yet been checked
-    lu_migrated_editcount int,
+  lu_local_id int not null,
   
   -- Migration status/logging information, to help diagnose issues
-  lu_migration_timestamp char(14) binary,
-  lu_migration_method enum (
+  lu_attached_timestamp char(14) binary,
+  lu_attached_method enum (
     'primary',
     'empty',
     'mail',
@@ -73,8 +70,44 @@ CREATE TABLE localuser (
     'admin',
     'new'),
   
-  primary key (lu_dbname,lu_local_id),
-  key (lu_global_id, lu_dbname),
-  unique key (lu_dbname,lu_migrated_name),
-  key (lu_migrated_name,lu_dbname)
+  primary key (lu_dbname, lu_local_id),
+  unique key (lu_global_id, lu_dbname)
+) TYPE=InnoDB;
+
+--
+-- Migration state table
+--
+-- Fields copied from local wikis, used for migration checks...
+-- Once migration is complete, this data can be ignored/discarded.
+--
+CREATE TABLE migrateuser (
+  -- Database name of the wiki
+  mu_dbname varchar(32) binary,
+  
+  -- user_id on the local wiki
+  mu_local_id int,
+  
+  -- Username at migration time
+  mu_name varchar(255) binary,
+  
+  -- User'd old password hash; salt is lu_id
+  mu_password varchar(255) binary,
+  
+  -- The user_email and user_email_authenticated state from local wiki
+  mu_email varchar(255) binary,
+  mu_email_authenticated char(14) binary,
+  
+  -- A count of revisions and/or other actions made during migration
+  -- May be null if it hasn't yet been checked
+  mu_editcount int,
+  
+  -- True if user was blocked...
+  mu_blocked bool,
+  
+  -- True if user has admin privs...
+  mu_admin bool,
+  
+  primary key (mu_dbname, mu_local_id),
+  unique key (mu_dbname, mu_name),
+  key (mu_name, mu_dbname)
 ) TYPE=InnoDB;

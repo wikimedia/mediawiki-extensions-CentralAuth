@@ -24,23 +24,21 @@ $wgSecureUrlHost = 'secure.wikimedia.org';
  *               migratePass0.php should be run on each wiki while in this
  *               state, setting up the localuser table.
  *
- * 'pass1':      Local 'user' tables are still used for authentication,
- *               but with certain operations disabled to prevent conflicts
- *               while data is migrated to the central auth server.
+ * 'pass1':      Central 'globaluser' tables are used for authentication.
+ *               Core accounts are set up from migration data in the
+ *               'migrateuser' table on demand, or by batch operation.
  *
  *               migratePass1.php should be run once while in this state,
  *               setting up the globaluser table and performing automatic
  *               account merges where possible.
  *
+ *               Special:MergeAccount is available in this state for additional
+ *               manual merging.
+ *
+ *
  * 'testing':    Use to run tests of the pass-0 and pass-1 data generation.
  *               Performs no locking, so may leave inconsistent state such
  *               as accounts which aren't migratable.
- *
- * 'pass2':      Authentication is done against 'globaluser', with automatic
- *               password-based migration done transparently on login.
- *
- *               Special:MergeAccount is available in this state for additional
- *               manual merging.
  *
  * 'complete':   Any remaining non-migrated accounts are locked out.
  *               Special:MergeAccount becomes unavailable.
@@ -70,7 +68,7 @@ function wfSetupCentralAuth() {
 	}
 	
 	global $wgCentralAuthState, $wgSpecialPages;
-	if( $wgCentralAuthState == 'pass2' ) {
+	if( $wgCentralAuthState == 'pass1' ) {
 		$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 	}
 }
@@ -90,7 +88,6 @@ function wfSetupCentralAuthPlugin( &$auth ) {
 		return true;
 	case 'pass1':
 		// Will run on-demand migrations...
-	case 'pass2':
 	case 'complete':
 		$class = 'CentralAuthPlugin';
 		break;
