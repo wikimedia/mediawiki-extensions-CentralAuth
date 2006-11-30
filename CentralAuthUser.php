@@ -78,6 +78,31 @@ class CentralAuthUser {
 		return $id;
 	}
 	
+	private function lazyMigrate() {
+		global $wgCentralAuthState;
+		if( $wgCentralAuthState == 'pass1' ) {
+			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$dbw->begin();
+			
+			$id = $this->getId();
+			if( !$id ) {
+				// Global accounts may not all be in place yet.
+				// Try automerging first, then check again.
+				$migrated = $this->attemptAutoMigration();
+				$id = $this->getId();
+				if( $id ) {
+					wfDebugLog( 'CentralAuth',
+						"Ran lazy migration for '$this->mName', new id $id" );
+				} else {
+					wfDebugLog( 'CentralAuth',
+						"Ran lazy migration for '$this->mName', no entries" );
+				}
+			}
+			
+			$dbw->commit();
+		}
+	}
+	
 	/**
 	 * Check whether a global user account for this name exists yet.
 	 * If migration state is set for pass 1, this may trigger lazy
@@ -86,18 +111,8 @@ class CentralAuthUser {
 	 * @return bool
 	 */
 	function exists() {
-		global $wgCentralAuthState;
-		
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$dbw->begin();
+		$this->lazyMigrate();
 		$id = $this->getId();
-		if( $id == 0 && $wgCentralAuthState == 'pass1' ) {
-			// Global accounts may not all be in place yet.
-			// Try automerging first, then check again.
-			$migrated = $user->attemptAutoMigration();
-			$id = $this->getId();
-		}
-		$dbw->commit();
 		wfDebugLog( 'CentralAuth', "exists() for '$this->mName': $id" );
 		return $id != 0;
 	}
@@ -378,6 +393,8 @@ class CentralAuthUser {
 	 * @return ("ok", "no user", "locked", "bad password")
 	 */
 	public function authenticate( $password ) {
+		$this->lazyMigrate();
+		
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$row = $dbw->selectRow( self::tableName( 'globaluser' ),
 			array( 'gu_salt', 'gu_password', 'gu_locked' ),
@@ -418,7 +435,19 @@ class CentralAuthUser {
 	 * @return bool true on match.
 	 */
 	private function matchHash( $plaintext, $salt, $encrypted ) {
-		return md5( $salt . "-" . md5( $plaintext ) ) === $encrypted;
+		$hash = wfEncryptPassword( $salt, $plaintext );
+		if( $encrypted === $hash ) {
+			return true;
+		} elseif( function_exists( 'iconv' ) ) {
+			// Some wikis were converted from ISO 8859-1 to UTF-8;
+			// retained hashes may contain non-latin chars.
+			$latin = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
+			$latinHash = wfEncryptPassword( $salt, $latin );
+			if( $encrypted === $latinHash ) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	/**

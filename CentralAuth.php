@@ -85,10 +85,11 @@ function wfSetupCentralAuthPlugin( &$auth ) {
 		// the running wikis.
 		return true;
 	case 'pass0':
-	case 'pass1':
 		// FIXME
 		// Should disable some operations ... ?
 		return true;
+	case 'pass1':
+		// Will run on-demand migrations...
 	case 'pass2':
 	case 'complete':
 		$class = 'CentralAuthPlugin';
