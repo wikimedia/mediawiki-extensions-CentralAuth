@@ -60,6 +60,7 @@ $wgAutoloadClasses['CentralAuthPlugin'] =
 	dirname( __FILE__ ) . "/CentralAuthPlugin.php";
 
 $wgExtensionFunctions[] = 'wfSetupCentralAuth';
+$wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
 
 function wfSetupCentralAuth() {
 	require dirname( __FILE__ ) . '/CentralAuth.i18n.php';
@@ -74,5 +75,29 @@ function wfSetupCentralAuth() {
 	}
 }
 
+function wfSetupCentralAuthPlugin( &$auth ) {
+	global $wgCentralAuthState;
+	switch( $wgCentralAuthState ) {
+	case 'testing':
+		// Pass through regular single-wiki behavior.
+		// This state is to do tests of migration scripts on live
+		// production data without interfering with behavior of
+		// the running wikis.
+		return true;
+	case 'pass0':
+	case 'pass1':
+		// FIXME
+		// Should disable some operations ... ?
+		return true;
+	case 'pass2':
+	case 'complete':
+		$class = 'CentralAuthPlugin';
+		break;
+	default:
+		throw new MWException( "Unexpected \$wgCentralAuthState value." );
+	}
+	$auth = new StubObject( 'wgAuth', $class );
+	return true;
+}
 
 ?>

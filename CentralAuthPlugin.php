@@ -4,27 +4,6 @@
  * Quickie test implementation using local test database
  */
 class CentralAuthPlugin extends AuthPlugin {
-	static function factory() {
-		global $wgCentralAuthState;
-		switch( $wgCentralAuthState ) {
-		case 'testing':
-			// Pass through regular single-wiki behavior.
-			// This state is to do tests of migration scripts on live
-			// production data without interfering with behavior of
-			// the running wikis.
-			return new AuthPlugin();
-		case 'pass0':
-		case 'pass1':
-			// FIXME
-			// Should disable some operations ... ?
-			return new AuthPlugin();
-		case 'pass2':
-		case 'complete':
-			return new CentralAuthPlugin();
-		default:
-			throw new MWException( "Unexpected \$wgCentralAuthState value." );
-		}
-	}
 	
 	/**
 	 * Check whether there exists a user account with the given name.

@@ -78,8 +78,28 @@ class CentralAuthUser {
 		return $id;
 	}
 	
+	/**
+	 * Check whether a global user account for this name exists yet.
+	 * If migration state is set for pass 1, this may trigger lazy
+	 * evaluation of automatic migration for the account.
+	 *
+	 * @return bool
+	 */
 	function exists() {
-		return (bool)$this->getId();
+		global $wgCentralAuthState;
+		
+		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbw->begin();
+		$id = $this->getId();
+		if( $id == 0 && $wgCentralAuthState == 'pass1' ) {
+			// Global accounts may not all be in place yet.
+			// Try automerging first, then check again.
+			$migrated = $user->attemptAutoMigration();
+			$id = $this->getId();
+		}
+		$dbw->commit();
+		wfDebugLog( 'CentralAuth', "exists() for '$this->mName': $id" );
+		return $id != 0;
 	}
 	
 	/**
@@ -173,7 +193,7 @@ class CentralAuthUser {
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 */
-	function attemptAutoMigration( $password='' ) {
+	function attemptAutoMigration() {
 		$rows = $this->fetchUnattached();
 		
 		if( !$rows ) {
@@ -365,6 +385,8 @@ class CentralAuthUser {
 			__METHOD__ );
 		
 		if( !$row ) {
+			wfDebugLog( 'CentralAuth',
+				"authentication for '$this->mName' failed due to missing account" );
 			return "no user";
 		}
 		
