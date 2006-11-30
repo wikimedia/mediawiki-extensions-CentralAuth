@@ -48,7 +48,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function updateUser( &$user ) {
-		# Override this and do something
+		$global = new CentralAuthUser( $user->getName() );
+		$user->setEmail( $global->getEmail() );
 		return true;
 	}
 
@@ -149,10 +150,11 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function initUser( &$user ) {
-		# Override this to do something.
+		global $wgDBname;
 		$global = new CentralAuthUser( $user->getName() );
-		$user->setEmail( $global->getEmail() );
-		// etc
+		$global->attach( $wgDBname, $user->getId() );
+		
+		$this->updateUser( $user );
 	}
 }
 

@@ -360,6 +360,8 @@ class CentralAuthUser {
 				'lu_attached_timestamp' => $dbw->timestamp(),
 				'lu_attached_method'    => $method ),
 			__METHOD__ );
+		wfDebugLog( 'CentralAuth',
+			"Attaching local user $dbname:$localid to '$this->mName' for '$method'" );
 	}
 	
 	/**
