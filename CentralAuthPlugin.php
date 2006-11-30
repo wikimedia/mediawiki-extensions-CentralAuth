@@ -82,7 +82,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	function setPassword( $user, $password ) {
 		// Fixme: password changes should happen through central interface.
-		$global = CentralAuthUser( $user->getName() );
+		$global = new CentralAuthUser( $user->getName() );
 		return $global->setPassword( $password );
 	}
 

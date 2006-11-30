@@ -518,7 +518,7 @@ class CentralAuthUser {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$result = $dbr->update( self::tableName( 'globaluser' ),
+		$result = $dbw->update( self::tableName( 'globaluser' ),
 			array(
 				'gu_salt'     => $salt,
 				'gu_password' => $hash,
@@ -528,10 +528,9 @@ class CentralAuthUser {
 			),
 			__METHOD__ );
 		
-		$rows = $dbw->numRows( $result );
-		$dbw->freeResult( $result );
-		
-		return $rows > 0;
+		wfDebugLog( 'CentralAuth',
+			"Set global password for '$this->mName'" );
+		return true;
 	}
 
 }
