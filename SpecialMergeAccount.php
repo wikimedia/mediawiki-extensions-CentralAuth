@@ -92,8 +92,17 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function execute( $subpage ) {
-		global $wgOut, $wgRequest;
+		global $wgOut, $wgRequest, $wgUser;
 		$this->setHeaders();
+		
+		if( !$wgUser->isLoggedIn() ) {
+			$wgOut->addWikiText(
+				wfMsg( 'centralauth-merge-notlogged' ) .
+				"\n\n" .
+				wfMsg( 'centralauth-readmore-text' ) );
+			
+			return;
+		}
 		
 		// Possible demo states
 		
@@ -120,7 +129,6 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->complete( $merged, $remainder );
 		*/
 		
-		global $wgUser;
 		//$globalUser = CentralAuthUser::newFromUser( $wgUser );
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 		

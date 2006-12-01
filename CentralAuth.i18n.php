@@ -4,6 +4,14 @@ global $wgCentralAuthMessages;
 
 $wgCentralAuthMessages = array();
 $wgCentralAuthMessages['en'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Login unification status',
+	'centralauth-merge-notlogged' =>
+		'Please <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]' .
+		'</span> to check if your accounts have been fully merged.',
+	
 	// Big text on completion
 	'centralauth-complete' =>
 		'Login unification complete!',
