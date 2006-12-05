@@ -426,8 +426,6 @@ class CentralAuthUser {
 		} else {
 			$latinHash = null;
 		}
-		wfDebugLog( 'CentralAuth',
-			"auth failed: expected $encrypted, got '$salt' + '$plaintext' -> '$hash' or '$latinHash'" );
 		return false;
 	}
 	
