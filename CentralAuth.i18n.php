@@ -72,7 +72,10 @@ $wgCentralAuthMessages['en'] = array(
 	
 	'centralauth-merge-attempt' =>
 		"'''Checking provided password against remaining unmerged accounts...'''",
-
+	
+	// Administrator's console
+	'centralauth-admin-permission' =>
+		"Only stewards may merge other people's accounts for them.",
 );
 $wgCentralAuthMessages['it'] = array(
 	// When not logged in...

@@ -437,12 +437,36 @@ class CentralAuthUser {
 	 *
 	 * @return array of database name strings
 	 */
-	function listUnattached() {
+	public function listUnattached() {
 		$rows = $this->fetchUnattached();
 		$dbs = array();
 		foreach( $rows as $row ) {
 			$dbs[] = $row->mu_dbname;
 		}
+		return $dbs;
+	}
+	
+	/**
+	 * Fetch a list of database where this account has been successfully
+	 * attached.
+	 *
+	 * @return array database name strings
+	 */
+	public function listAttached() {
+		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		
+		$result = $dbw->select(
+			array( self::tableName( 'localuser' ) ),
+			array( 'lu_dbname' ),
+			array( 'lu_global_id' => $this->getId() ),
+			__METHOD__ );
+		
+		$dbs = array();
+		while( $row = $dbw->fetchObject( $result ) ) {
+			$dbs[] = $row->lu_dbname;
+		}
+		$dbw->freeResult( $result );
+		
 		return $dbs;
 	}
 	

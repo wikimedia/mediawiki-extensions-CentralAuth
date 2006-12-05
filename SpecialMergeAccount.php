@@ -2,13 +2,22 @@
 
 class WikiMap {
 	function byDatabase( $dbname ) {
-		global $wgConf;
+		global $wgConf, $IP;
+		
+		// This is a damn dirty hack
+		if( file_exists( "$IP/InitialiseSettings.php" ) ) {
+			require_once "$IP/InitialiseSettings.php";
+		}
+		
 		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
 		if( isset( $major ) ) {
 			$server = $wgConf->get( 'wgServer', $dbname,
 				null,
 				array( 'lang' => $minor, 'site' => $major ) );
-			return new WikiReference( $major, $minor, $server );
+			$path = $wgConf->get( 'wgArticlePath', $dbname,
+				null,
+				array( 'lang' => $minor, 'site' => $major ) );
+			return new WikiReference( $major, $minor, $server, $path );
 		} else {
 			return null;
 		}
@@ -20,11 +29,13 @@ class WikiReference {
 	private $mMinor; ///< 'en', 'meta', 'mediawiki', etc
 	private $mMajor; ///< 'wiki', 'wiktionary', etc
 	private $mServer; ///< server override, 'www.mediawiki.org'
+	private $mPath;   ///< path override, '/wiki/$1'
 	
-	function __construct( $major, $minor, $server ) {
+	function __construct( $major, $minor, $server, $path ) {
 		$this->mMajor = $major;
 		$this->mMinor = $minor;
 		$this->mServer = $server;
+		$this->mPath = $path;
 	}
 	
 	function getHostname() {
@@ -37,7 +48,7 @@ class WikiReference {
 	
 	private function getLocalUrl( $page ) {
 		// FIXME: this may be generalized...
-		return '/wiki/' . urlencode( $page );
+		return str_replace( '$1', wfUrlEncode( $page ), $this->mPath );
 	}
 	
 	function getCanonicalUrl( $page ) {
@@ -84,11 +95,8 @@ class SpecialMergeAccount extends SpecialPage {
 	
 	function __construct() {
 		parent::__construct( 'MergeAccount', 'MergeAccount' );
-		global $wgUser, $wgRequest;
-		$this->mUserName = $wgUser->getName();
 		
-		$this->mAttemptMerge = $wgRequest->wasPosted();
-		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
+		$this->mAdminMode = false;
 	}
 
 	function execute( $subpage ) {
@@ -103,6 +111,25 @@ class SpecialMergeAccount extends SpecialPage {
 			
 			return;
 		}
+		
+		global $wgUser, $wgRequest;
+		$this->mUserName = $wgUser->getName();
+		
+		if( $subpage != '' ) {
+			if( $wgUser->isAllowed( 'centralauth-admin' ) ) {
+				$this->mUserName = $subpage;
+				$this->mAdminMode = true;
+			} else {
+				$wgOut->addWikiText(
+					wfMsg( 'centralauth-admin-permission' ) .
+					"\n\n" .
+					wfMsg( 'centralauth-readmore-text' ) );
+				return;
+			}
+		}
+		
+		$this->mAttemptMerge = $wgRequest->wasPosted();
+		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
 		
 		// Possible demo states
 		
@@ -130,7 +157,7 @@ class SpecialMergeAccount extends SpecialPage {
 		*/
 		
 		//$globalUser = CentralAuthUser::newFromUser( $wgUser );
-		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		$globalUser = new CentralAuthUser( $this->mUserName );
 		
 		// Have we requested a merge?
 		if( $this->mAttemptMerge ) {
@@ -141,6 +168,9 @@ class SpecialMergeAccount extends SpecialPage {
 				$this->mPassword,
 				$merged,
 				$remainder );
+		} elseif( $this->mAdminMode ) {
+			$merged = $globalUser->listAttached();
+			$remainder = $globalUser->listUnattached();
 		} else {
 			$merged = array();
 			$remainder = $globalUser->listUnattached();

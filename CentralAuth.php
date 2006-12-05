@@ -60,6 +60,8 @@ $wgAutoloadClasses['CentralAuthPlugin'] =
 $wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
 
+$wgGroupPermissions['steward']['centralauth-admin'] = true;
+
 function wfSetupCentralAuth() {
 	require dirname( __FILE__ ) . '/CentralAuth.i18n.php';
 	global $wgCentralAuthMessages, $wgMessageCache;
