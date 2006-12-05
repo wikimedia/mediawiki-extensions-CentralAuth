@@ -215,4 +215,69 @@ $wgCentralAuthMessages['sk'] = array(
                "'''Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...'''",
 
 );
+
+$wgCentralAuthMessages['pt'] = array(
+	// Big text on completion
+	'centralauth-complete' =>
+		'Unificação de logins completa!',
+	'centralauth-incomplete' =>
+		'Unificação de logins incompleta!',
+	
+	// Wheeee
+	'centralauth-complete-text' =>
+		'Agora você poderá se logar em quaisquer das wikis da Wikimedia sem ter de criar ' .
+		'uma nova conta; o mesmo nome de utilizador e senha funcionarão' .
+		'na Wikipedia, no Wikcionário, no Wikibooks e demais projetos, ' .
+		'em todos os idiomas.',
+	'centralauth-incomplete-text' =>
+		'Uma vez estando com seu login unificado, você poderá se logar ' .
+		'em qualquer wiki da Wikimedia sem ter de criar novo cadastro; ' .
+		'o mesmo nome de utilizador e senha funcionarão' .
+		'na Wikipedia, no Wikcionário, no Wikibooks e demais projetos, ' .
+		'em todos os idiomas.',
+	'centralauth-not-owner-text' =>
+		'O nome de utilizador "$1" foi automaticamente relacionado ao proprietário ' .
+		"da conta em $2.\n" .
+		"\n" .
+		"Se este for você, você poderá concluir o procedimento de unificação de login " .
+		"simplesmente digitando a senha principal de tal conta aqui:",
+	
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Leia mais sobre o '''login unificado''']]...''",
+	
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'A conta nomeada como "$1" nos seguintes sítios ' .
+		'foram automaticamente fundidos:',
+	'centralauth-list-unmerged' =>
+		'A conta "$1" não pôde ser automaticamente confirmada ' .
+		'como sendo tua nos seguintes sítios; ' .
+		'provavelmente elas tenham uma senha diferente de sua ' .
+		'conta principal:',
+	'centralauth-foreign-link' =>
+		'Utilizador $1 em $2',
+	
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Completar fusão',
+	'centralauth-finish-text' =>
+		'Se estas contas lhe pertencerem, você poderá concluir ' .
+		'a unificação de logins simplesmente digitando as senhas ' .
+		'das demais contas aqui:',
+	'centralauth-finish-password' =>
+		'Senha:',
+	'centralauth-finish-login' =>
+		'Login',
+	'centralauth-finish-send-confirmation' =>
+		'Enviar senha por e-mail',
+	'centralauth-finish-problems' =>
+		"Está com problemas ou estas outras contas não são suas? " .
+		"[[meta:Help:Unified login problems|Como procurar por ajuda]]...",
+	
+	'centralauth-merge-attempt' =>
+		"'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
+ 
+);
+
 ?>
