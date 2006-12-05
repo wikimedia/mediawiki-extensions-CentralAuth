@@ -74,7 +74,77 @@ $wgCentralAuthMessages['en'] = array(
 		"'''Checking provided password against remaining unmerged accounts...'''",
 
 );
+$wgCentralAuthMessages['it'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Processo di unificazione delle utenze - status',
+	'centralauth-merge-notlogged' =>
+		'Si prega di <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} effettuare il login]' .
+		'</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
+	
+	// Big text on completion
+	'centralauth-complete' =>
+		'Il processo di unificazione delle utenze è stato completato.',
+	'centralauth-incomplete' =>
+		'Il processo di unificazione delle utenze non è ancora stato completato.',
+	
+	// Wheeee
+	'centralauth-complete-text' =>
+		'È ora possibile accedere a tutti i siti Wikimedia senza dover ' .
+		'creare nuovi account; questo nome utente e questa password sono ' .
+		'attivi su tutte le edizioni di Wikipedia, Wiktionary, Wikibooks, ' .
+		'ecc. nelle varie lingue e su tutti i progetti correlati.',
+	'centralauth-incomplete-text' =>
+		'Dopo aver unificato le proprie utenze, sarà possibile accedere ' .
+		'a tutti i siti Wikimedia senza dover creare nuovi account; il ' .
+		'nome utente e la password saranno attivi su tutte le edizioni di ' .
+		'Wikipedia, Wiktionary, Wikibooks, ecc. nelle varie lingue e su ' .
+		'tutti i progetti correlati.',
+	'centralauth-not-owner-text' =>
+		'Il nome utente "$1" è stato assegnato automaticamente al ' .
+		"titolare dell'account con lo stesso nome sul progetto $2.\n" .
+		"\n" .
+		"Se si è il titolare dell'utenza, per terminare il processo di unificazione " .
+		"è sufficiente inserire la password principale di quell'account qui di seguito:",
+	
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Per saperne di più sul '''login unico''']]...''",
+	
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'Gli account con nome utente "$1" sui progetti elencati ' .
+		'di seguito sono stati unificati automaticamente:',
+	'centralauth-list-unmerged' =>
+		'Non è stato possibile verificare automaticamente che gli ' .
+		'account con nome utente "$1" sui progetti elencati di seguito ' .
+		'appartengano allo stesso titolare; è probabile che sia stata ' .
+		'usata una password diversa da quella dell\'account principale:',
+	'centralauth-foreign-link' =>
+		'Utente $1 su $2',
+	
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Completa il processo di unificazione',
+	'centralauth-finish-text' =>
+		'Se si è il titolare di queste utenze, per completare il processo ' .
+		'di unificazione degli account è sufficiente inserire le password ' .
+		'relative alle utenze stesse qui di seguito:',
+	'centralauth-finish-password' =>
+		'Password:',
+	'centralauth-finish-login' =>
+		'Esegui il login',
+	'centralauth-finish-send-confirmation' =>
+		'Invia password via e-mail',
+	'centralauth-finish-problems' =>
+		"Se non si è il titolare di queste utenze, o se si incontrano altri problemi, " .
+		"si invita a consultare la [[meta:Help:Unified login problems|pagina di aiuto]]...",
+	
+	'centralauth-merge-attempt' =>
+		"'''Verifica della password inserita sulle utenze non ancora unificate...'''",
 
+);
 $wgCentralAuthMessages['sk'] = array(
        // When not logged in...
        'mergeaccount' =>
