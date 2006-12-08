@@ -283,4 +283,84 @@ $wgCentralAuthMessages['pt'] = array(
  
 );
 
+$wgCentralAuthMessages['de'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Status der Benutzerkonten-Zusammenführung',
+	'centralauth-merge-notlogged' =>
+		'Bitte <span class="plainlinks"> [{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ' .
+		'melden Sie sich an]</span>, um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
+
+	// Big text on completion
+	'centralauth-complete' =>
+		'Die Zusammenführung der Benutzerkonten ist vollständig.',
+	'centralauth-incomplete' =>
+		'Die Zusammenführung der Benutzerkonten ist unvollständig!',
+
+	// Wheeee
+	'centralauth-complete-text' =>
+		'Sie können sich nun auf jeder Wikimedia-Webseite anmelden ' .
+		'ohne ein neues Benutzerkonto anzulegen; derselbe Benutzername ' .
+		'und dasselbe Passwort ist für Wikipedia, Wiktionary, Wikibooks ' .
+		'und alle Schwesterprojekte in allen Sprachen gültig.',
+
+	'centralauth-incomplete-text' =>
+		'Sobald Ihre Benutzerkonten zusammengeführt sind, können Sie sich ' .
+		'auf jeder Wikimedia-Webseite anmelden ohne ein neues Benutzerkonto ' .
+		'anzulegen; derselbe Benutzernamen und dasselbe Passwort ist für ' .
+		'Wikipedia, Wiktionary, Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
+
+	'centralauth-not-owner-text' =>
+		'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf ' .
+		'$2 zugewiesen. Wenn dies Ihre Benutzername ist, können Sie die Zusammenführung ' .
+		'der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden: ',
+	
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
+	
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten wurden automatisch ' .
+		' zusammengeführt: ',
+
+	'centralauth-list-unmerged' =>
+		'Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht ' .
+		'automatisch als zu Ihnen gehörend bestätigt werden; vermutlich ' .
+		'hat es ein anderes Passwort als Ihr primäres Benutzerkonto: ',
+
+	'centralauth-foreign-link' =>
+		'Benutzer $1 auf $2',
+	
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Zusammenführung vollenden',
+
+	'centralauth-finish-text' =>
+		'Wenn diese Benutzerkonten Ihnen gehören, können Sie hier den ' .
+		'Prozess der Benutzerkonten-Zusammenführung durch die Eingabe ' .
+		'des Passwortes für die anderen Benutzerkonto vollenden:',
+
+	'centralauth-finish-password' =>
+		'Passwort:',
+
+	'centralauth-finish-login' =>
+		'Anmeldung',
+
+	'centralauth-finish-send-confirmation' =>
+		'Passwort per E-Mail zusenden',
+
+	'centralauth-finish-problems' =>
+		'Haben Sie Probleme oder gehören Ihnen diese anderen Benutzerkonten nicht? ' .
+		'[[meta:Help:Unified login problems|Hier finden Sie Hilfe]]…',
+	
+	'centralauth-merge-attempt' =>
+		"'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
+
+	// Administrator's console
+	'centralauth-admin-permission' =>
+		"Nur Benutzer mit Steward-Rechten dürfen fremde Benutzerkonten zusammenführen.",
+);
+
+
 ?>
