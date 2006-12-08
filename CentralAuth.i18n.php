@@ -76,6 +76,10 @@ $wgCentralAuthMessages['en'] = array(
 	// Administrator's console
 	'centralauth-admin-permission' =>
 		"Only stewards may merge other people's accounts for them.",
+	'centralauth-admin-unmerge' =>
+		'Unmerge selected',
+	'centralauth-admin-merge' =>
+		'Merge selected',
 );
 $wgCentralAuthMessages['it'] = array(
 	// When not logged in...

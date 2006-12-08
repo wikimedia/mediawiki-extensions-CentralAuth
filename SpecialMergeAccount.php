@@ -129,7 +129,9 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 		
 		$this->mAttemptMerge = $wgRequest->wasPosted();
+		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
 		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
+		$this->mDatabases = $wgRequest->getArray( 'wpWikis' );
 		
 		// Possible demo states
 		
@@ -142,38 +144,42 @@ class SpecialMergeAccount extends SpecialPage {
 		// did / did not merge some accounts
 		// do / don't have more accounts to merge
 		
-		/*
-		$merged = array(
-			'enwiki',
-			'enwikisource',
-			'frwiki',
-			'metawiki' );
-		$remainder = array(
-			'mediawikiwiki',
-			'enwikinews',
-			'frwikisource',
-			'zhwiktionary' );
-		$this->complete( $merged, $remainder );
-		*/
-		
-		//$globalUser = CentralAuthUser::newFromUser( $wgUser );
 		$globalUser = new CentralAuthUser( $this->mUserName );
+		$merged = $remainder = array();
 		
-		// Have we requested a merge?
-		if( $this->mAttemptMerge ) {
-			$wgOut->addWikiText( wfMsg( 'centralauth-merge-attempt' ) );
-			
-			$merged = $remainder = array();
-			$ok = $globalUser->attemptPasswordMigration(
-				$this->mPassword,
-				$merged,
-				$remainder );
-		} elseif( $this->mAdminMode ) {
-			$merged = $globalUser->listAttached();
-			$remainder = $globalUser->listUnattached();
+		if( $this->mAdminMode ) {
+			if( $this->mAttemptMerge ) {
+				if( $this->mMethod == 'admin' ) {
+					$ok = $globalUser->adminAttach(
+						$this->mDatabases,
+						$merged,
+						$remainder );
+				} elseif( $this->mMethod == 'unmerge' ) {
+					$ok = $globalUser->adminUnattach(
+						$this->mDatabases,
+						$merged,
+						$remainder );
+				} else {
+					// complain
+					die( 'noooo' );
+				}
+			} elseif( $this->mAdminMode ) {
+				$merged = $globalUser->listAttached();
+				$remainder = $globalUser->listUnattached();
+			}
 		} else {
-			$merged = array();
-			$remainder = $globalUser->listUnattached();
+			// Have we requested a merge?
+			if( $this->mAttemptMerge ) {
+				$wgOut->addWikiText( wfMsg( 'centralauth-merge-attempt' ) );
+				
+				$ok = $globalUser->attemptPasswordMigration(
+					$this->mPassword,
+					$merged,
+					$remainder );
+			} else {
+				$merged = array();
+				$remainder = $globalUser->listUnattached();
+			}
 		}
 		$this->showStatus( $merged, $remainder );
 	}
@@ -194,30 +200,70 @@ class SpecialMergeAccount extends SpecialPage {
 			$wgOut->addHtml( '<hr />' );
 			$wgOut->addWikiText( wfMsg( 'centralauth-list-merged',
 				$this->mUserName ) );
-			$wgOut->addHtml( $this->listWikis( $merged ) );
+			$wgOut->addHtml( $this->listMerged( $merged ) );
 		}
 		
 		if( $remainder ) {
 			$wgOut->addHtml( '<hr />' );
 			$wgOut->addWikiText( wfMsg( 'centralauth-list-unmerged',
 				$this->mUserName ) );
-			$wgOut->addHtml( $this->listWikis( $remainder ) );
+			$wgOut->addHtml( $this->listRemainder( $remainder ) );
 			
 			// Try the password form!
-			$wgOut->addHtml( $this->passwordForm() );
+			if( !$this->mAdminMode ) {
+				$wgOut->addHtml( $this->passwordForm() );
+			}
+		}
+	}
+	
+	function listMerged( $dblist ) {
+		return $this->listForm( $dblist, 'unmerge', wfMsg( 'centralauth-admin-unmerge' ) );
+	}
+	
+	function listRemainder( $dblist ) {
+		return $this->listForm( $dblist, 'admin', wfMsg( 'centralauth-admin-merge' ) );
+	}
+	
+	function listForm( $dblist, $action, $buttonText ) {
+		$list = $this->listWikis( $dblist );
+		
+		if( $this->mAdminMode ) {
+			return
+				Xml::openElement( 'form',
+					array(
+						'method' => 'post',
+						'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
+				Xml::hidden( 'wpMethod', $action ) .
+				$list .
+				Xml::submitButton( $buttonText ) .
+				Xml::closeElement( 'form' );
+		} else {
+			return $list;
 		}
 	}
 	
 	function listWikis( $list ) {
 		asort( $list );
-		$out = '<ul>';
-		foreach( $list as $dbname ) {
-			$out .= '<li>' .
-				$this->foreignUserLink( $dbname ) .
-				'</li>';
-		}
-		$out .= '</ul>';
+		return $this->formatList( $list, array( $this, 'listWikiItem' ) );
 		return $out;
+	}
+	
+	function formatList( $items, $callback ) {
+		if( empty( $items ) ) {
+			return '';
+		} else {
+			return "<ul>\n<li>" .
+				implode( "</li>\n<li>",
+					array_map( $callback, $items ) ) .
+				"</li>\n</ul>\n";
+		}
+	}
+	
+	function listWikiItem( $dbname ) {
+		return
+			$this->adminCheck( $dbname ) .
+			' ' .
+			$this->foreignUserLink( $dbname );
 	}
 	
 	function foreignUserLink( $dbname ) {
@@ -239,6 +285,15 @@ class SpecialMergeAccount extends SpecialPage {
 			$hostname );
 	}
 	
+	function adminCheck( $dbname ) {
+		if( $this->mAdminMode ) {
+			return
+				Xml::check( 'wpWikis[]', false, array( 'value' => $dbname ) );
+		} else {
+			return '';
+		}
+	}
+	
 	function passwordForm() {
 		return
 			'<div id="userloginForm">' .
@@ -258,6 +313,7 @@ class SpecialMergeAccount extends SpecialPage {
 							'wpPassword1' ) .
 					'</td>' .
 					'<td>' .
+						Xml::hidden( 'wpMethod', 'password' ) .
 						Xml::input( 
 							'wpPassword', 20, '',
 								array(

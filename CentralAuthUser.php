@@ -342,6 +342,58 @@ class CentralAuthUser {
 		return false;
 	}
 	
+	private function validateList( $list ) {
+		global $wgLocalDatabases;
+		
+		$unique = array_unique( $list );
+		$valid = array_intersect( $unique, $wgLocalDatabases );
+		
+		if( count( $valid ) != count( $list ) ) {
+			// fixme: handle this gracefully
+			throw new MWException( "Invalid input" );
+		}
+		
+		return $valid;
+	}
+	
+	public function adminAttach( $list, &$migrated=null, &$remaining=null ) {
+		$valid = $this->validateList( $list );
+		$unattached = $this->fetchUnattached();
+		
+		$migrated = array();
+		$remaining = array();
+		
+		foreach( $unattached as $row ) {
+			if( in_array( $row->mu_dbname, $valid ) ) {
+				$this->attach( $row->mu_dbname, $row->mu_local_id, 'admin' );
+				$migrated[] = $row->mu_dbname;
+			} else {
+				$remaining[] = $row->mu_dbname;
+			}
+		}
+		
+		return count( $migrated ) == count( $valid );
+	}
+	
+	public function adminUnattach( $list, &$migrated=null, &$remaining=null ) {
+		$valid = $this->validateList( $list );
+		
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->delete( self::tableName( 'localuser' ),
+			array(
+				'lu_global_id' => $this->getId(),
+				'lu_dbname'    => $list ),
+			__METHOD__ );
+		
+		// FIXME: touch remote-database user accounts
+		
+		// FIXME: proper... stuff
+		$migrated = array();
+		$remaining = $list;
+		
+		return count( $list ) == count( $valid );
+	}
+	
 	/**
 	 * Add a local account record for the given wiki to the central database.
 	 * @param string $dbname
