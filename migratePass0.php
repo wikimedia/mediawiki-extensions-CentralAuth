@@ -32,7 +32,6 @@ function migratePassZero() {
 	for( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
 		$max = $min + $chunkSize;
 		$user = $dbr->tableName( 'user' );
-		$revision = $dbr->tableName( 'revision' );
 		$result = $dbr->query(
 			"SELECT
 				user_id,
@@ -41,9 +40,8 @@ function migratePassZero() {
 				user_newpassword,
 				user_email,
 				user_email_authenticated,
-				COUNT(rev_user) AS user_editcount
+				user_editcount
 			FROM $user
-			LEFT OUTER JOIN $revision ON user_id=rev_user
 			WHERE user_id > $min AND user_id <= $max
 			GROUP BY user_id",
 			__FUNCTION__ );
