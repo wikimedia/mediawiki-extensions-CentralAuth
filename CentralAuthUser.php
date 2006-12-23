@@ -156,7 +156,7 @@ class CentralAuthUser {
 	 * Store local user data into the auth server's migration table.
 	 * @fixme batch inserts! this is hella inefficient
 	 */
-	static function storeMigrationData( $dbname, $row, $editCount ) {
+	static function storeMigrationData( $dbname, $row ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$ok = $dbw->insert(
 			self::tableName( 'migrateuser' ),
@@ -167,9 +167,10 @@ class CentralAuthUser {
 				'mu_password'            => $row->user_password,
 				'mu_email'               => $row->user_email,
 				'mu_email_authenticated' => $row->user_email_authenticated,
-				'mu_editcount'           => $editCount,
+				'mu_editcount'           => $row->user_editcount,
 			),
-			__METHOD__ );
+			__METHOD__,
+			array( 'IGNORE' ) );
 		wfDebugLog( 'CentralAuth',
 			"stored migration data for '$row->user_name' on $dbname" );
 	}
@@ -217,7 +218,7 @@ class CentralAuthUser {
 			return false;
 		}
 		
-		$winner = false;
+		$winner = null;
 		$max = -1;
 		$attach = array();
 		
@@ -229,7 +230,10 @@ class CentralAuthUser {
 				$max = $row->mu_editcount;
 			}
 		}
-		assert( isset( $winner ) );
+		if( !isset( $winner ) ) {
+			var_dump( $rows );
+			die();
+		}
 		
 		// If the primary account has an e-mail address set,
 		// we can use it to match other accounts. If it doesn't,

@@ -47,7 +47,7 @@ function migratePassZero() {
 			__FUNCTION__ );
 		
 		while( $row = $dbr->fetchObject( $result ) ) {
-			CentralAuthUser::storeMigrationData( $wgDBname, $row, $row->user_editcount );
+			CentralAuthUser::storeMigrationData( $wgDBname, $row );
 			++$migrated;
 		}
 		$dbr->freeResult( $result );
