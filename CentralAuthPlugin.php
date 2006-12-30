@@ -135,7 +135,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function strict() {
-		return true;
+		global $wgCentralAuthStrict;
+		return $wgCentralAuthStrict;
 	}
 
 	/**

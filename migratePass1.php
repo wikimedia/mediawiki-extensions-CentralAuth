@@ -44,14 +44,6 @@ function migratePassOneReport( $migrated, $total, $start ) {
 		
 }
 
-if( $wgCentralAuthState != 'pass1' ) {
-	if( $wgCentralAuthState == 'testing' ) {
-		echo "WARNING: \$wgCentralAuthState is set to 'testing', generated data may be corrupt.\n";
-	} else {
-		wfDie( "\$wgCentralAuthState is '$wgCentralAuthState', please set to 'premigrate'.\n" );
-	}
-}
-
 echo "CentralAuth migration pass 1:\n";
 echo "Finding accounts which can be migrated without interaction...\n";
 migratePassOne();

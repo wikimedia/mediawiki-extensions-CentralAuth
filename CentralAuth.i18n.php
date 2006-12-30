@@ -80,6 +80,10 @@ $wgCentralAuthMessages['en'] = array(
 		'Unmerge selected',
 	'centralauth-admin-merge' =>
 		'Merge selected',
+	
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'Unified account ID:',
 );
 
 $wgCentralAuthMessages['de'] = array(

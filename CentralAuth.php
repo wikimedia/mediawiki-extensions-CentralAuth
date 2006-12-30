@@ -9,42 +9,23 @@
  */
 $wgCentralAuthDatabase = 'centralauth';
 
-/**
- * For making pretty HTTPS links to other wikis
- */
-$wgSecureUrlHost = 'secure.wikimedia.org';
-
 
 /**
- * Migration states: [not yet implemented fully]
- * 'pass0':      Local 'user' tables are still used for authentication,
- *               but with certain operations disabled to prevent conflicts
- *               while data is migrated to the central auth server.
+ * If true, existing unattached accounts will be automatically migrated
+ * if possible at first login.
  *
- *               migratePass0.php should be run on each wiki while in this
- *               state, setting up the localuser table.
+ * Any new account creations will be required to attach.
  *
- * 'pass1':      Central 'globaluser' tables are used for authentication.
- *               Core accounts are set up from migration data in the
- *               'migrateuser' table on demand, or by batch operation.
- *
- *               migratePass1.php should be run once while in this state,
- *               setting up the globaluser table and performing automatic
- *               account merges where possible.
- *
- *               Special:MergeAccount is available in this state for additional
- *               manual merging.
- *
- *
- * 'testing':    Use to run tests of the pass-0 and pass-1 data generation.
- *               Performs no locking, so may leave inconsistent state such
- *               as accounts which aren't migratable.
- *
- * 'complete':   Any remaining non-migrated accounts are locked out.
- *               Special:MergeAccount becomes unavailable.
+ * If false, unattached accounts will not be harassed unless the individual
+ * account has opted in to migration.
  */
-$wgCentralAuthState = 'testing';
+$wgCentralAuthAutoMigrate = false;
 
+/**
+ * If true, remaining accounts which have not been attached will be forbidden
+ * from logging in until they are resolved.
+ */
+$wgCentralAuthStrict = false;
 
 
 // -----
@@ -59,6 +40,7 @@ $wgAutoloadClasses['CentralAuthPlugin'] =
 
 $wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
+$wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
 
 $wgGroupPermissions['steward']['centralauth-admin'] = true;
 
@@ -69,34 +51,26 @@ function wfSetupCentralAuth() {
 		$wgMessageCache->addMessages( $messages, $key );
 	}
 	
-	global $wgCentralAuthState, $wgSpecialPages;
-	if( $wgCentralAuthState == 'pass1' ) {
-		$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
-	}
+	global $wgSpecialPages;
+	$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 }
 
 function wfSetupCentralAuthPlugin( &$auth ) {
-	global $wgCentralAuthState;
-	switch( $wgCentralAuthState ) {
-	case 'testing':
-		// Pass through regular single-wiki behavior.
-		// This state is to do tests of migration scripts on live
-		// production data without interfering with behavior of
-		// the running wikis.
-		return true;
-	case 'pass0':
-		// FIXME
-		// Should disable some operations ... ?
-		return true;
-	case 'pass1':
-		// Will run on-demand migrations...
-	case 'complete':
-		$class = 'CentralAuthPlugin';
-		break;
-	default:
-		throw new MWException( "Unexpected \$wgCentralAuthState value." );
-	}
-	$auth = new StubObject( 'wgAuth', $class );
+	$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
+	return true;
+}
+
+/**
+ * Add a little pretty to the preferences user info section
+ */
+function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
+	global $wgUser;
+	$global = CentralAuthUser::newFromUser( $wgUser );
+	$html .= $prefsForm->addRow(
+		wfMsgHtml( 'centralauth-globalid' ),
+		$global
+			? $global->getId()
+			: 'not merged' );
 	return true;
 }
 

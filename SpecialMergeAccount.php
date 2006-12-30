@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Helper tools for dealing with other locally-hosted wikis
+ */
+
 class WikiMap {
 	function byDatabase( $dbname ) {
 		global $wgConf, $IP;
@@ -46,48 +50,28 @@ class WikiReference {
 		}
 	}
 	
+	/**
+	 * pretty it up
+	 */
+	function getDisplayName() {
+		$url = $this->getUrl( '' );
+		$url = preg_replace( '!^https?://!', '', $url );
+		$url = preg_replace( '!index\.php(\?title=|/)$!', '', $url );
+		$url = preg_replace( '!wiki/$!', '', $url );
+		$url = preg_replace( '!/$!', '', $url );
+		return $url;
+	}
+	
 	private function getLocalUrl( $page ) {
 		// FIXME: this may be generalized...
 		return str_replace( '$1', wfUrlEncode( $page ), $this->mPath );
 	}
 	
-	function getCanonicalUrl( $page ) {
+	function getUrl( $page ) {
 		return
 			'http://' .
 			$this->getHostname() .
 			$this->getLocalUrl( $page );
-	}
-	
-	function getSecureUrl( $page ) {
-		global $wgSecureUrlHost;
-		if( $wgSecureUrlHost ) {
-			// For the current secure.wikimedia.org hack
-			// In the future we'll want to move to a nice
-			// clean https://en.wikipedia.org/ etc
-			return
-				'https://' .
-				$wgSecureUrlHost .
-				'/' . $this->mMajor .
-				'/' . $this->mMinor .
-				$this->getLocalUrl( $page );
-		} else {
-			return
-				'https://' .
-				$this->getHostname() .
-				$this->getLocalUrl( $page );
-		}
-	}
-	
-	/**
-	 * If the current user is coming over HTTPS, return
-	 * the secure URL to match...
-	 */
-	function getUrl( $page ) {
-		if( isset( $_SERVER['HTTPS'] ) ) {
-			return $this->getSecureUrl( $page );
-		} else {
-			return $this->getCanonicalUrl( $page );
-		}
 	}
 }
 
@@ -272,7 +256,7 @@ class SpecialMergeAccount extends SpecialPage {
 			throw new MWException( "no wiki for $dbname" );
 		}
 		
-		$hostname = $wiki->getHostname();
+		$hostname = $wiki->getDisplayName();
 		$userPageName = 'User:' . $this->mUserName;
 		$url = $wiki->getUrl( $userPageName );
 		return wfElement( 'a',

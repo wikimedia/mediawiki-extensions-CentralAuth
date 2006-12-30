@@ -79,8 +79,8 @@ class CentralAuthUser {
 	}
 	
 	private function lazyMigrate() {
-		global $wgCentralAuthState;
-		if( $wgCentralAuthState == 'pass1' ) {
+		global $wgCentralAuthAutoMigrate;
+		if( $wgCentralAuthAutoMigrate ) {
 			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 			$dbw->begin();
 			

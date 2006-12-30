@@ -75,14 +75,6 @@ function countEdits( $userId, $table, $field ) {
 	return intval( $count );
 }
 
-if( $wgCentralAuthState != 'pass0' ) {
-	if( $wgCentralAuthState == 'testing' ) {
-		echo "WARNING: \$wgCentralAuthState is set to 'testing', generated data may be corrupt.\n";
-	} else {
-		wfDie( "\$wgCentralAuthState is '$wgCentralAuthState', please set to 'pass0' to prevent conflicts.\n" );
-	}
-}
-
 echo "CentralAuth migration pass 0:\n";
 echo "$wgDBname preparing migration data...\n";
 migratePassZero();
