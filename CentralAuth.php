@@ -31,12 +31,13 @@ $wgCentralAuthStrict = false;
 // -----
 // initialization work...
 
-$wgAutoloadClasses['SpecialMergeAccount'] =
-	dirname( __FILE__ ) . "/SpecialMergeAccount.php";
-$wgAutoloadClasses['CentralAuthUser'] =
-	dirname( __FILE__ ) . "/CentralAuthUser.php";
-$wgAutoloadClasses['CentralAuthPlugin'] =
-	dirname( __FILE__ ) . "/CentralAuthPlugin.php";
+$caBase = dirname( __FILE__ );
+$wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/SpecialCentralAuth.php";
+$wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/SpecialMergeAccount.php";
+$wgAutoloadClasses['CentralAuthUser'] = "$caBase/CentralAuthUser.php";
+$wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
+$wgAutoloadClasses['WikiMap'] = "$caBase/WikiMap.php";
+$wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
 
 $wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
@@ -52,6 +53,7 @@ function wfSetupCentralAuth() {
 	}
 	
 	global $wgSpecialPages;
+	$wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 	$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 }
 
@@ -65,12 +67,42 @@ function wfSetupCentralAuthPlugin( &$auth ) {
  */
 function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	global $wgUser;
+	$skin = $wgUser->getSkin();
+	$special = SpecialPage::getTitleFor( 'MergeAccount' );
+	
+	
+	// Possible states:
+	// - account not merged at all
+	// - global accounts exists, but this local account is unattached
+	// - this local account is attached, but migration incomplete
+	// - all local accounts are attached
+	
 	$global = CentralAuthUser::newFromUser( $wgUser );
+	if( $global ) {
+		// Local is attached...
+		$attached = count( $global->listAttached() );
+		$unattached = count( $global->listUnattached() );
+		if( $unattached ) {
+			// Migration incomplete
+			$message = $global->getId() . " $unattached wikis left to migrate";
+		} else {
+			// Migration complete
+			$message = $global->getId() . " Migration complete";
+		}
+	} else {
+		$global = new CentralAuthUser( $wgUser->getName() );
+		if( $global->exists() ) {
+			// Account is in migration, but the local account is not attached
+			$message = "This wiki has not been verified to the unified account";
+		} else {
+			// Not migrated.
+			$message = "Not using unified account.";
+		}
+	}
+	
 	$html .= $prefsForm->addRow(
 		wfMsgHtml( 'centralauth-globalid' ),
-		$global
-			? $global->getId()
-			: 'not merged' );
+		$message . ' (' . $skin->makeKnownLinkObj( $special, 'merge your accounts' ) . ')' );
 	return true;
 }
 

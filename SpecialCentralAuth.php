@@ -1,9 +1,9 @@
 <?php
 
-class SpecialMergeAccount extends SpecialPage {
+class SpecialCentralAuth extends SpecialPage {
 	
 	function __construct() {
-		parent::__construct( 'MergeAccount', 'MergeAccount' );
+		parent::__construct( 'CentralAuth', 'CentralAuth' );
 	}
 
 	function execute( $subpage ) {
@@ -21,6 +21,16 @@ class SpecialMergeAccount extends SpecialPage {
 		
 		global $wgUser, $wgRequest;
 		$this->mUserName = $wgUser->getName();
+		
+		if( $wgUser->isAllowed( 'centralauth-admin' ) ) {
+			$this->mUserName = $subpage;
+		} else {
+			$wgOut->addWikiText(
+				wfMsg( 'centralauth-admin-permission' ) .
+				"\n\n" .
+				wfMsg( 'centralauth-readmore-text' ) );
+			return;
+		}
 		
 		$this->mAttemptMerge = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
@@ -41,53 +51,53 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = new CentralAuthUser( $this->mUserName );
 		$merged = $remainder = array();
 		
-		// Have we requested a merge?
 		if( $this->mAttemptMerge ) {
-			$wgOut->addWikiText( wfMsg( 'centralauth-merge-attempt' ) );
-			
-			$ok = $globalUser->attemptPasswordMigration(
-				$this->mPassword,
-				$merged,
-				$remainder );
+			if( $this->mMethod == 'admin' ) {
+				$ok = $globalUser->adminAttach(
+					$this->mDatabases,
+					$merged,
+					$remainder );
+			} elseif( $this->mMethod == 'unmerge' ) {
+				$ok = $globalUser->adminUnattach(
+					$this->mDatabases,
+					$merged,
+					$remainder );
+			} else {
+				// complain
+				die( 'noooo' );
+			}
 		} else {
-			$merged = array();
+			$merged = $globalUser->listAttached();
 			$remainder = $globalUser->listUnattached();
 		}
-		$this->showStatus( $merged, $remainder );
+		$this->showInfo();
 	}
 	
-	function showStatus( $merged, $remainder ) {
+	function showInfo() {
+		$globalUser = new CentralAuthUser( $this->mUserName );
+		
+		$name = $this->mUserName;
+		$id = $globalUser->exists() ? $globalUser->getId() : "unified account not registered";
+		$merged = $globalUser->listAttached();
+		$remainder = $globalUser->listUnattached();
+		
 		global $wgOut;
+		$wgOut->addWikiText( "User name: $name" );
+		$wgOut->addWikiText( "User id: $id" );
 		
-		if( count( $remainder ) > 0 ) {
-			$wgOut->setPageTitle( wfMsg( 'centralauth-incomplete' ) );
-			$wgOut->addWikiText( wfMsg( 'centralauth-incomplete-text' ) );
-		} else {
-			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
-			$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
-		}
-		$wgOut->addWikiText( wfMsg( 'centralauth-readmore-text' ) );
-		
-		if( $merged ) {
-			$wgOut->addHtml( '<hr />' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-list-merged',
-				$this->mUserName ) );
+		if( $globalUser->exists() ) {
+			$wgOut->addWikiText( "<h2>Fully merged accounts:</h2>" );
 			$wgOut->addHtml( $this->listMerged( $merged ) );
-		}
 		
-		if( $remainder ) {
-			$wgOut->addHtml( '<hr />' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-list-unmerged',
-				$this->mUserName ) );
-			$wgOut->addHtml( $this->listRemainder( $remainder ) );
-			
-			// Try the password form!
-			if( !$this->mAdminMode ) {
-				$wgOut->addHtml( $this->passwordForm() );
+			$wgOut->addWikiText( "<h2>Unattached accounts:</h2>" );
+			if( $remainder ) {
+				$wgOut->addHtml( $this->listRemainder( $remainder ) );
+			} else {
+				$wgOut->addWikiText( 'No unmerged accounts remain.' );
 			}
 		}
 	}
-	
+
 	function listMerged( $dblist ) {
 		return $this->listForm( $dblist, 'unmerge', wfMsg( 'centralauth-admin-unmerge' ) );
 	}
@@ -99,7 +109,15 @@ class SpecialMergeAccount extends SpecialPage {
 	function listForm( $dblist, $action, $buttonText ) {
 		$list = $this->listWikis( $dblist );
 		
-		return $list;
+		return
+			Xml::openElement( 'form',
+				array(
+					'method' => 'post',
+					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
+			Xml::hidden( 'wpMethod', $action ) .
+			$list .
+			Xml::submitButton( $buttonText ) .
+			Xml::closeElement( 'form' );
 	}
 	
 	function listWikis( $list ) {
@@ -121,6 +139,8 @@ class SpecialMergeAccount extends SpecialPage {
 	
 	function listWikiItem( $dbname ) {
 		return
+			$this->adminCheck( $dbname ) .
+			' ' .
 			$this->foreignUserLink( $dbname );
 	}
 	
@@ -141,6 +161,11 @@ class SpecialMergeAccount extends SpecialPage {
 					$hostname ),
 			),
 			$hostname );
+	}
+	
+	function adminCheck( $dbname ) {
+		return
+			Xml::check( 'wpWikis[]', false, array( 'value' => $dbname ) );
 	}
 	
 	function passwordForm() {

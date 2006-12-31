@@ -74,6 +74,7 @@ $wgCentralAuthMessages['en'] = array(
 		"'''Checking provided password against remaining unmerged accounts...'''",
 	
 	// Administrator's console
+	'centralauth' => 'Unified login administration',
 	'centralauth-admin-permission' =>
 		"Only stewards may merge other people's accounts for them.",
 	'centralauth-admin-unmerge' =>
