@@ -165,12 +165,18 @@ $wgCentralAuthMessages['de'] = array(
 		"'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
 	
 	// Administrator's console
+	'centralauth' => 'Verwaltung der Benutzerkonten-Zusammenführung',
 	'centralauth-admin-permission' =>
 		"Die Zusammenführung von Benutzerkonten für andere Benutzer kann nur durch Stewards erfolgen.",
 	'centralauth-admin-unmerge' =>
 		'Ausgewählte Benutzerkonten trennen',
 	'centralauth-admin-merge' =>
 		'Ausgewählte Benutzerkonten zusammenführen',
+
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'ID der zusammengeführten Benutzerkonten:',
+
 );
 
 $wgCentralAuthMessages['it'] = array(
