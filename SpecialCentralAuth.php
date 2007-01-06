@@ -22,15 +22,15 @@ class SpecialCentralAuth extends SpecialPage {
 		global $wgUser, $wgRequest;
 		$this->mUserName = $wgUser->getName();
 		
-		if( $wgUser->isAllowed( 'centralauth-admin' ) ) {
-			$this->mUserName = $subpage;
-		} else {
+		if( !$wgUser->isAllowed( 'centralauth-admin' ) ) {
 			$wgOut->addWikiText(
 				wfMsg( 'centralauth-admin-permission' ) .
 				"\n\n" .
 				wfMsg( 'centralauth-readmore-text' ) );
 			return;
 		}
+
+		$this->mUserName = $wgRequest->getText( 'target', $subpage );
 		
 		$this->mAttemptMerge = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
@@ -70,7 +70,29 @@ class SpecialCentralAuth extends SpecialPage {
 			$merged = $globalUser->listAttached();
 			$remainder = $globalUser->listUnattached();
 		}
+		$this->showUsernameForm();
 		$this->showInfo();
+	}
+	
+	function showUsernameForm() {
+		global $wgOut, $wgScript;
+		$wgOut->addHtml(
+			Xml::openElement( 'form', array(
+				'method' => 'get',
+				'action' => $wgScript ) ) .
+			'<fieldset>' .
+			Xml::element( 'legend', array(), wfMsg( 'centralauth-admin-manage' ) ) .
+			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			'<p>' .
+			Xml::inputLabel( wfMsg( 'centralauth-admin-username' ),
+				'target', 'target', 25, $this->mUserName ) .
+			'</p>' .
+			'<p>' .
+			Xml::submitButton( wfMsg( 'centralauth-admin-lookup' ) ) .
+			'</p>' .
+			'</fieldset>' .
+			'</form>'
+		);
 	}
 	
 	function showInfo() {
@@ -82,10 +104,9 @@ class SpecialCentralAuth extends SpecialPage {
 		$remainder = $globalUser->listUnattached();
 		
 		global $wgOut;
-		$wgOut->addWikiText( "User name: $name" );
-		$wgOut->addWikiText( "User id: $id" );
-		
 		if( $globalUser->exists() ) {
+			$wgOut->addWikiText( "User id: $id" );
+			
 			$wgOut->addWikiText( "<h2>Fully merged accounts:</h2>" );
 			$wgOut->addHtml( $this->listMerged( $merged ) );
 		
@@ -95,6 +116,8 @@ class SpecialCentralAuth extends SpecialPage {
 			} else {
 				$wgOut->addWikiText( 'No unmerged accounts remain.' );
 			}
+		} else {
+			$wgOut->addWikiText( "No unified account for this username." );
 		}
 	}
 
@@ -115,33 +138,37 @@ class SpecialCentralAuth extends SpecialPage {
 					'method' => 'post',
 					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
+			'<table>' .
+			'<tbody>' .
 			$list .
+			'<tr>' .
+			'<td></td>' .
+			'<td>' .
 			Xml::submitButton( $buttonText ) .
+			'</td>' .
+			'</tr>' .
+			'</tbody>' .
+			'</table>' .
 			Xml::closeElement( 'form' );
 	}
 	
 	function listWikis( $list ) {
 		asort( $list );
-		return $this->formatList( $list, array( $this, 'listWikiItem' ) );
-		return $out;
-	}
-	
-	function formatList( $items, $callback ) {
-		if( empty( $items ) ) {
-			return '';
-		} else {
-			return "<ul>\n<li>" .
-				implode( "</li>\n<li>",
-					array_map( $callback, $items ) ) .
-				"</li>\n</ul>\n";
-		}
+		return implode( "\n",
+			array_map( array( $this, 'listWikiItem' ),
+			 	$list ) );
 	}
 	
 	function listWikiItem( $dbname ) {
 		return
+			'<tr>' .
+			'<td>' .
 			$this->adminCheck( $dbname ) .
-			' ' .
-			$this->foreignUserLink( $dbname );
+			'</td>' .
+			'<td>' .
+			$this->foreignUserLink( $dbname ) .
+			'</td>' .
+			'</tr>';
 	}
 	
 	function foreignUserLink( $dbname ) {
@@ -168,53 +195,6 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::check( 'wpWikis[]', false, array( 'value' => $dbname ) );
 	}
 	
-	function passwordForm() {
-		return
-			'<div id="userloginForm">' .
-			Xml::openElement( 'form',
-				array(
-					'method' => 'post',
-					'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) ) .
-			Xml::element( 'h2', array(), wfMsg( 'centralauth-finish-title' ) ) .
-			
-			wfMsgExt( 'centralauth-finish-text', array( 'parse' ) ) .
-			
-			'<table>' .
-				'<tr>' .
-					'<td>' .
-						Xml::label(
-							wfMsg( 'centralauth-finish-password' ),
-							'wpPassword1' ) .
-					'</td>' .
-					'<td>' .
-						Xml::hidden( 'wpMethod', 'password' ) .
-						Xml::input( 
-							'wpPassword', 20, '',
-								array(
-									'type' => 'password',
-									'id' => 'wpPassword1' ) ) .
-					'</td>' .
-				'</tr>' .
-				'<tr>' .
-					'<td></td>' .
-					'<td>' .
-						Xml::submitButton( wfMsg( 'centralauth-finish-login' ),
-							array( 'name' => 'wpLogin' ) ) .
-						Xml::submitButton(
-							wfMsg( 'centralauth-finish-send-confirmation' ),
-							array(
-								'name' => 'wpMailmypassword',
-								'id' => 'wpMailmypassword' ) ) .
-					'</td>' .
-				'</tr>' .
-			'</table>' .
-			
-			Xml::closeElement( 'form' ) .
-			
-			wfMsgExt( 'centralauth-finish-problems', array( 'parse' ) ) .
-			
-			'</div>';
-	}
 }
 
 

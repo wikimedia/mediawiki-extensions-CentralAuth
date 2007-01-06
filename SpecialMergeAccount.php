@@ -82,9 +82,7 @@ class SpecialMergeAccount extends SpecialPage {
 			$wgOut->addHtml( $this->listRemainder( $remainder ) );
 			
 			// Try the password form!
-			if( !$this->mAdminMode ) {
-				$wgOut->addHtml( $this->passwordForm() );
-			}
+			$wgOut->addHtml( $this->passwordForm() );
 		}
 	}
 	

@@ -75,6 +75,12 @@ $wgCentralAuthMessages['en'] = array(
 	
 	// Administrator's console
 	'centralauth' => 'Unified login administration',
+	'centralauth-admin-manage' =>
+		'Manage user data',
+	'centralauth-admin-username' =>
+		'User name:',
+	'centralauth-admin-lookup' =>
+		'View or edit user data',
 	'centralauth-admin-permission' =>
 		"Only stewards may merge other people's accounts for them.",
 	'centralauth-admin-unmerge' =>
