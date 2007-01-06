@@ -100,8 +100,8 @@ class SpecialCentralAuth extends SpecialPage {
 		
 		$name = $this->mUserName;
 		$id = $globalUser->exists() ? $globalUser->getId() : "unified account not registered";
-		$merged = $globalUser->listAttached();
-		$remainder = $globalUser->listUnattached();
+		$merged = $globalUser->queryAttached();
+		$remainder = $globalUser->queryUnattached();
 		
 		global $wgOut;
 		if( $globalUser->exists() ) {
@@ -121,17 +121,18 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 	}
 
-	function listMerged( $dblist ) {
-		return $this->listForm( $dblist, 'unmerge', wfMsg( 'centralauth-admin-unmerge' ) );
+	function listMerged( $list ) {
+		return $this->listForm( $list, 'listMergedWikiItem',
+			'unmerge', wfMsg( 'centralauth-admin-unmerge' ) );
 	}
 	
-	function listRemainder( $dblist ) {
-		return $this->listForm( $dblist, 'admin', wfMsg( 'centralauth-admin-merge' ) );
+	function listRemainder( $list ) {
+		return $this->listForm( $list, 'listRemainingWikiItem',
+		 	'admin', wfMsg( 'centralauth-admin-merge' ) );
 	}
 	
-	function listForm( $dblist, $action, $buttonText ) {
-		$list = $this->listWikis( $dblist );
-		
+	function listForm( $list, $listMethod, $action, $buttonText ) {
+		ksort( $list );
 		return
 			Xml::openElement( 'form',
 				array(
@@ -139,8 +140,14 @@ class SpecialCentralAuth extends SpecialPage {
 					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
 			'<table>' .
+			'<thead>' .
+			$this->tableRow( 'th',
+				array( '', 'Local wiki', 'User ID', 'Attached on', 'Method' ) ) .
+			'</thead>' .
 			'<tbody>' .
-			$list .
+			implode( "\n",
+				array_map( array( $this, $listMethod ),
+				 	$list ) ) .
 			'<tr>' .
 			'<td></td>' .
 			'<td>' .
@@ -152,23 +159,34 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::closeElement( 'form' );
 	}
 	
-	function listWikis( $list ) {
-		asort( $list );
-		return implode( "\n",
-			array_map( array( $this, 'listWikiItem' ),
-			 	$list ) );
+	function listMergedWikiItem( $row ) {
+		global $wgLang;
+		return $this->tableRow( 'td',
+			array(
+				$this->adminCheck( $row['dbName'] ),
+				$this->foreignUserLink( $row['dbName'] ),
+				htmlspecialchars( $wgLang->formatNum( intval( $row['localId'] ) ) ),
+				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ),
+				htmlspecialchars( $row['attachedMethod'] ),
+			)
+		);
 	}
 	
-	function listWikiItem( $dbname ) {
-		return
-			'<tr>' .
-			'<td>' .
-			$this->adminCheck( $dbname ) .
-			'</td>' .
-			'<td>' .
-			$this->foreignUserLink( $dbname ) .
-			'</td>' .
-			'</tr>';
+	function listRemainingWikiItem( $row ) {
+		global $wgLang;
+		return $this->tableRow( 'td',
+			array(
+				$this->adminCheck( $row['dbName'] ),
+				$this->foreignUserLink( $row['dbName'] ),
+				htmlspecialchars( $wgLang->formatNum( intval( $row['localId'] ) ) ),
+			)
+		);
+	}
+	
+	function tableRow( $element, $cols ) {
+		return "<tr><$element>" .
+			implode( "</$element><$element>", $cols ) .
+			"</$element></tr>";
 	}
 	
 	function foreignUserLink( $dbname ) {

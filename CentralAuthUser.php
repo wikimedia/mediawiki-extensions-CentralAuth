@@ -527,6 +527,60 @@ class CentralAuthUser {
 	}
 	
 	/**
+	 * Fetch a list of database where this account has been successfully
+	 * attached.
+	 *
+	 * @return array database name strings
+	 */
+	public function queryAttached() {
+		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		
+		$result = $dbw->select(
+			array( self::tableName( 'localuser' ) ),
+			array(
+				'lu_dbname',
+				'lu_local_id',
+				'lu_attached_timestamp',
+				'lu_attached_method' ),
+			array( 'lu_global_id' => $this->getId() ),
+			__METHOD__ );
+		
+		$dbs = array();
+		while( $row = $dbw->fetchObject( $result ) ) {
+			$dbs[$row->lu_dbname] = array(
+				'dbName' => $row->lu_dbname,
+				'localId' => intval( $row->lu_local_id ),
+				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
+					 $row->lu_attached_timestamp ),
+				'attachedMethod' => $row->lu_attached_method,
+			);
+		}
+		$dbw->freeResult( $result );
+		
+		return $dbs;
+	}
+	
+	/**
+	 * Find any remaining migration records for this username
+	 * which haven't gotten attached to some global account.
+	 *
+	 * Formatted as associative array with some data.
+	 */
+	public function queryUnattached() {
+		$rows = $this->fetchUnattached();
+		
+		$items = array();
+		foreach( $rows as $row ) {
+			$items[$row->mu_dbname] = array(
+				'dbName' => $row->mu_dbname,
+				'localId' => intval( $row->mu_local_id ),
+			);
+		}
+		
+		return $items;
+	}
+	
+	/**
 	 * Find any remaining migration records for this username
 	 * which haven't gotten attached to some global account.
 	 */
