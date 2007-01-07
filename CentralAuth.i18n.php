@@ -172,6 +172,12 @@ $wgCentralAuthMessages['de'] = array(
 	
 	// Administrator's console
 	'centralauth' => 'Verwaltung der Benutzerkonten-Zusammenführung',
+	'centralauth-admin-manage' =>
+		'Benutzerdaten verwalten',
+	'centralauth-admin-username' =>
+		'Benutzername:',
+	'centralauth-admin-lookup' =>
+		'Benutzerdaten ansehen oder bearbeiten',
 	'centralauth-admin-permission' =>
 		"Die Zusammenführung von Benutzerkonten für andere Benutzer kann nur durch Stewards erfolgen.",
 	'centralauth-admin-unmerge' =>
