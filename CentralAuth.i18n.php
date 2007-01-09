@@ -223,7 +223,7 @@ $wgCentralAuthMessages['fr'] = array(
 		'les langages.',
 	'centralauth-not-owner-text' =>
 		'Le compte utilisateur "$1" a été automatiquement assigné au '.
-		"propriétaire du compte sur $3.\n" .
+		"propriétaire du compte sur $2.\n" .
 		"\n" .
 		'Si c\'est vous, vous pourrez terminer le process d\'unification de '.
 		'compte en tapant le mot de passe maître pour ce compte sur :',
@@ -234,7 +234,7 @@ $wgCentralAuthMessages['fr'] = array(
 	
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
-		'Les comptes utilisateurs nommés "$1" ont été réunis pour les sites suivants : ',
+		'Les comptes utilisateurs nommés "$1" ont été réunis pour les sites suivants :',
 	'centralauth-list-unmerged' =>
 		'Le compte utilisateur "$1 ne peut être confirmé automatiquement ' .
 		'pour les sites qui suivent; ils ont probablement un mot de passe '.
@@ -372,13 +372,13 @@ $wgCentralAuthMessages['sk'] = array(
                'Teraz sa môžete prihlásiť na ľubovoľnú wiki nadácie Wikimedia bez toho, aby ste ' .
                'si museli vytvárať nový účet; rovnaké užívateľské meno a heslo bude fungovať na ' .
                'projektoch Wikipedia, Wiktionary, Wikibooks a ďalších sesterských projektoch ' .
-               'vo všetkých jazykoch. ',
+               'vo všetkých jazykoch.',
        'centralauth-incomplete-text' =>
                'Potom, ako budú vaše účty zjednotené sa budete môcť prihlásiť ' .
                'na ľubovoľnú wiki nadácie Wikimedia bez toho, aby ste si museli vytvárat ďalší účet; ' .
                'rovnaké užívateľské meno a heslo bude fungovať na ' .
                'projektoch Wikipedia, Wiktionary, Wikibooks a ďalších sesterských projektoch ' .
-               'vo všetkých jazykoch. ',
+               'vo všetkých jazykoch.',
        'centralauth-not-owner-text' =>
                'Užívateľské meno "$1" bolo automaticky priradené vlastníkovi ' .
                "účtu na projekte $2.\n" .
@@ -941,7 +941,7 @@ $wgCentralAuthMessages['zh-yue'] = array(
 		'好有可能佢哋嘅密碼' .
 		'同你嘅主戶口唔同：',
 	'centralauth-foreign-link' =>
-		'響 $2 嘅用戶 $1 ',
+		'響 $2 嘅用戶 $1',
 	
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
