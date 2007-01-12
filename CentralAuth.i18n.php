@@ -495,9 +495,23 @@ $wgCentralAuthMessages['pt'] = array(
 		"'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
 
 	// Administrator's console
+	'centralauth' => 'Unified login administration',
+	'centralauth-admin-manage' =>
+		'Manusear dados de utilizador',
+	'centralauth-admin-username' =>
+		'Utilizador:',
+	'centralauth-admin-lookup' =>
+		'Ver ou editar dados de utilizador',
 	'centralauth-admin-permission' =>
 		"Apenas stewards podem fundir as contas de outras pessoas.",
- 
+	'centralauth-admin-unmerge' =>
+		'Desfazer a fusão nos seleccionados',
+	'centralauth-admin-merge' =>
+		'Fundir seleccionados',
+	
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'ID de conta unificada:',
 );
 
 $wgCentralAuthMessages['pt-br'] = array(
@@ -572,9 +586,23 @@ $wgCentralAuthMessages['pt-br'] = array(
 		"'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
 
 	// Administrator's console
+	'centralauth' => 'Unified login administration',
+	'centralauth-admin-manage' =>
+		'Manusear dados de utilizador',
+	'centralauth-admin-username' =>
+		'Utilizador:',
+	'centralauth-admin-lookup' =>
+		'Ver ou editar dados de usuário',
 	'centralauth-admin-permission' =>
 		"Apenas stewards podem fundir as contas de outras pessoas.",
- 
+	'centralauth-admin-unmerge' =>
+		'Desfundir os selecionados',
+	'centralauth-admin-merge' =>
+		'Fundir os selecionados',
+	
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'ID de conta unificada:',
 );
 
 $wgCentralAuthMessages['de'] = array(
