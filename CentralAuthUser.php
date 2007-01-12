@@ -118,9 +118,11 @@ class CentralAuthUser {
 	}
 	
 	/**
-	 * this code is crapper
+	 * Register a new, not previously existing, central user account
+	 * Remaining fields are expected to be filled out shortly...
+	 * eeeyuck
 	 */
-	function register( $password ) {
+	function register( $password, $email, $realname ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		$ok = $dbw->insert(
@@ -128,7 +130,7 @@ class CentralAuthUser {
 			array(
 				'gu_name'  => $this->mName,
 				
-				'gu_email' => null, // FIXME
+				'gu_email' => $email, // FIXME
 				'gu_email_authenticated' => null, // FIXME
 				
 				'gu_salt'     => $salt,

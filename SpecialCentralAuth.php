@@ -107,10 +107,10 @@ class SpecialCentralAuth extends SpecialPage {
 		if( $globalUser->exists() ) {
 			$wgOut->addWikiText( "User id: $id" );
 			
-			$wgOut->addWikiText( "<h2>Fully merged accounts:</h2>" );
+			$wgOut->addWikiText( "<h2>Fully merged accounts</h2>" );
 			$wgOut->addHtml( $this->listMerged( $merged ) );
 		
-			$wgOut->addWikiText( "<h2>Unattached accounts:</h2>" );
+			$wgOut->addWikiText( "<h2>Unattached accounts</h2>" );
 			if( $remainder ) {
 				$wgOut->addHtml( $this->listRemainder( $remainder ) );
 			} else {

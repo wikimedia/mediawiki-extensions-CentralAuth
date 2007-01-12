@@ -112,16 +112,21 @@ class CentralAuthPlugin extends AuthPlugin {
 
 	/**
 	 * Add a user to the external authentication database.
+	 * E-mail and real name addresses are provided by the
+	 * registering user, and may or may not be accepted.
+	 *
 	 * Return true if successful.
 	 *
-	 * @param User $user
+	 * @param User $user - only the name should be assumed valid at this point
 	 * @param string $password
+	 * @param string $email
+	 * @param string $realname
 	 * @return bool
 	 * @public
 	 */
-	function addUser( $user, $password ) {
+	function addUser( $user, $password, $email='', $realname='' ) {
 		$global = new CentralAuthUser( $user->getName() );
-		return $global->register( $password );
+		return $global->register( $password, $email, $realname );
 	}
 
 
