@@ -424,6 +424,186 @@ $wgCentralAuthMessages['sk'] = array(
 
 );
 
+$wgCentralAuthMessages['sr-ec'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Статус уједињења налога',
+	'centralauth-merge-notlogged' =>
+		'Молимо вас да се <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} пријавите]' .
+		'</span> како бисте проверили да ли је ваш налог спојен успешно.',
+	
+	// Big text on completion
+	'centralauth-complete' =>
+		'Спајање налога завршено!',
+	'centralauth-incomplete' =>
+		'Спајање налога није завршено!',
+	
+	// Wheeee
+	'centralauth-complete-text' =>
+		'Сада се можете пријавити на било који Викимедијин вики сајт без прављења' .
+		'новог налога; исто корисничко име и лозинка ће свугде радити ' .
+		'Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти ' .
+		'на свим језицима.',
+	'centralauth-incomplete-text' =>
+		'Када једном спојите налог, можете се пријавити ' .
+		'на било који Викимедијин вики сајт без прављења; ' .
+		'the same username and password will work on ' .
+		'Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти ' .
+		'на свим језицима.',
+	'centralauth-not-owner-text' =>
+		'Корисничко име "$1" је аутоматски додељено власнику ' .
+		"налога на $2.\n" .
+		"\n" .
+		"Уколико сте ово ви, можете једноставно завршити процес спајања " .
+		"уписујући лозинку за налог овде::",
+	
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Прочитајте више о '''спајању налога''']]...''",
+	
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'Налог "$1" на следећим сајтовима ' .
+		'је аутоматски спојен:',
+	'centralauth-list-unmerged' =>
+		'Налог "$1" се не може аутоматски потврдити ' .
+		'да припада вама на следећим сајтовима; ' .
+		'највероватније имају различите лозинке него ваш ' .
+		'примаран налог:',
+	'centralauth-foreign-link' =>
+		'Корисник $1 на $2',
+	
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Заврши спајање',
+	'centralauth-finish-text' =>
+		'Уколико ови налози припадају вама, можете завршити ' .
+		'процес спајања налога уписујући лозинку ' .
+		'за остале налоге овде:',
+	'centralauth-finish-password' =>
+		'Лозинка:',
+	'centralauth-finish-login' =>
+		'Пријава',
+	'centralauth-finish-send-confirmation' =>
+		'Пошаљи лозинку на е-пошту',
+	'centralauth-finish-problems' =>
+		"Имате проблем, или ви нисте власник осталих налога? " .
+		"[[meta:Help:Unified login problems|Помоћ]]...",
+	
+	'centralauth-merge-attempt' =>
+		"'''Провера унете лозинке наспрам осталих налога који још нису спојени......'''",
+	
+	// Administrator's console
+	'centralauth' => 'Администрација спајања налога',
+	'centralauth-admin-manage' =>
+		'Надгледање корисничких података',
+	'centralauth-admin-username' =>
+		'Корисничко име:',
+	'centralauth-admin-lookup' =>
+		'Преглед или измена корисничких података',
+	'centralauth-admin-permission' =>
+		"Само стјуарди могу да споје остале корисничке налоге за њих.",
+	'centralauth-admin-unmerge' =>
+		'Одвоји селектоване',
+	'centralauth-admin-merge' =>
+		'Споји селектоване',
+	
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'Јединствен ID налога:',
+);
+
+$wgCentralAuthMessages['sr-el'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Status ujedinjenja naloga',
+	'centralauth-merge-notlogged' =>
+		'Molimo vas da se <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prijavite]' .
+		'</span> kako biste proverili da li je vaš nalog spojen uspešno.',
+	
+	// Big text on completion
+	'centralauth-complete' =>
+		'Spajanje naloga završeno!',
+	'centralauth-incomplete' =>
+		'Spajanje naloga nije završeno!',
+	
+	// Wheeee
+	'centralauth-complete-text' =>
+		'Sada se možete prijaviti na bilo koji Vikimedijin viki sajt bez pravljenja' .
+		'novog naloga; isto korisničko ime i lozinka će svugde raditi ' .
+		'Vikipedija, Vikirečnik, Vikiknjige, i njihovi ostali bratski projekti ' .
+		'na svim jezicima.',
+	'centralauth-incomplete-text' =>
+		'Kada jednom spojite nalog, možete se prijaviti ' .
+		'na bilo koji Vikimedijin viki sajt bez pravljenja; ' .
+		'the same username and password will work on ' .
+		'Vikipedija, Vikirečnik, Vikiknjige, i njihovi ostali bratski projekti ' .
+		'na svim jezicima.',
+	'centralauth-not-owner-text' =>
+		'Korisničko ime "$1" je automatski dodeljeno vlasniku ' .
+		"naloga na $2.\n" .
+		"\n" .
+		"Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja " .
+		"upisujući lozinku za nalog ovde::",
+	
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Pročitajte više o '''spajanju naloga''']]...''",
+	
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'Nalog "$1" na sledećim sajtovima ' .
+		'je automatski spojen:',
+	'centralauth-list-unmerged' =>
+		'Nalog "$1" se ne može automatski potvrditi ' .
+		'da pripada vama na sledećim sajtovima; ' .
+		'najverovatnije imaju različite lozinke nego vaš ' .
+		'primaran nalog:',
+	'centralauth-foreign-link' =>
+		'Korisnik $1 na $2',
+	
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Završi spajanje',
+	'centralauth-finish-text' =>
+		'Ukoliko ovi nalozi pripadaju vama, možete završiti ' .
+		'proces spajanja naloga upisujući lozinku ' .
+		'za ostale naloge ovde:',
+	'centralauth-finish-password' =>
+		'Lozinka:',
+	'centralauth-finish-login' =>
+		'Prijava',
+	'centralauth-finish-send-confirmation' =>
+		'Pošalji lozinku na e-poštu',
+	'centralauth-finish-problems' =>
+		"Imate problem, ili vi niste vlasnik ostalih naloga? " .
+		"[[meta:Help:Unified login problems|Pomoć]]...",
+	
+	'centralauth-merge-attempt' =>
+		"'''Provera unete lozinke naspram ostalih naloga koji još nisu spojeni......'''",
+	
+	// Administrator's console
+	'centralauth' => 'Administracija spajanja naloga',
+	'centralauth-admin-manage' =>
+		'Nadgledanje korisničkih podataka',
+	'centralauth-admin-username' =>
+		'Korisničko ime:',
+	'centralauth-admin-lookup' =>
+		'Pregled ili izmena korisničkih podataka',
+	'centralauth-admin-permission' =>
+		"Samo stjuardi mogu da spoje ostale korisničke naloge za njih.",
+	'centralauth-admin-unmerge' =>
+		'Odvoji selektovane',
+	'centralauth-admin-merge' =>
+		'Spoji selektovane',
+	
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'Jedinstven ID naloga:',
+);
+
 $wgCentralAuthMessages['pt'] = array(
 	// When not logged in...
 	'mergeaccount' =>
