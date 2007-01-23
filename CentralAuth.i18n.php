@@ -365,7 +365,7 @@ $wgCentralAuthMessages['sk'] = array(
        'centralauth-complete' =>
                'Zjednotenie prihlasovacích účtov dokončené!',
        'centralauth-incomplete' =>
-               'Zjednotenie prihlasovacích účtov nedokončené!',
+               'Zjednotenie prihlasovacích účtov nebolo dokončené!',
 
        // Wheeee
        'centralauth-complete-text' =>
@@ -422,6 +422,25 @@ $wgCentralAuthMessages['sk'] = array(
        'centralauth-merge-attempt' =>
                "'''Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...'''",
 
+	// Administrator's console
+	'centralauth' => 'Administrácia zjednoteného prihlasovania',
+	'centralauth-admin-manage' =>
+		'Správa údajov o používateľoch',
+	'centralauth-admin-username' =>
+		'POužívateľské meno:',
+	'centralauth-admin-lookup' =>
+		'Zobraziť alebo upravovať údaje o používateľovi',
+	'centralauth-admin-permission' =>
+		"Iba stewardi môžu za druhých ľudí zlučovať ich účty.",
+	'centralauth-admin-unmerge' =>
+		'Oddelenie zvolených',
+	'centralauth-admin-merge' =>
+		'Zlúčenie zvolených',
+	
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'ID zjednoteného účtu:',
+		
 );
 
 $wgCentralAuthMessages['sr-ec'] = array(
