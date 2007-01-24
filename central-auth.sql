@@ -1,3 +1,11 @@
+
+-- -- Some example steps for creating a new database for testing this:
+-- CREATE DATABASE centralauth;
+-- USE centralauth;
+-- GRANT all on centralauth.* to 'wikiuser'@'localhost';
+-- source central-auth.sql
+-- source sample-data.sql
+
 --
 -- Global account data.
 --
@@ -96,3 +104,5 @@ CREATE TABLE migrateuser (
   unique key (mu_dbname, mu_name),
   key (mu_name, mu_dbname)
 ) TYPE=InnoDB;
+
+-- Q: any point adding autoincrement keys to localuser or migrateuser?

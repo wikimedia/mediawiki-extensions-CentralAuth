@@ -48,6 +48,7 @@ class WikiReference {
 		} else {
 			throw new MWException( "wtf" );
 		}
+		// Q: Could it happen that they're using https:// ?
 	}
 	
 	/**

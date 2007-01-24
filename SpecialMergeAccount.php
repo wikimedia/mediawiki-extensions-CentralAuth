@@ -1,5 +1,12 @@
 <?php
 
+$wgExtensionCredits['specialpage'][] = array(
+        'name' => 'MergeAccount',
+        'author' => 'Brion Vibber',
+        'url' => 'http://meta.wikimedia.org/wiki/H:UL',
+        'description' => 'Merges multiple accounts for Single User Login',
+);
+
 class SpecialMergeAccount extends SpecialPage {
 	
 	function __construct() {
@@ -49,6 +56,7 @@ class SpecialMergeAccount extends SpecialPage {
 				$this->mPassword,
 				$merged,
 				$remainder );
+			// if ( ! $ok ) ....
 		} else {
 			$merged = array();
 			$remainder = $globalUser->listUnattached();
@@ -94,7 +102,7 @@ class SpecialMergeAccount extends SpecialPage {
 		return $this->listForm( $dblist, 'admin', wfMsg( 'centralauth-admin-merge' ) );
 	}
 	
-	function listForm( $dblist, $action, $buttonText ) {
+	function listForm( $dblist  /* Params not used: , $action, $buttonText */ ) {
 		$list = $this->listWikis( $dblist );
 		
 		return $list;
@@ -103,7 +111,6 @@ class SpecialMergeAccount extends SpecialPage {
 	function listWikis( $list ) {
 		asort( $list );
 		return $this->formatList( $list, array( $this, 'listWikiItem' ) );
-		return $out;
 	}
 	
 	function formatList( $items, $callback ) {

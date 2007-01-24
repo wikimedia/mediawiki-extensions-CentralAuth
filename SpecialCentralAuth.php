@@ -66,6 +66,8 @@ class SpecialCentralAuth extends SpecialPage {
 				// complain
 				die( 'noooo' );
 			}
+			
+			// if (! $ok) { ....
 		} else {
 			$merged = $globalUser->listAttached();
 			$remainder = $globalUser->listUnattached();
@@ -98,7 +100,6 @@ class SpecialCentralAuth extends SpecialPage {
 	function showInfo() {
 		$globalUser = new CentralAuthUser( $this->mUserName );
 		
-		$name = $this->mUserName;
 		$id = $globalUser->exists() ? $globalUser->getId() : "unified account not registered";
 		$merged = $globalUser->queryAttached();
 		$remainder = $globalUser->queryUnattached();

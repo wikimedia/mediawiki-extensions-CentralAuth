@@ -13,10 +13,16 @@ likely construction types...
 
 
 class CentralAuthUser {
+	
+	/**
+	 * The username of the current user.
+	 */
+	private $mName;
+	
 	/**
 	 * Look up the global user entry for the given local User object
 	 */
-	static function newFromUser( User $user ) {
+	public static function newFromUser( User $user ) {
 		global $wgDBname;
 		return CentralAuthUser::newFromLocal( $wgDBname, $user->getId() );
 	}
@@ -46,6 +52,7 @@ class CentralAuthUser {
 	
 	/**
 	 * Return the global user object for a given username.
+	 * @todo - Not called currently, maybe delete? Get same functionality from the constructor anyway.
 	 */
 	function newFromName( $username ) {
 		return new CentralAuthUser( $username );
@@ -55,7 +62,7 @@ class CentralAuthUser {
 		$this->mName = $username;
 	}
 	
-	static function tableName( $name ) {
+	public static function tableName( $name ) {
 		global $wgCentralAuthDatabase;
 		return
 			'`' .
@@ -67,8 +74,10 @@ class CentralAuthUser {
 	
 	/**
 	 * this code is crap
+	 * Q: Can we cache the result of this in a $this->mId field, and have it default to null/false, and 
+	 *    repeat the query if the result is null/false (such as when called twice in self::lazyMigrate() ).
 	 */
-	function getId() {
+	public function getId() {
 		$dbr = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$id = $dbr->selectField(
 			self::tableName( 'globaluser' ),
@@ -88,7 +97,7 @@ class CentralAuthUser {
 			if( !$id ) {
 				// Global accounts may not all be in place yet.
 				// Try automerging first, then check again.
-				$migrated = $this->attemptAutoMigration();
+				$migrated = $this->attemptAutoMigration(); // $migrated return val not used.
 				$id = $this->getId();
 				if( $id ) {
 					wfDebugLog( 'CentralAuth',
@@ -169,15 +178,21 @@ class CentralAuthUser {
 			),
 			__METHOD__,
 			array( 'IGNORE' ) );
-		wfDebugLog( 'CentralAuth',
-			"stored migration data for '$row->user_name' on $dbname" );
+		if( $ok ) {
+			wfDebugLog( 'CentralAuth',
+				"stored migration data for '$row->user_name' on $dbname" );
+		} else {
+			wfDebugLog( 'CentralAuth',
+				"failed to store migration data for '$row->user_name' on $dbname" );
+		}
 	}
 	
 	/**
 	 * For use in migration pass one.
 	 * Store global user data in the auth server's main table.
+	 * @return bool Whether we were successful or not.
 	 */
-	function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
+	private function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$dbw->insert( self::tableName( 'globaluser' ),
 			array(
@@ -193,7 +208,7 @@ class CentralAuthUser {
 		return $dbw->affectedRows() != 0;
 	}
 	
-	function storeAndMigrate() {
+	public function storeAndMigrate() {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$dbw->begin();
 		
@@ -206,8 +221,9 @@ class CentralAuthUser {
 	/**
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
+	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	function attemptAutoMigration() {
+	private function attemptAutoMigration() {
 		$rows = $this->queryUnattached();
 		
 		if( !$rows ) {
@@ -311,7 +327,7 @@ class CentralAuthUser {
 	 *                   unattached after the operation
 	 * @return bool true if all accounts are migrated at the end
 	 */
-	function attemptPasswordMigration( $password, &$migrated=null, &$remaining=null ) {
+	public function attemptPasswordMigration( $password, &$migrated=null, &$remaining=null ) {
 		$rows = $this->queryUnattached();
 		
 		if( count( $rows ) == 0 ) {
@@ -324,7 +340,7 @@ class CentralAuthUser {
 		$remaining = array();
 		
 		// Look for accounts we can match by password
-		foreach( $rows as $key => $row ) {
+		foreach( $rows as $row ) {
 			$db = $row['dbName'];
 			if( $this->matchHash( $password, $row['localId'], $row['password'] ) ) {
 				wfDebugLog( 'CentralAuth',
@@ -349,7 +365,7 @@ class CentralAuthUser {
 		return false;
 	}
 	
-	private function validateList( $list ) {
+	private static function validateList( $list ) {
 		global $wgLocalDatabases;
 		
 		$unique = array_unique( $list );
@@ -409,7 +425,7 @@ class CentralAuthUser {
 	 * Prerequisites:
 	 * - completed migration state
 	 */
-	function attach( $dbname, $localid, $method='new' ) {
+	public function attach( $dbname, $localid, $method='new' ) {
 		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
 		$dbw->insert( self::tableName( 'localuser' ),
 			array(
@@ -426,7 +442,8 @@ class CentralAuthUser {
 	/**
 	 * Attempt to authenticate the global user account with the given password
 	 * @param string $password
-	 * @return ("ok", "no user", "locked", "bad password")
+	 * @return string status, one of: "ok", "no user", "locked", or "bad password".
+	 * @todo Currently only the "ok" result is used (i.e. either use, or return a bool).
 	 */
 	public function authenticate( $password ) {
 		$this->lazyMigrate();
@@ -658,7 +675,7 @@ class CentralAuthUser {
 	 * @param string $password plaintext
 	 * @return array of strings, salt and hash
 	 */
-	function saltedPassword( $password ) {
+	private function saltedPassword( $password ) {
 		$salt = mt_rand( 0, 1000000 );
 		$hash = wfEncryptPassword( $salt, $password );
 		return array( $salt, $hash );
@@ -666,6 +683,7 @@ class CentralAuthUser {
 	
 	/**
 	 * Set the account's password
+	 * @param string $password plaintext
 	 */
 	function setPassword( $password ) {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
@@ -681,6 +699,7 @@ class CentralAuthUser {
 			),
 			__METHOD__ );
 		
+		// if ( $result ) { ...
 		wfDebugLog( 'CentralAuth',
 			"Set global password for '$this->mName'" );
 		return true;

@@ -203,7 +203,7 @@ On registration request:
         -> update local lock state, email, email confirmation
         -> successful login.
 
-See the diagramms made using dia ( http://www.gnome.org/projects/dia ):
+See the diagrams made using dia ( http://www.gnome.org/projects/dia ):
   - login.dia
   - registration.dia
 

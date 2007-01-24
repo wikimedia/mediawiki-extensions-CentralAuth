@@ -28,9 +28,9 @@ $wgCentralAuthAutoMigrate = false;
 $wgCentralAuthStrict = false;
 
 
-// -----
-// initialization work...
-
+/**
+ * Initialization of the autoloaders, and special extension pages.
+ */
 $caBase = dirname( __FILE__ );
 $wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/SpecialCentralAuth.php";
 $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/SpecialMergeAccount.php";
@@ -45,16 +45,15 @@ $wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
 
 $wgGroupPermissions['steward']['centralauth-admin'] = true;
 
+$wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
+$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
+
 function wfSetupCentralAuth() {
 	require dirname( __FILE__ ) . '/CentralAuth.i18n.php';
 	global $wgCentralAuthMessages, $wgMessageCache;
 	foreach( $wgCentralAuthMessages as $key => $messages ) {
 		$wgMessageCache->addMessages( $messages, $key );
 	}
-	
-	global $wgSpecialPages;
-	$wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
-	$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 }
 
 function wfSetupCentralAuthPlugin( &$auth ) {
@@ -80,7 +79,7 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	$global = CentralAuthUser::newFromUser( $wgUser );
 	if( $global ) {
 		// Local is attached...
-		$attached = count( $global->listAttached() );
+		$attached = count( $global->listAttached() );  // $attached var not used.
 		$unattached = count( $global->listUnattached() );
 		if( $unattached ) {
 			// Migration incomplete
