@@ -17,7 +17,7 @@ CREATE TABLE globaluser (
   
   -- Salt and hashed password
   gu_salt char(16), -- or should this be an int? usually the old user_id
-  gu_password char(32),
+  gu_password tinyblob,
   
   -- If true, this account cannot be used to log in on any wiki.
   gu_locked bool not null default 0,
@@ -30,13 +30,12 @@ CREATE TABLE globaluser (
   gu_registration char(14) binary,
   
   -- Random key for password resets
-  gu_password_reset_key char(32),
+  gu_password_reset_key tinyblob,
   gu_password_reset_expiration char(14) binary,
   
   primary key (gu_id),
   unique key (gu_name),
-  key (gu_email),
-  key (gu_password_reset_key)
+  key (gu_email)
 ) TYPE=InnoDB;
 
 
@@ -74,10 +73,13 @@ CREATE TABLE localuser (
   unique key (lu_global_id, lu_dbname)
 ) TYPE=InnoDB;
 
---
+
 -- Migration state table
 --
--- Fields copied from local wikis, used for migration checks...
+-- Lists registered usernames on various wikis, used to optimize migration
+-- checks by only having to check dbs where the name is actually registered.
+--
+-- May be batch-initialized and/or lazy-initialized.
 -- Once migration is complete, this data can be ignored/discarded.
 --
 CREATE TABLE migrateuser (
@@ -89,23 +91,6 @@ CREATE TABLE migrateuser (
   
   -- Username at migration time
   mu_name varchar(255) binary,
-  
-  -- User'd old password hash; salt is lu_id
-  mu_password varchar(255) binary,
-  
-  -- The user_email and user_email_authenticated state from local wiki
-  mu_email varchar(255) binary,
-  mu_email_authenticated char(14) binary,
-  
-  -- A count of revisions and/or other actions made during migration
-  -- May be null if it hasn't yet been checked
-  mu_editcount int,
-  
-  -- True if user was blocked...
-  mu_blocked bool,
-  
-  -- True if user has admin privs...
-  mu_admin bool,
   
   primary key (mu_dbname, mu_local_id),
   unique key (mu_dbname, mu_name),

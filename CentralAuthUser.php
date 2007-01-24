@@ -166,10 +166,6 @@ class CentralAuthUser {
 				'mu_dbname'              => $dbname,
 				'mu_local_id'            => $row->user_id,
 				'mu_name'                => $row->user_name,
-				'mu_password'            => $row->user_password,
-				'mu_email'               => $row->user_email,
-				'mu_email_authenticated' => $row->user_email_authenticated,
-				'mu_editcount'           => $row->user_editcount,
 			),
 			__METHOD__,
 			array( 'IGNORE' ) );
@@ -212,7 +208,7 @@ class CentralAuthUser {
 	 * @fixme add some locking or something
 	 */
 	function attemptAutoMigration() {
-		$rows = $this->fetchUnattached();
+		$rows = $this->queryUnattached();
 		
 		if( !$rows ) {
 			wfDebugLog( 'CentralAuth',
@@ -227,33 +223,35 @@ class CentralAuthUser {
 		// We have to pick a master account
 		// The winner is the one with the most edits, usually
 		foreach( $rows as $row ) {
-			if( $row->mu_editcount > $max ) {
+			if( $row['editCount'] > $max ) {
 				$winner = $row;
-				$max = $row->mu_editcount;
+				$max = $row['editCount'];
 			}
 		}
 		if( !isset( $winner ) ) {
-			var_dump( $rows );
-			die();
+			throw new MWException( "Logic error in migration: " .
+				"Unable to determine primary account for $this->mName" );
 		}
 		
 		// If the primary account has an e-mail address set,
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
-		$winningMail = ($winner->mu_email == ''
+		$winningMail = ($winner['email'] == ''
 			? false
-			: $winner->mu_email);
+			: $winner['email']);
 		
+		if( $this->mName == 'WikiSysop' ) { var_dump( $rows ); }
 		foreach( $rows as $row ) {
-			if( $row->mu_dbname == $winner->mu_dbname ) {
+			$local = $this->mName . "@" . $row['dbName'];
+			if( $row['dbName'] == $winner['dbName'] ) {
 				// Primary account holder... duh
 				$method = 'primary';
-			} elseif( $row->mu_email === $winningMail ) {
+			} elseif( $row['email'] === $winningMail ) {
 				// Same e-mail as primary means we know they could
 				// reset their password, so we give them the account.
 				$method = 'mail';
-			} elseif( $row->mu_editcount == 0 ) {
+			} elseif( $row['editCount'] == 0 ) {
 				// Unused accounts are fair game for reclaiming
 				$method = 'empty';
 			} else {
@@ -262,16 +260,18 @@ class CentralAuthUser {
 				// If the password matches, it will be automigrated
 				// at next login. If no match, user will have to input
 				// the conflicting password or deal with the conflict.
-				break;
+				wfDebugLog( 'CentralAuth', "unresolvable $local" );
+				continue;
 			}
-			$attach[] = array( $row->mu_dbname, $row->mu_local_id, $method );
+			wfDebugLog( 'CentralAuth', "$method $local" );
+			$attach[] = array( $row['dbName'], $row['localId'], $method );
 		}
 
 		$ok = $this->storeGlobalData(
-				$winner->mu_local_id,
-				$winner->mu_password,
-				$winner->mu_email,
-				$winner->mu_email_authenticated );
+				$winner['localId'],
+				$winner['password'],
+				$winner['email'],
+				$winner['emailAuthenticated'] );
 		
 		if( !$ok ) {
 			wfDebugLog( 'CentralAuth',
@@ -285,7 +285,7 @@ class CentralAuthUser {
 		} else {
 			if( count( $rows ) == 1 ) {
 				wfDebugLog( 'CentralAuth',
-					"Singleton migration for '$this->mName' on $winner->mu_dbname" );
+					"Singleton migration for '$this->mName' on " . $winner['dbName'] );
 			} else {
 				wfDebugLog( 'CentralAuth',
 					"Full automatic migration for '$this->mName'" );
@@ -312,7 +312,7 @@ class CentralAuthUser {
 	 * @return bool true if all accounts are migrated at the end
 	 */
 	function attemptPasswordMigration( $password, &$migrated=null, &$remaining=null ) {
-		$rows = $this->fetchUnattached();
+		$rows = $this->queryUnattached();
 		
 		if( count( $rows ) == 0 ) {
 			wfDebugLog( 'CentralAuth',
@@ -325,15 +325,16 @@ class CentralAuthUser {
 		
 		// Look for accounts we can match by password
 		foreach( $rows as $key => $row ) {
-			if( $this->matchHash( $password, $row->mu_local_id, $row->mu_password ) ) {
+			$db = $row['dbName'];
+			if( $this->matchHash( $password, $row['localId'], $row['password'] ) ) {
 				wfDebugLog( 'CentralAuth',
-					"Attaching '$this->mName' on $row->mu_dbname by password" );
-				$this->attach( $row->mu_dbname, $row->mu_local_id, 'password' );
-				$migrated[] = $row->mu_dbname;
+					"Attaching '$this->mName' on $db by password" );
+				$this->attach( $db, $row['localId'], 'password' );
+				$migrated[] = $db;
 			} else {
 				wfDebugLog( 'CentralAuth',
-					"No password match for '$this->mName' on $row->mu_dbname" );
-				$remaining[] = $row->mu_dbname;
+					"No password match for '$this->mName' on $db" );
+				$remaining[] = $db;
 			}
 		}
 		
@@ -364,17 +365,17 @@ class CentralAuthUser {
 	
 	public function adminAttach( $list, &$migrated=null, &$remaining=null ) {
 		$valid = $this->validateList( $list );
-		$unattached = $this->fetchUnattached();
+		$unattached = $this->queryUnattached();
 		
 		$migrated = array();
 		$remaining = array();
 		
 		foreach( $unattached as $row ) {
-			if( in_array( $row->mu_dbname, $valid ) ) {
-				$this->attach( $row->mu_dbname, $row->mu_local_id, 'admin' );
-				$migrated[] = $row->mu_dbname;
+			if( in_array( $row['dbName'], $valid ) ) {
+				$this->attach( $row['dbName'], $row['localId'], 'admin' );
+				$migrated[] = $row['dbName'];
 			} else {
-				$remaining[] = $row->mu_dbname;
+				$remaining[] = $row['dbName'];
 			}
 		}
 		
@@ -573,13 +574,52 @@ class CentralAuthUser {
 		
 		$items = array();
 		foreach( $rows as $row ) {
-			$items[$row->mu_dbname] = array(
-				'dbName' => $row->mu_dbname,
-				'localId' => intval( $row->mu_local_id ),
+			$db = $row->mu_dbname;
+			$id = intval( $row->mu_local_id );
+			$userData = self::localUserData( $db, $id );
+			if( !is_object( $userData ) ) {
+				throw new MWException("Bad user row looking up local user #$id@$db");
+			}
+			
+			$items[$db] = array(
+				'dbName' => $db,
+				'localId' => $id,
+				'email' => $userData->user_email,
+				'emailAuthenticated' => $userData->user_email_authenticated,
+				'password' => $userData->user_password,
+				'editCount' => $userData->user_editcount,
 			);
 		}
 		
 		return $items;
+	}
+	
+	/**
+	 * Fetch a row of user data needed for migration.
+	 * @todo: work on multi-master clusters!
+	 */
+	protected static function localUserData( $dbname, $id ) {
+		//$db = wfGetForeignDB( $dbname );
+		$db = wfGetDB( DB_MASTER );
+		$row = $db->selectRow( "`$dbname`.user",
+			array(
+				'user_email',
+				'user_email_authenticated',
+				'user_password',
+				'user_editcount' ),
+			array( 'user_id' => $id ),
+			__METHOD__ );
+		
+		// Edit count field may not be initialized...
+		if( $row !== false && is_null( $row->user_editcount ) ) {
+			$row->user_editcount = $db->selectField(
+				"`$dbname`.revision",
+				'COUNT(*)',
+				array( 'rev_user' => $id ),
+				__METHOD__ );
+		}
+		
+		return $row;
 	}
 	
 	/**
