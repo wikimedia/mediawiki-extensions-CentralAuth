@@ -1,7 +1,9 @@
 <?php
 
-// pass 1: go through all usernames in 'localuser' and create 'globaluser' rows
-//         for those that can be automatically migrated, go ahead and do it.
+// pass 1:
+// * generate 'globaluser' entries for each username
+// * go through all usernames in 'migrateuser' and for those
+//   that can be automatically migrated, go ahead and do it.
 
 require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 

@@ -165,25 +165,24 @@ class CentralAuthUser {
 	/**
 	 * For use in migration pass zero.
 	 * Store local user data into the auth server's migration table.
-	 * @fixme batch inserts! this is hella inefficient
+	 * @param string $dbname Source database
+	 * @param array $users Associative array of ids => names
 	 */
-	static function storeMigrationData( $dbname, $row ) {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$ok = $dbw->insert(
-			self::tableName( 'migrateuser' ),
-			array(
-				'mu_dbname'              => $dbname,
-				'mu_local_id'            => $row->user_id,
-				'mu_name'                => $row->user_name,
-			),
-			__METHOD__,
-			array( 'IGNORE' ) );
-		if( $ok ) {
-			wfDebugLog( 'CentralAuth',
-				"stored migration data for '$row->user_name' on $dbname" );
-		} else {
-			wfDebugLog( 'CentralAuth',
-				"failed to store migration data for '$row->user_name' on $dbname" );
+	static function storeMigrationData( $dbname, $users ) {
+		if( $users ) {
+			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$tuples = array();
+			foreach( $users as $id => $name ) {
+				$tuples[] = array(
+					'mu_dbname'   => $dbname,
+					'mu_local_id' => $id,
+					'mu_name'     => $name );
+			}
+			$dbw->insert(
+				self::tableName( 'migrateuser' ),
+				$tuples,
+				__METHOD__,
+				array( 'IGNORE' ) );
 		}
 	}
 	
@@ -257,7 +256,6 @@ class CentralAuthUser {
 			? false
 			: $winner['email']);
 		
-		if( $this->mName == 'WikiSysop' ) { var_dump( $rows ); }
 		foreach( $rows as $row ) {
 			$local = $this->mName . "@" . $row['dbName'];
 			if( $row['dbName'] == $winner['dbName'] ) {
