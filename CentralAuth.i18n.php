@@ -281,7 +281,6 @@ $wgCentralAuthMessages['fr'] = array(
 		'ID compte unifié :',
 );
 
-
 $wgCentralAuthMessages['it'] = array(
 	// When not logged in...
 	'mergeaccount' =>
@@ -353,6 +352,70 @@ $wgCentralAuthMessages['it'] = array(
 		"'''Verifica della password inserita sulle utenze non ancora unificate...'''",
 
 );
+
+$wgCentralAuthMessages['nl'] = array(
+	// When not logged in...
+	'mergeaccount' => 'Status samenvoegen gebruikers',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]' .
+		'</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
+	
+	// Big text on completion
+	'centralauth-complete' => 'Samenvoegen gebruikers afgerond!',
+	'centralauth-incomplete' => 'Samenvoegen gebruikers niet volledig!',
+	
+	// Wheeee
+	'centralauth-complete-text' =>
+		'U kunt nu aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; ' .
+		'dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor ' .
+		'Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
+	'centralauth-incomplete-text' =>
+		'Als uw gebruikers zijn samengevoegd kunt u aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; ' .
+		'dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor ' .
+		'Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
+	'centralauth-not-owner-text' =>
+		'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker ' .
+		"op $2.\n" .
+		"\n" .
+		"Als u dat bent, kunt u het samenvoegen van gebruikers afronden " .
+		"door hier het wachtwoord voor die gebruiker in te geven:",
+	
+	// Appended to various messages above
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lees meer over '''unified login''']]...''",
+	
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
+	'centralauth-list-unmerged' =>
+		'De gebruiker "$1" kon niet automatisch aan u toegewezen worden voor de volgende sites; ' .
+		'waarschijnlijk omdat het wachtwoord afwijkt van uw primaire gebruiker:',
+	'centralauth-foreign-link' => 'Gebruiker $1 op $2',
+	
+	// When not complete, offer to finish...
+	'centralauth-finish-title' => 'Samenvoegen afronden',
+	'centralauth-finish-text' =>
+		'Als deze gebruikers bij u horen, dan kunt u het proces van samenvoegen afronden ' .
+		'door de wachtwoorden voor de andere gebruikers hier in te voeren:',
+	'centralauth-finish-password' => 'Wachtwoord:',
+	'centralauth-finish-login' => 'Gebruikersnaam',
+	'centralauth-finish-send-confirmation' => 'E-mail wachtwoord',
+	'centralauth-finish-problems' =>
+		"Komt u er niet uit of zijn deze gebruikers niet van u? " .
+		"[[meta:Help:Unified login problems|Hoe hulp vinden]]...",
+	
+	'centralauth-merge-attempt' =>
+		"'''Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers...'''",
+	
+	// Administrator's console
+	'centralauth' => 'Beheer unified login',
+	'centralauth-admin-manage' => 'Gebruikersgegeven beheren',
+	'centralauth-admin-username' => 'Gebruikersnaam:',
+	'centralauth-admin-lookup' => 'Gebruikersgegevens bekijken of bewerken',
+	'centralauth-admin-permission' => "Alleen stewards kunnen gebruikers van anderen samenvoegen.",
+	'centralauth-admin-unmerge' => 'Splits geselecteerde gebruikers',
+	'centralauth-admin-merge' => 'Voeg geselecteerde gebruikers samen',
+	
+);
+
 $wgCentralAuthMessages['sk'] = array(
        // When not logged in...
        'mergeaccount' =>
