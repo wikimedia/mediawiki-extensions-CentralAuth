@@ -11,13 +11,13 @@ $wgCentralAuthMessages['en'] = array(
 		'Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]' .
 		'</span> to check if your accounts have been fully merged.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Login unification complete!',
 	'centralauth-incomplete' =>
 		'Login unification not complete!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'You can now log in to any Wikimedia wiki site without creating ' .
@@ -36,11 +36,11 @@ $wgCentralAuthMessages['en'] = array(
 		"\n" .
 		"If this is you, you can finish the login unification process " .
 		"simply by typing the master password for that account here:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Read more about '''unified login''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'The accounts named "$1" on the following sites ' .
@@ -52,7 +52,7 @@ $wgCentralAuthMessages['en'] = array(
 		'primary account:',
 	'centralauth-foreign-link' =>
 		'User $1 on $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Finish merge',
@@ -69,10 +69,10 @@ $wgCentralAuthMessages['en'] = array(
 	'centralauth-finish-problems' =>
 		"Having trouble, or don't own these other accounts? " .
 		"[[meta:Help:Unified login problems|How to find help]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Checking provided password against remaining unmerged accounts...'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Unified login administration',
 	'centralauth-admin-manage' =>
@@ -87,7 +87,7 @@ $wgCentralAuthMessages['en'] = array(
 		'Unmerge selected',
 	'centralauth-admin-merge' =>
 		'Merge selected',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'Unified account ID:',
@@ -101,13 +101,13 @@ $wgCentralAuthMessages['de'] = array(
 		'Bitte <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melden Sie sich an, ]' .
 		'</span> um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Die Zusammenführung der Benutzerkonten ist vollständig.',
 	'centralauth-incomplete' =>
 		'Die Zusammenführung der Benutzerkonten ist unvollständig!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Sie können sich nun auf jeder Wikimedia-Webseite anmelden ' .
@@ -134,12 +134,12 @@ $wgCentralAuthMessages['de'] = array(
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden ' .
 		'Projekten wurden automatisch zusammengeführt:',
- 
+
 	'centralauth-list-unmerged' =>
 		'Das Benutzerkonto „$1“ konnte für die folgenden Projekte ' .
 		'nicht automatisch als zu Ihnen gehörend bestätigt werden; ' .
@@ -148,7 +148,7 @@ $wgCentralAuthMessages['de'] = array(
 
 	'centralauth-foreign-link' =>
 		'Benutzer $1 auf $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Zusammenführung vollenden',
@@ -166,10 +166,10 @@ $wgCentralAuthMessages['de'] = array(
 	'centralauth-finish-problems' =>
 		"Haben Sie Probleme oder gehören Ihnen diese anderen " .
 		"Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier finden Sie Hilfe]]…",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Verwaltung der Benutzerkonten-Zusammenführung',
 	'centralauth-admin-manage' =>
@@ -201,13 +201,13 @@ $wgCentralAuthMessages['fr'] = array(
 		'Merci de bien vouloir <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]' .
 		'</span> pour vérifier que vos comptes ont bien été réunis.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Unification du compte terminée!',
 	'centralauth-incomplete' =>
 		'Unification du compte non terminée!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Vous pouvez maintenant vous connecter sur n\'importe quel site ' .
@@ -227,11 +227,11 @@ $wgCentralAuthMessages['fr'] = array(
 		"\n" .
 		'Si c\'est vous, vous pourrez terminer le process d\'unification de '.
 		'compte en tapant le mot de passe maître pour ce compte sur :',
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Compte unifié|En savoir plus sur le '''compte unifié''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'Les comptes utilisateurs nommés "$1" ont été réunis pour les sites suivants :',
@@ -241,7 +241,7 @@ $wgCentralAuthMessages['fr'] = array(
 		'différent de votre compte maître:',
 	'centralauth-foreign-link' =>
 		'Utilisateur $1 sur $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Compléter l\'unification',
@@ -257,10 +257,10 @@ $wgCentralAuthMessages['fr'] = array(
 	'centralauth-finish-problems' =>
 		'En cas de problème ou si vous ne possédez pas ces autres comptes, ' .
 		'voyez la page [[meta:Help:Unified login problems|How to find help]]...',
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Vérification du mot de passe fournit pour les comptes non réunis...'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Administration comptes unifiés',
 	'centralauth-admin-manage' =>
@@ -275,10 +275,96 @@ $wgCentralAuthMessages['fr'] = array(
 		'Séparer sélection',
 	'centralauth-admin-merge' =>
 		'Réunir sélection',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'ID compte unifié :',
+);
+
+$wgCentralAuthMessages['id'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Status penggabungan log masuk',
+	'centralauth-merge-notlogged' =>
+		'Harap <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} masuk log]' .
+		'</span> untuk mengecek apakah akun Anda telah sepenuhnya digabungkan.',
+
+	// Big text on completion
+	'centralauth-complete' =>
+		'Penggabungan log masuk berhasil!',
+	'centralauth-incomplete' =>
+		'Penggabungan log masuk tidak berhasil!',
+
+	// Wheeee
+	'centralauth-complete-text' =>
+		'Kini Anda dapat masuk log ke situs wiki Wikimedia manapun tanpa membuat ' .
+		'akun baru; nama pengguna dan kata santi yang sama dapat digunakan ' .
+		'di Wikipedia, Wiktionary, Wikibooks, dan proyek-proyek lainnya ' .
+		'dalam semua bahasa.',
+	'centralauth-incomplete-text' =>
+		'Setelah log masuk Anda digabungkan, Anda akan dapat masuk log ke situs ' .
+		'wiki Wikimedia manapun tanpa harus membuat akukn baru; nama pengguna ' .
+		'dan kata sandi yang sama akan dapat digunakan di Wikipedia, Wiktionary, ' .
+		'Wikibooks, dan proyek-proyek lainnya dalam semua bahasa.',
+	'centralauth-not-owner-text' =>
+		'Nama pengguna "$1" diberikan secara otomatis kepada pemilik akun ' .
+		"$2.\n\n" .
+		"Jika ini adalah Anda, Anda dapat menyelesaikan proses penggabungan log masuk " .
+		"dengan hanya mengetikkan kata kunci utama untuk akun tersebut di sini:",
+
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Baca lebih lanjut mengenai '''log masuk gabungan''']]...''",
+
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'Akun "$1" di situs-situs berikut telah digabung secara otomatis: ' ,
+	'centralauth-list-unmerged' =>
+		'Akun "$1" tidak dapat dikonfirmasikan secara otomatis sebagai milik Anda ' .
+		'di situs-situs berikut; kemungkinan besar karena mereka memiliki ' .
+		'kata sandi yang berbeda dengan akun utama Anda:',
+	'centralauth-foreign-link' =>
+		'Pengguna $1 di $2',
+
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Selesaikan penggabungan',
+	'centralauth-finish-text' =>
+		'Jika akun-akun ini miliki Anda, Anda dapat menyelesaikan proses ' .
+		'penggabungan hanya dengan mengetikkan kata sandi untuk akun lain di sini:',
+	'centralauth-finish-password' =>
+		'Kata sandi:',
+	'centralauth-finish-login' =>
+		'Masuk log',
+	'centralauth-finish-send-confirmation' =>
+		'Kirim kata sandi',
+	'centralauth-finish-problems' =>
+		"Ada masalah, atau tidak memiliki akun-akun lain tersebut? " .
+		"[[meta:Help:Unified login problems|Bagaimana mendapat bantuan]]...",
+
+	'centralauth-merge-attempt' =>
+		"'''Mengecek kata sandi yang diberikan terhadap akun-akun yang belum " .
+		"digabungkan...'''",
+
+	// Administrator's console
+	'centralauth' => 'Pengelolaan log masuk gabungan',
+	'centralauth-admin-manage' =>
+		'Atur data pengguna',
+	'centralauth-admin-username' =>
+		'Nama pengguna:',
+	'centralauth-admin-lookup' =>
+		'Lihat atau ubah data pengguna',
+	'centralauth-admin-permission' =>
+		"Hanya steward yang dapat melakukan penggabungan akun orang lain.",
+	'centralauth-admin-unmerge' =>
+		'Batalkan penggabungan akun terpilih',
+	'centralauth-admin-merge' =>
+		'Gabungkan akun terpilih',
+
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'ID akun gabungan:',
 );
 
 $wgCentralAuthMessages['it'] = array(
@@ -289,13 +375,13 @@ $wgCentralAuthMessages['it'] = array(
 		'Si prega di <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} effettuare il login]' .
 		'</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Il processo di unificazione delle utenze è stato completato.',
 	'centralauth-incomplete' =>
 		'Il processo di unificazione delle utenze non è ancora stato completato.',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'È ora possibile accedere a tutti i siti Wikimedia senza dover ' .
@@ -314,11 +400,11 @@ $wgCentralAuthMessages['it'] = array(
 		"\n" .
 		"Se si è il titolare dell'utenza, per terminare il processo di unificazione " .
 		"è sufficiente inserire la password principale di quell'account qui di seguito:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Per saperne di più sul '''login unico''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'Gli account con nome utente "$1" sui progetti elencati ' .
@@ -330,7 +416,7 @@ $wgCentralAuthMessages['it'] = array(
 		'usata una password diversa da quella dell\'account principale:',
 	'centralauth-foreign-link' =>
 		'Utente $1 su $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Completa il processo di unificazione',
@@ -347,7 +433,7 @@ $wgCentralAuthMessages['it'] = array(
 	'centralauth-finish-problems' =>
 		"Se non si è il titolare di queste utenze, o se si incontrano altri problemi, " .
 		"si invita a consultare la [[meta:Help:Unified login problems|pagina di aiuto]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Verifica della password inserita sulle utenze non ancora unificate...'''",
 
@@ -359,11 +445,11 @@ $wgCentralAuthMessages['nl'] = array(
 	'centralauth-merge-notlogged' => '<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]' .
 		'</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
-	
+
 	// Big text on completion
 	'centralauth-complete' => 'Samenvoegen gebruikers afgerond!',
 	'centralauth-incomplete' => 'Samenvoegen gebruikers niet volledig!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'U kunt nu aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; ' .
@@ -379,17 +465,17 @@ $wgCentralAuthMessages['nl'] = array(
 		"\n" .
 		"Als u dat bent, kunt u het samenvoegen van gebruikers afronden " .
 		"door hier het wachtwoord voor die gebruiker in te geven:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lees meer over '''unified login''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
 	'centralauth-list-unmerged' =>
 		'De gebruiker "$1" kon niet automatisch aan u toegewezen worden voor de volgende sites; ' .
 		'waarschijnlijk omdat het wachtwoord afwijkt van uw primaire gebruiker:',
 	'centralauth-foreign-link' => 'Gebruiker $1 op $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' => 'Samenvoegen afronden',
 	'centralauth-finish-text' =>
@@ -401,10 +487,10 @@ $wgCentralAuthMessages['nl'] = array(
 	'centralauth-finish-problems' =>
 		"Komt u er niet uit of zijn deze gebruikers niet van u? " .
 		"[[meta:Help:Unified login problems|Hoe hulp vinden]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers...'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Beheer unified login',
 	'centralauth-admin-manage' => 'Gebruikersgegeven beheren',
@@ -413,7 +499,7 @@ $wgCentralAuthMessages['nl'] = array(
 	'centralauth-admin-permission' => "Alleen stewards kunnen gebruikers van anderen samenvoegen.",
 	'centralauth-admin-unmerge' => 'Splits geselecteerde gebruikers',
 	'centralauth-admin-merge' => 'Voeg geselecteerde gebruikers samen',
-	
+
 );
 
 $wgCentralAuthMessages['sk'] = array(
@@ -499,11 +585,11 @@ $wgCentralAuthMessages['sk'] = array(
 		'Oddelenie zvolených',
 	'centralauth-admin-merge' =>
 		'Zlúčenie zvolených',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'ID zjednoteného účtu:',
-		
+
 );
 
 $wgCentralAuthMessages['sr-ec'] = array(
@@ -514,13 +600,13 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		'Молимо вас да се <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} пријавите]' .
 		'</span> како бисте проверили да ли је ваш налог спојен успешно.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Спајање налога завршено!',
 	'centralauth-incomplete' =>
 		'Спајање налога није завршено!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Сада се можете пријавити на било који Викимедијин вики сајт без прављења' .
@@ -539,11 +625,11 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		"\n" .
 		"Уколико сте ово ви, можете једноставно завршити процес спајања " .
 		"уписујући лозинку за налог овде::",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Прочитајте више о '''спајању налога''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'Налог "$1" на следећим сајтовима ' .
@@ -555,7 +641,7 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		'примаран налог:',
 	'centralauth-foreign-link' =>
 		'Корисник $1 на $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Заврши спајање',
@@ -572,10 +658,10 @@ $wgCentralAuthMessages['sr-ec'] = array(
 	'centralauth-finish-problems' =>
 		"Имате проблем, или ви нисте власник осталих налога? " .
 		"[[meta:Help:Unified login problems|Помоћ]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Провера унете лозинке наспрам осталих налога који још нису спојени......'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Администрација спајања налога',
 	'centralauth-admin-manage' =>
@@ -590,7 +676,7 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		'Одвоји селектоване',
 	'centralauth-admin-merge' =>
 		'Споји селектоване',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'Јединствен ID налога:',
@@ -604,13 +690,13 @@ $wgCentralAuthMessages['sr-el'] = array(
 		'Molimo vas da se <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prijavite]' .
 		'</span> kako biste proverili da li je vaš nalog spojen uspešno.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Spajanje naloga završeno!',
 	'centralauth-incomplete' =>
 		'Spajanje naloga nije završeno!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Sada se možete prijaviti na bilo koji Vikimedijin viki sajt bez pravljenja' .
@@ -629,11 +715,11 @@ $wgCentralAuthMessages['sr-el'] = array(
 		"\n" .
 		"Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja " .
 		"upisujući lozinku za nalog ovde::",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Pročitajte više o '''spajanju naloga''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'Nalog "$1" na sledećim sajtovima ' .
@@ -645,7 +731,7 @@ $wgCentralAuthMessages['sr-el'] = array(
 		'primaran nalog:',
 	'centralauth-foreign-link' =>
 		'Korisnik $1 na $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Završi spajanje',
@@ -662,10 +748,10 @@ $wgCentralAuthMessages['sr-el'] = array(
 	'centralauth-finish-problems' =>
 		"Imate problem, ili vi niste vlasnik ostalih naloga? " .
 		"[[meta:Help:Unified login problems|Pomoć]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Provera unete lozinke naspram ostalih naloga koji još nisu spojeni......'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Administracija spajanja naloga',
 	'centralauth-admin-manage' =>
@@ -680,7 +766,7 @@ $wgCentralAuthMessages['sr-el'] = array(
 		'Odvoji selektovane',
 	'centralauth-admin-merge' =>
 		'Spoji selektovane',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'Jedinstven ID naloga:',
@@ -700,7 +786,7 @@ $wgCentralAuthMessages['pt'] = array(
 		'Unificação de logins completa!',
 	'centralauth-incomplete' =>
 		'Unificação de logins incompleta!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Agora você poderá se logar em quaisquer das wikis da Wikimedia sem ter de criar ' .
@@ -719,11 +805,11 @@ $wgCentralAuthMessages['pt'] = array(
 		"\n" .
 		"Se este for você, você poderá concluir o procedimento de unificação de login " .
 		"simplesmente digitando a senha principal de tal conta aqui:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Leia mais sobre o '''login unificado''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'A conta nomeada como "$1" nos seguintes sítios ' .
@@ -735,7 +821,7 @@ $wgCentralAuthMessages['pt'] = array(
 		'conta principal:',
 	'centralauth-foreign-link' =>
 		'Utilizador $1 em $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Completar fusão',
@@ -752,7 +838,7 @@ $wgCentralAuthMessages['pt'] = array(
 	'centralauth-finish-problems' =>
 		"Está com problemas ou estas outras contas não são suas? " .
 		"[[meta:Help:Unified login problems|Como procurar por ajuda]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
 
@@ -770,7 +856,7 @@ $wgCentralAuthMessages['pt'] = array(
 		'Desfazer a fusão nos seleccionados',
 	'centralauth-admin-merge' =>
 		'Fundir seleccionados',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'ID de conta unificada:',
@@ -791,7 +877,7 @@ $wgCentralAuthMessages['pt-br'] = array(
 		'Unificação de logins completa!',
 	'centralauth-incomplete' =>
 		'Unificação de logins incompleta!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Agora você poderá se logar em quaisquer das wikis da Wikimedia sem ter de criar ' .
@@ -810,11 +896,11 @@ $wgCentralAuthMessages['pt-br'] = array(
 		"\n" .
 		"Se este for você, você poderá concluir o procedimento de unificação de login " .
 		"simplesmente digitando a senha principal de tal conta aqui:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Leia mais sobre o '''login unificado''']]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'A conta nomeada como "$1" nos seguintes sítios ' .
@@ -826,7 +912,7 @@ $wgCentralAuthMessages['pt-br'] = array(
 		'conta principal:',
 	'centralauth-foreign-link' =>
 		'Utilizador $1 em $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Completar fusão',
@@ -843,7 +929,7 @@ $wgCentralAuthMessages['pt-br'] = array(
 	'centralauth-finish-problems' =>
 		"Está com problemas ou estas outras contas não são suas? " .
 		"[[meta:Help:Unified login problems|Como procurar por ajuda]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
 
@@ -861,7 +947,7 @@ $wgCentralAuthMessages['pt-br'] = array(
 		'Desfundir os selecionados',
 	'centralauth-admin-merge' =>
 		'Fundir os selecionados',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'ID de conta unificada:',
@@ -898,11 +984,11 @@ $wgCentralAuthMessages['de'] = array(
 		'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf ' .
 		'$2 zugewiesen. Wenn dies Ihre Benutzername ist, können Sie die Zusammenführung ' .
 		'der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden: ',
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten wurden automatisch ' .
@@ -915,7 +1001,7 @@ $wgCentralAuthMessages['de'] = array(
 
 	'centralauth-foreign-link' =>
 		'Benutzer $1 auf $2',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Zusammenführung vollenden',
@@ -937,7 +1023,7 @@ $wgCentralAuthMessages['de'] = array(
 	'centralauth-finish-problems' =>
 		'Haben Sie Probleme oder gehören Ihnen diese anderen Benutzerkonten nicht? ' .
 		'[[meta:Help:Unified login problems|Hier finden Sie Hilfe]]…',
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
 
@@ -954,13 +1040,13 @@ $wgCentralAuthMessages['zh-cn'] = array(
 		'请<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 登录]' .
 		'并检查您的账号是否都已经合并。',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'完成登录统一！',
 	'centralauth-incomplete' =>
 		'登录统一失败！',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'您现在无需创建新帐号即可登录所有维基媒体网站；' .
@@ -979,11 +1065,11 @@ $wgCentralAuthMessages['zh-cn'] = array(
 		"\n" .
 		"若这是您的账号，" .
 		"请输入该帐号的密码，完成登录统一：",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|参阅关于'''登录统一'''的帮助文件]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'以下网站的账号“$1”' .
@@ -995,7 +1081,7 @@ $wgCentralAuthMessages['zh-cn'] = array(
 		'与您主账号的不同：',
 	'centralauth-foreign-link' =>
 		'$2 的用户 $1',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'完成合并',
@@ -1012,10 +1098,10 @@ $wgCentralAuthMessages['zh-cn'] = array(
 	'centralauth-finish-problems' =>
 		"有任何问题或者这些帐号不属于您？" .
 		"请参阅[[meta:Help:Unified login problems|帮助信息]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''检查未合并账号的密码...'''",
-	
+
 	// Administrator's console
 	'centralauth-admin-permission' =>
 		"只有监管员可以为其他人进行登录统一。",
@@ -1033,13 +1119,13 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		'請<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]' .
 		'</span>以查驗您的帳號是否已經完成整合。',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'帳號整合已完成！',
 	'centralauth-incomplete' =>
 		'帳號整合未完成！',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'您現在可以使用同一組帳號與密碼登入所有維基媒體計畫網站，' .
@@ -1058,11 +1144,11 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		"\n" .
 		"如果這是您的帳號，請輸入該帳號的密碼" .
 		"以完成帳號整合：",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'以下網站的帳號："$1' .
@@ -1074,7 +1160,7 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		'和您的主帳號不同：',
 	'centralauth-foreign-link' =>
 		'$2 上的 $1',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'完成整合',
@@ -1091,10 +1177,10 @@ $wgCentralAuthMessages['zh-tw'] = array(
 	'centralauth-finish-problems' =>
 		"遇到問題或者這些帳號不屬於您嗎？" .
 		"[[meta:Help:Unified login problems|如何尋求協助]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
-	
+
 	// Administrator's console
 	'centralauth-admin-permission' =>
 		"只有監管員可以為用戶整合帳號。",
@@ -1112,13 +1198,13 @@ $wgCentralAuthMessages['zh-hk'] = array(
 		'請<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]' .
 		'</span>以查驗您的帳號是否已經完成整合。',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'帳號整合已完成！',
 	'centralauth-incomplete' =>
 		'帳號整合未完成！',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，' .
@@ -1137,11 +1223,11 @@ $wgCentralAuthMessages['zh-hk'] = array(
 		"\n" .
 		"如果這是您的帳號，請輸入該帳號的密碼" .
 		"以完成帳號整合：",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'以下網站的帳號："$1' .
@@ -1153,7 +1239,7 @@ $wgCentralAuthMessages['zh-hk'] = array(
 		'和您的主帳號不同：',
 	'centralauth-foreign-link' =>
 		'$2 上的 $1',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'完成整合',
@@ -1170,10 +1256,10 @@ $wgCentralAuthMessages['zh-hk'] = array(
 	'centralauth-finish-problems' =>
 		"遇到問題或者這些帳號不屬於您嗎？" .
 		"[[meta:Help:Unified login problems|如何尋求協助]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
-	
+
 	// Administrator's console
 	'centralauth-admin-permission' =>
 		"只有監管員可以為用戶整合帳號。",
@@ -1191,13 +1277,13 @@ $wgCentralAuthMessages['zh-yue'] = array(
 		'請<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]' .
 		'</span>去睇下檢查你嘅戶口係唔係已經完全整合。',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'戶口統一已經搞掂！',
 	'centralauth-incomplete' =>
 		'戶口統一重未搞掂！',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'你而家可以響唔使個新戶口嘅情況之下' .
@@ -1216,11 +1302,11 @@ $wgCentralAuthMessages['zh-yue'] = array(
 		"\n" .
 		"如果呢個係你，你可以輸入響嗰個戶口嘅主密碼" .
 		"以完成登入統一嘅程序：",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|睇下更多有關'''統一登入'''嘅細節]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'以下用戶名 "$1" 嘅戶口' .
@@ -1232,7 +1318,7 @@ $wgCentralAuthMessages['zh-yue'] = array(
 		'同你嘅主戶口唔同：',
 	'centralauth-foreign-link' =>
 		'響 $2 嘅用戶 $1',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'完成合併',
@@ -1249,12 +1335,12 @@ $wgCentralAuthMessages['zh-yue'] = array(
 	'centralauth-finish-problems' =>
 		"有問題，又或者你並無持有其它嘅戶口？" .
 		"[[meta:Help:Unified login problems|如何尋求協助]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Checking provided password against remaining unmerged accounts...'''",
 	'centralauth-merge-attempt' =>
 		"'''檢查緊所輸入嘅密碼，同剩底未合併戶口相對...'''",
-	
+
 	// Administrator's console
 	'centralauth-admin-permission' =>
 		"只有執行員先至可以為用戶合併其它人嘅戶口。",
