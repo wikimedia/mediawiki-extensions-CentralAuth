@@ -196,7 +196,7 @@ $wgCentralAuthMessages['de'] = array(
 $wgCentralAuthMessages['fr'] = array(
 	// When not logged in...
 	'mergeaccount' =>
-		'Statut d\'unification du compte utilisateur',
+		'Statut d’unification du compte utilisateur',
 	'centralauth-merge-notlogged' =>
 		'Merci de bien vouloir <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]' .
@@ -204,47 +204,47 @@ $wgCentralAuthMessages['fr'] = array(
 
 	// Big text on completion
 	'centralauth-complete' =>
-		'Unification du compte terminée!',
+		'Unification du compte terminée !',
 	'centralauth-incomplete' =>
-		'Unification du compte non terminée!',
+		'Unification du compte non terminée !',
 
 	// Wheeee
 	'centralauth-complete-text' =>
-		'Vous pouvez maintenant vous connecter sur n\'importe quel site ' .
-		'Wikimedia sans avoir à créer un nouveau compte; le même nom '.
-		'd\'utilisateur et mot de passe fonctionnent sur Wikipédia, '.
-		'Wiktionary, Wikibooks et leurs projets soeurs, ceci pour tout '.
-		'les langages.',
+		'Vous pouvez maintenant vous connecter sur n’importe quel site ' .
+		'Wikimedia sans avoir à créer un nouveau compte ; le même nom '.
+		'd’utilisateur et mot de passe fonctionnent sur Wikipédia, '.
+		'Wiktionary, Wikibooks et leurs projets sœurs, ceci pour toutes '.
+		'les langues.',
 	'centralauth-incomplete-text' =>
-		'Une fois votre compte unifier, vous pourrez vous connecter sur n\'importe quel site ' .
-		'Wikimedia sans avoir à créer un nouveau compte; le même nom '.
-		'd\'utilisateur et mot de passe fonctionneront sur Wikipédia, '.
-		'Wiktionary, Wikibooks et leurs projets soeurs, ceci pour tout '.
-		'les langages.',
+		'Une fois votre compte unifié, vous pourrez vous connecter sur n’importe quel site ' .
+		'Wikimedia sans avoir à créer un nouveau compte ; le même nom '.
+		'd’utilisateur et mot de passe fonctionneront sur Wikipédia, '.
+		'Wiktionary, Wikibooks et leurs projets sœurs, ceci pour toutes '.
+		'les langues.',
 	'centralauth-not-owner-text' =>
-		'Le compte utilisateur "$1" a été automatiquement assigné au '.
+		'Le compte utilisateur « $1 » a été automatiquement assigné au '.
 		"propriétaire du compte sur $2.\n" .
 		"\n" .
-		'Si c\'est vous, vous pourrez terminer le process d\'unification de '.
+		'Si c’est vous, vous pourrez terminer le process d’unification de '.
 		'compte en tapant le mot de passe maître pour ce compte sur :',
 
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
-		":''[[meta:Help:Compte unifié|En savoir plus sur le '''compte unifié''']]...''",
+		":''[[w:fr:Wikipédia:Login unique|En savoir plus sur le '''compte unifié''']]...''",
 
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
-		'Les comptes utilisateurs nommés "$1" ont été réunis pour les sites suivants :',
+		'Les comptes utilisateurs nommés « $1 » ont été réunis pour les sites suivants :',
 	'centralauth-list-unmerged' =>
-		'Le compte utilisateur "$1 ne peut être confirmé automatiquement ' .
-		'pour les sites qui suivent; ils ont probablement un mot de passe '.
-		'différent de votre compte maître:',
+		'Le compte utilisateur « $1 » ne peut être confirmé automatiquement ' .
+		'pour les sites qui suivent ; ils ont probablement un mot de passe '.
+		'différent de votre compte maître :',
 	'centralauth-foreign-link' =>
 		'Utilisateur $1 sur $2',
 
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
-		'Compléter l\'unification',
+		'Compléter l’unification',
 	'centralauth-finish-text' =>
 		'Si ces comptes vous appartiennent, vous pouvez terminer leur ' .
 		'unification en tapant les mots de passe ci-dessous :',
@@ -253,24 +253,24 @@ $wgCentralAuthMessages['fr'] = array(
 	'centralauth-finish-login' =>
 		'Compte utilisateur :',
 	'centralauth-finish-send-confirmation' =>
-		'E-mail password',
+		'Envoyer le mot de passe par e-mail',
 	'centralauth-finish-problems' =>
 		'En cas de problème ou si vous ne possédez pas ces autres comptes, ' .
-		'voyez la page [[meta:Help:Unified login problems|How to find help]]...',
+		'voyez la page [[meta:Help:Unified login problems|Problèmes]] (en anglais)...',
 
 	'centralauth-merge-attempt' =>
-		"'''Vérification du mot de passe fournit pour les comptes non réunis...'''",
+		"'''Vérification du mot de passe fourni pour les comptes non réunis...'''",
 
 	// Administrator's console
 	'centralauth' => 'Administration comptes unifiés',
 	'centralauth-admin-manage' =>
 		'Gérer les données utilisateur',
 	'centralauth-admin-username' =>
-		'Nom d\'utilisateur :',
+		'Nom d’utilisateur :',
 	'centralauth-admin-lookup' =>
-		'Voir ou éditer les données utilisateur',
+		'Voir ou modifier les données utilisateur',
 	'centralauth-admin-permission' =>
-		'Seul les stewards peuvent réunir les comptes d\'autres personnes à leur place.',
+		'Seuls les stewards peuvent réunir les comptes d’autres personnes à leur place.',
 	'centralauth-admin-unmerge' =>
 		'Séparer sélection',
 	'centralauth-admin-merge' =>
