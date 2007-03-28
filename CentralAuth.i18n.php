@@ -776,6 +776,97 @@ $wgCentralAuthMessages['nl'] = array(
 
 );
 
+$wgCentralAuthMessages['ru'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'Состояние объединения учётных записей',
+	'centralauth-merge-notlogged' =>
+		'Пожалуйста, <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} представьтесь]' .
+		'</span>, чтобы проверить, были ли ваши учётные записи объединены.',
+
+	// Big text on completion
+	'centralauth-complete' =>
+		'Объединение учётных записей завершено!',
+	'centralauth-incomplete' =>
+		'Объединение учётных записей не завершено!',
+
+	// Wheeee
+	'centralauth-complete-text' =>
+		'Вы можете сейчас представляться любому сайту Викимедиа, без создания ' .
+		'новой учётной записи. Одни и те же имя участника и пароль будут работать в '.
+		'Википедии, Викисловаре, Викиучебнике и других проектах ' .
+		'на всех языках.',
+	'centralauth-incomplete-text' =>
+		'Как только ваша учётная запись будет объединена, вы сможете представляться ' .
+		'на любых проектах Викимедии не создавая новых учётных записей. ' .
+		'Одни и те же имя участника и пароль будут работать в ' .
+		'Википедии, Викисловаре, Викиучебнике и других проектах ' .
+		'на всех языках.',
+	'centralauth-not-owner-text' =>
+		'Имя «$1» было автоматически передано владельцу ' .
+		"учётной записи «$2».\n" .
+		"\n" .
+		"Если это вы, то вы можете завершить процесс объединения учётных записей " .
+		"введя здесь основной пароль этой учётной записи:",
+
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|Информация об '''объединении учётных записей''']]...''",
+
+	// For lists of wikis/accounts:
+	'centralauth-list-merged' =>
+		'Учётная запись «$1» на следующих сайтах ' .
+		'была автоматически объединена:',
+	'centralauth-list-unmerged' =>
+		'Принадлежность вам учётной записи «$1» не может быть автоматически подтверждено ' .
+		'на указанных ниже сайтах; ' .
+		'вероятно, пароль на них не совдает с паролем вашей ' .
+		'основной учётной записи:',
+	'centralauth-foreign-link' =>
+		'Пользователь $1 на $2',
+
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'Окончание объединения',
+	'centralauth-finish-text' =>
+		'Если эти учётные записи принадлежат вам, то вы можете завершить ' .
+		'процесс объединения, введя здесь пароли  ' .
+		'для других учётных записей:',
+	'centralauth-finish-password' =>
+		'Пароль:',
+	'centralauth-finish-login' =>
+		'Имя пользователя',
+	'centralauth-finish-send-confirmation' =>
+		'Выслать пароль по эл. почте',
+	'centralauth-finish-problems' =>
+		"Если возникли проблемы, или вы не являетесь владельцем указанных учётных записей " .
+		"[[meta:Help:Unified login problems|обратитель к справочной информации]]...",
+
+	'centralauth-merge-attempt' =>
+		"'''Проверка введённого пароля на оставшихся необъединённых учётных записях...'''",
+
+	// Administrator's console
+	'centralauth' => 'Администрирование объединения имён',
+	'centralauth-admin-manage' =>
+		'Управление информацией об участниках',
+	'centralauth-admin-username' =>
+		'Имя участника:',
+	'centralauth-admin-lookup' =>
+		'Просмотр или редактирование информации об участнике',
+	'centralauth-admin-permission' =>
+		"Только стюарды могут объединять учётные записи других людей.",
+	'centralauth-admin-unmerge' =>
+		'Разделить выбранные',
+	'centralauth-admin-merge' =>
+		'Объединить выбранные',
+
+	// Info panel in preferences
+	'centralauth-globalid' =>
+		'Идентификатор единой учётной записи:',
+);
+
+
 $wgCentralAuthMessages['sk'] = array(
        // When not logged in...
        'mergeaccount' =>
