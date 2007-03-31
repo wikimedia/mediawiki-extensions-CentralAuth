@@ -319,7 +319,7 @@ $wgCentralAuthMessages['id'] = array(
 
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
-		'Akun "$1" di situs-situs berikut telah digabung secara otomatis: ' ,
+		'Akun "$1" di situs-situs berikut telah digabung secara otomatis:' ,
 	'centralauth-list-unmerged' =>
 		'Akun "$1" tidak dapat dikonfirmasikan secara otomatis sebagai milik Anda ' .
 		'di situs-situs berikut; kemungkinan besar karena mereka memiliki ' .
@@ -448,13 +448,13 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		'Тіркелгілеріңіз толық бірегейлендіруін тексеру үшін Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} кіріңіз]' .
 		'</span>.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Тіркелгі бірегейлендіруі бітті!',
 	'centralauth-incomplete' =>
 		'Тіркелгі бірегейлендіруі біткен жоқ!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Енді әрқайсы Wikimedia қорының уики торабына жаңа тіркелгі жасамастан ' .
@@ -473,11 +473,11 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		"\n" .
 		"Бұл өзіңіз болсаңыз, басқы құпия сөзіңізді кәдімгідей мында енгізіп " .
 		"тіркелгі бірегейлендіру үдірісін бітіруіңізге болады:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|'''Бірегейлендірілген тіркелгі''' туралы оқыңыз]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'«$1» деп аталған тіркелгілер келесі тораптарда ' .
@@ -489,7 +489,7 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		'құпия сөздер бар:',
 	'centralauth-foreign-link' =>
 		'$2 дегендегі $1 деген қатысушы',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Түйістірілу бітті',
@@ -506,10 +506,10 @@ $wgCentralAuthMessages['kk-kz'] = array(
 	'centralauth-finish-problems' =>
 		"Қиын жағдайға ұшырадыңыз, немесе басқа тіркелгілер сіздікі емес? " .
 		"[[meta:Help:Unified login problems|Қалай анықталуыңызға болады]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Жабдықталынған құпия сөзді қалған түйістірілмеген тіркелгілермен тексеруде…'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Бірегейлендірген тіркелгіні меңгеру',
 	'centralauth-admin-manage' =>
@@ -524,7 +524,7 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		'Талғанғанды түйістірілеме',
 	'centralauth-admin-merge' =>
 		'Талғанғанды түйістіріле',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'Бірегейленген тіркелгі нөмірі:',
@@ -538,13 +538,13 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		'Tirkelgileriñiz tolıq biregeýlendirwin tekserw üşin Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} kiriñiz]' .
 		'</span>.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'Tirkelgi biregeýlendirwi bitti!',
 	'centralauth-incomplete' =>
 		'Tirkelgi biregeýlendirwi bitken joq!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'Endi ärqaýsı Wikimedia qorınıñ wïkï torabına jaña tirkelgi jasamastan ' .
@@ -563,11 +563,11 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		"\n" .
 		"Bul öziñiz bolsañız, basqı qupïya söziñizdi kädimgideý mında engizip " .
 		"tirkelgi biregeýlendirw üdirisin bitirwiñizge boladı:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|'''Biregeýlendirilgen tirkelgi''' twralı oqıñız]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'«$1» dep atalğan tirkelgiler kelesi toraptarda ' .
@@ -579,7 +579,7 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		'qupïya sözder bar:',
 	'centralauth-foreign-link' =>
 		'$2 degendegi $1 degen qatıswşı',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Tüýistirilw bitti',
@@ -596,10 +596,10 @@ $wgCentralAuthMessages['kk-tr'] = array(
 	'centralauth-finish-problems' =>
 		"Qïın jağdaýğa uşıradıñız, nemese basqa tirkelgiler sizdiki emes? " .
 		"[[meta:Help:Unified login problems|Qalaý anıqtalwıñızğa boladı]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''Jabdıqtalınğan qupïya sözdi qalğan tüýistirilmegen tirkelgilermen tekserwde…'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'Biregeýlendirgen tirkelgini meñgerw',
 	'centralauth-admin-manage' =>
@@ -614,7 +614,7 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		'Talğanğandı tüýistirileme',
 	'centralauth-admin-merge' =>
 		'Talğanğandı tüýistirile',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'Biregeýlengen tirkelgi nömiri:',
@@ -628,13 +628,13 @@ $wgCentralAuthMessages['kk-cn'] = array(
 		'تٴىركەلگٴىلەرٴىڭٴىز تولىق بٴىرەگەيلەندٴىرۋٴىن تەكسەرۋ ٴۇشٴىن Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} كٴىرٴىڭٴىز]' .
 		'</span>.',
-	
+
 	// Big text on completion
 	'centralauth-complete' =>
 		'تٴىركەلگٴى بٴىرەگەيلەندٴىرۋٴى بٴىتتٴى!',
 	'centralauth-incomplete' =>
 		'تٴىركەلگٴى بٴىرەگەيلەندٴىرۋٴى بٴىتكەن جوق!',
-	
+
 	// Wheeee
 	'centralauth-complete-text' =>
 		'ەندٴى ٴارقايسى Wikimedia قورىنىڭ ۋيكي تورابىنا جاڭا تٴىركەلگٴى جاساماستان ' .
@@ -653,11 +653,11 @@ $wgCentralAuthMessages['kk-cn'] = array(
 		"\n" .
 		"بۇل ٴوزٴىڭٴىز بولساڭىز, باسقى قۇپييا سٴوزٴىڭٴىزدٴى كٴادٴىمگٴىدەي مىندا ەنگٴىزٴىپ " .
 		"تٴىركەلگٴى بٴىرەگەيلەندٴىرۋ ٴۇدٴىرٴىسٴىن بٴىتٴىرۋٴىڭٴىزگە بولادى:",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|'''بٴىرەگەيلەندٴىرٴىلگەن تٴىركەلگٴى''' تۋرالى وقىڭىز]]...''",
-	
+
 	// For lists of wikis/accounts:
 	'centralauth-list-merged' =>
 		'«$1» دەپ اتالعان تٴىركەلگٴىلەر كەلەسٴى توراپتاردا ' .
@@ -669,7 +669,7 @@ $wgCentralAuthMessages['kk-cn'] = array(
 		'قۇپييا سٴوزدەر بار:',
 	'centralauth-foreign-link' =>
 		'$2 دەگەندەگٴى $1 دەگەن قاتىسۋشى',
-	
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'تٴۇيٴىستٴىرٴىلۋ بٴىتتٴى',
@@ -686,10 +686,10 @@ $wgCentralAuthMessages['kk-cn'] = array(
 	'centralauth-finish-problems' =>
 		"قيىن جاعدايعا ۇشىرادىڭىز, نەمەسە باسقا تٴىركەلگٴىلەر سٴىزدٴىكٴى ەمەس? " .
 		"[[meta:Help:Unified login problems|قالاي انىقتالۋىڭىزعا بولادى]]...",
-	
+
 	'centralauth-merge-attempt' =>
 		"'''جابدىقتالىنعان قۇپييا سٴوزدٴى قالعان تٴۇيٴىستٴىرٴىلمەگەن تٴىركەلگٴىلەرمەن تەكسەرۋدە…'''",
-	
+
 	// Administrator's console
 	'centralauth' => 'بٴىرەگەيلەندٴىرگەن تٴىركەلگٴىنٴى مەڭگەرۋ',
 	'centralauth-admin-manage' =>
@@ -704,7 +704,7 @@ $wgCentralAuthMessages['kk-cn'] = array(
 		'تالعانعاندى تٴۇيٴىستٴىرٴىلەمە',
 	'centralauth-admin-merge' =>
 		'تالعانعاندى تٴۇيٴىستٴىرٴىلە',
-	
+
 	// Info panel in preferences
 	'centralauth-globalid' =>
 		'بٴىرەگەيلەنگەن تٴىركەلگٴى نٴومٴىرٴى:',
