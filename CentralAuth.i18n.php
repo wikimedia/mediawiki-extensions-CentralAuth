@@ -776,6 +776,37 @@ $wgCentralAuthMessages['nl'] = array(
 
 );
 
+$wgCentralAuthMessages['oc'] = array(
+	'mergeaccount'                         => 'Estatut d’unificacion del compte d\'utilizaire',
+	'centralauth-merge-notlogged'          => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos connectar]</span> per verificar que vòstres comptes son plan estats acampats.',
+	'centralauth-complete'                 => 'Unificacion del compte acabada !',
+	'centralauth-incomplete'               => 'Unificacion del compte pas acabada !',
+	'centralauth-complete-text'            => 'Ara podètz vos connectar sus un sit Wikimedia qué qué siá sens aver de crear un compte novèl; lo meteis nom d’utilizaire e senhal foncionan sus Wikipèdia, Wikiccionari, Wikilibres e lors projèctes sòrres, aquò per totas las lengas.',
+	'centralauth-incomplete-text'          => 'Un còp vòstre compte unificat, poirètz vos connectar sus un sit Wikimedia qué qué siá sens aver de crear un compte novèl ; lo meteis nom d’utilizaire e senhal foncionaràn sus Wikipèdia, Wikiccionari, Wikilibres e lors projèctes sòrres, aquò per totas las lengas.',
+	'centralauth-not-owner-text'           => 'Lo compte d\'utilizaire « $1 » es estat automaticament assignat al proprietari del compte sus $2.
+
+Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo senhal mèstre per aqueste compte sus :',
+	'centralauth-readmore-text'            => ':\'\'[[w:oc:Wikipèdia:Login unic|Ne saber mai sul \'\'\'compte unificat\'\'\']]...\'\'',
+	'centralauth-list-merged'              => 'Los comptes d\'utilizaires nomenats « $1 » son estats acampats pels sites seguents :',
+	'centralauth-list-unmerged'            => 'Lo compte d\'utilizaire « $1 » pòt èsser confirmat automaticament pels sites que seguisson ; an probablament un senhal diferent de vòstre compte mèstre :',
+	'centralauth-foreign-link'             => 'Utilizaire $1 sus $2',
+	'centralauth-finish-title'             => 'Completar l’unificacion',
+	'centralauth-finish-text'              => 'Se aquestes comptes vos apartenon, podètz acabar lor unificacion en picant los senhals çai jos :',
+	'centralauth-finish-password'          => 'Senhal:',
+	'centralauth-finish-login'             => 'Compte d\'utilizaire:',
+	'centralauth-finish-send-confirmation' => 'Mandar lo senhal per corrièr electronic',
+	'centralauth-finish-problems'          => 'En cas de problèma o se possedissètz pas aquestes autres comptes, vejatz la pagina [[meta:Help:Unified login problems|Problèmas]] (en anglés)...',
+	'centralauth-merge-attempt'            => '\'\'\'Verificacion del senhal provesit pels comptes non acampats...\'\'\'',
+	'centralauth'                          => 'Administracion comptes unificats',
+	'centralauth-admin-manage'             => 'Admministrar las donadas d\'utilizaire',
+	'centralauth-admin-username'           => 'Nom d\'utilizaire:',
+	'centralauth-admin-lookup'             => 'Veire o modificar las donadas d\'utilizaire',
+	'centralauth-admin-permission'         => 'Sols los stewards pòdon acampar los comptes d’autras personas a lor plaça.',
+	'centralauth-admin-unmerge'            => 'Separar la seleccion',
+	'centralauth-admin-merge'              => 'Acampar la seleccion',
+	'centralauth-globalid'                 => 'ID compte unificat:',
+);
+
 $wgCentralAuthMessages['ru'] = array(
 	// When not logged in...
 	'mergeaccount' =>
