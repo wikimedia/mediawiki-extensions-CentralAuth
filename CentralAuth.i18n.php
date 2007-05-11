@@ -1428,6 +1428,37 @@ $wgCentralAuthMessages['de'] = array(
 		"Nur Benutzer mit Steward-Rechten dürfen fremde Benutzerkonten zusammenführen.",
 );
 
+$wgCentralAuthMessages['su'] = array(
+	'mergeaccount'                         => 'Status ngahijikeun log asup',
+	'centralauth-merge-notlogged'          => 'Mangga <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} lebet log]</span> pikeun mariksa anggeus/henteuna rekening anjeun dihijieun.',
+	'centralauth-complete'                 => 'Ngahijikeun log asup geus réngsé!',
+	'centralauth-incomplete'               => 'Ngahijikeun log asup can anggeus!',
+	'centralauth-complete-text'            => 'Ayeuna anjeun bisa asup log ka loka wiki Wikimédia tanpa kudu nyieun rekening anyar; ladihan pamaké katut sandina bisa dipaké dina Wikipédia, Wikikamus, Wikipustaka, sarta proyék sawargina dina basa séjén.',
+	'centralauth-incomplete-text'          => 'Mun log asupna geus dihijikeun, anjeun bakal bisa asup log ka loka wiki Wikimédia mana waé tanpa kudu nyieun rekening anyar; landihan pamaké katut sandina bakal bisa dipaké dina Wikipédia, Wikikamus, Wikipustaka, sarta proyék sawargina dina basa séjén.',
+	'centralauth-not-owner-text'           => 'Landihan pamaké "$1" geus diajangkeun ka rekening di $2.
+
+Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku cara ngetikkeun sandi master pikeun éta rekening di dieu:',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Baca lengkepna ngeunaan \'\'\'log asup nu dihijikeun\'\'\']]...\'\'',
+	'centralauth-list-merged'              => 'Rekening nu ngaranna "$1" di loka di handap ieu geus sacara otomatis dihijikeun:',
+	'centralauth-list-unmerged'            => 'Rekening "$1" teu bisa otomatis dikompirmasi milik anjeun di loka di handap ieu; sigana mah kusabab sandina béda jeung sandi dina rekening utama anjeun:',
+	'centralauth-foreign-link'             => 'Pamaké $1 di $2',
+	'centralauth-finish-title'             => 'Réngsé ngahijikeun',
+	'centralauth-finish-text'              => 'Mun rekening ieu bener boga anjeun, mangga réngsékeun prosés ngahijikeun log asup ku cara ngasupkeun sandi rekening lianna di dieu:',
+	'centralauth-finish-password'          => 'Sandi:',
+	'centralauth-finish-login'             => 'Asup log',
+	'centralauth-finish-send-confirmation' => 'Kirimkeun sandi kana surélék',
+	'centralauth-finish-problems'          => 'Aya masalah? Teu boga rekening lianna ieu? [[meta:Help:Unified login problems|Ménta pitulung]]...',
+	'centralauth-merge-attempt'            => '\'\'\'Ngakurkeun sandi nu disadiakeun jeung rekening nu can dihijikeun...\'\'\'',
+	'centralauth'                          => 'Administrasi log asup nu dihijikeun',
+	'centralauth-admin-manage'             => 'Kokolakeun data pamaké',
+	'centralauth-admin-username'           => 'Landihan pamaké:',
+	'centralauth-admin-lookup'             => 'Témbongkeun atawa robah data pamaké',
+	'centralauth-admin-permission'         => 'Nu bisa ngahijikeun rekening batur mah ngan steward.',
+	'centralauth-admin-unmerge'            => 'Pisahkeun nu dipilih',
+	'centralauth-admin-merge'              => 'Hijikeun nu dipilih',
+	'centralauth-globalid'                 => 'ID rekening gabungan:',
+);
+
 $wgCentralAuthMessages['zh-cn'] = array(
 	// When not logged in...
 	'mergeaccount' =>
