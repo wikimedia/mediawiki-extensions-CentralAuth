@@ -76,27 +76,26 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	// - this local account is attached, but migration incomplete
 	// - all local accounts are attached
 	
-	$global = CentralAuthUser::newFromUser( $wgUser );
-	if( $global ) {
-		// Local is attached...
-		$attached = count( $global->listAttached() );  // $attached var not used.
-		$unattached = count( $global->listUnattached() );
-		if( $unattached ) {
-			// Migration incomplete
-			$message = $global->getId() . " $unattached wikis left to migrate";
+	$global = new CentralAuthUser( $wgUser->getName() );
+	if( $global->exists() ) {
+		if( $global->isAttached() ) {
+			// Local is attached...
+			$attached = count( $global->listAttached() );  // $attached var not used.
+			$unattached = count( $global->listUnattached() );
+			if( $unattached ) {
+				// Migration incomplete
+				$message = $global->getId() . " $unattached wikis left to migrate";
+			} else {
+				// Migration complete
+				$message = $global->getId() . " Migration complete";
+			}
 		} else {
-			// Migration complete
-			$message = $global->getId() . " Migration complete";
-		}
-	} else {
-		$global = new CentralAuthUser( $wgUser->getName() );
-		if( $global->exists() ) {
 			// Account is in migration, but the local account is not attached
 			$message = "This wiki has not been verified to the unified account";
-		} else {
-			// Not migrated.
-			$message = "Not using unified account.";
 		}
+	} else {
+		// Not migrated.
+		$message = "Not using unified account.";
 	}
 	
 	$html .= $prefsForm->addRow(

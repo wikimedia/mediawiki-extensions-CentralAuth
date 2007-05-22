@@ -87,6 +87,10 @@ $wgCentralAuthMessages['en'] = array(
 		'Unmerge selected',
 	'centralauth-admin-merge' =>
 		'Merge selected',
+	'centralauth-admin-bad-input' =>
+		'Invalid merge selection',
+	'centralauth-admin-none-selected' =>
+		'No accounts selected to modify.',
 
 	// Info panel in preferences
 	'centralauth-globalid' =>

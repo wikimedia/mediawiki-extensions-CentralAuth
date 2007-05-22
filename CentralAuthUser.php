@@ -19,47 +19,10 @@ class CentralAuthUser {
 	 */
 	private $mName;
 	
-	/**
-	 * Look up the global user entry for the given local User object
-	 */
-	public static function newFromUser( User $user ) {
-		global $wgDBname;
-		return CentralAuthUser::newFromLocal( $wgDBname, $user->getId() );
-	}
-	
-	/**
-	 * Look up the global user entry for a local DB's account,
-	 * or return NULL if the account is not attached to a global
-	 * account.
-	 */
-	function newFromLocal( $dbname, $userid ) {
-		$dbr = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$username = $dbr->selectField(
-			array( self::tableName( 'globaluser' ), self::tableName( 'localuser' ) ),
-			'gu_name',
-			array(
-				'gu_id=lu_global_id',
-				'lu_dbname' => $dbname,
-				'lu_local_id' => $userid,
-			),
-			__METHOD__ );
-		if( $username === false ) {
-			return null;
-		} else {
-			return new CentralAuthUser( $username );
-		}
-	}
-	
-	/**
-	 * Return the global user object for a given username.
-	 * @todo - Not called currently, maybe delete? Get same functionality from the constructor anyway.
-	 */
-	function newFromName( $username ) {
-		return new CentralAuthUser( $username );
-	}
-	
 	function __construct( $username ) {
 		$this->mName = $username;
+		$this->resetState();
+		$this->loadState();
 	}
 	
 	public static function tableName( $name ) {
@@ -73,18 +36,72 @@ class CentralAuthUser {
 	}
 	
 	/**
-	 * this code is crap
-	 * Q: Can we cache the result of this in a $this->mId field, and have it default to null/false, and 
-	 *    repeat the query if the result is null/false (such as when called twice in self::lazyMigrate() ).
+	 * Clear state information cache
+	 */
+	private function resetState() {
+		$this->mGlobalId = null;
+		$this->mLocalId = null;
+	}
+	
+	/**
+	 * Load up the most commonly required state information
+	 */
+	private function loadState() {
+		if( !isset( $this->mGlobalId ) ) {
+			global $wgDBname;
+			$dbr = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$globaluser = self::tableName( 'globaluser' );
+			$localuser = self::tableName( 'localuser' );
+		
+			$sql =
+				"SELECT gu_id, lu_local_id
+					FROM $globaluser
+					LEFT OUTER JOIN $localuser
+						ON gu_id=lu_global_id
+						AND lu_dbname=?
+					WHERE gu_name=?";
+			$result = $dbr->safeQuery( $sql, $wgDBname, $this->mName );
+			$row = $dbr->fetchObject( $result );
+			$dbr->freeResult( $result );
+		
+			if( $row ) {
+				$this->mGlobalId = $row->gu_id;
+				$this->mLocalId = $row->lu_local_id;
+			} else {
+				$this->mGlobalId = null;
+				$this->mLocalId = null;
+			}
+		}
+	}
+	
+	/**
+	 * Return the global account ID number for this account, if it exists.
 	 */
 	public function getId() {
-		$dbr = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$id = $dbr->selectField(
-			self::tableName( 'globaluser' ),
-			'gu_id',
-			array( 'gu_name' => $this->mName ),
-			__METHOD__ );
-		return $id;
+		$this->loadState();
+		return $this->mGlobalId;
+	}
+	
+	/**
+	 * @return bool True if the account is attached on the local wiki
+	 */
+	public function isAttached() {
+		$this->loadState();
+		return isset( $this->mLocalId );
+	}
+	
+	/**
+	 * Check whether a global user account for this name exists yet.
+	 * If migration state is set for pass 1, this may trigger lazy
+	 * evaluation of automatic migration for the account.
+	 *
+	 * @return bool
+	 */
+	public function exists() {
+		$this->lazyMigrate();
+		$id = $this->getId();
+		wfDebugLog( 'CentralAuth', "exists() for '$this->mName': $id" );
+		return $id != 0;
 	}
 	
 	private function lazyMigrate() {
@@ -110,20 +127,6 @@ class CentralAuthUser {
 			
 			$dbw->commit();
 		}
-	}
-	
-	/**
-	 * Check whether a global user account for this name exists yet.
-	 * If migration state is set for pass 1, this may trigger lazy
-	 * evaluation of automatic migration for the account.
-	 *
-	 * @return bool
-	 */
-	function exists() {
-		$this->lazyMigrate();
-		$id = $this->getId();
-		wfDebugLog( 'CentralAuth', "exists() for '$this->mName': $id" );
-		return $id != 0;
 	}
 	
 	/**
@@ -204,6 +207,7 @@ class CentralAuthUser {
 			__METHOD__,
 			array( 'IGNORE' ) );
 		
+		$this->resetState();
 		return $dbw->affectedRows() != 0;
 	}
 	
@@ -403,7 +407,7 @@ class CentralAuthUser {
 		$dbw->delete( self::tableName( 'localuser' ),
 			array(
 				'lu_global_id' => $this->getId(),
-				'lu_dbname'    => $list ),
+				'lu_dbname'    => $valid ),
 			__METHOD__ );
 		
 		// FIXME: touch remote-database user accounts
@@ -411,6 +415,11 @@ class CentralAuthUser {
 		// FIXME: proper... stuff
 		$migrated = array();
 		$remaining = $list;
+		
+		global $wgDBname;
+		if( in_array( $wgDBname, $valid ) ) {
+			$this->resetState();
+		}
 		
 		return count( $list ) == count( $valid );
 	}
@@ -435,6 +444,11 @@ class CentralAuthUser {
 			__METHOD__ );
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $dbname:$localid to '$this->mName' for '$method'" );
+		
+		global $wgDBname;
+		if( $dbname == $wgDBname ) {
+			$this->resetState();
+		}
 	}
 	
 	/**

@@ -35,7 +35,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mAttemptMerge = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
 		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
-		$this->mDatabases = $wgRequest->getArray( 'wpWikis' );
+		$this->mDatabases = (array)$wgRequest->getArray( 'wpWikis' );
 		
 		// Possible demo states
 		
@@ -50,9 +50,12 @@ class SpecialCentralAuth extends SpecialPage {
 		
 		$globalUser = new CentralAuthUser( $this->mUserName );
 		$merged = $remainder = array();
+		$this->showUsernameForm();
 		
 		if( $this->mAttemptMerge ) {
-			if( $this->mMethod == 'admin' ) {
+			if( empty( $this->mDatabases ) ) {
+				$this->showError( wfMsg( 'centralauth-admin-none-selected' ) );
+			} elseif( $this->mMethod == 'admin' ) {
 				$ok = $globalUser->adminAttach(
 					$this->mDatabases,
 					$merged,
@@ -63,8 +66,7 @@ class SpecialCentralAuth extends SpecialPage {
 					$merged,
 					$remainder );
 			} else {
-				// complain
-				die( 'noooo' );
+				$this->showError( wfMsg( 'centralauth-admin-bad-input' ) );
 			}
 			
 			// if (! $ok) { ....
@@ -72,8 +74,13 @@ class SpecialCentralAuth extends SpecialPage {
 			$merged = $globalUser->listAttached();
 			$remainder = $globalUser->listUnattached();
 		}
-		$this->showUsernameForm();
+		
 		$this->showInfo();
+	}
+	
+	function showError( $message ) {
+		global $wgOut;
+		$wgOut->addWikiText( "<div class='error'>$message</div>" );
 	}
 	
 	function showUsernameForm() {
