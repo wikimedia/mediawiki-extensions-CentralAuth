@@ -285,6 +285,55 @@ $wgCentralAuthMessages['fr'] = array(
 		'ID compte unifié :',
 );
 
+$wgCentralAuthMessages['he'] = array(
+	# When not logged in...
+	'mergeaccount'                => 'מצב מיזוג החשבונות',
+	'centralauth-merge-notlogged' => 'אנא <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.',
+
+	# Big text on completion
+	'centralauth-complete'   => 'מיזוג החשבון הושלם!',
+	'centralauth-incomplete' => 'מיזוג החשבון לא הושלם!',
+
+	# Wheeee
+	'centralauth-complete-text'   => 'כעת באפשרותכם להיכנס לכל אתר ויקי של ויקימדיה בלי ליצור חשבון חדש; שם המשתמש והסיסמה הזהים יעבדו בוויקיפדיה, בוויקימילון, בוויקיספר, ובמיזמים השונים בכל השפות.',
+	'centralauth-incomplete-text' => 'כשמיזוג החשבון שלכם יושלם, יהיה באפשרותכם להיכנס לכל אתר ויקי של ויקימדיה בלי ליצור חשבון חדש; שם המשתמש והסיסמה הזהים יעבדו בוויקיפדיה, בוויקימילון, בוויקיספר, ובמיזמים השונים בכל השפות.',
+	'centralauth-not-owner-text'  => 'שם המשתמש "$1" הוקצה אוטומטית לבעלי החשבון באתר $2.
+
+אם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הכללי כאן:',
+
+	# Appended to various messages above
+	'centralauth-readmore-text' => ":[[meta:Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",
+
+	# For lists of wikis/accounts:
+	'centralauth-list-merged'   => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים מוזגו באופן אוטומטי:',
+	'centralauth-list-unmerged' => 'לא ניתן היה לבדוק אוטומטית האם החשבונות בשם "$1" באתרים הבאים שייכים לכם; כנראה שיש להם סיסמאות שונות מאשר בחשבון הראשי שלכם:',
+	'centralauth-foreign-link'  => 'המשתמש $1 באתר $2',
+
+	# When not complete, offer to finish...
+	'centralauth-finish-title'             => 'סיום המיזוג',
+	'centralauth-finish-text'              => 'אם חשבונות אלה אכן שייכים לכם, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמאות לחשבונות האחרים כאן:',
+	'centralauth-finish-password'          => 'סיסמה:',
+	'centralauth-finish-login'             => 'כניסה',
+	'centralauth-finish-send-confirmation' => 'שליחת סיסמה בדוא"ל',
+	'centralauth-finish-problems'          => "יש לכם בעיה, או שאינכם בעלי החשבונות האחרים? [[meta:Help:Unified login problems|ניתן למצוא עזרה כאן]]...",
+
+	'centralauth-merge-attempt' => "'''בודק האם הסיסמאות שניתנו תואמים לחשבונות הנותרים שלא מוזגו...'''",
+
+	# Administrator's console
+	'centralauth'                     => 'ניהול מיזוג החשבונות',
+	'centralauth-admin-manage'        => 'ניהול המידע על המשתמש',
+	'centralauth-admin-username'      => 'שם משתמש:',
+	'centralauth-admin-lookup'        => 'הצגת ועריכת המידע על המשתמש',
+	'centralauth-admin-permission'    => "רק דיילים יכולים למזג את חשבונותיהם של אנשים אחרים עבורם.",
+	'centralauth-admin-unmerge'       => 'ביטול המיזוג של החשבונות שנבחרו',
+	'centralauth-admin-merge'         => 'מיזוג החשבונות שנבחרו',
+	'centralauth-admin-bad-input'     => 'בחירה שגויה של מיזוג',
+	'centralauth-admin-none-selected' => 'לא נבחרו חשבונות לשינוי.',
+
+	# Info panel in preferences
+	'centralauth-globalid' => 'מספר משתמש ממוזג:',
+);
+
 $wgCentralAuthMessages['id'] = array(
 	// When not logged in...
 	'mergeaccount' =>
