@@ -188,6 +188,10 @@ $wgCentralAuthMessages['de'] = array(
 		'Ausgewählte Benutzerkonten trennen',
 	'centralauth-admin-merge' =>
 		'Ausgewählte Benutzerkonten zusammenführen',
+	'centralauth-admin-bad-input' =>
+		'Ungültige Auswahl',
+	'centralauth-admin-none-selected' =>
+		'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
 
 	// Info panel in preferences
 	'centralauth-globalid' =>
