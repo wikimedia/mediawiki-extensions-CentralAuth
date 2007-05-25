@@ -104,6 +104,24 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 	
+	function prettyTimespan( $span ) {
+		$units = array(
+			'seconds' => 60,
+			'minutes' => 60,
+			'hours' => 24,
+			'days' => 30.417,
+			'months' => 12,
+			'years' => 1 );
+		foreach( $units as $unit => $chunk ) {
+			if( $span < 2*$chunk ) {
+				return "$span $unit";
+			}
+			$span = intval( $span / $chunk );
+		}
+		return "$span $unit";
+	}
+	
+	
 	function showInfo() {
 		$globalUser = new CentralAuthUser( $this->mUserName );
 		
@@ -111,9 +129,21 @@ class SpecialCentralAuth extends SpecialPage {
 		$merged = $globalUser->queryAttached();
 		$remainder = $globalUser->queryUnattached();
 		
-		global $wgOut;
+		global $wgOut, $wgLang;
 		if( $globalUser->exists() ) {
-			$wgOut->addWikiText( "User id: $id" );
+			$reg = $globalUser->getRegistration();
+			$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
+			$attribs = array(
+				'User id:' => $globalUser->getId(),
+				'Registered:' => $wgLang->timeanddate( $reg ) . " ($age ago)",
+				'Locked:' => $globalUser->isLocked() ? 'yes' : 'no',
+				'Hidden:' => $globalUser->isHidden() ? 'yes' : 'no' );
+			$out = '<ul>';
+			foreach( $attribs as $tag => $data ) {
+				$out .= Xml::element( 'li', array(), $tag . ' ' . $data );
+			}
+			$out .= '</ul>';
+			$wgOut->addHtml( $out );
 			
 			$wgOut->addWikiText( "<h2>Fully merged accounts</h2>" );
 			$wgOut->addHtml( $this->listMerged( $merged ) );

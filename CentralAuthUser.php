@@ -22,7 +22,6 @@ class CentralAuthUser {
 	function __construct( $username ) {
 		$this->mName = $username;
 		$this->resetState();
-		$this->loadState();
 	}
 	
 	public static function tableName( $name ) {
@@ -41,10 +40,11 @@ class CentralAuthUser {
 	private function resetState() {
 		$this->mGlobalId = null;
 		$this->mLocalId = null;
+		$this->mProperties = null;
 	}
 	
 	/**
-	 * Load up the most commonly required state information
+	 * Lazy-load up the most commonly required state information
 	 */
 	private function loadState() {
 		if( !isset( $this->mGlobalId ) ) {
@@ -102,6 +102,44 @@ class CentralAuthUser {
 		$id = $this->getId();
 		wfDebugLog( 'CentralAuth', "exists() for '$this->mName': $id" );
 		return $id != 0;
+	}
+	
+	/**
+	 * Lazy-load misc properties that may be used at times
+	 */
+	private function loadProperties() {
+		if( !isset( $this->mProperties ) ) {
+			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$row = $dbw->selectRow( self::tableName( 'globaluser' ),
+				array( 'gu_locked', 'gu_hidden', 'gu_registration' ),
+				array( 'gu_id' => $this->getId() ),
+				__METHOD__ );
+			$this->mProperties = $row;
+		}
+	}
+	
+	/**
+	 * @return bool
+	 */
+	public function isLocked() {
+		$this->loadProperties();
+		return (bool)$this->mProperties->gu_locked;
+	}
+	
+	/**
+	 * @return bool
+	 */
+	public function isHidden() {
+		$this->loadProperties();
+		return (bool)$this->mProperties->gu_hidden;
+	}
+	
+	/**
+	 * @return string timestamp
+	 */
+	public function getRegistration() {
+		$this->loadProperties();
+		return wfTimestamp( TS_MW, $this->mProperties->gu_registration );
 	}
 	
 	private function lazyMigrate() {
@@ -203,6 +241,7 @@ class CentralAuthUser {
 				'gu_password' => $hash,
 				'gu_email' => $email,
 				'gu_email_authenticated' => $emailAuth,
+				'gu_registration' => $dbw->timestamp(), // hmmmm
 			),
 			__METHOD__,
 			array( 'IGNORE' ) );
