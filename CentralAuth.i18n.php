@@ -418,6 +418,10 @@ $wgCentralAuthMessages['id'] = array(
 		'Batalkan penggabungan akun terpilih',
 	'centralauth-admin-merge' =>
 		'Gabungkan akun terpilih',
+	'centralauth-admin-bad-input' =>
+		'Pilihan penggabungan tak sah',
+	'centralauth-admin-none-selected' =>
+		'Tidak ada akun yang dipilih untuk diubah.',
 
 	// Info panel in preferences
 	'centralauth-globalid' =>
