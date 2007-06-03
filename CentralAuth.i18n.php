@@ -1313,6 +1313,10 @@ $wgCentralAuthMessages['pt'] = array(
 		'Desfazer a fusão nos seleccionados',
 	'centralauth-admin-merge' =>
 		'Fundir seleccionados',
+	'centralauth-admin-bad-input' =>
+		'Selecção para fusão inválida',
+	'centralauth-admin-none-selected' =>
+		'Não foram seleccionadas contas a serem modificadas.',
 
 	// Info panel in preferences
 	'centralauth-globalid' =>
@@ -1404,6 +1408,10 @@ $wgCentralAuthMessages['pt-br'] = array(
 		'Desfundir os selecionados',
 	'centralauth-admin-merge' =>
 		'Fundir os selecionados',
+	'centralauth-admin-bad-input' =>
+		'Selecção para fusão inválida',
+	'centralauth-admin-none-selected' =>
+		'Não foram seleccionadas contas a serem modificadas.',
 
 	// Info panel in preferences
 	'centralauth-globalid' =>
