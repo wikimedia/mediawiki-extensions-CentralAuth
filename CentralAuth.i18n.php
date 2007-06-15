@@ -837,6 +837,40 @@ $wgCentralAuthMessages['nl'] = array(
 
 );
 
+
+$wgCentralAuthMessages['no'] = array(
+	'mergeaccount'                         => 'Kontosammensmeltingsstatus',
+	'centralauth-merge-notlogged'          => 'Vennligst <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special:MergeAccount}} logg inn]</span> for å sjekke om kontoene dine har blitt fullstendig sammensmeltet.',
+	'centralauth-complete'                 => 'Kontosammensmelting fullført!',
+	'centralauth-incomplete'               => 'Kontosammensmelting ikke ferdig!',
+	'centralauth-complete-text'            => 'Du kan nå logge inn på enhver Wikimedia-wiki uten å opprette en ny konto; samme brukernavn vil fungere på Wikipedia, Wiktionary, Wikibooks og deres søsterprosjekter på alle språk.',
+	'centralauth-incomplete-text'          => 'Når du har smeltet sammen kontoene dine, vil du kunne logge inn på enhver Wikimedia-wiki uten å opprette en ny konto; samme brukernavn og passord vil fungere på Wikipedia, Wiktionary, Wikibooks og deres søsterprosjekter på alle språk.',
+	'centralauth-not-owner-text'           => 'Brukernavnet «$1» ble automatisk tildelt eieren av kontoen på $2.
+
+Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn hovedpassordet for den kontoen her:',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Les mer om \'\'\'kontosammensmelting\'\'\']]…\'\'',
+	'centralauth-list-merged'              => 'Kontoene kalt «$1» på følgende sider har blitt automatisk sammensmeltet:',
+	'centralauth-list-unmerged'            => 'Kontoen «$1» på følgende sider kunne ikke automatisk stadfestes å være din; de har mest sannsynlig et annet passord enn din hovedkonto:',
+	'centralauth-foreign-link'             => 'Bruker $1 på $2',
+	'centralauth-finish-title'             => 'Fullfør sammensmelting',
+	'centralauth-finish-text'              => 'Om disse kontoene ikke tilhører deg, kan du fullføre kontosammensmeltingen ved å skrive inn passordene for de andre kontoene her:',
+	'centralauth-finish-password'          => 'Passord:',
+	'centralauth-finish-login'             => 'Logg inn',
+	'centralauth-finish-send-confirmation' => 'Send passord på e-post',
+	'centralauth-finish-problems'          => 'Har du problemer, eller er ikke disse andre kontoene dine? [[meta:Help:Unified login problems|Hvordan finne hjelp…]]',
+	'centralauth-merge-attempt'            => '\'\'\'Sjekker det oppgitte passordet mot gjenværende kontoer…\'\'\'',
+	'centralauth'                          => 'Kontosammensmeltingsadministrasjon',
+	'centralauth-admin-manage'             => 'Behandle brukerdata',
+	'centralauth-admin-username'           => 'Brukernavn:',
+	'centralauth-admin-lookup'             => 'Vis eller rediger brukerdata',
+	'centralauth-admin-permission'         => 'Kun setwards kan smelte sammen andres kontoer for dem.',
+	'centralauth-admin-unmerge'            => 'Skill ut valgte',
+	'centralauth-admin-merge'              => 'Smelt sammen valgte',
+	'centralauth-admin-bad-input'          => 'Ugyldig flettingsvalg',
+	'centralauth-admin-none-selected'      => 'Ingen kontoer valgt for endring.',
+	'centralauth-globalid'                 => 'Sammensmeltet konto-ID:',
+);
+
 $wgCentralAuthMessages['oc'] = array(
 	'mergeaccount'                         => 'Estatut d’unificacion del compte d\'utilizaire',
 	'centralauth-merge-notlogged'          => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos connectar]</span> per verificar que vòstres comptes son plan estats acampats.',
