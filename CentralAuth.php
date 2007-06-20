@@ -80,27 +80,37 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	if( $global->exists() ) {
 		if( $global->isAttached() ) {
 			// Local is attached...
-			$attached = count( $global->listAttached() );  // $attached var not used.
+			$attached = count( $global->listAttached() );
 			$unattached = count( $global->listUnattached() );
 			if( $unattached ) {
 				// Migration incomplete
-				$message = $global->getId() . " $unattached wikis left to migrate";
+				$message = '<strong>' . wfMsgHtml( 'centralauth-prefs-migration' ) . '</strong>' .
+					'<br />' .
+					wfMsgHtml( 'centralauth-prefs-count-attached', $attached ) .
+					'<br />' .
+					wfMsgHtml( 'centralauth-prefs-count-unattached', $unattached );
 			} else {
 				// Migration complete
-				$message = $global->getId() . " Migration complete";
+				$message = '<strong>' . wfMsgHtml( 'centralauth-prefs-complete' ) . '</strong>' .
+					'<br />' .
+					wfMsgHtml( 'centralauth-prefs-count-attached', $attached );
 			}
 		} else {
 			// Account is in migration, but the local account is not attached
-			$message = "This wiki has not been verified to the unified account";
+			$message = '<strong>' . wfMsgHtml( 'centralauth-prefs-unattached' ) . '</strong>' .
+				'<br />' .
+				wfMsgHtml( 'centralauth-prefs-detail-unattached' );
 		}
 	} else {
 		// Not migrated.
-		$message = "Not using unified account.";
+		$message = wfMsgHtml( 'centralauth-prefs-not-managed' );
 	}
 	
-	$html .= $prefsForm->addRow(
-		wfMsgHtml( 'centralauth-globalid' ),
-		$message . ' (' . $skin->makeKnownLinkObj( $special, 'merge your accounts' ) . ')' );
+	$manageLink = $skin->makeKnownLinkObj( $special,
+		wfMsgHtml( 'centralauth-prefs-manage' ) );
+	$html .= $prefsForm->tableRow(
+		wfMsgHtml( 'centralauth-prefs-status' ),
+		"$message<br />($manageLink)" );
 	return true;
 }
 

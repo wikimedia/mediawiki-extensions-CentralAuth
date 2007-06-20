@@ -93,8 +93,25 @@ $wgCentralAuthMessages['en'] = array(
 		'No accounts selected to modify.',
 
 	// Info panel in preferences
-	'centralauth-globalid' =>
-		'Unified account ID:',
+	'centralauth-prefs-status' =>
+		'Global account status:',
+	'centralauth-prefs-not-managed' =>
+		'Not using unified account',
+	'centralauth-prefs-unattached' =>
+		'Unconfirmed',
+	'centralauth-prefs-complete' =>
+		'All in order!',
+	'centralauth-prefs-migration' =>
+		'In migration',
+	'centralauth-prefs-count-attached' =>
+		'Your account is active on $1 project sites.',
+	'centralauth-prefs-count-unattached' =>
+		'Unconfirmed accounts with your name remain on $1 projects.',
+	'centralauth-prefs-detail-unattached' =>
+		'This project site has not been confirmed as belonging to the global account.',
+	'centralauth-prefs-manage' =>
+		'Manage your global account',
+	
 );
 
 $wgCentralAuthMessages['de'] = array(
@@ -192,11 +209,6 @@ $wgCentralAuthMessages['de'] = array(
 		'Ungültige Auswahl',
 	'centralauth-admin-none-selected' =>
 		'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'ID der zusammengeführten Benutzerkonten:',
-
 );
 
 // Based on r18928
@@ -283,10 +295,6 @@ $wgCentralAuthMessages['fr'] = array(
 		'Séparer sélection',
 	'centralauth-admin-merge' =>
 		'Réunir sélection',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'ID compte unifié :',
 );
 
 $wgCentralAuthMessages['he'] = array(
@@ -333,9 +341,6 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-admin-merge'         => 'מיזוג החשבונות שנבחרו',
 	'centralauth-admin-bad-input'     => 'בחירה שגויה של מיזוג',
 	'centralauth-admin-none-selected' => 'לא נבחרו חשבונות לשינוי.',
-
-	# Info panel in preferences
-	'centralauth-globalid' => 'מספר משתמש ממוזג:',
 );
 
 $wgCentralAuthMessages['id'] = array(
@@ -422,10 +427,6 @@ $wgCentralAuthMessages['id'] = array(
 		'Pilihan penggabungan tak sah',
 	'centralauth-admin-none-selected' =>
 		'Tidak ada akun yang dipilih untuk diubah.',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'ID akun gabungan:',
 );
 
 $wgCentralAuthMessages['it'] = array(
@@ -585,10 +586,6 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		'Талғанғанды түйістірілеме',
 	'centralauth-admin-merge' =>
 		'Талғанғанды түйістіріле',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'Бірегейленген тіркелгі нөмірі:',
 );
 
 $wgCentralAuthMessages['kk-tr'] = array(
@@ -675,10 +672,6 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		'Talğanğandı tüýistirileme',
 	'centralauth-admin-merge' =>
 		'Talğanğandı tüýistirile',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'Biregeýlengen tirkelgi nömiri:',
 );
 
 $wgCentralAuthMessages['kk-cn'] = array(
@@ -765,10 +758,6 @@ $wgCentralAuthMessages['kk-cn'] = array(
 		'تالعانعاندى تٷيٸستٸرٸلەمە',
 	'centralauth-admin-merge' =>
 		'تالعانعاندى تٷيٸستٸرٸلە',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'بٸرەگەيلەنگەن تٸركەلگٸ نٶمٸرٸ:',
 );
 
 $wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-kz'];
@@ -868,7 +857,6 @@ Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn
 	'centralauth-admin-merge'              => 'Smelt sammen valgte',
 	'centralauth-admin-bad-input'          => 'Ugyldig flettingsvalg',
 	'centralauth-admin-none-selected'      => 'Ingen kontoer valgt for endring.',
-	'centralauth-globalid'                 => 'Sammensmeltet konto-ID:',
 );
 
 $wgCentralAuthMessages['oc'] = array(
@@ -899,7 +887,6 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 	'centralauth-admin-permission'         => 'Sols los stewards pòdon acampar los comptes d’autras personas a lor plaça.',
 	'centralauth-admin-unmerge'            => 'Separar la seleccion',
 	'centralauth-admin-merge'              => 'Acampar la seleccion',
-	'centralauth-globalid'                 => 'ID compte unificat:',
 );
 
 $wgCentralAuthMessages['ru'] = array(
@@ -986,10 +973,6 @@ $wgCentralAuthMessages['ru'] = array(
 		'Разделить выбранные',
 	'centralauth-admin-merge' =>
 		'Объединить выбранные',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'Идентификатор единой учётной записи:',
 );
 
 $wgCentralAuthMessages['sk'] = array(
@@ -1022,7 +1005,6 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-admin-merge'              => 'Zlúčenie zvolených',
 	'centralauth-admin-bad-input'          => 'Neplatný výber pre zlúčenie',
 	'centralauth-admin-none-selected'      => 'Neboli vybrané účty, ktoré sa majú zmeniť.',
-	'centralauth-globalid'                 => 'ID zjednoteného účtu:',
 );
 
 $wgCentralAuthMessages['sr-ec'] = array(
@@ -1109,10 +1091,6 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		'Одвоји селектоване',
 	'centralauth-admin-merge' =>
 		'Споји селектоване',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'Јединствен ID налога:',
 );
 
 $wgCentralAuthMessages['sr-el'] = array(
@@ -1199,10 +1177,6 @@ $wgCentralAuthMessages['sr-el'] = array(
 		'Odvoji selektovane',
 	'centralauth-admin-merge' =>
 		'Spoji selektovane',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'Jedinstven ID naloga:',
 );
 
 $wgCentralAuthMessages['pt'] = array(
@@ -1293,10 +1267,6 @@ $wgCentralAuthMessages['pt'] = array(
 		'Selecção para fusão inválida',
 	'centralauth-admin-none-selected' =>
 		'Não foram seleccionadas contas a serem modificadas.',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'ID de conta unificada:',
 );
 
 $wgCentralAuthMessages['pt-br'] = array(
@@ -1388,10 +1358,6 @@ $wgCentralAuthMessages['pt-br'] = array(
 		'Selecção para fusão inválida',
 	'centralauth-admin-none-selected' =>
 		'Não foram seleccionadas contas a serem modificadas.',
-
-	// Info panel in preferences
-	'centralauth-globalid' =>
-		'ID de conta unificada:',
 );
 
 $wgCentralAuthMessages['de'] = array(
@@ -1501,7 +1467,6 @@ Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku 
 	'centralauth-admin-permission'         => 'Nu bisa ngahijikeun rekening batur mah ngan steward.',
 	'centralauth-admin-unmerge'            => 'Pisahkeun nu dipilih',
 	'centralauth-admin-merge'              => 'Hijikeun nu dipilih',
-	'centralauth-globalid'                 => 'ID rekening gabungan:',
 );
 
 $wgCentralAuthMessages['zh-cn'] = array(
