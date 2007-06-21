@@ -341,6 +341,17 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-admin-merge'         => 'מיזוג החשבונות שנבחרו',
 	'centralauth-admin-bad-input'     => 'בחירה שגויה של מיזוג',
 	'centralauth-admin-none-selected' => 'לא נבחרו חשבונות לשינוי.',
+
+	# Info panel in preferences
+	'centralauth-prefs-status'            => 'מצב החשבון הכללי:',
+	'centralauth-prefs-not-managed'       => 'לא משתמש בחשבון ממוזג',
+	'centralauth-prefs-unattached'        => 'בלתי מאומת',
+	'centralauth-prefs-complete'          => 'הכל תקין!',
+	'centralauth-prefs-migration'         => 'בתהליך מיזוג',
+	'centralauth-prefs-count-attached'    => 'החשבון שלכם פעיל ב־$1 מיזמים.',
+	'centralauth-prefs-count-unattached'  => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב־$1 מיזמים.',
+	'centralauth-prefs-detail-unattached' => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
+	'centralauth-prefs-manage'            => 'ניהול החשבון הכללי',
 );
 
 $wgCentralAuthMessages['id'] = array(
