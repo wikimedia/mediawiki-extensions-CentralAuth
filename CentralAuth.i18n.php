@@ -209,6 +209,18 @@ $wgCentralAuthMessages['de'] = array(
 		'Ungültige Auswahl',
 	'centralauth-admin-none-selected' =>
 		'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
+
+	// Info panel in preferences
+       'centralauth-prefs-status'            => 'Benutzerkonten-Status:',
+       'centralauth-prefs-not-managed'       => 'Es wird kein zusammengeführtes Benutzerkonto benutzt.',
+       'centralauth-prefs-unattached'        => 'Unbestätigt',
+       'centralauth-prefs-complete'          => 'Fertig!',
+       'centralauth-prefs-migration'         => 'Zusammenführung in Arbeit',
+       'centralauth-prefs-count-attached'    => 'Dein Benutzerkonto ist in $1 Projekten aktiv.',
+       'centralauth-prefs-count-unattached'  => 'Es gibt in $1 Projekten unbestätigte Benutzerkonten mit deinem Namen.',
+       'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
+       'centralauth-prefs-manage'            => 'Bearbeite dein zusammengeführtes Benutzerkonto',
+
 );
 
 // Based on r18928
