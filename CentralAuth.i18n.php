@@ -1811,4 +1811,4 @@ $wgCentralAuthMessages['zh-yue'] = array(
 );
 $wgCentralAuthMessages['zh-sg'] = $wgCentralAuthMessages['zh-cn'];
 
-?>
+

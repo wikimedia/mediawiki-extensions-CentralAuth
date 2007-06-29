@@ -114,4 +114,3 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	return true;
 }
 
-?>

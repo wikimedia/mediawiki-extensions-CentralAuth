@@ -66,4 +66,3 @@ echo "$wgDBname preparing migration data...\n";
 migratePassZero();
 echo "done.\n";
 
-?>

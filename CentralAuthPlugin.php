@@ -212,4 +212,3 @@ class CentralAuthPlugin extends AuthPlugin {
 	}
 }
 
-?>

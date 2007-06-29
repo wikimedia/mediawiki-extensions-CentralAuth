@@ -51,4 +51,3 @@ echo "Finding accounts which can be migrated without interaction...\n";
 migratePassOne();
 echo "done.\n";
 
-?>
