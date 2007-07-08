@@ -1069,6 +1069,15 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-admin-merge'              => 'Zlúčenie zvolených',
 	'centralauth-admin-bad-input'          => 'Neplatný výber pre zlúčenie',
 	'centralauth-admin-none-selected'      => 'Neboli vybrané účty, ktoré sa majú zmeniť.',
+	'centralauth-prefs-status'             => 'Globálny stav účtu:',
+	'centralauth-prefs-not-managed'        => 'Nepoužíva zjednotený účet',
+	'centralauth-prefs-unattached'         => 'Nepotvrdené',
+	'centralauth-prefs-complete'           => 'Všetko v poriadku!',
+	'centralauth-prefs-migration'          => 'Prebieha migrácia',
+	'centralauth-prefs-count-attached'     => 'Váš účet je aktívny na $1 projektoch.',
+	'centralauth-prefs-count-unattached'   => 'Nepotvrdené účty s vašim menom zostávajú na $1 projektoch.',
+	'centralauth-prefs-detail-unattached'  => 'Nebolo potvrdené, že účet na tomto projekte patrí ku globálnemu účtu.',
+	'centralauth-prefs-manage'             => 'Spravovať váš globálny účet',
 );
 
 $wgCentralAuthMessages['sr-ec'] = array(
