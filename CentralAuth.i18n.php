@@ -912,6 +912,47 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 	'centralauth-admin-merge'              => 'Acampar la seleccion',
 );
 
+$wgCentralAuthMessages['pms'] = array(
+	'mergeaccount'                         => 'Stat dël process dla mës-cia dë stranòm e ciav',
+	'centralauth-merge-notlogged'          => 'Për piasì <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ch\'a rintra ant ël sistema]</span> për controlé che sò cont a sio stait mës-cià coma ch\'as dev.',
+	'centralauth-complete'                 => 'Mës-cia dij cont bele faita!',
+	'centralauth-incomplete'               => 'Mës-cia djë stranòm e dle ciav bele faita!',
+	'centralauth-complete-text'            => 'Adess a peul rintré an qualsëssìa sit dla Wikimedia (ëd coj ch\'a travajo col programa dla wiki) sensa da manca dë deurb-se un cont; la midema cobia dë stranòm a ciav a travajo an qualsëssìa Wikipedia, Wiktionary, Wikibooks e ant sj\'àotri proget soe seur an qualsëssìa lenga.',
+	'centralauth-incomplete-text'          => 'Na vira che sò stranòm e ciav a sio stait mës-cià a podrà rintré an qualsëssìa sit dla Wikimedia (ëd coj ch\'a travajo col programa dla wiki) sensa pa da manca dë deurb-se un cont neuv; la midema cobia dë stranòm e ciav a travajeran ant tute le Wikipedia, Wiktionary, Wikibooks e sò proget seur an qualsëssìa lenga.',
+	'centralauth-not-owner-text'           => 'Lë stranòm "$1" e l\'é stait dait n\'aotomàtich al proprietari dël cont ansima a $2.
+
+Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia dë stranòm e ciav ën butand-ie ambelessì la ciav prinsipal dël cont:',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Për savejne dë pì, ch\'a varda \'\'\'Stranòm e ciav globaj\'\'\']]...\'\'',
+	'centralauth-list-merged'              => 'Ij cont ch\'as ës-ciamo "$1" ansima a ij sit dla lista ambelessì sota a son stait mës-cià antra lor n\'aotomàtich:',
+	'centralauth-list-unmerged'            => 'Ant ij sit dla lista ambelessì sota ël cont "$1" a l\'é pa podusse confermé coma sò n\'aotomàtich; a l\'é belfé ch\'a-i sio dle ciav diferente da cola ëd sò cont prinsipal:',
+	'centralauth-foreign-link'             => 'Stranòm $1 ansima a $2',
+	'centralauth-finish-title'             => 'Finiss la mës-cia',
+	'centralauth-finish-text'              => 'Se sti cont-sì a son sò, a peul andé a bon fin dël process ëd mës-cia dë stranòm e ciav mach ën butand-ie le ciav dj\'àotri cont ambelessì sota:',
+	'centralauth-finish-password'          => 'Ciav:',
+	'centralauth-finish-login'             => 'Rintré ant ël sistema',
+	'centralauth-finish-send-confirmation' => 'Mandé la ciav për pòsta eletrònica',
+	'centralauth-finish-problems'          => 'Ha-lo dle gran-e, ò pura l\'é-lo pa chiel/chila ël titolar d\'ës cont-sì? Ch\'a varda [[meta:Help:Unified login problems|coma trové d\'agiut]]...',
+	'centralauth-merge-attempt'            => '\'\'\'I soma antramentr che i controloma le ciav ch\'a l\'ha butà con cole dij cont anco\' da mës-cé...\'\'\'',
+	'centralauth'                          => 'Aministrassion unificà dj\'intrade ant ël sistema',
+	'centralauth-admin-manage'             => 'Gestion dij dat dl\'utent',
+	'centralauth-admin-username'           => 'Stranòm:',
+	'centralauth-admin-lookup'             => 'Vardé ò modifiché ij dat dl\'utent',
+	'centralauth-admin-permission'         => 'Mach ij vardian a peulo mës-cé ëd cont d\'àotra gent.',
+	'centralauth-admin-unmerge'            => 'Dasmës-cia selessionà',
+	'centralauth-admin-merge'              => 'Mës-cia selessionà',
+	'centralauth-admin-bad-input'          => 'La selession dla mës-cia a l\'é pa giusta.',
+	'centralauth-admin-none-selected'      => 'Pa gnun cont da modifiché selessionà.',
+	'centralauth-prefs-status'             => 'Stat dël cont global:',
+	'centralauth-prefs-not-managed'        => 'A dòvra nen ël cont mës-cià',
+	'centralauth-prefs-unattached'         => 'Pa confermà',
+	'centralauth-prefs-complete'           => 'Gnun-a gran-a!',
+	'centralauth-prefs-migration'          => 'Antramentr ch\'as fa la migrassion',
+	'centralauth-prefs-count-attached'     => 'Sò cont a travaj ansima a ij sit dij proget $1.',
+	'centralauth-prefs-count-unattached'   => 'A resto dij cont nen confermà con sò stranòm ansima a ij proget $1.',
+	'centralauth-prefs-detail-unattached'  => 'Ës sit-sì a l\'é pa restà confermà coma bon për sò cont global.',
+	'centralauth-prefs-manage'             => 'Gestion ëd sò cont global',
+);
+
 $wgCentralAuthMessages['ru'] = array(
 	// When not logged in...
 	'mergeaccount' =>
