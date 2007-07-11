@@ -114,6 +114,36 @@ $wgCentralAuthMessages['en'] = array(
 	
 );
 
+/* Arabic (Meno25) */
+$wgCentralAuthMessages['ar'] = array(
+	'mergeaccount'                         => 'حالة توحيد الدخول',
+	'centralauth-complete'                 => 'توحيد الدخول اكتمل!',
+	'centralauth-incomplete'               => 'توحيد الدخول لم يكتمل!',
+	'centralauth-complete-text'            => 'يمكنك الآن الولوج لأي مشروع من مشاريع ويكيميديا بدون إنشاء حساب جديد؛ نفس اسم المستخدم و كلم السر ستعمل في ويكيبيديا و ويكاموس و ويكي الكتب و مشاريعهم الشقيقة بكل اللغات.',
+	'centralauth-incomplete-text'          => 'عندما يتم توحيد دخولك، يمكنك الولوج لأي مشروع من مشاريع ويكيميديا بدون إنشاء حساب جديد؛ نفس اسم المستخدم و كلم السر ستعمل في ويكيبيديا و ويكاموس و ويكي الكتب و مشاريعهم الشقيقة بكل اللغات.',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|اقرأ المزيد حول \'\'\'الدخول الموحد\'\'\']]...\'\'',
+	'centralauth-list-merged'              => 'الحسابات المسماة "$1" على المواقع التالية تم دمجها تلقائيا:',
+	'centralauth-foreign-link'             => 'المستخدم $1 في $2',
+	'centralauth-finish-title'             => 'انتهاء الدمج',
+	'centralauth-finish-password'          => 'كلمة السر:',
+	'centralauth-finish-login'             => 'دخول',
+	'centralauth-finish-send-confirmation' => 'أرسل كلمة السر عبر البريد الإلكتروني',
+	'centralauth-finish-problems'          => 'لديك مشكلة، أو لا تمتلك هذه الحسابات الأخرى؟ [[meta:Help:Unified login problems|كيف تجد المساعدة]]...',
+	'centralauth'                          => 'إدارة الدخول الموحد',
+	'centralauth-admin-manage'             => 'إدارة بيانات المستخدم',
+	'centralauth-admin-username'           => 'اسم المستخدم:',
+	'centralauth-admin-lookup'             => 'عرض أو تعديل بيانات المستخدم',
+	'centralauth-admin-permission'         => 'فقط المضيفون يمكنهم أن يدمجوا حسابات الآخرين.',
+	'centralauth-admin-unmerge'            => 'تم اختيار الفصل',
+	'centralauth-admin-merge'              => 'تم اختيار الدمج',
+	'centralauth-admin-bad-input'          => 'اختيار دمج غير صحيح',
+	'centralauth-admin-none-selected'      => 'لم يتم اختيار حسابات للدمج',
+	'centralauth-prefs-not-managed'        => 'لا يستخدم الحساب الموحد',
+	'centralauth-prefs-unattached'         => 'غير مؤكد',
+	'centralauth-prefs-count-attached'     => 'حسابك نشط في $1 مشروع.',
+	'centralauth-prefs-count-unattached'   => 'حسابات غير مؤكدة باسمك موجودة في $1 مشروع.',
+);
+
 $wgCentralAuthMessages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
