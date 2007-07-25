@@ -24,6 +24,20 @@ class CentralAuthUser {
 		$this->resetState();
 	}
 	
+	/**
+	 * @fixme Make use of some info to get the appropriate master DB
+	 */
+	public static function getCentralDB() {
+		return wfGetDB( DB_MASTER, 'Central' );
+	}
+	
+	/**
+	 * @fixme Make use of some info to get the appropriate master DB
+	 */
+	public static function getLocalDB( $dbname ) {
+		return wfGetDB( DB_MASTER );
+	}
+	
 	public static function tableName( $name ) {
 		global $wgCentralAuthDatabase;
 		return
@@ -39,8 +53,8 @@ class CentralAuthUser {
 	 */
 	private function resetState() {
 		$this->mGlobalId = null;
-		$this->mLocalId = null;
 		$this->mProperties = null;
+		$this->mHomeWiki = null;
 	}
 	
 	/**
@@ -49,15 +63,15 @@ class CentralAuthUser {
 	private function loadState() {
 		if( !isset( $this->mGlobalId ) ) {
 			global $wgDBname;
-			$dbr = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$dbr = self::getCentralDB();
 			$globaluser = self::tableName( 'globaluser' );
 			$localuser = self::tableName( 'localuser' );
 		
 			$sql =
-				"SELECT gu_id, lu_local_id
+				"SELECT gu_id, lu_attached
 					FROM $globaluser
 					LEFT OUTER JOIN $localuser
-						ON gu_id=lu_global_id
+						ON gu_name=lu_name
 						AND lu_dbname=?
 					WHERE gu_name=?";
 			$result = $dbr->safeQuery( $sql, $wgDBname, $this->mName );
@@ -66,10 +80,10 @@ class CentralAuthUser {
 		
 			if( $row ) {
 				$this->mGlobalId = $row->gu_id;
-				$this->mLocalId = $row->lu_local_id;
+				$this->mIsAttached = (bool)$row->lu_attached;
 			} else {
-				$this->mGlobalId = null;
-				$this->mLocalId = null;
+				$this->mGlobalId = 0;
+				$this->mIsAttached = false;
 			}
 		}
 	}
@@ -87,7 +101,7 @@ class CentralAuthUser {
 	 */
 	public function isAttached() {
 		$this->loadState();
-		return isset( $this->mLocalId );
+		return $this->mIsAttached;
 	}
 	
 	/**
@@ -109,10 +123,10 @@ class CentralAuthUser {
 	 */
 	private function loadProperties() {
 		if( !isset( $this->mProperties ) ) {
-			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$dbw = self::getCentralDB();
 			$row = $dbw->selectRow( self::tableName( 'globaluser' ),
 				array( 'gu_locked', 'gu_hidden', 'gu_registration' ),
-				array( 'gu_id' => $this->getId() ),
+				array( 'gu_name' => $this->mName ),
 				__METHOD__ );
 			$this->mProperties = $row;
 		}
@@ -145,7 +159,7 @@ class CentralAuthUser {
 	private function lazyMigrate() {
 		global $wgCentralAuthAutoMigrate;
 		if( $wgCentralAuthAutoMigrate ) {
-			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$dbw = self::getCentralDB();
 			$dbw->begin();
 			
 			$id = $this->getId();
@@ -173,7 +187,7 @@ class CentralAuthUser {
 	 * eeeyuck
 	 */
 	function register( $password, $email, $realname ) {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbw = self::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		$ok = $dbw->insert(
 			self::tableName( 'globaluser' ),
@@ -211,16 +225,15 @@ class CentralAuthUser {
 	 */
 	static function storeMigrationData( $dbname, $users ) {
 		if( $users ) {
-			$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+			$dbw = self::getCentralDB();
 			$tuples = array();
-			foreach( $users as $id => $name ) {
+			foreach( $users as $name ) {
 				$tuples[] = array(
-					'mu_dbname'   => $dbname,
-					'mu_local_id' => $id,
-					'mu_name'     => $name );
+					'lu_dbname'   => $dbname,
+					'lu_name'     => $name );
 			}
 			$dbw->insert(
-				self::tableName( 'migrateuser' ),
+				self::tableName( 'localuser' ),
 				$tuples,
 				__METHOD__,
 				array( 'IGNORE' ) );
@@ -233,7 +246,7 @@ class CentralAuthUser {
 	 * @return bool Whether we were successful or not.
 	 */
 	private function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbw = self::getCentralDB();
 		$dbw->insert( self::tableName( 'globaluser' ),
 			array(
 				'gu_name' => $this->mName,
@@ -250,65 +263,108 @@ class CentralAuthUser {
 		return $dbw->affectedRows() != 0;
 	}
 	
-	public function storeAndMigrate() {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+	public function storeAndMigrate( $passwords=array() ) {
+		$dbw = self::getCentralDB();
 		$dbw->begin();
 		
-		$ret = $this->attemptAutoMigration();
+		$ret = $this->attemptAutoMigration( $passwords );
 		
 		$dbw->commit();
 		return $ret;
 	}
 	
 	/**
-	 * Pick a winning master account and try to auto-merge as many as possible.
-	 * @fixme add some locking or something
-	 * @return bool Whether full automatic migration completed successfully.
+	 * Out of the given set of local account data, pick which will be the
+	 * initially-assigned home wiki.
+	 *
+	 * This will be the account with the highest edit count, either out of
+	 * all privileged accounts or all accounts if none are privileged.
+	 *
+	 * @param array $migrationSet
+	 * @return string
 	 */
-	private function attemptAutoMigration() {
-		$rows = $this->queryUnattached();
-		
-		if( !$rows ) {
-			wfDebugLog( 'CentralAuth',
-				"Attempted migration with no unattached for '$this->mName'" );
-			return false;
+	function chooseHomeWiki( $migrationSet ) {
+		if( empty( $migrationSet ) ) {
+			throw new MWException( 'Logic error -- empty migration set in chooseHomeWiki' );
 		}
 		
-		$winner = null;
-		$max = -1;
-		$attach = array();
-		
-		// We have to pick a master account
-		// The winner is the one with the most edits, usually
-		foreach( $rows as $row ) {
-			if( $row['editCount'] > $max ) {
-				$winner = $row;
-				$max = $row['editCount'];
+		// Sysops get priority
+		$priorityGroups = array( 'sysop', 'bureaucrat', 'steward' );
+		$workingSet = array();
+		foreach( $migrationSet as $db => $local ) {
+			if( array_intersect( $priorityGroups, $local['groups'] ) ) {
+				if( $local['editCount'] ) {
+					// Ignore unused sysop accounts
+					$workingSet[$db] = $local;
+				}
 			}
 		}
-		if( !isset( $winner ) ) {
+		
+		if( !$workingSet ) {
+			// No privileged accounts; look among the plebes...
+			$workingSet = $migrationSet;
+		}
+		
+		$maxEdits = -1;
+		$homeWiki = null;
+		foreach( $workingSet as $db => $local ) {
+			if( $local['editCount'] > $maxEdits ) {
+				$homeWiki = $db;
+				$maxEdits = $local['editCount'];
+			}
+		}
+		
+		if( !isset( $homeWiki ) ) {
 			throw new MWException( "Logic error in migration: " .
 				"Unable to determine primary account for $this->mName" );
 		}
 		
+		return $homeWiki;
+	}
+	
+	/**
+	 * Go through a list of migration data looking for those which
+	 * can be automatically migrated based on the available criteria.
+	 * @param array $migrationSet
+	 * @param string $passwords Optional, pre-authenticated passwords.
+	 *                          Should match an account which is known
+	 *                          to be attached.
+	 */
+	function prepareMigration( $migrationSet, $passwords=array() ) {
 		// If the primary account has an e-mail address set,
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
-		$winningMail = ($winner['email'] == ''
-			? false
-			: $winner['email']);
+		$passingMail = array();
+		if( $this->mEmail != '' ) {
+			$passingMail[$this->mEmail] = true;
+		}
 		
-		foreach( $rows as $row ) {
-			$local = $this->mName . "@" . $row['dbName'];
-			if( $row['dbName'] == $winner['dbName'] ) {
+		// If we've got an authenticated password to work with, we can
+		// also assume their e-mails are useful for this purpose...
+		if( $passwords ) {
+			foreach( $migrationSet as $db => $local ) {
+				if( $local['email'] != ''
+					&& $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+					$passingMail[$local['email']] = true;
+				}
+			}
+		}
+		
+		$attach = array();
+		foreach( $migrationSet as $db => $local ) {
+			$localName = "$this->mName@$db";
+			if( $db == $this->mHomeWiki ) {
 				// Primary account holder... duh
 				$method = 'primary';
-			} elseif( $row['email'] === $winningMail ) {
+			} elseif( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+				// Matches the pre-authenticated password, yay!
+				$method = 'password';
+			} elseif( isset( $passingMail[$local['email']] ) ) {
 				// Same e-mail as primary means we know they could
 				// reset their password, so we give them the account.
 				$method = 'mail';
-			} elseif( $row['editCount'] == 0 ) {
+			} elseif( $local['editCount'] == 0 ) {
 				// Unused accounts are fair game for reclaiming
 				$method = 'empty';
 			} else {
@@ -317,18 +373,86 @@ class CentralAuthUser {
 				// If the password matches, it will be automigrated
 				// at next login. If no match, user will have to input
 				// the conflicting password or deal with the conflict.
-				wfDebugLog( 'CentralAuth', "unresolvable $local" );
+				wfDebugLog( 'CentralAuth', "unresolvable $localName" );
 				continue;
 			}
-			wfDebugLog( 'CentralAuth', "$method $local" );
-			$attach[] = array( $row['dbName'], $row['localId'], $method );
+			wfDebugLog( 'CentralAuth', "$method $localName" );
+			$attach[$db] = $method;
 		}
+		
+		return $attach;
+	}
+	
+	/**
+	 * Do a dry run -- pick a winning master account and try to auto-merge
+	 * as many as possible, but don't perform any actions yet.
+	 *
+	 * @param array $passwords
+	 * @param string &$home set to false if no permission to do checks
+	 * @param array &$attached on success, list of wikis which will be auto-attached
+	 * @param array &$unattached on success, list of wikis which won't be auto-attached
+	 * @return bool true if password matched current and home account
+	 */
+	function migrationDryRun( $passwords, &$home, &$attached, &$unattached ) {
+		global $wgDBname;
+		
+		$home = false;
+		$attached = array();
+		$unattached = array();
+		
+		// First, make sure we were given the current wiki's password.
+		$self = $this->localUserData( $wgDBname );
+		if( !$this->matchHashes( $passwords, $self['id'], $self['password'] ) ) {
+			wfDebugLog( 'CentralAuth', "dry run: failed self-password check" );
+			return false;
+		}
+		
+		$migrationSet = $this->queryUnattached();
+		$home = $this->chooseHomeWiki( $migrationSet );
+		$local = $migrationSet[$home];
+		
+		// And we need to match the home wiki before proceeding...
+		if( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+			wfDebugLog( 'CentralAuth', "dry run: passed password match to home $home" );
+		} else {
+			wfDebugLog( 'CentralAuth', "dry run: failed password match to home $home" );
+			return false;
+		}
+		
+		$this->mHomeWiki = $home;
+		$this->mEmail = $local['email'];
+		$attach = $this->prepareMigration( $migrationSet, $passwords );
+		
+		$all = array_keys( $migrationSet );
+		$attached = array_keys( $attach );
+		$unattached = array_diff( $all, $attached );
+		
+		sort( $attached );
+		sort( $unattached );
+		
+		return true;
+	}
+	
+	/**
+	 * Pick a winning master account and try to auto-merge as many as possible.
+	 * @fixme add some locking or something
+	 * @return bool Whether full automatic migration completed successfully.
+	 */
+	private function attemptAutoMigration( $passwords=array() ) {
+		$migrationSet = $this->queryUnattached();
+		
+		
+		$this->mHomeWiki = $this->chooseHomeWiki( $migrationSet );
+		$home = $migrationSet[$this->mHomeWiki];
+		$this->mEmail = $home['email'];
+		
+		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
 		$ok = $this->storeGlobalData(
-				$winner['localId'],
-				$winner['password'],
-				$winner['email'],
-				$winner['emailAuthenticated'] );
+				$home['id'],
+				$home['password'],
+				$home['email'],
+				$home['emailAuthenticated'] );
 		
 		if( !$ok ) {
 			wfDebugLog( 'CentralAuth',
@@ -336,25 +460,24 @@ class CentralAuthUser {
 			return false;
 		}
 		
-		if( count( $attach ) < count( $rows ) ) {
+		if( count( $attach ) < count( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth',
 				"Incomplete migration for '$this->mName'" );
 		} else {
-			if( count( $rows ) == 1 ) {
+			if( count( $migrationSet ) == 1 ) {
 				wfDebugLog( 'CentralAuth',
-					"Singleton migration for '$this->mName' on " . $winner['dbName'] );
+					"Singleton migration for '$this->mName' on " . $this->mHomeWiki );
 			} else {
 				wfDebugLog( 'CentralAuth',
 					"Full automatic migration for '$this->mName'" );
 			}
 		}
 		
-		foreach( $attach as $bits ) {
-			list( $dbname, $localid, $method ) = $bits;
-			$this->attach( $dbname, $localid, $method );
+		foreach( $attach as $db => $method ) {
+			$this->attach( $db, $method );
 		}
 		
-		return count( $attach ) == count( $rows );
+		return count( $attach ) == count( $migrationSet );
 	}
 	
 	/**
@@ -386,7 +509,7 @@ class CentralAuthUser {
 			if( $this->matchHash( $password, $row['localId'], $row['password'] ) ) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $db by password" );
-				$this->attach( $db, $row['localId'], 'password' );
+				$this->attach( $db, 'password' );
 				$migrated[] = $db;
 			} else {
 				wfDebugLog( 'CentralAuth',
@@ -429,7 +552,7 @@ class CentralAuthUser {
 		
 		foreach( $unattached as $row ) {
 			if( in_array( $row['dbName'], $valid ) ) {
-				$this->attach( $row['dbName'], $row['localId'], 'admin' );
+				$this->attach( $row['dbName'], 'admin' );
 				$migrated[] = $row['dbName'];
 			} else {
 				$remaining[] = $row['dbName'];
@@ -442,11 +565,12 @@ class CentralAuthUser {
 	public function adminUnattach( $list, &$migrated=null, &$remaining=null ) {
 		$valid = $this->validateList( $list );
 		
-		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( self::tableName( 'localuser' ),
+		$dbw = self::getCentralDB();
+		$dbw->update( self::tableName( 'localuser' ),
+			array( 'lu_attached' => 0 ),
 			array(
-				'lu_global_id' => $this->getId(),
-				'lu_dbname'    => $valid ),
+				'lu_name'   => $this->mName,
+				'lu_dbname' => $valid ),
 			__METHOD__ );
 		
 		// FIXME: touch remote-database user accounts
@@ -471,18 +595,19 @@ class CentralAuthUser {
 	 * Prerequisites:
 	 * - completed migration state
 	 */
-	public function attach( $dbname, $localid, $method='new' ) {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		$dbw->insert( self::tableName( 'localuser' ),
+	public function attach( $dbname, $method='new' ) {
+		$dbw = self::getCentralDB();
+		$dbw->update( self::tableName( 'localuser' ),
 			array(
-				'lu_global_id'          => $this->getId(),
-				'lu_dbname'             => $dbname,
-				'lu_local_id'           => $localid,
+				'lu_attached'           => 1,
 				'lu_attached_timestamp' => $dbw->timestamp(),
 				'lu_attached_method'    => $method ),
+			array(
+				'lu_dbname'             => $dbname,
+				'lu_name'               => $this->mName ),
 			__METHOD__ );
 		wfDebugLog( 'CentralAuth',
-			"Attaching local user $dbname:$localid to '$this->mName' for '$method'" );
+			"Attaching local user $this->mName@$dbname by '$method'" );
 		
 		global $wgDBname;
 		if( $dbname == $wgDBname ) {
@@ -499,7 +624,7 @@ class CentralAuthUser {
 	public function authenticate( $password ) {
 		$this->lazyMigrate();
 		
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbw = self::getCentralDB();
 		$row = $dbw->selectRow( self::tableName( 'globaluser' ),
 			array( 'gu_salt', 'gu_password', 'gu_locked' ),
 			array( 'gu_id' => $this->getId() ),
@@ -556,6 +681,15 @@ class CentralAuthUser {
 		return false;
 	}
 	
+	private function matchHashes( $passwords, $salt, $encrypted ) {
+		foreach( $passwords as $plaintext ) {
+			if( $this->matchHash( $plaintext, $salt, $encrypted ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	/**
 	 * Fetch a list of databases where this account name is registered,
 	 * but not yet attached to the global account. It would be used for
@@ -565,12 +699,65 @@ class CentralAuthUser {
 	 * @return array of database name strings
 	 */
 	public function listUnattached() {
-		$rows = $this->fetchUnattached();
-		$dbs = array();
-		foreach( $rows as $row ) {
-			$dbs[] = $row->mu_dbname;
+		$unattached = $this->listLocalDatabases( 0 );
+		if( !$unattached ) {
+			// Nobody? Might not have imported local lists yet...
+			if( $this->lazyImportLocalNames() ) {
+				$unattached = $this->listLocalDatabases( 0 );
+			}
 		}
-		return $dbs;
+		return $unattached;
+	}
+	
+	function lazyImportLocalNames() {
+		$dbw = self::getCentralDB();
+		
+		$result = $dbw->select( self::tableName( 'localuser' ),
+			array( 'lu_dbname' ),
+			array( 'lu_name'     => $this->mName ),
+			__METHOD__,
+			array( 'LIMIT' => 1 ) );
+		$any = $result->numRows();
+		$result->free();
+		
+		if( $any ) {
+			// No need...
+			return false;
+		}
+		
+		return $this->importLocalNames();
+	}
+	
+	function importLocalNames() {
+		global $wgLocalDatabases;
+		
+		$rows = array();
+		foreach( $wgLocalDatabases as $db ) {
+			$dbr = self::getLocalDB( $db );
+			$id = $dbr->selectField(
+				"`$db`.`user`",
+				'user_id',
+				array( 'user_name' => $this->mName ),
+				__METHOD__ );
+			if( $id ) {
+				$rows[] = array(
+					'lu_dbname' => $db,
+					'lu_name' => $this->mName,
+					'lu_attached' => 0 );
+			}
+		}
+		
+		if( $rows ) {
+			$dbw = self::getCentralDB();
+			$dbw->insert( self::tableName( 'localuser' ),
+				$rows,
+				__METHOD__,
+				array( 'IGNORE' ) );
+			return true;
+		} else {
+			// No change.
+			return false;
+		}
 	}
 	
 	/**
@@ -580,12 +767,17 @@ class CentralAuthUser {
 	 * @return array database name strings
 	 */
 	public function listAttached() {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		return $this->listLocalDatabases( 1 );
+	}
+	
+	private function listLocalDatabases( $attached ) {
+		$dbw = self::getCentralDB();
 		
-		$result = $dbw->select(
-			array( self::tableName( 'localuser' ) ),
+		$result = $dbw->select( self::tableName( 'localuser' ),
 			array( 'lu_dbname' ),
-			array( 'lu_global_id' => $this->getId() ),
+			array(
+				'lu_name'     => $this->mName,
+				'lu_attached' => $attached ),
 			__METHOD__ );
 		
 		$dbs = array();
@@ -604,23 +796,23 @@ class CentralAuthUser {
 	 * @return array database name strings
 	 */
 	public function queryAttached() {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbw = self::getCentralDB();
 		
 		$result = $dbw->select(
 			array( self::tableName( 'localuser' ) ),
 			array(
 				'lu_dbname',
-				'lu_local_id',
 				'lu_attached_timestamp',
 				'lu_attached_method' ),
-			array( 'lu_global_id' => $this->getId() ),
+			array(
+				'lu_name' => $this->mName,
+				'lu_attached' => 1 ),
 			__METHOD__ );
 		
 		$dbs = array();
 		while( $row = $dbw->fetchObject( $result ) ) {
 			$dbs[$row->lu_dbname] = array(
 				'dbName' => $row->lu_dbname,
-				'localId' => intval( $row->lu_local_id ),
 				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
 					 $row->lu_attached_timestamp ),
 				'attachedMethod' => $row->lu_attached_method,
@@ -638,25 +830,16 @@ class CentralAuthUser {
 	 * Formatted as associative array with some data.
 	 */
 	public function queryUnattached() {
-		$rows = $this->fetchUnattached();
+		$dbnames = $this->listUnattached();
 		
 		$items = array();
-		foreach( $rows as $row ) {
-			$db = $row->mu_dbname;
-			$id = intval( $row->mu_local_id );
-			$userData = self::localUserData( $db, $id );
-			if( !is_object( $userData ) ) {
-				throw new MWException("Bad user row looking up local user #$id@$db");
+		foreach( $dbnames as $db ) {
+			$data = $this->localUserData( $db );
+			if( empty( $data ) ) {
+				throw new MWException(
+					"Bad user row looking up local user $this->mName@$db" );
 			}
-			
-			$items[$db] = array(
-				'dbName' => $db,
-				'localId' => $id,
-				'email' => $userData->user_email,
-				'emailAuthenticated' => $userData->user_email_authenticated,
-				'password' => $userData->user_password,
-				'editCount' => $userData->user_editcount,
-			);
+			$items[$db] = $data;
 		}
 		
 		return $items;
@@ -664,57 +847,53 @@ class CentralAuthUser {
 	
 	/**
 	 * Fetch a row of user data needed for migration.
-	 * @todo: work on multi-master clusters!
 	 */
-	protected static function localUserData( $dbname, $id ) {
-		//$db = wfGetForeignDB( $dbname );
-		$db = wfGetDB( DB_MASTER );
+	protected function localUserData( $dbname ) {
+		$db = self::getLocalDB( $dbname );
 		$row = $db->selectRow( "`$dbname`.user",
 			array(
+				'user_id',
 				'user_email',
 				'user_email_authenticated',
 				'user_password',
 				'user_editcount' ),
-			array( 'user_id' => $id ),
+			array( 'user_name' => $this->mName ),
 			__METHOD__ );
 		
+		$data = array(
+			'dbName' => $dbname,
+			'id' => $row->user_id,
+			'email' => $row->user_email,
+			'emailAuthenticated' => $row->user_email_authenticated,
+			'password' => $row->user_password,
+			'editCount' => $row->user_editcount,
+			'groups' => array() );
+		
 		// Edit count field may not be initialized...
-		if( $row !== false && is_null( $row->user_editcount ) ) {
-			$row->user_editcount = $db->selectField(
+		if( is_null( $row->user_editcount ) ) {
+			$data['editCount'] = $db->selectField(
 				"`$dbname`.revision",
 				'COUNT(*)',
-				array( 'rev_user' => $id ),
+				array( 'rev_user' => $data['id'] ),
 				__METHOD__ );
 		}
 		
-		return $row;
-	}
-	
-	/**
-	 * Find any remaining migration records for this username
-	 * which haven't gotten attached to some global account.
-	 */
-	private function fetchUnattached() {
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
-		
-		$migrateuser = self::tableName( 'migrateuser' );
-		$localuser = self::tableName( 'localuser' );
-		$sql = "SELECT * FROM $migrateuser" .
-			" LEFT JOIN $localuser" .
-			" ON mu_dbname=lu_dbname AND mu_local_id=lu_local_id" .
-			" WHERE mu_name=" . $dbw->addQuotes( $this->mName ) .
-			" AND lu_dbname IS NULL";
-		$result = $dbw->query( $sql, __METHOD__ );
-		$rows = array();
-		while( $row = $dbw->fetchObject( $result ) ) {
-			$rows[] = $row;
+		// And we have to fetch groups separately, sigh...
+		$groups = array();
+		$result = $db->select( "`$dbname`.user_groups",
+			array( 'ug_group' ),
+			array( 'ug_user' => $data['id'] ),
+			__METHOD__ );
+		foreach( $result as $row ) {
+			$data['groups'][] = $row->ug_group;
 		}
-		$dbw->freeResult( $result );
-		return $rows;
+		$result->free();
+		
+		return $data;
 	}
 	
 	function getEmail() {
-		$dbr = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbr = self::getCentralDB();
 		return $dbr->selectField( self::tableName( 'globaluser' ),
 			'gu_email',
 			array( 'gu_id' => $this->getId() ),
@@ -739,7 +918,7 @@ class CentralAuthUser {
 	function setPassword( $password ) {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		
-		$dbw = wfGetDB( DB_MASTER, 'CentralAuth' );
+		$dbw = self::getCentralDB();
 		$result = $dbw->update( self::tableName( 'globaluser' ),
 			array(
 				'gu_salt'     => $salt,

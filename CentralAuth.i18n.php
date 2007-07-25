@@ -11,6 +11,67 @@ $wgCentralAuthMessages['en'] = array(
 		'Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]' .
 		'</span> to check if your accounts have been fully merged.',
+	'centralauth-merge-welcome' =>
+		"'''Your user account has not yet been migrated to Wikimedia's ".
+		"unified login system.'''\n" .
+		"\n" .
+		"If you choose to migrate your accounts, you'll be able to use the " .
+		"same username and password to log in to all of Wikimedia's project " .
+		"wikis in all available languages.\n" .
+		"This makes it easier to work with shared projects such as uploading to " .
+		"[http://commons.wikimedia.org/ Wikimedia Commons], and avoids the " .
+		"confusion or conflict that could result from two people picking the same " .
+		"username on different projects.\n" . 
+		"\n" .
+		"If someone else has already taken your username on another site " .
+		"this won't disturb them, but it will give you a chance to work out " .
+		"with them or an administrator later.\n" .
+		"\n" .
+		"== What happens next? ==\n" .
+		"\n" .
+		"When you opt-in to the unified login migration, the system will look over " .
+		"each of the sites that we run -- Wikipedia, Wikinews, Commons, etc -- " .
+		"and list out every one where your username has been registered.\n" .
+		"\n" .
+		"One of those wikis will be chosen as the 'home wiki' for the account, " .
+		"usually the one that is most firmly established in usage. If that isn't " .
+		"the wiki you're logged into right now, you may be asked to confirm " .
+		"that you know the password to that account to proceed.\n" .
+		"\n" .
+		"The account information on the home wiki will be compared all the others, " .
+		"and those which have matching passwords or e-mail addresses, or haven't been used, " .
+		"will be automatically attached to your new global account.\n" .
+		"\n" .
+		"Those which don't match will be left alone, since the system can't be " .
+		"sure that they're your accounts. You can complete the merging for those " .
+		"accounts by providing the correct login passwords if they're yours; " .
+		"if someone else registered them, you'll have a chance to leave them a message " .
+		"and see if you can work something out.\n" .
+		"\n" .
+		"It's not ''required'' to merge all accounts; you can leave some separate, " .
+		"and they'll be marked as such.",
+	
+	'centralauth-merge-step1-title' => 'Begin login unification',
+	'centralauth-merge-step1-detail' =>
+		'Your password and registered e-mail address will be checked against ' .
+		'the accounts on other wikis to confirm that they match ' .
+		'No changes will be made until you have confirmed that things look ok.',
+	'centralauth-merge-step1-submit' =>
+		'Confirm login information',
+
+	'centralauth-merge-step2-title' => 'Confirm more accounts',
+	'centralauth-merge-step2-detail' =>
+		"Some of the accounts couldn't be automatically matched to the designated home wiki. " .
+		"If these accounts belong to you, you can confirm that they are yours " .
+		"by providing the password for them.\n",
+	'centralauth-merge-step2-submit' =>
+		'Confirm login information',
+	
+	'centralauth-merge-step3-title' => 'Create unified account',
+	'centralauth-merge-step3-detail' =>
+		"You're ready to create your unified account, with the following wikis attached:",
+	'centralauth-merge-step3-submit' =>
+		'Unify accounts',
 
 	// Big text on completion
 	'centralauth-complete' =>
@@ -42,10 +103,23 @@ $wgCentralAuthMessages['en'] = array(
 		":''[[meta:Help:Unified login|Read more about '''unified login''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
-		'The accounts named "$1" on the following sites ' .
-		'have been automatically merged:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-home-title' =>
+		'Home wiki',
+	'centralauth-list-home-dryrun' =>
+		'The password and e-mail address set at this wiki will be used for your unified account, ' .
+		'and your user page here will be automatically linked to from other wikis. ' .
+		"You will be able to change which is your home wiki later.",
+	'centralauth-list-attached-title' =>
+		'Attached accounts',
+	'centralauth-list-attached' =>
+		'The account named "$1" on each the following sites ' .
+		'have been automatically attached to the unified account:',
+	'centralauth-list-attached-dryrun' =>
+		'The account named "$1" on each the following sites ' .
+		'will be automatically attached to the unified account:',
+	'centralauth-list-unattached-title' =>
+		'Unattached accounts',
+	'centralauth-list-unattached' =>
 		'The account "$1" could not be automatically confirmed ' .
 		'as belonging to you on the following sites; ' .
 		'most likely they have a different password from your ' .
@@ -122,7 +196,7 @@ $wgCentralAuthMessages['ar'] = array(
 	'centralauth-complete-text'            => 'يمكنك الآن الولوج لأي مشروع من مشاريع ويكيميديا بدون إنشاء حساب جديد؛ نفس اسم المستخدم و كلم السر ستعمل في ويكيبيديا و ويكاموس و ويكي الكتب و مشاريعهم الشقيقة بكل اللغات.',
 	'centralauth-incomplete-text'          => 'عندما يتم توحيد دخولك، يمكنك الولوج لأي مشروع من مشاريع ويكيميديا بدون إنشاء حساب جديد؛ نفس اسم المستخدم و كلم السر ستعمل في ويكيبيديا و ويكاموس و ويكي الكتب و مشاريعهم الشقيقة بكل اللغات.',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|اقرأ المزيد حول \'\'\'الدخول الموحد\'\'\']]...\'\'',
-	'centralauth-list-merged'              => 'الحسابات المسماة "$1" على المواقع التالية تم دمجها تلقائيا:',
+	'centralauth-list-attached'              => 'الحسابات المسماة "$1" على المواقع التالية تم دمجها تلقائيا:',
 	'centralauth-foreign-link'             => 'المستخدم $1 في $2',
 	'centralauth-finish-title'             => 'انتهاء الدمج',
 	'centralauth-finish-password'          => 'كلمة السر:',
@@ -187,11 +261,11 @@ $wgCentralAuthMessages['de'] = array(
 		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden ' .
 		'Projekten wurden automatisch zusammengeführt:',
 
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Das Benutzerkonto „$1“ konnte für die folgenden Projekte ' .
 		'nicht automatisch als zu Ihnen gehörend bestätigt werden; ' .
 		'vermutlich hat es ein anderes Passwort ' .
@@ -295,9 +369,9 @@ $wgCentralAuthMessages['fr'] = array(
 		":''[[w:fr:Wikipédia:Login unique|En savoir plus sur le '''compte unifié''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Les comptes utilisateurs nommés « $1 » ont été réunis pour les sites suivants :',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Le compte utilisateur « $1 » ne peut être confirmé automatiquement ' .
 		'pour les sites qui suivent ; ils ont probablement un mot de passe '.
 		'différent de votre compte maître :',
@@ -359,8 +433,8 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-readmore-text' => ":[[meta:Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",
 
 	# For lists of wikis/accounts:
-	'centralauth-list-merged'   => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים מוזגו באופן אוטומטי:',
-	'centralauth-list-unmerged' => 'לא ניתן היה לבדוק אוטומטית האם החשבונות בשם "$1" באתרים הבאים שייכים לכם; כנראה שיש להם סיסמאות שונות מאשר בחשבון הראשי שלכם:',
+	'centralauth-list-attached'   => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים מוזגו באופן אוטומטי:',
+	'centralauth-list-unattached' => 'לא ניתן היה לבדוק אוטומטית האם החשבונות בשם "$1" באתרים הבאים שייכים לכם; כנראה שיש להם סיסמאות שונות מאשר בחשבון הראשי שלכם:',
 	'centralauth-foreign-link'  => 'המשתמש $1 באתר $2',
 
 	# When not complete, offer to finish...
@@ -433,9 +507,9 @@ $wgCentralAuthMessages['id'] = array(
 		":''[[meta:Help:Unified login|Baca lebih lanjut mengenai '''log masuk gabungan''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Akun "$1" di situs-situs berikut telah digabung secara otomatis:' ,
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Akun "$1" tidak dapat dikonfirmasikan secara otomatis sebagai milik Anda ' .
 		'di situs-situs berikut; kemungkinan besar karena mereka memiliki ' .
 		'kata sandi yang berbeda dengan akun utama Anda:',
@@ -521,10 +595,10 @@ $wgCentralAuthMessages['it'] = array(
 		":''[[meta:Help:Unified login|Per saperne di più sul '''login unico''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Gli account con nome utente "$1" sui progetti elencati ' .
 		'di seguito sono stati unificati automaticamente:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Non è stato possibile verificare automaticamente che gli ' .
 		'account con nome utente "$1" sui progetti elencati di seguito ' .
 		'appartengano allo stesso titolare; è probabile che sia stata ' .
@@ -594,10 +668,10 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		":''[[meta:Help:Unified login|'''Бірегейлендірілген тіркелгі''' туралы оқыңыз]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'«$1» деп аталған тіркелгілер келесі тораптарда ' .
 		'өздік түрде түйістірілген:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'«$1» деген тіркелгіңіз келесі тораптарда ' .
 		'өздік түрде расталмады; ' .
 		'бәлкім бұларда басқы тіркелгіден сан-қилы ' .
@@ -680,10 +754,10 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		":''[[meta:Help:Unified login|'''Biregeýlendirilgen tirkelgi''' twralı oqıñız]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'«$1» dep atalğan tirkelgiler kelesi toraptarda ' .
 		'özdik türde tüýistirilgen:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'«$1» degen tirkelgiñiz kelesi toraptarda ' .
 		'özdik türde rastalmadı; ' .
 		'bälkim bularda basqı tirkelgiden san-qïlı ' .
@@ -766,10 +840,10 @@ $wgCentralAuthMessages['kk-cn'] = array(
 		":''[[meta:Help:Unified login|'''بٸرەگەيلەندٸرٸلگەن تٸركەلگٸ''' تۋرالى وقىڭىز]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'«$1» دەپ اتالعان تٸركەلگٸلەر كەلەسٸ توراپتاردا ' .
 		'ٶزدٸك تٷردە تٷيٸستٸرٸلگەن:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'«$1» دەگەن تٸركەلگٸڭٸز كەلەسٸ توراپتاردا ' .
 		'ٶزدٸك تٷردە راستالمادى; ' .
 		'بٵلكٸم بۇلاردا باسقى تٸركەلگٸدەن سان-قيلى ' .
@@ -847,8 +921,8 @@ $wgCentralAuthMessages['nl'] = array(
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lees meer over '''unified login''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-attached' => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
+	'centralauth-list-unattached' =>
 		'De gebruiker "$1" kon niet automatisch aan u toegewezen worden voor de volgende sites; ' .
 		'waarschijnlijk omdat het wachtwoord afwijkt van uw primaire gebruiker:',
 	'centralauth-foreign-link' => 'Gebruiker $1 op $2',
@@ -891,8 +965,8 @@ $wgCentralAuthMessages['no'] = array(
 
 Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn hovedpassordet for den kontoen her:',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Les mer om \'\'\'kontosammensmelting\'\'\']]…\'\'',
-	'centralauth-list-merged'              => 'Kontoene kalt «$1» på følgende sider har blitt automatisk sammensmeltet:',
-	'centralauth-list-unmerged'            => 'Kontoen «$1» på følgende sider kunne ikke automatisk stadfestes å være din; de har mest sannsynlig et annet passord enn din hovedkonto:',
+	'centralauth-list-attached'              => 'Kontoene kalt «$1» på følgende sider har blitt automatisk sammensmeltet:',
+	'centralauth-list-unattached'            => 'Kontoen «$1» på følgende sider kunne ikke automatisk stadfestes å være din; de har mest sannsynlig et annet passord enn din hovedkonto:',
 	'centralauth-foreign-link'             => 'Bruker $1 på $2',
 	'centralauth-finish-title'             => 'Fullfør sammensmelting',
 	'centralauth-finish-text'              => 'Om disse kontoene ikke tilhører deg, kan du fullføre kontosammensmeltingen ved å skrive inn passordene for de andre kontoene her:',
@@ -923,8 +997,8 @@ $wgCentralAuthMessages['oc'] = array(
 
 Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo senhal mèstre per aqueste compte sus :',
 	'centralauth-readmore-text'            => ':\'\'[[w:oc:Wikipèdia:Login unic|Ne saber mai sul \'\'\'compte unificat\'\'\']]...\'\'',
-	'centralauth-list-merged'              => 'Los comptes d\'utilizaires nomenats « $1 » son estats acampats pels sites seguents :',
-	'centralauth-list-unmerged'            => 'Lo compte d\'utilizaire « $1 » pòt èsser confirmat automaticament pels sites que seguisson ; an probablament un senhal diferent de vòstre compte mèstre :',
+	'centralauth-list-attached'              => 'Los comptes d\'utilizaires nomenats « $1 » son estats acampats pels sites seguents :',
+	'centralauth-list-unattached'            => 'Lo compte d\'utilizaire « $1 » pòt èsser confirmat automaticament pels sites que seguisson ; an probablament un senhal diferent de vòstre compte mèstre :',
 	'centralauth-foreign-link'             => 'Utilizaire $1 sus $2',
 	'centralauth-finish-title'             => 'Completar l’unificacion',
 	'centralauth-finish-text'              => 'Se aquestes comptes vos apartenon, podètz acabar lor unificacion en picant los senhals çai jos :',
@@ -953,8 +1027,8 @@ $wgCentralAuthMessages['pms'] = array(
 
 Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia dë stranòm e ciav ën butand-ie ambelessì la ciav prinsipal dël cont:',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Për savejne dë pì, ch\'a varda \'\'\'Stranòm e ciav globaj\'\'\']]...\'\'',
-	'centralauth-list-merged'              => 'Ij cont ch\'as ës-ciamo "$1" ansima a ij sit dla lista ambelessì sota a son stait mës-cià antra lor n\'aotomàtich:',
-	'centralauth-list-unmerged'            => 'Ant ij sit dla lista ambelessì sota ël cont "$1" a l\'é pa podusse confermé coma sò n\'aotomàtich; a l\'é belfé ch\'a-i sio dle ciav diferente da cola ëd sò cont prinsipal:',
+	'centralauth-list-attached'              => 'Ij cont ch\'as ës-ciamo "$1" ansima a ij sit dla lista ambelessì sota a son stait mës-cià antra lor n\'aotomàtich:',
+	'centralauth-list-unattached'            => 'Ant ij sit dla lista ambelessì sota ël cont "$1" a l\'é pa podusse confermé coma sò n\'aotomàtich; a l\'é belfé ch\'a-i sio dle ciav diferente da cola ëd sò cont prinsipal:',
 	'centralauth-foreign-link'             => 'Stranòm $1 ansima a $2',
 	'centralauth-finish-title'             => 'Finiss la mës-cia',
 	'centralauth-finish-text'              => 'Se sti cont-sì a son sò, a peul andé a bon fin dël process ëd mës-cia dë stranòm e ciav mach ën butand-ie le ciav dj\'àotri cont ambelessì sota:',
@@ -1022,10 +1096,10 @@ $wgCentralAuthMessages['ru'] = array(
 		":''[[meta:Help:Unified login|Информация об '''объединении учётных записей''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Учётная запись «$1» на следующих сайтах ' .
 		'была автоматически объединена:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Принадлежность вам учётной записи «$1» не может быть автоматически подтверждено ' .
 		'на указанных ниже сайтах; ' .
 		'вероятно, пароль на них не совдает с паролем вашей ' .
@@ -1080,8 +1154,8 @@ $wgCentralAuthMessages['sk'] = array(
 
 Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísaním hesla pre uvedený účet sem:',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Prečítajte si viac o \'\'\'zjednotení prihlasovacích účtov\'\'\']]...\'\'',
-	'centralauth-list-merged'              => 'Účty z názvom "$1" na nasledujúcich projektoch boli automaticaticky zjednotené:',
-	'centralauth-list-unmerged'            => 'Nebolo možné automaticky potvrdiť, že účet "$1" na nasledujúcich projektoch patrí vám; pravdepodobne má odlišné heslo ako váš primárny účet:',
+	'centralauth-list-attached'              => 'Účty z názvom "$1" na nasledujúcich projektoch boli automaticaticky zjednotené:',
+	'centralauth-list-unattached'            => 'Nebolo možné automaticky potvrdiť, že účet "$1" na nasledujúcich projektoch patrí vám; pravdepodobne má odlišné heslo ako váš primárny účet:',
 	'centralauth-foreign-link'             => 'Užívateľ $1 na $2',
 	'centralauth-finish-title'             => 'Dokončiť zjednotenie',
 	'centralauth-finish-text'              => 'Ak tieto účty naozaj patria vám, môžete skončiť proces zjednotenia jednoducho napísaním hesiel dotyčných účtov:',
@@ -1149,10 +1223,10 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		":''[[meta:Help:Unified login|Прочитајте више о '''спајању налога''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Налог "$1" на следећим сајтовима ' .
 		'је аутоматски спојен:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Налог "$1" се не може аутоматски потврдити ' .
 		'да припада вама на следећим сајтовима; ' .
 		'највероватније имају различите лозинке него ваш ' .
@@ -1235,10 +1309,10 @@ $wgCentralAuthMessages['sr-el'] = array(
 		":''[[meta:Help:Unified login|Pročitajte više o '''spajanju naloga''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Nalog "$1" na sledećim sajtovima ' .
 		'je automatski spojen:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Nalog "$1" se ne može automatski potvrditi ' .
 		'da pripada vama na sledećim sajtovima; ' .
 		'najverovatnije imaju različite lozinke nego vaš ' .
@@ -1321,10 +1395,10 @@ $wgCentralAuthMessages['pt'] = array(
 		":''[[meta:Help:Unified login|Leia mais sobre o '''login unificado''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'A conta nomeada como "$1" nos seguintes sítios ' .
 		'foram automaticamente fundidos:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'A conta "$1" não pôde ser automaticamente confirmada ' .
 		'como sendo tua nos seguintes sítios; ' .
 		'provavelmente elas tenham uma senha diferente de sua ' .
@@ -1412,10 +1486,10 @@ $wgCentralAuthMessages['pt-br'] = array(
 		":''[[meta:Help:Unified login|Leia mais sobre o '''login unificado''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'A conta nomeada como "$1" nos seguintes sítios ' .
 		'foram automaticamente fundidos:',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'A conta "$1" não pôde ser automaticamente confirmada ' .
 		'como sendo tua nos seguintes sítios; ' .
 		'provavelmente elas tenham uma senha diferente de sua ' .
@@ -1500,11 +1574,11 @@ $wgCentralAuthMessages['de'] = array(
 		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten wurden automatisch ' .
 		' zusammengeführt: ',
 
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht ' .
 		'automatisch als zu Ihnen gehörend bestätigt werden; vermutlich ' .
 		'hat es ein anderes Passwort als Ihr primäres Benutzerkonto: ',
@@ -1553,8 +1627,8 @@ $wgCentralAuthMessages['su'] = array(
 
 Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku cara ngetikkeun sandi master pikeun éta rekening di dieu:',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Baca lengkepna ngeunaan \'\'\'log asup nu dihijikeun\'\'\']]...\'\'',
-	'centralauth-list-merged'              => 'Rekening nu ngaranna "$1" di loka di handap ieu geus sacara otomatis dihijikeun:',
-	'centralauth-list-unmerged'            => 'Rekening "$1" teu bisa otomatis dikompirmasi milik anjeun di loka di handap ieu; sigana mah kusabab sandina béda jeung sandi dina rekening utama anjeun:',
+	'centralauth-list-attached'              => 'Rekening nu ngaranna "$1" di loka di handap ieu geus sacara otomatis dihijikeun:',
+	'centralauth-list-unattached'            => 'Rekening "$1" teu bisa otomatis dikompirmasi milik anjeun di loka di handap ieu; sigana mah kusabab sandina béda jeung sandi dina rekening utama anjeun:',
 	'centralauth-foreign-link'             => 'Pamaké $1 di $2',
 	'centralauth-finish-title'             => 'Réngsé ngahijikeun',
 	'centralauth-finish-text'              => 'Mun rekening ieu bener boga anjeun, mangga réngsékeun prosés ngahijikeun log asup ku cara ngasupkeun sandi rekening lianna di dieu:',
@@ -1611,10 +1685,10 @@ $wgCentralAuthMessages['yue'] = array(
 		":''[[meta:Help:Unified login|睇下更多有關'''統一登入'''嘅細節]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'以下用戶名 "$1" 嘅戶口' .
 		'已經自動噉樣合併咗：',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'以下網站嘅戶口 "$1" ' .
 		'唔能夠自動噉樣合併；' .
 		'好有可能佢哋嘅密碼' .
@@ -1692,10 +1766,10 @@ $wgCentralAuthMessages['zh-hans'] = array(
 		":''[[meta:Help:Unified login|参阅关于'''登录统一'''的帮助文件]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'以下网站的账号“$1”' .
 		'已自动合并：',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'账号“$1”在以下网站' .
 		'不能自动合并；' .
 		'很可能因为它们的密码' .
@@ -1771,10 +1845,10 @@ $wgCentralAuthMessages['zh-hant'] = array(
 		":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'以下網站的帳號："$1' .
 		'已自動完成整合：',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'以下網站的帳號："$1"' .
 		'無法自動整合；' .
 		'很可能是因為它們的密碼' .
@@ -1850,10 +1924,10 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-merged' =>
+	'centralauth-list-attached' =>
 		'以下網站的帳號："$1' .
 		'已自動完成整合：',
-	'centralauth-list-unmerged' =>
+	'centralauth-list-unattached' =>
 		'以下網站的帳號："$1"' .
 		'無法自動整合；' .
 		'很可能是因為它們的密碼' .

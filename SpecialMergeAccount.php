@@ -30,9 +30,12 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->mUserName = $wgUser->getName();
 		
 		$this->mAttemptMerge = $wgRequest->wasPosted();
-		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
+
+		$this->mMergeAction = $wgRequest->getVal( 'wpMergeAction' );
 		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
 		$this->mDatabases = $wgRequest->getArray( 'wpWikis' );
+		$this->mSessionToken = $wgRequest->getVal( 'wpMergeSessionToken' );
+		$this->mSessionKey = pack( "H*", $wgRequest->getVal( 'wpMergeSessionKey' ) );
 		
 		// Possible demo states
 		
@@ -45,22 +48,209 @@ class SpecialMergeAccount extends SpecialPage {
 		// did / did not merge some accounts
 		// do / don't have more accounts to merge
 		
-		$globalUser = new CentralAuthUser( $this->mUserName );
-		$merged = $remainder = array();
-		
-		// Have we requested a merge?
 		if( $this->mAttemptMerge ) {
-			$wgOut->addWikiText( wfMsg( 'centralauth-merge-attempt' ) );
-			
-			$ok = $globalUser->attemptPasswordMigration(
-				$this->mPassword,
-				$merged,
-				$remainder );
-			// if ( ! $ok ) ....
-		} else {
-			$merged = array();
-			$remainder = $globalUser->listUnattached();
+			switch( $this->mMergeAction ) {
+			case "dryrun":
+				return $this->doDryRunMerge();
+			case "initial":
+				return $this->doInitialMerge();
+			case "cleanup":
+				return $this->doCleanupMerge();
+			case "remove":
+				return $this->doUnattach();
+			default:
+				return $this->invalidAction();
+			}
 		}
+		
+		$globalUser = new CentralAuthUser( $this->mUserName );
+		if( $globalUser->exists() ) {
+			$this->showCleanupForm();
+		} else {
+			$this->showWelcomeForm();
+		}
+	}
+	
+	/**
+	 * To pass potentially multiple passwords from one form submission
+	 * to another while previewing the merge behavior, we can store them
+	 * in the server-side session information.
+	 *
+	 * We'd rather not have plaintext passwords floating about on disk
+	 * or memcached, so the session store is obfuscated with simple XOR
+	 * encryption. The key is passed in the form instead of the session
+	 * data, so they won't be found floating in the same place.
+	 */
+	private function initSession() {
+		global $wgUser;
+		$this->mSessionToken = $wgUser->generateToken();
+		
+		// Generate a random binary string
+		$key = '';
+		for( $i = 0; $i < 128; $i++ ) {
+			$key .= chr( mt_rand( 0, 255 ) );
+		}
+		$this->mSessionKey = $key;
+	}
+	
+	private function getWorkingPasswords() {
+		wfSuppressWarnings();
+		$passwords = unserialize(
+			gzinflate(
+				$this->xorString(
+					$_SESSION['wsCentralAuthMigration'][$this->mSessionToken],
+					$this->mSessionKey ) ) );
+				wfRestoreWarnings();
+		if( is_array( $passwords ) ) {
+			return $passwords;
+		}
+		return array();
+	}
+	
+	private function addWorkingPassword( $password ) {
+		$passwords = $this->getWorkingPasswords();
+		if( !in_array( $password, $passwords ) ) {
+			$passwords[] = $password;
+		}
+		
+		// Lightly obfuscate the passwords while we're storing them,
+		// just to make us feel better about them floating around.
+		$_SESSION['wsCentralAuthMigration'][$this->mSessionToken] =
+			$this->xorString(
+				gzdeflate(
+					serialize(
+						$passwords ) ),
+				$this->mSessionKey );
+	}
+	
+	private function clearWorkingPasswords() {
+		unset( $_SESSION['wsCentralAuthMigration'][$this->mSessionToken] );
+	}
+	
+	function xorString( $text, $key ) {
+		if( $key != '' ) {
+			for( $i = 0; $i < strlen( $text ); $i++ ) {
+				$text[$i] = chr(0xff & (ord($text[$i]) ^ ord($key[$i % strlen( $key )])));
+			}
+		}
+		return $text;
+	}
+	
+	
+	
+	function doDryRunMerge() {
+		global $wgUser, $wgRequest, $wgOut, $wgDBname;
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		
+		if( $globalUser->exists() ) {
+			throw new MWException( "Already exists -- race condition" );
+		}
+		
+		$password = $wgRequest->getVal( 'wpPassword' );
+		if( $password != '' ) {
+			$this->addWorkingPassword( $password );
+		}
+		$passwords = $this->getWorkingPasswords();
+		
+		$home = false;
+		$attached = array();
+		$unattached = array();
+		$ok = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached );
+		
+		if( $ok ) {
+			// This is the global account or matched it
+			if( count( $unattached ) == 0 ) {
+				// Everything matched -- very convenient!
+				$wgOut->addWikiText(
+					"All existing accounts can be automatically unified!\n" .
+					"\n" .
+					"No changes have been made to your accounts yet."
+					 );
+			} else {
+				$wgOut->addWikiText(
+					"You're set to continue, but some accounts could not be automatically verified and won't be migrated immediately. " .
+					"You will be able to merge these later.\n" .
+					"\n" .
+					"No changes have been made to your accounts yet."
+					 );
+			}
+			
+			if( count( $unattached ) > 0 ) {
+				$wgOut->addHtml( $this->step2PasswordForm( $unattached ) );
+				$wgOut->addWikiText( "'''or'''" );
+			}
+			
+			$subAttached = array_diff( $attached, array( $home ) );
+			$wgOut->addHtml( $this->step3ActionForm( $home, $subAttached ) );
+			
+		} elseif( $home ) {
+			$wgOut->addWikiText( "The migration system couldn't confirm that you're the owner of the home wiki account for your username." .
+			 	"\n\n" .
+				"Another wiki was determined as the home account for your username; follow the link below and log in there to finish your account migration.");
+			$out = '<h2>Automatically selected home wiki</h2>';
+			$out .= '<p>The password and e-mail address set at this wiki will be used for your unified account, ' .
+				'and your user page here will be automatically linked to from other wikis. ' .
+				'You can change the link later.</p>';
+			$out .= $this->listAttached( array( $home ) );
+			$wgOut->addHtml( $out );
+		} else {
+			// Didn't get your own password right? Laaaame!
+			$this->initSession();
+			$wgOut->addHtml(
+				'<div class="errorbox">' .
+					wfMsg( 'wrongpassword' ) .
+				'</div>' .
+				$this->step1PasswordForm() );
+		}
+	}
+	
+	function doInitialMerge() {
+		global $wgUser, $wgRequest, $wgOut, $wgDBname;
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		
+		if( $globalUser->exists() ) {
+			throw new MWException( "Already exists -- race condition" );
+		}
+		
+		$passwords = $this->getWorkingPasswords();
+		
+		$home = false;
+		$attached = array();
+		$unattached = array();
+		$ok = $globalUser->storeAndMigrate( $passwords );
+		
+		if( $ok ) {
+			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
+			$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
+		} else {
+			$wgOut->addHtml('boo it failed');
+		}
+		
+	}
+	
+	private function showWelcomeForm() {
+		global $wgOut, $wgUser;
+		$wgOut->addWikiText(
+			wfMsg( 'centralauth-merge-welcome' ) .
+			"\n\n" .
+			wfMsg( 'centralauth-readmore-text' ) );
+		
+		$this->initSession();
+		$wgOut->addHtml(
+			$this->passwordForm(
+				'dryrun',
+				wfMsg( 'centralauth-merge-step1-title' ),
+				wfMsg( 'centralauth-merge-step1-detail' ),
+				wfMsg( 'centralauth-merge-step1-submit' ) )
+			);
+	}
+	
+	function showCleanupForm() {
+		global $wgUser;
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		
+		$merged = $globalUser->listAttached();
+		$remainder = $globalUser->listUnattached();
 		$this->showStatus( $merged, $remainder );
 	}
 	
@@ -78,27 +268,31 @@ class SpecialMergeAccount extends SpecialPage {
 		
 		if( $merged ) {
 			$wgOut->addHtml( '<hr />' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-list-merged',
+			$wgOut->addWikiText( wfMsg( 'centralauth-list-attached',
 				$this->mUserName ) );
-			$wgOut->addHtml( $this->listMerged( $merged ) );
+			$wgOut->addHtml( $this->listAttached( $merged ) );
 		}
 		
 		if( $remainder ) {
 			$wgOut->addHtml( '<hr />' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-list-unmerged',
+			$wgOut->addWikiText( wfMsg( 'centralauth-list-unattached',
 				$this->mUserName ) );
-			$wgOut->addHtml( $this->listRemainder( $remainder ) );
+			$wgOut->addHtml( $this->listUnattached( $remainder ) );
 			
 			// Try the password form!
-			$wgOut->addHtml( $this->passwordForm() );
+			$wgOut->addHtml( $this->passwordForm(
+				'cleanup',
+				wfMsg( 'centralauth-finish-title' ),
+				wfMsgExt( 'centralauth-finish-text', array( 'parse' ) ),
+				wfMsg( 'centralauth-finish-login' ) ) );
 		}
 	}
 	
-	function listMerged( $dblist ) {
+	function listAttached( $dblist ) {
 		return $this->listForm( $dblist, 'unmerge', wfMsg( 'centralauth-admin-unmerge' ) );
 	}
 	
-	function listRemainder( $dblist ) {
+	function listUnattached( $dblist ) {
 		return $this->listForm( $dblist, 'admin', wfMsg( 'centralauth-admin-merge' ) );
 	}
 	
@@ -148,53 +342,98 @@ class SpecialMergeAccount extends SpecialPage {
 			$hostname );
 	}
 	
-	function passwordForm() {
+	private function actionForm( $action, $title, $text ) {
+		global $wgUser;
 		return
 			'<div id="userloginForm">' .
 			Xml::openElement( 'form',
 				array(
 					'method' => 'post',
 					'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) ) .
-			Xml::element( 'h2', array(), wfMsg( 'centralauth-finish-title' ) ) .
+			Xml::element( 'h2', array(), $title ) .
+			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			Xml::hidden( 'wpMergeAction', $action ) .
+			Xml::hidden( 'wpMergeSessionToken', $this->mSessionToken ) .
+			Xml::hidden( 'wpMergeSessionKey', bin2hex( $this->mSessionKey ) ) .
 			
-			wfMsgExt( 'centralauth-finish-text', array( 'parse' ) ) .
-			
-			'<table>' .
-				'<tr>' .
-					'<td>' .
-						Xml::label(
-							wfMsg( 'centralauth-finish-password' ),
-							'wpPassword1' ) .
-					'</td>' .
-					'<td>' .
-						Xml::hidden( 'wpMethod', 'password' ) .
-						Xml::input( 
-							'wpPassword', 20, '',
-								array(
-									'type' => 'password',
-									'id' => 'wpPassword1' ) ) .
-					'</td>' .
-				'</tr>' .
-				'<tr>' .
-					'<td></td>' .
-					'<td>' .
-						Xml::submitButton( wfMsg( 'centralauth-finish-login' ),
-							array( 'name' => 'wpLogin' ) ) .
-						Xml::submitButton(
-							wfMsg( 'centralauth-finish-send-confirmation' ),
-							array(
-								'name' => 'wpMailmypassword',
-								'id' => 'wpMailmypassword' ) ) .
-					'</td>' .
-				'</tr>' .
-			'</table>' .
+			$text .
 			
 			Xml::closeElement( 'form' ) .
 			
-			wfMsgExt( 'centralauth-finish-problems', array( 'parse' ) ) .
+			'<br clear="all" />' .
 			
 			'</div>';
 	}
+		
+	private function passwordForm( $action, $title, $text, $submit ) {
+		return $this->actionForm(
+			$action,
+			$title,
+			$text .
+				'<table>' .
+					'<tr>' .
+						'<td>' .
+							Xml::label(
+								wfMsg( 'centralauth-finish-password' ),
+								'wpPassword1' ) .
+						'</td>' .
+						'<td>' .
+							Xml::input( 
+								'wpPassword', 20, '',
+									array(
+										'type' => 'password',
+										'id' => 'wpPassword1' ) ) .
+						'</td>' .
+					'</tr>' .
+					'<tr>' .
+						'<td></td>' .
+						'<td>' .
+							Xml::submitButton( $submit,
+								array( 'name' => 'wpLogin' ) ) .
+						'</td>' .
+					'</tr>' .
+				'</table>' );
+	}
+	
+	private function step1PasswordForm() {
+		return $this->passwordForm(
+			'dryrun',
+			wfMsg( 'centralauth-merge-step1-title' ),
+			wfMsg( 'centralauth-merge-step1-detail' ),
+			wfMsg( 'centralauth-merge-step1-submit' ) );
+	}
+	
+	private function step2PasswordForm( $unattached ) {
+		global $wgUser;
+		return $this->passwordForm(
+			'dryrun',
+			wfMsg( 'centralauth-merge-step2-title' ),
+			wfMsgExt( 'centralauth-merge-step2-detail', 'parse', $wgUser->getName() ) .
+				$this->listUnattached( $unattached ),
+			wfMsg( 'centralauth-merge-step2-submit' ) );
+	}
+	
+	private function step3ActionForm( $home, $attached ) {
+		global $wgUser;
+		return $this->actionForm(
+			'initial',
+			wfMsg( 'centralauth-merge-step3-title' ),
+			wfMsgExt( 'centralauth-merge-step3-detail', 'parse', $wgUser->getName() ) .
+				'<h3>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h3>' .
+				wfMsgExt( 'centralauth-list-home-dryrun', 'parse' ) .
+				$this->listAttached( array( $home ) ) .
+				( count( $attached )
+					? ( '<h3>' . wfMsgHtml( 'centralauth-list-attached-title' ) . '</h3>' .
+						wfMsgExt( 'centralauth-list-attached-dryrun', 'parse', $wgUser->getName() ) )
+					: '' ) .
+				$this->listAttached( $attached ) .
+				'<p>' .
+					Xml::submitButton( wfMsg( 'centralauth-merge-step3-submit' ),
+						array( 'name' => 'wpLogin' ) ) .
+				'</p>'
+			);
+	}
+	
 }
 
 

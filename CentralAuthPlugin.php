@@ -206,7 +206,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	function initUser( &$user ) {
 		global $wgDBname;
 		$central = new CentralAuthUser( $user->getName() );
-		$central->attach( $wgDBname, $user->getId() );
+		$central->attach( $wgDBname, 'new' );
 		
 		$this->updateUser( $user );
 	}

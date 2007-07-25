@@ -13,8 +13,18 @@ CREATE TABLE globaluser (
   -- Internal unique ID for the authentication server
   gu_id int auto_increment,
   
-  -- Username. [Could change... or not? How to best handle renames...]
+  -- Username.
   gu_name varchar(255) binary,
+
+  -- Timestamp and method used to create the global account
+  gu_enabled varchar(14) not null,
+  gu_enabled_method enum('opt-in', 'batch', 'auto', 'admin'),
+
+  -- Local database name of the user's 'home' wiki.
+  -- By default, the 'winner' of a migration check for old accounts
+  -- or the account the user was first registered at for new ones.
+  -- May be changed over time.
+  gu_home_db varchar(255) binary,
   
   -- Registered email address, may be empty.
   gu_email varchar(255) binary,
@@ -24,7 +34,8 @@ CREATE TABLE globaluser (
   gu_email_authenticated char(14) binary,
   
   -- Salt and hashed password
-  gu_salt char(16), -- or should this be an int? usually the old user_id
+  -- For migrated passwords, the salt is the local user_id.
+  gu_salt varchar(16) binary,
   gu_password tinyblob,
   
   -- If true, this account cannot be used to log in on any wiki.
@@ -35,40 +46,33 @@ CREATE TABLE globaluser (
   gu_hidden bool not null default 0,
   
   -- Registration time
-  gu_registration char(14) binary,
+  gu_registration varchar(14) binary,
   
   -- Random key for password resets
   gu_password_reset_key tinyblob,
-  gu_password_reset_expiration char(14) binary,
+  gu_password_reset_expiration varchar(14) binary,
   
   primary key (gu_id),
   unique key (gu_name),
   key (gu_email)
-) TYPE=InnoDB;
-
+) /*$wgDBTableOptions*/;
 
 --
--- Local linkage table, to determine whether a given local account
--- is attached to the global system, and to which global account.
+-- Local linkage info, listing which wikis the username is registered on
+-- and whether they've been attached to the global account.
 --
--- Note there are no usernames in this table!
--- Linkages are by id. Naming consistency after
--- renames should be enforced by double-checks
--- at login time.
+-- Email and password information used for migration checks are grabbed
+-- from local databases on demand when needed.
+--
+-- All local DBs will be swept on an opt-in check event.
 --
 CREATE TABLE localuser (
-  -- gu_id key number of global account this local account has been
-  -- successfully attached to.
-  lu_global_id int not null,
-  
-  -- Database name of the wiki
   lu_dbname varchar(32) binary not null,
-  
-  -- user_id on the local wiki
-  lu_local_id int not null,
-  
+  lu_name varchar(255) binary not null,
+  lu_attached bool not null default 0,
+
   -- Migration status/logging information, to help diagnose issues
-  lu_attached_timestamp char(14) binary,
+  lu_attached_timestamp varchar(14) binary,
   lu_attached_method enum (
     'primary',
     'empty',
@@ -76,33 +80,7 @@ CREATE TABLE localuser (
     'password',
     'admin',
     'new'),
-  
-  primary key (lu_dbname, lu_local_id),
-  unique key (lu_global_id, lu_dbname)
-) TYPE=InnoDB;
 
-
--- Migration state table
---
--- Lists registered usernames on various wikis, used to optimize migration
--- checks by only having to check dbs where the name is actually registered.
---
--- May be batch-initialized and/or lazy-initialized.
--- Once migration is complete, this data can be ignored/discarded.
---
-CREATE TABLE migrateuser (
-  -- Database name of the wiki
-  mu_dbname varchar(32) binary,
-  
-  -- user_id on the local wiki
-  mu_local_id int,
-  
-  -- Username at migration time
-  mu_name varchar(255) binary,
-  
-  primary key (mu_dbname, mu_local_id),
-  unique key (mu_dbname, mu_name),
-  key (mu_name, mu_dbname)
-) TYPE=InnoDB;
-
--- Q: any point adding autoincrement keys to localuser or migrateuser?
+  primary key (lu_dbname, lu_name),
+  key (lu_name, lu_dbname)
+) /*$wgDBTableOptions*/;

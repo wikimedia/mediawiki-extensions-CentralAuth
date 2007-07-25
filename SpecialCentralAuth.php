@@ -180,7 +180,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'<table>' .
 			'<thead>' .
 			$this->tableRow( 'th',
-				array( '', 'Local wiki', 'User ID', 'Attached on', 'Method' ) ) .
+				array( '', 'Local wiki', 'Attached on', 'Method' ) ) .
 			'</thead>' .
 			'<tbody>' .
 			implode( "\n",
@@ -203,7 +203,6 @@ class SpecialCentralAuth extends SpecialPage {
 			array(
 				$this->adminCheck( $row['dbName'] ),
 				$this->foreignUserLink( $row['dbName'] ),
-				htmlspecialchars( $wgLang->formatNum( intval( $row['localId'] ) ) ),
 				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ),
 				htmlspecialchars( $row['attachedMethod'] ),
 			)
@@ -216,7 +215,6 @@ class SpecialCentralAuth extends SpecialPage {
 			array(
 				$this->adminCheck( $row['dbName'] ),
 				$this->foreignUserLink( $row['dbName'] ),
-				htmlspecialchars( $wgLang->formatNum( intval( $row['localId'] ) ) ),
 			)
 		);
 	}
