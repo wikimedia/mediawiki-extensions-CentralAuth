@@ -41,6 +41,7 @@ $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
 
 $wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
+$wgHooks['AddNewAccount'][] = 'wfCentralAuthAddNewAccount';
 $wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
 
 $wgGroupPermissions['steward']['centralauth-admin'] = true;
@@ -114,3 +115,12 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	return true;
 }
 
+/**
+ * Make sure migration information in localuser table is populated
+ * on local account creation
+ */
+function wfCentralAuthAddNewAccount( $user ) {
+	$central = new CentralAuthUser( $user );
+	$central->lazyImportLocalNames();
+	$central->storeMigrationData( $wgDBname, array( $user->getName() ) );
+}

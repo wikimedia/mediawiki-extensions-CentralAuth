@@ -506,7 +506,7 @@ class CentralAuthUser {
 		// Look for accounts we can match by password
 		foreach( $rows as $row ) {
 			$db = $row['dbName'];
-			if( $this->matchHash( $password, $row['localId'], $row['password'] ) ) {
+			if( $this->matchHash( $password, $row['id'], $row['password'] ) ) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $db by password" );
 				$this->attach( $db, 'password' );
@@ -606,6 +606,23 @@ class CentralAuthUser {
 				'lu_dbname'             => $dbname,
 				'lu_name'               => $this->mName ),
 			__METHOD__ );
+		if( $dbw->affectedRows() == 0 ) {
+			// *frowny face*
+			
+			$dbw->insert( self::tableName( 'localuser' ),
+				array(
+					'lu_dbname'             => $dbname,
+					'lu_name'               => $this->mName ,
+					'lu_attached'           => 1,
+					'lu_attached_timestamp' => $dbw->timestamp(),
+					'lu_attached_method'    => $method ),
+				__METHOD__,
+				array( 'IGNORE' ) );
+			
+			if( $dbw->affectedRows() == 0 ) {
+				throw MWException( "Bogus attach" );
+			}
+		}
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$dbname by '$method'" );
 		

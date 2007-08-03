@@ -218,6 +218,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$attached = array();
 		$unattached = array();
 		$ok = $globalUser->storeAndMigrate( $passwords );
+		$this->clearWorkingPasswords();
 		
 		if( $ok ) {
 			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
@@ -225,7 +226,35 @@ class SpecialMergeAccount extends SpecialPage {
 		} else {
 			$wgOut->addHtml('boo it failed');
 		}
+	}
+	
+	function doCleanupMerge() {
+		global $wgUser, $wgRequest, $wgOut, $wgDBname;
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
 		
+		if( !$globalUser->exists() ) {
+			throw new MWException( "User doesn't exist -- race condition?" );
+		}
+		
+		$password = $wgRequest->getText( 'wpPassword' );
+		
+		$home = false;
+		$attached = array();
+		$unattached = array();
+		$ok = $globalUser->attemptPasswordMigration( $password, $attached, $unattached );
+		
+		if( $ok ) {
+			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
+			$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
+		} else {
+			if( empty( $attached ) ) {
+				$wgOut->addWikiText( "Couldn't confirm any -- bad pass" );
+			} else {
+				$wgOut->addWikiText( "Did some but incomplete still." );
+			}
+			$this->showCleanupForm();
+		}
+		$this->clearWorkingPasswords();
 	}
 	
 	private function showWelcomeForm() {
