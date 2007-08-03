@@ -123,4 +123,5 @@ function wfCentralAuthAddNewAccount( $user ) {
 	$central = new CentralAuthUser( $user );
 	$central->lazyImportLocalNames();
 	$central->storeMigrationData( $wgDBname, array( $user->getName() ) );
+	return true;
 }
