@@ -11,6 +11,36 @@ likely construction types...
 
 */
 
+class CentralAuthHelper {
+	private static $connections = array();
+	
+	function get( $dbname ) {
+		global $wgDBname;
+		if( $dbname == $wgDBname ) {
+			return wfGetDB( DB_MASTER );
+		}
+		if( !isset( self::$connections[$dbname] ) ) {
+			self::$connections[$dbname] = self::openConnection( $dbname );
+		}
+		return self::$connections[$dbname];
+	}
+	
+	private function getServer( $dbname ) {
+		global $wgAlternateMaster, $wgDBserver;
+		if( isset( $wgAlternateMaster[$dbname] ) ) {
+			return $wgAlternateMaster[$dbname];
+		} elseif( isset( $wgAlternateMaster['DEFAULT'] ) ) {
+			return $wgAlternateMaster['DEFAULT'];
+		}
+		return $wgDBserver;
+	}
+	
+	private function openConnection( $dbname ) {
+		global $wgDBuser, $wgDBpassword;
+		$server = self::getServer( $dbname );
+		return new Database( $server, $wgDBuser, $wgDBpassword, $dbname );
+	}
+}
 
 class CentralAuthUser {
 	
@@ -28,14 +58,14 @@ class CentralAuthUser {
 	 * @fixme Make use of some info to get the appropriate master DB
 	 */
 	public static function getCentralDB() {
-		return wfGetDB( DB_MASTER, 'Central' );
+		return CentralAuthHelper::get( 'centralauth' );
 	}
 	
 	/**
 	 * @fixme Make use of some info to get the appropriate master DB
 	 */
 	public static function getLocalDB( $dbname ) {
-		return wfGetDB( DB_MASTER );
+		return CentralAuthHelper::get( $dbname );
 	}
 	
 	public static function tableName( $name ) {
