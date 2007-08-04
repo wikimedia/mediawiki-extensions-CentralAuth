@@ -213,6 +213,9 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 		
 		$passwords = $this->getWorkingPasswords();
+		if( empty( $passwords ) ) {
+			throw new MWException( "Submission error -- invalid input" );
+		}
 		
 		$home = false;
 		$attached = array();
@@ -222,10 +225,12 @@ class SpecialMergeAccount extends SpecialPage {
 		
 		if( $ok ) {
 			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
-			$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
+			//$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
 		} else {
-			$wgOut->addHtml('boo it failed');
+			$wgOut->setPageTitle( wfMsg( 'centralauth-incomplete' ) );
+			//$wgOut->addWikiText( wfMsg( 'centralauth-incomplete-text' ) );
 		}
+		$this->showCleanupForm();
 	}
 	
 	function doCleanupMerge() {
@@ -242,6 +247,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$attached = array();
 		$unattached = array();
 		$ok = $globalUser->attemptPasswordMigration( $password, $attached, $unattached );
+		$this->clearWorkingPasswords();
 		
 		if( $ok ) {
 			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
@@ -252,9 +258,8 @@ class SpecialMergeAccount extends SpecialPage {
 			} else {
 				$wgOut->addWikiText( "Did some but incomplete still." );
 			}
-			$this->showCleanupForm();
 		}
-		$this->clearWorkingPasswords();
+		$this->showCleanupForm();
 	}
 	
 	private function showWelcomeForm() {
