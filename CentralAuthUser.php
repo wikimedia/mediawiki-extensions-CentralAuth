@@ -771,6 +771,19 @@ class CentralAuthUser {
 			array(
 				'ln_dbname' => $dbname,
 				'ln_name' => $this->mName ),
+			__METHOD__,
+			array( 'IGNORE' ) );
+		$dbw->commit();
+	}
+	
+	function removeLocalName( $dbname ) {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$this->lazyImportLocalNames();
+		$dbw->delete( self::tableName( 'localnames' ),
+			array(
+				'ln_dbname' => $dbname,
+				'ln_name' => $this->mName ),
 			__METHOD__ );
 		$dbw->commit();
 	}

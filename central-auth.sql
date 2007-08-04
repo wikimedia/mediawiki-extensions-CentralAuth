@@ -104,7 +104,8 @@ CREATE TABLE localuser (
     'mail',
     'password',
     'admin',
-    'new'),
+    'new',
+    'login'),
 
   primary key (lu_dbname, lu_name),
   key (lu_name, lu_dbname)

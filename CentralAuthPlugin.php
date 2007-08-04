@@ -144,9 +144,6 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function updateExternalDB( $user ) {
-		global $wgDBname;
-		$central = new CentralAuthUser( $user->getName() );
-		$central->addLocalName( $wgDBname );
 		return true;
 	}
 
@@ -176,8 +173,18 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function addUser( $user, $password, $email='', $realname='' ) {
-		$central = new CentralAuthUser( $user->getName() );
-		return $central->register( $password, $email, $realname );
+		global $wgCentralAuthAutoNew;
+		if( $wgCentralAuthAutoNew ) {
+			$central = new CentralAuthUser( $user->getName() );
+			if( !$central->exists() && !$central->listUnattached() ) {
+				// Username is unused; set up as a global account
+				// @fixme is this even vaguely reliable? pah
+				global $wgDBname;
+				$central->register( $password, $email, $realname );
+				$central->attach( $wgDBname, 'new' );
+			}
+		}
+		return true;
 	}
 
 
@@ -206,12 +213,15 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param $user User object.
 	 * @public
 	 */
-	function initUser( &$user ) {
-		global $wgDBname;
-		$central = new CentralAuthUser( $user->getName() );
-		$central->attach( $wgDBname, 'new' );
-		
-		$this->updateUser( $user );
+	function initUser( &$user, $autocreate=false ) {
+		if( $autocreate ) {
+			$central = new CentralAuthUser( $user->getName() );
+			if( $central->exists() ) {
+				global $wgDBname;
+				$central->attach( $wgDBname, 'login' );
+				$this->updateUser( $user );
+			}
+		}
 	}
 }
 

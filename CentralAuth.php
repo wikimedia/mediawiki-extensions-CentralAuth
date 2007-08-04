@@ -9,6 +9,11 @@
  */
 $wgCentralAuthDatabase = 'centralauth';
 
+/**
+ * If true, new account registrations will be registered globally if
+ * the username hasn't been used elsewhere.
+ */
+$wgCentralAuthAutoNew = false;
 
 /**
  * If true, existing unattached accounts will be automatically migrated
