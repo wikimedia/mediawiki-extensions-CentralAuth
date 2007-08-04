@@ -25,31 +25,7 @@ $wgCentralAuthMessages['en'] = array(
 		"\n" .
 		"If someone else has already taken your username on another site " .
 		"this won't disturb them, but it will give you a chance to work out " .
-		"with them or an administrator later.\n" .
-		"\n" .
-		"== What happens next? ==\n" .
-		"\n" .
-		"When you opt-in to the unified login migration, the system will look over " .
-		"each of the sites that we run -- Wikipedia, Wikinews, Commons, etc -- " .
-		"and list out every one where your username has been registered.\n" .
-		"\n" .
-		"One of those wikis will be chosen as the 'home wiki' for the account, " .
-		"usually the one that is most firmly established in usage. If that isn't " .
-		"the wiki you're logged into right now, you may be asked to confirm " .
-		"that you know the password to that account to proceed.\n" .
-		"\n" .
-		"The account information on the home wiki will be compared all the others, " .
-		"and those which have matching passwords or e-mail addresses, or haven't been used, " .
-		"will be automatically attached to your new global account.\n" .
-		"\n" .
-		"Those which don't match will be left alone, since the system can't be " .
-		"sure that they're your accounts. You can complete the merging for those " .
-		"accounts by providing the correct login passwords if they're yours; " .
-		"if someone else registered them, you'll have a chance to leave them a message " .
-		"and see if you can work something out.\n" .
-		"\n" .
-		"It's not ''required'' to merge all accounts; you can leave some separate, " .
-		"and they'll be marked as such.",
+		"with them or an administrator later.",
 	
 	'centralauth-merge-step1-title' => 'Begin login unification',
 	'centralauth-merge-step1-detail' =>
