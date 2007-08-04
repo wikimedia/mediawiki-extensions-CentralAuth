@@ -259,11 +259,11 @@ class CentralAuthUser {
 			$tuples = array();
 			foreach( $users as $name ) {
 				$tuples[] = array(
-					'lu_dbname'   => $dbname,
-					'lu_name'     => $name );
+					'ln_dbname'   => $dbname,
+					'ln_name'     => $name );
 			}
 			$dbw->insert(
-				self::tableName( 'localuser' ),
+				self::tableName( 'localnames' ),
 				$tuples,
 				__METHOD__,
 				array( 'IGNORE' ) );
