@@ -63,7 +63,7 @@ class WikiReference {
 	
 	private function getLocalUrl( $page ) {
 		// FIXME: this may be generalized...
-		return str_replace( '$1', wfUrlEncode( $page ), $this->mPath );
+		return str_replace( '$1', wfUrlEncode( str_replace( ' ', '_', $page ) ), $this->mPath );
 	}
 	
 	function getUrl( $page ) {
