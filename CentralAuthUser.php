@@ -98,7 +98,7 @@ class CentralAuthUser {
 			$localuser = self::tableName( 'localuser' );
 		
 			$sql =
-				"SELECT gu_id, lu_attached
+				"SELECT gu_id, lu_dbname
 					FROM $globaluser
 					LEFT OUTER JOIN $localuser
 						ON gu_name=lu_name
@@ -109,8 +109,8 @@ class CentralAuthUser {
 			$dbr->freeResult( $result );
 		
 			if( $row ) {
-				$this->mGlobalId = $row->gu_id;
-				$this->mIsAttached = (bool)$row->lu_attached;
+				$this->mGlobalId = intval( $row->gu_id );
+				$this->mIsAttached = ($row->lu_dbname !== null);
 			} else {
 				$this->mGlobalId = 0;
 				$this->mIsAttached = false;
@@ -596,8 +596,7 @@ class CentralAuthUser {
 		$valid = $this->validateList( $list );
 		
 		$dbw = self::getCentralDB();
-		$dbw->update( self::tableName( 'localuser' ),
-			array( 'lu_attached' => 0 ),
+		$dbw->delete( self::tableName( 'localuser' ),
 			array(
 				'lu_name'   => $this->mName,
 				'lu_dbname' => $valid ),
@@ -627,38 +626,26 @@ class CentralAuthUser {
 	 */
 	public function attach( $dbname, $method='new' ) {
 		$dbw = self::getCentralDB();
-		$dbw->update( self::tableName( 'localuser' ),
-			array(
-				'lu_attached'           => 1,
-				'lu_attached_timestamp' => $dbw->timestamp(),
-				'lu_attached_method'    => $method ),
+		$dbw->insert( self::tableName( 'localuser' ),
 			array(
 				'lu_dbname'             => $dbname,
-				'lu_name'               => $this->mName ),
-			__METHOD__ );
-		if( $dbw->affectedRows() == 0 ) {
-			// *frowny face*
-			
-			$dbw->insert( self::tableName( 'localuser' ),
-				array(
-					'lu_dbname'             => $dbname,
-					'lu_name'               => $this->mName ,
-					'lu_attached'           => 1,
-					'lu_attached_timestamp' => $dbw->timestamp(),
-					'lu_attached_method'    => $method ),
-				__METHOD__,
-				array( 'IGNORE' ) );
-			
-			if( $dbw->affectedRows() == 0 ) {
-				throw MWException( "Bogus attach" );
-			}
-		}
-		wfDebugLog( 'CentralAuth',
-			"Attaching local user $this->mName@$dbname by '$method'" );
+				'lu_name'               => $this->mName ,
+				'lu_attached_timestamp' => $dbw->timestamp(),
+				'lu_attached_method'    => $method ),
+			__METHOD__,
+			array( 'IGNORE' ) );
 		
-		global $wgDBname;
-		if( $dbname == $wgDBname ) {
-			$this->resetState();
+		if( $dbw->affectedRows() == 0 ) {
+			wfDebugLog( 'CentralAuth',
+				"Race condition? Already attached $this->mName@$dbname, just tried by '$method'" );
+		} else {
+			wfDebugLog( 'CentralAuth',
+				"Attaching local user $this->mName@$dbname by '$method'" );
+		
+			global $wgDBname;
+			if( $dbname == $wgDBname ) {
+				$this->resetState();
+			}
 		}
 	}
 	
@@ -746,28 +733,48 @@ class CentralAuthUser {
 	 * @return array of database name strings
 	 */
 	public function listUnattached() {
-		$unattached = $this->listLocalDatabases( 0 );
-		if( !$unattached ) {
-			// Nobody? Might not have imported local lists yet...
+		$unattached = $this->doListUnattached();
+		if( empty( $unattached ) ) {
 			if( $this->lazyImportLocalNames() ) {
-				$unattached = $this->listLocalDatabases( 0 );
+				$unattached = $this->doListUnattached();
 			}
 		}
 		return $unattached;
 	}
 	
+	function doListUnattached() {
+		$dbw = self::getCentralDB();
+		
+		$sql = "
+		SELECT ln_dbname
+		FROM localnames
+		LEFT OUTER JOIN localuser
+			ON ln_dbname=lu_dbname AND ln_name=lu_name
+		WHERE ln_name=? AND lu_name IS NULL
+		";
+		$result = $dbw->safeQuery( $sql, $this->mName );
+		
+		$dbs = array();
+		while( $row = $dbw->fetchObject( $result ) ) {
+			$dbs[] = $row->ln_dbname;
+		}
+		$dbw->freeResult( $result );
+		
+		return $dbs;
+	}
+	
 	function lazyImportLocalNames() {
 		$dbw = self::getCentralDB();
 		
-		$result = $dbw->select( self::tableName( 'localuser' ),
-			array( 'lu_dbname' ),
-			array( 'lu_name'     => $this->mName ),
+		$result = $dbw->select( self::tableName( 'globalnames' ),
+			array( '1' ),
+			array( 'gn_name' => $this->mName ),
 			__METHOD__,
 			array( 'LIMIT' => 1 ) );
-		$any = $result->numRows();
+		$known = $result->numRows();
 		$result->free();
 		
-		if( $any ) {
+		if( $known ) {
 			// No need...
 			return false;
 		}
@@ -775,6 +782,10 @@ class CentralAuthUser {
 		return $this->importLocalNames();
 	}
 	
+	/**
+	 * Troll through the full set of local databases and list those
+	 * which exist into the 'localnames' table.
+	 */
 	function importLocalNames() {
 		global $wgLocalDatabases;
 		
@@ -788,15 +799,14 @@ class CentralAuthUser {
 				__METHOD__ );
 			if( $id ) {
 				$rows[] = array(
-					'lu_dbname' => $db,
-					'lu_name' => $this->mName,
-					'lu_attached' => 0 );
+					'ln_dbname' => $db,
+					'ln_name' => $this->mName );
 			}
 		}
 		
 		if( $rows ) {
 			$dbw = self::getCentralDB();
-			$dbw->insert( self::tableName( 'localuser' ),
+			$dbw->insert( self::tableName( 'localnames' ),
 				$rows,
 				__METHOD__,
 				array( 'IGNORE' ) );
@@ -814,9 +824,25 @@ class CentralAuthUser {
 	 * @return array database name strings
 	 */
 	public function listAttached() {
-		return $this->listLocalDatabases( 1 );
+		$dbw = self::getCentralDB();
+		
+		$result = $dbw->select( self::tableName( 'localuser' ),
+			array( 'lu_dbname' ),
+			array( 'lu_name' => $this->mName ),
+			__METHOD__ );
+		
+		$dbs = array();
+		while( $row = $result->fetchObject() ) {
+			$dbs[] = $row->lu_dbname;
+		}
+		$dbw->freeResult( $result );
+		
+		return $dbs;
 	}
 	
+	/**
+	 * Flooobie!
+	 */
 	private function listLocalDatabases( $attached ) {
 		$dbw = self::getCentralDB();
 		
@@ -852,8 +878,7 @@ class CentralAuthUser {
 				'lu_attached_timestamp',
 				'lu_attached_method' ),
 			array(
-				'lu_name' => $this->mName,
-				'lu_attached' => 1 ),
+				'lu_name' => $this->mName ),
 			__METHOD__ );
 		
 		$dbs = array();

@@ -4,7 +4,36 @@
 -- USE centralauth;
 -- GRANT all on centralauth.* to 'wikiuser'@'localhost';
 -- source central-auth.sql
--- source sample-data.sql
+
+--
+-- This table simply lists all known usernames in the system.
+-- If no record is present here when migration processing begins,
+-- we know we have to sweep all the local databases and populate
+-- the localnames table.
+--
+CREATE TABLE globalnames (
+	gn_name varchar(255) binary not null,
+	primary key (gn_name)
+) /*$wgDBTableOptions*/;
+
+--
+-- For each known username in globalnames, the presence of an acount
+-- on each local database is listed here.
+--
+-- Email and password information used for migration checks are grabbed
+-- from local databases on demand when needed.
+--
+-- This is an optimization measure, so we don't have to poke on 600+
+-- separate databases to look for unmigrated accounts every time we log in;
+-- only existing databases not yet migrated have to be loaded.
+--
+CREATE TABLE localnames (
+  ln_dbname varchar(32) binary not null,
+  ln_name varchar(255) binary not null,
+
+  primary key (ln_dbname, ln_name),
+  key (ln_name, ln_dbname)
+) /*$wgDBTableOptions*/;
 
 --
 -- Global account data.
@@ -58,18 +87,14 @@ CREATE TABLE globaluser (
 ) /*$wgDBTableOptions*/;
 
 --
--- Local linkage info, listing which wikis the username is registered on
--- and whether they've been attached to the global account.
---
--- Email and password information used for migration checks are grabbed
--- from local databases on demand when needed.
+-- Local linkage info, listing which wikis the username is attached
+-- to the global account.
 --
 -- All local DBs will be swept on an opt-in check event.
 --
 CREATE TABLE localuser (
   lu_dbname varchar(32) binary not null,
   lu_name varchar(255) binary not null,
-  lu_attached bool not null default 0,
 
   -- Migration status/logging information, to help diagnose issues
   lu_attached_timestamp varchar(14) binary,
