@@ -15,11 +15,9 @@ class WikiMap {
 		
 		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
 		if( isset( $major ) ) {
-			$server = $wgConf->get( 'wgServer', $dbname,
-				null,
+			$server = $wgConf->get( 'wgServer', $dbname, $major,
 				array( 'lang' => $minor, 'site' => $major ) );
-			$path = $wgConf->get( 'wgArticlePath', $dbname,
-				null,
+			$path = $wgConf->get( 'wgArticlePath', $dbname, $major,
 				array( 'lang' => $minor, 'site' => $major ) );
 			return new WikiReference( $major, $minor, $server, $path );
 		} else {
