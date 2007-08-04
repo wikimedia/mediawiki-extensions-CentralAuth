@@ -32,6 +32,12 @@ $wgCentralAuthAutoMigrate = false;
  */
 $wgCentralAuthStrict = false;
 
+/**
+ * If true, merging won't actually be possible through the Special:MergeAccount
+ * interface.
+ */
+$wgCentralAuthDryRun = false;
+
 
 /**
  * Initialization of the autoloaders, and special extension pages.

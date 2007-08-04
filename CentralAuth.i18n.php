@@ -97,6 +97,13 @@ $wgCentralAuthMessages['en'] = array(
 		"\n" .
 		"If this is you, you can finish the login unification process " .
 		"simply by typing the master password for that account here:",
+		
+	'centralauth-notice-dryrun' =>
+		"<div class='successbox'>Demo mode only</div><br clear='all'/>",
+	
+	'centralauth-disabled-dryrun' =>
+		"Account unification is currently in a demo / debugging mode, " .
+		"so actual merging operations are disabled. Sorry!",
 
 	// Appended to various messages above
 	'centralauth-readmore-text' =>

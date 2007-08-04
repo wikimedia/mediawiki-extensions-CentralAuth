@@ -139,11 +139,15 @@ class SpecialMergeAccount extends SpecialPage {
 	
 	
 	function doDryRunMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname;
+		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 		
 		if( $globalUser->exists() ) {
 			throw new MWException( "Already exists -- race condition" );
+		}
+		
+		if( $wgCentralAuthDryRun ) {
+			$wgOut->addWikiText( wfMsg( 'centralauth-notice-dryrun' ) );
 		}
 		
 		$password = $wgRequest->getVal( 'wpPassword' );
@@ -205,8 +209,12 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 	
 	function doInitialMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname;
+		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		
+		if( $wgCentralAuthDryRun ) {
+			return $this->dryRunError();
+		}
 		
 		if( $globalUser->exists() ) {
 			throw new MWException( "Already exists -- race condition" );
@@ -234,13 +242,16 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 	
 	function doCleanupMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname;
+		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 		
 		if( !$globalUser->exists() ) {
 			throw new MWException( "User doesn't exist -- race condition?" );
 		}
 		
+		if( $wgCentralAuthDryRun ) {
+			return $this->dryRunError();
+		}
 		$password = $wgRequest->getText( 'wpPassword' );
 		
 		$home = false;
@@ -263,7 +274,12 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 	
 	private function showWelcomeForm() {
-		global $wgOut, $wgUser;
+		global $wgOut, $wgUser, $wgCentralAuthDryRun;
+		
+		if( $wgCentralAuthDryRun ) {
+			$wgOut->addWikiText( wfMsg( 'centralauth-notice-dryrun' ) );
+		}
+		
 		$wgOut->addWikiText(
 			wfMsg( 'centralauth-merge-welcome' ) .
 			"\n\n" .
@@ -466,6 +482,11 @@ class SpecialMergeAccount extends SpecialPage {
 						array( 'name' => 'wpLogin' ) ) .
 				'</p>'
 			);
+	}
+	
+	private function dryRunError() {
+		global $wgOut;
+		$wgOut->addWikiText( wfMsg( 'centralauth-disabled-dryrun' ) );
 	}
 	
 }
