@@ -186,6 +186,12 @@ $wgCentralAuthMessages['en'] = array(
 	'centralauth-prefs-manage' =>
 		'Manage your global account',
 	
+	// Interaction with Special:Renameuser
+	'centralauth-renameuser-abort' =>
+		"<div class=\"errorbox\">" .
+		"Cannot rename user $1 locally as this username has been migrated to the " .
+		"unified login system.</div>",
+	
 );
 
 /* Arabic (Meno25) */

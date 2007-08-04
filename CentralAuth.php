@@ -44,6 +44,10 @@ $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
 $wgHooks['AddNewAccount'][] = 'wfCentralAuthAddNewAccount';
 $wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
 
+// For interaction with the Special:Renameuser extension
+$wgHooks['RenameUserAbort'][] = 'wfCentralAuthRenameUserAbort';
+$wgHooks['RenameUserComplete'][] = 'wfCentralAuthRenameUserComplete';
+
 $wgGroupPermissions['steward']['centralauth-admin'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
@@ -124,4 +128,33 @@ function wfCentralAuthAddNewAccount( $user ) {
 	$central = new CentralAuthUser( $user->getName() );
 	$central->addLocalName( $wgDBname );
 	return true;
+}
+
+/**
+ * Don't allow an attached local account to be renamed with the old system.
+ */
+function wfCentralAuthRenameUserAbort( $userId, $oldName, $newName ) {
+	$central = new CentralAuthUser( $oldName );
+	if( $central->exists() && $central->isAttached() ) {
+		global $wgOut;
+		$wgOut->addWikiText( wfMsg( 'centralauth-renameuser-abort', $oldName ) );
+		return false;
+	}
+	
+	// If no central record is present or this local account isn't attached,
+	// do as thou wilt.
+	return true;
+}
+
+/**
+ * When renaming an account, ensure that the presence records are updated.
+ */
+function wfCentralAuthRenameUserComplete( $userId, $oldName, $newName ) {
+	global $wgDBname;
+	
+	$oldCentral = new CentralAuthUser( $oldName );
+	$oldCentral->removeLocalName( $wgDBname );
+	
+	$newCentral = new CentralAuthUser( $newName );
+	$newCentral->addLocalName( $wgDBname );
 }
