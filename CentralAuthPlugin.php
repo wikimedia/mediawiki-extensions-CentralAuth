@@ -144,6 +144,9 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function updateExternalDB( $user ) {
+		global $wgDBname;
+		$central = new CentralAuthUser( $user->getName() );
+		$central->addLocalName( $wgDBname );
 		return true;
 	}
 

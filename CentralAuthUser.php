@@ -763,6 +763,18 @@ class CentralAuthUser {
 		return $dbs;
 	}
 	
+	function addLocalName( $dbname ) {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$this->lazyImportLocalNames();
+		$dbw->insert( self::tableName( 'localnames' ),
+			array(
+				'ln_dbname' => $dbname,
+				'ln_name' => $this->mName ),
+			__METHOD__ );
+		$dbw->commit();
+	}
+	
 	function lazyImportLocalNames() {
 		$dbw = self::getCentralDB();
 		
@@ -804,17 +816,21 @@ class CentralAuthUser {
 			}
 		}
 		
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$dbw->insert( self::tableName( 'globalnames' ),
+			array( 'gn_name' => $this->mName ),
+			__METHOD__,
+			array( 'IGNORE' ) );
 		if( $rows ) {
-			$dbw = self::getCentralDB();
 			$dbw->insert( self::tableName( 'localnames' ),
 				$rows,
 				__METHOD__,
 				array( 'IGNORE' ) );
-			return true;
-		} else {
-			// No change.
-			return false;
 		}
+		$dbw->commit();
+		
+		return !empty( $rows );
 	}
 	
 	/**

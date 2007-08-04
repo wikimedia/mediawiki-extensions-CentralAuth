@@ -120,8 +120,8 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
  * on local account creation
  */
 function wfCentralAuthAddNewAccount( $user ) {
-	$central = new CentralAuthUser( $user );
-	$central->lazyImportLocalNames();
-	$central->storeMigrationData( $wgDBname, array( $user->getName() ) );
+	global $wgDBname;
+	$central = new CentralAuthUser( $user->getName() );
+	$central->addLocalName( $wgDBname );
 	return true;
 }
