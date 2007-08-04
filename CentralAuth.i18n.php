@@ -446,6 +446,9 @@ $wgCentralAuthMessages['he'] = array(
 
 אם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הכללי כאן:',
 
+	'centralauth-notice-dryrun'   => '<div class="successbox">מצב הדגמה בלבד</div><br clear="all" />',
+	'centralauth-disabled-dryrun' => 'מיזוג החשבונות הוא כרגע במצב הדגמה ובדיקה, ולכן לא ניתן למזג את החשבונות. מצטערים!',
+
 	# Appended to various messages above
 	'centralauth-readmore-text' => ":[[meta:Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",
 
@@ -490,6 +493,9 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-prefs-count-unattached'  => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב־$1 מיזמים.',
 	'centralauth-prefs-detail-unattached' => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
 	'centralauth-prefs-manage'            => 'ניהול החשבון הכללי',
+
+	# Interaction with Special:Renameuser
+	'centralauth-renameuser-abort' => '<div class="errorbox">לא ניתן לשנות את שם המשתמש של $1 באופן מקומי, כיוון שהוא כבר התווסף למערכת החשבונות הממוזגים.</div>',
 );
 
 $wgCentralAuthMessages['id'] = array(
