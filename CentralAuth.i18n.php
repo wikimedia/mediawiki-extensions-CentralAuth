@@ -30,7 +30,7 @@ $wgCentralAuthMessages['en'] = array(
 	'centralauth-merge-step1-title' => 'Begin login unification',
 	'centralauth-merge-step1-detail' =>
 		'Your password and registered e-mail address will be checked against ' .
-		'the accounts on other wikis to confirm that they match ' .
+		'the accounts on other wikis to confirm that they match. ' .
 		'No changes will be made until you have confirmed that things look ok.',
 	'centralauth-merge-step1-submit' =>
 		'Confirm login information',
