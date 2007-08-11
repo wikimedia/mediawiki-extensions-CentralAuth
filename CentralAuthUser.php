@@ -19,10 +19,14 @@ class CentralAuthHelper {
 		if( $dbname == $wgDBname ) {
 			return wfGetDB( DB_MASTER );
 		}
-		if( !isset( self::$connections[$dbname] ) ) {
-			self::$connections[$dbname] = self::openConnection( $dbname );
+		
+		global $wgDBuser, $wgDBpassword;
+		$server = self::getServer( $dbname );
+		if( !isset( self::$connections[$server] ) ) {
+			self::$connections[$server] = new Database( $server, $wgDBuser, $wgDBpassword, $dbname );
 		}
-		return self::$connections[$dbname];
+		self::$connections[$server]->selectDB( $dbname );
+		return self::$connections[$server];
 	}
 	
 	private function getServer( $dbname ) {
@@ -33,12 +37,6 @@ class CentralAuthHelper {
 			return $wgAlternateMaster['DEFAULT'];
 		}
 		return $wgDBserver;
-	}
-	
-	private function openConnection( $dbname ) {
-		global $wgDBuser, $wgDBpassword;
-		$server = self::getServer( $dbname );
-		return new Database( $server, $wgDBuser, $wgDBpassword, $dbname );
 	}
 }
 
