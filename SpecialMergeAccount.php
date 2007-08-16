@@ -159,7 +159,8 @@ class SpecialMergeAccount extends SpecialPage {
 		$home = false;
 		$attached = array();
 		$unattached = array();
-		$ok = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached );
+		$methods = array();
+		$ok = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached, $methods );
 		
 		if( $ok ) {
 			// This is the global account or matched it
@@ -185,7 +186,7 @@ class SpecialMergeAccount extends SpecialPage {
 			}
 			
 			$subAttached = array_diff( $attached, array( $home ) );
-			$wgOut->addHtml( $this->step3ActionForm( $home, $subAttached ) );
+			$wgOut->addHtml( $this->step3ActionForm( $home, $subAttached, $methods ) );
 			
 		} elseif( $home ) {
 			$wgOut->addWikiText( "The migration system couldn't confirm that you're the owner of the home wiki account for your username." .
@@ -338,39 +339,37 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 	}
 	
-	function listAttached( $dblist ) {
-		return $this->listForm( $dblist, 'unmerge', wfMsg( 'centralauth-admin-unmerge' ) );
+	function listAttached( $dblist, $methods=array() ) {
+		return $this->listWikis( $dblist, $methods );
 	}
 	
 	function listUnattached( $dblist ) {
-		return $this->listForm( $dblist, 'admin', wfMsg( 'centralauth-admin-merge' ) );
+		return $this->listWikis( $dblist );
 	}
 	
-	function listForm( $dblist  /* Params not used: , $action, $buttonText */ ) {
-		$list = $this->listWikis( $dblist );
-		
-		return $list;
-	}
-	
-	function listWikis( $list ) {
+	function listWikis( $list, $methods=array() ) {
 		asort( $list );
-		return $this->formatList( $list, array( $this, 'listWikiItem' ) );
+		return $this->formatList( $list, $methods, array( $this, 'listWikiItem' ) );
 	}
 	
-	function formatList( $items, $callback ) {
+	function formatList( $items, $methods, $callback ) {
 		if( empty( $items ) ) {
 			return '';
 		} else {
+			$itemMethods = array();
+			foreach( $items as $item ) {
+				$itemMethods[] = isset( $methods[$item] ) ? $methods[$item] : '';
+			}
 			return "<ul>\n<li>" .
 				implode( "</li>\n<li>",
-					array_map( $callback, $items ) ) .
+					array_map( $callback, $items, $itemMethods ) ) .
 				"</li>\n</ul>\n";
 		}
 	}
 	
-	function listWikiItem( $dbname ) {
+	function listWikiItem( $dbname, $method ) {
 		return
-			$this->foreignUserLink( $dbname );
+			$this->foreignUserLink( $dbname ) . ' ' . $method;
 	}
 	
 	function foreignUserLink( $dbname ) {
@@ -463,7 +462,7 @@ class SpecialMergeAccount extends SpecialPage {
 			wfMsg( 'centralauth-merge-step2-submit' ) );
 	}
 	
-	private function step3ActionForm( $home, $attached ) {
+	private function step3ActionForm( $home, $attached, $methods ) {
 		global $wgUser;
 		return $this->actionForm(
 			'initial',
@@ -471,12 +470,12 @@ class SpecialMergeAccount extends SpecialPage {
 			wfMsgExt( 'centralauth-merge-step3-detail', 'parse', $wgUser->getName() ) .
 				'<h3>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h3>' .
 				wfMsgExt( 'centralauth-list-home-dryrun', 'parse' ) .
-				$this->listAttached( array( $home ) ) .
+				$this->listAttached( array( $home ), $methods ) .
 				( count( $attached )
 					? ( '<h3>' . wfMsgHtml( 'centralauth-list-attached-title' ) . '</h3>' .
 						wfMsgExt( 'centralauth-list-attached-dryrun', 'parse', $wgUser->getName() ) )
 					: '' ) .
-				$this->listAttached( $attached ) .
+				$this->listAttached( $attached, $methods ) .
 				'<p>' .
 					Xml::submitButton( wfMsg( 'centralauth-merge-step3-submit' ),
 						array( 'name' => 'wpLogin' ) ) .

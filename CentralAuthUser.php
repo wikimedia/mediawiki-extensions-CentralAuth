@@ -363,8 +363,11 @@ class CentralAuthUser {
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
+		//
+		// For additional safety, we'll only let the mail check
+		// propagate from a confirmed account
 		$passingMail = array();
-		if( $this->mEmail != '' ) {
+		if( $this->mEmail != '' && $this->mEmailAuthenticated ) {
 			$passingMail[$this->mEmail] = true;
 		}
 		
@@ -373,6 +376,7 @@ class CentralAuthUser {
 		if( $passwords ) {
 			foreach( $migrationSet as $db => $local ) {
 				if( $local['email'] != ''
+					&& $local['emailAuthenticated']
 					&& $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
 					$passingMail[$local['email']] = true;
 				}
@@ -419,9 +423,10 @@ class CentralAuthUser {
 	 * @param string &$home set to false if no permission to do checks
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
+	 * @param array &$methods on success, associative array of each wiki's attachment method
 	 * @return bool true if password matched current and home account
 	 */
-	function migrationDryRun( $passwords, &$home, &$attached, &$unattached ) {
+	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		global $wgDBname;
 		
 		$home = false;
@@ -449,14 +454,17 @@ class CentralAuthUser {
 		
 		$this->mHomeWiki = $home;
 		$this->mEmail = $local['email'];
+		$this->mEmailAuthenticated = $local['emailAuthenticated'];
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 		
 		$all = array_keys( $migrationSet );
 		$attached = array_keys( $attach );
 		$unattached = array_diff( $all, $attached );
+		$methods = $attach;
 		
 		sort( $attached );
 		sort( $unattached );
+		ksort( $methods );
 		
 		return true;
 	}
@@ -473,6 +481,7 @@ class CentralAuthUser {
 		$this->mHomeWiki = $this->chooseHomeWiki( $migrationSet );
 		$home = $migrationSet[$this->mHomeWiki];
 		$this->mEmail = $home['email'];
+		$this->mEmailAuthenticated = $home['emailAuthenticated'];
 		
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
