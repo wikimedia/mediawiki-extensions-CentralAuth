@@ -350,6 +350,8 @@ $wgCentralAuthMessages['de'] = array(
        'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
        'centralauth-prefs-manage'            => 'Bearbeite dein zusammengeführtes Benutzerkonto',
 
+	// Interaction with Special:Renameuser
+	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das zentrale Benutzerkonten-System übernommen wurde.</div>",
 );
 
 $wgCentralAuthMessages['fr'] = array(
