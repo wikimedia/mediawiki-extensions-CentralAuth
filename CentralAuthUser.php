@@ -14,7 +14,7 @@ likely construction types...
 class CentralAuthHelper {
 	private static $connections = array();
 	
-	function get( $dbname ) {
+	public static function get( $dbname ) {
 		global $wgDBname;
 		if( $dbname == $wgDBname ) {
 			return wfGetDB( DB_MASTER );
@@ -29,7 +29,7 @@ class CentralAuthHelper {
 		return self::$connections[$server];
 	}
 	
-	private function getServer( $dbname ) {
+	private static function getServer( $dbname ) {
 		global $wgAlternateMaster, $wgDBserver;
 		if( isset( $wgAlternateMaster[$dbname] ) ) {
 			return $wgAlternateMaster[$dbname];
