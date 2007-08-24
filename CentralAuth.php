@@ -168,4 +168,6 @@ function wfCentralAuthRenameUserComplete( $userId, $oldName, $newName ) {
 	
 	$newCentral = new CentralAuthUser( $newName );
 	$newCentral->addLocalName( $wgDBname );
+	
+	return true;
 }
