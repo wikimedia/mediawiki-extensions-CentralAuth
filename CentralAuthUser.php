@@ -333,6 +333,15 @@ class CentralAuthUser {
 			$workingSet = $migrationSet;
 		}
 		
+		// Blocked accounts not allowed to get automatic home wiki
+		foreach( $workingSet as $db => $local ) {
+			if( $local['blocked'] ) {
+				wfDebugLog( 'CentralAuth',
+					"Striking blocked account $this->mName@$db from working set\n" );
+				unset( $workingSet[$db] );
+			}
+		}
+		
 		$maxEdits = -1;
 		$homeWiki = null;
 		foreach( $workingSet as $db => $local ) {
@@ -975,7 +984,8 @@ class CentralAuthUser {
 			'emailAuthenticated' => $row->user_email_authenticated,
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
-			'groups' => array() );
+			'groups' => array(),
+			'blocked' => array() );
 		
 		// Edit count field may not be initialized...
 		if( is_null( $row->user_editcount ) ) {
@@ -994,6 +1004,19 @@ class CentralAuthUser {
 			__METHOD__ );
 		foreach( $result as $row ) {
 			$data['groups'][] = $row->ug_group;
+		}
+		$result->free();
+		
+		// And while we're in here, look for user blocks :D
+		$blocks = array();
+		$result = $db->select( "`$dbname`.ipblocks",
+			array( 'ipb_expiry' ),
+			array( 'ipb_user' => $data['id'] ),
+			__METHOD__ );
+		foreach( $result as $row ) {
+			if( Block::decodeExpiry( $row->ipb_expiry ) > wfTimestampNow() ) {
+				$data['blocked'] = true;
+			}
 		}
 		$result->free();
 		
