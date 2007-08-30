@@ -1687,6 +1687,37 @@ $wgCentralAuthMessages['yue'] = array(
 		'請<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]' .
 		'</span>去睇下檢查你嘅戶口係唔係已經完全整合。',
+	'centralauth-merge-welcome' =>
+		"'''你嘅用戶戶口重未整合到Wikimedia嘅統一登入系統。'''\n" .
+		"\n" .
+		"如果你係要去整合你個戶口嘅話，".
+		"噉你就可以用同一個用戶名同密碼去登入全部Wikimedia中全部語言嘅計劃\n" .
+		"噉樣做，可以更加容易噉響一啲共用嘅計劃度進行一啲工作，好似" .
+		"[http://commons.wikimedia.org/ Wikimedia Commons]，" .
+		"同埋避免用戶名混淆同相撞，以致響唔同嘅計劃度，兩位人揀咗同一個用戶名。\n" . 
+		"\n" .
+		"如果有另一啲人已經響另一個網站度揀咗你個用戶名嘅話，係唔會擾亂佢哋，" .
+		"但係佢會畀你一個機會，稍後同佢地或者同管理員去處理。",
+
+	'centralauth-merge-step1-title' => '開始登入統一',
+	'centralauth-merge-step1-detail' =>
+		'你嘅密碼同埋註冊嘅電郵地址會分別響其它wiki度檢查，去睇佢哋係一樣嘅。' .
+		'直至到你確認啲嘢係無問題之前，都唔會有更改嘅。',
+	'centralauth-merge-step1-submit' =>
+		'確認登入資料',
+
+	'centralauth-merge-step2-title' => '確認更多戶口',
+	'centralauth-merge-step2-detail' =>
+		"有啲戶口唔會自動噉同你自己嘅自家wiki站配合到。" .
+		"如果呢啲戶口係屬於你嘅話，你可以為佢哋提供一個密碼去確認佢哋係屬於你嘅。\n",
+	'centralauth-merge-step2-submit' =>
+		'確認登入資料',
+
+	'centralauth-merge-step3-title' => '開個統一戶口',
+	'centralauth-merge-step3-detail' =>
+		"你已經預備好響加入咗嘅wiki度，去開一個統一戶口：",
+	'centralauth-merge-step3-submit' =>
+		'統一戶口',
 
 	// Big text on completion
 	'centralauth-complete' =>
@@ -1713,14 +1744,34 @@ $wgCentralAuthMessages['yue'] = array(
 		"如果呢個係你，你可以輸入響嗰個戶口嘅主密碼" .
 		"以完成登入統一嘅程序：",
 
+	'centralauth-notice-dryrun' =>
+		"<div class='successbox'>只係示範模式</div><br clear='all'/>",
+	
+	'centralauth-disabled-dryrun' =>
+		"戶口統一而家係響示範／除錯模式，" .
+		"噉實際嘅合併動作已經停用。對唔住！",
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|睇下更多有關'''統一登入'''嘅細節]]...''",
 
 	// For lists of wikis/accounts:
+	'centralauth-list-home-title' =>
+		'自家wiki',
+	'centralauth-list-home-dryrun' =>
+		'你響呢個wiki嘅密碼同電郵地址會用來做你嘅統一戶口，' .
+		'同時你響呢度嘅用戶頁會由其它嘅wiki度自動連結過來。' .
+		"你可以響稍後嘅時間去改你嘅自家wiki。",
+	'centralauth-list-attached-title' =>
+		'已經附加嘅戶口',
 	'centralauth-list-attached' =>
 		'以下用戶名 "$1" 嘅戶口' .
 		'已經自動噉樣合併咗：',
+	'centralauth-list-attached-dryrun' =>
+		'下面每一個網站，個名係"$1"嘅戶口' .
+		'將會自動附加到一個統一戶口度：',
+	'centralauth-list-unattached-title' =>
+		'未附加嘅戶口',
 	'centralauth-list-unattached' =>
 		'以下網站嘅戶口 "$1" ' .
 		'唔能夠自動噉樣合併；' .
@@ -1747,17 +1798,52 @@ $wgCentralAuthMessages['yue'] = array(
 		"[[meta:Help:Unified login problems|如何尋求協助]]...",
 
 	'centralauth-merge-attempt' =>
-		"'''Checking provided password against remaining unmerged accounts...'''",
-	'centralauth-merge-attempt' =>
 		"'''檢查緊所輸入嘅密碼，同剩底未合併戶口相對...'''",
 
 	// Administrator's console
+	'centralauth' => '統一戶口管理',
+	'centralauth-admin-manage' =>
+		'管理用戶資料',
+	'centralauth-admin-username' =>
+		'用戶名：',
+	'centralauth-admin-lookup' =>
+		'去睇或者編輯用戶資料',
 	'centralauth-admin-permission' =>
 		"只有執行員先至可以為用戶合併其它人嘅戶口。",
 	'centralauth-admin-unmerge' =>
 		'唔合併已經揀咗嘅',
 	'centralauth-admin-merge' =>
 		'合併已經揀咗嘅',
+	'centralauth-admin-bad-input' =>
+		'唔啱嘅合併選擇',
+	'centralauth-admin-none-selected' =>
+		'無戶口揀咗去改。',
+
+	// Info panel in preferences
+	'centralauth-prefs-status' =>
+		'全域戶口狀態：',
+	'centralauth-prefs-not-managed' =>
+		'唔係用緊統一戶口',
+	'centralauth-prefs-unattached' =>
+		'未確認',
+	'centralauth-prefs-complete' =>
+		'全部完成！',
+	'centralauth-prefs-migration' =>
+		'遷移中',
+	'centralauth-prefs-count-attached' =>
+		'你個戶口響$1個計劃網站度係活躍嘅。',
+	'centralauth-prefs-count-unattached' =>
+		'你響$1個計劃度重有未確認嘅戶口。',
+	'centralauth-prefs-detail-unattached' =>
+		'呢個計劃網站重未確認到個全域戶口。',
+	'centralauth-prefs-manage' =>
+		'管理你個全域戶口',
+	
+	// Interaction with Special:Renameuser
+	'centralauth-renameuser-abort' =>
+		"<div class=\"errorbox\">" .
+		"由於呢個用戶名已經遷移到統一登入系統，因此唔可以響本地度改$1做呢個用戶名。</div>",
+
 );
 
 $wgCentralAuthMessages['zh-hans'] = array(
@@ -1768,6 +1854,37 @@ $wgCentralAuthMessages['zh-hans'] = array(
 		'请<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 登录]' .
 		'并检查您的账号是否都已经合并。',
+	'centralauth-merge-welcome' =>
+		"'''您的用户账户尚未整合到维基媒体的统一登录系统。'''\n" .
+		"\n" .
+		"如果您系要去整合您的账户的话，".
+		"那您就可以使用同一个用户名跟密码去登录所有维基媒体中所有语言的计划\n" .
+		"这样做，可以更加容易地在一些共用的计划中进行一些工作，好像" .
+		"[http://commons.wikimedia.org/ 维基共享资源]，" .
+		"以及避免用户名混淆和相撞，以致在不同的计划中，两位人选择同一个用户名。\n" . 
+		"\n" .
+		"如果有另一些人已经在另一个网站中选择了您的用户名，是不会扰乱他们的，" .
+		"但是它会给予您一个机会，稍后跟他们或者管理员去处理。",
+
+	'centralauth-merge-step1-title' => '开始登录整合',
+	'centralauth-merge-step1-detail' =>
+		'您的密码以及注册的电邮地址会分别在其它维基站中检查，去查看它们是一样的。' .
+		'直至到您确认这些是没有问题之前，都不会有所更改。',
+	'centralauth-merge-step1-submit' =>
+		'确认登录资料',
+
+	'centralauth-merge-step2-title' => '确认更多账户',
+	'centralauth-merge-step2-detail' =>
+		"有些账户不会自动地跟您自己的自家网基站配合到。" .
+		"如果这些账户是属于您的话，您可以为它们提供一个密码去确认它们是属于您的。\n",
+	'centralauth-merge-step2-submit' =>
+		'确认登录资料',
+
+	'centralauth-merge-step3-title' => '建立统一账户',
+	'centralauth-merge-step3-detail' =>
+		"您已经预备好在已加入的维基站中，去创建一个统一账户：",
+	'centralauth-merge-step3-submit' =>
+		'合并账户',
 
 	// Big text on completion
 	'centralauth-complete' =>
@@ -1794,14 +1911,34 @@ $wgCentralAuthMessages['zh-hans'] = array(
 		"若这是您的账号，" .
 		"请输入该帐号的密码，完成登录统一：",
 
+	'centralauth-notice-dryrun' =>
+		"<div class='successbox'>只是演示方式</div><br clear='all'/>",
+	
+	'centralauth-disabled-dryrun' =>
+		"账户统一现正于演示／除错方式，" .
+		"那实际的合并动作已经禁用。抱歉！",
+	
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|参阅关于'''登录统一'''的帮助文件]]...''",
 
 	// For lists of wikis/accounts:
+	'centralauth-list-home-title' =>
+		'自家维基站',
+	'centralauth-list-home-dryrun' =>
+		'您在这个维基站的密码以及电邮地址会用来做您的统一账户，' .
+		'同时您在这里的用户页会由其它的维基站中自动链接过来。' .
+		"您可以在稍后的时间去更改你的自家站。",
+	'centralauth-list-attached-title' =>
+		'已经附加的账户',
 	'centralauth-list-attached' =>
 		'以下网站的账号“$1”' .
 		'已自动合并：',
+	'centralauth-list-attached-dryrun' =>
+		'以下每一个网站，名字是"$1"的账户' .
+		'将会自动附加到一个统一账户中：',
+	'centralauth-list-unattached-title' =>
+		'未附加的账户',
 	'centralauth-list-unattached' =>
 		'账号“$1”在以下网站' .
 		'不能自动合并；' .
@@ -1831,12 +1968,49 @@ $wgCentralAuthMessages['zh-hans'] = array(
 		"'''检查未合并账号的密码...'''",
 
 	// Administrator's console
+	'centralauth' => '统一账户管理',
+	'centralauth-admin-manage' =>
+		'管理用户资料',
+	'centralauth-admin-username' =>
+		'用户名称：',
+	'centralauth-admin-lookup' =>
+		'查看或编辑用户资料',
 	'centralauth-admin-permission' =>
 		"只有监管员可以为其他人进行登录统一。",
 	'centralauth-admin-unmerge' =>
 		'拆分所选项',
 	'centralauth-admin-merge' =>
 		'合并所选项',
+	'centralauth-admin-bad-input' =>
+		'不正确的整合选择',
+	'centralauth-admin-none-selected' =>
+		'没有帐户选择作修改。',
+
+	// Info panel in preferences
+	'centralauth-prefs-status' =>
+		'全域账户状态：',
+	'centralauth-prefs-not-managed' =>
+		'不是正在使用统一账户',
+	'centralauth-prefs-unattached' =>
+		'未确认',
+	'centralauth-prefs-complete' =>
+		'全部完成！',
+	'centralauth-prefs-migration' =>
+		'迁移中',
+	'centralauth-prefs-count-attached' =>
+		'您的账户在$1个计划网站中是活跃的。',
+	'centralauth-prefs-count-unattached' =>
+		'您在$1个计划中还有未确认的账户。',
+	'centralauth-prefs-detail-unattached' =>
+		'这个计划网站还未确认到全域账户。',
+	'centralauth-prefs-manage' =>
+		'管理您的全域账户',
+	
+	// Interaction with Special:Renameuser
+	'centralauth-renameuser-abort' =>
+		"<div class=\"errorbox\">" .
+		"由于这个用户名已经迁移到统一登入系统，因此不能在本地中更改$1作为这个用户名。</div>",
+		
 );
 
 $wgCentralAuthMessages['zh-hant'] = array(
@@ -1847,6 +2021,37 @@ $wgCentralAuthMessages['zh-hant'] = array(
 		'請<span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]' .
 		'</span>以查驗您的帳號是否已經完成整合。',
+	'centralauth-merge-welcome' =>
+		"'''您的用戶帳戶尚未整合到維基媒體的統一登入系統。'''\n" .
+		"\n" .
+		"如果您係要去整合您的帳戶的話，".
+		"那您就可以使用同一個用戶名跟密碼去登入所有維基媒體中所有語言的計劃\n" .
+		"這樣做，可以更加容易地在一些共用的計劃中進行一些工作，好像" .
+		"[http://commons.wikimedia.org/ 維基共享資源]，" .
+		"以及避免用戶名混淆和相撞，以致在不同的計劃中，兩位人選擇同一個用戶名。\n" . 
+		"\n" .
+		"如果有另一些人已經在另一個網站中選擇了您的用戶名，是不會擾亂他們的，" .
+		"但是它會給予您一個機會，稍後跟他們或者管理員去處理。",
+
+	'centralauth-merge-step1-title' => '開始登入整合',
+	'centralauth-merge-step1-detail' =>
+		'您的密碼以及註冊的電郵地址會分別在其它維基站中檢查，去查看它們是一樣的。' .
+		'直至到您確認這些是沒有問題之前，都不會有所更改。',
+	'centralauth-merge-step1-submit' =>
+		'確認登入資料',
+
+	'centralauth-merge-step2-title' => '確認更多帳戶',
+	'centralauth-merge-step2-detail' =>
+		"有些帳戶不會自動地跟您自己的自家網基站配合到。" .
+		"如果這些帳戶是屬於您的話，您可以為它們提供一個密碼去確認它們是屬於您的。\n",
+	'centralauth-merge-step2-submit' =>
+		'確認登入資料',
+
+	'centralauth-merge-step3-title' => '建立統一帳戶',
+	'centralauth-merge-step3-detail' =>
+		"您已經預備好在已加入的維基站中，去建立一個統一帳戶：",
+	'centralauth-merge-step3-submit' =>
+		'整合帳戶',
 
 	// Big text on completion
 	'centralauth-complete' =>
@@ -1873,14 +2078,34 @@ $wgCentralAuthMessages['zh-hant'] = array(
 		"如果這是您的帳號，請輸入該帳號的密碼" .
 		"以完成帳號整合：",
 
+	'centralauth-notice-dryrun' =>
+		"<div class='successbox'>只是示範模式</div><br clear='all'/>",
+	
+	'centralauth-disabled-dryrun' =>
+		"帳戶整合現在於示範／除錯模式，" .
+		"那實際的整合動作已經停用。抱歉！",
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
 
 	// For lists of wikis/accounts:
+	'centralauth-list-home-title' =>
+		'自家維基站',
+	'centralauth-list-home-dryrun' =>
+		'您在這個維基站的密碼以及電郵地址會用來做您的統一帳戶，' .
+		'同時您在這裡的用戶頁會由其它的維基站中自動連結過來。' .
+		"您可以在稍後的時間去更改你的自家站。",
+	'centralauth-list-attached-title' =>
+		'已經附加的帳戶',
 	'centralauth-list-attached' =>
 		'以下網站的帳號："$1' .
 		'已自動完成整合：',
+	'centralauth-list-attached-dryrun' =>
+		'以下每一個網站，名字是"$1"的帳戶' .
+		'將會自動附加到一個統一帳戶中：',
+	'centralauth-list-unattached-title' =>
+		'未附加的帳戶',
 	'centralauth-list-unattached' =>
 		'以下網站的帳號："$1"' .
 		'無法自動整合；' .
@@ -1910,28 +2135,65 @@ $wgCentralAuthMessages['zh-hant'] = array(
 		"'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
 
 	// Administrator's console
+	'centralauth' => '統一帳戶管理',
+	'centralauth-admin-manage' =>
+		'管理用戶資料',
+	'centralauth-admin-username' =>
+		'用戶名稱：',
+	'centralauth-admin-lookup' =>
+		'檢視或編輯用戶資料',
 	'centralauth-admin-permission' =>
 		"只有監管員可以為用戶整合帳號。",
 	'centralauth-admin-unmerge' =>
 		'不整合已選取的',
 	'centralauth-admin-merge' =>
 		'整合已選取的',
+	'centralauth-admin-bad-input' =>
+		'不正確的整合選擇',
+	'centralauth-admin-none-selected' =>
+		'沒有帳戶選擇作修改。',
+
+	// Info panel in preferences
+	'centralauth-prefs-status' =>
+		'全域帳戶狀態：',
+	'centralauth-prefs-not-managed' =>
+		'不是正在使用統一帳戶',
+	'centralauth-prefs-unattached' =>
+		'未確認',
+	'centralauth-prefs-complete' =>
+		'全部完成！',
+	'centralauth-prefs-migration' =>
+		'遷移中',
+	'centralauth-prefs-count-attached' =>
+		'您的帳戶在$1個計劃網站中是活躍的。',
+	'centralauth-prefs-count-unattached' =>
+		'您在$1個計劃中還有未確認的帳戶。',
+	'centralauth-prefs-detail-unattached' =>
+		'這個計劃網站還未確認到全域帳戶。',
+	'centralauth-prefs-manage' =>
+		'管理您的全域帳戶',
+	
+	// Interaction with Special:Renameuser
+	'centralauth-renameuser-abort' =>
+		"<div class=\"errorbox\">" .
+		"由於這個用戶名已經遷移到統一登入系統，因此不能在本地中更改$1作為這個用戶名。</div>",
+
 );
 
+$wgCentralAuthMessages['zh-tw'] = $wgCentralAuthMessages['zh-hant'];
 $wgCentralAuthMessages['zh-tw'] = array(
 	// When not logged in...
-	'mergeaccount' =>
-		'帳號整合狀態',
-	'centralauth-merge-notlogged' =>
-		'請<span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]' .
-		'</span>以查驗您的帳號是否已經完成整合。',
-
-	// Big text on completion
-	'centralauth-complete' =>
-		'帳號整合已完成！',
-	'centralauth-incomplete' =>
-		'帳號整合未完成！',
+	'centralauth-merge-welcome' =>
+		"'''您的用戶帳戶尚未整合到維基媒體的統一登入系統。'''\n" .
+		"\n" .
+		"如果您係要去整合您的帳戶的話，".
+		"那您就可以使用同一個用戶名跟密碼去登入所有維基媒體中所有語言的計畫\n" .
+		"這樣做，可以更加容易地在一些共用的計畫中進行一些工作，好像" .
+		"[http://commons.wikimedia.org/ 維基共享資源]，" .
+		"以及避免用戶名混淆和相撞，以致在不同的計畫中，兩位人選擇同一個用戶名。\n" . 
+		"\n" .
+		"如果有另一些人已經在另一個網站中選擇了您的用戶名，是不會擾亂他們的，" .
+		"但是它會給予您一個機會，稍後跟他們或者管理員去處理。",
 
 	// Wheeee
 	'centralauth-complete-text' =>
@@ -1945,57 +2207,18 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		'用同一組帳號與密碼將可登入' .
 		'所有語言的' .
 		'維基百科、維基詞典、維基教科書及其他姊妹計畫網站。',
-	'centralauth-not-owner-text' =>
-		'用戶名："$1"已自動分配給' .
-		"$2上的帳號。\n" .
-		"\n" .
-		"如果這是您的帳號，請輸入該帳號的密碼" .
-		"以完成帳號整合：",
 
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
+	// Info panel in preferences
+	'centralauth-prefs-count-attached' =>
+		'您的帳戶在$1個計畫網站中是活躍的。',
+	'centralauth-prefs-count-unattached' =>
+		'您在$1個計畫中還有未確認的帳戶。',
+	'centralauth-prefs-detail-unattached' =>
+		'這個計畫網站還未確認到全域帳戶。',
 
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'以下網站的帳號："$1' .
-		'已自動完成整合：',
-	'centralauth-list-unattached' =>
-		'以下網站的帳號："$1"' .
-		'無法自動整合；' .
-		'很可能是因為它們的密碼' .
-		'和您的主帳號不同：',
-	'centralauth-foreign-link' =>
-		'$2 上的 $1',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'完成整合',
-	'centralauth-finish-text' =>
-		'如果這些帳號屬於您，' .
-		'請輸入這些帳號的密碼，' .
-		'以完成帳號整合：',
-	'centralauth-finish-password' =>
-		'密碼：',
-	'centralauth-finish-login' =>
-		'登入',
-	'centralauth-finish-send-confirmation' =>
-		'透過電子郵件寄送密碼',
-	'centralauth-finish-problems' =>
-		"遇到問題或者這些帳號不屬於您嗎？" .
-		"[[meta:Help:Unified login problems|如何尋求協助]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
-
-	// Administrator's console
-	'centralauth-admin-permission' =>
-		"只有監管員可以為用戶整合帳號。",
-	'centralauth-admin-unmerge' =>
-		'不整合所選取的帳號',
-	'centralauth-admin-merge' =>
-		'整合所選取的帳號',
 );
+
+$wgCentralAuthMessages['zh'] = $wgCentralAuthMessages['zh-hans'];
 $wgCentralAuthMessages['zh-cn'] = $wgCentralAuthMessages['zh-hans'];
 $wgCentralAuthMessages['zh-hk'] = $wgCentralAuthMessages['zh-hant'];
 $wgCentralAuthMessages['zh-sg'] = $wgCentralAuthMessages['zh-hans'];
