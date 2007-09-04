@@ -618,6 +618,26 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-renameuser-abort' => '<div class="errorbox">לא ניתן לשנות את שם המשתמש של $1 באופן מקומי, כיוון שהוא כבר התווסף למערכת החשבונות הממוזגים.</div>',
 );
 
+$wgCentralAuthMessages['hsb'] = array(
+	'centralauth-merge-step1-submit'       => 'Přizjewjenske daty potwjerdźić',
+	'centralauth-merge-step2-title'        => 'Dalše konta potwjerdźić',
+	'centralauth-merge-step2-submit'       => 'Přizjewjenske daty potwjerdźić',
+	'centralauth-list-attached-title'      => 'Připowěsnjene konta',
+	'centralauth-foreign-link'             => 'Wužiwar $1 na $2',
+	'centralauth-finish-password'          => 'Hesło:',
+	'centralauth-finish-login'             => 'Přizjewjenje',
+	'centralauth-finish-send-confirmation' => 'Hesło mejlować',
+	'centralauth-admin-manage'             => 'Wužiwarske daty zrjadować',
+	'centralauth-admin-username'           => 'Wužiwarske mjeno',
+	'centralauth-admin-lookup'             => 'Wužiwarske daty wobhladać abo wobdźěłać',
+	'centralauth-prefs-status'             => 'Status globalneho konta',
+	'centralauth-prefs-unattached'         => 'Njepotwjerdźeny',
+	'centralauth-prefs-complete'           => 'Wšo w porjadku!',
+	'centralauth-prefs-count-attached'     => 'Twoje konto je na $1 projekotwych sydłach aktiwne.',
+	'centralauth-prefs-count-unattached'   => 'Njepotwjerdźene konta z twojim mjenom zwostanu na $1 projektach.',
+	'centralauth-prefs-manage'             => 'Twoje globalne konto zrjadować',
+);
+
 $wgCentralAuthMessages['id'] = array(
 	// When not logged in...
 	'mergeaccount' =>
@@ -1543,7 +1563,6 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-finish-title'             => 'Completar fusão',
 	'centralauth-finish-text'              => 'Se estas contas pertencem a ti, será possível concluir a unificação de logins simplesmente digitando as senhas das mesmas aqui:',
 	'centralauth-finish-password'          => 'Senha:',
-	'centralauth-finish-login'             => 'Login',#identical but defined
 	'centralauth-finish-send-confirmation' => 'Enviar senha por e-mail',
 	'centralauth-finish-problems'          => 'Está com problemas ou estas outras contas não são suas? [[meta:Help:Unified login problems|Como procurar por ajuda]]...',
 	'centralauth-merge-attempt'            => '\'\'\'Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...\'\'\'',
