@@ -1092,70 +1092,69 @@ $wgCentralAuthMessages['kk-cn'] = array(
 
 $wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-kz'];
 
-
 $wgCentralAuthMessages['nl'] = array(
-	// When not logged in...
-	'mergeaccount' => 'Status samenvoegen gebruikers',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]' .
-		'</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
+	'mergeaccount'                         => 'Status samenvoegen gebruikers',
+	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
+	'centralauth-merge-welcome'            => '\'\'\'Uw gebruiker is nog niet gemigreerd naar Wikimedia\'s samengevoegde aanmeldsysteem.\'\'\'
 
-	// Big text on completion
-	'centralauth-complete' => 'Samenvoegen gebruikers afgerond!',
-	'centralauth-incomplete' => 'Samenvoegen gebruikers niet volledig!',
+Als u ervoor kiest om uw gebruikers te migreren, dan kunt u met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle projectwiki\'s van Wikimedia in alle beschikbare talen.
+Dit maakt het eenvoudiger om te werken met gedeelde projecten, zoals het uploaden naar [http://commons.wikimedia.org/ Wikimedia Commons], en voorkomt verwarring of conflicten doordat twee mensen dezelfde gebruikersnaam kiezen op verschillende projecten.
 
-	// Wheeee
-	'centralauth-complete-text' =>
-		'U kunt nu aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; ' .
-		'dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor ' .
-		'Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
-	'centralauth-incomplete-text' =>
-		'Als uw gebruikers zijn samengevoegd kunt u aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; ' .
-		'dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor ' .
-		'Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
-	'centralauth-not-owner-text' =>
-		'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker ' .
-		"op $2.\n" .
-		"\n" .
-		"Als u dat bent, kunt u het samenvoegen van gebruikers afronden " .
-		"door hier het wachtwoord voor die gebruiker in te geven:",
+Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U heeft de mogelijkheid dat niet die gebruiker of een beheerder op een later moment op te lossen.',
+	'centralauth-merge-step1-title'        => 'Start samenvoegen gebruikers',
+	'centralauth-merge-step1-detail'       => 'Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki\'s om te bevestigen dat ze overeenkomen. Er worden geen wijzigingen gemaakt tot u heeft aangegeven dat alles in orde lijkt.',
+	'centralauth-merge-step1-submit'       => 'Bevestig aanmeldinformatie',
+	'centralauth-merge-step2-title'        => 'Bevestig meer gebruikers',
+	'centralauth-merge-step2-detail'       => 'Een aantal van de gebruikers konden niet aan de opgegeven thuiswiki gekoppeld worden. Als deze gebruikers van u zijn, kunt u dat aangeven door het wachtwoord voor de gebruikers op te geven.',
+	'centralauth-merge-step2-submit'       => 'Bevestig aanmeldinformatie',
+	'centralauth-merge-step3-title'        => 'Maak samengevoegde gebruiker aan',
+	'centralauth-merge-step3-detail'       => 'U kunt nu uw samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki\'s:',
+	'centralauth-merge-step3-submit'       => 'Gebruikers samenvoegen',
+	'centralauth-complete'                 => 'Samenvoegen gebruikers afgerond!',
+	'centralauth-incomplete'               => 'Samenvoegen gebruikers niet volledig!',
+	'centralauth-complete-text'            => 'U kunt nu aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
+	'centralauth-incomplete-text'          => 'Als uw gebruikers zijn samengevoegd kunt u aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
+	'centralauth-not-owner-text'           => 'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.
 
-	// Appended to various messages above
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lees meer over '''unified login''']]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
-	'centralauth-list-unattached' =>
-		'De gebruiker "$1" kon niet automatisch aan u toegewezen worden voor de volgende sites; ' .
-		'waarschijnlijk omdat het wachtwoord afwijkt van uw primaire gebruiker:',
-	'centralauth-foreign-link' => 'Gebruiker $1 op $2',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' => 'Samenvoegen afronden',
-	'centralauth-finish-text' =>
-		'Als deze gebruikers bij u horen, dan kunt u het proces van samenvoegen afronden ' .
-		'door de wachtwoorden voor de andere gebruikers hier in te voeren:',
-	'centralauth-finish-password' => 'Wachtwoord:',
-	'centralauth-finish-login' => 'Gebruikersnaam',
+Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Alleen demonstratiemodus</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Lees meer over \'\'\'samengevoegd aanmelden\'\'\']]...\'\'',
+	'centralauth-list-home-title'          => 'Thuiswiki',
+	'centralauth-list-home-dryrun'         => 'Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor uw samengevoegde gebruiker. Uw gebruikerspagina op die wiki wordt automatisch gelinkt vanuit andere wiki\'s. Later kunt u instellen welke wiki uw thuiswiki is.',
+	'centralauth-list-attached-title'      => 'Betrokken gebruikers',
+	'centralauth-list-attached'            => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
+	'centralauth-list-attached-dryrun'     => 'De gebruiker met de naam "$1" op de volgende sites wordt automatisch toegevoegd aan de samengevoegde gebruiker:',
+	'centralauth-list-unattached-title'    => 'Niet betrokken gebruikers',
+	'centralauth-list-unattached'          => 'De gebruiker "$1" kon niet automatisch aan u toegewezen worden voor de volgende sites; waarschijnlijk omdat het wachtwoord afwijkt van uw primaire gebruiker:',
+	'centralauth-foreign-link'             => 'Gebruiker $1 op $2',
+	'centralauth-finish-title'             => 'Samenvoegen afronden',
+	'centralauth-finish-text'              => 'Als deze gebruikers bij u horen, dan kunt u het proces van samenvoegen afronden door de wachtwoorden voor de andere gebruikers hier in te voeren:',
+	'centralauth-finish-password'          => 'Wachtwoord:',
+	'centralauth-finish-login'             => 'Gebruikersnaam',
 	'centralauth-finish-send-confirmation' => 'E-mail wachtwoord',
-	'centralauth-finish-problems' =>
-		"Komt u er niet uit of zijn deze gebruikers niet van u? " .
-		"[[meta:Help:Unified login problems|Hoe hulp vinden]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers...'''",
-
-	// Administrator's console
-	'centralauth' => 'Beheer unified login',
-	'centralauth-admin-manage' => 'Gebruikersgegeven beheren',
-	'centralauth-admin-username' => 'Gebruikersnaam:',
-	'centralauth-admin-lookup' => 'Gebruikersgegevens bekijken of bewerken',
-	'centralauth-admin-permission' => "Alleen stewards kunnen gebruikers van anderen samenvoegen.",
-	'centralauth-admin-unmerge' => 'Splits geselecteerde gebruikers',
-	'centralauth-admin-merge' => 'Voeg geselecteerde gebruikers samen',
-
+	'centralauth-finish-problems'          => 'Komt u er niet uit of zijn deze gebruikers niet van u? [[meta:Help:Unified login problems|Hoe hulp vinden]]...',
+	'centralauth-merge-attempt'            => '\'\'\'Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers...\'\'\'',
+	'centralauth'                          => 'Beheer samengevoegd aanmelden',
+	'centralauth-admin-manage'             => 'Gebruikersgegevens beheren',
+	'centralauth-admin-username'           => 'Gebruikersnaam:',
+	'centralauth-admin-lookup'             => 'Gebruikersgegevens bekijken of bewerken',
+	'centralauth-admin-permission'         => 'Alleen stewards kunnen gebruikers van anderen samenvoegen.',
+	'centralauth-admin-unmerge'            => 'Splits geselecteerde gebruikers',
+	'centralauth-admin-merge'              => 'Voeg geselecteerde gebruikers samen',
+	'centralauth-admin-bad-input'          => 'Onjuiste samenvoegselectie',
+	'centralauth-admin-none-selected'      => 'Er zijn geen gebruikers geselecteerd om te wijzigen',
+	'centralauth-prefs-status'             => 'Globale gebruikerstatus',
+	'centralauth-prefs-not-managed'        => 'Gebruikt geen samengevoegde gebruiker',
+	'centralauth-prefs-unattached'         => 'Niet bevestigd',
+	'centralauth-prefs-complete'           => 'Alles in orde!',
+	'centralauth-prefs-migration'          => 'Bezig met migreren',
+	'centralauth-prefs-count-attached'     => 'Uw gebruikers is actief in $1 projectsites.',
+	'centralauth-prefs-count-unattached'   => 'Niet bevestigde gebruikers met uw naam zijn nog aanwezig op $1 projecten.',
+	'centralauth-prefs-detail-unattached'  => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
+	'centralauth-prefs-manage'             => 'Beheer uw globale gebruiker',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebruiker $1 kan lokaal niet hernoemd worden omdat deze gebruiker is gemigreerd naar het systeem van samengevoegde gebruikers.</div>',
 );
-
 
 $wgCentralAuthMessages['no'] = array(
 	'mergeaccount'                         => 'Kontosammensmeltingsstatus',
