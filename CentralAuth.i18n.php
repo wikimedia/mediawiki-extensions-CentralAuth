@@ -389,6 +389,11 @@ $wgCentralAuthMessages['de'] = array(
 	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das zentrale Benutzerkonten-System übernommen wurde.</div>",
 );
 
+$wgCentralAuthMessages['bcl'] = array(
+	'centralauth-list-home-title'          => 'Harong na wiki',
+	'centralauth-finish-login'             => 'Maglaog',
+);
+
 $wgCentralAuthMessages['fr'] = array(
 	// When not logged in...
 	'mergeaccount' =>
