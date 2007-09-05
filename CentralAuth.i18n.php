@@ -180,18 +180,47 @@ $wgCentralAuthMessages['en'] = array(
 /* Arabic (Meno25) */
 $wgCentralAuthMessages['ar'] = array(
 	'mergeaccount'                         => 'حالة توحيد الدخول',
+	'centralauth-merge-notlogged'          => 'من فضلك <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} قم بتسجيل الدخول]</span> لتتحقق من أن حساباتك تم دمجها بالكامل.',
+	'centralauth-merge-welcome'            => '\'\'\'حساب المستخدم الخاص بك لم يتم نقله إلى نظام ويكيميديا لتوحيد الدخول.\'\'\'
+
+إذا اخترت دمج حساباتك، سيمكنك استخدام نفس اسم المستخدم و كلمة السر للدخول لكل مشاريع ويكيميديا بكل اللغات المتوفرة.
+هذا يجعل من السهل العمل مع المشاريع المشتركة مثل الرفع ل [http://commons.wikimedia.org/ ويكيميديا كومنز]، و يتجنب الارتباك أو التعارض الذي قد ينشأ عندما يستخدم شخصان نفس اسم المستخدم في مشاريع مختلفة.
+
+لو كان شخص آخر أخذ اسم المستخدم الخاص بك في موقع آخر هذا لن يزعجهم، و لكن سيعطيك فرصة للتعامل معهم أو مع إداري فيما بعد.',
+	'centralauth-merge-step1-title'        => 'ابدأ توحيد الدخول',
+	'centralauth-merge-step1-detail'       => 'كلمة السر الخاصة بك و بريدك الإلكتروني المسجل سيتم فحصهما مع الحسابات في مواقع الويكي الأخرى للتأكد من أنهما يتطابقان. لن يتم عمل أي تغييرات حتى تؤكد أن الأمور على ما يرام.',
+	'centralauth-merge-step1-submit'       => 'أكد معلومات الدخول',
+	'centralauth-merge-step2-title'        => 'أكد مزيد من الحسابات',
+	'centralauth-merge-step2-detail'       => 'بعض الحسابات لم يمكن مطابقتها تلقائيا لموقع الويكي الرئيسي المعين. لو أن هذه الحسابات تنتمي لك، يمكنك تأكيد ذلك عن طريق توفير كلمة السر لهم.',
+	'centralauth-merge-step2-submit'       => 'أكد معلومات الدخول',
+	'centralauth-merge-step3-title'        => 'أنشىء الحساب الموحد',
+	'centralauth-merge-step3-detail'       => 'أنت جاهز لإنشاء حسابك الموحد، و ستكون مواقع الويكي التالية ملحقة به:',
+	'centralauth-merge-step3-submit'       => 'وحد الحسابات',
 	'centralauth-complete'                 => 'توحيد الدخول اكتمل!',
 	'centralauth-incomplete'               => 'توحيد الدخول لم يكتمل!',
 	'centralauth-complete-text'            => 'يمكنك الآن الولوج لأي مشروع من مشاريع ويكيميديا بدون إنشاء حساب جديد؛ نفس اسم المستخدم و كلم السر ستعمل في ويكيبيديا و ويكاموس و ويكي الكتب و مشاريعهم الشقيقة بكل اللغات.',
 	'centralauth-incomplete-text'          => 'عندما يتم توحيد دخولك، يمكنك الولوج لأي مشروع من مشاريع ويكيميديا بدون إنشاء حساب جديد؛ نفس اسم المستخدم و كلم السر ستعمل في ويكيبيديا و ويكاموس و ويكي الكتب و مشاريعهم الشقيقة بكل اللغات.',
+	'centralauth-not-owner-text'           => 'اسم المستخدم "$1" تم إعطاؤه تلقائيا لمالك الحساب على $2.
+
+لو كان هذا أنت, يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمة السر الرئيسية لذلك الحساب هنا:',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>نظام تجريبي فقط</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'توحيد الحساب حاليا في طور التجربة/تصحيح الأخطاء، لذا عمليات الدمج الفعلية معطلة. عذرا!',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|اقرأ المزيد حول \'\'\'الدخول الموحد\'\'\']]...\'\'',
-	'centralauth-list-attached'              => 'الحسابات المسماة "$1" على المواقع التالية تم دمجها تلقائيا:',
+	'centralauth-list-home-title'          => 'موقع الويكي الرئيسي',
+	'centralauth-list-home-dryrun'         => 'كلمة السر و عنوان البريد الإلكتروني المحدد في هذه الويكي سيتم استخدامها لحسابك الموحد، و صفحة المستخدم الخاصة بك هنا سيتم تلقائيا وصلها من مواقع الويكي الأخرى. سيمكنك تغيير أيها هي موقع الويكي الرئيسي الخاص بك فيما بعد.',
+	'centralauth-list-attached-title'      => 'الحسابات الملحقة',
+	'centralauth-list-attached'            => 'الحساب المسمى "$1" على كل من المواقع التالية تم إلحاقه تلقائيا بالحساب الموحد:',
+	'centralauth-list-attached-dryrun'     => 'الحساب المسمى "$1" على كل من المواقع التالية سيتم إلحاقها تلقائيا للحساب الموحد:',
+	'centralauth-list-unattached-title'    => 'حسابات غير ملحقة',
+	'centralauth-list-unattached'          => 'الحساب "$1" لم يمكن تأكيده تلقائيا كمنتمي لك في المواقع التالية؛ على الأرجح لأنهم يمتلكون كلمة سر مختلفة عن حسابك الأساسي:',
 	'centralauth-foreign-link'             => 'المستخدم $1 في $2',
 	'centralauth-finish-title'             => 'انتهاء الدمج',
+	'centralauth-finish-text'              => 'لو كانت هذه الحسابات تنتمي لك, يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمات السر للحسابات الأخرى هنا:',
 	'centralauth-finish-password'          => 'كلمة السر:',
 	'centralauth-finish-login'             => 'دخول',
 	'centralauth-finish-send-confirmation' => 'أرسل كلمة السر عبر البريد الإلكتروني',
 	'centralauth-finish-problems'          => 'لديك مشكلة، أو لا تمتلك هذه الحسابات الأخرى؟ [[meta:Help:Unified login problems|كيف تجد المساعدة]]...',
+	'centralauth-merge-attempt'            => '\'\'\'التحقق من كلمة السر المعطاة ضد الحسابات الباقية غير المدمجة...\'\'\'',
 	'centralauth'                          => 'إدارة الدخول الموحد',
 	'centralauth-admin-manage'             => 'إدارة بيانات المستخدم',
 	'centralauth-admin-username'           => 'اسم المستخدم:',
@@ -201,10 +230,16 @@ $wgCentralAuthMessages['ar'] = array(
 	'centralauth-admin-merge'              => 'تم اختيار الدمج',
 	'centralauth-admin-bad-input'          => 'اختيار دمج غير صحيح',
 	'centralauth-admin-none-selected'      => 'لم يتم اختيار حسابات للدمج',
+	'centralauth-prefs-status'             => 'حالة الحساب العام:',
 	'centralauth-prefs-not-managed'        => 'لا يستخدم الحساب الموحد',
 	'centralauth-prefs-unattached'         => 'غير مؤكد',
+	'centralauth-prefs-complete'           => 'الكل في ترتيب!',
+	'centralauth-prefs-migration'          => 'في الهجرة',
 	'centralauth-prefs-count-attached'     => 'حسابك نشط في $1 مشروع.',
 	'centralauth-prefs-count-unattached'   => 'حسابات غير مؤكدة باسمك موجودة في $1 مشروع.',
+	'centralauth-prefs-detail-unattached'  => 'موقع المشروع هذا لم يتم تأكيده كمنتمي للحساب العام.',
+	'centralauth-prefs-manage'             => 'أدر حسابك العام',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">لا يمكن إعادة تسمية المستخدم $1 محليا حيث أن اسم المستخدم هذا تم نقله إلى نظام الدخول الموحد.</div>',
 );
 
 $wgCentralAuthMessages['de'] = array(
