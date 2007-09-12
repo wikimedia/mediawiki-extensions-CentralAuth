@@ -659,11 +659,24 @@ $wgCentralAuthMessages['he'] = array(
 );
 
 $wgCentralAuthMessages['hsb'] = array(
+	'mergeaccount'                         => 'Status zjednoćenja wužiwarskich kontow',
+	'centralauth-merge-notlogged'          => 'Prošu <span class="plainlinks"> [{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.',
+	'centralauth-merge-welcome'            => '\'\'\'Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja Wikimedije přiwzało.\'\'\'
+
+Hdyž so rozsudźiš twoje konta tam składować, budźe móžno ze samsnym wužiwarskim mjenom a hesłom we wšěch projektach Wikimedije dźěłać.
+To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [http://commons.wikimedia.org/ Wikimedia Commons] a wobeńdźe konflikty a mylenja hdyž chce něchto druhi samsne přimjeno kaž ty w druhich projektach wužiwać.',
+	'centralauth-merge-step1-title'        => 'Wužiwarske konta so zjednoća',
+	'centralauth-merge-step1-detail'       => 'Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich wikijach zo by so jenakosć zwěsćiła. Ničo změnjene njebudźe doniž njewobkrućiš, zo je wšo w porjadku.',
 	'centralauth-merge-step1-submit'       => 'Přizjewjenske daty potwjerdźić',
 	'centralauth-merge-step2-title'        => 'Dalše konta potwjerdźić',
+	'centralauth-merge-step2-detail'       => 'Někotre z wužiwarskich kontow njemóžachu so awtomatisce zjednoćić. Hdyž su konta twoje, móžeš to z hesłom dopokazać.',
 	'centralauth-merge-step2-submit'       => 'Přizjewjenske daty potwjerdźić',
 	'centralauth-merge-step3-title'        => 'Zjednoćene konto wutworić',
 	'centralauth-merge-step3-submit'       => 'Konta zjednoćić',
+	'centralauth-complete'                 => 'Wužiwarske konta su so dospołnje zjednoćili.',
+	'centralauth-incomplete'               => 'Wužiwarske konta <b>njejsu</b> so dospołnje zjednoćili!',
+	'centralauth-complete-text'            => 'Móžeš so nětko we wšěch projektach Wikimedije přizjewić bjez toho, zo by tam nowe konto wutworić dyrbjał; samsne přimjeno a samsne hesło stej   płaćiwej za Wikipedija, Wikisłownik, Wikiknihi a wšě sotrowske projekty we wšěch rěčach.',
+	'centralauth-incomplete-text'          => 'Tak ruče kaž su so twoje wužiwarske konta zjednoćili, móžeš so we wšěch projektach Wikimedije přizjewić bjez toho, zo by tam nowe konto wutworić dyrbjał; samsne přimjeno a samsne hesło stej   płaćiwej za Wikipedija, Wikisłownik, Wikiknihi a wšě sotrowske projekty we wšěch rěčach.',
 	'centralauth-list-attached-title'      => 'Připowěsnjene konta',
 	'centralauth-foreign-link'             => 'Wužiwar $1 na $2',
 	'centralauth-finish-password'          => 'Hesło:',
