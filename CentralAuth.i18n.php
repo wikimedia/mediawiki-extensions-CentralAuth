@@ -561,6 +561,27 @@ $wgCentralAuthMessages['fr'] = array(
 	
 );
 
+$wgCentralAuthMessages['frp'] = array(
+	'mergeaccount'                         => 'Statut de la fusion des comptos utilisator',
+	'centralauth-merge-notlogged'          => 'Marci de bien volêr <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
+	'centralauth-merge-welcome'            => '\'\'\'Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.\'\'\'
+
+Se vos chouèsésséd/cièrde de fére/fâre migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa sur tôs los projèts Wikimedia dens totes les lengoues.
+D’ense, lo travâly entèrprojèts serat facilitâ coment, per ègzemplo, l’impôrt d’émâges dessus [http://commons.wikimedia.org/ Wikimedia Commons] ; cen èviterat asse-ben la confusion arrevent quand doves gens utilisont lo mémo nom d’utilisator sur doux projèts difèrents.
+
+Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y avêr de problèmo. S’una ôtra pèrsona at lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.',
+	'centralauth-merge-step1-title'        => 'Comenciér lo procès de fusion des comptos',
+	'centralauth-merge-step1-detail'       => 'Nos alens comparar voutra adrèce de mèl et voutron mot de pâssa avouéc celos des comptos homonimos sur los ôtros vouiquis, et controlar que corrèspondont. Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd.',
+	'centralauth-merge-step1-submit'       => 'Confirmar les enformacions',
+	'centralauth-merge-step2-title'        => 'Encllure d’ôtros comptos',
+	'centralauth-merge-step2-detail'       => 'Cèrtins des comptos ont pas possu étre apondus ôtomaticament a voutron compto principâl. Se celos comptos sont a vos, volyéd confirmar que sont a vos en entrent lo mot de pâssa corrèspondent.',
+	'centralauth-merge-step2-submit'       => 'Confirmar les enformacions',
+	'centralauth-merge-step3-title'        => 'Crèacion du compto unico',
+	'centralauth-merge-step3-detail'       => 'Vos éte ora prèst a crèar voutron compto unico, compregnent los vouiquis siuvents :',
+	'centralauth-merge-step3-submit'       => 'Fusionar los comptos',
+	'centralauth-complete'                 => 'Fusion des comptos chavonâ !',
+	'centralauth-incomplete'               => 'Fusion des comptos pas chavonâ !',
+);
 
 $wgCentralAuthMessages['he'] = array(
 	# When not logged in...
