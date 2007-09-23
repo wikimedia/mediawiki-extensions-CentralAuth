@@ -709,11 +709,14 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 	'centralauth-list-attached'            => 'Konto z mjenom "$1" na slědowacych sydłow buchu awtomatisce zjednoćenemu kontu přidate.',
 	'centralauth-list-attached-dryrun'     => 'Konto z mjenom "$1" na kóždym ze slědowacych sydłow budźe so awtomatisće zjednoćenemu kontu přidać:',
 	'centralauth-list-unattached-title'    => 'Njepřipowěsnjene konta',
+	'centralauth-list-unattached'          => 'Njeda so awtomatisce potwjerdźeć, zo by konto "S1" za slědowace sydła je twoje; najskerje je wone druhe hesło hač twoej primarne konto.',
 	'centralauth-foreign-link'             => 'Wužiwar $1 na $2',
 	'centralauth-finish-title'             => 'Zjednoćenje dokónčić',
+	'centralauth-finish-text'              => 'Jeli tute wužiwarske konta su twoje, móžeš proces zjednoćenja wužiwarskich kontow přez zapodaće hesłow za druhe konta dokónčić.',
 	'centralauth-finish-password'          => 'Hesło:',
 	'centralauth-finish-login'             => 'Přizjewjenje',
 	'centralauth-finish-send-confirmation' => 'Hesło mejlować',
+	'centralauth-finish-problems'          => 'Maš problemy abo njejsu tute druhe konto twoje? [[meta:Help:Unified login problems|Tu namakaš pomoc]]...',
 	'centralauth-merge-attempt'            => '\'\'\'Zapodate hesło so z njezjednoćenymi wužiwarskimi kontami přepruwuje...\'\'\'',
 	'centralauth'                          => 'Zarjadowanje kontoweho zjednoćenja',
 	'centralauth-admin-manage'             => 'Wužiwarske daty zrjadować',
@@ -893,7 +896,6 @@ $wgCentralAuthMessages['it'] = array(
 		"'''Verifica della password inserita sulle utenze non ancora unificate...'''",
 
 );
-
 
 $wgCentralAuthMessages['kk-kz'] = array(
 	// When not logged in...
@@ -1154,6 +1156,10 @@ $wgCentralAuthMessages['kk-cn'] = array(
 );
 
 $wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-kz'];
+
+$wgCentralAuthMessages['la'] = array(
+	'centralauth-finish-password'          => 'Tessera:',
+);
 
 $wgCentralAuthMessages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
@@ -1494,7 +1500,7 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-merge-attempt'            => '\'\'\'Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...\'\'\'',
 	'centralauth'                          => 'Administrácia zjednoteného prihlasovania',
 	'centralauth-admin-manage'             => 'Správa údajov o používateľoch',
-	'centralauth-admin-username'           => 'POužívateľské meno:',
+	'centralauth-admin-username'           => 'Používateľské meno:',
 	'centralauth-admin-lookup'             => 'Zobraziť alebo upravovať údaje o používateľovi',
 	'centralauth-admin-permission'         => 'Iba stewardi môžu za druhých ľudí zlučovať ich účty.',
 	'centralauth-admin-unmerge'            => 'Oddelenie zvolených',
