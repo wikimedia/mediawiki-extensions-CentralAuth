@@ -1159,6 +1159,7 @@ $wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-kz'];
 
 $wgCentralAuthMessages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
+	'centralauth-admin-username'           => 'Nomen usoris:',
 );
 
 $wgCentralAuthMessages['nl'] = array(
