@@ -80,6 +80,22 @@ class CentralAuthPlugin extends AuthPlugin {
 	}
 
 	/**
+	 * Check if a user should authenticate locally if the global authentication fails.
+	 * If either this or strict() returns true, local authentication is not used.
+	 *
+	 * @param $username String: username.
+	 * @return bool
+	 * @public
+	 */
+	function strictUserAuth( $username ) {
+		// Authenticate locally if the global account doesn't exist,
+		// or the local account isn't attached
+		// If strict is on, local authentication won't work at all
+		$central = new CentralAuthUser( $username );
+		return $central->exists() && $central->isAttached();
+	}
+
+	/**
 	 * When a user logs in, optionally fill in preferences and such.
 	 * For instance, you might pull the email address or real name from the
 	 * external user database.
