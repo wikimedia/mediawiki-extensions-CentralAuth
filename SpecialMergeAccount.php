@@ -56,6 +56,8 @@ class SpecialMergeAccount extends SpecialPage {
 				return $this->doInitialMerge();
 			case "cleanup":
 				return $this->doCleanupMerge();
+			case "attach":
+				return $this->doAttachMerge();
 			case "remove":
 				return $this->doUnattach();
 			default:
@@ -65,7 +67,11 @@ class SpecialMergeAccount extends SpecialPage {
 		
 		$globalUser = new CentralAuthUser( $this->mUserName );
 		if( $globalUser->exists() ) {
-			$this->showCleanupForm();
+			if( $globalUser->isAttached() ) {
+				$this->showCleanupForm();
+			} else {
+				$this->showAttachForm();
+			}
 		} else {
 			$this->showWelcomeForm();
 		}
@@ -274,6 +280,31 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->showCleanupForm();
 	}
 	
+	function doAttachMerge() {
+		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		
+		if( !$globalUser->exists() ) {
+			throw new MWException( "User doesn't exist -- race condition?" );
+		}
+		
+		if( $wgCentralAuthDryRun ) {
+			return $this->dryRunError();
+		}
+		$password = $wgRequest->getText( 'wpPassword' );
+		if( $globalUser->authenticate( $password ) == 'ok' ) {
+			$globalUser->attach( $wgDBname, 'password' );
+			$wgOut->addWikiText( wfMsg( 'centralauth-attach-success' ) );
+			$this->showCleanupForm();
+		} else {
+			$wgOut->addHtml(
+				'<div class="errorbox">' .
+					wfMsg( 'wrongpassword' ) .
+				'</div>' .
+				$this->attachActionForm() );
+		}
+	}
+	
 	private function showWelcomeForm() {
 		global $wgOut, $wgUser, $wgCentralAuthDryRun;
 		
@@ -303,6 +334,15 @@ class SpecialMergeAccount extends SpecialPage {
 		$merged = $globalUser->listAttached();
 		$remainder = $globalUser->listUnattached();
 		$this->showStatus( $merged, $remainder );
+	}
+	
+	function showAttachForm() {
+		global $wgOut, $wgUser;
+		$globalUser = new CentralAuthUser( $wgUser->getName() );
+		$merged = $globalUser->listAttached();
+		$wgOut->addWikiText( wfMsg( 'centralauth-attach-list-attached', $this->mUserName ) );
+		$wgOut->addHtml( $this->listAttached( $merged ) );
+		$wgOut->addHtml( $this->attachActionForm() );
 	}
 	
 	function showStatus( $merged, $remainder ) {
@@ -481,6 +521,14 @@ class SpecialMergeAccount extends SpecialPage {
 						array( 'name' => 'wpLogin' ) ) .
 				'</p>'
 			);
+	}
+	
+	private function attachActionForm() {
+		return $this->passwordForm(
+			'attach',
+			wfMsg( 'centralauth-attach-title' ),
+			wfMsg( 'centralauth-attach-text' ),
+			wfMsg( 'centralauth-attach-submit' ) );
 	}
 	
 	private function dryRunError() {

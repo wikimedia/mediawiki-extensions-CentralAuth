@@ -130,6 +130,13 @@ $wgCentralAuthMessages['en'] = array(
 	'centralauth-merge-attempt' =>
 		"'''Checking provided password against remaining unmerged accounts...'''",
 
+	# When unattached, offer to attach...
+	'centralauth-attach-list-attached'     => 'The unified account named "$1" includes the following accounts:',
+	'centralauth-attach-title'             => 'Confirm account',
+	'centralauth-attach-text'              => 'This account has not yet been migrated to the unified account. If the global account is yours too, you can merge this account if you type the global account password:',
+	'centralauth-attach-submit'            => 'Migrate account',
+	'centralauth-attach-success'           => 'The account was migrated to the unified account.',
+
 	// Administrator's console
 	'centralauth' => 'Unified login administration',
 	'centralauth-admin-manage' =>
@@ -652,6 +659,13 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-finish-problems'          => "יש לכם בעיה, או שאינכם בעלי החשבונות האחרים? [[meta:Help:Unified login problems|ניתן למצוא עזרה כאן]]...",
 
 	'centralauth-merge-attempt' => "'''בודק האם הסיסמאות שניתנו תואמים לחשבונות הנותרים שלא מוזגו...'''",
+
+	# When unattached, offer to attach...
+	'centralauth-attach-list-attached'     => 'החשבון הממוזג בשם המשתמש "$1" כולל את החשבונות הבאים:',
+	'centralauth-attach-title'             => 'אימות החשבון',
+	'centralauth-attach-text'              => 'חשבון זה לא נוסף עדיין לחשבון הממוזג. אם גם החשבון הממוזג שייך לכם, באפשרותכם למזג חשבון זה פשוט על־ידי הקלדת סיסמת החשבון הכללי:',
+	'centralauth-attach-submit'            => 'מיזוג החשבון',
+	'centralauth-attach-success'           => 'החשבון נוסף לחשבון הממוזג.',
 
 	# Administrator's console
 	'centralauth'                     => 'ניהול מיזוג החשבונות',
