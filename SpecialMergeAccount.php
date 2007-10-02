@@ -256,6 +256,10 @@ class SpecialMergeAccount extends SpecialPage {
 			throw new MWException( "User doesn't exist -- race condition?" );
 		}
 		
+		if( !$globalUser->isAttached() ) {
+			throw new MWException( "Can't cleanup merge if not already attached." );
+		}
+		
 		if( $wgCentralAuthDryRun ) {
 			return $this->dryRunError();
 		}
@@ -286,6 +290,10 @@ class SpecialMergeAccount extends SpecialPage {
 		
 		if( !$globalUser->exists() ) {
 			throw new MWException( "User doesn't exist -- race condition?" );
+		}
+		
+		if( $globalUser->isAttached() ) {
+			throw new MWException( "Already attached -- race condition?" );
 		}
 		
 		if( $wgCentralAuthDryRun ) {
