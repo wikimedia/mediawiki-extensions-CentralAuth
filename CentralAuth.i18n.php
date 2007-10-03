@@ -259,10 +259,10 @@ $wgCentralAuthMessages['de'] = array(
 		'</span> um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
 
 	'centralauth-merge-welcome' =>
-		"'''Dein Benutzerkonto wurde noch nicht nach Wikimedias gemeinsames Anmelde-System überführt" .
+		"'''Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt" .
 		"\n" .
-		"Falls du doch für eine Migration deine Benutzerkonto entscheidest, wird es dir möglich sein " .
-		"dich mit einem gemeinsamen Benutzernamen und Passwort in alle Wikimedia-Projejekt in allen " .
+		"Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, " .
+		"dich mit einem gemeinsamen Benutzernamen und Passwort in alle Wikimedia-Projekte in allen " .
 		"verfügbaren Sprachen anzumelden.\n" .
 		"Dies macht die Arbeit in gemeinsam genutztzen Projekten einfacher, z.B. das Hochladen von Dateien nach " .
 		"[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte," .
@@ -287,11 +287,11 @@ $wgCentralAuthMessages['de'] = array(
 	'centralauth-merge-step2-submit' =>
 		'Anmelde-Informationen bestätigen',
 
-	'centralauth-merge-step3-title' => 'Erzeuge gemeinsames Benutzerkonto',
+	'centralauth-merge-step3-title' => 'Erzeuge globales Benutzerkonto',
 	'centralauth-merge-step3-detail' =>
-		"Du kannst nun ein gemeinsames Benutzerkonto für die folgenden Wikis erezugen. ",
+		"Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erezugen. ",
 	'centralauth-merge-step3-submit' =>
-		'Unify accounts',
+		'Benutzerkonten zusammenführen',
 
 
 	// Big text on completion
@@ -330,7 +330,7 @@ $wgCentralAuthMessages['de'] = array(
 
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
+		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']] …''",
 
 	// For lists of wikis/accounts:
 	'centralauth-list-home-title' =>
@@ -342,10 +342,10 @@ $wgCentralAuthMessages['de'] = array(
 	'centralauth-list-attached-title' =>
 		'Zusammengeführte Benutzerkonten',
 	'centralauth-list-attached' =>
-		'Das Benutzerkonto mit dem Namen „$1“ auf den folgenden ' .
+		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden ' .
 		'Projekten werden automatisch zusammengeführt:',
 	'centralauth-list-attached-dryrun' =>
-		'Das Benutzerkonto mit dem Namen „$1“ auf den folgenden ' .
+		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden ' .
 		'Projekten werden automatisch zusammengeführt:',
 	'centralauth-list-unattached-title' =>
 		'Nicht zusammengeführte Benutzerkonten',
@@ -359,16 +359,24 @@ $wgCentralAuthMessages['de'] = array(
 
 	// When not complete, offer to finish...
 	'centralauth-finish-title'             => 'Zusammenführung vollenden',
-	'centralauth-finish-text'              => 'Wenn diese Benutzerkonten Ihnen gehören, können Sie hier ' .
+	'centralauth-finish-text'              => 'Wenn diese Benutzerkonten dir gehören, kannst du hier ' .
 		'den Prozess der Benutzerkonten-Zusammenführung durch die ' .
 		'Eingabe des Passwortes für die anderen Benutzerkonto vollenden:',
 	'centralauth-finish-password'          => 'Passwort:',
 	'centralauth-finish-login'             => 'Anmeldung',
 	'centralauth-finish-send-confirmation' => 'Passwort per E-Mail zusenden',
-	'centralauth-finish-problems'          => "Haben Sie Probleme oder gehören Ihnen diese anderen " .
-		"Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier finden Sie Hilfe]]…",
+	'centralauth-finish-problems'          => "Hast du Probleme oder gehören dir diese anderen " .
+		"Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier findest du Hilfe]] …",
 
 	'centralauth-merge-attempt'            => "'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
+
+	# When unattached, offer to attach...
+	'centralauth-attach-list-attached'     => 'Das globale Benutzerkonto mit dem Namen „$1“ beinhaltet die folgenden Benutzerkonten:',
+	'centralauth-attach-title'             => 'Benutzerkonto bestätigen',
+	'centralauth-attach-text'              => 'Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert. 
+	Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passowrt des globalen Benutzerkontos eingibts:',
+	'centralauth-attach-submit'            => 'Benutzerkonto integrieren',
+	'centralauth-attach-success'           => 'Das Benutzerkonto wurde in das globale Benutzerkonto integriert.',
 
 	// Administrator's console
 	'centralauth'                     => 'Verwaltung der Benutzerkonten-Zusammenführung',
@@ -393,7 +401,7 @@ $wgCentralAuthMessages['de'] = array(
        'centralauth-prefs-manage'            => 'Bearbeite dein zusammengeführtes Benutzerkonto',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das zentrale Benutzerkonten-System übernommen wurde.</div>",
+	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
 );
 
 $wgCentralAuthMessages['bcl'] = array(
