@@ -414,6 +414,10 @@ $wgCentralAuthMessages['bcl'] = array(
 	'centralauth-finish-login'             => 'Maglaog',
 );
 
+$wgCentralAuthMessages['ext'] = array(
+	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
+);
+
 $wgCentralAuthMessages['fr'] = array(
 	// When not logged in...
 	'mergeaccount' =>
@@ -1531,6 +1535,11 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-finish-send-confirmation' => 'Zaslať heslo emailom',
 	'centralauth-finish-problems'          => 'Máte problém alebo nie ste vlastníkom týchto účtov? [[meta:Help:Unified login problems|Ako hľadat pomoc]]...',
 	'centralauth-merge-attempt'            => '\'\'\'Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...\'\'\'',
+	'centralauth-attach-list-attached'     => 'K zjednotenému účtu s názvom „$1“ patria nasledovné účty:',
+	'centralauth-attach-title'             => 'Potvrdiť účet',
+	'centralauth-attach-text'              => 'Tento účet zatiaľ nebol migrovaný na zjednotený účet. Ak je globálny účet váš, môžete tento účet zlúčiť napísaním hesla ku globálnemu účtu:',
+	'centralauth-attach-submit'            => 'Migrovať účet',
+	'centralauth-attach-success'           => 'Účet bol migrovaný na zjednotený účet.',
 	'centralauth'                          => 'Administrácia zjednoteného prihlasovania',
 	'centralauth-admin-manage'             => 'Správa údajov o používateľoch',
 	'centralauth-admin-username'           => 'Používateľské meno:',
