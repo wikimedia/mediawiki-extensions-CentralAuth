@@ -415,6 +415,7 @@ $wgCentralAuthMessages['bcl'] = array(
 );
 
 $wgCentralAuthMessages['br'] = array(
+	'centralauth-finish-password'          => 'Ger-tremen :',
 	'centralauth-admin-username'           => 'Anv implijer :',
 );
 
