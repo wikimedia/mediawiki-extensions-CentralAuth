@@ -184,6 +184,10 @@ $wgCentralAuthMessages['en'] = array(
 	
 );
 
+$wgCentralAuthMessages['ang'] = array(
+	'centralauth-admin-username'           => 'Brūcendnama:',
+);
+
 /* Arabic (Meno25) */
 $wgCentralAuthMessages['ar'] = array(
 	'mergeaccount'                         => 'حالة توحيد الدخول',
@@ -1289,9 +1293,41 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossible de renomenar lo compte d\'utilizaire $1 localament : ara, aqueste utilizaire a un compte unic.</div>',
 );
 
+$wgCentralAuthMessages['pl'] = array(
+	'mergeaccount'                         => 'Stan unifikacji loginu',
+	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy twoje konta zostały w pełni połączone.',
+	'centralauth-merge-welcome'            => '\'\'\'Twoje konto użytkownika nie zostało jeszcze przeniesione do ujednoliconego systemu logowania Wikimedia.\'\'\' Jeśli wybierzesz przeniesienie twoich kont, będziesz mógł (mogła) używać tej samej nazwy użytkownika i hasła by logować się do wszystkich projektów Wikimedia we wszystkich językach. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub konfliktów, które powstają, gdy dwóch ludzi wybiera tę samą nazwę użytkownika na różnych projektach. Jeśli ktoś inny przyjął już twoją nazwę użytkownika n innym projekcie, ten proces nie przeszkodzi mu, ale da ci szansę na późniejsze rozwiązanie sprawy z tą osobą lub administratorem.',
+	'centralauth-merge-step1-title'        => 'Zacznij unifikację loginów',
+	'centralauth-merge-step1-detail'       => 'Twoje hasło i zarejestrowany adres e-mail zostaną porównane z kontami na innych wiki, aby potwierdzić, że się zgadzają. Żadne zmiany nie zostaną dokonane, dopóki nie potwierdzisz, że wszystko jest w porządku.',
+	'centralauth-merge-step1-submit'       => 'Potwierdzenie informacji o loginie',
+	'centralauth-merge-step2-title'        => 'Potwierdź więcej kont',
+	'centralauth-merge-step2-detail'       => 'Niektóre z kont nie mogły być automatycznie dopasowane do wyznaczonego podstawowego wiki. Jeśli te konta należą do ciebie, możesz potwierdzić, że są twoje przez podanie haseł do nich.',
+	'centralauth-merge-step2-submit'       => 'Potwierdź informację o loginie',
+	'centralauth-merge-step3-title'        => 'Utworzenie zunifikowanego konta',
+	'centralauth-merge-step3-detail'       => 'System jest gotowy do utworzenia twojego zunifikowanego konta, z dołączonymi następującymi wiki:',
+	'centralauth-merge-step3-submit'       => 'Unifikuj konta',
+	'centralauth-complete'                 => 'Unifikacja loginu zakończona!',
+	'centralauth-incomplete'               => 'Unifikacja loginu niekompletna!',
+	'centralauth-complete-text'            => 'Możesz teraz logować się na każde wiki Fundacji Wikimedia bez tworzenia nowego konta; ta sama nazwa użytkownika i hasło będzie działać na Wikipedii, Wikisłowniku, Wikipedii i ich projektach siostrzanych we wszystkich językach.',
+	'centralauth-incomplete-text'          => 'Kiedy twój login zostanie zunifikowany, będziesz w stanie zalogować się do każdego wiki Fundacji Wikimedia bez tworzenia nowego konta; ta sama nazwa użytkownika i hasło będzie działać na Wikipedii, Wikisłowniku, Wikibooks i ich projektach siostrzanych we wszystkich językach.',
+	'centralauth-not-owner-text'           => 'Nazwa użytkownika "$1" została automatycznie przypisana właścicielowi konta na $2. Jeśli ty nim jesteś, możesz zakończyć unifikację loginu wpisując główne hasło tego konta w tym miejscu:',
+	'centralauth-notice-dryrun'            => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
+	'centralauth-disabled-dryrun'          => 'Unifikacja konta jest obecnie tylko w trybie demonstracyjnym/debugującym, więc właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
+);
+
 $wgCentralAuthMessages['pms'] = array(
 	'mergeaccount'                         => 'Stat dël process dla mës-cia dë stranòm e ciav',
 	'centralauth-merge-notlogged'          => 'Për piasì <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ch\'a rintra ant ël sistema]</span> për controlé che sò cont a sio stait mës-cià coma ch\'as dev.',
+	'centralauth-merge-welcome'            => '\'\'\'Sò cont a l\'é nen stait portà al sistema d\'intrada unificà ëd Wikimedia\'\'\'. S\'a decid ëd porté sò cont a podrà dovré midem stranòm e ciav për rintré an qualsëssìa proget Wikimedia an qualsëssìa dle lenghe disponibij. Sòn a dovrìa fé belfé dovré dij proget coma la caria d\'archivi ansima a [http://commons.wikimedia.org/ Wikimedia Commons], e gavé via dla confusion ch\'a peul seurt-ie fòra quand doe person-e për cas as sërno ël midem stranòm an doj proget diferent. S\'a fussa mai riva-ie che cheidun a l\'avèissa gia sërnusse lë stranòm ch\'a dòvra chiel/chila, sòn a-j darìa gnun fastudi a gnun, ma pì anans a-j darìa a tuti la possibilità d\'arzolve ël problema ansema a j\'aministrator.',
+	'centralauth-merge-step1-title'        => 'Anandié l\'unificassion djë stranòm',
+	'centralauth-merge-step1-detail'       => 'Soa ciav e soa adrëssa ëd pòsta eletrònica a saran controlà con cole dij cont ëd j\'àutre wiki, për confermé ch\'a van bin. A-i rivërà nen gnun cambiament fin ch\'an dis nen che tut a va bin.',
+	'centralauth-merge-step1-submit'       => 'Confermé j\'anformassion për l\'intrada ant ël sistema',
+	'centralauth-merge-step2-title'        => 'Confermé dj\'àutri cont',
+	'centralauth-merge-step2-detail'       => 'Cheidun dij cont a l\'é pa podusse cobié n\'aotomàtich con la wiki ëd destinassion. Se sti cont-sì a son sò, a peul confermene la proprietà ën butand-se la ciav giusta.',
+	'centralauth-merge-step2-submit'       => 'Confermé j\'anformassion për l\'intrada ant ël sistema',
+	'centralauth-merge-step3-title'        => 'Creé sò cont unificà',
+	'centralauth-merge-step3-detail'       => 'Tut a l\'é pront për creé sò cont unificà, andova a l\'andrìo a finì ij cont dle wiki ambelessì sota:',
+	'centralauth-merge-step3-submit'       => 'Unifiché ij cont',
 	'centralauth-complete'                 => 'Mës-cia dij cont bele faita!',
 	'centralauth-incomplete'               => 'Mës-cia djë stranòm e dle ciav bele faita!',
 	'centralauth-complete-text'            => 'Adess a peul rintré an qualsëssìa sit dla Wikimedia (ëd coj ch\'a travajo col programa dla wiki) sensa da manca dë deurb-se un cont; la midema cobia dë stranòm a ciav a travajo an qualsëssìa Wikipedia, Wiktionary, Wikibooks e ant sj\'àotri proget soe seur an qualsëssìa lenga.',
@@ -1299,9 +1335,16 @@ $wgCentralAuthMessages['pms'] = array(
 	'centralauth-not-owner-text'           => 'Lë stranòm "$1" e l\'é stait dait n\'aotomàtich al proprietari dël cont ansima a $2.
 
 Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia dë stranòm e ciav ën butand-ie ambelessì la ciav prinsipal dël cont:',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Mach për dimostrassion, da bon a-i riva gnente</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'Ch\'a në scusa, ma l\'unificassion dij cont për adess a la travaja mach coma dimostrativ, për corege ël programa. L\'unificassion da bon as peul pa fesse.',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Për savejne dë pì, ch\'a varda \'\'\'Stranòm e ciav globaj\'\'\']]...\'\'',
-	'centralauth-list-attached'              => 'Ij cont ch\'as ës-ciamo "$1" ansima a ij sit dla lista ambelessì sota a son stait mës-cià antra lor n\'aotomàtich:',
-	'centralauth-list-unattached'            => 'Ant ij sit dla lista ambelessì sota ël cont "$1" a l\'é pa podusse confermé coma sò n\'aotomàtich; a l\'é belfé ch\'a-i sio dle ciav diferente da cola ëd sò cont prinsipal:',
+	'centralauth-list-home-title'          => 'Ca (soa wiki prinsipal)',
+	'centralauth-list-home-dryrun'         => 'La ciav e l\'adrëssa ëd pòsta eletrònica trovà ant sta wiki-sì a saran cole dovrà për sò cont unificà, soa pàgina utent d\'ambelessì a resterà cola andova ch\'as riva da qualsëssìa àutra wiki. Sòn un a peul peuj cambiess-lo coma a-j ven mej a chiel/chila.',
+	'centralauth-list-attached-title'      => 'Cont tacà',
+	'centralauth-list-attached'            => 'Ij cont ch\'as ës-ciamo "$1" ansima a ij sit dla lista ambelessì sota a son stait mës-cià antra lor n\'aotomàtich:',
+	'centralauth-list-attached-dryrun'     => 'Ël cont con lë stranòm "$1" ëd minca un dij sit ambelessì sota a sarà tacà al cont unificà:',
+	'centralauth-list-unattached-title'    => 'Cont nen unificà',
+	'centralauth-list-unattached'          => 'Ant ij sit dla lista ambelessì sota ël cont "$1" a l\'é pa podusse confermé coma sò n\'aotomàtich; a l\'é belfé ch\'a-i sio dle ciav diferente da cola ëd sò cont prinsipal:',
 	'centralauth-foreign-link'             => 'Stranòm $1 ansima a $2',
 	'centralauth-finish-title'             => 'Finiss la mës-cia',
 	'centralauth-finish-text'              => 'Se sti cont-sì a son sò, a peul andé a bon fin dël process ëd mës-cia dë stranòm e ciav mach ën butand-ie le ciav dj\'àotri cont ambelessì sota:',
@@ -1310,6 +1353,11 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
 	'centralauth-finish-send-confirmation' => 'Mandé la ciav për pòsta eletrònica',
 	'centralauth-finish-problems'          => 'Ha-lo dle gran-e, ò pura l\'é-lo pa chiel/chila ël titolar d\'ës cont-sì? Ch\'a varda [[meta:Help:Unified login problems|coma trové d\'agiut]]...',
 	'centralauth-merge-attempt'            => '\'\'\'I soma antramentr che i controloma le ciav ch\'a l\'ha butà con cole dij cont anco\' da mës-cé...\'\'\'',
+	'centralauth-attach-list-attached'     => 'Ël cont unificà con lë stranòm "$1" as ciapa andrinta ij cont listà ambelessì sota:',
+	'centralauth-attach-title'             => 'Confermé \'l cont',
+	'centralauth-attach-text'              => 'Ës cont-sì a l\'é anco\' nen stait migrà a col unificà. Se ëdcò ël cont global a resta sò, a peul unifiché ës cont-sì ën butand soa ciav globala:',
+	'centralauth-attach-submit'            => 'Unifiché \'l cont',
+	'centralauth-attach-success'           => 'Ël cont a l\'é stait giontà a col unificà',
 	'centralauth'                          => 'Aministrassion unificà dj\'intrade ant ël sistema',
 	'centralauth-admin-manage'             => 'Gestion dij dat dl\'utent',
 	'centralauth-admin-username'           => 'Stranòm:',
@@ -1328,6 +1376,7 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
 	'centralauth-prefs-count-unattached'   => 'A resto dij cont nen confermà con sò stranòm ansima a ij proget $1.',
 	'centralauth-prefs-detail-unattached'  => 'Ës sit-sì a l\'é pa restà confermà coma bon për sò cont global.',
 	'centralauth-prefs-manage'             => 'Gestion ëd sò cont global',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">As peul pa arbatié l\'utent $1 an local, për via che stë stranòm-sì a l\'é col dël cont unificà.</div>',
 );
 
 $wgCentralAuthMessages['ru'] = array(
