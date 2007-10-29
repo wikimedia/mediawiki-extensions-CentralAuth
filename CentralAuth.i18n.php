@@ -519,6 +519,72 @@ Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y
 	'centralauth-incomplete'               => 'Fusion des comptos pas chavonâ !',
 );
 
+$wgCentralAuthMessages['gl'] = array(
+	'mergeaccount'                         => 'Estado da unificación do rexistro',
+	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} rexístrese]</span> para comprobar se as súas contas se  unificaron completamente.',
+	'centralauth-merge-welcome'            => '\'\'\'A súa conta de usuario aínda non se pasou ao sistema de rexistro unificado de Wikimedia.\'\'\'
+
+Se escolle unificar as súas contas, poderá empregar o mesmo nome de usuario e contrasinal para se rexistrar en todos os wikis dos proxectos de Wikimedia en todas as linguas disponíbeis.
+Isto fai que sexa máis doado traballar con proxectos compartidos, como enviar a [http://commons.wikimedia.org/ Wikimedia Commons], e evita a confusión ou conflito que pode resultar se dúas persoas escollen o mesmo nome de usuario en proxectos diferentes.',
+	'centralauth-merge-step1-title'        => 'Comezar a unificación do rexistro',
+	'centralauth-merge-step1-detail'       => 'O seu contrasinal e os enderezos de correo electrónico rexistrados comprobaranse nas contas doutros wikis para confirmar que coinciden. Non se realizarán cambios até que vostede confirme que todo está ben.',
+	'centralauth-merge-step1-submit'       => 'Confirme a información de rexistro',
+	'centralauth-merge-step2-title'        => 'Confirmar máis contas',
+	'centralauth-merge-step2-detail'       => 'Algunhas contas non se puideron comprobar automaticamente no wiki sinalado. Se estas contas lle pertencen, pode confirmar que son súas introducindo o contrasinal que usa nelas.',
+	'centralauth-merge-step2-submit'       => 'Confirme a información de rexistro',
+	'centralauth-merge-step3-title'        => 'Crear unha conta unificada',
+	'centralauth-merge-step3-detail'       => 'Xa pode crear a súa conta unificada cos seguintes wikis relacionados:',
+	'centralauth-merge-step3-submit'       => 'Unificar contas',
+	'centralauth-complete'                 => 'Completouse a unificación do rexistro!',
+	'centralauth-incomplete'               => 'A unificación do rexistro non está completa!',
+	'centralauth-complete-text'            => 'Agora pode rexistrarse en calquer sitio wiki de Wikimedia sen crear unha conta nova; os mesmos nome de usuario e contrasinal valerán en Wikipedia, Wiktionary, Wikibooks e os seus proxectos irmáns en todas as linguas.',
+	'centralauth-incomplete-text'          => 'Unha vez se unificar o rexistro, poderá rexistrarse en calquer sitio wiki de Wikimedia sen crear unha conta nova; os mesmos nome de usuario e contrasinal valerán en Wikipedia, Wiktionary, Wikibooks e os seus proxectos irmáns en todas as linguas.',
+	'centralauth-not-owner-text'           => 'O nome de usuario "$1" asignouse automaticamente ao propietario da conta en $2.
+
+Se se trata de vostede, pode completar o proceso de unificación de rexistro simplemente con escribir o contrasinal mestre desa conta aquí:',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Só modo demostración</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'A unificación de contas é actualmente só un modo de demostración / depuración, polo que as operacións de unificación non están activadas. Desculpas!',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Lea máis acerca do \'\'\'rexistro unificado\'\'\']]...\'\'',
+	'centralauth-list-home-dryrun'         => 'Usaranse o contrasinal e enderezo de correo electrónico indicados neste wiki para a súa conta unificada, e a súa páxina de usuario ligarase automaticamente desde outros wikis. Poderá mudar o seu wiki primario máis tarde.',
+	'centralauth-list-attached-title'      => 'Contas relacionadas',
+	'centralauth-list-attached'            => 'A conta chamada "$1" en cada un dos sitios seguintes relacionouse automaticamente coa conta unificada:',
+	'centralauth-list-attached-dryrun'     => 'A conta chamada "$1" en cada un dos sitios seguintes relacionarase automaticamente coa conta unificada:',
+	'centralauth-list-unattached-title'    => 'Contas non relacionadas',
+	'centralauth-list-unattached'          => 'Non se puido confirmar que a conta "$1" lle pertenza a vostede nos sitios seguintes; o máis probábel é que teñan un contrasinal diferente do da súa conta primaria:',
+	'centralauth-foreign-link'             => 'Usuario $1 en $2',
+	'centralauth-finish-title'             => 'Finalizar a unificación',
+	'centralauth-finish-text'              => 'Se estas contas lle pertencen a vostede, pode finalizar o proceso de unificación do rexistro simplemente con introducir os contrasinais das outras contas aquí:',
+	'centralauth-finish-password'          => 'Contrasinal:',
+	'centralauth-finish-login'             => 'Rexistro',
+	'centralauth-finish-send-confirmation' => 'Enviar o contrasinal por correo electrónico',
+	'centralauth-finish-problems'          => 'Ten problemas ou non é o dono destoutras contas? [[meta:Help:Unified login problems|Como atopar axuda]]...',
+	'centralauth-merge-attempt'            => '\'\'\'A contrastar o contrasinal fornecido coas demais contas aínda sen unificar...\'\'\'',
+	'centralauth-attach-list-attached'     => 'A conta unificada chamada "$1" inclúe as contas seguintes:',
+	'centralauth-attach-title'             => 'Confirmar conta',
+	'centralauth-attach-text'              => 'Esta conta aínda non se pasou á conta unificada. Se a conta global tamén é súa, pode unificar esta conta se escribe o contrasinal da conta global:',
+	'centralauth-attach-submit'            => 'Unificar conta',
+	'centralauth-attach-success'           => 'A conta pasou á conta unificada.',
+	'centralauth'                          => 'Administración do rexistro unificado',
+	'centralauth-admin-manage'             => 'Xestionar os datos de usuario',
+	'centralauth-admin-username'           => 'Nome de usuario:',
+	'centralauth-admin-lookup'             => 'Ver ou editar os datos de usuario',
+	'centralauth-admin-permission'         => 'Só os stewards poden unificar as contas doutra xente.',
+	'centralauth-admin-unmerge'            => 'Seleccionouse des-unificar',
+	'centralauth-admin-merge'              => 'Seleccionouse unificar',
+	'centralauth-admin-bad-input'          => 'A selección de unificación non é válida',
+	'centralauth-admin-none-selected'      => 'Non se seleccionaron contas para modificar.',
+	'centralauth-prefs-status'             => 'Estado da conta global:',
+	'centralauth-prefs-not-managed'        => 'Non está a usar a conta unificada',
+	'centralauth-prefs-unattached'         => 'Sen confirmar',
+	'centralauth-prefs-complete'           => 'Todo perfecto!',
+	'centralauth-prefs-migration'          => 'En proceso de unificación',
+	'centralauth-prefs-count-attached'     => 'A súa conta está activada en $1 sitios de proxectos.',
+	'centralauth-prefs-count-unattached'   => 'Fican contas sen confirmar co seu nome en $1 proxectos.',
+	'centralauth-prefs-detail-unattached'  => 'Non se confirmou que o sitio do proxecto pertenza á conta global.',
+	'centralauth-prefs-manage'             => 'Xestionar a súa conta global',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Non se lle pode mudar o nome ao usuario $1 localmente xa que este nome de usuario pasou ao sistema de rexistro unificado.</div>',
+);
+
 $wgCentralAuthMessages['he'] = array(
 	# When not logged in...
 	'mergeaccount'                => 'מצב מיזוג החשבונות',
@@ -1313,6 +1379,7 @@ $wgCentralAuthMessages['pl'] = array(
 	'centralauth-not-owner-text'           => 'Nazwa użytkownika "$1" została automatycznie przypisana właścicielowi konta na $2. Jeśli ty nim jesteś, możesz zakończyć unifikację loginu wpisując główne hasło tego konta w tym miejscu:',
 	'centralauth-notice-dryrun'            => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
 	'centralauth-disabled-dryrun'          => 'Unifikacja konta jest obecnie tylko w trybie demonstracyjnym/debugującym, więc właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
+	'centralauth-finish-password'          => 'Hasło:',
 );
 
 $wgCentralAuthMessages['pms'] = array(
