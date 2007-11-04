@@ -499,10 +499,10 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
 
 $wgCentralAuthMessages['frp'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptos utilisator',
-	'centralauth-merge-notlogged'          => 'Marci de bien volêr <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
+	'centralauth-merge-notlogged'          => 'Marci de franc volêr <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
 	'centralauth-merge-welcome'            => '\'\'\'Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.\'\'\'
 
-Se vos chouèsésséd/cièrde de fére/fâre migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa sur tôs los projèts Wikimedia dens totes les lengoues.
+Se vos chouèsésséd/cièrde de fâre migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa sur tôs los projèts Wikimedia dens totes les lengoues.
 D’ense, lo travâly entèrprojèts serat facilitâ coment, per ègzemplo, l’impôrt d’émâges dessus [http://commons.wikimedia.org/ Wikimedia Commons] ; cen èviterat asse-ben la confusion arrevent quand doves gens utilisont lo mémo nom d’utilisator sur doux projèts difèrents.
 
 Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y avêr de problèmo. S’una ôtra pèrsona at lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.',
@@ -513,10 +513,57 @@ Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y
 	'centralauth-merge-step2-detail'       => 'Cèrtins des comptos ont pas possu étre apondus ôtomaticament a voutron compto principâl. Se celos comptos sont a vos, volyéd confirmar que sont a vos en entrent lo mot de pâssa corrèspondent.',
 	'centralauth-merge-step2-submit'       => 'Confirmar les enformacions',
 	'centralauth-merge-step3-title'        => 'Crèacion du compto unico',
-	'centralauth-merge-step3-detail'       => 'Vos éte ora prèst a crèar voutron compto unico, compregnent los vouiquis siuvents :',
+	'centralauth-merge-step3-detail'       => 'Orendrêt, vos éte prèst a crèar voutron compto unico, compregnent los vouiquis siuvents :',
 	'centralauth-merge-step3-submit'       => 'Fusionar los comptos',
 	'centralauth-complete'                 => 'Fusion des comptos chavonâ !',
 	'centralauth-incomplete'               => 'Fusion des comptos pas chavonâ !',
+	'centralauth-complete-text'            => 'Orendrêt, vos pouede vos conèctar a quint que seye lo projèt Wikimedia sen avêr a crèar un novél compto ; lo mémo nom d’utilisator et lo mémo mot de pâssa fonccioneront dessus Vouiquipèdia, Vouiccionèro, Vouiquilévros et lors projèts serors, et cen por totes les lengoues.',
+	'centralauth-incomplete-text'          => 'Un côp voutros comptos fusionâs, vos porréd vos conèctar a quint que seye lo projèt Wikimedia sen avêr a crèar un novél compto ; lo mémo nom d’utilisator et lo mémo mot de pâssa fonccioneront dessus Vouiquipèdia, Vouiccionèro, Vouiquilévros et lors projèts serors, et cen por totes les lengoues.',
+	'centralauth-not-owner-text'           => 'Lo compto utilisator « $1 » at étâ ôtomaticament assignê u propriètèro du compto dessus $2.
+
+S’o est vos, vos porréd chavonar lo procès de fusion des comptos en tapent lo mot de pâssa mêtre por cél compto dessus :',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Môdo de dèmonstracion solament</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'La fusion des comptos est ora en môdo de dèmonstracion ou d’èprôva, on pôt vêr p’oncor verément fusionar de comptos. Dèsolâ !',
+	'centralauth-readmore-text'            => ':\'\'[[w:frp:Vouiquipèdia:Login unico|Nen savêr més sur lo \'\'\'compto unico\'\'\']]\'\'',
+	'centralauth-list-home-title'          => 'Projèt principâl',
+	'centralauth-list-home-dryrun'         => 'Lo mot de pâssa et l’adrèce de mèl du projèt principâl ce-desot seront utilisâs por voutron compto unico, et voutra pâge utilisator sur lo projèt principâl serat ôtomaticament liyê dês los ôtros projèts. Vos porréd modifiar voutron projèt principâl ples târd.',
+	'centralauth-list-attached-title'      => 'Comptos apondus',
+	'centralauth-list-attached'            => 'Los comptos utilisator apelâs « $1 » ont étâ apondus por los projèts siuvents :',
+	'centralauth-list-attached-dryrun'     => 'Lo compto apelâ « $1 » sur châcun des setos siuvents serat ôtomaticament apondu u compto unico :',
+	'centralauth-list-unattached-title'    => 'Comptos pas apondus',
+	'centralauth-list-unattached'          => 'Los comptos utilisator apelâs « $1 » sur los setos siuvents pôvont pas étre apondus ôtomaticament ; ils ont probâblament un mot de pâssa difèrent de voutron compto mêtre :',
+	'centralauth-foreign-link'             => 'Utilisator $1 dessus $2',
+	'centralauth-finish-title'             => 'Chavonar la fusion des comptos',
+	'centralauth-finish-text'              => 'Se cetos comptos sont a vos, vos pouede chavonar lor fusion en tapent lors mots de pâssa ce-desot :',
+	'centralauth-finish-password'          => 'Mot de pâssa :',
+	'centralauth-finish-login'             => 'Compto utilisator :',
+	'centralauth-finish-send-confirmation' => 'Emmandar lo mot de pâssa per mèl',
+	'centralauth-finish-problems'          => 'En câs de problèmo ou ben se vos possèdâd pas cetos ôtros comptos, vêde [[meta:Help:Unified login problems|<span title="« Help:Unified login problems » : pâge en anglès" style="text-decoration:none">Problèmos</span>]]...',
+	'centralauth-merge-attempt'            => '\'\'\'Contrôlo du mot de pâssa forni por los comptos pas rapondus...\'\'\'',
+	'centralauth-attach-list-attached'     => 'Lo compto unico apelâ « $1 » encllut los comptos siuvents :',
+	'centralauth-attach-title'             => 'Confirmar lo compto',
+	'centralauth-attach-text'              => 'Ceti compto at p’oncor étâ migrâ en un compto unico. Se lo compto unico est asse-ben a vos, vos pouede fusionar ceti compto se vos tapâd lo mot de pâssa du compto unico :',
+	'centralauth-attach-submit'            => 'Migrar los comptos',
+	'centralauth-attach-success'           => 'Lo compto at étâ migrâ en un compto unico.',
+	'centralauth'                          => 'Administracion des comptos unicos',
+	'centralauth-admin-manage'             => 'G·èrar les balyês utilisator',
+	'centralauth-admin-username'           => 'Nom d’utilisator :',
+	'centralauth-admin-lookup'             => 'Vêre ou modifiar les balyês utilisator',
+	'centralauth-admin-permission'         => 'Solèts los stevârds pôvont rapondre los comptos d’ôtres gens a lor place.',
+	'centralauth-admin-unmerge'            => 'Sèparar la sèlèccion',
+	'centralauth-admin-merge'              => 'Fusionar la sèlèccion',
+	'centralauth-admin-bad-input'          => 'Sèlèccion envalida',
+	'centralauth-admin-none-selected'      => 'Nion compto sèlèccionâ.',
+	'centralauth-prefs-status'             => 'Statut du compto unico :',
+	'centralauth-prefs-not-managed'        => 'Pas de compto unico',
+	'centralauth-prefs-unattached'         => 'Pas confirmâ',
+	'centralauth-prefs-complete'           => 'Tot vat bien !',
+	'centralauth-prefs-migration'          => 'En migracion',
+	'centralauth-prefs-count-attached'     => 'Voutron compto est actif dessus $1 projèts.',
+	'centralauth-prefs-count-unattached'   => 'Des comptos pas confirmâs avouéc lo mémo nom d’utilisator que lo voutro sè trovont dessus $1 projèts.',
+	'centralauth-prefs-detail-unattached'  => 'Voutron compto sur ceti projèt at pas possu étre apondu u compto unico.',
+	'centralauth-prefs-manage'             => 'G·èrâd voutron compto unico',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Empossiblo de renomar lo compto utilisator $1 localament : ceti utilisator at ora un compto unico.</div>',
 );
 
 $wgCentralAuthMessages['gl'] = array(
