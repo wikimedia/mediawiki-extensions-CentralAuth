@@ -430,13 +430,13 @@ $wgCentralAuthMessages['ext'] = array(
 $wgCentralAuthMessages['fr'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptes utilisateur',
 	'centralauth-merge-notlogged'          => 'Merci de bien vouloir <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]</span> pour vérifier si vos comptes ont bien été fusionnés.',
-	'centralauth-merge-welcome'            => '\'\'\'Vos comptes utilisateur n’ont pas encore été migrés vers la système de compte unique de Wikimedia\'\'\'
+	'centralauth-merge-welcome'            => '\'\'\'Vos comptes utilisateur n’ont pas encore été migrés vers la système de compte unique de Wikimedia.\'\'\'
 Si vous choisissez de faire migrer vos comptes, vous pourrez utiliser le même nom d’utilisateur et le même mot de passe sur tous les projets Wikimedia dans toutes les langues.
 Ainsi, le travail inter-projets sera facilité de même que, par exemple, l’import d’images sur [http://commons.wikimedia.org/ Wikimedia Commons] ; cela évitera aussi la confusion survenant quand deux personnes utilisent le même nom d’utilisateur sur deux projets différents.
 
-Si vous avez déjà le même nom d’utilisateur sur tous les projets, il ne devrait pas y avoir de problème. Si une autre personne a le même nom d’utilisateur que vous sur un autre projet, vous aurez l\'occasion de rentrer en contact avec cette personne ou avec un administrateur plus tard.',
+Si vous avez déjà le même nom d’utilisateur sur tous les projets, il ne devrait pas y avoir de problème. Si une autre personne a le même nom d’utilisateur que vous sur un autre projet, vous aurez l\'occasion d\'entrer en contact avec cette personne ou avec un administrateur plus tard.',
 	'centralauth-merge-step1-title'        => 'Commencer le processus de fusion des comptes',
-	'centralauth-merge-step1-detail'       => 'Nous allons comparer votre adresse e-mail et votre mot de passe avec ceux des comptes homonymes sur les autes wikis, et vérifier qu’ils correspondent. Aucun changement ne sera effectué tant que vous n’aurez pas donné votre accord.',
+	'centralauth-merge-step1-detail'       => 'Nous allons comparer votre adresse courriel et votre mot de passe avec ceux des comptes homonymes sur les autes wikis, et vérifier qu’ils correspondent. Aucun changement ne sera effectué tant que vous n’aurez pas donné votre accord.',
 	'centralauth-merge-step1-submit'       => 'Confirmer les informations',
 	'centralauth-merge-step2-title'        => 'Inclure d’autres comptes',
 	'centralauth-merge-step2-detail'       => 'Certains des comptes n’ont pas pu être rattachés automatiquement à votre compte principal. Si ces comptes vous appartiennent, veuillez confirmer qu\'ils sont à vous en entrant le mot de passe correspondant.
@@ -447,16 +447,16 @@ Si vous avez déjà le même nom d’utilisateur sur tous les projets, il ne dev
 	'centralauth-merge-step3-submit'       => 'Fusionner les comptes',
 	'centralauth-complete'                 => 'Fusion des comptes terminée !',
 	'centralauth-incomplete'               => 'Fusion des comptes non terminée !',
-	'centralauth-complete-text'            => 'Vous pouvez maintenant vous connecter sur n’importe quel projet Wikimedia sans avoir à créer un nouveau compte ; le même nom d’utilisateur et mot de passe fonctionnent sur Wikipédia, Wiktionary, Wikibooks et leurs projets sœurs, et ceci pour toutes les langues.',
+	'centralauth-complete-text'            => 'Vous pouvez maintenant vous connecter à n’importe quel projet Wikimedia sans avoir à créer un nouveau compte ; le même nom d’utilisateur et le même mot de passe fonctionnent sur Wikipédia, Wiktionary, Wikibooks et leurs projets sœurs, et ceci pour toutes les langues.',
 	'centralauth-incomplete-text'          => 'Une fois vos comptes fusionnés, vous pourrez vous connecter sur n’importe quel projet Wikimedia sans avoir à créer un nouveau compte ; le même nom d’utilisateur et mot de passe fonctionneront sur Wikipédia, Wiktionary, Wikibooks et leurs projets sœurs, et ceci pour toutes les langues.',
 	'centralauth-not-owner-text'           => 'Le compte utilisateur « $1 » a été automatiquement assigné au propriétaire du compte sur $2.
 
 Si c’est vous, vous pourrez terminer le processus d’unification de compte en tapant le mot de passe maître pour ce compte sur :',
 	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Mode de démonstration seulement</div><br clear=\'all\'/>',
 	'centralauth-disabled-dryrun'          => 'La fusion des comptes est actuellement en mode de démonstration ou de test, on ne peut donc pas encore réellement fusionner de comptes. Désolé !',
-	'centralauth-readmore-text'            => ':\'\'[[w:fr:Wikipédia:Login unique|En savoir plus sur le \'\'\'compte unique\'\'\']]...\'\'',
+	'centralauth-readmore-text'            => ':\'\'[[w:fr:Wikipédia:Login unique|En savoir plus sur le \'\'\'compte unique\'\'\']]\'\'',
 	'centralauth-list-home-title'          => 'Projet principal',
-	'centralauth-list-home-dryrun'         => 'Le mot de passe et l’adresse e-mail du projet principal ci-dessous seront utilisés pour votre compte unique, et votre page utilisateur sur le projet principal sera automatiquement liée depuis les autres projets. Vous pourrez modifier votre projet principal plus tard.',
+	'centralauth-list-home-dryrun'         => 'Le mot de passe et l’adresse courriel du projet principal ci-dessous seront utilisés pour votre compte unique, et votre page utilisateur sur le projet principal sera automatiquement liée depuis les autres projets. Vous pourrez modifier votre projet principal plus tard.',
 	'centralauth-list-attached-title'      => 'Comptes rattachés',
 	'centralauth-list-attached'            => 'Les comptes utilisateur nommés « $1 » ont été rattachés pour les projets suivants :',
 	'centralauth-list-attached-dryrun'     => 'Le compte nommé « $1 » sur chacun des sites suivants sera automatiquement rattaché au compte unique :',
@@ -467,9 +467,8 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
 	'centralauth-finish-text'              => 'Si ces comptes vous appartiennent, vous pouvez terminer leur unification en tapant leurs mots de passe ci-dessous :',
 	'centralauth-finish-password'          => 'Mot de passe :',
 	'centralauth-finish-login'             => 'Compte utilisateur :',
-	'centralauth-finish-send-confirmation' => 'Envoyer le mot de passe par e-mail',
-	'centralauth-finish-problems'          => 'En cas de problème ou si vous ne possédez pas ces autres comptes, \' .
-		\'voyez la page [[meta:Help:Unified login problems|Problèmes]] (en anglais)...',
+	'centralauth-finish-send-confirmation' => 'Envoyer le mot de passe par courriel',
+	'centralauth-finish-problems'          => 'En cas de problème ou si vous ne possédez pas ces autres comptes, voyez [[meta:Help:Unified login problems|Problèmes]] (en anglais)...',
 	'centralauth-merge-attempt'            => '\'\'\'Vérification du mot de passe fourni pour les comptes non réunis...\'\'\'',
 	'centralauth-attach-list-attached'     => 'Le compte unifié nommé "$1" inclut les comptes suivants :',
 	'centralauth-attach-title'             => 'Confirmer le compte',
@@ -493,7 +492,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
 	'centralauth-prefs-count-attached'     => 'Votre compte est actif sur $1 projets.',
 	'centralauth-prefs-count-unattached'   => 'Des comptes non confirmés avec le même nom d’utilisateur que le vôtre se trouvent sur $1 projets.',
 	'centralauth-prefs-detail-unattached'  => 'Votre compte sur ce projet n’a pas pu être rattaché au compte unique.',
-	'centralauth-prefs-manage'             => 'Gérer votre compte global',
+	'centralauth-prefs-manage'             => 'Gérez votre compte global',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossible de renommer le compte utilisateur $1 localement : cet utilisateur a maintenant un compte unique.</div>',
 );
 
