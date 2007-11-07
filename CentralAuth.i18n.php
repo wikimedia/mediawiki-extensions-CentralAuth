@@ -949,6 +949,13 @@ Se si è il titolare dell\'utenza, per terminare il processo di unificazione è 
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossibile rinominare localmente l\'utente $1 perché questa utenza è stata trasferita al sistema unificato di identificazione (unified login system).</div>',
 );
 
+$wgCentralAuthMessages['ja'] = array(
+	'centralauth-finish-password'          => 'パスワード:',
+	'centralauth-finish-login'             => 'ログイン',
+	'centralauth-finish-send-confirmation' => '電子メールパスワード',
+	'centralauth-admin-username'           => '利用者名:',
+);
+
 $wgCentralAuthMessages['kk-kz'] = array(
 	// When not logged in...
 	'mergeaccount' =>
@@ -2004,6 +2011,43 @@ Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku 
 	'centralauth-admin-permission'         => 'Nu bisa ngahijikeun rekening batur mah ngan steward.',
 	'centralauth-admin-unmerge'            => 'Pisahkeun nu dipilih',
 	'centralauth-admin-merge'              => 'Hijikeun nu dipilih',
+);
+
+$wgCentralAuthMessages['sv'] = array(
+	'mergeaccount'                         => 'Status för förenad inloggning',
+	'centralauth-merge-notlogged'          => 'Du måste <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} logga in]</span> för att se om dina konton har blivit fullständigt förenade.',
+	'centralauth-merge-welcome'            => '\'\'\'Ditt konto har ännu inte flyttats över till Wikimedias förenade inloggningssystem.\'\'\'
+
+Om du väljer att förena dina konton, så kommer du att kunna använda samma användarnamn och lösenord för att logga in på alla språkversioner av alla Wikimedias projekt.
+På så sätt blir det enklare att arbeta på gemensamma projekt, till exempel att ladda upp filer till [http://commons.wikimedia.org/ Wikimedia Commons]. Det undviker också förvirring och andra problem som kan uppstå när olika personer har samma användarnamn på olika projekt.
+
+Om någon annan redan har tagit ditt användarnamn på en annan sajt så påverkar det här inte henne nu, men du kommer att få möjlighet att reda ut det med henne eller med en administratör senare.',
+	'centralauth-merge-step1-title'        => 'Påbörja förening av konton',
+	'centralauth-merge-step1-detail'       => 'Ditt lösenord och din e-postadress kommer kontrolleras mot användarkonton på andra wikis för att bekräfta att de stämmer överens. Inga ändringar kommer genomföras innan du bekräftar att allting ser riktigt ut.',
+	'centralauth-merge-step1-submit'       => 'Bekräfta lösenord',
+	'centralauth-merge-step2-title'        => 'Bekräfta fler konton',
+	'centralauth-merge-step2-detail'       => 'Några av konton kunde inte automatiskt matchas med kontot på den wiki som utsetts till hemwiki. Om dessa konton tillhör dig, så kan du bekräfta det genom att ange lösenorden för dem.',
+	'centralauth-merge-step2-submit'       => 'Bekräfta lösenord',
+	'centralauth-merge-step3-title'        => 'Skapa förenat konto',
+	'centralauth-merge-step3-detail'       => 'Du kan nu skapa ditt förenade användarkonto, med följande wikis anslutna:',
+	'centralauth-merge-step3-submit'       => 'Förena konton',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Endast demonstration</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'Förening av konton körs för närvarande i demonstrations- eller debugläge, så funktionerna som gör kontosammanslagningar är avaktiverade.',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Läs mer om \'\'\'förenad inloggning\'\'\']]...\'\'',
+	'centralauth-list-home-title'          => 'Hemwiki',
+	'centralauth-list-home-dryrun'         => 'Ditt lösenord och din e-postadress på denna wiki kommer att användas för ditt förenade konto. Din användarsida på den wikin kommer automatiskt att länkas till från andra wikis. Du kommer senare kunna ändra wiki som är din hemwiki.',
+	'centralauth-list-attached-title'      => 'Anslutna konton',
+	'centralauth-list-attached'            => 'Konton med namnet "$1" på följade sajter har automatiskt anslutits till det förenade kontot:',
+	'centralauth-list-attached-dryrun'     => 'Konton med namnet "$1" på följande sajter kommer automatiskt anslutas till det förenade kontot:',
+	'centralauth-list-unattached-title'    => 'Ej anslutna konton',
+	'centralauth-finish-password'          => 'Lösenord:',
+	'centralauth-prefs-status'             => 'Status för globalt konto:',
+	'centralauth-prefs-not-managed'        => 'Använder inte förenat konto',
+	'centralauth-prefs-unattached'         => 'Obekräftat',
+	'centralauth-prefs-count-attached'     => 'Ditt konto är aktivt på $1 projekt.',
+	'centralauth-prefs-count-unattached'   => 'Obekräftade konton med ditt namn finns fortfarande på $1 projekt.',
+	'centralauth-prefs-detail-unattached'  => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
+	'centralauth-prefs-manage'             => 'Hantera ditt globala konto',
 );
 
 $wgCentralAuthMessages['yue'] = array(
