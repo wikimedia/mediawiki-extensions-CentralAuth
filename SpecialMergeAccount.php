@@ -238,13 +238,6 @@ class SpecialMergeAccount extends SpecialPage {
 		$ok = $globalUser->storeAndMigrate( $passwords );
 		$this->clearWorkingPasswords();
 		
-		if( $ok ) {
-			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
-			//$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
-		} else {
-			$wgOut->setPageTitle( wfMsg( 'centralauth-incomplete' ) );
-			//$wgOut->addWikiText( wfMsg( 'centralauth-incomplete-text' ) );
-		}
 		$this->showCleanupForm();
 	}
 	
@@ -271,10 +264,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$ok = $globalUser->attemptPasswordMigration( $password, $attached, $unattached );
 		$this->clearWorkingPasswords();
 		
-		if( $ok ) {
-			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
-			$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
-		} else {
+		if( !$ok ) {
 			if( empty( $attached ) ) {
 				$wgOut->addWikiText( "Couldn't confirm any -- bad pass" );
 			} else {
