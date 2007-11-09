@@ -985,7 +985,7 @@ class CentralAuthUser {
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
 			'groups' => array(),
-			'blocked' => array() );
+			'blocked' => false );
 		
 		// Edit count field may not be initialized...
 		if( is_null( $row->user_editcount ) ) {
