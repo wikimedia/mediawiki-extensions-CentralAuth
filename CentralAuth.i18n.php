@@ -168,9 +168,9 @@ $wgCentralAuthMessages['en'] = array(
 	'centralauth-prefs-migration' =>
 		'In migration',
 	'centralauth-prefs-count-attached' =>
-		'Your account is active on $1 project sites.',
+		'Your account is active on $1 project {{plural:$1|site|sites}}.',
 	'centralauth-prefs-count-unattached' =>
-		'Unconfirmed accounts with your name remain on $1 projects.',
+		'Unconfirmed accounts with your name remain on $1 {{plural:$1|project|projects}}.',
 	'centralauth-prefs-detail-unattached' =>
 		'This project site has not been confirmed as belonging to the global account.',
 	'centralauth-prefs-manage' =>
@@ -726,8 +726,8 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-prefs-unattached'        => 'בלתי מאומת',
 	'centralauth-prefs-complete'          => 'הכל תקין!',
 	'centralauth-prefs-migration'         => 'בתהליך מיזוג',
-	'centralauth-prefs-count-attached'    => 'החשבון שלכם פעיל ב־$1 מיזמים.',
-	'centralauth-prefs-count-unattached'  => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב־$1 מיזמים.',
+	'centralauth-prefs-count-attached'    => 'החשבון שלכם פעיל ב{{plural:$1|מיזם אחד|־$1 מיזמים}}.',
+	'centralauth-prefs-count-unattached'  => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב{{plural:$1|מיזם אחד|־$1 מיזמים}}.',
 	'centralauth-prefs-detail-unattached' => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
 	'centralauth-prefs-manage'            => 'ניהול החשבון הכללי',
 

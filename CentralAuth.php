@@ -102,14 +102,14 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 				// Migration incomplete
 				$message = '<strong>' . wfMsgHtml( 'centralauth-prefs-migration' ) . '</strong>' .
 					'<br />' .
-					wfMsgHtml( 'centralauth-prefs-count-attached', $attached ) .
+					htmlspecialchars( wfMsgExt( 'centralauth-prefs-count-attached', array( 'parsemag' ), $attached ) ) .
 					'<br />' .
-					wfMsgHtml( 'centralauth-prefs-count-unattached', $unattached );
+					htmlspecialchars( wfMsgExt( 'centralauth-prefs-count-unattached', array( 'parsemag' ), $unattached ) );
 			} else {
 				// Migration complete
 				$message = '<strong>' . wfMsgHtml( 'centralauth-prefs-complete' ) . '</strong>' .
 					'<br />' .
-					wfMsgHtml( 'centralauth-prefs-count-attached', $attached );
+					htmlspecialchars( wfMsgExt( 'centralauth-prefs-count-attached', array( 'parsemag' ), $attached ) );
 			}
 		} else {
 			// Account is in migration, but the local account is not attached
