@@ -498,7 +498,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
 
 $wgCentralAuthMessages['frp'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptos utilisator',
-	'centralauth-merge-notlogged'          => 'Marci de franc volêr <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
+	'centralauth-merge-notlogged'          => 'Marci de franc volêr vos <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
 	'centralauth-merge-welcome'            => '\'\'\'Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.\'\'\'
 
 Se vos chouèsésséd/cièrde de fâre migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa sur tôs los projèts Wikimedia dens totes les lengoues.
@@ -1644,7 +1644,7 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-finish-password'          => 'Heslo:',
 	'centralauth-finish-login'             => 'Prihlasovacie meno',
 	'centralauth-finish-send-confirmation' => 'Zaslať heslo emailom',
-	'centralauth-finish-problems'          => 'Máte problém alebo nie ste vlastníkom týchto účtov? [[meta:Help:Unified login problems|Ako hľadat pomoc]]...',
+	'centralauth-finish-problems'          => 'Máte problém alebo nie ste vlastníkom týchto účtov? [[meta:Help:Unified login problems|Ako hľadať pomoc]]...',
 	'centralauth-merge-attempt'            => '\'\'\'Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...\'\'\'',
 	'centralauth-attach-list-attached'     => 'K zjednotenému účtu s názvom „$1“ patria nasledovné účty:',
 	'centralauth-attach-title'             => 'Potvrdiť účet',
