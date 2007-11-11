@@ -404,8 +404,8 @@ $wgCentralAuthMessages['de'] = array(
        'centralauth-prefs-unattached'        => 'Unbestätigt',
        'centralauth-prefs-complete'          => 'Fertig!',
        'centralauth-prefs-migration'         => 'Zusammenführung in Arbeit',
-       'centralauth-prefs-count-attached'    => 'Dein Benutzerkonto ist in $1 Projekten aktiv.',
-       'centralauth-prefs-count-unattached'  => 'Es gibt in $1 Projekten unbestätigte Benutzerkonten mit deinem Namen.',
+       'centralauth-prefs-count-attached'    => 'Dein Benutzerkonto ist in $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
+       'centralauth-prefs-count-unattached'  => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
        'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
        'centralauth-prefs-manage'            => 'Bearbeite dein zusammengeführtes Benutzerkonto',
 
