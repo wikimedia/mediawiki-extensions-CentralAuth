@@ -591,7 +591,7 @@ Se se trata de vostede, pode completar o proceso de unificación de rexistro sim
 	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Só modo demostración</div><br clear=\'all\'/>',
 	'centralauth-disabled-dryrun'          => 'A unificación de contas é actualmente só un modo de demostración / depuración, polo que as operacións de unificación non están activadas. Desculpas!',
 	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Lea máis acerca do \'\'\'rexistro unificado\'\'\']]...\'\'',
-	'centralauth-list-home-title'          => 'Wiki primaria',
+	'centralauth-list-home-title'          => 'Wiki primario',
 	'centralauth-list-home-dryrun'         => 'Usaranse o contrasinal e enderezo de correo electrónico indicados neste wiki para a súa conta unificada, e a súa páxina de usuario ligarase automaticamente desde outros wikis. Poderá mudar o seu wiki primario máis tarde.',
 	'centralauth-list-attached-title'      => 'Contas relacionadas',
 	'centralauth-list-attached'            => 'A conta chamada "$1" en cada un dos sitios seguintes relacionouse automaticamente coa conta unificada:',
