@@ -423,6 +423,10 @@ $wgCentralAuthMessages['br'] = array(
 	'centralauth-admin-username'           => 'Anv implijer :',
 );
 
+$wgCentralAuthMessages['el'] = array(
+	'centralauth-finish-password'          => 'Κωδικός:',
+);
+
 $wgCentralAuthMessages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
