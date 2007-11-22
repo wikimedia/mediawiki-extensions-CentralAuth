@@ -425,6 +425,8 @@ $wgCentralAuthMessages['br'] = array(
 
 $wgCentralAuthMessages['el'] = array(
 	'centralauth-finish-password'          => 'Κωδικός:',
+	'centralauth-finish-login'             => 'Εγγραφή',
+	'centralauth-admin-username'           => 'Όνομα χρήστη:',
 );
 
 $wgCentralAuthMessages['ext'] = array(
