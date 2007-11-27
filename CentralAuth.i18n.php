@@ -1905,27 +1905,27 @@ $wgCentralAuthMessages['sr-el'] = array(
 );
 
 $wgCentralAuthMessages['pt'] = array(
-	'mergeaccount'                         => 'Estado da unificação de logins',
-	'centralauth-merge-notlogged'          => 'Por gentileza, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} faça login]</span> para verificar se as suas contas foram corretamente fundidas.',
-	'centralauth-merge-welcome'            => '\'\'\'Sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.\'\'\'
+	'mergeaccount'                         => 'Estado da unificação de contas',
+	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
+	'centralauth-merge-welcome'            => '\'\'\'A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.\'\'\'
 
-Caso você decida por migrar as suas contas, será possível utilizar o mesmo nome de usuário e senha para se autenticar em todas as wikis da Wikimedia (em todos os projetos e em todos os idiomas disponíveis).
-Isso torna mais fácil trabalhar em projetos partilhados, tal como enviando um ficheiro ou imagem ao [http://commons.wikimedia.org/ Wikimedia Commons], e evita confusões ou conflitos que podem ocorrer quando duas pessoas escolhem o mesmo nome de utilizador em diferentes projetos.
+Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis da Wikimedia (em todos os projectos e em todos os idiomas disponíveis).
+Isto torna mais fácil trabalhar em projectos partilhados, tal como carregar um ficheiro no [http://commons.wikimedia.org/ Wikimedia Commons], e evita confusões ou conflitos que podem ocorrer quando duas pessoas escolhem o mesmo nome de utilizador em diferentes projectos.
 
-Caso alguém já esteja com um nome de utilizador idêntico ao seu em alguma outra wiki, tal pessoa não será importunada. No entanto, será possível que você dialogue com a mesma ou com um administrador posteriormente.',
+Caso alguém já tenha um nome de utilizador idêntico ao seu em algum outro wiki, tal pessoa não será importunada. No entanto, será possível que dialogue com a mesma ou com um administrador posteriormente.',
 	'centralauth-merge-step1-title'        => 'Iniciar a unificação de logins',
-	'centralauth-merge-step1-detail'       => 'Sua palavra-chave (senha) e endereço de e-mail serão comparados com os de contas de outras wikis, para confirmar se coincidem. Não serão feitas alterações até que você diga se tudo está correto.',
+	'centralauth-merge-step1-detail'       => 'A sua palavra-chave (senha) e endereço de e-mail serão comparados com os de contas de outros wikis, para confirmar se coincidem. Não serão feitas alterações até que confime que está tudo correcto.',
 	'centralauth-merge-step1-submit'       => 'Confirmar informações de login',
 	'centralauth-merge-step2-title'        => 'Confirmar contas adicionais',
 	'centralauth-merge-step2-detail'       => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a palavra-chave (senha) das mesmas.',
 	'centralauth-merge-step2-submit'       => 'Confirmar informações de login',
 	'centralauth-merge-step3-title'        => 'Criar conta unificada',
-	'centralauth-merge-step3-detail'       => 'Tudo pronto para que a sua conta unificada, com as seguintes wikis à ela relacionada, seja criada:',
+	'centralauth-merge-step3-detail'       => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionada, seja criada:',
 	'centralauth-merge-step3-submit'       => 'Unificar contas',
 	'centralauth-complete'                 => 'Unificação de logins completa!',
 	'centralauth-incomplete'               => 'Unificação de logins incompleta!',
-	'centralauth-complete-text'            => 'Agora você poderá se logar em quaisquer das wikis da Wikimedia sem ter de criar uma nova conta; o mesmo nome de utilizador e senha funcionarãona Wikipedia, no Wikcionário, no Wikibooks e demais projetos, em todos os idiomas.',
-	'centralauth-incomplete-text'          => 'Uma vez estando com seu login unificado, você poderá se logar em qualquer wiki da Wikimedia sem ter de criar novo cadastro; o mesmo nome de utilizador e senha funcionarãona Wikipedia, no Wikcionário, no Wikibooks e demais projetos, em todos os idiomas.',
+	'centralauth-complete-text'            => 'Agora você poderá efectuar login em qualquer wiki da Wikimedia sem ter de criar uma nova conta; o mesmo nome de utilizador e senha funcionarão na Wikipédia, no Wikcionário, no Wikibooks e demais projectos, em todos os idiomas.',
+	'centralauth-incomplete-text'          => 'Uma vez estando o seu login unificado, poderá efectuar login em qualquer wiki da Wikimedia sem ter de criar novo cadastro; o mesmo nome de utilizador e senha funcionarão na Wikipédia, no Wikcionário, no Wikibooks e demais projectos, em todos os idiomas.',
 	'centralauth-not-owner-text'           => 'O nome de utilizador "$1" foi automaticamente relacionado ao proprietário da conta em $2.
 
 Se este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal de tal conta aqui:',
@@ -1943,9 +1943,15 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-finish-title'             => 'Completar fusão',
 	'centralauth-finish-text'              => 'Se estas contas pertencem a ti, será possível concluir a unificação de logins simplesmente digitando as senhas das mesmas aqui:',
 	'centralauth-finish-password'          => 'Senha:',
+	'centralauth-finish-login'             => 'Utilizador',
 	'centralauth-finish-send-confirmation' => 'Enviar senha por e-mail',
 	'centralauth-finish-problems'          => 'Está com problemas ou estas outras contas não são suas? [[meta:Help:Unified login problems|Como procurar por ajuda]]...',
 	'centralauth-merge-attempt'            => '\'\'\'Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...\'\'\'',
+	'centralauth-attach-list-attached'     => 'A conta unificada com o nome "$1" inclui as seguintes contas:',
+	'centralauth-attach-title'             => 'Confirmar conta',
+	'centralauth-attach-text'              => 'Esta conta não foi ainda migrada para a conta unificada. Se a conta global é sua também, pode fundir esta conta se introduzir a sua palavra-chave da conta global:',
+	'centralauth-attach-submit'            => 'Migrar conta',
+	'centralauth-attach-success'           => 'A conta foi migrada para a conta unificada.',
 	'centralauth'                          => 'Administração de contas unificadas',
 	'centralauth-admin-manage'             => 'Manusear dados de utilizador',
 	'centralauth-admin-username'           => 'Utilizador:',
@@ -1960,8 +1966,8 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-prefs-unattached'         => 'Não confirmado',
 	'centralauth-prefs-complete'           => 'Tudo em ordem!',
 	'centralauth-prefs-migration'          => 'Migrando',
-	'centralauth-prefs-count-attached'     => 'Sua conta se encontra ativa em $1 sítios de projetos.',
-	'centralauth-prefs-count-unattached'   => 'Ainda existem contas não confirmadas com seu nome de utilizador em $1 projetos.',
+	'centralauth-prefs-count-attached'     => 'A sua conta encontra-se activa em $1 {{plural:$1|sítio|sítios}} de projecto.',
+	'centralauth-prefs-count-unattached'   => 'Ainda existem contas não confirmadas com seu nome de utilizador em $1 {{plural:$1|projecto|projectos}}.',
 	'centralauth-prefs-detail-unattached'  => 'Este sítio não foi confirmado como fazendo parte da conta unificada.',
 	'centralauth-prefs-manage'             => 'Manusear sua conta unificada',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Não foi possível renomear localmente o utilizador $1 uma vez que a conta do mesmo foi migrada para o sistema de login universal.</div>',
