@@ -258,6 +258,11 @@ $wgCentralAuthMessages['ar'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">لا يمكن إعادة تسمية المستخدم $1 محليا حيث أن اسم المستخدم هذا تم نقله إلى نظام الدخول الموحد.</div>',
 );
 
+$wgCentralAuthMessages['bg'] = array(
+	'centralauth-finish-password'          => 'Парола:',
+	'centralauth-admin-username'           => 'Потребителско име:',
+);
+
 $wgCentralAuthMessages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
