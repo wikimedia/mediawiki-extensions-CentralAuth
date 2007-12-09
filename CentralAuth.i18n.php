@@ -749,15 +749,24 @@ $wgCentralAuthMessages['he'] = array(
 $wgCentralAuthMessages['hr'] = array(
 	'mergeaccount'                         => 'Status centralizacije prijave',
 	'centralauth-merge-notlogged'          => 'Molimo <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prijavite se]</span> radi provjere da li su Vaši suradnički računi uspješno spojeni.',
+	'centralauth-merge-welcome'            => '\'\'\'Vaš suradnički račun nije još premješten na Wikimediijin centralni sustav prijave.\'\'\'
+
+Ukoliko izaberete spajanje vaših računa, moći ćete se prijaviti s istim imenom i lozinkom na sve Wikimedijine projekte.
+Takav pristup omogućuje lakši rad na dijeljenim projektima kao i postavljanje slika na [http://commons.wikimedia.org/ Wikimedijin zajednički poslužitelj], i izbjegava se moguća zabuna ukoliko dvoje osobe izaberu isto ime na različitim projektima.
+
+Ukoliko je netko već uporabio vaše ime/nadimak na nekom drugom projektu, ovo neće smetati niti jednu stranu, nego će vam dati šansu da se konflikt naknadno riješi s njima ili administratorom.',
 	'centralauth-merge-step1-title'        => 'Počni spajanje suradničkih računa',
 	'centralauth-merge-step1-detail'       => 'Vaša lozinka i prijavljena e-mail adresa će biti uspoređeni s podacima na drugim wikijima da se ustanovi da li odgovaraju jedni drugima. Promjene neće biti izvršene dok ne potvrdite da je sve u redu.',
 	'centralauth-merge-step1-submit'       => 'Potvrdi podatke o prijavi',
 	'centralauth-merge-step2-title'        => 'Potvrdi više suradničkih računa',
+	'centralauth-merge-step2-detail'       => 'Neki računi ne odgovaraju onom koji ste naveli kao polazišni wiki. Ako su vaši, potvrdite to navođenjem lozinke za te račune.',
 	'centralauth-merge-step2-submit'       => 'Potvrdi podatke o prijavi',
 	'centralauth-merge-step3-title'        => 'Stvori centralni suradnički račun',
+	'centralauth-merge-step3-detail'       => 'Možete stvoriti centralni račun, koji spaja račune na slijedećim wikiprojektima:',
 	'centralauth-merge-step3-submit'       => 'Spoji suradničke račune',
 	'centralauth-complete'                 => 'Spajanje suradničkih računa izvršeno!',
 	'centralauth-incomplete'               => 'Spajanje suradničkih računa nije izvršeno!',
+	'centralauth-complete-text'            => 'Sad se možete prijaviti na bilo koji Wikimedijin projekt bez otvaranja novog računa; isto ime i lozinka vam vrijede na Wikipediji, Wječniku, Wikiknjigama i ostalim projektima na svim jezicima.',
 	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Samo demo mod</div><br clear=\'all\'/>',
 	'centralauth-list-home-title'          => 'Bazni wiki',
 	'centralauth-list-home-dryrun'         => 'Lozinka i e-mail adresa postavljeni na ovom wikiju bit će uporabljeni za vaš centralni račun, i drugi wikiji će sadržavati poveznice na vašu suradničku stranicu ovdje. Naravno, moguća je promjena baznog wikija.',
