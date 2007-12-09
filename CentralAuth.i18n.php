@@ -767,19 +767,31 @@ Ukoliko je netko već uporabio vaše ime/nadimak na nekom drugom projektu, ovo n
 	'centralauth-complete'                 => 'Spajanje suradničkih računa izvršeno!',
 	'centralauth-incomplete'               => 'Spajanje suradničkih računa nije izvršeno!',
 	'centralauth-complete-text'            => 'Sad se možete prijaviti na bilo koji Wikimedijin projekt bez otvaranja novog računa; isto ime i lozinka vam vrijede na Wikipediji, Wječniku, Wikiknjigama i ostalim projektima na svim jezicima.',
+	'centralauth-incomplete-text'          => 'Kad vaš račun bude jedinstven, moći ćete se prijaviti na svaki Wikimedija projekt bez stvaranja novog računa; isto ime i lozinka vrijedit će na Wikipediji, Wječniku, Wikiknjigama, i svim ostalim Wikiprojektima na svim jezicima.',
+	'centralauth-not-owner-text'           => 'Suradničko ime "$1" je automatski dodijeljeno suradniku na $2.
+
+Ukoliko ste to vi, možete dovršiti proces spajanja računa unošenjem glavne lozinke:',
 	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Samo demo mod</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'Spajanje računa je trenutno u demo / debugging modu, pa je stvarno spajanje računa onemogućeno.',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Saznaj više o \'\'\'centralnoj prijavi\'\'\']]...\'\'',
 	'centralauth-list-home-title'          => 'Bazni wiki',
 	'centralauth-list-home-dryrun'         => 'Lozinka i e-mail adresa postavljeni na ovom wikiju bit će uporabljeni za vaš centralni račun, i drugi wikiji će sadržavati poveznice na vašu suradničku stranicu ovdje. Naravno, moguća je promjena baznog wikija.',
 	'centralauth-list-attached-title'      => 'Spojeni suradnički računi',
 	'centralauth-list-attached'            => 'Suradnički račun "$1" na slijedećim stranicama (wikijima) je automatski priključen centralnom računu:',
 	'centralauth-list-attached-dryrun'     => 'Suradnički račun "$1" na slijedećim stranicama (wikijima) će biti automatski priključen centralnom računu:',
 	'centralauth-list-unattached-title'    => 'Nespojeni suradnički računi',
+	'centralauth-list-unattached'          => 'Suradnički račun "$1" ne može vam biti automatski pridružen na slijedećim projektima; najvjerojatnije ima različitu lozinku od vaše primarne:',
 	'centralauth-foreign-link'             => 'Suradnik $1 na $2',
 	'centralauth-finish-title'             => 'Završi spajanje',
+	'centralauth-finish-text'              => 'Ukoliko su slijedeći računi vaši, možete završiti proces spajanja računa unošenjem lozinki za preostale račune:',
 	'centralauth-finish-password'          => 'Lozinka:',
 	'centralauth-finish-login'             => 'Prijavite se',
 	'centralauth-finish-send-confirmation' => 'Pošalji lozinku e-poštom',
+	'centralauth-finish-problems'          => 'Imate problem, ili ovi računi nisu vaši? [[meta:Help:Unified login problems|Kako naći pomoć]]...',
+	'centralauth-merge-attempt'            => '\'\'\'Provjeravam navedene lozinke za ostale još nespojene račune...\'\'\'',
+	'centralauth-attach-list-attached'     => 'Jedinstveni račun "$1" uključuje slijedeće račune:',
 	'centralauth-attach-title'             => 'Potvrdi suradnički račun',
+	'centralauth-attach-text'              => 'Ovaj račun nije još spojen s jedinstvenim računom. Ukoliko je jedinstaveni račun vaš, možete ga spojiti ako znate lozinku jedinstvenog računa:',
 	'centralauth-attach-submit'            => 'Prenesi suradnički račun',
 	'centralauth-attach-success'           => 'Vaš suradnički račun je postao centraliziran.',
 	'centralauth'                          => 'Administracija centralnog suradničkog računa',
@@ -797,7 +809,10 @@ Ukoliko je netko već uporabio vaše ime/nadimak na nekom drugom projektu, ovo n
 	'centralauth-prefs-complete'           => 'Sve u redu!',
 	'centralauth-prefs-migration'          => 'Migracija u tijeku',
 	'centralauth-prefs-count-attached'     => 'Vaš suradnički račun je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}}.',
+	'centralauth-prefs-count-unattached'   => 'Nepotvrđeni računi s vašim imenom postoje još na {{plural:$1|slijedećem projektu|slijedećim projektima|slijedećim projektima}} $1.',
+	'centralauth-prefs-detail-unattached'  => 'Pripadnost ovog projekta jedinstvenom sustavu prijave nije potvrđena.',
 	'centralauth-prefs-manage'             => 'Uredite Vaš centralni suradnički račun',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Ne mogu preimenovati suradnika $1 lokalno jer je to suradničko ime spojeno u jedinstveni sustav prijave.</div>',
 );
 
 $wgCentralAuthMessages['hsb'] = array(
@@ -1989,83 +2004,8 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 
 $wgCentralAuthMessages['pt-br'] = $wgCentralAuthMessages['pt'];
 
-$wgCentralAuthMessages['de'] = array(
-	// When not logged in...
-	'mergeaccount' =>
-		'Status der Benutzerkonten-Zusammenführung',
-	'centralauth-merge-notlogged' =>
-		'Bitte <span class="plainlinks"> [{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ' .
-		'melden Sie sich an]</span>, um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
-
-	// Big text on completion
-	'centralauth-complete' =>
-		'Die Zusammenführung der Benutzerkonten ist vollständig.',
-	'centralauth-incomplete' =>
-		'Die Zusammenführung der Benutzerkonten ist unvollständig!',
-
-	// Wheeee
-	'centralauth-complete-text' =>
-		'Sie können sich nun auf jeder Wikimedia-Webseite anmelden ' .
-		'ohne ein neues Benutzerkonto anzulegen; derselbe Benutzername ' .
-		'und dasselbe Passwort ist für Wikipedia, Wiktionary, Wikibooks ' .
-		'und alle Schwesterprojekte in allen Sprachen gültig.',
-
-	'centralauth-incomplete-text' =>
-		'Sobald Ihre Benutzerkonten zusammengeführt sind, können Sie sich ' .
-		'auf jeder Wikimedia-Webseite anmelden ohne ein neues Benutzerkonto ' .
-		'anzulegen; derselbe Benutzernamen und dasselbe Passwort ist für ' .
-		'Wikipedia, Wiktionary, Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
-
-	'centralauth-not-owner-text' =>
-		'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf ' .
-		'$2 zugewiesen. Wenn dies Ihre Benutzername ist, können Sie die Zusammenführung ' .
-		'der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden: ',
-
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']]…''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten wurden automatisch ' .
-		' zusammengeführt: ',
-
-	'centralauth-list-unattached' =>
-		'Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht ' .
-		'automatisch als zu Ihnen gehörend bestätigt werden; vermutlich ' .
-		'hat es ein anderes Passwort als Ihr primäres Benutzerkonto: ',
-
-	'centralauth-foreign-link' =>
-		'Benutzer $1 auf $2',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'Zusammenführung vollenden',
-
-	'centralauth-finish-text' =>
-		'Wenn diese Benutzerkonten Ihnen gehören, können Sie hier den ' .
-		'Prozess der Benutzerkonten-Zusammenführung durch die Eingabe ' .
-		'des Passwortes für die anderen Benutzerkonto vollenden:',
-
-	'centralauth-finish-password' =>
-		'Passwort:',
-
-	'centralauth-finish-login' =>
-		'Anmeldung',
-
-	'centralauth-finish-send-confirmation' =>
-		'Passwort per E-Mail zusenden',
-
-	'centralauth-finish-problems' =>
-		'Haben Sie Probleme oder gehören Ihnen diese anderen Benutzerkonten nicht? ' .
-		'[[meta:Help:Unified login problems|Hier finden Sie Hilfe]]…',
-
-	'centralauth-merge-attempt' =>
-		"'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
-
-	// Administrator's console
-	'centralauth-admin-permission' =>
-		"Nur Benutzer mit Steward-Rechten dürfen fremde Benutzerkonten zusammenführen.",
+$wgCentralAuthMessages['ro'] = array(
+	'centralauth-finish-password'          => 'Parolă:',
 );
 
 $wgCentralAuthMessages['su'] = array(
