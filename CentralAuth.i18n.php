@@ -260,6 +260,7 @@ $wgCentralAuthMessages['ar'] = array(
 
 $wgCentralAuthMessages['bg'] = array(
 	'centralauth-finish-password'          => 'Парола:',
+	'centralauth-finish-login'             => 'Влизане',
 	'centralauth-admin-username'           => 'Потребителско име:',
 );
 
@@ -2006,6 +2007,27 @@ $wgCentralAuthMessages['pt-br'] = $wgCentralAuthMessages['pt'];
 
 $wgCentralAuthMessages['ro'] = array(
 	'centralauth-finish-password'          => 'Parolă:',
+);
+
+$wgCentralAuthMessages['stq'] = array(
+	'mergeaccount'                         => 'Stoatus fon ju Benutserkonten-Touhoopefierenge',
+	'centralauth-merge-step1-title'        => 'Ounfang fon ju Benutserkonten-Touhoopefierenge',
+	'centralauth-merge-step1-detail'       => 'Dien Paaswoud un dien iendraine E-Mail-Adresse wäd mäd Benutserkonten in do uur Wikis ouglieked, uum Uureenstämmengen tou fienden. Der wäide neen Annerengen foarnuumen, bit du bestäätigest, dät aal gjucht is.',
+	'centralauth-merge-step1-submit'       => 'Anmälde-Informatione bestäätigje',
+	'centralauth-merge-step2-title'        => 'Bestätigje moor Benutserkonten',
+	'centralauth-merge-step2-detail'       => 'Wäkke fon do Benutserkonten kuuden nit automatisk dien Heemat-Wiki toureekend wäide. Wan disse Konton die heere, koast du dät bestäätigje, deertruch dät du dät Paaswoud tou disse Konten ienrakst.',
+	'centralauth-merge-step3-detail'       => 'Du koast nu n globoal Benutserkonto foar do foulgjende Wikis moakje.',
+	'centralauth-merge-step3-submit'       => 'Benutserkonten touhoopefiere',
+	'centralauth-incomplete-text'          => 'Sogau dien Benutserkonten touhoopefierd sunt, koast du die ap älke Wikimedia-Websiede anmäldje sunner n näi Benutserkonto antoulääsen; diesäalge Benutsernoome un dätsälge Paaswoud is foar Wikipedia, Wiktionary, Wikibooks un aal Susterprojekte gultich.',
+	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Demonstrationsmodus</div><br clear=\'all\'/>',
+	'centralauth-disabled-dryrun'          => 'Ju Benutserkonto-Touhoopefierenge befint sik apstuuns in n Demonstrations/Failersäik-Modus. Touhoopefierengs-Aktione sunt deaktivierd.',
+	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Informatione uur ju \'\'\'Touhoopefierenge fon do Benutserkonten\'\'\']] …\'\'',
+	'centralauth-list-home-title'          => 'Heemat-Wiki',
+	'centralauth-list-attached-title'      => 'Touhoopefierde Benutserkonten',
+	'centralauth-list-attached'            => 'Do Benutserkonten mäd dän Noome „$1“ ap do foulgjende Projekte wäide automatisk touhoopefierd:',
+	'centralauth-list-unattached-title'    => 'Nit touhoopefierde Benutserkonten',
+	'centralauth-attach-list-attached'     => 'Dät globoale Benutserkonto mäd dän Noome „$1“ änthaalt do foulgjende Benutserkonten:',
+	'centralauth-attach-title'             => 'Benutserkonto bestäätigje',
 );
 
 $wgCentralAuthMessages['su'] = array(
