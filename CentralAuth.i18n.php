@@ -2026,6 +2026,9 @@ $wgCentralAuthMessages['stq'] = array(
 	'centralauth-list-attached-title'      => 'Touhoopefierde Benutserkonten',
 	'centralauth-list-attached'            => 'Do Benutserkonten mäd dän Noome „$1“ ap do foulgjende Projekte wäide automatisk touhoopefierd:',
 	'centralauth-list-unattached-title'    => 'Nit touhoopefierde Benutserkonten',
+	'centralauth-foreign-link'             => 'Benutser $1 ap $2',
+	'centralauth-finish-password'          => 'Paaswoud:',
+	'centralauth-finish-login'             => 'Anmäldenge',
 	'centralauth-attach-list-attached'     => 'Dät globoale Benutserkonto mäd dän Noome „$1“ änthaalt do foulgjende Benutserkonten:',
 	'centralauth-attach-title'             => 'Benutserkonto bestäätigje',
 );
