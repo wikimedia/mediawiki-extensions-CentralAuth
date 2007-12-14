@@ -2009,58 +2009,67 @@ $wgCentralAuthMessages['ro'] = array(
 	'centralauth-finish-password'          => 'Parolă:',
 );
 
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ */
 $wgCentralAuthMessages['stq'] = array(
 	'mergeaccount'                         => 'Stoatus fon ju Benutserkonten-Touhoopefierenge',
+	'centralauth-merge-notlogged'          => 'Jädden <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} mäldje die an], </span> uum tou wröigjen, of dien Benutserkonten fulboodich touhoopefierd wuuden.',
+	'centralauth-merge-welcome'            => "'''Dien Benutserkonto wuude noch nit in dät globoale Wikimedia-Anmälde-System uurfierd.'''
+In dän Fal du die foar ne Migration fon dien Benutserkonto äntschatst, wäd et die muugelk, die mäd n gemeensoamen Benutsernoome un Paaswoud in aal Wikimedia-Projekte in aal ferföigboare Sproaken antoumäldjen.
+Dit moaket ju Oarbaid in gemeensoam nutsede Projekte eenfacher, t.B. dät Hoochleeden fon Doatäie ätter [http://commons.wikimedia.org/ Wikimedia Commons] un fermit Fersjoon un Konflikte, do der äntstounde konnen, wan two Moanskene dän sälwen Benutsernoome in ferscheedene Projekte benutsje.
+
+Wan uurswäl din Benutsernoome al in n uur Projekt benutset, so be-ienfloudet et dissen nit, man du hääst ju Muugelkhaid, leeter mäd dissen uur Benutser of in Touhoopeoarbaid mäd n Administrator ätter ne Löösenge tou säiken.",
 	'centralauth-merge-step1-title'        => 'Ounfang fon ju Benutserkonten-Touhoopefierenge',
 	'centralauth-merge-step1-detail'       => 'Dien Paaswoud un dien iendraine E-Mail-Adresse wäd mäd Benutserkonten in do uur Wikis ouglieked, uum Uureenstämmengen tou fienden. Der wäide neen Annerengen foarnuumen, bit du bestäätigest, dät aal gjucht is.',
 	'centralauth-merge-step1-submit'       => 'Anmälde-Informatione bestäätigje',
 	'centralauth-merge-step2-title'        => 'Bestätigje moor Benutserkonten',
 	'centralauth-merge-step2-detail'       => 'Wäkke fon do Benutserkonten kuuden nit automatisk dien Heemat-Wiki toureekend wäide. Wan disse Konton die heere, koast du dät bestäätigje, deertruch dät du dät Paaswoud tou disse Konten ienrakst.',
+	'centralauth-merge-step2-submit'       => 'Anmälde-Informatione bestäätigje',
+	'centralauth-merge-step3-title'        => 'Moakje globoal Benutserkonto',
 	'centralauth-merge-step3-detail'       => 'Du koast nu n globoal Benutserkonto foar do foulgjende Wikis moakje.',
 	'centralauth-merge-step3-submit'       => 'Benutserkonten touhoopefiere',
+	'centralauth-complete'                 => 'Ju Touhoopefierenge fon do Benutserkonten is fulboodich.',
+	'centralauth-incomplete'               => 'Ju Touhoopefierenge fon do Benutserkonten is nit kompläit!',
+	'centralauth-complete-text'            => 'Du koast die nu ap älke Wikimedia-Websiede anmäldje sunner n näi Benutserkonto antoulääsen; diesälge Benutsernoome un dätsälge Paaswoud is foar Wikipedia, Wiktionary, Wikibooks un aal Susterprojekte in aal Sproaken gultich.',
 	'centralauth-incomplete-text'          => 'Sogau dien Benutserkonten touhoopefierd sunt, koast du die ap älke Wikimedia-Websiede anmäldje sunner n näi Benutserkonto antoulääsen; diesäalge Benutsernoome un dätsälge Paaswoud is foar Wikipedia, Wiktionary, Wikibooks un aal Susterprojekte gultich.',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Demonstrationsmodus</div><br clear=\'all\'/>',
+	'centralauth-not-owner-text'           => 'Die Benutsernoome „$1“ wuude automatisk dän Oaindummer fon dät Benutserkonto ap $2 touwiesd.
+
+Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten truch Iengoawe fon dät Haud-Paaswoud fon dit Benutserkonto be-eendje.',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Ju Benutserkonto-Touhoopefierenge befint sik apstuuns in n Demonstrations/Failersäik-Modus. Touhoopefierengs-Aktione sunt deaktivierd.',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Informatione uur ju \'\'\'Touhoopefierenge fon do Benutserkonten\'\'\']] …\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Informatione uur ju '''Touhoopefierenge fon do Benutserkonten''']] …''",
 	'centralauth-list-home-title'          => 'Heemat-Wiki',
+	'centralauth-list-home-dryrun'         => 'Dät Paaswoud un ju E-Mail-Adresse, do du in dissen Wiki iendrain hääst, wäd foar ju Touhoopefierenge fon do Benutserkonten ferwoand un ätter dien Benutsersiede wäide automatisk fon do uur Wikis Ferbiendengen moaked. Du koast leeter din Heemat-Wiki noch annerje.',
 	'centralauth-list-attached-title'      => 'Touhoopefierde Benutserkonten',
 	'centralauth-list-attached'            => 'Do Benutserkonten mäd dän Noome „$1“ ap do foulgjende Projekte wäide automatisk touhoopefierd:',
+	'centralauth-list-attached-dryrun'     => 'Do Benutserkonten mäd dän Noome „$1“ ap do foulgjende Projekte wäide automatisk touhoopefierd:',
 	'centralauth-list-unattached-title'    => 'Nit touhoopefierde Benutserkonten',
+	'centralauth-list-unattached'          => 'Dät Benutserkonto „$1“ kuude foar do foulgjende Projekte nit automatisk as tou die heerend bestäätiged wäide; fermoudelk häd dät n uur Paaswoud as dien primäre Benutserkonto:',
 	'centralauth-foreign-link'             => 'Benutser $1 ap $2',
+	'centralauth-finish-title'             => 'Touhoopefierenge kloor be-eendje',
+	'centralauth-finish-text'              => 'Wan disse Benutserkonten die heere, koast du hier dän Prozess fon ju Benutserkonten-Touhoopefierenge truch ju Iengoawe fon dät Paaswoud foar do uur Benutserkonten kloor be-eendje":',
 	'centralauth-finish-password'          => 'Paaswoud:',
 	'centralauth-finish-login'             => 'Anmäldenge',
+	'centralauth-finish-send-confirmation' => 'Paaswoud uur E-Mail touseende',
+	'centralauth-finish-problems'          => 'Hääst du Probleme of heere die disse uur Benutserkonten neit?
+[[meta:Help:Unified login problems|Hier finst du Hälpe]] ...',
+	'centralauth-merge-attempt'            => "'''Wröigje dät ienroate Paaswoud mäd do uurblieuwene Benutserkonten...'''",
 	'centralauth-attach-list-attached'     => 'Dät globoale Benutserkonto mäd dän Noome „$1“ änthaalt do foulgjende Benutserkonten:',
 	'centralauth-attach-title'             => 'Benutserkonto bestäätigje',
-);
+	'centralauth-attach-text'              => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd. 
+	Wan dät globoale Benutserkonto uk fon die is, koast du ju Touhoopefierenge moakje, truch dät du hier dät Paaswoud fon dät globoale Benutserkonto ienrakst:',
+	'centralauth-attach-success'           => 'Dät Benutserkonto wuude in dät globoale Benutserkonto integrierd.',
+	'centralauth-admin-none-selected'      => 'Der wuuden neen tou annerjende Benutserkonten uutwääld.',
+	'centralauth-prefs-status'             => 'Benutserkonten-Stoatus:',
+	'centralauth-prefs-not-managed'        => 'Der wäd neen touhoopefierd Benutserkonto bruukt.',
+	'centralauth-prefs-unattached'         => 'Nit bestäätiged',
+	'centralauth-prefs-complete'           => 'Kloor!',
+	'centralauth-prefs-migration'          => 'Touhoopefierenge in Oarbaid',
+	'centralauth-prefs-count-attached'     => 'Dien Benutserkonto is in $1 {{PLURAL:$1|Projekt|Projekte}} aktiv.',
+	'centralauth-prefs-count-unattached'   => 'Dät rakt in $1 {{PLURAL:$1|Projekt|Projekte}} uunbestäätigede Benutserkonten mäd din Noome.',
+	'centralauth-prefs-manage'             => 'Beoarbaidje dien touhoopefierd Benutserkonto',
 
-$wgCentralAuthMessages['su'] = array(
-	'mergeaccount'                         => 'Status ngahijikeun log asup',
-	'centralauth-merge-notlogged'          => 'Mangga <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} lebet log]</span> pikeun mariksa anggeus/henteuna rekening anjeun dihijieun.',
-	'centralauth-complete'                 => 'Ngahijikeun log asup geus réngsé!',
-	'centralauth-incomplete'               => 'Ngahijikeun log asup can anggeus!',
-	'centralauth-complete-text'            => 'Ayeuna anjeun bisa asup log ka loka wiki Wikimédia tanpa kudu nyieun rekening anyar; ladihan pamaké katut sandina bisa dipaké dina Wikipédia, Wikikamus, Wikipustaka, sarta proyék sawargina dina basa séjén.',
-	'centralauth-incomplete-text'          => 'Mun log asupna geus dihijikeun, anjeun bakal bisa asup log ka loka wiki Wikimédia mana waé tanpa kudu nyieun rekening anyar; landihan pamaké katut sandina bakal bisa dipaké dina Wikipédia, Wikikamus, Wikipustaka, sarta proyék sawargina dina basa séjén.',
-	'centralauth-not-owner-text'           => 'Landihan pamaké "$1" geus diajangkeun ka rekening di $2.
-
-Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku cara ngetikkeun sandi master pikeun éta rekening di dieu:',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Baca lengkepna ngeunaan \'\'\'log asup nu dihijikeun\'\'\']]...\'\'',
-	'centralauth-list-attached'              => 'Rekening nu ngaranna "$1" di loka di handap ieu geus sacara otomatis dihijikeun:',
-	'centralauth-list-unattached'            => 'Rekening "$1" teu bisa otomatis dikompirmasi milik anjeun di loka di handap ieu; sigana mah kusabab sandina béda jeung sandi dina rekening utama anjeun:',
-	'centralauth-foreign-link'             => 'Pamaké $1 di $2',
-	'centralauth-finish-title'             => 'Réngsé ngahijikeun',
-	'centralauth-finish-text'              => 'Mun rekening ieu bener boga anjeun, mangga réngsékeun prosés ngahijikeun log asup ku cara ngasupkeun sandi rekening lianna di dieu:',
-	'centralauth-finish-password'          => 'Sandi:',
-	'centralauth-finish-login'             => 'Asup log',
-	'centralauth-finish-send-confirmation' => 'Kirimkeun sandi kana surélék',
-	'centralauth-finish-problems'          => 'Aya masalah? Teu boga rekening lianna ieu? [[meta:Help:Unified login problems|Ménta pitulung]]...',
-	'centralauth-merge-attempt'            => '\'\'\'Ngakurkeun sandi nu disadiakeun jeung rekening nu can dihijikeun...\'\'\'',
-	'centralauth'                          => 'Administrasi log asup nu dihijikeun',
-	'centralauth-admin-manage'             => 'Kokolakeun data pamaké',
-	'centralauth-admin-username'           => 'Landihan pamaké:',
-	'centralauth-admin-lookup'             => 'Témbongkeun atawa robah data pamaké',
-	'centralauth-admin-permission'         => 'Nu bisa ngahijikeun rekening batur mah ngan steward.',
-	'centralauth-admin-unmerge'            => 'Pisahkeun nu dipilih',
-	'centralauth-admin-merge'              => 'Hijikeun nu dipilih',
 );
 
 $wgCentralAuthMessages['sv'] = array(
