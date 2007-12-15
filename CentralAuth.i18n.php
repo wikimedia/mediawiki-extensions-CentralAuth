@@ -2061,6 +2061,14 @@ Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten
 	Wan dät globoale Benutserkonto uk fon die is, koast du ju Touhoopefierenge moakje, truch dät du hier dät Paaswoud fon dät globoale Benutserkonto ienrakst:',
 	'centralauth-attach-submit'            => 'Benutserkonto integrierje',
 	'centralauth-attach-success'           => 'Dät Benutserkonto wuude in dät globoale Benutserkonto integrierd.',
+	'centralauth'                          => 'Ferwaltenge fon ju Benutserkonten-Touhoopefierenge.',
+	'centralauth-admin-manage'             => 'Benutserdoaten ferwaltje',
+	'centralauth-admin-username'           => 'Benutsernoome:',
+	'centralauth-admin-lookup'             => 'Benutserdoaten ankiekje of beoarbaidje',
+	'centralauth-admin-permission'         => 'Ju Touhoopefierenge fon Benutserkonten fon uur Benutsere kon bloot truch Stewarde geböäre.',
+	'centralauth-admin-unmerge'            => 'Uutwoalde Benutserkonten tränne',
+	'centralauth-admin-merge'              => 'Uutwoalde Benutserkonten touhoopefiere',
+	'centralauth-admin-bad-input'          => 'Uungultige Uutwoal',
 	'centralauth-admin-none-selected'      => 'Der wuuden neen tou annerjende Benutserkonten uutwääld.',
 	'centralauth-prefs-status'             => 'Benutserkonten-Stoatus:',
 	'centralauth-prefs-not-managed'        => 'Der wäd neen touhoopefierd Benutserkonto bruukt.',
@@ -2069,7 +2077,9 @@ Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten
 	'centralauth-prefs-migration'          => 'Touhoopefierenge in Oarbaid',
 	'centralauth-prefs-count-attached'     => 'Dien Benutserkonto is in $1 {{PLURAL:$1|Projekt|Projekte}} aktiv.',
 	'centralauth-prefs-count-unattached'   => 'Dät rakt in $1 {{PLURAL:$1|Projekt|Projekte}} uunbestäätigede Benutserkonten mäd din Noome.',
+	'centralauth-prefs-detail-unattached'  => 'Foar dit Projekt lait neen Bestäätigenge foar dät touhoopefierde Benutserkonto foar.',
 	'centralauth-prefs-manage'             => 'Beoarbaidje dien touhoopefierd Benutserkonto',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Benutser $1 kon nit lokoal uumebenaamd wäide, deer hie al in dät globoale Benutserkonten-System uurnuumen wuude.</div>',
 
 );
 
