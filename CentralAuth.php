@@ -38,13 +38,6 @@ $wgCentralAuthStrict = false;
  */
 $wgCentralAuthDryRun = false;
 
-$wgExtensionCredits['other'][] = array(
-	'name' => 'CentralAuth',
-	'version' => '0.2',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
-	'author' => 'Brion Vibber',
-	'description' => 'Allows global accounts shared between projects',
-);
 
 /**
  * Initialization of the autoloaders, and special extension pages.
@@ -91,14 +84,14 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	global $wgUser;
 	$skin = $wgUser->getSkin();
 	$special = SpecialPage::getTitleFor( 'MergeAccount' );
-
-
+	
+	
 	// Possible states:
 	// - account not merged at all
 	// - global accounts exists, but this local account is unattached
 	// - this local account is attached, but migration incomplete
 	// - all local accounts are attached
-
+	
 	$global = new CentralAuthUser( $wgUser->getName() );
 	if( $global->exists() ) {
 		if( $global->isAttached() ) {
@@ -128,7 +121,7 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 		// Not migrated.
 		$message = wfMsgHtml( 'centralauth-prefs-not-managed' );
 	}
-
+	
 	$manageLink = $skin->makeKnownLinkObj( $special,
 		wfMsgHtml( 'centralauth-prefs-manage' ) );
 	$html .= $prefsForm->tableRow(
@@ -158,7 +151,7 @@ function wfCentralAuthRenameUserAbort( $userId, $oldName, $newName ) {
 		$wgOut->addWikiText( wfMsg( 'centralauth-renameuser-abort', $oldName ) );
 		return false;
 	}
-
+	
 	// If no central record is present or this local account isn't attached,
 	// do as thou wilt.
 	return true;
@@ -169,12 +162,12 @@ function wfCentralAuthRenameUserAbort( $userId, $oldName, $newName ) {
  */
 function wfCentralAuthRenameUserComplete( $userId, $oldName, $newName ) {
 	global $wgDBname;
-
+	
 	$oldCentral = new CentralAuthUser( $oldName );
 	$oldCentral->removeLocalName( $wgDBname );
-
+	
 	$newCentral = new CentralAuthUser( $newName );
 	$newCentral->addLocalName( $wgDBname );
-
+	
 	return true;
 }
