@@ -1037,7 +1037,7 @@ $wgCentralAuthMessages['ja'] = array(
 	'centralauth-admin-username'           => '利用者名:',
 );
 
-$wgCentralAuthMessages['kk-kz'] = array(
+$wgCentralAuthMessages['kk-cyrl'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Тіркелгі бірегейлендіру күйі',
@@ -1123,7 +1123,7 @@ $wgCentralAuthMessages['kk-kz'] = array(
 		'Талғанғанды түйістіріле',
 );
 
-$wgCentralAuthMessages['kk-tr'] = array(
+$wgCentralAuthMessages['kk-latn'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Tirkelgi biregeýlendirw küýi',
@@ -1209,7 +1209,7 @@ $wgCentralAuthMessages['kk-tr'] = array(
 		'Talğanğandı tüýistirile',
 );
 
-$wgCentralAuthMessages['kk-cn'] = array(
+$wgCentralAuthMessages['kk-arab'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'تٸركەلگٸ بٸرەگەيلەندٸرۋ كٷيٸ',
@@ -1294,8 +1294,6 @@ $wgCentralAuthMessages['kk-cn'] = array(
 	'centralauth-admin-merge' =>
 		'تالعانعاندى تٷيٸستٸرٸلە',
 );
-
-$wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-kz'];
 
 $wgCentralAuthMessages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
@@ -2694,6 +2692,13 @@ $wgCentralAuthMessages['zh-tw'] = array(
 
 );
 
+# Kazakh fallback
+$wgCentralAuthMessages['kk-kz'] = $wgCentralAuthMessages['kk-cyrl'];
+$wgCentralAuthMessages['kk-tr'] = $wgCentralAuthMessages['kk-latn'];
+$wgCentralAuthMessages['kk-cn'] = $wgCentralAuthMessages['kk-arab'];
+$wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-cyrl'];
+
+# Chinese fallback
 $wgCentralAuthMessages['zh'] = $wgCentralAuthMessages['zh-hans'];
 $wgCentralAuthMessages['zh-cn'] = $wgCentralAuthMessages['zh-hans'];
 $wgCentralAuthMessages['zh-hk'] = $wgCentralAuthMessages['zh-hant'];
