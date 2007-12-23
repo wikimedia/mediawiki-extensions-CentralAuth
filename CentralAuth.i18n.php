@@ -1300,6 +1300,15 @@ $wgCentralAuthMessages['la'] = array(
 	'centralauth-admin-username'           => 'Nomen usoris:',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$wgCentralAuthMessages['lb'] = array(
+	'centralauth-finish-password' => 'Passwuert:',
+	'centralauth-admin-username'  => 'Benotzernumm:',
+	'centralauth-prefs-complete'  => 'Fäerdeg!',
+);
+
 $wgCentralAuthMessages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
