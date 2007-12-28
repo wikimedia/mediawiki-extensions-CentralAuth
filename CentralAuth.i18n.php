@@ -264,6 +264,17 @@ $wgCentralAuthMessages['bg'] = array(
 	'centralauth-admin-username'           => 'Потребителско име:',
 );
 
+/** Czech (Česky)
+ * @author Li-sung
+ */
+$wgCentralAuthMessages['cs'] = array(
+	'mergeaccount'                   => 'Stav sjednocení přihlašování',
+	'centralauth-merge-notlogged'    => 'Pokud se <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
+	'centralauth-merge-step1-title'  => 'Začít sjednocovat přihlašování',
+	'centralauth-merge-step1-detail' => 'Bude porovnáno zda souhlasí Vaše heslo a registrovaný e-mail s účty na jiných wiki. Žádné změny nebudou provedeny dokud nepotvrdíte, že je vše v pořádku.',
+	'centralauth-finish-password'    => 'Heslo:',
+);
+
 $wgCentralAuthMessages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
