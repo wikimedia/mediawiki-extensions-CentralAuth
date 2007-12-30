@@ -1315,7 +1315,9 @@ $wgCentralAuthMessages['la'] = array(
  * @author Robby
  */
 $wgCentralAuthMessages['lb'] = array(
+	'centralauth-list-home-title' => 'Heemechts-Wiki',
 	'centralauth-finish-password' => 'Passwuert:',
+	'centralauth-admin-manage'    => 'Benotzerdate verwalten',
 	'centralauth-admin-username'  => 'Benotzernumm:',
 	'centralauth-prefs-complete'  => 'Fäerdeg!',
 );
