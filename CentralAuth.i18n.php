@@ -1315,11 +1315,15 @@ $wgCentralAuthMessages['la'] = array(
  * @author Robby
  */
 $wgCentralAuthMessages['lb'] = array(
-	'centralauth-list-home-title' => 'Heemechts-Wiki',
-	'centralauth-finish-password' => 'Passwuert:',
-	'centralauth-admin-manage'    => 'Benotzerdate verwalten',
-	'centralauth-admin-username'  => 'Benotzernumm:',
-	'centralauth-prefs-complete'  => 'Fäerdeg!',
+	'centralauth-list-home-title'          => 'Heemechts-Wiki',
+	'centralauth-finish-password'          => 'Passwuert:',
+	'centralauth-finish-login'             => 'Umeldung',
+	'centralauth-finish-send-confirmation' => 'Passwuert per E-mail zouschécken',
+	'centralauth-admin-manage'             => 'Benotzerdate verwalten',
+	'centralauth-admin-username'           => 'Benotzernumm:',
+	'centralauth-admin-permission'         => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
+	'centralauth-prefs-complete'           => 'Fäerdeg!',
+	'centralauth-prefs-count-attached'     => 'Äre Benotzerkont ass op $1 {{PLURAL:$1|Projet|Projetën}} aktiv.',
 );
 
 $wgCentralAuthMessages['nl'] = array(
