@@ -450,6 +450,24 @@ $wgCentralAuthMessages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
 
+/** Finnish (Suomi)
+ * @author Cimon Avaro
+ */
+$wgCentralAuthMessages['fi'] = array(
+	'centralauth-merge-step1-submit'       => 'Vahvista sisäänkirjautumistiedot',
+	'centralauth-merge-step2-submit'       => 'Vahvista sisäänkirjautumistiedot',
+	'centralauth-merge-step3-title'        => 'Luo yhdistetty käyttäjätunnus',
+	'centralauth-merge-step3-detail'       => 'Olet nyt valmis luomaan yhdistetyn käyttäjätunnuksesi, johon on tehty kytkökset seuraavista wikeistä:',
+	'centralauth-complete'                 => 'Käyttäjätunnusten yhdistäminen valmis!',
+	'centralauth-complete-text'            => 'Voit nyt kirjautua mihin tahansa Wikimedian wiki sivustoon luomatta uutta käyttäjätunnusta; samaa käyttäjänimeä ja salasanaa voi käyttää Wikipediassa, Wikikirjastossa, Wikisanakirjassa ja niiden kaikissa sisarhankkeissa kaikilla kielillä.',
+	'centralauth-finish-title'             => 'Suorita yhdistäminen',
+	'centralauth-finish-text'              => 'Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla yksinkertaisesti näiden toisten käyttäjätunnusten salasanat tässä:',
+	'centralauth-finish-password'          => 'Salasana:',
+	'centralauth-finish-login'             => 'Kirjaudu sisään',
+	'centralauth-finish-send-confirmation' => 'Lähetä salasana sähköpostitse',
+	'centralauth-attach-title'             => 'Vahvista käyttäjätunnus',
+);
+
 $wgCentralAuthMessages['fr'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptes utilisateur',
 	'centralauth-merge-notlogged'          => 'Merci de bien vouloir <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]</span> pour vérifier si vos comptes ont bien été fusionnés.',
