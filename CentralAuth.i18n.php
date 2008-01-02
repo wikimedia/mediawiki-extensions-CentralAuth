@@ -456,17 +456,18 @@ $wgCentralAuthMessages['ext'] = array(
 
 /** Finnish (Suomi)
  * @author Cimon Avaro
+ * @author Nike
  */
 $wgCentralAuthMessages['fi'] = array(
 	'centralauth-merge-step1-submit'       => 'Vahvista sisäänkirjautumistiedot',
 	'centralauth-merge-step2-submit'       => 'Vahvista sisäänkirjautumistiedot',
 	'centralauth-merge-step3-title'        => 'Luo yhdistetty käyttäjätunnus',
 	'centralauth-merge-step3-detail'       => 'Olet nyt valmis luomaan yhdistetyn käyttäjätunnuksesi, johon on tehty kytkökset seuraavista wikeistä:',
-	'centralauth-complete'                 => 'Käyttäjätunnusten yhdistäminen valmis!',
-	'centralauth-complete-text'            => 'Voit nyt kirjautua mihin tahansa Wikimedian wiki sivustoon luomatta uutta käyttäjätunnusta; samaa käyttäjänimeä ja salasanaa voi käyttää Wikipediassa, Wikikirjastossa, Wikisanakirjassa ja niiden kaikissa sisarhankkeissa kaikilla kielillä.',
+	'centralauth-complete'                 => 'Käyttäjätunnusten yhdistäminen on valmis.',
+	'centralauth-complete-text'            => 'Voit nyt kirjautua mihin tahansa Wikimedian wikiprojektiin luomatta uutta käyttäjätunnusta – samaa käyttäjänimeä ja salasanaa voi käyttää Wikipediassa, Wikikirjastossa, Wikisanakirjassa ja niiden kaikissa sisarhankkeissa kaikilla kielillä.',
 	'centralauth-finish-title'             => 'Suorita yhdistäminen',
-	'centralauth-finish-text'              => 'Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla yksinkertaisesti näiden toisten käyttäjätunnusten salasanat tässä:',
-	'centralauth-finish-password'          => 'Salasana:',
+	'centralauth-finish-text'              => 'Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla toisten käyttäjätunnusten salasanat:',
+	'centralauth-finish-password'          => 'Salasana',
 	'centralauth-finish-login'             => 'Kirjaudu sisään',
 	'centralauth-finish-send-confirmation' => 'Lähetä salasana sähköpostitse',
 	'centralauth-attach-title'             => 'Vahvista käyttäjätunnus',
