@@ -258,10 +258,14 @@ $wgCentralAuthMessages['ar'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">لا يمكن إعادة تسمية المستخدم $1 محليا حيث أن اسم المستخدم هذا تم نقله إلى نظام الدخول الموحد.</div>',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
 $wgCentralAuthMessages['bg'] = array(
-	'centralauth-finish-password'          => 'Парола:',
-	'centralauth-finish-login'             => 'Влизане',
-	'centralauth-admin-username'           => 'Потребителско име:',
+	'centralauth-notice-dryrun'   => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
+	'centralauth-finish-password' => 'Парола:',
+	'centralauth-finish-login'    => 'Влизане',
+	'centralauth-admin-username'  => 'Потребителско име:',
 );
 
 /** Czech (Česky)
