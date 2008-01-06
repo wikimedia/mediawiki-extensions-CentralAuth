@@ -268,6 +268,13 @@ $wgCentralAuthMessages['bg'] = array(
 	'centralauth-admin-username'  => 'Потребителско име:',
 );
 
+/** Catalan (Català)
+ * @author Juanpabl
+ */
+$wgCentralAuthMessages['ca'] = array(
+	'mergeaccount' => "Estau d'a fusión de cuentas d'usuario",
+);
+
 /** Czech (Česky)
  * @author Li-sung
  */
@@ -917,25 +924,28 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 
 /** Hungarian (Magyar)
  * @author Bdanee
+ * @author KossuthRad
  */
 $wgCentralAuthMessages['hu'] = array(
-	'mergeaccount'                   => 'Felhasználói fiókok egyesítésének állapota',
-	'centralauth-merge-notlogged'    => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Jelentkezz be]</span>, hogy ellenőrízhessük, a felhasználói fiókjaid egyesítve vannak-e.',
-	'centralauth-merge-step1-title'  => 'Bejeletkezés egységesítésének megkezdése',
-	'centralauth-merge-step1-detail' => 'A jelszavad és a regisztrált e-mail címed ellenőrízve lesz a többi wikin található felhasználói fiókokon, hogy megerősítsük, egyeznek. Nem történik változás, míg meg nem erősíted, hogy a dolgok rendben vannak.',
-	'centralauth-merge-step1-submit' => 'Bejelentkezési információ megerősítése',
-	'centralauth-merge-step2-title'  => 'Több fiók megerősítése',
-	'centralauth-merge-step2-detail' => 'A fiókok némelyikét nem sikerült automatikusan a megadott wikihez illeszteni. Ha hozzád tartoznak, megerősítheted, hogy a tieid, azzal, hogy megadod a jelszavukat.',
-	'centralauth-merge-step2-submit' => 'Bejelentkezési információ megerősítése',
-	'centralauth-merge-step3-title'  => 'Egységesített felhasználói fiók készítése',
-	'centralauth-merge-step3-detail' => 'Most már készen állsz az egységesített felhasználói fiók elkészítésére, a következő wikikre:',
-	'centralauth-merge-step3-submit' => 'Felhasználói fiókok egységesítése',
-	'centralauth-complete'           => 'Bejelentkezés egységesítése kész!',
-	'centralauth-incomplete'         => 'Bejelentkezés egységesítése nincs kész!',
-	'centralauth-foreign-link'       => '$1 szerkesztő, itt: $2',
-	'centralauth-finish-title'       => 'Egyesítés befejezése',
-	'centralauth-finish-password'    => 'Jelszó:',
-	'centralauth-finish-login'       => 'Bejelentkezés',
+	'mergeaccount'                         => 'Felhasználói fiókok egyesítésének állapota',
+	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Jelentkezz be]</span>, hogy ellenőrizhessük, a felhasználói fiókjaid egyesítve vannak-e.',
+	'centralauth-merge-step1-title'        => 'Bejeletkezés egységesítésének megkezdése',
+	'centralauth-merge-step1-detail'       => 'A jelszavad és a regisztrált e-mail címed ellenőrizve lesz a többi wikin található felhasználói fiókokon, hogy megerősítsük, egyeznek. Nem történik változás, míg meg nem erősíted, hogy a dolgok rendben vannak.',
+	'centralauth-merge-step1-submit'       => 'Bejelentkezési információ megerősítése',
+	'centralauth-merge-step2-title'        => 'Több fiók megerősítése',
+	'centralauth-merge-step2-detail'       => 'A fiókok némelyikét nem sikerült automatikusan a megadott wikihez illeszteni. Ha hozzád tartoznak, megerősítheted, hogy a tieid, azzal, hogy megadod a jelszavukat.',
+	'centralauth-merge-step2-submit'       => 'Bejelentkezési információ megerősítése',
+	'centralauth-merge-step3-title'        => 'Egységesített felhasználói fiók készítése',
+	'centralauth-merge-step3-detail'       => 'Most már készen állsz az egységesített felhasználói fiók elkészítésére, a következő wikikre:',
+	'centralauth-merge-step3-submit'       => 'Felhasználói fiókok egységesítése',
+	'centralauth-complete'                 => 'Bejelentkezés egységesítése kész!',
+	'centralauth-incomplete'               => 'Bejelentkezés egységesítése nincs kész!',
+	'centralauth-foreign-link'             => '$1 szerkesztő, itt: $2',
+	'centralauth-finish-title'             => 'Egyesítés befejezése',
+	'centralauth-finish-password'          => 'Jelszó:',
+	'centralauth-finish-login'             => 'Bejelentkezés',
+	'centralauth-finish-send-confirmation' => 'E-mail jelszó',
+	'centralauth-admin-username'           => 'Felhasználói név:',
 );
 
 $wgCentralAuthMessages['id'] = array(
@@ -1375,6 +1385,17 @@ $wgCentralAuthMessages['lb'] = array(
 	'centralauth-admin-permission'         => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
 	'centralauth-prefs-complete'           => 'Fäerdeg!',
 	'centralauth-prefs-count-attached'     => 'Äre Benotzerkont ass op $1 {{PLURAL:$1|Projet|Projetën}} aktiv.',
+);
+
+/** Limburgish (Limburgs)
+ * @author Ooswesthoesbes
+ */
+$wgCentralAuthMessages['li'] = array(
+	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
+	'centralauth-finish-password'          => 'Wachwaord:',
+	'centralauth-finish-login'             => 'Gebroekersnaam',
+	'centralauth-finish-send-confirmation' => 'E-mail wachwaord',
+	'centralauth-admin-username'           => 'Gebroekersnaam:',
 );
 
 /** Low German (Plattdüütsch)
