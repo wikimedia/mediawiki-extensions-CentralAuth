@@ -945,14 +945,14 @@ $wgCentralAuthMessages['hu'] = array(
 	'centralauth-finish-password'          => 'Jelszó:',
 	'centralauth-finish-login'             => 'Bejelentkezés',
 	'centralauth-finish-send-confirmation' => 'E-mail jelszó',
-	'centralauth-attach-title'             => 'Jelentés megerősítése',
-	'centralauth-admin-manage'             => 'User adat intézése',
+	'centralauth-attach-title'             => 'Felhasználói fiók megerősítése',
+	'centralauth-admin-manage'             => 'Felhasználói adatok beállítása',
 	'centralauth-admin-username'           => 'Felhasználói név:',
-	'centralauth-admin-lookup'             => 'User adat megtekintése vagy szerkesztése',
-	'centralauth-prefs-status'             => 'Globális jelentési státusz:',
-	'centralauth-prefs-unattached'         => 'Jóváhagyatlan',
+	'centralauth-admin-lookup'             => 'Felhasználói adatok megtekintése vagy szerkesztése',
+	'centralauth-prefs-status'             => 'Globális felhasználói fiók állapota:',
+	'centralauth-prefs-unattached'         => 'Nincs megerősítve',
 	'centralauth-prefs-complete'           => 'Minden rendben!',
-	'centralauth-prefs-manage'             => 'Teljes jelentést írni',
+	'centralauth-prefs-manage'             => 'Globális felhasználói fiók beállítása',
 );
 
 $wgCentralAuthMessages['id'] = array(
