@@ -945,7 +945,14 @@ $wgCentralAuthMessages['hu'] = array(
 	'centralauth-finish-password'          => 'Jelszó:',
 	'centralauth-finish-login'             => 'Bejelentkezés',
 	'centralauth-finish-send-confirmation' => 'E-mail jelszó',
+	'centralauth-attach-title'             => 'Jelentés megerősítése',
+	'centralauth-admin-manage'             => 'User adat intézése',
 	'centralauth-admin-username'           => 'Felhasználói név:',
+	'centralauth-admin-lookup'             => 'User adat megtekintése vagy szerkesztése',
+	'centralauth-prefs-status'             => 'Globális jelentési státusz:',
+	'centralauth-prefs-unattached'         => 'Jóváhagyatlan',
+	'centralauth-prefs-complete'           => 'Minden rendben!',
+	'centralauth-prefs-manage'             => 'Teljes jelentést írni',
 );
 
 $wgCentralAuthMessages['id'] = array(
