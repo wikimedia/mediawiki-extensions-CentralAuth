@@ -2291,6 +2291,14 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Det går inte att döpa om användare $1 lokalt eftersom användarnamnet har anslutits till det förenade inloggningssystemet.</div>',
 );
 
+/** Volapük (Volapük)
+ * @author Malafaya
+ */
+$wgCentralAuthMessages['vo'] = array(
+	'centralauth-finish-password' => 'Letavöd:',
+	'centralauth-admin-username'  => 'Gebananem:',
+);
+
 $wgCentralAuthMessages['yue'] = array(
 	// When not logged in...
 	'mergeaccount' =>
