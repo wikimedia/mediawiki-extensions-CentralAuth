@@ -1367,6 +1367,11 @@ $wgCentralAuthMessages['kk-arab'] = array(
 		'تالعانعاندى تٷيٸستٸرٸلە',
 );
 
+$wgCentralAuthMessages['kk-kz'] = $wgCentralAuthMessages['kk-cyrl'];
+$wgCentralAuthMessages['kk-tr'] = $wgCentralAuthMessages['kk-latn'];
+$wgCentralAuthMessages['kk-cn'] = $wgCentralAuthMessages['kk-arab'];
+$wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-cyrl'];
+·
 $wgCentralAuthMessages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
 	'centralauth-admin-username'           => 'Nomen usoris:',
@@ -2817,12 +2822,6 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		'這個計畫網站還未確認到全域帳戶。',
 
 );
-
-# Kazakh fallback
-$wgCentralAuthMessages['kk-kz'] = $wgCentralAuthMessages['kk-cyrl'];
-$wgCentralAuthMessages['kk-tr'] = $wgCentralAuthMessages['kk-latn'];
-$wgCentralAuthMessages['kk-cn'] = $wgCentralAuthMessages['kk-arab'];
-$wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-cyrl'];
 
 # Chinese fallback
 $wgCentralAuthMessages['zh'] = $wgCentralAuthMessages['zh-hans'];
