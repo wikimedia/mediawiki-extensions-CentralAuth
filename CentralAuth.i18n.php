@@ -21,12 +21,12 @@ $wgCentralAuthMessages['en'] = array(
 		"This makes it easier to work with shared projects such as uploading to " .
 		"[http://commons.wikimedia.org/ Wikimedia Commons], and avoids the " .
 		"confusion or conflict that could result from two people picking the same " .
-		"username on different projects.\n" . 
+		"username on different projects.\n" .
 		"\n" .
 		"If someone else has already taken your username on another site " .
 		"this won't disturb them, but it will give you a chance to work out " .
 		"with them or an administrator later.",
-	
+
 	'centralauth-merge-step1-title' => 'Begin login unification',
 	'centralauth-merge-step1-detail' =>
 		'Your password and registered e-mail address will be checked against ' .
@@ -42,7 +42,7 @@ $wgCentralAuthMessages['en'] = array(
 		"by providing the password for them.\n",
 	'centralauth-merge-step2-submit' =>
 		'Confirm login information',
-	
+
 	'centralauth-merge-step3-title' => 'Create unified account',
 	'centralauth-merge-step3-detail' =>
 		"You're ready to create your unified account, with the following wikis attached:",
@@ -73,10 +73,10 @@ $wgCentralAuthMessages['en'] = array(
 		"\n" .
 		"If this is you, you can finish the login unification process " .
 		"simply by typing the master password for that account here:",
-		
+
 	'centralauth-notice-dryrun' =>
 		"<div class='successbox'>Demo mode only</div><br clear='all'/>",
-	
+
 	'centralauth-disabled-dryrun' =>
 		"Account unification is currently in a demo / debugging mode, " .
 		"so actual merging operations are disabled. Sorry!",
@@ -175,13 +175,13 @@ $wgCentralAuthMessages['en'] = array(
 		'This project site has not been confirmed as belonging to the global account.',
 	'centralauth-prefs-manage' =>
 		'Manage your global account',
-	
+
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' =>
 		"<div class=\"errorbox\">" .
 		"Cannot rename user $1 locally as this username has been migrated to the " .
 		"unified login system.</div>",
-	
+
 );
 
 $wgCentralAuthMessages['ang'] = array(
@@ -303,12 +303,12 @@ $wgCentralAuthMessages['de'] = array(
 		"verfügbaren Sprachen anzumelden.\n" .
 		"Dies macht die Arbeit in gemeinsam genutztzen Projekten einfacher, z.B. das Hochladen von Dateien nach " .
 		"[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte," .
-		"die entstehen können, wenn zwei Menschen den selben Benutzernamen in verschiedenen Projekten benutzen.\n" . 
+		"die entstehen können, wenn zwei Menschen den selben Benutzernamen in verschiedenen Projekten benutzen.\n" .
 		"\n" .
 		"Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, " .
 		"so beeinträchtigt es diesen nicht, aber du hast du Möglichkeit, " .
 		"später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
-	
+
 	'centralauth-merge-step1-title' => 'Beginn der Benutzerkonten-Zusammenführung',
 	'centralauth-merge-step1-detail' =>
 		'Dein Passwort und deine eingetragene E-Mail-Adresse wird mit ' .
@@ -410,7 +410,7 @@ $wgCentralAuthMessages['de'] = array(
 	# When unattached, offer to attach...
 	'centralauth-attach-list-attached'     => 'Das globale Benutzerkonto mit dem Namen „$1“ beinhaltet die folgenden Benutzerkonten:',
 	'centralauth-attach-title'             => 'Benutzerkonto bestätigen',
-	'centralauth-attach-text'              => 'Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert. 
+	'centralauth-attach-text'              => 'Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.
 	Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passowrt des globalen Benutzerkontos eingibts:',
 	'centralauth-attach-submit'            => 'Benutzerkonto integrieren',
 	'centralauth-attach-success'           => 'Das Benutzerkonto wurde in das globale Benutzerkonto integriert.',
@@ -1378,7 +1378,7 @@ $wgCentralAuthMessages['kk-kz'] = $wgCentralAuthMessages['kk-cyrl'];
 $wgCentralAuthMessages['kk-tr'] = $wgCentralAuthMessages['kk-latn'];
 $wgCentralAuthMessages['kk-cn'] = $wgCentralAuthMessages['kk-arab'];
 $wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-cyrl'];
-·
+
 $wgCentralAuthMessages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
 	'centralauth-admin-username'           => 'Nomen usoris:',
@@ -2165,7 +2165,7 @@ Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten
 	'centralauth-merge-attempt'            => "'''Wröigje dät ienroate Paaswoud mäd do uurblieuwene Benutserkonten...'''",
 	'centralauth-attach-list-attached'     => 'Dät globoale Benutserkonto mäd dän Noome „$1“ änthaalt do foulgjende Benutserkonten:',
 	'centralauth-attach-title'             => 'Benutserkonto bestäätigje',
-	'centralauth-attach-text'              => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd. 
+	'centralauth-attach-text'              => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd.
 	Wan dät globoale Benutserkonto uk fon die is, koast du ju Touhoopefierenge moakje, truch dät du hier dät Paaswoud fon dät globoale Benutserkonto ienrakst:',
 	'centralauth-attach-submit'            => 'Benutserkonto integrierje',
 	'centralauth-attach-success'           => 'Dät Benutserkonto wuude in dät globoale Benutserkonto integrierd.',
@@ -2306,7 +2306,7 @@ $wgCentralAuthMessages['yue'] = array(
 		"噉你就可以用同一個用戶名同密碼去登入全部Wikimedia中全部語言嘅計劃\n" .
 		"噉樣做，可以更加容易噉響一啲共用嘅計劃度進行一啲工作，好似" .
 		"[http://commons.wikimedia.org/ Wikimedia Commons]，" .
-		"同埋避免用戶名混淆同相撞，以致響唔同嘅計劃度，兩位人揀咗同一個用戶名。\n" . 
+		"同埋避免用戶名混淆同相撞，以致響唔同嘅計劃度，兩位人揀咗同一個用戶名。\n" .
 		"\n" .
 		"如果有另一啲人已經響另一個網站度揀咗你個用戶名嘅話，係唔會擾亂佢哋，" .
 		"但係佢會畀你一個機會，稍後同佢地或者同管理員去處理。",
@@ -2358,7 +2358,7 @@ $wgCentralAuthMessages['yue'] = array(
 
 	'centralauth-notice-dryrun' =>
 		"<div class='successbox'>只係示範模式</div><br clear='all'/>",
-	
+
 	'centralauth-disabled-dryrun' =>
 		"戶口統一而家係響示範／除錯模式，" .
 		"噉實際嘅合併動作已經停用。對唔住！",
@@ -2450,7 +2450,7 @@ $wgCentralAuthMessages['yue'] = array(
 		'呢個計劃網站重未確認到個全域戶口。',
 	'centralauth-prefs-manage' =>
 		'管理你個全域戶口',
-	
+
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' =>
 		"<div class=\"errorbox\">" .
@@ -2473,7 +2473,7 @@ $wgCentralAuthMessages['zh-hans'] = array(
 		"那您就可以使用同一个用户名跟密码去登录所有维基媒体中所有语言的计划\n" .
 		"这样做，可以更加容易地在一些共用的计划中进行一些工作，好像" .
 		"[http://commons.wikimedia.org/ 维基共享资源]，" .
-		"以及避免用户名混淆和相撞，以致在不同的计划中，两位人选择同一个用户名。\n" . 
+		"以及避免用户名混淆和相撞，以致在不同的计划中，两位人选择同一个用户名。\n" .
 		"\n" .
 		"如果有另一些人已经在另一个网站中选择了您的用户名，是不会扰乱他们的，" .
 		"但是它会给予您一个机会，稍后跟他们或者管理员去处理。",
@@ -2525,11 +2525,11 @@ $wgCentralAuthMessages['zh-hans'] = array(
 
 	'centralauth-notice-dryrun' =>
 		"<div class='successbox'>只是演示方式</div><br clear='all'/>",
-	
+
 	'centralauth-disabled-dryrun' =>
 		"账户统一现正于演示／除错方式，" .
 		"那实际的合并动作已经禁用。抱歉！",
-	
+
 	// Appended to various messages above
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|参阅关于'''登录统一'''的帮助文件]]...''",
@@ -2617,12 +2617,12 @@ $wgCentralAuthMessages['zh-hans'] = array(
 		'这个计划网站还未确认到全域账户。',
 	'centralauth-prefs-manage' =>
 		'管理您的全域账户',
-	
+
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' =>
 		"<div class=\"errorbox\">" .
 		"由于这个用户名已经迁移到统一登入系统，因此不能在本地中更改$1作为这个用户名。</div>",
-		
+
 );
 
 $wgCentralAuthMessages['zh-hant'] = array(
@@ -2640,7 +2640,7 @@ $wgCentralAuthMessages['zh-hant'] = array(
 		"那您就可以使用同一個用戶名跟密碼去登入所有維基媒體中所有語言的計劃\n" .
 		"這樣做，可以更加容易地在一些共用的計劃中進行一些工作，好像" .
 		"[http://commons.wikimedia.org/ 維基共享資源]，" .
-		"以及避免用戶名混淆和相撞，以致在不同的計劃中，兩位人選擇同一個用戶名。\n" . 
+		"以及避免用戶名混淆和相撞，以致在不同的計劃中，兩位人選擇同一個用戶名。\n" .
 		"\n" .
 		"如果有另一些人已經在另一個網站中選擇了您的用戶名，是不會擾亂他們的，" .
 		"但是它會給予您一個機會，稍後跟他們或者管理員去處理。",
@@ -2692,7 +2692,7 @@ $wgCentralAuthMessages['zh-hant'] = array(
 
 	'centralauth-notice-dryrun' =>
 		"<div class='successbox'>只是示範模式</div><br clear='all'/>",
-	
+
 	'centralauth-disabled-dryrun' =>
 		"帳戶整合現在於示範／除錯模式，" .
 		"那實際的整合動作已經停用。抱歉！",
@@ -2784,7 +2784,7 @@ $wgCentralAuthMessages['zh-hant'] = array(
 		'這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage' =>
 		'管理您的全域帳戶',
-	
+
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' =>
 		"<div class=\"errorbox\">" .
@@ -2802,7 +2802,7 @@ $wgCentralAuthMessages['zh-tw'] = array(
 		"那您就可以使用同一個用戶名跟密碼去登入所有維基媒體中所有語言的計畫\n" .
 		"這樣做，可以更加容易地在一些共用的計畫中進行一些工作，好像" .
 		"[http://commons.wikimedia.org/ 維基共享資源]，" .
-		"以及避免用戶名混淆和相撞，以致在不同的計畫中，兩位人選擇同一個用戶名。\n" . 
+		"以及避免用戶名混淆和相撞，以致在不同的計畫中，兩位人選擇同一個用戶名。\n" .
 		"\n" .
 		"如果有另一些人已經在另一個網站中選擇了您的用戶名，是不會擾亂他們的，" .
 		"但是它會給予您一個機會，稍後跟他們或者管理員去處理。",
