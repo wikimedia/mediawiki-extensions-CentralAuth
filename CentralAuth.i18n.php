@@ -619,15 +619,18 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossible de renommer le compte utilisateur $1 localement : cet utilisateur a maintenant un compte unique.</div>',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
 $messages['frp'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptos utilisator',
 	'centralauth-merge-notlogged'          => 'Marci de franc volêr vos <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
-	'centralauth-merge-welcome'            => '\'\'\'Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.\'\'\'
+	'centralauth-merge-welcome'            => "'''Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.'''
 
 Se vos chouèsésséd/cièrde de fâre migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa sur tôs los projèts Wikimedia dens totes les lengoues.
 D’ense, lo travâly entèrprojèts serat facilitâ coment, per ègzemplo, l’impôrt d’émâges dessus [http://commons.wikimedia.org/ Wikimedia Commons] ; cen èviterat asse-ben la confusion arrevent quand doves gens utilisont lo mémo nom d’utilisator sur doux projèts difèrents.
 
-Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y avêr de problèmo. S’una ôtra pèrsona at lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.',
+Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y avêr de problèmo. S’una ôtra pèrsona at lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.",
 	'centralauth-merge-step1-title'        => 'Comenciér lo procès de fusion des comptos',
 	'centralauth-merge-step1-detail'       => 'Nos alens comparar voutra adrèce de mèl et voutron mot de pâssa avouéc celos des comptos homonimos sur los ôtros vouiquis, et controlar que corrèspondont. Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd.',
 	'centralauth-merge-step1-submit'       => 'Confirmar les enformacions',
@@ -644,9 +647,9 @@ Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y
 	'centralauth-not-owner-text'           => 'Lo compto utilisator « $1 » at étâ ôtomaticament assignê u propriètèro du compto dessus $2.
 
 S’o est vos, vos porréd chavonar lo procès de fusion des comptos en tapent lo mot de pâssa mêtre por cél compto dessus :',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Môdo de dèmonstracion solament</div><br clear=\'all\'/>',
-	'centralauth-disabled-dryrun'          => 'La fusion des comptos est ora en môdo de dèmonstracion ou d’èprôva, on pôt vêr p’oncor verément fusionar de comptos. Dèsolâ !',
-	'centralauth-readmore-text'            => ':\'\'[[w:frp:Vouiquipèdia:Login unico|Nen savêr més sur lo \'\'\'compto unico\'\'\']]\'\'',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Môdo de dèmonstracion solament</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'La fusion des comptos est ora en môdo de dèmonstracion ou d’èprôva, pôvont vêr p’oncor verément fusionar de comptos. Dèsolâ !',
+	'centralauth-readmore-text'            => ":''[[w:frp:Vouiquipèdia:Login unico|Nen savêr de ples sur lo '''compto unico''']]...''",
 	'centralauth-list-home-title'          => 'Projèt principâl',
 	'centralauth-list-home-dryrun'         => 'Lo mot de pâssa et l’adrèce de mèl du projèt principâl ce-desot seront utilisâs por voutron compto unico, et voutra pâge utilisator sur lo projèt principâl serat ôtomaticament liyê dês los ôtros projèts. Vos porréd modifiar voutron projèt principâl ples târd.',
 	'centralauth-list-attached-title'      => 'Comptos apondus',
@@ -660,8 +663,8 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en tapent l
 	'centralauth-finish-password'          => 'Mot de pâssa :',
 	'centralauth-finish-login'             => 'Compto utilisator :',
 	'centralauth-finish-send-confirmation' => 'Emmandar lo mot de pâssa per mèl',
-	'centralauth-finish-problems'          => 'En câs de problèmo ou ben se vos possèdâd pas cetos ôtros comptos, vêde [[meta:Help:Unified login problems|<span title="« Help:Unified login problems » : pâge en anglès" style="text-decoration:none">Problèmos</span>]]...',
-	'centralauth-merge-attempt'            => '\'\'\'Contrôlo du mot de pâssa forni por los comptos pas rapondus...\'\'\'',
+	'centralauth-finish-problems'          => 'En câs de problèmo ou ben se vos avéd pas cetos ôtros comptos, vêde [[meta:Help:Unified login problems|<span title="« Help:Unified login problems » : pâge en anglès" style="text-decoration:none">Problèmos</span>]]...',
+	'centralauth-merge-attempt'            => "'''Contrôlo du mot de pâssa forni por los comptos pas rapondus...'''",
 	'centralauth-attach-list-attached'     => 'Lo compto unico apelâ « $1 » encllut los comptos siuvents :',
 	'centralauth-attach-title'             => 'Confirmar lo compto',
 	'centralauth-attach-text'              => 'Ceti compto at p’oncor étâ migrâ en un compto unico. Se lo compto unico est asse-ben a vos, vos pouede fusionar ceti compto se vos tapâd lo mot de pâssa du compto unico :',
@@ -1692,48 +1695,75 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 );
 
 /** Polish (Polski)
- * @author Derbeth
  * @author Sp5uhe
+ * @author Derbeth
  */
 $messages['pl'] = array(
-	'mergeaccount'                         => 'Stan unifikacji loginu',
-	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy twoje konta zostały w pełni połączone.',
-	'centralauth-merge-welcome'            => "'''Twoje konto użytkownika nie zostało jeszcze przeniesione do ujednoliconego systemu logowania Wikimedia.''' Jeśli wybierzesz przeniesienie twoich kont, będziesz mógł (mogła) używać tej samej nazwy użytkownika i hasła by logować się do wszystkich projektów Wikimedia we wszystkich językach. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub konfliktów, które powstają, gdy dwóch ludzi wybiera tę samą nazwę użytkownika na różnych projektach. Jeśli ktoś inny przyjął już twoją nazwę użytkownika n innym projekcie, ten proces nie przeszkodzi mu, ale da ci szansę na późniejsze rozwiązanie sprawy z tą osobą lub administratorem.",
-	'centralauth-merge-step1-title'        => 'Zacznij unifikację loginów',
-	'centralauth-merge-step1-detail'       => 'Twoje hasło i zarejestrowany adres e-mail zostaną porównane z kontami na innych wiki, aby potwierdzić, że się zgadzają. Żadne zmiany nie zostaną dokonane, dopóki nie potwierdzisz, że wszystko jest w porządku.',
-	'centralauth-merge-step1-submit'       => 'Potwierdzenie informacji o loginie',
+	'mergeaccount'                         => 'Status tworzenia konta globalnego',
+	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta globalnego.',
+	'centralauth-merge-welcome'            => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto globalne.'''
+
+Funkcjonalność konta globalnego, czyli współdzielonego między projektami, pozwala na korzystanie z tej samej nazwy użytkownika i hasła do logowania we wszystkich projektach Wikimedia; we wszystkich wersjach językowych. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub nawet konfliktów, które mogą powstać, gdy dwie osoby wybiorą tą samą nazwę użytkownika na różnych projektach.
+
+Jeśli ktoś inny wykorzystuje na innym projekcie identyczną do Twojej nazwę użytkownika, przekształcenie Twojego konta na globalne nie stanie się dla niego problemem, lecz da Ci szansę na późniejsze znalezienie rozwiązania we współpracy bezpośrednio z tą osobą lub z wykorzystaniem pomocy administratorów.",
+	'centralauth-merge-step1-title'        => 'Przekształć na globalne',
+	'centralauth-merge-step1-detail'       => 'Twoje hasło i zarejestrowany adres e-mail zostaną porównane z kontami na innych wiki, w celu potwierdzenia ich zbieżności. Żadne zmiany nie zostaną wykonane, zanim ich nie zaakceptujesz.',
+	'centralauth-merge-step1-submit'       => 'Potwierdzenie informacji o logowaniu',
 	'centralauth-merge-step2-title'        => 'Potwierdź więcej kont',
-	'centralauth-merge-step2-detail'       => 'Niektóre z kont nie mogły być automatycznie dopasowane do wyznaczonego podstawowego wiki. Jeśli te konta należą do ciebie, możesz potwierdzić, że są twoje przez podanie haseł do nich.',
-	'centralauth-merge-step2-submit'       => 'Potwierdź informację o loginie',
-	'centralauth-merge-step3-title'        => 'Utworzenie zunifikowanego konta',
-	'centralauth-merge-step3-detail'       => 'System jest gotowy do utworzenia twojego zunifikowanego konta, z dołączonymi następującymi wiki:',
-	'centralauth-merge-step3-submit'       => 'Unifikuj konta',
-	'centralauth-complete'                 => 'Unifikacja loginu zakończona!',
-	'centralauth-incomplete'               => 'Unifikacja loginu niekompletna!',
+	'centralauth-merge-step2-detail'       => 'Niektóre z kont nie mogły zostać automatycznie przyłączone do konta globalnego. Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje przez podanie haseł do nich.',
+	'centralauth-merge-step2-submit'       => 'Potwierdź informację o logowaniu',
+	'centralauth-merge-step3-title'        => 'Utwórz konto globalne',
+	'centralauth-merge-step3-detail'       => 'System jest gotowy do utworzenia konta globalnego, z dołączonymi następującymi wiki:',
+	'centralauth-merge-step3-submit'       => 'Zrób konto globalne',
+	'centralauth-complete'                 => 'Tworzenie konta globalnego zakończone!',
+	'centralauth-incomplete'               => 'Tworzenie konta globalnego niekompletne!',
 	'centralauth-complete-text'            => 'Możesz teraz logować się na każde wiki Fundacji Wikimedia bez tworzenia nowego konta; ta sama nazwa użytkownika i hasło będzie działać na Wikipedii, Wikisłowniku, Wikipedii i ich projektach siostrzanych we wszystkich językach.',
-	'centralauth-incomplete-text'          => 'Kiedy twój login zostanie zunifikowany, będziesz w stanie zalogować się do każdego wiki Fundacji Wikimedia bez tworzenia nowego konta; ta sama nazwa użytkownika i hasło będzie działać na Wikipedii, Wikisłowniku, Wikibooks i ich projektach siostrzanych we wszystkich językach.',
-	'centralauth-not-owner-text'           => 'Nazwa użytkownika "$1" została automatycznie przypisana właścicielowi konta na $2. Jeśli ty nim jesteś, możesz zakończyć unifikację loginu wpisując główne hasło tego konta w tym miejscu:',
+	'centralauth-incomplete-text'          => 'Kiedy twój login zostanie ujednolicony, będziesz mógł zalogować się do każdego wiki Fundacji Wikimedia bez tworzenia nowego konta; ta sama nazwa użytkownika i hasło będzie działać na Wikipedii, Wikisłowniku, Wikibooks i ich projektach siostrzanych we wszystkich językach.',
+	'centralauth-not-owner-text'           => 'Nazwa użytkownika "$1" została automatycznie przypisana właścicielowi konta globalnego na $2.
+
+Jeśli chcesz przyłączyć konto użytkownika "$1" do konta globalnego podaj hasło konta na $2:',
 	'centralauth-notice-dryrun'            => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
-	'centralauth-disabled-dryrun'          => 'Unifikacja konta jest obecnie tylko w trybie demonstracyjnym/debugującym, więc właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
-	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Czytaj więcej o '''unifikacji nazwy użytkownika''']]...''",
-	'centralauth-list-home-title'          => 'Strona domowa wiki',
-	'centralauth-list-attached-title'      => 'Powiązane konta użytkowników',
-	'centralauth-list-attached'            => 'Konto o nazwie "$1" we wszystkich tych witrynach zostanie automatycznie przypisane do zunifikowanej nazwy użytkownika:',
-	'centralauth-list-unattached-title'    => 'Niepowiązane konta użytkowników',
+	'centralauth-disabled-dryrun'          => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym/debugującym. Właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
+	'centralauth-list-home-title'          => 'Macierzysta wiki',
+	'centralauth-list-home-dryrun'         => 'Ustawione na tej wiki hasło oraz adres e-mail będą wykorzystywane dla Twojego konta uniwersalnego, a Twoja strona użytkownika zostanie automatycznie podłączona do innych wiki. W przyszłości będziesz jednak mógł zmienić swoją macierzystą wiki.',
+	'centralauth-list-attached-title'      => 'Powiązane konta użytkownika',
+	'centralauth-list-attached'            => 'Konto o nazwie "$1" we wszystkich tych witrynach zostało automatycznie przypisane do konta uniwersalnego:',
+	'centralauth-list-attached-dryrun'     => 'Konto o nazwie "$1" we wszystkich tych witrynach zostanie automatycznie przypisane do konta uniwersalnego:',
+	'centralauth-list-unattached-title'    => 'Niepowiązane konta',
+	'centralauth-list-unattached'          => 'Konto o nazwie "$1" nie może zostać automatycznie przypisane do konta uniwersalnego dla następujących witryn; najbardziej prawdopodobną przyczyną jest ustawione dla tych witryn innego hasła niż dla konta macierzystego:',
+	'centralauth-foreign-link'             => 'Użytkownik $1 na $2',
+	'centralauth-finish-title'             => 'Zakończono tworzenie konta uniwersalnego',
+	'centralauth-finish-text'              => 'Jeżeli te konta należą do Ciebie, możesz je przyłączyć do konta uniwersalnego wpisując tutaj hasło dla tych kont:',
 	'centralauth-finish-password'          => 'Hasło:',
 	'centralauth-finish-login'             => 'Zaloguj',
 	'centralauth-finish-send-confirmation' => 'Hasło e-mail',
+	'centralauth-finish-problems'          => 'Masz kłopoty lub nie jesteś właścicielem tych innych kont? [[meta:Help:Unified login problems|Jak znaleźć pomoc]]...',
+	'centralauth-merge-attempt'            => "'''Sprawdzenie hasła dla pozostałych kont, nieprzyłączonych do konta uniwersalnego...'''",
+	'centralauth-attach-list-attached'     => 'Konto uniwersalne "$1" obejmuje następujące konta:',
+	'centralauth-attach-title'             => 'Potwierdź konto',
+	'centralauth-attach-text'              => 'To konto nie zostało jeszcze przyłączone do konta uniwersalnego. Jeżeli konto uniwersalne należy do Ciebie, możesz przyłączyć to konto jeżeli podasz teraz hasło konta uniwersalnego:',
+	'centralauth-attach-submit'            => 'Przyłącz konto',
+	'centralauth-attach-success'           => 'Konto zostało przyłączone do konta uniwersalnego',
+	'centralauth'                          => 'Zarządzanie kontem uniwersalnym',
 	'centralauth-admin-manage'             => 'Zarządzanie danymi użytkownika',
 	'centralauth-admin-username'           => 'Nazwa użytkownika:',
 	'centralauth-admin-lookup'             => 'Podgląd i edycja danych użytkownika',
 	'centralauth-admin-permission'         => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
-	'centralauth-admin-merge'              => 'Wybrano połączenie',
+	'centralauth-admin-unmerge'            => 'Odłącz zaznaczone',
+	'centralauth-admin-merge'              => 'Przyłącz zaznaczone',
+	'centralauth-admin-bad-input'          => 'Nieprawidłowe zaznaczenia dla wykonania przyłączenia',
+	'centralauth-admin-none-selected'      => 'Nie zaznaczono kont do modyfikacji.',
 	'centralauth-prefs-status'             => 'Status globalnego konta:',
-	'centralauth-prefs-unattached'         => 'Niepotwierdzony',
+	'centralauth-prefs-not-managed'        => 'Nie używając globalnego konta',
+	'centralauth-prefs-unattached'         => 'Niepotwierdzone',
 	'centralauth-prefs-complete'           => 'Wszystko w porządku!',
+	'centralauth-prefs-migration'          => 'W trakcie przyłączania',
 	'centralauth-prefs-count-attached'     => 'Twoje konto jest aktywne na $1 {{plural:$1|projekcie|projektach}}.',
+	'centralauth-prefs-count-unattached'   => 'Nieprzyłączone konta o nazwie zbieżnej z Twoją są na $1 {{PLURAL:$1|projekcie|projektach}}.',
+	'centralauth-prefs-detail-unattached'  => 'Konto na tej witrynie nie zostało przyłączone do konta globalnego.',
 	'centralauth-prefs-manage'             => 'Zarządzaj swoim globalnym kontem',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie można lokalnie przemianować użytkownika $1, ponieważ to konto zostało przeniesione do zunifikowanego systemu logowania.</div>',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie można lokalnie przemianować użytkownika $1, ponieważ to konto zostało przeniesione do globalnego systemu logowania.</div>',
 );
 
 $messages['pms'] = array(
