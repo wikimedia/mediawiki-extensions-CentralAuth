@@ -1,7 +1,7 @@
 <?php
 
-
 $messages = array();
+
 $messages['en'] = array(
 	// When not logged in...
 	'mergeaccount' =>
@@ -257,6 +257,11 @@ $messages['ar'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">لا يمكن إعادة تسمية المستخدم $1 محليا حيث أن اسم المستخدم هذا تم نقله إلى نظام الدخول الموحد.</div>',
 );
 
+$messages['bcl'] = array(
+	'centralauth-list-home-title'          => 'Harong na wiki',
+	'centralauth-finish-login'             => 'Maglaog',
+);
+
 /** Bulgarian (Български)
  * @author DCLXVI
  */
@@ -265,6 +270,11 @@ $messages['bg'] = array(
 	'centralauth-finish-password' => 'Парола:',
 	'centralauth-finish-login'    => 'Влизане',
 	'centralauth-admin-username'  => 'Потребителско име:',
+);
+
+$messages['br'] = array(
+	'centralauth-finish-password'          => 'Ger-tremen :',
+	'centralauth-admin-username'           => 'Anv implijer :',
 );
 
 /** Catalan (Català)
@@ -438,16 +448,6 @@ $messages['de'] = array(
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
-);
-
-$messages['bcl'] = array(
-	'centralauth-list-home-title'          => 'Harong na wiki',
-	'centralauth-finish-login'             => 'Maglaog',
-);
-
-$messages['br'] = array(
-	'centralauth-finish-password'          => 'Ger-tremen :',
-	'centralauth-admin-username'           => 'Anv implijer :',
 );
 
 $messages['el'] = array(
@@ -937,8 +937,11 @@ $messages['hu'] = array(
 	'centralauth-merge-step3-title'        => 'Egységesített felhasználói fiók készítése',
 	'centralauth-merge-step3-detail'       => 'Most már készen állsz az egységesített felhasználói fiók elkészítésére, a következő wikikre:',
 	'centralauth-merge-step3-submit'       => 'Felhasználói fiókok egységesítése',
-	'centralauth-complete'                 => 'Bejelentkezés egységesítése kész!',
-	'centralauth-incomplete'               => 'Bejelentkezés egységesítése nincs kész!',
+	'centralauth-complete'                 => 'A bejelentkezés egységesítése készen van!',
+	'centralauth-incomplete'               => 'A bejelentkezés egységesítése nincs kész!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Tudj meg többet az '''egységesített bejelentkezésről''']]...''",
+	'centralauth-list-attached-title'      => 'Csatolt felhasználói fiókok',
+	'centralauth-list-unattached-title'    => 'Csatolatlan felhasználói fiókok',
 	'centralauth-foreign-link'             => '$1 szerkesztő, itt: $2',
 	'centralauth-finish-title'             => 'Egyesítés befejezése',
 	'centralauth-finish-password'          => 'Jelszó:',
@@ -1115,6 +1118,92 @@ $messages['ja'] = array(
 	'centralauth-admin-username'           => '利用者名:',
 );
 
+$messages['kk-arab'] = array(
+	// When not logged in...
+	'mergeaccount' =>
+		'تٸركەلگٸ بٸرەگەيلەندٸرۋ كٷيٸ',
+	'centralauth-merge-notlogged' =>
+		'تٸركەلگٸلەرٸڭٸز تولىق بٸرەگەيلەندٸرۋٸن تەكسەرۋ ٷشٸن Please <span class="plainlinks">' .
+		'[{{fullurl:Special:Userlogin|returnto=Special٪3AMergeAccount}} كٸرٸڭٸز]' .
+		'</span>.',
+
+	// Big text on completion
+	'centralauth-complete' =>
+		'تٸركەلگٸ بٸرەگەيلەندٸرۋٸ بٸتتٸ!',
+	'centralauth-incomplete' =>
+		'تٸركەلگٸ بٸرەگەيلەندٸرۋٸ بٸتكەن جوق!',
+
+	// Wheeee
+	'centralauth-complete-text' =>
+		'ەندٸ ٵرقايسى Wikimedia قورىنىڭ ۋيكي تورابىنا جاڭا تٸركەلگٸ جاساماستان ' .
+		'كٸرۋٸڭٸزگە بولادى; دٵل وسى قاتىسۋشى اتىڭىز بەن قۇپييا سٶزٸڭٸز ' .
+		'ۋيكيپەدييا, ۋيكيسٶزدٸك, ۋيكيكٸتٵپ دەگەن جوبالاردا جٵنە بارلىق  ' .
+		'تٸلدەردەگٸ تارۋلارىندا قىزمەت ٸستەيدٸ.',
+	'centralauth-incomplete-text' =>
+		'تٸركەلگٸڭٸز بٸرەگەيلەندٸرٸگەننەن باستاپ ٵرقايسى Wikimedia ' .
+		'قورىنىڭ ۋيكي تورابىنا جاڭا تٸركەلگٸ جاساماستان كٸرۋٸڭٸزگە بولادى; ' .
+		'دٵل وسى قاتىسۋشى اتىڭىز بەن قۇپييا سٶزٸڭٸز ' .
+		'ۋيكيپەدييا, ۋيكيسٶزدٸك, ۋيكيكٸتٵپ, دەگەن جوبالاردا جٵنە بارلىق ' .
+		'تٸلدەردەگٸ تارۋلارىندا قىزمەت ٸستەيدٸ.',
+	'centralauth-not-owner-text' =>
+		'«$1» دەگەن قاتىسۋشى اتى ٶزدٸك تٷردە ' .
+		"$2 دەگەن تٸركەلگٸ يەسٸنە تٷيٸستٸرٸلگەن.\n" .
+		"\n" .
+		"بۇل ٶزٸڭٸز بولساڭىز, باسقى قۇپييا سٶزٸڭٸزدٸ كٵدٸمگٸدەي مىندا ەنگٸزٸپ " .
+		"تٸركەلگٸ بٸرەگەيلەندٸرۋ ٷدٸرٸسٸن بٸتٸرۋٸڭٸزگە بولادى:",
+
+	// Appended to various messages above
+	'centralauth-readmore-text' =>
+		":''[[meta:Help:Unified login|'''بٸرەگەيلەندٸرٸلگەن تٸركەلگٸ''' تۋرالى وقىڭىز]]...''",
+
+	// For lists of wikis/accounts:
+	'centralauth-list-attached' =>
+		'«$1» دەپ اتالعان تٸركەلگٸلەر كەلەسٸ توراپتاردا ' .
+		'ٶزدٸك تٷردە تٷيٸستٸرٸلگەن:',
+	'centralauth-list-unattached' =>
+		'«$1» دەگەن تٸركەلگٸڭٸز كەلەسٸ توراپتاردا ' .
+		'ٶزدٸك تٷردە راستالمادى; ' .
+		'بٵلكٸم بۇلاردا باسقى تٸركەلگٸدەن سان-قيلى ' .
+		'قۇپييا سٶزدەر بار:',
+	'centralauth-foreign-link' =>
+		'$2 دەگەندەگٸ $1 دەگەن قاتىسۋشى',
+
+	// When not complete, offer to finish...
+	'centralauth-finish-title' =>
+		'تٷيٸستٸرٸلۋ بٸتتٸ',
+	'centralauth-finish-text' =>
+		'بۇل تٸركەلگٸلەر سٸزدٸكٸ بولسا, قۇپييا سٶزٸدەرڭٸزدٸ ' .
+		'باسقا تٸركەلگٸلەرٸڭٸزگە كٵدٸمگٸدەي مىندا ەنگٸزٸپ ' .
+		'تٸركەلگٸلەرٸڭٸزدٸ بٸرەگەيلەندٸرۋٸن بٸتٸرۋڭٸزگە بولادى:',
+	'centralauth-finish-password' =>
+		'قۇپييا سٶز:',
+	'centralauth-finish-login' =>
+		'كٸرۋ',
+	'centralauth-finish-send-confirmation' =>
+		'قۇپييا سٶزدٸ حاتپەن جٸبەرۋ',
+	'centralauth-finish-problems' =>
+		"قيىن جاعدايعا ۇشىرادىڭىز, نەمەسە باسقا تٸركەلگٸلەر سٸزدٸكٸ ەمەس؟ " .
+		"[[meta:Help:Unified login problems|قالاي انىقتالۋىڭىزعا بولادى]]...",
+
+	'centralauth-merge-attempt' =>
+		"'''جابدىقتالىنعان قۇپييا سٶزدٸ قالعان تٷيٸستٸرٸلمەگەن تٸركەلگٸلەرمەن تەكسەرۋدە…'''",
+
+	// Administrator's console
+	'centralauth' => 'بٸرەگەيلەندٸرگەن تٸركەلگٸنٸ مەڭگەرۋ',
+	'centralauth-admin-manage' =>
+		'قاتىسۋشى دەرەكتەرٸن مەڭگەرۋ',
+	'centralauth-admin-username' =>
+		'قاتىسۋشى اتى:',
+	'centralauth-admin-lookup' =>
+		'قاتىسۋشى دەرەكتەرٸن قاراۋ نە ٶڭدەۋ',
+	'centralauth-admin-permission' =>
+		"باسقالاردىڭ تٸركەلگٸلەرٸن بۇعان تەك جەتەكشٸلەر تٷيٸستٸرٸلەيدٸ.",
+	'centralauth-admin-unmerge' =>
+		'تالعانعاندى تٷيٸستٸرٸلەمە',
+	'centralauth-admin-merge' =>
+		'تالعانعاندى تٷيٸستٸرٸلە',
+);
+
 $messages['kk-cyrl'] = array(
 	// When not logged in...
 	'mergeaccount' =>
@@ -1287,96 +1376,6 @@ $messages['kk-latn'] = array(
 		'Talğanğandı tüýistirile',
 );
 
-$messages['kk-arab'] = array(
-	// When not logged in...
-	'mergeaccount' =>
-		'تٸركەلگٸ بٸرەگەيلەندٸرۋ كٷيٸ',
-	'centralauth-merge-notlogged' =>
-		'تٸركەلگٸلەرٸڭٸز تولىق بٸرەگەيلەندٸرۋٸن تەكسەرۋ ٷشٸن Please <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special٪3AMergeAccount}} كٸرٸڭٸز]' .
-		'</span>.',
-
-	// Big text on completion
-	'centralauth-complete' =>
-		'تٸركەلگٸ بٸرەگەيلەندٸرۋٸ بٸتتٸ!',
-	'centralauth-incomplete' =>
-		'تٸركەلگٸ بٸرەگەيلەندٸرۋٸ بٸتكەن جوق!',
-
-	// Wheeee
-	'centralauth-complete-text' =>
-		'ەندٸ ٵرقايسى Wikimedia قورىنىڭ ۋيكي تورابىنا جاڭا تٸركەلگٸ جاساماستان ' .
-		'كٸرۋٸڭٸزگە بولادى; دٵل وسى قاتىسۋشى اتىڭىز بەن قۇپييا سٶزٸڭٸز ' .
-		'ۋيكيپەدييا, ۋيكيسٶزدٸك, ۋيكيكٸتٵپ دەگەن جوبالاردا جٵنە بارلىق  ' .
-		'تٸلدەردەگٸ تارۋلارىندا قىزمەت ٸستەيدٸ.',
-	'centralauth-incomplete-text' =>
-		'تٸركەلگٸڭٸز بٸرەگەيلەندٸرٸگەننەن باستاپ ٵرقايسى Wikimedia ' .
-		'قورىنىڭ ۋيكي تورابىنا جاڭا تٸركەلگٸ جاساماستان كٸرۋٸڭٸزگە بولادى; ' .
-		'دٵل وسى قاتىسۋشى اتىڭىز بەن قۇپييا سٶزٸڭٸز ' .
-		'ۋيكيپەدييا, ۋيكيسٶزدٸك, ۋيكيكٸتٵپ, دەگەن جوبالاردا جٵنە بارلىق ' .
-		'تٸلدەردەگٸ تارۋلارىندا قىزمەت ٸستەيدٸ.',
-	'centralauth-not-owner-text' =>
-		'«$1» دەگەن قاتىسۋشى اتى ٶزدٸك تٷردە ' .
-		"$2 دەگەن تٸركەلگٸ يەسٸنە تٷيٸستٸرٸلگەن.\n" .
-		"\n" .
-		"بۇل ٶزٸڭٸز بولساڭىز, باسقى قۇپييا سٶزٸڭٸزدٸ كٵدٸمگٸدەي مىندا ەنگٸزٸپ " .
-		"تٸركەلگٸ بٸرەگەيلەندٸرۋ ٷدٸرٸسٸن بٸتٸرۋٸڭٸزگە بولادى:",
-
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|'''بٸرەگەيلەندٸرٸلگەن تٸركەلگٸ''' تۋرالى وقىڭىز]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'«$1» دەپ اتالعان تٸركەلگٸلەر كەلەسٸ توراپتاردا ' .
-		'ٶزدٸك تٷردە تٷيٸستٸرٸلگەن:',
-	'centralauth-list-unattached' =>
-		'«$1» دەگەن تٸركەلگٸڭٸز كەلەسٸ توراپتاردا ' .
-		'ٶزدٸك تٷردە راستالمادى; ' .
-		'بٵلكٸم بۇلاردا باسقى تٸركەلگٸدەن سان-قيلى ' .
-		'قۇپييا سٶزدەر بار:',
-	'centralauth-foreign-link' =>
-		'$2 دەگەندەگٸ $1 دەگەن قاتىسۋشى',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'تٷيٸستٸرٸلۋ بٸتتٸ',
-	'centralauth-finish-text' =>
-		'بۇل تٸركەلگٸلەر سٸزدٸكٸ بولسا, قۇپييا سٶزٸدەرڭٸزدٸ ' .
-		'باسقا تٸركەلگٸلەرٸڭٸزگە كٵدٸمگٸدەي مىندا ەنگٸزٸپ ' .
-		'تٸركەلگٸلەرٸڭٸزدٸ بٸرەگەيلەندٸرۋٸن بٸتٸرۋڭٸزگە بولادى:',
-	'centralauth-finish-password' =>
-		'قۇپييا سٶز:',
-	'centralauth-finish-login' =>
-		'كٸرۋ',
-	'centralauth-finish-send-confirmation' =>
-		'قۇپييا سٶزدٸ حاتپەن جٸبەرۋ',
-	'centralauth-finish-problems' =>
-		"قيىن جاعدايعا ۇشىرادىڭىز, نەمەسە باسقا تٸركەلگٸلەر سٸزدٸكٸ ەمەس؟ " .
-		"[[meta:Help:Unified login problems|قالاي انىقتالۋىڭىزعا بولادى]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''جابدىقتالىنعان قۇپييا سٶزدٸ قالعان تٷيٸستٸرٸلمەگەن تٸركەلگٸلەرمەن تەكسەرۋدە…'''",
-
-	// Administrator's console
-	'centralauth' => 'بٸرەگەيلەندٸرگەن تٸركەلگٸنٸ مەڭگەرۋ',
-	'centralauth-admin-manage' =>
-		'قاتىسۋشى دەرەكتەرٸن مەڭگەرۋ',
-	'centralauth-admin-username' =>
-		'قاتىسۋشى اتى:',
-	'centralauth-admin-lookup' =>
-		'قاتىسۋشى دەرەكتەرٸن قاراۋ نە ٶڭدەۋ',
-	'centralauth-admin-permission' =>
-		"باسقالاردىڭ تٸركەلگٸلەرٸن بۇعان تەك جەتەكشٸلەر تٷيٸستٸرٸلەيدٸ.",
-	'centralauth-admin-unmerge' =>
-		'تالعانعاندى تٷيٸستٸرٸلەمە',
-	'centralauth-admin-merge' =>
-		'تالعانعاندى تٷيٸستٸرٸلە',
-);
-
-$messages['kk-kz'] = $messages['kk-cyrl'];
-$messages['kk-tr'] = $messages['kk-latn'];
-$messages['kk-cn'] = $messages['kk-arab'];
-$messages['kk'] = $messages['kk-cyrl'];
 
 $messages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
@@ -1388,6 +1387,7 @@ $messages['la'] = array(
  */
 $messages['lb'] = array(
 	'centralauth-list-home-title'          => 'Heemechts-Wiki',
+	'centralauth-foreign-link'             => 'Benotzer $1 op $2',
 	'centralauth-finish-password'          => 'Passwuert:',
 	'centralauth-finish-login'             => 'Umeldung',
 	'centralauth-finish-send-confirmation' => 'Passwuert per E-mail zouschécken',
@@ -1620,10 +1620,14 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossible de renomenar lo compte d\'utilizaire $1 localament : ara, aqueste utilizaire a un compte unic.</div>',
 );
 
+/** Polish (Polski)
+ * @author Derbeth
+ * @author Sp5uhe
+ */
 $messages['pl'] = array(
 	'mergeaccount'                         => 'Stan unifikacji loginu',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy twoje konta zostały w pełni połączone.',
-	'centralauth-merge-welcome'            => '\'\'\'Twoje konto użytkownika nie zostało jeszcze przeniesione do ujednoliconego systemu logowania Wikimedia.\'\'\' Jeśli wybierzesz przeniesienie twoich kont, będziesz mógł (mogła) używać tej samej nazwy użytkownika i hasła by logować się do wszystkich projektów Wikimedia we wszystkich językach. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub konfliktów, które powstają, gdy dwóch ludzi wybiera tę samą nazwę użytkownika na różnych projektach. Jeśli ktoś inny przyjął już twoją nazwę użytkownika n innym projekcie, ten proces nie przeszkodzi mu, ale da ci szansę na późniejsze rozwiązanie sprawy z tą osobą lub administratorem.',
+	'centralauth-merge-welcome'            => "'''Twoje konto użytkownika nie zostało jeszcze przeniesione do ujednoliconego systemu logowania Wikimedia.''' Jeśli wybierzesz przeniesienie twoich kont, będziesz mógł (mogła) używać tej samej nazwy użytkownika i hasła by logować się do wszystkich projektów Wikimedia we wszystkich językach. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub konfliktów, które powstają, gdy dwóch ludzi wybiera tę samą nazwę użytkownika na różnych projektach. Jeśli ktoś inny przyjął już twoją nazwę użytkownika n innym projekcie, ten proces nie przeszkodzi mu, ale da ci szansę na późniejsze rozwiązanie sprawy z tą osobą lub administratorem.",
 	'centralauth-merge-step1-title'        => 'Zacznij unifikację loginów',
 	'centralauth-merge-step1-detail'       => 'Twoje hasło i zarejestrowany adres e-mail zostaną porównane z kontami na innych wiki, aby potwierdzić, że się zgadzają. Żadne zmiany nie zostaną dokonane, dopóki nie potwierdzisz, że wszystko jest w porządku.',
 	'centralauth-merge-step1-submit'       => 'Potwierdzenie informacji o loginie',
@@ -1640,12 +1644,21 @@ $messages['pl'] = array(
 	'centralauth-not-owner-text'           => 'Nazwa użytkownika "$1" została automatycznie przypisana właścicielowi konta na $2. Jeśli ty nim jesteś, możesz zakończyć unifikację loginu wpisując główne hasło tego konta w tym miejscu:',
 	'centralauth-notice-dryrun'            => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
 	'centralauth-disabled-dryrun'          => 'Unifikacja konta jest obecnie tylko w trybie demonstracyjnym/debugującym, więc właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Czytaj więcej o '''unifikacji nazwy użytkownika''']]...''",
+	'centralauth-list-home-title'          => 'Strona domowa wiki',
+	'centralauth-list-attached-title'      => 'Powiązane konta użytkowników',
+	'centralauth-list-attached'            => 'Konto o nazwie "$1" we wszystkich tych witrynach zostanie automatycznie przypisane do zunifikowanej nazwy użytkownika:',
+	'centralauth-list-unattached-title'    => 'Niepowiązane konta użytkowników',
 	'centralauth-finish-password'          => 'Hasło:',
+	'centralauth-finish-login'             => 'Zaloguj',
+	'centralauth-finish-send-confirmation' => 'Hasło e-mail',
 	'centralauth-admin-manage'             => 'Zarządzanie danymi użytkownika',
+	'centralauth-admin-username'           => 'Nazwa użytkownika:',
 	'centralauth-admin-lookup'             => 'Podgląd i edycja danych użytkownika',
 	'centralauth-admin-permission'         => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
 	'centralauth-admin-merge'              => 'Wybrano połączenie',
 	'centralauth-prefs-status'             => 'Status globalnego konta:',
+	'centralauth-prefs-unattached'         => 'Niepotwierdzony',
 	'centralauth-prefs-complete'           => 'Wszystko w porządku!',
 	'centralauth-prefs-count-attached'     => 'Twoje konto jest aktywne na $1 {{plural:$1|projekcie|projektach}}.',
 	'centralauth-prefs-manage'             => 'Zarządzaj swoim globalnym kontem',
@@ -1785,7 +1798,6 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Não foi possível renomear localmente o utilizador $1 uma vez que a conta do mesmo foi migrada para o sistema de login universal.</div>',
 );
 
-$messages['pt-br'] = $messages['pt'];
 
 $messages['ro'] = array(
 	'centralauth-finish-password'          => 'Parolă:',
@@ -2799,7 +2811,6 @@ $messages['zh-hant'] = array(
 
 );
 
-$messages['zh-tw'] = $messages['zh-hant'];
 $messages['zh-tw'] = array(
 	// When not logged in...
 	'centralauth-merge-welcome' =>
@@ -2836,6 +2847,13 @@ $messages['zh-tw'] = array(
 		'這個計畫網站還未確認到全域帳戶。',
 
 );
+
+$messages['kk'] = $messages['kk-cyrl'];
+$messages['kk-cn'] = $messages['kk-arab'];
+$messages['kk-kz'] = $messages['kk-cyrl'];
+$messages['kk-tr'] = $messages['kk-latn'];
+
+$messages['pt-br'] = $messages['pt'];
 
 # Chinese fallback
 $messages['zh'] = $messages['zh-hans'];
