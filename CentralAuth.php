@@ -49,6 +49,7 @@ $wgAutoloadClasses['CentralAuthUser'] = "$caBase/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['WikiMap'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
+$wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 
 $wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
@@ -65,12 +66,8 @@ $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 
 function wfSetupCentralAuth() {
-	require dirname( __FILE__ ) . '/CentralAuth.i18n.php';
-	global $wgCentralAuthMessages, $wgMessageCache;
-	foreach( $wgCentralAuthMessages as $key => $messages ) {
-		$wgMessageCache->addMessages( $messages, $key );
+	wfLoadExtensionMessages('SpecialCentralAuth');
 	}
-}
 
 function wfSetupCentralAuthPlugin( &$auth ) {
 	$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );

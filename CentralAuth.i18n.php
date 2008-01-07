@@ -1,9 +1,8 @@
 <?php
 
-global $wgCentralAuthMessages;
 
-$wgCentralAuthMessages = array();
-$wgCentralAuthMessages['en'] = array(
+$messages = array();
+$messages['en'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Login unification status',
@@ -184,12 +183,12 @@ $wgCentralAuthMessages['en'] = array(
 
 );
 
-$wgCentralAuthMessages['ang'] = array(
+$messages['ang'] = array(
 	'centralauth-admin-username'           => 'Brūcendnama:',
 );
 
 /* Arabic (Meno25) */
-$wgCentralAuthMessages['ar'] = array(
+$messages['ar'] = array(
 	'mergeaccount'                         => 'حالة توحيد الدخول',
 	'centralauth-merge-notlogged'          => 'من فضلك <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} قم بتسجيل الدخول]</span> لتتحقق من أن حساباتك تم دمجها بالكامل.',
 	'centralauth-merge-welcome'            => '\'\'\'حساب المستخدم الخاص بك لم يتم نقله إلى نظام ويكيميديا لتوحيد الدخول.\'\'\'
@@ -261,7 +260,7 @@ $wgCentralAuthMessages['ar'] = array(
 /** Bulgarian (Български)
  * @author DCLXVI
  */
-$wgCentralAuthMessages['bg'] = array(
+$messages['bg'] = array(
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
 	'centralauth-finish-password' => 'Парола:',
 	'centralauth-finish-login'    => 'Влизане',
@@ -271,14 +270,14 @@ $wgCentralAuthMessages['bg'] = array(
 /** Catalan (Català)
  * @author Juanpabl
  */
-$wgCentralAuthMessages['ca'] = array(
+$messages['ca'] = array(
 	'mergeaccount' => "Estau d'a fusión de cuentas d'usuario",
 );
 
 /** Czech (Česky)
  * @author Li-sung
  */
-$wgCentralAuthMessages['cs'] = array(
+$messages['cs'] = array(
 	'mergeaccount'                   => 'Stav sjednocení přihlašování',
 	'centralauth-merge-notlogged'    => 'Pokud se <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
 	'centralauth-merge-step1-title'  => 'Začít sjednocovat přihlašování',
@@ -286,7 +285,7 @@ $wgCentralAuthMessages['cs'] = array(
 	'centralauth-finish-password'    => 'Heslo:',
 );
 
-$wgCentralAuthMessages['de'] = array(
+$messages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Status der Benutzerkonten-Zusammenführung',
@@ -441,23 +440,23 @@ $wgCentralAuthMessages['de'] = array(
 	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
 );
 
-$wgCentralAuthMessages['bcl'] = array(
+$messages['bcl'] = array(
 	'centralauth-list-home-title'          => 'Harong na wiki',
 	'centralauth-finish-login'             => 'Maglaog',
 );
 
-$wgCentralAuthMessages['br'] = array(
+$messages['br'] = array(
 	'centralauth-finish-password'          => 'Ger-tremen :',
 	'centralauth-admin-username'           => 'Anv implijer :',
 );
 
-$wgCentralAuthMessages['el'] = array(
+$messages['el'] = array(
 	'centralauth-finish-password'          => 'Κωδικός:',
 	'centralauth-finish-login'             => 'Εγγραφή',
 	'centralauth-admin-username'           => 'Όνομα χρήστη:',
 );
 
-$wgCentralAuthMessages['ext'] = array(
+$messages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
 
@@ -465,7 +464,7 @@ $wgCentralAuthMessages['ext'] = array(
  * @author Cimon Avaro
  * @author Nike
  */
-$wgCentralAuthMessages['fi'] = array(
+$messages['fi'] = array(
 	'centralauth-merge-step1-submit'       => 'Vahvista sisäänkirjautumistiedot',
 	'centralauth-merge-step2-submit'       => 'Vahvista sisäänkirjautumistiedot',
 	'centralauth-merge-step3-title'        => 'Luo yhdistetty käyttäjätunnus',
@@ -480,7 +479,7 @@ $wgCentralAuthMessages['fi'] = array(
 	'centralauth-attach-title'             => 'Vahvista käyttäjätunnus',
 );
 
-$wgCentralAuthMessages['fr'] = array(
+$messages['fr'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptes utilisateur',
 	'centralauth-merge-notlogged'          => 'Merci de bien vouloir <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]</span> pour vérifier si vos comptes ont bien été fusionnés.',
 	'centralauth-merge-welcome'            => '\'\'\'Vos comptes utilisateur n’ont pas encore été migrés vers la système de compte unique de Wikimedia.\'\'\'
@@ -549,7 +548,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossible de renommer le compte utilisateur $1 localement : cet utilisateur a maintenant un compte unique.</div>',
 );
 
-$wgCentralAuthMessages['frp'] = array(
+$messages['frp'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptos utilisator',
 	'centralauth-merge-notlogged'          => 'Marci de franc volêr vos <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
 	'centralauth-merge-welcome'            => '\'\'\'Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.\'\'\'
@@ -618,7 +617,7 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en tapent l
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Empossiblo de renomar lo compto utilisator $1 localament : ceti utilisator at ora un compto unico.</div>',
 );
 
-$wgCentralAuthMessages['gl'] = array(
+$messages['gl'] = array(
 	'mergeaccount'                         => 'Estado da unificación do rexistro',
 	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} rexístrese]</span> para comprobar se as súas contas se  unificaron completamente.',
 	'centralauth-merge-welcome'            => '\'\'\'A súa conta de usuario aínda non se pasou ao sistema de rexistro unificado de Wikimedia.\'\'\'
@@ -685,7 +684,7 @@ Se se trata de vostede, pode completar o proceso de unificación de rexistro sim
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Non se lle pode mudar o nome ao usuario $1 localmente xa que este nome de usuario pasou ao sistema de rexistro unificado.</div>',
 );
 
-$wgCentralAuthMessages['he'] = array(
+$messages['he'] = array(
 	# When not logged in...
 	'mergeaccount'                => 'מצב מיזוג החשבונות',
 	'centralauth-merge-notlogged' => 'אנא <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.',
@@ -788,7 +787,7 @@ $wgCentralAuthMessages['he'] = array(
 	'centralauth-renameuser-abort' => '<div class="errorbox">לא ניתן לשנות את שם המשתמש של $1 באופן מקומי, כיוון שהוא כבר התווסף למערכת החשבונות הממוזגים.</div>',
 );
 
-$wgCentralAuthMessages['hr'] = array(
+$messages['hr'] = array(
 	'mergeaccount'                         => 'Status centralizacije prijave',
 	'centralauth-merge-notlogged'          => 'Molimo <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prijavite se]</span> radi provjere da li su Vaši suradnički računi uspješno spojeni.',
 	'centralauth-merge-welcome'            => '\'\'\'Vaš suradnički račun nije još premješten na Wikimediijin centralni sustav prijave.\'\'\'
@@ -857,7 +856,7 @@ Ukoliko ste to vi, možete dovršiti proces spajanja računa unošenjem glavne l
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Ne mogu preimenovati suradnika $1 lokalno jer je to suradničko ime spojeno u jedinstveni sustav prijave.</div>',
 );
 
-$wgCentralAuthMessages['hsb'] = array(
+$messages['hsb'] = array(
 	'mergeaccount'                         => 'Status zjednoćenja wužiwarskich kontow',
 	'centralauth-merge-notlogged'          => 'Prošu <span class="plainlinks"> [{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.',
 	'centralauth-merge-welcome'            => '\'\'\'Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja Wikimedije přiwzało.\'\'\'
@@ -926,7 +925,7 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
  * @author Bdanee
  * @author KossuthRad
  */
-$wgCentralAuthMessages['hu'] = array(
+$messages['hu'] = array(
 	'mergeaccount'                         => 'Felhasználói fiókok egyesítésének állapota',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Jelentkezz be]</span>, hogy ellenőrizhessük, a felhasználói fiókjaid egyesítve vannak-e.',
 	'centralauth-merge-step1-title'        => 'Bejeletkezés egységesítésének megkezdése',
@@ -955,7 +954,7 @@ $wgCentralAuthMessages['hu'] = array(
 	'centralauth-prefs-manage'             => 'Globális felhasználói fiók beállítása',
 );
 
-$wgCentralAuthMessages['id'] = array(
+$messages['id'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Status penggabungan log masuk',
@@ -1045,7 +1044,7 @@ $wgCentralAuthMessages['id'] = array(
  * @author Gianfranco
  * @author BrokenArrow
  */
-$wgCentralAuthMessages['it'] = array(
+$messages['it'] = array(
 	'mergeaccount'                         => 'Processo di unificazione delle utenze - status',
 	'centralauth-merge-notlogged'          => 'Si prega di <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} effettuare il login]</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
 	'centralauth-merge-welcome'            => "'''Il tuo account utente non è ancora stato importato nel sistema di identificazione unificato di Wikimedia (Wikimedia's unified login system).''' Se decidi di unificare i tuoi account, potrai usare lo stesso nome utente e la stessa password per accedere a tutti i progetti wiki di Wikimedia in tutte le lingue disponibili. Questo faciliterà il lavoro con i progetti comuni, ad esempio caricare file su [http://commons.wikimedia.org/ Wikimedia Commons], ed eviterà la confusione ed i conflitti che nascerebbero se due o più utenti scegliessero lo stesso nome utente su più progetti. Se qualcun altro ha già preso il tuo nome utente su un altro sito, questo non lo disturberà, ma l'unificazione darà a te la possibilità di sottoporre in futuro il problema all'altro utente o ad un amministratore.",
@@ -1109,14 +1108,14 @@ Se si è il titolare dell\'utenza, per terminare il processo di unificazione è 
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossibile rinominare localmente l\'utente $1 perché questa utenza è stata trasferita al sistema unificato di identificazione (unified login system).</div>',
 );
 
-$wgCentralAuthMessages['ja'] = array(
+$messages['ja'] = array(
 	'centralauth-finish-password'          => 'パスワード:',
 	'centralauth-finish-login'             => 'ログイン',
 	'centralauth-finish-send-confirmation' => '電子メールパスワード',
 	'centralauth-admin-username'           => '利用者名:',
 );
 
-$wgCentralAuthMessages['kk-cyrl'] = array(
+$messages['kk-cyrl'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Тіркелгі бірегейлендіру күйі',
@@ -1202,7 +1201,7 @@ $wgCentralAuthMessages['kk-cyrl'] = array(
 		'Талғанғанды түйістіріле',
 );
 
-$wgCentralAuthMessages['kk-latn'] = array(
+$messages['kk-latn'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Tirkelgi biregeýlendirw küýi',
@@ -1288,7 +1287,7 @@ $wgCentralAuthMessages['kk-latn'] = array(
 		'Talğanğandı tüýistirile',
 );
 
-$wgCentralAuthMessages['kk-arab'] = array(
+$messages['kk-arab'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'تٸركەلگٸ بٸرەگەيلەندٸرۋ كٷيٸ',
@@ -1374,12 +1373,12 @@ $wgCentralAuthMessages['kk-arab'] = array(
 		'تالعانعاندى تٷيٸستٸرٸلە',
 );
 
-$wgCentralAuthMessages['kk-kz'] = $wgCentralAuthMessages['kk-cyrl'];
-$wgCentralAuthMessages['kk-tr'] = $wgCentralAuthMessages['kk-latn'];
-$wgCentralAuthMessages['kk-cn'] = $wgCentralAuthMessages['kk-arab'];
-$wgCentralAuthMessages['kk'] = $wgCentralAuthMessages['kk-cyrl'];
+$messages['kk-kz'] = $messages['kk-cyrl'];
+$messages['kk-tr'] = $messages['kk-latn'];
+$messages['kk-cn'] = $messages['kk-arab'];
+$messages['kk'] = $messages['kk-cyrl'];
 
-$wgCentralAuthMessages['la'] = array(
+$messages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
 	'centralauth-admin-username'           => 'Nomen usoris:',
 );
@@ -1387,7 +1386,7 @@ $wgCentralAuthMessages['la'] = array(
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
-$wgCentralAuthMessages['lb'] = array(
+$messages['lb'] = array(
 	'centralauth-list-home-title'          => 'Heemechts-Wiki',
 	'centralauth-finish-password'          => 'Passwuert:',
 	'centralauth-finish-login'             => 'Umeldung',
@@ -1402,7 +1401,7 @@ $wgCentralAuthMessages['lb'] = array(
 /** Limburgish (Limburgs)
  * @author Ooswesthoesbes
  */
-$wgCentralAuthMessages['li'] = array(
+$messages['li'] = array(
 	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
 	'centralauth-finish-password'          => 'Wachwaord:',
 	'centralauth-finish-login'             => 'Gebroekersnaam',
@@ -1413,7 +1412,7 @@ $wgCentralAuthMessages['li'] = array(
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
-$wgCentralAuthMessages['nds'] = array(
+$messages['nds'] = array(
 	'centralauth-merge-step3-submit' => 'Brukers tohoopföhren',
 	'centralauth-list-home-title'    => 'Heimatwiki',
 	'centralauth-foreign-link'       => 'Bruker $1 op $2',
@@ -1421,7 +1420,7 @@ $wgCentralAuthMessages['nds'] = array(
 	'centralauth-admin-username'     => 'Brukernaam:',
 );
 
-$wgCentralAuthMessages['nl'] = array(
+$messages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
 	'centralauth-merge-welcome'            => '\'\'\'Uw gebruiker is nog niet gemigreerd naar Wikimedia\'s samengevoegde aanmeldsysteem.\'\'\'
@@ -1490,7 +1489,7 @@ Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wac
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebruiker $1 kan lokaal niet hernoemd worden omdat deze gebruiker is gemigreerd naar het systeem van samengevoegde gebruikers.</div>',
 );
 
-$wgCentralAuthMessages['no'] = array(
+$messages['no'] = array(
 	'mergeaccount'                         => 'Kontosammensmeltingsstatus',
 	'centralauth-merge-notlogged'          => 'Vennligst <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special:MergeAccount}} logg inn]</span> for å sjekke om kontoene dine har blitt fullstendig sammensmeltet.',
 	'centralauth-merge-welcome'            => '\'\'\'Din brukerkonto har ennå ikke blitt flyttet til Wikimedias enhetlige innlogginssystem.\'\'\' Om du velger å flytte kontoene dine kan du bruke samme brukernavn og passord for å logge inn på alle Wikimedias prosjekter på alle språk. Dette gjør det raskere å arbeide med delte prosjekter, som opplasting til [http://commons.wikimedia.org/ Wikimedia Commons], og unngår forvirringene og konfliktene som kan oppstå dersom to personer på forskjellige prosjekter bruker samme brukernavn. Dersom noen allerede har tatt ditt brukernavn på et annet prosjekt vil ikke dette forstyrre dem, men gi deg muligheten til å finne ut av sakene med dem eller en administrator senere.',
@@ -1557,7 +1556,7 @@ Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn
 /** Occitan (Occitan)
  * @author Cedric31
  */
-$wgCentralAuthMessages['oc'] = array(
+$messages['oc'] = array(
 	'mergeaccount'                         => "Estatut d’unificacion del compte d'utilizaire",
 	'centralauth-merge-notlogged'          => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos connectar]</span> per verificar que vòstres comptes son plan estats acampats.',
 	'centralauth-merge-welcome'            => "'''Vòstres comptes d'utilizaire son pas encara estats migrats vèrs lo sistèma de compte unic de Wikimedia''' Se causissètz de far migrer vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes Wikimedia dins totas las lengas. Atal, lo trabalh inter-projèctes serà mai aisit, e mai, per exemple, l’impòrt d’imatges sus [http://commons.wikimedia.org/ Wikimedia Commons] ; aquò evitarà tanben la confusion susvenent quand doas personas utilizant lo meteis nom d’utilizaire sus dos projèctes diferents. Se avètz ja lo meteis nom d’utilizaire sus totes los projèctes, deurià pas i aver de problèma. Se una autra persona a lo meteis nom d’utilizaire que vos sus un autre projècte, aurètz l'occasion de dintrar en contacte amb aquesta persona o amb un administrator mai tard.",
@@ -1621,7 +1620,7 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossible de renomenar lo compte d\'utilizaire $1 localament : ara, aqueste utilizaire a un compte unic.</div>',
 );
 
-$wgCentralAuthMessages['pl'] = array(
+$messages['pl'] = array(
 	'mergeaccount'                         => 'Stan unifikacji loginu',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy twoje konta zostały w pełni połączone.',
 	'centralauth-merge-welcome'            => '\'\'\'Twoje konto użytkownika nie zostało jeszcze przeniesione do ujednoliconego systemu logowania Wikimedia.\'\'\' Jeśli wybierzesz przeniesienie twoich kont, będziesz mógł (mogła) używać tej samej nazwy użytkownika i hasła by logować się do wszystkich projektów Wikimedia we wszystkich językach. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub konfliktów, które powstają, gdy dwóch ludzi wybiera tę samą nazwę użytkownika na różnych projektach. Jeśli ktoś inny przyjął już twoją nazwę użytkownika n innym projekcie, ten proces nie przeszkodzi mu, ale da ci szansę na późniejsze rozwiązanie sprawy z tą osobą lub administratorem.',
@@ -1653,7 +1652,7 @@ $wgCentralAuthMessages['pl'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie można lokalnie przemianować użytkownika $1, ponieważ to konto zostało przeniesione do zunifikowanego systemu logowania.</div>',
 );
 
-$wgCentralAuthMessages['pms'] = array(
+$messages['pms'] = array(
 	'mergeaccount'                         => 'Stat dël process dla mës-cia dë stranòm e ciav',
 	'centralauth-merge-notlogged'          => 'Për piasì <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ch\'a rintra ant ël sistema]</span> për controlé che sò cont a sio stait mës-cià coma ch\'as dev.',
 	'centralauth-merge-welcome'            => '\'\'\'Sò cont a l\'é nen stait portà al sistema d\'intrada unificà ëd Wikimedia\'\'\'. S\'a decid ëd porté sò cont a podrà dovré midem stranòm e ciav për rintré an qualsëssìa proget Wikimedia an qualsëssìa dle lenghe disponibij. Sòn a dovrìa fé belfé dovré dij proget coma la caria d\'archivi ansima a [http://commons.wikimedia.org/ Wikimedia Commons], e gavé via dla confusion ch\'a peul seurt-ie fòra quand doe person-e për cas as sërno ël midem stranòm an doj proget diferent. S\'a fussa mai riva-ie che cheidun a l\'avèissa gia sërnusse lë stranòm ch\'a dòvra chiel/chila, sòn a-j darìa gnun fastudi a gnun, ma pì anans a-j darìa a tuti la possibilità d\'arzolve ël problema ansema a j\'aministrator.',
@@ -1717,7 +1716,7 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
 	'centralauth-renameuser-abort'         => '<div class="errorbox">As peul pa arbatié l\'utent $1 an local, për via che stë stranòm-sì a l\'é col dël cont unificà.</div>',
 );
 
-$wgCentralAuthMessages['pt'] = array(
+$messages['pt'] = array(
 	'mergeaccount'                         => 'Estado da unificação de contas',
 	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome'            => '\'\'\'A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.\'\'\'
@@ -1786,16 +1785,16 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Não foi possível renomear localmente o utilizador $1 uma vez que a conta do mesmo foi migrada para o sistema de login universal.</div>',
 );
 
-$wgCentralAuthMessages['pt-br'] = $wgCentralAuthMessages['pt'];
+$messages['pt-br'] = $messages['pt'];
 
-$wgCentralAuthMessages['ro'] = array(
+$messages['ro'] = array(
 	'centralauth-finish-password'          => 'Parolă:',
 );
 
 /** Russian (Русский)
  * @author .:Ajvol:.
  */
-$wgCentralAuthMessages['ru'] = array(
+$messages['ru'] = array(
 	'mergeaccount'                         => 'Состояние объединения учётных записей',
 	'centralauth-merge-notlogged'          => 'Пожалуйста, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} представьтесь]</span>, чтобы проверить, были ли ваши учётные записи объединены.',
 	'centralauth-merge-welcome'            => "'''Ваша учётная запись ещё не была переведена на единую систему входа Викимедии'''
@@ -1864,7 +1863,7 @@ $wgCentralAuthMessages['ru'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Невозможно переименовать участника $1 в данном проекте, так как это имя участника было перенесено в систему единой учётной записи.</div>',
 );
 
-$wgCentralAuthMessages['sk'] = array(
+$messages['sk'] = array(
 	'mergeaccount'                         => 'Stav zjednotenia prihlasovacích účtov',
 	'centralauth-merge-notlogged'          => 'Prosím, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty celkom zjednotené.',
 	'centralauth-merge-welcome'            => '\'\'\'Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém Wikimedia.\'\'\'
@@ -1945,7 +1944,7 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie je možné lokálne premenovať používateľa $1, keďže toto používateľské meno bolo migrované na zjednotený prihlasovací systém.</div>',
 );
 
-$wgCentralAuthMessages['sr-ec'] = array(
+$messages['sr-ec'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Статус уједињења налога',
@@ -2031,7 +2030,7 @@ $wgCentralAuthMessages['sr-ec'] = array(
 		'Споји селектоване',
 );
 
-$wgCentralAuthMessages['sr-el'] = array(
+$messages['sr-el'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Status ujedinjenja naloga',
@@ -2120,7 +2119,7 @@ $wgCentralAuthMessages['sr-el'] = array(
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
-$wgCentralAuthMessages['stq'] = array(
+$messages['stq'] = array(
 	'mergeaccount'                         => 'Stoatus fon ju Benutserkonten-Touhoopefierenge',
 	'centralauth-merge-notlogged'          => 'Jädden <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} mäldje die an], </span> uum tou wröigjen, of dien Benutserkonten fulboodich touhoopefierd wuuden.',
 	'centralauth-merge-welcome'            => "'''Dien Benutserkonto wuude noch nit in dät globoale Wikimedia-Anmälde-System uurfierd.'''
@@ -2194,7 +2193,7 @@ Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten
 /** Sundanese (Basa Sunda)
  * @author Kandar
  */
-$wgCentralAuthMessages['su'] = array(
+$messages['su'] = array(
 	'mergeaccount'                         => 'Status ngahijikeun log asup',
 	'centralauth-merge-notlogged'          => 'Mangga <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} lebet log]</span> pikeun mariksa anggeus/henteuna rekening anjeun dihijieun.',
 	'centralauth-complete'                 => 'Ngahijikeun log asup geus réngsé!',
@@ -2222,7 +2221,7 @@ Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku 
 	'centralauth-admin-merge'              => 'Hijikeun nu dipilih',
 );
 
-$wgCentralAuthMessages['sv'] = array(
+$messages['sv'] = array(
 	'mergeaccount'                         => 'Status för förenad inloggning',
 	'centralauth-merge-notlogged'          => 'Du måste <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} logga in]</span> för att se om dina konton har blivit fullständigt förenade.',
 	'centralauth-merge-welcome'            => '\'\'\'Ditt konto har ännu inte flyttats över till Wikimedias förenade inloggningssystem.\'\'\'
@@ -2294,12 +2293,12 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 /** Volapük (Volapük)
  * @author Malafaya
  */
-$wgCentralAuthMessages['vo'] = array(
+$messages['vo'] = array(
 	'centralauth-finish-password' => 'Letavöd:',
 	'centralauth-admin-username'  => 'Gebananem:',
 );
 
-$wgCentralAuthMessages['yue'] = array(
+$messages['yue'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'登入統一狀態',
@@ -2466,7 +2465,7 @@ $wgCentralAuthMessages['yue'] = array(
 
 );
 
-$wgCentralAuthMessages['zh-hans'] = array(
+$messages['zh-hans'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'登录统一状态',
@@ -2633,7 +2632,7 @@ $wgCentralAuthMessages['zh-hans'] = array(
 
 );
 
-$wgCentralAuthMessages['zh-hant'] = array(
+$messages['zh-hant'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'帳號整合狀態',
@@ -2800,8 +2799,8 @@ $wgCentralAuthMessages['zh-hant'] = array(
 
 );
 
-$wgCentralAuthMessages['zh-tw'] = $wgCentralAuthMessages['zh-hant'];
-$wgCentralAuthMessages['zh-tw'] = array(
+$messages['zh-tw'] = $messages['zh-hant'];
+$messages['zh-tw'] = array(
 	// When not logged in...
 	'centralauth-merge-welcome' =>
 		"'''您的用戶帳戶尚未整合到維基媒體的統一登入系統。'''\n" .
@@ -2839,8 +2838,8 @@ $wgCentralAuthMessages['zh-tw'] = array(
 );
 
 # Chinese fallback
-$wgCentralAuthMessages['zh'] = $wgCentralAuthMessages['zh-hans'];
-$wgCentralAuthMessages['zh-cn'] = $wgCentralAuthMessages['zh-hans'];
-$wgCentralAuthMessages['zh-hk'] = $wgCentralAuthMessages['zh-hant'];
-$wgCentralAuthMessages['zh-sg'] = $wgCentralAuthMessages['zh-hans'];
-$wgCentralAuthMessages['zh-yue'] = $wgCentralAuthMessages['yue'];
+$messages['zh'] = $messages['zh-hans'];
+$messages['zh-cn'] = $messages['zh-hans'];
+$messages['zh-hk'] = $messages['zh-hant'];
+$messages['zh-sg'] = $messages['zh-hans'];
+$messages['zh-yue'] = $messages['yue'];
