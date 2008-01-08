@@ -532,22 +532,76 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
- * @author Cimon Avaro
  * @author Nike
+ * @author Cimon Avaro
  */
 $messages['fi'] = array(
-	'centralauth-merge-step1-submit'       => 'Vahvista sisäänkirjautumistiedot',
-	'centralauth-merge-step2-submit'       => 'Vahvista sisäänkirjautumistiedot',
-	'centralauth-merge-step3-title'        => 'Luo yhdistetty käyttäjätunnus',
-	'centralauth-merge-step3-detail'       => 'Olet nyt valmis luomaan yhdistetyn käyttäjätunnuksesi, johon on tehty kytkökset seuraavista wikeistä:',
+	'mergeaccount'                         => 'Käyttäjätunnusten yhdistämisen tila',
+	'centralauth-merge-notlogged'          => 'Kirjaudu <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} sisään]</span>, jos haluat tarkistaa, ovatko käyttäjätunnuksesi yhdistetty.',
+	'centralauth-merge-welcome'            => "'''Tunnustasi ei ole vielä siirretty Wikimedian yhden tunnuksen kirjautumisjärjestelmään.'''
+
+Jos päivität tunnuksesi , voit jatkossa kirjautua kaikkiin Wikimedian projekteihin ja niiden kieliversioihin samalla käyttäjätunnuksella ja salasanalla.
+Vain yhden tunnuksen olemassa olo helpottaa yhteisten projektien käyttöä, kuten esimerkiksi kuvien ja muiden tiedostojen tallentamisen [http://commons.wikimedia.org/ Wikimedia Commonsiin]. Se myös vähentää sekaannuksia, jos eri ihmisillä on sama käyttäjänimi eri projekteissa.
+
+Jos käyttäjänimesi on jo varattu toisessa projektissa, yhdistäminen ei haittaa näitä toisia käyttäjiä, mutta antaa sinulle mahdollisuuden neuvotella käyttäjänimestä näiden toisten käyttäjien kanssa, tai myöhemmin ylläpitäjän kanssa.",
+	'centralauth-merge-step1-title'        => 'Tunnusten yhdistäminen',
+	'centralauth-merge-step1-detail'       => 'Salasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä oleviin tunnuksiin, niiden samuuden varmistamiseksi. Mitään muutoksia ei toteuteta ennen kuin varmistat, että kaikki näyttää hyvältä.',
+	'centralauth-merge-step1-submit'       => 'Vahvista yhdistäminen',
+	'centralauth-merge-step2-title'        => 'Muiden tunnusten yhdistäminen',
+	'centralauth-merge-step2-detail'       => 'Joidenkin käyttäjätunnusten samuutta kotiwikin käyttäjätunnukseen ei  voitu varmistaa. Jos nämä tunnukset kuuluvat sinulle, voit todistaa niiden kuuluvan sinulle antamalla niiden salasanan.',
+	'centralauth-merge-step2-submit'       => 'Vahvista yhdistäminen',
+	'centralauth-merge-step3-title'        => 'Yhdistetyn käyttäjätunnuksen luominen',
+	'centralauth-merge-step3-detail'       => 'Voit nyt luoda yhdistetyn käyttäjätunnuksen, johon on tehty kytkökset seuraavista wikeistä:',
+	'centralauth-merge-step3-submit'       => 'Yhdistä tunnukset',
 	'centralauth-complete'                 => 'Käyttäjätunnusten yhdistäminen on valmis.',
-	'centralauth-complete-text'            => 'Voit nyt kirjautua mihin tahansa Wikimedian wikiprojektiin luomatta uutta käyttäjätunnusta – samaa käyttäjänimeä ja salasanaa voi käyttää Wikipediassa, Wikikirjastossa, Wikisanakirjassa ja niiden kaikissa sisarhankkeissa kaikilla kielillä.',
+	'centralauth-incomplete'               => 'Käyttäjätunnusten yhdistäminen ei ole valmis.',
+	'centralauth-complete-text'            => 'Voit nyt kirjautua mihin tahansa Wikimedian wikiin luomatta uutta käyttäjätunnusta. Sama käyttäjänimi ja salasana toimii Wikipediassa, Wikisanakirjassa, Wikikirjastossa ja muissa projekteissa sekä niiden kaikissa kieliversioissa.',
+	'centralauth-incomplete-text'          => 'Kun kaikki tunnuksesi on yhdistetty, voit kirjautua mihin tahansa Wikimedian wikiin luomatta uutta käyttäjätunnusta. Sama käyttäjänimi ja salasana toimii Wikipediassa, Wikisanakirjassa, Wikikirjastossa ja muissa projekteissa sekä niiden kaikissa kieliversioissa.',
+	'centralauth-not-owner-text'           => 'Käyttäjänimi ”$1” annettiin automaattisesti käyttäjätunnuksen $2 omistajalle.
+
+Jos tämä tunnus on sinun, voi viimeistellä tunnusten yhdistämisen antamalla päätunnuksen salasanan:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Vain testi</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'Tunnusten yhdistäminen on tällä hetkellä kokeilutilassa. Tunnusten yhdistämisoperaatioita ei suoriteta.',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Lisätietoja '''yhdistetystä tunnuksesta''']]...''",
+	'centralauth-list-home-title'          => 'Kotiwiki',
+	'centralauth-list-home-dryrun'         => 'Kotiwikissä olevan tunnuksen salasanaa ja sähköpostiosoitetta käytetään yhdistetyssä tunnuksessa ja siellä olevaan käyttäjäsivuun luodaan automaattisesti linkit muista wikeistä. Voit vaihtaa kotiwikiäsi myöhemmin.',
+	'centralauth-list-attached-title'      => 'Liitetyt tunnukset',
+	'centralauth-list-attached'            => 'Tunnus nimeltä ”$1” on liitetty automaattisesti yhdistettyyn käyttäjätunnukseesi seuraavista wikeistä:',
+	'centralauth-list-attached-dryrun'     => 'Tunnus nimeltä ”$1” liitetään automaattisesti yhdistettyyn käyttäjätunnukseesi seuraavista wikeistä:',
+	'centralauth-list-unattached-title'    => 'Liittämättömät tunnukset',
+	'centralauth-list-unattached'          => 'Tunnusta ”$1” ei voitu liittää automaattisesti seuraavista wikeistä, koska niissä todennäköisesti on eri salasana:',
+	'centralauth-foreign-link'             => 'Tunnus $1 projektissa $2',
 	'centralauth-finish-title'             => 'Suorita yhdistäminen',
 	'centralauth-finish-text'              => 'Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla toisten käyttäjätunnusten salasanat:',
 	'centralauth-finish-password'          => 'Salasana',
 	'centralauth-finish-login'             => 'Kirjaudu sisään',
 	'centralauth-finish-send-confirmation' => 'Lähetä salasana sähköpostitse',
+	'centralauth-finish-problems'          => 'Ongelmia? Etkö omista näitä tunnuksia? [[meta:Help:Unified login problems|Apua voi etsiä täältä]]...',
+	'centralauth-merge-attempt'            => "'''Tarkistetaan annettua salasanaa jäljellä oleviin liittämättömiin tunnuksiin...'''",
+	'centralauth-attach-list-attached'     => 'Yhdistetty käyttäjätunnuksesi ”$1” sisältää seuraavat tunnukset:',
 	'centralauth-attach-title'             => 'Vahvista käyttäjätunnus',
+	'centralauth-attach-text'              => 'Tätä tunnusta ei ole vielä liitetty yhdistettyyn käyttäjätunnukseen. Jos myös päätunnus kuuluu sinulle, voit yhdistää tämän tunnuksen antamalla päätunnuksen salasanan:',
+	'centralauth-attach-submit'            => 'Liitä tunnus',
+	'centralauth-attach-success'           => 'Tunnus liitettiin yhdistettyyn käyttäjätunnukseen.',
+	'centralauth'                          => 'Yhdistetyn käyttäjätunnuksen hallinta',
+	'centralauth-admin-manage'             => 'Käyttäjätietojen hallinta',
+	'centralauth-admin-username'           => 'Käyttäjätunnus',
+	'centralauth-admin-lookup'             => 'Näytä tai muokkaa käyttäjätietoja',
+	'centralauth-admin-permission'         => 'Vain ylivalvojat (steward) voivat yhdistää toisten ihmisten tunnuksia heidän puolestaan.',
+	'centralauth-admin-unmerge'            => 'Erota valitut',
+	'centralauth-admin-merge'              => 'Liitä valitut',
+	'centralauth-admin-bad-input'          => 'Kelpaamaton liitosvalinta',
+	'centralauth-admin-none-selected'      => 'Et valinnut tunnuksia, joita haluat muokata.',
+	'centralauth-prefs-status'             => 'Päätunnuksen tila',
+	'centralauth-prefs-not-managed'        => 'Yhdistämätön tunnus',
+	'centralauth-prefs-unattached'         => 'Varmistamaton',
+	'centralauth-prefs-complete'           => 'Kaikki kunnossa',
+	'centralauth-prefs-migration'          => 'Liittäminen kesken',
+	'centralauth-prefs-count-attached'     => 'Tunnuksesi on käytössä $1 {{plural:$1|wikissä}}.',
+	'centralauth-prefs-count-unattached'   => 'Liittämättömiä tunnuksia on $1 {{plural:$1|wikissä}}.',
+	'centralauth-prefs-detail-unattached'  => 'Tätä sivua ei ole varmistettu päätunnukseen kuuluvaksi.',
+	'centralauth-prefs-manage'             => 'Päätunnuksen hallinta',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Käyttäjätunnusta $1 ei nimetä uudelleen, koska se on yhdistetty käyttäjätunnus.</div>',
 );
 
 $messages['fr'] = array(
@@ -1723,29 +1777,29 @@ Jeśli ktoś inny wykorzystuje na innym projekcie identyczną do Twojej nazwę u
 
 Jeśli chcesz przyłączyć konto użytkownika "$1" do konta globalnego podaj hasło konta na $2:',
 	'centralauth-notice-dryrun'            => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
-	'centralauth-disabled-dryrun'          => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym/debugującym. Właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
-	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
+	'centralauth-disabled-dryrun'          => 'Tworzenie konta globalnego jest dostępne tylko w trybie demonstracyjnym/debugującym. Właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta globalnego''']]...''",
 	'centralauth-list-home-title'          => 'Macierzysta wiki',
-	'centralauth-list-home-dryrun'         => 'Ustawione na tej wiki hasło oraz adres e-mail będą wykorzystywane dla Twojego konta uniwersalnego, a Twoja strona użytkownika zostanie automatycznie podłączona do innych wiki. W przyszłości będziesz jednak mógł zmienić swoją macierzystą wiki.',
+	'centralauth-list-home-dryrun'         => 'Ustawione na tej wiki hasło oraz adres e-mail będą wykorzystywane dla Twojego konta globalnego, a Twoja strona użytkownika zostanie automatycznie podłączona do innych wiki. W przyszłości będziesz jednak mógł zmienić swoją macierzystą wiki.',
 	'centralauth-list-attached-title'      => 'Powiązane konta użytkownika',
-	'centralauth-list-attached'            => 'Konto o nazwie "$1" we wszystkich tych witrynach zostało automatycznie przypisane do konta uniwersalnego:',
-	'centralauth-list-attached-dryrun'     => 'Konto o nazwie "$1" we wszystkich tych witrynach zostanie automatycznie przypisane do konta uniwersalnego:',
+	'centralauth-list-attached'            => 'Konto o nazwie "$1" we wszystkich tych witrynach zostało automatycznie przypisane do konta globalnego:',
+	'centralauth-list-attached-dryrun'     => 'Konto o nazwie "$1" we wszystkich tych witrynach zostanie automatycznie przypisane do konta globalnego:',
 	'centralauth-list-unattached-title'    => 'Niepowiązane konta',
-	'centralauth-list-unattached'          => 'Konto o nazwie "$1" nie może zostać automatycznie przypisane do konta uniwersalnego dla następujących witryn; najbardziej prawdopodobną przyczyną jest ustawione dla tych witryn innego hasła niż dla konta macierzystego:',
+	'centralauth-list-unattached'          => 'Konto o nazwie "$1" nie może zostać automatycznie przypisane do konta globalnego dla następujących witryn; najbardziej prawdopodobną przyczyną jest ustawienie dla tych witryn innego hasła niż dla konta macierzystego:',
 	'centralauth-foreign-link'             => 'Użytkownik $1 na $2',
-	'centralauth-finish-title'             => 'Zakończono tworzenie konta uniwersalnego',
-	'centralauth-finish-text'              => 'Jeżeli te konta należą do Ciebie, możesz je przyłączyć do konta uniwersalnego wpisując tutaj hasło dla tych kont:',
+	'centralauth-finish-title'             => 'Zakończono tworzenie konta globalnego',
+	'centralauth-finish-text'              => 'Jeżeli te konta należą do Ciebie, możesz je przyłączyć do konta globalnego wpisując tutaj hasło dla tych kont:',
 	'centralauth-finish-password'          => 'Hasło:',
 	'centralauth-finish-login'             => 'Zaloguj',
 	'centralauth-finish-send-confirmation' => 'Hasło e-mail',
 	'centralauth-finish-problems'          => 'Masz kłopoty lub nie jesteś właścicielem tych innych kont? [[meta:Help:Unified login problems|Jak znaleźć pomoc]]...',
-	'centralauth-merge-attempt'            => "'''Sprawdzenie hasła dla pozostałych kont, nieprzyłączonych do konta uniwersalnego...'''",
-	'centralauth-attach-list-attached'     => 'Konto uniwersalne "$1" obejmuje następujące konta:',
+	'centralauth-merge-attempt'            => "'''Sprawdzenie hasła dla pozostałych kont, nieprzyłączonych do konta globalnego...'''",
+	'centralauth-attach-list-attached'     => 'Konto globalne "$1" obejmuje następujące konta:',
 	'centralauth-attach-title'             => 'Potwierdź konto',
-	'centralauth-attach-text'              => 'To konto nie zostało jeszcze przyłączone do konta uniwersalnego. Jeżeli konto uniwersalne należy do Ciebie, możesz przyłączyć to konto jeżeli podasz teraz hasło konta uniwersalnego:',
+	'centralauth-attach-text'              => 'To konto nie zostało jeszcze przyłączone do konta globalnego. Jeżeli konto globalne należy również do Ciebie, podaj jego hasło, a nastąpi przyłączenie:',
 	'centralauth-attach-submit'            => 'Przyłącz konto',
-	'centralauth-attach-success'           => 'Konto zostało przyłączone do konta uniwersalnego',
-	'centralauth'                          => 'Zarządzanie kontem uniwersalnym',
+	'centralauth-attach-success'           => 'Konto zostało przyłączone do konta globalnego',
+	'centralauth'                          => 'Zarządzanie kontem globalnym',
 	'centralauth-admin-manage'             => 'Zarządzanie danymi użytkownika',
 	'centralauth-admin-username'           => 'Nazwa użytkownika:',
 	'centralauth-admin-lookup'             => 'Podgląd i edycja danych użytkownika',
@@ -2057,90 +2111,38 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie je možné lokálne premenovať používateľa $1, keďže toto používateľské meno bolo migrované na zjednotený prihlasovací systém.</div>',
 );
 
+/** ћирилица (ћирилица)
+ * @author Sasa Stefanovic
+ */
 $messages['sr-ec'] = array(
-	// When not logged in...
-	'mergeaccount' =>
-		'Статус уједињења налога',
-	'centralauth-merge-notlogged' =>
-		'Молимо вас да се <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} пријавите]' .
-		'</span> како бисте проверили да ли је ваш налог спојен успешно.',
+	'mergeaccount'                         => 'Статус уједињења налога',
+	'centralauth-merge-notlogged'          => 'Молимо вас да се <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} пријавите]</span> како бисте проверили да ли је ваш налог спојен успешно.',
+	'centralauth-complete'                 => 'Спајање налога завршено!',
+	'centralauth-incomplete'               => 'Спајање налога није завршено!',
+	'centralauth-complete-text'            => 'Сада се можете пријавити на било који Викимедијин вики сајт без прављењановог налога; исто корисничко име и лозинка ће свугде радити Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти на свим језицима.',
+	'centralauth-incomplete-text'          => 'Када једном спојите налог, можете се пријавити на било који Викимедијин вики сајт без прављења; the same username and password will work on Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти на свим језицима.',
+	'centralauth-not-owner-text'           => 'Корисничко име "$1" је аутоматски додељено власнику налога на $2.
 
-	// Big text on completion
-	'centralauth-complete' =>
-		'Спајање налога завршено!',
-	'centralauth-incomplete' =>
-		'Спајање налога није завршено!',
-
-	// Wheeee
-	'centralauth-complete-text' =>
-		'Сада се можете пријавити на било који Викимедијин вики сајт без прављења' .
-		'новог налога; исто корисничко име и лозинка ће свугде радити ' .
-		'Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти ' .
-		'на свим језицима.',
-	'centralauth-incomplete-text' =>
-		'Када једном спојите налог, можете се пријавити ' .
-		'на било који Викимедијин вики сајт без прављења; ' .
-		'the same username and password will work on ' .
-		'Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти ' .
-		'на свим језицима.',
-	'centralauth-not-owner-text' =>
-		'Корисничко име "$1" је аутоматски додељено власнику ' .
-		"налога на $2.\n" .
-		"\n" .
-		"Уколико сте ово ви, можете једноставно завршити процес спајања " .
-		"уписујући лозинку за налог овде::",
-
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|Прочитајте више о '''спајању налога''']]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'Налог "$1" на следећим сајтовима ' .
-		'је аутоматски спојен:',
-	'centralauth-list-unattached' =>
-		'Налог "$1" се не може аутоматски потврдити ' .
-		'да припада вама на следећим сајтовима; ' .
-		'највероватније имају различите лозинке него ваш ' .
-		'примаран налог:',
-	'centralauth-foreign-link' =>
-		'Корисник $1 на $2',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'Заврши спајање',
-	'centralauth-finish-text' =>
-		'Уколико ови налози припадају вама, можете завршити ' .
-		'процес спајања налога уписујући лозинку ' .
-		'за остале налоге овде:',
-	'centralauth-finish-password' =>
-		'Лозинка:',
-	'centralauth-finish-login' =>
-		'Пријава',
-	'centralauth-finish-send-confirmation' =>
-		'Пошаљи лозинку на е-пошту',
-	'centralauth-finish-problems' =>
-		"Имате проблем, или ви нисте власник осталих налога? " .
-		"[[meta:Help:Unified login problems|Помоћ]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''Провера унете лозинке наспрам осталих налога који још нису спојени......'''",
-
-	// Administrator's console
-	'centralauth' => 'Администрација спајања налога',
-	'centralauth-admin-manage' =>
-		'Надгледање корисничких података',
-	'centralauth-admin-username' =>
-		'Корисничко име:',
-	'centralauth-admin-lookup' =>
-		'Преглед или измена корисничких података',
-	'centralauth-admin-permission' =>
-		"Само стјуарди могу да споје остале корисничке налоге за њих.",
-	'centralauth-admin-unmerge' =>
-		'Одвоји селектоване',
-	'centralauth-admin-merge' =>
-		'Споји селектоване',
+Уколико сте ово ви, можете једноставно завршити процес спајања уписујући лозинку за налог овде::',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Прочитајте више о '''спајању налога''']]...''",
+	'centralauth-list-attached-title'      => 'Приложени налози',
+	'centralauth-list-attached'            => 'Налог "$1" на следећим сајтовима је аутоматски спојен:',
+	'centralauth-list-unattached'          => 'Налог "$1" се не може аутоматски потврдити да припада вама на следећим сајтовима; највероватније имају различите лозинке него ваш примаран налог:',
+	'centralauth-foreign-link'             => 'Корисник $1 на $2',
+	'centralauth-finish-title'             => 'Заврши спајање',
+	'centralauth-finish-text'              => 'Уколико ови налози припадају вама, можете завршити процес спајања налога уписујући лозинку за остале налоге овде:',
+	'centralauth-finish-password'          => 'Лозинка:',
+	'centralauth-finish-login'             => 'Пријава',
+	'centralauth-finish-send-confirmation' => 'Пошаљи лозинку на е-пошту',
+	'centralauth-finish-problems'          => 'Имате проблем, или ви нисте власник осталих налога? [[meta:Help:Unified login problems|Помоћ]]...',
+	'centralauth-merge-attempt'            => "'''Провера унете лозинке наспрам осталих налога који још нису спојени......'''",
+	'centralauth'                          => 'Администрација спајања налога',
+	'centralauth-admin-manage'             => 'Надгледање корисничких података',
+	'centralauth-admin-username'           => 'Корисничко име:',
+	'centralauth-admin-lookup'             => 'Преглед или измена корисничких података',
+	'centralauth-admin-permission'         => 'Само стјуарди могу да споје остале корисничке налоге за њих.',
+	'centralauth-admin-unmerge'            => 'Одвоји селектоване',
+	'centralauth-admin-merge'              => 'Споји селектоване',
 );
 
 $messages['sr-el'] = array(
@@ -2953,10 +2955,7 @@ $messages['kk'] = $messages['kk-cyrl'];
 $messages['kk-cn'] = $messages['kk-arab'];
 $messages['kk-kz'] = $messages['kk-cyrl'];
 $messages['kk-tr'] = $messages['kk-latn'];
-
 $messages['pt-br'] = $messages['pt'];
-
-# Chinese fallback
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
 $messages['zh-hk'] = $messages['zh-hant'];
