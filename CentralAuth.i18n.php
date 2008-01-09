@@ -272,6 +272,17 @@ $messages['bg'] = array(
 	'centralauth-admin-username'  => 'Потребителско име:',
 );
 
+/** Bengali (বাংলা)
+ * @author Zaheen
+ */
+$messages['bn'] = array(
+	'centralauth-merge-step3-title'  => 'একত্রিত অ্যাকাউন্ট সৃষ্টি করা হোক',
+	'centralauth-merge-step3-detail' => 'আপনি আপনার একত্রিত অ্যাকাউন্ট সৃষ্টি করতে প্রস্তুত, সাথে নিচের উইকিগুলি সংযুক্ত হবে:',
+	'centralauth-merge-step3-submit' => 'অ্যাকাউন্ট একত্রিত করা হোক',
+	'centralauth-complete'           => 'অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!',
+	'centralauth-incomplete'         => 'অ্যাকাউন্ট একত্রীকরণ নিষ্পন্ন হয়নি!',
+);
+
 $messages['br'] = array(
 	'centralauth-finish-password'          => 'Ger-tremen :',
 	'centralauth-admin-username'           => 'Anv implijer :',
@@ -2030,10 +2041,14 @@ $messages['ru'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Невозможно переименовать участника $1 в данном проекте, так как это имя участника было перенесено в систему единой учётной записи.</div>',
 );
 
+/** Slovak (Slovenčina)
+ * @author Helix84
+ * @author Michawiki
+ */
 $messages['sk'] = array(
 	'mergeaccount'                         => 'Stav zjednotenia prihlasovacích účtov',
 	'centralauth-merge-notlogged'          => 'Prosím, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty celkom zjednotené.',
-	'centralauth-merge-welcome'            => '\'\'\'Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém Wikimedia.\'\'\'
+	'centralauth-merge-welcome'            => "'''Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém Wikimedia.'''
 
 Ak si zvolíte, aby vaše účty boli migrované, budete môcť používať rovnaké používateľské meno a heslo na prihlasovanie do každého z wiki projektov nadácie Wikimedia vo všetkých dostupných jazykoch.
 To zjednopduší prácu so zdieľanými projektami ako nahrávanie na [http://commons.wikimedia.org/Hlavná_stránka Wikimedia Commons] a zamedzí zmätkom v prípade, že dvaja ľudia majú rovnaké používateľské meno na rôznych projektoch.
@@ -2044,13 +2059,13 @@ Ak niekto iný už zabral vaše používateľské meno na inom projekte, toto ic
 
 Keď si zvolíte, že chcete migráciu na zjednotené prihlasovanie, systém sa pozrie na každý z projektov, ktorý prevádzkujeme -- Wikipedia, Wikinews, Commons, atď. -- a vypíše každý, kde bolo vaše používateľské meno zaregistrované.
 
-Jedna z týchto wiki bude zvolená za "domovskú wiki" vášho účtu, zvyčajne tá, ktorá je najviac používaná. Ak to nie je wiki, do ktorej sa momentálne prihlasujete, môžete byť predtým, než proces bude pokračovať požiadaný o potvrdenie, že poznáte heslo k danému účtu.
+Jedna z týchto wiki bude zvolená za „domovskú wiki“ vášho účtu, zvyčajne tá, ktorá je najviac používaná. Ak to nie je wiki, do ktorej sa momentálne prihlasujete, môžete byť predtým, než proces bude pokračovať požiadaný o potvrdenie, že poznáte heslo k danému účtu.
 
 Informácie účtu na domovskej wiki budú porovnané s každým s ostatných účtov a tie, ktorých heslo alebo emailová adresa sa zhodujú alebo neboli použité budú automaticky pripojené k vášmu novému globálnemu účtu.
 
 Tie, ktoré sa nezhodujú budú vynechané, pretože systém nemôže s istotou určiť, či sú vaše účty. Pre tieto účty, ak patria vám, môžete dokončiť pripojenie zadaním správneho prihlasovacieho hesla; ak ich zaregistroval niekto iný, budete mať možnosť zanechať im správu a uvidíte, či niečo vymyslíte.
 
-Nie je \'\'povinné\'\' spojiť všetky účty; niektoré môžete nechať oddelené, a budú tak označené.',
+Nie je ''povinné'' spojiť všetky účty; niektoré môžete nechať oddelené, a budú tak označené.",
 	'centralauth-merge-step1-title'        => 'Začať zjednotenie prihlasovania',
 	'centralauth-merge-step1-detail'       => 'Vaše heslo a registrovaná emailová adresa bude porovnaná s účtami na ostatných wiki, aby sa potvrdilo, že sa zhodujú. Žiadne zmeny sa nevykonajú, kým nepotvrdíte, že je to v poriadku.',
 	'centralauth-merge-step1-submit'       => 'Potvrdiť prihlasovacie informácie',
@@ -2064,19 +2079,19 @@ Nie je \'\'povinné\'\' spojiť všetky účty; niektoré môžete nechať oddel
 	'centralauth-incomplete'               => 'Zjednotenie prihlasovacích účtov nebolo dokončené!',
 	'centralauth-complete-text'            => 'Teraz sa môžete prihlásiť na ľubovoľnú wiki nadácie Wikimedia bez toho, aby ste si museli vytvárať nový účet; rovnaké užívateľské meno a heslo bude fungovať na projektoch Wikipedia, Wiktionary, Wikibooks a ďalších sesterských projektoch vo všetkých jazykoch.',
 	'centralauth-incomplete-text'          => 'Potom, ako budú vaše účty zjednotené sa budete môcť prihlásiť na ľubovoľnú wiki nadácie Wikimedia bez toho, aby ste si museli vytvárat ďalší účet; rovnaké užívateľské meno a heslo bude fungovať na projektoch Wikipedia, Wiktionary, Wikibooks a ďalších sesterských projektoch vo všetkých jazykoch.',
-	'centralauth-not-owner-text'           => 'Užívateľské meno "$1" bolo automaticky priradené vlastníkovi účtu na projekte $2.
+	'centralauth-not-owner-text'           => 'Používateľské meno „$1“ bolo automaticky priradené vlastníkovi účtu na projekte $2.
 
 Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísaním hesla pre uvedený účet sem:',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Toto je iba demonštračný režim</div><br clear=\'all\'/>',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Toto je iba demonštračný režim</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Zjednotenie účtov prebieha momentálne iba v demonštračnom / ladiacom režime, takže samotné operácie spojenia sú vypnuté. Prepáčte!',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Prečítajte si viac o \'\'\'zjednotení prihlasovacích účtov\'\'\']]...\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Prečítajte si viac o '''zjednotení prihlasovacích účtov''']]...''",
 	'centralauth-list-home-title'          => 'Domovská wiki',
 	'centralauth-list-home-dryrun'         => 'Heslo a emailová adresa nastavená na tejto wiki sa použije pre váš zjednotený účet a na vašu používateľskú stránku tu budú automaticky odkazovať ostatné wiki. Tiež bude možné zmeniť vašu domovskú wiki neskôr.',
 	'centralauth-list-attached-title'      => 'Pripojené účty',
-	'centralauth-list-attached'            => 'Účty z názvom "$1" na nasledujúcich projektoch boli automaticaticky zjednotené:',
-	'centralauth-list-attached-dryrun'     => 'Účet s názvom "$1" na kažom z nasledovných projektov bude automaticky pripojený k zjednotenému účtu:',
+	'centralauth-list-attached'            => 'Účty z názvom „$1“ na nasledujúcich projektoch boli automaticaticky zjednotené:',
+	'centralauth-list-attached-dryrun'     => 'Účet s názvom „$1“ na kažom z nasledovných projektov bude automaticky pripojený k zjednotenému účtu:',
 	'centralauth-list-unattached-title'    => 'Nepripojené účty',
-	'centralauth-list-unattached'          => 'Nebolo možné automaticky potvrdiť, že účet "$1" na nasledujúcich projektoch patrí vám; pravdepodobne má odlišné heslo ako váš primárny účet:',
+	'centralauth-list-unattached'          => 'Nebolo možné automaticky potvrdiť, že účet „$1“ na nasledujúcich projektoch patrí vám; pravdepodobne má odlišné heslo ako váš primárny účet:',
 	'centralauth-foreign-link'             => 'Užívateľ $1 na $2',
 	'centralauth-finish-title'             => 'Dokončiť zjednotenie',
 	'centralauth-finish-text'              => 'Ak tieto účty naozaj patria vám, môžete skončiť proces zjednotenia jednoducho napísaním hesiel dotyčných účtov:',
@@ -2084,7 +2099,7 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-finish-login'             => 'Prihlasovacie meno',
 	'centralauth-finish-send-confirmation' => 'Zaslať heslo emailom',
 	'centralauth-finish-problems'          => 'Máte problém alebo nie ste vlastníkom týchto účtov? [[meta:Help:Unified login problems|Ako hľadať pomoc]]...',
-	'centralauth-merge-attempt'            => '\'\'\'Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...\'\'\'',
+	'centralauth-merge-attempt'            => "'''Kontrolujem poskytnuté heslá voči zostávajúcim zatiaľ nezjednoteným účtom...'''",
 	'centralauth-attach-list-attached'     => 'K zjednotenému účtu s názvom „$1“ patria nasledovné účty:',
 	'centralauth-attach-title'             => 'Potvrdiť účet',
 	'centralauth-attach-text'              => 'Tento účet zatiaľ nebol migrovaný na zjednotený účet. Ak je globálny účet váš, môžete tento účet zlúčiť napísaním hesla ku globálnemu účtu:',
