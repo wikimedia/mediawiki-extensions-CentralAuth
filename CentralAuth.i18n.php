@@ -267,9 +267,12 @@ $messages['bcl'] = array(
  */
 $messages['bg'] = array(
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
+	'centralauth-foreign-link'    => 'Потребител $1 от $2',
 	'centralauth-finish-password' => 'Парола:',
 	'centralauth-finish-login'    => 'Влизане',
+	'centralauth-admin-manage'    => 'Управление на потребителските данни',
 	'centralauth-admin-username'  => 'Потребителско име:',
+	'centralauth-admin-lookup'    => 'Преглед и редактиране на потребителските данни',
 );
 
 /** Bengali (বাংলা)
