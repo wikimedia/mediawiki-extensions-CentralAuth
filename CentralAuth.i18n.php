@@ -1261,261 +1261,210 @@ $messages['ja'] = array(
 );
 
 $messages['kk-arab'] = array(
-	// When not logged in...
-	'mergeaccount' =>
-		'تٸركەلگٸ بٸرەگەيلەندٸرۋ كٷيٸ',
-	'centralauth-merge-notlogged' =>
-		'تٸركەلگٸلەرٸڭٸز تولىق بٸرەگەيلەندٸرۋٸن تەكسەرۋ ٷشٸن Please <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special٪3AMergeAccount}} كٸرٸڭٸز]' .
-		'</span>.',
+	'mergeaccount'                         => 'تىركەلگى بىرەگەيلەندىرۋ كۇيى',
+	'centralauth-merge-notlogged'          => 'تىركەلگىلەرىڭىز تولىق بىرەگەيلەندىرۋىن تەكسەرۋ ٴۇشىن Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} كىرىڭىز]</span>.',
+	'centralauth-merge-welcome'            => "'''قاتىسۋشى تىركەلگىڭىز Wikimedia بىرەگەيلەنگەن تىركەلگى جۇيەسىنە الىدە اۋىستىرىلمادى.'''
 
-	// Big text on completion
-	'centralauth-complete' =>
-		'تٸركەلگٸ بٸرەگەيلەندٸرۋٸ بٸتتٸ!',
-	'centralauth-incomplete' =>
-		'تٸركەلگٸ بٸرەگەيلەندٸرۋٸ بٸتكەن جوق!',
+ەگەر تىركەلگىلەرىڭىزدى اۋىستىرۋدى تاڭداعان بولساڭىز, ٴبىر قاتىسۋشى اتىڭىز بەن قۇپىييا ٴسوزىڭىزدى پايدالانىپ بارلىق Wikimedia جوبالارىنىڭ بارلىق تىلدەرىندەگى ۋىيكىيلەرىنە كىرە الاسىز.
+بۇل  [http://commons.wikimedia.org/ Wikimedia ورتاققورىنا] قوتارۋى سىيياقتى بولىسەتىن جوبالارمەن جۇمىس ىستەۋگە جەڭىلدىلىك بەرەدى, جانە ٴارتۇرلى جوبالاردا ەكى تۇلعا ٴبىر قاتىسۋشى اتىن پايدالانعاننان شىعاتىن بىلىقتى نە داۋ-جانجالدى بولدىرمايدى.
 
-	// Wheeee
-	'centralauth-complete-text' =>
-		'ەندٸ ٵرقايسى Wikimedia قورىنىڭ ۋيكي تورابىنا جاڭا تٸركەلگٸ جاساماستان ' .
-		'كٸرۋٸڭٸزگە بولادى; دٵل وسى قاتىسۋشى اتىڭىز بەن قۇپييا سٶزٸڭٸز ' .
-		'ۋيكيپەدييا, ۋيكيسٶزدٸك, ۋيكيكٸتٵپ دەگەن جوبالاردا جٵنە بارلىق  ' .
-		'تٸلدەردەگٸ تارۋلارىندا قىزمەت ٸستەيدٸ.',
-	'centralauth-incomplete-text' =>
-		'تٸركەلگٸڭٸز بٸرەگەيلەندٸرٸگەننەن باستاپ ٵرقايسى Wikimedia ' .
-		'قورىنىڭ ۋيكي تورابىنا جاڭا تٸركەلگٸ جاساماستان كٸرۋٸڭٸزگە بولادى; ' .
-		'دٵل وسى قاتىسۋشى اتىڭىز بەن قۇپييا سٶزٸڭٸز ' .
-		'ۋيكيپەدييا, ۋيكيسٶزدٸك, ۋيكيكٸتٵپ, دەگەن جوبالاردا جٵنە بارلىق ' .
-		'تٸلدەردەگٸ تارۋلارىندا قىزمەت ٸستەيدٸ.',
-	'centralauth-not-owner-text' =>
-		'«$1» دەگەن قاتىسۋشى اتى ٶزدٸك تٷردە ' .
-		"$2 دەگەن تٸركەلگٸ يەسٸنە تٷيٸستٸرٸلگەن.\n" .
-		"\n" .
-		"بۇل ٶزٸڭٸز بولساڭىز, باسقى قۇپييا سٶزٸڭٸزدٸ كٵدٸمگٸدەي مىندا ەنگٸزٸپ " .
-		"تٸركەلگٸ بٸرەگەيلەندٸرۋ ٷدٸرٸسٸن بٸتٸرۋٸڭٸزگە بولادى:",
+ەگەر باسقا بىرەۋ ٴسىزدىڭ قاتىسۋشى اتىڭىزدى باسقا تاراۋدا الداقاشان پايدالانىپ وتىرسا, بۇل وعان كەدەرگى كەلتىرمەيدى, بىراق بۇل سوڭىرا ولمەن نە اكىمشىمەن جۇمىسىن وتەۋدى بەرەدى.",
+	'centralauth-merge-step1-title'        => 'تىركەلگى بىرەگەيلەندىرۋىن باستاۋ',
+	'centralauth-merge-step1-detail'       => 'قاتىسۋشى اتىڭىز بەن تىركەلگەن ە-پوشتا جايڭىز سايكەستىگىن قۇپتاۋ ٴۇشىن باسقا ۋىيكىيلەردەگى تىركەلگىلەرگە قارسى تەكسەرىلەدى. بۇل نارسەلەر جارايتىنىن ٴوزىڭىز قۇپتاعانشا دەيىن ەش وزگەرىستەر جاسالمايدى.',
+	'centralauth-merge-step1-submit'       => 'تىركەلگى مالىمەتتەرىن قۇپتاۋ',
+	'centralauth-merge-step2-title'        => 'كوبىرەك تىركەلگىلەردى قۇپتاۋ',
+	'centralauth-merge-step2-detail'       => 'تىركەلگىلەردىڭ كەيبىرەۋلەرى ەنگىزىلگەن مەكەن ۋىيكىيگە وزدىكتىك سايكەستىرىلمەدى. ەگەر وسى تىركەلگىلەر سىزدىكى بولسا, قۇپىييا سوزدەرىن كەلتىرىپ بۇنى قۇپتاي الاسىز.',
+	'centralauth-merge-step2-submit'       => 'تىركەلگى مالىمەتتەرىن قۇپتاۋ',
+	'centralauth-merge-step3-title'        => 'بىرەگەيلەنگەن تىركەلگى جاراتۋ',
+	'centralauth-merge-step3-detail'       => 'كەلەسى ۋىيكىيلەردى تىركەمە ەتىپ, بىرەگەيلەنگەن تىركەلگىڭىزدى جاراتۋعا دايىنسىز:',
+	'centralauth-merge-step3-submit'       => 'تىركەلگىلەردى بىرەگەيلەندىرۋ',
+	'centralauth-complete'                 => 'تىركەلگى بىرەگەيلەندىرۋى ٴبىتتى!',
+	'centralauth-incomplete'               => 'تىركەلگى بىرەگەيلەندىرۋى بىتكەن جوق!',
+	'centralauth-complete-text'            => 'ەندى ارقايسى Wikimedia قورىنىڭ ۋىيكىي تورابىنا جاڭا تىركەلگى جاساماستان كىرۋىڭىزگە بولادى; ٴدال وسى قاتىسۋشى اتىڭىز بەن قۇپىييا ٴسوزىڭىز ۋىيكىيپەدىييا, ۋىيكىيسوزدىك, ۋىيكىيكىتاپ دەگەن جوبالاردا جانە بارلىق  تىلدەردەگى تارۋلارىندا قىزمەت ىستەيدى.',
+	'centralauth-incomplete-text'          => 'تىركەلگىڭىز بىرەگەيلەندىرىگەننەن باستاپ ارقايسى Wikimedia قورىنىڭ ۋىيكىي تورابىنا جاڭا تىركەلگى جاساماستان كىرۋىڭىزگە بولادى; ٴدال وسى قاتىسۋشى اتىڭىز بەن قۇپىييا ٴسوزىڭىز ۋىيكىيپەدىييا, ۋىيكىيسوزدىك, ۋىيكىيكىتاپ, دەگەن جوبالاردا جانە بارلىق تىلدەردەگى تارۋلارىندا قىزمەت ىستەيدى.',
+	'centralauth-not-owner-text'           => '«$1» قاتىسۋشى اتى $2 دەگەندەگى تىركەلگى ىييەسىنە وزدىكتىك تۇيىستىرىلگەن.
 
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|'''بٸرەگەيلەندٸرٸلگەن تٸركەلگٸ''' تۋرالى وقىڭىز]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'«$1» دەپ اتالعان تٸركەلگٸلەر كەلەسٸ توراپتاردا ' .
-		'ٶزدٸك تٷردە تٷيٸستٸرٸلگەن:',
-	'centralauth-list-unattached' =>
-		'«$1» دەگەن تٸركەلگٸڭٸز كەلەسٸ توراپتاردا ' .
-		'ٶزدٸك تٷردە راستالمادى; ' .
-		'بٵلكٸم بۇلاردا باسقى تٸركەلگٸدەن سان-قيلى ' .
-		'قۇپييا سٶزدەر بار:',
-	'centralauth-foreign-link' =>
-		'$2 دەگەندەگٸ $1 دەگەن قاتىسۋشى',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'تٷيٸستٸرٸلۋ بٸتتٸ',
-	'centralauth-finish-text' =>
-		'بۇل تٸركەلگٸلەر سٸزدٸكٸ بولسا, قۇپييا سٶزٸدەرڭٸزدٸ ' .
-		'باسقا تٸركەلگٸلەرٸڭٸزگە كٵدٸمگٸدەي مىندا ەنگٸزٸپ ' .
-		'تٸركەلگٸلەرٸڭٸزدٸ بٸرەگەيلەندٸرۋٸن بٸتٸرۋڭٸزگە بولادى:',
-	'centralauth-finish-password' =>
-		'قۇپييا سٶز:',
-	'centralauth-finish-login' =>
-		'كٸرۋ',
-	'centralauth-finish-send-confirmation' =>
-		'قۇپييا سٶزدٸ حاتپەن جٸبەرۋ',
-	'centralauth-finish-problems' =>
-		"قيىن جاعدايعا ۇشىرادىڭىز, نەمەسە باسقا تٸركەلگٸلەر سٸزدٸكٸ ەمەس؟ " .
-		"[[meta:Help:Unified login problems|قالاي انىقتالۋىڭىزعا بولادى]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''جابدىقتالىنعان قۇپييا سٶزدٸ قالعان تٷيٸستٸرٸلمەگەن تٸركەلگٸلەرمەن تەكسەرۋدە…'''",
-
-	// Administrator's console
-	'centralauth' => 'بٸرەگەيلەندٸرگەن تٸركەلگٸنٸ مەڭگەرۋ',
-	'centralauth-admin-manage' =>
-		'قاتىسۋشى دەرەكتەرٸن مەڭگەرۋ',
-	'centralauth-admin-username' =>
-		'قاتىسۋشى اتى:',
-	'centralauth-admin-lookup' =>
-		'قاتىسۋشى دەرەكتەرٸن قاراۋ نە ٶڭدەۋ',
-	'centralauth-admin-permission' =>
-		"باسقالاردىڭ تٸركەلگٸلەرٸن بۇعان تەك جەتەكشٸلەر تٷيٸستٸرٸلەيدٸ.",
-	'centralauth-admin-unmerge' =>
-		'تالعانعاندى تٷيٸستٸرٸلەمە',
-	'centralauth-admin-merge' =>
-		'تالعانعاندى تٷيٸستٸرٸلە',
+بۇل ٴوزىڭىز بولساڭىز, باسقى قۇپىييا ٴسوزىڭىزدى كادىمگىدەي مىندا ەنگىزىپ تىركەلگى بىرەگەيلەندىرۋ ٴۇدىرىسىن بىتىرۋىڭىزگە بولادى:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>تەك تانىسۋ ٴادىسى</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'تىركەلگى بىرەگەيلەندىرۋى اعىمدا كورسەتۋ / مىنەتۋ كۇيىندە تۇر, سونىمەن كوكەيكەستى ٴتۇيىستىرۋ ارەكەتتەرى وشىرىلگەن. عافۋ ەتىڭىز!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''بىرەگەيلەندىرىلگەن تىركەلگى''' تۋرالى كوبىرەك وقىڭىز]]...''",
+	'centralauth-list-home-title'          => 'مەكەن ۋىيكىي',
+	'centralauth-list-home-dryrun'         => 'بۇل ۋىيكىيدەگى تاعايىندالعان قۇپىييا ٴسوز بەن ە-پوشتا جايى بىرەگەيلەنگەن تىركەلگىڭىزگە پايدالانادى, جانە جەكە بەتىڭىز باسقا ۋىيكىيلەرگە وزدىكتىك سىلتەنەدى. قاي ۋىيكىيى مەكەن ەكەن دەپ سوڭىرا  وزگەرتە الاسىز.',
+	'centralauth-list-attached-title'      => 'تىركەمە ەتىلگەن تىركەلگىلەر',
+	'centralauth-list-attached'            => '«$1» دەپ اتالعان تىركەلگىسى ارقايسى كەلەسى توراپتاردا بىرەگەيلەنگەن تىركەلىگە وزدىكتىك تىركەمە ەتىلگەن:',
+	'centralauth-list-attached-dryrun'     => '«$1» دەپ اتالعان تىركەلگىسى ارقايسى كەلەسى توراپتاردا بىرەگەيلەنگەن تىركەلىگە وزدىكتىك تىركەمە ەتىلەدى:',
+	'centralauth-list-unattached-title'    => 'تىركەمە ەتىلمەگەن تىركەلگىلەر',
+	'centralauth-list-unattached'          => '«$1» دەگەن تىركەلگى كەلەسى توراپتاردا سىزگە ٴتان دەپ وزدىكتىك قۇپتالمادى; بۇلاردا باسقى تىركەلگىدەگى قۇپىييا سوزدەن ايىرماشىلىقتارى بار بولۋى ەڭ ىيقتىيمال:',
+	'centralauth-foreign-link'             => '$2 دەگەندەگى $1 قاتىسۋشىسى',
+	'centralauth-finish-title'             => 'ٴتۇيىستىرىلۋ ٴبىتۋى',
+	'centralauth-finish-text'              => 'بۇل تىركەلگىلەر سىزگە ٴتان بولسا, قۇپىييا سوزىدەرڭىزدى باسقا تىركەلگىلەرىڭىزگە كادىمگىدەي مىندا ەنگىزىپ تىركەلگى بىرەگەيلەندىرۋىن بىتىرۋڭىزگە بولادى:',
+	'centralauth-finish-password'          => 'قۇپىييا ٴسوز:',
+	'centralauth-finish-login'             => 'كىرۋ',
+	'centralauth-finish-send-confirmation' => 'قۇپىييا ٴسوزدى حاتپەن جىبەرۋ',
+	'centralauth-finish-problems'          => 'قىيىن جاعدايعا ۇشىرادىڭىز, نەمەسە باسقا تىركەلگىلەر سىزدىكى ەمەس? [[meta:Help:Unified login problems|قالاي انىقتالۋىڭىزعا بولادى]]...',
+	'centralauth-merge-attempt'            => "'''كەلتىرىلگەن قۇپىييا ٴسوزدى قالعان تۇيىستىرىلمەگەن تىركەلگىلەر ٴۇشىن تەكسەرۋدە…'''",
+	'centralauth-attach-list-attached'     => '«$1» دەپ اتالعان بىرەگەيلەنگەن تىركەلگىگە كەلەسى تىركەلگىلەر ەنگەن:',
+	'centralauth-attach-title'             => 'تىركەلگىنى قۇپتاۋ',
+	'centralauth-attach-text'              => 'بۇل تىركەلگى ٴالى دە بىرەگەيلەنگەن تىركەلگىگە اۋىستىرىلماعان. ەگەر عالامدىق تىركەلگى دە سىزگە ٴتان بولسا, عالامدىق تىركەلگىنىڭ قۇپىييا ٴسوزىن ەنگىزىپ بۇل تىركەلگىنى تۇيىستىرۋىڭىزگە بولادى:',
+	'centralauth-attach-submit'            => 'تىركەلگىنى اۋىستىرتۋ',
+	'centralauth-attach-success'           => 'وسى تىركەلگى بىرەگەيلەنگەن تىركەلگىگە اۋىcتىرىلدى.',
+	'centralauth'                          => 'بىرەگەيلەندىرگەن تىركەلگىلەردى اكىمشىلىك مەڭگەرۋى',
+	'centralauth-admin-manage'             => 'قاتىسۋشى دەرەكتەرىن رەتتەۋ',
+	'centralauth-admin-username'           => 'قاتىسۋشى اتى:',
+	'centralauth-admin-lookup'             => 'قاتىسۋشى دەرەكتەرىن قاراۋ نە وڭدەۋ',
+	'centralauth-admin-permission'         => 'باسقالاردىڭ تىركەلگىلەرىن بۇعان تەك جەتەكشىلەر تۇيىستىرىلەيدى.',
+	'centralauth-admin-unmerge'            => 'بولەكتەنگەندى تۇيىستىرىلەمە',
+	'centralauth-admin-merge'              => 'بولەكتەنگەندى تۇيىستىرلە',
+	'centralauth-admin-bad-input'          => 'ٴتۇيىستىرلۋ بولەكتەنۋى جارامسىز',
+	'centralauth-admin-none-selected'      => 'تۇرلەندىرۋ ٴۇشىن ەش تىركەلگى بولەكتەنبەگەن.',
+	'centralauth-prefs-status'             => 'عالامدىق تىركەلگىنىڭ كۇيى:',
+	'centralauth-prefs-not-managed'        => 'بىرەگەيلەنگەن تىركەلگىسى پايدالانۋسىز',
+	'centralauth-prefs-unattached'         => 'قۇپتالماعان',
+	'centralauth-prefs-complete'           => 'بارلىعى رەتتەلىنگەن!',
+	'centralauth-prefs-migration'          => 'اۋىستىرىلۋدا',
+	'centralauth-prefs-count-attached'     => 'تىركەلگىڭىز $1 جوبا {{plural:$1|تورابىندا|توراپتارىندا}} بەلسەندى بولدى.',
+	'centralauth-prefs-count-unattached'   => 'ٴسىزدىڭ اتىڭىز بار قۇپتالماعان تىركەلگىلەر $1 {{plural:$1|جوبادا|جوبالاردا}} قالدى.',
+	'centralauth-prefs-detail-unattached'  => 'وسى جوبا تورابى عالامدىق تىركەلگىگە ٴتان دەپ قۇپتالماعان.',
+	'centralauth-prefs-manage'             => 'عالامدىق تىركەلگىڭىزدى رەتتەۋ',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 قاتىسۋشىسىن جەرگىلىكتە قايتا اتاۋعا بولمايدى. بۇل قاتىسۋشى اتى بىرەگەيلەنگەن تىركەلگى جۇيەسىنە اۋىستىرىلعان.</div>',
 );
 
 $messages['kk-cyrl'] = array(
-	// When not logged in...
-	'mergeaccount' =>
-		'Тіркелгі бірегейлендіру күйі',
-	'centralauth-merge-notlogged' =>
-		'Тіркелгілеріңіз толық бірегейлендіруін тексеру үшін Please <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} кіріңіз]' .
-		'</span>.',
+	'mergeaccount'                         => 'Тіркелгі бірегейлендіру күйі',
+	'centralauth-merge-notlogged'          => 'Тіркелгілеріңіз толық бірегейлендіруін тексеру үшін Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} кіріңіз]</span>.',
+	'centralauth-merge-welcome'            => "'''Қатысушы тіркелгіңіз Wikimedia бірегейленген тіркелгі жүйесіне әліде ауыстырылмады.'''
 
-	// Big text on completion
-	'centralauth-complete' =>
-		'Тіркелгі бірегейлендіруі бітті!',
-	'centralauth-incomplete' =>
-		'Тіркелгі бірегейлендіруі біткен жоқ!',
+Егер тіркелгілеріңізді ауыстыруды таңдаған болсаңыз, бір қатысушы атыңыз бен құпия сөзіңізді пайдаланып барлық Wikimedia жобаларының барлық тілдеріндегі уикилеріне кіре аласыз.
+Бұл  [http://commons.wikimedia.org/ Wikimedia Ортаққорына] қотаруы сияқты бөлісетін жобалармен жұмыс істеуге жеңілділік береді, және әртүрлі жобаларда екі тұлға бір қатысушы атын пайдаланғаннан шығатын былықты не дау-жанжалды болдырмайды.
 
-	// Wheeee
-	'centralauth-complete-text' =>
-		'Енді әрқайсы Wikimedia қорының уики торабына жаңа тіркелгі жасамастан ' .
-		'кіруіңізге болады; дәл осы қатысушы атыңыз бен құпия сөзіңіз ' .
-		'Уикипедия, Уикисөздік, Уикикітәп деген жобаларда және барлық  ' .
-		'тілдердегі таруларында қызмет істейді.',
-	'centralauth-incomplete-text' =>
-		'Тіркелгіңіз бірегейлендірігеннен бастап әрқайсы Wikimedia ' .
-		'қорының уики торабына жаңа тіркелгі жасамастан кіруіңізге болады; ' .
-		'дәл осы қатысушы атыңыз бен құпия сөзіңіз ' .
-		'Уикипедия, Уикисөздік, Уикикітәп, деген жобаларда және барлық ' .
-		'тілдердегі таруларында қызмет істейді.',
-	'centralauth-not-owner-text' =>
-		'«$1» деген қатысушы аты өздік түрде ' .
-		"$2 деген тіркелгі иесіне түйістірілген.\n" .
-		"\n" .
-		"Бұл өзіңіз болсаңыз, басқы құпия сөзіңізді кәдімгідей мында енгізіп " .
-		"тіркелгі бірегейлендіру үдірісін бітіруіңізге болады:",
+Егер басқа біреу сіздің қатысушы атыңызды басқа тарауда алдақашан пайдаланып отырса, бұл оған кедергі келтірмейді, бірақ бұл соңыра олмен не әкімшімен жұмысын өтеуді береді.",
+	'centralauth-merge-step1-title'        => 'Тіркелгі бірегейлендіруін бастау',
+	'centralauth-merge-step1-detail'       => 'Қатысушы атыңыз бен тіркелген е-пошта жайңыз сәйкестігін құптау үшін басқа уикилердегі тіркелгілерге қарсы тексеріледі. Бұл нәрселер жарайтынын өзіңіз құптағанша дейін еш өзгерістер жасалмайды.',
+	'centralauth-merge-step1-submit'       => 'Тіркелгі мәліметтерін құптау',
+	'centralauth-merge-step2-title'        => 'Көбірек тіркелгілерді құптау',
+	'centralauth-merge-step2-detail'       => 'Тіркелгілердің кейбіреулері енгізілген мекен уикиге өздіктік сәйкестірілмеді. Егер осы тіркелгілер сіздікі болса, құпия сөздерін келтіріп бұны құптай аласыз.',
+	'centralauth-merge-step2-submit'       => 'Тіркелгі мәліметтерін құптау',
+	'centralauth-merge-step3-title'        => 'Бірегейленген тіркелгі жарату',
+	'centralauth-merge-step3-detail'       => 'Келесі уикилерді тіркеме етіп, бірегейленген тіркелгіңізді жаратуға дайынсыз:',
+	'centralauth-merge-step3-submit'       => 'Тіркелгілерді бірегейлендіру',
+	'centralauth-complete'                 => 'Тіркелгі бірегейлендіруі бітті!',
+	'centralauth-incomplete'               => 'Тіркелгі бірегейлендіруі біткен жоқ!',
+	'centralauth-complete-text'            => 'Енді әрқайсы Wikimedia қорының уики торабына жаңа тіркелгі жасамастан кіруіңізге болады; дәл осы қатысушы атыңыз бен құпия сөзіңіз Уикипедия, Уикисөздік, Уикикітәп деген жобаларда және барлық  тілдердегі таруларында қызмет істейді.',
+	'centralauth-incomplete-text'          => 'Тіркелгіңіз бірегейлендірігеннен бастап әрқайсы Wikimedia қорының уики торабына жаңа тіркелгі жасамастан кіруіңізге болады; дәл осы қатысушы атыңыз бен құпия сөзіңіз Уикипедия, Уикисөздік, Уикикітәп, деген жобаларда және барлық тілдердегі таруларында қызмет істейді.',
+	'centralauth-not-owner-text'           => '«$1» қатысушы аты $2 дегендегі тіркелгі иесіне өздіктік түйістірілген.
 
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|'''Бірегейлендірілген тіркелгі''' туралы оқыңыз]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'«$1» деп аталған тіркелгілер келесі тораптарда ' .
-		'өздік түрде түйістірілген:',
-	'centralauth-list-unattached' =>
-		'«$1» деген тіркелгіңіз келесі тораптарда ' .
-		'өздік түрде расталмады; ' .
-		'бәлкім бұларда басқы тіркелгіден сан-қилы ' .
-		'құпия сөздер бар:',
-	'centralauth-foreign-link' =>
-		'$2 дегендегі $1 деген қатысушы',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'Түйістірілу бітті',
-	'centralauth-finish-text' =>
-		'Бұл тіркелгілер сіздікі болса, құпия сөзідерңізді ' .
-		'басқа тіркелгілеріңізге кәдімгідей мында енгізіп ' .
-		'тіркелгілеріңізді бірегейлендіруін бітіруңізге болады:',
-	'centralauth-finish-password' =>
-		'Құпия сөз:',
-	'centralauth-finish-login' =>
-		'Кіру',
-	'centralauth-finish-send-confirmation' =>
-		'Құпия сөзді хатпен жіберу',
-	'centralauth-finish-problems' =>
-		"Қиын жағдайға ұшырадыңыз, немесе басқа тіркелгілер сіздікі емес? " .
-		"[[meta:Help:Unified login problems|Қалай анықталуыңызға болады]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''Жабдықталынған құпия сөзді қалған түйістірілмеген тіркелгілермен тексеруде…'''",
-
-	// Administrator's console
-	'centralauth' => 'Бірегейлендірген тіркелгіні меңгеру',
-	'centralauth-admin-manage' =>
-		'Қатысушы деректерін меңгеру',
-	'centralauth-admin-username' =>
-		'Қатысушы аты:',
-	'centralauth-admin-lookup' =>
-		'Қатысушы деректерін қарау не өңдеу',
-	'centralauth-admin-permission' =>
-		"Басқалардың тіркелгілерін бұған тек жетекшілер түйістірілейді.",
-	'centralauth-admin-unmerge' =>
-		'Талғанғанды түйістірілеме',
-	'centralauth-admin-merge' =>
-		'Талғанғанды түйістіріле',
+Бұл өзіңіз болсаңыз, басқы құпия сөзіңізді кәдімгідей мында енгізіп тіркелгі бірегейлендіру үдірісін бітіруіңізге болады:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Тек танысу әдісі</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'Тіркелгі бірегейлендіруі ағымда көрсету / мінету күйінде тұр, сонымен көкейкесті түйістіру әрекеттері өшірілген. Ғафу етіңіз!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''Бірегейлендірілген тіркелгі''' туралы көбірек оқыңыз]]...''",
+	'centralauth-list-home-title'          => 'Мекен уики',
+	'centralauth-list-home-dryrun'         => 'Бұл уикидегі тағайындалған құпия сөз бен е-пошта жайы бірегейленген тіркелгіңізге пайдаланады, және жеке бетіңіз басқа уикилерге өздіктік сілтенеді. Қай уикиі мекен екен деп соңыра  өзгерте аласыз.',
+	'centralauth-list-attached-title'      => 'Тіркеме етілген тіркелгілер',
+	'centralauth-list-attached'            => '«$1» деп аталған тіркелгісі әрқайсы келесі тораптарда бірегейленген тіркеліге өздіктік тіркеме етілген:',
+	'centralauth-list-attached-dryrun'     => '«$1» деп аталған тіркелгісі әрқайсы келесі тораптарда бірегейленген тіркеліге өздіктік тіркеме етіледі:',
+	'centralauth-list-unattached-title'    => 'Тіркеме етілмеген тіркелгілер',
+	'centralauth-list-unattached'          => '«$1» деген тіркелгі келесі тораптарда сізге тән деп өздіктік құпталмады; бұларда басқы тіркелгідегі құпия сөзден айырмашылықтары бар болуы ең иқтимал:',
+	'centralauth-foreign-link'             => '$2 дегендегі $1 қатысушысы',
+	'centralauth-finish-title'             => 'Түйістірілу бітуі',
+	'centralauth-finish-text'              => 'Бұл тіркелгілер сізге тән болса, құпия сөзідерңізді басқа тіркелгілеріңізге кәдімгідей мында енгізіп тіркелгі бірегейлендіруін бітіруңізге болады:',
+	'centralauth-finish-password'          => 'Құпия сөз:',
+	'centralauth-finish-login'             => 'Кіру',
+	'centralauth-finish-send-confirmation' => 'Құпия сөзді хатпен жіберу',
+	'centralauth-finish-problems'          => 'Қиын жағдайға ұшырадыңыз, немесе басқа тіркелгілер сіздікі емес? [[meta:Help:Unified login problems|Қалай анықталуыңызға болады]]...',
+	'centralauth-merge-attempt'            => "'''Келтірілген құпия сөзді қалған түйістірілмеген тіркелгілер үшін тексеруде…'''",
+	'centralauth-attach-list-attached'     => '«$1» деп аталған бірегейленген тіркелгіге келесі тіркелгілер енген:',
+	'centralauth-attach-title'             => 'Тіркелгіні құптау',
+	'centralauth-attach-text'              => 'Бұл тіркелгі әлі де бірегейленген тіркелгіге ауыстырылмаған. Егер ғаламдық тіркелгі де сізге тән болса, ғаламдық тіркелгінің құпия сөзін енгізіп бұл тіркелгіні түйістіруіңізге болады:',
+	'centralauth-attach-submit'            => 'Тіркелгіні ауыстырту',
+	'centralauth-attach-success'           => 'Осы тіркелгі бірегейленген тіркелгіге ауыcтырылды.',
+	'centralauth'                          => 'Бірегейлендірген тіркелгілерді әкімшілік меңгеруі',
+	'centralauth-admin-manage'             => 'Қатысушы деректерін реттеу',
+	'centralauth-admin-username'           => 'Қатысушы аты:',
+	'centralauth-admin-lookup'             => 'Қатысушы деректерін қарау не өңдеу',
+	'centralauth-admin-permission'         => 'Басқалардың тіркелгілерін бұған тек жетекшілер түйістірілейді.',
+	'centralauth-admin-unmerge'            => 'Бөлектенгенді түйістірілеме',
+	'centralauth-admin-merge'              => 'Бөлектенгенді түйістірле',
+	'centralauth-admin-bad-input'          => 'Түйістірлу бөлектенуі жарамсыз',
+	'centralauth-admin-none-selected'      => 'Түрлендіру үшін еш тіркелгі бөлектенбеген.',
+	'centralauth-prefs-status'             => 'Ғаламдық тіркелгінің күйі:',
+	'centralauth-prefs-not-managed'        => 'Бірегейленген тіркелгісі пайдаланусыз',
+	'centralauth-prefs-unattached'         => 'Құпталмаған',
+	'centralauth-prefs-complete'           => 'Барлығы реттелінген!',
+	'centralauth-prefs-migration'          => 'Ауыстырылуда',
+	'centralauth-prefs-count-attached'     => 'Тіркелгіңіз $1 жоба {{plural:$1|торабында|тораптарында}} белсенді болды.',
+	'centralauth-prefs-count-unattached'   => 'Сіздің атыңыз бар құпталмаған тіркелгілер $1 {{plural:$1|жобада|жобаларда}} қалды.',
+	'centralauth-prefs-detail-unattached'  => 'Осы жоба торабы ғаламдық тіркелгіге тән деп құпталмаған.',
+	'centralauth-prefs-manage'             => 'Ғаламдық тіркелгіңізді реттеу',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 қатысушысын жергілікте қайта атауға болмайды. Бұл қатысушы аты бірегейленген тіркелгі жүйесіне ауыстырылған.</div>',
 );
 
 $messages['kk-latn'] = array(
-	// When not logged in...
-	'mergeaccount' =>
-		'Tirkelgi biregeýlendirw küýi',
-	'centralauth-merge-notlogged' =>
-		'Tirkelgileriñiz tolıq biregeýlendirwin tekserw üşin Please <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} kiriñiz]' .
-		'</span>.',
+	'mergeaccount'                         => 'Tirkelgi biregeýlendirw küýi',
+	'centralauth-merge-notlogged'          => 'Tirkelgileriñiz tolıq biregeýlendirwin tekserw üşin Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} kiriñiz]</span>.',
+	'centralauth-merge-welcome'            => "'''Qatıswşı tirkelgiñiz Wikimedia biregeýlengen tirkelgi jüýesine älide awıstırılmadı.'''
 
-	// Big text on completion
-	'centralauth-complete' =>
-		'Tirkelgi biregeýlendirwi bitti!',
-	'centralauth-incomplete' =>
-		'Tirkelgi biregeýlendirwi bitken joq!',
+Eger tirkelgileriñizdi awıstırwdı tañdağan bolsañız, bir qatıswşı atıñız ben qupïya söziñizdi paýdalanıp barlıq Wikimedia jobalarınıñ barlıq tilderindegi wïkïlerine kire alasız.
+Bul  [http://commons.wikimedia.org/ Wikimedia Ortaqqorına] qotarwı sïyaqtı bölisetin jobalarmen jumıs istewge jeñildilik beredi, jäne ärtürli jobalarda eki tulğa bir qatıswşı atın paýdalanğannan şığatın bılıqtı ne daw-janjaldı boldırmaýdı.
 
-	// Wheeee
-	'centralauth-complete-text' =>
-		'Endi ärqaýsı Wikimedia qorınıñ wïkï torabına jaña tirkelgi jasamastan ' .
-		'kirwiñizge boladı; däl osı qatıswşı atıñız ben qupïya söziñiz ' .
-		'Wïkïpedïya, Wïkïsözdik, Wïkïkitäp degen jobalarda jäne barlıq  ' .
-		'tilderdegi tarwlarında qızmet isteýdi.',
-	'centralauth-incomplete-text' =>
-		'Tirkelgiñiz biregeýlendirigennen bastap ärqaýsı Wikimedia ' .
-		'qorınıñ wïkï torabına jaña tirkelgi jasamastan kirwiñizge boladı; ' .
-		'däl osı qatıswşı atıñız ben qupïya söziñiz ' .
-		'Wïkïpedïya, Wïkïsözdik, Wïkïkitäp, degen jobalarda jäne barlıq ' .
-		'tilderdegi tarwlarında qızmet isteýdi.',
-	'centralauth-not-owner-text' =>
-		'«$1» degen qatıswşı atı özdik türde ' .
-		"$2 degen tirkelgi ïesine tüýistirilgen.\n" .
-		"\n" .
-		"Bul öziñiz bolsañız, basqı qupïya söziñizdi kädimgideý mında engizip " .
-		"tirkelgi biregeýlendirw üdirisin bitirwiñizge boladı:",
+Eger basqa birew sizdiñ qatıswşı atıñızdı basqa tarawda aldaqaşan paýdalanıp otırsa, bul oğan kedergi keltirmeýdi, biraq bul soñıra olmen ne äkimşimen jumısın ötewdi beredi.",
+	'centralauth-merge-step1-title'        => 'Tirkelgi biregeýlendirwin bastaw',
+	'centralauth-merge-step1-detail'       => 'Qatıswşı atıñız ben tirkelgen e-poşta jaýñız säýkestigin quptaw üşin basqa wïkïlerdegi tirkelgilerge qarsı tekseriledi. Bul närseler jaraýtının öziñiz quptağanşa deýin eş özgerister jasalmaýdı.',
+	'centralauth-merge-step1-submit'       => 'Tirkelgi mälimetterin quptaw',
+	'centralauth-merge-step2-title'        => 'Köbirek tirkelgilerdi quptaw',
+	'centralauth-merge-step2-detail'       => 'Tirkelgilerdiñ keýbirewleri engizilgen meken wïkïge özdiktik säýkestirilmedi. Eger osı tirkelgiler sizdiki bolsa, qupïya sözderin keltirip bunı quptaý alasız.',
+	'centralauth-merge-step2-submit'       => 'Tirkelgi mälimetterin quptaw',
+	'centralauth-merge-step3-title'        => 'Biregeýlengen tirkelgi jaratw',
+	'centralauth-merge-step3-detail'       => 'Kelesi wïkïlerdi tirkeme etip, biregeýlengen tirkelgiñizdi jaratwğa daýınsız:',
+	'centralauth-merge-step3-submit'       => 'Tirkelgilerdi biregeýlendirw',
+	'centralauth-complete'                 => 'Tirkelgi biregeýlendirwi bitti!',
+	'centralauth-incomplete'               => 'Tirkelgi biregeýlendirwi bitken joq!',
+	'centralauth-complete-text'            => 'Endi ärqaýsı Wikimedia qorınıñ wïkï torabına jaña tirkelgi jasamastan kirwiñizge boladı; däl osı qatıswşı atıñız ben qupïya söziñiz Wïkïpedïya, Wïkïsözdik, Wïkïkitäp degen jobalarda jäne barlıq  tilderdegi tarwlarında qızmet isteýdi.',
+	'centralauth-incomplete-text'          => 'Tirkelgiñiz biregeýlendirigennen bastap ärqaýsı Wikimedia qorınıñ wïkï torabına jaña tirkelgi jasamastan kirwiñizge boladı; däl osı qatıswşı atıñız ben qupïya söziñiz Wïkïpedïya, Wïkïsözdik, Wïkïkitäp, degen jobalarda jäne barlıq tilderdegi tarwlarında qızmet isteýdi.',
+	'centralauth-not-owner-text'           => '«$1» qatıswşı atı $2 degendegi tirkelgi ïesine özdiktik tüýistirilgen.
 
-	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|'''Biregeýlendirilgen tirkelgi''' twralı oqıñız]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-attached' =>
-		'«$1» dep atalğan tirkelgiler kelesi toraptarda ' .
-		'özdik türde tüýistirilgen:',
-	'centralauth-list-unattached' =>
-		'«$1» degen tirkelgiñiz kelesi toraptarda ' .
-		'özdik türde rastalmadı; ' .
-		'bälkim bularda basqı tirkelgiden san-qïlı ' .
-		'qupïya sözder bar:',
-	'centralauth-foreign-link' =>
-		'$2 degendegi $1 degen qatıswşı',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'Tüýistirilw bitti',
-	'centralauth-finish-text' =>
-		'Bul tirkelgiler sizdiki bolsa, qupïya söziderñizdi ' .
-		'basqa tirkelgileriñizge kädimgideý mında engizip ' .
-		'tirkelgileriñizdi biregeýlendirwin bitirwñizge boladı:',
-	'centralauth-finish-password' =>
-		'Qupïya söz:',
-	'centralauth-finish-login' =>
-		'Kirw',
-	'centralauth-finish-send-confirmation' =>
-		'Qupïya sözdi xatpen jiberw',
-	'centralauth-finish-problems' =>
-		"Qïın jağdaýğa uşıradıñız, nemese basqa tirkelgiler sizdiki emes? " .
-		"[[meta:Help:Unified login problems|Qalaý anıqtalwıñızğa boladı]]...",
-
-	'centralauth-merge-attempt' =>
-		"'''Jabdıqtalınğan qupïya sözdi qalğan tüýistirilmegen tirkelgilermen tekserwde…'''",
-
-	// Administrator's console
-	'centralauth' => 'Biregeýlendirgen tirkelgini meñgerw',
-	'centralauth-admin-manage' =>
-		'Qatıswşı derekterin meñgerw',
-	'centralauth-admin-username' =>
-		'Qatıswşı atı:',
-	'centralauth-admin-lookup' =>
-		'Qatıswşı derekterin qaraw ne öñdew',
-	'centralauth-admin-permission' =>
-		"Basqalardıñ tirkelgilerin buğan tek jetekşiler tüýistirileýdi.",
-	'centralauth-admin-unmerge' =>
-		'Talğanğandı tüýistirileme',
-	'centralauth-admin-merge' =>
-		'Talğanğandı tüýistirile',
+Bul öziñiz bolsañız, basqı qupïya söziñizdi kädimgideý mında engizip tirkelgi biregeýlendirw üdirisin bitirwiñizge boladı:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Tek tanısw ädisi</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'Tirkelgi biregeýlendirwi ağımda körsetw / minetw küýinde tur, sonımen kökeýkesti tüýistirw äreketteri öşirilgen. Ğafw etiñiz!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''Biregeýlendirilgen tirkelgi''' twralı köbirek oqıñız]]...''",
+	'centralauth-list-home-title'          => 'Meken wïkï',
+	'centralauth-list-home-dryrun'         => 'Bul wïkïdegi tağaýındalğan qupïya söz ben e-poşta jaýı biregeýlengen tirkelgiñizge paýdalanadı, jäne jeke betiñiz basqa wïkïlerge özdiktik siltenedi. Qaý wïkïi meken eken dep soñıra  özgerte alasız.',
+	'centralauth-list-attached-title'      => 'Tirkeme etilgen tirkelgiler',
+	'centralauth-list-attached'            => '«$1» dep atalğan tirkelgisi ärqaýsı kelesi toraptarda biregeýlengen tirkelige özdiktik tirkeme etilgen:',
+	'centralauth-list-attached-dryrun'     => '«$1» dep atalğan tirkelgisi ärqaýsı kelesi toraptarda biregeýlengen tirkelige özdiktik tirkeme etiledi:',
+	'centralauth-list-unattached-title'    => 'Tirkeme etilmegen tirkelgiler',
+	'centralauth-list-unattached'          => '«$1» degen tirkelgi kelesi toraptarda sizge tän dep özdiktik quptalmadı; bularda basqı tirkelgidegi qupïya sözden aýırmaşılıqtarı bar bolwı eñ ïqtïmal:',
+	'centralauth-foreign-link'             => '$2 degendegi $1 qatıswşısı',
+	'centralauth-finish-title'             => 'Tüýistirilw bitwi',
+	'centralauth-finish-text'              => 'Bul tirkelgiler sizge tän bolsa, qupïya söziderñizdi basqa tirkelgileriñizge kädimgideý mında engizip tirkelgi biregeýlendirwin bitirwñizge boladı:',
+	'centralauth-finish-password'          => 'Qupïya söz:',
+	'centralauth-finish-login'             => 'Kirw',
+	'centralauth-finish-send-confirmation' => 'Qupïya sözdi xatpen jiberw',
+	'centralauth-finish-problems'          => 'Qïın jağdaýğa uşıradıñız, nemese basqa tirkelgiler sizdiki emes? [[meta:Help:Unified login problems|Qalaý anıqtalwıñızğa boladı]]...',
+	'centralauth-merge-attempt'            => "'''Keltirilgen qupïya sözdi qalğan tüýistirilmegen tirkelgiler üşin tekserwde…'''",
+	'centralauth-attach-list-attached'     => '«$1» dep atalğan biregeýlengen tirkelgige kelesi tirkelgiler engen:',
+	'centralauth-attach-title'             => 'Tirkelgini quptaw',
+	'centralauth-attach-text'              => 'Bul tirkelgi äli de biregeýlengen tirkelgige awıstırılmağan. Eger ğalamdıq tirkelgi de sizge tän bolsa, ğalamdıq tirkelginiñ qupïya sözin engizip bul tirkelgini tüýistirwiñizge boladı:',
+	'centralauth-attach-submit'            => 'Tirkelgini awıstırtw',
+	'centralauth-attach-success'           => 'Osı tirkelgi biregeýlengen tirkelgige awıctırıldı.',
+	'centralauth'                          => 'Biregeýlendirgen tirkelgilerdi äkimşilik meñgerwi',
+	'centralauth-admin-manage'             => 'Qatıswşı derekterin rettew',
+	'centralauth-admin-username'           => 'Qatıswşı atı:',
+	'centralauth-admin-lookup'             => 'Qatıswşı derekterin qaraw ne öñdew',
+	'centralauth-admin-permission'         => 'Basqalardıñ tirkelgilerin buğan tek jetekşiler tüýistirileýdi.',
+	'centralauth-admin-unmerge'            => 'Bölektengendi tüýistirileme',
+	'centralauth-admin-merge'              => 'Bölektengendi tüýistirle',
+	'centralauth-admin-bad-input'          => 'Tüýistirlw bölektenwi jaramsız',
+	'centralauth-admin-none-selected'      => 'Türlendirw üşin eş tirkelgi bölektenbegen.',
+	'centralauth-prefs-status'             => 'Ğalamdıq tirkelginiñ küýi:',
+	'centralauth-prefs-not-managed'        => 'Biregeýlengen tirkelgisi paýdalanwsız',
+	'centralauth-prefs-unattached'         => 'Quptalmağan',
+	'centralauth-prefs-complete'           => 'Barlığı rettelingen!',
+	'centralauth-prefs-migration'          => 'Awıstırılwda',
+	'centralauth-prefs-count-attached'     => 'Tirkelgiñiz $1 joba {{plural:$1|torabında|toraptarında}} belsendi boldı.',
+	'centralauth-prefs-count-unattached'   => 'Sizdiñ atıñız bar quptalmağan tirkelgiler $1 {{plural:$1|jobada|jobalarda}} qaldı.',
+	'centralauth-prefs-detail-unattached'  => 'Osı joba torabı ğalamdıq tirkelgige tän dep quptalmağan.',
+	'centralauth-prefs-manage'             => 'Ğalamdıq tirkelgiñizdi rettew',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 qatıswşısın jergilikte qaýta atawğa bolmaýdı. Bul qatıswşı atı biregeýlengen tirkelgi jüýesine awıtırılğan.</div>',
 );
 
 
