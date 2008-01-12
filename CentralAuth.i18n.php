@@ -2374,10 +2374,12 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 
 /** Volapük (Volapük)
  * @author Malafaya
+ * @author Smeira
  */
 $messages['vo'] = array(
-	'centralauth-finish-password' => 'Letavöd:',
-	'centralauth-admin-username'  => 'Gebananem:',
+	'centralauth-finish-password'          => 'Letavöd:',
+	'centralauth-finish-send-confirmation' => 'letavöd pota leäktronik',
+	'centralauth-admin-username'           => 'Gebananem:',
 );
 
 $messages['yue'] = array(
