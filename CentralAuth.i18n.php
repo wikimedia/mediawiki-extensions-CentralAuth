@@ -1493,11 +1493,38 @@ $messages['lb'] = array(
  * @author Ooswesthoesbes
  */
 $messages['li'] = array(
+	'mergeaccount'                         => 'Status samevoege gebroekers',
+	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meldj uch aan]</span> óm te konterlere of uche gebroekers volledig zeen samegevoeg.',
+	'centralauth-merge-welcome'            => "'''Uche gebroeker is nag neet gemigreerd nao Wikimedia zien samegevoegdje aanmeldjsysteem.'''
+
+Es geer uch d'rveur kees óm uche gebroekers te migrere, den kintj geer uch mit dezelfdje gebroekersnaaam-wachwaordcombinatie aanmelje bie alle projekwiki's van Wikimedia in alle besjikbare täöl. Dit maak 't einvoudiger óm te wèrke mit gedeildje projekte wie 't uploade nao [http://commons.wikimedia.org/ Wikimedia Commons] en veurkömp verwarring of konflikte doordet twieë miense dezelfdje gebroekersnaam keze op verjsillendje projekte.
+
+Es emes anges mit uche gebroekersnaam al actief is op 'ne angere site, den haet det gein gevolge veur dae gebroeker. Geer höb de meugelikheid det mit dae gebroeker of 'ne beheerder op 'n later memènt op te losse.",
+	'centralauth-merge-step1-title'        => 'Begin gebroekerssamevoege',
+	'centralauth-merge-step1-detail'       => "Uch wachwaord en geregistreerd e-mailadres waere gekonterleerd taenge de gebroekers op anger wiki's óm te bevestige det ze euvereinkómme. D'r waere gein wieziginge gemaak toetdet geer höb aangegaeve det alles in orde liek.",
+	'centralauth-merge-step1-submit'       => 'Bevestig aanmeldjinformatie',
+	'centralauth-merge-step2-title'        => 'Bevestig mieë gebroekers',
+	'centralauth-merge-step2-detail'       => "'n Aantal van de gebroekers kóste neet aan de opgegaeve thoeswiki gekoppeldj waere. Es dees gebroekers van uch zeen, kintj geer uch det aangaeve door 't wachwaord veur de gebroekers op te gaeve.",
+	'centralauth-merge-step2-submit'       => 'Bevestig aanmeldjinformatie',
+	'centralauth-merge-step3-title'        => 'Maak samegevoegdje gebroek aan',
+	'centralauth-merge-step3-detail'       => "Geer kintj uch noe uche samegevoegdje gebroeker make mit dao in de volgendje wiki's opgenaome:",
+	'centralauth-merge-step3-submit'       => 'Gebroekers samevoege',
+	'centralauth-complete'                 => 'Samevoege gebroekers aafgeróndj!',
+	'centralauth-incomplete'               => 'Samevoege gebroekers neet volledig!',
 	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
 	'centralauth-finish-password'          => 'Wachwaord:',
 	'centralauth-finish-login'             => 'Gebroekersnaam',
 	'centralauth-finish-send-confirmation' => 'E-mail wachwaord',
+	'centralauth'                          => 'Beheer samegevoegdj aanmelje',
 	'centralauth-admin-username'           => 'Gebroekersnaam:',
+	'centralauth-prefs-unattached'         => 'Neet bevestig',
+	'centralauth-prefs-complete'           => 'Alles in orde!',
+	'centralauth-prefs-migration'          => 'Bezig mit migrere',
+	'centralauth-prefs-count-attached'     => 'Diene gebroeker is actief in $1 {{plural:$1|perjèksite|perjèksites}}',
+	'centralauth-prefs-count-unattached'   => 'Neet bevestigdje gebroekers mit uche naam zeen nag aanwezig op $1 perjèkter.',
+	'centralauth-prefs-detail-unattached'  => 'Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.',
+	'centralauth-prefs-manage'             => 'Beheer diene globale gebroeker.',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebroeker $1 kin lokaal neet hernömp waere ómdet deze gebroeker is gemigreerdj nao \'t syteem van samegevoegdje gebroekers.</div>',
 );
 
 /** Low German (Plattdüütsch)
@@ -1725,13 +1752,13 @@ Funkcjonalność konta globalnego, czyli współdzielonego między projektami, p
 Jeśli ktoś inny wykorzystuje na innym projekcie identyczną do Twojej nazwę użytkownika, przekształcenie Twojego konta na globalne nie stanie się dla niego problemem, lecz da Ci szansę na późniejsze znalezienie rozwiązania we współpracy bezpośrednio z tą osobą lub z wykorzystaniem pomocy administratorów.",
 	'centralauth-merge-step1-title'        => 'Przekształć na globalne',
 	'centralauth-merge-step1-detail'       => 'Twoje hasło i zarejestrowany adres e-mail zostaną porównane z kontami na innych wiki, w celu potwierdzenia ich zbieżności. Żadne zmiany nie zostaną wykonane, zanim ich nie zaakceptujesz.',
-	'centralauth-merge-step1-submit'       => 'Potwierdzenie informacji o logowaniu',
+	'centralauth-merge-step1-submit'       => 'Sprawdzenie informacji o logowaniu',
 	'centralauth-merge-step2-title'        => 'Potwierdź więcej kont',
 	'centralauth-merge-step2-detail'       => 'Niektóre z kont nie mogły zostać automatycznie przyłączone do konta globalnego. Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje przez podanie haseł do nich.',
 	'centralauth-merge-step2-submit'       => 'Potwierdź informację o logowaniu',
 	'centralauth-merge-step3-title'        => 'Utwórz konto globalne',
 	'centralauth-merge-step3-detail'       => 'System jest gotowy do utworzenia konta globalnego, z dołączonymi następującymi wiki:',
-	'centralauth-merge-step3-submit'       => 'Zrób konto globalne',
+	'centralauth-merge-step3-submit'       => 'Utwórz konto globalne',
 	'centralauth-complete'                 => 'Tworzenie konta globalnego zakończone!',
 	'centralauth-incomplete'               => 'Tworzenie konta globalnego niekompletne!',
 	'centralauth-complete-text'            => 'Możesz teraz logować się na każde wiki Fundacji Wikimedia bez tworzenia nowego konta; ta sama nazwa użytkownika i hasło będzie działać na Wikipedii, Wikisłowniku, Wikipedii i ich projektach siostrzanych we wszystkich językach.',
@@ -1772,14 +1799,14 @@ Jeśli chcesz przyłączyć konto użytkownika "$1" do konta globalnego podaj ha
 	'centralauth-admin-bad-input'          => 'Nieprawidłowe zaznaczenia dla wykonania przyłączenia',
 	'centralauth-admin-none-selected'      => 'Nie zaznaczono kont do modyfikacji.',
 	'centralauth-prefs-status'             => 'Status globalnego konta:',
-	'centralauth-prefs-not-managed'        => 'Nie używając globalnego konta',
+	'centralauth-prefs-not-managed'        => 'nie używasz globalnego konta',
 	'centralauth-prefs-unattached'         => 'Niepotwierdzone',
 	'centralauth-prefs-complete'           => 'Wszystko w porządku!',
 	'centralauth-prefs-migration'          => 'W trakcie przyłączania',
 	'centralauth-prefs-count-attached'     => 'Twoje konto jest aktywne na $1 {{plural:$1|projekcie|projektach}}.',
 	'centralauth-prefs-count-unattached'   => 'Nieprzyłączone konta o nazwie zbieżnej z Twoją są na $1 {{PLURAL:$1|projekcie|projektach}}.',
 	'centralauth-prefs-detail-unattached'  => 'Konto na tej witrynie nie zostało przyłączone do konta globalnego.',
-	'centralauth-prefs-manage'             => 'Zarządzaj swoim globalnym kontem',
+	'centralauth-prefs-manage'             => 'zarządzaj globalnym kontem',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie można lokalnie przemianować użytkownika $1, ponieważ to konto zostało przeniesione do globalnego systemu logowania.</div>',
 );
 
