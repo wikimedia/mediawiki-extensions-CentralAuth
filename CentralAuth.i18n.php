@@ -1481,7 +1481,7 @@ $messages['lb'] = array(
 	'centralauth-foreign-link'             => 'Benotzer $1 op $2',
 	'centralauth-finish-password'          => 'Passwuert:',
 	'centralauth-finish-login'             => 'Umeldung',
-	'centralauth-finish-send-confirmation' => 'Passwuert per E-mail zouschécken',
+	'centralauth-finish-send-confirmation' => 'Passwuert per E-Mail zouschécken',
 	'centralauth-admin-manage'             => 'Benotzerdate verwalten',
 	'centralauth-admin-username'           => 'Benotzernumm:',
 	'centralauth-admin-permission'         => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
@@ -1511,10 +1511,20 @@ Es emes anges mit uche gebroekersnaam al actief is op 'ne angere site, den haet 
 	'centralauth-merge-step3-submit'       => 'Gebroekers samevoege',
 	'centralauth-complete'                 => 'Samevoege gebroekers aafgeróndj!',
 	'centralauth-incomplete'               => 'Samevoege gebroekers neet volledig!',
+	'centralauth-notice-dryrun'            => "<div class='succesbox'>Allein demonstratiemodus</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => "Samevoege gebroekers is op dit memènt besjikbaar in demonstratie- en debugmodus. 't Sameviege van gebroekers is op dit memènt dus neet meugelik.",
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Lae meer euver '''samegevoegdj aanmelde''']]...''",
+	'centralauth-list-home-title'          => 'Thoeswiki',
+	'centralauth-list-home-dryrun'         => "'t Wachwaord en e-mailadres det veur deze wiki is ingesteld wörd gebroek veur uche samegevoegde gebroeker. Uche gebroekerspazjena op dae wiki wörd automatisch gelink vanoet anger wiki's. Later kint geer instelle welke wiki uche thoeswiki is.",
+	'centralauth-list-unattached'          => 'De gebroeker "$1" kós neet automatisch aan uch toegeweze waere veur de volgende sites;
+waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
+	'centralauth-finish-text'              => "Es dees gebroekers bie uch heure kinse 't proces van samevoege aafrönje door de wachwäörd veur de anger gebroekers hiej in te veure:",
 	'centralauth-finish-password'          => 'Wachwaord:',
 	'centralauth-finish-login'             => 'Gebroekersnaam',
 	'centralauth-finish-send-confirmation' => 'E-mail wachwaord',
+	'centralauth-attach-text'              => "Deze gebroeker is nag neet gemigreerd nao 'ne samegevoegde gebroeker. Es de euverkoepelde gebroeker ouch van uch is den kint geer deze gebroeker samevoege es geer 't wachwaord veur de euverkoepelende gebroeker inguf:",
+	'centralauth-attach-submit'            => 'Gebroeker migrere',
 	'centralauth'                          => 'Beheer samegevoegdj aanmelje',
 	'centralauth-admin-username'           => 'Gebroekersnaam:',
 	'centralauth-prefs-unattached'         => 'Neet bevestig',
@@ -1525,6 +1535,13 @@ Es emes anges mit uche gebroekersnaam al actief is op 'ne angere site, den haet 
 	'centralauth-prefs-detail-unattached'  => 'Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.',
 	'centralauth-prefs-manage'             => 'Beheer diene globale gebroeker.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebroeker $1 kin lokaal neet hernömp waere ómdet deze gebroeker is gemigreerdj nao \'t syteem van samegevoegdje gebroekers.</div>',
+);
+
+/** Erzya (эрзянь кель)
+ * @author Amdf
+ */
+$messages['myv'] = array(
+	'centralauth-admin-username' => 'Совицянь лем:',
 );
 
 /** Low German (Plattdüütsch)
@@ -2947,7 +2964,6 @@ $messages['zh-tw'] = array(
 
 );
 
-# Fallbacks:
 $messages['de-formal'] = $messages['de'];
 $messages['kk'] = $messages['kk-cyrl'];
 $messages['kk-cn'] = $messages['kk-arab'];
