@@ -183,6 +183,27 @@ $messages['en'] = array(
 
 );
 
+/** Kotava (Kotava)
+ * @author Wikimistusik
+ */
+$messages['avk'] = array(
+	'centralauth-merge-step1-submit'    => 'Va dogluyaragivara gruyel !',
+	'centralauth-merge-step2-title'     => 'Va lo pata se gruyel !',
+	'centralauth-merge-step2-submit'    => 'Va dogluyaragivara gruyel !',
+	'centralauth-merge-step3-title'     => 'Redura va tutanana pata',
+	'centralauth-merge-step3-submit'    => 'Tutanara va pata se',
+	'centralauth-list-attached-title'   => 'Benef pateem',
+	'centralauth-list-unattached-title' => 'Mebenef pateem',
+	'centralauth-foreign-link'          => '$1 favesik moe $2',
+	'centralauth-attach-title'          => 'Patagruyera',
+	'centralauth-attach-submit'         => 'Patarrundara',
+	'centralauth-admin-manage'          => 'Bowera va favesikorigeem',
+	'centralauth-admin-username'        => 'Favesikyolt :',
+	'centralauth-admin-lookup'          => 'Wira va favesikorigeem oku betara',
+	'centralauth-admin-unmerge'         => 'Voljoara rebana',
+	'centralauth-admin-merge'           => 'Joara rebana',
+);
+
 $messages['ang'] = array(
 	'centralauth-admin-username'           => 'Brūcendnama:',
 );
