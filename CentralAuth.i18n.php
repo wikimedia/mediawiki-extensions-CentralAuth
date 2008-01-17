@@ -313,10 +313,10 @@ $messages['br'] = array(
 );
 
 /** Catalan (Català)
- * @author Juanpabl
+ * @author SMP
  */
 $messages['ca'] = array(
-	'mergeaccount' => "Estau d'a fusión de cuentas d'usuario",
+	'mergeaccount' => "Estat de fusió de comptes d'usuari",
 );
 
 /** Czech (Česky)
