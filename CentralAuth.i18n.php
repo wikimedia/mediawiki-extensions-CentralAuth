@@ -2450,6 +2450,7 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
  * @author Smeira
  */
 $messages['vo'] = array(
+	'centralauth-foreign-link'             => 'Geban $1 in $2',
 	'centralauth-finish-password'          => 'Letavöd:',
 	'centralauth-finish-send-confirmation' => 'letavöd pota leäktronik',
 	'centralauth-admin-username'           => 'Gebananem:',
