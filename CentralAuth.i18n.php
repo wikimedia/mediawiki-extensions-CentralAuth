@@ -791,7 +791,7 @@ Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y
 	'centralauth-merge-step1-detail'       => 'Nos alens comparar voutra adrèce de mèl et voutron mot de pâssa avouéc celos des comptos homonimos sur los ôtros vouiquis, et controlar que corrèspondont. Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd.',
 	'centralauth-merge-step1-submit'       => 'Confirmar les enformacions',
 	'centralauth-merge-step2-title'        => 'Encllure d’ôtros comptos',
-	'centralauth-merge-step2-detail'       => 'Cèrtins des comptos ont pas possu étre apondus ôtomaticament a voutron compto principâl. Se celos comptos sont a vos, volyéd confirmar que sont a vos en entrent lo mot de pâssa corrèspondent.',
+	'centralauth-merge-step2-detail'       => 'Cèrtins des comptos ont pas possu étre rapondus ôtomaticament a voutron compto principâl. Se celos comptos sont a vos, volyéd confirmar que sont a vos en entrent lo mot de pâssa corrèspondent.',
 	'centralauth-merge-step2-submit'       => 'Confirmar les enformacions',
 	'centralauth-merge-step3-title'        => 'Crèacion du compto unico',
 	'centralauth-merge-step3-detail'       => 'Orendrêt, vos éte prèst a crèar voutron compto unico, compregnent los vouiquis siuvents :',
@@ -808,11 +808,11 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient
 	'centralauth-readmore-text'            => ":''[[w:frp:Vouiquipèdia:Login unico|Nen savêr de ples sur lo '''compto unico''']]...''",
 	'centralauth-list-home-title'          => 'Projèt principâl',
 	'centralauth-list-home-dryrun'         => 'Lo mot de pâssa et l’adrèce de mèl du projèt principâl ce-desot seront utilisâs por voutron compto unico, et voutra pâge utilisator sur lo projèt principâl serat ôtomaticament liyê dês los ôtros projèts. Vos porréd modifiar voutron projèt principâl ples târd.',
-	'centralauth-list-attached-title'      => 'Comptos apondus',
-	'centralauth-list-attached'            => 'Los comptos utilisator apelâs « $1 » ont étâ apondus por los projèts siuvents :',
-	'centralauth-list-attached-dryrun'     => 'Lo compto apelâ « $1 » sur châcun des setos siuvents serat ôtomaticament apondu u compto unico :',
-	'centralauth-list-unattached-title'    => 'Comptos pas apondus',
-	'centralauth-list-unattached'          => 'Los comptos utilisator apelâs « $1 » sur los setos siuvents pôvont pas étre apondus ôtomaticament ; ils ont probâblament un mot de pâssa difèrent de voutron compto mêtre :',
+	'centralauth-list-attached-title'      => 'Comptos rapondus',
+	'centralauth-list-attached'            => 'Los comptos utilisator apelâs « $1 » ont étâ rapondus por los projèts siuvents :',
+	'centralauth-list-attached-dryrun'     => 'Lo compto apelâ « $1 » sur châcun des setos siuvents serat ôtomaticament rapondu u compto unico :',
+	'centralauth-list-unattached-title'    => 'Comptos pas rapondus',
+	'centralauth-list-unattached'          => 'Los comptos utilisator apelâs « $1 » sur los setos siuvents pôvont pas étre rapondus ôtomaticament ; ils ont probâblament un mot de pâssa difèrent de voutron compto mêtre :',
 	'centralauth-foreign-link'             => 'Utilisator $1 dessus $2',
 	'centralauth-finish-title'             => 'Chavonar la fusion des comptos',
 	'centralauth-finish-text'              => 'Se cetos comptos sont a vos, vos pouede chavonar lor fusion en buchient lors mots de pâssa ce-desot :',
@@ -842,7 +842,7 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient
 	'centralauth-prefs-migration'          => 'En migracion',
 	'centralauth-prefs-count-attached'     => 'Voutron compto est actif dessus $1 projèts.',
 	'centralauth-prefs-count-unattached'   => 'Des comptos pas confirmâs avouéc lo mémo nom d’utilisator que lo voutro sè trovont dessus $1 projèts.',
-	'centralauth-prefs-detail-unattached'  => 'Voutron compto sur ceti projèt at pas possu étre apondu u compto unico.',
+	'centralauth-prefs-detail-unattached'  => 'Voutron compto sur ceti projèt at pas possu étre rapondu u compto unico.',
 	'centralauth-prefs-manage'             => 'G·èrâd voutron compto unico',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Empossiblo de renomar lo compto utilisator $1 localament : ceti utilisator at ora un compto unico.</div>',
 );
@@ -1154,6 +1154,7 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 /** Hungarian (Magyar)
  * @author Bdanee
  * @author KossuthRad
+ * @author Dorgan
  */
 $messages['hu'] = array(
 	'mergeaccount'                         => 'Felhasználói fiókok egyesítésének állapota',
@@ -1169,6 +1170,7 @@ $messages['hu'] = array(
 	'centralauth-merge-step3-submit'       => 'Felhasználói fiókok egységesítése',
 	'centralauth-complete'                 => 'A bejelentkezés egységesítése készen van!',
 	'centralauth-incomplete'               => 'A bejelentkezés egységesítése nincs kész!',
+	'centralauth-complete-text'            => 'Most már bármelyik Wikimedia webhelyre beléphetsz anélkül, hogy újabb felhasználói fiókot hoznál létre; például a magyar Wikipédiában regisztrált felhasználóneveddel bejelentkezhetsz Wikihírekbe és akár az összes további Wikimédia webhelyre bármely nyelven.',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Tudj meg többet az '''egységesített bejelentkezésről''']]...''",
 	'centralauth-list-attached-title'      => 'Csatolt felhasználói fiókok',
 	'centralauth-list-unattached-title'    => 'Csatolatlan felhasználói fiókok',
@@ -1643,23 +1645,27 @@ $messages['nds'] = array(
 	'centralauth-admin-username'     => 'Brukernaam:',
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ * @author SPQRobin
+ */
 $messages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
-	'centralauth-merge-welcome'            => '\'\'\'Uw gebruiker is nog niet gemigreerd naar Wikimedia\'s samengevoegde aanmeldsysteem.\'\'\'
+	'centralauth-merge-welcome'            => "'''Uw gebruiker is nog niet gemigreerd naar Wikimedia's samengevoegde aanmeldsysteem.'''
 
-Als u ervoor kiest om uw gebruikers te migreren, dan kunt u met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle projectwiki\'s van Wikimedia in alle beschikbare talen.
+Als u ervoor kiest om uw gebruikers te migreren, dan kunt u met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle projectwiki's van Wikimedia in alle beschikbare talen.
 Dit maakt het eenvoudiger om te werken met gedeelde projecten, zoals het uploaden naar [http://commons.wikimedia.org/ Wikimedia Commons], en voorkomt verwarring of conflicten doordat twee mensen dezelfde gebruikersnaam kiezen op verschillende projecten.
 
-Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U heeft de mogelijkheid dat niet die gebruiker of een beheerder op een later moment op te lossen.',
-	'centralauth-merge-step1-title'        => 'Start samenvoegen gebruikers',
-	'centralauth-merge-step1-detail'       => 'Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki\'s om te bevestigen dat ze overeenkomen. Er worden geen wijzigingen gemaakt tot u heeft aangegeven dat alles in orde lijkt.',
-	'centralauth-merge-step1-submit'       => 'Bevestig aanmeldinformatie',
-	'centralauth-merge-step2-title'        => 'Bevestig meer gebruikers',
+Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U heeft de mogelijkheid dat niet die gebruiker of een beheerder op een later moment op te lossen.",
+	'centralauth-merge-step1-title'        => 'Samenvoegen gebruikers starten',
+	'centralauth-merge-step1-detail'       => "Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki's om te bevestigen dat ze overeenkomen. Er worden geen wijzigingen gemaakt tot u heeft aangegeven dat alles in orde lijkt.",
+	'centralauth-merge-step1-submit'       => 'Aanmeldinformatie bevestigen',
+	'centralauth-merge-step2-title'        => 'Meer gebruikers bevestigen',
 	'centralauth-merge-step2-detail'       => 'Een aantal van de gebruikers konden niet aan de opgegeven thuiswiki gekoppeld worden. Als deze gebruikers van u zijn, kunt u dat aangeven door het wachtwoord voor de gebruikers op te geven.',
-	'centralauth-merge-step2-submit'       => 'Bevestig aanmeldinformatie',
-	'centralauth-merge-step3-title'        => 'Maak samengevoegde gebruiker aan',
-	'centralauth-merge-step3-detail'       => 'U kunt nu uw samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki\'s:',
+	'centralauth-merge-step2-submit'       => 'Aanmeldinformatie bevestigen',
+	'centralauth-merge-step3-title'        => 'Samengevoegde gebruiker aanmaken',
+	'centralauth-merge-step3-detail'       => "U kunt nu uw samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki's:",
 	'centralauth-merge-step3-submit'       => 'Gebruikers samenvoegen',
 	'centralauth-complete'                 => 'Samenvoegen gebruikers afgerond!',
 	'centralauth-incomplete'               => 'Samenvoegen gebruikers niet volledig!',
@@ -1668,11 +1674,11 @@ Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan hee
 	'centralauth-not-owner-text'           => 'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.
 
 Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Alleen demonstratiemodus</div><br clear=\'all\'/>',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Lees meer over \'\'\'samengevoegd aanmelden\'\'\']]...\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Lees meer over '''samengevoegd aanmelden''']]...''",
 	'centralauth-list-home-title'          => 'Thuiswiki',
-	'centralauth-list-home-dryrun'         => 'Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor uw samengevoegde gebruiker. Uw gebruikerspagina op die wiki wordt automatisch gelinkt vanuit andere wiki\'s. Later kunt u instellen welke wiki uw thuiswiki is.',
+	'centralauth-list-home-dryrun'         => "Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor uw samengevoegde gebruiker. Uw gebruikerspagina op die wiki wordt automatisch gelinkt vanuit andere wiki's. Later kunt u instellen welke wiki uw thuiswiki is.",
 	'centralauth-list-attached-title'      => 'Betrokken gebruikers',
 	'centralauth-list-attached'            => 'De gebruikers met de naam "$1" op de volgende sites zijn automatisch samengevoegd:',
 	'centralauth-list-attached-dryrun'     => 'De gebruiker met de naam "$1" op de volgende sites wordt automatisch toegevoegd aan de samengevoegde gebruiker:',
@@ -1685,19 +1691,19 @@ Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wac
 	'centralauth-finish-login'             => 'Gebruikersnaam',
 	'centralauth-finish-send-confirmation' => 'E-mail wachtwoord',
 	'centralauth-finish-problems'          => 'Komt u er niet uit of zijn deze gebruikers niet van u? [[meta:Help:Unified login problems|Hoe hulp vinden]]...',
-	'centralauth-merge-attempt'            => '\'\'\'Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers...\'\'\'',
+	'centralauth-merge-attempt'            => "'''Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers...'''",
 	'centralauth-attach-list-attached'     => 'De samengevoegde gebruiker "$1" bestaat uit de volgende gebruikers:',
 	'centralauth-attach-title'             => 'Gebruiker bevestigen',
 	'centralauth-attach-text'              => 'Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker. Als de overkoepelende gebruiker ook van u is, dan kunt u deze gebruiker samenvoegen als u het wachtwoord voor de overkoepelende gebruiker ingeeft:',
 	'centralauth-attach-submit'            => 'Gebruiker migreren',
 	'centralauth-attach-success'           => 'De gebruiker is gemigreerd naar de samengevoegde gebruiker.',
-	'centralauth'                          => 'Beheer samengevoegd aanmelden',
+	'centralauth'                          => 'Samengevoegd aanmelden beheren',
 	'centralauth-admin-manage'             => 'Gebruikersgegevens beheren',
 	'centralauth-admin-username'           => 'Gebruikersnaam:',
 	'centralauth-admin-lookup'             => 'Gebruikersgegevens bekijken of bewerken',
 	'centralauth-admin-permission'         => 'Alleen stewards kunnen gebruikers van anderen samenvoegen.',
-	'centralauth-admin-unmerge'            => 'Splits geselecteerde gebruikers',
-	'centralauth-admin-merge'              => 'Voeg geselecteerde gebruikers samen',
+	'centralauth-admin-unmerge'            => 'Geselecteerde gebruikers splitsen',
+	'centralauth-admin-merge'              => 'Geselecteerde gebruikers samenvoegen',
 	'centralauth-admin-bad-input'          => 'Onjuiste samenvoegselectie',
 	'centralauth-admin-none-selected'      => 'Er zijn geen gebruikers geselecteerd om te wijzigen',
 	'centralauth-prefs-status'             => 'Globale gebruikerstatus',
@@ -1705,11 +1711,11 @@ Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wac
 	'centralauth-prefs-unattached'         => 'Niet bevestigd',
 	'centralauth-prefs-complete'           => 'Alles in orde!',
 	'centralauth-prefs-migration'          => 'Bezig met migreren',
-	'centralauth-prefs-count-attached'     => 'Uw gebruikers is actief in $1 projectsites.',
-	'centralauth-prefs-count-unattached'   => 'Niet bevestigde gebruikers met uw naam zijn nog aanwezig op $1 projecten.',
+	'centralauth-prefs-count-attached'     => 'Uw gebruikers is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.',
+	'centralauth-prefs-count-unattached'   => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached'  => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
-	'centralauth-prefs-manage'             => 'Beheer uw globale gebruiker',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebruiker $1 kan lokaal niet hernoemd worden omdat deze gebruiker is gemigreerd naar het systeem van samengevoegde gebruikers.</div>',
+	'centralauth-prefs-manage'             => 'Uw globale gebruiker beheren',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebruiker $1 kan plaatselijk niet hernoemd worden omdat deze gebruiker gemigreerd is naar het systeem van samengevoegde gebruikers.</div>',
 );
 
 $messages['no'] = array(
@@ -2514,6 +2520,13 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 	'centralauth-prefs-detail-unattached'  => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
 	'centralauth-prefs-manage'             => 'Hantera ditt globala konto',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Det går inte att döpa om användare $1 lokalt eftersom användarnamnet har anslutits till det förenade inloggningssystemet.</div>',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'centralauth-finish-password' => 'సంకేతపదం:',
 );
 
 /** Turkish (Türkçe)
