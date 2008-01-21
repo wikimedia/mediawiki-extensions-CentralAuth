@@ -297,14 +297,27 @@ $messages['bg'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Bellayet
  * @author Zaheen
  */
 $messages['bn'] = array(
-	'centralauth-merge-step3-title'  => 'একত্রিত অ্যাকাউন্ট সৃষ্টি করা হোক',
-	'centralauth-merge-step3-detail' => 'আপনি আপনার একত্রিত অ্যাকাউন্ট সৃষ্টি করতে প্রস্তুত, সাথে নিচের উইকিগুলি সংযুক্ত হবে:',
-	'centralauth-merge-step3-submit' => 'অ্যাকাউন্ট একত্রিত করা হোক',
-	'centralauth-complete'           => 'অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!',
-	'centralauth-incomplete'         => 'অ্যাকাউন্ট একত্রীকরণ নিষ্পন্ন হয়নি!',
+	'centralauth-merge-step1-submit'       => 'লগইন তথ্য নিশ্চিত করুন',
+	'centralauth-merge-step2-title'        => 'আরও অ্যাকাউন্ট নিশ্চিত করুন',
+	'centralauth-merge-step2-submit'       => 'লগইন তথ্য নিশ্চিত করুন',
+	'centralauth-merge-step3-title'        => 'একত্রিত অ্যাকাউন্ট সৃষ্টি করা হোক',
+	'centralauth-merge-step3-detail'       => 'আপনি আপনার একত্রিত অ্যাকাউন্ট সৃষ্টি করতে প্রস্তুত, সাথে নিচের উইকিগুলি সংযুক্ত হবে:',
+	'centralauth-merge-step3-submit'       => 'অ্যাকাউন্ট একত্রিত করা হোক',
+	'centralauth-complete'                 => 'অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!',
+	'centralauth-incomplete'               => 'অ্যাকাউন্ট একত্রীকরণ নিষ্পন্ন হয়নি!',
+	'centralauth-foreign-link'             => 'ব্যবহারকারী $2 তে $1',
+	'centralauth-finish-title'             => 'একত্রীকরণ সম্পন্ন হয়েছে',
+	'centralauth-finish-password'          => 'শব্দচাবি:',
+	'centralauth-finish-login'             => 'প্রবেশ',
+	'centralauth-finish-send-confirmation' => 'ই-মেইল শব্দচাবি',
+	'centralauth-attach-title'             => 'অ্যাকাউন্ট নিশ্চিত করুন',
+	'centralauth-admin-manage'             => 'ব্যবহারকারী ডাটা ব্যবস্থাপনা করুন',
+	'centralauth-admin-username'           => 'ব্যবহারকারী নাম:',
+	'centralauth-admin-lookup'             => 'ব্যবহারকারী ডাটা দেখুন অথবা সম্পাদনা করুন',
 );
 
 $messages['br'] = array(
@@ -2524,17 +2537,24 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 
 /** Telugu (తెలుగు)
  * @author Veeven
+ * @author Mpradeep
  */
 $messages['te'] = array(
 	'centralauth-finish-password' => 'సంకేతపదం:',
+	'centralauth-attach-title'    => 'ఖాతాని నిర్ధారించు',
+	'centralauth-admin-lookup'    => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
+	'centralauth-prefs-complete'  => 'అన్నీ సరిపోయాయి!',
 );
 
 /** Turkish (Türkçe)
  * @author Karduelis
  */
 $messages['tr'] = array(
-	'centralauth-finish-password' => 'Parola:',
-	'centralauth-admin-username'  => 'Kullanıcı:',
+	'centralauth-finish-password'          => 'Parola:',
+	'centralauth-finish-send-confirmation' => 'E-posta parolası',
+	'centralauth-attach-title'             => 'Hesabı doğrula',
+	'centralauth-admin-username'           => 'Kullanıcı:',
+	'centralauth-prefs-unattached'         => 'doğrulanmamış',
 );
 
 /** Volapük (Volapük)
@@ -2588,10 +2608,23 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-attach-submit'            => 'Topätükön kali',
 	'centralauth-attach-success'           => 'Kal at petopätükon lü kal balik.',
 	'centralauth'                          => 'Kaliguvam balik',
+	'centralauth-admin-manage'             => 'Guvam gebananünas',
 	'centralauth-admin-username'           => 'Gebananem:',
 	'centralauth-admin-lookup'             => 'Logedön u votükön gebananünis',
+	'centralauth-admin-unmerge'            => 'Pevälos ad no balön',
+	'centralauth-admin-merge'              => 'Pevälos ad balön',
+	'centralauth-admin-bad-input'          => 'Pevälos negidetiko ad balön',
+	'centralauth-admin-none-selected'      => 'Kals nonik pevälons ad pevotükön.',
+	'centralauth-prefs-status'             => 'Stad kala valemik:',
+	'centralauth-prefs-not-managed'        => 'Kal balik no pagebon',
 	'centralauth-prefs-unattached'         => 'No pefümedöl',
 	'centralauth-prefs-complete'           => 'Valikos veräton!',
+	'centralauth-prefs-migration'          => 'Patopätükon',
+	'centralauth-prefs-count-attached'     => 'Kal olik lonöfon pö {{plural:$1|proyegatopäd|proyegatopäds}} $1.',
+	'centralauth-prefs-count-unattached'   => 'Kals no pefümedöls labü nem olik dabinon nog pö {{plural:$1|proyeg|proyegs}} $1.',
+	'centralauth-prefs-detail-unattached'  => 'Proyegatopäd at no pefümedon as dutöl lü kal valemik.',
+	'centralauth-prefs-manage'             => 'Guvön kali valemik ola',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">No mögos ad votanemön gebani: $1 is bi gebananem at petopätükon lü nunädamasit balik.</div>',
 );
 
 $messages['yue'] = array(
