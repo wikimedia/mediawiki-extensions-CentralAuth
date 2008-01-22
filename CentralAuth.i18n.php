@@ -301,6 +301,7 @@ $messages['bg'] = array(
  * @author Zaheen
  */
 $messages['bn'] = array(
+	'centralauth-merge-step1-title'        => 'লগইন একত্রীকরণ শুরু করো',
 	'centralauth-merge-step1-submit'       => 'লগইন তথ্য নিশ্চিত করুন',
 	'centralauth-merge-step2-title'        => 'আরও অ্যাকাউন্ট নিশ্চিত করুন',
 	'centralauth-merge-step2-submit'       => 'লগইন তথ্য নিশ্চিত করুন',
@@ -309,12 +310,15 @@ $messages['bn'] = array(
 	'centralauth-merge-step3-submit'       => 'অ্যাকাউন্ট একত্রিত করা হোক',
 	'centralauth-complete'                 => 'অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!',
 	'centralauth-incomplete'               => 'অ্যাকাউন্ট একত্রীকরণ নিষ্পন্ন হয়নি!',
+	'centralauth-list-attached-title'      => 'সংগবদ্ধ অ্যাকাউন্ট',
+	'centralauth-list-unattached-title'    => 'অসংগবদ্ধ অ্যাকাউন্ট',
 	'centralauth-foreign-link'             => 'ব্যবহারকারী $2 তে $1',
 	'centralauth-finish-title'             => 'একত্রীকরণ সম্পন্ন হয়েছে',
 	'centralauth-finish-password'          => 'শব্দচাবি:',
 	'centralauth-finish-login'             => 'প্রবেশ',
 	'centralauth-finish-send-confirmation' => 'ই-মেইল শব্দচাবি',
 	'centralauth-attach-title'             => 'অ্যাকাউন্ট নিশ্চিত করুন',
+	'centralauth-attach-submit'            => 'অ্যাকাউন্ট স্থানান্তর করো',
 	'centralauth-admin-manage'             => 'ব্যবহারকারী ডাটা ব্যবস্থাপনা করুন',
 	'centralauth-admin-username'           => 'ব্যবহারকারী নাম:',
 	'centralauth-admin-lookup'             => 'ব্যবহারকারী ডাটা দেখুন অথবা সম্পাদনা করুন',
@@ -1999,6 +2003,15 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
 	'centralauth-renameuser-abort'         => '<div class="errorbox">As peul pa arbatié l\'utent $1 an local, për via che stë stranòm-sì a l\'é col dël cont unificà.</div>',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'centralauth-finish-password'          => 'پټنوم:',
+	'centralauth-finish-login'             => 'ننوتنه',
+	'centralauth-finish-send-confirmation' => 'د برېښناليک پټنوم',
+);
+
 /** Portuguese (Português)
  * @author Malafaya
  * @author Smeira
@@ -2153,8 +2166,12 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
-	'centralauth-finish-password' => 'Киирии тыл:',
-	'centralauth-admin-username'  => 'Кыттааччы аата:',
+	'centralauth-finish-password'          => 'Киирии тыл:',
+	'centralauth-finish-login'             => 'Кыттааччы',
+	'centralauth-finish-send-confirmation' => 'Киирии тылы почтаннан ыыт',
+	'centralauth-attach-title'             => 'Бэлиэтэниини бигэргэтии',
+	'centralauth-admin-username'           => 'Кыттааччы аата:',
+	'centralauth-admin-lookup'             => 'Кыттааччы туһунан информацияны уларытыы эбэтэр көрүү',
 );
 
 /** Slovak (Slovenčina)
