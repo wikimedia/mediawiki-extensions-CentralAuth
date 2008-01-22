@@ -318,6 +318,7 @@ $messages['bn'] = array(
 	'centralauth-admin-manage'             => 'ব্যবহারকারী ডাটা ব্যবস্থাপনা করুন',
 	'centralauth-admin-username'           => 'ব্যবহারকারী নাম:',
 	'centralauth-admin-lookup'             => 'ব্যবহারকারী ডাটা দেখুন অথবা সম্পাদনা করুন',
+	'centralauth-prefs-unattached'         => 'অনিশ্চিত',
 );
 
 $messages['br'] = array(
@@ -2540,10 +2541,12 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
  * @author Mpradeep
  */
 $messages['te'] = array(
-	'centralauth-finish-password' => 'సంకేతపదం:',
-	'centralauth-attach-title'    => 'ఖాతాని నిర్ధారించు',
-	'centralauth-admin-lookup'    => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
-	'centralauth-prefs-complete'  => 'అన్నీ సరిపోయాయి!',
+	'centralauth-merge-step3-submit' => 'ఖాతాలను ఏకీకరించు',
+	'centralauth-finish-password'    => 'సంకేతపదం:',
+	'centralauth-attach-title'       => 'ఖాతాని నిర్ధారించు',
+	'centralauth-admin-username'     => 'వాడుకరి పేరు:',
+	'centralauth-admin-lookup'       => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
+	'centralauth-prefs-complete'     => 'అన్నీ సరిపోయాయి!',
 );
 
 /** Turkish (Türkçe)
