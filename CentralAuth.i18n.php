@@ -301,6 +301,8 @@ $messages['bg'] = array(
  * @author Zaheen
  */
 $messages['bn'] = array(
+	'mergeaccount'                         => 'লগ-ইন একত্রিকরণ অবস্থা',
+	'centralauth-merge-notlogged'          => 'দয়াকরে <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} লগ-ইন করুন]</span> যাতে পরীক্ষা করতে পারেন আপনার অ্যাকাউন্ট সম্পূর্ণরূপে একীভূত হয়েছে কিনা।',
 	'centralauth-merge-step1-title'        => 'লগইন একত্রীকরণ শুরু করো',
 	'centralauth-merge-step1-submit'       => 'লগইন তথ্য নিশ্চিত করুন',
 	'centralauth-merge-step2-title'        => 'আরও অ্যাকাউন্ট নিশ্চিত করুন',
@@ -1204,6 +1206,7 @@ $messages['hu'] = array(
 	'centralauth-prefs-status'             => 'Globális felhasználói fiók állapota:',
 	'centralauth-prefs-unattached'         => 'Nincs megerősítve',
 	'centralauth-prefs-complete'           => 'Minden rendben!',
+	'centralauth-prefs-migration'          => 'Költöztetés alatt',
 	'centralauth-prefs-manage'             => 'Globális felhasználói fiók beállítása',
 );
 
