@@ -2169,10 +2169,33 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
+	'centralauth-merge-step1-title'        => 'Бэлиэтэммит ааттары холбууру саҕалаа',
+	'centralauth-merge-step1-submit'       => 'Аатым туһунан сибидиэнньэни бигэргэт',
+	'centralauth-merge-step2-title'        => 'Атын ааттары бигэргэт',
+	'centralauth-merge-step2-submit'       => 'Аат туһунан сибидиэнньэни бигэргэт',
+	'centralauth-merge-step3-title'        => 'Соҕотох ааты оҥоруу',
+	'centralauth-merge-step3-detail'       => 'Соҕотох ааты оҥорорго бэлэм буолла. Маннык вики-бырайыактар холбоһуохтара:',
+	'centralauth-merge-step3-submit'       => 'Ааттары холбуурга',
+	'centralauth-complete'                 => 'Ааттар этэҥҥэ холбостулар!',
+	'centralauth-incomplete'               => 'Ааттары холбооһун кыайан түмүктэммэтэ!',
+	'centralauth-complete-text'            => 'Билигин ханнык баҕара Викимедиа саайтыгар саҥа ааты оҥорбокко эрэ киирэр кыахтанныҥ. Соҕотох аатынан уонна киирии тылгынан Википедияҕа да, Викитекаҕа да, атын да бырайыактарга ханнык баҕарар тылынан киирэр кыахтааххын.',
+	'centralauth-incomplete-text'          => 'Ааттарыҥ холбостохторуна Викимедиа ханнык баҕарар бырайыактарыгар атын ааты оҥорбокко эрэ киирэр кыахтаныаҥ. Соҕотох аат уонна киирии тыл Википедия да, Викитека да, атын да бырайыактар ханнык баҕарар тылынан салааларыгар киирдэххинэ үлэлиэхтэрэ.',
+	'centralauth-notice-dryrun'            => 'Көрдөрөр (демо) режим',
+	'centralauth-disabled-dryrun'          => 'Ааттары холбооһун билиһиннэрэр (демо) эрэсиимҥэ үлэлии турар, онон дьиҥнээх холбонуу дьайыылара арахсан тураллар. Баалама.',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''Ааттары холбооһун''' туһунан аах]]...''",
+	'centralauth-list-attached-title'      => 'Холбоммут ааттар',
+	'centralauth-list-attached'            => 'Маннык аат "$1" бу саайтарга холбоммут:',
+	'centralauth-list-unattached-title'    => 'Холбоспотох ааттар',
+	'centralauth-finish-title'             => 'Холбооһун түмүктэннэ/түмүктэниитэ',
+	'centralauth-finish-text'              => 'Бу ааттар эйиэннэрэ буоллаҕына холбооһуну атын ааттарга киирии тылларын суруйан түмүктүөххүн сөп:',
 	'centralauth-finish-password'          => 'Киирии тыл:',
 	'centralauth-finish-login'             => 'Кыттааччы',
 	'centralauth-finish-send-confirmation' => 'Киирии тылы почтаннан ыыт',
+	'centralauth-finish-problems'          => 'Туох эрэ сатамматаҕына, эбэтэр бу ааттар эйиэннэрэ буолбатах буоллаҕына [[meta:Help:Unified login problems|көмөнү көр]]...',
+	'centralauth-merge-attempt'            => "'''Холбоммотох ааттар киирии тылларын бэрэбиэркэтэ...'''",
+	'centralauth-attach-list-attached'     => 'Соҕотох «$1» аат маннык ааттары холбуур:',
 	'centralauth-attach-title'             => 'Бэлиэтэниини бигэргэтии',
+	'centralauth-attach-text'              => 'Бу аат соҕотох аат тиһигэр киирэ илик. Если глобальная учётная запись также принадлежит вам, вы можете присоединить данную учётную запись, указав пароль глобальной учётной записи:',
 	'centralauth-admin-username'           => 'Кыттааччы аата:',
 	'centralauth-admin-lookup'             => 'Кыттааччы туһунан информацияны уларытыы эбэтэр көрүү',
 );
@@ -2561,12 +2584,14 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
  * @author Mpradeep
  */
 $messages['te'] = array(
-	'centralauth-merge-step3-submit' => 'ఖాతాలను ఏకీకరించు',
-	'centralauth-finish-password'    => 'సంకేతపదం:',
-	'centralauth-attach-title'       => 'ఖాతాని నిర్ధారించు',
-	'centralauth-admin-username'     => 'వాడుకరి పేరు:',
-	'centralauth-admin-lookup'       => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
-	'centralauth-prefs-complete'     => 'అన్నీ సరిపోయాయి!',
+	'centralauth-merge-step3-submit'     => 'ఖాతాలను ఏకీకరించు',
+	'centralauth-finish-password'        => 'సంకేతపదం:',
+	'centralauth-attach-title'           => 'ఖాతాని నిర్ధారించు',
+	'centralauth-admin-username'         => 'వాడుకరి పేరు:',
+	'centralauth-admin-lookup'           => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
+	'centralauth-prefs-complete'         => 'అన్నీ సరిపోయాయి!',
+	'centralauth-prefs-count-attached'   => 'మీ ఖాతా $1 ప్రాజెక్టు {{plural:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.',
+	'centralauth-prefs-count-unattached' => '$1 {{plural:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
 );
 
 /** Turkish (Türkçe)
