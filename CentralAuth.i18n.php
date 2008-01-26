@@ -1173,41 +1173,76 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 
 /** Hungarian (Magyar)
  * @author Bdanee
- * @author KossuthRad
  * @author Dorgan
+ * @author KossuthRad
  */
 $messages['hu'] = array(
 	'mergeaccount'                         => 'Felhasználói fiókok egyesítésének állapota',
-	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Jelentkezz be]</span>, hogy ellenőrizhessük, a felhasználói fiókjaid egyesítve vannak-e.',
+	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Jelentkezz be]</span>, hogy ellenőrizhessük, felhasználói fiókjaid egyesítve vannak-e.',
+	'centralauth-merge-welcome'            => "'''A felhasználói fiókod még nincs integrálva a Wikimedia egységesített bejelentkezési rendszerébe.'''
+
+Ha fiókjaid egységesítését választod, egyetlen felhasználói névvel és jelszóval léphetsz be a Wikimedia összes wikijébe.
+Ez könnyebb munkát tesz lehetővé például a [http://commons.wikimedia.org/ Wikimedia Commons]ban, és nem fordulhat elő az, hogy két felhasználó ugyanazt a nevet választja két különböző projektben.
+
+Ha valaki más már korábban beregisztrált a neveden egy másik oldalon, a folyamat nem fogja őket zavarni, de később esélyed lesz megoldásra jutni velük vagy egy adminisztrátorral.",
 	'centralauth-merge-step1-title'        => 'Bejeletkezés egységesítésének megkezdése',
-	'centralauth-merge-step1-detail'       => 'A jelszavad és a regisztrált e-mail címed ellenőrizve lesz a többi wikin található felhasználói fiókokon, hogy megerősítsük, egyeznek. Nem történik változás, míg meg nem erősíted, hogy a dolgok rendben vannak.',
-	'centralauth-merge-step1-submit'       => 'Bejelentkezési információ megerősítése',
-	'centralauth-merge-step2-title'        => 'Több fiók megerősítése',
-	'centralauth-merge-step2-detail'       => 'A fiókok némelyikét nem sikerült automatikusan a megadott wikihez illeszteni. Ha hozzád tartoznak, megerősítheted, hogy a tieid, azzal, hogy megadod a jelszavukat.',
+	'centralauth-merge-step1-detail'       => 'Ellenőrízzük, hogy jelszavad és regisztrált e-mail címed melyik más wikin lévő felhasználói nevekkel egyezik meg. Nem történik változás, míg meg nem erősíted, hogy minden rendben van.',
+	'centralauth-merge-step1-submit'       => 'Bejelentkezési információk megerősítése',
+	'centralauth-merge-step2-title'        => 'Más fiókok megerősítése',
+	'centralauth-merge-step2-detail'       => 'Néhány fiókot nem sikerült automatikusan párosítani a kijelölt saját wikihez. Ha ezek hozzád tartoznak, erősítsd meg a jelszó megadásával, hogy tényleg hozzád tartoznak.',
 	'centralauth-merge-step2-submit'       => 'Bejelentkezési információ megerősítése',
-	'centralauth-merge-step3-title'        => 'Egységesített felhasználói fiók készítése',
-	'centralauth-merge-step3-detail'       => 'Most már készen állsz az egységesített felhasználói fiók elkészítésére, a következő wikikre:',
+	'centralauth-merge-step3-title'        => 'Egységesített felhasználói fiók elkészítése',
+	'centralauth-merge-step3-detail'       => 'Most már készen állsz az egységesített felhasználói fiók elkészítéséhez, amelyekhez a következő wikiket csatoljuk:',
 	'centralauth-merge-step3-submit'       => 'Felhasználói fiókok egységesítése',
-	'centralauth-complete'                 => 'A bejelentkezés egységesítése készen van!',
-	'centralauth-incomplete'               => 'A bejelentkezés egységesítése nincs kész!',
+	'centralauth-complete'                 => 'A bejelentkezés egységesítése sikeresen befejeződött!',
+	'centralauth-incomplete'               => 'A bejelentkezés egységesítése nincs befejezve!',
 	'centralauth-complete-text'            => 'Most már bármelyik Wikimedia webhelyre beléphetsz anélkül, hogy újabb felhasználói fiókot hoznál létre; például a magyar Wikipédiában regisztrált felhasználóneveddel bejelentkezhetsz Wikihírekbe és akár az összes további Wikimédia webhelyre bármely nyelven.',
+	'centralauth-incomplete-text'          => 'Ha bejelentkezésed lesznek, bármelyik Wikimedia wikibe bejelentkezhetsz új felhasználói fiók létrehozása nélkül: ugyanazt a felhasználói nevet és jelszót használhatod a Wikipédia, Wikiszótár, Wikikönyvek és más testvérprojektek minden nyelvű változatánál.',
+	'centralauth-not-owner-text'           => 'A(z) „$1” felhasználói nevet automatikusan hozzárendeltük a(z) $2-s tulajdonosához.
+
+Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni fiókodat:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Demó mód</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'A felhasználói fiókok egységesítése jelenleg csak demó / hibakeresés céljából működik, ezért a valós egységesítés le van tiltva. Sajnáljuk!',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Tudj meg többet az '''egységesített bejelentkezésről''']]...''",
+	'centralauth-list-home-title'          => 'Saját wiki',
+	'centralauth-list-home-dryrun'         => 'Az ezen a wikin beállított jelszavad és e-mail címed lesz használva az egységesített felhasználói fiókodnál, és az itteni felhasználói lapodra automatikusan linkelve lesz más wikikről. Későbbiekben megváltoztathatod, hogy melyik a saját wikid.',
 	'centralauth-list-attached-title'      => 'Csatolt felhasználói fiókok',
+	'centralauth-list-attached'            => 'A(z) „$1” nevű felhasználói fiókok automatikusan csatolva lettek az egységesített felhasználói fiókhoz:',
+	'centralauth-list-attached-dryrun'     => 'A(z) „$1” nevű felhasználói fiókok automatikusan csatolva lesznek az egységesített felhasználói fiókhoz:',
 	'centralauth-list-unattached-title'    => 'Csatolatlan felhasználói fiókok',
-	'centralauth-foreign-link'             => '$1 szerkesztő, itt: $2',
+	'centralauth-list-unattached'          => 'A(z) „$1” nevű felhasználói fiókról nem sikerült automatikusan megállapítani, hogy hozzád tartozik az alábbi oldalakon; valószínűleg más jelszóval rendelkeznek:',
+	'centralauth-foreign-link'             => '$1 szerkesztő, $2',
 	'centralauth-finish-title'             => 'Egyesítés befejezése',
+	'centralauth-finish-text'              => 'Ha ezek a felhasználói fiókok hozzád tartoznak, befejezheted az egységesítési folyamatot, úgy, hogy megadod a hozzájuk tartozó jelszavakat:',
 	'centralauth-finish-password'          => 'Jelszó:',
 	'centralauth-finish-login'             => 'Bejelentkezés',
 	'centralauth-finish-send-confirmation' => 'E-mail jelszó',
+	'centralauth-finish-problems'          => 'Problémád van, vagy ezek nem hozzád tartoznak? [[meta:Help:Unified login problems|Hogyan találhatsz segítséget]]…',
+	'centralauth-merge-attempt'            => "'''A megadott jelszavak ellenőrzése a hátralévő, még nem egységesített felhasználói fiókoknál…'''",
+	'centralauth-attach-list-attached'     => 'A(z) „$1” nevű egységesített felhasználói fiók a következőket tartalmazza:',
 	'centralauth-attach-title'             => 'Felhasználói fiók megerősítése',
+	'centralauth-attach-text'              => 'Ez a felhasználói fiók még nincs integrálva az egységesített fiókba. Ha a globális fiók a tied, egységesítheted azzal, hogy megadod a jelszavadat:',
+	'centralauth-attach-submit'            => 'Felhasználói fiók költöztetése',
+	'centralauth-attach-success'           => 'A felhasználói fiók sikeresen integrálva lett az egységesített fiókba.',
+	'centralauth'                          => 'Egységes belépés adminisztrációja',
 	'centralauth-admin-manage'             => 'Felhasználói adatok beállítása',
 	'centralauth-admin-username'           => 'Felhasználói név:',
 	'centralauth-admin-lookup'             => 'Felhasználói adatok megtekintése vagy szerkesztése',
+	'centralauth-admin-permission'         => 'Csak helytartók integrálhatják más emberek számára a fiükjukat.',
+	'centralauth-admin-unmerge'            => 'Kiválasztott integrálásának megszüntetése',
+	'centralauth-admin-merge'              => 'Kiválasztott integrálása',
+	'centralauth-admin-bad-input'          => 'Érvénytelen integrálandó kiválasztás',
+	'centralauth-admin-none-selected'      => 'Nem volt módosítandó fiók kiválasztva.',
 	'centralauth-prefs-status'             => 'Globális felhasználói fiók állapota:',
+	'centralauth-prefs-not-managed'        => 'Nem használsz egységesített felhasználói fiókot',
 	'centralauth-prefs-unattached'         => 'Nincs megerősítve',
 	'centralauth-prefs-complete'           => 'Minden rendben!',
 	'centralauth-prefs-migration'          => 'Költöztetés alatt',
+	'centralauth-prefs-count-attached'     => 'A felhasználói fiókod $1 oldalon van használva.',
+	'centralauth-prefs-count-unattached'   => '$1 nem megerősített felhasználói fiók van a neveddel $1 oldalon.',
+	'centralauth-prefs-detail-unattached'  => 'Még nem lett megerősítve, hogy az oldal a globális felhasználói fiókodhoz tartozik.',
 	'centralauth-prefs-manage'             => 'Globális felhasználói fiók beállítása',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 nem nevezhető át helyben, mivel integrálva van az egységesített bejelentkezési rendszerbe.</div>',
 );
 
 $messages['id'] = array(
@@ -1646,6 +1681,14 @@ waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-prefs-detail-unattached'  => 'Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.',
 	'centralauth-prefs-manage'             => 'Beheer diene globale gebroeker.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebroeker $1 kin lokaal neet hernömp waere ómdet deze gebroeker is gemigreerdj nao \'t syteem van samegevoegdje gebroekers.</div>',
+);
+
+/** Lithuanian (Lietuvių)
+ * @author Matasg
+ */
+$messages['lt'] = array(
+	'centralauth-finish-password' => 'Slaptažodis',
+	'centralauth-admin-username'  => 'Naudotojo vardas:',
 );
 
 /** Erzya (эрзянь кель)
@@ -2169,9 +2212,19 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
+	'mergeaccount'                         => 'Ааттары холбооһун туруга',
+	'centralauth-merge-notlogged'          => 'Бука диэн, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ааккын эт]</span>, оччоҕо ааттарыҥ холбонууларын туругун көрүөҥ.',
+	'centralauth-merge-welcome'            => "'''Эн аатыҥ Викимедияҕа киирэр биир аат систиэмэтигэр өссө киирэ илик'''
+
+Ааттаргын онно киллэрэр түгэҥҥэр, биир аатынан уонна киирии тылынан ханнык баҕарар тылларынан суруллубут ханнык баҕарар Викимедиа пуондатын саайтарыгар киирэр кыахтаныаҥ. 
+Бу уопсай бырайыактарга үлэлииргэр көмөлөһүө, холобур, [http://commons.wikimedia.org/ Вики ыскылаакка] ойууну киллэргэ атын бырайыактартан биир ааттаах дьон киирэн булкууру таһаараллара суох буолуо.
+
+Өскө ким эрэ эн ааккын атын бырайыакка ылбыт буоллаҕына бу дьайыы кинини таарыйыа суоҕа. Кэлин бу түгэни бэйэтин кытта эбэтэр администраторы кытта быһаарсар кыахтаныаҥ.",
 	'centralauth-merge-step1-title'        => 'Бэлиэтэммит ааттары холбууру саҕалаа',
+	'centralauth-merge-step1-detail'       => 'Эн киирии тылыҥ уонна электроннай буостаҥ аадырыһа атын вики бырайыактар ааттарын кытта тэҥнэниллиэ. Ханнык да уларытыы бэйэҥ бигэргэтэ иликкинэ олоххо киириэ суоҕа.',
 	'centralauth-merge-step1-submit'       => 'Аатым туһунан сибидиэнньэни бигэргэт',
 	'centralauth-merge-step2-title'        => 'Атын ааттары бигэргэт',
+	'centralauth-merge-step2-detail'       => 'Сорох ааттар аптамаатынан талыллыбыт аакка холбоммотулар. Ол ааттар эйиэннэрэ буоллаҕына тустаах киирии тылларын киллэрэн ону бигэргэт.',
 	'centralauth-merge-step2-submit'       => 'Аат туһунан сибидиэнньэни бигэргэт',
 	'centralauth-merge-step3-title'        => 'Соҕотох ааты оҥоруу',
 	'centralauth-merge-step3-detail'       => 'Соҕотох ааты оҥорорго бэлэм буолла. Маннык вики-бырайыактар холбоһуохтара:',
@@ -2180,12 +2233,19 @@ $messages['sah'] = array(
 	'centralauth-incomplete'               => 'Ааттары холбооһун кыайан түмүктэммэтэ!',
 	'centralauth-complete-text'            => 'Билигин ханнык баҕара Викимедиа саайтыгар саҥа ааты оҥорбокко эрэ киирэр кыахтанныҥ. Соҕотох аатынан уонна киирии тылгынан Википедияҕа да, Викитекаҕа да, атын да бырайыактарга ханнык баҕарар тылынан киирэр кыахтааххын.',
 	'centralauth-incomplete-text'          => 'Ааттарыҥ холбостохторуна Викимедиа ханнык баҕарар бырайыактарыгар атын ааты оҥорбокко эрэ киирэр кыахтаныаҥ. Соҕотох аат уонна киирии тыл Википедия да, Викитека да, атын да бырайыактар ханнык баҕарар тылынан салааларыгар киирдэххинэ үлэлиэхтэрэ.',
+	'centralauth-not-owner-text'           => '«$1» аат аптамаатынан бу аакка «$2» холбонно.
+
+Ити эн буоллаххына ааттары холбооһуну сүрүн аат киирии тылын киллэрэн түмүктүөххүн сөп:',
 	'centralauth-notice-dryrun'            => 'Көрдөрөр (демо) режим',
 	'centralauth-disabled-dryrun'          => 'Ааттары холбооһун билиһиннэрэр (демо) эрэсиимҥэ үлэлии турар, онон дьиҥнээх холбонуу дьайыылара арахсан тураллар. Баалама.',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''Ааттары холбооһун''' туһунан аах]]...''",
+	'centralauth-list-home-dryrun'         => 'Бу аат киирии тыла уонна элэктроннай аадырыһа холбоммут соҕотох аакка туттуллуо. Бу кыттааччы сирэйигэр атын бырайыактарга баар ааттар сигэниэхтэрэ. Кэлин сүрүн (олохтонор) биикигин уларытыаххын сөп.',
 	'centralauth-list-attached-title'      => 'Холбоммут ааттар',
 	'centralauth-list-attached'            => 'Маннык аат "$1" бу саайтарга холбоммут:',
+	'centralauth-list-attached-dryrun'     => 'Бу аат «$1» аллара бэриллибит саайтарга барыларыгар биир аакка холбонуо:',
 	'centralauth-list-unattached-title'    => 'Холбоспотох ааттар',
+	'centralauth-list-unattached'          => 'Манна көрдөрүллүбүт саайтарга баар "$1" эйиэнэ буолара аптамаатынан бигэргэтиллибэтэ; арааһа киирии тыллара сүрүн ааи киирии тылыттан атыннар быһыылаах:',
+	'centralauth-foreign-link'             => '$1 кыттааччы манна: $2',
 	'centralauth-finish-title'             => 'Холбооһун түмүктэннэ/түмүктэниитэ',
 	'centralauth-finish-text'              => 'Бу ааттар эйиэннэрэ буоллаҕына холбооһуну атын ааттарга киирии тылларын суруйан түмүктүөххүн сөп:',
 	'centralauth-finish-password'          => 'Киирии тыл:',
@@ -2196,8 +2256,27 @@ $messages['sah'] = array(
 	'centralauth-attach-list-attached'     => 'Соҕотох «$1» аат маннык ааттары холбуур:',
 	'centralauth-attach-title'             => 'Бэлиэтэниини бигэргэтии',
 	'centralauth-attach-text'              => 'Бу аат соҕотох аат тиһигэр киирэ илик. Если глобальная учётная запись также принадлежит вам, вы можете присоединить данную учётную запись, указав пароль глобальной учётной записи:',
+	'centralauth-attach-submit'            => 'Ааты көһөрөргө',
+	'centralauth-attach-success'           => 'Бу аат сүрүн аакка холбосто.',
+	'centralauth'                          => 'Ааттары холбооһуну салайыы',
+	'centralauth-admin-manage'             => 'Кыттааччылар тустарынан сибидиэнньэлэри көрүү/уларытыы',
 	'centralauth-admin-username'           => 'Кыттааччы аата:',
 	'centralauth-admin-lookup'             => 'Кыттааччы туһунан информацияны уларытыы эбэтэр көрүү',
+	'centralauth-admin-permission'         => 'Стюардар эрэ араас дьон ааттарын биир аакка холбуохтарын сөп.',
+	'centralauth-admin-unmerge'            => 'Талыллыбыты араарарга',
+	'centralauth-admin-merge'              => 'Талыллыбыты холбуурга',
+	'centralauth-admin-bad-input'          => 'Холбооһуну сыыһа талбыккын',
+	'centralauth-admin-none-selected'      => 'Уларытыллар ааттары талбатаххын.',
+	'centralauth-prefs-status'             => 'Сүрүн аат туруга:',
+	'centralauth-prefs-not-managed'        => 'Сүрүн (соҕотох) аат туһаныллыбат',
+	'centralauth-prefs-unattached'         => 'Бигэргэтиллибэтэх',
+	'centralauth-prefs-complete'           => 'Барыта сатанна!',
+	'centralauth-prefs-migration'          => 'Көһөрүллэр',
+	'centralauth-prefs-count-attached'     => 'Бу аат $1 {{plural:$1|бырайыакка|бырайыактарга}} туһаныллар.',
+	'centralauth-prefs-count-unattached'   => 'Эн бигэргэтиллибэтэх {{plural:$1|аатыҥ|ааттарыҥ}} $1 бырайыакка {{plural:$1|хаалла|хааллылар}}.',
+	'centralauth-prefs-detail-unattached'  => 'Бу бырайыакка эн сүрүн аатыҥ бигэргэтиллибэтэх.',
+	'centralauth-prefs-manage'             => 'Сүрүн ааты салайыы',
+	'centralauth-renameuser-abort'         => "<div class=\"errorbox\">\$1 ааты бу бырайыакка уларытар кыах суох, тоҕо диэтэххэ бу аат ''Сүрүн ааты'' кытта холбоно сылдьар.</div>",
 );
 
 /** Slovak (Slovenčina)
@@ -2584,11 +2663,25 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
  * @author Mpradeep
  */
 $messages['te'] = array(
+	'mergeaccount'                       => 'ప్రవేశపు ఏకీకరణ స్థితి',
+	'centralauth-merge-step1-title'      => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
+	'centralauth-merge-step1-submit'     => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
+	'centralauth-merge-step2-title'      => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
+	'centralauth-merge-step3-title'      => 'ఏకీకృత ఖాతాని సృష్టించండి',
+	'centralauth-merge-step3-detail'     => 'ఈ క్రింద పేర్కొన్న వికీల జోడింపుతో, మీ ఏకీకృత ఖాతాని సృష్టించడానికి సిద్ధంగా ఉన్నారు.',
 	'centralauth-merge-step3-submit'     => 'ఖాతాలను ఏకీకరించు',
+	'centralauth-complete'               => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
+	'centralauth-incomplete'             => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
+	'centralauth-list-attached-title'    => 'జోడించిన ఖాతాలు',
+	'centralauth-foreign-link'           => '$2లో వాడుకరి $1',
+	'centralauth-finish-text'            => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
 	'centralauth-finish-password'        => 'సంకేతపదం:',
+	'centralauth-finish-login'           => 'ప్రవేశించు',
 	'centralauth-attach-title'           => 'ఖాతాని నిర్ధారించు',
+	'centralauth'                        => 'ఏకీకృత ప్రవేశపు నిర్వహణ',
 	'centralauth-admin-username'         => 'వాడుకరి పేరు:',
 	'centralauth-admin-lookup'           => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
+	'centralauth-prefs-unattached'       => 'నిర్థారణకాలేదు',
 	'centralauth-prefs-complete'         => 'అన్నీ సరిపోయాయి!',
 	'centralauth-prefs-count-attached'   => 'మీ ఖాతా $1 ప్రాజెక్టు {{plural:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.',
 	'centralauth-prefs-count-unattached' => '$1 {{plural:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
