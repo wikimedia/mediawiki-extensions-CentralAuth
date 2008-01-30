@@ -1331,6 +1331,19 @@ $messages['id'] = array(
 		'Tidak ada akun yang dipilih untuk diubah.',
 );
 
+/** Icelandic (Íslenska)
+ * @author S.Örvarr.S
+ */
+$messages['is'] = array(
+	'centralauth-merge-step3-submit'       => 'Sameina aðganga',
+	'centralauth-list-home-title'          => 'Heimawiki',
+	'centralauth-foreign-link'             => 'Notandi $1 á $2',
+	'centralauth-finish-password'          => 'Lykilorð:',
+	'centralauth-finish-login'             => 'Innskráning',
+	'centralauth-finish-send-confirmation' => 'Senda lykilorð í tölvupósti',
+	'centralauth-admin-username'           => 'Notandanafn:',
+);
+
 /** Italian (Italiano)
  * @author Gianfranco
  * @author BrokenArrow
@@ -2667,12 +2680,14 @@ $messages['te'] = array(
 	'centralauth-merge-step1-title'      => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
 	'centralauth-merge-step1-submit'     => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
 	'centralauth-merge-step2-title'      => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
+	'centralauth-merge-step2-submit'     => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
 	'centralauth-merge-step3-title'      => 'ఏకీకృత ఖాతాని సృష్టించండి',
 	'centralauth-merge-step3-detail'     => 'ఈ క్రింద పేర్కొన్న వికీల జోడింపుతో, మీ ఏకీకృత ఖాతాని సృష్టించడానికి సిద్ధంగా ఉన్నారు.',
 	'centralauth-merge-step3-submit'     => 'ఖాతాలను ఏకీకరించు',
 	'centralauth-complete'               => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
 	'centralauth-incomplete'             => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
 	'centralauth-list-attached-title'    => 'జోడించిన ఖాతాలు',
+	'centralauth-list-unattached-title'  => 'జోడించని ఖాతాలు',
 	'centralauth-foreign-link'           => '$2లో వాడుకరి $1',
 	'centralauth-finish-text'            => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
 	'centralauth-finish-password'        => 'సంకేతపదం:',
@@ -2689,13 +2704,35 @@ $messages['te'] = array(
 
 /** Turkish (Türkçe)
  * @author Karduelis
+ * @author Erkan Yilmaz
  */
 $messages['tr'] = array(
 	'centralauth-finish-password'          => 'Parola:',
+	'centralauth-finish-login'             => 'Oturum açma',
 	'centralauth-finish-send-confirmation' => 'E-posta parolası',
 	'centralauth-attach-title'             => 'Hesabı doğrula',
 	'centralauth-admin-username'           => 'Kullanıcı:',
 	'centralauth-prefs-unattached'         => 'doğrulanmamış',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'mergeaccount'                     => 'Tình trạng hợp nhất tài khoản',
+	'centralauth-merge-step1-title'    => 'Bắt đầu hợp nhất tài khoản',
+	'centralauth-merge-step1-submit'   => 'Xác nhận thông tin tài khoản',
+	'centralauth-merge-step2-title'    => 'Xác nhận thêm tài khoản',
+	'centralauth-merge-step2-submit'   => 'Xác nhận thông tin tài khoản',
+	'centralauth-merge-step3-title'    => 'Mở tài khoản hợp nhất',
+	'centralauth-merge-step3-submit'   => 'Hợp nhất các tài khoản',
+	'centralauth-list-home-title'      => 'Wiki chính',
+	'centralauth-finish-password'      => 'Mật khẩu:',
+	'centralauth-finish-login'         => 'Đăng nhập',
+	'centralauth-attach-title'         => 'Xác nhận tài khoản',
+	'centralauth-admin-username'       => 'Tên hiệu:',
+	'centralauth-prefs-unattached'     => 'Chưa xác nhận',
+	'centralauth-prefs-count-attached' => 'Tài khoản của bạn có hiệu lực tại $1 dự án.',
 );
 
 /** Volapük (Volapük)
