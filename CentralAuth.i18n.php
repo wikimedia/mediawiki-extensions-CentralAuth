@@ -1182,11 +1182,11 @@ $messages['hu'] = array(
 	'centralauth-merge-welcome'            => "'''A felhasználói fiókod még nincs integrálva a Wikimedia egységesített bejelentkezési rendszerébe.'''
 
 Ha fiókjaid egységesítését választod, egyetlen felhasználói névvel és jelszóval léphetsz be a Wikimedia összes wikijébe.
-Ez könnyebb munkát tesz lehetővé például a [http://commons.wikimedia.org/ Wikimedia Commons]ban, és nem fordulhat elő az, hogy két felhasználó ugyanazt a nevet választja két különböző projektben.
+Ez könnyebb munkát tesz lehetővé például a [http://commons.wikimedia.org/ Wikimedia Commonsban], és nem fordulhat elő az, hogy két felhasználó ugyanazt a nevet választja két különböző projektben.
 
 Ha valaki más már korábban beregisztrált a neveden egy másik oldalon, a folyamat nem fogja őket zavarni, de később esélyed lesz megoldásra jutni velük vagy egy adminisztrátorral.",
 	'centralauth-merge-step1-title'        => 'Bejeletkezés egységesítésének megkezdése',
-	'centralauth-merge-step1-detail'       => 'Ellenőrízzük, hogy jelszavad és regisztrált e-mail címed melyik más wikin lévő felhasználói nevekkel egyezik meg. Nem történik változás, míg meg nem erősíted, hogy minden rendben van.',
+	'centralauth-merge-step1-detail'       => 'Ellenőrizzük, hogy jelszavad és regisztrált e-mail címed melyik más wikin lévő felhasználói nevekkel egyezik meg. Nem történik változás, míg meg nem erősíted, hogy minden rendben van.',
 	'centralauth-merge-step1-submit'       => 'Bejelentkezési információk megerősítése',
 	'centralauth-merge-step2-title'        => 'Más fiókok megerősítése',
 	'centralauth-merge-step2-detail'       => 'Néhány fiókot nem sikerült automatikusan párosítani a kijelölt saját wikihez. Ha ezek hozzád tartoznak, erősítsd meg a jelszó megadásával, hogy tényleg hozzád tartoznak.',
@@ -1197,7 +1197,7 @@ Ha valaki más már korábban beregisztrált a neveden egy másik oldalon, a fol
 	'centralauth-complete'                 => 'A bejelentkezés egységesítése sikeresen befejeződött!',
 	'centralauth-incomplete'               => 'A bejelentkezés egységesítése nincs befejezve!',
 	'centralauth-complete-text'            => 'Most már bármelyik Wikimedia webhelyre beléphetsz anélkül, hogy újabb felhasználói fiókot hoznál létre; például a magyar Wikipédiában regisztrált felhasználóneveddel bejelentkezhetsz Wikihírekbe és akár az összes további Wikimédia webhelyre bármely nyelven.',
-	'centralauth-incomplete-text'          => 'Ha bejelentkezésed lesznek, bármelyik Wikimedia wikibe bejelentkezhetsz új felhasználói fiók létrehozása nélkül: ugyanazt a felhasználói nevet és jelszót használhatod a Wikipédia, Wikiszótár, Wikikönyvek és más testvérprojektek minden nyelvű változatánál.',
+	'centralauth-incomplete-text'          => 'Ha bejelentkezésed egységesítve lesz, bármelyik Wikimedia wikibe bejelentkezhetsz új felhasználói fiók létrehozása nélkül: ugyanazt a felhasználói nevet és jelszót használhatod a Wikipédia, Wikiszótár, Wikikönyvek és más testvérprojektek minden nyelvű változatánál.',
 	'centralauth-not-owner-text'           => 'A(z) „$1” felhasználói nevet automatikusan hozzárendeltük a(z) $2-s tulajdonosához.
 
 Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni fiókodat:',
@@ -1228,7 +1228,7 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-admin-manage'             => 'Felhasználói adatok beállítása',
 	'centralauth-admin-username'           => 'Felhasználói név:',
 	'centralauth-admin-lookup'             => 'Felhasználói adatok megtekintése vagy szerkesztése',
-	'centralauth-admin-permission'         => 'Csak helytartók integrálhatják más emberek számára a fiükjukat.',
+	'centralauth-admin-permission'         => 'Csak helytartók integrálhatják más emberek számára a fiókjukat.',
 	'centralauth-admin-unmerge'            => 'Kiválasztott integrálásának megszüntetése',
 	'centralauth-admin-merge'              => 'Kiválasztott integrálása',
 	'centralauth-admin-bad-input'          => 'Érvénytelen integrálandó kiválasztás',
