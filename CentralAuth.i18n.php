@@ -257,6 +257,36 @@ $messages['ar'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">لا يمكن إعادة تسمية المستخدم $1 محليا حيث أن اسم المستخدم هذا تم نقله إلى نظام الدخول الموحد.</div>',
 );
 
+/** Asturian (Asturianu)
+ * @author Esbardu
+ */
+$messages['ast'] = array(
+	'mergeaccount'                     => 'Estatus de fusión de cuentes',
+	'centralauth-merge-notlogged'      => 'Por favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
+	'centralauth-merge-step1-title'    => 'Emprimar la fusión de cuentes',
+	'centralauth-merge-step1-submit'   => 'Confirmar la fusión de cuentes',
+	'centralauth-merge-step2-title'    => 'Confirmar más cuentes',
+	'centralauth-merge-step2-submit'   => 'Confirmar la información de cuentes',
+	'centralauth-merge-step3-title'    => 'Crear la cuenta fusionada',
+	'centralauth-merge-step3-detail'   => 'Tas a piques de crear la to cuenta fusionada, coles siguientes wikis asociaes:',
+	'centralauth-merge-step3-submit'   => 'Fusionar cuentes',
+	'centralauth-complete'             => '¡Fusión de cuentes completada!',
+	'centralauth-incomplete'           => '¡Fusión de cuentes non completada!',
+	'centralauth-not-owner-text'       => 'El nome d\'usuariu "$1" asignóse automáticamente al poseyedor de la cuenta en $2.
+
+Si yes tu, pues finar el procesu de fusión de cuentes escribiendo simplemente la clave maestra pa esa cuenta equí:',
+	'centralauth-readmore-text'        => ":''[[meta:Help:Unified login|Llei más tocante a '''cuenta fusionada''']]...''",
+	'centralauth-finish-title'         => 'Completar la fusión',
+	'centralauth-finish-password'      => 'Clave:',
+	'centralauth-attach-title'         => 'Confirmar cuenta',
+	'centralauth'                      => 'Alministración de cuentes fusionaes',
+	'centralauth-admin-username'       => "Nome d'usuariu:",
+	'centralauth-prefs-status'         => 'Estatus de cuenta global:',
+	'centralauth-prefs-complete'       => "¡Too n'orde!",
+	'centralauth-prefs-count-attached' => 'La to cuenta ta activa {{plural:$1|nun sitiu|en $1 sitios}} de proyeutu.',
+	'centralauth-prefs-manage'         => 'Remanar la to cuenta global',
+);
+
 /** Kotava (Kotava)
  * @author Wikimistusik
  */
@@ -2676,30 +2706,32 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
  * @author Mpradeep
  */
 $messages['te'] = array(
-	'mergeaccount'                       => 'ప్రవేశపు ఏకీకరణ స్థితి',
-	'centralauth-merge-step1-title'      => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
-	'centralauth-merge-step1-submit'     => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
-	'centralauth-merge-step2-title'      => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
-	'centralauth-merge-step2-submit'     => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
-	'centralauth-merge-step3-title'      => 'ఏకీకృత ఖాతాని సృష్టించండి',
-	'centralauth-merge-step3-detail'     => 'ఈ క్రింద పేర్కొన్న వికీల జోడింపుతో, మీ ఏకీకృత ఖాతాని సృష్టించడానికి సిద్ధంగా ఉన్నారు.',
-	'centralauth-merge-step3-submit'     => 'ఖాతాలను ఏకీకరించు',
-	'centralauth-complete'               => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
-	'centralauth-incomplete'             => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
-	'centralauth-list-attached-title'    => 'జోడించిన ఖాతాలు',
-	'centralauth-list-unattached-title'  => 'జోడించని ఖాతాలు',
-	'centralauth-foreign-link'           => '$2లో వాడుకరి $1',
-	'centralauth-finish-text'            => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
-	'centralauth-finish-password'        => 'సంకేతపదం:',
-	'centralauth-finish-login'           => 'ప్రవేశించు',
-	'centralauth-attach-title'           => 'ఖాతాని నిర్ధారించు',
-	'centralauth'                        => 'ఏకీకృత ప్రవేశపు నిర్వహణ',
-	'centralauth-admin-username'         => 'వాడుకరి పేరు:',
-	'centralauth-admin-lookup'           => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
-	'centralauth-prefs-unattached'       => 'నిర్థారణకాలేదు',
-	'centralauth-prefs-complete'         => 'అన్నీ సరిపోయాయి!',
-	'centralauth-prefs-count-attached'   => 'మీ ఖాతా $1 ప్రాజెక్టు {{plural:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.',
-	'centralauth-prefs-count-unattached' => '$1 {{plural:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
+	'mergeaccount'                         => 'ప్రవేశపు ఏకీకరణ స్థితి',
+	'centralauth-merge-step1-title'        => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
+	'centralauth-merge-step1-submit'       => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
+	'centralauth-merge-step2-title'        => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
+	'centralauth-merge-step2-submit'       => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
+	'centralauth-merge-step3-title'        => 'ఏకీకృత ఖాతాని సృష్టించండి',
+	'centralauth-merge-step3-detail'       => 'ఈ క్రింద పేర్కొన్న వికీల జోడింపుతో, మీ ఏకీకృత ఖాతాని సృష్టించడానికి సిద్ధంగా ఉన్నారు.',
+	'centralauth-merge-step3-submit'       => 'ఖాతాలను ఏకీకరించు',
+	'centralauth-complete'                 => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
+	'centralauth-incomplete'               => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
+	'centralauth-list-attached-title'      => 'జోడించిన ఖాతాలు',
+	'centralauth-list-attached'            => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:',
+	'centralauth-list-unattached-title'    => 'జోడించని ఖాతాలు',
+	'centralauth-foreign-link'             => '$2లో వాడుకరి $1',
+	'centralauth-finish-text'              => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
+	'centralauth-finish-password'          => 'సంకేతపదం:',
+	'centralauth-finish-login'             => 'ప్రవేశించు',
+	'centralauth-finish-send-confirmation' => 'సంకేతపదాన్ని ఈ-మెయిల్లో పంపించు',
+	'centralauth-attach-title'             => 'ఖాతాని నిర్ధారించు',
+	'centralauth'                          => 'ఏకీకృత ప్రవేశపు నిర్వహణ',
+	'centralauth-admin-username'           => 'వాడుకరి పేరు:',
+	'centralauth-admin-lookup'             => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
+	'centralauth-prefs-unattached'         => 'నిర్థారణకాలేదు',
+	'centralauth-prefs-complete'           => 'అన్నీ సరిపోయాయి!',
+	'centralauth-prefs-count-attached'     => 'మీ ఖాతా $1 ప్రాజెక్టు {{plural:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.',
+	'centralauth-prefs-count-unattached'   => '$1 {{plural:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
 );
 
 /** Turkish (Türkçe)
