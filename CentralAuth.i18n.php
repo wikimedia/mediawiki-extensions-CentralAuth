@@ -441,10 +441,21 @@ $messages['ca'] = array(
  * @author Li-sung
  */
 $messages['cs'] = array(
-	'mergeaccount'                   => 'Stav sjednocení přihlašování',
+	'mergeaccount'                   => 'Stav sjednocení přihlašovacích účtů',
 	'centralauth-merge-notlogged'    => 'Pokud se <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
 	'centralauth-merge-step1-title'  => 'Začít sjednocovat přihlašování',
 	'centralauth-merge-step1-detail' => 'Bude porovnáno zda souhlasí Vaše heslo a registrovaný e-mail s účty na jiných wiki. Žádné změny nebudou provedeny dokud nepotvrdíte, že je vše v pořádku.',
+	'centralauth-merge-step1-submit' => 'Potvrdit přihlašovací informace',
+	'centralauth-merge-step2-title'  => 'Potvrzení více účtů',
+	'centralauth-merge-step2-detail' => 'Některé účty nebylo možné automaticky přiřadit k určené domovské wiki. Potvrďte, že tyto účty jsou Vaše, zadáním jejich hesla.',
+	'centralauth-merge-step2-submit' => 'Potvrdit přihlašovací informace',
+	'centralauth-merge-step3-title'  => 'Vytvoření jednotného účtu',
+	'centralauth-merge-step3-detail' => 'Vytvoření vašeho jednotného účtu je připraveno. Účty z následujících wiki budou připojeny:',
+	'centralauth-merge-step3-submit' => 'Sjednotit účty',
+	'centralauth-complete'           => 'Sjednocení přihlašovacích účtů bylo dokončeno!',
+	'centralauth-incomplete'         => 'Sjednocení přihlašovacích účtů nebylo dokončeno!',
+	'centralauth-complete-text'      => 'Nyní se můžete přihlásit na kterýkoliv projekt nadace Wikimedia, aniž byste si museli zakládat nový účet; stejné uživatelské jméno a heslo bude fungovat na Wikipedii, Wikislovníku, Wikiknihách a dalších sesterských projektech ve všech jazycích.',
+	'centralauth-incomplete-text'    => 'Až bude vaše přihlašování sjednoceno, budete se moci přihlásit na kterýkoliv projekt nadace Wikimedia aniž byste si museli zakládat nový účet; stejné uživatelské jméno a heslo bude fungovat na Wikipedii, Wikcislovníku, Wikiknihách a dalších sesterských projektech ve všech jazycích.',
 	'centralauth-finish-password'    => 'Heslo:',
 );
 
