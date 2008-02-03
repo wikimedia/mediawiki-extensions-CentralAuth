@@ -442,28 +442,38 @@ $messages['ca'] = array(
  * @author Li-sung
  */
 $messages['cs'] = array(
-	'mergeaccount'                    => 'Stav sjednocení přihlašovacích účtů',
-	'centralauth-merge-notlogged'     => 'Pokud se <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
-	'centralauth-merge-step1-title'   => 'Začít sjednocovat přihlašování',
-	'centralauth-merge-step1-detail'  => 'Bude porovnáno zda souhlasí Vaše heslo a registrovaný e-mail s účty na jiných wiki. Žádné změny nebudou provedeny dokud nepotvrdíte, že je vše v pořádku.',
-	'centralauth-merge-step1-submit'  => 'Potvrdit přihlašovací informace',
-	'centralauth-merge-step2-title'   => 'Potvrzení více účtů',
-	'centralauth-merge-step2-detail'  => 'Některé účty nebylo možné automaticky přiřadit k určené domovské wiki. Potvrďte, že tyto účty jsou Vaše, zadáním jejich hesla.',
-	'centralauth-merge-step2-submit'  => 'Potvrdit přihlašovací informace',
-	'centralauth-merge-step3-title'   => 'Vytvoření jednotného účtu',
-	'centralauth-merge-step3-detail'  => 'Vytvoření vašeho jednotného účtu je připraveno. Účty z následujících wiki budou připojeny:',
-	'centralauth-merge-step3-submit'  => 'Sjednotit účty',
-	'centralauth-complete'            => 'Sjednocení přihlašovacích účtů bylo dokončeno!',
-	'centralauth-incomplete'          => 'Sjednocení přihlašovacích účtů nebylo dokončeno!',
-	'centralauth-complete-text'       => 'Nyní se můžete přihlásit na kterýkoliv projekt nadace Wikimedia, aniž byste si museli zakládat nový účet; stejné uživatelské jméno a heslo bude fungovat na Wikipedii, Wikislovníku, Wikiknihách a dalších sesterských projektech ve všech jazycích.',
-	'centralauth-incomplete-text'     => 'Až bude vaše přihlašování sjednoceno, budete se moci přihlásit na kterýkoliv projekt nadace Wikimedia aniž byste si museli zakládat nový účet; stejné uživatelské jméno a heslo bude fungovat na Wikipedii, Wikcislovníku, Wikiknihách a dalších sesterských projektech ve všech jazycích.',
-	'centralauth-not-owner-text'      => 'Uživatelské jméno „$1“ bylo automaticky přiřazeno majiteli účtu na projektu $2.
+	'mergeaccount'                        => 'Stav sjednocení přihlašovacích účtů',
+	'centralauth-merge-notlogged'         => 'Pokud se <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
+	'centralauth-merge-step1-title'       => 'Začít sjednocovat přihlašování',
+	'centralauth-merge-step1-detail'      => 'Bude porovnáno zda souhlasí Vaše heslo a registrovaný e-mail s účty na jiných wiki. Žádné změny nebudou provedeny dokud nepotvrdíte, že je vše v pořádku.',
+	'centralauth-merge-step1-submit'      => 'Potvrdit přihlašovací informace',
+	'centralauth-merge-step2-title'       => 'Potvrzení více účtů',
+	'centralauth-merge-step2-detail'      => 'Některé účty nebylo možné automaticky přiřadit k určené domovské wiki. Potvrďte, že tyto účty jsou Vaše, zadáním jejich hesla.',
+	'centralauth-merge-step2-submit'      => 'Potvrdit přihlašovací informace',
+	'centralauth-merge-step3-title'       => 'Vytvoření jednotného účtu',
+	'centralauth-merge-step3-detail'      => 'Vytvoření vašeho jednotného účtu je připraveno. Účty z následujících wiki budou připojeny:',
+	'centralauth-merge-step3-submit'      => 'Sjednotit účty',
+	'centralauth-complete'                => 'Sjednocení přihlašovacích účtů bylo dokončeno!',
+	'centralauth-incomplete'              => 'Sjednocení přihlašovacích účtů nebylo dokončeno!',
+	'centralauth-complete-text'           => 'Nyní se můžete přihlásit na kterýkoliv projekt nadace Wikimedia, aniž byste si museli zakládat nový účet; stejné uživatelské jméno a heslo bude fungovat na Wikipedii, Wikislovníku, Wikiknihách a dalších sesterských projektech ve všech jazycích.',
+	'centralauth-incomplete-text'         => 'Až bude vaše přihlašování sjednoceno, budete se moci přihlásit na kterýkoliv projekt nadace Wikimedia aniž byste si museli zakládat nový účet; stejné uživatelské jméno a heslo bude fungovat na Wikipedii, Wikcislovníku, Wikiknihách a dalších sesterských projektech ve všech jazycích.',
+	'centralauth-not-owner-text'          => 'Uživatelské jméno „$1“ bylo automaticky přiřazeno majiteli účtu na projektu $2.
 
 Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadáním hesla pro uvedený účet:',
-	'centralauth-readmore-text'       => ":''[[meta:Help:Unified login|Přečtěte si více o '''sjednocení přihlašování''']]...''",
-	'centralauth-list-home-title'     => 'Domovská wiki',
-	'centralauth-list-attached-title' => 'Připojené účty',
-	'centralauth-finish-password'     => 'Heslo:',
+	'centralauth-readmore-text'           => ":''[[meta:Help:Unified login|Přečtěte si více o '''sjednocení přihlašování''']]...''",
+	'centralauth-list-home-title'         => 'Domovská wiki',
+	'centralauth-list-attached-title'     => 'Připojené účty',
+	'centralauth-finish-password'         => 'Heslo:',
+	'centralauth-prefs-status'            => 'Stav jednotného účtu',
+	'centralauth-prefs-not-managed'       => 'Jednotný účet není používán',
+	'centralauth-prefs-unattached'        => 'Nepotvrzený',
+	'centralauth-prefs-complete'          => 'Vše v pořádku!',
+	'centralauth-prefs-migration'         => 'Probíhá převod',
+	'centralauth-prefs-count-attached'    => 'Váš účet je aktivní na $1 {{plural:$1|projektu|projektech|projektech}}.',
+	'centralauth-prefs-count-unattached'  => 'Na $1 {{plural:$1|projektu zůstává nepotvrzený účet|projektech zůstávají nepotvrzené účty|projektech zůstávají nepotvrzené účty}} s vaším jménem.',
+	'centralauth-prefs-detail-unattached' => 'Dosud nebylo potvrzeno, zda účet na tomto projektu patří k jednotnému účtu.',
+	'centralauth-prefs-manage'            => 'Správa jednotného účtu',
+	'centralauth-renameuser-abort'        => '<div class="errorbox">Uživatele $1 není možné lokálně přejmenovat, protože toto uživatelské jméno bylo přesunuto do systému jednotných přihlašovacích účtů.</div>',
 );
 
 $messages['de'] = array(
@@ -1223,13 +1233,17 @@ Ukoliko ste to vi, možete dovršiti proces spajanja računa unošenjem glavne l
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Ne mogu preimenovati suradnika $1 lokalno jer je to suradničko ime spojeno u jedinstveni sustav prijave.</div>',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
 $messages['hsb'] = array(
 	'mergeaccount'                         => 'Status zjednoćenja wužiwarskich kontow',
+	'centralauth-desc'                     => 'Konto přez wikije Wikimedijoweje Załožby zjednoćić',
 	'centralauth-merge-notlogged'          => 'Prošu <span class="plainlinks"> [{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.',
-	'centralauth-merge-welcome'            => '\'\'\'Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja Wikimedije přiwzało.\'\'\'
+	'centralauth-merge-welcome'            => "'''Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja Wikimedije přiwzało.'''
 
 Hdyž so rozsudźiš twoje konta tam składować, budźe móžno ze samsnym wužiwarskim mjenom a hesłom we wšěch projektach Wikimedije dźěłać.
-To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [http://commons.wikimedia.org/ Wikimedia Commons] a wobeńdźe konflikty a mylenja hdyž chce něchto druhi samsne přimjeno kaž ty w druhich projektach wužiwać.',
+To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [http://commons.wikimedia.org/ Wikimedia Commons] a wobeńdźe konflikty a mylenja hdyž chce něchto druhi samsne přimjeno kaž ty w druhich projektach wužiwać.",
 	'centralauth-merge-step1-title'        => 'Wužiwarske konta so zjednoća',
 	'centralauth-merge-step1-detail'       => 'Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich wikijach zo by so jenakosć zwěsćiła. Ničo změnjene njebudźe doniž njewobkrućiš, zo je wšo w porjadku.',
 	'centralauth-merge-step1-submit'       => 'Přizjewjenske daty potwjerdźić',
@@ -1244,9 +1258,9 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 	'centralauth-complete-text'            => 'Móžeš so nětko we wšěch projektach Wikimedije přizjewić bjez toho, zo by tam nowe konto wutworić dyrbjał; samsne přimjeno a samsne hesło stej   płaćiwej za Wikipedija, Wikisłownik, Wikiknihi a wšě sotrowske projekty we wšěch rěčach.',
 	'centralauth-incomplete-text'          => 'Tak ruče kaž su so twoje wužiwarske konta zjednoćili, móžeš so we wšěch projektach Wikimedije přizjewić bjez toho, zo by tam nowe konto wutworić dyrbjał; samsne přimjeno a samsne hesło stej   płaćiwej za Wikipedija, Wikisłownik, Wikiknihi a wšě sotrowske projekty we wšěch rěčach.',
 	'centralauth-not-owner-text'           => 'Wužiwarske mjeno "$1" bu awtomatisce swójstwownikej wužiwarskeho konta $2 připokazane. Jeli je to twoje wužiwarske mjeno, móžeš zjednoćenje wužiwarskich kontow přez zapodaće hłowneho hesła za tute wužiwarske konto dokónčić:',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Jenož demonstraciski modus</div><br clear=\'all\'/>',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Jenož demonstraciski modus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Kontowe zjednoćenje je runje w demonstraciskim modusu abo při pytanju za zmylkami, tohodla su aktuelne zjednoćenske procesy znjemóžnjene. Bohužel!',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Informacije wo \'\'\'zjednoćenju wužiwarskich kontow\'\'\']]...\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Informacije wo '''zjednoćenju wužiwarskich kontow''']]...''",
 	'centralauth-list-home-title'          => 'Domjacy wiki',
 	'centralauth-list-home-dryrun'         => 'Hesło a e-mejlowa adresa nastajenej w tutym wikiju budźetej so za twoje zjednoćene konto wužiwać, a twoja wužiwarska strona tu budźe so awtomatisce z druhich wwikijow wotkazować. Móžeš tež pozdźišo swoju domjacy wiki změnić.',
 	'centralauth-list-attached-title'      => 'Připowěsnjene konta',
@@ -1261,7 +1275,7 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 	'centralauth-finish-login'             => 'Přizjewjenje',
 	'centralauth-finish-send-confirmation' => 'Hesło mejlować',
 	'centralauth-finish-problems'          => 'Maš problemy abo njejsu tute druhe konto twoje? [[meta:Help:Unified login problems|Tu namakaš pomoc]]...',
-	'centralauth-merge-attempt'            => '\'\'\'Zapodate hesło so z njezjednoćenymi wužiwarskimi kontami přepruwuje...\'\'\'',
+	'centralauth-merge-attempt'            => "'''Zapodate hesło so z njezjednoćenymi wužiwarskimi kontami přepruwuje...'''",
 	'centralauth-attach-list-attached'     => 'Zjednoćene konto z mjenom "$1" zapřijima slědowace konta:',
 	'centralauth-attach-title'             => 'Konto wobkrućić',
 	'centralauth-attach-text'              => 'Tute konto hišće njeje so do zjednoćeneho konta přewzało. Jeli tež globalne konto tebi słuša, móžeš tute konto zapřijeć, jeli zapodaš hesło globalneho konta:',
@@ -1845,6 +1859,7 @@ $messages['nds'] = array(
  */
 $messages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
+	'centralauth-desc'                     => "Samengevoegde gebruikers binnen Wikimedia Foundation wiki's",
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
 	'centralauth-merge-welcome'            => "'''Uw gebruiker is nog niet gemigreerd naar Wikimedia's samengevoegde aanmeldsysteem.'''
 
@@ -2194,6 +2209,7 @@ $messages['ps'] = array(
  */
 $messages['pt'] = array(
 	'mergeaccount'                         => 'Estado da unificação de contas',
+	'centralauth-desc'                     => 'Fundir conta através dos wikis da Fundação Wikimedia',
 	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome'            => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.'''
 
@@ -2343,6 +2359,7 @@ $messages['ru'] = array(
  */
 $messages['sah'] = array(
 	'mergeaccount'                         => 'Ааттары холбооһун туруга',
+	'centralauth-desc'                     => '"Викимедиа" бырайыактарын хос ааттарын холбооһун',
 	'centralauth-merge-notlogged'          => 'Бука диэн, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ааккын эт]</span>, оччоҕо ааттарыҥ холбонууларын туругун көрүөҥ.',
 	'centralauth-merge-welcome'            => "'''Эн аатыҥ Викимедияҕа киирэр биир аат систиэмэтигэр өссө киирэ илик'''
 
