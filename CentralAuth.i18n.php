@@ -6,6 +6,7 @@ $messages['en'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Login unification status',
+	'centralauth-desc' => 'Merge Account across Wikimedia Foundation wikis',
 	'centralauth-merge-notlogged' =>
 		'Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]' .
@@ -843,6 +844,7 @@ Jos tämä tunnus on sinun, voi viimeistellä tunnusten yhdistämisen antamalla 
 
 $messages['fr'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptes utilisateur',
+	'centralauth-desc'                     => 'Fusionne les comptes utilisateur de projets wikis de la Wikimedia Fondation',
 	'centralauth-merge-notlogged'          => 'Merci de bien vouloir <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]</span> pour vérifier si vos comptes ont bien été fusionnés.',
 	'centralauth-merge-welcome'            => '\'\'\'Vos comptes utilisateur n’ont pas encore été migrés vers la système de compte unique de Wikimedia.\'\'\'
 Si vous choisissez de faire migrer vos comptes, vous pourrez utiliser le même nom d’utilisateur et le même mot de passe sur tous les projets Wikimedia dans toutes les langues.

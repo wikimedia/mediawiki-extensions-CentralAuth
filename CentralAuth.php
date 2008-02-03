@@ -38,6 +38,14 @@ $wgCentralAuthStrict = false;
  */
 $wgCentralAuthDryRun = false;
 
+$wgExtensionCredits['specialpage'][] = array(
+	'name' => 'Central Auth',
+	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
+	'version' => '2008-01-07',
+	'author' => 'Brion Vibber',
+	'description' => 'Merge Account across Wikimedia Foundation wikis',
+	'descriptionmsg' => 'centralauth-desc',
+);
 
 /**
  * Initialization of the autoloaders, and special extension pages.
