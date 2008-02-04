@@ -263,6 +263,7 @@ $messages['ar'] = array(
  */
 $messages['ast'] = array(
 	'mergeaccount'                         => 'Estatus de fusión de cuentes',
+	'centralauth-desc'                     => 'Fusiona cuentes ente les wikis de la Fundación Wikimedia',
 	'centralauth-merge-notlogged'          => 'Por favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
 	'centralauth-merge-welcome'            => "'''La to cuenta d'usuariu inda nun foi migrada al sistema de cuentes fusionaes de Wikimedia.'''
 
@@ -375,6 +376,7 @@ $messages['bg'] = array(
  */
 $messages['bn'] = array(
 	'mergeaccount'                         => 'লগ-ইন একত্রিকরণ অবস্থা',
+	'centralauth-desc'                     => 'উইকিমিডিয়া ফাউন্ডেশন উইকিসমূহের মধ্যে অ্যাকাউন্ট একীভূত করো',
 	'centralauth-merge-notlogged'          => 'দয়াকরে <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} লগ-ইন করুন]</span> যাতে পরীক্ষা করতে পারেন আপনার অ্যাকাউন্ট সম্পূর্ণরূপে একীভূত হয়েছে কিনা।',
 	'centralauth-merge-welcome'            => "'''আপনার ব্যবহারকারী অ্যাকাউন্ট উইকিমিডিয়ার একীভূত লগ-ইন পদ্ধতির সাথে একীভূত করা হয় নাই।'''
 
@@ -419,11 +421,26 @@ $messages['bn'] = array(
 	'centralauth-merge-attempt'            => "'''প্রদত্ত শব্দচাবি বাকি বিচ্ছিন্ন অ্যাকাউন্টের বিপক্ষে পরীক্ষা করা হচ্ছে...'''",
 	'centralauth-attach-list-attached'     => 'অ্যাকাউন্ট "$1" যে সব অ্যাকাউন্টসমূহের সাথে একীভূত হয়েছে:',
 	'centralauth-attach-title'             => 'অ্যাকাউন্ট নিশ্চিত করুন',
+	'centralauth-attach-text'              => 'এই অ্যাকাউন্টটি এখনও একীভূত অ্যাকাউন্টে সরিয়ে নেওয়া হয়নি। প্রধান অ্যাকাউন্টটি যদি আপনার হয় তাহলে আপনি তা ব্যবহার করে এই অ্যাকাউন্টটি একীভূত করে নিতে পারেন:',
 	'centralauth-attach-submit'            => 'অ্যাকাউন্ট স্থানান্তর করো',
+	'centralauth-attach-success'           => 'অ্যাকাউন্টটি সফলভাবে একীভূত অ্যাকাউন্টে সরিয়ে নেওয়া হয়েছে।',
+	'centralauth'                          => 'একীভূত লগ-ইন প্রশাসন',
 	'centralauth-admin-manage'             => 'ব্যবহারকারী ডাটা ব্যবস্থাপনা করুন',
 	'centralauth-admin-username'           => 'ব্যবহারকারী নাম:',
 	'centralauth-admin-lookup'             => 'ব্যবহারকারী ডাটা দেখুন অথবা সম্পাদনা করুন',
+	'centralauth-admin-permission'         => 'শুধুমাত্র স্টুয়ার্ডগণ অন্যের অ্যাকাউন্ট তাদের জন্য একীভূত করতে পারেন।',
+	'centralauth-admin-unmerge'            => 'নির্বাচিতসমূহ বিচ্ছিন্ন করো',
+	'centralauth-admin-merge'              => 'নির্বাচিতসমূহ একীভূত করো',
+	'centralauth-admin-bad-input'          => 'একীভূতকরণের জন্য অবৈধ নির্বাচন',
+	'centralauth-admin-none-selected'      => 'পরিবর্তনের জন্য কোন অ্যাকাউন্ট নির্বাচন করা হয় নাই।',
+	'centralauth-prefs-status'             => 'প্রধান অ্যাকাউন্টের অবস্থা:',
+	'centralauth-prefs-not-managed'        => 'একীভূত অ্যাকাউন্ট ব্যবহৃত হচ্ছে না',
 	'centralauth-prefs-unattached'         => 'অনিশ্চিত',
+	'centralauth-prefs-complete'           => 'সমস্ত একই ক্রমে!',
+	'centralauth-prefs-migration'          => 'সরানো হচ্ছে',
+	'centralauth-prefs-count-attached'     => 'আপনার অ্যাকাউন্ট $1 প্রকল্প {{plural:$1|সাইট|সাইটসমূহ}} এ সক্রিয় আছে।',
+	'centralauth-prefs-count-unattached'   => 'আপনার নাম দিয়ে নিশ্চিতকরণ হয় নাই এমন অ্যাকাউন্ট $1 {{plural:$1|প্রকল্পে|প্রকল্পসমূহে}} বাকি আছে।',
+	'centralauth-prefs-manage'             => 'আপনার প্রধান অ্যাকাউন্ট ব্যবস্থাপনা করুন',
 );
 
 $messages['br'] = array(
@@ -994,13 +1011,18 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Empossiblo de renomar lo compto utilisator $1 localament : ceti utilisator at ora un compto unico.</div>',
 );
 
+/** Galician (Galego)
+ * @author Xosé
+ * @author Alma
+ */
 $messages['gl'] = array(
 	'mergeaccount'                         => 'Estado da unificación do rexistro',
+	'centralauth-desc'                     => 'Fusionar Contas entre wikis da Fundación Wikimedia',
 	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} rexístrese]</span> para comprobar se as súas contas se  unificaron completamente.',
-	'centralauth-merge-welcome'            => '\'\'\'A súa conta de usuario aínda non se pasou ao sistema de rexistro unificado de Wikimedia.\'\'\'
+	'centralauth-merge-welcome'            => "'''A súa conta de usuario aínda non se pasou ao sistema de rexistro unificado de Wikimedia.'''
 
 Se escolle unificar as súas contas, poderá empregar o mesmo nome de usuario e contrasinal para se rexistrar en todos os wikis dos proxectos de Wikimedia en todas as linguas disponíbeis.
-Isto fai que sexa máis doado traballar con proxectos compartidos, como enviar a [http://commons.wikimedia.org/ Wikimedia Commons], e evita a confusión ou conflito que pode resultar se dúas persoas escollen o mesmo nome de usuario en proxectos diferentes.',
+Isto fai que sexa máis doado traballar con proxectos compartidos, como enviar a [http://commons.wikimedia.org/ Wikimedia Commons], e evita a confusión ou conflito que pode resultar se dúas persoas escollen o mesmo nome de usuario en proxectos diferentes.",
 	'centralauth-merge-step1-title'        => 'Comezar a unificación do rexistro',
 	'centralauth-merge-step1-detail'       => 'O seu contrasinal e os enderezos de correo electrónico rexistrados comprobaranse nas contas doutros wikis para confirmar que coinciden. Non se realizarán cambios até que vostede confirme que todo está ben.',
 	'centralauth-merge-step1-submit'       => 'Confirme a información de rexistro',
@@ -1017,9 +1039,9 @@ Isto fai que sexa máis doado traballar con proxectos compartidos, como enviar a
 	'centralauth-not-owner-text'           => 'O nome de usuario "$1" asignouse automaticamente ao propietario da conta en $2.
 
 Se se trata de vostede, pode completar o proceso de unificación de rexistro simplemente con escribir o contrasinal mestre desa conta aquí:',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Só modo demostración</div><br clear=\'all\'/>',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Só modo demostración</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'A unificación de contas é actualmente só un modo de demostración / depuración, polo que as operacións de unificación non están activadas. Sentímolo!',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Lea máis acerca do \'\'\'rexistro unificado\'\'\']]...\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Lea máis acerca do '''rexistro unificado''']]...''",
 	'centralauth-list-home-title'          => 'Wiki primario',
 	'centralauth-list-home-dryrun'         => 'Usaranse o contrasinal e enderezo de correo electrónico indicados neste wiki para a súa conta unificada, e a súa páxina de usuario ligarase automaticamente desde outros wikis. Poderá mudar o seu wiki primario máis tarde.',
 	'centralauth-list-attached-title'      => 'Contas relacionadas',
@@ -1034,7 +1056,7 @@ Se se trata de vostede, pode completar o proceso de unificación de rexistro sim
 	'centralauth-finish-login'             => 'Rexistro',
 	'centralauth-finish-send-confirmation' => 'Enviar o contrasinal por correo electrónico',
 	'centralauth-finish-problems'          => 'Ten problemas ou non é o dono destoutras contas? [[meta:Help:Unified login problems|Como atopar axuda]]...',
-	'centralauth-merge-attempt'            => '\'\'\'A contrastar o contrasinal fornecido coas demais contas aínda sen unificar...\'\'\'',
+	'centralauth-merge-attempt'            => "'''A contrastar o contrasinal fornecido coas demais contas aínda sen unificar...'''",
 	'centralauth-attach-list-attached'     => 'A conta unificada chamada "$1" inclúe as contas seguintes:',
 	'centralauth-attach-title'             => 'Confirmar conta',
 	'centralauth-attach-text'              => 'Esta conta aínda non se pasou á conta unificada. Se a conta global tamén é súa, pode unificar esta conta se escribe o contrasinal da conta global:',
@@ -2433,6 +2455,7 @@ $messages['sah'] = array(
  */
 $messages['sk'] = array(
 	'mergeaccount'                         => 'Stav zjednotenia prihlasovacích účtov',
+	'centralauth-desc'                     => 'Zlúčenie účtov na jednotlivých wiki nadácie Wikimedia',
 	'centralauth-merge-notlogged'          => 'Prosím, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty celkom zjednotené.',
 	'centralauth-merge-welcome'            => "'''Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém Wikimedia.'''
 
@@ -2832,8 +2855,11 @@ $messages['te'] = array(
 	'centralauth-finish-send-confirmation' => 'సంకేతపదాన్ని ఈ-మెయిల్లో పంపించు',
 	'centralauth-attach-title'             => 'ఖాతాని నిర్ధారించు',
 	'centralauth'                          => 'ఏకీకృత ప్రవేశపు నిర్వహణ',
+	'centralauth-admin-manage'             => 'వాడుకరి డాబాను నిర్వహించు',
 	'centralauth-admin-username'           => 'వాడుకరి పేరు:',
 	'centralauth-admin-lookup'             => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
+	'centralauth-admin-merge'              => 'ఎంచుకున్నవాటిని విలీనం చేయి',
+	'centralauth-admin-none-selected'      => 'మార్చడానికి ఖాతాలేమీ ఎంచుకోలేదు.',
 	'centralauth-prefs-not-managed'        => 'ఏకీకృత ఖాతాని వాడటం లేదు',
 	'centralauth-prefs-unattached'         => 'నిర్థారణకాలేదు',
 	'centralauth-prefs-complete'           => 'అన్నీ సరిపోయాయి!',
