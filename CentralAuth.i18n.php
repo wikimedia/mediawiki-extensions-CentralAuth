@@ -479,7 +479,11 @@ $messages['cs'] = array(
 Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadáním hesla pro uvedený účet:',
 	'centralauth-readmore-text'           => ":''[[meta:Help:Unified login|Přečtěte si více o '''sjednocení přihlašování''']]...''",
 	'centralauth-list-home-title'         => 'Domovská wiki',
+	'centralauth-list-home-dryrun'        => 'Heslo a e-mailová adresa nastavené na této wiki budou použity i na vašem jednotném účtu a z ostatních projektů se bude automaticky odkazovat na vaši uživatelskou stránku zde. Příležitost změnit si nastavený domovský projekt budete mít i později.',
 	'centralauth-list-attached-title'     => 'Připojené účty',
+	'centralauth-list-attached'           => 'Účty se jménem „$1“ na všech následujících projektech byly automaticky připojeny k jednotnému účtu:',
+	'centralauth-list-attached-dryrun'    => 'Účty se jménem „$1“ na všech následujících projektech budou automaticky připojeny k jednotnému účtu:',
+	'centralauth-list-unattached-title'   => 'Nepřipojené účty',
 	'centralauth-finish-password'         => 'Heslo:',
 	'centralauth-prefs-status'            => 'Stav jednotného účtu',
 	'centralauth-prefs-not-managed'       => 'Jednotný účet není používán',
@@ -1949,10 +1953,14 @@ Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wac
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebruiker $1 kan plaatselijk niet hernoemd worden omdat deze gebruiker gemigreerd is naar het systeem van samengevoegde gebruikers.</div>',
 );
 
+/** Norwegian (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
 $messages['no'] = array(
 	'mergeaccount'                         => 'Kontosammensmeltingsstatus',
+	'centralauth-desc'                     => 'Slå sammen kontoer på wikier tilhørende Wikimedia Foundation',
 	'centralauth-merge-notlogged'          => 'Vennligst <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special:MergeAccount}} logg inn]</span> for å sjekke om kontoene dine har blitt fullstendig sammensmeltet.',
-	'centralauth-merge-welcome'            => '\'\'\'Din brukerkonto har ennå ikke blitt flyttet til Wikimedias enhetlige innlogginssystem.\'\'\' Om du velger å flytte kontoene dine kan du bruke samme brukernavn og passord for å logge inn på alle Wikimedias prosjekter på alle språk. Dette gjør det raskere å arbeide med delte prosjekter, som opplasting til [http://commons.wikimedia.org/ Wikimedia Commons], og unngår forvirringene og konfliktene som kan oppstå dersom to personer på forskjellige prosjekter bruker samme brukernavn. Dersom noen allerede har tatt ditt brukernavn på et annet prosjekt vil ikke dette forstyrre dem, men gi deg muligheten til å finne ut av sakene med dem eller en administrator senere.',
+	'centralauth-merge-welcome'            => "'''Din brukerkonto har ennå ikke blitt flyttet til Wikimedias enhetlige innlogginssystem.''' Om du velger å flytte kontoene dine kan du bruke samme brukernavn og passord for å logge inn på alle Wikimedias prosjekter på alle språk. Dette gjør det raskere å arbeide med delte prosjekter, som opplasting til [http://commons.wikimedia.org/ Wikimedia Commons], og unngår forvirringene og konfliktene som kan oppstå dersom to personer på forskjellige prosjekter bruker samme brukernavn. Dersom noen allerede har tatt ditt brukernavn på et annet prosjekt vil ikke dette forstyrre dem, men gi deg muligheten til å finne ut av sakene med dem eller en administrator senere.",
 	'centralauth-merge-step1-title'        => 'Begynn kontosammenslåing',
 	'centralauth-merge-step1-detail'       => 'Ditt passord og din e-postadresse vil bli sjekket opp mot kontoene på andre wikier for å bekrefte at de stemmer overens. Ingen endringer vil bli gjort før du har bekreftet at alt ser riktig ut.',
 	'centralauth-merge-step1-submit'       => 'Bekreft innloggingsinformasjon',
@@ -1969,9 +1977,9 @@ $messages['no'] = array(
 	'centralauth-not-owner-text'           => 'Brukernavnet «$1» ble automatisk tildelt eieren av kontoen på $2.
 
 Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn hovedpassordet for den kontoen her:',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Kun demonstrasjonsmodus</div><br clear=\'all\'/>',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Kun demonstrasjonsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Kontosammenslåing er foreløpig i en demonstrasjonsmodus, så faktisk sammenslåing er ikke mulig. Beklager!',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Les mer om \'\'\'kontosammensmelting\'\'\']]…\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Les mer om '''kontosammensmelting''']]…''",
 	'centralauth-list-home-title'          => 'Hjemmewiki',
 	'centralauth-list-home-dryrun'         => 'Passordet og e-postadressen som brukes på denne wikien vil bli brukt for din sammenslåtte konto, og andre wikier vil automatisk lenke til brukersiden din her. Du kan endre hvilken wiki som er din hjemmewiki senere.',
 	'centralauth-list-attached-title'      => 'Tilkoblede kontoer',
@@ -1986,7 +1994,7 @@ Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn
 	'centralauth-finish-login'             => 'Logg inn',
 	'centralauth-finish-send-confirmation' => 'Send passord på e-post',
 	'centralauth-finish-problems'          => 'Har du problemer, eller er ikke disse andre kontoene dine? [[meta:Help:Unified login problems|Hvordan finne hjelp…]]',
-	'centralauth-merge-attempt'            => '\'\'\'Sjekker det oppgitte passordet mot gjenværende kontoer…\'\'\'',
+	'centralauth-merge-attempt'            => "'''Sjekker det oppgitte passordet mot gjenværende kontoer…'''",
 	'centralauth-attach-list-attached'     => 'Den sammenslåtte kontoen ved navn «$1» inkluderer følgende kontoer:',
 	'centralauth-attach-title'             => 'Bekreft konto',
 	'centralauth-attach-text'              => 'Denne kontoen har ennå ikke blitt flyttet til den sammenslåtte kontoen. Om den sammenslåtte kontoen også er din kan du koble denne kontoen til den sammenslåtte ved å skrive inn passordet på den sammenslåtte kontoen:',
