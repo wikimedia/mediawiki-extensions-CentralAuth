@@ -1811,6 +1811,7 @@ $messages['lb'] = array(
  */
 $messages['li'] = array(
 	'mergeaccount'                         => 'Status samevoege gebroekers',
+	'centralauth-desc'                     => "Samegevoegde gebroekers binne Wikimedia Foundation wiki's",
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meldj uch aan]</span> óm te konterlere of uche gebroekers volledig zeen samegevoeg.',
 	'centralauth-merge-welcome'            => "'''Uche gebroeker is nag neet gemigreerd nao Wikimedia zien samegevoegdje aanmeldjsysteem.'''
 
@@ -1828,22 +1829,46 @@ Es emes anges mit uche gebroekersnaam al actief is op 'ne angere site, den haet 
 	'centralauth-merge-step3-submit'       => 'Gebroekers samevoege',
 	'centralauth-complete'                 => 'Samevoege gebroekers aafgeróndj!',
 	'centralauth-incomplete'               => 'Samevoege gebroekers neet volledig!',
+	'centralauth-complete-text'            => "Geer kint uch nu aanmelje bie edere wiki van Wikimedia zónger 'ne nuje gebroeker aan te make; dezelfdje combinatie van gebroekersnaam en wachwaord werk veur Wikipedia, Wiktionair, Wikibeuk en häör zösterperjèkter in alle täöl.",
+	'centralauth-incomplete-text'          => "Es uche gebroekers zeen samegevoeg kintj geer uch aanmelje bie edere wiki van Wikimedia zóner 'ne nuje gebroeker aan te make; dezelfdje combinatie van gebroekersnaam en wachwaord werk veur Wikipedia, Wiktionair, Wikibeuk en häör zösterperjèkter in alle täöl.",
+	'centralauth-not-owner-text'           => 'De gebroekersnaam "$1" is automatisch toegeweze aan de eigenaar van de gebroeker op $2.
+
+Es geer det böntj, kintj geer uch \'t samevoege van gebroekers aafrönje door hiej \'t wachwaprd veur dae gebroeker te gaeve:',
 	'centralauth-notice-dryrun'            => "<div class='succesbox'>Allein demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => "Samevoege gebroekers is op dit memènt besjikbaar in demonstratie- en debugmodus. 't Sameviege van gebroekers is op dit memènt dus neet meugelik.",
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Lae meer euver '''samegevoegdj aanmelde''']]...''",
 	'centralauth-list-home-title'          => 'Thoeswiki',
 	'centralauth-list-home-dryrun'         => "'t Wachwaord en e-mailadres det veur deze wiki is ingesteld wörd gebroek veur uche samegevoegde gebroeker. Uche gebroekerspazjena op dae wiki wörd automatisch gelink vanoet anger wiki's. Later kint geer instelle welke wiki uche thoeswiki is.",
+	'centralauth-list-attached-title'      => 'Betróg gebroekers',
+	'centralauth-list-attached'            => 'De gebroekers mit de naam "$1" op de volgende sites zeen automatisch samegevoeg:',
+	'centralauth-list-attached-dryrun'     => 'De gebroeker mit de naam "$1" op de volgende sites wuuertj automatisch toegevoeg aan de samegevoegde gebroeker:',
+	'centralauth-list-unattached-title'    => 'Neet betróg gebroekers',
 	'centralauth-list-unattached'          => 'De gebroeker "$1" kós neet automatisch aan uch toegeweze waere veur de volgende sites;
 waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
+	'centralauth-finish-title'             => 'Samevoege aafrönje',
 	'centralauth-finish-text'              => "Es dees gebroekers bie uch heure kinse 't proces van samevoege aafrönje door de wachwäörd veur de anger gebroekers hiej in te veure:",
 	'centralauth-finish-password'          => 'Wachwaord:',
 	'centralauth-finish-login'             => 'Gebroekersnaam',
 	'centralauth-finish-send-confirmation' => 'E-mail wachwaord',
+	'centralauth-finish-problems'          => "Kömp geer d'r neet oet of zeen dees gebroekers neet ucher? [[meta:Help:Unified login problems|Wie detse hölp vinjs]]....",
+	'centralauth-merge-attempt'            => "'''Bezig mit 't controlere van de opgegaeve wachwäörd veur de nag neet samegevoegde gebroekers...'''",
+	'centralauth-attach-list-attached'     => 'De samegevoegde gebroeker "$1" besteit oet de volgende gebroekers:',
+	'centralauth-attach-title'             => 'Gebroeker bevestige',
 	'centralauth-attach-text'              => "Deze gebroeker is nag neet gemigreerd nao 'ne samegevoegde gebroeker. Es de euverkoepelde gebroeker ouch van uch is den kint geer deze gebroeker samevoege es geer 't wachwaord veur de euverkoepelende gebroeker inguf:",
 	'centralauth-attach-submit'            => 'Gebroeker migrere',
+	'centralauth-attach-success'           => 'De gebroeker is gemigreerd nao de samegevoegde gebroeker.',
 	'centralauth'                          => 'Beheer samegevoegdj aanmelje',
+	'centralauth-admin-manage'             => 'Gebroekersgegaeves behere',
 	'centralauth-admin-username'           => 'Gebroekersnaam:',
+	'centralauth-admin-lookup'             => 'Gebroekersgegaeves bekieke of bewerke',
+	'centralauth-admin-permission'         => 'Allein stewards kinne gebroekers van anger luuj samevoege.',
+	'centralauth-admin-unmerge'            => 'Geselecteerde gebroekers splitse',
+	'centralauth-admin-merge'              => 'Geselecteerde gebroekers samevoege',
+	'centralauth-admin-bad-input'          => 'Onzjuuste samevoegselectie',
+	'centralauth-admin-none-selected'      => "d'r Zeen gein gebroekers geselecteerd óm te verangere.",
+	'centralauth-prefs-status'             => 'Globale gebroekersstatus:',
+	'centralauth-prefs-not-managed'        => 'Gebroek gein samegevoegde gebroeker',
 	'centralauth-prefs-unattached'         => 'Neet bevestig',
 	'centralauth-prefs-complete'           => 'Alles in orde!',
 	'centralauth-prefs-migration'          => 'Bezig mit migrere',
@@ -2318,6 +2343,7 @@ $messages['ro'] = array(
  */
 $messages['ru'] = array(
 	'mergeaccount'                         => 'Состояние объединения учётных записей',
+	'centralauth-desc'                     => 'Объединение учётных записей на вики-проектах «Фода Викимедиа»',
 	'centralauth-merge-notlogged'          => 'Пожалуйста, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} представьтесь]</span>, чтобы проверить, были ли ваши учётные записи объединены.',
 	'centralauth-merge-welcome'            => "'''Ваша учётная запись ещё не была переведена на единую систему входа Викимедии'''
 
@@ -2856,8 +2882,10 @@ $messages['te'] = array(
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''ఏకీకృత ప్రవేశం''' గురించి మరింత తెలుసుకోండి]]...''",
 	'centralauth-list-attached-title'      => 'జోడించిన ఖాతాలు',
 	'centralauth-list-attached'            => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:',
+	'centralauth-list-attached-dryrun'     => 'ఈ క్రింద పేర్కొన్న సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకి జోడించబడతాయి:',
 	'centralauth-list-unattached-title'    => 'జోడించని ఖాతాలు',
 	'centralauth-foreign-link'             => '$2లో వాడుకరి $1',
+	'centralauth-finish-title'             => 'విలీనం ముగించు',
 	'centralauth-finish-text'              => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
 	'centralauth-finish-password'          => 'సంకేతపదం:',
 	'centralauth-finish-login'             => 'ప్రవేశించు',
@@ -2868,6 +2896,7 @@ $messages['te'] = array(
 	'centralauth-admin-username'           => 'వాడుకరి పేరు:',
 	'centralauth-admin-lookup'             => 'వాడుకరి సమాచారాన్ని చూడండి లేదా మార్చండి',
 	'centralauth-admin-merge'              => 'ఎంచుకున్నవాటిని విలీనం చేయి',
+	'centralauth-admin-bad-input'          => 'తప్పుడు విలీనపు ఎంపిక',
 	'centralauth-admin-none-selected'      => 'మార్చడానికి ఖాతాలేమీ ఎంచుకోలేదు.',
 	'centralauth-prefs-not-managed'        => 'ఏకీకృత ఖాతాని వాడటం లేదు',
 	'centralauth-prefs-unattached'         => 'నిర్థారణకాలేదు',
