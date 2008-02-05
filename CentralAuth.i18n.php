@@ -501,6 +501,7 @@ $messages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Status der Benutzerkonten-Zusammenführung',
+	'centralauth-desc' => 'Benutzerkonten in Wikis der Wikimedia Foundation zusammenführen',
 	'centralauth-merge-notlogged' =>
 		'Bitte <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an], ' .
