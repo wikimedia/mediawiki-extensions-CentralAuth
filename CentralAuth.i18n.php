@@ -184,6 +184,14 @@ $messages['en'] = array(
 
 );
 
+/** Afrikaans (Afrikaans)
+ * @author SPQRobin
+ */
+$messages['af'] = array(
+	'centralauth-foreign-link'   => 'Gebruiker $1 op $2',
+	'centralauth-admin-username' => 'Gebruikersnaam:',
+);
+
 $messages['ang'] = array(
 	'centralauth-admin-username'           => 'Brūcendnama:',
 );
@@ -949,6 +957,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de compte en
  */
 $messages['frp'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptos utilisator',
+	'centralauth-desc'                     => 'Fusione los comptos utilisator de projèts de la Wikimedia Foundation.',
 	'centralauth-merge-notlogged'          => 'Marci de franc volêr vos <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
 	'centralauth-merge-welcome'            => "'''Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.'''
 
@@ -2795,15 +2804,19 @@ Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku 
 	'centralauth-admin-merge'              => 'Hijikeun nu dipilih',
 );
 
+/** Swedish (Svenska)
+ * @author Lejonel
+ */
 $messages['sv'] = array(
 	'mergeaccount'                         => 'Status för förenad inloggning',
+	'centralauth-desc'                     => 'Sammanfogar användarkonton på Wikimedia Foundations olika wikier till ett konto',
 	'centralauth-merge-notlogged'          => 'Du måste <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} logga in]</span> för att se om dina konton har blivit fullständigt förenade.',
-	'centralauth-merge-welcome'            => '\'\'\'Ditt konto har ännu inte flyttats över till Wikimedias förenade inloggningssystem.\'\'\'
+	'centralauth-merge-welcome'            => "'''Ditt konto har ännu inte flyttats över till Wikimedias förenade inloggningssystem.'''
 
 Om du väljer att förena dina konton, så kommer du att kunna använda samma användarnamn och lösenord för att logga in på alla språkversioner av alla Wikimedias projekt.
 På så sätt blir det enklare att arbeta på gemensamma projekt, till exempel att ladda upp filer till [http://commons.wikimedia.org/ Wikimedia Commons]. Det undviker också förvirring och andra problem som kan uppstå när olika personer har samma användarnamn på olika projekt.
 
-Om någon annan redan har tagit ditt användarnamn på en annan sajt så påverkar det här inte henne nu, men du kommer att få möjlighet att reda ut det med henne eller med en administratör senare.',
+Om någon annan redan har tagit ditt användarnamn på en annan sajt så påverkar det här inte henne nu, men du kommer att få möjlighet att reda ut det med henne eller med en administratör senare.",
 	'centralauth-merge-step1-title'        => 'Påbörja förening av konton',
 	'centralauth-merge-step1-detail'       => 'Ditt lösenord och din e-postadress kommer kontrolleras mot användarkonton på andra wikis för att bekräfta att de stämmer överens. Inga ändringar kommer genomföras innan du bekräftar att allting ser riktigt ut.',
 	'centralauth-merge-step1-submit'       => 'Bekräfta lösenord',
@@ -2820,9 +2833,9 @@ Om någon annan redan har tagit ditt användarnamn på en annan sajt så påverk
 	'centralauth-not-owner-text'           => 'Användarnamnet "$1" tilldelades automatiskt ägaren av kontot på $2.
 
 Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom att ange lösenordet för det kontot här:',
-	'centralauth-notice-dryrun'            => '<div class=\'successbox\'>Endast demonstration</div><br clear=\'all\'/>',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Endast demonstration</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Förening av konton körs för närvarande i demonstrations- eller debugläge, så funktionerna som gör kontosammanslagningar är avaktiverade.',
-	'centralauth-readmore-text'            => ':\'\'[[meta:Help:Unified login|Läs mer om \'\'\'förenad inloggning\'\'\']]...\'\'',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Läs mer om '''förenad inloggning''']]...''",
 	'centralauth-list-home-title'          => 'Hemwiki',
 	'centralauth-list-home-dryrun'         => 'Ditt lösenord och din e-postadress på denna wiki kommer att användas för ditt förenade konto. Din användarsida på den wikin kommer automatiskt att länkas till från andra wikis. Du kommer senare kunna ändra wiki som är din hemwiki.',
 	'centralauth-list-attached-title'      => 'Anslutna konton',
@@ -2837,7 +2850,7 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 	'centralauth-finish-login'             => 'Logga in',
 	'centralauth-finish-send-confirmation' => 'Skicka lösenord via e-post',
 	'centralauth-finish-problems'          => 'Har du problem, eller är du inte är ägare till de andra kontona? Se [[meta:Help:Unified login problems|hjälpsidan]]...',
-	'centralauth-merge-attempt'            => '\'\'\'Kontrollerar det angivna lösenordet mot återstående oanslutna konton...\'\'\'',
+	'centralauth-merge-attempt'            => "'''Kontrollerar det angivna lösenordet mot återstående oanslutna konton...'''",
 	'centralauth-attach-list-attached'     => 'Det förenade kontot med namnet "$1" innhåller följande konton:',
 	'centralauth-attach-title'             => 'Bekräfta konto',
 	'centralauth-attach-text'              => 'Detta konto har ännu inte anslutits till det förenade kontot. Om det globala kontot är ditt, så kan du ansluta det här kontot genom att ange det globala kontots lösenord:',
@@ -2909,11 +2922,16 @@ $messages['te'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
-	'centralauth-list-home-title' => 'Викии аслӣ',
-	'centralauth-finish-password' => 'Калимаи убур:',
-	'centralauth-finish-login'    => 'Вуруд ба систем',
-	'centralauth-attach-title'    => 'Тасдиқи ҳисоби корбарӣ',
-	'centralauth-admin-username'  => 'Номи корбарӣ:',
+	'centralauth-list-home-title'     => 'Викии аслӣ',
+	'centralauth-finish-password'     => 'Калимаи убур:',
+	'centralauth-finish-login'        => 'Вуруд ба систем',
+	'centralauth-attach-title'        => 'Тасдиқи ҳисоби корбарӣ',
+	'centralauth-admin-manage'        => 'Мудирияти иттилооти корбар',
+	'centralauth-admin-username'      => 'Номи корбарӣ:',
+	'centralauth-admin-lookup'        => 'Мушоҳида ё тағйири иттилооти корбарӣ',
+	'centralauth-admin-none-selected' => 'Ҳеҷ ҳисоби корбари барои тағйир интихоб нашудааст.',
+	'centralauth-prefs-status'        => 'Вазъияти ҳисоби корбари муштарак:',
+	'centralauth-prefs-complete'      => 'Ҳама чиз мураттаб аст!',
 );
 
 /** Turkish (Türkçe)
