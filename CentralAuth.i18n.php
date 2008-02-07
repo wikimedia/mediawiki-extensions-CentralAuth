@@ -738,9 +738,12 @@ $messages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
 
-# فارسی (Huji)
+/** فارسی (فارسی)
+ * @author Huji
+ */
 $messages['fa'] = array(
 	'mergeaccount'                         => 'وضعیت یکی کردن حساب‌ها',
+	'centralauth-desc'                     => 'یکی کردن حساب‌های کاربری در ویکی‌های بنیاد ویکی‌مدیا',
 	'centralauth-merge-notlogged'          => 'لطفاً <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} به سیستم وارد شوید]</span> تا از ادغام حساب‌های کاربر‌ی‌تان اطمینان حاصل کنید.',
 	'centralauth-merge-welcome'            => "'''حساب کاربری شما هنوز به سامانه یکی کردن حساب‌های ویکی‌مدیا انتقال داده نشده‌است.'''
 
