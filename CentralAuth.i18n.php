@@ -2612,8 +2612,8 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-prefs-unattached'         => 'Nepotvrdené',
 	'centralauth-prefs-complete'           => 'Všetko v poriadku!',
 	'centralauth-prefs-migration'          => 'Prebieha migrácia',
-	'centralauth-prefs-count-attached'     => 'Váš účet je aktívny na $1 projektoch.',
-	'centralauth-prefs-count-unattached'   => 'Nepotvrdené účty s vašim menom zostávajú na $1 projektoch.',
+	'centralauth-prefs-count-attached'     => 'Váš účet je aktívny na $1 {{PLURAL:$1|projekte|projektoch}}.',
+	'centralauth-prefs-count-unattached'   => 'Nepotvrdené účty s vašim menom zostávajú na $1 {{PLURAL:$1|projekte|projektoch}}.',
 	'centralauth-prefs-detail-unattached'  => 'Nebolo potvrdené, že účet na tomto projekte patrí ku globálnemu účtu.',
 	'centralauth-prefs-manage'             => 'Spravovať váš globálny účet',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie je možné lokálne premenovať používateľa $1, keďže toto používateľské meno bolo migrované na zjednotený prihlasovací systém.</div>',
@@ -3618,3 +3618,4 @@ $messages['zh-tw'] = array(
 		'這個計畫網站還未確認到全域帳戶。',
 
 );
+
