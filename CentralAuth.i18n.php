@@ -2919,6 +2919,7 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 
 /** Telugu (తెలుగు)
  * @author Veeven
+ * @author వైజాసత్య
  * @author Mpradeep
  */
 $messages['te'] = array(
@@ -2947,6 +2948,8 @@ $messages['te'] = array(
 	'centralauth-finish-problems'          => 'సమస్య ఉందా, లేదా ఈ ఇతర ఖాతాలు మీవి కాదా? [[meta:Help:Unified login problems|సహాయం పొందడం ఎలా]]...',
 	'centralauth-attach-list-attached'     => '"$1" అనే పేరుగల ఏకీకృత ఖాతా ఈ క్రింద పేర్కొన్న ఖాతాలను కలిగివుంది:',
 	'centralauth-attach-title'             => 'ఖాతాని నిర్ధారించు',
+	'centralauth-attach-submit'            => 'ఖాతాను బదిలీ చెయ్యండి',
+	'centralauth-attach-success'           => 'ఈ ఖాతా ఏకీకృత ఖాతాకు బదిలీ చేయబడినది',
 	'centralauth'                          => 'ఏకీకృత ప్రవేశపు నిర్వహణ',
 	'centralauth-admin-manage'             => 'వాడుకరి డాబాను నిర్వహించు',
 	'centralauth-admin-username'           => 'వాడుకరి పేరు:',
@@ -2957,6 +2960,7 @@ $messages['te'] = array(
 	'centralauth-prefs-not-managed'        => 'ఏకీకృత ఖాతాని వాడటం లేదు',
 	'centralauth-prefs-unattached'         => 'నిర్థారణకాలేదు',
 	'centralauth-prefs-complete'           => 'అన్నీ సరిపోయాయి!',
+	'centralauth-prefs-migration'          => 'బదిలీలో ఉన్నవి',
 	'centralauth-prefs-count-attached'     => 'మీ ఖాతా $1 ప్రాజెక్టు {{plural:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.',
 	'centralauth-prefs-count-unattached'   => '$1 {{plural:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
 );
@@ -2965,16 +2969,60 @@ $messages['te'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
-	'centralauth-list-home-title'     => 'Викии аслӣ',
-	'centralauth-finish-password'     => 'Калимаи убур:',
-	'centralauth-finish-login'        => 'Вуруд ба систем',
-	'centralauth-attach-title'        => 'Тасдиқи ҳисоби корбарӣ',
-	'centralauth-admin-manage'        => 'Мудирияти иттилооти корбар',
-	'centralauth-admin-username'      => 'Номи корбарӣ:',
-	'centralauth-admin-lookup'        => 'Мушоҳида ё тағйири иттилооти корбарӣ',
-	'centralauth-admin-none-selected' => 'Ҳеҷ ҳисоби корбари барои тағйир интихоб нашудааст.',
-	'centralauth-prefs-status'        => 'Вазъияти ҳисоби корбари муштарак:',
-	'centralauth-prefs-complete'      => 'Ҳама чиз мураттаб аст!',
+	'mergeaccount'                         => 'Вазъияти якка кардани ҳисобҳо',
+	'centralauth-desc'                     => 'Якка кардани ҳисобҳои корбарӣ дар викиҳои Бунёди Викимедиа',
+	'centralauth-merge-step1-title'        => 'Оғози якка кардани ҳисобҳои корбарӣ',
+	'centralauth-merge-step1-submit'       => 'Тасдиқи иттилооти вуруд ба систем',
+	'centralauth-merge-step2-title'        => 'Тасдиқи ҳисобҳои корбарии бештар',
+	'centralauth-merge-step2-submit'       => 'Тасдиқи иттилооти вуруд ба систем',
+	'centralauth-merge-step3-title'        => 'Эҷоди ҳисоби муштарак',
+	'centralauth-merge-step3-detail'       => 'Шумо омодаед ҳисоби муштараки худро дар викиҳои зерин эҷод кунед:',
+	'centralauth-merge-step3-submit'       => 'Якка кардани ҳисобҳо',
+	'centralauth-complete'                 => 'Эҷод кардани ҳисобҳо комил шуд!',
+	'centralauth-incomplete'               => 'Эҷод кардани ҳисобҳо комил нашуд!',
+	'centralauth-complete-text'            => 'Акнун шумо метавонед дар ҳар як аз викиҳои Викимедиа ворид шавид бидуни сохтани ҳисоби ҷадид; ҳисоби корбарии муштараки шумо дар Википедиа, Викилуғат, Викикитобҳо ва дигар лоиҳаҳои Викимедиа дар тамоми забонҳо кор хоҳад кард.',
+	'centralauth-incomplete-text'          => 'Дар ҳоле, ки ҳисоби корбарии шумо якка шавад, шумо қодир хоҳед буд дар ҳар яки аз викиҳои Викимедиа бидуни эҷоди ҳисоби ҷадид вуруд кунед. Як ҳисоб ва калима убур дар Википедиа, Викилуғат, Викикитобҳо ва дигар лоиҳаҳои Википедиа дар тамоми забонҳо кор хоҳад кард.',
+	'centralauth-not-owner-text'           => 'Ҳисоби корбарии "$1" ба таври худкор ба соҳиби ҳисоби корбарӣ дар $2 ихтисос дода шуд.
+
+Агар шумо соҳиби ин ҳисоб ҳастед, шумо метавонед раванди якка кардан ҳисобҳои корбариро бо ворид кардани калимаи убури саросарӣ дар ин ҷо поён бирасонед:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Фақат тарзи намоишӣ</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'Сомонаи якка кардани ҳисобҳои корбарӣ дар ҳоли ҳозир ба таври озмоишӣ ва барои рафъи эрод фаъол аст, бинобар ин якка кардани ҳисобҳои воқеӣ ҳануз фаъол нест. Бубахшед!',
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Иттилооти бештар дар бораи '''ҳисоби корбарии муштарак''']]...''",
+	'centralauth-list-home-title'          => 'Викии аслӣ',
+	'centralauth-list-home-dryrun'         => 'Калимаи убур ва нишонаи почтаи электронии интихоб шуда дар ин вики барои ҳисоби корбарии муштараки шумо мавриди истифода қарор хоҳад гирифт, ва ҳисоби корбарии шумо дар дигар викиҳо ба таври худкор ба ин вики пайванд хоҳад шуд. Баъдан шумо метавонед викии аслии худро тағйир диҳед.',
+	'centralauth-list-attached-title'      => 'Ҳисобҳои корбарии пайваста',
+	'centralauth-list-attached'            => 'Ҳисоби корбарии "$1" дар ҳар як аз лоиҳаҳои зерин ба таври худкор ба ҳисоби корбарии муштарак пайваста  аст:',
+	'centralauth-list-attached-dryrun'     => 'Ҳисоби корбарии "$1" дар ҳар як аз лоиҳаҳои зерин ба таври худкор ба ҳисоби корбарии муштарак шумо пайваста хоҳад шуд:',
+	'centralauth-list-unattached-title'    => 'Ҳисобҳои ҷудо карда шуда',
+	'centralauth-list-unattached'          => 'Ҳисоби корбарии "$1"ро дар сомонаҳои зерин наметавон ба таври худкор мутаалиқ ба шумо донист; бо эҳтимоли зиёд онҳо калимаи убури дигар аз ҳисоби корбарии аслии шумо доранд:',
+	'centralauth-foreign-link'             => 'Ҳисоби корбари $1 дар $2',
+	'centralauth-finish-title'             => 'Хотимаи идғом',
+	'centralauth-finish-text'              => 'Агар шумо соҳиби ин ҳисобҳо ҳастед, метавонед раванди якка кардани ҳисобҳои корбариро бо ворид кардани калимаи убури саросарӣ дар инҷо ба поён бирасонед:',
+	'centralauth-finish-password'          => 'Калимаи убур:',
+	'centralauth-finish-login'             => 'Вуруд ба систем',
+	'centralauth-finish-send-confirmation' => 'Калимаи убур ба почтаи электронӣ фиристода шавад',
+	'centralauth-finish-problems'          => 'Дучори мушкили шудаед ё соҳиби ҳисобҳои корбарии дигаре, ки феҳрист шудаанд нестед? [[meta:Help:Unified login problems|Роҳнаморо бихонед]]...',
+	'centralauth-merge-attempt'            => "'''Мутобиқат додани калимаи убури ворид шуда бо ҳисобҳои идғом нашудаи боқимонда...'''",
+	'centralauth-attach-list-attached'     => 'Ҳисоби корбарии муштарак "$1" шомили ҳисобҳои корбарии зерин мешавад:',
+	'centralauth-attach-title'             => 'Тасдиқи ҳисоби корбарӣ',
+	'centralauth-attach-text'              => 'Ин ҳисоби корбарӣ ҳанӯз ба ҳисоби корбарии муштарак интиқол дода нашудааст. Агар ҳисоби корбарии муштарак мутаалиқ ба шумо аст, ин ҳисобро ҳам метавонед бо ворид кардани калимаи убури он ба ҳисоби корбарии муштарак якка кунед:',
+	'centralauth-attach-submit'            => 'Интиқоли ҳисоби корбарӣ',
+	'centralauth-attach-success'           => 'Ҳисоби корбарӣ ба ҳисоби корбарии муштарак интиқол дода шуд.',
+	'centralauth'                          => 'Мудирияти ҳисоби корбарии муштарак',
+	'centralauth-admin-manage'             => 'Мудирияти иттилооти корбар',
+	'centralauth-admin-username'           => 'Номи корбарӣ:',
+	'centralauth-admin-lookup'             => 'Мушоҳида ё тағйири иттилооти корбарӣ',
+	'centralauth-admin-unmerge'            => 'Аз идғом озод кардани маводи интихобшуда',
+	'centralauth-admin-merge'              => 'Интихоби идғом',
+	'centralauth-admin-bad-input'          => 'Интихоби ғайри миҷози идғом',
+	'centralauth-admin-none-selected'      => 'Ҳеҷ ҳисоби корбари барои тағйир интихоб нашудааст.',
+	'centralauth-prefs-status'             => 'Вазъияти ҳисоби корбари муштарак:',
+	'centralauth-prefs-not-managed'        => 'Ҳисоби корбарии муштарак мавриди истифода нест',
+	'centralauth-prefs-unattached'         => 'Тасдиқнашуда',
+	'centralauth-prefs-complete'           => 'Ҳама чиз мураттаб аст!',
+	'centralauth-prefs-migration'          => 'Дар ҳоли интиқол',
+	'centralauth-prefs-count-attached'     => 'Ҳисоби корбарии шумо дар $1 {{plural:$1|лоиҳа|лоиҳаҳо}} фаъол аст.',
+	'centralauth-prefs-manage'             => 'Мудирияти ҳисоби корбарии муштарак',
 );
 
 /** Turkish (Türkçe)
