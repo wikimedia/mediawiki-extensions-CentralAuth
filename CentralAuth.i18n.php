@@ -1626,6 +1626,18 @@ $messages['ja'] = array(
 	'centralauth-admin-username'           => '利用者名:',
 );
 
+/** Jutish (Jysk)
+ * @author Huslåke
+ */
+$messages['jut'] = array(
+	'centralauth-list-home-title' => 'Jæm wiki',
+	'centralauth-foreign-link'    => 'Bruger $1 åp $2',
+	'centralauth-finish-login'    => 'Loĝge på',
+	'centralauth-admin-username'  => 'Bruger:',
+	'centralauth-prefs-complete'  => "I'n årdnenge!",
+	'centralauth-prefs-migration' => 'I migråsje',
+);
+
 $messages['kk-arab'] = array(
 	'mergeaccount'                         => 'تىركەلگى بىرەگەيلەندىرۋ كۇيى',
 	'centralauth-merge-notlogged'          => 'تىركەلگىلەرىڭىز تولىق بىرەگەيلەندىرۋىن تەكسەرۋ ٴۇشىن Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} كىرىڭىز]</span>.',
@@ -1934,6 +1946,16 @@ waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 $messages['lt'] = array(
 	'centralauth-finish-password' => 'Slaptažodis',
 	'centralauth-admin-username'  => 'Naudotojo vardas:',
+);
+
+/** Malayalam (മലയാളം)
+ * @author Jacob.jose
+ */
+$messages['ml'] = array(
+	'centralauth-finish-password'          => 'രഹസ്യവാക്ക്:',
+	'centralauth-finish-send-confirmation' => 'രഹസ്യവാക്ക് ഇ-മെയില്‍ ചെയ്യുക',
+	'centralauth-attach-title'             => 'അക്കൗണ്ട് സ്ഥിരീകരിക്കുക',
+	'centralauth-admin-username'           => 'ഉപയോക്തൃനാമം:',
 );
 
 /** Erzya (эрзянь кель)
@@ -2925,6 +2947,13 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 $messages['te'] = array(
 	'mergeaccount'                         => 'ప్రవేశపు ఏకీకరణ స్థితి',
 	'centralauth-desc'                     => 'వికీమీడియా ఫౌండేషన్ వికీలన్నింటిలో ఖాతాని విలీనం చేయి',
+	'centralauth-merge-welcome'            => "'''మీ వాడుకరి ఖాతా ఇంకా వికీమీడియా యొక్క ఏకీకృత ప్రవేశపు వ్యవస్థ లోనికి విలీనం కాలేదు.'''
+
+మీ ఖాతాలని విలీనం చేస్తే, వికీమీడియా యొక్క అన్ని ప్రాజెక్టు వికీలలోనికి అందుబాటులో ఉన్న అన్ని భాషలలోనికి ఒకే వాడుకరి పేరు మరియు సంకేతపదం ఉపయోగించి మీరు ప్రవేశించవచ్చు.
+
+అందువల్ల [http://commons.wikimedia.org/ వికీమీడియా కామన్స్]లోనికి ఎగుమతి చేయడం లాంటి బహుళ ప్రాజెక్టులలో పనులు సులువౌతాయు, మరియు ఇది ఇద్దరు వ్యక్తులు వేర్వేరు ప్రాజెక్టులలో ఒకే వాడుకరి పేరు ఎంచుకోవడం వల్ల వచ్చే అయోమయాన్ని మరియు సంఘర్షణని నివారిస్తుంది.
+
+మీ వాడుకరి పేరుని ఇతర సైట్లో వేరెవరైనా ఇప్పటికే తీసేసుకునివుంటే ఇది వారిని కదపదు, కానీ తర్వాత వారితోనూ లేదా నిర్వాహకులతోనూ పరిష్కరించుకోవడానికి అవకాశమిస్తుంది.",
 	'centralauth-merge-step1-title'        => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
 	'centralauth-merge-step1-submit'       => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
 	'centralauth-merge-step2-title'        => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
@@ -3043,20 +3072,43 @@ $messages['tr'] = array(
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
-	'mergeaccount'                     => 'Tình trạng hợp nhất tài khoản',
-	'centralauth-merge-step1-title'    => 'Bắt đầu hợp nhất tài khoản',
-	'centralauth-merge-step1-submit'   => 'Xác nhận thông tin tài khoản',
-	'centralauth-merge-step2-title'    => 'Xác nhận thêm tài khoản',
-	'centralauth-merge-step2-submit'   => 'Xác nhận thông tin tài khoản',
-	'centralauth-merge-step3-title'    => 'Mở tài khoản hợp nhất',
-	'centralauth-merge-step3-submit'   => 'Hợp nhất các tài khoản',
-	'centralauth-list-home-title'      => 'Wiki chính',
-	'centralauth-finish-password'      => 'Mật khẩu:',
-	'centralauth-finish-login'         => 'Đăng nhập',
-	'centralauth-attach-title'         => 'Xác nhận tài khoản',
-	'centralauth-admin-username'       => 'Tên hiệu:',
-	'centralauth-prefs-unattached'     => 'Chưa xác nhận',
-	'centralauth-prefs-count-attached' => 'Tài khoản của bạn có hiệu lực tại $1 dự án.',
+	'mergeaccount'                         => 'Tình trạng hợp nhất tài khoản',
+	'centralauth-desc'                     => 'Hợp nhất tài khoản tại các wiki của Quỹ Wikimedia',
+	'centralauth-merge-notlogged'          => 'Xin hãy <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special:MergeAccount}} đăng nhập]</span> để kiểm tra các tài khoản của bạn được hợp nhất hay không.',
+	'centralauth-merge-welcome'            => "'''Tài khoản của bạn chưa được đổi qua hệ thống tài khoản hợp nhất của Wikimedia.'''
+
+Sau khi chọn hợp nhất các tài khoản, bạn có thể đăng nhập vào các phiên bản ngôn ngữ của các dự án Wikimedia dùng cùng một tài khoản. Làm vầy thì dễ đóng góp vào các dự án dùng chung, thí dụ tải lên [http://commons.wikimedia.org/ Wikimedia Commons], và tránh sự nhầm lẫn hay mâu thuẫn trong trường hợp hai người chọn cùng tên hiệu ở hai dự án khác nhau.
+
+Nếu ai đã lấy tên hiệu của bạn tại website khác, việc hợp nhất các tài khoản không sẽ thay đổi tài khoản họ có hiện nay, nhưng sẽ dẫn đến cơ hội để giải quyết sự mâu thuẫn với họ hay một quản lý viên về sau.",
+	'centralauth-merge-step1-title'        => 'Bắt đầu hợp nhất tài khoản',
+	'centralauth-merge-step1-submit'       => 'Xác nhận thông tin tài khoản',
+	'centralauth-merge-step2-title'        => 'Xác nhận thêm tài khoản',
+	'centralauth-merge-step2-submit'       => 'Xác nhận thông tin tài khoản',
+	'centralauth-merge-step3-title'        => 'Mở tài khoản hợp nhất',
+	'centralauth-merge-step3-submit'       => 'Hợp nhất các tài khoản',
+	'centralauth-complete'                 => 'Xong hợp nhất các tài khoản!',
+	'centralauth-incomplete'               => 'Chưa hợp nhất tài khoản xong!',
+	'centralauth-complete-text'            => 'Bây giờ bạn có thể đăng nhập vào các website trực thuộc Wikimedia, không cần mở tài khoản riêng; các phiên bản ngôn ngữ của Wikipedia, Wiktionary, Wikibooks, và các dự án liên quan đều nhận tên hiệu và mật khẩu của bạn.',
+	'centralauth-incomplete-text'          => 'Sau khi hợp nhất các tài khoản, có thể đăng nhập vào các website trực thuộc Wikimedia, không cần mở tài khoản riêng; các phiên bản ngôn ngữ của Wikipedia, Wiktionary, Wikibooks, và các dự án liên quan đều nhận tên hiệu và mật khẩu của bạn.',
+	'centralauth-not-owner-text'           => 'Phần mềm đã tự động chỉ định tên hiệu “$1” cho người cùng tên hiệu ở $2.
+
+Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng cách đưa mật khẩu chủ của tài khoản đó vào đây:',
+	'centralauth-readmore-text'            => ":''Đọc thêm về '''[[m:Help:Unified login|tài khoản hợp nhất]]'''…''",
+	'centralauth-list-home-title'          => 'Wiki chính',
+	'centralauth-foreign-link'             => 'Thành viên $1 tại $2',
+	'centralauth-finish-title'             => 'Hợp nhất xong',
+	'centralauth-finish-text'              => 'Nếu các tài khoản này của bạn, chỉ việc đưa vào mật khẩu của các tài khoản ở dưới để hợp nhất tài khoản:',
+	'centralauth-finish-password'          => 'Mật khẩu:',
+	'centralauth-finish-login'             => 'Đăng nhập',
+	'centralauth-finish-send-confirmation' => 'Gửi mật khẩu bằng thư điện tử',
+	'centralauth-finish-problems'          => "Trục trặc khi đăng nhập, hay những tài khoản kia không của bạn? '''[[meta:Help:Unified login problems|Trợ giúp…]]'''",
+	'centralauth-merge-attempt'            => "'''Đang so sánh những mật khẩu mà bạn đưa vào với các tài khoản chưa được hợp nhất…'''",
+	'centralauth-attach-title'             => 'Xác nhận tài khoản',
+	'centralauth'                          => 'Quản lý các tài khoản hợp nhất',
+	'centralauth-admin-username'           => 'Tên hiệu:',
+	'centralauth-admin-permission'         => 'Chỉ các tiếp viên có quyền hợp nhất tài khoản của người khác.',
+	'centralauth-prefs-unattached'         => 'Chưa xác nhận',
+	'centralauth-prefs-count-attached'     => 'Tài khoản của bạn có hiệu lực tại $1 dự án.',
 );
 
 /** Volapük (Volapük)
