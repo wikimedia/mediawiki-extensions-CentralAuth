@@ -377,6 +377,8 @@ $messages['bg'] = array(
 	'centralauth-foreign-link'    => 'Потребител $1 от $2',
 	'centralauth-finish-password' => 'Парола:',
 	'centralauth-finish-login'    => 'Влизане',
+	'centralauth-attach-title'    => 'Потвърждаване на сметка',
+	'centralauth-attach-submit'   => 'Мигриране на сметка',
 	'centralauth-admin-manage'    => 'Управление на потребителските данни',
 	'centralauth-admin-username'  => 'Потребителско име:',
 	'centralauth-admin-lookup'    => 'Преглед и редактиране на потребителските данни',
@@ -455,9 +457,31 @@ $messages['bn'] = array(
 	'centralauth-prefs-manage'             => 'আপনার প্রধান অ্যাকাউন্ট ব্যবস্থাপনা করুন',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
 $messages['br'] = array(
+	'mergeaccount'                         => "Statud kendeuziñ ar c'hontoù implijer",
+	'centralauth-desc'                     => 'Kendeuziñ a ra kontoù implijer raktresoù wiki Diazezadur Wikimedia',
+	'centralauth-merge-notlogged'          => 'Trugarez d\'en em <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} lugañ]</span> evit gwiriañ eo bet kendeuzet mat ho kontoù.',
+	'centralauth-merge-welcome'            => "'''N'eo ket bet kaset ho kontoù implijer davet reizhiad emlugañ unvan Wikimedia c'hoazh.'''
+
+Ma tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù Wikimedia en holl yezhoù a c'haller kaout.
+Gant se eo aesoc'h labourat a-dreuz ar raktresoù, aesaet eo an enporzhiañ skeudennoù war [http://commons.wikimedia.org/ Wikimedia Commons], hag evel-se ne vo ket tamm kemmesk ebet mui gant daou zen disheñvel oc'h ober gant an hevelep anv implijer war meur a raktres.
+
+Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bezañ kudenn ebet. Ma ra unan bennak all gant an hevelep anv implijer ha c'hwi war ur raktres all e c'hallot mont e daremrped gaant an den-se pe gwelet se gant ur merour bennak.",
+	'centralauth-list-home-title'          => 'Pennraktres',
+	'centralauth-foreign-link'             => 'Implijer $1 war $2',
+	'centralauth-finish-title'             => 'Echuiñ kendeuziñ',
 	'centralauth-finish-password'          => 'Ger-tremen :',
+	'centralauth-finish-login'             => 'Kont implijer :',
+	'centralauth-finish-send-confirmation' => 'Kas ar ger-tremen dre bostel',
+	'centralauth-attach-title'             => 'Kadarnaat ar gont',
+	'centralauth-attach-submit'            => "Treuzkas ar c'hontoù",
 	'centralauth-admin-username'           => 'Anv implijer :',
+	'centralauth-prefs-complete'           => 'Mat ar jeu !',
+	'centralauth-prefs-migration'          => 'O treuzkas',
+	'centralauth-prefs-manage'             => 'Merañ ho kont hollek',
 );
 
 /** Catalan (Català)
@@ -2328,6 +2352,7 @@ $messages['ps'] = array(
 	'centralauth-finish-password'          => 'پټنوم:',
 	'centralauth-finish-login'             => 'ننوتنه',
 	'centralauth-finish-send-confirmation' => 'د برېښناليک پټنوم',
+	'centralauth-admin-username'           => 'کارن-نوم:',
 );
 
 /** Portuguese (Português)
@@ -2963,6 +2988,7 @@ $messages['te'] = array(
 	'centralauth-merge-step3-submit'       => 'ఖాతాలను ఏకీకరించు',
 	'centralauth-complete'                 => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
 	'centralauth-incomplete'               => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
+	'centralauth-disabled-dryrun'          => 'ఖాతా ఏకీకరణ ప్రస్తుతం డెమో / పరీక్షా స్థితిలో ఉంది, కనుక వాస్తవ విలీన కలాపాలని అచేతనం చేసాము. క్షమించండి!',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''ఏకీకృత ప్రవేశం''' గురించి మరింత తెలుసుకోండి]]...''",
 	'centralauth-list-attached-title'      => 'జోడించిన ఖాతాలు',
 	'centralauth-list-attached'            => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:',
