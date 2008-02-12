@@ -461,15 +461,26 @@ $messages['bn'] = array(
  * @author Fulup
  */
 $messages['br'] = array(
-	'mergeaccount'                         => "Statud kendeuziñ ar c'hontoù implijer",
-	'centralauth-desc'                     => 'Kendeuziñ a ra kontoù implijer raktresoù wiki Diazezadur Wikimedia',
-	'centralauth-merge-notlogged'          => 'Trugarez d\'en em <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} lugañ]</span> evit gwiriañ eo bet kendeuzet mat ho kontoù.',
+	'mergeaccount'                         => "Statud unvaniñ ar c'hontoù implijer",
+	'centralauth-desc'                     => 'Unvaniñ a ra kontoù implijer raktresoù wiki Diazezadur Wikimedia',
+	'centralauth-merge-notlogged'          => 'Trugarez d\'en em <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} lugañ]</span> evit gwiriañ eo bet unvanet mat ho kontoù.',
 	'centralauth-merge-welcome'            => "'''N'eo ket bet kaset ho kontoù implijer davet reizhiad emlugañ unvan Wikimedia c'hoazh.'''
 
 Ma tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù Wikimedia en holl yezhoù a c'haller kaout.
 Gant se eo aesoc'h labourat a-dreuz ar raktresoù, aesaet eo an enporzhiañ skeudennoù war [http://commons.wikimedia.org/ Wikimedia Commons], hag evel-se ne vo ket tamm kemmesk ebet mui gant daou zen disheñvel oc'h ober gant an hevelep anv implijer war meur a raktres.
 
-Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bezañ kudenn ebet. Ma ra unan bennak all gant an hevelep anv implijer ha c'hwi war ur raktres all e c'hallot mont e daremrped gaant an den-se pe gwelet se gant ur merour bennak.",
+Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bezañ kudenn ebet. Ma ra unan bennak all gant an hevelep anv implijer ha c'hwi war ur raktres all e c'hallot mont e darempred gant an den-se pe gwelet se gant ur merour bennak.",
+	'centralauth-merge-step1-title'        => "Kregiñ da unvaniñ ar c'hontoù",
+	'centralauth-merge-step1-detail'       => "Keñveriet e vo ho ker-tremen hag ho chomlec'h postel gant re ar c'hontoù dezho an hevelep anv war ar wikioù all evit bezañ sur e klotont an eil gant egile. Ne vo degaset kemm ebet a-raok na vefe kadarnaet ganeoc'h emañ mat pep tra.",
+	'centralauth-merge-step1-submit'       => 'Kadarnaat an titouroù',
+	'centralauth-merge-step2-title'        => 'Lakaat kontoù all',
+	'centralauth-merge-step2-detail'       => "Kontoù zo n'eus ket bet gallet stagañ anezho ent emgefre ouzh ar gont pennañ. Ma piaouit ar c'hontoù-se e c'hallit en kadarnaat en ur verkañ ar ger-tremen reizh evito.",
+	'centralauth-merge-step2-submit'       => 'Kadarnaat an titouroù',
+	'centralauth-merge-step3-title'        => 'Krouiñ ur gont unvan',
+	'centralauth-merge-step3-detail'       => "Prest oc'h bremañ da grouiñ ur gont unvan evit ar wikioù-mañ :",
+	'centralauth-merge-step3-submit'       => "Unvaniñ ar c'hontoù",
+	'centralauth-complete'                 => "Unvanet eo ar c'hontoù !",
+	'centralauth-incomplete'               => "N'eo ket echu unvaniñ ar c'hontoù !",
 	'centralauth-list-home-title'          => 'Pennraktres',
 	'centralauth-foreign-link'             => 'Implijer $1 war $2',
 	'centralauth-finish-title'             => 'Echuiñ kendeuziñ',
@@ -719,6 +730,13 @@ $messages['de'] = array(
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
+);
+
+/** Ewe (Eʋegbe)
+ * @author M.M.S.
+ */
+$messages['ee'] = array(
+	'centralauth-finish-login' => 'Ge ɖe eme',
 );
 
 /** Greek (Ελληνικά)
@@ -2142,6 +2160,15 @@ Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Kan ikke gi brukeren $1 nytt navn lokalt fordi brukernavnet er koblet til en sammenslått konto.</div>',
 );
 
+/** Northern Sotho (Sesotho sa Leboa)
+ * @author Mohau
+ */
+$messages['nso'] = array(
+	'centralauth-foreign-link'    => 'Moošomiši $1 go $2',
+	'centralauth-finish-password' => 'Ditlhaka tša siphiri:',
+	'centralauth-admin-username'  => 'Leina la mošomiši:',
+);
+
 /** Occitan (Occitan)
  * @author Cedric31
  */
@@ -2988,8 +3015,11 @@ $messages['te'] = array(
 	'centralauth-merge-step3-submit'       => 'ఖాతాలను ఏకీకరించు',
 	'centralauth-complete'                 => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
 	'centralauth-incomplete'               => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
+	'centralauth-complete-text'            => 'కొత్త ఖాతా సృష్టించుకోకుండానే మీరిప్పుడు ఏదైనా వికీమీడియా వికీ లోనికి ప్రవేశించవచ్చు; అదే వాడుకరిపేరు మరియు సంకేతపదం వికీపీడియా, విక్షనరీ, వికీపుస్తకాలు, మరియు అన్ని భాషలలోని వాటి సోదర ప్రాజెక్టులలోనూ పనిచేస్తాయి.',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>డెమో మాత్రమే</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'ఖాతా ఏకీకరణ ప్రస్తుతం డెమో / పరీక్షా స్థితిలో ఉంది, కనుక వాస్తవ విలీన కలాపాలని అచేతనం చేసాము. క్షమించండి!',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''ఏకీకృత ప్రవేశం''' గురించి మరింత తెలుసుకోండి]]...''",
+	'centralauth-list-home-title'          => 'ప్రధాన వికీ',
 	'centralauth-list-attached-title'      => 'జోడించిన ఖాతాలు',
 	'centralauth-list-attached'            => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:',
 	'centralauth-list-attached-dryrun'     => 'ఈ క్రింద పేర్కొన్న సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకి జోడించబడతాయి:',
