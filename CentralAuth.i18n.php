@@ -481,7 +481,12 @@ Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bez
 	'centralauth-merge-step3-submit'       => "Unvaniñ ar c'hontoù",
 	'centralauth-complete'                 => "Unvanet eo ar c'hontoù !",
 	'centralauth-incomplete'               => "N'eo ket echu unvaniñ ar c'hontoù !",
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Mod demo hepken</div><br clear='all'/>",
 	'centralauth-list-home-title'          => 'Pennraktres',
+	'centralauth-list-attached-title'      => 'Kontoù stag',
+	'centralauth-list-attached'            => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
+	'centralauth-list-attached-dryrun'     => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
+	'centralauth-list-unattached-title'    => 'Kontoù distag',
 	'centralauth-foreign-link'             => 'Implijer $1 war $2',
 	'centralauth-finish-title'             => 'Echuiñ kendeuziñ',
 	'centralauth-finish-password'          => 'Ger-tremen :',
@@ -489,6 +494,7 @@ Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bez
 	'centralauth-finish-send-confirmation' => 'Kas ar ger-tremen dre bostel',
 	'centralauth-attach-title'             => 'Kadarnaat ar gont',
 	'centralauth-attach-submit'            => "Treuzkas ar c'hontoù",
+	'centralauth'                          => "Mererezh ar c'hontoù unvanet",
 	'centralauth-admin-username'           => 'Anv implijer :',
 	'centralauth-prefs-complete'           => 'Mat ar jeu !',
 	'centralauth-prefs-migration'          => 'O treuzkas',
@@ -1661,7 +1667,24 @@ Se si è il titolare dell\'utenza, per terminare il processo di unificazione è 
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Impossibile rinominare localmente l\'utente $1 perché questa utenza è stata trasferita al sistema unificato di identificazione (unified login system).</div>',
 );
 
+/** Japanese (日本語)
+ * @author JtFuruhata
+ * @author Broad-Sky
+ */
 $messages['ja'] = array(
+	'mergeaccount'                         => '統一ログイン状態',
+	'centralauth-desc'                     => 'ウィキメデイア財団が運営する各種ウィキのアカウント統合',
+	'centralauth-merge-notlogged'          => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ログイン]</span>して試してください。',
+	'centralauth-merge-welcome'            => "'''あなたのアカウントは、まだウィキメディア統一ログインシステムに移行していません。'''
+
+このシステムにアカウントを移行すると、ウィキメディアが運営しているの全プロジェクトの全言語版ウィキで、同じユーザ名とパスワードを利用したログインを行うことができます。
+これにより、[http://commons.wikimedia.org/ ウィキメディア・コモンズ]へのアップロードなど共有プロジェクトでの作業が容易になり、また別の人が別のプロジェクトで同じ名前を使うといった競合や混乱を回避することができます。
+
+もし他の誰かが既にあなたのユーザ名を他のサイトで使っていた場合、それを妨げることはできません。ただし、後にこの問題をその人や管理者と解消するきっかけとなるでしょう。",
+	'centralauth-merge-step1-title'        => '統一ログインの開始',
+	'centralauth-merge-step1-detail'       => '他ウィキ上のアカウントと一致するかどうかの確認に備え、あなたのパスワード及び登録電子メールアドレスをチェックします。あなたが問題ないと確認するまで、いかなる変更も起こりません。',
+	'centralauth-merge-step1-submit'       => 'ログイン情報の確認',
+	'centralauth-merge-step2-title'        => '外部アカウントの確認',
 	'centralauth-finish-password'          => 'パスワード:',
 	'centralauth-finish-login'             => 'ログイン',
 	'centralauth-finish-send-confirmation' => '電子メールパスワード',
@@ -2999,6 +3022,7 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 $messages['te'] = array(
 	'mergeaccount'                         => 'ప్రవేశపు ఏకీకరణ స్థితి',
 	'centralauth-desc'                     => 'వికీమీడియా ఫౌండేషన్ వికీలన్నింటిలో ఖాతాని విలీనం చేయి',
+	'centralauth-merge-notlogged'          => 'మీ ఖాతాలు పూర్తిగా విలీనమయినవని సరిచూసుకునేందుకు, దయచేసి <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} లోనికి ప్రవేశించండి]</span>.',
 	'centralauth-merge-welcome'            => "'''మీ వాడుకరి ఖాతా ఇంకా వికీమీడియా యొక్క ఏకీకృత ప్రవేశపు వ్యవస్థ లోనికి విలీనం కాలేదు.'''
 
 మీ ఖాతాలని విలీనం చేస్తే, వికీమీడియా యొక్క అన్ని ప్రాజెక్టు వికీలలోనికి అందుబాటులో ఉన్న అన్ని భాషలలోనికి ఒకే వాడుకరి పేరు మరియు సంకేతపదం ఉపయోగించి మీరు ప్రవేశించవచ్చు.
@@ -3007,8 +3031,10 @@ $messages['te'] = array(
 
 మీ వాడుకరి పేరుని ఇతర సైట్లో వేరెవరైనా ఇప్పటికే తీసేసుకునివుంటే ఇది వారిని కదపదు, కానీ తర్వాత వారితోనూ లేదా నిర్వాహకులతోనూ పరిష్కరించుకోవడానికి అవకాశమిస్తుంది.",
 	'centralauth-merge-step1-title'        => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
+	'centralauth-merge-step1-detail'       => 'మీ సంకేతపదం మరియు నమోదైన ఈ-మెయిల్ చిరునామాలు సరిపోతున్నాయని నిర్ధారించడానికి ఇతర వికీలలో ఉన్న ఖాతాలతో పోల్చిచూస్తాం. అన్నీ సరిగానే ఉన్నాయని మీరు నిర్ధారించే వరకు మార్పులేమీ చెయ్యబోము.',
 	'centralauth-merge-step1-submit'       => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
 	'centralauth-merge-step2-title'        => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
+	'centralauth-merge-step2-detail'       => 'కొన్ని ఖాతాలను లక్ష్యిత ప్రధాన వికీతో ఆటోమేటిగ్గా సరిపోల్చలేకపోయాం. ఈ ఖాతాలు మీకు సంబంధించినవైతే, వాటి సంకేతపదాలను ఇవ్వడం ద్వారా అవి మీవే అని నిర్ధారించవచ్చు.',
 	'centralauth-merge-step2-submit'       => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
 	'centralauth-merge-step3-title'        => 'ఏకీకృత ఖాతాని సృష్టించండి',
 	'centralauth-merge-step3-detail'       => 'ఈ క్రింద పేర్కొన్న వికీల జోడింపుతో, మీ ఏకీకృత ఖాతాని సృష్టించడానికి సిద్ధంగా ఉన్నారు.',
@@ -3016,14 +3042,20 @@ $messages['te'] = array(
 	'centralauth-complete'                 => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
 	'centralauth-incomplete'               => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
 	'centralauth-complete-text'            => 'కొత్త ఖాతా సృష్టించుకోకుండానే మీరిప్పుడు ఏదైనా వికీమీడియా వికీ లోనికి ప్రవేశించవచ్చు; అదే వాడుకరిపేరు మరియు సంకేతపదం వికీపీడియా, విక్షనరీ, వికీపుస్తకాలు, మరియు అన్ని భాషలలోని వాటి సోదర ప్రాజెక్టులలోనూ పనిచేస్తాయి.',
+	'centralauth-incomplete-text'          => 'ఒక్కసారి ప్రవేశం ఏకీకృతమయ్యాక, మీరు ఏదైనా వికీమీడియా వికీ సైటు లోనికి కొత్త ఖాతా సృష్టించనవసరం లేకుండానే ప్రవేశించగల్గుతారు; వికీపీడియా, విక్షనరీ, వికీపుస్తకాలు, మరియు అన్ని భాషలలోనూ వాటి సోదర ప్రాజెక్టులలోనూ ఒకే వాడుకరి పేరు మరియు సంకేతపదం పనిచేస్తాయి.',
+	'centralauth-not-owner-text'           => '"$1" అన్న వాడుకరి పేరు $2లోని ఖాతా యజమానికి ఆటోమేటిగ్గా ఆపాదించివుంది.
+
+అది మీరే అయితే, ఆ ఖాతాకి ప్రధాన సంకేతపదాన్ని ఇక్కడ ఇవ్వడం ద్వారా తేలిగ్గా ప్రవేశపు ఏకీకృత ప్రక్రియని ముగించవచ్చు:',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>డెమో మాత్రమే</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'ఖాతా ఏకీకరణ ప్రస్తుతం డెమో / పరీక్షా స్థితిలో ఉంది, కనుక వాస్తవ విలీన కలాపాలని అచేతనం చేసాము. క్షమించండి!',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|'''ఏకీకృత ప్రవేశం''' గురించి మరింత తెలుసుకోండి]]...''",
 	'centralauth-list-home-title'          => 'ప్రధాన వికీ',
+	'centralauth-list-home-dryrun'         => 'ఈ వికీలోని మీ సంకేతపదం మరియు ఈ-మెయిల్ చిరునామాని మీ ఏకీకృత ఖాతాకి ఉపయోగిస్తాం, మరియు అన్ని వికీలనుండి ఇక్కడి మీ వాడుకరి పేజీకి ఆటోమెటిగ్గా లింకువేస్తాం. మీ ప్రధాన వికీ ఏదో మీరు తర్వాత మార్చుకోవచ్చు.',
 	'centralauth-list-attached-title'      => 'జోడించిన ఖాతాలు',
 	'centralauth-list-attached'            => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:',
 	'centralauth-list-attached-dryrun'     => 'ఈ క్రింద పేర్కొన్న సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకి జోడించబడతాయి:',
 	'centralauth-list-unattached-title'    => 'జోడించని ఖాతాలు',
+	'centralauth-list-unattached'          => 'ఈ క్రింద పేర్కొన్న సైట్లలో "$1" అనే ఖాతా మీదే అని నిర్ధారించలేకున్నాం; బహుశా వీటిల్లో సంకేతపదం మీ ప్రధాన ఖాతాది కాక వేరేది అయివుండవచ్చు:',
 	'centralauth-foreign-link'             => '$2లో వాడుకరి $1',
 	'centralauth-finish-title'             => 'విలీనం ముగించు',
 	'centralauth-finish-text'              => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
@@ -3031,8 +3063,10 @@ $messages['te'] = array(
 	'centralauth-finish-login'             => 'ప్రవేశించు',
 	'centralauth-finish-send-confirmation' => 'సంకేతపదాన్ని ఈ-మెయిల్లో పంపించు',
 	'centralauth-finish-problems'          => 'సమస్య ఉందా, లేదా ఈ ఇతర ఖాతాలు మీవి కాదా? [[meta:Help:Unified login problems|సహాయం పొందడం ఎలా]]...',
+	'centralauth-merge-attempt'            => "'''మీరిచ్చిన సంకేతపదాన్ని ఇంకా విలీనంకాని ఖాతాలలో సరిచూస్తున్నాం...'''",
 	'centralauth-attach-list-attached'     => '"$1" అనే పేరుగల ఏకీకృత ఖాతా ఈ క్రింద పేర్కొన్న ఖాతాలను కలిగివుంది:',
 	'centralauth-attach-title'             => 'ఖాతాని నిర్ధారించు',
+	'centralauth-attach-text'              => 'ఈ ఖాతా ఇంకా ఏకీకృత ఖాతాలో విలీనం కాలేదు. క్రింద పేర్కొన్న ఏకీకృత ఖాతా మీదే అయితే, దాని సంకేతపదాన్ని ఇచ్చి ఈ ఖాతాని విలీనం చేసుకోవచ్చు:',
 	'centralauth-attach-submit'            => 'ఖాతాను బదిలీ చెయ్యండి',
 	'centralauth-attach-success'           => 'ఈ ఖాతా ఏకీకృత ఖాతాకు బదిలీ చేయబడినది',
 	'centralauth'                          => 'ఏకీకృత ప్రవేశపు నిర్వహణ',
@@ -3048,6 +3082,7 @@ $messages['te'] = array(
 	'centralauth-prefs-migration'          => 'బదిలీలో ఉన్నవి',
 	'centralauth-prefs-count-attached'     => 'మీ ఖాతా $1 ప్రాజెక్టు {{plural:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.',
 	'centralauth-prefs-count-unattached'   => '$1 {{plural:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 అనే వాడుకరి పేరు ఏకీకృత ప్రవేశపు వ్యవస్థలో నిలీనమైనందున, స్థానికంగా ఆ పేరుని మార్చలేరు.</div>',
 );
 
 /** Tajik (Тоҷикӣ)
