@@ -454,7 +454,9 @@ $messages['bn'] = array(
 	'centralauth-prefs-migration'          => 'সরানো হচ্ছে',
 	'centralauth-prefs-count-attached'     => 'আপনার অ্যাকাউন্ট $1 প্রকল্প {{plural:$1|সাইট|সাইটসমূহ}} এ সক্রিয় আছে।',
 	'centralauth-prefs-count-unattached'   => 'আপনার নাম দিয়ে নিশ্চিতকরণ হয় নাই এমন অ্যাকাউন্ট $1 {{plural:$1|প্রকল্পে|প্রকল্পসমূহে}} বাকি আছে।',
+	'centralauth-prefs-detail-unattached'  => 'এই প্রকল্প সাইটটি গ্লোবাল অ্যাকাউন্টের জন্য প্রযোজ্য বলে নিশ্চিত করা হয়নি।',
 	'centralauth-prefs-manage'             => 'আপনার প্রধান অ্যাকাউন্ট ব্যবস্থাপনা করুন',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">ব্যবহারকারী $1-কে স্থানীয়ভাবে পুনরায় নামকরণ করা যায়নি, কারণ এই ব্যবহারকারী নামটি একটি একত্রিত লগ-ইন ব্যবস্থায় স্থানান্তর করা হয়েছে।</div>',
 );
 
 /** Breton (Brezhoneg)
