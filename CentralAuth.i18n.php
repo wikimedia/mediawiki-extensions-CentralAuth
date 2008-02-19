@@ -1985,8 +1985,10 @@ $messages['lb'] = array(
 	'centralauth-admin-manage'             => 'Benotzerdate verwalten',
 	'centralauth-admin-username'           => 'Benotzernumm:',
 	'centralauth-admin-permission'         => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
+	'centralauth-prefs-unattached'         => 'Net confirméiert',
 	'centralauth-prefs-complete'           => 'Fäerdeg!',
 	'centralauth-prefs-count-attached'     => 'Äre Benotzerkont ass op $1 {{PLURAL:$1|Projet|Projetën}} aktiv.',
+	'centralauth-prefs-manage'             => 'Geréiert äre globale Benotzerkont',
 );
 
 /** Limburgish (Limburgs)
@@ -3249,8 +3251,14 @@ Nếu ai đã lấy tên hiệu của bạn tại website khác, việc hợp nh
 	'centralauth-not-owner-text'           => 'Phần mềm đã tự động chỉ định tên hiệu “$1” cho người cùng tên hiệu ở $2.
 
 Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng cách đưa mật khẩu chủ của tài khoản đó vào đây:',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Mới chỉ đang thử</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'Rất tiếc, mới chỉ đang thử chức năng hợp nhất tài khoản, nên thực sự chưa có thể hợp nhất.',
 	'centralauth-readmore-text'            => ":''Đọc thêm về '''[[m:Help:Unified login|tài khoản hợp nhất]]'''…''",
 	'centralauth-list-home-title'          => 'Wiki chính',
+	'centralauth-list-attached-title'      => 'Các tài khoản được gắn',
+	'centralauth-list-attached'            => 'Tài khoản “$1” ở các website sau được tự động gắn vào tài khoản hợp nhất:',
+	'centralauth-list-attached-dryrun'     => 'Tài khoản “$1” ở các website sau sẽ được tự động gắn vào tài khoản hợp nhất:',
+	'centralauth-list-unattached-title'    => 'Các tài khoản chưa gắn',
 	'centralauth-foreign-link'             => 'Thành viên $1 tại $2',
 	'centralauth-finish-title'             => 'Hợp nhất xong',
 	'centralauth-finish-text'              => 'Nếu các tài khoản này của bạn, chỉ việc đưa vào mật khẩu của các tài khoản ở dưới để hợp nhất tài khoản:',
@@ -3262,7 +3270,10 @@ Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng c
 	'centralauth-attach-title'             => 'Xác nhận tài khoản',
 	'centralauth'                          => 'Quản lý các tài khoản hợp nhất',
 	'centralauth-admin-username'           => 'Tên hiệu:',
+	'centralauth-admin-lookup'             => 'Xem hay sửa đổi dữ liệu thành viên',
 	'centralauth-admin-permission'         => 'Chỉ các tiếp viên có quyền hợp nhất tài khoản của người khác.',
+	'centralauth-admin-merge'              => 'Hợp nhất lựa chọn',
+	'centralauth-prefs-not-managed'        => 'Không sử dụng tài khoản hợp nhất',
 	'centralauth-prefs-unattached'         => 'Chưa xác nhận',
 	'centralauth-prefs-count-attached'     => 'Tài khoản của bạn có hiệu lực tại $1 dự án.',
 );
