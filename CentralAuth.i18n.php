@@ -584,6 +584,15 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Uživatele $1 není možné lokálně přejmenovat, protože toto uživatelské jméno bylo přesunuto do systému jednotných přihlašovacích účtů.</div>',
 );
 
+/** Danish (Dansk)
+ * @author M.M.S.
+ */
+$messages['da'] = array(
+	'centralauth-list-home-title' => 'Hjem wiki',
+	'centralauth-foreign-link'    => 'Bruger $1 på $2',
+	'centralauth-admin-username'  => 'Bruger navn:',
+);
+
 $messages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
