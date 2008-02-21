@@ -585,12 +585,13 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 );
 
 /** Danish (Dansk)
+ * @author Jon Harald Søby
  * @author M.M.S.
  */
 $messages['da'] = array(
-	'centralauth-list-home-title' => 'Hjem wiki',
+	'centralauth-list-home-title' => 'Hjemwiki',
 	'centralauth-foreign-link'    => 'Bruger $1 på $2',
-	'centralauth-admin-username'  => 'Bruger navn:',
+	'centralauth-admin-username'  => 'Brugernavn:',
 );
 
 $messages['de'] = array(
@@ -3252,6 +3253,7 @@ Nếu ai đã lấy tên hiệu của bạn tại website khác, việc hợp nh
 	'centralauth-merge-step2-title'        => 'Xác nhận thêm tài khoản',
 	'centralauth-merge-step2-submit'       => 'Xác nhận thông tin tài khoản',
 	'centralauth-merge-step3-title'        => 'Mở tài khoản hợp nhất',
+	'centralauth-merge-step3-detail'       => 'Bạn sẵn sàng mở tài khoản hợp nhất, bao gồm các wiki sau:',
 	'centralauth-merge-step3-submit'       => 'Hợp nhất các tài khoản',
 	'centralauth-complete'                 => 'Xong hợp nhất các tài khoản!',
 	'centralauth-incomplete'               => 'Chưa hợp nhất tài khoản xong!',
@@ -3276,15 +3278,28 @@ Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng c
 	'centralauth-finish-send-confirmation' => 'Gửi mật khẩu bằng thư điện tử',
 	'centralauth-finish-problems'          => "Trục trặc khi đăng nhập, hay những tài khoản kia không của bạn? '''[[meta:Help:Unified login problems|Trợ giúp…]]'''",
 	'centralauth-merge-attempt'            => "'''Đang so sánh những mật khẩu mà bạn đưa vào với các tài khoản chưa được hợp nhất…'''",
+	'centralauth-attach-list-attached'     => 'Tài khoản hợp nhất dưới tên “$1” bao gồm các tài khoản sau:',
 	'centralauth-attach-title'             => 'Xác nhận tài khoản',
+	'centralauth-attach-submit'            => 'Chuyển tài khoản',
+	'centralauth-attach-success'           => 'Tài khoản này được chuyển qua tài khoản hợp nhất.',
 	'centralauth'                          => 'Quản lý các tài khoản hợp nhất',
+	'centralauth-admin-manage'             => 'Quản lý dữ liệu người dùng',
 	'centralauth-admin-username'           => 'Tên hiệu:',
 	'centralauth-admin-lookup'             => 'Xem hay sửa đổi dữ liệu thành viên',
 	'centralauth-admin-permission'         => 'Chỉ các tiếp viên có quyền hợp nhất tài khoản của người khác.',
+	'centralauth-admin-unmerge'            => 'Chia ra lựa chọn',
 	'centralauth-admin-merge'              => 'Hợp nhất lựa chọn',
+	'centralauth-admin-bad-input'          => 'Lựa chọn không hợp lệ',
+	'centralauth-admin-none-selected'      => 'Chưa chọn tài khoản để sửa đổi.',
+	'centralauth-prefs-status'             => 'Tình trạng của tài khoản toàn cầu:',
 	'centralauth-prefs-not-managed'        => 'Không sử dụng tài khoản hợp nhất',
 	'centralauth-prefs-unattached'         => 'Chưa xác nhận',
+	'centralauth-prefs-migration'          => 'Đang hợp nhất',
 	'centralauth-prefs-count-attached'     => 'Tài khoản của bạn có hiệu lực tại $1 dự án.',
+	'centralauth-prefs-count-unattached'   => '$1 dự án vẫn có tài khoản cùng tên bạn chưa được xác nhận.',
+	'centralauth-prefs-detail-unattached'  => 'Chưa xác nhận rằng tài khoản toàn cầu bao gồm dự án này.',
+	'centralauth-prefs-manage'             => 'Quản lý tài khoản toàn cầu',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Không có thể đổi tên $1 tại đây vì tên hiệu đã được chuyển của hệ thống tài khoản hợp nhất.</div>',
 );
 
 /** Volapük (Volapük)
