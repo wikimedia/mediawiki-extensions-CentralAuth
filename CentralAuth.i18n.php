@@ -192,6 +192,14 @@ $messages['af'] = array(
 	'centralauth-admin-username' => 'Gebruikersnaam:',
 );
 
+/** Aragonese (Aragonés)
+ * @author Juanpabl
+ */
+$messages['an'] = array(
+	'mergeaccount'     => "Estau d'a unificazión de cuentas",
+	'centralauth-desc' => 'Unificar as cuentas en as wikis de Wikimedia Foundation',
+);
+
 $messages['ang'] = array(
 	'centralauth-admin-username'           => 'Brūcendnama:',
 );
@@ -2225,7 +2233,7 @@ Om dette er deg kan du fullføre kontosammensmeltingsprosessen ved å skrive inn
 	'centralauth-finish-login'             => 'Logg inn',
 	'centralauth-finish-send-confirmation' => 'Send passord på e-post',
 	'centralauth-finish-problems'          => 'Har du problemer, eller er ikke disse andre kontoene dine? [[meta:Help:Unified login problems|Hvordan finne hjelp…]]',
-	'centralauth-merge-attempt'            => "'''Sjekker det oppgitte passordet mot gjenværende kontoer…'''",
+	'centralauth-merge-attempt'            => "'''Sjekker det angitte passordet mot gjenværende kontoer…'''",
 	'centralauth-attach-list-attached'     => 'Den sammenslåtte kontoen ved navn «$1» inkluderer følgende kontoer:',
 	'centralauth-attach-title'             => 'Bekreft konto',
 	'centralauth-attach-text'              => 'Denne kontoen har ennå ikke blitt flyttet til den sammenslåtte kontoen. Om den sammenslåtte kontoen også er din kan du koble denne kontoen til den sammenslåtte ved å skrive inn passordet på den sammenslåtte kontoen:',
