@@ -919,9 +919,11 @@ $messages['fa'] = array(
 /** Finnish (Suomi)
  * @author Nike
  * @author Cimon Avaro
+ * @author Crt
  */
 $messages['fi'] = array(
 	'mergeaccount'                         => 'Käyttäjätunnusten yhdistämisen tila',
+	'centralauth-desc'                     => 'Mahdollistaa käyttäjätunnusten yhdistämisen Wikimedian wikeissä.',
 	'centralauth-merge-notlogged'          => 'Kirjaudu <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} sisään]</span>, jos haluat tarkistaa, ovatko käyttäjätunnuksesi yhdistetty.',
 	'centralauth-merge-welcome'            => "'''Tunnustasi ei ole vielä siirretty Wikimedian yhden tunnuksen kirjautumisjärjestelmään.'''
 
@@ -2002,6 +2004,7 @@ $messages['lb'] = array(
 	'centralauth-finish-send-confirmation' => 'Passwuert per E-Mail zouschécken',
 	'centralauth-admin-manage'             => 'Benotzerdate verwalten',
 	'centralauth-admin-username'           => 'Benotzernumm:',
+	'centralauth-admin-lookup'             => 'Benotzerdate kucken oder änneren',
 	'centralauth-admin-permission'         => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
 	'centralauth-prefs-unattached'         => 'Net confirméiert',
 	'centralauth-prefs-complete'           => 'Fäerdeg!',
