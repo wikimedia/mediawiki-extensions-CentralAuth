@@ -196,8 +196,26 @@ $messages['af'] = array(
  * @author Juanpabl
  */
 $messages['an'] = array(
-	'mergeaccount'     => "Estau d'a unificazión de cuentas",
-	'centralauth-desc' => 'Unificar as cuentas en as wikis de Wikimedia Foundation',
+	'mergeaccount'                   => "Estau d'a unificazión de cuentas",
+	'centralauth-desc'               => 'Unificar as cuentas en as wikis de Wikimedia Foundation',
+	'centralauth-merge-notlogged'    => 'Por fabor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} identifique-se]</span> ta comprebar si as suyas cuentas s\'han combinato de tot.',
+	'centralauth-merge-welcome'      => "'''A suya cuenta d'usuario no s'ha tresladato encara ta o sistema de cuentas unificato de Wikimedia'''
+
+Si triga migrar as suyas cuentas, podrá usar o mesmo nombre d'usuario y palabra de paso ta dentrar en toz os procheutos wiki de Wikimedia en todas as luengas.
+Isto fa más fázil o treballo compartito entre procheutos, como cargar archibos ta [http://commons.wikimedia.org/ Wikimedia Commons], y priba que bi aiga a confusion u o conflito que podría escaizer si dos presonas trigan o mesmo nombre d'usuario en procheutos diferents.
+
+Si bel usuario más ha pillato o suyo nombre d'usuario en atro sitio, podrá contautar con el u con un almenistrador más entadebant.",
+	'centralauth-merge-step1-title'  => 'Prenzipiar a unificazión de cuentas',
+	'centralauth-merge-step1-detail' => "A suya palabra de paso y adreza de correu-e rechistrada se comprebarán con as d'atras wikis ta confirmar si concuerdan. No se ferá garra cambio dica que confirme que o resultau pareixe correuto.",
+	'centralauth-merge-step1-submit' => "Confirmar a informazión d'a cuenta",
+	'centralauth-merge-step2-title'  => 'Confirmar más cuentas',
+	'centralauth-merge-step2-detail' => "Bellas cuentas no s'han puesto concordar automaticament con o wiki endicato. Si estas cuentas le pertenexen, puede confirmar que son suyas escribindo as suyas palabras de paso.",
+	'centralauth-merge-step2-submit' => "Confirmar a informazión d'a cuenta",
+	'centralauth-merge-step3-title'  => 'Creyar una cuenta unificata',
+	'centralauth-merge-step3-detail' => 'Ya ye parau ta creyar una cuenta unificada, con os siguients wikis binculatos:',
+	'centralauth-merge-step3-submit' => 'Unificar cuentas',
+	'centralauth-complete'           => "S'ha rematau a unificazión d'as cuentas!",
+	'centralauth-incomplete'         => "No s'ha rematau a unificazión d'as cuentas!",
 );
 
 $messages['ang'] = array(
@@ -1632,6 +1650,7 @@ $messages['is'] = array(
  */
 $messages['it'] = array(
 	'mergeaccount'                         => 'Processo di unificazione delle utenze - status',
+	'centralauth-desc'                     => 'Unifica gli account su tutti i siti Wikimedia Foundation',
 	'centralauth-merge-notlogged'          => 'Si prega di <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} effettuare il login]</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
 	'centralauth-merge-welcome'            => "'''Il tuo account utente non è ancora stato importato nel sistema di identificazione unificato di Wikimedia (Wikimedia's unified login system).''' Se decidi di unificare i tuoi account, potrai usare lo stesso nome utente e la stessa password per accedere a tutti i progetti wiki di Wikimedia in tutte le lingue disponibili. Questo faciliterà il lavoro con i progetti comuni, ad esempio caricare file su [http://commons.wikimedia.org/ Wikimedia Commons], ed eviterà la confusione ed i conflitti che nascerebbero se due o più utenti scegliessero lo stesso nome utente su più progetti. Se qualcun altro ha già preso il tuo nome utente su un altro sito, questo non lo disturberà, ma l'unificazione darà a te la possibilità di sottoporre in futuro il problema all'altro utente o ad un amministratore.",
 	'centralauth-merge-step1-title'        => "Avvia l'unificazione dei login",
@@ -3319,6 +3338,7 @@ Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng c
  */
 $messages['vo'] = array(
 	'mergeaccount'                         => 'Stad balama kalas',
+	'centralauth-desc'                     => 'Balön kali da vüks Fünoda: Wikimedia',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Nunädolös oli, begö!]</span> ad logön, va kals olik pebalons lölöfiko.',
 	'centralauth-merge-welcome'            => "'''Gebanakal olik no nog petopätükon ini nunädamasit balik ela Wikimedia.'''
 
