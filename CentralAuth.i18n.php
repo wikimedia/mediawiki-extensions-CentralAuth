@@ -2006,6 +2006,22 @@ Bul öziñiz bolsañız, basqı qupïya söziñizdi kädimgideý mında engizip 
 	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 qatıswşısın jergilikte qaýta atawğa bolmaýdı. Bul qatıswşı atı biregeýlengen tirkelgi jüýesine awıtırılğan.</div>',
 );
 
+/** Khmer (ភាសាខ្មែរ)
+ * @author Chhorran
+ */
+$messages['km'] = array(
+	'centralauth-merge-step1-submit'       => 'ពត៌មាន បញ្ជាក់ទទួលស្គាល់ ការពិនិត្យចូល',
+	'centralauth-merge-step2-title'        => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
+	'centralauth-merge-step2-submit'       => 'ពត៌មាន បញ្ជាក់ទទួលស្គាល់ ការពិនិត្យចូល',
+	'centralauth-list-home-title'          => 'វិគី ទំព័រដើម',
+	'centralauth-finish-password'          => 'ពាក្យសំងាត់ ៖',
+	'centralauth-finish-login'             => 'ពិនិត្យចូល',
+	'centralauth-finish-send-confirmation' => 'អ៊ីមែវល៍ ពាក្យសំងាត់',
+	'centralauth-attach-title'             => 'បញ្ជាក់ទទួលស្គាល់ គណនី',
+	'centralauth-admin-username'           => 'ឈ្មោះ នៃអ្នកប្រើប្រាស់៖',
+	'centralauth-prefs-unattached'         => 'លែងបាន បញ្ជាក់ទទួលស្គាល់',
+);
+
 
 $messages['la'] = array(
 	'centralauth-finish-password'          => 'Tessera:',
