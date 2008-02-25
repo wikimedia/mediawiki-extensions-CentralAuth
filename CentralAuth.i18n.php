@@ -98,7 +98,7 @@ $messages['en'] = array(
 		'The account named "$1" on each the following sites ' .
 		'have been automatically attached to the unified account:',
 	'centralauth-list-attached-dryrun' =>
-		'The account named "$1" on each the following sites ' .
+		'The account named "$1" on each of the following sites ' .
 		'will be automatically attached to the unified account:',
 	'centralauth-list-unattached-title' =>
 		'Unattached accounts',
@@ -2138,6 +2138,25 @@ $messages['ml'] = array(
 	'centralauth-admin-username'           => 'ഉപയോക്തൃനാമം:',
 );
 
+/** Marathi (मराठी)
+ * @author Mahitgar
+ */
+$messages['mr'] = array(
+	'centralauth-merge-step1-submit'       => 'खाते माहिती निश्चितकरा',
+	'centralauth-merge-step3-submit'       => 'खाती एक करा',
+	'centralauth-list-home-title'          => 'मूळचा(होम) विकि',
+	'centralauth-list-unattached-title'    => 'नजोडलेली खाती',
+	'centralauth-finish-title'             => 'एकत्रिकरण संपवा',
+	'centralauth-finish-password'          => 'परवलीचा शब्द',
+	'centralauth-finish-login'             => 'प्रवेश करा',
+	'centralauth-finish-send-confirmation' => 'विपत्र परवली',
+	'centralauth-attach-submit'            => 'खाते स्थलांतरीत करा',
+	'centralauth'                          => 'सामायिक प्रवेश प्रबंधन',
+	'centralauth-admin-manage'             => 'सदस्य विदेचे प्रबंधन करा',
+	'centralauth-admin-username'           => 'सदस्य नाव',
+	'centralauth-admin-unmerge'            => 'निव्डलेले वेगळे करा',
+);
+
 /** Erzya (эрзянь кель)
  * @author Amdf
  */
@@ -2594,6 +2613,31 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-prefs-detail-unattached'  => 'Este sítio não foi confirmado como fazendo parte da conta unificada.',
 	'centralauth-prefs-manage'             => 'Manusear sua conta unificada',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Não foi possível renomear localmente o utilizador $1 uma vez que a conta do mesmo foi migrada para o sistema de login universal.</div>',
+);
+
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'mergeaccount'                         => 'Rakiquna huñunakuypa kachkaynin',
+	'centralauth-desc'                     => 'Rakiqunata huñunakuy Wikimedia kamarisqa wikipura',
+	'centralauth-merge-notlogged'          => 'Ama hina kaspa, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} yaykuy]</span> rakiqunaykikunap hunt\'alla huñunakusqaña kayninmanta rikunaykipaq.',
+	'centralauth-merge-step2-submit'       => 'Yaykuna willakunata takyachiy',
+	'centralauth-merge-step3-title'        => 'Huñunakusqa rakiqunata kamariy',
+	'centralauth-merge-step3-submit'       => 'Rakiqunakunata huñunakuy',
+	'centralauth-complete'                 => 'Rakiquna huñunakuyqa rurasqañam!',
+	'centralauth-incomplete'               => 'Rakiquna huñunakuyqa manaraqmi rurasqachu!',
+	'centralauth-list-home-title'          => 'Wasi wiki',
+	'centralauth-list-attached-title'      => 'Yapasqa rakiqunakuna',
+	'centralauth-list-unattached-title'    => 'Mana yapasqa rakiqunakuna',
+	'centralauth-foreign-link'             => '$1 sutiyuq ruraq $2 nisqapi',
+	'centralauth-finish-title'             => 'Huñunakuyta tukuchiy',
+	'centralauth-finish-password'          => 'Yaykuna rima:',
+	'centralauth-finish-login'             => 'Yaykuy',
+	'centralauth-finish-send-confirmation' => 'Yaykuna rimata e-chaskiwan kachamuy',
+	'centralauth-attach-title'             => 'Rakiqunata takyachiy',
+	'centralauth-attach-submit'            => 'Rakiqunata mitmachiy',
+	'centralauth-admin-username'           => 'Ruraqpa sutin:',
 );
 
 
