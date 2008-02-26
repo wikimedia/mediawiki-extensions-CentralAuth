@@ -1496,7 +1496,7 @@ Ha valaki más már korábban beregisztrált a neveden egy másik oldalon, a fol
 	'centralauth-merge-step3-submit'       => 'Felhasználói fiókok egységesítése',
 	'centralauth-complete'                 => 'A bejelentkezés egységesítése sikeresen befejeződött!',
 	'centralauth-incomplete'               => 'A bejelentkezés egységesítése nincs befejezve!',
-	'centralauth-complete-text'            => 'Most már bármelyik Wikimedia webhelyre beléphetsz anélkül, hogy újabb felhasználói fiókot hoznál létre; például a magyar Wikipédiában regisztrált felhasználóneveddel bejelentkezhetsz Wikihírekbe és akár az összes további Wikimédia webhelyre bármely nyelven.',
+	'centralauth-complete-text'            => 'Most már bármelyik Wikimedia webhelyre beléphetsz anélkül, hogy újabb felhasználói fiókot hoznál létre; például a magyar Wikipédiában regisztrált felhasználóneveddel bejelentkezhetsz Wikihírekbe és akár az összes további Wikimedia webhelyre bármely nyelven.',
 	'centralauth-incomplete-text'          => 'Ha bejelentkezésed egységesítve lesz, bármelyik Wikimedia wikibe bejelentkezhetsz új felhasználói fiók létrehozása nélkül: ugyanazt a felhasználói nevet és jelszót használhatod a Wikipédia, Wikiszótár, Wikikönyvek és más testvérprojektek minden nyelvű változatánál.',
 	'centralauth-not-owner-text'           => 'A(z) „$1” felhasználói nevet automatikusan hozzárendeltük a(z) $2-s tulajdonosához.
 
@@ -3173,6 +3173,15 @@ Om du är ägaren av det kontot, så kan du slutföra föreningsprocessen genom 
 	'centralauth-prefs-detail-unattached'  => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
 	'centralauth-prefs-manage'             => 'Hantera ditt globala konto',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Det går inte att döpa om användare $1 lokalt eftersom användarnamnet har anslutits till det förenade inloggningssystemet.</div>',
+);
+
+/** Tamil (தமிழ்)
+ * @author Trengarasu
+ */
+$messages['ta'] = array(
+	'centralauth-finish-password'          => 'கடவுச்சொல்:',
+	'centralauth-finish-login'             => 'புகுபதிகை',
+	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
 );
 
 /** Telugu (తెలుగు)
