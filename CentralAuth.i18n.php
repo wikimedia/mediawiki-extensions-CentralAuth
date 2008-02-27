@@ -1545,22 +1545,49 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 nem nevezhető át helyben, mivel integrálva van az egységesített bejelentkezési rendszerbe.</div>',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
+ */
 $messages['id'] = array(
-	// When not logged in...
 	'mergeaccount' =>
 		'Status penggabungan log masuk',
+	'centralauth-desc' => 'Menggabungkan akun dari wiki-wiki Yayasan Wikimedia',
 	'centralauth-merge-notlogged' =>
 		'Harap <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} masuk log]' .
 		'</span> untuk mengecek apakah akun Anda telah sepenuhnya digabungkan.',
+	'centralauth-merge-welcome' =>
+		"'''Akun pengguna Anda belum dimigrasikan ke dalam sistem unifikasi log masuk Wikimedia.'''\n" .
+		"\n" .
+		"Jika Anda memilih untuk memigrasikan akun Anda, Anda dapat menggunakan " .
+		"nama pengguna dan kata sandi yang sama untuk masuk log ke semua proyek wiki " .
+		"Wikimedia pada semua bahasa yang tersedia.\n" .
+		"Hal ini memudahkan untuk bekerja pada proyek berbagi seperti memuat berkas ke " .
+		"[http://commons.wikimedia.org/ Wikimedia Commons] serta menghindari " .
+		"kebingungan atau konflik yang mungkin muncul dari dua orang yang memiliki " .
+		"nama pengguna sama pada proyek yang berbeda.\n" .
+		"\n" .
+		"Jika orang lain telah mengambil nama pengguna Anda pada situs lain, hal ini " .
+		"tak akan mengganggu mereka, tapi nantinya akan memberikan Anda kesempatan untuk " .
+		"memecahkan masalah ini dengan mereka atau pengurus.",
+	'centralauth-merge-step1-title' => 'Mulai unifikasi log masuk',
+	'centralauth-merge-step1-detail' =>
+		'Kata sandi dan alamat surat-e Anda akan dicek dengan akun pada wiki lain ' .
+		'untuk mengkonfirmasi kecocokannya. ' .
+		'Perubahan tak akan dilakukan sampai Anda memberikan konfirmasi bahwa tak ada masalah.',
+	'centralauth-merge-step1-submit' => 'Konfirmasi informasi log masuk',
 
-	// Big text on completion
-	'centralauth-complete' =>
-		'Penggabungan log masuk berhasil!',
-	'centralauth-incomplete' =>
-		'Penggabungan log masuk tidak berhasil!',
-
-	// Wheeee
+	'centralauth-merge-step2-title' => 'Konfirmasi akun lain',
+	'centralauth-merge-step2-detail' =>
+		"Beberapa akun tak dapat secara otomatis dicocokkan dengan wiki awal yang dipilih. " .
+		"Jika akun-akun ini milik Anda, Anda dapat mengkonfirmasikan kepemilikannya " .
+		"dengan memberikan kata sandi mereka.\n",
+	'centralauth-merge-step2-submit' => 'Konfirmasi informasi log masuk',
+	'centralauth-merge-step3-title' => 'Buat akun gabungan',
+	'centralauth-merge-step3-detail' => "Anda siap membuat akun gabungan Anda dengan wiki-wiki berikut:",
+	'centralauth-merge-step3-submit' => 'Gabungkan akun',
+	'centralauth-complete' => 'Penggabungan log masuk berhasil!',
+	'centralauth-incomplete' => 'Penggabungan log masuk tidak berhasil!',
 	'centralauth-complete-text' =>
 		'Kini Anda dapat masuk log ke situs wiki Wikimedia manapun tanpa membuat ' .
 		'akun baru; nama pengguna dan kata santi yang sama dapat digunakan ' .
@@ -1576,22 +1603,34 @@ $messages['id'] = array(
 		"$2.\n\n" .
 		"Jika ini adalah Anda, Anda dapat menyelesaikan proses penggabungan log masuk " .
 		"dengan hanya mengetikkan kata kunci utama untuk akun tersebut di sini:",
-
-	// Appended to various messages above
+	'centralauth-notice-dryrun' =>
+		"<div class='successbox'>Mode demo</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' =>
+		"Penggabungan akun saat ini hanya berupa demo/debugging, " .
+		"jadi operasi penggabungan yang sesungguhnya tak dilakukan. Mohon maaf!",
 	'centralauth-readmore-text' =>
 		":''[[meta:Help:Unified login|Baca lebih lanjut mengenai '''log masuk gabungan''']]...''",
-
-	// For lists of wikis/accounts:
+	'centralauth-list-home-title' =>
+		'Wiki asal',
+	'centralauth-list-home-dryrun' =>
+		'Kata sandi dan alamat surat=e pada wiki ini akan digunakan untuk akun gabungan Anda, ' .
+		'dan halaman pengguna di sini akan secara otomatis ditautkan dari wiki lain. ' .
+		"Anda dapat mengganti wiki asal Anda nanti.",
+	'centralauth-list-attached-title' =>
+		'Akun tergabung',
 	'centralauth-list-attached' =>
 		'Akun "$1" di situs-situs berikut telah digabung secara otomatis:' ,
+	'centralauth-list-attached-dryrun' =>
+		'Akun dengan nama "$1" pada masing-masing situs berikut secara otomatis ' .
+		'akan disertakan dalam akun gabungan:',
+	'centralauth-list-unattached-title' =>
+		'Akun terpisah',
 	'centralauth-list-unattached' =>
 		'Akun "$1" tidak dapat dikonfirmasikan secara otomatis sebagai milik Anda ' .
 		'di situs-situs berikut; kemungkinan besar karena mereka memiliki ' .
 		'kata sandi yang berbeda dengan akun utama Anda:',
 	'centralauth-foreign-link' =>
 		'Pengguna $1 di $2',
-
-	// When not complete, offer to finish...
 	'centralauth-finish-title' =>
 		'Selesaikan penggabungan',
 	'centralauth-finish-text' =>
@@ -1606,12 +1645,14 @@ $messages['id'] = array(
 	'centralauth-finish-problems' =>
 		"Ada masalah, atau tidak memiliki akun-akun lain tersebut? " .
 		"[[meta:Help:Unified login problems|Bagaimana mendapat bantuan]]...",
-
 	'centralauth-merge-attempt' =>
 		"'''Mengecek kata sandi yang diberikan terhadap akun-akun yang belum " .
 		"digabungkan...'''",
-
-	// Administrator's console
+	'centralauth-attach-list-attached'     => 'Akun gabungan dengan nama "$1" mencakup akun-akun berikut:',
+	'centralauth-attach-title'             => 'Konfirmasi akun',
+	'centralauth-attach-text'              => 'Akun ini belum dimigrasikan ke akun gabungan. Jika akun global adalah milik Anda juga, Anda dapat menggabungkan akun ini jika Anda memasukkan kata sandi akun global:',
+	'centralauth-attach-submit'            => 'Migrasi akun',
+	'centralauth-attach-success'           => 'Akun berhasil dimigrasi ke akun gabungan.',
 	'centralauth' => 'Pengelolaan log masuk gabungan',
 	'centralauth-admin-manage' =>
 		'Atur data pengguna',
@@ -1629,6 +1670,28 @@ $messages['id'] = array(
 		'Pilihan penggabungan tak sah',
 	'centralauth-admin-none-selected' =>
 		'Tidak ada akun yang dipilih untuk diubah.',
+	'centralauth-prefs-status' =>
+		'Status akun global:',
+	'centralauth-prefs-not-managed' =>
+		'Tidak menggunakan akun gabungan',
+	'centralauth-prefs-unattached' =>
+		'Belum dikonfirmasi',
+	'centralauth-prefs-complete' =>
+		'Semua beres!',
+	'centralauth-prefs-migration' =>
+		'Proses migrasi',
+	'centralauth-prefs-count-attached' =>
+		'Akun Anda aktif pada $1 {{plural:$1|situs|situs}} proyek.',
+	'centralauth-prefs-count-unattached' =>
+		'Akun dengan nama Anda yang belum terkonfirmasi masih terdapat dalam $1 {{plural:$1|proyek|proyek}}.',
+	'centralauth-prefs-detail-unattached' =>
+		'Situs proyek ini belum dikonfirmasi sebagai bagian dari akun global.',
+	'centralauth-prefs-manage' =>
+		'Kelola akun global Anda',
+	'centralauth-renameuser-abort' =>
+		"<div class=\"errorbox\">" .
+		"Tidak dapat mengganti nama pengguna lokal $1 karena nama pengguna ini telah " .
+		"dimigrasikan ke sistem log masuk gabungan.</div>",
 );
 
 /** Icelandic (Íslenska)
@@ -2727,7 +2790,7 @@ $messages['sah'] = array(
 	'centralauth-merge-notlogged'          => 'Бука диэн, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ааккын эт]</span>, оччоҕо ааттарыҥ холбонууларын туругун көрүөҥ.',
 	'centralauth-merge-welcome'            => "'''Эн аатыҥ Викимедияҕа киирэр биир аат систиэмэтигэр өссө киирэ илик'''
 
-Ааттаргын онно киллэрэр түгэҥҥэр, биир аатынан уонна киирии тылынан ханнык баҕарар тылларынан суруллубут ханнык баҕарар Викимедиа пуондатын саайтарыгар киирэр кыахтаныаҥ. 
+Ааттаргын онно киллэрэр түгэҥҥэр, биир аатынан уонна киирии тылынан ханнык баҕарар тылларынан суруллубут ханнык баҕарар Викимедиа пуондатын саайтарыгар киирэр кыахтаныаҥ.
 Бу уопсай бырайыактарга үлэлииргэр көмөлөһүө, холобур, [http://commons.wikimedia.org/ Вики ыскылаакка] ойууну киллэргэ атын бырайыактартан биир ааттаах дьон киирэн булкууру таһаараллара суох буолуо.
 
 Өскө ким эрэ эн ааккын атын бырайыакка ылбыт буоллаҕына бу дьайыы кинини таарыйыа суоҕа. Кэлин бу түгэни бэйэтин кытта эбэтэр администраторы кытта быһаарсар кыахтаныаҥ.",
@@ -3046,7 +3109,7 @@ Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten
 	'centralauth-merge-attempt'            => "'''Wröigje dät ienroate Paaswoud mäd do uurblieuwene Benutserkonten...'''",
 	'centralauth-attach-list-attached'     => 'Dät globoale Benutserkonto mäd dän Noome „$1“ änthaalt do foulgjende Benutserkonten:',
 	'centralauth-attach-title'             => 'Benutserkonto bestäätigje',
-	'centralauth-attach-text'              => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd. 
+	'centralauth-attach-text'              => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd.
 	Wan dät globoale Benutserkonto uk fon die is, koast du ju Touhoopefierenge moakje, truch dät du hier dät Paaswoud fon dät globoale Benutserkonto ienrakst:',
 	'centralauth-attach-submit'            => 'Benutserkonto integrierje',
 	'centralauth-attach-success'           => 'Dät Benutserkonto wuude in dät globoale Benutserkonto integrierd.',
