@@ -903,6 +903,19 @@ $messages['el'] = array(
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Ο χρήστης $1 δεν μπορεί να μετονομαστεί τοπικά καθώς αυτό το όνομα χρήστη έχει μετακινηθεί προς το ενοποιημένο σύστημα πρόσβασης.</div>',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'centralauth-merge-step3-submit'       => 'Unuigu kontojn',
+	'centralauth-incomplete'               => 'Unuigado de salutnomoj ne estas kompleta!',
+	'centralauth-list-home-title'          => 'Hejma vikio',
+	'centralauth-finish-password'          => 'Pasvorto:',
+	'centralauth-finish-login'             => 'Ensalutu',
+	'centralauth-finish-send-confirmation' => 'Retpoŝtu pasvorton',
+	'centralauth-admin-username'           => 'Uzanto-nomo:',
+);
+
 $messages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
@@ -1207,6 +1220,7 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient
 /** Galician (Galego)
  * @author Xosé
  * @author Alma
+ * @author Toliño
  */
 $messages['gl'] = array(
 	'mergeaccount'                         => 'Estado da unificación do rexistro',
@@ -1227,7 +1241,7 @@ Isto fai que sexa máis doado traballar con proxectos compartidos, como enviar a
 	'centralauth-merge-step3-submit'       => 'Unificar contas',
 	'centralauth-complete'                 => 'Completouse a unificación do rexistro!',
 	'centralauth-incomplete'               => 'A unificación do rexistro non está completa!',
-	'centralauth-complete-text'            => 'Agora pode rexistrarse en calquer sitio wiki de Wikimedia sen crear unha conta nova; os mesmos nome de usuario e contrasinal valerán en Wikipedia, Wiktionary, Wikibooks e os seus proxectos irmáns en todas as linguas.',
+	'centralauth-complete-text'            => 'Agora pode rexistrarse en calquera sitio wiki de Wikimedia sen crear unha conta nova; os mesmos nome de usuario e contrasinal valerán en Wikipedia, Wiktionary, Wikibooks e os seus proxectos irmáns en todas as linguas.',
 	'centralauth-incomplete-text'          => 'Unha vez se unificar o rexistro, poderá rexistrarse en calquer sitio wiki de Wikimedia sen crear unha conta nova; os mesmos nome de usuario e contrasinal valerán en Wikipedia, Wiktionary, Wikibooks e os seus proxectos irmáns en todas as linguas.',
 	'centralauth-not-owner-text'           => 'O nome de usuario "$1" asignouse automaticamente ao propietario da conta en $2.
 
@@ -2128,7 +2142,9 @@ $messages['km'] = array(
 	'centralauth-finish-login'             => 'ពិនិត្យចូល',
 	'centralauth-finish-send-confirmation' => 'អ៊ីមែវល៍ ពាក្យសំងាត់',
 	'centralauth-attach-title'             => 'បញ្ជាក់ទទួលស្គាល់ គណនី',
+	'centralauth-admin-manage'             => 'គ្រប់គ្រង ទិន្នន័យ អ្នកប្រើប្រាស់',
 	'centralauth-admin-username'           => 'ឈ្មោះ នៃអ្នកប្រើប្រាស់៖',
+	'centralauth-admin-lookup'             => 'មើល ឬ កែប្រែ ទិន្នន័យ អ្នកប្រើប្រាស់',
 	'centralauth-prefs-unattached'         => 'លែងបាន បញ្ជាក់ទទួលស្គាល់',
 );
 
@@ -2228,6 +2244,17 @@ waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-prefs-detail-unattached'  => 'Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.',
 	'centralauth-prefs-manage'             => 'Beheer diene globale gebroeker.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebroeker $1 kin lokaal neet hernömp waere ómdet deze gebroeker is gemigreerdj nao \'t syteem van samegevoegdje gebroekers.</div>',
+);
+
+/** Lao (ລາວ)
+ * @author Passawuth
+ */
+$messages['lo'] = array(
+	'centralauth-finish-password' => 'ລະຫັດຜ່ານ',
+	'centralauth-finish-login'    => 'ເຊັນເຂົ້າ',
+	'centralauth-attach-title'    => 'ຍືນຍັນການເຊັນເຂົ້າ',
+	'centralauth-admin-username'  => 'ຊື່ອຜູ້ໃຊ້ :',
+	'centralauth-admin-lookup'    => 'ເບີ່ງຫຼືອດັດແກ້ຂ້ອມູນຂອງຜູ້ໃຊ້',
 );
 
 /** Lithuanian (Lietuvių)
@@ -2443,7 +2470,7 @@ $messages['oc'] = array(
 	'mergeaccount'                         => "Estatut d’unificacion del compte d'utilizaire",
 	'centralauth-desc'                     => "Fusiona los comptes d'utilizaires de projèctes wikis de la Wikimedia Fondation",
 	'centralauth-merge-notlogged'          => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos connectar]</span> per verificar que vòstres comptes son plan estats acampats.',
-	'centralauth-merge-welcome'            => "'''Vòstres comptes d'utilizaire son pas encara estats migrats vèrs lo sistèma de compte unic de Wikimedia''' Se causissètz de far migrer vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes Wikimedia dins totas las lengas. Atal, lo trabalh inter-projèctes serà mai aisit, e mai, per exemple, l’impòrt d’imatges sus [http://commons.wikimedia.org/ Wikimedia Commons] ; aquò evitarà tanben la confusion susvenent quand doas personas utilizant lo meteis nom d’utilizaire sus dos projèctes diferents. Se avètz ja lo meteis nom d’utilizaire sus totes los projèctes, deurià pas i aver de problèma. Se una autra persona a lo meteis nom d’utilizaire que vos sus un autre projècte, aurètz l'occasion de dintrar en contacte amb aquesta persona o amb un administrator mai tard.",
+	'centralauth-merge-welcome'            => "'''Vòstres comptes d'utilizaire son pas encara estats migrats vèrs lo sistèma de compte unic de Wikimedia''' Se causissètz de far migrer vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes Wikimedia dins totas las lengas. Atal, lo trabalh inter-projèctes serà mai aisit, e mai, per exemple, l’impòrt d’imatges sus [http://commons.wikimedia.org/ Wikimedia Commons] ; aquò evitarà tanben la confusion susvenent quand doas personas utilizant lo meteis nom d’utilizaire sus dos projèctes diferents. Se ja avètz lo meteis nom d’utilizaire sus totes los projèctes, deurià pas i aver de problèma. Se una autra persona a lo meteis nom d’utilizaire que vos sus un autre projècte, auretz l'occasion de dintrar en contacte amb aquesta persona o amb un administrator mai tard.",
 	'centralauth-merge-step1-title'        => 'Començar lo procediment de fusion dels comptes',
 	'centralauth-merge-step1-detail'       => 'Anam comparar vòstra adreça e-mail e vòstre senhal amb los dels comptes omonims suls autres wikis, e verificar que correspòndon. Cap de cambiament serà pas efectuat tant qu’aurètz pas balhat vòstre acòrdi.',
 	'centralauth-merge-step1-submit'       => 'Confirmar las informacions',
@@ -2461,10 +2488,10 @@ $messages['oc'] = array(
 
 Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo senhal mèstre per aqueste compte sus :",
 	'centralauth-notice-dryrun'            => "<div class='successbox'>Mòde de demonstracion solament</div><br clear='all'/>",
-	'centralauth-disabled-dryrun'          => 'La fusion dels comptes es actualament en mòde de demonstracion o de tèst, se pòt doncas pas encara vertadièrament fusionar los comptes. O planhem !',
+	'centralauth-disabled-dryrun'          => 'La fusion dels comptes es actualament en mòde de demonstracion o de tèst, doncas, se pòt pas encara vertadièrament fusionar los comptes. O planhèm !',
 	'centralauth-readmore-text'            => ":''[[w:oc:Wikipèdia:Login unic|Ne saber mai sul '''compte unificat''']]...''",
 	'centralauth-list-home-title'          => 'Projècte principal',
-	'centralauth-list-home-dryrun'         => "Lo senhal e l’adreça e-mail del projècte principal çaijos seràn utilizats per vòstre compte unic, e vòstra pagina d'utilizaire sul projècte principal serà automaticament ligada dempuèi los autres projèctes. Poirètz modificar vòstre projècte principal mai tard.",
+	'centralauth-list-home-dryrun'         => "Lo senhal e l’adreça electronica del projècte principal çaijós seràn utilizats per vòstre compte unic, e vòstra pagina d'utilizaire sul projècte principal serà automaticament ligada dempuèi los autres projèctes. Poiretz modificar vòstre projècte principal mai tard.",
 	'centralauth-list-attached-title'      => 'Comptes ratachats',
 	'centralauth-list-attached'            => "Los comptes d'utilizaires nomenats « $1 » son estats acampats pels sites seguents :",
 	'centralauth-list-attached-dryrun'     => 'Lo compte nomenat « $1 » sus cadun dels sites seguents serà automaticament ratachat al compte unic :',
@@ -2649,6 +2676,7 @@ $messages['ps'] = array(
 	'centralauth-finish-login'             => 'ننوتنه',
 	'centralauth-finish-send-confirmation' => 'د برېښناليک پټنوم',
 	'centralauth-admin-username'           => 'کارن-نوم:',
+	'centralauth-prefs-count-attached'     => 'ستاسو کارن حساب په $1 پروژو باندې فعاله دی {{plural:$1|ويبځای|ويبځايونه}}.',
 );
 
 /** Portuguese (Português)
