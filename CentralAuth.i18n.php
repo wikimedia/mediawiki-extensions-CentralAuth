@@ -442,19 +442,60 @@ $messages['bcl'] = array(
 );
 
 /** Bulgarian (Български)
+ * @author Borislav
  * @author DCLXVI
  */
 $messages['bg'] = array(
-	'centralauth-desc'            => 'Сливане на потребителски сметки от няколко уикита',
-	'centralauth-notice-dryrun'   => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
-	'centralauth-foreign-link'    => 'Потребител $1 от $2',
-	'centralauth-finish-password' => 'Парола:',
-	'centralauth-finish-login'    => 'Влизане',
-	'centralauth-attach-title'    => 'Потвърждаване на сметка',
-	'centralauth-attach-submit'   => 'Мигриране на сметка',
-	'centralauth-admin-manage'    => 'Управление на потребителските данни',
-	'centralauth-admin-username'  => 'Потребителско име:',
-	'centralauth-admin-lookup'    => 'Преглед и редактиране на потребителските данни',
+	'mergeaccount'                         => 'Състояние на обединението на сметки',
+	'centralauth-desc'                     => 'Сливане на потребителски сметки от няколко уикита',
+	'centralauth-merge-step1-title'        => 'Започване на обединението на сметки',
+	'centralauth-merge-step1-submit'       => 'Потвърждаване на информацията за влизане',
+	'centralauth-merge-step2-title'        => 'Потвърждаване на още сметки',
+	'centralauth-merge-step2-submit'       => 'Потвърждаване на информацията за влизане',
+	'centralauth-merge-step3-title'        => 'Създаване на единна сметка',
+	'centralauth-merge-step3-detail'       => 'Създаването на единната сметка може да започне. Следните уикита ще бъдат прикрепени към нея:',
+	'centralauth-merge-step3-submit'       => 'Обединяване на сметките',
+	'centralauth-complete'                 => 'Обединението на сметките завърши!',
+	'centralauth-incomplete'               => 'Обединението на сметките не е завършено!',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Прочетете повече за системата за '''единно влизане''']]…''",
+	'centralauth-list-home-title'          => 'Домашно уики',
+	'centralauth-list-attached-title'      => 'Прикрепени сметки',
+	'centralauth-list-attached'            => 'Потребителската сметка „$1“ на всеки от следните сайтове беше автоматично прикачена към унифицираната сметка:',
+	'centralauth-list-attached-dryrun'     => 'Потребителската сметка „$1“ на всеки от следните сайтове ще бъде автоматично прикачена към унифицираната сметка:',
+	'centralauth-list-unattached-title'    => 'Неприкрепени сметки',
+	'centralauth-foreign-link'             => 'Потребител $1 от $2',
+	'centralauth-finish-title'             => 'Приключване на сливането',
+	'centralauth-finish-text'              => 'Ако следните сметки са ваши, можете да приключите процеса по унифициране на сметките като въведете паролите за другите сметки тук:',
+	'centralauth-finish-password'          => 'Парола:',
+	'centralauth-finish-login'             => 'Влизане',
+	'centralauth-finish-send-confirmation' => 'Пращане на паролата по е-пощата',
+	'centralauth-finish-problems'          => 'Имате ли проблеми или просто не притежавате тези сметки? [[meta:Help:Unified login problems|Потърсете помощ]]…',
+	'centralauth-merge-attempt'            => "'''Проверка на въведената парола с останалите неслети сметки…'''",
+	'centralauth-attach-list-attached'     => 'Единната сметка на име „$1“ включва следните сметки:',
+	'centralauth-attach-title'             => 'Потвърждаване на сметка',
+	'centralauth-attach-text'              => 'Тази сметка все още не е прехвърлена към единната сметка. Ако единната сметка е ваша, можете да я слеете с настоящата сметка, като въведете паролата за единната сметка:',
+	'centralauth-attach-submit'            => 'Мигриране на сметка',
+	'centralauth-attach-success'           => 'Сметката е била прехвърлена към единната сметка.',
+	'centralauth'                          => 'Управление на единните сметки',
+	'centralauth-admin-manage'             => 'Управление на потребителските данни',
+	'centralauth-admin-username'           => 'Потребителско име:',
+	'centralauth-admin-lookup'             => 'Преглед и редактиране на потребителските данни',
+	'centralauth-admin-permission'         => 'Само стюарди могат да сливат потребителските сметки на други потребители.',
+	'centralauth-admin-unmerge'            => 'Разделяне на избраните',
+	'centralauth-admin-merge'              => 'Сливане на избраните',
+	'centralauth-admin-bad-input'          => 'Невалиден избор за сливане',
+	'centralauth-admin-none-selected'      => 'Не са избрани сметки за промяна.',
+	'centralauth-prefs-status'             => 'Състояние на потребителските сметки:',
+	'centralauth-prefs-not-managed'        => 'Не се използва единна сметка',
+	'centralauth-prefs-unattached'         => 'Непотвърден',
+	'centralauth-prefs-complete'           => 'Всичко е наред!',
+	'centralauth-prefs-migration'          => 'Преносът е в ход',
+	'centralauth-prefs-count-attached'     => 'Сметката ви е активна в {{plural:$1|един проект|$1 проекта}}.',
+	'centralauth-prefs-count-unattached'   => '{{plural:$1|В един проект е останала непотвърдена сметка|В $1 проекта са останали непотвърдени сметки}} с вашето име.',
+	'centralauth-prefs-detail-unattached'  => 'За този проект липсва потвърждение, че принадлежи към единната сметка.',
+	'centralauth-prefs-manage'             => 'Управление на глобалната сметка',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Не е възможно локалното преименуване на $1, защото това потребителско име е било прехвърлено към системата за единно влизане.</div>',
 );
 
 /** Bengali (বাংলা)
@@ -2138,6 +2179,7 @@ $messages['km'] = array(
 	'centralauth-merge-step2-title'        => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
 	'centralauth-merge-step2-submit'       => 'ពត៌មាន បញ្ជាក់ទទួលស្គាល់ ការពិនិត្យចូល',
 	'centralauth-list-home-title'          => 'វិគី ទំព័រដើម',
+	'centralauth-finish-title'             => 'បញ្ចប់ ការបញ្ចូលរួមគ្នា',
 	'centralauth-finish-password'          => 'ពាក្យសំងាត់ ៖',
 	'centralauth-finish-login'             => 'ពិនិត្យចូល',
 	'centralauth-finish-send-confirmation' => 'អ៊ីមែវល៍ ពាក្យសំងាត់',
@@ -2145,7 +2187,9 @@ $messages['km'] = array(
 	'centralauth-admin-manage'             => 'គ្រប់គ្រង ទិន្នន័យ អ្នកប្រើប្រាស់',
 	'centralauth-admin-username'           => 'ឈ្មោះ នៃអ្នកប្រើប្រាស់៖',
 	'centralauth-admin-lookup'             => 'មើល ឬ កែប្រែ ទិន្នន័យ អ្នកប្រើប្រាស់',
-	'centralauth-prefs-unattached'         => 'លែងបាន បញ្ជាក់ទទួលស្គាល់',
+	'centralauth-prefs-unattached'         => 'លែង បញ្ជាក់ទទួលស្គាល់',
+	'centralauth-prefs-complete'           => 'ទាំងអស់ តាមលំដាប់ ហើយ!',
+	'centralauth-prefs-manage'             => 'គ្រប់គ្រង គណនីសកល របស់អ្នក',
 );
 
 
@@ -2494,7 +2538,7 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 	'centralauth-list-home-dryrun'         => "Lo senhal e l’adreça electronica del projècte principal çaijós seràn utilizats per vòstre compte unic, e vòstra pagina d'utilizaire sul projècte principal serà automaticament ligada dempuèi los autres projèctes. Poiretz modificar vòstre projècte principal mai tard.",
 	'centralauth-list-attached-title'      => 'Comptes ratachats',
 	'centralauth-list-attached'            => "Los comptes d'utilizaires nomenats « $1 » son estats acampats pels sites seguents :",
-	'centralauth-list-attached-dryrun'     => 'Lo compte nomenat « $1 » sus cadun dels sites seguents serà automaticament ratachat al compte unic :',
+	'centralauth-list-attached-dryrun'     => 'Lo compte nomenat « $1 » sus cadun dels sits seguents serà automaticament ratachat al compte unic :',
 	'centralauth-list-unattached-title'    => 'Comptes non ratachats',
 	'centralauth-list-unattached'          => "Lo compte d'utilizaire « $1 » pòt èsser confirmat automaticament pels sites que seguisson ; an probablament un senhal diferent de vòstre compte mèstre :",
 	'centralauth-foreign-link'             => 'Utilizaire $1 sus $2',
@@ -3405,9 +3449,18 @@ $messages['te'] = array(
 $messages['tg'] = array(
 	'mergeaccount'                         => 'Вазъияти якка кардани ҳисобҳо',
 	'centralauth-desc'                     => 'Якка кардани ҳисобҳои корбарӣ дар викиҳои Бунёди Викимедиа',
+	'centralauth-merge-notlogged'          => 'Лутфан <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ба систем ворид шавед]</span>  то аз идғоми ҳисобҳои корбариатон итминон ҳосил кунед.',
+	'centralauth-merge-welcome'            => "'''Ҳисоби корбарии шумо ҳанӯз ба сомонаи яки кардани ҳисобҳои ВикиМедиа интиқол нашудааст.'''
+
+Агар шумо тасмим бигиред, ки ҳисобҳои корбариатонро интикол бидиҳед, шумо қодир хоҳед буд, ки бо як ҳисоби корбарӣ ва калимаи убур дар тамоми лоиҳаҳои ВикиМедиа ба тамоми забонҳои ворид шавед.
+Ин амал боиси осонтар шудани кор бо лоиҳаҳои муштарак ба монанди борзузорӣ ба [http://commons.wikimedia.org/ Викимедиа Умумӣ] мешавад, ва монеаъ аз сардаргамиҳо ё бархӯрдҳо аз истифодаи ду нафар аз як номи корбарӣ дар як лоиҳаи мухталиф ношӣ мешавад.
+
+Агар номи корбарии шумо қаблан дар лоиҳаи дигаре тавассути шахси дигаре истифода шуда бошад, ин кор боиси халалрасонӣ ба онҳо намешавад, балки ба шумо имконеро медиҳад, ки баъдан ин мушкилро бо кӯмаки онҳо ё як мудир ҳал кунед.",
 	'centralauth-merge-step1-title'        => 'Оғози якка кардани ҳисобҳои корбарӣ',
+	'centralauth-merge-step1-detail'       => 'Калимаи убур ва нишонаи почтаи электронии сабтшуда тавассути шумо бо ҳисобҳои корбарӣ викиҳои дигаре муқоиса мешавад, то аз мутобиқати онҳо итминон ҳосил гардад. То замоне, ки шумо таъйид накунед, ки ҳама чиз дуруст аст, тағйир сурат нахоҳад гирифт.',
 	'centralauth-merge-step1-submit'       => 'Тасдиқи иттилооти вуруд ба систем',
 	'centralauth-merge-step2-title'        => 'Тасдиқи ҳисобҳои корбарии бештар',
+	'centralauth-merge-step2-detail'       => 'Бархе аз ҳисобҳои корбариро наметавон ба таври худкор бо хисоби викии аслӣ мутобиқат дод. Агар ин хисобҳои корбарӣ ба шумо мутаалуқ ҳастанд, шумо метавонед ин масъаларо бо ворид кардани калимаи убури ин ҳисобҳо таъйид кунед.',
 	'centralauth-merge-step2-submit'       => 'Тасдиқи иттилооти вуруд ба систем',
 	'centralauth-merge-step3-title'        => 'Эҷоди ҳисоби муштарак',
 	'centralauth-merge-step3-detail'       => 'Шумо омодаед ҳисоби муштараки худро дар викиҳои зерин эҷод кунед:',
@@ -3446,6 +3499,7 @@ $messages['tg'] = array(
 	'centralauth-admin-manage'             => 'Мудирияти иттилооти корбар',
 	'centralauth-admin-username'           => 'Номи корбарӣ:',
 	'centralauth-admin-lookup'             => 'Мушоҳида ё тағйири иттилооти корбарӣ',
+	'centralauth-admin-permission'         => 'Танҳо википедҳо метавонанд ҳисоби корбарии дигар корбаронро якка кунанд.',
 	'centralauth-admin-unmerge'            => 'Аз идғом озод кардани маводи интихобшуда',
 	'centralauth-admin-merge'              => 'Интихоби идғом',
 	'centralauth-admin-bad-input'          => 'Интихоби ғайри миҷози идғом',
@@ -3456,7 +3510,10 @@ $messages['tg'] = array(
 	'centralauth-prefs-complete'           => 'Ҳама чиз мураттаб аст!',
 	'centralauth-prefs-migration'          => 'Дар ҳоли интиқол',
 	'centralauth-prefs-count-attached'     => 'Ҳисоби корбарии шумо дар $1 {{plural:$1|лоиҳа|лоиҳаҳо}} фаъол аст.',
+	'centralauth-prefs-count-unattached'   => 'Ҳисобҳои корбарии таъйиднашуда бо номи шумо дар $1 {{plural:$1|лоиҳа|лоиҳаҳо}} боқӣ мемонад.',
+	'centralauth-prefs-detail-unattached'  => 'Сомонаи ин лоиҳа мавриди таъйид барои истифода аз ҳисоби корбарии муштарак қарор нагирифтааст.',
 	'centralauth-prefs-manage'             => 'Мудирияти ҳисоби корбарии муштарак',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Имкони тағйири номи ҳисоби корбари $1 ба таври маҳаллӣ вуҷуд надорад, зеро ин ҳисоб ба сомонаи якка кардани ҳисобҳои корбарӣ интиқол шудааст.</div>',
 );
 
 /** Turkish (Türkçe)
