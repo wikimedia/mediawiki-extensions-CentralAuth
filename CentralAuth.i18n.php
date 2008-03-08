@@ -618,10 +618,27 @@ Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bez
 );
 
 /** Catalan (Català)
+ * @author Toniher
  * @author SMP
  */
 $messages['ca'] = array(
-	'mergeaccount' => "Estat de fusió de comptes d'usuari",
+	'mergeaccount'                         => "Estat de fusió de comptes d'usuari",
+	'centralauth-finish-title'             => 'Finalitza la fusió',
+	'centralauth-finish-password'          => 'Contrasenya:',
+	'centralauth-finish-login'             => 'Inici de sessió',
+	'centralauth-finish-send-confirmation' => "Envia'm la contrasenya per correu electrònic",
+	'centralauth-attach-title'             => 'Confirma el compte',
+	'centralauth-attach-submit'            => 'Migra el compte',
+	'centralauth'                          => 'Administració de sessió unificada',
+	'centralauth-admin-manage'             => "Gestiona les dades d'usuari",
+	'centralauth-admin-username'           => "Nom d'usuari:",
+	'centralauth-admin-lookup'             => "Visualitza o edita les dades d'usuari",
+	'centralauth-admin-merge'              => 'Fusiona els seleccionats',
+	'centralauth-prefs-status'             => 'Estat del compte global:',
+	'centralauth-prefs-unattached'         => 'Per confirmar',
+	'centralauth-prefs-complete'           => 'Tot en ordre!',
+	'centralauth-prefs-migration'          => 'En migració',
+	'centralauth-prefs-manage'             => 'Gestioneu el vostre compte global',
 );
 
 /** Czech (Česky)
@@ -2305,8 +2322,11 @@ $messages['lo'] = array(
  * @author Matasg
  */
 $messages['lt'] = array(
-	'centralauth-finish-password' => 'Slaptažodis',
-	'centralauth-admin-username'  => 'Naudotojo vardas:',
+	'centralauth-merge-step1-submit'       => 'Patvirtinti prisijungimo informaciją',
+	'centralauth-merge-step2-title'        => 'Patvirtinti daugiau sąskaitų',
+	'centralauth-finish-password'          => 'Slaptažodis',
+	'centralauth-finish-send-confirmation' => 'Siųsti slaptažodį elektroniniu paštu',
+	'centralauth-admin-username'           => 'Naudotojo vardas:',
 );
 
 /** Malayalam (മലയാളം)
@@ -2369,9 +2389,10 @@ $messages['nl'] = array(
 Als u ervoor kiest om uw gebruikers te migreren, dan kunt u met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle projectwiki's van Wikimedia in alle beschikbare talen.
 Dit maakt het eenvoudiger om te werken met gedeelde projecten, zoals het uploaden naar [http://commons.wikimedia.org/ Wikimedia Commons], en voorkomt verwarring of conflicten doordat twee mensen dezelfde gebruikersnaam kiezen op verschillende projecten.
 
-Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U heeft de mogelijkheid dat niet die gebruiker of een beheerder op een later moment op te lossen.",
+Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U hebt de mogelijkheid dat niet die gebruiker of een beheerder op een later moment op te lossen.",
 	'centralauth-merge-step1-title'        => 'Samenvoegen gebruikers starten',
-	'centralauth-merge-step1-detail'       => "Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki's om te bevestigen dat ze overeenkomen. Er worden geen wijzigingen gemaakt tot u heeft aangegeven dat alles in orde lijkt.",
+	'centralauth-merge-step1-detail'       => "Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki's om te bevestigen dat ze overeenkomen.
+Er worden geen wijzigingen gemaakt tot u hebt aangegeven dat alles in orde lijkt.",
 	'centralauth-merge-step1-submit'       => 'Aanmeldinformatie bevestigen',
 	'centralauth-merge-step2-title'        => 'Meer gebruikers bevestigen',
 	'centralauth-merge-step2-detail'       => 'Een aantal van de gebruikers konden niet aan de opgegeven thuiswiki gekoppeld worden. Als deze gebruikers van u zijn, kunt u dat aangeven door het wachtwoord voor de gebruikers op te geven.',
