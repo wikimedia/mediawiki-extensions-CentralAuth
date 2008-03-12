@@ -618,11 +618,31 @@ Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bez
 );
 
 /** Catalan (Català)
- * @author Toniher
  * @author SMP
+ * @author Toniher
  */
 $messages['ca'] = array(
 	'mergeaccount'                         => "Estat de fusió de comptes d'usuari",
+	'centralauth-merge-notlogged'          => 'Si us plau, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} entreu amb un compte registrat]</span> per a comprovar si els vostres comptes s\'han pogut fusionar adequadament.',
+	'centralauth-merge-welcome'            => "'''El vostre compte d'usuari encara no ha migrat al sistema unificat de comptes de Wikimedia.'''
+
+Si decidiu migrar els vostres comptes, podreu fer servir el mateix nom d'usuari i contrasenya en els wikis de tots els projectes de Wikimedia en qualsevol idioma. Això fa que la feina que involucra diferents projectes, com la càrrega d'imatges a [http://commons.wikimedia.org/ Wikimedia Commons] sigui molt més fàcil, i impedeix la confusió o conflicte que pugui resultar del fet que persones diferents hagin escollit el mateix nom d'usuari en diferents projectes.
+
+Si algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest procés no el perjudicarà, i permetrà que es puguin resoldre aquest casos posteriorment amb la seva coŀlaboració o la d'un administrador.",
+	'centralauth-merge-step1-title'        => 'Comença la unificació de comptes',
+	'centralauth-merge-step1-detail'       => 'Es comprovaran les vostres contrasenyes i adreces de correu electrònic per a verificar que els vostres comptes coincideixen. No es desarà cap canvi fins que no confirmeu que les dades semblen correctes.',
+	'centralauth-merge-step1-submit'       => 'Informació per a confirmar els comptes',
+	'centralauth-merge-step2-title'        => 'Confirma més comptes',
+	'centralauth-merge-step2-detail'       => 'Alguns dels vostres comptes no coincideixen amb les dades del compte de la vostra wiki principal. Si aquests comptes us pertanyen podeu confirmar-ho introduint les seves contrasenyes.',
+	'centralauth-merge-step2-submit'       => 'Confirmació dels comptes',
+	'centralauth-merge-step3-title'        => 'Unificació dels comptes',
+	'centralauth-merge-step3-detail'       => 'Ja podeu crear el vostre compte unificat, que inclourà els següents wikis:',
+	'centralauth-merge-step3-submit'       => 'Unifica comptes',
+	'centralauth-complete'                 => "La unificació dels vostres comptes s'ha completat!",
+	'centralauth-incomplete'               => "No s'ha completat la unificació dels comptes.",
+	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Vegeu més sobre la '''unificació de comptes''']]...''",
+	'centralauth-list-home-title'          => 'Wiki principal',
+	'centralauth-foreign-link'             => 'Usuari $1 a $2',
 	'centralauth-finish-title'             => 'Finalitza la fusió',
 	'centralauth-finish-password'          => 'Contrasenya:',
 	'centralauth-finish-login'             => 'Inici de sessió',
@@ -633,11 +653,13 @@ $messages['ca'] = array(
 	'centralauth-admin-manage'             => "Gestiona les dades d'usuari",
 	'centralauth-admin-username'           => "Nom d'usuari:",
 	'centralauth-admin-lookup'             => "Visualitza o edita les dades d'usuari",
+	'centralauth-admin-permission'         => "Només els stewards poden fusionar comptes d'altra gent.",
 	'centralauth-admin-merge'              => 'Fusiona els seleccionats',
 	'centralauth-prefs-status'             => 'Estat del compte global:',
 	'centralauth-prefs-unattached'         => 'Per confirmar',
 	'centralauth-prefs-complete'           => 'Tot en ordre!',
 	'centralauth-prefs-migration'          => 'En migració',
+	'centralauth-prefs-count-attached'     => 'El vostre compte és actiu en {{PLURAL:$1|un projecte|$1 projectes}}.',
 	'centralauth-prefs-manage'             => 'Gestioneu el vostre compte global',
 );
 
@@ -2190,16 +2212,17 @@ Bul öziñiz bolsañız, basqı qupïya söziñizdi kädimgideý mında engizip 
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
+ * @author Lovekhmer
  */
 $messages['km'] = array(
 	'centralauth-merge-step1-submit'       => 'ពត៌មាន បញ្ជាក់ទទួលស្គាល់ ការពិនិត្យចូល',
 	'centralauth-merge-step2-title'        => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
 	'centralauth-merge-step2-submit'       => 'ពត៌មាន បញ្ជាក់ទទួលស្គាល់ ការពិនិត្យចូល',
-	'centralauth-list-home-title'          => 'វិគី ទំព័រដើម',
+	'centralauth-list-home-title'          => 'វិគីទំព័រដើម',
 	'centralauth-finish-title'             => 'បញ្ចប់ ការបញ្ចូលរួមគ្នា',
 	'centralauth-finish-password'          => 'ពាក្យសំងាត់ ៖',
-	'centralauth-finish-login'             => 'ពិនិត្យចូល',
-	'centralauth-finish-send-confirmation' => 'អ៊ីមែវល៍ ពាក្យសំងាត់',
+	'centralauth-finish-login'             => 'ចូល',
+	'centralauth-finish-send-confirmation' => 'ផ្ញើពាក្យសំងាត់តាមអ៊ីមែល',
 	'centralauth-attach-title'             => 'បញ្ជាក់ទទួលស្គាល់ គណនី',
 	'centralauth-admin-manage'             => 'គ្រប់គ្រង ទិន្នន័យ អ្នកប្រើប្រាស់',
 	'centralauth-admin-username'           => 'ឈ្មោះ នៃអ្នកប្រើប្រាស់៖',
@@ -2341,6 +2364,7 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Mahitgar
+ * @author Kaustubh
  */
 $messages['mr'] = array(
 	'centralauth-merge-step1-submit'       => 'खाते माहिती निश्चितकरा',
@@ -2356,6 +2380,7 @@ $messages['mr'] = array(
 	'centralauth-admin-manage'             => 'सदस्य विदेचे प्रबंधन करा',
 	'centralauth-admin-username'           => 'सदस्य नाव',
 	'centralauth-admin-unmerge'            => 'निव्डलेले वेगळे करा',
+	'centralauth-prefs-complete'           => 'सर्व काही यथास्थित!',
 );
 
 /** Erzya (эрзянь кель)
