@@ -6,7 +6,7 @@ $messages['en'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Login unification status',
-	'centralauth-desc' => 'Merge Account across Wikimedia Foundation wikis',
+	'centralauth-desc' => '[[Special:MergeAccount|Merge Account]] across Wikimedia Foundation wikis',
 	'centralauth-merge-notlogged' =>
 		'Please <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]' .
@@ -747,25 +747,28 @@ $messages['da'] = array(
 	'centralauth-admin-username'  => 'Brugernavn:',
 );
 
+/** German (Deutsch)
+ * @author Raimond Spekking
+ */
 $messages['de'] = array(
 	// When not logged in...
 	'mergeaccount' =>
 		'Status der Benutzerkonten-Zusammenführung',
-	'centralauth-desc' => 'Benutzerkonten in Wikis der Wikimedia Foundation zusammenführen',
+	'centralauth-desc' => 'Benutzerkonten in Wikis der Wikimedia Foundation [[Special:MergeAccount|zusammenführen]]',
 	'centralauth-merge-notlogged' =>
 		'Bitte <span class="plainlinks">' .
 		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an], ' .
 		'</span> um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
 
 	'centralauth-merge-welcome' =>
-		"'''Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt" .
+		"'''Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt." .
 		"\n" .
 		"Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, " .
 		"dich mit einem gemeinsamen Benutzernamen und Passwort in alle Wikimedia-Projekte in allen " .
 		"verfügbaren Sprachen anzumelden.\n" .
-		"Dies macht die Arbeit in gemeinsam genutztzen Projekten einfacher, z.B. das Hochladen von Dateien nach " .
-		"[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte," .
-		"die entstehen können, wenn zwei Menschen den selben Benutzernamen in verschiedenen Projekten benutzen.\n" .
+		"Dies macht die Arbeit in gemeinsam genutzten Projekten einfacher, z. B. das Hochladen von Dateien nach " .
+		"[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte, " .
+		"die entstehen können, wenn zwei Menschen denselben Benutzernamen in verschiedenen Projekten benutzen.\n" .
 		"\n" .
 		"Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, " .
 		"so beeinträchtigt es diesen nicht, aber du hast du Möglichkeit, " .
