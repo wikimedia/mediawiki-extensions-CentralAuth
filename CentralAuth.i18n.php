@@ -2225,7 +2225,7 @@ $messages['km'] = array(
 	'centralauth-finish-send-confirmation' => 'ផ្ញើពាក្យសំងាត់តាមអ៊ីមែល',
 	'centralauth-attach-title'             => 'បញ្ជាក់ទទួលស្គាល់ គណនី',
 	'centralauth-admin-manage'             => 'គ្រប់គ្រង ទិន្នន័យ អ្នកប្រើប្រាស់',
-	'centralauth-admin-username'           => 'ឈ្មោះ នៃអ្នកប្រើប្រាស់៖',
+	'centralauth-admin-username'           => 'ឈ្មោះអ្នកប្រើប្រាស់៖',
 	'centralauth-admin-lookup'             => 'មើល ឬ កែប្រែ ទិន្នន័យ អ្នកប្រើប្រាស់',
 	'centralauth-prefs-unattached'         => 'លែង បញ្ជាក់ទទួលស្គាល់',
 	'centralauth-prefs-complete'           => 'ទាំងអស់ តាមលំដាប់ ហើយ!',
@@ -2394,11 +2394,18 @@ $messages['myv'] = array(
  * @author Slomox
  */
 $messages['nds'] = array(
-	'centralauth-merge-step3-submit' => 'Brukers tohoopföhren',
-	'centralauth-list-home-title'    => 'Heimatwiki',
-	'centralauth-foreign-link'       => 'Bruker $1 op $2',
-	'centralauth-finish-password'    => 'Passwoort:',
-	'centralauth-admin-username'     => 'Brukernaam:',
+	'centralauth-merge-step3-title'        => 'Vereenigt Brukerkonto opstellen',
+	'centralauth-merge-step3-submit'       => 'Brukers tohoopföhren',
+	'centralauth-complete'                 => 'Vereenigen vun de Brukerkonten trech.',
+	'centralauth-incomplete'               => 'Vereenigen vun de Brukerkonten nich trech.',
+	'centralauth-list-home-title'          => 'Heimatwiki',
+	'centralauth-list-attached-title'      => 'Vereenigte Brukerkonten',
+	'centralauth-foreign-link'             => 'Bruker $1 op $2',
+	'centralauth-finish-password'          => 'Passwoort:',
+	'centralauth-finish-login'             => 'Anmellen',
+	'centralauth-finish-send-confirmation' => 'Passwoort över E-Mail toschicken',
+	'centralauth-admin-username'           => 'Brukernaam:',
+	'centralauth-prefs-complete'           => 'Trech!',
 );
 
 /** Dutch (Nederlands)
