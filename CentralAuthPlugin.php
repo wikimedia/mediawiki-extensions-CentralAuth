@@ -8,7 +8,7 @@
  *   central password or settings.
  */
 class CentralAuthPlugin extends AuthPlugin {
-	
+
 	/**
 	 * Check whether there exists a user account with the given name.
 	 * The name will be normalized to MediaWiki's requirements, so
@@ -37,16 +37,16 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	function authenticate( $username, $password ) {
 		global $wgCentralAuthAutoMigrate;
-		
+
 		$central = new CentralAuthUser( $username );
 		if( !$central->exists() ) {
 			wfDebugLog( 'CentralAuth',
 				"plugin: no global account for '$username'" );
 			return false;
 		}
-		
+
 		$passwordMatch = $central->authenticate( $password ) == "ok";
-		
+
 		if( $passwordMatch && $wgCentralAuthAutoMigrate ) {
 			// If the user passed in the global password, we can identify
 			// any remaining local accounts with a matching password
@@ -56,7 +56,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			//
 			$central->attemptPasswordMigration( $password );
 		}
-		
+
 		// Several possible states here:
 		//
 		// global exists, local exists, attached: require global auth
@@ -75,7 +75,7 @@ class CentralAuthPlugin extends AuthPlugin {
 				return false;
 			}
 		}
-		
+
 		return $passwordMatch;
 	}
 
@@ -240,4 +240,3 @@ class CentralAuthPlugin extends AuthPlugin {
 		}
 	}
 }
-

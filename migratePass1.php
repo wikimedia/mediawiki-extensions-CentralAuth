@@ -12,7 +12,7 @@ function migratePassOne() {
 	$total = 0;
 	$chunkSize = 1000;
 	$start = microtime( true );
-	
+
 	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs
 	$result = $dbBackground->select(
 		CentralAuthUser::tableName( 'migrateuser' ),
@@ -43,11 +43,10 @@ function migratePassOneReport( $migrated, $total, $start ) {
 		$total / $delta,
 		$migrated,
 		$migrated / $total * 100.0 );
-		
+
 }
 
 echo "CentralAuth migration pass 1:\n";
 echo "Finding accounts which can be migrated without interaction...\n";
 migratePassOne();
 echo "done.\n";
-

@@ -1,187 +1,116 @@
 <?php
+/**
+ * Internationalisation file for extension CentralAuth.
+ *
+ * @addtogroup Extensions
+ */
 
 $messages = array();
 
+/** English
+ * @author Brion Vibber
+ */
 $messages['en'] = array(
 	// When not logged in...
-	'mergeaccount' =>
-		'Login unification status',
-	'centralauth-desc' => '[[Special:MergeAccount|Merge Account]] across Wikimedia Foundation wikis',
-	'centralauth-merge-notlogged' =>
-		'Please <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]' .
-		'</span> to check if your accounts have been fully merged.',
-	'centralauth-merge-welcome' =>
-		"'''Your user account has not yet been migrated to Wikimedia's ".
-		"unified login system.'''\n" .
-		"\n" .
-		"If you choose to migrate your accounts, you'll be able to use the " .
-		"same username and password to log in to all of Wikimedia's project " .
-		"wikis in all available languages.\n" .
-		"This makes it easier to work with shared projects such as uploading to " .
-		"[http://commons.wikimedia.org/ Wikimedia Commons], and avoids the " .
-		"confusion or conflict that could result from two people picking the same " .
-		"username on different projects.\n" .
-		"\n" .
-		"If someone else has already taken your username on another site " .
-		"this won't disturb them, but it will give you a chance to work out " .
-		"with them or an administrator later.",
+	'mergeaccount'                   => 'Login unification status',
+	'centralauth-desc'               => '[[Special:MergeAccount|Merge Account]] across Wikimedia Foundation wikis',
+	'centralauth-mergeaccount-desc'  => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
+	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
+	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to Wikimedia's unified login system.'''
 
-	'centralauth-merge-step1-title' => 'Begin login unification',
-	'centralauth-merge-step1-detail' =>
-		'Your password and registered e-mail address will be checked against ' .
-		'the accounts on other wikis to confirm that they match. ' .
-		'No changes will be made until you have confirmed that things look ok.',
-	'centralauth-merge-step1-submit' =>
-		'Confirm login information',
+If you choose to migrate your accounts, you'll be able to use the same username and password to log in to all of Wikimedia's project wikis in all available languages.
+This makes it easier to work with shared projects such as uploading to [http://commons.wikimedia.org/ Wikimedia Commons], and avoids the confusion or conflict that could result from two people picking the same username on different projects.
 
-	'centralauth-merge-step2-title' => 'Confirm more accounts',
-	'centralauth-merge-step2-detail' =>
-		"Some of the accounts couldn't be automatically matched to the designated home wiki. " .
-		"If these accounts belong to you, you can confirm that they are yours " .
-		"by providing the password for them.\n",
-	'centralauth-merge-step2-submit' =>
-		'Confirm login information',
+If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
 
-	'centralauth-merge-step3-title' => 'Create unified account',
-	'centralauth-merge-step3-detail' =>
-		"You're ready to create your unified account, with the following wikis attached:",
-	'centralauth-merge-step3-submit' =>
-		'Unify accounts',
+	'centralauth-merge-step1-title'  => 'Begin login unification',
+	'centralauth-merge-step1-detail' => 'Your password and registered e-mail address will be checked against the accounts on other wikis to confirm that they match.
+No changes will be made until you have confirmed that things look ok.',
+	'centralauth-merge-step1-submit' => 'Confirm login information',
+
+	'centralauth-merge-step2-title'  => 'Confirm more accounts',
+	'centralauth-merge-step2-detail' => "Some of the accounts couldn't be automatically matched to the designated home wiki.
+If these accounts belong to you, you can confirm that they are yours by providing the password for them.",
+	'centralauth-merge-step2-submit' => 'Confirm login information',
+
+	'centralauth-merge-step3-title'  => 'Create unified account',
+	'centralauth-merge-step3-detail' => "You're ready to create your unified account, with the following wikis attached:",
+	'centralauth-merge-step3-submit' => 'Unify accounts',
 
 	// Big text on completion
-	'centralauth-complete' =>
-		'Login unification complete!',
-	'centralauth-incomplete' =>
-		'Login unification not complete!',
+	'centralauth-complete'   => 'Login unification complete!',
+	'centralauth-incomplete' => 'Login unification not complete!',
 
 	// Wheeee
-	'centralauth-complete-text' =>
-		'You can now log in to any Wikimedia wiki site without creating ' .
-		'a new account; the same username and password will work on ' .
-		'Wikipedia, Wiktionary, Wikibooks, and their sister projects ' .
-		'in all languages.',
-	'centralauth-incomplete-text' =>
-		'Once your login is unified, you will be able to log in ' .
-		'to any Wikimedia wiki site without creating a new account; ' .
-		'the same username and password will work on ' .
-		'Wikipedia, Wiktionary, Wikibooks, and their sister projects ' .
-		'in all languages.',
-	'centralauth-not-owner-text' =>
-		'The username "$1" was automatically assigned to the owner ' .
-		"of the account on $2.\n" .
-		"\n" .
-		"If this is you, you can finish the login unification process " .
-		"simply by typing the master password for that account here:",
+	'centralauth-complete-text'   => 'You can now log in to any Wikimedia wiki site without creating a new account;
+the same username and password will work on Wikipedia, Wiktionary, Wikibooks, and their sister projects in all languages.',
+	'centralauth-incomplete-text' => 'Once your login is unified, you will be able to log in to any Wikimedia wiki site without creating a new account;
+the same username and password will work on Wikipedia, Wiktionary, Wikibooks, and their sister projects in all languages.',
+	'centralauth-not-owner-text'  => 'The username "$1" was automatically assigned to the owner of the account on $2.
 
-	'centralauth-notice-dryrun' =>
-		"<div class='successbox'>Demo mode only</div><br clear='all'/>",
+If this is you, you can finish the login unification process simply by typing the master password for that account here:',
 
-	'centralauth-disabled-dryrun' =>
-		"Account unification is currently in a demo / debugging mode, " .
-		"so actual merging operations are disabled. Sorry!",
+	'centralauth-notice-dryrun'   => "<div class='successbox'>Demo mode only</div><br clear='all'/>",
+
+	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled. Sorry!",
 
 	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|Read more about '''unified login''']]...''",
+	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|Read more about '''unified login''']]...''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-home-title' =>
-		'Home wiki',
-	'centralauth-list-home-dryrun' =>
-		'The password and e-mail address set at this wiki will be used for your unified account, ' .
-		'and your user page here will be automatically linked to from other wikis. ' .
-		"You will be able to change which is your home wiki later.",
-	'centralauth-list-attached-title' =>
-		'Attached accounts',
-	'centralauth-list-attached' =>
-		'The account named "$1" on each the following sites ' .
-		'have been automatically attached to the unified account:',
-	'centralauth-list-attached-dryrun' =>
-		'The account named "$1" on each of the following sites ' .
-		'will be automatically attached to the unified account:',
-	'centralauth-list-unattached-title' =>
-		'Unattached accounts',
-	'centralauth-list-unattached' =>
-		'The account "$1" could not be automatically confirmed ' .
-		'as belonging to you on the following sites; ' .
-		'most likely they have a different password from your ' .
-		'primary account:',
-	'centralauth-foreign-link' =>
-		'User $1 on $2',
+	'centralauth-list-home-title'       => 'Home wiki',
+	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account, and your user page here will be automatically linked to from other wikis.
+You will be able to change which is your home wiki later.',
+	'centralauth-list-attached-title'   => 'Attached accounts',
+	'centralauth-list-attached'         => 'The account named "$1" on each the following sites have been automatically attached to the unified account:',
+	'centralauth-list-attached-dryrun'  => 'The account named "$1" on each of the following sites will be automatically attached to the unified account:',
+	'centralauth-list-unattached-title' => 'Unattached accounts',
+	'centralauth-list-unattached'       => 'The account "$1" could not be automatically confirmed as belonging to you on the following sites;
+most likely they have a different password from your primary account:',
+	'centralauth-foreign-link'          => 'User $1 on $2',
 
 	// When not complete, offer to finish...
-	'centralauth-finish-title' =>
-		'Finish merge',
-	'centralauth-finish-text' =>
-		'If these accounts do belong to you, you can finish ' .
-		'the login unification process simply by typing the passwords ' .
-		'for the other accounts here:',
-	'centralauth-finish-password' =>
-		'Password:',
-	'centralauth-finish-login' =>
-		'Login',
-	'centralauth-finish-send-confirmation' =>
-		'E-mail password',
-	'centralauth-finish-problems' =>
-		"Having trouble, or don't own these other accounts? " .
-		"[[meta:Help:Unified login problems|How to find help]]...",
+	'centralauth-finish-title'             => 'Finish merge',
+	'centralauth-finish-text'              => 'If these accounts do belong to you, you can finish the login unification process simply by typing the passwords for the other accounts here:',
+	'centralauth-finish-password'          => 'Password:',
+	'centralauth-finish-login'             => 'Login',
+	'centralauth-finish-send-confirmation' => 'E-mail password',
+	'centralauth-finish-problems'          => "Having trouble, or don't own these other accounts?
+[[meta:Help:Unified login problems|How to find help]]...",
 
-	'centralauth-merge-attempt' =>
-		"'''Checking provided password against remaining unmerged accounts...'''",
+	'centralauth-merge-attempt' => "'''Checking provided password against remaining unmerged accounts...'''",
 
 	# When unattached, offer to attach...
-	'centralauth-attach-list-attached'     => 'The unified account named "$1" includes the following accounts:',
-	'centralauth-attach-title'             => 'Confirm account',
-	'centralauth-attach-text'              => 'This account has not yet been migrated to the unified account. If the global account is yours too, you can merge this account if you type the global account password:',
-	'centralauth-attach-submit'            => 'Migrate account',
-	'centralauth-attach-success'           => 'The account was migrated to the unified account.',
+	'centralauth-attach-list-attached' => 'The unified account named "$1" includes the following accounts:',
+	'centralauth-attach-title'         => 'Confirm account',
+	'centralauth-attach-text'          => 'This account has not yet been migrated to the unified account. If the global account is yours too, you can merge this account if you type the global account password:',
+	'centralauth-attach-submit'        => 'Migrate account',
+	'centralauth-attach-success'       => 'The account was migrated to the unified account.',
 
 	// Administrator's console
-	'centralauth' => 'Unified login administration',
-	'centralauth-admin-manage' =>
-		'Manage user data',
-	'centralauth-admin-username' =>
-		'User name:',
-	'centralauth-admin-lookup' =>
-		'View or edit user data',
-	'centralauth-admin-permission' =>
-		"Only stewards may merge other people's accounts for them.",
-	'centralauth-admin-unmerge' =>
-		'Unmerge selected',
-	'centralauth-admin-merge' =>
-		'Merge selected',
-	'centralauth-admin-bad-input' =>
-		'Invalid merge selection',
-	'centralauth-admin-none-selected' =>
-		'No accounts selected to modify.',
+	'centralauth'                     => 'Unified login administration',
+	'centralauth-admin-manage'        => 'Manage user data',
+	'centralauth-admin-username'      => 'User name:',
+	'centralauth-admin-lookup'        => 'View or edit user data',
+	'centralauth-admin-permission'    => "Only stewards may merge other people's accounts for them.",
+	'centralauth-admin-unmerge'       => 'Unmerge selected',
+	'centralauth-admin-merge'         => 'Merge selected',
+	'centralauth-admin-bad-input'     => 'Invalid merge selection',
+	'centralauth-admin-none-selected' => 'No accounts selected to modify.',
 
 	// Info panel in preferences
-	'centralauth-prefs-status' =>
-		'Global account status:',
-	'centralauth-prefs-not-managed' =>
-		'Not using unified account',
-	'centralauth-prefs-unattached' =>
-		'Unconfirmed',
-	'centralauth-prefs-complete' =>
-		'All in order!',
-	'centralauth-prefs-migration' =>
-		'In migration',
-	'centralauth-prefs-count-attached' =>
-		'Your account is active on $1 project {{plural:$1|site|sites}}.',
-	'centralauth-prefs-count-unattached' =>
-		'Unconfirmed accounts with your name remain on $1 {{plural:$1|project|projects}}.',
-	'centralauth-prefs-detail-unattached' =>
-		'This project site has not been confirmed as belonging to the global account.',
-	'centralauth-prefs-manage' =>
-		'Manage your global account',
+	'centralauth-prefs-status'            => 'Global account status:',
+	'centralauth-prefs-not-managed'       => 'Not using unified account',
+	'centralauth-prefs-unattached'        => 'Unconfirmed',
+	'centralauth-prefs-complete'          => 'All in order!',
+	'centralauth-prefs-migration'         => 'In migration',
+	'centralauth-prefs-count-attached'    => 'Your account is active on $1 project {{plural:$1|site|sites}}.',
+	'centralauth-prefs-count-unattached'  => 'Unconfirmed accounts with your name remain on $1 {{plural:$1|project|projects}}.',
+	'centralauth-prefs-detail-unattached' => 'This project site has not been confirmed as belonging to the global account.',
+	'centralauth-prefs-manage' => 'Manage your global account',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort' =>
-		"<div class=\"errorbox\">" .
-		"Cannot rename user $1 locally as this username has been migrated to the " .
-		"unified login system.</div>",
-
+	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Cannot rename user $1 locally as this username has been migrated to the unified login system.</div>",
 );
 
 /** Afrikaans (Afrikaans)
@@ -4260,4 +4189,3 @@ $messages['zh-tw'] = array(
 		'這個計畫網站還未確認到全域帳戶。',
 
 );
-

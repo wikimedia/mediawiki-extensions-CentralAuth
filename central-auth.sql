@@ -41,7 +41,7 @@ CREATE TABLE localnames (
 CREATE TABLE globaluser (
   -- Internal unique ID for the authentication server
   gu_id int auto_increment,
-  
+
   -- Username.
   gu_name varchar(255) binary,
 
@@ -54,33 +54,33 @@ CREATE TABLE globaluser (
   -- or the account the user was first registered at for new ones.
   -- May be changed over time.
   gu_home_db varchar(255) binary,
-  
+
   -- Registered email address, may be empty.
   gu_email varchar(255) binary,
-  
+
   -- Timestamp when the address was confirmed as belonging to the user.
   -- NULL if not confirmed.
   gu_email_authenticated char(14) binary,
-  
+
   -- Salt and hashed password
   -- For migrated passwords, the salt is the local user_id.
   gu_salt varchar(16) binary,
   gu_password tinyblob,
-  
+
   -- If true, this account cannot be used to log in on any wiki.
   gu_locked bool not null default 0,
-  
+
   -- If true, this account should be hidden from most public user lists.
   -- Used for "deleting" accounts without breaking referential integrity.
   gu_hidden bool not null default 0,
-  
+
   -- Registration time
   gu_registration varchar(14) binary,
-  
+
   -- Random key for password resets
   gu_password_reset_key tinyblob,
   gu_password_reset_expiration varchar(14) binary,
-  
+
   primary key (gu_id),
   unique key (gu_name),
   key (gu_email)
