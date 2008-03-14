@@ -681,123 +681,98 @@ $messages['da'] = array(
  */
 $messages['de'] = array(
 	// When not logged in...
-	'mergeaccount' =>
-		'Status der Benutzerkonten-Zusammenführung',
-	'centralauth-desc' => 'Benutzerkonten in Wikis der Wikimedia Foundation [[Special:MergeAccount|zusammenführen]]',
-	'centralauth-merge-notlogged' =>
-		'Bitte <span class="plainlinks">' .
-		'[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an], ' .
-		'</span> um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
+	'mergeaccount'                   => 'Status der Benutzerkonten-Zusammenführung',
+	'centralauth-desc'               => 'Benutzerkonten in Wikis der Wikimedia Foundation [[Special:MergeAccount|zusammenführen]]',
+	'centralauth-merge-notlogged'    => 'Bitte <span class="plainlinks">
+		[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an],
+		</span> um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
 
-	'centralauth-merge-welcome' =>
-		"'''Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt." .
-		"\n" .
-		"Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, " .
-		"dich mit einem gemeinsamen Benutzernamen und Passwort in alle Wikimedia-Projekte in allen " .
-		"verfügbaren Sprachen anzumelden.\n" .
-		"Dies macht die Arbeit in gemeinsam genutzten Projekten einfacher, z. B. das Hochladen von Dateien nach " .
-		"[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte, " .
-		"die entstehen können, wenn zwei Menschen denselben Benutzernamen in verschiedenen Projekten benutzen.\n" .
-		"\n" .
-		"Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, " .
-		"so beeinträchtigt es diesen nicht, aber du hast du Möglichkeit, " .
-		"später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
+	'centralauth-merge-welcome'      => "'''Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt.
 
-	'centralauth-merge-step1-title' => 'Beginn der Benutzerkonten-Zusammenführung',
-	'centralauth-merge-step1-detail' =>
-		'Dein Passwort und deine eingetragene E-Mail-Adresse wird mit ' .
-		'Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden. ' .
-		'Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
-	'centralauth-merge-step1-submit' =>
-		'Anmelde-Informationen bestätigen',
+		Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, 
+		dich mit einem gemeinsamen Benutzernamen und Passwort in alle Wikimedia-Projekte in allen 
+		verfügbaren Sprachen anzumelden.\n
+		Dies macht die Arbeit in gemeinsam genutzten Projekten einfacher, z. B. das Hochladen von Dateien nach 
+		[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte, 
+		die entstehen können, wenn zwei Menschen denselben Benutzernamen in verschiedenen Projekten benutzen.
 
-	'centralauth-merge-step2-title' => 'Bestätige weitere Benutzerkonten',
-	'centralauth-merge-step2-detail' =>
-		"Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugerechnet werden. " .
-		"Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.\n",
-	'centralauth-merge-step2-submit' =>
-		'Anmelde-Informationen bestätigen',
+		Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, 
+		so beeinträchtigt es diesen nicht, aber du hast du Möglichkeit, 
+		später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
 
-	'centralauth-merge-step3-title' => 'Erzeuge globales Benutzerkonto',
-	'centralauth-merge-step3-detail' =>
-		"Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erezugen. ",
-	'centralauth-merge-step3-submit' =>
-		'Benutzerkonten zusammenführen',
+	'centralauth-merge-step1-title'  => 'Beginn der Benutzerkonten-Zusammenführung',
+	'centralauth-merge-step1-detail' => 'Dein Passwort und deine eingetragene E-Mail-Adresse wird mit 
+		Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden. 
+		Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
+
+	'centralauth-merge-step1-submit' => 'Anmelde-Informationen bestätigen',
+
+	'centralauth-merge-step2-title'  => 'Bestätige weitere Benutzerkonten',
+	'centralauth-merge-step2-detail' => "Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugerechnet werden. 
+		Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.",
+	'centralauth-merge-step2-submit' => 'Anmelde-Informationen bestätigen',
+
+	'centralauth-merge-step3-title'  => 'Erzeuge globales Benutzerkonto',
+	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen.',
+	'centralauth-merge-step3-submit' => 'Benutzerkonten zusammenführen',
 
 
 	// Big text on completion
-	'centralauth-complete'   => 'Die Zusammenführung der Benutzerkonten ist vollständig.',
-	'centralauth-incomplete' => 'Die Zusammenführung der Benutzerkonten ist unvollständig!',
+	'centralauth-complete'           => 'Die Zusammenführung der Benutzerkonten ist vollständig.',
+	'centralauth-incomplete'         => 'Die Zusammenführung der Benutzerkonten ist unvollständig!',
 
 	// Wheeee
-	'centralauth-complete-text' =>
-		'Du kannst dich nun auf jeder Wikimedia-Webseite anmelden ' .
-		'ohne ein neues Benutzerkonto anzulegen; ' .
-		'derselbe Benutzername und dasselbe Passwort ist für Wikipedia, ' .
-		'Wiktionary, Wikibooks und alle Schwesterprojekte '.
-		'in allen Sprachen gültig.',
+	'centralauth-complete-text'      => 'Du kannst dich nun auf jeder Wikimedia-Webseite anmelden 
+		ohne ein neues Benutzerkonto anzulegen; 
+		derselbe Benutzername und dasselbe Passwort ist für Wikipedia, 
+		Wiktionary, Wikibooks und alle Schwesterprojekte 
+		in allen Sprachen gültig.',
 
-	'centralauth-incomplete-text' =>
-		'Sobald deine Benutzerkonten zusammengeführt sind, ' .
-		'kannst du sich auf jeder Wikimedia-Webseite anmelden ohne ein ' .
-		'neues Benutzerkonto anzulegen; derselbe Benutzernamen ' .
-		'und dasselbe Passwort ist für Wikipedia, Wiktionary, ' .
-		'Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
+	'centralauth-incomplete-text'    => 'Sobald deine Benutzerkonten zusammengeführt sind, 
+		kannst du sich auf jeder Wikimedia-Webseite anmelden ohne ein 
+		neues Benutzerkonto anzulegen; derselbe Benutzernamen 
+		und dasselbe Passwort ist für Wikipedia, Wiktionary, 
+		Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
 
-	'centralauth-not-owner-text' =>
-		'Der Benutzername „$1“ wurde automatisch dem Eigentümer ' .
-		"des Benutzerkontos auf $2 zugewiesen.\n" .
-		"\n" .
-		"Wenn dies dein Benutzername ist, kannst du die Zusammenführung " .
-		"der Benutzerkonten durch Eingabe des Haupt-Passwortes".
-		"für dieses Benutzerkonto vollenden:",
+	'centralauth-not-owner-text'     => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer 
+		des Benutzerkontos auf $2 zugewiesen.
 
-	'centralauth-notice-dryrun' =>
-		"<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
+		Wenn dies dein Benutzername ist, kannst du die Zusammenführung 
+		der Benutzerkonten durch Eingabe des Haupt-Passwortes
+		für dieses Benutzerkonto vollenden:',
 
-	'centralauth-disabled-dryrun' =>
-		"Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. " .
-		"Zusammenführungs-Aktionen sind deaktiviert.",
+	'centralauth-notice-dryrun'      => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
+
+	'centralauth-disabled-dryrun'    => 'Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. Zusammenführungs-Aktionen sind deaktiviert.',
 
 	// Appended to various messages above
-	'centralauth-readmore-text' =>
-		":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']] …''",
+	'centralauth-readmore-text'      => ":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']] …''",
 
 	// For lists of wikis/accounts:
-	'centralauth-list-home-title' =>
-		'Heimat-Wiki',
-	'centralauth-list-home-dryrun' =>
-		'Das Passwort und die E-Mail-Adresse, die du in diesem Wiki eingetragen hast, wird für die Zusammenführung der Benutzerkonten verwendet ' .
-		'und deine Benutzerseite wird automatisch von den anderen Wikis verlinkt. ' .
-		"Du kannst später dein Heimat-Wiki noch ändern.",
-	'centralauth-list-attached-title' =>
-		'Zusammengeführte Benutzerkonten',
-	'centralauth-list-attached' =>
-		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden ' .
-		'Projekten werden automatisch zusammengeführt:',
-	'centralauth-list-attached-dryrun' =>
-		'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden ' .
-		'Projekten werden automatisch zusammengeführt:',
-	'centralauth-list-unattached-title' =>
-		'Nicht zusammengeführte Benutzerkonten',
-	'centralauth-list-unattached' =>
-		'Das Benutzerkonto „$1“ konnte für die folgenden Projekte ' .
-		'nicht automatisch als zu dir gehörend bestätigt werden; ' .
-		'vermutlich hat es ein anderes Passwort ' .
-		'als dein primäres Benutzerkonto:',
-	'centralauth-foreign-link' =>
-		'Benutzer $1 auf $2',
+	'centralauth-list-home-title'    => 'Heimat-Wiki',
+	'centralauth-list-home-dryrun'   => 'Das Passwort und die E-Mail-Adresse, die du in diesem Wiki eingetragen hast, wird für die Zusammenführung der Benutzerkonten verwendet 
+		und deine Benutzerseite wird automatisch von den anderen Wikis verlinkt. 
+		Du kannst später dein Heimat-Wiki noch ändern.',
+
+	'centralauth-list-attached-title'   => 'Zusammengeführte Benutzerkonten',
+	'centralauth-list-attached'         => 'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten werden automatisch zusammengeführt:',
+	'centralauth-list-attached-dryrun'  => 'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten werden automatisch zusammengeführt:',
+	'centralauth-list-unattached-title' => 'Nicht zusammengeführte Benutzerkonten',
+	'centralauth-list-unattached'       => 'Das Benutzerkonto „$1“ konnte für die folgenden Projekte 
+		nicht automatisch als zu dir gehörend bestätigt werden; 
+		vermutlich hat es ein anderes Passwort 
+		als dein primäres Benutzerkonto:',
+	'centralauth-foreign-link'          => 'Benutzer $1 auf $2',
 
 	// When not complete, offer to finish...
 	'centralauth-finish-title'             => 'Zusammenführung vollenden',
-	'centralauth-finish-text'              => 'Wenn diese Benutzerkonten dir gehören, kannst du hier ' .
-		'den Prozess der Benutzerkonten-Zusammenführung durch die ' .
-		'Eingabe des Passwortes für die anderen Benutzerkonto vollenden:',
+	'centralauth-finish-text'              => 'Wenn diese Benutzerkonten dir gehören, kannst du hier 
+		den Prozess der Benutzerkonten-Zusammenführung durch die 
+		Eingabe des Passwortes für die anderen Benutzerkonto vollenden:',
 	'centralauth-finish-password'          => 'Passwort:',
 	'centralauth-finish-login'             => 'Anmeldung',
 	'centralauth-finish-send-confirmation' => 'Passwort per E-Mail zusenden',
-	'centralauth-finish-problems'          => "Hast du Probleme oder gehören dir diese anderen " .
-		"Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier findest du Hilfe]] …",
+	'centralauth-finish-problems'          => 'Hast du Probleme oder gehören dir diese anderen Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier findest du Hilfe]] …',
 
 	'centralauth-merge-attempt'            => "'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
 
@@ -805,7 +780,7 @@ $messages['de'] = array(
 	'centralauth-attach-list-attached'     => 'Das globale Benutzerkonto mit dem Namen „$1“ beinhaltet die folgenden Benutzerkonten:',
 	'centralauth-attach-title'             => 'Benutzerkonto bestätigen',
 	'centralauth-attach-text'              => 'Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.
-	Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passowrt des globalen Benutzerkontos eingibts:',
+		Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passowrt des globalen Benutzerkontos eingibts:',
 	'centralauth-attach-submit'            => 'Benutzerkonto integrieren',
 	'centralauth-attach-success'           => 'Das Benutzerkonto wurde in das globale Benutzerkonto integriert.',
 
@@ -814,7 +789,7 @@ $messages['de'] = array(
 	'centralauth-admin-manage'        => 'Benutzerdaten verwalten',
 	'centralauth-admin-username'      => 'Benutzername:',
 	'centralauth-admin-lookup'        => 'Benutzerdaten ansehen oder bearbeiten',
-	'centralauth-admin-permission'    => "Die Zusammenführung von Benutzerkonten für andere Benutzer kann nur durch Stewards erfolgen.",
+	'centralauth-admin-permission'    => 'Die Zusammenführung von Benutzerkonten für andere Benutzer kann nur durch Stewards erfolgen.',
 	'centralauth-admin-unmerge'       => 'Ausgewählte Benutzerkonten trennen',
 	'centralauth-admin-merge'         => 'Ausgewählte Benutzerkonten zusammenführen',
 	'centralauth-admin-bad-input'     => 'Ungültige Auswahl',
@@ -832,7 +807,7 @@ $messages['de'] = array(
        'centralauth-prefs-manage'            => 'Bearbeite dein zusammengeführtes Benutzerkonto',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
+	'centralauth-renameuser-abort'       => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
 );
 
 /** Ewe (Eʋegbe)
