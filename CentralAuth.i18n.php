@@ -203,7 +203,8 @@ $messages['ang'] = array(
  */
 $messages['ar'] = array(
 	'mergeaccount'                         => 'حالة توحيد الدخول',
-	'centralauth-desc'                     => 'دمج الحساب عبر ويكيات مؤسسة ويكيميديا',
+	'centralauth-desc'                     => '[[Special:MergeAccount|دمج الحساب]] عبر ويكيات مؤسسة ويكيميديا',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|يدمج حسابات متعددة]] لدخول المستخدم الموحد',
 	'centralauth-merge-notlogged'          => 'من فضلك <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} قم بتسجيل الدخول]</span> لتتحقق من أن حساباتك تم دمجها بالكامل.',
 	'centralauth-merge-welcome'            => "'''حساب المستخدم الخاص بك لم يتم نقله إلى نظام ويكيميديا لتوحيد الدخول.'''
 
@@ -929,10 +930,13 @@ $messages['eo'] = array(
 	'centralauth-merge-step3-submit'       => 'Unuigu kontojn',
 	'centralauth-incomplete'               => 'Unuigado de salutnomoj ne estas kompleta!',
 	'centralauth-list-home-title'          => 'Hejma vikio',
+	'centralauth-foreign-link'             => 'Uzanto $1 ĉe $2',
 	'centralauth-finish-password'          => 'Pasvorto:',
 	'centralauth-finish-login'             => 'Ensalutu',
 	'centralauth-finish-send-confirmation' => 'Retpoŝtu pasvorton',
+	'centralauth-attach-title'             => 'Konfirmu konton',
 	'centralauth-admin-username'           => 'Uzanto-nomo:',
+	'centralauth-prefs-unattached'         => 'Nekonfirmita',
 );
 
 $messages['ext'] = array(
@@ -1937,12 +1941,29 @@ $messages['ja'] = array(
  * @author Huslåke
  */
 $messages['jut'] = array(
-	'centralauth-list-home-title' => 'Jæm wiki',
-	'centralauth-foreign-link'    => 'Bruger $1 åp $2',
-	'centralauth-finish-login'    => 'Loĝge på',
-	'centralauth-admin-username'  => 'Bruger:',
-	'centralauth-prefs-complete'  => "I'n årdnenge!",
-	'centralauth-prefs-migration' => 'I migråsje',
+	'mergeaccount'                    => 'Loĝ in unifikåsje ståt',
+	'centralauth-merge-welcome'       => "'''Your bruger beretning har ikke endnu blevet migræne hen til Wikimedia's samlet login system.''' 
+
+Selv om jer gide hen til migræne jeres regnskab , du vil være i stand til hjælp den samme username og password hen til log i hen til al i Wikimedia's planlægge wikis i alt anvendelig sprogene. Indeværende gør sig lettere hen til operere med delt anlægsarbejder såsom sender hen til [http://commons.wikimedia.org/ Wikimedia Commons], og forhindrer den sammenblanding eller konflikt at kunne opstå af to folk piller den samme username oven på anderledes anlægsarbejder. 
+
+Selv om nogen ellers har allerede taget jeres username oven på en anden arbejdsplads indeværende vil ikke forstyrre sig , men sig vil indrømme jer en hændelse hen til beregne hos sig eller en administrator senere.",
+	'centralauth-merge-step1-title'   => 'Bigynde login unifikåsje',
+	'centralauth-merge-step1-submit'  => 'Konfirm login informåsje',
+	'centralauth-merge-step2-title'   => 'Konfirm mær bruger',
+	'centralauth-merge-step2-submit'  => 'Konfirm login informåsje',
+	'centralauth-merge-step3-title'   => 'Skep unifisærn bruger',
+	'centralauth-merge-step3-detail'  => 'Du erst klår til skep diin unifærn bruger, ve æ desbitreffede wiki attached:',
+	'centralauth-merge-step3-submit'  => 'Unifær bruger',
+	'centralauth-complete'            => 'Login unifikåsje dun!',
+	'centralauth-incomplete'          => 'Login unifikåsje udun!',
+	'centralauth-notice-dryrun'       => "<div class='successbox'>Demo mode ålen</div><br clear='all'/>",
+	'centralauth-list-home-title'     => 'Jæm wiki',
+	'centralauth-list-attached-title' => 'Attached bruger',
+	'centralauth-foreign-link'        => 'Bruger $1 åp $2',
+	'centralauth-finish-login'        => 'Loĝge på',
+	'centralauth-admin-username'      => 'Bruger:',
+	'centralauth-prefs-complete'      => "I'n årdnenge!",
+	'centralauth-prefs-migration'     => 'I migråsje',
 );
 
 $messages['kk-arab'] = array(
@@ -2624,7 +2645,8 @@ $messages['nso'] = array(
  */
 $messages['oc'] = array(
 	'mergeaccount'                         => "Estatut d’unificacion del compte d'utilizaire",
-	'centralauth-desc'                     => "Fusiona los comptes d'utilizaires de projèctes wikis de la Wikimedia Fondation",
+	'centralauth-desc'                     => "[[Special:MergeAccount|Fusiona los comptes d'utilizaires]] de projèctes wikis de la Wikimedia Fondation",
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Fusiona maites comptes]] per l’identificacion unica',
 	'centralauth-merge-notlogged'          => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos connectar]</span> per verificar que vòstres comptes son plan estats acampats.',
 	'centralauth-merge-welcome'            => "'''Vòstres comptes d'utilizaire son pas encara estats migrats vèrs lo sistèma de compte unic de Wikimedia''' Se causissètz de far migrer vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes Wikimedia dins totas las lengas. Atal, lo trabalh inter-projèctes serà mai aisit, e mai, per exemple, l’impòrt d’imatges sus [http://commons.wikimedia.org/ Wikimedia Commons] ; aquò evitarà tanben la confusion susvenent quand doas personas utilizant lo meteis nom d’utilizaire sus dos projèctes diferents. Se ja avètz lo meteis nom d’utilizaire sus totes los projèctes, deurià pas i aver de problèma. Se una autra persona a lo meteis nom d’utilizaire que vos sus un autre projècte, auretz l'occasion de dintrar en contacte amb aquesta persona o amb un administrator mai tard.",
 	'centralauth-merge-step1-title'        => 'Començar lo procediment de fusion dels comptes',
@@ -2690,10 +2712,12 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 /** Polish (Polski)
  * @author Sp5uhe
  * @author Derbeth
+ * @author Matma Rex
  */
 $messages['pl'] = array(
 	'mergeaccount'                         => 'Status tworzenia konta globalnego',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Połącz konta]] na projektach Fundacji Wikimedia',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Łączy różne konta]] w jedno',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta globalnego.',
 	'centralauth-merge-welcome'            => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto globalne.'''
 
@@ -2950,6 +2974,7 @@ $messages['ro'] = array(
 $messages['ru'] = array(
 	'mergeaccount'                         => 'Состояние объединения учётных записей',
 	'centralauth-desc'                     => 'Объединение учётных записей на вики-проектах Фонда «Викимедиа»',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Объединяет несколько учётных записей]] в Единый регистрационную запись участника',
 	'centralauth-merge-notlogged'          => 'Пожалуйста, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} представьтесь]</span>, чтобы проверить, были ли ваши учётные записи объединены.',
 	'centralauth-merge-welcome'            => "'''Ваша учётная запись ещё не была переведена на единую систему входа Викимедии'''
 
@@ -3096,7 +3121,8 @@ $messages['sah'] = array(
  */
 $messages['sk'] = array(
 	'mergeaccount'                         => 'Stav zjednotenia prihlasovacích účtov',
-	'centralauth-desc'                     => 'Zlúčenie účtov na jednotlivých wiki nadácie Wikimedia',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Zlúčenie účtov]] na jednotlivých wiki nadácie Wikimedia',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Zlúčenie účtov]] pre zjednotené prihlasovanie',
 	'centralauth-merge-notlogged'          => 'Prosím, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty celkom zjednotené.',
 	'centralauth-merge-welcome'            => "'''Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém Wikimedia.'''
 
@@ -3568,7 +3594,8 @@ $messages['te'] = array(
  */
 $messages['tg'] = array(
 	'mergeaccount'                         => 'Вазъияти якка кардани ҳисобҳо',
-	'centralauth-desc'                     => 'Якка кардани ҳисобҳои корбарӣ дар викиҳои Бунёди Викимедиа',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Якка кардани ҳисоб]] дар викиҳои Бунёди Викимедиа',
+	'centralauth-mergeaccount-desc'        => 'Барои Вуруди Яккаи Корбар [[Special:MergeAccount|якчанд ҳисобҳоро якка мекунад]]',
 	'centralauth-merge-notlogged'          => 'Лутфан <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ба систем ворид шавед]</span>  то аз идғоми ҳисобҳои корбариатон итминон ҳосил кунед.',
 	'centralauth-merge-welcome'            => "'''Ҳисоби корбарии шумо ҳанӯз ба сомонаи яки кардани ҳисобҳои ВикиМедиа интиқол нашудааст.'''
 
@@ -3654,16 +3681,18 @@ $messages['tr'] = array(
  * @author Ahonc
  */
 $messages['uk'] = array(
-	'mergeaccount'                 => "Стан об'єднання облікових записів",
-	'centralauth-desc'             => "Об'єднання облікових записів на вікі-проектах Фонду «Вікімедіа»",
-	'centralauth-list-home-title'  => 'Домашня вікі',
-	'centralauth-finish-login'     => "Ім'я користувача",
-	'centralauth'                  => "Адміністрування об'єднання імен",
-	'centralauth-admin-username'   => "Ім'я користувача:",
-	'centralauth-admin-unmerge'    => 'Розділити обрані',
-	'centralauth-admin-merge'      => "Об'єднати обрані",
-	'centralauth-prefs-unattached' => 'Непідтверджена',
-	'centralauth-prefs-manage'     => 'Керування глобальним обліковим записом',
+	'mergeaccount'                   => "Стан об'єднання облікових записів",
+	'centralauth-desc'               => "Об'єднання облікових записів на вікі-проектах Фонду «Вікімедіа»",
+	'centralauth-mergeaccount-desc'  => "[[Special:MergeAccount|Об'єднує кілька облікових записів]] у Єдиний обліковий запис користувача",
+	'centralauth-merge-step2-submit' => 'Підтвердити інформацію про обліковий запис',
+	'centralauth-list-home-title'    => 'Домашня вікі',
+	'centralauth-finish-login'       => "Ім'я користувача",
+	'centralauth'                    => "Адміністрування об'єднання імен",
+	'centralauth-admin-username'     => "Ім'я користувача:",
+	'centralauth-admin-unmerge'      => 'Розділити обрані',
+	'centralauth-admin-merge'        => "Об'єднати обрані",
+	'centralauth-prefs-unattached'   => 'Непідтверджена',
+	'centralauth-prefs-manage'       => 'Керування глобальним обліковим записом',
 );
 
 /** Vietnamese (Tiếng Việt)
