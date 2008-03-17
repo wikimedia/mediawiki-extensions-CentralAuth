@@ -576,10 +576,8 @@ class CentralAuthUser {
 	}
 
 	private static function validateList( $list ) {
-		global $wgLocalDatabases;
-
 		$unique = array_unique( $list );
-		$valid = array_intersect( $unique, $wgLocalDatabases );
+		$valid = array_intersect( $unique, self::getWikiList() );
 
 		if( count( $valid ) != count( $list ) ) {
 			// fixme: handle this gracefully
@@ -587,6 +585,18 @@ class CentralAuthUser {
 		}
 
 		return $valid;
+	}
+
+	public static function getWikiList() {
+		global $wgLocalDatabases;
+		static $dblist;
+		if ( is_null( $dblist ) ) {
+			wfRunHooks( 'CentralAuthWikiList', array( &$dblist ) );
+			if ( is_null( $dblist ) ) {
+				$dblist = $wgLocalDatabases;
+			}
+		}
+		return $dblist;
 	}
 
 	public function adminAttach( $list, &$migrated=null, &$remaining=null ) {
@@ -828,10 +838,8 @@ class CentralAuthUser {
 	 * which exist into the 'localnames' table.
 	 */
 	function importLocalNames() {
-		global $wgLocalDatabases;
-
 		$rows = array();
-		foreach( $wgLocalDatabases as $db ) {
+		foreach( self::getWikiList() as $db ) {
 			$dbr = self::getLocalDB( $db );
 			$id = $dbr->selectField(
 				"`$db`.`user`",
@@ -1050,7 +1058,7 @@ class CentralAuthUser {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
 		$dbw = self::getCentralDB();
-		$result = $dbw->update( self::tableName( 'globaluser' ),
+		$dbw->update( self::tableName( 'globaluser' ),
 			array(
 				'gu_salt'     => $salt,
 				'gu_password' => $hash,
@@ -1060,7 +1068,6 @@ class CentralAuthUser {
 			),
 			__METHOD__ );
 
-		// if ( $result ) { ...
 		wfDebugLog( 'CentralAuth',
 			"Set global password for '$this->mName'" );
 		return true;
