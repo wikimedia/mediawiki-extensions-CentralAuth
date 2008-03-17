@@ -69,6 +69,7 @@ $wgHooks['RenameUserAbort'][] = 'wfCentralAuthRenameUserAbort';
 $wgHooks['RenameUserComplete'][] = 'wfCentralAuthRenameUserComplete';
 
 $wgGroupPermissions['steward']['centralauth-admin'] = true;
+$wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
@@ -87,6 +88,12 @@ function wfSetupCentralAuthPlugin( &$auth ) {
  */
 function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 	global $wgUser;
+
+	if ( !$wgUser->isAllowed( 'centralauth-merge' ) ) {
+		// Not allowed to merge, don't display merge information
+		return true;
+	}
+
 	$skin = $wgUser->getSkin();
 	$special = SpecialPage::getTitleFor( 'MergeAccount' );
 

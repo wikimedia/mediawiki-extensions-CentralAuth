@@ -15,6 +15,7 @@ $messages['en'] = array(
 	'mergeaccount'                   => 'Login unification status',
 	'centralauth-desc'               => '[[Special:MergeAccount|Merge Account]] across Wikimedia Foundation wikis',
 	'centralauth-mergeaccount-desc'  => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
+	'centralauth-merge-denied'       => 'Sorry, you don\'t have permission to access this page.',
 	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
 	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to Wikimedia's unified login system.'''
 

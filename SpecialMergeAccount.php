@@ -12,12 +12,20 @@ $wgExtensionCredits['specialpage'][] = array(
 class SpecialMergeAccount extends SpecialPage {
 
 	function __construct() {
-		parent::__construct( 'MergeAccount', 'MergeAccount' );
+		parent::__construct( 'MergeAccount', 'centralauth-merge' );
 	}
 
 	function execute( $subpage ) {
 		global $wgOut, $wgRequest, $wgUser;
 		$this->setHeaders();
+
+		if ( !$this->userCanExecute( $wgUser ) ) {
+			$wgOut->addWikiText(
+				wfMsg( 'centralauth-merge-denied' ) .
+				"\n\n" .
+				wfMsg( 'centralauth-readmore-text' ) );
+			return;
+		}
 
 		if( !$wgUser->isLoggedIn() ) {
 			$wgOut->addWikiText(
