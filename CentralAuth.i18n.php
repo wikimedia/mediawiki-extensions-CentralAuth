@@ -718,6 +718,8 @@ $messages['de'] = array(
 	// When not logged in...
 	'mergeaccount'                   => 'Status der Benutzerkonten-Zusammenführung',
 	'centralauth-desc'               => 'Benutzerkonten in Wikis der Wikimedia Foundation [[Special:MergeAccount|zusammenführen]]',
+ 	'centralauth-mergeaccount-desc'  => "[[Special:MergeAccount|Zusammenführen mehrerer Benutzerkonten]] für das ''Single User Login''",
+	'centralauth-merge-denied'       => 'Entschuldigung, aber du hast keine Berechtigung für diese Seite.',
 	'centralauth-merge-notlogged'    => 'Bitte <span class="plainlinks">
 		[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an],
 		</span> um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
