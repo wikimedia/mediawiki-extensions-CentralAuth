@@ -131,7 +131,9 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function autoCreate() {
-		return true;
+		global $wgGroupPermissions;
+		// Yes unless account creation is restricted on this wiki
+		return !empty( $wgGroupPermissions['*']['createaccount'] );
 	}
 
 	/**
