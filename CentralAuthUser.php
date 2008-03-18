@@ -667,18 +667,6 @@ class CentralAuthUser {
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$dbname by '$method'" );
 
-		/**
-		 * Reset credentials in the local user table, to avoid compromise of the 
-		 * merged account by a malicious zero-edit account. 
-		 */
-		$dbl = self::getLocalDB( $dbname );
-		$dbl->update( 'user', 
-			array( 
-				'user_email' => $this->mEmail,
-				'user_newpassword' => '',
-				'user_'));
-			
-
 		global $wgDBname;
 		if( $dbname == $wgDBname ) {
 			$this->resetState();
