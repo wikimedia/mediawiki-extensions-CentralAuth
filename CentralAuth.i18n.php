@@ -251,6 +251,7 @@ $messages['ar'] = array(
 	'mergeaccount'                         => 'حالة توحيد الدخول',
 	'centralauth-desc'                     => '[[Special:MergeAccount|دمج الحساب]] عبر ويكيات مؤسسة ويكيميديا',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|يدمج حسابات متعددة]] لدخول المستخدم الموحد',
+	'centralauth-merge-denied'             => 'عذرا، أنت لا تمتلك السماح للدخول إلى هذه الصفحة.',
 	'centralauth-merge-notlogged'          => 'من فضلك <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} قم بتسجيل الدخول]</span> لتتحقق من أن حساباتك تم دمجها بالكامل.',
 	'centralauth-merge-welcome'            => "'''حساب المستخدم الخاص بك لم يتم نقله إلى نظام ويكيميديا لتوحيد الدخول.'''
 
@@ -677,7 +678,9 @@ Si efectivament és vostre, podeu finalitzar el procés d'unificació escrivint 
  */
 $messages['cs'] = array(
 	'mergeaccount'                         => 'Stav sjednocení přihlašovacích účtů',
-	'centralauth-desc'                     => 'Sloučení účtů na jednotlivých wiki nadace Wikimedia',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Sloučení účtů]] na jednotlivých wiki nadace Wikimedia',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Sloučení více účtu]] na jednotné přihlašování',
+	'centralauth-merge-denied'             => 'Na tuto stránku nemáte přístup.',
 	'centralauth-merge-notlogged'          => 'Pokud se <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
 	'centralauth-merge-welcome'            => "'''Váš uživatelský účet nebyl dosud převeden na jednotný systém přihlašování projektů Wikimedia.'''
 
@@ -975,10 +978,17 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
+	'mergeaccount'                         => 'Statuso de unuigado de salutnomoj',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Kunigu Kontojn]] trans vikioj de la Fondaĵo Vikimedio',
+	'centralauth-merge-denied'             => 'Bedaŭrinde, vi ne havas permeson por atingi ĉi tiun paĝon.',
+	'centralauth-merge-step3-title'        => 'Kreu unuigitan konton',
 	'centralauth-merge-step3-submit'       => 'Unuigu kontojn',
+	'centralauth-complete'                 => 'Unuigado de salutnomoj estas finita!',
 	'centralauth-incomplete'               => 'Unuigado de salutnomoj ne estas kompleta!',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Nur demonstracia reĝimo</div><br clear='all'/>",
 	'centralauth-list-home-title'          => 'Hejma vikio',
 	'centralauth-foreign-link'             => 'Uzanto $1 ĉe $2',
+	'centralauth-finish-title'             => 'Finu unuigadon',
 	'centralauth-finish-password'          => 'Pasvorto:',
 	'centralauth-finish-login'             => 'Ensalutu',
 	'centralauth-finish-send-confirmation' => 'Retpoŝtu pasvorton',
@@ -1149,8 +1159,9 @@ Jos tämä tunnus on sinun, voi viimeistellä tunnusten yhdistämisen antamalla 
  */
 $messages['fr'] = array(
 	'mergeaccount'                         => 'Statut de la fusion des comptes utilisateur',
-	'centralauth-desc'                     => 'Fusionne les comptes utilisateur de projets wikis de la Wikimedia Fondation',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Fusionner les comptes utilisateur]] des wikis de la Wikimedia Foundation',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Fusionne plusieurs comptes]] pour l’identification unique',
+	'centralauth-merge-denied'             => "Désolé, vous n'avez pas les droits pour accéder à cette page.",
 	'centralauth-merge-notlogged'          => 'Merci de bien vouloir <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vous connecter]</span> pour vérifier si vos comptes ont bien été fusionnés.',
 	'centralauth-merge-welcome'            => "'''Vos comptes utilisateur n’ont pas encore été transférés vers le système de compte unique de Wikimedia.'''
 Si vous choisissez de fusionner vos comptes, vous pourrez utiliser le même nom d’utilisateur et le même mot de passe sur tous les projets Wikimedia dans toutes les langues.
@@ -1163,7 +1174,7 @@ Si vous avez déjà le même nom d’utilisateur sur tous les projets, il ne dev
 	'centralauth-merge-step2-title'        => 'Inclure d’autres comptes',
 	'centralauth-merge-step2-detail'       => 'Certains des comptes n’ont pas pu être rattachés automatiquement à votre compte principal. Si ces comptes vous appartiennent, veuillez confirmer qu’ils vous appartiennent en entrant le mot de passe correspondant.',
 	'centralauth-merge-step2-submit'       => 'Confirmer les informations',
-	'centralauth-merge-step3-title'        => 'Création du compte unique',
+	'centralauth-merge-step3-title'        => 'Créer un compte unique',
 	'centralauth-merge-step3-detail'       => 'Vous êtes maintenant prêt à créer votre compte unique, comprenant les wikis suivants :',
 	'centralauth-merge-step3-submit'       => 'Fusionner les comptes',
 	'centralauth-complete'                 => 'Fusion des comptes terminée !',
@@ -1298,6 +1309,7 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient
 $messages['gl'] = array(
 	'mergeaccount'                         => 'Estado da unificación do rexistro',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Fusionar contas]] entre wikis da Fundación Wikimedia',
+	'centralauth-merge-denied'             => 'Sentímolo, pero non ten permiso para acceder a esta páxina.',
 	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} rexístrese]</span> para comprobar se as súas contas se  unificaron completamente.',
 	'centralauth-merge-welcome'            => "'''A súa conta de usuario aínda non se pasou ao sistema de rexistro unificado de Wikimedia.'''
 
@@ -2027,9 +2039,13 @@ $messages['ja'] = array(
 
 /** Jutish (Jysk)
  * @author Huslåke
+ * @author Ælsån
  */
 $messages['jut'] = array(
 	'mergeaccount'                         => 'Loĝ in unifikåsje ståt',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Merge bruger]] en Wikimedia Fundåsje wikier',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Merge multiiple bruger]] før Lænsøm Bruger Loĝ På',
+	'centralauth-merge-denied'             => 'Unskyld, du harst ekke permisje til aksesær dette pæge.',
 	'centralauth-merge-welcome'            => "'''Your bruger beretning har ikke endnu blevet migræne hen til Wikimedia's samlet login system.''' 
 
 Selv om jer gide hen til migræne jeres regnskab , du vil være i stand til hjælp den samme username og password hen til log i hen til al i Wikimedia's planlægge wikis i alt anvendelig sprogene. Indeværende gør sig lettere hen til operere med delt anlægsarbejder såsom sender hen til [http://commons.wikimedia.org/ Wikimedia Commons], og forhindrer den sammenblanding eller konflikt at kunne opstå af to folk piller den samme username oven på anderledes anlægsarbejder. 
@@ -2068,6 +2084,7 @@ Selv om indeværende er jer , jer kunne komme ind den login unification oparbejd
 	'centralauth-prefs-unattached'         => 'Ukonfirmærn',
 	'centralauth-prefs-complete'           => "I'n årdnenge!",
 	'centralauth-prefs-migration'          => 'I migråsje',
+	'centralauth-renameuser-abort'         => '<div class="errorbox">Ken ekke hernåm bruger $1 lokål als dette brugernavn er migrærn til æ unifærn loĝge på sistæm.</div>',
 );
 
 $messages['kk-arab'] = array(
@@ -2329,7 +2346,9 @@ $messages['lb'] = array(
  */
 $messages['li'] = array(
 	'mergeaccount'                         => 'Status samevoege gebroekers',
-	'centralauth-desc'                     => "Samegevoegde gebroekers binne Wikimedia Foundation wiki's",
+	'centralauth-desc'                     => "[[Special:MergeAccount|Samegevoegde gebroekers]] binne Wikimedia Foundation wiki's",
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Meerdere gebroekers samevoege]] veur Single User Login',
+	'centralauth-merge-denied'             => 'Sorry, doe höbs gein rech om dees paasj te bezeen.',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meldj uch aan]</span> óm te konterlere of uche gebroekers volledig zeen samegevoeg.',
 	'centralauth-merge-welcome'            => "'''Uche gebroeker is nag neet gemigreerd nao Wikimedia zien samegevoegdje aanmeldjsysteem.'''
 
@@ -2598,6 +2617,7 @@ $messages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
 	'centralauth-desc'                     => "[[Special:MergeAccount|Samengevoegde gebruikers]] binnen Wikimedia Foundation wiki's",
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Meerdere gebruikers samenvoegen]] voor Single User Login',
+	'centralauth-merge-denied'             => 'Sorry, u hebt geen toegang tot deze pagina.',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
 	'centralauth-merge-welcome'            => "'''Uw gebruiker is nog niet gemigreerd naar Wikimedia's samengevoegde aanmeldsysteem.'''
 
@@ -2816,12 +2836,14 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 /** Polish (Polski)
  * @author Sp5uhe
  * @author Derbeth
+ * @author Wpedzich
  * @author Matma Rex
  */
 $messages['pl'] = array(
 	'mergeaccount'                         => 'Status tworzenia konta globalnego',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Połącz konta]] na projektach Fundacji Wikimedia',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Łączy różne konta]] w jedno',
+	'centralauth-merge-denied'             => 'Niestety nie masz uprawnień by uzyskać dostęp do tej strony.',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta globalnego.',
 	'centralauth-merge-welcome'            => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto globalne.'''
 
@@ -2972,6 +2994,7 @@ $messages['pt'] = array(
 	'mergeaccount'                         => 'Estado da unificação de contas',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Fundir contas]] nos wikis da Wikimedia Foundation',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
+	'centralauth-merge-denied'             => 'Desculpe-nos, você não tem permissão para acessar esta página.',
 	'centralauth-merge-notlogged'          => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome'            => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.'''
 
@@ -3076,11 +3099,13 @@ $messages['ro'] = array(
 /** Russian (Русский)
  * @author .:Ajvol:.
  * @author Ahonc
+ * @author Kalan
  */
 $messages['ru'] = array(
 	'mergeaccount'                         => 'Состояние объединения учётных записей',
 	'centralauth-desc'                     => 'Объединение учётных записей на вики-проектах Фонда «Викимедиа»',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Объединяет несколько учётных записей]] в Единый регистрационную запись участника',
+	'centralauth-merge-denied'             => 'Извините, у вас недостаточно прав для доступа к этой странице.',
 	'centralauth-merge-notlogged'          => 'Пожалуйста, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} представьтесь]</span>, чтобы проверить, были ли ваши учётные записи объединены.',
 	'centralauth-merge-welcome'            => "'''Ваша учётная запись ещё не была переведена на единую систему входа Викимедии'''
 
@@ -3229,6 +3254,7 @@ $messages['sk'] = array(
 	'mergeaccount'                         => 'Stav zjednotenia prihlasovacích účtov',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Zlúčenie účtov]] na jednotlivých wiki nadácie Wikimedia',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Zlúčenie účtov]] pre zjednotené prihlasovanie',
+	'centralauth-merge-denied'             => 'Prepáčte, nemáte oprávnenie pristupovať na túto stránku.',
 	'centralauth-merge-notlogged'          => 'Prosím, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty celkom zjednotené.',
 	'centralauth-merge-welcome'            => "'''Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém Wikimedia.'''
 
@@ -3542,6 +3568,7 @@ $messages['sv'] = array(
 	'mergeaccount'                         => 'Status för sammanslagen inloggning',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Sammanfogar användarkonton]] på Wikimedia Foundations olika wikier till ett konto',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Sammanfogar mångfaldiga konton]] för Single User Login',
+	'centralauth-merge-denied'             => 'Du har tyvärr inte behörighet att använda den här sidan.',
 	'centralauth-merge-notlogged'          => 'Du måste <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
 	'centralauth-merge-welcome'            => "'''Ditt konto har ännu inte flyttats över till Wikimedias gemensamma inloggningssystem.'''
 
@@ -3626,7 +3653,7 @@ $messages['ta'] = array(
  */
 $messages['te'] = array(
 	'mergeaccount'                         => 'ప్రవేశపు ఏకీకరణ స్థితి',
-	'centralauth-desc'                     => 'వికీమీడియా ఫౌండేషన్ వికీలన్నింటిలో ఖాతాని విలీనం చేయి',
+	'centralauth-desc'                     => 'వికీమీడియా ఫౌండేషన్ వికీలన్నింటిలో [[Special:MergeAccount|ఖాతాని విలీనం చేయి]]',
 	'centralauth-merge-notlogged'          => 'మీ ఖాతాలు పూర్తిగా విలీనమయినవని సరిచూసుకునేందుకు, దయచేసి <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} లోనికి ప్రవేశించండి]</span>.',
 	'centralauth-merge-welcome'            => "'''మీ వాడుకరి ఖాతా ఇంకా వికీమీడియా యొక్క ఏకీకృత ప్రవేశపు వ్యవస్థ లోనికి విలీనం కాలేదు.'''
 
@@ -3803,10 +3830,13 @@ $messages['uk'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
+ * @author Vinhtantran
  */
 $messages['vi'] = array(
 	'mergeaccount'                         => 'Tình trạng hợp nhất tài khoản',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Hợp nhất]] tài khoản tại các wiki trực thuộc Quỹ Wikimedia',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Hợp nhất các tài khoản]] để cho các thành viên chỉ cần đăng nhập một lần',
+	'centralauth-merge-denied'             => 'Xin lỗi, bạn không có quyền truy nhập trang này.',
 	'centralauth-merge-notlogged'          => 'Xin hãy <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special:MergeAccount}} đăng nhập]</span> để kiểm tra các tài khoản của bạn được hợp nhất hay không.',
 	'centralauth-merge-welcome'            => "'''Tài khoản của bạn chưa được đổi qua hệ thống tài khoản hợp nhất của Wikimedia.'''
 
@@ -3814,8 +3844,12 @@ Sau khi chọn hợp nhất các tài khoản, bạn có thể đăng nhập và
 
 Nếu ai đã lấy tên hiệu của bạn tại website khác, việc hợp nhất các tài khoản không sẽ thay đổi tài khoản họ có hiện nay, nhưng sẽ dẫn đến cơ hội để giải quyết sự mâu thuẫn với họ hay một quản lý viên về sau.",
 	'centralauth-merge-step1-title'        => 'Bắt đầu hợp nhất tài khoản',
+	'centralauth-merge-step1-detail'       => 'Mật khẩu và địa chỉ thư mà bạn đã đăng ký sẽ được kiểm tra với các tài khoản trên các wiki khác để xác nhận rằng nó khớp với nhau.
+Sẽ không có thay đổi nào diễn ra cho đến khi bạn xác nhận mọi thứ đều ổn.',
 	'centralauth-merge-step1-submit'       => 'Xác nhận thông tin tài khoản',
 	'centralauth-merge-step2-title'        => 'Xác nhận thêm tài khoản',
+	'centralauth-merge-step2-detail'       => 'Một số tài khoản không thể so trùng tự động với wiki chủ đã chỉ định.
+Nếu những tài khoản này thuộc về bạn, bạn có thể xác nhận rằng chúng thực sự là của bạn bằng cách cung cấp mật khẩu của chúng.',
 	'centralauth-merge-step2-submit'       => 'Xác nhận thông tin tài khoản',
 	'centralauth-merge-step3-title'        => 'Mở tài khoản hợp nhất',
 	'centralauth-merge-step3-detail'       => 'Bạn sẵn sàng mở tài khoản hợp nhất, bao gồm các wiki sau:',
@@ -3831,10 +3865,13 @@ Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng c
 	'centralauth-disabled-dryrun'          => 'Rất tiếc, mới chỉ đang thử chức năng hợp nhất tài khoản, nên thực sự chưa có thể hợp nhất.',
 	'centralauth-readmore-text'            => ":''Đọc thêm về '''[[m:Help:Unified login|tài khoản hợp nhất]]'''…''",
 	'centralauth-list-home-title'          => 'Wiki chính',
+	'centralauth-list-home-dryrun'         => 'Mật khẩu và địa chỉ thư điện tử ở wiki này sẽ được dùng cho tài khoản thống nhất của bạn, và trang thành viên ở đây sẽ được tự động liên kết đến từ các wiki khác.
+Bạn có thể thay đổi wiki chủ của bạn sau.',
 	'centralauth-list-attached-title'      => 'Các tài khoản được gắn',
 	'centralauth-list-attached'            => 'Tài khoản “$1” ở các website sau được tự động gắn vào tài khoản hợp nhất:',
 	'centralauth-list-attached-dryrun'     => 'Tài khoản “$1” ở các website sau sẽ được tự động gắn vào tài khoản hợp nhất:',
 	'centralauth-list-unattached-title'    => 'Các tài khoản chưa gắn',
+	'centralauth-list-unattached'          => 'Tài khoản “$1” không thể tự động xác nhận thuộc quyền sở hữu của bạn trên các trang sau; rất có thể chúng có mật khẩu khác với tài khoản chính của bạn:',
 	'centralauth-foreign-link'             => 'Thành viên $1 tại $2',
 	'centralauth-finish-title'             => 'Hợp nhất xong',
 	'centralauth-finish-text'              => 'Nếu các tài khoản này của bạn, chỉ việc đưa vào mật khẩu của các tài khoản ở dưới để hợp nhất tài khoản:',
@@ -3845,6 +3882,7 @@ Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng c
 	'centralauth-merge-attempt'            => "'''Đang so sánh những mật khẩu mà bạn đưa vào với các tài khoản chưa được hợp nhất…'''",
 	'centralauth-attach-list-attached'     => 'Tài khoản hợp nhất dưới tên “$1” bao gồm các tài khoản sau:',
 	'centralauth-attach-title'             => 'Xác nhận tài khoản',
+	'centralauth-attach-text'              => 'Tài khoản này chưa được nhập vào tài khoản thống nhất. Nếu tài khoản toàn cục cũng là của bạn, bạn có thể nhập tài khoản này nếu bạn gõ vào mật khẩu của tài khoản toàn cục:',
 	'centralauth-attach-submit'            => 'Chuyển tài khoản',
 	'centralauth-attach-success'           => 'Tài khoản này được chuyển qua tài khoản hợp nhất.',
 	'centralauth'                          => 'Quản lý các tài khoản hợp nhất',
@@ -3859,6 +3897,7 @@ Nếu bạn là “$1”, có thể hợp nhất các tài khoản xong bằng c
 	'centralauth-prefs-status'             => 'Tình trạng của tài khoản toàn cầu:',
 	'centralauth-prefs-not-managed'        => 'Không sử dụng tài khoản hợp nhất',
 	'centralauth-prefs-unattached'         => 'Chưa xác nhận',
+	'centralauth-prefs-complete'           => 'Tất cả đều đã xong!',
 	'centralauth-prefs-migration'          => 'Đang hợp nhất',
 	'centralauth-prefs-count-attached'     => 'Tài khoản của bạn có hiệu lực tại $1 dự án.',
 	'centralauth-prefs-count-unattached'   => '$1 dự án vẫn có tài khoản cùng tên bạn chưa được xác nhận.',
