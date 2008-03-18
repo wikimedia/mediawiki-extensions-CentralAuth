@@ -182,37 +182,24 @@ class SpecialMergeAccount extends SpecialPage {
 			// This is the global account or matched it
 			if( count( $unattached ) == 0 ) {
 				// Everything matched -- very convenient!
-				$wgOut->addWikiText(
-					"All existing accounts can be automatically unified!\n" .
-					"\n" .
-					"No changes have been made to your accounts yet."
-					 );
+				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-complete' ) );
 			} else {
-				$wgOut->addWikiText(
-					"You're set to continue, but some accounts could not be automatically verified and won't be migrated immediately. " .
-					"You will be able to merge these later.\n" .
-					"\n" .
-					"No changes have been made to your accounts yet."
-					 );
+				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-incomplete' ) );
 			}
 
 			if( count( $unattached ) > 0 ) {
 				$wgOut->addHtml( $this->step2PasswordForm( $unattached ) );
-				$wgOut->addWikiText( "'''or'''" );
+				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-or' ) );
 			}
 
 			$subAttached = array_diff( $attached, array( $home ) );
 			$wgOut->addHtml( $this->step3ActionForm( $home, $subAttached, $methods ) );
 
 		} elseif( $home ) {
-			$wgOut->addWikiText( "The migration system couldn't confirm that you're the owner of the home wiki account for your username." .
-			 	"\n\n" .
-				"Another wiki was determined as the home account for your username; follow the link below and log in there to finish your account migration.");
-			$out = '<h2>Automatically selected home wiki</h2>';
-			$out .= '<p>The password and e-mail address set at this wiki will be used for your unified account, ' .
-				'and your user page here will be automatically linked to from other wikis. ' .
-				'You can change the link later.</p>';
-			$out .= $this->listAttached( array( $home ) );
+			$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-home' ) );
+			$out = '<h2>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h2>';
+			$out .= wfMsgExt( 'centralauth-list-home-dryrun', 'parse' );
+			$out .= $this->listAttached( array( $home ), array( $home => 'primary' ) );
 			$wgOut->addHtml( $out );
 		} else {
 			// Didn't get your own password right? Laaaame!
@@ -276,9 +263,9 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if( !$ok ) {
 			if( empty( $attached ) ) {
-				$wgOut->addWikiText( "Couldn't confirm any -- bad pass" );
+				$wgOut->addWikiText( wfMsg( 'centralauth-finish-noconfirms' ) );
 			} else {
-				$wgOut->addWikiText( "Did some but incomplete still." );
+				$wgOut->addWikiText( wfMsg( 'centralauth-finish-incomplete' ) );
 			}
 		}
 		$this->showCleanupForm();
@@ -417,7 +404,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 	function listWikiItem( $dbname, $method ) {
 		return
-			$this->foreignUserLink( $dbname ) . ' ' . $method;
+			$this->foreignUserLink( $dbname ) . ( $method ? ' (' . wfMsgHtml( "centralauth-merge-method-$method" ) . ')' : '' );
 	}
 
 	function foreignUserLink( $dbname ) {

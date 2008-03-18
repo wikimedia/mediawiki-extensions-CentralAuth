@@ -114,11 +114,11 @@ class SpecialCentralAuth extends SpecialPage {
 			'years' => 1 );
 		foreach( $units as $unit => $chunk ) {
 			if( $span < 2*$chunk ) {
-				return "$span $unit";
+				return wfMsg( "centralauth-$unit-ago", $span );
 			}
 			$span = intval( $span / $chunk );
 		}
-		return "$span $unit";
+		return wfMsg( "centralauth-$unit-ago", $span );
 	}
 
 	function showInfo() {
@@ -133,28 +133,28 @@ class SpecialCentralAuth extends SpecialPage {
 			$reg = $globalUser->getRegistration();
 			$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 			$attribs = array(
-				'User id:' => $globalUser->getId(),
-				'Registered:' => $wgLang->timeanddate( $reg ) . " ($age ago)",
-				'Locked:' => $globalUser->isLocked() ? 'yes' : 'no',
-				'Hidden:' => $globalUser->isHidden() ? 'yes' : 'no' );
+				'id' => $globalUser->getId(),
+				'registered' => $wgLang->timeanddate( $reg ) . " ($age)",
+				'locked' => $globalUser->isLocked() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ),
+				'hidden' => $globalUser->isHidden() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ) );
 			$out = '<ul>';
 			foreach( $attribs as $tag => $data ) {
-				$out .= Xml::element( 'li', array(), $tag . ' ' . $data );
+				$out .= Xml::element( 'li', array(), wfMsg( "centralauth-admin-info-$tag" ) . ' ' . $data );
 			}
 			$out .= '</ul>';
 			$wgOut->addHtml( $out );
 
-			$wgOut->addWikiText( "<h2>Fully merged accounts</h2>" );
+			$wgOut->addWikiText( '<h2>' . wfMsg( 'centralauth-admin-attached' ) . '</h2>' );
 			$wgOut->addHtml( $this->listMerged( $merged ) );
 
-			$wgOut->addWikiText( "<h2>Unattached accounts</h2>" );
+			$wgOut->addWikiText( '<h2>' . wfMsg( 'centralauth-admin-unattached' ) . '</h2>' );
 			if( $remainder ) {
 				$wgOut->addHtml( $this->listRemainder( $remainder ) );
 			} else {
-				$wgOut->addWikiText( 'No unmerged accounts remain.' );
+				$wgOut->addWikiText( wfMsg( 'centralauth-admin-no-unattached' ) );
 			}
 		} else {
-			$wgOut->addWikiText( "No unified account for this username." );
+			$wgOut->addWikiText( wfMsg( 'centralauth-admin-no-unified' ) );
 		}
 	}
 
@@ -179,7 +179,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'<table>' .
 			'<thead>' .
 			$this->tableRow( 'th',
-				array( '', 'Local wiki', 'Attached on', 'Method' ) ) .
+				array( '', wfMsgHtml( 'centralauth-admin-list-localwiki' ), wfMsgHtml( 'centralauth-admin-list-attached-on' ), wfMsgHtml( 'centralauth-admin-list-method' ) ) ) .
 			'</thead>' .
 			'<tbody>' .
 			implode( "\n",
@@ -203,7 +203,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->adminCheck( $row['dbName'] ),
 				$this->foreignUserLink( $row['dbName'] ),
 				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ),
-				htmlspecialchars( $row['attachedMethod'] ),
+				htmlspecialchars( wfMsg( 'centralauth-merge-method-' . $row['attachedMethod'] ) ),
 			)
 		);
 	}

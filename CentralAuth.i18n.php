@@ -34,6 +34,18 @@ No changes will be made until you have confirmed that things look ok.',
 If these accounts belong to you, you can confirm that they are yours by providing the password for them.",
 	'centralauth-merge-step2-submit' => 'Confirm login information',
 
+	// Dry run messages
+	'centralauth-merge-dryrun-complete'   => 'All existing accounts can be automatically unified!
+
+No changes have been made to your accounts yet.',
+	'centralauth-merge-dryrun-incomplete' => "You're set to continue, but some accounts could not be automatically verified and won't be migrated immediately. You will be able to merge these later.
+
+No changes have been made to your accounts yet.",
+	'centralauth-merge-dryrun-or'         => "'''or'''",
+	'centralauth-merge-dryrun-home'       => "The migration system couldn't confirm that you're the owner of the home wiki account for your username.
+
+Another wiki was determined as the home account for your username; follow the link below and log in there to finish your account migration.",
+
 	'centralauth-merge-step3-title'  => 'Create unified account',
 	'centralauth-merge-step3-detail' => "You're ready to create your unified account, with the following wikis attached:",
 	'centralauth-merge-step3-submit' => 'Unify accounts',
@@ -70,6 +82,15 @@ You will be able to change which is your home wiki later.',
 most likely they have a different password from your primary account:',
 	'centralauth-foreign-link'          => 'User $1 on $2',
 
+	// Merge methods
+	'centralauth-merge-method-primary'  => 'home wiki',
+	'centralauth-merge-method-empty'    => 'no contributions',
+	'centralauth-merge-method-mail'     => 'confirmed by e-mail',
+	'centralauth-merge-method-password' => 'confirmed by password',
+	'centralauth-merge-method-admin'    => 'admin merged account',
+	'centralauth-merge-method-new'      => 'new account',
+	'centralauth-merge-method-login'    => 'confirmed by login',
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title'             => 'Finish merge',
 	'centralauth-finish-text'              => 'If these accounts do belong to you, you can finish the login unification process simply by typing the passwords for the other accounts here:',
@@ -78,6 +99,8 @@ most likely they have a different password from your primary account:',
 	'centralauth-finish-send-confirmation' => 'E-mail password',
 	'centralauth-finish-problems'          => "Having trouble, or don't own these other accounts?
 [[meta:Help:Unified login problems|How to find help]]...",
+	'centralauth-finish-noconfirms'        => 'No accounts could be confirmed using this password.',
+	'centralauth-finish-incomplete'        => 'Several accounts were merged using this password. Other accounts are not yet confirmed.',
 
 	'centralauth-merge-attempt' => "'''Checking provided password against remaining unmerged accounts...'''",
 
@@ -89,15 +112,36 @@ most likely they have a different password from your primary account:',
 	'centralauth-attach-success'       => 'The account was migrated to the unified account.',
 
 	// Administrator's console
-	'centralauth'                     => 'Unified login administration',
-	'centralauth-admin-manage'        => 'Manage user data',
-	'centralauth-admin-username'      => 'User name:',
-	'centralauth-admin-lookup'        => 'View or edit user data',
-	'centralauth-admin-permission'    => "Only stewards may merge other people's accounts for them.",
-	'centralauth-admin-unmerge'       => 'Unmerge selected',
-	'centralauth-admin-merge'         => 'Merge selected',
-	'centralauth-admin-bad-input'     => 'Invalid merge selection',
-	'centralauth-admin-none-selected' => 'No accounts selected to modify.',
+	'centralauth'                        => 'Unified login administration',
+	'centralauth-admin-manage'           => 'Manage user data',
+	'centralauth-admin-username'         => 'User name:',
+	'centralauth-admin-lookup'           => 'View or edit user data',
+	'centralauth-admin-permission'       => "Only stewards may merge other people's accounts for them.",
+	'centralauth-admin-no-unified'       => 'No unified account for this username.',
+	'centralauth-admin-info-id'          => 'User id:',
+	'centralauth-admin-info-registered'  => 'Registered:',
+	'centralauth-admin-info-locked'      => 'Locked:',
+	'centralauth-admin-info-hidden'      => 'Hidden:',
+	'centralauth-admin-yes'              => 'yes',
+	'centralauth-admin-no'               => 'no',
+	'centralauth-admin-attached'         => 'Fully merged accounts',
+	'centralauth-admin-unattached'       => 'Unattached accounts',
+	'centralauth-admin-no-unattached'    => 'No unmerged accounts remain.',
+	'centralauth-admin-list-localwiki'   => 'Local wiki',
+	'centralauth-admin-list-attached-on' => 'Attached on',
+	'centralauth-admin-list-method'      => 'Method',
+	'centralauth-admin-unmerge'          => 'Unmerge selected',
+	'centralauth-admin-merge'            => 'Merge selected',
+	'centralauth-admin-bad-input'        => 'Invalid merge selection',
+	'centralauth-admin-none-selected'    => 'No accounts selected to modify.',
+
+	// Pretty timespan
+	'centralauth-seconds-ago' => '$1 seconds ago',
+	'centralauth-minutes-ago' => '$1 minutes ago',
+	'centralauth-hours-ago'   => '$1 hours ago',
+	'centralauth-days-ago'    => '$1 days ago',
+	'centralauth-months-ago'  => '$1 months ago',
+	'centralauth-years-ago'   => '$1 years ago',
 
 	// Info panel in preferences
 	'centralauth-prefs-status'            => 'Global account status:',
@@ -1340,6 +1384,18 @@ $messages['he'] = array(
 	'centralauth-merge-step2-detail' => "לא ניתן היה לאשר אוטומטית שמספר חשבונות זהים לחשבון הראשי באתר המצוין. אם החשבונות הללו שייכים לכם, תוכלו לאשר זאת באמצעות כתיבת סיסמאותיהם.\n",
 	'centralauth-merge-step2-submit' => 'אישור של מידע הכניסה',
 
+	# Dry run messages
+	'centralauth-merge-dryrun-complete'   => 'ניתן למזג אוטומטית את כל החשבונות הקיימים!
+
+לא בוצעו עדיין שינויים בחשבונות המשתמש שלכם.',
+	'centralauth-merge-dryrun-incomplete' => 'מספר חשבונות לא עברו את הבדיקה האוטומטית ולא ימוזגו מיד. אתם יכולים להמשיך במיזוג, ותוכלו למזג את החשבונות האלה מאוחר יותר.
+
+לא בוצעו עדיין שינויים בחשבונות המשתמש שלכם.',
+	'centralauth-merge-dryrun-or'         => "'''או'''",
+	'centralauth-merge-dryrun-home'       => 'מערכת המיזוג לא הצליחה לוודא שאתם בעלי החשבון הראשי בשם המשתמש הזה.
+
+אתר אחר זוהה כחשבון הראשי לשם משתמש זה; אנא לחצו על הקישור להלן והיכנסו לחשבון שם כדי לסיים את מיזוג החשבונות שלכם.',
+
 	'centralauth-merge-step3-title'  => 'יצירת החשבון הממוזג',
 	'centralauth-merge-step3-detail' => 'אתם מוכנים ליצירת החשבון הממוזג שלכם, שהחשבונות באתרים הבאים ימוזגו אליו:',
 	'centralauth-merge-step3-submit' => 'מיזוג החשבונות',
@@ -1371,6 +1427,15 @@ $messages['he'] = array(
 	'centralauth-list-unattached'       => 'לא ניתן היה לבדוק אוטומטית האם החשבונות בשם "$1" באתרים הבאים שייכים לכם; כנראה שיש להם סיסמאות שונות מאשר בחשבון הראשי שלכם:',
 	'centralauth-foreign-link'          => 'המשתמש $1 באתר $2',
 
+	# Merge methods
+	'centralauth-merge-method-primary'  => 'האתר הראשי',
+	'centralauth-merge-method-empty'    => 'אין תרומות',
+	'centralauth-merge-method-mail'     => 'אומת באמצעות דואר אלקטרוני',
+	'centralauth-merge-method-password' => 'אומת באמצעות סיסמה',
+	'centralauth-merge-method-admin'    => 'מנהל מיזג את החשבון',
+	'centralauth-merge-method-new'      => 'חשבון חדש',
+	'centralauth-merge-method-login'    => 'אומת באמצעות כניסה לחשבון',
+
 	# When not complete, offer to finish...
 	'centralauth-finish-title'             => 'סיום המיזוג',
 	'centralauth-finish-text'              => 'אם חשבונות אלה אכן שייכים לכם, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמאות לחשבונות האחרים כאן:',
@@ -1378,6 +1443,8 @@ $messages['he'] = array(
 	'centralauth-finish-login'             => 'כניסה',
 	'centralauth-finish-send-confirmation' => 'שליחת סיסמה בדוא"ל',
 	'centralauth-finish-problems'          => "יש לכם בעיה, או שאינכם בעלי החשבונות האחרים? [[meta:Help:Unified login problems|ניתן למצוא עזרה כאן]]...",
+	'centralauth-finish-noconfirms'        => 'לא ניתן היה למזג אף חשבון באמצעות הסיסמה הזו.',
+	'centralauth-finish-incomplete'        => 'מספר חשבונות מוזגו באמצעות הסיסמה הזו. חשבונות אחרים עדיין לא אושרו.',
 
 	'centralauth-merge-attempt' => "'''בודק האם הסיסמאות שניתנו תואמים לחשבונות הנותרים שלא מוזגו...'''",
 
@@ -1389,15 +1456,36 @@ $messages['he'] = array(
 	'centralauth-attach-success'           => 'החשבון נוסף לחשבון הממוזג.',
 
 	# Administrator's console
-	'centralauth'                     => 'ניהול מיזוג החשבונות',
-	'centralauth-admin-manage'        => 'ניהול המידע על המשתמש',
-	'centralauth-admin-username'      => 'שם משתמש:',
-	'centralauth-admin-lookup'        => 'הצגת ועריכת המידע על המשתמש',
-	'centralauth-admin-permission'    => "רק דיילים יכולים למזג את חשבונותיהם של אנשים אחרים עבורם.",
-	'centralauth-admin-unmerge'       => 'ביטול המיזוג של החשבונות שנבחרו',
-	'centralauth-admin-merge'         => 'מיזוג החשבונות שנבחרו',
-	'centralauth-admin-bad-input'     => 'בחירה שגויה של מיזוג',
-	'centralauth-admin-none-selected' => 'לא נבחרו חשבונות לשינוי.',
+	'centralauth'                        => 'ניהול מיזוג החשבונות',
+	'centralauth-admin-manage'           => 'ניהול המידע על המשתמש',
+	'centralauth-admin-username'         => 'שם משתמש:',
+	'centralauth-admin-lookup'           => 'הצגת ועריכת המידע על המשתמש',
+	'centralauth-admin-permission'       => "רק דיילים יכולים למזג את חשבונותיהם של אנשים אחרים עבורם.",
+	'centralauth-admin-no-unified'       => 'אין חשבון ממוזג בשם זה.',
+	'centralauth-admin-info-id'          => 'מספר משתמש:',
+	'centralauth-admin-info-registered'  => 'נרשם:',
+	'centralauth-admin-info-locked'      => 'נעול:',
+	'centralauth-admin-info-hidden'      => 'מוסתר:',
+	'centralauth-admin-yes'              => 'כן',
+	'centralauth-admin-no'               => 'לא',
+	'centralauth-admin-attached'         => 'חשבונות שהושלם מיזוגם',
+	'centralauth-admin-unattached'       => 'חשבונות בלתי ממוזגים',
+	'centralauth-admin-no-unattached'    => 'לא נותרו חשבונות בלתי ממוזגים.',
+	'centralauth-admin-list-localwiki'   => 'האתר המקומי',
+	'centralauth-admin-list-attached-on' => 'מוזג בתאריך',
+	'centralauth-admin-list-method'      => 'שיטה',
+	'centralauth-admin-unmerge'          => 'ביטול המיזוג של החשבונות שנבחרו',
+	'centralauth-admin-merge'            => 'מיזוג החשבונות שנבחרו',
+	'centralauth-admin-bad-input'        => 'בחירה שגויה של מיזוג',
+	'centralauth-admin-none-selected'    => 'לא נבחרו חשבונות לשינוי.',
+
+	# Pretty timespan
+	'centralauth-seconds-ago' => 'לפני $1 שניות',
+	'centralauth-minutes-ago' => 'לפני $1 דקות',
+	'centralauth-hours-ago'   => 'לפני $1 שעות',
+	'centralauth-days-ago'    => 'לפני $1 ימים',
+	'centralauth-months-ago'  => 'לפני $1 חודשים',
+	'centralauth-years-ago'   => 'לפני $1 שנים',
 
 	# Info panel in preferences
 	'centralauth-prefs-status'            => 'מצב החשבון הכללי:',
