@@ -401,13 +401,11 @@ class CentralAuthUser {
 			} elseif( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
-			} elseif( isset( $passingMail[$local['email']] ) ) {
+			} elseif( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
 				// Same e-mail as primary means we know they could
 				// reset their password, so we give them the account.
+				// Authenticated email addresses only to prevent merges with malicious users
 				$method = 'mail';
-			} elseif( $local['editCount'] == 0 ) {
-				// Unused accounts are fair game for reclaiming
-				$method = 'empty';
 			} else {
 				// Can't automatically resolve this account.
 				//
@@ -664,14 +662,26 @@ class CentralAuthUser {
 		if( $dbw->affectedRows() == 0 ) {
 			wfDebugLog( 'CentralAuth',
 				"Race condition? Already attached $this->mName@$dbname, just tried by '$method'" );
-		} else {
-			wfDebugLog( 'CentralAuth',
-				"Attaching local user $this->mName@$dbname by '$method'" );
+			return;
+		}
+		wfDebugLog( 'CentralAuth',
+			"Attaching local user $this->mName@$dbname by '$method'" );
 
-			global $wgDBname;
-			if( $dbname == $wgDBname ) {
-				$this->resetState();
-			}
+		/**
+		 * Reset credentials in the local user table, to avoid compromise of the 
+		 * merged account by a malicious zero-edit account. 
+		 */
+		$dbl = self::getLocalDB( $dbname );
+		$dbl->update( 'user', 
+			array( 
+				'user_email' => $this->mEmail,
+				'user_newpassword' => '',
+				'user_'));
+			
+
+		global $wgDBname;
+		if( $dbname == $wgDBname ) {
+			$this->resetState();
 		}
 	}
 
