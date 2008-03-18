@@ -796,6 +796,19 @@ $messages['de'] = array(
 		Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.",
 	'centralauth-merge-step2-submit' => 'Anmelde-Informationen bestätigen',
 
+	// Dry run messages
+	'centralauth-merge-dryrun-complete'   => 'Alle existierenden Benutzerkonten können automatisch zusammengeführt werden!
+
+	Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.',
+	'centralauth-merge-dryrun-incomplete' => "Es geht weiter, aber einige Benutzerkonten konnten nicht automatisch geprüft werden und werden nicht in diesem ersten Schritt nicht zusammengeführt.. 
+	Es wird dir möglich sein, diese später zusammenzuführen.
+
+	Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.",
+	'centralauth-merge-dryrun-or'         => "'''oder'''",
+	'centralauth-merge-dryrun-home'       => 'Das Migrationssystem konnte nicht bestätigen, dass du der Eigentümer des Heimatwiki-Benutzerkontos für diesen Benutzernamen bist.
+
+	Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge dem untenstehenden Link und logge dich dort ein, um die Benutzerkonten-Zusammenführung abzuschließen.',
+
 	'centralauth-merge-step3-title'  => 'Erzeuge globales Benutzerkonto',
 	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen.',
 	'centralauth-merge-step3-submit' => 'Benutzerkonten zusammenführen',
@@ -848,17 +861,28 @@ $messages['de'] = array(
 		als dein primäres Benutzerkonto:',
 	'centralauth-foreign-link'          => 'Benutzer $1 auf $2',
 
+	// Merge methods
+	'centralauth-merge-method-primary'  => 'Heimatwiki',
+	'centralauth-merge-method-empty'    => 'keine Benutzerbeiträge',
+	'centralauth-merge-method-mail'     => 'bestätigt durch E-Mail-Adresse',
+	'centralauth-merge-method-password' => 'bestätigt durch Passwort',
+	'centralauth-merge-method-admin'    => 'durch Administrator zusammengeführtes Benutzerkonto',
+	'centralauth-merge-method-new'      => 'neues Benutzerkonto',
+	'centralauth-merge-method-login'    => 'bestätigt durch Anmeldevorgang',
+
 	// When not complete, offer to finish...
 	'centralauth-finish-title'             => 'Zusammenführung vollenden',
 	'centralauth-finish-text'              => 'Wenn diese Benutzerkonten dir gehören, kannst du hier 
 		den Prozess der Benutzerkonten-Zusammenführung durch die 
-		Eingabe des Passwortes für die anderen Benutzerkonto vollenden:',
+		Eingabe des Passwortes für die anderen Benutzerkonten vollenden:',
 	'centralauth-finish-password'          => 'Passwort:',
 	'centralauth-finish-login'             => 'Anmeldung',
 	'centralauth-finish-send-confirmation' => 'Passwort per E-Mail zusenden',
 	'centralauth-finish-problems'          => 'Hast du Probleme oder gehören dir diese anderen Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier findest du Hilfe]] …',
+	'centralauth-finish-noconfirms'        => 'Kein Benutzerkonto konnte mit diesem Passwort bestätigt werden.',
+	'centralauth-finish-incomplete'        => 'Mehrere Benutzerkonten wurden mit diesem Passwort zusammengeführt. Andere Benutzerkonten wurden noch nicht bestätigt.',
 
-	'centralauth-merge-attempt'            => "'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten…'''",
+	'centralauth-merge-attempt'            => "'''Prüfe das eingegebene Passwort mit den restlichen Benutzerkonten …'''",
 
 	# When unattached, offer to attach...
 	'centralauth-attach-list-attached'     => 'Das globale Benutzerkonto mit dem Namen „$1“ beinhaltet die folgenden Benutzerkonten:',
