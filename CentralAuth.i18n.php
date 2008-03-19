@@ -1179,6 +1179,7 @@ Jos tämä tunnus on sinun, voi viimeistellä tunnusten yhdistämisen antamalla 
  * @author Guillom
  * @author Sherbrooke
  * @author Urhixidur
+ * @author Grondin
  * @author Seb35
  */
 $messages['fr'] = array(
@@ -1198,6 +1199,16 @@ Si vous avez déjà le même nom d’utilisateur sur tous les projets, il ne dev
 	'centralauth-merge-step2-title'        => 'Inclure d’autres comptes',
 	'centralauth-merge-step2-detail'       => 'Certains des comptes n’ont pas pu être rattachés automatiquement à votre compte principal. Si ces comptes vous appartiennent, veuillez confirmer qu’ils vous appartiennent en entrant le mot de passe correspondant.',
 	'centralauth-merge-step2-submit'       => 'Confirmer les informations',
+	'centralauth-merge-dryrun-complete'    => 'Tous les comptes existant peuvent être unifiés automatiquement !
+
+Cependant, aucun changement n’a été fait pour vos comptes.',
+	'centralauth-merge-dryrun-incomplete'  => 'Vous avez décidé de continuer, mais plusieurs comptes n’ont pas pu être vérifiés automatiquement et ne seront pas migrés immédiatement. Vous pourrez les fusionner plus tard.
+
+Cependant, aucun changement n’a été fait pour vos comptes.',
+	'centralauth-merge-dryrun-or'          => "'''ou'''",
+	'centralauth-merge-dryrun-home'        => 'Le système de migration n’a pas pu confirmer que vous être le propriétaire du compte du wiki principal en ce qui concerne votre nom d’utilisateur.
+
+Un autre wiki a été déterminé comme compte principal pour votre nom d’utilisateur ; suivez le lien ci-dessous et connectez-vous pour terminer la migration du compte.',
 	'centralauth-merge-step3-title'        => 'Créer un compte unique',
 	'centralauth-merge-step3-detail'       => 'Vous êtes maintenant prêt à créer votre compte unique, comprenant les wikis suivants :',
 	'centralauth-merge-step3-submit'       => 'Fusionner les comptes',
@@ -1219,6 +1230,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-list-unattached-title'    => 'Comptes non rattachés',
 	'centralauth-list-unattached'          => 'Les comptes utilisateur nommés « $1 » sur les sites suivants ne peuvent pas être rattachés automatiquement ; ils ont probablement un mot de passe différent de celui de votre compte principal :',
 	'centralauth-foreign-link'             => 'Utilisateur $1 sur $2',
+	'centralauth-merge-method-primary'     => 'wiki principal',
 	'centralauth-finish-title'             => 'Terminer la fusion',
 	'centralauth-finish-text'              => 'Si ces comptes vous appartiennent, vous pouvez terminer leur fusion en tapant leurs mots de passe ci-dessous :',
 	'centralauth-finish-password'          => 'Mot de passe :',
@@ -3048,8 +3060,8 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (Português)
- * @author Malafaya
  * @author 555
+ * @author Malafaya
  * @author Smeira
  */
 $messages['pt'] = array(
@@ -3070,6 +3082,10 @@ Caso alguém já tenha um nome de utilizador idêntico ao seu em algum outro wik
 	'centralauth-merge-step2-title'        => 'Confirmar contas adicionais',
 	'centralauth-merge-step2-detail'       => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a palavra-chave (senha) das mesmas.',
 	'centralauth-merge-step2-submit'       => 'Confirmar informações de login',
+	'centralauth-merge-dryrun-complete'    => 'Todas as contas existentes podem ser fundidas automaticamente!
+
+Não foram feitas modificações em suas contas até o momento.',
+	'centralauth-merge-dryrun-or'          => "'''ou'''",
 	'centralauth-merge-step3-title'        => 'Criar conta unificada',
 	'centralauth-merge-step3-detail'       => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionados, seja criada:',
 	'centralauth-merge-step3-submit'       => 'Unificar contas',
@@ -3091,12 +3107,18 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-list-unattached-title'    => 'Contas não-relacionadas',
 	'centralauth-list-unattached'          => 'A conta "$1" não pôde ser automaticamente confirmada como sendo tua nos seguintes sítios; provavelmente elas tenham uma senha diferente de sua conta principal:',
 	'centralauth-foreign-link'             => 'Utilizador $1 em $2',
+	'centralauth-merge-method-primary'     => 'residência wiki',
+	'centralauth-merge-method-empty'       => 'sem contribuições',
+	'centralauth-merge-method-mail'        => 'confirmado a partir do e-mail',
+	'centralauth-merge-method-password'    => 'confirmado a partir da senha',
+	'centralauth-merge-method-new'         => 'conta nova',
 	'centralauth-finish-title'             => 'Completar fusão',
 	'centralauth-finish-text'              => 'Se estas contas pertencem a ti, será possível concluir a unificação de logins simplesmente digitando as senhas das mesmas aqui:',
 	'centralauth-finish-password'          => 'Senha:',
 	'centralauth-finish-login'             => 'Utilizador',
 	'centralauth-finish-send-confirmation' => 'Enviar senha por e-mail',
 	'centralauth-finish-problems'          => 'Está com problemas ou estas outras contas não são suas? [[meta:Help:Unified login problems|Como procurar por ajuda]]...',
+	'centralauth-finish-noconfirms'        => 'Não é possível confirmar contas utilizando esta palavra-chave (senha).',
 	'centralauth-merge-attempt'            => "'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
 	'centralauth-attach-list-attached'     => 'A conta unificada com o nome "$1" inclui as seguintes contas:',
 	'centralauth-attach-title'             => 'Confirmar conta',
@@ -3108,10 +3130,24 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-admin-username'           => 'Utilizador:',
 	'centralauth-admin-lookup'             => 'Ver ou editar dados de utilizador',
 	'centralauth-admin-permission'         => 'Apenas stewards podem fundir as contas de outras pessoas.',
+	'centralauth-admin-info-id'            => 'ID de utilizador:',
+	'centralauth-admin-info-registered'    => 'Registado:',
+	'centralauth-admin-yes'                => 'sim',
+	'centralauth-admin-no'                 => 'não',
+	'centralauth-admin-attached'           => 'Contas completamente fundidas',
+	'centralauth-admin-unattached'         => 'Contas não-anexadas',
+	'centralauth-admin-list-localwiki'     => 'Wiki local',
+	'centralauth-admin-list-method'        => 'Método',
 	'centralauth-admin-unmerge'            => 'Desfazer a fusão nos seleccionados',
 	'centralauth-admin-merge'              => 'Fundir seleccionados',
 	'centralauth-admin-bad-input'          => 'Selecção para fusão inválida',
 	'centralauth-admin-none-selected'      => 'Não foram seleccionadas contas a serem modificadas.',
+	'centralauth-seconds-ago'              => '$1 segundos atrás',
+	'centralauth-minutes-ago'              => '$1 minutos atrás',
+	'centralauth-hours-ago'                => '$1 horas atrás',
+	'centralauth-days-ago'                 => '$1 dias atrás',
+	'centralauth-months-ago'               => '$1 meses atrás',
+	'centralauth-years-ago'                => '$1 anos atrás',
 	'centralauth-prefs-status'             => 'Estado da conta unificada:',
 	'centralauth-prefs-not-managed'        => 'Não está utilizando a conta unificada',
 	'centralauth-prefs-unattached'         => 'Não confirmado',
