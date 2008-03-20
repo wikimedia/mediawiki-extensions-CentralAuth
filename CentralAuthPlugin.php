@@ -108,9 +108,10 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	function updateUser( &$user ) {
 		$central = new CentralAuthUser( $user->getName() );
-		$email = $central->getEmail();
-		if ( strval( $email ) !== '' ) {
-			$user->setEmail( $email );
+		if ( $central->exists() && $central->isAttached() ) {
+			$user->setEmail( $central->getEmail() );
+			$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
+			$user->saveSettings();
 		}
 		return true;
 	}

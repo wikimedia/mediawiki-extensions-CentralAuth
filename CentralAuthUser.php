@@ -1045,6 +1045,14 @@ class CentralAuthUser {
 			__METHOD__ );
 	}
 
+	function getEmailAuthenticationTimestamp() {
+		$dbr = self::getCentralDB();
+		return $dbr->selectField( self::tableName( 'globaluser' ),
+			'gu_email_authenticated',
+			array( 'gu_id' => $this->getId() ),
+			__METHOD__ );
+	}
+
 	/**
 	 * Salt and hash a new plaintext password.
 	 * @param string $password plaintext
