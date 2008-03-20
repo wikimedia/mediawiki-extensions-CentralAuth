@@ -100,14 +100,16 @@ most likely they have a different password from your primary account:',
 	'centralauth-finish-problems'          => "Having trouble, or don't own these other accounts?
 [[meta:Help:Unified login problems|How to find help]]...",
 	'centralauth-finish-noconfirms'        => 'No accounts could be confirmed using this password.',
-	'centralauth-finish-incomplete'        => 'Several accounts were merged using this password. Other accounts are not yet confirmed.',
+	'centralauth-finish-incomplete'        => 'Several accounts were merged using this password.
+Other accounts are not yet confirmed.',
 
 	'centralauth-merge-attempt' => "'''Checking provided password against remaining unmerged accounts...'''",
 
 	# When unattached, offer to attach...
 	'centralauth-attach-list-attached' => 'The unified account named "$1" includes the following accounts:',
 	'centralauth-attach-title'         => 'Confirm account',
-	'centralauth-attach-text'          => 'This account has not yet been migrated to the unified account. If the global account is yours too, you can merge this account if you type the global account password:',
+	'centralauth-attach-text'          => 'This account has not yet been migrated to the unified account.
+If the global account is yours too, you can merge this account if you type the global account password:',
 	'centralauth-attach-submit'        => 'Migrate account',
 	'centralauth-attach-success'       => 'The account was migrated to the unified account.',
 
@@ -152,7 +154,7 @@ most likely they have a different password from your primary account:',
 	'centralauth-prefs-count-attached'    => 'Your account is active on $1 project {{plural:$1|site|sites}}.',
 	'centralauth-prefs-count-unattached'  => 'Unconfirmed accounts with your name remain on $1 {{plural:$1|project|projects}}.',
 	'centralauth-prefs-detail-unattached' => 'This project site has not been confirmed as belonging to the global account.',
-	'centralauth-prefs-manage' => 'Manage your global account',
+	'centralauth-prefs-manage'            => 'Manage your global account',
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Cannot rename user $1 locally as this username has been migrated to the unified login system.</div>",
