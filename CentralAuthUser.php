@@ -448,6 +448,10 @@ class CentralAuthUser {
 		}
 
 		$migrationSet = $this->queryUnattached();
+		if( empty( $migrationSet ) ) {
+			wfDebugLog( 'CentralAuth', 'dry run: no accounts to merge, failed migration' );
+			return false;
+		}
 		$home = $this->chooseHomeWiki( $migrationSet );
 		$local = $migrationSet[$home];
 
@@ -483,6 +487,10 @@ class CentralAuthUser {
 	 */
 	private function attemptAutoMigration( $passwords=array() ) {
 		$migrationSet = $this->queryUnattached();
+		if( empty( $migrationSet ) ) {
+			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
+			return false;
+		}
 
 
 		$this->mHomeWiki = $this->chooseHomeWiki( $migrationSet );
