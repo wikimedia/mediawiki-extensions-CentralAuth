@@ -1865,7 +1865,7 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 );
 
 /** Hungarian (Magyar)
- * @author Bdanee
+ * @author Dani
  * @author KossuthRad
  * @author Dorgan
  * @author Tgr
