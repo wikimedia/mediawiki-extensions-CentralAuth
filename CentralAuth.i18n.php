@@ -482,6 +482,8 @@ $messages['bg'] = array(
 	'centralauth-list-attached-dryrun'     => 'Потребителската сметка „$1“ на всеки от следните сайтове ще бъде автоматично прикачена към унифицираната сметка:',
 	'centralauth-list-unattached-title'    => 'Неприкрепени сметки',
 	'centralauth-foreign-link'             => 'Потребител $1 от $2',
+	'centralauth-merge-method-empty'       => 'няма приноси',
+	'centralauth-merge-method-new'         => 'нова сметка',
 	'centralauth-finish-title'             => 'Приключване на сливането',
 	'centralauth-finish-text'              => 'Ако следните сметки са ваши, можете да приключите процеса по унифициране на сметките като въведете паролите за другите сметки тук:',
 	'centralauth-finish-password'          => 'Парола:',
@@ -499,10 +501,20 @@ $messages['bg'] = array(
 	'centralauth-admin-username'           => 'Потребителско име:',
 	'centralauth-admin-lookup'             => 'Преглед и редактиране на потребителските данни',
 	'centralauth-admin-permission'         => 'Само стюарди могат да сливат потребителските сметки на други потребители.',
+	'centralauth-admin-info-id'            => 'Потребителски номер:',
+	'centralauth-admin-info-registered'    => 'Регистрация:',
+	'centralauth-admin-yes'                => 'да',
+	'centralauth-admin-no'                 => 'не',
+	'centralauth-admin-list-method'        => 'Метод',
 	'centralauth-admin-unmerge'            => 'Разделяне на избраните',
 	'centralauth-admin-merge'              => 'Сливане на избраните',
 	'centralauth-admin-bad-input'          => 'Невалиден избор за сливане',
 	'centralauth-admin-none-selected'      => 'Не са избрани сметки за промяна.',
+	'centralauth-seconds-ago'              => 'преди $1 секунди',
+	'centralauth-hours-ago'                => 'преди $1 часа',
+	'centralauth-days-ago'                 => 'преди $1 дни',
+	'centralauth-months-ago'               => 'преди $1 месеца',
+	'centralauth-years-ago'                => 'преди $1 години',
 	'centralauth-prefs-status'             => 'Състояние на потребителските сметки:',
 	'centralauth-prefs-not-managed'        => 'Не се използва единна сметка',
 	'centralauth-prefs-unattached'         => 'Непотвърден',
@@ -1866,13 +1878,14 @@ To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [
 
 /** Hungarian (Magyar)
  * @author Dani
- * @author KossuthRad
- * @author Dorgan
  * @author Tgr
+ * @author Dorgan
+ * @author KossuthRad
  */
 $messages['hu'] = array(
 	'mergeaccount'                         => 'Felhasználói fiókok egyesítésének állapota',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Felhasználói fiókok egységesítése]] a Wikimedia Alapítvány wikijein',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Felhasználói fiókok összevonása]] az egységes bejelentkezéshez',
 	'centralauth-merge-denied'             => 'Sajnáljuk, de nincs jogod az oldal megtekintéséhez.',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Jelentkezz be]</span>, hogy ellenőrizhessük, felhasználói fiókjaid egyesítve vannak-e.',
 	'centralauth-merge-welcome'            => "'''A felhasználói fiókod még nincs integrálva a Wikimedia egységesített bejelentkezési rendszerébe.'''
@@ -1887,7 +1900,16 @@ Ha valaki más már korábban beregisztrált a neveden egy másik oldalon, a fol
 	'centralauth-merge-step2-title'        => 'Más fiókok megerősítése',
 	'centralauth-merge-step2-detail'       => 'Néhány fiókot nem sikerült automatikusan párosítani a kijelölt saját wikihez. Ha ezek hozzád tartoznak, erősítsd meg a jelszó megadásával, hogy tényleg hozzád tartoznak.',
 	'centralauth-merge-step2-submit'       => 'Bejelentkezési információ megerősítése',
+	'centralauth-merge-dryrun-complete'    => 'Az összes felhasználói fiók automatikusan egyesíthető!
+
+Még semmilyen változtatás nem történt.',
+	'centralauth-merge-dryrun-incomplete'  => 'Az egyesítés folytatható, de néhány fiókot nem sikerült automatikusan ellenőrizni; ezek nem lesznek most integrálva. Később bevonhatod őket.
+
+Eddig még semmilyen változtatás nem történt.',
 	'centralauth-merge-dryrun-or'          => "'''vagy'''",
+	'centralauth-merge-dryrun-home'        => 'A rendszer nem tudta ellenőrizni, hogy te vagy-e a név tulajdonosa az elsődleges wikin.
+
+Ha igen, kövesd az alábbi linket, és ott folytasd az egyesítést.',
 	'centralauth-merge-step3-title'        => 'Egységesített felhasználói fiók elkészítése',
 	'centralauth-merge-step3-detail'       => 'Most már készen állsz az egységesített felhasználói fiók elkészítéséhez, amelyekhez a következő wikiket csatoljuk:',
 	'centralauth-merge-step3-submit'       => 'Felhasználói fiókok egységesítése',
@@ -1909,9 +1931,11 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-list-unattached-title'    => 'Csatolatlan felhasználói fiókok',
 	'centralauth-list-unattached'          => 'A(z) „$1” nevű felhasználói fiókról nem sikerült automatikusan megállapítani, hogy hozzád tartozik az alábbi oldalakon; valószínűleg más jelszóval rendelkeznek:',
 	'centralauth-foreign-link'             => '$1 szerkesztő, $2',
+	'centralauth-merge-method-primary'     => 'elsődleges wiki',
 	'centralauth-merge-method-empty'       => 'nincsenek szerkesztések',
 	'centralauth-merge-method-mail'        => 'megerősítve e-mailen keresztül',
 	'centralauth-merge-method-password'    => 'megerősítve jelszóval',
+	'centralauth-merge-method-admin'       => 'admin által egyesített azonosító',
 	'centralauth-merge-method-new'         => 'új felhasználói fiók',
 	'centralauth-merge-method-login'       => 'megerősítve bejelentkezéssel',
 	'centralauth-finish-title'             => 'Egyesítés befejezése',
@@ -1921,6 +1945,8 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-finish-send-confirmation' => 'E-mail jelszó',
 	'centralauth-finish-problems'          => 'Problémád van, vagy ezek nem hozzád tartoznak? [[meta:Help:Unified login problems|Hogyan találhatsz segítséget]]…',
 	'centralauth-finish-noconfirms'        => 'Egyetlen felhasználói fiókot sem sikerült megerősíteni ezzel a jelszóval.',
+	'centralauth-finish-incomplete'        => 'Számos azonosítót összevontunk, mert ugyanez volt a jelszavuk.
+Vannak további azonosítók, amik még nincsenek megerősítve.',
 	'centralauth-merge-attempt'            => "'''A megadott jelszavak ellenőrzése a hátralévő, még nem egységesített felhasználói fiókoknál…'''",
 	'centralauth-attach-list-attached'     => 'A(z) „$1” nevű egységesített felhasználói fiók a következőket tartalmazza:',
 	'centralauth-attach-title'             => 'Felhasználói fiók megerősítése',
@@ -1936,12 +1962,14 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-admin-info-id'            => 'Azonosító:',
 	'centralauth-admin-info-registered'    => 'Regisztráció ideje:',
 	'centralauth-admin-info-locked'        => 'Lezárva:',
+	'centralauth-admin-info-hidden'        => 'Rejtett:',
 	'centralauth-admin-yes'                => 'igen',
 	'centralauth-admin-no'                 => 'nem',
 	'centralauth-admin-attached'           => 'Sikeresen egyesített fiókok',
 	'centralauth-admin-unattached'         => 'Érintetlen fiókok',
 	'centralauth-admin-no-unattached'      => 'Nincs több egységesítetlen fiók.',
 	'centralauth-admin-list-localwiki'     => 'Helyi wiki',
+	'centralauth-admin-list-attached-on'   => 'Csatolás dátuma',
 	'centralauth-admin-list-method'        => 'Módszer',
 	'centralauth-admin-unmerge'            => 'Kiválasztott integrálásának megszüntetése',
 	'centralauth-admin-merge'              => 'Kiválasztott integrálása',
@@ -3289,9 +3317,9 @@ Se es vos, poirètz acabar lo procediment d’unificacion de compte en picant lo
 
 /** Polish (Polski)
  * @author Sp5uhe
+ * @author Matma Rex
  * @author Derbeth
  * @author Wpedzich
- * @author Matma Rex
  */
 $messages['pl'] = array(
 	'mergeaccount'                         => 'Status tworzenia konta globalnego',
@@ -3310,6 +3338,16 @@ Jeśli ktoś inny wykorzystuje na innym projekcie identyczną do Twojej nazwę u
 	'centralauth-merge-step2-title'        => 'Potwierdź więcej kont',
 	'centralauth-merge-step2-detail'       => 'Niektóre z kont nie mogły zostać automatycznie przyłączone do konta globalnego. Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje przez podanie haseł do nich.',
 	'centralauth-merge-step2-submit'       => 'Potwierdź informację o logowaniu',
+	'centralauth-merge-dryrun-complete'    => 'Wszystkie istniejące konta zostaną automatycznie zunifikowane!
+
+Nie wykonano jeszcze żadnych zmian twoich kont.',
+	'centralauth-merge-dryrun-incomplete'  => 'Chcesz kontynuować, ale niektóre konta nie mogą być automatycznie zweryfikowane i migracja nie będzie natychmiastowa. Będziesz mógł połączyć je później.
+
+Nie wykonano jeszcze żadnych zmian twoich kont.',
+	'centralauth-merge-dryrun-or'          => "'''lub'''",
+	'centralauth-merge-dryrun-home'        => 'System migracji nie może potwierdzić, że jesteś właścicielem konta na wiki domowej pod tą nazwą użytkownika.
+
+Inna wiki została uznana za domową; kliknij w link poniżej i zaloguj się na niej, aby ukończyć migrację konta.',
 	'centralauth-merge-step3-title'        => 'Utwórz konto globalne',
 	'centralauth-merge-step3-detail'       => 'System jest gotowy do utworzenia konta globalnego, z dołączonymi następującymi wiki:',
 	'centralauth-merge-step3-submit'       => 'Utwórz konto globalne',
@@ -3331,12 +3369,22 @@ Jeśli chcesz przyłączyć konto użytkownika "$1" do konta globalnego podaj ha
 	'centralauth-list-unattached-title'    => 'Niepowiązane konta',
 	'centralauth-list-unattached'          => 'Konto o nazwie "$1" nie może zostać automatycznie przypisane do konta globalnego dla następujących witryn; najbardziej prawdopodobną przyczyną jest ustawienie dla tych witryn innego hasła niż dla konta macierzystego:',
 	'centralauth-foreign-link'             => 'Użytkownik $1 na $2',
+	'centralauth-merge-method-primary'     => 'wiki domowa',
+	'centralauth-merge-method-empty'       => 'brak edycji',
+	'centralauth-merge-method-mail'        => 'potwierdzone e-mailem',
+	'centralauth-merge-method-password'    => 'potwierdzone hasłem',
+	'centralauth-merge-method-admin'       => 'administrator połączył konta',
+	'centralauth-merge-method-new'         => 'nowe konto',
+	'centralauth-merge-method-login'       => 'potwierdzone loginem',
 	'centralauth-finish-title'             => 'Zakończono tworzenie konta globalnego',
 	'centralauth-finish-text'              => 'Jeżeli te konta należą do Ciebie, możesz je przyłączyć do konta globalnego wpisując tutaj hasło dla tych kont:',
 	'centralauth-finish-password'          => 'Hasło:',
 	'centralauth-finish-login'             => 'Zaloguj',
 	'centralauth-finish-send-confirmation' => 'Hasło e-mail',
 	'centralauth-finish-problems'          => 'Masz kłopoty lub nie jesteś właścicielem tych innych kont? [[meta:Help:Unified login problems|Jak znaleźć pomoc]]...',
+	'centralauth-finish-noconfirms'        => 'Żadne konta nie mogą być potwierdzone przy użyciu tego hasła.',
+	'centralauth-finish-incomplete'        => 'Niektóre konta zostały połączone przy użyciu tego hasła.
+Pozostałe nie zostały jeszcze potwierdzone.',
 	'centralauth-merge-attempt'            => "'''Sprawdzenie hasła dla pozostałych kont, nieprzyłączonych do konta globalnego...'''",
 	'centralauth-attach-list-attached'     => 'Konto globalne "$1" obejmuje następujące konta:',
 	'centralauth-attach-title'             => 'Potwierdź konto',
@@ -3348,10 +3396,29 @@ Jeśli chcesz przyłączyć konto użytkownika "$1" do konta globalnego podaj ha
 	'centralauth-admin-username'           => 'Nazwa użytkownika:',
 	'centralauth-admin-lookup'             => 'Podgląd i edycja danych użytkownika',
 	'centralauth-admin-permission'         => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
+	'centralauth-admin-no-unified'         => 'Brak zunifikowanych kont dla tej nazwy użytkownika.',
+	'centralauth-admin-info-id'            => 'ID użytkownika:',
+	'centralauth-admin-info-registered'    => 'Zarejestrowane:',
+	'centralauth-admin-info-locked'        => 'Zablokowane:',
+	'centralauth-admin-info-hidden'        => 'Ukryte:',
+	'centralauth-admin-yes'                => 'tak',
+	'centralauth-admin-no'                 => 'nie',
+	'centralauth-admin-attached'           => 'W pełni połączone konta',
+	'centralauth-admin-unattached'         => 'Niedołączone konta',
+	'centralauth-admin-no-unattached'      => 'Nie pozostało już żadnych niepołączonych kont.',
+	'centralauth-admin-list-localwiki'     => 'Lokalna wiki',
+	'centralauth-admin-list-attached-on'   => 'Czas dołączenia',
+	'centralauth-admin-list-method'        => 'Metoda',
 	'centralauth-admin-unmerge'            => 'Odłącz zaznaczone',
 	'centralauth-admin-merge'              => 'Przyłącz zaznaczone',
 	'centralauth-admin-bad-input'          => 'Nieprawidłowe zaznaczenia dla wykonania przyłączenia',
 	'centralauth-admin-none-selected'      => 'Nie zaznaczono kont do modyfikacji.',
+	'centralauth-seconds-ago'              => '$1 sekund temu',
+	'centralauth-minutes-ago'              => '$1 minut temu',
+	'centralauth-hours-ago'                => '$1 godzin temu',
+	'centralauth-days-ago'                 => '$1 dni temu',
+	'centralauth-months-ago'               => '$1 miesięcy temu',
+	'centralauth-years-ago'                => '$1 lat temu',
 	'centralauth-prefs-status'             => 'Status globalnego konta:',
 	'centralauth-prefs-not-managed'        => 'nie używasz globalnego konta',
 	'centralauth-prefs-unattached'         => 'Niepotwierdzone',
@@ -3442,6 +3509,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Malafaya
+ * @author Lijealso
  * @author Smeira
  */
 $messages['pt'] = array(
@@ -3517,6 +3585,7 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-admin-username'           => 'Utilizador:',
 	'centralauth-admin-lookup'             => 'Ver ou editar dados de utilizador',
 	'centralauth-admin-permission'         => 'Apenas stewards podem fundir as contas de outras pessoas.',
+	'centralauth-admin-no-unified'         => 'Nenhuma conta unificada para este nome de utilizador.',
 	'centralauth-admin-info-id'            => 'ID de utilizador:',
 	'centralauth-admin-info-registered'    => 'Registado:',
 	'centralauth-admin-yes'                => 'sim',
@@ -3678,6 +3747,7 @@ $messages['sah'] = array(
 	'centralauth-merge-step2-title'        => 'Атын ааттары бигэргэт',
 	'centralauth-merge-step2-detail'       => 'Сорох ааттар аптамаатынан талыллыбыт аакка холбоммотулар. Ол ааттар эйиэннэрэ буоллаҕына тустаах киирии тылларын киллэрэн ону бигэргэт.',
 	'centralauth-merge-step2-submit'       => 'Аат туһунан сибидиэнньэни бигэргэт',
+	'centralauth-merge-dryrun-or'          => "'''эбэтэр'''",
 	'centralauth-merge-step3-title'        => 'Соҕотох ааты оҥоруу',
 	'centralauth-merge-step3-detail'       => 'Соҕотох ааты оҥорорго бэлэм буолла. Маннык вики-бырайыактар холбоһуохтара:',
 	'centralauth-merge-step3-submit'       => 'Ааттары холбуурга',
@@ -3699,6 +3769,9 @@ $messages['sah'] = array(
 	'centralauth-list-unattached-title'    => 'Холбоспотох ааттар',
 	'centralauth-list-unattached'          => 'Манна көрдөрүллүбүт саайтарга баар "$1" эйиэнэ буолара аптамаатынан бигэргэтиллибэтэ; арааһа киирии тыллара сүрүн ааи киирии тылыттан атыннар быһыылаах:',
 	'centralauth-foreign-link'             => '$1 кыттааччы манна: $2',
+	'centralauth-merge-method-empty'       => 'тугу да суруйбатах',
+	'centralauth-merge-method-new'         => 'саҥа аат (аккаунт)',
+	'centralauth-merge-method-login'       => 'ааты бигэргэтии',
 	'centralauth-finish-title'             => 'Холбооһун түмүктэннэ/түмүктэниитэ',
 	'centralauth-finish-text'              => 'Бу ааттар эйиэннэрэ буоллаҕына холбооһуну атын ааттарга киирии тылларын суруйан түмүктүөххүн сөп:',
 	'centralauth-finish-password'          => 'Киирии тыл:',
@@ -3716,10 +3789,21 @@ $messages['sah'] = array(
 	'centralauth-admin-username'           => 'Кыттааччы аата:',
 	'centralauth-admin-lookup'             => 'Кыттааччы туһунан информацияны уларытыы эбэтэр көрүү',
 	'centralauth-admin-permission'         => 'Стюардар эрэ араас дьон ааттарын биир аакка холбуохтарын сөп.',
+	'centralauth-admin-info-id'            => 'Кыттааччы нүөмэрэ:',
+	'centralauth-admin-info-locked'        => 'Хатаммыт:',
+	'centralauth-admin-info-hidden'        => 'Кистэммит:',
+	'centralauth-admin-yes'                => 'сөп',
+	'centralauth-admin-no'                 => 'эс (суох)',
 	'centralauth-admin-unmerge'            => 'Талыллыбыты араарарга',
 	'centralauth-admin-merge'              => 'Талыллыбыты холбуурга',
 	'centralauth-admin-bad-input'          => 'Холбооһуну сыыһа талбыккын',
 	'centralauth-admin-none-selected'      => 'Уларытыллар ааттары талбатаххын.',
+	'centralauth-seconds-ago'              => '$1 сөкүүндэ ынаараа өттүгэр',
+	'centralauth-minutes-ago'              => '$1 мүнүүтэ ынараа өттүгэр',
+	'centralauth-hours-ago'                => '$1 чаас ынараа өттүгэр',
+	'centralauth-days-ago'                 => '$1 күн ынараа өттүгэр',
+	'centralauth-months-ago'               => '$1 ый ынараа өттүгэр',
+	'centralauth-years-ago'                => '$1 сыл ынараа өттүгэр',
 	'centralauth-prefs-status'             => 'Сүрүн аат туруга:',
 	'centralauth-prefs-not-managed'        => 'Сүрүн (соҕотох) аат туһаныллыбат',
 	'centralauth-prefs-unattached'         => 'Бигэргэтиллибэтэх',
@@ -4388,6 +4472,7 @@ $messages['uk'] = array(
 	'mergeaccount'                   => "Стан об'єднання облікових записів",
 	'centralauth-desc'               => "Об'єднання облікових записів на вікі-проектах Фонду «Вікімедіа»",
 	'centralauth-mergeaccount-desc'  => "[[Special:MergeAccount|Об'єднує кілька облікових записів]] у Єдиний обліковий запис користувача",
+	'centralauth-merge-denied'       => 'Вибачте, у вас недостатньо прав для доступу до цієї сторінки.',
 	'centralauth-merge-step2-submit' => 'Підтвердити інформацію про обліковий запис',
 	'centralauth-list-home-title'    => 'Домашня вікі',
 	'centralauth-finish-login'       => "Ім'я користувача",
