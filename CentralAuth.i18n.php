@@ -815,6 +815,7 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-admin-unattached'         => 'Nepřipojené účty',
 	'centralauth-admin-no-unattached'      => 'Nebývají žádné nesloučené účty.',
 	'centralauth-admin-list-localwiki'     => 'Místní wiki',
+	'centralauth-admin-list-attached-on'   => 'Připojené k',
 	'centralauth-admin-list-method'        => 'Způsob',
 	'centralauth-admin-unmerge'            => 'Rozdělit vybrané',
 	'centralauth-admin-merge'              => 'Sloučit vybrané',
@@ -843,9 +844,15 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
  * @author M.M.S.
  */
 $messages['da'] = array(
-	'centralauth-list-home-title' => 'Hjemwiki',
-	'centralauth-foreign-link'    => 'Bruger $1 på $2',
-	'centralauth-admin-username'  => 'Brugernavn:',
+	'centralauth-list-home-title'      => 'Hjemwiki',
+	'centralauth-foreign-link'         => 'Bruger $1 på $2',
+	'centralauth-merge-method-primary' => 'hjemwiki',
+	'centralauth-finish-password'      => 'Adgangskode:',
+	'centralauth-finish-login'         => 'Log på',
+	'centralauth-admin-username'       => 'Brugernavn:',
+	'centralauth-admin-info-id'        => 'Bruger-ID:',
+	'centralauth-admin-yes'            => 'ja',
+	'centralauth-admin-no'             => 'nej',
 );
 
 /** German (Deutsch)
@@ -1336,8 +1343,8 @@ Jos tämä tunnus on sinun, voi viimeistellä tunnusten yhdistämisen antamalla 
 
 /** French (Français)
  * @author Grondin
- * @author Guillom
  * @author Sherbrooke
+ * @author Guillom
  * @author Urhixidur
  * @author Seb35
  */
@@ -1432,12 +1439,12 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-admin-merge'              => 'Fusionner la sélection',
 	'centralauth-admin-bad-input'          => 'Sélection invalide',
 	'centralauth-admin-none-selected'      => 'Aucun compte sélectionné.',
-	'centralauth-seconds-ago'              => 'depuis $1 secondes',
-	'centralauth-minutes-ago'              => 'depuis $1 minutes',
-	'centralauth-hours-ago'                => 'depuis $1 heures',
-	'centralauth-days-ago'                 => 'depuis $1 jours',
+	'centralauth-seconds-ago'              => 'depuis $1 {{plural:$1|seconde|secondes}}',
+	'centralauth-minutes-ago'              => 'depuis $1 {{plural:$1|minute|minutes}}',
+	'centralauth-hours-ago'                => 'depuis $1 {{plural:$1|heure|heures}}',
+	'centralauth-days-ago'                 => 'depuis $1 {{plural:$1|jour|jours}}',
 	'centralauth-months-ago'               => 'depuis $1 mois',
-	'centralauth-years-ago'                => 'depuis $1 années',
+	'centralauth-years-ago'                => 'depuis $1 {{plural:$1|année|années}}',
 	'centralauth-prefs-status'             => 'Statut du compte unique :',
 	'centralauth-prefs-not-managed'        => 'Pas de compte unique',
 	'centralauth-prefs-unattached'         => 'Non confirmé',
@@ -3084,6 +3091,20 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebruiker $1 kan plaatselijk niet hernoemd worden omdat deze gebruiker gemigreerd is naar het systeem van samengevoegde gebruikers.</div>',
 );
 
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nn'] = array(
+	'centralauth-list-home-title'      => 'Heimwiki',
+	'centralauth-merge-method-primary' => 'heimwiki',
+	'centralauth-finish-password'      => 'Passord:',
+	'centralauth-finish-login'         => 'Logg inn',
+	'centralauth-admin-username'       => 'Brukarnamn:',
+	'centralauth-admin-info-id'        => 'Brukar-ID:',
+	'centralauth-admin-yes'            => 'ja',
+	'centralauth-admin-no'             => 'nei',
+);
+
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Atluxity
@@ -3134,7 +3155,7 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-list-attached-title'      => 'Tilkoblede kontoer',
 	'centralauth-list-attached'            => 'Kontoene ved navn «$1» på de følgende sidene har automatisk blitt slått til én konto:',
 	'centralauth-list-attached-dryrun'     => 'Kontoen ved navn «$1» på følgende sider vil kobles til den sammenslåtte kontoen automatisk:',
-	'centralauth-list-unattached-title'    => 'Ikke tilkoblede kontoer',
+	'centralauth-list-unattached-title'    => 'Ikke tilsluttede kontoer',
 	'centralauth-list-unattached'          => 'Kontoen «$1» på følgende kunne ikke automatisk stadfestes å tilhøre deg; sannsynligvis har de et annet passord enn hovedkontoen din.',
 	'centralauth-foreign-link'             => 'Bruker $1 på $2',
 	'centralauth-merge-method-primary'     => 'hjemmewiki',
@@ -3148,7 +3169,7 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-finish-text'              => 'Om disse kontoene ikke tilhører deg kan du fullføre kontosammenslåingen ved å skrive inn passordene for de andre kontoene her:',
 	'centralauth-finish-password'          => 'Passord:',
 	'centralauth-finish-login'             => 'Logg inn',
-	'centralauth-finish-send-confirmation' => 'Send passord på e-post',
+	'centralauth-finish-send-confirmation' => 'Send nytt passord',
 	'centralauth-finish-problems'          => 'Har du problemer, eller er ikke disse andre kontoene dine? [[meta:Help:Unified login problems|Hvordan finne hjelp…]]',
 	'centralauth-finish-noconfirms'        => 'Ingen kontoer kunne bekreftes med dette passordet.',
 	'centralauth-finish-incomplete'        => 'Flere kontoer ble slått sammen med dette passordet. Andre kontoer kan fortsatt ikke bekreftes.',
@@ -3500,7 +3521,7 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
  */
 $messages['ps'] = array(
 	'centralauth-finish-password'          => 'پټنوم:',
-	'centralauth-finish-login'             => 'ننوتنه',
+	'centralauth-finish-login'             => 'ننوتل',
 	'centralauth-finish-send-confirmation' => 'د برېښناليک پټنوم',
 	'centralauth-admin-username'           => 'کارن-نوم:',
 	'centralauth-prefs-count-attached'     => 'ستاسو کارن حساب په $1 پروژو باندې فعاله دی {{plural:$1|ويبځای|ويبځايونه}}.',
