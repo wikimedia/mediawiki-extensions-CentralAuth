@@ -889,7 +889,7 @@ $messages['de'] = array(
 		die entstehen können, wenn zwei Menschen denselben Benutzernamen in verschiedenen Projekten benutzen.
 
 		Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, 
-		so beeinträchtigt es diesen nicht, aber du hast du Möglichkeit, 
+		so beeinträchtigt es diesen nicht, aber du hast die Möglichkeit, 
 		später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
 
 	'centralauth-merge-step1-title'  => 'Beginn der Benutzerkonten-Zusammenführung',
@@ -908,7 +908,7 @@ $messages['de'] = array(
 	'centralauth-merge-dryrun-complete'   => 'Alle existierenden Benutzerkonten können automatisch zusammengeführt werden!
 
 	Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.',
-	'centralauth-merge-dryrun-incomplete' => "Es geht weiter, aber einige Benutzerkonten konnten nicht automatisch geprüft werden und werden nicht in diesem ersten Schritt nicht zusammengeführt.. 
+	'centralauth-merge-dryrun-incomplete' => "Es geht weiter, aber einige Benutzerkonten konnten nicht automatisch geprüft werden und werden in diesem ersten Schritt nicht zusammengeführt. 
 	Es wird dir möglich sein, diese später zusammenzuführen.
 
 	Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.",
