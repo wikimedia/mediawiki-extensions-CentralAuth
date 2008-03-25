@@ -934,7 +934,7 @@ $messages['de'] = array(
 		in allen Sprachen gültig.',
 
 	'centralauth-incomplete-text'    => 'Sobald deine Benutzerkonten zusammengeführt sind, 
-		kannst du sich auf jeder Wikimedia-Webseite anmelden ohne ein 
+		kannst du dich auf jeder Wikimedia-Webseite anmelden ohne ein 
 		neues Benutzerkonto anzulegen; derselbe Benutzernamen 
 		und dasselbe Passwort ist für Wikipedia, Wiktionary, 
 		Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
@@ -1009,6 +1009,14 @@ $messages['de'] = array(
 	'centralauth-admin-merge'         => 'Ausgewählte Benutzerkonten zusammenführen',
 	'centralauth-admin-bad-input'     => 'Ungültige Auswahl',
 	'centralauth-admin-none-selected' => 'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
+
+ 	// Pretty timespan
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|Sekunde|Sekunden}} zuvor',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|Minute|Minuten}} zuvor',
+	'centralauth-hours-ago'   => '$1 {{PLURAL:$1|Stunde|Stunden}} zuvor',
+	'centralauth-days-ago'    => '$1 {{PLURAL:$1|Tag|Tage}} zuvor',
+	'centralauth-months-ago'  => '$1 {{PLURAL:$1|Monat|Monate}} zuvor',
+	'centralauth-years-ago'   => '$1 {{PLURAL:$1|Jahr|Jahre}} zuvor',
 
 	// Info panel in preferences
        'centralauth-prefs-status'            => 'Benutzerkonten-Status:',
