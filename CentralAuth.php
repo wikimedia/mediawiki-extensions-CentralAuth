@@ -157,10 +157,16 @@ function wfCentralAuthAddNewAccount( $user ) {
  * Don't allow an attached local account to be renamed with the old system.
  */
 function wfCentralAuthRenameUserAbort( $userId, $oldName, $newName ) {
-	$central = new CentralAuthUser( $oldName );
-	if( $central->exists() && $central->isAttached() ) {
+	$oldCentral = new CentralAuthUser( $oldName );
+	if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
 		global $wgOut;
-		$wgOut->addWikiText( wfMsg( 'centralauth-renameuser-abort', $oldName ) );
+		$wgOut->addWikiMsg( 'centralauth-renameuser-abort', $oldName, $newName );
+		return false;
+	}
+	$newCentral = new CentralAuthUser( $newName );
+	if ( $newCentral->exists() ) {
+		global $wgOut;
+		$wgOut->addWikiMsg( 'centralauth-renameuser-exists', $oldName, $newName );
 		return false;
 	}
 
