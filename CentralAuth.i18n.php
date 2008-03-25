@@ -948,9 +948,8 @@ $messages['de'] = array(
 
 	// For lists of wikis/accounts:
 	'centralauth-list-home-title'    => 'Heimat-Wiki',
-	'centralauth-list-home-dryrun'   => 'Das Passwort und die E-Mail-Adresse, die du in diesem Wiki eingetragen hast, wird für die Zusammenführung der Benutzerkonten verwendet 
-		und deine Benutzerseite wird automatisch von den anderen Wikis verlinkt. 
-		Du kannst später dein Heimat-Wiki noch ändern.',
+	'centralauth-list-home-dryrun'   => 'Das Passwort und die E-Mail-Adresse, die du in diesem Wiki eingetragen hast, wird für die Zusammenführung der Benutzerkonten verwendet.
+		Du kannst dein Heimat-Wiki später noch ändern.',
 
 	'centralauth-list-attached-title'   => 'Zusammengeführte Benutzerkonten',
 	'centralauth-list-attached'         => 'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten werden automatisch zusammengeführt:',
@@ -1017,6 +1016,10 @@ $messages['de'] = array(
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort'       => "<div class=\"errorbox\">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>",
+	'centralauth-renameuser-exists'      => "<div class=\"errorbox\">Benutzer $2 kann nicht umbenannt werden, da dieser Benutzername als globales Benutzerkonto reserviert ist.</div>",
+
+	// Other messages
+	'centralauth-account-exists'         => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
 );
 
 /** Ewe (Eʋegbe)
