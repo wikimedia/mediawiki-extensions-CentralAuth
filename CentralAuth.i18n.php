@@ -72,7 +72,7 @@ If this is you, you can finish the login unification process simply by typing th
 
 	// For lists of wikis/accounts:
 	'centralauth-list-home-title'       => 'Home wiki',
-	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account, and your user page here will be automatically linked to from other wikis.
+	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account.
 You will be able to change which is your home wiki later.',
 	'centralauth-list-attached-title'   => 'Attached accounts',
 	'centralauth-list-attached'         => 'The account named "$1" on each the following sites have been automatically attached to the unified account:',
@@ -159,6 +159,9 @@ If the global account is yours too, you can merge this account if you type the g
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Cannot rename user $1 locally as this username has been migrated to the unified login system.</div>",
 	'centralauth-renameuser-exists' => "<div class=\"errorbox\">Cannot rename user $2 as this username is reserved for a global account.</div>",
+
+	// Other messages
+	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 );
 
 /** Afrikaans (Afrikaans)

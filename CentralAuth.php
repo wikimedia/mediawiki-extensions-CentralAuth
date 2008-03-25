@@ -63,6 +63,7 @@ $wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
 $wgHooks['AddNewAccount'][] = 'wfCentralAuthAddNewAccount';
 $wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
+$wgHooks['AbortNewAccount'][] = 'wfCentralAuthAbortNewAccount';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserAbort'][] = 'wfCentralAuthRenameUserAbort';
@@ -76,7 +77,7 @@ $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 
 function wfSetupCentralAuth() {
 	wfLoadExtensionMessages('SpecialCentralAuth');
-	}
+}
 
 function wfSetupCentralAuthPlugin( &$auth ) {
 	$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
@@ -189,3 +190,13 @@ function wfCentralAuthRenameUserComplete( $userId, $oldName, $newName ) {
 
 	return true;
 }
+
+function wfCentralAuthAbortNewAccount( $user, &$abortError ) {
+	$centralUser = new CentralAuthUser( $user->getName() );
+	if ( $centralUser->exists() ) {
+		$abortError = wfMsg( 'centralauth-account-exists' );
+		return false;
+	}
+	return true;
+}
+
