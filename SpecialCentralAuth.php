@@ -30,7 +30,10 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
-		$this->mUserName = $wgRequest->getText( 'target', $subpage );
+		$this->mUserName =
+			trim(
+				str_replace( '_', ' ',
+					$wgRequest->getText( 'target', $subpage ) ) );
 
 		$this->mAttemptMerge = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
