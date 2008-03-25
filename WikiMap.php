@@ -5,7 +5,7 @@
  */
 
 class WikiMap {
-	function byDatabase( $dbname ) {
+	static function byDatabase( $dbname ) {
 		global $wgConf, $IP;
 
 		// This is a damn dirty hack
