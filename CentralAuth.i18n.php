@@ -120,7 +120,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-lookup'           => 'View or edit user data',
 	'centralauth-admin-permission'       => "Only stewards may merge other people's accounts for them.",
 	'centralauth-admin-no-unified'       => 'No unified account for this username.',
-	'centralauth-admin-info-id'          => 'User id:',
+	'centralauth-admin-info-id'          => 'User ID:',
 	'centralauth-admin-info-registered'  => 'Registered:',
 	'centralauth-admin-info-locked'      => 'Locked:',
 	'centralauth-admin-info-hidden'      => 'Hidden:',
@@ -138,12 +138,12 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-none-selected'    => 'No accounts selected to modify.',
 
 	// Pretty timespan
-	'centralauth-seconds-ago' => '$1 seconds ago',
-	'centralauth-minutes-ago' => '$1 minutes ago',
-	'centralauth-hours-ago'   => '$1 hours ago',
-	'centralauth-days-ago'    => '$1 days ago',
-	'centralauth-months-ago'  => '$1 months ago',
-	'centralauth-years-ago'   => '$1 years ago',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minute|minutes}} ago',
+	'centralauth-hours-ago'   => '$1 {{PLURAL:$1|hour|hours}} ago',
+	'centralauth-days-ago'    => '$1 {{PLURAL:$1|day|days}} ago',
+	'centralauth-months-ago'  => '$1 {{PLURAL:$1|month|months}} ago',
+	'centralauth-years-ago'   => '$1 {{PLURAL:$1|year|years}} ago',
 
 	// Info panel in preferences
 	'centralauth-prefs-status'            => 'Global account status:',
