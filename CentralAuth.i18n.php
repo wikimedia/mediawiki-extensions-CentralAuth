@@ -68,7 +68,7 @@ If this is you, you can finish the login unification process simply by typing th
 	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled. Sorry!",
 
 	// Appended to various messages above
-	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|Read more about '''unified login''']]...''",
+	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|Read more about '''unified login''']]…''",
 
 	// For lists of wikis/accounts:
 	'centralauth-list-home-title'       => 'Home wiki',
@@ -98,12 +98,12 @@ most likely they have a different password from your primary account:',
 	'centralauth-finish-login'             => 'Login',
 	'centralauth-finish-send-confirmation' => 'E-mail password',
 	'centralauth-finish-problems'          => "Having trouble, or don't own these other accounts?
-[[meta:Help:Unified login problems|How to find help]]...",
+[[meta:Help:Unified login problems|How to find help]]…",
 	'centralauth-finish-noconfirms'        => 'No accounts could be confirmed using this password.',
 	'centralauth-finish-incomplete'        => 'Several accounts were merged using this password.
 Other accounts are not yet confirmed.',
 
-	'centralauth-merge-attempt' => "'''Checking provided password against remaining unmerged accounts...'''",
+	'centralauth-merge-attempt' => "'''Checking provided password against remaining unmerged accounts…'''",
 
 	# When unattached, offer to attach...
 	'centralauth-attach-list-attached' => 'The unified account named "$1" includes the following accounts:',
