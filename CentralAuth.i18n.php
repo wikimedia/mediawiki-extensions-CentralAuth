@@ -19,7 +19,7 @@ $messages['en'] = array(
 	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
 	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to Wikimedia's unified login system.'''
 
-If you choose to migrate your accounts, you'll be able to use the same username and password to log in to all of Wikimedia's project wikis in all available languages.
+If you choose to migrate your accounts, you will be able to use the same username and password to log in to all of Wikimedia's project wikis in all available languages.
 This makes it easier to work with shared projects such as uploading to [http://commons.wikimedia.org/ Wikimedia Commons], and avoids the confusion or conflict that could result from two people picking the same username on different projects.
 
 If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
@@ -30,7 +30,7 @@ No changes will be made until you have confirmed that things look ok.',
 	'centralauth-merge-step1-submit' => 'Confirm login information',
 
 	'centralauth-merge-step2-title'  => 'Confirm more accounts',
-	'centralauth-merge-step2-detail' => "Some of the accounts couldn't be automatically matched to the designated home wiki.
+	'centralauth-merge-step2-detail' => "Some of the accounts could not be automatically matched to the designated home wiki.
 If these accounts belong to you, you can confirm that they are yours by providing the password for them.",
 	'centralauth-merge-step2-submit' => 'Confirm login information',
 
@@ -38,11 +38,12 @@ If these accounts belong to you, you can confirm that they are yours by providin
 	'centralauth-merge-dryrun-complete'   => 'All existing accounts can be automatically unified!
 
 No changes have been made to your accounts yet.',
-	'centralauth-merge-dryrun-incomplete' => "You're set to continue, but some accounts could not be automatically verified and won't be migrated immediately. You will be able to merge these later.
+	'centralauth-merge-dryrun-incomplete' => "You are set to continue, but some accounts could not be automatically verified and will not be migrated immediately.
+You will be able to merge these later.
 
 No changes have been made to your accounts yet.",
 	'centralauth-merge-dryrun-or'         => "'''or'''",
-	'centralauth-merge-dryrun-home'       => "The migration system couldn't confirm that you're the owner of the home wiki account for your username.
+	'centralauth-merge-dryrun-home'       => "The migration system could not confirm that you're the owner of the home wiki account for your username.
 
 Another wiki was determined as the home account for your username; follow the link below and log in there to finish your account migration.",
 
@@ -97,7 +98,7 @@ most likely they have a different password from your primary account:',
 	'centralauth-finish-password'          => 'Password:',
 	'centralauth-finish-login'             => 'Login',
 	'centralauth-finish-send-confirmation' => 'E-mail password',
-	'centralauth-finish-problems'          => "Having trouble, or don't own these other accounts?
+	'centralauth-finish-problems'          => "Are you having trouble, or are you not the owner of these other accounts?
 [[meta:Help:Unified login problems|How to find help]]…",
 	'centralauth-finish-noconfirms'        => 'No accounts could be confirmed using this password.',
 	'centralauth-finish-incomplete'        => 'Several accounts were merged using this password.
