@@ -1846,7 +1846,7 @@ $messages['he'] = array(
 
 	# For lists of wikis/accounts:
 	'centralauth-list-home-title'       => 'האתר הראשי',
-	'centralauth-list-home-dryrun'      => 'הסיסמה וכתובת הדוא"ל שהוגדרו באתר הזה יהיו בשימוש עבור החשבון הממוזג שלכם, ויהיה קישור אוטומטי לדף המשתמש שלכם מאתרים אחרים. תוכלו לשנות את האתר הראשי שלכם מאוחר יותר.',
+	'centralauth-list-home-dryrun'      => 'הסיסמה וכתובת הדוא"ל שהוגדרו באתר הזה יהיו בשימוש עבור החשבון הממוזג שלכם. תוכלו לשנות את האתר הראשי שלכם מאוחר יותר.',
 	'centralauth-list-attached-title'   => 'חשבונות ממוזגים',
 	'centralauth-list-attached'         => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים מוזגו באופן אוטומטי:',
 	'centralauth-list-attached-dryrun'  => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים ימוזגו באופן אוטומטי:',
@@ -1907,12 +1907,12 @@ $messages['he'] = array(
 	'centralauth-admin-none-selected'    => 'לא נבחרו חשבונות לשינוי.',
 
 	# Pretty timespan
-	'centralauth-seconds-ago' => 'לפני $1 שניות',
-	'centralauth-minutes-ago' => 'לפני $1 דקות',
-	'centralauth-hours-ago'   => 'לפני $1 שעות',
-	'centralauth-days-ago'    => 'לפני $1 ימים',
-	'centralauth-months-ago'  => 'לפני $1 חודשים',
-	'centralauth-years-ago'   => 'לפני $1 שנים',
+	'centralauth-seconds-ago' => 'לפני {{plural:$1|שנייה|$1 שניות}}',
+	'centralauth-minutes-ago' => 'לפני {{plural:$1|דקה|$1 דקות}}',
+	'centralauth-hours-ago'   => 'לפני {{plural:$1|שעה|$1 שעות|שעתיים}}',
+	'centralauth-days-ago'    => 'לפני {{plural:$1|יום|$1 ימים|יומיים}}',
+	'centralauth-months-ago'  => 'לפני {{plural:$1|חודש|$1 חודשים|חודשיים}}',
+	'centralauth-years-ago'   => 'לפני {{plural:$1|שנה|$1 שנים|שנתיים}}',
 
 	# Info panel in preferences
 	'centralauth-prefs-status'            => 'מצב החשבון הכללי:',
@@ -1926,7 +1926,11 @@ $messages['he'] = array(
 	'centralauth-prefs-manage'            => 'ניהול החשבון הכללי',
 
 	# Interaction with Special:Renameuser
-	'centralauth-renameuser-abort' => '<div class="errorbox">לא ניתן לשנות את שם המשתמש של $1 באופן מקומי, כיוון שהוא כבר התווסף למערכת החשבונות הממוזגים.</div>',
+	'centralauth-renameuser-abort'  => '<div class="errorbox">לא ניתן לשנות את שם המשתמש של $1 באופן מקומי, כיוון שהוא כבר התווסף למערכת החשבונות הממוזגים.</div>',
+	'centralauth-renameuser-exists' => '<div class="errorbox">לא ניתן לשנות את שם המשתמש ל"$2" כיוון שהוא שמור לחשבון כללי.</div>',
+
+	# Other messages
+	'centralauth-account-exists'     => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
 );
 
 /** Croatian (Hrvatski)
