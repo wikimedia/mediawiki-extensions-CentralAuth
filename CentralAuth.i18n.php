@@ -683,13 +683,21 @@ Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer ; ki
 Mont a raio an hevelep ger-tremen en-dro war Wikipedia, Wikeriadur, Wikilevrioù hag ar raktresoù kar all en holl yezhoù.',
 	'centralauth-incomplete-text'          => "Pa vo bet unvanet ho kontoù e c'hallot en em lugañ war ne vern pe raktres eus Wikimedia hep bezañ rediet da grouiñ ur gont nevez;
 mont a raio an hevelep ger-tremen en-dro war Wikipedia, wikilevrioù, hag ar raktresoù kar all en holl yezhoù.",
+	'centralauth-not-owner-text'           => 'Staget eo bet ent emgefre an anv implijer "$1" ouzh perc\'henn ar gont $2.
+
+Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh unvaniñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>Mod demo hepken</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => "An unvaniñ kontoù zo er mod arnodiñ / dizreinañ evit poent, setu n'haller ket c'hoazh unvaniñ kontoù da vat. Hon digarezit !",
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Gouzout hiroc'h diwar-benn '''ar gont unvan''']]…''",
 	'centralauth-list-home-title'          => 'Pennraktres',
+	'centralauth-list-home-dryrun'         => "Ar ger-tremen hag ar chomlec'h postel merket evit ar wiki-mañ eo a vo implijet evit ho kont unvanet.
+Gouest e viot da cheñch pehini eo ho raktres pennañ diwezhatoc'h.",
 	'centralauth-list-attached-title'      => 'Kontoù stag',
 	'centralauth-list-attached'            => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
 	'centralauth-list-attached-dryrun'     => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
 	'centralauth-list-unattached-title'    => 'Kontoù distag',
+	'centralauth-list-unattached'          => "N'eus ket bet gallet kadarnaat ent emgefre eo deoc'h ar c'hontoù \"\$1\" war al lec'hiennoù da-heul;
+evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont pennañ :",
 	'centralauth-foreign-link'             => 'Implijer $1 war $2',
 	'centralauth-merge-method-primary'     => 'penn wiki',
 	'centralauth-merge-method-empty'       => 'degasadenn ebet',
@@ -699,13 +707,20 @@ mont a raio an hevelep ger-tremen en-dro war Wikipedia, wikilevrioù, hag ar rak
 	'centralauth-merge-method-new'         => 'kont nevez',
 	'centralauth-merge-method-login'       => "kadarnaet p'en em luger",
 	'centralauth-finish-title'             => 'Echuiñ an unvaniñ',
+	'centralauth-finish-text'              => "Mard oc'h perc'henn war ar c'hontoù-se e c'hallit echuiñ an unvaniñ en ur verkañ ar gerioù-tremen evito amañ dindan :",
 	'centralauth-finish-password'          => 'Ger-tremen :',
 	'centralauth-finish-login'             => 'Kont implijer :',
 	'centralauth-finish-send-confirmation' => 'Kas ar ger-tremen dre bostel',
+	'centralauth-finish-problems'          => "Ma c'hoarvez kudennoù pe ma noc'h ket perc'henn war ar c'hontoù-se, 
+sellit ouzh [[meta:Help:Unified login problems|Penaos bezañ skoazellet]]…",
 	'centralauth-finish-noconfirms'        => "N'eus bet gallet kadarnaat kont ebet gant ar ger-tremen-se.",
+	'centralauth-finish-incomplete'        => "Meur a gont zo bet unvanet en ur implijout ar ger-tremen-se.
+Kontoù all n'int ket bet kadarnaet avat.",
 	'centralauth-merge-attempt'            => "'''O wiriañ ar ger-tremen roet evit ar c'hontoù chomet a-ziforc'h…'''",
 	'centralauth-attach-list-attached'     => 'Er gont unvan anvet "$1" e kaver ar c\'hontoù-mañ :',
 	'centralauth-attach-title'             => 'Kadarnaat ar gont',
+	'centralauth-attach-text'              => "N'eo ket bet treuzkaset ar gont-mañ d'ar gont unvanet c'hoazh.
+Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur verkañ ger-tremen ar gont hollek :",
 	'centralauth-attach-submit'            => "Treuzkas ar c'hontoù",
 	'centralauth-attach-success'           => "Treuzkaset eo bet ar gont d'ar gont unvan.",
 	'centralauth'                          => "Mererezh ar c'hontoù unvanet",
@@ -1226,6 +1241,7 @@ $messages['ee'] = array(
  * @author Lou
  * @author ZaDiak
  * @author Consta
+ * @author Flyax
  */
 $messages['el'] = array(
 	'mergeaccount'                         => 'Κατάσταση της ενοποίησης λογαριασμών',
@@ -1280,7 +1296,7 @@ $messages['el'] = array(
 	'centralauth-merge-method-empty'       => 'καμία συνεισφορά',
 	'centralauth-merge-method-mail'        => 'επιβεβαιώθηκε μέσω ηλεκτρονικής διεύθυνσης',
 	'centralauth-merge-method-password'    => 'επιβεβαιώθηκε μέσω κωδικού πρόσβασης',
-	'centralauth-merge-method-admin'       => 'Συγχωνεμένος λογαριασμός λόγω ιδιότητας διαχειριστή',
+	'centralauth-merge-method-admin'       => 'Συγχωνευμένος λογαριασμός λόγω ιδιότητας διαχειριστή',
 	'centralauth-merge-method-new'         => 'νέος λογαριασμός',
 	'centralauth-merge-method-login'       => 'επιβεβαιώθηκε κάνοντας σύνδεση',
 	'centralauth-finish-title'             => 'Ολοκλήρωση της συγχώνευσης',
@@ -1330,7 +1346,7 @@ $messages['el'] = array(
 	'centralauth-prefs-unattached'         => 'Δεν έχει επιβεβαιωθεί',
 	'centralauth-prefs-complete'           => 'Όλα εντάξει!',
 	'centralauth-prefs-migration'          => 'Η μετακίνηση βρίσκεται σε εξέλιξη',
-	'centralauth-prefs-count-attached'     => 'Ο λογαριασμός σας είναι ενεργός σε $1 εγχείρημα {{plural:$1|ιστοχώρο|ιστοχώρους}}.',
+	'centralauth-prefs-count-attached'     => 'Ο λογαριασμός σας είναι ενεργός σε $1 {{plural:$1|εγχείρημα|εγχειρήματα}}.',
 	'centralauth-prefs-count-unattached'   => 'Παραμένουν ανεπιβεβαίωτοι λογαριασμοί με το όνομά σας σε $1 {{plural:$1|εγχείρημα|εγχειρήματα}}.',
 	'centralauth-prefs-detail-unattached'  => 'Δεν έχει επιβεβαιωθεί ότι αυτό το εγχείρημα ανήκει στον καθολικό λογαριασμό.',
 	'centralauth-prefs-manage'             => 'Διαχείριση του καθολικού σας λογαριασμού',
@@ -2947,9 +2963,13 @@ $messages['la'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'centralauth-desc'                     => 'Benotzerkonten op de Wikien vun der Wikimedia Fondatioun [[Special:MergeAccount|zesummeleeën]]',
+	'centralauth-mergeaccount-desc'        => "[[Special:MergeAccount|Zusammenleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
+	'centralauth-merge-denied'             => 'Pardon, dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
 	'centralauth-merge-dryrun-or'          => "'''oder'''",
 	'centralauth-list-home-title'          => 'Heemechts-Wiki',
 	'centralauth-foreign-link'             => 'Benotzer $1 op $2',
+	'centralauth-merge-method-empty'       => 'Keng Kontributiounen',
 	'centralauth-merge-method-new'         => 'Neie Benotzerkont',
 	'centralauth-finish-password'          => 'Passwuert:',
 	'centralauth-finish-login'             => 'Umeldung',
@@ -3100,6 +3120,9 @@ $messages['ml'] = array(
 	'centralauth-admin-info-registered'    => 'രജിസ്റ്റേ‌ര്‍‌ഡ്:',
 	'centralauth-admin-yes'                => 'ശരി',
 	'centralauth-admin-no'                 => 'തെറ്റ്',
+	'centralauth-admin-unmerge'            => 'തിരഞ്ഞെടുത്തവ വിഭജിക്കുക',
+	'centralauth-admin-merge'              => 'തിരഞ്ഞെടുത്തവ സം‌യോജിപ്പിക്കുക',
+	'centralauth-admin-bad-input'          => 'സം‌യോജിപ്പിക്കുവാന്‍ തിരഞ്ഞെടുത്തവ അസാധുവാണ്‌',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|സെക്കന്റിനു|സെക്കന്റുകള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|മിനിറ്റിനു|മിനിറ്റുകള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|മണിക്കൂറിനു|മണിക്കൂറുകള്‍ക്കു}} മുന്‍പ്',
@@ -4694,15 +4717,16 @@ Engké, anjeun bakal bisa milih wiki asal anjeun.',
  * @author Lejonel
  * @author Sannab
  * @author M.M.S.
+ * @author Leo Johannes
  * @author Micke
  * @author Siebrand
  * @author Habj
  */
 $messages['sv'] = array(
-	'mergeaccount'                         => 'Status för sammanslagen inloggning',
+	'mergeaccount'                         => 'Status för gemensam inloggning',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Sammanfogar användarkonton]] på Wikimedia Foundations olika wikier till ett konto',
-	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Sammanfogar flera konton]] för Single User Login',
-	'centralauth-merge-denied'             => 'Du har tyvärr inte behörighet att använda den här sidan.',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Sammanfogar flera konton]] för gemensam inloggning',
+	'centralauth-merge-denied'             => 'Du har tyvärr inte åtkomstsbehörighet till denna sida.',
 	'centralauth-merge-notlogged'          => 'Du måste <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
 	'centralauth-merge-welcome'            => "'''Ditt konto har ännu inte flyttats över till Wikimedias gemensamma inloggningssystem.'''
 
@@ -4714,8 +4738,8 @@ Om någon annan redan har tagit ditt användarnamn på ett annat projekt så på
 	'centralauth-merge-step1-detail'       => 'Ditt lösenord och din e-postadress kommer kontrolleras mot användarkonton på andra wikier för att bekräfta att de stämmer överens. Inga ändringar kommer att genomföras innan du bekräftar att allting ser riktigt ut.',
 	'centralauth-merge-step1-submit'       => 'Bekräfta lösenord',
 	'centralauth-merge-step2-title'        => 'Bekräfta fler konton',
-	'centralauth-merge-step2-detail'       => 'Några av konton kunde inte automatiskt matchas med kontot på den wiki som utsetts till hemwiki. Om dessa konton tillhör dig, så kan du bekräfta det genom att ange lösenorden för dem.',
-	'centralauth-merge-step2-submit'       => 'Bekräfta lösenord',
+	'centralauth-merge-step2-detail'       => 'Några av kontona kunde inte automatiskt matchas med kontot på den wiki som utsetts till hemwiki. Om dessa konton tillhör dig kan du bekräfta det genom att ange lösenorden för dem.',
+	'centralauth-merge-step2-submit'       => 'Bekräfta inloggningsinformation',
 	'centralauth-merge-dryrun-complete'    => 'Alla existerande konton kan automatiskt slås samman!
 
 Inga ändringar av dina konton har gjorts än.',
@@ -4726,10 +4750,10 @@ Inga ändringar av dina konton har gjorts än.',
 	'centralauth-merge-dryrun-home'        => 'Systemet för kontosammanslagning kunde inte bekräfta att du är ägaren till kontot på användarnamnets hemwiki.
 
 En annan wiki har utsetts till hemwiki för ditt användarnamn. Följ länken härunder och logga in där för att slutföra sammanslagningen av dina konton.',
-	'centralauth-merge-step3-title'        => 'Skapa sammanslaget konto',
+	'centralauth-merge-step3-title'        => 'Skapa gemensamt konto',
 	'centralauth-merge-step3-detail'       => 'Du kan nu skapa ditt gemensamma användarkonto, med följande wikier anslutna:',
-	'centralauth-merge-step3-submit'       => 'Förena konton',
-	'centralauth-complete'                 => 'Dina användarkonton har slagits ihop.',
+	'centralauth-merge-step3-submit'       => 'Slå samman konton',
+	'centralauth-complete'                 => 'Dina användarkonton har slagits ihop!',
 	'centralauth-incomplete'               => 'Sammanslagning av inloggning är inte fullständig!',
 	'centralauth-complete-text'            => 'Du kan nu logga in på alla Wikimedias wikier utan att skapa nya konton. Samma användarnamn och lösenord kommer fungera på alla språkversioner av Wikipedia, Wiktionary, Wikibooks och deras systerprojekt.',
 	'centralauth-incomplete-text'          => 'När du har gemensam inloggning kommer du kunna logga in på alla Wikimedias wikier utan att skapa nya konton. Samma användarnamn och lösenord kommer fungera på alla språkversioner av Wikipedia, Wiktionary, Wikibooks och deras systerprojekt.',
@@ -4766,14 +4790,14 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-merge-attempt'            => "'''Kontrollerar det angivna lösenordet mot återstående oanslutna konton...'''",
 	'centralauth-attach-list-attached'     => 'Det gemensamma kontot med namnet "$1" omfattar följande konton:',
 	'centralauth-attach-title'             => 'Bekräfta konto',
-	'centralauth-attach-text'              => 'Detta konto har ännu inte anslutits till det gemensamma kontot. Om det globala kontot är ditt, så kan du ansluta det här kontot genom att ange det globala kontots lösenord:',
+	'centralauth-attach-text'              => 'Detta konto har ännu inte anslutits till det gemensamma kontot. Om det gemensamma kontot är ditt, så kan du ansluta det här kontot genom att ange det gemensamma kontots lösenord:',
 	'centralauth-attach-submit'            => 'Anslut konto',
 	'centralauth-attach-success'           => 'Kontot har anslutits till det gemensamma kontot.',
 	'centralauth'                          => 'Administration av gemensam inloggning',
 	'centralauth-admin-manage'             => 'Hantera användardata',
 	'centralauth-admin-username'           => 'Användarnamn:',
 	'centralauth-admin-lookup'             => 'Visa eller redigera användardata',
-	'centralauth-admin-permission'         => 'Endast stewarder kan sammanfoga andra användares konton åt dem.',
+	'centralauth-admin-permission'         => 'Endast stewarder kan slå samman andra användares konton åt dem.',
 	'centralauth-admin-no-unified'         => 'Det finns inget gemensamt konto med det användarnamnet',
 	'centralauth-admin-info-id'            => 'Användar-ID:',
 	'centralauth-admin-info-registered'    => 'Registrerad:',
@@ -4788,7 +4812,7 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-admin-list-attached-on'   => 'Anslutningsdatum',
 	'centralauth-admin-list-method'        => 'Metod',
 	'centralauth-admin-unmerge'            => 'Åtskilj valda',
-	'centralauth-admin-merge'              => 'Sammanfoga valda',
+	'centralauth-admin-merge'              => 'Slå samman valda',
 	'centralauth-admin-bad-input'          => 'Ogiltigt val för sammanslagning',
 	'centralauth-admin-none-selected'      => 'Har inte valt några konton att modifiera.',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|sekund|sekunder}} sedan',
@@ -4797,7 +4821,7 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-days-ago'                 => '$1 {{PLURAL:$1|dag|dagar}} sedan',
 	'centralauth-months-ago'               => '$1 {{PLURAL:$1|månad|månader}} sedan',
 	'centralauth-years-ago'                => '$1 {{PLURAL:$1|år|år}} sedan',
-	'centralauth-prefs-status'             => 'Status för globalt konto:',
+	'centralauth-prefs-status'             => 'Status för gemensamt konto:',
 	'centralauth-prefs-not-managed'        => 'Använder inte gemensamt konto',
 	'centralauth-prefs-unattached'         => 'Obekräftat',
 	'centralauth-prefs-complete'           => 'Allt är i ordning!',
@@ -4805,10 +4829,10 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-prefs-count-attached'     => 'Ditt konto är aktivt på $1 projekt.',
 	'centralauth-prefs-count-unattached'   => 'Obekräftade konton med ditt namn finns fortfarande på $1 projekt.',
 	'centralauth-prefs-detail-unattached'  => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
-	'centralauth-prefs-manage'             => 'Hantera ditt globala konto',
+	'centralauth-prefs-manage'             => 'Hantera ditt gemensamma konto',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Det går inte att döpa om användare $1 lokalt eftersom användarnamnet har anslutits till systemet för gemensam inloggning.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Kan inte byta namn på användare $2 eftersom detta användarnamn är reserverat för ett globalt konto.</div>',
-	'centralauth-account-exists'           => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett globalt konto.',
+	'centralauth-renameuser-exists'        => '<div class="errorbox">Kan inte byta namn på användare $2 eftersom detta användarnamn är reserverat för ett gemensamt konto.</div>',
+	'centralauth-account-exists'           => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
 );
 
 /** Tamil (தமிழ்)
@@ -5624,7 +5648,6 @@ $messages['zh-hans'] = array(
  * @suthor Πrate (百楽兎)
  */
 $messages['zh-hant'] = array(
-	// When not logged in...
 	'mergeaccount'                         => '使用者帳號整合',
 	'centralauth-desc'                     => '[[Special:MergeAccount|整合]]所有維基媒體計劃的帳號',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|將多個帳號合併]]為單一使用者帳號',
@@ -5640,17 +5663,13 @@ $messages['zh-hant'] = array(
 這也能避免在不同的計劃中，兩位不同的使用者因選擇相同名稱而造成的混淆與衝突。
 
 如果在另一個計劃上已經有其他人選擇了您的用戶名，他們也不會受到干擾。不過您可以請求該計劃的管理員進行協商或解決。",
-
 	'centralauth-merge-step1-title'        => '開始登入整合',
 	'centralauth-merge-step1-detail'       => '您的密碼以及電子郵件地址將會與其他計劃的資料進行比對，以確認它們是一致的。所有資料在您確認沒有問題之前均不會更改。',
 	'centralauth-merge-step1-submit'       => '確認登入資料',
-
 	'centralauth-merge-step2-title'        => '確認更多帳號',
 	'centralauth-merge-step2-detail'       => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。
 ',
 	'centralauth-merge-step2-submit'       => '確認登入資料',
-
-	// Dry run messages
 	'centralauth-merge-dryrun-complete'    => '所有已存在的的帳號都能被自動整合！
 
 目前尚未對您的帳號進行任何修改。',
@@ -5658,15 +5677,14 @@ $messages['zh-hant'] = array(
 
 目前尚未對您的帳號進行任何修改。',
 	'centralauth-merge-dryrun-or'          => "'''或者是'''",
+	'centralauth-merge-dryrun-home'        => '遷移系統無法從主維基站確認您是這個名稱的擁有者。
+
+已有其他維基站使用此名稱；請參閱以下的連結和記錄以完成帳號遷移。',
 	'centralauth-merge-step3-title'        => '建立整合帳號',
 	'centralauth-merge-step3-detail'       => '您已經準備好在已加入的計劃中建立一個整合帳號：',
 	'centralauth-merge-step3-submit'       => '整合帳號',
-
-	// Big text on completion
 	'centralauth-complete'                 => '帳號整合完成！',
 	'centralauth-incomplete'               => '帳號整合未完成！',
-
-	// Wheeee
 	'centralauth-complete-text'            => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
 	'centralauth-incomplete-text'          => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
 	'centralauth-not-owner-text'           => '使用者名稱："$1"已自動分配給$2上的帳號。
@@ -5675,11 +5693,7 @@ $messages['zh-hant'] = array(
 	'centralauth-notice-dryrun'            => "<div class='successbox'>目前為示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => '目前為示範模式，
 實際的整合動作已停用。',
-
-	// Appended to various messages above
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
-
-	// For lists of wikis/accounts:
 	'centralauth-list-home-title'          => '主要維基計劃',
 	'centralauth-list-home-dryrun'         => '您在這個計劃中使用的密碼以及電子郵件地址將會用來做您的整合帳號，同時您在這裡的用戶頁會由其它的計劃中自動連結過來。您可以稍後更改你的主要項目。',
 	'centralauth-list-attached-title'      => '已經附加的帳號',
@@ -5689,8 +5703,6 @@ $messages['zh-hant'] = array(
 	'centralauth-list-unattached'          => '以下網站的帳號"$1"無法自動整合；很可能是因為它們的密碼
 和您的主帳號不同：',
 	'centralauth-foreign-link'             => '$2 上的 $1',
-
-	// Merge methods
 	'centralauth-merge-method-primary'     => '主帳號',
 	'centralauth-merge-method-empty'       => '沒有任何貢獻',
 	'centralauth-merge-method-mail'        => '經電子郵件確認',
@@ -5698,8 +5710,6 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-method-admin'       => '管埋整合帳號',
 	'centralauth-merge-method-new'         => '新帳號',
 	'centralauth-merge-method-login'       => '經登入確認',
-
-	// When not complete, offer to finish...
 	'centralauth-finish-title'             => '完成整合',
 	'centralauth-finish-text'              => '如果這些帳號屬於您，請輸入這些帳號的密碼，以完成帳號整合：',
 	'centralauth-finish-password'          => '密碼：',
@@ -5709,17 +5719,12 @@ $messages['zh-hant'] = array(
 [[meta:Help:Unified login problems|如何尋求協助]]...',
 	'centralauth-finish-noconfirms'        => '沒有帳號可經密碼確認。',
 	'centralauth-finish-incomplete'        => '部份帳號已經由密碼整合，其他帳號尚未確認。',
-
-	'centralauth-merge-attempt' => "'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
-
-	# When unattached, offer to attach...
+	'centralauth-merge-attempt'            => "'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
 	'centralauth-attach-list-attached'     => '整合帳戶"$1"中包含以下帳戶：',
 	'centralauth-attach-title'             => '確認帳號',
 	'centralauth-attach-text'              => '這個帳戶尚未被遷移到整合帳戶中，如果您已經擁有一個整合帳戶，您可能在此輸入該整合帳戶的密碼以遷移此帳戶：',
 	'centralauth-attach-submit'            => '遷移帳號',
 	'centralauth-attach-success'           => '該帳戶已被遷移到整合帳戶中。',
-
-	// Administrator's console
 	'centralauth'                          => '統一帳戶管理',
 	'centralauth-admin-manage'             => '管理使用者資料',
 	'centralauth-admin-username'           => '使用者名稱：',
@@ -5742,16 +5747,12 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-merge'              => '整合已選取的',
 	'centralauth-admin-bad-input'          => '不正確的整合選擇',
 	'centralauth-admin-none-selected'      => '選擇的帳戶沒有被修改。',
-
-	// Pretty timespan
 	'centralauth-seconds-ago'              => '$1秒前',
 	'centralauth-minutes-ago'              => '$1分鐘前',
 	'centralauth-hours-ago'                => '$1小時前',
 	'centralauth-days-ago'                 => '$1日前',
 	'centralauth-months-ago'               => '$1月前',
 	'centralauth-years-ago'                => '$1年前',
-
-	// Info panel in preferences
 	'centralauth-prefs-status'             => '整合帳戶狀態：',
 	'centralauth-prefs-not-managed'        => '不是正在使用統一帳戶',
 	'centralauth-prefs-unattached'         => '未確認',
@@ -5761,12 +5762,8 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-count-unattached'   => '您在$1個計劃中還有未確認的帳戶。',
 	'centralauth-prefs-detail-unattached'  => '這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage'             => '管理您的全域帳戶',
-
-	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort'         => '<div class="errorbox">由於這個用戶名已經遷移到統一登入系統，因此不能在本地中更改$1作為這個用戶名。</div>',
-	'centralauth-renameuser-exists'       => "<div class=\"errorbox\">由於這個用戶名已經預留給全域帳戶，因此不能在更改$2作為這個用戶名。</div>",
-
-	// Other messages
+	'centralauth-renameuser-exists'        => '<div class="errorbox">由於這個用戶名已經預留給全域帳戶，因此不能在更改$2作為這個用戶名。</div>',
 	'centralauth-account-exists'           => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 );
 
