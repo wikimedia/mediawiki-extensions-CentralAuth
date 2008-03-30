@@ -11,35 +11,6 @@ likely construction types...
 
 */
 
-class CentralAuthHelper {
-	private static $connections = array();
-
-	public static function get( $dbname ) {
-		global $wgDBname;
-		if( $dbname == $wgDBname ) {
-			return wfGetDB( DB_MASTER );
-		}
-
-		global $wgDBuser, $wgDBpassword;
-		$server = self::getServer( $dbname );
-		if( !isset( self::$connections[$server] ) ) {
-			self::$connections[$server] = new Database( $server, $wgDBuser, $wgDBpassword, $dbname );
-		}
-		self::$connections[$server]->selectDB( $dbname );
-		return self::$connections[$server];
-	}
-
-	private static function getServer( $dbname ) {
-		global $wgAlternateMaster, $wgDBserver;
-		if( isset( $wgAlternateMaster[$dbname] ) ) {
-			return $wgAlternateMaster[$dbname];
-		} elseif( isset( $wgAlternateMaster['DEFAULT'] ) ) {
-			return $wgAlternateMaster['DEFAULT'];
-		}
-		return $wgDBserver;
-	}
-}
-
 class CentralAuthUser {
 
 	/**
@@ -52,18 +23,16 @@ class CentralAuthUser {
 		$this->resetState();
 	}
 
-	/**
-	 * @fixme Make use of some info to get the appropriate master DB
-	 */
 	public static function getCentralDB() {
-		return CentralAuthHelper::get( 'centralauth' );
+		return wfGetLB( 'centralauth' )->getConnection( DB_MASTER, 'centralauth', 'centralauth' );
 	}
 
-	/**
-	 * @fixme Make use of some info to get the appropriate master DB
-	 */
+	public static function getCentralSlaveDB() {
+		return wfGetLB( 'centralauth' )->getConnection( DB_SLAVE, 'centralauth', 'centralauth' );
+	}
+
 	public static function getLocalDB( $dbname ) {
-		return CentralAuthHelper::get( $dbname );
+		return wfGetLB( $dbname )->getConnection( DB_MASTER, array(), $dbname );
 	}
 
 	public static function tableName( $name ) {
@@ -845,18 +814,20 @@ class CentralAuthUser {
 	 */
 	function importLocalNames() {
 		$rows = array();
-		foreach( self::getWikiList() as $db ) {
-			$dbr = self::getLocalDB( $db );
+		foreach( self::getWikiList() as $dbname ) {
+			$lb = wfGetLB( $dbname );
+			$dbr = $lb->getConnection( DB_MASTER, array(), $dbname );
 			$id = $dbr->selectField(
-				"`$db`.`user`",
+				"`$dbname`.`user`",
 				'user_id',
 				array( 'user_name' => $this->mName ),
 				__METHOD__ );
 			if( $id ) {
 				$rows[] = array(
-					'ln_dbname' => $db,
+					'ln_dbname' => $dbname,
 					'ln_name' => $this->mName );
 			}
+			$lb->reuseConnection( $dbr );
 		}
 
 		$dbw = self::getCentralDB();
@@ -980,16 +951,27 @@ class CentralAuthUser {
 	 * Fetch a row of user data needed for migration.
 	 */
 	protected function localUserData( $dbname ) {
-		$db = self::getLocalDB( $dbname );
-		$row = $db->selectRow( "`$dbname`.user",
-			array(
+		$lb = wfGetLB( $dbname );
+		$db = $lb->getConnection( DB_SLAVE, array(), $dbname );
+		$table = "`$dbname`.user";
+		$fields = array(
 				'user_id',
 				'user_email',
 				'user_email_authenticated',
 				'user_password',
-				'user_editcount' ),
-			array( 'user_name' => $this->mName ),
-			__METHOD__ );
+				'user_editcount' );
+		$conds = array( 'user_name' => $this->mName );
+		$row = $db->selectRow( $table, $fields, $conds, __METHOD__ );
+		if ( !$row ) {
+			# Row missing from slave, try the master instead
+			$lb->reuseConnection( $db );
+			$db = $lb->getConnection( DB_MASTER, array(), $dbname );
+			$row = $db->selectRow( $table, $fields, $conds, __METHOD__ );
+		}
+		if ( !$row ) {
+			$lb->reuseConnection( $db );
+			return false;
+		}
 
 		$data = array(
 			'dbName' => $dbname,
@@ -1033,6 +1015,7 @@ class CentralAuthUser {
 			}
 		}
 		$result->free();
+		$lb->reuseConnection( $db );
 
 		return $data;
 	}

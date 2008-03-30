@@ -167,9 +167,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		$password = $wgRequest->getVal( 'wpPassword' );
-		if( $password != '' ) {
-			$this->addWorkingPassword( $password );
-		}
+		$this->addWorkingPassword( $password );
 		$passwords = $this->getWorkingPasswords();
 
 		$home = false;
