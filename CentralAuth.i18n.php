@@ -5030,7 +5030,7 @@ $messages['tet'] = array(
 /** Tajik (Тоҷикӣ)
  * @author Ibrahim
  */
-$messages['tg'] = array(
+$messages['tg-cyrl'] = array(
 	'mergeaccount'                         => 'Вазъияти якка кардани ҳисобҳо',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Якка кардани ҳисоб]] дар викиҳои Бунёди Викимедиа',
 	'centralauth-mergeaccount-desc'        => 'Барои Вуруди Яккаи Корбар [[Special:MergeAccount|якчанд ҳисобҳоро якка мекунад]]',
