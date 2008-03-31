@@ -3,7 +3,8 @@
 class SpecialCentralAuth extends SpecialPage {
 
 	function __construct() {
-		parent::__construct( 'CentralAuth', 'CentralAuth' );
+		wfLoadExtensionMessages('SpecialCentralAuth');
+		parent::__construct( 'CentralAuth', 'centralauth-admin' );
 	}
 
 	function execute( $subpage ) {

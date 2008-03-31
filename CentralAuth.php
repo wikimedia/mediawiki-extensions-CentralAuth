@@ -59,7 +59,6 @@ $wgAutoloadClasses['WikiMap'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 
-$wgExtensionFunctions[] = 'wfSetupCentralAuth';
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
 $wgHooks['AddNewAccount'][] = 'wfCentralAuthAddNewAccount';
 $wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
@@ -74,10 +73,6 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
-
-function wfSetupCentralAuth() {
-	wfLoadExtensionMessages('SpecialCentralAuth');
-}
 
 function wfSetupCentralAuthPlugin( &$auth ) {
 	$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
@@ -95,6 +90,7 @@ function wfCentralAuthInformationPanel( $prefsForm, &$html ) {
 		return true;
 	}
 
+	wfLoadExtensionMessages('SpecialCentralAuth');
 	$skin = $wgUser->getSkin();
 	$special = SpecialPage::getTitleFor( 'MergeAccount' );
 
@@ -161,12 +157,14 @@ function wfCentralAuthRenameUserAbort( $userId, $oldName, $newName ) {
 	$oldCentral = new CentralAuthUser( $oldName );
 	if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
 		global $wgOut;
+		wfLoadExtensionMessages('SpecialCentralAuth');
 		$wgOut->addWikiMsg( 'centralauth-renameuser-abort', $oldName, $newName );
 		return false;
 	}
 	$newCentral = new CentralAuthUser( $newName );
 	if ( $newCentral->exists() ) {
 		global $wgOut;
+		wfLoadExtensionMessages('SpecialCentralAuth');
 		$wgOut->addWikiMsg( 'centralauth-renameuser-exists', $oldName, $newName );
 		return false;
 	}
@@ -194,6 +192,7 @@ function wfCentralAuthRenameUserComplete( $userId, $oldName, $newName ) {
 function wfCentralAuthAbortNewAccount( $user, &$abortError ) {
 	$centralUser = new CentralAuthUser( $user->getName() );
 	if ( $centralUser->exists() ) {
+		wfLoadExtensionMessages('SpecialCentralAuth');
 		$abortError = wfMsg( 'centralauth-account-exists' );
 		return false;
 	}
