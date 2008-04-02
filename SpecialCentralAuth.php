@@ -118,11 +118,11 @@ class SpecialCentralAuth extends SpecialPage {
 			'years' => 1 );
 		foreach( $units as $unit => $chunk ) {
 			if( $span < 2*$chunk ) {
-				return wfMsg( "centralauth-$unit-ago", $span );
+				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $span );
 			}
 			$span = intval( $span / $chunk );
 		}
-		return wfMsg( "centralauth-$unit-ago", $span );
+		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $span );
 	}
 
 	function showInfo() {
