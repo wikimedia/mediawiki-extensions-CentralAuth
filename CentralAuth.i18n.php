@@ -1469,6 +1469,8 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-admin-merge'              => 'Unuigu selektitaĵojn',
 	'centralauth-admin-bad-input'          => 'Nevalida unuiga selekto',
 	'centralauth-admin-none-selected'      => 'Ne estas selektitaj ŝanĝendaj kontoj.',
+	'centralauth-admin-delete-title'       => 'Forigu konton',
+	'centralauth-admin-delete-button'      => 'Forigu ĉi tiu konton',
 	'centralauth-seconds-ago'              => 'antaŭ $1 {{PLURAL:$1|sekundo|sekundoj}}',
 	'centralauth-minutes-ago'              => 'antaŭ $1 {{PLURAL:$1|minuto|minutoj}}',
 	'centralauth-hours-ago'                => 'antaŭ $1 {{PLURAL:$1|horo|horoj}}',
@@ -1486,6 +1488,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-prefs-manage'             => 'Prizorgu vian unuigitan konton',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Neeblis renomi la uzanton $1 en la loka vikio ĉar tiu salutnomo estis migrigita  al unuigita salutsistemo.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Neeblis alinomigu uzanton $2 ĉar tiu salutnomo estas rezervita por unuigita konto.</div>',
+	'centralauth-invalid-wiki'             => 'Nenia vikia datumbazo: $1',
 	'centralauth-account-exists'           => 'Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.',
 );
 
@@ -3159,6 +3162,7 @@ $messages['lb'] = array(
 	'centralauth-desc'                     => 'Benotzerkonten op de Wikien vun der Wikimedia Fondatioun [[Special:MergeAccount|zesummeleeën]]',
 	'centralauth-mergeaccount-desc'        => "[[Special:MergeAccount|Zusammenleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied'             => 'Pardon, dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
+	'centralauth-merge-step1-submit'       => 'Login Informatioune confirméieren',
 	'centralauth-merge-dryrun-or'          => "'''oder'''",
 	'centralauth-list-home-title'          => 'Heemechts-Wiki',
 	'centralauth-foreign-link'             => 'Benotzer $1 op $2',
@@ -3210,6 +3214,7 @@ Es emes anges mit uche gebroekersnaam al actief is op 'ne angere site, den haet 
 	'centralauth-merge-step2-title'        => 'Bevestig mieë gebroekers',
 	'centralauth-merge-step2-detail'       => "'n Aantal van de gebroekers kóste neet aan de opgegaeve thoeswiki gekoppeldj waere. Es dees gebroekers van uch zeen, kintj geer uch det aangaeve door 't wachwaord veur de gebroekers op te gaeve.",
 	'centralauth-merge-step2-submit'       => 'Bevestig aanmeldjinformatie',
+	'centralauth-merge-dryrun-or'          => "'''of'''",
 	'centralauth-merge-step3-title'        => 'Maak samegevoegdje gebroek aan',
 	'centralauth-merge-step3-detail'       => "Geer kintj uch noe uche samegevoegdje gebroeker make mit dao in de volgendje wiki's opgenaome:",
 	'centralauth-merge-step3-submit'       => 'Gebroekers samevoege',
@@ -3233,6 +3238,7 @@ Later kint geer instelle welke wiki uche thoeswiki is.",
 	'centralauth-list-unattached'          => 'De gebroeker "$1" kós neet automatisch aan uch toegeweze waere veur de volgende sites;
 waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
+	'centralauth-merge-method-primary'     => 'thoeswiki',
 	'centralauth-merge-method-new'         => 'nuje gebroeker',
 	'centralauth-finish-title'             => 'Samevoege aafrönje',
 	'centralauth-finish-text'              => "Es dees gebroekers bie uch heure kinse 't proces van samevoege aafrönje door de wachwäörd veur de anger gebroekers hiej in te veure:",
@@ -3402,6 +3408,7 @@ $messages['ml'] = array(
 	'centralauth-prefs-not-managed'        => 'സം‌യോജിത അക്കൗണ്ട് ഉപയോഗിക്കുന്നില്ല',
 	'centralauth-prefs-unattached'         => 'സ്ഥിരീകരിച്ചിട്ടില്ല',
 	'centralauth-prefs-complete'           => 'എല്ലാം ക്രമത്തിലാണ്‌!',
+	'centralauth-prefs-migration'          => 'കുടിയേറ്റികൊണ്ടിരിക്കുന്നു',
 	'centralauth-prefs-count-attached'     => 'നിങ്ങളുടെ അക്കൗണ്ട് $1 വിക്കി {{plural:$1|സം‌രംഭത്തില്‍|സം‌രംഭങ്ങളില്‍}} സജീവമാണ്‌.',
 	'centralauth-prefs-count-unattached'   => 'നിങ്ങളുടെ പേരുള്ള ഉപഭോക്തൃനാമം $1 {{plural:$1സം‌രംഭത്തില്‍|സം‌രംഭങ്ങളില്‍‍}} സ്ഥിരീകരിക്കാതെ നിലവിലുണ്ട്.',
 	'centralauth-prefs-detail-unattached'  => 'ഈ സം‌രംഭം ആഗോള അക്കൗണ്ടിന്റെ ഭാഗമാണെന്നു ഇതു വരെ സ്ഥിരീകരിച്ചിട്ടില്ല.',
@@ -3617,6 +3624,7 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 /** Dutch (Nederlands)
  * @author Siebrand
  * @author SPQRobin
+ * @author Meursault2004
  */
 $messages['nl'] = array(
 	'mergeaccount'                         => 'Status samenvoegen gebruikers',
@@ -3714,6 +3722,8 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-admin-merge'              => 'Geselecteerde gebruikers samenvoegen',
 	'centralauth-admin-bad-input'          => 'Onjuiste samenvoegselectie',
 	'centralauth-admin-none-selected'      => 'Er zijn geen gebruikers geselecteerd om te wijzigen',
+	'centralauth-admin-delete-title'       => 'Verwijder gebruiker',
+	'centralauth-admin-delete-button'      => 'Verwijder deze gebruiker',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|seconde|seconden}} geleden',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minuut|minuten}} geleden',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|uur|uur}} geleden',
@@ -4029,9 +4039,9 @@ Poiretz modificar vòstre projècte principal mai tard.',
  */
 $messages['pl'] = array(
 	'mergeaccount'                         => 'Status tworzenia konta globalnego',
-	'centralauth-desc'                     => '[[Special:MergeAccount|Połącz konta]] na projektach Fundacji Wikimedia',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Łączy konta]] pomiędzy projektami Fundacji Wikimedia',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Łączy różne konta]] w jedno',
-	'centralauth-merge-denied'             => 'Niestety nie masz uprawnień by uzyskać dostęp do tej strony.',
+	'centralauth-merge-denied'             => 'Niestety nie masz uprawnień pozwalających na dostęp do tej strony.',
 	'centralauth-merge-notlogged'          => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta globalnego.',
 	'centralauth-merge-welcome'            => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto globalne.'''
 
@@ -4044,16 +4054,17 @@ Jeśli ktoś inny wykorzystuje na innym projekcie identyczną do Twojej nazwę u
 	'centralauth-merge-step2-title'        => 'Potwierdź więcej kont',
 	'centralauth-merge-step2-detail'       => 'Niektóre z kont nie mogły zostać automatycznie przyłączone do konta globalnego. Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje przez podanie haseł do nich.',
 	'centralauth-merge-step2-submit'       => 'Potwierdź informację o logowaniu',
-	'centralauth-merge-dryrun-complete'    => 'Wszystkie istniejące konta zostaną automatycznie zunifikowane!
+	'centralauth-merge-dryrun-complete'    => 'Wszystkie istniejące konta zostaną automatycznie połączone!
 
 Nie wykonano jeszcze żadnych zmian twoich kont.',
-	'centralauth-merge-dryrun-incomplete'  => 'Chcesz kontynuować, ale niektóre konta nie mogą być automatycznie zweryfikowane i migracja nie będzie natychmiastowa. Będziesz mógł połączyć je później.
+	'centralauth-merge-dryrun-incomplete'  => 'Chcesz kontynuować, ale niektóre konta nie mogą być automatycznie zweryfikowane i migracja nie będzie natychmiastowa.
+Będziesz mógł połączyć je później.
 
 Nie wykonano jeszcze żadnych zmian twoich kont.',
 	'centralauth-merge-dryrun-or'          => "'''lub'''",
 	'centralauth-merge-dryrun-home'        => 'System migracji nie może potwierdzić, że jesteś właścicielem konta na wiki domowej pod tą nazwą użytkownika.
 
-Inna wiki została uznana za domową; kliknij w link poniżej i zaloguj się na niej, aby ukończyć migrację konta.',
+Inna wiki została uznana za domową; kliknij w link poniżej i zaloguj się do niej, aby ukończyć migrację konta.',
 	'centralauth-merge-step3-title'        => 'Utwórz konto globalne',
 	'centralauth-merge-step3-detail'       => 'System jest gotowy do utworzenia konta globalnego, z dołączonymi następującymi wiki:',
 	'centralauth-merge-step3-submit'       => 'Utwórz konto globalne',
@@ -4069,7 +4080,7 @@ Jeśli chcesz przyłączyć konto użytkownika "$1" do konta globalnego podaj ha
 	'centralauth-disabled-dryrun'          => 'Tworzenie konta globalnego jest dostępne tylko w trybie demonstracyjnym/debugującym. Właściwe operacje łączenia kont są wyłączone. Przepraszamy!',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta globalnego''']]...''",
 	'centralauth-list-home-title'          => 'Macierzysta wiki',
-	'centralauth-list-home-dryrun'         => 'Ustawione na tej wiki hasło oraz adres e-mail będą wykorzystywane dla Twojego konta globalnego.
+	'centralauth-list-home-dryrun'         => 'Ustawione na tej wiki hasło oraz adres e-mail będą wykorzystywane przez Twoje konto globalne.
 W przyszłości będziesz jednak mógł zmienić swoją macierzystą wiki.',
 	'centralauth-list-attached-title'      => 'Powiązane konta użytkownika',
 	'centralauth-list-attached'            => 'Konto o nazwie "$1" we wszystkich tych witrynach zostało automatycznie przypisane do konta globalnego:',
@@ -4078,12 +4089,12 @@ W przyszłości będziesz jednak mógł zmienić swoją macierzystą wiki.',
 	'centralauth-list-unattached'          => 'Konto o nazwie "$1" nie może zostać automatycznie przypisane do konta globalnego dla następujących witryn; najbardziej prawdopodobną przyczyną jest ustawienie dla tych witryn innego hasła niż dla konta macierzystego:',
 	'centralauth-foreign-link'             => 'Użytkownik $1 na $2',
 	'centralauth-merge-method-primary'     => 'wiki domowa',
-	'centralauth-merge-method-empty'       => 'brak edycji',
+	'centralauth-merge-method-empty'       => 'brak wkładu',
 	'centralauth-merge-method-mail'        => 'potwierdzone e-mailem',
 	'centralauth-merge-method-password'    => 'potwierdzone hasłem',
-	'centralauth-merge-method-admin'       => 'administrator połączył konta',
+	'centralauth-merge-method-admin'       => 'konto przyłączone przez administratora',
 	'centralauth-merge-method-new'         => 'nowe konto',
-	'centralauth-merge-method-login'       => 'potwierdzone loginem',
+	'centralauth-merge-method-login'       => 'potwierdzone poprzez zalogowanie',
 	'centralauth-finish-title'             => 'Zakończono tworzenie konta globalnego',
 	'centralauth-finish-text'              => 'Jeżeli te konta należą do Ciebie, możesz je przyłączyć do konta globalnego wpisując tutaj hasło dla tych kont:',
 	'centralauth-finish-password'          => 'Hasło:',
@@ -4104,16 +4115,16 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 	'centralauth-admin-username'           => 'Nazwa użytkownika:',
 	'centralauth-admin-lookup'             => 'Podgląd i edycja danych użytkownika',
 	'centralauth-admin-permission'         => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
-	'centralauth-admin-no-unified'         => 'Brak zunifikowanych kont dla tej nazwy użytkownika.',
+	'centralauth-admin-no-unified'         => 'Brak globalnego konta dla tej nazwy użytkownika.',
 	'centralauth-admin-info-id'            => 'ID użytkownika:',
 	'centralauth-admin-info-registered'    => 'Zarejestrowane:',
 	'centralauth-admin-info-locked'        => 'Zablokowane:',
 	'centralauth-admin-info-hidden'        => 'Ukryte:',
 	'centralauth-admin-yes'                => 'tak',
 	'centralauth-admin-no'                 => 'nie',
-	'centralauth-admin-attached'           => 'W pełni połączone konta',
+	'centralauth-admin-attached'           => 'Konta są w pełni połączone',
 	'centralauth-admin-unattached'         => 'Niedołączone konta',
-	'centralauth-admin-no-unattached'      => 'Nie pozostało już żadnych niepołączonych kont.',
+	'centralauth-admin-no-unattached'      => 'Brak jakichkolwiek niepołączonych kont.',
 	'centralauth-admin-list-localwiki'     => 'Lokalna wiki',
 	'centralauth-admin-list-attached-on'   => 'Czas dołączenia',
 	'centralauth-admin-list-method'        => 'Metoda',
@@ -4137,8 +4148,8 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 	'centralauth-prefs-detail-unattached'  => 'Konto na tej witrynie nie zostało przyłączone do konta globalnego.',
 	'centralauth-prefs-manage'             => 'zarządzaj globalnym kontem',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nie można lokalnie przemianować użytkownika $1, ponieważ to konto zostało przeniesione do globalnego systemu logowania.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Nie można dokonać zmiany nazwy użytkownika. Nazwa $2 jest zarezerwowana dla konta globalnego.</div>',
-	'centralauth-account-exists'           => 'Utworzenie konta niemożliwe - ta nazwa użytkownika jest już zajęta.',
+	'centralauth-renameuser-exists'        => '<div class="errorbox">Nie można dokonać zmiany nazwy użytkownika $2, ponieważ jest zarezerwowana dla konta globalnego.</div>',
+	'centralauth-account-exists'           => 'Utworzenie konta nie jest możliwe - ta nazwa użytkownika jest już zajęta przez konto globalne.',
 );
 
 /** Piemontèis (Piemontèis)
