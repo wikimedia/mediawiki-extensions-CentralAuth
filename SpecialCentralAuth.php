@@ -36,7 +36,7 @@ class SpecialCentralAuth extends SpecialPage {
 				str_replace( '_', ' ',
 					$wgRequest->getText( 'target', $subpage ) ) );
 
-		$this->mAttemptMerge = $wgRequest->wasPosted();
+		$this->mPosted = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
 		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
 		$this->mDatabases = (array)$wgRequest->getArray( 'wpWikis' );
@@ -52,39 +52,65 @@ class SpecialCentralAuth extends SpecialPage {
 		// did / did not merge some accounts
 		// do / don't have more accounts to merge
 
-		$globalUser = new CentralAuthUser( $this->mUserName );
-		$merged = $remainder = array();
-		$this->showUsernameForm();
+		if ( $this->mUserName === '' ) {
+			# First time through
+			$this->showUsernameForm();
+			return;
+		}
 
-		if( $this->mAttemptMerge ) {
-			if( empty( $this->mDatabases ) ) {
-				$this->showError( wfMsg( 'centralauth-admin-none-selected' ) );
-			} elseif( $this->mMethod == 'admin' ) {
-				$ok = $globalUser->adminAttach(
-					$this->mDatabases,
-					$merged,
-					$remainder );
+		$globalUser = new CentralAuthUser( $this->mUserName );
+
+		if ( !$globalUser->exists() ) {
+			$this->showError( wfMsgNoTrans( 'centralauth-admin-nonexistent', $this->mUserName ) );
+			$this->showUsernameForm();
+			return;
+		}
+
+		$deleted = false;
+
+		if( $this->mPosted ) {
+			if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+				$this->showError( wfMsg( 'centralauth-token-mismatch' ) );
 			} elseif( $this->mMethod == 'unmerge' ) {
-				$ok = $globalUser->adminUnattach(
-					$this->mDatabases,
-					$merged,
-					$remainder );
+				$status = $globalUser->adminUnattach( $this->mDatabases );
+				if ( !$status->isGood() ) {
+					$this->showError( $status->getWikiText() );
+				} else {
+					global $wgLang;
+					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-unmerge-success', 
+						$wgLang->formatNum( $status->successCount ),
+						$status->successCount ) );
+				}
+			} elseif ( $this->mMethod == 'delete' ) {
+				$status = $globalUser->adminDelete();
+				if ( !$status->isGood() ) {
+					$this->showError( $status->getWikiText() );
+				} else {
+					global $wgLang;
+					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-delete-success', $this->mUserName ) );
+					$deleted = true;
+				}
 			} else {
 				$this->showError( wfMsg( 'centralauth-admin-bad-input' ) );
 			}
 
-			// if (! $ok) { ....
-		} else {
-			$merged = $globalUser->listAttached();
-			$remainder = $globalUser->listUnattached();
 		}
 
-		$this->showInfo();
+		$this->showUsernameForm();
+		if ( !$deleted ) {
+			$this->showInfo();
+			$this->showDeleteForm();
+		}
 	}
 
 	function showError( $message ) {
 		global $wgOut;
-		$wgOut->addWikiText( "<div class='error'>$message</div>" );
+		$wgOut->addWikiText( "<div class='error'>\n$message</div>" );
+	}
+
+	function showSuccess( $message ) {
+		global $wgOut;
+		$wgOut->addWikiText( "<div class='success'>\n$message</div>" );
 	}
 
 	function showUsernameForm() {
@@ -168,11 +194,17 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function listRemainder( $list ) {
-		return $this->listForm( $list, 'listRemainingWikiItem',
-		 	'admin', wfMsg( 'centralauth-admin-merge' ) );
+		ksort( $list );
+		$s = '<ul>';
+		foreach ( $list as $row ) {
+			$s .= '<li>' . $this->foreignUserLink( $row['dbName'] ) . "</li>\n";
+		}
+		$s .= '</ul>';
+		return $s;
 	}
 
 	function listForm( $list, $listMethod, $action, $buttonText ) {
+		global $wgUser;
 		ksort( $list );
 		return
 			Xml::openElement( 'form',
@@ -180,6 +212,7 @@ class SpecialCentralAuth extends SpecialPage {
 					'method' => 'post',
 					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
+			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
 			'<table>' .
 			'<thead>' .
 			$this->tableRow( 'th',
@@ -212,16 +245,6 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 
-	function listRemainingWikiItem( $row ) {
-		global $wgLang;
-		return $this->tableRow( 'td',
-			array(
-				$this->adminCheck( $row['dbName'] ),
-				$this->foreignUserLink( $row['dbName'] ),
-			)
-		);
-	}
-
 	function tableRow( $element, $cols ) {
 		return "<tr><$element>" .
 			implode( "</$element><$element>", $cols ) .
@@ -250,5 +273,21 @@ class SpecialCentralAuth extends SpecialPage {
 	function adminCheck( $dbname ) {
 		return
 			Xml::check( 'wpWikis[]', false, array( 'value' => $dbname ) );
+	}
+
+	function showDeleteForm() {
+		global $wgOut, $wgUser;
+		$wgOut->addHtml(
+			Xml::element( 'h2', array(), wfMsg( 'centralauth-admin-delete-title' ) ) .
+			Xml::openElement( 'form', array(
+				'method' => 'POST',
+				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
+			Xml::hidden( 'wpMethod', 'delete' ) .
+			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			wfMsgExt( 'centralauth-admin-delete-description', 'parse' ) .
+			'<p>' .
+			Xml::submitButton( wfMsg( 'centralauth-admin-delete-button' ) ) .
+			'</p>' .
+			'</form>' );
 	}
 }

@@ -137,6 +137,18 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-merge'            => 'Merge selected',
 	'centralauth-admin-bad-input'        => 'Invalid merge selection',
 	'centralauth-admin-none-selected'    => 'No accounts selected to modify.',
+	'centralauth-admin-already-unmerged' => 'Skipping $1, already unmerged',
+	'centralauth-admin-unmerge-success'  => 'Successfully unmerged $1 {{PLURAL:$2|account|accounts}}',
+	'centralauth-admin-delete-title'     => 'Delete account',
+	'centralauth-admin-delete-description' => 'Deleting the global account will delete any 
+global preferences, unattach all local accounts, and leave the global name free for another user to 
+take. All local accounts will continue to exist. The passwords for local accounts created before 
+the merge will revert to their pre-merge values.',
+	'centralauth-admin-delete-button'    => 'Delete this account',
+	'centralauth-admin-delete-success'   => 'Successfully deleted the the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent'      => 'There is no global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-token-mismatch'         => 'Sorry, we could not process your form submission due to a loss of session data.',
 
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
@@ -162,6 +174,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-renameuser-exists' => "<div class=\"errorbox\">Cannot rename user $2 as this username is reserved for a global account.</div>",
 
 	// Other messages
+	'centralauth-invalid-wiki'       => 'No such wiki DB: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 );
 

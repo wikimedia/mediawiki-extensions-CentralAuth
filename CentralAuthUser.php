@@ -574,47 +574,75 @@ class CentralAuthUser {
 		return $dblist;
 	}
 
-	public function adminAttach( $list, &$migrated=null, &$remaining=null ) {
-		$valid = $this->validateList( $list );
-		$unattached = $this->queryUnattached();
-
-		$migrated = array();
-		$remaining = array();
-
-		foreach( $unattached as $row ) {
-			if( in_array( $row['dbName'], $valid ) ) {
-				$this->attach( $row['dbName'], 'admin' );
-				$migrated[] = $row['dbName'];
-			} else {
-				$remaining[] = $row['dbName'];
-			}
+	/**
+	 * Unattach a list of local accounts from the global account
+	 * @param array $list List of wiki names
+	 * @return Status
+	 */
+	public function adminUnattach( $list ) {
+		if ( !count( $list ) ) {
+			return Status::newFatal( 'centralauth-admin-none-selected' );
 		}
-
-		return count( $migrated ) == count( $valid );
-	}
-
-	public function adminUnattach( $list, &$migrated=null, &$remaining=null ) {
+		$status = new Status;
 		$valid = $this->validateList( $list );
+		$invalid = array_diff( $list, $valid );
+		foreach ( $invalid as $wikiName ) {
+			$status->error( 'centralauth-invalid-wiki', $wikiName );
+			$status->failCount++;
+		}
+		
+		$invalidCount = count( $list ) - count( $valid );
+		$missingCount = 0;
+		$dbcw = self::getCentralDB();
 
-		$dbw = self::getCentralDB();
-		$dbw->delete( self::tableName( 'localuser' ),
-			array(
-				'lu_name'   => $this->mName,
-				'lu_dbname' => $valid ),
-			__METHOD__ );
+		foreach ( $valid as $wikiName ) {
+			# Delete the user from the central localuser table
+			$dbcw->delete( self::tableName( 'localuser' ),
+				array(
+					'lu_name'   => $this->mName,
+					'lu_dbname' => $wikiName ),
+				__METHOD__ );
+			if ( !$dbcw->affectedRows() ) {
+				$wiki = WikiMap::byDatabase( $wikiName );
+				$status->error( 'centralauth-admin-already-unmerged', $wiki->getDisplayName() );
+				$status->failCount++;
+				continue;
+			}
 
-		// FIXME: touch remote-database user accounts
+			# Touch the local user row
+			$lb = wfGetLB( $wikiName );
+			$dblw = $lb->getConnection( DB_MASTER, array(), $wikiName );
+			$dblw->update( 'user', array( 'user_touched' => wfTimestampNow() ),
+				array( 'user_name' => $this->mName ), __METHOD__ );
+			$lb->reuseConnection( $dblw );
 
-		// FIXME: proper... stuff
-		$migrated = array();
-		$remaining = $list;
+			$status->successCount++;
+		}
 
 		global $wgDBname;
 		if( in_array( $wgDBname, $valid ) ) {
 			$this->resetState();
 		}
 
-		return count( $list ) == count( $valid );
+		return $status;
+	}
+
+	/**
+	 * Delete a global account
+	 */
+	function adminDelete() {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		# Delete and lock the globaluser row
+		$dbw->delete( 'globaluser', array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$dbw->affectedRows() ) {
+			$dbw->commit();
+			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
+		}
+		# Delete the localuser rows
+		$dbw->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
+		$dbw->commit();
+		return Status::newGood();
 	}
 
 	/**
