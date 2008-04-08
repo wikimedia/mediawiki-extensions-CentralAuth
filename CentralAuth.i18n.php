@@ -1230,6 +1230,18 @@ $messages['de'] = array(
 	'centralauth-admin-merge'            => 'Ausgewählte Benutzerkonten zusammenführen',
 	'centralauth-admin-bad-input'        => 'Ungültige Auswahl',
 	'centralauth-admin-none-selected'    => 'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
+	'centralauth-admin-already-unmerged' => '$1 wird übersprüngen, da bereits abgespaltet.',
+	'centralauth-admin-unmerge-success'  => 'Es {{PLURAL:$2|wurde 1 Benutzerkonto|wurden $1 Benutzerkonto}} erfolgreich abgespalten.',
+	'centralauth-admin-delete-title'     => 'Benutzerkonto gelöscht',
+	'centralauth-admin-delete-description' => 'Die Löschung des globalen Benutzerkontos wird jede globale Benutzereinstellungen löschen, alle lokalen Benutzerkonten abspalten
+	und der globale Benutzername wird für eine erneute Verwendung frei werdeb.
+	Alle lokalen Benutzerkonten werden weiterhin bestehen bleiben.
+	Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Passwort vor der Zusammenführung zurückgesetzt.',
+	'centralauth-admin-delete-button'    => 'Lösche dieses Benutzerkonto',
+	'centralauth-admin-delete-success'   => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich gelöscht.',
+	'centralauth-admin-nonexistent'      => 'Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
+	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
+	'centralauth-token-mismatch'         => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.',
 
  	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|Sekunde|Sekunden}} zuvor',
@@ -1255,7 +1267,8 @@ $messages['de'] = array(
 	'centralauth-renameuser-exists'      => "<div class=\"errorbox\">Benutzer $2 kann nicht umbenannt werden, da dieser Benutzername als globales Benutzerkonto reserviert ist.</div>",
 
 	// Other messages
-	'centralauth-account-exists'         => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
+	'centralauth-invalid-wiki'   => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
+	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
 );
 
 /** Ewe (Eʋegbe)
