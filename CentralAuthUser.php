@@ -24,7 +24,7 @@ class CentralAuthUser {
 	}
 
 	public static function getCentralDB() {
-		return wfGetLB( 'centralauth' )->getConnection( DB_MASTER, 'centralauth', 'centralauth' );
+		return wfGetLB( 'centralauth' )->getConnection( DB_MASTER, array(), 'centralauth' );
 	}
 
 	public static function getCentralSlaveDB() {
