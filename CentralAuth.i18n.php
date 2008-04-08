@@ -138,7 +138,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-bad-input'        => 'Invalid merge selection',
 	'centralauth-admin-none-selected'    => 'No accounts selected to modify.',
 	'centralauth-admin-already-unmerged' => 'Skipping $1, already unmerged',
-	'centralauth-admin-unmerge-success'  => 'Successfully unmerged $1 {{PLURAL:$1|account|accounts}}',
+	'centralauth-admin-unmerge-success'  => 'Successfully unmerged $1 {{PLURAL:$2|account|accounts}}',
 	'centralauth-admin-delete-title'     => 'Delete account',
 	'centralauth-admin-delete-description' => 'Deleting the global account will delete any global preferences, unattach all local accounts, and leave the global name free for another user to take.
 All local accounts will continue to exist.
@@ -765,7 +765,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-admin-bad-input'          => 'Diuzadenn unvaniñ direizh',
 	'centralauth-admin-none-selected'      => "N'eus bet merket kont ebet da vezañ cheñchet.",
 	'centralauth-admin-already-unmerged'   => 'Na ober van ouzh $1, dizunvanet eo bet dija',
-	'centralauth-admin-unmerge-success'    => 'Dizunvanet ez eus bet $1 {{PLURAL:$1|gont|kont}}',
+	'centralauth-admin-unmerge-success'    => 'Dizunvanet ez eus bet $1 {{PLURAL:$2|gont|kont}}',
 	'centralauth-admin-delete-title'       => 'Diverkañ ar gont',
 	'centralauth-admin-delete-description' => "Diverkañ ar gont hollek a zistrujo an holl benndibaboù hollek, a zistago an holl gontoù lec'hel hag a laosko vak an anv hollek evit neb implijer all. Distreiñ a raio ar gerioù-tremen bet krouet a-raok unvaniñ ar c'hontoù d'o zoavoudegezh kent.",
 	'centralauth-admin-delete-button'      => 'Diverkañ ar gont-mañ',
@@ -1465,7 +1465,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-attach-success'           => 'La konto estis migrigita al la unuigita konto.',
 	'centralauth'                          => 'Administrado de la unuigita salutsistemo',
 	'centralauth-admin-manage'             => 'Prizorgu uzulajn datenojn',
-	'centralauth-admin-username'           => 'Uzanto-nomo:',
+	'centralauth-admin-username'           => 'Salutnomo:',
 	'centralauth-admin-lookup'             => 'Rigardu aŭ redaktu datenojn de uzanto',
 	'centralauth-admin-permission'         => 'Nur stevardoj povas kunigi kontojn de aliaj uzantoj.',
 	'centralauth-admin-no-unified'         => 'Ne estas unuigita konto por ĉi tiu uzanto.',
@@ -1653,6 +1653,7 @@ Voit vaihtaa kotiwikiäsi myöhemmin tulevaisuudessa.',
 	'centralauth-admin-username'           => 'Käyttäjätunnus',
 	'centralauth-admin-lookup'             => 'Näytä tai muokkaa käyttäjätietoja',
 	'centralauth-admin-permission'         => 'Vain ylivalvojat (steward) voivat yhdistää toisten ihmisten tunnuksia heidän puolestaan.',
+	'centralauth-admin-info-id'            => 'Käyttäjänumero',
 	'centralauth-admin-yes'                => 'kyllä',
 	'centralauth-admin-no'                 => 'ei',
 	'centralauth-admin-attached'           => 'Täysin yhdistetyt tunnukset',
@@ -1773,7 +1774,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-admin-bad-input'          => 'Sélection invalide',
 	'centralauth-admin-none-selected'      => 'Aucun compte sélectionné.',
 	'centralauth-admin-already-unmerged'   => 'Sauter $1, déjà défusionné',
-	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$1|compte|comptes}} défusionnés avec succès',
+	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|compte|comptes}} défusionnés avec succès',
 	'centralauth-admin-delete-title'       => 'Supprimer le compte',
 	'centralauth-admin-delete-description' => "La suppression du compte global détruiera toutes les références globales, détachera l'ensemble des comptes locaux, et laissera le nom global disponible pour tout autre utilisateur. Les mots de passe pour les comptes créés localement, avant la fusion, annuleront toutes leurs valeurs avant la fusion.",
 	'centralauth-admin-delete-button'      => 'Supprimer ce compte',
@@ -2097,7 +2098,7 @@ $messages['he'] = array(
 	'centralauth-admin-bad-input'          => 'בחירה שגויה של מיזוג',
 	'centralauth-admin-none-selected'      => 'לא נבחרו חשבונות לשינוי.',
 	'centralauth-admin-already-unmerged'   => 'החשבון $1 כבר מוזג',
-	'centralauth-admin-unmerge-success'    => '{{plural:$1|חשבון אחד|$1 חשבונות}} מוזגו בהצלחה',
+	'centralauth-admin-unmerge-success'    => '{{PLURAL:$1|חשבון אחד|$2 חשבונות}} מוזגו בהצלחה',
 	'centralauth-admin-delete-title'       => 'מחיקת חשבון',
 	'centralauth-admin-delete-description' => 'מחיקת החשבון הכללי תמחק את כל ההעדפות הכלליות, תבטל את מיזוגם של כל החשבונות המקומיים, ותשאיר את השם הכללי חופשי למשתמשים אחרים. כל החשבונות הקיימים ימשיכו להתקיים. הסיסמאות לחשבונות מקומיים שנוצרו לפני המיזוג יוחזרו לערכיהם לפני המיזוג.',
 	'centralauth-admin-delete-button'      => 'מחיקת חשבון זה',
@@ -2533,6 +2534,17 @@ Vannak további azonosítók, amik még nincsenek megerősítve.',
 	'centralauth-admin-merge'              => 'Kiválasztott integrálása',
 	'centralauth-admin-bad-input'          => 'Érvénytelen integrálandó kiválasztás',
 	'centralauth-admin-none-selected'      => 'Nem volt módosítandó fiók kiválasztva.',
+	'centralauth-admin-already-unmerged'   => '$1 kihagyása, már fel van oldva',
+	'centralauth-admin-unmerge-success'    => '$1 felhasználói fiók sikeresen feloldva',
+	'centralauth-admin-delete-title'       => 'Felhasználói fiók törölve',
+	'centralauth-admin-delete-description' => 'A globális fiók törlésével minden globális beállítás törlődik, a helyi fiókok lecsatolódnak, és a globális név szabad marad más felhasználók számára.
+Minden helyi fiók megmarad.
+A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
+	'centralauth-admin-delete-button'      => 'Felhasználói fiók törlése',
+	'centralauth-admin-delete-success'     => '„<nowiki>$1</nowiki>” globális felhasználói fiókja sikeresen törölve.',
+	'centralauth-admin-nonexistent'        => '„<nowiki>$1</nowiki>” nem rendelkezik globális felhasználói fiókkal',
+	'centralauth-admin-delete-nonexistent' => 'Hiba: nem létezik globális felhasználói fiók „$1” néven.',
+	'centralauth-token-mismatch'           => 'Sajnáljuk, nem tudtuk feldolgozni a küldött adatokat a munkamenet-adatok hiánya miatt',
 	'centralauth-seconds-ago'              => '$1 másodperccel ezelőtt',
 	'centralauth-minutes-ago'              => '$1 perccel ezelőtt',
 	'centralauth-hours-ago'                => '$1 órával ezelőtt',
@@ -2550,6 +2562,7 @@ Vannak további azonosítók, amik még nincsenek megerősítve.',
 	'centralauth-prefs-manage'             => 'Globális felhasználói fiók beállítása',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 nem nevezhető át helyben, mivel integrálva van az egységesített bejelentkezési rendszerbe.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">$2 felhasználót nem sikerült átnevezni: ez a felhaználónév le van foglalva egy globális azonosítóhoz.</div>',
+	'centralauth-invalid-wiki'             => 'Nincs ilyen adatbázis: $1',
 	'centralauth-account-exists'           => 'Nem sikerült új felhasználót létrehozni: az egységes bejelentkezési rendszerben már van ilyen felhasználónév.',
 );
 
@@ -2959,8 +2972,14 @@ Jer vil være i stand til lave om på hvilke er jeres hjem wiki senere.',
  * @author Meursault2004
  */
 $messages['jv'] = array(
-	'centralauth-merge-dryrun-or' => "'''utawa'''",
-	'centralauth-finish-login'    => 'Mlebu log',
+	'centralauth-merge-dryrun-or'      => "'''utawa'''",
+	'centralauth-list-home-title'      => 'Wiki asal',
+	'centralauth-merge-method-primary' => 'Wiki asal',
+	'centralauth-merge-method-empty'   => 'ora ana sumbangsihé',
+	'centralauth-merge-method-new'     => 'akun utawa rékening anyar',
+	'centralauth-finish-login'         => 'Mlebu log',
+	'centralauth-admin-list-localwiki' => 'Wiki lokal',
+	'centralauth-prefs-complete'       => 'Kabèh bèrès!',
 );
 
 $messages['kk-arab'] = array(
@@ -3444,6 +3463,7 @@ $messages['ml'] = array(
 	'centralauth-attach-success'           => 'ഈ അക്കൗണ്ട് സം‌യോജിത അക്കൗണ്ടിലേക്കു കുടിയേറ്റിയിരിക്കുന്നു.',
 	'centralauth'                          => 'സം‌യോജിത ലോഗിന്‍ കാര്യനിര്‍‌വഹണം',
 	'centralauth-admin-username'           => 'ഉപയോക്തൃനാമം:',
+	'centralauth-admin-lookup'             => 'ഉപയോക്താവിന്റെ വിവരം കാണുകയോ തിരുത്തുകയോ ചെയ്യുക',
 	'centralauth-admin-permission'         => 'സ്റ്റിവാര്‍ഡുകള്‍ക്ക് മാത്രമേ മറ്റുപയോക്താക്കളുടെ അക്കൗണ്ട് അവര്‍ക്കു വേണ്ടി സം‌യോജനം നടത്താനുള്ള അവകാശമുള്ളൂ.',
 	'centralauth-admin-no-unified'         => 'ഈ ഉപയോക്തൃനാമത്തിനു സം‌യോജിത അക്കൗണ്ട് ഇല്ല.',
 	'centralauth-admin-info-id'            => 'ഉപയോക്തൃ ഐഡി:',
@@ -3462,7 +3482,7 @@ $messages['ml'] = array(
 	'centralauth-admin-bad-input'          => 'സം‌യോജിപ്പിക്കുവാന്‍ തിരഞ്ഞെടുത്തവ അസാധുവാണ്‌',
 	'centralauth-admin-none-selected'      => 'മാറ്റം വരുത്തുവാന്‍ അക്കൗണ്ടുകള്‍ ഒന്നും തിരഞ്ഞെടുത്തിട്ടില്ല',
 	'centralauth-admin-already-unmerged'   => 'ഇതിനകം വിഘടിപ്പിച്ചതിനാല്‍ $1നെ വിട്ടുകളയുന്നു',
-	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$1|അക്കൗണ്ട്|അക്കൗണ്ടുകള്‍}} വിജയകരമായി വിഘടിപ്പിച്ചിരിക്കുന്നു.',
+	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|അക്കൗണ്ട്|അക്കൗണ്ടുകള്‍}} വിജയകരമായി വിഘടിപ്പിച്ചിരിക്കുന്നു.',
 	'centralauth-admin-delete-title'       => 'അക്കൗണ്ട് മായ്ക്കുക',
 	'centralauth-admin-delete-description' => 'ആഗോള അക്കൗണ്ട് മായ്ക്കുന്നത് ആഗോള ക്രമീകരണങ്ങള്‍ മായ്ക്കുകയും, ആഗോള അക്കൗണ്ടിനോടൊപ്പം ചേര്‍ത്തിരിക്കുന്ന പ്രാദേശിക അക്കൗണ്ടുകളെ സ്വതന്ത്രമാക്കുകയും, ആഗോള അക്കൗണ്ടിന്റെ ഉപയോക്തൃനാമം മറ്റൊരു ഉപയോക്താവിനു തിരഞ്ഞെടുക്കാന്‍ പ്രാപ്തമാക്കുകയും ചെയ്യും. 
 
@@ -3594,6 +3614,17 @@ $messages['mr'] = array(
 	'centralauth-admin-merge'              => 'निवडलेली खाती एकत्र करा',
 	'centralauth-admin-bad-input'          => 'निवडीमध्ये चूक आहे',
 	'centralauth-admin-none-selected'      => 'संपादित करण्यासाठी कुठलेही खाते निवडलेले नाही.',
+	'centralauth-admin-already-unmerged'   => 'अगोदरच अनमर्ज केले असल्यामुळे $1 ला वगळत आहे',
+	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|खात्याचे|खात्यांचे}} अनमर्ज यशस्वी',
+	'centralauth-admin-delete-title'       => 'खाते वगळा',
+	'centralauth-admin-delete-description' => 'विश्व खाते वगळल्यास, सर्व विश्व पसंती, सर्व स्थानिक खात्यांचे वेगवेगळ्या खात्यांमध्ये रुपांतर, तसेच विश्व सदस्यनाम दुसर्‍या कुणालाही वापरण्यासाठी मोकळे करण्यात येईल.
+सर्व स्थानिक खाती अस्तित्वात राहतील.
+स्थानिक खात्यांचे एकत्रिकरण करण्यापूर्वीचे परवलीचे शब्द पूर्ववत होतील.',
+	'centralauth-admin-delete-button'      => 'हे खाते वगळा',
+	'centralauth-admin-delete-success'     => '"<nowiki>$1</nowiki>" साठीचे विश्व खाते वगळले',
+	'centralauth-admin-nonexistent'        => '"<nowiki>$1</nowiki>" साठी विश्व खाते नाही',
+	'centralauth-admin-delete-nonexistent' => 'त्रुटी: "<nowiki>$1</nowiki>" हे विश्व खाते अस्तित्वात नाही.',
+	'centralauth-token-mismatch'           => 'माफ करा, सत्र विदेचा क्षयेमुळे आपला अर्ज पाठवू शकत नाही.',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|सेकंदापूर्वी|सेकंदांपूर्वी}}',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|मिनिटापूर्वी|मिनिटांपूर्वी}}',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|तासापूर्वी|तासांपूर्वी}}',
@@ -3611,6 +3642,7 @@ $messages['mr'] = array(
 	'centralauth-prefs-manage'             => 'तुमच्या एकत्रीत खात्याच्या पसंती बदला',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 या सदस्य नावाचा एकत्रीत खात्यामध्ये समावेश केलेला असल्यामुळे इथे सदस्यनाम बदलता येत नाही.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">सदस्य $2 चे नाव बदलू शकत नाही कारण ते विश्व खात्यासाठी राखून ठेवलेले आहे.</div>',
+	'centralauth-invalid-wiki'             => 'असा विकि नाही DB: $1',
 	'centralauth-account-exists'           => 'खाते तयार करू शकत नाही: मागितलेले सदस्यनाम खाते एकत्रीकरणासाठी अगोदरच वापरण्यात आलेले आहे.',
 );
 
@@ -3798,7 +3830,7 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-admin-bad-input'          => 'Onjuiste samenvoegselectie',
 	'centralauth-admin-none-selected'      => 'Er zijn geen gebruikers geselecteerd om te wijzigen',
 	'centralauth-admin-already-unmerged'   => '$1 overgeslagen. Is al niet meer samengevoegd',
-	'centralauth-admin-unmerge-success'    => 'Het ongedaan maken van het samenvoegen is geslaagd voor $1 {{PLURAL:$1|gebruiker|gebruikers}}',
+	'centralauth-admin-unmerge-success'    => 'Het ongedaan maken van het samenvoegen is geslaagd voor $1 {{PLURAL:$2|gebruiker|gebruikers}}',
 	'centralauth-admin-delete-title'       => 'Verwijder gebruiker',
 	'centralauth-admin-delete-description' => 'Met het verwijderen van de globale gebruiker worden alle globale voorkeuren verwijderd, alle lokale gebruikers ontkoppeld, en de globale gebruiker komt beschikbaar voor een andere gebruiker.
 Alle lokale gebruikers blijven bestaan.
@@ -3974,7 +4006,7 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-admin-bad-input'          => 'Ugyldig valg for sammenslåing',
 	'centralauth-admin-none-selected'      => 'Har ikke valgt noen kontoer å endre.',
 	'centralauth-admin-already-unmerged'   => 'Hopper over $1, utskilt fra før',
-	'centralauth-admin-unmerge-success'    => 'Skilte ut $1 {{PLURAL:$1|konto|kontoer}}',
+	'centralauth-admin-unmerge-success'    => 'Skilte ut $1 {{PLURAL:$2|konto|kontoer}}',
 	'centralauth-admin-delete-title'       => 'Slett konto',
 	'centralauth-admin-delete-description' => 'Sletting av den globale kontoen vil slette globale innstillinger, skille ut alle kontoer, og gjøre det globale navnet tilgjengelig for andre brukere. Alle lokale kontoer vil fortsette å eksistere. Passordene til lokale kontoer laget før sammenslåingen vil gå tilbake til verdiene de var før sammenslåingen.',
 	'centralauth-admin-delete-button'      => 'Slett denne kontoen',
@@ -4105,7 +4137,7 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-admin-bad-input'          => 'Seleccion invalida',
 	'centralauth-admin-none-selected'      => 'Cap de compte seleccionat.',
 	'centralauth-admin-already-unmerged'   => 'Sautar $1, ja desfusionat',
-	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$1|compte|comptes}} desfusionats amb succès',
+	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|compte|comptes}} desfusionats amb succès',
 	'centralauth-admin-delete-title'       => 'Suprimir lo compte',
 	'centralauth-admin-delete-button'      => 'Suprimir aqueste compte',
 	'centralauth-admin-delete-success'     => 'Lo compte global per « <nowiki>$1</nowiki> » es estat suprimit amb succès',
@@ -4235,7 +4267,7 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 	'centralauth-admin-bad-input'          => 'Nieprawidłowe zaznaczenia dla wykonania przyłączenia',
 	'centralauth-admin-none-selected'      => 'Nie zaznaczono kont do modyfikacji.',
 	'centralauth-admin-already-unmerged'   => 'Pomijam $1, ponieważ jest już rozłączone',
-	'centralauth-admin-unmerge-success'    => 'Rozłączono z powodzeniem $1 {{PLURAL:$1|konto|konta|kont}}',
+	'centralauth-admin-unmerge-success'    => 'Rozłączono z powodzeniem $1 {{PLURAL:$2|konto|konta|kont}}',
 	'centralauth-admin-delete-title'       => 'Usuwanie konta',
 	'centralauth-admin-delete-description' => 'Usunięcie konta globalnego spowoduje usunięcie wszystkich globalnych preferencji, odłączenie wszystkich kont lokalnych oraz zwolnienie nazwy konta globalnego do wykorzystania przez innego użytkownika. Lokalne konta nadal będą istniały. Hasła kont lokalnych utworzonych przed przyłączeniem ich do konta globalnego zostaną przywrócone do wartości sprzed momentu przyłączenia.',
 	'centralauth-admin-delete-button'      => 'Usuń to konto',
@@ -4600,6 +4632,17 @@ $messages['ru'] = array(
 	'centralauth-admin-merge'              => 'Объединить выбранные',
 	'centralauth-admin-bad-input'          => 'Ошибочный выбор объединения',
 	'centralauth-admin-none-selected'      => 'Не были выбраны учётные записи для изменения.',
+	'centralauth-admin-already-unmerged'   => 'Пропуск $1, уже разделён',
+	'centralauth-admin-unmerge-success'    => 'Успешно разделена $1 {{PLURAL:$2|учётная запись|учётных записи|учётных записей}}',
+	'centralauth-admin-delete-title'       => 'Удаление учётной записи',
+	'centralauth-admin-delete-description' => 'Удаление глобальной учётной записи приведёт к удалению глобальных настроек, отсоединению всех учётных записей и освобождению глобального имени, что позволит занять его другому участнику.
+Все локальные учётные записи продолжат существовать.
+Пароли локальных учётных записей, созданные до объединения, вернут свои старые значения.',
+	'centralauth-admin-delete-button'      => 'Удалить учётную запись',
+	'centralauth-admin-delete-success'     => 'Успешно удалена глобальная учётная запись «<nowiki>$1</nowiki>»',
+	'centralauth-admin-nonexistent'        => 'Не существует глобальной учётной записи «<nowiki>$1</nowiki>»',
+	'centralauth-admin-delete-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
+	'centralauth-token-mismatch'           => 'К сожалению, мы не можем продолжить обработку вашей формы, так как были потеряны данные сеанса.',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|час|часа|часов}} назад',
@@ -4617,6 +4660,7 @@ $messages['ru'] = array(
 	'centralauth-prefs-manage'             => 'Управление глобальной учётной записью',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Невозможно переименовать участника $1 в данном проекте, так как это имя участника было перенесено в систему единой учётной записи.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Невозможно переименовать участника $2, так как это имя зарезервировано для глобальной учётной записи.</div>',
+	'centralauth-invalid-wiki'             => 'Нет такой вики БД: $1',
 	'centralauth-account-exists'           => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
 );
 
@@ -4820,7 +4864,7 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-admin-bad-input'          => 'Neplatný výber pre zlúčenie',
 	'centralauth-admin-none-selected'      => 'Neboli vybrané účty, ktoré sa majú zmeniť.',
 	'centralauth-admin-already-unmerged'   => 'Preskakuje sa $1, už bol odlúčený',
-	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$1|účet úspešne odlúčený|účty úspešne odlúčené|účov úspešne odlúčených}}',
+	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|účet úspešne odlúčený|účty úspešne odlúčené|účov úspešne odlúčených}}',
 	'centralauth-admin-delete-title'       => 'Zmazať účet',
 	'centralauth-admin-delete-description' => 'Zmazaním globálneho účetu zmažete všetky globélne nastavenia, odpojíte všetky účty a uvoľníte globálne meno, teda si ho bude môcť zobrať iný používateľ. Všetky lokálne účty budú naďalej existovať. Heslá lokálnych účtov vytvorené pre zlúčením sa vrátia na svoje pôvodné hodnoty, ktoré mali pred zlúčením.',
 	'centralauth-admin-delete-button'      => 'Zmazať tento účet',
@@ -5164,8 +5208,8 @@ Engké, anjeun bakal bisa milih wiki asal anjeun.',
 
 /** Swedish (Svenska)
  * @author Lejonel
- * @author Sannab
  * @author M.M.S.
+ * @author Sannab
  * @author Leo Johannes
  * @author Micke
  * @author Siebrand
@@ -5264,9 +5308,14 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-admin-bad-input'          => 'Ogiltigt val för sammanslagning',
 	'centralauth-admin-none-selected'      => 'Har inte valt några konton att modifiera.',
 	'centralauth-admin-already-unmerged'   => 'Hoppar över $1, redan skild',
-	'centralauth-admin-unmerge-success'    => 'Skilde $1 {{PLURAL:$1|konto|konton}}',
+	'centralauth-admin-unmerge-success'    => 'Skilde $1 {{PLURAL:$2|konto|konton}}',
 	'centralauth-admin-delete-title'       => 'Radera konto',
+	'centralauth-admin-delete-description' => 'Radering av det globala kontot kommer ta bort globala inställningar, skilja ut alla konton, och göra det globala namnet tillgängligt för andra användare. Alla lokala konton kommer fortsätta att existera. Lösenorden till lokala konton sparat för sammanslagningen kommer gå tillbaka till värdena dom var före sammanslagningen.',
 	'centralauth-admin-delete-button'      => 'Radera detta konto',
+	'centralauth-admin-delete-success'     => 'Raderade det globala kontot för "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent'        => 'Det är inget globalt konto för "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Fel: Det globala kontot "<nowiki>$1</nowiki>" finns inte.',
+	'centralauth-token-mismatch'           => 'Beklagar, formuläret kunde inte lagras på grund av förlorad sessionsdata.',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|sekund|sekunder}} sedan',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minut|minuter}} sedan',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|timme|timmar}} sedan',
@@ -5284,6 +5333,7 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-prefs-manage'             => 'Hantera ditt gemensamma konto',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Det går inte att döpa om användare $1 lokalt eftersom användarnamnet har anslutits till systemet för gemensam inloggning.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Kan inte byta namn på användare $2 eftersom detta användarnamn är reserverat för ett gemensamt konto.</div>',
+	'centralauth-invalid-wiki'             => 'Ingen sådan databas: $1',
 	'centralauth-account-exists'           => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
 );
 
@@ -5427,7 +5477,14 @@ $messages['tg-cyrl'] = array(
 	'centralauth-merge-dryrun-complete'    => 'Тамоми ҳисобҳои вуҷуддошат метавонанд ба таври худкор якка карда шаванд!
 
 Ягон тағйироте то ҳол ба ҳисобҳои шумо амалӣ нашудаанд.',
+	'centralauth-merge-dryrun-incomplete'  => 'Шумо барои давом қарор доред, аммо баъзе ҳисобҳо наметавонанд ба таври худкор таъйид шаванд ё мустақиман кӯчонида шаванд.
+Шумо дертар метавонед инҳоро идғом кунед.
+
+Ҳеҷ тағйироте ба ҳисобҳои шумо анҷом нашудаанд.',
 	'centralauth-merge-dryrun-or'          => "'''ё'''",
+	'centralauth-merge-dryrun-home'        => 'Системаи кӯчонидан натавонист тасдиқ кунед, ки шумо соҳиби ҳисоби викии аслӣ барои номи корбариатон ҳастед.
+
+Дигар вики ҳамчун ҳисоби аслӣ барои ҳисоби шумо мушаххас шудааст; пайванди зерро дунбол кунед ва ба кӯчонидани ҳисоби худ хотима диҳед.',
 	'centralauth-merge-step3-title'        => 'Эҷоди ҳисоби муштарак',
 	'centralauth-merge-step3-detail'       => 'Шумо омодаед ҳисоби муштараки худро дар викиҳои зерин эҷод кунед:',
 	'centralauth-merge-step3-submit'       => 'Якка кардани ҳисобҳо',
@@ -5493,6 +5550,8 @@ $messages['tg-cyrl'] = array(
 	'centralauth-admin-merge'              => 'Интихоби идғом',
 	'centralauth-admin-bad-input'          => 'Интихоби ғайри миҷози идғом',
 	'centralauth-admin-none-selected'      => 'Ҳеҷ ҳисоби корбари барои тағйир интихоб нашудааст.',
+	'centralauth-admin-already-unmerged'   => 'Ҷаҳиш аз $1, аллакай аз идғом гирифта шудааст',
+	'centralauth-admin-unmerge-success'    => 'Бо муваффақият $1 {{PLURAL:$2|ҳисобро|ҳисобҳоро}} аз идғом озод кардам',
 	'centralauth-admin-delete-title'       => 'Ҳазфи ҳисоб',
 	'centralauth-admin-delete-description' => 'Ҳазфи ҳисоби муштарак ба ҳамаи тарҷиҳоти муштарак хоҳад расон, ҷудо кардани ҳисобҳои маҳаллӣ, ва озод кардани номи муштарак барои гирифтани дигар корбар. Ҳамаи ҳисобҳои маҳаллим вуҷуд хоҳанд дошт. Гузарвожаҳо барои ҳисобҳои маҳаллӣ пеш аз баргардонидан ба қиматҳои пеш худ пеш аз идғом эҷод шуданд.',
 	'centralauth-admin-delete-button'      => 'Ҳазфи ин ҳисоб',
@@ -5648,9 +5707,17 @@ $messages['uk'] = array(
 	'centralauth-admin-merge'              => "Об'єднати обрані",
 	'centralauth-admin-bad-input'          => "Помилковий вибір об'єднання",
 	'centralauth-admin-none-selected'      => 'Не були вибрані акаунти для зміни.',
+	'centralauth-admin-already-unmerged'   => 'Пропуск $1, уже розділений',
+	'centralauth-admin-unmerge-success'    => 'Успішно {{PLURAL:$2|розділений один обліковий запис|розділені $1 облікових записи|розділені $1 облікових записів}}',
 	'centralauth-admin-delete-title'       => 'Вилучення облікового запису',
+	'centralauth-admin-delete-description' => "Вилучення глобального облікового запису призведе до вилучення глобальних налаштувань, від'єднання всіх облікових записів і звільнення глобального імені, що дозволить зайняти його іншому користувачеві.
+Усі локальні облікові записи продовжать існування.
+Паролі локальних облікових записів, створені до об'єднання, повернуть свої старі значення.",
 	'centralauth-admin-delete-button'      => 'Вилучити обліковий запис',
+	'centralauth-admin-delete-success'     => 'Успішно вилучений глобальний обілковий запис «<nowiki>$1</nowiki>»',
 	'centralauth-admin-nonexistent'        => 'Нема глобального облікового запису «<nowiki>$1</nowiki>»',
+	'centralauth-admin-delete-nonexistent' => 'Помилка: глобальний обліковий запис «<nowiki>$1</nowiki>» не існує.',
+	'centralauth-token-mismatch'           => 'На жаль, ми не можемо продовжити обробку вашої форму, так як були втрачені дані сеансу.',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|секунду|секунди|секунд}} тому',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}} тому',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|годину|години|годин}} тому',
@@ -5668,6 +5735,7 @@ $messages['uk'] = array(
 	'centralauth-prefs-manage'             => 'Керування глобальним обліковим записом',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Неможливо перейменувати користувача $1 у даному проекті, так як це ім\'я користувача було перенесене до системи єдиного облікового запису.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Неможливо перейменувати користувача $2, так як це ім\'я зарезервовано для глобального облікового запису.</div>',
+	'centralauth-invalid-wiki'             => 'Нема такої вікі БД: $1',
 	'centralauth-account-exists'           => "Неможливо створити обліковий запис. Таке ім'я вже зайняте для єдиного облікового запису.",
 );
 
