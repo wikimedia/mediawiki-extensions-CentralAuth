@@ -1537,12 +1537,14 @@ $messages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
 
-/** فارسی (فارسی)
+/** Persian (فارسی)
  * @author Huji
  */
 $messages['fa'] = array(
 	'mergeaccount'                         => 'وضعیت یکی کردن حساب‌ها',
 	'centralauth-desc'                     => 'یکی کردن حساب‌های کاربری در ویکی‌های بنیاد ویکی‌مدیا',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|ادغام چند حساب کاربری]] به منظور یکی کردن حساب‌های کاربری',
+	'centralauth-merge-denied'             => 'متاسفیم، شما اختیارات لازم برای دسترسی به این صفحه را ندارید.',
 	'centralauth-merge-notlogged'          => 'لطفاً <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} به سیستم وارد شوید]</span> تا از ادغام حساب‌های کاربر‌ی‌تان اطمینان حاصل کنید.',
 	'centralauth-merge-welcome'            => "'''حساب کاربری شما هنوز به سامانه یکی کردن حساب‌های ویکی‌مدیا انتقال داده نشده‌است.'''
 
@@ -1556,6 +1558,17 @@ $messages['fa'] = array(
 	'centralauth-merge-step2-title'        => 'تایید حساب‌های کاربری بیشتر',
 	'centralauth-merge-step2-detail'       => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند، شما می‌توانید این مساله را با وارد کردن کلمه عبور این حساب‌ها تایید کنید.',
 	'centralauth-merge-step2-submit'       => 'تایید اطلاعات ورود به سیستم',
+	'centralauth-merge-dryrun-complete'    => 'تمامی حساب‌های کاربری موجود را می‌توان به طور خودکار یکی کرد!
+
+هنوز تغییری در حساب‌های کاربری شما داده نشده‌است.',
+	'centralauth-merge-dryrun-incomplete'  => 'شما می‌توانید به کار خود ادامه دهید، اما برخی از حساب‌های کاربری به طور خودکار قابل ادغام نیستند.
+شما می‌توانید آن‌ها را بعداً ادغام کنید.
+
+هنوز تغییری در حساب‌های کاربری شما داده نشده‌است.',
+	'centralauth-merge-dryrun-or'          => "'''یا'''",
+	'centralauth-merge-dryrun-home'        => 'سامانه انتقال نمی‌توان تایید کند که شما صاحب حساب کاربری مورد نظر در ویکی خانه هستید.
+
+یک ویکی دیگر به عنوان ویکی خانه برای حساب‌ کاربری شما در نظر گرفته شد؛ پیوند زیر را دنبال کنید تا به سیستم وارد شوید و انتقال حساب کاربری خود را به پایان برسانید.',
 	'centralauth-merge-step3-title'        => 'ایجاد حساب مشترک',
 	'centralauth-merge-step3-detail'       => 'شما آماده‌اید که حساب مشترک خود را در ویکی‌های زیر ایجاد کنید:',
 	'centralauth-merge-step3-submit'       => 'یکی کردن حساب‌ها',
@@ -1577,12 +1590,22 @@ $messages['fa'] = array(
 	'centralauth-list-unattached-title'    => 'حساب‌های کاربری متصل',
 	'centralauth-list-unattached'          => 'حساب کاربری $1 را در وبگاه‌های زیر نمی‌توان به طور خودکار متعلق به شما دانست؛ به احتمال زیاد کلمه عبور آن‌ها با حساب کاربری اصلی شما متفاوت است:',
 	'centralauth-foreign-link'             => 'حساب کاربری $1 در $2',
+	'centralauth-merge-method-primary'     => 'ویکی خانه',
+	'centralauth-merge-method-empty'       => 'بدون مشارکت',
+	'centralauth-merge-method-mail'        => 'تایید شده توسط پست الکترونیکی',
+	'centralauth-merge-method-password'    => 'تایید شده توسط گذرواژه',
+	'centralauth-merge-method-admin'       => 'حساب کاربری ادغام شده توسط مدیر',
+	'centralauth-merge-method-new'         => 'حساب کاربری جدید',
+	'centralauth-merge-method-login'       => 'تایید شده توسط ورود به سیستم',
 	'centralauth-finish-title'             => 'خاتمه ادغام',
 	'centralauth-finish-text'              => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در این‌جا به پایان برسانید:',
 	'centralauth-finish-password'          => 'کلمه عبور:',
 	'centralauth-finish-login'             => 'ورود به سیستم',
 	'centralauth-finish-send-confirmation' => 'کلمه عبور پست الکترونیکی',
 	'centralauth-finish-problems'          => 'دچار مشکلی شده‌اید یا صاحب حساب‌های کاربری دیگری که فهرست شده‌اند نیستید؟ [[meta:Help:Unified login problems|راهنما را بخوانید]]...',
+	'centralauth-finish-noconfirms'        => 'هیچ حساب کاربری با این گذرواژه قابل تایید نیست.',
+	'centralauth-finish-incomplete'        => 'چندین حساب کاربری توسط این گذرواژه یکی شدند.
+دیگر حساب‌های کاربری هنوز تایید نشده‌اند.',
 	'centralauth-merge-attempt'            => "'''مطابقت دادن کلمه عبور وارد شده با حساب‌های ادغام‌نشدهٔ باقی‌مانده...'''",
 	'centralauth-attach-list-attached'     => 'حساب کاربری مشترک «$1» شامل این حساب‌های کاربری می‌شود:',
 	'centralauth-attach-title'             => 'تایید حساب کاربری',
@@ -1594,10 +1617,40 @@ $messages['fa'] = array(
 	'centralauth-admin-username'           => 'نام کاربری:',
 	'centralauth-admin-lookup'             => 'مشاهده یا تغییر اطلاعات کاربری',
 	'centralauth-admin-permission'         => 'تنها ویکیبدها می‌توانند حساب کاربری دیگر کاربرها را یکی کنند.',
+	'centralauth-admin-no-unified'         => 'حساب کاربری مشترک برای این نام کاربری وجود ندارد.',
+	'centralauth-admin-info-id'            => 'شماره کاربر:',
+	'centralauth-admin-info-registered'    => 'ثبت شده:',
+	'centralauth-admin-info-locked'        => 'قفل شده:',
+	'centralauth-admin-info-hidden'        => 'پنهان شده:',
+	'centralauth-admin-yes'                => 'بله',
+	'centralauth-admin-no'                 => 'خیر',
+	'centralauth-admin-attached'           => 'حساب‌های یکی شده به طور کامل',
+	'centralauth-admin-unattached'         => 'حساب‌های متصل نشده',
+	'centralauth-admin-no-unattached'      => 'هیچ حساب ادغام نشده‌ای باقی نمانده‌است.',
+	'centralauth-admin-list-localwiki'     => 'ویکی محلی',
+	'centralauth-admin-list-attached-on'   => 'متصل شده',
+	'centralauth-admin-list-method'        => 'روش',
 	'centralauth-admin-unmerge'            => 'از ادغام درآوردن موارد انتخاب شده',
 	'centralauth-admin-merge'              => 'انتخاب ادغام',
 	'centralauth-admin-bad-input'          => 'انتخاب غیرمجاز برای ادغام',
 	'centralauth-admin-none-selected'      => 'هیچ حساب کاربری برای تغییر انتخاب نشده‌است.',
+	'centralauth-admin-already-unmerged'   => 'پریدن از روی $1، به دلیل این که از ادغام در آورده شده',
+	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|حساب کاربری|حساب کاربری}} را با موفقیت از ادغام در آورد',
+	'centralauth-admin-delete-title'       => 'حذف حساب کاربری',
+	'centralauth-admin-delete-description' => 'حذف حساب کاربری مشترک باعث حذف تنظیمات مشترک و از ادغام در آمدن حساب‌های محلی می‌شود و نام کاربری مشترک را برای استفاده دیگر کاربرها آزاد می‌گذارد.
+حساب‌های کاربری محلی باقی خواهند ماند.
+گذرواژهٔ حساب‌های کاربری که قبل از ادغام ایجاد شده بودند به مقدار قبل از ادغام بازگشت خواهد کرد.',
+	'centralauth-admin-delete-button'      => 'حذف این حساب کاربری',
+	'centralauth-admin-delete-success'     => 'حساب کاربری مشترک «<nowiki>$1</nowiki>» را با موفقیت حذف کرد.',
+	'centralauth-admin-nonexistent'        => 'حساب کاربری مشترکی برای «<nowiki>$1</nowiki>» وجود ندارد.',
+	'centralauth-admin-delete-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
+	'centralauth-token-mismatch'           => 'شرمنده! به علت از دست رفتن اطلاعات نشست کاربری، نمی‌توانیم فرم شما را پردازش کنیم.',
+	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|ثانیه|ثانیه}} قبل',
+	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|دقیقه|دقیقه}} قبل',
+	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|ساعت|ساعت}} قبل',
+	'centralauth-days-ago'                 => '$1 {{PLURAL:$1|روز|روز}} قبل',
+	'centralauth-months-ago'               => '$1 {{PLURAL:$1|ماه|ماه}} قبل',
+	'centralauth-years-ago'                => '$1 {{PLURAL:$1|سال|سال}} قبل',
 	'centralauth-prefs-status'             => 'وضعیت حساب کاربری مشترک',
 	'centralauth-prefs-not-managed'        => 'عدم استفاده از حساب کاربری مشترک',
 	'centralauth-prefs-unattached'         => 'تایید نشده',
@@ -1608,7 +1661,9 @@ $messages['fa'] = array(
 	'centralauth-prefs-detail-unattached'  => 'وبگاه این پروژه مورد تایید برای استفاده از حساب کاربری مشترک قرار نگرفته‌است.',
 	'centralauth-prefs-manage'             => 'مدیریت حساب کاربری مشترک',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">امکان تغییر نام حساب کاربری $1 به طور محلی وجود ندارد، زیرا این حساب به سامانه یکی کردن حساب‌های کاربری منتقل شده‌است.</div>',
-
+	'centralauth-renameuser-exists'        => '<div class="errorbox">نام حساب کاربری $2 را نمی‌توان تغییر داد زیرا این حساب کاربری برای یک حساب مشترک کنار گذاشته شده‌است.</div>',
+	'centralauth-invalid-wiki'             => 'چنین پایگاه اطلاعاتی وجود ندارد: $1',
+	'centralauth-account-exists'           => 'امکان ایجاد حساب کاربری وجود ندارد: حساب کاربری مورد نظر پیش از این در سامانه حساب کاربری مشترک به کار گرفته شده‌است.',
 );
 
 /** Finnish (Suomi)
