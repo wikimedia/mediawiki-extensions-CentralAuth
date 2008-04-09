@@ -1180,13 +1180,11 @@ $messages['de'] = array(
 		Du kannst dein Heimat-Wiki später noch ändern.',
 
 	'centralauth-list-attached-title'   => 'Zusammengeführte Benutzerkonten',
-	'centralauth-list-attached'         => 'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten werden automatisch zusammengeführt:',
+	'centralauth-list-attached'         => 'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten wurden automatisch zusammengeführt:',
 	'centralauth-list-attached-dryrun'  => 'Die Benutzerkonten mit dem Namen „$1“ auf den folgenden Projekten werden automatisch zusammengeführt:',
 	'centralauth-list-unattached-title' => 'Nicht zusammengeführte Benutzerkonten',
-	'centralauth-list-unattached'       => 'Das Benutzerkonto „$1“ konnte für die folgenden Projekte
-		nicht automatisch als zu dir gehörend bestätigt werden;
-		vermutlich hat es ein anderes Passwort
-		als dein primäres Benutzerkonto:',
+	'centralauth-list-unattached'       => 'Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht automatisch als zu dir gehörend bestätigt werden;
+		vermutlich hat es ein anderes Passwort als dein primäres Benutzerkonto:',
 	'centralauth-foreign-link'          => 'Benutzer $1 auf $2',
 
 	// Merge methods
