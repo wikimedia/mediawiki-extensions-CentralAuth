@@ -38,6 +38,27 @@ $wgCentralAuthStrict = false;
  */
 $wgCentralAuthDryRun = false;
 
+/**
+ * Domain to set global cookies for.
+ */
+$wgCentralAuthCookieDomains = $wgServer;
+
+/**
+ * Prefix for CentralAuth cookies.
+ */
+$wgCentralAuthCookiePrefix = 'centralauth_';
+
+/**
+ * Wikis to automatically log into when this one is logged into.
+ * Done by loading a 1x1 image from Special:AutoLogin on that wiki.
+ */
+$wgCentralAuthAutoLoginWikis = array();
+
+/**
+  * Prefix for CentralAuth global auto-authentication cookies
+  */
+  $wgCentralAuthCookiePrefix = 'centralauth';
+
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Central Auth',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
@@ -57,12 +78,17 @@ $wgAutoloadClasses['CentralAuthUser'] = "$caBase/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['WikiMap'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
+$wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/SpecialAutoLogin.php";
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 
 $wgHooks['AuthPluginSetup'][] = 'wfSetupCentralAuthPlugin';
 $wgHooks['AddNewAccount'][] = 'wfCentralAuthAddNewAccount';
 $wgHooks['PreferencesUserInformationPanel'][] = 'wfCentralAuthInformationPanel';
 $wgHooks['AbortNewAccount'][] = 'wfCentralAuthAbortNewAccount';
+$wgHooks['UserLoginComplete'][] = 'wfCentralAuthUserLoginComplete';
+$wgHooks['AutoAuthenticate'][] = 'wfCentralAuthAutoAuthenticate';
+$wgHooks['UserLogout'][] = 'wfCentralAuthLogout';
+$wgHooks['UserLogoutComplete'][] = 'wfCentralAuthLogoutComplete';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserAbort'][] = 'wfCentralAuthRenameUserAbort';
@@ -72,6 +98,7 @@ $wgGroupPermissions['steward']['centralauth-admin'] = true;
 $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
+$wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 
 function wfSetupCentralAuthPlugin( &$auth ) {
@@ -199,3 +226,107 @@ function wfCentralAuthAbortNewAccount( $user, &$abortError ) {
 	return true;
 }
 
+function wfCentralAuthUserLoginComplete( &$user, &$inject_html ) {
+	$centralUser = new CentralAuthUser( $user->getName() );
+	
+	if ($centralUser->exists()) {
+		$centralUser->setGlobalCookies($user);
+	} else {
+		return;
+	}
+	
+	// On other wikis
+	global $wgCentralAuthAutoLoginWikis;
+	
+	$inject_html .= Xml::openElement( 'p' );
+	
+	foreach( $wgCentralAuthAutoLoginWikis as $dbname ) {
+		$wiki = WikiMap::byDatabase( $dbname );
+		$url = $wiki->getUrl( 'Special:AutoLogin' );
+		
+		$querystring = 'user=' . urlencode( $user->getName() );
+		$querystring .= '&token=' . $centralUser->getAuthToken();
+		$querystring .= '&remember=' . $user->getOption( 'rememberpassword' );
+		
+		if (strpos($url, '?') > 0) {
+			$url .= "&$querystring";
+		} else {
+			$url .= "?$querystring";
+		}
+		
+		$inject_html .= Xml::element( 'img', array( 'src' => $url ) );
+	}
+	
+	$inject_html .= Xml::closeElement( 'p' );
+	
+	return true;
+}
+
+function wfCentralAuthAutoAuthenticate( &$user ) {
+	global $wgCentralAuthCookiePrefix;
+	$prefix = $wgCentralAuthCookiePrefix;
+	
+	if (isset($_COOKIE["{$prefix}User"]) && isset($_COOKIE["{$prefix}Token"])) {
+		list ($username, $token) = array( $_COOKIE["{$prefix}User"], $_COOKIE["{$prefix}Token"] );
+		$centralUser = new CentralAuthUser( $username );
+		
+		if ($centralUser->authenticateWithToken( $token ) == 'ok' && $centralUser->isAttached()) {
+			// Auth OK.
+			$user = User::newFromName( $username );
+		}
+	} elseif (isset($_COOKIE["{$prefix}Session"])) {
+		$session_id = $_COOKIE["{$prefix}Session"];
+		
+		global $wgMemc;
+		$global_session = unserialize($wgMemc->get( "centralauth_session_$session_id" ));
+		
+		$token = $global_session['token'];
+		$username = $global_session['user'];
+		
+		if ($global_session['expiry'] < time()) {
+			return true; // Session has expired. Don't let it be logged-in with.
+		}
+		
+		$centralUser = new CentralAuthUser( $username );
+		
+		if ($centralUser->authenticateWithToken( $token ) == 'ok' && $centralUser->isAttached()) {
+			// Auth OK.
+			$user = User::newFromName( $username );
+		}
+	}
+	
+	return true;
+}
+
+function wfCentralAuthLogout( &$user ) {
+	$centralUser = new CentralAuthUser( $user->getName() );
+	
+	if ($centralUser->exists()) {
+		$centralUser->deleteGlobalCookies();
+	}
+	
+	return true;
+}
+
+function wfCentralAuthLogoutComplete( &$user, &$inject_html ) {
+	// Generate the images
+	global $wgCentralAuthAutoLoginWikis;
+	
+	$inject_html .= Xml::openElement( 'p' );
+	
+	foreach( $wgCentralAuthAutoLoginWikis as $dbname ) {
+		$wiki = WikiMap::byDatabase( $dbname );
+		$url = $wiki->getUrl( 'Special:AutoLogin' );
+		
+		if (strpos($url, '?') > 0) {
+			$url .= '&logout=1';
+		} else {
+			$url .= '?logout=1';
+		}
+		
+		$inject_html .= Xml::element( 'img', array( 'src' => $url, alt => '' ) );
+	}
+	
+	$inject_html .= Xml::closeElement( 'p' );
+	return true;
+}

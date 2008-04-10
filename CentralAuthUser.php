@@ -60,12 +60,12 @@ class CentralAuthUser {
 	private function loadState() {
 		if( !isset( $this->mGlobalId ) ) {
 			global $wgDBname;
-			$dbr = self::getCentralDB();
+			$dbr = self::getCentralSlaveDB();
 			$globaluser = self::tableName( 'globaluser' );
 			$localuser = self::tableName( 'localuser' );
 
 			$sql =
-				"SELECT gu_id, lu_dbname
+				"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_authtoken,gu_locked,gu_hidden,gu_registration
 					FROM $globaluser
 					LEFT OUTER JOIN $localuser
 						ON gu_name=lu_name
@@ -78,6 +78,12 @@ class CentralAuthUser {
 			if( $row ) {
 				$this->mGlobalId = intval( $row->gu_id );
 				$this->mIsAttached = ($row->lu_dbname !== null);
+				$this->mSalt = $row->gu_salt;
+				$this->mPassword = $row->gu_password;
+				$this->mAuthToken = $row->gu_authtoken;
+				$this->mLocked = $row->gu_locked;
+				$this->mHidden = $row->gu_hidden;
+				$this->mRegistration = $row->gu_registration;
 			} else {
 				$this->mGlobalId = 0;
 				$this->mIsAttached = false;
@@ -100,6 +106,27 @@ class CentralAuthUser {
 		$this->loadState();
 		return $this->mIsAttached;
 	}
+	
+	/**
+	* Return the password hash and salt.
+	* @return array( salt, hash )
+	*/
+	public function getPasswordHash() {
+		$this->loadState();
+		return array( $this->mSalt, $this->mPassword );
+	}
+	
+	/**
+	* Return the global-login token for this account.
+	*/
+	public function getAuthToken() {
+		$this->loadState();
+		
+		if (!$this->mAuthToken) {
+			$this->resetAuthToken();
+		}
+		return $this->mAuthToken;
+	}
 
 	/**
 	 * Check whether a global user account for this name exists yet.
@@ -116,41 +143,27 @@ class CentralAuthUser {
 	}
 
 	/**
-	 * Lazy-load misc properties that may be used at times
-	 */
-	private function loadProperties() {
-		if( !isset( $this->mProperties ) ) {
-			$dbw = self::getCentralDB();
-			$row = $dbw->selectRow( self::tableName( 'globaluser' ),
-				array( 'gu_locked', 'gu_hidden', 'gu_registration' ),
-				array( 'gu_name' => $this->mName ),
-				__METHOD__ );
-			$this->mProperties = $row;
-		}
-	}
-
-	/**
 	 * @return bool
 	 */
 	public function isLocked() {
-		$this->loadProperties();
-		return (bool)$this->mProperties->gu_locked;
+		$this->loadState();
+		return (bool)$this->mLocked;
 	}
 
 	/**
-	 * @return bool
+	 * @return bool	
 	 */
 	public function isHidden() {
-		$this->loadProperties();
-		return (bool)$this->mProperties->gu_hidden;
+		$this->loadState();
+		return (bool)$this->mHidden;
 	}
 
 	/**
 	 * @return string timestamp
 	 */
 	public function getRegistration() {
-		$this->loadProperties();
-		return wfTimestamp( TS_MW, $this->mProperties->gu_registration );
+		$this->loadState();
+		return wfTimestamp( TS_MW, $this->mRegistration );
 	}
 
 	private function lazyMigrate() {
@@ -677,6 +690,32 @@ class CentralAuthUser {
 			$this->resetState();
 		}
 	}
+	
+	/**
+	 * If the user provides the correct password, would we let them log in?
+	 * This encompasses checks on missing and locked accounts, at present.
+	 * @return string status, one of: "no user", "locked"
+	 */
+	public function canAuthenticate() {
+		$this->lazyMigrate();
+
+		if( !$this->getId() ) {
+			wfDebugLog( 'CentralAuth',
+				"authentication for '$this->mName' failed due to missing account" );
+			return "no user";
+		}
+
+		list($salt,$crypt) = $this->getPasswordHash();
+		$locked = $this->isLocked();
+
+		if( $locked ) {
+			wfDebugLog( 'CentralAuth',
+				"authentication for '$this->mName' failed due to lock" );
+			return "locked";
+		}
+		
+		return true;
+	}
 
 	/**
 	 * Attempt to authenticate the global user account with the given password
@@ -685,30 +724,12 @@ class CentralAuthUser {
 	 * @todo Currently only the "ok" result is used (i.e. either use, or return a bool).
 	 */
 	public function authenticate( $password ) {
-		$this->lazyMigrate();
-
-		$dbw = self::getCentralDB();
-		$row = $dbw->selectRow( self::tableName( 'globaluser' ),
-			array( 'gu_salt', 'gu_password', 'gu_locked' ),
-			array( 'gu_id' => $this->getId() ),
-			__METHOD__ );
-
-		if( !$row ) {
-			wfDebugLog( 'CentralAuth',
-				"authentication for '$this->mName' failed due to missing account" );
-			return "no user";
+		if (($ret = $this->canAuthenticate()) !== true) {
+			return $ret;
 		}
-
-		$salt = $row->gu_salt;
-		$crypt = $row->gu_password;
-		$locked = $row->gu_locked;
-
-		if( $locked ) {
-			wfDebugLog( 'CentralAuth',
-				"authentication for '$this->mName' failed due to lock" );
-			return "locked";
-		}
-
+		
+		list( $salt, $crypt ) = $this->getPasswordHash();
+		
 		if( $this->matchHash( $password, $salt, $crypt ) ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
@@ -717,6 +738,23 @@ class CentralAuthUser {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' failed, bad pass" );
 			return "bad password";
+		}
+	}
+	
+	/**
+	* Attempt to authenticate the global user account with the given global authtoken
+	* @param string $token
+	* @return string status, one of: "ok", "no user", "locked", or "bad token"
+	*/
+	public function authenticateWithToken( $token ) {
+		if (($ret = $this->canAuthenticate()) !== true) {
+			return $ret;
+		}
+		
+		if ($this->validateAuthToken( $token ) ) {
+			return "ok";
+		} else {
+			return "bad token";
 		}
 	}
 
@@ -1095,7 +1133,78 @@ class CentralAuthUser {
 
 		wfDebugLog( 'CentralAuth',
 			"Set global password for '$this->mName'" );
+		
+		// Reset the auth token.
+		$this->resetAuthToken();
+		$this->setGlobalCookies();
 		return true;
 	}
 
+	/**
+	 * Set a global cookie that auto-authenticates the user on other wikis
+	 * Called on login.
+	 */
+	function setGlobalCookies($localUser) {
+		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration;
+		
+		$exp = time() + $wgCookieExpiration;
+		
+		$global_session = array();
+		
+		$global_session['user'] = $this->mName;
+		setcookie( $wgCentralAuthCookiePrefix.'User', $this->mName, $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		$global_session['token'] = $this->getAuthToken();
+		$global_session['expiry'] = time() + 86400;
+		
+		if ($localUser->getOption('rememberpassword') == 1) {
+			setcookie( $wgCentralAuthCookiePrefix.'Token', $this->getAuthToken(), $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		} else {
+			setcookie( $wgCentralAuthCookiePrefix.'Token', '', time() - 86400 );
+		}
+		
+		// Make up a session id.
+		$session_id = md5( $exp . mt_rand( 0, 0x7fffffff ) . $this->getId() );
+		// Store the session in memcached
+		global $wgMemc;
+		$wgMemc->set( 'centralauth_session_'.$session_id, serialize($global_session), 86400 );
+		
+		setcookie( $wgCentralAuthCookiePrefix.'Session', $session_id, time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+	}
+	
+	/**
+	 * Delete global cookies which auto-authenticate the user on other wikis.
+	 * Called on logout.
+	 */
+	function deleteGlobalCookies() {
+		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure;
+		
+		$exp = time() - 86400;
+		
+		setcookie( $wgCentralAuthCookiePrefix.'User', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		setcookie( $wgCentralAuthCookiePrefix.'Token', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		setcookie( $wgCentralAuthCookiePrefix.'Session', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		
+		$this->resetAuthToken();
+	}
+	
+	/**
+	 * Check a global auth token against the one we know of in the database.
+	 */
+	function validateAuthToken( $token ) {
+		return ($token == $this->getAuthToken());
+	}
+	
+	/**
+	 * Generate a new random auth token, and store it in the database.
+	 * Should be called as often as possible, to the extent that it will
+	 * not randomly log users out (so on logout, as is done currently, is a good time).
+	 */
+	function resetAuthToken() {
+		// Generate a random token.
+		$this->mAuthToken = md5( mt_rand( 0, 0x7fffffff ) . $this->getId() );
+		
+		// Save it.
+		$dbw = self::getCentralDB();
+		$dbw->update( self::tableName( 'globaluser' ), array( 'gu_authtoken' => $this->mAuthToken ), array( 'gu_id' => $this->getId() ), __METHOD__ );
+	}
 }
