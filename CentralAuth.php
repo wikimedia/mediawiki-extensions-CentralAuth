@@ -228,7 +228,7 @@ function wfCentralAuthUserLoginComplete( &$user, &$inject_html ) {
 	if ($centralUser->exists()) {
 		$centralUser->setGlobalCookies($user);
 	} else {
-		return;
+		return true;
 	}
 	
 	// On other wikis
