@@ -9,8 +9,6 @@ if (!defined('MEDIAWIKI')) {
  * @addtogroup Extensions
  */
  
- global $IP;
-
 class SpecialAutoLogin extends UnlistedSpecialPage
 {
 	function SpecialAutoLogin() {
@@ -18,7 +16,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 	}
 	
 	function execute() {
-		global $wgRequest,$wgOut,$wgUser;
+		global $IP, $wgRequest,$wgOut,$wgUser;
 		
 		$username = $wgRequest->getVal( 'user' );
 		$token = $wgRequest->getVal('token');
@@ -33,7 +31,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 		if ($logout == true) {
 			$centralUser = new CentralAuthUser( $wgUser->getName() );
 			
-			if ($centralUser->getId) {
+			if ($centralUser->getId()) {
 				$centralUser->deleteGlobalCookies();
 			}
 		} else {
