@@ -84,6 +84,7 @@ $wgHooks['UserLoginComplete'][] = 'wfCentralAuthUserLoginComplete';
 $wgHooks['AutoAuthenticate'][] = 'wfCentralAuthAutoAuthenticate';
 $wgHooks['UserLogout'][] = 'wfCentralAuthLogout';
 $wgHooks['UserLogoutComplete'][] = 'wfCentralAuthLogoutComplete';
+$wgHooks['GetCacheVaryCookies'][] = 'wfCentralAuthGetCacheVaryCookies';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserAbort'][] = 'wfCentralAuthRenameUserAbort';
@@ -323,5 +324,12 @@ function wfCentralAuthLogoutComplete( &$user, &$inject_html ) {
 	}
 	
 	$inject_html .= Xml::closeElement( 'p' );
+	return true;
+}
+
+function wfCentralAuthGetCacheVaryCookies( $out, &$cookies ) {
+	global $wgCentralAuthCookiePrefix;
+	$cookies[] = $wgCentralAuthCookiePrefix . 'Token';
+	$cookies[] = $wgCentralAuthCookiePrefix . 'Session';
 	return true;
 }
