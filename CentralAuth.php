@@ -44,7 +44,7 @@ $wgCentralAuthDryRun = false;
 $wgCentralAuthCookieDomains = $wgServer;
 
 /**
- * Prefix for CentralAuth cookies.
+ * Prefix for CentralAuth global authentication cookies.
  */
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
@@ -53,11 +53,6 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
  * Done by loading a 1x1 image from Special:AutoLogin on that wiki.
  */
 $wgCentralAuthAutoLoginWikis = array();
-
-/**
-  * Prefix for CentralAuth global auto-authentication cookies
-  */
-  $wgCentralAuthCookiePrefix = 'centralauth';
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Central Auth',

@@ -58,6 +58,7 @@ class CentralAuthUser {
 	 * Lazy-load up the most commonly required state information
 	 */
 	private function loadState() {
+		wfProfileIn( __METHOD__ );
 		if( !isset( $this->mGlobalId ) ) {
 			global $wgDBname;
 			$dbr = self::getCentralSlaveDB();
@@ -65,7 +66,8 @@ class CentralAuthUser {
 			$localuser = self::tableName( 'localuser' );
 
 			$sql =
-				"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_authtoken,gu_locked,gu_hidden,gu_registration
+				"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_authtoken,
+				gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated
 					FROM $globaluser
 					LEFT OUTER JOIN $localuser
 						ON gu_name=lu_name
@@ -84,11 +86,14 @@ class CentralAuthUser {
 				$this->mLocked = $row->gu_locked;
 				$this->mHidden = $row->gu_hidden;
 				$this->mRegistration = $row->gu_registration;
+				$this->mEmail = $row->gu_email;
+				$this->mAuthenticationTimestamp = $row->gu_email_authenticated;
 			} else {
 				$this->mGlobalId = 0;
 				$this->mIsAttached = false;
 			}
 		}
+		wfProfileOut( __METHOD__ );
 	}
 
 	/**
@@ -1087,19 +1092,13 @@ class CentralAuthUser {
 	}
 
 	function getEmail() {
-		$dbr = self::getCentralDB();
-		return $dbr->selectField( self::tableName( 'globaluser' ),
-			'gu_email',
-			array( 'gu_id' => $this->getId() ),
-			__METHOD__ );
+		$this->loadState();
+		return $this->mEmail;
 	}
 
 	function getEmailAuthenticationTimestamp() {
-		$dbr = self::getCentralDB();
-		return $dbr->selectField( self::tableName( 'globaluser' ),
-			'gu_email_authenticated',
-			array( 'gu_id' => $this->getId() ),
-			__METHOD__ );
+		$this->loadState();
+		return $this->mAuthenticationTimestamp;
 	}
 
 	/**

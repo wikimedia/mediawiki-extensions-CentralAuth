@@ -11,8 +11,6 @@ if (!defined('MEDIAWIKI')) {
  
  global $IP;
 
-require_once( "$IP/includes/StreamFile.php" );
-
 class SpecialAutoLogin extends UnlistedSpecialPage
 {
 	function SpecialAutoLogin() {
@@ -51,6 +49,8 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 				$centralUser->setGlobalCookies($user);
 			}
 		}
+		
+		require_once( "$IP/includes/StreamFile.php" );
 		
 		wfStreamFile( dirname(__FILE__).'/1x1.png' );
 		
