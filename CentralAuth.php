@@ -262,6 +262,11 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 	global $wgCentralAuthCookiePrefix;
 	$prefix = $wgCentralAuthCookiePrefix;
 	
+	if( $user->isLoggedIn() ) {
+		// Already logged in; don't worry about the global session.
+		return true;
+	}
+	
 	if (isset($_COOKIE["{$prefix}User"]) && isset($_COOKIE["{$prefix}Token"])) {
 		list ($username, $token) = array( $_COOKIE["{$prefix}User"], $_COOKIE["{$prefix}Token"] );
 		$centralUser = new CentralAuthUser( $username );
@@ -273,7 +278,7 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 		} else {
 			// Auth OK.
 			wfDebug( __METHOD__.": logged in from token\n" );
-			$user = User::newFromName( $username );
+			$user = wfCentralAuthInitSession( $username );
 		}
 	} elseif (isset($_COOKIE["{$prefix}Session"])) {
 		$session_id = $_COOKIE["{$prefix}Session"];
@@ -298,7 +303,7 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 		} else {
 			// Auth OK.
 			wfDebug( __METHOD__.": logged in from session\n" );
-			$user = User::newFromName( $username );
+			$user = wfCentralAuthInitSession( $username );
 		}
 	} else {
 		wfDebug( __METHOD__.": no token or session\n" );
@@ -306,6 +311,15 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 	
 	return true;
 }
+
+function wfCentralAuthInitSession( $username ) {
+	wfSetupSession();
+	$user = User::newFromName( $username );
+	$user->invalidateCache();
+	$user->setCookies();
+	return $user;
+}
+
 
 function wfCentralAuthLogout( &$user ) {
 	$centralUser = new CentralAuthUser( $user->getName() );
