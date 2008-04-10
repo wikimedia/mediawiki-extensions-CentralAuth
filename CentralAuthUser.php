@@ -114,17 +114,17 @@ class CentralAuthUser {
 	}
 	
 	/**
-	* Return the password hash and salt.
-	* @return array( salt, hash )
-	*/
+	 * Return the password salt and hash.
+	 * @return array( salt, hash )
+	 */
 	public function getPasswordHash() {
 		$this->loadState();
 		return array( $this->mSalt, $this->mPassword );
 	}
 	
 	/**
-	* Return the global-login token for this account.
-	*/
+	 * Return the global-login token for this account.
+	 */
 	public function getAuthToken() {
 		$this->loadState();
 		
@@ -700,7 +700,7 @@ class CentralAuthUser {
 	/**
 	 * If the user provides the correct password, would we let them log in?
 	 * This encompasses checks on missing and locked accounts, at present.
-	 * @return string status, one of: "no user", "locked"
+	 * @return mixed: true if login available, or string status, one of: "no user", "locked"
 	 */
 	public function canAuthenticate() {
 		$this->lazyMigrate();
@@ -748,10 +748,10 @@ class CentralAuthUser {
 	}
 	
 	/**
-	* Attempt to authenticate the global user account with the given global authtoken
-	* @param string $token
-	* @return string status, one of: "ok", "no user", "locked", or "bad token"
-	*/
+	 * Attempt to authenticate the global user account with the given global authtoken
+	 * @param string $token
+	 * @return string status, one of: "ok", "no user", "locked", or "bad token"
+	 */
 	public function authenticateWithToken( $token ) {
 		if (($ret = $this->canAuthenticate()) !== true) {
 			return $ret;
