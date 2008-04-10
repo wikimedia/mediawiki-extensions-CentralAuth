@@ -85,9 +85,10 @@ class CentralAuthUser {
 				$this->mAuthToken = $row->gu_auth_token;
 				$this->mLocked = $row->gu_locked;
 				$this->mHidden = $row->gu_hidden;
-				$this->mRegistration = $row->gu_registration;
+				$this->mRegistration = wfTimestamp( TS_MW, $row->gu_registration );
 				$this->mEmail = $row->gu_email;
-				$this->mAuthenticationTimestamp = $row->gu_email_authenticated;
+				$this->mAuthenticationTimestamp =
+					wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
 			} else {
 				$this->mGlobalId = 0;
 				$this->mIsAttached = false;
@@ -268,7 +269,7 @@ class CentralAuthUser {
 				'gu_salt' => $salt,
 				'gu_password' => $hash,
 				'gu_email' => $email,
-				'gu_email_authenticated' => $emailAuth,
+				'gu_email_authenticated' => $dbw->timestampOrNull( $emailAuth ),
 				'gu_registration' => $dbw->timestamp(), // hmmmm
 			),
 			__METHOD__,
@@ -1048,7 +1049,8 @@ class CentralAuthUser {
 			'dbName' => $dbname,
 			'id' => $row->user_id,
 			'email' => $row->user_email,
-			'emailAuthenticated' => $row->user_email_authenticated,
+			'emailAuthenticated' =>
+				wfTimestampOrNull( TS_MW, $row->user_email_authenticated ),
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
 			'groups' => array(),
