@@ -82,7 +82,7 @@ CREATE TABLE globaluser (
   gu_password_reset_expiration varchar(14) binary,
   
   -- Random key for crosswiki authentication tokens
-  gu_auth_token varchar(32) binary,
+  gu_auth_token varbinary(32) NULL,
 
   primary key (gu_id),
   unique key (gu_name),
