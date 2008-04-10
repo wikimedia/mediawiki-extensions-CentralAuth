@@ -265,9 +265,14 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 	if (isset($_COOKIE["{$prefix}User"]) && isset($_COOKIE["{$prefix}Token"])) {
 		list ($username, $token) = array( $_COOKIE["{$prefix}User"], $_COOKIE["{$prefix}Token"] );
 		$centralUser = new CentralAuthUser( $username );
-		
-		if ($centralUser->authenticateWithToken( $token ) == 'ok' && $centralUser->isAttached()) {
+
+		if ( !$centralUser->authenticateWithToken( $token ) == 'ok' ) {
+			wfDebug( __METHOD__.": token mismatch\n" );
+		} elseif ( !$centralUser->isAttached() ) {
+			wfDebug( __METHOD__.": not attached\n" );
+		} else {
 			// Auth OK.
+			wfDebug( __METHOD__.": logged in from token\n" );
 			$user = User::newFromName( $username );
 		}
 	} elseif (isset($_COOKIE["{$prefix}Session"])) {
@@ -280,15 +285,23 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 		$username = $global_session['user'];
 		
 		if ($global_session['expiry'] < time()) {
+			wfDebug( __METHOD__.": session expired\n" );
 			return true; // Session has expired. Don't let it be logged-in with.
 		}
 		
 		$centralUser = new CentralAuthUser( $username );
 		
-		if ($centralUser->authenticateWithToken( $token ) == 'ok' && $centralUser->isAttached()) {
+		if ( !$centralUser->authenticateWithToken( $token ) == 'ok' ) {
+			wfDebug( __METHOD__.": token mismatch\n" );
+		} elseif ( !$centralUser->isAttached() ) {
+			wfDebug( __METHOD__.": not attached\n" );
+		} else {
 			// Auth OK.
+			wfDebug( __METHOD__.": logged in from session\n" );
 			$user = User::newFromName( $username );
 		}
+	} else {
+		wfDebug( __METHOD__.": no token or session\n" );
 	}
 	
 	return true;

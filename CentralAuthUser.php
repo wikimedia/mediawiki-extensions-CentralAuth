@@ -66,7 +66,7 @@ class CentralAuthUser {
 			$localuser = self::tableName( 'localuser' );
 
 			$sql =
-				"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_authtoken,
+				"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_auth_token,
 				gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated
 					FROM $globaluser
 					LEFT OUTER JOIN $localuser
@@ -82,7 +82,7 @@ class CentralAuthUser {
 				$this->mIsAttached = ($row->lu_dbname !== null);
 				$this->mSalt = $row->gu_salt;
 				$this->mPassword = $row->gu_password;
-				$this->mAuthToken = $row->gu_authtoken;
+				$this->mAuthToken = $row->gu_auth_token;
 				$this->mLocked = $row->gu_locked;
 				$this->mHidden = $row->gu_hidden;
 				$this->mRegistration = $row->gu_registration;
@@ -1204,6 +1204,6 @@ class CentralAuthUser {
 		
 		// Save it.
 		$dbw = self::getCentralDB();
-		$dbw->update( self::tableName( 'globaluser' ), array( 'gu_authtoken' => $this->mAuthToken ), array( 'gu_id' => $this->getId() ), __METHOD__ );
+		$dbw->update( self::tableName( 'globaluser' ), array( 'gu_auth_token' => $this->mAuthToken ), array( 'gu_id' => $this->getId() ), __METHOD__ );
 	}
 }
