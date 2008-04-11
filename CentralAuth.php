@@ -243,10 +243,10 @@ function wfCentralAuthUserLoginComplete( &$user, &$inject_html ) {
 		$data['remember'] = $user->getOption( 'rememberpassword' );
 		$data['wiki'] = $dbname;
 		
-		$login_token = md5( mt_rand( 0, 0x7fffffff ) . $centralUser->getId() );
+		$login_token = wfGenerateToken( $centralUser->getId() );
 		
 		global $wgMemc;
-		$wgMemc->set( 'centralauth_logintoken_'.$login_token, serialize($data), 600 );
+		$wgMemc->set( 'centralauth_logintoken_'.$login_token, $data, 600 );
 		
 		$wiki = WikiMap::byDatabase( $dbname );
 		$url = $wiki->getUrl( 'Special:AutoLogin' );
@@ -293,7 +293,7 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 		$session_id = $_COOKIE["{$prefix}Session"];
 		
 		global $wgMemc;
-		$global_session = unserialize($wgMemc->get( "centralauth_session_$session_id" ));
+		$global_session = $wgMemc->get( "centralauth_session_$session_id" );
 		
 		$token = $global_session['token'];
 		$username = $global_session['user'];

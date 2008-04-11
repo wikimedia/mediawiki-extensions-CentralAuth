@@ -33,7 +33,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 				$centralUser->deleteGlobalCookies();
 			}
 		} else {
-			$data = unserialize($wgMemc->get( 'centralauth_logintoken_'.$token ));
+			$data = $wgMemc->get( 'centralauth_logintoken_'.$token );
 			$wgMemc->delete( 'centralauth_logintoken_'.$token );
 			
 			$username = $data['username'];

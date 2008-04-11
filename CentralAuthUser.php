@@ -1164,10 +1164,10 @@ class CentralAuthUser {
 		}
 		
 		// Make up a session id.
-		$session_id = md5( $exp . mt_rand( 0, 0x7fffffff ) . $this->getId() );
+		$session_id = wfGenerateToken( $exp . $this->getId() );
 		// Store the session in memcached
 		global $wgMemc;
-		$wgMemc->set( 'centralauth_session_'.$session_id, serialize($global_session), 86400 );
+		$wgMemc->set( 'centralauth_session_'.$session_id, $global_session, 86400 );
 		
 		setcookie( $wgCentralAuthCookiePrefix.'Session', $session_id, time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
 	}
@@ -1202,7 +1202,7 @@ class CentralAuthUser {
 	 */
 	function resetAuthToken() {
 		// Generate a random token.
-		$this->mAuthToken = md5( mt_rand( 0, 0x7fffffff ) . $this->getId() );
+		$this->mAuthToken = wfGenerateToken( $this->getId() );
 		
 		// Save it.
 		$dbw = self::getCentralDB();
