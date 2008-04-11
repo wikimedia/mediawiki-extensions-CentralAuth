@@ -2072,6 +2072,13 @@ Poderá mudar o seu wiki primario máis tarde.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Non se lle pode mudar o nome ao usuario $1 localmente xa que este nome de usuario pasou ao sistema de rexistro unificado.</div>',
 );
 
+/** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author AndreasJS
+ */
+$messages['grc'] = array(
+	'centralauth-finish-login' => 'συνδεῖσθαι',
+);
+
 $messages['he'] = array(
 	# When not logged in...
 	'mergeaccount'                  => 'מצב מיזוג החשבונות',
@@ -2839,6 +2846,7 @@ $messages['is'] = array(
 /** Italian (Italiano)
  * @author Gianfranco
  * @author BrokenArrow
+ * @author Cruccone
  * @author Siebrand
  */
 $messages['it'] = array(
@@ -2929,6 +2937,15 @@ Potrai in seguito cambiare il tuo wiki principale.",
 	'centralauth-admin-merge'              => 'Collega gli account selezionati',
 	'centralauth-admin-bad-input'          => "Selezione per l'unificazione NON valida",
 	'centralauth-admin-none-selected'      => 'Non sono stati selezionati account da modificare',
+	'centralauth-admin-already-unmerged'   => 'Salto $1, già separato',
+	'centralauth-admin-unmerge-success'    => '$1 account {{PLURAL:$2|separato|separati}} con successo',
+	'centralauth-admin-delete-title'       => 'Elimina account',
+	'centralauth-admin-delete-description' => "La cancellazione dell'account globale eliminerà tutte le preferenze globali, disgiungerà tutti gli account locali e lascerà il nome globale libero perché un altro utente lo prenda.
+Tutti gli account locali continueranno ad esistere.
+Le password per gli account locali create prima della fusione torneranno ai loro valori precedenti la fusione.",
+	'centralauth-admin-delete-button'      => 'Elimina questo account',
+	'centralauth-admin-delete-success'     => 'Account globale per "<nowiki>$1</nowiki>" eliminato con successo',
+	'centralauth-admin-nonexistent'        => 'Non esiste un account globale per "<nowiki>$1</nowiki>"',
 	'centralauth-seconds-ago'              => '$1 secondi fa',
 	'centralauth-minutes-ago'              => '$1 minuti fa',
 	'centralauth-hours-ago'                => '$1 ore fa',
@@ -3080,6 +3097,7 @@ Jer vil være i stand til lave om på hvilke er jeres hjem wiki senere.',
  * @author Meursault2004
  */
 $messages['jv'] = array(
+	'mergeaccount'                         => 'Status panggabungan log mlebu',
 	'centralauth-merge-denied'             => 'Nuwun sèwu, panjenengan ora diparengaké niliki kaca iki.',
 	'centralauth-merge-step2-submit'       => 'Dhedhesen (konfirmasi) log mlebu',
 	'centralauth-merge-dryrun-or'          => "'''utawa'''",
@@ -3100,6 +3118,8 @@ $messages['jv'] = array(
 	'centralauth-admin-manage'             => 'Ngatur data panganggo',
 	'centralauth-admin-username'           => 'Jeneng panganggo:',
 	'centralauth-admin-permission'         => "Namung para ''steward'' sing bisa nggabungaké rékening (akun) wong liya.",
+	'centralauth-admin-info-id'            => 'ID panganggo:',
+	'centralauth-admin-info-registered'    => 'Kadaftar:',
 	'centralauth-admin-yes'                => 'inggih',
 	'centralauth-admin-no'                 => 'ora',
 	'centralauth-admin-list-localwiki'     => 'Wiki lokal',
@@ -4946,6 +4966,14 @@ $messages['sah'] = array(
 	'centralauth-prefs-detail-unattached'  => 'Бу бырайыакка эн сүрүн аатыҥ бигэргэтиллибэтэх.',
 	'centralauth-prefs-manage'             => 'Сүрүн ааты салайыы',
 	'centralauth-renameuser-abort'         => "<div class=\"errorbox\">\$1 ааты бу бырайыакка уларытар кыах суох, тоҕо диэтэххэ бу аат ''Сүрүн ааты'' кытта холбоно сылдьар.</div>",
+);
+
+/** Tachelhit (Tašlḥiyt)
+ * @author Zanatos
+ */
+$messages['shi'] = array(
+	'centralauth-admin-yes' => 'yah',
+	'centralauth-admin-no'  => 'oho',
 );
 
 /** Slovak (Slovenčina)
