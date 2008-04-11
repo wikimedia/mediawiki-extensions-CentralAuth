@@ -16,14 +16,12 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 	}
 	
 	function execute() {
-		global $IP, $wgRequest,$wgOut,$wgUser;
+		global $wgRequest,$wgOut,$wgUser, $wgMemc, $wgDBname, $IP;
 		
-		$username = $wgRequest->getVal( 'user' );
 		$token = $wgRequest->getVal('token');
-		$remember = $wgRequest->getBool( 'remember' );
 		$logout = $wgRequest->getBool( 'logout' );
 		
-		if ((strlen($username) == 0 || strlen($token) == 0) && !$logout) {
+		if (strlen($token) == 0 && !$logout) {
 			$wgOut->addWikitext( 'AutoLogin' );
 			return;
 		}
@@ -35,6 +33,20 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 				$centralUser->deleteGlobalCookies();
 			}
 		} else {
+			$data = unserialize($wgMemc->get( 'centralauth_logintoken_'.$token ));
+			$wgMemc->delete( 'centralauth_logintoken_'.$token );
+			
+			$username = $data['username'];
+			$token = $data['token'];
+			$remember = $data['remember'];
+			
+			#die( print_r( $data, true ));
+			
+			if ($data['wiki'] != $wgDBname) {
+				$wgOut->addWikitext( 'Bad token (wrong wiki)' );
+				return;
+			}
+			
 			$centralUser = new CentralAuthUser( $username );
 			
 			$login_result = $centralUser->authenticateWithToken( $token );
@@ -45,6 +57,9 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 				$user->setOption( 'rememberpassword', $remember );
 				
 				$centralUser->setGlobalCookies($user);
+			} else {
+				$wgOut->addWikitext( "Bad token (auth failed)" );
+				return;
 			}
 		}
 		

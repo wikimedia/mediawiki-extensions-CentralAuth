@@ -237,12 +237,21 @@ function wfCentralAuthUserLoginComplete( &$user, &$inject_html ) {
 	$inject_html .= Xml::openElement( 'p' );
 	
 	foreach( $wgCentralAuthAutoLoginWikis as $dbname ) {
+		$data = array();
+		$data['username'] = $user->getName();
+		$data['token'] = $centralUser->getAuthToken();
+		$data['remember'] = $user->getOption( 'rememberpassword' );
+		$data['wiki'] = $dbname;
+		
+		$login_token = md5( mt_rand( 0, 0x7fffffff ) . $centralUser->getId() );
+		
+		global $wgMemc;
+		$wgMemc->set( 'centralauth_logintoken_'.$login_token, serialize($data), 600 );
+		
 		$wiki = WikiMap::byDatabase( $dbname );
 		$url = $wiki->getUrl( 'Special:AutoLogin' );
 		
-		$querystring = 'user=' . urlencode( $user->getName() );
-		$querystring .= '&token=' . $centralUser->getAuthToken();
-		$querystring .= '&remember=' . $user->getOption( 'rememberpassword' );
+		$querystring = 'token=' . $login_token;
 		
 		if (strpos($url, '?') > 0) {
 			$url .= "&$querystring";
