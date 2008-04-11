@@ -3377,17 +3377,28 @@ $messages['km'] = array(
  * @author ToePeu
  */
 $messages['ko'] = array(
-	'centralauth-desc'               => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
-	'centralauth-merge-denied'       => '접근할 권한이 없습니다.',
-	'centralauth-merge-notlogged'    => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 로그인]</span>해 주세요.',
-	'centralauth-merge-welcome'      => "'''당신의 계정은 위키미디어의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
+	'centralauth-desc'                  => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
+	'centralauth-merge-denied'          => '접근할 권한이 없습니다.',
+	'centralauth-merge-notlogged'       => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 로그인]</span>해 주세요.',
+	'centralauth-merge-welcome'         => "'''당신의 계정은 위키미디어의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
 계정 옮기기를 선택하면 같은 이름과 암호로 모든 언어의 모든 위키미디어의 프로젝트에 로그인할 수 있습니다.
 [http://commons.wikimedia.org/ 위키미디어 공용]에 파일올리기 같은 공유되는 프로젝트에서 쉽게 작업할 수 있고 서로 다른 프로젝트에서 같은 이름을 쓰는 사용자 사이의 혼란이나 갈등을 피할 수 있습니다.
 
 If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
-	'centralauth-merge-step1-detail' => '위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
+	'centralauth-merge-step1-detail'    => '위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
 모든 것을 확인하기 전까지 어떤 일도 일어나지 않습니다.',
+	'centralauth-merge-dryrun-complete' => '모든 존재하는 계정이 자동으로 합쳐질 수 있습니다.
+
+아직은 계정에 적용되지 않습니다.',
+	'centralauth-merge-step3-title'     => '통합 계정 만들기',
+	'centralauth-merge-step3-detail'    => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
+	'centralauth-merge-step3-submit'    => '계정 합치기',
+	'centralauth-complete-text'         => '이제 모든 위키미디어 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
+같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
+	'centralauth-incomplete-text'       => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 위키미디어 위키에 로그인할 수 있습니다.
+같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
+	'centralauth-readmore-text'         => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
 );
 
 /** Latin (Latina)
