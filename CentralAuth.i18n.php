@@ -148,6 +148,17 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-nonexistent'      => 'There is no global account for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-token-mismatch'         => 'Sorry, we could not process your form submission due to a loss of session data.',
+	'centralauth-admin-lock-title'      => 'Lock account',
+	'centralauth-admin-lock-description' => 'Locking account will make impossible to log under it in any wiki.',
+	'centralauth-admin-lock-button' => 'Lock this account',
+	'centralauth-admin-lock-success' => 'Successfully locked the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-unlock-title'      => 'Unlock account',
+	'centralauth-admin-unlock-description' => 'Unlocking account will make it possible again to log under it.',
+	'centralauth-admin-unlock-button' => 'Unlock this account',
+	'centralauth-admin-unlock-success' => 'Successfully unlocked the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unlock-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-reason' => 'Reason: ',
 
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
@@ -175,6 +186,13 @@ The passwords for local accounts created before the merge will revert to their p
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki DB: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
+	
+	// Logging
+	'centralauth-log-name'           => 'Global account management log',
+	'centralauth-log-header'         => 'This log contains operations under global accounts: deletions, locking and unlocking.',
+	'centralauth-log-entry-delete'   => 'deleted global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'     => 'locked global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'   => 'unlocked global account "<nowiki>$1</nowiki>"',
 );
 
 /** Afrikaans (Afrikaans)

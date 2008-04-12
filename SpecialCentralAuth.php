@@ -66,7 +66,7 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
-		$deleted = false;
+		$deleted = $locked = $unlocked = false;
 
 		if( $this->mPosted ) {
 			if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
@@ -89,6 +89,27 @@ class SpecialCentralAuth extends SpecialPage {
 					global $wgLang;
 					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-delete-success', $this->mUserName ) );
 					$deleted = true;
+					$this->logAction( 'delete', $this->mUserName, $wgRequest->getVal( 'reason' ) );
+				}
+			} elseif( $this->mMethod == 'lock' ) {
+				$status = $globalUser->adminLock();
+				if ( !$status->isGood() ) {
+					$this->showError( $status->getWikiText() );
+				} else {
+					global $wgLang;
+					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-lock-success', $this->mUserName ) );
+					$locked = true;
+					$this->logAction( 'lock', $this->mUserName, $wgRequest->getVal( 'reason' ) );
+				}
+			} elseif( $this->mMethod == 'unlock' ) {
+				$status = $globalUser->adminUnlock();
+				if ( !$status->isGood() ) {
+					$this->showError( $status->getWikiText() );
+				} else {
+					global $wgLang;
+					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-unlock-success', $this->mUserName ) );
+					$unlocked = true;
+					$this->logAction( 'unlock', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
 			} else {
 				$this->showError( wfMsg( 'centralauth-admin-bad-input' ) );
@@ -100,6 +121,10 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( !$deleted ) {
 			$this->showInfo();
 			$this->showDeleteForm();
+			if( !$globalUser->isLocked() && !$locked )
+				$this->showLockForm();
+			if( $globalUser->isLocked() && !$unlocked )
+				$this->showUnlockForm();
 		}
 	}
 
@@ -286,8 +311,57 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
 			wfMsgExt( 'centralauth-admin-delete-description', 'parse' ) .
 			'<p>' .
+			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), 'delete-reason' ) .
+			Xml::input( 'reason', false, false, array( 'id' => 'delete-reason' ) ) .
+			'</p>' .
+			'<p>' .
 			Xml::submitButton( wfMsg( 'centralauth-admin-delete-button' ) ) .
 			'</p>' .
 			'</form>' );
+	}
+
+	function showLockForm() {
+		global $wgOut, $wgUser;
+		$wgOut->addHtml(
+			Xml::element( 'h2', array(), wfMsg( 'centralauth-admin-lock-title' ) ) .
+			Xml::openElement( 'form', array(
+				'method' => 'POST',
+				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
+			Xml::hidden( 'wpMethod', 'lock' ) .
+			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			wfMsgExt( 'centralauth-admin-lock-description', 'parse' ) .
+			'<p>' .
+			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), 'lock-reason' ) .
+			Xml::input( 'reason', false, false, array( 'id' => 'lock-reason' ) ) .
+			'</p>' .
+			'<p>' .
+			Xml::submitButton( wfMsg( 'centralauth-admin-lock-button' ) ) .
+			'</p>' .
+			'</form>' );
+	}
+
+	function showUnlockForm() {
+		global $wgOut, $wgUser;
+		$wgOut->addHtml(
+			Xml::element( 'h2', array(), wfMsg( 'centralauth-admin-unlock-title' ) ) .
+			Xml::openElement( 'form', array(
+				'method' => 'POST',
+				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
+			Xml::hidden( 'wpMethod', 'unlock' ) .
+			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			wfMsgExt( 'centralauth-admin-unlock-description', 'parse' ) .
+			'<p>' .
+			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), 'unlock-reason' ) .
+			Xml::input( 'reason', false, false, array( 'id' => 'unlock-reason' ) ) .
+			'</p>' .
+			'<p>' .
+			Xml::submitButton( wfMsg( 'centralauth-admin-unlock-button' ) ) .
+			'</p>' .
+			'</form>' );
+	}
+
+	function logAction( $action, $target, $reason = '' ) {
+		$log = new LogPage( 'globalauth' );	//Not centralauth because of some weird length limitiations
+		$log->addEntry( $action, Title::newFromText( "User:{$target}@global" ), $reason );
 	}
 }

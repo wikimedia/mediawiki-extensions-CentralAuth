@@ -97,6 +97,13 @@ $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 
+$wgLogTypes[]                           = 'globalauth';
+$wgLogNames['globalauth']              = 'centralauth-log-name';
+$wgLogHeaders['globalauth']            = 'centralauth-log-header';
+$wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
+$wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
+$wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
+
 function wfSetupCentralAuthPlugin( &$auth ) {
 	$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
 	return true;

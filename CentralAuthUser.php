@@ -665,6 +665,36 @@ class CentralAuthUser {
 	}
 
 	/**
+	 * Lock a global account
+	 */
+	function adminLock() {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$dbw->update( 'globaluser', array( 'gu_locked' => 1 ), array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$dbw->affectedRows() ) {
+			$dbw->commit();
+			return Status::newFatal( 'centralauth-admin-lock-nonexistent', $this->mName );
+		}
+		$dbw->commit();
+		return Status::newGood();
+	}
+
+	/**
+	 * Unlock a global account
+	 */
+	function adminUnlock() {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$dbw->update( 'globaluser', array( 'gu_locked' => 0 ), array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$dbw->affectedRows() ) {
+			$dbw->commit();
+			return Status::newFatal( 'centralauth-admin-unlock-nonexistent', $this->mName );
+		}
+		$dbw->commit();
+		return Status::newGood();
+	}
+
+	/**
 	 * Add a local account record for the given wiki to the central database.
 	 * @param string $dbname
 	 * @param int $localid
