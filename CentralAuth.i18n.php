@@ -2241,6 +2241,17 @@ $messages['he'] = array(
 	'centralauth-admin-nonexistent'        => 'אין חשבון כללי בשם "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'שגיאה: החשבון הכללי "<nowiki>$1</nowiki>" אינו קיים.',
 	'centralauth-token-mismatch'           => 'מצטערים, לא יכולנו לעבד את בקשתכם עקב אובדן מידע הכניסה.',
+	'centralauth-admin-lock-title'         => 'נעילת חשבון',
+	'centralauth-admin-lock-description'   => 'נעילת חשבון תגרום לכך שאי אפשר יהיה להיכנס אליו באף אתר.',
+	'centralauth-admin-lock-button'        => 'נעילת חשבון זה',
+	'centralauth-admin-lock-success'       => 'נעילת החשבון הכללי בשם "<nowiki>$1</nowiki>" הושלמה בהצלחה',
+	'centralauth-admin-lock-nonexistent'   => 'שגיאה: לא קיים חשבון כללי בשם "<nowiki>$1</nowiki>".',
+	'centralauth-admin-unlock-title'       => 'ביטול נעילת חשבון',
+	'centralauth-admin-unlock-description' => 'ביטול נעילת חשבון תגרום לכך שאפשר יהיה שוב להיכנס אליו.',
+	'centralauth-admin-unlock-button'      => 'ביטול נעילת חשבון זה',
+	'centralauth-admin-unlock-success'     => 'ביטול נעילת החשבון הכללי בשם "<nowiki>$1</nowiki>" הושלמה בהצלחה.',
+	'centralauth-admin-unlock-nonexistent' => 'שגיאה: החשבון הכללי "<nowiki>$1</nowiki>" אינו קיים.',
+	'centralauth-admin-reason'             => 'סיבה:',
 
 	# Pretty timespan
 	'centralauth-seconds-ago' => 'לפני {{plural:$1|שנייה|$1 שניות}}',
@@ -2268,6 +2279,13 @@ $messages['he'] = array(
 	# Other messages
 	'centralauth-invalid-wiki'   => 'אין מסד נתונים בשם $1',
 	'centralauth-account-exists' => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
+
+	# Logging
+	'centralauth-log-name'           => 'יומן ניהול החשבון הכללי',
+	'centralauth-log-header'         => 'יומן זה כולל פעולות שבוצעו על חשבונות כלליים: מחיקות, נעילות וביטולי נעילות.',
+	'centralauth-log-entry-delete'   => 'מחק את החשבון הכללי "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'     => 'נעל את החשבון הכללי "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'   => 'ביטל את נעילת החשבון הכללי "<nowiki>$1</nowiki>"',
 );
 
 /** Hindi (हिन्दी)
