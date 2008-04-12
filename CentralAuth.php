@@ -325,7 +325,6 @@ function wfCentralAuthInitSession( $username ) {
 	wfSetupSession();
 	$user = User::newFromName( $username );
 	$user->invalidateCache();
-	$user->setCookies();
 	return $user;
 }
 
@@ -367,5 +366,6 @@ function wfCentralAuthGetCacheVaryCookies( $out, &$cookies ) {
 	global $wgCentralAuthCookiePrefix;
 	$cookies[] = $wgCentralAuthCookiePrefix . 'Token';
 	$cookies[] = $wgCentralAuthCookiePrefix . 'Session';
+	$cookies[] = $wgCentralAuthCookiePrefix . 'LoggedOut';
 	return true;
 }

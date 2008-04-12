@@ -53,12 +53,9 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 		
 			if ($login_result == 'ok' && $centralUser->isAttached()) {
 				// Auth OK.
-				$user = User::newFromName( $username );
-				$user->setOption( 'rememberpassword', $remember );
-				
-				$centralUser->setGlobalCookies($user);
+				$centralUser->setGlobalCookies($remember);
 			} else {
-				$wgOut->addWikitext( "Bad token (auth failed)" );
+				$wgOut->addWikitext( 'Bad token - Auth failed' );
 				return;
 			}
 		}

@@ -1145,8 +1145,13 @@ class CentralAuthUser {
 	 * Set a global cookie that auto-authenticates the user on other wikis
 	 * Called on login.
 	 */
-	function setGlobalCookies($localUser) {
+	function setGlobalCookies($remember = false) {
 		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration;
+		
+		if (is_object($remember)) {
+			// Older code passed a user object here. Be kind and do what they meant to do.
+			$remember = $remember->getOption('rememberpassword');
+		}
 		
 		$exp = time() + $wgCookieExpiration;
 		
@@ -1157,7 +1162,7 @@ class CentralAuthUser {
 		$global_session['token'] = $this->getAuthToken();
 		$global_session['expiry'] = time() + 86400;
 		
-		if ($localUser->getOption('rememberpassword') == 1) {
+		if ($remember) {
 			setcookie( $wgCentralAuthCookiePrefix.'Token', $this->getAuthToken(), $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
 		} else {
 			setcookie( $wgCentralAuthCookiePrefix.'Token', '', time() - 86400 );
@@ -1177,13 +1182,25 @@ class CentralAuthUser {
 	 * Called on logout.
 	 */
 	function deleteGlobalCookies() {
-		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure;
+		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration;
 		
 		$exp = time() - 86400;
 		
 		setcookie( $wgCentralAuthCookiePrefix.'User', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
 		setcookie( $wgCentralAuthCookiePrefix.'Token', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
 		setcookie( $wgCentralAuthCookiePrefix.'Session', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		
+		// Logged-out cookie -to fix caching.
+		setcookie( $wgCentralAuthCookiePrefix.'LoggedOut', wfTimestampNow(), time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		
+		// Clear any sessions.
+		$prefix = $wgCentralAuthCookiePrefix;
+		if (isset($_COOKIE["{$prefix}Session"])) {
+			$session_id = $_COOKIE["{$prefix}Session"];
+		
+			global $wgMemc;
+			$wgMemc->delete( "centralauth_session_$session_id" );
+		}
 		
 		$this->resetAuthToken();
 	}
