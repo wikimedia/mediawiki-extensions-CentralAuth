@@ -1283,6 +1283,18 @@ $messages['de'] = array(
 	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-token-mismatch'         => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.',
 
+	'centralauth-admin-lock-title'         => 'Benutzerkonto sperren',
+	'centralauth-admin-lock-description'   => 'Die Sperre eines Benutzerkonto verhindert die Anmeldung in jedem Wiki.',
+	'centralauth-admin-lock-button'        => 'Benutzerkonto sperren',
+	'centralauth-admin-lock-success'       => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde global gesperrt.',
+	'centralauth-admin-lock-nonexistent'   => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
+	'centralauth-admin-unlock-title'       => 'Benutzerkonto entsperren',
+	'centralauth-admin-unlock-description' => 'Die Entsperrung eines Benutzerkonto ermöglicht wieder die Anmeldung in jedem Wiki.',
+	'centralauth-admin-unlock-button'      => 'Benutzerkonto entsperren',
+	'centralauth-admin-unlock-success'     => 'Die Sperre für das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde aufgehoben.',
+	'centralauth-admin-unlock-nonexistent' => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
+	'centralauth-admin-reason'             => 'Grund:',
+
  	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|Sekunde|Sekunden}} zuvor',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|Minute|Minuten}} zuvor',
@@ -1309,6 +1321,13 @@ $messages['de'] = array(
 	// Other messages
 	'centralauth-invalid-wiki'   => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
+	
+	// Logging
+	'centralauth-log-name'         => 'Globales Benutzerkonten-Logbuch',
+	'centralauth-log-header'       => 'Dieses Logbuch zeigt alle Löschungen, Sperrungen und Entsperrungen globaler Benutzerkonten.',
+	'centralauth-log-entry-delete' => 'löschte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-lock'   => 'sperrte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-unlock' => 'entsperrte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
 );
 
 /** Ewe (Eʋegbe)
