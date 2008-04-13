@@ -1562,6 +1562,73 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-account-exists'           => 'Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.',
 );
 
+/** Spanish (Español)
+ * @author Drini
+ * @author Piolinfax
+ */
+$messages['es'] = array(
+	'mergeaccount'                        => 'Estado de la unificación de cuentas',
+	'centralauth-desc'                    => '[[Special:MergeAccount|Fusiona cuentas]] entre wikis de la Fundación Wikimedia',
+	'centralauth-mergeaccount-desc'       => '[[Special:MergeAccount|Fusiona múltiples cuentas]] para Ingreso de Usuario Unico (SUL)',
+	'centralauth-merge-denied'            => 'Lo siento, no tienes permiso para acceder a esta página.',
+	'centralauth-merge-notlogged'         => 'Por favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ingresa]</span> para revisar que tus cuentas hayan sido completamente fusionadas.',
+	'centralauth-merge-welcome'           => "'''Tu cuenta de usuario no ha sido migrada al sistema de cuentas unificadas de Wikimedia.'''
+
+Si decides migrar tus cuentas, podrás usar el mismo nombre de usuario y contraseña para ingresar a todas las wikis de los proyectos Wikimedia en todos los idiomas.
+Esto facilitará el trabajo en proyectos compartidos, tales como subir contenido a [http://commons.wikimedia.org/ Wikimedia Commons], y evitará la confusión o conflicto que resulte de que dos personas escojan el mismo nombre de usuario en proyectos diferentes.
+
+Si alguien ya ha tomado tu nombre de usuario en otro sitio, esto no les afectará, pero podrás llegar a un arreglo posterior con ellos o con un administrador.",
+	'centralauth-merge-step1-title'       => 'Inicia la unificación de cuentas',
+	'centralauth-merge-step1-detail'      => 'Tu contraseña y dirección de correo electrónico registrados se compararán con las cuentas de las otras wikis para asegurarse que coinciden. No se harán cambios hasta que confirmes que todo parece estar bien.',
+	'centralauth-merge-step1-submit'      => 'Confirma la información de ingreso',
+	'centralauth-merge-step2-title'       => 'Confirma más cuentas',
+	'centralauth-merge-step2-detail'      => 'Algunas de estas cuentas no pudieron relacionarse automáticamente con la de la wiki designada como principal.
+Si estas cuentas te pertenecen, confirma que son tuyas ingresando la contraseña de las mismas.',
+	'centralauth-merge-step2-submit'      => 'Confirma la información de ingreso',
+	'centralauth-merge-dryrun-complete'   => '¡Todas las cuentas existentes pueden unificarse automáticamente!
+
+Todavía no se han realizado cambios a las cuentas.',
+	'centralauth-merge-dryrun-incomplete' => 'Todo está listo para continuar, pero algunas cuentas no pudieron ser verificadas automáticamente y no serán migradas de inmediato.
+Podrás fusionarlas más adelante.
+
+Todavía no se han realizado cambios a tus cuentas.',
+	'centralauth-merge-dryrun-or'         => "'''o'''",
+	'centralauth-merge-dryrun-home'       => 'El sistema de migración no puede confirmar que eres el propietario de la wiki principal para el nombre de usuario.
+
+Otra wiki se designó como la cuenta principal para tu nombre de usuario. Sigue el enlace e ingresa en ella para terminar la migración de las cuentas.',
+	'centralauth-merge-step3-title'       => 'Crear una cuenta unificada',
+	'centralauth-merge-step3-detail'      => 'Estás listo para crear tu cuenta unificada con las siguientes wikis adjuntas:',
+	'centralauth-merge-step3-submit'      => 'Unificar cuentas',
+	'centralauth-complete'                => '¡Se completó la unificación de cuentas!',
+	'centralauth-incomplete'              => '¡No se completó la unificación de cuentas!',
+	'centralauth-complete-text'           => 'Ahora puedes ingresar a cualquier wiki de Wikimedia sin crear una cuenta nueva;
+El mismo usuario y contraseña funcionarán en Wikipedia, Wikcionario, Wikilibros y sus proyectos hermanos en todos los idiomas.',
+	'centralauth-incomplete-text'         => 'Una vez que tus cuentas hayan sido unificadas, podrás ingresar a cualquier wiki de Wikimedia sin crear una cuenta nueva;
+El mismo usuario y contraseña funcionarán en Wikipedia, Wikcionario, Wikilibros y sus proyectos hermanos en todos los idiomas.',
+	'centralauth-not-owner-text'          => 'El usuario "$1" ha sido asignado de forma automática al dueño de la cuenta en $2.
+
+Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí la contraseña maestra para esa cuenta:',
+	'centralauth-notice-dryrun'           => "<div class='successbox'>Unicamente modo demo</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'         => 'La unificación de cuentas está por ahora en modo demostración / depuración, por lo que las operaciones de fusión están desactivadas. ¡Lo sentimos!',
+	'centralauth-readmore-text'           => ":''[[meta:Help:Unified login|Lee más sobre '''cuentas unificadas''']]…''",
+	'centralauth-list-home-title'         => 'Wiki hogar',
+	'centralauth-list-home-dryrun'        => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada. 
+Podrás cambiar posteriormente la wiki considerada hogar.',
+	'centralauth-list-attached-title'     => 'Cuentas adjuntas',
+	'centralauth-list-attached'           => 'La cuenta llamada "$1" en cada uno de los siguientes sitios ha sido automáticamente añadida a la cuenta unificada:',
+	'centralauth-list-attached-dryrun'    => 'La cuenta llamada "$1" en cada uno de los siguientes sitios será automáticamente añadida a la cuenta unificada:',
+	'centralauth-list-unattached-title'   => 'Cuentas no adjuntas',
+	'centralauth-foreign-link'            => 'Usuario $1 en $2',
+	'centralauth-merge-method-primary'    => 'wiki hogar',
+	'centralauth-merge-method-empty'      => 'sin contribuciones',
+	'centralauth-seconds-ago'             => 'hace $1 {{PLURAL:$1|segundo|segundos}}',
+	'centralauth-minutes-ago'             => 'hace $1 {{PLURAL:$1|minuto|minutos}}',
+	'centralauth-hours-ago'               => 'hace $1 {{PLURAL:$1|hora|horas}}',
+	'centralauth-days-ago'                => 'hace $1 {{PLURAL:$1|día|días}}',
+	'centralauth-months-ago'              => 'hace $1 {{PLURAL:$1|mes|meses}}',
+	'centralauth-years-ago'               => 'hace $1 {{PLURAL:$1|año|años}}',
+);
+
 $messages['ext'] = array(
 	'centralauth-admin-username'           => 'Nombri d´usuáriu:',
 );
@@ -1725,9 +1792,9 @@ Sinulle tulee myöhemmin mahdollisuus yhdistää ne.
 
 Mitään muutoksia ei ole vielä tehty.',
 	'centralauth-merge-dryrun-or'          => "'''tai'''",
-	'centralauth-merge-dryrun-home'        => 'Kotouttamis-järjestelmä ei kyennyt varmentamaan että olette kotiwiki-käyttäjätunnustilin omistajana tällä käyttäjätunnuksella.
+	'centralauth-merge-dryrun-home'        => 'Järjestelmä ei pystynyt varmentamaan, että oletko kotiwikisi käyttäjätunnuksen omistaja tällä käyttäjänimellä.
 
-Toinen wiki on arvioitu teidän käyttäjänimenne kotiwikiksi; napsauttakaa seuraavaa linkkiä ja sisäänkirjautukaa sinne viimeistelläksenne käyttäjätunnuksenne kotoutuksen.',
+Käyttäjänimesi kotiwikiksi on arvioitu toinen wiki; napsauta seuraavaa linkkiä ja kirjaudu sisään viimeistelläksesi käyttäjätunnuksien yhdistämisen.',
 	'centralauth-merge-step3-title'        => 'Yhdistetyn käyttäjätunnuksen luominen',
 	'centralauth-merge-step3-detail'       => 'Voit nyt luoda yhdistetyn käyttäjätunnuksen, johon on tehty kytkökset seuraavista wikeistä:',
 	'centralauth-merge-step3-submit'       => 'Yhdistä tunnukset',
@@ -1776,7 +1843,7 @@ Voit vaihtaa kotiwikiäsi myöhemmin tulevaisuudessa.',
 	'centralauth-admin-username'           => 'Käyttäjätunnus',
 	'centralauth-admin-lookup'             => 'Näytä tai muokkaa käyttäjätietoja',
 	'centralauth-admin-permission'         => 'Vain ylivalvojat (steward) voivat yhdistää toisten ihmisten tunnuksia heidän puolestaan.',
-	'centralauth-admin-no-unified'         => 'Tälle käyttäjänimelle ei ole yhdistettyä käyttäjätunnusta.',
+	'centralauth-admin-no-unified'         => 'Käyttäjänimellä ei ole yhdistettyä käyttäjätunnusta.',
 	'centralauth-admin-info-id'            => 'Käyttäjänumero',
 	'centralauth-admin-yes'                => 'kyllä',
 	'centralauth-admin-no'                 => 'ei',
@@ -2410,6 +2477,9 @@ $messages['hi'] = array(
 	'centralauth-admin-already-unmerged'   => 'पहले से अनमर्ज किया हुआ होने से $1 को हटा रहें हैं',
 	'centralauth-admin-unmerge-success'    => '$1 {{PLURAL:$2|खातेका|खातोंका}} अनमर्ज हो गया',
 	'centralauth-admin-delete-title'       => 'खाता हटायें',
+	'centralauth-admin-delete-description' => 'अगर विश्व खाता हटा दिया, तो सभी वरीयतायें, सभी स्थानिक खातोंके अलग अलग खातोंमें परिवर्तन, और विश्व सदस्यनाम और किसीके इस्तेमाल के लिये छोड दिया जायेगा।
+सभी स्थानिक खातायें अस्तित्वमें रहेंगे।
+स्थानिक खातोंके एकत्रिकरण करने से पहले के कूटशब्द पूर्ववत कर दिये जायेंगे।',
 	'centralauth-admin-delete-button'      => 'यह खाता हटायें',
 	'centralauth-admin-delete-success'     => '"<nowiki>$1</nowiki>" का विश्व खाता हटाया',
 	'centralauth-admin-nonexistent'        => '"<nowiki>$1</nowiki>" का विश्व खाता नहीं हैं',
@@ -2730,6 +2800,17 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-admin-nonexistent'        => '„<nowiki>$1</nowiki>” nem rendelkezik globális felhasználói fiókkal',
 	'centralauth-admin-delete-nonexistent' => 'Hiba: nem létezik globális felhasználói fiók „$1” néven.',
 	'centralauth-token-mismatch'           => 'Sajnáljuk, nem tudtuk feldolgozni a küldött adatokat a munkamenet-adatok hiánya miatt',
+	'centralauth-admin-lock-title'         => 'Fiók lezárása',
+	'centralauth-admin-lock-description'   => 'A fiók lezárása után egyik wikiben sem lehet majd bejelentkezni vele.',
+	'centralauth-admin-lock-button'        => 'Fiók lezárása',
+	'centralauth-admin-lock-success'       => 'A(z) „<nowiki>$1</nowiki>” nevű globális fiók sikeresen lezárva.',
+	'centralauth-admin-lock-nonexistent'   => 'Hiba: nem létezik „<nowiki>$1</nowiki>” nevű globális fiók.',
+	'centralauth-admin-unlock-title'       => 'Fiók feloldása',
+	'centralauth-admin-unlock-description' => 'A fiók feloldásával ismét lehetséges lesz belépni vele.',
+	'centralauth-admin-unlock-button'      => 'Fiók feloldása',
+	'centralauth-admin-unlock-success'     => 'Az „<nowiki>$1</nowiki>” nevű globális fiók sikeresen feloldva.',
+	'centralauth-admin-unlock-nonexistent' => 'Hiba: nem létezik „<nowiki>$1</nowiki>” nevű globális fiók.',
+	'centralauth-admin-reason'             => 'Ok:',
 	'centralauth-seconds-ago'              => '$1 másodperccel ezelőtt',
 	'centralauth-minutes-ago'              => '$1 perccel ezelőtt',
 	'centralauth-hours-ago'                => '$1 órával ezelőtt',
@@ -2749,6 +2830,11 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">$2 felhasználót nem sikerült átnevezni: ez a felhaználónév le van foglalva egy globális azonosítóhoz.</div>',
 	'centralauth-invalid-wiki'             => 'Nincs ilyen adatbázis: $1',
 	'centralauth-account-exists'           => 'Nem sikerült új felhasználót létrehozni: az egységes bejelentkezési rendszerben már van ilyen felhasználónév.',
+	'centralauth-log-name'                 => 'Globális fiók-kezelési napló',
+	'centralauth-log-header'               => 'Ez a napló a globális felhasználói nevekhez kapcsolódó műveleteket (törlés, lezárás, feloldás) listázza.',
+	'centralauth-log-entry-delete'         => 'törölte a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
+	'centralauth-log-entry-lock'           => 'lezárta a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
+	'centralauth-log-entry-unlock'         => 'feloldta a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -3170,7 +3256,12 @@ $messages['jv'] = array(
 	'mergeaccount'                         => 'Status panggabungan log mlebu',
 	'centralauth-desc'                     => '[[Special:MergeAccount|Nggabungaké rékening (akun)]] ing wiki-wiki Yayasan Wikimedia',
 	'centralauth-merge-denied'             => 'Nuwun sèwu, panjenengan ora diparengaké niliki kaca iki.',
+	'centralauth-merge-step1-submit'       => 'Dhedhesen (konfirmasi) log mlebu',
+	'centralauth-merge-step2-title'        => 'Konfirmasi rékening (akun) liya',
 	'centralauth-merge-step2-submit'       => 'Dhedhesen (konfirmasi) log mlebu',
+	'centralauth-merge-dryrun-complete'    => 'Kabèh rékening utawa akun sing ana bisa digabung sacara otomatis!
+
+Durung ana owah-owahan sing dilakoni saiki kanggo rékening panjenengan.',
 	'centralauth-merge-dryrun-or'          => "'''utawa'''",
 	'centralauth-merge-step3-title'        => 'Gawé rékening (akun) gabungan',
 	'centralauth-merge-step3-detail'       => 'Panjenengan saiki wis siap nggawé rékening (akun) gabungan panjenengan mawa wiki-wiki sing kapacak ing ngisor iki:',
@@ -3203,6 +3294,11 @@ $messages['jv'] = array(
 	'centralauth-admin-delete-title'       => 'Busak rékening',
 	'centralauth-admin-delete-button'      => 'Busaken rékening (akun) iki',
 	'centralauth-admin-delete-success'     => 'Bisa kasil mbusak rékening (akun) global kanggo "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-title'         => 'Kuncinen rékening',
+	'centralauth-admin-lock-description'   => 'Yèn rékeningé dikunci, mengko ora bisa diaksès saka wiki apa waé.',
+	'centralauth-admin-lock-button'        => 'Kuncinen rékening iki',
+	'centralauth-admin-lock-success'       => 'Bisa suksès ngunci rékening global kanggo "<nowiki>$1</nowiki>"',
+	'centralauth-admin-reason'             => 'Alesan:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|detik|detik}} kapungkur',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|menit|menit}} kapungkur',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|jam|jam}} kapungkur',
@@ -4105,6 +4201,17 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-admin-nonexistent'        => 'Er is geen globale gebruiker voor "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
 	'centralauth-token-mismatch'           => 'Vanwege verlies van de sessiegegevens kon uw verzoek niet verwerkt worden.',
+	'centralauth-admin-lock-title'         => 'Gebruiker afsluiten',
+	'centralauth-admin-lock-description'   => 'Afgesloten gebruikers kunnen niet meer gebruikt worden om bij een wiki aan te melden.',
+	'centralauth-admin-lock-button'        => 'Deze gebruiker afsluiten',
+	'centralauth-admin-lock-success'       => 'Het afsluiten van de globale gebruiker "<nowiki>$1</nowiki>" is geslaagd',
+	'centralauth-admin-lock-nonexistent'   => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
+	'centralauth-admin-unlock-title'       => 'Gebruiker vrijgeven',
+	'centralauth-admin-unlock-description' => 'Vrijgegeven gebruikers kunnen weer gebruikt worden.',
+	'centralauth-admin-unlock-button'      => 'Deze gebruiker vrijgeven',
+	'centralauth-admin-unlock-success'     => 'Het vrijgeven van de globale gebruiker "<nowiki>$1</nowiki>" is geslaagd',
+	'centralauth-admin-unlock-nonexistent' => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
+	'centralauth-admin-reason'             => 'Reden:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|seconde|seconden}} geleden',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minuut|minuten}} geleden',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|uur|uur}} geleden',
@@ -4124,6 +4231,11 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-renameuser-exists'        => '<div class="errorbox">U kunt gebruiker $2 niet hernoemen, omdat deze naam gereserveerd is voor een samengevoegde gebruiker.</div>',
 	'centralauth-invalid-wiki'             => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists'           => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
+	'centralauth-log-name'                 => 'Logboek globaal gebruikersbeheer',
+	'centralauth-log-header'               => 'Dit logboek bevat handelingen voor globale gebruikers: verwijderingen, afsluiten en vrijgeven.',
+	'centralauth-log-entry-delete'         => 'heeft de globale gebruiker "<nowiki>$1</nowiki>" verwijderd',
+	'centralauth-log-entry-lock'           => 'heeft de globale gebruiker "<nowiki>$1</nowiki>" afgesloten',
+	'centralauth-log-entry-unlock'         => 'heeft de globale gebruiker "<nowiki>$1</nowiki>" vrijgegeven',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -4310,6 +4422,17 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-admin-nonexistent'        => 'Det er ingen global konto for «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Feil: Den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.',
 	'centralauth-token-mismatch'           => 'Beklager, skjemaet kunne ikke lagres på grunn av et tap av øktdata.',
+	'centralauth-admin-lock-title'         => 'Lås konto',
+	'centralauth-admin-lock-description'   => 'Låsing av en konto vil gjøre det umulig å logge inn med den på noen wikier.',
+	'centralauth-admin-lock-button'        => 'Lås denne kontoen',
+	'centralauth-admin-lock-success'       => 'Låste den globale kontoen «<nowiki>$1</nowiki>»',
+	'centralauth-admin-lock-nonexistent'   => 'Feil: Den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.',
+	'centralauth-admin-unlock-title'       => 'Lås opp konto',
+	'centralauth-admin-unlock-description' => 'Å låse opp kontoen vil gjøre det mulig å logge inn med den igjen.',
+	'centralauth-admin-unlock-button'      => 'Lås opp denne kontoen',
+	'centralauth-admin-unlock-success'     => 'Låste opp den globale kontoen «<nowiki>$1</nowiki>»',
+	'centralauth-admin-unlock-nonexistent' => 'Feil: Den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.',
+	'centralauth-admin-reason'             => 'Årsak:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|sekund|sekunder}} siden',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minutt|minutter}} siden',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|time|timer}} siden',
@@ -4329,6 +4452,11 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Kan ikke endre navnet på brukeren $2 da dette brukernavnet er reservert for en global konto.</div>',
 	'centralauth-invalid-wiki'             => 'Ingen slik database: $1',
 	'centralauth-account-exists'           => 'Kan ikke opprette konto. Det angitte brukernavnet er allerede tatt i bruk av en global konto.',
+	'centralauth-log-name'                 => 'Logg for behandling av globale kontoer',
+	'centralauth-log-header'               => 'Denne loggen inneholder hendelser relatert til globale kontoer: slettinger, låsinger og opplåsinger.',
+	'centralauth-log-entry-delete'         => 'slettet den globale kontoen «<nowii>$1</nowiki>»',
+	'centralauth-log-entry-lock'           => 'låste den globale kontoen «<nowiki>$1</nowiki>»',
+	'centralauth-log-entry-unlock'         => 'låste opp den globale kontoen «<nowiki>$1</nowiki>»',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -4576,6 +4704,17 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 	'centralauth-admin-nonexistent'        => 'Brak konta globalnego "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Błąd: nie istnieje konto globalne "<nowiki>$1</nowiki>"',
 	'centralauth-token-mismatch'           => 'Niemożliwe było wykonanie polecenia ze względu na utratę danych sesji.',
+	'centralauth-admin-lock-title'         => 'Zablokuj konto',
+	'centralauth-admin-lock-description'   => 'Zablokowanie konta użytkownika uniemożliwi zalogowanie na to konto na wszystkich wiki.',
+	'centralauth-admin-lock-button'        => 'Zablokuj to konto',
+	'centralauth-admin-lock-success'       => 'Zablokowano globalne konto „<nowiki>$1</nowiki>”',
+	'centralauth-admin-lock-nonexistent'   => 'Błąd: globalne konto „<nowiki>$1</nowiki>” nie istnieje.',
+	'centralauth-admin-unlock-title'       => 'Odblokuj konto',
+	'centralauth-admin-unlock-description' => 'Odblokowanie konta umożliwi zalogowanie na to konto.',
+	'centralauth-admin-unlock-button'      => 'Odblokuj to konto',
+	'centralauth-admin-unlock-success'     => 'Odblokowano konto globalne „<nowiki>$1</nowiki>”',
+	'centralauth-admin-unlock-nonexistent' => 'Błąd: nie istnieje konto globalne „<nowiki>$1</nowiki>”.',
+	'centralauth-admin-reason'             => 'Powód',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|sekundę|sekundy|sekund}} temu',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minutę|minuty|minut}} temu',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|godzinę|godziny|godzin}} temu',
@@ -4595,6 +4734,11 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Nie można dokonać zmiany nazwy użytkownika $2, ponieważ jest zarezerwowana dla konta globalnego.</div>',
 	'centralauth-invalid-wiki'             => 'Nie istnieje wiki DB: $1',
 	'centralauth-account-exists'           => 'Utworzenie konta nie jest możliwe - ta nazwa użytkownika jest już zajęta przez konto globalne.',
+	'centralauth-log-name'                 => 'Rejestr zarządzania kontami globalnymi',
+	'centralauth-log-header'               => 'Rejestr zawiera zdarzenia dotyczące kont globalnych: usunięcia, zablokowania i odblokowania.',
+	'centralauth-log-entry-delete'         => 'usunął konto globalne „<nowiki>$1</nowiki>”',
+	'centralauth-log-entry-lock'           => 'zablokował konto globalne „<nowiki>$1</nowiki>”',
+	'centralauth-log-entry-unlock'         => 'odblokował konto globalne „<nowiki>$1</nowiki>”',
 );
 
 /** Piemontèis (Piemontèis)
@@ -4789,6 +4933,17 @@ As palavras-chave para as contas locais criadas antes da fusão irão ser revert
 	'centralauth-admin-nonexistent'        => 'Não existe uma conta global para "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
 	'centralauth-token-mismatch'           => 'Desculpe, não foi possível processar a sua submissão do formulário devido à perda de dados de sessão.',
+	'centralauth-admin-lock-title'         => 'Bloquear conta',
+	'centralauth-admin-lock-description'   => 'Bloqueando uma conta vai tornar impossível autenticar-se com ela em qualquer wiki.',
+	'centralauth-admin-lock-button'        => 'Bloquear esta conta',
+	'centralauth-admin-lock-success'       => 'Bloqueada conta global "<nowiki>$1</nowiki>" com sucesso.',
+	'centralauth-admin-lock-nonexistent'   => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
+	'centralauth-admin-unlock-title'       => 'Desbloquear conta',
+	'centralauth-admin-unlock-description' => 'Desbloqueando uma conta vai tornar possível autenticar-se com ela.',
+	'centralauth-admin-unlock-button'      => 'Desbloquear esta conta',
+	'centralauth-admin-unlock-success'     => 'Desbloqueada conta global "<nowiki>$1</nowiki>" com sucesso.',
+	'centralauth-admin-unlock-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
+	'centralauth-admin-reason'             => 'Motivo:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|segundo|segundos}} atrás',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minuto|minutos}} atrás',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|hora|horas}} atrás',
@@ -4808,6 +4963,11 @@ As palavras-chave para as contas locais criadas antes da fusão irão ser revert
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Não é possível renomear utilizador $2 pois este nome de utilizador está reservado para uma conta global.</div>',
 	'centralauth-invalid-wiki'             => 'Não existe a BD wiki: $1',
 	'centralauth-account-exists'           => 'Não é possível criar conta: o nome de utilizador pretendido já está a ser utilizado no sistema de login unificado.',
+	'centralauth-log-name'                 => 'Registo de gestão de contas globais',
+	'centralauth-log-header'               => 'Este registo contém operações sobre contas globais: remoções, bloqueios e debloqueios.',
+	'centralauth-log-entry-delete'         => 'removeu conta global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'           => 'bloqueou conta global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'         => 'desbloqueou conta global "<nowiki>$1</nowiki>"',
 );
 
 /** Quechua (Runa Simi)
@@ -5006,6 +5166,17 @@ $messages['ru'] = array(
 	'centralauth-admin-nonexistent'        => 'Не существует глобальной учётной записи «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
 	'centralauth-token-mismatch'           => 'К сожалению, мы не можем продолжить обработку вашей формы, так как были потеряны данные сеанса.',
+	'centralauth-admin-lock-title'         => 'Блокировка учётной записи',
+	'centralauth-admin-lock-description'   => 'Если учётная запись заблокирована, то ни в одной вики под ней нельзя представиться системе.',
+	'centralauth-admin-lock-button'        => 'Заблокировать эту учётную зпись',
+	'centralauth-admin-lock-success'       => 'Глобальная учётная запись «<nowiki>$1</nowiki>» успешно заблокирована.',
+	'centralauth-admin-lock-nonexistent'   => 'Ошибка. Глобальная учётная запись «<nowiki>$1</nowiki>» не существует.',
+	'centralauth-admin-unlock-title'       => 'Разблокировать учётную запись',
+	'centralauth-admin-unlock-description' => 'Разблокировка учётной записи делает возможным вход в систему под ней.',
+	'centralauth-admin-unlock-button'      => 'Разблокировать эту учётную запись',
+	'centralauth-admin-unlock-success'     => 'Глобальная учётная запись «<nowiki>$1</nowiki>» успешно открыта.',
+	'centralauth-admin-unlock-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
+	'centralauth-admin-reason'             => 'Причина:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|час|часа|часов}} назад',
@@ -5025,6 +5196,11 @@ $messages['ru'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Невозможно переименовать участника $2, так как это имя зарезервировано для глобальной учётной записи.</div>',
 	'centralauth-invalid-wiki'             => 'Нет такой вики БД: $1',
 	'centralauth-account-exists'           => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
+	'centralauth-log-name'                 => 'Журнал управления глобальными учётными записями',
+	'centralauth-log-header'               => 'Этот журнал содержит записи о действиях под глобальными учётными записями: удаления, закрытия и открытия.',
+	'centralauth-log-entry-delete'         => 'удалил глобальную учётную запись «<nowiki>$1</nowiki>»',
+	'centralauth-log-entry-lock'           => 'закрыл глобальную учётную запись «<nowiki>$1</nowiki>»',
+	'centralauth-log-entry-unlock'         => 'открыл глобальную учётную запись «<nowiki>$1</nowiki>»',
 );
 
 /** Yakut (Саха тыла)
@@ -5127,6 +5303,7 @@ $messages['shi'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
+ * @author Siebrand
  * @author Michawiki
  */
 $messages['sk'] = array(
@@ -5243,6 +5420,17 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-admin-nonexistent'        => 'Globálny účet „<nowiki>$1</nowiki>“ neexistuje',
 	'centralauth-admin-delete-nonexistent' => 'Chyba: globálny účet „<nowiki>$1</nowiki>“ neexistuje.',
 	'centralauth-token-mismatch'           => 'Je nám ľúto, nebolo možné spracovať údaje formulára, ktoré ste poslali, z dôvodu straty informácií o vašej relácii.',
+	'centralauth-admin-lock-title'         => 'Zamknúť účet',
+	'centralauth-admin-lock-description'   => 'Zamknutím účtu znemožníte prihlásenie sa k nemu na všetkých wiki.',
+	'centralauth-admin-lock-button'        => 'Zamknúť tento účet',
+	'centralauth-admin-lock-success'       => 'Globálny účet „<nowiki>$1</nowiki>“ bol úspešne zamknutý',
+	'centralauth-admin-lock-nonexistent'   => 'Chyba: Globálny účet „<nowiki>$1</nowiki>“ neexistuje.',
+	'centralauth-admin-unlock-title'       => 'Odomknúť účet',
+	'centralauth-admin-unlock-description' => 'Odomknutím účtu opäť umožníte prihlásenie sa k nemu.',
+	'centralauth-admin-unlock-button'      => 'Odomknúť tento účet',
+	'centralauth-admin-unlock-success'     => 'Globálny účet „<nowiki>$1</nowiki>“ bol úspešne odomknutý',
+	'centralauth-admin-unlock-nonexistent' => 'Chyba: Globálny účet „<nowiki>$1</nowiki>“ neexistuje.',
+	'centralauth-admin-reason'             => 'Dôvod:',
 	'centralauth-seconds-ago'              => '{{PLURAL:$1|pred sekundou|pred $1 sekundami}}',
 	'centralauth-minutes-ago'              => '{{PLURAL:$1|pred minútou|pred $1 minútami}}',
 	'centralauth-hours-ago'                => '{{PLURAL:$1|pred hodinou|pred $1 hodinami}}',
@@ -5262,6 +5450,11 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Nie je možné premenovať používateľa $2, pretože toto meno je vyhradené pre globálny účet.</div>',
 	'centralauth-invalid-wiki'             => 'Taká DB wiki neexistuje: $1',
 	'centralauth-account-exists'           => 'Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.',
+	'centralauth-log-name'                 => 'Záznam správy globálnych účtov',
+	'centralauth-log-header'               => 'Tento záznam obsahuje informácie o operáciách na globálnych účtoch: mazanie, zamykanie a odomykanie.',
+	'centralauth-log-entry-delete'         => 'zmazal globálny účet „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-lock'           => 'zamkol globálny účet „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-unlock'         => 'odomkol globálny účet „<nowiki>$1</nowiki>“',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
@@ -5578,8 +5771,8 @@ Engké, anjeun bakal bisa milih wiki asal anjeun.',
 );
 
 /** Swedish (Svenska)
- * @author Lejonel
  * @author M.M.S.
+ * @author Lejonel
  * @author Sannab
  * @author Leo Johannes
  * @author Siebrand
@@ -5687,6 +5880,17 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-admin-nonexistent'        => 'Det är inget globalt konto för "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fel: Det globala kontot "<nowiki>$1</nowiki>" finns inte.',
 	'centralauth-token-mismatch'           => 'Beklagar, formuläret kunde inte lagras på grund av förlorad sessionsdata.',
+	'centralauth-admin-lock-title'         => 'Lås kontot',
+	'centralauth-admin-lock-description'   => 'Låsning av ett konto kommmer göra det omöjligt att logga in med det på någon wiki.',
+	'centralauth-admin-lock-button'        => 'Lås detta konto',
+	'centralauth-admin-lock-success'       => 'Låste det globala kontot "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-nonexistent'   => 'Fel: det globala kontot "<nowiki>$1</nowiki>" finns inte.',
+	'centralauth-admin-unlock-title'       => 'Lås upp konto',
+	'centralauth-admin-unlock-description' => 'Upplåsning av konton kommer göra det möjligt att logga in med det igen.',
+	'centralauth-admin-unlock-button'      => 'Lås upp detta konto',
+	'centralauth-admin-unlock-success'     => 'Låste upp det globala kontot "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unlock-nonexistent' => 'Fel: det globala kontot "<nowiki>$1</nowiki>" finns inte.',
+	'centralauth-admin-reason'             => 'Anledning:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|sekund|sekunder}} sedan',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minut|minuter}} sedan',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|timme|timmar}} sedan',
@@ -5706,6 +5910,11 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Kan inte byta namn på användare $2 eftersom detta användarnamn är reserverat för ett gemensamt konto.</div>',
 	'centralauth-invalid-wiki'             => 'Ingen sådan databas: $1',
 	'centralauth-account-exists'           => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
+	'centralauth-log-name'                 => 'Logg för behandling av globala konton',
+	'centralauth-log-header'               => 'Denna logg innehåller händelser relaterade till globala konton: raderingar, låsningar och upplåsningar.',
+	'centralauth-log-entry-delete'         => 'raderade globalt konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'           => 'låste globalt konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'         => 'låste upp globalt konto "<nowiki>$1</nowiki>"',
 );
 
 /** Tamil (தமிழ்)
@@ -6091,6 +6300,12 @@ $messages['uk'] = array(
 	'centralauth-admin-nonexistent'        => 'Нема глобального облікового запису «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Помилка: глобальний обліковий запис «<nowiki>$1</nowiki>» не існує.',
 	'centralauth-token-mismatch'           => 'На жаль, ми не можемо продовжити обробку вашої форму, так як були втрачені дані сеансу.',
+	'centralauth-admin-lock-title'         => 'Блокування облікового запису',
+	'centralauth-admin-lock-description'   => 'Якщо обліковий запис заблокований, то в жодній вікі під ним не можна ввійти до системи.',
+	'centralauth-admin-lock-button'        => 'Заблокувати цей обліковий запис',
+	'centralauth-admin-lock-success'       => 'Глобальний обліковий запис «<nowiki>$1</nowiki>» успішно заблокований.',
+	'centralauth-admin-lock-nonexistent'   => 'Помилка. Глобальний обліковий запис «<nowiki>$1</nowiki>» не існує.',
+	'centralauth-admin-unlock-title'       => 'Розблокувати обліковий запис',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|секунду|секунди|секунд}} тому',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}} тому',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|годину|години|годин}} тому',
