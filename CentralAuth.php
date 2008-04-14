@@ -39,9 +39,21 @@ $wgCentralAuthStrict = false;
 $wgCentralAuthDryRun = false;
 
 /**
- * Domain to set global cookies for.
+ * If true, global session and token cookies will be set alongside the
+ * per-wiki session and login tokens when users log in with a global account.
+ * This allows other wikis on the same domain to transparently log them in.
  */
-$wgCentralAuthCookieDomains = $wgServer;
+$wgCentralAuthCookies = false;
+
+/**
+ * Domain to set global cookies for.
+ * For instance, '.wikipedia.org' to work on all wikipedia.org subdomains
+ * instead of just the current one.
+ *
+ * Leave blank to set the cookie for the current domain only, such as if
+ * all your wikis are hosted on the same subdomain.
+ */
+$wgCentralAuthCookieDomains = '';
 
 /**
  * Prefix for CentralAuth global authentication cookies.
@@ -49,8 +61,16 @@ $wgCentralAuthCookieDomains = $wgServer;
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
 /**
- * Wikis to automatically log into when this one is logged into.
- * Done by loading a 1x1 image from Special:AutoLogin on that wiki.
+ * List of wiki databases which should be called on login/logout
+ * to set third-party cookies for the global session state.
+ *
+ * This allows a farm with multiple second-level domains to
+ * set up a global session on all of them by hitting one wiki
+ * from each domain (en.wikipedia.org, en.wikinews.org, etc).
+ *
+ * Done by loading a 1x1 image from Special:AutoLogin on each wiki.
+ *
+ * If empty, no other wikis will be hit.
  */
 $wgCentralAuthAutoLoginWikis = array();
 
@@ -97,9 +117,9 @@ $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 
-$wgLogTypes[]                           = 'globalauth';
-$wgLogNames['globalauth']              = 'centralauth-log-name';
-$wgLogHeaders['globalauth']            = 'centralauth-log-header';
+$wgLogTypes[]                      = 'globalauth';
+$wgLogNames['globalauth']          = 'centralauth-log-name';
+$wgLogHeaders['globalauth']        = 'centralauth-log-header';
 $wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
 $wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
 $wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
@@ -230,6 +250,12 @@ function wfCentralAuthAbortNewAccount( $user, &$abortError ) {
 }
 
 function wfCentralAuthUserLoginComplete( &$user, &$inject_html ) {
+	global $wgCentralAuthCookies;
+	if( !$wgCentralAuthCookies ) {
+		// Use local sessions only.
+		return true;
+	}
+	
 	$centralUser = new CentralAuthUser( $user->getName() );
 	
 	if ($centralUser->exists()) {
@@ -275,7 +301,11 @@ function wfCentralAuthUserLoginComplete( &$user, &$inject_html ) {
 }
 
 function wfCentralAuthAutoAuthenticate( &$user ) {
-	global $wgCentralAuthCookiePrefix;
+	global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
+	if( !$wgCentralAuthCookies ) {
+		// Use local sessions only.
+		return true;
+	}
 	$prefix = $wgCentralAuthCookiePrefix;
 	
 	if( $user->isLoggedIn() ) {
@@ -331,7 +361,7 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 function wfCentralAuthInitSession( $username, $token ) {
 	$user = User::newFromName( $username );
 	wfSetupSession();
-	if ($token != $_SESSION['globalloggedin'] ) {
+	if ($token != @$_SESSION['globalloggedin'] ) {
 		$_SESSION['globalloggedin'] = $token;
 		$user->invalidateCache();
 		wfDebug( 'centralauth', "Initialising session for $username with token $token." );
@@ -341,6 +371,11 @@ function wfCentralAuthInitSession( $username, $token ) {
 
 
 function wfCentralAuthLogout( &$user ) {
+	global $wgCentralAuthCookies;
+	if( !$wgCentralAuthCookies ) {
+		// Use local sessions only.
+		return true;
+	}
 	$centralUser = new CentralAuthUser( $user->getName() );
 	
 	if ($centralUser->exists()) {
@@ -351,9 +386,13 @@ function wfCentralAuthLogout( &$user ) {
 }
 
 function wfCentralAuthLogoutComplete( &$user, &$inject_html ) {
-	// Generate the images
-	global $wgCentralAuthAutoLoginWikis;
+	global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis;
+	if( !$wgCentralAuthCookies || !$wgCentralAuthAutoLoginWikis ) {
+		// Nothing to do.
+		return true;
+	}
 	
+	// Generate the images
 	$inject_html .= Xml::openElement( 'p' );
 	
 	foreach( $wgCentralAuthAutoLoginWikis as $dbname ) {
