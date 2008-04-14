@@ -294,7 +294,7 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 		} else {
 			// Auth OK.
 			wfDebug( __METHOD__.": logged in from token\n" );
-			$user = wfCentralAuthInitSession( $username );
+			$user = wfCentralAuthInitSession( $username, $token );
 		}
 	} elseif (isset($_COOKIE["{$prefix}Session"])) {
 		$session_id = $_COOKIE["{$prefix}Session"];
@@ -319,7 +319,7 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 		} else {
 			// Auth OK.
 			wfDebug( __METHOD__.": logged in from session\n" );
-			$user = wfCentralAuthInitSession( $username );
+			$user = wfCentralAuthInitSession( $username, $token );
 		}
 	} else {
 		wfDebug( __METHOD__.": no token or session\n" );
@@ -328,10 +328,14 @@ function wfCentralAuthAutoAuthenticate( &$user ) {
 	return true;
 }
 
-function wfCentralAuthInitSession( $username ) {
-	wfSetupSession();
+function wfCentralAuthInitSession( $username, $token ) {
 	$user = User::newFromName( $username );
-	$user->invalidateCache();
+	wfSetupSession();
+	if ($token != $_SESSION['globalloggedin'] ) {
+		$_SESSION['globalloggedin'] = $token;
+		$user->invalidateCache();
+		wfDebug( 'centralauth', "Initialising session for $username with token $token." );
+	} else wfDebug( 'centralauth', "Session already initialised for $username with token $token." );
 	return $user;
 }
 
