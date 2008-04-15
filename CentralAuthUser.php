@@ -17,6 +17,7 @@ class CentralAuthUser {
 	 * The username of the current user.
 	 */
 	private $mName;
+	private $mStateDirty = false;
 
 	function __construct( $username ) {
 		$this->mName = $username;
