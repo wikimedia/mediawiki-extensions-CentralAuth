@@ -11,8 +11,8 @@ if (!defined('MEDIAWIKI')) {
  
 class SpecialAutoLogin extends UnlistedSpecialPage
 {
-	function SpecialAutoLogin() {
-		SpecialPage::SpecialPage('AutoLogin');
+	function __construct() {
+		parent::__construct('AutoLogin');
 	}
 	
 	function execute( $par ) {
