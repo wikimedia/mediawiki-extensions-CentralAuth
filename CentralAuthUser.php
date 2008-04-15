@@ -1176,7 +1176,7 @@ class CentralAuthUser {
 	 * Called on login.
 	 */
 	function setGlobalCookies($remember = false) {
-		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration;
+		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration, $wgCookieHttpOnly;
 		
 		if (is_object($remember)) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
@@ -1188,12 +1188,12 @@ class CentralAuthUser {
 		$global_session = array();
 		
 		$global_session['user'] = $this->mName;
-		setcookie( $wgCentralAuthCookiePrefix.'User', $this->mName, $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		setcookie( $wgCentralAuthCookiePrefix.'User', $this->mName, $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
 		$global_session['token'] = $this->getAuthToken();
 		$global_session['expiry'] = time() + 86400;
 		
 		if ($remember) {
-			setcookie( $wgCentralAuthCookiePrefix.'Token', $this->getAuthToken(), $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+			setcookie( $wgCentralAuthCookiePrefix.'Token', $this->getAuthToken(), $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
 		} else {
 			setcookie( $wgCentralAuthCookiePrefix.'Token', '', time() - 86400 );
 		}
@@ -1204,7 +1204,7 @@ class CentralAuthUser {
 		global $wgMemc;
 		$wgMemc->set( 'centralauth_session_'.$session_id, $global_session, 86400 );
 		
-		setcookie( $wgCentralAuthCookiePrefix.'Session', $session_id, time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		setcookie( $wgCentralAuthCookiePrefix.'Session', $session_id, time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
 	}
 	
 	/**
@@ -1221,7 +1221,7 @@ class CentralAuthUser {
 		setcookie( $wgCentralAuthCookiePrefix.'Session', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
 		
 		// Logged-out cookie -to fix caching.
-		setcookie( $wgCentralAuthCookiePrefix.'LoggedOut', wfTimestampNow(), time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		setcookie( $wgCentralAuthCookiePrefix.'LoggedOut', wfTimestampNow(), time() + 86400, '/', $wgCentralAuthCookieDomain );
 		
 		// Clear any sessions.
 		$prefix = $wgCentralAuthCookiePrefix;
