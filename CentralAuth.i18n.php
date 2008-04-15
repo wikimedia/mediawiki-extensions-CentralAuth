@@ -1146,7 +1146,7 @@ $messages['de'] = array(
 	'centralauth-merge-welcome'      => "'''Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt.
 
 		Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein,
-		dich mit einem gemeinsamen Benutzernamen und Passwort in alle Wikimedia-Projekte in allen
+		dich mit einem gemeinsamen Benutzernamen und Passwort in allen Wikimedia-Projekten in allen
 		verfügbaren Sprachen anzumelden.\n
 		Dies macht die Arbeit in gemeinsam genutzten Projekten einfacher, z. B. das Hochladen von Dateien nach
 		[http://commons.wikimedia.org/ Wikimedia Commons] und vermeidet Verwirrungen und Konflikte,
@@ -1157,15 +1157,12 @@ $messages['de'] = array(
 		später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
 
 	'centralauth-merge-step1-title'  => 'Beginn der Benutzerkonten-Zusammenführung',
-	'centralauth-merge-step1-detail' => 'Dein Passwort und deine eingetragene E-Mail-Adresse wird mit
-		Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden.
-		Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
+	'centralauth-merge-step1-detail' => 'Dein Passwort und deine eingetragene E-Mail-Adresse werden mit Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden. Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
 
 	'centralauth-merge-step1-submit' => 'Anmelde-Informationen bestätigen',
 
 	'centralauth-merge-step2-title'  => 'Bestätige weitere Benutzerkonten',
-	'centralauth-merge-step2-detail' => "Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugerechnet werden.
-		Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.",
+	'centralauth-merge-step2-detail' => 'Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugeordnet werden. Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.',
 	'centralauth-merge-step2-submit' => 'Anmelde-Informationen bestätigen',
 
 	// Dry run messages
@@ -1191,17 +1188,17 @@ $messages['de'] = array(
 	'centralauth-incomplete'         => 'Die Zusammenführung der Benutzerkonten ist unvollständig!',
 
 	// Wheeee
-	'centralauth-complete-text'      => 'Du kannst dich nun auf jeder Wikimedia-Webseite anmelden
+	'centralauth-complete-text'      => 'Du kannst dich nun auf jeder Wikimedia-Webseite anmelden,
 		ohne ein neues Benutzerkonto anzulegen;
 		derselbe Benutzername und dasselbe Passwort ist für Wikipedia,
-		Wiktionary, Wikibooks und alle Schwesterprojekte
+		Wiktionary, Wikisource, Wikibooks und alle Schwesterprojekte
 		in allen Sprachen gültig.',
 
 	'centralauth-incomplete-text'    => 'Sobald deine Benutzerkonten zusammengeführt sind,
-		kannst du dich auf jeder Wikimedia-Webseite anmelden ohne ein
-		neues Benutzerkonto anzulegen; derselbe Benutzernamen
-		und dasselbe Passwort ist für Wikipedia, Wiktionary,
-		Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
+		kannst du dich auf jeder Wikimedia-Webseite anmelden, ohne ein
+		neues Benutzerkonto anzulegen; derselbe Benutzername
+		und dasselbe Passwort ist für Wikipedia, Wiktionary, Wikisource,
+		WWikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
 
 	'centralauth-not-owner-text'     => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer
 		des Benutzerkontos auf $2 zugewiesen.
@@ -1215,7 +1212,7 @@ $messages['de'] = array(
 	'centralauth-disabled-dryrun'    => 'Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. Zusammenführungs-Aktionen sind deaktiviert.',
 
 	// Appended to various messages above
-	'centralauth-readmore-text'      => ":''[[meta:Help:Unified login|Informationen über die '''Zusammenführung der Benutzerkonten''']] …''",
+	'centralauth-readmore-text'      => ":''[[meta:Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]] …''",
 
 	// For lists of wikis/accounts:
 	'centralauth-list-home-title'    => 'Heimat-Wiki',
@@ -1257,7 +1254,7 @@ $messages['de'] = array(
 	'centralauth-attach-list-attached'     => 'Das globale Benutzerkonto mit dem Namen „$1“ beinhaltet die folgenden Benutzerkonten:',
 	'centralauth-attach-title'             => 'Benutzerkonto bestätigen',
 	'centralauth-attach-text'              => 'Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.
-		Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passowrt des globalen Benutzerkontos eingibts:',
+		Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passwort des globalen Benutzerkontos eingibst:',
 	'centralauth-attach-submit'            => 'Benutzerkonto integrieren',
 	'centralauth-attach-success'           => 'Das Benutzerkonto wurde in das globale Benutzerkonto integriert.',
 
@@ -1276,7 +1273,7 @@ $messages['de'] = array(
 	'centralauth-admin-no'               => 'Nein',
 	'centralauth-admin-attached'         => 'Vollständig zusammengeführte Benutzerkonten',
 	'centralauth-admin-unattached'       => 'Nicht verbundene Benutzerkonten',
-	'centralauth-admin-no-unattached'    => 'Keine zusammengeführte Benutzerkonten mehr vorhanden.',
+	'centralauth-admin-no-unattached'    => 'Keine nicht zusammengeführten Benutzerkonten mehr vorhanden.',
 	'centralauth-admin-list-localwiki'   => 'Lokales Wiki',
 	'centralauth-admin-list-attached-on' => 'Verbunden mit',
 	'centralauth-admin-list-method'      => 'Methode',
@@ -1284,11 +1281,11 @@ $messages['de'] = array(
 	'centralauth-admin-merge'            => 'Ausgewählte Benutzerkonten zusammenführen',
 	'centralauth-admin-bad-input'        => 'Ungültige Auswahl',
 	'centralauth-admin-none-selected'    => 'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
-	'centralauth-admin-already-unmerged' => '$1 wird übersprüngen, da bereits abgespaltet.',
-	'centralauth-admin-unmerge-success'  => 'Es {{PLURAL:$2|wurde 1 Benutzerkonto|wurden $1 Benutzerkonto}} erfolgreich abgespalten.',
+	'centralauth-admin-already-unmerged' => '$1 wird übersprungen, da bereits abgespaltet.',
+	'centralauth-admin-unmerge-success'  => 'Es {{PLURAL:$2|wurde 1 Benutzerkonto|wurden $1 Benutzerkonten}} erfolgreich abgespalten.',
 	'centralauth-admin-delete-title'     => 'Benutzerkonto gelöscht',
-	'centralauth-admin-delete-description' => 'Die Löschung des globalen Benutzerkontos wird jede globale Benutzereinstellungen löschen, alle lokalen Benutzerkonten abspalten
-	und der globale Benutzername wird für eine erneute Verwendung frei werdeb.
+	'centralauth-admin-delete-description' => 'Die Löschung des globalen Benutzerkontos wird alle globalen Benutzereinstellungen löschen, alle lokalen Benutzerkonten abspalten,
+	und der globale Benutzername wird für eine erneute Verwendung frei werden.
 	Alle lokalen Benutzerkonten werden weiterhin bestehen bleiben.
 	Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Passwort vor der Zusammenführung zurückgesetzt.',
 	'centralauth-admin-delete-button'    => 'Lösche dieses Benutzerkonto',
