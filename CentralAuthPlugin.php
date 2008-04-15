@@ -107,7 +107,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function updateUser( &$user ) {
-		$central = new CentralAuthUser( $user->getName() );
+		$central = CentralAuthUser::getInstance( $user );
 		if ( $central->exists() && $central->isAttached() ) {
 			$user->setEmail( $central->getEmail() );
 			$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
@@ -148,7 +148,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	function setPassword( $user, $password ) {
 		// Fixme: password changes should happen through central interface.
-		$central = new CentralAuthUser( $user->getName() );
+		$central = CentralAuthUser::getInstance( $user );
 		if( $central->isAttached() ) {
 			return $central->setPassword( $password );
 		} else {
@@ -197,13 +197,12 @@ class CentralAuthPlugin extends AuthPlugin {
 	function addUser( $user, $password, $email='', $realname='' ) {
 		global $wgCentralAuthAutoNew;
 		if( $wgCentralAuthAutoNew ) {
-			$central = new CentralAuthUser( $user->getName() );
+			$central = CentralAuthUser::getInstance( $user );
 			if( !$central->exists() && !$central->listUnattached() ) {
 				// Username is unused; set up as a global account
 				// @fixme is this even vaguely reliable? pah
-				global $wgDBname;
 				$central->register( $password, $email, $realname );
-				$central->attach( $wgDBname, 'new' );
+				$central->attach( wfWikiID(), 'new' );
 			}
 		}
 		return true;
@@ -237,10 +236,9 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	function initUser( &$user, $autocreate=false ) {
 		if( $autocreate ) {
-			$central = new CentralAuthUser( $user->getName() );
+			$central = CentralAuthUser::getInstance( $user );
 			if( $central->exists() ) {
-				global $wgDBname;
-				$central->attach( $wgDBname, 'login' );
+				$central->attach( wfWikiID(), 'login' );
 				$this->updateUser( $user );
 			}
 		}

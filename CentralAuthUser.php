@@ -23,12 +23,28 @@ class CentralAuthUser {
 		$this->resetState();
 	}
 
+	/**
+	 * Create a CentralAuthUser object corresponding to the suppplied User, and
+	 * cache it in the User object.
+	 * @param User $user
+	 */
+	static function getInstance( $user ) {
+		if ( !isset( $user->centralAuthObj ) ) {
+			$user->centralAuthObj = new self( $user->getName() );
+		}
+		return $user->centralAuthObj;
+	}
+
 	public static function getCentralDB() {
-		return wfGetLB( 'centralauth' )->getConnection( DB_MASTER, array(), 'centralauth' );
+		global $wgCentralAuthDatabase;
+		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(), 
+			$wgCentralAuthDatabase );
 	}
 
 	public static function getCentralSlaveDB() {
-		return wfGetLB( 'centralauth' )->getConnection( DB_SLAVE, 'centralauth', 'centralauth' );
+		global $wgCentralAuthDatabase;
+		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_SLAVE, 'centralauth', 
+			$wgCentralAuthDatabase );
 	}
 
 	public static function getLocalDB( $dbname ) {
@@ -46,6 +62,15 @@ class CentralAuthUser {
 	}
 
 	/**
+	 * Create a CentralAuthUser object from a joined globaluser/localuser row
+	 */
+	public static function newFromRow( $row ) {
+		$caUser = new self( $row->gu_name );
+		$caUser->loadFromRow( $row );
+		return $caUser;
+	}
+
+	/**
 	 * Clear state information cache
 	 */
 	private function resetState() {
@@ -60,7 +85,6 @@ class CentralAuthUser {
 	private function loadState() {
 		wfProfileIn( __METHOD__ );
 		if( !isset( $this->mGlobalId ) ) {
-			global $wgDBname;
 			$dbr = self::getCentralSlaveDB();
 			$globaluser = self::tableName( 'globaluser' );
 			$localuser = self::tableName( 'localuser' );
@@ -73,28 +97,34 @@ class CentralAuthUser {
 						ON gu_name=lu_name
 						AND lu_dbname=?
 					WHERE gu_name=?";
-			$result = $dbr->safeQuery( $sql, $wgDBname, $this->mName );
+			$result = $dbr->safeQuery( $sql, wfWikiID(), $this->mName );
 			$row = $dbr->fetchObject( $result );
 			$dbr->freeResult( $result );
-
-			if( $row ) {
-				$this->mGlobalId = intval( $row->gu_id );
-				$this->mIsAttached = ($row->lu_dbname !== null);
-				$this->mSalt = $row->gu_salt;
-				$this->mPassword = $row->gu_password;
-				$this->mAuthToken = $row->gu_auth_token;
-				$this->mLocked = $row->gu_locked;
-				$this->mHidden = $row->gu_hidden;
-				$this->mRegistration = wfTimestamp( TS_MW, $row->gu_registration );
-				$this->mEmail = $row->gu_email;
-				$this->mAuthenticationTimestamp =
-					wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
-			} else {
-				$this->mGlobalId = 0;
-				$this->mIsAttached = false;
-			}
+			$this->loadFromRow( $row );
 		}
 		wfProfileOut( __METHOD__ );
+	}
+
+	/**
+	 * Load user state from a joined globaluser/localuser row
+	 */
+	protected function loadFromRow( $row ) {
+		if( $row ) {
+			$this->mGlobalId = intval( $row->gu_id );
+			$this->mIsAttached = ($row->lu_dbname !== null);
+			$this->mSalt = $row->gu_salt;
+			$this->mPassword = $row->gu_password;
+			$this->mAuthToken = $row->gu_auth_token;
+			$this->mLocked = $row->gu_locked;
+			$this->mHidden = $row->gu_hidden;
+			$this->mRegistration = wfTimestamp( TS_MW, $row->gu_registration );
+			$this->mEmail = $row->gu_email;
+			$this->mAuthenticationTimestamp =
+				wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
+		} else {
+			$this->mGlobalId = 0;
+			$this->mIsAttached = false;
+		}
 	}
 
 	/**
@@ -422,14 +452,12 @@ class CentralAuthUser {
 	 * @return bool true if password matched current and home account
 	 */
 	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
-		global $wgDBname;
-
 		$home = false;
 		$attached = array();
 		$unattached = array();
 
 		// First, make sure we were given the current wiki's password.
-		$self = $this->localUserData( $wgDBname );
+		$self = $this->localUserData( wfWikiID() );
 		if( !$this->matchHashes( $passwords, $self['id'], $self['password'] ) ) {
 			wfDebugLog( 'CentralAuth', "dry run: failed self-password check" );
 			return false;
@@ -638,8 +666,7 @@ class CentralAuthUser {
 			$status->successCount++;
 		}
 
-		global $wgDBname;
-		if( in_array( $wgDBname, $valid ) ) {
+		if( in_array( wfWikiID(), $valid ) ) {
 			$this->resetState();
 		}
 
@@ -721,8 +748,7 @@ class CentralAuthUser {
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$dbname by '$method'" );
 
-		global $wgDBname;
-		if( $dbname == $wgDBname ) {
+		if( $dbname == wfWikiID() ) {
 			$this->resetState();
 		}
 	}
@@ -1133,6 +1159,22 @@ class CentralAuthUser {
 		return $this->mAuthenticationTimestamp;
 	}
 
+	function setEmail( $email ) {
+		$this->loadState();
+		if ( $this->mEmail !== $email ) {
+			$this->mEmail = $email;
+			$this->mStateDirty = true;
+		}
+	}
+
+	function setEmailAuthenticationTimestamp( $ts ) {
+		$this->loadState();
+		if ( $this->mAuthenticationTimestamp !== $ts ) {
+			$this->mAuthenticationTimestamp = $ts;
+			$this->mStateDirty = true;
+		}
+	}
+
 	/**
 	 * Salt and hash a new plaintext password.
 	 * @param string $password plaintext
@@ -1254,5 +1296,32 @@ class CentralAuthUser {
 		// Save it.
 		$dbw = self::getCentralDB();
 		$dbw->update( self::tableName( 'globaluser' ), array( 'gu_auth_token' => $this->mAuthToken ), array( 'gu_id' => $this->getId() ), __METHOD__ );
+	}
+
+	function saveSettings() {
+		if ( !$this->mStateDirty ) return;
+		$this->mStateDirty = false;
+
+		if ( wfReadOnly() ) return;
+
+		$this->loadState();
+		if ( !$this->mGlobalId ) return;
+
+		$dbw = self::getCentralDB();
+		$dbw->update( 'globaluser', 
+			array( # SET
+				'gu_password' => $this->mPassword,
+				'gu_salt' => $this->mSalt,
+				'gu_auth_token' => $this->mAuthToken,
+				'gu_locked' => $this->mLocked,
+				'gu_hidden' => $this->mHidden,
+				'gu_email' => $this->mEmail,
+				'gu_email_authenticated' => $dbw->timestamp( $this->mAuthenticationTimestamp )
+			),
+			array( # WHERE
+				'gu_id' => $this->mGlobalId 
+			), 
+			__METHOD__
+		);
 	}
 }

@@ -16,7 +16,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 	}
 	
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgUser, $wgMemc, $wgDBname, $IP;
+		global $wgRequest, $wgOut, $wgUser, $wgMemc, $IP;
 		
 		$token = $wgRequest->getVal('token');
 		$logout = $wgRequest->getBool( 'logout' );
@@ -42,7 +42,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 			
 			#die( print_r( $data, true ));
 			
-			if ($data['wiki'] != $wgDBname) {
+			if ($data['wiki'] != wfWikiID()) {
 				$wgOut->addWikitext( 'Bad token (wrong wiki)' );
 				return;
 			}

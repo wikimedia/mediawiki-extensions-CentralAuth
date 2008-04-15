@@ -156,7 +156,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 
 	function doDryRunMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
+		global $wgUser, $wgRequest, $wgOut, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 
 		if( $globalUser->exists() ) {
@@ -212,7 +212,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function doInitialMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
+		global $wgUser, $wgRequest, $wgOut, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 
 		if( $wgCentralAuthDryRun ) {
@@ -238,7 +238,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function doCleanupMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
+		global $wgUser, $wgRequest, $wgOut, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 
 		if( !$globalUser->exists() ) {
@@ -271,7 +271,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function doAttachMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgDBname, $wgCentralAuthDryRun;
+		global $wgUser, $wgRequest, $wgOut, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 
 		if( !$globalUser->exists() ) {
@@ -287,7 +287,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 		$password = $wgRequest->getText( 'wpPassword' );
 		if( $globalUser->authenticate( $password ) == 'ok' ) {
-			$globalUser->attach( $wgDBname, 'password' );
+			$globalUser->attach( wfWikiID(), 'password' );
 			$wgOut->addWikiText( wfMsg( 'centralauth-attach-success' ) );
 			$this->showCleanupForm();
 		} else {
