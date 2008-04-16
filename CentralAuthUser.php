@@ -1213,32 +1213,61 @@ class CentralAuthUser {
 		$this->setGlobalCookies();
 		return true;
 	}
+	
+	protected function setCookie( $name, $value, $exp=0 ) {
+		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration, $wgCookieHttpOnly;
+		if( $exp == 0 ) {
+			$exp = time() + $wgCookieExpiration;
+		}
+		$httpOnlySafe = version_compare("5.2", PHP_VERSION, "<");
+		
+		if( $httpOnlySafe && isset( $wgCookieHttpOnly ) ) {
+			setcookie( $wgCentralAuthCookiePrefix . $name,
+				$value,
+				$exp,
+				'/',
+				$wgCentralAuthCookieDomain,
+				$wgCookieSecure,
+				$wgCookieHttpOnly );
+		} else {
+			// setcookie() fails on PHP 5.1 if you give it future-compat paramters.
+			// stab stab!
+			setcookie( $wgCentralAuthCookiePrefix . $name,
+				$value,
+				$exp,
+				'/',
+				$wgCentralAuthCookieDomain,
+				$wgCookieSecure );
+		}
+	}
+	
+	protected function clearCookie( $name ) {
+		global $wgCentralAuthCookiePrefix;
+		$this->setCookie( $name, '', time() - 86400 );
+	}
 
 	/**
 	 * Set a global cookie that auto-authenticates the user on other wikis
 	 * Called on login.
 	 */
 	function setGlobalCookies($remember = false) {
-		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration, $wgCookieHttpOnly;
-		
 		if (is_object($remember)) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption('rememberpassword');
 		}
 		
-		$exp = time() + $wgCookieExpiration;
-		
 		$global_session = array();
+		$exp = time() + 86400;
 		
 		$global_session['user'] = $this->mName;
-		setcookie( $wgCentralAuthCookiePrefix.'User', $this->mName, $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
+		$this->setCookie( 'User', $this->mName );
 		$global_session['token'] = $this->getAuthToken();
-		$global_session['expiry'] = time() + 86400;
+		$global_session['expiry'] = $exp;
 		
 		if ($remember) {
-			setcookie( $wgCentralAuthCookiePrefix.'Token', $this->getAuthToken(), $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
+			$this->setCookie( 'Token', $this->getAuthToken() );
 		} else {
-			setcookie( $wgCentralAuthCookiePrefix.'Token', '', time() - 86400 );
+			$this->clearCookie( 'Token' );
 		}
 		
 		// Make up a session id.
@@ -1247,7 +1276,7 @@ class CentralAuthUser {
 		global $wgMemc;
 		$wgMemc->set( 'centralauth_session_'.$session_id, $global_session, 86400 );
 		
-		setcookie( $wgCentralAuthCookiePrefix.'Session', $session_id, time() + 86400, '/', $wgCentralAuthCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
+		$this->setCookie( 'Session', $session_id, time() + 86400 );
 	}
 	
 	/**
@@ -1255,16 +1284,14 @@ class CentralAuthUser {
 	 * Called on logout.
 	 */
 	function deleteGlobalCookies() {
-		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration;
+		global $wgCentralAuthCookiePrefix;
 		
-		$exp = time() - 86400;
-		
-		setcookie( $wgCentralAuthCookiePrefix.'User', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
-		setcookie( $wgCentralAuthCookiePrefix.'Token', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
-		setcookie( $wgCentralAuthCookiePrefix.'Session', '', $exp, '/', $wgCentralAuthCookieDomain, $wgCookieSecure );
+		$this->clearCookie( 'User' );
+		$this->clearCookie( 'Token' );
+		$this->clearCookie( 'Session' );
 		
 		// Logged-out cookie -to fix caching.
-		setcookie( $wgCentralAuthCookiePrefix.'LoggedOut', wfTimestampNow(), time() + 86400, '/', $wgCentralAuthCookieDomain );
+		$this->setCookie( 'LoggedOut', wfTimestampNow() );
 		
 		// Clear any sessions.
 		$prefix = $wgCentralAuthCookiePrefix;
