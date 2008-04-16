@@ -571,6 +571,9 @@ $messages['bg'] = array(
 	'centralauth-merge-step2-detail'       => 'За някои от сметките не можа да се направи автоматично съответствие със сметката ви в посоченото за „домашно“ уики.
 Ако тези сметки ви принадлежат, можете да потвърдите това, като предоставите за тях парола.',
 	'centralauth-merge-step2-submit'       => 'Потвърждаване на информацията за влизане',
+	'centralauth-merge-dryrun-complete'    => 'Всички съществуващи сметки могат да бъдат автоматично обединени!
+
+Все още не са извършени промени във вашите сметки.',
 	'centralauth-merge-dryrun-or'          => "'''или'''",
 	'centralauth-merge-step3-title'        => 'Създаване на единна сметка',
 	'centralauth-merge-step3-detail'       => 'Създаването на единната сметка може да започне. Следните уикита ще бъдат прикрепени към нея:',
@@ -2280,6 +2283,8 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-prefs-detail-unattached'  => 'Non se confirmou que o sitio do proxecto pertenza á conta global.',
 	'centralauth-prefs-manage'             => 'Xestionar a súa conta global',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Non se lle pode mudar o nome ao usuario $1 localmente xa que este nome de usuario pasou ao sistema de rexistro unificado.</div>',
+	'centralauth-renameuser-exists'        => '<div class="errorbox">Non se pode renomear o usuario $2 ao novo novo nome porque está reservado para unha conta global.</div>',
+	'centralauth-account-exists'           => 'Non se pode crear a conta: o nome de usuario solicitado é usado no sistema de rexistro unificado.',
 	'centralauth-log-entry-delete'         => 'eliminou a conta de usuario global de "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => 'bloqueou a conta de usuario global de "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => 'desbloqueou a conta de usuario global de "<nowiki>$1</nowiki>"',
@@ -3092,6 +3097,15 @@ $messages['id'] = array(
 		"dimigrasikan ke sistem log masuk gabungan.</div>",
 );
 
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'centralauth-admin-yes'    => 'yes',
+	'centralauth-admin-no'     => 'no',
+	'centralauth-admin-reason' => 'Motivo:',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
@@ -3402,6 +3416,7 @@ Yèn iki panjenengan dhéwé, panjenengan bisa ngrampungaké prosès panggabunga
 	'centralauth-merge-method-empty'       => 'ora ana sumbangsihé',
 	'centralauth-merge-method-mail'        => 'pandhedhesan (konfirmasi) mawa e-mail',
 	'centralauth-merge-method-password'    => 'didhedhes (dikonfirmasi) déning tembung sandhi',
+	'centralauth-merge-method-admin'       => 'Pangurus nggabung rékening (akun)',
 	'centralauth-merge-method-new'         => 'akun utawa rékening anyar',
 	'centralauth-merge-method-login'       => 'Didhedhes (konfirmasi) mawa log mlebu',
 	'centralauth-finish-title'             => 'Rampungna panggabungan',
@@ -3433,6 +3448,7 @@ Rékening-rékening liyané durung dikonfirmasi.',
 	'centralauth-admin-list-method'        => 'Métode',
 	'centralauth-admin-merge'              => 'Gabungna rékening kapilih',
 	'centralauth-admin-none-selected'      => 'Ora ana rékening sing dipilih kanggo diowahi.',
+	'centralauth-admin-already-unmerged'   => 'Nglumpati $1, wis dibatalaké panggabungané',
 	'centralauth-admin-delete-title'       => 'Busak rékening',
 	'centralauth-admin-delete-button'      => 'Busaken rékening (akun) iki',
 	'centralauth-admin-delete-success'     => 'Bisa kasil mbusak rékening (akun) global kanggo "<nowiki>$1</nowiki>"',
@@ -3851,6 +3867,7 @@ Later kint geer instelle welke wiki uche thoeswiki is.",
 waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-foreign-link'             => 'Gebroeker $1 op $2',
 	'centralauth-merge-method-primary'     => 'thoeswiki',
+	'centralauth-merge-method-empty'       => 'gein biedrages',
 	'centralauth-merge-method-new'         => 'nuje gebroeker',
 	'centralauth-finish-title'             => 'Samevoege aafrönje',
 	'centralauth-finish-text'              => "Es dees gebroekers bie uch heure kinse 't proces van samevoege aafrönje door de wachwäörd veur de anger gebroekers hiej in te veure:",
@@ -3879,6 +3896,8 @@ waorsjienliek ómdet \'t wachwaord aafwiek van uche primaire gebroeker:',
 	'centralauth-admin-merge'              => 'Geselecteerde gebroekers samevoege',
 	'centralauth-admin-bad-input'          => 'Onzjuuste samevoegselectie',
 	'centralauth-admin-none-selected'      => "d'r Zeen gein gebroekers geselecteerd óm te verangere.",
+	'centralauth-admin-delete-title'       => 'Wis account',
+	'centralauth-admin-delete-button'      => 'Wis dees account',
 	'centralauth-prefs-status'             => 'Globale gebroekersstatus:',
 	'centralauth-prefs-not-managed'        => 'Gebroek gein samegevoegde gebroeker',
 	'centralauth-prefs-unattached'         => 'Neet bevestig',
@@ -4776,6 +4795,10 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-invalid-wiki'             => 'Cap de banca de donada wiki : $1',
 	'centralauth-account-exists'           => 'Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.',
 	'centralauth-log-name'                 => 'Jornal de la gestion dels comptes globals',
+	'centralauth-log-header'               => 'Aqueste jornal conten las operacions que concernisson los comptes globals : supressions, varrolhatges e desvarrolhatges.',
+	'centralauth-log-entry-delete'         => 'a suprimit lo compte global « <nowiki>$1</nowiki> »',
+	'centralauth-log-entry-lock'           => 'a varrolhat lo compte global « <nowiki>$1</nowiki> »',
+	'centralauth-log-entry-unlock'         => 'a desvarrolhat lo compte global « <nowiki>$1</nowiki> »',
 );
 
 /** Polish (Polski)
