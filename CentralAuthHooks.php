@@ -95,7 +95,7 @@ class CentralAuthHooks {
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		
-		if ($centralUser->exists()) {
+		if ($centralUser->exists() && $centralUser->isAttached()) {
 			$centralUser->setGlobalCookies($user);
 		} else {
 			return true;
