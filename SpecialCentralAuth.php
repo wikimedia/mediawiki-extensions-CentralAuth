@@ -61,7 +61,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$globalUser = new CentralAuthUser( $this->mUserName );
 
 		if ( !$globalUser->exists() ) {
-			$this->showError( wfMsgNoTrans( 'centralauth-admin-nonexistent', $this->mUserName ) );
+			$this->showError( 'centralauth-admin-nonexistent', $this->mUserName );
 			$this->showUsernameForm();
 			return;
 		}
@@ -70,49 +70,49 @@ class SpecialCentralAuth extends SpecialPage {
 
 		if( $this->mPosted ) {
 			if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
-				$this->showError( wfMsg( 'centralauth-token-mismatch' ) );
+				$this->showError( 'centralauth-token-mismatch' );
 			} elseif( $this->mMethod == 'unmerge' ) {
 				$status = $globalUser->adminUnattach( $this->mDatabases );
 				if ( !$status->isGood() ) {
-					$this->showError( $status->getWikiText() );
+					$this->showStatusError( $status->getWikiText() );
 				} else {
 					global $wgLang;
-					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-unmerge-success', 
+					$this->showSuccess( 'centralauth-admin-unmerge-success',
 						$wgLang->formatNum( $status->successCount ),
-						$status->successCount ) );
+						/* deprecated */ $status->successCount );
 				}
 			} elseif ( $this->mMethod == 'delete' ) {
 				$status = $globalUser->adminDelete();
 				if ( !$status->isGood() ) {
-					$this->showError( $status->getWikiText() );
+					$this->showStatusError( $status->getWikiText() );
 				} else {
 					global $wgLang;
-					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-delete-success', $this->mUserName ) );
+					$this->showSuccess( 'centralauth-admin-delete-success', $this->mUserName );
 					$deleted = true;
 					$this->logAction( 'delete', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
 			} elseif( $this->mMethod == 'lock' ) {
 				$status = $globalUser->adminLock();
 				if ( !$status->isGood() ) {
-					$this->showError( $status->getWikiText() );
+					$this->showStatusError( $status->getWikiText() );
 				} else {
 					global $wgLang;
-					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-lock-success', $this->mUserName ) );
+					$this->showSuccess( 'centralauth-admin-lock-success', $this->mUserName );
 					$locked = true;
 					$this->logAction( 'lock', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
 			} elseif( $this->mMethod == 'unlock' ) {
 				$status = $globalUser->adminUnlock();
 				if ( !$status->isGood() ) {
-					$this->showError( $status->getWikiText() );
+					$this->showStatusError( $status->getWikiText() );
 				} else {
 					global $wgLang;
-					$this->showSuccess( wfMsgNoTrans( 'centralauth-admin-unlock-success', $this->mUserName ) );
+					$this->showSuccess( 'centralauth-admin-unlock-success', $this->mUserName );
 					$unlocked = true;
 					$this->logAction( 'unlock', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
 			} else {
-				$this->showError( wfMsg( 'centralauth-admin-bad-input' ) );
+				$this->showError( 'centralauth-admin-bad-input' );
 			}
 
 		}
@@ -128,14 +128,29 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 	}
 
-	function showError( $message ) {
+	function showStatusError( $wikitext ) {
 		global $wgOut;
-		$wgOut->addWikiText( "<div class='error'>\n$message</div>" );
+		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $s );
+		$wgOut->addHTML( $wgOut->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
 	}
 
-	function showSuccess( $message ) {
+	function showError( $message /* varargs */ ) {
+		$args = func_get_args();
+		array_shift( $args ); // remove first
+		$args = array_values( $args );
+
 		global $wgOut;
-		$wgOut->addWikiText( "<div class='success'>\n$message</div>" );
+		$wgOut->wrapWikiMsg( '<div class="error">$1</div>', $message, $args );
+	}
+
+
+	function showSuccess( $message /* varargs */ ) {
+		$args = func_get_args();
+		array_shift( $args ); // remove first
+		$args = array_values( $args );
+
+		global $wgOut;
+		$wgOut->wrapWikiMsg( '<div class="success">$1</div>', $message, $args );
 	}
 
 	function showUsernameForm() {

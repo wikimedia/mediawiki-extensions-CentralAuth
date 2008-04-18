@@ -138,7 +138,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-bad-input'        => 'Invalid merge selection',
 	'centralauth-admin-none-selected'    => 'No accounts selected to modify.',
 	'centralauth-admin-already-unmerged' => 'Skipping $1, already unmerged',
-	'centralauth-admin-unmerge-success'  => 'Successfully unmerged $1 {{PLURAL:$2|account|accounts}}',
+	'centralauth-admin-unmerge-success'  => 'Successfully unmerged $1 {{PLURAL:$1|account|accounts}}',
 	'centralauth-admin-delete-title'     => 'Delete account',
 	'centralauth-admin-delete-description' => 'Deleting the global account will delete any global preferences, unattach all local accounts, and leave the global name free for another user to take.
 All local accounts will continue to exist.
