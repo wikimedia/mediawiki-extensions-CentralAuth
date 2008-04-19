@@ -1739,6 +1739,8 @@ $messages['ext'] = array(
 
 /** Persian (فارسی)
  * @author Huji
+ * @author Mardetanha
+ * @author Siebrand
  */
 $messages['fa'] = array(
 	'mergeaccount'                         => 'وضعیت یکی کردن حساب‌ها',
@@ -1845,6 +1847,21 @@ $messages['fa'] = array(
 	'centralauth-admin-nonexistent'        => 'حساب کاربری مشترکی برای «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-admin-delete-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-token-mismatch'           => 'شرمنده! به علت از دست رفتن اطلاعات نشست کاربری، نمی‌توانیم فرم شما را پردازش کنیم.',
+	'centralauth-admin-lock-title'         => 'حساب را ببند',
+	'centralauth-admin-lock-description'   => 'بستن حساب کاربری باعث می‌شود که امکان ورود به هیچ ویکی با استفاده از آن وجود نداشته باشد.',
+	'centralauth-admin-lock-button'        => 'این حساب را ببند',
+	'centralauth-admin-lock-success'       => 'حساب کاربری «<nowiki>$1</nowiki>» با موفقیت بسته شد',
+	'centralauth-admin-lock-nonexistent'   => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
+	'centralauth-admin-unlock-title'       => 'حساب را باز کن',
+	'centralauth-admin-unlock-description' => 'باز کردن حساب کاربری باعث می‌شود که امکان ورود به سیستم با استفاده از آن دوباره فراهم گردد.',
+	'centralauth-admin-unlock-button'      => 'این حساب را باز کن',
+	'centralauth-admin-unlock-success'     => 'حساب کاربری «<nowiki>$1</nowiki>» با موفقیت باز شد',
+	'centralauth-admin-unlock-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>»‌ وجود ندارد.',
+	'centralauth-admin-reason'             => 'دلیل:',
+	'globalusers'                          => 'فهرست کاربری مشترک',
+	'centralauth-listusers-locked'         => 'قفل شده',
+	'centralauth-listusers-attached'       => 'به طور محلی وجود دارد',
+	'centralauth-listusers-nolocal'        => 'متصل نشده‌است یا به طور محلی وجود ندارد',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|ثانیه|ثانیه}} قبل',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|دقیقه|دقیقه}} قبل',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|ساعت|ساعت}} قبل',
@@ -1864,7 +1881,13 @@ $messages['fa'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">نام حساب کاربری $2 را نمی‌توان تغییر داد زیرا این حساب کاربری برای یک حساب مشترک کنار گذاشته شده‌است.</div>',
 	'centralauth-invalid-wiki'             => 'چنین پایگاه اطلاعاتی وجود ندارد: $1',
 	'centralauth-account-exists'           => 'امکان ایجاد حساب کاربری وجود ندارد: حساب کاربری مورد نظر پیش از این در سامانه حساب کاربری مشترک به کار گرفته شده‌است.',
+	'centralauth-log-name'                 => 'سیاههً مدیریت حساب‌های کاربری مشترک',
+	'centralauth-log-header'               => 'این سیاهه شامل عملکردهای مربوط به حساب‌های کاربری مشترک است: حذف، بستن و باز کردن.',
+	'centralauth-log-entry-delete'         => 'حساب کاربری مشترک «<nowiki>$1</nowiki>» را حذف کرد',
+	'centralauth-log-entry-lock'           => 'حساب کاربری مشترک «<nowiki>$1</nowiki>» را بست',
+	'centralauth-log-entry-unlock'         => 'حساب کاربری مشترک «<nowiki>$1</nowiki>» را باز کرد',
 );
+
 
 /** Finnish (Suomi)
  * @author Nike
