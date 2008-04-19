@@ -160,6 +160,12 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-unlock-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-admin-reason' => 'Reason: ',
 
+	// List of global list
+	'globalusers'                    => 'Global user list',
+	'centralauth-listusers-locked'   => 'locked',
+	'centralauth-listusers-attached' => 'exists locally',
+	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
+
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minute|minutes}} ago',

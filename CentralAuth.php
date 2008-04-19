@@ -89,6 +89,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $caBase = dirname( __FILE__ );
 $wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/SpecialCentralAuth.php";
 $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/SpecialMergeAccount.php";
+$wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/SpecialGlobalUsers.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
@@ -126,6 +127,7 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
+$wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
