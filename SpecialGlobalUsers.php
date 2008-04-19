@@ -7,7 +7,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		parent::__construct( 'GlobalUsers', 'centralauth-listusers' );
 	}
 
-	function execute() {
+	function execute( $par ) {
 		global $wgOut;
 		$this->setHeaders();
 
