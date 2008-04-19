@@ -4,7 +4,7 @@ class SpecialGlobalUsers extends SpecialPage {
 
 	function __construct() {
 		wfLoadExtensionMessages('SpecialCentralAuth');
-		parent::__construct( 'GlobalUsers', 'centralauth-listusers' );
+		parent::__construct( 'GlobalUsers' );
 	}
 
 	function execute( $par ) {
