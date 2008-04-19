@@ -160,7 +160,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-unlock-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-admin-reason' => 'Reason: ',
 
-	// List of global list
+	// List of global users
 	'globalusers'                    => 'Global user list',
 	'centralauth-listusers-locked'   => 'locked',
 	'centralauth-listusers-attached' => 'exists locally',
@@ -2480,6 +2480,12 @@ $messages['he'] = array(
 	'centralauth-admin-unlock-success'     => 'ביטול נעילת החשבון הכללי בשם "<nowiki>$1</nowiki>" הושלמה בהצלחה.',
 	'centralauth-admin-unlock-nonexistent' => 'שגיאה: החשבון הכללי "<nowiki>$1</nowiki>" אינו קיים.',
 	'centralauth-admin-reason'             => 'סיבה:',
+
+	# List of global users
+	'globalusers'                    => 'רשימת חשבונות כלליים',
+	'centralauth-listusers-locked'   => 'נעול',
+	'centralauth-listusers-attached' => 'קיים באתר זה',
+	'centralauth-listusers-nolocal'  => 'לא מצורף לחשבון הכללי או לא קיים באתר זה',
 
 	# Pretty timespan
 	'centralauth-seconds-ago' => 'לפני {{plural:$1|שנייה|$1 שניות}}',
