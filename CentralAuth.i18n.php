@@ -1391,6 +1391,12 @@ $messages['de'] = array(
 	'centralauth-admin-unlock-nonexistent' => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
 	'centralauth-admin-reason'             => 'Grund:',
 
+	// List of global users
+	'globalusers'                    => 'Globale Benutzerlistet',
+	'centralauth-listusers-locked'   => 'gesperrt',
+	'centralauth-listusers-attached' => 'lokal vorhanden',
+	'centralauth-listusers-nolocal'  => 'nicht verbunden oder lokal nicht vorhanden',
+
  	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|Sekunde|Sekunden}} zuvor',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|Minute|Minuten}} zuvor',
