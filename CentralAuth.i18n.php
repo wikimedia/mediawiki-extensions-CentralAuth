@@ -901,6 +901,14 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-admin-nonexistent'        => 'N\'eus kont hollek ebet evit "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhañ.',
 	'centralauth-token-mismatch'           => "Ho tigarez, n'omp ket bet gouest d'ober war-dro ho furmskrid rak kollet eo bet roadennoù an dalc'h.",
+	'centralauth-admin-lock-title'         => 'Prennañ ar gont',
+	'centralauth-admin-lock-description'   => "Ma vez prennet ar gont e vo dibosupl kevreañ outi dre hec'h anv, ne vern e pe wiki e vije.",
+	'centralauth-admin-lock-button'        => 'Prennañ ar gont-mañ',
+	'centralauth-admin-unlock-title'       => 'Dibrennañ ar gont',
+	'centralauth-admin-unlock-button'      => 'Dibrennañ ar gont-mañ',
+	'centralauth-admin-unlock-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhi.',
+	'centralauth-admin-reason'             => 'Abeg :',
+	'centralauth-listusers-locked'         => 'prennet',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|munut|munut}} zo',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|eurvezh|eurvezh}} zo',
@@ -920,6 +928,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Dibosupl adenvel $2 evel anv implijer, miret eo evit ur gont hollek.</div>',
 	'centralauth-invalid-wiki'             => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists'           => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
+	'centralauth-log-entry-unlock'         => 'en deus dibrennet ar gont hollek "<nowiki>$1</nowiki>"',
 );
 
 /** Catalan (Català)
@@ -2765,6 +2774,21 @@ $messages['hi'] = array(
 	'centralauth-admin-nonexistent'        => '"<nowiki>$1</nowiki>" का विश्व खाता नहीं हैं',
 	'centralauth-admin-delete-nonexistent' => 'गलती: "<nowiki>$1</nowiki>" यह विश्व खाता अस्तित्वमें नहीं हैं।',
 	'centralauth-token-mismatch'           => 'माफ किजीये, सेशन डाटाके खो जाने से आपकी अर्जी भेज नहीं पा रहें हैं।',
+	'centralauth-admin-lock-title'         => 'खाता बंद करें',
+	'centralauth-admin-lock-description'   => 'खाता बंद करनेसे किसी भी विकिपर इस नामसे लॉग इन नहीं हो सकता।',
+	'centralauth-admin-lock-button'        => 'इस खाते को बंद करें',
+	'centralauth-admin-lock-success'       => '"<nowiki>$1</nowiki>" का वैश्विक अकाउंट बंद कर दिया हैं',
+	'centralauth-admin-lock-nonexistent'   => 'गलती: "<nowiki>$1</nowiki>" यह वैश्विक अकाउंट अस्तित्वमें नहीं हैं।',
+	'centralauth-admin-unlock-title'       => 'खाता का ताला खोलें',
+	'centralauth-admin-unlock-description' => 'खाता का ताला खोलनेसे उसका इस्तेमाल करके लॉग इन किया जा सकता हैं।',
+	'centralauth-admin-unlock-button'      => 'इस खाते का ताला खोलें',
+	'centralauth-admin-unlock-success'     => '"<nowiki>$1</nowiki>" के वैश्विक खाते का ताला खोल दिया गया हैं',
+	'centralauth-admin-unlock-nonexistent' => 'गलती: "<nowiki>$1</nowiki>" यह वैश्विक खाता अस्तित्वमें नहीं हैं।',
+	'centralauth-admin-reason'             => 'कारण:',
+	'globalusers'                          => 'वैश्विक सदस्य सूची',
+	'centralauth-listusers-locked'         => 'ताला लगा हुआ',
+	'centralauth-listusers-attached'       => 'लोकल स्तरपर अस्तित्व',
+	'centralauth-listusers-nolocal'        => 'ना जुडा हुआ या स्थानिक स्तर पर अस्तित्वमें नहीं',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|सेकैंद के पहले|सेकेंदोंके पहले}}',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|मिनट के पहले|मिनटोंके पहले}}',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|घंटे पहले|घंटे पहले}}',
@@ -2784,6 +2808,11 @@ $messages['hi'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">सदस्य $2 का नाम बदल नहीं सकते क्योंकी यह विश्व खाते से जुडने के लिये रखा हैं।</div>',
 	'centralauth-invalid-wiki'             => 'ऐसा विकि नहीं हैं DB: $1',
 	'centralauth-account-exists'           => 'खाता खोल नहीं सकते: पूछा गया सदस्यनाम पहले से विश्व खाते के लिये सुरक्षित हैं।',
+	'centralauth-log-name'                 => 'वैश्विक अकाउंट व्यवस्थापन सूची',
+	'centralauth-log-header'               => 'इस सूची में वैश्विक खातोंसे संबंधित कार्य दर्शाये गये हैं: हटाना, ताला लगाना तथा ताला खोलना।',
+	'centralauth-log-entry-delete'         => '"<nowiki>$1</nowiki>" वैश्विक खाता हटाया गया हैं',
+	'centralauth-log-entry-lock'           => '"<nowiki>$1</nowiki>" वैश्विक खाते को ताला लगाया',
+	'centralauth-log-entry-unlock'         => '"<nowiki>$1</nowiki>" का ताला खोल दिया गया हैं',
 );
 
 /** Croatian (Hrvatski)
@@ -4024,50 +4053,68 @@ $messages['km'] = array(
  * @author ToePeu
  */
 $messages['ko'] = array(
-	'centralauth-desc'                  => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
-	'centralauth-merge-denied'          => '접근할 권한이 없습니다.',
-	'centralauth-merge-notlogged'       => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 로그인]</span>해 주세요.',
-	'centralauth-merge-welcome'         => "'''당신의 계정은 위키미디어의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
+	'centralauth-desc'                    => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
+	'centralauth-mergeaccount-desc'       => '통합된 로그인을 위한 [[Special:MergeAccount|여러 계정 합치기]]',
+	'centralauth-merge-denied'            => '접근할 권한이 없습니다.',
+	'centralauth-merge-notlogged'         => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 로그인]</span>해 주세요.',
+	'centralauth-merge-welcome'           => "'''당신의 계정은 위키미디어의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
 계정 옮기기를 선택하면 같은 이름과 암호로 모든 언어의 모든 위키미디어의 프로젝트에 로그인할 수 있습니다.
 [http://commons.wikimedia.org/ 위키미디어 공용]에 파일올리기 같은 공유되는 프로젝트에서 쉽게 작업할 수 있고 서로 다른 프로젝트에서 같은 이름을 쓰는 사용자 사이의 혼란이나 갈등을 피할 수 있습니다.
 
 If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
-	'centralauth-merge-step1-title'     => '계정 통합 시작',
-	'centralauth-merge-step1-detail'    => '위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
+	'centralauth-merge-step1-title'       => '계정 통합 시작',
+	'centralauth-merge-step1-detail'      => '위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
 모든 것을 확인하기 전까지 어떤 일도 일어나지 않습니다.',
-	'centralauth-merge-step1-submit'    => '로그인 정보 확인',
-	'centralauth-merge-dryrun-complete' => '모든 존재하는 계정이 자동으로 합쳐질 수 있습니다.
+	'centralauth-merge-step1-submit'      => '로그인 정보 확인',
+	'centralauth-merge-step2-title'       => '더 많은 계정 확인',
+	'centralauth-merge-step2-submit'      => '로그인 정보 확인',
+	'centralauth-merge-dryrun-complete'   => '모든 존재하는 계정이 자동으로 합쳐질 수 있습니다.
 
 아직은 계정에 적용되지 않습니다.',
-	'centralauth-merge-step3-title'     => '통합 계정 만들기',
-	'centralauth-merge-step3-detail'    => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
-	'centralauth-merge-step3-submit'    => '계정 합치기',
-	'centralauth-complete'              => '계정 통합 완료.',
-	'centralauth-complete-text'         => '이제 모든 위키미디어 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
+	'centralauth-merge-dryrun-incomplete' => '계속 진행을 선택했지만 계정 중 일부가 자동으로 확인되지 않아 즉시 합쳐지지 않을 것입니다.
+나중에 합칠 수 있습니다.
+
+아직 계정에 적용되지 않았습니다.',
+	'centralauth-merge-step3-title'       => '통합 계정 만들기',
+	'centralauth-merge-step3-detail'      => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
+	'centralauth-merge-step3-submit'      => '계정 합치기',
+	'centralauth-complete'                => '계정 통합 완료.',
+	'centralauth-incomplete'              => '계정 통합 미완료',
+	'centralauth-complete-text'           => '이제 모든 위키미디어 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
-	'centralauth-incomplete-text'       => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 위키미디어 위키에 로그인할 수 있습니다.
+	'centralauth-incomplete-text'         => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 위키미디어 위키에 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
-	'centralauth-readmore-text'         => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
-	'centralauth-foreign-link'          => '$2의 $1 사용자',
-	'centralauth-merge-method-empty'    => '기여 없음',
-	'centralauth-merge-method-mail'     => '이메일로 확인',
-	'centralauth-merge-method-password' => '암호로 확인',
-	'centralauth-merge-method-admin'    => '통합된 계정 관리',
-	'centralauth-merge-method-new'      => '새 계정',
-	'centralauth-merge-method-login'    => '로그인으로 확인',
-	'centralauth-finish-password'       => '암호:',
-	'centralauth-finish-login'          => '로그인',
-	'centralauth'                       => '통합 로그인 관리',
-	'centralauth-admin-delete-title'    => '계정 지우기',
-	'centralauth-admin-reason'          => '이유:',
-	'centralauth-seconds-ago'           => '$1초 전',
-	'centralauth-minutes-ago'           => '$1분 전',
-	'centralauth-hours-ago'             => '$1시간 전',
-	'centralauth-days-ago'              => '$1일 전',
-	'centralauth-months-ago'            => '$1달 전',
-	'centralauth-years-ago'             => '$1년 전',
-	'centralauth-account-exists'        => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
+	'centralauth-readmore-text'           => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
+	'centralauth-foreign-link'            => '$2의 $1 사용자',
+	'centralauth-merge-method-empty'      => '기여 없음',
+	'centralauth-merge-method-mail'       => '이메일로 확인',
+	'centralauth-merge-method-password'   => '암호로 확인',
+	'centralauth-merge-method-admin'      => '통합된 계정 관리',
+	'centralauth-merge-method-new'        => '새 계정',
+	'centralauth-merge-method-login'      => '로그인으로 확인',
+	'centralauth-finish-password'         => '암호:',
+	'centralauth-finish-login'            => '로그인',
+	'centralauth-finish-noconfirms'       => '이 암호를 사용하는 계정이 없습니다.',
+	'centralauth-finish-incomplete'       => '계정 중 몇개는 이 암호로 확인되었습니다.
+다른 계정은 아직 확인되지 않았습니다.',
+	'centralauth-attach-list-attached'    => '통합계정 "$1"은(는) 다음 계정을 포함하고 있습니다.',
+	'centralauth-attach-title'            => '계정 확인',
+	'centralauth-attach-success'          => '계정이 통합 계정으로 옮겨졌습니다.',
+	'centralauth'                         => '통합 로그인 관리',
+	'centralauth-admin-username'          => '사용자 이름:',
+	'centralauth-admin-no-unified'        => '이런 이름의 통합 계정이 없습니다.',
+	'centralauth-admin-yes'               => '예',
+	'centralauth-admin-no'                => '아니오',
+	'centralauth-admin-delete-title'      => '계정 지우기',
+	'centralauth-admin-reason'            => '이유:',
+	'centralauth-seconds-ago'             => '$1초 전',
+	'centralauth-minutes-ago'             => '$1분 전',
+	'centralauth-hours-ago'               => '$1시간 전',
+	'centralauth-days-ago'                => '$1일 전',
+	'centralauth-months-ago'              => '$1달 전',
+	'centralauth-years-ago'               => '$1년 전',
+	'centralauth-account-exists'          => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 );
 
 /** Latin (Latina)
@@ -4142,6 +4189,7 @@ $messages['lb'] = array(
 	'centralauth-prefs-count-unattached'   => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat ärem Numm.',
 	'centralauth-prefs-manage'             => 'Geréiert äre globale Benotzerkont',
 	'centralauth-invalid-wiki'             => 'Et gëtt keng Wiki-Datebank: $1',
+	'centralauth-log-name'                 => 'Lëscht vun de globale Benotzerkonten',
 	'centralauth-log-entry-delete'         => 'geläschte globale Benotzerkont "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => 'gespaarte globale Benotzerkont "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => 'net-gespaarte globale Benotzerkont "<nowiki>$1</nowiki>"',
@@ -4562,6 +4610,11 @@ $messages['mr'] = array(
 	'centralauth-token-mismatch'           => 'माफ करा, सत्र विदेचा क्षयेमुळे आपला अर्ज पाठवू शकत नाही.',
 	'centralauth-admin-lock-title'         => 'खात्याला कुलुप लावा',
 	'centralauth-admin-lock-description'   => 'खात्याला कुलुप लावल्यास कुठल्याही विकिवर या सदस्यनावाने प्रवेश करता येणार नाही.',
+	'centralauth-admin-lock-button'        => 'ह्या खात्याला कुलुप लावा',
+	'centralauth-admin-lock-success'       => '"<nowiki>$1</nowiki>" च्या वैश्विक खात्याला कुलुप लावलेले आहे',
+	'centralauth-admin-lock-nonexistent'   => 'त्रुटी: "<nowiki>$1</nowiki>" हे वैश्विक खाते अस्तित्वात नाही.',
+	'centralauth-admin-unlock-title'       => 'खात्याचे कुलुप काढा',
+	'centralauth-admin-unlock-description' => 'खात्याचे कुलुप काढल्यास त्या नावाने प्रवेश करणे शक्य होईल.',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|सेकंदापूर्वी|सेकंदांपूर्वी}}',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|मिनिटापूर्वी|मिनिटांपूर्वी}}',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|तासापूर्वी|तासांपूर्वी}}',
@@ -4610,6 +4663,7 @@ Wenn al en annern dien Brukernaam op en anner Projekt bruukt, denn is dat ok kee
 	'centralauth-merge-step2-title'        => 'Bestätige noch mehr Brukerkonten',
 	'centralauth-merge-step2-detail'       => 'Welk vun de Brukerkonten kunnen nich automaatsch mit dien Heimat-Wiki tohoopbröcht warrn. Wenn disse Konten di tohöört, denn kannst du dat bestätigen, wenn du dat Passwoort to disse Konten ingiffst.',
 	'centralauth-merge-step2-submit'       => 'Anmell-Informatschonen bestätigen',
+	'centralauth-merge-dryrun-or'          => "'''oder'''",
 	'centralauth-merge-step3-title'        => 'Vereenigt Brukerkonto opstellen',
 	'centralauth-merge-step3-detail'       => 'Du kannst nu en tohoopföhrt Brukerkonto för disse Wikis opstellen:',
 	'centralauth-merge-step3-submit'       => 'Brukers tohoopföhren',
@@ -4624,13 +4678,17 @@ Wenn dat dien Brukerkonto is, denn kannst du dat Tohoopföhren dör Ingeven vun 
 	'centralauth-disabled-dryrun'          => 'Dat Tohoopföhren vun Brukerkonten is opstunns noch in’n Demo- un Fehlersöök-Modus. Dat Tohoopföhren sülvst geiht noch nich.',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Lees mehr över dat '''Tohoopföhren vun Brukerkonten''']] …''",
 	'centralauth-list-home-title'          => 'Heimatwiki',
-	'centralauth-list-home-dryrun'         => 'Dat Passwoort un de E-Mail-Adress, de du in dit Wiki indragen hest, warrt för dat Tohoopföhren vun de Brukerkonten bruukt un diene Brukersiet warrt automaatsch vun de annern Wikis ut verlenkt. Du kannst later dien Heimat-Wiki ok noch wedder ännern.',
+	'centralauth-list-home-dryrun'         => 'Dat Passwoort un de E-Mail-Adress, de du in dit Wiki indragen hest, warrt för dat Tohoopföhren vun de Brukerkonten bruukt.
+Du kannst later dien Heimat-Wiki ok noch wedder ännern.',
 	'centralauth-list-attached-title'      => 'Vereenigte Brukerkonten',
 	'centralauth-list-attached'            => 'De Brukerkonten mit’n Naam „$1“ op disse Projekten warrt automaatsch tohoopföhrt:',
 	'centralauth-list-attached-dryrun'     => 'De Brukerkonten mit’n Naam „$1“ op disse Projekten warrt automaatsch tohoopföhrt:',
 	'centralauth-list-unattached-title'    => 'Nich tohoopföhrte Brukerkonten',
 	'centralauth-list-unattached'          => 'Dat dat Brukerkonto „$1“ di tohöört, kunn för disse Projekten nich automaatsch bestätigt warrn; wohrschienlich hett dat en anner Passwoort as dien eerst Brukerkonto:',
 	'centralauth-foreign-link'             => 'Bruker $1 op $2',
+	'centralauth-merge-method-primary'     => 'Heimatwiki',
+	'centralauth-merge-method-empty'       => 'kene Bidrääg',
+	'centralauth-merge-method-new'         => 'nee Brukerkonto',
 	'centralauth-finish-title'             => 'Tohoopföhren trech',
 	'centralauth-finish-text'              => 'Wenn disse Brukerkonten di tohöört, denn kannst du hier dat Tohoopföhren vun de Brukerkonten dör Ingeven vun dat Passwoort för de annern Brukerkonten toenn bringen:',
 	'centralauth-finish-password'          => 'Passwoort:',
@@ -4649,10 +4707,27 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-admin-username'           => 'Brukernaam:',
 	'centralauth-admin-lookup'             => 'Brukerdaten ankieken oder ännern',
 	'centralauth-admin-permission'         => 'Dat Tohoopföhren vun Brukerkonten för annere Brukers köönt blot Stewards maken.',
+	'centralauth-admin-info-id'            => 'Bruker-ID:',
+	'centralauth-admin-info-registered'    => 'Registreert:',
+	'centralauth-admin-info-locked'        => 'Sperrt:',
+	'centralauth-admin-info-hidden'        => 'Versteken:',
+	'centralauth-admin-yes'                => 'Jo',
+	'centralauth-admin-no'                 => 'Nee',
+	'centralauth-admin-list-localwiki'     => 'Lokal Wiki',
 	'centralauth-admin-unmerge'            => 'Utwählte Brukerkonten uteneen nehmen',
 	'centralauth-admin-merge'              => 'Utwählte Brukerkonten tohoopföhren',
 	'centralauth-admin-bad-input'          => 'Fehler mit de Utwahl',
 	'centralauth-admin-none-selected'      => 'Kene Brukerkonten utwählt, de ännert warrn schöölt.',
+	'centralauth-admin-reason'             => 'Grund:',
+	'globalusers'                          => 'Globale Brukerlist',
+	'centralauth-listusers-locked'         => 'sperrt',
+	'centralauth-listusers-attached'       => 'gifft dat lokal',
+	'centralauth-seconds-ago'              => 'vör $1 {{PLURAL:$1|Sekunn|Sekunnen}}',
+	'centralauth-minutes-ago'              => 'vör $1 {{PLURAL:$1|Minuut|Minuten}}',
+	'centralauth-hours-ago'                => 'vör $1 {{PLURAL:$1|Stünn|Stünnen}}',
+	'centralauth-days-ago'                 => 'vör $1 {{PLURAL:$1|Dag|Daag}}',
+	'centralauth-months-ago'               => 'vör $1 {{PLURAL:$1|Maand|Maanden}}',
+	'centralauth-years-ago'                => 'vör $1 {{PLURAL:$1|Johr|Johr}}',
 	'centralauth-prefs-status'             => 'Status vun’t globale Brukerkonto:',
 	'centralauth-prefs-not-managed'        => 'Warrt keen tohoopföhrt Brukerkonto bruukt.',
 	'centralauth-prefs-unattached'         => 'Noch nich bestätigt',
@@ -4663,6 +4738,7 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-prefs-detail-unattached'  => 'För dit Projekt is dat tohoopföhrte Brukerkonto noch nich bestätigt.',
 	'centralauth-prefs-manage'             => 'Dien global Brukerkonto bearbeiden',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Bruker $1 kunn lokal keen ne’en Naam kriegen, dat Konto is al op dat globale Brukerkonten-System rövertrocken.</div>',
+	'centralauth-invalid-wiki'             => 'So’n Wiki-Datenbank gifft dat nich: $1',
 );
 
 /** Dutch (Nederlands)
@@ -5196,6 +5272,22 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-log-entry-delete'         => 'a suprimit lo compte global « <nowiki>$1</nowiki> »',
 	'centralauth-log-entry-lock'           => 'a varrolhat lo compte global « <nowiki>$1</nowiki> »',
 	'centralauth-log-entry-unlock'         => 'a desvarrolhat lo compte global « <nowiki>$1</nowiki> »',
+);
+
+/** Ossetic (Иронау)
+ * @author Amikeco
+ */
+$messages['os'] = array(
+	'centralauth-merge-dryrun-or' => "'''кæнæ'''",
+	'centralauth-finish-password' => 'Пароль:',
+	'centralauth-admin-yes'       => 'о',
+	'centralauth-admin-no'        => 'нæ',
+	'centralauth-seconds-ago'     => '$1 секунды агъоммæ',
+	'centralauth-minutes-ago'     => '$1 минуты агъоммæ',
+	'centralauth-hours-ago'       => '$1 сахаты агъоммæ',
+	'centralauth-days-ago'        => '$1 боны агъоммæ',
+	'centralauth-months-ago'      => '$1 мæйы агъоммæ',
+	'centralauth-years-ago'       => '$1 азы агъоммæ',
 );
 
 /** Polish (Polski)
@@ -5794,6 +5886,10 @@ $messages['ru'] = array(
 	'centralauth-admin-unlock-success'     => 'Глобальная учётная запись «<nowiki>$1</nowiki>» успешно разморожена',
 	'centralauth-admin-unlock-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
 	'centralauth-admin-reason'             => 'Причина:',
+	'globalusers'                          => 'Глобальный список участников',
+	'centralauth-listusers-locked'         => 'заморозить',
+	'centralauth-listusers-attached'       => 'существует локально',
+	'centralauth-listusers-nolocal'        => 'неприсоединённый или не существует локально',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|час|часа|часов}} назад',
