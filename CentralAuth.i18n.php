@@ -1401,7 +1401,7 @@ $messages['de'] = array(
 	'centralauth-admin-reason'             => 'Grund:',
 
 	// List of global users
-	'globalusers'                    => 'Globale Benutzerlistet',
+	'globalusers'                    => 'Globale Benutzerliste',
 	'centralauth-listusers-locked'   => 'gesperrt',
 	'centralauth-listusers-attached' => 'lokal vorhanden',
 	'centralauth-listusers-nolocal'  => 'nicht verbunden oder lokal nicht vorhanden',
