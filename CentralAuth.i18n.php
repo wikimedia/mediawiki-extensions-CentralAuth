@@ -624,6 +624,9 @@ $messages['bg'] = array(
 	'centralauth-merge-step3-submit'       => 'Обединяване на сметките',
 	'centralauth-complete'                 => 'Обединението на сметките завърши!',
 	'centralauth-incomplete'               => 'Обединението на сметките не е завършено!',
+	'centralauth-complete-text'            => 'Сега можете да влизате в системата на всеки уики-проект на Фондация Уикимедия без да е необходимо да си разкривате нова потребителска сметка. Със същата сметка и парола можете да редактирате Уикипедия, Уикиречник, Уикикниги и останалите сродни проекти на всички езици.',
+	'centralauth-incomplete-text'          => 'В момента, в който преминете към единна потребителска сметка, ще можете да влизате в системата на всеки уики-проект на Фондация Уикимедия без да е необходимо да си разкривате нова потребителска сметка.
+С една и съща сметка и парола ще можете да редактирате Уикипедия, Уикиречник, Уикикниги и останалите сродни проекти на всички езици.',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => 'Унифицирането на сметки в момента е в демонстрационен режим / режим на дебъгване, затова операциите по сливанията са спрени. Съжаляваме!',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Прочетете повече за системата за '''единно влизане''']]…''",
@@ -657,6 +660,7 @@ $messages['bg'] = array(
 	'centralauth-admin-username'           => 'Потребителско име:',
 	'centralauth-admin-lookup'             => 'Преглед и редактиране на потребителските данни',
 	'centralauth-admin-permission'         => 'Само стюарди могат да сливат потребителските сметки на други потребители.',
+	'centralauth-admin-no-unified'         => 'Няма единна сметка за това потребителско име.',
 	'centralauth-admin-info-id'            => 'Потребителски номер:',
 	'centralauth-admin-info-registered'    => 'Регистрация:',
 	'centralauth-admin-yes'                => 'да',
@@ -4174,6 +4178,7 @@ $messages['lb'] = array(
 	'centralauth-admin-reason'             => 'Grond:',
 	'globalusers'                          => 'Global Benotzerlëscht',
 	'centralauth-listusers-locked'         => 'gespaart',
+	'centralauth-listusers-attached'       => 'gëtt et lokal',
 	'centralauth-seconds-ago'              => '{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}',
 	'centralauth-minutes-ago'              => '{{PLURAL:$1|virun 1 Minutt| viru(n) $1 Minutten}}',
 	'centralauth-hours-ago'                => '{{PLURAL:$1|virun 1 Stonn| viru(n) $1 Stonnen}}',
@@ -4365,22 +4370,23 @@ $messages['lt'] = array(
 
 /** Malayalam (മലയാളം)
  * @author Shijualex
+ * @author Praveenp
  * @author Jacob.jose
  * @author Siebrand
  */
 $messages['ml'] = array(
 	'mergeaccount'                         => 'ലോഗിന്‍ സം‌യോജിപ്പിക്കുന്നതിന്റെ തല്‍‌സ്ഥിതി',
 	'centralauth-desc'                     => 'വിക്കിമീഡിയ ഫൗണ്ടേഷന്‍ വിക്കികളിലെ [[Special:MergeAccount|അക്കൗണ്ടുകള്‍ സം‌യോജിപ്പിക്കുക]]',
-	'centralauth-mergeaccount-desc'        => 'ഒറ്റ ഉപയോക്ത ലോഗിനു വേണ്ടി [[Special:MergeAccount|ബഹു അക്കൗണ്ടുകളുടെ സം‌യോജനം]] ഉപയോഗിക്കുക',
+	'centralauth-mergeaccount-desc'        => 'ഒറ്റ ഉപയോക്തൃ ലോഗിനു വേണ്ടി [[Special:MergeAccount|ബഹു അംഗത്വങ്ങളുടെ സം‌യോജനം]] ഉപയോഗിക്കുക',
 	'centralauth-merge-denied'             => 'ഈ താള്‍ പരിശോധിക്കുവാന്‍ താങ്കള്‍ക്ക് അനുമതിയില്ല.',
 	'centralauth-merge-notlogged'          => 'താങ്കളുടെ അക്കൗണ്ടുകള്‍ പൂര്‍ണ്ണമായും സം‌യോജിപ്പിച്ചോ എന്നു പരിശോധിക്കാന്‍ <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ലോഗിന്‍]</span> ചെയ്യുക.',
-	'centralauth-merge-welcome'            => "'''നിങ്ങളുടെ ഉപയോക്ത അക്കൗണ്ട് ഇതു വരെ വിക്കിമീഡിയയുടെ സം‌യോജിത ലോഗിന്‍ വ്യൂഹത്തിലേക്കു മാറ്റിയിട്ടില്ല.'''
+	'centralauth-merge-welcome'            => "'''താങ്കളുടെ അംഗത്വം ഇതു വരെ വിക്കിമീഡിയയുടെ സം‌യോജിതപ്രവേശന വ്യൂഹത്തിലേക്കു മാറ്റിയിട്ടില്ല.'''
 
-വിക്കിമീഡിയയുടെ സം‌യോജിത ലോഗിന്‍ വ്യൂഹത്തിലേക്കു നിങ്ങളുടെ അക്കൗണ്ട് മാറ്റിയാല്‍ എല്ലാ ഭാഷകളിലുമുള്ള വിക്കിമീഡിയ വിക്കി സം‌രംഭങ്ങളില്‍ പ്രവേശിക്കുവാന്‍ നിങ്ങള്‍ക്ക് ഒറ്റ ഉപയോക്തനാമവും രഹസ്യവാക്കും ഉപയോഗിക്കാവുന്നതാണ്‌. 
+വിക്കിമീഡിയയുടെ സം‌യോജിതപ്രവേശന വ്യൂഹത്തിലേക്കു താങ്കളുടെ അംഗത്വം മാറ്റിയാല്‍ എല്ലാ ഭാഷകളിലുമുള്ള വിക്കിമീഡിയ വിക്കി സം‌രംഭങ്ങളില്‍ പ്രവേശിക്കുവാന്‍ താങ്കള്‍ക്ക് ഒറ്റ ഉപയോക്തൃനാമവും രഹസ്യവാക്കും ഉപയോഗിക്കാവുന്നതാണ്‌. 
 
-ഇതു പങ്കു വെക്കപ്പെട്ട സം‌രംഭങ്ങളായ [http://commons.wikimedia.org/ വിക്കിമീഡിയ കോമണ്‍സില്‍] പ്രാമാണങ്ങള്‍ അപ്‌ലോഡ് ചെയ്യുന്നതിനും, ഒരേ ഉപയോക്ത നാമം രണ്ടു പേര്‍ ഉപയോഗിക്കുന്നതു മൂലം ഉണ്ടാകുന്ന ചിന്താക്കുഴപ്പങ്ങളും പ്രശ്നങ്ങളും ഒഴിവാക്കാന്‍ സഹായിക്കും.
+ഇതു പങ്കു വെക്കപ്പെട്ട സം‌രംഭങ്ങളായ [http://commons.wikimedia.org/ വിക്കിമീഡിയ കോമണ്‍സില്‍] പ്രാമാണങ്ങള്‍ അപ്‌ലോഡ് ചെയ്യുന്നതിനും, ഒരേ ഉപയോക്തൃനാമം രണ്ടു പേര്‍ ഉപയോഗിക്കുന്നതു മൂലം ഉണ്ടാകുന്ന ചിന്താക്കുഴപ്പങ്ങളും പ്രശ്നങ്ങളും ഒഴിവാക്കാന്‍ സഹായിക്കും.
 
-താങ്കള്‍ ഉപയോഗിക്കുന്ന ഉപയോക്തനാമം ഏതെങ്കിലും സൈറ്റില്‍ മറ്റാരെങ്കിലും ഇതിനകം എടുത്തിട്ടിട്ടുണ്ടെങ്കില്‍ ഇതു അവരെ ബാധിക്കില്ല. പക്ഷെ ഇതു സം‌ബന്ധിച്ച് അവരുമായോ ഏതെങ്കിലും കാര്യനിര്‍‌വാഹകനുമായോ പിന്നീട് സംസാരിക്കാവുന്നതാണ്‌.",
+താങ്കള്‍ ഉപയോഗിക്കുന്ന ഉപയോക്തൃനാമം ഏതെങ്കിലും സൈറ്റില്‍ മറ്റാരെങ്കിലും ഇതിനകം എടുത്തിട്ടിട്ടുണ്ടെങ്കില്‍ ഇതവരെ ബാധിക്കില്ല. പക്ഷെ ഇതു സം‌ബന്ധിച്ച് അവരുമായോ ഏതെങ്കിലും കാര്യനിര്‍‌വാഹകനുമായോ പിന്നീട് സംസാരിക്കാവുന്നതാണ്‌.",
 	'centralauth-merge-step1-title'        => 'ലോഗിന്‍ സം‌യോജിപ്പിക്കല്‍ ആരംഭിക്കുക',
 	'centralauth-merge-step1-detail'       => 'നിങ്ങളുടെ രഹസ്യവാക്കും രെജിസ്റ്റര്‍ ചെയ്ത ഇമെയില്‍ വിലാസവും മറ്റു വിക്കികളിലെ അക്കൗണ്ടുകളുമായി അവ ചേരുന്നുണ്ടോ എന്നു പരിശോധിക്കും.
 
@@ -4481,15 +4487,15 @@ $messages['ml'] = array(
 	'centralauth-days-ago'                 => '$1 {{PLURAL:$1|ദിവസത്തിനു|ദിവസങ്ങള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-months-ago'               => '$1 {{PLURAL:$1|മാസത്തിനു|മാസങ്ങള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-years-ago'                => '$1 {{PLURAL:$1|വര്‍ഷത്തിനു|വര്‍ഷങ്ങള്‍ക്കു}} മുന്‍പ്',
-	'centralauth-prefs-status'             => 'ആഗോള അക്കൗണ്ടിന്റെ സ്ഥിതി:',
+	'centralauth-prefs-status'             => 'ആഗോളഅംഗത്വ സ്ഥിതി:',
 	'centralauth-prefs-not-managed'        => 'സം‌യോജിത അക്കൗണ്ട് ഉപയോഗിക്കുന്നില്ല',
 	'centralauth-prefs-unattached'         => 'സ്ഥിരീകരിച്ചിട്ടില്ല',
 	'centralauth-prefs-complete'           => 'എല്ലാം ക്രമത്തിലാണ്‌!',
 	'centralauth-prefs-migration'          => 'കുടിയേറ്റികൊണ്ടിരിക്കുന്നു',
-	'centralauth-prefs-count-attached'     => 'നിങ്ങളുടെ അക്കൗണ്ട് $1 വിക്കി {{plural:$1|സം‌രംഭത്തില്‍|സം‌രംഭങ്ങളില്‍}} സജീവമാണ്‌.',
+	'centralauth-prefs-count-attached'     => 'താങ്കളുടെ അംഗത്വം {{plural:$1|ഒരു വിക്കിസം‌രംഭത്തില്‍|$1 വിക്കിസം‌രംഭങ്ങളില്‍}} സജീവമാണ്‌.',
 	'centralauth-prefs-count-unattached'   => 'നിങ്ങളുടെ പേരുള്ള ഉപഭോക്തൃനാമം $1 {{plural:$1സം‌രംഭത്തില്‍|സം‌രംഭങ്ങളില്‍‍}} സ്ഥിരീകരിക്കാതെ നിലവിലുണ്ട്.',
 	'centralauth-prefs-detail-unattached'  => 'ഈ സം‌രംഭം ആഗോള അക്കൗണ്ടിന്റെ ഭാഗമാണെന്നു ഇതു വരെ സ്ഥിരീകരിച്ചിട്ടില്ല.',
-	'centralauth-prefs-manage'             => 'നിങ്ങളുടെ ആഗോള അക്കൗണ്ട് പരിപാലിക്കുക.',
+	'centralauth-prefs-manage'             => 'താങ്കളുടെ ആഗോളഅംഗത്വം പരിപാലിക്കുക.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">$1 എന്ന ഉപയോക്തൃനാമം സം‌യോജിത ലോഗിന്‍ വ്യൂഹത്തിലേക്കു കുടിയേറ്റപ്പെട്ടതിനാല്‍ പ്രാദേശികമായി പുനര്‍നാമകരണം നടത്തുന്നതിനു സാദ്ധ്യമല്ല.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">ഈ ഉപയോക്തൃനാമം സം‌യോജിത ലോഗിന്‍ വ്യൂഹത്തിനു വേണ്ടി വേര്‍തിരിക്കപ്പെട്ടതിനാല്‍ $2 എന്ന ഉപയോക്തൃനാമം പുനര്‍നാമകരണം നടത്തുന്നതിനു സാദ്ധ്യമല്ല.</div>',
 	'centralauth-invalid-wiki'             => 'ഇങ്ങനെ ഒരു വിക്കി നിലവിലില്ല DB: $1',
@@ -4615,6 +4621,14 @@ $messages['mr'] = array(
 	'centralauth-admin-lock-nonexistent'   => 'त्रुटी: "<nowiki>$1</nowiki>" हे वैश्विक खाते अस्तित्वात नाही.',
 	'centralauth-admin-unlock-title'       => 'खात्याचे कुलुप काढा',
 	'centralauth-admin-unlock-description' => 'खात्याचे कुलुप काढल्यास त्या नावाने प्रवेश करणे शक्य होईल.',
+	'centralauth-admin-unlock-button'      => 'या खात्याचे कुलुप काढा',
+	'centralauth-admin-unlock-success'     => '"<nowiki>$1</nowiki>" च्या वैश्विक खात्याचे कुलुप काढले.',
+	'centralauth-admin-unlock-nonexistent' => 'त्रुटी: "<nowiki>$1</nowiki>" हे वैश्विक खाते अस्तित्वात नाही.',
+	'centralauth-admin-reason'             => 'कारण:',
+	'globalusers'                          => 'वैश्विक सदस्य यादी',
+	'centralauth-listusers-locked'         => 'कुलुपबंद',
+	'centralauth-listusers-attached'       => 'स्थानिक पातळीवर अस्तित्व',
+	'centralauth-listusers-nolocal'        => 'जोडलेले नाही किंवा स्थानिक पातळीवर अस्तित्वात नाही',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|सेकंदापूर्वी|सेकंदांपूर्वी}}',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|मिनिटापूर्वी|मिनिटांपूर्वी}}',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|तासापूर्वी|तासांपूर्वी}}',
@@ -4634,6 +4648,11 @@ $messages['mr'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">सदस्य $2 चे नाव बदलू शकत नाही कारण ते विश्व खात्यासाठी राखून ठेवलेले आहे.</div>',
 	'centralauth-invalid-wiki'             => 'असा विकि नाही DB: $1',
 	'centralauth-account-exists'           => 'खाते तयार करू शकत नाही: मागितलेले सदस्यनाम खाते एकत्रीकरणासाठी अगोदरच वापरण्यात आलेले आहे.',
+	'centralauth-log-name'                 => 'वैश्विक खाते व्यवस्थापन नोंदी',
+	'centralauth-log-header'               => 'ह्या नोंदींमध्ये वैश्विक खात्यांवर केलेल्या कार्यांची यादी आहे: वगळणे, कुलुप लावणे तसेच काढणे.',
+	'centralauth-log-entry-delete'         => '"<nowiki>$1</nowiki>" हे वैश्विक खाते वगळले',
+	'centralauth-log-entry-lock'           => '"<nowiki>$1</nowiki>" या वैश्विक खात्याला कुलुप लावले',
+	'centralauth-log-entry-unlock'         => '"<nowiki>$1</nowiki>" या वैश्विक खात्याचे कुलुप काढले',
 );
 
 /** Erzya (эрзянь кель)
@@ -6192,6 +6211,8 @@ $messages['sr-ec'] = array(
 	'centralauth-list-attached'            => 'Налог "$1" на следећим сајтовима је аутоматски спојен:',
 	'centralauth-list-unattached'          => 'Налог "$1" се не може аутоматски потврдити да припада вама на следећим сајтовима; највероватније имају различите лозинке него ваш примаран налог:',
 	'centralauth-foreign-link'             => 'Корисник $1 на $2',
+	'centralauth-merge-method-empty'       => 'без прилога',
+	'centralauth-merge-method-new'         => 'нови налог',
 	'centralauth-finish-title'             => 'Заврши спајање',
 	'centralauth-finish-text'              => 'Уколико ови налози припадају вама, можете завршити процес спајања налога уписујући лозинку за остале налоге овде:',
 	'centralauth-finish-password'          => 'Лозинка:',
@@ -6204,10 +6225,36 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-username'           => 'Корисничко име:',
 	'centralauth-admin-lookup'             => 'Преглед или измена корисничких података',
 	'centralauth-admin-permission'         => 'Само стјуарди могу да споје остале корисничке налоге за њих.',
+	'centralauth-admin-info-id'            => 'Кориснички ИД:',
+	'centralauth-admin-info-registered'    => 'Регистрован:',
+	'centralauth-admin-info-locked'        => 'Закључан:',
+	'centralauth-admin-info-hidden'        => 'Сакривен:',
 	'centralauth-admin-yes'                => 'да',
 	'centralauth-admin-no'                 => 'не',
+	'centralauth-admin-list-localwiki'     => 'Локална вики',
+	'centralauth-admin-list-method'        => 'Метода',
 	'centralauth-admin-unmerge'            => 'Одвоји селектоване',
 	'centralauth-admin-merge'              => 'Споји селектоване',
+	'centralauth-admin-delete-button'      => 'Обриши овај налог',
+	'centralauth-admin-delete-success'     => 'Успешно обрисан глобални налог за „<nowiki>$1</nowiki>”',
+	'centralauth-admin-nonexistent'        => 'Не постоји глобални налог за „<nowiki>$1</nowiki>”',
+	'centralauth-admin-delete-nonexistent' => 'Грешка: глобални налог „<nowiki>$1</nowiki>” не постоји.',
+	'centralauth-token-mismatch'           => 'Жао нам је, не можемо да обрадимо ваш захтев због губљења података о сесији.',
+	'centralauth-admin-lock-title'         => 'Закључај налог',
+	'centralauth-admin-lock-description'   => 'Закључавајући налог закључавате могућност да се пријавите са њим на било којој вики.',
+	'centralauth-admin-lock-button'        => 'Закључај овај налог',
+	'centralauth-admin-unlock-title'       => 'Откључај налог',
+	'centralauth-admin-unlock-description' => 'Уколико откључате налог, моћићете поново да се пријавите са њим.',
+	'centralauth-admin-unlock-button'      => 'Откључај овај налог',
+	'centralauth-admin-unlock-success'     => 'Успешно откључан глобални налог за „<nowiki>$1</nowiki>”',
+	'centralauth-admin-unlock-nonexistent' => 'Грешка: глобални налог „<nowiki>$1</nowiki>” не постоји.',
+	'centralauth-admin-reason'             => 'Разлог:',
+	'globalusers'                          => 'Глобални списак корисника',
+	'centralauth-listusers-locked'         => 'закључан',
+	'centralauth-listusers-attached'       => 'постоји локално',
+	'centralauth-seconds-ago'              => 'пре $1 {{PLURAL:$1|секунду|секунде|секунди}}',
+	'centralauth-minutes-ago'              => 'пре $1 {{PLURAL:$1|минуту|минуте|минута}}',
+	'centralauth-hours-ago'                => 'пре $1 {{PLURAL:$1|сат|сата|сати}}',
 );
 
 $messages['sr-el'] = array(
