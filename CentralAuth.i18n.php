@@ -304,6 +304,38 @@ Atras cuentas no s'han confirmato encara.",
 	'centralauth-admin-merge'              => 'S\'ha siñalato "unificar"',
 	'centralauth-admin-bad-input'          => 'Triga de unificazión incorreuta',
 	'centralauth-admin-none-selected'      => "No s'han trigato cuentas ta cambiar.",
+	'centralauth-admin-already-unmerged'   => 'Se brinca $1, ya deseparata.',
+	'centralauth-admin-unmerge-success'    => "S'{{PLURAL:$1|ha|han}} deseparato con esito $1 {{PLURAL:$1|cuenta|cuentas}}",
+	'centralauth-admin-delete-title'       => 'Borrar a cuenta',
+	'centralauth-admin-delete-description' => "En borrar a cuenta global borrará todas as preferenzias globals, esligará todas as cuentas locals y deixará o nombre global libre ta que atro usuario pueda pillar-lo. 
+Todas as cuentas locals continarán esistindo.
+As palabras de paso t'as cuentas locals creyatas antis d'a unificazión tornarán a estar as que yeran antis d'a mesma.",
+	'centralauth-admin-delete-button'      => 'Borrar esta cuenta',
+	'centralauth-admin-delete-success'     => 'S\'ha borrato con esito a cuenta global ta "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent'        => 'No bi ha garra cuenta global ta "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Error: a cuenta global "<nowiki>$1</nowiki>" no esiste.',
+	'centralauth-token-mismatch'           => "No s'ha puesto prozesar o nimbío d'o formulario porque s'han perdito os datos de sesión.",
+	'centralauth-admin-lock-title'         => 'Bloqueyar a cuenta',
+	'centralauth-admin-lock-description'   => 'En bloqueyar a cuenta ferá imposible dentrar con ella en garra wiki.',
+	'centralauth-admin-lock-button'        => 'Bloqueyar esta cuenta',
+	'centralauth-admin-lock-success'       => 'S\'ha bloqueyato con esito a cuenta global ta "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-nonexistent'   => 'Error: No esiste a cuenta global "<nowiki>$1</nowiki>".',
+	'centralauth-admin-unlock-title'       => 'Esbloqueyar a cuenta',
+	'centralauth-admin-unlock-description' => 'En esbloqueyar a cuenta fará posible atra begada dentrar con ella en o sistema.',
+	'centralauth-admin-unlock-button'      => 'Esbloqueyar esta cuenta',
+	'centralauth-admin-unlock-success'     => 'S\'ha esbloqueyato con esito a cuenta global ta "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unlock-nonexistent' => 'Error: a cuenta global "<nowiki>$1</nowiki>" no esiste.',
+	'centralauth-admin-reason'             => 'Razón:',
+	'globalusers'                          => "Lista d'usuarios globals",
+	'centralauth-listusers-locked'         => 'bloqueyata',
+	'centralauth-listusers-attached'       => 'esiste localment',
+	'centralauth-listusers-nolocal'        => 'no ye ligato u no esiste localment',
+	'centralauth-seconds-ago'              => 'fa $1 {{PLURAL:$1|segundo|segundos}}',
+	'centralauth-minutes-ago'              => 'fa $1 {{PLURAL:$1|menuto|menutos}}',
+	'centralauth-hours-ago'                => 'fa $1 {{PLURAL:$1|ora|oras}}',
+	'centralauth-days-ago'                 => 'fa $1 {{PLURAL:$1|día|días}}',
+	'centralauth-months-ago'               => 'fa $1 {{PLURAL:$1|mes|meses}}',
+	'centralauth-years-ago'                => 'fa $1 {{PLURAL:$1|año|años}}',
 	'centralauth-prefs-status'             => "Status d'a cuenta global:",
 	'centralauth-prefs-not-managed'        => 'No ye usando a cuenta unificata',
 	'centralauth-prefs-unattached'         => 'No confirmata',
@@ -314,6 +346,14 @@ Atras cuentas no s'han confirmato encara.",
 	'centralauth-prefs-detail-unattached'  => "Iste procheuto no s'ha confirmau como parte d'a cuenta global.",
 	'centralauth-prefs-manage'             => 'Almenistrar a suya cuenta global',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">No se puede renombrar o usuario $1 localment pues o suyo nombre d\'usuario s\'ha migrato ta o sistema de cuentas unificatas.</div>',
+	'centralauth-renameuser-exists'        => '<div class="errorbox">No s\'ha puesto cambiar o nombre de l\'usuario $2 pues iste nombre ye reserbato ta una cuenta global.</div>',
+	'centralauth-invalid-wiki'             => "No s'ha trobau a base de datos d'o wiki: $1",
+	'centralauth-account-exists'           => "No s'ha puesto creyar a cuenta: o nombre d'usuario requiesto ya ye pillau en o sistema de cuentas unificato.",
+	'centralauth-log-name'                 => "Rechistro d'almenistrazión de cuentas globals",
+	'centralauth-log-header'               => 'Este rechistro contiene operazions feitas sobre cuentas globals: borraus, bloqueyos y esbloqueyos',
+	'centralauth-log-entry-delete'         => 'Ha borrato a cuenta global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'           => 'Ha bloqueyato a cuenta global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'         => 'Ha desbloqueyato a cuenta global "<nowiki>$1</nowiki>"',
 );
 
 $messages['ang'] = array(
@@ -1037,6 +1077,10 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-none-selected'      => "No s'han seleccionat comptes a modificar.",
 	'centralauth-admin-delete-title'       => 'Esborra el compte',
 	'centralauth-admin-delete-button'      => 'Esborra aquest compte',
+	'centralauth-admin-lock-button'        => 'Bloca aquest compte',
+	'centralauth-admin-unlock-title'       => 'Desbloca el compte',
+	'centralauth-admin-reason'             => 'Raó:',
+	'centralauth-listusers-locked'         => 'Blocat',
 	'centralauth-seconds-ago'              => 'fa $1 {{PLURAL:$1|segon|segons}}',
 	'centralauth-minutes-ago'              => 'fa $1 {{PLURAL:$1|minut|minuts}}',
 	'centralauth-hours-ago'                => 'fa $1 {{PLURAL:$1|hora|hores}}',
@@ -1724,6 +1768,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 /** Spanish (Español)
  * @author Drini
  * @author Piolinfax
+ * @author Jatrobat
  */
 $messages['es'] = array(
 	'mergeaccount'                        => 'Estado de la unificación de cuentas',
@@ -1780,6 +1825,8 @@ Podrás cambiar posteriormente la wiki considerada hogar.',
 	'centralauth-foreign-link'            => 'Usuario $1 en $2',
 	'centralauth-merge-method-primary'    => 'wiki hogar',
 	'centralauth-merge-method-empty'      => 'sin contribuciones',
+	'centralauth-admin-yes'               => 'sí',
+	'centralauth-admin-list-method'       => 'Método',
 	'centralauth-seconds-ago'             => 'hace $1 {{PLURAL:$1|segundo|segundos}}',
 	'centralauth-minutes-ago'             => 'hace $1 {{PLURAL:$1|minuto|minutos}}',
 	'centralauth-hours-ago'               => 'hace $1 {{PLURAL:$1|hora|horas}}',
@@ -4481,6 +4528,7 @@ $messages['ml'] = array(
 	'centralauth-admin-nonexistent'        => '"<nowiki>$1</nowiki>"-നു ആഗോള അക്കൗണ്ട് ഇല്ല.',
 	'centralauth-admin-delete-nonexistent' => 'പിഴവ്: "<nowiki>$1</nowiki>" എന്ന ആഗോള അക്കൗണ്ട് നിലവിലില്ല.',
 	'centralauth-token-mismatch'           => 'ക്ഷമിക്കണം. സെഷന്‍ ഡാറ്റ നഷ്ടപ്പെട്ടതിനാല്‍ താങ്കളുടെ ഫോം സമര്‍പ്പിക്കുന്നതിനു കഴിഞ്ഞില്ല.',
+	'globalusers'                          => 'ആഗോള അംഗങ്ങള്‍',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|സെക്കന്റിനു|സെക്കന്റുകള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|മിനിറ്റിനു|മിനിറ്റുകള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|മണിക്കൂറിനു|മണിക്കൂറുകള്‍ക്കു}} മുന്‍പ്',
@@ -5299,6 +5347,7 @@ Poiretz modificar vòstre projècte principal mai tard.',
 $messages['os'] = array(
 	'centralauth-merge-dryrun-or' => "'''кæнæ'''",
 	'centralauth-finish-password' => 'Пароль:',
+	'centralauth-admin-username'  => 'Архайæджы ном:',
 	'centralauth-admin-yes'       => 'о',
 	'centralauth-admin-no'        => 'нæ',
 	'centralauth-seconds-ago'     => '$1 секунды агъоммæ',
@@ -7034,16 +7083,24 @@ $messages['th'] = array(
 );
 
 /** Turkish (Türkçe)
+ * @author Mach
  * @author Karduelis
  * @author Srhat
  * @author Erkan Yilmaz
+ * @author Suelnur
  */
 $messages['tr'] = array(
+	'centralauth-merge-dryrun-or'          => "'''veya'''",
+	'centralauth-complete-text'            => 'Artık Wikimedia sitelerine yeni bir hesap açmaksızın giriş yapabilirsiniz;
+bütün dillerdeki Wikipedia, Wikisözlük, Wikikitap ve diğer bütün kardeş projelerde aynı kullanıcı adını ve şifresini kullanarak hesabınıza giriş yapabilirsiniz.',
+	'centralauth-merge-method-new'         => 'yeni hesap',
 	'centralauth-finish-password'          => 'Parola:',
 	'centralauth-finish-login'             => 'Oturum açma',
 	'centralauth-finish-send-confirmation' => 'E-posta parolası',
 	'centralauth-attach-title'             => 'Hesabı doğrula',
-	'centralauth-admin-username'           => 'Kullanıcı:',
+	'centralauth-admin-username'           => 'Kullanıcı adı:',
+	'centralauth-admin-yes'                => 'evet',
+	'centralauth-admin-no'                 => 'hayır',
 	'centralauth-prefs-unattached'         => 'Doğrulanmamış',
 );
 
@@ -7310,6 +7367,10 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 	'centralauth-admin-unlock-success'     => 'L\'account globale par "<nowiki>$1</nowiki>" el xe stà desblocà con sucesso.',
 	'centralauth-admin-unlock-nonexistent' => 'Eror: l\'account globale "<nowiki>$1</nowiki>" no l\'esiste mìa.',
 	'centralauth-admin-reason'             => 'Motivo:',
+	'globalusers'                          => 'Lista utenti globali',
+	'centralauth-listusers-locked'         => 'inciavà',
+	'centralauth-listusers-attached'       => 'esiste localmente',
+	'centralauth-listusers-nolocal'        => 'destacà o mìa esistente localmente',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|secondo|secondi}} fa',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|minuto|minuti}} fa',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|ora|ore}} fa',
