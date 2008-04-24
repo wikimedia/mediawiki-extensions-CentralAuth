@@ -3549,6 +3549,8 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-admin-delete-button'      => 'Elimina questo account',
 	'centralauth-admin-delete-success'     => 'Account globale per "<nowiki>$1</nowiki>" eliminato con successo',
 	'centralauth-admin-nonexistent'        => 'Non esiste un account globale per "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Errore: l\'account globale "<nowiki>$1</nowiki>" non esiste.',
+	'centralauth-admin-lock-title'         => "Blocca l'account",
 	'centralauth-seconds-ago'              => '$1 secondi fa',
 	'centralauth-minutes-ago'              => '$1 minuti fa',
 	'centralauth-hours-ago'                => '$1 ore fa',
@@ -7398,8 +7400,8 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 );
 
 /** Vietnamese (Tiếng Việt)
- * @author Minh Nguyen
  * @author Vinhtantran
+ * @author Minh Nguyen
  * @author Siebrand
  */
 $messages['vi'] = array(
@@ -7497,6 +7499,32 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-merge'              => 'Hợp nhất lựa chọn',
 	'centralauth-admin-bad-input'          => 'Lựa chọn không hợp lệ',
 	'centralauth-admin-none-selected'      => 'Chưa chọn tài khoản để sửa đổi.',
+	'centralauth-admin-already-unmerged'   => 'Bỏ qua $1, đã được tách',
+	'centralauth-admin-unmerge-success'    => 'Đã tách thành công $1 {{PLURAL:$1|tài khoản|tài khoản}}',
+	'centralauth-admin-delete-title'       => 'Xóa tài khoản',
+	'centralauth-admin-delete-description' => 'Xóa tài khoản thống nhất sẽ xóa tất cả các tùy chọn thống nhất, tách tất cả các tài khoản địa phương, và để lại tên tài khoản thống nhất để thành viên khác có thể dùng.
+Tất cả các tài khoản địa phương sẽ vẫn tiếp tục tồn tại.
+Mật khẩu của các tài khoản địa phương đã có trước khi hợp nhất sẽ quay về giá trị như ban đầu.',
+	'centralauth-admin-delete-button'      => 'Xóa tài khoản này',
+	'centralauth-admin-delete-success'     => 'Đã xóa thành công tài khoản thống nhất của "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent'        => 'Không có tài khoản thống nhất cho "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Lỗi: tài khoản thống nhất "<nowiki>$1</nowiki>" không tồn tại.',
+	'centralauth-token-mismatch'           => 'Rất tiếc, chúng tôi không thể thực hiện yêu cầu của bạn do mất dữ liệu phiên làm việc.',
+	'centralauth-admin-lock-title'         => 'Khóa tài khoản',
+	'centralauth-admin-lock-description'   => 'Khóa tài khoản sẽ dẫn đến không thể đăng nhập trong bất kỳ wiki nào.',
+	'centralauth-admin-lock-button'        => 'Khóa tài khoản này',
+	'centralauth-admin-lock-success'       => 'Đã khóa thành công tài khoản thống nhất với tên "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-nonexistent'   => 'Lỗi: tài khoản thống nhất "<nowiki>$1</nowiki>" không tồn tại.',
+	'centralauth-admin-unlock-title'       => 'Mở khóa tài khoản',
+	'centralauth-admin-unlock-description' => 'Mở khóa tài khoản sẽ dẫn đến lại có thể đăng nhập trở lại.',
+	'centralauth-admin-unlock-button'      => 'Mở khóa tài khoản này',
+	'centralauth-admin-unlock-success'     => 'Đã mở khóa thành công tài khoản thống nhất với tên "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unlock-nonexistent' => 'Lỗi: tài khoản thống nhất "<nowiki>$1</nowiki>" không tồn tại.',
+	'centralauth-admin-reason'             => 'Lý do:',
+	'globalusers'                          => 'Danh sách người dùng thống nhất',
+	'centralauth-listusers-locked'         => 'đã khóa',
+	'centralauth-listusers-attached'       => 'tồn tại địa phương',
+	'centralauth-listusers-nolocal'        => 'đã tách hoặc chưa tồn tại địa phương',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|giây|giây}} trước đây',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|phút|phút}} trước đây',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|giờ|giờ}} trước đây',
@@ -7514,7 +7542,13 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-prefs-manage'             => 'Quản lý tài khoản chung',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Không có thể đổi tên $1 tại đây vì tên người dùng này đã được chuyển đến hệ thống đăng nhập thống nhất.</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">Không thể đổi tên người dùng $2 vì tên này đã được để dành cho một tài khoản toàn cục.</div>',
+	'centralauth-invalid-wiki'             => 'Không có CSDL wiki như vậy: $1',
 	'centralauth-account-exists'           => 'Không thể tạo tài khoản: tên người dùng chỉ định đã được sử dụng trong hệ thống đăng nhập thống nhất.',
+	'centralauth-log-name'                 => 'Nhật trình quản lý tài khoản thống nhất',
+	'centralauth-log-header'               => 'Nhật trình này chứa các tác vụ đối với tài khoản thống nhất: xóa, khóa và mở khóa.',
+	'centralauth-log-entry-delete'         => 'đã xóa tài khoản thống nhất "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'           => 'đã khóa tài khoản thống nhất "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'         => 'đã mở khóa tài khoản thống nhất "<nowiki>$1</nowiki>"',
 );
 
 /** Volapük (Volapük)
