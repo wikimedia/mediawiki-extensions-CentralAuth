@@ -135,6 +135,13 @@ class CentralAuthUser {
 		$this->loadState();
 		return $this->mGlobalId;
 	}
+	
+	/**
+	 * Return the global account's name, whether it exists or not.
+	 */
+	public function getName() {
+		return $this->mName;
+	}
 
 	/**
 	 * @return bool True if the account is attached on the local wiki
@@ -1351,5 +1358,106 @@ class CentralAuthUser {
 			), 
 			__METHOD__
 		);
+	}
+	
+	function getGlobalGroups() {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $this->getId() ), __METHOD__ );
+		
+		$groups = array();
+		
+		while ($row = $dbr->fetchObject( $res ))
+		{
+			$groups[] = $row->gug_group;
+		}
+		
+		return $groups;
+	}
+	
+	function getGlobalRights() {
+		# Select rights the user has.
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( array( 'global_group_permissions', 'global_user_groups' ),
+			array( 'ggp_permission' ), array( 'ggp_group=gug_group', 'gug_user' => $this->getId() ), __METHOD__ );
+		
+		$rights = array();
+		
+		while ($row = $dbr->fetchObject( $res ) ) {
+			$rights[] = $row->ggp_permission;
+		}
+		
+		return $rights;
+	}
+	
+	function removeFromGlobalGroups( $groups ) {
+		$dbw = self::getCentralDB();
+		
+		# Delete from the DB
+		$dbw->delete( 'global_user_groups', array( 'gug_user' => $this->getId(), 'gug_group' => $groups ), __METHOD__ );
+	}
+	
+	function addToGlobalGroups( $groups ) {
+		$dbw = self::getCentralDB();
+		
+		if (!is_array($groups)) {
+			$groups = array($groups);
+		}
+		
+		$insert_rows = array();
+		foreach( $groups as $group ) {
+			$insert_rows[] = array( 'gug_user' => $this->getId(), 'gug_group' => $group );
+		}
+		
+		# Replace into the DB
+		$dbw->replace( 'global_user_groups', array( 'gug_user', 'gug_group' ), $insert_rows, __METHOD__ );
+	}
+	
+	static function availableGlobalGroups() {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', array(), __METHOD__ );
+		
+		$groups = array();
+		
+		while ($row = $dbr->fetchObject( $res ) )
+			$groups[] = $row->ggp_group;
+			
+		return $groups;
+	}
+	
+	static function globalGroupPermissions( $group ) {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( array( 'global_group_permissions' ),
+			array( 'ggp_permission' ), array( 'ggp_group' => $group), __METHOD__ );
+		
+		$rights = array();
+		
+		while ($row = $dbr->fetchObject( $res ) ) {
+			$rights[] = $row->ggp_permission;
+		}
+		
+		return $rights;
+	}
+	
+	function hasGlobalPermission( $perm ) {
+		$perms = $this->getGlobalRights();
+		
+		return in_array( $perm, $perms );
+	}
+	
+	static function getUsedRights() {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission', array(), __METHOD__ );
+		
+		$rights = array();
+		
+		while ($row = $dbr->fetchObject( $res ) )
+			$rights[] = $row->ggp_permission;
+			
+		return $rights;
 	}
 }
