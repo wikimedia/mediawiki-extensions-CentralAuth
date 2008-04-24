@@ -345,20 +345,4 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
-	
-	static function onUserGetRights( $user, &$rights ) {
-		$centralUser = CentralAuthUser::getInstance( $user );
-		
-		if ($centralUser->exists()) {
-			$extraRights = $centralUser->getGlobalRights();
-			
-			$rights = array_merge( $extraRights, $rights );
-		}
-		return true;
-	}
-	
-	static function onGetAvailableRights( &$rights ) {
-		$rights = array_unique( array_merge( $rights, CentralAuthUser::getUsedRights() ));
-		return true;
-	}
 }
