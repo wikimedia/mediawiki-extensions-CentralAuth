@@ -1081,6 +1081,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-unlock-title'       => 'Desbloca el compte',
 	'centralauth-admin-reason'             => 'Raó:',
 	'centralauth-listusers-locked'         => 'Blocat',
+	'centralauth-listusers-attached'       => 'existeix localment',
 	'centralauth-seconds-ago'              => 'fa $1 {{PLURAL:$1|segon|segons}}',
 	'centralauth-minutes-ago'              => 'fa $1 {{PLURAL:$1|minut|minuts}}',
 	'centralauth-hours-ago'                => 'fa $1 {{PLURAL:$1|hora|hores}}',
@@ -2477,6 +2478,9 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-admin-unlock-success'     => 'A conta de usuario global de "<nowiki>$1</nowiki>" foi desbloqueada con éxito',
 	'centralauth-admin-unlock-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-admin-reason'             => 'Motivo:',
+	'centralauth-listusers-locked'         => 'protexido',
+	'centralauth-listusers-attached'       => 'existe neste wiki',
+	'centralauth-listusers-nolocal'        => 'non existe neste wiki',
 	'centralauth-seconds-ago'              => 'Hai {{PLURAL:$1|un segundo|$1 segundos}}',
 	'centralauth-minutes-ago'              => 'Hai {{PLURAL:$1|un minuto|$1 minutos}}',
 	'centralauth-hours-ago'                => 'Hai {{PLURAL:$1|unha hora|$1 horas}}',
@@ -4197,6 +4201,7 @@ $messages['lb'] = array(
 	'centralauth-merge-method-primary'     => 'Heemechts-Wiki',
 	'centralauth-merge-method-empty'       => 'Keng Kontributiounen',
 	'centralauth-merge-method-mail'        => 'per E-Mail confirméiert',
+	'centralauth-merge-method-password'    => "confirméiert duerch d'Passwuert",
 	'centralauth-merge-method-new'         => 'Neie Benotzerkont',
 	'centralauth-finish-password'          => 'Passwuert:',
 	'centralauth-finish-login'             => 'Umeldung',
@@ -4207,6 +4212,7 @@ $messages['lb'] = array(
 	'centralauth-admin-lookup'             => 'Benotzerdate kucken oder änneren',
 	'centralauth-admin-permission'         => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
 	'centralauth-admin-info-id'            => 'Benotzernummer:',
+	'centralauth-admin-info-registered'    => 'Ugemellt:',
 	'centralauth-admin-info-locked'        => 'Gespaart:',
 	'centralauth-admin-info-hidden'        => 'Verstoppt:',
 	'centralauth-admin-yes'                => 'jo',
@@ -4217,10 +4223,12 @@ $messages['lb'] = array(
 	'centralauth-admin-delete-button'      => 'Dëse Kont läschen',
 	'centralauth-admin-delete-success'     => 'De globale Benotzerkont "<nowiki>$1</nowiki>" gouf geläscht',
 	'centralauth-admin-nonexistent'        => 'Et gëtt kee globale Benotzerkont fir "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Feeler: de globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
 	'centralauth-admin-lock-title'         => 'Benotzerkont spären',
 	'centralauth-admin-lock-description'   => "D'Späre vum Benotzerkont mécht et onméiglech sech an iergendenger Wiki anzeloggen.",
 	'centralauth-admin-lock-button'        => 'Dëse Benotzerkont spären',
 	'centralauth-admin-lock-success'       => 'Dëse globale Benotzerkont gouf gespaart "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-nonexistent'   => 'Feeler: de globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
 	'centralauth-admin-unlock-title'       => 'Spär vun dësem Benotzerkont ophiewen',
 	'centralauth-admin-unlock-button'      => 'Spär vun dësem Benotzerkont ophiewen',
 	'centralauth-admin-unlock-nonexistent' => 'Feeler: De globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
@@ -4251,6 +4259,7 @@ $messages['lb'] = array(
 
 /** Limburgish (Limburgs)
  * @author Ooswesthoesbes
+ * @author Matthias
  * @author Siebrand
  */
 $messages['li'] = array(
@@ -4373,6 +4382,12 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-listusers-locked'         => 'aafgesjörmp',
 	'centralauth-listusers-attached'       => 'besteit lokaal',
 	'centralauth-listusers-nolocal'        => 'neet verbónje of besteit lokaal neet',
+	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|sekond|sekond}} trök',
+	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|menuut|menuut}} trök',
+	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|oer|oer}} trök',
+	'centralauth-days-ago'                 => '$1 {{PLURAL:$1|daag|daag}} trök',
+	'centralauth-months-ago'               => '$1 {{PLURAL:$1|maondj|maondj}} trök',
+	'centralauth-years-ago'                => '$1 {{PLURAL:$1|jaor|jaor}} trök',
 	'centralauth-prefs-status'             => 'Globale gebroekersstatus:',
 	'centralauth-prefs-not-managed'        => 'Gebroek gein samegevoegde gebroeker',
 	'centralauth-prefs-unattached'         => 'Neet bevestig',
@@ -4383,7 +4398,11 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-detail-unattached'  => 'Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.',
 	'centralauth-prefs-manage'             => 'Beheer diene globale gebroeker.',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Gebroeker $1 kin lokaal neet hernömp waere ómdet deze gebroeker is gemigreerdj nao \'t syteem van samegevoegdje gebroekers.</div>',
+	'centralauth-renameuser-exists'        => '<div class="errorbox">U kunt gebruiker $2 niet hernoemen, omdat deze naam gereserveerd is voor een samengevoegde gebruiker.</div>',
 	'centralauth-invalid-wiki'             => 'De wikiDB besteit neet: $1',
+	'centralauth-account-exists'           => "Deze gebroeker kan neet aangemaakt waere: de gebroekersnaam is al in gebroek in 't systeem veur samegevoegd aanmelde.",
+	'centralauth-log-name'                 => 'Logbook globaal gebroekersbeheer',
+	'centralauth-log-header'               => 'Dit logbook bevat handelinge veur globale gebroekers: verwijderinge, aafsloete en vriegaeve.',
 	'centralauth-log-entry-delete'         => 'wisde globale gebroeker "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => 'haet de globale gebroeker "<nowiki>$1</nowiki>" aafgeslaote',
 	'centralauth-log-entry-unlock'         => 'haet de globale gebroeker "<nowiki>$1</nowiki>" vriegegaeven',
@@ -5838,6 +5857,7 @@ $messages['ro'] = array(
  * @author Kaganer
  * @author Siebrand
  * @author Kalan
+ * @author HalanTul
  */
 $messages['ru'] = array(
 	'mergeaccount'                         => 'Состояние объединения учётных записей',
@@ -5859,7 +5879,7 @@ $messages['ru'] = array(
 	'centralauth-merge-step2-submit'       => 'Подтвердить информацию об учётной записи',
 	'centralauth-merge-dryrun-complete'    => 'Все существующие учётные записи могут быть автоматически объединены!
 
-Пока вашим учётные записи изменены не были.',
+Пока ваши учётные записи изменены не были.',
 	'centralauth-merge-dryrun-incomplete'  => 'Можно продолжать, хотя некоторые учётные записи не могут быть автоматически проверены и не будут сейчас преобразованы. Вы сможете объединить их позже.
 
 Пока ваши учётные записи изменены не были.',
@@ -5993,10 +6013,12 @@ $messages['ru'] = array(
 $messages['sah'] = array(
 	'mergeaccount'                         => 'Ааттары холбооһун туруга',
 	'centralauth-desc'                     => '"Викимедиа" бырайыактарын [[Special:MergeAccount|хос ааттарын холбооһун]]',
+	'centralauth-mergeaccount-desc'        => 'Хас да ааты соҕотох аат (Single User Login) гына [[Special:MergeAccount|холбуур]]',
+	'centralauth-merge-denied'             => 'Баалаама, бу сирэйгэ киирэр кыаҕыҥ суох.',
 	'centralauth-merge-notlogged'          => 'Бука диэн, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ааккын эт]</span>, оччоҕо ааттарыҥ холбонууларын туругун көрүөҥ.',
 	'centralauth-merge-welcome'            => "'''Эн аатыҥ Викимедияҕа киирэр биир аат систиэмэтигэр өссө киирэ илик'''
 
-Ааттаргын онно киллэрэр түгэҥҥэр, биир аатынан уонна киирии тылынан ханнык баҕарар тылларынан суруллубут ханнык баҕарар Викимедиа пуондатын саайтарыгар киирэр кыахтаныаҥ.
+Ааттаргын онно киллэрэр түгэҥҥэр, биир аатынан уонна киирии тылынан ханнык баҕарар тылларынан суруллубут ханнык баҕарар Викимедиа пуондатын саайтарыгар киирэр кыахтаныаҥ. 
 Бу уопсай бырайыактарга үлэлииргэр көмөлөһүө, холобур, [http://commons.wikimedia.org/ Вики ыскылаакка] ойууну киллэргэ атын бырайыактартан биир ааттаах дьон киирэн булкууру таһаараллара суох буолуо.
 
 Өскө ким эрэ эн ааккын атын бырайыакка ылбыт буоллаҕына бу дьайыы кинини таарыйыа суоҕа. Кэлин бу түгэни бэйэтин кытта эбэтэр администраторы кытта быһаарсар кыахтаныаҥ.",
@@ -6006,7 +6028,16 @@ $messages['sah'] = array(
 	'centralauth-merge-step2-title'        => 'Атын ааттары бигэргэт',
 	'centralauth-merge-step2-detail'       => 'Сорох ааттар аптамаатынан талыллыбыт аакка холбоммотулар. Ол ааттар эйиэннэрэ буоллаҕына тустаах киирии тылларын киллэрэн ону бигэргэт.',
 	'centralauth-merge-step2-submit'       => 'Аат туһунан сибидиэнньэни бигэргэт',
+	'centralauth-merge-dryrun-complete'    => 'Туох баар ааттарыҥ холбонуохтарын сөп!
+
+Эн ааттарыҥ өссө холбонулла иликтэр.',
+	'centralauth-merge-dryrun-incomplete'  => 'Салгыаххын сөп. Ол гынан баран сорох ааттары холбуур билигин сатаммат, оннунан хаалыахтара, кэлин өссө боруобалаар.
+
+Ааттарыҥ өссө да уларытылла иликтэр.',
 	'centralauth-merge-dryrun-or'          => "'''эбэтэр'''",
+	'centralauth-merge-dryrun-home'        => 'Ааты көһөрүү (миграция) систиэмэтэ дьиэ-биикигэ ыйыллыбыт аат эйиэнэ буоларын туһунан бигэргэтиини кыайан ылбата. 
+
+Ол гынан баран бу аакка атын биики-бырайыак дьиэ-биики быһыытынан булулунна; ону кытта сөбүлэһэр буоллаххына, ол аата ол биики бырайыакка баар ааты миэнэ диир түгэҥҥэр, аллара баар сигэннэн киирэн систиэмэҕэ ааккын билиһиннэр.',
 	'centralauth-merge-step3-title'        => 'Соҕотох ааты оҥоруу',
 	'centralauth-merge-step3-detail'       => 'Соҕотох ааты оҥорорго бэлэм буолла. Маннык вики-бырайыактар холбоһуохтара:',
 	'centralauth-merge-step3-submit'       => 'Ааттары холбуурга',
@@ -6029,7 +6060,11 @@ $messages['sah'] = array(
 	'centralauth-list-unattached-title'    => 'Холбоспотох ааттар',
 	'centralauth-list-unattached'          => 'Манна көрдөрүллүбүт саайтарга баар "$1" эйиэнэ буолара аптамаатынан бигэргэтиллибэтэ; арааһа киирии тыллара сүрүн ааи киирии тылыттан атыннар быһыылаах:',
 	'centralauth-foreign-link'             => '$1 кыттааччы манна: $2',
+	'centralauth-merge-method-primary'     => 'дьиэ-биики',
 	'centralauth-merge-method-empty'       => 'тугу да суруйбатах',
+	'centralauth-merge-method-mail'        => 'эл. почтанан бигэргэтилиннэ',
+	'centralauth-merge-method-password'    => 'киирии тылынан бигэргэтилиннэ',
+	'centralauth-merge-method-admin'       => 'админ холбообут аата',
 	'centralauth-merge-method-new'         => 'саҥа аат (аккаунт)',
 	'centralauth-merge-method-login'       => 'ааты бигэргэтии',
 	'centralauth-finish-title'             => 'Холбооһун түмүктэннэ/түмүктэниитэ',
@@ -6038,6 +6073,9 @@ $messages['sah'] = array(
 	'centralauth-finish-login'             => 'Кыттааччы',
 	'centralauth-finish-send-confirmation' => 'Киирии тылы почтаннан ыыт',
 	'centralauth-finish-problems'          => 'Туох эрэ сатамматаҕына, эбэтэр бу ааттар эйиэннэрэ буолбатах буоллаҕына [[meta:Help:Unified login problems|көмөнү көр]]...',
+	'centralauth-finish-noconfirms'        => 'Бу киирии тылы туһанан бигэргэтиллибит ааттар суохтар.',
+	'centralauth-finish-incomplete'        => 'Хас даҕаны аат бу киирии ааты туһанан холбонуллубуттар.
+Атын ааттар өссө бигэргэтиллэ иликтэр.',
 	'centralauth-merge-attempt'            => "'''Холбоммотох ааттар киирии тылларын бэрэбиэркэтэ...'''",
 	'centralauth-attach-list-attached'     => 'Соҕотох «$1» аат маннык ааттары холбуур:',
 	'centralauth-attach-title'             => 'Бэлиэтэниини бигэргэтии',
@@ -6049,16 +6087,48 @@ $messages['sah'] = array(
 	'centralauth-admin-username'           => 'Кыттааччы аата:',
 	'centralauth-admin-lookup'             => 'Кыттааччы туһунан информацияны уларытыы эбэтэр көрүү',
 	'centralauth-admin-permission'         => 'Стюардар эрэ араас дьон ааттарын биир аакка холбуохтарын сөп.',
+	'centralauth-admin-no-unified'         => 'Кыттааччы бу аатыгар холбоммут аат суох.',
 	'centralauth-admin-info-id'            => 'Кыттааччы нүөмэрэ:',
+	'centralauth-admin-info-registered'    => 'Бэлиэтэммит:',
 	'centralauth-admin-info-locked'        => 'Хатаммыт:',
 	'centralauth-admin-info-hidden'        => 'Кистэммит:',
 	'centralauth-admin-yes'                => 'сөп',
 	'centralauth-admin-no'                 => 'эс (суох)',
+	'centralauth-admin-attached'           => 'Толору холбоммут ааттар',
+	'centralauth-admin-unattached'         => 'Холбонуллубатах ааттар',
+	'centralauth-admin-no-unattached'      => 'Холбонуллубатах ааттар хаалбатылар.',
+	'centralauth-admin-list-localwiki'     => 'Локальнай биики',
+	'centralauth-admin-list-attached-on'   => 'Холбонулунна',
+	'centralauth-admin-list-method'        => 'Ньымата',
 	'centralauth-admin-unmerge'            => 'Талыллыбыты араарарга',
 	'centralauth-admin-merge'              => 'Талыллыбыты холбуурга',
 	'centralauth-admin-bad-input'          => 'Холбооһуну сыыһа талбыккын',
 	'centralauth-admin-none-selected'      => 'Уларытыллар ааттары талбатаххын.',
-	'centralauth-seconds-ago'              => '$1 сөкүүндэ ынаараа өттүгэр',
+	'centralauth-admin-already-unmerged'   => 'Маны көтүт $1, номнуо араарыллыбыт',
+	'centralauth-admin-unmerge-success'    => '$1 аат ситиһиилээхтик {{PLURAL:$1|араарылынна|араарылыннылар}}',
+	'centralauth-admin-delete-title'       => 'Ааты сот',
+	'centralauth-admin-delete-description' => 'Сүрүн ааты сотуу туох баар бу аакка сыһыаннаах туруоруулары соторго, атын ааттар арахсалларыгар уонна сүрүн аат босхолоноругар тиэрдиэҕэ, атын кыттааччы бу ааты иҥэриниэн сөп буолуоҕа. 
+Атын локальнай ааттар сүтүөхтэрэ суоҕа. 
+Локальнай ааттар урукку киирии тылларын төннөрүөхтэрэ.',
+	'centralauth-admin-delete-button'      => 'Бу ааты сот',
+	'centralauth-admin-delete-success'     => '"<nowiki>$1</nowiki>" аат ситиһиилээхтик сотулунна',
+	'centralauth-admin-nonexistent'        => '"<nowiki>$1</nowiki>" аат суох',
+	'centralauth-admin-delete-nonexistent' => 'Алҕас. "<nowiki>$1</nowiki>" аат төрүт суох.',
+	'centralauth-token-mismatch'           => 'Баалаама, сибээс быстыбытыттан кыайан салгыыр кыахпыт суох буолла.',
+	'centralauth-admin-lock-title'         => 'Ааты хатааһын',
+	'centralauth-admin-lock-description'   => 'Аат хатаммыт буоллаҕына биир да биикигэ бу аатынан киириллибэт.',
+	'centralauth-admin-lock-button'        => 'Бу ааты хатаа',
+	'centralauth-admin-lock-success'       => '"<nowiki>$1</nowiki>" аат ситиһиилээхтик хатанна.',
+	'centralauth-admin-lock-nonexistent'   => 'Алҕас: "<nowiki>$1</nowiki>" аат төрүт суох.',
+	'centralauth-admin-unlock-title'       => 'Аат хатабылын уһул',
+	'centralauth-admin-unlock-description' => 'Ааты арыйыы бу аатынан киириини сатанар гыныа.',
+	'centralauth-admin-unlock-button'      => 'Бу аат хатабылын уһул',
+	'centralauth-admin-unlock-success'     => '"<nowiki>$1</nowiki>" аат хатабыла ситиһиилээхтик уһулунна.',
+	'centralauth-admin-unlock-nonexistent' => 'Алҕас: "<nowiki>$1</nowiki>" аат төрүт суох.',
+	'centralauth-admin-reason'             => 'Төрүөтэ:',
+	'globalusers'                          => 'Кыттаачылар сүрүн тиһиктэрэ (испииһэктэрэ)',
+	'centralauth-listusers-locked'         => 'хатаа',
+	'centralauth-seconds-ago'              => '$1 сөкүүндэ ынараа өттүгэр',
 	'centralauth-minutes-ago'              => '$1 мүнүүтэ ынараа өттүгэр',
 	'centralauth-hours-ago'                => '$1 чаас ынараа өттүгэр',
 	'centralauth-days-ago'                 => '$1 күн ынараа өттүгэр',
@@ -6074,6 +6144,14 @@ $messages['sah'] = array(
 	'centralauth-prefs-detail-unattached'  => 'Бу бырайыакка эн сүрүн аатыҥ бигэргэтиллибэтэх.',
 	'centralauth-prefs-manage'             => 'Сүрүн ааты салайыы',
 	'centralauth-renameuser-abort'         => "<div class=\"errorbox\">\$1 ааты бу бырайыакка уларытар кыах суох, тоҕо диэтэххэ бу аат ''Сүрүн ааты'' кытта холбоно сылдьар.</div>",
+	'centralauth-renameuser-exists'        => '<div class="errorbox">$2 кыттааччыны аатын уларытар кыах суох, бу аат номнуо сүрүн аакка (global account) анаммыт.</div>',
+	'centralauth-invalid-wiki'             => 'Билэ тиһигэр (DB) маннык ааттаах биики суох: $1',
+	'centralauth-account-exists'           => 'Ааты оҥорор кыах суох: киирэр тиһиликкэ маннык аат номнуо баар эбит.',
+	'centralauth-log-name'                 => 'Сүрүн ааттары (Global account) салайар сурунаал',
+	'centralauth-log-header'               => 'Бу сурунаалга сүрүн ааттар тустарынан сибидиэнньэлэр суруллаллар: сотуу, хатааһын уонна арыйыы.',
+	'centralauth-log-entry-delete'         => '"<nowiki>$1</nowiki>" сүрүн аат сотулунна',
+	'centralauth-log-entry-lock'           => '"<nowiki>$1</nowiki>" сүрүн аат хатанна',
+	'centralauth-log-entry-unlock'         => '"<nowiki>$1</nowiki>" сүрүн аат хатабыла уһулунна',
 );
 
 /** Tachelhit (Tašlḥiyt)
@@ -7046,6 +7124,7 @@ $messages['tg-cyrl'] = array(
 	'centralauth-admin-lock-button'        => 'Қуфл кардани ин ҳисоб',
 	'centralauth-admin-lock-success'       => 'Бо муваффақият ҳисоби муштарак барои "<nowiki>$1</nowiki>" қуфл шуд',
 	'centralauth-admin-lock-nonexistent'   => 'Хато: ҳисоби муштараки "<nowiki>$1</nowiki>" вуҷуд надорад.',
+	'centralauth-admin-reason'             => 'Сабаб:',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|сония|сония}} пеш',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|дақиқа|дақиқа}} пеш',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|соат|соат}} пеш',
