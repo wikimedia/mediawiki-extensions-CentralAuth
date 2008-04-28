@@ -50,7 +50,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	protected function showLogFragment( $user, $output ) {
 		$pageTitle = Title::makeTitleSafe( NS_USER, $user->getName());
 		$output->addHtml( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
-		LogEventsList::showLogExtract( $output, 'globalrights', $pageTitle->getPrefixedText );
+		LogEventsList::showLogExtract( $output, 'globalrights', $pageTitle->getPrefixedText() );
 	}
 	
 	function addLogEntry( $user, $oldGroups, $newGroups ) {
