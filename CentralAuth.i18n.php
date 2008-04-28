@@ -1519,13 +1519,51 @@ $messages['de'] = array(
 	// Other messages
 	'centralauth-invalid-wiki'   => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
-	
+
 	// Logging
 	'centralauth-log-name'         => 'Globales Benutzerkonten-Logbuch',
 	'centralauth-log-header'       => 'Dieses Logbuch zeigt alle Löschungen, Sperrungen und Entsperrungen globaler Benutzerkonten.',
 	'centralauth-log-entry-delete' => 'löschte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
 	'centralauth-log-entry-lock'   => 'sperrte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
 	'centralauth-log-entry-unlock' => 'entsperrte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
+
+	'centralauth-rightslog-name'		 => 'Globales Rechte-Logbuch',
+	'centralauth-rightslog-entry-usergroups' => 'änderte die globale Gruppenzugehörigkeit für „$1“ von $2 auf $3',
+	'centralauth-rightslog-entry-groupperms' => 'änderte die Gruppenrechte für „$1“ von $2 auf $3',
+	'centralauth-rightslog-header'		 => 'Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen',
+
+	// Global group membership
+	'globalgroupmembership'			=> 'Mitgliedschaft in globalen Gruppen',
+
+	// Global group permissions
+	'globalgrouppermissions'		          => 'Management globaler Gruppen',
+	'centralauth-globalgroupperms-grouplist'          => 'Die folgenden globalen Gruppen wurden konfiguriert. Du kannst die jeder Gruppe zugewiesenen Rechte sehen und ändern. Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Rechte ansehen und bearbeiten]])',
+	'centralauth-existinggroup-legend'	          => 'Vorhandene Gruppen',
+	'centralauth-newgroup-legend'		          => 'Neue Gruppe erstellen',
+	'centralauth-newgroup-intro'		          => 'Du kannst mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachte, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
+	'centralauth-globalgroupperms-newgroupname'       => 'Neuer Gruppenname:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Rechte zuweisen',
+	'centralauth-editgroup-subtitle'	          => 'Bearbeite $1',
+	'centralauth-editgroup-fieldset'	          => 'Rechte für $1',
+	'centralauth-editgroup-name'		          => 'Name der Gruppe:',
+	'centralauth-editgroup-display'		          => 'Lokalisierter Name der Gruppe:',
+	'centralauth-editgroup-display-edit'	          => '$2 ([[MediaWiki:Group-$1|bearbeiten]])',
+	'centralauth-editgroup-member'		          => 'Lokalisierter Name der Gruppenmitglieder:',
+	'centralauth-editgroup-member-edit'	          => '$2 ([[MediaWiki:group-$1-member|bearbeiten]])',
+	'centralauth-editgroup-members'		          => 'Mitgliederliste:',
+	'centralauth-editgroup-members-link'	          => '[[Special:Listusers/$1|Liste der Benutzer mit dem $2-Recht]]',
+	'centralauth-editgroup-submit'		          => 'Änderungen an den Gruppenrechten speichern',
+	'centralauth-editgroup-perms'		          => 'Zugewiesene Rechte:',
+	'centralauth-editgroup-reason'		          => 'Grund für die Änderung:',
+	'centralauth-editgroup-success'		          => 'Gruppenrechte geändert',
+	'centralauth-editgroup-success-text'	          => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
+
+	// User rights
+	'right-globalgroupmembership'	=> 'Mitgliedschaft in globalen Gruppen bearbeiten',
+	'right-centralauth-admin'	=> 'Globale Benutzerkonten administrieren',
+	'right-centralauth-merge'	=> 'Benutzerkonten zusammenführen',
+	'right-globalgrouppermissions'	=> 'Management globaler Gruppen',
 );
 
 /** Ewe (Eʋegbe)
