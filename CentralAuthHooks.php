@@ -182,8 +182,8 @@ class CentralAuthHooks {
 			
 			if ( !$centralUser->authenticateWithToken( $token ) == 'ok' ) {
 				wfDebug( __METHOD__.": token mismatch\n" );
-			} elseif ( !$centralUser->isAttached() ) {
-				wfDebug( __METHOD__.": not attached\n" );
+			} elseif ( !$centralUser->isAttached() && $user->idForName( $username ) ) {
+				wfDebug( __METHOD__.": exists, and not attached\n" );
 			} else {
 				// Auth OK.
 				wfDebug( __METHOD__.": logged in from session\n" );
@@ -294,6 +294,22 @@ class CentralAuthHooks {
 	 */
 	static function initSession( $username, $token ) {
 		$user = User::newFromName( $username );
+		global $wgAuth;
+		
+		if ($wgAuth->autoCreate() && $user->getId() == 0) {
+			// User does not already exist locally. Create them :)
+			$user->addToDatabase();
+
+			$user->setToken();
+
+			$wgAuth->initUser( $user, true );
+			$wgAuth->updateUser( &$user );
+	
+			# Update user count
+			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
+			$ssUpdate->doUpdate();
+		}
+		
 		wfSetupSession();
 		if ($token != @$_SESSION['globalloggedin'] ) {
 			$_SESSION['globalloggedin'] = $token;
