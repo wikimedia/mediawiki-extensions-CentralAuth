@@ -2751,6 +2751,44 @@ $messages['he'] = array(
 	'centralauth-log-entry-delete'   => 'מחק את החשבון הכללי "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'     => 'נעל את החשבון הכללי "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'   => 'ביטל את נעילת החשבון הכללי "<nowiki>$1</nowiki>"',
+
+	'centralauth-rightslog-name'             => 'יומן הרשאות כלליות',
+	'centralauth-rightslog-entry-usergroups' => 'שינה את ההרשאות הכלליות של $1 מ-$2 ל-$3',
+	'centralauth-rightslog-entry-groupperms' => 'שינה את הרשאות הקבוצה $1 מ-$2 ל-$3',
+	'centralauth-rightslog-header'           => 'יומן זה כולל פעולות על קבוצות כלליות: חברות בקבוצות ושינויי הרשאות',
+
+	# Global group membership
+	'globalgroupmembership' => 'חברות בקבוצות כלליות',
+
+	# Global group permissions
+	'globalgrouppermissions'                          => 'ניהול קבוצות כלליות',
+	'centralauth-globalgroupperms-grouplist'          => 'הוגדרו הקבוצות הכלליות הבאות. באפשרותכם לצפות בהרשאות של כל קבוצה ולשנותן. ניתן למחוק קבוצה באמצעות הסרת כל ההרשאות ממנה.',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|צפייה בהרשאות ועריכתן]])',
+	'centralauth-existinggroup-legend'                => 'קבוצות קיימות',
+	'centralauth-newgroup-legend'                     => 'יצירת קבוצה חדשה',
+	'centralauth-newgroup-intro'                      => 'באפשרותכם להשתמש בטופס זה כדי להוסיף הרשאות לקבוצה חדשה. שימו לב שקבוצה אינה קיימת אלא אם כן משויכות אליה הרשאות.',
+	'centralauth-globalgroupperms-newgroupname'       => 'שם הקבוצה החדשה:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'הוספת הרשאות',
+	'centralauth-editgroup-subtitle'                  => 'עריכת $1',
+	'centralauth-editgroup-fieldset'                  => 'ההרשאות של $1',
+	'centralauth-editgroup-name'                      => 'שם הקבוצה:',
+	'centralauth-editgroup-display'                   => 'שם הקבוצה המתורגם:',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:group-$1|עריכה]])',
+	'centralauth-editgroup-member'                    => 'שם חברי הקבוצה המתורגם:',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:group-$1-member|עריכה]])',
+	'centralauth-editgroup-members'                   => 'רשימת חברים:',
+	'centralauth-editgroup-members-link'              => '[[Special:Listusers/$1|רשימת המשתמשים עם ההרשאה $2]]',
+	'centralauth-editgroup-submit'                    => 'שמירת שינויים בהרשאות הקבוצה',
+	'centralauth-editgroup-perms'                     => 'הרשאות:',
+	'centralauth-editgroup-reason'                    => 'סיבה לשינוי:',
+	'centralauth-editgroup-success'                   => 'הרשאות הקבוצה שונו בהצלחה',
+	'centralauth-editgroup-success-text'              => 'שיניתם בהצלחה את הרשאות הקבוצה $1. [[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].',
+
+	# User rights
+	'right-globalgroupmembership'  => 'עריכת חברות בקבוצות הכלליות',
+	'right-centralauth-admin'      => 'ניהול חשבונות כלליים',
+	'right-centralauth-merge'      => 'מיזוג החשבון שלהם',
+	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 );
 
 /** Hindi (हिन्दी)
