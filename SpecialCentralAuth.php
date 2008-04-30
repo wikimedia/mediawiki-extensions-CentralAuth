@@ -134,23 +134,21 @@ class SpecialCentralAuth extends SpecialPage {
 		$wgOut->addHTML( $wgOut->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
 	}
 
-	function showError( $message /* varargs */ ) {
+	function showError( /* varargs */ ) {
 		$args = func_get_args();
-		array_shift( $args ); // remove first
-		$args = array_values( $args );
 
 		global $wgOut;
-		$wgOut->wrapWikiMsg( '<div class="error">$1</div>', $message, $args );
+		$wgOut->wrapWikiMsg( '<div class="error">$1</div>', $args );
 	}
 
 
-	function showSuccess( $message /* varargs */ ) {
+	function showSuccess( /* varargs */ ) {
 		$args = func_get_args();
 		array_shift( $args ); // remove first
 		$args = array_values( $args );
 
 		global $wgOut;
-		$wgOut->wrapWikiMsg( '<div class="success">$1</div>', $message, $args );
+		$wgOut->wrapWikiMsg( '<div class="success">$1</div>', $args );
 	}
 
 	function showUsernameForm() {
