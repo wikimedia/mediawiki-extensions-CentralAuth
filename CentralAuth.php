@@ -128,6 +128,7 @@ $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
+$wgSpecialPageGroups['GlobalUsers'] = 'users';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
