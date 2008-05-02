@@ -7959,28 +7959,56 @@ $messages['yue'] = array(
 	'centralauth-attach-success'       => '個戶口已經搬遷到個統一戶口度。',
 
 	// Administrator's console
-	'centralauth'                        => '統一戶口管理',
-	'centralauth-admin-manage'           => '管理用戶資料',
-	'centralauth-admin-username'         => '用戶名:',
-	'centralauth-admin-lookup'           => '去睇或者編輯用戶資料',
-	'centralauth-admin-permission'       => '只有執行員先至可以為用戶合併其它人嘅戶口。',
-	'centralauth-admin-no-unified'       => '呢個用戶名無統一戶口。',
-	'centralauth-admin-info-id'          => '用戶ID:',
-	'centralauth-admin-info-registered'  => '註冊咗:',
-	'centralauth-admin-info-locked'      => '鎖咗:',
-	'centralauth-admin-info-hidden'      => '隱藏:',
-	'centralauth-admin-yes'              => '係',
-	'centralauth-admin-no'               => '唔係',
-	'centralauth-admin-attached'         => '完全合併咗嘅戶口',
-	'centralauth-admin-unattached'       => '未附加嘅戶口',
-	'centralauth-admin-no-unattached'    => '重未有未合併嘅戶口。',
-	'centralauth-admin-list-localwiki'   => '本地 wiki',
-	'centralauth-admin-list-attached-on' => '附加於',
-	'centralauth-admin-list-method'      => '方法',
-	'centralauth-admin-unmerge'          => '唔合併已經揀咗嘅',
-	'centralauth-admin-merge'            => '合併已經揀咗嘅',
-	'centralauth-admin-bad-input'        => '唔啱嘅合併選擇',
-	'centralauth-admin-none-selected'    => '無戶口揀咗去改。',
+	'centralauth'                          => '統一戶口管理',
+	'centralauth-admin-manage'             => '管理用戶資料',
+	'centralauth-admin-username'           => '用戶名:',
+	'centralauth-admin-lookup'             => '去睇或者編輯用戶資料',
+	'centralauth-admin-permission'         => '只有執行員先至可以為用戶合併其它人嘅戶口。',
+	'centralauth-admin-no-unified'         => '呢個用戶名無統一戶口。',
+	'centralauth-admin-info-id'            => '用戶ID:',
+	'centralauth-admin-info-registered'    => '註冊咗:',
+	'centralauth-admin-info-locked'        => '鎖咗:',
+	'centralauth-admin-info-hidden'        => '隱藏:',
+	'centralauth-admin-yes'                => '係',
+	'centralauth-admin-no'                 => '唔係',
+	'centralauth-admin-attached'           => '完全合併咗嘅戶口',
+	'centralauth-admin-unattached'         => '未附加嘅戶口',
+	'centralauth-admin-no-unattached'      => '重未有未合併嘅戶口。',
+	'centralauth-admin-list-localwiki'     => '本地 wiki',
+	'centralauth-admin-list-attached-on'   => '附加於',
+	'centralauth-admin-list-method'        => '方法',
+	'centralauth-admin-unmerge'            => '唔合併已經揀咗嘅',
+	'centralauth-admin-merge'              => '合併已經揀咗嘅',
+	'centralauth-admin-bad-input'          => '唔啱嘅合併選擇',
+	'centralauth-admin-none-selected'      => '無戶口揀咗去改。',
+	'centralauth-admin-already-unmerged'   => '跳緊$1，已經取消合併',
+	'centralauth-admin-unmerge-success'    => '已經取消合併$1個戶口',
+	'centralauth-admin-delete-title'       => '刪除戶口',
+	'centralauth-admin-delete-description' => '刪除個全域戶口會刪除任何嘅全域喜好設定，解除全部附加上去嘅戶口，留低個全域名畀另一位用戶去用。
+全部嘅本地戶口會繼續存在。
+響合併之前開咗嘅本地戶口會還原到佢哋之前嘅值。',
+	'centralauth-admin-delete-button'      => '刪除呢個戶口',
+	'centralauth-admin-delete-success'     => '已經刪除咗"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-nonexistent'        => '呢度無"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-delete-nonexistent' => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
+	'centralauth-token-mismatch'           => '對唔住，由於小節資料遺失咗，我哋唔可以處理你嘅表格遞交',
+	'centralauth-admin-lock-title'         => '鎖住戶口',
+	'centralauth-admin-lock-description'   => '鎖呢個戶口會令到響任何嘅wiki度唔可能登入到。',
+	'centralauth-admin-lock-button'        => '鎖呢個戶口',
+	'centralauth-admin-lock-success'       => '已經成功噉鎖咗"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-lock-nonexistent'   => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
+	'centralauth-admin-unlock-title'       => '解鎖戶口',
+	'centralauth-admin-unlock-description' => '解鎖戶口將會令到佢可以再登入。',
+	'centralauth-admin-unlock-button'      => '解鎖呢個戶口',
+	'centralauth-admin-unlock-success'     => '已經成功噉解鎖咗"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-unlock-nonexistent' => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
+	'centralauth-admin-reason'             => '原因: ',
+
+	// List of global users
+	'globalusers'                    => '全域戶口一覽',
+	'centralauth-listusers-locked'   => '鎖咗',
+	'centralauth-listusers-attached' => '響本地存在',
+	'centralauth-listusers-nolocal'  => '未附加或唔響本地存在',
 
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 秒之前',
@@ -8002,11 +8030,19 @@ $messages['yue'] = array(
 	'centralauth-prefs-manage'            => '管理你個全域戶口',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort'        => "<div class=\"errorbox\">由於呢個用戶名已經遷移到統一登入系統，因此唔可以響本地度改$1做呢個用戶名。</div>",
-	'centralauth-renameuser-exists'       => "<div class=\"errorbox\">由於呢個用戶名已經預留畀全域戶口，因此唔可以改$2做呢個用戶名。</div>",
+	'centralauth-renameuser-abort'  => "<div class=\"errorbox\">由於呢個用戶名已經遷移到統一登入系統，因此唔可以響本地度改$1做呢個用戶名。</div>",
+	'centralauth-renameuser-exists' => "<div class=\"errorbox\">由於呢個用戶名已經預留畀全域戶口，因此唔可以改$2做呢個用戶名。</div>",
 
 	// Other messages
-	'centralauth-account-exists'     => '唔可以開戶口: 所需求嘅用戶名已經響統一登入系統度拎咗。',
+	'centralauth-invalid-wiki'   => '無呢個wiki資料庫: $1',
+	'centralauth-account-exists' => '唔可以開戶口: 所需求嘅用戶名已經響統一登入系統度拎咗。',
+
+	// Logging
+	'centralauth-log-name'         => '全域戶口管理日誌',
+	'centralauth-log-header'       => '呢個日誌包含咗全域戶口嘅動作: 刪除、鎖同解鎖。',
+	'centralauth-log-entry-delete' => '已經刪咗全域戶口"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'   => '已經鎖咗全域戶口"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock' => '已經解鎖全域戶口"<nowiki>$1</nowiki>"',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
@@ -8125,6 +8161,34 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-merge'            => '合并选中的账户',
 	'centralauth-admin-bad-input'        => '合并所选项时发生错误',
 	'centralauth-admin-none-selected'    => '选中的账户未被修改。',
+	'centralauth-admin-already-unmerged'   => '正在跳过$1，已经取消合并',
+	'centralauth-admin-unmerge-success'    => '已经取消合并$1个账户',
+	'centralauth-admin-delete-title'       => '删除账户',
+	'centralauth-admin-delete-description' => '删除个全域账户会删除任何的全域参数设置，解除全部附加上去的账户，保留全域名称给另一位用户使用。
+全部的本地户口会继续存在。
+在合并之前已经建立了的本地账户会还原他们以前的值。',
+	'centralauth-admin-delete-button'      => '删除这个账户',
+	'centralauth-admin-delete-success'     => '已经删除"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-nonexistent'        => '这里无"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-delete-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-token-mismatch'           => '对唔住，由于小节资料遗失?，我?唔可以处理你?表格递交',
+	'centralauth-admin-lock-title'         => '锁定账户',
+	'centralauth-admin-lock-description'   => '锁定这个账户会令到在任何的wiki中不可能登入。',
+	'centralauth-admin-lock-button'        => '锁定这个账户',
+	'centralauth-admin-lock-success'       => '已经成功地锁定"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-lock-nonexistent'   => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-unlock-title'       => '解除锁定账户',
+	'centralauth-admin-unlock-description' => '解除锁定账户将会令到它可以再登入。',
+	'centralauth-admin-unlock-button'      => '解除锁定这个账户',
+	'centralauth-admin-unlock-success'     => '已经成功地解除锁定"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-unlock-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-reason'             => '理由: ',
+
+	// List of global users
+	'globalusers'                    => '全域账户列表',
+	'centralauth-listusers-locked'   => '锁定',
+	'centralauth-listusers-attached' => '于本地存在',
+	'centralauth-listusers-nolocal'  => '未附加或未于本地存在',
 
 	// Pretty timespan
 	'centralauth-seconds-ago'              => '$1秒前',
@@ -8150,7 +8214,15 @@ $messages['zh-hans'] = array(
 	'centralauth-renameuser-exists'       => "<div class=\"errorbox\">由于这个用户名已经预留给全域账户，因此不能在更改$2作为这个用户名。</div>",
 
 	// Other messages
+	'centralauth-invalid-wiki'             => '无这个wikil数据库: $1',
 	'centralauth-account-exists'           => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
+
+	// Logging
+	'centralauth-log-name'                 => '全域账户管理日志',
+	'centralauth-log-header'               => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
+	'centralauth-log-entry-delete'         => '已经删除全域账户"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'           => '已经锁定全域账户"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'         => '已经解除锁定全域账户"<nowiki>$1</nowiki>"',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -8159,6 +8231,7 @@ $messages['zh-hans'] = array(
  * @suthor Πrate (百楽兎)
  */
 $messages['zh-hant'] = array(
+	// When not logged in...
 	'mergeaccount'                         => '使用者帳號整合',
 	'centralauth-desc'                     => '[[Special:MergeAccount|整合]]所有維基媒體計劃的帳號',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|將多個帳號合併]]為單一使用者帳號',
@@ -8181,6 +8254,8 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step2-detail'       => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。
 ',
 	'centralauth-merge-step2-submit'       => '確認登入資料',
+
+	// Dry run messages
 	'centralauth-merge-dryrun-complete'    => '所有已存在的的帳號都能被自動整合！
 
 目前尚未對您的帳號進行任何修改。',
@@ -8194,8 +8269,12 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step3-title'        => '建立整合帳號',
 	'centralauth-merge-step3-detail'       => '您已經準備好在已加入的計劃中建立一個整合帳號：',
 	'centralauth-merge-step3-submit'       => '整合帳號',
+
+	// Big text on completion
 	'centralauth-complete'                 => '帳號整合完成！',
 	'centralauth-incomplete'               => '帳號整合未完成！',
+
+	// Wheeee
 	'centralauth-complete-text'            => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
 	'centralauth-incomplete-text'          => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
 	'centralauth-not-owner-text'           => '使用者名稱："$1"已自動分配給$2上的帳號。
@@ -8204,7 +8283,11 @@ $messages['zh-hant'] = array(
 	'centralauth-notice-dryrun'            => "<div class='successbox'>目前為示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => '目前為示範模式，
 實際的整合動作已停用。',
+
+	// Appended to various messages above
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
+
+	// For lists of wikis/accounts:
 	'centralauth-list-home-title'          => '主要維基計劃',
 	'centralauth-list-home-dryrun'         => '您在這個計劃中使用的密碼以及電子郵件地址將會用來做您的整合帳號，同時您在這裡的用戶頁會由其它的計劃中自動連結過來。您可以稍後更改你的主要項目。',
 	'centralauth-list-attached-title'      => '已經附加的帳號',
@@ -8214,6 +8297,8 @@ $messages['zh-hant'] = array(
 	'centralauth-list-unattached'          => '以下網站的帳號"$1"無法自動整合；很可能是因為它們的密碼
 和您的主帳號不同：',
 	'centralauth-foreign-link'             => '$2 上的 $1',
+
+	// Merge methods
 	'centralauth-merge-method-primary'     => '主帳號',
 	'centralauth-merge-method-empty'       => '沒有任何貢獻',
 	'centralauth-merge-method-mail'        => '經電子郵件確認',
@@ -8221,6 +8306,8 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-method-admin'       => '管埋整合帳號',
 	'centralauth-merge-method-new'         => '新帳號',
 	'centralauth-merge-method-login'       => '經登入確認',
+
+	// When not complete, offer to finish...
 	'centralauth-finish-title'             => '完成整合',
 	'centralauth-finish-text'              => '如果這些帳號屬於您，請輸入這些帳號的密碼，以完成帳號整合：',
 	'centralauth-finish-password'          => '密碼：',
@@ -8231,11 +8318,15 @@ $messages['zh-hant'] = array(
 	'centralauth-finish-noconfirms'        => '沒有帳號可經密碼確認。',
 	'centralauth-finish-incomplete'        => '部份帳號已經由密碼整合，其他帳號尚未確認。',
 	'centralauth-merge-attempt'            => "'''正在查驗您輸入的密碼是否與其餘未整合的帳號相符...'''",
+
+	# When unattached, offer to attach...
 	'centralauth-attach-list-attached'     => '整合帳戶"$1"中包含以下帳戶：',
 	'centralauth-attach-title'             => '確認帳號',
 	'centralauth-attach-text'              => '這個帳戶尚未被遷移到整合帳戶中，如果您已經擁有一個整合帳戶，您可能在此輸入該整合帳戶的密碼以遷移此帳戶：',
 	'centralauth-attach-submit'            => '遷移帳號',
 	'centralauth-attach-success'           => '該帳戶已被遷移到整合帳戶中。',
+
+	// Administrator's console
 	'centralauth'                          => '統一帳戶管理',
 	'centralauth-admin-manage'             => '管理使用者資料',
 	'centralauth-admin-username'           => '使用者名稱：',
@@ -8258,12 +8349,44 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-merge'              => '整合已選取的',
 	'centralauth-admin-bad-input'          => '不正確的整合選擇',
 	'centralauth-admin-none-selected'      => '選擇的帳戶沒有被修改。',
+	'centralauth-admin-already-unmerged'   => '正在跳過$1，已經取消合併',
+	'centralauth-admin-unmerge-success'    => '已經取消合併$1個賬戶',
+	'centralauth-admin-delete-title'       => '刪除賬戶',
+	'centralauth-admin-delete-description' => '刪除個全域賬戶會刪除任何的全域參數設置，解除全部附加上去的賬戶，保留全域名稱給另一位用戶使用。
+全部的本地戶口會繼續存在。
+在合併之前已經建立了的本地賬戶會還原他們以前的值。',
+	'centralauth-admin-delete-button'      => '刪除這個賬戶',
+	'centralauth-admin-delete-success'     => '已經刪除"<nowiki>$1</nowiki>"的全域賬戶',
+	'centralauth-admin-nonexistent'        => '這裏無"<nowiki>$1</nowiki>"的全域賬戶',
+	'centralauth-admin-delete-nonexistent' => '錯誤: 該全域賬戶"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-token-mismatch'           => '對唔住，由於小節資料遺失咗，我哋唔可以處理你嘅表格遞交',
+	'centralauth-admin-lock-title'         => '鎖定賬戶',
+	'centralauth-admin-lock-description'   => '鎖定這個賬戶會令到在任何的wiki中不可能登入。',
+	'centralauth-admin-lock-button'        => '鎖定這個賬戶',
+	'centralauth-admin-lock-success'       => '已經成功地鎖定"<nowiki>$1</nowiki>"的全域賬戶',
+	'centralauth-admin-lock-nonexistent'   => '錯誤: 該全域賬戶"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-unlock-title'       => '解除鎖定賬戶',
+	'centralauth-admin-unlock-description' => '解除鎖定賬戶將會令到它可以再登入。',
+	'centralauth-admin-unlock-button'      => '解除鎖定這個賬戶',
+	'centralauth-admin-unlock-success'     => '已經成功地解除鎖定"<nowiki>$1</nowiki>"的全域賬戶',
+	'centralauth-admin-unlock-nonexistent' => '錯誤: 該全域賬戶"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-reason'             => '理由: ',
+
+	// List of global users
+	'globalusers'                    => '全域賬戶名單',
+	'centralauth-listusers-locked'   => '鎖定',
+	'centralauth-listusers-attached' => '於本地存在',
+	'centralauth-listusers-nolocal'  => '未附加或未於本地存在',
+
+	// Pretty timespan
 	'centralauth-seconds-ago'              => '$1秒前',
 	'centralauth-minutes-ago'              => '$1分鐘前',
 	'centralauth-hours-ago'                => '$1小時前',
 	'centralauth-days-ago'                 => '$1日前',
 	'centralauth-months-ago'               => '$1月前',
 	'centralauth-years-ago'                => '$1年前',
+
+	// Info panel in preferences
 	'centralauth-prefs-status'             => '整合帳戶狀態：',
 	'centralauth-prefs-not-managed'        => '不是正在使用統一帳戶',
 	'centralauth-prefs-unattached'         => '未確認',
@@ -8273,8 +8396,20 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-count-unattached'   => '您在$1個計劃中還有未確認的帳戶。',
 	'centralauth-prefs-detail-unattached'  => '這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage'             => '管理您的全域帳戶',
+
+	// Interaction with Special:Renameuser
 	'centralauth-renameuser-abort'         => '<div class="errorbox">由於這個用戶名已經遷移到統一登入系統，因此不能在本地中更改$1作為這個用戶名。</div>',
 	'centralauth-renameuser-exists'        => '<div class="errorbox">由於這個用戶名已經預留給全域帳戶，因此不能在更改$2作為這個用戶名。</div>',
+
+	// Other messages
+	'centralauth-invalid-wiki'             => '無這個wiki資料庫: $1',
 	'centralauth-account-exists'           => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
+
+	// Logging
+	'centralauth-log-name'                 => '全域賬戶管理日誌',
+	'centralauth-log-header'               => '這個日誌包含全域賬戶的動作: 刪除、鎖定以及解除鎖定。',
+	'centralauth-log-entry-delete'         => '已經刪除全域賬戶"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'           => '已經鎖定全域賬戶"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'         => '已經解除鎖定全域賬戶"<nowiki>$1</nowiki>"',
 );
 
