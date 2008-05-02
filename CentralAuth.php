@@ -98,6 +98,9 @@ $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/SpecialAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
+$wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/SpecialGlobalGroupMembership.php";
+$wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/CentralAuthGroupMembershipProxy.php";
+$wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/SpecialGlobalGroupPermissions.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 
@@ -116,6 +119,8 @@ $wgHooks['UserGetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserGet
 $wgHooks['UserSetEmail'][] = 'CentralAuthHooks::onUserSetEmail';
 $wgHooks['UserSaveSettings'][] = 'CentralAuthHooks::onUserSaveSettings';
 $wgHooks['UserSetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserSetEmailAuthenticationTimestamp';
+$wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
+$wgHooks['GetAvailableRights'][] = 'CentralAuthHooks::onGetAvailableRights';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserAbort'][] = 'CentralAuthHooks::onRenameUserAbort';
@@ -127,6 +132,8 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
+$wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
+$wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
@@ -137,3 +144,8 @@ $wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
 $wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
 $wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
 
+$wgLogTypes[]                      = 'gblrights';
+$wgLogNames['gblrights']          = 'centralauth-rightslog-name';
+$wgLogHeaders['gblrights']	   = 'centralauth-rightslog-header';
+$wgLogActions['gblrights/usergroups'] = 'centralauth-rightslog-entry-usergroups';
+$wgLogActions['gblrights/groupperms']   = 'centralauth-rightslog-entry-groupperms';

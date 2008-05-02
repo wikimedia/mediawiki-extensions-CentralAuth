@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'SpecialListusers.php' );
+
 class SpecialGlobalUsers extends SpecialPage {
 
 	function __construct() {
@@ -8,20 +10,55 @@ class SpecialGlobalUsers extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgOut;
+		global $wgOut, $wgRequest;
 		$this->setHeaders();
 
 		$pg = new GlobalUsersPager();
+
+		if( $par ) {
+			$pg->setGroup( $par );
+		}
+		if( $rqGroup = $wgRequest->getVal( 'group' ) ) {
+			$pg->setGroup( $rqGroup );
+		}
+		if( $rqUsername = $wgRequest->getVal( 'username' ) ) {
+			$pg->setUsername( $rqUsername );
+		}
+
+		$wgOut->addHTML( $pg->getPageHeader() );
 		$wgOut->addHTML( $pg->getNavigationBar() );
 		$wgOut->addHTML( '<ul>' . $pg->getBody() . '</ul>' );
 		$wgOut->addHTML( $pg->getNavigationBar() );
 	}
 }
 
-class GlobalUsersPager extends AlphabeticPager {
+class GlobalUsersPager extends UsersPager {
+	private $mGroup, $mUsername;
+
 	function __construct() {
 		parent::__construct();
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
+	}
+
+	function setGroup( $group = '' ) {
+		if( !$group ) {
+			$this->mGroup = false;
+			return;
+		}
+		$groups = array_keys( $this->getAllGroups() );
+		if( in_array( $group, $groups ) ) {
+			$this->mGroup = $group;
+		} else {
+			$this->mGroup = false;
+		}
+	}
+
+	function setUsername( $username = '' ) {
+		if( !$username ) {
+			$this->mUsername = false;
+			return;
+		}
+		$this->mUsername = $username;
 	}
 
 	function getIndexField() {
@@ -30,10 +67,19 @@ class GlobalUsersPager extends AlphabeticPager {
 	
 	function getQueryInfo() {
 		$localwiki = wfWikiID();
+		$conds = array( 'gu_hidden' => 0 );
+
+		if( $this->mGroup )
+			$conds['gug_group'] = $this->mGroup;
+
+		if( $this->mUsername )
+			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->mUsername );
+
 		return array(
-			'tables' => " globaluser LEFT JOIN localuser ON gu_name = lu_name AND lu_dbname = '{$localwiki}' ",
-			'fields' => array( 'gu_name', 'gu_locked', 'lu_attached_method' ),
-			'conds' => array( 'gu_hidden' => 0 ),
+			'tables' => " (globaluser LEFT JOIN localuser ON gu_name = lu_name AND lu_dbname = '{$localwiki}') LEFT JOIN global_user_groups ON gu_id = gug_user ",
+			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'lu_attached_method', 'COUNT(gug_group) AS gug_numgroups', 'MAX(gug_group) AS gug_singlegroup'  ),
+			'conds' => $conds,
+			'options' => array( 'GROUP BY' => 'gu_name' ),
 		);
 	}
 
@@ -48,6 +94,10 @@ class GlobalUsersPager extends AlphabeticPager {
 			$info[] = $this->getSkin()->makeLinkObj( $userPage, $text );
 		} else {
 			$info[] = wfMsgHtml( 'centralauth-listusers-nolocal' );
+		}
+		$groups = $this->getUserGroups( $row );
+		if( $groups ) {
+			$info[] = $groups;
 		}
 		$info = implode( ', ', $info );
 		return '<li>' . wfSpecialList( $user, $info ) . '</li>';
@@ -66,6 +116,27 @@ class GlobalUsersPager extends AlphabeticPager {
 		}
 		$batch->execute();
 		$this->mResult->rewind();
-		return parent::getBody();
+		return AlphabeticPager::getBody();
+	}
+
+	function getUserGroups( $row ) {
+		if( !$row->gug_numgroups )
+			return false;
+		if( $row->gug_numgroups == 1 ) {
+			return self::buildGroupLink( $row->gug_singlegroup );
+		}
+		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
+		$rights = array();
+		while( $row2 = $this->mDb->fetchObject( $result ) ) 
+			$rights[] = self::buildGroupLink( $row2->gug_group );
+		return implode( ', ', $rights );
+	}
+
+	function getAllGroups() {
+		$result = array();
+		foreach( CentralAuthUser::availableGlobalGroups() as $group ) {
+			$result[$group] = User::getGroupName( $group );
+		}
+		return $result;
 	}
 }
