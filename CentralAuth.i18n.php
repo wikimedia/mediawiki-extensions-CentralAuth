@@ -186,7 +186,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-prefs-manage'            => 'Manage your global account',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort' => "<div class=\"errorbox\">Cannot rename user $1 locally as this username has been migrated to the unified login system.</div>",
+	'centralauth-renameuser-abort'  => "<div class=\"errorbox\">Cannot rename user $1 locally as this username has been migrated to the unified login system.</div>",
 	'centralauth-renameuser-exists' => "<div class=\"errorbox\">Cannot rename user $2 as this username is reserved for a global account.</div>",
 
 	// Other messages
@@ -194,11 +194,15 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	
 	// Logging
-	'centralauth-log-name'           	=> 'Global account management log',
-	'centralauth-log-header'         	=> 'This log contains operations under global accounts: deletions, locking and unlocking.',
-	'centralauth-log-entry-delete'   	=> 'deleted global account "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-lock'     	=> 'locked global account "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unlock'   	=> 'unlocked global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-name'         => 'Global account management log',
+	'centralauth-log-header'       => 'This log contains operations under global accounts: deletions, locking and unlocking.',
+	'centralauth-log-entry-delete' => 'deleted global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'   => 'locked global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock' => 'unlocked global account "<nowiki>$1</nowiki>"',
+
+	// User rights
+	'right-centralauth-admin'      => 'Administrate global accounts',
+	'right-centralauth-merge'      => 'Merge their account',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1518,37 +1522,37 @@ $messages['de'] = array(
 	'centralauth-rightslog-header'		 => 'Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen',
 
 	// Global group membership
-	'globalgroupmembership'			=> 'Mitgliedschaft in globalen Gruppen',
+	'globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen',
 
 	// Global group permissions
-	'globalgrouppermissions'		          => 'Management globaler Gruppen',
+	'globalgrouppermissions'                          => 'Management globaler Gruppen',
 	'centralauth-globalgroupperms-grouplist'          => 'Die folgenden globalen Gruppen wurden konfiguriert. Du kannst die jeder Gruppe zugewiesenen Rechte sehen und ändern. Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Rechte ansehen und bearbeiten]])',
-	'centralauth-existinggroup-legend'	          => 'Vorhandene Gruppen',
-	'centralauth-newgroup-legend'		          => 'Neue Gruppe erstellen',
-	'centralauth-newgroup-intro'		          => 'Du kannst mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachte, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
+	'centralauth-existinggroup-legend'                => 'Vorhandene Gruppen',
+	'centralauth-newgroup-legend'                     => 'Neue Gruppe erstellen',
+	'centralauth-newgroup-intro'                      => 'Du kannst mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachte, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
 	'centralauth-globalgroupperms-newgroupname'       => 'Neuer Gruppenname:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Rechte zuweisen',
-	'centralauth-editgroup-subtitle'	          => 'Bearbeite $1',
-	'centralauth-editgroup-fieldset'	          => 'Rechte für $1',
-	'centralauth-editgroup-name'		          => 'Name der Gruppe:',
-	'centralauth-editgroup-display'		          => 'Lokalisierter Name der Gruppe:',
-	'centralauth-editgroup-display-edit'	          => '$2 ([[MediaWiki:Group-$1|bearbeiten]])',
-	'centralauth-editgroup-member'		          => 'Lokalisierter Name der Gruppenmitglieder:',
-	'centralauth-editgroup-member-edit'	          => '$2 ([[MediaWiki:group-$1-member|bearbeiten]])',
-	'centralauth-editgroup-members'		          => 'Mitgliederliste:',
-	'centralauth-editgroup-members-link'	          => '[[Special:Listusers/$1|Liste der Benutzer mit dem $2-Recht]]',
-	'centralauth-editgroup-submit'		          => 'Änderungen an den Gruppenrechten speichern',
-	'centralauth-editgroup-perms'		          => 'Zugewiesene Rechte:',
-	'centralauth-editgroup-reason'		          => 'Grund für die Änderung:',
-	'centralauth-editgroup-success'		          => 'Gruppenrechte geändert',
-	'centralauth-editgroup-success-text'	          => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
+	'centralauth-editgroup-subtitle'                  => 'Bearbeite $1',
+	'centralauth-editgroup-fieldset'                  => 'Rechte für $1',
+	'centralauth-editgroup-name'                      => 'Name der Gruppe:',
+	'centralauth-editgroup-display'                   => 'Lokalisierter Name der Gruppe:',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|bearbeiten]])',
+	'centralauth-editgroup-member'                    => 'Lokalisierter Name der Gruppenmitglieder:',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:group-$1-member|bearbeiten]])',
+	'centralauth-editgroup-members'                   => 'Mitgliederliste:',
+	'centralauth-editgroup-members-link'              => '[[Special:Listusers/$1|Liste der Benutzer mit dem $2-Recht]]',
+	'centralauth-editgroup-submit'                    => 'Änderungen an den Gruppenrechten speichern',
+	'centralauth-editgroup-perms'                     => 'Zugewiesene Rechte:',
+	'centralauth-editgroup-reason'                    => 'Grund für die Änderung:',
+	'centralauth-editgroup-success'                   => 'Gruppenrechte geändert',
+	'centralauth-editgroup-success-text'              => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
 
 	// User rights
-	'right-globalgroupmembership'	=> 'Mitgliedschaft in globalen Gruppen bearbeiten',
-	'right-centralauth-admin'	=> 'Globale Benutzerkonten administrieren',
-	'right-centralauth-merge'	=> 'Benutzerkonten zusammenführen',
-	'right-globalgrouppermissions'	=> 'Management globaler Gruppen',
+	'right-globalgroupmembership'  => 'Mitgliedschaft in globalen Gruppen bearbeiten',
+	'right-centralauth-admin'      => 'Globale Benutzerkonten administrieren',
+	'right-centralauth-merge'      => 'Benutzerkonten zusammenführen',
+	'right-globalgrouppermissions' => 'Management globaler Gruppen',
 );
 
 /** Ewe (Eʋegbe)
