@@ -1549,9 +1549,9 @@ $messages['de'] = array(
 	'centralauth-editgroup-success-text'              => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
 
 	// User rights
-	'right-globalgroupmembership'  => 'Mitgliedschaft in globalen Gruppen bearbeiten',
 	'right-centralauth-admin'      => 'Globale Benutzerkonten administrieren',
 	'right-centralauth-merge'      => 'Benutzerkonten zusammenführen',
+	'right-globalgroupmembership'  => 'Mitgliedschaft in globalen Gruppen bearbeiten',
 	'right-globalgrouppermissions' => 'Management globaler Gruppen',
 );
 
