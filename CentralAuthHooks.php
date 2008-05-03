@@ -303,7 +303,7 @@ class CentralAuthHooks {
 			$user->setToken();
 
 			$wgAuth->initUser( $user, true );
-			$wgAuth->updateUser( &$user );
+			$wgAuth->updateUser( $user );
 	
 			# Update user count
 			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
