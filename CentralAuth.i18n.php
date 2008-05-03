@@ -2812,9 +2812,9 @@ $messages['he'] = array(
 	'centralauth-editgroup-success-text'              => 'שיניתם בהצלחה את הרשאות הקבוצה $1. [[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].',
 
 	# User rights
-	'right-globalgroupmembership'  => 'עריכת חברות בקבוצות הכלליות',
 	'right-centralauth-admin'      => 'ניהול חשבונות כלליים',
-	'right-centralauth-merge'      => 'מיזוג החשבון שלהם',
+	'right-centralauth-merge'      => 'מיזוג חשבונות לחשבון כללי',
+	'right-globalgroupmembership'  => 'עריכת חברות בקבוצות הכלליות',
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 );
 
