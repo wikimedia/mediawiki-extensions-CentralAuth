@@ -2773,7 +2773,7 @@ $messages['he'] = array(
 	'centralauth-account-exists' => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
 
 	# Logging
-	'centralauth-log-name'           => 'יומן ניהול החשבון הכללי',
+	'centralauth-log-name'           => 'יומן החשבון הכללי',
 	'centralauth-log-header'         => 'יומן זה כולל פעולות שבוצעו על חשבונות כלליים: מחיקות, נעילות וביטולי נעילות.',
 	'centralauth-log-entry-delete'   => 'מחק את החשבון הכללי "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'     => 'נעל את החשבון הכללי "<nowiki>$1</nowiki>"',
