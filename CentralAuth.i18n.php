@@ -194,7 +194,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	
 	// Logging
-	'centralauth-log-name'         => 'Global account management log',
+	'centralauth-log-name'         => 'Global account log',
 	'centralauth-log-header'       => 'This log contains operations under global accounts: deletions, locking and unlocking.',
 	'centralauth-log-entry-delete' => 'deleted global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'   => 'locked global account "<nowiki>$1</nowiki>"',
