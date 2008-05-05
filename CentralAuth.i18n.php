@@ -518,7 +518,8 @@ $messages['ar'] = array(
  */
 $messages['ast'] = array(
 	'mergeaccount'                         => 'Estatus de fusión de cuentes',
-	'centralauth-desc'                     => 'Fusiona cuentes ente les wikis de la Fundación Wikimedia',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Fusiona cuentes]] ente les wikis de la Fundación Wikimedia',
+	'centralauth-merge-denied'             => "Sentímoslo, nun tienes permisu p'acceder a esta páxina.",
 	'centralauth-merge-notlogged'          => 'Por favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
 	'centralauth-merge-welcome'            => "'''La to cuenta d'usuariu inda nun foi migrada al sistema de cuentes fusionaes de Wikimedia.'''
 
@@ -532,6 +533,7 @@ Si daquién yá escoyó'l to nome d'usuariu n'otru sitiu nun habría haber probl
 	'centralauth-merge-step2-title'        => 'Confirmar más cuentes',
 	'centralauth-merge-step2-detail'       => 'Dalgunes de les cuentes nun pudieron ser automáticamente asociaes a la wiki principal conseñada. Si estes cuentes son de yo, pues confirmalo escribiendo la so clave.',
 	'centralauth-merge-step2-submit'       => 'Confirmar la información de cuentes',
+	'centralauth-merge-dryrun-or'          => "'''o'''",
 	'centralauth-merge-step3-title'        => 'Crear la cuenta fusionada',
 	'centralauth-merge-step3-detail'       => 'Tas a piques de crear la to cuenta fusionada, coles siguientes wikis asociaes:',
 	'centralauth-merge-step3-submit'       => 'Fusionar cuentes',
@@ -554,12 +556,19 @@ Podrás camudar cuála ye la to wiki principal más tarde.',
 	'centralauth-list-unattached-title'    => 'Cuentes non asociaes',
 	'centralauth-list-unattached'          => 'Nun se pudo confirmar automáticamente que la cuenta "$1" ye de to nos siguientes sitios; lo más probable ye que tengan claves distintes a les de la to cuenta primaria:',
 	'centralauth-foreign-link'             => 'Usuariu $1 en $2',
+	'centralauth-merge-method-empty'       => 'nenguna contribución',
+	'centralauth-merge-method-mail'        => 'confirmáu per corréu electrónicu',
+	'centralauth-merge-method-password'    => 'confirmáu per clave',
+	'centralauth-merge-method-new'         => 'nueva cuenta',
 	'centralauth-finish-title'             => 'Completar la fusión',
 	'centralauth-finish-text'              => 'Si estes cuentes son de to, pues finar el procesu de fusión de cuentes escribiendo simplemente les claves de les otres cuentes equí:',
 	'centralauth-finish-password'          => 'Clave:',
 	'centralauth-finish-login'             => 'Cuenta',
 	'centralauth-finish-send-confirmation' => 'Clave de corréu electrónicu',
 	'centralauth-finish-problems'          => '¿Tienes problemes o nun poseyes estes otres cuentes? [[meta:Help:Unified login problems|Cómo atopar aida]]...',
+	'centralauth-finish-noconfirms'        => 'Nun se pudo confirmar nenguna cuenta usando esta clave.',
+	'centralauth-finish-incomplete'        => 'Fusionáronse delles cuentes usando esta clave.
+Otres cuentes entá nun tán confirmaes.',
 	'centralauth-merge-attempt'            => "'''Comprobando la clave conseñada pa les cuentes non fusionaes...'''",
 	'centralauth-attach-list-attached'     => 'La cuenta fusionada nomada "$1" inclúi les siguientes cuentes:',
 	'centralauth-attach-title'             => 'Confirmar cuenta',
@@ -571,10 +580,37 @@ Podrás camudar cuála ye la to wiki principal más tarde.',
 	'centralauth-admin-username'           => "Nome d'usuariu:",
 	'centralauth-admin-lookup'             => "Ver o editar los datos d'usuariu",
 	'centralauth-admin-permission'         => "Namái los stewards puen fusionar les cuentes d'otres persones por ellos.",
+	'centralauth-admin-no-unified'         => "Nun hai cuenta fusionada pa esti nome d'usuariu.",
+	'centralauth-admin-yes'                => 'sí',
+	'centralauth-admin-no'                 => 'non',
+	'centralauth-admin-attached'           => 'Cuentes completamente fusionaes',
+	'centralauth-admin-unattached'         => 'Cuentes non asociaes',
+	'centralauth-admin-list-localwiki'     => 'Wiki llocal',
+	'centralauth-admin-list-method'        => 'Métodu',
 	'centralauth-admin-unmerge'            => 'Dixebrar seleicionaes',
 	'centralauth-admin-merge'              => 'Fusionar seleicionaes',
 	'centralauth-admin-bad-input'          => 'Seleición de fusión non válida',
 	'centralauth-admin-none-selected'      => 'Nun se seleicionaron cuentes pa modificar.',
+	'centralauth-admin-delete-title'       => 'Eliminar cuenta',
+	'centralauth-admin-delete-button'      => 'Eliminar esta cuenta',
+	'centralauth-admin-nonexistent'        => 'Nun hai cuenta global pa "<nowiki>$1</nowiki>"',
+	'centralauth-token-mismatch'           => 'Sentímoslo, nun se pudo procesar el to formulariu pol mor una perda de datos de la sesión.',
+	'centralauth-admin-lock-title'         => 'Bloquiar cuenta',
+	'centralauth-admin-lock-button'        => 'Bloquiar esta cuenta',
+	'centralauth-admin-lock-nonexistent'   => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
+	'centralauth-admin-unlock-title'       => 'Desbloquiar cuenta',
+	'centralauth-admin-unlock-button'      => 'Desbloquiar esta cuenta',
+	'centralauth-admin-unlock-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
+	'centralauth-admin-reason'             => 'Motivu:',
+	'globalusers'                          => "Llista d'usuarios globales",
+	'centralauth-listusers-attached'       => 'esiste llocalmente',
+	'centralauth-listusers-nolocal'        => 'non asociáu o nun esiste llocalmente',
+	'centralauth-seconds-ago'              => 'hai $1 {{PLURAL:$1|segundu|segundos}}',
+	'centralauth-minutes-ago'              => 'hai $1 {{PLURAL:$1|minutu|minutos}}',
+	'centralauth-hours-ago'                => 'hai $1 {{PLURAL:$1|hora|hores}}',
+	'centralauth-days-ago'                 => 'hai $1 {{PLURAL:$1|día|díes}}',
+	'centralauth-months-ago'               => 'hai $1 {{PLURAL:$1|mes|meses}}',
+	'centralauth-years-ago'                => 'hai $1 {{PLURAL:$1|añu|años}}',
 	'centralauth-prefs-status'             => 'Estatus de cuenta global:',
 	'centralauth-prefs-not-managed'        => 'Nun se ta usando la cuenta fusionada',
 	'centralauth-prefs-unattached'         => 'Non confirmada',
@@ -585,6 +621,7 @@ Podrás camudar cuála ye la to wiki principal más tarde.',
 	'centralauth-prefs-detail-unattached'  => "Nun se confirmó la pertenencia d'esti sitiu de proyeutu a la cuenta global.",
 	'centralauth-prefs-manage'             => 'Remanar la to cuenta global',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Nun se pue renomar llocalmente al usuariu $1 yá que esti nome d\'usuariu foi migráu al sistema de cuentes fusionaes.</div>',
+	'centralauth-log-name'                 => 'Rexistru de cuenta global',
 );
 
 /** Kotava (Kotava)
@@ -712,6 +749,7 @@ $messages['bg'] = array(
 	'centralauth-admin-yes'                => 'да',
 	'centralauth-admin-no'                 => 'не',
 	'centralauth-admin-attached'           => 'Изцяло слети сметки',
+	'centralauth-admin-list-localwiki'     => 'Локално уики',
 	'centralauth-admin-list-method'        => 'Метод',
 	'centralauth-admin-unmerge'            => 'Разделяне на избраните',
 	'centralauth-admin-merge'              => 'Сливане на избраните',
@@ -1084,9 +1122,17 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-none-selected'      => "No s'han seleccionat comptes a modificar.",
 	'centralauth-admin-delete-title'       => 'Esborra el compte',
 	'centralauth-admin-delete-button'      => 'Esborra aquest compte',
+	'centralauth-admin-nonexistent'        => 'No hi ha compte global per «<nowiki>$1</nowiki>»',
+	'centralauth-admin-delete-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
+	'centralauth-token-mismatch'           => "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
+	'centralauth-admin-lock-title'         => 'Bloqueja el compte',
 	'centralauth-admin-lock-button'        => 'Bloca aquest compte',
+	'centralauth-admin-lock-nonexistent'   => 'Error: no existeix el compte golbal «<nowiki>$1</nowiki>».',
 	'centralauth-admin-unlock-title'       => 'Desbloca el compte',
+	'centralauth-admin-unlock-button'      => 'Desbloqueja aquest compte',
+	'centralauth-admin-unlock-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
 	'centralauth-admin-reason'             => 'Raó:',
+	'globalusers'                          => "Llista global d'usuaris",
 	'centralauth-listusers-locked'         => 'Blocat',
 	'centralauth-listusers-attached'       => 'existeix localment',
 	'centralauth-seconds-ago'              => 'fa $1 {{PLURAL:$1|segon|segons}}',
@@ -1108,6 +1154,13 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-renameuser-exists'        => '<div class="errorbox">No es pot reanomenat l\'usuari $2 perquè el seu nom d\'usuari està reservat en un compte unificat.</div>',
 	'centralauth-invalid-wiki'             => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists'           => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
+	'centralauth-log-name'                 => 'Registre de gestió dels comptes globals',
+	'centralauth-log-header'               => "Aquest registre conté operacions d'esborrat, blocatge i desblocatge de comptes globals.",
+	'centralauth-log-entry-delete'         => 'esborrat el compte global «<nowiki>$1</nowiki>»',
+	'centralauth-log-entry-lock'           => 'blocat el compte global «<nowiki>$1</nowiki>»',
+	'centralauth-log-entry-unlock'         => 'desblocat el compte global «<nowiki>$1</nowiki>»',
+	'right-centralauth-admin'              => 'Administrar els comptes globals',
+	'right-centralauth-merge'              => 'Fusionar el seu compte',
 );
 
 /** Czech (Česky)
@@ -2973,6 +3026,14 @@ $messages['hi'] = array(
 	'centralauth-log-entry-unlock'         => '"<nowiki>$1</nowiki>" का ताला खोल दिया गया हैं',
 );
 
+/** Hiligaynon (Ilonggo)
+ * @author Jose77
+ */
+$messages['hil'] = array(
+	'centralauth-finish-login' => 'Mag sulod',
+	'centralauth-admin-reason' => 'Rason:',
+);
+
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  * @author SpeedyGonsales
@@ -3324,6 +3385,7 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-admin-unlock-success'     => 'Az „<nowiki>$1</nowiki>” nevű globális fiók sikeresen feloldva.',
 	'centralauth-admin-unlock-nonexistent' => 'Hiba: nem létezik „<nowiki>$1</nowiki>” nevű globális fiók.',
 	'centralauth-admin-reason'             => 'Ok:',
+	'globalusers'                          => 'Globális felhasználólista',
 	'centralauth-seconds-ago'              => '$1 másodperccel ezelőtt',
 	'centralauth-minutes-ago'              => '$1 perccel ezelőtt',
 	'centralauth-hours-ago'                => '$1 órával ezelőtt',
@@ -3348,6 +3410,13 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-log-entry-delete'         => 'törölte a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
 	'centralauth-log-entry-lock'           => 'lezárta a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
 	'centralauth-log-entry-unlock'         => 'feloldotta a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
+);
+
+/** Interlingua (Interlingua)
+ * @author Malafaya
+ */
+$messages['ia'] = array(
+	'centralauth-merge-dryrun-or' => "'''o'''",
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -3503,14 +3572,17 @@ $messages['id'] = array(
  * @author Malafaya
  */
 $messages['io'] = array(
-	'centralauth-merge-method-new' => 'nova konto',
-	'centralauth-finish-password'  => 'Kontrolajo:',
-	'centralauth-finish-login'     => 'Enirar',
-	'centralauth-admin-username'   => 'Uzantonomo:',
-	'centralauth-admin-info-id'    => 'ID dil uzanto:',
-	'centralauth-admin-yes'        => 'yes',
-	'centralauth-admin-no'         => 'no',
-	'centralauth-admin-reason'     => 'Motivo:',
+	'centralauth-merge-dryrun-or'     => "'''o'''",
+	'centralauth-merge-method-new'    => 'nova konto',
+	'centralauth-finish-password'     => 'Kontrolajo:',
+	'centralauth-finish-login'        => 'Enirar',
+	'centralauth-admin-username'      => 'Uzantonomo:',
+	'centralauth-admin-info-id'       => 'ID dil uzanto:',
+	'centralauth-admin-yes'           => 'yes',
+	'centralauth-admin-no'            => 'no',
+	'centralauth-admin-delete-title'  => 'Efacar konto',
+	'centralauth-admin-delete-button' => 'Efacar ca konto',
+	'centralauth-admin-reason'        => 'Motivo:',
 );
 
 /** Icelandic (Íslenska)
@@ -4360,6 +4432,7 @@ $messages['lb'] = array(
 	'centralauth-prefs-manage'             => 'Geréiert äre globale Benotzerkont',
 	'centralauth-invalid-wiki'             => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-log-name'                 => 'Lëscht vun de globale Benotzerkonten',
+	'centralauth-log-header'               => 'An dëser Lëscht stinn all Operatioune déi global Benotzerkonten bereffen: Läsche, Spären a Ohiewe vu Spären.',
 	'centralauth-log-entry-delete'         => 'geläschte globale Benotzerkont "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => 'gespaarte globale Benotzerkont "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => 'net-gespaarte globale Benotzerkont "<nowiki>$1</nowiki>"',
@@ -4514,6 +4587,8 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-log-entry-delete'         => 'wisde globale gebroeker "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => 'haet de globale gebroeker "<nowiki>$1</nowiki>" aafgeslaote',
 	'centralauth-log-entry-unlock'         => 'haet de globale gebroeker "<nowiki>$1</nowiki>" vriegegaeven',
+	'right-centralauth-admin'              => 'Globaal gebroekers behieëre',
+	'right-centralauth-merge'              => 'Gebroekers samevoge',
 );
 
 /** Lao (ລາວ)
@@ -4633,7 +4708,7 @@ $messages['ml'] = array(
 	'centralauth-admin-info-id'            => 'ഉപയോക്തൃ ഐഡി:',
 	'centralauth-admin-info-registered'    => 'രജിസ്റ്റേ‌ര്‍‌ഡ്:',
 	'centralauth-admin-info-locked'        => 'ബന്ധിച്ചിരിക്കുന്നു:',
-	'centralauth-admin-info-hidden'        => 'മറച്ചിരിക്കുന്നു:',
+	'centralauth-admin-info-hidden'        => 'മറഞ്ഞിരിക്കുന്നത്:',
 	'centralauth-admin-yes'                => 'ശരി',
 	'centralauth-admin-no'                 => 'തെറ്റ്',
 	'centralauth-admin-attached'           => 'പൂര്‍ണ്ണമായും സം‌യോജിപ്പിച്ച അക്കൗണ്ടുകള്‍',
@@ -5657,6 +5732,8 @@ Jeżeli konto globalne należy również do Ciebie i chcesz przyłączyć do nie
 	'centralauth-log-entry-delete'         => 'usunął konto globalne „<nowiki>$1</nowiki>”',
 	'centralauth-log-entry-lock'           => 'zablokował konto globalne „<nowiki>$1</nowiki>”',
 	'centralauth-log-entry-unlock'         => 'odblokował konto globalne „<nowiki>$1</nowiki>”',
+	'right-centralauth-admin'              => 'Zarządzanie kontami globalnymi',
+	'right-centralauth-merge'              => 'Połącz ich konta',
 );
 
 /** Piemontèis (Piemontèis)
@@ -6142,6 +6219,8 @@ $messages['ru'] = array(
 	'centralauth-log-entry-delete'         => 'удалил глобальную учётную запись «<nowiki>$1</nowiki>»',
 	'centralauth-log-entry-lock'           => 'заморозил глобальную учётную запись «<nowiki>$1</nowiki>»',
 	'centralauth-log-entry-unlock'         => 'разморозил глобальную учётную запись «<nowiki>$1</nowiki>»',
+	'right-centralauth-admin'              => 'администрирование глобальных учётных записей',
+	'right-centralauth-merge'              => 'объединение учётных записей',
 );
 
 /** Yakut (Саха тыла)
@@ -7479,6 +7558,8 @@ $messages['uk'] = array(
 	'centralauth-log-entry-delete'         => 'вилучив глобальний обліковий запис «<nowiki>$1</nowiki>»',
 	'centralauth-log-entry-lock'           => 'заблокував глобальний обліковий запис «<nowiki>$1</nowiki>»',
 	'centralauth-log-entry-unlock'         => 'розблокував глобальний обліковий запис «<nowiki>$1</nowiki>»',
+	'right-centralauth-admin'              => 'Адміністрування глобальних облікових записів',
+	'right-centralauth-merge'              => "Об'єднання облікових записів",
 );
 
 /** Vèneto (Vèneto)
@@ -7721,7 +7802,7 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-list-localwiki'     => 'Wiki bộ phận',
 	'centralauth-admin-list-attached-on'   => 'Ràng buộc với',
 	'centralauth-admin-list-method'        => 'Phương thức',
-	'centralauth-admin-unmerge'            => 'Đã chọn tách',
+	'centralauth-admin-unmerge'            => 'Tách lựa chọn',
 	'centralauth-admin-merge'              => 'Hợp nhất lựa chọn',
 	'centralauth-admin-bad-input'          => 'Lựa chọn không hợp lệ',
 	'centralauth-admin-none-selected'      => 'Chưa chọn tài khoản để sửa đổi.',
@@ -7750,7 +7831,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'globalusers'                          => 'Danh sách người dùng thống nhất',
 	'centralauth-listusers-locked'         => 'đã khóa',
 	'centralauth-listusers-attached'       => 'tồn tại địa phương',
-	'centralauth-listusers-nolocal'        => 'đã tách hoặc chưa tồn tại địa phương',
+	'centralauth-listusers-nolocal'        => 'chưa được liên kết hoặc chưa tồn tại địa phương',
 	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|giây|giây}} trước đây',
 	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|phút|phút}} trước đây',
 	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|giờ|giờ}} trước đây',
@@ -7775,6 +7856,8 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-log-entry-delete'         => 'đã xóa tài khoản thống nhất "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => 'đã khóa tài khoản thống nhất "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => 'đã mở khóa tài khoản thống nhất "<nowiki>$1</nowiki>"',
+	'right-centralauth-admin'              => 'Quản trị tài khoản thống nhất',
+	'right-centralauth-merge'              => 'Trộn tài khoản của họ',
 );
 
 /** Volapük (Volapük)
