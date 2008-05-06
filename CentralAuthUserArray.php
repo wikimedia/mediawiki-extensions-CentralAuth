@@ -32,6 +32,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 				'lu_name=gu_name',
 				'lu_dbname' => wfWikiID()
 			), __METHOD__ );
+		$this->globalData = array();
 		foreach ( $caRes as $row ) {
 			$this->globalData[$row->gu_name] = $row;
 		}
