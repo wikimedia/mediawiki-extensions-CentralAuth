@@ -4,7 +4,8 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'MergeAccount',
 	'author'         => 'Brion Vibber',
 	'url'            => 'http://meta.wikimedia.org/wiki/H:UL',
-	'version'        => preg_replace('/^.* (\d\d\d\d-\d\d-\d\d) .*$/', '\1', '$LastChangedDate$'), #just the date of the last change
+	'svn-date' => '$LastChangedDate$',
+	'svn-revision' => '$LastChangedRevision$',
 	'description'    => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
 	'descriptionmsg' => 'centralauth-mergeaccount-desc',
 );
