@@ -203,6 +203,44 @@ The passwords for local accounts created before the merge will revert to their p
 	// User rights
 	'right-centralauth-admin'      => 'Administrate global accounts',
 	'right-centralauth-merge'      => 'Merge their account',
+	
+	'centralauth-rightslog-name'		=> 'Global rights log',
+	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',
+	'centralauth-rightslog-entry-groupperms' => 'changed group permissions for $1 from $2 to $3',
+	'centralauth-rightslog-header'		=> 'This log contains operations on global groups: membership and permissions changes',
+	
+	// Global group membership
+	'globalgroupmembership'			=> 'Membership in global groups',
+	
+	// Global group permissions
+	'globalgrouppermissions'		=> 'Global group management',
+	'centralauth-globalgroupperms-grouplist' => 'The following global groups have been configured. You may view and edit the permissions assigned to any group. A group may be deleted by removing all rights from it.',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|View and edit permissions]])',
+	'centralauth-existinggroup-legend'	=> 'Existing groups',
+	'centralauth-newgroup-legend'		=> 'Create a new group',
+	'centralauth-newgroup-intro'		=> 'You can use this form to assign permissions to a new group. Note that a group does not exist unless it has permissions assigned to it.',
+	'centralauth-globalgroupperms-newgroupname' => 'New group name:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Assign permissions',
+	'centralauth-editgroup-subtitle'	=> 'Editing $1',
+	'centralauth-editgroup-fieldset'	=> 'Permissions for $1',
+	'centralauth-editgroup-name'		=> 'Name of group:',
+	'centralauth-editgroup-display'		=> 'Localised name of group:',
+	'centralauth-editgroup-display-edit'	=> '$2 ([[MediaWiki:group-$1|edit]])',
+	'centralauth-editgroup-member'		=> 'Localised name of group members:',
+	'centralauth-editgroup-member-edit'	=> '$2 ([[MediaWiki:group-$1-member|edit]])',
+	'centralauth-editgroup-members'		=> 'Member list:',
+	'centralauth-editgroup-members-link'	=> '[[Special:Listusers/$1|List of users with $2 rights]]',
+	'centralauth-editgroup-submit'		=> 'Save changes to group permissions',
+	'centralauth-editgroup-perms'		=> 'Assigned permissions:',
+	'centralauth-editgroup-reason'		=> 'Reason for change:',
+	'centralauth-editgroup-success'		=> 'Group permissions changed',
+	'centralauth-editgroup-success-text'	=> 'You have successfully changed the group permissions for the $1 group. [[Special:GlobalGroupPermissions/|Return to group management]]',
+	
+	// User rights
+	'right-globalgroupmembership'	=> 'Edit membership to global groups',
+	'right-centralauth-admin'	=> 'Administrate global accounts',
+	'right-centralauth-merge'	=> 'Merge their account',
+	'right-globalgrouppermissions'	=> 'Manage global groups',
 );
 
 /** Afrikaans (Afrikaans)
