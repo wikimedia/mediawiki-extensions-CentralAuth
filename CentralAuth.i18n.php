@@ -200,10 +200,6 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-log-entry-lock'   => 'locked global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock' => 'unlocked global account "<nowiki>$1</nowiki>"',
 
-	// User rights
-	'right-centralauth-admin'      => 'Administrate global accounts',
-	'right-centralauth-merge'      => 'Merge their account',
-	
 	'centralauth-rightslog-name'		=> 'Global rights log',
 	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms' => 'changed group permissions for $1 from $2 to $3',
@@ -225,16 +221,16 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-editgroup-fieldset'	=> 'Permissions for $1',
 	'centralauth-editgroup-name'		=> 'Name of group:',
 	'centralauth-editgroup-display'		=> 'Localised name of group:',
-	'centralauth-editgroup-display-edit'	=> '$2 ([[MediaWiki:group-$1|edit]])',
+	'centralauth-editgroup-display-edit'	=> '$2 ([[MediaWiki:Group-$1|edit]])',
 	'centralauth-editgroup-member'		=> 'Localised name of group members:',
-	'centralauth-editgroup-member-edit'	=> '$2 ([[MediaWiki:group-$1-member|edit]])',
+	'centralauth-editgroup-member-edit'	=> '$2 ([[MediaWiki:Group-$1-member|edit]])',
 	'centralauth-editgroup-members'		=> 'Member list:',
 	'centralauth-editgroup-members-link'	=> '[[Special:Listusers/$1|List of users with $2 rights]]',
 	'centralauth-editgroup-submit'		=> 'Save changes to group permissions',
 	'centralauth-editgroup-perms'		=> 'Assigned permissions:',
 	'centralauth-editgroup-reason'		=> 'Reason for change:',
 	'centralauth-editgroup-success'		=> 'Group permissions changed',
-	'centralauth-editgroup-success-text'	=> 'You have successfully changed the group permissions for the $1 group. [[Special:GlobalGroupPermissions/|Return to group management]]',
+	'centralauth-editgroup-success-text'	=> 'You have successfully changed the group permissions for the $1 group. [[Special:GlobalGroupPermissions|Return to group management]]',
 	
 	// User rights
 	'right-globalgroupmembership'	=> 'Edit membership to global groups',
@@ -2914,7 +2910,7 @@ $messages['he'] = array(
 
 	# User rights
 	'right-centralauth-admin'      => 'ניהול חשבונות כלליים',
-	'right-centralauth-merge'      => 'מיזוג חשבונות לחשבון כללי',
+	'right-centralauth-merge'      => 'מיזוג החשבון של עצמם',
 	'right-globalgroupmembership'  => 'עריכת חברות בקבוצות הכלליות',
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 );
