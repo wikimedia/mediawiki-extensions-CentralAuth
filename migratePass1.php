@@ -13,9 +13,9 @@ function migratePassOne() {
 	$chunkSize = 1000;
 	$start = microtime( true );
 
-	$dbBackground = CentralAuthUser::getCentralSlaveDB();
+	$dbBackground = wfGetDB( DB_SLAVE, 'CentralAuth' ); // fixme for large dbs
 	$result = $dbBackground->select(
-		'migrateuser',
+		CentralAuthUser::tableName( 'migrateuser' ),
 		array( 'mu_name' ),
 		'',
 		__METHOD__,
