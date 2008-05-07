@@ -93,9 +93,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		} else {
 			$wgOut->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
 		}
-		
-		$wgOut->addHtml( Xml::closeElement( 'fieldset' ) );
-		
+
+		$wgOut->addHtml( Xml::closeElement( 'ul' ) . Xml::closeElement( 'fieldset' ) );
+
 		// "Create a group" prompt
 		$html = Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'centralauth-newgroup-legend' ) );
 		$html .= wfMsgExt( 'centralauth-newgroup-intro', array( 'parse' ) );
