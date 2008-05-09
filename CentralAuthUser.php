@@ -211,6 +211,7 @@ class CentralAuthUser {
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
+			$this->mFromMaster = $fromMaster;
 		}
 	}
 	
