@@ -4,6 +4,8 @@ require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 
 echo "Populating global groups table with stewards...\n";
 
+global $wgMemc;
+
 // Fetch local stewards
 $dbl = wfGetDB( DB_SLAVE );	//Get local database
 $result = $dbl->select(
@@ -40,4 +42,7 @@ echo "Fetched " . count( $localStewards ) . " SULed stewards... Adding them in g
 foreach( $globalStewards as $user => $id ) {
 	$dbg->insert( 'global_user_groups', array( 'gug_user' => $id, 'gug_group' => 'steward' ), 'migrateStewards.php' );
 	echo "Added {$user}\n";
+	
+	$u = new CentralAuthUser( $user );
+	$u->quickInvalidateCache(); // Don't bother regenerating the steward's cache.
 }
