@@ -4,8 +4,6 @@ require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
 
 echo "Populating global groups table with stewards...\n";
 
-global $wgMemc;
-
 // Fetch local stewards
 $dbl = wfGetDB( DB_SLAVE );	//Get local database
 $result = $dbl->select(
