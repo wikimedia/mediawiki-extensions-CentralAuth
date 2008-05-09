@@ -16,8 +16,31 @@ class CentralAuthUser {
 	/**
 	 * The username of the current user.
 	 */
-	private $mName;
-	private $mStateDirty = false;
+	/*private*/ var $mName;
+	/*private*/ var $mStateDirty = false;
+	/*private*/ var $mVersion = 1;
+	/*private*/ var $mDelayInvalidation = 0;
+	/*private*/ var $mWasAnon = false; // If it came from an anon, don't bother caching or anything.
+	
+	static $mCacheVars = array(
+		'mGlobalId',
+		'mSalt',
+		'mPassword',
+		'mAuthToken',
+		'mLocked',
+		'mHidden',
+		'mRegistration',
+		'mEmail',
+		'mAuthenticationTimestamp',
+		'mGroups',
+		'mRights',
+
+		# Store the string list instead of the array, to save memory, and 
+		# avoid unserialize() overhead
+		'mAttachedList',
+
+		'mVersion',
+	);
 
 	function __construct( $username ) {
 		$this->mName = $username;
@@ -32,6 +55,7 @@ class CentralAuthUser {
 	static function getInstance( $user ) {
 		if ( !isset( $user->centralAuthObj ) ) {
 			$user->centralAuthObj = new self( $user->getName() );
+			$user->centralAuthObj->mWasAnon = $user->isAnon();
 		}
 		return $user->centralAuthObj;
 	}
@@ -52,64 +76,125 @@ class CentralAuthUser {
 		return wfGetLB( $dbname )->getConnection( DB_MASTER, array(), $dbname );
 	}
 
-	public static function tableName( $name ) {
-		global $wgCentralAuthDatabase;
-		return
-			'`' .
-			$wgCentralAuthDatabase .
-			'`.`' .
-			$name .
-			'`';
-	}
-
 	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 */
-	public static function newFromRow( $row ) {
+	public static function newFromRow( $row, $fromMaster = false ) {
 		$caUser = new self( $row->gu_name );
-		$caUser->loadFromRow( $row );
+		$caUser->loadFromRow( $row, $fromMaster );
 		return $caUser;
 	}
 
 	/**
 	 * Clear state information cache
+	 * Does not clear $this->mName, so the state information can be reloaded with loadState()
 	 */
-	private function resetState() {
-		$this->mGlobalId = null;
-		$this->mProperties = null;
-		$this->mHomeWiki = null;
+	protected function resetState() {
+		unset( $this->mGlobalId );
+		unset( $this->mProperties );
+		unset( $this->mHomeWiki );
+		unset( $this->mGroups );
+		unset( $this->mAttachedArray );
+		unset( $this->mAttachedList );
+	}
+	
+	/**
+	 * Load up state information, but don't use the cache
+	*/
+	protected function loadStateNoCache() { 
+		$this->loadState( true ); 
 	}
 
 	/**
 	 * Lazy-load up the most commonly required state information
+	 * @param boolean $recache Force a load from the database then save back to the cache
 	 */
-	private function loadState() {
-		wfProfileIn( __METHOD__ );
-		if( !isset( $this->mGlobalId ) ) {
-			$dbr = self::getCentralSlaveDB();
-			$globaluser = self::tableName( 'globaluser' );
-			$localuser = self::tableName( 'localuser' );
-
-			$sql =
-				"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_auth_token,
-				gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated
-					FROM $globaluser
-					LEFT OUTER JOIN $localuser
-						ON gu_name=lu_name
-						AND lu_dbname=?
-					WHERE gu_name=?";
-			$result = $dbr->safeQuery( $sql, wfWikiID(), $this->mName );
-			$row = $dbr->fetchObject( $result );
-			$dbr->freeResult( $result );
-			$this->loadFromRow( $row );
+	protected function loadState( $recache = false ) {
+		if ( $recache ) {
+			$this->resetState();
+		} elseif ( isset( $this->mGlobalId ) ) {
+			// Already loaded
+			return;
 		}
+
+		wfProfileIn( __METHOD__ );
+		// Did we come from an anonymous user?
+		if ( $this->mWasAnon ) {
+			$this->mGroups = $this->mRights = array();
+			$this->mIsAttached = false;
+			$this->mGlobalId = 0;
+			wfDebugLog( 'CentralAuth', "Tried to load state for global user {$this->mName}, " .
+				"but it's an anonymous user! Quitting." );
+			wfProfileOut( __METHOD__);
+			return;
+		}
+		
+		// Check the cache
+		if ( !$recache && $this->loadFromCache() ) {
+			wfProfileOut( __METHOD__ );
+			return;
+		}
+		
+		wfDebugLog( 'CentralAuth', "Loading state for global user {$this->mName} from DB" );
+		
+		// Get the master. We want to make sure we've got up to date information
+		// since we're caching it.
+		$dbr = self::getCentralDB();
+		$globaluser = $dbr->tableName( 'globaluser' );
+		$localuser = $dbr->tableName( 'localuser' );
+
+		$sql =
+			"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_auth_token, " .
+				"gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated " .
+			"FROM $globaluser " .
+			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_dbname=? " .
+			"WHERE gu_name=?";
+		$result = $dbr->safeQuery( $sql, wfWikiID(), $this->mName );
+		$row = $dbr->fetchObject( $result );
+		$dbr->freeResult( $result );
+		
+		$this->loadFromRow( $row, true );
+		$this->saveToCache();
 		wfProfileOut( __METHOD__ );
+	}
+	
+	/**
+	 * Load user groups and rights from the database.
+	 */
+	protected function loadGroups() {
+		if ( isset( $this->mGroups ) ) {
+			// Already loaded
+			return;
+		}
+		// We need the user id from the database, but this should be checked by the getId accessor.
+		
+		wfDebugLog( 'CentralAuth', "Loading groups for global user {$this->mName}" );
+		
+		$dbr = self::getCentralDB(); // We need the master.
+		
+		$res = $dbr->select( 
+			array( 'global_group_permissions', 'global_user_groups' ),
+			array( 'ggp_permission', 'ggp_group' ), 
+			array( 'ggp_group=gug_group', 'gug_user' => $this->getId() ), 
+			__METHOD__ );
+		
+		// Grab the user's rights/groups.
+		$rights = array();
+		$groups = array();
+		
+		while ($row = $dbr->fetchObject( $res ) ) {
+			$rights[] = $row->ggp_permission;
+			$groups[$row->ggp_group] = 1;
+		}
+		
+		$this->mRights = $rights;
+		$this->mGroups = array_keys($groups);
 	}
 
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 */
-	protected function loadFromRow( $row ) {
+	protected function loadFromRow( $row, $fromMaster = false ) {
 		if( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
 			$this->mIsAttached = ($row->lu_dbname !== null);
@@ -122,11 +207,86 @@ class CentralAuthUser {
 			$this->mEmail = $row->gu_email;
 			$this->mAuthenticationTimestamp =
 				wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
+			$this->mFromMaster = $fromMaster;
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
 		}
 	}
+	
+	/**
+	 * Load data from memcached
+	 */
+	protected function loadFromCache( $cache = null, $fromMaster = false ) {
+		wfProfileIn( __METHOD__ );
+		if ($cache == null) {
+			global $wgMemc;
+			$cache = $wgMemc->get( $this->getCacheKey() );
+			$fromMaster = true;
+		}
+		
+		if (!is_array($cache) || $cache['mVersion'] < $this->mVersion ) {
+			// Out of date cache.
+			wfDebugLog( 'CentralAuth', "Global User: cache miss for {$this->mName}, " . 
+				"version {$cache['mVersion']}, expected {$this->mVersion}" );
+			wfProfileOut( __METHOD__ );
+			return false;
+		}
+		
+		$this->loadFromCacheObject( $cache, $fromMaster );
+		
+		wfProfileOut( __METHOD__ );
+		
+		return true;
+	}
+	
+	/**
+	 * Load user state from a cached array.
+	 */
+	protected function loadFromCacheObject( $object, $fromMaster = false ) {
+		wfDebugLog( 'CentralAuth', "Loading CentralAuthUser for user {$this->mName} from cache object" );
+		foreach( self::$mCacheVars as $var ) {
+			$this->$var = $object[$var];
+		}
+		
+		$this->loadAttached();
+		
+		$this->mIsAttached = $this->exists() && in_array( wfWikiID(), $this->mAttachedArray );
+		$this->mFromMaster = $fromMaster;
+	}
+	
+	/**
+	 * Get the object data as an array ready for caching
+	 * @return Object to cache.
+	 */
+	protected function getCacheObject() {
+		$this->loadState();
+		$this->loadAttached();
+		$this->loadGroups();
+		
+		$obj = array();
+		foreach( self::$mCacheVars as $var ) {
+			$obj[$var] = $this->$var;
+		}
+		
+		return $obj;
+	}
+	
+	/**
+	 * Save cachable data to memcached.
+	 */
+	protected function saveToCache() {
+		global $wgMemc;
+
+		// Make sure the data is fresh
+		if ( isset( $this->mGlobalId ) && !$this->mFromMaster ) {
+			$this->resetState();
+		}
+
+	 	$obj = $this->getCacheObject();
+	 	wfDebugLog( 'CentralAuth', "Saving user {$this->mName} to cache." );
+	 	$wgMemc->set( $this->getCacheKey(), $obj, 86400 );
+	 }
 
 	/**
 	 * Return the global account ID number for this account, if it exists.
@@ -134,6 +294,20 @@ class CentralAuthUser {
 	public function getId() {
 		$this->loadState();
 		return $this->mGlobalId;
+	}
+	
+	/**
+	 * Generate a valid memcached key for caching the object's data.
+	 */
+	protected function getCacheKey() {
+		return "centralauth-user-".md5($this->mName);
+	}
+	
+	/**
+	 * Return the global account's name, whether it exists or not.
+	 */
+	public function getName() {
+		return $this->mName;
 	}
 
 	/**
@@ -173,7 +347,6 @@ class CentralAuthUser {
 	 * @return bool
 	 */
 	public function exists() {
-		$this->lazyMigrate();
 		$id = $this->getId();
 		wfDebugLog( 'CentralAuth', "exists() for '$this->mName': $id" );
 		return $id != 0;
@@ -203,31 +376,6 @@ class CentralAuthUser {
 		return wfTimestamp( TS_MW, $this->mRegistration );
 	}
 
-	private function lazyMigrate() {
-		global $wgCentralAuthAutoMigrate;
-		if( $wgCentralAuthAutoMigrate ) {
-			$dbw = self::getCentralDB();
-			$dbw->begin();
-
-			$id = $this->getId();
-			if( !$id ) {
-				// Global accounts may not all be in place yet.
-				// Try automerging first, then check again.
-				$migrated = $this->attemptAutoMigration(); // $migrated return val not used.
-				$id = $this->getId();
-				if( $id ) {
-					wfDebugLog( 'CentralAuth',
-						"Ran lazy migration for '$this->mName', new id $id" );
-				} else {
-					wfDebugLog( 'CentralAuth',
-						"Ran lazy migration for '$this->mName', no entries" );
-				}
-			}
-
-			$dbw->commit();
-		}
-	}
-
 	/**
 	 * Register a new, not previously existing, central user account
 	 * Remaining fields are expected to be filled out shortly...
@@ -237,7 +385,7 @@ class CentralAuthUser {
 		$dbw = self::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		$ok = $dbw->insert(
-			self::tableName( 'globaluser' ),
+			'globaluser',
 			array(
 				'gu_name'  => $this->mName,
 
@@ -261,6 +409,9 @@ class CentralAuthUser {
 			wfDebugLog( 'CentralAuth',
 				"registration failed for global account '$this->mName'" );
 		}
+		
+		// Kill any cache entries saying we don't exist
+		$this->invalidateCache();
 		return $ok;
 	}
 
@@ -280,7 +431,7 @@ class CentralAuthUser {
 					'ln_name'     => $name );
 			}
 			$dbw->insert(
-				self::tableName( 'localnames' ),
+				'localnames',
 				$tuples,
 				__METHOD__,
 				array( 'IGNORE' ) );
@@ -292,9 +443,9 @@ class CentralAuthUser {
 	 * Store global user data in the auth server's main table.
 	 * @return bool Whether we were successful or not.
 	 */
-	private function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
+	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
 		$dbw = self::getCentralDB();
-		$dbw->insert( self::tableName( 'globaluser' ),
+		$dbw->insert( 'globaluser',
 			array(
 				'gu_name' => $this->mName,
 				'gu_salt' => $salt,
@@ -502,7 +653,7 @@ class CentralAuthUser {
 	 * @fixme add some locking or something
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	private function attemptAutoMigration( $passwords=array() ) {
+	protected function attemptAutoMigration( $passwords=array() ) {
 		$migrationSet = $this->queryUnattached();
 		if( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
@@ -541,10 +692,15 @@ class CentralAuthUser {
 					"Full automatic migration for '$this->mName'" );
 			}
 		}
+		
+		// Don't purge the cache 50 times.
+		$this->startTransaction();
 
 		foreach( $attach as $db => $method ) {
 			$this->attach( $db, $method );
 		}
+		
+		$this->endTransaction();
 
 		return count( $attach ) == count( $migrationSet );
 	}
@@ -572,6 +728,9 @@ class CentralAuthUser {
 		$migrated = array();
 		$remaining = array();
 
+		// Don't invalidate the cache 50 times
+		$this->startTransaction();
+
 		// Look for accounts we can match by password
 		foreach( $rows as $row ) {
 			$db = $row['dbName'];
@@ -586,6 +745,8 @@ class CentralAuthUser {
 				$remaining[] = $db;
 			}
 		}
+		
+		$this->endTransaction();
 
 		if( count( $remaining ) == 0 ) {
 			wfDebugLog( 'CentralAuth',
@@ -598,7 +759,7 @@ class CentralAuthUser {
 		return false;
 	}
 
-	private static function validateList( $list ) {
+	protected static function validateList( $list ) {
 		$unique = array_unique( $list );
 		$valid = array_intersect( $unique, self::getWikiList() );
 
@@ -645,7 +806,7 @@ class CentralAuthUser {
 
 		foreach ( $valid as $wikiName ) {
 			# Delete the user from the central localuser table
-			$dbcw->delete( self::tableName( 'localuser' ),
+			$dbcw->delete( 'localuser',
 				array(
 					'lu_name'   => $this->mName,
 					'lu_dbname' => $wikiName ),
@@ -670,6 +831,8 @@ class CentralAuthUser {
 		if( in_array( wfWikiID(), $valid ) ) {
 			$this->resetState();
 		}
+		
+		$this->invalidateCache();
 
 		return $status;
 	}
@@ -678,6 +841,7 @@ class CentralAuthUser {
 	 * Delete a global account
 	 */
 	function adminDelete() {
+		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 		# Delete and lock the globaluser row
@@ -689,6 +853,9 @@ class CentralAuthUser {
 		# Delete the localuser rows
 		$dbw->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
 		$dbw->commit();
+		
+		$this->invalidateCache();
+		
 		return Status::newGood();
 	}
 
@@ -698,12 +865,16 @@ class CentralAuthUser {
 	function adminLock() {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
-		$dbw->update( 'globaluser', array( 'gu_locked' => 1 ), array( 'gu_name' => $this->mName ), __METHOD__ );
+		$dbw->update( 'globaluser', array( 'gu_locked' => 1 ),
+			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
 			$dbw->commit();
 			return Status::newFatal( 'centralauth-admin-lock-nonexistent', $this->mName );
 		}
 		$dbw->commit();
+	
+		$this->invalidateCache();
+		
 		return Status::newGood();
 	}
 
@@ -713,12 +884,16 @@ class CentralAuthUser {
 	function adminUnlock() {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
-		$dbw->update( 'globaluser', array( 'gu_locked' => 0 ), array( 'gu_name' => $this->mName ), __METHOD__ );
+		$dbw->update( 'globaluser', array( 'gu_locked' => 0 ),
+			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
 			$dbw->commit();
 			return Status::newFatal( 'centralauth-admin-unlock-nonexistent', $this->mName );
 		}
 		$dbw->commit();
+		
+		$this->invalidateCache();
+		
 		return Status::newGood();
 	}
 
@@ -732,7 +907,7 @@ class CentralAuthUser {
 	 */
 	public function attach( $dbname, $method='new' ) {
 		$dbw = self::getCentralDB();
-		$dbw->insert( self::tableName( 'localuser' ),
+		$dbw->insert( 'localuser',
 			array(
 				'lu_dbname'             => $dbname,
 				'lu_name'               => $this->mName ,
@@ -752,6 +927,8 @@ class CentralAuthUser {
 		if( $dbname == wfWikiID() ) {
 			$this->resetState();
 		}
+		
+		$this->invalidateCache();
 	}
 	
 	/**
@@ -760,8 +937,6 @@ class CentralAuthUser {
 	 * @return mixed: true if login available, or string status, one of: "no user", "locked"
 	 */
 	public function canAuthenticate() {
-		$this->lazyMigrate();
-
 		if( !$this->getId() ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' failed due to missing account" );
@@ -827,7 +1002,7 @@ class CentralAuthUser {
 	 * @param $encrypted  Fully salted and hashed database crypto text from db.
 	 * @return bool true on match.
 	 */
-	private function matchHash( $plaintext, $salt, $encrypted ) {
+	protected function matchHash( $plaintext, $salt, $encrypted ) {
 		$hash = wfEncryptPassword( $salt, $plaintext );
 		if( $encrypted === $hash ) {
 			return true;
@@ -845,7 +1020,7 @@ class CentralAuthUser {
 		return false;
 	}
 
-	private function matchHashes( $passwords, $salt, $encrypted ) {
+	protected function matchHashes( $passwords, $salt, $encrypted ) {
 		foreach( $passwords as $plaintext ) {
 			if( $this->matchHash( $plaintext, $salt, $encrypted ) ) {
 				return true;
@@ -897,7 +1072,7 @@ class CentralAuthUser {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 		$this->lazyImportLocalNames();
-		$dbw->insert( self::tableName( 'localnames' ),
+		$dbw->insert( 'localnames',
 			array(
 				'ln_dbname' => $dbname,
 				'ln_name' => $this->mName ),
@@ -910,7 +1085,7 @@ class CentralAuthUser {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 		$this->lazyImportLocalNames();
-		$dbw->delete( self::tableName( 'localnames' ),
+		$dbw->delete( 'localnames',
 			array(
 				'ln_dbname' => $dbname,
 				'ln_name' => $this->mName ),
@@ -921,7 +1096,7 @@ class CentralAuthUser {
 	function lazyImportLocalNames() {
 		$dbw = self::getCentralDB();
 
-		$result = $dbw->select( self::tableName( 'globalnames' ),
+		$result = $dbw->select( 'globalnames',
 			array( '1' ),
 			array( 'gn_name' => $this->mName ),
 			__METHOD__,
@@ -931,6 +1106,7 @@ class CentralAuthUser {
 
 		if( $known ) {
 			// No need...
+			// Hmm.. what about wikis added after localnames was populated? -werdna
 			return false;
 		}
 
@@ -961,12 +1137,12 @@ class CentralAuthUser {
 
 		$dbw = self::getCentralDB();
 		$dbw->begin();
-		$dbw->insert( self::tableName( 'globalnames' ),
+		$dbw->insert( 'globalnames',
 			array( 'gn_name' => $this->mName ),
 			__METHOD__,
 			array( 'IGNORE' ) );
 		if( $rows ) {
-			$dbw->insert( self::tableName( 'localnames' ),
+			$dbw->insert( 'localnames',
 				$rows,
 				__METHOD__,
 				array( 'IGNORE' ) );
@@ -975,17 +1151,32 @@ class CentralAuthUser {
 
 		return !empty( $rows );
 	}
-
+	
 	/**
-	 * Fetch a list of database where this account has been successfully
-	 * attached.
-	 *
-	 * @return array database name strings
+	 * Load the list of databases where this account has been successfully
+	 * attached
 	 */
-	public function listAttached() {
+	public function loadAttached() {
+		if ( isset( $this->mAttachedArray ) ) {
+			// Already loaded
+			return;
+		}
+		
+		wfDebugLog( 'CentralAuth', "Loading attached wiki list for global user {$this->mName}." );
+		
+		if ( isset( $this->mAttachedList ) ) {
+			wfDebugLog( 'CentralAuth', "-Found in cache." );
+			// We have a list already, probably from the cache.
+			$this->mAttachedArray = explode( "\n", $this->mAttachedList );
+			
+			return;
+		}
+		
+		wfDebugLog( 'CentralAuth', "-Loading from DB" );
+		
 		$dbw = self::getCentralDB();
 
-		$result = $dbw->select( self::tableName( 'localuser' ),
+		$result = $dbw->select( 'localuser',
 			array( 'lu_dbname' ),
 			array( 'lu_name' => $this->mName ),
 			__METHOD__ );
@@ -995,43 +1186,36 @@ class CentralAuthUser {
 			$dbs[] = $row->lu_dbname;
 		}
 		$dbw->freeResult( $result );
-
-		return $dbs;
+		
+		$this->mAttachedArray = $dbs;
+		$this->mAttachedList = implode( "\n", $dbs );
 	}
 
 	/**
-	 * Flooobie!
-	 */
-	private function listLocalDatabases( $attached ) {
-		$dbw = self::getCentralDB();
-
-		$result = $dbw->select( self::tableName( 'localuser' ),
-			array( 'lu_dbname' ),
-			array(
-				'lu_name'     => $this->mName,
-				'lu_attached' => $attached ),
-			__METHOD__ );
-
-		$dbs = array();
-		while( $row = $dbw->fetchObject( $result ) ) {
-			$dbs[] = $row->lu_dbname;
-		}
-		$dbw->freeResult( $result );
-
-		return $dbs;
-	}
-
-	/**
-	 * Fetch a list of database where this account has been successfully
+	 * Fetch a list of databases where this account has been successfully
 	 * attached.
 	 *
 	 * @return array database name strings
+	 */
+	public function listAttached() {
+		$this->loadAttached();
+		
+		return $this->mAttachedArray;
+	}
+
+	/**
+	 * Get information about each local user attached to this account
+	 *
+	 * @return Map of database name to property table with members:
+	 *    dbName                The wiki ID (database name)
+	 *    attachedTimestamp     The MW timestamp when the account was attached
+	 *    attachedMethod        Attach method: password, mail or primary
 	 */
 	public function queryAttached() {
 		$dbw = self::getCentralDB();
 
 		$result = $dbw->select(
-			array( self::tableName( 'localuser' ) ),
+			'localuser',
 			array(
 				'lu_dbname',
 				'lu_attached_timestamp',
@@ -1181,7 +1365,7 @@ class CentralAuthUser {
 	 * @param string $password plaintext
 	 * @return array of strings, salt and hash
 	 */
-	private function saltedPassword( $password ) {
+	protected function saltedPassword( $password ) {
 		$salt = mt_rand( 0, 1000000 );
 		$hash = wfEncryptPassword( $salt, $password );
 		return array( $salt, $hash );
@@ -1195,7 +1379,7 @@ class CentralAuthUser {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
 		$dbw = self::getCentralDB();
-		$dbw->update( self::tableName( 'globaluser' ),
+		$dbw->update( 'globaluser',
 			array(
 				'gu_salt'     => $salt,
 				'gu_password' => $hash,
@@ -1211,11 +1395,13 @@ class CentralAuthUser {
 		// Reset the auth token.
 		$this->resetAuthToken();
 		$this->setGlobalCookies();
+		$this->invalidateCache();
 		return true;
 	}
 	
 	protected function setCookie( $name, $value, $exp=0 ) {
-		global $wgCentralAuthCookiePrefix,$wgCentralAuthCookieDomain,$wgCookieSecure,$wgCookieExpiration, $wgCookieHttpOnly;
+		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieSecure,
+			$wgCookieExpiration, $wgCookieHttpOnly;
 		if( $exp == 0 ) {
 			$exp = time() + $wgCookieExpiration;
 		}
@@ -1322,8 +1508,7 @@ class CentralAuthUser {
 		$this->mAuthToken = wfGenerateToken( $this->getId() );
 		
 		// Save it.
-		$dbw = self::getCentralDB();
-		$dbw->update( self::tableName( 'globaluser' ), array( 'gu_auth_token' => $this->mAuthToken ), array( 'gu_id' => $this->getId() ), __METHOD__ );
+		$this->saveSettings();
 	}
 
 	function saveSettings() {
@@ -1351,5 +1536,147 @@ class CentralAuthUser {
 			), 
 			__METHOD__
 		);
+		
+		$this->invalidateCache();
+	}
+	
+	function getGlobalGroups() {
+		$this->loadGroups();
+		
+		return $this->mGroups;
+	}
+	
+	function getGlobalRights() {
+		$this->loadGroups();
+		
+		return $this->mRights;
+	}
+	
+	function removeFromGlobalGroups( $groups ) {
+		$dbw = self::getCentralDB();
+		
+		# Delete from the DB
+		$dbw->delete( 'global_user_groups', 
+			array( 'gug_user' => $this->getId(), 'gug_group' => $groups ), 
+			__METHOD__ );
+		
+		$this->invalidateCache();
+	}
+	
+	function addToGlobalGroups( $groups ) {
+		$dbw = self::getCentralDB();
+		
+		if (!is_array($groups)) {
+			$groups = array($groups);
+		}
+		
+		$insert_rows = array();
+		foreach( $groups as $group ) {
+			$insert_rows[] = array( 'gug_user' => $this->getId(), 'gug_group' => $group );
+		}
+		
+		# Replace into the DB
+		$dbw->replace( 'global_user_groups', 
+			array( 'gug_user', 'gug_group' ), 
+			$insert_rows, __METHOD__ );
+		
+		$this->invalidateCache();
+	}
+	
+	static function availableGlobalGroups() {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', array(), __METHOD__ );
+		
+		$groups = array();
+		
+		while ($row = $dbr->fetchObject( $res ) )
+			$groups[] = $row->ggp_group;
+			
+		return $groups;
+	}
+	
+	static function globalGroupPermissions( $group ) {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( array( 'global_group_permissions' ),
+			array( 'ggp_permission' ), array( 'ggp_group' => $group), __METHOD__ );
+		
+		$rights = array();
+		
+		while ($row = $dbr->fetchObject( $res ) ) {
+			$rights[] = $row->ggp_permission;
+		}
+		
+		return $rights;
+	}
+	
+	function hasGlobalPermission( $perm ) {
+		$perms = $this->getGlobalRights();
+		
+		return in_array( $perm, $perms );
+	}
+	
+	static function getUsedRights() {
+		$dbr = self::getCentralSlaveDB();
+		
+		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission', 
+			array(), __METHOD__ );
+		
+		$rights = array();
+		
+		while ($row = $dbr->fetchObject( $res ) )
+			$rights[] = $row->ggp_permission;
+			
+		return $rights;
+	}
+	
+	public function invalidateCache() {
+		if (!$this->mDelayInvalidation) {
+			wfDebugLog( 'CentralAuth', "Updating cache for global user {$this->mName}" );
+			
+			// Reload the state
+			$this->loadStateNoCache();
+			
+			// Overwrite the cache.
+			$this->saveToCache();
+		} else {
+			wfDebugLog( 'CentralAuth', "Deferring cache invalidation because we're in a transaction" );
+		}
+	}
+	
+	/**
+	 * For when speed is of the essence (e.g. when batch-purging users after rights changes)
+	 */
+	public function quickInvalidateCache() {
+		global $wgMemc;
+		
+		wfDebugLog( 'CentralAuth', "Quick cache invalidation for global user {$this->mName}" );
+		
+		$wgMemc->delete( $this->getCacheKey() );
+	}
+	
+	/**
+	 * End a "transaction".
+	 * A transaction delays cache invalidation until after
+	 * some operation which would otherwise repeatedly do so.
+	 * Intended to be used for things like migration.
+	 */
+	public function endTransaction() {
+		wfDebugLog( 'CentralAuth', "Finishing CentralAuthUser cache-invalidating transaction" );
+		$this->mDelayInvalidation = false;
+		$this->invalidateCache();
+	}
+	
+	/**
+	 * Start a "transaction".
+	 * A transaction delays cache invalidation until after
+	 * some operation which would otherwise repeatedly do so.
+	 * Intended to be used for things like migration.
+	 */
+	public function startTransaction() {
+		wfDebugLog( 'CentralAuth', "Beginning CentralAuthUser cache-invalidating transaction" );
+		// Delay cache invalidation
+		$this->mDelayInvalidation = 1;
 	}
 }
