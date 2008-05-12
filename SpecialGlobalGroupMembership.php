@@ -16,6 +16,33 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );
 	}
 	
+	/**
+	 * Output a form to allow searching for a user
+	 */
+	function switchForm() {
+		global $wgOut, $wgScript;
+		
+		// Generate wiki selector
+		$selector = new XmlSelect('wpKnownWiki', 'wpKnownWiki', wfWikiId());
+		
+		foreach (CentralAuthUser::getWikiList() as $wiki) {
+			$selector->addOption( $wiki );
+		}
+		
+		$wgOut->addHTML(
+			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
+			Xml::hidden( 'title',  $this->getTitle() ) .
+			Xml::openElement( 'fieldset' ) .
+			Xml::element( 'legend', array(), wfMsg( 'userrights-lookup-user' ) ) .
+			Xml::inputLabel( wfMsg( 'userrights-user-editname' ), 'user', 'username', 30, $this->mTarget ) . ' <br/>' .
+			Xml::label( wfMsgExt('centralauth-globalgrouppermissions-knownwiki', array('parseinline')), 'wpKnownWiki' ) .
+			$selector->getHTML() .
+			Xml::submitButton( wfMsg( 'editusergroup' ) ) .
+			Xml::closeElement( 'fieldset' ) .
+			Xml::closeElement( 'form' ) . "\n"
+		);
+	}
+	
 	function changeableGroups() {
 		global $wgUser;
 		
@@ -35,12 +62,17 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 	
 	function fetchUser( $username ) {
-		global $wgOut, $wgUser;
+		global $wgOut, $wgUser, $wgRequest;
+		
+		$knownwiki = $wgRequest->getVal('wpKnownWiki');
 		
 		$user = CentralAuthGroupMembershipProxy::newFromName( $username );
 	
 		if( !$user ) {
 			$wgOut->addWikiMsg( 'nosuchusershort', $username );
+			return null;
+		} elseif (!$user->attachedOn($knownwiki)) {
+			$wgOut->addWikiMsg( 'centralauth-globalgroupmembership-badknownwiki', $username, $knownwiki );
 			return null;
 		}
 	

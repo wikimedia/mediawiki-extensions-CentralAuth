@@ -60,4 +60,8 @@ class CentralAuthGroupMembershipProxy {
 	function invalidateCache() {
 		$this->mGlobalUser->invalidateCache();
 	}
+	
+	function attachedOn( $wiki ) {
+		return $this->mGlobalUser->attachedOn( $wiki );
+	}
 }

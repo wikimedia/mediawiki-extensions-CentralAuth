@@ -1680,4 +1680,11 @@ class CentralAuthUser {
 		// Delay cache invalidation
 		$this->mDelayInvalidation = 1;
 	}
+	
+	/**
+	 * Check if the user is attached on a given wiki id.
+	 */
+	public function attachedOn( $wiki ) {
+		return $this->exists() && in_array( $wiki, $this->mAttachedArray );
+	}
 }
