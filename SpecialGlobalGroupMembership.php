@@ -36,7 +36,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			Xml::element( 'legend', array(), wfMsg( 'userrights-lookup-user' ) ) .
 			Xml::inputLabel( wfMsg( 'userrights-user-editname' ), 'user', 'username', 30, $this->mTarget ) . ' <br/>' .
 			Xml::label( wfMsgExt('centralauth-globalgrouppermissions-knownwiki', array('parseinline')), 'wpKnownWiki' ) .
-			$selector->getHTML() .
+			$selector->getHTML() . '<br/>' .
 			Xml::submitButton( wfMsg( 'editusergroup' ) ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
