@@ -28,6 +28,7 @@ $result = $dbg->select(
 	array( 'gu_name', 'gu_id' ),
 	array(
 		'gu_name = lu_name',
+		'lu_dbname' => wfWikiId(),
 		'gu_name IN (' . $dbg->makeList( $localStewards ) . ')',
 	),
 	'migrateStewards.php'
