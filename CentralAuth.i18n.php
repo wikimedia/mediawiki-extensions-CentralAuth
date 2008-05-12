@@ -231,7 +231,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-editgroup-reason'		=> 'Reason for change:',
 	'centralauth-editgroup-success'		=> 'Group permissions changed',
 	'centralauth-editgroup-success-text'	=> 'You have successfully changed the group permissions for the $1 group. [[Special:GlobalGroupPermissions|Return to group management]]',
-	'centralauth-globalgrouppermissions-knownwiki' => "Select a wiki on which they have an account: ",
+	'centralauth-globalgrouppermissions-knownwiki' => "Select a wiki on which they have an account:",
 	'centralauth-globalgroupmembership-badknownwiki' => "The global user '''$1''' is not active on the wiki you specified (''$2''). You may be attempting to assign rights to the wrong user!",
 	
 	// User rights
@@ -3021,7 +3021,7 @@ $messages['he'] = array(
 	'centralauth-editgroup-reason'                    => 'סיבה לשינוי:',
 	'centralauth-editgroup-success'                   => 'הרשאות הקבוצה שונו בהצלחה',
 	'centralauth-editgroup-success-text'              => 'שיניתם בהצלחה את הרשאות הקבוצה $1. [[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].',
-	'centralauth-globalgrouppermissions-knownwiki'    => 'אנא בחרו אתר שבו יש להם חשבון משתמש',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'אנא בחרו אתר שבו יש להם חשבון משתמש:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "החשבון הכללי '''$1''' אינו פעיל באתר הוויקי שציינתם ('''$2'''). ייתכן שאתם מנסים לשנות את ההרשאות של המשתמש הלא נכון!",
 	'right-globalgroupmembership'                     => 'עריכת חברות בקבוצות הכלליות',
 	'right-centralauth-admin'                         => 'ניהול חשבונות כלליים',
