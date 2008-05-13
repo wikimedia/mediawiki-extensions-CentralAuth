@@ -1677,10 +1677,14 @@ $messages['de'] = array(
 	'centralauth-editgroup-reason'                    => 'Grund für die Änderung:',
 	'centralauth-editgroup-success'                   => 'Gruppenrechte geändert',
 	'centralauth-editgroup-success-text'              => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
-	'right-globalgroupmembership'                     => 'Mitgliedschaft in globalen Gruppen bearbeiten',
-	'right-centralauth-admin'                         => 'Globale Benutzerkonten administrieren',
-	'right-centralauth-merge'                         => 'Benutzerkonten zusammenführen',
-	'right-globalgrouppermissions'                    => 'Management globaler Gruppen',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Wähle ein Wiki, auf dem sie ein Benutzerkonto haben:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
+
+	// User rights
+	'right-centralauth-admin'      => 'Globale Benutzerkonten administrieren',
+	'right-centralauth-merge'      => 'Benutzerkonten zusammenführen',
+	'right-globalgroupmembership'  => 'Mitgliedschaft in globalen Gruppen bearbeiten',
+	'right-globalgrouppermissions' => 'Management globaler Gruppen',
 );
 
 /** Ewe (Eʋegbe)
@@ -8902,4 +8906,5 @@ $messages['zh-hant'] = array(
 	'centralauth-log-entry-lock'           => '已經鎖定全域賬戶"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => '已經解除鎖定全域賬戶"<nowiki>$1</nowiki>"',
 );
+
 
