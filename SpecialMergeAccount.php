@@ -45,7 +45,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$this->mMergeAction = $wgRequest->getVal( 'wpMergeAction' );
 		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
-		$this->mDatabases = $wgRequest->getArray( 'wpWikis' );
+		$this->mWikiIDs = $wgRequest->getArray( 'wpWikis' );
 		$this->mSessionToken = $wgRequest->getVal( 'wpMergeSessionToken' );
 		$this->mSessionKey = pack( "H*", $wgRequest->getVal( 'wpMergeSessionKey' ) );
 
@@ -374,12 +374,12 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 	}
 
-	function listAttached( $dblist, $methods=array() ) {
-		return $this->listWikis( $dblist, $methods );
+	function listAttached( $wikiList, $methods=array() ) {
+		return $this->listWikis( $wikiList, $methods );
 	}
 
-	function listUnattached( $dblist ) {
-		return $this->listWikis( $dblist );
+	function listUnattached( $wikiList ) {
+		return $this->listWikis( $wikiList );
 	}
 
 	function listWikis( $list, $methods=array() ) {
@@ -402,15 +402,15 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 	}
 
-	function listWikiItem( $dbname, $method ) {
+	function listWikiItem( $wikiID, $method ) {
 		return
-			$this->foreignUserLink( $dbname ) . ( $method ? ' (' . wfMsgHtml( "centralauth-merge-method-$method" ) . ')' : '' );
+			$this->foreignUserLink( $wikiID ) . ( $method ? ' (' . wfMsgHtml( "centralauth-merge-method-$method" ) . ')' : '' );
 	}
 
-	function foreignUserLink( $dbname ) {
-		$wiki = WikiMap::byDatabase( $dbname );
+	function foreignUserLink( $wikiID ) {
+		$wiki = WikiMap::getWiki( $wikiID );
 		if( !$wiki ) {
-			throw new MWException( "no wiki for $dbname" );
+			throw new MWException( "no wiki for $wikiID" );
 		}
 
 		$hostname = $wiki->getDisplayName();

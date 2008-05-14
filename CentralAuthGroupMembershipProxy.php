@@ -11,8 +11,8 @@ class CentralAuthGroupMembershipProxy {
 		$this->mGlobalUser = $user;
 	}
 
-	public static function whoIs( $database, $id ) {
-		$user = self::newFromId( $database, $id );
+	public static function whoIs( $wikiID, $id ) {
+		$user = self::newFromId( $wikiID, $id );
 		if( $user ) {
 			return $user->name;
 		} else {

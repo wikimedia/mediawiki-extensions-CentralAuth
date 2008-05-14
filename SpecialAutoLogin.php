@@ -22,7 +22,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 		$logout = $wgRequest->getBool( 'logout' );
 		
 		if (strlen($token) == 0 && !$logout) {
-			$wgOut->addWikitext( 'AutoLogin' );
+			$wgOut->addWikiText( 'AutoLogin' );
 			return;
 		}
 		
@@ -33,29 +33,29 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 				$centralUser->deleteGlobalCookies();
 			}
 		} else {
-			$data = $wgMemc->get( 'centralauth_logintoken_'.$token );
-			$wgMemc->delete( 'centralauth_logintoken_'.$token );
+			$key = CentralAuthUser::memcKey( 'login-token', $token );
+			$data = $wgMemc->get( $key );
+			$wgMemc->delete( $key );
 			
-			$username = $data['username'];
+			$userName = $data['userName'];
 			$token = $data['token'];
 			$remember = $data['remember'];
 			
 			#die( print_r( $data, true ));
 			
 			if ($data['wiki'] != wfWikiID()) {
-				$wgOut->addWikitext( 'Bad token (wrong wiki)' );
+				$wgOut->addWikiText( 'Bad token (wrong wiki)' );
 				return;
 			}
 			
-			$centralUser = new CentralAuthUser( $username );
-			
+			$centralUser = new CentralAuthUser( $userName );
 			$login_result = $centralUser->authenticateWithToken( $token );
 		
 			if ($login_result == 'ok' && $centralUser->isAttached()) {
 				// Auth OK.
 				$centralUser->setGlobalCookies($remember);
 			} else {
-				$wgOut->addWikitext( 'Bad token - Auth failed' );
+				$wgOut->addWikiText( 'Bad token - Auth failed' );
 				return;
 			}
 		}

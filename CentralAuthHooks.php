@@ -106,19 +106,19 @@ class CentralAuthHooks {
 		
 		$inject_html .= Xml::openElement( 'p' );
 		
-		foreach( $wgCentralAuthAutoLoginWikis as $dbname ) {
+		foreach( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$data = array();
-			$data['username'] = $user->getName();
+			$data['userName'] = $user->getName();
 			$data['token'] = $centralUser->getAuthToken();
 			$data['remember'] = $user->getOption( 'rememberpassword' );
-			$data['wiki'] = $dbname;
+			$data['wiki'] = $wiki;
 			
 			$login_token = wfGenerateToken( $centralUser->getId() );
 			
 			global $wgMemc;
-			$wgMemc->set( 'centralauth_logintoken_'.$login_token, $data, 600 );
+			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $login_token ), $data, 600 );
 			
-			$wiki = WikiMap::byDatabase( $dbname );
+			$wiki = WikiMap::getWiki( $wiki );
 			$url = $wiki->getUrl( 'Special:AutoLogin' );
 			
 			$querystring = 'token=' . $login_token;
@@ -137,7 +137,7 @@ class CentralAuthHooks {
 		return true;
 	}
 	
-	static function onAutoAuthenticate( &$user ) {
+	static function onUserLoadFromSession( $user, &$result ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 		if( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
@@ -151,47 +151,39 @@ class CentralAuthHooks {
 		}
 		
 		if (isset($_COOKIE["{$prefix}User"]) && isset($_COOKIE["{$prefix}Token"])) {
-			list ($username, $token) = array( $_COOKIE["{$prefix}User"], $_COOKIE["{$prefix}Token"] );
-			$centralUser = new CentralAuthUser( $username );
-
-			if ( !$centralUser->authenticateWithToken( $token ) == 'ok' ) {
-				wfDebug( __METHOD__.": token mismatch\n" );
-			} elseif ( !$centralUser->isAttached() ) {
-				wfDebug( __METHOD__.": not attached\n" );
-			} else {
-				// Auth OK.
-				wfDebug( __METHOD__.": logged in from token\n" );
-				$user = self::initSession( $username, $token );
-				$user->centralAuthObj = $centralUser;
-			}
-		} elseif (isset($_COOKIE["{$prefix}Session"])) {
-			$session_id = $_COOKIE["{$prefix}Session"];
-			
-			global $wgMemc;
-			$global_session = $wgMemc->get( "centralauth_session_$session_id" );
-			
-			$token = $global_session['token'];
-			$username = $global_session['user'];
-			
-			if ($global_session['expiry'] < time()) {
-				wfDebug( __METHOD__.": session expired\n" );
-				return true; // Session has expired. Don't let it be logged-in with.
-			}
-			
-			$centralUser = new CentralAuthUser( $username );
-			
-			if ( !$centralUser->authenticateWithToken( $token ) == 'ok' ) {
-				wfDebug( __METHOD__.": token mismatch\n" );
-			} elseif ( !$centralUser->isAttached() && $user->idForName( $username ) ) {
-				wfDebug( __METHOD__.": exists, and not attached\n" );
-			} else {
-				// Auth OK.
-				wfDebug( __METHOD__.": logged in from session\n" );
-				$user = self::initSession( $username, $token );
-				$user->centralAuthObj = $centralUser;
-			}
+			$userName = $_COOKIE["{$prefix}User"];
+			$token = $_COOKIE["{$prefix}Token"];
+		} elseif ( (bool)( $session = CentralAuthUser::getSession() ) ) {
+			$token = $session['token'];
+			$userName = $session['user'];
 		} else {
 			wfDebug( __METHOD__.": no token or session\n" );
+			return true;
+		}
+
+		$centralUser = new CentralAuthUser( $userName );
+		$localId = User::idFromName( $userName );
+		
+		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
+			wfDebug( __METHOD__.": token mismatch\n" );
+		} elseif ( !$centralUser->isAttached() && $localId ) {
+			wfDebug( __METHOD__.": exists, and not attached\n" );
+		} else {
+			if ( !$localId ) {
+				// User does not exist locally, attempt to create it
+				if ( !self::attemptAddUser( $user, $userName ) ) {
+					// Can't create user, give up now
+					return true;
+				}
+			} else {
+				$user->setID( $localId );
+				$user->loadFromId();
+			}
+			// Auth OK.
+			wfDebug( __METHOD__.": logged in from session\n" );
+			self::initSession( $user, $token );
+			$user->centralAuthObj = $centralUser;
+			$result = true;
 		}
 		
 		return true;
@@ -222,8 +214,8 @@ class CentralAuthHooks {
 		// Generate the images
 		$inject_html .= Xml::openElement( 'p' );
 		
-		foreach( $wgCentralAuthAutoLoginWikis as $dbname ) {
-			$wiki = WikiMap::byDatabase( $dbname );
+		foreach( $wgCentralAuthAutoLoginWikis as $wiki ) {
+			$wiki = WikiMap::getWiki( $wiki );
 			$url = $wiki->getUrl( 'Special:AutoLogin' );
 			
 			if (strpos($url, '?') > 0) {
@@ -290,36 +282,69 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * Helper function for onAutoAuthenticate
+	 * Helper function for onUserLoadFromSession
 	 */
-	static function initSession( $username, $token ) {
-		$user = User::newFromName( $username );
+	static function initSession( $user, $token ) {
 		global $wgAuth;
-		
-		if ($wgAuth->autoCreate() && $user->getId() == 0) {
-			// User does not already exist locally. Create them :)
-			$user->addToDatabase();
 
-			$user->setToken();
-
-			$wgAuth->initUser( $user, true );
-			$wgAuth->updateUser( $user );
-	
-			# Update user count
-			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
-			$ssUpdate->doUpdate();
-		}
-		
+		$userName = $user->getName();
 		wfSetupSession();
 		if ($token != @$_SESSION['globalloggedin'] ) {
 			$_SESSION['globalloggedin'] = $token;
 			$user->invalidateCache();
-			wfDebug( 'centralauth', "Initialising session for $username with token $token." );
+			wfDebug( __METHOD__.": Initialising session for $userName with token $token.\n" );
 		} else {
-			wfDebug( 'centralauth', "Session already initialised for $username with token $token." );
+			wfDebug( __METHOD__.": Session already initialised for $userName with token $token.\n" );
+		}
+	}
+
+	/**
+	 * Attempt to add a user to the database
+	 * Does the required authentication checks and updates for auto-creation
+	 * @param User $user
+	 * @return bool Success
+	 */
+	static function attemptAddUser( $user, $userName ) {
+		global $wgAuth;
+		// Denied by configuration?
+		if ( !$wgAuth->autoCreate() ) {
+			wfDebug( __METHOD__.": denied by configuration\n" );
+			return false;
 		}
 
-		return $user;
+		// Is the user blacklisted by the session?
+		$session = CentralAuthUser::getSession();
+		if ( in_array( wfWikiID(), $session['auto-create-blacklist'] ) ) {
+			wfDebug( __METHOD__.": blacklisted by session\n" );
+			return false;
+		}
+
+		// Is the user blocked?
+		if ( !$user->isAllowedToCreateAccount() ) {
+			// Blacklist the user to avoid repeated DB queries subsequently
+			// First load the session again in case it changed while the above DB query was in progress
+			wfDebug( __METHOD__.": user is blocked from this wiki, blacklisting\n" );
+			$session = CentralAuthUser::getSession();
+			$session['auto-create-blacklist'][] = wfWikiID();
+			CentralAuthUser::setSession( $session );
+			return false;
+		}
+
+		// Checks passed, create the user
+		wfDebug( __METHOD__.": creating new user\n" );
+		$user->loadDefaults( $userName );
+		$user->addToDatabase();
+
+		$wgAuth->initUser( $user, true );
+		$wgAuth->updateUser( $user );
+
+		# Update user count
+		$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
+		$ssUpdate->doUpdate();
+
+		# Notify hooks
+		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+		return true;
 	}
 
 	static function onUserGetEmail( $user, &$email ) {

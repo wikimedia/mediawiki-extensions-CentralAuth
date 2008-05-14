@@ -5,7 +5,7 @@
  */
 
 class WikiMap {
-	static function byDatabase( $dbname ) {
+	static function getWiki( $wikiID ) {
 		global $wgConf, $IP;
 		static $initialiseSettingsDone = false;
 
@@ -17,11 +17,11 @@ class WikiMap {
 			}
 		}
 
-		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
+		list( $major, $minor ) = $wgConf->siteFromDB( $wikiID );
 		if( isset( $major ) ) {
-			$server = $wgConf->get( 'wgServer', $dbname, $major,
+			$server = $wgConf->get( 'wgServer', $wikiID, $major,
 				array( 'lang' => $minor, 'site' => $major ) );
-			$path = $wgConf->get( 'wgArticlePath', $dbname, $major,
+			$path = $wgConf->get( 'wgArticlePath', $wikiID, $major,
 				array( 'lang' => $minor, 'site' => $major ) );
 			return new WikiReference( $major, $minor, $server, $path );
 		} else {

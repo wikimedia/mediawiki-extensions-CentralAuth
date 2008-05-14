@@ -39,7 +39,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mPosted = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
 		$this->mPassword = $wgRequest->getVal( 'wpPassword' );
-		$this->mDatabases = (array)$wgRequest->getArray( 'wpWikis' );
+		$this->mWikis = (array)$wgRequest->getArray( 'wpWikis' );
 
 		// Possible demo states
 
@@ -72,7 +72,7 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 				$this->showError( 'centralauth-token-mismatch' );
 			} elseif( $this->mMethod == 'unmerge' ) {
-				$status = $globalUser->adminUnattach( $this->mDatabases );
+				$status = $globalUser->adminUnattach( $this->mWikis );
 				if ( !$status->isGood() ) {
 					$this->showStatusError( $status->getWikiText() );
 				} else {
@@ -235,7 +235,7 @@ class SpecialCentralAuth extends SpecialPage {
 		ksort( $list );
 		$s = '<ul>';
 		foreach ( $list as $row ) {
-			$s .= '<li>' . $this->foreignUserLink( $row['dbName'] ) . "</li>\n";
+			$s .= '<li>' . $this->foreignUserLink( $row['wiki'] ) . "</li>\n";
 		}
 		$s .= '</ul>';
 		return $s;
@@ -275,8 +275,8 @@ class SpecialCentralAuth extends SpecialPage {
 		global $wgLang;
 		return $this->tableRow( 'td',
 			array(
-				$this->adminCheck( $row['dbName'] ),
-				$this->foreignUserLink( $row['dbName'] ),
+				$this->adminCheck( $row['wiki'] ),
+				$this->foreignUserLink( $row['wiki'] ),
 				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ),
 				htmlspecialchars( wfMsg( 'centralauth-merge-method-' . $row['attachedMethod'] ) ),
 			)
@@ -289,10 +289,10 @@ class SpecialCentralAuth extends SpecialPage {
 			"</$element></tr>";
 	}
 
-	function foreignUserLink( $dbname ) {
-		$wiki = WikiMap::byDatabase( $dbname );
+	function foreignUserLink( $wikiID ) {
+		$wiki = WikiMap::getWiki( $wikiID );
 		if( !$wiki ) {
-			throw new MWException( "no wiki for $dbname" );
+			throw new MWException( "no wiki for $wikiID" );
 		}
 
 		$hostname = $wiki->getDisplayName();
@@ -308,9 +308,9 @@ class SpecialCentralAuth extends SpecialPage {
 			$hostname );
 	}
 
-	function adminCheck( $dbname ) {
+	function adminCheck( $wikiID ) {
 		return
-			Xml::check( 'wpWikis[]', false, array( 'value' => $dbname ) );
+			Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
 	function showDeleteForm() {
