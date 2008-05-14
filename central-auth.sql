@@ -28,11 +28,11 @@ CREATE TABLE globalnames (
 -- only existing databases not yet migrated have to be loaded.
 --
 CREATE TABLE localnames (
-  ln_wiki varchar(255) binary not null,
+  ln_dbname varchar(255) binary not null,
   ln_name varchar(255) binary not null,
 
-  primary key (ln_wiki, ln_name),
-  key (ln_name, ln_wiki)
+  primary key (ln_dbname, ln_name),
+  key (ln_name, ln_dbname)
 ) /*$wgDBTableOptions*/;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE globaluser (
 -- All local DBs will be swept on an opt-in check event.
 --
 CREATE TABLE localuser (
-  lu_wiki varchar(255) binary not null,
+  lu_dbname varchar(255) binary not null,
   lu_name varchar(255) binary not null,
 
   -- Migration status/logging information, to help diagnose issues
@@ -110,8 +110,8 @@ CREATE TABLE localuser (
     'new',
     'login'),
 
-  primary key (lu_wiki, lu_name),
-  key (lu_name, lu_wiki)
+  primary key (lu_dbname, lu_name),
+  key (lu_name, lu_dbname)
 ) /*$wgDBTableOptions*/;
 
 
