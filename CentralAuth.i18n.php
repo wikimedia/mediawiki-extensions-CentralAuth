@@ -583,6 +583,8 @@ $messages['ar'] = array(
 	'centralauth-editgroup-reason'                    => 'السبب للتغيير:',
 	'centralauth-editgroup-success'                   => 'سماحات المجموعة تم تغييرها',
 	'centralauth-editgroup-success-text'              => 'أنت غيرت بنجاح سماحات المجموعة للمجموعة $1. [[Special:GlobalGroupPermissions|الرجوع إلى إدارة المجموعة]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'اختر ويكي يمتلكون حسابا فيها:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "المستخدم العام '''$1''' ليس نشطا على الويكي الذي حددته (''$2''). ربما تكون تحاول إعطاء صلاحيات للمستخدم الخاطئ!",
 	'right-globalgroupmembership'                     => 'تعديل العضوية للمجموعات العامة',
 	'right-centralauth-admin'                         => 'إدارة الحسابات العامة',
 	'right-centralauth-merge'                         => 'دمج حسابهم',
@@ -1911,8 +1913,8 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 	'centralauth-finish-title'                        => 'Finu unuigadon',
 	'centralauth-finish-text'                         => 'Se tiuj kontoj ja apartenas la vi, vi povas finfari la ensalutunuigan proceson simple tajpante la pasvortojn por la aliaj kontoj ĉi tie:',
 	'centralauth-finish-password'                     => 'Pasvorto:',
-	'centralauth-finish-login'                        => 'Ensalutu',
-	'centralauth-finish-send-confirmation'            => 'Retpoŝtu pasvorton',
+	'centralauth-finish-login'                        => 'Ensaluti',
+	'centralauth-finish-send-confirmation'            => 'Retpoŝti pasvorton',
 	'centralauth-finish-problems'                     => 'Ĉu vi renkontas problemon, aŭ ne posedante tiujn aliajn kontojn? [[meta:Help:Unified login/eo|Kiel trovi helpon]]...',
 	'centralauth-finish-noconfirms'                   => 'Neniu konto povis esti konfirmita uzante ĉi tiun pasvorton.',
 	'centralauth-finish-incomplete'                   => 'Pluraj kontoj estis unuigitaj uzante ĉi tiun pasvorton.
@@ -2291,7 +2293,6 @@ $messages['fa'] = array(
  * @author Nike
  * @author Crt
  * @author Cimon Avaro
- * @author M.M.S.
  */
 $messages['fi'] = array(
 	'mergeaccount'                         => 'Käyttäjätunnusten yhdistämisen tila',
@@ -2437,7 +2438,7 @@ Ennen yhdistämistä luotujen paikallisten tunnuksien salasanat palautuvat yhdis
 	'centralauth-log-entry-delete'         => 'poisti yhdistetyn käyttäjätunnuksen <nowiki>$1</nowiki>',
 	'centralauth-log-entry-lock'           => 'lukitsi yhdistetyn käyttäjätunnuksen <nowiki>$1</nowiki>',
 	'centralauth-log-entry-unlock'         => 'avasi yhdistetyn käyttäjätunnuksen <nowiki>$1</nowiki>',
-	'centralauth-editgroup-subtitle'       => 'Muokataan $1',
+	'centralauth-editgroup-subtitle'       => 'Muokataan ryhmää $1',
 	'centralauth-editgroup-display-edit'   => '$2 ([[MediaWiki:Group-$1|muokkaa]])',
 	'centralauth-editgroup-member-edit'    => '$2 ([[MediaWiki:Group-$1-member|muokkaa]])',
 );
@@ -2844,6 +2845,7 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-rightslog-name'                      => 'Rexistro de dereitos globais',
 	'centralauth-rightslog-entry-usergroups'          => 'cambiou o grupo global ao que pertence $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms'          => 'cambiou os permisos do grupo de $1 de $2 a $3',
+	'globalgrouppermissions'                          => 'Xestión dos grupos globais',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Ver e editar os permisos]])',
 	'centralauth-existinggroup-legend'                => 'Grupos existentes',
 	'centralauth-newgroup-legend'                     => 'Crear un novo grupo',
@@ -2856,11 +2858,13 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|editar]])',
 	'centralauth-editgroup-members'                   => 'Listaxe de membros:',
 	'centralauth-editgroup-members-link'              => '[[Special:Listusers/$1|Listaxe dos usuarios con detreitos de $2]]',
+	'centralauth-editgroup-perms'                     => 'Permisos asignados:',
 	'centralauth-editgroup-reason'                    => 'Motivo para o cambio:',
 	'centralauth-editgroup-success'                   => 'Os permisos do grupo cambiaron',
 	'centralauth-editgroup-success-text'              => 'Cambiou con éxito os permisos do grupo para o grupo $1. [[Special:GlobalGroupPermissions|Voltar ao xestor dos grupos]]',
 	'right-centralauth-admin'                         => 'Administrar contas globais',
 	'right-centralauth-merge'                         => 'Fusionar as súas contas',
+	'right-globalgrouppermissions'                    => 'Xestionar os grupos globais',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -4513,6 +4517,7 @@ $messages['km'] = array(
 
 /** Korean (한국어)
  * @author ToePeu
+ * @author Ficell
  */
 $messages['ko'] = array(
 	'centralauth-desc'                    => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
@@ -4521,13 +4526,11 @@ $messages['ko'] = array(
 	'centralauth-merge-notlogged'         => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 로그인]</span>해 주세요.',
 	'centralauth-merge-welcome'           => "'''당신의 계정은 위키미디어의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
-계정 옮기기를 선택하면 같은 이름과 암호로 모든 언어의 모든 위키미디어의 프로젝트에 로그인할 수 있습니다.
-[http://commons.wikimedia.org/ 위키미디어 공용]에 파일올리기 같은 공유되는 프로젝트에서 쉽게 작업할 수 있고 서로 다른 프로젝트에서 같은 이름을 쓰는 사용자 사이의 혼란이나 갈등을 피할 수 있습니다.
+계정 옮기기를 선택하면 같은 이름과 암호로 모든 언어의 모든 위키미디어의 프로젝트에 로그인할 수 있습니다. [http://commons.wikimedia.org/ 위키미디어 공용]에 파일올리기 같은 공동 프로젝트에서 쉽게 작업할 수 있고 서로 다른 프로젝트에서 같은 이름을 쓰는 사용자 사이의 혼란이나 갈등을 피할 수 있습니다.
 
-If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
+만약 다른 누군가가 당신의 사용자 이름을 사용하고 있었다면 이것을 막을 수는 없습니다. 하지만 나중에 그 문제를 해소할 동기가 될 수 있습니다.",
 	'centralauth-merge-step1-title'       => '계정 통합 시작',
-	'centralauth-merge-step1-detail'      => '위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
-모든 것을 확인하기 전까지 어떤 일도 일어나지 않습니다.',
+	'centralauth-merge-step1-detail'      => '위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다. 모든 것을 확인하기 전까지 어떤 일도 일어나지 않습니다.',
 	'centralauth-merge-step1-submit'      => '로그인 정보 확인',
 	'centralauth-merge-step2-title'       => '더 많은 계정 확인',
 	'centralauth-merge-step2-submit'      => '로그인 정보 확인',
@@ -4541,21 +4544,27 @@ If someone else has already taken your username on another site this will not di
 	'centralauth-merge-step3-title'       => '통합 계정 만들기',
 	'centralauth-merge-step3-detail'      => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
 	'centralauth-merge-step3-submit'      => '계정 합치기',
-	'centralauth-complete'                => '계정 통합 완료.',
+	'centralauth-complete'                => '계정 통합이 완료되었습니다!',
 	'centralauth-incomplete'              => '계정 통합 미완료',
 	'centralauth-complete-text'           => '이제 모든 위키미디어 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
 	'centralauth-incomplete-text'         => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 위키미디어 위키에 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
 	'centralauth-readmore-text'           => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
+	'centralauth-list-home-title'         => '주 위키',
+	'centralauth-list-home-dryrun'        => '통합 계정의 비밀번호와 이메일 주소는 이 위키에서 사용되고 있는 것으로 설정됩니다. 나중에 주 위키 설정을 바꿀 수 있습니다.',
+	'centralauth-list-attached-title'     => '묶이는 계정',
+	'centralauth-list-attached'           => '아래의 위키에 있는 "$1" 계정이 자동으로 통합 계정에 묶여졌습니다.',
+	'centralauth-list-attached-dryrun'    => '아래의 위키에 있는 "$1" 계정은 자동으로 통합 계정에 묶여집니다.',
 	'centralauth-foreign-link'            => '$2의 $1 사용자',
+	'centralauth-merge-method-primary'    => '주 위키',
 	'centralauth-merge-method-empty'      => '기여 없음',
 	'centralauth-merge-method-mail'       => '이메일로 확인',
-	'centralauth-merge-method-password'   => '암호로 확인',
+	'centralauth-merge-method-password'   => '비밀번호로 확인됨',
 	'centralauth-merge-method-admin'      => '통합된 계정 관리',
 	'centralauth-merge-method-new'        => '새 계정',
 	'centralauth-merge-method-login'      => '로그인으로 확인',
-	'centralauth-finish-password'         => '암호:',
+	'centralauth-finish-password'         => '비밀번호:',
 	'centralauth-finish-login'            => '로그인',
 	'centralauth-finish-noconfirms'       => '이 암호를 사용하는 계정이 없습니다.',
 	'centralauth-finish-incomplete'       => '계정 중 몇개는 이 암호로 확인되었습니다.
@@ -4570,6 +4579,8 @@ If someone else has already taken your username on another site this will not di
 	'centralauth-admin-no'                => '아니오',
 	'centralauth-admin-delete-title'      => '계정 지우기',
 	'centralauth-admin-reason'            => '이유:',
+	'centralauth-listusers-attached'      => '로컬에 존재',
+	'centralauth-listusers-nolocal'       => '묶이지 않았거나 로컬에 존재하지 않음',
 	'centralauth-seconds-ago'             => '$1초 전',
 	'centralauth-minutes-ago'             => '$1분 전',
 	'centralauth-hours-ago'               => '$1시간 전',
@@ -5794,6 +5805,8 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-editgroup-reason'                    => 'Endringsårsak:',
 	'centralauth-editgroup-success'                   => 'Gruppetillatelser endret',
 	'centralauth-editgroup-success-text'              => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermission|Tilbake til gruppebehandling]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Velg en wiki der vedkommende har en konto:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "Den globale brukeren '''$1''' er ikke aktiv på det angitte prosjektet (''$2''). Det er mulig at du prøver å gi rettighetene til gal bruker.",
 	'right-globalgroupmembership'                     => 'Rediger medlemskap i globale grupper',
 	'right-centralauth-admin'                         => 'Administrer globale kontoer',
 	'right-centralauth-merge'                         => 'Slå sammen kontoene deres',
