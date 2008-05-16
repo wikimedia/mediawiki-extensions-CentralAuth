@@ -30,7 +30,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			array( 
 				'gu_name' => $names,
 				'lu_name=gu_name',
-				'lu_dbname' => wfWikiID()
+				'lu_wiki' => wfWikiID()
 			), __METHOD__ );
 		$this->globalData = array();
 		foreach ( $caRes as $row ) {

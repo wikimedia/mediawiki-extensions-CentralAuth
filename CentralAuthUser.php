@@ -144,10 +144,10 @@ class CentralAuthUser {
 		$localuser = $dbr->tableName( 'localuser' );
 
 		$sql =
-			"SELECT gu_id, lu_dbname, gu_salt, gu_password,gu_auth_token, " .
+			"SELECT gu_id, lu_wiki, gu_salt, gu_password,gu_auth_token, " .
 				"gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated " .
 			"FROM $globaluser " .
-			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_dbname=? " .
+			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_wiki=? " .
 			"WHERE gu_name=?";
 		$result = $dbr->safeQuery( $sql, wfWikiID(), $this->mName );
 		$row = $dbr->fetchObject( $result );
@@ -197,7 +197,7 @@ class CentralAuthUser {
 	protected function loadFromRow( $row, $fromMaster = false ) {
 		if( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
-			$this->mIsAttached = ($row->lu_dbname !== null);
+			$this->mIsAttached = ($row->lu_wiki !== null);
 			$this->mSalt = $row->gu_salt;
 			$this->mPassword = $row->gu_password;
 			$this->mAuthToken = $row->gu_auth_token;
@@ -427,7 +427,7 @@ class CentralAuthUser {
 			$tuples = array();
 			foreach( $users as $name ) {
 				$tuples[] = array(
-					'ln_dbname'   => $wiki,
+					'ln_wiki'   => $wiki,
 					'ln_name'     => $name );
 			}
 			$dbw->insert(
@@ -809,7 +809,7 @@ class CentralAuthUser {
 			$dbcw->delete( 'localuser',
 				array(
 					'lu_name'   => $this->mName,
-					'lu_dbname' => $wikiName ),
+					'lu_wiki' => $wikiName ),
 				__METHOD__ );
 			if ( !$dbcw->affectedRows() ) {
 				$wiki = WikiMap::getWiki( $wikiName );
@@ -909,7 +909,7 @@ class CentralAuthUser {
 		$dbw = self::getCentralDB();
 		$dbw->insert( 'localuser',
 			array(
-				'lu_dbname'             => $wikiID,
+				'lu_wiki'             => $wikiID,
 				'lu_name'               => $this->mName ,
 				'lu_attached_timestamp' => $dbw->timestamp(),
 				'lu_attached_method'    => $method ),
@@ -1051,17 +1051,17 @@ class CentralAuthUser {
 		$dbw = self::getCentralDB();
 
 		$sql = "
-		SELECT ln_dbname
+		SELECT ln_wiki
 		FROM localnames
 		LEFT OUTER JOIN localuser
-			ON ln_dbname=lu_dbname AND ln_name=lu_name
+			ON ln_wiki=lu_wiki AND ln_name=lu_name
 		WHERE ln_name=? AND lu_name IS NULL
 		";
 		$result = $dbw->safeQuery( $sql, $this->mName );
 
 		$dbs = array();
 		while( $row = $dbw->fetchObject( $result ) ) {
-			$dbs[] = $row->ln_dbname;
+			$dbs[] = $row->ln_wiki;
 		}
 		$dbw->freeResult( $result );
 
@@ -1074,7 +1074,7 @@ class CentralAuthUser {
 		$this->lazyImportLocalNames();
 		$dbw->insert( 'localnames',
 			array(
-				'ln_dbname' => $wikiID,
+				'ln_wiki' => $wikiID,
 				'ln_name' => $this->mName ),
 			__METHOD__,
 			array( 'IGNORE' ) );
@@ -1087,7 +1087,7 @@ class CentralAuthUser {
 		$this->lazyImportLocalNames();
 		$dbw->delete( 'localnames',
 			array(
-				'ln_dbname' => $wikiID,
+				'ln_wiki' => $wikiID,
 				'ln_name' => $this->mName ),
 			__METHOD__ );
 		$dbw->commit();
@@ -1129,7 +1129,7 @@ class CentralAuthUser {
 				__METHOD__ );
 			if( $id ) {
 				$rows[] = array(
-					'ln_dbname' => $wikiID,
+					'ln_wiki' => $wikiID,
 					'ln_name' => $this->mName );
 			}
 			$lb->reuseConnection( $dbr );
@@ -1177,13 +1177,13 @@ class CentralAuthUser {
 		$dbw = self::getCentralDB();
 
 		$result = $dbw->select( 'localuser',
-			array( 'lu_dbname' ),
+			array( 'lu_wiki' ),
 			array( 'lu_name' => $this->mName ),
 			__METHOD__ );
 
 		$wikis = array();
 		while( $row = $result->fetchObject() ) {
-			$wikis[] = $row->lu_dbname;
+			$wikis[] = $row->lu_wiki;
 		}
 		$dbw->freeResult( $result );
 		
@@ -1217,7 +1217,7 @@ class CentralAuthUser {
 		$result = $dbw->select(
 			'localuser',
 			array(
-				'lu_dbname',
+				'lu_wiki',
 				'lu_attached_timestamp',
 				'lu_attached_method' ),
 			array(
@@ -1226,8 +1226,8 @@ class CentralAuthUser {
 
 		$wikis = array();
 		while( $row = $dbw->fetchObject( $result ) ) {
-			$wikis[$row->lu_dbname] = array(
-				'wiki' => $row->lu_dbname,
+			$wikis[$row->lu_wiki] = array(
+				'wiki' => $row->lu_wiki,
 				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
 					 $row->lu_attached_timestamp ),
 				'attachedMethod' => $row->lu_attached_method,
