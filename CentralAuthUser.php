@@ -1729,6 +1729,7 @@ class CentralAuthUser {
 			return;
 		}
 		$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
+		wfDebug( __METHOD__.": Deleting session $id\n" );
 		$key = self::memcKey( 'session', $id );
 		$wgMemc->delete( $key );
 	}

@@ -320,7 +320,8 @@ class CentralAuthHooks {
 		}
 
 		// Is the user blocked?
-		if ( !$user->isAllowedToCreateAccount() ) {
+		$anon = new User;
+		if ( !$anon->isAllowedToCreateAccount() ) {
 			// Blacklist the user to avoid repeated DB queries subsequently
 			// First load the session again in case it changed while the above DB query was in progress
 			wfDebug( __METHOD__.": user is blocked from this wiki, blacklisting\n" );
