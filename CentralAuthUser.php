@@ -267,7 +267,11 @@ class CentralAuthUser {
 		
 		$obj = array();
 		foreach( self::$mCacheVars as $var ) {
-			$obj[$var] = $this->$var;
+			if( isset( $this->$var ) ) {
+				$obj[$var] = $this->$var;
+			} else {
+				$obj[$var] = null;
+			}
 		}
 		
 		return $obj;
