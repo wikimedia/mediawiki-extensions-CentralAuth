@@ -2027,6 +2027,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-editgroup-reason'                    => 'Kialo por ŝanĝo:',
 	'centralauth-editgroup-success'                   => 'Rajtoj de grupoj ŝanĝis',
 	'centralauth-editgroup-success-text'              => 'Vi sukcese ŝanĝis la gruprajtojn por la grupo $1. [[Special:GlobalGroupPermissions|Reiri al Grupadministrado]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Selektu vikion kie la uzanto havas konton:',
 	'right-globalgroupmembership'                     => 'Redakti membrecon al ĝeneralaj grupoj',
 	'right-centralauth-admin'                         => 'Administri ĝeneralajn kontojn',
 	'right-centralauth-merge'                         => 'Kunfandi la konton',
@@ -5921,7 +5922,7 @@ Se una autra persona a lo meteis nom d’utilizaire que vos sus un autre projèc
 	'centralauth-merge-step1-title'                   => 'Començar lo procediment de fusion dels comptes',
 	'centralauth-merge-step1-detail'                  => 'Anam comparar vòstra adreça e-mail e vòstre senhal amb los dels comptes omonims suls autres wikis, e verificar que correspòndon. Cap de cambiament serà pas efectuat tant qu’aurètz pas balhat vòstre acòrdi.',
 	'centralauth-merge-step1-submit'                  => 'Confirmar las entresenhas',
-	'centralauth-merge-step2-title'                   => 'Inclure d’autres comptes',
+	'centralauth-merge-step2-title'                   => 'Enclure d’autres comptes',
 	'centralauth-merge-step2-detail'                  => 'Cèrts dels comptes an pas pogut èsser ratachats automaticament a vòstre compte principal. Se aquestes comptes vos apartenon, confirmatz que son de vos en dintrant lo senhal correspondent.',
 	'centralauth-merge-step2-submit'                  => 'Confirmar las entresenhas',
 	'centralauth-merge-dryrun-complete'               => 'Totes los comptes existent pòdon èsser unificats automaticament !
