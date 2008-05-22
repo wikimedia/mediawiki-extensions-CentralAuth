@@ -2296,6 +2296,8 @@ $messages['fa'] = array(
 	'centralauth-editgroup-success'                   => 'اختیارات گروه‌ها تغییر یافت',
 	'centralauth-editgroup-success-text'              => 'شما توانستید اختیارات گروه $1 را با موفقیت تغییر دهید.
 [[Special:GlobalGroupPermissions|به مدیریت گروه‌ها بازگردید]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'یک ویکی که در آن حساب دارید را انتخاب کنید:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "حساب مشترک '''$1''' در ویکی مورد نظر شما ('''$2''') فعال نیست. شاید شما در حال اختصاص دادن اختیارات به کاربر اشتباهی هستید!",
 	'right-globalgroupmembership'                     => 'ویرایش عضویت در گروه‌های سراسری',
 	'right-centralauth-admin'                         => 'مدیریت حساب‌های مشترک',
 	'right-centralauth-merge'                         => 'ادغام حساب‌های کاربری آن‌ها',
