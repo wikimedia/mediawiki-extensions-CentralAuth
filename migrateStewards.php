@@ -28,7 +28,7 @@ $result = $dbg->select(
 	array( 'gu_name', 'gu_id' ),
 	array(
 		'gu_name = lu_name',
-		'lu_dbname' => wfWikiId(),
+		'lu_wiki' => wfWikiId(),
 		'gu_name IN (' . $dbg->makeList( $localStewards ) . ')',
 	),
 	'migrateStewards.php'
@@ -39,7 +39,11 @@ while( $row = $dbl->fetchObject( $result ) ) {
 
 echo "Fetched " . count( $localStewards ) . " SULed stewards... Adding them in group\n";
 foreach( $globalStewards as $user => $id ) {
-	$dbg->insert( 'global_user_groups', array( 'gug_user' => $id, 'gug_group' => 'steward' ), 'migrateStewards.php' );
+	$dbg->insert( 'global_user_groups',
+		array(
+			'gug_user' => $id,
+			'gug_group' => 'steward' ),
+		'migrateStewards.php' );
 	echo "Added {$user}\n";
 	
 	$u = new CentralAuthUser( $user );
