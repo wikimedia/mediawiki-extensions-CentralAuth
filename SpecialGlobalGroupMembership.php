@@ -20,10 +20,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * Output a form to allow searching for a user
 	 */
 	function switchForm() {
-		global $wgOut, $wgScript;
+		global $wgOut, $wgScript, $wgRequest;
+		
+		$knownwiki = $wgRequest->getVal( 'wpKnownWiki' );
+		$knownwiki = $knownwiki ? $knownwiki : wfWikiId();
 		
 		// Generate wiki selector
-		$selector = new XmlSelect('wpKnownWiki', 'wpKnownWiki', wfWikiId());
+		$selector = new XmlSelect('wpKnownWiki', 'wpKnownWiki', $knownwiki);
 		
 		foreach (CentralAuthUser::getWikiList() as $wiki) {
 			$selector->addOption( $wiki );
@@ -71,7 +74,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		if( !$user ) {
 			$wgOut->addWikiMsg( 'nosuchusershort', $username );
 			return null;
-		} elseif (!$user->attachedOn($knownwiki)) {
+		} elseif (!$wgRequest->getCheck( 'saveusergroups' ) && !$user->attachedOn($knownwiki)) {
 			$wgOut->addWikiMsg( 'centralauth-globalgroupmembership-badknownwiki', $username, $knownwiki );
 			return null;
 		}
