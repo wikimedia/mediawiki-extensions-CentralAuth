@@ -1474,6 +1474,7 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-editgroup-reason'                    => 'Důvod změny:',
 	'centralauth-editgroup-success'                   => 'Oprávnění skupiny byla změněna',
 	'centralauth-editgroup-success-text'              => 'Úspěšně jste změnili oprávnění skupiny pro skupinu $1. [[Speciální:GlobalGroupPermissions|Návrat na správu skupin]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Vyberte wiki, na níž mají účet:',
 	'right-globalgroupmembership'                     => 'Upravování členství v globálních skupinách',
 	'right-centralauth-admin'                         => 'Spravování globálních účtů',
 	'right-centralauth-merge'                         => 'Slučování jejich účtů',
@@ -1878,8 +1879,8 @@ Se iu alia jam prenis vian uzanto-nomon sur alia paĝaro, tio donos al vi ŝanco
 	'centralauth-merge-step1-title'                   => 'Komenci salutnoman unuigadon.',
 	'centralauth-merge-step1-detail'                  => 'Via pasvorto kaj registrita retadreso estos kontrolitaj kompare kun la kontoj sur aliaj vikioj por konfirmi ke ili korespondas. 
 Neniu ŝanĝo estos farita ĝis vi konfirmos ke ĉio aspektas en ordo.',
-	'centralauth-merge-step1-submit'                  => 'Konfirmu salutadan informon',
-	'centralauth-merge-step2-title'                   => 'Konfirmu pluajn kontojn',
+	'centralauth-merge-step1-submit'                  => 'Konfirmi salutadan informon',
+	'centralauth-merge-step2-title'                   => 'Konfirmi pluajn kontojn',
 	'centralauth-merge-step2-detail'                  => 'Iuj el la kontoj ne povis esti aŭtomate ligitaj al la menciita hejma vikio. 
 Se ĉi tiuj kontoj apartenas al vi, vi povas konfirmi, ke ili estas viaj provizante la pasvorton por ili.',
 	'centralauth-merge-step2-submit'                  => 'Konfirmu salutinformon',
@@ -1894,9 +1895,9 @@ Neniu sxanĝo estis jam farita al viaj kontoj.',
 	'centralauth-merge-dryrun-home'                   => 'La migrada sistemo ne povis konfirmi ke vi estas la posedanto de la konto en la hejma vikio por via saltunomo. 
 
 Alia vikio estis difinita kiel hejma konto por via salutnomo; sekvu la ligilon suban kaj ensalutu tie por finfari la migrigon de via konto.',
-	'centralauth-merge-step3-title'                   => 'Kreu unuigitan konton',
+	'centralauth-merge-step3-title'                   => 'Krei unuigitan konton',
 	'centralauth-merge-step3-detail'                  => 'Vi estas preta por krei vian unuigitan konton kun la jenaj ligitaj vikioj:',
-	'centralauth-merge-step3-submit'                  => 'Unuigu kontojn',
+	'centralauth-merge-step3-submit'                  => 'Unuigi kontojn',
 	'centralauth-complete'                            => 'Unuigado de salutnomoj estas finita!',
 	'centralauth-incomplete'                          => 'Unuigado de salutnomoj ne estas kompleta!',
 	'centralauth-complete-text'                       => 'Vi povas nun ensaluti en iu ajn Wikimedia vikipaĝaro ne kreinte novan konton; la sama salutnomo kaj pasvorto nun funkcios en Vikipedio, Vikivortaro, Vikilibroj kaj ties fratinaj projektoj en ĉiuj lingvoj.',
@@ -1923,7 +1924,7 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 	'centralauth-merge-method-admin'                  => 'kontoj unuigitaj de administranto',
 	'centralauth-merge-method-new'                    => 'nova konto',
 	'centralauth-merge-method-login'                  => 'konfirmis per salutado',
-	'centralauth-finish-title'                        => 'Finu unuigadon',
+	'centralauth-finish-title'                        => 'Finigi unuigadon',
 	'centralauth-finish-text'                         => 'Se tiuj kontoj ja apartenas la vi, vi povas finfari la ensalutunuigan proceson simple tajpante la pasvortojn por la aliaj kontoj ĉi tie:',
 	'centralauth-finish-password'                     => 'Pasvorto:',
 	'centralauth-finish-login'                        => 'Ensaluti',
@@ -1934,7 +1935,7 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 Aliaj kontoj ne jam estas konfirmitaj.',
 	'centralauth-merge-attempt'                       => "'''Kontrolo de la provizita pasvorto kontraŭ restantaj nekunfanditaj kontoj…'''",
 	'centralauth-attach-list-attached'                => 'La unuigita konto nomata "$1" inkluzivas la jenajn kontojn:',
-	'centralauth-attach-title'                        => 'Konfirmu konton',
+	'centralauth-attach-title'                        => 'Konfirmi konton',
 	'centralauth-attach-text'                         => 'Ĉi tiu konto ne jam estis migrigita al unuigita konto.
 Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi tajpas la pasvorton de la ĝenerala konto:',
 	'centralauth-attach-submit'                       => 'Migru konton',
@@ -1963,20 +1964,20 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-admin-none-selected'                 => 'Ne estas selektitaj ŝanĝendaj kontoj.',
 	'centralauth-admin-already-unmerged'              => 'Preterlasante $1, jam nekunigitan.',
 	'centralauth-admin-unmerge-success'               => 'Sukcese malkunigis $1 {{PLURAL:$1|konton|kontojn}}',
-	'centralauth-admin-delete-title'                  => 'Forigu konton',
+	'centralauth-admin-delete-title'                  => 'Forigi konton',
 	'centralauth-admin-delete-button'                 => 'Forigu ĉi tiu konton',
 	'centralauth-admin-delete-success'                => 'Sukcese forigis la ĝenerala konto por "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent'                   => 'Ne ekzistas ĝenerala konto por "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent'            => 'Eraro: la ĝenerala konto "<nowiki>$1</nowiki>" ne ekzistas.',
 	'centralauth-token-mismatch'                      => 'Bedaŭrinde via enigo ne estis operaciita pro malapero de seancaj datenoj.',
-	'centralauth-admin-lock-title'                    => 'Ŝlosu konton',
+	'centralauth-admin-lock-title'                    => 'Ŝlosi konton',
 	'centralauth-admin-lock-description'              => 'Ŝlosado de konto neebligos ensaluti ĝin en ĉiuj vikio.',
-	'centralauth-admin-lock-button'                   => 'Ŝlosu ĉi tiun konton',
+	'centralauth-admin-lock-button'                   => 'Ŝlosi ĉi tiun konton',
 	'centralauth-admin-lock-success'                  => 'Sukcese ŝlosis la ĝeneralan konton por "<nowiki>$1</nowiki>"',
 	'centralauth-admin-lock-nonexistent'              => 'Eraro: la ĝenerala konto "<nowiki>$1</nowiki>" ne ekzistas.',
 	'centralauth-admin-unlock-title'                  => 'Malŝlosu konton',
 	'centralauth-admin-unlock-description'            => 'Malŝlosado de konto ebligos denove ensaluti kun ĝi.',
-	'centralauth-admin-unlock-button'                 => 'Malŝlosu ĉi tiun konton',
+	'centralauth-admin-unlock-button'                 => 'Malŝlosi ĉi tiun konton',
 	'centralauth-admin-unlock-success'                => 'Sukcese malŝlosis la ĝeneralan konton por "<nowiki>$1</nowiki>"',
 	'centralauth-admin-unlock-nonexistent'            => 'Eraro: la ĝenerala konto "<nowiki>$1</nowiki>" ne ekzistas.',
 	'centralauth-admin-reason'                        => 'Kialo:',
@@ -1997,7 +1998,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-prefs-count-attached'                => 'Via konto estas aktiva sur $1 {{plural:$1|projekta paĝaro|projektaj paĝaroj}}.',
 	'centralauth-prefs-count-unattached'              => 'Nekonfirmitaj kontoj kun via nomo restas sur $1 {{plural:$1|projekto|projektoj}}.',
 	'centralauth-prefs-detail-unattached'             => 'Ĉi tiu projekta paĝaro ne estis konfirmita kiel aparteanta al la unuigita salutsistemo.',
-	'centralauth-prefs-manage'                        => 'Prizorgu vian unuigitan konton',
+	'centralauth-prefs-manage'                        => 'Prizorgi vian unuigitan konton',
 	'centralauth-renameuser-abort'                    => '<div class="errorbox">Neeblis renomi la uzanton $1 en la loka vikio ĉar tiu salutnomo estis migrigita  al unuigita salutsistemo.</div>',
 	'centralauth-renameuser-exists'                   => '<div class="errorbox">Neeblis alinomigu uzanton $2 ĉar tiu salutnomo estas rezervita por unuigita konto.</div>',
 	'centralauth-invalid-wiki'                        => 'Nenia vikia datumbazo: $1',
@@ -2008,9 +2009,10 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-log-entry-lock'                      => 'ŝlosis ĝeneralan konton "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'                    => 'malŝlosis ĝeneralan konton "<nowiki>$1</nowiki>"',
 	'centralauth-rightslog-name'                      => 'Loglibro de ĝeneralaj rajtoj',
+	'globalgroupmembership'                           => 'Membreco en ĝeneralaj grupoj',
 	'globalgrouppermissions'                          => 'Ĝenerala administrado de grupoj',
 	'centralauth-existinggroup-legend'                => 'Ekzistantaj grupoj',
-	'centralauth-newgroup-legend'                     => 'Kreu novan grupon',
+	'centralauth-newgroup-legend'                     => 'Krei novan grupon',
 	'centralauth-globalgroupperms-newgroupname'       => 'Nova nomo de grupo;',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Asigni rajtojn',
 	'centralauth-editgroup-subtitle'                  => 'Redaktante $1',
@@ -4653,6 +4655,14 @@ $messages['ko'] = array(
 	'centralauth-account-exists'          => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 );
 
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'centralauth-admin-username' => 'Metmaacher Name:',
+	'centralauth-admin-reason'   => 'Aanlass:',
+);
+
 /** Latin (Latina)
  * @author Rafaelgarcia
  * @author SPQRobin
@@ -4742,6 +4752,7 @@ $messages['lb'] = array(
 	'centralauth-rightslog-name'                      => 'Lëscht vun de globale Benotzerrechter',
 	'centralauth-rightslog-entry-groupperms'          => "huet d'Grupperechter fir d'Grupp $1 geännert, vun $2 op $3",
 	'globalgroupmembership'                           => 'Member a globale Gruppen',
+	'centralauth-existinggroup-legend'                => 'Gruppen déi et gëtt',
 	'centralauth-newgroup-legend'                     => 'Eng nei Grupp opmaachen',
 	'centralauth-globalgroupperms-newgroupname'       => 'Neie Gruppennumm:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Rechter ginn',
@@ -4749,9 +4760,12 @@ $messages['lb'] = array(
 	'centralauth-editgroup-fieldset'                  => 'Rechter fir $1',
 	'centralauth-editgroup-name'                      => 'Numm vun der Grupp:',
 	'centralauth-editgroup-display'                   => 'Lokaliséierten Numm vun der Grupp:',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|änneren]])',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|änneren]])',
 	'centralauth-editgroup-members'                   => 'Lëscht vun de Memberen:',
 	'centralauth-editgroup-reason'                    => 'Grond vun der Ännerung:',
 	'centralauth-editgroup-success'                   => "D'Grupperechter si geännert",
+	'right-centralauth-admin'                         => 'Global Benotzerkonten administréieren',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
