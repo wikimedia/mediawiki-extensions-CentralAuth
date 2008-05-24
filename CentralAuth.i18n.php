@@ -5481,7 +5481,7 @@ $messages['nl'] = array(
 Als u ervoor kiest om uw gebruikers te migreren, dan kunt u met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle projectwiki's van Wikimedia in alle beschikbare talen.
 Dit maakt het eenvoudiger om te werken met gedeelde projecten, zoals het uploaden naar [http://commons.wikimedia.org/ Wikimedia Commons], en voorkomt verwarring of conflicten doordat twee mensen dezelfde gebruikersnaam kiezen op verschillende projecten.
 
-Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U hebt de mogelijkheid dat niet die gebruiker of een beheerder op een later moment op te lossen.",
+Als iemand anders met uw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. U hebt de mogelijkheid dat met die gebruiker of een beheerder op een later moment op te lossen.",
 	'centralauth-merge-step1-title'                   => 'Samenvoegen gebruikers starten',
 	'centralauth-merge-step1-detail'                  => "Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki's om te bevestigen dat ze overeenkomen.
 Er worden geen wijzigingen gemaakt tot u hebt aangegeven dat alles in orde lijkt.",
@@ -5511,7 +5511,7 @@ Er is een andere wiki vastgesteld als thuiswiki voor uw gebruiker; volg de link 
 Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:',
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
-	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Lees meer over '''samengevoegd aanmelden''']]...''",
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login/nl|Lees meer over '''samengevoegd aanmelden''']]...''",
 	'centralauth-list-home-title'                     => 'Thuiswiki',
 	'centralauth-list-home-dryrun'                    => 'Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor uw samengevoegde gebruiker.
 Later kunt u instellen welke wiki uw thuiswiki is.',
@@ -5531,7 +5531,7 @@ Later kunt u instellen welke wiki uw thuiswiki is.',
 	'centralauth-finish-title'                        => 'Samenvoegen afronden',
 	'centralauth-finish-text'                         => 'Als deze gebruikers bij u horen, dan kunt u het proces van samenvoegen afronden door de wachtwoorden voor de andere gebruikers hier in te voeren:',
 	'centralauth-finish-password'                     => 'Wachtwoord:',
-	'centralauth-finish-login'                        => 'Gebruikersnaam',
+	'centralauth-finish-login'                        => 'Aanmelden',
 	'centralauth-finish-send-confirmation'            => 'Wachtwoord e-mailen',
 	'centralauth-finish-problems'                     => 'Komt u er niet uit of zijn deze gebruikers niet van u?
 [[meta:Help:Unified login problems|Hoe hulp vinden]]...',
@@ -5549,7 +5549,7 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-admin-username'                      => 'Gebruikersnaam:',
 	'centralauth-admin-lookup'                        => 'Gebruikersgegevens bekijken of bewerken',
 	'centralauth-admin-permission'                    => 'Alleen stewards kunnen gebruikers van anderen samenvoegen.',
-	'centralauth-admin-no-unified'                    => 'Er is geen samengevoegde gebruik voor deze gebruikersnaam.',
+	'centralauth-admin-no-unified'                    => 'Er is geen samengevoegde gebruiker voor deze gebruikersnaam.',
 	'centralauth-admin-info-id'                       => 'Gebruikersnummer:',
 	'centralauth-admin-info-registered'               => 'Geregistreerd:',
 	'centralauth-admin-info-locked'                   => 'Gedeactiveerd:',
