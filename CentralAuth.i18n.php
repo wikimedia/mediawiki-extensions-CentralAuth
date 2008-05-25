@@ -2730,12 +2730,14 @@ $messages['fur'] = array(
  * @author Toliño
  * @author Xosé
  * @author Kaustubh
+ * @author Prevert
  * @author Alma
  * @author Siebrand
  */
 $messages['gl'] = array(
 	'mergeaccount'                                    => 'Estado da unificación do rexistro',
 	'centralauth-desc'                                => '[[Special:MergeAccount|Fusionar contas]] entre wikis da Fundación Wikimedia',
+	'centralauth-mergeaccount-desc'                   => '[[Special:MergeAccount|Unificar múltiples contas de usuario]] para o rexistro de usuario único (SUL)',
 	'centralauth-merge-denied'                        => 'Sentímolo, pero non ten permiso para acceder a esta páxina.',
 	'centralauth-merge-notlogged'                     => 'Por favor, <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} rexístrese]</span> para comprobar se as súas contas se  unificaron completamente.',
 	'centralauth-merge-welcome'                       => "'''A súa conta de usuario aínda non se pasou ao sistema de rexistro unificado de Wikimedia.'''
@@ -2748,6 +2750,9 @@ Isto fai que sexa máis doado traballar con proxectos compartidos, como enviar a
 	'centralauth-merge-step2-title'                   => 'Confirmar máis contas',
 	'centralauth-merge-step2-detail'                  => 'Algunhas contas non se puideron comprobar automaticamente no wiki sinalado. Se estas contas lle pertencen, pode confirmar que son súas introducindo o contrasinal que usa nelas.',
 	'centralauth-merge-step2-submit'                  => 'Confirme a información de rexistro',
+	'centralauth-merge-dryrun-complete'               => 'Todas as contas de usuario existentes poden ser unificadas automaticamente!
+
+Aínda non se produciu ninún cambio nas súas contas.',
 	'centralauth-merge-dryrun-or'                     => "'''ou'''",
 	'centralauth-merge-step3-title'                   => 'Crear unha conta unificada',
 	'centralauth-merge-step3-detail'                  => 'Xa pode crear a súa conta unificada cos seguintes wikis relacionados:',
@@ -2822,6 +2827,7 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-admin-delete-success'                => 'O borrado da conta global de "<nowiki>$1</nowiki>" foi completado con éxito',
 	'centralauth-admin-nonexistent'                   => 'Non hai ningunha conta global de "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent'            => 'Erro: a conta global "<nowiki>$1</nowiki>" non existe.',
+	'centralauth-token-mismatch'                      => 'Sentímolo, non se pode procesar o formulario enviado debido a que se perderon os datos da sesión.',
 	'centralauth-admin-lock-title'                    => 'Bloquear unha conta de usuario',
 	'centralauth-admin-lock-description'              => 'Se bloquea unha conta de usuario fará que sexa imposible acceder ao sistema con esta conta en calquera wiki.',
 	'centralauth-admin-lock-button'                   => 'Bloquear a conta',
@@ -2864,10 +2870,12 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-rightslog-name'                      => 'Rexistro de dereitos globais',
 	'centralauth-rightslog-entry-usergroups'          => 'cambiou o grupo global ao que pertence $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms'          => 'cambiou os permisos do grupo de $1 de $2 a $3',
+	'globalgroupmembership'                           => 'Membros dos grupos globais',
 	'globalgrouppermissions'                          => 'Xestión dos grupos globais',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Ver e editar os permisos]])',
 	'centralauth-existinggroup-legend'                => 'Grupos existentes',
 	'centralauth-newgroup-legend'                     => 'Crear un novo grupo',
+	'centralauth-newgroup-intro'                      => 'Pode usar este formulario para asignar permisos a un grupo novo. Teña en conta que un grupo non existe ata que se lle asinan permisos.',
 	'centralauth-globalgroupperms-newgroupname'       => 'Nome do novo grupo:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Asignar permisos',
 	'centralauth-editgroup-subtitle'                  => 'Editando $1',
@@ -2881,6 +2889,9 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-editgroup-reason'                    => 'Motivo para o cambio:',
 	'centralauth-editgroup-success'                   => 'Os permisos do grupo cambiaron',
 	'centralauth-editgroup-success-text'              => 'Cambiou con éxito os permisos do grupo para o grupo $1. [[Special:GlobalGroupPermissions|Voltar ao xestor dos grupos]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Seleccione un wiki no cal teñan unha conta de usuario:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "O usuario global '''$1''' non está activo no wiki especificado (''$2''). Posiblemente estea tentando asignar dereitos ao usuario que non é!",
+	'right-globalgroupmembership'                     => 'Editar os membros dos grupos globais',
 	'right-centralauth-admin'                         => 'Administrar contas globais',
 	'right-centralauth-merge'                         => 'Fusionar as súas contas',
 	'right-globalgrouppermissions'                    => 'Xestionar os grupos globais',
@@ -4752,6 +4763,8 @@ $messages['lb'] = array(
 	'centralauth-rightslog-name'                      => 'Lëscht vun de globale Benotzerrechter',
 	'centralauth-rightslog-entry-groupperms'          => "huet d'Grupperechter fir d'Grupp $1 geännert, vun $2 op $3",
 	'globalgroupmembership'                           => 'Member a globale Gruppen',
+	'globalgrouppermissions'                          => 'Gestioun vun de globale Gruppen',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Rechter kucken an änneren]])',
 	'centralauth-existinggroup-legend'                => 'Gruppen déi et gëtt',
 	'centralauth-newgroup-legend'                     => 'Eng nei Grupp opmaachen',
 	'centralauth-globalgroupperms-newgroupname'       => 'Neie Gruppennumm:',
@@ -4761,11 +4774,17 @@ $messages['lb'] = array(
 	'centralauth-editgroup-name'                      => 'Numm vun der Grupp:',
 	'centralauth-editgroup-display'                   => 'Lokaliséierten Numm vun der Grupp:',
 	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|änneren]])',
+	'centralauth-editgroup-member'                    => 'Lokaliséierte Numm vun de Membere vun de Gruppen:',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|änneren]])',
 	'centralauth-editgroup-members'                   => 'Lëscht vun de Memberen:',
+	'centralauth-editgroup-submit'                    => 'Ännerunge vun de Grupperechter späicheren',
+	'centralauth-editgroup-perms'                     => 'Zougedeelte Rechter:',
 	'centralauth-editgroup-reason'                    => 'Grond vun der Ännerung:',
 	'centralauth-editgroup-success'                   => "D'Grupperechter si geännert",
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Wielt eng Wiki op däer si e Benotzerkont hunn:',
+	'right-globalgroupmembership'                     => 'Zougehéieregkeet zu lokale Gruppen änneren',
 	'right-centralauth-admin'                         => 'Global Benotzerkonten administréieren',
+	'right-globalgrouppermissions'                    => 'Gestioun vu globale Gruppen',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -5438,10 +5457,12 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-admin-yes'                => 'Jo',
 	'centralauth-admin-no'                 => 'Nee',
 	'centralauth-admin-list-localwiki'     => 'Lokal Wiki',
+	'centralauth-admin-list-method'        => 'Methood',
 	'centralauth-admin-unmerge'            => 'Utwählte Brukerkonten uteneen nehmen',
 	'centralauth-admin-merge'              => 'Utwählte Brukerkonten tohoopföhren',
 	'centralauth-admin-bad-input'          => 'Fehler mit de Utwahl',
 	'centralauth-admin-none-selected'      => 'Kene Brukerkonten utwählt, de ännert warrn schöölt.',
+	'centralauth-admin-delete-title'       => 'Brukerkonto wegdoon',
 	'centralauth-admin-reason'             => 'Grund:',
 	'globalusers'                          => 'Globale Brukerlist',
 	'centralauth-listusers-locked'         => 'sperrt',
@@ -5463,6 +5484,12 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-prefs-manage'             => 'Dien global Brukerkonto bearbeiden',
 	'centralauth-renameuser-abort'         => '<div class="errorbox">Bruker $1 kunn lokal keen ne’en Naam kriegen, dat Konto is al op dat globale Brukerkonten-System rövertrocken.</div>',
 	'centralauth-invalid-wiki'             => 'So’n Wiki-Datenbank gifft dat nich: $1',
+	'centralauth-rightslog-name'           => 'Global Rechten-Logbook',
+	'centralauth-existinggroup-legend'     => 'Vörhannen Gruppen',
+	'centralauth-newgroup-legend'          => 'Ne’e Grupp opstellen',
+	'centralauth-editgroup-fieldset'       => 'Rechten för $1',
+	'centralauth-editgroup-name'           => 'Naam vun de Grupp:',
+	'centralauth-editgroup-members'        => 'Matenlist:',
 );
 
 /** Dutch (Nederlands)
