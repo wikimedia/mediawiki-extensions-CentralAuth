@@ -1700,7 +1700,7 @@ $messages['de'] = array(
 	'centralauth-rightslog-name'                      => 'Globales Rechte-Logbuch',
 	'centralauth-rightslog-entry-usergroups'          => 'änderte die globale Gruppenzugehörigkeit für „$1“ von $2 auf $3',
 	'centralauth-rightslog-entry-groupperms'          => 'änderte die Gruppenrechte für „$1“ von $2 auf $3',
-	'centralauth-rightslog-header'                    => 'Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen',
+	'centralauth-rightslog-header'                    => 'Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen.',
 	'globalgroupmembership'                           => 'Mitgliedschaft in globalen Gruppen',
 	'globalgrouppermissions'                          => 'Management globaler Gruppen',
 	'centralauth-globalgroupperms-grouplist'          => 'Die folgenden globalen Gruppen wurden konfiguriert. Du kannst die jeder Gruppe zugewiesenen Rechte sehen und ändern. Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
@@ -9257,4 +9257,5 @@ $messages['zh-hant'] = array(
 	'centralauth-log-entry-lock'           => '已經鎖定全域賬戶"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => '已經解除鎖定全域賬戶"<nowiki>$1</nowiki>"',
 );
+
 
