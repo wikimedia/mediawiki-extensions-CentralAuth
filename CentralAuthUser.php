@@ -20,7 +20,6 @@ class CentralAuthUser {
 	/*private*/ var $mStateDirty = false;
 	/*private*/ var $mVersion = 1;
 	/*private*/ var $mDelayInvalidation = 0;
-	/*private*/ var $mWasAnon = false; // If it came from an anon, don't bother caching or anything.
 	
 	static $mCacheVars = array(
 		'mGlobalId',
@@ -55,7 +54,6 @@ class CentralAuthUser {
 	static function getInstance( $user ) {
 		if ( !isset( $user->centralAuthObj ) ) {
 			$user->centralAuthObj = new self( $user->getName() );
-			$user->centralAuthObj->mWasAnon = $user->isAnon();
 		}
 		return $user->centralAuthObj;
 	}
@@ -92,7 +90,6 @@ class CentralAuthUser {
 	protected function resetState() {
 		unset( $this->mGlobalId );
 		unset( $this->mProperties );
-		unset( $this->mHomeWiki );
 		unset( $this->mGroups );
 		unset( $this->mAttachedArray );
 		unset( $this->mAttachedList );
@@ -118,17 +115,6 @@ class CentralAuthUser {
 		}
 
 		wfProfileIn( __METHOD__ );
-		// Did we come from an anonymous user?
-		if ( $this->mWasAnon ) {
-			$this->mGroups = $this->mRights = array();
-			$this->mIsAttached = false;
-			$this->mGlobalId = 0;
-			wfDebugLog( 'CentralAuth', "Tried to load state for global user {$this->mName}, " .
-				"but it's an anonymous user! Quitting." );
-			wfProfileOut( __METHOD__);
-			return;
-		}
-		
 		// Check the cache
 		if ( !$recache && $this->loadFromCache() ) {
 			wfProfileOut( __METHOD__ );

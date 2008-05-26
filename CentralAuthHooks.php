@@ -313,6 +313,9 @@ class CentralAuthHooks {
 		}
 
 		// Is the user blacklisted by the session?
+		// This is just a cache to avoid expensive DB queries in $user->isAllowedToCreateAccount(). 
+		// The user can log in via Special:UserLogin to bypass the blacklist and get a proper 
+		// error message.
 		$session = CentralAuthUser::getSession();
 		if ( in_array( wfWikiID(), $session['auto-create-blacklist'] ) ) {
 			wfDebug( __METHOD__.": blacklisted by session\n" );
