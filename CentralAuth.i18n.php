@@ -1621,6 +1621,7 @@ $messages['de'] = array(
 		Wenn dies dein Benutzername ist, kannst du die Zusammenführung
 		der Benutzerkonten durch Eingabe des Haupt-Passwortes
 		für dieses Benutzerkonto vollenden:',
+	'centralauth-blocked-text'                        => 'Du bist für Bearbeitungen in deinem Heimat-Wiki (siehe unten) gesperrt. Solange die Sperre besteht, ist eine Zusammenführung der Benutzerkonten nicht möglich.',
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. Zusammenführungs-Aktionen sind deaktiviert.',
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]] …''",
@@ -1726,6 +1727,9 @@ $messages['de'] = array(
 	'centralauth-renameuser-exists'                   => '<div class="errorbox">Umbenennung nach Benutzer $2 kann nicht durchgeführt werden, da dieser Benutzername als globales Benutzerkonto reserviert ist.</div>',
 	'centralauth-invalid-wiki'                        => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists'                      => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
+	'centralauth-autologin-desc'                      => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn du dich [[Special:UserLogin|anmeldest]],
+	instruiert das zentrale Anmeldesystem deinen Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.<br />
+	Du hast diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nichts weiter geschieht.',
 	'centralauth-log-name'                            => 'Globales Benutzerkonten-Logbuch',
 	'centralauth-log-header'                          => 'Dieses Logbuch zeigt alle Löschungen, Sperrungen und Entsperrungen globaler Benutzerkonten.',
 	'centralauth-log-entry-delete'                    => 'löschte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
