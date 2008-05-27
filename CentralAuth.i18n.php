@@ -193,6 +193,9 @@ The passwords for local accounts created before the merge will revert to their p
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki DB: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
+	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki. When you [[Special:UserLogin|log in]],
+	the central login system instructs your browser to request this page from all linked domains, using image links. You have 
+	requested this page without providing any authentication data, so it does nothing.',
 	
 	// Logging
 	'centralauth-log-name'         => 'Global account log',

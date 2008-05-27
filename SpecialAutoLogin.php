@@ -24,8 +24,9 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 		# Don't cache error messages
 		$wgOut->enableClientCache( false );
 
-		if (strlen($tempToken) == 0 && !$logout) {
-			$wgOut->addWikiText( 'AutoLogin' );
+		if (strlen($tempToken) == 0) {
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
+			$wgOut->addWikiMsg( 'centralauth-autologin-desc' );
 			return;
 		}
 
