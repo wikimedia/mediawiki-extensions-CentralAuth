@@ -105,23 +105,21 @@ class CentralAuthHooks {
 		global $wgCentralAuthAutoLoginWikis;
 		
 		$inject_html .= Xml::openElement( 'p' );
-		
 		foreach( $wgCentralAuthAutoLoginWikis as $wiki ) {
-			$data = array();
-			$data['userName'] = $user->getName();
-			$data['token'] = $centralUser->getAuthToken();
-			$data['remember'] = $user->getOption( 'rememberpassword' );
-			$data['wiki'] = $wiki;
-			
-			$login_token = wfGenerateToken( $centralUser->getId() );
-			
+			$data = array(
+				'userName' => $user->getName(),
+				'token' => $centralUser->getAuthToken(),
+				'remember' => $user->getOption( 'rememberpassword' ),
+				'wiki' => $wiki
+			);
+			$loginToken = wfGenerateToken( $centralUser->getId() );
 			global $wgMemc;
-			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $login_token ), $data, 600 );
+			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
 			
 			$wiki = WikiMap::getWiki( $wiki );
 			$url = $wiki->getUrl( 'Special:AutoLogin' );
 			
-			$querystring = 'token=' . $login_token;
+			$querystring = 'token=' . $loginToken;
 			
 			if (strpos($url, '?') > 0) {
 				$url .= "&$querystring";
@@ -199,12 +197,13 @@ class CentralAuthHooks {
 		
 		if ($centralUser->exists()) {
 			$centralUser->deleteGlobalCookies();
+			$centralUser->resetAuthToken();
 		}
 		
 		return true;
 	}
 	
-	static function onUserLogoutComplete( &$user, &$inject_html ) {
+	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
 		global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis;
 		if( !$wgCentralAuthCookies || !$wgCentralAuthAutoLoginWikis ) {
 			// Nothing to do.
@@ -213,15 +212,26 @@ class CentralAuthHooks {
 
 		// Generate the images
 		$inject_html .= Xml::openElement( 'p' );
-		
+		$centralUser = new CentralAuthUser( $userName );
+
 		foreach( $wgCentralAuthAutoLoginWikis as $wiki ) {
+			$data = array(
+				'userName' => $userName,
+				'token' => $centralUser->getAuthToken(),
+				'remember' => false,
+				'wiki' => $wiki
+			);
+			$loginToken = wfGenerateToken( $centralUser->getId() );
+			global $wgMemc;
+			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
+
 			$wiki = WikiMap::getWiki( $wiki );
 			$url = $wiki->getUrl( 'Special:AutoLogin' );
 			
 			if (strpos($url, '?') > 0) {
-				$url .= '&logout=1';
+				$url .= "&logout=1&token=$loginToken";
 			} else {
-				$url .= '?logout=1';
+				$url .= "?logout=1&token=$loginToken";
 			}
 			
 			$inject_html .= Xml::element( 'img', array( 'src' => $url, 'alt' => '' ) );

@@ -18,49 +18,56 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 	function execute( $par ) {
 		global $wgRequest, $wgOut, $wgUser, $wgMemc, $IP;
 		
-		$token = $wgRequest->getVal('token');
+		$tempToken = $wgRequest->getVal('token');
 		$logout = $wgRequest->getBool( 'logout' );
 
 		# Don't cache error messages
 		$wgOut->enableClientCache( false );
 
-		if (strlen($token) == 0 && !$logout) {
+		if (strlen($tempToken) == 0 && !$logout) {
 			$wgOut->addWikiText( 'AutoLogin' );
 			return;
 		}
+
+		$key = CentralAuthUser::memcKey( 'login-token', $tempToken );
+		$data = $wgMemc->get( $key );
+		$wgMemc->delete( $key );
+
+		if ( !$data ) {
+			$msg = 'Token is invalid or has expired';
+			wfDebug( __METHOD__.": $msg\n" );
+			$wgOut->addWikiText( $msg );
+			return;
+		}
+
+		$userName = $data['userName'];
+		$token = $data['token'];
+		$remember = $data['remember'];
 		
-		if ($logout == true) {
-			$centralUser = new CentralAuthUser( $wgUser->getName() );
-			
-			if ($centralUser->getId()) {
-				$centralUser->deleteGlobalCookies();
-			}
+		#die( print_r( $data, true ));
+		
+		if ($data['wiki'] != wfWikiID()) {
+			$msg = 'Bad token (wrong wiki)';
+			wfDebug( __METHOD__.": $msg\n" );
+			$wgOut->addWikiText( $msg );
+			return;
+		}
+		
+		$centralUser = new CentralAuthUser( $userName );
+		$loginResult = $centralUser->authenticateWithToken( $token );
+	
+		if ($loginResult != 'ok') {
+			$msg = "Bad token: $loginResult";
+			wfDebug( __METHOD__.": $msg\n" );
+			$wgOut->addWikiText( $msg );
+			return;
+		}
+
+		// Auth OK.
+		if ( $logout ) {
+			$centralUser->deleteGlobalCookies();
 		} else {
-			$key = CentralAuthUser::memcKey( 'login-token', $token );
-			$data = $wgMemc->get( $key );
-			$wgMemc->delete( $key );
-			
-			$userName = $data['userName'];
-			$token = $data['token'];
-			$remember = $data['remember'];
-			
-			#die( print_r( $data, true ));
-			
-			if ($data['wiki'] != wfWikiID()) {
-				$wgOut->addWikiText( 'Bad token (wrong wiki)' );
-				return;
-			}
-			
-			$centralUser = new CentralAuthUser( $userName );
-			$login_result = $centralUser->authenticateWithToken( $token );
-		
-			if ($login_result == 'ok') {
-				// Auth OK.
-				$centralUser->setGlobalCookies($remember);
-			} else {
-				$wgOut->addWikiText( 'Bad token - Auth failed' );
-				return;
-			}
+			$centralUser->setGlobalCookies($remember);
 		}
 
 		$wgOut->disable();

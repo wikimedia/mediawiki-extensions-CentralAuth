@@ -1467,7 +1467,6 @@ class CentralAuthUser {
 		self::setCookie( 'LoggedOut', wfTimestampNow() );
 		
 		self::deleteSession();
-		$this->resetAuthToken();
 	}
 	
 	/**
