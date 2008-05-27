@@ -176,7 +176,8 @@ class SpecialMergeAccount extends SpecialPage {
 		$attached = array();
 		$unattached = array();
 		$methods = array();
-		$ok = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached, $methods );
+		$blocked = false;
+		$ok = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached, $methods, $blocked );
 
 		if( $ok ) {
 			// This is the global account or matched it
@@ -196,7 +197,11 @@ class SpecialMergeAccount extends SpecialPage {
 			$wgOut->addHtml( $this->step3ActionForm( $home, $subAttached, $methods ) );
 
 		} elseif( $home ) {
-			$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-home' ) );
+			if( $blocked ) {
+				$wgOut->addWikiText( wfMsg( 'centralauth-blocked-text' ) );
+			} else {
+				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-home' ) );
+			}
 			$out = '<h2>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h2>';
 			$out .= wfMsgExt( 'centralauth-list-home-dryrun', 'parse' );
 			$out .= $this->listAttached( array( $home ), array( $home => 'primary' ) );

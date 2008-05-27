@@ -63,6 +63,7 @@ the same username and password will work on Wikipedia, Wiktionary, Wikibooks, an
 	'centralauth-not-owner-text'  => 'The username "$1" was automatically assigned to the owner of the account on $2.
 
 If this is you, you can finish the login unification process simply by typing the master password for that account here:',
+	'centralauth-blocked-text'    => 'Your home wiki (listed below) is blocked from editing. Please contact a sysop in this wiki to unblock it. While it is blocked, you cannot merge your accounts.',
 
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Demo mode only</div><br clear='all'/>",
 
@@ -2997,6 +2998,7 @@ $messages['he'] = array(
 	'centralauth-not-owner-text'                      => 'שם המשתמש "$1" הוקצה אוטומטית לבעלי החשבון באתר $2.
 
 אם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הכללי כאן:',
+	'centralauth-blocked-text'                        => 'החשבון באתר הראשי שלכם (הרשום להלן) נחסם מעריכה. אנא צרו קשר עם אחד ממפעילי המערכת באתר זה כדי לשחרר אותו. כל עוד הוא חסום, לא תוכלו למזג את חשבונותיכם.',
 	'centralauth-notice-dryrun'                       => '<div class="successbox">מצב הדגמה בלבד</div><br clear="all" />',
 	'centralauth-disabled-dryrun'                     => 'מיזוג החשבונות הוא כרגע במצב הדגמה ובדיקה, ולכן לא ניתן למזג את החשבונות. מצטערים!',
 	'centralauth-readmore-text'                       => ":[[meta:Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",

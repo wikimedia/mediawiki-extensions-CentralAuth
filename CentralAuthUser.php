@@ -493,15 +493,6 @@ class CentralAuthUser {
 			$workingSet = $migrationSet;
 		}
 
-		// Blocked accounts not allowed to get automatic home wiki
-		foreach( $workingSet as $wiki => $local ) {
-			if( $local['blocked'] ) {
-				wfDebugLog( 'CentralAuth',
-					"Striking blocked account $this->mName@$wiki from working set\n" );
-				unset( $workingSet[$wiki] );
-			}
-		}
-
 		$maxEdits = -1;
 		$homeWiki = null;
 		foreach( $workingSet as $wiki => $local ) {
@@ -591,12 +582,14 @@ class CentralAuthUser {
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
 	 * @param array &$methods on success, associative array of each wiki's attachment method
+	 * @param array &$blocked true if the home wiki is blocked
 	 * @return bool true if password matched current and home account
 	 */
-	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
+	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods, &$blocked ) {
 		$home = false;
 		$attached = array();
 		$unattached = array();
+		$blocked = false;
 
 		// First, make sure we were given the current wiki's password.
 		$self = $this->localUserData( wfWikiID() );
@@ -612,6 +605,13 @@ class CentralAuthUser {
 		}
 		$home = $this->chooseHomeWiki( $migrationSet );
 		$local = $migrationSet[$home];
+
+		// If home account is blocked...
+		if( $local['blocked'] ) {
+			wfDebugLog( 'CentralAuth', "dry run: $home blocked, forbid migration" );
+			$blocked = true;
+			return false;
+		}
 
 		// And we need to match the home wiki before proceeding...
 		if( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
@@ -655,6 +655,11 @@ class CentralAuthUser {
 		$home = $migrationSet[$this->mHomeWiki];
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
+
+		if ( $home['blocked'] ) {
+			wfDebugLog( 'CentralAuth', $this->mHomeWiki . ' blocked, forbid migration' );
+			return false;
+		}
 
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
