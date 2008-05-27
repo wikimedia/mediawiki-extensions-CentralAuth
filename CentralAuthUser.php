@@ -437,7 +437,6 @@ class CentralAuthUser {
 	}
 
 	/**
-	 * For use in migration pass one.
 	 * Store global user data in the auth server's main table.
 	 * @return bool Whether we were successful or not.
 	 */
