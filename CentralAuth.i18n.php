@@ -25,7 +25,7 @@ This makes it easier to work with shared projects such as uploading to [http://c
 If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
 
 	'centralauth-merge-step1-title'  => 'Begin login unification',
-	'centralauth-merge-step1-detail' => 'Your password and registered e-mail address will be checked against the accounts on other wikis to confirm that they match.
+	'centralauth-merge-step1-detail' => 'Please enter here your account password. Your password and registered e-mail address will be checked against the accounts on other wikis to confirm that they match.
 No changes will be made until you have confirmed that things look ok.',
 	'centralauth-merge-step1-submit' => 'Confirm login information',
 
@@ -2978,7 +2978,7 @@ $messages['he'] = array(
 
 אם מישהו כבר בחר את שם המשתמש שלכם באתר אחר, זה לא אמור להפריע להם, אבל יאפשר לכם לעבוד איתם או עם מנהל מערכת מאוחר יותר.",
 	'centralauth-merge-step1-title'                   => 'תחילת מיזוג החשבונות',
-	'centralauth-merge-step1-detail'                  => 'סיסמתכם וכתובת הדוא"ל הרשומה שלכם יושוו עם החשבונות באתרים האחרים כדי לוודא שהם זהים לאלה שלכם.
+	'centralauth-merge-step1-detail'                  => 'אנא הקלידו כאן את סיסמת החשבון שלכם. סיסמתכם וכתובת הדוא"ל הרשומה שלכם יושוו עם החשבונות באתרים האחרים כדי לוודא שהם זהים לאלה שלכם.
 לא יבוצעו שינויים עד שתאשרו אותם.',
 	'centralauth-merge-step1-submit'                  => 'אישור של מידע הכניסה',
 	'centralauth-merge-step2-title'                   => 'אישור חשבונות נוספים',
