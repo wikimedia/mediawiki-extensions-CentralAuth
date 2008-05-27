@@ -225,7 +225,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-editgroup-member'		=> 'Localised name of group members:',
 	'centralauth-editgroup-member-edit'	=> '$2 ([[MediaWiki:Group-$1-member|edit]])',
 	'centralauth-editgroup-members'		=> 'Member list:',
-	'centralauth-editgroup-members-link'	=> '[[Special:Listusers/$1|List of users with $2 rights]]',
+	'centralauth-editgroup-members-link'	=> '[[Special:Globalusers/$1|List of users with $2 rights]]',
 	'centralauth-editgroup-submit'		=> 'Save changes to group permissions',
 	'centralauth-editgroup-perms'		=> 'Assigned permissions:',
 	'centralauth-editgroup-reason'		=> 'Reason for change:',

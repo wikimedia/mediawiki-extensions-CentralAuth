@@ -99,7 +99,7 @@ class CentralAuthUser {
 	 * Load up state information, but don't use the cache
 	*/
 	protected function loadStateNoCache() { 
-		$this->loadState( true ); 
+		$this->loadState( true );
 	}
 
 	/**

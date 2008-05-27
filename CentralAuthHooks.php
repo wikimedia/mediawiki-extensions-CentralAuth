@@ -78,6 +78,7 @@ class CentralAuthHooks {
 	
 	static function onAbortNewAccount( $user, &$abortError ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
+		die( print_r( $centralUser->exists(), true ) );
 		if ( $centralUser->exists() ) {
 			wfLoadExtensionMessages('SpecialCentralAuth');
 			$abortError = wfMsg( 'centralauth-account-exists' );
