@@ -400,11 +400,10 @@ class SpecialMergeAccount extends SpecialPage {
 			foreach( $items as $item ) {
 				$itemMethods[] = isset( $methods[$item] ) ? $methods[$item] : '';
 			}
-			return "<div style='column-count: 3; -moz-column-count:3; -webkit-column-count:3;'>" .
-				"<ul>\n<li>" .
+			return "<ul>\n<li>" .
 				implode( "</li>\n<li>",
 					array_map( $callback, $items, $itemMethods ) ) .
-				"</li>\n</ul></div>\n";
+				"</li>\n</ul>\n";
 		}
 	}
 
