@@ -8864,7 +8864,7 @@ $messages['yue'] = array(
 
 如果有另一啲人已經響另一個網站度揀咗你個用戶名嘅話，係唔會擾亂佢哋，但係佢會畀你一個機會，稍後同佢地或者同管理員去處理。",
 	'centralauth-merge-step1-title'        => '開始登入統一',
-	'centralauth-merge-step1-detail'       => '你嘅密碼同埋註冊嘅電郵地址會分別響其它wiki度檢查，去睇佢哋係一樣嘅。直至到你確認啲嘢係無問題之前，都唔會有更改嘅。',
+	'centralauth-merge-step1-detail'       => '請響呢度輸入你個戶口密碼。你嘅密碼同埋註冊嘅電郵地址會分別響其它wiki度檢查，去睇佢哋係一樣嘅。直至到你確認啲嘢係無問題之前，都唔會有更改嘅。',
 	'centralauth-merge-step1-submit'       => '確認登入資料',
 	'centralauth-merge-step2-title'        => '確認更多戶口',
 	'centralauth-merge-step2-detail'       => '有啲戶口唔會自動噉同你自己嘅自家wiki站配合到。如果呢啲戶口係屬於你嘅話，你可以為佢哋提供一個密碼去確認佢哋係屬於你嘅。',
@@ -8891,6 +8891,7 @@ $messages['yue'] = array(
 用同一組用戶名同密碼就可以登入到所有語言嘅維基百科、維基詞典、維基教科書同埋佢哋嘅其它姊妹計劃網站。',
 	'centralauth-not-owner-text'           => '用戶名 "$1" 已經自動分咗畀 $2 上面嘅戶口持有者。
 如果呢個係你，你可以輸入響嗰個戶口嘅主密碼以完成登入統一嘅程序：',
+	'centralauth-blocked-text'             => '你的自家wiki（響下面列出）而家封鎖緊唔畀編輯。請聯絡響呢個wiki嘅操作員去解封佢。當佢封鎖緊嗰陣，你係唔可以合併你嘅戶口。',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>只係示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => '戶口統一而家係響示範／除錯模式，噉實際嘅合併動作已經停用。對唔住！',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|睇下更多有關'''統一登入'''嘅細節]]...''",
@@ -8993,11 +8994,54 @@ $messages['yue'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">由於呢個用戶名已經預留畀全域戶口，因此唔可以改$2做呢個用戶名。</div>',
 	'centralauth-invalid-wiki'             => '無呢個wiki資料庫: $1',
 	'centralauth-account-exists'           => '唔可以開戶口: 所需求嘅用戶名已經響統一登入系統度拎咗。',
-	'centralauth-log-name'                 => '全域戶口管理日誌',
+	'centralauth-autologin-desc'           => '呢版特別頁係響MediaWiki度內部用嘅。當你[[Special:UserLogin|登入]]後，
+	個中央登入系統會利用圖像連結，指示你個瀏覽器響全部連接嘅網域度請求呢一版。
+	你響呢一版度唔需要再俾任何嘅認證資料，即係唔使做。',
+	'centralauth-log-name'                 => '全域戶口日誌',
 	'centralauth-log-header'               => '呢個日誌包含咗全域戶口嘅動作: 刪除、鎖同解鎖。',
 	'centralauth-log-entry-delete'         => '已經刪咗全域戶口"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => '已經鎖咗全域戶口"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => '已經解鎖全域戶口"<nowiki>$1</nowiki>"',
+
+	'centralauth-rightslog-name'		 => '全域權限日誌',
+	'centralauth-rightslog-entry-usergroups' => '改咗$1嘅全域成員組由$2到$3',
+	'centralauth-rightslog-entry-groupperms' => '改咗$1嘅成員組許可由$2到$3',
+	'centralauth-rightslog-header'		 => '呢個日誌包括咗全域組嘅動作：組同許可更改',
+	
+	// Global group membership
+	'globalgroupmembership'			=> '響全域組嘅成員',
+	
+	// Global group permissions
+	'globalgrouppermissions'                          => '全域組管理',
+	'centralauth-globalgroupperms-grouplist'          => '下面嘅全域組已經較好。你可以去睇或編輯任何組指定嘅許可。響組度亦都可以拎走全部權限去刪除佢。',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|去睇同編輯許可]])',
+	'centralauth-existinggroup-legend'                => '現有嘅組',
+	'centralauth-newgroup-legend'                     => '開一個新組',
+	'centralauth-newgroup-intro'                      => '你可以用呢個表格去指定一個新組嘅權限。要留意嘅就係嗰個組唔會存在，除非佢有指定許可。',
+	'centralauth-globalgroupperms-newgroupname'       => '新組名:',
+	'centralauth-globalgroupperms-creategroup-submit' => '指定許可',
+	'centralauth-editgroup-subtitle'                  => '編輯$1',
+	'centralauth-editgroup-fieldset'                  => '$1嘅許可',
+	'centralauth-editgroup-name'                      => '組名:',
+	'centralauth-editgroup-display'	                  => '本地化組名:',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|編輯]])',
+	'centralauth-editgroup-member'                    => '本地化組成員名:',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|編輯]])',
+	'centralauth-editgroup-members'                   => '成員表:',
+	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|含有$2許可嘅用戶一覽]]',
+	'centralauth-editgroup-submit'                    => '保存更改到組許可',
+	'centralauth-editgroup-perms'                     => '指定咗嘅許可:',
+	'centralauth-editgroup-reason'                    => '更改嘅原因:',
+	'centralauth-editgroup-success'                   => '組許可已經更改',
+	'centralauth-editgroup-success-text'              => '你已經成功噉改咗$1組嘅組許可。[[Special:GlobalGroupPermissions|返去組管理]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => '揀一個響佢哋有戶口嘅wiki:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "個全域用戶'''$1'''響你所指定嘅wiki('' $2 '')並唔活躍。你可能嘗試指定緊許可到錯嘅用戶!",
+	
+	// User rights
+	'right-globalgroupmembership'  => '編輯成員到全域組',
+	'right-centralauth-admin'      => '管理全域戶口',
+	'right-centralauth-merge'      => '合併佢哋嘅戶口',
+	'right-globalgrouppermissions' => '管理全域組',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
@@ -9016,7 +9060,7 @@ $messages['zh-hans'] = array(
 
 如果在另一个维基项目上已有其他人选用了您的用户名，他们也不会受到干扰。不过，此后您将有一个与他们或该项目管理员协商解决该问题的机会。",
 	'centralauth-merge-step1-title'        => '开始整合用户账户',
-	'centralauth-merge-step1-detail'       => '您的密码以及电子邮件地址将会与其他项目的数据进行比对，以确认它们是一致的。所有数据在您确认没有问题之前均不会更改。',
+	'centralauth-merge-step1-detail'       => '请在这里输入您的帐户密码。您的密码以及电子邮件地址将会与其他项目的数据进行比对，以确认它们是一致的。所有数据在您确认没有问题之前均不会更改。',
 	'centralauth-merge-step1-submit'       => '确认账户数据',
 	'centralauth-merge-step2-title'        => '确认更多账户',
 	'centralauth-merge-step2-detail'       => '有一部分的账户没有与主维基项目自动匹配上。如果您拥有这些账户，请提供这些账户的密码以确认它们的归属人。',
@@ -9038,6 +9082,7 @@ $messages['zh-hans'] = array(
 	'centralauth-not-owner-text'           => '用户名“$1”已被自动分配给$2上的账户。
 
 如果这是您的账户，请输入该账户的密码，以完成账户整合的过程：',
+	'centralauth-blocked-text'             => '您的自家wiki（在下面列出）正在封锁中不能编辑。请联络在这个wiki上的操作员去解除封锁它。当它正被封锁时，您是不可以合并您的帐户。',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>此功能处于演示模式。</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => '账户整合功能正处于演示／除错模式，因此实际的合并操作已被禁止。抱歉！',
 	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|关于'''账户整合'''的更多内容]]……''",
@@ -9102,7 +9147,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-delete-success'     => '已经删除"<nowiki>$1</nowiki>"的全域账户',
 	'centralauth-admin-nonexistent'        => '这里无"<nowiki>$1</nowiki>"的全域账户',
 	'centralauth-admin-delete-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
-	'centralauth-token-mismatch'           => '对唔住，由于小节资料遗失?，我?唔可以处理你?表格递交',
+	'centralauth-token-mismatch'           => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
 	'centralauth-admin-lock-title'         => '锁定账户',
 	'centralauth-admin-lock-description'   => '锁定这个账户会令到在任何的wiki中不可能登入。',
 	'centralauth-admin-lock-button'        => '锁定这个账户',
@@ -9137,11 +9182,54 @@ $messages['zh-hans'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">由于这个用户名已经预留给全域账户，因此不能在更改$2作为这个用户名。</div>',
 	'centralauth-invalid-wiki'             => '无这个wikil数据库: $1',
 	'centralauth-account-exists'           => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
-	'centralauth-log-name'                 => '全域账户管理日志',
+	'centralauth-autologin-desc'           => '这个版殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，
+	该中央登入系统会利用图像连结，指示您的浏览器响全部连接的网域度请求这个页面。
+	您在这一页面中不需要再给出任何的认证资料，即是任么也不用作。',
+	'centralauth-log-name'                 => '全域账户日志',
 	'centralauth-log-header'               => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
 	'centralauth-log-entry-delete'         => '已经删除全域账户"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => '已经锁定全域账户"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => '已经解除锁定全域账户"<nowiki>$1</nowiki>"',
+
+	'centralauth-rightslog-name'		 => '全域权限日志',
+	'centralauth-rightslog-entry-usergroups' => '已经更改$1的全域成员组由$2到$3',
+	'centralauth-rightslog-entry-groupperms' => '已经更改$1的成员组许可由$2到$3',
+	'centralauth-rightslog-header'		 => '这个日志包含了全域组之动作：组及许可更改',
+	
+	// Global group membership
+	'globalgroupmembership'			=> '在全域组中的成员',
+	
+	// Global group permissions
+	'globalgrouppermissions'                          => '全域组管理',
+	'centralauth-globalgroupperms-grouplist'          => '以下的全域组已经设置好。您可以去查看或编辑任何组指定的许可。在组中亦都可以移除全部权限去删除它。',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|去查看及编辑许可]])',
+	'centralauth-existinggroup-legend'                => '现有的组',
+	'centralauth-newgroup-legend'                     => '建立一个新组',
+	'centralauth-newgroup-intro'                      => '您可以用这个表格去指定一个新组的权限。要留意的就是该组不会存在，除非它有指定许可。',
+	'centralauth-globalgroupperms-newgroupname'       => '新组名:',
+	'centralauth-globalgroupperms-creategroup-submit' => '指定许可',
+	'centralauth-editgroup-subtitle'                  => '编辑$1',
+	'centralauth-editgroup-fieldset'                  => '$1的许可',
+	'centralauth-editgroup-name'                      => '组名:',
+	'centralauth-editgroup-display'	                  => '本地化组名:',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|编辑]])',
+	'centralauth-editgroup-member'                    => '本地化组成员名:',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|编辑]])',
+	'centralauth-editgroup-members'                   => '成员表:',
+	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|含有$2许可的用户名单]]',
+	'centralauth-editgroup-submit'                    => '保存更改到组许可',
+	'centralauth-editgroup-perms'                     => '已指定的许可:',
+	'centralauth-editgroup-reason'                    => '更改的理由:',
+	'centralauth-editgroup-success'                   => '组许可已经更改',
+	'centralauth-editgroup-success-text'              => '您已经成功地更改$1组的组许可。[[Special:GlobalGroupPermissions|回到组管理]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => '选择一个响他们有账户的wiki:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "该全域用户'''$1'''在您所指定的wiki('' $2 '')中并不活跃。您可能正在尝试指定许可到错的用户!",
+	
+	// User rights
+	'right-globalgroupmembership'  => '编辑成员至全域组',
+	'right-centralauth-admin'      => '管理全域账户',
+	'right-centralauth-merge'      => '合并他们的账户',
+	'right-globalgrouppermissions' => '管理全域组',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -9166,7 +9254,7 @@ $messages['zh-hant'] = array(
 
 如果在另一個計劃上已經有其他人選擇了您的用戶名，他們也不會受到干擾。不過您可以請求該計劃的管理員進行協商或解決。",
 	'centralauth-merge-step1-title'        => '開始登入整合',
-	'centralauth-merge-step1-detail'       => '您的密碼以及電子郵件地址將會與其他計劃的資料進行比對，以確認它們是一致的。所有資料在您確認沒有問題之前均不會更改。',
+	'centralauth-merge-step1-detail'       => '請在這裡輸入您的帳戶密碼。您的密碼以及電子郵件地址將會與其他計劃的資料進行比對，以確認它們是一致的。所有資料在您確認沒有問題之前均不會更改。',
 	'centralauth-merge-step1-submit'       => '確認登入資料',
 	'centralauth-merge-step2-title'        => '確認更多帳號',
 	'centralauth-merge-step2-detail'       => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。
@@ -9192,6 +9280,7 @@ $messages['zh-hant'] = array(
 	'centralauth-not-owner-text'           => '使用者名稱："$1"已自動分配給$2上的帳號。
 
 如果這是您的帳號，請輸入該帳號的密碼以完成帳號整合：',
+	'centralauth-blocked-text'             => '您的自家wiki（在下面列出）正在封鎖中不能編輯。請聯絡在這個wiki上的操作員去解除封鎖它。當它正被封鎖時，您是不可以合併您的帳戶。',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>目前為示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'          => '目前為示範模式，
 實際的整合動作已停用。',
@@ -9259,7 +9348,7 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-delete-success'     => '已經刪除"<nowiki>$1</nowiki>"的全域賬戶',
 	'centralauth-admin-nonexistent'        => '這裏無"<nowiki>$1</nowiki>"的全域賬戶',
 	'centralauth-admin-delete-nonexistent' => '錯誤: 該全域賬戶"<nowiki>$1</nowiki>"不存在。',
-	'centralauth-token-mismatch'           => '對唔住，由於小節資料遺失咗，我哋唔可以處理你嘅表格遞交',
+	'centralauth-token-mismatch'           => '對不起，由於階段資料遺失，我們不可以處理你的表格遞交',
 	'centralauth-admin-lock-title'         => '鎖定賬戶',
 	'centralauth-admin-lock-description'   => '鎖定這個賬戶會令到在任何的wiki中不可能登入。',
 	'centralauth-admin-lock-button'        => '鎖定這個賬戶',
@@ -9294,10 +9383,53 @@ $messages['zh-hant'] = array(
 	'centralauth-renameuser-exists'        => '<div class="errorbox">由於這個用戶名已經預留給全域帳戶，因此不能在更改$2作為這個用戶名。</div>',
 	'centralauth-invalid-wiki'             => '無這個wiki資料庫: $1',
 	'centralauth-account-exists'           => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
-	'centralauth-log-name'                 => '全域賬戶管理日誌',
+	'centralauth-autologin-desc'           => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
+	該中央登入系統會利用圖像連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
+	您在這一頁面中不需要再給出任何的認證資料，即是任麼也不用作。',
+	'centralauth-log-name'                 => '全域賬戶日誌',
 	'centralauth-log-header'               => '這個日誌包含全域賬戶的動作: 刪除、鎖定以及解除鎖定。',
 	'centralauth-log-entry-delete'         => '已經刪除全域賬戶"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'           => '已經鎖定全域賬戶"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'         => '已經解除鎖定全域賬戶"<nowiki>$1</nowiki>"',
+
+	'centralauth-rightslog-name'		 => '全域權限日誌',
+	'centralauth-rightslog-entry-usergroups' => '已經更改$1的全域成員組由$2到$3',
+	'centralauth-rightslog-entry-groupperms' => '已經更改$1的成員組許可由$2到$3',
+	'centralauth-rightslog-header'		 => '這個日誌包含了全域組之動作：組及許可更改',
+	
+	// Global group membership
+	'globalgroupmembership'			=> '在全域組中的成員',
+	
+	// Global group permissions
+	'globalgrouppermissions'                          => '全域組管理',
+	'centralauth-globalgroupperms-grouplist'          => '以下的全域組已經設定好。您可以去查看或編輯任何組指定的許可。在組中亦都可以移除全部權限去刪除它。',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|去查看及編輯許可]])',
+	'centralauth-existinggroup-legend'                => '現有的組',
+	'centralauth-newgroup-legend'                     => '建立一個新組',
+	'centralauth-newgroup-intro'                      => '您可以用這個表格去指定一個新組的權限。要留意的就是該組不會存在，除非它有指定許可。',
+	'centralauth-globalgroupperms-newgroupname'       => '新組名:',
+	'centralauth-globalgroupperms-creategroup-submit' => '指定許可',
+	'centralauth-editgroup-subtitle'                  => '編輯$1',
+	'centralauth-editgroup-fieldset'                  => '$1的許可',
+	'centralauth-editgroup-name'                      => '組名:',
+	'centralauth-editgroup-display'	                  => '本地化組名:',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|編輯]])',
+	'centralauth-editgroup-member'                    => '本地化組成員名:',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|編輯]])',
+	'centralauth-editgroup-members'                   => '成員表:',
+	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|含有$2許可的用戶名單]]',
+	'centralauth-editgroup-submit'                    => '保存更改到組許可',
+	'centralauth-editgroup-perms'                     => '已指定的許可:',
+	'centralauth-editgroup-reason'                    => '更改的理由:',
+	'centralauth-editgroup-success'                   => '組許可已經更改',
+	'centralauth-editgroup-success-text'              => '您已經成功地更改$1組的組許可。[[Special:GlobalGroupPermissions|回到組管理]]',
+	'centralauth-globalgrouppermissions-knownwiki'    => '選擇一個響他們有賬戶的wiki:',
+	'centralauth-globalgroupmembership-badknownwiki'  => "該全域用戶'''$1'''在您所指定的wiki('' $2 '')中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
+	
+	// User rights
+	'right-globalgroupmembership'  => '編輯成員至全域組',
+	'right-centralauth-admin'      => '管理全域賬戶',
+	'right-centralauth-merge'      => '合併他們的賬戶',
+	'right-globalgrouppermissions' => '管理全域組',
 );
 
