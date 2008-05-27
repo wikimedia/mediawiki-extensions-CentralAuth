@@ -414,12 +414,20 @@ class CentralAuthUser {
 	static function storeMigrationData( $wiki, $users ) {
 		if( $users ) {
 			$dbw = self::getCentralDB();
+			$globalTuples = array();
 			$tuples = array();
 			foreach( $users as $name ) {
+				$globalTuples[] = array( 'gn_name' => $name );
 				$tuples[] = array(
-					'ln_wiki'   => $wiki,
-					'ln_name'     => $name );
+					'ln_wiki' => $wiki,
+					'ln_name' => $name
+				);
 			}
+			$dbw->insert(
+				'globalnames',
+				$globalTuples,
+				__METHOD__,
+				array( 'IGNORE' ) );
 			$dbw->insert(
 				'localnames',
 				$tuples,

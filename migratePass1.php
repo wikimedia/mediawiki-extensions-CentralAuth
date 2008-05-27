@@ -2,7 +2,7 @@
 
 // pass 1:
 // * generate 'globaluser' entries for each username
-// * go through all usernames in 'migrateuser' and for those
+// * go through all usernames in 'globalnames' and for those
 //   that can be automatically migrated, go ahead and do it.
 
 require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
@@ -15,13 +15,12 @@ function migratePassOne() {
 
 	$dbBackground = CentralAuthUser::getCentralSlaveDB();
 	$result = $dbBackground->select(
-		'migrateuser',
-		array( 'mu_name' ),
+		'globalnames',
+		array( 'gn_name' ),
 		'',
-		__METHOD__,
-		array( 'GROUP BY' => 'mu_name' ) );
+		__METHOD__ );
 	while( $row = $dbBackground->fetchObject( $result ) ) {
-		$name = $row->mu_name;
+		$name = $row->gn_name;
 		$central = new CentralAuthUser( $name );
 		if( $central->storeAndMigrate() ) {
 			$migrated++;

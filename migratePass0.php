@@ -2,7 +2,7 @@
 
 // --> disable account creations, password changes
 // pass 0:
-// * generate 'migrateuser' entries for each user on each wiki
+// * generate 'globalnames' and 'localnames' entries for each user on each wiki
 // --> enable
 
 require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
