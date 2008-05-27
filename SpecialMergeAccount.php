@@ -388,17 +388,18 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function formatList( $items, $methods, $callback ) {
-		if( empty( $items ) ) {
+		if( !$items ) {
 			return '';
 		} else {
 			$itemMethods = array();
 			foreach( $items as $item ) {
 				$itemMethods[] = isset( $methods[$item] ) ? $methods[$item] : '';
 			}
-			return "<ul>\n<li>" .
+			return "<div style='column-count: 3; -moz-column-count:3; -webkit-column-count:3;'>" .
+				"<ul>\n<li>" .
 				implode( "</li>\n<li>",
 					array_map( $callback, $items, $itemMethods ) ) .
-				"</li>\n</ul>\n";
+				"</li>\n</ul></div>\n";
 		}
 	}
 
