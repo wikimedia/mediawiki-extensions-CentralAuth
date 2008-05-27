@@ -20,7 +20,10 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 		
 		$token = $wgRequest->getVal('token');
 		$logout = $wgRequest->getBool( 'logout' );
-		
+
+		# Don't cache error messages
+		$wgOut->enableClientCache( false );
+
 		if (strlen($token) == 0 && !$logout) {
 			$wgOut->addWikiText( 'AutoLogin' );
 			return;
@@ -59,11 +62,12 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 				return;
 			}
 		}
-		
-		require_once( "$IP/includes/StreamFile.php" );
-		
-		wfStreamFile( dirname(__FILE__).'/1x1.png' );
-		
+
 		$wgOut->disable();
+
+		wfResetOutputBuffers();
+		header( 'Cache-Control: no-cache' );
+		header( 'Content-Type: image/png' );
+		readfile( dirname(__FILE__).'/1x1.png' );
 	}
 }
