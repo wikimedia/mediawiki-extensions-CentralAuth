@@ -1585,7 +1585,7 @@ $messages['de'] = array(
 		so beeinträchtigt es diesen nicht, aber du hast die Möglichkeit,
 		später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
 	'centralauth-merge-step1-title'                   => 'Beginn der Benutzerkonten-Zusammenführung',
-	'centralauth-merge-step1-detail'                  => 'Dein Passwort und deine eingetragene E-Mail-Adresse werden mit Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden. Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
+	'centralauth-merge-step1-detail'                  => 'Bitte gib dein Passwort ein. Es wird zusammen mit deiner eingetragenen E-Mail-Adresse mit Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden. Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
 	'centralauth-merge-step1-submit'                  => 'Anmelde-Informationen bestätigen',
 	'centralauth-merge-step2-title'                   => 'Bestätige weitere Benutzerkonten',
 	'centralauth-merge-step2-detail'                  => 'Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugeordnet werden. Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.',
@@ -1615,7 +1615,7 @@ $messages['de'] = array(
 		kannst du dich auf jeder Wikimedia-Webseite anmelden, ohne ein
 		neues Benutzerkonto anzulegen; derselbe Benutzername
 		und dasselbe Passwort ist für Wikipedia, Wiktionary, Wikisource,
-		WWikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
+		Wikibooks und alle Schwesterprojekte in allen Sprachen gültig.',
 	'centralauth-not-owner-text'                      => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer
 		des Benutzerkontos auf $2 zugewiesen.
 
