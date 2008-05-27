@@ -129,7 +129,7 @@ class CentralAuthHooks {
 				$url .= "?$querystring";
 			}
 			
-			$inject_html .= Xml::element( 'img', array( 'src' => $url ) );
+			$inject_html .= Xml::element( 'img', array( 'src' => $url, 'alt' => '' ) );
 		}
 		
 		$inject_html .= Xml::closeElement( 'p' );

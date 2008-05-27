@@ -1485,6 +1485,7 @@ class CentralAuthUser {
 	function resetAuthToken() {
 		// Generate a random token.
 		$this->mAuthToken = wfGenerateToken( $this->getId() );
+		$this->mStateDirty = true;
 		
 		// Save it.
 		$this->saveSettings();

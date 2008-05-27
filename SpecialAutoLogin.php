@@ -51,7 +51,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 			$centralUser = new CentralAuthUser( $userName );
 			$login_result = $centralUser->authenticateWithToken( $token );
 		
-			if ($login_result == 'ok' && $centralUser->isAttached()) {
+			if ($login_result == 'ok') {
 				// Auth OK.
 				$centralUser->setGlobalCookies($remember);
 			} else {
