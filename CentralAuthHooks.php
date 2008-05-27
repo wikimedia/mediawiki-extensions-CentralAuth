@@ -414,4 +414,15 @@ class CentralAuthHooks {
 		
 		return true;
 	}
+	
+	static function onLoadExtensionSchemaUpdates() {
+		global $wgExtNewTables;
+		$dir = dirname(__FILE__) . '/';
+		# Actually, we're creating multiple tables here, but the table
+		# name is only really used to check whether the table's been
+		# added already. Therefore, we use the last one in
+		# central-auth.sql
+		$wgExtNewTables[] = array('global_group_permissions', $dir . 'central-auth.sql');
+		return true;
+	}
 }

@@ -134,6 +134,9 @@ $wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
 $wgHooks['RenameUserAbort'][] = 'CentralAuthHooks::onRenameUserAbort';
 $wgHooks['RenameUserComplete'][] = 'CentralAuthHooks::onRenameUserComplete';
 
+// For applying centralauth.sql
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'CentralAuthHooks::onLoadExtensionSchemaUpdates';
+
 $wgAvailableRights[] = 'centralauth-admin';
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'globalgrouppermissions';
