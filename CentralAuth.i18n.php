@@ -1719,7 +1719,7 @@ $messages['de'] = array(
 	'centralauth-prefs-detail-unattached'             => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
 	'centralauth-prefs-manage'                        => 'Bearbeite dein zusammengeführtes Benutzerkonto',
 	'centralauth-renameuser-abort'                    => '<div class="errorbox">Benutzer $1 kann nicht lokal umbenannt werden, da er bereits in das globale Benutzerkonten-System übernommen wurde.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Benutzer $2 kann nicht umbenannt werden, da dieser Benutzername als globales Benutzerkonto reserviert ist.</div>',
+	'centralauth-renameuser-exists'                   => '<div class="errorbox">Umbenennung nach Benutzer $2 kann nicht durchgeführt werden, da dieser Benutzername als globales Benutzerkonto reserviert ist.</div>',
 	'centralauth-invalid-wiki'                        => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists'                      => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
 	'centralauth-log-name'                            => 'Globales Benutzerkonten-Logbuch',
