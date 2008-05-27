@@ -125,9 +125,6 @@ CREATE TABLE global_user_groups (
 	key (gug_group)
 ) /*$wgDBTableOptions*/;
 
--- This has to be the last table
--- Add any other tables above this line
-
 -- Global group permissions.
 CREATE TABLE global_group_permissions (
 	ggp_group varchar(255) not null,
