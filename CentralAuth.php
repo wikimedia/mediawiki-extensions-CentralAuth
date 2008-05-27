@@ -82,6 +82,17 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
  */
 $wgCentralAuthAutoLoginWikis = array();
 
+/**
+ * If true, local accounts will be created for active global sessions
+ * on any page view. This is kind of creepy, so we're gonna have it off
+ * for a little bit.
+ *
+ * With other default options, the local autocreation will be held off
+ * until an active login attempt, while global sessions will still
+ * automatically log in those who already have a merged account.
+ */
+$wgCentralAuthCreateOnView = false;
+
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Central Auth',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',

@@ -315,10 +315,17 @@ class CentralAuthHooks {
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user, $userName ) {
-		global $wgAuth;
+		global $wgAuth, $wgCentralAuthCreateOnView;
 		// Denied by configuration?
 		if ( !$wgAuth->autoCreate() ) {
 			wfDebug( __METHOD__.": denied by configuration\n" );
+			return false;
+		}
+		
+		if ( !$wgCentralAuthCreateOnView ) {
+			// Only create local accounts when we perform an active login...
+			// Don't freak people out on every page view
+			wfDebug( __METHOD__.": denied by \$wgCentralAuthCreateOnView\n" );
 			return false;
 		}
 
