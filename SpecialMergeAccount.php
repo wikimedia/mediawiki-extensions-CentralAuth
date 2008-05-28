@@ -535,9 +535,4 @@ class SpecialMergeAccount extends SpecialPage {
 		global $wgOut;
 		$wgOut->addWikiText( wfMsg( 'centralauth-disabled-dryrun' ) );
 	}
-	
-	public function userCanExecute( $user ) {
-		// We expect at least one permissions error, because we're trying to do an action on a specialpage.
-		return count($this->getTitle()->getUserPermissionsErrors( 'centralauth-merge', $user ))<=1;
-	}
 }

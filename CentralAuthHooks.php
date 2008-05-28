@@ -76,10 +76,9 @@ class CentralAuthHooks {
 		return true;
 	}
 	
-	static function onAbortNewAccount( $user, &$abortError, $autocreate ) {
+	static function onAbortNewAccount( $user, &$abortError ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
-		// Only let accounts be autocreated if the username is taken.
-		if ( $centralUser->exists() && !$autocreate ) {
+		if ( $centralUser->exists() ) {
 			wfLoadExtensionMessages('SpecialCentralAuth');
 			$abortError = wfMsg( 'centralauth-account-exists' );
 			return false;
@@ -164,7 +163,7 @@ class CentralAuthHooks {
 		$localId = User::idFromName( $userName );
 		
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
-			wfDebug( __METHOD__.": token mismatch ($token)\n" );
+			wfDebug( __METHOD__.": token mismatch\n" );
 		} elseif ( !$centralUser->isAttached() && $localId ) {
 			wfDebug( __METHOD__.": exists, and not attached\n" );
 		} else {
@@ -335,7 +334,7 @@ class CentralAuthHooks {
 		// The user can log in via Special:UserLogin to bypass the blacklist and get a proper 
 		// error message.
 		$session = CentralAuthUser::getSession();
-		if ( is_array( $session['auto-create-blacklist'] ) && in_array( wfWikiID(), $session['auto-create-blacklist'] ) ) {
+		if ( in_array( wfWikiID(), $session['auto-create-blacklist'] ) ) {
 			wfDebug( __METHOD__.": blacklisted by session\n" );
 			return false;
 		}
@@ -351,22 +350,10 @@ class CentralAuthHooks {
 			CentralAuthUser::setSession( $session );
 			return false;
 		}
-		
-		// Hooks expect an initialised user object
-		$user->loadDefaults( $userName );
-		
-		// Check hooks.
-		$abortError = '';
-		if( !wfRunHooks( 'AbortNewAccount', array( $user, &$abortError, true /* autocreate */ ) ) ) {
-			// Blacklist, too.
-			$session = CentralAuthUser::getSession();
-			$session['auto-create-blacklist'][] = wfWikiID();
-			wfDebug( __METHOD__.": username rejected by a hook: $abortError.\n" );
-			return false;
-		}
 
 		// Checks passed, create the user
 		wfDebug( __METHOD__.": creating new user\n" );
+		$user->loadDefaults( $userName );
 		$user->addToDatabase();
 
 		$wgAuth->initUser( $user, true );
