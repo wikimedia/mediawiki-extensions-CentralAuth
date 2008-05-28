@@ -1379,6 +1379,9 @@ class CentralAuthUser {
 	function setPassword( $password ) {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
+		$this->mPassword = $hash;
+		$this->mSalt = $salt;
+
 		$dbw = self::getCentralDB();
 		$dbw->update( 'globaluser',
 			array(
