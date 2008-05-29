@@ -425,7 +425,7 @@ class CentralAuthHooks {
 	/**
 	 * Destroy local login cookies so that remote logout works
 	 */
-	function onUserSetCookies( $user, &$session, &$cookies ) {
+	static function onUserSetCookies( $user, &$session, &$cookies ) {
 		if ( $user->isAnon() ) {
 			return true;
 		}
@@ -440,7 +440,7 @@ class CentralAuthHooks {
 	/**
 	 * Use the central LoggedOut cookie just like the local one
 	 */
-	function onUserLoadDefaults( $user, $name ) {
+	static function onUserLoadDefaults( $user, $name ) {
 		global $wgCentralAuthCookiePrefix;
 		if ( isset( $_COOKIE[$wgCentralAuthCookiePrefix.'LoggedOut'] ) ) {
 			$user->mTouched = wfTimestamp( TS_MW, $_COOKIE[$wgCentralAuthCookiePrefix.'LoggedOut'] );
