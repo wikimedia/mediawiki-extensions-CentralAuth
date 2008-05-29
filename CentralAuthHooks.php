@@ -334,7 +334,7 @@ class CentralAuthHooks {
 		// The user can log in via Special:UserLogin to bypass the blacklist and get a proper 
 		// error message.
 		$session = CentralAuthUser::getSession();
-		if ( in_array( wfWikiID(), $session['auto-create-blacklist'] ) ) {
+		if ( in_array( wfWikiID(), (array)$session['auto-create-blacklist'] ) ) {
 			wfDebug( __METHOD__.": blacklisted by session\n" );
 			return false;
 		}
