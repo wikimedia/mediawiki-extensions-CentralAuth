@@ -379,8 +379,8 @@ class CentralAuthUser {
 			array(
 				'gu_name'  => $this->mName,
 
-				'gu_email' => $email, // FIXME
-				'gu_email_authenticated' => null, // FIXME
+				'gu_email' => $email,
+				'gu_email_authenticated' => null,
 
 				'gu_salt'     => $salt,
 				'gu_password' => $hash,
@@ -1523,7 +1523,7 @@ class CentralAuthUser {
 				'gu_locked' => $this->mLocked,
 				'gu_hidden' => $this->mHidden,
 				'gu_email' => $this->mEmail,
-				'gu_email_authenticated' => $dbw->timestamp( $this->mAuthenticationTimestamp )
+				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp )
 			),
 			array( # WHERE
 				'gu_id' => $this->mGlobalId 

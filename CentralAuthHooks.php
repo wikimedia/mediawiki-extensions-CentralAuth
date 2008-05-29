@@ -363,7 +363,7 @@ class CentralAuthHooks {
 		$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
 		$ssUpdate->doUpdate();
 
-		# Notify hooks
+		# Notify hooks (e.g. Newuserlog)
 		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
 		return true;
 	}
@@ -426,8 +426,14 @@ class CentralAuthHooks {
 	 * Destroy local login cookies so that remote logout works
 	 */
 	function onUserSetCookies( $user, &$session, &$cookies ) {
-		unset( $session['wsToken'] );
-		unset( $cookies['Token'] );
+		if ( $user->isAnon() ) {
+			return true;
+		}
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( $centralUser->isAttached() ) {
+			unset( $session['wsToken'] );
+			unset( $cookies['Token'] );
+		}
 		return true;
 	}
 
