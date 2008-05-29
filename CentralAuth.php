@@ -83,6 +83,12 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
 $wgCentralAuthAutoLoginWikis = array();
 
 /**
+ * Local filesystem path to the icon returned by Special:AutoLogin
+ * Should be a 20x20px PNG.
+ */
+$wgCentralAuthLoginIcon = false;
+
+/**
  * If true, local accounts will be created for active global sessions
  * on any page view. This is kind of creepy, so we're gonna have it off
  * for a little bit.
@@ -140,6 +146,8 @@ $wgHooks['UserSetEmail'][] = 'CentralAuthHooks::onUserSetEmail';
 $wgHooks['UserSaveSettings'][] = 'CentralAuthHooks::onUserSaveSettings';
 $wgHooks['UserSetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserSetEmailAuthenticationTimestamp';
 $wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
+$wgHooks['UserSetCookies'][] = 'CentralAuthHooks::onUserSetCookies';
+$wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserAbort'][] = 'CentralAuthHooks::onRenameUserAbort';

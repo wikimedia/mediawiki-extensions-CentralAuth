@@ -76,6 +76,12 @@ class SpecialAutoLogin extends UnlistedSpecialPage
 		wfResetOutputBuffers();
 		header( 'Cache-Control: no-cache' );
 		header( 'Content-Type: image/png' );
-		readfile( dirname(__FILE__).'/1x1.png' );
+
+		global $wgCentralAuthLoginIcon;
+		if ( $wgCentralAuthLoginIcon ) {
+			readfile( $wgCentralAuthLoginIcon );
+		} else {
+			readfile( dirname(__FILE__).'/1x1.png' );
+		}
 	}
 }

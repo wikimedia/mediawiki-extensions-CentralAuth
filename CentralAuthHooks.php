@@ -421,4 +421,24 @@ class CentralAuthHooks {
 		
 		return true;
 	}
+
+	/**
+	 * Destroy local login cookies so that remote logout works
+	 */
+	function onUserSetCookies( $user, &$session, &$cookies ) {
+		unset( $session['wsToken'] );
+		unset( $cookies['Token'] );
+		return true;
+	}
+
+	/**
+	 * Use the central LoggedOut cookie just like the local one
+	 */
+	function onUserLoadDefaults( $user, $name ) {
+		global $wgCentralAuthCookiePrefix;
+		if ( isset( $_COOKIE[$wgCentralAuthCookiePrefix.'LoggedOut'] ) ) {
+			$user->mTouched = wfTimestamp( TS_MW, $_COOKIE[$wgCentralAuthCookiePrefix.'LoggedOut'] );
+		}
+		return true;
+	}
 }
