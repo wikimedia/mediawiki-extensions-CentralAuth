@@ -426,7 +426,8 @@ class CentralAuthHooks {
 	 * Destroy local login cookies so that remote logout works
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
-		if ( $user->isAnon() ) {
+		global $wgCentralAuthCookies, $wgCentralAuthCookieDomain;
+		if ( !$wgCentralAuthCookies || !$wgCentralAuthCookieDomain || $user->isAnon() ) {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
