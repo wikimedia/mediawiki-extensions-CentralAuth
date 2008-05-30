@@ -197,6 +197,8 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki.
 When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
 You have requested this page without providing any authentication data, so it does nothing.',
+	'centralauth-login-progress'     => 'Logging you in to Wikimedia\'s other projects:',
+	'centralauth-logout-progress'    => 'Logging you out from Wikimedia\'s other projects:',
 	
 	// Logging
 	'centralauth-log-name'         => 'Global account log',

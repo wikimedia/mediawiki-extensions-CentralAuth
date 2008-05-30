@@ -103,9 +103,14 @@ class CentralAuthHooks {
 		
 		// On other wikis
 		global $wgCentralAuthAutoLoginWikis;
-		
-		$inject_html .= Xml::openElement( 'p' );
-		foreach( $wgCentralAuthAutoLoginWikis as $wiki ) {
+		if ( !$wgCentralAuthAutoLoginWikis ) {
+			return true;
+		}
+
+		wfLoadExtensionMessages( 'SpecialCentralAuth' );
+		$inject_html .= '<div class="centralauth-login-box"><p>' . 
+			wfMsg( 'centralauth-login-progress' ) . "</p>\n<p>";
+		foreach( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
 			$data = array(
 				'userName' => $user->getName(),
 				'token' => $centralUser->getAuthToken(),
@@ -127,10 +132,18 @@ class CentralAuthHooks {
 				$url .= "?$querystring";
 			}
 			
-			$inject_html .= Xml::element( 'img', array( 'src' => $url, 'alt' => '' ) );
+			$inject_html .= Xml::element( 'img', 
+				array( 
+					'src' => $url,
+					'alt' => $alt,
+					'title' => $alt,
+					'width' => 20,
+					'height' => 20,
+					'style' => 'border: 1px solid #ccc;',
+			   	) );
 		}
 		
-		$inject_html .= Xml::closeElement( 'p' );
+		$inject_html .= '</p></div>';
 		
 		return true;
 	}
@@ -211,10 +224,12 @@ class CentralAuthHooks {
 		}
 
 		// Generate the images
-		$inject_html .= Xml::openElement( 'p' );
+		wfLoadExtensionMessages( 'SpecialCentralAuth' );
+		$inject_html .= '<div class="centralauth-logout-box"><p>' . 
+			wfMsg( 'centralauth-logout-progress' ) . "</p>\n<p>";
 		$centralUser = new CentralAuthUser( $userName );
 
-		foreach( $wgCentralAuthAutoLoginWikis as $wiki ) {
+		foreach( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
 			$data = array(
 				'userName' => $userName,
 				'token' => $centralUser->getAuthToken(),
@@ -234,10 +249,18 @@ class CentralAuthHooks {
 				$url .= "?logout=1&token=$loginToken";
 			}
 			
-			$inject_html .= Xml::element( 'img', array( 'src' => $url, 'alt' => '' ) );
+			$inject_html .= Xml::element( 'img', 
+				array( 
+					'src' => $url,
+					'alt' => $alt,
+					'title' => $alt,
+					'width' => 20,
+					'height' => 20,
+					'style' => 'border: 1px solid #ccc;',
+			   	) );
 		}
 		
-		$inject_html .= Xml::closeElement( 'p' );
+		$inject_html .= '</p></div>';
 		return true;
 	}
 	

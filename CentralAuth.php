@@ -76,9 +76,11 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
  * session on all of them by hitting one wiki from each domain 
  * (en.wikipedia.org, en.wikinews.org, etc).
  *
- * Done by loading a 1x1 image from Special:AutoLogin on each wiki.
+ * Done by $wgCentralAuthLoginIcon from Special:AutoLogin on each wiki.
  *
  * If empty, no other wikis will be hit.
+ *
+ * The key should be set to the cookie domain name.
  */
 $wgCentralAuthAutoLoginWikis = array();
 
