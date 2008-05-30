@@ -1767,6 +1767,8 @@ $messages['de'] = array(
 	'centralauth-autologin-desc'                      => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn du dich [[Special:UserLogin|anmeldest]],
 	instruiert das zentrale Anmeldesystem deinen Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.<br />
 	Du hast diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nichts weiter geschieht.',
+	'centralauth-login-progress'                      => 'Anmeldung erfolgte auch automatisch an den folgenden Wikimedia-Projekten:',
+	'centralauth-logout-progress'                     => 'Abmeldung erfolgte auch automatisch von den folgenden Wikimedia-Projekten:',
 	'centralauth-log-name'                            => 'Globales Benutzerkonten-Logbuch',
 	'centralauth-log-header'                          => 'Dieses Logbuch zeigt alle Löschungen, Sperrungen und Entsperrungen globaler Benutzerkonten.',
 	'centralauth-log-entry-delete'                    => 'löschte das globale Benutzerkonto „<nowiki>$1</nowiki>“',
