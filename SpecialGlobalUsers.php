@@ -10,7 +10,7 @@ class SpecialGlobalUsers extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgOut, $wgRequest;
+		global $wgOut, $wgRequest, $wgContLang;
 		$this->setHeaders();
 
 		$pg = new GlobalUsersPager();
@@ -21,7 +21,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		if( $rqGroup = $wgRequest->getVal( 'group' ) ) {
 			$pg->setGroup( $rqGroup );
 		}
-		if( $rqUsername = $wgRequest->getVal( 'username' ) ) {
+		if( $rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) ) ) {
 			$pg->setUsername( $rqUsername );
 		}
 
