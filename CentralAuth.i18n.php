@@ -9321,6 +9321,8 @@ $messages['yue'] = array(
 	'centralauth-autologin-desc'           => '呢版特別頁係響MediaWiki度內部用嘅。當你[[Special:UserLogin|登入]]後，
 	個中央登入系統會利用圖像連結，指示你個瀏覽器響全部連接嘅網域度請求呢一版。
 	你響呢一版度唔需要再俾任何嘅認證資料，即係唔使做。',
+	'centralauth-login-progress'           => '幫你登入緊去Wikimedia嘅其它計劃:',
+	'centralauth-logout-progress'          => '幫你登出緊自Wikimedia嘅其它計劃:',
 	'centralauth-log-name'                 => '全域戶口日誌',
 	'centralauth-log-header'               => '呢個日誌包含咗全域戶口嘅動作: 刪除、鎖同解鎖。',
 	'centralauth-log-entry-delete'         => '已經刪咗全域戶口"<nowiki>$1</nowiki>"',
@@ -9508,7 +9510,9 @@ $messages['zh-hans'] = array(
 	'centralauth-account-exists'           => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
 	'centralauth-autologin-desc'           => '这个版殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，
 	该中央登入系统会利用图像连结，指示您的浏览器响全部连接的网域度请求这个页面。
-	您在这一页面中不需要再给出任何的认证资料，即是任么也不用作。',
+	您在这一页面中不需要再给出任何的认证资料，即是什么也不用作。',
+	'centralauth-login-progress'           => '为您登入中至Wikimedia的其它计划:',
+	'centralauth-logout-progress'          => '为您登出中自Wikimedia的其它计划:',
 	'centralauth-log-name'                 => '全域账户日志',
 	'centralauth-log-header'               => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
 	'centralauth-log-entry-delete'         => '已经删除全域账户"<nowiki>$1</nowiki>"',
@@ -9709,7 +9713,9 @@ $messages['zh-hant'] = array(
 	'centralauth-account-exists'                      => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 	'centralauth-autologin-desc'                      => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
 	該中央登入系統會利用圖像連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
-	您在這一頁面中不需要再給出任何的認證資料，即是任麼也不用作。',
+	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
+	'centralauth-login-progress'                      => '為您登入中至Wikimedia的其它計劃:',
+	'centralauth-logout-progress'                     => '為您登出中自Wikimedia的其它計劃:',
 	'centralauth-log-name'                            => '全域帳戶管理日誌',
 	'centralauth-log-header'                          => '這個日誌包含全域帳戶的動作: 刪除、鎖定以及解除鎖定。',
 	'centralauth-log-entry-delete'                    => '已經刪除全域帳戶"<nowiki>$1</nowiki>"',
