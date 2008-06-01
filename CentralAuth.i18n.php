@@ -69,6 +69,7 @@ If this is you, you can finish the login unification process simply by typing th
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Demo mode only</div><br clear='all'/>",
 
 	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled. Sorry!",
+	'centralauth-error-locked'    => 'You cannot edit because your account is locked.',
 
 	// Appended to various messages above
 	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|Read more about '''unified login''']]…''",
@@ -160,7 +161,17 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-unlock-button'      => 'Unlock this account',
 	'centralauth-admin-unlock-success'     => 'Successfully unlocked the global account for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-unlock-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
-	'centralauth-admin-reason'             => 'Reason: ',
+	'centralauth-admin-hide-title'         => 'Hide account',
+	'centralauth-admin-hide-description'   => 'Hidden accounts are not shown on [[Special:GlobalUsers]].',
+	'centralauth-admin-hide-button'        => 'Hide this account',
+	'centralauth-admin-hide-success'       => 'Successfully hid the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-hide-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-unhide-title'       => 'Unhide account',
+	'centralauth-admin-unhide-description' => 'Unhiding account will make it again appear on [[Special:GlobalUsers]].',
+	'centralauth-admin-unhide-button'      => 'Unhide this account',
+	'centralauth-admin-unhide-success'     => 'Successfully unhid the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-reason'             => 'Reason:',
 
 	// List of global users
 	'globalusers'                    => 'Global user list',
@@ -206,6 +217,8 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-log-entry-delete' => 'deleted global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'   => 'locked global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock' => 'unlocked global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-hide'   => 'hid global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unhide' => 'unhid global account "<nowiki>$1</nowiki>"',
 
 	'centralauth-rightslog-name'		=> 'Global rights log',
 	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',

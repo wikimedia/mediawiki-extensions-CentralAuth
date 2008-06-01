@@ -471,4 +471,18 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+
+	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
+		if( $action == 'read' || $user->isAnon() ) {
+			return true;
+		}
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if( !($centralUser->exists() && !$centralUser->isAttached()) ) {
+			return true;
+		}
+		if( $centralUser->isLocked() ) {
+			$result = 'centralauth-error-locked';
+			return false;
+		}
+	}
 }

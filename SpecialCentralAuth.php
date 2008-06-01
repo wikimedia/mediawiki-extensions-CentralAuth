@@ -66,7 +66,7 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
-		$deleted = $locked = $unlocked = false;
+		$deleted = $locked = $unlocked = $hidden = $unhidden = false;
 
 		if( $this->mPosted ) {
 			if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
@@ -111,6 +111,26 @@ class SpecialCentralAuth extends SpecialPage {
 					$unlocked = true;
 					$this->logAction( 'unlock', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
+			} elseif( $this->mMethod == 'hide' ) {
+				$status = $globalUser->adminHide();
+				if ( !$status->isGood() ) {
+					$this->showStatusError( $status->getWikiText() );
+				} else {
+					global $wgLang;
+					$this->showSuccess( 'centralauth-admin-hide-success', $this->mUserName );
+					$hidden = true;
+					$this->logAction( 'hide', $this->mUserName, $wgRequest->getVal( 'reason' ) );
+				}
+			} elseif( $this->mMethod == 'unhide' ) {
+				$status = $globalUser->adminUnhide();
+				if ( !$status->isGood() ) {
+					$this->showStatusError( $status->getWikiText() );
+				} else {
+					global $wgLang;
+					$this->showSuccess( 'centralauth-admin-unhide-success', $this->mUserName );
+					$unhidden = true;
+					$this->logAction( 'unhide', $this->mUserName, $wgRequest->getVal( 'reason' ) );
+				}
 			} else {
 				$this->showError( 'centralauth-admin-bad-input' );
 			}
@@ -120,11 +140,17 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->showUsernameForm();
 		if ( !$deleted ) {
 			$this->showInfo();
-			$this->showDeleteForm();
+			$this->showActionForm( 'delete' );
 			if( !$globalUser->isLocked() && !$locked )
-				$this->showLockForm();
+				$this->showActionForm( 'lock' );
 			if( $globalUser->isLocked() && !$unlocked )
-				$this->showUnlockForm();
+				$this->showActionForm( 'unlock' );
+			if( !$globalUser->isHidden() && !$hidden ) {
+				$this->showActionForm( 'hide' );
+			}
+			if( $globalUser->isHidden() && !$unhidden ) {
+				$this->showActionForm( 'unhide' );
+			}
 		}
 	}
 
@@ -309,62 +335,22 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
-	function showDeleteForm() {
+	function showActionForm( $action ) {
 		global $wgOut, $wgUser;
 		$wgOut->addHtml(
-			Xml::element( 'h2', array(), wfMsg( 'centralauth-admin-delete-title' ) ) .
+			Xml::element( 'h2', array(), wfMsg( "centralauth-admin-{$action}-title" ) ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
 				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
-			Xml::hidden( 'wpMethod', 'delete' ) .
+			Xml::hidden( 'wpMethod', $action ) .
 			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
-			wfMsgExt( 'centralauth-admin-delete-description', 'parse' ) .
+			wfMsgExt( "centralauth-admin-{$action}-description", 'parse' ) .
 			'<p>' .
-			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), 'delete-reason' ) .
-			Xml::input( 'reason', false, false, array( 'id' => 'delete-reason' ) ) .
+			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), "{$action}-reason" ) . ' ' .
+			Xml::input( 'reason', false, false, array( 'id' => "{$action}-reason" ) ) .
 			'</p>' .
 			'<p>' .
-			Xml::submitButton( wfMsg( 'centralauth-admin-delete-button' ) ) .
-			'</p>' .
-			'</form>' );
-	}
-
-	function showLockForm() {
-		global $wgOut, $wgUser;
-		$wgOut->addHtml(
-			Xml::element( 'h2', array(), wfMsg( 'centralauth-admin-lock-title' ) ) .
-			Xml::openElement( 'form', array(
-				'method' => 'POST',
-				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
-			Xml::hidden( 'wpMethod', 'lock' ) .
-			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
-			wfMsgExt( 'centralauth-admin-lock-description', 'parse' ) .
-			'<p>' .
-			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), 'lock-reason' ) .
-			Xml::input( 'reason', false, false, array( 'id' => 'lock-reason' ) ) .
-			'</p>' .
-			'<p>' .
-			Xml::submitButton( wfMsg( 'centralauth-admin-lock-button' ) ) .
-			'</p>' .
-			'</form>' );
-	}
-
-	function showUnlockForm() {
-		global $wgOut, $wgUser;
-		$wgOut->addHtml(
-			Xml::element( 'h2', array(), wfMsg( 'centralauth-admin-unlock-title' ) ) .
-			Xml::openElement( 'form', array(
-				'method' => 'POST',
-				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
-			Xml::hidden( 'wpMethod', 'unlock' ) .
-			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
-			wfMsgExt( 'centralauth-admin-unlock-description', 'parse' ) .
-			'<p>' .
-			Xml::label( wfMsgHtml( 'centralauth-admin-reason' ), 'unlock-reason' ) .
-			Xml::input( 'reason', false, false, array( 'id' => 'unlock-reason' ) ) .
-			'</p>' .
-			'<p>' .
-			Xml::submitButton( wfMsg( 'centralauth-admin-unlock-button' ) ) .
+			Xml::submitButton( wfMsg( "centralauth-admin-{$action}-button" ) ) .
 			'</p>' .
 			'</form>' );
 	}

@@ -27,7 +27,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 class SpecialGlobalGroupPermissions extends SpecialPage
 {
 	function __construct() {
-		SpecialPage::SpecialPage('GlobalGroupPermissions', 'globalgrouppermissions');
+		parent::__construct('GlobalGroupPermissions', 'globalgrouppermissions');
 		wfLoadExtensionMessages('SpecialCentralAuth');
 	}
 	

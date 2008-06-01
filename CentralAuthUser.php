@@ -900,6 +900,44 @@ class CentralAuthUser {
 	}
 
 	/**
+	 * Hide a global account
+	 */
+	function adminHide() {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$dbw->update( 'globaluser', array( 'gu_hidden' => 1 ),
+			array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$dbw->affectedRows() ) {
+			$dbw->commit();
+			return Status::newFatal( 'centralauth-admin-hide-nonexistent', $this->mName );
+		}
+		$dbw->commit();
+		
+		$this->invalidateCache();
+		
+		return Status::newGood();
+	}
+
+	/**
+	 * Unhide a global account
+	 */
+	function adminUnhide() {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$dbw->update( 'globaluser', array( 'gu_hidden' => 0 ),
+			array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$dbw->affectedRows() ) {
+			$dbw->commit();
+			return Status::newFatal( 'centralauth-admin-unhide-nonexistent', $this->mName );
+		}
+		$dbw->commit();
+		
+		$this->invalidateCache();
+		
+		return Status::newGood();
+	}
+
+	/**
 	 * Add a local account record for the given wiki to the central database.
 	 * @param string $wikiID
 	 * @param int $localid

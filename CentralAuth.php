@@ -150,6 +150,7 @@ $wgHooks['UserSetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserSet
 $wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
 $wgHooks['UserSetCookies'][] = 'CentralAuthHooks::onUserSetCookies';
 $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
+$wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserAbort'][] = 'CentralAuthHooks::onRenameUserAbort';
@@ -176,6 +177,8 @@ $wgLogHeaders['globalauth']        = 'centralauth-log-header';
 $wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
 $wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
 $wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
+$wgLogActions['globalauth/hide']   = 'centralauth-log-entry-hide';
+$wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
 
 $wgLogTypes[]                      = 'gblrights';
 $wgLogNames['gblrights']          = 'centralauth-rightslog-name';
