@@ -1443,6 +1443,7 @@ class CentralAuthUser {
 	/**
 	 * Set a global cookie that auto-authenticates the user on other wikis
 	 * Called on login.
+	 * @return Session ID
 	 */
 	function setGlobalCookies($remember = false) {
 		if (is_object($remember)) {
@@ -1464,7 +1465,7 @@ class CentralAuthUser {
 		} else {
 			$this->clearCookie( 'Token' );
 		}
-		self::setSession( $session );
+		return self::setSession( $session );
 	}
 	
 	/**
@@ -1704,6 +1705,7 @@ class CentralAuthUser {
 
 	/**
 	 * Set the central session data
+	 * @return ID
 	 */
 	static function setSession( $data ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
@@ -1719,6 +1721,7 @@ class CentralAuthUser {
 		}
 		$key = self::memcKey( 'session', $id );
 		$wgMemc->set( $key, $data, 86400 );
+		return $id;
 	}
 
 	/**
