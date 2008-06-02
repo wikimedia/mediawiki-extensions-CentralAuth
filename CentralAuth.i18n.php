@@ -10190,6 +10190,18 @@ $messages['yue'] = array(
 	'right-globalgrouppermissions' => '管理全域組',
 );
 
+/** Old Chinese / Late Time Chinese 文言
+ * @author Itsmine
+ */
+$messages['zh-classical'] = array(
+	'centralauth-desc'                                => '[[Special:MergeAccount|混一]]籍口',
+	'centralauth-complete'                            => '成矣﹗',
+	'centralauth-incomplete'                          => '未成矣﹗',
+	'centralauth-complete-text'                       => '而今而後，足下行乎維基，一號即可貫之，不必復籍焉。',
+	'centralauth-incomplete-text'                     => '一號合矣，爾可貫之；同名號用典字書他也。',
+	'centralauth-blocked-text'                        => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
+);
+
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
  * @author 下一次登录
@@ -10424,7 +10436,7 @@ $messages['zh-hant'] = array(
 	'centralauth-complete'                            => '帳號整合完成！',
 	'centralauth-incomplete'                          => '帳號整合未完成！',
 	'centralauth-complete-text'                       => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
-	'centralauth-incomplete-text'                     => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
+	'centralauth-incomplete-text'                     => '當您的賬戶被整合後，您將能夠登錄到任何一處維基媒體的維基項目網站，而無需創建一個新的賬戶；相同的用戶名和密碼會適用於維基百科、維基詞典、維基教科書及其他姐妹項目的所有語言版本。',
 	'centralauth-not-owner-text'                      => '使用者名稱："$1"已自動分配給$2上的帳號。
 
 如果這是您的帳號，請輸入該帳號的密碼以完成帳號整合：',
