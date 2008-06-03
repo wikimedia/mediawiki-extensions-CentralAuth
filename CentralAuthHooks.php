@@ -477,7 +477,7 @@ class CentralAuthHooks {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
-		if( !($centralUser->exists() && !$centralUser->isAttached()) ) {
+		if( !($centralUser->exists() && $centralUser->isAttached()) ) {
 			return true;
 		}
 		if( $centralUser->isLocked() ) {
