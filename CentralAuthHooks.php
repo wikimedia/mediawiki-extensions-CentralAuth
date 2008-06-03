@@ -484,5 +484,6 @@ class CentralAuthHooks {
 			$result = 'centralauth-error-locked';
 			return false;
 		}
+		return true;
 	}
 }
