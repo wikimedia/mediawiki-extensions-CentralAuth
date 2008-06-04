@@ -246,7 +246,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			$central = CentralAuthUser::getInstance( $user );
 			if( $central->exists() ) {
 				$central->attach( wfWikiID(), 'login' );
-				$cental->addLocalName( wfWikiID() );
+				$central->addLocalName( wfWikiID() );
 				$this->updateUser( $user );
 			}
 		}
