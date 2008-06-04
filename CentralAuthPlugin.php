@@ -8,7 +8,6 @@
  *   central password or settings.
  */
 class CentralAuthPlugin extends AuthPlugin {
-	private $passwords = array();	// Password of the user. Stored because of the AuthPlugin limitations.
 
 	/**
 	 * Check whether there exists a user account with the given name.
@@ -76,9 +75,6 @@ class CentralAuthPlugin extends AuthPlugin {
 				return false;
 			}
 		}
-		if( $passwordMatch ) {
-			$this->passwords[$username] = $password;
-		}
 
 		return $passwordMatch;
 	}
@@ -115,9 +111,6 @@ class CentralAuthPlugin extends AuthPlugin {
 		if ( $central->exists() && $central->isAttached() ) {
 			$user->setEmail( $central->getEmail() );
 			$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
-			if( isset( $this->passwords[$user->getName()] ) ) {
-				$user->setPassword( $this->passwords[$user->getName()] );
-			}
 			$user->saveSettings();
 		}
 		return true;
