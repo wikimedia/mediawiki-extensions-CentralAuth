@@ -18,9 +18,8 @@ class CentralAuthUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 2;
+	/*private*/ var $mVersion = 1;
 	/*private*/ var $mDelayInvalidation = 0;
-	/*private*/ var $mBlock = false;
 	
 	static $mCacheVars = array(
 		'mGlobalId',
@@ -34,7 +33,6 @@ class CentralAuthUser {
 		'mAuthenticationTimestamp',
 		'mGroups',
 		'mRights',
-		'mBlock',
 
 		# Store the string list instead of the array, to save memory, and 
 		# avoid unserialize() overhead
@@ -142,7 +140,6 @@ class CentralAuthUser {
 		$dbr->freeResult( $result );
 		
 		$this->loadFromRow( $row, true );
-		$this->mBlock = CentralAuthBlock::newFromUser( $this );
 		$this->saveToCache();
 		wfProfileOut( __METHOD__ );
 	}
@@ -1824,15 +1821,5 @@ class CentralAuthUser {
 	 */
 	public function attachedOn( $wiki ) {
 		return $this->exists() && in_array( $wiki, $this->mAttachedArray );
-	}
-
-	public function isBlocked() {
-		$this->loadState();
-		return (bool)$this->mBlock;
-	}
-
-	public function getBlock() {
-		$this->loadState();
-		return $this->mBlock;
 	}
 }
