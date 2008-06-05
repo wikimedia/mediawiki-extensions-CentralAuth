@@ -70,6 +70,16 @@ If this is you, you can finish the login unification process simply by typing th
 
 	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled. Sorry!",
 	'centralauth-error-locked'    => 'You cannot edit because your account is locked.',
+	'centralauth-blocked'         => "<big>'''Your account has been blocked globally.'''</big>
+
+The block was made by $1. The reason given is ''$2''.
+
+* Start of block: $6
+* Expiry of block: $5
+* Intended blockee: $3
+
+You can contact $7 or another steward to discuss the block.
+You cannot use the 'e-mail this user' feature unless a valid e-mail address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.",
 
 	// Appended to various messages above
 	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|Read more about '''unified login''']]…''",
@@ -146,32 +156,45 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-delete-description' => 'Deleting the global account will delete any global preferences, unattach all local accounts, and leave the global name free for another user to take.
 All local accounts will continue to exist.
 The passwords for local accounts created before the merge will revert to their pre-merge values.',
-	'centralauth-admin-delete-button'      => 'Delete this account',
-	'centralauth-admin-delete-success'     => 'Successfully deleted the global account for "<nowiki>$1</nowiki>"',
-	'centralauth-admin-nonexistent'        => 'There is no global account for "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
-	'centralauth-token-mismatch'           => 'Sorry, we could not process your form submission due to a loss of session data.',
-	'centralauth-admin-lock-title'         => 'Lock account',
-	'centralauth-admin-lock-description'   => 'Locking account will make impossible to log under it in any wiki.',
-	'centralauth-admin-lock-button'        => 'Lock this account',
-	'centralauth-admin-lock-success'       => 'Successfully locked the global account for "<nowiki>$1</nowiki>"',
-	'centralauth-admin-lock-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
-	'centralauth-admin-unlock-title'       => 'Unlock account',
-	'centralauth-admin-unlock-description' => 'Unlocking account will make it possible again to log under it.',
-	'centralauth-admin-unlock-button'      => 'Unlock this account',
-	'centralauth-admin-unlock-success'     => 'Successfully unlocked the global account for "<nowiki>$1</nowiki>"',
-	'centralauth-admin-unlock-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
-	'centralauth-admin-hide-title'         => 'Hide account',
-	'centralauth-admin-hide-description'   => 'Hidden accounts are not shown on [[Special:GlobalUsers|Global users]].',
-	'centralauth-admin-hide-button'        => 'Hide this account',
-	'centralauth-admin-hide-success'       => 'Successfully hid the global account for "<nowiki>$1</nowiki>"',
-	'centralauth-admin-hide-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
-	'centralauth-admin-unhide-title'       => 'Unhide account',
-	'centralauth-admin-unhide-description' => 'Unhiding account will make it again appear on [[Special:GlobalUsers|Global users]].',
-	'centralauth-admin-unhide-button'      => 'Unhide this account',
-	'centralauth-admin-unhide-success'     => 'Successfully unhid the global account for "<nowiki>$1</nowiki>"',
-	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
-	'centralauth-admin-reason'             => 'Reason:',
+	'centralauth-admin-delete-button'        => 'Delete this account',
+	'centralauth-admin-delete-success'       => 'Successfully deleted the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent'          => 'There is no global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-token-mismatch'             => 'Sorry, we could not process your form submission due to a loss of session data.',
+	'centralauth-admin-lock-title'           => 'Lock account',
+	'centralauth-admin-lock-description'     => 'Locking account will make impossible to log under it in any wiki.',
+	'centralauth-admin-lock-button'          => 'Lock this account',
+	'centralauth-admin-lock-success'         => 'Successfully locked the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-lock-nonexistent'     => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-unlock-title'         => 'Unlock account',
+	'centralauth-admin-unlock-description'   => 'Unlocking account will make it possible again to log under it.',
+	'centralauth-admin-unlock-button'        => 'Unlock this account',
+	'centralauth-admin-unlock-success'       => 'Successfully unlocked the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unlock-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-hide-title'           => 'Hide account',
+	'centralauth-admin-hide-description'     => 'Hidden accounts are not shown on [[Special:GlobalUsers|Global users]].',
+	'centralauth-admin-hide-button'          => 'Hide this account',
+	'centralauth-admin-hide-success'         => 'Successfully hid the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-hide-nonexistent'     => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-unhide-title'         => 'Unhide account',
+	'centralauth-admin-unhide-description'   => 'Unhiding account will make it again appear on [[Special:GlobalUsers|Global users]].',
+	'centralauth-admin-unhide-button'        => 'Unhide this account',
+	'centralauth-admin-unhide-success'       => 'Successfully unhid the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unhide-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-admin-block-title'          => 'Block account',
+	'centralauth-admin-block-description'    => 'This forms allows you to block SUL account. Blocked SUL accounts will be still able to log in,
+but they will not be able to edit.',
+	'centralauth-admin-block-button'         => 'Block this account',
+	'centralauth-admin-block-success'        => 'Successfully blocked the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-block-already'        => 'Error: the global account "<nowiki>$1</nowiki>" is already blocked.',
+	'centralauth-admin-block-badexpiry'      => 'Error: bad expiry.',
+	'centralauth-admin-unblock-title'        => 'Unblock account',
+	'centralauth-admin-unblock-description'  => 'Unblocking account will make it possible again to edit under it.',
+	'centralauth-admin-unblock-button'       => 'Unblock this account',
+	'centralauth-admin-unblock-success'      => 'Successfully unblocked the global account for "<nowiki>$1</nowiki>"',
+	'centralauth-admin-unblock-notblocked'   => 'Error: the global account "<nowiki>$1</nowiki>" is not blocked.',
+	'centralauth-admin-reason'               => 'Reason:',
+	'centralauth-admin-expiry'               => 'Expiry:',
 
 	// List of global users
 	'globalusers'                    => 'Global user list',
@@ -212,13 +235,15 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-logout-progress'    => 'Logging you out from Wikimedia\'s other projects:',
 	
 	// Logging
-	'centralauth-log-name'         => 'Global account log',
-	'centralauth-log-header'       => 'This log contains operations under global accounts: deletions, locking and unlocking.',
-	'centralauth-log-entry-delete' => 'deleted global account "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-lock'   => 'locked global account "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unlock' => 'unlocked global account "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-hide'   => 'hid global account "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unhide' => 'unhid global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-name'          => 'Global account log',
+	'centralauth-log-header'        => 'This log contains operations under global accounts: deletions, locking and unlocking.',
+	'centralauth-log-entry-delete'  => 'deleted global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'    => 'locked global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'  => 'unlocked global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-hide'    => 'hid global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unhide'  => 'unhid global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-block'   => 'blocked global account "<nowiki>$1</nowiki>" with an expiry time of $2',
+	'centralauth-log-entry-unblock' => 'unblocked global account "<nowiki>$1</nowiki>"',
 
 	'centralauth-rightslog-name'		=> 'Global rights log',
 	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',

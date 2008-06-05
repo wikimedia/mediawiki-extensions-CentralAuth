@@ -473,6 +473,7 @@ class CentralAuthHooks {
 	}
 
 	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
+		global $wgLang;
 		if( $action == 'read' || $user->isAnon() ) {
 			return true;
 		}
@@ -482,6 +483,24 @@ class CentralAuthHooks {
 		}
 		if( $centralUser->isLocked() ) {
 			$result = 'centralauth-error-locked';
+			return false;
+		}
+		if( $centralUser->isBlocked() ) {
+			$block = $centralUser->getBlock();
+			if( $block->deleteIfExpired() ) {
+				return true;
+			}
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
+			$result = array(
+				'centralauth-blocked',
+				$block->getBy(),
+				$block->getReason(),
+				$block->getUser()->getName(),
+				$block->getId(),
+				$wgLang->timeanddate( wfTimestamp( TS_MW, $block->getExpiry() ), true ),
+				$wgLang->timeanddate( wfTimestamp( TS_MW, $block->getTimestamp() ), true ),
+				$block->getByStripped(),
+			);
 			return false;
 		}
 		return true;

@@ -121,6 +121,7 @@ $wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/SpecialGlobalUsers.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
+$wgAutoloadClasses['CentralAuthBlock'] = "$caBase/CentralAuthBlock.php";
 $wgAutoloadClasses['WikiMap'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/SpecialAutoLogin.php";
@@ -171,17 +172,31 @@ $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
-$wgLogTypes[]                      = 'globalauth';
-$wgLogNames['globalauth']          = 'centralauth-log-name';
-$wgLogHeaders['globalauth']        = 'centralauth-log-header';
-$wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
-$wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
-$wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
-$wgLogActions['globalauth/hide']   = 'centralauth-log-entry-hide';
-$wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
+$wgLogTypes[]                       = 'globalauth';
+$wgLogNames['globalauth']           = 'centralauth-log-name';
+$wgLogHeaders['globalauth']         = 'centralauth-log-header';
+$wgLogActions['globalauth/delete']  = 'centralauth-log-entry-delete';
+$wgLogActions['globalauth/lock']    = 'centralauth-log-entry-lock';
+$wgLogActions['globalauth/unlock']  = 'centralauth-log-entry-unlock';
+$wgLogActions['globalauth/hide']    = 'centralauth-log-entry-hide';
+$wgLogActions['globalauth/unhide']  = 'centralauth-log-entry-unhide';
+$wgLogActions['globalauth/unblock'] = 'centralauth-log-entry-unblock';
+$wgLogActionsHandlers['globalauth/block'] = 'efCentralAuthBlockLogHandler';
 
 $wgLogTypes[]                      = 'gblrights';
 $wgLogNames['gblrights']          = 'centralauth-rightslog-name';
 $wgLogHeaders['gblrights']	   = 'centralauth-rightslog-header';
 $wgLogActions['gblrights/usergroups'] = 'centralauth-rightslog-entry-usergroups';
 $wgLogActions['gblrights/groupperms']   = 'centralauth-rightslog-entry-groupperms';
+
+function efCentralAuthBlockLogHandler( $type, $action, $title = NULL, $skin = NULL, $params = array(), $filterWikilinks=false ) {
+	global $wgLang, $wgContLang;
+	$expiry = @$params[0];	//Giving some weird notices while $params[0] is set
+	$msgParams = array( $title, '' );
+	if ( $skin ) {
+		$msgParams[1] = '<span title="' . htmlspecialchars( $expiry ). '">' . $wgLang->translateBlockExpiry( $expiry ) . '</span>';
+	} else {
+		$msgParams[1] = $wgContLang->translateBlockExpiry( $expiry );
+	}
+	return wfMsgReal( 'centralauth-log-entry-block', $msgParams, true, !$skin );
+}
