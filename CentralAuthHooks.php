@@ -448,7 +448,7 @@ class CentralAuthHooks {
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookieDomain;
-		if ( !$wgCentralAuthCookies || $wgCentralAuthCookieDomain === false || $user->isAnon() ) {
+		if ( !$wgCentralAuthCookies || $user->isAnon() ) {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );

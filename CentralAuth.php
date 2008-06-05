@@ -54,10 +54,10 @@ $wgCentralAuthCookies = false;
  * For instance, '.wikipedia.org' to work on all wikipedia.org subdomains
  * instead of just the current one.
  *
- * Leave false to set the cookie for the current domain only, such as if
+ * Leave blank to set the cookie for the current domain only, such as if
  * all your wikis are hosted on the same subdomain.
  */
-$wgCentralAuthCookieDomain = false;
+$wgCentralAuthCookieDomain = '';
 
 /**
  * Prefix for CentralAuth global authentication cookies.
