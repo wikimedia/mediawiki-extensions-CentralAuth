@@ -1774,6 +1774,17 @@ $messages['de'] = array(
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. Zusammenführungs-Aktionen sind deaktiviert.',
 	'centralauth-error-locked'                        => 'Du darfst keine Seiten bearbeiten, da dein Benutzerkonto gesperrt ist.',
++	'centralauth-blocked'                             => "<big>'''Dein Benutzerkonto wurde global gesperrt.'''</big>
+ 
+* Sperrender Steward: $1.
+* Grund der Sperre: $2
+* Beginn der Sperre: $6
+* Sperr-Ende: $5
+* Sperre betrifft: $3
+
+Du kannst $7 oder jeden anderen Steward kontaktieren, um über die Sperre zu diskutieren.
+Du kannst die 'E-Mail an Benutzer'-Funktion erst nutzen, wenn du eine gültige E-Mail-Adresse in deinen [[Special:Preferences|persönlichen Einstellungen]] eingegeben hast und die E-Mail-Funktion nicht gesperrt wurde.",
+
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]] …''",
 	'centralauth-list-home-title'                     => 'Heimat-Wiki',
 	'centralauth-list-home-dryrun'                    => 'Das Passwort und die E-Mail-Adresse, die du in diesem Wiki eingetragen hast, wird für die Zusammenführung der Benutzerkonten verwendet.
@@ -1863,7 +1874,19 @@ $messages['de'] = array(
 	'centralauth-admin-unhide-button'                 => 'Benutzerkonto wieder sichtbar machen',
 	'centralauth-admin-unhide-success'                => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich wieder sichtbar gemacht.',
 	'centralauth-admin-unhide-nonexistent'            => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
+	'centralauth-admin-block-title'                   => 'Benutzerkonto sperren',
+	'centralauth-admin-block-description'             => 'Mit diesem Formular kannst du ein globales Benutzerkonto sperren. Gesperrte globale Benutzer können sich weiterhin anmelden, aber keine Seiten bearbeiten.',
+	'centralauth-admin-block-button'                  => 'Benutzerkonto sperren',
+	'centralauth-admin-block-success'                 => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich gesperrt.',
+	'centralauth-admin-block-already'                 => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist bereits gesperrt.',
+	'centralauth-admin-block-badexpiry'               => 'Fehler: ungültiges Sperrende',
+	'centralauth-admin-unblock-title'                 => 'Benutzerkonto entsperren',
+	'centralauth-admin-unblock-description'           => 'Auf Entsperrung eines globalen Benutzerkontos ermöglicht wieder die Seitenbearbeitung.',
+	'centralauth-admin-unblock-button'                => 'Benutzerkonto entsperren',
+	'centralauth-admin-unblock-success'               => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich entsperrt.',
+	'centralauth-admin-unblock-notblocked'            => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht gesperrt.',
 	'centralauth-admin-reason'                        => 'Grund:',
+	'centralauth-admin-expiry'                        => 'Sperrende:',
 	'globalusers'                                     => 'Globale Benutzerliste',
 	'centralauth-listusers-locked'                    => 'gesperrt',
 	'centralauth-listusers-attached'                  => 'lokal vorhanden',
