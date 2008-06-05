@@ -18,7 +18,7 @@ class CentralAuthUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 1;
+	/*private*/ var $mVersion = 2;
 	/*private*/ var $mDelayInvalidation = 0;
 	/*private*/ var $mBlock = false;
 	
