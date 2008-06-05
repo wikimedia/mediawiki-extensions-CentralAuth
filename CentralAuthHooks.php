@@ -95,9 +95,7 @@ class CentralAuthHooks {
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		
-		if ($centralUser->exists() && $centralUser->isAttached()) {
-			$centralUser->setGlobalCookies($user);
-		} else {
+		if (!$centralUser->exists() || !$centralUser->isAttached()) {
 			return true;
 		}
 		
@@ -450,14 +448,22 @@ class CentralAuthHooks {
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookieDomain;
-		if ( !$wgCentralAuthCookies || !$wgCentralAuthCookieDomain || $user->isAnon() ) {
+		if ( !$wgCentralAuthCookies || $wgCentralAuthCookieDomain === false || $user->isAnon() ) {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( $centralUser->isAttached() ) {
-			unset( $session['wsToken'] );
-			unset( $cookies['Token'] );
+		if ( !$centralUser->isAttached() ) {
+			return true;
 		}
+
+		unset( $session['wsToken'] );
+		if ( !empty( $cookies['Token'] ) ) {
+			unset( $cookies['Token'] );
+			$remember = true;
+		} else {
+			$remember = false;
+		}
+		$centralUser->setGlobalCookies( $remember );
 		return true;
 	}
 

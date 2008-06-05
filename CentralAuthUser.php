@@ -1464,13 +1464,6 @@ class CentralAuthUser {
 		
 		// Reset the auth token.
 		$this->resetAuthToken();
-
-		// Set cookies if this is the currently logged-in user
-		global $wgUser;
-		if ( isset( $wgUser->centralAuthObj ) && $wgUser->centralAuthObj === $this ) {
-			$this->setGlobalCookies();
-		}
-
 		$this->invalidateCache();
 		return true;
 	}
