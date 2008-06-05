@@ -791,6 +791,7 @@ class CentralAuthUser {
 	 * @return Status
 	 */
 	public function adminUnattach( $list ) {
+		global $wgMemc;
 		if ( !count( $list ) ) {
 			return Status::newFatal( 'centralauth-admin-none-selected' );
 		}
@@ -805,6 +806,7 @@ class CentralAuthUser {
 		$invalidCount = count( $list ) - count( $valid );
 		$missingCount = 0;
 		$dbcw = self::getCentralDB();
+		$password = $this->getPassword();
 
 		foreach ( $valid as $wikiName ) {
 			# Delete the user from the central localuser table
@@ -820,11 +822,18 @@ class CentralAuthUser {
 				continue;
 			}
 
-			# Touch the local user row
+			# Touch the local user row, update the password
 			$lb = wfGetLB( $wikiName );
 			$dblw = $lb->getConnection( DB_MASTER, array(), $wikiName );
-			$dblw->update( 'user', array( 'user_touched' => wfTimestampNow() ),
-				array( 'user_name' => $this->mName ), __METHOD__ );
+			$dblw->update( 'user', 
+				array( 
+					'user_touched' => wfTimestampNow(), 
+					'user_password' => $password
+				), array( 'user_name' => $this->mName ), __METHOD__ 
+			);
+			$id = $dblw->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
+			$wgMemc->delete( "$wikiName:user:id:$id" );
+
 			$lb->reuseConnection( $dblw );
 
 			$status->successCount++;
@@ -843,18 +852,40 @@ class CentralAuthUser {
 	 * Delete a global account
 	 */
 	function adminDelete() {
+		global $wgMemc;
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
-		$dbw = self::getCentralDB();
-		$dbw->begin();
+		$centralDB = self::getCentralDB();
+
+		# Synchronise passwords
+		$password = $this->getPassword();
+		$localUserRes = $centralDB->select( 'localuser', '*', 
+			array( 'lu_name' => $this->mName ), __METHOD__ );
+		$name = $this->getName();
+		foreach ( $localUserRes as $localUserRow ) {
+			$wiki = $localUserRow->lu_wiki;
+			wfDebug( __METHOD__.": Fixing password on $wiki\n" );
+			$lb = wfGetLB( $wiki );
+			$localDB = $lb->getConnection( DB_MASTER, array(), $wiki );
+			$localDB->update( 'user', 
+				array( 'user_password' => $password ),
+				array( 'user_name' => $name ),
+				__METHOD__
+			);
+			$id = $localDB->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
+			$wgMemc->delete( "$wiki:user:id:$id" );
+			$lb->reuseConnection( $localDB );
+		}
+
+		$centralDB->begin();
 		# Delete and lock the globaluser row
-		$dbw->delete( 'globaluser', array( 'gu_name' => $this->mName ), __METHOD__ );
-		if ( !$dbw->affectedRows() ) {
-			$dbw->commit();
+		$centralDB->delete( 'globaluser', array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$centralDB->affectedRows() ) {
+			$centralDB->commit();
 			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
 		}
 		# Delete the localuser rows
-		$dbw->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
-		$dbw->commit();
+		$centralDB->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
+		$centralDB->commit();
 		
 		$this->invalidateCache();
 		
@@ -1043,19 +1074,15 @@ class CentralAuthUser {
 	 * @return bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
-		$hash = wfEncryptPassword( $salt, $plaintext );
-		if( $encrypted === $hash ) {
+		if( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
 			return true;
 		} elseif( function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
-			$latin = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			$latinHash = wfEncryptPassword( $salt, $latin );
-			if( $encrypted === $latinHash ) {
+			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
+			if( User::comparePasswords( $encrypted, $latin1, $salt ) ) {
 				return true;
 			}
-		} else {
-			$latinHash = null;
 		}
 		return false;
 	}
@@ -1405,9 +1432,7 @@ class CentralAuthUser {
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {
-		$salt = mt_rand( 0, 1000000 );
-		$hash = wfEncryptPassword( $salt, $password );
-		return array( $salt, $hash );
+		return array( '', User::crypt( $password ) );
 	}
 
 	/**
@@ -1436,9 +1461,27 @@ class CentralAuthUser {
 		
 		// Reset the auth token.
 		$this->resetAuthToken();
-		$this->setGlobalCookies();
+
+		// Set cookies if this is the currently logged-in user
+		global $wgUser;
+		if ( isset( $wgUser->centralAuthObj ) && $wgUser->centralAuthObj === $this ) {
+			$this->setGlobalCookies();
+		}
+
 		$this->invalidateCache();
 		return true;
+	}
+
+	/**
+	 * Get the password hash.
+	 * Automatically converts to a new-style hash
+	 */
+	function getPassword() {
+		$this->loadState();
+		if ( substr( $this->mPassword, 0, 1 ) != ':' ) {
+			$this->mPassword = ':B:' . $this->mSalt . ':' . $this->mPassword;
+		}
+		return $this->mPassword;
 	}
 	
 	static function setCookie( $name, $value, $exp=0 ) {
