@@ -71,7 +71,7 @@ class SpecialCentralAuth extends SpecialPage {
 		if( $this->mPosted ) {
 			if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 				$this->showError( 'centralauth-token-mismatch' );
-			} elseif( $this->mMethod == 'unmerge' ) {
+			/* } elseif( $this->mMethod == 'unmerge' ) {
 				$status = $globalUser->adminUnattach( $this->mWikis );
 				if ( !$status->isGood() ) {
 					$this->showStatusError( $status->getWikiText() );
@@ -79,7 +79,7 @@ class SpecialCentralAuth extends SpecialPage {
 					global $wgLang;
 					$this->showSuccess( 'centralauth-admin-unmerge-success',
 						$wgLang->formatNum( $status->successCount ),
-						/* deprecated */ $status->successCount );
+						*/ /* deprecated */ 	/* $status->successCount );
 				}
 			} elseif ( $this->mMethod == 'delete' ) {
 				$status = $globalUser->adminDelete();
@@ -90,7 +90,7 @@ class SpecialCentralAuth extends SpecialPage {
 					$this->showSuccess( 'centralauth-admin-delete-success', $this->mUserName );
 					$deleted = true;
 					$this->logAction( 'delete', $this->mUserName, $wgRequest->getVal( 'reason' ) );
-				}
+				} */
 			} elseif( $this->mMethod == 'lock' ) {
 				$status = $globalUser->adminLock();
 				if ( !$status->isGood() ) {
@@ -140,7 +140,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->showUsernameForm();
 		if ( !$deleted ) {
 			$this->showInfo();
-			$this->showActionForm( 'delete' );
+			//$this->showActionForm( 'delete' );
 			if( !$globalUser->isLocked() && !$locked )
 				$this->showActionForm( 'lock' );
 			if( $globalUser->isLocked() && !$unlocked )
@@ -267,12 +267,12 @@ class SpecialCentralAuth extends SpecialPage {
 		global $wgUser;
 		ksort( $list );
 		return
-			Xml::openElement( 'form',
+			/*Xml::openElement( 'form',
 				array(
 					'method' => 'post',
 					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
-			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .*/
 			'<table>' .
 			'<thead>' .
 			$this->tableRow( 'th',
@@ -282,15 +282,15 @@ class SpecialCentralAuth extends SpecialPage {
 			implode( "\n",
 				array_map( array( $this, $listMethod ),
 				 	$list ) ) .
-			'<tr>' .
+			/*'<tr>' .
 			'<td></td>' .
 			'<td>' .
 			Xml::submitButton( $buttonText ) .
 			'</td>' .
-			'</tr>' .
+			'</tr>' .*/
 			'</tbody>' .
-			'</table>' .
-			Xml::closeElement( 'form' );
+			'</table>' /*.
+			Xml::closeElement( 'form' )*/;
 	}
 
 	function listMergedWikiItem( $row ) {
@@ -332,7 +332,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function adminCheck( $wikiID ) {
 		return
-			Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
+			'';//Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
 	function showActionForm( $action ) {
