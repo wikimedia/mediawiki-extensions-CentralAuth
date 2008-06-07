@@ -324,7 +324,7 @@ class CentralAuthUser {
 	public function getAuthToken() {
 		$this->loadState();
 		
-		if (!$this->mAuthToken) {
+		if (!isset( $this->mAuthToken ) || !$this->mAuthToken) {
 			$this->resetAuthToken();
 		}
 		return $this->mAuthToken;
