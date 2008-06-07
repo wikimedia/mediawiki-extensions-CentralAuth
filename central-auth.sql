@@ -74,6 +74,9 @@ CREATE TABLE globaluser (
   -- Used for "deleting" accounts without breaking referential integrity.
   gu_hidden bool not null default 0,
 
+  -- If account is marked as in migration, bureaucrats may rename users under it.
+  gu_inmigration bool not null default 0,  
+
   -- Registration time
   gu_registration varchar(14) binary,
 

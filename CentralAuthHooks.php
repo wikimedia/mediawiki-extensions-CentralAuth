@@ -287,7 +287,7 @@ class CentralAuthHooks {
 			return false;
 		}
 		$newCentral = new CentralAuthUser( $newName );
-		if ( $newCentral->exists() ) {
+		if ( $newCentral->exists() && !$newCentral->isInMigration() ) {
 			global $wgOut;
 			wfLoadExtensionMessages('SpecialCentralAuth');
 			$wgOut->addWikiMsg( 'centralauth-renameuser-exists', $oldName, $newName );

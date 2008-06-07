@@ -1,0 +1,1 @@
+ALTER TABLE globaluser ADD gu_inmigration bool not null default 0 AFTER gu_hidden;

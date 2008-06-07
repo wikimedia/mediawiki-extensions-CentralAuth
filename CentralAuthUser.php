@@ -18,7 +18,7 @@ class CentralAuthUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 1;
+	/*private*/ var $mVersion = 2;
 	/*private*/ var $mDelayInvalidation = 0;
 	
 	static $mCacheVars = array(
@@ -28,6 +28,7 @@ class CentralAuthUser {
 		'mAuthToken',
 		'mLocked',
 		'mHidden',
+		'mInMigration',
 		'mRegistration',
 		'mEmail',
 		'mAuthenticationTimestamp',
@@ -131,7 +132,7 @@ class CentralAuthUser {
 
 		$sql =
 			"SELECT gu_id, lu_wiki, gu_salt, gu_password,gu_auth_token, " .
-				"gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated " .
+				"gu_locked,gu_hidden,gu_inmigration,gu_registration,gu_email,gu_email_authenticated " .
 			"FROM $globaluser " .
 			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_wiki=? " .
 			"WHERE gu_name=?";
@@ -189,6 +190,7 @@ class CentralAuthUser {
 			$this->mAuthToken = $row->gu_auth_token;
 			$this->mLocked = $row->gu_locked;
 			$this->mHidden = $row->gu_hidden;
+			$this->mInMigration = $row->gu_inmigration;
 			$this->mRegistration = wfTimestamp( TS_MW, $row->gu_registration );
 			$this->mEmail = $row->gu_email;
 			$this->mAuthenticationTimestamp =
@@ -359,6 +361,14 @@ class CentralAuthUser {
 	}
 
 	/**
+	 * @return bool	
+	 */
+	public function isInMigration() {
+		$this->loadState();
+		return (bool)$this->mInMigration;
+	}
+
+	/**
 	 * @return string timestamp
 	 */
 	public function getRegistration() {
@@ -387,6 +397,7 @@ class CentralAuthUser {
 
 				'gu_locked' => 0,
 				'gu_hidden' => 0,
+				'gu_inmigration' => 0,
 
 				'gu_registration' => $dbw->timestamp(),
 			),
@@ -786,113 +797,6 @@ class CentralAuthUser {
 	}
 
 	/**
-	 * Unattach a list of local accounts from the global account
-	 * @param array $list List of wiki names
-	 * @return Status
-	 */
-	public function adminUnattach( $list ) {
-		global $wgMemc;
-		if ( !count( $list ) ) {
-			return Status::newFatal( 'centralauth-admin-none-selected' );
-		}
-		$status = new Status;
-		$valid = $this->validateList( $list );
-		$invalid = array_diff( $list, $valid );
-		foreach ( $invalid as $wikiName ) {
-			$status->error( 'centralauth-invalid-wiki', $wikiName );
-			$status->failCount++;
-		}
-		
-		$invalidCount = count( $list ) - count( $valid );
-		$missingCount = 0;
-		$dbcw = self::getCentralDB();
-		$password = $this->getPassword();
-
-		foreach ( $valid as $wikiName ) {
-			# Delete the user from the central localuser table
-			$dbcw->delete( 'localuser',
-				array(
-					'lu_name'   => $this->mName,
-					'lu_wiki' => $wikiName ),
-				__METHOD__ );
-			if ( !$dbcw->affectedRows() ) {
-				$wiki = WikiMap::getWiki( $wikiName );
-				$status->error( 'centralauth-admin-already-unmerged', $wiki->getDisplayName() );
-				$status->failCount++;
-				continue;
-			}
-
-			# Touch the local user row, update the password
-			$lb = wfGetLB( $wikiName );
-			$dblw = $lb->getConnection( DB_MASTER, array(), $wikiName );
-			$dblw->update( 'user', 
-				array( 
-					'user_touched' => wfTimestampNow(), 
-					'user_password' => $password
-				), array( 'user_name' => $this->mName ), __METHOD__ 
-			);
-			$id = $dblw->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
-			$wgMemc->delete( "$wikiName:user:id:$id" );
-
-			$lb->reuseConnection( $dblw );
-
-			$status->successCount++;
-		}
-
-		if( in_array( wfWikiID(), $valid ) ) {
-			$this->resetState();
-		}
-		
-		$this->invalidateCache();
-
-		return $status;
-	}
-
-	/**
-	 * Delete a global account
-	 */
-	function adminDelete() {
-		global $wgMemc;
-		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
-		$centralDB = self::getCentralDB();
-
-		# Synchronise passwords
-		$password = $this->getPassword();
-		$localUserRes = $centralDB->select( 'localuser', '*', 
-			array( 'lu_name' => $this->mName ), __METHOD__ );
-		$name = $this->getName();
-		foreach ( $localUserRes as $localUserRow ) {
-			$wiki = $localUserRow->lu_wiki;
-			wfDebug( __METHOD__.": Fixing password on $wiki\n" );
-			$lb = wfGetLB( $wiki );
-			$localDB = $lb->getConnection( DB_MASTER, array(), $wiki );
-			$localDB->update( 'user', 
-				array( 'user_password' => $password ),
-				array( 'user_name' => $name ),
-				__METHOD__
-			);
-			$id = $localDB->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
-			$wgMemc->delete( "$wiki:user:id:$id" );
-			$lb->reuseConnection( $localDB );
-		}
-
-		$centralDB->begin();
-		# Delete and lock the globaluser row
-		$centralDB->delete( 'globaluser', array( 'gu_name' => $this->mName ), __METHOD__ );
-		if ( !$centralDB->affectedRows() ) {
-			$centralDB->commit();
-			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
-		}
-		# Delete the localuser rows
-		$centralDB->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
-		$centralDB->commit();
-		
-		$this->invalidateCache();
-		
-		return Status::newGood();
-	}
-
-	/**
 	 * Lock a global account
 	 */
 	function adminLock() {
@@ -960,6 +864,25 @@ class CentralAuthUser {
 		if ( !$dbw->affectedRows() ) {
 			$dbw->commit();
 			return Status::newFatal( 'centralauth-admin-unhide-nonexistent', $this->mName );
+		}
+		$dbw->commit();
+		
+		$this->invalidateCache();
+		
+		return Status::newGood();
+	}
+
+	/**
+	 * Mark a global account as in migration
+	 */
+	function adminSetInMigration( $newstatus, $actionType ) {
+		$dbw = self::getCentralDB();
+		$dbw->begin();
+		$dbw->update( 'globaluser', array( 'gu_inmigration' => (bool)$newstatus ),
+			array( 'gu_name' => $this->mName ), __METHOD__ );
+		if ( !$dbw->affectedRows() ) {
+			$dbw->commit();
+			return Status::newFatal( "centralauth-admin-{$actionType}-nonexistent", $this->mName );
 		}
 		$dbw->commit();
 		
@@ -1597,6 +1520,7 @@ class CentralAuthUser {
 				'gu_auth_token' => $this->mAuthToken,
 				'gu_locked' => $this->mLocked,
 				'gu_hidden' => $this->mHidden,
+				'gu_inmigration' => $this->mInMigration,
 				'gu_email' => $this->mEmail,
 				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp )
 			),
