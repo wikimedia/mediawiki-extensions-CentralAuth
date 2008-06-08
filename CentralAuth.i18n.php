@@ -221,7 +221,7 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-log-entry-hide'              => 'hid global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide'            => 'unhid global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-markasmigrating'   => 'marked global account "<nowiki>$1</nowiki>" as migrating',
-	'centralauth-log-entry-unmarkasmigrating' => 'unmarked global account "<nowiki>$1</nowiki> as migrating"',
+	'centralauth-log-entry-unmarkasmigrating' => 'unmarked global account "<nowiki>$1</nowiki>" as migrating',
 
 	'centralauth-rightslog-name'		=> 'Global rights log',
 	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',
