@@ -1645,7 +1645,9 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'right-globalgrouppermissions'                    => 'Spravování globálních skupin',
 );
 
-/** Church Slavic (Словѣньскъ) */
+/** Church Slavic (Словѣньскъ)
+ * @author ОйЛ
+ */
 $messages['cu'] = array(
 	'centralauth-admin-username' => 'по́льꙃєватєлꙗ и́мѧ :',
 );
@@ -4407,6 +4409,8 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
  * @author BrokenArrow
  * @author Cruccone
  * @author Siebrand
+ * @author Cruccone
+ * @author Siebrand
  */
 $messages['it'] = array(
 	'mergeaccount'                         => 'Processo di unificazione delle utenze - status',
@@ -6158,7 +6162,9 @@ tas pats naudotojo vardas ir slaptažodis veiks Vikipedijoje, Vikižodyne, Vikik
 	'centralauth-editgroup-members'        => 'Narių sąrašas:',
 );
 
-/** Latvian (Latviešu) */
+/** Latvian (Latviešu)
+ * @author Yyy
+ */
 $messages['lv'] = array(
 	'globalusers' => 'Globālo lietotāju uzskaitījums',
 );
@@ -8538,6 +8544,16 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-admin-unhide-button'                 => 'Zrušiť skrytie tohto účtu',
 	'centralauth-admin-unhide-success'                => 'Skrytie globálneho účtu „<nowiki>$1</nowiki>” bolo úspešne zrušené.',
 	'centralauth-admin-unhide-nonexistent'            => 'Chyba: globálny účet „<nowiki>$1</nowiki>” neexistuje.',
+	'centralauth-admin-markasmigrating-title'         => 'Označiť účet ako migrujúci',
+	'centralauth-admin-markasmigrating-description'   => 'Aj je účet v stave migrácie, miestni byrokrati môžu na jeho názov premenovať iné účty.',
+	'centralauth-admin-markasmigrating-button'        => 'Označiť účet ako migrujúci',
+	'centralauth-admin-markasmigrating-success'       => 'Globálny účet „$1” bol úspešne označený ako migrujúci.',
+	'centralauth-admin-markasmigrating-nonexistent'   => 'Chyba: globálny účet „<nowiki>$1</nowiki>” neexistuje.',
+	'centralauth-admin-unmarkasmigrating-title'       => 'Zrušiť označenie účtu ako migrujúci',
+	'centralauth-admin-unmarkasmigrating-description' => 'Umožňuje odstrániť príznak migrujúceho účtu.',
+	'centralauth-admin-unmarkasmigrating-button'      => 'Zrušiť označenie tohto účtu ako migrujúci',
+	'centralauth-admin-unmarkasmigrating-success'     => 'Označenie globálneho účtu „<nowiki>$1</nowiki>” ako migrujúci bolo úspešne zrušené.',
+	'centralauth-admin-unmarkasmigrating-nonexistent' => 'Chyba: globálny účet „<nowiki>$1</nowiki>” neexistuje.',
 	'centralauth-admin-reason'                        => 'Dôvod:',
 	'globalusers'                                     => 'Zoznam globálnych používateľov',
 	'centralauth-listusers-locked'                    => 'zamknutý',
@@ -8574,6 +8590,8 @@ Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nero
 	'centralauth-log-entry-unlock'                    => 'odomkol globálny účet „<nowiki>$1</nowiki>“',
 	'centralauth-log-entry-hide'                      => 'skryl globálny účet „<nowiki>$1</nowiki>”',
 	'centralauth-log-entry-unhide'                    => 'zrušil skrytie globálneho účtu „<nowiki>$1</nowiki>”',
+	'centralauth-log-entry-markasmigrating'           => 'označil globálny účet „<nowiki>$1</nowiki>” ako migrujúci',
+	'centralauth-log-entry-unmarkasmigrating'         => 'zrušil označenie globálneho účtu „<nowiki>$1</nowiki>” ako migrujúci',
 	'centralauth-rightslog-name'                      => 'Záznam globálnych blokovaní',
 	'centralauth-rightslog-entry-usergroups'          => 'členstvo v globálnej skupine zmenené pre $1 z $2 na $3',
 	'centralauth-rightslog-entry-groupperms'          => 'oprávnenia skupiny $1 zmenené z $2 na $3',
