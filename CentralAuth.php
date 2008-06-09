@@ -171,16 +171,14 @@ $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
-$wgLogTypes[]                                 = 'globalauth';
-$wgLogNames['globalauth']                     = 'centralauth-log-name';
-$wgLogHeaders['globalauth']                   = 'centralauth-log-header';
-$wgLogActions['globalauth/delete']            = 'centralauth-log-entry-delete';	//Legacy
-$wgLogActions['globalauth/lock']              = 'centralauth-log-entry-lock';
-$wgLogActions['globalauth/unlock']            = 'centralauth-log-entry-unlock';
-$wgLogActions['globalauth/hide']              = 'centralauth-log-entry-hide';
-$wgLogActions['globalauth/unhide']            = 'centralauth-log-entry-unhide';
-$wgLogActions['globalauth/markasmigrating']   = 'centralauth-log-entry-markasmigrating';
-$wgLogActions['globalauth/unmarkasmigrating'] = 'centralauth-log-entry-unmarkasmigrating';
+$wgLogTypes[]                      = 'globalauth';
+$wgLogNames['globalauth']          = 'centralauth-log-name';
+$wgLogHeaders['globalauth']        = 'centralauth-log-header';
+$wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
+$wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
+$wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
+$wgLogActions['globalauth/hide']   = 'centralauth-log-entry-hide';
+$wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
 
 $wgLogTypes[]                      = 'gblrights';
 $wgLogNames['gblrights']          = 'centralauth-rightslog-name';
