@@ -79,7 +79,7 @@ If this is you, you can finish the login unification process simply by typing th
 	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account.
 You will be able to change which is your home wiki later.',
 	'centralauth-list-attached-title'   => 'Attached accounts',
-	'centralauth-list-attached'         => 'The account named "$1" on each the following sites have been automatically attached to the unified account:',
+	'centralauth-list-attached'         => 'The account named "$1" on each of the following sites have been automatically attached to the unified account:',
 	'centralauth-list-attached-dryrun'  => 'The account named "$1" on each of the following sites will be automatically attached to the unified account:',
 	'centralauth-list-unattached-title' => 'Unattached accounts',
 	'centralauth-list-unattached'       => 'The account "$1" could not be automatically confirmed as belonging to you on the following sites;
@@ -226,7 +226,7 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-rightslog-name'		=> 'Global rights log',
 	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms' => 'changed group permissions for $1 from $2 to $3',
-	'centralauth-rightslog-header'		=> 'This log contains operations on global groups: membership and permissions changes',
+	'centralauth-rightslog-header'		=> 'This log contains operations on global groups: membership and permissions changes.',
 	
 	// Global group membership
 	'globalgroupmembership'			=> 'Membership in global groups',
