@@ -590,25 +590,25 @@ class CentralAuthUser {
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
 	 * @param array &$methods on success, associative array of each wiki's attachment method
 	 * @param array &$blocked true if the home wiki is blocked
-	 * @return bool true if password matched current and home account
+	 * 
+	 * @return Status object
 	 */
-	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods, &$blocked ) {
+	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		$home = false;
 		$attached = array();
 		$unattached = array();
-		$blocked = false;
 
 		// First, make sure we were given the current wiki's password.
 		$self = $this->localUserData( wfWikiID() );
 		if( !$this->matchHashes( $passwords, $self['id'], $self['password'] ) ) {
 			wfDebugLog( 'CentralAuth', "dry run: failed self-password check" );
-			return false;
+			return Status::newFatal( 'wrongpassword' );
 		}
 
 		$migrationSet = $this->queryUnattached();
 		if( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'dry run: no accounts to merge, failed migration' );
-			return false;
+			return Status::newFatal( 'centralauth-merge-no-accounts' );
 		}
 		$home = $this->chooseHomeWiki( $migrationSet );
 		$local = $migrationSet[$home];
@@ -616,8 +616,7 @@ class CentralAuthUser {
 		// If home account is blocked...
 		if( $local['blocked'] ) {
 			wfDebugLog( 'CentralAuth', "dry run: $home blocked, forbid migration" );
-			$blocked = true;
-			return false;
+			return Status::newFatal( 'centralauth-blocked-text' );
 		}
 
 		// And we need to match the home wiki before proceeding...
@@ -625,7 +624,7 @@ class CentralAuthUser {
 			wfDebugLog( 'CentralAuth', "dry run: passed password match to home $home" );
 		} else {
 			wfDebugLog( 'CentralAuth', "dry run: failed password match to home $home" );
-			return false;
+			return Status::newFatal( 'centralauth-merge-home-password' );
 		}
 
 		$this->mHomeWiki = $home;
@@ -642,7 +641,7 @@ class CentralAuthUser {
 		sort( $unattached );
 		ksort( $methods );
 
-		return true;
+		return Status::newGood();
 	}
 
 	/**

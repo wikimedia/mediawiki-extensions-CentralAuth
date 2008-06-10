@@ -51,6 +51,10 @@ Another wiki was determined as the home account for your username; follow the li
 	'centralauth-merge-step3-title'  => 'Create unified account',
 	'centralauth-merge-step3-detail' => "You are ready to create your unified account, with the following wikis attached:",
 	'centralauth-merge-step3-submit' => 'Unify accounts',
+	'centralauth-merge-no-accounts'  => 'No accounts matching your name were found in the central account 
+tracking table! The database must be corrupt.',
+	'centralauth-merge-home-password' => 'The home wiki for this account (listed below) has a different 
+password to the one you entered. Please enter the password for the home wiki.',
 
 	// Big text on completion
 	'centralauth-complete'   => 'Login unification complete!',

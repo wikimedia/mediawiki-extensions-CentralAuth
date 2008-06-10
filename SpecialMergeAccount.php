@@ -176,10 +176,9 @@ class SpecialMergeAccount extends SpecialPage {
 		$attached = array();
 		$unattached = array();
 		$methods = array();
-		$blocked = false;
-		$ok = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached, $methods, $blocked );
+		$status = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached, $methods );
 
-		if( $ok ) {
+		if( $status->isGood() ) {
 			// This is the global account or matched it
 			if( count( $unattached ) == 0 ) {
 				// Everything matched -- very convenient!
@@ -195,25 +194,24 @@ class SpecialMergeAccount extends SpecialPage {
 
 			$subAttached = array_diff( $attached, array( $home ) );
 			$wgOut->addHtml( $this->step3ActionForm( $home, $subAttached, $methods ) );
-
-		} elseif( $home ) {
-			if( $blocked ) {
-				$wgOut->addWikiText( wfMsg( 'centralauth-blocked-text' ) );
-			} else {
-				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-home' ) );
-			}
-			$out = '<h2>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h2>';
-			$out .= wfMsgExt( 'centralauth-list-home-dryrun', 'parse' );
-			$out .= $this->listAttached( array( $home ), array( $home => 'primary' ) );
-			$wgOut->addHtml( $out );
 		} else {
-			// Didn't get your own password right? Laaaame!
-			$this->initSession();
-			$wgOut->addHtml(
-				'<div class="errorbox">' .
-					wfMsg( 'wrongpassword' ) .
-				'</div>' .
-				$this->step1PasswordForm() );
+			// Show error message from status
+			$wgOut->addHtml( '<div class="errorbox" style="float:none;">' );
+			$wgOut->addWikiText( $status->getWikiText() );
+			$wgOut->addHtml( '</div>' );
+
+			// Show wiki list if required
+			if ( $status->hasMessage( 'centralauth-blocked-text' ) 
+				|| $status->hasMessage( 'centralauth-merge-home-password' ) )
+			{
+				$out = '<h2>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h2>';
+				$out .= wfMsgExt( 'centralauth-list-home-dryrun', 'parse' );
+				$out .= $this->listAttached( array( $home ), array( $home => 'primary' ) );
+				$wgOut->addHtml( $out );
+			}
+
+			// Show password box
+			$wgOut->addHTML( $this->step1PasswordForm() );
 		}
 	}
 
