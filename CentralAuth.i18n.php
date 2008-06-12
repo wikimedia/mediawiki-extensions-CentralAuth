@@ -2167,6 +2167,10 @@ Alia vikio estis difinita kiel hejma konto por via salutnomo; sekvu la ligilon s
 	'centralauth-merge-step3-title'                   => 'Krei unuigitan konton',
 	'centralauth-merge-step3-detail'                  => 'Vi estas preta por krei vian unuigitan konton kun la jenaj ligitaj vikioj:',
 	'centralauth-merge-step3-submit'                  => 'Unuigi kontojn',
+	'centralauth-merge-no-accounts'                   => 'Neniuj kontoj kongruante vian nomon estis trovita en la centra tabelo por konto-trovigo!
+La datumbazo estu korupta.',
+	'centralauth-merge-home-password'                 => 'La hejma vikio por ĉi tiu konto (montrita sube) havas malsaman pasvorton de la unu kiun vi enigis.
+Bonvolu enigi la pasvorton por la hejma vikio.',
 	'centralauth-complete'                            => 'Unuigado de salutnomoj estas finita!',
 	'centralauth-incomplete'                          => 'Unuigado de salutnomoj ne estas kompleta!',
 	'centralauth-complete-text'                       => 'Vi povas nun ensaluti en iu ajn Wikimedia vikipaĝaro ne kreinte novan konton; la sama salutnomo kaj pasvorto nun funkcios en Vikipedio, Vikivortaro, Vikilibroj kaj ties fratinaj projektoj en ĉiuj lingvoj.',
@@ -7268,9 +7272,9 @@ $messages['oc'] = array(
 	'centralauth-mergeaccount-desc'                   => '[[Special:MergeAccount|Fusiona maites comptes]] per l’identificacion unica',
 	'centralauth-merge-denied'                        => 'O planhèm, avètz pas los dreches per accedir a aquesta pagina.',
 	'centralauth-merge-notlogged'                     => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} vos connectar]</span> per verificar que vòstres comptes son estats unificats coma caliá.',
-	'centralauth-merge-welcome'                       => "'''Vòstres comptes d'utilizaire son pas encara estats migrats vèrs lo sistèma de compte unic de Wikimedia.'''
+	'centralauth-merge-welcome'                       => "'''Vòstres comptes d'utilizaire son pas encara estats migrats vèrs lo sistèma de compte unic de Wikimedia.''' 
 
-Se causissètz de far migrar vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes Wikimèdia dins totas las lengas. Atal, lo trabalh interprojèctes serà mai aisit, e mai, per exemple, l’impòrt d’imatges sus [http://commons.wikimedia.org/ Wikimedia Commons] ; aquò evitarà tanben la confusion susvenent quand doas personas utilizant lo meteis nom d’utilizaire sus dos projèctes diferents. Se ja avètz lo meteis nom d’utilizaire sus totes los projèctes, i deurià pas aver de problèma.
+Se causissètz de far migrar vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes Wikimèdia dins totas las lengas. Atal, lo trabalh interprojèctes serà mai aisit, e mai, per exemple, l’impòrt d’imatges sus [http://commons.wikimedia.org/ Wikimedia Commons] ; aquò evitarà tanben la confusion susvenent quand doas personas utilizant lo meteis nom d’utilizaire sus dos projèctes diferents. Se ja avètz lo meteis nom d’utilizaire sus totes los projèctes, i deurià pas aver de problèma. 
 
 Se una autra persona a lo meteis nom d’utilizaire que vos sus un autre projècte, auretz l'occasion de dintrar en contacte amb aquesta persona o amb un administrator mai tard.",
 	'centralauth-merge-step1-title'                   => 'Començar lo procediment de fusion dels comptes',
@@ -7293,6 +7297,10 @@ Un autre wiki es estat determinat coma compte principal per vòstre nom d’util
 	'centralauth-merge-step3-title'                   => 'Creacion del compte unic',
 	'centralauth-merge-step3-detail'                  => 'Ara sètz prèst per crear vòstre compte unic, comprenent las wikis seguentas :',
 	'centralauth-merge-step3-submit'                  => 'Fusionar los comptes',
+	'centralauth-merge-no-accounts'                   => 'Cap de compte correspondent a vòtre nom es pas estat trobat dins la taula centrala de seguit dels comptes !
+La banca de donadas pòt èsser corrompuda.',
+	'centralauth-merge-home-password'                 => "Lo wiki de basa d'aqueste compte (listat çaijós) dispausa d’un senhal diferent de lo qu'avètz picat.
+Picatz lo senhal sul wiki de basa.",
 	'centralauth-complete'                            => 'Unificacion dels comptes acabada !',
 	'centralauth-incomplete'                          => 'Fusion dels comptes incomplèta !',
 	'centralauth-complete-text'                       => 'Ara vos podètz connectar sus un sit Wikimèdia que que siá sens aver de crear un compte novèl; lo meteis nom d’utilizaire e senhal foncionan sus Wikipèdia, Wikiccionari, Wikilibres e lors projèctes sòrres, aquò, per totas las lengas.',
