@@ -1,7 +1,5 @@
 <?php
 
-require_once( 'SpecialListusers.php' );
-
 class SpecialGlobalUsers extends SpecialPage {
 
 	function __construct() {
