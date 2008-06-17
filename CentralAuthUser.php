@@ -1476,13 +1476,16 @@ class CentralAuthUser {
 		return $this->mPassword;
 	}
 	
-	static function setCookie( $name, $value, $exp=0 ) {
+	static function setCookie( $name, $value, $exp=-1 ) {
 		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieSecure,
 			$wgCookieExpiration, $wgCookieHttpOnly;
-		if( $exp == 0 ) {
+		
+		if ($exp == -1) {
 			$exp = time() + $wgCookieExpiration;
-		}
-		if ( $exp < 3.16e7 ) {
+		} elseif ( $exp == 0 ) {
+			// Don't treat as a relative expiry.
+			//  They want a session cookie.
+		} elseif ( $exp < 3.16e7 ) {
 			// Relative expiry
 			$exp += time();
 		}
@@ -1788,7 +1791,7 @@ class CentralAuthUser {
 		}
 		if ( !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			$id = wfGenerateToken();
-			self::setCookie( 'Session', $id, 86400 );
+			self::setCookie( 'Session', $id, 0 );
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		}
