@@ -101,6 +101,9 @@ $wgCentralAuthLoginIcon = false;
  */
 $wgCentralAuthCreateOnView = false;
 
+/**
+ * Extension credits
+ */
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Central Auth',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
@@ -109,6 +112,16 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Brion Vibber',
 	'description' => 'Merge Account across Wikimedia Foundation wikis',
 	'descriptionmsg' => 'centralauth-desc',
+);
+
+$wgExtensionCredits['specialpage'][] = array(
+	'name'           => 'MergeAccount',
+	'author'         => 'Brion Vibber',
+	'url'            => 'http://meta.wikimedia.org/wiki/Help:Unified_login',
+	'svn-date' => '$LastChangedDate$',
+	'svn-revision' => '$LastChangedRevision$',
+	'description'    => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
+	'descriptionmsg' => 'centralauth-mergeaccount-desc',
 );
 
 /**

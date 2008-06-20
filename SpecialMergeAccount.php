@@ -1,15 +1,5 @@
 <?php
 
-$wgExtensionCredits['specialpage'][] = array(
-	'name'           => 'MergeAccount',
-	'author'         => 'Brion Vibber',
-	'url'            => 'http://meta.wikimedia.org/wiki/H:UL',
-	'svn-date' => '$LastChangedDate$',
-	'svn-revision' => '$LastChangedRevision$',
-	'description'    => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
-	'descriptionmsg' => 'centralauth-mergeaccount-desc',
-);
-
 class SpecialMergeAccount extends SpecialPage {
 
 	function __construct() {
