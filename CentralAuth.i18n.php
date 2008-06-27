@@ -176,6 +176,12 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-unhide-success'     => 'Successfully unhid the global account for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-admin-reason'             => 'Reason:',
+	'centralauth-admin-lockandhide-title'  => 'Lock and Hide account',
+	'centralauth-admin-lockandhide-description' => 'Locking and hiding this account will prevent it from logging in on any wiki, and hide it from the [[Special:GlobalUsers|list of global users]].',
+	'centralauth-admin-lockandhide-button' => 'Lock and Hide this account',
+	'centralauth-admin-lockandhide-success' => 'Successfully locked and hid the account',
+	'centralauth-admin-lockandhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
+	
 
 	// List of global users
 	'globalusers'                    => 'Global user list',
@@ -223,6 +229,7 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-log-entry-unlock' => 'unlocked global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-hide'   => 'hid global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide' => 'unhid global account "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lockandhide' => 'locked and hid global account "<nowiki>$1</nowiki>"',
 
 	'centralauth-rightslog-name'             => 'Global rights log',
 	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',

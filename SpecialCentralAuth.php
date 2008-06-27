@@ -131,6 +131,20 @@ class SpecialCentralAuth extends SpecialPage {
 					$unhidden = true;
 					$this->logAction( 'unhide', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
+			} elseif ( $this->mMethod == 'lockandhide' ) {
+				$hStatus = $globalUser->adminHide();
+				if ( !$hStatus->isGood() ) {
+					$this->showStatusError( $status->getWikiText() );
+				}
+				$lStatus = $globalUser->adminLock();
+				if ( !$lStatus->isGood() ) {
+					$this->showStatusError( $status->getWikiText() );
+				} elseif ($hStatus->isGood()) {
+					global $wgLang;
+					$this->showSuccess( 'centralauth-admin-lockandhide-success', $this->mUserName );
+					$unhidden = true;
+					$this->logAction( 'lockandhide', $this->mUserName, $wgRequest->getVal( 'reason' ) );
+				}
 			} else {
 				$this->showError( 'centralauth-admin-bad-input' );
 			}
@@ -150,6 +164,10 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 			if( $globalUser->isHidden() && !$unhidden ) {
 				$this->showActionForm( 'unhide' );
+			}
+			
+			if (!$globalUser->isHidden && !$globalUser->isLocked) {
+				$this->showActionForm( 'lockandhide' );
 			}
 		}
 	}
