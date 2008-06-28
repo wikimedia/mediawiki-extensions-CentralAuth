@@ -199,3 +199,4 @@ $wgLogNames['gblrights']          = 'centralauth-rightslog-name';
 $wgLogHeaders['gblrights']	   = 'centralauth-rightslog-header';
 $wgLogActions['gblrights/usergroups'] = 'centralauth-rightslog-entry-usergroups';
 $wgLogActions['gblrights/groupperms']   = 'centralauth-rightslog-entry-groupperms';
+$wgLogActions['gblrights/groupperms2']   = 'centralauth-rightslog-entry-groupperms2';

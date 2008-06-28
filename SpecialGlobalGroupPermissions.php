@@ -220,7 +220,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		
 		// Log it
 		if (!(count($addRights)==0 && count($removeRights)==0))
-			$this->addLogEntry( $group, $oldRights, $newRights, $reason );
+			$this->addLogEntry( $group, $addRights, $removeRights, $reason );
 			
 		$this->invalidateRightsCache( $group );
 		
@@ -258,23 +258,25 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		LogEventsList::showLogExtract( $output, 'gblrights', $title->getPrefixedText() );
 	}
 	
-	function addLogEntry( $group, $oldRights, $newRights, $reason ) {
+	function addLogEntry( $group, $addRights, $removeRights, $reason ) {
 		global $wgRequest;
 		
 		$log = new LogPage( 'gblrights' );
+		
+		$added = 
 
-		$log->addEntry( 'groupperms',
+		$log->addEntry( 'groupperms2',
 			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
 			$reason,
 			array(
-				$this->makeRightsList( $oldRights ),
-				$this->makeRightsList( $newRights )
+				$this->makeRightsList( $addRights ),
+				$this->makeRightsList( $removeRights )
 			)
 		);
 	}
 	
 	function makeRightsList( $ids ) {
-		return implode( ', ', $ids );
+		return (bool)count($ids) ? implode( ', ', $ids ) : wfMsg( 'rightsnone' );
 	}
 	
 	function invalidateRightsCache( $group ) {
