@@ -276,7 +276,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 	}
 	
 	function makeRightsList( $ids ) {
-		return (bool)count($ids) ? implode( ', ', $ids ) : wfMsg( 'rightsnone' );
+		return (bool)count($ids) ? implode( ', ', $ids ) : wfMsgForContent( 'rightsnone' );
 	}
 	
 	function invalidateRightsCache( $group ) {
