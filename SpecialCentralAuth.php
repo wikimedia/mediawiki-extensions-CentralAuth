@@ -166,7 +166,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->showActionForm( 'unhide' );
 			}
 			
-			if (!$globalUser->isHidden && !$globalUser->isLocked) {
+			if ( !$globalUser->isHidden() && !$globalUser->isLocked() ) {
 				$this->showActionForm( 'lockandhide' );
 			}
 		}
