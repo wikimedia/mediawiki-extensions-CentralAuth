@@ -278,6 +278,15 @@ You may be attempting to assign rights to the wrong user!",
 	'right-globalgrouppermissions'	=> 'Manage global groups',
 );
 
+/** Faeag Rotuma (Faeag Rotuma)
+ * @author Jose77
+ */
+$messages['rtm'] = array(
+	'centralauth-finish-password' => 'Ou password:',
+	'centralauth-finish-login'    => 'Surum',
+	'centralauth-admin-username'  => 'Asa:',
+);
+
 /** Eastern Mari (Олык Марий йылме)
  * @author Сай
  */
