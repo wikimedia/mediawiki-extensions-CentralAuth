@@ -4054,8 +4054,10 @@ $messages['hsb'] = array(
 
 Hdyž so rozsudźiš twoje konta tam składować, budźe móžno ze samsnym wužiwarskim mjenom a hesłom we wšěch projektach Wikimedije dźěłać.
 To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [http://commons.wikimedia.org/ Wikimedia Commons] a wobeńdźe konflikty a mylenja hdyž chce něchto druhi samsne přimjeno kaž ty w druhich projektach wužiwać.",
-	'centralauth-merge-step1-title'        => 'Wužiwarske konta so zjednoća',
-	'centralauth-merge-step1-detail'       => 'Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich wikijach zo by so jenakosć zwěsćiła. Ničo změnjene njebudźe doniž njewobkrućiš, zo je wšo w porjadku.',
+	'centralauth-merge-step1-title'        => 'Zjednoćenje přizjewjenja započeć',
+	'centralauth-merge-step1-detail'       => 'Zapodaj tu prošu swoje hesło.
+Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich wikijach, zo by so  zwěsćiło, hač su jenake.
+ Ničo so změni, doniž njewobkrućiš, zo je wšo w porjadku.',
 	'centralauth-merge-step1-submit'       => 'Přizjewjenske daty potwjerdźić',
 	'centralauth-merge-step2-title'        => 'Dalše konta potwjerdźić',
 	'centralauth-merge-step2-detail'       => 'Někotre z wužiwarskich kontow njemóžachu so awtomatisce zjednoćić. Hdyž su konta twoje, móžeš to z hesłom dopokazać.',
