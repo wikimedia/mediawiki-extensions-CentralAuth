@@ -287,14 +287,15 @@ $messages['rtm'] = array(
 	'centralauth-admin-username'  => 'Asa:',
 );
 
-/** Eastern Mari (Олык Марий йылме)
+/** Eastern Mari (Олык Марий)
  * @author Сай
  */
 $messages['mhr'] = array(
 	'centralauth-finish-password' => 'Шолыпмут:',
+	'centralauth-admin-username'  => 'Пайдаланышын лӱмжӧ:',
 );
 
-/** Niuean (native name missing)
+/** Niuean (ko e vagahau Niuē)
  * @author Jose77
  */
 $messages['niu'] = array(
@@ -1390,7 +1391,6 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
  * @author SMP
  * @author Jordi Roqué
  * @author Toniher
- * @author Paucabot
  */
 $messages['ca'] = array(
 	'mergeaccount'                                    => "Estat de fusió de comptes d'usuari",
@@ -3518,7 +3518,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-prefs-complete'                      => 'Todo perfecto!',
 	'centralauth-prefs-migration'                     => 'En proceso de unificación',
 	'centralauth-prefs-count-attached'                => 'A súa conta está activa {{PLURAL:$1|nun proxecto|en $1 proxectos}}.',
-	'centralauth-prefs-count-unattached'              => 'Fican contas sen confirmar co seu nome en $1 proxectos.',
+	'centralauth-prefs-count-unattached'              => 'Quedan contas sen confirmar co seu nome {{PLURAL:$1|nun proxecto|en $1 proxectos}}.',
 	'centralauth-prefs-detail-unattached'             => 'Non se confirmou que o sitio do proxecto pertenza á conta global.',
 	'centralauth-prefs-manage'                        => 'Xestionar a súa conta global',
 	'centralauth-renameuser-abort'                    => '<div class="errorbox">Non se lle pode mudar o nome ao usuario $1 localmente xa que este nome de usuario pasou ao sistema de rexistro unificado.</div>',
@@ -4442,7 +4442,9 @@ Ez könnyebb munkát tesz lehetővé például a [http://commons.wikimedia.org/ 
 
 Ha valaki más már korábban beregisztrált a neveden egy másik oldalon, a folyamat nem fogja őket zavarni, de később esélyed lesz megoldásra jutni velük vagy egy adminisztrátorral.",
 	'centralauth-merge-step1-title'                   => 'Bejelentkezés egységesítésének megkezdése',
-	'centralauth-merge-step1-detail'                  => 'Ellenőrizzük, hogy jelszavad és regisztrált e-mail címed melyik más wikin lévő felhasználói nevekkel egyezik meg. Nem történik változás, míg meg nem erősíted, hogy minden rendben van.',
+	'centralauth-merge-step1-detail'                  => 'Add meg a fiókodhoz tartozó jelszót.
+Ellenőrizzük, hogy jelszavad és regisztrált e-mail címed melyik más wikin lévő felhasználói nevekkel egyezik meg.
+Nem történik változás, míg meg nem erősíted, hogy minden rendben van.',
 	'centralauth-merge-step1-submit'                  => 'Bejelentkezési információk megerősítése',
 	'centralauth-merge-step2-title'                   => 'Más fiókok megerősítése',
 	'centralauth-merge-step2-detail'                  => 'Néhány fiókot nem sikerült automatikusan párosítani a kijelölt saját wikihez. Ha ezek hozzád tartoznak, erősítsd meg a jelszó megadásával, hogy tényleg hozzád tartoznak.',
@@ -4460,6 +4462,10 @@ Ha igen, kövesd az alábbi linket, és ott folytasd az egyesítést.',
 	'centralauth-merge-step3-title'                   => 'Egységesített felhasználói fiók elkészítése',
 	'centralauth-merge-step3-detail'                  => 'Most már készen állsz az egységesített felhasználói fiók elkészítéséhez, amelyekhez a következő wikiket csatoljuk:',
 	'centralauth-merge-step3-submit'                  => 'Felhasználói fiókok egységesítése',
+	'centralauth-merge-no-accounts'                   => 'Nincsenek a nevedhez tartozó fiókok a központi fiókokat tartalmazó táblában!
+Az adatbázis valószínűleg sérült.',
+	'centralauth-merge-home-password'                 => 'A fiókhoz tartozó saját wikiben (lent látható) más a jelszavad, mint amit megadtál.
+Kérlek add meg a saját wikidhez tartozó jelszót.',
 	'centralauth-complete'                            => 'A bejelentkezés egységesítése sikeresen befejeződött!',
 	'centralauth-incomplete'                          => 'A bejelentkezés egységesítése nincs befejezve!',
 	'centralauth-complete-text'                       => 'Most már bármelyik Wikimedia webhelyre beléphetsz anélkül, hogy újabb felhasználói fiókot hoznál létre; például a magyar Wikipédiában regisztrált felhasználóneveddel bejelentkezhetsz Wikihírekbe és akár az összes további Wikimedia webhelyre bármely nyelven.',
@@ -4467,8 +4473,10 @@ Ha igen, kövesd az alábbi linket, és ott folytasd az egyesítést.',
 	'centralauth-not-owner-text'                      => 'A(z) „$1” felhasználói nevet automatikusan hozzárendeltük a(z) $2-s tulajdonosához.
 
 Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni fiókodat:',
+	'centralauth-blocked-text'                        => 'A saját wikidben (lásd lent) blokkoltak. Lépj kapcsolatba egy adminisztrátorral, hogy oldja fel a blokkot, mert amíg él, addig nem egyesítheted a fiókjaidat.',
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Demó mód</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'A felhasználói fiókok egységesítése jelenleg csak demó / hibakeresés céljából működik, ezért a valós egységesítés le van tiltva. Sajnáljuk!',
+	'centralauth-error-locked'                        => 'Nem szerkeszthetsz, mert a fiókod le van zárva.',
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login/hu|Tudj meg többet az '''egységesített bejelentkezésről''']]...''",
 	'centralauth-list-home-title'                     => 'Saját wiki',
 	'centralauth-list-home-dryrun'                    => 'Az ezen a wikin beállított jelszavad és e-mail címed lesz használva az egységesített felhasználói fiókodnál. Később megváltoztathatod, melyik a saját wikid.',
@@ -4544,10 +4552,21 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-admin-unlock-success'                => 'Az „<nowiki>$1</nowiki>” nevű globális fiók sikeresen feloldva.',
 	'centralauth-admin-unlock-nonexistent'            => 'Hiba: nincs „<nowiki>$1</nowiki>” nevű globális felhasználói fiók.',
 	'centralauth-admin-hide-title'                    => 'Fiók elrejtése',
+	'centralauth-admin-hide-description'              => 'A rejtett fiókok nem látszódnak a [[Special:GlobalUsers|globális szerkesztői listán]].',
 	'centralauth-admin-hide-button'                   => 'Fiók elrejtése',
+	'centralauth-admin-hide-success'                  => 'Sikeresen elrejtetted „<nowiki>$1</nowiki>” globális fiókját',
 	'centralauth-admin-hide-nonexistent'              => 'Hiba: nincs „<nowiki>$1</nowiki>” nevű globális felhasználói fiók.',
+	'centralauth-admin-unhide-title'                  => 'Fiók felfedése',
+	'centralauth-admin-unhide-description'            => 'Felfedése után a fiók újra látható lesz a [[Special:GlobalUsers|globális szerkesztői listán]].',
+	'centralauth-admin-unhide-button'                 => 'Fiók felfedése',
+	'centralauth-admin-unhide-success'                => 'Sikeresen felfedted „<nowiki>$1</nowiki>” globális fiókját',
 	'centralauth-admin-unhide-nonexistent'            => 'Hiba: nincs „<nowiki>$1</nowiki>” nevű globális felhasználói fiók.',
 	'centralauth-admin-reason'                        => 'Ok:',
+	'centralauth-admin-lockandhide-title'             => 'Fiók lezárása és elrejtése',
+	'centralauth-admin-lockandhide-description'       => 'A fiók elrejtésével és lezárásával megakadályozod, hogy beléphessenek vele bármelyik wikire, és elrejted a [[Special:GlobalUsers|globális szerkesztői listán]].',
+	'centralauth-admin-lockandhide-button'            => 'Fiók lezárása és elrejtése',
+	'centralauth-admin-lockandhide-success'           => 'Sikeresen lezártad és elrejtetted „<nowiki>$1</nowiki>” globális fiókját',
+	'centralauth-admin-lockandhide-nonexistent'       => 'Hiba: nincs „<nowiki>$1</nowiki>” nevű globális felhasználói fiók.',
 	'globalusers'                                     => 'Globális felhasználólista',
 	'centralauth-listusers-locked'                    => 'zárolva',
 	'centralauth-listusers-attached'                  => 'helyben létezik',
@@ -4578,7 +4597,13 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-log-entry-delete'                    => 'törölte a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
 	'centralauth-log-entry-lock'                      => 'lezárta a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
 	'centralauth-log-entry-unlock'                    => 'feloldotta a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
+	'centralauth-log-entry-hide'                      => 'elrejtette a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
+	'centralauth-log-entry-unhide'                    => 'felfedte a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
+	'centralauth-log-entry-lockandhide'               => 'lezárta és elrejtette a(z) „<nowiki>$1</nowiki>” nevű globális fiókot',
 	'centralauth-rightslog-name'                      => 'Globális jogok naplója',
+	'centralauth-rightslog-entry-usergroups'          => 'megváltoztatta $1 globális csoportjait: $2 → $3',
+	'centralauth-rightslog-entry-groupperms'          => 'megváltoztatta $1 globális engedélyeit: $2 → $3',
+	'centralauth-rightslog-entry-groupperms2'         => 'megváltoztatta $1 globális engedélyeit. Hozzáadva: $2; eltávolítva: $3',
 	'centralauth-rightslog-header'                    => 'Ez a napló tartalmazza a globális csoportokon végzett műveleteket, a tagokban és a jogokban történt változásokat.',
 	'globalgroupmembership'                           => 'Globális csoportok tagjai',
 	'globalgrouppermissions'                          => 'Globális csoportok kezelése',
@@ -6203,6 +6228,7 @@ $messages['km'] = array(
 	'centralauth-admin-no'                      => 'ទេ',
 	'centralauth-admin-delete-title'            => 'លុបគណនី',
 	'centralauth-admin-delete-button'           => 'លុបគណនីនេះ',
+	'centralauth-admin-nonexistent'             => 'គ្មានគណនីសាកលសំរាប់"<nowiki>$1</nowiki>"ទេ',
 	'centralauth-admin-lock-title'              => 'ចាក់សោគណនី',
 	'centralauth-admin-lock-button'             => 'ចាក់សោគណនីនេះ',
 	'centralauth-admin-unlock-title'            => 'ដោះសោគណនី',
@@ -6210,6 +6236,7 @@ $messages['km'] = array(
 	'centralauth-admin-hide-title'              => 'គណនីដែលត្រូវបានលាក់',
 	'centralauth-admin-hide-button'             => 'លាក់គណនីនេះ',
 	'centralauth-admin-reason'                  => 'មូលហេតុ៖',
+	'centralauth-admin-lockandhide-button'      => 'ចាក់សោនិងលាក់គណនីនេះ',
 	'centralauth-listusers-locked'              => 'ត្រូវបានចាក់សោ',
 	'centralauth-seconds-ago'                   => '$1{{PLURAL:$1|វិនាទី|វិនាទី}}មុន',
 	'centralauth-minutes-ago'                   => '$1{{PLURAL:$1|នាទី|នាទី}}មុន',
@@ -6221,6 +6248,9 @@ $messages['km'] = array(
 	'centralauth-prefs-complete'                => 'ទាំងអស់តាមលំដាប់ហើយ!',
 	'centralauth-prefs-count-attached'          => 'គណនីរបស់អ្នកសកម្មក្នុង$1គំរោង{{PLURAL:$1|របស់វិគី|របស់វិគី}}។',
 	'centralauth-prefs-manage'                  => 'គ្រប់គ្រងគណនីសាកលរបស់អ្នក',
+	'centralauth-login-progress'                => 'ឡុកអ៊ីនក្នុងគំរោងផ្សេងៗទៀតរបស់វិគីមេឌា៖',
+	'centralauth-log-entry-delete'              => 'បានលុបគណនីសាកល "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'                => 'បានចាក់សោគណនីសាកល "<nowiki>$1</nowiki>"',
 	'centralauth-newgroup-legend'               => 'បង្កើតក្រុមថ្មី',
 	'centralauth-globalgroupperms-newgroupname' => 'ឈ្មោះក្រុមថ្មី៖',
 	'centralauth-editgroup-subtitle'            => 'កំពុងកែប្រែ $1',
@@ -6233,6 +6263,7 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author ToePeu
  * @author Ficell
+ * @author Kwj2772
  */
 $messages['ko'] = array(
 	'centralauth-desc'                     => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
@@ -6307,6 +6338,7 @@ $messages['ko'] = array(
 	'centralauth-admin-lock-title'         => '계정 잠그기',
 	'centralauth-admin-lock-button'        => '이 계정 잠그기',
 	'centralauth-admin-reason'             => '이유:',
+	'globalusers'                          => '통합 계정 목록',
 	'centralauth-listusers-attached'       => '로컬에 존재',
 	'centralauth-listusers-nolocal'        => '묶이지 않았거나 로컬에 존재하지 않음',
 	'centralauth-seconds-ago'              => '$1초 전',
@@ -6320,6 +6352,7 @@ $messages['ko'] = array(
 	'centralauth-account-exists'           => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 	'centralauth-login-progress'           => '위키미디어의 다른 프로젝트에도 로그인합니다:',
 	'centralauth-logout-progress'          => '위키미디어의 다른 프로젝트에서도 로그아웃합니다.',
+	'centralauth-log-name'                 => '통합 계정 기록',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -10693,6 +10726,9 @@ $messages['th'] = array(
 	'centralauth-admin-unlock-title'       => 'ปลดล็อกบัญชีผู้ใช้',
 	'centralauth-admin-unlock-button'      => 'ปลดล็อกบัญชีผู้ใช้นี้',
 	'centralauth-admin-reason'             => 'เหตุผล:',
+	'centralauth-prefs-status'             => 'สถานะชื่อบัญชีทั้งระบบ:',
+	'centralauth-prefs-count-attached'     => 'ชื่อผู้ใช้ของคุณใช้งานได้ใน $1 โครงการ',
+	'centralauth-prefs-manage'             => 'จัดการชื่อบัญชีทั้งระบบ',
 	'centralauth-login-progress'           => 'ขณะนี้คุณล็อกอินเข้าสู่โครงการอื่นในวิกิมีเดีย:',
 	'centralauth-logout-progress'          => 'ขณะนี้ล็อกเอาต์ออกจากโครงการในวิกิมีเดีย:',
 	'centralauth-existinggroup-legend'     => 'กลุ่มที่มีอยู่',
@@ -11914,6 +11950,7 @@ $messages['zh-hant'] = array(
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>目前為示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => '目前為示範模式，
 實際的整合動作已停用。',
+	'centralauth-error-locked'                        => '由於您的帳戶已被鎖住，您目前無法編輯',
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
 	'centralauth-list-home-title'                     => '主要維基計劃',
 	'centralauth-list-home-dryrun'                    => '您在這個計劃中使用的密碼以及電子郵件地址將會用來做您的整合帳號，同時您在這裡的用戶頁會由其它的計劃中自動連結過來。您可以稍後更改你的主要項目。',
@@ -11989,6 +12026,16 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-unlock-button'                 => '解除鎖定這個帳戶',
 	'centralauth-admin-unlock-success'                => '已經成功地解除鎖定"<nowiki>$1</nowiki>"的全域帳戶',
 	'centralauth-admin-unlock-nonexistent'            => '錯誤: 該全域帳戶"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-hide-title'                    => '隱藏帳戶',
+	'centralauth-admin-hide-description'              => '隱藏的帳戶將不會顯示在[[Special:GlobalUsers|{{int:Globalusers}}]]中',
+	'centralauth-admin-hide-button'                   => '隱藏這個帳戶',
+	'centralauth-admin-hide-success'                  => '隱藏全域帳戶"<nowiki>$1</nowiki>"已完成',
+	'centralauth-admin-hide-nonexistent'              => '錯誤：全域帳戶"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-unhide-title'                  => '解除隱藏帳戶',
+	'centralauth-admin-unhide-description'            => '解除隱藏的帳戶將會重新顯示於[[Special:GlobalUsers|{{int:Globalusers}}]]中',
+	'centralauth-admin-unhide-button'                 => '解除隱藏這個帳戶',
+	'centralauth-admin-unhide-success'                => '解除隱藏全域帳戶"<nowiki>$1</nowiki>"已完成',
+	'centralauth-admin-unhide-nonexistent'            => '{{int:Centralauth-admin-hide-nonexistent}}',
 	'centralauth-admin-reason'                        => '理由: ',
 	'globalusers'                                     => '全域帳戶名單',
 	'centralauth-listusers-locked'                    => '鎖定',
@@ -12023,6 +12070,8 @@ $messages['zh-hant'] = array(
 	'centralauth-log-entry-delete'                    => '已經刪除全域帳戶"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'                      => '已經鎖定全域帳戶"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unlock'                    => '已經解除鎖定全域帳戶"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-hide'                      => '隱藏全域帳戶 "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unhide'                    => '解除隱藏全域帳戶 "<nowiki>$1</nowiki>"',
 	'centralauth-rightslog-name'                      => '全域權限日誌',
 	'centralauth-rightslog-entry-usergroups'          => '已經更改$1的全域成員組由$2到$3',
 	'centralauth-rightslog-entry-groupperms'          => '已經更改$1的成員組許可由$2到$3',
