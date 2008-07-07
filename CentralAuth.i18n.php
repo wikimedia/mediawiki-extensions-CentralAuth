@@ -2630,7 +2630,7 @@ Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí l
 	'centralauth-disabled-dryrun'         => 'La unificación de cuentas está por ahora en modo demostración / depuración, por lo que las operaciones de fusión están desactivadas. ¡Lo sentimos!',
 	'centralauth-readmore-text'           => ":''[[meta:Help:Unified login|Lee más sobre '''cuentas unificadas''']]…''",
 	'centralauth-list-home-title'         => 'Wiki hogar',
-	'centralauth-list-home-dryrun'        => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada.
+	'centralauth-list-home-dryrun'        => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada. 
 Podrás cambiar posteriormente la wiki considerada hogar.',
 	'centralauth-list-attached-title'     => 'Cuentas adjuntas',
 	'centralauth-list-attached'           => 'La cuenta llamada "$1" en cada uno de los siguientes sitios ha sido automáticamente añadida a la cuenta unificada:',
@@ -5236,9 +5236,9 @@ $messages['jut'] = array(
 	'centralauth-desc'                     => '[[Special:MergeAccount|Merge bruger]] en Wikimedia Fundåsje wikier',
 	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Merge multiiple bruger]] før Lænsøm Bruger Loĝ På',
 	'centralauth-merge-denied'             => 'Unskyld, du harst ekke permisje til aksesær dette pæge.',
-	'centralauth-merge-welcome'            => "'''Your bruger beretning har ikke endnu blevet migræne hen til Wikimedia's samlet login system.'''
+	'centralauth-merge-welcome'            => "'''Your bruger beretning har ikke endnu blevet migræne hen til Wikimedia's samlet login system.''' 
 
-Selv om jer gide hen til migræne jeres regnskab , du vil være i stand til hjælp den samme username og password hen til log i hen til al i Wikimedia's planlægge wikis i alt anvendelig sprogene. Indeværende gør sig lettere hen til operere med delt anlægsarbejder såsom sender hen til [http://commons.wikimedia.org/ Wikimedia Commons], og forhindrer den sammenblanding eller konflikt at kunne opstå af to folk piller den samme username oven på anderledes anlægsarbejder.
+Selv om jer gide hen til migræne jeres regnskab , du vil være i stand til hjælp den samme username og password hen til log i hen til al i Wikimedia's planlægge wikis i alt anvendelig sprogene. Indeværende gør sig lettere hen til operere med delt anlægsarbejder såsom sender hen til [http://commons.wikimedia.org/ Wikimedia Commons], og forhindrer den sammenblanding eller konflikt at kunne opstå af to folk piller den samme username oven på anderledes anlægsarbejder. 
 
 Selv om nogen ellers har allerede taget jeres username oven på en anden arbejdsplads indeværende vil ikke forstyrre sig , men sig vil indrømme jer en hændelse hen til beregne hos sig eller en administrator senere.",
 	'centralauth-merge-step1-title'        => 'Bigynde login unifikåsje',
@@ -5254,7 +5254,7 @@ Selv om nogen ellers har allerede taget jeres username oven på en anden arbejds
 	'centralauth-incomplete'               => 'Login unifikåsje udun!',
 	'centralauth-complete-text'            => 'Jer kunne nu log i hen til hvilken som helst Wikimedia wiki arbejdsplads uden skaber en ny beretning ; den samme username og password vil arbejde med Wikipedia Wiktionary Wikibooks , og deres afdelingssygeplejersken anlægsarbejder i alt sprogene.',
 	'centralauth-incomplete-text'          => 'Når først jeres login er samlet , jer vil være i stand til log i hen til hvilken som helst Wikimedia wiki arbejdsplads uden skaber en ny beretning ; den samme username og password vil arbejde med Wikipedia Wiktionary Wikibooks , og deres afdelingssygeplejersken anlægsarbejder i alt sprogene.',
-	'centralauth-not-owner-text'           => 'Den username "$1" var automatisk bestemt hen til den indehaver i den beretning oven på $2.
+	'centralauth-not-owner-text'           => 'Den username "$1" var automatisk bestemt hen til den indehaver i den beretning oven på $2. 
 
 Selv om indeværende er jer , jer kunne komme ind den login unification oparbejde simpelt hen ved at taste den lærer password nemlig at beretning her ovre :',
 	'centralauth-notice-dryrun'            => "<div class='successbox'>Demo mode ålen</div><br clear='all'/>",
@@ -6552,6 +6552,7 @@ $messages['lfn'] = array(
 	'centralauth-admin-yes'         => 'si',
 	'centralauth-admin-no'          => 'no',
 	'centralauth-admin-list-method' => 'Metodo',
+	'centralauth-editgroup-name'    => 'Nom de la grupo:',
 );
 
 /** Limburgish (Limburgs)
@@ -9850,7 +9851,7 @@ Uur Benutserkonten wuuden noch nit bestäätiged.',
 	'centralauth-merge-attempt'                       => "'''Wröigje dät ienroate Paaswoud mäd do uurblieuwene Benutserkonten...'''",
 	'centralauth-attach-list-attached'                => 'Dät globoale Benutserkonto mäd dän Noome „$1“ änthaalt do foulgjende Benutserkonten:',
 	'centralauth-attach-title'                        => 'Benutserkonto bestäätigje',
-	'centralauth-attach-text'                         => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd.
+	'centralauth-attach-text'                         => 'Dit Benutserkonto wuude noch nit in n globoal Benutserkonto integrierd. 
 	Wan dät globoale Benutserkonto uk fon die is, koast du ju Touhoopefierenge moakje, truch dät du hier dät Paaswoud fon dät globoale Benutserkonto ienrakst:',
 	'centralauth-attach-submit'                       => 'Benutserkonto integrierje',
 	'centralauth-attach-success'                      => 'Dät Benutserkonto wuude in dät globoale Benutserkonto integrierd.',
@@ -9921,7 +9922,7 @@ Do Paaswoude foar do lokoale Benutserkonten wäide ap dät uursproangelke Paaswo
 	'centralauth-renameuser-exists'                   => '<div class="errorbox">Benutser $2 kon nit uumenaamd wäide, deer dissen Benutsernoome as globoal Benutserkonto reservierd is.</div>',
 	'centralauth-invalid-wiki'                        => 'Ju Wiki-Doatenboank bestoant nit: $1',
 	'centralauth-account-exists'                      => 'Dät Benutserkonto kon nit moaked wäide: die anfräigede Benutsernoome wäd al foar dät globoale Benutserkonten-System ferwoand.',
-	'centralauth-autologin-desc'                      => 'Disse Spesioalsiede wäd bloot intern fon MediaWiki benutsed. Wan du die [[Special:UserLogin|ounmäldest]],
+	'centralauth-autologin-desc'                      => 'Disse Spesioalsiede wäd bloot intern fon MediaWiki benutsed. Wan du die [[Special:UserLogin|ounmäldest]], 
 instruiert dät zentroale Ounmäldesystem dien Browser, ne Pixelbielde ap disse Siede aptouroupen.<br/>
 Du hääst disse Spesioalsiede sunner Authentizierengsdoaten apruupen, so dät niks Wiederes geböärt.',
 	'centralauth-log-name'                            => 'Globoal Benutserkonten-Logbouk',
