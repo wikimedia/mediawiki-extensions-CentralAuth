@@ -176,9 +176,9 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-unhide-success'     => 'Successfully unhid the global account for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-admin-reason'             => 'Reason:',
-	'centralauth-admin-lockandhide-title'  => 'Lock and Hide account',
+	'centralauth-admin-lockandhide-title'  => 'Lock and hide account',
 	'centralauth-admin-lockandhide-description' => 'Locking and hiding this account will prevent it from logging in on any wiki, and hide it from the [[Special:GlobalUsers|list of global users]].',
-	'centralauth-admin-lockandhide-button' => 'Lock and Hide this account',
+	'centralauth-admin-lockandhide-button' => 'Lock and hide this account',
 	'centralauth-admin-lockandhide-success' => 'Successfully locked and hid the account',
 	'centralauth-admin-lockandhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	
