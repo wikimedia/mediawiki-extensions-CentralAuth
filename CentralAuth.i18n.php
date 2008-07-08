@@ -13,7 +13,7 @@ $messages = array();
 $messages['en'] = array(
 	// When not logged in...
 	'mergeaccount'                   => 'Login unification status',
-	'centralauth-desc'               => '[[Special:MergeAccount|Merge Account]] across Wikimedia Foundation wikis',
+	'centralauth-desc'               => '[[Special:MergeAccount|Merge account]] across Wikimedia Foundation wikis',
 	'centralauth-mergeaccount-desc'  => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
 	'centralauth-merge-denied'       => 'Sorry, you do not have permission to access this page.',
 	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
@@ -213,7 +213,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-renameuser-exists' => "<div class=\"errorbox\">Cannot rename user $2 as this username is reserved for a global account.</div>",
 
 	// Other messages
-	'centralauth-invalid-wiki'       => 'No such wiki DB: $1',
+	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki.
 When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
