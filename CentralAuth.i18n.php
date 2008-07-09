@@ -1930,7 +1930,7 @@ $messages['de'] = array(
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. Zusammenführungs-Aktionen sind deaktiviert.',
 	'centralauth-error-locked'                        => 'Du darfst keine Seiten bearbeiten, da dein Benutzerkonto gesperrt ist.',
-+	'centralauth-blocked'                             => "<big>'''Dein Benutzerkonto wurde global gesperrt.'''</big>
+	'centralauth-blocked'                             => "<big>'''Dein Benutzerkonto wurde global gesperrt.'''</big>
 
 * Sperrender Steward: $1.
 * Grund der Sperre: $2
