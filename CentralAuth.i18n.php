@@ -209,8 +209,8 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-prefs-manage'            => 'Manage your global account',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort'  => "User $1 has been migrated to the unified login system. Renaming it will cause local user detached from the global one.",
-	'centralauth-renameuser-exists' => "User $2 is reserved for a global account.",
+	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system. Renaming it will cause local user detached from the global one.",
+	'centralauth-renameuser-reserved' => "User $2 is reserved for a global account.",
 
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',

@@ -276,21 +276,18 @@ class CentralAuthHooks {
 	}
 	
 	/**
-	 * Don't allow an attached local account to be renamed with the old system.
+	 * Warn bureaucrat about possible conflicts with unified accounts
 	 */
 	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
 		$oldCentral = new CentralAuthUser( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			global $wgOut;
 			wfLoadExtensionMessages('SpecialCentralAuth');
-			$warnings[] = array( 'centralauth-renameuser-abort', $oldName, $newName );
-			return false;
+			$warnings[] = array( 'centralauth-renameuser-merged', $oldName, $newName );
 		}
 		$newCentral = new CentralAuthUser( $newName );
 		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
-			global $wgOut;
 			wfLoadExtensionMessages('SpecialCentralAuth');
-			$warnings[] = array( 'centralauth-renameuser-exists', $oldName, $newName );
+			$warnings[] = array( 'centralauth-renameuser-reserved', $oldName, $newName );
 		}
 		return true;
 	}
