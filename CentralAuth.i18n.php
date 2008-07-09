@@ -488,8 +488,6 @@ As palabras de paso t'as cuentas locals creyatas antis d'a unificazión tornará
 	'centralauth-prefs-count-unattached'              => 'Quedan cuentas no confirmatas con o suyo nombre en $1 {{PLURAL:$1|procheuto|procheutos}}.',
 	'centralauth-prefs-detail-unattached'             => "Iste procheuto no s'ha confirmau como parte d'a cuenta global.",
 	'centralauth-prefs-manage'                        => 'Almenistrar a suya cuenta global',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">No se puede renombrar o usuario $1 localment pues o suyo nombre d\'usuario s\'ha migrato ta o sistema de cuentas unificatas.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">No s\'ha puesto cambiar o nombre de l\'usuario $2 pues iste nombre ye reserbato ta una cuenta global.</div>',
 	'centralauth-invalid-wiki'                        => "No s'ha trobau a base de datos d'o wiki: $1",
 	'centralauth-account-exists'                      => "No s'ha puesto creyar a cuenta: o nombre d'usuario requiesto ya ye pillau en o sistema de cuentas unificato.",
 	'centralauth-autologin-desc'                      => "Ista pachina espezial la fa serbir MediaWiki internament.
@@ -542,7 +540,7 @@ Mire-se que igual ye prebando d'asinnar dreitos ta un usuario entibocato!",
 	'right-globalgrouppermissions'                    => 'Confegurar collas globals',
 );
 
-/** Old English (Anglo Saxon)
+/** Old English (Anglo-Saxon)
  * @author SPQRobin
  */
 $messages['ang'] = array(
@@ -709,8 +707,6 @@ $messages['ar'] = array(
 	'centralauth-prefs-count-unattached'              => 'حسابات غير مؤكدة باسمك موجودة في $1 {{PLURAL:$1|مشروع|مشروع}}.',
 	'centralauth-prefs-detail-unattached'             => 'موقع المشروع هذا لم يتم تأكيده كمنتمي للحساب العام.',
 	'centralauth-prefs-manage'                        => 'أدر حسابك العام',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">لا يمكن إعادة تسمية المستخدم $1 محليا حيث أن اسم المستخدم هذا تم نقله إلى نظام الدخول الموحد.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">لم يمكن إعادة تسمية المستخدم $2 لأن اسم المستخدم هذا محجوز لحساب عام.</div>',
 	'centralauth-invalid-wiki'                        => 'لا توجد قاعدة بيانات ويكي كهذه: $1',
 	'centralauth-account-exists'                      => 'لم يمكن إنشاء الحساب: اسم المستخدم المطلوب مأخوذ بالفعل في نظام الدخول الموحد.',
 	'centralauth-autologin-desc'                      => 'هذه الصفحة الخاصة تستخدم داخليا بواسطة ميدياويكي.
@@ -870,8 +866,6 @@ Otres cuentes entá nun tán confirmaes.',
 	'centralauth-prefs-count-unattached'   => 'Queden cuentes non confirmaes col to nome {{PLURAL:$1|nun proyeutu|en $1 proyeutos}}.',
 	'centralauth-prefs-detail-unattached'  => "Nun se confirmó la pertenencia d'esti sitiu de proyeutu a la cuenta global.",
 	'centralauth-prefs-manage'             => 'Remanar la to cuenta global',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Nun se pue renomar llocalmente al usuariu $1 yá que esti nome d\'usuariu foi migráu al sistema de cuentes fusionaes.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Nun se pue renomar l\'usuariu $2 porque esti nome d\'usuariu ta reserváu pa una cuenta global.</div>',
 	'centralauth-invalid-wiki'             => 'Nun esiste la base de datos wiki: $1',
 	'centralauth-log-name'                 => 'Rexistru de cuenta global',
 	'centralauth-log-header'               => 'Esti rexistru contién operaciones de tocantes a cuentes globales: eliminaciones, bloqueos y desbloqueos.',
@@ -1126,8 +1120,6 @@ $messages['bg'] = array(
 	'centralauth-prefs-count-unattached'              => '{{PLURAL:$1|В един проект е останала непотвърдена сметка|В $1 проекта са останали непотвърдени сметки}} с вашето име.',
 	'centralauth-prefs-detail-unattached'             => 'За този проект липсва потвърждение, че принадлежи към единната сметка.',
 	'centralauth-prefs-manage'                        => 'Управление на глобалната сметка',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Не е възможно локалното преименуване на $1, защото това потребителско име е било прехвърлено към системата за единно влизане.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Потребителят $2 не може да бъде преименуван, тъй като новото потребителско име е запазено за глобална сметка.</div>',
 	'centralauth-invalid-wiki'                        => 'Не съществува такава база данни: $1',
 	'centralauth-account-exists'                      => 'Не може да бъде създадена сметка: желаното потребителско име е заето от Единната система за влизане.',
 	'centralauth-autologin-desc'                      => 'Тази специална страница се използва вътрешно от МедияУики.
@@ -1250,7 +1242,6 @@ $messages['bn'] = array(
 	'centralauth-prefs-count-unattached'   => 'আপনার নাম দিয়ে নিশ্চিতকরণ হয় নাই এমন অ্যাকাউন্ট $1 {{PLURAL:$1|প্রকল্পে|প্রকল্পসমূহে}} বাকি আছে।',
 	'centralauth-prefs-detail-unattached'  => 'এই প্রকল্প সাইটটি গ্লোবাল অ্যাকাউন্টের জন্য প্রযোজ্য বলে নিশ্চিত করা হয়নি।',
 	'centralauth-prefs-manage'             => 'আপনার প্রধান অ্যাকাউন্ট ব্যবস্থাপনা করুন',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">ব্যবহারকারী $1-কে স্থানীয়ভাবে পুনরায় নামকরণ করা যায়নি, কারণ এই ব্যবহারকারী নামটি একটি একত্রিত লগ-ইন ব্যবস্থায় স্থানান্তর করা হয়েছে।</div>',
 );
 
 /** Breton (Brezhoneg)
@@ -1388,8 +1379,6 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-prefs-count-unattached'   => "Kontoù ankadarnaet gant hoc'h anv implijer a chom war $1 {{PLURAL:$1|raktres|raktres}}.",
 	'centralauth-prefs-detail-unattached'  => "N'eo ket bet kadarnaet e vije ar raktres-se e-touez raktresoù ar gont hollek",
 	'centralauth-prefs-manage'             => 'Merañ ho kont hollek',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">N\'haller ket adenvel an implijer $1 war al lec\'h : ur gont unvan zo gant an implijer-mañ bremañ.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Dibosupl adenvel $2 evel anv implijer, miret eo evit ur gont hollek.</div>',
 	'centralauth-invalid-wiki'             => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists'           => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-log-entry-unlock'         => 'en deus dibrennet ar gont hollek "<nowiki>$1</nowiki>"',
@@ -1545,8 +1534,6 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-prefs-count-unattached'              => 'Es mantenen comptes amb el vostre nom sense confirmar a $1 {{PLURAL:$1|projecte|projectes}}.',
 	'centralauth-prefs-detail-unattached'             => "No s'ha confirmat que aquest projecte pugui accedir als comptes unificats.",
 	'centralauth-prefs-manage'                        => 'Gestioneu el vostre compte global',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox"> No es pot canviar el nom de l\'usuari $1 localment, perquè ha migrat al sistema unificat de comptes.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">No es pot reanomenat l\'usuari $2 perquè el seu nom d\'usuari està reservat en un compte unificat.</div>',
 	'centralauth-invalid-wiki'                        => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists'                      => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
 	'centralauth-autologin-desc'                      => "Aquesta pàgina local és usada internament per MediaWiki.
@@ -1734,8 +1721,6 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-prefs-count-unattached'              => 'Na $1 {{PLURAL:$1|projektu zůstává nepotvrzený účet|projektech zůstávají nepotvrzené účty|projektech zůstávají nepotvrzené účty}} s vaším jménem.',
 	'centralauth-prefs-detail-unattached'             => 'Dosud nebylo potvrzeno, zda účet na tomto projektu patří k jednotnému účtu.',
 	'centralauth-prefs-manage'                        => 'Správa jednotného účtu',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Uživatele $1 není možné lokálně přejmenovat, protože toto uživatelské jméno bylo přesunuto do systému jednotných přihlašovacích účtů.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Není možné přejmenovat na $2, protože toto uživatelské jméno je rezervováno pro jednotný účet.</div>',
 	'centralauth-invalid-wiki'                        => 'Taková DB wiki neexistuje: $1',
 	'centralauth-account-exists'                      => 'Nelze vytvořit účet: Požadované uživatelské jméno je již registrováno v unifikovaném přihlašovacím systému.',
 	'centralauth-login-progress'                      => 'Automatické přihlášení na další projekty Wikimedia:',
@@ -1907,7 +1892,6 @@ $messages['de'] = array(
 	'centralauth-merge-step3-submit'                  => 'Benutzerkonten zusammenführen',
 	'centralauth-merge-no-accounts'                   => 'Es wurden in der zentralen Datenbank keine Benutzerkonten gefunden, die mit deinem Namen übereinstimmen. Die Datenbank muss fehlerhaft sein.',
 	'centralauth-merge-home-password'                 => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von dir eingegeben. Bitte gebe das Passwort für dein Heimatwiki ein.',
- 
 	'centralauth-complete'                            => 'Die Zusammenführung der Benutzerkonten ist vollständig.',
 	'centralauth-incomplete'                          => 'Die Zusammenführung der Benutzerkonten ist unvollständig!',
 	'centralauth-complete-text'                       => 'Du kannst dich nun auf jeder Wikimedia-Webseite anmelden,
@@ -1930,17 +1914,6 @@ $messages['de'] = array(
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Die Benutzerkonto-Zusammenführung befindet sich gegenwärtig in einem Demonstrations/Fehlersuch-Modus. Zusammenführungs-Aktionen sind deaktiviert.',
 	'centralauth-error-locked'                        => 'Du darfst keine Seiten bearbeiten, da dein Benutzerkonto gesperrt ist.',
-	'centralauth-blocked'                             => "<big>'''Dein Benutzerkonto wurde global gesperrt.'''</big>
-
-* Sperrender Steward: $1.
-* Grund der Sperre: $2
-* Beginn der Sperre: $6
-* Sperr-Ende: $5
-* Sperre betrifft: $3
-
-Du kannst $7 oder jeden anderen Steward kontaktieren, um über die Sperre zu diskutieren.
-Du kannst die 'E-Mail an Benutzer'-Funktion erst nutzen, wenn du eine gültige E-Mail-Adresse in deinen [[Special:Preferences|persönlichen Einstellungen]] eingegeben hast und die E-Mail-Funktion nicht gesperrt wurde.",
-
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]] …''",
 	'centralauth-list-home-title'                     => 'Heimat-Wiki',
 	'centralauth-list-home-dryrun'                    => 'Das Passwort und die E-Mail-Adresse, die du in diesem Wiki eingetragen hast, wird für die Zusammenführung der Benutzerkonten verwendet.
@@ -2030,19 +2003,7 @@ Du kannst die 'E-Mail an Benutzer'-Funktion erst nutzen, wenn du eine gültige E
 	'centralauth-admin-unhide-button'                 => 'Benutzerkonto wieder sichtbar machen',
 	'centralauth-admin-unhide-success'                => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich wieder sichtbar gemacht.',
 	'centralauth-admin-unhide-nonexistent'            => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
-	'centralauth-admin-block-title'                   => 'Benutzerkonto sperren',
-	'centralauth-admin-block-description'             => 'Mit diesem Formular kannst du ein globales Benutzerkonto sperren. Gesperrte globale Benutzer können sich weiterhin anmelden, aber keine Seiten bearbeiten.',
-	'centralauth-admin-block-button'                  => 'Benutzerkonto sperren',
-	'centralauth-admin-block-success'                 => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich gesperrt.',
-	'centralauth-admin-block-already'                 => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist bereits gesperrt.',
-	'centralauth-admin-block-badexpiry'               => 'Fehler: ungültiges Sperrende',
-	'centralauth-admin-unblock-title'                 => 'Benutzerkonto entsperren',
-	'centralauth-admin-unblock-description'           => 'Auf Entsperrung eines globalen Benutzerkontos ermöglicht wieder die Seitenbearbeitung.',
-	'centralauth-admin-unblock-button'                => 'Benutzerkonto entsperren',
-	'centralauth-admin-unblock-success'               => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich entsperrt.',
-	'centralauth-admin-unblock-notblocked'            => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht gesperrt.',
 	'centralauth-admin-reason'                        => 'Grund:',
-	'centralauth-admin-expiry'                        => 'Sperrende:',
 	'globalusers'                                     => 'Globale Benutzerliste',
 	'centralauth-listusers-locked'                    => 'gesperrt',
 	'centralauth-listusers-attached'                  => 'lokal vorhanden',
@@ -2107,12 +2068,10 @@ Du kannst die 'E-Mail an Benutzer'-Funktion erst nutzen, wenn du eine gültige E
 	'centralauth-editgroup-success-text'              => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
 	'centralauth-globalgrouppermissions-knownwiki'    => 'Wähle ein Wiki, auf dem sie ein Benutzerkonto haben:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
-
-	// User rights
-	'right-centralauth-admin'      => 'Globale Benutzerkonten administrieren',
-	'right-centralauth-merge'      => 'Benutzerkonten zusammenführen',
-	'right-globalgroupmembership'  => 'Mitgliedschaft in globalen Gruppen bearbeiten',
-	'right-globalgrouppermissions' => 'Management globaler Gruppen',
+	'right-globalgroupmembership'                     => 'Mitgliedschaft in globalen Gruppen bearbeiten',
+	'right-centralauth-admin'                         => 'Globale Benutzerkonten administrieren',
+	'right-centralauth-merge'                         => 'Benutzerkonten zusammenführen',
+	'right-globalgrouppermissions'                    => 'Management globaler Gruppen',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -2123,20 +2082,40 @@ $messages['dsb'] = array(
 	'centralauth-desc'                                => 'Konta pó wikijach Wikimedia Foundation [[Special:MergeAccount|zjadnośiś]]',
 	'centralauth-mergeaccount-desc'                   => '[[Special:MergeAccount|Zjadnośujo někotare konta]] za pśizjawjenja jadnotliwego wužywarja',
 	'centralauth-merge-denied'                        => 'Wódaj, ale njamaš pśistupne pšawo za toś ten bok.',
+	'centralauth-merge-notlogged'                     => 'Pšosym <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} pśizjaw se]</span>, aby pśeglědał, lěc twóje konta su dopołnje zjadnośone.',
 	'centralauth-merge-step1-title'                   => 'Pśizjawjeńske zjadnośenje zachopiś',
+	'centralauth-merge-step1-detail'                  => 'Zapódaj pšosym how swójo kontowe gronidło.
+Twójo gronidło a zregistrěrowana e-mailowa adresa buźotej se z drugimi wikijami pśirownowaś, aby se wobkšuśiło, až se makaju.
+Njezměnijo se nic, až njejo wobkšuśone, až jo wšo w pórěźe.',
 	'centralauth-merge-step1-submit'                  => 'Pśizjawjeńske informacije wobkšuśiś',
 	'centralauth-merge-step2-title'                   => 'Dalšne konta wobkšuśiś',
 	'centralauth-merge-step2-submit'                  => 'Pśizjawjeńske informacije wobkšuśiś',
+	'centralauth-merge-dryrun-complete'               => 'Wše eksistujuce konta daju se awtomatiski zjadnośiś!
+
+Doněnta njejo se nic na twójich kontach změniło.',
 	'centralauth-merge-dryrun-or'                     => "'''abo'''",
 	'centralauth-merge-step3-title'                   => 'Jadnotne konto załožyś',
+	'centralauth-merge-step3-detail'                  => 'Móžoš něnto swójo jadnotne konto za slědujuce wikije napóraś:',
 	'centralauth-merge-step3-submit'                  => 'Konta zjadnośiś',
 	'centralauth-merge-home-password'                 => 'Domowniski wiki za toś to konto (glědaj dołojce) ma druge gronidło nježli to, kótarež sy zapódał. Zapódaj pšosym gronidło za domowniski wiki.',
 	'centralauth-complete'                            => 'Pśizjawjeńske zjadnośenje dopołne!',
 	'centralauth-incomplete'                          => 'Pśizjawjeńske zjadnośenje njejo dopołne!',
+	'centralauth-complete-text'                       => 'Móžoś se něnto do kuždego wikijego sedła Wikimedije bźez napóranja nowego konta pśizjawiś;
+to same wužywarske mě a gronidło buźotej na Wikipediji, Wikisłowniku, Wikiknigłach a jich sotšowych projektach we wšych rěcach płaśiwej.',
+	'centralauth-incomplete-text'                     => 'Gaž wašo pśizjawjenje jo zjadnośone, móžoš se do kuždego wikijowego sedła Wikimedije bźez napóranja nowego konta pśizjawiś;
+to same wužywarske mě a gronidło buźotej we Wikipediji, Wikisłowniku, Wikiknigłach a jich sotšowych projektach we wšych rěcach płaśiwej.',
+	'centralauth-not-owner-text'                      => 'Wužywarske mě "$1" jo se awtomatiski wobsejźarjeju konta na $2 pśipokazało.
+
+Jolic tebje słuša, móžoš zjadnośeński proces jadnorje pśez zapódaśe głownego gronidła za toś to konto dokóńcyś:',
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Jano demonstraciski modus</div><br clear='all'/>",
 	'centralauth-error-locked'                        => 'Njamóžoś wobźěłaś, dokulaž twójo konto jo zastajone.',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Wěcej wó '''zjadnośonem pśizjawjenju cytaś''']]…''",
 	'centralauth-list-home-title'                     => 'Domowniski wiki',
+	'centralauth-list-home-dryrun'                    => 'Gronidło a e-mailowa adresa na toś tom wikiju budu se za twójo jadnotne konto wužywaś.
+Móžoš swój domowniski wiki hyšći pózdźej změniś.',
 	'centralauth-list-attached-title'                 => 'Pśipowjesone konta',
+	'centralauth-list-attached'                       => 'Kont z mjenim "$1" na kuždym ze slědujucych sedłow su so awtomatiski jadnotnemu kontoju pśidali:',
+	'centralauth-list-attached-dryrun'                => 'Konta z mjenim "$1" na slědujucych sedłach přidaju se awtomatiski jadnotnemu kontoju:',
 	'centralauth-list-unattached-title'               => 'Wótpowjesone konta',
 	'centralauth-foreign-link'                        => 'Wužywaŕ $1 na $2',
 	'centralauth-merge-method-primary'                => 'Domowniski wiki',
@@ -2150,14 +2129,23 @@ $messages['dsb'] = array(
 	'centralauth-finish-password'                     => 'Gronidło:',
 	'centralauth-finish-login'                        => 'Pśizjawjenje',
 	'centralauth-finish-send-confirmation'            => 'Gronidło pśez e-mailku pśipósłaś',
+	'centralauth-finish-problems'                     => 'Maš problemy abo njejsy wobsejźaŕ toś tych drugich kontow?
+[[meta:Help:Unified login problems|How namakaš pomoc]]…',
 	'centralauth-finish-noconfirms'                   => 'Z pomocu toś togo gronidła njejsu se žedne konta wobkšuśiś dali.',
 	'centralauth-finish-incomplete'                   => 'Někotare konto su se z pomocu toś togo gronidła zjadnośili.
 Druge konta hyšći njejsu wobkšuśone.',
+	'centralauth-merge-attempt'                       => "'''Zapódane gronidło pśirownujo se ze zbytnymi njezjadnośonymi kontami …'''",
+	'centralauth-attach-list-attached'                => 'Jadnotne konto z mjenim "$1" wopśimujo slědujuce konta:',
 	'centralauth-attach-title'                        => 'Konto wobkšuśiś',
+	'centralauth-attach-text'                         => 'Toś to konto hyšći njejo se do jadnotnego konta spórało.
+Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zapódajoš gronidło globalnego konta:',
+	'centralauth-attach-submit'                       => 'Konto spóraś',
+	'centralauth-attach-success'                      => 'Konto jo se do jadnotnego konta spórało.',
 	'centralauth'                                     => 'Adminstracija jadnotnego pśizjawjenja',
 	'centralauth-admin-manage'                        => 'Wužywarske daty zastojaś',
 	'centralauth-admin-username'                      => 'Wužywarske mě:',
 	'centralauth-admin-lookup'                        => 'Wužywarske daty se woglědaś abo wobźěłaś',
+	'centralauth-admin-permission'                    => 'Jano stewardy mógu konta drugich wužywarjow zjadnośiś.',
 	'centralauth-admin-no-unified'                    => 'Žedne jadnotne konto za toś to wužywarske mě.',
 	'centralauth-admin-info-id'                       => 'ID wužywarja:',
 	'centralauth-admin-info-registered'               => 'Zregistrěrowany:',
@@ -2217,8 +2205,10 @@ Druge konta hyšći njejsu wobkšuśone.',
 	'centralauth-prefs-count-unattached'              => 'Su hyšći njewobkšuśone konta z twójim mjenim w $1 {{PLURAL:$1|projekśe|projektoma|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached'             => 'Za toś ten projekt njejo wobkšuśenje, až słuša ku globalnemu kontoju.',
 	'centralauth-prefs-manage'                        => 'Twójo globalne konto zastojaś',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Wužywaŕ $2 njedajo se pśemjeniś, dokulaž toś to wužywarske mě jo za globalne konto rezerwěrowane.</div>',
 	'centralauth-invalid-wiki'                        => 'Njejo taka wikijowa datowa banka: $1',
+	'centralauth-account-exists'                      => 'Konto njedajo se napóraś: wužywarske mě, kótarež se pomina, jo južo do systema jadnotnego pśizjawjenja pśewzete.',
+	'centralauth-login-progress'                      => 'Awotmatiske pśizjawjenje do drugich projektow Wikimedije:',
+	'centralauth-logout-progress'                     => 'Awtomatiske wótzjawjenje z drugich projektow Wikimedije:',
 	'centralauth-log-name'                            => 'Protokol globalnego konta',
 	'centralauth-log-entry-delete'                    => 'globalne konto "<nowiki>$1</nowiki>" wulašowane',
 	'centralauth-log-entry-lock'                      => 'globalne konto "<nowiki>$1</nowiki>" zastajone',
@@ -2231,6 +2221,7 @@ Druge konta hyšći njejsu wobkšuśone.',
 	'centralauth-rightslog-entry-groupperms'          => 'kupkowe pšawa za $1 wót $2 do $3 změnjone',
 	'centralauth-rightslog-entry-groupperms2'         => 'kupkowe pšawa za $1 změnjone. $2 pśidany; $3 wótwónoźony',
 	'globalgroupmembership'                           => 'Cłonkojstwo w globalnych kupkach',
+	'globalgrouppermissions'                          => 'Zastojanje globalnych kupkow',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Pšawa se woglědaś a wobźěłaś]])',
 	'centralauth-existinggroup-legend'                => 'Eksistujuce kupki',
 	'centralauth-newgroup-legend'                     => 'Nowu kupku napóraś',
@@ -2249,6 +2240,8 @@ Druge konta hyšći njejsu wobkšuśone.',
 	'centralauth-editgroup-perms'                     => 'Pśipokazane pšawa:',
 	'centralauth-editgroup-reason'                    => 'Pśicyna za změnu:',
 	'centralauth-editgroup-success'                   => 'Kupkowe pšawa změnjone',
+	'centralauth-editgroup-success-text'              => 'Sy kupkowe pšawa za kupku $1 wuspěšnje změnił.
+[[Special:GlobalGroupPermissions|Slědk ku kupkowemu zastojanjeju]]',
 	'centralauth-globalgrouppermissions-knownwiki'    => 'Wubjeŕ wiki, na kótarychž maju konto:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "Globalny wužywaŕ '''$1''' njejo aktiwny na wikiju, kótaryž sy pódał ('' $2 '').
 Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
@@ -2381,8 +2374,6 @@ $messages['el'] = array(
 	'centralauth-prefs-count-unattached'   => 'Παραμένουν ανεπιβεβαίωτοι λογαριασμοί με το όνομά σας σε $1 {{PLURAL:$1|εγχείρημα|εγχειρήματα}}.',
 	'centralauth-prefs-detail-unattached'  => 'Δεν έχει επιβεβαιωθεί ότι αυτό το εγχείρημα ανήκει στον καθολικό λογαριασμό.',
 	'centralauth-prefs-manage'             => 'Διαχείριση του καθολικού σας λογαριασμού',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Ο χρήστης $1 δεν μπορεί να μετονομαστεί τοπικά καθώς αυτό το όνομα χρήστη έχει μετακινηθεί προς το σύστημα ενιαίας σύνδεσης.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Αδύνατη η μετονομασία του χρήστη $2 γιατί αυτό το όνομα χρήστη είναι κρατημένο για καθολικό λογαριασμό.</div>',
 	'centralauth-account-exists'           => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα είναι επιλεγμένη ήδη στο σύστημα ενιαίας σύνδεσης.',
 );
 
@@ -2551,8 +2542,6 @@ La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunig
 	'centralauth-prefs-count-unattached'              => 'Nekonfirmitaj kontoj kun via nomo restas sur $1 {{PLURAL:$1|projekto|projektoj}}.',
 	'centralauth-prefs-detail-unattached'             => 'Ĉi tiu projekta paĝaro ne estis konfirmita kiel aparteanta al la unuigita salutsistemo.',
 	'centralauth-prefs-manage'                        => 'Prizorgi vian unuigitan konton',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Neeblis renomi la uzanton $1 en la loka vikio ĉar tiu salutnomo estis migrigita  al unuigita salutsistemo.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Neeblis alinomigu uzanton $2 ĉar tiu salutnomo estas rezervita por unuigita konto.</div>',
 	'centralauth-invalid-wiki'                        => 'Nenia vikia datumbazo: $1',
 	'centralauth-account-exists'                      => 'Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.',
 	'centralauth-autologin-desc'                      => 'Ĉi tiu speciala paĝo estas uzata interne de MediaWiki.
@@ -2860,8 +2849,6 @@ $messages['fa'] = array(
 	'centralauth-prefs-count-unattached'              => 'حساب‌های کاربری تایید نشده‌ای با نام شما در $1 {{PLURAL:$1|پروژه|پروژه}} باقی می‌مانند.',
 	'centralauth-prefs-detail-unattached'             => 'وبگاه این پروژه مورد تایید برای استفاده از حساب کاربری مشترک قرار نگرفته‌است.',
 	'centralauth-prefs-manage'                        => 'مدیریت حساب کاربری مشترک',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">امکان تغییر نام حساب کاربری $1 به طور محلی وجود ندارد، زیرا این حساب به سامانه یکی کردن حساب‌های کاربری منتقل شده‌است.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">نام حساب کاربری $2 را نمی‌توان تغییر داد زیرا این حساب کاربری برای یک حساب مشترک کنار گذاشته شده‌است.</div>',
 	'centralauth-invalid-wiki'                        => 'چنین پایگاه اطلاعاتی وجود ندارد: $1',
 	'centralauth-account-exists'                      => 'امکان ایجاد حساب کاربری وجود ندارد: حساب کاربری مورد نظر پیش از این در سامانه حساب کاربری مشترک به کار گرفته شده‌است.',
 	'centralauth-autologin-desc'                      => 'این صفحهٔ ویژه به طور داخلی توسط مدیاویکی استفاده می‌شود.
@@ -3056,8 +3043,6 @@ Ennen yhdistämistä luotujen paikallisten tunnuksien salasanat palautuvat yhdis
 	'centralauth-prefs-count-unattached'   => 'Liittämättömiä tunnuksia on $1 {{PLURAL:$1|wikissä}}.',
 	'centralauth-prefs-detail-unattached'  => 'Tätä sivua ei ole varmistettu päätunnukseen kuuluvaksi.',
 	'centralauth-prefs-manage'             => 'Päätunnuksen hallinta',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Käyttäjätunnusta $1 ei nimetä uudelleen, koska se on yhdistetty käyttäjätunnus.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Tunnuksen $2 nimeäminen uudelleen ei ole mahdollista, koska tämä tunnus on varattu yhdistetylle käyttäjätunnukselle.</div>',
 	'centralauth-invalid-wiki'             => 'Wiki-tietokantaa $1 ei ole olemassa.',
 	'centralauth-account-exists'           => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
 	'centralauth-login-progress'           => 'Olet kirjautunut sisään Wikimedian projekteihin:',
@@ -3235,8 +3220,6 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-prefs-count-unattached'              => 'Il y a $1 {{PLURAL:$1|projet sur lequel|projets sur lesquels}} il existe un compte non confirmé avec le même nom d’utilisateur que le vôtre.',
 	'centralauth-prefs-detail-unattached'             => 'Votre compte sur ce projet n’a pas pu être rattaché au compte unique.',
 	'centralauth-prefs-manage'                        => 'Gérez votre compte global',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Impossible de renommer le compte utilisateur $1 localement : cet utilisateur a maintenant un compte unique.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Impossible de renommer $2 comme nom d’utilisateur lequel est réservé pour un compte global.</div>',
 	'centralauth-invalid-wiki'                        => 'Aucune base de donnée wiki : $1',
 	'centralauth-account-exists'                      => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà actif dans le système des comptes unifiés.',
 	'centralauth-autologin-desc'                      => 'Cette page spéciale est utilisée par MediaWiki en interne.
@@ -3361,7 +3344,6 @@ Vos porréd modifiar voutron projèt principâl ples târd.',
 	'centralauth-prefs-count-unattached'   => 'Des comptos pas confirmâs avouéc lo mémo nom d’utilisator que lo voutro sè trovont dessus $1 projèts.',
 	'centralauth-prefs-detail-unattached'  => 'Voutron compto sur ceti projèt at pas possu étre rapondu u compto unico.',
 	'centralauth-prefs-manage'             => 'G·èrâd voutron compto unico',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Empossiblo de renomar lo compto utilisator $1 localament : ceti utilisator at ora un compto unico.</div>',
 );
 
 /** Friulian (Furlan)
@@ -3550,8 +3532,6 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-prefs-count-unattached'              => 'Quedan contas sen confirmar co seu nome {{PLURAL:$1|nun proxecto|en $1 proxectos}}.',
 	'centralauth-prefs-detail-unattached'             => 'Non se confirmou que o sitio do proxecto pertenza á conta global.',
 	'centralauth-prefs-manage'                        => 'Xestionar a súa conta global',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Non se lle pode mudar o nome ao usuario $1 localmente xa que este nome de usuario pasou ao sistema de rexistro unificado.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Non se pode renomear o usuario $2 ao novo novo nome porque está reservado para unha conta global.</div>',
 	'centralauth-invalid-wiki'                        => 'Non existe a base de datos do wiki: $1',
 	'centralauth-account-exists'                      => 'Non se pode crear a conta: o nome de usuario solicitado é usado no sistema de rexistro unificado.',
 	'centralauth-autologin-desc'                      => 'Esta páxina especial é usada internamente por MediaWiki.
@@ -3796,8 +3776,6 @@ $messages['he'] = array(
 	'centralauth-prefs-count-unattached'              => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב{{PLURAL:$1|מיזם אחד|־$1 מיזמים}}.',
 	'centralauth-prefs-detail-unattached'             => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
 	'centralauth-prefs-manage'                        => 'ניהול החשבון הכללי',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">לא ניתן לשנות את שם המשתמש של $1 באופן מקומי, כיוון שהוא כבר התווסף למערכת החשבונות הממוזגים.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">לא ניתן לשנות את שם המשתמש ל"$2" כיוון שהוא שמור לחשבון כללי.</div>',
 	'centralauth-invalid-wiki'                        => 'אין מסד נתונים בשם $1',
 	'centralauth-account-exists'                      => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
 	'centralauth-autologin-desc'                      => 'מערכת מדיה־ויקי משתמשת בדף מיוחד זה באופן פנימי. כשאתם מבצעים [[Special:Userlogin|כניסה לחשבון]], המערכת המרכזית של כניסה לחשבון גורמת לדפדפן שלכם לבקש דף זה מכל הדומיינים המקושרים, באמצעות קישורים לתמונות. כיוון שביקשתם דף זה ללא מידע זיהוי, הוא לא יעשה דבר.',
@@ -4004,8 +3982,6 @@ $messages['hi'] = array(
 	'centralauth-prefs-count-unattached'              => '$1 {{PLURAL:$1|प्रकल्पमें|प्रकल्पोंमें}} आपके खाते (जिन्हें आपने निश्चित नहीं किया हैं) बचे हुए हैं।',
 	'centralauth-prefs-detail-unattached'             => 'आपके एकत्रित अकाउंटमें इस साईटको निश्चित नहीं किया गया हैं।',
 	'centralauth-prefs-manage'                        => 'आपके ग्लोबल अकाउंटको मैनेज करें',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">$1 यह सदस्यनाम एकत्रित खाते से जुडा हुआ होनेसे यहां इसे बदला नहीं जा सकता।</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">सदस्य $2 का नाम बदल नहीं सकते क्योंकी यह विश्व खाते से जुडने के लिये रखा हैं।</div>',
 	'centralauth-invalid-wiki'                        => 'ऐसा विकि नहीं हैं DB: $1',
 	'centralauth-account-exists'                      => 'खाता खोल नहीं सकते: पूछा गया सदस्यनाम पहले से विश्व खाते के लिये सुरक्षित हैं।',
 	'centralauth-autologin-desc'                      => 'यह विशेष पृष्ठ मीडियाविकिके खासगी इस्तेमाल का हैं।
@@ -4180,8 +4156,6 @@ Ostali računi nisu još potvrđeni.',
 	'centralauth-prefs-count-unattached'     => 'Nepotvrđeni računi s vašim imenom postoje još na {{PLURAL:$1|slijedećem projektu|slijedećim projektima|slijedećim projektima}} $1.',
 	'centralauth-prefs-detail-unattached'    => 'Pripadnost ovog projekta jedinstvenom sustavu prijave nije potvrđena.',
 	'centralauth-prefs-manage'               => 'Uredite Vaš središnji suradnički račun',
-	'centralauth-renameuser-abort'           => '<div class="errorbox">Ne mogu preimenovati suradnika $1 lokalno jer je to suradničko ime spojeno u jedinstveni sustav prijave.</div>',
-	'centralauth-renameuser-exists'          => '<div class="errorbox">Suradnik $2 nemože biti preimenovan jer je ime zauzeto za jedinstveni račun.</div>',
 	'centralauth-account-exists'             => 'Račun nemože biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.',
 	'centralauth-log-entry-delete'           => 'izbrisan globalni račun "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock'             => 'zaključan globalni račun "<nowiki>$1</nowiki>"',
@@ -4351,8 +4325,6 @@ Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu 
 	'centralauth-prefs-count-unattached'              => 'Njepotwjerdźene konta z twojim mjenom zwostanu na $1 projektach.',
 	'centralauth-prefs-detail-unattached'             => 'Njeje potwjerdźenje, zo tute projektowe sydło ke globalnemu kontu słuša.',
 	'centralauth-prefs-manage'                        => 'Twoje globalne konto zrjadować',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Wužiwar $1 njeda so lokalnje přemjenować, dokelž tute wužiwarske mjeno je do systema zjednoćeneho přizjewjenja přešoł.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Wužiwar $2 njeda so přemjenować, dokelž tute wužiwarske mjeno je za globalne konto rezerwowane.</div>',
 	'centralauth-invalid-wiki'                        => 'Tajka wikijowa datowa banka njeeksistuje: $1',
 	'centralauth-account-exists'                      => 'Konto njeda so wutowrić: požadane wužiwarske mjeno bu hižo do jednotneho přizjewjenskeho systema přewzate.',
 	'centralauth-autologin-desc'                      => 'Tuta specialna strona so jenož internje wot MediaWiki wužiwa.
@@ -4615,8 +4587,6 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-prefs-count-unattached'              => '$1 nem megerősített felhasználói fiók van a neveddel $1 oldalon.',
 	'centralauth-prefs-detail-unattached'             => 'Még nem lett megerősítve, hogy az oldal a globális felhasználói fiókodhoz tartozik.',
 	'centralauth-prefs-manage'                        => 'Globális felhasználói fiók beállítása',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">$1 nem nevezhető át helyben, mivel integrálva van az egységesített bejelentkezési rendszerbe.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">$2 felhasználót nem sikerült átnevezni: ez a felhaználónév le van foglalva egy globális azonosítóhoz.</div>',
 	'centralauth-invalid-wiki'                        => 'Nincs ilyen adatbázis: $1',
 	'centralauth-account-exists'                      => 'Nem sikerült új felhasználót létrehozni: az egységes bejelentkezési rendszerben már van ilyen felhasználónév.',
 	'centralauth-login-progress'                      => 'Bejelentkeztetlek a Wikimedia többi projektjébe is:',
@@ -4841,8 +4811,6 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-prefs-count-unattached'              => 'Akun dengan nama Anda yang belum terkonfirmasi masih terdapat dalam $1 {{PLURAL:$1|proyek|proyek}}.',
 	'centralauth-prefs-detail-unattached'             => 'Situs proyek ini belum dikonfirmasi sebagai bagian dari akun global.',
 	'centralauth-prefs-manage'                        => 'Kelola akun global Anda',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Tidak dapat mengganti nama pengguna lokal $1 karena nama pengguna ini telah dimigrasikan ke sistem log masuk global.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Tidak dapat mengganti nama pengguna $2 karena merupakan akun pengguna global.</div>',
 	'centralauth-invalid-wiki'                        => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists'                      => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-autologin-desc'                      => 'Halaman istimewa ini digunakan secara internal oleh MediaWiki.
@@ -5117,8 +5085,6 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-prefs-count-unattached'              => 'Ci sono account non confermati con il tuo nome utente su $1 progetti.',
 	'centralauth-prefs-detail-unattached'             => "Questo sito non è stato confermato come appartenente all'account globale.",
 	'centralauth-prefs-manage'                        => 'Gestione del tuo account globale',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Impossibile rinominare localmente l\'utente $1 perché questa utenza è stata trasferita al sistema unificato di identificazione (unified login system).</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Non posso rinominare l\'utente $2 siccome questo nome utente è riservato per un account globale.</div>',
 	'centralauth-invalid-wiki'                        => 'Nessun DB wiki: $1',
 	'centralauth-account-exists'                      => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-autologin-desc'                      => 'Questa pagina speciale è usata internamente da MediaWiki.
@@ -5252,7 +5218,6 @@ $messages['ja'] = array(
 	'centralauth-prefs-count-unattached'   => 'あなたの利用者名は、$1{{PLURAL:$1|プロジェクト|プロジェクト}}で承認されていません。',
 	'centralauth-prefs-detail-unattached'  => 'このプロジェクトサイトはまだ統一アカウントに承認されていません。',
 	'centralauth-prefs-manage'             => '統一アカウントの管理',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">利用者 $1 は統一ログインシステムに移行済みのため、ローカルでの利用者名変更はできません。</div>',
 );
 
 /** Jutish (Jysk)
@@ -5304,7 +5269,6 @@ Jer vil være i stand til lave om på hvilke er jeres hjem wiki senere.',
 	'centralauth-prefs-unattached'         => 'Ukonfirmærn',
 	'centralauth-prefs-complete'           => "I'n årdnenge!",
 	'centralauth-prefs-migration'          => 'I migråsje',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Ken ekke hernåm bruger $1 lokål als dette brugernavn er migrærn til æ unifærn loĝge på sistæm.</div>',
 );
 
 /** Javanese (Basa Jawa)
@@ -5449,8 +5413,6 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-prefs-count-unattached'              => 'Rékening mawa jenengé panjenengan sing durung didhedhes (dikonfirmasi) isih ana ing $1 {{PLURAL:$1|proyèk|proyèk}}.',
 	'centralauth-prefs-detail-unattached'             => 'Situs proyèk iki durung dikonfirmasi minangka bagéyan saka rékening global.',
 	'centralauth-prefs-manage'                        => 'Urusana rékening (akun) global panjenengan',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Ora bisa ngganti jeneng panganggo $1 sacara lokal amerga jeneng panganggo iki wis dihijrahaké menyang sistém log mlebu gabungan.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Ora bisa ngganti jeneng panganggo $2 amerga jeneng panganggo iki wis diréservasi kanggo rékening global.</div>',
 	'centralauth-invalid-wiki'                        => 'Ora ana DB wiki kaya ngono: $1',
 	'centralauth-account-exists'                      => 'Ora bisa nggawé rékening: jeneng panganggo sing disuwun iki wis ana ing sistém log mlebu gabungan.',
 	'centralauth-log-name'                            => 'Log pangurusan rékening global',
@@ -5504,211 +5466,167 @@ $messages['ka'] = array(
 
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
-	// When not logged in...
-	'mergeaccount'                   => 'تىركەلگى بىرىزدەندىرۋ كۇيى',
-	'centralauth-desc'               => 'Wikimedia قورى ۋىيكىيلەر اراسىندا [[Special:MergeAccount|تىركەلگى بىرىكتىرۋ]]',
-	'centralauth-mergeaccount-desc'  => 'جالعىز تىركەلگىمەن كىرۋ ٴۇشىن [[Special:MergeAccount|بىرنەشە تىركەلگىنى بىرىكتىرۋ]]',
-	'centralauth-merge-denied'       => 'عافۋ ەتىڭىز, بۇل بەتتى قاتىناۋ ٴۇشىن رۇقساتىڭىز جوق.',
-	'centralauth-merge-notlogged'    => 'تىركەلگىلەرىڭىز تولىق بىرىكتەلگەنىن تەكسەرۋ ٴۇشىن <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} كىرىڭىز]</span>.',
-	'centralauth-merge-welcome'      => "'''پايدالانۋشىلىق تىركەلگىڭىز Wikimedia بىرىزدەندىرلگەن كىرۋ جۇيەسىنە ٴالى دە كوشكەن جوق.'''
+	'mergeaccount'                                    => 'تىركەلگى بىرىزدەندىرۋ كۇيى',
+	'centralauth-desc'                                => 'Wikimedia قورى ۋىيكىيلەر اراسىندا [[Special:MergeAccount|تىركەلگى بىرىكتىرۋ]]',
+	'centralauth-mergeaccount-desc'                   => 'جالعىز تىركەلگىمەن كىرۋ ٴۇشىن [[Special:MergeAccount|بىرنەشە تىركەلگىنى بىرىكتىرۋ]]',
+	'centralauth-merge-denied'                        => 'عافۋ ەتىڭىز, بۇل بەتتى قاتىناۋ ٴۇشىن رۇقساتىڭىز جوق.',
+	'centralauth-merge-notlogged'                     => 'تىركەلگىلەرىڭىز تولىق بىرىكتەلگەنىن تەكسەرۋ ٴۇشىن <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} كىرىڭىز]</span>.',
+	'centralauth-merge-welcome'                       => "'''پايدالانۋشىلىق تىركەلگىڭىز Wikimedia بىرىزدەندىرلگەن كىرۋ جۇيەسىنە ٴالى دە كوشكەن جوق.'''
 
 ەگەر بىرنەشە تىركەلگىلەردەن بىرەۋىنە كوشۋ تاڭداساڭىز, ٴبىر قاتىسۋشى اتىڭىز بەن قۇپىييا ٴسوزىڭىزدى پايدالانىپ بارلىق Wikimedia جوبالارىنىڭ بارلىق جەتىمدى تىلدەرىندەگى ۋىيكىيلەرىنە كىرە الاسىز.
 بۇل [http://commons.wikimedia.org/ Wikimedia ورتاققورىنا] قوتارىپ بەرۋ سىيياقتى ورتاقتاستىرىلعان جوبالارمەن جۇمىس ىستەۋگە جەڭىلدەتەدى, جانە وزگە جوبالاردا ەكى تۇلعا ٴبىر قاتىسۋشى اتىن پايدالانعاننان شىعاتىن بىلىقتان نە قاقتىعىستان تايدىرادى.
 
 ەگەر باسقا بىرەۋ ٴسىزدىڭ قاتىسۋشى اتىڭىزدى باسقا تاراۋدا الداقاشان پايدالانىپ وتىرسا, بۇل وعان كەدەرگى كەلتىرمەيدى, بىراق بۇل ولمەن نە سوڭىرا اكىمشىمەن جۇمىستى وتەۋ مۇمكىندىك بەرەدى.",
-
-	'centralauth-merge-step1-title'  => 'تىركەلگى بىرىزدەندىرۋىن باستاۋ',
-	'centralauth-merge-step1-detail' => 'تىركەلگى قۇپىييا ٴسوزىڭىزدى مىندا ەنگىزىڭىز.
+	'centralauth-merge-step1-title'                   => 'تىركەلگى بىرىزدەندىرۋىن باستاۋ',
+	'centralauth-merge-step1-detail'                  => 'تىركەلگى قۇپىييا ٴسوزىڭىزدى مىندا ەنگىزىڭىز.
 قاتىسۋشى اتىڭىز بەن تىركەلگەن ە-پوشتا مەكەنجايڭىز سايكەستىكتەرىن قۇپتاۋ ٴۇشىن باسقا ۋىيكىيلەردەگى تىركەلگىلەرگە قاراي تەكسەرىلەدى.
 بۇل نارسەلەر جارايتىنىن ٴوزىڭىز قۇپتاعانشا دەيىن ەش وزگەرىستەر جاسالمايدى.',
-	'centralauth-merge-step1-submit' => 'تىركەلگى دەرەكتەرىن قۇپتاۋ',
-
-	'centralauth-merge-step2-title'  => 'كوبىرەك تىركەلگىلەردى قۇپتاۋ',
-	'centralauth-merge-step2-detail' => 'تىركەلگىلەردىڭ كەيبىرەۋلەرى كەلتىرىلگەن مەكەن ۋىيكىيىڭىزگە وزدىكتىك سايكەستىرىلمەدى.
+	'centralauth-merge-step1-submit'                  => 'تىركەلگى دەرەكتەرىن قۇپتاۋ',
+	'centralauth-merge-step2-title'                   => 'كوبىرەك تىركەلگىلەردى قۇپتاۋ',
+	'centralauth-merge-step2-detail'                  => 'تىركەلگىلەردىڭ كەيبىرەۋلەرى كەلتىرىلگەن مەكەن ۋىيكىيىڭىزگە وزدىكتىك سايكەستىرىلمەدى.
 ەگەر وسى تىركەلگىلەر سىزگە ٴتان بولسا, قۇپىييا ٴسوزىڭىزدى جەتىستىرىپ بۇلار سىزدىكى ەكەنىن قۇپتاي الاسىز.',
-	'centralauth-merge-step2-submit' => 'تىركەلگى دەرەكتەرىن قۇپتاۋ',
-
-	// Dry run messages
-	'centralauth-merge-dryrun-complete'   => 'بارلىق بار تىركەلگىلەر وزدىكتىك بىرىزدەندىرىلۋى مۇمكىن!
+	'centralauth-merge-step2-submit'                  => 'تىركەلگى دەرەكتەرىن قۇپتاۋ',
+	'centralauth-merge-dryrun-complete'               => 'بارلىق بار تىركەلگىلەر وزدىكتىك بىرىزدەندىرىلۋى مۇمكىن!
 
 تىركەلگىلەرىڭىزگە ٴالى دە ەش وزگەرىستەر جاسالعان جوق.',
-	'centralauth-merge-dryrun-incomplete' => "جالعاستىرۋن تاڭداعانسىز, بىراق كەيبىر تىركەلگىلەر دەرەۋ وزدىكتىك راستالمايدى جانە كوشپەيدى.
+	'centralauth-merge-dryrun-incomplete'             => 'جالعاستىرۋن تاڭداعانسىز, بىراق كەيبىر تىركەلگىلەر دەرەۋ وزدىكتىك راستالمايدى جانە كوشپەيدى.
 بۇلاردى سوڭىرا بىرىكتىرە الاسىز.
 
-تىركەلگىلەرىڭىزگە ٴالى دە ەش وزگەرىستەر جاسالعان جوق.",
-	'centralauth-merge-dryrun-or'         => "'''نەمەسە'''",
-	'centralauth-merge-dryrun-home'       => "قاتىسۋشى اتىڭىزدىڭ مەكەن ۋىيكىي تىركەلگىسى ىييەسى ەكەنىڭىزدى كوشۋ جۇيەسى قۇپتامادى.
+تىركەلگىلەرىڭىزگە ٴالى دە ەش وزگەرىستەر جاسالعان جوق.',
+	'centralauth-merge-dryrun-or'                     => "'''نەمەسە'''",
+	'centralauth-merge-dryrun-home'                   => 'قاتىسۋشى اتىڭىزدىڭ مەكەن ۋىيكىي تىركەلگىسى ىييەسى ەكەنىڭىزدى كوشۋ جۇيەسى قۇپتامادى.
 
-قاتىسۋشى اتىڭىزدىڭ مەكەن ۋىيكىي تىركەلگىسى بولىپ وزگە ۋىيكىي انىقتالدى; تىركەلگىڭىز كوشۋىن ٴبىتىرۋ ٴۇشىن كەلەسى سىلتەمەگە ەرىڭىز دە وسىعان كىرىڭىز.",
-
-	'centralauth-merge-step3-title'  => 'بىرىزدەندىرىلگەن تىركەلگى جاراتۋ',
-	'centralauth-merge-step3-detail' => 'بىرىزدەندىرىلگەن تىركەلگىڭىزدى, كەلەسى تىركەسكەن ۋىيكىيلەرمەن, جاراتۋعا دايىنسىز:',
-	'centralauth-merge-step3-submit' => 'تىركەلگىلەردى بىرىزدەندىرۋ',
-
-	// Big text on completion
-	'centralauth-complete'   => 'تىركەلگى بىرىزدەندىرۋى ٴبىتتى!',
-	'centralauth-incomplete' => 'تىركەلگى بىرىزدەندىرۋى بىتكەن جوق!',
-
-	// Wheeee
-	'centralauth-complete-text'   => 'ەندى Wikimedia قورىنىڭ ارقايسى ۋىيكىي تورابىنا جاڭا تىركەلگى جاساماستان كىرە الاسىز;
+قاتىسۋشى اتىڭىزدىڭ مەكەن ۋىيكىي تىركەلگىسى بولىپ وزگە ۋىيكىي انىقتالدى; تىركەلگىڭىز كوشۋىن ٴبىتىرۋ ٴۇشىن كەلەسى سىلتەمەگە ەرىڭىز دە وسىعان كىرىڭىز.',
+	'centralauth-merge-step3-title'                   => 'بىرىزدەندىرىلگەن تىركەلگى جاراتۋ',
+	'centralauth-merge-step3-detail'                  => 'بىرىزدەندىرىلگەن تىركەلگىڭىزدى, كەلەسى تىركەسكەن ۋىيكىيلەرمەن, جاراتۋعا دايىنسىز:',
+	'centralauth-merge-step3-submit'                  => 'تىركەلگىلەردى بىرىزدەندىرۋ',
+	'centralauth-complete'                            => 'تىركەلگى بىرىزدەندىرۋى ٴبىتتى!',
+	'centralauth-incomplete'                          => 'تىركەلگى بىرىزدەندىرۋى بىتكەن جوق!',
+	'centralauth-complete-text'                       => 'ەندى Wikimedia قورىنىڭ ارقايسى ۋىيكىي تورابىنا جاڭا تىركەلگى جاساماستان كىرە الاسىز;
 ٴدال وسى قاتىسۋشى اتىڭىز بەن قۇپىييا ٴسوزىڭىز ۋىيكىيپەدىييا, ۋىيكىيسوزدىك, ۋىيكىيكىتاپ دەگەن جوبالاردا جانە ولاردىڭ بارلىق تىلدەردەگى باۋىرلاس جوبالارىندا قىزمەت ىستەيدى.',
-	'centralauth-incomplete-text' => 'تىركەلگىڭىز بىرىزدەندىرىلگەننەن باستاپ Wikimedia قورىنىڭ ارقايسى ۋىيكىي تورابىنا جاڭا تىركەلگى جاساماستان كىرە الاسىز;
+	'centralauth-incomplete-text'                     => 'تىركەلگىڭىز بىرىزدەندىرىلگەننەن باستاپ Wikimedia قورىنىڭ ارقايسى ۋىيكىي تورابىنا جاڭا تىركەلگى جاساماستان كىرە الاسىز;
 ٴدال وسى قاتىسۋشى اتىڭىز بەن قۇپىييا ٴسوزىڭىز ۋىيكىيپەدىييا, ۋىيكىيسوزدىك, ۋىيكىيكىتاپ دەگەن جوبالاردا جانە ولاردىڭ بارلىق تىلدەردەگى باۋىرلاس جوبالارىندا قىزمەت ىستەيدى.',
-	'centralauth-not-owner-text'  => '«$1» قاتىسۋشى اتى $2 دەگەندەگى تىركەلگى ىييەسىنە وزدىكتىك تۇيىستىرىلگەن.
+	'centralauth-not-owner-text'                      => '«$1» قاتىسۋشى اتى $2 دەگەندەگى تىركەلگى ىييەسىنە وزدىكتىك تۇيىستىرىلگەن.
 
 بۇل ٴوزىڭىز بولساڭىز, تىركەلگى بىرىزدەندىرۋ ۇدەرىسىن ٴبىتىرۋ ٴۇشىن, باسقى قۇپىييا ٴسوزىڭىزدى كادىمگىدەي مىندا ەنگىزىڭىز:',
-	'centralauth-blocked-text'    => 'مەكەن ۋىيكىيىڭىز (تومەندە تىزىمدەلىنەدى) وڭدەۋدەن بۇعاتتالعان. بۇنىڭ بۇعاتتاۋىن ٴوشىرۋ ٴۇشىن وسى ۋىيكىدىڭ اكىمشىسىمەن قاتىناسىڭىز. بۇعاتتالىپ تۇرعاندا تىركەلگىلەرىڭىزدى بىرىكتىرە المايسىز.',
-
-	'centralauth-notice-dryrun'   => "<div class='successbox'>تەك تانىسىپ شىعۋ كۇيى</div><br clear='all'/>",
-
-	'centralauth-disabled-dryrun' => 'تىركەلگى بىرىزدەندىرۋ اعىمدا كورسەتۋ / مىنەتۋ كۇيىندە تۇر, سونىمەن كوكەيكەستى بىرىكتىرۋ ارەكەتتەرى وشىرىلگەن. عافۋ ەتىڭىز!',
-
-	// Appended to various messages above
-	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|'''بىرەگەيلەندىرىلگەن كىرۋ''' تۋرالى كوبىرەك وقىڭىز]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-home-title'       => 'مەكەن ۋىيكىي',
-	'centralauth-list-home-dryrun'      => 'بۇل ۋىيكىيدە ەنگىزىلگەن قۇپىييا ٴسوز بەن ە-پوشتا مەكەنجايى بىرىزدەندىرىلگەن تىركەلگىڭىز ٴۇشىن پايدالانىلادى.
+	'centralauth-blocked-text'                        => 'مەكەن ۋىيكىيىڭىز (تومەندە تىزىمدەلىنەدى) وڭدەۋدەن بۇعاتتالعان. بۇنىڭ بۇعاتتاۋىن ٴوشىرۋ ٴۇشىن وسى ۋىيكىدىڭ اكىمشىسىمەن قاتىناسىڭىز. بۇعاتتالىپ تۇرعاندا تىركەلگىلەرىڭىزدى بىرىكتىرە المايسىز.',
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>تەك تانىسىپ شىعۋ كۇيى</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'                     => 'تىركەلگى بىرىزدەندىرۋ اعىمدا كورسەتۋ / مىنەتۋ كۇيىندە تۇر, سونىمەن كوكەيكەستى بىرىكتىرۋ ارەكەتتەرى وشىرىلگەن. عافۋ ەتىڭىز!',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|'''بىرەگەيلەندىرىلگەن كىرۋ''' تۋرالى كوبىرەك وقىڭىز]]...''",
+	'centralauth-list-home-title'                     => 'مەكەن ۋىيكىي',
+	'centralauth-list-home-dryrun'                    => 'بۇل ۋىيكىيدە ەنگىزىلگەن قۇپىييا ٴسوز بەن ە-پوشتا مەكەنجايى بىرىزدەندىرىلگەن تىركەلگىڭىز ٴۇشىن پايدالانىلادى.
 ۋىيكىيلەرىڭىزدىڭ قايسىسى مەكەن ۋىيكىي دەپ سوڭىرا وزگەرتە الاسىز.',
-	'centralauth-list-attached-title'   => 'تىركەسكەن تىركەلگىلەر',
-	'centralauth-list-attached'         => 'ٴاربىر كەلەسى توراپتاردا «$1» دەپ اتالعان تىركەلگى بىرىزدەندىرىلگەن تىركەلىگە وزدىكتىك تىركەسكەن:',
-	'centralauth-list-attached-dryrun'  => 'ٴاربىر كەلەسى توراپتار اراسىنداعى «$1» دەپ اتالعان تىركەلگى بىرىزدەندىرىلگەن تىركەلىگە وزدىكتىك تىركەسەدى:',
-	'centralauth-list-unattached-title' => 'تىركەسپەگەن تىركەلگىلەر',
-	'centralauth-list-unattached'       => 'كەلەسى توراپتاردا «$1» دەگەن تىركەلگى سىزگە ٴتاڭ دەپ وزدىكتىك قۇپتالمادى;
+	'centralauth-list-attached-title'                 => 'تىركەسكەن تىركەلگىلەر',
+	'centralauth-list-attached'                       => 'ٴاربىر كەلەسى توراپتاردا «$1» دەپ اتالعان تىركەلگى بىرىزدەندىرىلگەن تىركەلىگە وزدىكتىك تىركەسكەن:',
+	'centralauth-list-attached-dryrun'                => 'ٴاربىر كەلەسى توراپتار اراسىنداعى «$1» دەپ اتالعان تىركەلگى بىرىزدەندىرىلگەن تىركەلىگە وزدىكتىك تىركەسەدى:',
+	'centralauth-list-unattached-title'               => 'تىركەسپەگەن تىركەلگىلەر',
+	'centralauth-list-unattached'                     => 'كەلەسى توراپتاردا «$1» دەگەن تىركەلگى سىزگە ٴتاڭ دەپ وزدىكتىك قۇپتالمادى;
 بۇلاردا باسقى تىركەلگىدەگىدەن وزگە قۇپىييا ٴسوزى بولۋى ەڭ ىقتىيمال:',
-	'centralauth-foreign-link'          => '$2 دەگەندەگى $1 قاتىسۋشىسى',
-
-	// Merge methods
-	'centralauth-merge-method-primary'  => 'مەكەن ۋىيكىي',
-	'centralauth-merge-method-empty'    => 'ەش ۇلەستەر جوق',
-	'centralauth-merge-method-mail'     => 'ە-پوشتامەن قۇپتالعان',
-	'centralauth-merge-method-password' => 'قۇپىييا سوزبەن قۇپتالعان',
-	'centralauth-merge-method-admin'    => 'اكىمشى بىرىكتىرگەن تىركەلگى',
-	'centralauth-merge-method-new'      => 'جاڭا تىركەلگى',
-	'centralauth-merge-method-login'    => 'كىرىپ قۇپتالعان',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title'             => 'بىرىكتىرۋدى ٴبىتىر',
-	'centralauth-finish-text'              => 'ەگەر وسى تىركەلگىلەر سىزگە ٴتاڭ بولسا, تىركەلگى بىرىزدەندىرۋ ۇدەرىسىن ٴبىتىر ٴۇشىن باسقا تىركەلگىلەرىڭىزگە قۇپىييا سوزىدەردى كادىمگىدەي مىندا ەنگىزىڭىز:',
-	'centralauth-finish-password'          => 'قۇپىييا ٴسوزىڭىز:',
-	'centralauth-finish-login'             => 'كىرۋ',
-	'centralauth-finish-send-confirmation' => 'قۇپىييا ٴسوزدى حاتپەن جىبەرۋ',
-	'centralauth-finish-problems'          => 'ولقىلىقتارىڭىز بار ما, نە وسى باسقا تىركەلگىلەردىڭ ىييەسى ٴوزىڭىز ەمەس پە?
+	'centralauth-foreign-link'                        => '$2 دەگەندەگى $1 قاتىسۋشىسى',
+	'centralauth-merge-method-primary'                => 'مەكەن ۋىيكىي',
+	'centralauth-merge-method-empty'                  => 'ەش ۇلەستەر جوق',
+	'centralauth-merge-method-mail'                   => 'ە-پوشتامەن قۇپتالعان',
+	'centralauth-merge-method-password'               => 'قۇپىييا سوزبەن قۇپتالعان',
+	'centralauth-merge-method-admin'                  => 'اكىمشى بىرىكتىرگەن تىركەلگى',
+	'centralauth-merge-method-new'                    => 'جاڭا تىركەلگى',
+	'centralauth-merge-method-login'                  => 'كىرىپ قۇپتالعان',
+	'centralauth-finish-title'                        => 'بىرىكتىرۋدى ٴبىتىر',
+	'centralauth-finish-text'                         => 'ەگەر وسى تىركەلگىلەر سىزگە ٴتاڭ بولسا, تىركەلگى بىرىزدەندىرۋ ۇدەرىسىن ٴبىتىر ٴۇشىن باسقا تىركەلگىلەرىڭىزگە قۇپىييا سوزىدەردى كادىمگىدەي مىندا ەنگىزىڭىز:',
+	'centralauth-finish-password'                     => 'قۇپىييا ٴسوزىڭىز:',
+	'centralauth-finish-login'                        => 'كىرۋ',
+	'centralauth-finish-send-confirmation'            => 'قۇپىييا ٴسوزدى حاتپەن جىبەرۋ',
+	'centralauth-finish-problems'                     => 'ولقىلىقتارىڭىز بار ما, نە وسى باسقا تىركەلگىلەردىڭ ىييەسى ٴوزىڭىز ەمەس پە?
 [[meta:Help:Unified login problems|كومەك قالاي تابىلادى]]…',
-	'centralauth-finish-noconfirms'        => 'بۇل قۇپىييا ٴسوزدى قولدانىپ ەش تىركەلگى قۇپتالمادى.',
-	'centralauth-finish-incomplete'        => 'بۇل قۇپىييا ٴسوزدى قولدانىپ بىرنەشە تىركەلگى بىرىكتىرىلدى.
+	'centralauth-finish-noconfirms'                   => 'بۇل قۇپىييا ٴسوزدى قولدانىپ ەش تىركەلگى قۇپتالمادى.',
+	'centralauth-finish-incomplete'                   => 'بۇل قۇپىييا ٴسوزدى قولدانىپ بىرنەشە تىركەلگى بىرىكتىرىلدى.
 Other accounts are not yet confirmed.',
-
-	'centralauth-merge-attempt' => "'''جەتىستىرىلگەن قۇپىييا ٴسوزدى قالعان بىرىكتىرىلمەگەن تىركەلگىلەر قاراي تەكسەرۋدە…'''",
-
-	# When unattached, offer to attach...
-	'centralauth-attach-list-attached' => '«$1» دەپ اتالعان بىرىزدەندىرىلگەن تىركەلگىگە كەلەسى تىركەلگىلەر ەنەدى:',
-	'centralauth-attach-title'         => 'تىركەلگىنى قۇپتاۋ',
-	'centralauth-attach-text'          => 'بۇل تىركەلگى ٴالى دە بىرىزدەندىرىلگەن تىركەلگىگە كوشكەن جوق.
+	'centralauth-merge-attempt'                       => "'''جەتىستىرىلگەن قۇپىييا ٴسوزدى قالعان بىرىكتىرىلمەگەن تىركەلگىلەر قاراي تەكسەرۋدە…'''",
+	'centralauth-attach-list-attached'                => '«$1» دەپ اتالعان بىرىزدەندىرىلگەن تىركەلگىگە كەلەسى تىركەلگىلەر ەنەدى:',
+	'centralauth-attach-title'                        => 'تىركەلگىنى قۇپتاۋ',
+	'centralauth-attach-text'                         => 'بۇل تىركەلگى ٴالى دە بىرىزدەندىرىلگەن تىركەلگىگە كوشكەن جوق.
 ەگەر عالامدىق تىركەلگى ٴدال وسىنداي سىزگە ٴتان بولسا, بۇل تىركەلگىنى بىرىكتىرۋ ٴۇشىن مىندا عالامدىق تىركەلگىنىڭ قۇپىييا ٴسوزىن ەنگىزىڭىز:',
-	'centralauth-attach-submit'        => 'تىركەلگى كوشۋى',
-	'centralauth-attach-success'       => 'بۇل تىركەلگى بىرىزدەندىرىلگەن تىركەلگىگە كوشتى.',
-
-	// Administrator's console
-	'centralauth'                          => 'بىرىزدەندىرىلگەن كىرۋ اكىمشىلدىگى',
-	'centralauth-admin-manage'             => 'قاتىسۋشى دەرەكتەرىن رەتتەۋ',
-	'centralauth-admin-username'           => 'قاتىسۋشى اتى:',
-	'centralauth-admin-lookup'             => 'قاتىسۋشى دەرەكتەرىن قاراۋ نە وڭدەۋ',
-	'centralauth-admin-permission'         => 'باسقالاردىڭ تىركەلگىلەرىن تەك جەتەكشىلەر بىرىكتىرە الادى.',
-	'centralauth-admin-no-unified'         => 'بۇل قاتىسۋشى اتى ٴۇشىن ەش بىرىزدەندىرىلگەن تىركەلگى جوق.',
-	'centralauth-admin-info-id'            => 'قاتىسۋشى تەڭدەستىرگىشى:',
-	'centralauth-admin-info-registered'    => 'جازىپ الىنۋى:',
-	'centralauth-admin-info-locked'        => 'قۇلىپتالۋى:',
-	'centralauth-admin-info-hidden'        => 'جاسىرىلعانى:',
-	'centralauth-admin-yes'                => 'ٴىيا',
-	'centralauth-admin-no'                 => 'جوق',
-	'centralauth-admin-attached'           => 'تولىق بىرىكتىرىلگەن تىركەلگىلەر',
-	'centralauth-admin-unattached'         => 'تىركەسپەگەن تىركەلگىلەر',
-	'centralauth-admin-no-unattached'      => 'ەش تىركەسپەگەن تىركەلگى قالعان جوق.',
-	'centralauth-admin-list-localwiki'     => 'جەرگىلىكتى ۋىيكىي',
-	'centralauth-admin-list-attached-on'   => 'قايدا تىركەسكەن:',
-	'centralauth-admin-list-method'        => 'ٴادىس',
-	'centralauth-admin-unmerge'            => 'بولەكتەنگەندەردىڭ بىرىكتىرۋىن ٴوشىر',
-	'centralauth-admin-merge'              => 'بولەكتەنگەندەردى بىرىكتىر',
-	'centralauth-admin-bad-input'          => 'بىرىكتىرۋ بولەكتەنۋى جارامسىز',
-	'centralauth-admin-none-selected'      => 'تۇرلەندىرۋ ٴۇشىن ەش تىركەلگى بولەكتەنبەگەن.',
-	'centralauth-admin-already-unmerged'   => '$1 قالدىرىپ كەتتى, الداقاشان بىرىكتىرۋى وشىرىلگەن',
-	'centralauth-admin-unmerge-success'    => '$1 تىركەلگى بىرىكتىرۋى ٴساتتى ٴوشىرىلدى',
-	'centralauth-admin-delete-title'       => 'تىركەلگىنى جويۋ',
-	'centralauth-admin-delete-description' => 'عالامدىق تىركەلگىنى جويىلعاندا ارقايسى عالامدىق باپتالىمدار جويىلادى, بارلىق جەرگىلىكتى تىركەلگىلەر ٴتۇيىستىرىلۋى وشىرىلەدى, جانە باسقا قاتىسۋشى الۋىنا اشىق ەتىپ عالامدىق اتاۋدى بوساتادى.
+	'centralauth-attach-submit'                       => 'تىركەلگى كوشۋى',
+	'centralauth-attach-success'                      => 'بۇل تىركەلگى بىرىزدەندىرىلگەن تىركەلگىگە كوشتى.',
+	'centralauth'                                     => 'بىرىزدەندىرىلگەن كىرۋ اكىمشىلدىگى',
+	'centralauth-admin-manage'                        => 'قاتىسۋشى دەرەكتەرىن رەتتەۋ',
+	'centralauth-admin-username'                      => 'قاتىسۋشى اتى:',
+	'centralauth-admin-lookup'                        => 'قاتىسۋشى دەرەكتەرىن قاراۋ نە وڭدەۋ',
+	'centralauth-admin-permission'                    => 'باسقالاردىڭ تىركەلگىلەرىن تەك جەتەكشىلەر بىرىكتىرە الادى.',
+	'centralauth-admin-no-unified'                    => 'بۇل قاتىسۋشى اتى ٴۇشىن ەش بىرىزدەندىرىلگەن تىركەلگى جوق.',
+	'centralauth-admin-info-id'                       => 'قاتىسۋشى تەڭدەستىرگىشى:',
+	'centralauth-admin-info-registered'               => 'جازىپ الىنۋى:',
+	'centralauth-admin-info-locked'                   => 'قۇلىپتالۋى:',
+	'centralauth-admin-info-hidden'                   => 'جاسىرىلعانى:',
+	'centralauth-admin-yes'                           => 'ٴىيا',
+	'centralauth-admin-no'                            => 'جوق',
+	'centralauth-admin-attached'                      => 'تولىق بىرىكتىرىلگەن تىركەلگىلەر',
+	'centralauth-admin-unattached'                    => 'تىركەسپەگەن تىركەلگىلەر',
+	'centralauth-admin-no-unattached'                 => 'ەش تىركەسپەگەن تىركەلگى قالعان جوق.',
+	'centralauth-admin-list-localwiki'                => 'جەرگىلىكتى ۋىيكىي',
+	'centralauth-admin-list-attached-on'              => 'قايدا تىركەسكەن:',
+	'centralauth-admin-list-method'                   => 'ٴادىس',
+	'centralauth-admin-unmerge'                       => 'بولەكتەنگەندەردىڭ بىرىكتىرۋىن ٴوشىر',
+	'centralauth-admin-merge'                         => 'بولەكتەنگەندەردى بىرىكتىر',
+	'centralauth-admin-bad-input'                     => 'بىرىكتىرۋ بولەكتەنۋى جارامسىز',
+	'centralauth-admin-none-selected'                 => 'تۇرلەندىرۋ ٴۇشىن ەش تىركەلگى بولەكتەنبەگەن.',
+	'centralauth-admin-already-unmerged'              => '$1 قالدىرىپ كەتتى, الداقاشان بىرىكتىرۋى وشىرىلگەن',
+	'centralauth-admin-unmerge-success'               => '$1 تىركەلگى بىرىكتىرۋى ٴساتتى ٴوشىرىلدى',
+	'centralauth-admin-delete-title'                  => 'تىركەلگىنى جويۋ',
+	'centralauth-admin-delete-description'            => 'عالامدىق تىركەلگىنى جويىلعاندا ارقايسى عالامدىق باپتالىمدار جويىلادى, بارلىق جەرگىلىكتى تىركەلگىلەر ٴتۇيىستىرىلۋى وشىرىلەدى, جانە باسقا قاتىسۋشى الۋىنا اشىق ەتىپ عالامدىق اتاۋدى بوساتادى.
 بارلىق جەرگىلىكتى تىركەلگىلەر تۇرۋىن جالعاستىرادى.
 بىرىكتىرۋ الدىندا جاسالعان جەرگىلىكتى تىركەلگىلەردىڭ قۇپىييا سوزدەرى بولعان بۇرىڭعى ماعىناسىنا قايتارىلادى.',
-	'centralauth-admin-delete-button'      => 'بۇل تىركەلگىنى جوي',
-	'centralauth-admin-delete-success'     => '«$1» عالامدىق تىركەلگىسى ٴساتتى جويىلدى',
-	'centralauth-admin-nonexistent'        => 'وسى ارادا «$1» ٴۇشىن ەش عالامدىق تىركەلگى جوق',
-	'centralauth-admin-delete-nonexistent' => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
-	'centralauth-token-mismatch'           => 'عافۋ ەتىڭىز, سەسسىييا دەرەكتەرى جوعالتىلعان سەبەبىنەن ٴپىشىنىڭىزدى جونەلتۋ ۇدەرىسىن ىستەي المايمىز.',
-	'centralauth-admin-lock-title'         => 'تىركەلگىنى قۇلىپتاۋ',
-	'centralauth-admin-lock-description'   => 'قۇلىپتالعان تىركەلگىمەن ۋىيكىيلەردىڭ قاي-قايسىسىنا كىرۋگە امال جوق.',
-	'centralauth-admin-lock-button'        => 'بۇل تىركەلگىنى قۇلىپتا',
-	'centralauth-admin-lock-success'       => '«$1» عالامدىق تىركەلگىسى ٴساتتى قۇلپتالدى',
-	'centralauth-admin-lock-nonexistent'   => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
-	'centralauth-admin-unlock-title'       => 'تىركەلگى قۇلىپتاۋىن ٴوشىرۋ',
-	'centralauth-admin-unlock-description' => 'قۇلىپتاۋىن ٴوشىرۋ تىركەلگىمەن كىرۋگە قايتادان امال بەرەدى.',
-	'centralauth-admin-unlock-button'      => 'بۇل تىركەلگى قۇلىپتاۋىن ٴوشىر',
-	'centralauth-admin-unlock-success'     => '«$1» عالامدىق تىركەلگىسىن قۇلپتاۋى ٴساتتى ٴوشىرىلدى',
-	'centralauth-admin-unlock-nonexistent' => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
-	'centralauth-admin-reason'             => 'سەبەبى: ',
-
-	// List of global users
-	'globalusers'                    => 'عالامدىق قاتىسۋشى ٴتىزىمى',
-	'centralauth-listusers-locked'   => 'قۇلىپتالعان',
-	'centralauth-listusers-attached' => 'جەرگىلىكتى بار',
-	'centralauth-listusers-nolocal'  => 'تىركەسپەگەن نە جەرگىلىكتى ەمەس',
-
-	// Pretty timespan
-	'centralauth-seconds-ago' => '$1 سەكۋند بۇرىن',
-	'centralauth-minutes-ago' => '$1 ٴمىينوت بۇرىن',
-	'centralauth-hours-ago'   => '$1 ساعات بۇرىن',
-	'centralauth-days-ago'    => '$1 تاۋلىك بۇرىن',
-	'centralauth-months-ago'  => '$1 اي بۇرىن',
-	'centralauth-years-ago'   => '$1 جىل بۇرىن',
-
-	// Info panel in preferences
-	'centralauth-prefs-status'            => 'عالامدىق تىركەلگى كۇيى:',
-	'centralauth-prefs-not-managed'       => 'بىرىزدەندىرىلگەن تىركەلگى قولدانبايدى',
-	'centralauth-prefs-unattached'        => 'قۇپتالماعان',
-	'centralauth-prefs-complete'          => 'بارلىعى رەتتە!',
-	'centralauth-prefs-migration'         => 'كوشۋدە',
-	'centralauth-prefs-count-attached'    => 'تىركەلگىڭىز $1 جوبا تورابىندا بەلسەندى.',
-	'centralauth-prefs-count-unattached'  => 'اتىڭىز بار قۇپتالماعان تىركەلگىلەر $1 جوبادا قالىپ تۇر.',
-	'centralauth-prefs-detail-unattached' => 'بۇل جوبا تورابى عالامدىق تىركەلگىگە ٴتاڭ دەپ قۇپتالماعان.',
-	'centralauth-prefs-manage'            => 'عالامدىق تىركەلگىڭىزدى رەتتەۋ',
-
-	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort'  => '<div class="errorbox">$1 دەگەن قاتىسۋشى جەرگىلىكتى ورنىندا قايتا اتالمايدى, ويتكەنى بۇل قاتىسۋشى اتى بىرىزدەندىرىلگەن كىرۋ جۇيەسىنە كوشكەن.</div>',
-	'centralauth-renameuser-exists' => '<div class="errorbox">$2 دەگەن قاتىسۋشى قايتا اتالمايدى, ويتكەنى بۇل قاتىسۋشى اتى عالامدىق تىركەلگى ٴۇشىن كەيىنگە ساقتالادى.</div>',
-
-	// Other messages
-	'centralauth-invalid-wiki'    => 'ەش ۋىيكىي دەرەكقورى ەمەس: $1',
-	'centralauth-account-exists'  => 'تىركەلگى جاسالمادى: سۇرالعان قاتىسۋشى اتى الداقاشان بىرىزدەندىرىلگەن كىرۋ جۇيەسىنە الىندى.',
-	'centralauth-autologin-desc'  => 'بۇل ارنايى بەت MediaWiki ىشكى قولدانۋ ٴۇشىن ارنالادى.
+	'centralauth-admin-delete-button'                 => 'بۇل تىركەلگىنى جوي',
+	'centralauth-admin-delete-success'                => '«$1» عالامدىق تىركەلگىسى ٴساتتى جويىلدى',
+	'centralauth-admin-nonexistent'                   => 'وسى ارادا «$1» ٴۇشىن ەش عالامدىق تىركەلگى جوق',
+	'centralauth-admin-delete-nonexistent'            => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
+	'centralauth-token-mismatch'                      => 'عافۋ ەتىڭىز, سەسسىييا دەرەكتەرى جوعالتىلعان سەبەبىنەن ٴپىشىنىڭىزدى جونەلتۋ ۇدەرىسىن ىستەي المايمىز.',
+	'centralauth-admin-lock-title'                    => 'تىركەلگىنى قۇلىپتاۋ',
+	'centralauth-admin-lock-description'              => 'قۇلىپتالعان تىركەلگىمەن ۋىيكىيلەردىڭ قاي-قايسىسىنا كىرۋگە امال جوق.',
+	'centralauth-admin-lock-button'                   => 'بۇل تىركەلگىنى قۇلىپتا',
+	'centralauth-admin-lock-success'                  => '«$1» عالامدىق تىركەلگىسى ٴساتتى قۇلپتالدى',
+	'centralauth-admin-lock-nonexistent'              => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
+	'centralauth-admin-unlock-title'                  => 'تىركەلگى قۇلىپتاۋىن ٴوشىرۋ',
+	'centralauth-admin-unlock-description'            => 'قۇلىپتاۋىن ٴوشىرۋ تىركەلگىمەن كىرۋگە قايتادان امال بەرەدى.',
+	'centralauth-admin-unlock-button'                 => 'بۇل تىركەلگى قۇلىپتاۋىن ٴوشىر',
+	'centralauth-admin-unlock-success'                => '«$1» عالامدىق تىركەلگىسىن قۇلپتاۋى ٴساتتى ٴوشىرىلدى',
+	'centralauth-admin-unlock-nonexistent'            => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
+	'centralauth-admin-reason'                        => 'سەبەبى: ',
+	'globalusers'                                     => 'عالامدىق قاتىسۋشى ٴتىزىمى',
+	'centralauth-listusers-locked'                    => 'قۇلىپتالعان',
+	'centralauth-listusers-attached'                  => 'جەرگىلىكتى بار',
+	'centralauth-listusers-nolocal'                   => 'تىركەسپەگەن نە جەرگىلىكتى ەمەس',
+	'centralauth-seconds-ago'                         => '$1 سەكۋند بۇرىن',
+	'centralauth-minutes-ago'                         => '$1 ٴمىينوت بۇرىن',
+	'centralauth-hours-ago'                           => '$1 ساعات بۇرىن',
+	'centralauth-days-ago'                            => '$1 تاۋلىك بۇرىن',
+	'centralauth-months-ago'                          => '$1 اي بۇرىن',
+	'centralauth-years-ago'                           => '$1 جىل بۇرىن',
+	'centralauth-prefs-status'                        => 'عالامدىق تىركەلگى كۇيى:',
+	'centralauth-prefs-not-managed'                   => 'بىرىزدەندىرىلگەن تىركەلگى قولدانبايدى',
+	'centralauth-prefs-unattached'                    => 'قۇپتالماعان',
+	'centralauth-prefs-complete'                      => 'بارلىعى رەتتە!',
+	'centralauth-prefs-migration'                     => 'كوشۋدە',
+	'centralauth-prefs-count-attached'                => 'تىركەلگىڭىز $1 جوبا تورابىندا بەلسەندى.',
+	'centralauth-prefs-count-unattached'              => 'اتىڭىز بار قۇپتالماعان تىركەلگىلەر $1 جوبادا قالىپ تۇر.',
+	'centralauth-prefs-detail-unattached'             => 'بۇل جوبا تورابى عالامدىق تىركەلگىگە ٴتاڭ دەپ قۇپتالماعان.',
+	'centralauth-prefs-manage'                        => 'عالامدىق تىركەلگىڭىزدى رەتتەۋ',
+	'centralauth-invalid-wiki'                        => 'ەش ۋىيكىي دەرەكقورى ەمەس: $1',
+	'centralauth-account-exists'                      => 'تىركەلگى جاسالمادى: سۇرالعان قاتىسۋشى اتى الداقاشان بىرىزدەندىرىلگەن كىرۋ جۇيەسىنە الىندى.',
+	'centralauth-autologin-desc'                      => 'بۇل ارنايى بەت MediaWiki ىشكى قولدانۋ ٴۇشىن ارنالادى.
 [[Special:UserLogin|كىرگەنىڭىزدە]], ورتالىق كىرۋ جۇيەسى سۋرەت سىلتەمەلەرىن قولدانىپ, بارلىق سىلتەنگەن ۇيشىكتەردەن بۇل بەتتى سۇراۋ ٴۇشىن شولعىشىعىڭىزعا نۇسقامالار بەرەدى.
 قايسىبىر تەڭدەستىرۋ دەرەكتەر جەتىستىرمەي بۇل بەتتى سۇراعانسىز, سودىقتان ەشتەڭە ىستەلىنبەيدى.',
-	'centralauth-login-progress'  => 'Wikimedia قورىنىڭ باسقا جوبالارىنا كىرگەنىڭىز:',
-	'centralauth-logout-progress' => 'Wikimedia قورىنىڭ باسقا جوبالارىنان شىققانىڭىز:',
-
-	// Logging
-	'centralauth-log-name'         => 'عالامدىق تىركەلگى جۋرنالى',
-	'centralauth-log-header'       => 'بۇل جۋرنالدا عالامدىق تىركەلگىمەن جاسالعان امالدار جازىلىپ الىنادى: جويۋلار, قۇلىپتاۋ جانە قۇلىپتاۋدى ٴوشىرۋ.',
-	'centralauth-log-entry-delete' => '«$1» عالامدىق تىركەلگىسىن جويدى',
-	'centralauth-log-entry-lock'   => '«$1» عالامدىق تىركەلگىسىن قۇلىپتادى',
-	'centralauth-log-entry-unlock' => '«$1» عالامدىق تىركەلگىسىنىڭ قۇلىپتاۋىن ٴوشىردى',
-
-	'centralauth-rightslog-name'             => 'عالامدىق قۇقىقتار جۋرنالى',
-	'centralauth-rightslog-entry-usergroups' => '$1 كىرەتىن عالامدىق توپتارىن $2 دەگەننەن $3 دەگەنگە وزگەرتتى',
-	'centralauth-rightslog-entry-groupperms' => '$1 توپ رۇقساتتارىن $2 دەگەننەن $3 دەگەنگە وزگەرتتى',
-	'centralauth-rightslog-header'           => 'بۇل جۋرنالدا عالامدىق توپتارعا جاسالعان امالدار جازىلىپ الىنادى: مۇشەلىك جانە رۇقساتتار وزگەرۋى',
-
-	// Global group membership
-	'globalgroupmembership' => 'عالامدىق توپتارداعى مۇشەلىگى',
-
-	// Global group permissions
+	'centralauth-login-progress'                      => 'Wikimedia قورىنىڭ باسقا جوبالارىنا كىرگەنىڭىز:',
+	'centralauth-logout-progress'                     => 'Wikimedia قورىنىڭ باسقا جوبالارىنان شىققانىڭىز:',
+	'centralauth-log-name'                            => 'عالامدىق تىركەلگى جۋرنالى',
+	'centralauth-log-header'                          => 'بۇل جۋرنالدا عالامدىق تىركەلگىمەن جاسالعان امالدار جازىلىپ الىنادى: جويۋلار, قۇلىپتاۋ جانە قۇلىپتاۋدى ٴوشىرۋ.',
+	'centralauth-log-entry-delete'                    => '«$1» عالامدىق تىركەلگىسىن جويدى',
+	'centralauth-log-entry-lock'                      => '«$1» عالامدىق تىركەلگىسىن قۇلىپتادى',
+	'centralauth-log-entry-unlock'                    => '«$1» عالامدىق تىركەلگىسىنىڭ قۇلىپتاۋىن ٴوشىردى',
+	'centralauth-rightslog-name'                      => 'عالامدىق قۇقىقتار جۋرنالى',
+	'centralauth-rightslog-entry-usergroups'          => '$1 كىرەتىن عالامدىق توپتارىن $2 دەگەننەن $3 دەگەنگە وزگەرتتى',
+	'centralauth-rightslog-entry-groupperms'          => '$1 توپ رۇقساتتارىن $2 دەگەننەن $3 دەگەنگە وزگەرتتى',
+	'centralauth-rightslog-header'                    => 'بۇل جۋرنالدا عالامدىق توپتارعا جاسالعان امالدار جازىلىپ الىنادى: مۇشەلىك جانە رۇقساتتار وزگەرۋى',
+	'globalgroupmembership'                           => 'عالامدىق توپتارداعى مۇشەلىگى',
 	'globalgrouppermissions'                          => 'عالامدىق توپ رەتتەۋى',
 	'centralauth-globalgroupperms-grouplist'          => 'كەلەسى عالامدىق توپتار ۇيلەسىمدەلىندى. ارقايسى توپقا تۇيىستىرىلگەن رۇقساتتاردى قاراي نە وڭدەي الاسىز. بارلىق قۇقىقتارىن الاستاۋ ارقىلى توپتى جويۋ مۇمكىن.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|رۇقساتتاردى قاراۋ جانە وڭدەۋ]])',
@@ -5731,223 +5649,177 @@ Other accounts are not yet confirmed.',
 	'centralauth-editgroup-reason'                    => 'وزگەرتۋ سەبەبى:',
 	'centralauth-editgroup-success'                   => 'توپ رۇقساتتارى وزگەرتىلدى',
 	'centralauth-editgroup-success-text'              => '$1 توبىنىڭ توپ رۇقساتتارىن ٴساتتى وزگەرتتىڭىز. [[Special:GlobalGroupPermissions|توپ رەتتەۋىنە قايتا كەلۋ]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => "تىركەلگىسى بار ۋىيكىيدى بولەكتەڭىز:",
+	'centralauth-globalgrouppermissions-knownwiki'    => 'تىركەلگىسى بار ۋىيكىيدى بولەكتەڭىز:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "'''$1''' عالامدىق قاتىسۋشى كەلتىرگەنىڭىز ۋىيكىيدە بەلسەندى ەمەس ('' $2 ''). رۇقساتتاردى ٴجونسىز قاتىسۋشىعا ٴتۇيىستىرۋ تالاپ ەتكەن بولارسىز!",
-
-	// User rights
-	'right-globalgroupmembership'  => 'عالامدىق توپتارعا كىرۋىن وزگەرتۋ',
-	'right-centralauth-admin'      => 'عالامدىق تىركەلگىلەر اكىمشىلدىگى',
-	'right-centralauth-merge'      => 'تىركەلگىلەرىن بىرىكتىرۋ',
-	'right-globalgrouppermissions' => 'عالامدىق توپتاردى رەتتەۋ',
+	'right-globalgroupmembership'                     => 'عالامدىق توپتارعا كىرۋىن وزگەرتۋ',
+	'right-centralauth-admin'                         => 'عالامدىق تىركەلگىلەر اكىمشىلدىگى',
+	'right-centralauth-merge'                         => 'تىركەلگىلەرىن بىرىكتىرۋ',
+	'right-globalgrouppermissions'                    => 'عالامدىق توپتاردى رەتتەۋ',
 );
 
 /** Kazakh (Cyrillic) (Қазақша (Cyrillic)) */
 $messages['kk-cyrl'] = array(
-	// When not logged in...
-	'mergeaccount'                   => 'Тіркелгі біріздендіру күйі',
-	'centralauth-desc'               => 'Wikimedia қоры уикилер арасында [[Special:MergeAccount|тіркелгі біріктіру]]',
-	'centralauth-mergeaccount-desc'  => 'Жалғыз тіркелгімен кіру үшін [[Special:MergeAccount|бірнеше тіркелгіні біріктіру]]',
-	'centralauth-merge-denied'       => 'Ғафу етіңіз, бұл бетті қатынау үшін рұқсатыңыз жоқ.',
-	'centralauth-merge-notlogged'    => 'Тіркелгілеріңіз толық біріктелгенін тексеру үшін <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} кіріңіз]</span>.',
-	'centralauth-merge-welcome'      => "'''Пайдаланушылық тіркелгіңіз Wikimedia біріздендірлген кіру жүйесіне әлі де көшкен жоқ.'''
+	'mergeaccount'                                    => 'Тіркелгі біріздендіру күйі',
+	'centralauth-desc'                                => 'Wikimedia қоры уикилер арасында [[Special:MergeAccount|тіркелгі біріктіру]]',
+	'centralauth-mergeaccount-desc'                   => 'Жалғыз тіркелгімен кіру үшін [[Special:MergeAccount|бірнеше тіркелгіні біріктіру]]',
+	'centralauth-merge-denied'                        => 'Ғафу етіңіз, бұл бетті қатынау үшін рұқсатыңыз жоқ.',
+	'centralauth-merge-notlogged'                     => 'Тіркелгілеріңіз толық біріктелгенін тексеру үшін <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} кіріңіз]</span>.',
+	'centralauth-merge-welcome'                       => "'''Пайдаланушылық тіркелгіңіз Wikimedia біріздендірлген кіру жүйесіне әлі де көшкен жоқ.'''
 
 Егер бірнеше тіркелгілерден біреуіне көшу таңдасаңыз, бір қатысушы атыңыз бен құпия сөзіңізді пайдаланып барлық Wikimedia жобаларының барлық жетімді тілдеріндегі уикилеріне кіре аласыз.
 Бұл [http://commons.wikimedia.org/ Wikimedia Ортаққорына] қотарып беру сияқты ортақтастырылған жобалармен жұмыс істеуге жеңілдетеді, және өзге жобаларда екі тұлға бір қатысушы атын пайдаланғаннан шығатын былықтан не қақтығыстан тайдырады.
 
 Егер басқа біреу сіздің қатысушы атыңызды басқа тарауда алдақашан пайдаланып отырса, бұл оған кедергі келтірмейді, бірақ бұл олмен не соңыра әкімшімен жұмысты өтеу мүмкіндік береді.",
-
-	'centralauth-merge-step1-title'  => 'Тіркелгі біріздендіруін бастау',
-	'centralauth-merge-step1-detail' => 'Тіркелгі құпия сөзіңізді мында енгізіңіз.
+	'centralauth-merge-step1-title'                   => 'Тіркелгі біріздендіруін бастау',
+	'centralauth-merge-step1-detail'                  => 'Тіркелгі құпия сөзіңізді мында енгізіңіз.
 Қатысушы атыңыз бен тіркелген е-пошта мекенжайңыз сәйкестіктерін құптау үшін басқа уикилердегі тіркелгілерге қарай тексеріледі.
 Бұл нәрселер жарайтынын өзіңіз құптағанша дейін еш өзгерістер жасалмайды.',
-	'centralauth-merge-step1-submit' => 'Тіркелгі деректерін құптау',
-
-	'centralauth-merge-step2-title'  => 'Көбірек тіркелгілерді құптау',
-	'centralauth-merge-step2-detail' => 'Тіркелгілердің кейбіреулері келтірілген мекен уикиіңізге өздіктік сәйкестірілмеді.
+	'centralauth-merge-step1-submit'                  => 'Тіркелгі деректерін құптау',
+	'centralauth-merge-step2-title'                   => 'Көбірек тіркелгілерді құптау',
+	'centralauth-merge-step2-detail'                  => 'Тіркелгілердің кейбіреулері келтірілген мекен уикиіңізге өздіктік сәйкестірілмеді.
 Егер осы тіркелгілер сізге тән болса, құпия сөзіңізді жетістіріп бұлар сіздікі екенін құптай аласыз.',
-	'centralauth-merge-step2-submit' => 'Тіркелгі деректерін құптау',
-
-	// Dry run messages
-	'centralauth-merge-dryrun-complete'   => 'Барлық бар тіркелгілер өздіктік біріздендірілуі мүмкін!
+	'centralauth-merge-step2-submit'                  => 'Тіркелгі деректерін құптау',
+	'centralauth-merge-dryrun-complete'               => 'Барлық бар тіркелгілер өздіктік біріздендірілуі мүмкін!
 
 Тіркелгілеріңізге әлі де еш өзгерістер жасалған жоқ.',
-	'centralauth-merge-dryrun-incomplete' => "Жалғастырун таңдағансыз, бірақ кейбір тіркелгілер дереу өздіктік расталмайды және көшпейді.
+	'centralauth-merge-dryrun-incomplete'             => 'Жалғастырун таңдағансыз, бірақ кейбір тіркелгілер дереу өздіктік расталмайды және көшпейді.
 Бұларды соңыра біріктіре аласыз.
 
-Тіркелгілеріңізге әлі де еш өзгерістер жасалған жоқ.",
-	'centralauth-merge-dryrun-or'         => "'''немесе'''",
-	'centralauth-merge-dryrun-home'       => "Қатысушы атыңыздың мекен уики тіркелгісі иесі екеніңізді көшу жүйесі құптамады.
+Тіркелгілеріңізге әлі де еш өзгерістер жасалған жоқ.',
+	'centralauth-merge-dryrun-or'                     => "'''немесе'''",
+	'centralauth-merge-dryrun-home'                   => 'Қатысушы атыңыздың мекен уики тіркелгісі иесі екеніңізді көшу жүйесі құптамады.
 
-Қатысушы атыңыздың мекен уики тіркелгісі болып өзге уики анықталды; тіркелгіңіз көшуін бітіру үшін келесі сілтемеге еріңіз де осыған кіріңіз.",
-
-	'centralauth-merge-step3-title'  => 'Біріздендірілген тіркелгі жарату',
-	'centralauth-merge-step3-detail' => 'Біріздендірілген тіркелгіңізді, келесі тіркескен уикилермен, жаратуға дайынсыз:',
-	'centralauth-merge-step3-submit' => 'Тіркелгілерді біріздендіру',
-
-	// Big text on completion
-	'centralauth-complete'   => 'Тіркелгі біріздендіруі бітті!',
-	'centralauth-incomplete' => 'Тіркелгі біріздендіруі біткен жоқ!',
-
-	// Wheeee
-	'centralauth-complete-text'   => 'Енді Wikimedia қорының әрқайсы уики торабына жаңа тіркелгі жасамастан кіре аласыз;
+Қатысушы атыңыздың мекен уики тіркелгісі болып өзге уики анықталды; тіркелгіңіз көшуін бітіру үшін келесі сілтемеге еріңіз де осыған кіріңіз.',
+	'centralauth-merge-step3-title'                   => 'Біріздендірілген тіркелгі жарату',
+	'centralauth-merge-step3-detail'                  => 'Біріздендірілген тіркелгіңізді, келесі тіркескен уикилермен, жаратуға дайынсыз:',
+	'centralauth-merge-step3-submit'                  => 'Тіркелгілерді біріздендіру',
+	'centralauth-complete'                            => 'Тіркелгі біріздендіруі бітті!',
+	'centralauth-incomplete'                          => 'Тіркелгі біріздендіруі біткен жоқ!',
+	'centralauth-complete-text'                       => 'Енді Wikimedia қорының әрқайсы уики торабына жаңа тіркелгі жасамастан кіре аласыз;
 дәл осы қатысушы атыңыз бен құпия сөзіңіз Уикипедия, Уикисөздік, Уикикітәп деген жобаларда және олардың барлық тілдердегі бауырлас жобаларында қызмет істейді.',
-	'centralauth-incomplete-text' => 'Тіркелгіңіз біріздендірілгеннен бастап Wikimedia қорының әрқайсы уики торабына жаңа тіркелгі жасамастан кіре аласыз;
+	'centralauth-incomplete-text'                     => 'Тіркелгіңіз біріздендірілгеннен бастап Wikimedia қорының әрқайсы уики торабына жаңа тіркелгі жасамастан кіре аласыз;
 дәл осы қатысушы атыңыз бен құпия сөзіңіз Уикипедия, Уикисөздік, Уикикітәп деген жобаларда және олардың барлық тілдердегі бауырлас жобаларында қызмет істейді.',
-	'centralauth-not-owner-text'  => '«$1» қатысушы аты $2 дегендегі тіркелгі иесіне өздіктік түйістірілген.
+	'centralauth-not-owner-text'                      => '«$1» қатысушы аты $2 дегендегі тіркелгі иесіне өздіктік түйістірілген.
 
 Бұл өзіңіз болсаңыз, тіркелгі біріздендіру үдерісін бітіру үшін, басқы құпия сөзіңізді кәдімгідей мында енгізіңіз:',
-	'centralauth-blocked-text'    => 'Мекен уикиіңіз (төменде тізімделінеді) өңдеуден бұғатталған. Бұның бұғаттауын өшіру үшін осы уикідің әкімшісімен қатынасыңыз. Бұғатталып тұрғанда тіркелгілеріңізді біріктіре алмайсыз.',
-
-	'centralauth-notice-dryrun'   => "<div class='successbox'>Тек танысып шығу күйі</div><br clear='all'/>",
-
-	'centralauth-disabled-dryrun' => 'Тіркелгі біріздендіру ағымда көрсету / мінету күйінде тұр, сонымен көкейкесті біріктіру әрекеттері өшірілген. Ғафу етіңіз!',
-
-	// Appended to various messages above
-	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|'''Бірегейлендірілген кіру''' туралы көбірек оқыңыз]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-home-title'       => 'Мекен уики',
-	'centralauth-list-home-dryrun'      => 'Бұл уикиде енгізілген құпия сөз бен е-пошта мекенжайы біріздендірілген тіркелгіңіз үшін пайдаланылады.
+	'centralauth-blocked-text'                        => 'Мекен уикиіңіз (төменде тізімделінеді) өңдеуден бұғатталған. Бұның бұғаттауын өшіру үшін осы уикідің әкімшісімен қатынасыңыз. Бұғатталып тұрғанда тіркелгілеріңізді біріктіре алмайсыз.',
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>Тек танысып шығу күйі</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'                     => 'Тіркелгі біріздендіру ағымда көрсету / мінету күйінде тұр, сонымен көкейкесті біріктіру әрекеттері өшірілген. Ғафу етіңіз!',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|'''Бірегейлендірілген кіру''' туралы көбірек оқыңыз]]...''",
+	'centralauth-list-home-title'                     => 'Мекен уики',
+	'centralauth-list-home-dryrun'                    => 'Бұл уикиде енгізілген құпия сөз бен е-пошта мекенжайы біріздендірілген тіркелгіңіз үшін пайдаланылады.
 Уикилеріңіздің қайсысы мекен уики деп соңыра өзгерте аласыз.',
-	'centralauth-list-attached-title'   => 'Тіркескен тіркелгілер',
-	'centralauth-list-attached'         => 'Әрбір келесі тораптарда «$1» деп аталған тіркелгі біріздендірілген тіркеліге өздіктік тіркескен:',
-	'centralauth-list-attached-dryrun'  => 'Әрбір келесі тораптар арасындағы «$1» деп аталған тіркелгі біріздендірілген тіркеліге өздіктік тіркеседі:',
-	'centralauth-list-unattached-title' => 'Тіркеспеген тіркелгілер',
-	'centralauth-list-unattached'       => 'Келесі тораптарда «$1» деген тіркелгі сізге тәң деп өздіктік құпталмады;
+	'centralauth-list-attached-title'                 => 'Тіркескен тіркелгілер',
+	'centralauth-list-attached'                       => 'Әрбір келесі тораптарда «$1» деп аталған тіркелгі біріздендірілген тіркеліге өздіктік тіркескен:',
+	'centralauth-list-attached-dryrun'                => 'Әрбір келесі тораптар арасындағы «$1» деп аталған тіркелгі біріздендірілген тіркеліге өздіктік тіркеседі:',
+	'centralauth-list-unattached-title'               => 'Тіркеспеген тіркелгілер',
+	'centralauth-list-unattached'                     => 'Келесі тораптарда «$1» деген тіркелгі сізге тәң деп өздіктік құпталмады;
 бұларда басқы тіркелгідегіден өзге құпия сөзі болуы ең ықтимал:',
-	'centralauth-foreign-link'          => '$2 дегендегі $1 қатысушысы',
-
-	// Merge methods
-	'centralauth-merge-method-primary'  => 'мекен уики',
-	'centralauth-merge-method-empty'    => 'еш үлестер жоқ',
-	'centralauth-merge-method-mail'     => 'е-поштамен құпталған',
-	'centralauth-merge-method-password' => 'құпия сөзбен құпталған',
-	'centralauth-merge-method-admin'    => 'әкімші біріктірген тіркелгі',
-	'centralauth-merge-method-new'      => 'жаңа тіркелгі',
-	'centralauth-merge-method-login'    => 'кіріп құпталған',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title'             => 'Біріктіруді бітір',
-	'centralauth-finish-text'              => 'Егер осы тіркелгілер сізге тәң болса, тіркелгі біріздендіру үдерісін бітір үшін басқа тіркелгілеріңізге құпия сөзідерді кәдімгідей мында енгізіңіз:',
-	'centralauth-finish-password'          => 'Құпия сөзіңіз:',
-	'centralauth-finish-login'             => 'Кіру',
-	'centralauth-finish-send-confirmation' => 'Құпия сөзді хатпен жіберу',
-	'centralauth-finish-problems'          => 'Олқылықтарыңыз бар ма, не осы басқа тіркелгілердің иесі өзіңіз емес пе?
+	'centralauth-foreign-link'                        => '$2 дегендегі $1 қатысушысы',
+	'centralauth-merge-method-primary'                => 'мекен уики',
+	'centralauth-merge-method-empty'                  => 'еш үлестер жоқ',
+	'centralauth-merge-method-mail'                   => 'е-поштамен құпталған',
+	'centralauth-merge-method-password'               => 'құпия сөзбен құпталған',
+	'centralauth-merge-method-admin'                  => 'әкімші біріктірген тіркелгі',
+	'centralauth-merge-method-new'                    => 'жаңа тіркелгі',
+	'centralauth-merge-method-login'                  => 'кіріп құпталған',
+	'centralauth-finish-title'                        => 'Біріктіруді бітір',
+	'centralauth-finish-text'                         => 'Егер осы тіркелгілер сізге тәң болса, тіркелгі біріздендіру үдерісін бітір үшін басқа тіркелгілеріңізге құпия сөзідерді кәдімгідей мында енгізіңіз:',
+	'centralauth-finish-password'                     => 'Құпия сөзіңіз:',
+	'centralauth-finish-login'                        => 'Кіру',
+	'centralauth-finish-send-confirmation'            => 'Құпия сөзді хатпен жіберу',
+	'centralauth-finish-problems'                     => 'Олқылықтарыңыз бар ма, не осы басқа тіркелгілердің иесі өзіңіз емес пе?
 [[meta:Help:Unified login problems|Көмек қалай табылады]]…',
-	'centralauth-finish-noconfirms'        => 'Бұл құпия сөзді қолданып еш тіркелгі құпталмады.',
-	'centralauth-finish-incomplete'        => 'Бұл құпия сөзді қолданып бірнеше тіркелгі біріктірілді.
+	'centralauth-finish-noconfirms'                   => 'Бұл құпия сөзді қолданып еш тіркелгі құпталмады.',
+	'centralauth-finish-incomplete'                   => 'Бұл құпия сөзді қолданып бірнеше тіркелгі біріктірілді.
 Other accounts are not yet confirmed.',
-
-	'centralauth-merge-attempt' => "'''Жетістірілген құпия сөзді қалған біріктірілмеген тіркелгілер қарай тексеруде…'''",
-
-	# When unattached, offer to attach...
-	'centralauth-attach-list-attached' => '«$1» деп аталған біріздендірілген тіркелгіге келесі тіркелгілер енеді:',
-	'centralauth-attach-title'         => 'Тіркелгіні құптау',
-	'centralauth-attach-text'          => 'Бұл тіркелгі әлі де біріздендірілген тіркелгіге көшкен жоқ.
+	'centralauth-merge-attempt'                       => "'''Жетістірілген құпия сөзді қалған біріктірілмеген тіркелгілер қарай тексеруде…'''",
+	'centralauth-attach-list-attached'                => '«$1» деп аталған біріздендірілген тіркелгіге келесі тіркелгілер енеді:',
+	'centralauth-attach-title'                        => 'Тіркелгіні құптау',
+	'centralauth-attach-text'                         => 'Бұл тіркелгі әлі де біріздендірілген тіркелгіге көшкен жоқ.
 Егер ғаламдық тіркелгі дәл осындай сізге тән болса, бұл тіркелгіні біріктіру үшін мында ғаламдық тіркелгінің құпия сөзін енгізіңіз:',
-	'centralauth-attach-submit'        => 'Тіркелгі көшуі',
-	'centralauth-attach-success'       => 'Бұл тіркелгі біріздендірілген тіркелгіге көшті.',
-
-	// Administrator's console
-	'centralauth'                          => 'Біріздендірілген кіру әкімшілдігі',
-	'centralauth-admin-manage'             => 'Қатысушы деректерін реттеу',
-	'centralauth-admin-username'           => 'Қатысушы аты:',
-	'centralauth-admin-lookup'             => 'Қатысушы деректерін қарау не өңдеу',
-	'centralauth-admin-permission'         => 'Басқалардың тіркелгілерін тек жетекшілер біріктіре алады.',
-	'centralauth-admin-no-unified'         => 'Бұл қатысушы аты үшін еш біріздендірілген тіркелгі жоқ.',
-	'centralauth-admin-info-id'            => 'Қатысушы теңдестіргіші:',
-	'centralauth-admin-info-registered'    => 'Жазып алынуы:',
-	'centralauth-admin-info-locked'        => 'Құлыпталуы:',
-	'centralauth-admin-info-hidden'        => 'Жасырылғаны:',
-	'centralauth-admin-yes'                => 'иә',
-	'centralauth-admin-no'                 => 'жоқ',
-	'centralauth-admin-attached'           => 'Толық біріктірілген тіркелгілер',
-	'centralauth-admin-unattached'         => 'Тіркеспеген тіркелгілер',
-	'centralauth-admin-no-unattached'      => 'Еш тіркеспеген тіркелгі қалған жоқ.',
-	'centralauth-admin-list-localwiki'     => 'Жергілікті уики',
-	'centralauth-admin-list-attached-on'   => 'Қайда тіркескен:',
-	'centralauth-admin-list-method'        => 'Әдіс',
-	'centralauth-admin-unmerge'            => 'Бөлектенгендердің біріктіруін өшір',
-	'centralauth-admin-merge'              => 'Бөлектенгендерді біріктір',
-	'centralauth-admin-bad-input'          => 'Біріктіру бөлектенуі жарамсыз',
-	'centralauth-admin-none-selected'      => 'Түрлендіру үшін еш тіркелгі бөлектенбеген.',
-	'centralauth-admin-already-unmerged'   => '$1 қалдырып кетті, алдақашан біріктіруі өшірілген',
-	'centralauth-admin-unmerge-success'    => '$1 тіркелгі біріктіруі сәтті өшірілді',
-	'centralauth-admin-delete-title'       => 'Тіркелгіні жою',
-	'centralauth-admin-delete-description' => 'Ғаламдық тіркелгіні жойылғанда әрқайсы ғаламдық бапталымдар жойылады, барлық жергілікті тіркелгілер түйістірілуі өшіріледі, және басқа қатысушы алуына ашық етіп ғаламдық атауды босатады.
+	'centralauth-attach-submit'                       => 'Тіркелгі көшуі',
+	'centralauth-attach-success'                      => 'Бұл тіркелгі біріздендірілген тіркелгіге көшті.',
+	'centralauth'                                     => 'Біріздендірілген кіру әкімшілдігі',
+	'centralauth-admin-manage'                        => 'Қатысушы деректерін реттеу',
+	'centralauth-admin-username'                      => 'Қатысушы аты:',
+	'centralauth-admin-lookup'                        => 'Қатысушы деректерін қарау не өңдеу',
+	'centralauth-admin-permission'                    => 'Басқалардың тіркелгілерін тек жетекшілер біріктіре алады.',
+	'centralauth-admin-no-unified'                    => 'Бұл қатысушы аты үшін еш біріздендірілген тіркелгі жоқ.',
+	'centralauth-admin-info-id'                       => 'Қатысушы теңдестіргіші:',
+	'centralauth-admin-info-registered'               => 'Жазып алынуы:',
+	'centralauth-admin-info-locked'                   => 'Құлыпталуы:',
+	'centralauth-admin-info-hidden'                   => 'Жасырылғаны:',
+	'centralauth-admin-yes'                           => 'иә',
+	'centralauth-admin-no'                            => 'жоқ',
+	'centralauth-admin-attached'                      => 'Толық біріктірілген тіркелгілер',
+	'centralauth-admin-unattached'                    => 'Тіркеспеген тіркелгілер',
+	'centralauth-admin-no-unattached'                 => 'Еш тіркеспеген тіркелгі қалған жоқ.',
+	'centralauth-admin-list-localwiki'                => 'Жергілікті уики',
+	'centralauth-admin-list-attached-on'              => 'Қайда тіркескен:',
+	'centralauth-admin-list-method'                   => 'Әдіс',
+	'centralauth-admin-unmerge'                       => 'Бөлектенгендердің біріктіруін өшір',
+	'centralauth-admin-merge'                         => 'Бөлектенгендерді біріктір',
+	'centralauth-admin-bad-input'                     => 'Біріктіру бөлектенуі жарамсыз',
+	'centralauth-admin-none-selected'                 => 'Түрлендіру үшін еш тіркелгі бөлектенбеген.',
+	'centralauth-admin-already-unmerged'              => '$1 қалдырып кетті, алдақашан біріктіруі өшірілген',
+	'centralauth-admin-unmerge-success'               => '$1 тіркелгі біріктіруі сәтті өшірілді',
+	'centralauth-admin-delete-title'                  => 'Тіркелгіні жою',
+	'centralauth-admin-delete-description'            => 'Ғаламдық тіркелгіні жойылғанда әрқайсы ғаламдық бапталымдар жойылады, барлық жергілікті тіркелгілер түйістірілуі өшіріледі, және басқа қатысушы алуына ашық етіп ғаламдық атауды босатады.
 Барлық жергілікті тіркелгілер тұруын жалғастырады.
 Біріктіру алдында жасалған жергілікті тіркелгілердің құпия сөздері болған бұрыңғы мағынасына қайтарылады.',
-	'centralauth-admin-delete-button'      => 'Бұл тіркелгіні жой',
-	'centralauth-admin-delete-success'     => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісі сәтті жойылды',
-	'centralauth-admin-nonexistent'        => 'Осы арада «<nowiki>$1</nowiki>» үшін еш ғаламдық тіркелгі жоқ',
-	'centralauth-admin-delete-nonexistent' => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
-	'centralauth-token-mismatch'           => 'Ғафу етіңіз, сессия деректері жоғалтылған себебінен пішініңізді жөнелту үдерісін істей алмаймыз.',
-	'centralauth-admin-lock-title'         => 'Тіркелгіні құлыптау',
-	'centralauth-admin-lock-description'   => 'Құлыпталған тіркелгімен уикилердің қай-қайсысына кіруге амал жоқ.',
-	'centralauth-admin-lock-button'        => 'Бұл тіркелгіні құлыпта',
-	'centralauth-admin-lock-success'       => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісі сәтті құлпталды',
-	'centralauth-admin-lock-nonexistent'   => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
-	'centralauth-admin-unlock-title'       => 'Тіркелгі құлыптауын өшіру',
-	'centralauth-admin-unlock-description' => 'Құлыптауын өшіру тіркелгімен кіруге қайтадан амал береді.',
-	'centralauth-admin-unlock-button'      => 'Бұл тіркелгі құлыптауын өшір',
-	'centralauth-admin-unlock-success'     => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін құлптауы сәтті өшірілді',
-	'centralauth-admin-unlock-nonexistent' => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
-	'centralauth-admin-reason'             => 'Себебі: ',
-
-	// List of global users
-	'globalusers'                    => 'Ғаламдық қатысушы тізімі',
-	'centralauth-listusers-locked'   => 'құлыпталған',
-	'centralauth-listusers-attached' => 'жергілікті бар',
-	'centralauth-listusers-nolocal'  => 'тіркеспеген не жергілікті емес',
-
-	// Pretty timespan
-	'centralauth-seconds-ago' => '$1 секунд бұрын',
-	'centralauth-minutes-ago' => '$1 минөт бұрын',
-	'centralauth-hours-ago'   => '$1 сағат бұрын',
-	'centralauth-days-ago'    => '$1 тәулік бұрын',
-	'centralauth-months-ago'  => '$1 ай бұрын',
-	'centralauth-years-ago'   => '$1 жыл бұрын',
-
-	// Info panel in preferences
-	'centralauth-prefs-status'            => 'Ғаламдық тіркелгі күйі:',
-	'centralauth-prefs-not-managed'       => 'Біріздендірілген тіркелгі қолданбайды',
-	'centralauth-prefs-unattached'        => 'Құпталмаған',
-	'centralauth-prefs-complete'          => 'Барлығы ретте!',
-	'centralauth-prefs-migration'         => 'Көшуде',
-	'centralauth-prefs-count-attached'    => 'Тіркелгіңіз $1 жоба торабында белсенді.',
-	'centralauth-prefs-count-unattached'  => 'Атыңыз бар құпталмаған тіркелгілер $1 жобада қалып тұр.',
-	'centralauth-prefs-detail-unattached' => 'Бұл жоба торабы ғаламдық тіркелгіге тәң деп құпталмаған.',
-	'centralauth-prefs-manage'            => 'Ғаламдық тіркелгіңізді реттеу',
-
-	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort'  => '<div class="errorbox">$1 деген қатысушы жергілікті орнында қайта аталмайды, өйткені бұл қатысушы аты біріздендірілген кіру жүйесіне көшкен.</div>',
-	'centralauth-renameuser-exists' => '<div class="errorbox">$2 деген қатысушы қайта аталмайды, өйткені бұл қатысушы аты ғаламдық тіркелгі үшін кейінге сақталады.</div>',
-
-	// Other messages
-	'centralauth-invalid-wiki'    => 'Еш уики дерекқоры емес: $1',
-	'centralauth-account-exists'  => 'Тіркелгі жасалмады: сұралған қатысушы аты алдақашан біріздендірілген кіру жүйесіне алынды.',
-	'centralauth-autologin-desc'  => 'Бұл арнайы бет MediaWiki ішкі қолдану үшін арналады.
+	'centralauth-admin-delete-button'                 => 'Бұл тіркелгіні жой',
+	'centralauth-admin-delete-success'                => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісі сәтті жойылды',
+	'centralauth-admin-nonexistent'                   => 'Осы арада «<nowiki>$1</nowiki>» үшін еш ғаламдық тіркелгі жоқ',
+	'centralauth-admin-delete-nonexistent'            => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
+	'centralauth-token-mismatch'                      => 'Ғафу етіңіз, сессия деректері жоғалтылған себебінен пішініңізді жөнелту үдерісін істей алмаймыз.',
+	'centralauth-admin-lock-title'                    => 'Тіркелгіні құлыптау',
+	'centralauth-admin-lock-description'              => 'Құлыпталған тіркелгімен уикилердің қай-қайсысына кіруге амал жоқ.',
+	'centralauth-admin-lock-button'                   => 'Бұл тіркелгіні құлыпта',
+	'centralauth-admin-lock-success'                  => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісі сәтті құлпталды',
+	'centralauth-admin-lock-nonexistent'              => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
+	'centralauth-admin-unlock-title'                  => 'Тіркелгі құлыптауын өшіру',
+	'centralauth-admin-unlock-description'            => 'Құлыптауын өшіру тіркелгімен кіруге қайтадан амал береді.',
+	'centralauth-admin-unlock-button'                 => 'Бұл тіркелгі құлыптауын өшір',
+	'centralauth-admin-unlock-success'                => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін құлптауы сәтті өшірілді',
+	'centralauth-admin-unlock-nonexistent'            => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
+	'centralauth-admin-reason'                        => 'Себебі: ',
+	'globalusers'                                     => 'Ғаламдық қатысушы тізімі',
+	'centralauth-listusers-locked'                    => 'құлыпталған',
+	'centralauth-listusers-attached'                  => 'жергілікті бар',
+	'centralauth-listusers-nolocal'                   => 'тіркеспеген не жергілікті емес',
+	'centralauth-seconds-ago'                         => '$1 секунд бұрын',
+	'centralauth-minutes-ago'                         => '$1 минөт бұрын',
+	'centralauth-hours-ago'                           => '$1 сағат бұрын',
+	'centralauth-days-ago'                            => '$1 тәулік бұрын',
+	'centralauth-months-ago'                          => '$1 ай бұрын',
+	'centralauth-years-ago'                           => '$1 жыл бұрын',
+	'centralauth-prefs-status'                        => 'Ғаламдық тіркелгі күйі:',
+	'centralauth-prefs-not-managed'                   => 'Біріздендірілген тіркелгі қолданбайды',
+	'centralauth-prefs-unattached'                    => 'Құпталмаған',
+	'centralauth-prefs-complete'                      => 'Барлығы ретте!',
+	'centralauth-prefs-migration'                     => 'Көшуде',
+	'centralauth-prefs-count-attached'                => 'Тіркелгіңіз $1 жоба торабында белсенді.',
+	'centralauth-prefs-count-unattached'              => 'Атыңыз бар құпталмаған тіркелгілер $1 жобада қалып тұр.',
+	'centralauth-prefs-detail-unattached'             => 'Бұл жоба торабы ғаламдық тіркелгіге тәң деп құпталмаған.',
+	'centralauth-prefs-manage'                        => 'Ғаламдық тіркелгіңізді реттеу',
+	'centralauth-invalid-wiki'                        => 'Еш уики дерекқоры емес: $1',
+	'centralauth-account-exists'                      => 'Тіркелгі жасалмады: сұралған қатысушы аты алдақашан біріздендірілген кіру жүйесіне алынды.',
+	'centralauth-autologin-desc'                      => 'Бұл арнайы бет MediaWiki ішкі қолдану үшін арналады.
 [[Special:UserLogin|Кіргеніңізде]], орталық кіру жүйесі сурет сілтемелерін қолданып, барлық сілтенген үйшіктерден бұл бетті сұрау үшін шолғышығыңызға нұсқамалар береді.
 Қайсыбір теңдестіру деректер жетістірмей бұл бетті сұрағансыз, содықтан ештеңе істелінбейді.',
-	'centralauth-login-progress'  => 'Wikimedia қорының басқа жобаларына кіргеніңіз:',
-	'centralauth-logout-progress' => 'Wikimedia қорының басқа жобаларынан шыққаныңыз:',
-
-	// Logging
-	'centralauth-log-name'         => 'Ғаламдық тіркелгі журналы',
-	'centralauth-log-header'       => 'Бұл журналда ғаламдық тіркелгімен жасалған амалдар жазылып алынады: жоюлар, құлыптау және құлыптауды өшіру.',
-	'centralauth-log-entry-delete' => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін жойды',
-	'centralauth-log-entry-lock'   => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін құлыптады',
-	'centralauth-log-entry-unlock' => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісінің құлыптауын өшірді',
-
-	'centralauth-rightslog-name'             => 'Ғаламдық құқықтар журналы',
-	'centralauth-rightslog-entry-usergroups' => '$1 кіретін ғаламдық топтарын $2 дегеннен $3 дегенге өзгертті',
-	'centralauth-rightslog-entry-groupperms' => '$1 топ рұқсаттарын $2 дегеннен $3 дегенге өзгертті',
-	'centralauth-rightslog-header'           => 'Бұл журналда ғаламдық топтарға жасалған амалдар жазылып алынады: мүшелік және рұқсаттар өзгеруі',
-
-	// Global group membership
-	'globalgroupmembership' => 'Ғаламдық топтардағы мүшелігі',
-
-	// Global group permissions
+	'centralauth-login-progress'                      => 'Wikimedia қорының басқа жобаларына кіргеніңіз:',
+	'centralauth-logout-progress'                     => 'Wikimedia қорының басқа жобаларынан шыққаныңыз:',
+	'centralauth-log-name'                            => 'Ғаламдық тіркелгі журналы',
+	'centralauth-log-header'                          => 'Бұл журналда ғаламдық тіркелгімен жасалған амалдар жазылып алынады: жоюлар, құлыптау және құлыптауды өшіру.',
+	'centralauth-log-entry-delete'                    => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін жойды',
+	'centralauth-log-entry-lock'                      => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін құлыптады',
+	'centralauth-log-entry-unlock'                    => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісінің құлыптауын өшірді',
+	'centralauth-rightslog-name'                      => 'Ғаламдық құқықтар журналы',
+	'centralauth-rightslog-entry-usergroups'          => '$1 кіретін ғаламдық топтарын $2 дегеннен $3 дегенге өзгертті',
+	'centralauth-rightslog-entry-groupperms'          => '$1 топ рұқсаттарын $2 дегеннен $3 дегенге өзгертті',
+	'centralauth-rightslog-header'                    => 'Бұл журналда ғаламдық топтарға жасалған амалдар жазылып алынады: мүшелік және рұқсаттар өзгеруі',
+	'globalgroupmembership'                           => 'Ғаламдық топтардағы мүшелігі',
 	'globalgrouppermissions'                          => 'Ғаламдық топ реттеуі',
 	'centralauth-globalgroupperms-grouplist'          => 'Келесі ғаламдық топтар үйлесімделінді. Әрқайсы топқа түйістірілген рұқсаттарды қарай не өңдей аласыз. Барлық құқықтарын аластау арқылы топты жою мүмкін.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Рұқсаттарды қарау және өңдеу]])',
@@ -5970,223 +5842,177 @@ Other accounts are not yet confirmed.',
 	'centralauth-editgroup-reason'                    => 'Өзгерту себебі:',
 	'centralauth-editgroup-success'                   => 'Топ рұқсаттары өзгертілді',
 	'centralauth-editgroup-success-text'              => '$1 тобының топ рұқсаттарын сәтті өзгерттіңіз. [[Special:GlobalGroupPermissions|Топ реттеуіне қайта келу]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => "Тіркелгісі бар уикиді бөлектеңіз:",
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Тіркелгісі бар уикиді бөлектеңіз:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "'''$1''' ғаламдық қатысушы келтіргеніңіз уикиде белсенді емес ('' $2 ''). Рұқсаттарды жөнсіз қатысушыға түйістіру талап еткен боларсыз!",
-
-	// User rights
-	'right-globalgroupmembership'  => 'Ғаламдық топтарға кіруін өзгерту',
-	'right-centralauth-admin'      => 'Ғаламдық тіркелгілер әкімшілдігі',
-	'right-centralauth-merge'      => 'Тіркелгілерін біріктіру',
-	'right-globalgrouppermissions' => 'Ғаламдық топтарды реттеу',
+	'right-globalgroupmembership'                     => 'Ғаламдық топтарға кіруін өзгерту',
+	'right-centralauth-admin'                         => 'Ғаламдық тіркелгілер әкімшілдігі',
+	'right-centralauth-merge'                         => 'Тіркелгілерін біріктіру',
+	'right-globalgrouppermissions'                    => 'Ғаламдық топтарды реттеу',
 );
 
 /** Kazakh (Latin) (Қазақша (Latin)) */
 $messages['kk-latn'] = array(
-	// When not logged in...
-	'mergeaccount'                   => 'Tirkelgi birizdendirw küýi',
-	'centralauth-desc'               => 'Wikimedia qorı wïkïler arasında [[Special:MergeAccount|tirkelgi biriktirw]]',
-	'centralauth-mergeaccount-desc'  => 'Jalğız tirkelgimen kirw üşin [[Special:MergeAccount|birneşe tirkelgini biriktirw]]',
-	'centralauth-merge-denied'       => 'Ğafw etiñiz, bul betti qatınaw üşin ruqsatıñız joq.',
-	'centralauth-merge-notlogged'    => 'Tirkelgileriñiz tolıq biriktelgenin tekserw üşin <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} kiriñiz]</span>.',
-	'centralauth-merge-welcome'      => "'''Paýdalanwşılıq tirkelgiñiz Wikimedia birizdendirlgen kirw jüýesine äli de köşken joq.'''
+	'mergeaccount'                                    => 'Tirkelgi birizdendirw küýi',
+	'centralauth-desc'                                => 'Wikimedia qorı wïkïler arasında [[Special:MergeAccount|tirkelgi biriktirw]]',
+	'centralauth-mergeaccount-desc'                   => 'Jalğız tirkelgimen kirw üşin [[Special:MergeAccount|birneşe tirkelgini biriktirw]]',
+	'centralauth-merge-denied'                        => 'Ğafw etiñiz, bul betti qatınaw üşin ruqsatıñız joq.',
+	'centralauth-merge-notlogged'                     => 'Tirkelgileriñiz tolıq biriktelgenin tekserw üşin <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} kiriñiz]</span>.',
+	'centralauth-merge-welcome'                       => "'''Paýdalanwşılıq tirkelgiñiz Wikimedia birizdendirlgen kirw jüýesine äli de köşken joq.'''
 
 Eger birneşe tirkelgilerden birewine köşw tañdasañız, bir qatıswşı atıñız ben qupïya söziñizdi paýdalanıp barlıq Wikimedia jobalarınıñ barlıq jetimdi tilderindegi wïkïlerine kire alasız.
 Bul [http://commons.wikimedia.org/ Wikimedia Ortaqqorına] qotarıp berw sïyaqtı ortaqtastırılğan jobalarmen jumıs istewge jeñildetedi, jäne özge jobalarda eki tulğa bir qatıswşı atın paýdalanğannan şığatın bılıqtan ne qaqtığıstan taýdıradı.
 
 Eger basqa birew sizdiñ qatıswşı atıñızdı basqa tarawda aldaqaşan paýdalanıp otırsa, bul oğan kedergi keltirmeýdi, biraq bul olmen ne soñıra äkimşimen jumıstı ötew mümkindik beredi.",
-
-	'centralauth-merge-step1-title'  => 'Tirkelgi birizdendirwin bastaw',
-	'centralauth-merge-step1-detail' => 'Tirkelgi qupïya söziñizdi mında engiziñiz.
+	'centralauth-merge-step1-title'                   => 'Tirkelgi birizdendirwin bastaw',
+	'centralauth-merge-step1-detail'                  => 'Tirkelgi qupïya söziñizdi mında engiziñiz.
 Qatıswşı atıñız ben tirkelgen e-poşta mekenjaýñız säýkestikterin quptaw üşin basqa wïkïlerdegi tirkelgilerge qaraý tekseriledi.
 Bul närseler jaraýtının öziñiz quptağanşa deýin eş özgerister jasalmaýdı.',
-	'centralauth-merge-step1-submit' => 'Tirkelgi derekterin quptaw',
-
-	'centralauth-merge-step2-title'  => 'Köbirek tirkelgilerdi quptaw',
-	'centralauth-merge-step2-detail' => 'Tirkelgilerdiñ keýbirewleri keltirilgen meken wïkïiñizge özdiktik säýkestirilmedi.
+	'centralauth-merge-step1-submit'                  => 'Tirkelgi derekterin quptaw',
+	'centralauth-merge-step2-title'                   => 'Köbirek tirkelgilerdi quptaw',
+	'centralauth-merge-step2-detail'                  => 'Tirkelgilerdiñ keýbirewleri keltirilgen meken wïkïiñizge özdiktik säýkestirilmedi.
 Eger osı tirkelgiler sizge tän bolsa, qupïya söziñizdi jetistirip bular sizdiki ekenin quptaý alasız.',
-	'centralauth-merge-step2-submit' => 'Tirkelgi derekterin quptaw',
-
-	// Dry run messages
-	'centralauth-merge-dryrun-complete'   => 'Barlıq bar tirkelgiler özdiktik birizdendirilwi mümkin!
+	'centralauth-merge-step2-submit'                  => 'Tirkelgi derekterin quptaw',
+	'centralauth-merge-dryrun-complete'               => 'Barlıq bar tirkelgiler özdiktik birizdendirilwi mümkin!
 
 Tirkelgileriñizge äli de eş özgerister jasalğan joq.',
-	'centralauth-merge-dryrun-incomplete' => "Jalğastırwn tañdağansız, biraq keýbir tirkelgiler derew özdiktik rastalmaýdı jäne köşpeýdi.
+	'centralauth-merge-dryrun-incomplete'             => 'Jalğastırwn tañdağansız, biraq keýbir tirkelgiler derew özdiktik rastalmaýdı jäne köşpeýdi.
 Bulardı soñıra biriktire alasız.
 
-Tirkelgileriñizge äli de eş özgerister jasalğan joq.",
-	'centralauth-merge-dryrun-or'         => "'''nemese'''",
-	'centralauth-merge-dryrun-home'       => "Qatıswşı atıñızdıñ meken wïkï tirkelgisi ïesi ekeniñizdi köşw jüýesi quptamadı.
+Tirkelgileriñizge äli de eş özgerister jasalğan joq.',
+	'centralauth-merge-dryrun-or'                     => "'''nemese'''",
+	'centralauth-merge-dryrun-home'                   => 'Qatıswşı atıñızdıñ meken wïkï tirkelgisi ïesi ekeniñizdi köşw jüýesi quptamadı.
 
-Qatıswşı atıñızdıñ meken wïkï tirkelgisi bolıp özge wïkï anıqtaldı; tirkelgiñiz köşwin bitirw üşin kelesi siltemege eriñiz de osığan kiriñiz.",
-
-	'centralauth-merge-step3-title'  => 'Birizdendirilgen tirkelgi jaratw',
-	'centralauth-merge-step3-detail' => 'Birizdendirilgen tirkelgiñizdi, kelesi tirkesken wïkïlermen, jaratwğa daýınsız:',
-	'centralauth-merge-step3-submit' => 'Tirkelgilerdi birizdendirw',
-
-	// Big text on completion
-	'centralauth-complete'   => 'Tirkelgi birizdendirwi bitti!',
-	'centralauth-incomplete' => 'Tirkelgi birizdendirwi bitken joq!',
-
-	// Wheeee
-	'centralauth-complete-text'   => 'Endi Wikimedia qorınıñ ärqaýsı wïkï torabına jaña tirkelgi jasamastan kire alasız;
+Qatıswşı atıñızdıñ meken wïkï tirkelgisi bolıp özge wïkï anıqtaldı; tirkelgiñiz köşwin bitirw üşin kelesi siltemege eriñiz de osığan kiriñiz.',
+	'centralauth-merge-step3-title'                   => 'Birizdendirilgen tirkelgi jaratw',
+	'centralauth-merge-step3-detail'                  => 'Birizdendirilgen tirkelgiñizdi, kelesi tirkesken wïkïlermen, jaratwğa daýınsız:',
+	'centralauth-merge-step3-submit'                  => 'Tirkelgilerdi birizdendirw',
+	'centralauth-complete'                            => 'Tirkelgi birizdendirwi bitti!',
+	'centralauth-incomplete'                          => 'Tirkelgi birizdendirwi bitken joq!',
+	'centralauth-complete-text'                       => 'Endi Wikimedia qorınıñ ärqaýsı wïkï torabına jaña tirkelgi jasamastan kire alasız;
 däl osı qatıswşı atıñız ben qupïya söziñiz Wïkïpedïya, Wïkïsözdik, Wïkïkitäp degen jobalarda jäne olardıñ barlıq tilderdegi bawırlas jobalarında qızmet isteýdi.',
-	'centralauth-incomplete-text' => 'Tirkelgiñiz birizdendirilgennen bastap Wikimedia qorınıñ ärqaýsı wïkï torabına jaña tirkelgi jasamastan kire alasız;
+	'centralauth-incomplete-text'                     => 'Tirkelgiñiz birizdendirilgennen bastap Wikimedia qorınıñ ärqaýsı wïkï torabına jaña tirkelgi jasamastan kire alasız;
 däl osı qatıswşı atıñız ben qupïya söziñiz Wïkïpedïya, Wïkïsözdik, Wïkïkitäp degen jobalarda jäne olardıñ barlıq tilderdegi bawırlas jobalarında qızmet isteýdi.',
-	'centralauth-not-owner-text'  => '«$1» qatıswşı atı $2 degendegi tirkelgi ïesine özdiktik tüýistirilgen.
+	'centralauth-not-owner-text'                      => '«$1» qatıswşı atı $2 degendegi tirkelgi ïesine özdiktik tüýistirilgen.
 
 Bul öziñiz bolsañız, tirkelgi birizdendirw üderisin bitirw üşin, basqı qupïya söziñizdi kädimgideý mında engiziñiz:',
-	'centralauth-blocked-text'    => 'Meken wïkïiñiz (tömende tizimdelinedi) öñdewden buğattalğan. Bunıñ buğattawın öşirw üşin osı wïkidiñ äkimşisimen qatınasıñız. Buğattalıp turğanda tirkelgileriñizdi biriktire almaýsız.',
-
-	'centralauth-notice-dryrun'   => "<div class='successbox'>Tek tanısıp şığw küýi</div><br clear='all'/>",
-
-	'centralauth-disabled-dryrun' => 'Tirkelgi birizdendirw ağımda körsetw / minetw küýinde tur, sonımen kökeýkesti biriktirw äreketteri öşirilgen. Ğafw etiñiz!',
-
-	// Appended to various messages above
-	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|'''Biregeýlendirilgen kirw''' twralı köbirek oqıñız]]...''",
-
-	// For lists of wikis/accounts:
-	'centralauth-list-home-title'       => 'Meken wïkï',
-	'centralauth-list-home-dryrun'      => 'Bul wïkïde engizilgen qupïya söz ben e-poşta mekenjaýı birizdendirilgen tirkelgiñiz üşin paýdalanıladı.
+	'centralauth-blocked-text'                        => 'Meken wïkïiñiz (tömende tizimdelinedi) öñdewden buğattalğan. Bunıñ buğattawın öşirw üşin osı wïkidiñ äkimşisimen qatınasıñız. Buğattalıp turğanda tirkelgileriñizdi biriktire almaýsız.',
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>Tek tanısıp şığw küýi</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'                     => 'Tirkelgi birizdendirw ağımda körsetw / minetw küýinde tur, sonımen kökeýkesti biriktirw äreketteri öşirilgen. Ğafw etiñiz!',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|'''Biregeýlendirilgen kirw''' twralı köbirek oqıñız]]...''",
+	'centralauth-list-home-title'                     => 'Meken wïkï',
+	'centralauth-list-home-dryrun'                    => 'Bul wïkïde engizilgen qupïya söz ben e-poşta mekenjaýı birizdendirilgen tirkelgiñiz üşin paýdalanıladı.
 Wïkïleriñizdiñ qaýsısı meken wïkï dep soñıra özgerte alasız.',
-	'centralauth-list-attached-title'   => 'Tirkesken tirkelgiler',
-	'centralauth-list-attached'         => 'Ärbir kelesi toraptarda «$1» dep atalğan tirkelgi birizdendirilgen tirkelige özdiktik tirkesken:',
-	'centralauth-list-attached-dryrun'  => 'Ärbir kelesi toraptar arasındağı «$1» dep atalğan tirkelgi birizdendirilgen tirkelige özdiktik tirkesedi:',
-	'centralauth-list-unattached-title' => 'Tirkespegen tirkelgiler',
-	'centralauth-list-unattached'       => 'Kelesi toraptarda «$1» degen tirkelgi sizge täñ dep özdiktik quptalmadı;
+	'centralauth-list-attached-title'                 => 'Tirkesken tirkelgiler',
+	'centralauth-list-attached'                       => 'Ärbir kelesi toraptarda «$1» dep atalğan tirkelgi birizdendirilgen tirkelige özdiktik tirkesken:',
+	'centralauth-list-attached-dryrun'                => 'Ärbir kelesi toraptar arasındağı «$1» dep atalğan tirkelgi birizdendirilgen tirkelige özdiktik tirkesedi:',
+	'centralauth-list-unattached-title'               => 'Tirkespegen tirkelgiler',
+	'centralauth-list-unattached'                     => 'Kelesi toraptarda «$1» degen tirkelgi sizge täñ dep özdiktik quptalmadı;
 bularda basqı tirkelgidegiden özge qupïya sözi bolwı eñ ıqtïmal:',
-	'centralauth-foreign-link'          => '$2 degendegi $1 qatıswşısı',
-
-	// Merge methods
-	'centralauth-merge-method-primary'  => 'meken wïkï',
-	'centralauth-merge-method-empty'    => 'eş ülester joq',
-	'centralauth-merge-method-mail'     => 'e-poştamen quptalğan',
-	'centralauth-merge-method-password' => 'qupïya sözben quptalğan',
-	'centralauth-merge-method-admin'    => 'äkimşi biriktirgen tirkelgi',
-	'centralauth-merge-method-new'      => 'jaña tirkelgi',
-	'centralauth-merge-method-login'    => 'kirip quptalğan',
-
-	// When not complete, offer to finish...
-	'centralauth-finish-title'             => 'Biriktirwdi bitir',
-	'centralauth-finish-text'              => 'Eger osı tirkelgiler sizge täñ bolsa, tirkelgi birizdendirw üderisin bitir üşin basqa tirkelgileriñizge qupïya söziderdi kädimgideý mında engiziñiz:',
-	'centralauth-finish-password'          => 'Qupïya söziñiz:',
-	'centralauth-finish-login'             => 'Kirw',
-	'centralauth-finish-send-confirmation' => 'Qupïya sözdi xatpen jiberw',
-	'centralauth-finish-problems'          => 'Olqılıqtarıñız bar ma, ne osı basqa tirkelgilerdiñ ïesi öziñiz emes pe?
+	'centralauth-foreign-link'                        => '$2 degendegi $1 qatıswşısı',
+	'centralauth-merge-method-primary'                => 'meken wïkï',
+	'centralauth-merge-method-empty'                  => 'eş ülester joq',
+	'centralauth-merge-method-mail'                   => 'e-poştamen quptalğan',
+	'centralauth-merge-method-password'               => 'qupïya sözben quptalğan',
+	'centralauth-merge-method-admin'                  => 'äkimşi biriktirgen tirkelgi',
+	'centralauth-merge-method-new'                    => 'jaña tirkelgi',
+	'centralauth-merge-method-login'                  => 'kirip quptalğan',
+	'centralauth-finish-title'                        => 'Biriktirwdi bitir',
+	'centralauth-finish-text'                         => 'Eger osı tirkelgiler sizge täñ bolsa, tirkelgi birizdendirw üderisin bitir üşin basqa tirkelgileriñizge qupïya söziderdi kädimgideý mında engiziñiz:',
+	'centralauth-finish-password'                     => 'Qupïya söziñiz:',
+	'centralauth-finish-login'                        => 'Kirw',
+	'centralauth-finish-send-confirmation'            => 'Qupïya sözdi xatpen jiberw',
+	'centralauth-finish-problems'                     => 'Olqılıqtarıñız bar ma, ne osı basqa tirkelgilerdiñ ïesi öziñiz emes pe?
 [[meta:Help:Unified login problems|Kömek qalaý tabıladı]]…',
-	'centralauth-finish-noconfirms'        => 'Bul qupïya sözdi qoldanıp eş tirkelgi quptalmadı.',
-	'centralauth-finish-incomplete'        => 'Bul qupïya sözdi qoldanıp birneşe tirkelgi biriktirildi.
+	'centralauth-finish-noconfirms'                   => 'Bul qupïya sözdi qoldanıp eş tirkelgi quptalmadı.',
+	'centralauth-finish-incomplete'                   => 'Bul qupïya sözdi qoldanıp birneşe tirkelgi biriktirildi.
 Other accounts are not yet confirmed.',
-
-	'centralauth-merge-attempt' => "'''Jetistirilgen qupïya sözdi qalğan biriktirilmegen tirkelgiler qaraý tekserwde…'''",
-
-	# When unattached, offer to attach...
-	'centralauth-attach-list-attached' => '«$1» dep atalğan birizdendirilgen tirkelgige kelesi tirkelgiler enedi:',
-	'centralauth-attach-title'         => 'Tirkelgini quptaw',
-	'centralauth-attach-text'          => 'Bul tirkelgi äli de birizdendirilgen tirkelgige köşken joq.
+	'centralauth-merge-attempt'                       => "'''Jetistirilgen qupïya sözdi qalğan biriktirilmegen tirkelgiler qaraý tekserwde…'''",
+	'centralauth-attach-list-attached'                => '«$1» dep atalğan birizdendirilgen tirkelgige kelesi tirkelgiler enedi:',
+	'centralauth-attach-title'                        => 'Tirkelgini quptaw',
+	'centralauth-attach-text'                         => 'Bul tirkelgi äli de birizdendirilgen tirkelgige köşken joq.
 Eger ğalamdıq tirkelgi däl osındaý sizge tän bolsa, bul tirkelgini biriktirw üşin mında ğalamdıq tirkelginiñ qupïya sözin engiziñiz:',
-	'centralauth-attach-submit'        => 'Tirkelgi köşwi',
-	'centralauth-attach-success'       => 'Bul tirkelgi birizdendirilgen tirkelgige köşti.',
-
-	// Administrator's console
-	'centralauth'                          => 'Birizdendirilgen kirw äkimşildigi',
-	'centralauth-admin-manage'             => 'Qatıswşı derekterin rettew',
-	'centralauth-admin-username'           => 'Qatıswşı atı:',
-	'centralauth-admin-lookup'             => 'Qatıswşı derekterin qaraw ne öñdew',
-	'centralauth-admin-permission'         => 'Basqalardıñ tirkelgilerin tek jetekşiler biriktire aladı.',
-	'centralauth-admin-no-unified'         => 'Bul qatıswşı atı üşin eş birizdendirilgen tirkelgi joq.',
-	'centralauth-admin-info-id'            => 'Qatıswşı teñdestirgişi:',
-	'centralauth-admin-info-registered'    => 'Jazıp alınwı:',
-	'centralauth-admin-info-locked'        => 'Qulıptalwı:',
-	'centralauth-admin-info-hidden'        => 'Jasırılğanı:',
-	'centralauth-admin-yes'                => 'ïä',
-	'centralauth-admin-no'                 => 'joq',
-	'centralauth-admin-attached'           => 'Tolıq biriktirilgen tirkelgiler',
-	'centralauth-admin-unattached'         => 'Tirkespegen tirkelgiler',
-	'centralauth-admin-no-unattached'      => 'Eş tirkespegen tirkelgi qalğan joq.',
-	'centralauth-admin-list-localwiki'     => 'Jergilikti wïkï',
-	'centralauth-admin-list-attached-on'   => 'Qaýda tirkesken:',
-	'centralauth-admin-list-method'        => 'Ädis',
-	'centralauth-admin-unmerge'            => 'Bölektengenderdiñ biriktirwin öşir',
-	'centralauth-admin-merge'              => 'Bölektengenderdi biriktir',
-	'centralauth-admin-bad-input'          => 'Biriktirw bölektenwi jaramsız',
-	'centralauth-admin-none-selected'      => 'Türlendirw üşin eş tirkelgi bölektenbegen.',
-	'centralauth-admin-already-unmerged'   => '$1 qaldırıp ketti, aldaqaşan biriktirwi öşirilgen',
-	'centralauth-admin-unmerge-success'    => '$1 tirkelgi biriktirwi sätti öşirildi',
-	'centralauth-admin-delete-title'       => 'Tirkelgini joyw',
-	'centralauth-admin-delete-description' => 'Ğalamdıq tirkelgini joýılğanda ärqaýsı ğalamdıq baptalımdar joýıladı, barlıq jergilikti tirkelgiler tüýistirilwi öşiriledi, jäne basqa qatıswşı alwına aşıq etip ğalamdıq atawdı bosatadı.
+	'centralauth-attach-submit'                       => 'Tirkelgi köşwi',
+	'centralauth-attach-success'                      => 'Bul tirkelgi birizdendirilgen tirkelgige köşti.',
+	'centralauth'                                     => 'Birizdendirilgen kirw äkimşildigi',
+	'centralauth-admin-manage'                        => 'Qatıswşı derekterin rettew',
+	'centralauth-admin-username'                      => 'Qatıswşı atı:',
+	'centralauth-admin-lookup'                        => 'Qatıswşı derekterin qaraw ne öñdew',
+	'centralauth-admin-permission'                    => 'Basqalardıñ tirkelgilerin tek jetekşiler biriktire aladı.',
+	'centralauth-admin-no-unified'                    => 'Bul qatıswşı atı üşin eş birizdendirilgen tirkelgi joq.',
+	'centralauth-admin-info-id'                       => 'Qatıswşı teñdestirgişi:',
+	'centralauth-admin-info-registered'               => 'Jazıp alınwı:',
+	'centralauth-admin-info-locked'                   => 'Qulıptalwı:',
+	'centralauth-admin-info-hidden'                   => 'Jasırılğanı:',
+	'centralauth-admin-yes'                           => 'ïä',
+	'centralauth-admin-no'                            => 'joq',
+	'centralauth-admin-attached'                      => 'Tolıq biriktirilgen tirkelgiler',
+	'centralauth-admin-unattached'                    => 'Tirkespegen tirkelgiler',
+	'centralauth-admin-no-unattached'                 => 'Eş tirkespegen tirkelgi qalğan joq.',
+	'centralauth-admin-list-localwiki'                => 'Jergilikti wïkï',
+	'centralauth-admin-list-attached-on'              => 'Qaýda tirkesken:',
+	'centralauth-admin-list-method'                   => 'Ädis',
+	'centralauth-admin-unmerge'                       => 'Bölektengenderdiñ biriktirwin öşir',
+	'centralauth-admin-merge'                         => 'Bölektengenderdi biriktir',
+	'centralauth-admin-bad-input'                     => 'Biriktirw bölektenwi jaramsız',
+	'centralauth-admin-none-selected'                 => 'Türlendirw üşin eş tirkelgi bölektenbegen.',
+	'centralauth-admin-already-unmerged'              => '$1 qaldırıp ketti, aldaqaşan biriktirwi öşirilgen',
+	'centralauth-admin-unmerge-success'               => '$1 tirkelgi biriktirwi sätti öşirildi',
+	'centralauth-admin-delete-title'                  => 'Tirkelgini joyw',
+	'centralauth-admin-delete-description'            => 'Ğalamdıq tirkelgini joýılğanda ärqaýsı ğalamdıq baptalımdar joýıladı, barlıq jergilikti tirkelgiler tüýistirilwi öşiriledi, jäne basqa qatıswşı alwına aşıq etip ğalamdıq atawdı bosatadı.
 Barlıq jergilikti tirkelgiler turwın jalğastıradı.
 Biriktirw aldında jasalğan jergilikti tirkelgilerdiñ qupïya sözderi bolğan burıñğı mağınasına qaýtarıladı.',
-	'centralauth-admin-delete-button'      => 'Bul tirkelgini joý',
-	'centralauth-admin-delete-success'     => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisi sätti joýıldı',
-	'centralauth-admin-nonexistent'        => 'Osı arada «<nowiki>$1</nowiki>» üşin eş ğalamdıq tirkelgi joq',
-	'centralauth-admin-delete-nonexistent' => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
-	'centralauth-token-mismatch'           => 'Ğafw etiñiz, sessïya derekteri joğaltılğan sebebinen pişiniñizdi jöneltw üderisin isteý almaýmız.',
-	'centralauth-admin-lock-title'         => 'Tirkelgini qulıptaw',
-	'centralauth-admin-lock-description'   => 'Qulıptalğan tirkelgimen wïkïlerdiñ qaý-qaýsısına kirwge amal joq.',
-	'centralauth-admin-lock-button'        => 'Bul tirkelgini qulıpta',
-	'centralauth-admin-lock-success'       => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisi sätti qulptaldı',
-	'centralauth-admin-lock-nonexistent'   => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
-	'centralauth-admin-unlock-title'       => 'Tirkelgi qulıptawın öşirw',
-	'centralauth-admin-unlock-description' => 'Qulıptawın öşirw tirkelgimen kirwge qaýtadan amal beredi.',
-	'centralauth-admin-unlock-button'      => 'Bul tirkelgi qulıptawın öşir',
-	'centralauth-admin-unlock-success'     => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin qulptawı sätti öşirildi',
-	'centralauth-admin-unlock-nonexistent' => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
-	'centralauth-admin-reason'             => 'Sebebi: ',
-
-	// List of global users
-	'globalusers'                    => 'Ğalamdıq qatıswşı tizimi',
-	'centralauth-listusers-locked'   => 'qulıptalğan',
-	'centralauth-listusers-attached' => 'jergilikti bar',
-	'centralauth-listusers-nolocal'  => 'tirkespegen ne jergilikti emes',
-
-	// Pretty timespan
-	'centralauth-seconds-ago' => '$1 sekwnd burın',
-	'centralauth-minutes-ago' => '$1 mïnöt burın',
-	'centralauth-hours-ago'   => '$1 sağat burın',
-	'centralauth-days-ago'    => '$1 täwlik burın',
-	'centralauth-months-ago'  => '$1 aý burın',
-	'centralauth-years-ago'   => '$1 jıl burın',
-
-	// Info panel in preferences
-	'centralauth-prefs-status'            => 'Ğalamdıq tirkelgi küýi:',
-	'centralauth-prefs-not-managed'       => 'Birizdendirilgen tirkelgi qoldanbaýdı',
-	'centralauth-prefs-unattached'        => 'Quptalmağan',
-	'centralauth-prefs-complete'          => 'Barlığı rette!',
-	'centralauth-prefs-migration'         => 'Köşwde',
-	'centralauth-prefs-count-attached'    => 'Tirkelgiñiz $1 joba torabında belsendi.',
-	'centralauth-prefs-count-unattached'  => 'Atıñız bar quptalmağan tirkelgiler $1 jobada qalıp tur.',
-	'centralauth-prefs-detail-unattached' => 'Bul joba torabı ğalamdıq tirkelgige täñ dep quptalmağan.',
-	'centralauth-prefs-manage'            => 'Ğalamdıq tirkelgiñizdi rettew',
-
-	// Interaction with Special:Renameuser
-	'centralauth-renameuser-abort'  => '<div class="errorbox">$1 degen qatıswşı jergilikti ornında qaýta atalmaýdı, öýtkeni bul qatıswşı atı birizdendirilgen kirw jüýesine köşken.</div>',
-	'centralauth-renameuser-exists' => '<div class="errorbox">$2 degen qatıswşı qaýta atalmaýdı, öýtkeni bul qatıswşı atı ğalamdıq tirkelgi üşin keýinge saqtaladı.</div>',
-
-	// Other messages
-	'centralauth-invalid-wiki'    => 'Eş wïkï derekqorı emes: $1',
-	'centralauth-account-exists'  => 'Tirkelgi jasalmadı: suralğan qatıswşı atı aldaqaşan birizdendirilgen kirw jüýesine alındı.',
-	'centralauth-autologin-desc'  => 'Bul arnaýı bet MediaWiki işki qoldanw üşin arnaladı.
+	'centralauth-admin-delete-button'                 => 'Bul tirkelgini joý',
+	'centralauth-admin-delete-success'                => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisi sätti joýıldı',
+	'centralauth-admin-nonexistent'                   => 'Osı arada «<nowiki>$1</nowiki>» üşin eş ğalamdıq tirkelgi joq',
+	'centralauth-admin-delete-nonexistent'            => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
+	'centralauth-token-mismatch'                      => 'Ğafw etiñiz, sessïya derekteri joğaltılğan sebebinen pişiniñizdi jöneltw üderisin isteý almaýmız.',
+	'centralauth-admin-lock-title'                    => 'Tirkelgini qulıptaw',
+	'centralauth-admin-lock-description'              => 'Qulıptalğan tirkelgimen wïkïlerdiñ qaý-qaýsısına kirwge amal joq.',
+	'centralauth-admin-lock-button'                   => 'Bul tirkelgini qulıpta',
+	'centralauth-admin-lock-success'                  => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisi sätti qulptaldı',
+	'centralauth-admin-lock-nonexistent'              => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
+	'centralauth-admin-unlock-title'                  => 'Tirkelgi qulıptawın öşirw',
+	'centralauth-admin-unlock-description'            => 'Qulıptawın öşirw tirkelgimen kirwge qaýtadan amal beredi.',
+	'centralauth-admin-unlock-button'                 => 'Bul tirkelgi qulıptawın öşir',
+	'centralauth-admin-unlock-success'                => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin qulptawı sätti öşirildi',
+	'centralauth-admin-unlock-nonexistent'            => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
+	'centralauth-admin-reason'                        => 'Sebebi: ',
+	'globalusers'                                     => 'Ğalamdıq qatıswşı tizimi',
+	'centralauth-listusers-locked'                    => 'qulıptalğan',
+	'centralauth-listusers-attached'                  => 'jergilikti bar',
+	'centralauth-listusers-nolocal'                   => 'tirkespegen ne jergilikti emes',
+	'centralauth-seconds-ago'                         => '$1 sekwnd burın',
+	'centralauth-minutes-ago'                         => '$1 mïnöt burın',
+	'centralauth-hours-ago'                           => '$1 sağat burın',
+	'centralauth-days-ago'                            => '$1 täwlik burın',
+	'centralauth-months-ago'                          => '$1 aý burın',
+	'centralauth-years-ago'                           => '$1 jıl burın',
+	'centralauth-prefs-status'                        => 'Ğalamdıq tirkelgi küýi:',
+	'centralauth-prefs-not-managed'                   => 'Birizdendirilgen tirkelgi qoldanbaýdı',
+	'centralauth-prefs-unattached'                    => 'Quptalmağan',
+	'centralauth-prefs-complete'                      => 'Barlığı rette!',
+	'centralauth-prefs-migration'                     => 'Köşwde',
+	'centralauth-prefs-count-attached'                => 'Tirkelgiñiz $1 joba torabında belsendi.',
+	'centralauth-prefs-count-unattached'              => 'Atıñız bar quptalmağan tirkelgiler $1 jobada qalıp tur.',
+	'centralauth-prefs-detail-unattached'             => 'Bul joba torabı ğalamdıq tirkelgige täñ dep quptalmağan.',
+	'centralauth-prefs-manage'                        => 'Ğalamdıq tirkelgiñizdi rettew',
+	'centralauth-invalid-wiki'                        => 'Eş wïkï derekqorı emes: $1',
+	'centralauth-account-exists'                      => 'Tirkelgi jasalmadı: suralğan qatıswşı atı aldaqaşan birizdendirilgen kirw jüýesine alındı.',
+	'centralauth-autologin-desc'                      => 'Bul arnaýı bet MediaWiki işki qoldanw üşin arnaladı.
 [[Special:UserLogin|Kirgeniñizde]], ortalıq kirw jüýesi swret siltemelerin qoldanıp, barlıq siltengen üýşikterden bul betti suraw üşin şolğışığıñızğa nusqamalar beredi.
 Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan eşteñe istelinbeýdi.',
-	'centralauth-login-progress'  => 'Wikimedia qorınıñ basqa jobalarına kirgeniñiz:',
-	'centralauth-logout-progress' => 'Wikimedia qorınıñ basqa jobalarınan şıqqanıñız:',
-
-	// Logging
-	'centralauth-log-name'         => 'Ğalamdıq tirkelgi jwrnalı',
-	'centralauth-log-header'       => 'Bul jwrnalda ğalamdıq tirkelgimen jasalğan amaldar jazılıp alınadı: joywlar, qulıptaw jäne qulıptawdı öşirw.',
-	'centralauth-log-entry-delete' => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin joýdı',
-	'centralauth-log-entry-lock'   => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin qulıptadı',
-	'centralauth-log-entry-unlock' => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisiniñ qulıptawın öşirdi',
-
-	'centralauth-rightslog-name'             => 'Ğalamdıq quqıqtar jwrnalı',
-	'centralauth-rightslog-entry-usergroups' => '$1 kiretin ğalamdıq toptarın $2 degennen $3 degenge özgertti',
-	'centralauth-rightslog-entry-groupperms' => '$1 top ruqsattarın $2 degennen $3 degenge özgertti',
-	'centralauth-rightslog-header'           => 'Bul jwrnalda ğalamdıq toptarğa jasalğan amaldar jazılıp alınadı: müşelik jäne ruqsattar özgerwi',
-
-	// Global group membership
-	'globalgroupmembership' => 'Ğalamdıq toptardağı müşeligi',
-
-	// Global group permissions
+	'centralauth-login-progress'                      => 'Wikimedia qorınıñ basqa jobalarına kirgeniñiz:',
+	'centralauth-logout-progress'                     => 'Wikimedia qorınıñ basqa jobalarınan şıqqanıñız:',
+	'centralauth-log-name'                            => 'Ğalamdıq tirkelgi jwrnalı',
+	'centralauth-log-header'                          => 'Bul jwrnalda ğalamdıq tirkelgimen jasalğan amaldar jazılıp alınadı: joywlar, qulıptaw jäne qulıptawdı öşirw.',
+	'centralauth-log-entry-delete'                    => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin joýdı',
+	'centralauth-log-entry-lock'                      => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin qulıptadı',
+	'centralauth-log-entry-unlock'                    => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisiniñ qulıptawın öşirdi',
+	'centralauth-rightslog-name'                      => 'Ğalamdıq quqıqtar jwrnalı',
+	'centralauth-rightslog-entry-usergroups'          => '$1 kiretin ğalamdıq toptarın $2 degennen $3 degenge özgertti',
+	'centralauth-rightslog-entry-groupperms'          => '$1 top ruqsattarın $2 degennen $3 degenge özgertti',
+	'centralauth-rightslog-header'                    => 'Bul jwrnalda ğalamdıq toptarğa jasalğan amaldar jazılıp alınadı: müşelik jäne ruqsattar özgerwi',
+	'globalgroupmembership'                           => 'Ğalamdıq toptardağı müşeligi',
 	'globalgrouppermissions'                          => 'Ğalamdıq top rettewi',
 	'centralauth-globalgroupperms-grouplist'          => 'Kelesi ğalamdıq toptar üýlesimdelindi. Ärqaýsı topqa tüýistirilgen ruqsattardı qaraý ne öñdeý alasız. Barlıq quqıqtarın alastaw arqılı toptı joyw mümkin.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Ruqsattardı qaraw jäne öñdew]])',
@@ -6209,14 +6035,12 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
 	'centralauth-editgroup-reason'                    => 'Özgertw sebebi:',
 	'centralauth-editgroup-success'                   => 'Top ruqsattarı özgertildi',
 	'centralauth-editgroup-success-text'              => '$1 tobınıñ top ruqsattarın sätti özgerttiñiz. [[Special:GlobalGroupPermissions|Top rettewine qaýta kelw]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => "Tirkelgisi bar wïkïdi bölekteñiz:",
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Tirkelgisi bar wïkïdi bölekteñiz:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "'''$1''' ğalamdıq qatıswşı keltirgeniñiz wïkïde belsendi emes ('' $2 ''). Ruqsattardı jönsiz qatıswşığa tüýistirw talap etken bolarsız!",
-
-	// User rights
-	'right-globalgroupmembership'  => 'Ğalamdıq toptarğa kirwin özgertw',
-	'right-centralauth-admin'      => 'Ğalamdıq tirkelgiler äkimşildigi',
-	'right-centralauth-merge'      => 'Tirkelgilerin biriktirw',
-	'right-globalgrouppermissions' => 'Ğalamdıq toptardı rettew',
+	'right-globalgroupmembership'                     => 'Ğalamdıq toptarğa kirwin özgertw',
+	'right-centralauth-admin'                         => 'Ğalamdıq tirkelgiler äkimşildigi',
+	'right-centralauth-merge'                         => 'Tirkelgilerin biriktirw',
+	'right-globalgrouppermissions'                    => 'Ğalamdıq toptardı rettew',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -6423,6 +6247,7 @@ $messages['lb'] = array(
 	'centralauth-desc'                                => 'Benotzerkonten op de Wikien vun der Wikimedia Fondatioun [[Special:MergeAccount|zesummeleeën]]',
 	'centralauth-mergeaccount-desc'                   => "[[Special:MergeAccount|Zusammenleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied'                        => 'Pardon, dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
+	'centralauth-merge-notlogged'                     => '<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} Loggt Iech w.e.g. an]</span> fir nozekucken ob all är Benotzerkonte ganz zesummegefouert goufen.',
 	'centralauth-merge-step1-title'                   => 'Ufank vun der Zesummeféierung vu Benotzerkonten',
 	'centralauth-merge-step1-detail'                  => 'Gitt w.e.g. hei ärt Passwuert fir äre Benotzerkont an.
 Ärt Passwuert an déi ofgespäichert E-Mail gi mat de Benotzerkonten op anere Wikie verglach fir sécherzestellen datt si passen.
@@ -6451,6 +6276,7 @@ Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
 	'centralauth-list-home-dryrun'                    => "D'Passwuert an d'E-Mailadress déi dir an dëser Wiki uginn hutt gi fir äre globale Benotzerkont benotzt.
 Dir kënnt är Heemechtswiki spéider änneren.",
 	'centralauth-list-attached-title'                 => 'Verbonne Benotzerkonten',
+	'centralauth-list-attached'                       => 'De Benotzerkont mam Numm "$1" Vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonn:',
 	'centralauth-list-unattached-title'               => 'Net verbonne Benotzerkonten',
 	'centralauth-foreign-link'                        => 'Benotzer $1 op $2',
 	'centralauth-merge-method-primary'                => 'Heemechts-Wiki',
@@ -6488,6 +6314,7 @@ Aner Benotzerkonte sinn nach net confirméiert.',
 	'centralauth-admin-unattached'                    => 'Net verbonne Benotzerkonten',
 	'centralauth-admin-list-localwiki'                => 'Lokal Wiki',
 	'centralauth-admin-list-method'                   => 'Method',
+	'centralauth-admin-merge'                         => 'Déi ausgewielten zesummeféieren',
 	'centralauth-admin-none-selected'                 => "Et goufe keng Benotzerkonten ausgewielt fir z'änneren.",
 	'centralauth-admin-delete-title'                  => 'Kont läschen',
 	'centralauth-admin-delete-button'                 => 'Dëse Kont läschen',
@@ -6540,8 +6367,6 @@ Aner Benotzerkonte sinn nach net confirméiert.',
 	'centralauth-prefs-count-unattached'              => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat ärem Numm.',
 	'centralauth-prefs-detail-unattached'             => 'Dëse Projet geéiert nach net zum Projet vun de globale Benotzerkonten.',
 	'centralauth-prefs-manage'                        => 'Geréiert äre globale Benotzerkont',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">De Benotzer $1 kann net lokal ëmbenannt gi well dëse Benotzernumm an de globale Benotzerkonte-System tranferéiert gouf.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Kann net als Benotzer $2 ëmbenannt ginn well dëse Benotzernumm fir e globale Benotzerkont reservéiert ass.</div>',
 	'centralauth-invalid-wiki'                        => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists'                      => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
 	'centralauth-login-progress'                      => 'Iech an aner Wikimedia-Projeten aloggen:',
@@ -6744,8 +6569,6 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached'              => 'Neet-bevestigde gebroekers mit diene naam zeen nog aanwezig op $1 projekter.',
 	'centralauth-prefs-detail-unattached'             => 'Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.',
 	'centralauth-prefs-manage'                        => 'Beheer diene globale gebroeker.',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Gebroeker $1 kin lokaal neet hernömp waere ómdet deze gebroeker is gemigreerdj nao \'t syteem van samegevoegdje gebroekers.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">U kunt gebruiker $2 niet hernoemen, omdat deze naam gereserveerd is voor een samengevoegde gebruiker.</div>',
 	'centralauth-invalid-wiki'                        => 'De wikiDB besteit neet: $1',
 	'centralauth-account-exists'                      => "Deze gebroeker kan neet aangemaakt waere: de gebroekersnaam is al in gebroek in 't systeem veur samegevoegd aanmelde.",
 	'centralauth-log-name'                            => 'Logbook globaal gebroekersbeheer',
@@ -6946,8 +6769,6 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-prefs-migration'        => 'Migrācija nav pabeigta',
 	'centralauth-prefs-count-attached'   => 'Tavs konts ir aktīvs $1 {{PLURAL:$1|projekta vietnē|projektu vietnēs}}.',
 	'centralauth-prefs-count-unattached' => 'Neapstiprināti konti ar tavu lietotāja vārdu saglabājas $1 {{PLURAL:$1|projektā|projektos}}.',
-	'centralauth-renameuser-abort'       => '<div class="errorbox">Nevar lokāli pārsaukt lietotāju $1 tāpēc, ka šī lietotāja konts ir ticis migrēts uz apvienoto kontu sistēmu.</div>',
-	'centralauth-renameuser-exists'      => '<div class="errorbox">Nevar pārsaukt lietotāju $2, tāpēc, ka šis lietotāja vārds jau ir rezervēts globālam kontam.</div>',
 	'centralauth-account-exists'         => 'Nevar izveidot kontu: šāds lietotāja vārds jau eksistē apvienoto kontu sistēmā (eksistā šāds globālais lietotājvārds).',
 	'centralauth-login-progress'         => 'Ielogojam tevi citos Wikimēdijas projektos:',
 	'centralauth-logout-progress'        => 'Izlogojam tevi no citiem Wikimēdijas projektiem:',
@@ -7097,8 +6918,6 @@ $messages['ml'] = array(
 	'centralauth-prefs-count-unattached'              => 'നിങ്ങളുടെ പേരുള്ള ഉപഭോക്തൃനാമം $1 {{PLURAL:$1സം‌രംഭത്തില്‍|സം‌രംഭങ്ങളില്‍‍}} സ്ഥിരീകരിക്കാതെ നിലവിലുണ്ട്.',
 	'centralauth-prefs-detail-unattached'             => 'ഈ സം‌രംഭം ആഗോള അക്കൗണ്ടിന്റെ ഭാഗമാണെന്നു ഇതു വരെ സ്ഥിരീകരിച്ചിട്ടില്ല.',
 	'centralauth-prefs-manage'                        => 'താങ്കളുടെ ആഗോളഅംഗത്വം പരിപാലിക്കുക.',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">$1 എന്ന ഉപയോക്തൃനാമം സം‌യോജിത ലോഗിന്‍ വ്യൂഹത്തിലേക്കു കുടിയേറ്റപ്പെട്ടതിനാല്‍ പ്രാദേശികമായി പുനര്‍നാമകരണം നടത്തുന്നതിനു സാദ്ധ്യമല്ല.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">ഈ ഉപയോക്തൃനാമം സം‌യോജിത ലോഗിന്‍ വ്യൂഹത്തിനു വേണ്ടി വേര്‍തിരിക്കപ്പെട്ടതിനാല്‍ $2 എന്ന ഉപയോക്തൃനാമം പുനര്‍നാമകരണം നടത്തുന്നതിനു സാദ്ധ്യമല്ല.</div>',
 	'centralauth-invalid-wiki'                        => 'ഇങ്ങനെ ഒരു വിക്കി നിലവിലില്ല DB: $1',
 	'centralauth-account-exists'                      => 'അക്കൗണ്ട് ഉണ്ടാക്കുന്നതിനു സാദ്ധ്യമല്ല. ഉപയോക്തനാമം ഇതിനകം സം‌യോജിത ലോഗിന്‍ വ്യൂഹം ഉപയോഗിച്ചു കഴിഞ്ഞു.',
 	'centralauth-log-name'                            => 'ആഗോള അക്കൗണ്ട് നിയന്ത്രിക്കുന്നതിന്റെ പ്രവര്‍ത്തനരേഖ',
@@ -7300,8 +7119,6 @@ $messages['mr'] = array(
 	'centralauth-prefs-count-unattached'              => '$1 {{PLURAL:$1|प्रकल्पामध्ये|प्रकल्पांमध्ये}} तुमची खाती (ज्यांना तुम्ही सहमती दिलेली नाही) उरलेली आहेत.',
 	'centralauth-prefs-detail-unattached'             => 'तुमच्या एकत्रीत खात्यामध्ये या प्रकल्पाच्या संकेतस्थळासाठी सहमती दिलेली नाही.',
 	'centralauth-prefs-manage'                        => 'तुमच्या एकत्रीत खात्याच्या पसंती बदला',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">$1 या सदस्य नावाचा एकत्रीत खात्यामध्ये समावेश केलेला असल्यामुळे इथे सदस्यनाम बदलता येत नाही.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">सदस्य $2 चे नाव बदलू शकत नाही कारण ते विश्व खात्यासाठी राखून ठेवलेले आहे.</div>',
 	'centralauth-invalid-wiki'                        => 'असा विकि नाही DB: $1',
 	'centralauth-account-exists'                      => 'खाते तयार करू शकत नाही: मागितलेले सदस्यनाम खाते एकत्रीकरणासाठी अगोदरच वापरण्यात आलेले आहे.',
 	'centralauth-autologin-desc'                      => 'हे विशेष पान मीडियाविकिच्या खाजगी वापराचे आहे.
@@ -7519,8 +7336,6 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-prefs-count-unattached'              => 'Akaun dengan nama anda di $1 buah projek belum disahkan.',
 	'centralauth-prefs-detail-unattached'             => 'Projek ini tidak disahkan sebagai milikan akaun sejagat tersebut.',
 	'centralauth-prefs-manage'                        => 'Urus akaun sejagat anda',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Nama pengguna $1 tidak boleh ditukar kerana telah pun dipindahkan ke sistem akaun bersatu.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Nama pengguna $2 tidak boleh ditukar kerana akaun sejagat sudah ditempah.</div>',
 	'centralauth-invalid-wiki'                        => 'Pangkalan data wiki tiada: $1',
 	'centralauth-account-exists'                      => 'Tidak dapat membuka akaun: nama pengguna yang diminta telah pun didaftarkan dalam sistem akaun bersatu.',
 	'centralauth-autologin-desc'                      => 'Laman khas ini digunakan dari dalam MediaWiki.
@@ -7577,7 +7392,7 @@ Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
 	'right-globalgrouppermissions'                    => 'Urus kumpulan sejagat',
 );
 
-/** Erzya (эрзянь кель)
+/** Erzya (Эрзянь)
  * @author Amdf
  */
 $messages['myv'] = array(
@@ -7708,7 +7523,6 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-prefs-count-unattached'              => 'Dat gifft op {{PLURAL:$1|een Projekt noch en Brukerkonto mit dien Naam, dat nich bestätigt is.|$1 Projekten noch Brukerkonten mit dien Naam, de nich bestätigt sünd.}}',
 	'centralauth-prefs-detail-unattached'             => 'För dit Projekt is dat tohoopföhrte Brukerkonto noch nich bestätigt.',
 	'centralauth-prefs-manage'                        => 'Dien global Brukerkonto bearbeiden',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Bruker $1 kunn lokal keen ne’en Naam kriegen, dat Konto is al op dat globale Brukerkonten-System rövertrocken.</div>',
 	'centralauth-invalid-wiki'                        => 'So’n Wiki-Datenbank gifft dat nich: $1',
 	'centralauth-log-name'                            => 'Global Brukerkonten-Logbook',
 	'centralauth-log-entry-delete'                    => 'hett dat globale Brukerkonto „<nowiki>$1</nowiki>“ wegdaan',
@@ -7749,6 +7563,7 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 $messages['nds-nl'] = array(
 	'centralauth-merge-denied'    => 'Je hemmen gien toegang tot disse pagina.',
 	'centralauth-merge-attempt'   => "'''Bezig mit 't contreleren van de op-egeven wachwoorden veur de nog neet samen-evoegen gebrukers...'''",
+	'globalusers'                 => 'Gebrukerslieste (globaal)',
 	'centralauth-login-progress'  => 'Je wonnen an-emeld bie aandere prejekken van Wikimedia:',
 	'centralauth-logout-progress' => 'Je wonnen of-emeld bie aandere prejekken van Wikimedia:',
 	'centralauth-log-name'        => 'Logboek globaal gebrukersbeheer',
@@ -7921,8 +7736,6 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached'              => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached'             => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
 	'centralauth-prefs-manage'                        => 'Uw globale gebruiker beheren',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Gebruiker $1 kan plaatselijk niet hernoemd worden omdat deze gebruiker gemigreerd is naar het systeem van samengevoegde gebruikers.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">U kunt gebruiker $2 niet hernoemen, omdat deze naam gereserveerd is voor een samengevoegde gebruiker.</div>',
 	'centralauth-invalid-wiki'                        => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists'                      => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
 	'centralauth-autologin-desc'                      => 'Deze pagina wordt intern door MediaWiki gebruikt.
@@ -8046,8 +7859,6 @@ Du kan endre kva wiki som vert rekna som heimewikien din sidan.',
 	'centralauth-prefs-count-unattached'   => 'Ikkje stadfesta kontoar med namnet ditt står att på {{PLURAL:$1|éitt prosjekt|$1 prosjekt}}.',
 	'centralauth-prefs-detail-unattached'  => 'Det er ikkje stadfesta at denne kontoen er slått saman med hovudkontoen.',
 	'centralauth-prefs-manage'             => 'Handsam hovudkontoen din',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">Kan ikkje endre namn på brukaren $1 lokalt fordi brukarnamnet er ein del av systemet med samanslåtte kontoar.</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">Kan ikkje endre namn på brukaren $2 fordi dette brukarnamnet er reservert av ein felleskonto.</div>',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -8211,8 +8022,6 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-prefs-count-unattached'              => 'Det er fortsatt ubekreftede kontoer med ditt navn på $1 prosjekter.',
 	'centralauth-prefs-detail-unattached'             => 'Det er ikke bekreftet at denne kontoen er slått sammen med hovedkontoen.',
 	'centralauth-prefs-manage'                        => 'Behandle hovedkontoen din',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Kan ikke gi brukeren $1 nytt navn lokalt fordi brukernavnet er del av systemet for sammenslåtte kontoer.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Kan ikke endre navnet på brukeren $2 da dette brukernavnet er reservert for en global konto.</div>',
 	'centralauth-invalid-wiki'                        => 'Ingen slik database: $1',
 	'centralauth-account-exists'                      => 'Kan ikke opprette konto. Det angitte brukernavnet er allerede tatt i bruk av en global konto.',
 	'centralauth-autologin-desc'                      => 'Denne spesialsiden brukes internt av MediaWiki. Når du [[Special:Userlogin|logger inn]] instruerer det sentrale innloggingssystemet nettleseren din til å hente denne siden fra alle domener, ved hjelp av bildelenker.
@@ -8429,8 +8238,6 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-prefs-count-unattached'              => 'De comptes non confirmats amb lo meteis nom d’utilizaire que lo vòstre se tròban sus $1 projèctes.',
 	'centralauth-prefs-detail-unattached'             => 'Vòstre compte sus aqueste projècte a pas pogut èsser ratachat al compte unic.',
 	'centralauth-prefs-manage'                        => 'Administrar vòstre compte global',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Impossible de tornar nomenar lo compte d\'utilizaire $1 localament : ara, aqueste utilizaire a un compte unic.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Impossible de tornar nomenar $2 coma nom d’utilizaire perque aqueste nom es reservat per un compte global.</div>',
 	'centralauth-invalid-wiki'                        => 'Cap de banca de donada wiki : $1',
 	'centralauth-account-exists'                      => 'Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.',
 	'centralauth-autologin-desc'                      => "Aquesta pagina especiala es utilizada per MediaWiki en intèrn.
@@ -8667,8 +8474,6 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-prefs-count-unattached'              => 'Nieprzyłączone konta o nazwie zbieżnej z Twoją są na $1 {{PLURAL:$1|projekcie|projektach}}.',
 	'centralauth-prefs-detail-unattached'             => 'Konto na tej witrynie nie zostało przyłączone do konta uniwersalnego.',
 	'centralauth-prefs-manage'                        => 'zarządzaj kontem uniwersalnym',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Nie można lokalnie zmienić nazwy użytkownika „$1”, ponieważ to konto jest przyłączone do konta uniwersalnego.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Nie można zmienić nazwy użytkownika „$2”, ponieważ nowa nazwa jest zarezerwowana dla konta uniwersalnego.</div>',
 	'centralauth-invalid-wiki'                        => 'Nie istnieje wiki DB: $1',
 	'centralauth-account-exists'                      => 'Utworzenie konta nie jest możliwe – wybrana nazwa użytkownika jest zajęta przez konto uniwersalne.',
 	'centralauth-autologin-desc'                      => 'Ta strona specjalna jest wykorzystywana wewnętrznie przez oprogramowanie MediaWiki.
@@ -8720,7 +8525,7 @@ Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak o
 	'right-globalgrouppermissions'                    => 'Zarządzanie grupami globalnymi',
 );
 
-/** Piemontèis (Piemontèis)
+/** Piedmontese (Piemontèis)
  * @author Bèrto 'd Sèra
  * @author Siebrand
  */
@@ -8786,7 +8591,6 @@ Sòn un a peul peuj cambiess-lo coma a-j ven mej a chiel/chila.",
 	'centralauth-prefs-count-unattached'   => 'A resto dij cont nen confermà con sò stranòm ansima a ij proget $1.',
 	'centralauth-prefs-detail-unattached'  => "Ës sit-sì a l'é pa restà confermà coma bon për sò cont global.",
 	'centralauth-prefs-manage'             => 'Gestion ëd sò cont global',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">As peul pa arbatié l\'utent $1 an local, për via che stë stranòm-sì a l\'é col dël cont unificà.</div>',
 );
 
 /** Pashto (پښتو)
@@ -8970,8 +8774,6 @@ As palavras-chave para as contas locais criadas antes da fusão irão ser revert
 	'centralauth-prefs-count-unattached'              => 'Ainda existem contas não confirmadas com seu nome de utilizador em $1 {{PLURAL:$1|projecto|projectos}}.',
 	'centralauth-prefs-detail-unattached'             => 'Este sítio não foi confirmado como fazendo parte da conta unificada.',
 	'centralauth-prefs-manage'                        => 'Manusear a sua conta unificada',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Não foi possível renomear localmente o utilizador $1 uma vez que a conta do mesmo foi migrada para o sistema de login universal.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Não é possível renomear utilizador $2 pois este nome de utilizador está reservado para uma conta global.</div>',
 	'centralauth-invalid-wiki'                        => 'Não existe a BD wiki: $1',
 	'centralauth-account-exists'                      => 'Não é possível criar conta: o nome de utilizador pretendido já está a ser utilizado no sistema de login unificado.',
 	'centralauth-login-progress'                      => 'Autenticando-se em outros projetos Wikimedia:',
@@ -9284,8 +9086,6 @@ $messages['ru'] = array(
 	'centralauth-prefs-count-unattached'              => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
 	'centralauth-prefs-detail-unattached'             => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage'                        => 'Управление глобальной учётной записью',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Невозможно переименовать участника $1 в данном проекте, так как это имя участника было перенесено в систему единой учётной записи.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Невозможно переименовать участника $2, так как это имя зарезервировано для глобальной учётной записи.</div>',
 	'centralauth-invalid-wiki'                        => 'Нет такой вики БД: $1',
 	'centralauth-account-exists'                      => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
 	'centralauth-autologin-desc'                      => 'Эта служебная страница предназначена для внутреннего использования в MediaWiki.
@@ -9474,8 +9274,6 @@ $messages['sah'] = array(
 	'centralauth-prefs-count-unattached'   => 'Эн бигэргэтиллибэтэх {{PLURAL:$1|аатыҥ|ааттарыҥ}} $1 бырайыакка {{PLURAL:$1|хаалла|хааллылар}}.',
 	'centralauth-prefs-detail-unattached'  => 'Бу бырайыакка эн сүрүн аатыҥ бигэргэтиллибэтэх.',
 	'centralauth-prefs-manage'             => 'Сүрүн ааты салайыы',
-	'centralauth-renameuser-abort'         => "<div class=\"errorbox\">\$1 ааты бу бырайыакка уларытар кыах суох, тоҕо диэтэххэ бу аат ''Сүрүн ааты'' кытта холбоно сылдьар.</div>",
-	'centralauth-renameuser-exists'        => '<div class="errorbox">$2 кыттааччыны аатын уларытар кыах суох, бу аат номнуо сүрүн аакка (global account) анаммыт.</div>',
 	'centralauth-invalid-wiki'             => 'Билэ тиһигэр (DB) маннык ааттаах биики суох: $1',
 	'centralauth-account-exists'           => 'Ааты оҥорор кыах суох: киирэр тиһиликкэ маннык аат номнуо баар эбит.',
 	'centralauth-log-name'                 => 'Сүрүн ааттары (Global account) салайар сурунаал',
@@ -9665,8 +9463,6 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-prefs-count-unattached'              => 'Nepotvrdené účty s vašim menom zostávajú na $1 {{PLURAL:$1|projekte|projektoch}}.',
 	'centralauth-prefs-detail-unattached'             => 'Nebolo potvrdené, že účet na tomto projekte patrí ku globálnemu účtu.',
 	'centralauth-prefs-manage'                        => 'Spravovať váš globálny účet',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Nie je možné lokálne premenovať používateľa $1, keďže toto používateľské meno bolo migrované na zjednotený prihlasovací systém.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Nie je možné premenovať používateľa $2, pretože toto meno je vyhradené pre globálny účet.</div>',
 	'centralauth-invalid-wiki'                        => 'Taká DB wiki neexistuje: $1',
 	'centralauth-account-exists'                      => 'Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.',
 	'centralauth-autologin-desc'                      => 'Túto špeciálnu stránku vnútorne využíva MediaWiki.
@@ -9966,8 +9762,6 @@ Do Paaswoude foar do lokoale Benutserkonten wäide ap dät uursproangelke Paaswo
 	'centralauth-prefs-count-unattached'              => 'Dät rakt in $1 {{PLURAL:$1|Projekt|Projekte}} uunbestäätigede Benutserkonten mäd din Noome.',
 	'centralauth-prefs-detail-unattached'             => 'Foar dit Projekt lait neen Bestäätigenge foar dät touhoopefierde Benutserkonto foar.',
 	'centralauth-prefs-manage'                        => 'Beoarbaidje dien touhoopefierd Benutserkonto',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Benutser $1 kon nit lokoal uumebenaamd wäide, deer hie al in dät globoale Benutserkonten-System uurnuumen wuude.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Benutser $2 kon nit uumenaamd wäide, deer dissen Benutsernoome as globoal Benutserkonto reservierd is.</div>',
 	'centralauth-invalid-wiki'                        => 'Ju Wiki-Doatenboank bestoant nit: $1',
 	'centralauth-account-exists'                      => 'Dät Benutserkonto kon nit moaked wäide: die anfräigede Benutsernoome wäd al foar dät globoale Benutserkonten-System ferwoand.',
 	'centralauth-autologin-desc'                      => 'Disse Spesioalsiede wäd bloot intern fon MediaWiki benutsed. Wan du die [[Special:UserLogin|ounmäldest]], 
@@ -10145,8 +9939,6 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 	'centralauth-prefs-count-unattached'        => 'Sababaraha rekening anjeun di $1 {{PLURAL:$1|proyék|proyék}} can konfirmasi.',
 	'centralauth-prefs-detail-unattached'       => 'Loka ieu proyék can dikonfirmasi kaasup kana rekening global.',
 	'centralauth-prefs-manage'                  => 'Kokolakeun rekening global anjeun',
-	'centralauth-renameuser-abort'              => '<div class="errorbox">Pamaké $1 teu bisa diganti sacara lokal, sabab geus dipindahkeun ka sistem login tunggal.</div>',
-	'centralauth-renameuser-exists'             => '<div class="errorbox">Teu bisa ngaganti ngaran $2 kusabab ieu landihan diajangkeun keur rekening global.</div>',
 	'centralauth-account-exists'                => 'Rekening teu bisa dijieun: landihan nu dipénta geus dipaké dina sistem login tunggal.',
 	'centralauth-log-name'                      => 'Log rekening global',
 	'centralauth-log-entry-delete'              => 'Rekening global "<nowiki>$1</nowiki>" dihapus',
@@ -10330,8 +10122,6 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-prefs-count-unattached'              => 'Obekräftade konton med ditt namn finns fortfarande på $1 projekt.',
 	'centralauth-prefs-detail-unattached'             => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
 	'centralauth-prefs-manage'                        => 'Hantera ditt gemensamma konto',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Det går inte att döpa om användare $1 lokalt eftersom användarnamnet har anslutits till systemet för gemensam inloggning.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Kan inte byta namn på användare $2 eftersom detta användarnamn är reserverat för ett gemensamt konto.</div>',
 	'centralauth-invalid-wiki'                        => 'Ingen sådan databas: $1',
 	'centralauth-account-exists'                      => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
 	'centralauth-autologin-desc'                      => 'Den här specialsidan används internt av MediaWiki.
@@ -10543,8 +10333,6 @@ $messages['te'] = array(
 	'centralauth-prefs-count-unattached'              => '$1 {{PLURAL:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
 	'centralauth-prefs-detail-unattached'             => 'ఈ ప్రాజెక్టు సైటు గ్లోబల్ ఖాతాకు చెందినదని నిర్ధారణ కాలేదు.',
 	'centralauth-prefs-manage'                        => 'మీ గ్లోబల్ ఖాతాను నిర్వహించుకోండి',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">$1 అనే వాడుకరి పేరు ఏకీకృత ప్రవేశపు వ్యవస్థలో నిలీనమైనందున, స్థానికంగా ఆ పేరుని మార్చలేరు.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">సభ్యనామం సార్వత్రిక ఖాతా కోసం రిజర్వు చేయబడి ఉన్నందున సభ్యుడు $2 పేరు మార్చలేం.</div>',
 	'centralauth-invalid-wiki'                        => 'ఇలాంటి వికీ లేదు DB: $1',
 	'centralauth-account-exists'                      => 'ఖాతాను సృష్టించలేకున్నాం: మీరడిగిన సబ్యనామాన్ని ఏకీకృత లాగిన్ వ్యవస్థలో ఈ సరికే తీసుకోబడింది.',
 	'centralauth-log-name'                            => 'సార్వత్రిక ఖాతా లాగ్',
@@ -10725,8 +10513,6 @@ $messages['tg-cyrl'] = array(
 	'centralauth-prefs-count-unattached'        => 'Ҳисобҳои корбарии таъйиднашуда бо номи шумо дар $1 {{PLURAL:$1|лоиҳа|лоиҳаҳо}} боқӣ мемонад.',
 	'centralauth-prefs-detail-unattached'       => 'Сомонаи ин лоиҳа мавриди таъйид барои истифода аз ҳисоби корбарии муштарак қарор нагирифтааст.',
 	'centralauth-prefs-manage'                  => 'Мудирияти ҳисоби корбарии муштарак',
-	'centralauth-renameuser-abort'              => '<div class="errorbox">Имкони тағйири номи ҳисоби корбари $1 ба таври маҳаллӣ вуҷуд надорад, зеро ин ҳисоб ба сомонаи якка кардани ҳисобҳои корбарӣ интиқол шудааст.</div>',
-	'centralauth-renameuser-exists'             => '<div class="errorbox">Наметавон корбар $2ро тағйир кард чун ин номи корбарӣ барои ҳисоби муштарак ҳифз шудааст.</div>',
 	'centralauth-invalid-wiki'                  => 'Чунин вики ПД нест: $1',
 	'centralauth-account-exists'                => 'Наметавон ҳисоберо эчод кард: номи корбарии дархостшуда пеш аз ин дар системи вуруди муштарак гирифта шудааст.',
 	'centralauth-log-name'                      => 'Гузориши ҳисоби муштарак',
@@ -10998,8 +10784,6 @@ $messages['uk'] = array(
 	'centralauth-prefs-count-unattached'              => 'Непідтверджені облікові записи з вашим іменем залишають в $1 {{PLURAL:$1|проекті|проектах|проектах}}.',
 	'centralauth-prefs-detail-unattached'             => 'Цей проект не був підтверджений як такий, що належить до вашого глобального облікового запису.',
 	'centralauth-prefs-manage'                        => 'Керування глобальним обліковим записом',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Неможливо перейменувати користувача $1 у даному проекті, так як це ім\'я користувача було перенесене до системи єдиного облікового запису.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Неможливо перейменувати користувача $2, так як це ім\'я зарезервовано для глобального облікового запису.</div>',
 	'centralauth-invalid-wiki'                        => 'Нема такої вікі БД: $1',
 	'centralauth-account-exists'                      => "Неможливо створити обліковий запис. Таке ім'я вже зайняте для єдиного облікового запису.",
 	'centralauth-autologin-desc'                      => 'Ця спеціальна сторінка призначена для внутрішнього використання у MediaWiki.
@@ -11207,8 +10991,6 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 	'centralauth-prefs-count-unattached'              => 'Ghe xe account non confermà col to nome utente su $1 {{PLURAL:$1|progeto|progeti}}.',
 	'centralauth-prefs-detail-unattached'             => "Sto sito qua no l'è stà confermà come fasente parte de l'account globale.",
 	'centralauth-prefs-manage'                        => 'Gestion del to account globale',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">No se pol rinominar localmente l\'utente $1 parché sta utenza la xe stà trasferìa al sistema de identificazion unificà (unified login system).</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">No se pol rinominar l\'utente $2 parché sto nome utente el xe riservà par un account globale.</div>',
 	'centralauth-invalid-wiki'                        => 'No ghe xe un database wiki co sto nome: $1',
 	'centralauth-account-exists'                      => "No se pol crear l'account: el nome utente richiesto se l'à zà tolto qualchedun altro nel sistema de login unificà.",
 	'centralauth-autologin-desc'                      => 'Sta pagina speciale la xe doparà internamente a MediaWiki.
@@ -11414,8 +11196,6 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-prefs-count-unattached'              => 'Còn $1 {{PLURAL:$1|dự án|dự án}} có tài khoản trùng với tên của bạn nhưng chưa được xác nhận.',
 	'centralauth-prefs-detail-unattached'             => 'Dự án này chưa được xác nhận thuộc về tài khoản chung.',
 	'centralauth-prefs-manage'                        => 'Quản lý tài khoản chung',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">Không có thể đổi tên $1 tại đây vì tên người dùng này đã được chuyển đến hệ thống đăng nhập thống nhất.</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">Không thể đổi tên người dùng $2 vì tên này đã được để dành cho một tài khoản toàn cục.</div>',
 	'centralauth-invalid-wiki'                        => 'Không có CSDL wiki như vậy: $1',
 	'centralauth-account-exists'                      => 'Không thể tạo tài khoản: tên người dùng chỉ định đã được sử dụng trong hệ thống đăng nhập thống nhất.',
 	'centralauth-autologin-desc'                      => 'Trang đặc biệt này được MediaWiki dùng nội bộ.
@@ -11548,172 +11328,164 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-prefs-count-unattached'   => 'Kals no pefümedöls labü nem olik dabinon nog pö {{PLURAL:$1|proyeg|proyegs}} $1.',
 	'centralauth-prefs-detail-unattached'  => 'Proyegatopäd at no pefümedon as dutöl lü kal valemik.',
 	'centralauth-prefs-manage'             => 'Guvön kali valemik ola',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">No mögos ad votanemön gebani: $1 is bi gebananem at petopätükon lü nunädamasit balik.</div>',
 );
 
-/** Cantonese
+/** Yue (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
-	'mergeaccount'                         => '登入統一狀態',
-	'centralauth-desc'                     => '響Wikimedia Foundation wiki度[[Special:MergeAccount|合併戶口]]',
-	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|合併多個戶口]]用來統一登入',
-	'centralauth-merge-denied'             => '對唔住，你無權限去存取呢一版。',
-	'centralauth-merge-notlogged'          => '請<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]</span>去睇下檢查你嘅戶口係唔係已經完全整合。',
-	'centralauth-merge-welcome'            => "'''你嘅用戶戶口重未整合到Wikimedia嘅統一登入系統。'''如果你係要去整合你個戶口嘅話，噉你就可以用同一個用戶名同密碼去登入全部Wikimedia中全部語言嘅計劃。噉樣做，可以更加容易噉響一啲共用嘅計劃度進行一啲工作，好似[http://commons.wikimedia.org/ Wikimedia Commons]，同埋避免用戶名混淆同相撞，以致響唔同嘅計劃度，兩位人揀咗同一個用戶名。
+	'mergeaccount'                                    => '登入統一狀態',
+	'centralauth-desc'                                => '響Wikimedia Foundation wiki度[[Special:MergeAccount|合併戶口]]',
+	'centralauth-mergeaccount-desc'                   => '[[Special:MergeAccount|合併多個戶口]]用來統一登入',
+	'centralauth-merge-denied'                        => '對唔住，你無權限去存取呢一版。',
+	'centralauth-merge-notlogged'                     => '請<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}}登入]</span>去睇下檢查你嘅戶口係唔係已經完全整合。',
+	'centralauth-merge-welcome'                       => "'''你嘅用戶戶口重未整合到Wikimedia嘅統一登入系統。'''如果你係要去整合你個戶口嘅話，噉你就可以用同一個用戶名同密碼去登入全部Wikimedia中全部語言嘅計劃。噉樣做，可以更加容易噉響一啲共用嘅計劃度進行一啲工作，好似[http://commons.wikimedia.org/ Wikimedia Commons]，同埋避免用戶名混淆同相撞，以致響唔同嘅計劃度，兩位人揀咗同一個用戶名。
 
 如果有另一啲人已經響另一個網站度揀咗你個用戶名嘅話，係唔會擾亂佢哋，但係佢會畀你一個機會，稍後同佢地或者同管理員去處理。",
-	'centralauth-merge-step1-title'        => '開始登入統一',
-	'centralauth-merge-step1-detail'       => '請響呢度輸入你個戶口密碼。你嘅密碼同埋註冊嘅電郵地址會分別響其它wiki度檢查，去睇佢哋係一樣嘅。直至到你確認啲嘢係無問題之前，都唔會有更改嘅。',
-	'centralauth-merge-step1-submit'       => '確認登入資料',
-	'centralauth-merge-step2-title'        => '確認更多戶口',
-	'centralauth-merge-step2-detail'       => '有啲戶口唔會自動噉同你自己嘅自家wiki站配合到。如果呢啲戶口係屬於你嘅話，你可以為佢哋提供一個密碼去確認佢哋係屬於你嘅。',
-	'centralauth-merge-step2-submit'       => '確認登入資料',
-	'centralauth-merge-dryrun-complete'    => '全部嘅現行戶口都可以自動噉統一！
+	'centralauth-merge-step1-title'                   => '開始登入統一',
+	'centralauth-merge-step1-detail'                  => '請響呢度輸入你個戶口密碼。你嘅密碼同埋註冊嘅電郵地址會分別響其它wiki度檢查，去睇佢哋係一樣嘅。直至到你確認啲嘢係無問題之前，都唔會有更改嘅。',
+	'centralauth-merge-step1-submit'                  => '確認登入資料',
+	'centralauth-merge-step2-title'                   => '確認更多戶口',
+	'centralauth-merge-step2-detail'                  => '有啲戶口唔會自動噉同你自己嘅自家wiki站配合到。如果呢啲戶口係屬於你嘅話，你可以為佢哋提供一個密碼去確認佢哋係屬於你嘅。',
+	'centralauth-merge-step2-submit'                  => '確認登入資料',
+	'centralauth-merge-dryrun-complete'               => '全部嘅現行戶口都可以自動噉統一！
 
 你嘅戶口重未有任何嘅改變。',
-	'centralauth-merge-dryrun-incomplete'  => '你已經揀咗繼續，但係有啲戶口唔可以自動噉確認，唔會即時搬遷。
+	'centralauth-merge-dryrun-incomplete'             => '你已經揀咗繼續，但係有啲戶口唔可以自動噉確認，唔會即時搬遷。
 你可以響稍後時間再合併。
 
 你嘅戶口重未有任何嘅改變。',
-	'centralauth-merge-dryrun-or'          => "'''或'''",
-	'centralauth-merge-dryrun-home'        => '個搬遷系統唔能夠確認你係個自家wiki戶口用戶名係屬於你嘅。
+	'centralauth-merge-dryrun-or'                     => "'''或'''",
+	'centralauth-merge-dryrun-home'                   => '個搬遷系統唔能夠確認你係個自家wiki戶口用戶名係屬於你嘅。
 
 另一個wiki曾經認定咗你嘅用戶名做自家wiki嘅戶口；跟住下面嘅連結去完成你嘅戶口搬遷。',
-	'centralauth-merge-step3-title'        => '開個統一戶口',
-	'centralauth-merge-step3-detail'       => '你已經預備好響加入咗嘅wiki度，去開一個統一戶口：',
-	'centralauth-merge-step3-submit'       => '統一戶口',
-	'centralauth-complete'                 => '戶口統一已經搞掂！',
-	'centralauth-incomplete'               => '戶口統一重未搞掂！',
-	'centralauth-complete-text'            => '你而家可以響唔使個新戶口嘅情況之下登入任何一個Wikimedia嘅wiki網站；
+	'centralauth-merge-step3-title'                   => '開個統一戶口',
+	'centralauth-merge-step3-detail'                  => '你已經預備好響加入咗嘅wiki度，去開一個統一戶口：',
+	'centralauth-merge-step3-submit'                  => '統一戶口',
+	'centralauth-complete'                            => '戶口統一已經搞掂！',
+	'centralauth-incomplete'                          => '戶口統一重未搞掂！',
+	'centralauth-complete-text'                       => '你而家可以響唔使個新戶口嘅情況之下登入任何一個Wikimedia嘅wiki網站；
 用同一個用戶名同密碼就可以登入響所有語言嘅維基百科、維基詞典、維基教科書同埋佢哋嘅其它姊妹計劃網站。',
-	'centralauth-incomplete-text'          => '一旦你嘅登入完成統一，你就可以登入所有Wikimedia嘅wiki網站，而無需再開個新戶口；
+	'centralauth-incomplete-text'                     => '一旦你嘅登入完成統一，你就可以登入所有Wikimedia嘅wiki網站，而無需再開個新戶口；
 用同一組用戶名同密碼就可以登入到所有語言嘅維基百科、維基詞典、維基教科書同埋佢哋嘅其它姊妹計劃網站。',
-	'centralauth-not-owner-text'           => '用戶名 "$1" 已經自動分咗畀 $2 上面嘅戶口持有者。
+	'centralauth-not-owner-text'                      => '用戶名 "$1" 已經自動分咗畀 $2 上面嘅戶口持有者。
 如果呢個係你，你可以輸入響嗰個戶口嘅主密碼以完成登入統一嘅程序：',
-	'centralauth-blocked-text'             => '你的自家wiki（響下面列出）而家封鎖緊唔畀編輯。請聯絡響呢個wiki嘅操作員去解封佢。當佢封鎖緊嗰陣，你係唔可以合併你嘅戶口。',
-	'centralauth-notice-dryrun'            => "<div class='successbox'>只係示範模式</div><br clear='all'/>",
-	'centralauth-disabled-dryrun'          => '戶口統一而家係響示範／除錯模式，噉實際嘅合併動作已經停用。對唔住！',
-	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|睇下更多有關'''統一登入'''嘅細節]]...''",
-	'centralauth-list-home-title'          => '自家wiki',
-	'centralauth-list-home-dryrun'         => '你響呢個wiki嘅密碼同電郵地址會用來做你嘅統一戶口，同時你響呢度嘅用戶頁會由其它嘅wiki度自動連結過來。你可以響稍後嘅時間去改你嘅自家wiki。',
-	'centralauth-list-attached-title'      => '已經附加嘅戶口',
-	'centralauth-list-attached'            => '以下用戶名 "$1" 嘅戶口已經自動噉樣合併咗：',
-	'centralauth-list-attached-dryrun'     => '下面每一個網站，個名係"$1"嘅戶口將會自動附加到一個統一戶口度:',
-	'centralauth-list-unattached-title'    => '未附加嘅戶口',
-	'centralauth-list-unattached'          => '以下網站嘅戶口 "$1" 唔能夠自動噉樣合併；好有可能佢哋嘅密碼同你嘅主戶口唔同:',
-	'centralauth-foreign-link'             => '響 $2 嘅用戶 $1',
-	'centralauth-merge-method-primary'     => '自家 wiki',
-	'centralauth-merge-method-empty'       => '無貢獻',
-	'centralauth-merge-method-mail'        => '已用電郵確認',
-	'centralauth-merge-method-password'    => '已用密碼確認',
-	'centralauth-merge-method-admin'       => '管理合併戶口',
-	'centralauth-merge-method-new'         => '新戶口',
-	'centralauth-merge-method-login'       => '已用登入確認',
-	'centralauth-finish-title'             => '完成合併',
-	'centralauth-finish-text'              => '如果呢啲戶口係屬於你嘅，你可以響呢度輸入其它戶口嘅密碼，以完成登入統一嘅程序:',
-	'centralauth-finish-password'          => '密碼:',
-	'centralauth-finish-login'             => '登入',
-	'centralauth-finish-send-confirmation' => '透過電郵寄密碼',
-	'centralauth-finish-problems'          => '有問題，又或者你並無持有其它嘅戶口？
+	'centralauth-blocked-text'                        => '你的自家wiki（響下面列出）而家封鎖緊唔畀編輯。請聯絡響呢個wiki嘅操作員去解封佢。當佢封鎖緊嗰陣，你係唔可以合併你嘅戶口。',
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>只係示範模式</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'                     => '戶口統一而家係響示範／除錯模式，噉實際嘅合併動作已經停用。對唔住！',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|睇下更多有關'''統一登入'''嘅細節]]...''",
+	'centralauth-list-home-title'                     => '自家wiki',
+	'centralauth-list-home-dryrun'                    => '你響呢個wiki嘅密碼同電郵地址會用來做你嘅統一戶口，同時你響呢度嘅用戶頁會由其它嘅wiki度自動連結過來。你可以響稍後嘅時間去改你嘅自家wiki。',
+	'centralauth-list-attached-title'                 => '已經附加嘅戶口',
+	'centralauth-list-attached'                       => '以下用戶名 "$1" 嘅戶口已經自動噉樣合併咗：',
+	'centralauth-list-attached-dryrun'                => '下面每一個網站，個名係"$1"嘅戶口將會自動附加到一個統一戶口度:',
+	'centralauth-list-unattached-title'               => '未附加嘅戶口',
+	'centralauth-list-unattached'                     => '以下網站嘅戶口 "$1" 唔能夠自動噉樣合併；好有可能佢哋嘅密碼同你嘅主戶口唔同:',
+	'centralauth-foreign-link'                        => '響 $2 嘅用戶 $1',
+	'centralauth-merge-method-primary'                => '自家 wiki',
+	'centralauth-merge-method-empty'                  => '無貢獻',
+	'centralauth-merge-method-mail'                   => '已用電郵確認',
+	'centralauth-merge-method-password'               => '已用密碼確認',
+	'centralauth-merge-method-admin'                  => '管理合併戶口',
+	'centralauth-merge-method-new'                    => '新戶口',
+	'centralauth-merge-method-login'                  => '已用登入確認',
+	'centralauth-finish-title'                        => '完成合併',
+	'centralauth-finish-text'                         => '如果呢啲戶口係屬於你嘅，你可以響呢度輸入其它戶口嘅密碼，以完成登入統一嘅程序:',
+	'centralauth-finish-password'                     => '密碼:',
+	'centralauth-finish-login'                        => '登入',
+	'centralauth-finish-send-confirmation'            => '透過電郵寄密碼',
+	'centralauth-finish-problems'                     => '有問題，又或者你並無持有其它嘅戶口？
 	[[meta:Help:Unified login problems|如何尋求協助]]...',
-	'centralauth-finish-noconfirms'        => '用呢個密碼確認唔到任何一個戶口。',
-	'centralauth-finish-incomplete'        => '用呢個密碼確認唔到幾個戶口。
+	'centralauth-finish-noconfirms'                   => '用呢個密碼確認唔到任何一個戶口。',
+	'centralauth-finish-incomplete'                   => '用呢個密碼確認唔到幾個戶口。
 其它戶口重未確認。',
-	'centralauth-merge-attempt'            => "'''檢查緊所輸入嘅密碼，同剩底未合併戶口相對...'''",
-	'centralauth-attach-list-attached'     => '個統一戶口叫 "$1" 有下面嘅戶口:',
-	'centralauth-attach-title'             => '確認戶口',
-	'centralauth-attach-text'              => '呢個戶口重未搬遷過去統一戶口。
+	'centralauth-merge-attempt'                       => "'''檢查緊所輸入嘅密碼，同剩底未合併戶口相對...'''",
+	'centralauth-attach-list-attached'                => '個統一戶口叫 "$1" 有下面嘅戶口:',
+	'centralauth-attach-title'                        => '確認戶口',
+	'centralauth-attach-text'                         => '呢個戶口重未搬遷過去統一戶口。
 如果個全域戶口亦都係你嘅，如果你輸入全域戶口個密碼，就可以合併呢個戶口:',
-	'centralauth-attach-submit'            => '搬遷戶口',
-	'centralauth-attach-success'           => '個戶口已經搬遷到個統一戶口度。',
-	'centralauth'                          => '統一戶口管理',
-	'centralauth-admin-manage'             => '管理用戶資料',
-	'centralauth-admin-username'           => '用戶名:',
-	'centralauth-admin-lookup'             => '去睇或者編輯用戶資料',
-	'centralauth-admin-permission'         => '只有執行員先至可以為用戶合併其它人嘅戶口。',
-	'centralauth-admin-no-unified'         => '呢個用戶名無統一戶口。',
-	'centralauth-admin-info-id'            => '用戶ID:',
-	'centralauth-admin-info-registered'    => '註冊咗:',
-	'centralauth-admin-info-locked'        => '鎖咗:',
-	'centralauth-admin-info-hidden'        => '隱藏:',
-	'centralauth-admin-yes'                => '係',
-	'centralauth-admin-no'                 => '唔係',
-	'centralauth-admin-attached'           => '完全合併咗嘅戶口',
-	'centralauth-admin-unattached'         => '未附加嘅戶口',
-	'centralauth-admin-no-unattached'      => '重未有未合併嘅戶口。',
-	'centralauth-admin-list-localwiki'     => '本地 wiki',
-	'centralauth-admin-list-attached-on'   => '附加於',
-	'centralauth-admin-list-method'        => '方法',
-	'centralauth-admin-unmerge'            => '唔合併已經揀咗嘅',
-	'centralauth-admin-merge'              => '合併已經揀咗嘅',
-	'centralauth-admin-bad-input'          => '唔啱嘅合併選擇',
-	'centralauth-admin-none-selected'      => '無戶口揀咗去改。',
-	'centralauth-admin-already-unmerged'   => '跳緊$1，已經取消合併',
-	'centralauth-admin-unmerge-success'    => '已經取消合併$1個戶口',
-	'centralauth-admin-delete-title'       => '刪除戶口',
-	'centralauth-admin-delete-description' => '刪除個全域戶口會刪除任何嘅全域喜好設定，解除全部附加上去嘅戶口，留低個全域名畀另一位用戶去用。
+	'centralauth-attach-submit'                       => '搬遷戶口',
+	'centralauth-attach-success'                      => '個戶口已經搬遷到個統一戶口度。',
+	'centralauth'                                     => '統一戶口管理',
+	'centralauth-admin-manage'                        => '管理用戶資料',
+	'centralauth-admin-username'                      => '用戶名:',
+	'centralauth-admin-lookup'                        => '去睇或者編輯用戶資料',
+	'centralauth-admin-permission'                    => '只有執行員先至可以為用戶合併其它人嘅戶口。',
+	'centralauth-admin-no-unified'                    => '呢個用戶名無統一戶口。',
+	'centralauth-admin-info-id'                       => '用戶ID:',
+	'centralauth-admin-info-registered'               => '註冊咗:',
+	'centralauth-admin-info-locked'                   => '鎖咗:',
+	'centralauth-admin-info-hidden'                   => '隱藏:',
+	'centralauth-admin-yes'                           => '係',
+	'centralauth-admin-no'                            => '唔係',
+	'centralauth-admin-attached'                      => '完全合併咗嘅戶口',
+	'centralauth-admin-unattached'                    => '未附加嘅戶口',
+	'centralauth-admin-no-unattached'                 => '重未有未合併嘅戶口。',
+	'centralauth-admin-list-localwiki'                => '本地 wiki',
+	'centralauth-admin-list-attached-on'              => '附加於',
+	'centralauth-admin-list-method'                   => '方法',
+	'centralauth-admin-unmerge'                       => '唔合併已經揀咗嘅',
+	'centralauth-admin-merge'                         => '合併已經揀咗嘅',
+	'centralauth-admin-bad-input'                     => '唔啱嘅合併選擇',
+	'centralauth-admin-none-selected'                 => '無戶口揀咗去改。',
+	'centralauth-admin-already-unmerged'              => '跳緊$1，已經取消合併',
+	'centralauth-admin-unmerge-success'               => '已經取消合併$1個戶口',
+	'centralauth-admin-delete-title'                  => '刪除戶口',
+	'centralauth-admin-delete-description'            => '刪除個全域戶口會刪除任何嘅全域喜好設定，解除全部附加上去嘅戶口，留低個全域名畀另一位用戶去用。
 全部嘅本地戶口會繼續存在。
 響合併之前開咗嘅本地戶口會還原到佢哋之前嘅值。',
-	'centralauth-admin-delete-button'      => '刪除呢個戶口',
-	'centralauth-admin-delete-success'     => '已經刪除咗"<nowiki>$1</nowiki>"嘅全域戶口',
-	'centralauth-admin-nonexistent'        => '呢度無"<nowiki>$1</nowiki>"嘅全域戶口',
-	'centralauth-admin-delete-nonexistent' => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
-	'centralauth-token-mismatch'           => '對唔住，由於小節資料遺失咗，我哋唔可以處理你嘅表格遞交',
-	'centralauth-admin-lock-title'         => '鎖住戶口',
-	'centralauth-admin-lock-description'   => '鎖呢個戶口會令到響任何嘅wiki度唔可能登入到。',
-	'centralauth-admin-lock-button'        => '鎖呢個戶口',
-	'centralauth-admin-lock-success'       => '已經成功噉鎖咗"<nowiki>$1</nowiki>"嘅全域戶口',
-	'centralauth-admin-lock-nonexistent'   => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
-	'centralauth-admin-unlock-title'       => '解鎖戶口',
-	'centralauth-admin-unlock-description' => '解鎖戶口將會令到佢可以再登入。',
-	'centralauth-admin-unlock-button'      => '解鎖呢個戶口',
-	'centralauth-admin-unlock-success'     => '已經成功噉解鎖咗"<nowiki>$1</nowiki>"嘅全域戶口',
-	'centralauth-admin-unlock-nonexistent' => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
-	'centralauth-admin-reason'             => '原因: ',
-	'globalusers'                          => '全域戶口一覽',
-	'centralauth-listusers-locked'         => '鎖咗',
-	'centralauth-listusers-attached'       => '響本地存在',
-	'centralauth-listusers-nolocal'        => '未附加或唔響本地存在',
-	'centralauth-seconds-ago'              => '$1 秒之前',
-	'centralauth-minutes-ago'              => '$1 分鐘之前',
-	'centralauth-hours-ago'                => '$1 個鐘之前',
-	'centralauth-days-ago'                 => '$1 日前',
-	'centralauth-months-ago'               => '$1 個用前',
-	'centralauth-years-ago'                => '$1 年前',
-	'centralauth-prefs-status'             => '全域戶口狀態：',
-	'centralauth-prefs-not-managed'        => '唔係用緊統一戶口',
-	'centralauth-prefs-unattached'         => '未確認',
-	'centralauth-prefs-complete'           => '全部完成！',
-	'centralauth-prefs-migration'          => '遷移中',
-	'centralauth-prefs-count-attached'     => '你個戶口響$1個計劃網站度係活躍嘅。',
-	'centralauth-prefs-count-unattached'   => '你響$1個計劃度重有未確認嘅戶口。',
-	'centralauth-prefs-detail-unattached'  => '呢個計劃網站重未確認到個全域戶口。',
-	'centralauth-prefs-manage'             => '管理你個全域戶口',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">由於呢個用戶名已經遷移到統一登入系統，因此唔可以響本地度改$1做呢個用戶名。</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">由於呢個用戶名已經預留畀全域戶口，因此唔可以改$2做呢個用戶名。</div>',
-	'centralauth-invalid-wiki'             => '無呢個wiki資料庫: $1',
-	'centralauth-account-exists'           => '唔可以開戶口: 所需求嘅用戶名已經響統一登入系統度拎咗。',
-	'centralauth-autologin-desc'           => '呢版特別頁係響MediaWiki度內部用嘅。當你[[Special:UserLogin|登入]]後，
+	'centralauth-admin-delete-button'                 => '刪除呢個戶口',
+	'centralauth-admin-delete-success'                => '已經刪除咗"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-nonexistent'                   => '呢度無"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-delete-nonexistent'            => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
+	'centralauth-token-mismatch'                      => '對唔住，由於小節資料遺失咗，我哋唔可以處理你嘅表格遞交',
+	'centralauth-admin-lock-title'                    => '鎖住戶口',
+	'centralauth-admin-lock-description'              => '鎖呢個戶口會令到響任何嘅wiki度唔可能登入到。',
+	'centralauth-admin-lock-button'                   => '鎖呢個戶口',
+	'centralauth-admin-lock-success'                  => '已經成功噉鎖咗"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-lock-nonexistent'              => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
+	'centralauth-admin-unlock-title'                  => '解鎖戶口',
+	'centralauth-admin-unlock-description'            => '解鎖戶口將會令到佢可以再登入。',
+	'centralauth-admin-unlock-button'                 => '解鎖呢個戶口',
+	'centralauth-admin-unlock-success'                => '已經成功噉解鎖咗"<nowiki>$1</nowiki>"嘅全域戶口',
+	'centralauth-admin-unlock-nonexistent'            => '錯誤: 個全域戶口"<nowiki>$1</nowiki>"唔存在。',
+	'centralauth-admin-reason'                        => '原因: ',
+	'globalusers'                                     => '全域戶口一覽',
+	'centralauth-listusers-locked'                    => '鎖咗',
+	'centralauth-listusers-attached'                  => '響本地存在',
+	'centralauth-listusers-nolocal'                   => '未附加或唔響本地存在',
+	'centralauth-seconds-ago'                         => '$1 秒之前',
+	'centralauth-minutes-ago'                         => '$1 分鐘之前',
+	'centralauth-hours-ago'                           => '$1 個鐘之前',
+	'centralauth-days-ago'                            => '$1 日前',
+	'centralauth-months-ago'                          => '$1 個用前',
+	'centralauth-years-ago'                           => '$1 年前',
+	'centralauth-prefs-status'                        => '全域戶口狀態：',
+	'centralauth-prefs-not-managed'                   => '唔係用緊統一戶口',
+	'centralauth-prefs-unattached'                    => '未確認',
+	'centralauth-prefs-complete'                      => '全部完成！',
+	'centralauth-prefs-migration'                     => '遷移中',
+	'centralauth-prefs-count-attached'                => '你個戶口響$1個計劃網站度係活躍嘅。',
+	'centralauth-prefs-count-unattached'              => '你響$1個計劃度重有未確認嘅戶口。',
+	'centralauth-prefs-detail-unattached'             => '呢個計劃網站重未確認到個全域戶口。',
+	'centralauth-prefs-manage'                        => '管理你個全域戶口',
+	'centralauth-invalid-wiki'                        => '無呢個wiki資料庫: $1',
+	'centralauth-account-exists'                      => '唔可以開戶口: 所需求嘅用戶名已經響統一登入系統度拎咗。',
+	'centralauth-autologin-desc'                      => '呢版特別頁係響MediaWiki度內部用嘅。當你[[Special:UserLogin|登入]]後，
 	個中央登入系統會利用圖像連結，指示你個瀏覽器響全部連接嘅網域度請求呢一版。
 	你響呢一版度唔需要再俾任何嘅認證資料，即係唔使做。',
-	'centralauth-login-progress'           => '幫你登入緊去Wikimedia嘅其它計劃:',
-	'centralauth-logout-progress'          => '幫你登出緊自Wikimedia嘅其它計劃:',
-	'centralauth-log-name'                 => '全域戶口日誌',
-	'centralauth-log-header'               => '呢個日誌包含咗全域戶口嘅動作: 刪除、鎖同解鎖。',
-	'centralauth-log-entry-delete'         => '已經刪咗全域戶口"<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-lock'           => '已經鎖咗全域戶口"<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unlock'         => '已經解鎖全域戶口"<nowiki>$1</nowiki>"',
-
-	'centralauth-rightslog-name'		 => '全域權限日誌',
-	'centralauth-rightslog-entry-usergroups' => '改咗$1嘅全域成員組由$2到$3',
-	'centralauth-rightslog-entry-groupperms' => '改咗$1嘅成員組許可由$2到$3',
-	'centralauth-rightslog-header'		 => '呢個日誌包括咗全域組嘅動作：組同許可更改',
-
-	// Global group membership
-	'globalgroupmembership'			=> '響全域組嘅成員',
-
-	// Global group permissions
+	'centralauth-login-progress'                      => '幫你登入緊去Wikimedia嘅其它計劃:',
+	'centralauth-logout-progress'                     => '幫你登出緊自Wikimedia嘅其它計劃:',
+	'centralauth-log-name'                            => '全域戶口日誌',
+	'centralauth-log-header'                          => '呢個日誌包含咗全域戶口嘅動作: 刪除、鎖同解鎖。',
+	'centralauth-log-entry-delete'                    => '已經刪咗全域戶口"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'                      => '已經鎖咗全域戶口"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'                    => '已經解鎖全域戶口"<nowiki>$1</nowiki>"',
+	'centralauth-rightslog-name'                      => '全域權限日誌',
+	'centralauth-rightslog-entry-usergroups'          => '改咗$1嘅全域成員組由$2到$3',
+	'centralauth-rightslog-entry-groupperms'          => '改咗$1嘅成員組許可由$2到$3',
+	'centralauth-rightslog-header'                    => '呢個日誌包括咗全域組嘅動作：組同許可更改',
+	'globalgroupmembership'                           => '響全域組嘅成員',
 	'globalgrouppermissions'                          => '全域組管理',
 	'centralauth-globalgroupperms-grouplist'          => '下面嘅全域組已經較好。你可以去睇或編輯任何組指定嘅許可。響組度亦都可以拎走全部權限去刪除佢。',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|去睇同編輯許可]])',
@@ -11725,7 +11497,7 @@ $messages['yue'] = array(
 	'centralauth-editgroup-subtitle'                  => '編輯$1',
 	'centralauth-editgroup-fieldset'                  => '$1嘅許可',
 	'centralauth-editgroup-name'                      => '組名:',
-	'centralauth-editgroup-display'	                  => '本地化組名:',
+	'centralauth-editgroup-display'                   => '本地化組名:',
 	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|編輯]])',
 	'centralauth-editgroup-member'                    => '本地化組成員名:',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|編輯]])',
@@ -11738,24 +11510,22 @@ $messages['yue'] = array(
 	'centralauth-editgroup-success-text'              => '你已經成功噉改咗$1組嘅組許可。[[Special:GlobalGroupPermissions|返去組管理]]',
 	'centralauth-globalgrouppermissions-knownwiki'    => '揀一個響佢哋有戶口嘅wiki:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "個全域用戶'''$1'''響你所指定嘅wiki('' $2 '')並唔活躍。你可能嘗試指定緊許可到錯嘅用戶!",
-
-	// User rights
-	'right-globalgroupmembership'  => '編輯成員到全域組',
-	'right-centralauth-admin'      => '管理全域戶口',
-	'right-centralauth-merge'      => '合併佢哋嘅戶口',
-	'right-globalgrouppermissions' => '管理全域組',
+	'right-globalgroupmembership'                     => '編輯成員到全域組',
+	'right-centralauth-admin'                         => '管理全域戶口',
+	'right-centralauth-merge'                         => '合併佢哋嘅戶口',
+	'right-globalgrouppermissions'                    => '管理全域組',
 );
 
-/** Old Chinese / Late Time Chinese 文言
+/** Classical Chinese (文言)
  * @author Itsmine
  */
 $messages['zh-classical'] = array(
-	'centralauth-desc'                                => '[[Special:MergeAccount|混一]]籍口',
-	'centralauth-complete'                            => '成矣﹗',
-	'centralauth-incomplete'                          => '未成矣﹗',
-	'centralauth-complete-text'                       => '而今而後，足下行乎維基，一號即可貫之，不必復籍焉。',
-	'centralauth-incomplete-text'                     => '一號合矣，爾可貫之；同名號用典字書他也。',
-	'centralauth-blocked-text'                        => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
+	'centralauth-desc'            => '[[Special:MergeAccount|混一]]籍口',
+	'centralauth-complete'        => '成矣﹗',
+	'centralauth-incomplete'      => '未成矣﹗',
+	'centralauth-complete-text'   => '而今而後，足下行乎維基，一號即可貫之，不必復籍焉。',
+	'centralauth-incomplete-text' => '一號合矣，爾可貫之；同名號用典字書他也。',
+	'centralauth-blocked-text'    => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
@@ -11763,159 +11533,152 @@ $messages['zh-classical'] = array(
  * @author 下一次登录
  */
 $messages['zh-hans'] = array(
-	'mergeaccount'                         => '用户账户整合',
-	'centralauth-desc'                     => '[[Special:MergeAccount|合并]]维基媒体基金会下属维基项目的账户',
-	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|将多个账户合并]]为单一用户账户',
-	'centralauth-merge-denied'             => '很抱歉，您没有权限存取这个页面',
-	'centralauth-merge-notlogged'          => '请<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 登录]</span>并检查您的账号是否已被完全合并。',
-	'centralauth-merge-welcome'            => "'''您的用户账户还未被迁移到维基媒体的整合账户系统。'''
+	'mergeaccount'                                    => '用户账户整合',
+	'centralauth-desc'                                => '[[Special:MergeAccount|合并]]维基媒体基金会下属维基项目的账户',
+	'centralauth-mergeaccount-desc'                   => '[[Special:MergeAccount|将多个账户合并]]为单一用户账户',
+	'centralauth-merge-denied'                        => '很抱歉，您没有权限存取这个页面',
+	'centralauth-merge-notlogged'                     => '请<span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} 登录]</span>并检查您的账号是否已被完全合并。',
+	'centralauth-merge-welcome'                       => "'''您的用户账户还未被迁移到维基媒体的整合账户系统。'''
 
 一旦您决定迁移您的账户，您便可以通过相同的用户名和密码登录到维基媒体下属所有维基项目的所有语言版本。这可以方便您在[http://commons.wikimedia.org/ 维基共享资源]这样的共享项目中进行一些工作，并避免在不同的项目中因不同用户选用相同用户名而造成的混淆与冲突。
 
 如果在另一个维基项目上已有其他人选用了您的用户名，他们也不会受到干扰。不过，此后您将有一个与他们或该项目管理员协商解决该问题的机会。",
-	'centralauth-merge-step1-title'        => '开始整合用户账户',
-	'centralauth-merge-step1-detail'       => '请在这里输入您的帐户密码。您的密码以及电子邮件地址将会与其他项目的数据进行比对，以确认它们是一致的。所有数据在您确认没有问题之前均不会更改。',
-	'centralauth-merge-step1-submit'       => '确认账户数据',
-	'centralauth-merge-step2-title'        => '确认更多账户',
-	'centralauth-merge-step2-detail'       => '有一部分的账户没有与主维基项目自动匹配上。如果您拥有这些账户，请提供这些账户的密码以确认它们的归属人。',
-	'centralauth-merge-step2-submit'       => '确认账户数据',
-	'centralauth-merge-dryrun-complete'    => '所有已存在的的账户都能被自动整合！
+	'centralauth-merge-step1-title'                   => '开始整合用户账户',
+	'centralauth-merge-step1-detail'                  => '请在这里输入您的帐户密码。您的密码以及电子邮件地址将会与其他项目的数据进行比对，以确认它们是一致的。所有数据在您确认没有问题之前均不会更改。',
+	'centralauth-merge-step1-submit'                  => '确认账户数据',
+	'centralauth-merge-step2-title'                   => '确认更多账户',
+	'centralauth-merge-step2-detail'                  => '有一部分的账户没有与主维基项目自动匹配上。如果您拥有这些账户，请提供这些账户的密码以确认它们的归属人。',
+	'centralauth-merge-step2-submit'                  => '确认账户数据',
+	'centralauth-merge-dryrun-complete'               => '所有已存在的的账户都能被自动整合！
 
 目前尚未对您的帐号进行任何修改。',
-	'centralauth-merge-dryrun-incomplete'  => '您的账户已经确认完毕并准备进行整合作业，但部份帐号无法确认，也将不会立即合并。您可以在稍后再次合并这些账户。
+	'centralauth-merge-dryrun-incomplete'             => '您的账户已经确认完毕并准备进行整合作业，但部份帐号无法确认，也将不会立即合并。您可以在稍后再次合并这些账户。
 
 目前尚未对您的帐号进行任何修改。',
-	'centralauth-merge-dryrun-or'          => "'''或者是'''",
-	'centralauth-merge-step3-title'        => '创建整合账户',
-	'centralauth-merge-step3-detail'       => '在以下维基项目中，您已为创建整合账户作好了准备：',
-	'centralauth-merge-step3-submit'       => '整合账户',
-	'centralauth-complete'                 => '账户整合完成！',
-	'centralauth-incomplete'               => '账户整合未完成！',
-	'centralauth-complete-text'            => '您现在可以登录到维基媒体的其他维基项目中，而无需创建一个新的账号；相同的用户名和密码会适用于维基百科、维基词典、维基教科书及其他姐妹项目的所有语言版本。',
-	'centralauth-incomplete-text'          => '当您的账户被整合后，您将能够登录到任何一处维基媒体的维基项目站点，而无需创建一个新的账户；相同的用户名和密码会适用于维基百科、维基词典、维基教科书及其他姐妹项目的所有语言版本。',
-	'centralauth-not-owner-text'           => '用户名“$1”已被自动分配给$2上的账户。
+	'centralauth-merge-dryrun-or'                     => "'''或者是'''",
+	'centralauth-merge-step3-title'                   => '创建整合账户',
+	'centralauth-merge-step3-detail'                  => '在以下维基项目中，您已为创建整合账户作好了准备：',
+	'centralauth-merge-step3-submit'                  => '整合账户',
+	'centralauth-complete'                            => '账户整合完成！',
+	'centralauth-incomplete'                          => '账户整合未完成！',
+	'centralauth-complete-text'                       => '您现在可以登录到维基媒体的其他维基项目中，而无需创建一个新的账号；相同的用户名和密码会适用于维基百科、维基词典、维基教科书及其他姐妹项目的所有语言版本。',
+	'centralauth-incomplete-text'                     => '当您的账户被整合后，您将能够登录到任何一处维基媒体的维基项目站点，而无需创建一个新的账户；相同的用户名和密码会适用于维基百科、维基词典、维基教科书及其他姐妹项目的所有语言版本。',
+	'centralauth-not-owner-text'                      => '用户名“$1”已被自动分配给$2上的账户。
 
 如果这是您的账户，请输入该账户的密码，以完成账户整合的过程：',
-	'centralauth-blocked-text'             => '您的自家wiki（在下面列出）正在封锁中不能编辑。请联络在这个wiki上的操作员去解除封锁它。当它正被封锁时，您是不可以合并您的帐户。',
-	'centralauth-notice-dryrun'            => "<div class='successbox'>此功能处于演示模式。</div><br clear='all'/>",
-	'centralauth-disabled-dryrun'          => '账户整合功能正处于演示／除错模式，因此实际的合并操作已被禁止。抱歉！',
-	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|关于'''账户整合'''的更多内容]]……''",
-	'centralauth-list-home-title'          => '主维基项目',
-	'centralauth-list-home-dryrun'         => '在本维基项目中设定的密码与电子邮件地址将会被用在您的整合账户中，而您在这里的用户页也会自动与其他项目的相关页面建立相互的链接。此后，您还可以改变您的主维基项目。',
-	'centralauth-list-attached-title'      => '并入账户',
-	'centralauth-list-attached'            => '以下站点中名为“$1”的账户均会被自动并入整合账户中：',
-	'centralauth-list-attached-dryrun'     => '以下站点中名为“$1”的账户均会被自动并入整合账户中：',
-	'centralauth-list-unattached-title'    => '无法并入账户',
-	'centralauth-list-unattached'          => '无法自动确认您拥有以下站点中账户“$1”的所有权；它们可能使用了与您的主账户相异的密码：',
-	'centralauth-foreign-link'             => '$2上的用户$1',
-	'centralauth-merge-method-primary'     => '主账户',
-	'centralauth-merge-method-empty'       => '没有任何贡献',
-	'centralauth-merge-method-mail'        => '经电子邮件确认',
-	'centralauth-merge-method-password'    => '经密码确认',
-	'centralauth-merge-method-admin'       => '管理整合账户',
-	'centralauth-merge-method-new'         => '新账户',
-	'centralauth-merge-method-login'       => '经登入确认',
-	'centralauth-finish-title'             => '合并完成',
-	'centralauth-finish-text'              => '如果您的确拥有这些账户，您只需在此输入它们所使用的密码便可完成账户整合过程：',
-	'centralauth-finish-password'          => '密码：',
-	'centralauth-finish-login'             => '登录',
-	'centralauth-finish-send-confirmation' => '电子邮件密码',
-	'centralauth-finish-problems'          => '发生错误，您是否不拥有这些账户？[[meta:Help:Unified login problems|寻求帮助]]……',
-	'centralauth-finish-noconfirms'        => '没有账户可经密码确认。',
-	'centralauth-finish-incomplete'        => '部份账户已经由密码整合，其他帐号尚未确认。',
-	'centralauth-merge-attempt'            => "'''检查未合并账户的密码……'''",
-	'centralauth-attach-list-attached'     => '名为“$1”的整合账户包括下列账户：',
-	'centralauth-attach-title'             => '账户确认',
-	'centralauth-attach-text'              => '此账户还未被迁移到整合账户中。如果您已经拥有了一个整合账户，您可以在此输入该整合账户的密码来并入此账户：',
-	'centralauth-attach-submit'            => '账户迁移',
-	'centralauth-attach-success'           => '该账户已被迁移到整合账户中。',
-	'centralauth'                          => '整合账户管理',
-	'centralauth-admin-manage'             => '管理用户资料',
-	'centralauth-admin-username'           => '用户名：',
-	'centralauth-admin-lookup'             => '查看或编辑用户资料',
-	'centralauth-admin-permission'         => '只有监管员才能为他人合并账户。',
-	'centralauth-admin-no-unified'         => '没有这个整合账户名称。',
-	'centralauth-admin-info-id'            => '用户编号：',
-	'centralauth-admin-info-registered'    => '登录时间：',
-	'centralauth-admin-info-locked'        => '锁定：',
-	'centralauth-admin-info-hidden'        => '隐藏：',
-	'centralauth-admin-yes'                => '是',
-	'centralauth-admin-no'                 => '否',
-	'centralauth-admin-attached'           => '所有已合并的账户',
-	'centralauth-admin-unattached'         => '未附属的账户',
-	'centralauth-admin-no-unattached'      => '没有任何未迁移的账户。',
-	'centralauth-admin-list-localwiki'     => '本地维基站',
-	'centralauth-admin-list-attached-on'   => '合并时间',
-	'centralauth-admin-list-method'        => '验证方式',
-	'centralauth-admin-unmerge'            => '拆分选中的账户',
-	'centralauth-admin-merge'              => '合并选中的账户',
-	'centralauth-admin-bad-input'          => '合并所选项时发生错误',
-	'centralauth-admin-none-selected'      => '选中的账户未被修改。',
-	'centralauth-admin-already-unmerged'   => '正在跳过$1，已经取消合并',
-	'centralauth-admin-unmerge-success'    => '已经取消合并$1个账户',
-	'centralauth-admin-delete-title'       => '删除账户',
-	'centralauth-admin-delete-description' => '删除个全域账户会删除任何的全域参数设置，解除全部附加上去的账户，保留全域名称给另一位用户使用。
+	'centralauth-blocked-text'                        => '您的自家wiki（在下面列出）正在封锁中不能编辑。请联络在这个wiki上的操作员去解除封锁它。当它正被封锁时，您是不可以合并您的帐户。',
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>此功能处于演示模式。</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'                     => '账户整合功能正处于演示／除错模式，因此实际的合并操作已被禁止。抱歉！',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|关于'''账户整合'''的更多内容]]……''",
+	'centralauth-list-home-title'                     => '主维基项目',
+	'centralauth-list-home-dryrun'                    => '在本维基项目中设定的密码与电子邮件地址将会被用在您的整合账户中，而您在这里的用户页也会自动与其他项目的相关页面建立相互的链接。此后，您还可以改变您的主维基项目。',
+	'centralauth-list-attached-title'                 => '并入账户',
+	'centralauth-list-attached'                       => '以下站点中名为“$1”的账户均会被自动并入整合账户中：',
+	'centralauth-list-attached-dryrun'                => '以下站点中名为“$1”的账户均会被自动并入整合账户中：',
+	'centralauth-list-unattached-title'               => '无法并入账户',
+	'centralauth-list-unattached'                     => '无法自动确认您拥有以下站点中账户“$1”的所有权；它们可能使用了与您的主账户相异的密码：',
+	'centralauth-foreign-link'                        => '$2上的用户$1',
+	'centralauth-merge-method-primary'                => '主账户',
+	'centralauth-merge-method-empty'                  => '没有任何贡献',
+	'centralauth-merge-method-mail'                   => '经电子邮件确认',
+	'centralauth-merge-method-password'               => '经密码确认',
+	'centralauth-merge-method-admin'                  => '管理整合账户',
+	'centralauth-merge-method-new'                    => '新账户',
+	'centralauth-merge-method-login'                  => '经登入确认',
+	'centralauth-finish-title'                        => '合并完成',
+	'centralauth-finish-text'                         => '如果您的确拥有这些账户，您只需在此输入它们所使用的密码便可完成账户整合过程：',
+	'centralauth-finish-password'                     => '密码：',
+	'centralauth-finish-login'                        => '登录',
+	'centralauth-finish-send-confirmation'            => '电子邮件密码',
+	'centralauth-finish-problems'                     => '发生错误，您是否不拥有这些账户？[[meta:Help:Unified login problems|寻求帮助]]……',
+	'centralauth-finish-noconfirms'                   => '没有账户可经密码确认。',
+	'centralauth-finish-incomplete'                   => '部份账户已经由密码整合，其他帐号尚未确认。',
+	'centralauth-merge-attempt'                       => "'''检查未合并账户的密码……'''",
+	'centralauth-attach-list-attached'                => '名为“$1”的整合账户包括下列账户：',
+	'centralauth-attach-title'                        => '账户确认',
+	'centralauth-attach-text'                         => '此账户还未被迁移到整合账户中。如果您已经拥有了一个整合账户，您可以在此输入该整合账户的密码来并入此账户：',
+	'centralauth-attach-submit'                       => '账户迁移',
+	'centralauth-attach-success'                      => '该账户已被迁移到整合账户中。',
+	'centralauth'                                     => '整合账户管理',
+	'centralauth-admin-manage'                        => '管理用户资料',
+	'centralauth-admin-username'                      => '用户名：',
+	'centralauth-admin-lookup'                        => '查看或编辑用户资料',
+	'centralauth-admin-permission'                    => '只有监管员才能为他人合并账户。',
+	'centralauth-admin-no-unified'                    => '没有这个整合账户名称。',
+	'centralauth-admin-info-id'                       => '用户编号：',
+	'centralauth-admin-info-registered'               => '登录时间：',
+	'centralauth-admin-info-locked'                   => '锁定：',
+	'centralauth-admin-info-hidden'                   => '隐藏：',
+	'centralauth-admin-yes'                           => '是',
+	'centralauth-admin-no'                            => '否',
+	'centralauth-admin-attached'                      => '所有已合并的账户',
+	'centralauth-admin-unattached'                    => '未附属的账户',
+	'centralauth-admin-no-unattached'                 => '没有任何未迁移的账户。',
+	'centralauth-admin-list-localwiki'                => '本地维基站',
+	'centralauth-admin-list-attached-on'              => '合并时间',
+	'centralauth-admin-list-method'                   => '验证方式',
+	'centralauth-admin-unmerge'                       => '拆分选中的账户',
+	'centralauth-admin-merge'                         => '合并选中的账户',
+	'centralauth-admin-bad-input'                     => '合并所选项时发生错误',
+	'centralauth-admin-none-selected'                 => '选中的账户未被修改。',
+	'centralauth-admin-already-unmerged'              => '正在跳过$1，已经取消合并',
+	'centralauth-admin-unmerge-success'               => '已经取消合并$1个账户',
+	'centralauth-admin-delete-title'                  => '删除账户',
+	'centralauth-admin-delete-description'            => '删除个全域账户会删除任何的全域参数设置，解除全部附加上去的账户，保留全域名称给另一位用户使用。
 全部的本地户口会继续存在。
 在合并之前已经建立了的本地账户会还原他们以前的值。',
-	'centralauth-admin-delete-button'      => '删除这个账户',
-	'centralauth-admin-delete-success'     => '已经删除"<nowiki>$1</nowiki>"的全域账户',
-	'centralauth-admin-nonexistent'        => '这里无"<nowiki>$1</nowiki>"的全域账户',
-	'centralauth-admin-delete-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
-	'centralauth-token-mismatch'           => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
-	'centralauth-admin-lock-title'         => '锁定账户',
-	'centralauth-admin-lock-description'   => '锁定这个账户会令到在任何的wiki中不可能登入。',
-	'centralauth-admin-lock-button'        => '锁定这个账户',
-	'centralauth-admin-lock-success'       => '已经成功地锁定"<nowiki>$1</nowiki>"的全域账户',
-	'centralauth-admin-lock-nonexistent'   => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
-	'centralauth-admin-unlock-title'       => '解除锁定账户',
-	'centralauth-admin-unlock-description' => '解除锁定账户将会令到它可以再登入。',
-	'centralauth-admin-unlock-button'      => '解除锁定这个账户',
-	'centralauth-admin-unlock-success'     => '已经成功地解除锁定"<nowiki>$1</nowiki>"的全域账户',
-	'centralauth-admin-unlock-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
-	'centralauth-admin-reason'             => '理由: ',
-	'globalusers'                          => '全域账户列表',
-	'centralauth-listusers-locked'         => '锁定',
-	'centralauth-listusers-attached'       => '于本地存在',
-	'centralauth-listusers-nolocal'        => '未附加或未于本地存在',
-	'centralauth-seconds-ago'              => '$1秒前',
-	'centralauth-minutes-ago'              => '$1分钟前',
-	'centralauth-hours-ago'                => '$1小时前',
-	'centralauth-days-ago'                 => '$1日前',
-	'centralauth-months-ago'               => '$1月前',
-	'centralauth-years-ago'                => '$1年前',
-	'centralauth-prefs-status'             => '整合账户状态：',
-	'centralauth-prefs-not-managed'        => '尚未启用整合账户',
-	'centralauth-prefs-unattached'         => '未确认',
-	'centralauth-prefs-complete'           => '全部完成！',
-	'centralauth-prefs-migration'          => '迁移中',
-	'centralauth-prefs-count-attached'     => '您在$1个项目中已拥有被激活的账户。',
-	'centralauth-prefs-count-unattached'   => '您在$1个项目中还有未被确认的账户。',
-	'centralauth-prefs-detail-unattached'  => '此项目站点还未被确认到整合账户。',
-	'centralauth-prefs-manage'             => '管理您的整合账户',
-	'centralauth-renameuser-abort'         => '<div class="errorbox">由于该账户已被迁移到整合账户系统，因此不能在本地对其用户名$1进行修改。</div>',
-	'centralauth-renameuser-exists'        => '<div class="errorbox">由于这个用户名已经预留给全域账户，因此不能在更改$2作为这个用户名。</div>',
-	'centralauth-invalid-wiki'             => '无这个wikil数据库: $1',
-	'centralauth-account-exists'           => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
-	'centralauth-autologin-desc'           => '这个版殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，
+	'centralauth-admin-delete-button'                 => '删除这个账户',
+	'centralauth-admin-delete-success'                => '已经删除"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-nonexistent'                   => '这里无"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-delete-nonexistent'            => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-token-mismatch'                      => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
+	'centralauth-admin-lock-title'                    => '锁定账户',
+	'centralauth-admin-lock-description'              => '锁定这个账户会令到在任何的wiki中不可能登入。',
+	'centralauth-admin-lock-button'                   => '锁定这个账户',
+	'centralauth-admin-lock-success'                  => '已经成功地锁定"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-lock-nonexistent'              => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-unlock-title'                  => '解除锁定账户',
+	'centralauth-admin-unlock-description'            => '解除锁定账户将会令到它可以再登入。',
+	'centralauth-admin-unlock-button'                 => '解除锁定这个账户',
+	'centralauth-admin-unlock-success'                => '已经成功地解除锁定"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-unlock-nonexistent'            => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-reason'                        => '理由: ',
+	'globalusers'                                     => '全域账户列表',
+	'centralauth-listusers-locked'                    => '锁定',
+	'centralauth-listusers-attached'                  => '于本地存在',
+	'centralauth-listusers-nolocal'                   => '未附加或未于本地存在',
+	'centralauth-seconds-ago'                         => '$1秒前',
+	'centralauth-minutes-ago'                         => '$1分钟前',
+	'centralauth-hours-ago'                           => '$1小时前',
+	'centralauth-days-ago'                            => '$1日前',
+	'centralauth-months-ago'                          => '$1月前',
+	'centralauth-years-ago'                           => '$1年前',
+	'centralauth-prefs-status'                        => '整合账户状态：',
+	'centralauth-prefs-not-managed'                   => '尚未启用整合账户',
+	'centralauth-prefs-unattached'                    => '未确认',
+	'centralauth-prefs-complete'                      => '全部完成！',
+	'centralauth-prefs-migration'                     => '迁移中',
+	'centralauth-prefs-count-attached'                => '您在$1个项目中已拥有被激活的账户。',
+	'centralauth-prefs-count-unattached'              => '您在$1个项目中还有未被确认的账户。',
+	'centralauth-prefs-detail-unattached'             => '此项目站点还未被确认到整合账户。',
+	'centralauth-prefs-manage'                        => '管理您的整合账户',
+	'centralauth-invalid-wiki'                        => '无这个wikil数据库: $1',
+	'centralauth-account-exists'                      => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
+	'centralauth-autologin-desc'                      => '这个版殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，
 	该中央登入系统会利用图像连结，指示您的浏览器响全部连接的网域度请求这个页面。
 	您在这一页面中不需要再给出任何的认证资料，即是什么也不用作。',
-	'centralauth-login-progress'           => '为您登入中至Wikimedia的其它计划:',
-	'centralauth-logout-progress'          => '为您登出中自Wikimedia的其它计划:',
-	'centralauth-log-name'                 => '全域账户日志',
-	'centralauth-log-header'               => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
-	'centralauth-log-entry-delete'         => '已经删除全域账户"<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-lock'           => '已经锁定全域账户"<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unlock'         => '已经解除锁定全域账户"<nowiki>$1</nowiki>"',
-
-	'centralauth-rightslog-name'		 => '全域权限日志',
-	'centralauth-rightslog-entry-usergroups' => '已经更改$1的全域成员组由$2到$3',
-	'centralauth-rightslog-entry-groupperms' => '已经更改$1的成员组许可由$2到$3',
-	'centralauth-rightslog-header'		 => '这个日志包含了全域组之动作：组及许可更改',
-
-	// Global group membership
-	'globalgroupmembership'			=> '在全域组中的成员',
-
-	// Global group permissions
+	'centralauth-login-progress'                      => '为您登入中至Wikimedia的其它计划:',
+	'centralauth-logout-progress'                     => '为您登出中自Wikimedia的其它计划:',
+	'centralauth-log-name'                            => '全域账户日志',
+	'centralauth-log-header'                          => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
+	'centralauth-log-entry-delete'                    => '已经删除全域账户"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'                      => '已经锁定全域账户"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'                    => '已经解除锁定全域账户"<nowiki>$1</nowiki>"',
+	'centralauth-rightslog-name'                      => '全域权限日志',
+	'centralauth-rightslog-entry-usergroups'          => '已经更改$1的全域成员组由$2到$3',
+	'centralauth-rightslog-entry-groupperms'          => '已经更改$1的成员组许可由$2到$3',
+	'centralauth-rightslog-header'                    => '这个日志包含了全域组之动作：组及许可更改',
+	'globalgroupmembership'                           => '在全域组中的成员',
 	'globalgrouppermissions'                          => '全域组管理',
 	'centralauth-globalgroupperms-grouplist'          => '以下的全域组已经设置好。您可以去查看或编辑任何组指定的许可。在组中亦都可以移除全部权限去删除它。',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|去查看及编辑许可]])',
@@ -11927,7 +11690,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-subtitle'                  => '编辑$1',
 	'centralauth-editgroup-fieldset'                  => '$1的许可',
 	'centralauth-editgroup-name'                      => '组名:',
-	'centralauth-editgroup-display'	                  => '本地化组名:',
+	'centralauth-editgroup-display'                   => '本地化组名:',
 	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|编辑]])',
 	'centralauth-editgroup-member'                    => '本地化组成员名:',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|编辑]])',
@@ -11940,18 +11703,15 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-success-text'              => '您已经成功地更改$1组的组许可。[[Special:GlobalGroupPermissions|回到组管理]]',
 	'centralauth-globalgrouppermissions-knownwiki'    => '选择一个响他们有账户的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "该全域用户'''$1'''在您所指定的wiki('' $2 '')中并不活跃。您可能正在尝试指定许可到错的用户!",
-
-	// User rights
-	'right-globalgroupmembership'  => '编辑成员至全域组',
-	'right-centralauth-admin'      => '管理全域账户',
-	'right-centralauth-merge'      => '合并他们的账户',
-	'right-globalgrouppermissions' => '管理全域组',
+	'right-globalgroupmembership'                     => '编辑成员至全域组',
+	'right-centralauth-admin'                         => '管理全域账户',
+	'right-centralauth-merge'                         => '合并他们的账户',
+	'right-globalgrouppermissions'                    => '管理全域组',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
  * @author Jasonzhuocn
- * @suthor Πrate (百楽兎)
  */
 $messages['zh-hant'] = array(
 	'mergeaccount'                                    => '使用者帳號整合',
@@ -12106,8 +11866,6 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-count-unattached'              => '您在$1個計劃中還有未確認的帳戶。',
 	'centralauth-prefs-detail-unattached'             => '這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage'                        => '管理您的全域帳戶',
-	'centralauth-renameuser-abort'                    => '<div class="errorbox">由於這個用戶名已經遷移到統一登入系統，因此不能在本地中更改$1作為這個用戶名。</div>',
-	'centralauth-renameuser-exists'                   => '<div class="errorbox">由於這個用戶名已經預留給全域帳戶，因此不能在更改$2作為這個用戶名。</div>',
 	'centralauth-invalid-wiki'                        => '無這個wiki資料庫: $1',
 	'centralauth-account-exists'                      => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 	'centralauth-autologin-desc'                      => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
