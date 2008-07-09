@@ -278,27 +278,31 @@ class CentralAuthHooks {
 	/**
 	 * Don't allow an attached local account to be renamed with the old system.
 	 */
-	static function onRenameUserAbort( $userId, $oldName, $newName ) {
+	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
 		$oldCentral = new CentralAuthUser( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
 			global $wgOut;
 			wfLoadExtensionMessages('SpecialCentralAuth');
-			$wgOut->addWikiMsg( 'centralauth-renameuser-abort', $oldName, $newName );
+			$warnings[] = array( 'centralauth-renameuser-abort', $oldName, $newName );
 			return false;
 		}
 		$newCentral = new CentralAuthUser( $newName );
-		if ( $newCentral->exists() ) {
+		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
 			global $wgOut;
 			wfLoadExtensionMessages('SpecialCentralAuth');
-			$wgOut->addWikiMsg( 'centralauth-renameuser-exists', $oldName, $newName );
-			return false;
+			$warnings[] = array( 'centralauth-renameuser-exists', $oldName, $newName );
 		}
-
-		// If no central record is present or this local account isn't attached,
-		// do as thou wilt.
 		return true;
 	}
-	
+
+	static function onRenameUserPreRename( $uid, $oldName, $newName ) {
+		$oldCentral = new CentralAuthUser( $oldName );
+		if( $oldCentral->exists() && $oldCentral->isAttached() ) {
+			$oldCentral->adminUnattach( array( wfWikiID() ) );
+		}
+		return true;
+	}
+
 	/**
 	 * When renaming an account, ensure that the presence records are updated.
 	 */

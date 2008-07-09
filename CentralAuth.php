@@ -166,7 +166,8 @@ $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 
 // For interaction with the Special:Renameuser extension
-$wgHooks['RenameUserAbort'][] = 'CentralAuthHooks::onRenameUserAbort';
+$wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
+$wgHooks['RenameUserPreRename'][] = 'CentralAuthHooks::onRenameUserPreRename';
 $wgHooks['RenameUserComplete'][] = 'CentralAuthHooks::onRenameUserComplete';
 
 $wgAvailableRights[] = 'centralauth-admin';
