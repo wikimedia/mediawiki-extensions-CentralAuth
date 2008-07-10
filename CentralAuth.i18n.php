@@ -685,6 +685,7 @@ $messages['ar'] = array(
 	'centralauth-admin-unhide-nonexistent'            => 'خطأ: الحساب العام "<nowiki>$1</nowiki>" غير موجود.',
 	'centralauth-admin-reason'                        => 'السبب:',
 	'centralauth-admin-lockandhide-title'             => 'غلق وإخفاء الحساب',
+	'centralauth-admin-lockandhide-description'       => 'إغلاق وإخفاء هذا الحساب سيمنعه من تسجيل الدخول في أي ويكي، وسيخفيه من [[Special:GlobalUsers|قائمة المستخدمين العامين]].',
 	'centralauth-admin-lockandhide-button'            => 'غلق وإخفاء هذا الحساب',
 	'centralauth-admin-lockandhide-success'           => 'أغلق وأخفى الحساب بنجاح',
 	'centralauth-admin-lockandhide-nonexistent'       => 'خطأ: الحساب العام "<nowiki>$1</nowiki>" غير موجود.',
@@ -707,6 +708,8 @@ $messages['ar'] = array(
 	'centralauth-prefs-count-unattached'              => 'حسابات غير مؤكدة باسمك موجودة في $1 {{PLURAL:$1|مشروع|مشروع}}.',
 	'centralauth-prefs-detail-unattached'             => 'موقع المشروع هذا لم يتم تأكيده كمنتمي للحساب العام.',
 	'centralauth-prefs-manage'                        => 'أدر حسابك العام',
+	'centralauth-renameuser-merged'                   => 'المستخدم $1 انتقل إلى نظام الدخول الموحد. إعادة تسميته ستؤدي إلى أن المستخدم المحلي سينفصلعن المستخدم العام.',
+	'centralauth-renameuser-reserved'                 => 'المستخدم $2 محجوز لحساب عام.',
 	'centralauth-invalid-wiki'                        => 'لا توجد قاعدة بيانات ويكي كهذه: $1',
 	'centralauth-account-exists'                      => 'لم يمكن إنشاء الحساب: اسم المستخدم المطلوب مأخوذ بالفعل في نظام الدخول الموحد.',
 	'centralauth-autologin-desc'                      => 'هذه الصفحة الخاصة تستخدم داخليا بواسطة ميدياويكي.
@@ -721,9 +724,11 @@ $messages['ar'] = array(
 	'centralauth-log-entry-unlock'                    => 'رفع غلق الحساب العام "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-hide'                      => 'أخفى الحساب العام "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide'                    => 'أظهر الحساب العام "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lockandhide'               => 'أغلق وأخفى الحساب العام "<nowiki>$1</nowiki>"',
 	'centralauth-rightslog-name'                      => 'سجل الصلاحيات العام',
 	'centralauth-rightslog-entry-usergroups'          => 'غير عضوية المجموعة العامة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-entry-groupperms'          => 'غير سماحات المجموعة ل$1 من $2 إلى $3',
+	'centralauth-rightslog-entry-groupperms2'         => 'غير صلاحيات المجموعة ل$1. أضاف $2؛ أزال $3',
 	'centralauth-rightslog-header'                    => 'هذا السجل يحتوي على العمليات على المجموعات العامة: العضوية وتغييرات السماحات',
 	'globalgroupmembership'                           => 'العضوية في المجموعات العامة',
 	'globalgrouppermissions'                          => 'التحكم بالمجموعة العامة',
@@ -962,6 +967,23 @@ $messages['be'] = array(
 	'centralauth-prefs-unattached'   => 'Не пацверджана',
 	'centralauth-prefs-complete'     => 'Усё ў парадку!',
 	'centralauth-prefs-migration'    => 'Адбываецца перанос',
+);
+
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
+ */
+$messages['be-tarask'] = array(
+	'centralauth-merge-method-empty'            => 'няма ўнёску',
+	'centralauth-merge-method-new'              => 'новы рахунак удзельніка',
+	'centralauth-finish-password'               => 'Пароль:',
+	'centralauth-finish-send-confirmation'      => 'Даслаць пароль па электроннай пошце',
+	'centralauth-admin-username'                => 'Імя ўдзельніка:',
+	'centralauth-admin-no'                      => 'не',
+	'centralauth-admin-reason'                  => 'Прычына:',
+	'centralauth-existinggroup-legend'          => 'Існуючыя групы',
+	'centralauth-newgroup-legend'               => 'Стварыць новую групу',
+	'centralauth-globalgroupperms-newgroupname' => 'Назва новай групы:',
+	'centralauth-editgroup-name'                => 'Назва групы:',
 );
 
 /** Bulgarian (Български)
@@ -3220,6 +3242,8 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-prefs-count-unattached'              => 'Il y a $1 {{PLURAL:$1|projet sur lequel|projets sur lesquels}} il existe un compte non confirmé avec le même nom d’utilisateur que le vôtre.',
 	'centralauth-prefs-detail-unattached'             => 'Votre compte sur ce projet n’a pas pu être rattaché au compte unique.',
 	'centralauth-prefs-manage'                        => 'Gérez votre compte global',
+	'centralauth-renameuser-merged'                   => 'L’utilisateur $1 a subi une migration vers le système de compte unifié. Son renommage provoquera, pour l’utilisateur local, d’être séparé du compte global.',
+	'centralauth-renameuser-reserved'                 => 'L’utilisateur $2 est réservé pour le compte global.',
 	'centralauth-invalid-wiki'                        => 'Aucune base de donnée wiki : $1',
 	'centralauth-account-exists'                      => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà actif dans le système des comptes unifiés.',
 	'centralauth-autologin-desc'                      => 'Cette page spéciale est utilisée par MediaWiki en interne.
@@ -3532,6 +3556,8 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-prefs-count-unattached'              => 'Quedan contas sen confirmar co seu nome {{PLURAL:$1|nun proxecto|en $1 proxectos}}.',
 	'centralauth-prefs-detail-unattached'             => 'Non se confirmou que o sitio do proxecto pertenza á conta global.',
 	'centralauth-prefs-manage'                        => 'Xestionar a súa conta global',
+	'centralauth-renameuser-merged'                   => 'O usuario "$2" foi migrado ao sistema de rexistro unificado. Ao renomealo causará que o usuario local sexa alonxado do global.',
+	'centralauth-renameuser-reserved'                 => 'O usuario "$2" está reservado para unha conta global.',
 	'centralauth-invalid-wiki'                        => 'Non existe a base de datos do wiki: $1',
 	'centralauth-account-exists'                      => 'Non se pode crear a conta: o nome de usuario solicitado é usado no sistema de rexistro unificado.',
 	'centralauth-autologin-desc'                      => 'Esta páxina especial é usada internamente por MediaWiki.
@@ -4640,7 +4666,9 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 $messages['ia'] = array(
 	'centralauth-merge-dryrun-or' => "'''o'''",
 	'centralauth-finish-password' => 'Contrasigno:',
+	'centralauth-finish-login'    => 'Aperir un session',
 	'centralauth-admin-username'  => 'Nomine de usator:',
+	'centralauth-admin-info-id'   => 'ID del usator:',
 	'centralauth-admin-reason'    => 'Motivo:',
 );
 
@@ -4813,6 +4841,8 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-prefs-count-unattached'              => 'Akun dengan nama Anda yang belum terkonfirmasi masih terdapat dalam $1 {{PLURAL:$1|proyek|proyek}}.',
 	'centralauth-prefs-detail-unattached'             => 'Situs proyek ini belum dikonfirmasi sebagai bagian dari akun global.',
 	'centralauth-prefs-manage'                        => 'Kelola akun global Anda',
+	'centralauth-renameuser-merged'                   => 'Pengguna $1 telah menjadi sistem akun global. Penggantian nama yang bersangkutan akan menyebabkan akun lokal tersebut terpisahkan dari akun globalnya.',
+	'centralauth-renameuser-reserved'                 => 'Pengguna $2 telah dicadangkan sebagai akun global.',
 	'centralauth-invalid-wiki'                        => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists'                      => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-autologin-desc'                      => 'Halaman istimewa ini digunakan secara internal oleh MediaWiki.
@@ -7338,6 +7368,8 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-prefs-count-unattached'              => 'Akaun dengan nama anda di $1 buah projek belum disahkan.',
 	'centralauth-prefs-detail-unattached'             => 'Projek ini tidak disahkan sebagai milikan akaun sejagat tersebut.',
 	'centralauth-prefs-manage'                        => 'Urus akaun sejagat anda',
+	'centralauth-renameuser-merged'                   => 'Pengguna $1 telah dipindahkan ke sistem akaun bersatu. Penukaran nama akan menyebabkan pengguna ini dipisahkan daripada akaun sejagat.',
+	'centralauth-renameuser-reserved'                 => 'Pengguna $2 telah ditempah untuk akaun sejagat.',
 	'centralauth-invalid-wiki'                        => 'Pangkalan data wiki tiada: $1',
 	'centralauth-account-exists'                      => 'Tidak dapat membuka akaun: nama pengguna yang diminta telah pun didaftarkan dalam sistem akaun bersatu.',
 	'centralauth-autologin-desc'                      => 'Laman khas ini digunakan dari dalam MediaWiki.
@@ -7738,6 +7770,8 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached'              => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached'             => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
 	'centralauth-prefs-manage'                        => 'Uw globale gebruiker beheren',
+	'centralauth-renameuser-merged'                   => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.',
+	'centralauth-renameuser-reserved'                 => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
 	'centralauth-invalid-wiki'                        => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists'                      => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
 	'centralauth-autologin-desc'                      => 'Deze pagina wordt intern door MediaWiki gebruikt.
@@ -9088,6 +9122,8 @@ $messages['ru'] = array(
 	'centralauth-prefs-count-unattached'              => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
 	'centralauth-prefs-detail-unattached'             => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage'                        => 'Управление глобальной учётной записью',
+	'centralauth-renameuser-merged'                   => 'Участник $1 перешёл на единую систему входа, его переименование вызовет потерю связи локального участника с глобальной учётной записью.',
+	'centralauth-renameuser-reserved'                 => 'Имя участника $2 зарезервировано для глобальной учётной записи.',
 	'centralauth-invalid-wiki'                        => 'Нет такой вики БД: $1',
 	'centralauth-account-exists'                      => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
 	'centralauth-autologin-desc'                      => 'Эта служебная страница предназначена для внутреннего использования в MediaWiki.
@@ -9465,6 +9501,8 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-prefs-count-unattached'              => 'Nepotvrdené účty s vašim menom zostávajú na $1 {{PLURAL:$1|projekte|projektoch}}.',
 	'centralauth-prefs-detail-unattached'             => 'Nebolo potvrdené, že účet na tomto projekte patrí ku globálnemu účtu.',
 	'centralauth-prefs-manage'                        => 'Spravovať váš globálny účet',
+	'centralauth-renameuser-merged'                   => 'Používateľ $1 bol prevedený do zjednoteného prihlasovacieho systému. Ak ho premenujete, lokálny používateľ bude odpojený od globálneho účtu.',
+	'centralauth-renameuser-reserved'                 => 'Používateľ $2 je vyhradený pre globálny účet.',
 	'centralauth-invalid-wiki'                        => 'Taká DB wiki neexistuje: $1',
 	'centralauth-account-exists'                      => 'Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.',
 	'centralauth-autologin-desc'                      => 'Túto špeciálnu stránku vnútorne využíva MediaWiki.
@@ -10124,6 +10162,8 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-prefs-count-unattached'              => 'Obekräftade konton med ditt namn finns fortfarande på $1 projekt.',
 	'centralauth-prefs-detail-unattached'             => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
 	'centralauth-prefs-manage'                        => 'Hantera ditt gemensamma konto',
+	'centralauth-renameuser-merged'                   => 'Användare $1 har anslutits till systemet för gemensam inloggning. Att byta dess namn kommer att leda till att den lokala användaren separeras från sitt gemensamma konto.',
+	'centralauth-renameuser-reserved'                 => 'Användare $2 är reserverad för ett globalt konto.',
 	'centralauth-invalid-wiki'                        => 'Ingen sådan databas: $1',
 	'centralauth-account-exists'                      => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
 	'centralauth-autologin-desc'                      => 'Den här specialsidan används internt av MediaWiki.
