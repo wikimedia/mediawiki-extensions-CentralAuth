@@ -488,6 +488,8 @@ As palabras de paso t'as cuentas locals creyatas antis d'a unificazión tornará
 	'centralauth-prefs-count-unattached'              => 'Quedan cuentas no confirmatas con o suyo nombre en $1 {{PLURAL:$1|procheuto|procheutos}}.',
 	'centralauth-prefs-detail-unattached'             => "Iste procheuto no s'ha confirmau como parte d'a cuenta global.",
 	'centralauth-prefs-manage'                        => 'Almenistrar a suya cuenta global',
+	'centralauth-renameuser-merged'                   => "L'usuario $1 s'ha migrato ta o sistema d'aczeso unificato. Si lo renombre fará que o usuario local se desligue de l'usuario global.",
+	'centralauth-renameuser-reserved'                 => "O nombre d'usuario $2 ye reserbato por una cuenta global.",
 	'centralauth-invalid-wiki'                        => "No s'ha trobau a base de datos d'o wiki: $1",
 	'centralauth-account-exists'                      => "No s'ha puesto creyar a cuenta: o nombre d'usuario requiesto ya ye pillau en o sistema de cuentas unificato.",
 	'centralauth-autologin-desc'                      => "Ista pachina espezial la fa serbir MediaWiki internament.
