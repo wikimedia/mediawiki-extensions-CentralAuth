@@ -980,6 +980,7 @@ $messages['be-tarask'] = array(
 	'centralauth-finish-password'               => 'Пароль:',
 	'centralauth-finish-send-confirmation'      => 'Даслаць пароль па электроннай пошце',
 	'centralauth-admin-username'                => 'Імя ўдзельніка:',
+	'centralauth-admin-yes'                     => 'так',
 	'centralauth-admin-no'                      => 'не',
 	'centralauth-admin-reason'                  => 'Прычына:',
 	'centralauth-existinggroup-legend'          => 'Існуючыя групы',
