@@ -1754,7 +1754,21 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-admin-unlock-button'                 => 'Odemknout tento účet',
 	'centralauth-admin-unlock-success'                => 'Globální účet „<nowiki>$1</nowiki>“ byl úspešně odemknut',
 	'centralauth-admin-unlock-nonexistent'            => 'Chyba: Globální účet „<nowiki>$1</nowiki>“ neexistuje.',
+	'centralauth-admin-hide-title'                    => 'Skrýt účet',
+	'centralauth-admin-hide-description'              => 'Skryté účty nejsou zobrazeny na stránce [[Special:GlobalUsers|globálních uživatelů]].',
+	'centralauth-admin-hide-button'                   => 'Skrýt tento účet',
+	'centralauth-admin-hide-success'                  => 'Globální účet „<nowiki>$1</nowiki>” byl úspěšně skryt.',
+	'centralauth-admin-hide-nonexistent'              => 'Chyba: globální účet „<nowiki>$1</nowiki>” neexistuje.',
+	'centralauth-admin-unhide-title'                  => 'Zrušit skrytí účtu',
+	'centralauth-admin-unhide-description'            => 'Po zrušení skrytí se účet znovu objeví na stránce [[Special:GlobalUsers|globálních uživatelů]].',
+	'centralauth-admin-unhide-button'                 => 'Zrušit skrytí tohoto účtu',
+	'centralauth-admin-unhide-success'                => 'Zrušení skrytí globálního účtu „<nowiki>$1</nowiki>” bylo úspěšně provedeno.',
+	'centralauth-admin-unhide-nonexistent'            => 'Chyba: globální účet „<nowiki>$1</nowiki>” neexistuje.',
 	'centralauth-admin-reason'                        => 'Důvod:',
+	'centralauth-admin-lockandhide-title'             => 'Zamknout a skrýt účet',
+	'centralauth-admin-lockandhide-button'            => 'Zamknout a skrýt tento účet',
+	'centralauth-admin-lockandhide-success'           => 'Účet byl úspěšně zamknut a skryt',
+	'centralauth-admin-lockandhide-nonexistent'       => 'Chyba: globální účet „<nowiki>$1</nowiki>” neexistuje.',
 	'globalusers'                                     => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked'                    => 'zamčený',
 	'centralauth-listusers-attached'                  => 'existuje lokálně',
@@ -1783,6 +1797,9 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-log-entry-delete'                    => 'smazal globální účet „<nowiki>$1</nowiki>“',
 	'centralauth-log-entry-lock'                      => 'zamkl globální účet „<nowiki>$1</nowiki>“',
 	'centralauth-log-entry-unlock'                    => 'odemkl globální účet „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-hide'                      => 'skryl globální účet „<nowiki>$1</nowiki>”',
+	'centralauth-log-entry-unhide'                    => 'zrušil skrytí globálního účtu „<nowiki>$1</nowiki>”',
+	'centralauth-log-entry-lockandhide'               => 'zamknul a skryl globální účet „<nowiki>$1</nowiki>”',
 	'centralauth-rightslog-name'                      => 'Kniha globálních práv',
 	'centralauth-rightslog-entry-usergroups'          => 'změnil členství $1 v globální skupině z $2 na $3',
 	'centralauth-rightslog-entry-groupperms'          => 'změnil oprávnění skupiny $1 z $2 na $3',
@@ -4697,12 +4714,13 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
  * @author McDutchie
  */
 $messages['ia'] = array(
-	'centralauth-merge-dryrun-or' => "'''o'''",
-	'centralauth-finish-password' => 'Contrasigno:',
-	'centralauth-finish-login'    => 'Aperir un session',
-	'centralauth-admin-username'  => 'Nomine de usator:',
-	'centralauth-admin-info-id'   => 'ID del usator:',
-	'centralauth-admin-reason'    => 'Motivo:',
+	'centralauth-merge-dryrun-or'          => "'''o'''",
+	'centralauth-finish-password'          => 'Contrasigno:',
+	'centralauth-finish-login'             => 'Aperir un session',
+	'centralauth-finish-send-confirmation' => 'Inviar contrasigno in e-mail',
+	'centralauth-admin-username'           => 'Nomine de usator:',
+	'centralauth-admin-info-id'            => 'ID del usator:',
+	'centralauth-admin-reason'             => 'Motivo:',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -5150,6 +5168,8 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-prefs-count-unattached'              => 'Ci sono account non confermati con il tuo nome utente su $1 progetti.',
 	'centralauth-prefs-detail-unattached'             => "Questo sito non è stato confermato come appartenente all'account globale.",
 	'centralauth-prefs-manage'                        => 'Gestione del tuo account globale',
+	'centralauth-renameuser-merged'                   => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.",
+	'centralauth-renameuser-reserved'                 => "L'utente $2 è riservato per un account globale.",
 	'centralauth-invalid-wiki'                        => 'Nessun DB wiki: $1',
 	'centralauth-account-exists'                      => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-autologin-desc'                      => 'Questa pagina speciale è usata internamente da MediaWiki.
@@ -5210,6 +5230,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
  * @author JtFuruhata
  * @author Marine-Blue
  * @author Broad-Sky
+ * @author Aotake
  */
 $messages['ja'] = array(
 	'mergeaccount'                         => '統一ログイン状態',
@@ -5274,6 +5295,7 @@ $messages['ja'] = array(
 	'centralauth-admin-merge'              => '選択された利用者を統合',
 	'centralauth-admin-bad-input'          => '統合の選択が不正です',
 	'centralauth-admin-none-selected'      => '修正対象のアカウントがひとつも選択されていません。',
+	'globalusers'                          => 'グローバルアカウントの登録利用者一覧',
 	'centralauth-prefs-status'             => '統一アカウントの状態:',
 	'centralauth-prefs-not-managed'        => '統一アカウントを利用していません',
 	'centralauth-prefs-unattached'         => '承認されていません',
@@ -6157,6 +6179,7 @@ $messages['km'] = array(
 	'centralauth-admin-hide-title'              => 'គណនីដែលត្រូវបានលាក់',
 	'centralauth-admin-hide-button'             => 'លាក់គណនីនេះ',
 	'centralauth-admin-reason'                  => 'មូលហេតុ៖',
+	'centralauth-admin-lockandhide-title'       => 'ចាក់សោនិងលាក់គណនី',
 	'centralauth-admin-lockandhide-button'      => 'ចាក់សោនិងលាក់គណនីនេះ',
 	'centralauth-listusers-locked'              => 'ត្រូវបានចាក់សោ',
 	'centralauth-seconds-ago'                   => '$1{{PLURAL:$1|វិនាទី|វិនាទី}}មុន',
@@ -7292,7 +7315,7 @@ Sekiranya anda pemilik akaun tersebut, anda boleh menamatkan proses penyatuan ak
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>Mod demonstrasi</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Pada masa sekarang, penyatuan akaun sedang dalam mod demonstrasi, oleh itu operasi penggabungan sebenar tidak dilakukan. Harap maaf!',
 	'centralauth-error-locked'                        => 'Anda tidak boleh menyunting kerana akaun anda telah dikunci.',
-	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Baca maklumat lanjut mengenai '''penyatuan akaun''']]…''",
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login/ms|Baca maklumat lanjut mengenai '''penyatuan akaun''']]…''",
 	'centralauth-list-home-title'                     => 'Wiki rumah',
 	'centralauth-list-home-dryrun'                    => 'Kata laluan dan alamat e-mel yang ditetapkan di wiki ini akan digunakan untuk akaun bersatu anda.
 Anfa boleh menukar wiki rumah anda selepas ini.',
@@ -8310,6 +8333,8 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-prefs-count-unattached'              => 'De comptes non confirmats amb lo meteis nom d’utilizaire que lo vòstre se tròban sus $1 projèctes.',
 	'centralauth-prefs-detail-unattached'             => 'Vòstre compte sus aqueste projècte a pas pogut èsser ratachat al compte unic.',
 	'centralauth-prefs-manage'                        => 'Administrar vòstre compte global',
+	'centralauth-renameuser-merged'                   => 'L’utilizaire $1 a patit una migracion cap al sistèma de compte unificat. Son cambiament de nom provocarà, per l’utilizaire local, d’èsser separat del compte global.',
+	'centralauth-renameuser-reserved'                 => 'L’utilizaire $2 es reservat pel compte global.',
 	'centralauth-invalid-wiki'                        => 'Cap de banca de donada wiki : $1',
 	'centralauth-account-exists'                      => 'Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.',
 	'centralauth-autologin-desc'                      => "Aquesta pagina especiala es utilizada per MediaWiki en intèrn.
