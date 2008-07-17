@@ -220,12 +220,6 @@ class CentralAuthHooks {
 			// Nothing to do.
 			return true;
 		}
-		
-		$centralUser = CentralAuthUser::getInstance( $user );
-		
-		if (!$centralUser->exists() || !$centralUser->isAttached()) {
-			return true;
-		}
 
 		// Generate the images
 		wfLoadExtensionMessages( 'SpecialCentralAuth' );

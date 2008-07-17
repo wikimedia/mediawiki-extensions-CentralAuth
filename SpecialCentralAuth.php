@@ -143,7 +143,7 @@ class SpecialCentralAuth extends SpecialPage {
 					global $wgLang;
 					$this->showSuccess( 'centralauth-admin-lockandhide-success', $this->mUserName );
 					$unhidden = true;
-					$this->logAction( 'lockandhid', $this->mUserName, $wgRequest->getVal( 'reason' ) );
+					$this->logAction( 'lockandhide', $this->mUserName, $wgRequest->getVal( 'reason' ) );
 				}
 			} else {
 				$this->showError( 'centralauth-admin-bad-input' );
