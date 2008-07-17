@@ -4914,7 +4914,54 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
  * @author McDutchie
  */
 $messages['ia'] = array(
+	'mergeaccount'                         => 'Stato del unification de contos',
+	'centralauth-desc'                     => '[[Special:MergeAccount|Fusionar le contos]] trans wikis del Fundation Wikimedia',
+	'centralauth-mergeaccount-desc'        => '[[Special:MergeAccount|Fusionar plure contos]] pro Sessiones a Usator Singule',
+	'centralauth-merge-denied'             => 'Pardono, tu non ha le permission de acceder a iste pagina.',
+	'centralauth-merge-notlogged'          => 'Per favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} aperi un session]</span> pro verificar que le fusion de tu contos sia complete.',
+	'centralauth-merge-welcome'            => "'''Tu conto de usator non ha ancora essite migrate al systema de contos unificate de Wikimedia.'''
+
+Si tu opta pro migrar tu contos, tu potera usar le mesme nomine de usator e contrasigno pro identificar te a tote le wikis de Wikimedia in tote le linguas disponibile.
+Isto facilita le labor con projectos usate in commun, p.ex. le cargamento de files a [http://commons.wikimedia.org/ Wikimedia Commons], e evita le confusion o conflicto que poterea resultar si duo personas selige le mesme nomine de usator in projectos differente.
+
+Si un altere persona ha jam occupate tu nomine de usator in un altere sito, iste operation non disturbara iste persona, sed tu potera negotiar le cosa plus tarde con iste persona o con un administrator.",
+	'centralauth-merge-step1-title'        => 'Comenciar unification de contos',
+	'centralauth-merge-step1-detail'       => 'Per favor entra hic le contrasigno de tu conto.
+Tu contrasigno e adresse de e-mail registrate essera comparate con le contos in altere wikis pro verificar que illos corresponde.
+Nulle cambios essera facite usque tu ha confirmate que le cosas pare esser in ordine.',
+	'centralauth-merge-step1-submit'       => 'Confirmar informationes de conto',
+	'centralauth-merge-step2-title'        => 'Confirmar altere contos',
+	'centralauth-merge-step2-detail'       => 'Alcunes del contos non poteva esser ligate automaticamente con tu conto in le wiki principal designate.
+Si iste contos totevia pertine a te, tu pote confirmar que illos es tue per fornir lor contrasignos.',
+	'centralauth-merge-step2-submit'       => 'Confirmar informationes de conto',
+	'centralauth-merge-dryrun-complete'    => 'Tote le contos existente pote esser automaticamente unificate!
+
+Nulle cambios ha ancora essite facite a tu contos.',
+	'centralauth-merge-dryrun-incomplete'  => 'Toto es in ordine pro continuar, sed alcun contos non pote esser automaticamente verificate e non essera migrate immediatemente.
+Tu potera fusionar los plus tarde.
+
+Nulle cambios ha ancora essite facite a tu contos.',
 	'centralauth-merge-dryrun-or'          => "'''o'''",
+	'centralauth-merge-dryrun-home'        => 'Le systema de migration non poteva confirmar que tu es le proprietario del conto al wiki principal pro tu nomine de usator.
+
+Un altere wiki esseva determinate como le conto principal pro tu nomine de usator; seque le ligamine infra e aperi un session ibi pro completar le migration de tu contos.',
+	'centralauth-merge-step3-title'        => 'Crear conto unificate',
+	'centralauth-merge-step3-detail'       => 'Tu es preste a crear tu conto unificate, attachante le sequente wikis:',
+	'centralauth-merge-step3-submit'       => 'Unificar contos',
+	'centralauth-merge-no-accounts'        => 'Nulle contos correspondente a tu nomine esseva trovate in le tabula central de contos! Le base de datos debe esser corrumpite.',
+	'centralauth-merge-home-password'      => 'Le wiki principal pro iste conto (listate infra) ha un contrasigno differente del contrasigno que tu entrava. Per favor entra le contrasigno pro le wiki principal.',
+	'centralauth-complete'                 => 'Unification de contos complete!',
+	'centralauth-incomplete'               => 'Unification de contos non complete!',
+	'centralauth-complete-text'            => 'Tu pote ora aperir un session a omne sito wiki de Wikimedia sin necessitate de crear un nove conto;
+le mesme nomine de usator e contrasigno functionara in Wikipedia, Wiktionario, Wikilibros, e lor projectos-sorores in tote le linguas.',
+	'centralauth-incomplete-text'          => 'Quando tu conto ha essite unificate, tu potera aperir un session a omne sito wiki de Wikimedia sin necessitate de crear un nove conto;
+le mesme nomine de usator e contrasigno functionara in Wikipedia, Wiktionario, Wikilibros, e lor projectos-sorores in tote le linguas.',
+	'centralauth-not-owner-text'           => 'Le nomine de usator "$1" esseva automaticamente assignate al proprietario del conto in $2.
+
+Si isto es tu, tu pote completar le processo de unification de contos simplemente per entrar hic le contrasigno principal de ille conto:',
+	'centralauth-blocked-text'             => 'Tu wiki principal (listate infra) es blocate de facer modificationes. Per favor contacta un administrator in iste wiki pro disblocar lo. Durante iste blocada, tu non pote fusionar tu contos.',
+	'centralauth-notice-dryrun'            => "<div class='successbox'>Modo de demonstration solmente</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'          => 'Le unification del contos es pro le momento in modo de demonstration o de test, ergo le operationes real de fusionar es disactivate. Excusa!',
 	'centralauth-finish-password'          => 'Contrasigno:',
 	'centralauth-finish-login'             => 'Aperir un session',
 	'centralauth-finish-send-confirmation' => 'Inviar contrasigno in e-mail',
@@ -6403,6 +6450,8 @@ $messages['km'] = array(
 	'centralauth-rightslog-entry-usergroups'     => 'បានប្តូរក្រុមសមាជិកភាពជាសាកលសំរាប់ $1 ពី $2 ទៅ $3',
 	'centralauth-rightslog-entry-groupperms'     => 'បានប្តូរក្រុមសមាជិកភាពសំរាប់$1ពី$2ទៅ$3',
 	'centralauth-rightslog-entry-groupperms2'    => 'បានប្តូរក្រុមសមាជិកភាពសំរាប់ $1។ បានបន្ថែម $2 និងដកហូត $3',
+	'globalgroupmembership'                      => 'សមាជិកភាពក្នុងក្រុមជាសាកល',
+	'globalgrouppermissions'                     => 'ការគ្រប់គ្រងក្រុមជាសាកល',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|មើលនិងកែប្រែក្រុមសមាជិកភាព]])',
 	'centralauth-newgroup-legend'                => 'បង្កើតក្រុមថ្មី',
 	'centralauth-globalgroupperms-newgroupname'  => 'ឈ្មោះក្រុមថ្មី៖',
@@ -7048,7 +7097,10 @@ $messages['lv'] = array(
 	'centralauth-merge-notlogged'        => 'Lūdzu  <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} ielogojies]</span> lai pārbaudītu, vai tavi konti ir pilnībā apvienoti.',
 	'centralauth-merge-welcome'          => "'''Tavs lietotāja konts vēl nav ticis pārvietots uz Wikimēdijas apvienoto kontu sistēmu.'''
 
-Ja tu izvēlies pārvietot (migrēt) savus kontus, tu varēsi lietot vienu un to pašu lietotāja vārdu un paroli lai ieietu iekšā visos Wikimēdijas projektos visās valodās.",
+Ja tu izvēlies pārvietot (migrēt) savus kontus, tu varēsi lietot vienu un to pašu lietotāja vārdu un paroli lai ieietu iekšā (ielogotos) visos Wikimēdijas projektos visās valodās.
+Šādā veidā ir ērtāk vienlaicīgi rīkoties ar viarākiem projektiem, piem., augšuplādēšana ''[http://commons.wikimedia.org/ commonos]'', un šādā veidā ir mazāks juceklis no tā, ka divi dažādi cilvēki paņem dažādos projektos vienādus lietotājvārdus.
+
+Ja kāds cits jau ir paņēmis tavu lietotājvārdu kādā citā vietnē, šitas viņus neietekmēs.",
 	'centralauth-merge-step1-title'      => 'Sākt kontu apvienošanu',
 	'centralauth-merge-step1-detail'     => 'Lūdzu ievadi sava konta paroli šeit.
 Tava parole un reģistrētā e-pasta adrese tiks salīdzinātas ar kontiem citos projektos lai pārliecinātos ka tie ir vienādi.
@@ -8802,7 +8854,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-prefs-detail-unattached'             => 'Konto na tej witrynie nie zostało przyłączone do konta uniwersalnego.',
 	'centralauth-prefs-manage'                        => 'zarządzaj kontem uniwersalnym',
 	'centralauth-renameuser-merged'                   => 'Użytkownik $1 został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalny użytkownik zostanie odłączony od globalnego.',
-	'centralauth-renameuser-reserved'                 => 'Nazwa $2 jest już zajęta dla konta globalnego.',
+	'centralauth-renameuser-reserved'                 => 'Nazwa $2 jest już zajęta dla konta uniwersalnego.',
 	'centralauth-invalid-wiki'                        => 'Nie istnieje wiki DB: $1',
 	'centralauth-account-exists'                      => 'Utworzenie konta nie jest możliwe – wybrana nazwa użytkownika jest zajęta przez konto uniwersalne.',
 	'centralauth-autologin-desc'                      => 'Ta strona specjalna jest wykorzystywana wewnętrznie przez oprogramowanie MediaWiki.
