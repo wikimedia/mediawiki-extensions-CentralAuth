@@ -68,11 +68,14 @@ the same username and password will work on Wikipedia, Wiktionary, Wikibooks, an
 	'centralauth-not-owner-text'  => 'The username "$1" was automatically assigned to the owner of the account on $2.
 
 If this is you, you can finish the login unification process simply by typing the master password for that account here:',
-	'centralauth-blocked-text'    => 'Your home wiki (listed below) is blocked from editing. Please contact a sysop in this wiki to unblock it. While it is blocked, you cannot merge your accounts.',
+	'centralauth-blocked-text'    => 'Your home wiki (listed below) is blocked from editing.
+Please contact a sysop in this wiki to unblock it.
+While it is blocked, you cannot merge your accounts.',
 
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Demo mode only</div><br clear='all'/>",
 
-	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled. Sorry!",
+	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled.
+Sorry!",
 	'centralauth-error-locked'    => 'You cannot edit because your account is locked.',
 
 	// Appended to various messages above
@@ -209,7 +212,8 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-prefs-manage'            => 'Manage your global account',
 
 	// Interaction with Special:Renameuser
-	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system. Renaming it will cause the local user to be detached from the global one.",
+	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system.
+Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-renameuser-reserved' => "User $2 is reserved for a global account.",
 
 	// Other messages
@@ -12191,13 +12195,13 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-unhide-description'            => '解除隐藏的账户将会重新显示于[[Special:GlobalUsers|{{int:Globalusers}}]]中',
 	'centralauth-admin-unhide-button'                 => '解除隐藏这个账户',
 	'centralauth-admin-unhide-success'                => '解除隐藏全域账户"<nowiki>$1</nowiki>"已完成',
-	'centralauth-admin-unhide-nonexistent'            => '{{int:Centralauth-admin-hide-nonexistent}}',
+	'centralauth-admin-unhide-nonexistent'            => '错误：全域账户"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-admin-reason'                        => '理由: ',
 	'centralauth-admin-lockandhide-title'             => '锁定并隐藏账户',
 	'centralauth-admin-lockandhide-description'       => '锁定并隐藏这个账户会令到它不能在任何wiki中登入，以及在[[Special:GlobalUsers|{{int:Globalusers}}]]中隐藏。',
 	'centralauth-admin-lockandhide-button'            => '锁定并隐藏这个账户',
 	'centralauth-admin-lockandhide-success'           => '锁定并隐藏全域帐户"<nowiki>$1</nowiki>"已完成',
-	'centralauth-admin-lockandhide-nonexistent'       => '{{int:Centralauth-admin-hide-nonexistent}}',
+	'centralauth-admin-lockandhide-nonexistent'       => '错误：全域账户"<nowiki>$1</nowiki>"不存在。',
 	'globalusers'                                     => '全域账户列表',
 	'centralauth-listusers-locked'                    => '锁定',
 	'centralauth-listusers-attached'                  => '于本地存在',
@@ -12410,13 +12414,13 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-unhide-description'            => '解除隱藏的帳戶將會重新顯示於[[Special:GlobalUsers|{{int:Globalusers}}]]中',
 	'centralauth-admin-unhide-button'                 => '解除隱藏這個帳戶',
 	'centralauth-admin-unhide-success'                => '解除隱藏全域帳戶"<nowiki>$1</nowiki>"已完成',
-	'centralauth-admin-unhide-nonexistent'            => '{{int:Centralauth-admin-hide-nonexistent}}',
+	'centralauth-admin-unhide-nonexistent'            => '錯誤：全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-admin-reason'                        => '理由: ',
 	'centralauth-admin-lockandhide-title'             => '鎖定並隱藏賬戶',
 	'centralauth-admin-lockandhide-description'       => '鎖定並隱藏這個賬戶會令到它不能在任何wiki中登入，以及在[[Special:GlobalUsers|{{int:Globalusers}}]]中隱藏。',
 	'centralauth-admin-lockandhide-button'            => '鎖定並隱藏這個賬戶',
 	'centralauth-admin-lockandhide-success'           => '鎖定並隱藏全域帳戶"<nowiki>$1</nowiki>"已完成',
-	'centralauth-admin-lockandhide-nonexistent'       => '{{int:Centralauth-admin-hide-nonexistent}}',
+	'centralauth-admin-lockandhide-nonexistent'       => '錯誤：全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'globalusers'                                     => '全域帳戶名單',
 	'centralauth-listusers-locked'                    => '鎖定',
 	'centralauth-listusers-attached'                  => '於本地存在',
