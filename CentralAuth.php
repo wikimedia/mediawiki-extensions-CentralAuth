@@ -136,12 +136,14 @@ $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['WikiMap'] = "$caBase/WikiMap.php";
 $wgAutoloadClasses['WikiReference'] = "$caBase/WikiMap.php";
+$wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
 $wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/SpecialAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/SpecialGlobalGroupMembership.php";
 $wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/CentralAuthGroupMembershipProxy.php";
 $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/SpecialGlobalGroupPermissions.php";
+$wgAutoloadClasses['SpecialEditWikiSets'] = "$caBase/SpecialEditWikiSets.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 
@@ -182,6 +184,7 @@ $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
 $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
+$wgSpecialPages['EditWikiSets'] = 'SpecialEditWikiSets';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
@@ -195,9 +198,25 @@ $wgLogActions['globalauth/hide']   = 'centralauth-log-entry-hide';
 $wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
 $wgLogActions['globalauth/lockandhid'] = 'centralauth-log-entry-lockandhide';
 
-$wgLogTypes[]                      = 'gblrights';
-$wgLogNames['gblrights']          = 'centralauth-rightslog-name';
-$wgLogHeaders['gblrights']	   = 'centralauth-rightslog-header';
-$wgLogActions['gblrights/usergroups'] = 'centralauth-rightslog-entry-usergroups';
-$wgLogActions['gblrights/groupperms']   = 'centralauth-rightslog-entry-groupperms';
-$wgLogActions['gblrights/groupperms2']   = 'centralauth-rightslog-entry-groupperms2';
+$wgLogTypes[]                          = 'gblrights';
+$wgLogNames['gblrights']               = 'centralauth-rightslog-name';
+$wgLogHeaders['gblrights']	           = 'centralauth-rightslog-header';
+$wgLogActions['gblrights/usergroups']  = 'centralauth-rightslog-entry-usergroups';
+$wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms';
+$wgLogActions['gblrights/groupperms2'] = 'centralauth-rightslog-entry-groupperms2';
+$wgLogActions['gblrights/groupperms3'] = 'centralauth-rightslog-entry-groupperms3';
+foreach( array( 'newset', 'setrename', 'setnewtype', 'setchange' ) as $type )
+	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
+
+function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+	$link = $skin ? $skin->makeLinkObj( $title, $params[0] ) : $params[0];
+	if( $action == 'newset' )
+		$args = array( WikiSet::formatType( $params[1] ), $params[2] );
+	if( $action == 'setrename' )
+		$args = array( $params[1] );
+	if( $action == 'setnewtype' )
+		$args = array( WikiSet::formatType( $params[1] ) );
+	if( $action == 'setchange' )
+		$args = array( $params[1] ? $params[1] : wfMsg( 'rightsnone' ), $params[2] ? $params[2] : wfMsg( 'rightsnone' ) );
+	return wfMsgReal( "centralauth-rightslog-entry-{$action}", array_merge( array( $link ), $args ), true, !$skin );
+}

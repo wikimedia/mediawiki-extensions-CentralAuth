@@ -112,7 +112,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 	}
 	
 	function buildGroupView( $group ) {
-		global $wgOut, $wgUser,$wgScript;
+		global $wgOut, $wgUser, $wgScript;
 		
 		$wgOut->setSubtitle( wfMsg( 'centralauth-editgroup-subtitle', $group ) );
 		
@@ -127,6 +127,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$fields['centralauth-editgroup-display'] = wfMsgExt( 'centralauth-editgroup-display-edit', array( 'parseinline' ), $group, User::getGroupName( $group ) );
 		$fields['centralauth-editgroup-member'] = wfMsgExt( 'centralauth-editgroup-member-edit', array( 'parseinline' ), $group, User::getGroupMember( $group ) );
 		$fields['centralauth-editgroup-members'] = wfMsgExt( 'centralauth-editgroup-members-link', array( 'parseinline' ), $group, User::getGroupMember( $group ) );
+		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector($group);
 		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes($group);
 		$fields['centralauth-editgroup-reason'] = wfInput( 'wpReason' );
 		
@@ -139,7 +140,19 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		
 		$this->showLogFragment( $group, $wgOut );
 	}
-	
+
+	function buildWikiSetSelector( $group ) {
+		$sets = WikiSet::getAllWikiSets();
+		$default = WikiSet::getWikiSetForGroup( $group );
+
+		$select = new XmlSelect( 'set', 'wikiset', $default );
+		$select->addOption( wfMsg( 'centralauth-editgroup-noset' ), '0' );
+		foreach( $sets as $set ) {
+			$select->addOption( $set->getName(), $set->getID() );
+		}
+		return $select->getHTML();
+	}
+
 	function buildCheckboxes( $group ) {
 		
 		$rights = User::getAllRights();
@@ -221,7 +234,15 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		// Log it
 		if (!(count($addRights)==0 && count($removeRights)==0))
 			$this->addLogEntry( $group, $addRights, $removeRights, $reason );
-			
+
+		// Change set
+		$current = WikiSet::getWikiSetForGroup( $group );
+		$new = $wgRequest->getVal( 'set' );
+		if( $current != $new ) {
+			$this->setRestrictions( $group, $new );
+			$this->addLogEntry2( $group, $current, $new, $reason );
+		}
+
 		$this->invalidateRightsCache( $group );
 		
 		// Display success
@@ -262,8 +283,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		global $wgRequest;
 		
 		$log = new LogPage( 'gblrights' );
-		
-		$added = 
 
 		$log->addEntry( 'groupperms2',
 			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
@@ -278,7 +297,40 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 	function makeRightsList( $ids ) {
 		return (bool)count($ids) ? implode( ', ', $ids ) : wfMsgForContent( 'rightsnone' );
 	}
-	
+
+	function setRestrictions( $group, $set ) {
+		$dbw = CentralAuthUser::getCentralDB();
+		if( $set == 0 ) {
+			$dbw->delete( 'global_group_restrictions', array( 'ggr_group' => $group ), __METHOD__ );
+		} else {
+			$dbw->replace( 'global_group_restrictions', array( 'ggr_group' ),
+				array( 'ggr_group' => $group, 'ggr_set' => $set, ), __METHOD__ );
+		}
+		return (bool)$dbw->affectedRows();
+	}
+
+	function addLogEntry2( $group, $old, $new, $reason ) {
+		global $wgRequest;
+		
+		$log = new LogPage( 'gblrights' );
+
+		$log->addEntry( 'groupperms3',
+			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
+			$reason,
+			array(
+				$this->getWikiSetName( $old ),
+				$this->getWikiSetName( $new ),
+			)
+		);
+	}
+
+	function getWikiSetName( $id ) {
+		if( $id )
+			return WikiSet::newFromID( $id )->getName();
+		else
+			return wfMsgForContent( 'centralauth-editgroup-noset' );
+	}
+
 	function invalidateRightsCache( $group ) {
 		global $wgMemc;
 		

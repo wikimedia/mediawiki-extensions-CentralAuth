@@ -235,11 +235,19 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-log-entry-unhide' => 'unhid global account "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide' => 'locked and hid global account "<nowiki>$1</nowiki>"',
 
-	'centralauth-rightslog-name'             => 'Global rights log',
-	'centralauth-rightslog-entry-usergroups' => 'changed global group membership for $1 from $2 to $3',
-	'centralauth-rightslog-entry-groupperms' => 'changed group permissions for $1 from $2 to $3',
+	'centralauth-rightslog-name'              => 'Global rights log',
+	'centralauth-rightslog-entry-usergroups'  => 'changed global group membership for $1 from $2 to $3',
+	'centralauth-rightslog-entry-groupperms'  => 'changed group permissions for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1. Added $2; Removed $3',
-	'centralauth-rightslog-header'           => 'This log contains operations on global groups: membership and permissions changes',
+	'centralauth-rightslog-entry-groupperms3' => 'changed group restricted wikis set for $1 from $2 to $3',
+	'centralauth-rightslog-header'            => 'This log contains operations on global groups: membership and permissions changes',
+
+	'centralauth-rightslog-entry-newset'      => 'created $2 wiki set $1 with following wikis: $3',
+	'centralauth-rightslog-entry-setrename'   => 'renamed wiki set "$2" to "$1"',
+	'centralauth-rightslog-entry-setnewtype'  => 'changed type of "$1" from $2 to $3',
+	'centralauth-rightslog-entry-setchange'   => 'changed wikis in "$1": added: $2; removed: $3',
+	'centralauth-rightslog-set-optin'         => 'opt-in based',
+	'centralauth-rightslog-set-optout'        => 'opt-out based',
 
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
@@ -249,7 +257,7 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-globalgroupperms-grouplist'          => 'The following global groups have been configured.
 You may view and edit the permissions assigned to any group.
 A group may be deleted by removing all rights from it.',
-	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|View and edit permissions]])',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|view/edit]])',
 	'centralauth-existinggroup-legend'                => 'Existing groups',
 	'centralauth-newgroup-legend'                     => 'Create a new group',
 	'centralauth-newgroup-intro'                      => 'You can use this form to assign permissions to a new group.
@@ -265,15 +273,39 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|edit]])',
 	'centralauth-editgroup-members'                   => 'Member list:',
 	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|List of users with $2 rights]]',
+	'centralauth-editgroup-restrictions'              => 'Set of wikis where this group is active:',
+	'centralauth-editgroup-noset'                     => '(none)',
 	'centralauth-editgroup-submit'                    => 'Save changes to group permissions',
 	'centralauth-editgroup-perms'                     => 'Assigned permissions:',
 	'centralauth-editgroup-reason'                    => 'Reason for change:',
 	'centralauth-editgroup-success'                   => 'Group permissions changed',
 	'centralauth-editgroup-success-text'              => 'You have successfully changed the group permissions for the $1 group.
 [[Special:GlobalGroupPermissions|Return to group management]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => "Select a wiki on which they have an account:",
+	'centralauth-globalgrouppermissions-knownwiki'    => "Wiki on which they have an account:",
 	'centralauth-globalgroupmembership-badknownwiki'  => "The global user '''$1''' is not active on the wiki you specified ('' $2 '').
 You may be attempting to assign rights to the wrong user!",
+
+	// Wiki sets editing
+	'centralauth-editset'                             => 'Edit wiki sets',
+	'centralauth-editset-legend'                      => 'Edit or create wiki set',
+	'centralauth-editset-intro'                       => 'The following wiki sets have already been created. You may view and modify any of them, or create a new set.',
+	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|view/edit]])',
+	'centralauth-editset-new'                         => 'Create a new set',
+	'centralauth-editset-notfound'                    => 'Wiki set "$1" not found.',
+	'centralauth-editset-optin'                       => 'Opt-in based (includes only specified wikis)',
+	'centralauth-editset-optout'                      => 'Opt-out based (includes all wikis except specified)',
+	'centralauth-editset-legend-edit'                 => 'Editing wiki set "$1"',
+	'centralauth-editset-legend-new'                  => 'Creating new wiki set',
+	'centralauth-editset-name'                        => 'Name:',
+	'centralauth-editset-type'                        => 'Type:',
+	'centralauth-editset-wikis'                       => 'Wikis:',
+	'centralauth-editset-reason'                      => 'Reason:',
+	'centralauth-editset-submit'                      => 'Submit',
+	'centralauth-editset-badname'                     => 'Invalid or empty set name.',
+	'centralauth-editset-badtype'                     => 'Invalid set type.',
+	'centralauth-editset-nowikis'                     => 'No wikis specified.',
+	'centralauth-editset-badwikis'                    => 'Following wikis do not exist: $1.',
+	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
 
 	// User rights
 	'right-globalgroupmembership'	=> 'Edit membership to global groups',
