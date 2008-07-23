@@ -52,7 +52,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		}
 		
 		$wgOut->setPageTitle( wfMsg( 'globalgrouppermissions' ) );
-		$wgOut->setRobotpolicy( "noindex,nofollow" );
+		$wgOut->setRobotPolicy( "noindex,nofollow" );
 		$wgOut->setArticleRelated( false );
 		$wgOut->enableClientCache( false );
 		
