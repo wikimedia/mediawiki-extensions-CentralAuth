@@ -11,7 +11,7 @@ CREATE TABLE wikiset (
 	-- Because we can just use such simple list, we don't need complicated queries on it
 	-- Let's suppose that max length of db name is 31 (32 with ","), then we have space for
 	-- 2048 wikis. More than we need
-	ws_wikis varbinary(65536) not null,
+	ws_wikis blob not null,
 	
 	PRIMARY KEY ws_id (ws_id),
 	UNIQUE ws_name (ws_name)
