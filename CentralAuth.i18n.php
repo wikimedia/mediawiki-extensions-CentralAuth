@@ -4028,7 +4028,7 @@ $messages['haw'] = array(
 );
 
 /** Hebrew (עברית)
- * @author Siebrand
+ * @author Rotem Liss
  */
 $messages['he'] = array(
 	'mergeaccount'                                    => 'מצב מיזוג החשבונות',
