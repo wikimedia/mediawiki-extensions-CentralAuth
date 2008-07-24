@@ -1410,6 +1410,8 @@ $messages['bg'] = array(
 	'centralauth-admin-hide-nonexistent'              => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-unhide-nonexistent'            => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-reason'                        => 'Причина:',
+	'centralauth-admin-lockandhide-button'            => 'Заключване и скриване на тази сметка',
+	'centralauth-admin-lockandhide-success'           => 'Сметката беше заключена и скрита успешно',
 	'centralauth-admin-lockandhide-nonexistent'       => 'Грешка: глобалната сметка „<nowiki>$1</nowiki>“ не съществува.',
 	'globalusers'                                     => 'Списък на глобалните сметки',
 	'centralauth-listusers-locked'                    => 'заключена',
@@ -1430,6 +1432,9 @@ $messages['bg'] = array(
 	'centralauth-prefs-count-unattached'              => '{{PLURAL:$1|В един проект е останала непотвърдена сметка|В $1 проекта са останали непотвърдени сметки}} с вашето име.',
 	'centralauth-prefs-detail-unattached'             => 'За този проект липсва потвърждение, че принадлежи към единната сметка.',
 	'centralauth-prefs-manage'                        => 'Управление на глобалната сметка',
+	'centralauth-renameuser-merged'                   => 'Потребителят $1 е преминал към унифицираната система за влизане.
+Преименуването му ще изключи локалната му сметка от глобалната.',
+	'centralauth-renameuser-reserved'                 => 'Потребител $2 е запазен за глобална сметка.',
 	'centralauth-invalid-wiki'                        => 'Не съществува такава база данни: $1',
 	'centralauth-account-exists'                      => 'Не може да бъде създадена сметка: желаното потребителско име е заето от Единната система за влизане.',
 	'centralauth-autologin-desc'                      => 'Тази специална страница се използва вътрешно от МедияУики.
@@ -4579,6 +4584,7 @@ Ostali računi nisu još potvrđeni.',
 /** Upper Sorbian (Hornjoserbsce)
  * @author Dundak
  * @author Michawiki
+ * @author Siebrand
  */
 $messages['hsb'] = array(
 	'mergeaccount'                                    => 'Status zjednoćenja wužiwarskich kontow',
@@ -8089,8 +8095,8 @@ $messages['myv'] = array(
  * @author Fluence
  */
 $messages['nah'] = array(
-	'centralauth-admin-username' => 'Tlatēquitiltilīltōcāitl:',
-	'centralauth-admin-info-id'  => 'Tlatēquitiltilīlli ID:',
+	'centralauth-admin-username' => 'Tlatequitiltilīltōcāitl:',
+	'centralauth-admin-info-id'  => 'Tlatequitiltilīlli ID:',
 	'centralauth-admin-yes'      => 'quēmah',
 	'centralauth-admin-no'       => 'ahmo',
 );
@@ -8453,7 +8459,10 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 	'centralauth-rightslog-entry-usergroups'          => 'wijzigde globaal groepslidmaatschap voor $1 van $2 naar $3',
 	'centralauth-rightslog-entry-groupperms'          => 'wijzigde groepsrechten voor $1 van $2 naar $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'heeft de rechten voor $1 gewijzigd. Toegevoegd: $2. Verwijderd: $3',
+	'centralauth-rightslog-entry-groupperms3'         => 'heeft de beperkte wikigroep voor $1 van $2 naar $3 gewijzigd',
 	'centralauth-rightslog-header'                    => 'Dit logboek bevat handelingen ten aanzien van globale groepen als wijzigingen in lidmaatschap en rechten',
+	'centralauth-rightslog-entry-newset'              => "heeft $2 wikigroep $1 aangemaakt met de volgende wiki's: $3",
+	'centralauth-rightslog-entry-setrename'           => 'heeft de wikigroep "$2" hernoemd naar "$1"',
 	'globalgroupmembership'                           => 'Lidmaatschap van globale groepen',
 	'globalgrouppermissions'                          => 'Globaal groepsbeheer',
 	'centralauth-globalgroupperms-grouplist'          => 'De onderstaande globale groepen zijn ingesteld. U kunt de rechten van alle groepen bekijken en bewerken. Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
@@ -8472,13 +8481,26 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|bewerken]])',
 	'centralauth-editgroup-members'                   => 'Ledenlijst:',
 	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|Gebruikers met het recht $2]]',
+	'centralauth-editgroup-noset'                     => '(geen)',
 	'centralauth-editgroup-submit'                    => 'Wijzigen aan groepsrechten opslaan',
 	'centralauth-editgroup-perms'                     => 'Toegekende rechten:',
 	'centralauth-editgroup-reason'                    => 'Reden:',
 	'centralauth-editgroup-success'                   => 'Groepsrechten gewijzigd',
 	'centralauth-editgroup-success-text'              => 'U hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => 'Selecteer een wiki waarop ze een gebruiker hebben:',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Wiki waarop ze een gebruiker hebben:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "De globale gebruiker '''$1''' is niet actief op de aangegeven wiki (''$2''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
+	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|bekijken/bewerken]])',
+	'centralauth-editset-new'                         => 'Nieuwe set aanmaken',
+	'centralauth-editset-legend-edit'                 => 'Bezigmet het bewerken van wikigroep "$1"',
+	'centralauth-editset-name'                        => 'Naam:',
+	'centralauth-editset-type'                        => 'Type:',
+	'centralauth-editset-wikis'                       => "Wiki's:",
+	'centralauth-editset-reason'                      => 'Reden:',
+	'centralauth-editset-submit'                      => 'Opslaan',
+	'centralauth-editset-badname'                     => 'Ongeldige of lege groepsnaam.',
+	'centralauth-editset-badtype'                     => 'Ongeldig groepstype.',
+	'centralauth-editset-nowikis'                     => "Geen wiki's aangegeven.",
+	'centralauth-editset-success'                     => 'De wikigroep is gewijzigd.',
 	'right-globalgroupmembership'                     => 'Lidmaatschap van globale groepen bewerken',
 	'right-centralauth-admin'                         => 'Globale gebruikers beheren',
 	'right-centralauth-merge'                         => 'Gebruikers samenvoegen',
@@ -12829,7 +12851,7 @@ $messages['zh-hant'] = array(
 	'centralauth-notice-dryrun'                       => "<div class='successbox'>目前為示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => '目前為示範模式，
 實際的整合動作已停用。',
-	'centralauth-error-locked'                        => '由於您的帳戶已被鎖定，您目前無法編輯',
+	'centralauth-error-locked'                        => '由於您的帳戶已被鎖住，您目前無法編輯',
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
 	'centralauth-list-home-title'                     => '主要維基計劃',
 	'centralauth-list-home-dryrun'                    => '您在這個計劃中使用的密碼以及電子郵件地址將會用來做您的整合帳號，同時您在這裡的用戶頁會由其它的計劃中自動連結過來。您可以稍後更改你的主要項目。',
@@ -12914,7 +12936,7 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-unhide-description'            => '解除隱藏的帳戶將會重新顯示於[[Special:GlobalUsers|{{int:Globalusers}}]]中',
 	'centralauth-admin-unhide-button'                 => '解除隱藏這個帳戶',
 	'centralauth-admin-unhide-success'                => '解除隱藏全域帳戶"<nowiki>$1</nowiki>"已完成',
-	'centralauth-admin-unhide-nonexistent'            => '錯誤：全域帳戶"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-unhide-nonexistent'            => '{{int:Centralauth-admin-hide-nonexistent}}',
 	'centralauth-admin-reason'                        => '理由: ',
 	'centralauth-admin-lockandhide-title'             => '鎖定並隱藏賬戶',
 	'centralauth-admin-lockandhide-description'       => '鎖定並隱藏這個賬戶會令到它不能在任何wiki中登入，以及在[[Special:GlobalUsers|{{int:Globalusers}}]]中隱藏。',
@@ -12940,8 +12962,8 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-count-unattached'              => '您在$1個計劃中還有未確認的帳戶。',
 	'centralauth-prefs-detail-unattached'             => '這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage'                        => '管理您的全域帳戶',
-	'centralauth-renameuser-merged'                   => "用戶$1已經遷移至整合登入系統。改它的名字會令到本地用戶自全域中遷出。",
-	'centralauth-renameuser-reserved'                 => "用戶$2已經預留給全域賬戶使用。",
+	'centralauth-renameuser-merged'                   => '用戶$1已經遷移至整合登入系統。改它的名字會令到本地用戶自全域中遷出。',
+	'centralauth-renameuser-reserved'                 => '用戶$2已經預留給全域賬戶使用。',
 	'centralauth-invalid-wiki'                        => '無這個wiki資料庫: $1',
 	'centralauth-account-exists'                      => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 	'centralauth-autologin-desc'                      => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
