@@ -474,7 +474,7 @@ Atras cuentas no s'han confirmato encara.",
 	'centralauth-admin-manage'                        => "Amenistrar os datos d'usuario",
 	'centralauth-admin-username'                      => "Nombre d'usuario:",
 	'centralauth-admin-lookup'                        => "Beyer u editar os datos d'usuario",
-	'centralauth-admin-permission'                    => "Sólo os stewards pueden unificar as cuentas d'atros usuario por ellos.",
+	'centralauth-admin-permission'                    => "Nomás os stewards pueden unificar as cuentas d'atros usuario por els.",
 	'centralauth-admin-no-unified'                    => "Este nombre d'usuario no tiene garra cuenta unificata",
 	'centralauth-admin-info-id'                       => "ID d'usuario:",
 	'centralauth-admin-info-registered'               => 'Rechistrato:',
@@ -548,7 +548,7 @@ As palabras de paso t'as cuentas locals creyatas antis d'a unificazión tornará
 	'centralauth-prefs-count-unattached'              => 'Quedan cuentas no confirmatas con o suyo nombre en $1 {{PLURAL:$1|procheuto|procheutos}}.',
 	'centralauth-prefs-detail-unattached'             => "Iste procheuto no s'ha confirmau como parte d'a cuenta global.",
 	'centralauth-prefs-manage'                        => 'Almenistrar a suya cuenta global',
-	'centralauth-renameuser-merged'                   => "L'usuario $1 s'ha migrato ta o sistema d'aczeso unificato. Si lo renombre fará que o usuario local se desligue de l'usuario global.",
+	'centralauth-renameuser-merged'                   => "L'usuario $1 s'ha migrato ta o sistema d'aczeso unificato. Si lo renombra fará que o usuario local se desligue de l'usuario global.",
 	'centralauth-renameuser-reserved'                 => "O nombre d'usuario $2 ye reserbato por una cuenta global.",
 	'centralauth-invalid-wiki'                        => "No s'ha trobau a base de datos d'o wiki: $1",
 	'centralauth-account-exists'                      => "No s'ha puesto creyar a cuenta: o nombre d'usuario requiesto ya ye pillau en o sistema de cuentas unificato.",
@@ -593,7 +593,7 @@ Ha demandau ista pachina sin furnir datos d'autentificazión, asinas que no fa c
 	'centralauth-editgroup-reason'                    => "Razón d'o cambeo:",
 	'centralauth-editgroup-success'                   => "S'han cambiato os premisos d'a colla",
 	'centralauth-editgroup-success-text'              => "Ha cambiato con esito os premisos d'a colla $1. [[Special:GlobalGroupPermissions|Torne t'a confegurazión de collas]]",
-	'centralauth-globalgrouppermissions-knownwiki'    => 'Trigue una wiki en a que tiengan una cuenta:',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Wiki en a que tienga una cuenta:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "L'usuario global '''$1''' no ye autibo en a wiki que ha espezificato ('' $2 '').
 Mire-se que igual ye prebando d'asinnar dreitos ta un usuario entibocato!",
 	'right-globalgroupmembership'                     => 'Editar a pertenenzia ta collas globals',
@@ -1668,9 +1668,9 @@ $messages['bn'] = array(
 	'centralauth-editgroup-subtitle'            => 'সম্পাদনা করা হচ্ছে $1',
 	'centralauth-editgroup-fieldset'            => '$1 এর জন্য অনুমতি',
 	'centralauth-editgroup-name'                => 'গ্রুপের নাম:',
+	'centralauth-editgroup-member'              => 'গ্রুপ সদস্যদের স্থানীয়(Localised) নাম:',
 	'centralauth-editgroup-members'             => 'সদস্য তালিকা:',
 	'centralauth-editgroup-reason'              => 'পরিবর্তনের কারণ:',
-	'centralauth-editset-submit'                => 'পেশ করো',
 	'right-centralauth-merge'                   => 'তাদের অ্যাকাউন্ট একীভূত করো',
 	'right-globalgrouppermissions'              => 'গ্লোবাল গ্রুপ ব্যবস্থাপনা',
 );
@@ -3858,10 +3858,12 @@ Vos porréd modifiar voutron projèt principâl ples târd.',
  * @author Klenje
  */
 $messages['fur'] = array(
-	'mergeaccount'                => 'Stât dal procès di unificazion des identitâts dai utents',
-	'globalusers'                 => 'Liste utents globâi',
-	'centralauth-login-progress'  => 'Daûr a jentrâ tai altris progjets di Wikimedia:',
-	'centralauth-logout-progress' => 'Daûr a jessi di chei altris progjets di Wikimedia:',
+	'mergeaccount'                     => 'Stât dal procès di unificazion des identitâts dai utents',
+	'globalusers'                      => 'Liste utents globâi',
+	'centralauth-prefs-status'         => 'Stât de identitât globâl:',
+	'centralauth-prefs-count-attached' => 'La to identitât e je ative su $1 {{PLURAL:$1|sît|sîts}} di progjets.',
+	'centralauth-login-progress'       => 'Daûr a jentrâ tai altris progjets di Wikimedia:',
+	'centralauth-logout-progress'      => 'Daûr a jessi di chei altris progjets di Wikimedia:',
 );
 
 /** Western Frisian (Frysk)
@@ -9874,7 +9876,7 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 	'centralauth-editgroup-success'                   => 'Permissões de grupo alteradas',
 	'centralauth-editgroup-success-text'              => 'Você alterou com sucesso as permissões de grupo para o grupo $1.
 [[Special:GlobalGroupPermissions|Voltar à gestão de grupos]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => 'Seleccione um wiki onde tenham uma conta:',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'Seleccione um wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "O utilizador global '''$1''' não está activo no wiki que especificou (''$2''). É possível que esteja a tentar atribuir direitos ao utilizador errado!",
 	'right-globalgroupmembership'                     => 'Editar associações de membros em grupos globais',
 	'right-centralauth-admin'                         => 'Administrar contas globais',
