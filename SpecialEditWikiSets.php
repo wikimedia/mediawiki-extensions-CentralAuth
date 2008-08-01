@@ -153,7 +153,7 @@ class SpecialEditWikiSets extends SpecialPage
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-badname' ), $name, $type, $wikis, $reason );
 			return;
 		}
-		if( WikiSet::newFromName( $name ) ) {
+		if( !$id && WikiSet::newFromName( $name ) ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-setexists' ), $name, $type, $wikis, $reason );
 			return;
 		}
