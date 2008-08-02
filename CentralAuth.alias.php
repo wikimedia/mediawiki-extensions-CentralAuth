@@ -18,3 +18,15 @@ $aliases['en'] = array(
         'SpecialGlobalUsers'            => array( 'GlobalUsers' ),
         'SpecialMergeAccount'           => array( 'MergeAccount' ),
 );
+
+/** Arabic (العربية)
+ * @author Meno25
+ */
+$aliases['ar'] = array(
+	'SpecialCentralAuth'              => array( 'تحقق مركزي' ),
+	'SpecialEditWikiSets'             => array( 'تعديل مجموعات الويكي' ),
+	'SpecialGlobalGroupMembership'    => array( 'صلاحيات المستخدم العامة', 'عضوية المجموعة العامة' ),
+	'SpecialGlobalGroupPermissions'   => array( 'سماحات المجموعة العامة' ),
+	'SpecialGlobalUsers'              => array( 'مستخدمون عامون' ),
+	'SpecialMergeAccount'             => array( 'دمج حساب' ),
+);
