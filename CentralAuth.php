@@ -146,6 +146,7 @@ $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/SpecialGlobalGrou
 $wgAutoloadClasses['SpecialEditWikiSets'] = "$caBase/SpecialEditWikiSets.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
+$wgExtensionAliasesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.alias.php";
 
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
