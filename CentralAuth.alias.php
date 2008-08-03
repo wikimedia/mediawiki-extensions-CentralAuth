@@ -23,10 +23,31 @@ $aliases['en'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'SpecialCentralAuth'              => array( 'تحقق مركزي' ),
-	'SpecialEditWikiSets'             => array( 'تعديل مجموعات الويكي' ),
-	'SpecialGlobalGroupMembership'    => array( 'صلاحيات المستخدم العامة', 'عضوية المجموعة العامة' ),
-	'SpecialGlobalGroupPermissions'   => array( 'سماحات المجموعة العامة' ),
-	'SpecialGlobalUsers'              => array( 'مستخدمون عامون' ),
-	'SpecialMergeAccount'             => array( 'دمج حساب' ),
+	'SpecialCentralAuth'            => array( 'تحقق_مركزي' ),
+	'SpecialEditWikiSets'           => array( 'تعديل_مجموعات_الويكي' ),
+	'SpecialGlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
+	'SpecialGlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
+	'SpecialGlobalUsers'            => array( 'مستخدمون_عامون' ),
+	'SpecialMergeAccount'           => array( 'دمج_حساب' ),
 );
+
+/** Egyptian Spoken Arabic (مصرى) */
+$aliases['arz'] = array(
+	'SpecialCentralAuth'            => array( 'تحقق_مركزى' ),
+	'SpecialEditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
+	'SpecialGlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
+	'SpecialGlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
+	'SpecialGlobalUsers'            => array( 'مستخدمون_عامون' ),
+	'SpecialMergeAccount'           => array( 'دمج_حساب' ),
+);
+
+/** Dutch (Nederlands) */
+$aliases['nl'] = array(
+	'SpecialCentralAuth'            => array( 'CentraalAanmelden' ),
+	'SpecialEditWikiSets'           => array( 'WikigroepenBewerken' ),
+	'SpecialGlobalGroupMembership'  => array( 'GlobaleGebruikersrechten' ),
+	'SpecialGlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
+	'SpecialGlobalUsers'            => array( 'GlobaleGebruikers' ),
+	'SpecialMergeAccount'           => array( 'GebruikerSamenvoegen' ),
+);
+
