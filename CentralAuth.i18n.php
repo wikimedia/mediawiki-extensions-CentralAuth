@@ -351,7 +351,6 @@ $messages['niu'] = array(
  * @author Arnobarnard
  * @author SPQRobin
  * @author Naudefj
- * @author Siebrand
  */
 $messages['af'] = array(
 	'mergeaccount'                                    => 'Aanteken versmeltingstatus',
@@ -679,7 +678,6 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author Meno25
  * @author Alnokta
- * @author Siebrand
  */
 $messages['ar'] = array(
 	'mergeaccount'                                    => 'حالة توحيد الدخول',
@@ -869,7 +867,7 @@ $messages['ar'] = array(
 	'centralauth-rightslog-entry-groupperms'          => 'غير سماحات المجموعة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'غير صلاحيات المجموعة ل$1. أضاف $2؛ أزال $3',
 	'centralauth-rightslog-entry-groupperms3'         => 'غير مجموعة الويكيات المحددة ل$1 من $2 إلى $3',
-	'centralauth-rightslog-header'                    => 'هذا السجل يحتوي على العمليات على المجموعات العامة: العضوية وتغييرات السماحات',
+	'centralauth-rightslog-header'                    => 'هذا السجل يسجل التغييرات للصلاحيات العامة، بما في ذلك التغييرات لعضوية المجموعات والسماحات المعطاة للمجموعات.',
 	'centralauth-rightslog-entry-newset'              => 'أنشأ $2 مجموعة الويكي $1 بالويكيات التالية: $3',
 	'centralauth-rightslog-entry-setrename'           => 'أعاد تسمية مجموعة الويكي "$2" باسم "$1"',
 	'centralauth-rightslog-entry-setnewtype'          => 'غير نوع "$1" من $2 إلى $3',
@@ -911,7 +909,7 @@ $messages['ar'] = array(
 ربما تكون تحاول إعطاء صلاحيات للمستخدم الخاطئ!",
 	'centralauth-editset'                             => 'تعديل مجموعات الويكي',
 	'centralauth-editset-legend'                      => 'تعديل أو إنشاء مجموعة ويكي',
-	'centralauth-editset-intro'                       => 'مجموعات الويكي التالية تم إنشاؤها بالفعل. يمكنك رؤية وتعديل أيا منها، أو إنشاء مجموعة جديدة.',
+	'centralauth-editset-intro'                       => 'الصلاحيات العامة يمكن تحديدها للويكيات في أي من "مجموعات الويكي" التالية. يمكنك رؤية وتعديل أي منها، أو إنشاء مجموعة جديدة.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|عرض/تعديل]])',
 	'centralauth-editset-new'                         => 'إنشاء مجموعة جديدة',
 	'centralauth-editset-notfound'                    => 'مجموعة الويكي "$1" لم يتم العثور عليها.',
@@ -921,17 +919,18 @@ $messages['ar'] = array(
 	'centralauth-editset-legend-new'                  => 'إنشاء مجموعة ويكي جديدة',
 	'centralauth-editset-name'                        => 'الاسم:',
 	'centralauth-editset-type'                        => 'النوع:',
-	'centralauth-editset-wikis'                       => 'الويكيات:',
+	'centralauth-editset-wikis'                       => 'الويكيات:<br/>(مفصولة بفراغ)',
 	'centralauth-editset-reason'                      => 'السبب:',
 	'centralauth-editset-submit'                      => 'تنفيذ',
-	'centralauth-editset-badname'                     => 'اسم مجموعة غير صحيح أو فارغ.',
-	'centralauth-editset-badtype'                     => 'نوع مجموعة غير صحيح.',
-	'centralauth-editset-setexists'                   => 'هناك مجموعة بهذا الاسم بالفعل',
+	'centralauth-editset-badname'                     => 'أنت حددت اسم مجموعة غير صحيح أو فارغ.',
+	'centralauth-editset-badtype'                     => 'أنت حددت نوع مجموعة غير صحيح.',
+	'centralauth-editset-setexists'                   => 'هناك مجموعة ويكي بهذا الاسم بالفعل',
 	'centralauth-editset-nowikis'                     => 'لا ويكيات تم تحديدها.',
 	'centralauth-editset-nouse'                       => '(لا شيء)',
 	'centralauth-editset-usage'                       => 'مستخدم في المجموعات:',
 	'centralauth-editset-badwikis'                    => 'الويكيات التالية غير موجودة: $1.',
 	'centralauth-editset-success'                     => 'تم تغيير مجموعة الويكي بنجاح.',
+	'centralauth-editset-add'                         => 'أضف إلى القائمة',
 	'right-globalgroupmembership'                     => 'تعديل العضوية للمجموعات العامة',
 	'right-centralauth-admin'                         => 'إدارة الحسابات العامة',
 	'right-centralauth-merge'                         => 'دمج حسابهم',
@@ -940,122 +939,143 @@ $messages['ar'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
- * @author Siebrand
  */
 $messages['ast'] = array(
-	'mergeaccount'                         => 'Estatus de fusión de cuentes',
-	'centralauth-desc'                     => '[[Special:MergeAccount|Fusiona cuentes]] ente les wikis de la Fundación Wikimedia',
-	'centralauth-merge-denied'             => "Sentímoslo, nun tienes permisu p'acceder a esta páxina.",
-	'centralauth-merge-notlogged'          => 'Por favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
-	'centralauth-merge-welcome'            => "'''La to cuenta d'usuariu inda nun foi migrada al sistema de cuentes fusionaes de Wikimedia.'''
+	'mergeaccount'                                    => 'Estatus de fusión de cuentes',
+	'centralauth-desc'                                => '[[Special:MergeAccount|Fusiona cuentes]] ente les wikis de la Fundación Wikimedia',
+	'centralauth-merge-denied'                        => "Sentímoslo, nun tienes permisu p'acceder a esta páxina.",
+	'centralauth-merge-notlogged'                     => 'Por favor <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
+	'centralauth-merge-welcome'                       => "'''La to cuenta d'usuariu inda nun foi migrada al sistema de cuentes fusionaes de Wikimedia.'''
 
 Si decides migrar les tos cuentes, podrás usar el mesmu nome d'usuariu y la mesma clave pa identificate en toles wikis de Wikimedia de cualesquier llingua disponible.
 Esto facilita trabayar con proyeutos compartíos como les xubíes a [http://commons.wikimedia.org/ Wikimedia Commons], y evita la confusión o'l conflictu que pudiera surdir al escoyer dos persones el mesmu nome d'usuariu en proyeutos distintos.
 
 Si daquién yá escoyó'l to nome d'usuariu n'otru sitiu nun habría haber problema, yá que podrás ponete en contautu con él o con un alministrador más tarde.",
-	'centralauth-merge-step1-title'        => 'Emprimar la fusión de cuentes',
-	'centralauth-merge-step1-detail'       => 'La to clave y la to direición rexistrada de corréu electrónicu van ser comprobaes coles de les cuentes de les demás wikis pa confirmar que concueyen. Nun se van facer cambeos hasta que confirmes que too ta correcho.',
-	'centralauth-merge-step1-submit'       => 'Confirmar la fusión de cuentes',
-	'centralauth-merge-step2-title'        => 'Confirmar más cuentes',
-	'centralauth-merge-step2-detail'       => 'Dalgunes de les cuentes nun pudieron ser automáticamente asociaes a la wiki principal conseñada. Si estes cuentes son de yo, pues confirmalo escribiendo la so clave.',
-	'centralauth-merge-step2-submit'       => 'Confirmar la información de cuentes',
-	'centralauth-merge-dryrun-or'          => "'''o'''",
-	'centralauth-merge-step3-title'        => 'Crear la cuenta fusionada',
-	'centralauth-merge-step3-detail'       => 'Tas a piques de crear la to cuenta fusionada, coles siguientes wikis asociaes:',
-	'centralauth-merge-step3-submit'       => 'Fusionar cuentes',
-	'centralauth-complete'                 => '¡Fusión de cuentes completada!',
-	'centralauth-incomplete'               => '¡Fusión de cuentes non completada!',
-	'centralauth-complete-text'            => "Agora yá pues identificate en cualesquier wiki de Wikimedia ensin crear una cuenta nueva; el mesmu nome d'usuariu y la mesma clave van funcionar en Wikipedia, Wiktionary, Wikiboos y los sos proyeutos hermanos en cualesquier llingua.",
-	'centralauth-incomplete-text'          => "En cuantes que la to cuenta tea fusionada, podrás identificate en cualesquier wiki de Wikimedia ensin crear una cuenta nueva; el mesmu nome d'usuariu y la mesma clave van funcionar en Wikipedia, Wiktionary, Wikiboos y los sos proyeutos hermanos en cualesquier llingua.",
-	'centralauth-not-owner-text'           => 'El nome d\'usuariu "$1" asignóse automáticamente al poseyedor de la cuenta en $2.
+	'centralauth-merge-step1-title'                   => 'Emprimar la fusión de cuentes',
+	'centralauth-merge-step1-detail'                  => 'La to clave y la to direición rexistrada de corréu electrónicu van ser comprobaes coles de les cuentes de les demás wikis pa confirmar que concueyen. Nun se van facer cambeos hasta que confirmes que too ta correcho.',
+	'centralauth-merge-step1-submit'                  => 'Confirmar la fusión de cuentes',
+	'centralauth-merge-step2-title'                   => 'Confirmar más cuentes',
+	'centralauth-merge-step2-detail'                  => 'Dalgunes de les cuentes nun pudieron ser automáticamente asociaes a la wiki principal conseñada. Si estes cuentes son de yo, pues confirmalo escribiendo la so clave.',
+	'centralauth-merge-step2-submit'                  => 'Confirmar la información de cuentes',
+	'centralauth-merge-dryrun-or'                     => "'''o'''",
+	'centralauth-merge-step3-title'                   => 'Crear la cuenta fusionada',
+	'centralauth-merge-step3-detail'                  => 'Tas a piques de crear la to cuenta fusionada, coles siguientes wikis asociaes:',
+	'centralauth-merge-step3-submit'                  => 'Fusionar cuentes',
+	'centralauth-complete'                            => '¡Fusión de cuentes completada!',
+	'centralauth-incomplete'                          => '¡Fusión de cuentes non completada!',
+	'centralauth-complete-text'                       => "Agora yá pues identificate en cualesquier wiki de Wikimedia ensin crear una cuenta nueva; el mesmu nome d'usuariu y la mesma clave van funcionar en Wikipedia, Wiktionary, Wikiboos y los sos proyeutos hermanos en cualesquier llingua.",
+	'centralauth-incomplete-text'                     => "En cuantes que la to cuenta tea fusionada, podrás identificate en cualesquier wiki de Wikimedia ensin crear una cuenta nueva; el mesmu nome d'usuariu y la mesma clave van funcionar en Wikipedia, Wiktionary, Wikiboos y los sos proyeutos hermanos en cualesquier llingua.",
+	'centralauth-not-owner-text'                      => 'El nome d\'usuariu "$1" asignóse automáticamente al poseyedor de la cuenta en $2.
 
 Si yes tu, pues finar el procesu de fusión de cuentes escribiendo simplemente la clave maestra pa esa cuenta equí:',
-	'centralauth-notice-dryrun'            => "<div class='successbox'>Namái mou demo</div><br clear='all'/>",
-	'centralauth-disabled-dryrun'          => 'La fusión de cuentes ta nestos momentos nun estáu de depuración / demo, polo que les operaciones de fusión tán desactivaes anguaño. ¡Sentímoslo!',
-	'centralauth-readmore-text'            => ":''[[meta:Help:Unified login|Llei más tocante a '''cuenta fusionada''']]...''",
-	'centralauth-list-home-title'          => 'Wiki principal',
-	'centralauth-list-home-dryrun'         => 'La clave y la direición de corréu electrónicu conseñaos nesta wiki va ser usada pola to cuenta fusionada.
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>Namái mou demo</div><br clear='all'/>",
+	'centralauth-disabled-dryrun'                     => 'La fusión de cuentes ta nestos momentos nun estáu de depuración / demo, polo que les operaciones de fusión tán desactivaes anguaño. ¡Sentímoslo!',
+	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Llei más tocante a '''cuenta fusionada''']]...''",
+	'centralauth-list-home-title'                     => 'Wiki principal',
+	'centralauth-list-home-dryrun'                    => 'La clave y la direición de corréu electrónicu conseñaos nesta wiki va ser usada pola to cuenta fusionada.
 Podrás camudar cuála ye la to wiki principal más tarde.',
-	'centralauth-list-attached-title'      => 'Cuentes asociaes',
-	'centralauth-list-attached'            => 'La cuenta nomada "$1" en caún de los siguientes sitios foi asociada automáticamente a la cuenta fusionada:',
-	'centralauth-list-attached-dryrun'     => 'La cuenta nomada "$1" en caún de los siguientes sitios va ser asociada automáticamente a la cuenta fusionada:',
-	'centralauth-list-unattached-title'    => 'Cuentes non asociaes',
-	'centralauth-list-unattached'          => 'Nun se pudo confirmar automáticamente que la cuenta "$1" ye de to nos siguientes sitios; lo más probable ye que tengan claves distintes a les de la to cuenta primaria:',
-	'centralauth-foreign-link'             => 'Usuariu $1 en $2',
-	'centralauth-merge-method-empty'       => 'nenguna contribución',
-	'centralauth-merge-method-mail'        => 'confirmáu per corréu electrónicu',
-	'centralauth-merge-method-password'    => 'confirmáu per clave',
-	'centralauth-merge-method-new'         => 'nueva cuenta',
-	'centralauth-finish-title'             => 'Completar la fusión',
-	'centralauth-finish-text'              => 'Si estes cuentes son de to, pues finar el procesu de fusión de cuentes escribiendo simplemente les claves de les otres cuentes equí:',
-	'centralauth-finish-password'          => 'Clave:',
-	'centralauth-finish-login'             => 'Cuenta',
-	'centralauth-finish-send-confirmation' => 'Clave de corréu electrónicu',
-	'centralauth-finish-problems'          => '¿Tienes problemes o nun poseyes estes otres cuentes? [[meta:Help:Unified login problems|Cómo atopar aida]]...',
-	'centralauth-finish-noconfirms'        => 'Nun se pudo confirmar nenguna cuenta usando esta clave.',
-	'centralauth-finish-incomplete'        => 'Fusionáronse delles cuentes usando esta clave.
+	'centralauth-list-attached-title'                 => 'Cuentes asociaes',
+	'centralauth-list-attached'                       => 'La cuenta nomada "$1" en caún de los siguientes sitios foi asociada automáticamente a la cuenta fusionada:',
+	'centralauth-list-attached-dryrun'                => 'La cuenta nomada "$1" en caún de los siguientes sitios va ser asociada automáticamente a la cuenta fusionada:',
+	'centralauth-list-unattached-title'               => 'Cuentes non asociaes',
+	'centralauth-list-unattached'                     => 'Nun se pudo confirmar automáticamente que la cuenta "$1" ye de to nos siguientes sitios; lo más probable ye que tengan claves distintes a les de la to cuenta primaria:',
+	'centralauth-foreign-link'                        => 'Usuariu $1 en $2',
+	'centralauth-merge-method-empty'                  => 'nenguna contribución',
+	'centralauth-merge-method-mail'                   => 'confirmáu per corréu electrónicu',
+	'centralauth-merge-method-password'               => 'confirmáu per clave',
+	'centralauth-merge-method-new'                    => 'nueva cuenta',
+	'centralauth-finish-title'                        => 'Completar la fusión',
+	'centralauth-finish-text'                         => 'Si estes cuentes son de to, pues finar el procesu de fusión de cuentes escribiendo simplemente les claves de les otres cuentes equí:',
+	'centralauth-finish-password'                     => 'Clave:',
+	'centralauth-finish-login'                        => 'Cuenta',
+	'centralauth-finish-send-confirmation'            => 'Clave de corréu electrónicu',
+	'centralauth-finish-problems'                     => '¿Tienes problemes o nun poseyes estes otres cuentes? [[meta:Help:Unified login problems|Cómo atopar aida]]...',
+	'centralauth-finish-noconfirms'                   => 'Nun se pudo confirmar nenguna cuenta usando esta clave.',
+	'centralauth-finish-incomplete'                   => 'Fusionáronse delles cuentes usando esta clave.
 Otres cuentes entá nun tán confirmaes.',
-	'centralauth-merge-attempt'            => "'''Comprobando la clave conseñada pa les cuentes non fusionaes...'''",
-	'centralauth-attach-list-attached'     => 'La cuenta fusionada nomada "$1" inclúi les siguientes cuentes:',
-	'centralauth-attach-title'             => 'Confirmar cuenta',
-	'centralauth-attach-text'              => 'Esta cuenta inda nun foi migrada a la cuenta fusionada. Si la cuenta global tamién ye de to, pues fusionar esta cuenta escribiendo la clave de cuenta global:',
-	'centralauth-attach-submit'            => 'Migrar cuenta',
-	'centralauth-attach-success'           => 'La cuenta foi migrada a la cuenta fusionada.',
-	'centralauth'                          => 'Alministración de cuentes fusionaes',
-	'centralauth-admin-manage'             => "Remanar los datos d'usuariu",
-	'centralauth-admin-username'           => "Nome d'usuariu:",
-	'centralauth-admin-lookup'             => "Ver o editar los datos d'usuariu",
-	'centralauth-admin-permission'         => "Namái los stewards puen fusionar les cuentes d'otres persones por ellos.",
-	'centralauth-admin-no-unified'         => "Nun hai cuenta fusionada pa esti nome d'usuariu.",
-	'centralauth-admin-yes'                => 'sí',
-	'centralauth-admin-no'                 => 'non',
-	'centralauth-admin-attached'           => 'Cuentes completamente fusionaes',
-	'centralauth-admin-unattached'         => 'Cuentes non asociaes',
-	'centralauth-admin-list-localwiki'     => 'Wiki llocal',
-	'centralauth-admin-list-method'        => 'Métodu',
-	'centralauth-admin-unmerge'            => 'Dixebrar seleicionaes',
-	'centralauth-admin-merge'              => 'Fusionar seleicionaes',
-	'centralauth-admin-bad-input'          => 'Seleición de fusión non válida',
-	'centralauth-admin-none-selected'      => 'Nun se seleicionaron cuentes pa modificar.',
-	'centralauth-admin-delete-title'       => 'Eliminar cuenta',
-	'centralauth-admin-delete-button'      => 'Eliminar esta cuenta',
-	'centralauth-admin-nonexistent'        => 'Nun hai cuenta global pa "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
-	'centralauth-token-mismatch'           => 'Sentímoslo, nun se pudo procesar el to formulariu pol mor una perda de datos de la sesión.',
-	'centralauth-admin-lock-title'         => 'Bloquiar cuenta',
-	'centralauth-admin-lock-button'        => 'Bloquiar esta cuenta',
-	'centralauth-admin-lock-nonexistent'   => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
-	'centralauth-admin-unlock-title'       => 'Desbloquiar cuenta',
-	'centralauth-admin-unlock-button'      => 'Desbloquiar esta cuenta',
-	'centralauth-admin-unlock-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
-	'centralauth-admin-reason'             => 'Motivu:',
-	'globalusers'                          => "Llista d'usuarios globales",
-	'centralauth-listusers-locked'         => 'bloquiáu',
-	'centralauth-listusers-attached'       => 'esiste llocalmente',
-	'centralauth-listusers-nolocal'        => 'non asociáu o nun esiste llocalmente',
-	'centralauth-seconds-ago'              => 'hai $1 {{PLURAL:$1|segundu|segundos}}',
-	'centralauth-minutes-ago'              => 'hai $1 {{PLURAL:$1|minutu|minutos}}',
-	'centralauth-hours-ago'                => 'hai $1 {{PLURAL:$1|hora|hores}}',
-	'centralauth-days-ago'                 => 'hai $1 {{PLURAL:$1|día|díes}}',
-	'centralauth-months-ago'               => 'hai $1 {{PLURAL:$1|mes|meses}}',
-	'centralauth-years-ago'                => 'hai $1 {{PLURAL:$1|añu|años}}',
-	'centralauth-prefs-status'             => 'Estatus de cuenta global:',
-	'centralauth-prefs-not-managed'        => 'Nun se ta usando la cuenta fusionada',
-	'centralauth-prefs-unattached'         => 'Non confirmada',
-	'centralauth-prefs-complete'           => "¡Too n'orde!",
-	'centralauth-prefs-migration'          => 'Migrando',
-	'centralauth-prefs-count-attached'     => 'La to cuenta ta activa {{PLURAL:$1|nun sitiu|en $1 sitios}} de proyeutu.',
-	'centralauth-prefs-count-unattached'   => 'Queden cuentes non confirmaes col to nome {{PLURAL:$1|nun proyeutu|en $1 proyeutos}}.',
-	'centralauth-prefs-detail-unattached'  => "Nun se confirmó la pertenencia d'esti sitiu de proyeutu a la cuenta global.",
-	'centralauth-prefs-manage'             => 'Remanar la to cuenta global',
-	'centralauth-invalid-wiki'             => 'Nun esiste la base de datos wiki: $1',
-	'centralauth-log-name'                 => 'Rexistru de cuenta global',
-	'centralauth-log-header'               => 'Esti rexistru contién operaciones de tocantes a cuentes globales: eliminaciones, bloqueos y desbloqueos.',
-	'centralauth-log-entry-delete'         => 'eliminó la cuenta global "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-lock'           => 'protexó la cuenta global "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unlock'         => 'desprotexó la cuenta global "<nowiki>$1</nowiki>"',
-	'right-centralauth-admin'              => 'Alministrar cuentes globales',
-	'right-centralauth-merge'              => 'Fusionar la so cuenta',
+	'centralauth-merge-attempt'                       => "'''Comprobando la clave conseñada pa les cuentes non fusionaes...'''",
+	'centralauth-attach-list-attached'                => 'La cuenta fusionada nomada "$1" inclúi les siguientes cuentes:',
+	'centralauth-attach-title'                        => 'Confirmar cuenta',
+	'centralauth-attach-text'                         => 'Esta cuenta inda nun foi migrada a la cuenta fusionada. Si la cuenta global tamién ye de to, pues fusionar esta cuenta escribiendo la clave de cuenta global:',
+	'centralauth-attach-submit'                       => 'Migrar cuenta',
+	'centralauth-attach-success'                      => 'La cuenta foi migrada a la cuenta fusionada.',
+	'centralauth'                                     => 'Alministración de cuentes fusionaes',
+	'centralauth-admin-manage'                        => "Remanar los datos d'usuariu",
+	'centralauth-admin-username'                      => "Nome d'usuariu:",
+	'centralauth-admin-lookup'                        => "Ver o editar los datos d'usuariu",
+	'centralauth-admin-permission'                    => "Namái los stewards puen fusionar les cuentes d'otres persones por ellos.",
+	'centralauth-admin-no-unified'                    => "Nun hai cuenta fusionada pa esti nome d'usuariu.",
+	'centralauth-admin-yes'                           => 'sí',
+	'centralauth-admin-no'                            => 'non',
+	'centralauth-admin-attached'                      => 'Cuentes completamente fusionaes',
+	'centralauth-admin-unattached'                    => 'Cuentes non asociaes',
+	'centralauth-admin-list-localwiki'                => 'Wiki llocal',
+	'centralauth-admin-list-method'                   => 'Métodu',
+	'centralauth-admin-unmerge'                       => 'Dixebrar seleicionaes',
+	'centralauth-admin-merge'                         => 'Fusionar seleicionaes',
+	'centralauth-admin-bad-input'                     => 'Seleición de fusión non válida',
+	'centralauth-admin-none-selected'                 => 'Nun se seleicionaron cuentes pa modificar.',
+	'centralauth-admin-delete-title'                  => 'Eliminar cuenta',
+	'centralauth-admin-delete-button'                 => 'Eliminar esta cuenta',
+	'centralauth-admin-nonexistent'                   => 'Nun hai cuenta global pa "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent'            => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
+	'centralauth-token-mismatch'                      => 'Sentímoslo, nun se pudo procesar el to formulariu pol mor una perda de datos de la sesión.',
+	'centralauth-admin-lock-title'                    => 'Bloquiar cuenta',
+	'centralauth-admin-lock-button'                   => 'Bloquiar esta cuenta',
+	'centralauth-admin-lock-nonexistent'              => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
+	'centralauth-admin-unlock-title'                  => 'Desbloquiar cuenta',
+	'centralauth-admin-unlock-button'                 => 'Desbloquiar esta cuenta',
+	'centralauth-admin-unlock-nonexistent'            => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
+	'centralauth-admin-hide-title'                    => 'Esconder cuenta',
+	'centralauth-admin-hide-button'                   => 'Esconder esta cuenta',
+	'centralauth-admin-reason'                        => 'Motivu:',
+	'globalusers'                                     => "Llista d'usuarios globales",
+	'centralauth-listusers-locked'                    => 'bloquiáu',
+	'centralauth-listusers-attached'                  => 'esiste llocalmente',
+	'centralauth-listusers-nolocal'                   => 'non asociáu o nun esiste llocalmente',
+	'centralauth-seconds-ago'                         => 'hai $1 {{PLURAL:$1|segundu|segundos}}',
+	'centralauth-minutes-ago'                         => 'hai $1 {{PLURAL:$1|minutu|minutos}}',
+	'centralauth-hours-ago'                           => 'hai $1 {{PLURAL:$1|hora|hores}}',
+	'centralauth-days-ago'                            => 'hai $1 {{PLURAL:$1|día|díes}}',
+	'centralauth-months-ago'                          => 'hai $1 {{PLURAL:$1|mes|meses}}',
+	'centralauth-years-ago'                           => 'hai $1 {{PLURAL:$1|añu|años}}',
+	'centralauth-prefs-status'                        => 'Estatus de cuenta global:',
+	'centralauth-prefs-not-managed'                   => 'Nun se ta usando la cuenta fusionada',
+	'centralauth-prefs-unattached'                    => 'Non confirmada',
+	'centralauth-prefs-complete'                      => "¡Too n'orde!",
+	'centralauth-prefs-migration'                     => 'Migrando',
+	'centralauth-prefs-count-attached'                => 'La to cuenta ta activa {{PLURAL:$1|nun sitiu|en $1 sitios}} de proyeutu.',
+	'centralauth-prefs-count-unattached'              => 'Queden cuentes non confirmaes col to nome {{PLURAL:$1|nun proyeutu|en $1 proyeutos}}.',
+	'centralauth-prefs-detail-unattached'             => "Nun se confirmó la pertenencia d'esti sitiu de proyeutu a la cuenta global.",
+	'centralauth-prefs-manage'                        => 'Remanar la to cuenta global',
+	'centralauth-invalid-wiki'                        => 'Nun esiste la base de datos wiki: $1',
+	'centralauth-log-name'                            => 'Rexistru de cuenta global',
+	'centralauth-log-header'                          => 'Esti rexistru contién operaciones de tocantes a cuentes globales: eliminaciones, bloqueos y desbloqueos.',
+	'centralauth-log-entry-delete'                    => 'eliminó la cuenta global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock'                      => 'protexó la cuenta global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock'                    => 'desprotexó la cuenta global "<nowiki>$1</nowiki>"',
+	'centralauth-rightslog-name'                      => 'Rexistru de drechos globales',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|ver/editar]])',
+	'centralauth-existinggroup-legend'                => 'Grupos esistentes',
+	'centralauth-newgroup-legend'                     => 'Crear un grupu nuevu',
+	'centralauth-globalgroupperms-newgroupname'       => 'Nuevu nome de grupu:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Asignar permisos',
+	'centralauth-editgroup-subtitle'                  => 'Editando $1',
+	'centralauth-editgroup-fieldset'                  => 'Permisos pa $1',
+	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|editar]])',
+	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|editar]])',
+	'centralauth-editgroup-members'                   => 'Llista de miembros:',
+	'centralauth-editgroup-perms'                     => 'Permisos asignaos:',
+	'centralauth-editgroup-reason'                    => 'Motivu del cambéu:',
+	'centralauth-editgroup-success'                   => 'Permisos de grupu camudaos',
+	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|editar]])',
+	'centralauth-editset-name'                        => 'Nome:',
+	'centralauth-editset-type'                        => 'Triba:',
+	'centralauth-editset-wikis'                       => 'Wikis:',
+	'centralauth-editset-reason'                      => 'Motivu:',
+	'centralauth-editset-badwikis'                    => 'Les siguientes wikis nun esisten: $1.',
+	'right-centralauth-admin'                         => 'Alministrar cuentes globales',
+	'right-centralauth-merge'                         => 'Fusionar la so cuenta',
 );
 
 /** Kotava (Kotava)
@@ -1271,7 +1291,7 @@ $messages['bcc'] = array(
 	'centralauth-rightslog-entry-usergroups'          => 'عوض بوت عضویت گروه سراسری په $1 چه $2 به $3.',
 	'centralauth-rightslog-entry-groupperms'          => 'عوض بوت اجازتان گروه په $1 چه $2 به $3.',
 	'centralauth-rightslog-entry-groupperms2'         => 'اختیارات گروه $1 را تغییر دات. $2 را هوری کت؛ $3 را حذف کت',
-	'centralauth-rightslog-header'                    => 'ای ورود شامل کارانی انت ته گروهان سراسری: تغییرات عضویت,اجازت',
+	'centralauth-rightslog-header'                    => 'ای ورود شامل کارانی انت ته گروهان سراسری،شامل تغییرات عضویت,اجازت گروهان',
 	'globalgroupmembership'                           => 'عضویت ته گروهان سراسری',
 	'globalgrouppermissions'                          => 'مدیریت گروه سراسری',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|به گند و اصلاح کن اجازتانء]])',
@@ -1290,15 +1310,36 @@ $messages['bcc'] = array(
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|اصلاح]])',
 	'centralauth-editgroup-members'                   => 'لیست عضو:',
 	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|لیست کابران گون $2 حقوق]]',
+	'centralauth-editgroup-noset'                     => '(هچ‌یک)',
 	'centralauth-editgroup-submit'                    => 'ذخیره کن تغییراتء په اجارتان گروه',
 	'centralauth-editgroup-perms'                     => 'داتگین اجارت ان:',
 	'centralauth-editgroup-reason'                    => 'دلیل په عوض کتن:',
 	'centralauth-editgroup-success'                   => 'اجازت گروه عوض بوت',
 	'centralauth-editgroup-success-text'              => 'شما گون موفقیت اجارتان گروهء په گروه  $1 عوض کت.
 [[Special:GlobalGroupPermissions|برگرد په گروه مدیریت]]',
-	'centralauth-globalgrouppermissions-knownwiki'    => 'یک ویکی بزور که تا آییء یک حسابی هست',
+	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|اصلاح])',
+	'centralauth-globalgrouppermissions-knownwiki'    => 'ویکیء که ته آی شما را حساب:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "('' $2 '').کاربر سراسری '''$1'''  ته ویکی ای که شما مشخص کت فعال نهنت
 شاید شما تلاش کنیت حقوق په یک اشتباهین کاربری به دیت!",
+	'centralauth-editset'                             => 'اصلاح مجوعیان ویکی',
+	'centralauth-editset-legend'                      => 'اصلاح یا شرکتن مجوعه ویکی',
+	'centralauth-editset-new'                         => 'شرکتن یک نوکین مجموعه',
+	'centralauth-editset-notfound'                    => 'مجموعه ویکی "$1" دزگیزگ نه بوت',
+	'centralauth-editset-legend-new'                  => 'نوکین مجوعه ویکی شرکنگنت',
+	'centralauth-editset-name'                        => 'نام:',
+	'centralauth-editset-type'                        => 'نوع:',
+	'centralauth-editset-wikis'                       => 'ویکیان:<br/>(space-separated)',
+	'centralauth-editset-reason'                      => 'دلیل:',
+	'centralauth-editset-submit'                      => 'دیم دی',
+	'centralauth-editset-badname'                     => 'شما یک نامعتبرین یا هالیکین نام مجموعه ایء مشخض کتت',
+	'centralauth-editset-badtype'                     => 'شما یک نامعتبرین نوع مجموعه ای مشخص کتت',
+	'centralauth-editset-setexists'                   => 'یک مجموعه ویکیء گون ای نام الان هستن',
+	'centralauth-editset-nowikis'                     => 'هچ ویکیء مشخص نه بوتت',
+	'centralauth-editset-nouse'                       => '(هچ‌یک)',
+	'centralauth-editset-usage'                       => 'استفاده بیت ته گروهان:',
+	'centralauth-editset-badwikis'                    => 'جهلگین ویکیان نیستن: $1.',
+	'centralauth-editset-success'                     => 'گون موفقیت مجموعه ویکی مشخض بوت.',
+	'centralauth-editset-add'                         => 'اضافه په لیست',
 	'right-globalgroupmembership'                     => 'اصلاح عضویت ته گروهان سراسری',
 	'right-centralauth-admin'                         => 'حسابان سراسریء مدیریت کن',
 	'right-centralauth-merge'                         => 'چن وبند کن آیانیء حسابء',
@@ -1400,7 +1441,6 @@ $messages['be-tarask'] = array(
  * @author DCLXVI
  * @author Borislav
  * @author Spiritia
- * @author Siebrand
  */
 $messages['bg'] = array(
 	'mergeaccount'                                    => 'Състояние на обединението на сметки',
@@ -1604,7 +1644,7 @@ $messages['bg'] = array(
 	'centralauth-globalgroupmembership-badknownwiki'  => "Глобалният потребител '''$1''' не е активен в указаното от вас уики ''($2)''. Възможно е да се опитвате да дадете права на грешния потребител!",
 	'centralauth-editset-name'                        => 'Име:',
 	'centralauth-editset-type'                        => 'Тип:',
-	'centralauth-editset-wikis'                       => 'Уикита:',
+	'centralauth-editset-wikis'                       => 'Уикита:<br/>(отделени с интервал)',
 	'centralauth-editset-reason'                      => 'Причина:',
 	'centralauth-editset-submit'                      => 'Изпращане',
 	'right-globalgroupmembership'                     => 'Промяна на членството в глобални групи',
@@ -1707,6 +1747,7 @@ $messages['bn'] = array(
 	'centralauth-admin-merge'                         => 'নির্বাচিতসমূহ একীভূত করো',
 	'centralauth-admin-bad-input'                     => 'একীভূতকরণের জন্য অবৈধ নির্বাচন',
 	'centralauth-admin-none-selected'                 => 'পরিবর্তনের জন্য কোন অ্যাকাউন্ট নির্বাচন করা হয় নাই।',
+	'centralauth-admin-already-unmerged'              => '$1 এড়িয়ে যাওয়া হয়েছে, ইতিমধ্যে বিচ্ছন্ন করা হয়েছে',
 	'centralauth-admin-unmerge-success'               => '$1 {{PLURAL:$1|অ্যাকাউন্ট|অ্যাকাউন্টসমূহ}} সফল ভাবে বিচ্ছিন্ন হয়েছে',
 	'centralauth-admin-delete-title'                  => 'অ্যাকাউন্ট মুছে ফেলো',
 	'centralauth-admin-delete-button'                 => 'এই অ্যাকাউন্টটি মুছে ফেলো',
@@ -1759,7 +1800,10 @@ $messages['bn'] = array(
 	'centralauth-renameuser-reserved'                 => 'ব্যবহারকারী $2 গ্লোবাল অ্যাকাউন্টের জন্য বরাদ্দ আছে।',
 	'centralauth-invalid-wiki'                        => 'এমন কোন ডাটাবেজ নাই: $1',
 	'centralauth-account-exists'                      => 'অ্যাকাউন্ট তৈরি করা যাবে না: অনুরোধকৃত ব্যবহারকারী নাম ইতিমধ্যে একীভূত লগইন সিস্টেমের জন্য নেওয়া হয়েছে।',
+	'centralauth-login-progress'                      => 'উইকিমিডিয়ার অন্যান্য প্রকল্পে আপনাকে লগইন করা হয়েছে:',
+	'centralauth-logout-progress'                     => 'উইকিমিডিয়ার অন্যান্য প্রকল্প থেকে আপনাকে লগআউট করা হয়েছে:',
 	'centralauth-log-name'                            => 'গ্লোবাল অ্যাকাউন্ট লগ',
+	'centralauth-log-header'                          => 'এটি গ্লোবাল অ্যাকাউন্ট পরিচালনার কার্যক্রম লগ:মুছে ফেলা, বন্ধ এবং পুনরায় চালু করা।',
 	'centralauth-log-entry-delete'                    => 'গ্লোবাল অ্যাকাউন্ট "<nowiki>$1</nowiki>" মুছে ফেলো',
 	'centralauth-log-entry-lock'                      => 'গ্লোবাল অ্যাকাউন্ট "<nowiki>$1</nowiki>" বন্ধ করো',
 	'centralauth-log-entry-unlock'                    => 'গ্লোবাল অ্যাকাউন্ট "<nowiki>$1</nowiki>" পুনরায় সচল করো',
@@ -1767,8 +1811,23 @@ $messages['bn'] = array(
 	'centralauth-log-entry-unhide'                    => 'গ্লোবাল অ্যাকাউন্ট "<nowiki>$1</nowiki>" লুকানো অবস্থা থেকে বের করো',
 	'centralauth-log-entry-lockandhide'               => 'গ্লোবাল অ্যাকাউন্ট "<nowiki>$1</nowiki>" বন্ধ এবং লুকিয়ে ফেলো',
 	'centralauth-rightslog-name'                      => 'গ্লোবাল অধিকার লগ',
+	'centralauth-rightslog-entry-usergroups'          => '$1 এর জন্য $2 থেকে $3 তে গ্লোবাল গ্রুপ সদস্যপদ পরিবর্তন করা হয়েছে',
+	'centralauth-rightslog-entry-groupperms'          => '$1 এর জন্য $2 থেকে $3 তে গ্রুপ অনুমতিসমূহ পরিবর্তন করা হয়েছে',
+	'centralauth-rightslog-entry-groupperms2'         => '$1 এর জন্য গ্রুপ অনুমতি পরিবর্তন করা হয়েছে। $2 যোগ; $3 বাদ দেওয়া হয়েছে',
+	'centralauth-rightslog-entry-groupperms3'         => '$1 এর জন্য $2 থেকে $3 তে প্রয়োগযোগ্য উইকি পরিবর্তন করা হয়েছে',
+	'centralauth-rightslog-entry-newset'              => '$2 উইকি সেট $1 তৈরি করা হয়েছে যাতে যে সমস্ত উইকিসমূহ রয়েছে: $3',
+	'centralauth-rightslog-entry-setrename'           => 'উইকি "$2" থেকে "$1" নামান্তরিত হয়েছে',
+	'centralauth-rightslog-entry-setnewtype'          => '"$1"  এর ধরণ $2 থেকে $3 তে পরিবর্তন করা হয়েছে',
+	'centralauth-rightslog-entry-setchange'           => '"$1" এর উইকিসমূহ পরিবর্তন করা হয়েছে: যোগ: $2; বাদ: $3',
+	'centralauth-rightslog-set-optin'                 => 'অপট-ইন',
+	'centralauth-rightslog-set-optout'                => 'অপট-আউট',
+	'globalgroupmembership'                           => 'গ্লোবাল গ্রুপের সদস্যপদ',
+	'globalgrouppermissions'                          => 'গ্লোবাল গ্রুপ ব্যবস্থাপনা',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|দেখাও/সম্পাদনা করো]])',
 	'centralauth-existinggroup-legend'                => 'বিদ্যমান গ্রুপ',
 	'centralauth-newgroup-legend'                     => 'নতুন গ্রুপ তৈরি করো',
+	'centralauth-newgroup-intro'                      => 'আপনি এ ফরমটি নতুন গ্রুপকে অনুমতি প্রদানের কাজে ব্যবহার করতে পারবেন।
+লক্ষ্য করুন একটি গ্রুপের অনুমতিসমূহ প্রদান না করা পর্যন্ত কোন গ্রুপ হবে না।',
 	'centralauth-globalgroupperms-newgroupname'       => 'নতুন গ্রুপ নাম:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'অনুমতি প্রদান করো',
 	'centralauth-editgroup-subtitle'                  => 'সম্পাদনা করা হচ্ছে $1',
@@ -1779,29 +1838,38 @@ $messages['bn'] = array(
 	'centralauth-editgroup-member'                    => 'গ্রুপ সদস্যদের স্থানীয়(Localised) নাম:',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:গ্রুপ-$1-সদস্য|সম্পাদনা]])',
 	'centralauth-editgroup-members'                   => 'সদস্য তালিকা:',
+	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|অধিকার প্রাপ্ত ব্যবহারকারীদের তালিকা]]',
 	'centralauth-editgroup-restrictions'              => 'এই গ্রুপটি সক্রিয় এমন উইকিসমূহের সেট:',
 	'centralauth-editgroup-noset'                     => '(কিছু নাই)',
+	'centralauth-editgroup-submit'                    => 'গ্রুপ অনুমতিসমূহ পরিবর্তন করা হয়েছে',
 	'centralauth-editgroup-perms'                     => 'প্রদানকৃত অনুমতিসমূহ:',
 	'centralauth-editgroup-reason'                    => 'পরিবর্তনের কারণ:',
 	'centralauth-editgroup-success'                   => 'গ্রুপ অনুমতি পরিবর্তন করা হয়েছে',
 	'centralauth-editgroup-success-text'              => 'আপনি সফল ভাবে $1 গ্রুপের অনুমতি পরিবর্তন করেছেন।
 [[Special:GlobalGroupPermissions|গ্রুপ ব্যবস্থাপনায় ফিরে যাও]]',
+	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|সম্পাদনা]])',
 	'centralauth-globalgrouppermissions-knownwiki'    => 'একটি উইকি নির্বাচন করুন যেখানে তাদের একটি অ্যাকাউন্ট আছে:',
 	'centralauth-editset'                             => 'উইকি সেট পরিবর্তন করো',
 	'centralauth-editset-legend'                      => 'উইকি সেট তৈরি বা পরিবর্তন করো',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|দেখুন/সম্পাদনা]])',
 	'centralauth-editset-new'                         => 'নতুন সেট তৈরি করো',
 	'centralauth-editset-notfound'                    => 'উইকি সেট "$1" খুজে পাওয়া যায়নি।',
+	'centralauth-editset-optin'                       => 'অপট-ইন (কেবল মাত্র সেটে তালিকাভুক্ত উইকিসমূহ)',
+	'centralauth-editset-optout'                      => 'অপট-আউট (কেবল মাত্র সেটে তালিকাভুক্ত নয় এমন উইকিসমূহ)',
 	'centralauth-editset-legend-edit'                 => '"$1" উইকি সেট সম্পাদিত হচ্ছে',
 	'centralauth-editset-legend-new'                  => 'নতুন উইকি সেট তৈরি হচ্ছে',
 	'centralauth-editset-name'                        => 'নাম:',
 	'centralauth-editset-type'                        => 'ধরণ:',
-	'centralauth-editset-wikis'                       => 'উইকিসমূহ:',
+	'centralauth-editset-wikis'                       => 'উইকিসমূহ:<br/>(খালি অক্ষর দিয়ে আলাদাকৃত)',
 	'centralauth-editset-reason'                      => 'কারণ:',
 	'centralauth-editset-submit'                      => 'পেশ করো',
-	'centralauth-editset-badname'                     => 'সঠিক নয় বা খালি সেট নাম দেওয়া হয়েছে।',
-	'centralauth-editset-badtype'                     => 'ভুল সেট ধরণ দেওয়া হয়েছে।',
+	'centralauth-editset-badname'                     => 'আপনি সঠিক নয় অথবা খালি সেট নাম দিয়েছেন।',
+	'centralauth-editset-badtype'                     => 'আপনি সেট ভুল ধরণ দিয়েছেন।',
+	'centralauth-editset-setexists'                   => 'এই নামের উইকি সেট আগেই রয়েছে',
 	'centralauth-editset-nowikis'                     => 'কোন উইকি নির্ধারণ করা হয়নি।',
+	'centralauth-editset-nouse'                       => '(কিছু নাই)',
+	'centralauth-editset-usage'                       => 'গ্রুপে ব্যবহৃত হয়েছে:',
+	'centralauth-editset-add'                         => 'তালিকায় যুক্ত করো',
 	'right-centralauth-merge'                         => 'তাদের অ্যাকাউন্ট একীভূত করো',
 	'right-globalgrouppermissions'                    => 'গ্লোবাল গ্রুপ ব্যবস্থাপনা',
 );
@@ -2147,12 +2215,28 @@ Heu demanat aquesta pàgina sense haver proporcionat dades d'autentificació, ai
 	'right-globalgrouppermissions'                    => 'Gestionar els grups globals',
 );
 
+/** Cebuano (Cebuano)
+ * @author Abastillas
+ */
+$messages['ceb'] = array(
+	'centralauth-finish-password'          => 'Pasword:',
+	'centralauth-finish-login'             => 'Dayon',
+	'centralauth-finish-send-confirmation' => "I-''e-mail'' ang pasword",
+	'centralauth-admin-username'           => 'Ngalan',
+	'centralauth-admin-reason'             => 'Hinungdan:',
+	'centralauth-seconds-ago'              => '$1 {{PLURAL:$1|ka segundo|ka segundo}} ang milabay',
+	'centralauth-minutes-ago'              => '$1 {{PLURAL:$1|ka gutlo|ka gutlo}} ang milabay',
+	'centralauth-hours-ago'                => '$1 {{PLURAL:$1|ka oras|ka oras}} ang milabay',
+	'centralauth-days-ago'                 => '$1 {{PLURAL:$1|ka adlaw|ka adlaw}} ang milabay',
+	'centralauth-months-ago'               => '$1 {{PLURAL:$1|ka bulan|ka bulan}} ang milabay',
+	'centralauth-years-ago'                => '$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay',
+);
+
 /** Czech (Česky)
  * @author Li-sung
  * @author Danny B.
  * @author Matěj Grabovský
  * @author Mormegil
- * @author Siebrand
  */
 $messages['cs'] = array(
 	'mergeaccount'                                    => 'Stav sjednocení přihlašovacích účtů',
@@ -2443,7 +2527,6 @@ Dine konti er ikke blevet ændret endnu.',
 /** German (Deutsch)
  * @author Raimond Spekking
  * @author Raymond
- * @author Siebrand
  */
 $messages['de'] = array(
 	'mergeaccount'                                    => 'Status der Benutzerkonten-Zusammenführung',
@@ -2645,14 +2728,14 @@ $messages['de'] = array(
 	'centralauth-rightslog-entry-usergroups'          => 'änderte die globale Gruppenzugehörigkeit für „$1“ von $2 auf $3',
 	'centralauth-rightslog-entry-groupperms'          => 'änderte die Gruppenrechte für „$1“ von $2 auf $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'änderte die Gruppenberechtigung für $1. Ergänzt $2; entfernt $3',
-	'centralauth-rightslog-entry-groupperms3'         => 'änderte die Gruppe beschränkter Wikigruppen für $1 von $2 auf $3',
-	'centralauth-rightslog-header'                    => 'Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen.',
+	'centralauth-rightslog-entry-groupperms3'         => 'änderte anwendbare Wikigruppen für $1 von $2 auf $3',
+	'centralauth-rightslog-header'                    => 'Dieses Logbuch enthält Änderungen an globale Berechtigungen inklusive Ändernungen in Gruppenmitgliedschaften und ihnen zugewiesene Berechtigungen.',
 	'centralauth-rightslog-entry-newset'              => 'erstellte $2 die Wikigruppe $1 mit den folgenden Wikis: $3',
 	'centralauth-rightslog-entry-setrename'           => 'benannte die Wikigruppe „$2“ in „$1“ um',
 	'centralauth-rightslog-entry-setnewtype'          => 'änderte den Typ von „$1“ von $2 auf $3',
 	'centralauth-rightslog-entry-setchange'           => 'änderte die Wikis in „$1“: ergänzt: $2, entfernt: $3',
-	'centralauth-rightslog-set-optin'                 => 'opt-in basiert',
-	'centralauth-rightslog-set-optout'                => 'opt-out basiert',
+	'centralauth-rightslog-set-optin'                 => 'opt-in',
+	'centralauth-rightslog-set-optout'                => 'opt-out',
 	'globalgroupmembership'                           => 'Mitgliedschaft in globalen Gruppen',
 	'globalgrouppermissions'                          => 'Management globaler Gruppen',
 	'centralauth-globalgroupperms-grouplist'          => 'Die folgenden globalen Gruppen wurden konfiguriert. Du kannst die jeder Gruppe zugewiesenen Rechte sehen und ändern. Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
@@ -2683,27 +2766,28 @@ $messages['de'] = array(
 	'centralauth-globalgroupmembership-badknownwiki'  => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
 	'centralauth-editset'                             => 'Bearbeite Wikigruppe',
 	'centralauth-editset-legend'                      => 'Bearbeite oder erstelle Wikigruppe',
-	'centralauth-editset-intro'                       => 'Die folgenden Wikigruppen wurden erstellt. Du kannst jede von ihnen ansehen oder ändern sowie eine neue Gruppe erstellen.',
+	'centralauth-editset-intro'                       => 'Globale Berechtigungen sind beschränkt auf die Wikis in den folgenden Wikigruppen. Du kannst jede von ihnen ansehen oder ändern sowie eine neue Gruppe erstellen.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|ansehen/bearbeiten]])',
 	'centralauth-editset-new'                         => 'Neue Gruppe erstellen',
 	'centralauth-editset-notfound'                    => 'Wikigruppe „$1“ nicht gefunden.',
-	'centralauth-editset-optin'                       => 'Opt-in basiert (nur die angegebenen Wikis gehören dazu)',
-	'centralauth-editset-optout'                      => 'Opt-out basiert (es gehören alle Wikis mit Ausnahme der angegebenen dazu)',
+	'centralauth-editset-optin'                       => 'Opt-in (nur die angegebenen Wikis gehören zur Gruppe)',
+	'centralauth-editset-optout'                      => 'Opt-out (nur die hier nicht aufgeführten Wikis gehören zur Gruppe)',
 	'centralauth-editset-legend-edit'                 => 'Bearbeitung der Wikigruppe „$1“',
 	'centralauth-editset-legend-new'                  => 'Erstellung einer neuen Wikigruppe',
 	'centralauth-editset-name'                        => 'Name:',
 	'centralauth-editset-type'                        => 'Typ:',
-	'centralauth-editset-wikis'                       => 'Wikis:',
+	'centralauth-editset-wikis'                       => 'Wikis:<br />(getrennt durch Leerzeichen)',
 	'centralauth-editset-reason'                      => 'Grund:',
 	'centralauth-editset-submit'                      => 'OK',
-	'centralauth-editset-badname'                     => 'Ungültiger oder leerer Gruppenname.',
-	'centralauth-editset-badtype'                     => 'Ungültiger Typ.',
+	'centralauth-editset-badname'                     => 'Du hast einen ungültigen oder leeren Gruppennamen angegeben.',
+	'centralauth-editset-badtype'                     => 'Du hast einen ungültigen Typ angegeben.',
 	'centralauth-editset-setexists'                   => 'Es ist bereits eine Gruppe mit diesem Namen vorhanden',
 	'centralauth-editset-nowikis'                     => 'Keine Wikis angegeben.',
 	'centralauth-editset-nouse'                       => '(keine)',
 	'centralauth-editset-usage'                       => 'Benutzt in den Gruppen:',
 	'centralauth-editset-badwikis'                    => 'Die folgenden Wikis sind nicht vorhanden: $1.',
 	'centralauth-editset-success'                     => 'Wikigruppe erfolgreich geändert.',
+	'centralauth-editset-add'                         => 'Zur Liste hinzufügen',
 	'right-globalgroupmembership'                     => 'Mitgliedschaft in globalen Gruppen bearbeiten',
 	'right-centralauth-admin'                         => 'Globale Benutzerkonten administrieren',
 	'right-centralauth-merge'                         => 'Benutzerkonten zusammenführen',
@@ -3015,7 +3099,6 @@ $messages['el'] = array(
 
 /** Esperanto (Esperanto)
  * @author Yekrats
- * @author Siebrand
  */
 $messages['eo'] = array(
 	'mergeaccount'                                    => 'Statuso de unuigado de salutnomoj',
@@ -3744,7 +3827,6 @@ Ennen yhdistämistä luotujen paikallisten tunnuksien salasanat palautuvat yhdis
  * @author Verdy p
  * @author Urhixidur
  * @author Seb35
- * @author Siebrand
  * @author McDutchie
  * @author Louperivois
  */
@@ -4089,7 +4171,6 @@ $messages['fy'] = array(
  * @author Kaustubh
  * @author Prevert
  * @author Alma
- * @author Siebrand
  */
 $messages['gl'] = array(
 	'mergeaccount'                                    => 'Estado da unificación do rexistro',
@@ -4597,7 +4678,6 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Kaustubh
- * @author Siebrand
  */
 $messages['hi'] = array(
 	'mergeaccount'                                    => 'खाता एकत्रिकरण स्थिती',
@@ -4945,7 +5025,6 @@ Ostali računi nisu još potvrđeni.',
 /** Upper Sorbian (Hornjoserbsce)
  * @author Dundak
  * @author Michawiki
- * @author Siebrand
  */
 $messages['hsb'] = array(
 	'mergeaccount'                                    => 'Status zjednoćenja wužiwarskich kontow',
@@ -5202,7 +5281,6 @@ menm non itilizatè ak mopas kont prensipal ou an ap mache nan Wikipedya, Wikibo
  * @author Tgr
  * @author Dorgan
  * @author KossuthRad
- * @author Siebrand
  * @author Samat
  */
 $messages['hu'] = array(
@@ -5582,7 +5660,7 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 	'centralauth-prefs-unattached'                    => 'Non confirmate',
 	'centralauth-prefs-complete'                      => 'Toto in ordine!',
 	'centralauth-prefs-migration'                     => 'In migration',
-	'centralauth-prefs-count-attached'                => 'To conto es active in $1 {{PLURAL:$1|sito|sitos}} de projecto.',
+	'centralauth-prefs-count-attached'                => 'Tu conto es active in $1 {{PLURAL:$1|sito|sitos}} de projecto.',
 	'centralauth-prefs-count-unattached'              => 'In $1 {{PLURAL:$1|projecto|projectos}} remane ancora contos non confirmate con le mesme nomine de usator que le tue.',
 	'centralauth-prefs-detail-unattached'             => 'Iste sito de projecto non ha essite confirmate como pertinente al conto global.',
 	'centralauth-prefs-manage'                        => 'Gerer tu conto global',
@@ -5690,36 +5768,34 @@ $messages['id'] = array(
 Jika Anda memilih untuk memigrasikan akun Anda, Anda dapat menggunakan nama pengguna dan kata sandi yang sama untuk masuk log ke semua proyek wiki Wikimedia pada semua bahasa yang tersedia.
 Hal ini memudahkan untuk bekerja pada proyek berbagi seperti memuat berkas ke [http://commons.wikimedia.org/ Wikimedia Commons] serta menghindari kebingungan atau konflik yang mungkin muncul dari dua orang yang memiliki nama pengguna sama pada proyek yang berbeda.
 
-Jika orang lain telah mengambil nama pengguna Anda pada situs lain, hal ini tak akan mengganggu mereka, tapi nantinya akan memberikan Anda kesempatan untuk memecahkan masalah ini dengan mereka atau pengurus.",
+Jika orang lain telah menggunakan nama pengguna Anda pada situs lain, hal ini tak akan mengganggu mereka, tapi Anda mungkin perlu untuk memecahkan masalah ini dengan mereka atau salah satu pengurus.",
 	'centralauth-merge-step1-title'                   => 'Mulai unifikasi log masuk global',
-	'centralauth-merge-step1-detail'                  => 'Kata sandi dan alamat surat-e Anda akan dicek dengan akun pada wiki lain untuk mengkonfirmasi kecocokannya. Perubahan tak akan dilakukan sampai Anda memberikan konfirmasi bahwa tak ada masalah.
-
-Masukkan kata sandi akun pengguna Anda.
+	'centralauth-merge-step1-detail'                  => 'Masukkan kata sandi akun pengguna Anda.
 Kata sandi dan alamat surat-e terdaftar akan dicocokkan di antara akun-akun di wiki lain untuk memastikan bahwa akun-akun dimiliki pengguna yang sama.
-Perubahan tak akan dilakukan sampai Anda memberikan konfirmasi bahwa tak ada masalah.',
+Perubahan tidak akan dilakukan sampai Anda memberikan konfirmasi bahwa tak ada masalah.',
 	'centralauth-merge-step1-submit'                  => 'Konfirmasi informasi log masuk global',
 	'centralauth-merge-step2-title'                   => 'Konfirmasi akun lain',
 	'centralauth-merge-step2-detail'                  => 'Beberapa akun tak dapat secara otomatis dicocokkan dengan wiki utama yang dipilih.
 Jika akun-akun ini milik Anda, Anda dapat mengkonfirmasikan kepemilikannya dengan memberikan kata sandi mereka.',
-	'centralauth-merge-step2-submit'                  => 'Konfirmasi informasi log masuk global',
+	'centralauth-merge-step2-submit'                  => 'Konfirmasi informasi log masuk',
 	'centralauth-merge-dryrun-complete'               => 'Seluruh akun yang ditemukan dapat digabungkan secara otomatis!
 
-Saat ini belum ada perubahan yang dilakukan terhadap akun Anda.',
+Saat ini belum ada perubahan yang dilakukan terhadap akun-akun Anda.',
 	'centralauth-merge-dryrun-incomplete'             => 'Beberapa akun tidak dapat diverifikasi secara otomatis dan tidak akan turut dimigrasikan.
 Anda dapat menggabungkan akun-akun tersebut kelak.
 
 Saat ini belum ada perubahan yang dilakukan terhadap akun Anda.',
 	'centralauth-merge-dryrun-or'                     => "'''atau'''",
-	'centralauth-merge-dryrun-home'                   => 'Sistem migrasi tidak dapat mengkonfirmasikan bahwa Anda adalah pemilik dari akun pengguna ini di wiki utama Anda.
+	'centralauth-merge-dryrun-home'                   => 'Sistem migrasi tidak dapat mengkonfirmasikan bahwa Anda adalah pemilik dari akun pengguna ini di wiki utamanya.
 
-Wiki lain telah ditentukan sebagai akun utama untuk nama pengguna Anda; ikuti pranala berikut dan masuk log di sana untuk menyelesaikan migrasi akun Anda.',
+Wiki lain telah ditentukan sebagai akun utama untuk nama pengguna Anda; ikuti pranala berikut dan masuk log di sana untuk melakukan migrasi atas akun Anda.',
 	'centralauth-merge-step3-title'                   => 'Buat akun global',
 	'centralauth-merge-step3-detail'                  => 'Anda siap membuat akun global Anda dengan wiki-wiki berikut:',
 	'centralauth-merge-step3-submit'                  => 'Gabungkan akun',
-	'centralauth-merge-no-accounts'                   => 'Tidak akun dengan nama Anda di tabel daftar akun sentral.
-Basis data kemungkinan besar korup.',
-	'centralauth-merge-home-password'                 => 'Wiki utama untuk akun ini (lihat daftar di bawah) memiliki kata-kata sandi yang berbeda dengan kata sandi yang Anda masukkan.
-Silakan masukkan kata kunci untuk wiki utama.',
+	'centralauth-merge-no-accounts'                   => 'Tidak ada akun dengan nama Anda di tabel daftar akun sentral!
+Kemungkinan besar ada kerusakan pada basis data.',
+	'centralauth-merge-home-password'                 => 'Wiki utama untuk akun ini (lihat daftar di bawah) memiliki kata sandi yang berbeda dengan kata sandi yang Anda masukkan.
+Silakan masukkan kata sandi untuk wiki utama.',
 	'centralauth-complete'                            => 'Penggabungan log masuk global berhasil!',
 	'centralauth-incomplete'                          => 'Tidak semua akun berhasil digabungkan!',
 	'centralauth-complete-text'                       => 'Kini Anda dapat masuk log ke situs wiki Wikimedia manapun tanpa membuat akun baru;
@@ -5730,16 +5806,16 @@ nama pengguna dan kata sandi yang sama akan dapat digunakan di Wikipedia, Wiktio
 
 Jika ini adalah Anda, Anda dapat menyelesaikan proses penggabungan log masuk dengan hanya mengetikkan kata kunci utama untuk akun tersebut di sini:',
 	'centralauth-blocked-text'                        => 'Wiki utama Anda (terdaftar di bawah) sedang diblokir terhadap penyuntingan. Silakan hubungi opsis di wiki ini untuk membuka pemblokiran. Selama masih diblokir, Anda tidak dapat menggabungkan akun-akun Anda.',
-	'centralauth-notice-dryrun'                       => "<div class='successbox'>Mode demo</div><br clear='all'/>",
+	'centralauth-notice-dryrun'                       => "<div class='successbox'>Hanya mode demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun'                     => 'Penggabungan akun saat ini masih dalam mode demo/debugging, jadi operasi penggabungan yang sesungguhnya dinon-aktifkan. Mohon maaf!',
 	'centralauth-error-locked'                        => 'Anda tidak dapat menyunting karena akun Anda dikunci.',
 	'centralauth-readmore-text'                       => ":''[[meta:Help:Unified login|Baca lebih lanjut mengenai '''log masuk global''']]...''",
 	'centralauth-list-home-title'                     => 'Wiki utama',
 	'centralauth-list-home-dryrun'                    => 'Kata sandi dan alamat surat-e pada wiki ini akan digunakan sebagai akun pengguna global Anda.
 Anda dapat mengganti wiki utama mana yang hendak Anda gunakan kelak.',
-	'centralauth-list-attached-title'                 => 'Akun tergabung',
-	'centralauth-list-attached'                       => 'Akun "$1" di situs-situs berikut telah digabung secara otomatis:',
-	'centralauth-list-attached-dryrun'                => 'Akun pengguna "$1" pada masing-masing situs berikut secara otomatis akan digabungkan dalam akun global:',
+	'centralauth-list-attached-title'                 => 'Akun global',
+	'centralauth-list-attached'                       => 'Akun "$1" di situs-situs berikut telah digabungkan sebagai akun global secara otomatis:',
+	'centralauth-list-attached-dryrun'                => 'Akun pengguna "$1" pada masing-masing situs berikut akan digabungkan dalam akun global secara otomatis:',
 	'centralauth-list-unattached-title'               => 'Akun terpisah',
 	'centralauth-list-unattached'                     => 'Akun "$1" tidak dapat dikonfirmasikan secara otomatis sebagai milik Anda di situs-situs berikut; kemungkinan besar karena mereka memiliki kata sandi yang berbeda dengan akun utama Anda:',
 	'centralauth-foreign-link'                        => 'Pengguna $1 di $2',
@@ -5756,7 +5832,7 @@ Anda dapat mengganti wiki utama mana yang hendak Anda gunakan kelak.',
 	'centralauth-finish-login'                        => 'Masuk log',
 	'centralauth-finish-send-confirmation'            => 'Kirim kata sandi',
 	'centralauth-finish-problems'                     => 'Ada masalah, atau tidak memiliki akun-akun lain tersebut? [[meta:Help:Unified login problems|Bagaimana mendapat bantuan]]...',
-	'centralauth-finish-noconfirms'                   => 'Tidak ada akun yang dapat dikonfirmasikan menggunakan kata sandi ini.',
+	'centralauth-finish-noconfirms'                   => 'Kata sandi ini tidak dapat digunakan untuk mengkonfirmasi akun-akun manapun.',
 	'centralauth-finish-incomplete'                   => 'Beberapa akun pengguna telah digabungkan menggunakan kata sandi ini.
 Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-merge-attempt'                       => "'''Mengecek kata sandi yang diberikan terhadap akun-akun yang belum digabungkan...'''",
@@ -5765,7 +5841,7 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-attach-text'                         => 'Akun ini belum dimigrasikan ke akun global. Jika akun globalnya merupakan milik Anda juga, silakan menggabungkan akun ini dengan memasukkan kata sandi akun global tersebut:',
 	'centralauth-attach-submit'                       => 'Migrasi akun',
 	'centralauth-attach-success'                      => 'Akun berhasil dimigrasikan sebagai akun global.',
-	'centralauth'                                     => 'Pengelolaan log masuk global',
+	'centralauth'                                     => 'Administrasi akun global',
 	'centralauth-admin-manage'                        => 'Atur data pengguna',
 	'centralauth-admin-username'                      => 'Nama pengguna:',
 	'centralauth-admin-lookup'                        => 'Lihat atau ubah data pengguna',
@@ -5785,7 +5861,7 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-admin-list-method'                   => 'Metode',
 	'centralauth-admin-unmerge'                       => 'Batalkan penggabungan akun terpilih',
 	'centralauth-admin-merge'                         => 'Gabungkan akun terpilih',
-	'centralauth-admin-bad-input'                     => 'Pilihan penggabungan tidak valid',
+	'centralauth-admin-bad-input'                     => 'Pilihan penggabungan tidak sah',
 	'centralauth-admin-none-selected'                 => 'Tidak ada akun yang dipilih untuk diubah.',
 	'centralauth-admin-already-unmerged'              => '$1 dilewatkan karena sudah dibatalkan penggabungannya',
 	'centralauth-admin-unmerge-success'               => 'Berhasil membatalkan penggabungan $1 {{PLURAL:$1|akun|akun}}',
@@ -5806,7 +5882,7 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-admin-unlock-title'                  => 'Buka kunci akun',
 	'centralauth-admin-unlock-description'            => 'Dengan pembukaan kunci akun maka akun ini dapat dipergunakan lagi untuk masuk log.',
 	'centralauth-admin-unlock-button'                 => 'Buka kunci akun ini',
-	'centralauth-admin-unlock-success'                => 'Kunci global akun "<nowiki>$1</nowiki>" berhasil dibuka',
+	'centralauth-admin-unlock-success'                => 'Kunci akun global "<nowiki>$1</nowiki>" berhasil dibuka',
 	'centralauth-admin-unlock-nonexistent'            => 'Kesalahan: akun global "<nowiki>$1</nowiki>" tidak ditemukan.',
 	'centralauth-admin-hide-title'                    => 'Sembunyikan akun',
 	'centralauth-admin-hide-description'              => 'Akun-akun yang disembunyikan tidak ditampilkan di [[Special:GlobalUsers|daftar pengguna Global]].',
@@ -5821,13 +5897,13 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-admin-reason'                        => 'Alasan:',
 	'centralauth-admin-lockandhide-title'             => 'Kunci dan sembunyikan akun',
 	'centralauth-admin-lockandhide-description'       => 'Setelah dikunci dan disembunyikan, maka akun ini tidak dapat dipergunakan untuk masuk log di semua wiki, dan tidak akan ditampilkan di [[Special:GlobalUsers|daftar akun global]].',
-	'centralauth-admin-lockandhide-button'            => 'Kunci dan Sembunyikan akun ini',
+	'centralauth-admin-lockandhide-button'            => 'Kunci dan sembunyikan akun ini',
 	'centralauth-admin-lockandhide-success'           => 'Akun berhasil dikunci dan disembunyikan',
 	'centralauth-admin-lockandhide-nonexistent'       => 'Kesalahan: akun global "<nowiki>$1</nowiki>" tidak ditemukan.',
 	'globalusers'                                     => 'Daftar pengguna global',
 	'centralauth-listusers-locked'                    => 'terkunci',
-	'centralauth-listusers-attached'                  => 'Eksis di wiki lokal',
-	'centralauth-listusers-nolocal'                   => 'terpisah atau tidak eksis di wiki lokal',
+	'centralauth-listusers-attached'                  => 'ada di wiki lokal',
+	'centralauth-listusers-nolocal'                   => 'bukan akun global atau tidak ada di wiki lokal',
 	'centralauth-seconds-ago'                         => '$1 {{PLURAL:$1|detik|detik}} yang lalu',
 	'centralauth-minutes-ago'                         => '$1 {{PLURAL:$1|menit|menit}} yang lalu',
 	'centralauth-hours-ago'                           => '$1 {{PLURAL:$1|jam|jam}} yang lalu',
@@ -5853,21 +5929,25 @@ Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga hala
 	'centralauth-login-progress'                      => 'Anda masuk log ke proyek lain Wikimedia:',
 	'centralauth-logout-progress'                     => 'Anda keluar log dari proyek lain Wikimedia:',
 	'centralauth-log-name'                            => 'Log akun global',
-	'centralauth-log-header'                          => 'Di bawah ini adalah log pengoperasian akun global: penghapusan, penguncian, dan pembukaan kunci.',
+	'centralauth-log-header'                          => 'Ini adalah log operasi akun global: penghapusan, penguncian, dan pembukaan kunci.',
 	'centralauth-log-entry-delete'                    => 'akun global "<nowiki>$1</nowiki>" dihapuskan',
 	'centralauth-log-entry-lock'                      => 'akun global "<nowiki>$1</nowiki>" telah dikunci',
 	'centralauth-log-entry-unlock'                    => 'akun global "<nowiki>$1</nowiki>" telah dibuka',
 	'centralauth-log-entry-hide'                      => 'menyembunyikan akun global "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide'                    => 'menampilkan kembali akun global "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide'               => 'akun "<nowiki>$1</nowiki>" telah dikunci dan disembunyikan',
-	'centralauth-rightslog-name'                      => 'Log hak pengguna global',
+	'centralauth-rightslog-name'                      => 'Log hak global',
 	'centralauth-rightslog-entry-usergroups'          => 'kelompok pengguna global $1 telah diubah dari $2 menjadi $3',
 	'centralauth-rightslog-entry-groupperms'          => 'akses kelompok pengguna $1 telah diubah dari $2 menjadi $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'mengubah hak kelompok $1. Menambahkan $2; Membatalkan $3',
-	'centralauth-rightslog-header'                    => 'Di bawah ini adalah log pengoperasian kelompok pengguna global: perubahan keanggotaan dan hak',
+	'centralauth-rightslog-entry-groupperms3'         => 'mengubah set wiki yang berlaku untuk $1 dari $2 menjadi $3',
+	'centralauth-rightslog-header'                    => 'Ini adalah log pencatatan perubahan kelompok global, termasuk perubahan keanggotaan kelompok dan hak-hak setiap kelompok.',
+	'centralauth-rightslog-entry-newset'              => 'set wiki $1 telah dibuat $2 dengan wiki-wiki berikut: $3',
 	'centralauth-rightslog-entry-setrename'           => 'mengubah nama set wiki "$2" menjadi "$1"',
 	'centralauth-rightslog-entry-setnewtype'          => 'mengubah tipe "$1" dari $2 menjadi $3',
-	'centralauth-rightslog-entry-setchange'           => 'mengubah wiki-wiki dalam "$1": menambahkan: $1; menghapuskan: $3',
+	'centralauth-rightslog-entry-setchange'           => 'mengubah wiki-wiki dalam "$1": menambahkan: $2; menghapuskan: $3',
+	'centralauth-rightslog-set-optin'                 => 'bergabung',
+	'centralauth-rightslog-set-optout'                => 'tidak bergabung',
 	'globalgroupmembership'                           => 'Keanggotaan dalam kelompok global',
 	'globalgrouppermissions'                          => 'Manajemen kelompok global',
 	'centralauth-globalgroupperms-grouplist'          => 'Konfigurasi kelompok-kelompok global berikut ini telah disimpan. Anda dapat melihat dan menyunting hak-hak setiap kelompok. Sebuah kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
@@ -5899,25 +5979,28 @@ Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga hala
 	'centralauth-globalgroupmembership-badknownwiki'  => "Pengguna global '''$1''' tidak aktif di wiki yang Anda pilih ('' $2 ''). Anda mungkin memberikan hak ke pengguna yang salah!",
 	'centralauth-editset'                             => 'Menyunting set wiki',
 	'centralauth-editset-legend'                      => 'Menyunting atau membuat set wiki',
-	'centralauth-editset-intro'                       => 'Set-set wiki di bawah ini telah dibuat. Anda dapat menampilkan dan mengubah set-set tersebut, atau membuat sebuah set baru.',
+	'centralauth-editset-intro'                       => 'Hak global mungkin dibatasi pada proyek-proyek wiki di salah satu "set-set wiki" berikut. Anda dapat menampilkan dan mengubah set-set tersebut, atau membuat sebuah set wiki baru.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|lihat/sunting]])',
 	'centralauth-editset-new'                         => 'Membuat set baru',
 	'centralauth-editset-notfound'                    => 'Set wiki "$1" tidak ditemukan.',
+	'centralauth-editset-optin'                       => 'Bergabung (hanya wiki-wiki tercantum yang turut dalam set)',
+	'centralauth-editset-optout'                      => 'Tidak bergabung (wiki-wiki tercantum tidak turut dalam set)',
 	'centralauth-editset-legend-edit'                 => 'Menyunting set wiki "$1"',
 	'centralauth-editset-legend-new'                  => 'Membuat set wiki baru',
 	'centralauth-editset-name'                        => 'Nama:',
 	'centralauth-editset-type'                        => 'Tipe:',
-	'centralauth-editset-wikis'                       => 'Wiki:',
+	'centralauth-editset-wikis'                       => 'Wiki-wiki:<br />(pisahkan dengan spasi)',
 	'centralauth-editset-reason'                      => 'Alasan:',
 	'centralauth-editset-submit'                      => 'Kirim',
-	'centralauth-editset-badname'                     => 'Set nama tidak sah atau kosong.',
-	'centralauth-editset-badtype'                     => 'Tipe set tidak sah.',
-	'centralauth-editset-setexists'                   => 'Nama set tersebut sudah ada',
+	'centralauth-editset-badname'                     => 'Anda meminta nama set yang tidak sah atau kosong.',
+	'centralauth-editset-badtype'                     => 'Anda meminta tipe set yang tidak sah.',
+	'centralauth-editset-setexists'                   => 'Set wiki dengan nama tersebut sudah ada',
 	'centralauth-editset-nowikis'                     => 'Tidak ada wiki yang dipilih.',
 	'centralauth-editset-nouse'                       => '(tidak ada)',
 	'centralauth-editset-usage'                       => 'Digunakan dalam kelompok:',
 	'centralauth-editset-badwikis'                    => 'Wiki-wiki berikut tidak ditemukan: $1.',
 	'centralauth-editset-success'                     => 'Set wiki berhasil diubah.',
+	'centralauth-editset-add'                         => 'Tambahkan ke daftar',
 	'right-globalgroupmembership'                     => 'Sunting keanggotaan kelompok global',
 	'right-centralauth-admin'                         => 'Administrasi akun global',
 	'right-centralauth-merge'                         => 'Gabungkan akun mereka',
@@ -5992,7 +6075,6 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
  * @author Darth Kule
  * @author Cruccone
  * @author Melos
- * @author Siebrand
  * @author Nemo bis
  */
 $messages['it'] = array(
@@ -6168,7 +6250,7 @@ Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così n
 	'centralauth-rightslog-entry-usergroups'          => "cambiata l'appartenenza ai gruppi globali per $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms'          => 'cambiati i permessi di gruppo per $1 da $2 a $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'cambiati i permessi di gruppo per $1. Aggiunto $2; Rimosso $3',
-	'centralauth-rightslog-header'                    => 'Questo registro contiene le operazioni sui gruppi globali: cambi di appartenenza e di permessi',
+	'centralauth-rightslog-header'                    => 'Di seguito sono elencate le modifiche effettuate sui diritti globali, compresi i cambiamenti di appartenenza ai gruppi e i permessi assegnati ai gruppi.',
 	'globalgroupmembership'                           => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions'                          => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist'          => 'I seguenti gruppi globali sono stati configurati.
@@ -6204,12 +6286,14 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|visualizza/modifica]])',
 	'centralauth-editset-name'                        => 'Nome:',
 	'centralauth-editset-type'                        => 'Tipo:',
-	'centralauth-editset-wikis'                       => 'Wiki:',
+	'centralauth-editset-wikis'                       => 'Wiki:<br/>(separate da uno spazio)',
 	'centralauth-editset-reason'                      => 'Motivo:',
 	'centralauth-editset-submit'                      => 'Invia',
 	'centralauth-editset-nowikis'                     => 'Nessuna wiki specificata.',
 	'centralauth-editset-nouse'                       => '(nessuno)',
+	'centralauth-editset-usage'                       => 'Usato nei gruppi:',
 	'centralauth-editset-badwikis'                    => 'Le wiki seguenti non esistono: $1',
+	'centralauth-editset-add'                         => 'Aggiungi a elenco',
 	'right-globalgroupmembership'                     => "Modifica l'appartenenza ai gruppi globali",
 	'right-centralauth-admin'                         => 'Amministra gli account globali',
 	'right-centralauth-merge'                         => 'Unifica i loro account',
@@ -6354,7 +6438,6 @@ Jer vil være i stand til lave om på hvilke er jeres hjem wiki senere.',
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
- * @author Siebrand
  */
 $messages['jv'] = array(
 	'mergeaccount'                                    => 'Status panggabungan log mlebu',
@@ -7513,7 +7596,7 @@ D'passwierder vun alle Benotzerkonten déi zesummegefouert gi waren ginn nees op
 	'centralauth-rightslog-entry-usergroups'          => 'huet déi global Benotzerrechter geännert fir $1 vun $2 op $3',
 	'centralauth-rightslog-entry-groupperms'          => "huet d'Grupperechter fir d'Grupp $1 geännert, vun $2 op $3",
 	'centralauth-rightslog-entry-groupperms2'         => "huet d'Grupperechter geännert fir $1. Derbäigesat $2; Ewechgeholl $3",
-	'centralauth-rightslog-header'                    => 'An dëser Lëscht stinn Ännerunge vun de globale Benotzergruppen: Memberen an Ännerunge vu Rechter',
+	'centralauth-rightslog-header'                    => "An dëser Lëscht stinn Ännerunge vun de globale Rechter, inklusiv d'Ännerunge vun de Membere vu Gruppen an d'Rechter vun de Gruppen.",
 	'globalgroupmembership'                           => 'Member a globale Gruppen',
 	'globalgrouppermissions'                          => 'Gestioun vun de globale Gruppen',
 	'centralauth-globalgroupperms-grouplist'          => "Dës global Gruppe goufe configuréiert.
@@ -7552,13 +7635,14 @@ Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
 	'centralauth-editset-new'                         => 'Eng nei Astellung aginn',
 	'centralauth-editset-name'                        => 'Numm:',
 	'centralauth-editset-type'                        => 'Typ:',
-	'centralauth-editset-wikis'                       => 'Wikien:',
+	'centralauth-editset-wikis'                       => 'Wikien:<br/>(duerch Espace getrennt)',
 	'centralauth-editset-reason'                      => 'Grond:',
 	'centralauth-editset-submit'                      => 'Späicheren',
 	'centralauth-editset-nowikis'                     => 'Keng Wiki uginn.',
 	'centralauth-editset-nouse'                       => '(keen)',
 	'centralauth-editset-usage'                       => 'An de Gruppe benotzt:',
 	'centralauth-editset-badwikis'                    => 'Dës Wikië gëtt et net: $1',
+	'centralauth-editset-add'                         => "Op d'Lëscht derbäisetzen",
 	'right-globalgroupmembership'                     => 'Zougehéieregkeet zu lokale Gruppen änneren',
 	'right-centralauth-admin'                         => 'Global Benotzerkonten administréieren',
 	'right-centralauth-merge'                         => 'Hire Benotzerkont zesummeféieren',
@@ -7580,7 +7664,6 @@ $messages['lfn'] = array(
  * @author Ooswesthoesbes
  * @author Matthias
  * @author Tibor
- * @author Siebrand
  */
 $messages['li'] = array(
 	'mergeaccount'                                    => 'Status samevoege gebroekers',
@@ -7955,7 +8038,6 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
  * @author Shijualex
  * @author Praveenp
  * @author Jacob.jose
- * @author Siebrand
  */
 $messages['ml'] = array(
 	'mergeaccount'                                    => 'ലോഗിന്‍ സം‌യോജിപ്പിക്കുന്നതിന്റെ തല്‍‌സ്ഥിതി',
@@ -8137,7 +8219,6 @@ $messages['ml'] = array(
 /** Marathi (मराठी)
  * @author Kaustubh
  * @author Mahitgar
- * @author Siebrand
  */
 $messages['mr'] = array(
 	'mergeaccount'                                    => 'खाते एकत्रीकरण स्थिती',
@@ -8534,7 +8615,7 @@ Anda telah meminta laman ini tanpa membekalkan sebarang data pengesahan, oleh it
 	'centralauth-rightslog-entry-groupperms'          => 'menukar keizinan kumpulan bagi $1 daripada $2 menjadi $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'mengubah keizinan kumpulan $1. Menambah $2; Membuang $3',
 	'centralauth-rightslog-entry-groupperms3'         => 'menukar set wiki lingkungan kumpulan $1 daripada $2 kepada $3',
-	'centralauth-rightslog-header'                    => 'Log ini mengandungi tindakan pada kumpulan sejagat: perubahan keahlian dan keizinan',
+	'centralauth-rightslog-header'                    => 'Log ini mengandungi rekod perubahan hak sejagat, termasuklah perubahan keahlian kumpulan dan keizinan yang diberikan kepada kumpulan.',
 	'centralauth-rightslog-entry-newset'              => 'mencipta $2 set wiki $1 dengan wiki-wiki berikut: $3',
 	'centralauth-rightslog-entry-setrename'           => 'menukar nama set wiki "$2" menjadi "$1"',
 	'centralauth-rightslog-entry-setnewtype'          => 'menukar jenis "$1" daripada $2 menjadi $3',
@@ -8576,7 +8657,7 @@ Sila ambil perhatian bahawa sesebuah kumpulan tidak wujud kecuali setelah diberi
 Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
 	'centralauth-editset'                             => 'Ubah set wiki',
 	'centralauth-editset-legend'                      => 'Ubah atau cipta set wiki',
-	'centralauth-editset-intro'                       => 'Berikut ialah senarai set wiki yang telah dicipta. Anda boleh melihat dan mengubah suai set wiki yang sedia ada atau mencipta set wiki yang baru.',
+	'centralauth-editset-intro'                       => 'Hak sejagat boleh diserahkan kepada mana-mana set wiki berikut. Anda boleh melihat dan mengubah suai set wiki yang sedia ada, atau mencipta set wiki yang baru.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|lihat/ubah]])',
 	'centralauth-editset-new'                         => 'Cipta set wiki baru',
 	'centralauth-editset-notfound'                    => 'Set wiki "$1" tiada.',
@@ -8586,17 +8667,18 @@ Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
 	'centralauth-editset-legend-new'                  => 'Mencipta set wiki baru',
 	'centralauth-editset-name'                        => 'Nama:',
 	'centralauth-editset-type'                        => 'Jenis:',
-	'centralauth-editset-wikis'                       => 'Senarai wiki:',
+	'centralauth-editset-wikis'                       => 'Senarai wiki:<br/>(dipisahkan dengan jarak)',
 	'centralauth-editset-reason'                      => 'Sebab:',
 	'centralauth-editset-submit'                      => 'Serah',
 	'centralauth-editset-badname'                     => 'Nama set wiki tidak sah atau kosong.',
 	'centralauth-editset-badtype'                     => 'Jenis set tidak sah.',
-	'centralauth-editset-setexists'                   => 'Set dengan nama tersebut telah pun wujud',
+	'centralauth-editset-setexists'                   => 'Set wiki dengan nama tersebut telah pun wujud',
 	'centralauth-editset-nowikis'                     => 'Tiada wiki dinyatakan.',
 	'centralauth-editset-nouse'                       => '(tiada)',
 	'centralauth-editset-usage'                       => 'Digunakan dalam kumpulan:',
 	'centralauth-editset-badwikis'                    => 'Wiki-wiki berikut tidak wujud: $1.',
 	'centralauth-editset-success'                     => 'Set wiki berjaya diubah.',
+	'centralauth-editset-add'                         => 'Tambah ke dalam senarai',
 	'right-globalgroupmembership'                     => 'Ubah keahlian kumpulan sejagat',
 	'right-centralauth-admin'                         => 'Tadbir akaun sejagat',
 	'right-centralauth-merge'                         => 'Gabungkan akaun mereka',
@@ -8986,7 +9068,7 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 	'centralauth-rightslog-entry-groupperms'          => 'wijzigde groepsrechten voor $1 van $2 naar $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'heeft de rechten voor $1 gewijzigd. Toegevoegd: $2. Verwijderd: $3',
 	'centralauth-rightslog-entry-groupperms3'         => 'heeft de beperkte wikigroep voor $1 van $2 naar $3 gewijzigd',
-	'centralauth-rightslog-header'                    => 'Dit logboek bevat handelingen ten aanzien van globale groepen als wijzigingen in lidmaatschap en rechten',
+	'centralauth-rightslog-header'                    => 'Dit logboek bevat wijzigingen aan globale groepen, namelijk de wijzigingen in groepslidmaatschap en rechten toegewezen aan de groepen.',
 	'centralauth-rightslog-entry-newset'              => "heeft $2 wikigroep $1 aangemaakt met de volgende wiki's: $3",
 	'centralauth-rightslog-entry-setrename'           => 'heeft de wikigroep "$2" hernoemd naar "$1"',
 	'centralauth-rightslog-entry-setnewtype'          => 'heeft het type voor "$1" gewijzigd van $2 naar $3',
@@ -9023,7 +9105,7 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 	'centralauth-globalgroupmembership-badknownwiki'  => "De globale gebruiker '''$1''' is niet actief op de aangegeven wiki (''$2''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
 	'centralauth-editset'                             => 'Wikigroepen bewerken',
 	'centralauth-editset-legend'                      => 'Wikigroepen bewerken of aanmaken',
-	'centralauth-editset-intro'                       => 'De volgende wikigroepen zijn al aangemaakt.
+	'centralauth-editset-intro'                       => 'Globale rechten kunnen beperkt zijn tot wikis in elk van de volgende wikigroepen.
 U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|bekijken/bewerken]])',
 	'centralauth-editset-new'                         => 'Nieuwe set aanmaken',
@@ -9034,17 +9116,18 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-legend-new'                  => 'Bezig met het aanmaken van een nieuwe wikigroep',
 	'centralauth-editset-name'                        => 'Naam:',
 	'centralauth-editset-type'                        => 'Type:',
-	'centralauth-editset-wikis'                       => "Wiki's:",
+	'centralauth-editset-wikis'                       => "Wiki's:<br />(gescheiden door spaties)",
 	'centralauth-editset-reason'                      => 'Reden:',
 	'centralauth-editset-submit'                      => 'Opslaan',
-	'centralauth-editset-badname'                     => 'Ongeldige of lege groepsnaam.',
-	'centralauth-editset-badtype'                     => 'Ongeldig groepstype.',
-	'centralauth-editset-setexists'                   => 'Deze groepsnaam bestaat al',
+	'centralauth-editset-badname'                     => 'U gaf een ongeldige of lege groepsnaam op.',
+	'centralauth-editset-badtype'                     => 'U gaf een ongeldig groepstype op.',
+	'centralauth-editset-setexists'                   => 'Een wikigroep met deze naam bestaat al',
 	'centralauth-editset-nowikis'                     => "Geen wiki's aangegeven.",
 	'centralauth-editset-nouse'                       => '(geen)',
 	'centralauth-editset-usage'                       => 'Gebruikt in groepen:',
 	'centralauth-editset-badwikis'                    => "De volgende wiki's bestaan niet: $1.",
 	'centralauth-editset-success'                     => 'De wikigroep is gewijzigd.',
+	'centralauth-editset-add'                         => 'Toevoegen aan lijst',
 	'right-globalgroupmembership'                     => 'Lidmaatschap van globale groepen bewerken',
 	'right-centralauth-admin'                         => 'Globale gebruikers beheren',
 	'right-centralauth-merge'                         => 'Gebruikers samenvoegen',
@@ -9127,10 +9210,10 @@ Du kan endre kva wiki som vert rekna som heimewikien din sidan.',
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
- * @author Siebrand
  * @author Stigmj
  * @author Atluxity
  * @author EivindJ
+ * @author Laaknor
  */
 $messages['no'] = array(
 	'mergeaccount'                                    => 'Status for sammenslåing av kontoer',
@@ -9304,15 +9387,15 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 	'centralauth-log-entry-unhide'                    => 'synliggjorde den globale kontoen «<nowiki>$1</nowiki>»',
 	'centralauth-log-entry-lockandhide'               => 'låste og skjulte den globale kontoen «<nowiki>$1</nowiki>»',
 	'centralauth-rightslog-name'                      => 'Global rettighetslogg',
-	'centralauth-rightslog-entry-usergroups'          => 'endret globalt gruppemeldemskap for $1 fra $2 til $3',
+	'centralauth-rightslog-entry-usergroups'          => 'endret globalt gruppemedlemskap for $1 fra $2 til $3',
 	'centralauth-rightslog-entry-groupperms'          => 'endret gruppetillatelser for $1 fra $2 til $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'endret brukerrettighetene til $1. Tilføyde $2; fjernet $3',
 	'centralauth-rightslog-entry-groupperms3'         => 'endret hvilke wikisett som gjelder for $1, fra $2 til $3',
-	'centralauth-rightslog-header'                    => 'Denne loggen inneholder endringer i globale grupper: medlemskap og tillatelsesendringer',
+	'centralauth-rightslog-header'                    => 'Denne loggen inneholder endringer i globale rettigheter, inkludert endringer i gruppemedlemsskap og tillatelsene forskjellige grupper har.',
 	'centralauth-rightslog-entry-newset'              => 'opprettet $2 wikisett «$1» med følgende wikier: $3',
 	'centralauth-rightslog-entry-setrename'           => 'endret navn på wikisettet «$2» til «$1»',
 	'centralauth-rightslog-entry-setnewtype'          => 'endret typen på «$1» fra $2 til $3',
-	'centralauth-rightslog-entry-setchange'           => 'endret wikier i «$1»: la til: $2; fjernet: $£',
+	'centralauth-rightslog-entry-setchange'           => 'endret wikier i «$1»: la til: $2; fjernet: $3',
 	'centralauth-rightslog-set-optin'                 => 'innmeldingsbasert',
 	'centralauth-rightslog-set-optout'                => 'utmeldingsbasert',
 	'globalgroupmembership'                           => 'Medlemskap i globale grupper',
@@ -9339,13 +9422,13 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 	'centralauth-editgroup-perms'                     => 'Gitte tillatelser:',
 	'centralauth-editgroup-reason'                    => 'Endringsårsak:',
 	'centralauth-editgroup-success'                   => 'Gruppetillatelser endret',
-	'centralauth-editgroup-success-text'              => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermission|Tilbake til gruppebehandling]]',
+	'centralauth-editgroup-success-text'              => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]',
 	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|edit]])',
 	'centralauth-globalgrouppermissions-knownwiki'    => 'Wiki der vedkommende har en konto:',
-	'centralauth-globalgroupmembership-badknownwiki'  => "Den globale brukeren '''$1''' er ikke aktiv på det angitte prosjektet (''$2''). Det er mulig at du prøver å gi rettighetene til gal bruker.",
+	'centralauth-globalgroupmembership-badknownwiki'  => "Den globale brukeren '''$1''' er ikke aktiv på det angitte prosjektet (<i>$2</i>). Det er mulig at du prøver å gi rettighetene til gal bruker.",
 	'centralauth-editset'                             => 'Rediger wikisett',
 	'centralauth-editset-legend'                      => 'Rediger eller opprett wikisett',
-	'centralauth-editset-intro'                       => 'Følgende wikisett har allerede blitt opprettet. Du kan se eller endre dem, eller opprette et nytt sett.',
+	'centralauth-editset-intro'                       => 'Globale rettigheter kan begrenses til wikier i de følgende «wikisettene». Du kan se eller endre dem, eller opprette et nytt sett.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|vis/rediger]])',
 	'centralauth-editset-new'                         => 'Opprett et nytt sett',
 	'centralauth-editset-notfound'                    => 'Wikisettet «$1» ikke funnet.',
@@ -9355,7 +9438,7 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 	'centralauth-editset-legend-new'                  => 'Oppretter nytt wikisett',
 	'centralauth-editset-name'                        => 'Navn:',
 	'centralauth-editset-type'                        => 'Type:',
-	'centralauth-editset-wikis'                       => 'Wikier:',
+	'centralauth-editset-wikis'                       => 'Wikier:<br />(adskilt med mellomrom)',
 	'centralauth-editset-reason'                      => 'Årsak:',
 	'centralauth-editset-submit'                      => 'OK',
 	'centralauth-editset-badname'                     => 'Ugyldig eller tomt settnavn.',
@@ -9366,6 +9449,7 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 	'centralauth-editset-usage'                       => 'Brukt i disse gruppene:',
 	'centralauth-editset-badwikis'                    => 'Følgende wikier finnes ikke: $1.',
 	'centralauth-editset-success'                     => 'Endret wikisett.',
+	'centralauth-editset-add'                         => 'Legg til på listen',
 	'right-globalgroupmembership'                     => 'Rediger medlemskap i globale grupper',
 	'right-centralauth-admin'                         => 'Administrer globale kontoer',
 	'right-centralauth-merge'                         => 'Slå sammen kontoene deres',
@@ -9383,7 +9467,6 @@ $messages['nso'] = array(
 
 /** Occitan (Occitan)
  * @author Cedric31
- * @author Siebrand
  */
 $messages['oc'] = array(
 	'mergeaccount'                                    => "Estatut d’unificacion del compte d'utilizaire",
@@ -9632,7 +9715,6 @@ $messages['pa'] = array(
  * @author Derbeth
  * @author Ymar
  * @author Beau
- * @author Siebrand
  * @author Maikking
  */
 $messages['pl'] = array(
@@ -9952,7 +10034,6 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author Malafaya
  * @author 555
- * @author Siebrand
  * @author Smeira
  * @author Lijealso
  */
@@ -10410,7 +10491,6 @@ Parolele conturilor globale create anterior unificării vor reveni la valorile l
  * @author Александр Сигачёв
  * @author Ahonc
  * @author Kaganer
- * @author Siebrand
  * @author HalanTul
  * @author Kalan
  */
@@ -10782,7 +10862,6 @@ $messages['shi'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
- * @author Siebrand
  * @author Michawiki
  */
 $messages['sk'] = array(
@@ -11274,7 +11353,6 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 
 /** Seeltersk (Seeltersk)
  * @author Pyt
- * @author Siebrand
  */
 $messages['stq'] = array(
 	'mergeaccount'                                    => 'Stoatus fon ju Benutserkonten-Touhoopefierenge',
@@ -11617,7 +11695,6 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Lejonel
  * @author Sannab
  * @author Leo Johannes
- * @author Siebrand
  * @author Micke
  * @author Boivie
  */
@@ -11818,13 +11895,15 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editgroup-reason'                    => 'Anledning för ändring:',
 	'centralauth-editgroup-success'                   => 'Grupptillåtelser ändrade',
 	'centralauth-editgroup-success-text'              => 'Du har ändrat grupptillåtelserna till gruppen $1. [[Special:GlobalGroupPermission|Tillbaka till gruppbehandling]]',
+	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|redigera]])',
 	'centralauth-globalgrouppermissions-knownwiki'    => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki'  => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|visa/redigera]])',
 	'centralauth-editset-name'                        => 'Namn:',
 	'centralauth-editset-type'                        => 'Typ:',
-	'centralauth-editset-wikis'                       => 'Wikier:',
+	'centralauth-editset-wikis'                       => 'Wikier:<br/>(mellanslagsseparerade)',
 	'centralauth-editset-reason'                      => 'Anledning:',
+	'centralauth-editset-add'                         => 'Lägg till på listan',
 	'right-globalgroupmembership'                     => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-admin'                         => 'Administrera globala konton',
 	'right-centralauth-merge'                         => 'Sammanfoga deras konton',
@@ -11854,7 +11933,6 @@ $messages['ta'] = array(
  * @author Veeven
  * @author Chaduvari
  * @author వైజాసత్య
- * @author Siebrand
  * @author Mpradeep
  */
 $messages['te'] = array(
@@ -12298,7 +12376,6 @@ $messages['ts'] = array(
 
 /** Ukrainian (Українська)
  * @author Ahonc
- * @author Siebrand
  * @author AS
  */
 $messages['uk'] = array(
@@ -12508,6 +12585,7 @@ $messages['uk'] = array(
 	'centralauth-editset-type'                        => 'Тип:',
 	'centralauth-editset-wikis'                       => 'Вікі:',
 	'centralauth-editset-reason'                      => 'Причина:',
+	'centralauth-editset-add'                         => 'Додати до списку',
 	'right-globalgroupmembership'                     => 'зміна членства у глобальних групах',
 	'right-centralauth-admin'                         => 'Адміністрування глобальних облікових записів',
 	'right-centralauth-merge'                         => "Об'єднання облікових записів",
@@ -12516,7 +12594,6 @@ $messages['uk'] = array(
 
 /** Vèneto (Vèneto)
  * @author Candalua
- * @author Siebrand
  */
 $messages['vec'] = array(
 	'mergeaccount'                                    => 'Processo de unificazion de le utenze - status',
@@ -12691,14 +12768,16 @@ Te ghè domandà sta pagina sensa fornir nissun dato de autenticassion, quindi n
 	'centralauth-rightslog-entry-usergroups'          => 'ga spostà $1 dal grupo global $2 al $3',
 	'centralauth-rightslog-entry-groupperms'          => 'ga canbià i parmessi de grupo de $1 da $2 a $3',
 	'centralauth-rightslog-entry-groupperms2'         => 'gà canbià i parmessi de grupo par $1. Zontà $2; Cavà $3',
-	'centralauth-rightslog-header'                    => 'Sto registor el contien le operassion sui grupi globali: canbi de apartenensa e de parmessi',
+	'centralauth-rightslog-header'                    => 'Sto registro el contien le operassion sui grupi globali, conpresi i canbi de apartenensa e dei parmessi assegnà ai grupi.',
 	'centralauth-rightslog-entry-setrename'           => 'ga rinominà l\'insieme de wiki "$2" a "$1"',
 	'centralauth-rightslog-entry-setnewtype'          => 'ga canbià el tipo de "$1" da $2 a $3',
 	'centralauth-rightslog-entry-setchange'           => 'ga canbià le wiki in "$1": zontà: $2; cavà: $3',
+	'centralauth-rightslog-set-optin'                 => 'iscrìvete',
+	'centralauth-rightslog-set-optout'                => 'scancèlete',
 	'globalgroupmembership'                           => 'Apartenensa ai grupi globali',
 	'globalgrouppermissions'                          => 'Gestion del grupo global',
 	'centralauth-globalgroupperms-grouplist'          => "I seguenti grupi globali i xe stà configurà. Ti pol vardar e canbiar i parmessi assegnà a ogni grupo. Un grupo el pode èssar scancelà cavàndoghe tuti i parmessi che'l gà.",
-	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|Varda e modifica i parmessi]])',
+	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|varda/cànbia]])',
 	'centralauth-existinggroup-legend'                => 'Grupi esistenti',
 	'centralauth-newgroup-legend'                     => 'Crea un grupo novo',
 	'centralauth-newgroup-intro'                      => "Ti pol doparar sto modulo par darghe i parmessi a un grupo novo. Nota che un grupo no l'esiste se no ghe xe mìa stà assegnà dei parmessi.",
@@ -12729,14 +12808,16 @@ Te ghè domandà sta pagina sensa fornir nissun dato de autenticassion, quindi n
 	'centralauth-editset-notfound'                    => 'Insieme de wiki "$1" mia catà.',
 	'centralauth-editset-name'                        => 'Nome:',
 	'centralauth-editset-type'                        => 'Tipo:',
-	'centralauth-editset-wikis'                       => 'Wiki:',
+	'centralauth-editset-wikis'                       => 'Elenco de le wiki:<br/>(separà da un spazio)',
 	'centralauth-editset-reason'                      => 'Motivassion:',
 	'centralauth-editset-submit'                      => 'Manda',
-	'centralauth-editset-badname'                     => 'Nome de insime vódo o mia vàlido.',
-	'centralauth-editset-badtype'                     => 'Tipo de insieme mia vàlido.',
+	'centralauth-editset-badname'                     => 'Ti gà speçificà un nome de insieme vódo o mia vàlido.',
+	'centralauth-editset-badtype'                     => 'Ti gà speçificà un tipo de insieme mia vàlido.',
 	'centralauth-editset-nowikis'                     => 'Nissuna wiki specificà.',
+	'centralauth-editset-usage'                       => 'Doparà in tei grupi:',
 	'centralauth-editset-badwikis'                    => 'Ste wiki qua no le esiste mia: $1.',
 	'centralauth-editset-success'                     => 'Insieme de wiki canbià.',
+	'centralauth-editset-add'                         => 'Zonta a la lista',
 	'right-globalgroupmembership'                     => "Modifica l'apartenensa ai grupi globali",
 	'right-centralauth-admin'                         => 'Aministrassion dei account globali',
 	'right-centralauth-merge'                         => 'Fondi insieme i account',
@@ -12746,7 +12827,6 @@ Te ghè domandà sta pagina sensa fornir nissun dato de autenticassion, quindi n
 /** Vietnamese (Tiếng Việt)
  * @author Vinhtantran
  * @author Minh Nguyen
- * @author Siebrand
  */
 $messages['vi'] = array(
 	'mergeaccount'                                    => 'Tình trạng hợp nhất tài khoản',
