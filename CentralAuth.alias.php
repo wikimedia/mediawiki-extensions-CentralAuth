@@ -65,3 +65,18 @@ $aliases['nl'] = array(
 	'SpecialMergeAccount'           => array( 'GebruikerSamenvoegen' ),
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
+$aliases['no'] = array(
+	'SpecialEditWikiSets'           => array( 'Rediger wikisett' ),
+	'SpecialGlobalGroupMembership'  => array( 'Globale brukerrettigheter' ),
+	'SpecialGlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
+	'SpecialGlobalUsers'            => array( 'Globale brukere' ),
+	'SpecialMergeAccount'           => array( 'Slå sammen kontoer' ),
+);
+
+/** Swedish (Svenska) */
+$aliases['sv'] = array(
+	'SpecialCentralAuth' => array( 'Gemensam inloggning' ),
+	'SpecialGlobalUsers' => array( 'Globala användare' ),
+);
+
