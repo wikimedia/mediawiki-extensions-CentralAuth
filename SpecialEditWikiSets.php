@@ -24,6 +24,8 @@ class SpecialEditWikiSets extends SpecialPage
 	}
 
 	function userCanExecute($user) {		
+		global $wgUser;
+		return $wgUser->isAllowed( 'globalgrouppermissions' );
 		$globalUser = CentralAuthUser::getInstance( $user );
 		
 		## Should be a global user
@@ -121,31 +123,12 @@ class SpecialEditWikiSets extends SpecialPage
 		}
 
 		$form = array();
-		$form['centralauth-editset-name'] = Xml::input( 'wpName', 45, $name );
+		$form['centralauth-editset-name'] = Xml::input( 'wpName', false, $name );
 		if( $usage )
 			$form['centralauth-editset-usage'] = $usage;
 		$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
-		
-		// Generate wiki selector
-		$selectorscript = "function addWikiFromSelector()
-		{
-			document.getElementById( 'wpWikis' ).value += ' ' +document.getElementById( 'wpWikiSelector' ).value + ' ';
-		}";
-		
-		$wgOut->addInlineScript( $selectorscript );
-		
-		$selector = new XmlSelect('wpWikiSelector', 'wpWikiSelector');
-		
-		foreach (CentralAuthUser::getWikiList() as $wiki) {
-			$selector->addOption( WikiMap::getWiki( $wiki )->getDisplayName(), $wiki );
-		}
-		
-		$wikiSelector = Xml::textarea( 'wpWikis', $wikis ) . "<br/>";
-		$wikiSelector .= $selector->getHTML();
-		$wikiSelector .= '&nbsp;' . Xml::element( 'input', array('type' => 'button', 'onclick' => 'addWikiFromSelector();', 'value' => wfMsg( 'centralauth-editset-add' )) );
-		$form['centralauth-editset-wikis'] = $wikiSelector;
-		
-		$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 45, $reason );
+		$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
+		$form['centralauth-editset-reason'] = Xml::input( 'wpReason', false, $reason );
 
 		$wgOut->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
 
