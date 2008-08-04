@@ -31,7 +31,9 @@ $aliases['ar'] = array(
 	'SpecialMergeAccount'           => array( 'دمج_حساب' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
 $aliases['arz'] = array(
 	'SpecialCentralAuth'            => array( 'تحقق_مركزى' ),
 	'SpecialEditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
