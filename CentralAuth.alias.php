@@ -55,6 +55,15 @@ $aliases['he'] = array(
 	'SpecialMergeAccount'           => array( 'מיזוג_חשבונות' ),
 );
 
+/** Malay (Bahasa Melayu) */
+$aliases['ms'] = array(
+	'SpecialEditWikiSets'           => array( 'Ubah_set_wiki' ),
+	'SpecialGlobalGroupMembership'  => array( 'Hak_kumpulan_sejagat' ),
+	'SpecialGlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
+	'SpecialGlobalUsers'            => array( 'Pengguna_sejagat' ),
+	'SpecialMergeAccount'           => array( 'Gabungkan_akaun' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'SpecialCentralAuth'            => array( 'CentraalAanmelden' ),
