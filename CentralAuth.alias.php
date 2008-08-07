@@ -11,81 +11,82 @@ $aliases = array();
  * @author Jon Harald Søby
  */
 $aliases['en'] = array(
-	'SpecialCentralAuth'            => array( 'CentralAuth' ),
-	'SpecialEditWikiSets'           => array( 'EditWikiSets' ),
-	'SpecialGlobalGroupMembership'  => array( 'GlobalUserRights', 'GlobalGroupMembership' ),
-	'SpecialGlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),
-	'SpecialGlobalUsers'            => array( 'GlobalUsers' ),
-	'SpecialMergeAccount'           => array( 'MergeAccount' ),
+	'CentralAuth'            => array( 'CentralAuth' ),
+	'AutoLogin'              => array( 'AutoLogin' ),
+	'MergeAccount'           => array( 'MergeAccount' ),
+	'GlobalGroupMembership'  => array( 'GlobalUserRights', 'GlobalGroupMembership' ),
+	'GlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),
+	'EditWikiSets'           => array( 'EditWikiSets' ),
+	'GlobalUsers'            => array( 'GlobalUsers' ),
 );
 
 /** Arabic (العربية)
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'SpecialCentralAuth'            => array( 'تحقق_مركزي' ),
-	'SpecialEditWikiSets'           => array( 'تعديل_مجموعات_الويكي' ),
-	'SpecialGlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
-	'SpecialGlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
-	'SpecialGlobalUsers'            => array( 'مستخدمون_عامون' ),
-	'SpecialMergeAccount'           => array( 'دمج_حساب' ),
+	'CentralAuth'            => array( 'تحقق_مركزي' ),
+	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكي' ),
+	'GlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
+	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
+	'GlobalUsers'            => array( 'مستخدمون_عامون' ),
+	'MergeAccount'           => array( 'دمج_حساب' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'SpecialCentralAuth'            => array( 'تحقق_مركزى' ),
-	'SpecialEditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
-	'SpecialGlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
-	'SpecialGlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
-	'SpecialGlobalUsers'            => array( 'مستخدمون_عامون' ),
-	'SpecialMergeAccount'           => array( 'دمج_حساب' ),
+	'CentralAuth'            => array( 'تحقق_مركزى' ),
+	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
+	'GlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
+	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
+	'GlobalUsers'            => array( 'مستخدمون_عامون' ),
+	'MergeAccount'           => array( 'دمج_حساب' ),
 );
 
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
 $aliases['he'] = array(
-	'SpecialCentralAuth'            => array( 'חשבון_משתמש_מאוחד' ),
-	'SpecialEditWikiSets'           => array( 'עריכת_קבוצות_אתרי_ויקי' ),
-	'SpecialGlobalGroupMembership'  => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
-	'SpecialGlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
-	'SpecialGlobalUsers'            => array( 'משתמשים_כלליים' ),
-	'SpecialMergeAccount'           => array( 'מיזוג_חשבונות' ),
+	'CentralAuth'            => array( 'חשבון_משתמש_מאוחד' ),
+	'EditWikiSets'           => array( 'עריכת_קבוצות_אתרי_ויקי' ),
+	'GlobalGroupMembership'  => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
+	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
+	'GlobalUsers'            => array( 'משתמשים_כלליים' ),
+	'MergeAccount'           => array( 'מיזוג_חשבונות' ),
 );
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'SpecialEditWikiSets'           => array( 'Ubah_set_wiki' ),
-	'SpecialGlobalGroupMembership'  => array( 'Hak_kumpulan_sejagat' ),
-	'SpecialGlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
-	'SpecialGlobalUsers'            => array( 'Pengguna_sejagat' ),
-	'SpecialMergeAccount'           => array( 'Gabungkan_akaun' ),
+	'EditWikiSets'           => array( 'Ubah_set_wiki' ),
+	'GlobalGroupMembership'  => array( 'Hak_kumpulan_sejagat' ),
+	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
+	'GlobalUsers'            => array( 'Pengguna_sejagat' ),
+	'MergeAccount'           => array( 'Gabungkan_akaun' ),
 );
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'SpecialCentralAuth'            => array( 'CentraalAanmelden' ),
-	'SpecialEditWikiSets'           => array( 'WikigroepenBewerken' ),
-	'SpecialGlobalGroupMembership'  => array( 'GlobaleGebruikersrechten' ),
-	'SpecialGlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
-	'SpecialGlobalUsers'            => array( 'GlobaleGebruikers' ),
-	'SpecialMergeAccount'           => array( 'GebruikerSamenvoegen' ),
+	'CentralAuth'            => array( 'CentraalAanmelden' ),
+	'EditWikiSets'           => array( 'WikigroepenBewerken' ),
+	'GlobalGroupMembership'  => array( 'GlobaleGebruikersrechten' ),
+	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
+	'GlobalUsers'            => array( 'GlobaleGebruikers' ),
+	'MergeAccount'           => array( 'GebruikerSamenvoegen' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
-	'SpecialEditWikiSets'           => array( 'Rediger wikisett' ),
-	'SpecialGlobalGroupMembership'  => array( 'Globale brukerrettigheter' ),
-	'SpecialGlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
-	'SpecialGlobalUsers'            => array( 'Globale brukere' ),
-	'SpecialMergeAccount'           => array( 'Slå sammen kontoer' ),
+	'EditWikiSets'           => array( 'Rediger wikisett' ),
+	'GlobalGroupMembership'  => array( 'Globale brukerrettigheter' ),
+	'GlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
+	'GlobalUsers'            => array( 'Globale brukere' ),
+	'MergeAccount'           => array( 'Slå sammen kontoer' ),
 );
 
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
-	'SpecialCentralAuth' => array( 'Gemensam inloggning' ),
-	'SpecialGlobalUsers' => array( 'Globala användare' ),
+	'CentralAuth' => array( 'Gemensam inloggning' ),
+	'GlobalUsers' => array( 'Globala användare' ),
 );
 
