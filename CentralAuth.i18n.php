@@ -16,7 +16,7 @@ $messages['en'] = array(
 	'centralauth-desc'               => '[[Special:MergeAccount|Merge account]] across Wikimedia Foundation wikis',
 	'centralauth-mergeaccount-desc'  => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
 	'centralauth-merge-denied'       => 'Sorry, you do not have permission to access this page.',
-	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
+	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
 	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to Wikimedia's unified login system.'''
 
 If you choose to migrate your accounts, you will be able to use the same username and password to log in to all of Wikimedia's project wikis in all available languages.
@@ -272,7 +272,7 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-member'                    => 'Localised name of group members:',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|edit]])',
 	'centralauth-editgroup-members'                   => 'Member list:',
-	'centralauth-editgroup-members-link'              => '[[Special:Globalusers/$1|List of users with $2 rights]]',
+	'centralauth-editgroup-members-link'              => '[[Special:GlobalUsers/$1|List of users with $2 rights]]',
 	'centralauth-editgroup-restrictions'              => 'Set of wikis where this group is active:',
 	'centralauth-editgroup-noset'                     => '(none)',
 	'centralauth-editgroup-submit'                    => 'Save changes to group permissions',
