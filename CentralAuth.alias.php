@@ -25,11 +25,12 @@ $aliases['en'] = array(
  */
 $aliases['ar'] = array(
 	'CentralAuth'            => array( 'تحقق_مركزي' ),
-	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكي' ),
+	'AutoLogin'              => array( 'دخول_تلقائي' ),
+	'MergeAccount'           => array( 'دمج_حساب' ),
 	'GlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
+	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكي' ),
 	'GlobalUsers'            => array( 'مستخدمون_عامون' ),
-	'MergeAccount'           => array( 'دمج_حساب' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -37,11 +38,12 @@ $aliases['ar'] = array(
  */
 $aliases['arz'] = array(
 	'CentralAuth'            => array( 'تحقق_مركزى' ),
-	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
+	'AutoLogin'              => array( 'دخول_تلقائى' ),
+	'MergeAccount'           => array( 'دمج_حساب' ),
 	'GlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
+	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
 	'GlobalUsers'            => array( 'مستخدمون_عامون' ),
-	'MergeAccount'           => array( 'دمج_حساب' ),
 );
 
 /** Hebrew (עברית)
@@ -49,39 +51,40 @@ $aliases['arz'] = array(
  */
 $aliases['he'] = array(
 	'CentralAuth'            => array( 'חשבון_משתמש_מאוחד' ),
-	'EditWikiSets'           => array( 'עריכת_קבוצות_אתרי_ויקי' ),
+	'MergeAccount'           => array( 'מיזוג_חשבונות' ),
 	'GlobalGroupMembership'  => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
+	'EditWikiSets'           => array( 'עריכת_קבוצות_אתרי_ויקי' ),
 	'GlobalUsers'            => array( 'משתמשים_כלליים' ),
-	'MergeAccount'           => array( 'מיזוג_חשבונות' ),
 );
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'EditWikiSets'           => array( 'Ubah_set_wiki' ),
+	'MergeAccount'           => array( 'Gabungkan_akaun' ),
 	'GlobalGroupMembership'  => array( 'Hak_kumpulan_sejagat' ),
 	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
+	'EditWikiSets'           => array( 'Ubah_set_wiki' ),
 	'GlobalUsers'            => array( 'Pengguna_sejagat' ),
-	'MergeAccount'           => array( 'Gabungkan_akaun' ),
 );
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'CentralAuth'            => array( 'CentraalAanmelden' ),
-	'EditWikiSets'           => array( 'WikigroepenBewerken' ),
+	'AutoLogin'              => array( 'AutomatischAanmelden', 'AutoAanmelden' ),
+	'MergeAccount'           => array( 'GebruikerSamenvoegen' ),
 	'GlobalGroupMembership'  => array( 'GlobaleGebruikersrechten' ),
 	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
+	'EditWikiSets'           => array( 'WikigroepenBewerken' ),
 	'GlobalUsers'            => array( 'GlobaleGebruikers' ),
-	'MergeAccount'           => array( 'GebruikerSamenvoegen' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
-	'EditWikiSets'           => array( 'Rediger wikisett' ),
+	'MergeAccount'           => array( 'Slå sammen kontoer' ),
 	'GlobalGroupMembership'  => array( 'Globale brukerrettigheter' ),
 	'GlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
+	'EditWikiSets'           => array( 'Rediger wikisett' ),
 	'GlobalUsers'            => array( 'Globale brukere' ),
-	'MergeAccount'           => array( 'Slå sammen kontoer' ),
 );
 
 /** Swedish (Svenska) */
