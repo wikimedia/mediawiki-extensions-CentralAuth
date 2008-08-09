@@ -24,26 +24,26 @@ $aliases['en'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'CentralAuth'            => array( 'تحقق_مركزي' ),
-	'AutoLogin'              => array( 'دخول_تلقائي' ),
-	'MergeAccount'           => array( 'دمج_حساب' ),
-	'GlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
+	'CentralAuth' => array( 'تحقق_مركزي' ),
+	'AutoLogin' => array( 'دخول_تلقائي' ),
+	'MergeAccount' => array( 'دمج_حساب' ),
+	'GlobalGroupMembership' => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
-	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكي' ),
-	'GlobalUsers'            => array( 'مستخدمون_عامون' ),
+	'EditWikiSets' => array( 'تعديل_مجموعات_الويكي' ),
+	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'CentralAuth'            => array( 'تحقق_مركزى' ),
-	'AutoLogin'              => array( 'دخول_تلقائى' ),
-	'MergeAccount'           => array( 'دمج_حساب' ),
-	'GlobalGroupMembership'  => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
+	'CentralAuth' => array( 'تحقق_مركزى' ),
+	'AutoLogin' => array( 'دخول_تلقائى' ),
+	'MergeAccount' => array( 'دمج_حساب' ),
+	'GlobalGroupMembership' => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
-	'EditWikiSets'           => array( 'تعديل_مجموعات_الويكى' ),
-	'GlobalUsers'            => array( 'مستخدمون_عامون' ),
+	'EditWikiSets' => array( 'تعديل_مجموعات_الويكى' ),
+	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
 /** Hebrew (עברית)
@@ -69,22 +69,24 @@ $aliases['ms'] = array(
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'CentralAuth'            => array( 'CentraalAanmelden' ),
-	'AutoLogin'              => array( 'AutomatischAanmelden', 'AutoAanmelden' ),
-	'MergeAccount'           => array( 'GebruikerSamenvoegen' ),
-	'GlobalGroupMembership'  => array( 'GlobaleGebruikersrechten' ),
+	'CentralAuth' => array( 'CentraalAanmelden' ),
+	'AutoLogin' => array( 'AutomatischAanmelden', 'AutoAanmelden' ),
+	'MergeAccount' => array( 'GebruikerSamenvoegen' ),
+	'GlobalGroupMembership' => array( 'GlobaleGebruikersrechten' ),
 	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
-	'EditWikiSets'           => array( 'WikigroepenBewerken' ),
-	'GlobalUsers'            => array( 'GlobaleGebruikers' ),
+	'EditWikiSets' => array( 'WikigroepenBewerken' ),
+	'GlobalUsers' => array( 'GlobaleGebruikers' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
-	'MergeAccount'           => array( 'Slå sammen kontoer' ),
-	'GlobalGroupMembership'  => array( 'Globale brukerrettigheter' ),
+	'CentralAuth' => array( 'Enhetlig innlogging' ),
+	'AutoLogin' => array( 'Automatisk innlogging' ),
+	'MergeAccount' => array( 'Kontosammenslåing' ),
+	'GlobalGroupMembership' => array( 'Globale brukerrettigheter' ),
 	'GlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
-	'EditWikiSets'           => array( 'Rediger wikisett' ),
-	'GlobalUsers'            => array( 'Globale brukere' ),
+	'EditWikiSets' => array( 'Rediger wikisett' ),
+	'GlobalUsers' => array( 'Globale brukere' ),
 );
 
 /** Swedish (Svenska) */
