@@ -7698,6 +7698,9 @@ Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
 	'centralauth-complete-text' => 'Dir kënnt iech elo op all Wikimedia Wiki-Site aloggen ouni een neie Benotzerkont opmaachen ze mussen;
 de selweschte Benotzernumm and dat selwescht Passwuert fonctionnéieren op Wikipedia, Wiktionary, Wikibooks an hire Schwesterprojeten an alle Sproochen.',
 	'centralauth-incomplete-text' => 'Wann är Benotzerkonten zesummegféiert sinn, da kënnt dir iech an all wikimedia Site eraloggen ouni een  neie Benotzerkont opzemaachen; de selweschte Benotzernumm an dat selwescht Passwuert fonctionnéieren op Wikipedia, Wiktionary, Wikibooks an hire Schwëster-Projeten an alle Sproochen.',
+	'centralauth-not-owner-text' => 'De Benotzernumm "$1" gouf automatesch dem Propriétaire vun dem Benotzerkont op $2 zougedeelt.
+
+Wann Dir dat sidd, kënnt dir de Prozess vum Zesummeleeë vu Benotzerkonten ofschléissen an dem Dir d\'Haaptpasswuert fir dëse Benotzerkont hei agitt:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demonstratiounsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "D'zesummeféierung vun de Benotzerkonten ass elo an engem Viféier- oder Test-Modus, dofir  kann een zur Zäit nach keng Benotzerkonten zesummeféieren. Pardon!",
 	'centralauth-error-locked' => 'Dir kënnt näischt ännere well Dir gespaart sidd.',
@@ -10998,6 +11001,9 @@ $messages['ru'] = array(
 	'centralauth-editset-reason' => 'Причина:',
 	'centralauth-editset-submit' => 'Сохранить',
 	'centralauth-editset-badname' => 'Пустое или недопустимое название набора.',
+	'centralauth-editset-badtype' => 'Недопустимый тип набора.',
+	'centralauth-editset-setexists' => 'Набор с таким названием уже существует',
+	'centralauth-editset-nowikis' => 'Не указаны вики.',
 	'centralauth-editset-nouse' => '(нет)',
 	'centralauth-editset-usage' => 'Используется для групп:',
 	'centralauth-editset-badwikis' => 'Следующих вики не существует: $1.',
@@ -11024,7 +11030,9 @@ $messages['sah'] = array(
 
 Өскө ким эрэ эн ааккын атын бырайыакка ылбыт буоллаҕына бу дьайыы кинини таарыйыа суоҕа. Кэлин бу түгэни бэйэтин кытта эбэтэр администраторы кытта быһаарсар кыахтаныаҥ.",
 	'centralauth-merge-step1-title' => 'Бэлиэтэммит ааттары холбууру саҕалаа',
-	'centralauth-merge-step1-detail' => 'Эн киирии тылыҥ уонна электроннай буостаҥ аадырыһа атын вики бырайыактар ааттарын кытта тэҥнэниллиэ. Ханнык да уларытыы бэйэҥ бигэргэтэ иликкинэ олоххо киириэ суоҕа.',
+	'centralauth-merge-step1-detail' => 'Бука диэн киирии тылгын киллэр.
+Эн киирии тылыҥ уонна электроннай аадырыһыҥ атын вики бырайыактар ааттарын кытта тэҥнэниллиэ. 
+Ханнык да уларытыы бэйэҥ бигэргэтэ иликкинэ олоххо киириэ суоҕа.',
 	'centralauth-merge-step1-submit' => 'Аатым туһунан сибидиэнньэни бигэргэт',
 	'centralauth-merge-step2-title' => 'Атын ааттары бигэргэт',
 	'centralauth-merge-step2-detail' => 'Сорох ааттар аптамаатынан талыллыбыт аакка холбоммотулар. Ол ааттар эйиэннэрэ буоллаҕына тустаах киирии тылларын киллэрэн ону бигэргэт.',
@@ -11051,6 +11059,7 @@ $messages['sah'] = array(
 Ити эн буоллаххына ааттары холбооһуну сүрүн аат киирии тылын киллэрэн түмүктүөххүн сөп:',
 	'centralauth-notice-dryrun' => 'Көрдөрөр (демо) режим',
 	'centralauth-disabled-dryrun' => 'Ааттары холбооһун билиһиннэрэр (демо) эрэсиимҥэ үлэлии турар, онон дьиҥнээх холбонуу дьайыылара арахсан тураллар. Баалама.',
+	'centralauth-error-locked' => 'Уларытар кыаҕыҥ суох, аатыҥ бобуллубут.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Ааттары холбооһун''' туһунан аах]]...''",
 	'centralauth-list-home-title' => 'Сүрүн ("Дьиэ") Биики',
 	'centralauth-list-home-dryrun' => 'Бу аат киирии тыла уонна элэктроннай аадырыһа холбоммут соҕотох аакка туттуллуо.
@@ -11126,6 +11135,8 @@ $messages['sah'] = array(
 	'centralauth-admin-unlock-button' => 'Бу аат хатабылын уһул',
 	'centralauth-admin-unlock-success' => '"<nowiki>$1</nowiki>" аат хатабыла ситиһиилээхтик уһулунна.',
 	'centralauth-admin-unlock-nonexistent' => 'Алҕас: "<nowiki>$1</nowiki>" аат төрүт суох.',
+	'centralauth-admin-hide-title' => 'Ааты кистээһин',
+	'centralauth-admin-hide-button' => 'Бу кыттааччы аатын кистээ',
 	'centralauth-admin-reason' => 'Төрүөтэ:',
 	'globalusers' => 'Кыттаачылар сүрүн тиһиктэрэ (испииһэктэрэ)',
 	'centralauth-listusers-locked' => 'хатаа',
@@ -11151,6 +11162,10 @@ $messages['sah'] = array(
 	'centralauth-log-entry-delete' => '"<nowiki>$1</nowiki>" сүрүн аат сотулунна',
 	'centralauth-log-entry-lock' => '"<nowiki>$1</nowiki>" сүрүн аат хатанна',
 	'centralauth-log-entry-unlock' => '"<nowiki>$1</nowiki>" сүрүн аат хатабыла уһулунна',
+	'centralauth-globalgroupperms-newgroupname' => 'Саҥа бөлөх аата:',
+	'centralauth-editgroup-name' => 'Бөлөх аата',
+	'centralauth-editgroup-members' => 'Бөлөххө киирээччилэр:',
+	'centralauth-editgroup-reason' => 'Уларытыы төрүөтэ:',
 );
 
 /** Tachelhit (Tašlḥiyt)
@@ -12200,6 +12215,8 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|redigera]])',
 	'centralauth-editgroup-members' => 'Lista över medlemmar:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista över användare med $2-rättigheter]]',
+	'centralauth-editgroup-restrictions' => 'Wikiinställning där den här gruppen är aktiv:',
+	'centralauth-editgroup-noset' => '(ingen)',
 	'centralauth-editgroup-submit' => 'Spara ändringar för grupptillåtelser',
 	'centralauth-editgroup-perms' => 'Angivna tillåtelser:',
 	'centralauth-editgroup-reason' => 'Anledning för ändring:',
@@ -12211,7 +12228,7 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|visa/redigera]])',
 	'centralauth-editset-name' => 'Namn:',
 	'centralauth-editset-type' => 'Typ:',
-	'centralauth-editset-wikis' => 'Wikier:<br/>(mellanslagsseparerade)',
+	'centralauth-editset-wikis' => 'Wikier:',
 	'centralauth-editset-reason' => 'Anledning:',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-admin' => 'Administrera globala konton',
