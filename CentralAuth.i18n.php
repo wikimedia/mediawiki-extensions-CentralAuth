@@ -323,10 +323,12 @@ You may be attempting to assign rights to the wrong user!",
  * @author Beau
  * @author Darth Kule
  * @author Guillom
+ * @author Jon Harald Søby
  * @author Lejonel
  * @author McDutchie
  * @author Meno25
  * @author Mormegil
+ * @author Siebrand
  * @author Toliño
  */
 $messages['qqq'] = array(
@@ -3839,6 +3841,11 @@ $messages['fa'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'اختیارات گروه سراسری $1 را از $2 به $3 تغییر داد',
 	'centralauth-rightslog-entry-groupperms2' => 'اختیارات گروه $1 را تغییر داد. $2 را افزود؛ $3 را حذف کرد',
 	'centralauth-rightslog-header' => 'این سیاهه شامل عملکردهای مربوط به گروه‌های سراسری است، از جمله تغییر عضویت اختیارات',
+	'centralauth-rightslog-entry-setrename' => 'نام مجموعه ویکی «$2» را به «$1» تغییر داد',
+	'centralauth-rightslog-entry-setnewtype' => 'نوع «$1» را از $2 به $3 تغییر داد',
+	'centralauth-rightslog-entry-setchange' => 'ویکی‌های «$1» را تغییر داد: اضافه کرد: $2؛ حذف کرد: $3',
+	'centralauth-rightslog-set-optin' => 'بر اساس عضو شدن',
+	'centralauth-rightslog-set-optout' => 'بر اساس از عضویت در آمدن',
 	'globalgroupmembership' => 'عضویت در گروه‌های سراسری',
 	'globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
 	'centralauth-globalgroupperms-grouplist' => 'گروه‌های سراسری زیر تنظیم شده‌اند. شما می‌توانید اختیارات داده شده به هر گروه را ببینید و ویرایش کنید. یک گروه را می‌توان با گرفتن تمام اختیاراتش حذف کرد.',
@@ -3857,14 +3864,40 @@ $messages['fa'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|ویرایش]])',
 	'centralauth-editgroup-members' => 'فهرست اعضا:',
 	'centralauth-editgroup-members-link' => '[[Special:Globalusers/$1|فهرست کاربران دارای اختیارات $2]]',
+	'centralauth-editgroup-restrictions' => 'مجموعه ویکی‌هایی که این گروه در آن‌ها فعال است:',
+	'centralauth-editgroup-noset' => '(هیچ)',
 	'centralauth-editgroup-submit' => 'ذخیره تغییرات داده شده در اختیارات گروه',
 	'centralauth-editgroup-perms' => 'اختیارات داده شده:',
 	'centralauth-editgroup-reason' => 'دلیل تغییر:',
 	'centralauth-editgroup-success' => 'اختیارات گروه‌ها تغییر یافت',
 	'centralauth-editgroup-success-text' => 'شما توانستید اختیارات گروه $1 را با موفقیت تغییر دهید.
 [[Special:GlobalGroupPermissions|به مدیریت گروه‌ها بازگردید]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ویرایش]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'یک ویکی که در آن حساب دارید را انتخاب کنید:',
 	'centralauth-globalgroupmembership-badknownwiki' => "حساب مشترک '''$1''' در ویکی مورد نظر شما ('''$2''') فعال نیست. شاید شما در حال اختصاص دادن اختیارات به کاربر اشتباهی هستید!",
+	'centralauth-editset' => 'ویرایش مجموعه‌های ویکی',
+	'centralauth-editset-legend' => 'ویرایش یا ایجاد مجموعه ویکی',
+	'centralauth-editset-intro' => 'مجموعه ویکی‌های زیر از قبل ایجاد شده‌اند. شما می‌توانید آن‌ها را مشاهده و ویرایش کنید، یا یک مجموعهٔ جدید بسازید.',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|نمایش/ویرایش]])',
+	'centralauth-editset-new' => 'ایجاد یک مجموعه جدید',
+	'centralauth-editset-notfound' => 'مجموعه ویکی «$1» پیدا نشد.',
+	'centralauth-editset-optin' => 'بر اساس عضو شدن (تنها شامل ویکی‌های مشخص شده)',
+	'centralauth-editset-optout' => 'بر اساس از عضویت در آمدن (شامل تمام ویکی‌های به جز موارد مشخص شده)',
+	'centralauth-editset-legend-edit' => 'ویرایش مجموعه ویکی «$1»',
+	'centralauth-editset-legend-new' => 'ایجاد مجموعه ویکی جدید',
+	'centralauth-editset-name' => 'نام:',
+	'centralauth-editset-type' => 'نوع:',
+	'centralauth-editset-wikis' => 'ویکی‌ها:',
+	'centralauth-editset-reason' => 'دلیل:',
+	'centralauth-editset-submit' => 'ارسال',
+	'centralauth-editset-badname' => 'نام غیر مجاز یا خالی مجموعه',
+	'centralauth-editset-badtype' => 'نوع غیر مجاز مجموعه',
+	'centralauth-editset-setexists' => 'مجموعه‌ای با این نام از قبل وجود دارد',
+	'centralauth-editset-nowikis' => 'هیچ ویکی‌ای مشخص نشد.',
+	'centralauth-editset-nouse' => '(هیچ)',
+	'centralauth-editset-usage' => 'استفاده شده در گروه:',
+	'centralauth-editset-badwikis' => 'ویکی‌های زیر وجود ندارند: $1.',
+	'centralauth-editset-success' => 'تنظیمات ویکی را با موفقیت تغییر داد.',
 	'right-globalgroupmembership' => 'ویرایش عضویت در گروه‌های سراسری',
 	'right-centralauth-admin' => 'مدیریت حساب‌های مشترک',
 	'right-centralauth-merge' => 'ادغام حساب‌های کاربری آن‌ها',
@@ -9130,6 +9163,7 @@ $messages['nds-nl'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author McDutchie
  * @author Meursault2004
  * @author SPQRobin
  * @author Siebrand
@@ -9351,7 +9385,7 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 	'centralauth-editgroup-success' => 'Groepsrechten gewijzigd',
 	'centralauth-editgroup-success-text' => 'U hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bewerken]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki waarop ze een gebruiker hebben:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki waarop hij of zij een account heeft:',
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de aangegeven wiki (''$2''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
 	'centralauth-editset' => 'Wikigroepen bewerken',
 	'centralauth-editset-legend' => 'Wikigroepen bewerken of aanmaken',
@@ -12230,6 +12264,7 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wikier:',
 	'centralauth-editset-reason' => 'Anledning:',
+	'centralauth-editset-nouse' => '(ingen)',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-admin' => 'Administrera globala konton',
 	'right-centralauth-merge' => 'Sammanfoga deras konton',
