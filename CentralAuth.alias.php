@@ -46,6 +46,16 @@ $aliases['arz'] = array(
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
+/** German (Deutsch) */
+$aliases['de'] = array(
+	'CentralAuth' => array( 'Verwaltung Benutzerkonten-Zusammenführung' ),
+	'AutoLogin' => array( 'Automatische Anmeldung' ),
+	'MergeAccount' => array( 'Benutzerkonten zusammenführen' ),
+	'GlobalGroupMembership' => array( 'Globale Benutzerrechte' ),
+	'GlobalGroupPermissions' => array( 'Globale Gruppenrechte' ),
+	'GlobalUsers' => array( 'Globale Benutzerliste' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
@@ -56,6 +66,20 @@ $aliases['he'] = array(
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
 	'EditWikiSets'           => array( 'עריכת_קבוצות_אתרי_ויקי' ),
 	'GlobalUsers'            => array( 'משתמשים_כלליים' ),
+);
+
+/** Croatian (Hrvatski) */
+$aliases['hr'] = array(
+	'CentralAuth' => array( 'Središnja_prijava' ),
+	'MergeAccount' => array( 'Spoji_račun' ),
+	'GlobalGroupMembership' => array( 'Globalna_suradnička_prava' ),
+	'EditWikiSets' => array( 'Uredi_wikiset' ),
+	'GlobalUsers' => array( 'Globalni_suradnici' ),
+);
+
+/** Korean (한국어) */
+$aliases['ko'] = array(
+	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 );
 
 /** Malay (Bahasa Melayu) */
