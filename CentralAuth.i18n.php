@@ -86,7 +86,7 @@ Sorry!",
 	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account.
 You will be able to change which is your home wiki later.',
 	'centralauth-list-attached-title'   => 'Attached accounts',
-	'centralauth-list-attached'         => 'The account named "$1" on each the following sites have been automatically attached to the unified account:',
+	'centralauth-list-attached'         => 'The account named "$1" on each of the following sites have been automatically attached to the unified account:',
 	'centralauth-list-attached-dryrun'  => 'The account named "$1" on each of the following sites will be automatically attached to the unified account:',
 	'centralauth-list-unattached-title' => 'Unattached accounts',
 	'centralauth-list-unattached'       => 'The account "$1" could not be automatically confirmed as belonging to you on the following sites;
