@@ -84,11 +84,11 @@ $aliases['ko'] = array(
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'MergeAccount'           => array( 'Gabungkan_akaun' ),
-	'GlobalGroupMembership'  => array( 'Hak_kumpulan_sejagat' ),
+	'MergeAccount' => array( 'Gabungkan_akaun' ),
+	'GlobalGroupMembership' => array( 'Hak_kumpulan_sejagat' ),
 	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
-	'EditWikiSets'           => array( 'Ubah_set_wiki' ),
-	'GlobalUsers'            => array( 'Pengguna_sejagat' ),
+	'EditWikiSets' => array( 'Ubah_set_wiki' ),
+	'GlobalUsers' => array( 'Pengguna_sejagat' ),
 );
 
 /** Dutch (Nederlands) */
