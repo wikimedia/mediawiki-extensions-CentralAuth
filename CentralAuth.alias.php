@@ -82,6 +82,15 @@ $aliases['ko'] = array(
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$aliases['lb'] = array(
+	'AutoLogin' => array( 'Automatesch Umeldung' ),
+	'MergeAccount' => array( 'Benotzerkonten zesummeféieren' ),
+	'GlobalGroupMembership' => array( 'Global Benotzerrechter' ),
+	'GlobalGroupPermissions' => array( 'Global Grupperechter' ),
+	'GlobalUsers' => array( 'Global Benotzer' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'MergeAccount' => array( 'Gabungkan_akaun' ),

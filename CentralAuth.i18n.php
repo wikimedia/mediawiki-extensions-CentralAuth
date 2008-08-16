@@ -993,9 +993,31 @@ $messages['ar'] = array(
  * @author Ramsis II
  */
 $messages['arz'] = array(
+	'centralauth-merge-step1-title' => 'ابتدي توحيد الحسابات',
+	'centralauth-merge-dryrun-or' => "'''ولا'''",
+	'centralauth-merge-step3-submit' => 'وحد الحسابات',
+	'centralauth-list-home-title' => 'بيت الويكي',
+	'centralauth-list-attached-title' => 'الحسابات الموصولة',
 	'centralauth-foreign-link' => 'اليوزر $1 فى $2',
+	'centralauth-merge-method-primary' => 'بيت الويكي',
+	'centralauth-merge-method-empty' => 'ما فيش مساهمات',
+	'centralauth-merge-method-mail' => 'متأكدة بالايميل',
+	'centralauth-merge-method-password' => 'متأكدة بالباسورد',
 	'centralauth-merge-method-admin' => 'حساب ادارى مدموج',
 	'centralauth-merge-method-new' => 'حساب جديد',
+	'centralauth-finish-password' => 'الباسورد:',
+	'centralauth-finish-login' => 'دخول',
+	'centralauth-finish-send-confirmation' => 'ابعت الباسورد بالايميل',
+	'centralauth-admin-username' => 'اسم اليوزر:',
+	'centralauth-admin-info-registered' => 'متسجله:',
+	'centralauth-admin-info-locked' => 'مقفوله:',
+	'centralauth-admin-info-hidden' => 'مستخبية:',
+	'centralauth-admin-yes' => 'ايوه',
+	'centralauth-admin-no' => 'لأه',
+	'centralauth-admin-list-localwiki' => 'الويكي المحلي:',
+	'centralauth-admin-list-attached-on' => 'مربوطة',
+	'centralauth-admin-list-method' => 'الطريقة',
+	'centralauth-admin-lock-title' => 'اقفل الحساب',
 	'centralauth-days-ago' => 'من $1 {{PLURAL:$1|يوم|ايام}}',
 	'centralauth-globalgroupperms-newgroupname' => 'اسم المجموعة الجديدة:',
 );
@@ -5224,6 +5246,7 @@ Naravno, moguća je promjena početnog wikija.',
 	'centralauth-merge-method-empty' => 'nema doprinosa',
 	'centralauth-merge-method-mail' => 'potvrđeno putem e-maila',
 	'centralauth-merge-method-password' => 'potvrđeno lozinkom',
+	'centralauth-merge-method-admin' => 'admin spojio račun',
 	'centralauth-merge-method-new' => 'novi račun',
 	'centralauth-merge-method-login' => 'potvrđeno prijavljivanjem',
 	'centralauth-finish-title' => 'Završi spajanje',
@@ -5319,6 +5342,8 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-prefs-count-unattached' => 'Nepotvrđeni računi s vašim imenom postoje još na {{PLURAL:$1|slijedećem projektu|slijedećim projektima|slijedećim projektima}} $1.',
 	'centralauth-prefs-detail-unattached' => 'Pripadnost ovog projekta jedinstvenom sustavu prijave nije potvrđena.',
 	'centralauth-prefs-manage' => 'Uredite Vaš središnji suradnički račun',
+	'centralauth-renameuser-merged' => 'Suradnik $1 je prešao u sustav središnje prijave.
+Preimenovanje će uzrokovati odvajanje lokalnog računa od globalnog.',
 	'centralauth-renameuser-reserved' => 'Suradnički račun $2 je rezerviran za globalni račun.',
 	'centralauth-invalid-wiki' => 'Nema wiki baze podataka: $1',
 	'centralauth-account-exists' => 'Račun nemože biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.',
@@ -5343,6 +5368,9 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-rightslog-entry-setchange' => 'promijenjeni wikiji u "$1": dodano: $2; uklonjeno: $3',
 	'globalgroupmembership' => 'Članstvo u globalnim skupinama',
 	'globalgrouppermissions' => 'Uređivanje globalnih skupina',
+	'centralauth-globalgroupperms-grouplist' => 'Sljedeće globalne skupine su konfigurirane.
+Možete vidjeti i urediti prava za pojedinu skupinu.
+Skupina može biti obrisana ako se uklone sva prava koja ima.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vidi/uredi]])',
 	'centralauth-existinggroup-legend' => 'Postojeće skupine',
 	'centralauth-newgroup-legend' => 'Napravi novu skupinu',
@@ -5368,6 +5396,7 @@ Napomena, skupina ne postoji dok joj nisu dodijeljena prava.',
 	'centralauth-editgroup-success-text' => 'Uspješno ste promijenili prava za skupinu $1.
 [[Special:GlobalGroupPermissions|Vrati se na upravljanje skupinama]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|uredi]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wikiji na kojima imaju račun:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalni suradnik '''$1''' nije aktivan na wikiju kojeg se odabrali ('' $2 '').
 Možda pokušavate dodijeliti prava krivom suradniku!",
 	'centralauth-editset' => 'Uredi wiki setove',
@@ -6699,6 +6728,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
 );
 
 /** Japanese (日本語)
+ * @author Alexsh
  * @author Aotake
  * @author Broad-Sky
  * @author JtFuruhata
@@ -6779,6 +6809,8 @@ $messages['ja'] = array(
 	'centralauth-prefs-count-unattached' => 'あなたの利用者名は、$1{{PLURAL:$1|プロジェクト|プロジェクト}}で承認されていません。',
 	'centralauth-prefs-detail-unattached' => 'このプロジェクトサイトはまだ統一アカウントに承認されていません。',
 	'centralauth-prefs-manage' => '統一アカウントの管理',
+	'centralauth-login-progress' => '以下のウィキメディアプロジェクトもログインしました：',
+	'centralauth-logout-progress' => '以下のウィキメディアプロジェクトもログアウトしました：',
 	'right-centralauth-admin' => '統一アカウントの管理',
 	'right-centralauth-merge' => 'アカウントの統合',
 );
@@ -7889,6 +7921,10 @@ Ding Heim-Wiki sin sull.',
 de Aanmeldunge met däm Metmaacher-Name '''„$1“'''
 op dä Wikis zojeschlaare:",
 	'centralauth-list-attached-dryrun' => 'De jemeinsame Aanmeldung kräät automattesch de Aanmeldunge met däm Metmaacher-Name „$1“ op dä Wikis zojeschlaare:',
+	'centralauth-list-unattached-title' => 'Nit zosammejelaate Metmaacher-Name',
+	'centralauth-list-unattached' => 'Dä Metmaacher-Name „$1“ kunn nit automattesch zojeoodenet wäde.
+Wann et nit ene Andere es, dämm dä zojehürt, dann ess_et wascheinlesch
+esu, dat De do (noch) e ander Paßwoot has, wi en Dingem Heim-Wiki:',
 	'centralauth-foreign-link' => 'Metmacher „$1“ op $2',
 	'centralauth-merge-method-primary' => 'Heim-Wiki',
 	'centralauth-merge-method-empty' => 'nix Beijedrare',
@@ -7956,6 +7992,7 @@ enjiß:',
 	'centralauth-admin-delete-nonexistent' => 'En jemeinsame Aanmeldung unger dämm Metmaacher-Name
 „<nowiki>$1</nowiki>“ jitt et nit, do künne mer och
 nix fott schmieße.',
+	'centralauth-token-mismatch' => 'Schad, mer kunnte nit beärrbeide, de Sessions-Date sin futsch. Donn et norr_ens versöke.',
 	'centralauth-admin-lock-title' => 'Jemeinsame Aanmeldung Sperre',
 	'centralauth-admin-lock-description' => 'Enem Metmaacher sing jemeinsame Aanmedung ze sperre määd et unmüjjelesch, domet enzelogge, ejal en wat för enem Wiki.',
 	'centralauth-admin-lock-button' => 'Don di jemeinsame Aanmeldung sperre',
@@ -8043,23 +8080,28 @@ Do häß die Sigg ävver der ohne opjeroofe, dröm paßeet jetz ens jaa nix.',
 	'centralauth-rightslog-entry-groupperms' => 'hät för de jemeinsame Metmaacher-Jropp „$1“ de jemeinsame Metmaacher-Jroppe-Rääschte fun $2 op $3 jeändert',
 	'centralauth-rightslog-entry-groupperms2' => 'hät de jemeinsame Metmaacher-Jropp  „$1“ ier Rääschte jeändert, un dobei $2 dobei jedonn, un $3 fott jenumme',
 	'centralauth-rightslog-header' => 'Dat Logbooch hee zeich Änderunge aan jemeinsam Metmaacher-Jroppe: beeds Metjleeder un Rääschte, di kumme un jonn',
+	'centralauth-rightslog-entry-newset' => 'hät de „$2“ Wiki-Jrupp „$1“ aanjelaat met dä Wikis: $3',
+	'centralauth-rightslog-entry-setrename' => 'hät de Wiki-Jrupp „$2“ op „$1“ ömjedeuf',
 	'centralauth-rightslog-entry-setnewtype' => 'hät dem „$1“ singe Tüp fun $2 op $3 ömjesatz',
+	'centralauth-rightslog-entry-setchange' => 'hät de Wikis en „$1“ jeändert, un dobei $3 eruß jenumme, un $2 dobei jedonn',
 	'globalgroupmembership' => 'Metjleedschaff en jemeinsam Jroppe',
 	'globalgrouppermissions' => 'Jemeinsam Jroppe beärbeide',
 	'centralauth-globalgroupperms-grouplist' => 'Hee di jemeinsam Jroppe sin enjereschdt woode.
-Do kanns De de Rääscht för jede Jropp aanlore un och ändere.
+Do kanns De de Rääschte för jede Jropp aanlore un och ändere.
 En Jropp verschwindt, wann mer er all ier Rääschte fott nimmp.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|aanloore udder ändere]])',
 	'centralauth-existinggroup-legend' => 'Jroppe',
 	'centralauth-newgroup-legend' => 'Neu Jropp aanläje',
-	'centralauth-newgroup-intro' => 'He kanns De en neu Jropp aanlääje, indämm dat se Rääschte kritt.
-En Jropp oohne winischßtens ei Rääsch jit et nit.',
-	'centralauth-globalgroupperms-newgroupname' => 'Dä Name för die neu Jropp:',
+	'centralauth-newgroup-intro' => 'He kanns De en neu Jropp aanlääje, endämm dat se Rääschte kritt.
+En Jropp oohne et winischßt ei Rääsch jit et nit.',
+	'centralauth-globalgroupperms-newgroupname' => 'Dä Name för di neu Jropp:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Rääschte jevve',
 	'centralauth-editgroup-subtitle' => '$1 ändere',
 	'centralauth-editgroup-fieldset' => 'Rääschte för $1',
 	'centralauth-editgroup-name' => 'Dä Jropp ier Name:',
+	'centralauth-editgroup-display' => 'Dä Jropp ier Name övversatz för dat Wiki:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|ändere]])',
+	'centralauth-editgroup-member' => 'Dä Name fö di Metmaacher en dä Jropp, övversaz för_t Wiki:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|ändere]])',
 	'centralauth-editgroup-members' => 'Leß met de Metjleeder:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Leß met de Metmaacher {{PLURAL:$3|met däm Rääsch $2|dä Rääschte $2|oohne e Räsch}}]]',
@@ -8069,13 +8111,20 @@ En Jropp oohne winischßtens ei Rääsch jit et nit.',
 	'centralauth-editgroup-perms' => 'Zojedeilte Rääschte:',
 	'centralauth-editgroup-reason' => 'Jrund för et Ändere:',
 	'centralauth-editgroup-success' => 'Jruppe-Rääsch jeändert',
-	'centralauth-editgroup-success-text' => 'Do häs de Rääschte för de Metmaacher-Jrupp „$1“ jändert.
+	'centralauth-editgroup-success-text' => 'Do häs de Rääschte för de Metmaacher-Jrupp „$1“ jez jändert.
 [[Special:GlobalGroupPermissions|Jangk retuur, nohm Metmaacher-Jruppe-Rääschte beärrbeide]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beärrbeide]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Don e Wiki ußwähle, wo di als Metmaacher aanjemeldt sin:',
 	'centralauth-globalgroupmembership-badknownwiki' => 'Dä Metmaacher met dä jemeinsame Aanmeldung „$1“ es im Wiki „$2“ ja nit aktiv.
 Künnt sin, dat De dem verkiehrte Metmaacher sing Rääschte ändere wells!',
+	'centralauth-editset' => 'Wiki-Jrop ändere',
+	'centralauth-editset-legend' => 'En Wiki-Jrop ändere udder aanlääje',
+	'centralauth-editset-intro' => 'Jemeinsam Rääschte wäde verjovve övver de Wiki-Jroppe, di_t ald jit. Hee sin se. Do kanns Der jede dofun aansinn, un ändere, un och neu Wiki-Jroppe opmaache.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|aanloore udder beärbeide]])',
+	'centralauth-editset-new' => 'Neu Wiki-Jrop opmaache',
+	'centralauth-editset-notfound' => 'Han de Wiki-Jrop „$1“ nit jefonge.',
+	'centralauth-editset-legend-edit' => 'De Wiki-Jrop „$1“ ändere',
+	'centralauth-editset-legend-new' => 'Wiki-Jrop aanlääje',
 	'centralauth-editset-name' => 'Name:',
 	'centralauth-editset-type' => 'Tüp:',
 	'centralauth-editset-wikis' => 'Wikis:',
@@ -8083,14 +8132,16 @@ Künnt sin, dat De dem verkiehrte Metmaacher sing Rääschte ändere wells!',
 	'centralauth-editset-submit' => 'Loß jonn!',
 	'centralauth-editset-badname' => 'Do häß keine Jroppe-Name aanjejovve, udder dä Name douch nix.',
 	'centralauth-editset-badtype' => 'Esu ene Tüp kenne mer nit.',
+	'centralauth-editset-setexists' => 'De Wiki-Jrop met dämm Name es ald do',
 	'centralauth-editset-nowikis' => 'Kei Wikis aanjejovve.',
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(nit jebruch)',
 	'centralauth-editset-usage' => 'Jebruch en dä Wiki-Jroppe:',
 	'centralauth-editset-badwikis' => 'Hee di Wikis jit et jaanit: $1.',
+	'centralauth-editset-success' => 'Wiki-Jrop jeändert.',
 	'right-globalgroupmembership' => 'Metjleedschaff en jemeinsame Metmaacher-Jruppe beärbeide',
 	'right-centralauth-admin' => 'Jemeinsame Aanmeldunge beärbeide',
-	'right-centralauth-merge' => 'Eije Metmaacher-Name zo jemeinsame Aanmeldunge zosamme lääje',
+	'right-centralauth-merge' => 'Eije Metmaacher-Name op en jemeinsam Aanmeldung zosamme lääje',
 	'right-globalgrouppermissions' => 'Jemeinsame Metmaacher-Jruppe beärbeide',
 );
 
@@ -10430,6 +10481,14 @@ $messages['pa'] = array(
 	'centralauth-admin-delete-title' => 'ਅਕਾਊਂਟ ਹਟਾਓ',
 );
 
+/** Plautdietsch (Plautdietsch)
+ * @author Slomox
+ */
+$messages['pdt'] = array(
+	'centralauth-finish-password' => 'Passwuat:',
+	'centralauth-admin-username' => 'Bruckernome:',
+);
+
 /** Polish (Polski)
  * @author Beau
  * @author Derbeth
@@ -11298,7 +11357,7 @@ $messages['ru'] = array(
 	'centralauth-finish-title' => 'Завершение объединения',
 	'centralauth-finish-text' => 'Если эти учётные записи ваши, то вы можете завершить процесс перехода на единую учётную запись, введя пароли к ним:',
 	'centralauth-finish-password' => 'Пароль:',
-	'centralauth-finish-login' => 'Имя участника',
+	'centralauth-finish-login' => 'Представиться',
 	'centralauth-finish-send-confirmation' => 'Выслать пароль по электронной почте',
 	'centralauth-finish-problems' => 'Если возникли проблемы, или вы не являетесь владельцем указанных учётных записей [[meta:Help:Unified login problems|обратитесь к справочной информации]]...',
 	'centralauth-finish-noconfirms' => 'Нет учётных записей, которые могли бы быть подтверждены этим паролём.',
@@ -12694,6 +12753,9 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
+	'centralauth-editset' => 'Redigera wikiinställningar',
+	'centralauth-editset-legend' => 'Redigera eller skapa wikiinställningar',
+	'centralauth-editset-intro' => 'Följande wikiinställningar har redan skapats. Du kan kolla på och modirifera dem, eller skapa nya inställningar.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|visa/redigera]])',
 	'centralauth-editset-name' => 'Namn:',
 	'centralauth-editset-type' => 'Typ:',
@@ -13605,7 +13667,7 @@ Te ghè domandà sta pagina sensa fornir nissun dato de autenticassion, quindi n
 	'centralauth-editset-legend-edit' => 'Modifica de l\'insieme de wiki "$1"',
 	'centralauth-editset-name' => 'Nome:',
 	'centralauth-editset-type' => 'Tipo:',
-	'centralauth-editset-wikis' => 'Elenco de le wiki:<br/>(separà da un spazio)',
+	'centralauth-editset-wikis' => 'Elenco de le wiki:<br />(separà da un spazio)',
 	'centralauth-editset-reason' => 'Motivassion:',
 	'centralauth-editset-submit' => 'Manda',
 	'centralauth-editset-badname' => 'Ti gà speçificà un nome de insieme vódo o mia vàlido.',
