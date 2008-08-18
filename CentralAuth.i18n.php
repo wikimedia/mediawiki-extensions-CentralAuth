@@ -5369,11 +5369,14 @@ Zatražili ste ovu stranicu bez pružanja ovjeravajućih podataka, stoga ne radi
 	'centralauth-rightslog-entry-usergroups' => 'promijenjena globalna suradnička prava za $1 iz $2 u $3',
 	'centralauth-rightslog-entry-groupperms' => 'promijenjena prava za $1 iz $2 u $3',
 	'centralauth-rightslog-entry-groupperms2' => 'promijenjena prava za skupinu $1. Dodano $2; Uklonjeno $3',
+	'centralauth-rightslog-entry-groupperms3' => 'promijenjeno ograničenje wiki seta za $1 iz $2 u $3',
 	'centralauth-rightslog-header' => 'Ova evidencija sadrži podatke o globalnim skupinama: promijene članova i prava',
 	'centralauth-rightslog-entry-newset' => 'stvoren $2 wiki set $1 za sljedeće wikije: $3',
 	'centralauth-rightslog-entry-setrename' => 'preimenovan wiki set "$2" na "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'promijenjena vrsta za "$1" od $2 do $3',
 	'centralauth-rightslog-entry-setchange' => 'promijenjeni wikiji u "$1": dodano: $2; uklonjeno: $3',
+	'centralauth-rightslog-set-optin' => 'osnovom uključenih',
+	'centralauth-rightslog-set-optout' => 'osnovom isključenih',
 	'globalgroupmembership' => 'Članstvo u globalnim skupinama',
 	'globalgrouppermissions' => 'Uređivanje globalnih skupina',
 	'centralauth-globalgroupperms-grouplist' => 'Sljedeće globalne skupine su konfigurirane.
@@ -5413,6 +5416,8 @@ Možda pokušavate dodijeliti prava krivom suradniku!",
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|vidi/uredi]])',
 	'centralauth-editset-new' => 'Stvori novi set',
 	'centralauth-editset-notfound' => 'Wiki set "$1" nije pronađen.',
+	'centralauth-editset-optin' => 'Osnovom uključenih (uključuje samo određene wikije)',
+	'centralauth-editset-optout' => 'Osnovom isključenih (uključuje sve wikije osim određenih)',
 	'centralauth-editset-legend-edit' => 'Uređivanje wiki seta "$1"',
 	'centralauth-editset-legend-new' => 'Stvaranje novog wiki seta',
 	'centralauth-editset-name' => 'Naziv:',
@@ -6774,7 +6779,7 @@ $messages['ja'] = array(
 もしこれがあなたであるならば、このアカウントのパスワードをここに入力することで、アカウント統一処理を簡単に完了することができます:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>デモモード限定</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'アカウントの統一は、現在デモ / デバッグモードとなっており、実際の統合操作は行われません。すみません！',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ja|詳しくは、'''統一ログイン'''をご覧ください]]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ja|'''統一ログイン'''についてもっと知る]]...''",
 	'centralauth-list-home-title' => 'ホームウィキ',
 	'centralauth-list-home-dryrun' => 'このウィキで設定されたパスワードと電子メールアドレスが統合されたアカウントに設定されます。
 どこをホームウィキにするかは、あとから変更することも可能です。',
@@ -7756,6 +7761,7 @@ $messages['km'] = array(
  * @author ToePeu
  */
 $messages['ko'] = array(
+	'mergeaccount' => '통합 계정으로 로그인',
 	'centralauth-desc' => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
 	'centralauth-mergeaccount-desc' => '통합된 로그인을 위한 [[Special:MergeAccount|여러 계정 합치기]]',
 	'centralauth-merge-denied' => '접근할 권한이 없습니다.',
@@ -7790,6 +7796,7 @@ $messages['ko'] = array(
 	'centralauth-not-owner-text' => '계정 이름 "$1"이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
 사용자 본인이 맞다면 주 암호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
+	'centralauth-error-locked' => '당신의 계정이 잠겼기 때문에 편집할 수 없습니다.',
 	'centralauth-readmore-text' => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
 	'centralauth-list-home-title' => '주 위키',
 	'centralauth-list-home-dryrun' => '통합 계정의 비밀번호와 이메일 주소는 이 위키에서 사용되고 있는 것으로 설정됩니다. 나중에 주 위키 설정을 바꿀 수 있습니다.',
@@ -7847,6 +7854,8 @@ $messages['ko'] = array(
 	'centralauth-login-progress' => '위키미디어의 다른 프로젝트에도 로그인합니다:',
 	'centralauth-logout-progress' => '위키미디어의 다른 프로젝트에서도 로그아웃합니다.',
 	'centralauth-log-name' => '통합 계정 기록',
+	'centralauth-rightslog-name' => '공통 권한 기록',
+	'right-centralauth-admin' => '통합 계정 관리',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -10986,8 +10995,8 @@ As palavras-chave para as contas locais criadas antes da fusão irão ser revert
 	'centralauth-prefs-count-unattached' => 'Ainda existem contas não confirmadas com seu nome de utilizador em $1 {{PLURAL:$1|projecto|projectos}}.',
 	'centralauth-prefs-detail-unattached' => 'Este sítio não foi confirmado como fazendo parte da conta unificada.',
 	'centralauth-prefs-manage' => 'Manusear a sua conta unificada',
-	'centralauth-renameuser-merged' => 'O utilizador migrou para o sistema de login unificado.
-Renomear fara com que esta conta local seja desanexada da conta global.',
+	'centralauth-renameuser-merged' => 'O utilizador $1 migrou para o sistema de login unificado.
+Renomear fará com que esta conta local seja desanexada da conta global.',
 	'centralauth-renameuser-reserved' => '$2 se encontra reservado para uma conta global.',
 	'centralauth-invalid-wiki' => 'Não existe a BD wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar conta: o nome de utilizador pretendido já está a ser utilizado no sistema de login unificado.',
@@ -12775,7 +12784,9 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wikier:',
 	'centralauth-editset-reason' => 'Anledning:',
+	'centralauth-editset-nowikis' => 'Inga wikier specifierade.',
 	'centralauth-editset-nouse' => '(ingen)',
+	'centralauth-editset-badwikis' => 'Följande wikier existerar inte: $1.',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-admin' => 'Administrera globala konton',
 	'right-centralauth-merge' => 'Sammanfoga deras konton',
