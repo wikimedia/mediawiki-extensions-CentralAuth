@@ -311,6 +311,7 @@ You may be attempting to assign rights to the wrong user!",
 	'centralauth-editset-usage'                       => 'Used in groups:',
 	'centralauth-editset-badwikis'                    => 'Following wikis do not exist: $1.',
 	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
+	'centralauth-editset-return' => 'Return to main view',
 
 	// User rights
 	'right-globalgroupmembership'	=> 'Edit membership to global groups',

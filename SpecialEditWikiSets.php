@@ -150,12 +150,13 @@ class SpecialEditWikiSets extends SpecialPage
 		$type = $wgRequest->getVal( 'wpType' );
 		$wikis = array_unique( preg_split( '/(\s+|\s*\W\s*)/', $wgRequest->getVal( 'wpWikis' ), -1, PREG_SPLIT_NO_EMPTY ) );
 		$reason = $wgRequest->getVal( 'wpReason' );
+		$set = WikiSet::newFromId( $id );
 
 		if( !Title::newFromText( $name ) ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-badname' ), $name, $type, $wikis, $reason );
 			return;
 		}
-		if( !$id && WikiSet::newFromName( $name ) ) {
+		if( (!$id || $set->getName() != $name ) && WikiSet::newFromName( $name ) ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-setexists' ), $name, $type, $wikis, $reason );
 			return;
 		}
@@ -178,7 +179,6 @@ class SpecialEditWikiSets extends SpecialPage
 			return;
 		}
 
-		$set = WikiSet::newFromID( $id );
 		if( $set ) {
 			$oldname = $set->getName();
 			$oldtype = $set->getType();
@@ -209,7 +209,11 @@ class SpecialEditWikiSets extends SpecialPage
 				$log->addEntry( 'setchange', $title, $reason, array( $name, $added, $removed ) );
 			}
 		}
+		
+		global $wgUser,$wgOut;
+		$sk = $wgUser->getSkin();
+		$returnLink = $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'centralauth-editset-return' ) );
 
-		$this->buildMainView( '<strong class="success">' . wfMsgHtml( 'centralauth-editset-success' ) . '</strong>' );
+		$wgOut->addHTML( '<strong class="success">' . wfMsgHtml( 'centralauth-editset-success' ) . '</strong> <p>'.$returnLink.'</p>' );
 	}
 }
