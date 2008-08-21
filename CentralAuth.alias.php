@@ -53,6 +53,7 @@ $aliases['de'] = array(
 	'MergeAccount' => array( 'Benutzerkonten zusammenführen' ),
 	'GlobalGroupMembership' => array( 'Globale Benutzerrechte' ),
 	'GlobalGroupPermissions' => array( 'Globale Gruppenrechte' ),
+	'EditWikiSets' => array( 'Wikisets bearbeiten' ),
 	'GlobalUsers' => array( 'Globale Benutzerliste' ),
 );
 
@@ -106,6 +107,17 @@ $aliases['ms'] = array(
 	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
 	'EditWikiSets' => array( 'Ubah_set_wiki' ),
 	'GlobalUsers' => array( 'Pengguna_sejagat' ),
+);
+
+/** Nedersaksisch (Nedersaksisch) */
+$aliases['nds-nl'] = array(
+	'CentralAuth' => array( 'Centraal_anmelden' ),
+	'AutoLogin' => array( 'Autematisch_anmelden' ),
+	'MergeAccount' => array( 'Gebruker_bie_mekaar_doon' ),
+	'GlobalGroupMembership' => array( 'Globale_gebrukersrechen' ),
+	'GlobalGroupPermissions' => array( 'Globale_groepsrechen' ),
+	'EditWikiSets' => array( 'Wikigroepen_bewarken' ),
+	'GlobalUsers' => array( 'Globale_gebrukers' ),
 );
 
 /** Dutch (Nederlands) */
