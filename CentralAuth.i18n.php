@@ -311,7 +311,7 @@ You may be attempting to assign rights to the wrong user!",
 	'centralauth-editset-usage'                       => 'Used in groups:',
 	'centralauth-editset-badwikis'                    => 'Following wikis do not exist: $1.',
 	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
-	'centralauth-editset-return' => 'Return to main view',
+	'centralauth-editset-return'                      => 'Return to main view',
 
 	// User rights
 	'right-globalgroupmembership'	=> 'Edit membership to global groups',
@@ -4963,6 +4963,7 @@ $messages['he'] = array(
 	'centralauth-editset-usage' => 'בשימוש בקבוצות:',
 	'centralauth-editset-badwikis' => 'אתרי הוויקי הבאים אינם קיימים: $1.',
 	'centralauth-editset-success' => 'קבוצת אתרי הוויקי שונתה בהצלחה.',
+	'centralauth-editset-return' => 'חזרה לתצוגה הראשית',
 	'right-globalgroupmembership' => 'עריכת חברות בקבוצות הכלליות',
 	'right-centralauth-admin' => 'ניהול חשבונות כלליים',
 	'right-centralauth-merge' => 'מיזוג החשבון של עצמם',
