@@ -57,6 +57,14 @@ $aliases['de'] = array(
 	'GlobalUsers' => array( 'Globale Benutzerliste' ),
 );
 
+/** Finnish (Suomi) */
+$aliases['fi'] = array(
+	'CentralAuth' => array( 'Keskitetty varmennus' ),
+	'AutoLogin' => array( 'Automaattikirjautuminen' ),
+	'MergeAccount' => array( 'Yhdistä tunnus' ),
+	'GlobalUsers' => array( 'Yhdistetyt tunnukset' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */

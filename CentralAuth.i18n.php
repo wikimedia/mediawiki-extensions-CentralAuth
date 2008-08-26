@@ -749,7 +749,7 @@ $messages['ar'] = array(
 لو كان شخص آخر أخذ اسم المستخدم الخاص بك في موقع آخر هذا لن يزعجهم، ولكن سيعطيك فرصة للتعامل معهم أو مع إداري فيما بعد.",
 	'centralauth-merge-step1-title' => 'ابدأ توحيد الدخول',
 	'centralauth-merge-step1-detail' => 'من فضلك أدخل هنا كلمة السر الخاصة بحسابك.
-كلمة السر الخاصة بك وبريدك الإلكتروني المسجل سيتم فحصهما مع الحسابات في مواقع الويكي الأخرى للتأكد من أنهما يتطابقان.
+كلمة السر الخاصة بك وبريدك الإلكتروني المسجل سيتم فحصهما مع الحسابات في الويكيات الأخرى للتأكد من أنهما يتطابقان.
 لن يتم عمل أي تغييرات حتى تؤكد أن الأمور على ما يرام.',
 	'centralauth-merge-step1-submit' => 'أكد معلومات الدخول',
 	'centralauth-merge-step2-title' => 'أكد مزيد من الحسابات',
@@ -789,7 +789,7 @@ $messages['ar'] = array(
 عذرا!',
 	'centralauth-error-locked' => 'لا يمكنك التعديل لأن حسابك مغلق.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اقرأ المزيد حول '''الدخول الموحد''']]...''",
-	'centralauth-list-home-title' => 'موقع الويكي الرئيسي',
+	'centralauth-list-home-title' => 'الويكي الرئيسي',
 	'centralauth-list-home-dryrun' => 'كلمة السر وعنوان البريد الإلكتروني المحدد في هذا الويكي سيتم استخدامهما لحسابك الموحد.
 سيمكنك تغيير أيها هي موقع الويكي الرئيسي الخاص بك فيما بعد.',
 	'centralauth-list-attached-title' => 'الحسابات الملحقة',
@@ -975,7 +975,7 @@ $messages['ar'] = array(
 	'centralauth-editset-legend-new' => 'إنشاء مجموعة ويكي جديدة',
 	'centralauth-editset-name' => 'الاسم:',
 	'centralauth-editset-type' => 'النوع:',
-	'centralauth-editset-wikis' => 'الويكيات:<br />(مفصولة بفراغ)',
+	'centralauth-editset-wikis' => 'الويكيات:',
 	'centralauth-editset-reason' => 'السبب:',
 	'centralauth-editset-submit' => 'تنفيذ',
 	'centralauth-editset-badname' => 'أنت حددت اسم مجموعة غير صحيح أو فارغ.',
@@ -1025,6 +1025,19 @@ $messages['arz'] = array(
 	'centralauth-admin-lock-title' => 'اقفل الحساب',
 	'centralauth-days-ago' => 'من $1 {{PLURAL:$1|يوم|ايام}}',
 	'centralauth-globalgroupperms-newgroupname' => 'اسم المجموعة الجديدة:',
+	'centralauth-editgroup-perms' => 'الاذونات اللي معاها:',
+	'centralauth-editgroup-reason' => 'سبب التغيير:',
+	'centralauth-editgroup-success' => 'اذونات المجموعة اتغيرت',
+	'centralauth-editgroup-success-text' => 'انت غيرت بنجاح اذونات المجموعة للمجموعة $1.
+
+[[Special:GlobalGroupPermissions|ارجع لادارة المجموعة]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|عدل]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'الويكي اللي عندهم فيه حساب:',
+	'centralauth-globalgroupmembership-badknownwiki' => "اليوزر العام '''$1'''  مش نشيط في الويكي دا اللي انت حددته ('' $2 '').
+انت ممكن تكون بتحاول تدي حقوق لليوزر الغلط!",
+	'centralauth-editset' => 'تعديل مجموعات ويكي',
+	'centralauth-editset-legend' => 'تعديل أو إنشاء مجموعة ويكي',
+	'centralauth-editset-intro' => 'مجموعات الويكي دي اتنشأت قبل كدا. انت ممكن تشوف او تعدل اي واحدة فيهم او تنشيء واحدة جديدة خالص.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|عرض/تعديل]])',
 	'centralauth-editset-new' => 'ابتدي مجموعة جديدة',
 	'centralauth-editset-notfound' => 'مجموعة الويكي "$1" ماتلقتش',
@@ -1041,10 +1054,12 @@ $messages['arz'] = array(
 	'centralauth-editset-badtype' => 'نوع المجموعة مش صح.',
 	'centralauth-editset-setexists' => 'في مجموعة بالاسم دا موجودة من قبل كدا',
 	'centralauth-editset-nowikis' => 'مافيش ويكيهات اتحددت.',
+	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ولا حاجة)',
 	'centralauth-editset-usage' => 'بيستعمل في المجموعات:',
 	'centralauth-editset-badwikis' => 'الويكيات دي مش موجودة:$1.',
 	'centralauth-editset-success' => 'مجموعة الويكي اتغيرت بنجاح.',
+	'centralauth-editset-return' => 'ارجع للعرض الرئيسي',
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
 	'right-centralauth-admin' => 'ادارة الحسابات العامة',
 	'right-centralauth-merge' => 'ادمج حسابهم',
@@ -4165,6 +4180,9 @@ Olet kutsunut tätä sivua ilman sisäänkirjautumistietoja, joten sivu ei tee m
 	'centralauth-rightslog-set-optout' => 'eroamisperusteinen',
 	'globalgroupmembership' => 'Jäsenyys globaaleissa ryhmissä',
 	'globalgrouppermissions' => 'Globaalien ryhmien hallinta',
+	'centralauth-globalgroupperms-grouplist' => 'Seuraavat globaalit ryhmät on määritelty.
+Voit katsella ja muokata minkä tahansa ryhmän käyttöoikeuksia.
+Ryhmä voidaan poistaa ottamalla siltä pois kaikki käyttöoikeudet.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|näytä tai muokkaa]])',
 	'centralauth-existinggroup-legend' => 'Nykyiset ryhmät',
 	'centralauth-newgroup-legend' => 'Luo uusi ryhmä',
@@ -4188,6 +4206,9 @@ Olet kutsunut tätä sivua ilman sisäänkirjautumistietoja, joten sivu ei tee m
 	'centralauth-editgroup-success-text' => 'Ryhmän $1 käyttöoikeudet onnistuneesti vaihdettu.
 [[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muokkaa]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki, jossa käyttäjällä on tunnus:',
+	'centralauth-globalgroupmembership-badknownwiki' => "Yhdistettyä tunnusta '''$1''' ei ole olemassa wikissä '' $2 ''.
+Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 	'centralauth-editset' => 'Muokkaa wikijoukkoja',
 	'centralauth-editset-legend' => 'Muokkaa tai luo wikijoukko',
 	'centralauth-editset-intro' => 'Seuraavat wikijoukot on luotu. Voit katsella ja muokata niitä tai luoda uuden joukon.',
@@ -4403,7 +4424,7 @@ Vous avez demandé cette page sans fournir d’informations d’authentification
 	'centralauth-rightslog-entry-usergroups' => 'a modifié les droits globaux de l’utilisateur « $1 » de $2 à $3',
 	'centralauth-rightslog-entry-groupperms' => 'a modifié les droits du groupe $1 de $2 à $3',
 	'centralauth-rightslog-entry-groupperms2' => 'a modifié le groupe des permissions pour $1. A ajouté $2 ; a retiré $3',
-	'centralauth-rightslog-entry-groupperms3' => 'Modification de groupe restreint aux paramètres wikis pour $1 de $2 sur $3',
+	'centralauth-rightslog-entry-groupperms3' => 'a modifié le groupe restreint aux paramètres wikis pour $1 de $2 sur $3',
 	'centralauth-rightslog-header' => 'Cet historique contient les modifications apportées aux droits globaux, comprenant les changements de groupe et les permissions accordées auxdits groupes.',
 	'centralauth-rightslog-entry-newset' => 'a créé $2 paramètres wiki $1 avec les wikis suivants : $3',
 	'centralauth-rightslog-entry-setrename' => 'a renommé le paramètre wiki « $2 » en « $1 »',
@@ -8022,11 +8043,14 @@ $messages['km'] = array(
 	'centralauth-editgroup-members' => 'បញ្ជីសមាជិក៖',
 	'centralauth-editgroup-noset' => '(ទទេ)',
 	'centralauth-editgroup-reason' => 'មូលហេតុនៃការផ្លាស់ប្តូរ៖',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|កែប្រែ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'វិគីដែលពួកគេមានគណនី៖',
 	'centralauth-editset-name' => 'ឈ្មោះ:',
 	'centralauth-editset-type' => 'ប្រភេទ:',
 	'centralauth-editset-wikis' => 'វិគី:',
 	'centralauth-editset-reason' => 'មូលហេតុ:',
+	'centralauth-editset-submit' => 'ដាក់ស្នើ',
+	'centralauth-editset-nouse' => '(ទទេ)',
 	'right-centralauth-merge' => 'បញ្ចូលគណនីពួកគេរួមគ្នា',
 );
 
@@ -8111,6 +8135,8 @@ $messages['ko'] = array(
 	'centralauth-admin-delete-button' => '이 계정 지우기',
 	'centralauth-admin-lock-title' => '계정 잠그기',
 	'centralauth-admin-lock-button' => '이 계정 잠그기',
+	'centralauth-admin-hide-description' => '숨겨진 계정은 [[Special:GlobalUsers|공통 계정 목록]]에 나타나지 않습니다.',
+	'centralauth-admin-hide-success' => '공통 계정 "<nowiki>$1</nowiki>"이 성공적으로 숨겨졌습니다.',
 	'centralauth-admin-reason' => '이유:',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-attached' => '로컬에 존재',
@@ -8142,7 +8168,7 @@ $messages['ko'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'mergeaccount' => 'Stattus för es Metmaacher-Zosammelääje zwesche de Wikimedia Stefftung ier Wikis',
+	'mergeaccount' => 'Stattus för et Metmaacher-Zosammelääje zwesche de Wikimedia Stefftung ier Wikis',
 	'centralauth-desc' => 'Der Metmaacher ier [[Special:MergeAccount|Aanmeldunge zosammeläje]] zwesche de Wikis fun de Wikimedia Stefftung.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Aanmeldunge zosamme läje]] för nur eimol enlogge ze mösse zwesche de Wikimedia Steftung ier Wikis',
 	'centralauth-merge-denied' => 'Deit mer leid, ävver Do häs nit dat Rääsch, op die Sigg hee zozejriefe.',
@@ -13044,6 +13070,8 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-rightslog-entry-setrename' => 'ändrade namn på wikiinställningen "$2" till "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'ändrade typen på "$1" från $2 till $3',
 	'centralauth-rightslog-entry-setchange' => 'ändrade wikier i "$1": la till: $2; tog bort: $3',
+	'centralauth-rightslog-set-optin' => 'opt-in-baserad',
+	'centralauth-rightslog-set-optout' => 'opt-out-baserad',
 	'globalgroupmembership' => 'Medlemskap i globala grupper',
 	'globalgrouppermissions' => 'Behandling av globala grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Följande globala grupper finns. Du kan visa och redigera tillåtelserna som är angivna till varje grupp. En grupp kan tas bort genom att ta bort alla rättigheter från den.',
@@ -13078,6 +13106,8 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|visa/redigera]])',
 	'centralauth-editset-new' => 'Skapa ett nytt set',
 	'centralauth-editset-notfound' => 'Wikisetet "$1" hittades inte.',
+	'centralauth-editset-optin' => 'Opt-in-baserad (inkluderar endast valda wikier)',
+	'centralauth-editset-optout' => 'Opt-out-baserad (inkluderar alla wikier utom de valda)',
 	'centralauth-editset-legend-edit' => 'Redigerar wikiset "$1"',
 	'centralauth-editset-legend-new' => 'Skapar nytt wikiset',
 	'centralauth-editset-name' => 'Namn:',
@@ -14349,6 +14379,8 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-prefs-count-unattached' => 'Kals no pefümedöls labü nem olik dabinon nog pö {{PLURAL:$1|proyeg|proyegs}} $1.',
 	'centralauth-prefs-detail-unattached' => 'Proyegatopäd at no pefümedon as dutöl lü kal valemik.',
 	'centralauth-prefs-manage' => 'Guvön kali valemik ola',
+	'centralauth-editset-name' => 'Nem:',
+	'centralauth-editset-reason' => 'Kod:',
 );
 
 /** Yue (粵語)
