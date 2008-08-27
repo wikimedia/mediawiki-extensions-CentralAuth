@@ -101,6 +101,7 @@ $aliases['ko'] = array(
 
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
+	'CentralAuth' => array( 'Verwaltung vun der Benotzerkonten-Zesummeféierung' ),
 	'AutoLogin' => array( 'Automatesch Umeldung' ),
 	'MergeAccount' => array( 'Benotzerkonten zesummeféieren' ),
 	'GlobalGroupMembership' => array( 'Global Benotzerrechter' ),
@@ -115,6 +116,11 @@ $aliases['ms'] = array(
 	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
 	'EditWikiSets' => array( 'Ubah_set_wiki' ),
 	'GlobalUsers' => array( 'Pengguna_sejagat' ),
+);
+
+/** Erzya (Эрзянь) */
+$aliases['myv'] = array(
+	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
