@@ -65,6 +65,16 @@ $aliases['fi'] = array(
 	'GlobalUsers' => array( 'Yhdistetyt tunnukset' ),
 );
 
+/** French (Français) */
+$aliases['fr'] = array(
+	'AutoLogin' => array( 'Login Automatique', 'LoginAutomatique', 'LoginAuto' ),
+	'MergeAccount' => array( 'Fusionner le compte', 'FusionnerLeCompte' ),
+	'GlobalGroupMembership' => array( 'Permissions globales', 'PermissionGlobales' ),
+	'GlobalGroupPermissions' => array( 'Droits des groupes globaux', 'DroitsDesGroupesGlobaux' ),
+	'EditWikiSets' => array( 'Modifier les sets de wikis', 'ModifierLesSetsDeWiki' ),
+	'GlobalUsers' => array( 'Utilisateurs globaux', 'UtilisateursGlobaux' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
