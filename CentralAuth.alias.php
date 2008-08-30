@@ -79,12 +79,12 @@ $aliases['fr'] = array(
  * @author Rotem Liss
  */
 $aliases['he'] = array(
-	'CentralAuth'            => array( 'חשבון_משתמש_מאוחד' ),
-	'MergeAccount'           => array( 'מיזוג_חשבונות' ),
-	'GlobalGroupMembership'  => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
+	'CentralAuth' => array( 'חשבון_משתמש_מאוחד' ),
+	'MergeAccount' => array( 'מיזוג_חשבונות' ),
+	'GlobalGroupMembership' => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
-	'EditWikiSets'           => array( 'עריכת_קבוצות_אתרי_ויקי' ),
-	'GlobalUsers'            => array( 'משתמשים_כלליים' ),
+	'EditWikiSets' => array( 'עריכת_קבוצות_אתרי_ויקי' ),
+	'GlobalUsers' => array( 'משתמשים_כלליים' ),
 );
 
 /** Croatian (Hrvatski) */

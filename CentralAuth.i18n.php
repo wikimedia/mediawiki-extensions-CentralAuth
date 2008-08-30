@@ -5001,6 +5001,13 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
 );
 
+/** Gothic (𐌲𐌿𐍄𐌹𐍃𐌺)
+ * @author Jocke Pirat
+ */
+$messages['got'] = array(
+	'centralauth-admin-reason' => 'Faírina:',
+);
+
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author AndreasJS
  * @author LeighvsOptimvsMaximvs
@@ -7676,7 +7683,7 @@ Other accounts are not yet confirmed.',
 	'centralauth-admin-unlock-button' => 'بۇل تىركەلگى قۇلىپتاۋىن ٴوشىر',
 	'centralauth-admin-unlock-success' => '«$1» عالامدىق تىركەلگىسىن قۇلپتاۋى ٴساتتى ٴوشىرىلدى',
 	'centralauth-admin-unlock-nonexistent' => 'قاتە: «$1» دەگەن عالامدىق تىركەلگى جوق.',
-	'centralauth-admin-reason' => 'سەبەبى: ',
+	'centralauth-admin-reason' => 'سەبەبى:',
 	'globalusers' => 'عالامدىق قاتىسۋشى ٴتىزىمى',
 	'centralauth-listusers-locked' => 'قۇلىپتالعان',
 	'centralauth-listusers-attached' => 'جەرگىلىكتى بار',
@@ -7869,7 +7876,7 @@ Other accounts are not yet confirmed.',
 	'centralauth-admin-unlock-button' => 'Бұл тіркелгі құлыптауын өшір',
 	'centralauth-admin-unlock-success' => '«<nowiki>$1</nowiki>» ғаламдық тіркелгісін құлптауы сәтті өшірілді',
 	'centralauth-admin-unlock-nonexistent' => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
-	'centralauth-admin-reason' => 'Себебі: ',
+	'centralauth-admin-reason' => 'Себебі:',
 	'globalusers' => 'Ғаламдық қатысушы тізімі',
 	'centralauth-listusers-locked' => 'құлыпталған',
 	'centralauth-listusers-attached' => 'жергілікті бар',
@@ -8062,7 +8069,7 @@ Biriktirw aldında jasalğan jergilikti tirkelgilerdiñ qupïya sözderi bolğan
 	'centralauth-admin-unlock-button' => 'Bul tirkelgi qulıptawın öşir',
 	'centralauth-admin-unlock-success' => '«<nowiki>$1</nowiki>» ğalamdıq tirkelgisin qulptawı sätti öşirildi',
 	'centralauth-admin-unlock-nonexistent' => 'Qate: «<nowiki>$1</nowiki>» degen ğalamdıq tirkelgi joq.',
-	'centralauth-admin-reason' => 'Sebebi: ',
+	'centralauth-admin-reason' => 'Sebebi:',
 	'globalusers' => 'Ğalamdıq qatıswşı tizimi',
 	'centralauth-listusers-locked' => 'qulıptalğan',
 	'centralauth-listusers-attached' => 'jergilikti bar',
@@ -14612,6 +14619,8 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-admin-merge' => 'Pevälos ad balön',
 	'centralauth-admin-bad-input' => 'Pevälos negidetiko ad balön',
 	'centralauth-admin-none-selected' => 'Kals nonik pevälons ad pevotükön.',
+	'centralauth-admin-delete-title' => 'Moükön kali',
+	'centralauth-admin-delete-button' => 'Moükön kali at',
 	'centralauth-admin-reason' => 'Kod:',
 	'centralauth-seconds-ago' => 'bü {{PLURAL:$1|sekun|sekuns}} $1',
 	'centralauth-minutes-ago' => 'bü {{PLURAL:$1|minut|minuts}} $1',
@@ -14768,7 +14777,7 @@ $messages['yue'] = array(
 	'centralauth-admin-unhide-button' => '反隱藏呢個戶口',
 	'centralauth-admin-unhide-success' => '已經成功噉反隱藏咗 "<nowiki>$1</nowiki>" 嘅全域戶口',
 	'centralauth-admin-unhide-nonexistent' => '錯誤: 個全域戶口 "<nowiki>$1</nowiki>" 唔存在。',
-	'centralauth-admin-reason' => '原因: ',
+	'centralauth-admin-reason' => '原因:',
 	'centralauth-admin-lockandhide-title' => '鎖住同隱藏戶口',
 	'centralauth-admin-lockandhide-description' => '鎖住同隱藏呢個戶口會令到佢唔能夠響任何wiki度登入，同埋響[[Special:GlobalUsers|全域用戶一覽]]度隱藏。',
 	'centralauth-admin-lockandhide-button' => '鎖住同隱藏呢個戶口',
@@ -14990,7 +14999,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-unhide-button' => '解除隐藏这个账户',
 	'centralauth-admin-unhide-success' => '解除隐藏全域账户"<nowiki>$1</nowiki>"已完成',
 	'centralauth-admin-unhide-nonexistent' => '错误：全域账户"<nowiki>$1</nowiki>"不存在。',
-	'centralauth-admin-reason' => '理由: ',
+	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-lockandhide-title' => '锁定并隐藏账户',
 	'centralauth-admin-lockandhide-description' => '锁定并隐藏这个账户会令到它不能在任何wiki中登入，以及在[[Special:GlobalUsers|{{int:Globalusers}}]]中隐藏。',
 	'centralauth-admin-lockandhide-button' => '锁定并隐藏这个账户',
@@ -15092,8 +15101,7 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step1-detail' => '請在這裡輸入您的帳戶密碼。您的密碼以及電子郵件地址將會與其他計劃的資料進行比對，以確認它們是一致的。所有資料在您確認沒有問題之前均不會更改。',
 	'centralauth-merge-step1-submit' => '確認登入資料',
 	'centralauth-merge-step2-title' => '確認更多帳號',
-	'centralauth-merge-step2-detail' => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。
-',
+	'centralauth-merge-step2-detail' => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。',
 	'centralauth-merge-step2-submit' => '確認登入資料',
 	'centralauth-merge-dryrun-complete' => '所有已存在的的帳號都能被自動整合！
 
@@ -15209,7 +15217,7 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-unhide-button' => '解除隱藏這個帳戶',
 	'centralauth-admin-unhide-success' => '解除隱藏全域帳戶"<nowiki>$1</nowiki>"已完成',
 	'centralauth-admin-unhide-nonexistent' => '{{int:Centralauth-admin-hide-nonexistent}}',
-	'centralauth-admin-reason' => '理由: ',
+	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-lockandhide-title' => '鎖定並隱藏賬戶',
 	'centralauth-admin-lockandhide-description' => '鎖定並隱藏這個賬戶會令到它不能在任何wiki中登入，以及在[[Special:GlobalUsers|{{int:Globalusers}}]]中隱藏。',
 	'centralauth-admin-lockandhide-button' => '鎖定並隱藏這個賬戶',
