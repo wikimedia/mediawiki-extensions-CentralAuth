@@ -769,7 +769,7 @@ $messages['ar'] = array(
 	'centralauth-merge-step3-detail' => 'أنت جاهز لإنشاء حسابك الموحد، وستكون مواقع الويكي التالية ملحقة به:',
 	'centralauth-merge-step3-submit' => 'وحد الحسابات',
 	'centralauth-merge-no-accounts' => 'لا حسابات تطابق اسمك تم العثور عليها في جدول تتبع الحساب المركزي!
-قاعدة البيانات فاسدة.',
+قاعدة البيانات لا بد من أنها فاسدة.',
 	'centralauth-merge-home-password' => 'الويكي الرئيسي لهذا الحساب (معروض بالأسفل) لديه كلمة سر مختلفة عن الواحدة التي أدخلتها.
 من فضلك أدخل كلمة السر للويكي الرئيسي.',
 	'centralauth-complete' => 'توحيد الدخول اكتمل!',
@@ -999,39 +999,65 @@ $messages['ar'] = array(
  * @author Ramsis II
  */
 $messages['arz'] = array(
-	'centralauth-merge-step1-title' => 'ابتدى توحيد الحسابات',
-	'centralauth-merge-dryrun-or' => "'''ولا'''",
-	'centralauth-merge-dryrun-home' => 'نظام التهجير ماقدرش يتأكد من انك المالك بتاع حساب الويكي  الاساسي لاسم اليوزر بتاعك.
+	'mergeaccount' => 'حالة توحيد الدخول',
+	'centralauth-desc' => '[[Special:MergeAccount|ادمج الحساب]] في ويكيهات مؤسسة ويكيميديا',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|ادمج حسابات كتيرة]] علشان يدخل فيها يوزر واحد',
+	'centralauth-merge-denied' => 'متأسفين،انت مش من حقك تدخل الصفحة دي.',
+	'centralauth-merge-notlogged' => 'لو سمحت <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} سجل الدخول]</span> علشان تشوف لو حساباتك اتدمجت بالكامل.',
+	'centralauth-merge-welcome' => "'''حساب اليوزر بتاعك لسة ما اتنقلش لنظام ويكيميديا لتوحيدالدخول'''
 
-في ويكي تاني اتحدد على انه الحساب الاساسي لاسم اليوزر بتاعك،امشى ورا اللينك اللي تحت و سجل دخولك هناك علشان تخلص عملية تهجير الحساب بتاعك.',
+لو اخترت ان حساباتك تتنقل،ح تقدر تستعمل اسم اليوزر و الباسورد نفسيهم علشان تدخل على كل مشاريع الويكي بتاعة الويكيميديا في كل اللغات المتوافرة.
+و دا  ح يسهل الشغل في المشاريع المشتركة زي مثلا التحميل في [http://commons.wikimedia.org/ ويكيميديا كومونز], و ح يتفادى اللخبطة او التعارض اللي ممكن تظهر لما شخصين يختارو نفس اسم اليوزر في مشروعين مختلفين.
+
+لو في حد تاني كان اختار نفس اسم اليوزر بتاعك بس على موقع تاني، ف دا مش ح يسبب له اي ازعاج،بس ح يديلك فرصة انك تشتغل معاهم او مع اداري بعدين.",
+	'centralauth-merge-step1-title' => 'ابتدى توحيد الحسابات',
+	'centralauth-merge-step1-detail' => 'لو سمحت تدخل الباسورد بتاعة حسابك هنا.
+الباسورد و الايميل بتوعك و المتسجلين عندنا ح يتشيك عليهم في الويكيهات التانية علشان نتأكد من انهم زي بعض.
+مافيش اي تغييرات ح تتعمل لحد ما تثبت لينا ان كل حاجة تمام التمام.',
+	'centralauth-merge-step1-submit' => 'تأكيد معلومات الدخول',
+	'centralauth-merge-step2-title' => 'تـاكيد حسابات اكتر',
+	'centralauth-merge-step2-detail' => 'في شوية حسابات ماقدرناش نطابقها اوتوماتيكي لموقع الويكي الرئيسي اللي انت حددته.لو الحسابات دي بتاعتك،ممكن تثبت انهم فعلا بتوعك لو كتبت الباسورد بتاعتهم.',
+	'centralauth-merge-step2-submit' => 'تأكيد معلومات الدخول',
+	'centralauth-merge-dryrun-complete' => 'كل الحسابات الموجودة ممكن تتوحد اوتوماتيكي!
+
+مافيش اي تغييرات اتعملت في الحسابات بتاعتك لحد دلوقتي.',
+	'centralauth-merge-dryrun-incomplete' => 'انت ممكن تستمر، بس في شوية حسابات ماقدرناش نتأكد منهم اوتوماتيكي و مش ح يتهجروا دلوقتي.انت ممكن تعملهم دمج بعدين.
+
+مافيش اي تغييرات اتعملت  في الحسابات بتاعتك لحد دلوقتي.',
+	'centralauth-merge-dryrun-or' => "'''ولا'''",
+	'centralauth-merge-dryrun-home' => 'نظام التهجير ماقدرش يتأكد من انك المالك بتاع حساب الويكى  الاساسى لاسم اليوزر بتاعك.
+
+فى ويكى تانى اتحدد على انه الحساب الاساسى لاسم اليوزر بتاعك،امشى ورا اللينك اللى تحت و سجل دخولك هناك علشان تخلص عملية تهجير الحساب بتاعك.',
 	'centralauth-merge-step3-title' => 'انشيء الحساب المتوحد',
-	'centralauth-merge-step3-detail' => 'انت جاهز لانشاء حسابك المتوحد،و مواقع الويكي دي ح تكون مرتبطه بيه:',
+	'centralauth-merge-step3-detail' => 'انت جاهز لانشاء حسابك المتوحد،و مواقع الويكى دى ح تكون مرتبطه بيه:',
 	'centralauth-merge-step3-submit' => 'وحد الحسابات',
-	'centralauth-merge-no-accounts' => 'مالقيناش اي حسابات بتطابق اسمك في جدول تتبع الحساب المركزي.
+	'centralauth-merge-no-accounts' => 'مالقيناش اى حسابات بتطابق اسمك فى جدول تتبع الحساب المركزى.
 قاعدة البيانات اكيد بايظة.',
-	'centralauth-merge-home-password' => 'الويكي الرئيسي بتاع الحساب دا(موجود تحت)عنده باسورد مختلفة عن اللي انت دخلتها.
-لو سمحت تدخل الباسورد بتاعة الويكي الرئيسي.',
+	'centralauth-merge-home-password' => 'الويكى الرئيسى بتاع الحساب دا(موجود تحت)عنده باسورد مختلفة عن اللى انت دخلتها.
+لو سمحت تدخل الباسورد بتاعة الويكى الرئيسى.',
 	'centralauth-complete' => 'توحيد الدخول اكتمل!',
 	'centralauth-incomplete' => 'توحيد الدخول ما اكتملش!',
-	'centralauth-not-owner-text' => 'اسم اليوزر "$1" اتخصص اوتوماتيكي لمالك الحساب على  $2.
+	'centralauth-complete-text' => 'انت تقدر دلوقتى تدخل على اى موقع ويكى للويكيميديا من غير ما تفتح حساب جديد;اسم اليوزر و الباسورد نفسيهم ح ينفعو فى الويكيبيديا،الويكشيناري،الويكيبووكس، و مشاريعهم الشقيقة فى كل اللغات.',
+	'centralauth-incomplete-text' => 'اول ما تسجيلك يتوحد،ح تقدر تدخل على اى موقع ويكى من الويكيميديا من غير ما تفتح حساب جديد;اسم اليوزر و الباسورد نفسيهم ح ينفعو فى الويكيبيديا,الويكشينارى,الويكيبووكس,و مشاريعهم الشقيقة فى كل اللغات.',
+	'centralauth-not-owner-text' => 'اسم اليوزر "$1" اتخصص اوتوماتيكى لمالك الحساب على  $2.
 
 لو انت اليوزر دا،ممكن تخلص عملية توحيد الدخول ببساطة اذا كتبت الباسورد الرئيسية للحساب دا هنا.',
-	'centralauth-blocked-text' => 'الويكي الرئيسي (المعروض تحت)بتاعك ممنوع من التعديل
-لو سمحت تتصل ب السيسوب بتاع الويكي دا علشان يشيل المنع عنه.
+	'centralauth-blocked-text' => 'الويكى الرئيسى (المعروض تحت)بتاعك ممنوع من التعديل
+لو سمحت تتصل ب السيسوب بتاع الويكى دا علشان يشيل المنع عنه.
 وهو مقفول،ما ينفعش تدمج حساباتك.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>نمط التجربة بس</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'توحيد الحساب دلوقتي لسة في طور التجربة/تصحيح الغلطات،وعلشان كدة عمليات الدمج الحقيقية متعطلة.
+	'centralauth-disabled-dryrun' => 'توحيد الحساب دلوقتى لسة فى طور التجربة/تصحيح الغلطات،وعلشان كدة عمليات الدمج الحقيقية متعطلة.
 متأسفين!',
 	'centralauth-error-locked' => 'انت ما تقدرش تعدل لان حسابك مقفول',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اقرا اكتر عن'''الدخول المتوحد''']]…''",
 	'centralauth-list-home-title' => 'بيت الويكي',
-	'centralauth-list-home-dryrun' => 'الباسورد و عنوان الايميل المتحددين في الويكي دا ح يستعملو في حسابك المتوحد.
-ح تقدر تحدد اي واحدة فيهم ح تبقى موقع الويكي الرئيسي ليك بعدين.',
+	'centralauth-list-home-dryrun' => 'الباسورد و عنوان الايميل المتحددين فى الويكى دا ح يستعملو فى حسابك المتوحد.
+ح تقدر تحدد اى واحدة فيهم ح تبقى موقع الويكى الرئيسى ليك بعدين.',
 	'centralauth-list-attached-title' => 'الحسابات الموصولة',
-	'centralauth-list-attached' => 'الجساب اللي اسمه "$1" على كل المواقع دي اتربط اوتوماتيكي بالحساب المتوحد:',
-	'centralauth-list-attached-dryrun' => 'الحساب اللي اسمه "$1" على كل المواقع دي ح يتربط اوتوماتيكي بالحساب المتوحد:',
+	'centralauth-list-attached' => 'الحساب اللى اسمه "$1" على كل المواقع دى اتربط اوتوماتيكى بالحساب المتوحد:',
+	'centralauth-list-attached-dryrun' => 'الحساب اللى اسمه "$1" على كل المواقع دى ح يتربط اوتوماتيكى بالحساب المتوحد:',
 	'centralauth-list-unattached-title' => 'حسابات مش مربوطة',
-	'centralauth-list-unattached' => 'الحساب "$1" مانفعش يتأكد اوتوماتيكي من انه بتاعك في المواقع دي;في الاغلب عشان هما عندهم باسورد مختلفة عن حسابك الاساسي:',
+	'centralauth-list-unattached' => 'الحساب "$1" مانفعش يتأكد اوتوماتيكى من انه بتاعك فى المواقع دى; فى الاغلب عشان هما عندهم باسورد مختلفة عن حسابك الاساسى:',
 	'centralauth-foreign-link' => 'اليوزر $1 فى $2',
 	'centralauth-merge-method-primary' => 'بيت الويكي',
 	'centralauth-merge-method-empty' => 'ما فيش مساهمات',
@@ -1041,22 +1067,22 @@ $messages['arz'] = array(
 	'centralauth-merge-method-new' => 'حساب جديد',
 	'centralauth-merge-method-login' => 'اتاكدت بتسجيل الدخول',
 	'centralauth-finish-title' => 'الدمج خلص',
-	'centralauth-finish-text' => 'لو الحسابات دي بتاعتك،ممكن تخلص عملية توحيد الدخول ببساطة اذا كتبت الباسوردات بتاعة الحسابات التانية هنا:',
+	'centralauth-finish-text' => 'لو الحسابات دى بتاعتك،ممكن تخلص عملية توحيد الدخول ببساطة اذا كتبت الباسوردات بتاعة الحسابات التانية هنا:',
 	'centralauth-finish-password' => 'الباسورد:',
 	'centralauth-finish-login' => 'دخول',
 	'centralauth-finish-send-confirmation' => 'ابعت الباسورد بالايميل',
 	'centralauth-finish-problems' => 'انت عندك مشكلة؟ ولا انت مانتش المالك بتاع الحسابات التانية دي؟
-[[meta:Help:Unified login problems|ازاي الاقي المساعدة]]…',
+[[meta:Help:Unified login problems|ازاى الاقى المساعدة]]…',
 	'centralauth-finish-noconfirms' => 'مافيش حسابات ممكن تاكيدها باستعمل الباسورد دي.',
 	'centralauth-finish-incomplete' => 'اكتر من حساب اتدمجو مع بعض باستعمال الباسورد دي.
 الحسابات التانية لسة ما تاكدوش منهم.',
-	'centralauth-merge-attempt' => "'''التاكد من الباسورد اللي اديتها في الحسابات الباقية اللي لسة ما ادمجتش...'''",
-	'centralauth-attach-list-attached' => 'الحساب المتوحد اللي اسمه "$1" فيه الحسابات دي:',
+	'centralauth-merge-attempt' => "'''التاكد من الباسورد اللى اديتها فى الحسابات الباقية اللى لسة ما ادمجتش...'''",
+	'centralauth-attach-list-attached' => 'الحساب المتوحد اللى اسمه "$1" فيه الحسابات دي:',
 	'centralauth-attach-title' => 'تاكيد الحساب',
-	'centralauth-attach-text' => 'الحساب دا لسة ما اتدمجش في الحساب المتوحد.
+	'centralauth-attach-text' => 'الحساب دا لسة ما اتدمجش فى الحساب المتوحد.
 لو الحساب العام هو كمان بتاعك،ممكن تدمج الحساب دا لو كتبت الباسورد بتاعة الحساب العام:',
 	'centralauth-attach-submit' => 'ادمج الحساب',
-	'centralauth-attach-success' => 'الحساب اتدمج في الحساب  المتوحد.',
+	'centralauth-attach-success' => 'الحساب اتدمج فى الحساب  المتوحد.',
 	'centralauth' => 'إدارة الدخول المتوحد',
 	'centralauth-admin-manage' => 'إدارة بيانات اليوزر',
 	'centralauth-admin-username' => 'اسم اليوزر:',
@@ -1082,16 +1108,16 @@ $messages['arz'] = array(
 	'centralauth-admin-already-unmerged' => 'اتجاوز  $1, مش مدمج اصلا',
 	'centralauth-admin-unmerge-success' => 'شال الدمج بتاع $1 {{PLURAL:$1|حساب|حساب}} بنجاح',
 	'centralauth-admin-delete-title' => 'الغى الحساب',
-	'centralauth-admin-delete-description' => 'مسح الحساب العام دا ح يمسح اي تفضيلات عامة،ح يفك ارتباط كل الحسابات المحلية،و ح يسيب الاسم العام حر يقدر يوزر تاني ياخده
+	'centralauth-admin-delete-description' => 'مسح الحساب العام دا ح يمسح اى تفضيلات عامة،ح يفك ارتباط كل الحسابات المحلية،و ح يسيب الاسم العام حر يقدر يوزر تانى ياخده
 كل الحسابات المحلية ح تنيها موجودة.
-الباسوردات بتاعة الحسابات المحلية اللي اتعملت قبل الدمج ما يحصل،ح ترجع زي ما كانت قبل الدمج.',
+الباسوردات بتاعة الحسابات المحلية اللى اتعملت قبل الدمج ما يحصل،ح ترجع زى ما كانت قبل الدمج.',
 	'centralauth-admin-delete-button' => 'امسح الحساب دا',
 	'centralauth-admin-delete-success' => 'الحساب العام بتاع "<nowiki>$1</nowiki>" اتمسح بنجاح',
 	'centralauth-admin-nonexistent' => 'مافيش حساب عام لـ "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'غلط: الحساب العام "<nowiki>$1</nowiki>" مش موجود.',
 	'centralauth-token-mismatch' => 'متاسفين،ماقدرناش ننفذ تقديم الاستمارة بتاعتك بسبب تضييع معلومات لجلسة',
 	'centralauth-admin-lock-title' => 'اقفل الحساب',
-	'centralauth-admin-lock-description' => 'لو قفلت الحساب حتخلي من المستحيل الدخول عليه فى اي ويكي.',
+	'centralauth-admin-lock-description' => 'لو قفلت الحساب حتخلى من المستحيل الدخول عليه فى اى ويكى.',
 	'centralauth-admin-lock-button' => 'اقفل الحساب دا',
 	'centralauth-admin-lock-success' => 'الحساب العام بتاع "<nowiki>$1</nowiki>" اتقفل بنجاح',
 	'centralauth-admin-lock-nonexistent' => 'غلط: الحساب العام "<nowiki>$1</nowiki>" مش موجود.',
@@ -1100,8 +1126,8 @@ $messages['arz'] = array(
 	'centralauth-admin-unlock-button' => 'شيل القفل من  على الحساب دا',
 	'centralauth-admin-unlock-success' => 'قفل الحساب العام "<nowiki>$1</nowiki>" خلاض اتشال بنجاح',
 	'centralauth-admin-unlock-nonexistent' => 'غلط: الحساب العام"<nowiki>$1</nowiki>" مش موجود.',
-	'centralauth-admin-hide-title' => 'خبي الحسابات',
-	'centralauth-admin-hide-description' => 'الحسابات المتخبية ما بتبانش في [[Special:GlobalUsers|اليوزرز العامين]].',
+	'centralauth-admin-hide-title' => 'خبى الحسابات',
+	'centralauth-admin-hide-description' => 'الحسابات المتخبية ما بتبانش فى [[Special:GlobalUsers|اليوزرز العامين]].',
 	'centralauth-admin-hide-button' => 'خبى الحساب دا',
 	'centralauth-admin-hide-success' => 'الحساب العام بتاع "<nowiki>$1</nowiki>" اتخبى بنجاح',
 	'centralauth-admin-hide-nonexistent' => 'غلط: الحساب العام "<nowiki>$1</nowiki>" مالوش وجود .',
@@ -2806,6 +2832,9 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-admin-already-unmerged' => 'Přeskakuje se $1, již byl odloučen',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|účet úspěšně odloučen|účty úspěšně odloučeny|účtů úspěšně odloučeno}}',
 	'centralauth-admin-delete-title' => 'Smazat účet',
+	'centralauth-admin-delete-description' => 'Smazáním globálního účtu smažete všechny globální nastavení, odpojíte všechny účty a uvolníte globální jméno, takže si ho bude moci vzít jiný uživatel.
+Všechny lokální učty budou nadále existovat.
+Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje původní hodnoty, které měli před sloučením.',
 	'centralauth-admin-delete-button' => 'Smazat tento účet',
 	'centralauth-admin-delete-success' => 'Globální účet „<nowiki>$1</nowiki>“ byl úspěšně smazán.',
 	'centralauth-admin-nonexistent' => 'Globální účet „<nowiki>$1</nowiki>“ neexistuje.',
@@ -2875,7 +2904,14 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-rightslog-name' => 'Kniha globálních práv',
 	'centralauth-rightslog-entry-usergroups' => 'změnil členství $1 v globální skupině z $2 na $3',
 	'centralauth-rightslog-entry-groupperms' => 'změnil oprávnění skupiny $1 z $2 na $3',
+	'centralauth-rightslog-entry-groupperms2' => 'změnil oprávnění skupiny $1. Přidané $2; odstraněné $3',
 	'centralauth-rightslog-header' => 'Tato kniha obsahuje operace na globálních skupinách: změny členství a oprávnění.',
+	'centralauth-rightslog-entry-newset' => 'vytvořeny $2 seznamy wiki $1 pro následující wiki: $3',
+	'centralauth-rightslog-entry-setrename' => 'seznam wiki „$2” přejmenován na „$1”',
+	'centralauth-rightslog-entry-setnewtype' => 'změněn typ „$1” z „$2” na „$3”',
+	'centralauth-rightslog-entry-setchange' => 'změněné wiki v „$1”: přidané: $2; odstraněné: $3',
+	'centralauth-rightslog-set-optin' => 'jen určené',
+	'centralauth-rightslog-set-optout' => 'všechny kromě určených',
 	'globalgroupmembership' => 'Členství v globálních skupinách',
 	'globalgrouppermissions' => 'Správa globálních skupin',
 	'centralauth-globalgroupperms-grouplist' => 'Byly nastaveny následující globální skupiny. Můžete prohlížet a upravovat oprávnění přidělené kterékoliv skupině. Skupinu je možné odstranit tím, že jí odeberete všechna oprávnění.',
@@ -2894,14 +2930,40 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editovat]])',
 	'centralauth-editgroup-members' => 'Seznam členů:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Seznam uživatelů s právy $2]]',
+	'centralauth-editgroup-restrictions' => 'Seznam wiki, na kterých je tato skupina aktivní:',
+	'centralauth-editgroup-noset' => '(žádné)',
 	'centralauth-editgroup-submit' => 'Uložit změny v oprávněních skupiny',
 	'centralauth-editgroup-perms' => 'Přiřazená oprávnění:',
 	'centralauth-editgroup-reason' => 'Důvod změny:',
 	'centralauth-editgroup-success' => 'Oprávnění skupiny byla změněna',
 	'centralauth-editgroup-success-text' => 'Úspěšně jste změnili oprávnění skupiny pro skupinu $1.
 [[Special:GlobalGroupPermissions|Návrat na správu skupin]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|upravit]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vyberte wiki, na níž má účet:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globální uživatel  '''$1''' není aktivní na wiki, kterou jste uvedli (''$2''). Možná se pokoušíte přidělit práva nesprávnému uživateli.",
+	'centralauth-editset' => 'Upravit seznam wiki',
+	'centralauth-editset-legend' => 'Upravit nebo vytvořit nový seznam wiki',
+	'centralauth-editset-intro' => 'Následjící seznamy wiki už byly votvořeny. Můžete zobrazit a změnit kterýkoli z nich nebo vytvořit nový seznam.',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|zobrazit/upravit]])',
+	'centralauth-editset-new' => 'Vytvořit nový seznam',
+	'centralauth-editset-notfound' => 'Seznam wiki „$1” nebyla nalezen',
+	'centralauth-editset-optin' => 'opt-in (jen určené wiki)',
+	'centralauth-editset-optout' => 'opt-out (všechny wiki kromě určených)',
+	'centralauth-editset-legend-edit' => 'Upravuje se seznam wiki „$1”',
+	'centralauth-editset-legend-new' => 'Vytváří se nový seznam wiki',
+	'centralauth-editset-name' => 'Název:',
+	'centralauth-editset-type' => 'Typ:',
+	'centralauth-editset-wikis' => 'Wiki:',
+	'centralauth-editset-reason' => 'Důvod:',
+	'centralauth-editset-submit' => 'Odeslat',
+	'centralauth-editset-badname' => 'Neplatný nebo prázdný název množiny.',
+	'centralauth-editset-badtype' => 'Neplatný typ seznamu.',
+	'centralauth-editset-setexists' => 'Seznam s takovým názvem již existuje',
+	'centralauth-editset-nowikis' => 'Nebyly určeny žádné wiki.',
+	'centralauth-editset-nouse' => '(žádné)',
+	'centralauth-editset-usage' => 'Použité ve skupinách:',
+	'centralauth-editset-badwikis' => 'Následující wiki neexistují: $1.',
+	'centralauth-editset-success' => 'Seznam wiki úspěšně změněn.',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
 	'right-centralauth-admin' => 'Spravování globálních účtů',
 	'right-centralauth-merge' => 'Slučování jejich účtů',
@@ -3746,11 +3808,13 @@ Vi petis ĉi tiun paĝon sen donante ian ajn aŭtentoinformon, do ĝi faras neni
 	'centralauth-rightslog-entry-usergroups' => 'ŝanĝis ĝeneralan grup-membrecon por $1 de $2 al $3',
 	'centralauth-rightslog-entry-groupperms' => 'ŝanĝis grupajn rajtojn por $1 de $2 al $3',
 	'centralauth-rightslog-entry-groupperms2' => 'ŝanĝis grup-rajtojn por $1. Aldonis $2; Forigis $3',
+	'centralauth-rightslog-entry-groupperms3' => 'ŝanĝis la grupon por limigitaj vikioj por $1 de $2 al $3',
 	'centralauth-rightslog-header' => 'Ĉi tiu protokolo enhavas funkciojn pri ĝeneralaj grupoj: membrecajn kaj rajtajn ŝanĝojn',
 	'centralauth-rightslog-entry-newset' => 'kreis vikiaro $2 kiel $2 kun la jenaj vikioj: $3',
 	'centralauth-rightslog-entry-setrename' => 'alinomigis vikiaron "$2" al $1"',
 	'centralauth-rightslog-entry-setnewtype' => 'ŝanĝis specon de "$1" de $2 al $3',
 	'centralauth-rightslog-entry-setchange' => 'ŝanĝis vikiojn en "$1": aldonis: $2; forigis: $3',
+	'centralauth-rightslog-set-optin' => 'bazite de elekto',
 	'globalgroupmembership' => 'Membreco en ĝeneralaj grupoj',
 	'globalgrouppermissions' => 'Ĝenerala administrado de grupoj',
 	'centralauth-globalgroupperms-grouplist' => 'La jenaj ĝeneralaj grupoj estis konfiguritaj. Vi povas rigardi kaj redakti la rajtojn asignitajn al ĉiu grupo. Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
@@ -8731,6 +8795,8 @@ Dir kënnt är Heemechtswiki spéider änneren.",
 	'centralauth-list-attached' => 'De Benotzerkont mam Numm "$1" Vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonn:',
 	'centralauth-list-attached-dryrun' => 'D\'Benotzerkonte mam Numm "$1" op jidferengem vun dëse Siten gëtt automatesch mat dem globale Benotzerkont verbonn:',
 	'centralauth-list-unattached-title' => 'Net verbonne Benotzerkonten',
+	'centralauth-list-unattached' => 'De Benotzerkont "$1" konnt fir déi ënnedrenner opgelëschte Siten net automatesch confirméiert ginn;
+wahrscheinlech hu si en anert Passwuert wéi ären Haaptbenotzerkont:',
 	'centralauth-foreign-link' => 'Benotzer $1 op $2',
 	'centralauth-merge-method-primary' => 'Heemechts-Wiki',
 	'centralauth-merge-method-empty' => 'Keng Kontributiounen',
@@ -8829,6 +8895,8 @@ D'passwierder vun alle Benotzerkonten déi zesummegefouert gi waren ginn nees op
 	'centralauth-prefs-count-unattached' => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat ärem Numm.',
 	'centralauth-prefs-detail-unattached' => 'Dëse Projet geéiert nach net zum Projet vun de globale Benotzerkonten.',
 	'centralauth-prefs-manage' => 'Geréiert äre globale Benotzerkont',
+	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System opgeholl.
+Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System eraus.',
 	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.',
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
@@ -11211,7 +11279,7 @@ Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak o
 	'centralauth-rightslog-entry-usergroups' => 'zmienił wszędzie przynależność $1 do grup ($2 → $3)',
 	'centralauth-rightslog-entry-groupperms' => 'zmienił wszędzie uprawnienia $1 ($2 → $3)',
 	'centralauth-rightslog-entry-groupperms2' => 'zmienił przynależność $1 do grup. Dodane $2; usunięte $3',
-	'centralauth-rightslog-header' => 'W tym rejestrze odnotowywane są zmiany uprawnień grup globalnych oraz dodawanie i usuwanie ich członków',
+	'centralauth-rightslog-header' => 'W tym rejestrze odnotowywane są operacje na globalnych grupach: dodawanie i usuwanie ich członków oraz zmiany uprawnień',
 	'globalgroupmembership' => 'Przynależność do grup globalnych',
 	'globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 	'centralauth-globalgroupperms-grouplist' => 'Zostały skonfigurowane następujące grupy globalne. Możesz zobaczyć oraz zmienić uprawnienia dowolnej grupy. Grupę możesz również usunąć poprzez odebranie jej wszystkich uprawnień.',
@@ -14641,6 +14709,13 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-editset-name' => 'Nem:',
 	'centralauth-editset-reason' => 'Kod:',
 	'centralauth-editset-nouse' => '(nonik)',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'centralauth-merge-method-empty' => 'קיין בײַשטײַערונגען',
 );
 
 /** Yue (粵語)
