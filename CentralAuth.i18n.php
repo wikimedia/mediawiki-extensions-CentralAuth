@@ -1000,30 +1000,31 @@ $messages['ar'] = array(
  */
 $messages['arz'] = array(
 	'mergeaccount' => 'حالة توحيد الدخول',
-	'centralauth-desc' => '[[Special:MergeAccount|ادمج الحساب]] في ويكيهات مؤسسة ويكيميديا',
+	'centralauth-desc' => '[[Special:MergeAccount|ادمج الحساب]] فى ويكيهات مؤسسة ويكيميديا',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|ادمج حسابات كتيرة]] علشان يدخل فيها يوزر واحد',
 	'centralauth-merge-denied' => 'متأسفين،انت مش من حقك تدخل الصفحة دي.',
 	'centralauth-merge-notlogged' => 'لو سمحت <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} سجل الدخول]</span> علشان تشوف لو حساباتك اتدمجت بالكامل.',
 	'centralauth-merge-welcome' => "'''حساب اليوزر بتاعك لسة ما اتنقلش لنظام ويكيميديا لتوحيدالدخول'''
 
-لو اخترت ان حساباتك تتنقل،ح تقدر تستعمل اسم اليوزر و الباسورد نفسيهم علشان تدخل على كل مشاريع الويكي بتاعة الويكيميديا في كل اللغات المتوافرة.
-و دا  ح يسهل الشغل في المشاريع المشتركة زي مثلا التحميل في [http://commons.wikimedia.org/ ويكيميديا كومونز], و ح يتفادى اللخبطة او التعارض اللي ممكن تظهر لما شخصين يختارو نفس اسم اليوزر في مشروعين مختلفين.
+لو اخترت ان حساباتك تتنقل،ح تقدر تستعمل اسم اليوزر و الباسورد نفسيهم علشان تدخل على كل مشاريع الويكى بتاعة الويكيميديا فى كل اللغات المتوافرة.
+و دا  ح يسهل الشغل فى المشاريع المشتركة زى مثلا التحميل فى [http://commons.wikimedia.org/ ويكيميديا كومونز], و ح يتفادى اللخبطة او التعارض اللى ممكن تظهر لما شخصين يختارو نفس اسم اليوزر فى مشروعين مختلفين.
 
-لو في حد تاني كان اختار نفس اسم اليوزر بتاعك بس على موقع تاني، ف دا مش ح يسبب له اي ازعاج،بس ح يديلك فرصة انك تشتغل معاهم او مع اداري بعدين.",
+لو فى حد تانى كان اختار نفس اسم اليوزر بتاعك بس على موقع تاني، ف دا مش ح يسبب له اى ازعاج،بس ح يديلك فرصة انك تشتغل معاهم او مع ادارى بعدين.",
 	'centralauth-merge-step1-title' => 'ابتدى توحيد الحسابات',
 	'centralauth-merge-step1-detail' => 'لو سمحت تدخل الباسورد بتاعة حسابك هنا.
-الباسورد و الايميل بتوعك و المتسجلين عندنا ح يتشيك عليهم في الويكيهات التانية علشان نتأكد من انهم زي بعض.
-مافيش اي تغييرات ح تتعمل لحد ما تثبت لينا ان كل حاجة تمام التمام.',
+الباسورد و الايميل بتوعك و المتسجلين عندنا ح يتشيك عليهم فى الويكيهات التانية علشان نتأكد من انهم زى بعض.
+مافيش اى تغييرات ح تتعمل لحد ما تثبت لينا ان كل حاجة تمام التمام.',
 	'centralauth-merge-step1-submit' => 'تأكيد معلومات الدخول',
 	'centralauth-merge-step2-title' => 'تـاكيد حسابات اكتر',
-	'centralauth-merge-step2-detail' => 'في شوية حسابات ماقدرناش نطابقها اوتوماتيكي لموقع الويكي الرئيسي اللي انت حددته.لو الحسابات دي بتاعتك،ممكن تثبت انهم فعلا بتوعك لو كتبت الباسورد بتاعتهم.',
+	'centralauth-merge-step2-detail' => 'فى شوية حسابات ماقدرناش نطابقها اوتوماتيكى لموقع الويكى الرئيسى اللى انت حددته.لو الحسابات دى بتاعتك،ممكن تثبت انهم فعلا بتوعك لو كتبت الباسورد بتاعتهم.',
 	'centralauth-merge-step2-submit' => 'تأكيد معلومات الدخول',
-	'centralauth-merge-dryrun-complete' => 'كل الحسابات الموجودة ممكن تتوحد اوتوماتيكي!
+	'centralauth-merge-dryrun-complete' => 'كل الحسابات الموجودة ممكن تتوحد اوتوماتيكى!
 
-مافيش اي تغييرات اتعملت في الحسابات بتاعتك لحد دلوقتي.',
-	'centralauth-merge-dryrun-incomplete' => 'انت ممكن تستمر، بس في شوية حسابات ماقدرناش نتأكد منهم اوتوماتيكي و مش ح يتهجروا دلوقتي.انت ممكن تعملهم دمج بعدين.
+مافيش اى تغييرات اتعملت فى الحسابات بتاعتك لحد دلوقتى.',
+	'centralauth-merge-dryrun-incomplete' => 'انت ممكن تستمر، بس فى شوية حسابات ماقدرناش نتأكد منهم اوتوماتيكى و مش ح يتهجروا دلوقتى.
+انت ممكن تعملهم دمج بعدين.
 
-مافيش اي تغييرات اتعملت  في الحسابات بتاعتك لحد دلوقتي.',
+مافيش اى تغييرات اتعملت  فى الحسابات بتاعتك لحد دلوقتى.',
 	'centralauth-merge-dryrun-or' => "'''ولا'''",
 	'centralauth-merge-dryrun-home' => 'نظام التهجير ماقدرش يتأكد من انك المالك بتاع حساب الويكى  الاساسى لاسم اليوزر بتاعك.
 
@@ -5056,9 +5057,11 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Razón:',
 	'centralauth-editset-submit' => 'Enviar',
+	'centralauth-editset-nowikis' => 'Non se especificaron os wikis.',
 	'centralauth-editset-nouse' => '(ningún)',
 	'centralauth-editset-usage' => 'Usado nos grupos:',
 	'centralauth-editset-badwikis' => 'Os seguintes wikis non existen: $1',
+	'centralauth-editset-return' => 'Voltar á vista principal',
 	'right-globalgroupmembership' => 'Editar os membros dos grupos globais',
 	'right-centralauth-admin' => 'Administrar contas globais',
 	'right-centralauth-merge' => 'Fusionar as súas contas',
@@ -6301,6 +6304,7 @@ Valószínűleg rossz felhasználó számára akarsz jogokat adni.",
 );
 
 /** Interlingua (Interlingua)
+ * @author Julian Mendez
  * @author Malafaya
  * @author McDutchie
  */
@@ -6549,7 +6553,7 @@ Es possibile que tu tenta assignar derectos al mal usator!",
 	'centralauth-editset-badtype' => 'Typo de collection invalide.',
 	'centralauth-editset-setexists' => 'Existe ja un collection con iste nomine',
 	'centralauth-editset-nowikis' => 'Nulle wikis specificate.',
-	'centralauth-editset-nouse' => '(necun)',
+	'centralauth-editset-nouse' => '(nemo)',
 	'centralauth-editset-usage' => 'Usate in gruppos:',
 	'centralauth-editset-badwikis' => 'Le sequente wikis non existe: $1.',
 	'centralauth-editset-success' => 'Le collection de wikis ha essite cambiate con successo.',
@@ -8980,6 +8984,7 @@ $messages['lfn'] = array(
 	'centralauth-admin-no' => 'no',
 	'centralauth-admin-list-method' => 'Metodo',
 	'centralauth-editgroup-name' => 'Nom de la grupo:',
+	'centralauth-editset-name' => 'Nom:',
 );
 
 /** Limburgish (Limburgs)
@@ -10031,9 +10036,14 @@ $messages['mt'] = array(
 
 /** Erzya (Эрзянь)
  * @author Amdf
+ * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
+	'centralauth-finish-password' => 'Совамо валось:',
 	'centralauth-admin-username' => 'Совицянь лем:',
+	'centralauth-admin-reason' => 'Тувталось:',
+	'centralauth-editset-name' => 'Лемезэ:',
+	'centralauth-editset-reason' => 'Тувталось:',
 );
 
 /** Nahuatl (Nāhuatl)
@@ -10265,7 +10275,7 @@ Er is een andere wiki vastgesteld als thuiswiki voor uw gebruiker; volg de link 
 	'centralauth-merge-no-accounts' => 'Er zijn geen gebruikers met uw naam gevonden in de volgtabel voor globale gebruikers!
 De database moet corrupt zijn.',
 	'centralauth-merge-home-password' => 'De hieronder aangegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan u hebt ingegeven.
-Voer alstublieft het wachtwoord voor de thuiswiki in.',
+Voer het wachtwoord voor de thuiswiki in.',
 	'centralauth-complete' => 'Samenvoegen gebruikers afgerond!',
 	'centralauth-incomplete' => 'Samenvoegen gebruikers niet volledig!',
 	'centralauth-complete-text' => 'U kunt nu aanmelden bij iedere wiki van Wikimedia zonder een nieuwe gebruiker aan te maken; dezelfde combinatie van gebruikersnaam en wachtwoord werkt voor Wikipedia, Wiktionary, Wikibooks en hun zusterprojecten in alle talen.',
@@ -10275,7 +10285,7 @@ Voer alstublieft het wachtwoord voor de thuiswiki in.',
 Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:',
 	'centralauth-blocked-text' => 'Uw thuiswiki kan niet bewerkt worden.
 Hieronder staat aangegeven welke wiki dat is.
-Neem alstublieft contact op met een systeembeheerder om deze beperking of te heffen.
+Neem contact op met een systeembeheerder om deze beperking op te laten heffen.
 Zolang de wiki niet bewerkt kan worden, kunt u geen gebruikers samenvoegen.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
@@ -11422,7 +11432,7 @@ $messages['pt'] = array(
 	'mergeaccount' => 'Estado da unificação de contas',
 	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da Wikimedia Foundation',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
-	'centralauth-merge-denied' => 'Desculpe-nos, você não tem permissão para acessar esta página.',
+	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para aceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.'''
 
@@ -11451,6 +11461,8 @@ Uma outra wiki foi estipulada como sendo a residência de seu nome de usuário. 
 	'centralauth-merge-step3-title' => 'Criar conta unificada',
 	'centralauth-merge-step3-detail' => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionados, seja criada:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
+	'centralauth-merge-no-accounts' => 'Nenhuma conta correspondennte ao seu nome foi encontrada na tabela central de rastreio de contas!
+A base de dados deve estar corrompida.',
 	'centralauth-merge-home-password' => 'A wiki-residência desta conta (listada a seguir) possui uma senha diferente da que foi fornecida. Forneça a senha da wiki-residência.',
 	'centralauth-complete' => 'Unificação de logins completa!',
 	'centralauth-incomplete' => 'Unificação de logins incompleta!',
@@ -11595,7 +11607,14 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 	'centralauth-rightslog-entry-usergroups' => 'alterou grupo global de $1 de $2 para $3',
 	'centralauth-rightslog-entry-groupperms' => 'alterou permissões do grupo de $1 de $2 para $3',
 	'centralauth-rightslog-entry-groupperms2' => 'os privilégios de $1 foram alterados. $2 foi adicionado; $3 foi removido',
+	'centralauth-rightslog-entry-groupperms3' => 'alterou conjunto de wikis restritos por grupo para $1, de $2 para $3',
 	'centralauth-rightslog-header' => 'Este registo contém operações sobre grupos globais: alterações a associações de membros e permissões',
+	'centralauth-rightslog-entry-newset' => 'criou conjunto wiki $2 $1 com os seguintes wikis: $3',
+	'centralauth-rightslog-entry-setrename' => 'renomeou conjunto wiki "$2" para "$1"',
+	'centralauth-rightslog-entry-setnewtype' => 'alterou tipo de "$1", de $2 para $3',
+	'centralauth-rightslog-entry-setchange' => 'alterou wikis em "$1": adicionou: $2; removeu: $3',
+	'centralauth-rightslog-set-optin' => 'baseado em "opt-in"',
+	'centralauth-rightslog-set-optout' => 'baseado em "opt-out"',
 	'globalgroupmembership' => 'Associações de membros em grupos globais',
 	'globalgrouppermissions' => 'Gestão de grupos globais',
 	'centralauth-globalgroupperms-grouplist' => 'Os seguintes grupos globais foram configurados. Pode visualizar e editar as permissões atribuídas a qualquer grupo. Um grupo pode ser eliminado através da remoção de todos os direitos a ele atribuídos.',
@@ -11614,6 +11633,7 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editar]])',
 	'centralauth-editgroup-members' => 'Lista de membros:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de utilizadores com direitos $2]]',
+	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está activo:',
 	'centralauth-editgroup-noset' => '(nenhum)',
 	'centralauth-editgroup-submit' => 'Gravar alterações às permissões de grupo',
 	'centralauth-editgroup-perms' => 'Permissões atribuídas:',
@@ -11621,17 +11641,32 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 	'centralauth-editgroup-success' => 'Permissões de grupo alteradas',
 	'centralauth-editgroup-success-text' => 'Você alterou com sucesso as permissões de grupo para o grupo $1.
 [[Special:GlobalGroupPermissions|Voltar à gestão de grupos]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]]',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Seleccione um wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O utilizador global '''$1''' não está activo no wiki que especificou (''$2''). É possível que esteja a tentar atribuir direitos ao utilizador errado!",
+	'centralauth-editset' => 'Editar conjuntos wiki',
+	'centralauth-editset-legend' => 'Editar ou criar um conjunto wiki',
+	'centralauth-editset-intro' => 'Os seguintes conjuntos wiki já foram criados. Pode agora visualizar ou modificar qualquer um deles, ou criar um novo conjunto.',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|ver/editar]])',
+	'centralauth-editset-new' => 'Criar um novo conjunto',
+	'centralauth-editset-notfound' => 'Conjunto wiki "$1" não encontrado.',
+	'centralauth-editset-optin' => 'Baseado em "opt-in" (inclui apenas os wikis especificados)',
+	'centralauth-editset-optout' => 'Baseado em "opt-out (inclui todos os wikis excepto os especificados)',
+	'centralauth-editset-legend-edit' => 'Editando conjunto wiki "$1"',
+	'centralauth-editset-legend-new' => 'Criando novo conjunto wiki',
 	'centralauth-editset-name' => 'Nome:',
 	'centralauth-editset-type' => 'Tipo:',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Motivo:',
 	'centralauth-editset-submit' => 'Submeter',
+	'centralauth-editset-badname' => 'Nome de conjunto inválido ou vazio.',
+	'centralauth-editset-badtype' => 'Tipo de conjunto inválido.',
+	'centralauth-editset-setexists' => 'Um conjunto com esse nome já existe',
 	'centralauth-editset-nowikis' => 'Nenhum wiki especificado.',
 	'centralauth-editset-nouse' => '(nenhum)',
 	'centralauth-editset-usage' => 'Usado nos grupos:',
 	'centralauth-editset-badwikis' => 'Os seguintes wikis não existem: $1.',
+	'centralauth-editset-success' => 'Conjunto wiki alterado com sucesso.',
 	'centralauth-editset-return' => 'Voltar à vista principal',
 	'right-globalgroupmembership' => 'Editar associações de membros em grupos globais',
 	'right-centralauth-admin' => 'Administrar contas globais',
@@ -14080,7 +14115,7 @@ $messages['uk'] = array(
 	'centralauth-autologin-desc' => 'Ця спеціальна сторінка призначена для внутрішнього використання у MediaWiki.
 Коли ви [[Special:UserLogin|входите до системи]], централізована система входу вказує вашому браузеру звернутись до цієї сторінки з усіх доменів, використовуючи графічні посилання.
 Ви запитали цю сторінку без надання інформації про автентифікацію, тому нічого не відбувається.',
-	'centralauth-login-progress' => 'Вхід у систему також в інших проектах Вікімедіа:',
+	'centralauth-login-progress' => 'Вхід до системи також в інших проектах Вікімедіа:',
 	'centralauth-logout-progress' => 'Вихід із системи також в інших проектах Вікімедіа:',
 	'centralauth-log-name' => 'Журнал керування глобальними обліковими записами',
 	'centralauth-log-header' => 'Цей журнал містить записи про дії над глобальними обліковими записами: вилучення, блокування, розблокування.',
@@ -14625,7 +14660,7 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
  */
 $messages['vo'] = array(
 	'mergeaccount' => 'Stad balama kalas',
-	'centralauth-desc' => '[[{{ns:special}}:MergeAccount|Balön kali]] da vüks Fünoda: Wikimedia',
+	'centralauth-desc' => '[[Special:MergeAccount|Balön kali]] da vüks Fünoda: Wikimedia',
 	'centralauth-merge-denied' => 'Liedo no labol däli ad logön padi at.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Nunädolös oli, begö!]</span> ad logön, va kals olik pebalons lölöfiko.',
 	'centralauth-merge-welcome' => "'''Gebanakal olik no nog petopätükon ini nunädamasit balik ela Wikimedia.'''

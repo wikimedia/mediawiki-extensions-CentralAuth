@@ -101,12 +101,15 @@ $aliases['hu'] = array(
 	'CentralAuth' => array( 'Központi azonosítás' ),
 	'AutoLogin' => array( 'Automatikus bejelentkezés' ),
 	'MergeAccount' => array( 'Felhasználói fiókok egyesítése' ),
+	'GlobalGroupMembership' => array( 'Globális felhasználói jogok' ),
 	'GlobalUsers' => array( 'Felhasználók globális listája' ),
 );
 
 /** Korean (한국어) */
 $aliases['ko'] = array(
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
+	'GlobalGroupMembership' => array( '공통권한조정' ),
+	'GlobalUsers' => array( '공통계정목록' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
