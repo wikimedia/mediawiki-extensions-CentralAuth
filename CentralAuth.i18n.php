@@ -1244,7 +1244,6 @@ $messages['arz'] = array(
 	'centralauth-editset-badtype' => 'نوع المجموعة مش صح.',
 	'centralauth-editset-setexists' => 'فى مجموعة بالاسم دا موجودة من قبل كدا',
 	'centralauth-editset-nowikis' => 'مافيش ويكيهات اتحددت.',
-	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ولا حاجة)',
 	'centralauth-editset-usage' => 'بيستعمل فى المجموعات:',
 	'centralauth-editset-badwikis' => 'الويكيات دى مش موجودة:$1.',
