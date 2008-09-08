@@ -2094,6 +2094,7 @@ $messages['bg'] = array(
 	'centralauth-editset-submit' => 'Изпращане',
 	'centralauth-editset-nowikis' => 'Не са посочени уикита.',
 	'centralauth-editset-nouse' => '(няма)',
+	'centralauth-editset-badwikis' => 'Следните уикита не съществуват: $1.',
 	'right-globalgroupmembership' => 'Промяна на членството в глобални групи',
 	'right-centralauth-admin' => 'Администриране на глобалните сметки',
 	'right-centralauth-merge' => 'Сливане на тяхната сметка',
@@ -4497,6 +4498,7 @@ Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
  * @author IAlex
  * @author Louperivois
  * @author McDutchie
+ * @author Meno25
  * @author Seb35
  * @author Sherbrooke
  * @author Urhixidur
@@ -4725,7 +4727,7 @@ Il se peut que vous tentiez d’assigner les droits au mauvais utilisateur !",
 	'centralauth-editset-legend-new' => 'Création d’une nouvelle préférence wiki',
 	'centralauth-editset-name' => 'Nom :',
 	'centralauth-editset-type' => 'Genre :',
-	'centralauth-editset-wikis' => 'Wikis :<br/>(espace de séparation)',
+	'centralauth-editset-wikis' => 'Wikis :',
 	'centralauth-editset-reason' => 'Motif :',
 	'centralauth-editset-submit' => 'Soumettre',
 	'centralauth-editset-badname' => 'Vous avez indiqué un nom de préférence vide ou incorrect.',
@@ -6012,8 +6014,8 @@ Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu 
 	'centralauth-prefs-unattached' => 'Njepotwjerdźeny',
 	'centralauth-prefs-complete' => 'Wšo w porjadku!',
 	'centralauth-prefs-migration' => 'W přeměnje',
-	'centralauth-prefs-count-attached' => 'Twoje konto je na $1 projekotwych sydłach aktiwne.',
-	'centralauth-prefs-count-unattached' => 'Njepotwjerdźene konta z twojim mjenom zwostanu na $1 projektach.',
+	'centralauth-prefs-count-attached' => 'Twoje konto je na $1 {{PLURAL:$1|projektowym sydle|projektowymaj sydłomaj|projektowych sydłach|projekotwych sydłach}} aktiwne.',
+	'centralauth-prefs-count-unattached' => 'Njepotwjerdźene konta z twojim mjenom zwostanu na $1 {{PLURAL:$1|projekće|projektomaj|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Njeje potwjerdźenje, zo tute projektowe sydło ke globalnemu kontu słuša.',
 	'centralauth-prefs-manage' => 'Twoje globalne konto zrjadować',
 	'centralauth-invalid-wiki' => 'Tajka wikijowa datowa banka njeeksistuje: $1',
@@ -11969,6 +11971,7 @@ Redenumirea va cauza utilizatorului local detaşarea de la contul global.',
 
 /** Russian (Русский)
  * @author Ahonc
+ * @author AlexSm
  * @author HalanTul
  * @author Kaganer
  * @author Kalan
@@ -12030,7 +12033,7 @@ $messages['ru'] = array(
 	'centralauth-list-attached' => 'К единой учётной записи были автоматически присоединены учётные записи с именем «$1» на каждом из перечисленных ниже сайтов:',
 	'centralauth-list-attached-dryrun' => 'К единой учётной записи будут автоматически присоединены учётные записи с именем «$1» на каждом из перечисленных ниже сайтов:',
 	'centralauth-list-unattached-title' => 'Неприсоединённые учётные записи',
-	'centralauth-list-unattached' => 'Принадлежность вам учётной записи «$1» не может быть автоматически подтверждена на указанных ниже сайтах; вероятно, пароль на них не совдает с паролем вашей основной учётной записи:',
+	'centralauth-list-unattached' => 'Принадлежность вам учётной записи «$1» не может быть автоматически подтверждена на указанных ниже сайтах; вероятно, пароль на них не совпадает с паролем вашей основной учётной записи:',
 	'centralauth-foreign-link' => 'Участник $1 в $2',
 	'centralauth-merge-method-primary' => '«домашний» вики-проект',
 	'centralauth-merge-method-empty' => 'нет вклада',
@@ -13609,7 +13612,7 @@ $messages['te'] = array(
 	'centralauth-finish-title' => 'విలీనం ముగించు',
 	'centralauth-finish-text' => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
 	'centralauth-finish-password' => 'సంకేతపదం:',
-	'centralauth-finish-login' => 'ప్రవేశించు',
+	'centralauth-finish-login' => 'ప్రవేశించండి',
 	'centralauth-finish-send-confirmation' => 'సంకేతపదాన్ని ఈ-మెయిల్లో పంపించు',
 	'centralauth-finish-problems' => 'సమస్య ఉందా, లేదా ఈ ఇతర ఖాతాలు మీవి కాదా? [[meta:Help:Unified login problems|సహాయం పొందడం ఎలా]]...',
 	'centralauth-finish-noconfirms' => 'ఈ సంకేతపదాన్ని ఉపయోగించి ఒక్క ఖాతాను కూడా నిర్ధారించలేకపోయాం.',
