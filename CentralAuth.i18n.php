@@ -219,9 +219,6 @@ Renaming it will cause the local user to be detached from the global one.",
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
-	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki.
-When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
-You have requested this page without providing any authentication data, so it does nothing.',
 	'centralauth-login-progress'     => 'Logging you in to Wikimedia\'s other projects:',
 	'centralauth-logout-progress'    => 'Logging you out from Wikimedia\'s other projects:',
 
@@ -248,6 +245,12 @@ You have requested this page without providing any authentication data, so it do
 	'centralauth-rightslog-entry-setchange'   => 'changed wikis in "$1": added: $2; removed: $3',
 	'centralauth-rightslog-set-optin'         => 'opt-in based',
 	'centralauth-rightslog-set-optout'        => 'opt-out based',
+
+	// Autologin
+	'autologin'                    => 'Automatic login',
+	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki.
+When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
+You have requested this page without providing any authentication data, so it does nothing.',
 
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
