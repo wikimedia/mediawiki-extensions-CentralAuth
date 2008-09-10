@@ -414,6 +414,7 @@ $messages['af'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Versmelt rekeninge]] oor Wikimedia Foundation se wikis',
 	'centralauth-merge-denied' => 'U het nie toegang tot hierdie bladsy nie.',
 	'centralauth-merge-step1-title' => 'Begin versmelting van rekeninge',
+	'centralauth-merge-step1-submit' => 'Bevestig aanteken inligting',
 	'centralauth-merge-step2-title' => 'Bevestig meer rekeninge',
 	'centralauth-merge-dryrun-or' => "'''of'''",
 	'centralauth-merge-step3-title' => 'Skep verenigde gebruikersrekening',
@@ -436,7 +437,10 @@ $messages['af'] = array(
 	'centralauth-finish-login' => 'Inteken',
 	'centralauth-finish-send-confirmation' => 'E-pos wagwoord',
 	'centralauth-attach-title' => 'Bevestig rekening',
+	'centralauth-attach-submit' => 'Migreer rekening',
+	'centralauth-admin-manage' => 'Bestuur gebruikersdata',
 	'centralauth-admin-username' => 'Gebruikersnaam:',
+	'centralauth-admin-lookup' => 'Besigtig of wysig gebruikersdata',
 	'centralauth-admin-info-id' => 'Gebruiker ID:',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nee',
@@ -908,9 +912,6 @@ $messages['ar'] = array(
 	'centralauth-renameuser-reserved' => 'المستخدم $2 محجوز لحساب عام.',
 	'centralauth-invalid-wiki' => 'لا توجد قاعدة بيانات ويكي كهذه: $1',
 	'centralauth-account-exists' => 'لم يمكن إنشاء الحساب: اسم المستخدم المطلوب مأخوذ بالفعل في نظام الدخول الموحد.',
-	'centralauth-autologin-desc' => 'هذه الصفحة الخاصة تستخدم داخليا بواسطة ميدياويكي.
-عندما [[Special:UserLogin|تسجل الدخول]]، نظام الدخول المركزي يأمر متصفحك أن يطلب هذه الصفحة من كل النطق الموصولة، باستخدام وصلات صورة.
-لقد طلبت هذه الصفحة بدون توفير بيانات هوية، لذا فهي لا تفعل أي شيء.',
 	'centralauth-login-progress' => 'يجرى تسجيل دخولك إلى مشاريع ويكيميديا الأخرى:',
 	'centralauth-logout-progress' => 'يجرى تسجيل خروجك من مشاريع ويكيميديا الأخرى:',
 	'centralauth-log-name' => 'سجل إدارة الحساب العام',
@@ -933,6 +934,10 @@ $messages['ar'] = array(
 	'centralauth-rightslog-entry-setchange' => 'غير الويكيات في "$1": أضاف: $2؛ أزال: $3',
 	'centralauth-rightslog-set-optin' => 'معتمد على الاشتراك',
 	'centralauth-rightslog-set-optout' => 'معتمد على إلغاء الاشتراك',
+	'autologin' => 'تسجيل دخول تلقائي',
+	'centralauth-autologin-desc' => 'هذه الصفحة الخاصة تستخدم داخليا بواسطة ميدياويكي.
+عندما [[Special:UserLogin|تسجل الدخول]]، نظام الدخول المركزي يأمر متصفحك أن يطلب هذه الصفحة من كل النطق الموصولة، باستخدام وصلات صورة.
+لقد طلبت هذه الصفحة بدون توفير بيانات هوية، لذا فهي لا تفعل أي شيء.',
 	'globalgroupmembership' => 'العضوية في المجموعات العامة',
 	'globalgrouppermissions' => 'التحكم بالمجموعة العامة',
 	'centralauth-globalgroupperms-grouplist' => 'المجموعات العامة التالية تم ضبطها.
@@ -1170,9 +1175,6 @@ $messages['arz'] = array(
 	'centralauth-renameuser-reserved' => 'اليوزر $2 محجوز لحساب عام',
 	'centralauth-invalid-wiki' => 'مافيش قاعدة بيانات ويكى كدا: $1',
 	'centralauth-account-exists' => 'ماقدرناش نفتحلك حساب:اسم اليوزر المطلوب متاخد قبل كدا فى نظام الدخول المتوحد.',
-	'centralauth-autologin-desc' => 'الصفحة المخصوصة دى بتستعمل جوه الميدياويكى .
-لما[[Special:UserLogin|بتسجل دخولك]], نظام الدخول المركزى بيدى امر للبراوزر بتاعك انه يطلب الصفحة دى من كل النطاقات المتوصلة ببعضيها، بلستعمال لينكات صورة.
-انت طلبت الصفحة دى من غير ما  تدى اى بيانات هوية, و علشان كدا ماعملتش اى حاجة.',
 	'centralauth-login-progress' => 'بيسجل دخولك على مشاريع ويكيميديا التانية:',
 	'centralauth-logout-progress' => 'بيسجل خروجك من مشاريع ويكيميديا التانية:',
 	'centralauth-log-name' => 'سجل الحساب العام',
@@ -1195,6 +1197,10 @@ $messages['arz'] = array(
 	'centralauth-rightslog-entry-setchange' => 'غير الويكيهات فى "$1": زود: $2؛ شال: $3',
 	'centralauth-rightslog-set-optin' => 'مبنى على الاشتراك',
 	'centralauth-rightslog-set-optout' => 'مبنى على الغاء الاشتراك',
+	'autologin' => 'تسجيل دخول تلقائى',
+	'centralauth-autologin-desc' => 'الصفحة المخصوصة دى بتستعمل جوه الميدياويكى .
+لما[[Special:UserLogin|بتسجل دخولك]], نظام الدخول المركزى بيدى امر للبراوزر بتاعك انه يطلب الصفحة دى من كل النطاقات المتوصلة ببعضيها، بلستعمال لينكات صورة.
+انت طلبت الصفحة دى من غير ما  تدى اى بيانات هوية, و علشان كدا ماعملتش اى حاجة.',
 	'globalgroupmembership' => 'عضوية  المجموعات العامة',
 	'globalgrouppermissions' => 'ادارة المجموعات العامة',
 	'centralauth-globalgroupperms-grouplist' => 'المجموعات العامة دى اتظبطت.
@@ -2895,9 +2901,6 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-renameuser-reserved' => 'Uživatelské jméno $2 je vyhrazeno pro globální účet.',
 	'centralauth-invalid-wiki' => 'Taková DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Nelze vytvořit účet: Požadované uživatelské jméno je již registrováno v unifikovaném přihlašovacím systému.',
-	'centralauth-autologin-desc' => 'Tuto speciální stránku vnitřně využívá software MediaWiki.
-Při [[Special:UserLogin|přihlášení]] systém sjednoceného přihlašování přikáže prohlížeči vyžádat si tuto stránku od všech propojených domén pomocí odkazů na obrázky.
-Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, nic se neprovedlo.',
 	'centralauth-login-progress' => 'Automatické přihlášení na další projekty Wikimedia:',
 	'centralauth-logout-progress' => 'Automatické odhlášení z jiných projektů Wikimedia:',
 	'centralauth-log-name' => 'Kniha správy globálních účtů',
@@ -2919,6 +2922,10 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-rightslog-entry-setchange' => 'změněné wiki v „$1”: přidané: $2; odstraněné: $3',
 	'centralauth-rightslog-set-optin' => 'jen určené',
 	'centralauth-rightslog-set-optout' => 'všechny kromě určených',
+	'autologin' => 'Automatické přihlášení',
+	'centralauth-autologin-desc' => 'Tuto speciální stránku vnitřně využívá software MediaWiki.
+Při [[Special:UserLogin|přihlášení]] systém sjednoceného přihlašování přikáže prohlížeči vyžádat si tuto stránku od všech propojených domén pomocí odkazů na obrázky.
+Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, nic se neprovedlo.',
 	'globalgroupmembership' => 'Členství v globálních skupinách',
 	'globalgrouppermissions' => 'Správa globálních skupin',
 	'centralauth-globalgroupperms-grouplist' => 'Byly nastaveny následující globální skupiny. Můžete prohlížet a upravovat oprávnění přidělené kterékoliv skupině. Skupinu je možné odstranit tím, že jí odeberete všechna oprávnění.',
@@ -4664,9 +4671,6 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-renameuser-reserved' => 'L’utilisateur $2 est réservé pour le compte global.',
 	'centralauth-invalid-wiki' => 'Aucune base de donnée wiki : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà actif dans le système des comptes unifiés.',
-	'centralauth-autologin-desc' => 'Cette page spéciale est utilisée par MediaWiki en interne.
-Quand vous vous [[Special:UserLogin|connectez]], le système de connexion unique demande à votre navigateur de charger cette page pour tous les domaines au moyen d’images liées.
-Vous avez demandé cette page sans fournir d’informations d’authentification, elle ne fait donc rien.',
 	'centralauth-login-progress' => 'Vous êtes connecté(e) sur les autres projets Wikimedia :',
 	'centralauth-logout-progress' => 'Vous êtes déconnecté(e) des autres projets Wikimedia :',
 	'centralauth-log-name' => 'Journal de la gestion des comptes globaux',
@@ -4689,6 +4693,10 @@ Vous avez demandé cette page sans fournir d’informations d’authentification
 	'centralauth-rightslog-entry-setchange' => 'wikis modifiés dans « $1 » : ajouté : $2 ; enlevé : $3',
 	'centralauth-rightslog-set-optin' => 'basé sur l’option prise',
 	'centralauth-rightslog-set-optout' => 'basé hors option',
+	'autologin' => 'Connection automatique',
+	'centralauth-autologin-desc' => 'Cette page spéciale est utilisée par MediaWiki en interne.
+Quand vous vous [[Special:UserLogin|connectez]], le système de connexion unique demande à votre navigateur de charger cette page pour tous les domaines au moyen d’images liées.
+Vous avez demandé cette page sans fournir d’informations d’authentification, elle ne fait donc rien.',
 	'globalgroupmembership' => 'Appartenance aux groupes globaux',
 	'globalgrouppermissions' => 'Gestion des groupes globaux',
 	'centralauth-globalgroupperms-grouplist' => 'Les groupes suivants ont été configurés. Vous pouvez voir et modifier les permissions données à chacun des groupes. Un groupe peut être supprimé en lui retirant tous les droits.',
@@ -5020,9 +5028,6 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-renameuser-reserved' => 'O usuario "$2" está reservado para unha conta global.',
 	'centralauth-invalid-wiki' => 'Non existe a base de datos do wiki: $1',
 	'centralauth-account-exists' => 'Non se pode crear a conta: o nome de usuario solicitado é usado no sistema de rexistro unificado.',
-	'centralauth-autologin-desc' => 'Esta páxina especial é usada internamente por MediaWiki.
-Cando [[Special:UserLogin|accede ao sistema]], o sistema central de acceso dálle ao seu navegador as intrucións de solicitar esta páxina a todos os dominios ligados, usando ligazóns de imaxe.
-Solicitou esta páxina sen proporcionar nungún dato de autenticación, polo que non fai nada.',
 	'centralauth-login-progress' => 'Accedendo ao sistema nos outros proxectos Wikimedia:',
 	'centralauth-logout-progress' => 'Saíndo do sistema dos outros proxectos Wikimedia:',
 	'centralauth-log-name' => 'Rexistro de administración de contas de usuario globais',
@@ -5045,6 +5050,10 @@ Solicitou esta páxina sen proporcionar nungún dato de autenticación, polo que
 	'centralauth-rightslog-entry-setchange' => 'cambiou os wikis de "$1": engadiu: $2; eliminou: $3',
 	'centralauth-rightslog-set-optin' => 'baseada na inclusión',
 	'centralauth-rightslog-set-optout' => 'baseada na exclusión',
+	'autologin' => 'Rexistro automático',
+	'centralauth-autologin-desc' => 'Esta páxina especial é usada internamente por MediaWiki.
+Cando [[Special:UserLogin|accede ao sistema]], o sistema central de acceso dálle ao seu navegador as intrucións de solicitar esta páxina a todos os dominios ligados, usando ligazóns de imaxe.
+Solicitou esta páxina sen proporcionar nungún dato de autenticación, polo que non fai nada.',
 	'globalgroupmembership' => 'Membros dos grupos globais',
 	'globalgrouppermissions' => 'Xestión dos grupos globais',
 	'centralauth-globalgroupperms-grouplist' => 'Os seguintes grupos globais foron configurados.
@@ -5777,9 +5786,6 @@ Preimenovanje će uzrokovati odvajanje lokalnog računa od globalnog.',
 	'centralauth-renameuser-reserved' => 'Suradnički račun $2 je rezerviran za globalni račun.',
 	'centralauth-invalid-wiki' => 'Nema wiki baze podataka: $1',
 	'centralauth-account-exists' => 'Račun nemože biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.',
-	'centralauth-autologin-desc' => 'Ovu posebnu stranicu interno koristi MediaWiki.
-Kada se [[Special:UserLogin|prijavite]], središnji sustav prijave nalaže pregledniku da zatraži ovu stranicu od svih povezanih domena, korištenjem slikovnih poveznica.
-Zatražili ste ovu stranicu bez pružanja ovjeravajućih podataka, stoga ne radi.',
 	'centralauth-login-progress' => 'Prijavljivanje na druge Wikimedijine projekte:',
 	'centralauth-logout-progress' => 'Odjavljivanje iz drugih Wikimedijinih projekata:',
 	'centralauth-log-name' => 'Evidencija globalnih računa',
@@ -5802,6 +5808,10 @@ Zatražili ste ovu stranicu bez pružanja ovjeravajućih podataka, stoga ne radi
 	'centralauth-rightslog-entry-setchange' => 'promijenjeni wikiji u "$1": dodano: $2; uklonjeno: $3',
 	'centralauth-rightslog-set-optin' => 'osnovom uključenih',
 	'centralauth-rightslog-set-optout' => 'osnovom isključenih',
+	'autologin' => 'Automatska prijava',
+	'centralauth-autologin-desc' => 'Ovu posebnu stranicu interno koristi MediaWiki.
+Kada se [[Special:UserLogin|prijavite]], središnji sustav prijave nalaže pregledniku da zatraži ovu stranicu od svih povezanih domena, korištenjem slikovnih poveznica.
+Zatražili ste ovu stranicu bez pružanja ovjeravajućih podataka, stoga ne radi.',
 	'globalgroupmembership' => 'Članstvo u globalnim skupinama',
 	'globalgrouppermissions' => 'Uređivanje globalnih skupina',
 	'centralauth-globalgroupperms-grouplist' => 'Sljedeće globalne skupine su konfigurirane.
@@ -6023,9 +6033,6 @@ Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu 
 	'centralauth-prefs-manage' => 'Twoje globalne konto zrjadować',
 	'centralauth-invalid-wiki' => 'Tajka wikijowa datowa banka njeeksistuje: $1',
 	'centralauth-account-exists' => 'Konto njeda so wutowrić: požadane wužiwarske mjeno bu hižo do jednotneho přizjewjenskeho systema přewzate.',
-	'centralauth-autologin-desc' => 'Tuta specialna strona so jenož internje wot MediaWiki wužiwa.
-Hdyž [[Special:UserLogin|přizjewješ]], centralny přizjewjenski system instruuje twój wobhladowak, zo by tutu stronu z pomocu wobrazowych wotkazow ze wšěch zwjazanych domejnow požadał.
-Sy tutu stronu požadał, bjeztoho zo by awtentifikaciske daty podał, tak zo so ničo njestawa.',
 	'centralauth-login-progress' => 'Sy so awtomatisce tež w sćěhowacych projektach přizjewił:',
 	'centralauth-logout-progress' => 'Sy so awtomatisce tež w sćěhowacych projektach wotzjewił:',
 	'centralauth-log-name' => 'Protokol globalneho konta',
@@ -6041,12 +6048,15 @@ Sy tutu stronu požadał, bjeztoho zo by awtentifikaciske daty podał, tak zo so
 	'centralauth-rightslog-entry-groupperms' => 'skupinske prawa za $1 wot $2 do $3 změnjene',
 	'centralauth-rightslog-entry-groupperms2' => 'Skupinske prawa za $1 změnjene. $2 přidaty; $3 wotstronjeny',
 	'centralauth-rightslog-header' => 'Tutón protokol wobsahuje změny na globalnych skupinach: Změny čłonstwa a prawow',
+	'centralauth-autologin-desc' => 'Tuta specialna strona so jenož internje wot MediaWiki wužiwa.
+Hdyž [[Special:UserLogin|přizjewješ]], centralny přizjewjenski system instruuje twój wobhladowak, zo by tutu stronu z pomocu wobrazowych wotkazow ze wšěch zwjazanych domejnow požadał.
+Sy tutu stronu požadał, bjeztoho zo by awtentifikaciske daty podał, tak zo so ničo njestawa.',
 	'globalgroupmembership' => 'Čłonstwo w globalnych skupinach',
 	'globalgrouppermissions' => 'Zrjadowanje globalnych skupinow',
 	'centralauth-globalgroupperms-grouplist' => 'Slědowace globalne skupiny buchu konfigurowane.
 Móžeš prawa, kotrež buchu skupinje připokazane, wobhladać a wobdźěłać.
 Skupina móže so přez wotstronjenje wšěch prawow zničić.',
-	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|Prawa wobhladać a wobdźěłać]])',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|wobhladać/wobdźěłać]])',
 	'centralauth-existinggroup-legend' => 'Eksistowace skupiny',
 	'centralauth-newgroup-legend' => 'Nowu skupinu wutworić',
 	'centralauth-newgroup-intro' => 'Móžeš tutón formular wužiwać, zo by nowej skupinje prawa připokazał.
@@ -6772,9 +6782,6 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-renameuser-reserved' => 'Pengguna $2 telah dicadangkan sebagai akun global.',
 	'centralauth-invalid-wiki' => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists' => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
-	'centralauth-autologin-desc' => 'Halaman istimewa ini digunakan secara internal oleh MediaWiki.
-Ketika Anda [[Special:UserLogin|masuk log]], sistem masuk log terpusat menginstruksikan penjelajah web Anda untuk mengakses halaman ini dari semua domain yang terhubungkan, menggunakan pranala berkas.
-Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga halaman ini tidak memberikan reaksi apa-apa.',
 	'centralauth-login-progress' => 'Anda masuk log ke proyek lain Wikimedia:',
 	'centralauth-logout-progress' => 'Anda keluar log dari proyek lain Wikimedia:',
 	'centralauth-log-name' => 'Log akun global',
@@ -6797,6 +6804,10 @@ Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga hala
 	'centralauth-rightslog-entry-setchange' => 'mengubah wiki-wiki dalam "$1": menambahkan: $2; menghapuskan: $3',
 	'centralauth-rightslog-set-optin' => 'bergabung',
 	'centralauth-rightslog-set-optout' => 'tidak bergabung',
+	'autologin' => 'Masuk log otomatis',
+	'centralauth-autologin-desc' => 'Halaman istimewa ini digunakan secara internal oleh MediaWiki.
+Ketika Anda [[Special:UserLogin|masuk log]], sistem masuk log terpusat menginstruksikan penjelajah web Anda untuk mengakses halaman ini dari semua domain yang terhubungkan, menggunakan pranala berkas.
+Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga halaman ini tidak memberikan reaksi apa-apa.',
 	'globalgroupmembership' => 'Keanggotaan dalam kelompok global',
 	'globalgrouppermissions' => 'Manajemen kelompok global',
 	'centralauth-globalgroupperms-grouplist' => 'Konfigurasi kelompok-kelompok global berikut ini telah disimpan. Anda dapat melihat dan menyunting hak-hak setiap kelompok. Sebuah kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
@@ -7083,9 +7094,6 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-renameuser-reserved' => "L'utente $2 è riservato per un account globale.",
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
-	'centralauth-autologin-desc' => 'Questa pagina speciale è usata internamente da MediaWiki.
-Quando tu [[Special:UserLogin|fai il login]], il sistema centrale di login dice al tuo browser di richiedere questa pagina da tutti i domini collegati, usando i link immagine.
-Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così non fa niente.',
 	'centralauth-login-progress' => 'Accesso effettuato negli altri progetti Wikimedia:',
 	'centralauth-logout-progress' => 'Uscita effettuata dagli altri progetti Wikimedia:',
 	'centralauth-log-name' => 'Account globali',
@@ -7108,6 +7116,10 @@ Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così n
 	'centralauth-rightslog-entry-setchange' => 'cambiate le wiki in "$1": aggiunte: $2; rimosse: $3',
 	'centralauth-rightslog-set-optin' => 'opt-in',
 	'centralauth-rightslog-set-optout' => 'opt-out',
+	'autologin' => 'Login automatico',
+	'centralauth-autologin-desc' => 'Questa pagina speciale è usata internamente da MediaWiki.
+Quando tu [[Special:UserLogin|fai il login]], il sistema centrale di login dice al tuo browser di richiedere questa pagina da tutti i domini collegati, usando i link immagine.
+Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così non fa niente.',
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist' => 'I seguenti gruppi globali sono stati configurati.
@@ -8400,6 +8412,7 @@ $messages['ko'] = array(
 	'centralauth-list-attached-title' => '묶이는 계정',
 	'centralauth-list-attached' => '아래의 위키에 있는 "$1" 계정이 자동으로 통합 계정에 묶여졌습니다.',
 	'centralauth-list-attached-dryrun' => '아래의 위키에 있는 "$1" 계정은 자동으로 통합 계정에 묶여집니다.',
+	'centralauth-list-unattached-title' => '묶이지 않은 계정',
 	'centralauth-foreign-link' => '$2의 $1 사용자',
 	'centralauth-merge-method-primary' => '주 위키',
 	'centralauth-merge-method-empty' => '기여 없음',
@@ -8427,12 +8440,18 @@ $messages['ko'] = array(
 	'centralauth-admin-yes' => '예',
 	'centralauth-admin-no' => '아니오',
 	'centralauth-admin-attached' => '완전히 합친 계정',
+	'centralauth-admin-unmerge-success' => '$1개의 계정이 성공적으로 병합 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
 	'centralauth-admin-delete-button' => '이 계정 지우기',
+	'centralauth-admin-delete-nonexistent' => '오류: "$1"의 공통 계정이 존재하지 않습니다.',
 	'centralauth-admin-lock-title' => '계정 잠그기',
 	'centralauth-admin-lock-button' => '이 계정 잠그기',
+	'centralauth-admin-lock-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
+	'centralauth-admin-unlock-nonexistent' => '오류: 공통 계정 "$1"이 존재하지 않습니다.',
 	'centralauth-admin-hide-description' => '숨겨진 계정은 [[Special:GlobalUsers|공통 계정 목록]]에 나타나지 않습니다.',
 	'centralauth-admin-hide-success' => '공통 계정 "<nowiki>$1</nowiki>"이 성공적으로 숨겨졌습니다.',
+	'centralauth-admin-hide-nonexistent' => '오류: 공통 계정 "$1"이 존재하지 않습니다.',
+	'centralauth-admin-unhide-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
 	'centralauth-admin-reason' => '이유:',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-attached' => '로컬에 존재',
@@ -8453,12 +8472,22 @@ $messages['ko'] = array(
 	'centralauth-login-progress' => '위키미디어의 다른 프로젝트에도 로그인합니다:',
 	'centralauth-logout-progress' => '위키미디어의 다른 프로젝트에서도 로그아웃합니다.',
 	'centralauth-log-name' => '통합 계정 기록',
+	'centralauth-log-entry-delete' => '"<nowiki>$1</nowiki>"의 공통 계정을 삭제함',
 	'centralauth-log-entry-lock' => '통합 계정 "<nowiki>$1</nowiki>"를 잠금',
 	'centralauth-log-entry-hide' => '통합 계정 "<nowiki>$1</nowiki>"를 숨김',
 	'centralauth-rightslog-name' => '공통 권한 기록',
 	'centralauth-rightslog-entry-usergroups' => '$1의 공통 계정 권한을 $2에서 $3으로 변경',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
+	'centralauth-globalgroupperms-newgroupname' => '새 그룹 이름:',
+	'centralauth-editgroup-name' => '그룹 이름:',
 	'centralauth-editgroup-noset' => '(없음)',
+	'centralauth-editset-name' => '이름:',
+	'centralauth-editset-reason' => '이유:',
+	'centralauth-editset-submit' => '저장',
+	'centralauth-editset-nouse' => '(없음)',
+	'centralauth-editset-badwikis' => '다음 위키는 존재하지 않습니다: $1.',
 	'right-centralauth-admin' => '통합 계정 관리',
+	'right-centralauth-merge' => '자신의 계정 통합',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -9981,9 +10010,6 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-renameuser-reserved' => 'Pengguna $2 telah ditempah untuk akaun sejagat.',
 	'centralauth-invalid-wiki' => 'Pangkalan data wiki tiada: $1',
 	'centralauth-account-exists' => 'Tidak dapat membuka akaun: nama pengguna yang diminta telah pun didaftarkan dalam sistem akaun gabungan.',
-	'centralauth-autologin-desc' => 'Laman khas ini digunakan dari dalam MediaWiki.
-Ketika anda [[Special:UserLogin|log masuk]], sistem akaun pusat akan mengarah pelayar web anda supaya meminta laman ini melalui semua domain yang telah dipaut melalui penggunaan imej.
-Anda telah meminta laman ini tanpa membekalkan sebarang data pengesahan, oleh itu tiada apa-apa berlaku.',
 	'centralauth-login-progress' => 'Anda juga telah log masuk ke dalam projek-projek Wikimedia yang lain:',
 	'centralauth-logout-progress' => 'Anda juga telah log keluar daripada projek-projek Wikimedia yang lain:',
 	'centralauth-log-name' => 'Log akaun sejagat',
@@ -10006,6 +10032,10 @@ Anda telah meminta laman ini tanpa membekalkan sebarang data pengesahan, oleh it
 	'centralauth-rightslog-entry-setchange' => 'mengubah set wiki "$1": memasukkan: $2; membuang: $3',
 	'centralauth-rightslog-set-optin' => 'berdasarkan penyertaan',
 	'centralauth-rightslog-set-optout' => 'berdasarkan pengecualian',
+	'autologin' => 'Log masuk automatik',
+	'centralauth-autologin-desc' => 'Laman khas ini digunakan dari dalam MediaWiki.
+Ketika anda [[Special:UserLogin|log masuk]], sistem akaun pusat akan mengarah pelayar web anda supaya meminta laman ini melalui semua domain yang telah dipaut melalui penggunaan imej.
+Anda telah meminta laman ini tanpa membekalkan sebarang data pengesahan, oleh itu tiada apa-apa berlaku.',
 	'globalgroupmembership' => 'Keahlian dalam kumpulan sejagat',
 	'globalgrouppermissions' => 'Pengurusan kumpulan sejagat',
 	'centralauth-globalgroupperms-grouplist' => 'Kumpulan-kumpulan sejagat berikut telah ditubuhkan.
@@ -10447,9 +10477,6 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists' => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
-	'centralauth-autologin-desc' => 'Deze pagina wordt intern door MediaWiki gebruikt.
-Als u zich [[Special:UserLogin|aanmeldt]], geeft het centrale aanmeldsysteem uw browser de opdracht om deze pagina vanuit alle aangesloten domeinen op te vragen met behulp van een verwijzing naar een afbeelding.
-U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en daarom gebeurt er niets.',
 	'centralauth-login-progress' => 'U wordt aangemeld bij andere projecten van Wikimedia:',
 	'centralauth-logout-progress' => 'U wordt afgemeld bij andere projecten van Wikimedia:',
 	'centralauth-log-name' => 'Logboek globaal gebruikersbeheer',
@@ -10472,6 +10499,10 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 	'centralauth-rightslog-entry-setchange' => 'heeft de wiki\'s in "$1" gewijzigd: toegevoegd: $2; verwijderd: $3',
 	'centralauth-rightslog-set-optin' => 'opt-ingebaseerd',
 	'centralauth-rightslog-set-optout' => 'opt-outgebaseerd',
+	'autologin' => 'Automatisch aangemeld',
+	'centralauth-autologin-desc' => 'Deze pagina wordt intern door MediaWiki gebruikt.
+Als u zich [[Special:UserLogin|aanmeldt]], geeft het centrale aanmeldsysteem uw browser de opdracht om deze pagina vanuit alle aangesloten domeinen op te vragen met behulp van een verwijzing naar een afbeelding.
+U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en daarom gebeurt er niets.',
 	'globalgroupmembership' => 'Lidmaatschap van globale groepen',
 	'globalgrouppermissions' => 'Globaal groepsbeheer',
 	'centralauth-globalgroupperms-grouplist' => 'De onderstaande globale groepen zijn ingesteld. U kunt de rechten van alle groepen bekijken en bewerken. Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
@@ -10770,9 +10801,6 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-renameuser-reserved' => 'Brukernavnet $2 er reservert for en global konto.',
 	'centralauth-invalid-wiki' => 'Ingen slik database: $1',
 	'centralauth-account-exists' => 'Kan ikke opprette konto. Det angitte brukernavnet er allerede tatt i bruk av en global konto.',
-	'centralauth-autologin-desc' => 'Denne spesialsiden brukes internt av MediaWiki.
-Når du [[Special:UserLogin|logger inn]] instruerer det sentrale innloggingssystemet nettleseren din til å hente denne siden fra alle domener, ved hjelp av bildelenker.
-Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gjør ingenting.',
 	'centralauth-login-progress' => 'Du er også logget inn på Wikimedias øvrige prosjekter:',
 	'centralauth-logout-progress' => 'Du er også logget ut av Wikimedias øvrige prosjekter:',
 	'centralauth-log-name' => 'Logg for behandling av globale kontoer',
@@ -10795,6 +10823,10 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 	'centralauth-rightslog-entry-setchange' => 'endret wikier i «$1»: la til: $2; fjernet: $3',
 	'centralauth-rightslog-set-optin' => 'innmeldingsbasert',
 	'centralauth-rightslog-set-optout' => 'utmeldingsbasert',
+	'autologin' => 'Automatisk innlogging',
+	'centralauth-autologin-desc' => 'Denne spesialsiden brukes internt av MediaWiki.
+Når du [[Special:UserLogin|logger inn]] instruerer det sentrale innloggingssystemet nettleseren din til å hente denne siden fra alle domener, ved hjelp av bildelenker.
+Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gjør ingenting.',
 	'globalgroupmembership' => 'Medlemskap i globale grupper',
 	'globalgrouppermissions' => 'Behandling av globale grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Følgende globale grupper finnes. Du kan vise og redigere tillatelsene som er gitt til hver gruppe. En gruppe kan slettes ved å fjerne alle rettigheter fra den.',
@@ -11022,9 +11054,6 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-renameuser-reserved' => 'L’utilizaire $2 es reservat pel compte global.',
 	'centralauth-invalid-wiki' => 'Cap de banca de donada wiki : $1',
 	'centralauth-account-exists' => 'Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.',
-	'centralauth-autologin-desc' => "Aquesta pagina especiala es utilizada per MediaWiki en intèrn.
-Quand vos [[Special:UserLogin|connectatz]], lo sistèma de connexion unic demanda a vòstre navigador de cargar aquesta pagina per totes los domenis en utilizant d'imatges.
-Avètz demandat aquesta pagina sens balhar d'entresenhas d'autentificacion, doncas reagís pas.",
 	'centralauth-login-progress' => 'Connexion als autres projèctes Wikimèdia :',
 	'centralauth-logout-progress' => 'Desconnexion dels autres projèctes Wikimèdia :',
 	'centralauth-log-name' => 'Jornal de la gestion dels comptes globals',
@@ -11047,6 +11076,10 @@ Avètz demandat aquesta pagina sens balhar d'entresenhas d'autentificacion, donc
 	'centralauth-rightslog-entry-setchange' => 'wikis modificats dins « $1 » : apondut : $2 ; levat : $3',
 	'centralauth-rightslog-set-optin' => 'basat sus l’opcion presa',
 	'centralauth-rightslog-set-optout' => 'basat fòra opcion',
+	'autologin' => 'Connexion automatica',
+	'centralauth-autologin-desc' => "Aquesta pagina especiala es utilizada per MediaWiki en intèrn.
+Quand vos [[Special:UserLogin|connectatz]], lo sistèma de connexion unic demanda a vòstre navigador de cargar aquesta pagina per totes los domenis en utilizant d'imatges.
+Avètz demandat aquesta pagina sens balhar d'entresenhas d'autentificacion, doncas reagís pas.",
 	'globalgroupmembership' => 'Apartenéncia als gropes globals',
 	'globalgrouppermissions' => 'Gestion dels gropes globals',
 	'centralauth-globalgroupperms-grouplist' => 'Los grops seguents son estats configurats. Podètz veire e modificar las permissions donadas a cadun dels gropes. Un grop pòt èsser suprimit en li levant totes los dreches.',
@@ -12143,9 +12176,6 @@ $messages['ru'] = array(
 	'centralauth-renameuser-reserved' => 'Имя участника $2 зарезервировано для глобальной учётной записи.',
 	'centralauth-invalid-wiki' => 'Нет такой вики БД: $1',
 	'centralauth-account-exists' => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
-	'centralauth-autologin-desc' => 'Эта служебная страница предназначена для внутреннего использования в MediaWiki.
-Когда вы [[Special:UserLogin|представляетесь системе]], централизованная система входа указывает вашему браузеру обратиться к этой странице со всех доменов, используя графические ссылки.
-Вы запросили эту страницу без предоставления информации об аутентификации, поэтому ничего не происходит.',
 	'centralauth-login-progress' => 'Сеанс действует также и в других проектах Викимедиа:',
 	'centralauth-logout-progress' => 'Сеанс завершён также и в других проектах Викимедиа:',
 	'centralauth-log-name' => 'Журнал управления глобальными учётными записями',
@@ -12168,6 +12198,10 @@ $messages['ru'] = array(
 	'centralauth-rightslog-entry-setchange' => 'изменил вики в «$1»: добавил $2, удалил $3',
 	'centralauth-rightslog-set-optin' => 'на основе принципа включения',
 	'centralauth-rightslog-set-optout' => 'на основе принципа исключения',
+	'autologin' => 'Автоматический вход',
+	'centralauth-autologin-desc' => 'Эта служебная страница предназначена для внутреннего использования в MediaWiki.
+Когда вы [[Special:UserLogin|представляетесь системе]], централизованная система входа указывает вашему браузеру обратиться к этой странице со всех доменов, используя графические ссылки.
+Вы запросили эту страницу без предоставления информации об аутентификации, поэтому ничего не происходит.',
 	'globalgroupmembership' => 'Членство в глобальных группах',
 	'globalgrouppermissions' => 'Управление глобальными группами',
 	'centralauth-globalgroupperms-grouplist' => 'Были настроены следующие глобальные группы. Вы можете просмотреть и изменить права каждой группы. Группа может быть удалена путём снятия с неё всех прав.',
@@ -12184,7 +12218,7 @@ $messages['ru'] = array(
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|изменить]])',
 	'centralauth-editgroup-member' => 'Локализованное название членов группы:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|изменить]])',
-	'centralauth-editgroup-members' => 'Список членов:',
+	'centralauth-editgroup-members' => 'Список членов группы:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список участников с правами уровня $2]]',
 	'centralauth-editgroup-restrictions' => 'Набор вики, в которых группа действует:',
 	'centralauth-editgroup-noset' => '(нет)',
@@ -12581,9 +12615,6 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-renameuser-reserved' => 'Používateľ $2 je vyhradený pre globálny účet.',
 	'centralauth-invalid-wiki' => 'Taká DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.',
-	'centralauth-autologin-desc' => 'Túto špeciálnu stránku vnútorne využíva MediaWiki.
-Keď sa [[Special:UserLogin|prihlásite]], centrálny systém prihlasovania dá vedieť vášmu prehliadaču, aby vyžiadal túto stránku zo všetkých domén, na ktoré sa odkazuje, za pomoci odkazov na obrázky.
-Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nerobí nič.',
 	'centralauth-login-progress' => 'Týmto sa zároveň prihlasujete aj na ďalšie projekty Wikimedia:',
 	'centralauth-logout-progress' => 'Odhlasujete sa z iných projektov Wikimedia:',
 	'centralauth-log-name' => 'Záznam správy globálnych účtov',
@@ -12606,6 +12637,10 @@ Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nero
 	'centralauth-rightslog-entry-setchange' => 'zmenené wiki v „$1”: pridané: $2; odstránené $3',
 	'centralauth-rightslog-set-optin' => 'iba určené',
 	'centralauth-rightslog-set-optout' => 'všetky okrem určených',
+	'autologin' => 'Automatické prihlásenie',
+	'centralauth-autologin-desc' => 'Túto špeciálnu stránku vnútorne využíva MediaWiki.
+Keď sa [[Special:UserLogin|prihlásite]], centrálny systém prihlasovania dá vedieť vášmu prehliadaču, aby vyžiadal túto stránku zo všetkých domén, na ktoré sa odkazuje, za pomoci odkazov na obrázky.
+Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nerobí nič.',
 	'globalgroupmembership' => 'Členstvo v globálnych skupinách',
 	'globalgrouppermissions' => 'Správa globálnych skupín',
 	'centralauth-globalgroupperms-grouplist' => 'Boli nastavené nasledovné globálne skupiny. Môžete si prezerať a upravovať oprávnenia pridelené ktorejkoľvek skupine. Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
@@ -13446,9 +13481,6 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-renameuser-reserved' => 'Användare $2 är reserverad för ett globalt konto.',
 	'centralauth-invalid-wiki' => 'Ingen sådan databas: $1',
 	'centralauth-account-exists' => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
-	'centralauth-autologin-desc' => 'Den här specialsidan används internt av MediaWiki.
-När du [[Special:UserLogin|loggar in]], instruerar det gemensamma inloggningssystemet din webbläsare att begära den här sidan från alla länkade domäner som använder bildlänkar.
-Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så den gör ingenting.',
 	'centralauth-login-progress' => 'Loggar in dig till Wikimedias övriga projekt:',
 	'centralauth-logout-progress' => 'Loggar ut dig från Wikimedias övriga projekt:',
 	'centralauth-log-name' => 'Logg för behandling av globala konton',
@@ -13471,6 +13503,10 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 	'centralauth-rightslog-entry-setchange' => 'ändrade wikier i "$1": la till: $2; tog bort: $3',
 	'centralauth-rightslog-set-optin' => 'opt-in-baserad',
 	'centralauth-rightslog-set-optout' => 'opt-out-baserad',
+	'autologin' => 'Automatisk inloggning',
+	'centralauth-autologin-desc' => 'Den här specialsidan används internt av MediaWiki.
+När du [[Special:UserLogin|loggar in]], instruerar det gemensamma inloggningssystemet din webbläsare att begära den här sidan från alla länkade domäner som använder bildlänkar.
+Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så den gör ingenting.',
 	'globalgroupmembership' => 'Medlemskap i globala grupper',
 	'globalgrouppermissions' => 'Behandling av globala grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Följande globala grupper finns. Du kan visa och redigera tillåtelserna som är angivna till varje grupp. En grupp kan tas bort genom att ta bort alla rättigheter från den.',
