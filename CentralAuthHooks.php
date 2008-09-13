@@ -393,6 +393,7 @@ class CentralAuthHooks {
 
 		# Notify hooks (e.g. Newuserlog)
 		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+		$user->addNewUserLogEntryAutoCreate();
 		return true;
 	}
 
