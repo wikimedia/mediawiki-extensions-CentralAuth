@@ -7,7 +7,7 @@ CREATE TABLE wikiset (
 	ws_name varchar(255) not null,
 	-- Type of set: opt-in or opt-out
 	ws_type enum ('optin', 'optout'),
-	-- Wikis in that set. Why isn't it a seperate table?
+	-- Wikis in that set. Why isn't it a separate table?
 	-- Because we can just use such simple list, we don't need complicated queries on it
 	-- Let's suppose that max length of db name is 31 (32 with ","), then we have space for
 	-- 2048 wikis. More than we need
