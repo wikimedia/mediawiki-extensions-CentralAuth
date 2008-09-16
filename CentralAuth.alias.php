@@ -119,6 +119,7 @@ $aliases['lb'] = array(
 	'MergeAccount' => array( 'Benotzerkonten zesummeféieren' ),
 	'GlobalGroupMembership' => array( 'Global Benotzerrechter' ),
 	'GlobalGroupPermissions' => array( 'Global Grupperechter' ),
+	'EditWikiSets' => array( 'Wiki-Seten änneren' ),
 	'GlobalUsers' => array( 'Global Benotzer' ),
 );
 
