@@ -174,7 +174,7 @@ class SpecialEditWikiSets extends SpecialPage
 			if( !in_array( $wiki, $allwikis ) )
 				$badwikis[] = $wiki;
 		if( $badwikis ) {
-			$this->buildSetView( $id, wfMsgExt( 'centralauth-editset-badwikis', array( 'escapenoentities' ), array( implode( ', ', $badwikis ), count( $badwikis ) ),
+			$this->buildSetView( $id, wfMsgExt( 'centralauth-editset-badwikis', array( 'escapenoentities' ), implode( ', ', $badwikis ) ),
 				$name, $type, $wikis, $reason );
 			return;
 		}

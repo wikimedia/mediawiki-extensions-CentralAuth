@@ -312,7 +312,7 @@ You may be attempting to assign rights to the wrong user!",
 	'centralauth-editset-grouplink'                   => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse'                       => '(none)',
 	'centralauth-editset-usage'                       => 'Used in groups:',
-	'centralauth-editset-badwikis'                    => 'The following {{PLURAL:$2|wiki does not|wikis do not}} exist: $1.',
+	'centralauth-editset-badwikis'                    => 'Following wikis do not exist: $1.',
 	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
 	'centralauth-editset-return'                      => 'Return to main view',
 
