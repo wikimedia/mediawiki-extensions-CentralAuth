@@ -5496,7 +5496,9 @@ $messages['he'] = array(
 	'centralauth-rightslog-set-optin' => 'רשימה לבנה',
 	'centralauth-rightslog-set-optout' => 'רשימה שחורה',
 	'autologin' => 'כניסה אוטומטית',
-	'centralauth-autologin-desc' => 'מערכת מדיה־ויקי משתמשת בדף מיוחד זה באופן פנימי. כשאתם מבצעים [[Special:UserLogin|כניסה לחשבון]], המערכת המרכזית של כניסה לחשבון גורמת לדפדפן שלכם לבקש דף זה מכל הדומיינים המקושרים, באמצעות קישורים לתמונות. כיוון שביקשתם דף זה ללא מידע זיהוי, הוא לא יעשה דבר.',
+	'centralauth-autologin-desc' => 'מערכת מדיה־ויקי משתמשת בדף מיוחד זה באופן פנימי.
+כשאתם מבצעים [[Special:UserLogin|כניסה לחשבון]], המערכת המרכזית של כניסה לחשבון גורמת לדפדפן שלכם לבקש דף זה מכל הדומיינים המקושרים, באמצעות קישורים לתמונות.
+כיוון שביקשתם דף זה ללא מידע זיהוי, הוא לא יעשה דבר.',
 	'globalgroupmembership' => 'חברות בקבוצות כלליות',
 	'globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'centralauth-globalgroupperms-grouplist' => 'הוגדרו הקבוצות הכלליות הבאות. באפשרותכם לצפות בהרשאות של כל קבוצה ולשנותן. ניתן למחוק קבוצה באמצעות הסרת כל ההרשאות ממנה.',
@@ -5546,7 +5548,7 @@ $messages['he'] = array(
 	'centralauth-editset-nowikis' => 'לא צוינו אתרי ויקי.',
 	'centralauth-editset-nouse' => '(לא בשימוש)',
 	'centralauth-editset-usage' => 'בשימוש בקבוצות:',
-	'centralauth-editset-badwikis' => 'אתרי הוויקי הבאים אינם קיימים: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|אתר הוויקי הבא אינו קיים|אתרי הוויקי הבאים אינם קיימים}}: $1.',
 	'centralauth-editset-success' => 'קבוצת אתרי הוויקי שונתה בהצלחה.',
 	'centralauth-editset-return' => 'חזרה לתצוגה הראשית',
 	'right-globalgroupmembership' => 'עריכת חברות בקבוצות הכלליות',
