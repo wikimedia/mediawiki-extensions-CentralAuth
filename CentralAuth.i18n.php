@@ -6184,6 +6184,8 @@ Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu 
 	'centralauth-prefs-count-unattached' => 'Njepotwjerdźene konta z twojim mjenom zwostanu na $1 {{PLURAL:$1|projekće|projektomaj|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Njeje potwjerdźenje, zo tute projektowe sydło ke globalnemu kontu słuša.',
 	'centralauth-prefs-manage' => 'Twoje globalne konto zrjadować',
+	'centralauth-renameuser-merged' => 'Wužiwar $1 bu hižo do jednotneho přizjewjenskeho systema přewzaty.
+Přemjenowanje wuskutkuje, zo lokalny wužiwar so z globalneho wužiwarskeho konta wotstroni.',
 	'centralauth-renameuser-reserved' => 'Wužiwar $2 je za globalne konto rezerwowany.',
 	'centralauth-invalid-wiki' => 'Tajka wikijowa datowa banka njeeksistuje: $1',
 	'centralauth-account-exists' => 'Konto njeda so wutowrić: požadane wužiwarske mjeno bu hižo do jednotneho přizjewjenskeho systema přewzate.',
