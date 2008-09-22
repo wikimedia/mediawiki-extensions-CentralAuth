@@ -13,14 +13,14 @@ $messages = array();
 $messages['en'] = array(
 	// When not logged in...
 	'mergeaccount'                   => 'Login unification status',
-	'centralauth-desc'               => '[[Special:MergeAccount|Merge account]] across Wikimedia Foundation wikis',
+	'centralauth-groupname'          => 'the Wikimedia Foundation',
+	'centralauth-desc'               => '[[Special:MergeAccount|Merge account]] across wikis of {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc'  => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
 	'centralauth-merge-denied'       => 'Sorry, you do not have permission to access this page.',
 	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} log in]</span> to check if your accounts have been fully merged.',
-	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to Wikimedia's unified login system.'''
+	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to unified login system of {{MediaWiki:Centralauth-groupname}}.'''
 
-If you choose to migrate your accounts, you will be able to use the same username and password to log in to all of Wikimedia's project wikis in all available languages.
-This makes it easier to work with shared projects such as uploading to [http://commons.wikimedia.org/ Wikimedia Commons], and avoids the confusion or conflict that could result from two people picking the same username on different projects.
+If you choose to migrate your accounts, you will be able to use the same username and password to log in to all wikis of {{MediaWiki:Centralauth-groupname}} in all available languages.
 
 If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
 
@@ -61,10 +61,8 @@ Please enter the password for the home wiki.',
 	'centralauth-incomplete' => 'Login unification not complete!',
 
 	// Wheeee
-	'centralauth-complete-text'   => 'You can now log in to any Wikimedia wiki site without creating a new account;
-the same username and password will work on Wikipedia, Wiktionary, Wikibooks, and their sister projects in all languages.',
-	'centralauth-incomplete-text' => 'Once your login is unified, you will be able to log in to any Wikimedia wiki site without creating a new account;
-the same username and password will work on Wikipedia, Wiktionary, Wikibooks, and their sister projects in all languages.',
+	'centralauth-complete-text'   => 'You can now log in to any wiki site of {{MediaWiki:Centralauth-groupname}} without creating a new account.',
+	'centralauth-incomplete-text' => 'Once your login is unified, you will be able to log in to any wiki site of {{MediaWiki:Centralauth-groupname}} without creating a new account',
 	'centralauth-not-owner-text'  => 'The username "$1" was automatically assigned to the owner of the account on $2.
 
 If this is you, you can finish the login unification process simply by typing the master password for that account here:',
@@ -219,8 +217,8 @@ Renaming it will cause the local user to be detached from the global one.",
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
-	'centralauth-login-progress'     => 'Logging you in to Wikimedia\'s other projects:',
-	'centralauth-logout-progress'    => 'Logging you out from Wikimedia\'s other projects:',
+	'centralauth-login-progress'     => 'Logging you in to projects of {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress'    => 'Logging you out from other projects of {{MediaWiki:Centralauth-groupname}}:',
 
 	// Logging
 	'centralauth-log-name'         => 'Global account log',

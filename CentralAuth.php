@@ -110,7 +110,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'svn-date' => '$LastChangedDate$',
 	'svn-revision' => '$LastChangedRevision$',
 	'author' => 'Brion Vibber',
-	'description' => 'Merge Account across Wikimedia Foundation wikis',
+	'description'    => 'Merge accounts across a wiki farm',
 	'descriptionmsg' => 'centralauth-desc',
 );
 
@@ -120,7 +120,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'url'            => 'http://meta.wikimedia.org/wiki/Help:Unified_login',
 	'svn-date' => '$LastChangedDate$',
 	'svn-revision' => '$LastChangedRevision$',
-	'description'    => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
+	'description'    => '[[Special:MergeAccount|Merge multiple accounts]] for Single User Login',
 	'descriptionmsg' => 'centralauth-mergeaccount-desc',
 );
 
