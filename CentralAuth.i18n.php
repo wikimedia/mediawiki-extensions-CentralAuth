@@ -5316,15 +5316,16 @@ $messages['haw'] = array(
  */
 $messages['he'] = array(
 	'mergeaccount' => 'מצב מיזוג החשבונות',
-	'centralauth-desc' => '[[Special:MergeAccount|מיזוג חשבונות]] מאתרי קרן ויקימדיה השונים',
+	'centralauth-groupname' => 'קרן ויקימדיה',
+	'centralauth-desc' => '[[Special:MergeAccount|מיזוג חשבונות]] בין אתרי {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|מיזוג מספר חשבונות]] עבור חשבון המשתמש המאוחד',
 	'centralauth-merge-denied' => 'מצטערים, אין לך הרשאה להשתמש בדף זה.',
 	'centralauth-merge-notlogged' => 'אנא <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.',
-	'centralauth-merge-welcome' => "'''חשבון המשתמש שלכם עדיין לא התווסף למערכת החשבונות הממוזגים של ויקימדיה.'''
+	'centralauth-merge-welcome' => "'''חשבון המשתמש שלכם עדיין לא התווסף למערכת החשבונות הממוזגים של {{MediaWiki:Centralauth-groupname}}.'''
 
-אם תבחרו להוסיף את החשבונות שלכם, תוכלו להשתמש בשם משתמש וסיסמה זהים בכל מיזמי קרן ויקימדיה ובכל השפות. אפשרות זו תקל עליכם לעבוד במיזמים משותפים כגון העלאות ל[http://commons.wikimedia.org/ וויקישיתוף], וימנע בלבול או סכסוך שעלול להיגרם כתוצאה מכך ששני אנשים יבחרו שם משתמש זהה בשני מיזמים שונים.
+אם תבחרו להוסיף את החשבונות שלכם, תוכלו להשתמש בשם משתמש וסיסמה זהים בכל מיזמי {{MediaWiki:Centralauth-groupname}} ובכל השפות.
 
-אם מישהו כבר בחר את שם המשתמש שלכם באתר אחר, זה לא אמור להפריע להם, אבל יאפשר לכם לעבוד איתם או עם מנהל מערכת מאוחר יותר.",
+אם מישהו כבר בחר את שם המשתמש שלכם באתר אחר, זה לא אמור להפריע להם, אבל יאפשר לכם לדון איתם או עם מנהל מערכת מאוחר יותר.",
 	'centralauth-merge-step1-title' => 'תחילת מיזוג החשבונות',
 	'centralauth-merge-step1-detail' => 'אנא הקלידו כאן את סיסמת החשבון שלכם. סיסמתכם וכתובת הדוא"ל הרשומה שלכם יושוו עם החשבונות באתרים האחרים כדי לוודא שהם זהים לאלה שלכם.
 לא יבוצעו שינויים עד שתאשרו אותם.',
@@ -5352,8 +5353,8 @@ $messages['he'] = array(
 אנא הקלידו את הסיסמה לאתר הראשי.',
 	'centralauth-complete' => 'מיזוג החשבון הושלם!',
 	'centralauth-incomplete' => 'מיזוג החשבון לא הושלם!',
-	'centralauth-complete-text' => 'כעת באפשרותכם להיכנס לכל אתר ויקי של ויקימדיה בלי ליצור חשבון חדש; שם המשתמש והסיסמה הזהים יעבדו בוויקיפדיה, בוויקימילון, בוויקיספר, ובמיזמים השונים בכל השפות.',
-	'centralauth-incomplete-text' => 'כשמיזוג החשבון שלכם יושלם, יהיה באפשרותכם להיכנס לכל אתר ויקי של ויקימדיה בלי ליצור חשבון חדש; שם המשתמש והסיסמה הזהים יעבדו בוויקיפדיה, בוויקימילון, בוויקיספר, ובמיזמים השונים בכל השפות.',
+	'centralauth-complete-text' => 'כעת באפשרותכם להיכנס לכל אתר ויקי של {{MediaWiki:Centralauth-groupname}} בלי ליצור חשבון חדש.',
+	'centralauth-incomplete-text' => 'כשמיזוג החשבון שלכם יושלם, יהיה באפשרותכם להיכנס לכל אתר ויקי של {{MediaWiki:Centralauth-groupname}} בלי ליצור חשבון חדש.',
 	'centralauth-not-owner-text' => 'שם המשתמש "$1" הוקצה אוטומטית לבעלי החשבון באתר $2.
 
 אם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הכללי כאן:',
@@ -5365,8 +5366,8 @@ $messages['he'] = array(
 	'centralauth-list-home-title' => 'האתר הראשי',
 	'centralauth-list-home-dryrun' => 'הסיסמה וכתובת הדוא"ל שהוגדרו באתר הזה יהיו בשימוש עבור החשבון הממוזג שלכם. תוכלו לשנות את האתר הראשי שלכם מאוחר יותר.',
 	'centralauth-list-attached-title' => 'חשבונות ממוזגים',
-	'centralauth-list-attached' => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים מוזגו באופן אוטומטי:',
-	'centralauth-list-attached-dryrun' => 'החשבונות בשם "$1" באתרי ויקימדיה הבאים ימוזגו באופן אוטומטי:',
+	'centralauth-list-attached' => 'החשבונות בשם "$1" באתרים הבאים מוזגו באופן אוטומטי:',
+	'centralauth-list-attached-dryrun' => 'החשבונות בשם "$1" באתרים הבאים ימוזגו באופן אוטומטי:',
 	'centralauth-list-unattached-title' => 'חשבונות לא ממוזגים',
 	'centralauth-list-unattached' => 'לא ניתן היה לבדוק אוטומטית האם החשבונות בשם "$1" באתרים הבאים שייכים לכם; כנראה שיש להם סיסמאות שונות מאשר בחשבון הראשי שלכם:',
 	'centralauth-foreign-link' => 'המשתמש $1 באתר $2',
@@ -5471,8 +5472,8 @@ $messages['he'] = array(
 	'centralauth-renameuser-reserved' => 'החשבון $2 שמור לחשבון כללי.',
 	'centralauth-invalid-wiki' => 'אין מסד נתונים בשם $1',
 	'centralauth-account-exists' => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
-	'centralauth-login-progress' => 'כניסה לחשבון במיזמים האחרים של קרן ויקימדיה:',
-	'centralauth-logout-progress' => 'יציאה מהחשבון במיזמים האחרים של קרן ויקימדיה:',
+	'centralauth-login-progress' => 'כניסה לחשבון במיזמים האחרים של {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'יציאה מהחשבון במיזמים האחרים של {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'יומן החשבון הכללי',
 	'centralauth-log-header' => 'יומן זה כולל פעולות שבוצעו על חשבונות כלליים: מחיקות, נעילות וביטולי נעילות.',
 	'centralauth-log-entry-delete' => 'מחק את החשבון הכללי "<nowiki>$1</nowiki>"',
