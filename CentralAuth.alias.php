@@ -46,6 +46,12 @@ $aliases['arz'] = array(
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
+/** Catalan (Català) */
+$aliases['ca'] = array(
+	'MergeAccount' => array( 'Fusió de comptes' ),
+	'GlobalUsers' => array( 'Usuaris globals' ),
+);
+
 /** German (Deutsch) */
 $aliases['de'] = array(
 	'CentralAuth' => array( 'Verwaltung Benutzerkonten-Zusammenführung' ),
@@ -90,8 +96,10 @@ $aliases['he'] = array(
 /** Croatian (Hrvatski) */
 $aliases['hr'] = array(
 	'CentralAuth' => array( 'Središnja_prijava' ),
+	'AutoLogin' => array( 'AutoPrijava' ),
 	'MergeAccount' => array( 'Spoji_račun' ),
 	'GlobalGroupMembership' => array( 'Globalna_suradnička_prava' ),
+	'GlobalGroupPermissions' => array( 'Globalna_prava_skupina' ),
 	'EditWikiSets' => array( 'Uredi_wikiset' ),
 	'GlobalUsers' => array( 'Globalni_suradnici' ),
 );
