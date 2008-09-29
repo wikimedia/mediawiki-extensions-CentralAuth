@@ -188,6 +188,7 @@ $aliases['pl'] = array(
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'CentralAuth' => array( 'Gemensam inloggning' ),
+	'MergeAccount' => array( 'Slå ihop konton' ),
 	'GlobalUsers' => array( 'Globala användare' ),
 );
 

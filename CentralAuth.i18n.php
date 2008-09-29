@@ -2748,6 +2748,34 @@ $messages['ceb'] = array(
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay',
 );
 
+/** Crimean Turkish (Latin) (Qırımtatarca (Latin))
+ * @author Alessandro
+ */
+$messages['crh-latn'] = array(
+	'centralauth-prefs-status' => 'Global esap alı:',
+	'centralauth-prefs-not-managed' => 'Global esap qullanılmamaqta',
+	'centralauth-prefs-unattached' => 'Tasdıqlanmağan',
+	'centralauth-prefs-complete' => 'Er şey yahşı!',
+	'centralauth-prefs-migration' => 'Köçmekte',
+	'centralauth-prefs-count-attached' => 'Esabıñız $1 prоyektte aktivdir.',
+	'centralauth-prefs-count-unattached' => 'Adıñıznı taşığan tasdıqlanmağan esaplar $1 prоyektte qalıp tura.',
+	'centralauth-prefs-manage' => 'Global esapnı idare et',
+);
+
+/** Crimean Turkish (Cyrillic) (Qırımtatarca (Cyrillic))
+ * @author Alessandro
+ */
+$messages['crh-cyrl'] = array(
+	'centralauth-prefs-status' => 'Глобаль эсап алы:',
+	'centralauth-prefs-not-managed' => 'Глобаль эсап къулланылмамакъта',
+	'centralauth-prefs-unattached' => 'Тасдыкъланмагъан',
+	'centralauth-prefs-complete' => 'Эр шей яхшы!',
+	'centralauth-prefs-migration' => 'Кочьмекте',
+	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 проектте активдир.',
+	'centralauth-prefs-count-unattached' => 'Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 проектте къалып тура.',
+	'centralauth-prefs-manage' => 'Глобаль эсапны идаре эт',
+);
+
 /** Czech (Česky)
  * @author Danny B.
  * @author Li-sung
@@ -4118,8 +4146,20 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
 );
 
-/** Estonian (Eesti) */
+/** Estonian (Eesti)
+ * @author Jaan513
+ */
 $messages['et'] = array(
+	'centralauth-admin-delete-title' => 'Kustuta konto',
+	'centralauth-admin-delete-button' => 'Kustuta see konto',
+	'centralauth-admin-lock-title' => 'Lukusta konto',
+	'centralauth-admin-hide-button' => 'Peida see konto',
+	'centralauth-admin-lockandhide-button' => 'Lukusta ja peida see konto',
+	'centralauth-prefs-status' => 'Globaalse konto seisund:',
+	'centralauth-prefs-complete' => 'Kõik korras!',
+	'centralauth-prefs-count-attached' => 'Teie konto on aktiivne $1 projekti lehekülgedel.
+<!-- oli kasutusel: {{PLURAL:$1|leheküljel|lehekülgedel}} -->',
+	'centralauth-prefs-manage' => 'Vaata oma globaalset kontot',
 	'centralauth-login-progress' => 'Teid logitakse sisse ka teistesse Wikimedia projektidesse:',
 	'centralauth-logout-progress' => 'Teid logitakse välja ka teistest Wikimedia projektidest:',
 );
@@ -7424,8 +7464,8 @@ $messages['ja'] = array(
 	'centralauth-merge-home-password' => 'このアカウントのホームウィキ（下に表示）に設定されたパスワードと入力したパスワードが一致しません。ホームウィキのパスワードを入力してください。',
 	'centralauth-complete' => 'アカウントの統一が完了しました！',
 	'centralauth-incomplete' => 'アカウントの統一に失敗しました！',
-	'centralauth-complete-text' => 'ウィキペディアやウィクショナリー、ウィキブックスといった{{MediaWiki:Centralauth-groupname}}の多くのWikiに、新しいアカウントを作成せずとも、同じ利用者名とパスワードでログインすることが可能になりました。',
-	'centralauth-incomplete-text' => 'アカウントを統合すると、ウィキペディアやウィクショナリー、ウィキブックスといった{{MediaWiki:Centralauth-groupname}}の多くのWikiに、新しいアカウントを作成せずとも、同じ利用者名とパスワードでログインすることが可能になります。',
+	'centralauth-complete-text' => '{{MediaWiki:Centralauth-groupname}}の全てのウィキサイトに新しいアカウントを作成せずにログインできるようになりました。',
+	'centralauth-incomplete-text' => 'アカウントを統合すると、{{MediaWiki:Centralauth-groupname}}の全てのウィキサイトに新しいアカウントを作成せずにログインすることが可能になります。',
 	'centralauth-not-owner-text' => '"$1" という利用者名は、アカウント $2 の利用者へ既に自動割当済みです。
 
 もしこれがあなたであるならば、このアカウントのパスワードをここに入力することで、アカウント統一処理を簡単に完了することができます:',
@@ -7545,8 +7585,8 @@ $messages['ja'] = array(
 	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントで使用されています。',
 	'centralauth-invalid-wiki' => 'ウィキ・データベースが見つかりません: $1',
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムですでに取得されています。',
-	'centralauth-login-progress' => '以下のウィキメディアプロジェクトもログインしました：',
-	'centralauth-logout-progress' => '以下のウィキメディアプロジェクトもログアウトしました：',
+	'centralauth-login-progress' => ' {{MediaWiki:Centralauth-groupname}}のプロジェクト群にログインしました：',
+	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}}の他のプロジェクトからもログアウトしました：',
 	'centralauth-log-name' => 'グローバルアカウントログ',
 	'centralauth-log-header' => 'このログにはグローバルアカウントの操作（削除・ロック・ロック解除）が記録されています。',
 	'centralauth-log-entry-delete' => 'グローバルアカウント "<nowiki>$1</nowiki>" を削除しました',
@@ -7567,6 +7607,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-entry-setchange' => '"$1" に属するウィキを変更しました。追加:$2 ;削除: $3',
 	'centralauth-rightslog-set-optin' => 'オプトイン設定',
 	'centralauth-rightslog-set-optout' => 'オプトアウト設定',
+	'autologin' => '自動ログイン',
 	'centralauth-autologin-desc' => 'この特別ページはメディアウィキによって内部的に使用されています。あなたが[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。あなたがこのページをリクエストした際に認証データを送信していないため、何も影響はありません。',
 	'globalgroupmembership' => 'グローバルグループのメンバー',
 	'globalgrouppermissions' => 'グローバルグループの管理',
@@ -7618,7 +7659,7 @@ $messages['ja'] = array(
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(なし)',
 	'centralauth-editset-usage' => '以下のグループで使用:',
-	'centralauth-editset-badwikis' => '以下のウィキは存在していません: $1',
+	'centralauth-editset-badwikis' => '以下の$2個のウィキは存在していません: $1',
 	'centralauth-editset-success' => 'ウィキ群は正しく変更されました。',
 	'centralauth-editset-return' => 'メイン画面に戻る',
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
