@@ -4150,6 +4150,7 @@ Renombrarlo causará que el usuario local se separe del global.',
  * @author Jaan513
  */
 $messages['et'] = array(
+	'centralauth-admin-no-unified' => 'Sel kasutajanimel ei ole ühendatud kontot.',
 	'centralauth-admin-delete-title' => 'Kustuta konto',
 	'centralauth-admin-delete-button' => 'Kustuta see konto',
 	'centralauth-admin-lock-title' => 'Lukusta konto',
@@ -7587,7 +7588,7 @@ $messages['ja'] = array(
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムですでに取得されています。',
 	'centralauth-login-progress' => ' {{MediaWiki:Centralauth-groupname}}のプロジェクト群にログインしました：',
 	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}}の他のプロジェクトからもログアウトしました：',
-	'centralauth-log-name' => 'グローバルアカウントログ',
+	'centralauth-log-name' => 'グローバルアカウント記録',
 	'centralauth-log-header' => 'このログにはグローバルアカウントの操作（削除・ロック・ロック解除）が記録されています。',
 	'centralauth-log-entry-delete' => 'グローバルアカウント "<nowiki>$1</nowiki>" を削除しました',
 	'centralauth-log-entry-lock' => 'グローバルアカウント "<nowiki>$1</nowiki>" をロックしました',
@@ -7595,7 +7596,7 @@ $messages['ja'] = array(
 	'centralauth-log-entry-hide' => 'グローバルアカウント "<nowiki>$1</nowiki>" を秘匿しました',
 	'centralauth-log-entry-unhide' => 'グローバルアカウント "<nowiki>$1</nowiki>" を秘匿解除しました',
 	'centralauth-log-entry-lockandhide' => 'グローバルアカウント "<nowiki>$1</nowiki>" をロックおよび秘匿しました',
-	'centralauth-rightslog-name' => 'グローバル権限ログ',
+	'centralauth-rightslog-name' => 'グローバル権限変更記録',
 	'centralauth-rightslog-entry-usergroups' => '$1 のグローバルグループ所属を $2 から $3 へ変更しました',
 	'centralauth-rightslog-entry-groupperms' => '$1 のグループ権限を $2 から $3 へ変更しました',
 	'centralauth-rightslog-entry-groupperms2' => '$1 のグループ権限を変更しました。 $2 を追加し、 $3 を削除しました',
@@ -8498,6 +8499,7 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
+	'centralauth-groupname' => 'មូលនិធិវិគីមេឌា',
 	'centralauth-merge-denied' => 'សូមអភ័យទោស! អ្នកមិនមានការអនុញ្ញាតអោយចូលទៅកាន់ទំព័រនេះទេ។',
 	'centralauth-merge-step1-submit' => 'បញ្ជាក់ទទួលស្គាល់ពត៌មានពីការឡុកអ៊ីន',
 	'centralauth-merge-step2-title' => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
@@ -9689,6 +9691,13 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-log-name' => 'Globālo kontu reģistrs',
 	'centralauth-log-header' => 'Šis reģistrs satur operācijas ar globālajiem kontiem: dzēšanas, slēgšanas un atslēgšanas.',
 	'centralauth-editgroup-reason' => 'Izmaiņu iemesls:',
+);
+
+/** Macedonian (Македонски)
+ * @author Brest
+ */
+$messages['mk'] = array(
+	'centralauth-groupname' => 'Викимедија Фондацијата',
 );
 
 /** Malayalam (മലയാളം)
@@ -11754,7 +11763,8 @@ $messages['ps'] = array(
  */
 $messages['pt'] = array(
 	'mergeaccount' => 'Estado da unificação de contas',
-	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da Wikimedia Foundation',
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
 	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para aceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
@@ -11914,8 +11924,8 @@ Renomear fará com que esta conta local seja desanexada da conta global.',
 	'centralauth-renameuser-reserved' => '$2 se encontra reservado para uma conta global.',
 	'centralauth-invalid-wiki' => 'Não existe a BD wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar conta: o nome de utilizador pretendido já está a ser utilizado no sistema de login unificado.',
-	'centralauth-login-progress' => 'Autenticando-se em outros projetos Wikimedia:',
-	'centralauth-logout-progress' => 'Desautenticando-se de outros projetos Wikimedia:',
+	'centralauth-login-progress' => 'Autenticando-se em outros projetos da {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Desautenticando-se de outros projetos da {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Registo de gestão de contas globais',
 	'centralauth-log-header' => 'Este registo contém operações sobre contas globais: remoções, bloqueios e debloqueios.',
 	'centralauth-log-entry-delete' => 'removeu conta global "<nowiki>$1</nowiki>"',
@@ -11936,6 +11946,7 @@ Renomear fará com que esta conta local seja desanexada da conta global.',
 	'centralauth-rightslog-entry-setchange' => 'alterou wikis em "$1": adicionou: $2; removeu: $3',
 	'centralauth-rightslog-set-optin' => 'baseado em "opt-in"',
 	'centralauth-rightslog-set-optout' => 'baseado em "opt-out"',
+	'autologin' => 'Autenticação automática',
 	'centralauth-autologin-desc' => 'Esta página especial é utilizada internamente pelo MediaWiki.
 Quando você [[Special:UserLogin|se autentica]], o sistema de login universal faz com que seu navegador acesse esta página a partir de todos os domínios ligados, utilizando links em imagens.
 Você acessou esta página sem providenciar qualquer dado de autenticação, o que faz com que nada ocorra.',
@@ -11989,7 +12000,7 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 	'centralauth-editset-nowikis' => 'Nenhum wiki especificado.',
 	'centralauth-editset-nouse' => '(nenhum)',
 	'centralauth-editset-usage' => 'Usado nos grupos:',
-	'centralauth-editset-badwikis' => 'Os seguintes wikis não existem: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|A wiki a seguir não existe|As wikis a seguir não existem}}: $1.',
 	'centralauth-editset-success' => 'Conjunto wiki alterado com sucesso.',
 	'centralauth-editset-return' => 'Voltar à vista principal',
 	'right-globalgroupmembership' => 'Editar associações de membros em grupos globais',
