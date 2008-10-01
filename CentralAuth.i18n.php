@@ -4156,6 +4156,7 @@ $messages['et'] = array(
 	'centralauth-admin-lock-title' => 'Lukusta konto',
 	'centralauth-admin-hide-button' => 'Peida see konto',
 	'centralauth-admin-lockandhide-button' => 'Lukusta ja peida see konto',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|päev|päeva}} tagasi',
 	'centralauth-prefs-status' => 'Globaalse konto seisund:',
 	'centralauth-prefs-complete' => 'Kõik korras!',
 	'centralauth-prefs-count-attached' => 'Teie konto on aktiivne $1 projekti lehekülgedel.
@@ -4611,7 +4612,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-log-entry-hide' => 'piilotti yhdistetyn käyttäjätunnuksen ”<nowiki>$1</nowiki>”',
 	'centralauth-log-entry-unhide' => 'Paljasta piilotettu yhdistetty tunnus ”<nowiki>$1</nowiki>”',
 	'centralauth-log-entry-lockandhide' => 'lukitsi ja piilotti yhdistetyn käyttäjätunnuksen ”<nowiki>$1</nowiki>”',
-	'centralauth-rightslog-name' => 'Globaali käyttöoikeusloki',
+	'centralauth-rightslog-name' => 'Globaalikäyttöoikeusloki',
 	'centralauth-rightslog-entry-usergroups' => 'vaihdettu globaalin ryhmän jäsenyys käyttäjälle $1 ryhmästä $2 ryhmään $3',
 	'centralauth-rightslog-entry-groupperms' => 'Vaihdettu ryhmän $1 käyttöoikeus $2 käyttöoikeuteen $3',
 	'centralauth-rightslog-entry-groupperms2' => 'Vaihdettu ryhmän $1 käyttöoikeuksia. Lisätty $2; Poistettu $3',
@@ -8638,8 +8639,7 @@ $messages['ko'] = array(
 	'centralauth-incomplete' => '계정 통합 미완료',
 	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
-	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 위키미디어 위키에 로그인할 수 있습니다.
-같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
+	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 로그인할 수 있습니다.',
 	'centralauth-not-owner-text' => '계정 이름 "$1"이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
 사용자 본인이 맞다면 주 암호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
@@ -10389,6 +10389,7 @@ $messages['nah'] = array(
  */
 $messages['nds'] = array(
 	'mergeaccount' => 'Status vun dat Tohoopföhren vun de Brukerkonten',
+	'centralauth-groupname' => 'de Wikimedia Foundation',
 	'centralauth-desc' => 'Brukerkonten vun Wikis vun {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|tohoopföhren]]',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Föhrt verschedene Brukerkonten för’t Global Brukerkonto tohoop]]',
 	'centralauth-merge-denied' => 'Du hest nich de Rechten, disse Sied antokieken.',
@@ -10518,6 +10519,7 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-rightslog-name' => 'Global Rechten-Logbook',
 	'centralauth-rightslog-entry-usergroups' => 'hett globale Gruppenrechten för „$1“ vun $2 op $3 ännert',
 	'centralauth-rightslog-entry-groupperms' => 'hett Gruppenrechten för „$1“ vun $2 op $3 ännert',
+	'autologin' => 'Automaatsch Anmellen',
 	'globalgroupmembership' => 'Liddmaatschop in globale Gruppen',
 	'globalgrouppermissions' => 'Globale Gruppen verwalten',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|bekieken/ännern]])',
@@ -10534,11 +10536,13 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|ännern]])',
 	'centralauth-editgroup-members' => 'Matenlist:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|List vun Brukers mit $2-Rechten]]',
+	'centralauth-editgroup-noset' => '(keen)',
 	'centralauth-editgroup-submit' => 'Ännern an de Gruppenrechten spiekern',
 	'centralauth-editgroup-perms' => 'Tokennt Rechten:',
 	'centralauth-editgroup-reason' => 'Grund för Ännern:',
 	'centralauth-editgroup-success' => 'Gruppenrechten ännert',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähl en Wiki ut, op dat he oder se en Brukerkonto hett:',
+	'centralauth-editset-name' => 'Naam:',
 	'right-globalgroupmembership' => 'Tohöörigkeit to globale Gruppen ännern',
 	'right-centralauth-admin' => 'Globale Brukerkonten verwalten',
 	'right-centralauth-merge' => 'Brukerkonten tohoopföhren:',
@@ -13183,7 +13187,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-badname' => 'Погрешно или празно име скупа.',
 	'centralauth-editset-badtype' => 'Погрешан тип скупа.',
 	'centralauth-editset-nowikis' => 'Ниједан вики није одређен.',
-	'centralauth-editset-badwikis' => 'Следећи викији не постоје: $1.',
+	'centralauth-editset-badwikis' => 'Следећи {{PLURAL:$2|вики|викији}} не постоје: $1.',
 	'centralauth-editset-success' => 'Успешно промењен скуп викија.',
 	'right-globalgroupmembership' => 'Измена чланства у глобалним групама.',
 	'right-centralauth-admin' => 'Управљање глобалним налозима.',
@@ -14820,6 +14824,7 @@ Te ghè domandà sta pagina sensa fornir nissun dato de autenticassion, quindi n
  */
 $messages['vi'] = array(
 	'mergeaccount' => 'Tình trạng hợp nhất tài khoản',
+	'centralauth-groupname' => 'Quỹ Hỗ trợ Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Hợp nhất]] tài khoản tại các wiki của {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Hợp nhất các tài khoản]] để cho các thành viên chỉ cần đăng nhập một lần',
 	'centralauth-merge-denied' => 'Rất tiếc, bạn không có quyền truy cập vào trang này.',
