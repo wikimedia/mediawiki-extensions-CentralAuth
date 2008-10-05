@@ -330,12 +330,15 @@ You may be attempting to assign rights to the wrong user!",
  * @author McDutchie
  * @author Meno25
  * @author Mormegil
+ * @author SPQRobin
  * @author Siebrand
  * @author Toliño
  */
 $messages['qqq'] = array(
+	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}}.',
 	'centralauth-desc' => 'Short description of the Central Auth extension, shown on [[Special:Version]]. Do not translate or change links.',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
+	'centralauth-incomplete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{MediaWiki:Centralauth-groupname}}</nowiki>}} exactly as it is}}',
 	'centralauth-list-home-title' => '{{Identical|Home wiki}}',
 	'centralauth-list-unattached-title' => '{{Identical|Unattached accounts}}',
 	'centralauth-merge-method-primary' => '{{Identical|Home wiki}}',
@@ -3906,7 +3909,7 @@ Vi petis ĉi tiun paĝon sen donante ian ajn aŭtentoinformon, do ĝi faras neni
 	'centralauth-editset-nowikis' => 'Neniuj vikioj specifigitaj.',
 	'centralauth-editset-nouse' => '(neniu)',
 	'centralauth-editset-usage' => 'Uzitaj en grupoj:',
-	'centralauth-editset-badwikis' => 'Jenaj vikioj ne ekzistas: $1.',
+	'centralauth-editset-badwikis' => 'La {{PLURAL:$2|jena vikio|jenaj vikioj}} ne ekzistas: $1.',
 	'centralauth-editset-success' => 'Sukcese ŝanĝiĝis vikiaro.',
 	'centralauth-editset-return' => 'Reiri al ĉefa vido',
 	'right-globalgroupmembership' => 'Redakti membrecon al ĝeneralaj grupoj',
@@ -4096,6 +4099,9 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-rightslog-entry-setnewtype' => 'cambió tipo de «$1» de $2 a $3',
 	'globalgroupmembership' => 'Membresía en grupos globales',
 	'globalgrouppermissions' => 'Gestión de grupo global',
+	'centralauth-globalgroupperms-grouplist' => 'Los suiguientes grupos globales han sido configurados.
+Usted puede ver y editar los permisos asignados a algún grupo.
+Se puede borrar un grupo por medio de quitarle todos los derechos.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Especial:GlobalGroupPermissions/$2|ver/editar]])',
 	'centralauth-existinggroup-legend' => 'Grupos existentes',
 	'centralauth-newgroup-legend' => 'Crear un grupo nuevo',
@@ -4150,6 +4156,17 @@ Renombrarlo causará que el usuario local se separe del global.',
  * @author Jaan513
  */
 $messages['et'] = array(
+	'centralauth-merge-denied' => 'Vabandust, teil puudub sellele lehele ligipääs.',
+	'centralauth-merge-step1-submit' => 'Kinnita sisselogimise informatsioon',
+	'centralauth-merge-step2-submit' => 'Kinnita sisselogimise informatsioon',
+	'centralauth-merge-step3-title' => 'Loo ühiskonto',
+	'centralauth-merge-step3-submit' => 'Ühenda kontod',
+	'centralauth-incomplete' => 'Ühiskonto loomine ei ole lõpetatud!',
+	'centralauth-list-home-title' => 'Koduviki',
+	'centralauth-merge-method-primary' => 'koduviki',
+	'centralauth-merge-method-mail' => 'kinnitatud e-kirjaga',
+	'centralauth-merge-method-password' => 'kinnitatud parooliga',
+	'centralauth-merge-method-new' => 'uus konto',
 	'centralauth-admin-no-unified' => 'Sel kasutajanimel ei ole ühendatud kontot.',
 	'centralauth-admin-delete-title' => 'Kustuta konto',
 	'centralauth-admin-delete-button' => 'Kustuta see konto',
@@ -8610,13 +8627,13 @@ $messages['km'] = array(
 $messages['ko'] = array(
 	'mergeaccount' => '통합 계정으로 로그인',
 	'centralauth-groupname' => '위키미디어 재단',
-	'centralauth-desc' => '위키미디어 재단 위키 사이의 [[Special:MergeAccount|계정 병합]]',
+	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname/ko}}의 위키 사이의 [[Special:MergeAccount|계정 병합]]',
 	'centralauth-mergeaccount-desc' => '통합된 로그인을 위한 [[Special:MergeAccount|여러 계정 합치기]]',
 	'centralauth-merge-denied' => '접근할 권한이 없습니다.',
 	'centralauth-merge-notlogged' => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} 로그인]</span>해 주세요.',
-	'centralauth-merge-welcome' => "'''당신의 계정은 위키미디어의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
+	'centralauth-merge-welcome' => "'''당신의 계정은 {{MediaWiki:Centralauth-groupname/ko}}의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
-계정 옮기기를 선택하면 같은 이름과 암호로 모든 언어의 모든 위키미디어의 프로젝트에 로그인할 수 있습니다. [http://commons.wikimedia.org/ 위키미디어 공용]에 파일올리기 같은 공동 프로젝트에서 쉽게 작업할 수 있고 서로 다른 프로젝트에서 같은 이름을 쓰는 사용자 사이의 혼란이나 갈등을 피할 수 있습니다.
+계정을 합치면, 같은 이름과 암호로 모든 언어의 모든 {{MediaWiki:Centralauth-groupname/ko}}의 프로젝트에 로그인할 수 있습니다.
 
 만약 다른 누군가가 당신의 사용자 이름을 사용하고 있었다면 이것을 막을 수는 없습니다. 하지만 나중에 그 문제를 해소할 동기가 될 수 있습니다.",
 	'centralauth-merge-step1-title' => '계정 통합 시작',
@@ -8688,6 +8705,7 @@ $messages['ko'] = array(
 	'centralauth-admin-lock-button' => '이 계정 잠그기',
 	'centralauth-admin-lock-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
 	'centralauth-admin-unlock-nonexistent' => '오류: 공통 계정 "$1"이 존재하지 않습니다.',
+	'centralauth-admin-hide-title' => '계정 숨기기',
 	'centralauth-admin-hide-description' => '숨겨진 계정은 [[Special:GlobalUsers|공통 계정 목록]]에 나타나지 않습니다.',
 	'centralauth-admin-hide-success' => '공통 계정 "<nowiki>$1</nowiki>"이 성공적으로 숨겨졌습니다.',
 	'centralauth-admin-hide-nonexistent' => '오류: 공통 계정 "$1"이 존재하지 않습니다.',
@@ -9234,7 +9252,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-usergroups' => 'huet déi global Benotzerrechter geännert fir $1 vun $2 op $3',
 	'centralauth-rightslog-entry-groupperms' => "huet d'Grupperechter fir d'Grupp $1 geännert, vun $2 op $3",
 	'centralauth-rightslog-entry-groupperms2' => "huet d'Grupperechter geännert fir $1. Derbäigesat $2; Ewechgeholl $3",
-	'centralauth-rightslog-header' => "An dëser Lëscht stinn Ännerunge vun de globale Rechter, inklusiv d'Ännerunge vun de Membere vu Gruppen an d'Rechter vun de Gruppen.",
+	'centralauth-rightslog-header' => 'An dëser Lëscht stinn Ännerunge vun de globale Benotzergruppen: Memberen an Ännerunge vu Rechter',
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
@@ -11773,10 +11791,9 @@ $messages['pt'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
 	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para aceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
-	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado da Wikimedia.'''
+	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado de {{MediaWiki:Centralauth-groupname}}.'''
 
-Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis da Wikimedia (em todos os projectos e em todos os idiomas disponíveis).
-Isto torna mais fácil trabalhar em projectos partilhados, tal como carregar um ficheiro no [http://commons.wikimedia.org/ Wikimedia Commons], e evita confusões ou conflitos que podem ocorrer quando duas pessoas escolhem o mesmo nome de utilizador em diferentes projectos.
+Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis de {{MediaWiki:Centralauth-groupname}} em todas as línguas disponíveis.
 
 Caso alguém já tenha um nome de utilizador idêntico ao seu em algum outro wiki, tal pessoa não será importunada. No entanto, será possível que dialogue com a mesma ou com um administrador posteriormente.",
 	'centralauth-merge-step1-title' => 'Iniciar a unificação de logins',
@@ -11805,7 +11822,7 @@ A base de dados deve estar corrompida.',
 	'centralauth-merge-home-password' => 'A wiki-residência desta conta (listada a seguir) possui uma senha diferente da que foi fornecida. Forneça a senha da wiki-residência.',
 	'centralauth-complete' => 'Unificação de logins completa!',
 	'centralauth-incomplete' => 'Unificação de logins incompleta!',
-	'centralauth-complete-text' => 'Agora você poderá efectuar login em qualquer wiki da Wikimedia sem ter de criar uma nova conta; o mesmo nome de utilizador e senha funcionarão na Wikipédia, no Wikcionário, no Wikibooks e demais projectos, em todos os idiomas.',
+	'centralauth-complete-text' => 'Agora você poderá efectuar login em qualquer sítio wiki de {{MediaWiki:Centralauth-groupname}} sem ter de criar uma nova conta.',
 	'centralauth-incomplete-text' => 'Uma vez estando o seu login unificado, poderá efectuar login em qualquer wiki da Wikimedia sem ter de criar novo cadastro; o mesmo nome de utilizador e senha funcionarão na Wikipédia, no Wikcionário, no Wikibooks e demais projectos, em todos os idiomas.',
 	'centralauth-not-owner-text' => 'O nome de utilizador "$1" foi automaticamente relacionado ao proprietário da conta em $2.
 
@@ -14044,6 +14061,7 @@ $messages['te'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|మార్చు]])',
 	'centralauth-editgroup-members' => 'సభ్యుల జాబితా:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 అనుమతులు కలిగిన వాడుకరుల జాబితా]]',
+	'centralauth-editgroup-noset' => '(ఏమీలేదు)',
 	'centralauth-editgroup-submit' => 'గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు',
 	'centralauth-editgroup-perms' => 'ఇచ్చిన అనుమతులు:',
 	'centralauth-editgroup-reason' => 'మార్చడానికి కారణం:',
@@ -14052,6 +14070,9 @@ $messages['te'] = array(
 [[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]',
 	'centralauth-globalgrouppermissions-knownwiki' => 'వారికి ఖాతా కలిగిన ఒక వికీని ఎంచుకోండి:',
 	'centralauth-globalgroupmembership-badknownwiki' => "సర్వత్రిక వాడుకరి '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేరు. మీరు హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేదు, గమనించండి!",
+	'centralauth-editset-name' => 'పేరు:',
+	'centralauth-editset-type' => 'రకం:',
+	'centralauth-editset-reason' => 'కారణం:',
 	'right-globalgroupmembership' => 'సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు',
 	'right-centralauth-admin' => 'సార్వత్రిక ఖాతాలను నిర్వహించు',
 	'right-centralauth-merge' => 'వారి ఖాతాలను విలీనం చెయ్యి',
