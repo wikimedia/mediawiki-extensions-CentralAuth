@@ -245,9 +245,7 @@ class CentralAuthPlugin extends AuthPlugin {
 		}
 	}
 	
-	function setUserCallbacks( $user, &$callbacks ) {
-		$central = CentralAuthUser::getInstance( $user );
-		$callbacks['isLocked'] = array( $central, 'isLocked' );
-		$callbacks['isHidden'] = array( $central, 'isHidden' );
+	public function getUserInstance( User &$user ) {
+		return CentralAuthUser::getInstance( $user );
 	}
 }

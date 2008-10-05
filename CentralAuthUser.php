@@ -11,7 +11,7 @@ likely construction types...
 
 */
 
-class CentralAuthUser {
+class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * The username of the current user.
