@@ -1579,7 +1579,9 @@ $messages['avk'] = array(
  * @author Hugo.arg
  */
 $messages['bat-smg'] = array(
+	'mergeaccount' => 'Prisėregėstravėma unifikacėjės statosos',
 	'centralauth-merge-step3-title' => 'Sokortė bendra paskīra',
+	'globalusers' => 'Gluobaliū nauduotuoju sārošos',
 	'centralauth-prefs-complete' => 'Vėsks tvarkuo!',
 );
 
@@ -12297,6 +12299,14 @@ Redenumirea va cauza utilizatorului local detaşarea de la contul global.',
 	'right-centralauth-admin' => 'Administrează conturile globale',
 	'right-centralauth-merge' => 'Unifică conturile sale',
 	'right-globalgrouppermissions' => 'Administrează grupurile globale',
+);
+
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'centralauth-merge-method-primary' => 'casa uicchi',
+	'centralauth-finish-password' => 'Passuord:',
 );
 
 /** Russian (Русский)
