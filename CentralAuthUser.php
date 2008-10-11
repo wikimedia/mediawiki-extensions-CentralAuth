@@ -1018,7 +1018,7 @@ class CentralAuthUser extends AuthPluginUser {
 		global $wgCentralAuthNew2UDPPrefix;
 		if( $wgCentralAuthNew2UDPPrefix ) {
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
-			self::sendToUDP( $wgCentralAuthNew2UDPPrefix, self::getIRCLine( $userpage, $wikiID ) );
+			RecentChange::sendToUDP( $wgCentralAuthNew2UDPPrefix, self::getIRCLine( $userpage, $wikiID ) );
 		}
 	}
 	
