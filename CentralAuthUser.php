@@ -995,8 +995,8 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbw = self::getCentralDB();
 		$dbw->insert( 'localuser',
 			array(
-				'lu_wiki'             => $wikiID,
-				'lu_name'               => $this->mName ,
+				'lu_wiki'               => $wikiID,
+				'lu_name'               => $this->mName,
 				'lu_attached_timestamp' => $dbw->timestamp(),
 				'lu_attached_method'    => $method ),
 			__METHOD__,
@@ -1013,8 +1013,32 @@ class CentralAuthUser extends AuthPluginUser {
 		if( $wikiID == wfWikiID() ) {
 			$this->resetState();
 		}
-		
+
 		$this->invalidateCache();
+		global $wgCentralAuthNew2UDPPrefix;
+		if( $wgCentralAuthNew2UDPPrefix ) {
+			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
+			self::sendToUDP( $wgCentralAuthNew2UDPPrefix, self::getIRCLine( $userpage, $wikiID ) );
+		}
+	}
+	
+	/**
+	 * Generate an IRC line corresponding to user unification/creation
+	 * @param Title $userpage
+	 * @param string $wikiID
+	 * @return string
+	 */
+	protected static function getIRCLine( $userpage, $wikiID ) {
+		$title = RecentChange::cleanupForIRC( $userpage->getPrefixedText() );
+		$wikiID = RecentChange::cleanupForIRC( $wikiID );
+		// FIXME: *HACK* should be getFullURL(), hacked for SSL madness
+		$url = $userpage->getInternalURL();
+		$user = RecentChange::cleanupForIRC( $userpage->getText() );
+		# see http://www.irssi.org/documentation/formats for some colour codes. prefix is \003,
+		# no colour (\003) switches back to the term default
+		$fullString = "\00314[[\00307$title\00314]]\0034@$wikiID\00310 " .
+			"\00302$url\003 \0035*\003 \00303$user\003 \0035*\003\n";
+		return $fullString;
 	}
 	
 	/**

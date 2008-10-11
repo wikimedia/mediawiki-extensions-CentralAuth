@@ -1,6 +1,29 @@
 <?php
 
 /**
+ * Extension credits
+ */
+$wgExtensionCredits['specialpage'][] = array(
+	'name' => 'Central Auth',
+	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
+	'svn-date' => '$LastChangedDate$',
+	'svn-revision' => '$LastChangedRevision$',
+	'author' => 'Brion Vibber',
+	'description'    => 'Merge accounts across a wiki farm',
+	'descriptionmsg' => 'centralauth-desc',
+);
+
+$wgExtensionCredits['specialpage'][] = array(
+	'name'           => 'MergeAccount',
+	'author'         => 'Brion Vibber',
+	'url'            => 'http://meta.wikimedia.org/wiki/Help:Unified_login',
+	'svn-date' => '$LastChangedDate$',
+	'svn-revision' => '$LastChangedRevision$',
+	'description'    => '[[Special:MergeAccount|Merge multiple accounts]] for Single User Login',
+	'descriptionmsg' => 'centralauth-mergeaccount-desc',
+);
+
+/**
  * Database name you keep central auth data in.
  *
  * If this is not on the primary database connection, don't forget
@@ -101,28 +124,7 @@ $wgCentralAuthLoginIcon = false;
  */
 $wgCentralAuthCreateOnView = false;
 
-/**
- * Extension credits
- */
-$wgExtensionCredits['specialpage'][] = array(
-	'name' => 'Central Auth',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
-	'svn-date' => '$LastChangedDate$',
-	'svn-revision' => '$LastChangedRevision$',
-	'author' => 'Brion Vibber',
-	'description'    => 'Merge accounts across a wiki farm',
-	'descriptionmsg' => 'centralauth-desc',
-);
-
-$wgExtensionCredits['specialpage'][] = array(
-	'name'           => 'MergeAccount',
-	'author'         => 'Brion Vibber',
-	'url'            => 'http://meta.wikimedia.org/wiki/Help:Unified_login',
-	'svn-date' => '$LastChangedDate$',
-	'svn-revision' => '$LastChangedRevision$',
-	'description'    => '[[Special:MergeAccount|Merge multiple accounts]] for Single User Login',
-	'descriptionmsg' => 'centralauth-mergeaccount-desc',
-);
+$wgCentralAuthNew2UDPPrefix = '';
 
 /**
  * Initialization of the autoloaders, and special extension pages.
