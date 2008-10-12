@@ -6274,7 +6274,7 @@ Přemjenowanje wuskutkuje, zo lokalny wužiwar so z globalneho wužiwarskeho kon
 	'centralauth-rightslog-entry-newset' => 'wutwori $2 wikijowu sadźbu $1 ze slědowacymi wikijemi: $3',
 	'centralauth-rightslog-entry-setrename' => 'Wikijowa sadźba "$2" do "$1" přemjenowana',
 	'centralauth-rightslog-entry-setnewtype' => 'typ sadźby "$1" z $2 do $3 změnjeny',
-	'centralauth-rightslog-entry-setchange' => 'wikije w "S1" změnjene: přidate: $2; wotstronjene: $3',
+	'centralauth-rightslog-entry-setchange' => 'wikije w "$1" změnjene: přidate: $2; wotstronjene: $3',
 	'autologin' => 'Awtomatiske přizjewjenje',
 	'centralauth-autologin-desc' => 'Tuta specialna strona so jenož internje wot MediaWiki wužiwa.
 Hdyž [[Special:UserLogin|přizjewješ]], centralny přizjewjenski system instruuje twój wobhladowak, zo by tutu stronu z pomocu wobrazowych wotkazow ze wšěch zwjazanych domejnow požadał.
@@ -6317,7 +6317,7 @@ Sy snano spytał, wopačnemu wužiwarjej prawa připokazać!",
 	'centralauth-editset-intro' => 'Slědowace wikijowe sadźby buchu hižo wutworjene. Móžeš někotre z nich sej wobhladać a změnić abo nowu sadźbu wutworić.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|wobhladać/wobdźěłać]])',
 	'centralauth-editset-new' => 'Nowu sadźbu wutworić',
-	'centralauth-editset-notfound' => 'Wikijowa sadźba "4!" njenamakana.',
+	'centralauth-editset-notfound' => 'Wikijowa sadźba "$1" njenamakana.',
 	'centralauth-editset-legend-edit' => 'Wikijowa sadźba "$1" so wobdźěłuje',
 	'centralauth-editset-legend-new' => 'Nowa wikijowa sadźba so wutworja',
 	'centralauth-editset-name' => 'Mjeno:',
