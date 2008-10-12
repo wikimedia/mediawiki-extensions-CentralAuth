@@ -7454,12 +7454,11 @@ $messages['ja'] = array(
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
 	'centralauth-merge-denied' => '申し訳ありませんが、このページへのアクセス権がありません。',
 	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} ログイン]</span>して試してください。',
-	'centralauth-merge-welcome' => "'''あなたのアカウントは、まだ{{MediaWiki:Centralauth-groupname}}統一ログインシステムに移行していません。'''
+	'centralauth-merge-welcome' => "'''あなたのアカウントは、{{MediaWiki:Centralauth-groupname}}の統一ログインシステムにまだ移行していません。'''
 
-このシステムにアカウントを移行すると、ウィキメディアが運営しているの全プロジェクトの全言語版ウィキで、同じユーザ名とパスワードを利用したログインを行うことができます。
-これにより、[http://commons.wikimedia.org/ ウィキメディア・コモンズ]へのアップロードなど{MediaWiki:Centralauth-groupname}}のウィキ間での作業が容易になり、また別の人が別のプロジェクトで同じ名前を使うといった競合や混乱を回避することができます。
+このシステムにアカウントを移行すると、{{MediaWiki:Centralauth-groupname}}の全ウィキ、全言語版で同じ利用者名とパスワードを利用してログインできます。
 
-もし他の誰かが既にあなたのユーザ名を他のサイトで使っていた場合、そのユーザ名を統合することはできません。ただし、後にこの問題をその人や管理者と相談する事で解消することができるかも知れません。",
+もし他の誰かが既にあなたの利用者名を他のサイトで使っていた場合、その利用者名を統合することはできません。ただし、後からこの問題をその人や管理者と相談する事で解消することができるかもしれません。",
 	'centralauth-merge-step1-title' => '統一ログインの開始',
 	'centralauth-merge-step1-detail' => 'あなたのアカウントのパスワードを入力してください。
 パスワードとメールアドレスが他のWikiと一致するかどうか確認を行います。
@@ -7930,6 +7929,7 @@ $messages['ka'] = array(
 	'centralauth-admin-yes' => 'ჰო',
 	'centralauth-admin-no' => 'არა',
 	'centralauth-admin-reason' => 'მიზეზი:',
+	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
 	'centralauth-editset-reason' => 'მიზეზი:',
 );
@@ -9728,6 +9728,8 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
  */
 $messages['mk'] = array(
 	'centralauth-groupname' => 'Викимедија Фондацијата',
+	'centralauth-login-progress' => 'Ваше најавување во проектите на {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Ваше одјавување од другите проекти на {{MediaWiki:Centralauth-groupname}}:',
 );
 
 /** Malayalam (മലയാളം)
@@ -12307,6 +12309,8 @@ Redenumirea va cauza utilizatorului local detaşarea de la contul global.',
 $messages['roa-tara'] = array(
 	'centralauth-merge-method-primary' => 'casa uicchi',
 	'centralauth-finish-password' => 'Passuord:',
+	'centralauth-admin-yes' => 'si',
+	'centralauth-admin-no' => 'no',
 );
 
 /** Russian (Русский)
