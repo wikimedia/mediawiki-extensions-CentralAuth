@@ -1015,10 +1015,11 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->invalidateCache();
-		global $wgCentralAuthNew2UDPPrefix;
-		if( $wgCentralAuthNew2UDPPrefix ) {
+		global $wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix;
+		if( $wgCentralAuthUDPAddress ) {
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
-			RecentChange::sendToUDP( $wgCentralAuthNew2UDPPrefix, self::getIRCLine( $userpage, $wikiID ) );
+			RecentChange::sendToUDP( self::getIRCLine( $userpage, $wikiID ), 
+				$wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix );
 		}
 	}
 	

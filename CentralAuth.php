@@ -124,6 +124,8 @@ $wgCentralAuthLoginIcon = false;
  */
 $wgCentralAuthCreateOnView = false;
 
+// UDP logging stuff
+$wgCentralAuthUDPAddress = false;
 $wgCentralAuthNew2UDPPrefix = '';
 
 /**
