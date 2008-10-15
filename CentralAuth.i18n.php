@@ -2513,11 +2513,11 @@ $messages['ca'] = array(
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Fusiona comptes]] per a la unificació d'usuaris",
 	'centralauth-merge-denied' => 'Ho sentim, no teniu permisos per a accedir a aquesta pàgina.',
 	'centralauth-merge-notlogged' => 'Si us plau, <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} entreu amb un compte registrat]</span> per a comprovar si els vostres comptes s\'han pogut fusionar adequadament.',
-	'centralauth-merge-welcome' => "'''El vostre compte d'usuari encara no ha migrat al sistema unificat de comptes de Wikimedia.'''
+	'centralauth-merge-welcome' => "'''El vostre compte d'usuari encara no ha migrat al sistema unificat de comptes de {{MediaWiki:Centralauth-groupname}}.'''
 
-Si decidiu migrar els vostres comptes, podreu fer servir el mateix nom d'usuari i contrasenya en els wikis de tots els projectes de Wikimedia en qualsevol idioma. Això fa que la feina que involucra diferents projectes, com la càrrega d'imatges a [http://commons.wikimedia.org/ Wikimedia Commons] sigui molt més fàcil, i impedeix la confusió o conflicte que pugui resultar del fet que persones diferents hagin escollit el mateix nom d'usuari en diferents projectes.
+Si decidiu migrar els vostres comptes, podreu fer servir el mateix nom d'usuari i contrasenya en els wikis de tots els projectes de {{MediaWiki:Centralauth-groupname}} en qualsevol idioma. Això fa que la feina que involucra diferents projectes, com la càrrega d'imatges a [http://commons.wikimedia.org/ Wikimedia Commons] sigui molt més fàcil, i impedeix la confusió o conflicte que pugui resultar del fet que persones diferents hagin escollit el mateix nom d'usuari en diferents projectes.
 
-Si algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest procés no el perjudicarà, i permetrà que es puguin resoldre aquest casos posteriorment amb la seva coŀlaboració o la d'un administrador.",
+Si algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest procés no el perjudicarà, i permetrà que es pugui resoldre aquest cas posteriorment amb la seva coŀlaboració o la d'un administrador.",
 	'centralauth-merge-step1-title' => 'Comença la unificació de comptes',
 	'centralauth-merge-step1-detail' => 'Si us plau, entreu la contrasenya del vostre compte. Es comprovaran les vostres contrasenyes i adreces de correu electrònic per a verificar que els vostres comptes coincideixin. No es desarà cap canvi fins que no confirmeu que les dades semblin correctes.',
 	'centralauth-merge-step1-submit' => 'Informació per a confirmar els comptes',
@@ -2539,6 +2539,7 @@ S'ha determinat que un altre wiki com al wiki principal del vostre compte; segui
 	'centralauth-merge-step3-submit' => 'Unifica comptes',
 	'centralauth-merge-no-accounts' => "No s'han trobat comptes amb el seu nom a la base de dades de comptes central!
 La base de dades podria estar espenyada.",
+	'centralauth-merge-home-password' => 'La viqui base per a aquest usuari (indicada al dessota) te una contrasenya diferent a la què heu entrat. Si us plau, entreu la contrasenya de la vostra viquipèdia base.',
 	'centralauth-complete' => "La unificació dels vostres comptes s'ha completat!",
 	'centralauth-incomplete' => "No s'ha completat la unificació dels comptes.",
 	'centralauth-complete-text' => "A partir d'ara podreu entrar a qualsevol wiki de {{MediaWiki:Centralauth-groupname}} sense haver de crear un compte nou.",
@@ -4101,9 +4102,9 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-rightslog-entry-setnewtype' => 'cambió tipo de «$1» de $2 a $3',
 	'globalgroupmembership' => 'Membresía en grupos globales',
 	'globalgrouppermissions' => 'Gestión de grupo global',
-	'centralauth-globalgroupperms-grouplist' => 'Los suiguientes grupos globales han sido configurados.
-Usted puede ver y editar los permisos asignados a algún grupo.
-Se puede borrar un grupo por medio de quitarle todos los derechos.',
+	'centralauth-globalgroupperms-grouplist' => 'Los siguientes grupos globales han sido configurados.
+Puedes ver y editar los permisos asignados a cualquier grupo.
+Se puede borrar un grupo quitándole todos los derechos.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Especial:GlobalGroupPermissions/$2|ver/editar]])',
 	'centralauth-existinggroup-legend' => 'Grupos existentes',
 	'centralauth-newgroup-legend' => 'Crear un grupo nuevo',
@@ -4455,6 +4456,7 @@ $messages['fa'] = array(
  * @author Crt
  * @author Jaakonam
  * @author Nike
+ * @author Silvonen
  * @author Str4nd
  */
 $messages['fi'] = array(
@@ -4699,7 +4701,7 @@ Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 	'centralauth-editset-nowikis' => 'Wikejä ei ole määritetty.',
 	'centralauth-editset-nouse' => '(ei mitään)',
 	'centralauth-editset-usage' => 'Käytetty ryhmissä:',
-	'centralauth-editset-badwikis' => 'Seuraavia wikejä ei ole: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|Seuraavaa wikiä|Seuraavia wikejä}} ei ole: $1.',
 	'centralauth-editset-success' => 'Wikijoukko muutettu onnistuneesti.',
 	'centralauth-editset-return' => 'Palaa päänäkymään',
 	'right-globalgroupmembership' => 'Muokata globaalien ryhmien jäsenyyksiä',
@@ -9249,7 +9251,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.',
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
-	'centralauth-login-progress' => 'Dir gouft an dës {{MediaWiki:Centralauth-groupname}}-Projeten ageloggt:',
+	'centralauth-login-progress' => 'Dir gouft an dës Projeten vun {{MediaWiki:Centralauth-groupname}} ageloggt:',
 	'centralauth-logout-progress' => 'Iech aus anere Projeten vun {{MediaWiki:Centralauth-groupname}} ausloggen:',
 	'centralauth-log-name' => 'Lëscht vun de globale Benotzerkonten',
 	'centralauth-log-header' => 'An dëser Lëscht stinn all Operatioune déi global Benotzerkonten bereffen: Läsche, Spären a Ohiewe vu Spären.',
@@ -9267,8 +9269,8 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
-Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatiounen fir dës Sàit vun alle verlinkten Domainen mat Hellëf vu billerlinken unzefroen.
-Dir hutt dës Sàit ugefrot ouni identificatiouns Informatiounen unzeginn, dofir mecht dës Säit näischt.',
+Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatiounen fir dës Sàit vun alle verlinkten Domainen mat Hellëf vu Billerlinken unzefroen.
+Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
 	'centralauth-globalgroupperms-grouplist' => "Dës global Gruppe goufe configuréiert.
@@ -10396,9 +10398,23 @@ $messages['mt'] = array(
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
+	'centralauth-merge-step3-submit' => 'Вейтьсэндямс совамо таркатнень',
+	'centralauth-merge-method-empty' => 'путовкст арасть',
+	'centralauth-merge-method-new' => 'од совамо тарка',
+	'centralauth-merge-method-login' => 'кемекстык совамот',
 	'centralauth-finish-password' => 'Совамо валось:',
 	'centralauth-admin-username' => 'Совицянь лем:',
+	'centralauth-admin-info-id' => 'Теицянь ID:',
+	'centralauth-admin-info-hidden' => 'Кекшезь:',
+	'centralauth-admin-yes' => 'истя',
+	'centralauth-admin-no' => 'арась',
+	'centralauth-admin-lock-button' => 'Пекстамс те совамо тарканть панжомас',
+	'centralauth-admin-hide-button' => 'Кекшемс те совамо тарканть',
 	'centralauth-admin-reason' => 'Тувталось:',
+	'centralauth-prefs-unattached' => 'Апак кемекста',
+	'centralauth-editgroup-subtitle' => 'Витнят-петнят $1',
+	'centralauth-editgroup-name' => 'Куронть лемесь:',
+	'centralauth-editgroup-members' => 'Куронть ломантне:',
 	'centralauth-editset-name' => 'Лемезэ:',
 	'centralauth-editset-reason' => 'Тувталось:',
 );
