@@ -1018,7 +1018,7 @@ class CentralAuthUser extends AuthPluginUser {
 		global $wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix;
 		if( $wgCentralAuthUDPAddress ) {
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
-			RecentChange::sendToUDP( self::getIRCLine( $userpage, $wikiID ), 
+			UDP::sendToUDP( self::getIRCLine( $userpage, $wikiID ), 
 				$wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix );
 		}
 	}
@@ -1030,11 +1030,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string
 	 */
 	protected static function getIRCLine( $userpage, $wikiID ) {
-		$title = RecentChange::cleanupForIRC( $userpage->getPrefixedText() );
-		$wikiID = RecentChange::cleanupForIRC( $wikiID );
+		$title = UDP::cleanupForIRC( $userpage->getPrefixedText() );
+		$wikiID = UDP::cleanupForIRC( $wikiID );
 		// FIXME: *HACK* should be getFullURL(), hacked for SSL madness
 		$url = $userpage->getInternalURL();
-		$user = RecentChange::cleanupForIRC( $userpage->getText() );
+		$user = UDP::cleanupForIRC( $userpage->getText() );
 		# see http://www.irssi.org/documentation/formats for some colour codes. prefix is \003,
 		# no colour (\003) switches back to the term default
 		$fullString = "\00314[[\00307$title\00314]]\0034@$wikiID\00310 " .
