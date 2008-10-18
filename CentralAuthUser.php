@@ -1177,7 +1177,6 @@ class CentralAuthUser extends AuthPluginUser {
 
 	function addLocalName( $wikiID ) {
 		$dbw = self::getCentralDB();
-		$dbw->begin();
 		$this->lazyImportLocalNames();
 		$dbw->insert( 'localnames',
 			array(
@@ -1185,19 +1184,16 @@ class CentralAuthUser extends AuthPluginUser {
 				'ln_name' => $this->mName ),
 			__METHOD__,
 			array( 'IGNORE' ) );
-		$dbw->commit();
 	}
 
 	function removeLocalName( $wikiID ) {
 		$dbw = self::getCentralDB();
-		$dbw->begin();
 		$this->lazyImportLocalNames();
 		$dbw->delete( 'localnames',
 			array(
 				'ln_wiki' => $wikiID,
 				'ln_name' => $this->mName ),
 			__METHOD__ );
-		$dbw->commit();
 	}
 
 	function lazyImportLocalNames() {
