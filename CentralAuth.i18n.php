@@ -387,14 +387,6 @@ $messages['rtm'] = array(
 	'centralauth-admin-username' => 'Asa:',
 );
 
-/** Eastern Mari (Олык Марий)
- * @author Сай
- */
-$messages['mhr'] = array(
-	'centralauth-finish-password' => 'Шолыпмут:',
-	'centralauth-admin-username' => 'Пайдаланышын лӱмжӧ:',
-);
-
 /** Niuean (ko e vagahau Niuē)
  * @author Jose77
  */
@@ -450,6 +442,7 @@ $messages['af'] = array(
 	'centralauth-admin-no' => 'nee',
 	'centralauth-admin-unattached' => 'Onaangehegde rekeninge',
 	'centralauth-admin-list-localwiki' => 'Lokale wiki',
+	'centralauth-admin-list-attached-on' => 'Aangesluit op',
 	'centralauth-admin-list-method' => 'Metode',
 	'centralauth-admin-delete-title' => 'Skrap rekening',
 	'centralauth-admin-delete-button' => 'Verwyder die gebruiker',
@@ -3024,6 +3017,7 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editset-usage' => 'Použité ve skupinách:',
 	'centralauth-editset-badwikis' => 'Následující wiki {{PLURAL:$2|neexistuje|neexistují}}: $1.',
 	'centralauth-editset-success' => 'Seznam wiki úspěšně změněn.',
+	'centralauth-editset-return' => 'Zpět do hlavního pohledu',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
 	'right-centralauth-admin' => 'Spravování globálních účtů',
 	'right-centralauth-merge' => 'Slučování jejich účtů',
@@ -3372,7 +3366,7 @@ Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutz
  */
 $messages['dsb'] = array(
 	'mergeaccount' => 'Status zjadnośenja wužywarskich kontow',
-	'centralauth-desc' => 'Konta pó wikijach Wikimedia Foundation [[Special:MergeAccount|zjadnośiś]]',
+	'centralauth-desc' => 'Konta pó wikijach {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zjadnośiś]]',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zjadnośujo někotare konta]] za pśizjawjenja jadnotliwego wužywarja',
 	'centralauth-merge-denied' => 'Wódaj, ale njamaš pśistupne pšawo za toś ten bok.',
 	'centralauth-merge-notlogged' => 'Pšosym <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} pśizjaw se]</span>, aby pśeglědał, lěc twóje konta su dopołnje zjadnośone.',
@@ -3393,10 +3387,8 @@ Doněnta njejo se nic na twójich kontach změniło.',
 	'centralauth-merge-home-password' => 'Domowniski wiki za toś to konto (glědaj dołojce) ma druge gronidło nježli to, kótarež sy zapódał. Zapódaj pšosym gronidło za domowniski wiki.',
 	'centralauth-complete' => 'Pśizjawjeńske zjadnośenje dopołne!',
 	'centralauth-incomplete' => 'Pśizjawjeńske zjadnośenje njejo dopołne!',
-	'centralauth-complete-text' => 'Móžoś se něnto do kuždego wikijego sedła Wikimedije bźez napóranja nowego konta pśizjawiś;
-to same wužywarske mě a gronidło buźotej na Wikipediji, Wikisłowniku, Wikiknigłach a jich sotšowych projektach we wšych rěcach płaśiwej.',
-	'centralauth-incomplete-text' => 'Gaž wašo pśizjawjenje jo zjadnośone, móžoš se do kuždego wikijowego sedła Wikimedije bźez napóranja nowego konta pśizjawiś;
-to same wužywarske mě a gronidło buźotej we Wikipediji, Wikisłowniku, Wikiknigłach a jich sotšowych projektach we wšych rěcach płaśiwej.',
+	'centralauth-complete-text' => 'Móžoś se něnto do kuždego wikijego sedła {{MediaWiki:Centralauth-groupname}} bźez napóranja nowego konta pśizjawiś.',
+	'centralauth-incomplete-text' => 'Gaž wašo pśizjawjenje jo zjadnośone, móžoš se do kuždego wikijowego sedła {{MediaWiki:Centralauth-groupname}} bźez napóranja nowego konta pśizjawiś',
 	'centralauth-not-owner-text' => 'Wužywarske mě "$1" jo se awtomatiski wobsejźarjeju konta na $2 pśipokazało.
 
 Jolic tebje słuša, móžoš zjadnośeński proces jadnorje pśez zapódaśe głownego gronidła za toś to konto dokóńcyś:',
@@ -3500,8 +3492,8 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-prefs-manage' => 'Twójo globalne konto zastojaś',
 	'centralauth-invalid-wiki' => 'Njejo taka wikijowa datowa banka: $1',
 	'centralauth-account-exists' => 'Konto njedajo se napóraś: wužywarske mě, kótarež se pomina, jo južo do systema jadnotnego pśizjawjenja pśewzete.',
-	'centralauth-login-progress' => 'Awotmatiske pśizjawjenje do drugich projektow Wikimedije:',
-	'centralauth-logout-progress' => 'Awtomatiske wótzjawjenje z drugich projektow Wikimedije:',
+	'centralauth-login-progress' => 'Pśizjawijoš se do projektow {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Wótzjawijoš se z drugich projektow {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Protokol globalnego konta',
 	'centralauth-log-entry-delete' => 'globalne konto "<nowiki>$1</nowiki>" wulašowane',
 	'centralauth-log-entry-lock' => 'globalne konto "<nowiki>$1</nowiki>" zastajone',
@@ -3515,7 +3507,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-rightslog-entry-groupperms2' => 'kupkowe pšawa za $1 změnjone. $2 pśidany; $3 wótwónoźony',
 	'globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach',
 	'globalgrouppermissions' => 'Zastojanje globalnych kupkow',
-	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|Pšawa se woglědaś a wobźěłaś]])',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|woglědaś/wobźěłaś]])',
 	'centralauth-existinggroup-legend' => 'Eksistujuce kupki',
 	'centralauth-newgroup-legend' => 'Nowu kupku napóraś',
 	'centralauth-globalgroupperms-newgroupname' => 'Nowe kupkowe mě:',
@@ -3535,7 +3527,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-editgroup-success' => 'Kupkowe pšawa změnjone',
 	'centralauth-editgroup-success-text' => 'Sy kupkowe pšawa za kupku $1 wuspěšnje změnił.
 [[Special:GlobalGroupPermissions|Slědk ku kupkowemu zastojanjeju]]',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Wubjeŕ wiki, na kótarychž maju konto:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wubjeŕ wiki, na kótaremž maju konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalny wužywaŕ '''$1''' njejo aktiwny na wikiju, kótaryž sy pódał ('' $2 '').
 Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach wobźěłaś',
@@ -5336,11 +5328,16 @@ $messages['got'] = array(
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author AndreasJS
  * @author LeighvsOptimvsMaximvs
+ * @author Omnipaedista
  */
 $messages['grc'] = array(
+	'centralauth-merge-dryrun-or' => "'''ἢ'''",
+	'centralauth-finish-title' => 'Τελεῖν τὴν συγχώνευσιν',
 	'centralauth-finish-password' => 'Σύνθημα:',
 	'centralauth-finish-login' => 'συνδεῖσθαι',
 	'centralauth-finish-send-confirmation' => 'Πέμπειν ἠλεκτρονικῇ ἐπιστολῇ τὸ σύνθημα',
+	'centralauth-admin-reason' => 'Αἰτία:',
+	'centralauth-editset-reason' => 'Αἰτία:',
 );
 
 /** Manx (Gaelg)
@@ -6106,10 +6103,12 @@ $messages['hsb'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zjednoćenje wjacorych kontow]] za jednotne přizjewjenje',
 	'centralauth-merge-denied' => 'Wodaj, ale nimaš dowolnosć za přistup na tutu stronu.',
 	'centralauth-merge-notlogged' => 'Prošu <span class="plainlinks"> [{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.',
-	'centralauth-merge-welcome' => "'''Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja Wikimedije přiwzało.'''
+	'centralauth-merge-welcome' => "'''Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja {{MediaWiki:Centralauth-groupname}} přeměstniło.'''
 
-Hdyž so rozsudźiš twoje konta tam składować, budźe móžno ze samsnym wužiwarskim mjenom a hesłom we wšěch projektach Wikimedije dźěłać.
-To zjednori runočasne dźěło we wjacorych wikijach kaž nahraće datajow do [http://commons.wikimedia.org/ Wikimedia Commons] a wobeńdźe konflikty a mylenja hdyž chce něchto druhi samsne přimjeno kaž ty w druhich projektach wužiwać.",
+Hdyž so rozsudźiš twoje konta přeměstnić, budźe móžno smasne wužiwarske mjeno a hesło we wšěch 
+wikijach {{MediaWiki:Centralauth-groupname}} we wšěch k dispoziciji stejacych rěčach wužiwać.
+
+Jeli něchtó druhi twoje wužiwarske mjeno na druhim sydle wužiwa, njebudźe to mylić. ale da ći móžnosć z tym wužiwarjom abo administratorom tón problem pozdźišo rozrisać.",
 	'centralauth-merge-step1-title' => 'Zjednoćenje přizjewjenja započeć',
 	'centralauth-merge-step1-detail' => 'Zapodaj tu prošu swoje hesło.
 Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich wikijach, zo by so  zwěsćiło, hač su jenake.
@@ -6136,8 +6135,8 @@ Druhi wiki bu jako domizniske konto za twoje wužiwarske mjeno postajeny; slědu
 	'centralauth-merge-home-password' => 'Domizniski wiki za tute konto (hlej deleka) ma druhe hesło hač to, kotrež sy zapodał. Zapodaj prošu hesło za domizniski wiki.',
 	'centralauth-complete' => 'Wužiwarske konta su so dospołnje zjednoćili.',
 	'centralauth-incomplete' => 'Wužiwarske konta <b>njejsu</b> so dospołnje zjednoćili!',
-	'centralauth-complete-text' => 'Móžeš so nětko we wšěch projektach Wikimedije přizjewić bjez toho, zo by tam nowe konto wutworić dyrbjał; samsne přimjeno a samsne hesło stej   płaćiwej za Wikipedija, Wikisłownik, Wikiknihi a wšě sotrowske projekty we wšěch rěčach.',
-	'centralauth-incomplete-text' => 'Tak ruče kaž su so twoje wužiwarske konta zjednoćili, móžeš so we wšěch projektach Wikimedije přizjewić bjez toho, zo by tam nowe konto wutworić dyrbjał; samsne přimjeno a samsne hesło stej   płaćiwej za Wikipedija, Wikisłownik, Wikiknihi a wšě sotrowske projekty we wšěch rěčach.',
+	'centralauth-complete-text' => 'Móžeš so nětko do někajkeho wikijoweho sydła na {MediaWiki:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
+	'centralauth-incomplete-text' => 'Tak ruče kaž waše přizjewjenje je so zjednoćiło, móžeš so do někajkeho wikijoweho sydła na {{MediaWiki:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
 	'centralauth-not-owner-text' => 'Wužiwarske mjeno "$1" bu awtomatisce swójstwownikej wužiwarskeho konta $2 připokazane. Jeli je to twoje wužiwarske mjeno, móžeš zjednoćenje wužiwarskich kontow přez zapodaće hłowneho hesła za tute wužiwarske konto dokónčić:',
 	'centralauth-blocked-text' => 'Twój domizniski wiki (hlej deleka) je přećiwo wobdźěłowanju blokowany. Skontaktujće administratora w tutym wikiju, zo by jeho blokowanje zběhnył. Mjeztym zo je blokowany, njemóžeš swoje konta zjednoćić.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Jenož demonstraciski modus</div><br clear='all'/>",
@@ -8699,13 +8698,14 @@ $messages['ko'] = array(
 	'centralauth-admin-permission' => '스튜어드만이 다른 사용자의 계정을 병합할 수 있습니다.',
 	'centralauth-admin-no-unified' => '이런 이름의 통합 계정이 없습니다.',
 	'centralauth-admin-info-id' => '사용자 ID:',
+	'centralauth-admin-info-registered' => '계정 등록:',
 	'centralauth-admin-yes' => '예',
 	'centralauth-admin-no' => '아니오',
 	'centralauth-admin-attached' => '완전히 합친 계정',
 	'centralauth-admin-unmerge-success' => '$1개의 계정이 성공적으로 병합 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
 	'centralauth-admin-delete-button' => '이 계정 지우기',
-	'centralauth-admin-delete-nonexistent' => '오류: "$1"의 공통 계정이 존재하지 않습니다.',
+	'centralauth-admin-delete-nonexistent' => '오류: 공통 계정 "$1"이 존재하지 않습니다.',
 	'centralauth-admin-lock-title' => '계정 잠그기',
 	'centralauth-admin-lock-button' => '이 계정 잠그기',
 	'centralauth-admin-lock-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
@@ -8745,6 +8745,7 @@ $messages['ko'] = array(
 	'centralauth-log-entry-lockandhide' => '공통 계정 "<nowiki>$1</nowiki>"을 잠그고 숨김',
 	'centralauth-rightslog-name' => '공통 권한 기록',
 	'centralauth-rightslog-entry-usergroups' => '$1의 공통 계정 권한을 $2에서 $3으로 변경',
+	'centralauth-rightslog-header' => '이 기록은 공통 권한의 변경 기록을 포함하고 있습니다.',
 	'autologin' => '자동 로그인',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
 	'centralauth-globalgroupperms-newgroupname' => '새 그룹 이름:',
@@ -9654,14 +9655,14 @@ tas pats naudotojo vardas ir slaptažodis veiks Vikipedijoje, Vikižodyne, Vikik
  */
 $messages['lv'] = array(
 	'mergeaccount' => 'Kontu apvienošanas statuss',
-	'centralauth-desc' => "[[Special:MergeAccount|Apvieno kontus]] ''Wikimedia Foundation'' projektos",
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Apvieno kontus]] {{MediaWiki:Centralauth-groupname}} projektos',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Apvieno vairākus kontus]] lai izveidotu globālo kontu (lietotājvārdu)',
 	'centralauth-merge-denied' => 'Atvaino, bet tev nav pieejas šai lapai.',
 	'centralauth-merge-notlogged' => 'Lūdzu  <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} ielogojies]</span> lai pārbaudītu, vai tavi konti ir pilnībā apvienoti.',
-	'centralauth-merge-welcome' => "'''Tavs lietotāja konts vēl nav ticis pārvietots uz Wikimēdijas apvienoto kontu sistēmu.'''
+	'centralauth-merge-welcome' => "'''Tavs lietotāja konts vēl nav ticis pārvietots uz {{MediaWiki:Centralauth-groupname}} apvienoto kontu sistēmu.'''
 
-Ja tu izvēlies pārvietot (migrēt) savus kontus, tu varēsi lietot vienu un to pašu lietotāja vārdu un paroli lai ieietu iekšā (ielogotos) visos Wikimēdijas projektos visās valodās.
-Šādā veidā ir ērtāk vienlaicīgi rīkoties ar vairākiem projektiem, piem., augšuplādēšana ''[http://commons.wikimedia.org/ commonos]'', un šādā veidā ir mazāks juceklis no tā, ka divi dažādi cilvēki paņem dažādos projektos vienādus lietotājvārdus.
+Ja tu izvēlies pārvietot (migrēt) savus kontus, tu varēsi lietot vienu un to pašu lietotāja vārdu un paroli lai ieietu iekšā (ielogotos) visos {{MediaWiki:Centralauth-groupname}} projektos visās valodās.
 
 Ja kāds cits jau ir paņēmis tavu lietotājvārdu kādā citā vietnē, šitas viņus neietekmēs. Šo jautājumu tad vēlāk varēs risināt sazinoties ar attiecīgo lietotāju vai ar administratoru (drīzāk birokrātu) attiecīgajā vietnē.",
 	'centralauth-merge-step1-title' => 'Sākt kontu apvienošanu',
@@ -9670,16 +9671,17 @@ Tava parole un reģistrētā e-pasta adrese tiks salīdzinātas ar kontiem citos
 Kamēr tu neapstiprināsi, ka viss izskatās OK, netiks veiktas nekādas izmaiņas.',
 	'centralauth-merge-step1-submit' => "Apstiprināt lietotājvārda (''login'') informāciju",
 	'centralauth-merge-step2-title' => 'Apstiprināt vēl kādus kontus',
+	'centralauth-merge-dryrun-complete' => 'Visus esošos kontus var apvienot automātiski!
+
+Pagaidām vēl tavos kontos nav izdarītas nekādas izmaiņas.',
 	'centralauth-merge-step3-title' => 'Izveidot apvienoto kontu',
 	'centralauth-merge-step3-submit' => 'Apvienot kontus',
 	'centralauth-merge-no-accounts' => 'Centrālajā kontu tabulā netika atrasts neviens konts ar tavu vārdu!
 Tas nozīmē, ka datubāze ir bojāta.',
 	'centralauth-complete' => 'Kontu apvienošana pabeigta!',
 	'centralauth-incomplete' => 'Kontu apvienošana nav pabeigta!',
-	'centralauth-complete-text' => "Tu tagad vari ielogoties jebkurā ''Wikimēdijas'' projektā neveidojot jaunu kontu;
-tas pats lietotāja vards un parole darbosies Vikipēdijā, Vikivārdnīcā, ''Wikibooks'' un citos projektos visās valodās.",
-	'centralauth-incomplete-text' => "Tad, kad tavi konti būs apvienoti, tu varēsi ielogoties jebkurā ''Wikimēdijas'' projektā neveidojot jaunu kontu;
-tas pats lietotāja vārds un parole darbosies Vikipēdijā, Vikivārdnīcā, ''Wikibooks'' un citos projektos visās valodās.",
+	'centralauth-complete-text' => 'Tu tagad vari ielogoties (ieiet iekšā) jebkurā {{MediaWiki:Centralauth-groupname}} projektā neveidojot jaunu kontu.',
+	'centralauth-incomplete-text' => 'Tad, kad tavi konti būs apvienoti, tu varēsi ielogoties jebkurā {{MediaWiki:Centralauth-groupname}} projektā neveidojot jaunu kontu.',
 	'centralauth-not-owner-text' => 'Lietotāja vārds "$1" tika automātiski piesaistīts konta $2 īpašniekam.
 
 Ja tas esi tu, tad tu var pabeigt kontu apvienošanas procesu, vienkārši šeit ierakstot savu $2 konta paroli:',
@@ -9718,11 +9720,19 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-prefs-manage' => 'Pārvaldīt savu globālo kontu',
 	'centralauth-renameuser-reserved' => 'Lietotājvārds $2 ir rezervēts globālam kontam.',
 	'centralauth-account-exists' => 'Nevar izveidot kontu: šāds lietotāja vārds jau eksistē apvienoto kontu sistēmā (eksistā šāds globālais lietotājvārds).',
-	'centralauth-login-progress' => 'Ielogojam tevi citos Wikimēdijas projektos:',
-	'centralauth-logout-progress' => 'Izlogojam tevi no citiem Wikimēdijas projektiem:',
+	'centralauth-login-progress' => 'Ielogojam tevi citos {{MediaWiki:Centralauth-groupname}} projektos:',
+	'centralauth-logout-progress' => 'Izlogojam tevi no citiem {{MediaWiki:Centralauth-groupname}} projektiem:',
 	'centralauth-log-name' => 'Globālo kontu reģistrs',
 	'centralauth-log-header' => 'Šis reģistrs satur operācijas ar globālajiem kontiem: dzēšanas, slēgšanas un atslēgšanas.',
 	'centralauth-editgroup-reason' => 'Izmaiņu iemesls:',
+);
+
+/** Eastern Mari (Олык Марий)
+ * @author Сай
+ */
+$messages['mhr'] = array(
+	'centralauth-finish-password' => 'Шолыпмут:',
+	'centralauth-admin-username' => 'Пайдаланышын лӱмжӧ:',
 );
 
 /** Macedonian (Македонски)
@@ -10722,25 +10732,25 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-admin-bad-input' => 'Onjuiste samenvoegselectie',
 	'centralauth-admin-none-selected' => 'Er zijn geen gebruikers geselecteerd om te wijzigen',
 	'centralauth-admin-already-unmerged' => '$1 overgeslagen. Is al niet meer samengevoegd',
-	'centralauth-admin-unmerge-success' => 'Het ongedaan maken van het samenvoegen is geslaagd voor $1 {{PLURAL:$1|gebruiker|gebruikers}}',
+	'centralauth-admin-unmerge-success' => 'Samenvoegen is ongedaan gemaakt voor $1 {{PLURAL:$1|gebruiker|gebruikers}}',
 	'centralauth-admin-delete-title' => 'Verwijder gebruiker',
 	'centralauth-admin-delete-description' => 'Met het verwijderen van de globale gebruiker worden alle globale voorkeuren verwijderd, alle lokale gebruikers ontkoppeld, en de globale gebruiker komt beschikbaar voor een andere gebruiker.
 Alle lokale gebruikers blijven bestaan.
 De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden zoals die waren voor het samenvoegen.',
 	'centralauth-admin-delete-button' => 'Verwijder deze gebruiker',
-	'centralauth-admin-delete-success' => 'Het verwijderen van de globale gebruiker "<nowiki>$1</nowiki>" is geslaagd',
+	'centralauth-admin-delete-success' => 'De globale gebruiker "<nowiki>$1</nowiki>" is verwijderd',
 	'centralauth-admin-nonexistent' => 'Er is geen globale gebruiker voor "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
 	'centralauth-token-mismatch' => 'Vanwege verlies van de sessiegegevens kon uw verzoek niet verwerkt worden.',
 	'centralauth-admin-lock-title' => 'Gebruiker afsluiten',
 	'centralauth-admin-lock-description' => 'Afgesloten gebruikers kunnen niet meer gebruikt worden om bij een wiki aan te melden.',
 	'centralauth-admin-lock-button' => 'Deze gebruiker afsluiten',
-	'centralauth-admin-lock-success' => 'Het afsluiten van de globale gebruiker "<nowiki>$1</nowiki>" is geslaagd',
+	'centralauth-admin-lock-success' => 'De globale gebruiker "<nowiki>$1</nowiki>" is afgesloten',
 	'centralauth-admin-lock-nonexistent' => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
 	'centralauth-admin-unlock-title' => 'Gebruiker vrijgeven',
 	'centralauth-admin-unlock-description' => 'Vrijgegeven gebruikers kunnen weer gebruikt worden.',
 	'centralauth-admin-unlock-button' => 'Deze gebruiker vrijgeven',
-	'centralauth-admin-unlock-success' => 'Het vrijgeven van de globale gebruiker "<nowiki>$1</nowiki>" is geslaagd',
+	'centralauth-admin-unlock-success' => 'De globale gebruiker "<nowiki>$1</nowiki>" is vrijgegeven',
 	'centralauth-admin-unlock-nonexistent' => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
 	'centralauth-admin-hide-title' => 'Gebruiker verbergen',
 	'centralauth-admin-hide-description' => 'Verborgen gebruikers worden niet weergegeven in [[Special:GlobalUsers|Globale gebruikers]].',
