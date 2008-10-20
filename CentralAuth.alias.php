@@ -63,6 +63,17 @@ $aliases['de'] = array(
 	'GlobalUsers' => array( 'Globale Benutzerliste' ),
 );
 
+/** Persian (فارسی) */
+$aliases['fa'] = array(
+	'CentralAuth' => array( 'ورود_متمرکز' ),
+	'AutoLogin' => array( 'ورود_خودکار' ),
+	'MergeAccount' => array( 'ادغام_حساب' ),
+	'GlobalGroupMembership' => array( 'اختیارات_سراسری_کاربر' ),
+	'GlobalGroupPermissions' => array( 'اختیارات_سراسری_گروه' ),
+	'EditWikiSets' => array( 'ویرایش_مجموعه‌های_ویکی' ),
+	'GlobalUsers' => array( 'کاربران_سراسری' ),
+);
+
 /** Finnish (Suomi) */
 $aliases['fi'] = array(
 	'CentralAuth' => array( 'Keskitetty varmennus' ),
@@ -86,6 +97,7 @@ $aliases['fr'] = array(
  */
 $aliases['he'] = array(
 	'CentralAuth' => array( 'חשבון_משתמש_מאוחד' ),
+	'AutoLogin' => array( 'התחברות_אוטומטית' ),
 	'MergeAccount' => array( 'מיזוג_חשבונות' ),
 	'GlobalGroupMembership' => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
@@ -113,6 +125,12 @@ $aliases['hu'] = array(
 	'GlobalUsers' => array( 'Felhasználók globális listája' ),
 );
 
+/** Khmer (ភាសាខ្មែរ) */
+$aliases['km'] = array(
+	'AutoLogin' => array( 'ឡុកអ៊ីនដោយស្វ័យប្រវត្តិ' ),
+	'MergeAccount' => array( 'ច្របាច់បញ្ចូលគណនី' ),
+);
+
 /** Korean (한국어) */
 $aliases['ko'] = array(
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
@@ -129,6 +147,12 @@ $aliases['lb'] = array(
 	'GlobalGroupPermissions' => array( 'Global Grupperechter' ),
 	'EditWikiSets' => array( 'Wiki-Seten änneren' ),
 	'GlobalUsers' => array( 'Global Benotzer' ),
+);
+
+/** Macedonian (Македонски) */
+$aliases['mk'] = array(
+	'MergeAccount' => array( 'СпојувањеНаСметки' ),
+	'GlobalUsers' => array( 'ГлобалниКорисници' ),
 );
 
 /** Malay (Bahasa Melayu) */
@@ -176,6 +200,16 @@ $aliases['no'] = array(
 	'GlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
 	'EditWikiSets' => array( 'Rediger wikisett' ),
 	'GlobalUsers' => array( 'Globale brukere' ),
+);
+
+/** Occitan (Occitan) */
+$aliases['oc'] = array(
+	'AutoLogin' => array( 'Login Automatic', 'LoginAutomatic', 'LoginAuto' ),
+	'MergeAccount' => array( 'Fusionar lo compte', 'FusionarLoCompte' ),
+	'GlobalGroupMembership' => array( 'Permissions globalas', 'PermissionGlobalas' ),
+	'GlobalGroupPermissions' => array( 'Dreches dels gropes globals', 'DrechesDelsGropesGlobals' ),
+	'EditWikiSets' => array( 'Modificar los sets de wikis', 'ModificarLosSetsDeWiki' ),
+	'GlobalUsers' => array( 'Utilizaires globals', 'UtilizairesGlobals' ),
 );
 
 /** Polish (Polski) */
