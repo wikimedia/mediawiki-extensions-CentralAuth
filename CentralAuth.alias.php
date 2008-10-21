@@ -97,7 +97,7 @@ $aliases['fr'] = array(
  */
 $aliases['he'] = array(
 	'CentralAuth' => array( 'חשבון_משתמש_מאוחד' ),
-	'AutoLogin' => array( 'התחברות_אוטומטית' ),
+	'AutoLogin' => array( 'כניסה_אוטומטית' ),
 	'MergeAccount' => array( 'מיזוג_חשבונות' ),
 	'GlobalGroupMembership' => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
