@@ -6135,7 +6135,7 @@ Druhi wiki bu jako domizniske konto za twoje wužiwarske mjeno postajeny; slědu
 	'centralauth-merge-home-password' => 'Domizniski wiki za tute konto (hlej deleka) ma druhe hesło hač to, kotrež sy zapodał. Zapodaj prošu hesło za domizniski wiki.',
 	'centralauth-complete' => 'Wužiwarske konta su so dospołnje zjednoćili.',
 	'centralauth-incomplete' => 'Wužiwarske konta <b>njejsu</b> so dospołnje zjednoćili!',
-	'centralauth-complete-text' => 'Móžeš so nětko do někajkeho wikijoweho sydła na {MediaWiki:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
+	'centralauth-complete-text' => 'Móžeš so nětko do někajkeho wikijoweho sydła na {{MediaWiki:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
 	'centralauth-incomplete-text' => 'Tak ruče kaž waše přizjewjenje je so zjednoćiło, móžeš so do někajkeho wikijoweho sydła na {{MediaWiki:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
 	'centralauth-not-owner-text' => 'Wužiwarske mjeno "$1" bu awtomatisce swójstwownikej wužiwarskeho konta $2 připokazane. Jeli je to twoje wužiwarske mjeno, móžeš zjednoćenje wužiwarskich kontow přez zapodaće hłowneho hesła za tute wužiwarske konto dokónčić:',
 	'centralauth-blocked-text' => 'Twój domizniski wiki (hlej deleka) je přećiwo wobdźěłowanju blokowany. Skontaktujće administratora w tutym wikiju, zo by jeho blokowanje zběhnył. Mjeztym zo je blokowany, njemóžeš swoje konta zjednoćić.',
@@ -14406,6 +14406,7 @@ $messages['ts'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author NickK
  */
 $messages['uk'] = array(
 	'mergeaccount' => "Стан об'єднання облікових записів",
@@ -14446,8 +14447,8 @@ $messages['uk'] = array(
 Будь ласка, введіть пароль для домашньої вікі.',
 	'centralauth-complete' => "Об'єднання облікових записів завершене!",
 	'centralauth-incomplete' => "Об'єднання облікових записів не завершене!",
-	'centralauth-complete-text' => "Тепер ви можете авторизуватися на будь-якому сайті {{MediaWiki:Centralauth-groupname}} без створення нового облікового запису. Одні й ті самі ім'я користувача і пароль будуть працювати у Вікіпедії, Вікісловнику, Вікіпідручнику та інших проектах на всіх мовах.",
-	'centralauth-incomplete-text' => "Як тільки ваші облікові записи будуть об'єднані в рамках єдиного облікового запису, ви зможете авторизуватися в будь-яких проектах {{MediaWiki:Centralauth-groupname}}, не створюючи нових облікових записів. Одні й ті самі ім'я користувача і пароль будуть працювати у Вікіпедії, Вікісловнику, Вікіпідручнику та інших проектах на всіх мовах.",
+	'centralauth-complete-text' => "Тепер ви можете авторизуватися на будь-якому сайті {{MediaWiki:Centralauth-groupname}} без створення нового облікового запису. Одні й ті самі ім'я користувача і пароль будуть працювати у Вікіпедії, Вікісловнику, Вікіпідручнику та інших проектах всіма мовами.",
+	'centralauth-incomplete-text' => "Як тільки ваші облікові записи будуть об'єднані в рамках єдиного облікового запису, ви зможете авторизуватися в будь-яких проектах {{MediaWiki:Centralauth-groupname}}, не створюючи нових облікових записів. Одні й ті самі ім'я користувача і пароль будуть працювати у Вікіпедії, Вікісловнику, Вікіпідручнику та інших проектах всіма мовами.",
 	'centralauth-not-owner-text' => "Ім'я «$1» було автоматично передане власнику облікового запису «$2».
 
 Якщо це ви, то ви можете завершити процес об'єднання облікових записів, увівши тут основний пароль для цього облікового запису:",
@@ -14476,12 +14477,12 @@ $messages['uk'] = array(
 	'centralauth-finish-password' => 'Пароль:',
 	'centralauth-finish-login' => 'Увійти',
 	'centralauth-finish-send-confirmation' => 'Надіслати пароль електронною поштою',
-	'centralauth-finish-problems' => 'Якщо виникли проблеми, і ви не є власником зазначених облікових записів [[meta:Help:Unified login problems|зверніться за довідкою]]...',
+	'centralauth-finish-problems' => 'Якщо виникли проблеми, і ви не є власником зазначених облікових записів, [[meta:Help:Unified login problems|зверніться по довідку]]...',
 	'centralauth-finish-noconfirms' => 'Нема облікових записів, які могли б бути підтверджені цим паролем.',
 	'centralauth-finish-incomplete' => "Кілька облікових записів були об'єднані з використанням цього пароля.
 Інші облікові записи ще не підтверджені.",
 	'centralauth-merge-attempt' => "'''Перевірка введеного пароля для решти необ'єднаних облікових записів...'''",
-	'centralauth-attach-list-attached' => 'Єдиний обліковий запис «$1» включає наступні облікові записи:',
+	'centralauth-attach-list-attached' => 'Єдиний обліковий запис «$1» включає такі облікові записи:',
 	'centralauth-attach-title' => 'Підтвердження облікового запису',
 	'centralauth-attach-text' => 'Цей обліковий запис ще не переміщений до системи єдиного облікового запису. Якщо глобальний обліковий запис також належить вам, ви можете приєднати цей акаунт, зазначивши пароль глобального облікового запису:',
 	'centralauth-attach-submit' => 'Перенести обліковий запис',
