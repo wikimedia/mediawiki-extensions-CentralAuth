@@ -2754,9 +2754,9 @@ $messages['crh-latn'] = array(
 	'centralauth-prefs-status' => 'Global esap alı:',
 	'centralauth-prefs-not-managed' => 'Global esap qullanılmamaqta',
 	'centralauth-prefs-unattached' => 'Tasdıqlanmağan',
-	'centralauth-prefs-complete' => 'Er şey yahşı!',
+	'centralauth-prefs-complete' => 'Er şey yerinde!',
 	'centralauth-prefs-migration' => 'Köçmekte',
-	'centralauth-prefs-count-attached' => 'Esabıñız $1 prоyektte aktivdir.',
+	'centralauth-prefs-count-attached' => 'Esabıñız $1 prоyektte faaldir.',
 	'centralauth-prefs-count-unattached' => 'Adıñıznı taşığan tasdıqlanmağan esaplar $1 prоyektte qalıp tura.',
 	'centralauth-prefs-manage' => 'Global esapnı idare et',
 );
@@ -2768,9 +2768,9 @@ $messages['crh-cyrl'] = array(
 	'centralauth-prefs-status' => 'Глобаль эсап алы:',
 	'centralauth-prefs-not-managed' => 'Глобаль эсап къулланылмамакъта',
 	'centralauth-prefs-unattached' => 'Тасдыкъланмагъан',
-	'centralauth-prefs-complete' => 'Эр шей яхшы!',
+	'centralauth-prefs-complete' => 'Эр шей еринде!',
 	'centralauth-prefs-migration' => 'Кочьмекте',
-	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 проектте активдир.',
+	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 проектте фаальдир.',
 	'centralauth-prefs-count-unattached' => 'Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 проектте къалып тура.',
 	'centralauth-prefs-manage' => 'Глобаль эсапны идаре эт',
 );
@@ -3930,10 +3930,9 @@ $messages['es'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona múltiples cuentas]] para Ingreso de Usuario Unico (SUL)',
 	'centralauth-merge-denied' => 'Lo siento, no tienes permiso para acceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} ingresa]</span> para revisar que tus cuentas hayan sido completamente fusionadas.',
-	'centralauth-merge-welcome' => "'''Tu cuenta de usuario no ha sido migrada al sistema de cuentas unificadas de Wikimedia.'''
+	'centralauth-merge-welcome' => "'''Tu cuenta de usuario no ha sido migrada al sistema de cuentas unificadas de {{MediaWiki:Centralauth-groupname}}.'''
 
-Si decides migrar tus cuentas, podrás usar el mismo nombre de usuario y contraseña para ingresar a todas las wikis de los proyectos Wikimedia en todos los idiomas.
-Esto facilitará el trabajo en proyectos compartidos, tales como subir contenido a [http://commons.wikimedia.org/ Wikimedia Commons], y evitará la confusión o conflicto que resulte de que dos personas escojan el mismo nombre de usuario en proyectos diferentes.
+Si decides migrar tus cuentas, podrás usar el mismo nombre de usuario y contraseña para ingresar a todas las wikis de los proyectos {{MediaWiki:Centralauth-groupname}} en todos los idiomas.
 
 Si alguien ya ha tomado tu nombre de usuario en otro sitio, esto no les afectará, pero podrás llegar a un arreglo posterior con ellos o con un administrador.",
 	'centralauth-merge-step1-title' => 'Inicia la unificación de cuentas',
@@ -3961,10 +3960,8 @@ Otra wiki se designó como la cuenta principal para tu nombre de usuario. Sigue 
 	'centralauth-merge-step3-submit' => 'Unificar cuentas',
 	'centralauth-complete' => '¡Se completó la unificación de cuentas!',
 	'centralauth-incomplete' => '¡No se completó la unificación de cuentas!',
-	'centralauth-complete-text' => 'Ahora puedes ingresar a cualquier wiki de Wikimedia sin crear una cuenta nueva;
-El mismo usuario y contraseña funcionarán en Wikipedia, Wikcionario, Wikilibros y sus proyectos hermanos en todos los idiomas.',
-	'centralauth-incomplete-text' => 'Una vez que tus cuentas hayan sido unificadas, podrás ingresar a cualquier wiki de Wikimedia sin crear una cuenta nueva;
-El mismo usuario y contraseña funcionarán en Wikipedia, Wikcionario, Wikilibros y sus proyectos hermanos en todos los idiomas.',
+	'centralauth-complete-text' => 'Ahora puedes ingresar a cualquier wiki de {{MediaWiki:Centralauth-groupname}} sin crear una cuenta nueva;',
+	'centralauth-incomplete-text' => 'Una vez que tus cuentas hayan sido unificadas, podrás ingresar a cualquier wiki de {{MediaWiki:Centralauth-groupname}} sin crear una cuenta nueva',
 	'centralauth-not-owner-text' => 'El usuario "$1" ha sido asignado de forma automática al dueño de la cuenta en $2.
 
 Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí la contraseña maestra para esa cuenta:',
@@ -4078,8 +4075,8 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-renameuser-reserved' => 'El usuario $2 está reservado en una cuenta global.',
 	'centralauth-account-exists' => 'No se puede crear la cuenta: el nombre de usuario solicitado ya existe en el sistema unificado de autenticación.',
-	'centralauth-login-progress' => 'Iniciando tu sesión en otros proyectos de Wikimedia:',
-	'centralauth-logout-progress' => 'Cerrando tu sesión en otros proyectos de Wikimedia:',
+	'centralauth-login-progress' => 'Iniciando tu sesión en otros proyectos de {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Cerrando tu sesión en otros proyectos de {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Registro de administración de cuentas globales',
 	'centralauth-log-header' => 'Este registro contiene las operaciones bajo cuentas globales: borrados, protecciones y desprotecciones.',
 	'centralauth-log-entry-delete' => 'borró cuenta global «<nowiki>$1</nowiki>»',
@@ -8746,8 +8743,8 @@ $messages['ko'] = array(
 	'centralauth-prefs-count-attached' => '당신의 계정은 $1개의 프로젝트에서 활동하고 있습니다.',
 	'centralauth-prefs-manage' => '공통 계정 관리',
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
-	'centralauth-login-progress' => '{{MediaWiki:Centralauth-groupname/ko}}의 다른 프로젝트에도 로그인합니다:',
-	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname/ko}}의 다른 프로젝트에서도 로그아웃합니다.',
+	'centralauth-login-progress' => '{{MediaWiki:Centralauth-groupname}}의 다른 프로젝트에도 로그인합니다:',
+	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}}의 다른 프로젝트에서도 로그아웃합니다.',
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-entry-delete' => '"<nowiki>$1</nowiki>"의 공통 계정을 삭제함',
 	'centralauth-log-entry-lock' => '통합 계정 "<nowiki>$1</nowiki>"를 잠금',
@@ -9749,6 +9746,8 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 $messages['mhr'] = array(
 	'centralauth-finish-password' => 'Шолыпмут:',
 	'centralauth-admin-username' => 'Пайдаланышын лӱмжӧ:',
+	'centralauth-admin-reason' => 'Амал:',
+	'centralauth-editset-reason' => 'Амал:',
 );
 
 /** Macedonian (Македонски)
@@ -15255,6 +15254,7 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
  */
 $messages['yi'] = array(
 	'centralauth-merge-method-empty' => 'קיין בײַשטײַערונגען',
+	'centralauth-admin-info-hidden' => 'באַהאַלטן:',
 );
 
 /** Yue (粵語)
