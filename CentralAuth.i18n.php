@@ -4614,7 +4614,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
 	'centralauth-login-progress' => 'Olet kirjautunut sisään Wikimedian projekteihin:',
 	'centralauth-logout-progress' => 'Olet kirjautunut ulos Wikimedian projekteista:',
-	'centralauth-log-name' => 'Yhdistettyjen käyttäjätunnusten käsittelyloki',
+	'centralauth-log-name' => 'Yhdistettyjen tunnusten käsittelyloki',
 	'centralauth-log-header' => 'Tässä lokissa on yhdistettyjen käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.',
 	'centralauth-log-entry-delete' => 'poisti yhdistetyn käyttäjätunnuksen <nowiki>$1</nowiki>',
 	'centralauth-log-entry-lock' => 'lukitsi yhdistetyn käyttäjätunnuksen <nowiki>$1</nowiki>',
@@ -7933,6 +7933,7 @@ $messages['ka'] = array(
 	'centralauth-admin-reason' => 'მიზეზი:',
 	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
+	'centralauth-editset-name' => 'სახელი:',
 	'centralauth-editset-reason' => 'მიზეზი:',
 );
 
@@ -9204,8 +9205,11 @@ Wann de globale Benotzerkont ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-list-localwiki' => 'Lokal Wiki',
 	'centralauth-admin-list-attached-on' => 'Verbonn mat',
 	'centralauth-admin-list-method' => 'Method',
+	'centralauth-admin-unmerge' => 'Gewielte Benotzerkonten trennen',
 	'centralauth-admin-merge' => 'Déi ausgewielten zesummeféieren',
+	'centralauth-admin-bad-input' => 'Ongëlteg Auswiel fir zesummenzeleeën',
 	'centralauth-admin-none-selected' => "Et goufe keng Benotzerkonten ausgewielt fir z'änneren.",
+	'centralauth-admin-already-unmerged' => '$1 gëtt iwwersprong, den ass scho getrennt',
 	'centralauth-admin-delete-title' => 'Kont läschen',
 	'centralauth-admin-delete-description' => "Wann dir de globale Benotzerkont läscht da ginn all global Astellunge geläscht, all lokal Benotzerkonten ginn nees onofhängeng vuneneen an de Numm vum globale Benotzerkont ka vun engem anere Benotzer genotzt ginn.
 all lokal Benotzerkonte besti weider.
