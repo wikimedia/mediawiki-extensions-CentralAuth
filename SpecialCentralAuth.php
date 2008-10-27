@@ -245,7 +245,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'registered' => $wgLang->timeanddate( $reg ) . " ($age)",
 				'locked' => $globalUser->isLocked() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ),
 				'hidden' => $globalUser->isHidden() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ) );
-			$out = '<ul>';
+			$out = '<ul id="mw-centralauth-info">';
 			foreach( $attribs as $tag => $data ) {
 				$out .= Xml::element( 'li', array(), wfMsg( "centralauth-admin-info-$tag" ) . ' ' . $data );
 			}
@@ -273,7 +273,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function listRemainder( $list ) {
 		ksort( $list );
-		$s = '<ul>';
+		$s = '<ul id="mw-centralauth-unattached">';
 		foreach ( $list as $row ) {
 			$s .= '<li>' . $this->foreignUserLink( $row['wiki'] ) . "</li>\n";
 		}
@@ -288,7 +288,8 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'form',
 				array(
 					'method' => 'post',
-					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ) ) ) .
+					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
+					'id' => 'mw-centralauth-merged' ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
 			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
 			'<table>' .
@@ -359,7 +360,8 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::element( 'h2', array(), wfMsg( "centralauth-admin-{$action}-title" ) ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
-				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ) ) ) .
+				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
+				'id' => "mw-centralauth-$action" ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
 			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
 			wfMsgExt( "centralauth-admin-{$action}-description", 'parse' ) .
