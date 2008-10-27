@@ -20,6 +20,16 @@ $aliases['en'] = array(
 	'GlobalUsers'            => array( 'GlobalUsers' ),
 );
 
+/** Test (site admin only) (Test (site admin only)) */
+$aliases['test'] = array(
+	'CentralAuth' => array( 'a1' ),
+	'AutoLogin' => array( '1a' ),
+	'MergeAccount' => array( 'aa' ),
+	'GlobalGroupMembership' => array( 'AA' ),
+	'GlobalGroupPermissions' => array( 'aA' ),
+	'EditWikiSets' => array( 'Aa' ),
+);
+
 /** Arabic (العربية)
  * @author Meno25
  */
@@ -44,6 +54,11 @@ $aliases['arz'] = array(
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
 	'EditWikiSets' => array( 'تعديل_مجموعات_الويكى' ),
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
+);
+
+/** Bosnian (Bosanski) */
+$aliases['bs'] = array(
+	'MergeAccount' => array( 'UjediniRacune' ),
 );
 
 /** Catalan (Català) */

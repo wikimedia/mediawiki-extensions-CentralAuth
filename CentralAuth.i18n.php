@@ -9210,6 +9210,7 @@ Wann de globale Benotzerkont ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-bad-input' => 'Ongëlteg Auswiel fir zesummenzeleeën',
 	'centralauth-admin-none-selected' => "Et goufe keng Benotzerkonten ausgewielt fir z'änneren.",
 	'centralauth-admin-already-unmerged' => '$1 gëtt iwwersprong, den ass scho getrennt',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|Benotzerkont gouf|Benotzerkonte goufe}} getrennt',
 	'centralauth-admin-delete-title' => 'Kont läschen',
 	'centralauth-admin-delete-description' => "Wann dir de globale Benotzerkont läscht da ginn all global Astellunge geläscht, all lokal Benotzerkonten ginn nees onofhängeng vuneneen an de Numm vum globale Benotzerkont ka vun engem anere Benotzer genotzt ginn.
 all lokal Benotzerkonte besti weider.
