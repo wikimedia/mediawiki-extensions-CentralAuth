@@ -157,11 +157,11 @@ $aliases['mk'] = array(
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'MergeAccount' => array( 'Gabungkan_akaun' ),
-	'GlobalGroupMembership' => array( 'Hak_kumpulan_sejagat' ),
-	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
-	'EditWikiSets' => array( 'Ubah_set_wiki' ),
-	'GlobalUsers' => array( 'Pengguna_sejagat' ),
+	'MergeAccount' => array( 'Gabungkan akaun' ),
+	'GlobalGroupMembership' => array( 'Hak kumpulan sejagat' ),
+	'GlobalGroupPermissions' => array( 'Keizinan kumpulan sejagat' ),
+	'EditWikiSets' => array( 'Ubah set wiki' ),
+	'GlobalUsers' => array( 'Pengguna sejagat' ),
 );
 
 /** Erzya (Эрзянь) */
