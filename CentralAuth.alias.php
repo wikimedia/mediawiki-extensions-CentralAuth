@@ -140,6 +140,14 @@ $aliases['hu'] = array(
 	'GlobalUsers' => array( 'Felhasználók globális listája' ),
 );
 
+/** Japanese (日本語) */
+$aliases['ja'] = array(
+	'AutoLogin' => array( '自動ログイン' ),
+	'MergeAccount' => array( 'アカウント統合' ),
+	'GlobalGroupMembership' => array( 'グローバル利用者権限' ),
+	'GlobalUsers' => array( 'グローバル利用者' ),
+);
+
 /** Khmer (ភាសាខ្មែរ) */
 $aliases['km'] = array(
 	'AutoLogin' => array( 'ឡុកអ៊ីនដោយស្វ័យប្រវត្តិ' ),

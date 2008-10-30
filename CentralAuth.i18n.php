@@ -2492,6 +2492,13 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'centralauth-finish-login' => 'Prijava',
+);
+
 /** Catalan (Català)
  * @author Aleator
  * @author Jordi Roqué
@@ -9133,6 +9140,9 @@ Wann dës Benotzerkonten iech gehéieren, da kënnt dir dat confirméieren an de
 
 Bis elo sinn nach keng Ännerungen un äre Benotzerkonte gemaach ginn.',
 	'centralauth-merge-dryrun-or' => "'''oder'''",
+	'centralauth-merge-dryrun-home' => "De Migratiounssystem konnt net confirméieren datt Dir de Besëtzer vun dem Heemechts-Wiki-Benotzerkont sidd.
+
+Eng aner Wiki gouf als Heemechts-Wiki fir äre Benotzernumm ermëttelt; klickt op de Link hei ënnedrënnera loggt Iech do an fir d'Migratioun vun ärem Benotzerkont ofzeschléissen.",
 	'centralauth-merge-step3-title' => 'Globale Benotzerkont uleeën',
 	'centralauth-merge-step3-detail' => 'Dir kënnt elo e globale Benotzerkont opmaachen, de fir dës Wikien zielt:',
 	'centralauth-merge-step3-submit' => 'Benotzerkonten zesummeleeën',
