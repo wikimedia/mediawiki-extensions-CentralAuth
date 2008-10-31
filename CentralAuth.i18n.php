@@ -2497,6 +2497,8 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
  */
 $messages['bs'] = array(
 	'centralauth-finish-login' => 'Prijava',
+	'centralauth-admin-username' => 'Korisničko ime:',
+	'centralauth-admin-yes' => 'da',
 );
 
 /** Catalan (Català)
