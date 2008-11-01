@@ -5370,9 +5370,11 @@ $messages['gv'] = array(
 );
 
 /** Hawaiian (Hawai`i)
+ * @author Kalani
  * @author Singularity
  */
 $messages['haw'] = array(
+	'centralauth-groupname' => 'ke Kahua Wikimedia',
 	'centralauth-admin-reason' => 'Kumu:',
 );
 
@@ -8765,6 +8767,7 @@ $messages['ko'] = array(
 	'centralauth-rightslog-name' => '공통 권한 기록',
 	'centralauth-rightslog-entry-usergroups' => '$1의 공통 계정 권한을 $2에서 $3으로 변경',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 변경 기록을 포함하고 있습니다.',
+	'centralauth-rightslog-entry-setrename' => '위키 설정 "$2"의 이름을 "$1"로 변경함',
 	'centralauth-rightslog-entry-setnewtype' => '위키 설정 "$1"의 유형을 $2에서 $3으로 변경',
 	'autologin' => '자동 로그인',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
@@ -11526,6 +11529,7 @@ $messages['pdt'] = array(
 /** Polish (Polski)
  * @author Beau
  * @author Derbeth
+ * @author Equadus
  * @author Herr Kriss
  * @author Jwitos
  * @author Leinad
@@ -11742,6 +11746,7 @@ Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak o
 [[Special:GlobalGroupPermissions|Powrót do zarządzania grupą]]',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wybierz wiki, na której ma konto',
 	'centralauth-globalgroupmembership-badknownwiki' => "Konto uniwersalne '''$1''' nie jest aktywne na wybranej przez Ciebie wiki ('' $2 ''). Być może próbujesz nadać uprawnienia niewłaściwemu użytkownikowi!",
+	'centralauth-editset-name' => 'Nazwa:',
 	'centralauth-editset-reason' => 'Powód:',
 	'right-globalgroupmembership' => 'Zmiana przynależności do grup globalnych',
 	'right-centralauth-admin' => 'Zarządzanie kontami uniwersalnymi',
