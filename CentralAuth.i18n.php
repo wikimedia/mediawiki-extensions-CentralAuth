@@ -2496,6 +2496,7 @@ $messages['bs'] = array(
 	'centralauth-finish-login' => 'Prijava',
 	'centralauth-admin-username' => 'Korisničko ime:',
 	'centralauth-admin-yes' => 'da',
+	'centralauth-editset-name' => 'Naziv:',
 );
 
 /** Catalan (Català)
