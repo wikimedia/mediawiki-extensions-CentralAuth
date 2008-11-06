@@ -2493,6 +2493,10 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
  * @author CERminator
  */
 $messages['bs'] = array(
+	'centralauth-merge-dryrun-complete' => 'Svi postojeći računi će biti automatski spojeni!
+
+Zasad se Vaši računi nisu mijenjali.',
+	'centralauth-finish-password' => 'Šifra:',
 	'centralauth-finish-login' => 'Prijava',
 	'centralauth-admin-username' => 'Korisničko ime:',
 	'centralauth-admin-yes' => 'da',
@@ -8537,8 +8541,10 @@ $messages['km'] = array(
 	'centralauth-merge-step2-title' => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
 	'centralauth-merge-step2-submit' => 'បញ្ជាក់ទទួលស្គាល់ពត៌មាននៃការឡុកអ៊ីន',
 	'centralauth-merge-dryrun-or' => "'''ឬ'''",
+	'centralauth-merge-step3-title' => 'បង្កើត​គណនីរួមគ្នា',
 	'centralauth-merge-step3-submit' => 'បញ្ចូលគណនីរួមគ្នា',
 	'centralauth-complete-text' => 'ឥលូវអ្នកអាចឡុកអ៊ីនចូលទៅក្នុងគ្រប់វិបសាយរបស់{{MediaWiki:Centralauth-groupname}}ដោយមិនចាំបាច់បង្កើតគណនីថ្មីទេ។',
+	'centralauth-error-locked' => 'អ្នក​មិនអាច​ធ្វើ​ការកែប្រែ​បាន​ទេ​ពីព្រោះ​គណនី​របស់អ្នក​ត្រូវបាន​គេ​ចាក់សោ​ហើយ។',
 	'centralauth-list-home-title' => 'វិគីទំព័រដើម',
 	'centralauth-foreign-link' => 'អ្នកប្រើប្រាស់ឈ្មោះ $1 នៅលើ $2',
 	'centralauth-merge-method-empty' => 'គ្មានការរួមចំនែក',
@@ -8606,6 +8612,7 @@ $messages['km'] = array(
 	'centralauth-rightslog-entry-groupperms2' => 'បានប្តូរក្រុមសមាជិកភាពសំរាប់ $1។ បានបន្ថែម $2 និងដកហូត $3',
 	'centralauth-rightslog-entry-setnewtype' => 'បានប្តូរប្រភេទនៃ"$1"ពី$2ទៅ$3',
 	'centralauth-rightslog-entry-setchange' => 'បានប្តុរវិគីក្នុង"$1": បានបន្ថែម: $2; បានដកចេញ: $3',
+	'autologin' => 'ឡុកអ៊ីន​ដោយស្វ័យប្រវត្តិ',
 	'globalgroupmembership' => 'សមាជិកភាពក្នុងក្រុមជាសាកល',
 	'globalgrouppermissions' => 'ការគ្រប់គ្រងក្រុមជាសាកល',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|មើលនិងកែប្រែក្រុមសមាជិកភាព]])',
@@ -8618,8 +8625,11 @@ $messages['km'] = array(
 	'centralauth-editgroup-display-edit' => '$2([[MediaWiki:Group-$1|កែប្រែ]])',
 	'centralauth-editgroup-member-edit' => '$2([[MediaWiki:Group-$1-member|កែប្រែ]])',
 	'centralauth-editgroup-members' => 'បញ្ជីសមាជិក៖',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|បញ្ជី​អ្នកប្រើប្រាស់​ដែល​មានសិទ្ធិ​ជា$2]]',
 	'centralauth-editgroup-noset' => '(ទទេ)',
+	'centralauth-editgroup-submit' => 'រក្សារទុកបំលាស់ប្តូរចំពោះក្រុមសមាជិកភាព',
 	'centralauth-editgroup-reason' => 'មូលហេតុនៃការផ្លាស់ប្តូរ៖',
+	'centralauth-editgroup-success' => 'ក្រុមសមាជិកភាព​បានផ្លាស់ប្តូរហើយ',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|កែប្រែ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'វិគីដែលពួកគេមានគណនី៖',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|មើល/កែប្រែ]])',

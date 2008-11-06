@@ -59,6 +59,9 @@ $aliases['arz'] = array(
 /** Bosnian (Bosanski) */
 $aliases['bs'] = array(
 	'MergeAccount' => array( 'UjediniRacune' ),
+	'GlobalGroupMembership' => array( 'GlobalnaKorisnicnaPrava' ),
+	'GlobalGroupPermissions' => array( 'GlobalneDozvoleGrupa' ),
+	'GlobalUsers' => array( 'GlobalniKorisnici' ),
 );
 
 /** Catalan (Català) */
