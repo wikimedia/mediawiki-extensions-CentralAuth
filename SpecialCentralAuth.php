@@ -193,7 +193,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function showUsernameForm() {
 		global $wgOut, $wgScript;
-		$wgOut->addHtml(
+		$wgOut->addHTML(
 			Xml::openElement( 'form', array(
 				'method' => 'get',
 				'action' => $wgScript ) ) .
@@ -250,14 +250,14 @@ class SpecialCentralAuth extends SpecialPage {
 				$out .= Xml::element( 'li', array(), wfMsg( "centralauth-admin-info-$tag" ) . ' ' . $data );
 			}
 			$out .= '</ul>';
-			$wgOut->addHtml( $out );
+			$wgOut->addHTML( $out );
 
 			$wgOut->addWikiText( '<h2>' . wfMsg( 'centralauth-admin-attached' ) . '</h2>' );
-			$wgOut->addHtml( $this->listMerged( $merged ) );
+			$wgOut->addHTML( $this->listMerged( $merged ) );
 
 			$wgOut->addWikiText( '<h2>' . wfMsg( 'centralauth-admin-unattached' ) . '</h2>' );
 			if( $remainder ) {
-				$wgOut->addHtml( $this->listRemainder( $remainder ) );
+				$wgOut->addHTML( $this->listRemainder( $remainder ) );
 			} else {
 				$wgOut->addWikiText( wfMsg( 'centralauth-admin-no-unattached' ) );
 			}
@@ -356,7 +356,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function showActionForm( $action ) {
 		global $wgOut, $wgUser;
-		$wgOut->addHtml(
+		$wgOut->addHTML(
 			Xml::element( 'h2', array(), wfMsg( "centralauth-admin-{$action}-title" ) ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',

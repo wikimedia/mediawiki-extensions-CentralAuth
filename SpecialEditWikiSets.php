@@ -73,7 +73,7 @@ class SpecialEditWikiSets extends SpecialPage
 		$sk = $wgUser->getSkin();
 
 		$legend = wfMsg( 'centralauth-editset-legend' );
-		$wgOut->addHtml( "<fieldset><legend>{$legend}</legend>" );
+		$wgOut->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		if( $msg )
 			$wgOut->addHTML( $msg );
 		$wgOut->addWikiMsg( 'centralauth-editset-intro' );
@@ -89,7 +89,7 @@ class SpecialEditWikiSets extends SpecialPage
 		$newlink = $sk->makeLinkObj( $target, wfMsgHtml( 'centralauth-editset-new' ) );
 		$wgOut->addHTML( "<li>{$newlink}</li>" );
 
-		$wgOut->addHtml( '</ul></fieldset>' );
+		$wgOut->addHTML( '</ul></fieldset>' );
 	}
 
 	function buildSetView( $subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null ) {

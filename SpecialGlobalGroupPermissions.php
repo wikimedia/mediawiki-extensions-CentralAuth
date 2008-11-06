@@ -79,7 +79,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$html = Xml::openElement( 'fieldset' );
 		$html .= Xml::element( 'legend', null, wfMsg( 'centralauth-existinggroup-legend' ) );
 		
-		$wgOut->addHtml( $html );
+		$wgOut->addHTML( $html );
 
 		if (count($groups)) {
 			$wgOut->addWikiMsg( 'centralauth-globalgroupperms-grouplist' );
@@ -94,7 +94,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 			$wgOut->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
 		}
 
-		$wgOut->addHtml( Xml::closeElement( 'ul' ) . Xml::closeElement( 'fieldset' ) );
+		$wgOut->addHTML( Xml::closeElement( 'ul' ) . Xml::closeElement( 'fieldset' ) );
 
 		// "Create a group" prompt
 		$html = Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'centralauth-newgroup-legend' ) );
@@ -108,7 +108,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$html .= Xml::closeElement( 'form' );
 		$html .= Xml::closeElement( 'fieldset' );
 		
-		$wgOut->addHtml( $html );
+		$wgOut->addHTML( $html );
 	}
 	
 	function buildGroupView( $group ) {
@@ -136,7 +136,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$html .= Xml::closeElement( 'form' );
 		$html .= Xml::closeElement( 'fieldset' );
 		
-		$wgOut->addHtml( $html );
+		$wgOut->addHTML( $html );
 		
 		$this->showLogFragment( $group, $wgOut );
 	}
@@ -277,7 +277,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 	
 	protected function showLogFragment( $group, $output ) {
 		$title = SpecialPage::getTitleFor( 'GlobalUsers', $group );
-		$output->addHtml( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
+		$output->addHTML( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $title->getPrefixedText() );
 	}
 	
