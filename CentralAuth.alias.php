@@ -56,6 +56,14 @@ $aliases['arz'] = array(
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
+/** Bulgarian (Български) */
+$aliases['bg'] = array(
+	'CentralAuth' => array( 'Управление на единните сметки' ),
+	'AutoLogin' => array( 'Автоматично влизане' ),
+	'MergeAccount' => array( 'Обединяване на сметки' ),
+	'GlobalUsers' => array( 'Списък на глобалните сметки' ),
+);
+
 /** Bosnian (Bosanski) */
 $aliases['bs'] = array(
 	'MergeAccount' => array( 'UjediniRacune' ),
