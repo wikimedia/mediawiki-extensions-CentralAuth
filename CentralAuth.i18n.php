@@ -15312,8 +15312,15 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'centralauth-groupname' => 'די וויקימעדיע פֿונדאַציע',
+	'centralauth-merge-step1-title' => 'אנהייבן איינלאגירן פֿאַראייניקן',
+	'centralauth-merge-dryrun-or' => "'''אדער'''",
 	'centralauth-merge-method-empty' => 'קיין בײַשטײַערונגען',
+	'centralauth-finish-password' => 'פאַסווארט:',
 	'centralauth-admin-info-hidden' => 'באַהאַלטן:',
+	'centralauth-admin-yes' => 'יא',
+	'centralauth-admin-no' => 'ניין',
+	'autologin' => 'אויטאמאטיש איינלאגירן',
 );
 
 /** Yue (粵語)
