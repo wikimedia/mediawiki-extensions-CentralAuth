@@ -490,14 +490,13 @@ $messages['af'] = array(
  */
 $messages['an'] = array(
 	'mergeaccount' => "Estau d'a unificazión de cuentas",
-	'centralauth-desc' => "[[Special:MergeAccount|Unificar as cuentas d'usuario]] en os wikis de Wikimedia Foundation",
+	'centralauth-desc' => "[[Special:MergeAccount|Unificar as cuentas d'usuario]] en os wikis de {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Unifica multiples cuentas]] d'un unico usuario",
 	'centralauth-merge-denied' => 'No tiene os premisos ta azeder ta ista pachina.',
 	'centralauth-merge-notlogged' => 'Por fabor <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} identifique-se]</span> ta comprebar si as suyas cuentas s\'han combinato de tot.',
-	'centralauth-merge-welcome' => "'''A suya cuenta d'usuario no s'ha tresladato encara ta o sistema de cuentas unificato de Wikimedia'''
+	'centralauth-merge-welcome' => "A suya cuenta d'usuario no s'ha tresladato encara ta o sistema de cuentas unificato de {{MediaWiki:Centralauth-groupname}}.'''
 
-Si triga migrar as suyas cuentas, podrá usar o mesmo nombre d'usuario y palabra de paso ta dentrar en toz os procheutos wiki de Wikimedia en todas as luengas.
-Isto fa más fázil o treballo compartito entre procheutos, como cargar archibos ta [http://commons.wikimedia.org/ Wikimedia Commons], y priba que bi aiga a confusion u o conflito que podría escaizer si dos presonas trigan o mesmo nombre d'usuario en procheutos diferents.
+Si triga migrar as suyas cuentas, podrá usar o mesmo nombre d'usuario y palabra de paso ta dentrar en toz os procheutos wiki de {{MediaWiki:Centralauth-groupname}} en todas as luengas disponibles.
 
 Si bel usuario más ha pillato o suyo nombre d'usuario en atro sitio, podrá contautar con el u con un almenistrador más entadebant.",
 	'centralauth-merge-step1-title' => 'Prenzipiar a unificazión de cuentas',
@@ -524,8 +523,8 @@ Encara no s'han feito cambios t'as suyas cuentas.",
 Por fabor, escriba a palabra de paso t'a wiki d'orichen.",
 	'centralauth-complete' => "S'ha rematau a unificazión d'as cuentas!",
 	'centralauth-incomplete' => "No s'ha rematau a unificazión d'as cuentas!",
-	'centralauth-complete-text' => "Agora puede identificar-se y dentrar en cualsiquier wiki de Wikimedia sin aber de creyar una nueba cuenta; o mesmo nombre d'usuario y palabra de paso serbirá ta Wikipedia, Wiktionary, Wikibooks, y os procheutos chirmans en todas as luengas.",
-	'centralauth-incomplete-text' => "Malas que tienga un nombre d'usuario unificato, podrá identificar-se y dentrar en cualsiquier wiki de Wikimedia sin aber de creyar una nueba cuenta; o mesmo nombre d'usuario y palabra de paso serbirá ta Wikipedia, Wiktionary, Wikibooks, y os procheutos chirmans en todas as luengas.",
+	'centralauth-complete-text' => 'Agora puede identificar-se y dentrar en cualsiquier wiki de {{MediaWiki:Centralauth-groupname}} sin aber de creyar una nueba cuenta.',
+	'centralauth-incomplete-text' => "Malas que tienga un nombre d'usuario unificato, podrá identificar-se y dentrar en cualsiquier wiki de {{MediaWiki:Centralauth-groupname}} sin aber de creyar una nueba cuenta",
 	'centralauth-not-owner-text' => 'O nombre d\'usuario "$1" s\'ha asinnato ta o proprietario d\'a cuenta en $2.
 
 Si ye bustet, puede rematar o prozeso d\'unificazión de cuentas escribindo aquí a palabra de paso mayestra ta ixa cuenta.',
@@ -647,7 +646,7 @@ As palabras de paso t'as cuentas locals creyatas antis d'a unificazión tornará
 	'centralauth-renameuser-reserved' => "O nombre d'usuario $2 ye reserbato por una cuenta global.",
 	'centralauth-invalid-wiki' => "No s'ha trobau a base de datos d'o wiki: $1",
 	'centralauth-account-exists' => "No s'ha puesto creyar a cuenta: o nombre d'usuario requiesto ya ye pillau en o sistema de cuentas unificato.",
-	'centralauth-login-progress' => 'Enzetando a suya sesión en atros procheutos de Wikimedia:',
+	'centralauth-login-progress' => 'Enzetando a suya sesión en os procheutos de {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => "Salindo d'a sesión en atros procheutos de Wikimedia:",
 	'centralauth-log-name' => "Rechistro d'almenistrazión de cuentas globals",
 	'centralauth-log-header' => 'Este rechistro contiene operazions feitas sobre cuentas globals: borraus, bloqueyos y esbloqueyos',
@@ -722,7 +721,7 @@ Mire-se que igual ye prebando d'asinnar dreitos ta un usuario entibocato!",
 	'centralauth-editset-nowikis' => 'No ha espezificato garra wiki.',
 	'centralauth-editset-nouse' => '(denguno)',
 	'centralauth-editset-usage' => 'Emplegato en as collas:',
-	'centralauth-editset-badwikis' => 'Os siguients wikis no esisten: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|O siguient wiki no esiste|Os siguients wikis no esisten}}: $1.',
 	'centralauth-editset-success' => "S'ha cambiato o conchunto de wikis.",
 	'right-globalgroupmembership' => 'Editar a pertenenzia ta collas globals',
 	'right-centralauth-admin' => 'Almenistrar cuentas globals',
@@ -2068,6 +2067,7 @@ $messages['bg'] = array(
 	'centralauth-rightslog-header' => 'Този дневник съдържа записи на операции върху глобални групи: промяна на членства и права',
 	'centralauth-rightslog-entry-setnewtype' => 'промени типа на „$1“ от $2 на $3',
 	'centralauth-rightslog-entry-setchange' => 'промени уикитата в „$1“: добави: $2; премахна: $3',
+	'autologin' => 'Автоматично влизане в системата',
 	'centralauth-autologin-desc' => 'Тази специална страница се използва вътрешно от МедияУики.
 Когато [[Special:UserLogin|влизате]], централната система по влизането казва на браузъра ви да поиска тази страница от всички свързани домейни, като се използват препратки към изображения.
 Извикали сте настоящата страница, без да посочите удостоверяващи данни, затова нищо повече няма да се случи.',
@@ -11287,7 +11287,7 @@ Un autre wiki es estat determinat coma compte principal per vòstre nom d’util
 	'centralauth-merge-step3-title' => 'Creacion del compte unic',
 	'centralauth-merge-step3-detail' => 'Ara sètz prèst per crear vòstre compte unic, comprenent las wikis seguentas :',
 	'centralauth-merge-step3-submit' => 'Fusionar los comptes',
-	'centralauth-merge-no-accounts' => 'Cap de compte correspondent a vòtre nom es pas estat trobat dins la taula centrala de seguit dels comptes !
+	'centralauth-merge-no-accounts' => 'Cap de compte correspondent a vòstre nom es pas estat trobat dins la taula centrala de seguit dels comptes !
 La banca de donadas pòt èsser corrompuda.',
 	'centralauth-merge-home-password' => "Lo wiki de basa d'aqueste compte (listat çaijós) dispausa d’un senhal diferent de lo qu'avètz picat.
 Picatz lo senhal sul wiki de basa.",
@@ -15222,7 +15222,7 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
  */
 $messages['vo'] = array(
 	'mergeaccount' => 'Stad balama kalas',
-	'centralauth-desc' => '[[Special:MergeAccount|Balön kali]] da vüks Fünoda: Wikimedia',
+	'centralauth-desc' => '[[Special:MergeAccount|Balön kali]] da vüks ela {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-merge-denied' => 'Liedo no labol däli ad logön padi at.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Nunädolös oli, begö!]</span> ad logön, va kals olik pebalons lölöfiko.',
 	'centralauth-merge-welcome' => "'''Gebanakal olik no nog petopätükon ini nunädamasit balik ela Wikimedia.'''
