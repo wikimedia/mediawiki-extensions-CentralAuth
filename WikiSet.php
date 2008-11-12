@@ -58,22 +58,22 @@ class WikiSet {
 		);
 	}
 
-	public static function newFromName( $id, $useCache = true ) {
+	public static function newFromName( $name, $useCache = true ) {
 		if( $useCache ) {
 			global $wgMemc;
-			$data = $wgMemc->get( self::memcKey( "name:" . md5( $id ) ) );
+			$data = $wgMemc->get( self::memcKey( "name:" . md5( $name ) ) );
 			if( $data ) {
 				if( $data['mVersion'] == self::VERSION ) {
 					$ws = new WikiSet( null, null, null );
-					foreach( $data as $name => $val ) 
-						$ws->$name = $val;
+					foreach( $data as $key => $val ) 
+						$ws->$key = $val;
 					return $ws;
 				}
 			}
 		}
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$row = $dbr->selectRow(
-			'wikiset', '*', array( 'ws_name' => $id ), __METHOD__
+			'wikiset', '*', array( 'ws_name' => $name ), __METHOD__
 		);
 		if( !$row )
 			return null;
