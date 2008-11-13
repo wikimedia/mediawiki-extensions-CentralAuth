@@ -148,6 +148,8 @@ $aliases['hu'] = array(
 	'AutoLogin' => array( 'Automatikus bejelentkezés' ),
 	'MergeAccount' => array( 'Felhasználói fiókok egyesítése' ),
 	'GlobalGroupMembership' => array( 'Globális felhasználói jogok' ),
+	'GlobalGroupPermissions' => array( 'Globális felhasználói engedélyek' ),
+	'EditWikiSets' => array( 'Wikicsoportok szerkesztése' ),
 	'GlobalUsers' => array( 'Felhasználók globális listája' ),
 );
 

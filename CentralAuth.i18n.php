@@ -4865,7 +4865,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-minutes-ago' => 'depuis $1 {{PLURAL:$1|minute|minutes}}',
 	'centralauth-hours-ago' => 'depuis $1 {{PLURAL:$1|heure|heures}}',
 	'centralauth-days-ago' => 'depuis $1 {{PLURAL:$1|jour|jours}}',
-	'centralauth-months-ago' => 'depuis $1 mois',
+	'centralauth-months-ago' => 'depuis $1 mois{{PLURAL:$1||}}',
 	'centralauth-years-ago' => 'depuis $1 {{PLURAL:$1|année|années}}',
 	'centralauth-prefs-status' => 'Statut du compte unique :',
 	'centralauth-prefs-not-managed' => 'Pas de compte unique',
@@ -5369,6 +5369,13 @@ $messages['gv'] = array(
 	'centralauth-admin-lock-title' => 'Cur coontys fo ghlass',
 	'centralauth-admin-lock-button' => 'Cur y coontys shoh fo ghlass',
 	'centralauth-admin-reason' => 'Fa:',
+);
+
+/** Hakka (Hak-kâ-fa)
+ * @author Hakka
+ */
+$messages['hak'] = array(
+	'centralauth-admin-username' => 'Yung-fu-miàng:',
 );
 
 /** Hawaiian (Hawai`i)
@@ -7755,21 +7762,24 @@ Jer vil være i stand til lave om på hvilke er jeres hjem wiki senere.',
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author Pras
  */
 $messages['jv'] = array(
 	'mergeaccount' => 'Status panggabungan log mlebu',
-	'centralauth-desc' => '[[Special:MergeAccount|Nggabungaké rékening (akun)]] ing wiki-wiki Yayasan Wikimedia',
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Nggabungaké akun]] lintas wiki {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Gabungna sawetara rékening]] kanggo Log Mlebu Gabungan',
 	'centralauth-merge-denied' => 'Nuwun sèwu, panjenengan ora diparengaké niliki kaca iki.',
 	'centralauth-merge-notlogged' => 'Mangga <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} mlebu log]</span> kanggo mriksa apa rékening (akun) panjenengan wis digabungaké sacara penuh.',
-	'centralauth-merge-welcome' => "'''Rékening (akun) panjenengan durung dihijrahaké menyang sistém unifikasi log mlebu Wikimedia.'''
+	'centralauth-merge-welcome' => "'''Akun panjenengan durung dihijrahaké menyang sistém akun global {{MediaWiki:Centralauth-groupname}}.'''
 
-Yèn panjenengan milih kanggo hijrah utawa migrasi rékening panjenengan, panjenengan bisa nganggo jeneng panganggo serta tembung sandhi sing padha kanggo log mlebu ing kabèh proyèk wiki Wikimedia ing kabèh basa sing kasedyakaké.
-Perkara iki nggawé panjenengan luwih gampang nyambut gawé ing proyèk-proyèk sing séjé nanging kabagi kaya ta ngunggahaké berkas ing [http://commons.wikimedia.org/ Wikimedia Commons] serta nyélak kabingungan utawa konflik sing mbok-menawa bisa ana saka wong loro sing ndarbèni jeneng panganggo sing padha ing proyèk sing séjé.
+Yèn panjenengan milih kanggo hijrah utawa migrasi rékening panjenengan, panjenengan bisa nganggo jeneng panganggo serta tembung sandi sing padha kanggo log mlebu ing kabèh proyèk wiki {{MediaWiki:Centralauth-groupname}} ing kabèh basa sing kasedyakaké.
 
 Yèn wong liya wis njupuk jeneng panganggo panjenengan ing situs liya, perkara iki ora bakal ngrusuhi wong iku, nanging mengkoné perkara iki bisa mènèhi panjenengan kasempatan kanggo golèk solusi ing masalah iki karo wong iku utawa sang pangurus/kuncèné ing proyèk iku.",
 	'centralauth-merge-step1-title' => 'Miwitana unifikasi log mlebu',
-	'centralauth-merge-step1-detail' => 'Tembung sandhi lan alamat e-mail panjenengan bakal dipriksa dibandhingaké karo rékening (akun) ing wiki-wiki liyané kanggo ndhedhes kacocogané. Owah-owahan ora bisa dilakoni nganti panjenengan ndhedhes yèn ora ana masalah.',
+	'centralauth-merge-step1-detail' => 'Mangga isi tembung sandi akun panjenengan.
+Tembung sandi lan alamat e-mail panjenengan bakal dibandhingaké karo akun ing wiki-wiki liyané kanggo ndhedhes kacocogané. 
+Owah-owahan ora bisa dilakoni nganti panjenengan ndhedhes yèn ora ana masalah.',
 	'centralauth-merge-step1-submit' => 'Dhedhesen (konfirmasi) log mlebu',
 	'centralauth-merge-step2-title' => 'Konfirmasi rékening (akun) liya',
 	'centralauth-merge-step2-detail' => 'Sawetara rékening (akun) ora bisa dicocogaké sacara otomatis karo wiki asal sing dipilih.
@@ -7789,15 +7799,21 @@ Ana wiki liyané sing ditemtokaké minangka wiki asal rékening panjenengan; man
 	'centralauth-merge-step3-title' => 'Gawé rékening (akun) gabungan',
 	'centralauth-merge-step3-detail' => 'Panjenengan saiki wis siap nggawé rékening (akun) gabungan panjenengan mawa wiki-wiki sing kapacak ing ngisor iki:',
 	'centralauth-merge-step3-submit' => 'Gabungaké rékening (akun)',
+	'centralauth-merge-no-accounts' => 'Ora ana akun sing cocog karo jeneng panjenengan ing tabel dhaptar akun sentral!
+Kamungkinan ana karusakan ing basis data.',
+	'centralauth-merge-home-password' => 'Wiki utama kanggo akun ini (pirsani dhaptar ing ngisor) nduwèni tembung sandi sing béda karo tembung sandi sing panjenengan lebokaké.
+Mangga isi tembung sandi kanggo wiki utama.',
 	'centralauth-complete' => 'Panggabungan log mlebu suksès!',
 	'centralauth-incomplete' => 'Panggabungan log mlebu ora suksès!',
-	'centralauth-complete-text' => 'Saiki panjenengan bisa log mlebu ing situs wiki Wikimedia apa waé tanpa kudu nggawé rékening anyar; jeneng panganggo lan tembung sandhi sing padha bisa dienggo ing Wikipedia, Wiktionary, Wikibooks, lan proyèk-proyèk liyané ing kabèh basa.',
-	'centralauth-incomplete-text' => 'Sawisé log mlebu panjenengan digabungaké, panjenengan bisa mlebu log ing situs wiki Wikimedia ngendi waé tanpa kudu nggawé rékening anyar; jeneng panganggo lan tembung sandhi sing padha bisa dienggo ing Wikipedia, Wiktionary, Wikibooks, lan proyèk-proyèk liyané ing kabèh basa.',
+	'centralauth-complete-text' => 'Saiki panjenengan bisa mlebu log ing situs wiki {{MediaWiki:Centralauth-groupname}} endi waé tanpa kudu gawé akun anyar.',
+	'centralauth-incomplete-text' => 'Sawisé akun panjenengan diowahi dadi akun global, panjenengan bakal bisa mlebu log ing kabèh situs wiki {{MediaWiki:Centralauth-groupname}} tanpa kudu gawé akun anyar.',
 	'centralauth-not-owner-text' => 'Jeneng panganggo "$1" diwènèhaké sacara otomatis marang sing duwé rékening (akun) $2.
 
 Yèn iki panjenengan dhéwé, panjenengan bisa ngrampungaké prosès panggabungan log mlebu namung mawa ngetikaké tembung kunci utama kanggo rékening iku ing kéné:',
-	'centralauth-notice-dryrun' => "<div class='successbox'>Modus démo</div><br clear='all'/>",
+	'centralauth-blocked-text' => 'Wiki utama panjenengan (kadhaptar ing ngisor) lagi diblokir saka panyuntingan. Mangga hubungi opsis ing wiki iki kanggo mbukak pamblokiran. Sasuwéné isih diblokir, panjenengan ora bisa nggabungaké akun-akun panjenengan.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Mung modus démo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Panggabungan rékening (akun) saiki iki namung arupa modus demo/debugging, dadi operasi panggabungan sing sajati ora dilakokaké. Nuwun sèwu!',
+	'centralauth-error-locked' => 'Panjenengan ora bisa nyunting amarga akun panjenengan dikunci.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Mangga diwaca kanggo informasi sabanjuré ngenani '''log mlebu gabungan''']]...''",
 	'centralauth-list-home-title' => 'Wiki asal',
 	'centralauth-list-home-dryrun' => 'Tembung sandhi lan alamat e-mail ing wiki iki bisa dienggo kanggo rékening gabungan panjenengan, lan kaca panganggo ing kéné bisa sacara otomatis disambungaké saka wiki liya. Panjenengan bisa ngowahi wiki asal panjenengan mengko ing tembé.',
@@ -7874,7 +7890,22 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-admin-unlock-button' => 'Bukanen kunci rékening iki',
 	'centralauth-admin-unlock-success' => 'Bisa kasil buka kunci rékening global kanggo "<nowiki>$1</nowiki>"',
 	'centralauth-admin-unlock-nonexistent' => 'Kaluputan: rékening global "<nowiki>$1</nowiki>" ora ana.',
+	'centralauth-admin-hide-title' => 'Dhelikaké akun',
+	'centralauth-admin-hide-description' => 'Akun-akun sing didhelikaké ora ditampilaké ing [[Special:GlobalUsers|Dhaptar panganggo global]].',
+	'centralauth-admin-hide-button' => 'Dhelikaké akun iki',
+	'centralauth-admin-hide-success' => 'Akun global "<nowiki>$1</nowiki>" kasil didhelikaké',
+	'centralauth-admin-hide-nonexistent' => 'Kasalahan: akun global "<nowiki>$1</nowiki>" ora ditemokaké.',
+	'centralauth-admin-unhide-title' => 'Tampilaké akun',
+	'centralauth-admin-unhide-description' => 'Mbatalaké pandhelikan akun bakal nampilaké akun kuwi manèh ing [[Special:GlobalUsers|dhaptar panganggo global]].',
+	'centralauth-admin-unhide-button' => 'Tampilaké akun iki',
+	'centralauth-admin-unhide-success' => 'Akun global "<nowiki>$1</nowiki>" kasil ditampilaké manèh.',
+	'centralauth-admin-unhide-nonexistent' => 'Kasalahan: akun global "<nowiki>$1</nowiki>" ora ditemokaké.',
 	'centralauth-admin-reason' => 'Alesan:',
+	'centralauth-admin-lockandhide-title' => 'Kunci lan dhelikaké akun',
+	'centralauth-admin-lockandhide-description' => 'Sawisé dikunci lan didhelikaké, akun iki banjur ora bisa dipigunakaké kanggo mlebu log ing kabèh wiki, lan ora bakal ditampilaké ing [[Special:GlobalUsers|Dhaptar akun global]].',
+	'centralauth-admin-lockandhide-button' => 'Kunci lan dhelikaké akun iki',
+	'centralauth-admin-lockandhide-success' => 'Akun kasil dikunci lan didhelikaké',
+	'centralauth-admin-lockandhide-nonexistent' => 'Kasalahan: akun global "<nowiki>$1</nowiki>" ora ditemokaké.',
 	'globalusers' => 'Daftar panganggo global',
 	'centralauth-listusers-locked' => 'dikunci',
 	'centralauth-listusers-attached' => 'ana sacara lokal',
@@ -7894,8 +7925,12 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-prefs-count-unattached' => 'Rékening mawa jenengé panjenengan sing durung didhedhes (dikonfirmasi) isih ana ing $1 {{PLURAL:$1|proyèk|proyèk}}.',
 	'centralauth-prefs-detail-unattached' => 'Situs proyèk iki durung dikonfirmasi minangka bagéyan saka rékening global.',
 	'centralauth-prefs-manage' => 'Urusana rékening (akun) global panjenengan',
-	'centralauth-invalid-wiki' => 'Ora ana DB wiki kaya ngono: $1',
+	'centralauth-renameuser-merged' => 'Panganggo $1 wis mlebu sistem akun global. Ganti jeneng bakal nyebabaké akun lokal kasebut kapisah saka akun globalé.',
+	'centralauth-renameuser-reserved' => 'Panganggo $2 wis dicadhangaké kanggo akun global.',
+	'centralauth-invalid-wiki' => 'Ora ana basis data wiki sing kaya ngono: $1',
 	'centralauth-account-exists' => 'Ora bisa nggawé rékening: jeneng panganggo sing disuwun iki wis ana ing sistém log mlebu gabungan.',
+	'centralauth-login-progress' => 'Panjenengan mlebu log ing proyèk-proyèk {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Panjenengan metu log saka proyèk-proyèk {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Log pangurusan rékening global',
 	'centralauth-log-header' => 'Log iki ngandhut operasi-operasi sing kalakokaké sangisoring rékening global: pambusakan, ngunci database lan pambukakan kunci database.',
 	'centralauth-log-entry-delete' => 'busak rékening global "<nowiki>$1</nowiki>"',
@@ -7905,6 +7940,10 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-rightslog-entry-usergroups' => 'ngganti kaanggotan kelompok global kanggo $1 saka $2 menyang $3',
 	'centralauth-rightslog-entry-groupperms' => 'ganti idin-idin kelompok dadi $1 saka $2 menyang $3',
 	'centralauth-rightslog-header' => 'Log iki ngandhut operasi-operasi ing kelompok-kelompok global: owah-owahan kaanggotan lan idin-idin',
+	'autologin' => 'Mlebu log otomatis',
+	'centralauth-autologin-desc' => 'Kaca istiméwa iki dipigunakaké sacara internal déning MediaWiki.
+Nalika panjenengan [[Special:UserLogin|mlebu log]], sistem mlebu log kapusat nginstruksèkaké panjelajah web panjenengan supaya ngaksès kaca iki saka kabèh domain sing kahubung, migunakaké pranala berkas.
+Panjenengan wis ngaksès kaca iki tanpa mènèhi data otentikasi, saéngga kaca iki ora mènèhi réaksi apa-apa.',
 	'globalgroupmembership' => 'Kaanggotan ing kelompok-kelompok global',
 	'globalgrouppermissions' => 'Ngurus kelompok global',
 	'centralauth-globalgroupperms-grouplist' => 'Kelompok-kelompok global sing kapacak ing ngisor iki wis dikonfigurasi. Panjenengan bisa ndeleng lan nyunting idin-idin sing diwènèhaké ing saben kelompok. Sawijining kelompok bisa dibusak carané mawa ngilangi kabèh hak saka kelompok iku.',
@@ -7923,11 +7962,38 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|sunting]])',
 	'centralauth-editgroup-members' => 'Daftar anggota:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Daftar panganggo karo hak-hak $2]]',
+	'centralauth-editgroup-noset' => '(ora ana)',
 	'centralauth-editgroup-submit' => 'Simpen owah-owahan ing idin-idin kelompok',
 	'centralauth-editgroup-perms' => 'Wènèhna idin-idin:',
 	'centralauth-editgroup-reason' => 'Alesané ngowahi:',
 	'centralauth-editgroup-success' => 'Idin-idin kelompok diganti',
 	'centralauth-editgroup-success-text' => 'Panjenengan sacara suksès bisa ngganti idin kelompok kanggo kelompok $1. [[Special:GlobalGroupPermissions|Balia menyang pangurusan kelompok]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|sunting]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki ing ngendi dhèwèké duwé akun:',
+	'centralauth-globalgroupmembership-badknownwiki' => "Panganggo global '''$1''' ora aktif ing wiki sing panjenengan pilih ('' $2 ''). Panjenengan manawa mènèhi hak marang panganggo sing salah!",
+	'centralauth-editset' => 'Nyunting sèt wiki',
+	'centralauth-editset-legend' => 'Nyunting utawa gawé sèt wiki',
+	'centralauth-editset-intro' => 'Sèt-sèt wiki iki wis digawé. Panjenengan bisa nampilaké lan ngowahi sèt-sèt kasebut, utawa gawé sèt anyar.',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|deleng/sunting]])',
+	'centralauth-editset-new' => 'Gawé sèt anyar',
+	'centralauth-editset-notfound' => 'Sèt wiki "$1" ora ditemokaké.',
+	'centralauth-editset-legend-edit' => 'Nyunting sèt wiki "$1"',
+	'centralauth-editset-legend-new' => 'Gawé sèt wiki anyar',
+	'centralauth-editset-name' => 'Jeneng:',
+	'centralauth-editset-type' => 'Tipe:',
+	'centralauth-editset-wikis' => 'Wiki-wiki:',
+	'centralauth-editset-reason' => 'Alesan:',
+	'centralauth-editset-submit' => 'Kirim',
+	'centralauth-editset-badname' => 'Jeneng sèt ora sah utawa kothong',
+	'centralauth-editset-badtype' => 'Tipe sèt ora sah',
+	'centralauth-editset-setexists' => 'Sèt kanthi jeneng kasebut wis ana',
+	'centralauth-editset-nowikis' => 'Ora ana wiki sing dipilih',
+	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
+	'centralauth-editset-nouse' => '(ora ana)',
+	'centralauth-editset-usage' => 'Dipigunakaké jroning klompok:',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|Wiki|Wiki-wiki}} iki ora ditemokaké: $1.',
+	'centralauth-editset-success' => 'Sèt wiki kasil diowahi.',
+	'centralauth-editset-return' => 'Bali menyang tampilan utama',
 	'right-globalgroupmembership' => 'Sunting kaanggotan ing kelompok-kelompok global',
 	'right-centralauth-admin' => 'Ngurus administrasi rékening-rékening global',
 	'right-centralauth-merge' => 'Gabung rékening-rékeningé',
@@ -9794,6 +9860,7 @@ $messages['mk'] = array(
  */
 $messages['ml'] = array(
 	'mergeaccount' => 'ലോഗിന്‍ സം‌യോജിപ്പിക്കുന്നതിന്റെ തല്‍‌സ്ഥിതി',
+	'centralauth-groupname' => 'വിക്കിമീഡിയ ഫൗണ്ടേഷന്‍',
 	'centralauth-desc' => 'വിക്കിമീഡിയ ഫൗണ്ടേഷന്‍ വിക്കികളിലെ [[Special:MergeAccount|അക്കൗണ്ടുകള്‍ സം‌യോജിപ്പിക്കുക]]',
 	'centralauth-mergeaccount-desc' => 'ഒറ്റ ഉപയോക്തൃ ലോഗിനു വേണ്ടി [[Special:MergeAccount|ബഹു അംഗത്വങ്ങളുടെ സം‌യോജനം]] ഉപയോഗിക്കുക',
 	'centralauth-merge-denied' => 'ഈ താള്‍ പരിശോധിക്കുവാന്‍ താങ്കള്‍ക്ക് അനുമതിയില്ല.',
@@ -9932,6 +9999,8 @@ $messages['ml'] = array(
 പേരുമാറ്റുന്നതുകൊണ്ട് പ്രാദേശിക അംഗത്വം ആഗോള അംഗത്വത്തില്‍ നിന്ന് ഒറ്റപ്പെട്ടു പോകുന്നതാണ്‌.',
 	'centralauth-invalid-wiki' => 'ഇങ്ങനെ ഒരു വിക്കി നിലവിലില്ല DB: $1',
 	'centralauth-account-exists' => 'അക്കൗണ്ട് ഉണ്ടാക്കുന്നതിനു സാദ്ധ്യമല്ല. ഉപയോക്തനാമം ഇതിനകം സം‌യോജിത ലോഗിന്‍ വ്യൂഹം ഉപയോഗിച്ചു കഴിഞ്ഞു.',
+	'centralauth-login-progress' => '{{MediaWiki:Centralauth-groupname}} പദ്ധതികളില്‍ ലോഗിന്‍ ചെയ്തിരിക്കുന്നു:',
+	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}} പദ്ധതികളില്‍ നിന്നും താങ്കള്‍ ലോഗൗട്ട് ചെയ്തിരിക്കുന്നു:',
 	'centralauth-log-name' => 'ആഗോള അക്കൗണ്ട് നിയന്ത്രിക്കുന്നതിന്റെ പ്രവര്‍ത്തനരേഖ',
 	'centralauth-log-entry-delete' => '"<nowiki>$1</nowiki>" എന്ന ആഗോള അക്കൗണ്ട് മായ്ച്ചിരിക്കുന്നു',
 	'centralauth-log-entry-lock' => '"<nowiki>$1</nowiki>" എന്ന ആഗോള അക്കൗണ്ട് ബന്ധിച്ചിരിക്കുന്നു',
