@@ -2493,6 +2493,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
  * @author CERminator
  */
 $messages['bs'] = array(
+	'mergeaccount' => 'Status spajanja korisničkih računa',
 	'centralauth-merge-dryrun-complete' => 'Svi postojeći računi će biti automatski spojeni!
 
 Zasad se Vaši računi nisu mijenjali.',
@@ -13216,9 +13217,11 @@ Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nero
 /** Serbian Cyrillic ekavian (ћирилица)
  * @author Millosh
  * @author Sasa Stefanovic
+ * @author Јованвб
  */
 $messages['sr-ec'] = array(
 	'mergeaccount' => 'Статус уједињења налога',
+	'centralauth-groupname' => 'Викимедија Фондација',
 	'centralauth-desc' => '[[Special:MergeAccount|Сједињавање налога]] кроз Викимедијине викије.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Сједињава више налога]] за јединствени кориснички приступ.',
 	'centralauth-merge-denied' => 'Немаш права да приступиш овој страни.',
@@ -13340,6 +13343,7 @@ $messages['sr-ec'] = array(
 	'centralauth-prefs-unattached' => 'Непотврђени.',
 	'centralauth-prefs-complete' => 'Све је у реду!',
 	'centralauth-prefs-migration' => 'У премештању.',
+	'centralauth-prefs-count-unattached' => 'Непотврђени налози са вашим надимком су преостали на $1 {{PLURAL:$1|пројекту|пројеката}}.',
 	'centralauth-prefs-detail-unattached' => 'Овај пројекат није потврђен као припадајући глобалном налогу.',
 	'centralauth-prefs-manage' => 'Организуј свој глобални налог.',
 	'centralauth-renameuser-reserved' => 'Сарадничко име $2 је резервисано за глобални налог.',
@@ -13367,6 +13371,7 @@ $messages['sr-ec'] = array(
 	'centralauth-rightslog-entry-setchange' => 'промењени викији у групи "$1": додати: $2; уклоњени: $3',
 	'centralauth-rightslog-set-optin' => 'засновани на пристајању',
 	'centralauth-rightslog-set-optout' => 'засновани на одустајању',
+	'autologin' => 'Аутоматски логин',
 	'globalgroupmembership' => 'Чланство у глобалним групама.',
 	'globalgrouppermissions' => 'Управљање глобалним групама.',
 	'centralauth-globalgroupperms-grouplist' => 'Следеће глобалне групе су подешене. Можеш прегледати и мењати права додата ма којој групи. Група се брише уклањањем свих права из исте.',
