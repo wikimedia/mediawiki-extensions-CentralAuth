@@ -155,6 +155,7 @@ $aliases['hu'] = array(
 
 /** Japanese (日本語) */
 $aliases['ja'] = array(
+	'CentralAuth' => array( 'アカウント統一管理' ),
 	'AutoLogin' => array( '自動ログイン' ),
 	'MergeAccount' => array( 'アカウント統合' ),
 	'GlobalGroupMembership' => array( 'グローバル利用者権限' ),

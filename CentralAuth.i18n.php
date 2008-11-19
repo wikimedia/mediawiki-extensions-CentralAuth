@@ -2502,6 +2502,7 @@ Zasad se Vaši računi nisu mijenjali.',
 	'centralauth-admin-username' => 'Korisničko ime:',
 	'centralauth-admin-yes' => 'da',
 	'centralauth-editset-name' => 'Naziv:',
+	'centralauth-editset-submit' => 'Pošalji',
 );
 
 /** Catalan (Català)
@@ -11813,6 +11814,8 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-rightslog-entry-setrename' => 'zmienił nazwę zbioru wiki „$2” na „$1”',
 	'centralauth-rightslog-entry-setnewtype' => 'zmienił typ „$1” z $2 na $3',
 	'centralauth-rightslog-entry-setchange' => 'zmienił listę wiki w „$1”: dodane: $2; usunięte: $3',
+	'centralauth-rightslog-set-optin' => 'typu „opt-in”',
+	'centralauth-rightslog-set-optout' => 'typu „opt-out”',
 	'autologin' => 'Automatyczne logowanie',
 	'centralauth-autologin-desc' => 'Ta strona specjalna jest wykorzystywana wewnętrznie przez oprogramowanie MediaWiki.
 Po [[Special:UserLogin|zalogowaniu się]], przeglądarka na polecenie systemu centralnego logowania, wczytuje tę stronę z każdej obsługiwanej domeny, używając linku jak do grafiki.
