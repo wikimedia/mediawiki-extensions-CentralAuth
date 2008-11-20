@@ -9061,7 +9061,7 @@ nix sperre.',
 kei Sperr ophevve.',
 	'centralauth-admin-hide-title' => 'Jemeinsam Aanmeldung versteche',
 	'centralauth-admin-hide-description' => 'Verstoche jemeinsam Aanmeldunge douche en de [[Special:GlobalUsers|Leß met de jemeinsam Aanmeldunge]] nit op.',
-	'centralauth-admin-hide-button' => 'Donn di jemeinsam Aanmeldung verstesche!',
+	'centralauth-admin-hide-button' => 'Donn di jemeinsam Aanmeldung versteche!',
 	'centralauth-admin-hide-success' => 'De jemeinsam Aanmledung unger dämm Metmaacher-Name „<nowiki>$1</nowiki>“ es jäz verstoche.',
 	'centralauth-admin-hide-nonexistent' => 'En jemeinsame Aanmeldung unger dämm Metmaacher-Name
 „<nowiki>$1</nowiki>“ jitt et nit, do künne mer och
@@ -11637,6 +11637,7 @@ $messages['pdt'] = array(
  * @author Maikking
  * @author Matma Rex
  * @author Sp5uhe
+ * @author ToSter
  * @author Ymar
  */
 $messages['pl'] = array(
@@ -11645,7 +11646,7 @@ $messages['pl'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Łączy konta]] pomiędzy projektami {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Łączy różne konta]] w jedno konto uniwersalne',
 	'centralauth-merge-denied' => 'Niestety nie masz uprawnień pozwalających na dostęp do tej strony.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span> by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Zaloguj się]</span>, by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.',
 	'centralauth-merge-welcome' => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto uniwersalne w obrębie projektów {{MediaWiki:Centralauth-groupname}}.'''
 
 Funkcjonalność konta uniwersalnego pozwala na korzystanie z tej samej nazwy użytkownika i hasła do zalogowania się we wszystkich projektach {{MediaWiki:Centralauth-groupname}}, we wszystkich wersjach językowych. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub nawet konfliktów, które mogą powstać, gdy dwie osoby wybiorą tę samą nazwę użytkownika na różnych projektach.
@@ -11657,7 +11658,7 @@ Hasło i zarejestrowany adres e-mail zostaną porównane z kontami na innych wik
 	'centralauth-merge-step1-submit' => 'Sprawdzenie informacji o logowaniu',
 	'centralauth-merge-step2-title' => 'Potwierdź więcej kont',
 	'centralauth-merge-step2-detail' => 'Niektóre z kont nie mogły zostać automatycznie przyłączone do konta uniwersalnego.
-Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje przez podanie haseł do nich.',
+Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje, podając do nich hasła.',
 	'centralauth-merge-step2-submit' => 'Potwierdź informacje dotyczące zalogowania się',
 	'centralauth-merge-dryrun-complete' => 'Wszystkie istniejące konta zostaną automatycznie połączone!
 
