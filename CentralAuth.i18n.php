@@ -358,6 +358,10 @@ $messages['qqq'] = array(
 	'centralauth-admin-hide-nonexistent' => '{{Identical|Error: The global account "$1" does not exist.}}',
 	'centralauth-admin-unhide-nonexistent' => '{{Identical|Error: The global account "$1" does not exist.}}',
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
+	'centralauth-rightslog-entry-groupperms3' => 'A log entry when a user changes the wiki set where the specified global group is applied.
+* <code>$1</code> is the name of the group being changed
+* <code>$2</code> is the name of the previous wiki set
+* <code>$3</code> is the name of the new wiki set',
 	'centralauth-rightslog-entry-newset' => "* \$1 is the name of the wiki set (example: \"''Test''\")
 * \$2 is \"''{{int:Centralauth-rightslog-set-optin}}''\" or \"''{{int:Centralauth-rightslog-set-optout}}''\"
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
@@ -2967,6 +2971,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-rightslog-entry-usergroups' => 'změnil seznam členů v globální skupině $1 z $2 na $3',
 	'centralauth-rightslog-entry-groupperms' => 'změnil oprávnění skupiny $1 z $2 na $3',
 	'centralauth-rightslog-entry-groupperms2' => 'změnil oprávnění skupiny $1. Přidáno $2; odstraněno $3',
+	'centralauth-rightslog-entry-groupperms3' => 'změnil rozsah používání skupiny $1 ze sady $2 na $3',
 	'centralauth-rightslog-header' => 'Tato kniha obsahuje operace na globálních skupinách: změny členství a oprávnění.',
 	'centralauth-rightslog-entry-newset' => 'vytvořil sadu wiki $1 obsahující $2: $3',
 	'centralauth-rightslog-entry-setrename' => 'přejmenoval sadu wiki „$2“ na „$1“',
@@ -5348,6 +5353,7 @@ $messages['grc'] = array(
 	'centralauth-finish-login' => 'Συνδεῖσθαι',
 	'centralauth-finish-send-confirmation' => 'Πέμπειν ἠλεκτρονικῇ ἐπιστολῇ τὸ σύνθημα',
 	'centralauth-admin-username' => 'Ὄνομα χρωμένου:',
+	'centralauth-admin-info-id' => 'Ταυτότης χρωμένου:',
 	'centralauth-admin-info-hidden' => 'Κεκρυμμένη:',
 	'centralauth-admin-reason' => 'Αἰτία:',
 	'centralauth-editgroup-noset' => '(οὐδέν)',
