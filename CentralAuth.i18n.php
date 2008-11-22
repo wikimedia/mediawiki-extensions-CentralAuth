@@ -11605,12 +11605,16 @@ $messages['os'] = array(
 	'centralauth-admin-username' => 'Архайæджы ном:',
 	'centralauth-admin-yes' => 'о',
 	'centralauth-admin-no' => 'нæ',
+	'centralauth-admin-reason' => 'Аххос:',
 	'centralauth-seconds-ago' => '$1 секунды агъоммæ',
 	'centralauth-minutes-ago' => '$1 минуты агъоммæ',
 	'centralauth-hours-ago' => '$1 сахаты агъоммæ',
 	'centralauth-days-ago' => '$1 боны агъоммæ',
 	'centralauth-months-ago' => '$1 мæйы агъоммæ',
 	'centralauth-years-ago' => '$1 азы агъоммæ',
+	'centralauth-editgroup-noset' => '(нæй)',
+	'centralauth-editset-reason' => 'Аххос:',
+	'centralauth-editset-nouse' => '(нæй)',
 );
 
 /** Punjabi (ਪੰਜਾਬੀ)
