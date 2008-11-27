@@ -8057,6 +8057,13 @@ $messages['ka'] = array(
 	'centralauth-editset-reason' => 'მიზეზი:',
 );
 
+/** Kara-Kalpak (Qaraqalpaqsha)
+ * @author Jiemurat
+ */
+$messages['kaa'] = array(
+	'centralauth-prefs-status' => 'Global akkaunt statusı:',
+);
+
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
 	'mergeaccount' => 'تىركەلگى بىرىزدەندىرۋ كۇيى',
@@ -11658,6 +11665,7 @@ $messages['pdt'] = array(
  * @author Leinad
  * @author Maikking
  * @author Matma Rex
+ * @author Qblik
  * @author Sp5uhe
  * @author ToSter
  * @author Ymar
@@ -11839,6 +11847,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-rightslog-entry-usergroups' => 'zmienił wszędzie przynależność $1 do grup ($2 → $3)',
 	'centralauth-rightslog-entry-groupperms' => 'zmienił wszędzie uprawnienia $1 ($2 → $3)',
 	'centralauth-rightslog-entry-groupperms2' => 'zmienił przynależność $1 do grup. Dodane $2; usunięte $3',
+	'centralauth-rightslog-entry-groupperms3' => 'zmieniona grupa ograniczonych wiki o nazwie $1 z $2 na $3',
 	'centralauth-rightslog-header' => 'W tym rejestrze odnotowywane są operacje na globalnych grupach: dodawanie i usuwanie ich członków oraz zmiany uprawnień',
 	'centralauth-rightslog-entry-newset' => 'stworzył zbiór wiki $2 o nazwie $1 zawierający $3',
 	'centralauth-rightslog-entry-setrename' => 'zmienił nazwę zbioru wiki „$2” na „$1”',
