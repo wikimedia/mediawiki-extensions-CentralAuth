@@ -2498,14 +2498,25 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
  */
 $messages['bs'] = array(
 	'mergeaccount' => 'Status spajanja korisničkih računa',
+	'centralauth-merge-denied' => 'Izvinjavamo se, nemate dopuštenja da pregledate ovu stranicu.',
+	'centralauth-merge-step2-title' => 'Potvrdi više računa',
+	'centralauth-merge-step2-submit' => 'Potvrdi informacije prijave',
 	'centralauth-merge-dryrun-complete' => 'Svi postojeći računi će biti automatski spojeni!
 
 Zasad se Vaši računi nisu mijenjali.',
+	'centralauth-merge-dryrun-or' => "'''ili'''",
+	'centralauth-list-home-title' => 'Osnovna wiki',
+	'centralauth-merge-method-primary' => 'osnovna wiki',
 	'centralauth-finish-password' => 'Šifra:',
 	'centralauth-finish-login' => 'Prijava',
+	'centralauth-finish-send-confirmation' => 'Pošalji šifru e-mailom',
+	'centralauth-attach-title' => 'Potvrdi račun',
 	'centralauth-admin-username' => 'Korisničko ime:',
+	'centralauth-admin-info-locked' => 'Zaključano:',
 	'centralauth-admin-yes' => 'da',
 	'centralauth-admin-no' => 'ne',
+	'centralauth-admin-list-method' => 'Metod',
+	'centralauth-admin-delete-title' => 'Obriši račun',
 	'centralauth-admin-reason' => 'Razlog:',
 	'centralauth-editset-name' => 'Naziv:',
 	'centralauth-editset-reason' => 'Razlog:',
