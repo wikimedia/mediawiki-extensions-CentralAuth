@@ -155,10 +155,12 @@ $aliases['hu'] = array(
 
 /** Japanese (日本語) */
 $aliases['ja'] = array(
-	'CentralAuth' => array( 'アカウント統一管理' ),
+	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
 	'AutoLogin' => array( '自動ログイン' ),
 	'MergeAccount' => array( 'アカウント統合' ),
 	'GlobalGroupMembership' => array( 'グローバル利用者権限' ),
+	'GlobalGroupPermissions' => array( 'グローバルグループパーミッション', 'グローバルグループの管理' ),
+	'EditWikiSets' => array( 'ウィキ群の編集' ),
 	'GlobalUsers' => array( 'グローバル利用者' ),
 );
 
