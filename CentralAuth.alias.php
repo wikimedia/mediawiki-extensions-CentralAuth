@@ -110,7 +110,7 @@ $aliases['fi'] = array(
 
 /** French (Français) */
 $aliases['fr'] = array(
-	'AutoLogin' => array( 'Login Automatique', 'LoginAutomatique', 'LoginAuto' ),
+	'AutoLogin' => array( 'Login automatique', 'LoginAutomatique', 'LoginAuto' ),
 	'MergeAccount' => array( 'Fusionner le compte', 'FusionnerLeCompte' ),
 	'GlobalGroupMembership' => array( 'Permissions globales', 'PermissionGlobales' ),
 	'GlobalGroupPermissions' => array( 'Droits des groupes globaux', 'DroitsDesGroupesGlobaux' ),
@@ -263,5 +263,11 @@ $aliases['sv'] = array(
 	'CentralAuth' => array( 'Gemensam inloggning' ),
 	'MergeAccount' => array( 'Slå ihop konton' ),
 	'GlobalUsers' => array( 'Globala användare' ),
+);
+
+/** Swahili (Kiswahili) */
+$aliases['sw'] = array(
+	'AutoLogin' => array( 'IngiaEFnyewe' ),
+	'MergeAccount' => array( 'KusanyaAkaunti' ),
 );
 
