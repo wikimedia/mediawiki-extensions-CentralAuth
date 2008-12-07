@@ -4573,6 +4573,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'mergeaccount' => 'Käyttäjätunnusten yhdistämisen tila',
+	'centralauth-groupname' => 'Wikimedia-säätiö',
 	'centralauth-desc' => 'Mahdollistaa [[Special:MergeAccount|käyttäjätunnusten yhdistämisen]] Wikimedian wikeissä.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.',
 	'centralauth-merge-denied' => 'Et ole oikeutettu käyttämään tätä sivua.',
