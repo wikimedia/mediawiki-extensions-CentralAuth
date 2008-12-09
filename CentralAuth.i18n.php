@@ -8750,6 +8750,7 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Lovekhmer
+ * @author Thearith
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
@@ -8765,7 +8766,7 @@ $messages['km'] = array(
 	'centralauth-error-locked' => 'អ្នក​មិនអាច​ធ្វើ​ការកែប្រែ​បាន​ទេ​ពីព្រោះ​គណនី​របស់អ្នក​ត្រូវបាន​គេ​ចាក់សោ​ហើយ។',
 	'centralauth-list-home-title' => 'វិគីទំព័រដើម',
 	'centralauth-foreign-link' => 'អ្នកប្រើប្រាស់ឈ្មោះ $1 នៅលើ $2',
-	'centralauth-merge-method-empty' => 'គ្មានការរួមចំនែក',
+	'centralauth-merge-method-empty' => 'គ្មានការរួមចំណែក',
 	'centralauth-merge-method-mail' => 'ត្រូវបានបញ្ជាក់ដោយអ៊ីមែល',
 	'centralauth-merge-method-password' => 'ត្រូវបានបញ្ជាក់ដោយពាក្យសំងាត់',
 	'centralauth-merge-method-new' => 'គណនីថ្មី',
@@ -8787,8 +8788,8 @@ $messages['km'] = array(
 	'centralauth-admin-no' => 'ទេ',
 	'centralauth-admin-delete-title' => 'លុបគណនី',
 	'centralauth-admin-delete-button' => 'លុបគណនីនេះ',
-	'centralauth-admin-delete-success' => 'បានលុបគណនីជាសាកលសំរាប់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
-	'centralauth-admin-nonexistent' => 'គ្មានគណនីសាកលសំរាប់"<nowiki>$1</nowiki>"ទេ',
+	'centralauth-admin-delete-success' => 'បានលុបគណនីជាសាកលសម្រាប់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
+	'centralauth-admin-nonexistent' => 'គ្មានគណនីសាកលសម្រាប់"<nowiki>$1</nowiki>"ទេ',
 	'centralauth-admin-delete-nonexistent' => 'កំហុស:គណនីជាសាកលនៃ"<nowiki>$1</nowiki>"មិនមានទេ។',
 	'centralauth-admin-lock-title' => 'ចាក់សោគណនី',
 	'centralauth-admin-lock-button' => 'ចាក់សោគណនីនេះ',
@@ -8796,7 +8797,7 @@ $messages['km'] = array(
 	'centralauth-admin-lock-nonexistent' => 'កំហុស:មិនមានគណនីសាកល"<nowiki>$1</nowiki>"ទេ។',
 	'centralauth-admin-unlock-title' => 'ដោះសោគណនី',
 	'centralauth-admin-unlock-button' => 'ដោះសោគណនីនេះ',
-	'centralauth-admin-unlock-success' => 'បានដោះសោគណនីសាកលសំរាប់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
+	'centralauth-admin-unlock-success' => 'បានដោះសោគណនីសាកលសម្រាប់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
 	'centralauth-admin-hide-title' => 'គណនីដែលត្រូវបានលាក់',
 	'centralauth-admin-hide-description' => 'គណនីដែលត្រូវបានលាក់នឹងមិនត្រូវបានបង្ហាញនៅ[[Special:GlobalUsers|បញ្ជីអ្នកប្រើប្រាស់សាកល]]ទេ។',
 	'centralauth-admin-hide-button' => 'លាក់គណនីនេះ',
@@ -8817,19 +8818,19 @@ $messages['km'] = array(
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ឆ្នាំ|ឆ្នាំ}}មុន',
 	'centralauth-prefs-unattached' => 'លែង បញ្ជាក់ទទួលស្គាល់',
 	'centralauth-prefs-complete' => 'ទាំងអស់តាមលំដាប់ហើយ!',
-	'centralauth-prefs-count-attached' => 'គណនីរបស់អ្នកសកម្មក្នុង$1គំរោង{{PLURAL:$1|របស់វិគី|របស់វិគី}}។',
+	'centralauth-prefs-count-attached' => 'គណនីរបស់អ្នកសកម្មក្នុង$1គម្រោង{{PLURAL:$1|របស់វិគី|របស់វិគី}}។',
 	'centralauth-prefs-manage' => 'គ្រប់គ្រងគណនីសាកលរបស់អ្នក',
-	'centralauth-login-progress' => 'កំពុងឡុកអ៊ីនអ្នកចូលក្នុងគំរោងផ្សេងៗទៀតរបស់{{MediaWiki:Centralauth-groupname}}៖',
+	'centralauth-login-progress' => 'កំពុងឡុកអ៊ីនអ្នកចូលក្នុងគម្រោងផ្សេងៗទៀតរបស់{{MediaWiki:Centralauth-groupname}}៖',
 	'centralauth-log-entry-delete' => 'បានលុបគណនីសាកល "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock' => 'បានចាក់សោគណនីសាកល "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-hide' => 'បានលាក់គណនីសាកល"<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide' => 'បានចាក់សោនិងបានលាក់គណនីសាកល"<nowiki>$1</nowiki>"',
-	'centralauth-rightslog-name' => 'កំនត់ហេតុនៃការប្តូរសិទ្ធិជាសាកល',
-	'centralauth-rightslog-entry-usergroups' => 'បានប្តូរក្រុមសមាជិកភាពជាសាកលសំរាប់ $1 ពី $2 ទៅ $3',
-	'centralauth-rightslog-entry-groupperms' => 'បានប្តូរក្រុមសមាជិកភាពសំរាប់$1ពី$2ទៅ$3',
-	'centralauth-rightslog-entry-groupperms2' => 'បានប្តូរក្រុមសមាជិកភាពសំរាប់ $1។ បានបន្ថែម $2 និងដកហូត $3',
+	'centralauth-rightslog-name' => 'កំណត់ហេតុនៃការប្តូរសិទ្ធិជាសាកល',
+	'centralauth-rightslog-entry-usergroups' => 'បានប្តូរក្រុមសមាជិកភាពជាសាកលសម្រាប់ $1 ពី $2 ទៅ $3',
+	'centralauth-rightslog-entry-groupperms' => 'បានប្តូរក្រុមសមាជិកភាពសម្រាប់$1ពី$2ទៅ$3',
+	'centralauth-rightslog-entry-groupperms2' => 'បានប្តូរក្រុមសមាជិកភាពសម្រាប់ $1។ បានបន្ថែម $2 និងដកហូត $3',
 	'centralauth-rightslog-entry-setnewtype' => 'បានប្តូរប្រភេទនៃ"$1"ពី$2ទៅ$3',
-	'centralauth-rightslog-entry-setchange' => 'បានប្តុរវិគីក្នុង"$1": បានបន្ថែម: $2; បានដកចេញ: $3',
+	'centralauth-rightslog-entry-setchange' => 'បានប្ដូរវិគីក្នុង"$1": បានបន្ថែម: $2; បានដកចេញ: $3',
 	'autologin' => 'ឡុកអ៊ីន​ដោយស្វ័យប្រវត្តិ',
 	'globalgroupmembership' => 'សមាជិកភាពក្នុងក្រុមជាសាកល',
 	'globalgrouppermissions' => 'ការគ្រប់គ្រងក្រុមជាសាកល',
