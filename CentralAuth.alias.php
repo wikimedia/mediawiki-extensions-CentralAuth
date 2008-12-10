@@ -118,6 +118,17 @@ $aliases['fr'] = array(
 	'GlobalUsers' => array( 'Utilisateurs globaux', 'UtilisateursGlobaux' ),
 );
 
+/** Swiss German (Alemannisch) */
+$aliases['gsw'] = array(
+	'CentralAuth' => array( 'Verwaltig Benutzerkonte-Zämmefierig' ),
+	'AutoLogin' => array( 'Automatischi Aamäldig' ),
+	'MergeAccount' => array( 'Benutzerkonte zämmefiere' ),
+	'GlobalGroupMembership' => array( 'Wältwyti Benutzerrächt' ),
+	'GlobalGroupPermissions' => array( 'Wältwyti Grupperächt' ),
+	'EditWikiSets' => array( 'Wikisets bearbeite' ),
+	'GlobalUsers' => array( 'Wältwyti Benutzerlischt' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
