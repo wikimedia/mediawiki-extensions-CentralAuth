@@ -161,7 +161,7 @@ $aliases['hu'] = array(
 	'GlobalGroupMembership' => array( 'Globális felhasználói jogok' ),
 	'GlobalGroupPermissions' => array( 'Globális felhasználói engedélyek' ),
 	'EditWikiSets' => array( 'Wikicsoportok szerkesztése' ),
-	'GlobalUsers' => array( 'Felhasználók globális listája' ),
+	'GlobalUsers' => array( 'Globális felhasználólista', 'Felhasználók globális listája' ),
 );
 
 /** Japanese (日本語) */
