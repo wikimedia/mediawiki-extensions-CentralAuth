@@ -4900,7 +4900,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mode de démonstration seulement</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La fusion des comptes est actuellement en mode de démonstration ou de test, on ne peut donc pas encore réellement fusionner de comptes. Désolé !',
 	'centralauth-error-locked' => 'Vous ne pouvez rien modifier car votre compte est verrouillé.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur le '''compte unique''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur le '''compte unique''']]''",
 	'centralauth-list-home-title' => 'Projet principal',
 	'centralauth-list-home-dryrun' => 'Le mot de passe et l’adresse courriel du projet principal ci-dessous seront utilisés pour votre compte unifié. Vous pourrez modifier votre projet principal par la suite.',
 	'centralauth-list-attached-title' => 'Comptes rattachés',
@@ -8772,10 +8772,10 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
  */
 $messages['km'] = array(
 	'centralauth-groupname' => 'មូលនិធិវិគីមេឌា',
-	'centralauth-merge-denied' => 'សូមអភ័យទោស! អ្នកមិនមានការអនុញ្ញាតអោយចូលទៅកាន់ទំព័រនេះទេ។',
+	'centralauth-merge-denied' => 'សូមអភ័យទោស! អ្នកមិនមានការអនុញ្ញាតឱ្យចូលទៅកាន់ទំព័រនេះទេ។',
 	'centralauth-merge-step1-submit' => 'បញ្ជាក់ទទួលស្គាល់ពត៌មានពីការឡុកអ៊ីន',
 	'centralauth-merge-step2-title' => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
-	'centralauth-merge-step2-submit' => 'បញ្ជាក់ទទួលស្គាល់ពត៌មាននៃការឡុកអ៊ីន',
+	'centralauth-merge-step2-submit' => 'បញ្ជាក់ទទួលស្គាល់ព័ត៌មាននៃការឡុកអ៊ីន',
 	'centralauth-merge-dryrun-or' => "'''ឬ'''",
 	'centralauth-merge-step3-title' => 'បង្កើត​គណនីរួមគ្នា',
 	'centralauth-merge-step3-submit' => 'បញ្ចូលគណនីរួមគ្នា',
@@ -8807,24 +8807,27 @@ $messages['km'] = array(
 	'centralauth-admin-delete-button' => 'លុបគណនីនេះ',
 	'centralauth-admin-delete-success' => 'បានលុបគណនីជាសាកលសម្រាប់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
 	'centralauth-admin-nonexistent' => 'គ្មានគណនីសាកលសម្រាប់"<nowiki>$1</nowiki>"ទេ',
-	'centralauth-admin-delete-nonexistent' => 'កំហុស:គណនីជាសាកលនៃ"<nowiki>$1</nowiki>"មិនមានទេ។',
+	'centralauth-admin-delete-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
 	'centralauth-admin-lock-title' => 'ចាក់សោគណនី',
 	'centralauth-admin-lock-button' => 'ចាក់សោគណនីនេះ',
 	'centralauth-admin-lock-success' => 'បានចាក់សោគណនីសាកលរបស់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
-	'centralauth-admin-lock-nonexistent' => 'កំហុស:មិនមានគណនីសាកល"<nowiki>$1</nowiki>"ទេ។',
+	'centralauth-admin-lock-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
 	'centralauth-admin-unlock-title' => 'ដោះសោគណនី',
 	'centralauth-admin-unlock-button' => 'ដោះសោគណនីនេះ',
 	'centralauth-admin-unlock-success' => 'បានដោះសោគណនីសាកលសម្រាប់"<nowiki>$1</nowiki>"ដោយជោគជ័យ',
+	'centralauth-admin-unlock-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មាន​មាន​ទេ​។',
 	'centralauth-admin-hide-title' => 'គណនីដែលត្រូវបានលាក់',
 	'centralauth-admin-hide-description' => 'គណនីដែលត្រូវបានលាក់នឹងមិនត្រូវបានបង្ហាញនៅ[[Special:GlobalUsers|បញ្ជីអ្នកប្រើប្រាស់សាកល]]ទេ។',
 	'centralauth-admin-hide-button' => 'លាក់គណនីនេះ',
+	'centralauth-admin-hide-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
 	'centralauth-admin-unhide-title' => 'ឈប់បិទបាំងគណនី',
 	'centralauth-admin-unhide-button' => 'ឈប់បិទបាំងគណនីនេះ',
+	'centralauth-admin-unhide-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
 	'centralauth-admin-reason' => 'មូលហេតុ៖',
 	'centralauth-admin-lockandhide-title' => 'ចាក់សោនិងលាក់គណនី',
 	'centralauth-admin-lockandhide-button' => 'ចាក់សោនិងលាក់គណនីនេះ',
 	'centralauth-admin-lockandhide-success' => 'បានចាក់សោនិងបានលាក់គណនីដោយជោគជ័យ',
-	'centralauth-admin-lockandhide-nonexistent' => 'កំហុស: មិនមានគណនីសាកល"<nowiki>$1</nowiki>"ទេ។',
+	'centralauth-admin-lockandhide-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
 	'globalusers' => 'បញ្ជីអ្នកប្រើប្រាស់សាកល',
 	'centralauth-listusers-locked' => 'ត្រូវបានចាក់សោ',
 	'centralauth-seconds-ago' => '$1{{PLURAL:$1|វិនាទី|វិនាទី}}មុន',
@@ -9555,7 +9558,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
-Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatiounen fir dës Sàit vun alle verlinkten Domainen mat Hellëf vu Billerlinken unzefroen.
+Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatiounen fir dës Säit vun alle verlinkten Domainen mat Hellëf vu Billerlinken unzefroen.
 Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
@@ -14736,12 +14739,13 @@ $messages['tg-cyrl'] = array(
 );
 
 /** Thai (ไทย)
+ * @author Ans
  * @author Manop
  * @author Passawuth
  */
 $messages['th'] = array(
 	'centralauth-merge-denied' => 'ขออภัย คุณไม่สามารถเข้าหน้านี้ได้',
-	'centralauth-merge-step1-detail' => 'กรุณาใส่รหัสผ่านของบัญชีที่คุณจะสร้างที่นี่ รหัสผ่านและอีเมลของคุณจะโดนตรวจสอบในบัญชีของวิกิอื่น ๆ ด้วยเช่นกัน เพื่อที่จะยืนยันว่าข้อมูลเหมือนกัน ไม่มีการเปลี่ยนแปลงใด ๆ ทั้งสิ้นจนกว่าคุณจะยืนยันว่าทุกอย่างเป็นไปตามที่ต้องการ',
+	'centralauth-merge-step1-detail' => 'กรุณาใส่รหัสผ่านสำหรับบัญชีผู้ใช้ของคุณที่นี่ รหัสผ่านและอีเมลของคุณจะถูกนำไปเปรียบเทียบกับบัญชีผู้ใช้เดียวกันในวิกิอื่น ๆ เพื่อที่จะยืนยันว่าข้อมูลตรงกัน จะไม่มีการเปลี่ยนแปลงใด ๆ ทั้งสิ้นจนกว่าคุณจะยืนยันว่าทุกอย่างเป็นไปตามที่ต้องการ',
 	'centralauth-merge-step1-submit' => 'ยืนยันข้อมูลการล็อกอิน',
 	'centralauth-merge-step2-submit' => 'ยืนยันข้อมูลการล็อกอิน',
 	'centralauth-merge-dryrun-or' => "'''หรือ'''",
@@ -14750,12 +14754,12 @@ $messages['th'] = array(
 	'centralauth-merge-method-empty' => 'ไม่มีประวัติการเขียน',
 	'centralauth-merge-method-mail' => 'ยืนยันทางอีเมล',
 	'centralauth-merge-method-password' => 'ยืนยันทางรหัสผ่าน',
-	'centralauth-merge-method-new' => 'บัญชีใหม่',
+	'centralauth-merge-method-new' => 'บัญชีผู้ใช้ใหม่',
 	'centralauth-merge-method-login' => 'ยืนยันในการล็อกอิน',
 	'centralauth-finish-password' => 'รหัสผ่าน:',
 	'centralauth-finish-login' => 'ล็อกอิน',
 	'centralauth-finish-send-confirmation' => 'อีเมลรหัสผ่าน',
-	'centralauth-finish-noconfirms' => 'ไม่มีบัญชีไหนที่จะสามารถยืนยันได้ด้วยรหัสผ่านนี้',
+	'centralauth-finish-noconfirms' => 'ไม่พบบัญชีผู้ใช้ที่จะสามารถยืนยันได้ด้วยรหัสผ่านนี้',
 	'centralauth-attach-title' => 'ยืนยันบัญชีผู้ใช้',
 	'centralauth-admin-username' => 'ผู้ใช้:',
 	'centralauth-admin-info-hidden' => 'ซ่อน:',
@@ -14768,9 +14772,9 @@ $messages['th'] = array(
 	'centralauth-admin-unlock-title' => 'ปลดล็อกบัญชีผู้ใช้',
 	'centralauth-admin-unlock-button' => 'ปลดล็อกบัญชีผู้ใช้นี้',
 	'centralauth-admin-reason' => 'เหตุผล:',
-	'centralauth-prefs-status' => 'สถานะชื่อบัญชีทั้งระบบ:',
+	'centralauth-prefs-status' => 'สถานะบัญชีผู้ใช้กลาง:',
 	'centralauth-prefs-count-attached' => 'ชื่อผู้ใช้ของคุณใช้งานได้ใน $1 โครงการ',
-	'centralauth-prefs-manage' => 'จัดการชื่อบัญชีทั้งระบบ',
+	'centralauth-prefs-manage' => 'บริหารระบบบัญชีผู้ใช้กลางของคุณ',
 	'centralauth-login-progress' => 'ขณะนี้คุณล็อกอินเข้าสู่โครงการอื่นในวิกิมีเดีย:',
 	'centralauth-logout-progress' => 'ขณะนี้ล็อกเอาต์ออกจากโครงการในวิกิมีเดีย:',
 	'centralauth-existinggroup-legend' => 'กลุ่มที่มีอยู่',

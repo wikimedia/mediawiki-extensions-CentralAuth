@@ -66,9 +66,12 @@ $aliases['bg'] = array(
 
 /** Bosnian (Bosanski) */
 $aliases['bs'] = array(
+	'CentralAuth' => array( 'SredisnjaAutent' ),
+	'AutoLogin' => array( 'AutoPrijava' ),
 	'MergeAccount' => array( 'UjediniRacune' ),
 	'GlobalGroupMembership' => array( 'GlobalnaKorisnicnaPrava' ),
 	'GlobalGroupPermissions' => array( 'GlobalneDozvoleGrupa' ),
+	'EditWikiSets' => array( 'UrediWikiSetove' ),
 	'GlobalUsers' => array( 'GlobalniKorisnici' ),
 );
 
