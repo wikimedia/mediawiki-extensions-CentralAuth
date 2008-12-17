@@ -123,9 +123,9 @@ $aliases['fr'] = array(
 
 /** Swiss German (Alemannisch) */
 $aliases['gsw'] = array(
-	'CentralAuth' => array( 'Verwaltig Benutzerkonte-Zämmefierig' ),
+	'CentralAuth' => array( 'Verwaltig Benutzerchonte-Zämmefierig' ),
 	'AutoLogin' => array( 'Automatischi Aamäldig' ),
-	'MergeAccount' => array( 'Benutzerkonte zämmefiere' ),
+	'MergeAccount' => array( 'Benutzerchonte zämmefiere' ),
 	'GlobalGroupMembership' => array( 'Wältwyti Benutzerrächt' ),
 	'GlobalGroupPermissions' => array( 'Wältwyti Grupperächt' ),
 	'EditWikiSets' => array( 'Wikisets bearbeite' ),
