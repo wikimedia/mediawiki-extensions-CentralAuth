@@ -2506,18 +2506,32 @@ $messages['bs'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Spaja više računa]] za jedinstvenu korisničku prijavu',
 	'centralauth-merge-denied' => 'Izvinjavamo se, nemate dopuštenja da pregledate ovu stranicu.',
 	'centralauth-merge-notlogged' => 'Molimo Vas <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} prijavite se]</span> da bi ste provjerili da li su Vaši računi potpuno spojeni.',
+	'centralauth-merge-welcome' => "'''Vaš korisnički račun još uvijek nije premješten na unificirani sistem prijave na {{MediaWiki:Centralauth-groupname}}.'''
+
+Ako izaberete da premjestite Vaše račune, moći ćete da koristite isto korisničko ime i šifru za prijavu na svim wikijima na {{MediaWiki:Centralauth-groupname}} na svim podržanim jezicima.
+
+Ako neko drugi već ima isto korisničko ime na drugom projektu, ovo neće ništa poremetiti, ali Vam može pružiti šansu da bilo s tim korisnikom ili nekim od administratora razriješite uzurpaciju.",
 	'centralauth-merge-step1-title' => 'Početak unifikacije prijave',
 	'centralauth-merge-step1-detail' => 'Molimo unesite ovdje Vašu šifru.
 Vaša šifra i registrirana e-mail adresa će biti provjerena zajedno sa Vašim računima na drugim wikijima da bi potvrdili da se slažu.
 Promjene se neće izvršiti dok se potvrdite da je sve uredu.',
 	'centralauth-merge-step1-submit' => 'Potvrđivanje informacija prijave',
 	'centralauth-merge-step2-title' => 'Potvrdi više računa',
+	'centralauth-merge-step2-detail' => 'Neki od računa nisu se mogli automatski spojiti sa Vašom matičnom wiki. Ako ovi računi pripadaju Vama, možete potvrditi da su Vaši tako što će te navesti šifru za njih.',
 	'centralauth-merge-step2-submit' => 'Potvrdi informacije prijave',
 	'centralauth-merge-dryrun-complete' => 'Svi postojeći računi će biti automatski spojeni!
 
 Zasad se Vaši računi nisu mijenjali.',
+	'centralauth-merge-dryrun-incomplete' => 'Spremni ste da nastavite dalje, ali neki od Vaših računa ne mogu trenutno biti automatski provjereni i neće biti odmah spojeni.
+Njih će te moći spojiti kasnije.
+
+Do sad nisu učinjene nikakve promjene na Vašim računima.',
 	'centralauth-merge-dryrun-or' => "'''ili'''",
+	'centralauth-merge-dryrun-home' => 'Sistem preseljenja računa nije mogao utvrditi da ste vlasnik prvobitnog računa na domaćem wiki za Vaše korisničko ime-
+
+Pronađena je još jedna wiki koja bi mogla biti natična wiki za Vaše korisničko ime; slijedite link ispod i prijavite se tamo da bi ste završili proces unifikacije Vašeg računa.',
 	'centralauth-merge-step3-title' => 'Pravljenje unificiranog računa',
+	'centralauth-merge-step3-detail' => 'Spremni ste da napraviti Vaš unificirani račun, sa slijedećim pojedinačnim računima na wikijima:',
 	'centralauth-merge-step3-submit' => 'Unificiraj račune',
 	'centralauth-complete' => 'Unifikacija prijave završena!',
 	'centralauth-incomplete' => 'Unificiranje prijave nije završeno!',
@@ -2587,6 +2601,7 @@ Zasad se Vaši računi nisu mijenjali.',
 	'centralauth-admin-lockandhide-title' => 'Zaključaj i sakrij račun',
 	'centralauth-admin-lockandhide-button' => 'Zaključaj i sakrij ovaj račun',
 	'centralauth-admin-lockandhide-success' => 'Račun uspješno zaključan i sakriven',
+	'centralauth-admin-lockandhide-nonexistent' => 'Greška: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
 	'globalusers' => 'Spisak globalnih korisnika',
 	'centralauth-listusers-locked' => 'zaključan',
 	'centralauth-listusers-attached' => 'postoji lokalno',
@@ -3679,6 +3694,7 @@ $messages['ee'] = array(
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Crochet.david
  * @author Flyax
  * @author Lou
  * @author ZaDiak
@@ -3778,6 +3794,7 @@ $messages['el'] = array(
 	'centralauth-admin-merge' => 'Συγχώνευση των επιλεγμένων',
 	'centralauth-admin-bad-input' => 'Η επιλογή για την συγχώνευση είναι άκυρη',
 	'centralauth-admin-none-selected' => 'Δεν διαλέξατε λογαριασμούς προς τροποποίηση.',
+	'centralauth-token-mismatch' => 'Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|δευτερόλεπτο|δευτερόλεπτα}} πριν',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|λεπτό|λεπτά}} πριν',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ώρα|ώρες}} πριν',
