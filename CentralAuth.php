@@ -191,6 +191,11 @@ $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
 $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
 $wgSpecialPages['EditWikiSets'] = 'SpecialEditWikiSets';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
+$wgSpecialPageGroups['CentralAuth'] = 'users';
+$wgSpecialPageGroups['MergeAccount'] = 'login';
+$wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
+$wgSpecialPageGroups['GlobalGroupPermissions'] = 'users';
+$wgSpecialPageGroups['EditWikiSets'] = 'wiki';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
 $wgLogTypes[]                      = 'globalauth';
