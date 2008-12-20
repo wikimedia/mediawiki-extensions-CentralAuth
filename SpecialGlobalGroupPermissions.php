@@ -102,9 +102,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'centralauth-globalgroups-newgroup' ) );
 		$html .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalGroupPermissions')->getPrefixedText() );
 		
-		$fields = array( 'centralauth-globalgroupperms-newgroupname' => wfInput( 'wpGroup' ) );
+		$fields = array( 'centralauth-globalgroupperms-newgroupname' => Xml::input( 'wpGroup' ) );
 		
-		$html .= wfBuildForm( $fields, 'centralauth-globalgroupperms-creategroup-submit' );
+		$html .= Xml::buildForm( $fields, 'centralauth-globalgroupperms-creategroup-submit' );
 		$html .= Xml::closeElement( 'form' );
 		$html .= Xml::closeElement( 'fieldset' );
 		
@@ -129,9 +129,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$fields['centralauth-editgroup-members'] = wfMsgExt( 'centralauth-editgroup-members-link', array( 'parseinline' ), $group, User::getGroupMember( $group ) );
 		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector($group);
 		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes($group);
-		$fields['centralauth-editgroup-reason'] = wfInput( 'wpReason' );
+		$fields['centralauth-editgroup-reason'] = Xml::input( 'wpReason' );
 		
-		$html .= wfBuildForm( $fields, 'centralauth-editgroup-submit' );
+		$html .= Xml::buildForm( $fields, 'centralauth-editgroup-submit' );
 		
 		$html .= Xml::closeElement( 'form' );
 		$html .= Xml::closeElement( 'fieldset' );

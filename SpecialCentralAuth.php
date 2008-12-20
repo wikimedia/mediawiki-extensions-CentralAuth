@@ -339,7 +339,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$hostname = $wiki->getDisplayName();
 		$userPageName = 'User:' . $this->mUserName;
 		$url = $wiki->getUrl( $userPageName );
-		return wfElement( 'a',
+		return Xml::element( 'a',
 			array(
 				'href' => $url,
 				'title' => wfMsg( 'centralauth-foreign-link',
