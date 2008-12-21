@@ -3276,6 +3276,7 @@ Dine konti er ikke blevet ændret endnu.',
 /** German (Deutsch)
  * @author Raimond Spekking
  * @author Revolus
+ * @author Umherirrender
  */
 $messages['de'] = array(
 	'mergeaccount' => 'Status der Benutzerkonten-Zusammenführung',
@@ -3283,9 +3284,7 @@ $messages['de'] = array(
 	'centralauth-desc' => 'Benutzerkonten in Wikis {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zusammenführen]]',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zusammenführen mehrerer Benutzerkonten]] für das ''Single User Login''",
 	'centralauth-merge-denied' => 'Entschuldigung, aber du hast keine Berechtigung für diese Seite.',
-	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">
-		[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an],
-		</span> um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
+	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an]</span>, um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
 	'centralauth-merge-welcome' => 'Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt.
 
 Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, dich mit einem gemeinsamen Benutzernamen und Passwort in allen Projekten {{MediaWiki:Centralauth-groupname}} in allen verfügbaren Sprachen anzumelden.
@@ -3545,7 +3544,7 @@ Njezměnijo se nic, až njejo wobkšuśone, až jo wšo w pórěźe.',
 	'centralauth-merge-step1-submit' => 'Pśizjawjeńske informacije wobkšuśiś',
 	'centralauth-merge-step2-title' => 'Dalšne konta wobkšuśiś',
 	'centralauth-merge-step2-submit' => 'Pśizjawjeńske informacije wobkšuśiś',
-	'centralauth-merge-dryrun-complete' => 'Wše eksistujuce konta daju se awtomatiski zjadnośiś!
+	'centralauth-merge-dryrun-complete' => 'Wše eksistěrujuce konta daju se awtomatiski zjadnośiś!
 
 Doněnta njejo se nic na twójich kontach změniło.',
 	'centralauth-merge-dryrun-or' => "'''abo'''",
@@ -3617,33 +3616,33 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-delete-button' => 'Toś to konto wulašowaś',
 	'centralauth-admin-delete-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wulašowane',
 	'centralauth-admin-nonexistent' => 'Njejo žedne globalne konto za "<nowiki>$1</nowiki>".',
-	'centralauth-admin-delete-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistujo.',
+	'centralauth-admin-delete-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-lock-title' => 'Konto zastajiś',
 	'centralauth-admin-lock-button' => 'Toś to konto zastajiś',
 	'centralauth-admin-lock-success' => 'Globalne konto za "<nowiki>$1</nowiki>" jo se wuspěšnje zastajiło.',
-	'centralauth-admin-lock-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistujo.',
+	'centralauth-admin-lock-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-unlock-title' => 'Konto wótwóriś',
 	'centralauth-admin-unlock-button' => 'Toś to konto wótwóriś',
 	'centralauth-admin-unlock-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wótwórjone.',
-	'centralauth-admin-unlock-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistujo.',
+	'centralauth-admin-unlock-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-hide-title' => 'Konto schowaś',
 	'centralauth-admin-hide-description' => 'Schowane konta njepokazuju se na [[Special:GlobalUsers|lisćinje globalnych wužywarjow]].',
 	'centralauth-admin-hide-button' => 'Toś to konto schowaś',
 	'centralauth-admin-hide-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje schowane.',
-	'centralauth-admin-hide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistujo.',
+	'centralauth-admin-hide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-unhide-title' => 'Konto wótekšyś',
 	'centralauth-admin-unhide-button' => 'Toś to konto wótekšyś',
 	'centralauth-admin-unhide-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wótekšyte',
-	'centralauth-admin-unhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistujo.',
+	'centralauth-admin-unhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-reason' => 'Pśicyna:',
 	'centralauth-admin-lockandhide-title' => 'Konto zastajiś a schowaś',
 	'centralauth-admin-lockandhide-button' => 'Toś to konto zastajiś a schowaś',
 	'centralauth-admin-lockandhide-success' => 'Konto jo wuspěšnje zastajone a schowane.',
-	'centralauth-admin-lockandhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistujo.',
+	'centralauth-admin-lockandhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'globalusers' => 'Lisćina globalnych wužywarjow',
 	'centralauth-listusers-locked' => 'zastajony',
-	'centralauth-listusers-attached' => 'eksistujo lokalnje',
-	'centralauth-listusers-nolocal' => 'wótpowjesony abo njeeksistujo lokalnje',
+	'centralauth-listusers-attached' => 'eksistěrujo lokalnje',
+	'centralauth-listusers-nolocal' => 'wótpowjesony abo njeeksistěrujo lokalnje',
 	'centralauth-seconds-ago' => 'pśed $1 {{PLURAL:$1|sekundu|sekundoma|sekundami|sekundami}}',
 	'centralauth-minutes-ago' => 'pśed $1 {{PLURAL:$1|minutu|minutoma|minutami|minutami}}',
 	'centralauth-hours-ago' => 'pśed $1 {{PLURAL:$1|goźinu|goźinoma|goźinami|goźinami}}',
@@ -3676,7 +3675,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach',
 	'globalgrouppermissions' => 'Zastojanje globalnych kupkow',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|woglědaś/wobźěłaś]])',
-	'centralauth-existinggroup-legend' => 'Eksistujuce kupki',
+	'centralauth-existinggroup-legend' => 'Eksistěrujuce kupki',
 	'centralauth-newgroup-legend' => 'Nowu kupku napóraś',
 	'centralauth-globalgroupperms-newgroupname' => 'Nowe kupkowe mě:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Pšawa pśipokazaś',
@@ -7759,7 +7758,7 @@ $messages['ja'] = array(
 	'centralauth-admin-already-unmerged' => 'すでに統合解除されている$1をスキップ',
 	'centralauth-admin-unmerge-success' => '$1のアカウントの統合解除に成功しました。',
 	'centralauth-admin-delete-title' => 'アカウント削除',
-	'centralauth-admin-delete-description' => 'グローバルアカウントの削除を実施すると、グローバル・オプションが削除され、全てのローカルのアカウントの統合が解除され、任意の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
+	'centralauth-admin-delete-description' => 'グローバルアカウントの削除を実施すると、グローバル個人設定が削除され、全てのローカルのアカウントの統合が解除され、任意の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
 	'centralauth-admin-delete-button' => 'このアカウントを削除',
 	'centralauth-admin-delete-success' => 'グローバルアカウント "<nowiki>$1</nowiki>" を削除しました',
 	'centralauth-admin-nonexistent' => 'グローバルアカウント "<nowiki>$1</nowiki>" は存在しません',
@@ -9616,6 +9615,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-groupperms' => "huet d'Grupperechter fir d'Grupp $1 geännert, vun $2 op $3",
 	'centralauth-rightslog-entry-groupperms2' => "huet d'Grupperechter geännert fir $1. Derbäigesat $2; Ewechgeholl $3",
 	'centralauth-rightslog-header' => 'An dëser Lëscht stinn Ännerunge vun de globale Benotzergruppen: Memberen an Ännerunge vu Rechter',
+	'centralauth-rightslog-entry-setrename' => 'de Wikigrupp "$2" gouf op "$1" ëmbenannt',
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
@@ -9654,7 +9654,7 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki op där si e Benotzerkont hunn:',
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bemotzer '''$1''' ass net op däer Wiki aktiv déi Dir uginn hutt ('' $2 '').
 Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
-	'centralauth-editset' => 'Ännernung vun den Astellunge vun der Wiki',
+	'centralauth-editset' => 'Ännerung vun der Grupp vu Wikiën',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|kucken/änneren]])',
 	'centralauth-editset-new' => 'Eng nei Astellung aginn',
 	'centralauth-editset-name' => 'Numm:',
@@ -12209,7 +12209,9 @@ $messages['ps'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'د نوې ډلې نوم:',
 	'centralauth-editgroup-name' => 'د ډلې نوم:',
 	'centralauth-editgroup-members' => 'د غړي لړليک:',
+	'centralauth-editgroup-noset' => '(هېڅ)',
 	'centralauth-editgroup-reason' => 'د بدلون سبب:',
+	'centralauth-editset-nouse' => '(هېڅ)',
 );
 
 /** Portuguese (Português)
