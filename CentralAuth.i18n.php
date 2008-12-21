@@ -5228,6 +5228,13 @@ $messages['fy'] = array(
 	'centralauth-editgroup-noset' => '(gjin)',
 );
 
+/** Irish (Gaeilge)
+ * @author Alison
+ */
+$messages['ga'] = array(
+	'centralauth-admin-reason' => 'Fáth:',
+);
+
 /** Galician (Galego)
  * @author Alma
  * @author Kaustubh
@@ -11233,23 +11240,28 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Eirik
+ * @author Harald Khan
  * @author Jon Harald Søby
  * @author Jorunn
  */
 $messages['nn'] = array(
 	'mergeaccount' => 'Status for samanslåing av kontoar',
-	'centralauth-desc' => '[[Special:MergeAccount|Slå saman kontoar]] på wikiane til Wikimedia Foundation',
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Slå saman kontoar]] på wikiane til {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Slå saman fleire kontoar]] for felles innlogging',
 	'centralauth-merge-denied' => 'Beklagar, du har ikkje tilgang til å bruke denne sida.',
 	'centralauth-merge-notlogged' => 'Ver venleg og <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special:MergeAccount}} logg inn]</span> for å sjekke om kontoane dine er fullstendig slått saman.',
+	'centralauth-merge-step1-submit' => 'Stadfest innloggingsinformasjon',
+	'centralauth-merge-step2-title' => 'Stadfest fleire kontoar',
 	'centralauth-merge-dryrun-or' => "'''eller'''",
 	'centralauth-merge-step3-submit' => 'Slå saman kontoane',
 	'centralauth-complete' => 'Kontosamanslåinga er fullførd!',
 	'centralauth-incomplete' => 'Kontosamanslåinga er ikkje ferdig.',
-	'centralauth-complete-text' => 'Du kan nå logge inn på kva for helst Wikimedia-wiki utan å opprette ny konto; same brukarnamn vil fungere på Wikipedia og systerprosjekta på alle språk.',
+	'centralauth-complete-text' => 'Du kan nå logge inn på kva for helst wiki som høyrer til {{MediaWiki:Centralauth-groupname}} utan å opprette ny konto.',
 	'centralauth-not-owner-text' => 'Brukarnamnet «$1» vart automatisk tildeld eigaren av kontoen på $2.
 
 Om dette er deg kan du fullføre prosessen for samanslåing ved å skrive inn hovudpassordet for kontoen her:',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Berre demonstrasjonsmodus</div><br clear='all'/>",
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Les meir om '''kontosamanslåing''']]…''",
 	'centralauth-list-home-title' => 'Heimwiki',
 	'centralauth-list-home-dryrun' => 'Passordet og e-postadressa som vert brukte på denne wikien vil verte brukte for den samanslegne kontoen.
@@ -11278,7 +11290,9 @@ Du kan endre kva wiki som vert rekna som heimewikien din sidan.',
 	'centralauth-attach-title' => 'Stadfest konto',
 	'centralauth-attach-text' => 'Denne kontoen er enno ikkje vorten slegen saman med hovudkontoen. Om hovudkontoen også er din kan du koble denne til han ved å skrive inn passordet til hovudkontoen:',
 	'centralauth-admin-username' => 'Brukarnamn:',
+	'centralauth-admin-lookup' => 'Sjå eller endra brukardata',
 	'centralauth-admin-info-id' => 'Brukar-ID:',
+	'centralauth-admin-info-locked' => 'Låst:',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nei',
 	'centralauth-admin-list-localwiki' => 'Lokal wiki',
@@ -11288,6 +11302,14 @@ Du kan endre kva wiki som vert rekna som heimewikien din sidan.',
 	'centralauth-admin-merge' => 'Slå saman dei valde',
 	'centralauth-admin-bad-input' => 'Ugyldig val for samanslåing',
 	'centralauth-admin-none-selected' => 'Ingen kontoar er valde til endring.',
+	'centralauth-admin-delete-title' => 'Slett brukarkonto',
+	'centralauth-admin-delete-nonexistent' => 'Feil: Den globale kontoen «<nowiki>$1</nowiki>» eksisterer ikkje.',
+	'centralauth-token-mismatch' => 'Orsak, skjemaet kunne ikkje bli lagra grunna tap av øktdata.',
+	'centralauth-admin-unlock-title' => 'Avblokker brukarkonto',
+	'centralauth-admin-reason' => 'Årsak:',
+	'centralauth-admin-lockandhide-title' => 'Lås og skjul brukarkonto',
+	'centralauth-admin-lockandhide-nonexistent' => 'Feil: Den globale brukarkontoen «<nowiki>$1</nowiki>» eksisterer ikkje.',
+	'centralauth-listusers-locked' => 'låst',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|Éitt sekund|$1 sekund}} sidan',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|Éitt minutt|$1 minutt}} sidan',
 	'centralauth-hours-ago' => '{{PLURAL:$1|Éin time|$1 timar}} sidan',
@@ -11303,6 +11325,9 @@ Du kan endre kva wiki som vert rekna som heimewikien din sidan.',
 	'centralauth-prefs-count-unattached' => 'Ikkje stadfesta kontoar med namnet ditt står att på {{PLURAL:$1|éitt prosjekt|$1 prosjekt}}.',
 	'centralauth-prefs-detail-unattached' => 'Det er ikkje stadfesta at denne kontoen er slått saman med hovudkontoen.',
 	'centralauth-prefs-manage' => 'Handsam hovudkontoen din',
+	'centralauth-invalid-wiki' => 'Wikidatabasen finst ikkje: $1',
+	'centralauth-log-name' => 'Logg for handsaming av globale brukarkontoar',
+	'centralauth-rightslog-name' => 'Logg for globale rettar',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -11825,6 +11850,7 @@ $messages['os'] = array(
 	'centralauth-days-ago' => '$1 боны агъоммæ',
 	'centralauth-months-ago' => '$1 мæйы агъоммæ',
 	'centralauth-years-ago' => '$1 азы агъоммæ',
+	'centralauth-prefs-complete' => 'Алцыдæр у хорз!',
 	'centralauth-editgroup-noset' => '(нæй)',
 	'centralauth-editset-reason' => 'Аххос:',
 	'centralauth-editset-nouse' => '(нæй)',
