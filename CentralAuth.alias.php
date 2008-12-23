@@ -204,7 +204,10 @@ $aliases['lb'] = array(
 
 /** Macedonian (Македонски) */
 $aliases['mk'] = array(
+	'AutoLogin' => array( 'АвтоматскоНајавување' ),
 	'MergeAccount' => array( 'СпојувањеНаСметки' ),
+	'GlobalGroupMembership' => array( 'ПраваНаГлобаленКорисник', 'ЧленствоВоГлобалнаГрупа' ),
+	'GlobalGroupPermissions' => array( 'ПермисииНаГлобалнаГрупа' ),
 	'GlobalUsers' => array( 'ГлобалниКорисници' ),
 );
 
