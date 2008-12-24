@@ -3584,6 +3584,7 @@ Móžoš swój domowniski wiki hyšći pózdźej změniś.',
 	'centralauth-list-attached' => 'Kont z mjenim "$1" na kuždym ze slědujucych sedłow su so awtomatiski jadnotnemu kontoju pśidali:',
 	'centralauth-list-attached-dryrun' => 'Konta z mjenim "$1" na slědujucych sedłach přidaju se awtomatiski jadnotnemu kontoju:',
 	'centralauth-list-unattached-title' => 'Wótpowjesone konta',
+	'centralauth-list-unattached' => 'Konto "$1" njejo se dało awtomatiski wobkšuśiś ako twójo na slědujucych sedłach; nanejskerjej ma druge gronidło ako twójo primarne konto:',
 	'centralauth-foreign-link' => 'Wužywaŕ $1 na $2',
 	'centralauth-merge-method-primary' => 'Domowniski wiki',
 	'centralauth-merge-method-empty' => 'žedne pśinoski',
@@ -3593,6 +3594,7 @@ Móžoš swój domowniski wiki hyšći pózdźej změniś.',
 	'centralauth-merge-method-new' => 'nowe konto',
 	'centralauth-merge-method-login' => 'pśez pśizjawjenje wobkšuśony',
 	'centralauth-finish-title' => 'Zjadnośenje dokóńcyś',
+	'centralauth-finish-text' => 'Jolic toś te konta tebje słušaju, móžoš jadnorje dokóńcyś proces zjadnośenja, z tym až zapódaš how gronidła za druge konta:',
 	'centralauth-finish-password' => 'Gronidło:',
 	'centralauth-finish-login' => 'Pśizjawjenje',
 	'centralauth-finish-send-confirmation' => 'Gronidło pśez e-mailku pśipósłaś',
@@ -3633,15 +3635,21 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-already-unmerged' => '$1 se pśeskokujo, južo rozdźělony',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|konto|konśe|konta|kontow}} wuspěšnje {{PLURAL:$1|wótźělone|wótźělonej|wótźělone|wótźělone}}',
 	'centralauth-admin-delete-title' => 'Konto wulašowaś',
+	'centralauth-admin-delete-description' => 'Lašowanje globalnego konta buźo lašowaś globalne nastajenja, wótźělowaś wše lokalne konta a pušćiś globalne mě za liche wužywanje pśez drugego wužywarja.
+Wše lokalne konta budu dalej eksistěrowaś.
+Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu zasej gódnoty, kótarež su měli pśed zjadnośenim.',
 	'centralauth-admin-delete-button' => 'Toś to konto wulašowaś',
 	'centralauth-admin-delete-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wulašowane',
 	'centralauth-admin-nonexistent' => 'Njejo žedne globalne konto za "<nowiki>$1</nowiki>".',
 	'centralauth-admin-delete-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
+	'centralauth-token-mismatch' => 'Wódaj, njejsmy mógli twóje formularne pódaśa pśeźěłaś, dokulaž pósejźeńske daty su se zgubili.',
 	'centralauth-admin-lock-title' => 'Konto zastajiś',
+	'centralauth-admin-lock-description' => 'Zastajenje konta zajźujo pśizjawjenjeju z nim w kuždem wikiju.',
 	'centralauth-admin-lock-button' => 'Toś to konto zastajiś',
 	'centralauth-admin-lock-success' => 'Globalne konto za "<nowiki>$1</nowiki>" jo se wuspěšnje zastajiło.',
 	'centralauth-admin-lock-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-unlock-title' => 'Konto wótwóriś',
+	'centralauth-admin-unlock-description' => 'Wótporanje zastajenja konta zasej zmóžnja se z nim pśizjawiś.',
 	'centralauth-admin-unlock-button' => 'Toś to konto wótwóriś',
 	'centralauth-admin-unlock-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wótwórjone.',
 	'centralauth-admin-unlock-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
@@ -3651,11 +3659,13 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-hide-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje schowane.',
 	'centralauth-admin-hide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-unhide-title' => 'Konto wótekšyś',
+	'centralauth-admin-unhide-description' => 'Jolic konto jo zasej widobne, pokazujo se zasej w lisćinje [[Special:GlobalUsers|globalnych wužywarjow]].',
 	'centralauth-admin-unhide-button' => 'Toś to konto wótekšyś',
 	'centralauth-admin-unhide-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wótekšyte',
 	'centralauth-admin-unhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-admin-reason' => 'Pśicyna:',
 	'centralauth-admin-lockandhide-title' => 'Konto zastajiś a schowaś',
+	'centralauth-admin-lockandhide-description' => 'Zastajenje a chowanje toś togo konta zasajźujotej pśizjawjenjeju we wšych wikijach a chowatej jo w [[Special:GlobalUsers|lisćinje globalnych wužywarjow]].',
 	'centralauth-admin-lockandhide-button' => 'Toś to konto zastajiś a schowaś',
 	'centralauth-admin-lockandhide-success' => 'Konto jo wuspěšnje zastajone a schowane.',
 	'centralauth-admin-lockandhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
@@ -3678,12 +3688,15 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-prefs-count-unattached' => 'Su hyšći njewobkšuśone konta z twójim mjenim w $1 {{PLURAL:$1|projekśe|projektoma|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Za toś ten projekt njejo wobkšuśenje, až słuša ku globalnemu kontoju.',
 	'centralauth-prefs-manage' => 'Twójo globalne konto zastojaś',
+	'centralauth-renameuser-merged' => 'Wužywaŕ $1 jo južo pśeśěgnuł do jadnotnego pśizjawjeńskego systema.
+Pśemjenjowanje wótwónoźujo lokalnego wužywarja z jadnotnego systema.',
 	'centralauth-renameuser-reserved' => 'Wužywaŕ $2 jo za globalne konto rezerwěrowany.',
 	'centralauth-invalid-wiki' => 'Njejo taka wikijowa datowa banka: $1',
 	'centralauth-account-exists' => 'Konto njedajo se napóraś: wužywarske mě, kótarež se pomina, jo južo do systema jadnotnego pśizjawjenja pśewzete.',
 	'centralauth-login-progress' => 'Pśizjawijoš se do projektow {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Wótzjawijoš se z drugich projektow {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Protokol globalnego konta',
+	'centralauth-log-header' => 'Toś ten protokol wopśimujo akcije pód globalnymi kontami: lašowanja, zastajenja a pśipušćenja.',
 	'centralauth-log-entry-delete' => 'globalne konto "<nowiki>$1</nowiki>" wulašowane',
 	'centralauth-log-entry-lock' => 'globalne konto "<nowiki>$1</nowiki>" zastajone',
 	'centralauth-log-entry-unlock' => 'globalne konto "<nowiki>$1</nowiki>" wótwórjone',
@@ -3694,6 +3707,8 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-rightslog-entry-usergroups' => 'cłonkojstwo globalneje kupki za $1 wót $2 do $3 změnjone',
 	'centralauth-rightslog-entry-groupperms' => 'kupkowe pšawa za $1 wót $2 do $3 změnjone',
 	'centralauth-rightslog-entry-groupperms2' => 'kupkowe pšawa za $1 změnjone. $2 pśidany; $3 wótwónoźony',
+	'centralauth-rightslog-entry-groupperms3' => 'jo wobgranicowane wikije za $1 wót $2 do $3 změnił',
+	'centralauth-rightslog-header' => 'Toś ten protokol wopśimujo změny globalnych kupkow: cłonkojstwo a změny pšawow',
 	'centralauth-rightslog-entry-newset' => 'jo wikijowu kupku $1 $2 ze slědujucymi wikijami napórał: $3',
 	'centralauth-rightslog-entry-setrename' => 'jo wikijowu kupku "$2" do "$1" pśemjenił',
 	'centralauth-rightslog-entry-setnewtype' => 'jo typ wót "$1" z $2 do $3 změnił',
@@ -3701,11 +3716,19 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-rightslog-set-optin' => 'na zakłaźe zapśěgnjenja pó wuzwólenju',
 	'centralauth-rightslog-set-optout' => 'na zakłaźe wuzamknjenja pó wuzwólenju',
 	'autologin' => 'Awtomatiske pśizjawjenje',
+	'centralauth-autologin-desc' => 'Toś ten specialny bok MediaWiki jano internje wužywa.
+Gaž [[Special:UserLogin|se pśizjawjaš]], centralny pśizjawjeński system instruěrujo wobglědowak, aby  pominał toś ten bok wót wšych wótkazanych domenow z pomocu wobrazowych wótkazow.
+Sy pominał toś ten bok, mimo až sy pódał daty za awtentificěrowanje, tak až njestawa se nic.',
 	'globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach',
 	'globalgrouppermissions' => 'Zastojanje globalnych kupkow',
+	'centralauth-globalgroupperms-grouplist' => 'Slědujuce globalne kupki su konfigurěrowane.
+Móžoš se pšawa někakeje kupki woglědaś a je wobźěłaś.
+Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|woglědaś/wobźěłaś]])',
 	'centralauth-existinggroup-legend' => 'Eksistěrujuce kupki',
 	'centralauth-newgroup-legend' => 'Nowu kupku napóraś',
+	'centralauth-newgroup-intro' => 'Móžoš wužywaś toš ten formular, aby pśipokazał nowej kupce pšawa.
+Źiwaj na to, až kupka njeeksistěrujo, snaźkuli jo dostała pšawa pśipokazane.',
 	'centralauth-globalgroupperms-newgroupname' => 'Nowe kupkowe mě:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Pšawa pśipokazaś',
 	'centralauth-editgroup-subtitle' => '$1 se wobźěłujo',
@@ -3731,6 +3754,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'centralauth-editset' => 'Wikijowe kupki wobźěłaś',
 	'centralauth-editset-legend' => 'Wikijowu kupku wobźěłaś abo napóraś',
+	'centralauth-editset-intro' => 'Slědujuce wikijowe kupki su južo napórane. Móžoš se je woglědaś a změniś abo napóraś nowu kupku.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|se woglědaś/wobźěłaś]])',
 	'centralauth-editset-new' => 'Nowu kupku napóraś',
 	'centralauth-editset-notfound' => 'Wikijowa kupka "$1" njenamakana.',
@@ -4357,6 +4381,7 @@ Se puede borrar un grupo quitándole todos los derechos.',
 	'centralauth-editset-name' => 'Nombre:',
 	'centralauth-editset-type' => 'Tipo:',
 	'centralauth-editset-reason' => 'Razón:',
+	'centralauth-editset-submit' => 'Enviar',
 	'centralauth-editset-badname' => 'El nombre del conjunto no es válido o está vacío.',
 	'centralauth-editset-badtype' => 'El tipo de conjunto no es válido.',
 	'centralauth-editset-setexists' => 'Ya existe un conjunto con ese nombre',
@@ -4931,6 +4956,7 @@ Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 );
 
 /** French (Français)
+ * @author Crochet.david
  * @author Grondin
  * @author Guillom
  * @author IAlex
@@ -5015,7 +5041,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-finish-noconfirms' => 'Aucun compte n’a été confirmé en utilisant ce mot de passe.',
 	'centralauth-finish-incomplete' => 'Plusieurs comptes ont été fusionnés en utilisant ce mot de passe. D’autres comptes n’ont, cependant, pas été confirmés.',
 	'centralauth-merge-attempt' => "'''Vérification du mot de passe fourni pour les comptes non réunis...'''",
-	'centralauth-attach-list-attached' => 'Le compte unique nommé "$1" inclut les comptes suivants :',
+	'centralauth-attach-list-attached' => 'Le compte unique nommé « $1 » inclut les comptes suivants :',
 	'centralauth-attach-title' => 'Confirmer le compte',
 	'centralauth-attach-text' => 'Ce compte n’a pas encore été transféré vers un compte unique. Si le compte global vous appartient également, vous pouvez fusionner ces comptes en tapant le mot de passe du compte global :',
 	'centralauth-attach-submit' => 'Fusionner le compte',
@@ -9769,11 +9795,13 @@ $messages['lfn'] = array(
 /** Limburgish (Limburgs)
  * @author Matthias
  * @author Ooswesthoesbes
+ * @author Pahles
  * @author Tibor
  */
 $messages['li'] = array(
 	'mergeaccount' => 'Status samevoege gebroekers',
-	'centralauth-desc' => "[[Special:MergeAccount|Samegevoegde gebroekers]] binne Wikimedia Foundation wiki's",
+	'centralauth-groupname' => 'de Wikimedia Foundation',
+	'centralauth-desc' => "[[Special:MergeAccount|Samegeveugde gebroekers]] binne Wikimedia Foundation wiki's",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Meerdere gebroekers samevoege]] veur Single User Login',
 	'centralauth-merge-denied' => 'Sorry, doe höbs gein rech om dees paasj te bezeen.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Meld dich aan]</span> óm te controlere of dien gebroekersaccounts al-oet zeen samegevoog.',
