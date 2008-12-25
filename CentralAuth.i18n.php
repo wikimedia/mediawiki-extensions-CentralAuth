@@ -3461,7 +3461,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-rightslog-set-optin' => 'opt-in',
 	'centralauth-rightslog-set-optout' => 'opt-out',
 	'autologin' => 'Automatisches Anmelden',
-	'centralauth-autologin-desc' => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn du dich [[Special:UserLogin|anmeldest]],	instruiert das zentrale Anmeldesystem deinen Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.
+	'centralauth-autologin-desc' => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn du dich [[Special:UserLogin|anmeldest]], instruiert das zentrale Anmeldesystem deinen Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.
 Du hast diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nichts weiter geschieht.',
 	'globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen',
 	'globalgrouppermissions' => 'Management globaler Gruppen',
@@ -14763,6 +14763,7 @@ $messages['te'] = array(
 	'centralauth-editgroup-success' => 'గుంపు అనుమతులను మార్చాం',
 	'centralauth-editgroup-success-text' => 'మీరు $1 గుంపుకు అనుమతులను జయప్రదంగా మార్చారు.
 [[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|మార్చండి]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'వారికి ఖాతా కలిగిన ఒక వికీని ఎంచుకోండి:',
 	'centralauth-globalgroupmembership-badknownwiki' => "సర్వత్రిక వాడుకరి '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేరు. మీరు హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేదు, గమనించండి!",
 	'centralauth-editset-name' => 'పేరు:',
