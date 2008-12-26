@@ -275,6 +275,13 @@ $aliases['pl'] = array(
 	'GlobalUsers' => array( 'Spis kont uniwersalnych' ),
 );
 
+/** Brazilian Portuguese (Português do Brasil) */
+$aliases['pt-br'] = array(
+	'AutoLogin' => array( 'Login automático' ),
+	'MergeAccount' => array( 'Mesclar conta' ),
+	'GlobalUsers' => array( 'Usuários globais' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'CentralAuth' => array( 'Gemensam inloggning' ),
