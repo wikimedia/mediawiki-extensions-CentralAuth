@@ -1845,15 +1845,71 @@ $messages['be'] = array(
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author Cesco
  * @author EugeneZelenko
+ * @author Jim-by
  * @author Red Winged Duck
  */
 $messages['be-tarask'] = array(
 	'mergeaccount' => "Стан аб'яднаньня рахункаў",
+	'centralauth-groupname' => 'Фонд Вікімэдыя',
 	'centralauth-desc' => "[[Special:MergeAccount|Аб'яднаньне рахункаў]] у праектах {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў удзельнікаў]] у адзін унівэрсальны",
+	'centralauth-merge-denied' => 'Прабачце, але Вам забаронены доступ да гэтай старонкі.',
+	'centralauth-merge-notlogged' => 'Калі ласка <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} увайдзіце ў сыстэму]</span> , каб упэўніцца, што Вашы рахункі поўнасьцю аб\'яднаныя.',
+	'centralauth-merge-welcome' => "'''Ваш рахунак пакуль ня быў пераведзены на адзіную сыстэму аўтарызацыі праектаў {{MediaWiki:Centralauth-groupname}}.'''
+
+Калі Вы вырашыце перанесьці Вашы рахункі, Вы зможаце выкарыстоўваць адно імя ўдзельніка і пароль каб уваходзіць ва ўсе вікі {{MediaWiki:Centralauth-groupname}} усіх моўных падзелаў.
+
+Калі хто небудзь заняў Вашае імя ўдзельніка на адным з праектаў, Ваш рахунак з чужым не аб'яднаецца, але Вы зможаце вырашыць гэтае пытаньне потым з удзельнікам ці з адміністратарам.",
+	'centralauth-merge-step1-title' => "Пачатак аб'яднаньня рахункаў",
+	'centralauth-merge-step1-detail' => 'Калі ласка ўвядзіце тут пароль Вашага рахунка.
+Ваш пароль і адрас электроннай пошты будзе параўнаны са зьвесткамі рахункаў іншых вікі-праектаў. 
+Зьмены не будуць праведзены, пакуль Вы не пацьцвердзіце правільнасьць сапастаўленьня.',
+	'centralauth-merge-step1-submit' => 'Пацьцвердзіць інфармацыю аб рахунку',
+	'centralauth-merge-step2-title' => 'Пацьцвердзіць болей рахункаў',
+	'centralauth-merge-step2-detail' => 'Некаторыя рахункі не могуць быць аўтаматычна прывязаны да пазначанага «дамашняй» вікі.
+Калі гэтыя рахунка належаць Вам, Вы можаце пацьцвердзіць, што яны вашы ўвёўшы іх паролі.',
+	'centralauth-merge-step2-submit' => 'Пацьцвердзіць інфармацыю аб рахунку',
+	'centralauth-merge-dryrun-complete' => "Усе існуючыя рахункі могуць быць аўтаматычна аб'яднаныя!
+
+Пакуль Вашы рахункі не былі зьменены.",
+	'centralauth-merge-dryrun-incomplete' => "Можна працягваць, але некаторыя рахункі не могуць быць аўтаматычна правераны і зараз ня будуць пераўтвораны.
+Вы зможаце аб'яднаць іх потым.
+
+Пакуль Вашы рахункі не былі зьменены.",
+	'centralauth-merge-dryrun-or' => "'''ці'''",
+	'centralauth-merge-dryrun-home' => 'Сыстэма міграцыі не можа атрымаць пацьцверджаньне, што Вы зьяўляецеся ўладальнікам рахунку ў «дамашняй» вікі. 
+
+Іншая віка была вызначана як «дамашняя» для вашага рахунка; перайдзіце па спасылцы ніжэй, каб скончыць міграцыю рахунка.',
+	'centralauth-merge-step3-title' => "Стварыць аб'яднаны рахунак",
+	'centralauth-merge-step3-detail' => 'Будзе створаны адзіны рахунак, са злучэньнем да наступных вікі:',
+	'centralauth-merge-step3-submit' => "Аб'яднаць рахункі",
 	'centralauth-merge-no-accounts' => 'У цэнтральнай табліцы рахункаў ня знойдзена запісу, адпаведнага вашаму імені! База зьвестак пашкоджаная.',
 	'centralauth-merge-home-password' => 'Пароль рахунку ў хатняй вікі (азначана ніжэй) адрозьніваецца ад таго, што Вы набралі. Калі ласка, увядзіце пароль для хатняй вікі.',
+	'centralauth-complete' => "Аб'яднаньне рахункаў скончана!",
+	'centralauth-incomplete' => "Аб'яднаньне рахункаў ня скончана!",
+	'centralauth-complete-text' => 'Цяпер Вы можаце карыстацца адным рахункам ва ўсіх праектах {{MediaWiki:Centralauth-groupname}}.',
+	'centralauth-incomplete-text' => 'Калі Ваш рахунак стане ўнівэрсальным, Вы зможаце ўваходзіць у кожную вікі {{MediaWiki:Centralauth-groupname}} без стварэньня новага рахунка',
+	'centralauth-not-owner-text' => "Назва ўдзельнік «$1» была аўтаматычна перададзена ўладальніку рахунка $2.
+
+Калі гэта Вы, то для сканчэньня аб'яднаньня рахункаў, увядзіце пароль Вашага асноўнага рахунка тут:",
+	'centralauth-blocked-text' => "Ваша дамашняя вікі (пазначана ніжэй) забляÚкавана для рэдагаваньняў.
+Калі ласка, зьвяжыцеся з адміністратарам гэтай вікі і разблякуйце яе.
+Пакуль яна заблякавана, Вы ня зможаце аб'яднаць Вашы рахункі.",
+	'centralauth-notice-dryrun' => "<div class='successbox'>Дэманстрацыйны рэжым</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => "Аб'яднаньне рахункаў зараз працуе ў дэманстрацыйным / праверачным рэжыме, Рэальныя апэрацыі аб'яднаньня рахункаў выключаныя.
+Прабачце!",
 	'centralauth-error-locked' => 'Вы ня можаце рэдагаваць, бо Ваш рахунак заблякаваны.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Інфармацыя аб '''аб'яднаньні рахункаў''']]…''",
+	'centralauth-list-home-title' => 'Дамашняя вікі',
+	'centralauth-list-home-dryrun' => "Пароль і электронны адрас, якія пазначаны ў гэтай вікі, будуць выкарыстаны для стварэньня аб'яднанага рахунка.
+Потым Вы зможаце зьмяніць сваю «дамашнюю» вікі.",
+	'centralauth-list-attached-title' => 'Далучаныя рахункі',
+	'centralauth-list-attached' => "Рахунак з назвай «$1» ва ўсіх пералічаных сайтах быў аўтаматычна далучаны да аб'яднанага рахунка:",
+	'centralauth-list-attached-dryrun' => "Рахунак з назвай «$1» ва ўсіх пералічаных сайтах будзе аўтаматычна далучаны да аб'яднанага рахунка:",
+	'centralauth-list-unattached-title' => 'Недалучаныя рахункі',
+	'centralauth-list-unattached' => 'Немагчыма аўтаматычна пацьцвердзіць, што рахунак «$1» належыць Вам на наступных сайтах;
+верагодна пароль адрозьніваецца ад пароля на Вашы асноўным рахунку:',
+	'centralauth-foreign-link' => 'Удзельнік $1 на $2',
 	'centralauth-merge-method-primary' => '«хатні» вікі-праект',
 	'centralauth-merge-method-empty' => 'няма ўнёску',
 	'centralauth-merge-method-mail' => 'пацьверджаны электроннай поштай',
@@ -1861,12 +1917,37 @@ $messages['be-tarask'] = array(
 	'centralauth-merge-method-admin' => "рахунак аб'яднаны адміністратарам",
 	'centralauth-merge-method-new' => 'новы рахунак',
 	'centralauth-merge-method-login' => 'пацьверджана ўваходам у сыстэму',
+	'centralauth-finish-title' => "Заканчэньне аб'яднаньня",
+	'centralauth-finish-text' => "Калі гэтыя рахункі Вашы, Вы можаце скончыць працэс аб'яднаньня ўвёўшы да іх пароль:",
 	'centralauth-finish-password' => 'Пароль:',
 	'centralauth-finish-login' => 'Увайсьці',
 	'centralauth-finish-send-confirmation' => 'Даслаць пароль па электроннай пошце',
+	'centralauth-finish-problems' => 'Узьніклі праблемы, ці Вы не зьяўляецеся ўладальнікамі гэтых рахункаў?
+[[meta:Help:Unified login problems|Даведайцеся як атрымаць дапамогу]]…',
+	'centralauth-finish-noconfirms' => 'Няма рахункаў, якія могуць быць пацьцвержаны гэтым паролем.',
+	'centralauth-finish-incomplete' => "Некалькі рахункаў былі аб'яднаныя з выкарыстаньнем гэтага пароля.
+Іншыя рахункі пакуль не пацьцверджаны.",
+	'centralauth-merge-attempt' => "'''Праверка пазначанага пароля на адпаведнасьць яшчэ не аб'яднаным рахункам…'''",
+	'centralauth-attach-list-attached' => "Аб'яднаны рахунак «$1» утрымлівае наступныя рахункі:",
+	'centralauth-attach-title' => 'Пацьцверджаньне рахунка',
+	'centralauth-attach-text' => 'Гэты рахунак яшчэ не быў далучаны да адзінага рахунка.
+Калі глябальны рахунак так сама належыць Вам, Вы можаце далучыць гэты рахунак, пазначыўшы пароль глябальнага рахунка:',
+	'centralauth-attach-submit' => 'Перанесьці рахунак',
+	'centralauth-attach-success' => "Рахунак быў далучаны да аб'яднанага рахунка.",
+	'centralauth' => "Адміністраваньне аб'яднаньня назваў",
+	'centralauth-admin-manage' => 'Кіраваньне звесткамі ўдзельніка',
 	'centralauth-admin-username' => 'Імя ўдзельніка:',
+	'centralauth-admin-lookup' => 'Прагляд ці рэдагаваньне зьвестак ўдзельніка',
+	'centralauth-admin-permission' => "Толькі сцюарды могуць аб'ядноўваць чужыя рахункі ад імя гэтых асобаў.",
+	'centralauth-admin-no-unified' => "Няма аб'яднанага рахунка для гэтага імя ўдзельніка.",
+	'centralauth-admin-info-id' => 'Ідэнтыфікатар удзельніка:',
+	'centralauth-admin-info-registered' => 'Зарэгістраваны:',
+	'centralauth-admin-info-locked' => 'Заблякаваны:',
+	'centralauth-admin-info-hidden' => 'Схаваны:',
 	'centralauth-admin-yes' => 'так',
 	'centralauth-admin-no' => 'не',
+	'centralauth-admin-attached' => "Поўнасьцю аб'яднаныя рахункі",
+	'centralauth-admin-unattached' => 'Недалучаныя рахункі',
 	'centralauth-admin-delete-button' => 'Выдаліць гэты рахунак',
 	'centralauth-admin-hide-description' => 'Схаваныя рахункі не адлюстроўваюцца ў [[Special:GlobalUsers|сьпісе глябальных рахункаў]].',
 	'centralauth-admin-hide-button' => 'Схаваць гэты рахунак',
@@ -4271,6 +4352,7 @@ Vi petis ĉi tiun paĝon sen donante ian ajn aŭtentoinformon, do ĝi faras neni
 /** Spanish (Español)
  * @author Aleator
  * @author Drini
+ * @author Imre
  * @author Jatrobat
  * @author Piolinfax
  * @author Remember the dot
@@ -4363,6 +4445,7 @@ Otras cuentas no están confirmadas todavía.',
 	'centralauth-admin-info-locked' => 'Cerradas con llave:',
 	'centralauth-admin-info-hidden' => 'Escondidas:',
 	'centralauth-admin-yes' => 'sí',
+	'centralauth-admin-no' => 'no',
 	'centralauth-admin-attached' => 'Cuentas fusionadas completamente',
 	'centralauth-admin-unattached' => 'Cuentas no adjuntas',
 	'centralauth-admin-no-unattached' => 'No quedan cuentas sin fusionar.',
@@ -9696,6 +9779,11 @@ $messages['lb'] = array(
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zusammenleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied' => 'Pardon, dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Loggt Iech w.e.g. an]</span> fir nozekucken ob all är Benotzerkonte ganz zesummegefouert goufen.',
+	'centralauth-merge-welcome' => "'''Äre Benotzerkont gouf nach net an de globale System vun {{MediaWiki:Centralauth-groupname}} migéiert.'''
+
+Wann Dir äre Kont migréiere wëllt, da kënnt Dir de selweschte Benotzernumm an dat selwescht Paswuert benotze fir iech an all Wikien vun {{MediaWiki:Centralauth-groupname}} an alle Sproochen eranzeloggen.
+
+Wa schonn en Aneren äre Benotzernumm schonn op engem anere Site ugeholl huet a stéiert dat deen net, awer et gëtt Iech trotzdem d'Chance spéider den Aneren oder en Admin ze kontaktéieren.",
 	'centralauth-merge-step1-title' => 'Ufank vun der Zesummeféierung vu Benotzerkonten',
 	'centralauth-merge-step1-detail' => 'Gitt w.e.g. hei ärt Passwuert fir äre Benotzerkont an.
 Ärt Passwuert an déi ofgespäichert E-Mail gi mat de Benotzerkonten op anere Wikie verglach fir sécherzestellen datt si passen.
@@ -11495,22 +11583,57 @@ $messages['nn'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Slå saman fleire kontoar]] for felles innlogging',
 	'centralauth-merge-denied' => 'Beklagar, du har ikkje tilgang til å bruke denne sida.',
 	'centralauth-merge-notlogged' => 'Ver venleg og <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special:MergeAccount}} logg inn]</span> for å sjekke om kontoane dine er fullstendig slått saman.',
+	'centralauth-merge-welcome' => "'''Brukarkontoen din har enno ikkje gått over til {{MediaWiki:Centralauth-groupname}} sitt einskaplege innloggingssystem.'''
+
+Om du vel å flytta kontoane dine, kan du nytta same brukarnamn og passord for å logga inn på alle {{MediaWiki:Centralauth-groupname}} sine prosjekt på alle språk.
+
+Om nokon allereie har teke brukarnamnet ditt på eit anna prosjekt, vil ikkje dette påvirka dei enno, men vil gje deg moglegheita til å komma til semja med dei eller ein administrator seinare.",
+	'centralauth-merge-step1-title' => 'Start kontosamanslåing',
+	'centralauth-merge-step1-detail' => 'Skriv inn kontonamnet og passordet ditt her.
+Passordet ditt og e-postadressa di vil bli sjekka opp mot kontoane på andre wikiar for å stadfesta at dei samsvarer.
+Ingen endringar vil bli gjort før du har stadfesta at alt ser rett ut.',
 	'centralauth-merge-step1-submit' => 'Stadfest innloggingsinformasjon',
 	'centralauth-merge-step2-title' => 'Stadfest fleire kontoar',
+	'centralauth-merge-step2-detail' => 'For nokre av kontoane var det ikkje mogleg å automatisk avgjera om dei var den same som den på heimwikien.
+Om desse kontoane tilhøyrer deg, kan du stadfesta dette ved å oppgje passorda til dei.',
+	'centralauth-merge-step2-submit' => 'Stadfest innloggingsinformasjon',
+	'centralauth-merge-dryrun-complete' => 'Alle kontoar som finst frå før kan bli slegne saman automatisk!
+
+Ingen endringar har blitt gjort på dine kontoar enno.',
+	'centralauth-merge-dryrun-incomplete' => 'Du kan halda fram, men nokre kontoar kunne ikkje bli automatisk stadfesta og vil ikkje bli slegne saman enno.
+Du vil kunna slå saman desse seinare.
+
+Ingen endringar har blitt gjort på kontoane dine enno.',
 	'centralauth-merge-dryrun-or' => "'''eller'''",
+	'centralauth-merge-dryrun-home' => 'Systemet for kontosamanslåing kunne ikkje stadfesta at du er eigaren av kontoen på heimewikien.
+
+Ein annan wiki blei funnen som heimewiki for brukarnamnet ditt; følg lenkja under og logg inn der for å fullføra kontosamanslåinga.',
+	'centralauth-merge-step3-title' => 'Opprett samanslege konto',
+	'centralauth-merge-step3-detail' => 'Du er klar for å oppretta den samanslegne kontoen din, med følgjande wikiar slutta til han:',
 	'centralauth-merge-step3-submit' => 'Slå saman kontoane',
+	'centralauth-merge-no-accounts' => 'Ingen kontoar med namnet ditt blei funne i tabellen for globale kontoar.
+Det må vera noko feil med databasen.',
+	'centralauth-merge-home-password' => 'Heimewikien til denne kontoen (vist nedanfor) har eit anna passord enn det du skreiv inn.
+Ver venleg og skriv inn passordet til heimewikien.',
 	'centralauth-complete' => 'Kontosamanslåinga er fullførd!',
 	'centralauth-incomplete' => 'Kontosamanslåinga er ikkje ferdig.',
 	'centralauth-complete-text' => 'Du kan nå logge inn på kva for helst wiki som høyrer til {{MediaWiki:Centralauth-groupname}} utan å opprette ny konto.',
+	'centralauth-incomplete-text' => 'Etter at du har slege saman kontoane dine, vil du kunna logga inn på kvart av {{MediaWiki:Centralauth-groupname}} sine prosjekt utan å oppretta ein ny konto',
 	'centralauth-not-owner-text' => 'Brukarnamnet «$1» vart automatisk tildeld eigaren av kontoen på $2.
 
 Om dette er deg kan du fullføre prosessen for samanslåing ved å skrive inn hovudpassordet for kontoen her:',
+	'centralauth-blocked-text' => 'Kontoen på heimewikien din (sjå nedanfor) er blokkert frå endring.
+Kontakt ein administrator på denne wikien for å avblokkera kontoen.
+Du kan ikkje slå saman kontoane dine medan den kontoen er blokkert.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Berre demonstrasjonsmodus</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'Kontosamanslåing er for no berre i demonstrasjonsmodus; faktisk samanslåing er enno ikkje mogleg.',
+	'centralauth-error-locked' => 'Du kan ikkje endra med di kontoen din er låst.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Les meir om '''kontosamanslåing''']]…''",
 	'centralauth-list-home-title' => 'Heimwiki',
 	'centralauth-list-home-dryrun' => 'Passordet og e-postadressa som vert brukte på denne wikien vil verte brukte for den samanslegne kontoen.
 Du kan endre kva wiki som vert rekna som heimewikien din sidan.',
 	'centralauth-list-attached-title' => 'Tilslutta kontoar',
+	'centralauth-list-attached' => 'Kontoen med namnet «$1» på kvar av dei følgjande wikiane har automatisk blitt tilslutta til den samanslegne kontoen:',
 	'centralauth-list-attached-dryrun' => 'Kontoen kalla «$1» på følgjande sider vil koblast til den samanslegne kontoen automatisk:',
 	'centralauth-list-unattached-title' => 'Utilslutta kontoar',
 	'centralauth-foreign-link' => 'Brukar $1 på $2',
@@ -16871,6 +16994,7 @@ $messages['zh-hant'] = array(
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki('' $2 '')中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
 	'centralauth-editset-reason' => '原因:',
+	'centralauth-editset-submit' => '提交',
 	'centralauth-editset-nouse' => '(無)',
 	'right-globalgroupmembership' => '編輯成員至全域組',
 	'right-centralauth-admin' => '管理全域帳戶',
