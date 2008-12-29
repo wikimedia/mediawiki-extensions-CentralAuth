@@ -494,6 +494,8 @@ $messages['af'] = array(
  */
 $messages['am'] = array(
 	'centralauth-admin-yes' => 'አዎ',
+	'centralauth-admin-reason' => 'ምክንያት:',
+	'centralauth-editset-reason' => 'ምክንያት:',
 );
 
 /** Aragonese (Aragonés)
@@ -9806,6 +9808,10 @@ Wann dës Benotzerkonten iech gehéieren, da kënnt dir dat confirméieren an de
 	'centralauth-merge-dryrun-complete' => 'All déi Benotzerkonten déi et gëtt kënnen automatesch zesummegeféiert ginn!
 
 Bis elo sinn nach keng Ännerungen un äre Benotzerkonte gemaach ginn.',
+	'centralauth-merge-dryrun-incomplete' => 'Dir kënnt weidermaachen, awer e puer Benotzerkonte konnten net automatesch iwwerpréift ginn a ginn net direkt zesummegéiert.
+Et ass méiglech dës spéider zesummenzeféieren.
+
+Bis elo goufen nach keng Ännerungen un !are  Benotzerkonte gemaach.',
 	'centralauth-merge-dryrun-or' => "'''oder'''",
 	'centralauth-merge-dryrun-home' => "De Migratiounssystem konnt net confirméieren datt Dir de Besëtzer vun dem Heemechts-Wiki-Benotzerkont sidd.
 

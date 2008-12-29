@@ -282,6 +282,11 @@ $aliases['pt-br'] = array(
 	'GlobalUsers' => array( 'Usuários globais' ),
 );
 
+/** Romanian (Română) */
+$aliases['ro'] = array(
+	'GlobalUsers' => array( 'Utilizatori globali' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'CentralAuth' => array( 'Gemensam inloggning' ),
