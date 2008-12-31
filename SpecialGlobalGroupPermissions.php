@@ -31,8 +31,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		wfLoadExtensionMessages('SpecialCentralAuth');
 	}
 	
-	function userCanExecute( $user ) {		
-		return $user->isAllowed( 'globalgrouppermissions' );
+	function userCanExecute($user) {		
+		$globalUser = CentralAuthUser::getInstance( $user );
+		
+		## Should be a global user
+		if (!$globalUser->exists() || !$globalUser->isAttached()) {
+			return false;
+		}
+		
+		## Permission MUST be gained from global rights.
+		return $globalUser->hasGlobalPermission( 'globalgrouppermissions' );
 	}
 
 	function execute( $subpage ) {
