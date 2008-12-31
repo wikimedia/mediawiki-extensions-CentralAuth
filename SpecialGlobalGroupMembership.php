@@ -7,13 +7,9 @@
   */
   
 class SpecialGlobalGroupMembership extends UserrightsPage {
-	var $mGlobalUser;
 	function SpecialGlobalGroupMembership() {
 		SpecialPage::SpecialPage( 'GlobalGroupMembership' );
 		wfLoadExtensionMessages('SpecialCentralAuth');
-		
-		global $wgUser;
-		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );
 	}
 	
 	/**
@@ -48,16 +44,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	
 	function changeableGroups() {
 		global $wgUser;
-		
-		## Should be a global user
-		if (!$this->mGlobalUser->exists() || !$this->mGlobalUser->isAttached()) {
-			return array();
-		}
-		
+
 		$allGroups = CentralAuthUser::availableGlobalGroups();
-		
-		## Permission MUST be gained from global rights.
-		if ( $this->mGlobalUser->hasGlobalPermission( 'globalgroupmembership' ) ) {
+
+		if ( $wgUser->isAllowed( 'globalgroupmembership' ) ) {
 			#specify addself and removeself as empty arrays -- bug 16098
 			return array( 'add' => $allGroups, 'remove' =>  $allGroups, 'add-self' => array(), 'remove-self' => array() );
 		} else {

@@ -182,6 +182,8 @@ $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
 $wgGroupPermissions['steward']['centralauth-admin'] = true;
+$wgGroupPermissions['steward']['globalgrouppermissions'] = true;
+$wgGroupPermissions['steward']['globalgroupmembership'] = true;
 $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
