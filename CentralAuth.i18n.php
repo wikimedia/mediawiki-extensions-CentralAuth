@@ -495,6 +495,7 @@ $messages['af'] = array(
 $messages['am'] = array(
 	'centralauth-admin-yes' => 'አዎ',
 	'centralauth-admin-reason' => 'ምክንያት:',
+	'centralauth-editset-name' => 'ስም:',
 	'centralauth-editset-reason' => 'ምክንያት:',
 );
 
@@ -4112,6 +4113,7 @@ $messages['ee'] = array(
  * @author Crochet.david
  * @author Flyax
  * @author Lou
+ * @author Omnipaedista
  * @author ZaDiak
  * @author Απεργός
  */
@@ -4210,6 +4212,8 @@ $messages['el'] = array(
 	'centralauth-admin-bad-input' => 'Η επιλογή για την συγχώνευση είναι άκυρη',
 	'centralauth-admin-none-selected' => 'Δεν διαλέξατε λογαριασμούς προς τροποποίηση.',
 	'centralauth-token-mismatch' => 'Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.',
+	'centralauth-listusers-locked' => 'κλειδωμένο',
+	'centralauth-listusers-attached' => 'υπάρχει τοπικά',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|δευτερόλεπτο|δευτερόλεπτα}} πριν',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|λεπτό|λεπτά}} πριν',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ώρα|ώρες}} πριν',
@@ -5925,7 +5929,13 @@ $messages['grc'] = array(
 	'centralauth-admin-info-hidden' => 'Κεκρυμμένη:',
 	'centralauth-admin-yes' => 'ναί',
 	'centralauth-admin-no' => 'οὐ',
+	'centralauth-admin-list-attached-on' => 'Ἐπισυνημμένη ἐπὶ τοῦ',
+	'centralauth-admin-list-method' => 'Μέθοδος',
+	'centralauth-admin-unmerge' => 'Ἀποσυγχωνεύειν τὰ ἐπειλεγμένα',
+	'centralauth-admin-merge' => 'Ἐπειλεγμένων συγχώνευσις',
 	'centralauth-admin-reason' => 'Αἰτία:',
+	'centralauth-listusers-locked' => 'κεκλῃσμένη',
+	'centralauth-listusers-attached' => 'τοπικῶς ἐστίν',
 	'centralauth-prefs-complete' => 'Ἅπαντα ἐν τάξει!',
 	'centralauth-invalid-wiki' => 'Οὐδεμία τοιαύτη βάσις δεδομένων ϝίκι: $1',
 	'centralauth-existinggroup-legend' => 'Ὑπάρχουσαι ὁμάδες',
@@ -9515,6 +9525,8 @@ $messages['ko'] = array(
 	'centralauth-prefs-complete' => '준비 완료!',
 	'centralauth-prefs-count-attached' => '당신의 계정은 $1개의 프로젝트에서 활동하고 있습니다.',
 	'centralauth-prefs-manage' => '공통 계정 관리',
+	'centralauth-renameuser-merged' => '$1 계정은 통합 로그인 시스템으로 옮겨졌습니다.
+이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.',
 	'centralauth-invalid-wiki' => '다음과 같은 위키 데이터베이스가 없습니다: $1',
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 	'centralauth-login-progress' => '{{MediaWiki:Centralauth-groupname}}의 다른 프로젝트에도 로그인합니다:',
@@ -9547,6 +9559,7 @@ $messages['ko'] = array(
 	'centralauth-editgroup-name' => '그룹 이름:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|편집]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|편집]])',
+	'centralauth-editgroup-members' => '사용자 목록:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 권한을 가진 사용자의 목록]]',
 	'centralauth-editgroup-noset' => '(없음)',
 	'centralauth-editgroup-reason' => '바꾸는 이유:',
@@ -15383,6 +15396,7 @@ $messages['tet'] = array(
  */
 $messages['tg-cyrl'] = array(
 	'mergeaccount' => 'Вазъияти якка кардани ҳисобҳо',
+	'centralauth-groupname' => 'Бунёди Викимедиа',
 	'centralauth-desc' => '[[Special:MergeAccount|Якка кардани ҳисоб]] дар викиҳои Бунёди Викимедиа',
 	'centralauth-mergeaccount-desc' => 'Барои Вуруди Яккаи Корбар [[Special:MergeAccount|якчанд ҳисобҳоро якка мекунад]]',
 	'centralauth-merge-denied' => 'Бубахшед, шумо иҷозати дастрасӣ ба ин саҳифаро надоред.',
@@ -15394,7 +15408,9 @@ $messages['tg-cyrl'] = array(
 
 Агар номи корбарии шумо қаблан дар лоиҳаи дигаре тавассути шахси дигаре истифода шуда бошад, ин кор боиси халалрасонӣ ба онҳо намешавад, балки ба шумо имконеро медиҳад, ки баъдан ин мушкилро бо кӯмаки онҳо ё як мудир ҳал кунед.",
 	'centralauth-merge-step1-title' => 'Оғози якка кардани ҳисобҳои корбарӣ',
-	'centralauth-merge-step1-detail' => 'Калимаи убур ва нишонаи почтаи электронии сабтшуда тавассути шумо бо ҳисобҳои корбарӣ викиҳои дигаре муқоиса мешавад, то аз мутобиқати онҳо итминон ҳосил гардад. То замоне, ки шумо таъйид накунед, ки ҳама чиз дуруст аст, тағйир сурат нахоҳад гирифт.',
+	'centralauth-merge-step1-detail' => 'Лутфан гузарвожаи ҳисобатонро ворид кунед.
+Гузарвожа ва нишонаи почтаи электронии сабтшудаи бо ҳисобҳои корбарӣ викиҳои дигаре муқоиса мешавад, то аз мутобиқати онҳо итминон ҳосил гардад. 
+То замоне, ки шумо таъйид накунед, ки ҳама чиз дуруст аст, тағйир сурат нахоҳад гирифт.',
 	'centralauth-merge-step1-submit' => 'Тасдиқи иттилооти вуруд ба систем',
 	'centralauth-merge-step2-title' => 'Тасдиқи ҳисобҳои корбарии бештар',
 	'centralauth-merge-step2-detail' => 'Бархе аз ҳисобҳои корбариро наметавон ба таври худкор бо хисоби викии аслӣ мутобиқат дод. Агар ин хисобҳои корбарӣ ба шумо мутаалуқ ҳастанд, шумо метавонед ин масъаларо бо ворид кардани калимаи убури ин ҳисобҳо таъйид кунед.',
@@ -15422,6 +15438,7 @@ $messages['tg-cyrl'] = array(
 Агар шумо соҳиби ин ҳисоб ҳастед, шумо метавонед раванди якка кардан ҳисобҳои корбариро бо ворид кардани калимаи убури саросарӣ дар ин ҷо поён бирасонед:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Фақат тарзи намоишӣ</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Сомонаи якка кардани ҳисобҳои корбарӣ дар ҳоли ҳозир ба таври озмоишӣ ва барои рафъи эрод фаъол аст, бинобар ин якка кардани ҳисобҳои воқеӣ ҳануз фаъол нест. Бубахшед!',
+	'centralauth-error-locked' => 'Шумо наметавонед вироиш кунед чун ҳисоби шумо баста аст.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Иттилооти бештар дар бораи '''ҳисоби корбарии муштарак''']]...''",
 	'centralauth-list-home-title' => 'Викии аслӣ',
 	'centralauth-list-home-dryrun' => 'Калимаи убур ва нишонаи почтаи электронии интихоб шуда дар ин вики барои ҳисоби корбарии муштараки шумо мавриди истифода қарор хоҳад гирифт. Баъдан шумо метавонед онро дар викии аслии худ тағйир диҳед.',
@@ -15489,8 +15506,28 @@ $messages['tg-cyrl'] = array(
 	'centralauth-admin-lock-button' => 'Қуфл кардани ин ҳисоб',
 	'centralauth-admin-lock-success' => 'Бо муваффақият ҳисоби муштарак барои "<nowiki>$1</nowiki>" қуфл шуд',
 	'centralauth-admin-lock-nonexistent' => 'Хато: ҳисоби муштараки "<nowiki>$1</nowiki>" вуҷуд надорад.',
+	'centralauth-admin-unlock-title' => 'Боз кардани ҳисоби корбарӣ',
+	'centralauth-admin-unlock-button' => 'Боз кардани ин ҳисоби корбарӣ',
+	'centralauth-admin-unlock-nonexistent' => 'Хато: ҳисоби саросарии "<nowiki>$1</nowiki>" вуҷуд надорад.',
+	'centralauth-admin-hide-title' => 'Пинҳон кардани ҳисоб',
+	'centralauth-admin-hide-description' => 'Ҳисобҳои пинҳонӣ дар [[Special:GlobalUsers|Корбарони саросарӣ]] намоиш дода намешаванд.',
+	'centralauth-admin-hide-button' => 'Пинҳон кардани ин ҳисоби корбарӣ',
+	'centralauth-admin-hide-success' => 'Бо муваффақият ҳисоби саросарӣ барои "<nowiki>$1</nowiki>" пинҳон шуд',
+	'centralauth-admin-hide-nonexistent' => 'Хато: ҳисоби саросарии "<nowiki>$1</nowiki>" вуҷуд надорад.',
+	'centralauth-admin-unhide-title' => 'Боз кардани ҳисоби корбарӣ',
+	'centralauth-admin-unhide-description' => 'Бозкарадни ҳисоб метавонад ҳисобро боз дар [[Special:GlobalUsers|Корбарони саросарӣ]] намоён кунад.',
+	'centralauth-admin-unhide-button' => 'Аз пинҳони боз кардани ин ҳисоб',
+	'centralauth-admin-unhide-success' => 'Бо муваффақият ҳисоби муштарак барои "<nowiki>$1</nowiki>" аз пинҳонӣ раҳо карда шуд',
+	'centralauth-admin-unhide-nonexistent' => 'Хато: ҳисоби саросарии "<nowiki>$1</nowiki>" вуҷуд надорад.',
 	'centralauth-admin-reason' => 'Сабаб:',
+	'centralauth-admin-lockandhide-title' => 'Бастан ва пинҳон кардани ҳисоби корбарӣ',
+	'centralauth-admin-lockandhide-button' => 'Бастан ва пинҳон кардани ин ҳисоб',
+	'centralauth-admin-lockandhide-success' => 'Бо муваффақият ин ҳисоб баста ва пинҳон шуд',
+	'centralauth-admin-lockandhide-nonexistent' => 'Хато: ҳисоби саросарии "<nowiki>$1</nowiki>" вуҷуд надорад.',
 	'globalusers' => 'Феҳристи корбари муштарак',
+	'centralauth-listusers-locked' => 'баста шуд',
+	'centralauth-listusers-attached' => 'ба таври маҳаллӣ вуҷуд дорад',
+	'centralauth-listusers-nolocal' => 'замима нашуда ё ба таври маҳаллӣ вуҷуд надорад',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|сония|сония}} пеш',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|дақиқа|дақиқа}} пеш',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|соат|соат}} пеш',
@@ -15506,17 +15543,49 @@ $messages['tg-cyrl'] = array(
 	'centralauth-prefs-count-unattached' => 'Ҳисобҳои корбарии таъйиднашуда бо номи шумо дар $1 {{PLURAL:$1|лоиҳа|лоиҳаҳо}} боқӣ мемонад.',
 	'centralauth-prefs-detail-unattached' => 'Сомонаи ин лоиҳа мавриди таъйид барои истифода аз ҳисоби корбарии муштарак қарор нагирифтааст.',
 	'centralauth-prefs-manage' => 'Мудирияти ҳисоби корбарии муштарак',
+	'centralauth-renameuser-reserved' => 'Корбари $2 барои ҳисоби муштарак нигоҳ дошта шудааст.',
 	'centralauth-invalid-wiki' => 'Чунин вики ПД нест: $1',
 	'centralauth-account-exists' => 'Наметавон ҳисоберо эчод кард: номи корбарии дархостшуда пеш аз ин дар системи вуруди муштарак гирифта шудааст.',
 	'centralauth-log-name' => 'Гузориши ҳисоби муштарак',
+	'centralauth-rightslog-set-optin' => 'бар асос аъзо шудан',
+	'centralauth-rightslog-set-optout' => 'бар асос аз узвият дар омадан',
+	'autologin' => 'Вуруд ба таври худкор',
+	'globalgroupmembership' => 'Узвият дар гурӯҳҳои муштарак',
+	'globalgrouppermissions' => 'Мудирияти гурӯҳи саросарӣ',
 	'centralauth-existinggroup-legend' => 'Гурӯҳҳои вуҷуддошта',
 	'centralauth-newgroup-legend' => 'Эҷод кардани гурӯҳи ҷадид',
 	'centralauth-globalgroupperms-newgroupname' => 'Номи ҷадиди гурӯҳ:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Таъйини ихтиёрот',
 	'centralauth-editgroup-subtitle' => 'Дар ҳоли вироиши $1',
 	'centralauth-editgroup-name' => 'Номи гурӯҳ:',
 	'centralauth-editgroup-display' => 'Номи маҳаллии гурӯҳ:',
+	'centralauth-editgroup-member' => 'Номи маҳаллии аъзои гурӯҳ:',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|вироиш]])',
 	'centralauth-editgroup-members' => 'Феҳристи аъзо:',
+	'centralauth-editgroup-noset' => '(ҳеҷ)',
+	'centralauth-editgroup-submit' => 'Захираи тағйироти додашуда дар ихтиёроти гурӯҳ',
+	'centralauth-editgroup-perms' => 'Ихтиёроти таъйиншуда:',
 	'centralauth-editgroup-reason' => 'Сабаби тағйир:',
+	'centralauth-editgroup-success' => 'Ихтиёроти гурӯҳ тағйир ёфт',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Викие ки дар он онҳо ҳисоб доранд:',
+	'centralauth-editset' => 'Вироиши маҷмӯъҳои вики',
+	'centralauth-editset-legend' => 'Вироиш ё эҷоди маҷмӯъи вики',
+	'centralauth-editset-new' => 'Эҷоди як маҷмӯъаи нав',
+	'centralauth-editset-notfound' => 'Вики маҷмӯъаи "$1" ёфт нашуд.',
+	'centralauth-editset-legend-edit' => 'Дар ҳоли вироиши вики маҷмӯъаи "$1"',
+	'centralauth-editset-legend-new' => 'Дар ҳоли эҷоди маҷмӯъаи викии нав',
+	'centralauth-editset-name' => 'Ном:',
+	'centralauth-editset-type' => 'Навъ:',
+	'centralauth-editset-wikis' => 'Викиҳо:',
+	'centralauth-editset-reason' => 'Сабаб:',
+	'centralauth-editset-submit' => 'Ирсол',
+	'centralauth-editset-badname' => 'Номи маҷмӯъаи номӯътабар ё холӣ.',
+	'centralauth-editset-badtype' => 'Навъи номӯътабари маҷмӯъа.',
+	'centralauth-editset-setexists' => 'Маҷмӯъа бо он ном аллакай вуҷуд дорад',
+	'centralauth-editset-nowikis' => 'Ҳеҷ викие мушаххас нашудааст.',
+	'centralauth-editset-nouse' => '(ҳеҷ)',
+	'centralauth-editset-usage' => 'Истифодашуда дар гурӯҳҳои:',
+	'centralauth-editset-return' => 'Бозгашт ба намои аслӣ',
 	'right-globalgroupmembership' => 'Вироиши узвият ба гурӯҳҳои муштарак',
 	'right-centralauth-admin' => 'Мудирияти ҳисобҳои муштарак',
 	'right-centralauth-merge' => 'Идғоми ҳисоби онҳо',
@@ -16977,6 +17046,7 @@ $messages['zh-classical'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Gzdavidwong
  * @author 下一次登录
  */
 $messages['zh-hans'] = array(
@@ -17172,6 +17242,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|编辑]])',
 	'centralauth-editgroup-members' => '成员表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2许可的用户名单]]',
+	'centralauth-editgroup-noset' => '（无）',
 	'centralauth-editgroup-submit' => '保存更改到组许可',
 	'centralauth-editgroup-perms' => '已指定的许可:',
 	'centralauth-editgroup-reason' => '更改的理由:',
@@ -17179,6 +17250,9 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-success-text' => '您已经成功地更改$1组的组许可。[[Special:GlobalGroupPermissions|回到组管理]]',
 	'centralauth-globalgrouppermissions-knownwiki' => '选择一个响他们有账户的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "该全域用户'''$1'''在您所指定的wiki('' $2 '')中并不活跃。您可能正在尝试指定许可到错的用户!",
+	'centralauth-editset-reason' => '原因：',
+	'centralauth-editset-submit' => '提交',
+	'centralauth-editset-nouse' => '（无）',
 	'right-globalgroupmembership' => '编辑成员至全域组',
 	'right-centralauth-admin' => '管理全域账户',
 	'right-centralauth-merge' => '合并他们的账户',
@@ -17187,6 +17261,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
+ * @author Gzdavidwong
  * @author Jasonzhuocn
  * @author Wrightbus
  */
@@ -17391,7 +17466,7 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|編輯]])',
 	'centralauth-editgroup-members' => '成員表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2許可的用戶名單]]',
-	'centralauth-editgroup-noset' => '(無)',
+	'centralauth-editgroup-noset' => '（無）',
 	'centralauth-editgroup-submit' => '保存更改到組許可',
 	'centralauth-editgroup-perms' => '已指定的許可:',
 	'centralauth-editgroup-reason' => '更改的理由:',
@@ -17399,9 +17474,9 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-success-text' => '您已經成功地更改$1組的組許可。[[Special:GlobalGroupPermissions|回到組管理]]',
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki('' $2 '')中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
-	'centralauth-editset-reason' => '原因:',
+	'centralauth-editset-reason' => '原因：',
 	'centralauth-editset-submit' => '提交',
-	'centralauth-editset-nouse' => '(無)',
+	'centralauth-editset-nouse' => '（無）',
 	'right-globalgroupmembership' => '編輯成員至全域組',
 	'right-centralauth-admin' => '管理全域帳戶',
 	'right-centralauth-merge' => '合併他們的帳戶',
