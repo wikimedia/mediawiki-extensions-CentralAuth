@@ -9422,6 +9422,7 @@ $messages['ko'] = array(
 나중에 합칠 수 있습니다.
 
 아직 계정에 적용되지 않았습니다.',
+	'centralauth-merge-dryrun-or' => "'''또는'''",
 	'centralauth-merge-step3-title' => '통합 계정 만들기',
 	'centralauth-merge-step3-detail' => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
 	'centralauth-merge-step3-submit' => '계정 합치기',
@@ -9436,6 +9437,7 @@ $messages['ko'] = array(
 	'centralauth-blocked-text' => '당신은 아래 목록에 있는 주 위키에서 차단되었습니다.
 차단 해제를 요청하려면 해당 위키의 관리자에게 문의하십시오.
 차단되어 있는 동안, 당신은 계정을 합칠 수 없습니다.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>데모 모드</div><br clear='all' />",
 	'centralauth-error-locked' => '당신의 계정이 잠겼기 때문에 편집할 수 없습니다.',
 	'centralauth-readmore-text' => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
 	'centralauth-list-home-title' => '주 위키',
@@ -9482,9 +9484,11 @@ $messages['ko'] = array(
 	'centralauth-admin-yes' => '예',
 	'centralauth-admin-no' => '아니오',
 	'centralauth-admin-attached' => '완전히 합친 계정',
+	'centralauth-admin-unattached' => '묶이지 않은 계정',
 	'centralauth-admin-no-unattached' => '합쳐지지 않은 계정이 없습니다.',
 	'centralauth-admin-unmerge' => '선택한 계정 병합 해제',
 	'centralauth-admin-merge' => '선택한 계정 합치기',
+	'centralauth-admin-already-unmerged' => '이미 병합 해제되었기 때문에, $1을 건너뜁니다.',
 	'centralauth-admin-unmerge-success' => '$1개의 계정이 성공적으로 병합 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
 	'centralauth-admin-delete-button' => '이 계정 지우기',
@@ -9550,6 +9554,8 @@ $messages['ko'] = array(
 	'centralauth-rightslog-set-optin' => '옵트인 방식',
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
 	'autologin' => '자동 로그인',
+	'globalgroupmembership' => '사용자의 공통 권한 조정',
+	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
 	'centralauth-existinggroup-legend' => '존재하는 그룹',
 	'centralauth-newgroup-legend' => '새 그룹 만들기',
