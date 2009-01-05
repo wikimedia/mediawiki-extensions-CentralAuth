@@ -220,6 +220,13 @@ $aliases['ms'] = array(
 	'GlobalUsers' => array( 'Pengguna sejagat' ),
 );
 
+/** Maltese (Malti) */
+$aliases['mt'] = array(
+	'AutoLogin' => array( 'LoginAwtomatiku' ),
+	'MergeAccount' => array( 'WaħħadKont' ),
+	'GlobalUsers' => array( 'UtentiGlobali' ),
+);
+
 /** Erzya (Эрзянь) */
 $aliases['myv'] = array(
 	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),

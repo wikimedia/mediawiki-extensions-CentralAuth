@@ -9492,6 +9492,7 @@ $messages['ko'] = array(
 	'centralauth-admin-unmerge-success' => '$1개의 계정이 성공적으로 병합 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
 	'centralauth-admin-delete-button' => '이 계정 지우기',
+	'centralauth-admin-delete-success' => '공통 계정 "<nowiki>$1</nowiki>"이 성공적으로 삭제되었습니다.',
 	'centralauth-admin-nonexistent' => '공통 계정 "<nowiki>$1</nowiki>"이(가) 존재하지 않습니다.',
 	'centralauth-admin-delete-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
 	'centralauth-admin-lock-title' => '계정 잠그기',
@@ -9512,6 +9513,7 @@ $messages['ko'] = array(
 	'centralauth-admin-reason' => '이유:',
 	'centralauth-admin-lockandhide-title' => '계정 잠그고 숨기기',
 	'centralauth-admin-lockandhide-button' => '이 계정을 잠그고 숨기기',
+	'centralauth-admin-lockandhide-success' => '계정이 성공적으로 잠기고 숨겨졌습니다.',
 	'centralauth-admin-lockandhide-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-locked' => '잠겨짐',
@@ -11955,7 +11957,7 @@ Passorda til lokale kontoar oppretta før samanslåinga vil gå attende til verd
 	'centralauth-invalid-wiki' => 'Wikidatabasen finst ikkje: $1',
 	'centralauth-account-exists' => 'Kan ikkje oppretta konto: det oppgjevne brukarnamnet er allereie teken i bruk av ein global konto.',
 	'centralauth-login-progress' => 'Loggar deg inn på {{MediaWiki:Centralauth-groupname}} sine prosjekt:',
-	'centralauth-logout-progress' => 'Loggar deg ut av dei andre prosjekta til {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Loggar deg ut frå dei andre prosjekta til {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Logg for handsaming av globale brukarkontoar',
 	'centralauth-log-header' => 'Denne loggen innheld endringar relaterte til globale brukarkontoar: slettingar, låsingar og opplåsingar.',
 	'centralauth-log-entry-delete' => 'sletta den globale kontoen «<nowii>$1</nowiki>»',
@@ -15906,6 +15908,7 @@ Maaaring sinusubukan mong magtakda ng mga karapatan sa hindi tamang tagagamit!",
 
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
+ * @author Joseph
  * @author Karduelis
  * @author Mach
  * @author Runningfridgesrule
@@ -15914,29 +15917,134 @@ Maaaring sinusubukan mong magtakda ng mga karapatan sa hindi tamang tagagamit!",
  */
 $messages['tr'] = array(
 	'mergeaccount' => 'Hesap birleştirme durumu',
-	'centralauth-merge-denied' => 'Maalesef bu sayfayı değiştirmek için iziniz yok.',
+	'centralauth-groupname' => 'Vikimedya Kuruluşu',
+	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} vikilerinde [[Special:MergeAccount|hesap birleştir]]',
+	'centralauth-mergeaccount-desc' => 'Tek Kullanıcı Girişi için [[Special:MergeAccount|çoklu hesapları birleştirir]]',
+	'centralauth-merge-denied' => 'Üzgünüz, bu sayfaya erişmek için izniniz yok.',
+	'centralauth-merge-notlogged' => 'Lütfen bütün hesaplarınızın tam olarak birleştirildiğini kontrol etmek için <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} oturum açın]</span>.',
+	'centralauth-merge-welcome' => "'''Kullanıcı hesabınız henüz {{MediaWiki:Centralauth-groupname}} birleştirilmiş giriş sistemine taşınmadı.'''
+
+Eğer hesaplarınızı taşımayı seçerseniz, tüm mevcut dillerdeki {{MediaWiki:Centralauth-groupname}} viki sitelerinde giriş yapmak için aynı kullanıcı adı ve şifreyi kullanabileceksiniz.
+
+Eğer bir başkası başka bir vikide sizin adınızı almış ise, bu onları rahatsız etmez, ama bu size daha sonra onlarla veya bir yönetici ile sorunu çözme şansı verir.",
+	'centralauth-merge-step1-title' => 'Giriş birleştirmesine başla',
+	'centralauth-merge-step1-detail' => 'Lütfen buraya hesap şifrenizi girin.
+Şifreniz ve kayıtlı e-posta adresiniz diğer vikilerdeki hesaplarda eşleştiğinin doğrulanması için kontrol edilecek.
+Siz işlerin yolunda olduğunu onaylamadan hiçbir değişiklik yapılmayacak.',
+	'centralauth-merge-step1-submit' => 'Giriş bilgisini doğrula',
+	'centralauth-merge-step2-title' => 'Daha fazla hesabı doğrula',
+	'centralauth-merge-step2-detail' => 'Bazı hesaplar, belirlenen ev vikisiyle otomatik olarak eşleşmedi.
+Eğer bu hesaplar size aitse, şifrelerini sağlayarak sizin olduğunu doğrulayabilirsiniz.',
+	'centralauth-merge-step2-submit' => 'Giriş bilgisini doğrula',
+	'centralauth-merge-dryrun-complete' => 'Varolan bütün hesaplar otomatik olarak birleştirilebilir!
+
+Henüz hesaplarınıza herhangi bir değişiklik yapılmadı.',
+	'centralauth-merge-dryrun-incomplete' => 'Devam etmeyi seçtiniz, ancak bazı hesaplar otomatik olarak doğrulanmadı ve hemen taşınmayacak.
+Bunları daha sonra birleştirebilirsiniz.
+
+Henüz hesaplarınıza herhangi bir değişiklik yapılmadı.',
 	'centralauth-merge-dryrun-or' => "'''veya'''",
+	'centralauth-merge-dryrun-home' => 'Taşınma sistemi, kullanıcı adınızın ev viki hesabının sahibinin siz olduğunu doğrulayamadı.
+
+Bir başka viki kullanıcı adınız için ev vikisi belirlenmiş; hesabınızı taşımayı tamamlamak için aşağıdaki bağlantıyı takip edip, orada giriş yapın.',
 	'centralauth-merge-step3-title' => 'Birleştirilmiş hesap oluştur',
+	'centralauth-merge-step3-detail' => 'Birleştirilmiş hesabınızı oluşturmaya hazırsınız, aşağıdaki vikiler eklendi:',
 	'centralauth-merge-step3-submit' => 'Hesapları birleştir',
+	'centralauth-merge-no-accounts' => 'Merkez hesap izleme tablosunda adınıza uyan hesap bulunamadı!
+Veritabanı bozulmuş olmalı.',
+	'centralauth-merge-home-password' => 'Bu hesabın ev vikisi (aşağıda listelenmiş) girdiğinizden farklı bir şifreye sahip.
+Lütfen ev vikisi için şifreyi girin.',
 	'centralauth-complete' => 'Bütün hesaplar birleştirilmiş!',
-	'centralauth-complete-text' => 'Artık Wikimedia sitelerine yeni bir hesap açmaksızın giriş yapabilirsiniz;
-bütün dillerdeki Wikipedia, Wikisözlük, Wikikitap ve diğer bütün kardeş projelerde aynı kullanıcı adını ve şifresini kullanarak hesabınıza giriş yapabilirsiniz.',
+	'centralauth-incomplete' => 'Giriş birleştirme tamamlanmadı!',
+	'centralauth-complete-text' => 'Artık herhangi bir {{MediaWiki:Centralauth-groupname}} viki sitelerine yeni bir hesap açmaksızın giriş yapabilirsiniz.',
+	'centralauth-incomplete-text' => 'Girişiniz birleştirildiğinde, yeni bir hesap oluşturmadan herhangi bir {{MediaWiki:Centralauth-groupname}} viki sitesinde oturum açabileceksiniz',
+	'centralauth-not-owner-text' => '"$2" kullanıcı adı otomatik olarak $2 sitesindeki hesabın sahibine atanmıştır.
+
+Eğer bu sizseniz, ana şifreyi buraya yazarak giriş birleştirme sürecini tamamlayabilirsiniz:',
+	'centralauth-blocked-text' => 'Ev vikiniz (aşağıda listelenmiş) değişiklik yapmaya engellenmiştir.
+Engeli kaldırmak için lütfen bir sysop ile irtibat kurun.
+Engelliyken, hesaplarınızı birleştiremezsiniz.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Sadece demo kipi</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'Hesap birleştirme şuanda demo / ayıklama modunda, bu yüzden gerçek birleştirme işlemleri devre dışı bırakılmıştır.
+Üzgünüz!',
 	'centralauth-error-locked' => 'Değişiklik yapamıyorsunuz çünkü kayıdınız kilitlenmiş.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Birleştirilmiş giriş''' hakkında daha fazla bilgi edinin]]…''",
+	'centralauth-list-home-title' => 'Ev vikisi',
+	'centralauth-list-home-dryrun' => 'Bu vikide ayarlanan şifre ve e-posta adresi, birleştirilmiş hesap için kullanılacaktır.
+İleride ev vikinizi değiştirebileceksiniz.',
+	'centralauth-list-attached-title' => 'Eklenmiş hesaplar',
+	'centralauth-list-attached' => 'Aşağıdaki sitelerdeki "$1" isimli hesap otomatik olarak birleşik hesaba eklenmiştir:',
+	'centralauth-list-attached-dryrun' => 'Aşağıdaki sitelerdeki "$1" isimli hesap otomatik olarak birleşik hesaba eklenecektir:',
+	'centralauth-list-unattached-title' => 'Eklenmemiş hesaplar',
+	'centralauth-list-unattached' => '"$1" hesabının size ait olduğu aşağıdaki sitelerde otomatik olarak doğrulanamadı; büyük ihtimalle birincil hesabınızdan farklı bir şifreye sahip oldukları için:',
+	'centralauth-foreign-link' => "$2'deki $1 kullanıcısı",
+	'centralauth-merge-method-primary' => 'ev vikisi',
+	'centralauth-merge-method-empty' => 'hiçbir katkı',
+	'centralauth-merge-method-mail' => 'e-posta ile doğrulandı',
+	'centralauth-merge-method-password' => 'şifre ile doğrulandı',
+	'centralauth-merge-method-admin' => 'admin hesabı birleştirdi',
 	'centralauth-merge-method-new' => 'yeni hesap',
+	'centralauth-merge-method-login' => 'giriş ile doğrulandı',
+	'centralauth-finish-title' => 'Birleşmeyi bitir',
+	'centralauth-finish-text' => 'Eğer bu hesaplar size aitse, giriş birleştirme sürecini diğer hesapların şifrelerini buraya girerek kolayca bitirebilirsiniz:',
 	'centralauth-finish-password' => 'Parola:',
 	'centralauth-finish-login' => 'Oturum açma',
-	'centralauth-finish-send-confirmation' => 'E-posta parolası',
+	'centralauth-finish-send-confirmation' => 'Şifreyi e-postala',
+	'centralauth-finish-problems' => 'Sorun mu yaşıyorsunuz, yoksa bu hesapların sahibi değil misiniz?
+[[meta:Help:Unified login problems|Nasıl yardım bulunur]]…',
+	'centralauth-finish-noconfirms' => 'Bu şifreyle hiçbir hesap doğrulanamadı.',
+	'centralauth-finish-incomplete' => 'Bu şifreyi kullanarak birçok hesap birleştirildi.
+Diğer hesaplar daha doğrulanmadı.',
+	'centralauth-merge-attempt' => "'''Kalan ayrık hesaplar için belirtilen şifre kontrol ediliyor…'''",
+	'centralauth-attach-list-attached' => '"$1" adlı birleşik hesap aşağıdaki hesapları içeriyor:',
 	'centralauth-attach-title' => 'Hesabı doğrula',
+	'centralauth-attach-text' => 'Bu hesap daha birleşik hesaba taşınmadı.
+Eğer küresel hesap da sizinse, küresel hesap şifresini girerek bu hesabı birleştirebilirsiniz:',
+	'centralauth-attach-submit' => 'Hesabı taşı',
+	'centralauth-attach-success' => 'Hesap, birleşik hesaba taşındı.',
+	'centralauth' => 'Birleşik giriş yönetimi',
+	'centralauth-admin-manage' => 'Kullanıcı verisini yönet',
 	'centralauth-admin-username' => 'Kullanıcı adı:',
 	'centralauth-admin-lookup' => 'Kullanıcı bilgilerine gözat veya değiştir',
+	'centralauth-admin-permission' => 'Sadece stewardlar diğer insanların hesaplarını onlar için birleştirebilir.',
+	'centralauth-admin-no-unified' => 'Bu kullanıcı adı için hiçbir birleşik hesap yok.',
+	'centralauth-admin-info-id' => "Kullanıcı ID'si:",
+	'centralauth-admin-info-registered' => 'Kayıt:',
+	'centralauth-admin-info-locked' => 'Kilitlenmiş:',
 	'centralauth-admin-info-hidden' => 'Gizli:',
 	'centralauth-admin-yes' => 'evet',
 	'centralauth-admin-no' => 'hayır',
+	'centralauth-admin-attached' => 'Tamamen birleştirilmiş hesaplar',
+	'centralauth-admin-unattached' => 'Eklenmemiş hesaplar',
+	'centralauth-admin-no-unattached' => 'Birleştirilmemiş hesap kalmadı.',
+	'centralauth-admin-list-localwiki' => 'Yerel viki',
+	'centralauth-admin-list-attached-on' => 'Eklenme',
 	'centralauth-admin-list-method' => 'Metot',
+	'centralauth-admin-unmerge' => 'Seçiliyi birleştirme',
+	'centralauth-admin-merge' => 'Seçiliyi birleştir',
+	'centralauth-admin-bad-input' => 'Geçersiz birleştirme seçimi',
+	'centralauth-admin-none-selected' => 'Değişiklik yapmak için hiçbir hesap seçilmedi.',
+	'centralauth-admin-already-unmerged' => '$1 geçiliyor, zaten birleştirilmemiş',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|hesap|hesap}} başarıyla ayrıldı.',
 	'centralauth-admin-delete-title' => 'Hesabı sil',
+	'centralauth-admin-delete-description' => 'Küresel hesabı silmek, herhangi bir küresel tercihi silecek, bütün yerel hesapları ayıracak, ve küresel ismi başka bir kullanıcının alabilmesine olanak sağlayacak şekilde bırakacaktır.
+Bütün yerel hesaplar varolmaya devam edecektir.
+Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmeden önceki değerlerine geri döndürülecektir.',
 	'centralauth-admin-delete-button' => 'Bu hesabı sil',
+	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" için küresel hesap başarıyla silindi.',
+	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" için küresel hesap bulunmamaktadır',
+	'centralauth-admin-delete-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
+	'centralauth-token-mismatch' => 'Üzgünüz, oturum veri kaybından dolayı form gönderiminizi işleyemiyoruz.',
+	'centralauth-admin-lock-title' => 'Hesabı kilitle',
+	'centralauth-admin-lock-button' => 'Bu hesabı kilitle',
+	'centralauth-admin-lock-success' => '"<nowiki>$1</nowiki>" için küresel hesap başarıyla kilitlendi',
+	'centralauth-admin-lock-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
+	'centralauth-admin-unlock-title' => 'Hesabın kilidini aç',
+	'centralauth-admin-unlock-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
 	'centralauth-admin-hide-title' => 'Hesabı sakla',
 	'centralauth-admin-hide-button' => 'Bu hesabı sakla',
+	'centralauth-admin-hide-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
+	'centralauth-admin-unhide-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
 	'centralauth-admin-reason' => 'Neden:',
 	'globalusers' => 'Küresel kullanıcı listesi',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|saniye|saniye}} önce',
@@ -15947,12 +16055,16 @@ bütün dillerdeki Wikipedia, Wikisözlük, Wikikitap ve diğer bütün kardeş 
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|yıl|yıl}} önce',
 	'centralauth-prefs-status' => 'Küresel hesap durumu:',
 	'centralauth-prefs-unattached' => 'Doğrulanmamış',
-	'centralauth-login-progress' => 'Diğer Wikimedia projelerinde oturumunuz açılıyor:',
-	'centralauth-logout-progress' => 'Diğer Wikimedia projelerinde oturumunuz kapatılıyor:',
+	'centralauth-prefs-manage' => 'Küresel hesabınızı yönetin',
+	'centralauth-login-progress' => '{{MediaWiki:Centralauth-groupname}} projelerinde oturumunuz açılıyor:',
+	'centralauth-logout-progress' => 'Diğer {{MediaWiki:Centralauth-groupname}} projelerinde oturumunuz kapatılıyor:',
 	'globalgrouppermissions' => 'Küresel grup yönetimi',
 	'centralauth-editgroup-members' => 'Üye listesi:',
 	'centralauth-editset-name' => 'İsim:',
 	'centralauth-editset-reason' => 'Gerekçe:',
+	'centralauth-editset-badwikis' => 'Şu {{PLURAL:$2|viki|vikiler}} mevcut değil: $1',
+	'centralauth-editset-success' => 'Viki seti başarıyla değiştirildi.',
+	'centralauth-editset-return' => 'Ana görünüme dön',
 );
 
 /** Tsonga (Xitsonga)
@@ -16762,7 +16874,10 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-foreign-link' => 'Geban $1 in $2',
 	'centralauth-merge-method-primary' => 'lomavük',
 	'centralauth-merge-method-empty' => 'keblünots nonik',
+	'centralauth-merge-method-mail' => 'pefumedön me pot leäktronik',
+	'centralauth-merge-method-password' => 'pefümedon me letavöd',
 	'centralauth-merge-method-new' => 'kal nulik',
+	'centralauth-merge-method-login' => 'pefümedon me nunädam',
 	'centralauth-finish-title' => 'Finükön balami',
 	'centralauth-finish-text' => 'If kals at ledutons lü ol, kanol finükön kalibalami medä penol letavödis kalas at:',
 	'centralauth-finish-password' => 'Letavöd:',
@@ -16789,6 +16904,8 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-admin-none-selected' => 'Kals nonik pevälons ad pevotükön.',
 	'centralauth-admin-delete-title' => 'Moükön kali',
 	'centralauth-admin-delete-button' => 'Moükön kali at',
+	'centralauth-admin-hide-title' => 'Klänedön kali',
+	'centralauth-admin-hide-button' => 'Klänedön kali at',
 	'centralauth-admin-reason' => 'Kod:',
 	'centralauth-seconds-ago' => 'bü {{PLURAL:$1|sekun|sekuns}} $1',
 	'centralauth-minutes-ago' => 'bü {{PLURAL:$1|minut|minuts}} $1',
@@ -16805,6 +16922,11 @@ If ol binol dalaban, kanol finükön kalibalami medä penol letavöd kala at:',
 	'centralauth-prefs-count-unattached' => 'Kals no pefümedöls labü nem olik dabinon nog pö {{PLURAL:$1|proyeg|proyegs}} $1.',
 	'centralauth-prefs-detail-unattached' => 'Proyegatopäd at no pefümedon as dutöl lü kal valemik.',
 	'centralauth-prefs-manage' => 'Guvön kali valemik ola',
+	'centralauth-existinggroup-legend' => 'Grups dabinöl',
+	'centralauth-newgroup-legend' => 'Jafön grupi nulik',
+	'centralauth-globalgroupperms-newgroupname' => 'Nem grupa nulik:',
+	'centralauth-editgroup-name' => 'Nem grupa:',
+	'centralauth-editgroup-members' => 'Lised limanas:',
 	'centralauth-editgroup-noset' => '(nonik)',
 	'centralauth-editset-name' => 'Nem:',
 	'centralauth-editset-reason' => 'Kod:',
