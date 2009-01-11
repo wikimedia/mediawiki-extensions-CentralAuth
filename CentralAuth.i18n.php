@@ -157,7 +157,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-delete-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-token-mismatch'           => 'Sorry, we could not process your form submission due to a loss of session data.',
 	'centralauth-admin-lock-title'         => 'Lock account',
-	'centralauth-admin-lock-description'   => 'Locking account will make impossible to log under it in any wiki.',
+	'centralauth-admin-lock-description'   => 'Locking account will make it impossible to log under it in any wiki.',
 	'centralauth-admin-lock-button'        => 'Lock this account',
 	'centralauth-admin-lock-success'       => 'Successfully locked the global account for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-lock-nonexistent'   => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
