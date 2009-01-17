@@ -3627,7 +3627,7 @@ Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.',
 	'centralauth-merge-dryrun-or' => "'''oder'''",
 	'centralauth-merge-dryrun-home' => 'Das Migrationssystem konnte nicht bestätigen, dass du der Eigentümer des Heimatwiki-Benutzerkontos für diesen Benutzernamen bist.
 
-Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge dem untenstehenden Link und logge dich dort ein, um die Benutzerkonten-Zusammenführung abzuschließen.',
+Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge dem untenstehenden Link und melde dich dort an, um die Benutzerkonten-Zusammenführung abzuschließen.',
 	'centralauth-merge-step3-title' => 'Erzeuge globales Benutzerkonto',
 	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen.',
 	'centralauth-merge-step3-submit' => 'Benutzerkonten zusammenführen',
@@ -3635,8 +3635,8 @@ Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge 
 	'centralauth-merge-home-password' => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von dir eingegeben. Bitte gebe das Passwort für dein Heimatwiki ein.',
 	'centralauth-complete' => 'Die Zusammenführung der Benutzerkonten ist vollständig.',
 	'centralauth-incomplete' => 'Zusammenführung unvollständig',
-	'centralauth-complete-text' => 'Du kannst dich nun auf jeder Webseite {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
-	'centralauth-incomplete-text' => 'Sobald deine Benutzerkonten zusammengeführt sind, kannst du dich auf jeder Webseite {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
+	'centralauth-complete-text' => 'Du kannst dich nun auf jedem Wiki {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
+	'centralauth-incomplete-text' => 'Sobald deine Benutzerkonten zusammengeführt sind, kannst du dich auf jedem Wiki {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
 	'centralauth-not-owner-text' => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.
 
 Wenn dies dein Benutzername ist, kannst du die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:',
@@ -8996,11 +8996,15 @@ $messages['ka'] = array(
 	'centralauth-admin-username' => 'მომხმარებლის სახელი:',
 	'centralauth-admin-yes' => 'ჰო',
 	'centralauth-admin-no' => 'არა',
+	'centralauth-admin-delete-title' => 'ანგარიშის წაშლა',
 	'centralauth-admin-reason' => 'მიზეზი:',
 	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
+	'centralauth-globalgroupperms-newgroupname' => 'ახალი ჯგუფის სახელი:',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
+	'centralauth-editgroup-noset' => '(არცერთი)',
 	'centralauth-editset-name' => 'სახელი:',
 	'centralauth-editset-reason' => 'მიზეზი:',
+	'centralauth-editset-nouse' => '(არცერთი)',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
@@ -9905,6 +9909,7 @@ $messages['ko'] = array(
 	'centralauth-editgroup-members' => '사용자 목록:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 권한을 가진 사용자의 목록]]',
 	'centralauth-editgroup-noset' => '(없음)',
+	'centralauth-editgroup-perms' => '부여된 권한:',
 	'centralauth-editgroup-reason' => '바꾸는 이유:',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-globalgroupmembership-badknownwiki' => "공통 계정 '''$1'''은 당신이 입력한 위키 ('' $2 '')에서 활동 중이지 않습니다.
@@ -10271,13 +10276,13 @@ $messages['la'] = array(
 $messages['lb'] = array(
 	'mergeaccount' => 'Status vun der Benotzerkonten-Zesummeféirung',
 	'centralauth-groupname' => 'der Wikimedia Fondatioun',
-	'centralauth-desc' => 'Benotzerkonten op de Wikien vun der {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]',
+	'centralauth-desc' => 'Benotzerkonten op de Wikie vun der {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zusammenleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied' => 'Pardon, dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} Loggt Iech w.e.g. an]</span> fir nozekucken ob all är Benotzerkonte ganz zesummegefouert goufen.',
 	'centralauth-merge-welcome' => "'''Äre Benotzerkont gouf nach net an de globale System vun {{MediaWiki:Centralauth-groupname}} migéiert.'''
 
-Wann Dir äre Kont migréiere wëllt, da kënnt Dir de selweschte Benotzernumm an dat selwescht Paswuert benotze fir iech an all Wikien vun {{MediaWiki:Centralauth-groupname}} an alle Sproochen eranzeloggen.
+Wann Dir äre Kont migréiere wëllt, da kënnt Dir de selweschte Benotzernumm an dat selwescht Paswuert benotze fir iech an all Wikie vun {{MediaWiki:Centralauth-groupname}} an alle Sproochen eranzeloggen.
 
 Wa schonn en Aneren äre Benotzernumm schonn op engem anere Site ugeholl huet a stéiert dat deen net, awer et gëtt Iech trotzdem d'Chance spéider den Aneren oder en Admin ze kontaktéieren.",
 	'centralauth-merge-step1-title' => 'Ufank vun der Zesummeféierung vu Benotzerkonten',
@@ -10386,7 +10391,7 @@ D'passwierder vun alle Benotzerkonten déi zesummegefouert gi waren ginn nees op
 	'centralauth-admin-delete-success' => 'De globale Benotzerkont "<nowiki>$1</nowiki>" gouf geläscht',
 	'centralauth-admin-nonexistent' => 'Et gëtt kee globale Benotzerkont fir "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Feeler: de globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
-	'centralauth-token-mismatch' => "Pardon, mir konnten d'Donnéeën vun ärer Demande (Formulaire) net verschaffen wëll Date vun ärer Sessioun verluer gi sinn.",
+	'centralauth-token-mismatch' => "Pardon, mir konnten d'Donnéeë vun ärer Demande (Formulaire) net verschaffe wëll Date vun ärer Sessioun verluer gi sinn.",
 	'centralauth-admin-lock-title' => 'Benotzerkont spären',
 	'centralauth-admin-lock-description' => "D'Späre vum Benotzerkont mécht et onméiglech sech an iergendenger Wiki anzeloggen.",
 	'centralauth-admin-lock-button' => 'Dëse Benotzerkont spären',
@@ -10409,7 +10414,7 @@ D'passwierder vun alle Benotzerkonten déi zesummegefouert gi waren ginn nees op
 	'centralauth-admin-unhide-nonexistent' => 'Feeler: De globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
 	'centralauth-admin-reason' => 'Grond:',
 	'centralauth-admin-lockandhide-title' => 'Benotzerkont spären a verstoppen',
-	'centralauth-admin-lockandhide-description' => "D'Spären an d'Verstoppen vun dësem Benotzerkont verhënnert dat dëse Benotzer sech op iergend enger wiki aloggen kann a verstoppt en op der [[Special:GlobalUsers|Lëscht vun de globale Benotzer]].",
+	'centralauth-admin-lockandhide-description' => "D'Spären an d'Verstoppe vun dësem Benotzerkont verhënnert dat dëse Benotzer sech op iergend enger wiki alogge kann a verstoppt en op der [[Special:GlobalUsers|Lëscht vun de globale Benotzer]].",
 	'centralauth-admin-lockandhide-button' => 'Dëse Benotzerkont spären a verstoppen',
 	'centralauth-admin-lockandhide-success' => 'De Benetzerkont gouf gespaart a verstoppt',
 	'centralauth-admin-lockandhide-nonexistent' => 'Feeler: de globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
@@ -10437,8 +10442,8 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.',
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
-	'centralauth-login-progress' => 'Dir gouft an dës Projeten vun {{MediaWiki:Centralauth-groupname}} ageloggt:',
-	'centralauth-logout-progress' => 'Iech aus anere Projeten vun {{MediaWiki:Centralauth-groupname}} ausloggen:',
+	'centralauth-login-progress' => 'Dir gouft an dës Projete vu(n) {{MediaWiki:Centralauth-groupname}} ageloggt:',
+	'centralauth-logout-progress' => 'Iech aus anere Projete vu(n) {{MediaWiki:Centralauth-groupname}} ausloggen:',
 	'centralauth-log-name' => 'Lëscht vun de globale Benotzerkonten',
 	'centralauth-log-header' => 'An dëser Lëscht stinn all Operatioune déi global Benotzerkonten bereffen: Läsche, Spären a Ohiewe vu Spären.',
 	'centralauth-log-entry-delete' => 'geläschte globale Benotzerkont "<nowiki>$1</nowiki>"',
@@ -12902,6 +12907,7 @@ $messages['os'] = array(
 	'centralauth-years-ago' => '$1 азы агъоммæ',
 	'centralauth-prefs-complete' => 'Алцыдæр у хорз!',
 	'centralauth-editgroup-noset' => '(нæй)',
+	'centralauth-editset-type' => 'Тип:',
 	'centralauth-editset-reason' => 'Аххос:',
 	'centralauth-editset-nouse' => '(нæй)',
 );
@@ -13287,6 +13293,7 @@ $messages['ps'] = array(
 	'centralauth-editgroup-members' => 'د غړي لړليک:',
 	'centralauth-editgroup-noset' => '(هېڅ)',
 	'centralauth-editgroup-reason' => 'د بدلون سبب:',
+	'centralauth-editset-name' => 'نوم:',
 	'centralauth-editset-nouse' => '(هېڅ)',
 );
 
