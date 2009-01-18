@@ -5995,7 +5995,6 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 $messages['got'] = array(
 	'centralauth-admin-reason' => 'Faírina:',
 );
-
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author AndreasJS
  * @author Crazymadlover
@@ -8998,6 +8997,12 @@ $messages['ka'] = array(
 	'centralauth-admin-no' => 'არა',
 	'centralauth-admin-delete-title' => 'ანგარიშის წაშლა',
 	'centralauth-admin-reason' => 'მიზეზი:',
+	'centralauth-seconds-ago' => '$1 წამის წინ',
+	'centralauth-minutes-ago' => '$1 წუთის წინ',
+	'centralauth-hours-ago' => '$1 საათის წინ',
+	'centralauth-days-ago' => '$1 დღის წინ',
+	'centralauth-months-ago' => '$1 თვის წინ',
+	'centralauth-years-ago' => '$1 წლის წინ',
 	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
 	'centralauth-globalgroupperms-newgroupname' => 'ახალი ჯგუფის სახელი:',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
