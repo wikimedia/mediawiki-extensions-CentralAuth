@@ -5989,7 +5989,7 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
 );
 
-/** Gothic (𐌲𐌿𐍄𐌹𐍃𐌺)
+/** Gothic
  * @author Jocke Pirat
  */
 $messages['got'] = array(
@@ -10508,7 +10508,7 @@ Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
 	'centralauth-editset-nowikis' => 'Keng Wiki uginn.',
 	'centralauth-editset-nouse' => '(keen)',
 	'centralauth-editset-usage' => 'An de Gruppe benotzt:',
-	'centralauth-editset-badwikis' => 'Dës Wikië gëtt et net: $1.',
+	'centralauth-editset-badwikis' => 'Dës {{PLURAL:$2|Wiki|Wikië}} gëtt et net: $1.',
 	'centralauth-editset-return' => 'Zréck op déi normal Vue',
 	'right-globalgroupmembership' => 'Zougehéieregkeet zu lokale Gruppen änneren',
 	'right-centralauth-admin' => 'Global Benotzerkonten administréieren',
@@ -13548,6 +13548,14 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 	'right-centralauth-admin' => 'Administrar contas globais',
 	'right-centralauth-merge' => 'Fundir as contas',
 	'right-globalgrouppermissions' => 'Gerir grupos globais',
+);
+
+/** Brazilian Portuguese (Português do Brasil)
+ * @author Heldergeovane
+ */
+$messages['pt-br'] = array(
+	'centralauth-prefs-count-attached' => 'A sua conta está ativa em $1 {{PLURAL:$1|sítio|sítios}} de projeto.',
+	'centralauth-prefs-count-unattached' => 'Ainda existem contas não confirmadas com seu nome de usuário em $1 {{PLURAL:$1|projeto|projetos}}.',
 );
 
 /** Quechua (Runa Simi)

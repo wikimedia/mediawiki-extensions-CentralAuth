@@ -121,6 +121,13 @@ $aliases['fr'] = array(
 	'GlobalUsers' => array( 'Utilisateurs globaux', 'UtilisateursGlobaux' ),
 );
 
+/** Galician (Galego) */
+$aliases['gl'] = array(
+	'MergeAccount' => array( 'Fusionar contas' ),
+	'GlobalGroupMembership' => array( 'Dereitos de usuario globais' ),
+	'GlobalUsers' => array( 'Usuarios globais' ),
+);
+
 /** Swiss German (Alemannisch) */
 $aliases['gsw'] = array(
 	'CentralAuth' => array( 'Verwaltig Benutzerchonte-Zämmefierig' ),
@@ -292,6 +299,17 @@ $aliases['pt-br'] = array(
 /** Romanian (Română) */
 $aliases['ro'] = array(
 	'GlobalUsers' => array( 'Utilizatori globali' ),
+);
+
+/** Sanskrit (संस्कृत) */
+$aliases['sa'] = array(
+	'CentralAuth' => array( 'मध्यवर्तीप्रामान्य' ),
+	'AutoLogin' => array( 'स्वयमेवप्रवेश' ),
+	'MergeAccount' => array( 'उपयोजकसंज्ञासंयोग' ),
+	'GlobalGroupMembership' => array( 'वैश्विकसदस्याधिकार' ),
+	'GlobalGroupPermissions' => array( 'वैश्विकगटसंमती' ),
+	'EditWikiSets' => array( 'सम्पादनविकिगट' ),
+	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
 /** Swedish (Svenska) */
