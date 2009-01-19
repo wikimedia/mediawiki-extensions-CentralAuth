@@ -7603,7 +7603,7 @@ Valószínűleg rossz felhasználó számára akarsz jogokat adni.",
  */
 $messages['ia'] = array(
 	'mergeaccount' => 'Stato del unification de contos',
-	'centralauth-groupname' => 'Fundation Wikimedia',
+	'centralauth-groupname' => 'le Fundation Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Fusionar conto]] trans wikis del {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusionar plure contos]] pro Sessiones a Usator Singule',
 	'centralauth-merge-denied' => 'Pardono, tu non ha le permission de acceder a iste pagina.',
