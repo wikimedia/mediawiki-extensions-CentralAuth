@@ -17765,7 +17765,7 @@ $messages['yue'] = array(
 /** Classical Chinese (文言)
  * @author Itsmine
  */
-$messages['zh-classical'] = array(
+$messages['lzh'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|混一]]籍口',
 	'centralauth-complete' => '成矣﹗',
 	'centralauth-incomplete' => '未成矣﹗',
