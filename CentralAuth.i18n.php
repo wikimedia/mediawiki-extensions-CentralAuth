@@ -9831,6 +9831,9 @@ $messages['ko'] = array(
 	'centralauth-admin-already-unmerged' => '이미 병합 해제되었기 때문에, $1을 건너뜁니다.',
 	'centralauth-admin-unmerge-success' => '$1개의 계정이 성공적으로 병합 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
+	'centralauth-admin-delete-description' => '통합 계정 삭제는 모든 통합 설정을 삭제하고, 모든 로컬 계정을 분리하고, 다른 사람이 사용할 수 있도록 할 것입니다.
+모든 로컬의 계정은 계속 존재할 것입니다.
+통합 이전에 생성된 로컬 계정의 비밀번호는 통합 이전의 비밀번호로 되돌려질 것입니다.',
 	'centralauth-admin-delete-button' => '이 계정 지우기',
 	'centralauth-admin-delete-success' => '공통 계정 "<nowiki>$1</nowiki>"이 성공적으로 삭제되었습니다.',
 	'centralauth-admin-nonexistent' => '공통 계정 "<nowiki>$1</nowiki>"이(가) 존재하지 않습니다.',
@@ -9876,6 +9879,7 @@ $messages['ko'] = array(
 	'centralauth-prefs-manage' => '공통 계정 관리',
 	'centralauth-renameuser-merged' => '$1 계정은 통합 로그인 시스템으로 옮겨졌습니다.
 이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.',
+	'centralauth-renameuser-reserved' => '사용자 이름 $2는 통합 계정으로 이미 사용되고 있습니다.',
 	'centralauth-invalid-wiki' => '다음과 같은 위키 데이터베이스가 없습니다: $1',
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 	'centralauth-login-progress' => '{{MediaWiki:Centralauth-groupname}}의 다른 프로젝트에도 로그인합니다:',
@@ -9909,6 +9913,7 @@ $messages['ko'] = array(
 	'centralauth-globalgroupperms-creategroup-submit' => '권한 부여',
 	'centralauth-editgroup-subtitle' => '$1 편집하기',
 	'centralauth-editgroup-name' => '그룹 이름:',
+	'centralauth-editgroup-display' => '번역된 그룹의 이름:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|편집]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|편집]])',
 	'centralauth-editgroup-members' => '사용자 목록:',
@@ -9916,6 +9921,7 @@ $messages['ko'] = array(
 	'centralauth-editgroup-noset' => '(없음)',
 	'centralauth-editgroup-perms' => '부여된 권한:',
 	'centralauth-editgroup-reason' => '바꾸는 이유:',
+	'centralauth-editgroup-success' => '이 그룹의 권한이 변경되었습니다.',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-globalgroupmembership-badknownwiki' => "공통 계정 '''$1'''은 당신이 입력한 위키 ('' $2 '')에서 활동 중이지 않습니다.
 당신은 다른 사용자의 권한을 바꾸게 될 수 있습니다.",
@@ -10923,6 +10929,18 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-log-name' => 'Globālo kontu reģistrs',
 	'centralauth-log-header' => 'Šis reģistrs satur operācijas ar globālajiem kontiem: dzēšanas, slēgšanas un atslēgšanas.',
 	'centralauth-editgroup-reason' => 'Izmaiņu iemesls:',
+);
+
+/** Classical Chinese (文言)
+ * @author Itsmine
+ */
+$messages['lzh'] = array(
+	'centralauth-desc' => '[[Special:MergeAccount|混一]]籍口',
+	'centralauth-complete' => '成矣﹗',
+	'centralauth-incomplete' => '未成矣﹗',
+	'centralauth-complete-text' => '而今而後，足下行乎維基，一號即可貫之，不必復籍焉。',
+	'centralauth-incomplete-text' => '一號合矣，爾可貫之；同名號用典字書他也。',
+	'centralauth-blocked-text' => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
 );
 
 /** Eastern Mari (Олык Марий)
@@ -16352,7 +16370,7 @@ Lütfen ev vikisi için şifreyi girin.',
 	'centralauth-incomplete' => 'Giriş birleştirme tamamlanmadı!',
 	'centralauth-complete-text' => 'Artık herhangi bir {{MediaWiki:Centralauth-groupname}} viki sitelerine yeni bir hesap açmaksızın giriş yapabilirsiniz.',
 	'centralauth-incomplete-text' => 'Girişiniz birleştirildiğinde, yeni bir hesap oluşturmadan herhangi bir {{MediaWiki:Centralauth-groupname}} viki sitesinde oturum açabileceksiniz',
-	'centralauth-not-owner-text' => '"$2" kullanıcı adı otomatik olarak $2 sitesindeki hesabın sahibine atanmıştır.
+	'centralauth-not-owner-text' => '"$1" kullanıcı adı otomatik olarak $2 sitesindeki hesabın sahibine atanmıştır.
 
 Eğer bu sizseniz, ana şifreyi buraya yazarak giriş birleştirme sürecini tamamlayabilirsiniz:',
 	'centralauth-blocked-text' => 'Ev vikiniz (aşağıda listelenmiş) değişiklik yapmaya engellenmiştir.
@@ -17760,18 +17778,6 @@ $messages['yue'] = array(
 	'right-centralauth-admin' => '管理全域戶口',
 	'right-centralauth-merge' => '合併佢哋嘅戶口',
 	'right-globalgrouppermissions' => '管理全域組',
-);
-
-/** Classical Chinese (文言)
- * @author Itsmine
- */
-$messages['lzh'] = array(
-	'centralauth-desc' => '[[Special:MergeAccount|混一]]籍口',
-	'centralauth-complete' => '成矣﹗',
-	'centralauth-incomplete' => '未成矣﹗',
-	'centralauth-complete-text' => '而今而後，足下行乎維基，一號即可貫之，不必復籍焉。',
-	'centralauth-incomplete-text' => '一號合矣，爾可貫之；同名號用典字書他也。',
-	'centralauth-blocked-text' => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
