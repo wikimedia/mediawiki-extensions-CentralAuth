@@ -67,7 +67,7 @@ Please enter the password for the home wiki.',
 
 If this is you, you can finish the login unification process simply by typing the master password for that account here:',
 	'centralauth-blocked-text'    => 'Your home wiki (listed below) is blocked from editing.
-Please contact a sysop in this wiki to unblock it.
+Please contact an administrator in this wiki to unblock it.
 While it is blocked, you cannot merge your accounts.',
 
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Demo mode only</div><br clear='all'/>",
