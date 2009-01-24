@@ -9907,9 +9907,14 @@ $messages['ko'] = array(
 	'autologin' => '자동 로그인',
 	'globalgroupmembership' => '사용자의 공통 권한 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
+	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
+당신은 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.
+모든 권한을 제거하면 해당 그룹은 삭제될 것입니다.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
 	'centralauth-existinggroup-legend' => '존재하는 그룹',
 	'centralauth-newgroup-legend' => '새 그룹 만들기',
+	'centralauth-newgroup-intro' => '당신은 새 그룹에 권한을 부여하는 데 이 양식을 이용할 수 있습니다.
+어떤 권한이라도 부여되어 있지 않은 그룹은 존재하지 않을 것임을 알립니다.',
 	'centralauth-globalgroupperms-newgroupname' => '새 그룹 이름:',
 	'centralauth-globalgroupperms-creategroup-submit' => '권한 부여',
 	'centralauth-editgroup-subtitle' => '$1 편집하기',
@@ -13844,6 +13849,8 @@ Redenumirea va cauza utilizatorului local detaşarea de la contul global.',
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'centralauth-groupname' => "'a ''Wikimedia Foundation''",
+	'centralauth-foreign-link' => 'Utende $1 sus a $2',
 	'centralauth-merge-method-primary' => 'casa uicchi',
 	'centralauth-finish-password' => 'Passuord:',
 	'centralauth-admin-yes' => 'si',
