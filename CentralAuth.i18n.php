@@ -4543,7 +4543,7 @@ Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí l
 	'centralauth-notice-dryrun' => "<div class='successbox'>Únicamente modo demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La unificación de cuentas está por ahora en modo demostración / depuración, por lo que las operaciones de fusión están desactivadas. ¡Lo sentimos!',
 	'centralauth-error-locked' => 'No puedes editar porque tu cuenta está cerrada con llave.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/es|Lee más sobre '''identificación unificada''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lee más sobre '''identificación unificada''']]…''",
 	'centralauth-list-home-title' => 'Wiki hogar',
 	'centralauth-list-home-dryrun' => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada. 
 Podrás cambiar posteriormente la wiki considerada hogar.',
