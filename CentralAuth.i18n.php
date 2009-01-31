@@ -4737,6 +4737,7 @@ Se puede borrar un grupo quitándole todos los derechos.',
 );
 
 /** Estonian (Eesti)
+ * @author Avjoska
  * @author Jaan513
  */
 $messages['et'] = array(
@@ -4765,6 +4766,10 @@ $messages['et'] = array(
 	'centralauth-prefs-manage' => 'Vaata oma globaalset kontot',
 	'centralauth-login-progress' => 'Teid logitakse sisse ka teistesse Wikimedia projektidesse:',
 	'centralauth-logout-progress' => 'Teid logitakse välja ka teistest Wikimedia projektidest:',
+	'centralauth-editset-name' => 'Nimi:',
+	'centralauth-editset-type' => 'Tüüp:',
+	'centralauth-editset-wikis' => 'Vikid:',
+	'centralauth-editset-reason' => 'Põhjus:',
 );
 
 /** Basque (Euskara)
@@ -13022,7 +13027,7 @@ Wprowadź hasło właściwe dla Twojej domowej wiki.',
 Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego podaj hasło konta na $2:',
 	'centralauth-blocked-text' => 'Możliwość edycji na Twojej macierzystej wiki (wymieniona poniżej) została zablokowana. Skontaktuj się z administratorem tej wiki, aby zdjął blokadę. W czasie, gdy jest zablokowana nie masz możliwości połączenia kont.',
 	'centralauth-notice-dryrun' => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
-	'centralauth-disabled-dryrun' => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym / usuwania usterek. Właściwe operacje łączenia kont są obecnie wyłączone.',
+	'centralauth-disabled-dryrun' => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym i usuwania usterek. Właściwe operacje łączenia kont są obecnie wyłączone.',
 	'centralauth-error-locked' => 'Nie możesz edytować, ponieważ Twoje konto jest zablokowane.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
 	'centralauth-list-home-title' => 'Macierzysta wiki',
@@ -13196,7 +13201,7 @@ Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak o
 	'centralauth-editset' => 'Edytuj zbiory wiki',
 	'centralauth-editset-legend' => 'Edytuj lub stwórz zbiór wiki',
 	'centralauth-editset-intro' => 'Następujące ustawienia zostały utworzone. Możesz przejrzeć i zmienić dowolne z nich albo utworzyć nowe ustawienie.',
-	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|podgląd/edycja]])',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|podgląd i edycja]])',
 	'centralauth-editset-new' => 'Utwórz nowy zbiór',
 	'centralauth-editset-notfound' => 'Nie znaleziono zbioru wiki „$1”.',
 	'centralauth-editset-optin' => 'Opt-in (zawiera tylko wybrane wiki)',
