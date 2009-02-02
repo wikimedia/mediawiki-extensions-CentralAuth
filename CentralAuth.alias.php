@@ -92,6 +92,17 @@ $aliases['de'] = array(
 	'GlobalUsers' => array( 'Globale Benutzerliste' ),
 );
 
+/** Lower Sorbian (Dolnoserbski) */
+$aliases['dsb'] = array(
+	'CentralAuth' => array( 'Zjadnośenje kontow' ),
+	'AutoLogin' => array( 'Awtomatiske pśizjawjenje' ),
+	'MergeAccount' => array( 'Konta zjadnośiś' ),
+	'GlobalGroupMembership' => array( 'Globalne wužywarske pšawa' ),
+	'GlobalGroupPermissions' => array( 'Globalne kupkowe pšawa' ),
+	'EditWikiSets' => array( 'Wikisajźby wobźěłaś' ),
+	'GlobalUsers' => array( 'Globalna lisćina wužywarjow' ),
+);
+
 /** Persian (فارسی) */
 $aliases['fa'] = array(
 	'CentralAuth' => array( 'ورود_متمرکز' ),
@@ -161,6 +172,17 @@ $aliases['hr'] = array(
 	'GlobalGroupPermissions' => array( 'Globalna_prava_skupina' ),
 	'EditWikiSets' => array( 'Uredi_wikiset' ),
 	'GlobalUsers' => array( 'Globalni_suradnici' ),
+);
+
+/** Upper Sorbian (Hornjoserbsce) */
+$aliases['hsb'] = array(
+	'CentralAuth' => array( 'Zjednoćenje kontow' ),
+	'AutoLogin' => array( 'Awtomatiske přizjewjenje' ),
+	'MergeAccount' => array( 'Konta zjednoćić' ),
+	'GlobalGroupMembership' => array( 'Globalne wužiwarske prawa' ),
+	'GlobalGroupPermissions' => array( 'Globalne skupinske prawa' ),
+	'EditWikiSets' => array( 'Wikisadźby wobdźěłać' ),
+	'GlobalUsers' => array( 'Globalni wužiwarjo' ),
 );
 
 /** Hungarian (Magyar) */
