@@ -17566,6 +17566,15 @@ Ba steifülol ad givülön gitätis gebane dobik!",
 	'right-centralauth-merge' => 'Balön kalis onsik',
 );
 
+/** Võro (Võro)
+ * @author Võrok
+ */
+$messages['vro'] = array(
+	'centralauth-groupname' => 'Tsihtasotus Wikimedia',
+	'centralauth-login-progress' => 'Läät nimega sisse ka tõisihe {{MediaWiki:Centralauth-groupname}} projektehe:',
+	'centralauth-logout-progress' => 'Läät nime alt vällä ka tõisist {{MediaWiki:Centralauth-groupname}} projektest:',
+);
+
 /** Yiddish (ייִדיש)
  * @author פוילישער
  */

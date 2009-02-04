@@ -189,11 +189,11 @@ $aliases['hsb'] = array(
 $aliases['hu'] = array(
 	'CentralAuth' => array( 'Központi azonosítás' ),
 	'AutoLogin' => array( 'Automatikus bejelentkezés' ),
-	'MergeAccount' => array( 'Felhasználói fiókok egyesítése' ),
-	'GlobalGroupMembership' => array( 'Globális felhasználói jogok' ),
-	'GlobalGroupPermissions' => array( 'Globális felhasználói engedélyek' ),
+	'MergeAccount' => array( 'Szerkesztői fiókok egyesítése', 'Felhasználói fiókok egyesítése' ),
+	'GlobalGroupMembership' => array( 'Globális szerkesztői jogok', 'Globális felhasználói jogok' ),
+	'GlobalGroupPermissions' => array( 'Globális szerkesztői engedélyek', 'Globális felhasználói engedélyek' ),
 	'EditWikiSets' => array( 'Wikicsoportok szerkesztése' ),
-	'GlobalUsers' => array( 'Globális felhasználólista', 'Felhasználók globális listája' ),
+	'GlobalUsers' => array( 'Globális szerkesztőlista', 'Globális felhasználólista', 'Felhasználók globális listája' ),
 );
 
 /** Japanese (日本語) */
