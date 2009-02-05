@@ -233,7 +233,9 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-name'              => 'Global rights log',
 	'centralauth-rightslog-entry-usergroups'  => 'changed global group membership for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms'  => 'changed group permissions for $1 from $2 to $3',
-	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1. Added $2; Removed $3',
+	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1.
+Added $2;
+Removed $3',
 	'centralauth-rightslog-entry-groupperms3' => 'changed group restricted wikis set for $1 from $2 to $3',
 	'centralauth-rightslog-header'            => 'This log contains operations on global groups: membership and permissions changes',
 
@@ -290,7 +292,8 @@ You may be attempting to assign rights to the wrong user!",
 	// Wiki sets editing
 	'centralauth-editset'                             => 'Edit wiki sets',
 	'centralauth-editset-legend'                      => 'Edit or create wiki set',
-	'centralauth-editset-intro'                       => 'The following wiki sets have already been created. You may view and modify any of them, or create a new set.',
+	'centralauth-editset-intro'                       => 'The following wiki sets have already been created.
+You may view and modify any of them, or create a new set.',
 	'centralauth-editset-item'                        => '$1 ([[Special:EditWikiSets/$2|view/edit]])',
 	'centralauth-editset-new'                         => 'Create a new set',
 	'centralauth-editset-notfound'                    => 'Wiki set "$1" not found.',
