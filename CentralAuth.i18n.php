@@ -13339,6 +13339,7 @@ $messages['ps'] = array(
  * @author Lijealso
  * @author Malafaya
  * @author Smeira
+ * @author Waldir
  */
 $messages['pt'] = array(
 	'mergeaccount' => 'Estado da unificação de contas',
@@ -13367,9 +13368,9 @@ Não foram feitas modificações em suas contas até o momento.',
 
 Não foram feitas modificações em suas contas até o momento.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
-	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar você como sendo o proprietário da conta de usuário de sua residência wiki.
+	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar que você seja o proprietário da conta na wiki principal para o seu nome de utilizador.
 
-Uma outra wiki foi estipulada como sendo a residência de seu nome de usuário. Siga o seguinte link e se autentique através dele para que a fusão de contas seja completada.',
+Outra wiki foi determinada como sendo a conta principal de seu nome de utilizador. Siga o seguinte link e autentique-se através dele para que a fusão de contas seja completada.',
 	'centralauth-merge-step3-title' => 'Criar conta unificada',
 	'centralauth-merge-step3-detail' => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionados, seja criada:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
@@ -13686,6 +13687,8 @@ $messages['qu'] = array(
 	'centralauth-prefs-manage' => 'Sapsi rakiqunaykita kamachiy',
 	'centralauth-invalid-wiki' => 'Manam kanchu kay wiki willañiqintinchu: $1',
 	'centralauth-account-exists' => "Manam atinichu rakiqunata kamariyta: munasqayki ruraqpa sutinqa huñusqa yaykuna llikapi hap'isqañam.",
+	'centralauth-login-progress' => "{{MediaWiki:Centralauth-groupname}} nisqap ruraykamayninkunapi llamk'apuy tiyayniykita qallarispa:",
+	'centralauth-logout-progress' => "{{MediaWiki:Centralauth-groupname}} nisqap ruraykamayninkunapi llamk'apuy tiyayniykimanta lluqsispa:",
 );
 
 /** Romanian (Română)
