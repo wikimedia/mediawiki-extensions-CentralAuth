@@ -217,7 +217,7 @@ $aliases['km'] = array(
 $aliases['ko'] = array(
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정' ),
-	'GlobalUsers' => array( '공통계정목록' ),
+	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
@@ -281,6 +281,11 @@ $aliases['nl'] = array(
 	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
 	'EditWikiSets' => array( 'WikigroepenBewerken' ),
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
+);
+
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
+$aliases['nn'] = array(
+	'MergeAccount' => array( 'Kontosamanslåing' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
