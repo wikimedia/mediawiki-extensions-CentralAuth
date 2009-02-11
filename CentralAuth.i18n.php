@@ -4674,6 +4674,11 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-log-entry-unhide' => 'mostró la cuenta global «<nowiki>$1</nowiki>»',
 	'centralauth-log-entry-lockandhide' => 'bloqueó y escondió la cuenta global «<nowiki>$1</nowiki>»',
 	'centralauth-rightslog-name' => 'Registro de derechos globales',
+	'centralauth-rightslog-entry-usergroups' => 'cambiado membresía de grupo global para $1 de $2 a $3',
+	'centralauth-rightslog-entry-groupperms' => 'cambiados permisos de grupo para $1 de $2 a $3',
+	'centralauth-rightslog-entry-groupperms2' => 'cambiado permisos de grupo para $1.
+Agregado $2;
+Removido $3',
 	'centralauth-rightslog-header' => 'Este registro contiene operaciones en grupos globales: cambios de membresía y permisos',
 	'centralauth-rightslog-entry-newset' => 'crear $2 grupo wiki $1 con los siguientes wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'renombró conjunto wiki «$2» a «$1»',
@@ -10765,6 +10770,7 @@ $messages['lo'] = array(
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Homo
  * @author Hugo.arg
  * @author Matasg
  * @author Siggis
@@ -10808,8 +10814,7 @@ Kitoje wiki nustatyta paskyra jūsų naudotojo vardui kaip namų wiki; sekite ž
 	'centralauth-merge-step3-submit' => 'Sujungti paskyras',
 	'centralauth-complete' => 'Sujungimo registravimas užbaigtas!',
 	'centralauth-incomplete' => 'Sujungimo registravimas neužbaigtas!',
-	'centralauth-complete-text' => 'Dabar jūs galite prisijungti prie bet kurio Vikimedijos projekto nekurdamas naujos paskyros;
-tas pats naudotojo vardas ir slaptažodis veiks Vikipedijoje, Vikižodyne, Vikiknygose ir kituose seseriškuose projektuose visomis kalbomis.',
+	'centralauth-complete-text' => 'Dabar jūs galite prisijungti prie bet kurio Vikimedijos projekto nekurdamas naujos paskyros.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Tik demonstracinis režimas</div><br clear='all'/>",
 	'centralauth-error-locked' => 'Jūs negalite redaguoti, kadangi Jūsų paskyra yra blokuota.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Skaityk daugiau apie '''unifikuotą prisijungimą''']]…''",
@@ -10849,11 +10854,13 @@ tas pats naudotojo vardas ir slaptažodis veiks Vikipedijoje, Vikižodyne, Vikik
 	'centralauth-admin-merge' => 'Pasirinkto prijungimas',
 	'centralauth-admin-bad-input' => 'Blogas prijungimo pasirinkimas',
 	'centralauth-admin-delete-title' => 'Pašalinti sąskaitą',
+	'centralauth-admin-delete-button' => 'Ištrinti šią paskyrą',
 	'centralauth-admin-lock-title' => 'Blokuoti paskyrą',
 	'centralauth-admin-lock-button' => 'Blokuoti šią paskyrą',
 	'centralauth-admin-unlock-title' => 'Atblokuoti paskyrą',
 	'centralauth-admin-unlock-button' => 'Atblokuoti šią paskyrą',
 	'centralauth-admin-hide-title' => 'Paslėpti paskyrą',
+	'centralauth-admin-reason' => 'Priežastis:',
 	'centralauth-seconds-ago' => 'prieš $1 {{PLURAL:$1|sekundę|sekundes|sekundžių}}',
 	'centralauth-minutes-ago' => 'prieš $1 {{PLURAL:$1|minutę|minutes|minučių}}',
 	'centralauth-hours-ago' => 'prieš $1 {{PLURAL:$1|valandą|valandas|valandų}}',
@@ -10866,6 +10873,9 @@ tas pats naudotojo vardas ir slaptažodis veiks Vikipedijoje, Vikižodyne, Vikik
 	'centralauth-prefs-migration' => 'Yra migruojama',
 	'centralauth-prefs-count-attached' => 'Jūsų paskyra yra aktyvi $1 projekto {{PLURAL:$1|srityje|srityse|sričių}}.',
 	'centralauth-prefs-manage' => 'Jūsų bendrosios registracijos valdymas',
+	'centralauth-login-progress' => 'Jūs prisijungėte prie {{MediaWiki:Centralauth-groupname}} projektų:',
+	'centralauth-logout-progress' => 'Jūs atsijungėte nuo kitų {{MediaWiki:Centralauth-groupname}} projektų:',
+	'autologin' => 'Automatinis prisijungimas',
 	'centralauth-editgroup-name' => 'Grupės vardas:',
 	'centralauth-editgroup-members' => 'Narių sąrašas:',
 );
