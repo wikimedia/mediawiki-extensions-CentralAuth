@@ -4124,7 +4124,7 @@ $messages['ee'] = array(
  */
 $messages['el'] = array(
 	'mergeaccount' => 'Κατάσταση της ενοποίησης λογαριασμών',
-	'centralauth-desc' => '[[Special:MergeAccount|Συγχώνευση Λογαριασμών]] σε όλα τα εγχειρήματα του Ιδρύματος Wikimedia',
+	'centralauth-desc' => '[[Special:MergeAccount|Συγχώνευση Λογαριασμών]] σε όλα τα wiki του {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Συγχωνεύει]] πολλαπλούς λογαριασμούς για ενιαία σύνδεση χρηστών',
 	'centralauth-merge-denied' => 'Συγνώμη, δεν έχετε άδεια πρόσβασης σε αυτή τη σελίδα',
 	'centralauth-merge-notlogged' => 'Παρακαλούμε <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} συνδεθείτε]</span> για να ελέγξετε εάν οι λογαριασμοί σας έχουν συγχωνευθεί πλήρως.',
@@ -4217,6 +4217,7 @@ $messages['el'] = array(
 	'centralauth-admin-bad-input' => 'Η επιλογή για την συγχώνευση είναι άκυρη',
 	'centralauth-admin-none-selected' => 'Δεν διαλέξατε λογαριασμούς προς τροποποίηση.',
 	'centralauth-token-mismatch' => 'Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.',
+	'centralauth-admin-hide-button' => 'Απόκρυψη αυτού του λογαριασμού',
 	'centralauth-listusers-locked' => 'κλειδωμένο',
 	'centralauth-listusers-attached' => 'υπάρχει τοπικά',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|δευτερόλεπτο|δευτερόλεπτα}} πριν',
@@ -4235,6 +4236,10 @@ $messages['el'] = array(
 	'centralauth-prefs-detail-unattached' => 'Δεν έχει επιβεβαιωθεί ότι αυτό το εγχείρημα ανήκει στον καθολικό λογαριασμό.',
 	'centralauth-prefs-manage' => 'Διαχείριση του καθολικού σας λογαριασμού',
 	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα είναι επιλεγμένη ήδη στο σύστημα ενιαίας σύνδεσης.',
+	'centralauth-editset-name' => 'Όνομα:',
+	'centralauth-editset-type' => 'Τύπος:',
+	'centralauth-editset-reason' => 'Λόγος:',
+	'centralauth-editset-nouse' => '(καμία)',
 );
 
 /** Esperanto (Esperanto)
@@ -8146,6 +8151,7 @@ $messages['io'] = array(
 
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
+ * @author Spacebirdy
  */
 $messages['is'] = array(
 	'centralauth-merge-denied' => 'Því miður, þú hefur ekki leyfi til að fara á þessa síðu.',
@@ -8162,22 +8168,33 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
 	'centralauth-foreign-link' => 'Notandi $1 á $2',
 	'centralauth-merge-method-primary' => 'heimawiki',
 	'centralauth-merge-method-empty' => 'ekkert framlag',
+	'centralauth-merge-method-mail' => 'staðfest með tölvupóst',
+	'centralauth-merge-method-password' => 'staðfest með lykilorð',
 	'centralauth-merge-method-new' => 'nýr aðgangur',
+	'centralauth-merge-method-login' => 'staðfest með innskráningu',
 	'centralauth-finish-password' => 'Lykilorð:',
 	'centralauth-finish-login' => 'Innskráning',
 	'centralauth-finish-send-confirmation' => 'Senda lykilorð í tölvupósti',
 	'centralauth-attach-title' => 'Staðfesta aðgang',
 	'centralauth-admin-username' => 'Notandanafn:',
+	'centralauth-admin-lookup' => 'Skoða eða breyta notandagögnum',
 	'centralauth-admin-info-id' => 'Notandanúmer:',
+	'centralauth-admin-info-registered' => 'Skráð:',
+	'centralauth-admin-info-locked' => 'Læst:',
 	'centralauth-admin-yes' => 'já',
 	'centralauth-admin-no' => 'nei',
+	'centralauth-admin-attached' => 'Fullkomlega sameinaðir aðgangar',
+	'centralauth-admin-unattached' => 'Ótengdir aðgangar',
 	'centralauth-admin-delete-title' => 'Eyða aðgangi',
 	'centralauth-admin-delete-button' => 'Eyða þessum aðgangi',
 	'centralauth-admin-lock-title' => 'Læsa aðgangi',
 	'centralauth-admin-lock-button' => 'Læsa þessum aðgangi',
 	'centralauth-admin-unlock-title' => 'Opna fyrir aðgang',
 	'centralauth-admin-unlock-button' => 'Opna fyrir þennan aðgang',
+	'centralauth-admin-hide-title' => 'Fela aðgang',
+	'centralauth-admin-hide-button' => 'Fela þennan aðgang',
 	'centralauth-admin-reason' => 'Ástæða:',
+	'centralauth-admin-lockandhide-title' => 'Læsa og fela aðgang',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekúnda|sekúndur}} síðan',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|mínúta|mínútur}} síðan',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|klukkustund|klukkustundir}} síðan',
@@ -8185,6 +8202,9 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|mánuður|mánuðir}} síðan',
 	'centralauth-years-ago' => '$1 ár síðan',
 	'centralauth-prefs-complete' => 'Allt á hreinu!',
+	'centralauth-editset-name' => 'Nafn:',
+	'centralauth-editset-reason' => 'Ástæða:',
+	'centralauth-editset-submit' => 'Staðfesta',
 );
 
 /** Italian (Italiano)
