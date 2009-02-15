@@ -11931,6 +11931,7 @@ $messages['nds-nl'] = array(
 	'centralauth-merge-denied' => 'Je hemmen gien toegang tot disse pagina.',
 	'centralauth-merge-attempt' => "'''Bezig mit 't contreleren van de op-egeven wachwoorden veur de nog neet samen-evoegen gebrukers...'''",
 	'globalusers' => 'Gebrukerslieste (globaal)',
+	'centralauth-prefs-status' => 'Globale gebrukerstaotus:',
 	'centralauth-login-progress' => 'Je wonnen an-emeld bie aandere prejekken van Wikimedia:',
 	'centralauth-logout-progress' => 'Je wonnen of-emeld bie aandere prejekken van Wikimedia:',
 	'centralauth-log-name' => 'Logboek globaal gebrukersbeheer',
@@ -12703,6 +12704,14 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 	'right-centralauth-admin' => 'Administrer globale kontoer',
 	'right-centralauth-merge' => 'Slå sammen kontoene deres',
 	'right-globalgrouppermissions' => 'Behandle av globale grupper',
+);
+
+/** Novial (Novial)
+ * @author Malafaya
+ */
+$messages['nov'] = array(
+	'centralauth-admin-reason' => 'Resone:',
+	'centralauth-editset-reason' => 'Resone:',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)

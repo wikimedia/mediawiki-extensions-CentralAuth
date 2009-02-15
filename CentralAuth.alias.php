@@ -196,6 +196,17 @@ $aliases['hu'] = array(
 	'GlobalUsers' => array( 'Globális szerkesztőlista', 'Globális felhasználólista', 'Felhasználók globális listája' ),
 );
 
+/** Interlingua (Interlingua) */
+$aliases['ia'] = array(
+	'CentralAuth' => array( 'AuthCentral' ),
+	'AutoLogin' => array( 'AutoSession' ),
+	'MergeAccount' => array( 'FusionarConto' ),
+	'GlobalGroupMembership' => array( 'DerectosGlobalDeUsatores', 'MembratoGlobalDeGruppos' ),
+	'GlobalGroupPermissions' => array( 'PermissionesGlobalDeGruppos' ),
+	'EditWikiSets' => array( 'ModificarSetsDeWikis' ),
+	'GlobalUsers' => array( 'UsatoresGlobal' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
@@ -352,5 +363,21 @@ $aliases['sv'] = array(
 $aliases['sw'] = array(
 	'AutoLogin' => array( 'IngiaEFnyewe' ),
 	'MergeAccount' => array( 'KusanyaAkaunti' ),
+);
+
+/** Tagalog (Tagalog) */
+$aliases['tl'] = array(
+	'CentralAuth' => array( 'Lundayan ng pahintulot' ),
+	'AutoLogin' => array( 'Kusang paglagda' ),
+	'MergeAccount' => array( 'Pagsanibin ang akawnt' ),
+	'GlobalGroupMembership' => array( 'Mga karapatan ng pandaigdigang tagagamit', 'Kasapian sa pandaigdigang pangkat' ),
+	'GlobalGroupPermissions' => array( 'Mga kapahintulutan ng pandaigdigang pangkat' ),
+	'EditWikiSets' => array( 'Mga pangkat ng pamamatnugot ng wiki' ),
+	'GlobalUsers' => array( 'Pandaigdigang mga tagagamit' ),
+);
+
+/** Vèneto (Vèneto) */
+$aliases['vec'] = array(
+	'GlobalUsers' => array( 'UtentiGlobali' ),
 );
 
