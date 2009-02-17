@@ -103,6 +103,11 @@ $aliases['dsb'] = array(
 	'GlobalUsers' => array( 'Globalna lisćina wužywarjow' ),
 );
 
+/** Spanish (Español) */
+$aliases['es'] = array(
+	'GlobalUsers' => array( 'Usuarios_globales' ),
+);
+
 /** Persian (فارسی) */
 $aliases['fa'] = array(
 	'CentralAuth' => array( 'ورود_متمرکز' ),
@@ -198,13 +203,13 @@ $aliases['hu'] = array(
 
 /** Interlingua (Interlingua) */
 $aliases['ia'] = array(
-	'CentralAuth' => array( 'AuthCentral' ),
-	'AutoLogin' => array( 'AutoSession' ),
-	'MergeAccount' => array( 'FusionarConto' ),
-	'GlobalGroupMembership' => array( 'DerectosGlobalDeUsatores', 'MembratoGlobalDeGruppos' ),
-	'GlobalGroupPermissions' => array( 'PermissionesGlobalDeGruppos' ),
-	'EditWikiSets' => array( 'ModificarSetsDeWikis' ),
-	'GlobalUsers' => array( 'UsatoresGlobal' ),
+	'CentralAuth' => array( 'Auth central' ),
+	'AutoLogin' => array( 'Autosession', 'AutoSession' ),
+	'MergeAccount' => array( 'Fusionar conto' ),
+	'GlobalGroupMembership' => array( 'Derectos global de usatores', 'Membrato global de gruppos' ),
+	'GlobalGroupPermissions' => array( 'Permissiones global de gruppos' ),
+	'EditWikiSets' => array( 'Modificar sets de wikis' ),
+	'GlobalUsers' => array( 'Usatores global' ),
 );
 
 /** Japanese (日本語) */
@@ -350,6 +355,11 @@ $aliases['sa'] = array(
 	'GlobalGroupPermissions' => array( 'वैश्विकगटसंमती' ),
 	'EditWikiSets' => array( 'सम्पादनविकिगट' ),
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
+);
+
+/** Sundanese (Basa Sunda) */
+$aliases['su'] = array(
+	'MergeAccount' => array( 'GabungRekening' ),
 );
 
 /** Swedish (Svenska) */
