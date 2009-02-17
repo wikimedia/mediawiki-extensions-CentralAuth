@@ -5442,7 +5442,7 @@ Si c’est vous, vous pourrez terminer le processus d’unification de comptes e
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mode de démonstration seulement</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La fusion des comptes est actuellement en mode de démonstration ou de test, on ne peut donc pas encore réellement fusionner de comptes. Désolé !',
 	'centralauth-error-locked' => 'Vous ne pouvez rien modifier car votre compte est verrouillé.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur le '''compte unique''']]''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur la '''connexion unifiée''']]...''",
 	'centralauth-list-home-title' => 'Projet principal',
 	'centralauth-list-home-dryrun' => 'Le mot de passe et l’adresse courriel du projet principal ci-dessous seront utilisés pour votre compte unifié. Vous pourrez modifier votre projet principal par la suite.',
 	'centralauth-list-attached-title' => 'Comptes rattachés',
@@ -8136,9 +8136,12 @@ Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga hala
  */
 $messages['io'] = array(
 	'centralauth-merge-dryrun-or' => "'''o'''",
+	'centralauth-foreign-link' => 'Uzanto $1 en $2',
+	'centralauth-merge-method-empty' => 'Nula kontributadi',
 	'centralauth-merge-method-new' => 'nova konto',
 	'centralauth-finish-password' => 'Kontrolajo:',
 	'centralauth-finish-login' => 'Enirar',
+	'centralauth-finish-send-confirmation' => 'Sendar pasovorto e-poste',
 	'centralauth-admin-username' => 'Uzantonomo:',
 	'centralauth-admin-info-id' => 'ID dil uzanto:',
 	'centralauth-admin-yes' => 'yes',
@@ -8146,7 +8149,12 @@ $messages['io'] = array(
 	'centralauth-admin-delete-title' => 'Efacar konto',
 	'centralauth-admin-delete-button' => 'Efacar ca konto',
 	'centralauth-admin-reason' => 'Motivo:',
+	'centralauth-prefs-complete' => 'Omno es en bona stando!',
 	'centralauth-newgroup-legend' => 'Krear nova grupo',
+	'centralauth-editgroup-noset' => '(nula)',
+	'centralauth-editset-name' => 'Nomo:',
+	'centralauth-editset-reason' => 'Motivo:',
+	'centralauth-editset-nouse' => '(nula)',
 );
 
 /** Icelandic (Íslenska)
@@ -16079,6 +16087,7 @@ $messages['tg-cyrl'] = array(
  * @author Passawuth
  */
 $messages['th'] = array(
+	'mergeaccount' => 'สถานะการรวมชื่อล็อกอิน',
 	'centralauth-merge-denied' => 'ขออภัย คุณไม่สามารถเข้าหน้านี้ได้',
 	'centralauth-merge-step1-detail' => 'กรุณาใส่รหัสผ่านสำหรับบัญชีผู้ใช้ของคุณที่นี่ รหัสผ่านและอีเมลของคุณจะถูกนำไปเปรียบเทียบกับบัญชีผู้ใช้เดียวกันในวิกิอื่น ๆ เพื่อที่จะยืนยันว่าข้อมูลตรงกัน จะไม่มีการเปลี่ยนแปลงใด ๆ ทั้งสิ้นจนกว่าคุณจะยืนยันว่าทุกอย่างเป็นไปตามที่ต้องการ',
 	'centralauth-merge-step1-submit' => 'ยืนยันข้อมูลการล็อกอิน',
