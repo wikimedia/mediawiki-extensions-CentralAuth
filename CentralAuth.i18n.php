@@ -6533,7 +6533,9 @@ $messages['he'] = array(
 כיוון שביקשתם דף זה ללא מידע זיהוי, הוא לא יעשה דבר.',
 	'globalgroupmembership' => 'חברות בקבוצות כלליות',
 	'globalgrouppermissions' => 'ניהול קבוצות כלליות',
-	'centralauth-globalgroupperms-grouplist' => 'הוגדרו הקבוצות הכלליות הבאות. באפשרותכם לצפות בהרשאות של כל קבוצה ולשנותן. ניתן למחוק קבוצה באמצעות הסרת כל ההרשאות ממנה.',
+	'centralauth-globalgroupperms-grouplist' => 'הוגדרו הקבוצות הכלליות הבאות.
+באפשרותכם לצפות בהרשאות של כל קבוצה, או לשנותן אם יש לכם הרשאה לכך.
+ניתן למחוק קבוצה באמצעות הסרת כל ההרשאות ממנה.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|צפייה/עריכה]])',
 	'centralauth-existinggroup-legend' => 'קבוצות קיימות',
 	'centralauth-newgroup-legend' => 'יצירת קבוצה חדשה',
