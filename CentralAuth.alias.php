@@ -103,6 +103,15 @@ $aliases['dsb'] = array(
 	'GlobalUsers' => array( 'Globalna lisćina wužywarjow' ),
 );
 
+/** Greek (Ελληνικά) */
+$aliases['el'] = array(
+	'AutoLogin' => array( 'ΑυτόματηΣύνδεση' ),
+	'MergeAccount' => array( 'ΣυγχώνευσηΛογαριασμού' ),
+	'GlobalGroupMembership' => array( 'ΚαθολικάΔικαιώματαΧρηστών' ),
+	'GlobalGroupPermissions' => array( 'ΚαθολικέςΆδειεςΧρηστών' ),
+	'GlobalUsers' => array( 'ΚαθολικοίΧρήστες' ),
+);
+
 /** Spanish (Español) */
 $aliases['es'] = array(
 	'GlobalUsers' => array( 'Usuarios_globales' ),
