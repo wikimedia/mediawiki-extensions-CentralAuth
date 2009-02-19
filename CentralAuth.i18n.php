@@ -258,7 +258,7 @@ You have requested this page without providing any authentication data, so it do
 	// Global group permissions
 	'globalgrouppermissions'                          => 'Global group management',
 	'centralauth-globalgroupperms-grouplist'          => 'The following global groups have been configured.
-You may view and edit the permissions assigned to any group.
+You may view or edit the permissions assigned to a group, if you have permission to.
 A group may be deleted by removing all rights from it.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|view/edit]])',
 	'centralauth-existinggroup-legend'                => 'Existing groups',
