@@ -1,6 +1,8 @@
 <?php
 
 class CentralAuthHooks {
+	static $newAccountCollisionOK = false;
+	
 	static function onAuthPluginSetup( &$auth ) {
 		$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
 		return true;
@@ -78,7 +80,7 @@ class CentralAuthHooks {
 	
 	static function onAbortNewAccount( $user, &$abortError ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( $centralUser->exists() ) {
+		if ( !self::$newAccountCollisionOK && $centralUser->exists() ) {
 			wfLoadExtensionMessages('SpecialCentralAuth');
 			$abortError = wfMsg( 'centralauth-account-exists' );
 			return false;
@@ -221,15 +223,15 @@ class CentralAuthHooks {
 		if( !$wgCentralAuthCookies ) {
 			// Nothing to do.
 			return true;
-		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
-			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
-			return true;
 		}
 		
 		$centralUser = CentralAuthUser::getInstance( $user );
 		
 		if (!$centralUser->exists() || !$centralUser->isAttached()) {
+			return true;
+		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
+			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
 			return true;
 		}
 
@@ -369,12 +371,12 @@ class CentralAuthHooks {
 		// error message.
 		$session = CentralAuthUser::getSession();
 		if ( isset( $session['auto-create-blacklist'] ) && in_array( wfWikiID(), (array)$session['auto-create-blacklist'] ) ) {
-			wfDebug( __METHOD__.": blacklisted by session\n" );
-			return false;
+			#wfDebug( __METHOD__.": blacklisted by session\n" );
+			#return false;
 		}
 
 		// Is the user blocked?
-		$anon = new User;
+		$anon = $wgUser = new User;
 		if ( !$anon->isAllowedToCreateAccount() ) {
 			// Blacklist the user to avoid repeated DB queries subsequently
 			// First load the session again in case it changed while the above DB query was in progress
@@ -384,6 +386,20 @@ class CentralAuthHooks {
 			CentralAuthUser::setSession( $session );
 			return false;
 		}
+		
+		// Hooks
+		$msg = null;
+		// Nasty hack to avoid "Global user exists" error, which makes no sense.
+		self::$newAccountCollisionOK = true;
+		if( !wfRunHooks( 'AbortNewAccount', array( $user, $msg ) ) ) {
+			self::$newAccountCollisionOK = false;
+			wfDebug( __METHOD__.": Account aborted by extension with message $msg" );
+			$session = CentralAuthUser::getSession();
+			$session['auto-create-blacklist'][] = wfWikiID();
+			CentralAuthUser::setSession( $session );
+			return false;
+		}
+		self::$newAccountCollisionOK = false;
 
 		// Checks passed, create the user
 		wfDebug( __METHOD__.": creating new user\n" );
