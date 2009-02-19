@@ -99,9 +99,11 @@ class CentralAuthHooks {
 			return true;
 		}
 		
-		// On other wikis
+		// On other domains
 		global $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthAutoLoginWikis ) {
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
+			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parse' );
 			return true;
 		}
 
@@ -216,8 +218,12 @@ class CentralAuthHooks {
 	
 	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
 		global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis;
-		if( !$wgCentralAuthCookies || !$wgCentralAuthAutoLoginWikis ) {
+		if( !$wgCentralAuthCookies ) {
 			// Nothing to do.
+			return true;
+		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
+			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
 			return true;
 		}
 		
