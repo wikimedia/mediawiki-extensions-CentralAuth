@@ -191,10 +191,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 			# Build a checkbox.
 			$checked = in_array( $right, $assignedRights );
 			
-			$checkbox = Xml::checkLabel( User::getRightDescription( $right ), 
-				"wpRightAssigned-$right", "wpRightAssigned-$right", $checked, $attribs );
+			$desc = htmlspecialchars(User::getRightDescription( $right )) . ' (' .
+						Xml::element( 'tt', null, $right ).')';
 			
-			$checkboxes[] = "<li>$checkbox</li>";
+			$checkbox = Xml::check( "wpRightAssigned-$right", $checked, $attribs );
+			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
+					$desc );
+			
+			$checkboxes[] = "<li>$checkbox&nbsp;$label</li>";
 		}
 		
 		$count = count($checkboxes);
