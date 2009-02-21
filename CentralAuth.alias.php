@@ -395,6 +395,12 @@ $aliases['tl'] = array(
 	'GlobalUsers' => array( 'Pandaigdigang mga tagagamit' ),
 );
 
+/** Turkish (Türkçe) */
+$aliases['tr'] = array(
+	'MergeAccount' => array( 'HesapBirleştirmeDurumu' ),
+	'GlobalUsers' => array( 'KüreselKullanıcılar' ),
+);
+
 /** Vèneto (Vèneto) */
 $aliases['vec'] = array(
 	'GlobalUsers' => array( 'UtentiGlobali' ),

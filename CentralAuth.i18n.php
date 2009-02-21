@@ -7848,6 +7848,7 @@ Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-login-progress' => 'Apertura de tu session in le projectos del {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Clausura de tu session in le altere projectos del {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Tu ha essite automaticamente identificate in le altere projectos del {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Registro de contos global',
 	'centralauth-log-header' => 'Iste registro contine operationes concernente contos global: deletiones, blocadas e disblocadas.',
 	'centralauth-log-entry-delete' => 'deleva conto global "<nowiki>$1</nowiki>"',
@@ -7875,8 +7876,8 @@ Tu ha requestate iste pagina sin fornir alcun datos de authentication; illo face
 	'globalgroupmembership' => 'Membrato in gruppos global',
 	'globalgrouppermissions' => 'Gestion de gruppos global',
 	'centralauth-globalgroupperms-grouplist' => 'Le sequente gruppos global ha essite configurate.
-Tu pote vider e modificar le permissiones assignate a omne gruppo.
-Un gruppo pote esser delite per eliminar tote le derectos de illo.',
+Tu pote vider o modificar le permissiones assignate a un gruppo, si tu ha le permission requisite.
+Un gruppo pote esser delite per remover tote le derectos ab illo.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vider/modificar]])',
 	'centralauth-existinggroup-legend' => 'Gruppos existente',
 	'centralauth-newgroup-legend' => 'Crear un nove gruppo',
@@ -10012,7 +10013,7 @@ $messages['ko'] = array(
 	'globalgroupmembership' => '사용자의 공통 권한 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
-당신은 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.
+당신은 권한이 있다면, 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.
 모든 권한을 제거하면 해당 그룹은 삭제될 것입니다.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
 	'centralauth-existinggroup-legend' => '존재하는 그룹',
@@ -10590,7 +10591,7 @@ Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
 	'centralauth-globalgroupperms-grouplist' => "Dës global Gruppe goufe configuréiert.
-Dir kënnt d'Rechter déi engem Grupp zougedeelt goufe kucken an änneren.
+Dir kënnt d'Rechter déi engem Grupp zougedeelt goufe kucken an änneren, wann Dir déi dofir erfuedert Rechter hutt.
 E Grupp ka geläscht ginn andems en all Rechter ewechgeholl kritt.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|kucken/änneren]])',
 	'centralauth-existinggroup-legend' => 'Gruppen déi et gëtt',
@@ -11648,6 +11649,8 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-account-exists' => 'Tidak dapat membuka akaun: nama pengguna yang diminta telah pun didaftarkan dalam sistem akaun gabungan.',
 	'centralauth-login-progress' => 'Anda juga telah log masuk ke dalam projek-projek {{MediaWiki:Centralauth-groupname}} yang lain:',
 	'centralauth-logout-progress' => 'Anda juga telah log keluar daripada projek-projek {{MediaWiki:Centralauth-groupname}} yang lain:',
+	'centralauth-login-no-others' => 'Anda telah melog masuk secara automatik ke dalam semua projek lain yang tergolong dalam {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Anda telah melog keluar secara automatik daripada semua projek lain yang tergolong dalam {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Log akaun sejagat',
 	'centralauth-log-header' => 'Log ini mengandungi tindakan pada akaun sejagat: penghapusan, penguncian dan pembukaan kunci.',
 	'centralauth-log-entry-delete' => 'menghapuskan akaun sejagat "<nowiki>$1</nowiki>"',
@@ -14759,6 +14762,8 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-account-exists' => 'Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.',
 	'centralauth-login-progress' => 'Týmto sa zároveň prihlasujete aj na ďalšie projekty {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Odhlasujete sa aj z ďalších projektov {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Boli ste automaticky prihlásený do ostatných projektov {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Boli ste automaticky odhlásený z ostatných projektov {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Záznam správy globálnych účtov',
 	'centralauth-log-header' => 'Tento záznam obsahuje informácie o operáciách na globálnych účtoch: mazanie, zamykanie a odomykanie.',
 	'centralauth-log-entry-delete' => 'zmazal globálny účet „<nowiki>$1</nowiki>“',
@@ -14785,7 +14790,9 @@ Keď sa [[Special:UserLogin|prihlásite]], centrálny systém prihlasovania dá 
 Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nerobí nič.',
 	'globalgroupmembership' => 'Členstvo v globálnych skupinách',
 	'globalgrouppermissions' => 'Správa globálnych skupín',
-	'centralauth-globalgroupperms-grouplist' => 'Boli nastavené nasledovné globálne skupiny. Môžete si prezerať a upravovať oprávnenia pridelené ktorejkoľvek skupine. Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
+	'centralauth-globalgroupperms-grouplist' => 'Boli nastavené nasledovné globálne skupiny.
+Môžete si prezerať a upravovať oprávnenia pridelené ktorejkoľvek skupine ak na to máte oprávnenie.
+Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|zobraziť/upraviť]])',
 	'centralauth-existinggroup-legend' => 'Existujúce skupiny',
 	'centralauth-newgroup-legend' => 'Vytvoriť novú skupinu',
@@ -16768,6 +16775,14 @@ $messages['ug-arab'] = array(
 	'centralauth-admin-username' => 'ئىشلەتكۇچى ئىسمى:',
 );
 
+/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+ * @author Jose77
+ */
+$messages['ug-latn'] = array(
+	'centralauth-finish-login' => 'Kirish',
+	'centralauth-admin-username' => 'Ishletkuchi ismi:',
+);
+
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
@@ -17211,7 +17226,9 @@ Co te fè el [[Special:UserLogin|login]], el sistema de login çentralizà el gh
 Te ghè domandà sta pagina sensa fornir nissun dato de autenticassion, quindi no la pol far gnente.',
 	'globalgroupmembership' => 'Apartenensa ai grupi globali',
 	'globalgrouppermissions' => 'Gestion del grupo global',
-	'centralauth-globalgroupperms-grouplist' => "I seguenti grupi globali i xe stà configurà. Ti pol vardar e canbiar i parmessi assegnà a ogni grupo. Un grupo el pode èssar scancelà cavàndoghe tuti i parmessi che'l gà.",
+	'centralauth-globalgroupperms-grouplist' => "I seguenti grupi globali i xe stà configurà.
+Ti pol vardar e canbiar i parmessi assegnà a ogni grupo, se te ghè el parmesso de farlo.
+Un grupo el pode èssar scancelà cavàndoghe tuti i parmessi che'l gà.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|varda/cànbia]])',
 	'centralauth-existinggroup-legend' => 'Grupi esistenti',
 	'centralauth-newgroup-legend' => 'Crea un grupo novo',
