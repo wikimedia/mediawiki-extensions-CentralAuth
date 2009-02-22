@@ -3612,6 +3612,7 @@ Dine konti er ikke blevet ændret endnu.',
 
 /** German (Deutsch)
  * @author Metalhead64
+ * @author MichaelFrey
  * @author Raimond Spekking
  * @author Revolus
  * @author Umherirrender
@@ -3623,15 +3624,17 @@ $messages['de'] = array(
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zusammenführen mehrerer Benutzerkonten]] für das ''Single User Login''",
 	'centralauth-merge-denied' => 'Entschuldigung, aber du hast keine Berechtigung für diese Seite.',
 	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melde dich an]</span>, um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
-	'centralauth-merge-welcome' => 'Dein Benutzerkonto wurde noch nicht in das globale Wikimedia-Anmelde-System überführt.
+	'centralauth-merge-welcome' => "'''Dein Benutzerkonto wurde noch nicht in das globale Anmelde-System {{MediaWiki:Centralauth-groupname}} überführt.'''
 
 Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, dich mit einem gemeinsamen Benutzernamen und Passwort in allen Projekten {{MediaWiki:Centralauth-groupname}} in allen verfügbaren Sprachen anzumelden.
 
-Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, so beeinträchtigt es diesen nicht, aber du hast die Möglichkeit, später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.',
+Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, so beeinträchtigt es diesen nicht, aber du hast die Möglichkeit, später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
 	'centralauth-merge-step1-title' => 'Beginn der Benutzerkonten-Zusammenführung',
-	'centralauth-merge-step1-detail' => 'Bitte gib dein Passwort ein. Es wird zusammen mit deiner eingetragenen E-Mail-Adresse mit Benutzerkonten in den anderes Wikis abgeglichen, um Übereinstimmungen zu finden. Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
+	'centralauth-merge-step1-detail' => 'Bitte gib dein Passwort ein.
+Es wird zusammen mit deiner eingetragenen E-Mail-Adresse mit Benutzerkonten in den anderen Wikis abgeglichen, um Übereinstimmungen zu finden.
+Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
 	'centralauth-merge-step1-submit' => 'Anmelde-Informationen bestätigen',
-	'centralauth-merge-step2-title' => 'Bestätige weitere Benutzerkonten',
+	'centralauth-merge-step2-title' => 'Weitere Benutzerkonten bestätigen',
 	'centralauth-merge-step2-detail' => 'Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugeordnet werden. Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.',
 	'centralauth-merge-step2-submit' => 'Anmelde-Informationen bestätigen',
 	'centralauth-merge-dryrun-complete' => 'Alle existierenden Benutzerkonten können automatisch zusammengeführt werden!
@@ -3645,8 +3648,8 @@ Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.',
 	'centralauth-merge-dryrun-home' => 'Das Migrationssystem konnte nicht bestätigen, dass du der Eigentümer des Heimatwiki-Benutzerkontos für diesen Benutzernamen bist.
 
 Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge dem untenstehenden Link und melde dich dort an, um die Benutzerkonten-Zusammenführung abzuschließen.',
-	'centralauth-merge-step3-title' => 'Erzeuge globales Benutzerkonto',
-	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen.',
+	'centralauth-merge-step3-title' => 'Globales Benutzerkonto erzeugen',
+	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen:',
 	'centralauth-merge-step3-submit' => 'Benutzerkonten zusammenführen',
 	'centralauth-merge-no-accounts' => 'Es wurden in der zentralen Datenbank keine Benutzerkonten gefunden, die mit deinem Namen übereinstimmen. Die Datenbank muss fehlerhaft sein.',
 	'centralauth-merge-home-password' => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von dir eingegeben. Bitte gebe das Passwort für dein Heimatwiki ein.',
@@ -3722,7 +3725,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-delete-description' => 'Die Löschung des globalen Benutzerkontos wird alle globalen Benutzereinstellungen löschen, alle lokalen Benutzerkonten abspalten, und der globale Benutzername wird für eine erneute Verwendung frei werden.
 Alle lokalen Benutzerkonten werden weiterhin bestehen bleiben.
 Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Passwort vor der Zusammenführung zurückgesetzt.',
-	'centralauth-admin-delete-button' => 'Lösche dieses Benutzerkonto',
+	'centralauth-admin-delete-button' => 'Dieses Benutzerkonto löschen',
 	'centralauth-admin-delete-success' => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich gelöscht.',
 	'centralauth-admin-nonexistent' => 'Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
@@ -3772,12 +3775,12 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
 	'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
 	'centralauth-prefs-manage' => 'Globales Benutzerkonto verwalten',
-	'centralauth-renameuser-merged' => '„Benutzer:$1“ wurde bereits in das globale Benutzerkonten-System übernommen. Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkonten-System.',
-	'centralauth-renameuser-reserved' => '„Benutzer:$2“ ist als globales Benutzerkonto reserviert.',
+	'centralauth-renameuser-merged' => 'Der Benutzer $1 wurde bereits in das globale Benutzerkonten-System übernommen. Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkonten-System.',
+	'centralauth-renameuser-reserved' => 'Der Benutzer $2 ist als globales Benutzerkonto reserviert.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
-	'centralauth-login-progress' => 'Automatisch wurdest du auch an folgenden Projekten {{MediaWiki:Centralauth-groupname}} angemeldet:',
-	'centralauth-logout-progress' => 'Automatisch wurdest du auch von folgenden Projekten {{MediaWiki:Centralauth-groupname}} abgemeldet:',
+	'centralauth-login-progress' => 'Automatisch wurdest du auch an folgenden Projekten {{int:Centralauth-groupname}} angemeldet:',
+	'centralauth-logout-progress' => 'Automatisch wurdest du auch von folgenden Projekten {{int:Centralauth-groupname}} abgemeldet:',
 	'centralauth-login-no-others' => 'Du wurdest automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
 	'centralauth-logout-no-others' => 'Du wurdest automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.',
 	'centralauth-log-name' => 'Globales Benutzerkonten-Logbuch',
@@ -3833,8 +3836,8 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bearbeiten]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähle ein Wiki, auf dem sie ein Benutzerkonto haben:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
-	'centralauth-editset' => 'Bearbeite Wikigruppe',
-	'centralauth-editset-legend' => 'Bearbeite oder erstelle Wikigruppe',
+	'centralauth-editset' => 'Wikigruppe bearbeiten',
+	'centralauth-editset-legend' => 'Wikigruppe bearbeiten oder erstellen',
 	'centralauth-editset-intro' => 'Globale Berechtigungen sind beschränkt auf die Wikis in den folgenden Wikigruppen. Du kannst jede von ihnen ansehen oder ändern sowie eine neue Gruppe erstellen.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|ansehen/bearbeiten]])',
 	'centralauth-editset-new' => 'Neue Gruppe erstellen',
@@ -3861,6 +3864,71 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'right-centralauth-admin' => 'Globale Benutzerkonten administrieren',
 	'right-centralauth-merge' => 'Benutzerkonten zusammenführen',
 	'right-globalgrouppermissions' => 'Management globaler Gruppen',
+);
+
+/** German (formal address) (Deutsch (Sie-Form))
+ * @author MichaelFrey
+ * @author Umherirrender
+ */
+$messages['de-formal'] = array(
+	'centralauth-merge-denied' => 'Entschuldigung, aber Sie haben keine Berechtigung für diese Seite.',
+	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} melden Sie sich an]</span>, um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
+	'centralauth-merge-welcome' => "'''Ihr Benutzerkonto wurde noch nicht in das globale Anmelde-System {{MediaWiki:Centralauth-groupname}} überführt.'''
+
+Falls Sei sich für eine Migration Ihres Benutzerkontos entscheiden, wird es Ihnen möglich sein, sich mit einem gemeinsamen Benutzernamen und Passwort in allen Projekten {{MediaWiki:Centralauth-groupname}} in allen verfügbaren Sprachen anzumelden.
+
+Wenn jemand anderes Ihren Benutzernamen bereits in einem anderen Projekt benutzt, so beeinträchtigt es diesen nicht, aber Sie haben die Möglichkeit, später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
+	'centralauth-merge-step1-detail' => 'Bitte geben Sie Ihr Passwort ein.
+Es wird zusammen mit Ihrer eingetragenen E-Mail-Adresse mit Benutzerkonten in den anderen Wikis abgeglichen, um Übereinstimmungen zu finden.
+Es werden keine Änderungen vorgenommen, bis Sie bestätigen, dass alles richtig ist.',
+	'centralauth-merge-step2-detail' => 'Einige der Benutzerkonten konnten nicht automatisch Ihrem Heimat-Wiki zugeordnet werden. Wenn diese Konten Ihnen gehören, können Sie dies bestätigen, indem Sie das Passwort zu diesen Konten eingeben.',
+	'centralauth-merge-dryrun-complete' => 'Alle existierenden Benutzerkonten können automatisch zusammengeführt werden!
+
+Bis jetzt wurden keine Änderungen an Ihrem Benutzerkonten vorgenommen.',
+	'centralauth-merge-dryrun-incomplete' => 'Es geht weiter, aber einige Benutzerkonten konnten nicht automatisch geprüft werden und werden in diesem ersten Schritt nicht zusammengeführt.
+Es wird Ihnen möglich sein, diese später zusammenzuführen.
+
+Bis jetzt wurden keine Änderungen an Ihrem Benutzerkonten vorgenommen.',
+	'centralauth-merge-dryrun-home' => 'Das Migrationssystem konnte nicht bestätigen, dass Sie der Eigentümer des Heimatwiki-Benutzerkontos für diesen Benutzernamen sind.
+
+Ein anderes Wiki wurde für Ihren Benutzernamen als Heimatwiki bestimmt; folgen Sie dem untenstehenden Link und melde Sie sich dort an, um die Benutzerkonten-Zusammenführung abzuschließen.',
+	'centralauth-merge-step3-detail' => 'Sie können nun ein globales Benutzerkonto für die folgenden Wikis erzeugen:',
+	'centralauth-merge-no-accounts' => 'Es wurden in der zentralen Datenbank keine Benutzerkonten gefunden, die mit Ihrem Namen übereinstimmen. Die Datenbank muss fehlerhaft sein.',
+	'centralauth-merge-home-password' => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von Ihnen eingegeben. Bitte geben Sie das Passwort für Ihr Heimatwiki ein.',
+	'centralauth-complete-text' => 'Sie können sich nun auf jedem Wiki {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
+	'centralauth-incomplete-text' => 'Sobald Ihre Benutzerkonten zusammengeführt sind, können Sie sich auf jedem Wiki {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
+	'centralauth-not-owner-text' => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.
+
+Wenn dies Ihr Benutzername ist, können Sie die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:',
+	'centralauth-blocked-text' => 'Sie sind für Bearbeitungen in Ihrem Heimat-Wiki (siehe unten) gesperrt. Solange die Sperre besteht, ist eine Zusammenführung der Benutzerkonten nicht möglich.',
+	'centralauth-error-locked' => 'Sie dürfen keine Seiten bearbeiten, da Ihr Benutzerkonto gesperrt ist.',
+	'centralauth-list-home-dryrun' => 'Das Passwort und die E-Mail-Adresse, die Sie in diesem Wiki eingetragen haben, wird für die Zusammenführung der Benutzerkonten verwendet.
+Sie können Ihr Heimat-Wiki später noch ändern.',
+	'centralauth-list-unattached' => 'Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht automatisch als zu Ihnen gehörend bestätigt werden;
+vermutlich hat es ein anderes Passwort als Ihr primäres Benutzerkonto:',
+	'centralauth-finish-text' => 'Wenn diese Benutzerkonten Ihnen gehören, können Sie hier den Prozess der Benutzerkonten-Zusammenführung durch die Eingabe des Passwortes für die anderen Benutzerkonten vollenden:',
+	'centralauth-finish-problems' => 'Haben Sie Probleme oder gehören Ihnen diese anderen Benutzerkonten nicht? [[meta:Help:Unified login problems|Hier finden Sie Hilfe]] …',
+	'centralauth-merge-attempt' => "'''Prüfen Sie das eingegebene Passwort mit den restlichen Benutzerkonten …'''",
+	'centralauth-attach-text' => 'Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.
+Wenn das globale Benutzerkonto auch von Ihnen ist, können Sie die Zusammenführung veranlassen, indem Sie hier das Passwort des globalen Benutzerkontos eingeben:',
+	'centralauth-token-mismatch' => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da Ihre Sitzungsdaten verloren gegangen sind.',
+	'centralauth-prefs-count-attached' => 'Ihr Benutzerkonto ist in $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
+	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit Ihrem Namen.',
+	'centralauth-login-progress' => 'Automatisch wurden Sie auch an folgenden Projekten {{MediaWiki:Centralauth-groupname}} angemeldet:',
+	'centralauth-logout-progress' => 'Automatisch wurden Sie auch von folgenden Projekten {{MediaWiki:Centralauth-groupname}} abgemeldet:',
+	'centralauth-login-no-others' => 'Sie wurden automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
+	'centralauth-logout-no-others' => 'Sie wurden automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.',
+	'centralauth-autologin-desc' => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn Sie sich [[Special:UserLogin|anmelden]], instruiert das zentrale Anmeldesystem Ihren Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.
+Sie haben diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nichts weiter geschieht.',
+	'centralauth-globalgroupperms-grouplist' => 'Die folgenden globalen Gruppen wurden konfiguriert.
+Sie können die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern Sie dazu berechtigt sind.
+Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
+	'centralauth-newgroup-intro' => 'Sie können mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachten Sie, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
+	'centralauth-editgroup-success-text' => 'Sie haben erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
+	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Sie könnten irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
+	'centralauth-editset-intro' => 'Globale Berechtigungen sind beschränkt auf die Wikis in den folgenden Wikigruppen. Sie können jede von ihnen ansehen oder ändern sowie eine neue Gruppe erstellen.',
+	'centralauth-editset-badname' => 'Sie haben einen ungültigen oder leeren Gruppennamen angegeben.',
+	'centralauth-editset-badtype' => 'Sie haben einen ungültigen Typ angegeben.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -5406,6 +5474,7 @@ Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 );
 
 /** French (Français)
+ * @author Cedric31
  * @author Crochet.david
  * @author Grondin
  * @author Guillom
@@ -7939,6 +8008,7 @@ Es possibile que tu tenta assignar derectos al mal usator!",
 /** Indonesian (Bahasa Indonesia)
  * @author Borgx
  * @author Irwangatot
+ * @author IvanLanin
  * @author Rex
  */
 $messages['id'] = array(
@@ -8107,6 +8177,8 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-account-exists' => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-login-progress' => 'Anda masuk log ke proyek-proyek {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Anda keluar log dari proyek-proyek {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Anda secara otomatis telah masuk log ke proyek-proyek lain dari {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Anda secara otomatis telah keluar log dari proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Log akun global',
 	'centralauth-log-header' => 'Ini adalah log operasi akun global: penghapusan, penguncian, dan pembukaan kunci.',
 	'centralauth-log-entry-delete' => 'akun global "<nowiki>$1</nowiki>" dihapuskan',
@@ -8133,7 +8205,9 @@ Ketika Anda [[Special:UserLogin|masuk log]], sistem masuk log terpusat menginstr
 Anda telah mengakses halaman ini tanpa memberikan data otentikasi, sehingga halaman ini tidak memberikan reaksi apa-apa.',
 	'globalgroupmembership' => 'Keanggotaan dalam kelompok global',
 	'globalgrouppermissions' => 'Manajemen kelompok global',
-	'centralauth-globalgroupperms-grouplist' => 'Konfigurasi kelompok-kelompok global berikut ini telah disimpan. Anda dapat melihat dan menyunting hak-hak setiap kelompok. Sebuah kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
+	'centralauth-globalgroupperms-grouplist' => 'Kelompok global berikut telah dikonfigurasi.
+Anda dapat melihat dan menyunting hak yang diberikan ke setiap kelompok, jika Anda memiliki hak untuk itu.
+Suatu kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|lihat/sunting]])',
 	'centralauth-existinggroup-legend' => 'Kelompok yang ada',
 	'centralauth-newgroup-legend' => 'Membuat kelompok baru',
@@ -10003,9 +10077,9 @@ $messages['ko'] = array(
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 변경',
 	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 변경함. 추가: $2; 제거: $3',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 변경 기록을 포함하고 있습니다.',
-	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 설정 $1을(를) 생성하였습니다: $3',
-	'centralauth-rightslog-entry-setrename' => '위키 설정 "$2"의 이름을 "$1"로 변경함',
-	'centralauth-rightslog-entry-setnewtype' => '위키 설정 "$1"의 유형을 $2에서 $3으로 변경',
+	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 집합 $1을(를) 생성하였습니다: $3',
+	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 변경함',
+	'centralauth-rightslog-entry-setnewtype' => '위키 집합 "$1"의 유형을 $2에서 $3으로 변경',
 	'centralauth-rightslog-entry-setchange' => '"$1"의 위키 설정을 변경함: 추가: $2; 제거: $3',
 	'centralauth-rightslog-set-optin' => '옵트인 방식',
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
@@ -10023,12 +10097,14 @@ $messages['ko'] = array(
 	'centralauth-globalgroupperms-newgroupname' => '새 그룹 이름:',
 	'centralauth-globalgroupperms-creategroup-submit' => '권한 부여',
 	'centralauth-editgroup-subtitle' => '$1 편집하기',
+	'centralauth-editgroup-fieldset' => '$1의 권한',
 	'centralauth-editgroup-name' => '그룹 이름:',
 	'centralauth-editgroup-display' => '번역된 그룹의 이름:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|편집]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|편집]])',
 	'centralauth-editgroup-members' => '사용자 목록:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 권한을 가진 사용자의 목록]]',
+	'centralauth-editgroup-restrictions' => '이 그룹을 활성화할 위키의 집합:',
 	'centralauth-editgroup-noset' => '(없음)',
 	'centralauth-editgroup-perms' => '부여된 권한:',
 	'centralauth-editgroup-reason' => '바꾸는 이유:',
@@ -10036,14 +10112,14 @@ $messages['ko'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-globalgroupmembership-badknownwiki' => "공통 계정 '''$1'''은 당신이 입력한 위키 ('' $2 '')에서 활동 중이지 않습니다.
 당신은 다른 사용자의 권한을 바꾸게 될 수 있습니다.",
-	'centralauth-editset' => '위키 설정 편집',
-	'centralauth-editset-legend' => '위키 설정 생성 혹은 편집하기',
+	'centralauth-editset' => '위키 집합 편집',
+	'centralauth-editset-legend' => '위키 집합 생성 혹은 편집하기',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|보기/편집]])',
 	'centralauth-editset-new' => '새 설정 만들기',
-	'centralauth-editset-notfound' => '위키 설정 "$1"을 찾을 수 없습니다.',
+	'centralauth-editset-notfound' => '위키 집합 "$1"을 찾을 수 없습니다.',
 	'centralauth-editset-optin' => '옵트인 방식 (선택한 위키만 포함)',
 	'centralauth-editset-optout' => '옵트아웃 방식 (선택한 위키를 제외한 모든 위키를 포함)',
-	'centralauth-editset-legend-edit' => '위키 설정 "$1" 편집하기',
+	'centralauth-editset-legend-edit' => '위키 집합 "$1" 편집하기',
 	'centralauth-editset-legend-new' => '새 위키 설정을 생성하기',
 	'centralauth-editset-name' => '이름:',
 	'centralauth-editset-type' => '유형:',
@@ -12188,7 +12264,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-logout-progress' => 'U wordt afgemeld bij andere projecten van {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
-	'centralauth-log-name' => 'Logboek globaal gebruikersbeheer',
+	'centralauth-log-name' => 'Globaal gebruikersbeheerlogboek',
 	'centralauth-log-header' => 'Dit logboek bevat handelingen voor globale gebruikers: verwijderingen, afsluiten en vrijgeven.',
 	'centralauth-log-entry-delete' => 'heeft de globale gebruiker "<nowiki>$1</nowiki>" verwijderd',
 	'centralauth-log-entry-lock' => 'heeft de globale gebruiker "<nowiki>$1</nowiki>" afgesloten',
@@ -12967,6 +13043,8 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-account-exists' => 'Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.',
 	'centralauth-login-progress' => 'Vos sètz connectat(ada) suls autres projèctes de {{MediaWiki:Centralauth-groupname}} :',
 	'centralauth-logout-progress' => 'Vos sètz desconnectat(ada) dels autres projèctes de {{MediaWiki:Centralauth-groupname}} :',
+	'centralauth-login-no-others' => 'Sètz estat(ada) connectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Sètz estat(ada) desconnectat(ada) automaticament als autres projèctes de la fondacion Wikimèdia.',
 	'centralauth-log-name' => 'Jornal de la gestion dels comptes globals',
 	'centralauth-log-header' => 'Aqueste jornal conten las operacions que concernisson los comptes globals : supressions, varrolhatges e desvarrolhatges.',
 	'centralauth-log-entry-delete' => 'a suprimit lo compte global « <nowiki>$1</nowiki> »',
@@ -12993,7 +13071,9 @@ Quand vos [[Special:UserLogin|connectatz]], lo sistèma de connexion unic demand
 Avètz demandat aquesta pagina sens balhar d'entresenhas d'autentificacion, doncas reagís pas.",
 	'globalgroupmembership' => 'Apartenéncia als gropes globals',
 	'globalgrouppermissions' => 'Gestion dels gropes globals',
-	'centralauth-globalgroupperms-grouplist' => 'Los grops seguents son estats configurats. Podètz veire e modificar las permissions donadas a cadun dels gropes. Un grop pòt èsser suprimit en li levant totes los dreches.',
+	'centralauth-globalgroupperms-grouplist' => "Los grops globals seguents son estats configurats.
+Podètz veire e modificar las permissions assignadas a cadun dels gropes, se n'avètz la permission.
+Un grop pòt èsser suprimit en li levant totas sas permissions.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|Veire/modificar]])',
 	'centralauth-existinggroup-legend' => 'Gropes existents',
 	'centralauth-newgroup-legend' => 'Crear un grop novèl',
@@ -16693,7 +16773,7 @@ Siz bu sayfayı doğrulama verisi olmaksızın istediniz, bu yüzden hiç bir ş
 	'globalgroupmembership' => 'Küresel gruplarda üyelik',
 	'globalgrouppermissions' => 'Küresel grup yönetimi',
 	'centralauth-globalgroupperms-grouplist' => 'Aşağıdaki küresel gruplar yapılandırıldı.
-Herbir gruba atanan izinleri görebilir ve değiştirebilirsiniz.
+Bir gruba atanan izinleri görebilir veya değiştirebilirsiniz, eğer yetkiniz varsa.
 Bir grup bütün hakları elinden alınarak silinebilir.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|görüntüle/değiştir]])',
 	'centralauth-existinggroup-legend' => 'Varolan gruplar',
@@ -17975,11 +18055,13 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Chenzw
  * @author Gzdavidwong
  * @author 下一次登录
  */
 $messages['zh-hans'] = array(
 	'mergeaccount' => '用户账户整合',
+	'centralauth-groupname' => '维基媒体基金会',
 	'centralauth-desc' => '[[Special:MergeAccount|合并]]维基媒体基金会下属维基项目的账户',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|将多个账户合并]]为单一用户账户',
 	'centralauth-merge-denied' => '很抱歉，您没有权限存取这个页面',
