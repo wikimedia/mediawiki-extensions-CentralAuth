@@ -105,7 +105,7 @@ class CentralAuthHooks {
 		global $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthAutoLoginWikis ) {
 			wfLoadExtensionMessages( 'SpecialCentralAuth' );
-			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parse' );
+			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parsemag' );
 			return true;
 		}
 
@@ -237,7 +237,7 @@ class CentralAuthHooks {
 			return true;
 		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
 			wfLoadExtensionMessages( 'SpecialCentralAuth' );
-			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
+			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parsemag' );
 			return true;
 		}
 
