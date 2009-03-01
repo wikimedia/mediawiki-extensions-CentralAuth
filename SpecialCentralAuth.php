@@ -288,14 +288,23 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'form',
 				array(
 					'method' => 'post',
-					'action' => $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
+					'action' =>
+						$this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
 					'id' => 'mw-centralauth-merged' ) ) .
 			Xml::hidden( 'wpMethod', $action ) .
 			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
 			'<table>' .
 			'<thead>' .
 			$this->tableRow( 'th',
-				array( '', wfMsgHtml( 'centralauth-admin-list-localwiki' ), wfMsgHtml( 'centralauth-admin-list-attached-on' ), wfMsgHtml( 'centralauth-admin-list-method' ) ) ) .
+				array(
+						'',
+						wfMsgHtml( 'centralauth-admin-list-localwiki' ),
+						wfMsgHtml( 'centralauth-admin-list-attached-on' ),
+						wfMsgHtml( 'centralauth-admin-list-method' ),
+						wfMsgHtml( 'centralauth-admin-list-blocked' ),
+						wfMsgHtml( 'centralauth-admin-list-editcount' ),
+					)
+				) .
 			'</thead>' .
 			'<tbody>' .
 			implode( "\n",
@@ -320,8 +329,22 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->foreignUserLink( $row['wiki'] ),
 				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ),
 				htmlspecialchars( wfMsg( 'centralauth-merge-method-' . $row['attachedMethod'] ) ),
+				$this->showBlockStatus( $row ),
+				intval( $row['editCount'] )
 			)
 		);
+	}
+	
+	function showBlockStatus( $row ) {
+		if ($row['blocked']) {
+			global $wgLang;
+			$expiry = $wgLang->timeanddate( $row['block-expiry'] );
+			$reason = $row['block-reason'];
+			
+			return wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason ) );
+		} else {
+			return wfMsgExt( 'centralauth-admin-notblocked', 'parseinline' );
+		}
 	}
 
 	function tableRow( $element, $cols ) {
