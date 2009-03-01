@@ -311,6 +311,8 @@ $aliases['nl'] = array(
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
 $aliases['nn'] = array(
 	'MergeAccount' => array( 'Kontosamanslåing' ),
+	'GlobalGroupMembership' => array( 'Globale brukarrettar' ),
+	'GlobalUsers' => array( 'Globale brukarar' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
