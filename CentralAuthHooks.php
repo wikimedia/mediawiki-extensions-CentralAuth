@@ -484,6 +484,17 @@ class CentralAuthHooks {
 		
 		return true;
 	}
+	
+	static function onMakeGlobalVariablesScript( $groups ) {
+		global $wgUser;
+		if ( !$wgUser->isAnon() ) {
+			$centralUser = CentralAuthUser::getInstance( $wgUser );
+			if ($centralUser->exists() && $centralUser->isAttached()) {
+				$groups['wgGlobalGroups'] = $centralUser->getGlobalGroups();
+			}
+		}
+		return true;
+	}
 
 	/**
 	 * Destroy local login cookies so that remote logout works
