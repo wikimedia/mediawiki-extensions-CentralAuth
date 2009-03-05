@@ -342,9 +342,11 @@ class SpecialCentralAuth extends SpecialPage {
 		if ($row['blocked']) {
 			global $wgLang;
 			$expiry = $wgLang->timeanddate( $row['block-expiry'] );
+			$expiryd = $wgLang->date( $row['block-expiry'] );
+			$expiryt = $wgLang->time( $row['block-expiry'] );
 			$reason = $row['block-reason'];
 			
-			return wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason ) );
+			return wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
 		} else {
 			return wfMsgExt( 'centralauth-admin-notblocked', 'parseinline' );
 		}

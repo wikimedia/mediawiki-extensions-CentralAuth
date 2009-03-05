@@ -140,7 +140,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-unattached'         => 'Unattached accounts',
 	'centralauth-admin-no-unattached'      => 'No unmerged accounts remain.',
 	'centralauth-admin-notblocked'         => 'Not blocked',
-	'centralauth-admin-blocked'			   => 'Blocked with expiry $1. Reason: $2',
+	'centralauth-admin-blocked'            => 'Blocked with expiry on $3 at $4. Reason: $2',
 	'centralauth-admin-list-localwiki'     => 'Local wiki',
 	'centralauth-admin-list-attached-on'   => 'Attached on',
 	'centralauth-admin-list-method'        => 'Method',
