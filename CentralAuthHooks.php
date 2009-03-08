@@ -111,7 +111,7 @@ class CentralAuthHooks {
 
 		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		$inject_html .= '<div class="centralauth-login-box"><p>' . 
-			wfMsg( 'centralauth-login-progress' ) . "</p>\n<p>";
+			wfMsgExt( 'centralauth-login-progress', array( 'parsemag' ), $user->getName() ) . "</p>\n<p>";
 		foreach( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
 			$data = array(
 				'userName' => $user->getName(),
