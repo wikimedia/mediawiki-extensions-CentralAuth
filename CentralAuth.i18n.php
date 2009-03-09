@@ -3104,11 +3104,15 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-prefs-count-unattached' => 'Es mantenen comptes amb el vostre nom sense confirmar a $1 {{PLURAL:$1|projecte|projectes}}.',
 	'centralauth-prefs-detail-unattached' => "No s'ha confirmat que aquest projecte pugui accedir als comptes unificats.",
 	'centralauth-prefs-manage' => 'Gestioneu el vostre compte global',
+	'centralauth-renameuser-merged' => "L'usuari $1 ha migrat al sistema de comptes unificats.
+El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global.",
 	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.",
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists' => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
 	'centralauth-login-progress' => 'Iniciant la sessió en els projectes de {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Sortint de la sessió en els projectes de {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Automàticament us heu connectat en altres projectes de {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => "Automàticament us heu desconnectat d'altres projectes de {{int:Centralauth-groupname}}.",
 	'centralauth-log-name' => 'Registre de gestió dels comptes globals',
 	'centralauth-log-header' => "Aquest registre conté operacions d'esborrat, blocatge i desblocatge de comptes globals.",
 	'centralauth-log-entry-delete' => 'esborrat el compte global «<nowiki>$1</nowiki>»',
@@ -3117,6 +3121,10 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-log-entry-hide' => 'ocultar el compte global "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide' => 'des-ocultar el compte global "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide' => 'Bloquejat i amagat el compte global "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-chgstatus' => "canviat l'estatus del compte global «<nowiki>$1</nowiki>»: Posat $2; Tret $3",
+	'centralauth-log-status-locked' => 'bloquejat',
+	'centralauth-log-status-hidden' => 'amagat',
+	'centralauth-log-status-none' => '(res)',
 	'centralauth-rightslog-name' => 'Registre global de drets',
 	'centralauth-rightslog-entry-usergroups' => 'canviat el grup global de $1 des de $2 a $3',
 	'centralauth-rightslog-entry-groupperms' => 'canviats els permisos de $1 des de $2 a $3',
@@ -3130,7 +3138,9 @@ Quan [[Special:UserLogin|us hi connecteu]], el sistema central de connexió fa q
 Heu demanat aquesta pàgina sense haver proporcionat dades d'autentificació, així que no fa res.",
 	'globalgroupmembership' => 'Pertinença a grups globals',
 	'globalgrouppermissions' => 'Gestió de grups globals',
-	'centralauth-globalgroupperms-grouplist' => 'Els grups globals següents han estat configurats. Podeu veure i editar-ne les autoritzacions de cadascun. Es pot esborrar un grup retirant-li tots els drets.',
+	'centralauth-globalgroupperms-grouplist' => 'Els següents grups globals han estat configurats.
+Podeu veure i editar-ne les autoritzacions de cadascun, si teniu permís.
+Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|Vegeu/editeu]])',
 	'centralauth-existinggroup-legend' => 'Grups existents',
 	'centralauth-newgroup-legend' => 'Crear un grup nou',
@@ -6349,6 +6359,7 @@ $messages['hak'] = array(
 $messages['haw'] = array(
 	'mergeaccount' => 'Kūlana o ko ka ʻeʻe hui pū ʻana',
 	'centralauth-groupname' => 'ke Kahua Wikimedia',
+	'centralauth-merge-dryrun-or' => "'''a i ʻole'''",
 	'centralauth-list-home-title' => 'Wiki home',
 	'centralauth-merge-method-primary' => 'wiki home',
 	'centralauth-finish-password' => 'ʻŌlelo hūnā:',
@@ -8511,7 +8522,7 @@ $messages['ja'] = array(
 	'centralauth-merge-step3-title' => '統一アカウントの作成',
 	'centralauth-merge-step3-detail' => '以下のウィキに関連付けられた、あなたの統一アカウントの作成準備が完了しました:',
 	'centralauth-merge-step3-submit' => 'アカウントの統一',
-	'centralauth-merge-no-accounts' => 'アカウント中央管理システムのデータにはあなたの利用者名と一致するアカウントが見つかりませんでした。データベースが破壊していることが考えられます。',
+	'centralauth-merge-no-accounts' => 'アカウント中央管理システムのデータベースにはあなたの利用者名と一致するアカウントが見つかりませんでした。データベースが破損していることが考えられます。',
 	'centralauth-merge-home-password' => 'このアカウントのホームウィキ（下に表示）に設定されたパスワードと入力したパスワードが一致しません。ホームウィキのパスワードを入力してください。',
 	'centralauth-complete' => 'アカウントの統一が完了しました！',
 	'centralauth-incomplete' => 'アカウントの統一に失敗しました！',
@@ -11732,9 +11743,16 @@ Dat geiht, jem later noch tohooptoföhren.
 
 Betherto hett sik an dien Brukerkonto noch nix ännert.',
 	'centralauth-merge-dryrun-or' => "'''oder'''",
+	'centralauth-merge-dryrun-home' => 'Dat Tohoopföhrsystem kunn nich bestätigen, dat du de Egendömer vun dat Heimatwiki-Brukerkonto för dissen Brukernaam büst.
+
+En anner Wiki is för dien Brukernaam as Heimatwiki bestimmt worrn; folg den Lenk ünnen un mell di dor an, dat de Brukerkonten tohoopföhrt warrt.',
 	'centralauth-merge-step3-title' => 'Vereenigt Brukerkonto opstellen',
 	'centralauth-merge-step3-detail' => 'Du kannst nu en tohoopföhrt Brukerkonto för disse Wikis opstellen:',
 	'centralauth-merge-step3-submit' => 'Brukers tohoopföhren',
+	'centralauth-merge-no-accounts' => 'In de zentrale Datenbank sünd keen Brukerkonten funnen worrn, de to dien Brukernaam passt!
+De Datenbank mutt Fehlers hebben.',
+	'centralauth-merge-home-password' => 'Dat Heimatwiki för dit Brukerkonto (kiek ünnen) hett en anner Passwoord as dat, dat du ingeven hest.
+Geev man dat Passwoord för dien Heimatwiki in.',
 	'centralauth-complete' => 'Vereenigen vun de Brukerkonten trech.',
 	'centralauth-incomplete' => 'Vereenigen vun de Brukerkonten nich trech.',
 	'centralauth-complete-text' => 'Du kannst di nu op all Projekten vun {{MediaWiki:Centralauth-groupname}} anmellen ahn en nee Brukerkonto optostellen.',
@@ -11742,6 +11760,9 @@ Betherto hett sik an dien Brukerkonto noch nix ännert.',
 	'centralauth-not-owner-text' => 'De Brukernaam „$1“ is automaatsch den Egendömer vun dat Brukerkonto op $2 towiest worrn.
 
 Wenn dat dien Brukerkonto is, denn kannst du dat Tohoopföhren dör Ingeven vun dat Passwoort för dat Brukerkonto toenn bringen:',
+	'centralauth-blocked-text' => 'Dien Heimatwiki (steit ünnen) is sperrt.
+Schriev en Administrater vun dat Wiki, dat he de Sperr opheevt.
+Solang dat Brukerkonto sperrt is, köönt de Brukerkonten nich tohoopföhrt warrn.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demomodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Dat Tohoopföhren vun Brukerkonten is opstunns noch in’n Demo- un Fehlersöök-Modus. Dat Tohoopföhren sülvst geiht noch nich.',
 	'centralauth-error-locked' => 'Du dröffst keen Sieden ännern, dien Brukerkonto is sperrt.',
@@ -11807,6 +11828,9 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-admin-already-unmerged' => '$1 warrt översprungen, is al nich mehr tohoopföhrt.',
 	'centralauth-admin-unmerge-success' => '{{PLURAL:$1|Een Brukerkonto|$1 Brukerkonten}} mit Spood wedder uteneennahmen.',
 	'centralauth-admin-delete-title' => 'Brukerkonto wegdoon',
+	'centralauth-admin-delete-description' => 'Dat globale Konto wegdaan, bedüüdt ok dat Wegdaan vun all globale Instellungen, dat all lokale Brukerkonten nich mehr mit’n globalen Bruker verbunnen sünd un dat en annern Bruker den globalen Brukernaam övernehmen kann.
+All lokale Brukerkonten blievt aver bestahn un köönt wieder bruukt warrn.
+De Passwöör för de lokalen Brukerkonten warrt wedder op de olen Passwöör vör dat Tohoopföhren ümstellt.',
 	'centralauth-admin-delete-button' => 'Brukerkonto wegdoon',
 	'centralauth-admin-delete-success' => 'De globale Bruker „<nowiki>$1</nowiki>“ is wegdaan worrn',
 	'centralauth-admin-nonexistent' => 'Dat gifft keen global Bruker „<nowiki>$1</nowiki>“',
@@ -11845,6 +11869,8 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-account-exists' => 'Brukerkonto kann nich opstellt warrn: de Brukernaam is in dat globale Brukerkonten-System al vergeven.',
 	'centralauth-login-progress' => 'Du büst nu ok op de annern Projekten vun {{int:Centralauth-groupname}} anmellt:',
 	'centralauth-logout-progress' => 'Du büst nu ok vun de annern Projekten vun {{int:Centralauth-groupname}} afmellt:',
+	'centralauth-login-no-others' => 'Du büst nu ok automaatsch bi de annern Projekten vun {{int:Centralauth-groupname}} anmellt.',
+	'centralauth-logout-no-others' => 'Du büst nu ok automaatsch bi de annern Projekten vun {{int:Centralauth-groupname}} afmellt.',
 	'centralauth-log-name' => 'Global Brukerkonten-Logbook',
 	'centralauth-log-header' => 'Dit Logbook wiest allens to dat Wegdoon, Versteken un wedder sichtbor Maken vun globale Brukerkonten.',
 	'centralauth-log-entry-delete' => 'hett dat globale Brukerkonto „<nowiki>$1</nowiki>“ wegdaan',
@@ -11853,6 +11879,10 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-log-entry-hide' => 'hett da globale Brukerkonto „<nowiki>$1</nowiki>“ versteken',
 	'centralauth-log-entry-unhide' => 'hett dat globale Brukerkonto „<nowiki>$1</nowiki>“ wedder sichtbor maakt',
 	'centralauth-log-entry-lockandhide' => 'hett dat globale Brukerkonto „<nowiki>$1</nowiki>“ sperrt un versteken',
+	'centralauth-log-entry-chgstatus' => 'hett den Status för dat globale Konto „<nowiki>$1</nowiki>“ ännert: Instellt $2; wegdaan: $3',
+	'centralauth-log-status-locked' => 'sperrt',
+	'centralauth-log-status-hidden' => 'versteken',
+	'centralauth-log-status-none' => '(keen)',
 	'centralauth-rightslog-name' => 'Global Rechten-Logbook',
 	'centralauth-rightslog-entry-usergroups' => 'hett globale Gruppenrechten för „$1“ vun $2 op $3 ännert',
 	'centralauth-rightslog-entry-groupperms' => 'hett Gruppenrechten för „$1“ vun $2 op $3 ännert',
@@ -11866,11 +11896,19 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-rightslog-set-optin' => 'opt-in-baseert',
 	'centralauth-rightslog-set-optout' => 'opt-out-baseert',
 	'autologin' => 'Automaatsch Anmellen',
+	'centralauth-autologin-desc' => 'Disse Spezialsied warrt intern vun MediaWiki bruukt.
+Wenn du di [[Special:UserLogin|anmellst]], vertellt dat zentrale Anmellsystem dien Browser, dat he en Pixelbild op disse Sied för all Domääns opröppt.
+Du hest disse Spezialsied ahn Authentifizerungsdaten opropen, so dat nix wieder passeert.',
 	'globalgroupmembership' => 'Liddmaatschop in globale Gruppen',
 	'globalgrouppermissions' => 'Globale Gruppen verwalten',
+	'centralauth-globalgroupperms-grouplist' => 'Disse globalen Gruppen sünd instellt worrn.
+Du kannst de Rechten för elkeen Grupp ankieken oder ännern, wenn du dor de Rechten för hest.
+En Grupp kann ok wegdaan warrn. Dorto mööt all Rechten vun de Grupp wegnahmen warrn.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|bekieken/ännern]])',
 	'centralauth-existinggroup-legend' => 'Vörhannen Gruppen',
 	'centralauth-newgroup-legend' => 'Ne’e Grupp opstellen',
+	'centralauth-newgroup-intro' => 'Mit dit Formular kannst du en ne’e Grupp Rechten towiesen.
+En ne’e Grupp gifft dat so lang noch nich, betdat dor Rechten towiest sünd.',
 	'centralauth-globalgroupperms-newgroupname' => 'Ne’en Gruppennaam:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Rechten tokennen',
 	'centralauth-editgroup-subtitle' => 'Änner $1',
@@ -11888,8 +11926,12 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-editgroup-perms' => 'Tokennt Rechten:',
 	'centralauth-editgroup-reason' => 'Grund för Ännern:',
 	'centralauth-editgroup-success' => 'Gruppenrechten ännert',
+	'centralauth-editgroup-success-text' => 'Du hest nu de Gruppenrechten för de Gruppe $1 ännert.
+[[Special:GlobalGroupPermissions|Trüch na dat Verwalten vun globale Gruppen]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ännern]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähl en Wiki ut, op dat he oder se en Brukerkonto hett:',
+	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bruker '''$1''' is op dit Wiki (''$2'') nich aktiv.
+Kann angahn, dat du den verkehrten Bruker Rechten totowiesen versöchst!",
 	'centralauth-editset' => 'Wikigruppen ännern',
 	'centralauth-editset-legend' => 'Wikigrupp ännern oder opstellen',
 	'centralauth-editset-intro' => 'Disse Wikigruppen gifft dat al. Du kannst jem all ankieken un ännern oder en nee Wikigrupp opstellen.',
@@ -14310,6 +14352,9 @@ $messages['sah'] = array(
 	'centralauth-rightslog-entry-groupperms2' => 'манна анаан $1 бөлөх быраабын уларытта.
 Эбилиннэ $2;
 Сотулунна $3',
+	'centralauth-rightslog-header' => 'Аан бөлөхтөр уларыйыыларын сурунаала: кинилэргэ киирии уонна бырааптара',
+	'centralauth-rightslog-entry-newset' => '$2 $1 биики бөлөҕүн оҥордо: $3',
+	'centralauth-rightslog-entry-setrename' => '"$2" биики бөлөҕүн аны маннык ааттаата: "$1"',
 	'centralauth-rightslog-entry-setnewtype' => '«$1» тиибин мантан $2 манна $3 уларытта',
 	'centralauth-rightslog-set-optin' => 'киллэрии бириинсибигэр олоҕуран',
 	'centralauth-rightslog-set-optout' => 'таһаарыы бириинсибигэр олоҕуруу',

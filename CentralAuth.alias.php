@@ -138,7 +138,7 @@ $aliases['fi'] = array(
 
 /** French (Français) */
 $aliases['fr'] = array(
-	'AutoLogin' => array( 'Login automatique', 'LoginAutomatique', 'LoginAuto' ),
+	'AutoLogin' => array( 'Connexion automatique', 'ConnexionAutomatique', 'ConnexionAuto', 'Login automatique', 'LoginAutomatique', 'LoginAuto' ),
 	'MergeAccount' => array( 'Fusionner le compte', 'FusionnerLeCompte' ),
 	'GlobalGroupMembership' => array( 'Permissions globales', 'PermissionGlobales' ),
 	'GlobalGroupPermissions' => array( 'Droits des groupes globaux', 'DroitsDesGroupesGlobaux' ),
