@@ -401,6 +401,16 @@ class CentralAuthHooks {
 			return false;
 		}
 
+	   // Check for validity of username
+	   if ( !User::isValidUserName( $userName ) ) {
+		   wfDebug( __METHOD__.": Invalid username\n" );
+		   $session = CentralAuthUser::getSession();
+		   $session['auto-create-blacklist'][] = wfWikiID();
+		   CentralAuthUser::setSession( $session );
+		   return false;
+	   }
+
+
 		// Checks passed, create the user
 		wfDebug( __METHOD__.": creating new user\n" );
 		$user->loadDefaults( $userName );
