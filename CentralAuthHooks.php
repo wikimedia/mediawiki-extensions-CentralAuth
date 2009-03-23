@@ -415,17 +415,18 @@ class CentralAuthHooks {
 		wfDebug( __METHOD__.": creating new user\n" );
 		$user->loadDefaults( $userName );
 		$user->addToDatabase();
+		$user->addNewUserLogEntryAutoCreate();
 
 		$wgAuth->initUser( $user, true );
 		$wgAuth->updateUser( $user );
 
+		# Notify hooks (e.g. Newuserlog)
+		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+
 		# Update user count
 		$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
 		$ssUpdate->doUpdate();
-
-		# Notify hooks (e.g. Newuserlog)
-		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
-		$user->addNewUserLogEntryAutoCreate();
+		
 		return true;
 	}
 
