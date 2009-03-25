@@ -132,7 +132,7 @@ class CentralAuthHooks {
 				$url .= "?$querystring";
 			}
 			
-			$icon = Xml::element( 'img', 
+			$inject_html .= Xml::element( 'img', 
 				array( 
 					'src' => $url,
 					'alt' => $alt,
@@ -141,12 +141,6 @@ class CentralAuthHooks {
 					'height' => 20,
 					'style' => 'border: 1px solid #ccc;',
 			   	) );
-			   	
-			$inject_html .= Xml::tags( 'a',
-				array(
-					'href' => $wiki->getUrl(''),
-					'title' => $alt,
-				), $icon );
 		}
 		
 		$inject_html .= '</p></div>';
@@ -269,7 +263,7 @@ class CentralAuthHooks {
 				$url .= "?logout=1&token=$loginToken";
 			}
 			
-			$icon = Xml::element( 'img', 
+			$inject_html .= Xml::element( 'img', 
 				array( 
 					'src' => $url,
 					'alt' => $alt,
@@ -278,12 +272,6 @@ class CentralAuthHooks {
 					'height' => 20,
 					'style' => 'border: 1px solid #ccc;',
 			   	) );
-			   	
-			$inject_html .= Xml::tags( 'a',
-				array(
-					'href' => $wiki->getUrl(''),
-					'title' => $alt,
-				), $icon );
 		}
 		
 		$inject_html .= '</p></div>';
