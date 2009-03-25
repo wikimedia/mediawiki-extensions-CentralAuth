@@ -254,6 +254,7 @@ You have requested this page without providing any authentication data, so it do
 You may view or edit the permissions assigned to a group, if you have permission to.
 A group may be deleted by removing all rights from it.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|view/edit]])',
+	'centralauth-globalgroupperms-nogroups' 		  => 'No global groups are defined.',
 	'centralauth-existinggroup-legend'                => 'Existing groups',
 	'centralauth-newgroup-legend'                     => 'Create a new group',
 	'centralauth-newgroup-intro'                      => 'You can use this form to assign permissions to a new group.
