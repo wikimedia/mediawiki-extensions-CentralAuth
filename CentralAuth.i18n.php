@@ -860,6 +860,7 @@ $messages['ar'] = array(
 	'centralauth-admin-no-unattached' => 'لا حسابات غير مدمجة باقية.',
 	'centralauth-admin-notblocked' => 'ليس ممنوعا',
 	'centralauth-admin-blocked' => 'ممنوع بتاريخ انتهاء $3 في $4. السبب: $2',
+	'centralauth-admin-blocked-indef' => 'ممنوع دائما. السبب: $1',
 	'centralauth-admin-list-localwiki' => 'الويكي المحلي',
 	'centralauth-admin-list-attached-on' => 'مرتبطة',
 	'centralauth-admin-list-method' => 'طريقة',
@@ -950,6 +951,7 @@ $messages['ar'] = array(
 يمكنك رؤية أو تعديل السماحات المعطاة لأي مجموعة، لو أنك تمتلك السماح لعمل ذلك.
 المجموعة يمكن حذفها بواسطة إزالة كل الصلاحيات منها.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|عرض/تعديل]])',
+	'centralauth-globalgroupperms-nogroups' => 'لا مجموعات عامة معرفة.',
 	'centralauth-existinggroup-legend' => 'المجموعات الموجودة',
 	'centralauth-newgroup-legend' => 'إنشاء مجموعة جديدة',
 	'centralauth-newgroup-intro' => 'يمكنك استخدام هذه الاستمارة لإعطاء السماحات لمجموعة جديدة.
@@ -2040,6 +2042,7 @@ $messages['be-tarask'] = array(
 Вы можаце паглядзець і зьмяніць правы кожнай групы, калі маеце на гэта дазвол.
 Група можа быць выдаленая праз выдаленьне зь яе ўсіх правоў.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|прагляд/рэдагаваньне]])',
+	'centralauth-globalgroupperms-nogroups' => 'Глябальныя групы ня вызначаны.',
 	'centralauth-existinggroup-legend' => 'Існуючыя групы',
 	'centralauth-newgroup-legend' => 'Стварыць новую групу',
 	'centralauth-newgroup-intro' => 'Вы можаце карыстацца гэтай формай для наданьня правоў новай групе.
@@ -2794,6 +2797,7 @@ Ako je ovaj globalni račun također Vaš, možete spojiti ovaj račun ako upiš
 	'centralauth-admin-no-unattached' => 'Nije ostao nijedan račun odspojen.',
 	'centralauth-admin-notblocked' => 'Nije blokirano',
 	'centralauth-admin-blocked' => 'Blokiran sa istekom na dan $3 u $4. Razlog: $2',
+	'centralauth-admin-blocked-indef' => 'Blokiran neodređeno. Razlog: $1',
 	'centralauth-admin-list-localwiki' => 'Lokalna wiki',
 	'centralauth-admin-list-attached-on' => 'Spojen na',
 	'centralauth-admin-list-method' => 'Metod',
@@ -2884,6 +2888,7 @@ Vi ste zahtijevali ovu stranicu bez slanja bilo kakvih podataka autentifikacije,
 Možete pregledati ili urediti dopuštenja koja su postavljena za svaku grupu, ako imate dopuštenje.
 Grupa može biti obrisana tako da se uklone sva postavljena dopuštenja za nju.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vidi/uredi]])',
+	'centralauth-globalgroupperms-nogroups' => 'Nijedna globalna grupa nije definisana.',
 	'centralauth-existinggroup-legend' => 'Postojeće grupe',
 	'centralauth-newgroup-legend' => 'Napravi novu grupu',
 	'centralauth-newgroup-intro' => 'Možete upotrijebiti ovaj obrazac da dodjelu dopuštenja novoj grupi.
@@ -3486,6 +3491,7 @@ $messages['cy'] = array(
 );
 
 /** Danish (Dansk)
+ * @author Byrial
  * @author Jon Harald Søby
  * @author Peter Andersen
  */
@@ -3526,6 +3532,7 @@ Dine konti er ikke blevet ændret endnu.',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|dag|dage}} siden',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|måned|måneder}} siden',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|år|år}} siden',
+	'centralauth-prefs-status' => 'Global status for konto:',
 );
 
 /** German (Deutsch)
@@ -3633,6 +3640,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-no-unattached' => 'Keine nicht zusammengeführten Benutzerkonten mehr vorhanden.',
 	'centralauth-admin-notblocked' => 'Nicht gesperrt',
 	'centralauth-admin-blocked' => 'Gesperrt bis $3 um $4. Grund: $2',
+	'centralauth-admin-blocked-indef' => 'Unbeschränkt gesperrt. Grund: $1',
 	'centralauth-admin-list-localwiki' => 'Lokales Wiki',
 	'centralauth-admin-list-attached-on' => 'Verbunden mit',
 	'centralauth-admin-list-method' => 'Methode',
@@ -3721,6 +3729,7 @@ Du hast diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nich
 Du kannst die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern du dazu berechtigt bist.
 Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|ansehen/bearbeiten]])',
+	'centralauth-globalgroupperms-nogroups' => 'Es wurden keine globalen Gruppen definiert.',
 	'centralauth-existinggroup-legend' => 'Vorhandene Gruppen',
 	'centralauth-newgroup-legend' => 'Neue Gruppe erstellen',
 	'centralauth-newgroup-intro' => 'Du kannst mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachte, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
@@ -3949,6 +3958,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-no-unattached' => 'Njejsu wěcej njezjadnośone konta.',
 	'centralauth-admin-notblocked' => 'Njeblokěrowany',
 	'centralauth-admin-blocked' => 'Blokěrowany až do $3 $4. Pśicyna: $2',
+	'centralauth-admin-blocked-indef' => 'Na njewěsty cas blokěrowany. Pśicyna: $1',
 	'centralauth-admin-list-localwiki' => 'Lokalny wiki',
 	'centralauth-admin-list-attached-on' => 'Pśipowjesony k',
 	'centralauth-admin-list-method' => 'Metoda',
@@ -4039,6 +4049,7 @@ Sy pominał toś ten bok, mimo až sy pódał daty za awtentificěrowanje, tak a
 Móžoš se pšawa pśipokazane kupce woglědaś abo wobźěłaś, jolic maš pšawo za to.
 Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|woglědaś/wobźěłaś]])',
+	'centralauth-globalgroupperms-nogroups' => 'Žedne globalne kupki definěrowane.',
 	'centralauth-existinggroup-legend' => 'Eksistěrujuce kupki',
 	'centralauth-newgroup-legend' => 'Nowu kupku napóraś',
 	'centralauth-newgroup-intro' => 'Móžoš wužywaś toš ten formular, aby pśipokazał nowej kupce pšawa.
@@ -4106,6 +4117,7 @@ $messages['ee'] = array(
  * @author Crazymadlover
  * @author Crochet.david
  * @author Flyax
+ * @author Geraki
  * @author Lou
  * @author Omnipaedista
  * @author ZaDiak
@@ -4118,12 +4130,11 @@ $messages['el'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Συγχωνεύει]] πολλαπλούς λογαριασμούς για ενιαία σύνδεση χρηστών',
 	'centralauth-merge-denied' => 'Συγνώμη, δεν έχετε άδεια πρόσβασης σε αυτή τη σελίδα',
 	'centralauth-merge-notlogged' => 'Παρακαλούμε <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} συνδεθείτε]</span> για να ελέγξετε εάν οι λογαριασμοί σας έχουν συγχωνευθεί πλήρως.',
-	'centralauth-merge-welcome' => "'''Ο λογαριασμός χρήστη σας δεν έχει ακόμη μετακινηθεί στο σύστημα ενιαίας σύνδεσης του Wikimedia.'''
+	'centralauth-merge-welcome' => "'''Ο λογαριασμός χρήστη σας δεν έχει ακόμη μετακινηθεί στο σύστημα ενιαίας σύνδεσης του {{MediaWiki:Centralauth-groupname}}.'''
 
-Εάν διαλέξετε να μετακινήσετε τους λογαριασμούς σας, θα μπορείτε να χρησιμοποιήσετε το ίδιο όνομα χρήστη και τον ίδιο κωδικό σε όλα τα εγχειρήματα του Wikimedia σε όλες τις διαθέσιμες γλώσσες.
-Αυτό διευκολύνει εργασίες σε κοινόχρηστα εγχειρήματα, όπως την επιφόρτωση αρχείων στο [http://commons.wikimedia.org/ Wikimedia Commons], και αποφεύγει τη σύγχυση ή αντιπαράθεση που θα μπορούσε να προκύψει εάν δύο χρήστες διάλεγαν το ίδιο όνομα σε διαφορετικά εγχειρήματα.
+Εάν διαλέξετε να μετακινήσετε τους λογαριασμούς σας, θα μπορείτε να χρησιμοποιήσετε το ίδιο όνομα χρήστη και τον ίδιο κωδικό σε όλα τα εγχειρήματα του {{MediaWiki:Centralauth-groupname}} σε όλες τις διαθέσιμες γλώσσες.
 
-Εάν κάποιος άλλος έχει ήδη πάρει το όνομα χρήστη σας σε άλλον ιστοχώρο, αυτό δεν θα τον ενοχλήσει, θα σας δώσει όμως την ευκαιρία αργότερα να λύσετε το πρόβλημα μαζί του ή με κάποιον διαχειριστή.",
+Εάν κάποιος άλλος έχει ήδη πάρει το όνομα χρήστη σας σε άλλον ιστότοπο, αυτό δεν θα τον ενοχλήσει, θα σας δωθεί όμως την ευκαιρία αργότερα να λύσετε το πρόβλημα μαζί του ή με κάποιον διαχειριστή.",
 	'centralauth-merge-step1-title' => 'Έναρξη ενοποίησης των λογαριασμών',
 	'centralauth-merge-step1-detail' => 'Παρακαλώ εισάγεται τον κωδικό του λογαριασμού σας.
 Ο κωδικός σας και η ηλεκτρονική διεύθυνση που έχετε δηλώσει θα υποβληθούν σε έλεγχο με τους λογαριασμούς σε άλλα εγχειρήματα για να επιβεβαιωθεί ότι ταιριάζουν. 
@@ -4147,8 +4158,8 @@ $messages['el'] = array(
 	'centralauth-merge-step3-submit' => 'Ενοποίηση λογαριασμών',
 	'centralauth-complete' => 'Η ενοποίηση των λογαριασμών ολοκληρώθηκε!',
 	'centralauth-incomplete' => 'Η ενοποίηση των λογαριασμών δεν ολοκληρώθηκε!',
-	'centralauth-complete-text' => 'Μπορείτε πλέον να συνδεθείτε σε οποιονδήποτε εγχείρημα του Wikimedia χωρίς να δημιουργήσετε νέο λογαριασμό. Το ίδιο όνομα χρήστη και ο ίδιος κωδικός πρόσβασης ισχύουν για την Βικιπαίδεια, το Βικιλεξικό, τα Βικιβιβλία και τα αδελφά τους εγχειρήματα σε όλες τις γλώσσες.',
-	'centralauth-incomplete-text' => 'Μόλις ενοποιηθεί ο λογαριασμός σας, θα μπορείτε να συνδεθείτε σε οποιοδήποτε εγχείρημα του Wikimedia χωρίς να δημιουργήσετε νέο λογαριασμό. Το ίδιο όνομα χρήστη και ο ίδιος κωδικός πρόσβασης θα ισχύουν για την Βικιπαίδεια, το Βικιλεξικό, τα Βικιβιβλία και τα αδελφά τους εγχειρήματα σε όλες τις γλώσσες.',
+	'centralauth-complete-text' => 'Μπορείτε πλέον να συνδεθείτε σε οποιοδήποτε ιστότοπο wiki του {{MediaWiki:Centralauth-groupname}} χωρίς να δημιουργήσετε νέο λογαριασμό.',
+	'centralauth-incomplete-text' => 'Μόλις ενοποιηθεί ο λογαριασμός σας, θα μπορείτε να συνδεθείτε σε οποιοδήποτε εγχείρημα του {{MediaWiki:Centralauth-groupname}} χωρίς να δημιουργήσετε νέο λογαριασμό',
 	'centralauth-not-owner-text' => 'Το όνομα χρήστη "$1" παραχωρήθηκε αυτόματα στον ιδιοκτήτη του λογαριασμού στο έργο $2.
 
 Εάν είστε εσείς ο ίδιος, μπορείτε να ολοκληρώσετε την διαδικασία ενοποίησης των λογαριασμών πληκτρολογώντας τον κύριο κωδικό πρόσβασης εκείνου του λογαριασμού εδώ:',
@@ -4226,6 +4237,9 @@ $messages['el'] = array(
 	'centralauth-prefs-detail-unattached' => 'Δεν έχει επιβεβαιωθεί ότι αυτό το εγχείρημα ανήκει στον καθολικό λογαριασμό.',
 	'centralauth-prefs-manage' => 'Διαχείριση του καθολικού σας λογαριασμού',
 	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα είναι επιλεγμένη ήδη στο σύστημα ενιαίας σύνδεσης.',
+	'centralauth-log-status-none' => '(κανένα)',
+	'autologin' => 'Αυτόματη σύνδεση',
+	'centralauth-editgroup-noset' => '(κανένα)',
 	'centralauth-editset-name' => 'Όνομα:',
 	'centralauth-editset-type' => 'Τύπος:',
 	'centralauth-editset-reason' => 'Λόγος:',
@@ -5480,6 +5494,7 @@ Si le compte unifié vous appartient également, vous pouvez y fusionner votre c
 	'centralauth-admin-no-unattached' => 'Il ne reste aucun compte non fusionné.',
 	'centralauth-admin-notblocked' => 'Pas bloqué',
 	'centralauth-admin-blocked' => 'Bloqué avec expiration le $3 à $4. Motif : $2',
+	'centralauth-admin-blocked-indef' => 'Bloqué indéfiniment. Raison : $1',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Rattaché à',
 	'centralauth-admin-list-method' => 'Méthode',
@@ -5572,6 +5587,7 @@ Vous avez demandé cette page sans fournir d’informations d’authentification
 Vous pouvez voir ou modifier les permissions assignées à chacun des groupes, si vous en avez la permission.
 Un groupe peut être supprimé en lui retirant toutes ses permissions.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|voir/modifier]])',
+	'centralauth-globalgroupperms-nogroups' => "Aucun groupe global n'a été défini.",
 	'centralauth-existinggroup-legend' => 'Groupes globaux existants',
 	'centralauth-newgroup-legend' => 'Créer un nouveau groupe global',
 	'centralauth-newgroup-intro' => 'Vous pouvez utiliser ce formulaire pour assigner des permissions à un nouveau groupe global.
@@ -5941,6 +5957,7 @@ Solicitou esta páxina sen proporcionar nungún dato de autenticación, polo que
 Pode ver e editar os permisos asignados a calquera grupo, se ten os permisos para facelo.
 Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|ver/editar]])',
+	'centralauth-globalgroupperms-nogroups' => 'Non hai definidos grupos globais.',
 	'centralauth-existinggroup-legend' => 'Grupos existentes',
 	'centralauth-newgroup-legend' => 'Crear un novo grupo',
 	'centralauth-newgroup-intro' => 'Pode usar este formulario para asignar permisos a un grupo novo. Teña en conta que un grupo non existe ata que se lle asinan permisos.',
@@ -6139,6 +6156,7 @@ Wänn s wältwyt Benutzerkonto au vu Dir isch, chasch d Zämmefierig aafange, in
 	'centralauth-admin-no-unattached' => 'S git kei Benutzerkonte meh, wu nit zämmegfiert sin.',
 	'centralauth-admin-notblocked' => 'Nit gsperrt',
 	'centralauth-admin-blocked' => 'Gsperrt bis am $3 am $4. Grund: $2',
+	'centralauth-admin-blocked-indef' => 'Uubschränkt gsperrt. Grund: $1',
 	'centralauth-admin-list-localwiki' => 'Lokal Wiki',
 	'centralauth-admin-list-attached-on' => 'Verbunde mit',
 	'centralauth-admin-list-method' => 'Method',
@@ -6226,6 +6244,7 @@ Du hesch die Spezialsyte ohni Authentifizierigsdate ufgrieft, wäge däm tuet s 
 	'centralauth-globalgroupperms-grouplist' => 'Die wältwyte Gruppe sin konfiguriert wore.
 Du chasch d Rächt, wu e jedere Gruppe zuegwise wore sin, aaluege un ändere, wänn Du d Berächtigung dezue hesch.. E Gruppe cha glescht wäre, indäm alli Rächt usegnuh wäre.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|aaluege/bearbeite]])',
+	'centralauth-globalgroupperms-nogroups' => 'S sin keini wältwyte Gruppe definiert.',
 	'centralauth-existinggroup-legend' => 'Gruppe wu s git',
 	'centralauth-newgroup-legend' => 'Neiji Gruppe aalege',
 	'centralauth-newgroup-intro' => 'Du chasch ere neije Gruppe mit däm Formular Rächt zueordne. Obacht: Die Gruppe git s eso lang nit, bis ere d Rächt zuegwise sin.',
@@ -7129,6 +7148,7 @@ Druhe konta su hišće njewobkrućene.',
 	'centralauth-admin-no-unattached' => 'Njezjednoćene konta hižo njejsu.',
 	'centralauth-admin-notblocked' => 'Njeblokowany',
 	'centralauth-admin-blocked' => 'Blokowany hač do $3 $4. Přičina: $2',
+	'centralauth-admin-blocked-indef' => 'Na njewěsty čas zablokowany. Přičina: $1',
 	'centralauth-admin-list-localwiki' => 'Lokalny wiki',
 	'centralauth-admin-list-attached-on' => 'Připójsnjeny na',
 	'centralauth-admin-list-method' => 'Metoda',
@@ -7219,6 +7239,7 @@ Sy tutu stronu požadał, bjeztoho zo by awtentifikaciske daty podał, tak zo so
 Móžeš prawa, kotrež buchu skupinje připokazane, wobhladać abo wobdźěłać, jeli maš prawo za to.
 Skupina da so přez wotstronjenje wšěch prawow wušmórnyć.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|wobhladać/wobdźěłać]])',
+	'centralauth-globalgroupperms-nogroups' => 'Žane globalne skupiny definowane.',
 	'centralauth-existinggroup-legend' => 'Eksistowace skupiny',
 	'centralauth-newgroup-legend' => 'Nowu skupinu wutworić',
 	'centralauth-newgroup-intro' => 'Móžeš tutón formular wužiwać, zo by nowej skupinje prawa připokazał.
@@ -7680,6 +7701,7 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 	'centralauth-admin-no-unattached' => 'Nulle contos non fusionate remane.',
 	'centralauth-admin-notblocked' => 'Non blocate',
 	'centralauth-admin-blocked' => 'Blocate con expiration le $3 a $4. Motivo: $2',
+	'centralauth-admin-blocked-indef' => 'Blocate pro tempore indeterminate. Motivo: $1',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Attachate le',
 	'centralauth-admin-list-method' => 'Methodo',
@@ -7770,6 +7792,7 @@ Tu ha requestate iste pagina sin fornir alcun datos de authentication; illo face
 Tu pote vider o modificar le permissiones assignate a un gruppo, si tu ha le permission requisite.
 Un gruppo pote esser delite per remover tote le derectos ab illo.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vider/modificar]])',
+	'centralauth-globalgroupperms-nogroups' => 'Nulle gruppo global es definite.',
 	'centralauth-existinggroup-legend' => 'Gruppos existente',
 	'centralauth-newgroup-legend' => 'Crear un nove gruppo',
 	'centralauth-newgroup-intro' => 'Tu pote usar iste formulario pro assignar permissiones a un nove gruppo.
@@ -8529,6 +8552,7 @@ $messages['ja'] = array(
 	'centralauth-admin-no-unattached' => '統合されていないアカウントはありません。',
 	'centralauth-admin-notblocked' => 'ブロックされていません',
 	'centralauth-admin-blocked' => '$3 $4 を期限としてブロックされています。理由: $2',
+	'centralauth-admin-blocked-indef' => '無期限ブロックされました。理由: $1',
 	'centralauth-admin-list-localwiki' => 'ローカル・ウィキ',
 	'centralauth-admin-list-attached-on' => '統合先',
 	'centralauth-admin-list-method' => '方法',
@@ -8612,6 +8636,7 @@ $messages['ja'] = array(
 	'globalgrouppermissions' => 'グローバルグループの管理',
 	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。あなたが必要な権限をもっている場合、任意のグループに割り当てられた権限を閲覧あるいは編集できます。全ての権限を除去されたグループは削除されます。',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|閲覧/編集]])',
+	'centralauth-globalgroupperms-nogroups' => 'グローバルグループが定義されていません',
 	'centralauth-existinggroup-legend' => '現在あるグループ',
 	'centralauth-newgroup-legend' => '新規グループを作成',
 	'centralauth-newgroup-intro' => 'このフォームを使って新しいグループへ権限を割り当てることができます。権限の割り当てられていないグループは存在することができません。',
@@ -10080,6 +10105,7 @@ enjiß:',
 	'centralauth-admin-no-unattached' => 'Kein noh nit zosamme jelaate Metmaacher-Name sin övverisch jeblevve.',
 	'centralauth-admin-notblocked' => 'Nit jeschpert',
 	'centralauth-admin-blocked' => 'Jeshpert bes aam $3 öm $4 Uhr. Der Jrond wor: $2.',
+	'centralauth-admin-blocked-indef' => 'För iewisch jeshperrt wäje: $1',
 	'centralauth-admin-list-localwiki' => 'Hee dat Wiki',
 	'centralauth-admin-list-attached-on' => 'Zosamme jelaat aam',
 	'centralauth-admin-list-method' => 'Metood',
@@ -10182,6 +10208,7 @@ Do kanns De de Rääschte för jede Jropp aanlore,
 un, wann De et Rääsch doför häs, och ändere.
 En Jropp verschwindt, wann mer er all ier Rääschte fott nimmp.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|aanloore udder ändere]])',
+	'centralauth-globalgroupperms-nogroups' => 'Et sin kein gemeinsam Jroppe enjereschdt.',
 	'centralauth-existinggroup-legend' => 'Jroppe',
 	'centralauth-newgroup-legend' => 'Neu Jropp aanläje',
 	'centralauth-newgroup-intro' => 'He kanns De en neu Jropp aanlääje, endämm dat se Rääschte kritt.
@@ -10447,6 +10474,7 @@ Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir
 Dir kënnt d'Rechter déi engem Grupp zougedeelt goufe kucken an änneren, wann Dir déi dofir erfuedert Rechter hutt.
 E Grupp ka geläscht ginn andems en all Rechter ewechgeholl kritt.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|kucken/änneren]])',
+	'centralauth-globalgroupperms-nogroups' => 'Et si keng global Gruppen definéiert.',
 	'centralauth-existinggroup-legend' => 'Gruppen déi et gëtt',
 	'centralauth-newgroup-legend' => 'Eng nei Grupp opmaachen',
 	'centralauth-newgroup-intro' => 'Dir kënnt dëse Formulaire benotze fir Rechter un en neie Gruppe ze verginn.
@@ -10612,8 +10640,8 @@ D'r zeen nag gein gebroekers die neet bevèstig zeen.",
 	'centralauth-admin-unattached' => 'Neet verbónje gebroekers.',
 	'centralauth-admin-no-unattached' => 'Alle gebroekers zeen gedoon.',
 	'centralauth-admin-notblocked' => 'Neet geblok',
-	'centralauth-admin-blocked' => "Geblok mid 't verloupdatum $1.
-Reeje: $2",
+	'centralauth-admin-blocked' => 'Geblok mid verloupdatum óp $3 bie $4.
+Reeje: $2',
 	'centralauth-admin-list-localwiki' => 'Lekaol wiki',
 	'centralauth-admin-list-attached-on' => 'Verbónje op',
 	'centralauth-admin-list-method' => 'Methode',
@@ -10692,6 +10720,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-rightslog-entry-setnewtype' => 'haet \'t type veur "$1" angerdj ven $2 nao $3',
 	'centralauth-rightslog-set-optin' => 'óp opt-in',
 	'centralauth-rightslog-set-optout' => 'óp opt-oet',
+	'autologin' => 'Ven zich aangemeldj',
 	'centralauth-autologin-desc' => "Deze pagina wörd intern door MediaWiki gebroek.
 As se dich [[Special:UserLogin|aanmels]], guf 't centrale aanmeldsysteem diene browser de opdrach om deze pagina vanoet alle aangeslaote domeine op te vraoge mit behulp van 'n verwiezing nao 'n aafbeelding.
 Doe höbs deze pagina opgevraog zonger enige authenticatiegegaeves op te gaeve en daorom gebeurt d'r nieks.",
@@ -11771,6 +11800,7 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-admin-no-unattached' => 'Sünd kene nich tohoopföhrten Brukerkonten mehr na.',
 	'centralauth-admin-notblocked' => 'Nich sperrt',
 	'centralauth-admin-blocked' => 'Sperrt bet $3 üm $4. Grund: $2',
+	'centralauth-admin-blocked-indef' => 'Unbeschränkt sperrt. Grund: $1',
 	'centralauth-admin-list-localwiki' => 'Lokal Wiki',
 	'centralauth-admin-list-attached-on' => 'Verbunnen mit',
 	'centralauth-admin-list-method' => 'Methood',
@@ -11860,6 +11890,7 @@ Du hest disse Spezialsied ahn Authentifizerungsdaten opropen, so dat nix wieder 
 Du kannst de Rechten för elkeen Grupp ankieken oder ännern, wenn du dor de Rechten för hest.
 En Grupp kann ok wegdaan warrn. Dorto mööt all Rechten vun de Grupp wegnahmen warrn.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|bekieken/ännern]])',
+	'centralauth-globalgroupperms-nogroups' => 'Sünd keen globale Gruppen anleggt.',
 	'centralauth-existinggroup-legend' => 'Vörhannen Gruppen',
 	'centralauth-newgroup-legend' => 'Ne’e Grupp opstellen',
 	'centralauth-newgroup-intro' => 'Mit dit Formular kannst du en ne’e Grupp Rechten towiesen.
@@ -12041,6 +12072,8 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-admin-notblocked' => 'Niet geblokkeerd',
 	'centralauth-admin-blocked' => 'Geblokkeerd met het vervaldatum $3 om $4.
 Reden: $2',
+	'centralauth-admin-blocked-indef' => 'Voor onbepaalde tijd geblokkeerd.
+Reden: $1',
 	'centralauth-admin-list-localwiki' => 'Lokale wiki',
 	'centralauth-admin-list-attached-on' => 'Verbonden op',
 	'centralauth-admin-list-method' => 'Methode',
@@ -12130,6 +12163,7 @@ U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en 
 U kunt de rechten van alle groepen bekijken en bewerken als u daar de rechten voor hebt.
 Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|bekijken/bewerken]])',
+	'centralauth-globalgroupperms-nogroups' => 'Er zijn geen globale groepen gedefinieerd.',
 	'centralauth-existinggroup-legend' => 'Bestaande groepen',
 	'centralauth-newgroup-legend' => 'Nieuwe groep maken',
 	'centralauth-newgroup-intro' => 'Via dit formulier kunt u rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn',
@@ -13101,6 +13135,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-no-unattached' => 'Brak jakichkolwiek niepołączonych kont.',
 	'centralauth-admin-notblocked' => 'Nie jest zablokowany',
 	'centralauth-admin-blocked' => 'Zablokowany do $3 o $4. Powód: $2',
+	'centralauth-admin-blocked-indef' => 'Zablokowany na zawsze. Powód: $1',
 	'centralauth-admin-list-localwiki' => 'Lokalna wiki',
 	'centralauth-admin-list-attached-on' => 'Czas dołączenia',
 	'centralauth-admin-list-method' => 'Metoda',
@@ -13188,6 +13223,7 @@ Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak o
 Jeśli posiadasz odpowiednie uprawnienia możesz zobaczyć oraz zmienić uprawnienia dowolnej grupy.
 Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|podgląd i zmiana uprawnień]])',
+	'centralauth-globalgroupperms-nogroups' => 'Brak zdefiniowanych grup globalnych.',
 	'centralauth-existinggroup-legend' => 'Istniejące grupy',
 	'centralauth-newgroup-legend' => 'Utwórz nową grupę',
 	'centralauth-newgroup-intro' => 'Ten formularz służy przydzielaniu uprawnień nowej grupy. Grupa nie istnieje do momentu przydzielenia jej uprawnień.',
@@ -13450,6 +13486,7 @@ Enquanto estiver bloqueada, não será possível fundir as contas.',
 	'centralauth-admin-no-unattached' => 'Não restaram contas sem serem fundidas.',
 	'centralauth-admin-notblocked' => 'Não bloqueado',
 	'centralauth-admin-blocked' => 'Bloqueado com validade $3 em $4. Motivo: $2',
+	'centralauth-admin-blocked-indef' => 'Bloqueado indefinidamente. Motivo: $1',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Associada em',
 	'centralauth-admin-list-method' => 'Método',
@@ -13540,6 +13577,7 @@ Você acessou esta página sem providenciar qualquer dado de autenticação, o q
 Pode visualizar ou editar as permissões atribuídas a um grupo, se tiver permissão para o fazer.
 Um grupo pode ser eliminado através da remoção de todos os direitos a ele atribuídos.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|ver/editar]])',
+	'centralauth-globalgroupperms-nogroups' => 'Nenhum grupo global está definido.',
 	'centralauth-existinggroup-legend' => 'Grupos existentes',
 	'centralauth-newgroup-legend' => 'Criar um novo grupo',
 	'centralauth-newgroup-intro' => 'Você pode usar este formulário para atribuir permissões a um novo grupo. Note que um grupo não existe se não tiver permissões atribuídas.',
@@ -13997,6 +14035,7 @@ $messages['ru'] = array(
 	'centralauth-admin-no-unattached' => 'Не осталось необъединённых учётных записей.',
 	'centralauth-admin-notblocked' => 'Не заблокирован',
 	'centralauth-admin-blocked' => 'Заблокирован до $3 $4. Причина: $2',
+	'centralauth-admin-blocked-indef' => 'Заблокирован бессрочно. Причина: $1',
 	'centralauth-admin-list-localwiki' => 'Локальный вики-проект',
 	'centralauth-admin-list-attached-on' => 'Присоединён',
 	'centralauth-admin-list-method' => 'Способ',
@@ -14086,6 +14125,7 @@ $messages['ru'] = array(
 Вы можете просмотреть и изменить права каждой группы, если у вас есть соответствующие полномочия.
 Группа может быть удалена путём снятия с неё всех прав.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|просмотр/изменение]])',
+	'centralauth-globalgroupperms-nogroups' => 'Не определено глобальных групп.',
 	'centralauth-existinggroup-legend' => 'Существующие группы',
 	'centralauth-newgroup-legend' => 'Создать новую группу',
 	'centralauth-newgroup-intro' => 'Вы можете использовать эту форму для назначения прав новой группе. Заметьте, что группа не может существовать, если ей не назначено никаких прав.',
@@ -14621,6 +14661,7 @@ Svoju domovskú wiki budete môcť zmeniť neskôr.',
 	'centralauth-admin-no-unattached' => 'Nezostávajú žiadne nezlúčené účty.',
 	'centralauth-admin-notblocked' => 'Nezablokovaný',
 	'centralauth-admin-blocked' => 'Zablokovaný do $3 $4. Dôvod: $2',
+	'centralauth-admin-blocked-indef' => 'Zablokovaný na neurčito. Dôvod: $1',
 	'centralauth-admin-list-localwiki' => 'Lokálna wiki',
 	'centralauth-admin-list-attached-on' => 'Pripojené k',
 	'centralauth-admin-list-method' => 'Spôsob',
@@ -14708,6 +14749,7 @@ Keďže ste túto stránku vyžiadali bez poskytnutia overovacích údajov, nero
 Môžete si prezerať a upravovať oprávnenia pridelené ktorejkoľvek skupine ak na to máte oprávnenie.
 Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|zobraziť/upraviť]])',
+	'centralauth-globalgroupperms-nogroups' => 'Neboli definované žiadne globálne skupiny.',
 	'centralauth-existinggroup-legend' => 'Existujúce skupiny',
 	'centralauth-newgroup-legend' => 'Vytvoriť novú skupinu',
 	'centralauth-newgroup-intro' => 'Tento formulár môžete použiť na pridelenie oprávnení novej skupine. Pamätajte, že skupina neexistuje, kým nemá pridelené oprávnenia.',
@@ -16484,6 +16526,7 @@ Eğer küresel hesap da sizinse, küresel hesap şifresini girerek bu hesabı bi
 	'centralauth-admin-no-unattached' => 'Birleştirilmemiş hesap kalmadı.',
 	'centralauth-admin-notblocked' => 'Engellenmedi',
 	'centralauth-admin-blocked' => '$3 $4 tarihine kadar engellendi. Sebep: $2',
+	'centralauth-admin-blocked-indef' => 'Süresiz engellendi. Sebep: $1',
 	'centralauth-admin-list-localwiki' => 'Yerel viki',
 	'centralauth-admin-list-attached-on' => 'Eklenme',
 	'centralauth-admin-list-method' => 'Metot',
@@ -16574,6 +16617,7 @@ Siz bu sayfayı doğrulama verisi olmaksızın istediniz, bu yüzden hiç bir ş
 Bir gruba atanan izinleri görebilir veya değiştirebilirsiniz, eğer yetkiniz varsa.
 Bir grup bütün hakları elinden alınarak silinebilir.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|görüntüle/değiştir]])',
+	'centralauth-globalgroupperms-nogroups' => 'Hiç küresel grup tanımlanmadı.',
 	'centralauth-existinggroup-legend' => 'Varolan gruplar',
 	'centralauth-newgroup-legend' => 'Yeni bir grup oluştur',
 	'centralauth-newgroup-intro' => 'Bu formu yeni bir gruba izin atamak için kullanabilirsiniz.
