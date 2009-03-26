@@ -114,7 +114,7 @@ Other accounts are not yet confirmed.',
 
 	'centralauth-merge-attempt' => "'''Checking provided password against remaining unmerged accounts…'''",
 
-	# When unattached, offer to attach...
+	// When unattached, offer to attach...
 	'centralauth-attach-list-attached' => 'The unified account named "$1" includes the following accounts:',
 	'centralauth-attach-title'         => 'Confirm account',
 	'centralauth-attach-text'          => 'This account has not yet been migrated to the unified account.
@@ -6424,6 +6424,7 @@ $messages['he'] = array(
 	'centralauth-admin-no-unattached' => 'לא נותרו חשבונות בלתי ממוזגים.',
 	'centralauth-admin-notblocked' => 'לא חסום',
 	'centralauth-admin-blocked' => 'חסום עד $4, $3. סיבה: $2',
+	'centralauth-admin-blocked-indef' => 'חסום לצמיתות. סיבה: $1',
 	'centralauth-admin-list-localwiki' => 'האתר המקומי',
 	'centralauth-admin-list-attached-on' => 'מוזג בתאריך',
 	'centralauth-admin-list-method' => 'שיטה',
@@ -6511,6 +6512,7 @@ $messages['he'] = array(
 באפשרותכם לצפות בהרשאות של כל קבוצה, או לשנותן אם יש לכם הרשאה לכך.
 ניתן למחוק קבוצה באמצעות הסרת כל ההרשאות ממנה.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|צפייה/עריכה]])',
+	'centralauth-globalgroupperms-nogroups' => 'לא הוגדרו קבוצות כלליות.',
 	'centralauth-existinggroup-legend' => 'קבוצות קיימות',
 	'centralauth-newgroup-legend' => 'יצירת קבוצה חדשה',
 	'centralauth-newgroup-intro' => 'באפשרותכם להשתמש בטופס זה כדי להוסיף הרשאות לקבוצה חדשה. שימו לב שקבוצה אינה קיימת אלא אם כן משויכות אליה הרשאות.',
