@@ -340,13 +340,18 @@ class SpecialCentralAuth extends SpecialPage {
 	
 	function showBlockStatus( $row ) {
 		if ($row['blocked']) {
-			global $wgLang;
-			$expiry = $wgLang->timeanddate( $row['block-expiry'] );
-			$expiryd = $wgLang->date( $row['block-expiry'] );
-			$expiryt = $wgLang->time( $row['block-expiry'] );
+			if ($row['block-expiry'] == 'infinity') {
 			$reason = $row['block-reason'];
-			
-			return wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
+				return wfMsgExt( 'centralauth-admin-blocked-indef', 'parseinline', array( $reason ) );
+			} else {
+				global $wgLang;
+				$expiry = $wgLang->timeanddate( $row['block-expiry'] );
+				$expiryd = $wgLang->date( $row['block-expiry'] );
+				$expiryt = $wgLang->time( $row['block-expiry'] );
+				$reason = $row['block-reason'];
+				
+				return wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
+			}
 		} else {
 			return wfMsgExt( 'centralauth-admin-notblocked', 'parseinline' );
 		}
