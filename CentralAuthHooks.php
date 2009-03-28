@@ -532,4 +532,10 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+	
+	static function onUserRightsLogEntry( $user, $oldGroups, $newGroups, $reason ) {
+		SpecialGlobalGroupMembership::addLogEntry( $user, $oldGroups,
+				$newGroups, $reason );
+		return false;
+	}
 }

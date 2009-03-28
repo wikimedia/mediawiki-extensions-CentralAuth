@@ -93,17 +93,17 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		LogEventsList::showLogExtract( $output, 'gblrights', $pageTitle->getPrefixedText() );
 	}
 	
-	function addLogEntry( $user, $oldGroups, $newGroups ) {
+	static function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
 		global $wgRequest;
 		
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry( 'usergroups',
 			$user->getUserPage(),
-			$wgRequest->getText( 'user-reason' ),
+			$reason,
 			array(
-				$this->makeGroupNameList( $oldGroups ),
-				$this->makeGroupNameList( $newGroups )
+				self::makeGroupNameList( $oldGroups ),
+				self::makeGroupNameList( $newGroups )
 			)
 		);
 	}
