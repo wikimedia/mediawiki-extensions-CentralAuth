@@ -226,8 +226,8 @@ $aliases['ja'] = array(
 	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
 	'AutoLogin' => array( '自動ログイン' ),
 	'MergeAccount' => array( 'アカウント統合' ),
-	'GlobalGroupMembership' => array( 'グローバル利用者権限' ),
-	'GlobalGroupPermissions' => array( 'グローバルグループパーミッション', 'グローバルグループの管理' ),
+	'GlobalGroupMembership' => array( 'グローバル利用者権限', 'グローバルグループへの所属' ),
+	'GlobalGroupPermissions' => array( 'グローバルグループ権限', 'グローバルグループパーミッション' ),
 	'EditWikiSets' => array( 'ウィキ群の編集' ),
 	'GlobalUsers' => array( 'グローバル利用者' ),
 );
