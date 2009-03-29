@@ -166,7 +166,6 @@ $wgHooks['UserSetCookies'][] = 'CentralAuthHooks::onUserSetCookies';
 $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
-$wgHooks['UserRightsLogEntry'][] = 'CentralAuthHooks::onUserRightsLogEntry';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';

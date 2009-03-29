@@ -73,18 +73,17 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 	
 	function fetchUser( $username ) {
-		global $wgOut, $wgUser, $wgRequest;
+		global $wgUser, $wgRequest;
 		
 		$knownwiki = $wgRequest->getVal('wpKnownWiki');
 		
 		$user = CentralAuthGroupMembershipProxy::newFromName( $username );
 	
 		if( !$user ) {
-			$wgOut->addWikiMsg( 'nosuchusershort', $username );
-			return null;
+			return new WikiErrorMsg( 'nosuchusershort', $username );
 		} elseif (!$wgRequest->getCheck( 'saveusergroups' ) && !$user->attachedOn($knownwiki)) {
-			$wgOut->addWikiMsg( 'centralauth-globalgroupmembership-badknownwiki', $username, $knownwiki );
-			return null;
+			return new WikiErrorMsg( 'centralauth-globalgroupmembership-badknownwiki',
+					$username, $knownwiki );
 		}
 	
 		return $user;
@@ -100,7 +99,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		LogEventsList::showLogExtract( $output, 'gblrights', $pageTitle->getPrefixedText() );
 	}
 	
-	static function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
+	function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
 		global $wgRequest;
 		
 		$log = new LogPage( 'gblrights' );
@@ -109,8 +108,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			$user->getUserPage(),
 			$reason,
 			array(
-				self::makeGroupNameList( $oldGroups ),
-				self::makeGroupNameList( $newGroups )
+				$this->makeGroupNameList( $oldGroups ),
+				$this->makeGroupNameList( $newGroups )
 			)
 		);
 	}
