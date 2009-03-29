@@ -534,8 +534,13 @@ class CentralAuthHooks {
 	}
 	
 	static function onUserRightsLogEntry( $user, $oldGroups, $newGroups, $reason ) {
-		SpecialGlobalGroupMembership::addLogEntry( $user, $oldGroups,
-				$newGroups, $reason );
-		return false;
+		// Ugly hack for detecting whether we were called by core
+		// userrights or ours
+		if( $user instanceof CentralAuthGroupMembershipProxy ) {
+			SpecialGlobalGroupMembership::addLogEntry( $user,
+				$oldGroups, $newGroups, $reason );
+			return false;
+		}
+		return true;
 	}
 }
