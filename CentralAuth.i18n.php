@@ -14404,6 +14404,7 @@ $messages['sah'] = array(
 Эн кыахтаах буоллаххына бөлөхтөр бырааптарын көрүөххүн уонна уларытыаххын сөп.
 Бөлөҕү суох гынарга быраабын барытын сотон кэбиһиээхэ сөп.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|көрүү/уларытыы]])',
+	'centralauth-globalgroupperms-nogroups' => 'Аан бөлөхтөр быһаарыллыбатахтар.',
 	'centralauth-existinggroup-legend' => 'Баар бөлөхтөр',
 	'centralauth-newgroup-legend' => 'Саҥа бөлөҕү оҥорорго',
 	'centralauth-newgroup-intro' => 'Бу форманы туһанан саҥа бөлөххө быраап аныаххын сөп.
@@ -15590,6 +15591,7 @@ Du kommer senare kunna ändra vilken wiki som är din hemwiki.',
 	'centralauth-admin-no-unattached' => 'Det finns inte kvar några konton att slå samman.',
 	'centralauth-admin-notblocked' => 'Inte blockerad',
 	'centralauth-admin-blocked' => 'Blockerad med utgångstid på $3 vid $4. Anledning: $2',
+	'centralauth-admin-blocked-indef' => 'Blockerat oändligt. Anledning: $1',
 	'centralauth-admin-list-localwiki' => 'Lokal wiki',
 	'centralauth-admin-list-attached-on' => 'Anslutningsdatum',
 	'centralauth-admin-list-method' => 'Metod',
@@ -15677,6 +15679,7 @@ Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så d
 Du kan visa och redigera rättigheterna som är kopplade till varje grupp, om du har behörighet.
 En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|visa/redigera]])',
+	'centralauth-globalgroupperms-nogroups' => 'Inga globala grupper är definierade.',
 	'centralauth-existinggroup-legend' => 'Existerande grupper',
 	'centralauth-newgroup-legend' => 'Skapa en ny grupp',
 	'centralauth-newgroup-intro' => 'Du kan använda det här formuläret för att ge tillåtelser till en ny grupp. Notera att gruppen inte finns så länge den inte har några rättigheter.',
