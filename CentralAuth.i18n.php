@@ -4186,6 +4186,7 @@ $messages['el'] = array(
 Εάν είστε εσείς ο ίδιος, μπορείτε να ολοκληρώσετε την διαδικασία ενοποίησης των λογαριασμών πληκτρολογώντας τον κύριο κωδικό πρόσβασης εκείνου του λογαριασμού εδώ:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Πειραματική λειτουργία μόνο</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Λυπόμαστε πολύ αλλά, προς το παρόν, η ενοποίηση των λογαριασμών βρίσκεται σε πειραματική περίοδο. Γι' αυτόν τον λόγο, οι πραγματικές λειτουργίες συγχώνευσης έχουν απενεργοποιηθεί.",
+	'centralauth-error-locked' => 'Δεν μπορείτε να επεξεργαστείτε γιατί ο λογαριασμός σας είναι κλειδωμένος.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Διαβάστε περισσότερα σχετικά με την '''ενιαία πρόσβαση''']]...''",
 	'centralauth-list-home-title' => 'Αρχικό εγχείρημα',
 	'centralauth-list-home-dryrun' => 'Ο κωδικός πρόσβασης και η ηλεκτρονική διεύθυνση που καθορίστηκαν σε αυτό το εγχείρημα θα χρησιμοποιηθούν για τον ενοποιημένο σας λογαριασμό. Θα μπορέσετε αργότερα να αλλάξετε το αρχικό σας εγχείρημα.',
@@ -4240,6 +4241,7 @@ $messages['el'] = array(
 	'centralauth-admin-bad-input' => 'Η επιλογή για την συγχώνευση είναι άκυρη',
 	'centralauth-admin-none-selected' => 'Δεν διαλέξατε λογαριασμούς προς τροποποίηση.',
 	'centralauth-admin-delete-title' => 'Διαγραφή λογαριασμού',
+	'centralauth-admin-delete-button' => 'Διαγραφή του λογαριασμού',
 	'centralauth-token-mismatch' => 'Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.',
 	'centralauth-admin-reason' => 'Αιτία:',
 	'centralauth-admin-status-locked' => 'Κλειδωμένος',
@@ -5448,13 +5450,13 @@ Un autre wiki a été déterminé comme étant l’hôte principal du compte ass
 La base de donnée peut être corrompue.',
 	'centralauth-merge-home-password' => 'Le wiki principal associé à ce compte (listé ci-dessous) dispose d’un mot de passe différent de celui que vous avez entré.
 Veuillez entrer le mot de passe utilisé sur le wiki principal.',
-	'centralauth-complete' => 'Unification des identifications terminée !',
-	'centralauth-incomplete' => 'Unification des identifications incomplète !',
+	'centralauth-complete' => 'Unification du nom d’utilisateur terminée !',
+	'centralauth-incomplete' => 'Unification du nom d’utilisateur incomplète !',
 	'centralauth-complete-text' => 'Vous pouvez maintenant vous connecter à n’importe quel projet de {{MediaWiki:Centralauth-groupname}} sans avoir à créer un nouveau compte.',
 	'centralauth-incomplete-text' => 'Dès que votre identification sera unifiée, vous pourrez vous connecter sur n’importe quel projet de {{MediaWiki:Centralauth-groupname}} sans avoir à créer un nouveau compte.',
-	'centralauth-not-owner-text' => 'Le nom d’utilisateur unifié « $1 » a été automatiquement assigné au propriétaire du compte homonyme sur le wiki principal $2.
+	'centralauth-not-owner-text' => "Le nom d’utilisateur unifié « $1 » a été automatiquement assigné au propriétaire du compte homonyme sur le wiki principal $2.
 
-Si vous êtes le propriétaire de ce compte, vous pouvez terminer le processus d’unification des identifications en entrant ici le mot de passe correspondant au compte sur ce wiki principal :',
+Si vous êtes le propriétaire de ce compte, vous pouvez terminer le processus d’unification du nom d'utilisateur en entrant ici le mot de passe correspondant au compte sur ce wiki principal :",
 	'centralauth-blocked-text' => 'Le compte sur le wiki principal (listé ci-dessous) est bloqué contre toute modification. Merci de contacter un administrateur pour le débloquer. Tant que ce compte restera bloqué, vous ne pourrez fusionner vos comptes.',
 	'centralauth-notice-dryrun' => '<div class="successbox">Mode de démonstration uniquement</div><br clear="all" />',
 	'centralauth-disabled-dryrun' => "L’unification des comptes est actuellement en mode de démonstration ou de test, par conséquent les véritables opérations de fusion des comptes et de migration des données d’identification vers la base centrale des comptes unifiés sont désactivées.
@@ -5462,7 +5464,7 @@ Désolé !
 
 Ce mode permet toutefois de tester les comptes utilisateurs homonymes des différents wikis reconnus pour permettre aux utilisateurs de connaître les wikis qui disposent de données d’identifications différentes. Chaque projet wiki testé ici continue donc à maintenir et utiliser pour l'identification sa propre base locale de comptes, sans utiliser les identifications unifiées sur la base centrale.",
 	'centralauth-error-locked' => 'Vous ne pouvez rien modifier car votre compte est verrouillé.',
-	'centralauth-readmore-text' => ": ''[[meta:Help:Unified login/fr|En lire plus sur l’'''identification unifiée''']]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur l’'''identification unifiée''']]...''",
 	'centralauth-list-home-title' => 'Wiki principal',
 	'centralauth-list-home-dryrun' => 'Le mot de passe et l’adresse courriel enregistrée sur ce wiki principal seront utilisés pour la création de votre compte unifié.
 Vous pourrez modifier votre wiki principal par la suite.',
@@ -5482,7 +5484,7 @@ Vous pourrez modifier votre wiki principal par la suite.',
 	'centralauth-finish-title' => 'Terminer la fusion',
 	'centralauth-finish-text' => 'Si ces comptes vous appartiennent, vous pouvez terminer le processus d’unification des identifications en tapant leurs mots de passe respectifs actuels ci-dessous :',
 	'centralauth-finish-password' => 'Mot de passe :',
-	'centralauth-finish-login' => 'Compte utilisateur :',
+	'centralauth-finish-login' => 'Nom d’utilisateur',
 	'centralauth-finish-send-confirmation' => 'Envoyer le mot de passe par courriel',
 	'centralauth-finish-problems' => 'En cas de problème ou si vous ne possédez pas ces autres comptes, consultez l’[[meta:Help:Unified login/fr|aide sur la connexion unifiée]]…',
 	'centralauth-finish-noconfirms' => 'Aucun compte n’a été confirmé en utilisant ce mot de passe.',
@@ -10488,6 +10490,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-groupperms2' => "huet d'Grupperechter geännert fir $1. Derbäigesat $2; Ewechgeholl $3",
 	'centralauth-rightslog-header' => 'An dëser Lëscht stinn Ännerunge vun de globale Benotzergruppen: Memberen an Ännerunge vu Rechter',
 	'centralauth-rightslog-entry-setrename' => 'de Wikigrupp "$2" gouf op "$1" ëmbenannt',
+	'centralauth-rightslog-entry-setnewtype' => 'huet den Typ vu(n) "$1" vun $1 op $3 geännert',
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
@@ -16169,6 +16172,7 @@ $messages['tg-cyrl'] = array(
  * @author Ans
  * @author Manop
  * @author Mopza
+ * @author Octahedron80
  * @author Passawuth
  */
 $messages['th'] = array(
@@ -16177,14 +16181,17 @@ $messages['th'] = array(
 	'centralauth-merge-denied' => 'ขออภัย คุณไม่สามารถเข้าหน้านี้ได้',
 	'centralauth-merge-step1-detail' => 'กรุณาใส่รหัสผ่านสำหรับบัญชีผู้ใช้ของคุณที่นี่ รหัสผ่านและอีเมลของคุณจะถูกนำไปเปรียบเทียบกับบัญชีผู้ใช้เดียวกันในวิกิอื่น ๆ เพื่อที่จะยืนยันว่าข้อมูลตรงกัน จะไม่มีการเปลี่ยนแปลงใด ๆ ทั้งสิ้นจนกว่าคุณจะยืนยันว่าทุกอย่างเป็นไปตามที่ต้องการ',
 	'centralauth-merge-step1-submit' => 'ยืนยันข้อมูลการล็อกอิน',
+	'centralauth-merge-step2-title' => 'ยืนยันบัญชีอื่นเพิ่มเติม',
 	'centralauth-merge-step2-submit' => 'ยืนยันข้อมูลการล็อกอิน',
 	'centralauth-merge-dryrun-or' => "'''หรือ'''",
 	'centralauth-complete' => 'การรวมบัญชีสำหรับล็อกอินเสร็จสมบูรณ์!',
 	'centralauth-incomplete' => 'การรวมบัญชีสำหรับล็อกอินไม่สำเร็จ',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/th|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
+	'centralauth-list-home-title' => 'วิกิเหย้า',
 	'centralauth-list-attached' => 'ชื่อบัญชี "$1" ในชื่อไซต์ต่อไปนี้ได้ถูกรวมเข้าชื่อบัญชีหลักอัตโนมัติ:',
 	'centralauth-list-attached-dryrun' => 'ชื่อบัญชี "$1" ในชื่อไซต์ต่อไปนี้จะถูกรวมเข้าชื่อบัญชีหลักอัตโนมัติ:',
 	'centralauth-foreign-link' => 'ผู้ใช้ $1 บน $2',
+	'centralauth-merge-method-primary' => 'วิกิเหย้า',
 	'centralauth-merge-method-empty' => 'ไม่มีประวัติการเขียน',
 	'centralauth-merge-method-mail' => 'ยืนยันทางอีเมล',
 	'centralauth-merge-method-password' => 'ยืนยันทางรหัสผ่าน',
@@ -16195,23 +16202,44 @@ $messages['th'] = array(
 	'centralauth-finish-send-confirmation' => 'อีเมลรหัสผ่าน',
 	'centralauth-finish-noconfirms' => 'ไม่พบบัญชีผู้ใช้ที่จะสามารถยืนยันได้ด้วยรหัสผ่านนี้',
 	'centralauth-attach-title' => 'ยืนยันบัญชีผู้ใช้',
+	'centralauth-attach-submit' => 'ย้ายบัญชี',
+	'centralauth-admin-manage' => 'จัดการข้อมูลผู้ใช้',
 	'centralauth-admin-username' => 'ผู้ใช้:',
+	'centralauth-admin-lookup' => 'ดูหรือแก้ไขข้อมูลผู้ใช้',
 	'centralauth-admin-info-hidden' => 'ซ่อน:',
 	'centralauth-admin-yes' => 'ใช่',
 	'centralauth-admin-no' => 'ไม่ใช่',
+	'centralauth-admin-notblocked' => 'ไม่ถูกบล็อก',
+	'centralauth-admin-blocked' => 'ผู้ใช้ถูกบล็อกแล้ว ซึ่งจะหมดอายุเมื่อ $3 เวลา $4 เหตุผล: $2',
+	'centralauth-admin-blocked-indef' => 'ผู้ใช้ถูกบล็อกโดยถาวรแล้ว เหตุผล: $1',
+	'centralauth-admin-list-localwiki' => 'วิกิเหย้า',
+	'centralauth-admin-list-editcount' => 'จำนวนการแก้ไข',
+	'centralauth-admin-none-selected' => 'ไม่มีบัญชีใดถูกเลือกเพื่อแก้ไข',
 	'centralauth-admin-delete-title' => 'ลบบัญชีผู้ใช้',
 	'centralauth-admin-delete-button' => 'ลบบัญชีผู้ใช้นี้',
+	'centralauth-admin-delete-nonexistent' => 'ผิดพลาด: ไม่มีบัญชีผู้ใช้กลาง "<nowiki>$1</nowiki>"',
 	'centralauth-admin-reason' => 'เหตุผล:',
+	'centralauth-admin-status-submit' => 'ตั้งสถานะ',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|วินาที|วินาที}} ที่แล้ว',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|นาที|นาที}} ที่แล้ว',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ชั่วโมง|ชั่วโมง}} ที่แล้ว',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|วัน|วัน}} ที่แล้ว',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|เดือน|เดือน}} ที่แล้ว',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว',
 	'centralauth-prefs-status' => 'สถานะบัญชีผู้ใช้กลาง:',
+	'centralauth-prefs-not-managed' => 'ไม่ได้ใช้บัญชีกลาง',
 	'centralauth-prefs-count-attached' => 'ชื่อผู้ใช้ของคุณใช้งานได้ใน $1 โครงการ',
 	'centralauth-prefs-manage' => 'บริหารระบบบัญชีผู้ใช้กลางของคุณ',
-	'centralauth-login-progress' => 'ขณะนี้คุณล็อกอินเข้าสู่โครงการอื่นในวิกิมีเดีย:',
-	'centralauth-logout-progress' => 'ขณะนี้ล็อกเอาต์ออกจากโครงการในวิกิมีเดีย:',
+	'centralauth-invalid-wiki' => 'ไม่มีฐานข้อมูลวิกินี้: $1',
+	'centralauth-login-progress' => 'ขณะนี้คุณล็อกอินเข้าสู่โครงการ{{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'ขณะนี้กำลังล็อกเอาต์ออกจากโครงการ{{int:Centralauth-groupname}}:',
 	'centralauth-existinggroup-legend' => 'กลุ่มที่มีอยู่',
 	'centralauth-newgroup-legend' => 'สร้างกลุ่มใหม่',
 	'centralauth-editgroup-subtitle' => 'กำลังแก้ไข $1',
 	'centralauth-editgroup-name' => 'ชื่อของกลุ่ม:',
 	'centralauth-editgroup-reason' => 'เหตุผลสำหรับการเปลี่ยน:',
+	'centralauth-editset-reason' => 'เหตุผล:',
+	'centralauth-editset-submit' => 'ตกลง',
 );
 
 /** Tagalog (Tagalog)
