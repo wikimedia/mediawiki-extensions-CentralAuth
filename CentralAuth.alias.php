@@ -240,6 +240,7 @@ $aliases['km'] = array(
 
 /** Korean (한국어) */
 $aliases['ko'] = array(
+	'CentralAuth' => array( '통합계정관리' ),
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정' ),
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
