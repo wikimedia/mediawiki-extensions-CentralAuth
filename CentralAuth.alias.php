@@ -221,6 +221,14 @@ $aliases['ia'] = array(
 	'GlobalUsers' => array( 'Usatores global' ),
 );
 
+/** Italian (Italiano) */
+$aliases['it'] = array(
+	'MergeAccount' => array( 'UnificaUtenze' ),
+	'GlobalGroupMembership' => array( 'DirittiUtentiGlobali' ),
+	'GlobalGroupPermissions' => array( 'PermessiUtentiGlobali' ),
+	'GlobalUsers' => array( 'UtentiGlobali' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
