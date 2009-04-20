@@ -414,6 +414,8 @@ $aliases['tr'] = array(
 
 /** Vèneto (Vèneto) */
 $aliases['vec'] = array(
+	'GlobalGroupMembership' => array( 'DiritiUtenteGlobali' ),
+	'GlobalGroupPermissions' => array( 'ParmessiUtentiGlobali' ),
 	'GlobalUsers' => array( 'UtentiGlobali' ),
 );
 
