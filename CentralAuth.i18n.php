@@ -10186,7 +10186,7 @@ wahrscheinlech hu si en anert Passwuert wéi ären Haaptbenotzerkont:',
 	'centralauth-finish-send-confirmation' => 'Passwuert per E-Mail zouschécken',
 	'centralauth-finish-problems' => 'Wann Dir problemer hutt oder wann Dir net de Besetzer vun dësen anere Benotzerkonte sidd da [[meta:Help:Unified login problems|kënnt Dir hei Hellëf fannen]]',
 	'centralauth-finish-noconfirms' => 'Kee Benotzerkont konnt mat dësem Passwuert confirméiert ginn.',
-	'centralauth-finish-incomplete' => 'E puer Benotzerkonte goufen mat Hellëf vun dësem Passwuert zesummegeféiert.
+	'centralauth-finish-incomplete' => 'E puer Benotzerkonte goufe mat Hellëf vun dësem Passwuert zesummegeféiert.
 Aner Benotzerkonte sinn nach net confirméiert.',
 	'centralauth-merge-attempt' => "'''D'Passwuert dat Dir uginn huet gëtt elo mat de Passwierder vun den net zesummegeouerte Benotzerkonte verglach ...'''",
 	'centralauth-attach-list-attached' => 'De globale Benotzerkont mam Numm "$1" besteet aus dëse Konten:',
@@ -10292,7 +10292,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
-Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatiounen fir dës Säit vun alle verlinkten Domainen mat Hellëf vu Billerlinken unzefroen.
+Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatioune fir dës Säit vun alle verlinkten Domaine mat Hellëf vu Billerlinken unzefroen.
 Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
