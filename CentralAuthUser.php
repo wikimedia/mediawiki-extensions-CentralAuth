@@ -224,7 +224,8 @@ class CentralAuthUser extends AuthPluginUser {
 		
 		global $wgCentralAuthPropertySaveWhitelist;
 		foreach( $this->mProperties as $key => $value ) {
-			if ( is_null(User::getDefaultOption($key)) ||
+			if ( ( is_null(User::getDefaultOption($key)) &&
+					!( $value === false || is_null($value) ) ) ||
 					$value != User::getDefaultOption( $key ) ||
 					in_array( $key, $wgCentralAuthPropertySaveWhitelist ) ) {
 				$insert_rows[] = array(
