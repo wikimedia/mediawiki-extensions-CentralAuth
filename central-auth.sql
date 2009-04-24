@@ -164,3 +164,13 @@ CREATE TABLE global_group_restrictions (
 	PRIMARY KEY (ggr_group),
 	KEY (ggr_set)
 ) /*$wgDBTableOptions*/;
+
+-- Allow users to share preferences across wikis
+CREATE TABLE global_preferences (
+	gp_user int(11) NOT NULL,
+	gp_key varbinary(255) NOT NULL,
+	gp_value BLOB,
+	
+	PRIMARY KEY (up_user,up_property),
+	KEY (up_property)
+) /*$wgDBTableOptions*/;

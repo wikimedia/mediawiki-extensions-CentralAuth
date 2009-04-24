@@ -18,7 +18,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 2;
+	/*private*/ var $mVersion = 3;
 	/*private*/ var $mDelayInvalidation = 0;
 	
 	static $mCacheVars = array(
@@ -33,6 +33,7 @@ class CentralAuthUser extends AuthPluginUser {
 		'mAuthenticationTimestamp',
 		'mGroups',
 		'mRights',
+		'mProperties',
 
 		# Store the string list instead of the array, to save memory, and 
 		# avoid unserialize() overhead
@@ -93,6 +94,7 @@ class CentralAuthUser extends AuthPluginUser {
 		unset( $this->mGroups );
 		unset( $this->mAttachedArray );
 		unset( $this->mAttachedList );
+		unset( $this->mProperties );
 	}
 	
 	/**
@@ -190,6 +192,88 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->mRights = $rights;
 		$this->mGroups = array_keys($groups);
 	}
+	
+	/**
+	 * Load user properties from the database.
+	 */
+	protected function loadProperties() {
+		if ( isset($this->mProperties) ) return;
+		
+		wfDebugLog( 'CentralAuth', "Loading properties for global user {$this->mName}" );
+		
+		$dbr = self::getCentralDB();
+		
+		$res = $dbr->select(
+				'global_user_properties', array( 'gp_property', 'gp_value' ),
+				array( 'gp_user' => $this->getId() ), __METHOD__ );
+		
+		$properties = array();
+		
+		while( $row = $dbr->fetchObject( $res ) ) {
+			$properties[$row->gp_property] = $row->gp_value;
+		}
+		
+		$this->mProperties = $properties;
+	}
+	
+	function saveProperties() {
+		$this->loadProperties();
+		$dbw = self::getCentralDB();
+		
+		$insert_rows = array();
+		
+		global $wgCentralAuthPropertySaveWhitelist;
+		foreach( $this->mProperties as $key => $value ) {
+			if ( is_null(User::getDefaultOption($key)) ||
+					$value != User::getDefaultOption( $key ) ||
+					in_array( $key, $wgCentralAuthPropertySaveWhitelist ) ) {
+				$insert_rows[] = array(
+						'gp_user' => $this->getId(),
+						'gp_property' => $key,
+						'gp_value' => $value,
+					);
+			}
+		}
+		
+		$dbw->begin();
+		
+		$dbw->delete( 'global_user_properties',
+						array( 'gp_user' => $this->getId() ),
+						__METHOD__ );				
+		$dbw->insert( 'global_user_properties', $insert_rows, __METHOD__ );
+		
+		$dbw->commit();
+		
+		$this->invalidateCache();
+	}
+	
+	function setProperty( $key, $value ) {
+		$this->loadProperties();
+		$this->mProperties[$key] = $value;
+		$this->mStateDirty = true;
+	}
+	
+	function setProperties( $properties, $method = 'replace' ) {
+		$this->loadProperties();
+		if ($method == 'replace') {
+			$this->mProperties = $properties;
+		} elseif ($method == 'insert') {
+			$this->mProperties = array_merge( $this->mProperties, $properties );
+		}
+		
+		$this->mStateDirty = true;
+	}
+	
+	function getProperties() {
+		$this->loadProperties();
+		return $this->mProperties;
+	}
+	
+	function getProperty( $name ) {
+		$properties = $this->getProperties();
+		
+		return $properties[$name];
+	}
 
 	/**
 	 * Load user state from a joined globaluser/localuser row
@@ -266,6 +350,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadState();
 		$this->loadAttached();
 		$this->loadGroups();
+		$this->loadProperties();
 		
 		$obj = array();
 		foreach( self::$mCacheVars as $var ) {

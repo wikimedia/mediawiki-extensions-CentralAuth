@@ -124,6 +124,12 @@ $wgCentralAuthCreateOnView = false;
 $wgCentralAuthUDPAddress = false;
 $wgCentralAuthNew2UDPPrefix = '';
 
+/** Settings which will always be saved to the DB, regardless of whether or not they
+  *  match the local default. This should be mainly settings whose defaults change per-wiki.
+  */
+$wgCentralAuthPropertySaveWhitelist =
+	array( 'language', 'variant' );
+
 /**
  * Initialization of the autoloaders, and special extension pages.
  */
@@ -148,7 +154,7 @@ $wgExtensionAliasesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.alias.php"
 
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
-$wgHooks['PreferencesUserInformationPanel'][] = 'CentralAuthHooks::onPreferencesUserInformationPanel';
+$wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
 $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLoadFromSession'][] = 'CentralAuthHooks::onUserLoadFromSession';
@@ -166,6 +172,8 @@ $wgHooks['UserSetCookies'][] = 'CentralAuthHooks::onUserSetCookies';
 $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
+$wgHooks['UserSaveOptions'][] = 'CentralAuthHooks::onSavePreferences';
+$wgHooks['UserLoadOptions'][] = 'CentralAuthHooks::onUserLoadOptions';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
@@ -213,6 +221,8 @@ $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
 foreach( array( 'newset', 'setrename', 'setnewtype', 'setchange' ) as $type )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
+	
+$wgDefaultUserOptions['globalpreferences'] = true;
 
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 	wfLoadExtensionMessages('SpecialCentralAuth');
