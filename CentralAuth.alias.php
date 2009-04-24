@@ -146,6 +146,17 @@ $aliases['fr'] = array(
 	'GlobalUsers' => array( 'Utilisateurs globaux', 'UtilisateursGlobaux' ),
 );
 
+/** Franco-Provençal (Arpetan) */
+$aliases['frp'] = array(
+	'CentralAuth' => array( 'Administracion des comptos fusionâs', 'AdministracionDesComptosFusionâs' ),
+	'AutoLogin' => array( 'Branchement ôtomatico', 'BranchementÔtomatico' ),
+	'MergeAccount' => array( 'Fusionar los comptos', 'FusionarLosComptos' ),
+	'GlobalGroupMembership' => array( 'Pèrmissions globales', 'PèrmissionsGlobales' ),
+	'GlobalGroupPermissions' => array( 'Drêts de les tropes globales', 'DrêtsDeLesTropesGlobales' ),
+	'EditWikiSets' => array( 'Changiér los sèts de vouiquis', 'ChangiérLosSètsDeVouiquis' ),
+	'GlobalUsers' => array( 'Utilisators globals', 'UtilisatorsGlobals' ),
+);
+
 /** Galician (Galego) */
 $aliases['gl'] = array(
 	'MergeAccount' => array( 'Fusionar contas' ),
