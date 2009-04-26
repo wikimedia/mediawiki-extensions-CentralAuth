@@ -196,7 +196,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-prefs-count-unattached'  => 'Unconfirmed accounts with your name remain on $1 {{PLURAL:$1|project|projects}}.',
 	'centralauth-prefs-detail-unattached' => 'This project site has not been confirmed as belonging to the global account.',
 	'centralauth-prefs-manage'            => 'Manage your global account',
-	'centralauth-prefs-global'			  => 'Use these preferences on all projects',
+	'centralauth-prefs-global'            => 'Use these preferences on all projects',
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system.
@@ -6455,6 +6455,7 @@ $messages['he'] = array(
 	'centralauth-prefs-count-unattached' => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב{{PLURAL:$1|מיזם אחד|־$1 מיזמים}}.',
 	'centralauth-prefs-detail-unattached' => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
 	'centralauth-prefs-manage' => 'ניהול החשבון הכללי',
+	'centralauth-prefs-global' => 'שימוש בהעדפות אלה בכל המיזמים',
 	'centralauth-renameuser-merged' => 'המשתמש $1 מוזג למערכת החשבונות הממוזגים. שינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הכללי.',
 	'centralauth-renameuser-reserved' => 'החשבון $2 שמור לחשבון כללי.',
 	'centralauth-invalid-wiki' => 'אין מסד נתונים בשם $1',
