@@ -83,13 +83,6 @@ class CentralAuthHooks {
 			);
 
 		$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'registrationdate' );
-		
-		$preferences['globalpreferences'] =
-				array(
-					'section' => 'personal',
-					'label-message' => 'centralauth-prefs-global',
-					'type' => 'toggle',
-				);
 
 		return true;
 	}
