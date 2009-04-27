@@ -550,35 +550,4 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
-	
-	static function onSavePreferences( $user, &$preferences ) {
-		$centralUser = CentralAuthUser::getInstance( $user );
-		
-		if ($centralUser->exists() && $centralUser->isAttached() &&
-				!empty($preferences['globalpreferences']) ) {
-			// Save preferences into the global account.
-			
-			$centralUser->setProperties( $preferences, 'replace' );
-			$centralUser->saveProperties();
-			
-			$preferences = array( 'globalpreferences' => true );
-			
-			return true;
-		}
-		
-		return true;
-	}
-	
-	static function onUserLoadOptions( $user, &$preferences ) {
-		$centralUser = CentralAuthUser::getInstance( $user );
-		if ($centralUser->exists() && $centralUser->isAttached() &&
-				!empty($preferences['globalpreferences']) ) {
-			// Pull preferences from global account
-			
-			$preferences = array_merge( $preferences, $centralUser->getProperties() );
-			$preferences['globalpreferences'] = true;
-		}
-		
-		return true;
-	}
 }
