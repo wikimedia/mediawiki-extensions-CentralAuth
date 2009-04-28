@@ -6460,7 +6460,6 @@ $messages['he'] = array(
 	'centralauth-prefs-count-unattached' => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב{{PLURAL:$1|מיזם אחד|־$1 מיזמים}}.',
 	'centralauth-prefs-detail-unattached' => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
 	'centralauth-prefs-manage' => 'ניהול החשבון הכללי',
-	'centralauth-prefs-global' => 'שימוש בהעדפות אלה בכל המיזמים',
 	'centralauth-renameuser-merged' => 'המשתמש $1 מוזג למערכת החשבונות הממוזגים. שינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הכללי.',
 	'centralauth-renameuser-reserved' => 'החשבון $2 שמור לחשבון כללי.',
 	'centralauth-invalid-wiki' => 'אין מסד נתונים בשם $1',
