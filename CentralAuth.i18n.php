@@ -8348,6 +8348,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
  * @author Alexsh
  * @author Aotake
  * @author Broad-Sky
+ * @author Fievarsty
  * @author Fryed-peach
  * @author Hosiryuhosi
  * @author JtFuruhata
@@ -8472,8 +8473,8 @@ $messages['ja'] = array(
 	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-status' => 'グローバルアカウント状態の設定',
 	'centralauth-admin-status-intro' => 'このグローバルアカウントの状態を変更するために、このフォームを利用できます',
-	'centralauth-admin-status-locked' => 'ロック済み',
-	'centralauth-admin-status-hidden' => '非表示',
+	'centralauth-admin-status-locked' => 'ロックする',
+	'centralauth-admin-status-hidden' => '秘匿する',
 	'centralauth-admin-status-submit' => '状態を設定',
 	'centralauth-admin-status-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-admin-setstatus-success' => 'このグローバルアカウントの状態の変更に成功しました。',
@@ -8496,7 +8497,6 @@ $messages['ja'] = array(
 	'centralauth-prefs-count-unattached' => 'あなたの利用者名は、$1個のプロジェクトで承認されていません。',
 	'centralauth-prefs-detail-unattached' => 'このプロジェクトサイトはまだ統一アカウントに承認されていません。',
 	'centralauth-prefs-manage' => '統一アカウントの管理',
-	'centralauth-prefs-global' => 'この設定を全プロジェクトで使用する',
 	'centralauth-renameuser-merged' => '利用者$1は統一ログインシステムに移行しています。利用者名を変更するとグローバルアカウントからローカルのアカウントが切り離されます。',
 	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントで使用されています。',
 	'centralauth-invalid-wiki' => 'ウィキ・データベースが見つかりません: $1',
@@ -8513,9 +8513,9 @@ $messages['ja'] = array(
 	'centralauth-log-entry-hide' => 'グローバルアカウント "<nowiki>$1</nowiki>" を秘匿しました',
 	'centralauth-log-entry-unhide' => 'グローバルアカウント "<nowiki>$1</nowiki>" を秘匿解除しました',
 	'centralauth-log-entry-lockandhide' => 'グローバルアカウント "<nowiki>$1</nowiki>" をロックおよび秘匿しました',
-	'centralauth-log-entry-chgstatus' => 'グローバルアカウント「<nowiki>$1</nowiki>」の状態を変更: $3を解除、$2に設定',
+	'centralauth-log-entry-chgstatus' => 'グローバルアカウント "<nowiki>$1</nowiki>" の状態を変更: $3を解除、$2に設定',
 	'centralauth-log-status-locked' => 'ロック済み',
-	'centralauth-log-status-hidden' => '非表示',
+	'centralauth-log-status-hidden' => '秘匿',
 	'centralauth-log-status-none' => '(なし)',
 	'centralauth-rightslog-name' => 'グローバル権限変更記録',
 	'centralauth-rightslog-entry-usergroups' => '$1 のグローバルグループ所属を $2 から $3 へ変更しました',
@@ -10273,7 +10273,6 @@ D'passwierder vun alle Benotzerkonten déi zesummegefouert gi waren ginn nees op
 	'centralauth-prefs-count-unattached' => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat ärem Numm.',
 	'centralauth-prefs-detail-unattached' => 'Dëse Projet gehéiert nach net zum Projet vun de globale Benotzerkonten.',
 	'centralauth-prefs-manage' => 'Geréiert äre globale Benotzerkont',
-	'centralauth-prefs-global' => 'Dës Astellungen an alle Projete benotzen',
 	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System opgeholl.
 Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System eraus.',
 	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.',
