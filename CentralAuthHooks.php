@@ -74,7 +74,7 @@ class CentralAuthHooks {
 		$prefInsert =
 			array( 'globalaccountstatus' =>
 				array(
-					'section' => 'personal',
+					'section' => 'personal/info',
 					'label-message' => 'centralauth-prefs-status',
 					'type' => 'info',
 					'raw' => true,
