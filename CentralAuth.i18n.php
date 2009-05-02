@@ -731,6 +731,7 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author Alnokta
  * @author Meno25
+ * @author OsamaK
  */
 $messages['ar'] = array(
 	'mergeaccount' => 'حالة توحيد الدخول',
@@ -878,12 +879,11 @@ $messages['ar'] = array(
 	'centralauth-prefs-not-managed' => 'لا يستخدم الحساب الموحد',
 	'centralauth-prefs-unattached' => 'غير مؤكد',
 	'centralauth-prefs-complete' => 'كل شيء مضبوط!',
-	'centralauth-prefs-migration' => 'في الهجرة',
+	'centralauth-prefs-migration' => 'في مرحلة التوحيد',
 	'centralauth-prefs-count-attached' => 'حسابك نشط في $1 {{PLURAL:$1|موقع|موقع}} مشروع.',
 	'centralauth-prefs-count-unattached' => 'حسابات غير مؤكدة باسمك موجودة في $1 {{PLURAL:$1|مشروع|مشروع}}.',
 	'centralauth-prefs-detail-unattached' => 'موقع المشروع هذا لم يتم تأكيده كمنتمي للحساب العام.',
 	'centralauth-prefs-manage' => 'أدر حسابك العام',
-	'centralauth-prefs-global' => 'استخدم هذه التفضيلات على كل المشروعات',
 	'centralauth-renameuser-merged' => 'المستخدم $1 انتقل إلى نظام الدخول الموحد.
 إعادة تسميته ستؤدي إلى أن المستخدم المحلي سينفصل عن المستخدم العام.',
 	'centralauth-renameuser-reserved' => 'المستخدم $2 محجوز لحساب عام.',
@@ -6270,6 +6270,14 @@ Du chasch d Rächt, wu e jedere Gruppe zuegwise wore sin, aaluege un ändere, w�
 	'right-centralauth-admin' => 'Wältwyti Benutzerkonte verwalte',
 	'right-centralauth-merge' => 'Benutzerkonte zämmefiere',
 	'right-globalgrouppermissions' => 'Wältwyti Gruppe verwalte',
+);
+
+/** Gujarati (ગુજરાતી)
+ * @author Dineshjk
+ */
+$messages['gu'] = array(
+	'centralauth-editgroup-noset' => '(કોઇપણ નહીં)',
+	'centralauth-editset-nouse' => '(કોઇપણ નહીં)',
 );
 
 /** Manx (Gaelg)
