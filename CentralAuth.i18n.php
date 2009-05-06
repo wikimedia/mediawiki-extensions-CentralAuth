@@ -3578,8 +3578,8 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
 	'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
 	'centralauth-prefs-manage' => 'Globales Benutzerkonto verwalten',
-	'centralauth-prefs-global' => 'Diese Einstellungen in allen Projekten nutzen',
-	'centralauth-renameuser-merged' => 'Der Benutzer $1 wurde bereits in das globale Benutzerkonten-System übernommen. Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkonten-System.',
+	'centralauth-renameuser-merged' => 'Der Benutzer „$1“ wurde bereits in das globale Benutzerkonten-System übernommen.
+Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkonten-System.',
 	'centralauth-renameuser-reserved' => 'Der Benutzer $2 ist als globales Benutzerkonto reserviert.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkonten-System verwendet.',
