@@ -8022,13 +8022,14 @@ Suatu kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
 
 /** Ido (Ido)
  * @author Malafaya
+ * @author Wyvernoid
  */
 $messages['io'] = array(
 	'centralauth-merge-dryrun-or' => "'''o'''",
 	'centralauth-foreign-link' => 'Uzanto $1 en $2',
 	'centralauth-merge-method-empty' => 'Nula kontributadi',
 	'centralauth-merge-method-new' => 'nova konto',
-	'centralauth-finish-password' => 'Kontrolajo:',
+	'centralauth-finish-password' => 'Pasovorto:',
 	'centralauth-finish-login' => 'Enirar',
 	'centralauth-finish-send-confirmation' => 'Sendar pasovorto e-poste',
 	'centralauth-admin-username' => 'Uzantonomo:',
@@ -14650,7 +14651,7 @@ Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 $messages['sr-ec'] = array(
 	'mergeaccount' => 'Статус уједињења налога',
 	'centralauth-groupname' => 'Викимедија Фондација',
-	'centralauth-desc' => '[[Special:MergeAccount|Сједињавање налога]] кроз Викимедијине викије.',
+	'centralauth-desc' => '[[Special:MergeAccount|Сједињавање налога]] на Викијима из {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Сједињава више налога]] за јединствени кориснички приступ.',
 	'centralauth-merge-denied' => 'Немаш права да приступиш овој страни.',
 	'centralauth-merge-notlogged' => 'Молимо вас да се <span class="plainlinks">[{{fullurl:Special:Userlogin|returnto=Special%3AMergeAccount}} пријавите]</span> како бисте проверили да ли је ваш налог спојен успешно.',
@@ -14667,7 +14668,7 @@ $messages['sr-ec'] = array(
 	'centralauth-merge-step3-submit' => 'Сједини налоге',
 	'centralauth-complete' => 'Спајање налога завршено!',
 	'centralauth-incomplete' => 'Спајање налога није завршено!',
-	'centralauth-complete-text' => 'Сада се можете пријавити на било који Викимедијин вики сајт без прављењановог налога; исто корисничко име и лозинка ће свугде радити Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти на свим језицима.',
+	'centralauth-complete-text' => 'Сада можете да се улогујете на било који Вики из {{MediaWiki:Centralauth-groupname}}, без потребе да отворите нови налог.',
 	'centralauth-incomplete-text' => 'Када једном спојите налог, можете се пријавити на било који Викимедијин вики сајт без прављења; the same username and password will work on Википедија, Викиречник, Викикњиге, и њихови остали братски пројекти на свим језицима.',
 	'centralauth-not-owner-text' => 'Корисничко име "$1" је аутоматски додељено власнику налога на $2.
 
@@ -14777,7 +14778,7 @@ $messages['sr-ec'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'промењена права групе за групу $1 са $2 на $3',
 	'centralauth-rightslog-entry-groupperms2' => 'промењена права групе за групу $1: додато $2; уклоњено $3',
 	'centralauth-rightslog-entry-groupperms3' => 'промењен скуп групе викија са огрнаичењима за $1 са $2 на $3',
-	'centralauth-rightslog-header' => 'Овај лог садржи операције над глобалним групама: чланство, и промене права.',
+	'centralauth-rightslog-header' => 'Ова историја садржи операције извршене над глобалним групама: чланства и промене права.',
 	'centralauth-rightslog-entry-newset' => 'направљен $2 скуп викија $1 са следећим викијима: $3',
 	'centralauth-rightslog-entry-setrename' => 'преименован скуп викија "$2" у "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'промењен тип групе "$1" са $2 на $3',
@@ -14788,7 +14789,7 @@ $messages['sr-ec'] = array(
 	'globalgroupmembership' => 'Чланство у глобалним групама.',
 	'globalgrouppermissions' => 'Управљање глобалним групама.',
 	'centralauth-globalgroupperms-grouplist' => 'Следеће глобалне групе су подешене. Можеш прегледати и мењати права додата ма којој групи. Група се брише уклањањем свих права из исте.',
-	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|преглед и измена права]])',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|види/измени]])',
 	'centralauth-existinggroup-legend' => 'Постојеће групе.',
 	'centralauth-newgroup-legend' => 'Стварање нове групе.',
 	'centralauth-newgroup-intro' => 'Ова форма се користи за додељивање права новој групи. Имај на уму да група не постоји док јој није додељено ниједно право.',
@@ -15053,7 +15054,7 @@ Du hääst disse Spesioalsiede sunner Authentizierengsdoaten apruupen, so dät n
 	'centralauth-editgroup-display' => 'Lokalisierde Noome fon ju Gruppe:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|beoarbaidje]])',
 	'centralauth-editgroup-member' => 'Lokalisierde Noome fon do Gruppenmeegliede:',
-	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:group-$1-member|beoarbaidje]])',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beoarbaidje]])',
 	'centralauth-editgroup-members' => 'Meegliedelieste:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lieste fon do Benutsere mäd dät $2-Gjucht]]',
 	'centralauth-editgroup-restrictions' => 'Wikigruppe, in do disse Gruppe aktiv is:',
@@ -15614,6 +15615,7 @@ $messages['te'] = array(
 	'centralauth-admin-list-localwiki' => 'స్థానిక వికీ',
 	'centralauth-admin-list-attached-on' => 'అనుసంధించిన తేదీ',
 	'centralauth-admin-list-method' => 'పద్ధతి',
+	'centralauth-admin-list-editcount' => 'మార్పుల సంఖ్య',
 	'centralauth-admin-unmerge' => 'ఎంచుకున్నవాటి విలీనాన్ని రద్దుచెయ్యి',
 	'centralauth-admin-merge' => 'ఎంచుకున్నవాటిని విలీనం చేయి',
 	'centralauth-admin-bad-input' => 'తప్పుడు విలీనపు ఎంపిక',
@@ -15687,6 +15689,7 @@ $messages['te'] = array(
 	'centralauth-globalgroupmembership-badknownwiki' => "సర్వత్రిక వాడుకరి '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేరు. మీరు హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేదు, గమనించండి!",
 	'centralauth-editset-name' => 'పేరు:',
 	'centralauth-editset-type' => 'రకం:',
+	'centralauth-editset-wikis' => 'వికీలు:',
 	'centralauth-editset-reason' => 'కారణం:',
 	'right-globalgroupmembership' => 'సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు',
 	'right-centralauth-admin' => 'సార్వత్రిక ఖాతాలను నిర్వహించు',
