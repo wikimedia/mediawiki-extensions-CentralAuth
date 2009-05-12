@@ -4166,7 +4166,7 @@ $messages['el'] = array(
 Μετονομάζοντας το θα προκαλέσει την αποκόλλησει του τοπικού λογαριασμού από τον παγκόσμιο.',
 	'centralauth-renameuser-reserved' => 'Ο χρήστης $2 είναι κλεισμένος για παγκόσμιο λογαριασμό.',
 	'centralauth-invalid-wiki' => 'Δεν υπάρχει τέτοια βικι-βάση δεδομένων: $1',
-	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα είναι επιλεγμένη ήδη στο σύστημα ενιαίας σύνδεσης.',
+	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα χρήστη είναι ήδη κατοχυρωμένο στο σύστημα ενιαίας σύνδεσης.',
 	'centralauth-login-progress' => 'Σας συνδέουμε στα εγχειρήματα του {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Σας αποσυνδέουμε από άλλα εγχειρήματα του {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Έχετε συνδεθεί αυτόματα στα άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
