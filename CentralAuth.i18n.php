@@ -4376,8 +4376,8 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-admin-list-method' => 'Metodo',
 	'centralauth-admin-list-editcount' => 'Redakto-nombrado',
 	'centralauth-admin-list-blocked' => 'Statuso pri forbarado',
-	'centralauth-admin-unmerge' => 'Malunuigi selektitaĵojn',
-	'centralauth-admin-merge' => 'Unuigu selektitaĵojn',
+	'centralauth-admin-unmerge' => 'Malkunigi selektitaĵojn',
+	'centralauth-admin-merge' => 'Kunigi selektitaĵojn',
 	'centralauth-admin-bad-input' => 'Nevalida unuiga selekto',
 	'centralauth-admin-none-selected' => 'Ne estas selektitaj ŝanĝendaj kontoj.',
 	'centralauth-admin-already-unmerged' => 'Preterlasante $1, jam nekunigitan.',
@@ -4425,6 +4425,8 @@ Renomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzant
 	'centralauth-account-exists' => 'Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.',
 	'centralauth-login-progress' => 'Ensalutante vin en la aliaj projektoj de {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Elsalutante vin al la aliaj projektoj de {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Vi estis aŭtomate ensalutita aliajn projektojn de {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Vi estis aŭtomate elsalutita aliajn projektojn de {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Protokolo pri kontrolado de ĝeneralaj kontoj',
 	'centralauth-log-header' => 'Ĉi tiu protokolo enhavas operaciojn sub ĝeneralaj kontoj: forigojn, ŝlosadon, kaj malŝlosadon.',
 	'centralauth-log-entry-delete' => 'forigis ĝeneralan konton "<nowiki>$1</nowiki>"',
@@ -4433,6 +4435,7 @@ Renomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzant
 	'centralauth-log-entry-hide' => 'kaŝis ĝeneralan konton "$1"',
 	'centralauth-log-entry-unhide' => 'malkaŝis ĝeneralan konton "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide' => 'ŝlosis kaj kaŝis ĝeneralan konton "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-chgstatus' => 'ŝanĝis statuson por ĝenerala konto "<nowiki>$1</nowiki>": Ŝaltita $2; Malŝaltita $3',
 	'centralauth-log-status-locked' => 'ŝlosita',
 	'centralauth-log-status-hidden' => 'kaŝita',
 	'centralauth-log-status-none' => '(nenio)',
@@ -6276,6 +6279,7 @@ Du chasch d Rächt, wu e jedere Gruppe zuegwise wore sin, aaluege un ändere, w�
  * @author Dineshjk
  */
 $messages['gu'] = array(
+	'centralauth-admin-username' => 'સભ્ય નામ:',
 	'centralauth-editgroup-noset' => '(કોઇપણ નહીં)',
 	'centralauth-editset-nouse' => '(કોઇપણ નહીં)',
 );
