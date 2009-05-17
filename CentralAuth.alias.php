@@ -175,6 +175,12 @@ $aliases['gsw'] = array(
 	'GlobalUsers' => array( 'Wältwyti Benutzerlischt' ),
 );
 
+/** Gujarati (ગુજરાતી) */
+$aliases['gu'] = array(
+	'AutoLogin' => array( 'સ્વયંભૂલોગીન' ),
+	'GlobalUsers' => array( 'ગ્લોબલસભ્ય' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
