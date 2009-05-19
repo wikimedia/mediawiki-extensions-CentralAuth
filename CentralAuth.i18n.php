@@ -2821,6 +2821,7 @@ Možda pokušavate dodati prava pogrešnom korisniku!",
  * @author Jordi Roqué
  * @author Paucabot
  * @author SMP
+ * @author Solde
  * @author Toniher
  */
 $messages['ca'] = array(
@@ -2935,7 +2936,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-nonexistent' => 'No hi ha compte global per «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
 	'centralauth-token-mismatch' => "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
-	'centralauth-admin-reason' => 'Raó:',
+	'centralauth-admin-reason' => 'Motiu:',
 	'centralauth-admin-status-locked' => 'Bloquejat',
 	'centralauth-admin-status-hidden' => 'Amagat',
 	'centralauth-admin-status-submit' => 'Fixa estat',
@@ -3033,7 +3034,7 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editset-name' => 'Nom:',
 	'centralauth-editset-type' => 'Tipus:',
 	'centralauth-editset-wikis' => 'Wikis:',
-	'centralauth-editset-reason' => 'Raó:',
+	'centralauth-editset-reason' => 'Motiu:',
 	'centralauth-editset-submit' => 'Tramet',
 	'centralauth-editset-badname' => 'Conjunt no vàlid o buit.',
 	'centralauth-editset-badtype' => 'Tipus de conjunt no vàlid.',
@@ -12332,6 +12333,7 @@ Merk at gruppa ikkje finst med mindre ho har fått tildelt rettar.',
  * @author Harald Khan
  * @author Jon Harald Søby
  * @author Laaknor
+ * @author Nghtwlkr
  * @author Stigmj
  */
 $messages['no'] = array(
@@ -12431,6 +12433,7 @@ Du kan endre hvilken wiki som regnes som din hjemmewiki senere.',
 	'centralauth-admin-no-unattached' => 'Det er ingen flere kontoer å slå sammen.',
 	'centralauth-admin-notblocked' => 'Ikke blokkert',
 	'centralauth-admin-blocked' => 'Blokkert til $3 $4. Årsak: $2',
+	'centralauth-admin-blocked-indef' => 'Blokkert på ubestemt tid. Årsak: $1',
 	'centralauth-admin-list-localwiki' => 'Lokal wiki',
 	'centralauth-admin-list-attached-on' => 'Sammenslåingsdato',
 	'centralauth-admin-list-method' => 'Metode',
@@ -12518,6 +12521,7 @@ Du har kommet til denne siden uten noen form for verifiseringsdata, så siden gj
 Du kan se eller redigere rettighetene tildelt en gruppe, hvis du har rettigheter til det.
 En gruppe kan slettes ved å fjerne alle rettigheter fra den.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vis/rediger]])',
+	'centralauth-globalgroupperms-nogroups' => 'Ingen globale grupper er definert.',
 	'centralauth-existinggroup-legend' => 'Eksisterende grupper',
 	'centralauth-newgroup-legend' => 'Lag en ny gruppe',
 	'centralauth-newgroup-intro' => 'Du kan bruke dette skjemaet for å gi tillatelser til en ny gruppe. Merk at gruppen ikke finnes med mindre den har noen rettigheter.',
