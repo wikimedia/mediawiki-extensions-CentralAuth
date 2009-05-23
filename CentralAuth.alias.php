@@ -271,6 +271,12 @@ $aliases['ko'] = array(
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 );
 
+/** Ripoarisch (Ripoarisch) */
+$aliases['ksh'] = array(
+	'AutoLogin' => array( 'AutomatteschEnlogge' ),
+	'EditWikiSets' => array( 'WikiJroppe' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'CentralAuth' => array( 'Verwaltung vun der Benotzerkonten-Zesummeféierung' ),
