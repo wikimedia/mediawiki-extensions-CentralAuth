@@ -308,7 +308,7 @@ $aliases['ms'] = array(
 
 /** Maltese (Malti) */
 $aliases['mt'] = array(
-	'AutoLogin' => array( 'LoginAwtomatiku' ),
+	'AutoLogin' => array( 'LoginAwtomatiku', 'DħulAwtomatiku' ),
 	'MergeAccount' => array( 'WaħħadKont' ),
 	'GlobalUsers' => array( 'UtentiGlobali' ),
 );
