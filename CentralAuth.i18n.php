@@ -4786,6 +4786,7 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
  * @author Avjoska
  * @author Jaan513
  * @author Ker
+ * @author WikedKentaur
  */
 $messages['et'] = array(
 	'mergeaccount' => 'Kontode ühendamise seis',
@@ -4804,6 +4805,7 @@ $messages['et'] = array(
 	'centralauth-admin-no-unified' => 'Sel kasutajanimel ei ole ühendatud kontot.',
 	'centralauth-admin-delete-title' => 'Kustuta konto',
 	'centralauth-admin-delete-button' => 'Kustuta see konto',
+	'globalusers' => 'Globaalne kasutajate nimekiri',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|päev|päeva}} tagasi',
 	'centralauth-prefs-status' => 'Globaalse konto seisund:',
 	'centralauth-prefs-complete' => 'Kõik korras!',
@@ -8561,7 +8563,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-set-optout' => 'オプトアウト設定',
 	'autologin' => '自動ログイン',
 	'centralauth-autologin-desc' => 'この特別ページはメディアウィキによって内部的に使用されています。あなたが[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。あなたがこのページをリクエストした際に認証データを送信していないため、何も影響はありません。',
-	'globalgroupmembership' => 'グローバルグループのメンバーシップ',
+	'globalgroupmembership' => 'グローバル利用者権限の管理',
 	'globalgrouppermissions' => 'グローバルグループの管理',
 	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。あなたが必要な権限をもっている場合、任意のグループに割り当てられた権限を閲覧あるいは編集できます。全ての権限を除去されたグループは削除されます。',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|閲覧/編集]])',
@@ -10375,7 +10377,7 @@ Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
 	'centralauth-editset-legend' => 'Grupp vu Wikien änneren oder uleeën',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|kucken/änneren]])',
 	'centralauth-editset-new' => 'Eng nei Grupp vu Wikien uleeën',
-	'centralauth-editset-notfound' => 'Grupp vu Wikien net fonnt',
+	'centralauth-editset-notfound' => 'Grupp vu Wikien "$1" net fonnt',
 	'centralauth-editset-legend-edit' => 'D\'Wikigrupp "$1" änneren',
 	'centralauth-editset-legend-new' => 'Eng nei Grupp vu Wikien uleeën',
 	'centralauth-editset-name' => 'Numm:',
@@ -13851,7 +13853,7 @@ $messages['ru'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстрационный режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Объединение учётных записей сейчас работает в демонстрационном (отладочном) режиме, реальные операции объединения отключены. Извините.',
 	'centralauth-error-locked' => 'Вы не можете править, так как ваша учётная запись заблокирована.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ru|Подробнее о '''единой учётной записи''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ru|Узнать больше о '''единой учётной записи''']]…''",
 	'centralauth-list-home-title' => '«Домашний» вики-проект',
 	'centralauth-list-home-dryrun' => 'Для вашей единой учётной записи будут использованы значения пароля и адреса электронной почты в этом вики-проекте.
 Сменить свой «домашний» вики-проект вы сможете позднее.',
@@ -13950,7 +13952,6 @@ $messages['ru'] = array(
 	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
 	'centralauth-prefs-detail-unattached' => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage' => 'Управление глобальной учётной записью',
-	'centralauth-prefs-global' => 'Использовать эти настройки для всех проектов',
 	'centralauth-renameuser-merged' => 'Участник $1 перешёл на единую систему входа, его переименование вызовет потерю связи локального участника с глобальной учётной записью.',
 	'centralauth-renameuser-reserved' => 'Имя участника $2 зарезервировано для глобальной учётной записи.',
 	'centralauth-invalid-wiki' => 'Нет такой вики БД: $1',
