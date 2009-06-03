@@ -5416,7 +5416,7 @@ Désolé !
 
 Ce mode permet toutefois de tester les comptes utilisateurs homonymes des différents wikis reconnus pour permettre aux utilisateurs de connaître les wikis qui disposent de données d’identifications différentes. Chaque projet wiki testé ici continue donc à maintenir et utiliser pour l'identification sa propre base locale de comptes, sans utiliser les identifications unifiées sur la base centrale.",
 	'centralauth-error-locked' => 'Vous ne pouvez rien modifier car votre compte est verrouillé.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur l’'''identification unifiée''']]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|En lire plus sur l’'''identification unifiée''']]…''",
 	'centralauth-list-home-title' => 'Wiki principal',
 	'centralauth-list-home-dryrun' => 'Le mot de passe et l’adresse courriel enregistrée sur ce wiki principal seront utilisés pour la création de votre compte unifié.
 Vous pourrez modifier votre wiki principal par la suite.',
@@ -5514,7 +5514,6 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-prefs-count-unattached' => 'Il subsiste $1 projet{{PLURAL:$1||s}} disposant d’un compte non confirmé à votre nom.',
 	'centralauth-prefs-detail-unattached' => 'Ce site de projet n’a pas été confirmé comme appartenant au compte global.',
 	'centralauth-prefs-manage' => 'Gérer le compte global',
-	'centralauth-prefs-global' => 'Utilisez ces préférences sur tous les projets',
 	'centralauth-renameuser-merged' => 'L’utilisateur $1 a été migré vers le système d’identification unifiée.
 Son renommage ici fera que l’utilisateur local sera détaché du compte global.',
 	'centralauth-renameuser-reserved' => 'L’utilisateur $2 est réservé pour un compte global.',
@@ -6296,7 +6295,7 @@ $messages['gv'] = array(
 	'centralauth-merge-method-primary' => 'wiki thie',
 	'centralauth-merge-method-new' => 'coontys noa',
 	'centralauth-finish-password' => 'Fockle yn arrey:',
-	'centralauth-finish-login' => 'Claare stiagh',
+	'centralauth-finish-login' => 'Log stiagh',
 	'centralauth-admin-username' => "Dt'ennym ymmydeyr:",
 	'centralauth-admin-info-hidden' => 'Follit:',
 	'centralauth-admin-yes' => 'ta',
@@ -11889,7 +11888,7 @@ Zolang de wiki niet bewerkt kan worden, kunt u geen gebruikers samenvoegen.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
 	'centralauth-error-locked' => 'U kunt niet bewerken omdat uw gebruiker geblokkeerd is.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/nl|Lees meer over '''samengevoegd aanmelden''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/nl|Meer lezen over '''samengevoegd aanmelden''']]…''",
 	'centralauth-list-home-title' => 'Thuiswiki',
 	'centralauth-list-home-dryrun' => 'Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor uw samengevoegde gebruiker.
 Later kunt u instellen welke wiki uw thuiswiki is.',
@@ -11990,7 +11989,6 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached' => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
 	'centralauth-prefs-manage' => 'Uw globale gebruiker beheren',
-	'centralauth-prefs-global' => 'Deze voorkeuren in alle projecten gebruiken',
 	'centralauth-renameuser-merged' => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.',
 	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
