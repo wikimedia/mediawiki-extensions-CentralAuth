@@ -4320,7 +4320,7 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 	'centralauth-notice-dryrun' => "<div class='successbox'>Nur demonstracia reĝimo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontunuigo estas nun en prova fazo, do la unuigaj agoj estas malaktivitaj. Ni bedaŭras!',
 	'centralauth-error-locked' => 'Vi ne povas redakti ĉar via konto estas ŝlosita.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/eo|Legi plu pri '''unuigita ensalutado''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/eo|Legu plu pri '''unuigita ensalutado''']]…''",
 	'centralauth-list-home-title' => 'Hejma vikio',
 	'centralauth-list-home-dryrun' => 'La pasvorto kaj retadreso en ĉi tiu vikio estos uzitaj por via unuigita konto. Vi povos ŝanĝi ilin poste en via hejma vikio.',
 	'centralauth-list-attached-title' => 'Ligitaj kontoj',
@@ -4341,8 +4341,8 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 	'centralauth-finish-password' => 'Pasvorto:',
 	'centralauth-finish-login' => 'Ensaluti',
 	'centralauth-finish-send-confirmation' => 'Retpoŝti pasvorton',
-	'centralauth-finish-problems' => 'Ĉu vi renkontas problemon, aŭ ne posedante tiujn aliajn kontojn?
-[[meta:Help:Unified login/eo|Kiel trovi helpon]]...',
+	'centralauth-finish-problems' => 'Ĉu vi ekhavas problemon, aŭ ve ne estas la posedanto de ĉi tiuj aliaj kontoj?
+[[meta:Help:Unified login problems|Kiel trovi helpon]]...',
 	'centralauth-finish-noconfirms' => 'Neniu konto povis esti konfirmita uzante ĉi tiun pasvorton.',
 	'centralauth-finish-incomplete' => 'Pluraj kontoj estis unuigitaj uzante ĉi tiun pasvorton.
 Aliaj kontoj ne jam estas konfirmitaj.',
@@ -14300,6 +14300,13 @@ $messages['sah'] = array(
 	'right-centralauth-admin' => 'Биирдэһиллибит аан ааттары дьаһайыы',
 	'right-centralauth-merge' => 'Ааттары холбооһун',
 	'right-globalgrouppermissions' => 'Аан бөлөхтөрү дьаһайыы',
+);
+
+/** Serbo-Croatian (Srpskohrvatski / Српскохрватски)
+ * @author OC Ripper
+ */
+$messages['sh'] = array(
+	'centralauth-editset-submit' => 'Unesi',
 );
 
 /** Tachelhit (Tašlḥiyt)

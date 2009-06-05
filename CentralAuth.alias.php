@@ -275,6 +275,7 @@ $aliases['ko'] = array(
 $aliases['ksh'] = array(
 	'AutoLogin' => array( 'AutomatteschEnlogge' ),
 	'EditWikiSets' => array( 'WikiJroppe' ),
+	'GlobalUsers' => array( 'Jemeinsam_Metmaacher', 'JemeinsamMetmaacher', 'Jemeinsam_Medmaacher', 'JemeinsamMedmaacher' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
