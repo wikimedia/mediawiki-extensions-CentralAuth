@@ -298,6 +298,13 @@ $aliases['mk'] = array(
 	'GlobalUsers' => array( 'ГлобалниКорисници' ),
 );
 
+/** Marathi (मराठी) */
+$aliases['mr'] = array(
+	'CentralAuth' => array( 'मध्यवर्तीअधिकारी' ),
+	'AutoLogin' => array( 'स्वयंप्रवेश' ),
+	'MergeAccount' => array( 'खातेविलीनीकरण' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'MergeAccount' => array( 'Gabungkan akaun' ),
