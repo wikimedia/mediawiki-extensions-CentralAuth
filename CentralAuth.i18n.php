@@ -4320,7 +4320,7 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 	'centralauth-notice-dryrun' => "<div class='successbox'>Nur demonstracia reĝimo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontunuigo estas nun en prova fazo, do la unuigaj agoj estas malaktivitaj. Ni bedaŭras!',
 	'centralauth-error-locked' => 'Vi ne povas redakti ĉar via konto estas ŝlosita.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/eo|Legu plu pri '''unuigita ensalutado''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Legi plu pri '''unuigita ensalutado''']]…''",
 	'centralauth-list-home-title' => 'Hejma vikio',
 	'centralauth-list-home-dryrun' => 'La pasvorto kaj retadreso en ĉi tiu vikio estos uzitaj por via unuigita konto. Vi povos ŝanĝi ilin poste en via hejma vikio.',
 	'centralauth-list-attached-title' => 'Ligitaj kontoj',
@@ -9643,7 +9643,7 @@ $messages['ko'] = array(
 차단되어 있는 동안, 당신은 계정을 합칠 수 없습니다.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>데모 모드</div><br clear='all' />",
 	'centralauth-error-locked' => '당신의 계정이 잠겼기 때문에 편집할 수 없습니다.',
-	'centralauth-readmore-text' => ":[[meta:Help:Unified_login/ko|'''통합 로그인'''에 대해 더 보기]]...",
+	'centralauth-readmore-text' => ":[[meta:Help:Unified login|'''통합 로그인'''에 대해 더 보기]]...",
 	'centralauth-list-home-title' => '주 위키',
 	'centralauth-list-home-dryrun' => '통합 계정의 비밀번호와 이메일 주소는 이 위키에서 사용되고 있는 것으로 설정됩니다.
 나중에 주 위키 설정을 바꿀 수 있습니다.',

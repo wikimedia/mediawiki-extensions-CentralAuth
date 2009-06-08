@@ -177,6 +177,7 @@ $aliases['gsw'] = array(
 
 /** Gujarati (ગુજરાતી) */
 $aliases['gu'] = array(
+	'CentralAuth' => array( 'કેન્દ્રીયશપથ' ),
 	'AutoLogin' => array( 'સ્વયંભૂલોગીન' ),
 	'GlobalUsers' => array( 'ગ્લોબલસભ્ય' ),
 );
@@ -287,6 +288,12 @@ $aliases['lb'] = array(
 	'GlobalGroupPermissions' => array( 'Global Grupperechter' ),
 	'EditWikiSets' => array( 'Wiki-Seten änneren' ),
 	'GlobalUsers' => array( 'Global Benotzer' ),
+);
+
+/** Lithuanian (Lietuvių) */
+$aliases['lt'] = array(
+	'AutoLogin' => array( 'Automatinis prisijungimas' ),
+	'MergeAccount' => array( 'Sujungti sąskaitas' ),
 );
 
 /** Macedonian (Македонски) */
