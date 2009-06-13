@@ -13626,6 +13626,7 @@ $messages['qu'] = array(
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
+ * @author Minisarm
  */
 $messages['ro'] = array(
 	'mergeaccount' => 'Statusul despre unificarea autentificării',
@@ -13714,11 +13715,12 @@ Un alt wiki a fost fost determinat ca fiind contul de reşedinţă pentru numele
 Toate conturile locale vor continua să existe.
 Parolele conturilor globale create anterior unificării vor reveni la valorile lor de dinainte de unificare.',
 	'centralauth-admin-delete-button' => 'Şterge acest cont',
-	'centralauth-admin-delete-success' => 'Şters cu succes contul global pentru "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-success' => 'Şters cu succes contul global pentru „<nowiki>$1</nowiki>”',
 	'centralauth-admin-nonexistent' => 'Nu există nici un cont global pentru "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Eroare: contul global "<nowiki>$1</nowiki>" nu există',
+	'centralauth-admin-delete-nonexistent' => 'Eroare: contul global „<nowiki>$1</nowiki>” nu există',
 	'centralauth-admin-reason' => 'Motiv:',
 	'centralauth-admin-status-submit' => 'Stabileşte statut',
+	'centralauth-admin-status-nonexistent' => 'Eroare: contul global „<nowiki>$1</nowiki>” nu există.',
 	'globalusers' => 'Listă de utilizatori globali',
 	'centralauth-listusers-locked' => 'încuiat',
 	'centralauth-listusers-attached' => 'există local',
