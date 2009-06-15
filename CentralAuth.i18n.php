@@ -12905,6 +12905,13 @@ $messages['pa'] = array(
 	'centralauth-admin-delete-title' => 'ਅਕਾਊਂਟ ਹਟਾਓ',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'centralauth-finish-login' => 'Kumm nei',
+);
+
 /** Plautdietsch (Plautdietsch)
  * @author Slomox
  */
