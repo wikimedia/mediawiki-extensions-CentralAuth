@@ -179,7 +179,7 @@ $aliases['gsw'] = array(
 $aliases['gu'] = array(
 	'CentralAuth' => array( 'કેન્દ્રીયશપથ' ),
 	'AutoLogin' => array( 'સ્વયંભૂલોગીન' ),
-	'GlobalUsers' => array( 'ગ્લોબલસભ્ય' ),
+	'GlobalUsers' => array( 'વૈશ્વીકસભ્ય' ),
 );
 
 /** Hebrew (עברית)

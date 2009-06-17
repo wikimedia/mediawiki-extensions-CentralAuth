@@ -10702,11 +10702,11 @@ $messages['lo'] = array(
  */
 $messages['lt'] = array(
 	'mergeaccount' => 'Prisiregistravimo unifikacijos statusas',
-	'centralauth-desc' => '[[Special:MergeAccount|Sujungti paskyras]] per visus Wikimedia Foundation projektus',
+	'centralauth-desc' => '[[Special:MergeAccount|Sujungti paskyras]] per visus {{MediaWiki:Centralauth-groupname}} projektus',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sujungia daugiariopas paskyras]] į vieną naudotojo priregistravimą',
 	'centralauth-merge-denied' => 'Atleiskite, bet jūs neturite leidimo patekti į šį puslapį.',
 	'centralauth-merge-notlogged' => 'Prašome <span class="plainlinks">[{{fullurl:Special:UserLogin|returnto=Special%3AMergeAccount}} prisijungti]</span>, jei norite patikrinti ar jūsų sąskaitos buvo pilnai sujungtos.',
-	'centralauth-merge-welcome' => "'''Jūsų naudotojo paskyra dar nepervesta į vieningą Vikimedijos prisiregistravimo sistemą.'''
+	'centralauth-merge-welcome' => "'''Jūsų naudotojo paskyra dar nepervesta į vieningą {{MediaWiki:Centralauth-groupname}} prisiregistravimo sistemą.'''
 
 Jei pasirinksite pervesti savo paskyras, galėsite naudojantis tuo pačiu naudotojo vardu ir slaptažodžiu prisijungti prie visų Vikimedijos projektų visomis kalbomis.
 
@@ -12910,6 +12910,10 @@ $messages['pa'] = array(
  */
 $messages['pdc'] = array(
 	'centralauth-finish-login' => 'Kumm nei',
+	'centralauth-log-status-none' => '(ken)',
+	'centralauth-editgroup-subtitle' => '$1 ennere',
+	'centralauth-editgroup-noset' => '(ken)',
+	'centralauth-editset-nouse' => '(ken)',
 );
 
 /** Plautdietsch (Plautdietsch)
