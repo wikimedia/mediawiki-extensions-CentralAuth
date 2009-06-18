@@ -183,30 +183,51 @@ class CentralAuthHooks {
 			return true;
 		}
 
+		// Clean up username
+		$title = Title::makeTitleSafe( NS_USER, $userName );
+		if ( !$title ) {
+			wfDebug( __METHOD__.": invalid username\n" );
+		}
+		$userName = $title->getText();
+
+		// Try the central user
 		$centralUser = new CentralAuthUser( $userName );
-		$localId = User::idFromName( $userName );
-		
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
 			wfDebug( __METHOD__.": token mismatch\n" );
-		} elseif ( !$centralUser->isAttached() && $localId ) {
-			wfDebug( __METHOD__.": exists, and not attached\n" );
-		} else {
-			if ( !$localId ) {
-				// User does not exist locally, attempt to create it
-				if ( !self::attemptAddUser( $user, $userName ) ) {
-					// Can't create user, give up now
-					return true;
-				}
-			} else {
-				$user->setID( $localId );
-				$user->loadFromId();
-			}
-			// Auth OK.
-			wfDebug( __METHOD__.": logged in from session\n" );
-			self::initSession( $user, $token );
-			$user->centralAuthObj = $centralUser;
-			$result = true;
+			return true;
 		}
+
+		// Try the local user from the slave DB
+		$localId = User::idFromName( $userName );
+
+		// Fetch the user ID from the master, so that we don't try to create the user 
+		// when they already exist, due to replication lag
+		if ( !$localId && wfGetLB()->getReaderIndex() != 0 ) {
+			$dbw = wfGetDB( DB_MASTER );
+			$localId = $dbw->selectField( 'user', 'user_id', 
+				array( 'user_name' => $userName ), __METHOD__ );
+		}
+
+		if ( !$centralUser->isAttached() && $localId ) {
+			wfDebug( __METHOD__.": exists, and not attached\n" );
+			return true;
+		}
+
+		if ( !$localId ) {
+			// User does not exist locally, attempt to create it
+			if ( !self::attemptAddUser( $user, $userName ) ) {
+				// Can't create user, give up now
+				return true;
+			}
+		} else {
+			$user->setID( $localId );
+			$user->loadFromId();
+		}
+		// Auth OK.
+		wfDebug( __METHOD__.": logged in from session\n" );
+		self::initSession( $user, $token );
+		$user->centralAuthObj = $centralUser;
+		$result = true;
 		
 		return true;
 	}
