@@ -320,6 +320,7 @@ You may view and modify any of them, or create a new set.',
 );
 
 /** Message documentation (Message documentation)
+ * @author Aotake
  * @author Beau
  * @author Darth Kule
  * @author Fryed-peach
@@ -358,6 +359,7 @@ $messages['qqq'] = array(
 	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-login-progress' => '{{gender}}
 * (optional) $1 is the user name of the logged in user',
+	'centralauth-log-entry-chgstatus' => '[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
 	'centralauth-log-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-log-status-none' => '{{Identical|None}}',
 	'centralauth-rightslog-entry-groupperms3' => 'A log entry when a user changes the wiki set where the specified global group is applied.
@@ -5452,7 +5454,8 @@ Vous pourrez modifier votre wiki principal par la suite.',
 	'centralauth-finish-password' => 'Mot de passe :',
 	'centralauth-finish-login' => 'Nom d’utilisateur',
 	'centralauth-finish-send-confirmation' => 'Envoyer le mot de passe par courriel',
-	'centralauth-finish-problems' => 'En cas de problème ou si vous ne possédez pas ces autres comptes, consultez l’[[meta:Help:Unified login/fr|aide sur la connexion unifiée]]…',
+	'centralauth-finish-problems' => 'En cas de problème ou si vous ne possédez pas ces autres comptes :
+Consultez l’[[meta:Help:Unified login/fr|aide sur la connexion unifiée]]…',
 	'centralauth-finish-noconfirms' => 'Aucun compte n’a été confirmé en utilisant ce mot de passe.',
 	'centralauth-finish-incomplete' => 'Plusieurs comptes ont été fusionnés en utilisant ce mot de passe. D’autres comptes n’ont cependant pas encore été confirmés.',
 	'centralauth-merge-attempt' => "'''Vérification du mot de passe fourni sur les comptes non fusionnés restants...'''",
@@ -8515,8 +8518,8 @@ $messages['ja'] = array(
 	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-status' => 'グローバルアカウント状態の設定',
 	'centralauth-admin-status-intro' => 'このグローバルアカウントの状態を変更するために、このフォームを利用できます',
-	'centralauth-admin-status-locked' => 'ロックする',
-	'centralauth-admin-status-hidden' => '秘匿する',
+	'centralauth-admin-status-locked' => 'ロック',
+	'centralauth-admin-status-hidden' => '秘匿',
 	'centralauth-admin-status-submit' => '状態を設定',
 	'centralauth-admin-status-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-admin-setstatus-success' => 'このグローバルアカウントの状態の変更に成功しました。',
@@ -8555,7 +8558,7 @@ $messages['ja'] = array(
 	'centralauth-log-entry-hide' => 'グローバルアカウント "<nowiki>$1</nowiki>" を秘匿しました',
 	'centralauth-log-entry-unhide' => 'グローバルアカウント "<nowiki>$1</nowiki>" を秘匿解除しました',
 	'centralauth-log-entry-lockandhide' => 'グローバルアカウント "<nowiki>$1</nowiki>" をロックおよび秘匿しました',
-	'centralauth-log-entry-chgstatus' => 'グローバルアカウント "<nowiki>$1</nowiki>" の状態を変更: $3を解除、$2に設定',
+	'centralauth-log-entry-chgstatus' => 'がグローバルアカウント「<nowiki>$1</nowiki>」の状態を変更: $3を解除、$2に設定',
 	'centralauth-log-status-locked' => 'ロック済み',
 	'centralauth-log-status-hidden' => '秘匿',
 	'centralauth-log-status-none' => '(なし)',
