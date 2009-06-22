@@ -8926,6 +8926,7 @@ $messages['ka'] = array(
 	'centralauth-admin-no' => 'არა',
 	'centralauth-admin-delete-title' => 'ანგარიშის წაშლა',
 	'centralauth-admin-reason' => 'მიზეზი:',
+	'globalusers' => 'გლობალური მომხმარებლების სია',
 	'centralauth-seconds-ago' => '$1 წამის წინ',
 	'centralauth-minutes-ago' => '$1 წუთის წინ',
 	'centralauth-hours-ago' => '$1 საათის წინ',
@@ -10348,6 +10349,8 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-setrename' => 'de Wikigrupp "$2" gouf op "$1" ëmbenannt',
 	'centralauth-rightslog-entry-setnewtype' => 'huet den Typ vu(n) "$1" vun $2 op $3 geännert',
 	'centralauth-rightslog-entry-setchange' => 'huet d\'Wikië an "$1" geännert: derbäigesat: $2; ewechgeholl: $3',
+	'centralauth-rightslog-set-optin' => 'explizit erkläre fir matzemaachen (opt-in)',
+	'centralauth-rightslog-set-optout' => 'explizit erkläre fir net matzemaachen (opt-out)',
 	'autologin' => 'Automatesch aloggen/umellen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
 Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatioune fir dës Säit vun alle verlinkten Domaine mat Hellëf vu Billerlinken unzefroen.
