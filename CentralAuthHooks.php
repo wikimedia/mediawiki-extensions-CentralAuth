@@ -82,7 +82,8 @@ class CentralAuthHooks {
 				),
 			);
 
-		$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'registrationdate' );
+		$after = array_key_exists( 'registrationdate', $preferences ) ? 'registrationdate' : 'editcount';
+		$preferences = wfArrayInsertAfter( $preferences, $prefInsert, $after );
 
 		return true;
 	}
