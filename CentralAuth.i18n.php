@@ -5248,6 +5248,8 @@ Voit vaihtaa kotiwikiäsi myöhemmin tulevaisuudessa.',
 	'centralauth-admin-attached' => 'Täysin yhdistetyt tunnukset',
 	'centralauth-admin-unattached' => 'Liittämättömät tunnukset',
 	'centralauth-admin-no-unattached' => 'Yhdistämättömiä käyttäjätunnuksia ei ole jäljellä.',
+	'centralauth-admin-notblocked' => 'Ei estetty',
+	'centralauth-admin-blocked' => 'Estetty $3 kello $4 asti. Syy: $2',
 	'centralauth-admin-blocked-indef' => 'Estetty ikuisesti. Syy: $1',
 	'centralauth-admin-list-localwiki' => 'Paikallinen wiki',
 	'centralauth-admin-list-attached-on' => 'Liitetty',
@@ -7832,6 +7834,7 @@ Es possibile que tu tenta assignar derectos al mal usator!",
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Bennylin
  * @author Borgx
  * @author Irwangatot
  * @author IvanLanin
@@ -7925,7 +7928,7 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-admin-lookup' => 'Lihat atau ubah data pengguna',
 	'centralauth-admin-permission' => 'Hanya steward yang dapat melakukan penggabungan akun orang lain.',
 	'centralauth-admin-no-unified' => 'Belum ada akun global dengan nama pengguna ini.',
-	'centralauth-admin-info-id' => 'Akun pengguna:',
+	'centralauth-admin-info-id' => 'ID pengguna:',
 	'centralauth-admin-info-registered' => 'Terdaftar:',
 	'centralauth-admin-info-locked' => 'Terkunci:',
 	'centralauth-admin-info-hidden' => 'Tersembunyi:',
@@ -7953,6 +7956,7 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-admin-delete-nonexistent' => 'Kesalahan: akun global "<nowiki>$1</nowiki>" tidak ditemukan.',
 	'centralauth-token-mismatch' => 'Maaf, kami tidak dapat mengolah pengiriman formulir Anda akibat terhapusnya data sesi.',
 	'centralauth-admin-reason' => 'Alasan:',
+	'centralauth-admin-status-hidden' => 'Tersembunyi',
 	'globalusers' => 'Daftar pengguna global',
 	'centralauth-listusers-locked' => 'terkunci',
 	'centralauth-listusers-attached' => 'ada di wiki lokal',
@@ -7988,6 +7992,8 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-log-entry-hide' => 'menyembunyikan akun global "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide' => 'menampilkan kembali akun global "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide' => 'akun "<nowiki>$1</nowiki>" telah dikunci dan disembunyikan',
+	'centralauth-log-status-hidden' => 'tersembunyi',
+	'centralauth-log-status-none' => '(tidak ada)',
 	'centralauth-rightslog-name' => 'Log hak global',
 	'centralauth-rightslog-entry-usergroups' => 'kelompok pengguna global $1 telah diubah dari $2 menjadi $3',
 	'centralauth-rightslog-entry-groupperms' => 'akses kelompok pengguna $1 telah diubah dari $2 menjadi $3',
