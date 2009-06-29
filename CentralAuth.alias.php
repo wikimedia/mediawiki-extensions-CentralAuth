@@ -239,6 +239,15 @@ $aliases['ia'] = array(
 	'GlobalUsers' => array( 'Usatores global' ),
 );
 
+/** Indonesian (Bahasa Indonesia) */
+$aliases['id'] = array(
+	'CentralAuth' => array( 'Otoritas pusat', 'OtoritasPusat' ),
+	'AutoLogin' => array( 'Masuk log otomatis', 'MasukLogOtomatis' ),
+	'MergeAccount' => array( 'Gabungkan akun', 'GabungkanAkun' ),
+	'GlobalGroupMembership' => array( 'Hak pengguna global', 'HakPenggunaGlobal' ),
+	'GlobalUsers' => array( 'Pengguna global', 'PenggunaGlobal' ),
+);
+
 /** Italian (Italiano) */
 $aliases['it'] = array(
 	'MergeAccount' => array( 'UnificaUtenze' ),
