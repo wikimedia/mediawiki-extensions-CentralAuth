@@ -5556,8 +5556,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-prefs-count-unattached' => 'Il subsiste $1 projet{{PLURAL:$1||s}} disposant d’un compte non confirmé à votre nom.',
 	'centralauth-prefs-detail-unattached' => 'Ce site de projet n’a pas été confirmé comme appartenant au compte global.',
 	'centralauth-prefs-manage' => 'Gérer le compte global',
-	'centralauth-renameuser-merged' => 'L’utilisateur $1 a été migré vers le système d’identification unifiée.
-Son renommage ici fera que l’utilisateur local sera détaché du compte global.',
+	'centralauth-renameuser-merged' => 'L’utilisateur $1 a été migré vers le système d’identification unifiée. Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-renameuser-reserved' => 'L’utilisateur $2 est réservé pour un compte global.',
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
