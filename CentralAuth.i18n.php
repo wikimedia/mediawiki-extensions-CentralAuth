@@ -8888,7 +8888,9 @@ Nalika panjenengan [[Special:UserLogin|mlebu log]], sistem mlebu log kapusat ngi
 Panjenengan wis ngaksès kaca iki tanpa mènèhi data otentikasi, saéngga kaca iki ora mènèhi réaksi apa-apa.',
 	'globalgroupmembership' => 'Kaanggotan ing kelompok-kelompok global',
 	'globalgrouppermissions' => 'Ngurus kelompok global',
-	'centralauth-globalgroupperms-grouplist' => 'Kelompok-kelompok global sing kapacak ing ngisor iki wis dikonfigurasi. Panjenengan bisa ndeleng lan nyunting idin-idin sing diwènèhaké ing saben kelompok. Sawijining kelompok bisa dibusak carané mawa ngilangi kabèh hak saka kelompok iku.',
+	'centralauth-globalgroupperms-grouplist' => 'Klompok global sing kapacak ing ngisor iki wis dikonfigurasi. 
+Panjenengan bisa ndeleng utawa nyunting hak sing diwènèhaké ing saben klompok, yèn panjenengan nduwèni hak kanggo kuwi. 
+Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|deleng/sunting]])',
 	'centralauth-existinggroup-legend' => 'Kelompok-kelompok sing wis ana',
 	'centralauth-newgroup-legend' => 'Nggawé kelompok anyar',
