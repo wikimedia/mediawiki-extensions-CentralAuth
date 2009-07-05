@@ -3385,6 +3385,7 @@ $messages['cy'] = array(
 /** Danish (Dansk)
  * @author Byrial
  * @author Jon Harald Søby
+ * @author Masz
  * @author Peter Andersen
  */
 $messages['da'] = array(
@@ -3425,6 +3426,7 @@ Dine konti er ikke blevet ændret endnu.',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|måned|måneder}} siden',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|år|år}} siden',
 	'centralauth-prefs-status' => 'Global status for konto:',
+	'globalgrouppermissions' => 'Administration af globale brugergrupper',
 );
 
 /** German (Deutsch)
