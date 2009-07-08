@@ -6618,10 +6618,11 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Kaustubh
+ * @author Kiranmayee
  */
 $messages['hi'] = array(
 	'mergeaccount' => 'खाता एकत्रिकरण स्थिती',
-	'centralauth-desc' => 'विकिमीडिया फाऊंडेशन विकियोंमें [[Special:MergeAccount|सदस्यत्व एकत्रिकरण]] करें',
+	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} विकियोंमें [[Special:MergeAccount|सदस्यत्व एकत्रिकरण]] करें',
 	'centralauth-mergeaccount-desc' => 'एक सदस्यकी [[Special:MergeAccount|सभी खातें]] एकत्रित करें।',
 	'centralauth-merge-denied' => 'माफ किजीये, इस पन्नेपर जानेकी आपको अनुमति नहीं हैं।',
 	'centralauth-merge-notlogged' => 'कृपया आपका खाता एकत्रिकरण बराबर हुआ हैं यह जाँचने के लिये <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} लॉग इन]</span> करें।',
@@ -8609,7 +8610,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-set-optout' => 'オプトアウト設定',
 	'autologin' => '自動ログイン',
 	'centralauth-autologin-desc' => 'この特別ページはメディアウィキによって内部的に使用されています。あなたが[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。あなたがこのページをリクエストした際に認証データを送信していないため、何も影響はありません。',
-	'globalgroupmembership' => 'グローバル利用者権限の管理',
+	'globalgroupmembership' => 'グローバルグループへの所属',
 	'globalgrouppermissions' => 'グローバルグループの管理',
 	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。あなたが必要な権限をもっている場合、任意のグループに割り当てられた権限を閲覧あるいは編集できます。全ての権限を除去されたグループは削除されます。',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|閲覧/編集]])',
@@ -10935,10 +10936,12 @@ $messages['mhr'] = array(
 );
 
 /** Macedonian (Македонски)
+ * @author Bjankuloski06
  * @author Brest
  */
 $messages['mk'] = array(
 	'centralauth-groupname' => 'Викимедија Фондацијата',
+	'centralauth-prefs-not-managed' => 'Не користите обединета сметка',
 	'centralauth-login-progress' => 'Ваше најавување во проектите на {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Ваше одјавување од другите проекти на {{MediaWiki:Centralauth-groupname}}:',
 );
@@ -12667,7 +12670,7 @@ $messages['nso'] = array(
  */
 $messages['oc'] = array(
 	'mergeaccount' => "Estatut d’unificacion del compte d'utilizaire",
-	'centralauth-groupname' => 'la fondacion Wikimèdia',
+	'centralauth-groupname' => 'la fondacion Wikimedia',
 	'centralauth-desc' => "[[Special:MergeAccount|Fusionar los comptes d'utilizaires]] dels wikis de {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona maites comptes]] per l’identificacion unica',
 	'centralauth-merge-denied' => 'O planhèm, avètz pas los dreches per accedir a aquesta pagina.',
@@ -12814,7 +12817,7 @@ Poiretz modificar vòstre projècte principal mai tard.',
 	'centralauth-login-progress' => 'Vos sètz connectat(ada) suls autres projèctes de {{MediaWiki:Centralauth-groupname}} :',
 	'centralauth-logout-progress' => 'Vos sètz desconnectat(ada) dels autres projèctes de {{MediaWiki:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Sètz estat(ada) connectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Sètz estat(ada) desconnectat(ada) automaticament als autres projèctes de la fondacion Wikimèdia.',
+	'centralauth-logout-no-others' => 'Sètz estat(ada) desconnectat(ada) automaticament als autres projèctes de la fondacion Wikimedia.',
 	'centralauth-log-name' => 'Jornal de la gestion dels comptes globals',
 	'centralauth-log-header' => 'Aqueste jornal conten las operacions que concernisson los comptes globals : supressions, varrolhatges e desvarrolhatges.',
 	'centralauth-log-entry-delete' => 'a suprimit lo compte global « <nowiki>$1</nowiki> »',
@@ -14367,7 +14370,7 @@ $messages['sah'] = array(
 	'centralauth-editset-nowikis' => 'Биики ыйыллыбатах.',
 	'centralauth-editset-nouse' => '(суох)',
 	'centralauth-editset-usage' => 'Бу бөлөхтөргө туттуллар:',
-	'centralauth-editset-badwikis' => 'Бу биикилэр суохтар: $1.',
+	'centralauth-editset-badwikis' => 'Бу {{PLURAL:$2|биики суох|биикилэр суохтар}}: $1.',
 	'centralauth-editset-success' => 'Биики чөмөҕө уларыйда.',
 	'centralauth-editset-return' => 'Сүрүн көрүҥҥэ төнүн',
 	'right-globalgroupmembership' => 'аан бөлөхтөргө киириини уларытыы',
@@ -15622,6 +15625,7 @@ $messages['ta'] = array(
 
 /** Telugu (తెలుగు)
  * @author Chaduvari
+ * @author Kiranmayee
  * @author Mpradeep
  * @author Veeven
  * @author వైజాసత్య
@@ -15629,15 +15633,13 @@ $messages['ta'] = array(
 $messages['te'] = array(
 	'mergeaccount' => 'ప్రవేశపు ఏకీకరణ స్థితి',
 	'centralauth-groupname' => 'వికీమీడియా ఫౌండేషన్',
-	'centralauth-desc' => 'వికీమీడియా ఫౌండేషన్ వికీలన్నింటిలో [[Special:MergeAccount|ఖాతాని విలీనం చేయి]]',
+	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} వికీలన్నింటిలో [[Special:MergeAccount|ఖాతాని విలీనం చేయి]]',
 	'centralauth-mergeaccount-desc' => 'వాడుకరి ఏకీకృత ప్రవేశానికై [[Special:MergeAccount|బహుళ ఖాతాలను విలీనం చేస్తుంది]]',
 	'centralauth-merge-denied' => 'క్షమించండి, ఈ పేజీని చూడడానికి మీరు అనుమతి లేదు.',
 	'centralauth-merge-notlogged' => 'మీ ఖాతాలు పూర్తిగా విలీనమయినవని సరిచూసుకునేందుకు, దయచేసి <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} లోనికి ప్రవేశించండి]</span>.',
-	'centralauth-merge-welcome' => "'''మీ వాడుకరి ఖాతా ఇంకా వికీమీడియా యొక్క ఏకీకృత ప్రవేశపు వ్యవస్థ లోనికి విలీనం కాలేదు.'''
+	'centralauth-merge-welcome' => "'''మీ వాడుకరి ఖాతా ఇంకా {{MediaWiki:Centralauth-groupname}} యొక్క ఏకీకృత ప్రవేశపు వ్యవస్థ లోనికి విలీనం కాలేదు.'''
 
-మీ ఖాతాలని విలీనం చేస్తే, వికీమీడియా యొక్క అన్ని ప్రాజెక్టు వికీలలోనికి అందుబాటులో ఉన్న అన్ని భాషలలోనికి ఒకే వాడుకరి పేరు మరియు సంకేతపదం ఉపయోగించి మీరు ప్రవేశించవచ్చు.
-
-అందువల్ల [http://commons.wikimedia.org/ వికీమీడియా కామన్స్]లోనికి ఎగుమతి చేయడం లాంటి బహుళ ప్రాజెక్టులలో పనులు సులువౌతాయు, మరియు ఇది ఇద్దరు వ్యక్తులు వేర్వేరు ప్రాజెక్టులలో ఒకే వాడుకరి పేరు ఎంచుకోవడం వల్ల వచ్చే అయోమయాన్ని మరియు సంఘర్షణని నివారిస్తుంది.
+మీ ఖాతాలని విలీనం చేస్తే, {{MediaWiki:Centralauth-groupname}} యొక్క అన్ని ప్రాజెక్టు వికీలలోనికి అందుబాటులో ఉన్న అన్ని భాషలలోనికి ఒకే వాడుకరి పేరు మరియు సంకేతపదం ఉపయోగించి మీరు ప్రవేశించవచ్చు.
 
 మీ వాడుకరి పేరుని ఇతర సైట్లో వేరెవరైనా ఇప్పటికే తీసేసుకునివుంటే ఇది వారిని కదపదు, కానీ తర్వాత వారితోనూ లేదా నిర్వాహకులతోనూ పరిష్కరించుకోవడానికి అవకాశమిస్తుంది.",
 	'centralauth-merge-step1-title' => 'ప్రవేశ ఏకీకరణని మొదలుపెట్టు',
@@ -15788,7 +15790,7 @@ $messages['te'] = array(
 	'centralauth-editgroup-success-text' => 'మీరు $1 గుంపుకు అనుమతులను జయప్రదంగా మార్చారు.
 [[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|మార్చండి]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'వారికి ఖాతా కలిగిన ఒక వికీని ఎంచుకోండి:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'వారికి ఖాతా కలిగిన ఒక వికీ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "సర్వత్రిక వాడుకరి '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేరు. మీరు హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేదు, గమనించండి!",
 	'centralauth-editset-name' => 'పేరు:',
 	'centralauth-editset-type' => 'రకం:',
