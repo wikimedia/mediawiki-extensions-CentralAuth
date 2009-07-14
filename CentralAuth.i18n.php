@@ -4840,6 +4840,7 @@ $messages['et'] = array(
 );
 
 /** Basque (Euskara)
+ * @author An13sa
  * @author Bengoa
  * @author Kobazulo
  */
@@ -4875,7 +4876,7 @@ $messages['eu'] = array(
 	'centralauth-days-ago' => 'Orain dela {{PLURAL:$1|egun bat|$1 egun}}',
 	'centralauth-months-ago' => 'Orain dela {{PLURAL:$1|hilabete bat|$1 hilabete}}',
 	'centralauth-years-ago' => 'Orain dela {{PLURAL:$1|urte bat|$1 urte}}',
-	'centralauth-prefs-unattached' => 'Berretsi gabe',
+	'centralauth-prefs-unattached' => 'Baieztatu gabe',
 	'centralauth-prefs-complete' => 'Dena behar bezala dago!',
 	'autologin' => 'Saio hasiera automatikoa',
 	'centralauth-newgroup-legend' => 'Talde berri bat sortu',
@@ -8953,16 +8954,77 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 
 /** Georgian (ქართული)
  * @author Malafaya
+ * @author გიორგიმელა
  */
 $messages['ka'] = array(
 	'centralauth-merge-dryrun-or' => "'''ან'''",
+	'centralauth-foreign-link' => 'მომხმარებელი $1  $2-ში',
+	'centralauth-merge-method-primary' => 'მშობლიური ვიკი',
+	'centralauth-merge-method-empty' => 'უწვლილო',
+	'centralauth-merge-method-mail' => 'ელექტრონული ფოსტის დადასტურება',
+	'centralauth-merge-method-password' => 'პაროლით დადასტურება',
+	'centralauth-merge-method-admin' => 'ადმინისტრატორის გაერთიანებული ანგარიში',
+	'centralauth-merge-method-new' => 'ახალი ანგარიში',
+	'centralauth-merge-method-login' => 'ლოგინით დადასტურება',
+	'centralauth-finish-title' => 'გაერთიენების დასრულება',
+	'centralauth-finish-text' => 'იმ შემთხვევაშ, თუ მოცემული ანგარიშები თქვენია, თქვენ შეგიძლიათ დაასრულოთ ერთიან ანგარიშზე გადასვლა მათდამი პაროლის შეყვანით',
 	'centralauth-finish-password' => 'პაროლი:',
+	'centralauth-attach-title' => 'ანგარიშის დადასტურება',
+	'centralauth-attach-text' => 'ეს ანგარიში ჯერ არ გადატანილა ერთიანი ანგარიშის სისტემაში, თუ გლობალური ანგარიში ასევე თქვენ გეკუთნით, თქვენ შეგიძლიათ მოცემული ანგარიშის გაერთიანება, გლობალური ანგარიშის პაროლის მითითებით.',
+	'centralauth-attach-submit' => 'ანგარიშის გადატანა',
+	'centralauth-attach-success' => 'ანგარიში გადატანილი იქნა ერთიანი ანგარიშის სისტემაში',
+	'centralauth' => 'სახელთა გაერთიანების ადმინისტრირება',
+	'centralauth-admin-intro' => 'ეს ინტერფეისი შესაძლოა იქნას გამოყენებული გლობალური ანგარიშების მართვისთვის.',
+	'centralauth-admin-manage' => 'მომხმარებლებზე ინფორმაციის მართვა.',
 	'centralauth-admin-username' => 'მომხმარებლის სახელი:',
+	'centralauth-admin-lookup' => 'მომხმარებელზე ინფორმაციის ხილვა ან რედაქტირება',
+	'centralauth-admin-permission' => 'მხოლოდ სტიუარდებს შეუძლიათ სხვადასხვა ადამიანების ანგარიშების გაერთიანება.',
+	'centralauth-admin-no-unified' => 'ამ მომხმარებლის სახელის ერთიანი ანგარიში არ არსებობს',
+	'centralauth-admin-info-id' => 'მომხმარებლის იდენტიფიკაცია:',
+	'centralauth-admin-info-registered' => 'დარეგისტრირდა:',
+	'centralauth-admin-info-locked' => 'დაიბლოკა:',
+	'centralauth-admin-info-hidden' => 'დამალულა:',
 	'centralauth-admin-yes' => 'ჰო',
 	'centralauth-admin-no' => 'არა',
+	'centralauth-admin-attached' => 'სრულად გაერთიანებული ანგარიშები',
+	'centralauth-admin-unattached' => 'არაგაერთიანებული ანგარიშები',
+	'centralauth-admin-no-unattached' => 'არაგაერთიანებული ანგარიშები არ დარჩა',
+	'centralauth-admin-notblocked' => 'არ არის დაბლოკილი',
+	'centralauth-admin-blocked' => 'დაბლოკილია $3 $4-მდე. მიზეზი: $2',
+	'centralauth-admin-blocked-indef' => 'სამუდამოდ დაიბლოკა. მიზეზი: $1',
+	'centralauth-admin-list-localwiki' => 'ადგილობრივი ვიკი-პროექტი:',
+	'centralauth-admin-list-attached-on' => 'გაერთიანდა',
+	'centralauth-admin-list-method' => 'მეთოდი',
+	'centralauth-admin-list-editcount' => 'რედაქტირებათა მთვლელი',
+	'centralauth-admin-list-blocked' => 'ბლოკირების სტატუსი',
+	'centralauth-admin-unmerge' => 'არჩეულის დაყოფა',
+	'centralauth-admin-merge' => 'არჩეულის გაერთიანება',
+	'centralauth-admin-bad-input' => 'გაერთიანების არასწორი არჩევა',
+	'centralauth-admin-none-selected' => 'შესაცვლელი ანგარიშები არ არიან არჩეულნი',
+	'centralauth-admin-already-unmerged' => ' გატარება $1 უკვე დაყოფილია',
+	'centralauth-admin-unmerge-success' => 'წარმატებით დაიყო $1 {{PLURAL:$1|ანგარიში|ანგარიშები|ანგარიშების}}',
 	'centralauth-admin-delete-title' => 'ანგარიშის წაშლა',
+	'centralauth-admin-delete-description' => 'გლობალური ანგარიშის წაშლა გამოიწვევს გლობალური კონფიგურაციის წაშლას, ყველა ანგარიშის გაყოფას და გლობალური ანგარიშის სახელის განთავისუფლება, რაც მისცემს სხვა მომხმარებელს დაიკავოს ეს სახელი. 
+ყველა ლოკალური ანგარიში გააგრძელებს არსებობას.
+იმ ლოკალური ანგარიშების პაროლები, როლებიც გაერთიანებამდე შეიქმნა, დაიბრუნებენ პირვანდელ კომბინაციებს.
+Все локальные учётные записи продолжат существовать.
+Пароли локальных учётных записей, созданные до объединения, вернут свои старые значения.',
+	'centralauth-admin-delete-button' => 'ანგარიშის წაშლა',
+	'centralauth-admin-delete-success' => 'გლობალური ანგარიში წარმატებით წაიშალა «<nowiki>$1</nowiki>»',
+	'centralauth-admin-nonexistent' => 'გლობალური ანგარიში  «<nowiki>$1</nowiki>» არ არსებობს.',
+	'centralauth-admin-delete-nonexistent' => 'შეცდომა. გლობალური ანგარიში  «<nowiki>$1</nowiki>» არ არსებობს.',
+	'centralauth-token-mismatch' => 'სამწუხაროდ ჩვენ ვერ გავაგრძელებთ თქვენი ფორმის დამუშავებას, რადგანაც სეანსის მონაცემები დაიკარგა.',
 	'centralauth-admin-reason' => 'მიზეზი:',
+	'centralauth-admin-status' => 'ანგარიშის გლობალური სტატუსის დაყენება.',
+	'centralauth-admin-status-intro' => 'თქვენ შეგიძლიათ ამ ფორმის გამოენება გლობალური ანგარიშის სტატუსის შესაცვლელად.',
+	'centralauth-admin-status-locked' => 'დაბლოკილია',
+	'centralauth-admin-status-hidden' => 'დამალულია',
+	'centralauth-admin-status-submit' => 'სტატუსის დაყენება',
+	'centralauth-admin-status-nonexistent' => 'შეცდომა. გლობალური ანგარიში «<nowiki>$1</nowiki>» არ არსებობს',
+	'centralauth-admin-setstatus-success' => 'თქვენ წარმატებით შეცვალეთ ამ გლობალური ანგარიშის სტატუსი.',
 	'globalusers' => 'გლობალური მომხმარებლების სია',
+	'centralauth-listusers-locked' => 'ჩაკწტილია',
+	'centralauth-listusers-attached' => 'ლოკალურად არსებობს',
 	'centralauth-seconds-ago' => '$1 წამის წინ',
 	'centralauth-minutes-ago' => '$1 წუთის წინ',
 	'centralauth-hours-ago' => '$1 საათის წინ',
@@ -10941,7 +11003,7 @@ $messages['mhr'] = array(
  */
 $messages['mk'] = array(
 	'centralauth-groupname' => 'Викимедија Фондацијата',
-	'centralauth-prefs-not-managed' => 'Не користите обединета сметка',
+	'centralauth-prefs-not-managed' => 'Не користи унифицирано корисничко име',
 	'centralauth-login-progress' => 'Ваше најавување во проектите на {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Ваше одјавување од другите проекти на {{MediaWiki:Centralauth-groupname}}:',
 );
@@ -12946,10 +13008,12 @@ $messages['pa'] = array(
  * @author Xqt
  */
 $messages['pdc'] = array(
+	'centralauth-finish-password' => 'Paesswatt:',
 	'centralauth-finish-login' => 'Kumm nei',
 	'centralauth-admin-username' => 'Yuuser-Naame:',
 	'centralauth-admin-info-id' => 'Yuuser-ID:',
 	'centralauth-admin-yes' => 'Ya',
+	'centralauth-admin-no' => 'Nee',
 	'centralauth-admin-reason' => 'Grund:',
 	'centralauth-log-status-none' => '(ken)',
 	'centralauth-editgroup-subtitle' => '$1 ennere',
@@ -15764,6 +15828,7 @@ $messages['te'] = array(
 	'centralauth-rightslog-entry-usergroups' => '$1 యొక్క సార్వత్రిక గుంపు సభ్యత్వాన్ని $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-entry-groupperms' => '$1 యొక్క గుంపు అనుమతులను $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-header' => 'సార్వత్రిక గుంపులపై జరిగిన చర్యల చిట్టా ఇది: సభ్యత్వం మరియు అనుమతుల మార్పులు',
+	'centralauth-rightslog-entry-setchange' => "''$1'' లోని వికీలు మార్చబడ్డాయి: కలిపినవి: $2; తీసేసినవి: $3",
 	'globalgroupmembership' => 'సార్వత్రిక గుంపుల్లో సభ్యత్వం',
 	'globalgrouppermissions' => 'సార్వత్రిక గుంపు నిర్వహణ',
 	'centralauth-globalgroupperms-grouplist' => 'కింది సార్వత్రిక గుంపులు తయారయి ఉన్నాయి. వీటిని చూడటమే కాక, వాటిలో మార్పులు చెయ్యవచ్చు. గుంపుకు ఉన్న అనుమతులను తీసివేయడం ద్వారా ఆ గుంపును తొలగించవచ్చు.',
