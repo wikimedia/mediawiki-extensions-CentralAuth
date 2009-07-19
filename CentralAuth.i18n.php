@@ -2113,6 +2113,7 @@ $messages['bg'] = array(
 	'centralauth-admin-delete-nonexistent' => 'Грешка: Не съществува глобална сметка „<nowiki>$1</nowiki>”.',
 	'centralauth-token-mismatch' => 'За съжаление не успяхме да обработим изпратения формуляр поради загуба на данните за текущата ви сесия.',
 	'centralauth-admin-reason' => 'Причина:',
+	'centralauth-admin-status-nonexistent' => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
 	'globalusers' => 'Списък на глобалните сметки',
 	'centralauth-listusers-locked' => 'заключена',
 	'centralauth-listusers-attached' => 'съществува локално',
@@ -2139,6 +2140,8 @@ $messages['bg'] = array(
 	'centralauth-account-exists' => 'Не може да бъде създадена сметка: желаното потребителско име е заето от Единната система за влизане.',
 	'centralauth-login-progress' => 'Влизате автоматично и в следните проекти на {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Излизате автоматично и от следните проекти на {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Беше извършено автоматично влизане в другите проекти на {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Беше извършено автоматично излизане от другите проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Дневник на глобалното управление на сметки',
 	'centralauth-log-header' => 'Този дневник съдържа запис на операциите по глобалните сметки: изтривания, заключвания и отключвания.',
 	'centralauth-log-entry-delete' => 'изтрита глобална сметка „<nowiki>$1</nowiki>“',
@@ -5144,14 +5147,14 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'mergeaccount' => 'Käyttäjätunnusten yhdistämisen tila',
-	'centralauth-groupname' => 'Wikimedia-säätiö',
-	'centralauth-desc' => 'Mahdollistaa [[Special:MergeAccount|käyttäjätunnusten yhdistämisen]] {{MediaWiki:Centralauth-groupname}}-wikeissä.',
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-desc' => 'Mahdollistaa [[Special:MergeAccount|käyttäjätunnusten yhdistämisen]] {{MediaWiki:Centralauth-groupname}} -wikeissä.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.',
 	'centralauth-merge-denied' => 'Et ole oikeutettu käyttämään tätä sivua.',
 	'centralauth-merge-notlogged' => 'Kirjaudu <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} sisään]</span>, jos haluat tarkistaa, ovatko käyttäjätunnuksesi yhdistetty.',
-	'centralauth-merge-welcome' => "'''Tunnustasi ei ole vielä siirretty yhden tunnuksen {{MediaWiki:Centralauth-groupname}}-kirjautumisjärjestelmään.'''
+	'centralauth-merge-welcome' => "'''Tunnustasi ei ole vielä siirretty yhden tunnuksen {{MediaWiki:Centralauth-groupname}} -kirjautumisjärjestelmään.'''
 
-Jos päivität tunnuksesi, voit jatkossa kirjautua kaikkiin {{MediaWiki:Centralauth-groupname}}-projekteihin ja niiden kieliversioihin samalla käyttäjätunnuksella ja salasanalla.
+Jos päivität tunnuksesi, voit jatkossa kirjautua kaikkiin {{MediaWiki:Centralauth-groupname}} -hankkeisiin ja niiden kieliversioihin samalla käyttäjätunnuksella ja salasanalla.
 
 Jos käyttäjänimesi on jo varattu toisessa projektissa, yhdistäminen ei haittaa näitä toisia käyttäjiä, mutta antaa sinulle mahdollisuuden neuvotella käyttäjänimestä näiden toisten käyttäjien kanssa, tai myöhemmin ylläpitäjän kanssa.",
 	'centralauth-merge-step1-title' => 'Tunnusten yhdistäminen',
@@ -5287,7 +5290,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-renameuser-reserved' => 'Käyttäjätunnus $2 on varattu yhdistetylle tunnukselle.',
 	'centralauth-invalid-wiki' => 'Wiki-tietokantaa $1 ei ole olemassa.',
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
-	'centralauth-login-progress' => 'Kirjaudutaan {{MediaWiki:Centralauth-groupname}}-projekteihin:',
+	'centralauth-login-progress' => 'Kirjaudutaan {{MediaWiki:Centralauth-groupname}} -hankkeisiin:',
 	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{MediaWiki:Centralauth-groupname}}-projekteista:',
 	'centralauth-log-name' => 'Yhdistettyjen tunnusten käsittelyloki',
 	'centralauth-log-header' => 'Tässä lokissa on yhdistettyjen käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.',
@@ -11902,10 +11905,29 @@ Kann angahn, dat du den verkehrten Bruker Rechten totowiesen versöchst!",
  * @author Slomox
  */
 $messages['nds-nl'] = array(
+	'centralauth-groupname' => 'de Wikimedia Foundation',
+	'centralauth-desc' => "[[Special:MergeAccount|Samen-evoegen gebrukers]] in wiki's van {{MediaWiki:Centralauth-groupname}}",
+	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Meerdere gebrukers bie mekaar doon]] veur 't eenmaolige inlogsysteem",
 	'centralauth-merge-denied' => 'Je hemmen gien toegang tot disse pagina.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld an]</span> um nao te kieken of joew gebrukers allemaole bie mekaar edaon bin.',
+	'centralauth-merge-welcome' => "'''Joew gebruker is nog neet emigreerd naor 't samen-evoegen anmeldsysteem van {{MediaWiki:Centralauth-groupname}}.'''
+
+A-j derveur kiezen um joew gebrukers te migreren, da-j ku-j mit dezelfde gebrukersnaam-wachwoordcombinasie anmelden bie alle wiki's van {{MediaWiki:Centralauth-groupname}} in alle beschikbaore talen.
+
+As der al een aander mit joew gebrukersnaam actief is op een aandere webstee, dan hef dat gien gevolgen veur disse gebruker. Je kunnen dat laoter mit disse gebruker of een beheerder oplossen.",
+	'centralauth-merge-step1-title' => "Beginnen mit 't samenvoegen van gebrukers",
+	'centralauth-merge-step2-title' => 'Meer gebrukers bevestigen',
+	'centralauth-merge-step2-detail' => "Een antal gebrukers konnen neet an de op-egeven thuuswiki ekoppeld wonnen. As disse gebrukers bie joe heuren, ku-j dat angeven deur 't wachwoord veur de gebrukers op te geven.",
+	'centralauth-merge-step2-submit' => 'Anmeldinfermasie bevestigen',
+	'centralauth-merge-dryrun-complete' => 'Alle bestaonde gebrukers kunnen autematisch bie mekaar edaon wonnen!
+
+Der bin nog gien wiezigingen an joew gebruker emaak.',
 	'centralauth-merge-attempt' => "'''Bezig mit 't contreleren van de op-egeven wachwoorden veur de nog neet samen-evoegen gebrukers...'''",
+	'centralauth' => 'Samen-evoeg anmelden beheren',
+	'centralauth-admin-already-unmerged' => '$1 over-esleugen. Heurt al neet meer bie mekaar',
 	'globalusers' => 'Gebrukerslieste (globaal)',
 	'centralauth-prefs-status' => 'Globale gebrukerstaotus:',
+	'centralauth-account-exists' => "Disse gebruker kan neet an-emaak wonnen: de gebrukersnaam is al in gebruuk in 't systeem veur samen-evoeg anmelden.",
 	'centralauth-login-progress' => 'Je wonnen an-emeld bie aandere prejekken van Wikimedia:',
 	'centralauth-logout-progress' => 'Je wonnen of-emeld bie aandere prejekken van {{int:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Logboek globaal gebrukersbeheer',

@@ -396,6 +396,7 @@ $aliases['oc'] = array(
 /** Polish (Polski) */
 $aliases['pl'] = array(
 	'CentralAuth' => array( 'Zarządzanie kontem uniwersalnym' ),
+	'AutoLogin' => array( 'Automatyczne logowanie' ),
 	'MergeAccount' => array( 'Łączenie kont', 'Konto uniwersalne' ),
 	'GlobalGroupMembership' => array( 'Globalne uprawnienia' ),
 	'GlobalGroupPermissions' => array( 'Globalne uprawnienia grup' ),
