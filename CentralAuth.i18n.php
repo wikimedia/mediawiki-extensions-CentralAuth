@@ -11367,7 +11367,7 @@ Kami akan menyemak padanan kata laluan dan alamat e-mel yang didaftarakan dengan
 Tiada perubahan akan dilakukan sehinggalah anda mengesahkan bahawa semuanya kelihatan beres.',
 	'centralauth-merge-step1-submit' => 'Sahkan maklumat akaun',
 	'centralauth-merge-step2-title' => 'Sahkan akaun lagi',
-	'centralauth-merge-step2-detail' => 'Beberapa akaun tidak dapat dipadankan secara automatik dengan wiki rumah yang dinyatakan.\\n
+	'centralauth-merge-step2-detail' => 'Beberapa akaun tidak dapat dipadankan secara automatik dengan wiki rumah yang dinyatakan.
 Sekiranya akaun-akaun ini milik anda, anda boleh mengesahkannya dengan memberikan kata laluan bagi akaun-akaun tersebut.',
 	'centralauth-merge-step2-submit' => 'Sahkan maklumat akaun',
 	'centralauth-merge-dryrun-complete' => 'Semua akaun yang sedia ada boleh digabungkan secara automatik!
