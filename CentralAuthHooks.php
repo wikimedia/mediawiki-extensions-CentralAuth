@@ -576,4 +576,28 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+
+	static function onSecurePoll_GetUserParams( $auth, $user, &$params ) {
+		if ( $user->isAnon() ) {
+			return true;
+		}
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if( !($centralUser->exists() && $centralUser->isAttached()) ) {
+			return true;
+		}
+		$wikiID = $centralUser->getHomeWiki();
+		if ( strval( $wikiID ) === '' ) {
+			return true;
+		}
+		$wiki = WikiMap::getWiki( $wikiID );
+		$wikiUrl = $wiki->getUrl( '' );
+		$parts = explode( '/', $wikiUrl );
+		if ( isset( $parts[2] ) ) {
+			$params['properties']['ca-local-domain'] = $params['domain'];
+			$params['domain'] = $parts[2];
+		}
+		$params['properties']['ca-local-url'] = $params['url'];
+		$params['url'] = $wiki->getUrl( 'User:' . str_replace( ' ', '_', $user->getName() ) );
+		return true;
+	}
 }

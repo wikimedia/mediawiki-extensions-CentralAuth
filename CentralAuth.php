@@ -174,6 +174,9 @@ $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
 $wgHooks['RenameUserPreRename'][] = 'CentralAuthHooks::onRenameUserPreRename';
 $wgHooks['RenameUserComplete'][] = 'CentralAuthHooks::onRenameUserComplete';
 
+// For SecurePoll
+$wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUserParams';
+
 $wgAvailableRights[] = 'centralauth-admin';
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'globalgrouppermissions';

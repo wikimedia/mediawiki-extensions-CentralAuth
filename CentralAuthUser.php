@@ -18,7 +18,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 2;
+	/*private*/ var $mVersion = 3;
 	/*private*/ var $mDelayInvalidation = 0;
 	
 	static $mCacheVars = array(
@@ -33,6 +33,7 @@ class CentralAuthUser extends AuthPluginUser {
 		'mAuthenticationTimestamp',
 		'mGroups',
 		'mRights',
+		'mHomeWiki',
 
 		# Store the string list instead of the array, to save memory, and 
 		# avoid unserialize() overhead
@@ -92,6 +93,7 @@ class CentralAuthUser extends AuthPluginUser {
 		unset( $this->mGroups );
 		unset( $this->mAttachedArray );
 		unset( $this->mAttachedList );
+		unset( $this->mHomeWiki );
 	}
 	
 	/**
@@ -130,7 +132,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$sql =
 			"SELECT gu_id, lu_wiki, gu_salt, gu_password,gu_auth_token, " .
-				"gu_locked,gu_hidden,gu_registration,gu_email,gu_email_authenticated " .
+			"gu_locked,gu_hidden, gu_registration, gu_email, " . 
+			"gu_email_authenticated, gu_home_db " .
 			"FROM $globaluser " .
 			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_wiki=? " .
 			"WHERE gu_name=?";
@@ -207,6 +210,7 @@ class CentralAuthUser extends AuthPluginUser {
 			$this->mAuthenticationTimestamp =
 				wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
 			$this->mFromMaster = $fromMaster;
+			$this->mHomeWiki = $row->gu_home_db;
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
@@ -379,6 +383,14 @@ class CentralAuthUser extends AuthPluginUser {
 	public function getRegistration() {
 		$this->loadState();
 		return wfTimestamp( TS_MW, $this->mRegistration );
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getHomeWiki() {
+		$this->loadState();
+		return $this->mHomeWiki;
 	}
 
 	/**
