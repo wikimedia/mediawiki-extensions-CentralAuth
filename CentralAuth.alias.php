@@ -285,6 +285,8 @@ $aliases['ko'] = array(
 /** Ripoarisch (Ripoarisch) */
 $aliases['ksh'] = array(
 	'AutoLogin' => array( 'AutomatteschEnlogge' ),
+	'GlobalGroupMembership' => array( 'JemeinsamMetmaacherJroppeRääschte' ),
+	'GlobalGroupPermissions' => array( 'JemeinsamJroppe' ),
 	'EditWikiSets' => array( 'WikiJroppe' ),
 	'GlobalUsers' => array( 'Jemeinsam_Metmaacher', 'JemeinsamMetmaacher', 'Jemeinsam_Medmaacher', 'JemeinsamMedmaacher' ),
 );
@@ -424,6 +426,17 @@ $aliases['sa'] = array(
 	'GlobalGroupPermissions' => array( 'वैश्विकगटसंमती' ),
 	'EditWikiSets' => array( 'सम्पादनविकिगट' ),
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
+);
+
+/** Slovak (Slovenčina) */
+$aliases['sk'] = array(
+	'CentralAuth' => array( 'CentrálneOverenie' ),
+	'AutoLogin' => array( 'AutomatickéPrihlasovanie' ),
+	'MergeAccount' => array( 'ZlúčenieÚčtov' ),
+	'GlobalGroupMembership' => array( 'GlobálnePrávaPoužívateľa' ),
+	'GlobalGroupPermissions' => array( 'GlobálneSkupinovéOprávnenia' ),
+	'EditWikiSets' => array( 'UpraviťWikiMnožiny' ),
+	'GlobalUsers' => array( 'GlobálniPoužívatelia' ),
 );
 
 /** Sundanese (Basa Sunda) */
