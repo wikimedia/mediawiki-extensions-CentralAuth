@@ -119,18 +119,18 @@ class SpecialCentralAuth extends SpecialPage {
 			
 			if ( !$isLocked && $setLocked ) {
 				$lockStatus = $globalUser->adminLock();
-				$added[] = wfMsg( 'centralauth-log-status-locked' );
+				$added[] = wfMsgForContent( 'centralauth-log-status-locked' );
 			} elseif( $isLocked && !$setLocked ) {
 				$lockStatus = $globalUser->adminUnlock();
-				$removed[] = wfMsg( 'centralauth-log-status-locked' );
+				$removed[] = wfMsgForContent( 'centralauth-log-status-locked' );
 			}
 			
 			if ( !$isHidden && $setHidden ) {
 				$hideStatus = $globalUser->adminHide();
-				$added[] = wfMsg( 'centralauth-log-status-hidden' );
+				$added[] = wfMsgForContent( 'centralauth-log-status-hidden' );
 			} elseif( $isHidden && !$setHidden ) {
 				$hideStatus = $globalUser->adminUnhide();
-				$removed[] = wfMsg( 'centralauth-log-status-hidden' );
+				$removed[] = wfMsgForContent( 'centralauth-log-status-hidden' );
 			}
 			
 			$good =
@@ -140,9 +140,9 @@ class SpecialCentralAuth extends SpecialPage {
 			// Logging etc
 			if ( $good && (count($added) || count($removed)) ) {
 				$added = count($added) ?
-					implode( ', ', $added ) : wfMsg( 'centralauth-log-status-none' );
+					implode( ', ', $added ) : wfMsgForContent( 'centralauth-log-status-none' );
 				$removed = count($removed) ?
-					implode( ', ', $removed ) : wfMsg( 'centralauth-log-status-none' );
+					implode( ', ', $removed ) : wfMsgForContent( 'centralauth-log-status-none' );
 				
 				$reason = $wgRequest->getText( 'wpReason' );
 				$this->logAction(
