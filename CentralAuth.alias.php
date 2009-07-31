@@ -428,6 +428,13 @@ $aliases['sa'] = array(
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
+/** Sinhala (සිංහල) */
+$aliases['si'] = array(
+	'CentralAuth' => array( 'මධ්‍යඅවසර' ),
+	'AutoLogin' => array( 'ස්වයංක්‍රීයපිවිසුම' ),
+	'MergeAccount' => array( 'ගිණුමඑක්කරන්න' ),
+);
+
 /** Slovak (Slovenčina) */
 $aliases['sk'] = array(
 	'CentralAuth' => array( 'CentrálneOverenie' ),
