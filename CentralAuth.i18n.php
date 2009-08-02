@@ -4834,7 +4834,10 @@ $messages['et'] = array(
  * @author Kobazulo
  */
 $messages['eu'] = array(
+	'centralauth-groupname' => 'Wikimedia Fundazioa',
 	'centralauth-merge-step1-title' => 'Kontuen bateratzea hasi',
+	'centralauth-merge-step2-title' => 'Kontu gehiago egiaztatu',
+	'centralauth-merge-dryrun-or' => "'''edo'''",
 	'centralauth-merge-step3-title' => 'Kontu bateratua sortu',
 	'centralauth-merge-step3-submit' => 'Kontuak bateratu',
 	'centralauth-merge-method-empty' => 'ekarpenik gabe',
