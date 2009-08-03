@@ -4777,6 +4777,7 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
  * @author Avjoska
  * @author Jaan513
  * @author Ker
+ * @author Pikne
  * @author WikedKentaur
  */
 $messages['et'] = array(
@@ -4821,6 +4822,7 @@ $messages['et'] = array(
 	'centralauth-log-status-hidden' => 'peidetud',
 	'centralauth-log-status-none' => '(ei midagi)',
 	'autologin' => 'Automaatne sisselogimine',
+	'globalgrouppermissions' => 'Globaalse rühma haldamine',
 	'centralauth-editset-name' => 'Nimi:',
 	'centralauth-editset-type' => 'Tüüp:',
 	'centralauth-editset-wikis' => 'Vikid:',
