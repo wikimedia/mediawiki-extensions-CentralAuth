@@ -4782,6 +4782,8 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
  */
 $messages['et'] = array(
 	'mergeaccount' => 'Kontode ühendamise seis',
+	'centralauth-desc' => '[[Special:MergeAccount|Ühendab kontod]] vikides, mida haldab {{MediaWiki:Centralauth-groupname}}',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Ühendab kontod]] ühtseks sisselogimiseks.',
 	'centralauth-merge-denied' => 'Vabandust, teil puudub sellele lehele ligipääs.',
 	'centralauth-merge-notlogged' => 'Palun <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} logi sisse]</span>, et näha, kas su kontod on terviklikult ühendatud.',
 	'centralauth-merge-step1-submit' => 'Kinnita sisselogimise informatsioon',
@@ -5363,6 +5365,7 @@ Olet kutsunut tätä sivua ilman sisäänkirjautumistietoja, joten sivu ei tee m
 Voit tarkastella tai muokata minkä tahansa ryhmän käyttöoikeuksia, jos sinulla on oikeudet.
 Ryhmä voidaan poistaa ottamalla siltä pois kaikki käyttöoikeudet.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|näytä tai muokkaa]])',
+	'centralauth-globalgroupperms-nogroups' => 'Globaaleja ryhmiä ei ole määritelty.',
 	'centralauth-existinggroup-legend' => 'Nykyiset ryhmät',
 	'centralauth-newgroup-legend' => 'Luo uusi ryhmä',
 	'centralauth-newgroup-intro' => 'Tällä lomakkeella voit antaa oikeuksia uusille ryhmille.
