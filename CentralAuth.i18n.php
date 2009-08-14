@@ -485,8 +485,9 @@ $messages['af'] = array(
 	'centralauth-editgroup-reason' => 'Rede vir wysiging:',
 	'centralauth-editset-name' => 'Naam:',
 	'centralauth-editset-type' => 'Tipe:',
-	'centralauth-editset-wikis' => "Wiki's:",
+	'centralauth-editset-wikis' => "Wiki's:<br />(geskei met spasies)",
 	'centralauth-editset-reason' => 'Rede:',
+	'centralauth-editset-nouse' => '(geen)',
 	'right-globalgroupmembership' => 'Wysig lidmaatskap aan globale groepe',
 	'right-centralauth-admin' => 'Administreer globale rekeninge',
 	'right-globalgrouppermissions' => 'Bestuur globale groepe',
@@ -2550,6 +2551,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-invalid-wiki' => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists' => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-log-entry-unlock' => 'en deus dibrennet ar gont hollek "<nowiki>$1</nowiki>"',
+	'centralauth-rightslog-entry-setchange' => 'en deus kemmet ar wikioù e "$1" : ouzhpennet : $2; tennet : $3',
 	'centralauth-newgroup-legend' => 'Krouiñ ur strollad nevez',
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
 );
@@ -5067,17 +5069,28 @@ $messages['et'] = array(
 	'centralauth-login-progress' => 'Teid logitakse sisse ka teistesse Wikimedia projektidesse:',
 	'centralauth-logout-progress' => 'Teid logitakse välja ka teistest Wikimedia projektidest:',
 	'centralauth-log-name' => 'Globaalsete kontode logi',
-	'centralauth-log-entry-delete' => 'kustutatud globaalne konto "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-lock' => 'lukustatud globaalne konto "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-unlock' => 'avatud globaalne konto "<nowiki>$1</nowiki>"',
-	'centralauth-log-entry-hide' => 'peidetud globaalne konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-delete' => 'kustutas globaalse konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-lock' => 'lukustas globaalse konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unlock' => 'tegi globaalse konto "<nowiki>$1</nowiki>" lukust lahti',
+	'centralauth-log-entry-hide' => 'peitis globaalse konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-unhide' => 'muutis globaalse konto "<nowiki>$1</nowiki>" jälle nähtavaks',
+	'centralauth-log-entry-lockandhide' => 'lukustas ja peitis globaalse konto "<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-chgstatus' => 'muutis globaalse konto "<nowiki>$1</nowiki>" olekut. Määratud: $2. Ärastatud: $3',
 	'centralauth-log-status-locked' => 'lukustatud',
 	'centralauth-log-status-hidden' => 'peidetud',
 	'centralauth-log-status-none' => '(ei midagi)',
 	'centralauth-rightslog-name' => 'Globaalsete õiguste logi',
-	'centralauth-rightslog-entry-groupperms2' => 'muudetud rühma $1 õigusi. 
-Lisatud $2;
+	'centralauth-rightslog-entry-usergroups' => 'muutis kasutaja $1 globaalse rühma liikmesuse rühmast $2 rühma $3',
+	'centralauth-rightslog-entry-groupperms' => 'muutis rühma $1 kasutajaõigused $2 õigusteks $3',
+	'centralauth-rightslog-entry-groupperms2' => 'muutis rühma $1 õigusi.
+Lisatud $2.
 Eemaldatud $3',
+	'centralauth-rightslog-entry-groupperms3' => 'muutis rühma $1 kasutava vikikomplekti $2 komplektiks $3',
+	'centralauth-rightslog-entry-newset' => 'lõi $2 vikide komplekti $1, millesse kuuluvad järgnevad vikid: $3',
+	'centralauth-rightslog-entry-setrename' => 'nimetas vikikomplekti "$2" ümber komplektiks "$1"',
+	'centralauth-rightslog-entry-setchange' => 'muutis vikisid komplektis "$1". Lisatud: $2. Eemaldatud: $3',
+	'centralauth-rightslog-set-optin' => 'kaasamispõhise',
+	'centralauth-rightslog-set-optout' => 'loobumispõhise',
 	'autologin' => 'Automaatne sisselogimine',
 	'globalgroupmembership' => 'Liikmelisus globaalsetes rühmades',
 	'globalgrouppermissions' => 'Globaalse rühma haldamine',
@@ -13991,11 +14004,15 @@ Um grupo pode ser eliminado através da remoção de todos os direitos a ele atr
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author Giro720
  * @author Heldergeovane
  */
 $messages['pt-br'] = array(
+	'centralauth-admin-bad-input' => 'Seleção para fusão inválida',
 	'centralauth-prefs-count-attached' => 'A sua conta está ativa em $1 {{PLURAL:$1|sítio|sítios}} de projeto.',
 	'centralauth-prefs-count-unattached' => 'Ainda existem contas não confirmadas com seu nome de usuário em $1 {{PLURAL:$1|projeto|projetos}}.',
+	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está ativo:',
+	'centralauth-globalgroupmembership-badknownwiki' => "O usuário global '''$1''' não está ativo na wiki especificada (''$2''). É possível que esteja atribuindo direitos ao usuário errado!",
 );
 
 /** Quechua (Runa Simi)
@@ -17589,7 +17606,7 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 	'centralauth-invalid-wiki' => 'No ghe xe un database wiki co sto nome: $1',
 	'centralauth-account-exists' => "No se pol crear l'account: el nome utente richiesto se l'à zà tolto qualchedun altro nel sistema de login unificà.",
 	'centralauth-login-progress' => 'Acesso ai altri progeti de {{MediaWiki:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Disconession dai altri progeti de {{MediaWiki:Centralauth-groupname}}>',
+	'centralauth-logout-progress' => 'Disconession dai altri progeti de {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Te sì stà automaticamente loggà su altri projeti de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Te sì stà automaticamente sloggà da altri projecy de {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => "Registro de gestion de l'account globale",
