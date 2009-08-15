@@ -5599,6 +5599,8 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
 	'centralauth-login-progress' => 'Kirjaudutaan {{MediaWiki:Centralauth-groupname}} -hankkeisiin:',
 	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{MediaWiki:Centralauth-groupname}}-projekteista:',
+	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään kaikkiin hankkeisiin joita {{int:Centralauth-groupname}} pyörittää.',
+	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos kaikista muista hankkeista joita {{int:Centralauth-groupname}} pyörittää.',
 	'centralauth-log-name' => 'Yhdistettyjen tunnusten käsittelyloki',
 	'centralauth-log-header' => 'Tässä lokissa on yhdistettyjen käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.',
 	'centralauth-log-entry-delete' => 'poisti yhdistetyn käyttäjätunnuksen <nowiki>$1</nowiki>',
@@ -5988,7 +5990,7 @@ Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y
 	'centralauth-not-owner-text' => 'Lo compto utilisator « $1 » at étâ ôtomaticament assignê u propriètèro du compto dessus $2.
 
 S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient lo mot de pâssa mêtre por cél compto dessus :',
-	'centralauth-notice-dryrun' => "<div class='successbox'>Môdo de dèmonstracion solament</div><br clear='all'/>",
+	'centralauth-notice-dryrun' => "<div class='successbox'>Fôrma de dèmonstracion solament</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La fusion des comptos est ora en môdo de dèmonstracion ou d’èprôva, pôvont vêr p’oncor verément fusionar de comptos. Dèsolâ !',
 	'centralauth-readmore-text' => ":''[[w:frp:Vouiquipèdia:Login unico|Nen savêr de ples sur lo '''compto unico''']]...''",
 	'centralauth-list-home-title' => 'Projèt principâl',
@@ -11089,6 +11091,7 @@ $messages['lo'] = array(
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Garas
  * @author Homo
  * @author Hugo.arg
  * @author Matasg
@@ -11096,86 +11099,133 @@ $messages['lo'] = array(
  * @author Vpovilaitis
  */
 $messages['lt'] = array(
-	'mergeaccount' => 'Prisiregistravimo unifikacijos statusas',
+	'mergeaccount' => 'Prisijungimo suvienodinimo būsena',
 	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-desc' => '[[Special:MergeAccount|Sujungti paskyras]] per visus {{MediaWiki:Centralauth-groupname}} projektus',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sujungia daugiariopas paskyras]] į vieną naudotojo priregistravimą',
+	'centralauth-desc' => '[[Special:MergeAccount|Sujungti paskyras]] visuose {{MediaWiki:Centralauth-groupname}} projektuose',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sujungia kelias paskyras]] į vieną naudotojo prisijungimą',
 	'centralauth-merge-denied' => 'Atleiskite, bet jūs neturite leidimo patekti į šį puslapį.',
-	'centralauth-merge-notlogged' => 'Prašome <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prisijungti]</span>, jei norite patikrinti ar jūsų sąskaitos buvo pilnai sujungtos.',
-	'centralauth-merge-welcome' => "'''Jūsų naudotojo paskyra dar nepervesta į vieningą {{MediaWiki:Centralauth-groupname}} prisiregistravimo sistemą.'''
+	'centralauth-merge-notlogged' => 'Prašome <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prisijungti]</span>, jei norite patikrinti, ar jūsų paskyros buvo visiškai sujungtos.',
+	'centralauth-merge-welcome' => "'''Jūsų naudotojo paskyra dar nepervesta į vieningą {{MediaWiki:Centralauth-groupname}} prisijungimo sistemą.'''
 
-Jei pasirinksite pervesti savo paskyras, galėsite naudojantis tuo pačiu naudotojo vardu ir slaptažodžiu prisijungti prie visų Vikimedijos projektų visomis kalbomis.
+Jei pasirinksite pervesti savo paskyras, galėsite naudojantis tuo pačiu naudotojo vardu ir slaptažodžiu prisijungti prie visų {{MediaWiki:Centralauth-groupname}} projektų visomis galimomis kalbomis.
 
-Dėl to bus paprasčiau dirbti bendruose projektuose, pavyzdžiui [http://commons.wikimedia.org/ Vikitekoje] bei išvengsite konfliktų ir painiavos, kai du žmonės pasirenka tą patį naudotojo vardą skirtinguose projektuose.
-
-Jei kažkas jau turi paskyrą jūsų naudotojo vardu kitame projekte, tai nepaveiks to naudotojo, tačiau jūs galėsite su juo ar su projekto admnistratoriumi aptarti paskyrų pervadinimą.",
-	'centralauth-merge-step1-title' => 'Pradėti registravimosi unifikaciją',
+Jei kažkas jau turi paskyrą jūsų naudotojo vardu kitame projekte, tai nepaveiks to naudotojo, tačiau jūs galėsite su juo ar su projekto administratoriumi aptarti paskyrų pervadinimą.",
+	'centralauth-merge-step1-title' => 'Pradėti prisijungimo suvienodinimą',
 	'centralauth-merge-step1-detail' => 'Prašom įvesti savo paskyros slaptažodį.
-Jūsų slaptažodis ir registruotas elektroninis paštas bus patikrintas kituose projektuose, ar duomenys sutampa.
-Jokie pakeitimai neįvyks kol jūs nepatvirtinsite, jog viskas yra gerai.',
+Jūsų slaptažodis ir registruotas el. pašto adresas bus patikrintas kituose projektuose, ar duomenys sutampa.
+Jokie pakeitimai neįvyks, kol jūs nepatvirtinsite, jog viskas yra gerai.',
 	'centralauth-merge-step1-submit' => 'Patvirtinti prisijungimo informaciją',
-	'centralauth-merge-step2-title' => 'Patvirtinti daugiau sąskaitų',
-	'centralauth-merge-step2-detail' => 'Kaikurios paskyros negali būti automatiškai sujungtos, nes neatitinka jūsų pagrindinės wiki paskyros.
-Jei šios paskyros priklauso jums, jūs galite patvirtinti, kad jos tkrai jūsų įvesdamas jų slaptažodžius.',
-	'centralauth-merge-step2-submit' => 'Patvirtinkite prisiregistravimo informaciją',
+	'centralauth-merge-step2-title' => 'Patvirtinti daugiau paskyrų',
+	'centralauth-merge-step2-detail' => 'Kai kurios paskyros negali būti automatiškai sujungtos, nes neatitinka jūsų pagrindinės paskyros.
+Jei šios paskyros priklauso jums, jūs galite patvirtinti, kad jos tikrai jūsų, įvesdami jų slaptažodžius.',
+	'centralauth-merge-step2-submit' => 'Patvirtinkite prisijungimo informaciją',
 	'centralauth-merge-dryrun-complete' => 'Visos egzistuojančios paskyros gali būti automatiškai sujungtos!
 
-Kol kas jokie pakeitimai su jūsų paskiromis neįvyko.',
-	'centralauth-merge-dryrun-incomplete' => 'Jums galima tęsti, tačiau kaikurios paskyros negali būti automatiškai patikrintos ir nebus sujungtos netrukus.
+Kol kas jokie pakeitimai su jūsų paskyromis neįvyko.',
+	'centralauth-merge-dryrun-incomplete' => 'Jums galima tęsti, tačiau kai kurios paskyros negali būti automatiškai patikrintos ir nebus iš karto sujungtos.
 Jūs galėsite jas sujungti vėliau.
 
 Kol kas jokių pakeitimų su jūsų paskyromis neįvyko.',
-	'centralauth-merge-dryrun-or' => "'''ar'''",
-	'centralauth-merge-dryrun-home' => 'Perkėlimo sistema negali patvirtinti, kad jūs esate šio naudotojo vardo šeimininkas namų wiki.
+	'centralauth-merge-dryrun-or' => "'''arba'''",
+	'centralauth-merge-dryrun-home' => 'Perkėlimo sistema negali patvirtinti, kad jūs esate šio naudotojo naudotojo pagrindinio projekto paskyros savininkas.
 
-Kitoje wiki nustatyta paskyra jūsų naudotojo vardui kaip namų wiki; sekite žemiau esančia nuoroda ir ten prisiregistruokite kad galėtumėte užbaigti paskyrų perkėlimą.',
+Kitame projekte nustatyta paskyra jūsų naudotojo vardui kaip pagrindinė paskyra; eikite žemiau esančia nuoroda ir ten prisijunkite, kad galėtumėte užbaigti paskyrų perkėlimą.',
 	'centralauth-merge-step3-title' => 'Sukurti vieningą paskyrą',
-	'centralauth-merge-step3-detail' => 'Jūs esate pasiruošęs sukurti vieningą paskyrą šiose wiki:',
+	'centralauth-merge-step3-detail' => 'Jūs esate pasiruošęs sukurti vieningą paskyrą šiuose projektuose:',
 	'centralauth-merge-step3-submit' => 'Sujungti paskyras',
-	'centralauth-complete' => 'Sujungimo registravimas užbaigtas!',
-	'centralauth-incomplete' => 'Sujungimo registravimas neužbaigtas!',
-	'centralauth-complete-text' => 'Dabar jūs galite prisijungti prie bet kurio Vikimedijos projekto nekurdamas naujos paskyros.',
+	'centralauth-merge-no-accounts' => 'Nebuvo rasta jokios atitinkančios jūsų vardą paskyros centrinėje paskyrų lentelėje!
+Duomenų bazė gali būti pažeista.',
+	'centralauth-merge-home-password' => 'Pagrindinis šios paskyros projektas (parodyta žemiau) turi kitokį slaptažodį, nei jūs įvedėte.
+Prašome įvesti pagrindinio projekto slaptažodį.',
+	'centralauth-complete' => 'Prisijungimo suvienijimas baigtas!',
+	'centralauth-incomplete' => 'Prisijungimo suvienijimas nebaigtas!',
+	'centralauth-complete-text' => 'Dabar jūs galite prisijungti prie bet kurio {{MediaWiki:Centralauth-groupname}} projekto nekurdami naujos paskyros.',
+	'centralauth-incomplete-text' => 'Kai jūsų prisijungimas bus suvienytas, jūs galėsite prisijungti prie bet kurio {{MediaWiki:Centralauth-groupname}} projekto nekurdami naujos paskyros.',
+	'centralauth-not-owner-text' => 'Naudotojo vardas „$1“ buvo automatiškai priskirtas $2 paskyros savininkui.
+
+Jei tai jūs, jūs galite baigti prisijungimo suvienijimą tiesiog čia įvesdami pagrindinį tos paskyros slaptažodį:',
+	'centralauth-blocked-text' => 'Jūsų pagrindiniame projekte (parodyta žemiau) yra blokuojamas redagavimas.
+Prašome susisiekti su administratoriumi šiame projekte, kad ją atblokuotų.
+Kol ji užblokuota, jūs negalite sujungti savo paskyrų.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Tik demonstracinis režimas</div><br clear='all'/>",
-	'centralauth-error-locked' => 'Jūs negalite redaguoti, kadangi Jūsų paskyra yra blokuota.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Skaityk daugiau apie '''unifikuotą prisijungimą''']]…''",
-	'centralauth-list-home-title' => 'Pirminė wiki',
+	'centralauth-disabled-dryrun' => 'Paskyrų suvienijimas šiuo metu yra demonstraciniame / derinimo režime, todėl tikrosios sujungimo operacijos yra išjungtos.
+Atsiprašome!',
+	'centralauth-error-locked' => 'Jūs negalite redaguoti, kadangi Jūsų paskyra yra užblokuota.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Sužinokite daugiau apie '''suvienytąjį prisijungimą''']]…''",
+	'centralauth-list-home-title' => 'Pagrindinis projektas',
+	'centralauth-list-home-dryrun' => 'Šio projekto slaptažodis ir el. pašto adresas bus naudojamas jūsų suvienytoje paskyroje.',
 	'centralauth-list-attached-title' => 'Prijungtos paskyros',
-	'centralauth-list-attached' => 'Paskyra vardu "$1" kiekvienoje iš sekančių vietų buvo automatiškai priskirta unifikuotai registracijai:',
-	'centralauth-list-attached-dryrun' => 'Paskyra vardu "$1" kiekvienoje iš sekančių vietų bus automatiškai priskirta unifikuotai registracijai:',
+	'centralauth-list-attached' => 'Paskyra, pavadinta „$1“, kiekvienoje iš šių svetainių buvo automatiškai priskirta prie suvienytosios paskyros:',
+	'centralauth-list-attached-dryrun' => 'Paskyra, pavadinta „$1“, kiekvienoje iš šių svetainių bus automatiškai priskirta prie suvienytosios paskyros:',
 	'centralauth-list-unattached-title' => 'Neprijungtos paskyros',
-	'centralauth-merge-method-primary' => 'pagrindinė wiki',
-	'centralauth-merge-method-empty' => 'nėra indėlio',
+	'centralauth-list-unattached' => 'Paskyra „$1“ negali būti automatiškai patvirtinta kaip priklausanti jums šiose svetainėse;
+tikriausiai jos turi kitokį slaptažodį nei jūsų pagrindinė paskyra:',
+	'centralauth-foreign-link' => '$2 naudotojas $1',
+	'centralauth-merge-method-primary' => 'pagrindinis projektas',
+	'centralauth-merge-method-empty' => 'nėra įnašo',
 	'centralauth-merge-method-mail' => 'patvirtinta elektroniniu paštu',
 	'centralauth-merge-method-password' => 'patvirtinta slaptažodžiu',
 	'centralauth-merge-method-admin' => 'administruoti sujungtą paskyrą',
-	'centralauth-merge-method-new' => 'nauja sąskaita',
+	'centralauth-merge-method-new' => 'nauja paskyra',
 	'centralauth-merge-method-login' => 'patvirtinta prisijungimu',
-	'centralauth-finish-title' => 'Baigti jungimą',
-	'centralauth-finish-password' => 'Slaptažodis',
+	'centralauth-finish-title' => 'Baigti sujungimą',
+	'centralauth-finish-text' => 'Jei šios paskyros priklauso jums, jūs galite baigti prisijungimo suvienijimo procesą tiesiog čia įvesdami slaptažodžius kitomis paskyroms:',
+	'centralauth-finish-password' => 'Slaptažodis:',
 	'centralauth-finish-login' => 'Prisijungti',
 	'centralauth-finish-send-confirmation' => 'Siųsti slaptažodį elektroniniu paštu',
+	'centralauth-finish-problems' => 'Turite problemų, arba jūs nesate šių kitų paskyrų savininkas?
+[[meta:Help:Unified login problems|Kaip rasti pagalbą]]…',
+	'centralauth-finish-noconfirms' => 'Šiuo slaptažodžiu negalima patvirtinti jokių paskyrų.',
+	'centralauth-finish-incomplete' => 'Kelios paskyros buvo sujungtos naudojant šį slaptažodį.
+Kitos paskyros dar nepatvirtintos.',
+	'centralauth-merge-attempt' => "'''Tikrinimas pateiktas slaptažodis likusiose nesujungtose paskyrose…'''",
+	'centralauth-attach-list-attached' => 'Suvienodinta paskyra, pavadinta „$1“ apima šias paskyras:',
 	'centralauth-attach-title' => 'Patvirtinkite paskyrą',
+	'centralauth-attach-text' => 'Ši paskyra dar nebuvo perkelta į vieningą paskyrą.
+Jei pagrindinė paskyra yra taip pat jūsų, jūs galite prijungti šią paskyrą, jei įvesite pagrindinės paskyros slaptažodį:',
 	'centralauth-attach-submit' => 'Migruoti paskyrą',
-	'centralauth-attach-success' => 'Paskyra buvo migruota į unifikuotą paskyrą.',
-	'centralauth' => 'Unifikuotos registracijos valdymas',
+	'centralauth-attach-success' => 'Paskyra buvo migruota į suvienytąją paskyrą.',
+	'centralauth' => 'Suvienytojo prisijungimo administravimas',
+	'centralauth-admin-intro' => 'Ši sąsaja gali būti naudojama administruoti pagrindinėms paskyroms.',
 	'centralauth-admin-manage' => 'Naudotojo duomenų valdymas',
 	'centralauth-admin-username' => 'Naudotojo vardas:',
 	'centralauth-admin-lookup' => 'Peržiūrėti arba redaguoti naudotojo duomenis',
-	'centralauth-admin-no-unified' => 'Šis naudotojas neturi unifikuotos paskyros',
+	'centralauth-admin-permission' => 'Tik ūkvedžiai gali sujungti kitų žmonių paskyras.',
+	'centralauth-admin-no-unified' => 'Šis naudotojas neturi suvienytosios paskyros.',
 	'centralauth-admin-info-id' => 'Naudotojo ID:',
 	'centralauth-admin-info-registered' => 'Registruotas:',
 	'centralauth-admin-info-locked' => 'Blokuotas:',
 	'centralauth-admin-info-hidden' => 'Paslėptas:',
 	'centralauth-admin-yes' => 'taip',
 	'centralauth-admin-no' => 'ne',
-	'centralauth-admin-attached' => 'Pilnai sujungtos paskyros',
-	'centralauth-admin-list-localwiki' => 'Lokalus wiki',
+	'centralauth-admin-attached' => 'Visiškai sujungtos paskyros',
+	'centralauth-admin-unattached' => 'Neprijungtos paskyros',
+	'centralauth-admin-no-unattached' => 'Nelikę jokių nesujungtų paskyrų.',
+	'centralauth-admin-notblocked' => 'Neužblokuotas',
+	'centralauth-admin-blocked' => 'Blokuotas, baigiasi $3 $4. Priežastis: $2',
+	'centralauth-admin-blocked-indef' => 'Užblokuotas neribotam laikui. Priežastis: $1',
+	'centralauth-admin-list-localwiki' => 'Vietinis projektas',
+	'centralauth-admin-list-attached-on' => 'Prijungta prie',
 	'centralauth-admin-list-method' => 'Metodas',
-	'centralauth-admin-merge' => 'Pasirinkto prijungimas',
-	'centralauth-admin-bad-input' => 'Blogas prijungimo pasirinkimas',
-	'centralauth-admin-delete-title' => 'Pašalinti sąskaitą',
+	'centralauth-admin-list-editcount' => 'Redagavimų skaičius',
+	'centralauth-admin-list-blocked' => 'Blokavimo būsena',
+	'centralauth-admin-unmerge' => 'Atskirti pažymėtus',
+	'centralauth-admin-merge' => 'Sujungti pažymėtus',
+	'centralauth-admin-bad-input' => 'Neleistinas sujungimo pasirinkimas',
+	'centralauth-admin-none-selected' => 'Nepasirinkta jokia paskyra keitimui.',
+	'centralauth-admin-already-unmerged' => 'Praleidžiamas $1, jau išskirta',
+	'centralauth-admin-unmerge-success' => 'Sėkmingai {{PLURAL:$1|išskirta $1 paskyra|išskirtos $1 paskyros|išskirtos $1 paskyrų}}',
+	'centralauth-admin-delete-title' => 'Pašalinti paskyrą',
+	'centralauth-admin-delete-description' => 'Ištrinti bendrąją paskyrą bus ištrinti visi bendrieji nustatymai, atjungtos visos vietinės paskyros, ir paliks bendrąjį vardą laisvą kitiems naudotojams perimti.
+Visos vietinės paskyros išliks.
+Slaptažodžiai vietinėse paskyrose, sukurtose prieš sujungimą, bus grąžinti į buvusius prieš sujungimą.',
 	'centralauth-admin-delete-button' => 'Ištrinti šią paskyrą',
+	'centralauth-admin-delete-success' => 'Sėkmingai ištrinta bendroji „<nowiki>$1</nowiki>“ paskyra',
+	'centralauth-admin-nonexistent' => 'Nėra bendrosios „<nowiki>$1</nowiki>“ paskyros',
+	'centralauth-admin-delete-nonexistent' => 'Klaida: bendroji „<nowiki>$1</nowiki>“ paskyra neegzistuoja.',
+	'centralauth-token-mismatch' => 'Deja, mes negalime apdoroti jūsų pateiktos formos duomenų dėl sesijos duomenų praradimo.',
 	'centralauth-admin-reason' => 'Priežastis:',
+	'centralauth-admin-status' => 'Nustatyti bendrosios paskyros būseną',
 	'centralauth-seconds-ago' => 'prieš $1 {{PLURAL:$1|sekundę|sekundes|sekundžių}}',
 	'centralauth-minutes-ago' => 'prieš $1 {{PLURAL:$1|minutę|minutes|minučių}}',
 	'centralauth-hours-ago' => 'prieš $1 {{PLURAL:$1|valandą|valandas|valandų}}',
