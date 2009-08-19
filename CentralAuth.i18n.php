@@ -323,6 +323,7 @@ You may view and modify any of them, or create a new set.',
  * @author Beau
  * @author Darth Kule
  * @author Fryed-peach
+ * @author Garas
  * @author Guillom
  * @author Jon Harald Søby
  * @author Lejonel
@@ -361,6 +362,7 @@ $messages['qqq'] = array(
 	'centralauth-log-entry-chgstatus' => '[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
 	'centralauth-log-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-log-status-none' => '{{Identical|None}}',
+	'centralauth-rightslog-entry-usergroups' => '[http://meta.wikimedia.org/w/index.php?title=Special:Log&type=gblrights Example]',
 	'centralauth-rightslog-entry-groupperms3' => 'A log entry when a user changes the wiki set where the specified global group is applied.
 * <code>$1</code> is the name of the group being changed
 * <code>$2</code> is the name of the previous wiki set
@@ -2532,6 +2534,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-admin-delete-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhañ.',
 	'centralauth-token-mismatch' => "Ho tigarez, n'omp ket bet gouest d'ober war-dro ho furmskrid rak kollet eo bet roadennoù an dalc'h.",
 	'centralauth-admin-reason' => 'Abeg :',
+	'centralauth-admin-status-hidden' => 'Kuzhet',
 	'centralauth-listusers-locked' => 'prennet',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munut|munut}} zo',
@@ -2551,6 +2554,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-invalid-wiki' => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists' => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-log-entry-unlock' => 'en deus dibrennet ar gont hollek "<nowiki>$1</nowiki>"',
+	'centralauth-log-status-hidden' => 'kuzhet',
 	'centralauth-rightslog-entry-setchange' => 'en deus kemmet ar wikioù e "$1" : ouzhpennet : $2; tennet : $3',
 	'centralauth-newgroup-legend' => 'Krouiñ ur strollad nevez',
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
@@ -8929,7 +8933,7 @@ $messages['ja'] = array(
 	'centralauth-editgroup-reason' => '変更理由:',
 	'centralauth-editgroup-success' => 'グループの権限が変更されました。',
 	'centralauth-editgroup-success-text' => '$1 グループのグループ権限を変更しました。[[特別:GlobalGroupPermissions|グループ操作に戻る]]',
-	'centralauth-editgroup-editsets' => '（[[特別:EditWikiSets|編集]]）',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編集]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'アカウントのあるウィキ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "グローバルユーザー '''$1''' は指定したウィキ （'' $2 ''） では活動していません。間違った利用者に権限を付与しようとしていませんか？",
 	'centralauth-editset' => 'ウィキ群を編集する',
@@ -10010,6 +10014,7 @@ $messages['km'] = array(
 $messages['kn'] = array(
 	'centralauth-admin-yes' => 'ಹೌದು',
 	'centralauth-admin-no' => 'ಇಲ್ಲ',
+	'centralauth-editset-name' => 'ಹೆಸರು:',
 );
 
 /** Korean (한국어)
@@ -11101,7 +11106,7 @@ $messages['lo'] = array(
 $messages['lt'] = array(
 	'mergeaccount' => 'Prisijungimo suvienodinimo būsena',
 	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-desc' => '[[Special:MergeAccount|Sujungti paskyras]] visuose {{MediaWiki:Centralauth-groupname}} projektuose',
+	'centralauth-desc' => '[[Special:MergeAccount|Sujungia paskyras]] tarp {{MediaWiki:Centralauth-groupname}} projektų',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sujungia kelias paskyras]] į vieną naudotojo prisijungimą',
 	'centralauth-merge-denied' => 'Atleiskite, bet jūs neturite leidimo patekti į šį puslapį.',
 	'centralauth-merge-notlogged' => 'Prašome <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prisijungti]</span>, jei norite patikrinti, ar jūsų paskyros buvo visiškai sujungtos.',
@@ -11226,24 +11231,133 @@ Slaptažodžiai vietinėse paskyrose, sukurtose prieš sujungimą, bus grąžint
 	'centralauth-token-mismatch' => 'Deja, mes negalime apdoroti jūsų pateiktos formos duomenų dėl sesijos duomenų praradimo.',
 	'centralauth-admin-reason' => 'Priežastis:',
 	'centralauth-admin-status' => 'Nustatyti bendrosios paskyros būseną',
+	'centralauth-admin-status-intro' => 'Galite pasinaudoti šia forma, norėdami pakeisti šios bendrosios paskyros būseną',
+	'centralauth-admin-status-locked' => 'Užrakinta',
+	'centralauth-admin-status-hidden' => 'Paslėpta',
+	'centralauth-admin-status-submit' => 'Nustatykite būseną',
+	'centralauth-admin-status-nonexistent' => 'Klaida: bendroji paskyra „<nowiki>$1</nowiki>“ neegzistuoja.',
+	'centralauth-admin-setstatus-success' => 'Jūs sėkmingai pakeitėte šios bendrosios paskyros būseną.',
+	'globalusers' => 'Globalusis naudotojų sąrašas',
+	'centralauth-listusers-locked' => 'užrakinta',
+	'centralauth-listusers-attached' => 'egzistuoja lokaliai',
+	'centralauth-listusers-nolocal' => 'neprijungtas arba lokaliai neegzistuoja',
 	'centralauth-seconds-ago' => 'prieš $1 {{PLURAL:$1|sekundę|sekundes|sekundžių}}',
 	'centralauth-minutes-ago' => 'prieš $1 {{PLURAL:$1|minutę|minutes|minučių}}',
 	'centralauth-hours-ago' => 'prieš $1 {{PLURAL:$1|valandą|valandas|valandų}}',
 	'centralauth-days-ago' => 'prieš $1 {{PLURAL:$1|dieną|dienas|dienų}}',
 	'centralauth-months-ago' => 'prieš $1 {{PLURAL:$1|mėnesį|mėnesius|mėnesių}}',
 	'centralauth-years-ago' => 'prieš $1 {{PLURAL:$1|metus|metus|metų}}',
-	'centralauth-prefs-status' => 'Bendrosios registracijos būsena:',
-	'centralauth-prefs-not-managed' => 'Nėra naudojama unifikuota paskyra',
+	'centralauth-prefs-status' => 'Bendrosios paskyros būsena:',
+	'centralauth-prefs-not-managed' => 'Nėra naudojama suvienytoji paskyra',
+	'centralauth-prefs-unattached' => 'Nepatvirtinti',
 	'centralauth-prefs-complete' => 'Viskas tvarkinga!',
 	'centralauth-prefs-migration' => 'Yra migruojama',
-	'centralauth-prefs-count-attached' => 'Jūsų paskyra yra aktyvi $1 projekto {{PLURAL:$1|srityje|srityse|sričių}}.',
-	'centralauth-prefs-manage' => 'Jūsų bendrosios registracijos valdymas',
-	'centralauth-login-progress' => 'Jūs prisijungėte prie {{MediaWiki:Centralauth-groupname}} projektų:',
-	'centralauth-logout-progress' => 'Jūs atsijungėte nuo kitų {{MediaWiki:Centralauth-groupname}} projektų:',
+	'centralauth-prefs-count-attached' => 'Jūsų paskyra yra aktyvi $1 projekto {{PLURAL:$1|svetainėje|svetainėse|svetainių}}.',
+	'centralauth-prefs-count-unattached' => 'Nepatvirtintų paskyrų jūsų vardu liko $1 {{PLURAL:$1|projekte|projektuose|projektų}}.',
+	'centralauth-prefs-detail-unattached' => 'Ši projekto svetainė nebuvo patvirtinta kaip priklausanti bendrajai paskyrai.',
+	'centralauth-prefs-manage' => 'Bendrosios paskyros valdymas',
+	'centralauth-renameuser-merged' => 'Naudotojas $1 buvo perkeltas į vieningo prisijungimo sistemą.
+Pakeitus jo vardą, jis bus atjungtas nuo bendrosios paskyros.',
+	'centralauth-renameuser-reserved' => 'Naudotojas $2 rezervuotas bendrajai paskyrai.',
+	'centralauth-invalid-wiki' => 'Nėra tokios wiki duomenų bazės: $1',
+	'centralauth-account-exists' => 'Nepavyko sukurti paskyros: prašomas vardas jau yra vieningojoje prisijungimo sistemoje.',
+	'centralauth-login-progress' => 'Prijungiame jus prie {{int:Centralauth-groupname}} projektų:',
+	'centralauth-logout-progress' => 'Atjungiame jus nuo kitų {{int:Centralauth-groupname}} projektų:',
+	'centralauth-login-no-others' => 'Jūs buvote automatiškai prisijungta{{GENDER:|s||s}} prie kitų {{int:Centralauth-groupname}} projektų.',
+	'centralauth-logout-no-others' => 'Jūs buvote automatiškai atjungta{{GENDER:|s||s}} iš kitų {{int:Centralauth-groupname}} projektų.',
+	'centralauth-log-name' => 'Bendrųjų paskyrų sąrašas',
+	'centralauth-log-header' => 'Šiame sąraše yra bendrųjų paskyrų operacijos: trynimai, užrakinimai ir atrakinimai.',
+	'centralauth-log-entry-delete' => 'ištrinta bendroji paskyra „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-lock' => 'užrakinta bendroji paskyra „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-unlock' => 'atrakinta bendroji paskyra „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-hide' => 'paslėpta bendroji paskyra „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-unhide' => 'nebeslepiama bendroji paskyra „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-lockandhide' => 'užrakinta ir paslėpta bendroji paskyra „<nowiki>$1</nowiki>“',
+	'centralauth-log-entry-chgstatus' => 'pakeista bendrosios paskyros „<nowiki>$1</nowiki>“ būsena: Įjungta $2; Išjungta $3',
+	'centralauth-log-status-locked' => 'užrakinta',
+	'centralauth-log-status-hidden' => 'paslėpta',
 	'centralauth-log-status-none' => '(nėra)',
+	'centralauth-rightslog-name' => 'Globalus teisių sąrašas',
+	'centralauth-rightslog-entry-usergroups' => 'pakeista $1 globalioji grupės narystė iš $2 į $3',
+	'centralauth-rightslog-entry-groupperms' => 'pakeistos $1 grupės teisės iš $2 į $3',
+	'centralauth-rightslog-entry-groupperms2' => 'pakeistos $1 grupės teisės.
+Pridėta $2;
+Pašalinta $3',
+	'centralauth-rightslog-entry-groupperms3' => 'pakeista $1 grupės apribotų projektų rinkinys iš $2 į $3',
+	'centralauth-rightslog-header' => 'Šiame sąraše rodomos globaliųjų grupių operacijos: narystės ir teisių keitimai',
+	'centralauth-rightslog-entry-newset' => 'sukurtas $2 projektų rinkinys $1 su šiais projektais: $3',
+	'centralauth-rightslog-entry-setrename' => 'pervadintas projektų rinkinys iš „$2“ į „$1“',
+	'centralauth-rightslog-entry-setnewtype' => 'pakeistas „$1“ tipas iš $2 į $3',
+	'centralauth-rightslog-entry-setchange' => 'pakeisti „$1“ projektai: pridėta: $2; pašalinta: $3',
+	'centralauth-rightslog-set-optin' => 'įstojimu pagrįstas',
+	'centralauth-rightslog-set-optout' => 'išstojimu pagrįstas',
 	'autologin' => 'Automatinis prisijungimas',
-	'centralauth-editgroup-name' => 'Grupės vardas:',
+	'centralauth-autologin-desc' => 'Šis specialusis puslapis yra skirtas naudoti MediaWiki viduje.
+Kai jūs [[Special:UserLogin|prisijungiate]], centrinė prisijungimų sistema nurodo jūsų naršyklei užklausti šio puslapio iš visų susietų domenų, naudojant paveikslėlio nuorodas.
+Jūs užklausėte šio puslapio nepateikdami jokių autentifikavimosi duomenų, todėl jis nieko nedaro.',
+	'globalgroupmembership' => 'Narystė globaliosiose grupėse',
+	'globalgrouppermissions' => 'Globaliųjų grupių valdymas',
+	'centralauth-globalgroupperms-grouplist' => 'Šios globaliosios grupės buvo sukonfigūruotos.
+Jūs galite peržiūrėti ar pakeisti leidimus priskirtus grupei, jei tam turite leidimą.
+Grupė gali būti ištrinta pašalinant iš jos visas teises.',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|peržiūrėti/keisti]])',
+	'centralauth-globalgroupperms-nogroups' => 'Neaprašytos jokios globaliosios grupės.',
+	'centralauth-existinggroup-legend' => 'Esamos grupės',
+	'centralauth-newgroup-legend' => 'Sukurti naują grupę',
+	'centralauth-newgroup-intro' => 'Galite naudoti šią formą, norėdami priskirti teises naujai grupei.
+Grupė neegzistuoja, kol ji neturi jai priskirtų teisių.',
+	'centralauth-globalgroupperms-newgroupname' => 'Naujos grupės pavadinimas:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Priskirti teises',
+	'centralauth-editgroup-subtitle' => 'Taisoma $1',
+	'centralauth-editgroup-fieldset' => '$1 teisės',
+	'centralauth-editgroup-name' => 'Grupės pavadinimas:',
+	'centralauth-editgroup-display' => 'Lokalizuotas grupės pavadinimas:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|keisti]])',
+	'centralauth-editgroup-member' => 'Lokalizuotas grupės narių pavadinimas:',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|keisti]])',
 	'centralauth-editgroup-members' => 'Narių sąrašas:',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Narių su $2 teisėmis sąrašas]]',
+	'centralauth-editgroup-restrictions' => 'Projektų rinkinys, kur ši grupė yra aktyvi:',
+	'centralauth-editgroup-noset' => '(nėra)',
+	'centralauth-editgroup-submit' => 'Įrašyti grupės teisių pakeitimus',
+	'centralauth-editgroup-perms' => 'Priskirtos teisės:',
+	'centralauth-editgroup-reason' => 'Pakeitimų priežastis:',
+	'centralauth-editgroup-success' => 'Grupės teisės pakeistos',
+	'centralauth-editgroup-success-text' => 'Jūs sėkmingai pakeitėte $1 grupės teises.
+[[Special:GlobalGroupPermissions|Grįžti į grupių valdymą]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|keisti]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Projektai, kur jie turi paskyrą:',
+	'centralauth-globalgroupmembership-badknownwiki' => "Globalusis naudotojas '''$1''' nėra aktyvus projekte kurį nurodėte (''$2'').
+Galbūt jūs bandote priskirti teises klaidingam naudotojui!",
+	'centralauth-editset' => 'Keisti projektų rinkinius',
+	'centralauth-editset-legend' => 'Keisti arba kurti projektų rinkinį',
+	'centralauth-editset-intro' => 'Šie projektų rinkiniai jau sukurti.
+Jūs gali peržiūrėti ir keisti bet kurį iš jų, arba sukurti naują rinkinį.',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|peržiūrėti/keisti]])',
+	'centralauth-editset-new' => 'Sukurti naują rinkinį',
+	'centralauth-editset-notfound' => 'Projektų rinkinys „$1“ nerastas.',
+	'centralauth-editset-optin' => 'Įstojimu pagrįstas (apima tik nurodytus projektus)',
+	'centralauth-editset-optout' => 'Išstojimu pagrįstas (apima visus projektus išskyrus nurodytus)',
+	'centralauth-editset-legend-edit' => 'Keičiamas projektų rinkinys „$1“',
+	'centralauth-editset-legend-new' => 'Kuriamas naujas projektų rinkinys',
+	'centralauth-editset-name' => 'Pavadinimas:',
+	'centralauth-editset-type' => 'Tipas:',
+	'centralauth-editset-wikis' => 'Projektai:',
+	'centralauth-editset-reason' => 'Priežastis:',
+	'centralauth-editset-submit' => 'Vykdyti',
+	'centralauth-editset-badname' => 'Neleistinas arba tuščias rinkinio pavadinimas.',
+	'centralauth-editset-badtype' => 'Neleistinas rinkinio tipas.',
+	'centralauth-editset-setexists' => 'Rinkinys su tokiu pavadinimu jau egzistuoja',
+	'centralauth-editset-nowikis' => 'Nenurodyti jokie projektai.',
+	'centralauth-editset-nouse' => '(nėra)',
+	'centralauth-editset-usage' => 'Naudojama grupėse:',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|Šis projektas|Šie projektai}} neegzistuoja: $1.',
+	'centralauth-editset-success' => 'Sėkmingai pakeistas projektų rinkinys.',
+	'centralauth-editset-return' => 'Grįžti į pagrindinį rodinį',
+	'right-globalgroupmembership' => 'Keisti globaliųjų grupių narystę',
+	'right-centralauth-admin' => 'Globaliųjų paskyrų administravimas',
+	'right-centralauth-merge' => 'Sujungti savo paskyrą',
+	'right-globalgrouppermissions' => 'Tvarkyti globaliąsias grupes',
 );
 
 /** Latvian (Latviešu)
@@ -13192,7 +13306,7 @@ Se es vos, poiretz acabar lo procediment d’unificacion de compte en picant lo 
 	'centralauth-list-home-dryrun' => 'Lo senhal e l’adreça electronica del projècte principal çaijós seràn utilizats per vòstre compte unic.',
 	'centralauth-list-attached-title' => 'Comptes ratachats',
 	'centralauth-list-attached' => "Los comptes d'utilizaires nomenats « $1 » son estats acampats pels sites seguents :",
-	'centralauth-list-attached-dryrun' => 'Lo compte nomenat « $1 » sus cadun dels sits seguents serà automaticament ratachat al compte unic :',
+	'centralauth-list-attached-dryrun' => 'Lo compte nomenat « $1 » sus cadun dels sites seguents serà automaticament restacat al compte unic :',
 	'centralauth-list-unattached-title' => 'Comptes non ratachats',
 	'centralauth-list-unattached' => "Lo compte d'utilizaire « $1 » pòt èsser confirmat automaticament pels sites que seguisson ; an probablament un senhal diferent de vòstre compte mèstre :",
 	'centralauth-foreign-link' => 'Utilizaire $1 sus $2',
@@ -15994,6 +16108,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 	'centralauth-editgroup-members' => 'Daptar anggota:',
 	'centralauth-editgroup-reason' => 'Alesan parobahan:',
 	'centralauth-editgroup-success' => 'Parobahan hak jumplukan geus disimpen',
+	'centralauth-editset-reason' => 'Alesan:',
 	'right-centralauth-merge' => 'Gabungkeun rekening ieu',
 );
 
@@ -17128,7 +17243,7 @@ Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmede
 	'centralauth-prefs-status' => 'Küresel hesap durumu:',
 	'centralauth-prefs-not-managed' => 'Birleşik hesap kullanmıyor',
 	'centralauth-prefs-unattached' => 'Doğrulanmamış',
-	'centralauth-prefs-complete' => 'Herşey yerli yerinde!',
+	'centralauth-prefs-complete' => 'Her şey yerli yerinde!',
 	'centralauth-prefs-migration' => 'Geçiş halinde',
 	'centralauth-prefs-count-attached' => 'Hesabınız $1 proje {{PLURAL:$1|sitesinde|sitesinde}} etkin.',
 	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1|projede|projede}} sizin adınızda doğrulanmamış hesaplar mevcut.',
@@ -18388,20 +18503,21 @@ $messages['yue'] = array(
  * @author Alexsh
  * @author Chenzw
  * @author Gzdavidwong
+ * @author Liangent
  * @author 下一次登录
  */
 $messages['zh-hans'] = array(
 	'mergeaccount' => '用户账户整合',
 	'centralauth-groupname' => '维基媒体基金会',
-	'centralauth-desc' => '[[Special:MergeAccount|合并]]维基媒体基金会下属维基项目的账户',
+	'centralauth-desc' => '[[Special:MergeAccount|合并]]{{MediaWiki:Centralauth-groupname}}的wiki帐号',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|将多个账户合并]]为单一用户账户',
 	'centralauth-merge-denied' => '很抱歉，您没有权限存取这个页面',
 	'centralauth-merge-notlogged' => '请<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} 登录]</span>并检查您的账号是否已被完全合并。',
-	'centralauth-merge-welcome' => "'''您的用户账户还未被迁移到维基媒体的整合账户系统。'''
+	'centralauth-merge-welcome' => "'''您的用户帐号还未被迁移到{{MediaWiki:Centralauth-groupname}}的整合登录系统。'''
 
-一旦您决定迁移您的账户，您便可以通过相同的用户名和密码登录到维基媒体下属所有维基项目的所有语言版本。这可以方便您在[http://commons.wikimedia.org/ 维基共享资源]这样的共享项目中进行一些工作，并避免在不同的项目中因不同用户选用相同用户名而造成的混淆与冲突。
+一旦您选择迁移您的帐号，您便可以通过相同的用户名和密码登录到{{MediaWiki:Centralauth-groupname}}的所有wiki的所有语言版本。
 
-如果在另一个维基项目上已有其他人选用了您的用户名，他们也不会受到干扰。不过，此后您将有一个与他们或该项目管理员协商解决该问题的机会。",
+如果在另一个站点上已有其他人选用了您的用户名，他们也不会受到干扰。不过，此后您将有一个与他们或管理员协商解决该问题的机会。",
 	'centralauth-merge-step1-title' => '开始整合用户账户',
 	'centralauth-merge-step1-detail' => '请在这里输入您的帐户密码。您的密码以及电子邮件地址将会与其他项目的数据进行比对，以确认它们是一致的。所有数据在您确认没有问题之前均不会更改。',
 	'centralauth-merge-step1-submit' => '确认账户数据',
@@ -18427,8 +18543,8 @@ $messages['zh-hans'] = array(
 请输入自家wiki的密码。',
 	'centralauth-complete' => '账户整合完成！',
 	'centralauth-incomplete' => '账户整合未完成！',
-	'centralauth-complete-text' => '您现在可以登录到维基媒体的其他维基项目中，而无需创建一个新的账号；相同的用户名和密码会适用于维基百科、维基词典、维基教科书及其他姐妹项目的所有语言版本。',
-	'centralauth-incomplete-text' => '当您的账户被整合后，您将能够登录到任何一处维基媒体的维基项目站点，而无需创建一个新的账户；相同的用户名和密码会适用于维基百科、维基词典、维基教科书及其他姐妹项目的所有语言版本。',
+	'centralauth-complete-text' => '您现在可以登录到{{MediaWiki:Centralauth-groupname}}的任何wiki站点，而无需创建一个新的账号。',
+	'centralauth-incomplete-text' => '当您的帐号被整合后，您将能够登录到{{MediaWiki:Centralauth-groupname}}的任何一个wiki站点，而无需创建一个新的帐号。',
 	'centralauth-not-owner-text' => '使用者名称："$1"已自动分配给$2上的账户。
 
 如果这是您的账户，请输入该账户的密码以完成账户整合：',
@@ -18467,6 +18583,7 @@ $messages['zh-hans'] = array(
 	'centralauth-attach-submit' => '账户迁移',
 	'centralauth-attach-success' => '该账户已被迁移到整合账户中。',
 	'centralauth' => '整合账户管理',
+	'centralauth-admin-intro' => '这个界面用于全域帐号管理。',
 	'centralauth-admin-manage' => '管理用户资料',
 	'centralauth-admin-username' => '用户名：',
 	'centralauth-admin-lookup' => '查看或编辑用户资料',
@@ -18481,9 +18598,14 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-attached' => '所有已合并的账户',
 	'centralauth-admin-unattached' => '未附属的账户',
 	'centralauth-admin-no-unattached' => '没有任何未迁移的账户。',
+	'centralauth-admin-notblocked' => '没有封禁',
+	'centralauth-admin-blocked' => '已封禁，于$1过期。理由：$2',
+	'centralauth-admin-blocked-indef' => '永久封禁。理由：$1',
 	'centralauth-admin-list-localwiki' => '本地维基站',
 	'centralauth-admin-list-attached-on' => '合并时间',
 	'centralauth-admin-list-method' => '验证方式',
+	'centralauth-admin-list-editcount' => '编辑数',
+	'centralauth-admin-list-blocked' => '封禁状态',
 	'centralauth-admin-unmerge' => '拆分选中的账户',
 	'centralauth-admin-merge' => '合并选中的账户',
 	'centralauth-admin-bad-input' => '合并所选项时发生错误',
@@ -18500,6 +18622,13 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-delete-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-token-mismatch' => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
 	'centralauth-admin-reason' => '理由:',
+	'centralauth-admin-status' => '设置全域帐号状态',
+	'centralauth-admin-status-intro' => '你可以使用这个表单来更改这个全域帐号的状态',
+	'centralauth-admin-status-locked' => '已锁定',
+	'centralauth-admin-status-hidden' => '隐藏',
+	'centralauth-admin-status-submit' => '设置状态',
+	'centralauth-admin-status-nonexistent' => '错误：全域帐号“<nowiki>$1</nowiki>”不存在。',
+	'centralauth-admin-setstatus-success' => '你已经成功地改变了这个全域帐号的状态。',
 	'globalusers' => '全域账户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '于本地存在',
@@ -18523,8 +18652,10 @@ $messages['zh-hans'] = array(
 	'centralauth-renameuser-reserved' => '用户$2已经预留给全域账户使用。',
 	'centralauth-invalid-wiki' => '无这个wikil数据库: $1',
 	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
-	'centralauth-login-progress' => '为您登入中至Wikimedia的其它计划:',
-	'centralauth-logout-progress' => '为您登出中自Wikimedia的其它计划:',
+	'centralauth-login-progress' => '正在为您登录到{{int:Centralauth-groupname}}的其它计划：',
+	'centralauth-logout-progress' => '正在为您登出{{int:Centralauth-groupname}}的其它计划：',
+	'centralauth-login-no-others' => '你已经自动登录到{{int:Centralauth-groupname}}的其他项目。',
+	'centralauth-logout-no-others' => '你已经自动登出{{int:Centralauth-groupname}}的其他项目。',
 	'centralauth-log-name' => '全域账户日志',
 	'centralauth-log-header' => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
 	'centralauth-log-entry-delete' => '已经删除全域账户"<nowiki>$1</nowiki>"',
@@ -18533,11 +18664,16 @@ $messages['zh-hans'] = array(
 	'centralauth-log-entry-hide' => '隐藏全域帐户 "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-unhide' => '解除隐藏全域帐户 "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lockandhide' => '锁定并隐藏全域帐户"<nowiki>$1</nowiki>"',
+	'centralauth-log-entry-chgstatus' => '更改全域帐号“<nowiki>$1</nowiki>”：设置$2；取消设置$3',
+	'centralauth-log-status-locked' => '已锁定',
+	'centralauth-log-status-hidden' => '隐藏',
+	'centralauth-log-status-none' => '（无）',
 	'centralauth-rightslog-name' => '全域权限日志',
 	'centralauth-rightslog-entry-usergroups' => '已经更改$1的全域成员组由$2到$3',
 	'centralauth-rightslog-entry-groupperms' => '已经更改$1的成员组许可由$2到$3',
 	'centralauth-rightslog-entry-groupperms2' => '已经更改$1的成员组许可。加入$2；移除$3',
 	'centralauth-rightslog-header' => '这个日志包含了全域组之动作：组及许可更改',
+	'autologin' => '自动登录',
 	'centralauth-autologin-desc' => '这个版殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，
 	该中央登入系统会利用图像连结，指示您的浏览器响全部连接的网域度请求这个页面。
 	您在这一页面中不需要再给出任何的认证资料，即是什么也不用作。',
