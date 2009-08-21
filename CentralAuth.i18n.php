@@ -489,6 +489,7 @@ $messages['af'] = array(
 	'centralauth-editset-type' => 'Tipe:',
 	'centralauth-editset-wikis' => "Wiki's:<br />(geskei met spasies)",
 	'centralauth-editset-reason' => 'Rede:',
+	'centralauth-editset-submit' => 'Dien in',
 	'centralauth-editset-nouse' => '(geen)',
 	'right-globalgroupmembership' => 'Wysig lidmaatskap aan globale groepe',
 	'right-centralauth-admin' => 'Administreer globale rekeninge',
@@ -13918,6 +13919,7 @@ $messages['ps'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Giro720
  * @author Lijealso
  * @author Malafaya
  * @author Smeira
@@ -13972,7 +13974,7 @@ Enquanto estiver bloqueada, não será possível fundir as contas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'A unificação de contas se encontra no momento em modo exclusivamente de demonstração/testes. Lamentamos, mas as mesmas ainda não foram unificadas.',
 	'centralauth-error-locked' => 'Você não pode editar porque a sua conta está bloqueada.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Leia mais sobre o '''login unificado''']]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/pt|Leia mais sobre o '''login unificado''']]...''",
 	'centralauth-list-home-title' => 'Residência wiki',
 	'centralauth-list-home-dryrun' => 'A palavra-chave (senha) e endereço de e-mail definidos nesta wiki serão os utilizados em sua conta unificada; sua página de utilizador será automaticamente lincada a partir de outras wikis.',
 	'centralauth-list-attached-title' => 'Contas relacionadas',
@@ -16418,8 +16420,8 @@ $messages['te'] = array(
 	'centralauth-merge-step3-submit' => 'ఖాతాలను ఏకీకరించు',
 	'centralauth-complete' => 'ప్రవేశపు ఏకీకరణ పూర్తయ్యింది!',
 	'centralauth-incomplete' => 'ప్రవేశపు ఏకీకరణ పూర్తి కాలేదు!',
-	'centralauth-complete-text' => 'కొత్త ఖాతా సృష్టించుకోకుండానే మీరిప్పుడు ఏదైనా వికీమీడియా వికీ లోనికి ప్రవేశించవచ్చు; అదే వాడుకరిపేరు మరియు సంకేతపదం వికీపీడియా, విక్షనరీ, వికీపుస్తకాలు, మరియు అన్ని భాషలలోని వాటి సోదర ప్రాజెక్టులలోనూ పనిచేస్తాయి.',
-	'centralauth-incomplete-text' => 'ఒక్కసారి ప్రవేశం ఏకీకృతమయ్యాక, మీరు ఏదైనా వికీమీడియా వికీ సైటు లోనికి కొత్త ఖాతా సృష్టించనవసరం లేకుండానే ప్రవేశించగల్గుతారు; వికీపీడియా, విక్షనరీ, వికీపుస్తకాలు, మరియు అన్ని భాషలలోనూ వాటి సోదర ప్రాజెక్టులలోనూ ఒకే వాడుకరి పేరు మరియు సంకేతపదం పనిచేస్తాయి.',
+	'centralauth-complete-text' => 'కొత్త ఖాతా సృష్టించుకోకుండానే మీరిప్పుడు ఏదైనా {{MediaWiki:Centralauth-groupname}} యొక్క వికీ లోనికి ప్రవేశించవచ్చు.',
+	'centralauth-incomplete-text' => 'ఒక్కసారి ప్రవేశం ఏకీకృతమయ్యాక, మీరు ఏదైనా {{MediaWiki:Centralauth-groupname}} యొక్క  వికీ సైటు లోనికి కొత్త ఖాతా సృష్టించనవసరం లేకుండానే ప్రవేశించగల్గుతారు.',
 	'centralauth-not-owner-text' => '"$1" అన్న వాడుకరి పేరు $2లోని ఖాతా యజమానికి ఆటోమేటిగ్గా ఆపాదించివుంది.
 
 అది మీరే అయితే, ఆ ఖాతాకి ప్రధాన సంకేతపదాన్ని ఇక్కడ ఇవ్వడం ద్వారా తేలిగ్గా ప్రవేశపు ఏకీకృత ప్రక్రియని ముగించవచ్చు:',
@@ -16524,7 +16526,9 @@ $messages['te'] = array(
 	'centralauth-rightslog-entry-setchange' => "''$1'' లోని వికీలు మార్చబడ్డాయి: కలిపినవి: $2; తీసేసినవి: $3",
 	'globalgroupmembership' => 'సార్వత్రిక గుంపుల్లో సభ్యత్వం',
 	'globalgrouppermissions' => 'సార్వత్రిక గుంపు నిర్వహణ',
-	'centralauth-globalgroupperms-grouplist' => 'కింది సార్వత్రిక గుంపులు తయారయి ఉన్నాయి. వీటిని చూడటమే కాక, వాటిలో మార్పులు చెయ్యవచ్చు. గుంపుకు ఉన్న అనుమతులను తీసివేయడం ద్వారా ఆ గుంపును తొలగించవచ్చు.',
+	'centralauth-globalgroupperms-grouplist' => 'కింది సార్వత్రిక గుంపులు తయారయి ఉన్నాయి. 
+వీటిని చూడటమే కాక, మీకు అనుమతి వుంటే వాటిలో మార్పులు చెయ్యవచ్చు. 
+గుంపుకు ఉన్న అనుమతులను తీసివేయడం ద్వారా ఆ గుంపును తొలగించవచ్చు.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|అనుమతులను చూడు, మార్చు]])',
 	'centralauth-existinggroup-legend' => 'ప్రస్తుతం ఉన్న గుంపులు',
 	'centralauth-newgroup-legend' => 'కొత్త గుంపును సృష్టించు',
