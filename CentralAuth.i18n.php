@@ -457,6 +457,7 @@ $messages['af'] = array(
 	'centralauth-admin-delete-title' => 'Skrap rekening',
 	'centralauth-admin-delete-button' => 'Verwyder die gebruiker',
 	'centralauth-admin-reason' => 'Rede:',
+	'centralauth-admin-status-hidden' => 'Versteek',
 	'globalusers' => 'Globale gebruikerslys',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekonde|sekondes}} gelede',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuut|minute}} gelede',
@@ -472,6 +473,8 @@ $messages['af'] = array(
 	'centralauth-invalid-wiki' => 'Die wikidatabasis bestaan nie: $1',
 	'centralauth-login-progress' => 'U word by die volgende projekte van Wikimedia aangeteken:',
 	'centralauth-logout-progress' => 'U word van die volgende Wikimedia projekte afgeteken:',
+	'centralauth-log-status-hidden' => 'verborge',
+	'centralauth-log-status-none' => '(geen)',
 	'centralauth-rightslog-name' => 'Logboek van globale regte',
 	'centralauth-rightslog-entry-groupperms' => 'Verander groepsregte vir $1 van $2 na $3',
 	'centralauth-rightslog-entry-groupperms2' => 'groepsregte vir $1 is verander. Bygevoeg: $2. Verwyder: $3',
@@ -5048,6 +5051,8 @@ $messages['et'] = array(
 	'centralauth-admin-info-hidden' => 'Peidetud:',
 	'centralauth-admin-yes' => 'jah',
 	'centralauth-admin-no' => 'ei',
+	'centralauth-admin-attached' => 'Täielikult ühendatud kontod',
+	'centralauth-admin-unattached' => 'Ühendamata kontod',
 	'centralauth-admin-notblocked' => 'Ei ole blokeeritud',
 	'centralauth-admin-blocked-indef' => 'Blokeeritud igaveseks. Põhjus: $1',
 	'centralauth-admin-list-localwiki' => 'Kohalik wiki',
@@ -5057,10 +5062,13 @@ $messages['et'] = array(
 	'centralauth-admin-list-blocked' => 'Blokeeritud olek',
 	'centralauth-admin-delete-title' => 'Kustuta konto',
 	'centralauth-admin-delete-button' => 'Kustuta see konto',
+	'centralauth-admin-nonexistent' => 'Kasutajal "<nowiki>$1</nowiki>" pole globaalset kontot.',
+	'centralauth-admin-delete-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
 	'centralauth-admin-reason' => 'Põhjus:',
 	'centralauth-admin-status-locked' => 'Lukustatud:',
 	'centralauth-admin-status-hidden' => 'Peidetud',
 	'centralauth-admin-status-submit' => 'Määra olek',
+	'centralauth-admin-status-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
 	'globalusers' => 'Globaalne kasutajate nimekiri',
 	'centralauth-listusers-locked' => 'lukustatud',
 	'centralauth-listusers-attached' => 'siinne konto olemas',
@@ -5071,8 +5079,10 @@ $messages['et'] = array(
 	'centralauth-prefs-count-attached' => 'Teie konto on aktiivne $1 projekti lehekülgedel.
 <!-- oli kasutusel: {{PLURAL:$1|leheküljel|lehekülgedel}} -->',
 	'centralauth-prefs-manage' => 'Vaata oma ühendkontot',
-	'centralauth-login-progress' => 'Teid logitakse sisse ka teistesse Wikimedia projektidesse:',
-	'centralauth-logout-progress' => 'Teid logitakse välja ka teistest Wikimedia projektidest:',
+	'centralauth-login-progress' => 'Teid logitakse projektidesse, mida haldab {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Teid logitakse välja projektidest, mida haldab {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Globaalsete kontode logi',
 	'centralauth-log-entry-delete' => 'kustutas globaalse konto "<nowiki>$1</nowiki>"',
 	'centralauth-log-entry-lock' => 'lukustas globaalse konto "<nowiki>$1</nowiki>"',
@@ -5119,6 +5129,8 @@ Rühma kustutamiseks tuleb sellelt kõik õigused eemaldada.',
 	'centralauth-editgroup-perms' => 'Lubatud:',
 	'centralauth-editgroup-reason' => 'Muutmise põhjus:',
 	'centralauth-editgroup-success' => 'Rühma kasutusõigused muudetud',
+	'centralauth-editgroup-success-text' => 'Oled edukalt rühma $1 õigused muutnud.
+[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|vaata/muuda]])',
 	'centralauth-editset-name' => 'Nimi:',
 	'centralauth-editset-type' => 'Tüüp:',
@@ -5129,6 +5141,7 @@ Rühma kustutamiseks tuleb sellelt kõik õigused eemaldada.',
 	'centralauth-editset-usage' => 'Kasutatud rühmades:',
 	'right-centralauth-admin' => 'Hallata ühendkontosid',
 	'right-centralauth-merge' => 'Luua ühendkonto',
+	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
 );
 
 /** Basque (Euskara)
@@ -6679,6 +6692,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Rotem Liss
+ * @author YaronSh
  */
 $messages['he'] = array(
 	'mergeaccount' => 'מצב מיזוג החשבונות',
@@ -6730,7 +6744,7 @@ $messages['he'] = array(
 	'centralauth-error-locked' => 'אינכם יכולים לערוך כיוון שהחשבון שלכם נעול.',
 	'centralauth-readmore-text' => ":[[meta:Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",
 	'centralauth-list-home-title' => 'האתר הראשי',
-	'centralauth-list-home-dryrun' => 'הסיסמה וכתובת הדוא"ל שהוגדרו באתר הזה יהיו בשימוש עבור החשבון הממוזג שלכם. תוכלו לשנות את האתר הראשי שלכם מאוחר יותר.',
+	'centralauth-list-home-dryrun' => 'הסיסמה וכתובת הדוא"ל שהוגדרו באתר הזה יהיו בשימוש עבור החשבון הממוזג שלכם.',
 	'centralauth-list-attached-title' => 'חשבונות ממוזגים',
 	'centralauth-list-attached' => 'החשבונות בשם "$1" באתרים הבאים מוזגו באופן אוטומטי:',
 	'centralauth-list-attached-dryrun' => 'החשבונות בשם "$1" באתרים הבאים ימוזגו באופן אוטומטי:',
@@ -15337,7 +15351,7 @@ Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 	'right-globalgrouppermissions' => 'Spravovať globálne skupiny',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  * @author Sasa Stefanovic
  * @author Јованвб
