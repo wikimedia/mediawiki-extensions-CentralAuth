@@ -479,6 +479,7 @@ $messages['af'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'Verander groepsregte vir $1 van $2 na $3',
 	'centralauth-rightslog-entry-groupperms2' => 'groepsregte vir $1 is verander. Bygevoeg: $2. Verwyder: $3',
 	'centralauth-rightslog-entry-setnewtype' => 'het tipe vir $1 gewysig van $2 na $3',
+	'centralauth-rightslog-entry-setchange' => 'het die wiki\'s in "$1" gewysig: bygevoeg: $2; geskrap: $3',
 	'centralauth-existinggroup-legend' => 'Bestaande groepe',
 	'centralauth-newgroup-legend' => "Skep 'n nuwe groep",
 	'centralauth-globalgroupperms-newgroupname' => 'Nuwe groepnaam:',
