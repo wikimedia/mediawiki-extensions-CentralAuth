@@ -2432,49 +2432,46 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'mergeaccount' => "Statud unvaniñ ar c'hontoù implijer",
-	'centralauth-desc' => "[[Special:MergeAccount|Unvaniñ a ra ar c'hontoù implijer]] dre-holl raktresoù wiki Diazezadur Wikimedia",
+	'centralauth-desc' => "[[Special:MergeAccount|Kendeuziñ a ra ar c'hontoù implijer]] war wikioù {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Kendeuziñ a ra meur a gont]] evit ur marilhañ unvan',
-	'centralauth-merge-denied' => "Hon digarezit, n'oc'h ket aotreet da vont war ar bajenn-mañ.",
-	'centralauth-merge-notlogged' => 'Trugarez d\'en em <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} lugañ]</span> evit gwiriañ eo bet unvanet mat ho kontoù.',
-	'centralauth-merge-welcome' => "'''N'eo ket bet kaset ho kontoù implijer davet reizhiad emlugañ unvan Wikimedia c'hoazh.'''
+	'centralauth-merge-denied' => "Ho tigarez, n'oc'h ket aotreet da vont war ar bajenn-mañ.",
+	'centralauth-merge-notlogged' => 'Trugarez d\'en em <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} lugañ]</span> evit gwiriañ eo bet kendeuzet mat ho kontoù.',
+	'centralauth-merge-welcome' => "'''N'eo ket bet treuzkaset ho kontoù implijer davet reizhiad emlugañ unvan {{MediaWiki:Centralauth-groupname}} c'hoazh.'''
 
-Ma tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù Wikimedia en holl yezhoù a c'haller kaout.
-Gant se eo aesoc'h labourat a-dreuz ar raktresoù, aesaet eo an enporzhiañ skeudennoù war [http://commons.wikimedia.org/ Wikimedia Commons], hag evel-se ne vo ket tamm kemmesk ebet mui gant daou zen disheñvel oc'h ober gant an hevelep anv implijer war meur a raktres.
+Ma tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù {{MediaWiki:Centralauth-groupname}} en holl yezhoù a c'haller kaout.
 
-Ma rit dija gant an hevelep anv implijer war an holl raktresoù ne zlefe ket bezañ kudenn ebet. Ma ra unan bennak all gant an hevelep anv implijer ha c'hwi war ur raktres all e c'hallot mont e darempred gant an den-se pe gwelet se gant ur merour bennak.",
-	'centralauth-merge-step1-title' => "Kregiñ da unvaniñ ar c'hontoù",
+Ma re tud all gant an hevelep anv ha c'hwi war lec'hiennoù all, ne vint ket direnket gan se, met reiña r aur chañs deoc'h da vont e darempred ganto evit klasn en em renkañ ganto pe gannt ur merour diwezhatoc'h.",
+	'centralauth-merge-step1-title' => "Kregiñ da gendeuziñ ar c'hontoù",
 	'centralauth-merge-step1-detail' => "Lakait amañ ar ger-tremen evit ho kont.
 Keñveriet e vo ho ker-tremen hag ho chomlec'h postel gant re ar c'hontoù dezho an hevelep anv war ar wikioù all evit bezañ sur e klotont an eil gant egile. Ne vo degaset kemm ebet a-raok na vefe kadarnaet ganeoc'h emañ mat pep tra.",
 	'centralauth-merge-step1-submit' => 'Kadarnaat an titouroù',
 	'centralauth-merge-step2-title' => 'Lakaat kontoù all',
 	'centralauth-merge-step2-detail' => "Kontoù zo n'eus ket bet gallet stagañ anezho ent emgefre ouzh ar gont pennañ. Ma piaouit ar c'hontoù-se e c'hallit en kadarnaat en ur verkañ ar ger-tremen reizh evito.",
 	'centralauth-merge-step2-submit' => 'Kadarnaat an titouroù',
-	'centralauth-merge-dryrun-complete' => "Gallout a reer unvaniñ an holl gontoù zo en un doare emgefre!
+	'centralauth-merge-dryrun-complete' => "Gallout a reer kendeuziñ an holl gontoù en un doare emgefre !
 
 N'eus bet graet tamm cheñchamant ebet en ho kontoù evit c'hoazh.",
-	'centralauth-merge-dryrun-incomplete' => "Mennet oc'h da genderc'hel, padal meur a gont n'eus ket bet gallet gwiriañ anezho ent emgefre ha ne vint ket treuzkaset diouzhtu. Gouest e viot d'ho unvaniñ diwezhatoc'hik.
+	'centralauth-merge-dryrun-incomplete' => "Mennet oc'h da genderc'hel, padal meur a gont n'eus ket bet gallet gwiriañ anezho ent emgefre ha ne vint ket treuzkaset diouzhtu. Gouest e viot d'o c'hendeuziñ diwezhatoc'hik.
 
 N'eus bet graet tamm cheñchamant ebet d'ho kontoù evit c'hoazh.",
 	'centralauth-merge-dryrun-or' => "'''pe'''",
 	'centralauth-merge-dryrun-home' => "N'eo ket bet ar reizhiad treuzkas evit kadarnaat ez oc'h-c'hwi perc'henn war ar gont wiki pennañ evit ar pezh a sell ouzh hoc'h anv implijer.
 
-Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer ; kit da-heul al liamm a-is hag en em lugit en-dro evit echuiñ treuzkas ar gont.",
+Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer; kit da-heul al liamm a-is hag en em lugit en-dro evit echuiñ treuzkas ar gont.",
 	'centralauth-merge-step3-title' => 'Krouiñ ur gont unvan',
 	'centralauth-merge-step3-detail' => "Prest oc'h bremañ da grouiñ ur gont unvan evit ar wikioù-mañ :",
-	'centralauth-merge-step3-submit' => "Unvaniñ ar c'hontoù",
-	'centralauth-complete' => "Unvanet eo ar c'hontoù !",
-	'centralauth-incomplete' => "N'eo ket echu unvaniñ ar c'hontoù !",
-	'centralauth-complete-text' => 'Gallout a rit en em lugañ ouzh ne vern pe raktres Wikimedia hep bezañ rediet da grouiñ ur gont nevez;
-Mont a raio an hevelep ger-tremen en-dro war Wikipedia, Wikeriadur, Wikilevrioù hag ar raktresoù kar all en holl yezhoù.',
-	'centralauth-incomplete-text' => "Pa vo bet unvanet ho kontoù e c'hallot en em lugañ war ne vern pe raktres eus Wikimedia hep bezañ rediet da grouiñ ur gont nevez;
-mont a raio an hevelep ger-tremen en-dro war Wikipedia, wikilevrioù, hag ar raktresoù kar all en holl yezhoù.",
+	'centralauth-merge-step3-submit' => "Kendeuziñ ar c'hontoù",
+	'centralauth-complete' => "Kendeuzet eo ar c'hontoù !",
+	'centralauth-incomplete' => "N'eo ket echu kendeuziñ ar c'hontoù !",
+	'centralauth-complete-text' => 'Gallout a rit bremañ en em lugañ ouzh ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.',
+	'centralauth-incomplete-text' => "Pa vo bet kendeuzet an doare da vezañ anavezet e c'hallot en em lugañ war ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.",
 	'centralauth-not-owner-text' => 'Staget eo bet ent emgefre an anv implijer "$1" ouzh perc\'henn ar gont $2.
 
-Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh unvaniñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :',
+Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mod demo hepken</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => "An unvaniñ kontoù zo er mod arnodiñ / dizreinañ evit poent, setu n'haller ket c'hoazh unvaniñ kontoù da vat. Hon digarezit !",
+	'centralauth-disabled-dryrun' => "Emañ ar c'hendeuziñ kontoù er mod arnodiñ / dizreinañ evit poent, setu n'haller ket c'hoazh kendeuziñ kontoù da vat. Hon digarezit !",
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Gouzout hiroc'h diwar-benn '''ar gont unvan''']]…''",
-	'centralauth-list-home-title' => 'Pennraktres',
+	'centralauth-list-home-title' => 'Wiki pennañ',
 	'centralauth-list-home-dryrun' => "Ar ger-tremen hag ar chomlec'h postel merket evit ar wiki-mañ eo a vo implijet evit ho kont unvanet.",
 	'centralauth-list-attached-title' => 'Kontoù stag',
 	'centralauth-list-attached' => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
@@ -2483,35 +2480,35 @@ Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh unvaniñ kontoù dre verka
 	'centralauth-list-unattached' => "N'eus ket bet gallet kadarnaat ent emgefre eo deoc'h ar c'hontoù \"\$1\" war al lec'hiennoù da-heul;
 evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont pennañ :",
 	'centralauth-foreign-link' => 'Implijer $1 war $2',
-	'centralauth-merge-method-primary' => 'penn wiki',
+	'centralauth-merge-method-primary' => 'wiki pennañ',
 	'centralauth-merge-method-empty' => 'degasadenn ebet',
 	'centralauth-merge-method-mail' => 'kadarnaet dre bostel',
 	'centralauth-merge-method-password' => 'kadarnaet dre ur ger-tremen',
-	'centralauth-merge-method-admin' => 'kont verour unvanet',
+	'centralauth-merge-method-admin' => 'kont kendeuzet gant ar merour',
 	'centralauth-merge-method-new' => 'kont nevez',
 	'centralauth-merge-method-login' => "kadarnaet p'en em luger",
-	'centralauth-finish-title' => 'Echuiñ an unvaniñ',
-	'centralauth-finish-text' => "Mard oc'h perc'henn war ar c'hontoù-se e c'hallit echuiñ an unvaniñ en ur verkañ ar gerioù-tremen evito amañ dindan :",
+	'centralauth-finish-title' => "Echuiñ ar c'hendeuziñ",
+	'centralauth-finish-text' => "Mard oc'h perc'henn war ar c'hontoù-se e c'hallit echuiñ an c'hendeuziñ en ur verkañ ar gerioù-tremen evito amañ dindan :",
 	'centralauth-finish-password' => 'Ger-tremen :',
 	'centralauth-finish-login' => 'Kont implijer :',
 	'centralauth-finish-send-confirmation' => 'Kas ar ger-tremen dre bostel',
 	'centralauth-finish-problems' => "Ma c'hoarvez kudennoù pe ma noc'h ket perc'henn war ar c'hontoù-se, 
 sellit ouzh [[meta:Help:Unified login problems|Penaos bezañ skoazellet]]…",
 	'centralauth-finish-noconfirms' => "N'eus bet gallet kadarnaat kont ebet gant ar ger-tremen-se.",
-	'centralauth-finish-incomplete' => "Meur a gont zo bet unvanet en ur implijout ar ger-tremen-se.
+	'centralauth-finish-incomplete' => "Meur a gont zo bet kendeuzet en ur implijout ar ger-tremen-se.
 Kontoù all n'int ket bet kadarnaet avat.",
 	'centralauth-merge-attempt' => "'''O wiriañ ar ger-tremen roet evit ar c'hontoù chomet a-ziforc'h…'''",
 	'centralauth-attach-list-attached' => 'Er gont unvan anvet "$1" e kaver ar c\'hontoù-mañ :',
 	'centralauth-attach-title' => 'Kadarnaat ar gont',
 	'centralauth-attach-text' => "N'eo ket bet treuzkaset ar gont-mañ d'ar gont unvanet c'hoazh.
-Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur verkañ ger-tremen ar gont hollek :",
+Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur verkañ ger-tremen ar gont hollek :",
 	'centralauth-attach-submit' => "Treuzkas ar c'hontoù",
 	'centralauth-attach-success' => "Treuzkaset eo bet ar gont d'ar gont unvan.",
 	'centralauth' => "Mererezh ar c'hontoù unvanet",
 	'centralauth-admin-manage' => 'Merañ ar roadoù implijer',
 	'centralauth-admin-username' => 'Anv implijer :',
 	'centralauth-admin-lookup' => 'Gwelet pe gemmañ ar roadoù implijer',
-	'centralauth-admin-permission' => "N'eus nemet ar stewarded a c'hall unvaniñ kontoù tud all en o flas.",
+	'centralauth-admin-permission' => "N'eus nemet ar stewarded a c'hall kendeuziñ kontoù tud all en o flas.",
 	'centralauth-admin-no-unified' => 'Kont unvan ebet war anv an implijer-mañ',
 	'centralauth-admin-info-id' => 'Niverenn implijer :',
 	'centralauth-admin-info-registered' => 'Marilhet :',
@@ -2522,8 +2519,8 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-admin-attached' => 'Kontoù peurunvanet',
 	'centralauth-admin-unattached' => 'Kontoù distag',
 	'centralauth-admin-no-unattached' => "Ne chom kont ebet a-ziforc'h.",
-	'centralauth-admin-list-localwiki' => "wiki lec'hel",
-	'centralauth-admin-list-attached-on' => 'Staget ouzh',
+	'centralauth-admin-list-localwiki' => "Wiki lec'hel",
+	'centralauth-admin-list-attached-on' => 'Stag ouzh',
 	'centralauth-admin-list-method' => 'Hentenn',
 	'centralauth-admin-unmerge' => 'Dizunvaniñ ar pezh zo diuzet',
 	'centralauth-admin-merge' => 'Unvaniñ ar pezh zo diuzet',
@@ -2532,11 +2529,11 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-admin-already-unmerged' => 'Na ober van ouzh $1, dizunvanet eo bet dija',
 	'centralauth-admin-unmerge-success' => 'Dizunvanet ez eus bet $1 {{PLURAL:$1|gont|kont}}',
 	'centralauth-admin-delete-title' => 'Diverkañ ar gont',
-	'centralauth-admin-delete-description' => "Diverkañ ar gont hollek a zistrujo an holl benndibaboù hollek, a zistago an holl gontoù lec'hel hag a laosko vak an anv hollek evit neb implijer all. Distreiñ a raio ar gerioù-tremen bet krouet a-raok unvaniñ ar c'hontoù d'o zoavoudegezh kent.",
+	'centralauth-admin-delete-description' => "Diverkañ ar gont hollek a zistrujo an holl benndibaboù hollek, a zistago an holl gontoù lec'hel hag a laosko vak an anv hollek evit neb implijer all. Distreiñ a raio ar gerioù-tremen bet krouet a-raok kendeuziñ ar c'hontoù d'o zalvoudegezh kent.",
 	'centralauth-admin-delete-button' => 'Diverkañ ar gont-mañ',
 	'centralauth-admin-delete-success' => 'Diverket mat eo bet ar gont hollek evit "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'N\'eus kont hollek ebet evit "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhañ.',
+	'centralauth-admin-delete-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhi.',
 	'centralauth-token-mismatch' => "Ho tigarez, n'omp ket bet gouest d'ober war-dro ho furmskrid rak kollet eo bet roadennoù an dalc'h.",
 	'centralauth-admin-reason' => 'Abeg :',
 	'centralauth-admin-status-hidden' => 'Kuzhet',
@@ -2544,7 +2541,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munut|munut}} zo',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|eurvezh|eurvezh}} zo',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|deiz|deiz}} zo',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|devezh|devezh}} zo',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|miz|miz}} zo',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|bloaz|bloaz}} zo',
 	'centralauth-prefs-status' => 'Statud ar gont hollek :',
@@ -2552,7 +2549,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit unvaniñ ar c'hontoù-se en ur ver
 	'centralauth-prefs-unattached' => "N'eo ket kadarnaet",
 	'centralauth-prefs-complete' => 'Mat ar jeu !',
 	'centralauth-prefs-migration' => 'O treuzkas',
-	'centralauth-prefs-count-attached' => 'Mont a ra ho kont en-dro war $1 raktres.',
+	'centralauth-prefs-count-attached' => 'Mont a ra ho kont en-dro war {{PLURAL:$1|ur raktres|$1 raktres}}.',
 	'centralauth-prefs-count-unattached' => "Kontoù ankadarnaet gant hoc'h anv implijer a chom war $1 {{PLURAL:$1|raktres|raktres}}.",
 	'centralauth-prefs-detail-unattached' => "N'eo ket bet kadarnaet e vije ar raktres-se e-touez raktresoù ar gont hollek",
 	'centralauth-prefs-manage' => 'Merañ ho kont hollek',
@@ -10645,7 +10642,7 @@ Esoulaang wéi déi Spär besteet, kënnt Dir är Benotzerkonten net zesummeféi
 	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi dir an dëser Wiki uginn hutt gi fir äre globale Benotzerkont benotzt.",
 	'centralauth-list-attached-title' => 'Verbonne Benotzerkonten',
 	'centralauth-list-attached' => 'De Benotzerkont mam Numm "$1" vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonnen:',
-	'centralauth-list-attached-dryrun' => 'D\'Benotzerkonte mam Numm "$1" op all dëse Site gëtt automatesch mat dem globale Benotzerkont verbonnen:',
+	'centralauth-list-attached-dryrun' => 'De Benotzerkont mam Numm "$1" op all dëse Site gëtt automatesch mat dem globale Benotzerkont verbonnen:',
 	'centralauth-list-unattached-title' => 'Net verbonne Benotzerkonten',
 	'centralauth-list-unattached' => 'De Benotzerkont "$1" konnt fir déi ënnendrënner opgelëschte Siten net automatesch confirméiert ginn;
 wahrscheinlech hu si en anert Passwuert wéi Ären Haaptbenotzerkont:',
@@ -10662,7 +10659,7 @@ wahrscheinlech hu si en anert Passwuert wéi Ären Haaptbenotzerkont:',
 	'centralauth-finish-password' => 'Passwuert:',
 	'centralauth-finish-login' => 'Umeldung',
 	'centralauth-finish-send-confirmation' => 'Passwuert per E-Mail zouschécken',
-	'centralauth-finish-problems' => 'Wann Dir problemer hutt oder wann Dir net de Besetzer vun dësen anere Benotzerkonte sidd da [[meta:Help:Unified login problems|kënnt Dir hei Hellëf fannen]]',
+	'centralauth-finish-problems' => 'Wann Dir Problemer hutt oder wann Dir net de Besetzer vun dësen anere Benotzerkonte sidd da [[meta:Help:Unified login problems|kënnt Dir hei Hellëf fannen]]',
 	'centralauth-finish-noconfirms' => 'Kee Benotzerkont konnt mat dësem Passwuert confirméiert ginn.',
 	'centralauth-finish-incomplete' => 'E puer Benotzerkonte goufe mat Hellëf vun dësem Passwuert zesummegeféiert.
 Aner Benotzerkonte sinn nach net confirméiert.',
@@ -13309,7 +13306,7 @@ La banca de donadas pòt èsser corrompuda.',
 	'centralauth-merge-home-password' => "Lo wiki de basa d'aqueste compte (listat çaijós) dispausa d’un senhal diferent de lo qu'avètz picat.
 Picatz lo senhal sul wiki de basa.",
 	'centralauth-complete' => 'Unificacion dels comptes acabada !',
-	'centralauth-incomplete' => 'Fusion dels comptes incomplèta !',
+	'centralauth-incomplete' => 'Fusion dels comptes incompleta !',
 	'centralauth-complete-text' => 'Ara vos podètz connectar sus un projècte {{MediaWiki:Centralauth-groupname}} qué que siá sens aver de crear un compte novèl.',
 	'centralauth-incomplete-text' => 'Un còp vòstres comptes fusionats, vos poiretz connectar sus un projècte de {{MediaWiki:Centralauth-groupname}} qué qué siá sens aver de crear un compte novèl.',
 	'centralauth-not-owner-text' => "Lo compte d'utilizaire « $1 » es estat automaticament assignat al proprietari del compte sus $2.
