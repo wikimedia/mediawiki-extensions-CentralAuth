@@ -2547,7 +2547,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-prefs-status' => 'Statud ar gont hollek :',
 	'centralauth-prefs-not-managed' => 'Kont unvan ebet',
 	'centralauth-prefs-unattached' => "N'eo ket kadarnaet",
-	'centralauth-prefs-complete' => 'Mat ar jeu !',
+	'centralauth-prefs-complete' => 'Plaen an traoù !',
 	'centralauth-prefs-migration' => 'O treuzkas',
 	'centralauth-prefs-count-attached' => 'Mont a ra ho kont en-dro war {{PLURAL:$1|ur raktres|$1 raktres}}.',
 	'centralauth-prefs-count-unattached' => "Kontoù ankadarnaet gant hoc'h anv implijer a chom war $1 {{PLURAL:$1|raktres|raktres}}.",
