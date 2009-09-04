@@ -18762,20 +18762,18 @@ $messages['zh-hans'] = array(
  */
 $messages['zh-hant'] = array(
 	'mergeaccount' => '使用者帳號整合',
-	'centralauth-desc' => '[[Special:MergeAccount|整合]]所有維基媒體計劃的帳號',
+	'centralauth-groupname' => '維基媒體基金會',
+	'centralauth-desc' => '[[Special:MergeAccount|整合]]{{MediaWiki:Centralauth-groupname}}的帳號',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|將多個帳號合併]]為單一使用者帳號',
 	'centralauth-merge-denied' => '很抱歉，您沒有權限存取這個頁面',
 	'centralauth-merge-notlogged' => '請<span class="plainlinks">
 		[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}}登入]
 		</span>以驗證您的帳號是否已經完成整合。',
-	'centralauth-merge-welcome' => "'''您的使用者帳戶尚未與維基媒體的統一登入系統合併。'''
+	'centralauth-merge-welcome' => "'''您的使用者帳號尚未被遷移到{{MediaWiki:Centralauth-groupname}}的整合登錄系統。'''
 
-一旦您決定合併帳戶，即可以透過相同的使用者名與密碼登入到維基媒體所有計劃的所有語言版本。
-這樣做可以讓您在共用的計劃如<span class=\"plainlinks\">[http://commons.wikimedia.org/ 維基共享資源]</span>中更容易的作業。
+一旦您選擇遷移您的帳戶，您便可以透過相同的用戶名稱和密碼登錄到{{MediaWiki:Centralauth-groupname}}的所有wiki的所有語言版本。
 
-這也能避免在不同的計劃中，兩位不同的使用者因選擇相同名稱而造成的混淆與衝突。
-
-如果在另一個計劃上已經有其他人選擇了您的用戶名，他們也不會受到干擾。不過您可以請求該計劃的管理員進行協商或解決。",
+如果在另一個站點上已有其他人選用了您的用戶名，他們也不會受到干擾。不過，之後您將有一個與他們或管理員協商解決該問題的機會。",
 	'centralauth-merge-step1-title' => '開始登入整合',
 	'centralauth-merge-step1-detail' => '請在這裡輸入您的帳戶密碼。您的密碼以及電子郵件地址將會與其他計劃的資料進行比對，以確認它們是一致的。所有資料在您確認沒有問題之前均不會更改。',
 	'centralauth-merge-step1-submit' => '確認登入資料',
@@ -18801,8 +18799,8 @@ $messages['zh-hant'] = array(
 請輸入自家wiki的密碼。',
 	'centralauth-complete' => '帳號整合完成！',
 	'centralauth-incomplete' => '帳號整合未完成！',
-	'centralauth-complete-text' => '您現在可以使用同一組帳號與密碼登入所有維基媒體計劃網站，且不需再建立新帳號。以這組帳號密碼即可登入所有維基媒體基金會的各項計劃。',
-	'centralauth-incomplete-text' => '當您的賬戶被整合後，您將能夠登錄到任何一處維基媒體的維基項目網站，而無需創建一個新的賬戶；相同的用戶名和密碼會適用於維基百科、維基詞典、維基教科書及其他姐妹項目的所有語言版本。',
+	'centralauth-complete-text' => '您現在可以登錄到{{MediaWiki:Centralauth-groupname}}的任何wiki站點，而無需創建一個新的帳號。',
+	'centralauth-incomplete-text' => '當您的帳號被整合後，您將能夠登錄到{{MediaWiki:Centralauth-groupname}}的任何一個wiki站點，而無需建立一個新的帳號。',
 	'centralauth-not-owner-text' => '使用者名稱："$1"已自動分配給$2上的帳號。
 
 如果這是您的帳號，請輸入該帳號的密碼以完成帳號整合：',
@@ -18844,6 +18842,7 @@ $messages['zh-hant'] = array(
 	'centralauth-attach-submit' => '遷移帳號',
 	'centralauth-attach-success' => '該帳戶已被遷移到整合帳戶中。',
 	'centralauth' => '統一帳戶管理',
+	'centralauth-admin-intro' => '此介面用於全域帳號的管理。',
 	'centralauth-admin-manage' => '管理使用者資料',
 	'centralauth-admin-username' => '使用者名稱：',
 	'centralauth-admin-lookup' => '檢視或編輯使用者資料',
@@ -18858,9 +18857,14 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-attached' => '所有已合併的帳戶',
 	'centralauth-admin-unattached' => '未附屬的帳戶',
 	'centralauth-admin-no-unattached' => '沒有任何未遷移的帳戶。',
+	'centralauth-admin-notblocked' => '沒有封禁',
+	'centralauth-admin-blocked' => '已經封禁，期限至 $1。原因： $2',
+	'centralauth-admin-blocked-indef' => '無限期封禁。原因： $1',
 	'centralauth-admin-list-localwiki' => '本地維基站',
 	'centralauth-admin-list-attached-on' => '合併時間',
 	'centralauth-admin-list-method' => '驗證方式',
+	'centralauth-admin-list-editcount' => '編輯次數',
+	'centralauth-admin-list-blocked' => '封禁狀態',
 	'centralauth-admin-unmerge' => '解除已選取的帳戶',
 	'centralauth-admin-merge' => '整合已選取的',
 	'centralauth-admin-bad-input' => '不正確的整合選擇',
@@ -18900,8 +18904,8 @@ $messages['zh-hant'] = array(
 	'centralauth-renameuser-reserved' => '用戶$2已經預留給全域賬戶使用。',
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
 	'centralauth-account-exists' => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
-	'centralauth-login-progress' => '為您登入中至Wikimedia的其它計劃:',
-	'centralauth-logout-progress' => '為您登出中自Wikimedia的其它計劃:',
+	'centralauth-login-progress' => '正在為您登錄到{{int:Centralauth-groupname}}的其它計劃：',
+	'centralauth-logout-progress' => '正在為您登出{{int:Centralauth-groupname}}的其它計劃：',
 	'centralauth-log-name' => '全域帳戶管理日誌',
 	'centralauth-log-header' => '這個日誌包含全域帳戶的動作: 刪除、鎖定以及解除鎖定。',
 	'centralauth-log-entry-delete' => '已經刪除全域帳戶"<nowiki>$1</nowiki>"',
@@ -18920,7 +18924,8 @@ $messages['zh-hant'] = array(
 	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
 	'globalgroupmembership' => '在全域組中的成員',
 	'globalgrouppermissions' => '全域組管理',
-	'centralauth-globalgroupperms-grouplist' => '以下的全域組已經設定好。您可以去查看或編輯任何組指定的許可。在組中亦都可以移除全部權限去刪除它。',
+	'centralauth-globalgroupperms-grouplist' => '以下的全域群組已經被設定。
+如果您擁有權限，您可以檢視或編輯任何群組的權限。亦可透過移除該群組的所有權限以刪除整個群組資訊。',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 （[[Special:GlobalGroupPermissions/$2|去查看及編輯許可]]）',
 	'centralauth-existinggroup-legend' => '現有的組',
 	'centralauth-newgroup-legend' => '建立一個新組',
