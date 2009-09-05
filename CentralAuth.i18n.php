@@ -6934,6 +6934,7 @@ $messages['he'] = array(
 /** Hindi (हिन्दी)
  * @author Kaustubh
  * @author Kiranmayee
+ * @author आलोक
  */
 $messages['hi'] = array(
 	'mergeaccount' => 'खाता एकत्रिकरण स्थिती',
@@ -7087,7 +7088,9 @@ $messages['hi'] = array(
 आपने यह पृष्ठ कोईभी ज़ानकारी दिये बिना मँगाया हैं, इसलिये यह कुछ नहीं करेगा।',
 	'globalgroupmembership' => 'वैश्विक गटका सदस्यत्व',
 	'globalgrouppermissions' => 'वैश्विक गट व्यवस्थापन',
-	'centralauth-globalgroupperms-grouplist' => 'नीचे दिये हुए वैश्विक गट उपलब्ध हैं। आप कोईभी गटको दिये हुए अधिकार देख अथवा बदल सकतें हैं। गट हटाने के लिये उसे दिये हुए सभी अधिकार निकाल दें।',
+	'centralauth-globalgroupperms-grouplist' => 'निम्नोक्त वैश्विक समूहों का जमाव किया गया है।
+यदि आपको अधिकार हो, तो हरेक समूह को प्रदत्त अधिकारों को देख सकते हैं या बदल भी सकते हैं।
+किसी समूह को मिटाने के लिए उससे सारे अधिकार हटाए जा सकते हैं।',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|अधिकार देखें और बदलें]])',
 	'centralauth-existinggroup-legend' => 'अस्तित्वमें होनेवाले ग्रुप',
 	'centralauth-newgroup-legend' => 'नया ग्रुप तैयार करें',
@@ -16547,7 +16550,7 @@ $messages['te'] = array(
 	'centralauth-prefs-manage' => 'మీ గ్లోబల్ ఖాతాను నిర్వహించుకోండి',
 	'centralauth-invalid-wiki' => 'ఇలాంటి వికీ లేదు DB: $1',
 	'centralauth-account-exists' => 'ఖాతాను సృష్టించలేకున్నాం: మీరడిగిన వాడుకరిపేరుని ఏకీకృత ప్రవేశ వ్యవస్థలో ఈసరికే తీసేసుకున్నారు.',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}} ప్రాజెక్టులోకి మీరు లాగిన్ అవుతున్నారు',
+	'centralauth-login-progress' => 'కేంద్రీకృత ప్రాజెక్టులోకి మీరు లాగిన్ అవుతున్నారు',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} ప్రాజెక్టునుంచి నిష్క్రమిస్తున్నారు',
 	'centralauth-log-name' => 'సార్వత్రిక ఖాతాల చిట్టా',
 	'centralauth-log-header' => 'ఈ లాగ్‌లో సార్వత్రిక ఖాతాల ద్వారా జరిగిన పనులు ఉంటాయి: త్లగింపులు, లాకులు, అన్‌లాకులు',
