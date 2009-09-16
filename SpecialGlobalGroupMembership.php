@@ -72,7 +72,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		}
 	}
 	
-	function fetchUser( $username ) {
+	static function fetchUser( $username ) {
 		global $wgUser, $wgRequest;
 		
 		$knownwiki = $wgRequest->getVal('wpKnownWiki');
