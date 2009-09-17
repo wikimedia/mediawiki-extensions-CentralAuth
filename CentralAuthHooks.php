@@ -187,12 +187,12 @@ class CentralAuthHooks {
 		// Sanity check to avoid session ID collisions, as reported on bug 19158
 		if ( !isset($_COOKIE["{$prefix}User"]) ) {
 			wfDebug( __METHOD__.": no User cookie, so unable to check for session mismatch\n" );
-			return;
+			return true;
 		} elseif ( $_COOKIE["{$prefix}User"] != $userName ) {
 			wfDebug( __METHOD__.": Session ID/User mismatch. Possible session collision. ".
 					"Expected: $userName; actual: ".
 					$_COOKIE["{$prefix}User"]."\n" );
-			return;
+			return true;
 		}
 
 		// Clean up username
