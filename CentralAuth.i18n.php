@@ -11723,7 +11723,7 @@ $messages['ml'] = array(
 	'centralauth-globalgroupperms-grouplist' => 'താഴെ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്ന ആഗോള ഗ്രൂപ്പുകള്‍ ക്രമപ്പെടുത്തിയിക്കുന്നു. താങ്കള്‍ക്കു ഏതെങ്കിലും ഒരു ഗ്രൂപ്പിനു കൊടുത്തിരിക്കുന്ന അവകാശങ്ങള്‍ കാണുകയും തിരുത്തുകയും ചെയ്യാവുന്നതാണ്‌. എല്ലാ അവകാശങ്ങളും മാറ്റിയതിനു ശേഷം ഏതെങ്കിലും ഒരു ഗ്രൂപ്പിനെ മായ്ച്ചു കളയാവുന്നതും ആണ്‌.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|അവകാശങ്ങള്‍ കാണുകയും തിരുത്തുകയും ചെയ്യുക]])',
 	'centralauth-existinggroup-legend' => 'നിലവിലുള്ള ഗ്രൂപ്പുകള്‍',
-	'centralauth-newgroup-legend' => 'പുതിയൊരു ഗ്രൂപ്പുണ്ടാക്കുക്ക',
+	'centralauth-newgroup-legend' => 'പുതിയൊരു ഗ്രൂപ്പുണ്ടാക്കുക',
 	'centralauth-newgroup-intro' => 'പുതിയ ഒരു ഗ്രൂപ്പിനു അവകാശങ്ങള്‍ കൊടുക്കുവാന്‍ വേണ്ടി ഈ ഫോം ഉപയോഗിക്കുക. ഏതെങ്കിലും ഒരു ഗ്രൂപ്പിനു പ്രത്യേക അവകാശങ്ങള്‍ കൊടുക്കുന്നില്ലെങ്കില്‍ ആ ഗ്രൂപ്പിനു നിലനില്‍പ്പില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
 	'centralauth-globalgroupperms-newgroupname' => 'പുതിയ ഗ്രൂപ്പിന്റെ പേര്‌:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'അവകാശങ്ങള്‍ അനുവദിക്കുക',
@@ -14211,7 +14211,7 @@ Um grupo pode ser eliminado através da remoção de todos os direitos a ele atr
 	'centralauth-editgroup-success-text' => 'Você alterou com sucesso as permissões de grupo para o grupo $1.
 [[Special:GlobalGroupPermissions|Voltar à gestão de grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Seleccione um wiki onde possua uma conta:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Selecione um wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O utilizador global '''$1''' não está activo no wiki que especificou (''$2''). É possível que esteja a tentar atribuir direitos ao utilizador errado!",
 	'centralauth-editset' => 'Editar conjuntos wiki',
 	'centralauth-editset-legend' => 'Editar ou criar um conjunto wiki',
