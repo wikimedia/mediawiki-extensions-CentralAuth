@@ -18005,6 +18005,39 @@ Un grupo el pode èssar scancelà cavàndoghe tuti i parmessi che'l gà.",
 	'right-globalgrouppermissions' => 'Gestion dei grupi globali',
 );
 
+/** Veps (Vepsan kel')
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'centralauth-finish-password' => 'Peitsana:',
+	'centralauth-finish-login' => 'Kirjutadas sistemha',
+	'centralauth-admin-username' => 'Kävutajan nimi:',
+	'centralauth-admin-info-id' => 'Kävutajan ID:',
+	'centralauth-admin-info-locked' => 'Luklostadud:',
+	'centralauth-admin-info-hidden' => 'Peittud:',
+	'centralauth-admin-yes' => 'ka',
+	'centralauth-admin-no' => 'ei',
+	'centralauth-admin-list-method' => 'Metod',
+	'centralauth-admin-reason' => 'Sü:',
+	'centralauth-admin-status-locked' => 'Luklostadud:',
+	'centralauth-admin-status-hidden' => 'Peittud',
+	'centralauth-admin-status-submit' => 'Panda status',
+	'centralauth-listusers-locked' => 'luklostadud',
+	'centralauth-prefs-complete' => 'Kaik om hüvä!',
+	'centralauth-log-status-locked' => 'luklostadud',
+	'centralauth-log-status-hidden' => 'peittud',
+	'centralauth-log-status-none' => '(ei ole)',
+	'centralauth-newgroup-legend' => "Säta uz' grupp",
+	'centralauth-globalgroupperms-newgroupname' => 'Uden gruppan nimi:',
+	'centralauth-editgroup-members' => 'Ühtnijoiden nimikirjutez:',
+	'centralauth-editset-name' => 'Nimi:',
+	'centralauth-editset-type' => 'Tip:',
+	'centralauth-editset-wikis' => 'Wikid:',
+	'centralauth-editset-reason' => 'Sü:',
+	'centralauth-editset-nouse' => '(ei ole)',
+	'centralauth-editset-usage' => 'Om kävutadud gruppiš:',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  * @author Vinhtantran
