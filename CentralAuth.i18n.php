@@ -13975,6 +13975,7 @@ $messages['ps'] = array(
 	'centralauth-admin-delete-title' => 'کارن-حساب ړنګول',
 	'centralauth-admin-delete-button' => 'همدا کارن-حساب ړنګول',
 	'centralauth-admin-reason' => 'سبب:',
+	'centralauth-admin-status-hidden' => 'پټ',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|ثانيه|ثانيې}} دمخه',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|دقيقه|دقيقې}} دمخه',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ساعت|ساعته}} دمخه',
@@ -13982,6 +13983,7 @@ $messages['ps'] = array(
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|مياشت|مياشتې}} دمخه',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|کال|کاله}} پخوا',
 	'centralauth-prefs-count-attached' => 'ستاسو کارن-حساب د $1  {{PLURAL:$1|پروژې په ويبځي|پروژو په ويبځايونو}} باندې فعاله دی .',
+	'centralauth-log-status-hidden' => 'پټ',
 	'centralauth-newgroup-legend' => 'يوه نوې ډله جوړول',
 	'centralauth-globalgroupperms-newgroupname' => 'د نوې ډلې نوم:',
 	'centralauth-editgroup-name' => 'د ډلې نوم:',
@@ -13989,6 +13991,8 @@ $messages['ps'] = array(
 	'centralauth-editgroup-noset' => '(هېڅ)',
 	'centralauth-editgroup-reason' => 'د بدلون سبب:',
 	'centralauth-editset-name' => 'نوم:',
+	'centralauth-editset-wikis' => 'ويکي ګانې:',
+	'centralauth-editset-reason' => 'سبب:',
 	'centralauth-editset-nouse' => '(هېڅ)',
 );
 
@@ -18482,11 +18486,14 @@ $messages['yi'] = array(
 	'centralauth-merge-method-primary' => 'היים וויקי',
 	'centralauth-merge-method-empty' => 'קיין בײַשטײַערונגען',
 	'centralauth-finish-password' => 'פאַסווארט:',
+	'centralauth-finish-login' => 'אַרײַנלאגירן',
 	'centralauth-admin-info-hidden' => 'באַהאַלטן:',
 	'centralauth-admin-yes' => 'יא',
 	'centralauth-admin-no' => 'ניין',
 	'centralauth-admin-reason' => 'אורזאַך:',
 	'autologin' => 'אויטאמאטיש איינלאגירן',
+	'centralauth-editgroup-noset' => '(קיין)',
+	'centralauth-editset-name' => 'נאָמען:',
 	'centralauth-editset-reason' => 'אורזאַך:',
 );
 
