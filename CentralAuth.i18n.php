@@ -10635,7 +10635,7 @@ $messages['lb'] = array(
 	'mergeaccount' => 'Status vun der Benotzerkonten-Zesummeféierung',
 	'centralauth-groupname' => 'der Wikimedia Fondatioun',
 	'centralauth-desc' => 'Benotzerkonten op de Wikie vun  {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]',
-	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zusammenleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
+	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zesammeleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied' => 'Pardon, dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Loggt Iech w.e.g. an]</span> fir nozekucken ob all är Benotzerkonte ganz zesummegefouert goufen.',
 	'centralauth-merge-welcome' => "'''Äre Benotzerkont gouf nach net an de globale System vun {{MediaWiki:Centralauth-groupname}} migréiert.'''
