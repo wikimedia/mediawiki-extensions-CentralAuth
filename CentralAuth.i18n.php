@@ -7671,6 +7671,7 @@ menm non itilizatè ak mopas kont prensipal ou an ap mache nan Wikipedya, Wikibo
 );
 
 /** Hungarian (Magyar)
+ * @author Bdamokos
  * @author Dani
  * @author Dorgan
  * @author Glanthor Reviol
@@ -7681,7 +7682,7 @@ menm non itilizatè ak mopas kont prensipal ou an ap mache nan Wikipedya, Wikibo
  */
 $messages['hu'] = array(
 	'mergeaccount' => 'Felhasználói fiókok egyesítésének állapota',
-	'centralauth-groupname' => 'a Wikimedia Alapítvány',
+	'centralauth-groupname' => 'a Wikimédia Alapítvány',
 	'centralauth-desc' => '[[Special:MergeAccount|Felhasználói fiókok egységesítése]] {{MediaWiki:Centralauth-groupname}} wikijein',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Felhasználói fiókok összevonása]] az egységes bejelentkezéshez',
 	'centralauth-merge-denied' => 'Sajnáljuk, de nincs jogod az oldal megtekintéséhez.',
