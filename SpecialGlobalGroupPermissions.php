@@ -74,11 +74,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		$sk = $wgUser->getSkin();
 
 		$groups = CentralAuthUser::availableGlobalGroups();
-		
+
 		// Existing groups
-		$html = Xml::openElement( 'fieldset' );
-		$html .= Xml::element( 'legend', null, wfMsg( 'centralauth-existinggroup-legend' ) );
-		
+		$html = Xml::fieldset( wfMsg( 'centralauth-existinggroup-legend' ) );
+
 		$wgOut->addHTML( $html );
 
 		if (count($groups)) {
@@ -98,7 +97,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 
 		if ( $this->userCanEdit( $wgUser ) ) {
 			// "Create a group" prompt
-			$html = Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'centralauth-newgroup-legend' ) );
+			$html = Xml::fieldset( wfMsg( 'centralauth-newgroup-legend' ) );
 			$html .= wfMsgExt( 'centralauth-newgroup-intro', array( 'parse' ) );
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'centralauth-globalgroups-newgroup' ) );
 			$html .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalGroupPermissions')->getPrefixedText() );
@@ -115,13 +114,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 	
 	function buildGroupView( $group ) {
 		global $wgOut, $wgUser, $wgScript;
-		
+
 		$editable = $this->userCanEdit( $wgUser );
-		
+
 		$wgOut->setSubtitle( wfMsg( 'centralauth-editgroup-subtitle', $group ) );
-		
-		$html = Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'centralauth-editgroup-fieldset', $group ) );
-		
+
+		$html = Xml::fieldset( wfMsg( 'centralauth-editgroup-fieldset', $group ) );
+
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => SpecialPage::getTitleFor('GlobalGroupPermissions', $group)->getLocalUrl(), 'name' => 'centralauth-globalgroups-newgroup' ) );
 			$html .= Xml::hidden( 'wpGroup', $group );
@@ -190,10 +189,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 		foreach( $rights as $right ) {
 			# Build a checkbox.
 			$checked = in_array( $right, $assignedRights );
-			
-			$desc = htmlspecialchars(User::getRightDescription( $right )) . ' (' .
-						Xml::element( 'tt', null, $right ).')';
-			
+
+			$desc = htmlspecialchars( User::getRightDescription( $right ) ) . ' ' .
+						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
+
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked, $attribs );
 			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
 					$desc );
