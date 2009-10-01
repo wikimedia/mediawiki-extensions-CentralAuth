@@ -10912,7 +10912,7 @@ Es te d'rveur keus óm dien gebroekersaccounts te migrere, den kèns te dich mit
 Es emes angers mit diene gebroekersnaam al actief is op 'ne angere site, den haet det gein gevolge veur dae gebroeker. De höbs de mäögelikheid det mit dae gebroeker of 'ne beheerder op 'n later memènt op te losse.",
 	'centralauth-merge-step1-title' => 'Begin gebroekerssamevoege',
 	'centralauth-merge-step1-detail' => "Veur hiej dien wachwaord in.
-Dien wachwaord en geregistreerd e-mailadres waere gecontroleerd taenge de gebroekers op anger wiki's óm te bevestige det ze euvereinkómme. D'r waere gein verangeringe gemaak tótdets te höbs aangegaeve det alles correk liek.",
+Dien wachwaord en geregistreerd e-mailadres waere gecontroleerd taenge de gebroekers op anger wiki's óm te bevestige det ze euvereinkómme. D'r waere gein verangeringe gemaak pès te höbs aangegaeve det alles korrek liek.",
 	'centralauth-merge-step1-submit' => 'Konférmeer aanmeldinfermasie',
 	'centralauth-merge-step2-title' => 'Bevestig mieë gebroekers',
 	'centralauth-merge-step2-detail' => "'n Aantal van de gebroekers kóste neet aan de opgegaeve thoeswiki gekoppeldj waere. Es dees gebroekers van uch zeen, kintj geer uch det aangaeve door 't wachwaord veur de gebroekers op te gaeve.",
@@ -10956,7 +10956,7 @@ Zlang de wiki neet bewirk kin waere, kinse gein gebroekers samevoge.",
 	'centralauth-list-attached-dryrun' => 'De gebroeker mit de naam "$1" op de volgende sites wuuertj automatisch toegevoeg aan de samegevoegde gebroeker:',
 	'centralauth-list-unattached-title' => 'Neet betróg gebroekers',
 	'centralauth-list-unattached' => '\'t Gebroekersaccount "$1" kós neet automatisch aan dich toegeweze waere veur de volgende sites;
-waorsjienliek ómdet \'t wachwaord aafwik van dien primair gebroekersaccount:',
+waorsjienlik ómdet \'t wachwaord aafwik van dien primair gebroekersaccount:',
 	'centralauth-foreign-link' => 'Gebroeker $1 op $2',
 	'centralauth-merge-method-primary' => 'thoeswiki',
 	'centralauth-merge-method-empty' => 'gein biedrages',
