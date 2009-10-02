@@ -3897,7 +3897,7 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'right-globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen bearbeiten',
 	'right-centralauth-admin' => 'Globale Benutzerkonten administrieren',
 	'right-centralauth-merge' => 'Benutzerkonten zusammenführen',
-	'right-globalgrouppermissions' => 'Management globaler Gruppen',
+	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
