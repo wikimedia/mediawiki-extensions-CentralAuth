@@ -4824,11 +4824,11 @@ probablemente tienen una contraseña diferente a la de tu cuenta primaria:',
 	'centralauth-finish-title' => 'Finalizar la fusión',
 	'centralauth-finish-text' => 'Si estas cuentas le pertenecen, puede finalizar el proceso de unificación símplemente tecleando las contraseñas de las otras cuentas aquí:',
 	'centralauth-finish-password' => 'Contraseña:',
-	'centralauth-finish-login' => 'Entrar',
+	'centralauth-finish-login' => 'Iniciar sesión',
 	'centralauth-finish-send-confirmation' => 'Mandar contraseña por correo electrónico',
 	'centralauth-finish-problems' => 'Estás teniendo problema, o no eres el dueño de estas cuentas?
 [[meta:Help:Unified login problems|Como encontar ayuda]]…',
-	'centralauth-finish-noconfirms' => 'No existen cuentas que puedan ser confirmadas con esta contraseña.',
+	'centralauth-finish-noconfirms' => 'No se puede confirmar ninguna cuenta usando esta contraseña.',
 	'centralauth-finish-incomplete' => 'Varias cuentas fueron fusionadas con esta contraseña.
 Otras cuentas no están confirmadas todavía.',
 	'centralauth-merge-attempt' => "'''Comprobando contraseña provista contra las cuentas restantes no fusionadas...'''",
