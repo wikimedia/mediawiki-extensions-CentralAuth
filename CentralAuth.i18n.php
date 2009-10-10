@@ -9395,6 +9395,7 @@ $messages['ka'] = array(
 	'centralauth-prefs-unattached' => 'დაუდასტურებელია',
 	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
 	'centralauth-prefs-manage' => 'თქვენი გლობალური ანგარიშის მართვა',
+	'centralauth-log-status-hidden' => 'დამალული',
 	'centralauth-newgroup-legend' => 'ახალი ჯგუფის შექმნა',
 	'centralauth-globalgroupperms-newgroupname' => 'ახალი ჯგუფის სახელი:',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
@@ -14945,7 +14946,7 @@ $messages['sah'] = array(
 Бука диэн дьиэ-биикиҥ киирии тылын суруй.',
 	'centralauth-complete' => 'Ааттар этэҥҥэ холбостулар!',
 	'centralauth-incomplete' => 'Ааттары холбооһун кыайан түмүктэммэтэ!',
-	'centralauth-complete-text' => 'Билигин ханнык баҕарар Викимедиа саайтыгар саҥа ааты оҥорбокко эрэ киирэр кыахтанныҥ {{MediaWiki:Centralauth-groupname}}.',
+	'centralauth-complete-text' => 'Билигин ханнык баҕарар {{MediaWiki:Centralauth-groupname}} саайтыгар саҥа ааты оҥорбокко эрэ киирэр кыахтааххын.',
 	'centralauth-incomplete-text' => 'Ааттарыҥ холбостохторуна Викимедиа ханнык баҕарар бырайыактарыгар {{MediaWiki:Centralauth-groupname}} атын ааты оҥорбокко эрэ киирэр кыахтаныаҥ.',
 	'centralauth-not-owner-text' => '«$1» аат аптамаатынан бу аакка «$2» холбонно.
 
