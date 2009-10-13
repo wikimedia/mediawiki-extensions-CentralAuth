@@ -3966,6 +3966,13 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-editset-badtype' => 'Sie haben einen ungültigen Typ angegeben.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Xoser
+ */
+$messages['diq'] = array(
+	'centralauth-globalgroupperms-nogroups' => 'Îtîya de ne global grup esto.',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
@@ -11732,7 +11739,7 @@ $messages['ml'] = array(
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|ദിവസത്തിനു|ദിവസങ്ങള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|മാസത്തിനു|മാസങ്ങള്‍ക്കു}} മുന്‍പ്',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|വര്‍ഷത്തിനു|വര്‍ഷങ്ങള്‍ക്കു}} മുന്‍പ്',
-	'centralauth-prefs-status' => 'ആഗോളഅംഗത്വ സ്ഥിതി:',
+	'centralauth-prefs-status' => 'ആഗോള അംഗത്വ സ്ഥിതി:',
 	'centralauth-prefs-not-managed' => 'സം‌യോജിത അക്കൗണ്ട് ഉപയോഗിക്കുന്നില്ല',
 	'centralauth-prefs-unattached' => 'സ്ഥിരീകരിച്ചിട്ടില്ല',
 	'centralauth-prefs-complete' => 'എല്ലാം ക്രമത്തിലാണ്‌!',
