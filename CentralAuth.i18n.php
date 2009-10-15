@@ -18569,6 +18569,7 @@ $messages['yi'] = array(
 	'centralauth-merge-method-empty' => 'קיין בײַשטײַערונגען',
 	'centralauth-finish-password' => 'פאַסווארט:',
 	'centralauth-finish-login' => 'אַרײַנלאגירן',
+	'centralauth-admin-username' => 'באַניצער נאָמען:',
 	'centralauth-admin-info-hidden' => 'באַהאַלטן:',
 	'centralauth-admin-yes' => 'יא',
 	'centralauth-admin-no' => 'ניין',
