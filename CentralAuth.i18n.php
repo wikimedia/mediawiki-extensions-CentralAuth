@@ -4124,6 +4124,39 @@ $messages['diq'] = array(
 	'centralauth-editgroup-restrictions' => '
 Ça de ena grup aktiv o, setanê wîkî bimucne:',
 	'centralauth-editgroup-noset' => '(çini yo)',
+	'centralauth-editgroup-submit' => 'Desturê grupî rê vurnayîşî qeyd ke',
+	'centralauth-editgroup-perms' => 'Desturan bide:',
+	'centralauth-editgroup-reason' => 'Sebebê vurnayîşî:',
+	'centralauth-editgroup-success' => 'Desturanê gruban vurîya',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bivurne]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wîkîyê ke hesabê tu esto:',
+	'centralauth-editset' => 'Setê wîkîyî bivurne',
+	'centralauth-editset-legend' => 'Setê wîkîyî bivurne ya zi biviraze',
+	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|bivîne/bivurne]])',
+	'centralauth-editset-new' => 'Yew setê wîkîyî viraze',
+	'centralauth-editset-notfound' => 'Setê wîkî "$1" ni diy.',
+	'centralauth-editset-optin' => 'Ser opt-in (teyna wîkîyanê ke ti spesife kerd)',
+	'centralauth-editset-optout' => 'Ser opt-out (teyna wîkîyanê ke ti spesife nikerd)',
+	'centralauth-editset-legend-edit' => 'Setê wîkî "$1" vurneno',
+	'centralauth-editset-legend-new' => 'Setê wîkî yê newî virazeno',
+	'centralauth-editset-name' => 'Name:',
+	'centralauth-editset-type' => 'Tîp:',
+	'centralauth-editset-wikis' => 'Wîkîyan:',
+	'centralauth-editset-reason' => 'Sebeb:',
+	'centralauth-editset-submit' => 'Qeyd ke',
+	'centralauth-editset-badname' => 'Namayê vengî ya zi ğeletî.',
+	'centralauth-editset-badtype' => 'Tîpê seti yê ğeletî.',
+	'centralauth-editset-setexists' => 'Pê nameyê ke esto ey ra birone',
+	'centralauth-editset-nowikis' => 'Ti yew zi wîkî spesife nikerd.',
+	'centralauth-editset-nouse' => '(çini yo)',
+	'centralauth-editset-usage' => 'Grupan de kar keno:',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|Ena wîkî|wîkîyan}} çini yo: $1.',
+	'centralauth-editset-success' => 'Setê wîkî vurîya.',
+	'centralauth-editset-return' => 'Merkezê vînayişî rê şi',
+	'right-globalgroupmembership' => 'Eza biyayîşê globalî bivurne',
+	'right-centralauth-admin' => 'Hesabanê globalî îdare bike',
+	'right-centralauth-merge' => 'Hesabanê înan yew bike',
+	'right-globalgrouppermissions' => 'Hesabanê globalî îdare bike',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -16500,6 +16533,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Leo Johannes
  * @author M.M.S.
  * @author Micke
+ * @author NH
  * @author Najami
  * @author Sannab
  */
@@ -16509,7 +16543,7 @@ $messages['sv'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Sammanfogar användarkonton]] på wikier som tillhör {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sammanfogar flera konton]] för gemensam inloggning',
 	'centralauth-merge-denied' => 'Du har tyvärr inte åtkomstsbehörighet till denna sida.',
-	'centralauth-merge-notlogged' => 'Du måste <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}}}}} Logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
 	'centralauth-merge-welcome' => "'''Ditt användarkonto har ännu inte flyttats över till det gemensamma inloggningssystemet för {{MediaWiki:Centralauth-groupname}}.'''
 
 Om du väljer att slå samman dina konton, så kommer du att kunna använda samma användarnamn och lösenord för att logga in på alla wikier som tillhör {{MediaWiki:Centralauth-groupname}} i alla tillgängliga språk.
