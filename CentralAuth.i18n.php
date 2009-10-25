@@ -3967,6 +3967,7 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 );
 
 /** Zazaki (Zazaki)
+ * @author Aspar
  * @author Xoser
  */
 $messages['diq'] = array(
@@ -3976,22 +3977,61 @@ $messages['diq'] = array(
 	'centralauth-mergeaccount-desc' => 'Qe yew cikewtîşê karberî ser [[Special:MergeAccount|hesabanê hemî yew keno]]',
 	'centralauth-merge-denied' => 'Qusirê ma mevîne, ser cikewtîşê ena pele rê desturê ti çini yo.',
 	'centralauth-merge-notlogged' => 'Ma rica keno <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} log in]</span> hesabanê xo kontrol bike ke emin biy hesabanê tu pêran yew biy.',
+	'centralauth-merge-welcome' => "'''Hesabê hama sistemê cikewtişê yewi {{MediaWiki:Centralauth-groupname}} rê neqil nibiyo.'''
+
+Eka ti wazeno hesabê xio neqil bike, ti hin eşkeno ser eyni name u parola wîkîyanê {{MediaWiki:Centralauth-groupname}}î rê cikewt.
+
+Eka yewna merdim name tu guret, ma yin bêrexet niken, feqat ti eşkeno yin ra piya bihebit ya zi bace yew îdarekar ra.",
 	'centralauth-merge-step1-title' => 'Yew kerdişê cikewtîşî başli bike',
+	'centralauth-merge-step1-detail' => 'Ma rica keno paraloya hesabê xo îtiya de bike.
+Ma Paralo u adresê e-maîlê tu, ser hesabanê ke wîkîyan bînan de ser înan rê kontrol keno. 
+Ma hesabê tu nivurneno heta tu konfirme bike ke her çî normal o.',
 	'centralauth-merge-step1-submit' => 'Enformasyonê cikewtîşî konfirme bike',
 	'centralauth-merge-step2-title' => 'Hesabanê binî konfirme bike',
+	'centralauth-merge-step2-detail' => 'Tay hesaban ma nişkeno otomatik match bike ser wîkîyê lokalî.
+Eka ti wahirê enê hesaban o, ti eşkeno pê parola xo rê konfirme bike.',
 	'centralauth-merge-step2-submit' => 'Enformasyonê cikewtîşî konfirme bike',
+	'centralauth-merge-dryrun-complete' => 'Hesabanê hemî eşkeno otomatik biyo yew!
+
+Hesabanê tu hama nivuriya.',
+	'centralauth-merge-dryrun-incomplete' => 'Nika ti eşkeno dewam bike, feqat tay hesaban ke ma nieşke otomatik konfirme bike, aye ra neqil kerdiş nibeno. 
+Feqt ti eşkeno bace ena hesaban yew bike.
+
+Hesabanê tu hama nivuriya.',
 	'centralauth-merge-dryrun-or' => "'''ya ki'''",
+	'centralauth-merge-dryrun-home' => 'Sistemê berdîşî hesabê tu nieşkeno konfirme bike ke ti wahirê wîkîyê lokalî.
+
+Yewna wîkî de hesabê tu yê lokalî  esto; ena link klik bike u cikewt u hesabê xo bere.',
 	'centralauth-merge-step3-title' => 'Hesabê yewbiyayî viraze',
 	'centralauth-merge-step3-detail' => 'Ti ho yew hesabê yewbiyayî virazeno u ena wîkîyan ataç biyo:',
 	'centralauth-merge-step3-submit' => 'Hesaban yew bike',
+	'centralauth-merge-no-accounts' => 'Ser nameyê tu rê tabloya hesab trackî yê merkezî de yew hesab çini yo!
+Belki database de yew ğelet esto.',
+	'centralauth-merge-home-password' => 'Wîkîyê Lokalî de binê ena hesab de yewna parola esto ke ena parola rê eynî niyo.
+Qe wîkîyê lokalî ma rica keno eyni paraola binuse.',
 	'centralauth-complete' => 'Yew kerdişê cikewtîşî temam biyo!',
 	'centralauth-incomplete' => 'Yew kerdişê cikewtîşî temam nibiyo!',
+	'centralauth-complete-text' => 'Ti hin eşkeno sîteyanê {{MediaWiki:Centralauth-groupname}}î rê pê yew hesab ra cikewt.',
+	'centralauth-incomplete-text' => 'Eka cikewtişê tu biy yew, ti hin eşkeno sîteyanê {{MediaWiki:Centralauth-groupname}}î rê pê yew hesab ra cikewt',
+	'centralauth-not-owner-text' => 'Ena nameyê karber ê "$1"î, hesabê $2î rê otomatik reserve biyo.
+
+Eka ena tu ya, ti eşkeno processa yew kerdişî pê paraloya masterî nuştiş ra beqedne.',
+	'centralauth-blocked-text' => 'Wîkîyê tu lokalî (cor de liste biyo) blok biyo.
+Ma rica keno yew îdarakar rê yew mesaj bişirav ke ma unblok bike.
+Nika ti nieşkeno hesabanê xo yew biker.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Teyna mode demo</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'Hesabê yewinî hewna versiyonê demo  / modê debugî de, yanî operasyonê yew kerdişî qefiniyayiyo. 
+Ma ef bike!',
 	'centralauth-error-locked' => 'Ti nieşkeno bivurne çunkî hesabê tu kilit biyo.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Ser '''cikewtîşê yewî''' biwane]]…''",
 	'centralauth-list-home-title' => 'Wîkîyê kîye',
+	'centralauth-list-home-dryrun' => 'Parola u adresê e-mailî ke ena wîkî de qeyd biyo, ey hesabê yewînî de zi qeyd beno.',
 	'centralauth-list-attached-title' => 'Hesaban ke ataç biyo',
+	'centralauth-list-attached' => 'Hesabê "$1" ena di wîkîyan otomatik hesabê yewîna giredayeno:',
+	'centralauth-list-attached-dryrun' => 'Hesabê "$1" ena di wîkîyan otomatik hesabê yewîna giredayeno:',
 	'centralauth-list-unattached-title' => 'Hesaban ke ataç nibiyo',
+	'centralauth-list-unattached' => 'Hesabê "$1"î otomatik konfirme nibiyo ke ma zano ena hesab ena wîkîyan de tu yo;
+belki hesaban de parolayan değişk esto:',
 	'centralauth-foreign-link' => 'Ser $2 karber $1',
 	'centralauth-merge-method-primary' => 'wîkîyê kîye',
 	'centralauth-merge-method-empty' => 'îştîrak çini yo',
@@ -4001,13 +4041,20 @@ $messages['diq'] = array(
 	'centralauth-merge-method-new' => 'hesabê newî',
 	'centralauth-merge-method-login' => 'cikewtîş ra konfirme biyo',
 	'centralauth-finish-title' => 'Yew biyayîş qediya',
+	'centralauth-finish-text' => 'Eka enê hesaban tu yo, pê nuştişê parola ti eşkeno eno processê yew kerdişî biqed:',
 	'centralauth-finish-password' => 'Parola:',
 	'centralauth-finish-login' => 'Cikewtîş',
 	'centralauth-finish-send-confirmation' => 'Parala email ra bişirav',
+	'centralauth-finish-problems' => 'Sistem ti ra zor dano? Ya zi ti wahirê hesabanê binan niyo? 
+[[meta:Help:Unified login problems|Ti seni yardim vîneno]] ...',
 	'centralauth-finish-noconfirms' => 'Ser ena paralo hesab çini yo.',
+	'centralauth-finish-incomplete' => 'Yew di hesab ser ena parola de yew biyo. 
+Hesabanê binan hewna konfirme nibiyo.',
 	'centralauth-merge-attempt' => "'''Ser hesabanê yew kerdişî, parola kontrol keno…'''",
 	'centralauth-attach-list-attached' => 'Hesabê yew biyayîyê $1de enê hesaban estê:',
 	'centralauth-attach-title' => 'Hesab konfirme bike',
+	'centralauth-attach-text' => 'Belki ena karber sistemê cikewtişê yewî ra transfer biyo.
+Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-attach-submit' => 'Hesab bere',
 	'centralauth-attach-success' => 'Ena hesab, hesabê yew biyayî rê berd.',
 	'centralauth' => 'Îdareyê hesab ê yewî',
@@ -4041,6 +4088,9 @@ $messages['diq'] = array(
 	'centralauth-admin-already-unmerged' => '$1 ra şino, zaten ciy biyo',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|hesab|hesaban}} ciya kerdo',
 	'centralauth-admin-delete-title' => 'Hesab biwedarne',
+	'centralauth-admin-delete-description' => 'Esterayişê ena hesabê globalî tercihanê globalî, wedarneno, hesabanê lokalî qerifeno u eno nameyê globalî karberanê bînan ra a beno. 
+Hesabanê lokalî niqefilneno. 
+Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-delete-button' => 'Ena hesab biwedarne',
 	'centralauth-admin-delete-success' => 'Qe "<nowiki>$1</nowiki>" hesabê globalî wedarne',
 	'centralauth-admin-nonexistent' => 'Ser "<nowiki>$1</nowiki>", hesabê globalî çini yo',
@@ -4073,6 +4123,8 @@ $messages['diq'] = array(
 	'centralauth-prefs-count-unattached' => 'Hesbanê konfirme nebiyo ke pê nameyê tu $1 {{PLURAL:$1|project|projects}} esto.',
 	'centralauth-prefs-detail-unattached' => 'Ena proje konfirme nibiyo ke hesabê globalî ra girediyayo.',
 	'centralauth-prefs-manage' => 'Hesabê globalî îdare bike',
+	'centralauth-renameuser-merged' => 'Belki ena $1 karber sistemê cikewtişê yewî ta transfer biyo.
+Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.',
 	'centralauth-renameuser-reserved' => 'Karberê $2î qe yew hesabê globalî rê reserve biyo.',
 	'centralauth-invalid-wiki' => 'Eno databaseyê wîkîyî çini yo: $1',
 	'centralauth-account-exists' => 'Ni eşkeno hesab viraze: ena nameyê karberî sistemê cikewtîşî de zaten esto.',
@@ -4095,6 +4147,9 @@ $messages['diq'] = array(
 	'centralauth-rightslog-name' => 'Logê heqa globalî',
 	'centralauth-rightslog-entry-usergroups' => 'qe $1 ra $2 rê $3, eza biyayîşê grupî vurne',
 	'centralauth-rightslog-entry-groupperms' => 'qe $1 ra $2 rê $3, desturê grupî vurne',
+	'centralauth-rightslog-entry-groupperms2' => 'Qe $1, desturê grupî vurno.
+$2 de kerd;
+$3 wedarno',
 	'centralauth-rightslog-entry-groupperms3' => 'qe $1 ra $2 rê $3, eza grupî restriksiyonê wîkî vurne',
 	'centralauth-rightslog-header' => 'Ena qeyd de operasyonê grup ê globalî esto: ezayê u vurnayîşê desturî',
 	'centralauth-rightslog-entry-newset' => 'setê $2 wîkî yê $1î viraşt pê ena wîkîyan: $3',
@@ -4104,12 +4159,20 @@ $messages['diq'] = array(
 	'centralauth-rightslog-set-optin' => 'ser opt-in',
 	'centralauth-rightslog-set-optout' => 'ser opt-out',
 	'autologin' => 'Cikewtîşê otomatîkî',
+	'centralauth-autologin-desc' => 'Ena pela xasî MediyaWîkî de sero kar beno. 
+Çi wext ti [[Special:UserLogin|cikewtene]], sistemê cikewtiş ê merkezî browserê tu ra emir dano ke ena pele link biyo. 
+Ti ena pele waşto feqet datayê tu authentic niyo, aye ra nihebitiyeno.',
 	'globalgroupmembership' => 'Grupanê globayan de eza biyayîş',
 	'globalgrouppermissions' => 'Îdare kerdişê grupê globalî',
+	'centralauth-globalgroupperms-grouplist' => 'Enê grupanê globalî konfigure biyo. 
+Eka iznê tu esto, ti eşkeno desturanê yew grupî bivîn u bivurne.
+Yew grup belki esteriyeno eka ti  heqanê hemî biwedaro.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|bivîne/bivurne]])',
 	'centralauth-globalgroupperms-nogroups' => 'Îtîya de ne global grup esto.',
 	'centralauth-existinggroup-legend' => 'Grubane ke esto',
 	'centralauth-newgroup-legend' => 'Yew grubê newî viraze',
+	'centralauth-newgroup-intro' => 'Pê ena form, ti eşkeno desturanê yew grupî bide.
+Yew grup ne esto heta ti heqanê hemî bido.',
 	'centralauth-globalgroupperms-newgroupname' => 'Nameyê grub ê newî:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'desdur bide',
 	'centralauth-editgroup-subtitle' => '$1 vurneno',
@@ -4128,10 +4191,16 @@ $messages['diq'] = array(
 	'centralauth-editgroup-perms' => 'Desturan bide:',
 	'centralauth-editgroup-reason' => 'Sebebê vurnayîşî:',
 	'centralauth-editgroup-success' => 'Desturanê gruban vurîya',
+	'centralauth-editgroup-success-text' => 'Qe grupê $1î ti desturan da. 
+[[Special:GlobalGroupPermissions|Îdareyê grupî rê reyna şi]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bivurne]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wîkîyê ke hesabê tu esto:',
+	'centralauth-globalgroupmembership-badknownwiki' => "Karberê globalî '''$1''' wîkîyê ke ti spesife kerd uca de aktiv niyo ('' $2 '').
+Belki ti heqan dano yew karbero bînî!",
 	'centralauth-editset' => 'Setê wîkîyî bivurne',
 	'centralauth-editset-legend' => 'Setê wîkîyî bivurne ya zi biviraze',
+	'centralauth-editset-intro' => 'Setanê ena wîkî vernî de viraziyo. 
+Ti eşkeno înan bivîne, modifiye bike ya zi yew na setê newî biwiraze.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|bivîne/bivurne]])',
 	'centralauth-editset-new' => 'Yew setê wîkîyî viraze',
 	'centralauth-editset-notfound' => 'Setê wîkî "$1" ni diy.',
@@ -10318,6 +10387,8 @@ $messages['ko'] = array(
 	'centralauth-merge-step3-title' => '통합 계정 만들기',
 	'centralauth-merge-step3-detail' => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
 	'centralauth-merge-step3-submit' => '계정 합치기',
+	'centralauth-merge-no-accounts' => '당신의 이름과 일치하는 계정을 찾지 못했습니다.
+데이터베이스가 잘못되었을 수 있습니다.',
 	'centralauth-complete' => '계정 통합이 완료되었습니다!',
 	'centralauth-incomplete' => '계정 통합 미완료',
 	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
@@ -10330,6 +10401,8 @@ $messages['ko'] = array(
 차단 해제를 요청하려면 해당 위키의 관리자에게 문의하십시오.
 차단되어 있는 동안, 당신은 계정을 합칠 수 없습니다.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>데모 모드</div><br clear='all' />",
+	'centralauth-disabled-dryrun' => '계정 합치기가 데모/디버그 모드로 설정되어 있습니다. 따라서 실제 계정 합치기가 비활성화되어 있습니다.
+죄송합니다!',
 	'centralauth-error-locked' => '당신의 계정이 잠겼기 때문에 편집할 수 없습니다.',
 	'centralauth-readmore-text' => ":[[meta:Help:Unified login|'''통합 로그인'''에 대해 더 보기]]...",
 	'centralauth-list-home-title' => '주 위키',
@@ -10358,8 +10431,11 @@ $messages['ko'] = array(
 	'centralauth-finish-noconfirms' => '이 암호를 사용하는 계정이 없습니다.',
 	'centralauth-finish-incomplete' => '계정 중 몇개는 이 암호로 확인되었습니다.
 다른 계정은 아직 확인되지 않았습니다.',
+	'centralauth-merge-attempt' => "'''합쳐지지 않은 계정에 대하여 비밀번호를 확인하는 중...'''",
 	'centralauth-attach-list-attached' => '통합계정 "$1"은(는) 다음 계정을 포함하고 있습니다.',
 	'centralauth-attach-title' => '계정 확인',
+	'centralauth-attach-text' => '이 계정은 아직 통합 계정과 합쳐지지 않았습니다.
+통합 계정이 당신의 계정이라면, 당신은 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:',
 	'centralauth-attach-submit' => '계정 합치기',
 	'centralauth-attach-success' => '계정이 통합 계정으로 옮겨졌습니다.',
 	'centralauth' => '통합 로그인 관리',
@@ -10387,6 +10463,7 @@ $messages['ko'] = array(
 	'centralauth-admin-list-blocked' => '차단 상태',
 	'centralauth-admin-unmerge' => '선택한 계정 병합 해제',
 	'centralauth-admin-merge' => '선택한 계정 합치기',
+	'centralauth-admin-bad-input' => '잘못된 계정 합치기 설정',
 	'centralauth-admin-none-selected' => '변경할 계정이 선택되지 않았습니다.',
 	'centralauth-admin-already-unmerged' => '이미 병합 해제되었기 때문에, $1을 건너뜁니다.',
 	'centralauth-admin-unmerge-success' => '$1개의 병합된 계정이 성공적으로 해제되었습니다.',
@@ -10401,10 +10478,12 @@ $messages['ko'] = array(
 	'centralauth-token-mismatch' => '죄송합니다. 세션 데이터 손실로 당신의 양식을 제출하지 못했습니다.',
 	'centralauth-admin-reason' => '이유:',
 	'centralauth-admin-status' => '통합 계정 상태 설정',
+	'centralauth-admin-status-intro' => '통합 계정의 상태를 바꿀 때 이 양식을 사용할 수 있습니다.',
 	'centralauth-admin-status-locked' => '잠김',
 	'centralauth-admin-status-hidden' => '숨겨짐',
 	'centralauth-admin-status-submit' => '설정',
 	'centralauth-admin-status-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"가 존재하지 않습니다.',
+	'centralauth-admin-setstatus-success' => '통합 계정의 상태를 변경하는 데 성공하였습니다.',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-locked' => '잠겨짐',
 	'centralauth-listusers-attached' => '로컬에 존재',
@@ -10457,6 +10536,9 @@ $messages['ko'] = array(
 	'centralauth-rightslog-set-optin' => '옵트인 방식',
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
 	'autologin' => '자동 로그인',
+	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
+당신이 [[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
+당신은 인증 정보를 제공하지 않고 이 페이지를 방문하였습니다. 따라서 이 페이지는 아무 역할도 하지 않습니다.',
 	'globalgroupmembership' => '사용자의 공통 권한 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
