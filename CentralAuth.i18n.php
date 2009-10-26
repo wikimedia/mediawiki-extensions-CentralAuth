@@ -12901,7 +12901,9 @@ Rejen: $1',
 	'centralauth-login-progress' => 'Je wonnen an-emeld bie aandere prejekken van Wikimedia:',
 	'centralauth-logout-progress' => 'Je wonnen of-emeld bie aandere prejekken van {{int:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Globaal gebrukersbeheerlogboek',
+	'centralauth-log-header' => 'Dit logboek bevat haandelingen veur globale gebrukers: vortdoon, ofsluten en vriegeven.',
 	'centralauth-rightslog-name' => 'Globaal rechenlogboek',
+	'centralauth-rightslog-header' => 'Dit logboek bevat wiezigingen an globale groepen: groepslidmaotschap en toe-ewezen rechen.',
 	'autologin' => 'Vanzelf anmelden',
 );
 
