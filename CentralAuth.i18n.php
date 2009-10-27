@@ -444,7 +444,7 @@ $messages['af'] = array(
 	'centralauth-admin-manage' => 'Bestuur gebruikersdata',
 	'centralauth-admin-username' => 'Gebruikersnaam:',
 	'centralauth-admin-lookup' => 'Besigtig of wysig gebruikersdata',
-	'centralauth-admin-info-id' => 'Gebruiker ID:',
+	'centralauth-admin-info-id' => 'Gebruiker-ID:',
 	'centralauth-admin-info-registered' => 'Geregistreerd:',
 	'centralauth-admin-info-locked' => 'Gedeaktiveer:',
 	'centralauth-admin-info-hidden' => 'Versteek:',
@@ -12554,10 +12554,13 @@ Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
 );
 
 /** Maltese (Malti)
+ * @author Chrisportelli
  * @author Roderick Mallia
  */
 $messages['mt'] = array(
 	'centralauth-admin-username' => 'Isem l-utent:',
+	'centralauth-prefs-not-managed' => 'Il-kont unifikat mhuwiex fl-użu',
+	'centralauth-prefs-manage' => 'Ġestjoni tal-kont globali',
 );
 
 /** Erzya (Эрзянь)
@@ -12877,9 +12880,13 @@ As der al een aander mit joew gebrukersnaam actief is op een aandere webstee, da
 	'centralauth-merge-dryrun-complete' => 'Alle bestaonde gebrukers kunnen autematisch bie mekaar edaon wonnen!
 
 Der bin nog gien wiezigingen an joew gebruker emaak.',
+	'centralauth-complete' => 'Samenvoegen van gebrukers is voltooid!',
+	'centralauth-finish-password' => 'Wachwoord:',
+	'centralauth-finish-login' => 'Anmelden',
 	'centralauth-merge-attempt' => "'''Bezig mit 't contreleren van de op-egeven wachwoorden veur de nog neet samen-evoegen gebrukers...'''",
 	'centralauth' => 'Samen-evoeg anmelden beheren',
 	'centralauth-admin-manage' => 'Gebrukersgevens beheren',
+	'centralauth-admin-username' => 'Gebrukersnaam:',
 	'centralauth-admin-lookup' => 'Gebrukersgegevens bekieken of bewarken',
 	'centralauth-admin-info-id' => 'Gebrukersnummer:',
 	'centralauth-admin-info-registered' => 'Eregistreerd:',
@@ -12897,14 +12904,21 @@ Rejen: $1',
 	'centralauth-admin-delete-button' => 'Vort mit disse gebruker',
 	'globalusers' => 'Gebrukerslieste (globaal)',
 	'centralauth-prefs-status' => 'Globale gebrukerstaotus:',
+	'centralauth-prefs-complete' => 'Alles in orde!',
+	'centralauth-prefs-count-attached' => 'Joew gebruker is actief op {{PLURAL:$1|één prejekwebstee|$1 prejekwebsteeën}}.',
+	'centralauth-prefs-manage' => 'Joew globale gebruker beheren',
 	'centralauth-account-exists' => "Disse gebruker kan neet an-emaak wonnen: de gebrukersnaam is al in gebruuk in 't systeem veur samen-evoeg anmelden.",
-	'centralauth-login-progress' => 'Je wonnen an-emeld bie aandere prejekken van Wikimedia:',
-	'centralauth-logout-progress' => 'Je wonnen of-emeld bie aandere prejekken van {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Je wönnen an-emeld bie aandere prejekken van {{int:Centralauth-groupname}}::',
+	'centralauth-logout-progress' => 'Je wönnen of-emeld bie aandere prejekken van {{int:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'Globaal gebrukersbeheerlogboek',
 	'centralauth-log-header' => 'Dit logboek bevat haandelingen veur globale gebrukers: vortdoon, ofsluten en vriegeven.',
 	'centralauth-rightslog-name' => 'Globaal rechenlogboek',
 	'centralauth-rightslog-header' => 'Dit logboek bevat wiezigingen an globale groepen: groepslidmaotschap en toe-ewezen rechen.',
 	'autologin' => 'Vanzelf anmelden',
+	'centralauth-editgroup-fieldset' => 'Rechen veur $1',
+	'centralauth-editgroup-members' => 'Lejenlieste:',
+	'centralauth-editgroup-noset' => '(gien)',
+	'centralauth-editgroup-reason' => 'Reden:',
 );
 
 /** Dutch (Nederlands)
