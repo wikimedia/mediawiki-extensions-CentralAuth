@@ -11815,11 +11815,11 @@ $messages['mk'] = array(
 	'mergeaccount' => 'Статус на унификацијата на најавувањето',
 	'centralauth-groupname' => 'фондацијата Викимедија',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Најавете се]</span> за да проверите дали сметките ви се наполно споени.',
-	'centralauth-merge-welcome' => "'''Вашата корисничка сметка сеуште не е преселена на унифициран систем за најавување на {{MediaWiki:Centralauth-groupname}}.'''
+	'centralauth-merge-welcome' => "'''Вашата корисничка сметка сè уште не е преселена на обединет систем за најавување на {{MediaWiki:Centralauth-groupname}}.'''
 
 Доколку решите да си ги преселите сметките, тогаш ќе можете да користите едно исто корисничко име и лозинка за да се најавувате на сите викија на {{MediaWiki:Centralauth-groupname}} на сите расположиви јазици.
 
-Доколку некој друг веќе го зафатил вашето корисничко име на друг проект, тоа нема да го вознемирува корисникот, туку ќе ви даде можност подоцна тоа да го средите со корисникот или со администратор.",
+Доколку некој друг веќе го зафатил вашето корисничко име на друг проект, тоа нема да го вознемирува корисникот, туку ќе ви даде можност подоцна тоа да го средите со корисникот или со некој администратор.",
 	'centralauth-merge-step1-title' => 'Започни ја унификацијата на најавувањето',
 	'centralauth-merge-step1-detail' => 'Тука внесете ја лозинката на сметката.
 Вашата лозинка и регистрираната е-поштенска адреса ќе бидат проверени и споредени со сметките на другите викија за да се потврди дека се совпаѓаат.
@@ -11828,6 +11828,7 @@ $messages['mk'] = array(
 	'centralauth-merge-step2-title' => 'Потврди уште сметки',
 	'centralauth-merge-step2-submit' => 'Потврди го најавувањето',
 	'centralauth-merge-dryrun-or' => "'''или'''",
+	'centralauth-merge-step3-submit' => 'Обединување на сметките',
 	'centralauth-merge-home-password' => 'Домашното вики за оваа сметка (наведено подолу) има поинаква лозинка од онаа која ја внесовте.
 Внесете ја лозинката на домашното вики.',
 	'centralauth-complete' => 'Унификацијата на најавувањето е завршена!',
@@ -11853,9 +11854,28 @@ $messages['mk'] = array(
 	'centralauth-admin-no' => 'не',
 	'centralauth-admin-attached' => 'Наполно споени сметки',
 	'centralauth-admin-no-unattached' => 'Повеќе нема неспоени сметки.',
-	'centralauth-prefs-not-managed' => 'Не користи унифицирана сметка',
+	'centralauth-admin-delete-button' => 'Бришење на сметката',
+	'centralauth-admin-reason' => 'Причина:',
+	'centralauth-admin-status-hidden' => 'Скриена',
+	'centralauth-admin-status-submit' => 'Постави статус',
+	'centralauth-listusers-locked' => 'заклучена',
+	'centralauth-listusers-attached' => 'постои локално',
+	'centralauth-listusers-nolocal' => 'неприкачена или не постои локално',
+	'centralauth-seconds-ago' => 'пред $1 {{PLURAL:$1|секунда|секунди}}',
+	'centralauth-minutes-ago' => 'пред $1 {{PLURAL:$1|минута|минути}}',
+	'centralauth-hours-ago' => 'пред $1 {{PLURAL:$1|час|часа}}',
+	'centralauth-days-ago' => 'пред $1 {{PLURAL:$1|ден|дена}}',
+	'centralauth-months-ago' => 'пред $1 {{PLURAL:$1|месец|месеци}}',
+	'centralauth-years-ago' => 'пред $1 {{PLURAL:$1|година|години}}',
+	'centralauth-prefs-not-managed' => 'Не користи обединета сметка',
+	'centralauth-prefs-unattached' => 'Непотврдено',
+	'centralauth-prefs-complete' => 'Сè е в ред!',
+	'centralauth-prefs-migration' => 'Во преселба',
+	'centralauth-prefs-count-attached' => 'Вашата сметка е активна на $1 {{PLURAL:$1|проект|проекти}}.',
 	'centralauth-login-progress' => 'Ваше најавување во проектите на {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Ваше одјавување од другите проекти на {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-log-status-locked' => 'заклучена',
+	'centralauth-rightslog-name' => 'Дневник на глобални права',
 	'centralauth-editset-optin' => 'По избор (само назначени викија)',
 );
 
