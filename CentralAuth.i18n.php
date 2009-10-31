@@ -2429,9 +2429,11 @@ $messages['bn'] = array(
 
 /** Breton (Brezhoneg)
  * @author Fulup
+ * @author Y-M D
  */
 $messages['br'] = array(
 	'mergeaccount' => "Statud unvaniñ ar c'hontoù implijer",
+	'centralauth-groupname' => 'Diazezadur Wikimedia',
 	'centralauth-desc' => "[[Special:MergeAccount|Kendeuziñ a ra ar c'hontoù implijer]] war wikioù {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Kendeuziñ a ra meur a gont]] evit ur marilhañ unvan',
 	'centralauth-merge-denied' => "Ho tigarez, n'oc'h ket aotreet da vont war ar bajenn-mañ.",
@@ -2560,6 +2562,11 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-rightslog-entry-setchange' => 'en deus kemmet ar wikioù e "$1" : ouzhpennet : $2; tennet : $3',
 	'centralauth-newgroup-legend' => 'Krouiñ ur strollad nevez',
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
+	'centralauth-editgroup-reason' => 'Abegoù evit kemmañ :',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki o deus ur gont warno :',
+	'centralauth-editset-name' => 'Anv :',
+	'centralauth-editset-wikis' => 'Wikioù :',
+	'centralauth-editset-reason' => 'Abegoù :',
 );
 
 /** Bosnian (Bosanski)
