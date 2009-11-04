@@ -2429,6 +2429,7 @@ $messages['bn'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fohanno
  * @author Fulup
  * @author Y-M D
  */
@@ -2522,6 +2523,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-attached' => 'Kontoù peurunvanet',
 	'centralauth-admin-unattached' => 'Kontoù distag',
 	'centralauth-admin-no-unattached' => "Ne chom kont ebet a-ziforc'h.",
+	'centralauth-admin-notblocked' => "N'eo ket stanket",
 	'centralauth-admin-list-localwiki' => "Wiki lec'hel",
 	'centralauth-admin-list-attached-on' => 'Stag ouzh',
 	'centralauth-admin-list-method' => 'Hentenn',
@@ -2560,6 +2562,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-account-exists' => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-log-entry-unlock' => 'en deus dibrennet ar gont hollek "<nowiki>$1</nowiki>"',
 	'centralauth-log-status-hidden' => 'kuzhet',
+	'centralauth-log-status-none' => '(hini ebet)',
 	'centralauth-rightslog-entry-setchange' => 'en deus kemmet ar wikioù e "$1" : ouzhpennet : $2; tennet : $3',
 	'centralauth-newgroup-legend' => 'Krouiñ ur strollad nevez',
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
@@ -2568,6 +2571,9 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-editset-name' => 'Anv :',
 	'centralauth-editset-wikis' => 'Wikioù :',
 	'centralauth-editset-reason' => 'Abegoù :',
+	'centralauth-editset-submit' => 'Kas',
+	'centralauth-editset-return' => "Distreiñ d'ar gwel pennañ",
+	'right-centralauth-merge' => "Kendeuziñ o c'hontoù",
 );
 
 /** Bosnian (Bosanski)
