@@ -2527,6 +2527,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-list-localwiki' => "Wiki lec'hel",
 	'centralauth-admin-list-attached-on' => 'Stag ouzh',
 	'centralauth-admin-list-method' => 'Hentenn',
+	'centralauth-admin-list-editcount' => 'Konter aozadennoù',
 	'centralauth-admin-unmerge' => 'Dizunvaniñ ar pezh zo diuzet',
 	'centralauth-admin-merge' => 'Unvaniñ ar pezh zo diuzet',
 	'centralauth-admin-bad-input' => 'Diuzadenn unvaniñ direizh',
@@ -2541,6 +2542,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-delete-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhi.',
 	'centralauth-token-mismatch' => "Ho tigarez, n'omp ket bet gouest d'ober war-dro ho furmskrid rak kollet eo bet roadennoù an dalc'h.",
 	'centralauth-admin-reason' => 'Abeg :',
+	'centralauth-admin-status-locked' => 'Prennet',
 	'centralauth-admin-status-hidden' => 'Kuzhet',
 	'centralauth-listusers-locked' => 'prennet',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
@@ -2561,17 +2563,22 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-invalid-wiki' => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists' => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-log-entry-unlock' => 'en deus dibrennet ar gont hollek "<nowiki>$1</nowiki>"',
+	'centralauth-log-status-locked' => 'prennet',
 	'centralauth-log-status-hidden' => 'kuzhet',
 	'centralauth-log-status-none' => '(hini ebet)',
 	'centralauth-rightslog-entry-setchange' => 'en deus kemmet ar wikioù e "$1" : ouzhpennet : $2; tennet : $3',
 	'centralauth-newgroup-legend' => 'Krouiñ ur strollad nevez',
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
+	'centralauth-editgroup-subtitle' => "Oc'h aozañ $1",
+	'centralauth-editgroup-fieldset' => 'Aotreoù evit $1',
+	'centralauth-editgroup-noset' => '(hini ebet)',
 	'centralauth-editgroup-reason' => 'Abegoù evit kemmañ :',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki o deus ur gont warno :',
 	'centralauth-editset-name' => 'Anv :',
 	'centralauth-editset-wikis' => 'Wikioù :',
 	'centralauth-editset-reason' => 'Abegoù :',
 	'centralauth-editset-submit' => 'Kas',
+	'centralauth-editset-nouse' => '(hini ebet)',
 	'centralauth-editset-return' => "Distreiñ d'ar gwel pennañ",
 	'right-centralauth-merge' => "Kendeuziñ o c'hontoù",
 );
@@ -17950,6 +17957,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Ahonc
  * @author NickK
+ * @author Prima klasy4na
  */
 $messages['uk'] = array(
 	'mergeaccount' => "Стан об'єднання облікових записів",
@@ -18102,6 +18110,7 @@ $messages['uk'] = array(
 	'centralauth-account-exists' => "Неможливо створити обліковий запис. Таке ім'я вже зайняте для єдиного облікового запису.",
 	'centralauth-login-progress' => 'Вхід до системи також в інших проектах {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Вихід із системи також в інших проектах {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Ви автоматично авторизувались в усіх проектах {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Журнал керування глобальними обліковими записами',
 	'centralauth-log-header' => 'Цей журнал містить записи про дії над глобальними обліковими записами: вилучення, блокування, розблокування.',
 	'centralauth-log-entry-delete' => 'вилучив глобальний обліковий запис «<nowiki>$1</nowiki>»',
