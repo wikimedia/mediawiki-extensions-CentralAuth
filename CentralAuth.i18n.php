@@ -3098,7 +3098,7 @@ $messages['ceb'] = array(
 );
 
 /** Crimean Turkish (Latin) (Qırımtatarca (Latin))
- * @author Alessandro
+ * @author Don Alessandro
  */
 $messages['crh-latn'] = array(
 	'centralauth-prefs-status' => 'Global esap alı:',
@@ -3112,7 +3112,7 @@ $messages['crh-latn'] = array(
 );
 
 /** Crimean Turkish (Cyrillic) (Qırımtatarca (Cyrillic))
- * @author Alessandro
+ * @author Don Alessandro
  */
 $messages['crh-cyrl'] = array(
 	'centralauth-prefs-status' => 'Глобаль эсап алы:',
