@@ -10405,11 +10405,16 @@ $messages['ko'] = array(
 
 아직 계정에 적용되지 않았습니다.',
 	'centralauth-merge-dryrun-or' => "'''또는'''",
+	'centralauth-merge-dryrun-home' => '통합 계정 시스템이 주 위키에서의 계정이 당신의 것인지 확인하지 못했습니다.
+
+다른 위키가 주 위키로 정해졌습니다. 계정 통합을 마치려면 아래의 링크를 따라가 로그인하십시오.',
 	'centralauth-merge-step3-title' => '통합 계정 만들기',
 	'centralauth-merge-step3-detail' => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
 	'centralauth-merge-step3-submit' => '계정 합치기',
 	'centralauth-merge-no-accounts' => '당신의 이름과 일치하는 계정을 찾지 못했습니다.
 데이터베이스가 잘못되었을 수 있습니다.',
+	'centralauth-merge-home-password' => '아래에 나열된 계정의 주 위키의 비밀번호가 당신이 입력한 비밀번호와 다릅니다.
+주 위키의 비밀번호를 입력해주세요.',
 	'centralauth-complete' => '계정 통합이 완료되었습니다!',
 	'centralauth-incomplete' => '계정 통합 미완료',
 	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
@@ -10479,6 +10484,7 @@ $messages['ko'] = array(
 	'centralauth-admin-blocked' => '$3 $4까지 차단됨. 이유: $2',
 	'centralauth-admin-blocked-indef' => '무기한 차단됨. 이유: $1',
 	'centralauth-admin-list-localwiki' => '로컬 위키',
+	'centralauth-admin-list-attached-on' => '통합된 시간',
 	'centralauth-admin-list-method' => '방식',
 	'centralauth-admin-list-editcount' => '편집 횟수',
 	'centralauth-admin-list-blocked' => '차단 상태',
@@ -10549,6 +10555,7 @@ $messages['ko'] = array(
 	'centralauth-rightslog-entry-usergroups' => '$1의 공통 계정 권한을 $2에서 $3으로 변경',
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 변경',
 	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 변경함. 추가: $2; 제거: $3',
+	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 변경',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 변경 기록을 포함하고 있습니다.',
 	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 집합 $1을(를) 생성하였습니다: $3',
 	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 변경함',
@@ -18112,7 +18119,7 @@ $messages['uk'] = array(
 	'centralauth-account-exists' => "Неможливо створити обліковий запис. Таке ім'я вже зайняте для єдиного облікового запису.",
 	'centralauth-login-progress' => 'Вхід до системи також в інших проектах {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Вихід із системи також в інших проектах {{MediaWiki:Centralauth-groupname}}:',
-	'centralauth-login-no-others' => 'Ви автоматично авторизувались в усіх проектах {{int:Centralauth-groupname}}.',
+	'centralauth-login-no-others' => 'Ви автоматично ввійшли до системи в усіх проектах {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Журнал керування глобальними обліковими записами',
 	'centralauth-log-header' => 'Цей журнал містить записи про дії над глобальними обліковими записами: вилучення, блокування, розблокування.',
 	'centralauth-log-entry-delete' => 'вилучив глобальний обліковий запис «<nowiki>$1</nowiki>»',
