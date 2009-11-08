@@ -4772,6 +4772,7 @@ $messages['el'] = array(
 );
 
 /** Esperanto (Esperanto)
+ * @author Michawiki
  * @author Yekrats
  */
 $messages['eo'] = array(
@@ -4890,7 +4891,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-admin-delete-title' => 'Forigi konton',
 	'centralauth-admin-delete-description' => 'Forigado de la ĝenerala konto forigos iajn ajn ĝeneralajn preferojn, malligos ĉiujn lokajn kontojn, kaj lasos la ĝeneralan nomon liberan por alia uzanto uzi.
 Ĉiuj lokaj kontoj daŭre ekzisti.
-La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunigaj valutoj.',
+La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunigaj valoroj.',
 	'centralauth-admin-delete-button' => 'Forigi ĉi tiun konton',
 	'centralauth-admin-delete-success' => 'Sukcese forigis la ĝenerala konto por "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Ne ekzistas ĝenerala konto por "<nowiki>$1</nowiki>"',
@@ -4997,7 +4998,7 @@ Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|vidi/redakti]])',
 	'centralauth-editset-new' => 'Krei novan aron',
 	'centralauth-editset-notfound' => 'Vikiaro "$1" ne troviĝis.',
-	'centralauth-editset-optin' => 'Inkluzivebla per elekto (inkluzivas nur specifigitaj vikioj)',
+	'centralauth-editset-optin' => 'Inkluzivebla per elekto (inkluzivas nur specifitaj vikioj)',
 	'centralauth-editset-optout' => 'Ekskluzivebla per elekto (inkluzivas ĉiujn vikiojn escepte elektitaĵojn)',
 	'centralauth-editset-legend-edit' => 'Redaktante vikiaron "$1"',
 	'centralauth-editset-legend-new' => 'Kreante novan vikiaron',
@@ -5009,7 +5010,7 @@ Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
 	'centralauth-editset-badname' => 'Nevalida aŭ malplena nomo de vikiaro.',
 	'centralauth-editset-badtype' => 'Nevalida speco de aro.',
 	'centralauth-editset-setexists' => 'Aro kun tiu nomo jam ekzistas',
-	'centralauth-editset-nowikis' => 'Neniuj vikioj specifigitaj.',
+	'centralauth-editset-nowikis' => 'Neniuj vikioj specifitaj.',
 	'centralauth-editset-nouse' => '(neniu)',
 	'centralauth-editset-usage' => 'Uzitaj en grupoj:',
 	'centralauth-editset-badwikis' => 'La {{PLURAL:$2|jena vikio|jenaj vikioj}} ne ekzistas: $1.',
@@ -12093,6 +12094,7 @@ $messages['ml'] = array(
 	'centralauth-rightslog-entry-groupperms2' => '$1 കൈവശം വച്ചിരുന്ന സംഘ അനുമതികൾക്ക് മാറ്റം വരുത്തിയിരിക്കുന്നു.
 $2 കൂട്ടിച്ചേർത്തു;
 $3 നീക്കംചെയ്തു',
+	'centralauth-rightslog-entry-groupperms3' => '$1 ഗണത്തിനു പരിമിതപ്പെടുത്തിയ വിക്കികൾ $2 എന്നതിൽ നിന്നു $3 എന്നതിലേയ്ക്ക് മാറ്റിയിരിക്കുന്നു',
 	'centralauth-rightslog-header' => 'ഈ പ്രവര്‍ത്തന രേഖയില്‍ ആഗോള ഗ്രൂപ്പുകളുടെ വിവിധ പ്രവര്‍ത്തനങ്ങള്‍ ഉൾപ്പെടുന്നു: അംഗത്വവും അവകാശ മാറ്റങ്ങളും',
 	'centralauth-rightslog-entry-newset' => 'താഴെ കൊടുത്തിരിക്കുന്ന വിക്കികളുൾപ്പെടെ $1 വിക്കി ഗണത്തിൽ $2 സൃഷ്ടിച്ചിരിക്കുന്നു: $3',
 	'centralauth-rightslog-entry-setrename' => '"$2" വിക്കി ഗണം "$1" എന്നു പുനർനാമകരണം ചെയ്തിരിക്കുന്നു',
@@ -14041,6 +14043,10 @@ $messages['pa'] = array(
  * @author Xqt
  */
 $messages['pdc'] = array(
+	'centralauth-merge-dryrun-or' => "'''odder'''",
+	'centralauth-list-home-title' => 'Heemet-Wiki',
+	'centralauth-foreign-link' => 'Yuuser $1 uff $2',
+	'centralauth-merge-method-primary' => 'Heemetwiki',
 	'centralauth-finish-password' => 'Paesswatt:',
 	'centralauth-finish-login' => 'Kumm nei',
 	'centralauth-admin-username' => 'Yuuser-Naame:',
@@ -14048,14 +14054,21 @@ $messages['pdc'] = array(
 	'centralauth-admin-yes' => 'Ya',
 	'centralauth-admin-no' => 'Nee',
 	'centralauth-admin-reason' => 'Grund:',
+	'centralauth-hours-ago' => 'vor $1 {{PLURAL:$1|Schtund|Schtund}}',
+	'centralauth-days-ago' => 'vor $1 {{PLURAL:$1|Daag|Daag}}',
+	'centralauth-months-ago' => 'vor $1 {{PLURAL:$1|Munet|Munete}}',
+	'centralauth-years-ago' => 'vor $1 {{PLURAL:$1|Yaahr|Yaahre}}',
 	'centralauth-log-status-none' => '(ken)',
 	'centralauth-editgroup-subtitle' => '$1 ennere',
 	'centralauth-editgroup-name' => 'Naame vun de Druppe:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Druppe-$1|ennere]])',
 	'centralauth-editgroup-noset' => '(ken)',
 	'centralauth-editgroup-reason' => 'Grund fer die Ennerung:',
 	'centralauth-editset-name' => 'Naame:',
+	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Grund:',
 	'centralauth-editset-nouse' => '(ken)',
+	'centralauth-editset-usage' => 'Geyuust in Druppe:',
 );
 
 /** Plautdietsch (Plautdietsch)
@@ -14433,6 +14446,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Giro720
+ * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
  * @author Smeira
@@ -14618,8 +14632,8 @@ Renomear fará com que esta conta local seja desanexada da conta global.',
 	'centralauth-rightslog-set-optout' => 'baseado em "opt-out"',
 	'autologin' => 'Autenticação automática',
 	'centralauth-autologin-desc' => 'Esta página especial é utilizada internamente pelo MediaWiki.
-Quando você [[Special:UserLogin|se autentica]], o sistema de login universal faz com que seu navegador acesse esta página a partir de todos os domínios ligados, utilizando links em imagens.
-Você acessou esta página sem providenciar qualquer dado de autenticação, o que faz com que nada ocorra.',
+Quando [[Special:UserLogin|se autentica]], o sistema central de autenticação instrui o seu navegador a aceder a esta página a partir de todos os domínios ligados, utilizando ligações para imagens.
+Acedeu a esta página sem fornecer quaisquer dados de autenticação, o que não produz efeitos.',
 	'globalgroupmembership' => 'Associações de membros em grupos globais',
 	'globalgrouppermissions' => 'Gestão de grupos globais',
 	'centralauth-globalgroupperms-grouplist' => 'Os seguintes grupos globais foram configurados.
@@ -14684,6 +14698,7 @@ Um grupo pode ser eliminado através da remoção de todos os direitos a ele atr
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Giro720
+ * @author Hamilton Abreu
  * @author Heldergeovane
  * @author Luckas Blade
  */
@@ -14738,6 +14753,9 @@ Ainda não foram feitas modificaçãoes nas suas contas.',
 	'centralauth-log-entry-delete' => 'removeu conta global "<nowiki>$1</nowiki>"',
 	'centralauth-log-status-none' => '(nenhum)',
 	'centralauth-rightslog-name' => 'Registro de direitos globais',
+	'centralauth-autologin-desc' => 'Esta página especial é utilizada internamente pelo MediaWiki.
+Quando você [[Special:UserLogin|se autentica]], o sistema de login universal faz com que seu navegador acesse esta página a partir de todos os domínios ligados, utilizando links em imagens.
+Você acessou esta página sem providenciar qualquer dado de autenticação, o que faz com que nada ocorra.',
 	'centralauth-existinggroup-legend' => 'Grupos existentes',
 	'centralauth-newgroup-legend' => 'Criar um novo grupo',
 	'centralauth-editgroup-subtitle' => 'Editando $1',
