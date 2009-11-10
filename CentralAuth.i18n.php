@@ -993,6 +993,13 @@ $messages['ar'] = array(
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'centralauth-merge-dryrun-or' => "'''ܐܘ'''",
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
  * @author Meno25
@@ -17073,6 +17080,7 @@ $messages['te'] = array(
 	'centralauth-admin-list-attached-on' => 'అనుసంధించిన తేదీ',
 	'centralauth-admin-list-method' => 'పద్ధతి',
 	'centralauth-admin-list-editcount' => 'మార్పుల సంఖ్య',
+	'centralauth-admin-list-blocked' => 'నిరోధపు స్థితి',
 	'centralauth-admin-unmerge' => 'ఎంచుకున్నవాటి విలీనాన్ని రద్దుచెయ్యి',
 	'centralauth-admin-merge' => 'ఎంచుకున్నవాటిని విలీనం చేయి',
 	'centralauth-admin-bad-input' => 'తప్పుడు విలీనపు ఎంపిక',
