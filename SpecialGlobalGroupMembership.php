@@ -44,9 +44,9 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			Xml::hidden( 'title',  $this->getTitle() ) .
 			Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', array(), wfMsg( 'userrights-lookup-user' ) ) .
-			Xml::inputLabel( wfMsg( 'userrights-user-editname' ), 'user', 'username', 30, $this->mTarget ) . ' <br/>' .
+			Xml::inputLabel( wfMsg( 'userrights-user-editname' ), 'user', 'username', 30, $this->mTarget ) . ' <br />' .
 			Xml::label( wfMsgExt('centralauth-globalgrouppermissions-knownwiki', array('parseinline')), 'wpKnownWiki' ) .
-			$selector->getHTML() . '<br/>' .
+			$selector->getHTML() . '<br />' .
 			Xml::submitButton( wfMsg( 'editusergroup' ) ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
