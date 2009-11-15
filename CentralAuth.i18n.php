@@ -14507,7 +14507,7 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 Entre em contacto com um administrador de tal wiki para desbloqueá-la.
 Enquanto estiver bloqueada, não será possível fundir as contas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'A unificação de contas se encontra no momento em modo exclusivamente de demonstração/testes. Lamentamos, mas as mesmas ainda não foram unificadas.',
+	'centralauth-disabled-dryrun' => 'A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas. Desculpe.',
 	'centralauth-error-locked' => 'Você não pode editar porque a sua conta está bloqueada.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/pt|Leia mais sobre o '''login unificado''']]...''",
 	'centralauth-list-home-title' => 'Residência wiki',
