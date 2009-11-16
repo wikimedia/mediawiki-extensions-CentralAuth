@@ -998,6 +998,15 @@ $messages['ar'] = array(
  */
 $messages['arc'] = array(
 	'centralauth-merge-dryrun-or' => "'''ܐܘ'''",
+	'centralauth-finish-password' => 'ܡܠܬܐ ܕܥܠܠܐ:',
+	'centralauth-attach-title' => 'ܚܬܬ ܚܘܫܒܢܐ',
+	'centralauth-admin-info-hidden' => 'ܛܘܫܝܐ:',
+	'centralauth-admin-yes' => 'ܐܝܢ',
+	'centralauth-admin-no' => 'ܠܐ',
+	'centralauth-admin-reason' => 'ܥܠܬܐ:',
+	'centralauth-admin-status-hidden' => 'ܛܘܫܝܐ',
+	'centralauth-editset-name' => 'ܫܡܐ:',
+	'centralauth-editset-type' => 'ܐܕܫܐ:',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -8745,6 +8754,7 @@ $messages['io'] = array(
 	'centralauth-admin-delete-button' => 'Efacar ca konto',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-prefs-complete' => 'Omno es en bona stando!',
+	'centralauth-log-status-none' => '(nula)',
 	'centralauth-newgroup-legend' => 'Krear nova grupo',
 	'centralauth-editgroup-noset' => '(nula)',
 	'centralauth-editset-name' => 'Nomo:',
@@ -11466,6 +11476,19 @@ Doe moogs die allemaol zeen èn bewèrke óf 'ne nuuje wikigroop aanmake.",
 	'right-centralauth-admin' => 'Globaal gebroekers behieëre',
 	'right-centralauth-merge' => 'Gebroekers samevoge',
 	'right-globalgrouppermissions' => 'Globaal gróppe behere',
+);
+
+/** Lumbaart (Lumbaart)
+ * @author Dakrismeno
+ */
+$messages['lmo'] = array(
+	'centralauth-admin-info-id' => 'ID del druvadur:',
+	'centralauth-prefs-status' => 'Sitüazión del cünt glubal:',
+	'centralauth-prefs-unattached' => 'Mía cunfermaa',
+	'centralauth-prefs-complete' => 'Tüt in quader!',
+	'centralauth-prefs-migration' => 'Adree a fà San Martín',
+	'centralauth-prefs-count-attached' => "'L to cünt l'è ativ sura de $1 sit del pruget.",
+	'centralauth-prefs-manage' => 'Gestión del to cünt glubal',
 );
 
 /** Lao (ລາວ)
