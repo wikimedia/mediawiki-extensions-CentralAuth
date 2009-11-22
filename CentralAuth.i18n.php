@@ -5056,9 +5056,9 @@ $messages['es'] = array(
 	'mergeaccount' => 'Estado de la unificación de cuentas',
 	'centralauth-groupname' => 'la Fundación Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Fusiona cuentas]] entre wikis de {{MediaWiki:Centralauth-groupname}}',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona múltiples cuentas]] para Ingreso de Usuario Unico (SUL)',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona múltiples cuentas]] para la Identificación de Unificada del Usuario (SUL)',
 	'centralauth-merge-denied' => 'Lo siento, no tienes permiso para acceder a esta página.',
-	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ingresa]</span> para revisar que tus cuentas hayan sido completamente fusionadas.',
+	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} inicia sesión]</span> para revisar que sus cuentas hayan sido completamente fusionadas.',
 	'centralauth-merge-welcome' => "'''Tu cuenta de usuario no ha sido migrada al sistema de cuentas unificadas de {{MediaWiki:Centralauth-groupname}}.'''
 
 Si decides migrar tus cuentas, podrás usar el mismo nombre de usuario y contraseña para ingresar a todas las wikis de los proyectos {{MediaWiki:Centralauth-groupname}} en todos los idiomas.
