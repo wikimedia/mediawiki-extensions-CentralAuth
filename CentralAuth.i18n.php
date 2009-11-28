@@ -14514,7 +14514,7 @@ Não foram feitas modificações em suas contas até o momento.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
 	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar que você seja o proprietário da conta na wiki principal para o seu nome de utilizador.
 
-Outra wiki foi determinada como sendo a conta principal de seu nome de utilizador. Siga o seguinte link e autentique-se através dele para que a fusão de contas seja completada.',
+Outra wiki foi determinada como sendo a conta principal de seu nome de utilizador. Siga a seguinte ligação e autentique-se nessa wiki para terminar a fusão de contas.',
 	'centralauth-merge-step3-title' => 'Criar conta unificada',
 	'centralauth-merge-step3-detail' => 'Tudo pronto para criar a sua conta unificada, ligada às seguintes wikis:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
@@ -14753,6 +14753,9 @@ Não serão feitas alterações até que confime que está tudo correcto.',
 
 Ainda não foram feitas modificaçãoes nas suas contas.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
+	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar que você seja o proprietário da conta na wiki principal para o seu nome de utilizador.
+
+Outra wiki foi determinada como sendo a conta principal de seu nome de utilizador. Siga o seguinte link e autentique-se através dele para que a fusão de contas seja completada.',
 	'centralauth-merge-step3-detail' => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionados, seja criada:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
 	'centralauth-merge-method-empty' => 'sem contribuições',
