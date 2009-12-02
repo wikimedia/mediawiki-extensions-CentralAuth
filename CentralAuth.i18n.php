@@ -9700,12 +9700,15 @@ $messages['ka'] = array(
 	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
 	'centralauth-prefs-manage' => 'თქვენი გლობალური ანგარიშის მართვა',
 	'centralauth-log-status-hidden' => 'დამალული',
+	'centralauth-rightslog-name' => 'გლობალური უფლებების ჟურნალი',
 	'centralauth-newgroup-legend' => 'ახალი ჯგუფის შექმნა',
 	'centralauth-globalgroupperms-newgroupname' => 'ახალი ჯგუფის სახელი:',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
 	'centralauth-editgroup-noset' => '(არცერთი)',
+	'centralauth-editset' => 'ვიკი-ნაკრებების რედაქტირება',
 	'centralauth-editset-name' => 'სახელი:',
 	'centralauth-editset-reason' => 'მიზეზი:',
+	'centralauth-editset-nowikis' => 'არცერთი ვიკი-პროექტია მითითებული.',
 	'centralauth-editset-nouse' => '(არცერთი)',
 );
 
@@ -11491,6 +11494,8 @@ $messages['lmo'] = array(
 	'centralauth-prefs-migration' => 'Adree a fà San Martín',
 	'centralauth-prefs-count-attached' => "'L to cünt l'è ativ sura de $1 sit del pruget.",
 	'centralauth-prefs-manage' => 'Gestión del to cünt glubal',
+	'centralauth-login-progress' => 'Culegaa ai pruget de {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Te see staa culegaa utumaticament a i alter pruget de {{int:Centralauth-groupname}}.',
 );
 
 /** Lao (ລາວ)
