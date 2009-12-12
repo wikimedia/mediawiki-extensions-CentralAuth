@@ -9614,6 +9614,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 );
 
 /** Georgian (ქართული)
+ * @author Alsandro
  * @author BRUTE
  * @author Malafaya
  * @author გიორგიმელა
@@ -9711,7 +9712,7 @@ $messages['ka'] = array(
 	'centralauth-prefs-status' => 'გლობალური ანგარიშის სტატუსი',
 	'centralauth-prefs-unattached' => 'დაუდასტურებელია',
 	'centralauth-prefs-complete' => 'ყველაფერი წესრიგშია!',
-	'centralauth-prefs-count-attached' => 'თქვენი ანგარიში გააქტიურებულია $1 პროექტში {{PLURAL:$1|პროექტში|პროექტებში}}.',
+	'centralauth-prefs-count-attached' => 'თქვენი ანგარიში გააქტიურებულია $1 პროექტში {{PLURAL:$1|საიტში|საიტში}}.',
 	'centralauth-prefs-manage' => 'თქვენი გლობალური ანგარიშის მართვა',
 	'centralauth-invalid-wiki' => 'არ არსებობს ვიკი-მონაცემთა ბაზა სახელწოდებით: $1',
 	'centralauth-log-status-hidden' => 'დამალული',
@@ -14511,7 +14512,7 @@ $messages['ps'] = array(
 $messages['pt'] = array(
 	'mergeaccount' => 'Estado da unificação de contas',
 	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-desc' => '[[Special:MergeAccount|Página especial]] para fundir contas nas wikis da {{MediaWiki:Centralauth-groupname}}',
+	'centralauth-desc' => '[[Special:MergeAccount|Página especial]] para fundir contas nas wikis da "{{MediaWiki:Centralauth-groupname}}"',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
 	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para aceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
