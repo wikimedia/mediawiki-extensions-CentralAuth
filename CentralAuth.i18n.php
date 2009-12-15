@@ -274,7 +274,7 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-noset'                     => '(none)',
 	'centralauth-editgroup-submit'                    => 'Save changes to group permissions',
 	'centralauth-editgroup-perms'                     => 'Assigned permissions:',
-	'centralauth-editgroup-reason'                    => 'Reason for change:',
+	'centralauth-editgroup-reason'                    => 'Reason:',
 	'centralauth-editgroup-success'                   => 'Group permissions changed',
 	'centralauth-editgroup-success-text'              => 'You have successfully changed the group permissions for the $1 group.
 [[Special:GlobalGroupPermissions|Return to group management]]',
