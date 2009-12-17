@@ -2546,6 +2546,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-list-attached-on' => 'Stag ouzh',
 	'centralauth-admin-list-method' => 'Hentenn',
 	'centralauth-admin-list-editcount' => 'Konter aozadennoù',
+	'centralauth-admin-list-blocked' => 'Statud stanket',
 	'centralauth-admin-unmerge' => 'Dizunvaniñ ar pezh zo diuzet',
 	'centralauth-admin-merge' => 'Unvaniñ ar pezh zo diuzet',
 	'centralauth-admin-bad-input' => 'Diuzadenn unvaniñ direizh',
@@ -2562,6 +2563,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-reason' => 'Abeg :',
 	'centralauth-admin-status-locked' => 'Prennet',
 	'centralauth-admin-status-hidden' => 'Kuzhet',
+	'centralauth-admin-status-submit' => 'Lakaat ar statud',
 	'centralauth-listusers-locked' => 'prennet',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munut|munut}} zo',
@@ -4012,6 +4014,7 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Mirzali
  * @author Xoser
  */
 $messages['diq'] = array(
@@ -4233,7 +4236,7 @@ Yew grup ne esto heta ti heqanê hemî bido.',
 	'centralauth-editgroup-noset' => '(çini yo)',
 	'centralauth-editgroup-submit' => 'Desturê grupî rê vurnayîşî qeyd ke',
 	'centralauth-editgroup-perms' => 'Desturan bide:',
-	'centralauth-editgroup-reason' => 'Sebebê vurnayîşî:',
+	'centralauth-editgroup-reason' => 'Sebeb:',
 	'centralauth-editgroup-success' => 'Desturanê gruban vurîya',
 	'centralauth-editgroup-success-text' => 'Qe grupê $1î ti desturan da. 
 [[Special:GlobalGroupPermissions|Îdareyê grupî rê reyna şi]]',
@@ -6623,7 +6626,7 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-editgroup-noset' => '(ningún)',
 	'centralauth-editgroup-submit' => 'Gardar os cambios dos permisos do grupo',
 	'centralauth-editgroup-perms' => 'Permisos asignados:',
-	'centralauth-editgroup-reason' => 'Motivo para o cambio:',
+	'centralauth-editgroup-reason' => 'Motivo:',
 	'centralauth-editgroup-success' => 'Os permisos do grupo cambiaron',
 	'centralauth-editgroup-success-text' => 'Cambiou con éxito os permisos do grupo para o grupo $1. [[Special:GlobalGroupPermissions|Voltar ao xestor dos grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
@@ -8453,7 +8456,7 @@ Nota que un gruppo non existe si nulle permissiones ha essite assignate a illo.'
 	'centralauth-editgroup-noset' => '(nulle)',
 	'centralauth-editgroup-submit' => 'Confirmar modificationes al permissiones de gruppos',
 	'centralauth-editgroup-perms' => 'Permissiones assignate:',
-	'centralauth-editgroup-reason' => 'Motivo pro cambiamento:',
+	'centralauth-editgroup-reason' => 'Motivo:',
 	'centralauth-editgroup-success' => 'Le permissiones del gruppo ha essite cambiate',
 	'centralauth-editgroup-success-text' => 'Tu ha cambiate le permissiones del gruppo $1 con successo.
 [[Special:GlobalGroupPermissions|Retornar al gestion de gruppos]]',
@@ -10287,6 +10290,13 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
 	'right-centralauth-admin' => 'Ğalamdıq tirkelgiler äkimşildigi',
 	'right-centralauth-merge' => 'Tirkelgilerin biriktirw',
 	'right-globalgrouppermissions' => 'Ğalamdıq toptardı rettew',
+);
+
+/** Kalaallisut (Kalaallisut)
+ * @author Piivaat
+ */
+$messages['kl'] = array(
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}-ip suliniutaani ukunani aamma anivutit:',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -16997,6 +17007,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Micke
  * @author NH
  * @author Najami
+ * @author Per
  * @author Sannab
  */
 $messages['sv'] = array(
@@ -17199,7 +17210,7 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editgroup-noset' => '(ingen)',
 	'centralauth-editgroup-submit' => 'Spara ändringar för grupptillåtelser',
 	'centralauth-editgroup-perms' => 'Angivna tillåtelser:',
-	'centralauth-editgroup-reason' => 'Anledning för ändring:',
+	'centralauth-editgroup-reason' => 'Anledning:',
 	'centralauth-editgroup-success' => 'Grupptillåtelser ändrade',
 	'centralauth-editgroup-success-text' => 'Du har ändrat grupptillåtelserna till gruppen $1. [[Special:GlobalGroupPermission|Tillbaka till gruppbehandling]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
@@ -19428,6 +19439,7 @@ $messages['yue'] = array(
  * @author Chenzw
  * @author Gzdavidwong
  * @author Liangent
+ * @author PhiLiP
  * @author 下一次登录
  */
 $messages['zh-hans'] = array(
@@ -19545,7 +19557,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-nonexistent' => '这里无"<nowiki>$1</nowiki>"的全域账户',
 	'centralauth-admin-delete-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-token-mismatch' => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
-	'centralauth-admin-reason' => '理由:',
+	'centralauth-admin-reason' => '原因：',
 	'centralauth-admin-status' => '设置全域帐号状态',
 	'centralauth-admin-status-intro' => '你可以使用这个表单来更改这个全域帐号的状态',
 	'centralauth-admin-status-locked' => '已锁定',
@@ -19620,7 +19632,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-noset' => '（无）',
 	'centralauth-editgroup-submit' => '保存更改到组许可',
 	'centralauth-editgroup-perms' => '已指定的许可:',
-	'centralauth-editgroup-reason' => '更改的理由:',
+	'centralauth-editgroup-reason' => '原因：',
 	'centralauth-editgroup-success' => '组许可已经更改',
 	'centralauth-editgroup-success-text' => '您已经成功地更改$1组的组许可。[[Special:GlobalGroupPermissions|回到组管理]]',
 	'centralauth-globalgrouppermissions-knownwiki' => '选择一个响他们有账户的wiki:',
