@@ -3440,6 +3440,7 @@ $messages['cy'] = array(
  * @author Jon Harald Søby
  * @author Masz
  * @author Peter Andersen
+ * @author Piivaat
  */
 $messages['da'] = array(
 	'mergeaccount' => 'Status for sammenlægning af kontoer',
@@ -3598,7 +3599,7 @@ Omdøbning vil betyde at den lokale bruger vil blive adskilt den globale konto.'
 	'centralauth-renameuser-reserved' => 'Brugernavnet $2 er reserveret til en global konto.',
 	'centralauth-invalid-wiki' => 'Der er ingen sådan wikidatabase: $1',
 	'centralauth-account-exists' => 'Kan ikke oprette konto: Det ønskede brugernavn er allerede brugt i det globale loginsystem.',
-	'centralauth-login-progress' => 'Logger dig på {{int:Centralauth-groupname}}s projekter:',
+	'centralauth-login-progress' => 'Isersimalerputit {{int:Centralauth-groupname}}p suliniutaani:',
 	'centralauth-logout-progress' => 'Logger dig af fra andre af {{int:Centralauth-groupname}}s projekter:',
 	'centralauth-login-no-others' => 'Du er automatisk blevet logget på andre af {{int:Centralauth-groupname}}s projekter.',
 	'centralauth-logout-no-others' => 'Du er automatisk blevet logget af andre af {{int:Centralauth-groupname}}s projekter.',
@@ -13971,7 +13972,7 @@ En gruppe kan slettes ved å fjerne alle rettigheter fra den.',
 	'centralauth-editgroup-noset' => '(ingen)',
 	'centralauth-editgroup-submit' => 'Lagre endringer i gruppetillatelser',
 	'centralauth-editgroup-perms' => 'Gitte tillatelser:',
-	'centralauth-editgroup-reason' => 'Endringsårsak:',
+	'centralauth-editgroup-reason' => 'Årsak:',
 	'centralauth-editgroup-success' => 'Gruppetillatelser endret',
 	'centralauth-editgroup-success-text' => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|rediger]])',
@@ -14561,7 +14562,7 @@ Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-editgroup-noset' => '(brak)',
 	'centralauth-editgroup-submit' => 'Zapisz zmiany uprawnień grup',
 	'centralauth-editgroup-perms' => 'Przyznane uprawnienia:',
-	'centralauth-editgroup-reason' => 'Powód zmiany',
+	'centralauth-editgroup-reason' => 'Powód',
 	'centralauth-editgroup-success' => 'Uprawnienia grupy zostały zmienione',
 	'centralauth-editgroup-success-text' => 'Zmieniłeś uprawnienia grupy $1.
 [[Special:GlobalGroupPermissions|Powrót do zarządzania grupą]]',
@@ -16186,7 +16187,7 @@ Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 	'centralauth-editgroup-noset' => '(žiadne)',
 	'centralauth-editgroup-submit' => 'Uložiť zmeny oprávnení skupiny',
 	'centralauth-editgroup-perms' => 'Pridelené oprávnenia:',
-	'centralauth-editgroup-reason' => 'Dôvod zmeny:',
+	'centralauth-editgroup-reason' => 'Dôvod:',
 	'centralauth-editgroup-success' => 'Oprávnenia skupiny boli zmenené',
 	'centralauth-editgroup-success-text' => 'Úspešne ste zmenili oprávnenia skupiny $1. [[Special:GlobalGroupPermissions|Späť na správu skupín]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|upraviť]])',
@@ -18204,7 +18205,7 @@ Unutmayın ki bir grup, ona izinler atanmadıkça varolamaz.',
 	'centralauth-editgroup-noset' => '(hiç)',
 	'centralauth-editgroup-submit' => 'Grup izinlerine değişiklikleri kaydet',
 	'centralauth-editgroup-perms' => 'Atanan izinler:',
-	'centralauth-editgroup-reason' => 'Değişiklik nedeni:',
+	'centralauth-editgroup-reason' => 'Sebep:',
 	'centralauth-editgroup-success' => 'Grup izinleri değiştirildi',
 	'centralauth-editgroup-success-text' => '$1 grubu için grup izinlerini başarıyla değiştirdiniz.
 [[Special:GlobalGroupPermissions|Grup yönetimine geri dönün]]',
