@@ -3604,7 +3604,7 @@ Omdøbning vil betyde at den lokale bruger vil blive adskilt den globale konto.'
 	'centralauth-renameuser-reserved' => 'Brugernavnet $2 er reserveret til en global konto.',
 	'centralauth-invalid-wiki' => 'Der er ingen sådan wikidatabase: $1',
 	'centralauth-account-exists' => 'Kan ikke oprette konto: Det ønskede brugernavn er allerede brugt i det globale loginsystem.',
-	'centralauth-login-progress' => 'Isersimalerputit {{int:Centralauth-groupname}}p suliniutaani:',
+	'centralauth-login-progress' => 'Logger dig på {{int:Centralauth-groupname}}s projekter:',
 	'centralauth-logout-progress' => 'Logger dig af fra andre af {{int:Centralauth-groupname}}s projekter:',
 	'centralauth-login-no-others' => 'Du er automatisk blevet logget på andre af {{int:Centralauth-groupname}}s projekter.',
 	'centralauth-logout-no-others' => 'Du er automatisk blevet logget af andre af {{int:Centralauth-groupname}}s projekter.',
@@ -4764,7 +4764,7 @@ $messages['el'] = array(
 	'centralauth-editgroup-noset' => '(κανένα)',
 	'centralauth-editgroup-submit' => 'Αποθήκευση αλλαγών στις άδειες ομάδων',
 	'centralauth-editgroup-perms' => 'Απονομημένες άδειες:',
-	'centralauth-editgroup-reason' => 'Αιτία για την αλλαγή:',
+	'centralauth-editgroup-reason' => 'Αιτία:',
 	'centralauth-editgroup-success' => 'Οι άδειες των ομάδων έχουν αλλάξει',
 	'centralauth-editgroup-success-text' => 'Έχετε αλλάξει επιτυχώς τις άδειες της ομάδας για την ομάδα $1.
 [[Special:GlobalGroupPermissions|Επιστρέψτε στη διαχείριση των ομάδων]]',
@@ -10302,6 +10302,7 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
  * @author Piivaat
  */
 $messages['kl'] = array(
+	'centralauth-login-progress' => 'Isersimalerputit {{int:Centralauth-groupname}}-p suliniutaani:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}-ip suliniutaani ukunani aamma anivutit:',
 );
 
@@ -10657,7 +10658,7 @@ $messages['ko'] = array(
 	'centralauth-editgroup-noset' => '(없음)',
 	'centralauth-editgroup-submit' => '그룹 권한에 대한 변경을 저장',
 	'centralauth-editgroup-perms' => '부여된 권한:',
-	'centralauth-editgroup-reason' => '바꾸는 이유:',
+	'centralauth-editgroup-reason' => '이유:',
 	'centralauth-editgroup-success' => '이 그룹의 권한이 변경되었습니다.',
 	'centralauth-editgroup-success-text' => '당신은 $1 그룹에 대한 권한을 성공적으로 변경하였습니다.
 [[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아가기]]',
@@ -17441,7 +17442,7 @@ $messages['te'] = array(
 	'centralauth-editgroup-noset' => '(ఏమీలేదు)',
 	'centralauth-editgroup-submit' => 'గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు',
 	'centralauth-editgroup-perms' => 'ఇచ్చిన అనుమతులు:',
-	'centralauth-editgroup-reason' => 'మార్చడానికి కారణం:',
+	'centralauth-editgroup-reason' => 'కారణం:',
 	'centralauth-editgroup-success' => 'గుంపు అనుమతులను మార్చాం',
 	'centralauth-editgroup-success-text' => 'మీరు $1 గుంపుకు అనుమతులను జయప్రదంగా మార్చారు.
 [[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]',
