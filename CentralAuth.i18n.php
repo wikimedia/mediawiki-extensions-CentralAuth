@@ -415,7 +415,7 @@ $messages['niu'] = array(
  */
 $messages['af'] = array(
 	'mergeaccount' => 'Aanteken versmeltingstatus',
-	'centralauth-desc' => '[[Special:MergeAccount|Versmelt rekeninge]] oor Wikimedia Foundation se wikis',
+	'centralauth-desc' => '[[Special:MergeAccount|Versmelt rekeninge]] oor{{MediaWiki:Centralauth-groupname}} se wikis',
 	'centralauth-merge-denied' => 'U het nie toegang tot hierdie bladsy nie.',
 	'centralauth-merge-step1-title' => 'Begin versmelting van rekeninge',
 	'centralauth-merge-step1-submit' => 'Bevestig aanteken inligting',
@@ -452,14 +452,21 @@ $messages['af'] = array(
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nee',
 	'centralauth-admin-unattached' => 'Onaangehegde rekeninge',
+	'centralauth-admin-notblocked' => 'Nie geblokkeer nie',
 	'centralauth-admin-list-localwiki' => 'Lokale wiki',
 	'centralauth-admin-list-attached-on' => 'Aangesluit op',
 	'centralauth-admin-list-method' => 'Metode',
+	'centralauth-admin-list-editcount' => 'Aantal wysigings',
+	'centralauth-admin-list-blocked' => 'Blokkeringsstatus',
 	'centralauth-admin-delete-title' => 'Skrap rekening',
 	'centralauth-admin-delete-button' => 'Verwyder die gebruiker',
 	'centralauth-admin-reason' => 'Rede:',
+	'centralauth-admin-status-locked' => 'Gesluit',
 	'centralauth-admin-status-hidden' => 'Versteek',
+	'centralauth-admin-status-submit' => 'Stel status',
 	'globalusers' => 'Globale gebruikerslys',
+	'centralauth-listusers-locked' => 'gesluit',
+	'centralauth-listusers-attached' => 'bestaan lokaal',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekonde|sekondes}} gelede',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuut|minute}} gelede',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|uur|ure}} gelede',
@@ -469,11 +476,13 @@ $messages['af'] = array(
 	'centralauth-prefs-status' => 'Globale gebruikerstatus:',
 	'centralauth-prefs-unattached' => 'Nie bevestig',
 	'centralauth-prefs-complete' => 'Alles in orde!',
+	'centralauth-prefs-migration' => 'Besig met migrasie',
 	'centralauth-prefs-count-attached' => 'Jou rekening is aktief op $1 {{plural:$1|projek|projekte}}.',
 	'centralauth-prefs-manage' => 'Bestuur u globale gebruikersrekening',
 	'centralauth-invalid-wiki' => 'Die wikidatabasis bestaan nie: $1',
-	'centralauth-login-progress' => 'U word by die volgende projekte van Wikimedia aangeteken:',
-	'centralauth-logout-progress' => 'U word van die volgende Wikimedia projekte afgeteken:',
+	'centralauth-login-progress' => 'U word by die volgende projekte van {{int:Centralauth-groupname}} aangeteken:',
+	'centralauth-logout-progress' => 'U word vanaf die volgende {{int:Centralauth-groupname}} projekte afgeteken:',
+	'centralauth-log-status-locked' => 'gesluit',
 	'centralauth-log-status-hidden' => 'verborge',
 	'centralauth-log-status-none' => '(geen)',
 	'centralauth-rightslog-name' => 'Logboek van globale regte',
@@ -955,7 +964,7 @@ $messages['ar'] = array(
 	'centralauth-editgroup-noset' => '(لا شيء)',
 	'centralauth-editgroup-submit' => 'احفظ التغييرات على سماحات المجموعة',
 	'centralauth-editgroup-perms' => 'السماحات المصاحبة:',
-	'centralauth-editgroup-reason' => 'السبب للتغيير:',
+	'centralauth-editgroup-reason' => 'السبب:',
 	'centralauth-editgroup-success' => 'سماحات المجموعة تم تغييرها',
 	'centralauth-editgroup-success-text' => 'أنت غيرت بنجاح سماحات المجموعة للمجموعة $1.
 [[Special:GlobalGroupPermissions|الرجوع إلى إدارة المجموعة]]',
@@ -2023,6 +2032,7 @@ $messages['be-tarask'] = array(
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
+ * @author Turin
  */
 $messages['bg'] = array(
 	'mergeaccount' => 'Състояние на обединението на сметки',
@@ -2210,7 +2220,7 @@ $messages['bg'] = array(
 	'centralauth-editgroup-noset' => '(няма)',
 	'centralauth-editgroup-submit' => 'Съхраняване на промените в правата на групата',
 	'centralauth-editgroup-perms' => 'Дадени права:',
-	'centralauth-editgroup-reason' => 'Причина за промяната:',
+	'centralauth-editgroup-reason' => 'Причина:',
 	'centralauth-editgroup-success' => 'Правата на групата бяха променени',
 	'centralauth-editgroup-success-text' => 'Успяхте да промените правата на групата $1. [[Special:GlobalGroupPermissions|Обратно към управлението на групи]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|редактиране]])',
@@ -3095,7 +3105,7 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editgroup-noset' => '(cap)',
 	'centralauth-editgroup-submit' => 'Guardar els canvis a les autoritzacions de grup',
 	'centralauth-editgroup-perms' => 'Autoritzacions assignades:',
-	'centralauth-editgroup-reason' => 'Raons per al canvi:',
+	'centralauth-editgroup-reason' => 'Raó:',
 	'centralauth-editgroup-success' => 'Autoritzacions de grup canviades',
 	'centralauth-editgroup-success-text' => 'Heu canviat les autoritzacions de grup pel grup $1. [[Special:GlobalGroupPermissions|Tornar a gestió de grups]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editeu]])',
@@ -5491,11 +5501,13 @@ $messages['eu'] = array(
 	'centralauth-merge-dryrun-or' => "'''edo'''",
 	'centralauth-merge-step3-title' => 'Kontu bateratua sortu',
 	'centralauth-merge-step3-submit' => 'Kontuak bateratu',
+	'centralauth-error-locked' => 'Ez duzu aldaketarik burutu zure kontua blokeatuta baitago.',
 	'centralauth-merge-method-empty' => 'ekarpenik gabe',
 	'centralauth-merge-method-mail' => 'e-posta bidez egiaztatua',
 	'centralauth-merge-method-password' => 'pasahitzaren bidez egiaztatua',
 	'centralauth-merge-method-new' => 'Kontu berria',
 	'centralauth-merge-method-login' => 'saio hasieraren bidez egiaztatua',
+	'centralauth-finish-title' => 'Batzea amaitu',
 	'centralauth-finish-password' => 'Pasahitza:',
 	'centralauth-finish-login' => 'Saioa hasi',
 	'centralauth-finish-send-confirmation' => 'Pasahitza e-posta bidez bidali',
@@ -5523,12 +5535,15 @@ $messages['eu'] = array(
 	'centralauth-prefs-unattached' => 'Baieztatu gabe',
 	'centralauth-prefs-complete' => 'Dena behar bezala dago!',
 	'centralauth-log-status-hidden' => 'ezkutatua',
+	'centralauth-rightslog-name' => 'Eskubide orokorren erregistroa',
 	'autologin' => 'Saio hasiera automatikoa',
 	'centralauth-newgroup-legend' => 'Talde berri bat sortu',
 	'centralauth-globalgroupperms-newgroupname' => 'Talde berriaren izena:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Baimenak esleitu',
 	'centralauth-editgroup-subtitle' => '$1 editatzen',
 	'centralauth-editgroup-name' => 'Taldearen izena:',
+	'centralauth-editgroup-perms' => 'Esleitutako baimenak:',
+	'centralauth-editgroup-reason' => 'Arrazoia:',
 	'centralauth-editset-name' => 'Izena:',
 	'centralauth-editset-type' => 'Mota:',
 	'centralauth-editset-wikis' => 'Wikiak:',
@@ -6323,14 +6338,13 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
  */
 $messages['frp'] = array(
 	'mergeaccount' => 'Statut de la fusion des comptos utilisator',
-	'centralauth-desc' => 'Fusione los comptos utilisator de projèts de la Wikimedia Foundation.',
+	'centralauth-desc' => '[[Special:MergeAccount|Fusione los comptos utilisator]] sur los vouiquis de {{MediaWiki:Centralauth-groupname}}.',
 	'centralauth-merge-notlogged' => 'Marci de franc volêr vos <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} conèctar]</span> por controlar se voutros comptos ont bien étâ fusionâs.',
-	'centralauth-merge-welcome' => "'''Voutros comptos utilisator ont p’oncor étâ migrâs vers lo sistèmo de compto unico de Wikimedia.'''
+	'centralauth-merge-welcome' => "'''Voutron compto utilisator at p’oncor étâ dèplaciê vers lo sistèmo de branchement unifiâ de {{MediaWiki:Centralauth-groupname}}.'''
 
-Se vos chouèsésséd/cièrde de fâre migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa sur tôs los projèts Wikimedia dens totes les lengoues.
-D’ense, lo travâly entèrprojèts serat facilitâ coment, per ègzemplo, l’impôrt d’émâges dessus [http://commons.wikimedia.org/ Wikimedia Commons] ; cen èviterat asse-ben la confusion arrevent quand doves gens utilisont lo mémo nom d’utilisator sur doux projèts difèrents.
+Se vos chouèsésséd de dèplaciér voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa por vos branchiér sur tôs los projèts de {{MediaWiki:Centralauth-groupname}} dens totes les lengoues disponibles.
 
-Se vos avéd ja lo mémo nom d’utilisator sur tôs los projèts, devrêt pas y avêr de problèmo. S’una ôtra pèrsona at lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.",
+Se quârqu’un d’ôtro at chouèsi lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.",
 	'centralauth-merge-step1-title' => 'Comenciér lo procès de fusion des comptos',
 	'centralauth-merge-step1-detail' => 'Volyéd buchiér ique lo mot de pâssa de voutron compto.
 Voutron mot de pâssa et voutra adrèce èlèctronica encartâs vôlont étre comparâs avouéc celos des comptos homonimos sur los ôtros vouiquis por controlar que corrèspondont.
@@ -6344,8 +6358,8 @@ Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd et pués
 	'centralauth-merge-step3-submit' => 'Fusionar los comptos',
 	'centralauth-complete' => 'Fusion des comptos chavonâ !',
 	'centralauth-incomplete' => 'Fusion des comptos pas chavonâ !',
-	'centralauth-complete-text' => 'Orendrêt, vos pouede vos conèctar dessus quint que seye lo projèt de {{MediaWiki:Centralauth-groupname}} sen avêr a crèar un novél compto.',
-	'centralauth-incomplete-text' => 'Setout que voutros comptos seront fusionâs, vos porréd vos conèctar dessus quint que seye lo projèt de {{MediaWiki:Centralauth-groupname}} sen avêr a crèar un novél compto.',
+	'centralauth-complete-text' => 'Ora, vos pouede vos branchiér sur un projèt de {{MediaWiki:Centralauth-groupname}} quint que seye sen avêr a fâre un novél compto.',
+	'centralauth-incomplete-text' => 'Setout que voutron branchement serat unifiâ, vos porréd vos branchiér sur un projèt de {{MediaWiki:Centralauth-groupname}} quint que seye sen avêr a fâre un novél compto.',
 	'centralauth-not-owner-text' => 'Lo compto utilisator « $1 » at étâ ôtomaticament assignê u propriètèro du compto dessus $2.
 
 S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient lo mot de pâssa mêtre por cél compto dessus :',
@@ -6386,8 +6400,8 @@ S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient
 	'centralauth-prefs-unattached' => 'Pas confirmâ',
 	'centralauth-prefs-complete' => 'Tot vat bien !',
 	'centralauth-prefs-migration' => 'En migracion',
-	'centralauth-prefs-count-attached' => 'Voutron compto est actif dessus $1 projèts.',
-	'centralauth-prefs-count-unattached' => 'Des comptos pas confirmâs avouéc lo mémo nom d’utilisator que lo voutro sè trovont dessus $1 projèts.',
+	'centralauth-prefs-count-attached' => 'Voutron compto est actif dessus $1 seto{{PLURAL:$1||s}} de projèt.',
+	'centralauth-prefs-count-unattached' => 'Subsiste $1 projèt{{PLURAL:$1||s}} qu’{{PLURAL:$1|a|on}}t un compto pas confirmâ a voutron nom.',
 	'centralauth-prefs-detail-unattached' => 'Voutron compto sur ceti projèt at pas possu étre rapondu u compto unico.',
 	'centralauth-prefs-manage' => 'G·èrâd voutron compto unico',
 );
@@ -7238,7 +7252,7 @@ $messages['he'] = array(
 	'centralauth-editgroup-noset' => '(אין)',
 	'centralauth-editgroup-submit' => 'שמירת שינויים בהרשאות הקבוצה',
 	'centralauth-editgroup-perms' => 'הרשאות:',
-	'centralauth-editgroup-reason' => 'סיבה לשינוי:',
+	'centralauth-editgroup-reason' => 'הסיבה:',
 	'centralauth-editgroup-success' => 'הרשאות הקבוצה שונו בהצלחה',
 	'centralauth-editgroup-success-text' => 'שיניתם בהצלחה את הרשאות הקבוצה $1. [[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|עריכה]])',
@@ -15200,6 +15214,7 @@ $messages['qu'] = array(
  * @author KlaudiuMihaila
  * @author Mihai
  * @author Minisarm
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'mergeaccount' => 'Statusul despre unificarea autentificării',
@@ -15345,11 +15360,13 @@ Redenumirea va cauza utilizatorului local detaşarea de la contul global.',
 	'centralauth-editgroup-success' => 'Permisiile grupului au fost salvate',
 	'centralauth-editset-name' => 'Nume:',
 	'centralauth-editset-type' => 'Tip:',
+	'centralauth-editset-wikis' => 'Wiki-uri:',
 	'centralauth-editset-reason' => 'Motiv:',
 	'centralauth-editset-submit' => 'Aplicare',
 	'centralauth-editset-nowikis' => 'Nicio wiki nu a fost specificată.',
 	'centralauth-editset-nouse' => '(nimic)',
 	'centralauth-editset-usage' => 'Folosit în grupurile:',
+	'centralauth-editset-badwikis' => 'Următo(rul)/(arele) {{PLURAL:$2|wiki nu|wiki-uri nu}} există: $1.',
 	'right-centralauth-admin' => 'Administrează conturile globale',
 	'right-centralauth-merge' => 'Unifică conturile sale',
 	'right-globalgrouppermissions' => 'Administrează grupurile globale',
@@ -17404,6 +17421,8 @@ $messages['te'] = array(
 	'centralauth-admin-delete-nonexistent' => 'లోపం: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
 	'centralauth-token-mismatch' => 'సారీ, సెషను డేటా పోవడం వలన మీ ఫారమును సమర్పణను ప్రాసెస్ చెయ్యలేకపోతున్నాం.',
 	'centralauth-admin-reason' => 'కారణం:',
+	'centralauth-admin-status-nonexistent' => 'పొరపాటు: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
+	'centralauth-admin-setstatus-success' => 'ఈ సార్వత్రిక ఖాతా యొక్క స్థితిని మీరు విజయవంతంగా మార్చారు.',
 	'globalusers' => 'సార్వత్రిక వాడుకరుల జాబితా',
 	'centralauth-listusers-locked' => 'లాకు అయింది',
 	'centralauth-listusers-attached' => 'స్థానికంగా ఉనికిలో ఉంది',
@@ -17474,6 +17493,7 @@ $messages['te'] = array(
 	'centralauth-editset-reason' => 'కారణం:',
 	'centralauth-editset-submit' => 'దాఖలుచెయ్యి',
 	'centralauth-editset-nouse' => '(ఏదీకాదు)',
+	'centralauth-editset-badwikis' => 'ఈ {{PLURAL:$2|వికీ లేనే లేదు|వికీలు లేనే లేవు}}: $1.',
 	'right-globalgroupmembership' => 'సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు',
 	'right-centralauth-admin' => 'సార్వత్రిక ఖాతాలను నిర్వహించు',
 	'right-centralauth-merge' => 'వారి ఖాతాలను విలీనం చెయ్యి',
@@ -17750,6 +17770,14 @@ $messages['th'] = array(
 	'centralauth-editset-reason' => 'เหตุผล:',
 	'centralauth-editset-submit' => 'ตกลง',
 	'centralauth-editset-nouse' => '(ไม่มี)',
+);
+
+/** Turkmen (Türkmençe)
+ * @author Hanberke
+ */
+$messages['tk'] = array(
+	'centralauth-finish-password' => 'Parol:',
+	'centralauth-admin-username' => 'Ulanyjy ady:',
 );
 
 /** Tagalog (Tagalog)
