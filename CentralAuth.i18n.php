@@ -5419,7 +5419,7 @@ $messages['et'] = array(
 	'centralauth-merge-notlogged' => 'Palun <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} logi sisse]</span>, et näha, kas su kontod on terviklikult ühendatud.',
 	'centralauth-merge-step1-title' => 'Kontode ühendamise alustamine',
 	'centralauth-merge-step1-detail' => 'Palun sisesta siin oma konto parool.
-Sinu parooli ja registreeritud e-postiaadressi ühtimist teistes vikides olevate kontode omadega kontrollitakse.
+Sinu parooli ja registreeritud e-posti aadressi ühtimist teistes vikides olevate kontode omadega kontrollitakse.
 Muudatusi ei tehta, kuni oled kinnitanud, et kõik on korras.',
 	'centralauth-merge-step1-submit' => 'Kinnita sisselogimise informatsioon',
 	'centralauth-merge-step2-submit' => 'Kinnita sisselogimise informatsioon',
@@ -5439,7 +5439,7 @@ Palun sisesta koduviki parool.',
 	'centralauth-error-locked' => 'Sa ei saa toimetada, sest su kasutaja on lukustatud.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Loe veel '''kontode ühendamise''' kohta]]…''",
 	'centralauth-list-home-title' => 'Koduviki',
-	'centralauth-list-home-dryrun' => 'Ühendkonto hakkab kasutama selles vikis kasutusel olevat parooli ja e-postiaadressi.',
+	'centralauth-list-home-dryrun' => 'Ühendkonto hakkab kasutama selles vikis kasutusel olevat parooli ja e-posti aadressi.',
 	'centralauth-list-attached-title' => 'Liidetud kontod',
 	'centralauth-list-attached' => 'Kasutajakonto nimega $1 järgnevatest vikidest on automaatselt liidetud ühendkontoga:',
 	'centralauth-list-attached-dryrun' => 'Kasutajakonto nimega $1 järgnevatest vikidest liidetakse automaatselt ühendkontoga:',
@@ -12658,25 +12658,25 @@ $3 നീക്കംചെയ്തു',
 	'centralauth-globalgroupperms-nogroups' => 'ആഗോള അംഗത്വങ്ങൾ ഒന്നും നിർവ്വചിച്ചിട്ടില്ല.',
 	'centralauth-existinggroup-legend' => 'നിലവിലുള്ള സംഘങ്ങള്‍',
 	'centralauth-newgroup-legend' => 'പുതിയൊരു ഗ്രൂപ്പുണ്ടാക്കുക',
-	'centralauth-newgroup-intro' => 'പുതിയ ഒരു ഗ്രൂപ്പിനു അവകാശങ്ങള്‍ കൊടുക്കുവാന്‍ വേണ്ടി ഈ ഫോം ഉപയോഗിക്കുക. ഏതെങ്കിലും ഒരു ഗ്രൂപ്പിനു പ്രത്യേക അവകാശങ്ങള്‍ കൊടുക്കുന്നില്ലെങ്കില്‍ ആ ഗ്രൂപ്പിനു നിലനില്‍പ്പില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
-	'centralauth-globalgroupperms-newgroupname' => 'പുതിയ ഗ്രൂപ്പിന്റെ പേര്‌:',
+	'centralauth-newgroup-intro' => 'പുതിയ ഒരു സംഘത്തിനു അവകാശങ്ങള്‍ കൊടുക്കുവാന്‍ വേണ്ടി ഈ ഫോം ഉപയോഗിക്കുക. ഏതെങ്കിലും ഒരു സംഘത്തിനു പ്രത്യേക അവകാശങ്ങള്‍ കൊടുക്കുന്നില്ലെങ്കില്‍ ആ സംഘത്തിനു നിലനില്‍പ്പില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
+	'centralauth-globalgroupperms-newgroupname' => 'പുതിയ സംഘത്തിന്റെ പേര്‌:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'അവകാശങ്ങള്‍ അനുവദിക്കുക',
 	'centralauth-editgroup-subtitle' => '$1 തിരുത്തുന്നു',
 	'centralauth-editgroup-fieldset' => '$1ന്റെ അവകാശങ്ങള്‍',
-	'centralauth-editgroup-name' => 'ഗ്രൂപ്പിന്റെ പേര്‌:',
-	'centralauth-editgroup-display' => 'ഗ്രൂപ്പിന്റെ പ്രാദേശിക നാമം:',
+	'centralauth-editgroup-name' => 'സംഘത്തിന്റെ പേര്‌:',
+	'centralauth-editgroup-display' => 'സംഘത്തിന്റെ പ്രാദേശിക നാമം:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|തിരുത്തുക]])',
-	'centralauth-editgroup-member' => 'ഗ്രൂപ്പ് അംഗങ്ങളുടെ പ്രാദേശിക പേര്‌:',
+	'centralauth-editgroup-member' => 'സംഘ അംഗങ്ങളുടെ പ്രാദേശിക പേര്‌:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|തിരുത്തുക]])',
 	'centralauth-editgroup-members' => 'അംഗത്വ പട്ടിക:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 എന്ന അവകാശമുള്ള അംഗങ്ങളുടെ പട്ടിക]]',
 	'centralauth-editgroup-restrictions' => 'ഈ സംഘം സജീവമായിട്ടുള്ള വിക്കികളുടെ ഗണം:',
 	'centralauth-editgroup-noset' => '(ഒന്നുമില്ല)',
-	'centralauth-editgroup-submit' => 'ഗ്രൂപ്പ് അവകാശങ്ങളില്‍ വരുത്തിയ മാറ്റങ്ങള്‍ സേവ് ചെയ്യുക',
+	'centralauth-editgroup-submit' => 'സംഘ അവകാശങ്ങളില്‍ വരുത്തിയ മാറ്റങ്ങള്‍ സേവ് ചെയ്യുക',
 	'centralauth-editgroup-perms' => 'നിര്‍ണ്ണയിക്കപ്പെട്ട അവകാശങ്ങള്‍:',
 	'centralauth-editgroup-reason' => 'കാരണം:',
-	'centralauth-editgroup-success' => 'ഗ്രൂപ്പ് അവകാശങ്ങളില്‍ മാറ്റം വരുത്തിയിരിക്കുന്നു',
-	'centralauth-editgroup-success-text' => '$1 എന്ന ഗ്രൂപ്പിന്റെ അവകാശങ്ങള്‍ വിജയകരമായി മാറ്റിയിരിക്കുന്നു. [[Special:GlobalGroupPermissions|ഗ്രൂപ്പ് പരിപാലന താളിലേക്ക് തിരിച്ചു പോവുക]]',
+	'centralauth-editgroup-success' => 'സംഘ അവകാശങ്ങളില്‍ മാറ്റം വരുത്തിയിരിക്കുന്നു',
+	'centralauth-editgroup-success-text' => '$1 എന്ന സംഘത്തിന്റെ അവകാശങ്ങള്‍ വിജയകരമായി മാറ്റിയിരിക്കുന്നു. [[Special:GlobalGroupPermissions|സംഘം പരിപാലന താളിലേക്ക് തിരിച്ചു പോവുക]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|തിരുത്തുക]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'അംഗത്വമുള്ള വിക്കി:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1'''  എന്ന ആഗോള ഉപയോക്താവ് താങ്കള്‍ തിരഞ്ഞെടുത്ത വിക്കിയില്‍ (''$2'') സജീവമല്ല. താങ്കള്‍ തെറ്റായ ഉപയോക്താവിനാണ്‌ അവകാശം കൊടുക്കുവാന്‍ ശ്രമിക്കുന്നതെന്നു തോന്നുന്നു.",
@@ -14952,6 +14952,7 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
  */
 $messages['ps'] = array(
 	'centralauth-merge-dryrun-or' => "'''يا'''",
+	'centralauth-merge-method-primary' => 'ويکي کور',
 	'centralauth-merge-method-empty' => 'هېڅ کومې ونډې نشته',
 	'centralauth-merge-method-mail' => 'د برېښليک له لارې يې پخلی شوی',
 	'centralauth-merge-method-new' => 'نوی کارن-حساب',
@@ -14960,6 +14961,7 @@ $messages['ps'] = array(
 	'centralauth-finish-send-confirmation' => 'پټنوم رابرېښليک کول',
 	'centralauth-admin-username' => 'کارن-نوم:',
 	'centralauth-admin-info-id' => 'د کارونکي پېژندنه:',
+	'centralauth-admin-info-locked' => 'تړل شوي:',
 	'centralauth-admin-info-hidden' => 'پټ:',
 	'centralauth-admin-yes' => 'هو',
 	'centralauth-admin-no' => 'نه',
@@ -14974,13 +14976,14 @@ $messages['ps'] = array(
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|مياشت|مياشتې}} دمخه',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|کال|کاله}} پخوا',
 	'centralauth-prefs-count-attached' => 'ستاسو کارن-حساب د $1  {{PLURAL:$1|پروژې په ويبځي|پروژو په ويبځايونو}} باندې فعاله دی .',
+	'centralauth-log-status-locked' => 'تړل شوی',
 	'centralauth-log-status-hidden' => 'پټ',
 	'centralauth-newgroup-legend' => 'يوه نوې ډله جوړول',
 	'centralauth-globalgroupperms-newgroupname' => 'د نوې ډلې نوم:',
 	'centralauth-editgroup-name' => 'د ډلې نوم:',
 	'centralauth-editgroup-members' => 'د غړي لړليک:',
 	'centralauth-editgroup-noset' => '(هېڅ)',
-	'centralauth-editgroup-reason' => 'د بدلون سبب:',
+	'centralauth-editgroup-reason' => 'سبب:',
 	'centralauth-editset-name' => 'نوم:',
 	'centralauth-editset-wikis' => 'ويکي ګانې:',
 	'centralauth-editset-reason' => 'سبب:',
@@ -17707,6 +17710,7 @@ $messages['te'] = array(
 	'centralauth-admin-delete-nonexistent' => 'లోపం: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
 	'centralauth-token-mismatch' => 'సారీ, సెషను డేటా పోవడం వలన మీ ఫారమును సమర్పణను ప్రాసెస్ చెయ్యలేకపోతున్నాం.',
 	'centralauth-admin-reason' => 'కారణం:',
+	'centralauth-admin-status' => 'సార్వత్రిక ఖాతా స్థితిని అమర్చు',
 	'centralauth-admin-status-intro' => 'ఈ సార్వత్రిక ఖాతా యొక్క స్థితిని మార్చడానికి మీరు ఈ ఫారాన్ని ఉపయోగించవచ్చు',
 	'centralauth-admin-status-submit' => 'స్థితిని అమర్చు',
 	'centralauth-admin-status-nonexistent' => 'పొరపాటు: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
