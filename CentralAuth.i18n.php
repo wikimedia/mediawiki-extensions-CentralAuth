@@ -11327,7 +11327,7 @@ Eng aner Wiki gouf als Heemechts-Wiki fir äre Benotzernumm ermëttelt; klickt o
 	'centralauth-merge-step3-title' => 'Globale Benotzerkont uleeën',
 	'centralauth-merge-step3-detail' => 'Dir kënnt elo e globale Benotzerkont opmaachen, de fir dës Wikien zielt:',
 	'centralauth-merge-step3-submit' => 'Benotzerkonten zesummeleeën',
-	'centralauth-merge-no-accounts' => "Et goufe keng Benotzerkonten déi mat ärem Numm iwwerenee stëmmen an der Tabell an däer all Benotzerkonten opgzeechent gi fonnt!
+	'centralauth-merge-no-accounts' => "Et goufe keng Benotzerkonten déi mat Ärem Numm iwwereneestëmmen an der Tabell an däer all Benotzerkonten opgzeechent gi fonnt!
 D'Datebank muss feelerhaft sinn.",
 	'centralauth-merge-home-password' => "D'Heemechtswiki fir dëse Benotzerkont (kuckt ënnendrënner) huet en anert Passwuert wéi dat, dat Dir aginn hutt.
 Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
@@ -11349,7 +11349,7 @@ Esoulaang wéi déi Spär besteet, kënnt Dir är Benotzerkonten net zesummeféi
 	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi dir an dëser Wiki uginn hutt gi fir äre globale Benotzerkont benotzt.",
 	'centralauth-list-attached-title' => 'Verbonne Benotzerkonten',
 	'centralauth-list-attached' => 'De Benotzerkont mam Numm "$1" vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonnen:',
-	'centralauth-list-attached-dryrun' => 'De Benotzerkont mam Numm "$1" op all dëse Site gëtt automatesch mat dem globale Benotzerkont verbonnen:',
+	'centralauth-list-attached-dryrun' => 'De Benotzerkont mam Numm "$1" gëtt op all dëse Siten automatesch mat dem globale Benotzerkont verbonnen:',
 	'centralauth-list-unattached-title' => 'Net verbonne Benotzerkonten',
 	'centralauth-list-unattached' => 'De Benotzerkont "$1" konnt fir déi ënnendrënner opgelëschte Siten net automatesch confirméiert ginn;
 wahrscheinlech hu si en anert Passwuert wéi Ären Haaptbenotzerkont:',
@@ -11439,7 +11439,7 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-prefs-complete' => 'Fäerdeg!',
 	'centralauth-prefs-migration' => "D'Zesummeféierung gëtt elo gemaach",
 	'centralauth-prefs-count-attached' => 'Äre Benotzerkont ass op $1 {{PLURAL:$1|Projet|Projeten}} aktiv.',
-	'centralauth-prefs-count-unattached' => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat ärem Numm.',
+	'centralauth-prefs-count-unattached' => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat Ärem Numm.',
 	'centralauth-prefs-detail-unattached' => 'Dëse Projet gehéiert nach net zum Projet vun de globale Benotzerkonten.',
 	'centralauth-prefs-manage' => 'Geréiert äre globale Benotzerkont',
 	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System opgeholl.
@@ -11496,7 +11496,7 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-editgroup-name' => 'Numm vun der Grupp:',
 	'centralauth-editgroup-display' => 'Lokaliséierten Numm vun der Grupp:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|änneren]])',
-	'centralauth-editgroup-member' => 'Lokaliséierte Numm vun de Membere vun de Gruppen:',
+	'centralauth-editgroup-member' => 'Lokaliséierten Numm vun de Membere vun de Gruppen:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|änneren]])',
 	'centralauth-editgroup-members' => 'Lëscht vun de Memberen:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lëscht vu Benotzer matt $2 Rechter]]',
