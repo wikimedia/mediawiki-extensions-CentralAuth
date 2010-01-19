@@ -12722,7 +12722,22 @@ $3 നീക്കംചെയ്തു',
  * @author Chinneeb
  */
 $messages['mn'] = array(
+	'centralauth-complete' => 'Нэвтрэлтийг нэгтгэж дууслаа!',
+	'centralauth-incomplete' => 'Нэвтрэлтийг нэгтгэх үйл явц дуусаагүй байна!',
+	'centralauth-complete-text' => 'Та одоо шинэ бүртгэл үүсгэхгүйгээр {{MediaWiki:Centralauth-groupname}}-н ямар ч вики сайт руу нэвтэрч болно.',
+	'centralauth-incomplete-text' => 'Таны нэвтрэлтийг нэгтгэсний дараа та {{MediaWiki:Centralauth-groupname}}-н ямар ч вики сайт руу шинэ бүртгэл үүсгэхгүйгээр нэвтрэх боломжтой',
+	'centralauth-not-owner-text' => '"$1" хэрэглэгчийн нэрийг $2 дээрх бүртгэл эзэмшигчид автоматаар оноолоо.
+
+Хэрэв энэ нь та бол энд өөрийн үндсэн нууц үгийг бичиж нэвтрэлт нэгтгэх явцыг дуусгаж болно:',
+	'centralauth-foreign-link' => '$2 дээрх $1 хэрэглэгч',
+	'centralauth-finish-password' => 'Нууц үг:',
+	'centralauth-finish-login' => 'Нэвтрэх',
+	'centralauth-finish-send-confirmation' => 'Нууц үгийг мэйлээр явуулах',
+	'centralauth-finish-problems' => 'Таньд асуудал тулгарсан, эсвэл та эдгээр бусад бүтгэлүүдийн эзэн биш үү?
+[[meta:Help:Unified login problems|Тусламж олох тухай]]…',
 	'centralauth-admin-yes' => 'тийм',
+	'centralauth-login-progress' => 'Таныг {{int:Centralauth-groupname}}-н төслүүд рүү нэвтрүүлж байна:',
+	'centralauth-logout-progress' => 'Таныг {{int:Centralauth-groupname}}-н бусад төслүүдээс гаргаж байна:',
 );
 
 /** Marathi (मराठी)
