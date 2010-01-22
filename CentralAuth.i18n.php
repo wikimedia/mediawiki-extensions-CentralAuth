@@ -336,7 +336,7 @@ You may view and modify any of them, or create a new set.',
  * @author Toliño
  */
 $messages['qqq'] = array(
-	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}}.',
+	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}} and {{msg-mw|centralauth-login-progress}}.',
 	'centralauth-desc' => 'Short description of the Central Auth extension, shown on [[Special:Version]]. Do not translate or change links.',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
 	'centralauth-incomplete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{MediaWiki:Centralauth-groupname}}</nowiki>}} exactly as it is}}',
@@ -3536,7 +3536,7 @@ $messages['cy'] = array(
  * @author Jon Harald Søby
  * @author Masz
  * @author Peter Andersen
- * @author Piivaat
+ * @author Qaqqalik
  */
 $messages['da'] = array(
 	'mergeaccount' => 'Status for sammenlægning af kontoer',
@@ -4092,7 +4092,7 @@ Wenn das globale Benutzerkonto auch von Ihnen ist, können Sie die Zusammenführ
 	'centralauth-admin-setstatus-success' => 'Sie haben den Status für dieses globale Benutzerkonto erfolgreich geändert.',
 	'centralauth-prefs-count-attached' => 'Ihr Benutzerkonto ist in $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit Ihrem Namen.',
-	'centralauth-login-progress' => 'Automatisch wurden Sie auch an folgenden Projekten {{MediaWiki:Centralauth-groupname}} angemeldet:',
+	'centralauth-login-progress' => 'Automatisch wurden Sie auch an folgenden Projekten {{int:Centralauth-groupname}} angemeldet:',
 	'centralauth-logout-progress' => 'Automatisch wurden Sie auch von folgenden Projekten {{MediaWiki:Centralauth-groupname}} abgemeldet:',
 	'centralauth-login-no-others' => 'Sie wurden automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
 	'centralauth-logout-no-others' => 'Sie wurden automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.',
@@ -10580,7 +10580,7 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
 );
 
 /** Kalaallisut (Kalaallisut)
- * @author Piivaat
+ * @author Qaqqalik
  */
 $messages['kl'] = array(
 	'centralauth-login-progress' => 'Isersimalerputit {{int:Centralauth-groupname}}-p suliniutaani:',
