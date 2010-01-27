@@ -172,7 +172,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 
 	function buildCheckboxes( $group ) {
 	
-		global $wgUser;
+		global $wgUser, $wgOut;
 		$editable = $this->userCanEdit( $wgUser );
 		
 		$rights = User::getAllRights();
@@ -190,7 +190,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage
 			# Build a checkbox.
 			$checked = in_array( $right, $assignedRights );
 
-			$desc = htmlspecialchars( User::getRightDescription( $right ) ) . ' ' .
+			$desc = $wgOut->parseInline( User::getRightDescription( $right ) ) . ' ' .
 						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked, $attribs );
