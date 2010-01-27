@@ -5169,6 +5169,7 @@ Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
  * @author Sanbec
  * @author Titoxd
  * @author Toliño
+ * @author Translationista
  */
 $messages['es'] = array(
 	'mergeaccount' => 'Estado de la unificación de cuentas',
@@ -5349,11 +5350,14 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-rightslog-entry-groupperms2' => 'modificó los permisos del grupo $1.
 Añadido $2;
 Eliminado $3',
+	'centralauth-rightslog-entry-groupperms3' => 'se ha modificado  de $2 a $3 el conjunto de wikis restringida al grupo  $1',
 	'centralauth-rightslog-header' => 'Este registro contiene operaciones en grupos globales: cambios de pertenencia a grupos y permisos',
 	'centralauth-rightslog-entry-newset' => 'crear $2 grupo wiki $1 con los siguientes wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'renombró conjunto wiki «$2» a «$1»',
 	'centralauth-rightslog-entry-setnewtype' => 'cambió tipo de «$1» de $2 a $3',
 	'centralauth-rightslog-entry-setchange' => 'wikis cambiado en $1: agregados: $2; removidos: $3',
+	'centralauth-rightslog-set-optin' => 'basado en inclusión',
+	'centralauth-rightslog-set-optout' => 'basado en exclusión',
 	'autologin' => 'Identificación automática',
 	'centralauth-autologin-desc' => 'Esta página especial es usada internamente por MediaWiki.
 Cuando [[Special:UserLogin|te identificas]], el sistema central de autorización ordena a tu navegador que solicite esta página para todos lod dominios enlazados, unsando enlaces a imágenes.
@@ -5398,6 +5402,8 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
 	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|ver/editar]])',
 	'centralauth-editset-new' => 'Crear un conjunto nuevo',
 	'centralauth-editset-notfound' => 'No se encontró el conjunto wiki «$1».',
+	'centralauth-editset-optin' => 'Basado en la inclusión (sólo incluye los wikis especificados)',
+	'centralauth-editset-optout' => 'Basado en la exclusión (incluye todos los wikis excepto los especificados)',
 	'centralauth-editset-legend-edit' => 'Editando conjunto wiki «$1»',
 	'centralauth-editset-legend-new' => 'Creando nuevo grupo de wikis',
 	'centralauth-editset-name' => 'Nombre:',
