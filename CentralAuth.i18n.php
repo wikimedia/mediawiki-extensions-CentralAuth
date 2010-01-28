@@ -17785,6 +17785,7 @@ $messages['te'] = array(
 	'centralauth-log-entry-delete' => 'సార్వత్రిక ఖాతా "<nowiki>$1</nowiki>" ను తొలగించాం',
 	'centralauth-log-entry-lock' => 'సార్వత్రిక ఖాతా "<nowiki>$1</nowiki>" ను లాకు చేసాం',
 	'centralauth-log-entry-unlock' => 'సార్వత్రిక ఖాతా "<nowiki>$1</nowiki>" ని అన్‌లాకు చేసాం',
+	'centralauth-log-entry-hide' => 'సార్వత్రిక ఖాతా "<nowiki>$1</nowiki>"ని దాచారు',
 	'centralauth-log-status-none' => '(ఏదీకాదు)',
 	'centralauth-rightslog-name' => 'సార్వత్రిక హక్కుల చిట్టా',
 	'centralauth-rightslog-entry-usergroups' => '$1 యొక్క సార్వత్రిక గుంపు సభ్యత్వాన్ని $2 నుండి $3 కు మార్చాం',
