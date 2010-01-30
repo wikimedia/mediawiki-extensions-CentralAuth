@@ -144,6 +144,7 @@ $wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/SpecialGlobalGroup
 $wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/CentralAuthGroupMembershipProxy.php";
 $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/SpecialGlobalGroupPermissions.php";
 $wgAutoloadClasses['SpecialEditWikiSets'] = "$caBase/SpecialEditWikiSets.php";
+$wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/ApiQueryGlobalUserInfo.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionAliasesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.alias.php";
@@ -197,6 +198,8 @@ $wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
 $wgSpecialPageGroups['GlobalGroupPermissions'] = 'users';
 $wgSpecialPageGroups['EditWikiSets'] = 'wiki';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
+
+$wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
