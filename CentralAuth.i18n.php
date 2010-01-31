@@ -101,14 +101,11 @@ most likely they have a different password from your primary account:',
 	'centralauth-merge-method-primary-desc'  => 'This is the wiki at which the account was initially merged.
 Note that it may differ from the real home wiki of that user.',
 	'centralauth-merge-method-empty-desc'    => 'Indicates that the local account was merged because it had no edits.',
-	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its email address matched
-the email address of the main account',
-	'centralauth-merge-method-password-desc' => 'Indicates that the local account was merged because user specified a valid
-password for it.',
-	'centralauth-merge-method-admin-desc'    => 'Indicates that the local account was merged manually by stewards. That feature
-is disabled now because of security reasons.',
-	'centralauth-merge-method-new-desc'      => 'Indicates that the global account was created automatically when that local
-account was created.',
+	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its email address matched the e-mail address of the main account.',
+	'centralauth-merge-method-password-desc' => 'Indicates that the local account was merged because user specified a valid password for it.',
+	'centralauth-merge-method-admin-desc'    => 'Indicates that the local account was merged manually by stewards.
+That feature is disabled now because of security reasons.',
+	'centralauth-merge-method-new-desc'      => 'Indicates that the global account was created automatically when that local account was created.',
 	'centralauth-merge-method-login-desc'    => 'Indicates that the local account was created automatically when user logged in.',
 
 	// When not complete, offer to finish...
@@ -157,8 +154,10 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-list-legend-rw'     => 'Unmerge local accounts',
 	'centralauth-admin-unattached'         => 'not attached',
 	'centralauth-admin-notblocked'         => '—',
-	'centralauth-admin-blocked'            => 'Blocked, expires $3 at $4. Reason: $2',
-	'centralauth-admin-blocked-indef'      => 'Blocked indefinitely. Reason: $1',
+	'centralauth-admin-blocked'            => 'Blocked, expires $3 at $4.
+Reason: $2',
+	'centralauth-admin-blocked-indef'      => 'Blocked indefinitely.
+Reason: $1',
 	'centralauth-admin-blocklog'           => 'block log',
 	'centralauth-admin-list-localwiki'     => 'Local wiki',
 	'centralauth-admin-list-attached-on'   => 'Attached on',
