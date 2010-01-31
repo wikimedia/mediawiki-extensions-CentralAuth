@@ -73,7 +73,7 @@ class GlobalUsersPager extends UsersPager {
 
 	function getQueryInfo() {
 		$localwiki = wfWikiID();
-		$conds = array( 'gu_hidden' => 0 );
+		$conds = array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE );
 
 		if( $this->mGroup )
 			$conds['gug_group'] = $this->mGroup;

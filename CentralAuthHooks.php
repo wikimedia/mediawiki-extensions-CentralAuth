@@ -444,7 +444,6 @@ class CentralAuthHooks {
 		   return false;
 	   }
 
-
 		// Checks passed, create the user
 		wfDebug( __METHOD__.": creating new user\n" );
 		$user->loadDefaults( $userName );
@@ -565,6 +564,8 @@ class CentralAuthHooks {
 	}
 
 	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
+		global $wgCentralAuthLockedCanEdit;
+
 		if( $action == 'read' || $user->isAnon() ) {
 			return true;
 		}
@@ -572,7 +573,10 @@ class CentralAuthHooks {
 		if( !($centralUser->exists() && $centralUser->isAttached()) ) {
 			return true;
 		}
-		if( $centralUser->isLocked() ) {
+		if( 
+			$centralUser->isOversighted() ||	// Oversighted users should *never* be able to edit
+			( $centralUser->isLocked() && !in_array( $title->getPrefixedText(), $wgCentralAuthLockedCanEdit ) )
+				) {
 			$result = 'centralauth-error-locked';
 			return false;
 		}
