@@ -3315,7 +3315,7 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-merge-method-password' => 'potvrzeno heslem',
 	'centralauth-merge-method-admin' => 'účet sloučený správcem',
 	'centralauth-merge-method-new' => 'nový účet',
-	'centralauth-merge-method-login' => 'potvrzeno přihlášením',
+	'centralauth-merge-method-login' => 'vytvořeno při přihlášení',
 	'centralauth-finish-title' => 'Dokončit sloučení',
 	'centralauth-finish-text' => 'Pokud tyto účty opravdu patří vám, můžete proces sloučení jednoduše dokončit napsáním hesel dotyčných účtů:',
 	'centralauth-finish-password' => 'Heslo:',
@@ -5240,7 +5240,7 @@ Si la cuenta global es suya también, usted puede unir esta cuenta si usted escr
 	'centralauth-admin-list-attached-on' => 'Adjunta a',
 	'centralauth-admin-list-method' => 'Método',
 	'centralauth-admin-list-editcount' => 'Contador de ediciones',
-	'centralauth-admin-list-blocked' => 'Status bloqueado',
+	'centralauth-admin-list-blocked' => 'Bloqueado',
 	'centralauth-admin-unmerge' => 'Desunificar las cuentas seleccionadas',
 	'centralauth-admin-merge' => 'Fusionar las cuentas seleccionadas',
 	'centralauth-admin-bad-input' => 'Selección de unificación inválida',
@@ -6754,9 +6754,18 @@ o máis probábel é que teñan un contrasinal diferente ao da súa conta primar
 	'centralauth-merge-method-empty' => 'ningunha contribución',
 	'centralauth-merge-method-mail' => 'confirmada por correo electrónico',
 	'centralauth-merge-method-password' => 'confirmada por contrasinal',
-	'centralauth-merge-method-admin' => 'conta de administrador fusionada',
+	'centralauth-merge-method-admin' => 'conta fusionada por un administrador',
 	'centralauth-merge-method-new' => 'nova conta',
 	'centralauth-merge-method-login' => 'creada por acceso ao sistema',
+	'centralauth-merge-method-primary-desc' => 'Este é o wiki no que a conta foi inicialmente fusionada.
+Teña en conta que pode diferir do wiki principal deste usuario.',
+	'centralauth-merge-method-empty-desc' => 'Indica que a conta local foi fusionada porque non tiña edicións.',
+	'centralauth-merge-method-mail-desc' => 'Indica que a conta local foi fusionada porque o seu enderezo de correo electrónico coincidía co enderezo da conta principal.',
+	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi fusionada porque usuario especificou un contrasinal válido para ela.',
+	'centralauth-merge-method-admin-desc' => 'Indica que a conta local foi fusionada manualmente polos stewards.
+Esta función está desactivada arestora por motivos de seguridade.',
+	'centralauth-merge-method-new-desc' => 'Indica que a conta global foi creada automaticamente cando a conta local se creou.',
+	'centralauth-merge-method-login-desc' => 'Indica que a conta local foi creada automaticamente cando o usuario accedeu ao sistema.',
 	'centralauth-finish-title' => 'Finalizar a unificación',
 	'centralauth-finish-text' => 'Se estas contas lle pertencen, pode finalizar o proceso de unificación do rexistro simplemente introducindo, aquí, os contrasinais das outras contas:',
 	'centralauth-finish-password' => 'Contrasinal:',
@@ -6823,10 +6832,23 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-admin-status' => 'Establecer o estado da conta global',
 	'centralauth-admin-status-intro' => 'Pode usar este formulario para cambiar o estado desta conta global',
 	'centralauth-admin-status-locked' => 'Bloqueado:',
+	'centralauth-admin-status-locked-no' => 'A conta non está bloqueada',
+	'centralauth-admin-status-locked-yes' => 'A conta está bloqueada fronte á edición',
 	'centralauth-admin-status-hidden' => 'Agochado:',
+	'centralauth-admin-status-hidden-no' => 'A conta non está agochada',
+	'centralauth-admin-status-hidden-list' => 'A conta está agochada das listas públicas',
+	'centralauth-admin-status-hidden-oversight' => 'A conta está completamente agochada',
 	'centralauth-admin-status-submit' => 'Establecer o estado',
 	'centralauth-admin-status-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-admin-setstatus-success' => 'Cambiou con éxito o estado desta conta global.',
+	'centralauth-admin-status-reasons' => '* Motivos frecuentes para borrar
+** conta que só realizou vandalismos
+** conta que só realizou spam
+* Motivos frecuentes para bloquear e agochar
+** nome de usuario abusivo
+** información persoal inapropiada',
+	'centralauth-admin-logsnippet' => 'Cambios anteriores na conta global',
+	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 polo seguinte motivo: $2',
 	'globalusers' => 'Lista de usuarios globais',
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => 'existe neste wiki',
@@ -6855,6 +6877,7 @@ Ao renomealo, isto provocará que o usuario local sexa alonxado do global.',
 	'centralauth-logout-progress' => 'Saíndo do sistema dos outros proxectos {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Accedeu automaticamente ao sistema doutros proxectos {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Saíu automaticamente do sistema doutros proxectos {{int:Centralauth-groupname}}.',
+	'centralauth-hidden-blockreason' => 'agochada globalmente por $1 en $2 polo seguinte motivo: $3',
 	'centralauth-log-name' => 'Rexistro de administración de contas de usuario globais',
 	'centralauth-log-header' => 'Este rexistro contén as operacións baixo contas de usuario globais: borrados, bloqueos e desbloqueos.',
 	'centralauth-log-entry-delete' => 'eliminou a conta de usuario global chamada "$1"',
@@ -12573,6 +12596,11 @@ $messages['ml'] = array(
 	'centralauth-merge-method-primary-desc' => 'അംഗത്വം ആദ്യം സംയോജിപ്പിച്ച വിക്കിയാണിത്.
 ഇത് ഉപയോക്താവിന്റെ ശരിക്കുമുള്ള തറവാട് വിക്കിയിൽ നിന്നും വ്യത്യസ്തമാകാവുന്നതാണെന്നോർക്കുക.',
 	'centralauth-merge-method-empty-desc' => 'പ്രാദേശിക അംഗത്വം തിരുത്തലുകളൊന്നുമില്ലാഞ്ഞതിനാൽ സംയോജിപ്പിച്ചതാണെന്നു കുറിക്കുന്നു.',
+	'centralauth-merge-method-mail-desc' => 'പ്രധാന അംഗത്വത്തിന്റെ ഇമെയിൽ വിലാസവുമായി പ്രാദേശിക അംഗത്വത്തിന്റെ ഇമെയിൽ വിലാസം ഒത്തുപോകുന്നതിനാൽ സംയോജിക്കപ്പെട്ടതെന്നു കുറിക്കുന്നു.',
+	'centralauth-merge-method-password-desc' => 'ഉപയോക്താവ് സാധുവായ രഹസ്യവാക്ക് നൽകിയതിനാലാണ് പ്രാദേശിക അംഗത്വം സംയോജിപ്പിക്കപ്പെട്ടതെന്നു കുറിക്കുന്നു.',
+	'centralauth-merge-method-admin-desc' => 'പ്രാദേശിക അംഗത്വം സ്റ്റ്യൂവാർഡുകൾ നേരിട്ട്  സംയോജിപ്പിച്ചുവെന്നു കുറിക്കുന്നു.
+സുരക്ഷാകാരണങ്ങളാൽ ഈ സൗകര്യം ഇപ്പോൾ ലഭ്യമല്ല.',
+	'centralauth-merge-method-new-desc' => 'പ്രാദേശിക അംഗത്വം സൃഷ്ടിച്ചപ്പോൾ തന്നെ ആഗോള അംഗത്വം സ്വയം സൃഷ്ടിക്കപ്പെട്ടു എന്നു കുറിക്കുന്നു.',
 	'centralauth-merge-method-login-desc' => 'ഉപയോക്താവ് പ്രവേശിച്ചപ്പോഴാണ് പ്രാദേശിക അംഗത്വം സൃഷ്ടിക്കപ്പെട്ടതെന്നു കുറിക്കുന്നു.',
 	'centralauth-finish-title' => 'സം‌യോജനം പൂര്‍ത്തിയാക്കുക',
 	'centralauth-finish-text' => 'ഈ അംഗത്വങ്ങള്‍ താങ്കളുടെ തന്നെയാണെങ്കില്‍, മറ്റുള്ള അംഗത്വങ്ങള്‍ക്ക് രഹസ്യവാക്ക് ടൈപ്പു ചെയ്ത് സം‌യോജിത ലോഗിന്‍ പ്രക്രിയ താങ്കള്‍ക്കു പൂര്‍ത്തിയാക്കാവുന്നതാണ്‌:',
@@ -12657,6 +12685,7 @@ $messages['ml'] = array(
 **മോശപ്പെട്ട ഉപയോക്തൃനാമം
 **അനുചിതമായ വ്യക്തി വിവരങ്ങൾ',
 	'centralauth-admin-logsnippet' => 'ആഗോള അംഗത്വത്തിൽ മുമ്പുണ്ടായ മാറ്റങ്ങൾ',
+	'centralauth-admin-suppressreason' => '$1 ആഗോളമായി ഒതുക്കിയിരിക്കുന്നു, കാരണം: $2',
 	'globalusers' => 'ആഗോള അംഗങ്ങള്‍',
 	'centralauth-listusers-locked' => 'ബന്ധിച്ചിരിക്കുന്നു',
 	'centralauth-listusers-attached' => 'പ്രാദേശിക വിക്കിയില്‍ അംഗത്വം ഉണ്ട്',
@@ -12685,6 +12714,7 @@ $messages['ml'] = array(
 	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}} പദ്ധതികളില്‍ നിന്നും താങ്കള്‍ ലോഗൗട്ട് ചെയ്തിരിക്കുന്നു:',
 	'centralauth-login-no-others' => 'മറ്റു {{int:Centralauth-groupname}} പദ്ധതികളിൽ താങ്കൾ സ്വയം ലോഗിൻ ചെയ്യപ്പെടുന്നതാണ്.',
 	'centralauth-logout-no-others' => 'മറ്റു {{int:Centralauth-groupname}} പദ്ധതികളിൽ നിന്നും താങ്കൾ സ്വയം ലോഗൗട്ട് ആയിരിക്കുന്നു.',
+	'centralauth-hidden-blockreason' => '$1 $2-വിൽ ആഗോളമായി മറച്ചിരിക്കുന്നു, കാരണം: $3',
 	'centralauth-log-name' => 'ആഗോള അംഗത്വം നിയന്ത്രിക്കുന്നതിന്റെ പ്രവര്‍ത്തനരേഖ',
 	'centralauth-log-header' => 'ഈ രേഖയിൽ ആഗോള അംഗത്വവുമായി ബന്ധപ്പെട്ട പ്രവർത്തനങ്ങൾ - മായ്ക്കലുകൾ, പൂട്ടലുകൾ, തുറക്കലുകൾ - കാണാവുന്നതാണ്.',
 	'centralauth-log-entry-delete' => '"$1" എന്ന ആഗോള അംഗത്വം മായ്ച്ചിരിക്കുന്നു',
@@ -12696,6 +12726,7 @@ $messages['ml'] = array(
 	'centralauth-log-entry-chgstatus' => '"$1" എന്ന ആഗോള അംഗത്വത്തിന്റെ സ്ഥിതിയിൽ മാറ്റം വരുത്തിയിരിക്കുന്നു: $2 ഉറപ്പിച്ചു, $3 എടുത്തുമാറ്റി',
 	'centralauth-log-status-locked' => 'പൂട്ടിയിരിക്കുന്നു',
 	'centralauth-log-status-hidden' => 'മറയ്ക്കപ്പെട്ടത്',
+	'centralauth-log-status-oversighted' => 'മേൽനോട്ടം വഹിക്കപ്പെട്ടവ',
 	'centralauth-log-status-none' => '(ഒന്നുമില്ല)',
 	'centralauth-rightslog-name' => 'ആഗോള അവകാശ പ്രവര്‍ത്തന രേഖ',
 	'centralauth-rightslog-entry-usergroups' => '$1-ന്റെ ആഗോള അംഗത്വ സംഘം $2-ല്‍ നിന്നു $3-ലേക്കു മാറ്റിയിരിക്കുന്നു.',
@@ -12773,6 +12804,7 @@ $3 നീക്കംചെയ്തു',
 	'centralauth-editset-return' => 'പ്രധാന ദൃശ്യത്തിലേയ്ക്ക് തിരിച്ചുപോവുക',
 	'right-globalgroupmembership' => 'ആഗോള ഗ്രൂപ്പുകളിലുള്ള അംഗത്വം തിരുത്തുക',
 	'right-centralauth-unmerge' => 'ആഗോള അംഗത്വ സംയോജനം നീക്കുക',
+	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക',
 	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക',
 	'right-centralauth-merge' => 'അംഗത്വങ്ങള്‍ സം‌യോജിപ്പിക്കുക',
 	'right-globalgrouppermissions' => 'ആഗോളഗ്രൂപ്പുകള്‍ പരിപാലിക്കുക',
@@ -14211,7 +14243,7 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-merge-method-password' => 'bekreftet med passord',
 	'centralauth-merge-method-admin' => 'slått sammen av administrator',
 	'centralauth-merge-method-new' => 'ny konto',
-	'centralauth-merge-method-login' => 'bekreftet via innlogging',
+	'centralauth-merge-method-login' => 'opprettet ved innlogging',
 	'centralauth-finish-title' => 'Fullfør sammenslåing',
 	'centralauth-finish-text' => 'Om disse kontoene tilhører deg kan du fullføre kontosammenslåingen ved å skrive inn passordene for de andre kontoene her:',
 	'centralauth-finish-password' => 'Passord:',
@@ -14230,23 +14262,29 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-admin-intro' => 'Dette grensesnittet kan brukes for administrasjon av globale kontoer.',
 	'centralauth-admin-manage' => 'Behandle brukerdata',
 	'centralauth-admin-username' => 'Brukernavn:',
+	'centralauth-admin-lookup-ro' => 'Vis brukerinformasjon',
+	'centralauth-admin-lookup-rw' => 'Administrer brukerkonto',
 	'centralauth-admin-permission' => 'Kun forvaltere kan slå sammen andres kontoer for dem.',
 	'centralauth-admin-no-unified' => 'Ingen sammenslått konto for dette brukernavnet.',
+	'centralauth-admin-info-header' => 'Global brukerinformasjon',
 	'centralauth-admin-info-id' => 'Bruker-ID:',
 	'centralauth-admin-info-registered' => 'Registrert:',
+	'centralauth-admin-info-home' => 'Hjemmewiki:',
 	'centralauth-admin-info-locked' => 'Låst:',
 	'centralauth-admin-info-hidden' => 'Skjult:',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nei',
+	'centralauth-admin-list-legend-ro' => 'Liste over lokale kontoer',
 	'centralauth-admin-unattached' => 'Ikke tilsluttede kontoer',
 	'centralauth-admin-notblocked' => 'Ikke blokkert',
 	'centralauth-admin-blocked' => 'Blokkert til $3 $4. Årsak: $2',
 	'centralauth-admin-blocked-indef' => 'Blokkert på ubestemt tid. Årsak: $1',
+	'centralauth-admin-blocklog' => 'blokkeringslogg',
 	'centralauth-admin-list-localwiki' => 'Lokal wiki',
 	'centralauth-admin-list-attached-on' => 'Sammenslåingsdato',
 	'centralauth-admin-list-method' => 'Metode',
 	'centralauth-admin-list-editcount' => 'Redigeringsteller',
-	'centralauth-admin-list-blocked' => 'Status for blokkering',
+	'centralauth-admin-list-blocked' => 'Blokkert',
 	'centralauth-admin-unmerge' => 'Skill ut valgte',
 	'centralauth-admin-merge' => 'Slå sammen valgte',
 	'centralauth-admin-bad-input' => 'Ugyldig valg for sammenslåing',
@@ -14261,10 +14299,12 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-admin-delete-nonexistent' => 'Feil: Den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.',
 	'centralauth-token-mismatch' => 'Beklager, skjemaet kunne ikke lagres på grunn av et tap av øktdata.',
 	'centralauth-admin-reason' => 'Årsak:',
+	'centralauth-admin-reason-other' => 'Annen/utdypende grunn:',
 	'centralauth-admin-status' => 'Sett status for global konto',
 	'centralauth-admin-status-intro' => 'Du kan bruke dette skjemaet for å endre status på denne globale kontoen',
-	'centralauth-admin-status-locked' => 'Låst',
-	'centralauth-admin-status-hidden' => 'Skjult',
+	'centralauth-admin-status-locked' => 'Låst:',
+	'centralauth-admin-status-locked-no' => 'Konto er ikke låst',
+	'centralauth-admin-status-hidden' => 'Skjult:',
 	'centralauth-admin-status-submit' => 'Sett status',
 	'centralauth-admin-status-nonexistent' => 'Feil: den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.',
 	'centralauth-admin-setstatus-success' => 'Du har lykkes med å endre status for denne globale kontoen.',
@@ -15818,7 +15858,9 @@ $messages['ru'] = array(
 	'centralauth-merge-method-password' => 'подтверждена паролём',
 	'centralauth-merge-method-admin' => 'админ. объединённая уч. запись',
 	'centralauth-merge-method-new' => 'новая учётная запись',
-	'centralauth-merge-method-login' => 'подтверждена логином',
+	'centralauth-merge-method-login' => 'создан при входе в систему',
+	'centralauth-merge-method-primary-desc' => 'Эта вики, на которой было запущено объединение учётных записей.
+Обратите внимание, что она может отличаться от основной вики этого пользователя.',
 	'centralauth-finish-title' => 'Завершение объединения',
 	'centralauth-finish-text' => 'Если эти учётные записи ваши, то вы можете завершить процесс перехода на единую учётную запись, введя пароли к ним:',
 	'centralauth-finish-password' => 'Пароль:',
@@ -15835,27 +15877,37 @@ $messages['ru'] = array(
 	'centralauth-attach-text' => 'Эта учётная запись ещё не была перемещена в систему единой учётной записи. Если глобальная учётная запись также принадлежит вам, вы можете присоединить данную учётную запись, указав пароль глобальной учётной записи:',
 	'centralauth-attach-submit' => 'Перенести учётную запись',
 	'centralauth-attach-success' => 'Учётная запись была перенесена в систему единой учётной записи.',
-	'centralauth' => 'Администрирование объединения имён',
+	'centralauth' => 'Менеджер глобальных учётных записей',
 	'centralauth-admin-intro' => 'Этот интерфейс может быть использован для управления глобальными учётными записями.',
 	'centralauth-admin-manage' => 'Управление информацией об участниках',
 	'centralauth-admin-username' => 'Имя участника:',
+	'centralauth-admin-lookup-ro' => 'Просмотр сведений об участнике',
+	'centralauth-admin-lookup-rw' => 'Управление учётной записью участника',
 	'centralauth-admin-permission' => 'Только стюарды могут объединять учётные записи других людей.',
 	'centralauth-admin-no-unified' => 'Нет объединённой учётной записи для этого имени участника.',
+	'centralauth-admin-info-header' => 'Глобальные сведения об участнике',
 	'centralauth-admin-info-id' => 'Идентификатор участника:',
 	'centralauth-admin-info-registered' => 'Зарегистрирован:',
+	'centralauth-admin-info-home' => '«Домашний» вики-проект:',
+	'centralauth-admin-info-editcount' => 'Общий счётчик правок:',
 	'centralauth-admin-info-locked' => 'Заморожен:',
-	'centralauth-admin-info-hidden' => 'Скрыт:',
+	'centralauth-admin-info-hidden' => 'Скрытый уровень:',
 	'centralauth-admin-yes' => 'да',
 	'centralauth-admin-no' => 'нет',
-	'centralauth-admin-unattached' => 'Неприсоединённые учётные записи',
+	'centralauth-admin-hidden-list' => 'из общедоступных списков',
+	'centralauth-admin-hidden-oversight' => 'скрыто ревизором',
+	'centralauth-admin-list-legend-ro' => 'Список локальных учётных записей',
+	'centralauth-admin-list-legend-rw' => 'Необъединённые локальные учётные записи',
+	'centralauth-admin-unattached' => 'неприсоединён',
 	'centralauth-admin-notblocked' => 'Не заблокирован',
 	'centralauth-admin-blocked' => 'Заблокирован до $3 $4. Причина: $2',
 	'centralauth-admin-blocked-indef' => 'Заблокирован бессрочно. Причина: $1',
+	'centralauth-admin-blocklog' => 'журнал блокировок',
 	'centralauth-admin-list-localwiki' => 'Локальный вики-проект',
 	'centralauth-admin-list-attached-on' => 'Присоединён',
 	'centralauth-admin-list-method' => 'Способ',
 	'centralauth-admin-list-editcount' => 'Счётчик правок',
-	'centralauth-admin-list-blocked' => 'Статус блокировки',
+	'centralauth-admin-list-blocked' => 'Заблокирован',
 	'centralauth-admin-unmerge' => 'Разделить выбранные',
 	'centralauth-admin-merge' => 'Объединить выбранные',
 	'centralauth-admin-bad-input' => 'Ошибочный выбор объединения',
@@ -15874,8 +15926,8 @@ $messages['ru'] = array(
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-status' => 'Установить глобальный статус учётной записи',
 	'centralauth-admin-status-intro' => 'Вы можете использовать эту форму для изменения статуса этой глобальной учётной записи',
-	'centralauth-admin-status-locked' => 'Заблокирована',
-	'centralauth-admin-status-hidden' => 'Скрыта',
+	'centralauth-admin-status-locked' => 'Заблокирован:',
+	'centralauth-admin-status-hidden' => 'Скрыт:',
 	'centralauth-admin-status-submit' => 'Установить статус',
 	'centralauth-admin-status-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
 	'centralauth-admin-setstatus-success' => 'Вы успешно изменили статус этой глобальной учётной записи.',
@@ -19340,14 +19392,17 @@ Se te sì ti el paron de l\'utenza, par finir el processo de unificazion basta c
 	'centralauth-admin-no-unified' => 'No ghe xe account unificà par sto nome utente.',
 	'centralauth-admin-info-id' => 'ID utente:',
 	'centralauth-admin-info-registered' => 'Registrado:',
+	'centralauth-admin-info-home' => 'Wiki prinsipal:',
+	'centralauth-admin-info-editcount' => 'Conta totale dei contributi:',
 	'centralauth-admin-info-locked' => 'Blocà:',
-	'centralauth-admin-info-hidden' => 'Sconto:',
+	'centralauth-admin-info-hidden' => 'Livèl sconto:',
 	'centralauth-admin-yes' => 'sì',
 	'centralauth-admin-no' => 'no',
 	'centralauth-admin-unattached' => 'Account mìa colegadi',
 	'centralauth-admin-notblocked' => 'Mia blocà',
 	'centralauth-admin-blocked' => 'Blocà fin al $3 a le $4. Motivo: $2',
 	'centralauth-admin-blocked-indef' => 'Blocà sensa scadensa. Motivo: $1',
+	'centralauth-admin-blocklog' => 'registro dei blochi',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Colegado el',
 	'centralauth-admin-list-method' => 'Metodo',
@@ -19371,8 +19426,8 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-status' => "Inposta el stato de l'utensa globale",
 	'centralauth-admin-status-intro' => 'Te pol doparar sto modulo par canbiar el stato de sto utente globale',
-	'centralauth-admin-status-locked' => 'Blocà',
-	'centralauth-admin-status-hidden' => 'Sconto',
+	'centralauth-admin-status-locked' => 'Blocà:',
+	'centralauth-admin-status-hidden' => 'Sconto:',
 	'centralauth-admin-status-submit' => 'Inposta stato',
 	'centralauth-admin-status-nonexistent' => 'Eròr: l\'utente globale "<nowiki>$1</nowiki>" no l\'esiste mia.',
 	'centralauth-admin-setstatus-success' => 'Ti gà canbià el stato de sta utensa globale.',
