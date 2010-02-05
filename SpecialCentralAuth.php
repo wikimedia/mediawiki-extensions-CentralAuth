@@ -299,6 +299,7 @@ class SpecialCentralAuth extends SpecialPage {
 		if( $remainder )
 			$wgOut->addHTML( $this->listRemainder( $remainder ) );
 		$wgOut->addHTML( $this->listFooter() );
+		$wgOut->addHTML( '</fieldset>' );
 	}
 
 	function listHeader() {
