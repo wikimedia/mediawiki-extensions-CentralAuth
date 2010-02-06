@@ -430,9 +430,13 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function foreignLink( $wikiID, $title, $text, $hint = '', $params = '' ) {
-		$wiki = WikiMap::getWiki( $wikiID );
-		if( !$wiki ) {
-			throw new MWException( "Invalid wiki: $wikiID" );
+		if ( $wikiID instanceof WikiReference ) {
+			$wiki = $wikiID;
+		} else {
+			$wiki = WikiMap::getWiki( $wikiID );
+			if( !$wiki ) {
+				throw new MWException( "Invalid wiki: $wikiID" );
+			}
 		}
 
 		$url = $wiki->getUrl( $title );
@@ -448,9 +452,13 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
+		if( !$wiki ) {
+			throw new MWException( "Invalid wiki: $wikiID" );
+		}
+
 		$wikiname = $wiki->getDisplayName();
 		return $this->foreignLink(
-			$wikiID,
+			$wiki,
 			'User:' . $this->mUserName,
 			$wikiname,
 			wfMsg( 'centralauth-foreign-link', $this->mUserName, $wikiname ) );
