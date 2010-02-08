@@ -3564,6 +3564,7 @@ $messages['cu'] = array(
 $messages['cy'] = array(
 	'centralauth-groupname' => 'Sefydliad Wikimedia',
 	'centralauth-merge-dryrun-or' => "'''neu'''",
+	'centralauth-merge-step3-detail' => "Rydych yn barod i greu'ch cyfrif unedig, gyda'r wicïau canlynol ynghlwm wrtho:",
 	'centralauth-merge-step3-submit' => "Uno'r cyfrifon",
 	'centralauth-list-home-title' => 'Wici cartref',
 	'centralauth-admin-info-id' => 'ID y defnyddiwr:',
