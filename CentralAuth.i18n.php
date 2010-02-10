@@ -4686,6 +4686,7 @@ $messages['ee'] = array(
  * @author Omnipaedista
  * @author ZaDiak
  * @author Απεργός
+ * @author Περίεργος
  */
 $messages['el'] = array(
 	'mergeaccount' => 'Κατάσταση της ενοποίησης λογαριασμών',
@@ -4804,13 +4805,26 @@ $messages['el'] = array(
 	'centralauth-admin-delete-nonexistent' => 'Σφάλμα: ο παγκόσμιος λογαριασμός "<nowiki>$1</nowiki>" δεν υπάρχει.',
 	'centralauth-token-mismatch' => 'Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.',
 	'centralauth-admin-reason' => 'Αιτία:',
+	'centralauth-admin-reason-other' => 'Άλλος/πρόσθετος λόγος:',
 	'centralauth-admin-status' => 'Ρύθμιση της κατάστασης του καθολικού λογαριασμού',
 	'centralauth-admin-status-intro' => 'Μπορείς να χρησιμοποιήσεις αυτή τη φόρμα για να αλλάξεις την κατάσταση αυτού του παγκόσμιου λογαριασμού',
 	'centralauth-admin-status-locked' => 'Κλειδωμένος',
+	'centralauth-admin-status-locked-no' => 'Ο λογαριασμός δεν είναι κλειδωμένος',
+	'centralauth-admin-status-locked-yes' => 'Ο λογαριασμός είναι κλειδωμένος από την επεξεργασία',
 	'centralauth-admin-status-hidden' => 'Κρυμμένος',
+	'centralauth-admin-status-hidden-no' => 'Ο λογαριασμός δεν είναι κρυφός',
+	'centralauth-admin-status-hidden-list' => 'Ο λογαριασμός είναι κρυμμένος από δημόσιους καταλόγους',
+	'centralauth-admin-status-hidden-oversight' => 'Ο λογαριασμός είναι εντελώς κρυμμένος',
 	'centralauth-admin-status-submit' => 'Ρύθμιση κατάστασης',
 	'centralauth-admin-status-nonexistent' => 'Σφάλμα: ο παγκόσμιος λογαριασμός "<nowiki>$1</nowiki>" δεν υπάρχει.',
 	'centralauth-admin-setstatus-success' => 'Έχετε επιτυχώς αλλάξει την κατάσταση αυτού του παγκόσμιου λογαριασμού.',
+	'centralauth-admin-status-reasons' => '* Συνήθεις λόγοι κλειδώματος
+** βανδαλιστικός μόνο λογαριασμός
+** λογαριασμό που μόνο τοποθετεί σπαμ
+* Συνήθεις λόγοι κλειδώματος και απόκρυψης
+** κατάχρηση ονόματος χρήστη
+** ακατάλληλες προσωπικές πληροφορίες',
+	'centralauth-admin-logsnippet' => 'Προηγούμενες αλλαγές παγκόσμιου λογαριασμού',
 	'globalusers' => 'Λίστα καθολικών χρηστών',
 	'centralauth-listusers-locked' => 'κλειδωμένο',
 	'centralauth-listusers-attached' => 'υπάρχει τοπικά',
@@ -4839,6 +4853,7 @@ $messages['el'] = array(
 	'centralauth-logout-progress' => 'Σας αποσυνδέουμε από άλλα εγχειρήματα του {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Έχετε συνδεθεί αυτόματα στα άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Έχετε αποσυνδεθεί αυτόματα από άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
+	'centralauth-hidden-blockreason' => 'παγκόσμιως αποκρυμμένο από $ 1 στο $ 2 με τον εξής λόγο: $ 3',
 	'centralauth-log-name' => 'Ιστορικό καθολικών λογαριασμών',
 	'centralauth-log-header' => 'Αυτή η καταγραφή περιέχει λειτουργίες κάτω από παγκόσμιους λογαριασμούς: διαγραφές, κλειδώματα και ξεκλειδώματα.',
 	'centralauth-log-entry-delete' => 'διαγράφη καθολικού λογαριασμού "$1"',
