@@ -19438,6 +19438,7 @@ $messages['uk'] = array(
 	'centralauth-admin-intro' => 'Цей інтерфейс може використовуватися для управління глобальними обліковими записами.',
 	'centralauth-admin-manage' => 'Управління інформацією про користувачів',
 	'centralauth-admin-username' => "Ім'я користувача:",
+	'centralauth-admin-lookup-ro' => 'Переглянути інформацію про користувача',
 	'centralauth-admin-permission' => "Тільки стюарди можуть об'єднувати облікові записи інших людей.",
 	'centralauth-admin-no-unified' => "Нема об'єднаного облікового запису для цього імені користувача.",
 	'centralauth-admin-info-id' => 'Ідентифікатор користувача:',
