@@ -3861,6 +3861,7 @@ Du kan se og ændre dem, eller oprette en ny gruppe.',
 );
 
 /** German (Deutsch)
+ * @author DaSch
  * @author Metalhead64
  * @author MichaelFrey
  * @author Raimond Spekking
@@ -5319,7 +5320,7 @@ Otras cuentas no están confirmadas todavía.',
 Si la cuenta global es suya también, usted puede unir esta cuenta si usted escribe la contraseña de cuenta global:',
 	'centralauth-attach-submit' => 'Migrar cuenta',
 	'centralauth-attach-success' => 'La cuenta fue migrada a la cuenta unificada.',
-	'centralauth' => 'Administración de identificación unificada',
+	'centralauth' => 'Administrador de usuarios globales',
 	'centralauth-admin-intro' => 'Esta interfaz puede ser usada para la administración de cuentas globales.',
 	'centralauth-admin-manage' => 'Gestionar datos de usuario',
 	'centralauth-admin-username' => 'Nombre de usuario:',
