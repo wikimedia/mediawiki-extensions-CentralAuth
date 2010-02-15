@@ -2614,7 +2614,7 @@ evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont penn
 	'centralauth-merge-method-password' => 'kadarnaet dre ur ger-tremen',
 	'centralauth-merge-method-admin' => 'kont kendeuzet gant ar merour',
 	'centralauth-merge-method-new' => 'kont nevez',
-	'centralauth-merge-method-login' => "kadarnaet p'en em luger",
+	'centralauth-merge-method-login' => 'krouet e-pad ar gevreañ',
 	'centralauth-finish-title' => "Echuiñ ar c'hendeuziñ",
 	'centralauth-finish-text' => "Mard oc'h perc'henn war ar c'hontoù-se e c'hallit echuiñ an c'hendeuziñ en ur verkañ ar gerioù-tremen evito amañ dindan :",
 	'centralauth-finish-password' => 'Ger-tremen :',
@@ -3446,6 +3446,12 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-status-submit' => 'Změnit stav',
 	'centralauth-admin-status-nonexistent' => 'Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.',
 	'centralauth-admin-setstatus-success' => 'Úspěšně jste {{gender:|změnil|změnila|změnili}} stav tohoto globálního účtu.',
+	'centralauth-admin-status-reasons' => '* Běžné důvody zamčení
+** pouze vandalský účet
+** pouze spamující účet
+* Běžné důvody zamčení a skrytí
+** nepřijatelné uživatelské jméno
+** nevhodné osobní údaje',
 	'globalusers' => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => 'existuje lokálně',
@@ -11536,7 +11542,7 @@ Denkt drun datt et eventuel net d'Heemechtswiki vum Benotzer ass.",
 	'centralauth-finish-send-confirmation' => 'Passwuert per E-Mail zouschécken',
 	'centralauth-finish-problems' => 'Wann Dir Problemer hutt oder wann Dir net de Besetzer vun dësen anere Benotzerkonte sidd da [[meta:Help:Unified login problems|kënnt Dir hei Hellëf fannen]]',
 	'centralauth-finish-noconfirms' => 'Kee Benotzerkont konnt mat dësem Passwuert confirméiert ginn.',
-	'centralauth-finish-incomplete' => 'E puer Benotzerkonte goufe mat Hellëf vun dësem Passwuert zesummegeféiert.
+	'centralauth-finish-incomplete' => 'E puer Benotzerkonte goufe mat Hëllef vun dësem Passwuert zesummegeféiert.
 Aner Benotzerkonte sinn nach net confirméiert.',
 	'centralauth-merge-attempt' => "'''D'Passwuert dat Dir uginn huet gëtt elo mat de Passwierder vun den net zesummegeouerte Benotzerkonte verglach ...'''",
 	'centralauth-attach-list-attached' => 'De globale Benotzerkont mam Numm "$1" besteet aus dëse Konten:',
