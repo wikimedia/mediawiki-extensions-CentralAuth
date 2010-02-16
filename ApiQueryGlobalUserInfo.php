@@ -139,6 +139,12 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	public function getDescription() {
 		return 'Show information about a global user.';
 	}
+	
+	public function getPossibleErrors() {
+		return array_merge( parent::getPossibleErrors(), array(
+			array( 'nosuchuser', 'user' ),
+		) );
+	}
 
 	protected function getExamples() {
 		return array(
