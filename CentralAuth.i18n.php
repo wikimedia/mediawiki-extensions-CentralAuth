@@ -15250,9 +15250,11 @@ Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 /** Piedmontese (Piemontèis)
  * @author Borichèt
  * @author Bèrto 'd Sèra
+ * @author Dragonòt
  */
 $messages['pms'] = array(
 	'mergeaccount' => 'Stat dël process dla mës-cia dë stranòm e ciav',
+	'centralauth-groupname' => 'la Fondassion Wikimedia',
 	'centralauth-merge-notlogged' => 'Për piasì <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ch\'a rintra ant ël sistema]</span> për controlé che sò cont a sio stait mës-cià coma ch\'as dev.',
 	'centralauth-merge-welcome' => "'''Sò cont a l'é nen stait portà al sistema d'intrada unificà ëd Wikimedia'''. S'a decid ëd porté sò cont a podrà dovré midem stranòm e ciav për rintré an qualsëssìa proget Wikimedia an qualsëssìa dle lenghe disponibij. Sòn a dovrìa fé belfé dovré dij proget coma la caria d'archivi ansima a [http://commons.wikimedia.org/ Wikimedia Commons], e gavé via dla confusion ch'a peul seurt-ie fòra quand doe person-e për cas as sërno ël midem stranòm an doj proget diferent. S'a fussa mai riva-ie che cheidun a l'avèissa gia sërnusse lë stranòm ch'a dòvra chiel/chila, sòn a-j darìa gnun fastudi a gnun, ma pì anans a-j darìa a tuti la possibilità d'arzolve ël problema ansema a j'aministrator.",
 	'centralauth-merge-step1-title' => "Anandié l'unificassion djë stranòm",
