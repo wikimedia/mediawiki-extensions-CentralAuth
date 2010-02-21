@@ -3568,6 +3568,8 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editset-success' => 'Sada wiki úspěšně změněna.',
 	'centralauth-editset-return' => 'Zpět do hlavního pohledu',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
+	'right-centralauth-lock' => 'Zamykání a skrývání globálních účtů',
+	'right-centralauth-oversight' => 'Utajování globálních účtů',
 	'right-centralauth-merge' => 'Slučování jejich účtů',
 	'right-globalgrouppermissions' => 'Spravování globálních skupin',
 );
