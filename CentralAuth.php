@@ -8,7 +8,6 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Central Auth',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
 	'author' => 'Brion Vibber',
-	'description'    => 'Merge accounts across a wiki farm',
 	'descriptionmsg' => 'centralauth-desc',
 );
 
@@ -17,7 +16,6 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'MergeAccount',
 	'author'         => 'Brion Vibber',
 	'url'            => 'http://meta.wikimedia.org/wiki/Help:Unified_login',
-	'description'    => '[[Special:MergeAccount|Merge multiple accounts]] for Single User Login',
 	'descriptionmsg' => 'centralauth-mergeaccount-desc',
 );
 
