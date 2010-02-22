@@ -13,5 +13,5 @@ UPDATE globaluser SET gu_hidden = 'lists' WHERE gu_hidden = '1';
 -- There's also "suppressed" level, which wasn't used before this schema change
 
 ALTER TABLE globaluser
-	ADD INDEX gu_locked( gu_locked ),
-	ADD INDEX gu_hidden( gu_hidden(255) );
+	ADD INDEX gu_locked( gu_name(255), gu_locked ),
+	ADD INDEX gu_hidden( gu_name(255), gu_hidden(255) );

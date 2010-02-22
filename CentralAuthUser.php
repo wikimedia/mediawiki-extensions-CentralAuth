@@ -1057,11 +1057,9 @@ class CentralAuthUser extends AuthPluginUser {
 				'reason' => $reason,
 			);
 			$jobs = array();
-			$step = $wgCentralAuthWikisPerSuppressJob;
-			for( $jobCount = 0; $jobCount < count( $this->mAttachedArray ); $jobCount += $step ) {
-				$length = $jobCount + $step > count( $this->mAttachedArray ) ?
-					$jobCount - $step : $step;
-				$jobParams['wikis'] = array_slice( $this->mAttachedArray, $jobCount, $length );
+			$chunks = array_chunk( $this->mAttachedArray, $wgCentralAuthWikisPerSuppressJob );
+			foreach( $chunks as $wikis ) {
+				$jobParams['wikis'] = $wikis;
 				$jobs[] = Job::factory(
 					'crosswikiSuppressUser',
 					Title::makeTitleSafe( NS_USER, $this->getName() ),

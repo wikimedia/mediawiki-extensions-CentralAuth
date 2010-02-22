@@ -123,7 +123,7 @@ $wgCentralAuthLoginIcon = false;
 $wgCentralAuthCreateOnView = false;
 
 /**
- * UPD-transmissed RC settings
+ * Settings for sending the CentralAuth events to the RC-to-UDP system
  */
 $wgCentralAuthUDPAddress = false;
 $wgCentralAuthNew2UDPPrefix = '';

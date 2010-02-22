@@ -204,7 +204,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function showStatusError( $wikitext ) {
 		global $wgOut;
-		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $s );
+		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $wikitext );
 		$wgOut->addHTML( $wgOut->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
 	}
 
@@ -278,7 +278,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$out = '<fieldset id="mw-centralauth-info">';
 		$out .= '<legend>' . wfMsgHtml( 'centralauth-admin-info-header' ) . '</legend>';
 		foreach( $attribs as $tag => $data ) {
-			$out .= '<p><strong>' . wfMsg( "centralauth-admin-info-$tag" ) . '</strong> ' . $data . '</p>';
+			$out .= '<p><strong>' . wfMsgHtml( "centralauth-admin-info-$tag" ) . '</strong> ' .
+				htmlspecialchars( $data ) . '</p>';
 		}
 		$out .= '</fieldset>';
 		$wgOut->addHTML( $out );
@@ -290,8 +291,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$remainder = $this->mUnattachedLocalAccounts;
 
 		$legend = $this->mCanUnmerge ?
-			wfMsg( 'centralauth-admin-list-legend-rw' ) :
-			wfMsg( 'centralauth-admin-list-legend-ro' );
+			wfMsgHtml( 'centralauth-admin-list-legend-rw' ) :
+			wfMsgHtml( 'centralauth-admin-list-legend-ro' );
 
 		$wgOut->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		$wgOut->addHTML( $this->listHeader() );
@@ -346,7 +347,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function listRemainder( $list ) {
 		ksort( $list );
-		$notMerged = wfMsg( 'centralauth-admin-unattached' );
+		$notMerged = wfMsgExt( 'centralauth-admin-unattached', array( 'parseinline' ) );
 		$rows = array();
 		foreach ( $list as $row ) {
 			$rows[] = '<tr class="unattached-row"><td>' .
@@ -372,9 +373,9 @@ class SpecialCentralAuth extends SpecialPage {
 	function formatMergeMethod( $method ) {
 		global $wgExtensionAssetsPath;
 
-		$img = "{$wgExtensionAssetsPath}/CentralAuth/icons/merged-{$method}.png";
+		$img = htmlspecialchars( "{$wgExtensionAssetsPath}/CentralAuth/icons/merged-{$method}.png" );
 		$brief = wfMsgHtml( "centralauth-merge-method-{$method}" );
-		return "<img src=\"{$img}\" alt=\"{$brief}\" />" .
+		return "<img src=\"{$img}\" alt=\"{$brief}\" title=\"{$brief}\"/>" .
 			"<span class=\"merge-method-help\" title=\"{$brief}\" onclick=\"showMethodHint('{$method}')\">(?)</span>";
 	}
 
@@ -586,7 +587,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		// Should not happen.
-		return '';
+		throw new MWException( 'Failed to determine home wiki' );
 	}
 
 	function evaluateTotalEditcount() {
@@ -601,7 +602,7 @@ class SpecialCentralAuth extends SpecialPage {
 		global $wgOut, $wgLang;
 		$js = "wgMergeMethodDescriptions = {\n";
 		foreach( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
-			$short = Xml::encodeJsVar( $wgLang->ucFirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
+			$short = Xml::encodeJsVar( $wgLang->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
 			$desc = Xml::encodeJsVar( wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" ) );
 			$js .= "\t'{$method}' : { 'short' : {$short}, 'desc' : {$desc} },\n";
 		}
