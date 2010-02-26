@@ -50,6 +50,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		// Add basic info
 		$result = $this->getResult();
 		$data = array(
+			'home' => $user->getHomeWiki(),
 			'id' => $user->getId(),
 			'registration' => wfTimestamp( TS_ISO_8601, $user->getRegistration() )
 		);
