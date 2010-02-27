@@ -997,7 +997,9 @@ $messages['ar'] = array(
 	'centralauth-rightslog-name' => 'سجل الصلاحيات العام',
 	'centralauth-rightslog-entry-usergroups' => 'غير عضوية المجموعة العامة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-entry-groupperms' => 'غير سماحات المجموعة ل$1 من $2 إلى $3',
-	'centralauth-rightslog-entry-groupperms2' => 'غير صلاحيات المجموعة ل$1. أضاف $2؛ أزال $3',
+	'centralauth-rightslog-entry-groupperms2' => 'غير صلاحيات المجموعة ل$1.
+أضاف $2؛
+أزال $3',
 	'centralauth-rightslog-entry-groupperms3' => 'غير مجموعة الويكيات المحددة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-header' => 'هذا السجل يسجل التغييرات للصلاحيات العامة، بما في ذلك التغييرات لعضوية المجموعات والسماحات المعطاة للمجموعات.',
 	'centralauth-rightslog-entry-newset' => 'أنشأ $2 مجموعة الويكي $1 بالويكيات التالية: $3',
@@ -11162,6 +11164,19 @@ $messages['ko'] = array(
 	'right-globalgrouppermissions' => '공통 권한 관리',
 );
 
+/** Karachay-Balkar (Къарачай-Малкъар)
+ * @author Iltever
+ */
+$messages['krc'] = array(
+	'centralauth-admin-yes' => 'хоу',
+	'centralauth-admin-no' => 'огъай',
+	'centralauth-admin-delete-button' => 'Бу аккаунтну кетер',
+	'centralauth-admin-reason' => 'Чурум:',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|къарау/тюрлендириу]])',
+	'centralauth-editgroup-reason' => 'Чурум:',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|тюрлендир]])',
+);
+
 /** Ripoarisch (Ripoarisch)
  * @author Purodha
  */
@@ -15278,6 +15293,14 @@ Soa ciav e soa adrëssa ëd pòsta eletrònica a saran controlà con cole dij co
 	'centralauth-merge-step2-title' => "Confermé dj'àutri cont",
 	'centralauth-merge-step2-detail' => "Cheidun dij cont a l'é pa podusse cobié n'aotomàtich con la wiki ëd destinassion. Se sti cont-sì a son sò, a peul confermene la proprietà ën butand-se la ciav giusta.",
 	'centralauth-merge-step2-submit' => "Confermé j'anformassion për l'intrada ant ël sistema",
+	'centralauth-merge-dryrun-complete' => "Tùit ij cont esistent a peulo esse unificà automaticament!
+
+Pa gnun cambe a son stàit fàit anco' ai tò cont.",
+	'centralauth-merge-dryrun-incomplete' => "It ses ampostà për continué, ma cheich cont a peulo pa esse automaticament verificà e a saran pa migrà imediatament.
+It podras fondjë pi tard.
+
+A son pa stàit fàit anco' gnun cambe ai to cont.",
+	'centralauth-merge-dryrun-or' => "'''o'''",
 	'centralauth-merge-step3-title' => 'Creé sò cont unificà',
 	'centralauth-merge-step3-detail' => "Tut a l'é pront për creé sò cont unificà, andova a l'andrìo a finì ij cont dle wiki ambelessì sota:",
 	'centralauth-merge-step3-submit' => 'Unifiché ij cont',
