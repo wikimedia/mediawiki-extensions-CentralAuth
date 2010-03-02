@@ -14486,6 +14486,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nei',
 	'centralauth-admin-hidden-list' => 'fra offentlige lister',
+	'centralauth-admin-hidden-oversight' => 'sensurert',
 	'centralauth-admin-list-legend-ro' => 'Liste over lokale kontoer',
 	'centralauth-admin-list-legend-rw' => 'Flett opp lokale kontoer',
 	'centralauth-admin-unattached' => 'ikke tilknyttet',
@@ -15281,28 +15282,28 @@ $messages['pms'] = array(
 	'mergeaccount' => 'Stat dël process dla mës-cia dë stranòm e ciav',
 	'centralauth-groupname' => 'la Fondassion Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Unìfica ij cont]] an sle wiki ëd {{MediaWiki:Centralauth-groupname}}',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unìfica cont mùltipl]] për ël Single User Login',
-	'centralauth-merge-denied' => "Spiasent, it l'has pa ël përmess d'acede a sta pàgina-sì.",
+	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|A fond ansema vàire cont]] për l'identificassion ùnica",
+	'centralauth-merge-denied' => "Darmagi, a l'ha pa ël përmess d'acede a costa pàgina-sì.",
 	'centralauth-merge-notlogged' => 'Për piasì <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ch\'a rintra ant ël sistema]</span> për controlé che sò cont a sio stait mës-cià coma ch\'as dev.',
-	'centralauth-merge-welcome' => "'''Sò cont a l'é anco' pa stàit portà al sistem d'intrada unificà ëd {{MediaWiki:Centralauth-groupname}}.''' 
+	'centralauth-merge-welcome' => "'''Sò cont a l'é ancor pa tramudà al sistema d'intrada unificà ëd {{MediaWiki:Centralauth-groupname}}.''' 
 
-S'a decid ëd porté sò cont, a podrà dovré midem stranòm e ciav për intré an qualsëssìa wiki ëd {{MediaWiki:Centralauth-groupname}} an qualsëssìa dle lenghe disponibij. 
+S'a decid ëd tramudé ij sò cont, a podrà dovré midem stranòm e ciav për intré an qualsëssìa wiki ëd {{MediaWiki:Centralauth-groupname}} an qualsëssìa dle lenghe disponìbij. 
 
-Se cheidun àutr a l'avèissa gia sërnusse lë stranòm an dzora a n'àutr sit, sòn a-j darìa gnun fastudi a gnun, ma pì anans a-j darìa a tuti la possibilità d'arzolve ël problema ansema a j'aministrator.",
+Se cheidun d'àutr a l'avèissa gia sërnusse lë stranòm dzora a n'àutr sit, sòn a-j darìa gnun fastudi, ma pì anans a-j darìa a tuti la possibilità d'arzòlve ël problema ansema a j'aministrator.",
 	'centralauth-merge-step1-title' => "Anandié l'unificassion djë stranòm",
-	'centralauth-merge-step1-detail' => "Pr piasì ansëriss ambelessì la ciav ëd tò cont.
-Soa ciav e soa adrëssa ëd pòsta eletrònica a saran controlà con cole dij cont ëd j'àutre wiki, për confermé ch'a van bin. A-i rivërà nen gnun cambiament fin ch'an dis nen che tut a va bin.",
+	'centralauth-merge-step1-detail' => "Pr piasì, ch'a anserissa ambelessì la ciav ëd sò cont.
+Soa ciav e soa adrëssa ëd pòsta eletrònica a saran controlà con cole dij cont ëd j'àutre wiki, për confermé ch'a van bin. A-i rivërà gnun cambiament fin ch'an dis nen che tut a va bin.",
 	'centralauth-merge-step1-submit' => "Confermé j'anformassion për l'intrada ant ël sistema",
 	'centralauth-merge-step2-title' => "Confermé dj'àutri cont",
 	'centralauth-merge-step2-detail' => "Cheidun dij cont a l'é pa podusse cobié n'aotomàtich con la wiki ëd destinassion. Se sti cont-sì a son sò, a peul confermene la proprietà ën butand-se la ciav giusta.",
 	'centralauth-merge-step2-submit' => "Confermé j'anformassion për l'intrada ant ël sistema",
 	'centralauth-merge-dryrun-complete' => "Tùit ij cont esistent a peulo esse unificà automaticament!
 
-Pa gnun cambe a son stàit fàit anco' ai tò cont.",
-	'centralauth-merge-dryrun-incomplete' => "It ses ampostà për continué, ma cheich cont a peulo pa esse automaticament verificà e a saran pa migrà imediatament.
-It podras fondjë pi tard.
+Gnun cangiament a l'é ancor stàit fàit ai sò cont.",
+	'centralauth-merge-dryrun-incomplete' => "A l'é ampostà për continué, ma chèich cont a peulo pa esse automaticament verificà e a saran pa tramudà dlongh.
+A podrà fondje pi tard.
 
-A son pa stàit fàit anco' gnun cambe ai to cont.",
+Gnun-a modìfica a l'é stàita ancor fàita ai so cont.",
 	'centralauth-merge-dryrun-or' => "'''o'''",
 	'centralauth-merge-step3-title' => 'Creé sò cont unificà',
 	'centralauth-merge-step3-detail' => "Tut a l'é pront për creé sò cont unificà, andova a l'andrìo a finì ij cont dle wiki ambelessì sota:",
