@@ -14532,6 +14532,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 * Vanlige årsaker for lås og skjul
 ** støtende brukernavn
 ** uanstendig personlig informasjon',
+	'centralauth-admin-logsnippet' => 'Tidligere endringer av global konto',
 	'centralauth-admin-suppressreason' => 'Globalt undertrykt av $1 av følgende årsak: $2',
 	'globalusers' => 'Global brukerliste',
 	'centralauth-listusers-locked' => 'låst',
