@@ -19577,10 +19577,20 @@ $messages['uk'] = array(
 	'centralauth-admin-status' => 'Установити стан глобального облікового запису',
 	'centralauth-admin-status-intro' => 'Ви можете використовувати цю форму для зміни стану цього глобального облікового запису',
 	'centralauth-admin-status-locked' => 'Заблокований:',
+	'centralauth-admin-status-locked-yes' => 'З цього облікового запису заборонено редагувати',
 	'centralauth-admin-status-hidden' => 'Прихований:',
+	'centralauth-admin-status-hidden-no' => 'Обліковий запис не прихований',
+	'centralauth-admin-status-hidden-list' => 'Обліковий запис прихований із загальнодоступних списків',
+	'centralauth-admin-status-hidden-oversight' => 'Обліковий запис повністю прихований',
 	'centralauth-admin-status-submit' => 'Установити стан',
 	'centralauth-admin-status-nonexistent' => 'Помилка: глобальний обліковий запис «<nowiki>$1</nowiki>» не існує.',
 	'centralauth-admin-setstatus-success' => 'Ви успішно змінили стан цього глобального облікового запису.',
+	'centralauth-admin-status-reasons' => "* Типові причини блокування
+** лише вандалізм
+** лише спам
+* Типові причини блокування та приховання
+** неприйнятне ім'я користувача
+** недоречна особиста інформація",
 	'globalusers' => 'Список глобальних облікових записів',
 	'centralauth-listusers-locked' => 'заблокований',
 	'centralauth-listusers-attached' => 'існує локально',
