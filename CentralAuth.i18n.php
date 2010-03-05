@@ -10215,6 +10215,7 @@ $messages['ka'] = array(
 	'centralauth-editgroup-subtitle' => 'რედაქტირება $1',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|რედაქტირება]])',
+	'centralauth-editgroup-members' => 'წევრთა სია:',
 	'centralauth-editgroup-noset' => '(არცერთი)',
 	'centralauth-editgroup-reason' => 'მიზეზი:',
 	'centralauth-editset' => 'ვიკი-ნაკრებების რედაქტირება',
