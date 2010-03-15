@@ -15456,6 +15456,7 @@ $messages['ps'] = array(
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
+ * @author Sir Lestaty de Lioncourt
  * @author Smeira
  * @author Waldir
  */
@@ -15612,6 +15613,7 @@ Renomear fará com que esta conta local seja desanexada da conta global.',
 	'centralauth-logout-progress' => 'Desautenticando-se de outros projetos da {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Você foi automaticamente autenticado noutros projetos de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Você foi automaticamente desautenticado de outros projetos de {{int:Centralauth-groupname}}.',
+	'centralauth-hidden-blockreason' => 'globalmente suprimida por $1 no $2 com o seguinte motivo: $3',
 	'centralauth-log-name' => 'Registo de gestão de contas globais',
 	'centralauth-log-header' => 'Este registo contém operações sobre contas globais: remoções, bloqueios e debloqueios.',
 	'centralauth-log-entry-delete' => 'removeu conta global "$1"',
@@ -15706,11 +15708,15 @@ Um grupo pode ser eliminado através da remoção de todos os direitos a ele atr
  * @author Hamilton Abreu
  * @author Heldergeovane
  * @author Luckas Blade
+ * @author Sir Lestaty de Lioncourt
  */
 $messages['pt-br'] = array(
 	'mergeaccount' => 'Estado da unificação de contas',
+	'centralauth-groupname' => 'a Fundação Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da {{MediaWiki:Centralauth-groupname}}',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
 	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para acessar esta página.',
+	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado de {{MediaWiki:Centralauth-groupname}}.'''
 
 Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis de {{MediaWiki:Centralauth-groupname}} em todas as línguas disponíveis.
@@ -15720,11 +15726,16 @@ Caso alguém já tenha um nome de utilizador idêntico ao seu em algum outro wik
 	'centralauth-merge-step1-detail' => 'Por favor, introduza aqui a sua palavra-chave da conta.
 A sua palavra-chave (senha) e endereço de e-mail registado serão comparados com os de contas de outros wikis, para confirmar se coincidem.
 Não serão feitas alterações até que confime que está tudo correcto.',
+	'centralauth-merge-step1-submit' => 'Confirmar informações de login',
 	'centralauth-merge-step2-title' => 'Confirmar mais contas',
 	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a palavra-chave (senha) das mesmas.',
+	'centralauth-merge-step2-submit' => 'Confirmar informações de login',
 	'centralauth-merge-dryrun-complete' => 'Todas as contas existentes podem ser unificadas automaticamente!
 
 Ainda não foram feitas modificaçãoes nas suas contas.',
+	'centralauth-merge-dryrun-incomplete' => 'Você pode prosseguir, mas algumas contas não puderam ser verificadas de forma automática e não serão migradas neste momento. Será possível fundi-las mais tarde.
+
+Não foram feitas modificações em suas contas até o momento.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
 	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar que você seja o proprietário da conta na wiki principal para o seu nome de utilizador.
 
@@ -15732,11 +15743,20 @@ Outra wiki foi determinada como sendo a conta principal de seu nome de utilizado
 	'centralauth-merge-step3-title' => 'Criar conta unificada',
 	'centralauth-merge-step3-detail' => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionados, seja criada:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
+	'centralauth-merge-no-accounts' => 'Nenhuma conta correspondennte ao seu nome foi encontrada na tabela central de rastreio de contas!
+A base de dados deve estar corrompida.',
 	'centralauth-merge-home-password' => 'A wiki-residência desta conta (listada a seguir) possui uma senha diferente da que foi fornecida. Forneça a senha da wiki-residência.',
 	'centralauth-complete' => 'Unificação de logins completa!',
+	'centralauth-incomplete' => 'Unificação de logins incompleta!',
+	'centralauth-complete-text' => 'Agora você poderá efectuar login em qualquer sítio wiki de {{MediaWiki:Centralauth-groupname}} sem ter de criar uma nova conta.',
+	'centralauth-incomplete-text' => 'Uma vez estando o seu login unificado, poderá efectuar login em qualquer wiki de {{MediaWiki:Centralauth-groupname}} sem ter de criar uma nova conta',
 	'centralauth-not-owner-text' => 'O nome de utilizador "$1" foi automaticamente relacionado ao proprietário da conta em $2.
 
 Se este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal de tal conta aqui:',
+	'centralauth-blocked-text' => 'Você se encontra bloqueado de editar em sua wiki-residência (listada a seguir).
+Entre em contacto com um administrador de tal wiki para desbloqueá-la.
+Enquanto estiver bloqueada, não será possível fundir as contas.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
 	'centralauth-list-home-dryrun' => 'A palavra-chave (senha) e endereço de e-mail definidos nesta wiki serão os utilizados em sua conta unificada; sua página de utilizador será automaticamente lincada a partir de outras wikis.',
 	'centralauth-list-unattached' => 'A conta "$1" não pôde ser automaticamente confirmada como sendo tua nos seguintes sítios; provavelmente elas tenham uma senha diferente de sua conta principal:',
 	'centralauth-merge-method-empty' => 'sem contribuições',
@@ -15787,8 +15807,14 @@ Se este for você, você poderá concluir o procedimento de unificação de logi
 	'centralauth-prefs-manage' => 'Gerenciar sua conta global',
 	'centralauth-renameuser-reserved' => '$2 está reservado para uma conta global.',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de usuário requisitado já está sendo utilizado no sistema de login unificado.',
+	'centralauth-hidden-blockreason' => 'globalmente suprimida por $1 no $2 com o seguinte motivo: $3',
 	'centralauth-log-name' => 'Registro de gestão de contas globais',
 	'centralauth-log-entry-delete' => 'removeu conta global "$1"',
+	'centralauth-log-entry-lock' => 'bloqueou conta global "$1"',
+	'centralauth-log-entry-unlock' => 'desbloqueou conta global "$1"',
+	'centralauth-log-entry-hide' => 'ocultou a conta global "$1"',
+	'centralauth-log-entry-unhide' => 'desocultou a conta global "$1"',
+	'centralauth-log-entry-lockandhide' => 'bloqueou e ocultou a conta global "$1"',
 	'centralauth-log-status-none' => '(nenhum)',
 	'centralauth-rightslog-name' => 'Registro de direitos globais',
 	'centralauth-autologin-desc' => 'Esta página especial é utilizada internamente pelo MediaWiki.
