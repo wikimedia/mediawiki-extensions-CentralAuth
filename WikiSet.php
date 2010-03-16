@@ -5,11 +5,11 @@ class WikiSet {
 	const OPTOUT = 'optout';
 	const VERSION = 1;
 
-	private $mId;	//ID of the group
-	private $mName;	//Display name of the group
-	private $mType;	//Opt-in based or opt-out based
-	private $mWikis;	//List of wikis
-	private $mVersion = self::VERSION;	//Caching purposes
+	private $mId;	// ID of the group
+	private $mName;	// Display name of the group
+	private $mType;	// Opt-in based or opt-out based
+	private $mWikis;	// List of wikis
+	private $mVersion = self::VERSION;	// Caching purposes
 
 	static $mCacheVars = array(
 		'mId',
@@ -119,6 +119,14 @@ class WikiSet {
 		$dbw->commit();
 		if( !$this->mId )
 			$this->mId = $dbw->insertId();
+		$this->purge();
+		return (bool)$dbw->affectedRows();
+	}
+
+	public function delete() {
+		$dbw = CentralAuthUser::getCentralDB();
+		$dbw->delete( 'wikiset', array( 'ws_id' => $this->mId ), __METHOD__ );
+		$dbw->commit();
 		$this->purge();
 		return (bool)$dbw->affectedRows();
 	}
