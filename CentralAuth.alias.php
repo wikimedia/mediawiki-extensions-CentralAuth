@@ -285,7 +285,7 @@ $aliases['ko'] = array(
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 );
 
-/** Ripoarisch (Ripoarisch) */
+/** Colognian (Ripoarisch) */
 $aliases['ksh'] = array(
 	'AutoLogin' => array( 'AutomatteschEnlogge' ),
 	'GlobalGroupMembership' => array( 'JemeinsamMetmaacherJroppeRääschte' ),
