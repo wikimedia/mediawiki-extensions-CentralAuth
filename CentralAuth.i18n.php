@@ -5016,6 +5016,7 @@ $messages['el'] = array(
 );
 
 /** Esperanto (Esperanto)
+ * @author Airon90
  * @author Michawiki
  * @author Yekrats
  */
@@ -5106,6 +5107,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-admin-intro' => 'Ĉi tiu interfaco estas uzebla por administrado de ĝeneralaj kontoj.',
 	'centralauth-admin-manage' => 'Prizorgi uzulajn datenojn',
 	'centralauth-admin-username' => 'Salutnomo:',
+	'centralauth-admin-lookup-ro' => 'Vidi uzant-informojn',
 	'centralauth-admin-lookup-rw' => 'Administri konton de uzanto',
 	'centralauth-admin-permission' => 'Nur stevardoj povas kunigi kontojn de aliaj uzantoj.',
 	'centralauth-admin-no-unified' => 'Ne estas unuigita konto por ĉi tiu uzanto.',
@@ -5147,11 +5149,19 @@ La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunig
 	'centralauth-admin-status' => 'Aldoni statuson al ĝenerala konto',
 	'centralauth-admin-status-intro' => 'Vi povas uzi ĉi tiun formularon por ŝanĝi la statuson de ĉi tiu ĝenerala konto',
 	'centralauth-admin-status-locked' => 'Ŝlosita:',
+	'centralauth-admin-status-locked-no' => 'Konto ne estas forbarita',
 	'centralauth-admin-status-hidden' => 'Kaŝita:',
+	'centralauth-admin-status-hidden-no' => 'Konto ne estas kaŝita',
 	'centralauth-admin-status-hidden-oversight' => 'Konto estas tute kaŝita',
 	'centralauth-admin-status-submit' => 'Agordi statuson',
 	'centralauth-admin-status-nonexistent' => 'Eraro: La ĝenerala konto "<nowiki>$1</nowiki>" ne ekzistas.',
 	'centralauth-admin-setstatus-success' => 'Vi sukcese ŝanĝis la statuson de ĉi tiu ĝenerala konto.',
+	'centralauth-admin-status-reasons' => '* Oftaj kialoj por ŝlosado
+** konto uzata nur por vandalismo
+** konto uzata nur por spamado
+* Oftaj kialoj por ŝlosado kaj kaŝado
+** maltaŭga salutnomo
+** maltaŭga persona informo',
 	'centralauth-admin-suppressreason' => 'Ĝenerale subpremita de $1 pro la jena kialo: $2',
 	'globalusers' => 'Ĝenerala listo de uzantoj',
 	'centralauth-listusers-locked' => 'ŝlosita',
@@ -5390,6 +5400,7 @@ Si la cuenta global es suya también, usted puede unir esta cuenta si usted escr
 	'centralauth-admin-notblocked' => 'No bloqueado',
 	'centralauth-admin-blocked' => 'Bloqueado, expira  el $3 a las $4. Razón: $2',
 	'centralauth-admin-blocked-indef' => 'Bloqueado indefinidamente. Razón: $1',
+	'centralauth-admin-blocklog' => 'registro de bloqueos',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Adjunta a',
 	'centralauth-admin-list-method' => 'Método',
@@ -5522,6 +5533,7 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Motivo:',
 	'centralauth-editset-submit' => 'Enviar',
+	'centralauth-editset-submit-delete' => 'Borrar',
 	'centralauth-editset-badname' => 'El nombre del conjunto no es válido o está vacío.',
 	'centralauth-editset-badtype' => 'El tipo de conjunto no es válido.',
 	'centralauth-editset-setexists' => 'Ya existe un conjunto con ese nombre',
@@ -15606,6 +15618,81 @@ Arnomélo a farà sì che ël cont local a sia dëstacà da col global.",
 	'centralauth-rightslog-name' => 'Registr dij drit globaj',
 	'centralauth-rightslog-entry-usergroups' => "a l'ha tramudà l'apartenensa a le partìe globaj për $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms' => 'cangià ij përmess ëd partìa për $1 da $2 a $3',
+	'centralauth-rightslog-entry-groupperms2' => 'cangià përmess ëd partìa për $1.
+Giontà $2;
+Gavà $3',
+	'centralauth-rightslog-entry-groupperms3' => "cangià partìa ëd l'ansema strenzù ëd wiki për $1 da $2 a $3",
+	'centralauth-rightslog-header' => "Sto registr-sì a conten j'operassion dzora le partìe globaj: ij cambiament dzora apartenensa e përmess",
+	'centralauth-rightslog-entry-newset' => "crea l'ansema wiki $1 ëd $2 con le wiki sota: $3",
+	'centralauth-rightslog-entry-setrename' => 'arnominà l\'ansema ëd wiki "$2" a "$1"',
+	'centralauth-rightslog-entry-setnewtype' => 'cangià sòrt ëd "$1" da $2 a $3',
+	'centralauth-rightslog-entry-setchange' => 'cangià wiki an "$1": giontà: $2; gavà: $3',
+	'centralauth-rightslog-entry-deleteset' => 'scanselà l\'ansema ëd wiki "$1"',
+	'centralauth-rightslog-set-optin' => 'opsion in',
+	'centralauth-rightslog-set-optout' => 'opsion out',
+	'autologin' => 'Login automàtich',
+	'centralauth-autologin-desc' => "Sta pàgina special-sì a l'é dovrà an drinta a MediaWiki.
+Quand [[Special:UserLogin|it intre]], ël sistem ëd login sentral a istrùiss tò browser a ciamé sta pàgina-sì da tùit ij domini colegà, an dovrand colegament ëd figure.
+It l'has ciamà sta pàgina-sì sensa dé gnun dat d'autenticassion, parèj a fà pa gnente.",
+	'globalgroupmembership' => 'Apartenensa a partìe globaj',
+	'globalgrouppermissions' => 'Gestion ëd partìe globaj',
+	'centralauth-globalgroupperms-grouplist' => "Le partìe globaj sota a son ëstàite configurà.
+It peule mosté o modifiché ij përmess assignà a na partìa, s'it l'has ij përmess.
+Na partìa a peul esse scanselà an gavandje tùit ij drit.",
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|varda/modìfica]])',
+	'centralauth-globalgroupperms-nogroups' => 'Pa gnun-e partìe globaj a son definìe.',
+	'centralauth-existinggroup-legend' => 'partìe esistente',
+	'centralauth-newgroup-legend' => 'Crea na neuva partìa',
+	'centralauth-newgroup-intro' => "It peule dovré sto formulari-sì për assigné përmess a na neuva partìa.
+Nòta che na partìa a esist pa a men che a l'abia dij përmess assignà.",
+	'centralauth-globalgroupperms-newgroupname' => 'Nòm partìa neuva:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Assigna përmess',
+	'centralauth-editgroup-subtitle' => 'Modìfica $1',
+	'centralauth-editgroup-fieldset' => 'Përmess për $1',
+	'centralauth-editgroup-name' => 'Nòm ëd partìa',
+	'centralauth-editgroup-display' => 'Nòm ëd partìa localisà:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|modìfica]])',
+	'centralauth-editgroup-member' => 'Nòm localisà dij mèmber dla partìa:',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|modìfica]])',
+	'centralauth-editgroup-members' => 'Lista dij mèmber:',
+	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Lista dj'utent con drit $2]]",
+	'centralauth-editgroup-restrictions' => "Ansema ëd wiki andoa sta partìa-sì a l'é ativa:",
+	'centralauth-editgroup-noset' => '(gnun)',
+	'centralauth-editgroup-submit' => 'Salva cambe ai përmess dla partìa',
+	'centralauth-editgroup-perms' => 'Përmess assignà:',
+	'centralauth-editgroup-reason' => 'Rason:',
+	'centralauth-editgroup-success' => 'Përmess ëd partìa cangià',
+	'centralauth-editgroup-success-text' => "It l'has cangià da bin ij përmess ëd partìa për la partìa $1.
+[[Special:GlobalGroupPermissions|Artorna a la gestion ëd la partìa]]",
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modìfica]])',
+	'centralauth-globalgrouppermissions-knownwiki' => "Wiki andoa a l'han un cont:",
+	'centralauth-globalgroupmembership-badknownwiki' => "L'utent global '''$1''' a l'é pa ativ an sla wiki ch'it l'has specificà ('' $2 '').
+It peule esse an mente ch'it assigne drit a l'utent sbalià!",
+	'centralauth-editset' => 'Ansema ëd wiki',
+	'centralauth-editset-legend-rw' => "Modìfica o crea n'ansema ëd wiki",
+	'centralauth-editset-legend-ro' => "Lista n'ansema ëd wiki",
+	'centralauth-editset-intro-rw' => "J'ansema ëd wiki sota a son già stàit creà.
+It peule vardé e modifiché mincadun-a ëd lor, o creé n'ansema neuv.",
+	'centralauth-editset-intro-ro' => "Sota a-i é la lista d'ansema ëd wiki esistent.",
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|scansela]])',
+	'centralauth-editset-new' => "Crea n'ansema neuv",
+	'centralauth-editset-notfound' => 'Ansema ëd wiki "$1" pa trovà.',
+	'centralauth-editset-optin' => "Basà an sl'opt-in (a anclud mach le wiki specificà)",
+	'centralauth-editset-optout' => "Basà an sl'opt-out (a anclud tute le wiki an gavand cole specificà)",
+	'centralauth-editset-legend-edit' => 'Modifiché l\'ansema ëd wiki "$1"',
+	'centralauth-editset-legend-view' => 'Ansema ëd wiki "$1"',
+	'centralauth-editset-legend-new' => "Creé n'ansema ëd wiki neuv",
+	'centralauth-editset-legend-delete' => 'Scanselé l\'ansema ëd wiki "$1"',
+	'centralauth-editset-subtitle' => "< [[Special:WikiSets|Lista d'ansema]]",
+	'centralauth-editset-name' => 'Nòm:',
+	'centralauth-editset-type' => 'Sòrt:',
+	'centralauth-editset-wikis' => 'Wiki:',
+	'centralauth-editset-reason' => 'Rason:',
+	'centralauth-editset-submit' => 'Spediss',
+	'centralauth-editset-submit-delete' => 'Scansela',
+	'centralauth-editset-badname' => "Nòm d'ansema pa bon o veuid.",
+	'centralauth-editset-badtype' => "Sòrt d'ansema pa bon.",
+	'centralauth-editset-setexists' => "N'ansema con col nòm a esist già",
 );
 
 /** Pashto (پښتو)
@@ -20003,13 +20090,14 @@ $messages['uk'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|змінити]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вікі, в яких вони мають облікові записи:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Глобальний користувач '''$1''' неактивний на зазначеній вами вікі (''$2''). Можливо, ви намагаєтеся призначити права не тому користувачеві!",
-	'centralauth-editset' => 'Змінити набір вікі',
+	'centralauth-editset' => 'Набори вікі',
 	'centralauth-editset-new' => 'Створити новий набір',
 	'centralauth-editset-notfound' => 'Набор вікі «$1» не знайдений.',
 	'centralauth-editset-optin' => 'На основі принципу включення (включає тільки зазначені вікі)',
 	'centralauth-editset-optout' => 'На сонові принципу виключення (включає всі вікі, окрім зазначених)',
 	'centralauth-editset-legend-edit' => 'Зміна набору вікі «$1»',
 	'centralauth-editset-legend-new' => 'Створення нового набору вікі',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Список наборів]]',
 	'centralauth-editset-name' => 'Назва:',
 	'centralauth-editset-type' => 'Тип:',
 	'centralauth-editset-wikis' => 'Вікі:',
