@@ -16,7 +16,7 @@ $aliases['en'] = array(
 	'MergeAccount'           => array( 'MergeAccount' ),
 	'GlobalGroupMembership'  => array( 'GlobalUserRights', 'GlobalGroupMembership' ),
 	'GlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),
-	'EditWikiSets'           => array( 'WikiSets', 'EditWikiSets' ),
+	'WikiSets'               => array( 'WikiSets', 'EditWikiSets' ),
 	'GlobalUsers'            => array( 'GlobalUsers' ),
 );
 
