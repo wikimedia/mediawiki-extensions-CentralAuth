@@ -32,7 +32,7 @@ $aliases['ar'] = array(
 	'MergeAccount' => array( 'دمج_حساب' ),
 	'GlobalGroupMembership' => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
-	'EditWikiSets' => array( 'تعديل_مجموعات_الويكي' ),
+	'WikiSets' => array( 'تعديل_مجموعات_الويكي' ),
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
@@ -43,7 +43,7 @@ $aliases['arz'] = array(
 	'MergeAccount' => array( 'دمج_حساب' ),
 	'GlobalGroupMembership' => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
-	'EditWikiSets' => array( 'تعديل_مجموعات_الويكى' ),
+	'WikiSets' => array( 'تعديل_مجموعات_الويكى' ),
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 );
 
@@ -63,7 +63,7 @@ $aliases['bs'] = array(
 	'MergeAccount' => array( 'UjediniRacune' ),
 	'GlobalGroupMembership' => array( 'GlobalnaKorisnicnaPrava' ),
 	'GlobalGroupPermissions' => array( 'GlobalneDozvoleGrupa' ),
-	'EditWikiSets' => array( 'UrediWikiSetove' ),
+	'WikiSets' => array( 'UrediWikiSetove' ),
 	'GlobalUsers' => array( 'GlobalniKorisnici' ),
 );
 
@@ -80,7 +80,7 @@ $aliases['de'] = array(
 	'MergeAccount' => array( 'Benutzerkonten zusammenführen' ),
 	'GlobalGroupMembership' => array( 'Globale Benutzerzugehörigkeit' ),
 	'GlobalGroupPermissions' => array( 'Globale Gruppenrechte' ),
-	'EditWikiSets' => array( 'Wikisets bearbeiten' ),
+	'WikiSets' => array( 'Wikisets bearbeiten' ),
 	'GlobalUsers' => array( 'Globale Benutzerliste' ),
 );
 
@@ -91,7 +91,7 @@ $aliases['dsb'] = array(
 	'MergeAccount' => array( 'Konta zjadnośiś' ),
 	'GlobalGroupMembership' => array( 'Cłonkojstwo w globalnej kupce' ),
 	'GlobalGroupPermissions' => array( 'Globalne kupkowe pšawa' ),
-	'EditWikiSets' => array( 'Wikisajźby wobźěłaś' ),
+	'WikiSets' => array( 'Wikisajźby wobźěłaś' ),
 	'GlobalUsers' => array( 'Globalne wužywarje' ),
 );
 
@@ -126,7 +126,7 @@ $aliases['fa'] = array(
 	'MergeAccount' => array( 'ادغام_حساب' ),
 	'GlobalGroupMembership' => array( 'اختیارات_سراسری_کاربر' ),
 	'GlobalGroupPermissions' => array( 'اختیارات_سراسری_گروه' ),
-	'EditWikiSets' => array( 'ویرایش_مجموعه‌های_ویکی' ),
+	'WikiSets' => array( 'ویرایش_مجموعه‌های_ویکی' ),
 	'GlobalUsers' => array( 'کاربران_سراسری' ),
 );
 
@@ -144,7 +144,7 @@ $aliases['fr'] = array(
 	'MergeAccount' => array( 'Fusionner le compte', 'FusionnerLeCompte' ),
 	'GlobalGroupMembership' => array( 'Permissions globales', 'PermissionGlobales' ),
 	'GlobalGroupPermissions' => array( 'Droits des groupes globaux', 'DroitsDesGroupesGlobaux' ),
-	'EditWikiSets' => array( 'Modifier les sets de wikis', 'ModifierLesSetsDeWiki' ),
+	'WikiSets' => array( 'Modifier les sets de wikis', 'ModifierLesSetsDeWiki' ),
 	'GlobalUsers' => array( 'Utilisateurs globaux', 'UtilisateursGlobaux' ),
 );
 
@@ -155,7 +155,7 @@ $aliases['frp'] = array(
 	'MergeAccount' => array( 'Fusionar los comptos', 'FusionarLosComptos' ),
 	'GlobalGroupMembership' => array( 'Pèrmissions globâles', 'PèrmissionsGlobâles' ),
 	'GlobalGroupPermissions' => array( 'Drêts a les tropes globâles', 'DrêtsALesTropesGlobâles' ),
-	'EditWikiSets' => array( 'Changiér los sèts de vouiquis', 'ChangiérLosSètsDeVouiquis' ),
+	'WikiSets' => array( 'Changiér los sèts de vouiquis', 'ChangiérLosSètsDeVouiquis' ),
 	'GlobalUsers' => array( 'Utilisators globâls', 'UtilisatorsGlobâls' ),
 );
 
@@ -173,7 +173,7 @@ $aliases['gsw'] = array(
 	'MergeAccount' => array( 'Benutzerchonte zämmefiere' ),
 	'GlobalGroupMembership' => array( 'Wältwyti Benutzerrächt' ),
 	'GlobalGroupPermissions' => array( 'Wältwyti Grupperächt' ),
-	'EditWikiSets' => array( 'Wikisets bearbeite' ),
+	'WikiSets' => array( 'Wikisets bearbeite' ),
 	'GlobalUsers' => array( 'Wältwyti Benutzerlischt' ),
 );
 
@@ -191,7 +191,7 @@ $aliases['he'] = array(
 	'MergeAccount' => array( 'מיזוג_חשבונות' ),
 	'GlobalGroupMembership' => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
-	'EditWikiSets' => array( 'עריכת_קבוצות_אתרי_ויקי' ),
+	'WikiSets' => array( 'עריכת_קבוצות_אתרי_ויקי' ),
 	'GlobalUsers' => array( 'משתמשים_כלליים' ),
 );
 
@@ -202,7 +202,7 @@ $aliases['hr'] = array(
 	'MergeAccount' => array( 'Spoji_račun' ),
 	'GlobalGroupMembership' => array( 'Globalna_suradnička_prava' ),
 	'GlobalGroupPermissions' => array( 'Globalna_prava_skupina' ),
-	'EditWikiSets' => array( 'Uredi_wikiset' ),
+	'WikiSets' => array( 'Uredi_wikiset' ),
 	'GlobalUsers' => array( 'Globalni_suradnici' ),
 );
 
@@ -213,7 +213,7 @@ $aliases['hsb'] = array(
 	'MergeAccount' => array( 'Konta zjednoćić' ),
 	'GlobalGroupMembership' => array( 'Globalne wužiwarske prawa' ),
 	'GlobalGroupPermissions' => array( 'Globalne skupinske prawa' ),
-	'EditWikiSets' => array( 'Wikisadźby wobdźěłać' ),
+	'WikiSets' => array( 'Wikisadźby wobdźěłać' ),
 	'GlobalUsers' => array( 'Globalni wužiwarjo' ),
 );
 
@@ -224,7 +224,7 @@ $aliases['hu'] = array(
 	'MergeAccount' => array( 'Szerkesztői fiókok egyesítése', 'Felhasználói fiókok egyesítése' ),
 	'GlobalGroupMembership' => array( 'Globális szerkesztői jogok', 'Globális felhasználói jogok' ),
 	'GlobalGroupPermissions' => array( 'Globális szerkesztői engedélyek', 'Globális felhasználói engedélyek' ),
-	'EditWikiSets' => array( 'Wikicsoportok szerkesztése' ),
+	'WikiSets' => array( 'Wikicsoportok szerkesztése' ),
 	'GlobalUsers' => array( 'Globális szerkesztőlista', 'Globális felhasználólista', 'Felhasználók globális listája' ),
 );
 
@@ -235,7 +235,7 @@ $aliases['ia'] = array(
 	'MergeAccount' => array( 'Fusionar conto' ),
 	'GlobalGroupMembership' => array( 'Membrato global de gruppos' ),
 	'GlobalGroupPermissions' => array( 'Permissiones global de gruppos' ),
-	'EditWikiSets' => array( 'Modificar sets de wikis' ),
+	'WikiSets' => array( 'Modificar sets de wikis' ),
 	'GlobalUsers' => array( 'Usatores global' ),
 );
 
@@ -246,7 +246,7 @@ $aliases['id'] = array(
 	'MergeAccount' => array( 'Gabungkan akun', 'GabungkanAkun' ),
 	'GlobalGroupMembership' => array( 'Hak pengguna global', 'HakPenggunaGlobal' ),
 	'GlobalGroupPermissions' => array( 'Hak kelompok global', 'HakKelompokGlobal' ),
-	'EditWikiSets' => array( 'Sunting kelompok wiki', 'SuntingKelompokWiki' ),
+	'WikiSets' => array( 'Sunting kelompok wiki', 'SuntingKelompokWiki' ),
 	'GlobalUsers' => array( 'Pengguna global', 'PenggunaGlobal' ),
 );
 
@@ -265,7 +265,7 @@ $aliases['ja'] = array(
 	'MergeAccount' => array( 'アカウント統合' ),
 	'GlobalGroupMembership' => array( 'グローバルグループへの所属' ),
 	'GlobalGroupPermissions' => array( 'グローバルグループ権限', 'グローバルグループパーミッション' ),
-	'EditWikiSets' => array( 'ウィキ群の編集' ),
+	'WikiSets' => array( 'ウィキ群の編集' ),
 	'GlobalUsers' => array( 'グローバル利用者' ),
 );
 
@@ -290,7 +290,7 @@ $aliases['ksh'] = array(
 	'AutoLogin' => array( 'AutomatteschEnlogge' ),
 	'GlobalGroupMembership' => array( 'JemeinsamMetmaacherJroppeRääschte' ),
 	'GlobalGroupPermissions' => array( 'JemeinsamJroppe' ),
-	'EditWikiSets' => array( 'WikiJroppe' ),
+	'WikiSets' => array( 'WikiJroppe' ),
 	'GlobalUsers' => array( 'Jemeinsam_Metmaacher', 'JemeinsamMetmaacher', 'Jemeinsam_Medmaacher', 'JemeinsamMedmaacher' ),
 );
 
@@ -301,7 +301,7 @@ $aliases['lb'] = array(
 	'MergeAccount' => array( 'Benotzerkonten zesummeféieren' ),
 	'GlobalGroupMembership' => array( 'Member vu globale Benotzerrechter' ),
 	'GlobalGroupPermissions' => array( 'Global Grupperechter' ),
-	'EditWikiSets' => array( 'Wiki-Seten änneren' ),
+	'WikiSets' => array( 'Wiki-Seten änneren' ),
 	'GlobalUsers' => array( 'Global Benotzer' ),
 );
 
@@ -328,7 +328,7 @@ $aliases['ml'] = array(
 	'MergeAccount' => array( 'അംഗത്വസം‌യോജനം' ),
 	'GlobalGroupMembership' => array( 'ആഗോള ഉപയോക്തൃ അവകാശങ്ങള്‍', 'ആഗോള ഉപയോക്തൃ അംഗത്വം' ),
 	'GlobalGroupPermissions' => array( 'ആഗോള അംഗത്വാനുമതികള്‍' ),
-	'EditWikiSets' => array( 'വിക്കിഗണങ്ങൾ തിരുത്തുക' ),
+	'WikiSets' => array( 'വിക്കിഗണങ്ങൾ തിരുത്തുക' ),
 	'GlobalUsers' => array( 'ആഗോള ഉപയോക്താക്കള്‍' ),
 );
 
@@ -339,7 +339,7 @@ $aliases['mr'] = array(
 	'MergeAccount' => array( 'खातेविलीनीकरण' ),
 	'GlobalGroupMembership' => array( 'वैश्विकसदस्याधिकार', 'वैश्विकगटसदस्यता' ),
 	'GlobalGroupPermissions' => array( 'वैश्विकगटपरवानग्या' ),
-	'EditWikiSets' => array( 'विकिसंचसंपादा' ),
+	'WikiSets' => array( 'विकिसंचसंपादा' ),
 	'GlobalUsers' => array( 'वैश्विकसदस्य' ),
 );
 
@@ -348,7 +348,7 @@ $aliases['ms'] = array(
 	'MergeAccount' => array( 'Gabungkan akaun' ),
 	'GlobalGroupMembership' => array( 'Hak kumpulan sejagat' ),
 	'GlobalGroupPermissions' => array( 'Keizinan kumpulan sejagat' ),
-	'EditWikiSets' => array( 'Ubah set wiki' ),
+	'WikiSets' => array( 'Ubah set wiki' ),
 	'GlobalUsers' => array( 'Pengguna sejagat' ),
 );
 
@@ -371,7 +371,7 @@ $aliases['nds-nl'] = array(
 	'MergeAccount' => array( 'Gebruker_samenvoegen' ),
 	'GlobalGroupMembership' => array( 'Globale_gebrukersrechen' ),
 	'GlobalGroupPermissions' => array( 'Globale_groepsrechen' ),
-	'EditWikiSets' => array( 'Wikigroepen_bewarken' ),
+	'WikiSets' => array( 'Wikigroepen_bewarken' ),
 	'GlobalUsers' => array( 'Globale_gebrukers' ),
 );
 
@@ -382,7 +382,7 @@ $aliases['nl'] = array(
 	'MergeAccount' => array( 'GebruikerSamenvoegen' ),
 	'GlobalGroupMembership' => array( 'GlobaalGroepslidmaatschap' ),
 	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
-	'EditWikiSets' => array( 'WikigroepenBewerken' ),
+	'WikiSets' => array( 'WikigroepenBewerken' ),
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
 );
 
@@ -400,7 +400,7 @@ $aliases['no'] = array(
 	'MergeAccount' => array( 'Kontosammenslåing' ),
 	'GlobalGroupMembership' => array( 'Globale brukerrettigheter' ),
 	'GlobalGroupPermissions' => array( 'Globale gruppetillatelser' ),
-	'EditWikiSets' => array( 'Rediger wikisett' ),
+	'WikiSets' => array( 'Rediger wikisett' ),
 	'GlobalUsers' => array( 'Globale brukere' ),
 );
 
@@ -410,7 +410,7 @@ $aliases['oc'] = array(
 	'MergeAccount' => array( 'Fusionar lo compte', 'FusionarLoCompte' ),
 	'GlobalGroupMembership' => array( 'Permissions globalas', 'PermissionGlobalas' ),
 	'GlobalGroupPermissions' => array( 'Dreches dels gropes globals', 'DrechesDelsGropesGlobals' ),
-	'EditWikiSets' => array( 'Modificar los sets de wikis', 'ModificarLosSetsDeWiki' ),
+	'WikiSets' => array( 'Modificar los sets de wikis', 'ModificarLosSetsDeWiki' ),
 	'GlobalUsers' => array( 'Utilizaires globals', 'UtilizairesGlobals' ),
 );
 
@@ -447,7 +447,7 @@ $aliases['ro'] = array(
 	'MergeAccount' => array( 'Uneşte conturi' ),
 	'GlobalGroupMembership' => array( 'Drepturi globale utilizator', 'Membru global grup' ),
 	'GlobalGroupPermissions' => array( 'Permisiuni grup globale' ),
-	'EditWikiSets' => array( 'Setări modificare Wiki' ),
+	'WikiSets' => array( 'Setări modificare Wiki' ),
 	'GlobalUsers' => array( 'Utilizatori globali' ),
 );
 
@@ -458,7 +458,7 @@ $aliases['sa'] = array(
 	'MergeAccount' => array( 'उपयोजकसंज्ञासंयोग' ),
 	'GlobalGroupMembership' => array( 'वैश्विकसदस्याधिकार' ),
 	'GlobalGroupPermissions' => array( 'वैश्विकगटसंमती' ),
-	'EditWikiSets' => array( 'सम्पादनविकिगट' ),
+	'WikiSets' => array( 'सम्पादनविकिगट' ),
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
@@ -476,7 +476,7 @@ $aliases['sk'] = array(
 	'MergeAccount' => array( 'ZlúčenieÚčtov' ),
 	'GlobalGroupMembership' => array( 'GlobálnePrávaPoužívateľa' ),
 	'GlobalGroupPermissions' => array( 'GlobálneSkupinovéOprávnenia' ),
-	'EditWikiSets' => array( 'UpraviťWikiMnožiny' ),
+	'WikiSets' => array( 'UpraviťWikiMnožiny' ),
 	'GlobalUsers' => array( 'GlobálniPoužívatelia' ),
 );
 
@@ -506,7 +506,7 @@ $aliases['tl'] = array(
 	'MergeAccount' => array( 'Pagsanibin ang akawnt' ),
 	'GlobalGroupMembership' => array( 'Mga karapatan ng pandaigdigang tagagamit', 'Kasapian sa pandaigdigang pangkat' ),
 	'GlobalGroupPermissions' => array( 'Mga kapahintulutan ng pandaigdigang pangkat' ),
-	'EditWikiSets' => array( 'Mga pangkat ng pamamatnugot ng wiki' ),
+	'WikiSets' => array( 'Mga pangkat ng pamamatnugot ng wiki' ),
 	'GlobalUsers' => array( 'Pandaigdigang mga tagagamit' ),
 );
 
@@ -516,7 +516,7 @@ $aliases['tr'] = array(
 	'MergeAccount' => array( 'HesapBirleştirmeDurumu' ),
 	'GlobalGroupMembership' => array( 'KüreselGrupÜyeliği' ),
 	'GlobalGroupPermissions' => array( 'KüreselGrupİzinleri' ),
-	'EditWikiSets' => array( 'VikiDizileriniDüzenle' ),
+	'WikiSets' => array( 'VikiDizileriniDüzenle' ),
 	'GlobalUsers' => array( 'KüreselKullanıcılar' ),
 );
 
@@ -535,7 +535,7 @@ $aliases['zh-hans'] = array(
 	'MergeAccount' => array( '整合账户' ),
 	'GlobalGroupMembership' => array( '全域用户权利', '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),
-	'EditWikiSets' => array( '编辑Wiki组' ),
+	'WikiSets' => array( '编辑Wiki组' ),
 	'GlobalUsers' => array( '全域用户' ),
 );
 
@@ -546,7 +546,7 @@ $aliases['zh-hant'] = array(
 	'MergeAccount' => array( '整合賬戶' ),
 	'GlobalGroupMembership' => array( '全域用戶權利', '全域組成員資格' ),
 	'GlobalGroupPermissions' => array( '全域組權限' ),
-	'EditWikiSets' => array( '編輯Wiki組' ),
+	'WikiSets' => array( '編輯Wiki組' ),
 	'GlobalUsers' => array( '全域用戶' ),
 );
 
