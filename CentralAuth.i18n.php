@@ -5498,6 +5498,7 @@ Si la cuenta global es suya también, usted puede unir esta cuenta si usted escr
 	'centralauth-admin-yes' => 'sí',
 	'centralauth-admin-no' => 'no',
 	'centralauth-admin-hidden-list' => 'de los listados públicos',
+	'centralauth-admin-hidden-oversight' => 'Supervisado',
 	'centralauth-admin-list-legend-ro' => 'Lista de cuentas locales',
 	'centralauth-admin-list-legend-rw' => 'Desunificar cuentas locales',
 	'centralauth-admin-unattached' => 'no adjunto',
@@ -5587,6 +5588,7 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-log-entry-chgstatus' => 'modificó el estado de la cuenta global "$1": Establecido $2; Eliminado $3',
 	'centralauth-log-status-locked' => 'bloqueado',
 	'centralauth-log-status-hidden' => 'oculto',
+	'centralauth-log-status-oversighted' => 'Supervisado',
 	'centralauth-log-status-none' => '(ninguno)',
 	'centralauth-rightslog-name' => 'Registro de derechos globales',
 	'centralauth-rightslog-entry-usergroups' => 'modificó los grupos globales a los que pertenece $1 de $2 a $3',
@@ -13734,10 +13736,16 @@ Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
  * @author Roderick Mallia
  */
 $messages['mt'] = array(
+	'centralauth-groupname' => 'Fondazzjoni Wikimedia',
+	'centralauth-merge-step1-submit' => 'Ikkonferma d-dettalji tal-login',
+	'centralauth-merge-step2-title' => 'Ikkonferma kontijiet oġra',
+	'centralauth-merge-dryrun-or' => "'''jew'''",
 	'centralauth-admin-username' => 'Isem l-utent:',
 	'centralauth-prefs-status' => 'Stat tal-kont globali:',
 	'centralauth-prefs-not-managed' => 'Il-kont unifikat mhuwiex fl-użu',
 	'centralauth-prefs-manage' => 'Ġestjoni tal-kont globali',
+	'centralauth-log-header' => 'Dan ir-reġistru jinvolvi operazzjonijiet fuq il-kontijiet globali: tħassir, blokki u żblokki.',
+	'centralauth-rightslog-header' => "Dan ir-reġistru jinkludi operazzjonijiet fuq il-gruppi globali: tibdil fis-sħubija u l-permessi mogħtija 'l-gruppi",
 );
 
 /** Erzya (Эрзянь)
