@@ -452,15 +452,6 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
-/** Latgaļu (Latgaļu)
- * @author Dark Eagle
- */
-$messages['ltg'] = array(
-	'centralauth-admin-reason' => 'Īmesle:',
-	'centralauth-editgroup-reason' => 'Īmesle:',
-	'centralauth-editset-reason' => 'Īmesle:',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -9827,6 +9818,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
  * @author JtFuruhata
  * @author Marine-Blue
  * @author Muttley
+ * @author Naohiro19
  */
 $messages['ja'] = array(
 	'mergeaccount' => '統一ログイン状態',
@@ -9970,6 +9962,7 @@ $messages['ja'] = array(
 ** 不適切な利用者名
 ** 不適切な個人情報',
 	'centralauth-admin-logsnippet' => '以前のグローバルアカウントの変更履歴',
+	'centralauth-admin-suppressreason' => 'あなたは以下の理由により、$1 によってグローバルに秘匿されています: $2',
 	'globalusers' => 'グローバルアカウントの登録利用者一覧',
 	'centralauth-listusers-locked' => 'ロック状態',
 	'centralauth-listusers-attached' => 'ローカルにアカウント作成済み',
@@ -10020,6 +10013,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-entry-setrename' => 'ウィキセット "$2" の名前を "$1" に変更しました',
 	'centralauth-rightslog-entry-setnewtype' => '$1 のタイプを $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-setchange' => '「$1」に属するウィキを変更しました。追加: $2、削除: $3',
+	'centralauth-rightslog-entry-deleteset' => 'ウィキ集合"$1"を削除しました。',
 	'centralauth-rightslog-set-optin' => 'オプトイン設定',
 	'centralauth-rightslog-set-optout' => 'オプトアウト設定',
 	'autologin' => '自動ログイン',
@@ -10055,6 +10049,8 @@ $messages['ja'] = array(
 	'centralauth-globalgroupmembership-badknownwiki' => "グローバルユーザー '''$1''' は指定したウィキ ('' $2 '') では活動していません。間違った利用者に権限を付与しようとしていませんか？",
 	'centralauth-editset' => 'ウィキ集合',
 	'centralauth-editset-legend-rw' => 'ウィキ集合を作成、または編集する',
+	'centralauth-editset-legend-ro' => 'ウィキ集合のリスト',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|削除]])',
 	'centralauth-editset-new' => '新しいウィキ集合を作成する',
 	'centralauth-editset-notfound' => 'ウィキ集合 "$1" は存在しません。',
 	'centralauth-editset-optin' => 'オプトイン設定(選択したウィキだけを含む)',
@@ -11787,7 +11783,7 @@ Eng aner Wiki gouf als Heemechts-Wiki fir äre Benotzernumm ermëttelt; klickt o
 D'Datebank muss feelerhaft sinn.",
 	'centralauth-merge-home-password' => "D'Heemechtswiki fir dëse Benotzerkont (kuckt ënnendrënner) huet en anert Passwuert wéi dat, dat Dir aginn hutt.
 Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
-	'centralauth-complete' => "D'Vereenheetleche vum Benotzerkonnt ass fäerdeg.",
+	'centralauth-complete' => "D'Vereenheetleche vum Benotzerkont ass fäerdeg.",
 	'centralauth-incomplete' => "D'Zesummeféierung vun de Benotzerkonten ass net komplett!",
 	'centralauth-complete-text' => 'Dir kënnt Iech elo op all Wiki-Site vun {{MediaWiki:Centralauth-groupname}} aloggen ouni een neie Benotzerkont opmaachen ze mussen.',
 	'centralauth-incomplete-text' => 'Wann Är Benotzerkonten zesummegféiert sinn, da kënnt Dir Iech an all {{MediaWiki:Centralauth-groupname}}-Siten eraloggen ouni en neie Benotzerkont opzemaachen.',
@@ -11847,7 +11843,7 @@ Wann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-username' => 'Benotzernumm:',
 	'centralauth-admin-lookup-ro' => 'Benotzerinformatioun weisen',
 	'centralauth-admin-lookup-rw' => 'Benotzerkont geréieren',
-	'centralauth-admin-permission' => "Nëmme Stewarde kënnen d'Benotzerkonnte vun anere Benotzer fusionnéieren.",
+	'centralauth-admin-permission' => "Nëmme Stewarde kënnen d'Benotzerkonte vun anere Benotzer fusionéieren.",
 	'centralauth-admin-no-unified' => 'Fir dëse Benotzernumm gëtt et kee globale Benotzerkont.',
 	'centralauth-admin-info-header' => 'Global Benotzernformatioun',
 	'centralauth-admin-info-id' => 'Benotzernummer:',
@@ -12002,12 +11998,16 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bemotzer '''$1''' ass net op där Wiki aktiv déi Dir uginn hutt ('' $2 '').
 Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
 	'centralauth-editset' => 'Grupp vu Wikien',
+	'centralauth-editset-legend-rw' => 'Grupp vu Wikien änneren oder uleeën',
+	'centralauth-editset-legend-ro' => 'Lëscht vu Wikigruppen',
 	'centralauth-editset-new' => 'Eng nei Grupp vu Wikien uleeën',
 	'centralauth-editset-notfound' => 'Grupp vu Wikien "$1" net fonnt',
 	'centralauth-editset-optin' => 'Opt-in baséiert (nëmmen déi spezifizéiert Wikie gehéieren dozou)',
 	'centralauth-editset-optout' => 'Opt-out baséiert (all Wikien mat Ausnam vn de speuifizéierten gehéieren dozou)',
 	'centralauth-editset-legend-edit' => 'D\'Wikigrupp "$1" änneren',
+	'centralauth-editset-legend-view' => 'Wikigrupp "$1"',
 	'centralauth-editset-legend-new' => 'Eng nei Grupp vu Wikien uleeën',
+	'centralauth-editset-legend-delete' => 'Wikigrupp "$1" läschen',
 	'centralauth-editset-name' => 'Numm:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wikien:',
@@ -12570,6 +12570,15 @@ Galbūt jūs bandote priskirti teises klaidingam naudotojui!",
 	'right-globalgroupmembership' => 'Keisti globaliųjų grupių narystę',
 	'right-centralauth-merge' => 'Sujungti savo paskyrą',
 	'right-globalgrouppermissions' => 'Tvarkyti globaliąsias grupes',
+);
+
+/** Latgaļu (Latgaļu)
+ * @author Dark Eagle
+ */
+$messages['ltg'] = array(
+	'centralauth-admin-reason' => 'Īmesle:',
+	'centralauth-editgroup-reason' => 'Īmesle:',
+	'centralauth-editset-reason' => 'Īmesle:',
 );
 
 /** Latvian (Latviešu)
