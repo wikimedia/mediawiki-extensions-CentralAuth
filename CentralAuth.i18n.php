@@ -6171,6 +6171,7 @@ $messages['fa'] = array(
  * @author Cimon Avaro
  * @author Crt
  * @author Jaakonam
+ * @author Nedergard
  * @author Nike
  * @author Silvonen
  * @author Str4nd
@@ -6242,6 +6243,8 @@ Niin kauan kun tunnuksesi on estetty, et voi yhdistää tunnuksiasi.',
 	'centralauth-merge-method-admin' => 'ylläpitäjän yhdistämä käyttäjätunnus',
 	'centralauth-merge-method-new' => 'uusi tunnus',
 	'centralauth-merge-method-login' => 'luotu kirjautumalla',
+	'centralauth-merge-method-primary-desc' => 'Tämä on wiki, jossa käyttäjätunnus alun perin yhdistettiin.
+Huomaa, että se saattaa olla eri kuin wiki, jossa käyttäjätunnus luotiin.',
 	'centralauth-finish-title' => 'Suorita yhdistäminen',
 	'centralauth-finish-text' => 'Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla toisten käyttäjätunnusten salasanat:',
 	'centralauth-finish-password' => 'Salasana',
@@ -6298,7 +6301,7 @@ Ennen yhdistämistä luotujen paikallisten tunnuksien salasanat palautuvat yhdis
 	'centralauth-admin-reason-other' => 'Muu syy tai tarkennus',
 	'centralauth-admin-status' => 'Aseta yhdistetyn tunnuksen tila',
 	'centralauth-admin-status-intro' => 'Voit käyttää tätä lomaketta muuttaaksesi tämän yhdistetyn tunnuksen tilaa',
-	'centralauth-admin-status-locked' => 'Lukittu',
+	'centralauth-admin-status-locked' => 'Lukittu:',
 	'centralauth-admin-status-hidden' => 'Piilotettu',
 	'centralauth-admin-status-submit' => 'Aseta tila',
 	'centralauth-admin-status-nonexistent' => 'Virhe: Yhdistettyä käyttäjätunnusta <nowiki>$1</nowiki> ei ole olemassa.',
