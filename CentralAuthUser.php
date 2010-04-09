@@ -403,9 +403,12 @@ class CentralAuthUser extends AuthPluginUser {
 	public function getHiddenLevel() {
 		$this->loadState();
 
-		// b/c-failsafe. Should never happen
-		if( $this->mHidden === '0' )
+		// backwards compatibility for mid-migration
+		if( strval( $this->mHidden ) === '0' ) {
 			$this->mHidden = '';
+		} elseif ( strval( $this->mHidden ) === '1' ) {
+			$this->mHidden = self::HIDDEN_LISTS;
+		}
 
 		return $this->mHidden;
 	}
