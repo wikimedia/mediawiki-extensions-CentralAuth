@@ -246,6 +246,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function prettyTimespan( $span ) {
+		global $wgLang;
 		$units = array(
 			'seconds' => 60,
 			'minutes' => 60,
@@ -254,10 +255,13 @@ class SpecialCentralAuth extends SpecialPage {
 			'months' => 12,
 			'years' => 1 );
 		foreach( $units as $unit => $chunk ) {
+			// Used messaged (to make sure that grep finds them):
+			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
+			// 'centralauth-days-ago', 'centralauth-months-ago', 'centralauth-years-ago'
 			if( $span < 2*$chunk ) {
-				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $span );
+				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $wgLang->formatNum( $span ) );
 			}
-			$span = intval( $span / $chunk );
+			$span = $wgLang->formatNum( intval( $span / $chunk ) );
 		}
 		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $span );
 	}
@@ -272,7 +276,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'id' => $globalUser->getId(),
 			'registered' => $wgLang->timeanddate( $reg ) . " ($age)",
 			'home' => $this->determineHomeWiki(),
-			'editcount' => $this->evaluateTotalEditcount(),
+			'editcount' => $wgLang->formatNum( $this->evaluateTotalEditcount() ),
 			'locked' => $globalUser->isLocked() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ),
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() ) );
 		$out = '<fieldset id="mw-centralauth-info">';
@@ -366,7 +370,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'<td>' . htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ) . '</td>' .
 			'<td style="text-align: center">' . $this->formatMergeMethod( $row['attachedMethod'] ) . '</td>' .
 			'<td>' . $this->formatBlockStatus( $row ) . '</td>' .
-			'<td>' . $this->formatEditcount( $row ) . '</td>' .
+			'<td style="text-align: right">' . $this->formatEditcount( $row ) . '</td>' .
 			'</tr>';
 	}
 
@@ -406,10 +410,11 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function formatEditcount( $row ) {
+		global $wgLang;
 		return $this->foreignLink(
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
-			intval( $row['editCount'] ),
+			$wgLang->formatNum( intval( $row['editCount'] ) ),
 			'contributions' );
 	}
 
