@@ -512,7 +512,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'0',
 				'mw-centralauth-status-locked-no',
 				!$this->mGlobalUser->isLocked() ) .
-			'<br/>' .
+			'<br />' .
 			Xml::radioLabel(
 				wfMsg( 'centralauth-admin-status-locked-yes' ),
 				'wpStatusLocked',
@@ -526,14 +526,14 @@ class SpecialCentralAuth extends SpecialPage {
 				CentralAuthUser::HIDDEN_NONE,
 				'mw-centralauth-status-hidden-no',
 				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_NONE ) .
-			'<br/>' .
+			'<br />' .
 			Xml::radioLabel(
 				wfMsg( 'centralauth-admin-status-hidden-list' ),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_LISTS,
 				'mw-centralauth-status-hidden-list',
 				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_LISTS ) .
-			'<br/>';
+			'<br />';
 		if( $this->mCanOversight )
 			$radioHidden .= Xml::radioLabel(
 				wfMsg( 'centralauth-admin-status-hidden-oversight' ),
