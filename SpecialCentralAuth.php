@@ -1,5 +1,4 @@
 <?php
-
 class SpecialCentralAuth extends SpecialPage {
 	var $mUserName, $mCanUnmerge, $mCanLock, $mCanOversight, $mCanEdit;
 	var $mGlobalUser, $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
@@ -82,7 +81,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->showWikiLists();
 		}
 	}
-	
+
 	/** Returns true if the normal form should be displayed */
 	function doSubmit() {
 		$deleted = false;
@@ -142,7 +141,7 @@ class SpecialCentralAuth extends SpecialPage {
 			} elseif( $reasonDetail ) {
 				$reason .= wfMsgForContent( 'colon-separator' ) . $reasonDetail;
 			}
-			
+
 			if ( $oldHiddenLevel != $setHidden ) {
 				$hideStatus = $globalUser->adminSetHidden( $setHidden );
 				switch( $setHidden ) {
@@ -168,11 +167,11 @@ class SpecialCentralAuth extends SpecialPage {
 				elseif( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
 					$globalUser->unsuppress( $reason );
 			}
-			
+
 			$good =
 				( is_null($lockStatus) || $lockStatus->isGood() ) &&
 				( is_null($hideStatus) || $hideStatus->isGood() );
-			
+
 			// Logging etc
 			if ( $good && (count($added) || count($removed)) ) {
 				$added = count($added) ?
@@ -399,7 +398,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$expiryd = $wgLang->date( $row['block-expiry'] );
 				$expiryt = $wgLang->time( $row['block-expiry'] );
 				$reason = $row['block-reason'];
-				
+
 				$text = wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
 			}
 		} else {
@@ -473,7 +472,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'User:' . $this->mUserName,
 			$wikiname,
 			wfMsg( 'centralauth-foreign-link', $this->mUserName, $wikiname ) );
-		
+
 	}
 
 	function adminCheck( $wikiID ) {
@@ -499,7 +498,7 @@ class SpecialCentralAuth extends SpecialPage {
 			) .
 			'</form></fieldset>' );
 	}
-	
+
 	function showStatusForm() {
 		// Allows locking, hiding, locking and hiding.
 		global $wgUser, $wgOut;
@@ -508,49 +507,53 @@ class SpecialCentralAuth extends SpecialPage {
 		$form .= Xml::hidden( 'wpMethod', 'set-status' );
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 		$form .= wfMsgExt( 'centralauth-admin-status-intro', 'parse' );
-		
+
 		// Radio buttons
 		$radioLocked =
 			Xml::radioLabel(
-				wfMsg( 'centralauth-admin-status-locked-no' ),
+				wfMsgExt( 'centralauth-admin-status-locked-no', array( 'parseinline' ) ),
 				'wpStatusLocked',
 				'0',
 				'mw-centralauth-status-locked-no',
 				!$this->mGlobalUser->isLocked() ) .
 			'<br />' .
 			Xml::radioLabel(
-				wfMsg( 'centralauth-admin-status-locked-yes' ),
+				wfMsgExt( 'centralauth-admin-status-locked-yes', array( 'parseinline' ) ),
 				'wpStatusLocked',
 				'1',
 				'mw-centralauth-status-locked-yes',
 				$this->mGlobalUser->isLocked() );
 		$radioHidden =
 			Xml::radioLabel(
-				wfMsg( 'centralauth-admin-status-hidden-no' ),
+				wfMsgExt( 'centralauth-admin-status-hidden-no', array( 'parseinline' ) ),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_NONE,
 				'mw-centralauth-status-hidden-no',
 				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_NONE ) .
 			'<br />' .
 			Xml::radioLabel(
-				wfMsg( 'centralauth-admin-status-hidden-list' ),
+				wfMsgExt( 'centralauth-admin-status-hidden-list', array( 'parseinline' ) ),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_LISTS,
 				'mw-centralauth-status-hidden-list',
 				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_LISTS ) .
 			'<br />';
-		if( $this->mCanOversight )
+		if( $this->mCanOversight ) {
 			$radioHidden .= Xml::radioLabel(
-				wfMsg( 'centralauth-admin-status-hidden-oversight' ),
+				wfMsgExt( 'centralauth-admin-status-hidden-oversight', array( 'parseinline' ) ),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_OVERSIGHT,
 				'mw-centralauth-status-hidden-oversight',
-				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_OVERSIGHT );
+				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_OVERSIGHT
+			);
+		}
 
 		// Reason
-		$reasonList = Xml::listDropDown( 'wpReasonList',
+		$reasonList = Xml::listDropDown(
+			'wpReasonList',
 			wfMsgForContent( 'centralauth-admin-status-reasons' ),
-			wfMsgForContent( 'ipbreasonotherlist' ) );
+			wfMsgForContent( 'ipbreasonotherlist' )
+		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
 
 		$form .= Xml::buildForm(
@@ -559,18 +562,20 @@ class SpecialCentralAuth extends SpecialPage {
 				'centralauth-admin-status-hidden' => $radioHidden,
 				'centralauth-admin-reason' => $reasonList,
 				'centralauth-admin-reason-other' => $reasonField ),
-			'centralauth-admin-status-submit' );
+				'centralauth-admin-status-submit'
+		);
 
 		$form .= '</fieldset>';
-		$form = Xml::tags( 'form',
-							array( 'method' => 'POST',
-									'action' =>
-										$this->getTitle()->getFullURL(
-												array( 'target' => $this->mUserName )
-										),
-								),
-								$form
-							);
+		$form = Xml::tags(
+			'form',
+			array(
+				'method' => 'POST',
+				'action' => $this->getTitle()->getFullURL(
+					array( 'target' => $this->mUserName )
+				),
+			),
+			$form
+		);
 		$wgOut->addHTML( $form );
 	}
 
@@ -622,7 +627,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function logAction( $action, $target, $reason = '', $params = array(), $suppressLog = false ) {
 		$logType = $suppressLog ? 'suppress' : 'globalauth';	// Not centralauth because of some weird length limitiations
-		$log = new LogPage( $logType );	
+		$log = new LogPage( $logType );
 		$log->addEntry( $action, Title::newFromText( "User:{$target}@global" ), $reason, $params );
 	}
 }
