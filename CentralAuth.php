@@ -129,7 +129,7 @@ $wgCentralAuthNew2UDPPrefix = '';
 /**
  * A CSS file version. Change each time centralauth.css is changed.
  */
-$wgCentralAuthStyleVersion = 1;
+$wgCentralAuthStyleVersion = 2;
 
 /**
  * List of local pages global users may edit while being globally locked.

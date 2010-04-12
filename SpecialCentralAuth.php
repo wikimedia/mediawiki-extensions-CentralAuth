@@ -318,7 +318,7 @@ class SpecialCentralAuth extends SpecialPage {
 					'id' => 'mw-centralauth-merged' ) ) .
 			Xml::hidden( 'wpMethod', 'unmerge' ) .
 			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
-			'<table id="mw-wikis-list">' .
+			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) . "\n" .
 			'<thead><tr>' .
 				( $this->mCanUnmerge ? '<th></th>' : '' ) .
 				'<th>' . wfMsgHtml( 'centralauth-admin-list-localwiki' ) . '</th>'.
@@ -367,7 +367,12 @@ class SpecialCentralAuth extends SpecialPage {
 		return '<tr>' .
 			( $this->mCanUnmerge ? '<td>' . $this->adminCheck( $row['wiki'] ) . '</td>' : '' ).
 			'<td>' . $this->foreignUserLink( $row['wiki'] ) . '</td>' .
-			'<td>' . htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ) . '</td>' .
+			'<td>' .
+				// invisible, to make this column sortable
+				Html::element( 'span', array( 'style' => 'display: none' ), htmlspecialchars( $row['attachedTimestamp'] ) ) .
+				// visible date and time in users preference
+				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ) .
+			'</td>' .
 			'<td style="text-align: center">' . $this->formatMergeMethod( $row['attachedMethod'] ) . '</td>' .
 			'<td>' . $this->formatBlockStatus( $row ) . '</td>' .
 			'<td style="text-align: right">' . $this->formatEditcount( $row ) . '</td>' .
