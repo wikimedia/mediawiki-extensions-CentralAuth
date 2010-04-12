@@ -1101,7 +1101,7 @@ class CentralAuthUser extends AuthPluginUser {
 					'ipb_auto' => false,
 					'ipb_anon_only' => false,
 					'ipb_create_account' => true,
-					'ipb_enable_autoblock' => false,
+					'ipb_enable_autoblock' => true,
 					'ipb_expiry' => Block::infinity(),
 					'ipb_range_start' => '',
 					'ipb_range_end' => '',
