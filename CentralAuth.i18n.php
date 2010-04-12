@@ -25,7 +25,7 @@ If you choose to migrate your accounts, you will be able to use the same usernam
 If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
 
 	'centralauth-merge-step1-title'  => 'Begin login unification',
-	'centralauth-merge-step1-detail' => 'Please enter here your account password.
+	'centralauth-merge-step1-detail' => 'Please enter your account password.
 Your password and registered e-mail address will be checked against the accounts on other wikis to confirm that they match.
 No changes will be made until you have confirmed that things are in order.',
 	'centralauth-merge-step1-submit' => 'Confirm login information',
