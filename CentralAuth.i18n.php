@@ -27,7 +27,7 @@ If someone else has already taken your username on another site this will not di
 	'centralauth-merge-step1-title'  => 'Begin login unification',
 	'centralauth-merge-step1-detail' => 'Please enter here your account password.
 Your password and registered e-mail address will be checked against the accounts on other wikis to confirm that they match.
-No changes will be made until you have confirmed that things look ok.',
+No changes will be made until you have confirmed that things are in order.',
 	'centralauth-merge-step1-submit' => 'Confirm login information',
 
 	'centralauth-merge-step2-title'  => 'Confirm more accounts',
