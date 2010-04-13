@@ -2440,7 +2440,7 @@ $messages['bn'] = array(
 	'centralauth-admin-info-registered' => 'নিবন্ধিত:',
 	'centralauth-admin-info-locked' => 'বন্ধ:',
 	'centralauth-admin-info-hidden' => 'লুকানো:',
-	'centralauth-admin-yes' => 'হ্যা',
+	'centralauth-admin-yes' => 'হ্যাঁ',
 	'centralauth-admin-no' => 'না',
 	'centralauth-admin-unattached' => 'বিচ্ছিন্ন অ্যাকাউন্ট',
 	'centralauth-admin-list-localwiki' => 'স্থানীয় উইকি',
@@ -8858,10 +8858,13 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-admin-delete-nonexistent' => 'Hiba: nem létezik globális felhasználói fiók „$1” néven.',
 	'centralauth-token-mismatch' => 'Sajnáljuk, nem tudtuk feldolgozni a küldött adatokat a munkamenet-adatok hiánya miatt',
 	'centralauth-admin-reason' => 'Ok:',
+	'centralauth-admin-reason-other' => 'Más/további ok:',
 	'centralauth-admin-status' => 'Globális fiók állapotának beállítása',
 	'centralauth-admin-status-intro' => 'Ezen az űrlapon megváltoztathatod a globális fiók állapotát',
 	'centralauth-admin-status-locked' => 'Lezárva:',
 	'centralauth-admin-status-hidden' => 'Rejtett:',
+	'centralauth-admin-status-hidden-no' => 'A felhasználói fiók nincs elrejtve',
+	'centralauth-admin-status-hidden-oversight' => 'A felhasználói fiók teljesen elrejtve',
 	'centralauth-admin-status-submit' => 'Állapot módosítása',
 	'centralauth-admin-status-nonexistent' => 'Hiba: nem létezik „<nowiki>$1</nowiki>” nevű globális fiók.',
 	'centralauth-admin-setstatus-success' => 'Sikeresen módosítottad a globális fiók állapotát.',
@@ -11251,6 +11254,7 @@ $messages['kn'] = array(
 
 /** Korean (한국어)
  * @author Albamhandae
+ * @author Devunt
  * @author Ficell
  * @author Kwj2772
  * @author ToePeu
@@ -11325,7 +11329,7 @@ $messages['ko'] = array(
 	'centralauth-merge-method-password' => '비밀번호로 확인됨',
 	'centralauth-merge-method-admin' => '통합된 계정 관리',
 	'centralauth-merge-method-new' => '새 계정',
-	'centralauth-merge-method-login' => '로그인으로 확인',
+	'centralauth-merge-method-login' => '로그인으로 생성됨',
 	'centralauth-merge-method-new-desc' => '로컬 계정을 생설할 때 통합 계정이 자동적으로 생성되었음을 의미합니다.',
 	'centralauth-merge-method-login-desc' => '로컬 계정이 사용자가 로그인할 때 자동적으로 생성되었음을 의미합니다.',
 	'centralauth-finish-title' => '통합 마치기',
@@ -11451,6 +11455,7 @@ $messages['ko'] = array(
 	'centralauth-log-entry-chgstatus' => '통합 계정 "$1"의 상태를 변경: 설정: $2; 해제: $3',
 	'centralauth-log-status-locked' => '잠금',
 	'centralauth-log-status-hidden' => '숨김',
+	'centralauth-log-status-oversighted' => '오버사이트됨',
 	'centralauth-log-status-none' => '(없음)',
 	'centralauth-rightslog-name' => '공통 권한 기록',
 	'centralauth-rightslog-entry-usergroups' => '$1의 공통 계정 권한을 $2에서 $3으로 변경',
@@ -11538,6 +11543,7 @@ $messages['ko'] = array(
 	'right-globalgroupmembership' => '사용자의 공통 권한 조정',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
 	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
+	'right-centralauth-oversight' => '통합 계정 금지',
 	'right-centralauth-merge' => '자신의 계정 통합',
 	'right-globalgrouppermissions' => '공통 권한 관리',
 );
