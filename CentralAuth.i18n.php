@@ -11543,7 +11543,7 @@ $messages['ko'] = array(
 	'right-globalgroupmembership' => '사용자의 공통 권한 조정',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
 	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
-	'right-centralauth-oversight' => '통합 계정 금지',
+	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기',
 	'right-centralauth-merge' => '자신의 계정 통합',
 	'right-globalgrouppermissions' => '공통 권한 관리',
 );
