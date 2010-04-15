@@ -368,10 +368,12 @@ You may view and modify any of them, or create a new set.',
  * @author Aotake
  * @author Beau
  * @author Darth Kule
+ * @author EugeneZelenko
  * @author Fryed-peach
  * @author Garas
  * @author Guillom
  * @author Jon Harald Søby
+ * @author Kwj2772
  * @author Lejonel
  * @author McDutchie
  * @author Meno25
@@ -393,6 +395,7 @@ $messages['qqq'] = array(
 	'centralauth-finish-login' => '{{Identical|Log in}}',
 	'centralauth-finish-send-confirmation' => '{{Identical|E-mail password}}',
 	'centralauth-admin-username' => '{{Identical|Username}}',
+	'centralauth-admin-info-header' => ' Does this mean "global information about the user" or "information about the global user?"',
 	'centralauth-admin-info-id' => '{{Identical|User ID}}',
 	'centralauth-admin-info-hidden' => '{{Identical|Hidden}}',
 	'centralauth-admin-nohome' => 'Shown in place of the wiki name if Special:CentralAuth cannot find out which wiki is home for the user.
@@ -404,6 +407,7 @@ Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying dates when local accounts were attached to a global account',
 	'centralauth-admin-unmerge-success' => 'Parameter $1 is the number of unmerged accounts.',
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
+	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-login-progress' => '{{gender}}
 * (optional) $1 is the user name of the logged in user',
@@ -426,10 +430,10 @@ Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-editset-type' => '{{identical|Type}}',
 	'centralauth-editset-reason' => '{{identical|Reason}}',
 	'centralauth-editset-submit' => '{{identical|Submit}}',
+	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
 	'right-globalgroupmembership' => '{{doc-right}}',
-	'right-centralauth-admin' => '{{doc-right}}',
 	'right-centralauth-merge' => '{{doc-right}}
 
 The use of "their" in this message is actually a case of [[wikipedia:Singular they|singular they]]. So in this case, "their" must be translated as "his or her" or as "this person\'s", not as an actual plural. – McDutchie 16:46, 20 July 2008 (UTC)',
@@ -4616,6 +4620,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-info-editcount' => 'Licba změnow dogromady:',
 	'centralauth-admin-info-locked' => 'Zastajony:',
 	'centralauth-admin-info-hidden' => 'Schowana rownina:',
+	'centralauth-admin-nohome' => 'njejo móžno póstajiś',
 	'centralauth-admin-yes' => 'jo',
 	'centralauth-admin-no' => 'ně',
 	'centralauth-admin-hidden-list' => 'ze zjawnych lisćinow',
@@ -4623,7 +4628,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-list-legend-ro' => 'Lisćina lokalnych kontow',
 	'centralauth-admin-list-legend-rw' => 'Zjadnosénje lokalnych kontow anulěrowaś',
 	'centralauth-admin-unattached' => 'njepśipowjesony',
-	'centralauth-admin-notblocked' => 'Njeblokěrowany',
+	'centralauth-admin-notblocked' => '-',
 	'centralauth-admin-blocked' => 'Blokěrowany až do $3 $4. Pśicyna: $2',
 	'centralauth-admin-blocked-indef' => 'Na njewěsty cas blokěrowany. Pśicyna: $1',
 	'centralauth-admin-blocklog' => 'protokol blokěrowanjow',
@@ -5380,6 +5385,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Jatrobat
  * @author Locos epraix
  * @author Manuelt15
+ * @author Pertile
  * @author Peter17
  * @author Piolinfax
  * @author Remember the dot
@@ -5435,7 +5441,7 @@ Por favor, introduzca la contraseña.',
 
 Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí la contraseña maestra para esa cuenta:',
 	'centralauth-blocked-text' => 'Actualmente se encuentra bloqueado en su wiki origen (listada abajo).
-Por favor contacte un administrador en esa wiki para ser desbloqueado.
+Por favor contacte con un administrador en esa wiki para ser desbloqueado.
 Mientras esté bloqueado, no puede fusionar sus cuentas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Únicamente modo demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La unificación de cuentas está por ahora en modo demostración / depuración, por lo que las operaciones de fusión están desactivadas. ¡Lo sentimos!',
@@ -5471,7 +5477,7 @@ Esa capacidad está deshabilitada por razones de seguridad.',
 	'centralauth-finish-password' => 'Contraseña:',
 	'centralauth-finish-login' => 'Iniciar sesión',
 	'centralauth-finish-send-confirmation' => 'Mandar contraseña por correo electrónico',
-	'centralauth-finish-problems' => 'Estás teniendo problema, o no eres el dueño de estas cuentas?
+	'centralauth-finish-problems' => '¿Estás teniendo problema, o no eres el dueño de estas cuentas?
 [[meta:Help:Unified login problems|Como encontar ayuda]]…',
 	'centralauth-finish-noconfirms' => 'No se puede confirmar ninguna cuenta usando esta contraseña.',
 	'centralauth-finish-incomplete' => 'Varias cuentas fueron fusionadas con esta contraseña.
@@ -5479,8 +5485,8 @@ Otras cuentas no están confirmadas todavía.',
 	'centralauth-merge-attempt' => "'''Comprobando contraseña provista contra las cuentas restantes no fusionadas...'''",
 	'centralauth-attach-list-attached' => 'La cuenta unificada llamada «$1» incluye las cuentas siguentes:',
 	'centralauth-attach-title' => 'Confirmar cuenta',
-	'centralauth-attach-text' => 'Esta cuenta aún no ha sidoi migrada a la cuenta unificada.
-Si la cuenta global es suya también, usted puede unir esta cuenta si usted escribe la contraseña de cuenta global:',
+	'centralauth-attach-text' => 'Esta cuenta aún no ha sido migrada a la cuenta unificada.
+Si la cuenta global también es suya, puede unir esta cuenta si escribe la contraseña de cuenta global:',
 	'centralauth-attach-submit' => 'Migrar cuenta',
 	'centralauth-attach-success' => 'La cuenta fue migrada a la cuenta unificada.',
 	'centralauth' => 'Administrador de usuarios globales',
@@ -5496,12 +5502,13 @@ Si la cuenta global es suya también, usted puede unir esta cuenta si usted escr
 	'centralauth-admin-info-registered' => 'Registrado:',
 	'centralauth-admin-info-home' => 'Wiki origen:',
 	'centralauth-admin-info-editcount' => 'Contador total de ediciones:',
-	'centralauth-admin-info-locked' => 'Bloqueadas:',
+	'centralauth-admin-info-locked' => 'Bloqueado globalmente:',
 	'centralauth-admin-info-hidden' => 'Nivel de ocultado:',
+	'centralauth-admin-nohome' => 'no se pudo determinar',
 	'centralauth-admin-yes' => 'sí',
 	'centralauth-admin-no' => 'no',
 	'centralauth-admin-hidden-list' => 'de los listados públicos',
-	'centralauth-admin-hidden-oversight' => 'Supervisado',
+	'centralauth-admin-hidden-oversight' => 'suprimido',
 	'centralauth-admin-list-legend-ro' => 'Lista de cuentas locales',
 	'centralauth-admin-list-legend-rw' => 'Desunificar cuentas locales',
 	'centralauth-admin-unattached' => 'no adjunto',
@@ -5532,14 +5539,14 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Razones adicionales/otras:',
 	'centralauth-admin-status' => 'Modificar el estado de la cuenta global',
-	'centralauth-admin-status-intro' => 'Puedes usar este formulario para cambiar el status de esta cuenta global',
+	'centralauth-admin-status-intro' => 'Puedes usar este formulario para cambiar el estado de esta cuenta global',
 	'centralauth-admin-status-locked' => 'Bloqueado:',
 	'centralauth-admin-status-locked-no' => 'La cuenta no está bloqueada globalmente',
-	'centralauth-admin-status-locked-yes' => 'La cuenta se encuentra bloqueada para editar',
+	'centralauth-admin-status-locked-yes' => 'La cuenta se encuentra bloqueada globalmente',
 	'centralauth-admin-status-hidden' => 'Oculto:',
 	'centralauth-admin-status-hidden-no' => 'La cuenta no está oculta',
 	'centralauth-admin-status-hidden-list' => 'La cuenta se encuentra oculta de los listados públicos',
-	'centralauth-admin-status-hidden-oversight' => 'La cuenta se encuentra oculta por completo',
+	'centralauth-admin-status-hidden-oversight' => 'La cuenta se encuentra ocultada por completo',
 	'centralauth-admin-status-submit' => 'Configurar estado',
 	'centralauth-admin-status-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" no existe.',
 	'centralauth-admin-setstatus-success' => 'Has cambiado con éxito el estado de esta cuenta global.',
@@ -5582,16 +5589,16 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-hidden-blockreason' => 'ocultada globalmente por $1 a las $2 con la siguiente razón: $3',
 	'centralauth-log-name' => 'Registro de administración de cuentas globales',
 	'centralauth-log-header' => 'Este registro contiene las operaciones bajo cuentas globales: borrados, protecciones y desprotecciones.',
-	'centralauth-log-entry-delete' => 'borró cuenta global «$1»',
-	'centralauth-log-entry-lock' => 'bloqueó cuenta global «$1»',
-	'centralauth-log-entry-unlock' => 'desbloqueó cuenta global «$1»',
-	'centralauth-log-entry-hide' => 'escondió cuenta global «$1»',
+	'centralauth-log-entry-delete' => 'borró la cuenta global «$1»',
+	'centralauth-log-entry-lock' => 'bloqueó la cuenta global «$1»',
+	'centralauth-log-entry-unlock' => 'desbloqueó la cuenta global «$1»',
+	'centralauth-log-entry-hide' => 'escondió la cuenta global «$1»',
 	'centralauth-log-entry-unhide' => 'mostró la cuenta global «$1»',
-	'centralauth-log-entry-lockandhide' => 'bloqueó y escondió la cuenta global «$1»',
+	'centralauth-log-entry-lockandhide' => 'bloqueó y ocultó la cuenta global «$1»',
 	'centralauth-log-entry-chgstatus' => 'modificó el estado de la cuenta global "$1": Establecido $2; Eliminado $3',
 	'centralauth-log-status-locked' => 'bloqueado',
 	'centralauth-log-status-hidden' => 'oculto',
-	'centralauth-log-status-oversighted' => 'Supervisado',
+	'centralauth-log-status-oversighted' => 'suprimido',
 	'centralauth-log-status-none' => '(ninguno)',
 	'centralauth-rightslog-name' => 'Registro de derechos globales',
 	'centralauth-rightslog-entry-usergroups' => 'modificó los grupos globales a los que pertenece $1 de $2 a $3',
@@ -8501,6 +8508,7 @@ Druhe konta su hišće njewobkrućene.',
 	'centralauth-admin-info-editcount' => 'Ličba změnow dohromady:',
 	'centralauth-admin-info-locked' => 'Zawrjeny:',
 	'centralauth-admin-info-hidden' => 'Schowana runina:',
+	'centralauth-admin-nohome' => 'njeje móžno postajić',
 	'centralauth-admin-yes' => 'haj',
 	'centralauth-admin-no' => 'ně',
 	'centralauth-admin-hidden-list' => 'ze zjawnych lisćinow',
@@ -8508,7 +8516,7 @@ Druhe konta su hišće njewobkrućene.',
 	'centralauth-admin-list-legend-ro' => 'Lisćina lokalnych kontow',
 	'centralauth-admin-list-legend-rw' => 'Zjednoćenje lokalnych kontow zběhnyć',
 	'centralauth-admin-unattached' => 'njepřipowěsnjeny',
-	'centralauth-admin-notblocked' => 'Njeblokowany',
+	'centralauth-admin-notblocked' => '-',
 	'centralauth-admin-blocked' => 'Blokowany hač do $3 $4. Přičina: $2',
 	'centralauth-admin-blocked-indef' => 'Na njewěsty čas zablokowany. Přičina: $1',
 	'centralauth-admin-blocklog' => 'protokol zablokowanjow',
@@ -9105,6 +9113,7 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 	'centralauth-admin-info-editcount' => 'Total de modificationes:',
 	'centralauth-admin-info-locked' => 'Serrate:',
 	'centralauth-admin-info-hidden' => 'Nivello de celamento:',
+	'centralauth-admin-nohome' => 'non pote determinar',
 	'centralauth-admin-yes' => 'si',
 	'centralauth-admin-no' => 'no',
 	'centralauth-admin-hidden-list' => 'de listas public',
@@ -14896,6 +14905,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-admin-info-editcount' => 'Totalt antall redigeringer:',
 	'centralauth-admin-info-locked' => 'Låst:',
 	'centralauth-admin-info-hidden' => 'Skjult-nivå:',
+	'centralauth-admin-nohome' => 'kan ikke fastslå',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nei',
 	'centralauth-admin-hidden-list' => 'fra offentlige lister',
