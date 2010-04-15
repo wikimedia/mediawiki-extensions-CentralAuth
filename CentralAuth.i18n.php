@@ -395,7 +395,8 @@ $messages['qqq'] = array(
 	'centralauth-admin-username' => '{{Identical|Username}}',
 	'centralauth-admin-info-id' => '{{Identical|User ID}}',
 	'centralauth-admin-info-hidden' => '{{Identical|Hidden}}',
-	'centralauth-admin-nohome' => 'Shown when Special:CentralAuth cannot find out which wiki is home for the user.',
+	'centralauth-admin-nohome' => 'Shown in place of the wiki name if Special:CentralAuth cannot find out which wiki is home for the user.
+Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-admin-yes' => '{{Identical|Yes}}',
 	'centralauth-admin-no' => '{{Identical|No}}',
 	'centralauth-admin-unattached' => '{{Identical|Unattached accounts}}',
