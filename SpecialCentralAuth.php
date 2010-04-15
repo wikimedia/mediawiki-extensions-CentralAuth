@@ -601,8 +601,8 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 		}
 
-		// Should not happen.
-		throw new MWException( 'Failed to determine home wiki' );
+		// Home account can be renamed or unmerged
+		return wfMsgHtml( 'centralauth-admin-nohome' );
 	}
 
 	function evaluateTotalEditcount() {

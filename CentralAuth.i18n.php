@@ -146,6 +146,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-info-editcount'     => 'Total editcount:',
 	'centralauth-admin-info-locked'        => 'Locked:',
 	'centralauth-admin-info-hidden'        => 'Hidden level:',
+	'centralauth-admin-nohome'             => 'unable to determine',
 	'centralauth-admin-yes'                => 'yes',
 	'centralauth-admin-no'                 => 'no',
 	'centralauth-admin-hidden-list'        => 'from public lists',
