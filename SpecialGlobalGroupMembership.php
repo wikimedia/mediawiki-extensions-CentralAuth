@@ -68,7 +68,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			#specify addself and removeself as empty arrays -- bug 16098
 			return array( 'add' => $allGroups, 'remove' =>  $allGroups, 'add-self' => array(), 'remove-self' => array() );
 		} else {
-			return array();
+			return array( 'add' => array(), 'remove' =>  array(), 'add-self' => array(), 'remove-self' => array() );
 		}
 	}
 	
@@ -80,13 +80,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$user = CentralAuthGroupMembershipProxy::newFromName( $username );
 	
 		if( !$user ) {
-			return new WikiErrorMsg( 'nosuchusershort', $username );
+			return Status::newFatal( 'nosuchusershort', $username );
 		} elseif (!$wgRequest->getCheck( 'saveusergroups' ) && !$user->attachedOn($knownwiki)) {
-			return new WikiErrorMsg( 'centralauth-globalgroupmembership-badknownwiki',
+			return Status::newFatal( 'centralauth-globalgroupmembership-badknownwiki',
 					$username, $knownwiki );
 		}
 	
-		return $user;
+		return Status::newGood( $user );
 	}
 	
 	protected static function getAllGroups() {
