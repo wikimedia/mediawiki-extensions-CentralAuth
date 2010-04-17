@@ -92,7 +92,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			}
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
 		}
-		if ( isset ($prop['unattached'] ) ) {
+		if ( isset ( $prop['unattached'] ) ) {
 			$accounts = $user->queryUnattached();
 			foreach ( $accounts as $account ) {
 				$a = array(
