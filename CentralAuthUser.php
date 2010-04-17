@@ -65,13 +65,13 @@ class CentralAuthUser extends AuthPluginUser {
 
 	public static function getCentralDB() {
 		global $wgCentralAuthDatabase;
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(), 
+		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
 			$wgCentralAuthDatabase );
 	}
 
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_SLAVE, 'centralauth', 
+		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_SLAVE, 'centralauth',
 			$wgCentralAuthDatabase );
 	}
 
@@ -103,8 +103,8 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Load up state information, but don't use the cache
 	*/
-	protected function loadStateNoCache() { 
-		$this->loadState( true ); 
+	protected function loadStateNoCache() {
+		$this->loadState( true );
 	}
 
 	/**
@@ -136,7 +136,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$sql =
 			"SELECT gu_id, lu_wiki, gu_salt, gu_password,gu_auth_token, " .
-			"gu_locked,gu_hidden, gu_registration, gu_email, " . 
+			"gu_locked,gu_hidden, gu_registration, gu_email, " .
 			"gu_email_authenticated, gu_home_db " .
 			"FROM $globaluser " .
 			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_wiki=? " .
@@ -164,10 +164,10 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$dbr = self::getCentralDB(); // We need the master.
 
-		$res = $dbr->select( 
+		$res = $dbr->select(
 			array( 'global_group_permissions', 'global_user_groups' ),
-			array( 'ggp_permission', 'ggp_group' ), 
-			array( 'ggp_group=gug_group', 'gug_user' => $this->getId() ), 
+			array( 'ggp_permission', 'ggp_group' ),
+			array( 'ggp_group=gug_group', 'gug_user' => $this->getId() ),
 			__METHOD__
 		);
 
@@ -179,7 +179,7 @@ class CentralAuthUser extends AuthPluginUser {
 		);
 
 		$sets = array();
-		while( $row = $dbr->fetchObject( $resSets ) ) {
+		while ( $row = $dbr->fetchObject( $resSets ) ) {
 			$sets[$row->ggr_group] = WikiSet::newFromRow( $row );
 		}
 
@@ -187,23 +187,23 @@ class CentralAuthUser extends AuthPluginUser {
 		$rights = array();
 		$groups = array();
 
-		while( $row = $dbr->fetchObject( $res ) ) {
+		while ( $row = $dbr->fetchObject( $res ) ) {
 			$set = @$sets[$row->ggp_group];
 			$rights[] = array( 'right' => $row->ggp_permission, 'set' => $set ? $set->getID() : false );
 			$groups[$row->ggp_group] = 1;
 		}
 
 		$this->mRights = $rights;
-		$this->mGroups = array_keys($groups);
+		$this->mGroups = array_keys( $groups );
 	}
 
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 */
 	protected function loadFromRow( $row, $fromMaster = false ) {
-		if( $row ) {
+		if ( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
-			$this->mIsAttached = ($row->lu_wiki !== null);
+			$this->mIsAttached = ( $row->lu_wiki !== null );
 			$this->mSalt = $row->gu_salt;
 			$this->mPassword = $row->gu_password;
 			$this->mAuthToken = $row->gu_auth_token;
@@ -229,15 +229,15 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	protected function loadFromCache( $cache = null, $fromMaster = false ) {
 		wfProfileIn( __METHOD__ );
-		if ($cache == null) {
+		if ( $cache == null ) {
 			global $wgMemc;
 			$cache = $wgMemc->get( $this->getCacheKey() );
 			$fromMaster = true;
 		}
 		
-		if (!is_array($cache) || $cache['mVersion'] < $this->mVersion ) {
+		if ( !is_array( $cache ) || $cache['mVersion'] < $this->mVersion ) {
 			// Out of date cache.
-			wfDebugLog( 'CentralAuth', "Global User: cache miss for {$this->mName}, " . 
+			wfDebugLog( 'CentralAuth', "Global User: cache miss for {$this->mName}, " .
 				"version {$cache['mVersion']}, expected {$this->mVersion}" );
 			wfProfileOut( __METHOD__ );
 			return false;
@@ -255,7 +255,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	protected function loadFromCacheObject( $object, $fromMaster = false ) {
 		wfDebugLog( 'CentralAuth', "Loading CentralAuthUser for user {$this->mName} from cache object" );
-		foreach( self::$mCacheVars as $var ) {
+		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
 		}
 		
@@ -275,8 +275,8 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadGroups();
 		
 		$obj = array();
-		foreach( self::$mCacheVars as $var ) {
-			if( isset( $this->$var ) ) {
+		foreach ( self::$mCacheVars as $var ) {
+			if ( isset( $this->$var ) ) {
 				$obj[$var] = $this->$var;
 			} else {
 				$obj[$var] = null;
@@ -314,7 +314,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Generate a valid memcached key for caching the object's data.
 	 */
 	protected function getCacheKey() {
-		return "centralauth-user-".md5($this->mName);
+		return "centralauth-user-" . md5( $this->mName );
 	}
 	
 	/**
@@ -347,7 +347,7 @@ class CentralAuthUser extends AuthPluginUser {
 	public function getAuthToken() {
 		$this->loadState();
 		
-		if (!isset( $this->mAuthToken ) || !$this->mAuthToken) {
+		if ( !isset( $this->mAuthToken ) || !$this->mAuthToken ) {
 			$this->resetAuthToken();
 		}
 		return $this->mAuthToken;
@@ -404,7 +404,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadState();
 
 		// backwards compatibility for mid-migration
-		if( strval( $this->mHidden ) === '0' ) {
+		if ( strval( $this->mHidden ) === '0' ) {
 			$this->mHidden = '';
 		} elseif ( strval( $this->mHidden ) === '1' ) {
 			$this->mHidden = self::HIDDEN_LISTS;
@@ -455,7 +455,7 @@ class CentralAuthUser extends AuthPluginUser {
 			),
 			__METHOD__ );
 
-		if( $ok ) {
+		if ( $ok ) {
 			wfDebugLog( 'CentralAuth',
 				"registered global account '$this->mName'" );
 		} else {
@@ -475,11 +475,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param array $users Associative array of ids => names
 	 */
 	static function storeMigrationData( $wiki, $users ) {
-		if( $users ) {
+		if ( $users ) {
 			$dbw = self::getCentralDB();
 			$globalTuples = array();
 			$tuples = array();
-			foreach( $users as $name ) {
+			foreach ( $users as $name ) {
 				$globalTuples[] = array( 'gn_name' => $name );
 				$tuples[] = array(
 					'ln_wiki' => $wiki,
@@ -523,7 +523,7 @@ class CentralAuthUser extends AuthPluginUser {
 		return $dbw->affectedRows() != 0;
 	}
 
-	public function storeAndMigrate( $passwords=array() ) {
+	public function storeAndMigrate( $passwords = array() ) {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 
@@ -544,37 +544,37 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string
 	 */
 	function chooseHomeWiki( $migrationSet ) {
-		if( empty( $migrationSet ) ) {
+		if ( empty( $migrationSet ) ) {
 			throw new MWException( 'Logic error -- empty migration set in chooseHomeWiki' );
 		}
 
 		// Sysops get priority
 		$priorityGroups = array( 'sysop', 'bureaucrat', 'steward' );
 		$workingSet = array();
-		foreach( $migrationSet as $wiki => $local ) {
-			if( array_intersect( $priorityGroups, $local['groups'] ) ) {
-				if( $local['editCount'] ) {
+		foreach ( $migrationSet as $wiki => $local ) {
+			if ( array_intersect( $priorityGroups, $local['groups'] ) ) {
+				if ( $local['editCount'] ) {
 					// Ignore unused sysop accounts
 					$workingSet[$wiki] = $local;
 				}
 			}
 		}
 
-		if( !$workingSet ) {
+		if ( !$workingSet ) {
 			// No privileged accounts; look among the plebes...
 			$workingSet = $migrationSet;
 		}
 
 		$maxEdits = -1;
 		$homeWiki = null;
-		foreach( $workingSet as $wiki => $local ) {
-			if( $local['editCount'] > $maxEdits ) {
+		foreach ( $workingSet as $wiki => $local ) {
+			if ( $local['editCount'] > $maxEdits ) {
 				$homeWiki = $wiki;
 				$maxEdits = $local['editCount'];
 			}
 		}
 
-		if( !isset( $homeWiki ) ) {
+		if ( !isset( $homeWiki ) ) {
 			throw new MWException( "Logic error in migration: " .
 				"Unable to determine primary account for $this->mName" );
 		}
@@ -590,7 +590,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 *                          Should match an account which is known
 	 *                          to be attached.
 	 */
-	function prepareMigration( $migrationSet, $passwords=array() ) {
+	function prepareMigration( $migrationSet, $passwords = array() ) {
 		// If the primary account has an e-mail address set,
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
@@ -599,15 +599,15 @@ class CentralAuthUser extends AuthPluginUser {
 		// For additional safety, we'll only let the mail check
 		// propagate from a confirmed account
 		$passingMail = array();
-		if( $this->mEmail != '' && $this->mEmailAuthenticated ) {
+		if ( $this->mEmail != '' && $this->mEmailAuthenticated ) {
 			$passingMail[$this->mEmail] = true;
 		}
 
 		// If we've got an authenticated password to work with, we can
 		// also assume their e-mails are useful for this purpose...
-		if( $passwords ) {
-			foreach( $migrationSet as $wiki => $local ) {
-				if( $local['email'] != ''
+		if ( $passwords ) {
+			foreach ( $migrationSet as $wiki => $local ) {
+				if ( $local['email'] != ''
 					&& $local['emailAuthenticated']
 					&& $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
 					$passingMail[$local['email']] = true;
@@ -616,15 +616,15 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$attach = array();
-		foreach( $migrationSet as $wiki => $local ) {
+		foreach ( $migrationSet as $wiki => $local ) {
 			$localName = "$this->mName@$wiki";
-			if( $wiki == $this->mHomeWiki ) {
+			if ( $wiki == $this->mHomeWiki ) {
 				// Primary account holder... duh
 				$method = 'primary';
-			} elseif( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+			} elseif ( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
-			} elseif( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
+			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
 				// Same e-mail as primary means we know they could
 				// reset their password, so we give them the account.
 				// Authenticated email addresses only to prevent merges with malicious users
@@ -665,13 +665,13 @@ class CentralAuthUser extends AuthPluginUser {
 
 		// First, make sure we were given the current wiki's password.
 		$self = $this->localUserData( wfWikiID() );
-		if( !$this->matchHashes( $passwords, $self['id'], $self['password'] ) ) {
+		if ( !$this->matchHashes( $passwords, $self['id'], $self['password'] ) ) {
 			wfDebugLog( 'CentralAuth', "dry run: failed self-password check" );
 			return Status::newFatal( 'wrongpassword' );
 		}
 
 		$migrationSet = $this->queryUnattached();
-		if( empty( $migrationSet ) ) {
+		if ( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'dry run: no accounts to merge, failed migration' );
 			return Status::newFatal( 'centralauth-merge-no-accounts' );
 		}
@@ -679,13 +679,13 @@ class CentralAuthUser extends AuthPluginUser {
 		$local = $migrationSet[$home];
 
 		// If home account is blocked...
-		if( $local['blocked'] ) {
+		if ( $local['blocked'] ) {
 			wfDebugLog( 'CentralAuth', "dry run: $home blocked, forbid migration" );
 			return Status::newFatal( 'centralauth-blocked-text' );
 		}
 
 		// And we need to match the home wiki before proceeding...
-		if( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+		if ( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
 			wfDebugLog( 'CentralAuth', "dry run: passed password match to home $home" );
 		} else {
 			wfDebugLog( 'CentralAuth', "dry run: failed password match to home $home" );
@@ -714,9 +714,9 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @fixme add some locking or something
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration( $passwords=array() ) {
+	protected function attemptAutoMigration( $passwords = array() ) {
 		$migrationSet = $this->queryUnattached();
-		if( empty( $migrationSet ) ) {
+		if ( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
 			return false;
 		}
@@ -740,17 +740,17 @@ class CentralAuthUser extends AuthPluginUser {
 				$home['email'],
 				$home['emailAuthenticated'] );
 
-		if( !$ok ) {
+		if ( !$ok ) {
 			wfDebugLog( 'CentralAuth',
 				"attemptedAutoMigration for existing entry '$this->mName'" );
 			return false;
 		}
 
-		if( count( $attach ) < count( $migrationSet ) ) {
+		if ( count( $attach ) < count( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth',
 				"Incomplete migration for '$this->mName'" );
 		} else {
-			if( count( $migrationSet ) == 1 ) {
+			if ( count( $migrationSet ) == 1 ) {
 				wfDebugLog( 'CentralAuth',
 					"Singleton migration for '$this->mName' on " . $this->mHomeWiki );
 			} else {
@@ -762,7 +762,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// Don't purge the cache 50 times.
 		$this->startTransaction();
 
-		foreach( $attach as $wiki => $method ) {
+		foreach ( $attach as $wiki => $method ) {
 			$this->attach( $wiki, $method );
 		}
 		
@@ -782,10 +782,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 *                   unattached after the operation
 	 * @return bool true if all accounts are migrated at the end
 	 */
-	public function attemptPasswordMigration( $password, &$migrated=null, &$remaining=null ) {
+	public function attemptPasswordMigration( $password, &$migrated = null, &$remaining = null ) {
 		$rows = $this->queryUnattached();
 
-		if( count( $rows ) == 0 ) {
+		if ( count( $rows ) == 0 ) {
 			wfDebugLog( 'CentralAuth',
 				"Already fully migrated user '$this->mName'" );
 			return true;
@@ -798,9 +798,9 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->startTransaction();
 
 		// Look for accounts we can match by password
-		foreach( $rows as $row ) {
+		foreach ( $rows as $row ) {
 			$wiki = $row['wiki'];
-			if( $this->matchHash( $password, $row['id'], $row['password'] ) ) {
+			if ( $this->matchHash( $password, $row['id'], $row['password'] ) ) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $wiki by password" );
 				$this->attach( $wiki, 'password' );
@@ -814,7 +814,7 @@ class CentralAuthUser extends AuthPluginUser {
 		
 		$this->endTransaction();
 
-		if( count( $remaining ) == 0 ) {
+		if ( count( $remaining ) == 0 ) {
 			wfDebugLog( 'CentralAuth',
 				"Successfull auto migration for '$this->mName'" );
 			return true;
@@ -829,7 +829,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$unique = array_unique( $list );
 		$valid = array_intersect( $unique, self::getWikiList() );
 
-		if( count( $valid ) != count( $list ) ) {
+		if ( count( $valid ) != count( $list ) ) {
 			// fixme: handle this gracefully
 			throw new MWException( "Invalid input" );
 		}
@@ -889,11 +889,11 @@ class CentralAuthUser extends AuthPluginUser {
 			# Touch the local user row, update the password
 			$lb = wfGetLB( $wikiName );
 			$dblw = $lb->getConnection( DB_MASTER, array(), $wikiName );
-			$dblw->update( 'user', 
-				array( 
-					'user_touched' => wfTimestampNow(), 
+			$dblw->update( 'user',
+				array(
+					'user_touched' => wfTimestampNow(),
 					'user_password' => $password
-				), array( 'user_name' => $this->mName ), __METHOD__ 
+				), array( 'user_name' => $this->mName ), __METHOD__
 			);
 			$id = $dblw->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
 			$wgMemc->delete( "$wikiName:user:id:$id" );
@@ -903,7 +903,7 @@ class CentralAuthUser extends AuthPluginUser {
 			$status->successCount++;
 		}
 
-		if( in_array( wfWikiID(), $valid ) ) {
+		if ( in_array( wfWikiID(), $valid ) ) {
 			$this->resetState();
 		}
 		
@@ -922,15 +922,15 @@ class CentralAuthUser extends AuthPluginUser {
 
 		# Synchronise passwords
 		$password = $this->getPassword();
-		$localUserRes = $centralDB->select( 'localuser', '*', 
+		$localUserRes = $centralDB->select( 'localuser', '*',
 			array( 'lu_name' => $this->mName ), __METHOD__ );
 		$name = $this->getName();
 		foreach ( $localUserRes as $localUserRow ) {
 			$wiki = $localUserRow->lu_wiki;
-			wfDebug( __METHOD__.": Fixing password on $wiki\n" );
+			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$lb = wfGetLB( $wiki );
 			$localDB = $lb->getConnection( DB_MASTER, array(), $wiki );
-			$localDB->update( 'user', 
+			$localDB->update( 'user',
 				array( 'user_password' => $password ),
 				array( 'user_name' => $name ),
 				__METHOD__
@@ -1048,8 +1048,8 @@ class CentralAuthUser extends AuthPluginUser {
 	protected function doCrosswikiSuppression( $suppress, $by, $reason ) {
 		global $wgCentralAuthWikisPerSuppressJob;
 		$this->loadAttached();
-		if( count( $this->mAttachedArray ) <= $wgCentralAuthWikisPerSuppressJob ) {
-			foreach( $this->mAttachedArray as $wiki ) {
+		if ( count( $this->mAttachedArray ) <= $wgCentralAuthWikisPerSuppressJob ) {
+			foreach ( $this->mAttachedArray as $wiki ) {
 				$this->doLocalSuppression( $suppress, $wiki, $by, $reason );
 			}
 		} else {
@@ -1061,7 +1061,7 @@ class CentralAuthUser extends AuthPluginUser {
 			);
 			$jobs = array();
 			$chunks = array_chunk( $this->mAttachedArray, $wgCentralAuthWikisPerSuppressJob );
-			foreach( $chunks as $wikis ) {
+			foreach ( $chunks as $wikis ) {
 				$jobParams['wikis'] = $wikis;
 				$jobs[] = Job::factory(
 					'crosswikiSuppressUser',
@@ -1082,7 +1082,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbw = $lb->getConnection( DB_MASTER, array(), $wiki );
 		$data = $this->localUserData( $wiki );
 
-		if( $suppress ) {
+		if ( $suppress ) {
 			list( $site, $lang ) = $wgConf->siteFromDB( $wiki );
 			$lang = isset( $wgLanguageNames[$lang] ) ? $lang : 'en';
 			$blockReason = wfMsgReal( 'centralauth-admin-suppressreason',
@@ -1107,12 +1107,12 @@ class CentralAuthUser extends AuthPluginUser {
 			
 			# On normal block, BlockIp hook would be run here, but doing
 			# that from CentralAuth doesn't seem a good idea...
-			
+
 			if ( !$block->insert( $dbw ) ) {
 				return array( 'ipb_already_blocked' );
 			}
 			# Ditto for BlockIpComplete hook.
-			
+
 			IPBlockForm::suppressUserName( $this->mName, $data['id'], $dbw );
 			
 			# Locally log to suppress ?
@@ -1128,7 +1128,7 @@ class CentralAuthUser extends AuthPluginUser {
 			);
 
 			// Unsuppress only if unblocked
-			if( $dbw->affectedRows() ) {
+			if ( $dbw->affectedRows() ) {
 				IPBlockForm::unsuppressUserName( $this->mName, $data['id'], $dbw );
 			}
 		}
@@ -1142,7 +1142,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Prerequisites:
 	 * - completed migration state
 	 */
-	public function attach( $wikiID, $method='new' ) {
+	public function attach( $wikiID, $method = 'new' ) {
 		$dbw = self::getCentralDB();
 		$dbw->insert( 'localuser',
 			array(
@@ -1153,7 +1153,7 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__,
 			array( 'IGNORE' ) );
 
-		if( $dbw->affectedRows() == 0 ) {
+		if ( $dbw->affectedRows() == 0 ) {
 			wfDebugLog( 'CentralAuth',
 				"Race condition? Already attached $this->mName@$wikiID, just tried by '$method'" );
 			return;
@@ -1161,15 +1161,15 @@ class CentralAuthUser extends AuthPluginUser {
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$wikiID by '$method'" );
 
-		if( $wikiID == wfWikiID() ) {
+		if ( $wikiID == wfWikiID() ) {
 			$this->resetState();
 		}
 
 		$this->invalidateCache();
 		global $wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix;
-		if( $wgCentralAuthUDPAddress ) {
+		if ( $wgCentralAuthUDPAddress ) {
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
-			RecentChange::sendToUDP( self::getIRCLine( $userpage, $wikiID ), 
+			RecentChange::sendToUDP( self::getIRCLine( $userpage, $wikiID ),
 				$wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix );
 		}
 	}
@@ -1199,7 +1199,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return mixed: true if login available, or string status, one of: "no user", "locked"
 	 */
 	public function canAuthenticate() {
-		if( !$this->getId() ) {
+		if ( !$this->getId() ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' failed due to missing account" );
 			return "no user";
@@ -1211,7 +1211,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// FIXME: this will give users "password incorrect" error.
 		// Giving correct message requires AuthPlugin and SpecialUserlogin
 		// rewriting.
-		if( !User::idFromName( $this->getName() ) && $this->isOversighted() )
+		if ( !User::idFromName( $this->getName() ) && $this->isOversighted() )
 			return "locked";
 
 		return true;
@@ -1224,13 +1224,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @todo Currently only the "ok" result is used (i.e. either use, or return a bool).
 	 */
 	public function authenticate( $password ) {
-		if (($ret = $this->canAuthenticate()) !== true) {
+		if ( ( $ret = $this->canAuthenticate() ) !== true ) {
 			return $ret;
 		}
 		
 		list( $salt, $crypt ) = $this->getPasswordHash();
 		
-		if( $this->matchHash( $password, $salt, $crypt ) ) {
+		if ( $this->matchHash( $password, $salt, $crypt ) ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
 			return "ok";
@@ -1247,11 +1247,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string status, one of: "ok", "no user", "locked", or "bad token"
 	 */
 	public function authenticateWithToken( $token ) {
-		if (($ret = $this->canAuthenticate()) !== true) {
+		if ( ( $ret = $this->canAuthenticate() ) !== true ) {
 			return $ret;
 		}
 		
-		if ($this->validateAuthToken( $token ) ) {
+		if ( $this->validateAuthToken( $token ) ) {
 			return "ok";
 		} else {
 			return "bad token";
@@ -1265,13 +1265,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
-		if( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
+		if ( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
 			return true;
-		} elseif( function_exists( 'iconv' ) ) {
+		} elseif ( function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			if( User::comparePasswords( $encrypted, $latin1, $salt ) ) {
+			if ( User::comparePasswords( $encrypted, $latin1, $salt ) ) {
 				return true;
 			}
 		}
@@ -1279,8 +1279,8 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	protected function matchHashes( $passwords, $salt, $encrypted ) {
-		foreach( $passwords as $plaintext ) {
-			if( $this->matchHash( $plaintext, $salt, $encrypted ) ) {
+		foreach ( $passwords as $plaintext ) {
+			if ( $this->matchHash( $plaintext, $salt, $encrypted ) ) {
 				return true;
 			}
 		}
@@ -1297,8 +1297,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public function listUnattached() {
 		$unattached = $this->doListUnattached();
-		if( empty( $unattached ) ) {
-			if( $this->lazyImportLocalNames() ) {
+		if ( empty( $unattached ) ) {
+			if ( $this->lazyImportLocalNames() ) {
 				$unattached = $this->doListUnattached();
 			}
 		}
@@ -1318,7 +1318,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$result = $dbw->safeQuery( $sql, $this->mName );
 
 		$dbs = array();
-		while( $row = $dbw->fetchObject( $result ) ) {
+		while ( $row = $dbw->fetchObject( $result ) ) {
 			$dbs[] = $row->ln_wiki;
 		}
 		$dbw->freeResult( $result );
@@ -1358,7 +1358,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$known = $result->numRows();
 		$result->free();
 
-		if( $known ) {
+		if ( $known ) {
 			// No need...
 			// Hmm.. what about wikis added after localnames was populated? -werdna
 			return false;
@@ -1373,7 +1373,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	function importLocalNames() {
 		$rows = array();
-		foreach( self::getWikiList() as $wikiID ) {
+		foreach ( self::getWikiList() as $wikiID ) {
 			$lb = wfGetLB( $wikiID );
 			$dbr = $lb->getConnection( DB_MASTER, array(), $wikiID );
 			$id = $dbr->selectField(
@@ -1381,7 +1381,7 @@ class CentralAuthUser extends AuthPluginUser {
 				'user_id',
 				array( 'user_name' => $this->mName ),
 				__METHOD__ );
-			if( $id ) {
+			if ( $id ) {
 				$rows[] = array(
 					'ln_wiki' => $wikiID,
 					'ln_name' => $this->mName );
@@ -1395,7 +1395,7 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'gn_name' => $this->mName ),
 			__METHOD__,
 			array( 'IGNORE' ) );
-		if( $rows ) {
+		if ( $rows ) {
 			$dbw->insert( 'localnames',
 				$rows,
 				__METHOD__,
@@ -1436,7 +1436,7 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__ );
 
 		$wikis = array();
-		while( $row = $result->fetchObject() ) {
+		while ( $row = $result->fetchObject() ) {
 			$wikis[] = $row->lu_wiki;
 		}
 		$dbw->freeResult( $result );
@@ -1479,7 +1479,7 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__ );
 
 		$wikis = array();
-		while( $row = $dbw->fetchObject( $result ) ) {
+		while ( $row = $dbw->fetchObject( $result ) ) {
 			$wikis[$row->lu_wiki] = array(
 				'wiki' => $row->lu_wiki,
 				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
@@ -1507,9 +1507,9 @@ class CentralAuthUser extends AuthPluginUser {
 		$wikiIDs = $this->listUnattached();
 
 		$items = array();
-		foreach( $wikiIDs as $wikiID ) {
+		foreach ( $wikiIDs as $wikiID ) {
 			$data = $this->localUserData( $wikiID );
-			if( empty( $data ) ) {
+			if ( empty( $data ) ) {
 				throw new MWException(
 					"Bad user row looking up local user $this->mName@$wikiID" );
 			}
@@ -1556,7 +1556,7 @@ class CentralAuthUser extends AuthPluginUser {
 			'blocked' => false );
 
 		// Edit count field may not be initialized...
-		if( is_null( $row->user_editcount ) ) {
+		if ( is_null( $row->user_editcount ) ) {
 			$data['editCount'] = $db->selectField(
 				'revision',
 				'COUNT(*)',
@@ -1570,7 +1570,7 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'ug_group' ),
 			array( 'ug_user' => $data['id'] ),
 			__METHOD__ );
-		foreach( $result as $row ) {
+		foreach ( $result as $row ) {
 			$data['groups'][] = $row->ug_group;
 		}
 		$result->free();
@@ -1581,8 +1581,8 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'ipb_expiry', 'ipb_reason' ),
 			array( 'ipb_user' => $data['id'] ),
 			__METHOD__ );
-		foreach( $result as $row ) {
-			if( Block::decodeExpiry( $row->ipb_expiry ) > wfTimestampNow() ) {
+		foreach ( $result as $row ) {
+			if ( Block::decodeExpiry( $row->ipb_expiry ) > wfTimestampNow() ) {
 				$data['block-expiry'] = $row->ipb_expiry;
 				$data['block-reason'] = $row->ipb_reason;
 				$data['blocked'] = true;
@@ -1671,11 +1671,11 @@ class CentralAuthUser extends AuthPluginUser {
 		return $this->mPassword;
 	}
 	
-	static function setCookie( $name, $value, $exp=-1 ) {
+	static function setCookie( $name, $value, $exp = -1 ) {
 		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieSecure,
 			$wgCookieExpiration, $wgCookieHttpOnly;
 		
-		if ($exp == -1) {
+		if ( $exp == -1 ) {
 			$exp = time() + $wgCookieExpiration;
 		} elseif ( $exp == 0 ) {
 			// Don't treat as a relative expiry.
@@ -1684,9 +1684,9 @@ class CentralAuthUser extends AuthPluginUser {
 			// Relative expiry
 			$exp += time();
 		}
-		$httpOnlySafe = version_compare("5.2", PHP_VERSION, "<");
+		$httpOnlySafe = version_compare( "5.2", PHP_VERSION, "<" );
 		
-		if( $httpOnlySafe && isset( $wgCookieHttpOnly ) ) {
+		if ( $httpOnlySafe && isset( $wgCookieHttpOnly ) ) {
 			setcookie( $wgCentralAuthCookiePrefix . $name,
 				$value,
 				$exp,
@@ -1708,7 +1708,7 @@ class CentralAuthUser extends AuthPluginUser {
 	
 	protected function clearCookie( $name ) {
 		global $wgCentralAuthCookiePrefix;
-		self::setCookie( $name, '', -86400 );
+		self::setCookie( $name, '', - 86400 );
 	}
 
 	/**
@@ -1716,10 +1716,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Called on login.
 	 * @return Session ID
 	 */
-	function setGlobalCookies($remember = false) {
-		if (is_object($remember)) {
+	function setGlobalCookies( $remember = false ) {
+		if ( is_object( $remember ) ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
-			$remember = $remember->getOption('rememberpassword');
+			$remember = $remember->getOption( 'rememberpassword' );
 		}
 		
 		$session = array();
@@ -1731,7 +1731,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$session['expiry'] = $exp;
 		$session['auto-create-blacklist'] = array();
 		
-		if ($remember) {
+		if ( $remember ) {
 			self::setCookie( 'Token', $this->getAuthToken() );
 		} else {
 			$this->clearCookie( 'Token' );
@@ -1760,7 +1760,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Check a global auth token against the one we know of in the database.
 	 */
 	function validateAuthToken( $token ) {
-		return ($token == $this->getAuthToken());
+		return ( $token == $this->getAuthToken() );
 	}
 	
 	/**
@@ -1787,7 +1787,7 @@ class CentralAuthUser extends AuthPluginUser {
 		if ( !$this->mGlobalId ) return;
 
 		$dbw = self::getCentralDB();
-		$dbw->update( 'globaluser', 
+		$dbw->update( 'globaluser',
 			array( # SET
 				'gu_password' => $this->mPassword,
 				'gu_salt' => $this->mSalt,
@@ -1798,8 +1798,8 @@ class CentralAuthUser extends AuthPluginUser {
 				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp )
 			),
 			array( # WHERE
-				'gu_id' => $this->mGlobalId 
-			), 
+				'gu_id' => $this->mGlobalId
+			),
 			__METHOD__
 		);
 		
@@ -1817,10 +1817,10 @@ class CentralAuthUser extends AuthPluginUser {
 		
 		$rights = array();
 		$sets = array();
-		foreach( $this->mRights as $right ) {
-			if( $right['set'] ) {
+		foreach ( $this->mRights as $right ) {
+			if ( $right['set'] ) {
 				$set = isset( $sets[$right['set']] ) ?  $sets[$right['set']] : WikiSet::newFromID( $right['set'] );
-				if( $set->inSet() )
+				if ( $set->inSet() )
 					$rights[] = $right['right'];
 			} else {
 				$rights[] = $right['right'];
@@ -1833,8 +1833,8 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbw = self::getCentralDB();
 		
 		# Delete from the DB
-		$dbw->delete( 'global_user_groups', 
-			array( 'gug_user' => $this->getId(), 'gug_group' => $groups ), 
+		$dbw->delete( 'global_user_groups',
+			array( 'gug_user' => $this->getId(), 'gug_group' => $groups ),
 			__METHOD__ );
 		
 		$this->invalidateCache();
@@ -1843,18 +1843,18 @@ class CentralAuthUser extends AuthPluginUser {
 	function addToGlobalGroups( $groups ) {
 		$dbw = self::getCentralDB();
 		
-		if (!is_array($groups)) {
-			$groups = array($groups);
+		if ( !is_array( $groups ) ) {
+			$groups = array( $groups );
 		}
 		
 		$insert_rows = array();
-		foreach( $groups as $group ) {
+		foreach ( $groups as $group ) {
 			$insert_rows[] = array( 'gug_user' => $this->getId(), 'gug_group' => $group );
 		}
 		
 		# Replace into the DB
-		$dbw->replace( 'global_user_groups', 
-			array( 'gug_user', 'gug_group' ), 
+		$dbw->replace( 'global_user_groups',
+			array( 'gug_user', 'gug_group' ),
 			$insert_rows, __METHOD__ );
 		
 		$this->invalidateCache();
@@ -1867,7 +1867,7 @@ class CentralAuthUser extends AuthPluginUser {
 		
 		$groups = array();
 		
-		while ($row = $dbr->fetchObject( $res ) )
+		while ( $row = $dbr->fetchObject( $res ) )
 			$groups[] = $row->ggp_group;
 			
 		return $groups;
@@ -1877,11 +1877,11 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbr = self::getCentralSlaveDB();
 		
 		$res = $dbr->select( array( 'global_group_permissions' ),
-			array( 'ggp_permission' ), array( 'ggp_group' => $group), __METHOD__ );
+			array( 'ggp_permission' ), array( 'ggp_group' => $group ), __METHOD__ );
 		
 		$rights = array();
 		
-		while ($row = $dbr->fetchObject( $res ) ) {
+		while ( $row = $dbr->fetchObject( $res ) ) {
 			$rights[] = $row->ggp_permission;
 		}
 		
@@ -1897,19 +1897,19 @@ class CentralAuthUser extends AuthPluginUser {
 	static function getUsedRights() {
 		$dbr = self::getCentralSlaveDB();
 		
-		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission', 
+		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission',
 			array(), __METHOD__ );
 		
 		$rights = array();
 		
-		while ($row = $dbr->fetchObject( $res ) )
+		while ( $row = $dbr->fetchObject( $res ) )
 			$rights[] = $row->ggp_permission;
 			
 		return $rights;
 	}
 	
 	public function invalidateCache() {
-		if (!$this->mDelayInvalidation) {
+		if ( !$this->mDelayInvalidation ) {
 			wfDebugLog( 'CentralAuth', "Updating cache for global user {$this->mName}" );
 			
 			// Reload the state
@@ -2019,7 +2019,7 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 		$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
-		wfDebug( __METHOD__.": Deleting session $id\n" );
+		wfDebug( __METHOD__ . ": Deleting session $id\n" );
 		$key = self::memcKey( 'session', $id );
 		$wgMemc->delete( $key );
 	}
