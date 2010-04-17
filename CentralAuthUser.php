@@ -1088,30 +1088,34 @@ class CentralAuthUser extends AuthPluginUser {
 			$blockReason = wfMsgReal( 'centralauth-admin-suppressreason',
 				array( $by, $reason ), true, $lang );
 
-			$ipbID = $dbw->nextSequenceValue( 'ipblocks_ipb_id_seq' );
-			$dbw->insert( 'ipblocks',
-				array(
-					'ipb_id' => $ipbID,
-					'ipb_address' => $this->mName,
-					'ipb_user' => $data['id'],
-					'ipb_by' => 0,
-					'ipb_by_text' => $by,
-					'ipb_reason' => $blockReason,
-					'ipb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
-					'ipb_auto' => false,
-					'ipb_anon_only' => false,
-					'ipb_create_account' => true,
-					'ipb_enable_autoblock' => true,
-					'ipb_expiry' => Block::infinity(),
-					'ipb_range_start' => '',
-					'ipb_range_end' => '',
-					'ipb_deleted'	=> true,
-					'ipb_block_email' => true,
-					'ipb_allow_usertalk' => false
-				), __METHOD__, array( 'IGNORE' )
-			);
-
+			$block = new Block(
+					/* $address */ $this->mName,
+					/* $user */ $data['id'],
+					/* $by */ 0,
+					//'ipb_by_text' => $by,
+					/* $reason */ $blockReason,
+					/* $timestamp */ wfTimestampNow(),
+					/* $auto */ false,
+					/* $expiry */ Block::infinity(),
+					/* anonOnly */ false,
+					/* $createAccount */ true,
+					/* $enableAutoblock */ true,
+					/* $hideName (ipb_deleted) */ true,
+					/* $blockEmail */ true,
+					/* $allowUsertalk */ false
+				);
+			
+			# On normal block, BlockIp hook would be run here, but doing
+			# that from CentralAuth doesn't seem a good idea...
+			
+			if ( !$block->insert( $dbw ) ) {
+				return array( 'ipb_already_blocked' );
+			}
+			# Ditto for BlockIpComplete hook.
+			
 			IPBlockForm::suppressUserName( $this->mName, $data['id'], $dbw );
+			
+			# Locally log to suppress ?
 		} else {
 			$dbw->delete(
 				'ipblocks',
