@@ -1092,7 +1092,6 @@ class CentralAuthUser extends AuthPluginUser {
 					/* $address */ $this->mName,
 					/* $user */ $data['id'],
 					/* $by */ 0,
-					//'ipb_by_text' => $by,
 					/* $reason */ $blockReason,
 					/* $timestamp */ wfTimestampNow(),
 					/* $auto */ false,
@@ -1102,7 +1101,8 @@ class CentralAuthUser extends AuthPluginUser {
 					/* $enableAutoblock */ true,
 					/* $hideName (ipb_deleted) */ true,
 					/* $blockEmail */ true,
-					/* $allowUsertalk */ false
+					/* $allowUsertalk */ false,
+					/* $byName */ $by
 				);
 			
 			# On normal block, BlockIp hook would be run here, but doing
