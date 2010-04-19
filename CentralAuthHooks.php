@@ -29,8 +29,6 @@ class CentralAuthHooks {
 
 		wfLoadExtensionMessages('SpecialCentralAuth');
 		$skin = $wgUser->getSkin();
-		$special = SpecialPage::getTitleFor( 'MergeAccount' );
-
 
 		// Possible states:
 		// - account not merged at all
@@ -68,17 +66,21 @@ class CentralAuthHooks {
 			$message = wfMsgExt( 'centralauth-prefs-not-managed', 'parseinline' );
 		}
 
-		$manageLink = $skin->makeKnownLinkObj( $special,
+		$manageLinks = array();
+		$manageLinks[] = $skin->linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
 			wfMsgExt( 'centralauth-prefs-manage', 'parseinline' ) );
-		
-		$prefInsert =
+		$manageLinks[] = $skin->linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $wgUser->getName() ),
+			wfMsgExt( 'centralauth-prefs-view', 'parseinline' ) );
+		$manageLinkList = wfMsg( 'parentheses', $wgLang->pipeList( $manageLinks ) );
+
+		$prefInsert = 
 			array( 'globalaccountstatus' =>
 				array(
 					'section' => 'personal/info',
 					'label-message' => 'centralauth-prefs-status',
 					'type' => 'info',
 					'raw' => true,
-					'default' => "$message<br />($manageLink)"
+					'default' => "$message<br />$manageLinkList"
 				),
 			);
 

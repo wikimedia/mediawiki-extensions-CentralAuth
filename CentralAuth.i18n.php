@@ -228,6 +228,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-prefs-count-unattached'  => 'Unconfirmed accounts with your name remain on $1 {{PLURAL:$1|project|projects}}.',
 	'centralauth-prefs-detail-unattached' => 'This project site has not been confirmed as belonging to the global account.',
 	'centralauth-prefs-manage'            => 'Manage your global account',
+	'centralauth-prefs-view'              => 'View global user info',
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system.
