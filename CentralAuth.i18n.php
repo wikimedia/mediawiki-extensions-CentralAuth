@@ -3897,6 +3897,7 @@ Du forsøger måske at give rettigheder til en forkert bruger.",
 /** German (Deutsch)
  * @author Church of emacs
  * @author DaSch
+ * @author Kghbln
  * @author Metalhead64
  * @author MichaelFrey
  * @author Raimond Spekking
@@ -4006,6 +4007,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-info-editcount' => 'Anzahl der Bearbeitungen in allen Wikis:',
 	'centralauth-admin-info-locked' => 'Gesperrt:',
 	'centralauth-admin-info-hidden' => 'Versteckt:',
+	'centralauth-admin-nohome' => 'nicht feststellbar',
 	'centralauth-admin-yes' => 'Ja',
 	'centralauth-admin-no' => 'Nein',
 	'centralauth-admin-hidden-list' => 'von öffentlichen Listen',
@@ -4694,6 +4696,7 @@ Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu z
 	'centralauth-prefs-count-unattached' => 'Su hyšći njewobkšuśone konta z twójim mjenim w $1 {{PLURAL:$1|projekśe|projektoma|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Za toś ten projekt njejo wobkšuśenje, až słuša ku globalnemu kontoju.',
 	'centralauth-prefs-manage' => 'Twójo globalne konto zastojaś',
+	'centralauth-prefs-view' => 'Informacije wó globalnem wužywarju pokazaś',
 	'centralauth-renameuser-merged' => 'Wužywaŕ $1 jo južo pśeśěgnuł do jadnotnego pśizjawjeńskego systema.
 Pśemjenjowanje wótwónoźujo lokalnego wužywarja z jadnotnego systema.',
 	'centralauth-renameuser-reserved' => 'Wužywaŕ $2 jo za globalne konto rezerwěrowany.',
@@ -7186,6 +7189,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-prefs-count-unattached' => 'Quedan contas sen confirmar co seu nome {{PLURAL:$1|nun proxecto|en $1 proxectos}}.',
 	'centralauth-prefs-detail-unattached' => 'Non se confirmou que este proxecto pertenza á conta global.',
 	'centralauth-prefs-manage' => 'Xestionar a súa conta global',
+	'centralauth-prefs-view' => 'Ollar a información do usuario global',
 	'centralauth-renameuser-merged' => 'O usuario "$1" foi trasladado ao sistema de rexistro unificado.
 Ao renomealo, isto provocará que o usuario local sexa alonxado do global.',
 	'centralauth-renameuser-reserved' => 'O usuario "$2" está reservado para unha conta global.',
@@ -8585,6 +8589,7 @@ Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu 
 	'centralauth-prefs-count-unattached' => 'Njepotwjerdźene konta z twojim mjenom zwostanu na $1 {{PLURAL:$1|projekće|projektomaj|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Njeje potwjerdźenje, zo tute projektowe sydło ke globalnemu kontu słuša.',
 	'centralauth-prefs-manage' => 'Twoje globalne konto zrjadować',
+	'centralauth-prefs-view' => 'Informacije wo globalnym wužiwarju pokazać',
 	'centralauth-renameuser-merged' => 'Wužiwar $1 bu hižo do jednotneho přizjewjenskeho systema přewzaty.
 Přemjenowanje wuskutkuje, zo lokalny wužiwar so z globalneho wužiwarskeho konta wotstroni.',
 	'centralauth-renameuser-reserved' => 'Wužiwar $2 je za globalne konto rezerwowany.',
@@ -13041,6 +13046,7 @@ $messages['mk'] = array(
 	'centralauth-prefs-count-unattached' => 'На $1 {{PLURAL:$1|проект|проекти}} останаа непотврдени сметки со вашето име.',
 	'centralauth-prefs-detail-unattached' => 'За овој проект не е потврдено дека ѝ припаѓа на глобалната сметка.',
 	'centralauth-prefs-manage' => 'Раководење со вашата глобална сметка',
+	'centralauth-prefs-view' => 'Види глобално инфо за корисник',
 	'centralauth-renameuser-merged' => 'Корисникот $1 е присоединет кон системот за најавување со обединета сметка.
 Преименувањето ќе предизвика локалниот корисник да се одвои од глобалниот.',
 	'centralauth-renameuser-reserved' => 'Корисничкото име $2 е резервирано за глобална сметка.',
@@ -13347,6 +13353,7 @@ $messages['ml'] = array(
 	'centralauth-prefs-count-unattached' => 'താങ്കളുടെ പേരുള്ള ഉപയോക്തൃനാമം $1 {{PLURAL:$1സം‌രംഭത്തിൽ|സം‌രംഭങ്ങളിൽ}} സ്ഥിരീകരിക്കാതെ നിലവിലുണ്ട്.',
 	'centralauth-prefs-detail-unattached' => 'ഈ സം‌രംഭം ആഗോള അംഗത്വത്തിന്റെ ഭാഗമാണെന്നു ഇതു വരെ സ്ഥിരീകരിച്ചിട്ടില്ല.',
 	'centralauth-prefs-manage' => 'താങ്കളുടെ ആഗോള അംഗത്വം പരിപാലിക്കുക.',
+	'centralauth-prefs-view' => 'ആഗോള ഉപയോക്തൃ വിവരങ്ങൾ കാണുക',
 	'centralauth-renameuser-merged' => '$1 എന്ന ഉപയോക്താവ് ആഗോള അംഗത്വത്തിലേക്ക് മാറിക്കഴിഞ്ഞു.
 പേരുമാറ്റുന്നതുകൊണ്ട് പ്രാദേശിക അംഗത്വം ആഗോള അംഗത്വത്തിൽ നിന്ന് ഒറ്റപ്പെട്ടു പോകുന്നതാണ്‌.',
 	'centralauth-renameuser-reserved' => 'ഉപയോക്താവ് $2 ആഗോള അംഗത്വത്തിനായി മാറ്റിവെച്ചിരിക്കുകയാണ്.',
@@ -14469,6 +14476,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached' => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
 	'centralauth-prefs-manage' => 'Uw globale gebruiker beheren',
+	'centralauth-prefs-view' => 'Informatie over globale gebruiker bekijken',
 	'centralauth-renameuser-merged' => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.',
 	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
@@ -15010,6 +15018,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-prefs-count-unattached' => 'Det er fortsatt ubekreftede kontoer med ditt navn på $1 {{PLURAL:$1|prosjekt|prosjekter}}.',
 	'centralauth-prefs-detail-unattached' => 'Det er ikke bekreftet at denne kontoen er slått sammen med hovedkontoen.',
 	'centralauth-prefs-manage' => 'Behandle hovedkontoen din',
+	'centralauth-prefs-view' => 'Vis global brukerinformasjon',
 	'centralauth-renameuser-merged' => 'Brukeren $1 har gått over til det globale kontosystemet. Å endre navnet på kontoen vil føre til at den lokale brukeren skilles fra den globale kontoen.',
 	'centralauth-renameuser-reserved' => 'Brukernavnet $2 er reservert for en global konto.',
 	'centralauth-invalid-wiki' => 'Ingen slik database: $1',
@@ -15637,6 +15646,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-prefs-count-unattached' => 'Nieprzyłączone konta o nazwie zbieżnej z Twoją są w $1 {{PLURAL:$1|projekcie|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Konto na tej witrynie nie zostało przyłączone do konta uniwersalnego.',
 	'centralauth-prefs-manage' => 'zarządzaj kontem uniwersalnym',
+	'centralauth-prefs-view' => 'Pokaż globalne informacje o użytkowniku',
 	'centralauth-renameuser-merged' => 'Użytkownik $1 został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalny użytkownik zostanie odłączony od globalnego.',
 	'centralauth-renameuser-reserved' => 'Nazwa $2 jest już zajęta dla konta uniwersalnego.',
 	'centralauth-invalid-wiki' => 'Nie istnieje wiki DB: $1',
@@ -15858,6 +15868,7 @@ D'àutri cont a son ancó pa stàit confirmà.",
 	'centralauth-admin-info-editcount' => 'Conteur dle modìfiche an total:',
 	'centralauth-admin-info-locked' => 'Blocà:',
 	'centralauth-admin-info-hidden' => 'Livel stërmà:',
+	'centralauth-admin-nohome' => 'impossìbil da determiné',
 	'centralauth-admin-yes' => 'é!',
 	'centralauth-admin-no' => 'nò',
 	'centralauth-admin-hidden-list' => 'da liste pùbliche',
@@ -17033,6 +17044,7 @@ $messages['ru'] = array(
 	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
 	'centralauth-prefs-detail-unattached' => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage' => 'Управление глобальной учётной записью',
+	'centralauth-prefs-view' => 'Просмотр глобальных сведений об участнике',
 	'centralauth-renameuser-merged' => 'Участник $1 перешёл на единую систему входа, его переименование вызовет потерю связи локального участника с глобальной учётной записью.',
 	'centralauth-renameuser-reserved' => 'Имя участника $2 зарезервировано для глобальной учётной записи.',
 	'centralauth-invalid-wiki' => 'Нет такой вики БД: $1',
