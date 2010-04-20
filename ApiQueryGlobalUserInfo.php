@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created on Jan 30, 2010
  *
@@ -30,13 +29,13 @@
  * @ingroup Extensions
  */
 class ApiQueryGlobalUserInfo extends ApiQueryBase {
-
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'gui' );
 	}
 
 	public function execute() {
 		global $wgUser;
+
 		$params = $this->extractRequestParams();
 		$prop = array_flip( (array)$params['prop'] );
 		if ( is_null( $params['user'] ) ) {
@@ -46,7 +45,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		if ( !$user->exists() ) {
 			$this->dieUsageMsg( array( 'nosuchuser', $params['user'] ) );
 		}
-		
+
 		// Add basic info
 		$result = $this->getResult();
 		$data = array(
@@ -61,7 +60,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$data['hidden'] = '';
 		}
 		$result->addValue( 'query', $this->getModuleName(), $data );
-		
+
 		// Add requested info
 		if ( isset( $prop['groups'] ) ) {
 			$groups = $user->getGlobalGroups();
@@ -129,7 +128,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	public function getParamDescription() {
 		return array(
 			'user' => 'User to get information about. Defaults to the current user',
-			'prop' => array( 'Which properties to get:',
+			'prop' => array(
+				'Which properties to get:',
 				'  groups     - Get a list of global groups this user belongs to',
 				'  merged     - Get a list of merged accounts',
 				'  unattached - Get a list of unattached accounts'
@@ -140,7 +140,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	public function getDescription() {
 		return 'Show information about a global user.';
 	}
-	
+
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'nosuchuser', 'user' ),

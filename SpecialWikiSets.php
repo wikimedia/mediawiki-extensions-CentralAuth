@@ -14,7 +14,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 class SpecialWikiSets extends SpecialPage {
 	var $mCanEdit;
-	
+
 	function __construct() {
 		parent::__construct( 'WikiSets' );
 		wfLoadExtensionMessages( 'SpecialCentralAuth' );
@@ -31,10 +31,10 @@ class SpecialWikiSets extends SpecialPage {
 
 		$this->setHeaders();
 
-		if( strpos( $subpage, 'delete/' ) === 0 && $this->mCanEdit ) {
+		if ( strpos( $subpage, 'delete/' ) === 0 && $this->mCanEdit ) {
 			$subpage = substr( $subpage, 7 );	// Remove delete/ part
-			if( is_numeric( $subpage ) ) {
-				if( $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) )
+			if ( is_numeric( $subpage ) ) {
+				if ( $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) )
 					$this->doDelete( $subpage );
 				else
 					$this->buildDeleteView( $subpage );
@@ -42,9 +42,9 @@ class SpecialWikiSets extends SpecialPage {
 				$this->buildMainView();
 			}
 		} else {
-			if( $subpage && !is_numeric( $subpage ) ) {
+			if ( $subpage && !is_numeric( $subpage ) ) {
 				$set = WikiSet::newFromName( $subpage );
-				if( $set ) {
+				if ( $set ) {
 					$subpage = $set->getID();
 				} else {
 					$wgOut->setPageTitle( wfMsg( 'error' ) );
@@ -54,9 +54,9 @@ class SpecialWikiSets extends SpecialPage {
 				}
 			}
 
-			if( ( $subpage || $subpage === '0' ) && $this->mCanEdit && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+			if ( ( $subpage || $subpage === '0' ) && $this->mCanEdit && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 				$this->doSubmit( $subpage );
-			} else if( ( $subpage || $subpage === '0' ) && is_numeric( $subpage ) ) {
+			} else if ( ( $subpage || $subpage === '0' ) && is_numeric( $subpage ) ) {
 				$this->buildSetView( $subpage );
 			} else {
 				$this->buildMainView();
@@ -71,18 +71,18 @@ class SpecialWikiSets extends SpecialPage {
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
 		$legend = wfMsg( "centralauth-editset-legend-{$msgPostfix}" );
 		$wgOut->addHTML( "<fieldset><legend>{$legend}</legend>" );
-		if( $msg )
+		if ( $msg )
 			$wgOut->addHTML( $msg );
 		$wgOut->addWikiMsg( "centralauth-editset-intro-{$msgPostfix}" );
 		$wgOut->addHTML( '<ul>' );
 
 		$sets = WikiSet::getAllWikiSets();
-		foreach( $sets as $set ) {
+		foreach ( $sets as $set ) {
 			$text = wfMsgExt( "centralauth-editset-item-{$msgPostfix}", array( 'parseinline' ), $set->getName(), $set->getID() );
 			$wgOut->addHTML( "<li>{$text}</li>" );
 		}
 
-		if( $this->mCanEdit ) {
+		if ( $this->mCanEdit ) {
 			$target = SpecialPage::getTitleFor( 'WikiSets', '0' );
 			$newlink = $sk->makeLinkObj( $target, wfMsgHtml( 'centralauth-editset-new' ) );
 			$wgOut->addHTML( "<li>{$newlink}</li>" );
@@ -97,41 +97,44 @@ class SpecialWikiSets extends SpecialPage {
 		$wgOut->setSubtitle( wfMsgExt( 'centralauth-editset-subtitle', 'parseinline' ) );
 
 		$set = $subpage ? WikiSet::newFromID( $subpage ) : null;
-		if( !$name ) $name = $set ? $set->getName() : '';
-		if( !$type ) $type = $set ? $set->getType() : WikiSet::OPTIN;
-		if( !$wikis ) $wikis = implode( "\n", $set ? $set->getWikisRaw() : array() );
+		if ( !$name ) $name = $set ? $set->getName() : '';
+		if ( !$type ) $type = $set ? $set->getType() : WikiSet::OPTIN;
+		if ( !$wikis ) $wikis = implode( "\n", $set ? $set->getWikisRaw() : array() );
 		else $wikis = implode( "\n", $wikis );
 		$url = SpecialPage::getTitleFor( 'WikiSets', $subpage )->getLocalUrl();
-		if( $this->mCanEdit )
-			$legend = wfMsgHtml( 'centralauth-editset-legend-' . ($set ? 'edit' : 'new'), $name );
-		else
+		if ( $this->mCanEdit ) {
+			$legend = wfMsgHtml( 'centralauth-editset-legend-' . ( $set ? 'edit' : 'new' ), $name );
+		} else {
 			$legend = wfMsgHtml( 'centralauth-editset-legend-view', $name );
+		}
 
 		$wgOut->addHTML( "<fieldset><legend>{$legend}</legend>" );
 
-		if( $set ) {
+		if ( $set ) {
 			$groups = $set->getRestrictedGroups();
 			if ( $groups ) {
 				$usage = "<ul>\n";
-				foreach( $groups as $group )
-					$usage .= "<li>" . wfMsgExt( 'centralauth-editset-grouplink', array('parseinline'), $group ) . "</li>\n";
+				foreach ( $groups as $group )
+					$usage .= "<li>" . wfMsgExt( 'centralauth-editset-grouplink', array( 'parseinline' ), $group ) . "</li>\n";
 				$usage .= "</ul>";
 			} else {
-				$usage = wfMsgWikiHtml('centralauth-editset-nouse');
+				$usage = wfMsgWikiHtml( 'centralauth-editset-nouse' );
 			}
 		} else {
 			$usage = '';
 		}
 
-		if( $this->mCanEdit ) {
-			if( $error )
+		if ( $this->mCanEdit ) {
+			if ( $error ) {
 				$wgOut->addHTML( "<strong class='error'>{$error}</strong>" );
+			}
 			$wgOut->addHTML( "<form action='{$url}' method='post'>" );
 
 			$form = array();
 			$form['centralauth-editset-name'] = Xml::input( 'wpName', false, $name );
-			if( $usage )
+			if ( $usage ) {
 				$form['centralauth-editset-usage'] = $usage;
+			}
 			$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
 			$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
 			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', false, $reason );
@@ -153,16 +156,18 @@ class SpecialWikiSets extends SpecialPage {
 
 	function buildTypeSelector( $name, $value ) {
 		$select = new XmlSelect( $name, 'set-type', $value );
-		foreach( array( WikiSet::OPTIN, WikiSet::OPTOUT ) as $type )
+		foreach ( array( WikiSet::OPTIN, WikiSet::OPTOUT ) as $type ) {
 			$select->addOption( wfMsg( "centralauth-editset-{$type}" ), $type );
+		}
 		return $select->getHTML();
 	}
 
 	function buildWikiList( $list ) {
 		sort( $list );
 		$html = '<ul>';
-		foreach( $list as $wiki )
+		foreach ( $list as $wiki ) {
 			$html .= "<li>{$wiki}</li>";
+		}
 		$html .= '</ul>';
 		return $html;
 	}
@@ -170,9 +175,9 @@ class SpecialWikiSets extends SpecialPage {
 	function buildDeleteView( $subpage ) {
 		global $wgOut, $wgUser;
 		$wgOut->setSubtitle( wfMsgExt( 'centralauth-editset-subtitle', 'parseinline' ) );
-		
+
 		$set = WikiSet::newFromID( $subpage );
-		if( !$set ) {
+		if ( !$set ) {
 			$this->buildMainView( '<strong class="error">' . wfMsgHtml( 'centralauth-editset-notfound', $subpage ) . '</strong>' );
 			return;
 		}
@@ -196,34 +201,36 @@ class SpecialWikiSets extends SpecialPage {
 		$reason = $wgRequest->getVal( 'wpReason' );
 		$set = WikiSet::newFromId( $id );
 
-		if( !Title::newFromText( $name ) ) {
+		if ( !Title::newFromText( $name ) ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-badname' ), $name, $type, $wikis, $reason );
 			return;
 		}
-		if( (!$id || $set->getName() != $name ) && WikiSet::newFromName( $name ) ) {
+		if ( ( !$id || $set->getName() != $name ) && WikiSet::newFromName( $name ) ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-setexists' ), $name, $type, $wikis, $reason );
 			return;
 		}
-		if( !in_array( $type, array( WikiSet::OPTIN, WikiSet::OPTOUT ) ) ) {
+		if ( !in_array( $type, array( WikiSet::OPTIN, WikiSet::OPTOUT ) ) ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-badtype' ), $name, $type, $wikis, $reason );
 			return;
 		}
-		if( !$wikis ) {
+		if ( !$wikis ) {
 			$this->buildSetView( $id, wfMsgHtml( 'centralauth-editset-nowikis' ), $name, $type, $wikis, $reason );
 			return;
 		}
 		$badwikis = array();
 		$allwikis = CentralAuthUser::getWikiList();
-		foreach( $wikis as $wiki )
-			if( !in_array( $wiki, $allwikis ) )
+		foreach ( $wikis as $wiki ) {
+			if ( !in_array( $wiki, $allwikis ) ) {
 				$badwikis[] = $wiki;
-		if( $badwikis ) {
-			$this->buildSetView( $id, wfMsgExt( 'centralauth-editset-badwikis', array( 'escapenoentities', 'parsemag' ), 
+			}
+		}
+		if ( $badwikis ) {
+			$this->buildSetView( $id, wfMsgExt( 'centralauth-editset-badwikis', array( 'escapenoentities', 'parsemag' ),
 						implode( ', ', $badwikis ), count( $badwikis ) ), $name, $type, $wikis, $reason );
 			return;
 		}
 
-		if( $set ) {
+		if ( $set ) {
 			$oldname = $set->getName();
 			$oldtype = $set->getType();
 			$oldwikis = $set->getWikisRaw();
@@ -239,41 +246,43 @@ class SpecialWikiSets extends SpecialPage {
 		// Now logging
 		$log = new LogPage( 'gblrights' );
 		$title = SpecialPage::getTitleFor( 'WikiSets', $set->getID() );
-		if( !$oldname ) {
+		if ( !$oldname ) {
 			// New set
 			$log->addEntry( 'newset', $title, $reason, array( $name, $type, implode( ', ', $wikis ) ) );
 		} else {
-			if( $oldname != $name )
+			if ( $oldname != $name ) {
 				$log->addEntry( 'setrename', $title, $reason, array( $name, $oldname ) );
-			if( $oldtype != $type )
+			}
+			if ( $oldtype != $type ) {
 				$log->addEntry( 'setnewtype', $title, $reason, array( $name, $oldtype, $type ) );
+			}
 			$added = implode( ', ', array_diff( $wikis, $oldwikis ) );
 			$removed = implode( ', ', array_diff( $oldwikis, $wikis ) );
-			if( $added || $removed ) {
+			if ( $added || $removed ) {
 				$log->addEntry( 'setchange', $title, $reason, array( $name, $added, $removed ) );
 			}
 		}
-		
-		global $wgUser,$wgOut;
+
+		global $wgUser, $wgOut;
 		$sk = $wgUser->getSkin();
 		$returnLink = $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'centralauth-editset-return' ) );
 
-		$wgOut->addHTML( '<strong class="success">' . wfMsgHtml( 'centralauth-editset-success' ) . '</strong> <p>'.$returnLink.'</p>' );
+		$wgOut->addHTML( '<strong class="success">' . wfMsgHtml( 'centralauth-editset-success' ) . '</strong> <p>' . $returnLink . '</p>' );
 	}
-	
+
 	function doDelete( $set ) {
 		global $wgRequest, $wgContLang;
-		
+
 		$set = WikiSet::newFromID( $set );
-		if( !$set ) {
+		if ( !$set ) {
 			$this->buildMainView( '<strong class="error">' . wfMsgHtml( 'centralauth-editset-notfound', $subpage ) . '</strong>' );
 			return;
 		}
-		
+
 		$reason = $wgRequest->getVal( 'wpReason' );
 		$name = $set->getName();
 		$set->delete();
-		
+
 		$title = SpecialPage::getTitleFor( 'WikiSets', $set->getID() );
 		$log = new LogPage( 'gblrights' );
 		$log->addEntry( 'deleteset', $title, $reason, array( $name ) );

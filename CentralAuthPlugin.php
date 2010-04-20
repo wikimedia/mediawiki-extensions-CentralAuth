@@ -1,5 +1,4 @@
 <?php
-
 /**
  * "Attached" accounts always require authentication against the central password.
  *
@@ -7,8 +6,8 @@
  *   $wgCentralAuthStrict is not set, but they will not have access to any
  *   central password or settings.
  */
-class CentralAuthPlugin extends AuthPlugin {
 
+class CentralAuthPlugin extends AuthPlugin {
 	/**
 	 * Check whether there exists a user account with the given name.
 	 * The name will be normalized to MediaWiki's requirements, so
@@ -39,15 +38,17 @@ class CentralAuthPlugin extends AuthPlugin {
 		global $wgCentralAuthAutoMigrate;
 
 		$central = new CentralAuthUser( $username );
-		if( !$central->exists() ) {
-			wfDebugLog( 'CentralAuth',
-				"plugin: no global account for '$username'" );
+		if ( !$central->exists() ) {
+			wfDebugLog(
+				'CentralAuth',
+				"plugin: no global account for '$username'"
+			);
 			return false;
 		}
 
 		$passwordMatch = $central->authenticate( $password ) == "ok";
 
-		if( $passwordMatch && $wgCentralAuthAutoMigrate ) {
+		if ( $passwordMatch && $wgCentralAuthAutoMigrate ) {
 			// If the user passed in the global password, we can identify
 			// any remaining local accounts with a matching password
 			// and migrate them in transparently.
@@ -64,9 +65,9 @@ class CentralAuthPlugin extends AuthPlugin {
 		// global exists, local doesn't exist: require global auth -> will autocreate local
 		// global doesn't exist, local doesn't exist: no authentication
 		//
-		if( !$central->isAttached() ) {
+		if ( !$central->isAttached() ) {
 			$local = User::newFromName( $username );
-			if( $local && $local->getId() ) {
+			if ( $local && $local->getId() ) {
 				// An unattached local account; central authentication can't
 				// be used until this account has been transferred.
 				// $wgCentralAuthStrict will determine if local login is allowed.
@@ -149,7 +150,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	function setPassword( $user, $password ) {
 		// Fixme: password changes should happen through central interface.
 		$central = CentralAuthUser::getInstance( $user );
-		if( $central->isAttached() ) {
+		if ( $central->isAttached() ) {
 			return $central->setPassword( $password );
 		} else {
 			// Not attached, local password is set only
@@ -194,11 +195,11 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return bool
 	 * @public
 	 */
-	function addUser( $user, $password, $email='', $realname='' ) {
+	function addUser( $user, $password, $email = '', $realname = '' ) {
 		global $wgCentralAuthAutoNew;
-		if( $wgCentralAuthAutoNew ) {
+		if ( $wgCentralAuthAutoNew ) {
 			$central = CentralAuthUser::getInstance( $user );
-			if( !$central->exists() && !$central->listUnattached() ) {
+			if ( !$central->exists() && !$central->listUnattached() ) {
 				// Username is unused; set up as a global account
 				// @fixme is this even vaguely reliable? pah
 				$central->register( $password, $email, $realname );
@@ -234,17 +235,17 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param $user User object.
 	 * @public
 	 */
-	function initUser( &$user, $autocreate=false ) {
-		if( $autocreate ) {
+	function initUser( &$user, $autocreate = false ) {
+		if ( $autocreate ) {
 			$central = CentralAuthUser::getInstance( $user );
-			if( $central->exists() ) {
+			if ( $central->exists() ) {
 				$central->attach( wfWikiID(), 'login' );
 				$central->addLocalName( wfWikiID() );
 				$this->updateUser( $user );
 			}
 		}
 	}
-	
+
 	public function getUserInstance( User &$user ) {
 		return CentralAuthUser::getInstance( $user );
 	}

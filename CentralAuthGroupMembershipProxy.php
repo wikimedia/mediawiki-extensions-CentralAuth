@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Cut-down copy of User interface for local-interwiki-database
  * user rights manipulation.
@@ -13,7 +11,7 @@ class CentralAuthGroupMembershipProxy {
 
 	public static function whoIs( $wikiID, $id ) {
 		$user = self::newFromId( $wikiID, $id );
-		if( $user ) {
+		if ( $user ) {
 			return $user->name;
 		} else {
 			return false;

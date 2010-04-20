@@ -1,11 +1,10 @@
 <?php
-
 // pass 1:
 // * generate 'globaluser' entries for each username
 // * go through all usernames in 'globalnames' and for those
 //   that can be automatically migrated, go ahead and do it.
 
-require dirname(__FILE__) . '/../../maintenance/commandLine.inc';
+require dirname( __FILE__ ) . '/../../maintenance/commandLine.inc';
 
 function migratePassOne() {
 	$migrated = 0;
@@ -19,13 +18,13 @@ function migratePassOne() {
 		array( 'gn_name' ),
 		'',
 		__METHOD__ );
-	while( $row = $dbBackground->fetchObject( $result ) ) {
+	while ( $row = $dbBackground->fetchObject( $result ) ) {
 		$name = $row->gn_name;
 		$central = new CentralAuthUser( $name );
-		if( $central->storeAndMigrate() ) {
+		if ( $central->storeAndMigrate() ) {
 			$migrated++;
 		}
-		if( ++$total % $chunkSize == 0 ) {
+		if ( ++$total % $chunkSize == 0 ) {
 			migratePassOneReport( $migrated, $total, $start );
 		}
 	}

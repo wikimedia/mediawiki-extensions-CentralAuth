@@ -1,5 +1,4 @@
 <?php
-
 # This file is part of MediaWiki.
 
 # MediaWiki is free software: you can redistribute it and/or modify
@@ -22,7 +21,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	echo "CentralAuth extension\n";
 	exit( 1 );
 }
-
 
 class SpecialGlobalGroupPermissions extends SpecialPage {
 	function __construct() {

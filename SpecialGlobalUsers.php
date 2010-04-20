@@ -1,7 +1,6 @@
 <?php
 
 class SpecialGlobalUsers extends SpecialPage {
-
 	function __construct() {
 		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		parent::__construct( 'GlobalUsers' );
@@ -13,13 +12,13 @@ class SpecialGlobalUsers extends SpecialPage {
 
 		$pg = new GlobalUsersPager();
 
-		if( $par ) {
+		if ( $par ) {
 			$pg->setGroup( $par );
 		}
-		if( $rqGroup = $wgRequest->getVal( 'group' ) ) {
+		if ( $rqGroup = $wgRequest->getVal( 'group' ) ) {
 			$pg->setGroup( $rqGroup );
 		}
-		if( $rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) ) ) {
+		if ( $rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) ) ) {
 			$pg->setUsername( $rqUsername );
 		}
 
@@ -39,12 +38,12 @@ class GlobalUsersPager extends UsersPager {
 	}
 
 	function setGroup( $group = '' ) {
-		if( !$group ) {
+		if ( !$group ) {
 			$this->mGroup = false;
 			return;
 		}
 		$groups = array_keys( $this->getAllGroups() );
-		if( in_array( $group, $groups ) ) {
+		if ( in_array( $group, $groups ) ) {
 			$this->mGroup = $group;
 		} else {
 			$this->mGroup = false;
@@ -52,7 +51,7 @@ class GlobalUsersPager extends UsersPager {
 	}
 
 	function setUsername( $username = '' ) {
-		if( !$username ) {
+		if ( !$username ) {
 			$this->mUsername = false;
 			return;
 		}
@@ -65,8 +64,9 @@ class GlobalUsersPager extends UsersPager {
 
 	function getDefaultQuery() {
 		$query = parent::getDefaultQuery();
-		if( !isset( $query['group'] ) && $this->mGroup )
+		if ( !isset( $query['group'] ) && $this->mGroup ) {
 			$query['group'] = $this->mGroup;
+		}
 		return $this->mDefaultQuery = $query;
 
 	}
@@ -75,11 +75,13 @@ class GlobalUsersPager extends UsersPager {
 		$localwiki = wfWikiID();
 		$conds = array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE );
 
-		if( $this->mGroup )
+		if ( $this->mGroup ) {
 			$conds['gug_group'] = $this->mGroup;
+		}
 
-		if( $this->mUsername )
+		if ( $this->mUsername ) {
 			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->mUsername );
+		}
 
 		return array(
 			'tables' => " (globaluser LEFT JOIN localuser ON gu_name = lu_name AND lu_wiki = '{$localwiki}') LEFT JOIN global_user_groups ON gu_id = gug_user ",
@@ -98,9 +100,10 @@ class GlobalUsersPager extends UsersPager {
 		global $wgLang;
 		$user = htmlspecialchars( $row->gu_name );
 		$info = array();
-		if( $row->gu_locked )
+		if ( $row->gu_locked ) {
 			$info[] = wfMsgHtml( 'centralauth-listusers-locked' );
-		if( $row->lu_attached_method ) {
+		}
+		if ( $row->lu_attached_method ) {
 			$userPage = Title::makeTitle( NS_USER, $row->gu_name );
 			$text = wfMsgHtml( 'centralauth-listusers-attached' );
 			$info[] = $this->getSkin()->makeLinkObj( $userPage, $text );
@@ -108,7 +111,7 @@ class GlobalUsersPager extends UsersPager {
 			$info[] = wfMsgHtml( 'centralauth-listusers-nolocal' );
 		}
 		$groups = $this->getUserGroups( $row );
-		if( $groups ) {
+		if ( $groups ) {
 			$info[] = $groups;
 		}
 		$info = $wgLang->commaList( $info );
@@ -116,7 +119,7 @@ class GlobalUsersPager extends UsersPager {
 	}
 
 	function getBody() {
-		if (!$this->mQueryDone) {
+		if ( !$this->mQueryDone ) {
 			$this->doQuery();
 		}
 		$batch = new LinkBatch;
@@ -132,21 +135,23 @@ class GlobalUsersPager extends UsersPager {
 	}
 
 	function getUserGroups( $row ) {
-		if( !$row->gug_numgroups )
+		if ( !$row->gug_numgroups ) {
 			return false;
-		if( $row->gug_numgroups == 1 ) {
+		}
+		if ( $row->gug_numgroups == 1 ) {
 			return self::buildGroupLink( $row->gug_singlegroup );
 		}
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
 		$rights = array();
-		while( $row2 = $this->mDb->fetchObject( $result ) )
+		while ( $row2 = $this->mDb->fetchObject( $result ) ) {
 			$rights[] = self::buildGroupLink( $row2->gug_group );
+		}
 		return implode( ', ', $rights );
 	}
 
 	function getAllGroups() {
 		$result = array();
-		foreach( CentralAuthUser::availableGlobalGroups() as $group ) {
+		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
 			$result[$group] = User::getGroupName( $group );
 		}
 		return $result;

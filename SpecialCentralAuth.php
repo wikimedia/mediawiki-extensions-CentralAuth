@@ -4,7 +4,7 @@ class SpecialCentralAuth extends SpecialPage {
 	var $mGlobalUser, $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
 
 	function __construct() {
-		wfLoadExtensionMessages('SpecialCentralAuth');
+		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		parent::__construct( 'CentralAuth' );
 	}
 
@@ -62,7 +62,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		$continue = true;
-		if( $this->mCanEdit && $this->mPosted ) {
+		if ( $this->mCanEdit && $this->mPosted ) {
 			$continue = $this->doSubmit();
 		}
 
@@ -72,11 +72,11 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->showUsernameForm();
 		if ( $continue ) {
 			$this->showInfo();
-			if( $this->mCanLock )
+			if ( $this->mCanLock )
 				$this->showStatusForm();
-			if( $this->mCanUnmerge )
+			if ( $this->mCanUnmerge )
 				$this->showActionForm( 'delete' );
-			if( $this->mCanEdit )
+			if ( $this->mCanEdit )
 				$this->showLogExtract();
 			$this->showWikiLists();
 		}
@@ -89,7 +89,7 @@ class SpecialCentralAuth extends SpecialPage {
 		global $wgUser, $wgOut, $wgRequest;
 		if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$this->showError( 'centralauth-token-mismatch' );
-		} elseif( $this->mMethod == 'unmerge' && $this->mCanUnmerge ) {
+		} elseif ( $this->mMethod == 'unmerge' && $this->mCanUnmerge ) {
 			$status = $globalUser->adminUnattach( $this->mWikis );
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
@@ -123,22 +123,22 @@ class SpecialCentralAuth extends SpecialPage {
 				CentralAuthUser::HIDDEN_NONE,
 				CentralAuthUser::HIDDEN_LISTS,
 				CentralAuthUser::HIDDEN_OVERSIGHT );
-			if( !in_array( $setHidden, $hiddenLevels ) )
+			if ( !in_array( $setHidden, $hiddenLevels ) )
 				$setHidden = '';
 
 			if ( !$isLocked && $setLocked ) {
 				$lockStatus = $globalUser->adminLock();
 				$added[] = wfMsgForContent( 'centralauth-log-status-locked' );
-			} elseif( $isLocked && !$setLocked ) {
+			} elseif ( $isLocked && !$setLocked ) {
 				$lockStatus = $globalUser->adminUnlock();
 				$removed[] = wfMsgForContent( 'centralauth-log-status-locked' );
 			}
 
 			$reason = $wgRequest->getText( 'wpReasonList' );
 			$reasonDetail = $wgRequest->getText( 'wpReason' );
-			if( $reason == 'other' ) {
+			if ( $reason == 'other' ) {
 				$reason = $reasonDetail;
-			} elseif( $reasonDetail ) {
+			} elseif ( $reasonDetail ) {
 				$reason .= wfMsgForContent( 'colon-separator' ) . $reasonDetail;
 			}
 
@@ -152,31 +152,31 @@ class SpecialCentralAuth extends SpecialPage {
 						break;
 					case CentralAuthUser::HIDDEN_LISTS:
 						$added[] = wfMsgForContent( 'centralauth-log-status-hidden' );
-						if( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
+						if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
 							$removed[] = wfMsgForContent( 'centralauth-log-status-oversighted' );
 						break;
 					case CentralAuthUser::HIDDEN_OVERSIGHT:
 						$added[] = wfMsgForContent( 'centralauth-log-status-oversighted' );
-						if( $oldHiddenLevel == CentralAuthUser::HIDDEN_LISTS )
+						if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_LISTS )
 							$removed[] = wfMsgForContent( 'centralauth-log-status-hidden' );
 						break;
 				}
 
-				if( $setHidden == CentralAuthUser::HIDDEN_OVERSIGHT )
+				if ( $setHidden == CentralAuthUser::HIDDEN_OVERSIGHT )
 					$globalUser->suppress( $reason );
-				elseif( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
+				elseif ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
 					$globalUser->unsuppress( $reason );
 			}
 
 			$good =
-				( is_null($lockStatus) || $lockStatus->isGood() ) &&
-				( is_null($hideStatus) || $hideStatus->isGood() );
+				( is_null( $lockStatus ) || $lockStatus->isGood() ) &&
+				( is_null( $hideStatus ) || $hideStatus->isGood() );
 
 			// Logging etc
-			if ( $good && (count($added) || count($removed)) ) {
-				$added = count($added) ?
+			if ( $good && ( count( $added ) || count( $removed ) ) ) {
+				$added = count( $added ) ?
 					implode( ', ', $added ) : wfMsgForContent( 'centralauth-log-status-none' );
-				$removed = count($removed) ?
+				$removed = count( $removed ) ?
 					implode( ', ', $removed ) : wfMsgForContent( 'centralauth-log-status-none' );
 
 				$this->logAction(
@@ -187,11 +187,11 @@ class SpecialCentralAuth extends SpecialPage {
 									$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT
 								);
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
-			} elseif (!$good) {
-				if ( !is_null($lockStatus) && !$lockStatus->isGood() ) {
+			} elseif ( !$good ) {
+				if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
 					$this->showStatusError( $lockStatus->getWikiText() );
 				}
-				if ( !is_null($hideStatus) && !$hideStatus->isGood() ) {
+				if ( !is_null( $hideStatus ) && !$hideStatus->isGood() ) {
 					$this->showStatusError( $hideStatus->getWikiText() );
 				}
 			}
@@ -253,11 +253,11 @@ class SpecialCentralAuth extends SpecialPage {
 			'days' => 30.417,
 			'months' => 12,
 			'years' => 1 );
-		foreach( $units as $unit => $chunk ) {
+		foreach ( $units as $unit => $chunk ) {
 			// Used messaged (to make sure that grep finds them):
 			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
 			// 'centralauth-days-ago', 'centralauth-months-ago', 'centralauth-years-ago'
-			if( $span < 2*$chunk ) {
+			if ( $span < 2 * $chunk ) {
 				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $wgLang->formatNum( $span ) );
 			}
 			$span = $wgLang->formatNum( intval( $span / $chunk ) );
@@ -280,7 +280,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() ) );
 		$out = '<fieldset id="mw-centralauth-info">';
 		$out .= '<legend>' . wfMsgHtml( 'centralauth-admin-info-header' ) . '</legend>';
-		foreach( $attribs as $tag => $data ) {
+		foreach ( $attribs as $tag => $data ) {
 			$out .= '<p><strong>' . wfMsgHtml( "centralauth-admin-info-$tag" ) . '</strong> ' .
 				htmlspecialchars( $data ) . '</p>';
 		}
@@ -300,7 +300,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$wgOut->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		$wgOut->addHTML( $this->listHeader() );
 		$wgOut->addHTML( $this->listMerged( $merged ) );
-		if( $remainder )
+		if ( $remainder )
 			$wgOut->addHTML( $this->listRemainder( $remainder ) );
 		$wgOut->addHTML( $this->listFooter() );
 		$wgOut->addHTML( '</fieldset>' );
@@ -320,18 +320,18 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) . "\n" .
 			'<thead><tr>' .
 				( $this->mCanUnmerge ? '<th></th>' : '' ) .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-localwiki' ) . '</th>'.
+				'<th>' . wfMsgHtml( 'centralauth-admin-list-localwiki' ) . '</th>' .
 				'<th>' . wfMsgHtml( 'centralauth-admin-list-attached-on' ) . '</th>' .
 				'<th>' . wfMsgHtml( 'centralauth-admin-list-method' ) . '</th>' .
 				'<th>' . wfMsgHtml( 'centralauth-admin-list-blocked' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-editcount' ) . '</th>'.
+				'<th>' . wfMsgHtml( 'centralauth-admin-list-editcount' ) . '</th>' .
 			'</tr></thead>' .
 			'<tbody>';
 	}
 
 	function listFooter() {
 		$footer = '';
-		if( $this->mCanUnmerge )
+		if ( $this->mCanUnmerge )
 			$footer .=
 				'<tr>' .
 				'<td style="border-right: none"></td>' .
@@ -364,7 +364,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function listMergedWikiItem( $row ) {
 		global $wgLang;
 		return '<tr>' .
-			( $this->mCanUnmerge ? '<td>' . $this->adminCheck( $row['wiki'] ) . '</td>' : '' ).
+			( $this->mCanUnmerge ? '<td>' . $this->adminCheck( $row['wiki'] ) . '</td>' : '' ) .
 			'<td>' . $this->foreignUserLink( $row['wiki'] ) . '</td>' .
 			'<td>' .
 				// invisible, to make this column sortable
@@ -388,8 +388,8 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function formatBlockStatus( $row ) {
-		if( $row['blocked'] ) {
-			if( $row['block-expiry'] == 'infinity' ) {
+		if ( $row['blocked'] ) {
+			if ( $row['block-expiry'] == 'infinity' ) {
 			$reason = $row['block-reason'];
 				return wfMsgExt( 'centralauth-admin-blocked-indef', 'parseinline', array( $reason ) );
 			} else {
@@ -444,13 +444,13 @@ class SpecialCentralAuth extends SpecialPage {
 			$wiki = $wikiID;
 		} else {
 			$wiki = WikiMap::getWiki( $wikiID );
-			if( !$wiki ) {
+			if ( !$wiki ) {
 				throw new MWException( "Invalid wiki: $wikiID" );
 			}
 		}
 
 		$url = $wiki->getUrl( $title );
-		if( $params )
+		if ( $params )
 			$url .= '?' . $params;
 		return Xml::element( 'a',
 			array(
@@ -462,7 +462,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
-		if( !$wiki ) {
+		if ( !$wiki ) {
 			throw new MWException( "Invalid wiki: $wikiID" );
 		}
 
@@ -538,7 +538,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'mw-centralauth-status-hidden-list',
 				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_LISTS ) .
 			'<br />';
-		if( $this->mCanOversight ) {
+		if ( $this->mCanOversight ) {
 			$radioHidden .= Xml::radioLabel(
 				wfMsgExt( 'centralauth-admin-status-hidden-oversight', array( 'parseinline' ) ),
 				'wpStatusHidden',
@@ -589,14 +589,14 @@ class SpecialCentralAuth extends SpecialPage {
 			Title::newFromText( "User:{$user}@global" )->getPrefixedText(),
 			'',
 			array( 'showIfEmpty' => true ) );
-		if( $numRows ) {
+		if ( $numRows ) {
 			$wgOut->addHTML( Xml::fieldset( wfMsg( 'centralauth-admin-logsnippet' ), $text ) );
 		}
 	}
 
 	function determineHomeWiki() {
-		foreach( $this->mAttachedLocalAccounts as $wiki => $acc ) {
-			if( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
+		foreach ( $this->mAttachedLocalAccounts as $wiki => $acc ) {
+			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
 				return $wiki;
 			}
 		}
@@ -607,7 +607,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function evaluateTotalEditcount() {
 		$total = 0;
-		foreach( $this->mAttachedLocalAccounts as $acc ) {
+		foreach ( $this->mAttachedLocalAccounts as $acc ) {
 			$total += $acc['editCount'];
 		}
 		return $total;
@@ -616,7 +616,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function addMergeMethodDescriptions() {
 		global $wgOut, $wgLang;
 		$js = "wgMergeMethodDescriptions = {\n";
-		foreach( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
+		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
 			$short = Xml::encodeJsVar( $wgLang->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
 			$desc = Xml::encodeJsVar( wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" ) );
 			$js .= "\t'{$method}' : { 'short' : {$short}, 'desc' : {$desc} },\n";

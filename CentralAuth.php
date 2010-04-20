@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Extension credits
  */
@@ -24,10 +23,10 @@ $wgExtensionCredits['specialpage'][] = array(
  *
  * If this is not on the primary database connection, don't forget
  * to also set up $wgDBservers to have an entry with a groupLoads
- * setting for the 'CentralAuth' group. Alternatively you can use 
+ * setting for the 'CentralAuth' group. Alternatively you can use
  * $wgLBFactoryConf to set up an LBFactory_Multi object.
  *
- * To use a database with a table prefix, set this variable to 
+ * To use a database with a table prefix, set this variable to
  * "{$database}-{$prefix}".
  */
 $wgCentralAuthDatabase = 'centralauth';
@@ -84,15 +83,15 @@ $wgCentralAuthCookieDomain = '';
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
 /**
- * List of wiki IDs which should be called on login/logout to set third-party 
+ * List of wiki IDs which should be called on login/logout to set third-party
  * cookies for the global session state.
  *
- * The wiki ID is typically the database name, except when table prefixes are 
- * used, in which case it is the database name, a hyphen separator, and then 
+ * The wiki ID is typically the database name, except when table prefixes are
+ * used, in which case it is the database name, a hyphen separator, and then
  * the table prefix.
  *
- * This allows a farm with multiple second-level domains to set up a global 
- * session on all of them by hitting one wiki from each domain 
+ * This allows a farm with multiple second-level domains to set up a global
+ * session on all of them by hitting one wiki from each domain
  * (en.wikipedia.org, en.wikinews.org, etc).
  *
  * Done by $wgCentralAuthLoginIcon from Special:AutoLogin on each wiki.
@@ -238,26 +237,32 @@ $wgLogActions['suppress/setstatus'] = 'centralauth-log-entry-chgstatus';
 
 $wgLogTypes[]                          = 'gblrights';
 $wgLogNames['gblrights']               = 'centralauth-rightslog-name';
-$wgLogHeaders['gblrights']	           = 'centralauth-rightslog-header';
+$wgLogHeaders['gblrights']             = 'centralauth-rightslog-header';
 $wgLogActions['gblrights/usergroups']  = 'centralauth-rightslog-entry-usergroups';
 $wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms';
 $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms2';
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
-foreach( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type )
+
+foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
 
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
-	wfLoadExtensionMessages('SpecialCentralAuth');
+	wfLoadExtensionMessages( 'SpecialCentralAuth' );
 	$link = $skin ? $skin->makeLinkObj( $title, $params[0] ) : $params[0];
-	if( $action == 'newset' )
+	if ( $action == 'newset' ) {
 		$args = array( WikiSet::formatType( $params[1] ), $params[2] );
-	if( $action == 'setrename' )
+	}
+	if ( $action == 'setrename' ) {
 		$args = array( $params[1] );
-	if( $action == 'setnewtype' )
+	}
+	if ( $action == 'setnewtype' ) {
 		$args = array( WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) );
-	if( $action == 'setchange' )
+	}
+	if ( $action == 'setchange' ) {
 		$args = array( $params[1] ? $params[1] : wfMsg( 'rightsnone' ), $params[2] ? $params[2] : wfMsg( 'rightsnone' ) );
-	if( $action == 'deleteset' )
+	}
+	if ( $action == 'deleteset' ) {
 		$args = array();
+	}
 	return wfMsgReal( "centralauth-rightslog-entry-{$action}", array_merge( array( $link ), $args ), true, !$skin );
 }

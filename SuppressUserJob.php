@@ -15,7 +15,7 @@ class CentralAuthSuppressUserJob extends Job {
 	public function __construct( $title, $params ) {
 		parent::__construct( 'crosswikiSuppressUser', $title, $params );
 	}
-	
+
 	/**
 	 * Execute the job
 	 *
@@ -24,11 +24,11 @@ class CentralAuthSuppressUserJob extends Job {
 	public function run() {
 		extract( $this->params );
 		$user = new CentralAuthUser( $username );
-		if( !$user->exists() ) {
+		if ( !$user->exists() ) {
 			wfDebugLog( 'suppressjob', "Requested to suppress non-existent user {$username} by {$by}." );
 		}
 
-		foreach( $wikis as $wiki ) {
+		foreach ( $wikis as $wiki ) {
 			$user->doLocalSuppression( $suppress, $wiki, $by, $reason );
 			wfDebugLog( 'suppressjob', ( $suppress ? 'S' : 'Uns' ) . "uppressed {$username} at {$wiki} by {$by} via job queue." );
 		}

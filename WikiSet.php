@@ -36,20 +36,24 @@ class WikiSet {
 	public function setWikisRaw( $w, $commit = false ) { return $this->setDbField( 'ws_wikis', $w, $commit ); }
 	public function getType() { return $this->mType; }
 	public function setType( $t, $commit = false ) {
-		if( !in_array( $t, array( self::OPTIN, self::OPTOUT ) ) )
+		if ( !in_array( $t, array( self::OPTIN, self::OPTOUT ) ) ) {
 			return false;
+		}
 		return $this->setDbField( 'ws_type', $t, $commit );
 	}
 	protected function setDbField( $field, $value, $commit ) {
 		$map = array( 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' );
 		$mname = $map[$field];
 		$this->$mname = $value;
-		if( $commit )
+		if ( $commit ) {
 			$this->commit();
+		}
 	}
 
 	public static function newFromRow( $row ) {
-		if( !$row ) return null;
+		if ( !$row ) {
+			return null;
+		}
 		return new WikiSet(
 			$row->ws_name,
 			$row->ws_type,
@@ -59,13 +63,13 @@ class WikiSet {
 	}
 
 	public static function newFromName( $name, $useCache = true ) {
-		if( $useCache ) {
+		if ( $useCache ) {
 			global $wgMemc;
 			$data = $wgMemc->get( self::memcKey( "name:" . md5( $name ) ) );
-			if( $data ) {
-				if( $data['mVersion'] == self::VERSION ) {
+			if ( $data ) {
+				if ( $data['mVersion'] == self::VERSION ) {
 					$ws = new WikiSet( null, null, null );
-					foreach( $data as $key => $val ) 
+					foreach ( $data as $key => $val )
 						$ws->$key = $val;
 					return $ws;
 				}
@@ -75,21 +79,22 @@ class WikiSet {
 		$row = $dbr->selectRow(
 			'wikiset', '*', array( 'ws_name' => $name ), __METHOD__
 		);
-		if( !$row )
+		if ( !$row ) {
 			return null;
+		}
 		$ws = self::newFromRow( $row );
 		$ws->saveToCache();
 		return $ws;
 	}
 
 	public static function newFromID( $id, $useCache = true ) {
-		if( $useCache ) {
+		if ( $useCache ) {
 			global $wgMemc;
 			$data = $wgMemc->get( self::memcKey( $id ) );
-			if( $data ) {
-				if( $data['mVersion'] == self::VERSION ) {
+			if ( $data ) {
+				if ( $data['mVersion'] == self::VERSION ) {
 					$ws = new WikiSet( null, null, null );
-					foreach( $data as $name => $val ) 
+					foreach ( $data as $name => $val )
 						$ws->$name = $val;
 					return $ws;
 				}
@@ -99,8 +104,9 @@ class WikiSet {
 		$row = $dbr->selectRow(
 			'wikiset', '*', array( 'ws_id' => $id ), __METHOD__
 		);
-		if( !$row )
+		if ( !$row ) {
 			return null;
+		}
 		$ws = self::newFromRow( $row );
 		$ws->saveToCache();
 		return $ws;
@@ -117,8 +123,9 @@ class WikiSet {
 			), __METHOD__
 		);
 		$dbw->commit();
-		if( !$this->mId )
+		if ( !$this->mId ) {
 			$this->mId = $dbw->insertId();
+		}
 		$this->purge();
 		return (bool)$dbw->affectedRows();
 	}
@@ -140,22 +147,24 @@ class WikiSet {
 	public function saveToCache() {
 		global $wgMemc;
 		$data = array();
-		foreach( self::$mCacheVars as $var ) {
+		foreach ( self::$mCacheVars as $var ) {
 			$data[$var] = $this->$var;
 		}
 		$wgMemc->set( self::memcKey( $this->mId ), $data );
 	}
 
 	public function getWikis() {
-		if( $this->mType == self::OPTIN ) 
+		if ( $this->mType == self::OPTIN ) {
 			return $this->mWikis;
+		}
 		else
 			return array_diff( CentralAuthUser::getWikiList(), $this->mWikis );
 	}
 
 	public function inSet( $wiki = '' ) {
-		if( !$wiki )
+		if ( !$wiki ) {
 			$wiki = wfWikiID();
+		}
 		return in_array( $wiki, $this->getWikis() );
 	}
 
@@ -165,8 +174,9 @@ class WikiSet {
 			'global_group_restrictions', '*', array( 'ggr_set' => $this->mId ), __METHOD__
 		);
 		$result = array();
-		foreach( $r as $row )
+		foreach ( $r as $row ) {
 			$result[] = $row->ggr_group;
+		}
 		return $result;
 	}
 
@@ -174,8 +184,9 @@ class WikiSet {
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$res = $dbr->select( 'wikiset', '*', false, __METHOD__ );
 		$result = array();
-		while( $row = $dbr->fetchObject( $res ) )
+		while ( $row = $dbr->fetchObject( $res ) ) {
 			$result[] = self::newFromRow( $row );
+		}
 		return $result;
 	}
 

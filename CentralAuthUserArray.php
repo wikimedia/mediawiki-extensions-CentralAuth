@@ -17,7 +17,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		}
 
 		/**
-		 * Load global user data 
+		 * Load global user data
 		 */
 		$names = array();
 		foreach ( $res as $row ) {
@@ -27,7 +27,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$caRes = $dbr->select( array( 'localuser', 'globaluser' ), '*',
-			array( 
+			array(
 				'gu_name' => $names,
 				'lu_name=gu_name',
 				'lu_wiki' => wfWikiID()
@@ -36,7 +36,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		foreach ( $caRes as $row ) {
 			$this->globalData[$row->gu_name] = $row;
 		}
-		wfDebug( __METHOD__.': got user data for ' . implode( ', ', 
+		wfDebug( __METHOD__ . ': got user data for ' . implode( ', ',
 			array_keys( $this->globalData ) ) . "\n" );
 	}
 
@@ -49,4 +49,3 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		}
 	}
 }
-
