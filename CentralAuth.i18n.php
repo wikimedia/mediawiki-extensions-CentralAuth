@@ -2021,6 +2021,7 @@ $messages['be-tarask'] = array(
 	'centralauth-prefs-count-unattached' => 'Непацьверджаныя рахункі з Вашым імем застаюцца ў $1 {{PLURAL:$1|праекце|праектах|праектах}}.',
 	'centralauth-prefs-detail-unattached' => 'Гэты праект ня быў пацьверджаны як належачы да Вашага глябальнага рахунку.',
 	'centralauth-prefs-manage' => 'Кіраваньне Вашым глябальным рахункам',
+	'centralauth-prefs-view' => 'Паказаць глябальную інфармацыю пра ўдзельніка',
 	'centralauth-renameuser-merged' => 'Удзельнік $1 перайшоў на глябальную сыстэму ўваходу. Яго перайменаваньне выкліча страту сувязі лякальнага рахунку з глябальным.',
 	'centralauth-renameuser-reserved' => 'Імя ўдзельніка $2 зарэзэрваванае для глябальнага рахунку.',
 	'centralauth-invalid-wiki' => 'Не існуе такой базы зьвестак вікі: $1',
@@ -4080,6 +4081,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
 	'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
 	'centralauth-prefs-manage' => 'Globales Benutzerkonto verwalten',
+	'centralauth-prefs-view' => 'Informationen zum globalen Benutzerkonto ansehen',
 	'centralauth-renameuser-merged' => 'Der Benutzer „$1“ wurde bereits in das globale Benutzerkonten-System übernommen.
 Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkonten-System.',
 	'centralauth-renameuser-reserved' => 'Der Benutzer „$2“ ist als globales Benutzerkonto reserviert.',
@@ -6637,6 +6639,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-prefs-count-unattached' => 'Il subsiste $1 projet{{PLURAL:$1||s}} disposant d’un compte non confirmé à votre nom.',
 	'centralauth-prefs-detail-unattached' => 'Ce site de projet n’a pas été confirmé comme appartenant au compte global.',
 	'centralauth-prefs-manage' => 'Gérer le compte global',
+	'centralauth-prefs-view' => 'Voir les informations globales sur l’utilisateur',
 	'centralauth-renameuser-merged' => 'L’utilisateur $1 a été migré vers le système d’identification unifiée. Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-renameuser-reserved' => 'L’utilisateur $2 est réservé pour un compte global.',
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
@@ -9195,6 +9198,7 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 	'centralauth-prefs-count-unattached' => 'In $1 {{PLURAL:$1|projecto|projectos}} remane ancora contos non confirmate con le mesme nomine de usator que le tue.',
 	'centralauth-prefs-detail-unattached' => 'Iste sito de projecto non ha essite confirmate como pertinente al conto global.',
 	'centralauth-prefs-manage' => 'Gerer tu conto global',
+	'centralauth-prefs-view' => 'Vider info del usator global',
 	'centralauth-renameuser-merged' => 'Le usator $1 ha essite migrate verso le systema de contos unificate.
 Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-renameuser-reserved' => 'Le nomine de usator $2 es reservate pro un conto global.',
@@ -13934,6 +13938,7 @@ $messages['mt'] = array(
 	'centralauth-prefs-status' => 'Stat tal-kont globali:',
 	'centralauth-prefs-not-managed' => 'Il-kont unifikat mhuwiex fl-użu',
 	'centralauth-prefs-manage' => 'Ġestjoni tal-kont globali',
+	'centralauth-login-progress' => 'Login effettwat fil-proġetti l-oħra tal-{{int:Centralauth-groupname}}:',
 	'centralauth-log-header' => 'Dan ir-reġistru jinvolvi operazzjonijiet fuq il-kontijiet globali: tħassir, blokki u żblokki.',
 	'centralauth-rightslog-header' => "Dan ir-reġistru jinkludi operazzjonijiet fuq il-gruppi globali: tibdil fis-sħubija u l-permessi mogħtija 'l-gruppi",
 );
