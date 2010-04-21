@@ -5272,6 +5272,7 @@ La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunig
 	'centralauth-prefs-count-unattached' => 'Nekonfirmitaj kontoj kun via nomo restas sur $1 {{PLURAL:$1|projekto|projektoj}}.',
 	'centralauth-prefs-detail-unattached' => 'Ĉi tiu projekta paĝaro ne estis konfirmita kiel aparteanta al la unuigita salutsistemo.',
 	'centralauth-prefs-manage' => 'Prizorgi vian unuigitan konton',
+	'centralauth-prefs-view' => 'Vidi la ĝeneralan informon pri uzanto',
 	'centralauth-renameuser-merged' => 'Uzanto $1 estis migrita al la unuigita salutsistemo.
 Renomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzanton.',
 	'centralauth-renameuser-reserved' => 'Uzanto $2 estas rezerva por ĝenerala konto.',
@@ -5385,6 +5386,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Ascánder
  * @author Crazymadlover
  * @author Dferg
  * @author Drini
@@ -5584,6 +5586,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-prefs-count-unattached' => 'Cuentas no confirmadas con su nombre permanecen en $1 {{PLURAL:$1|proyecto|proyectos}}.',
 	'centralauth-prefs-detail-unattached' => 'No se ha confirmado que este sitio de proyecto es de la cuenta global.',
 	'centralauth-prefs-manage' => 'Gestiona tu cuenta global',
+	'centralauth-prefs-view' => 'Ver información global del usuario',
 	'centralauth-renameuser-merged' => 'El usuario $1 ha sido migrado al sistema unificado de autenticación.
 Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-renameuser-reserved' => 'El usuario $2 está reservado en una cuenta global.',
@@ -5858,9 +5861,6 @@ Rühma kustutamiseks tuleb sellelt kõik õigused eemaldada.',
 	'centralauth-editgroup-success-text' => 'Oled edukalt rühma $1 õigused muutnud.
 [[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muuda]])',
-	'centralauth-editset-intro' => 'Järgnevad vikikomplektid on juba loodud.
-Võid neid kõiki vaadata või muuta või uue komplekti luua.',
-	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|vaata/muuda]])',
 	'centralauth-editset-notfound' => 'Vikikomplekti "$1" ei leidu.',
 	'centralauth-editset-name' => 'Nimi:',
 	'centralauth-editset-type' => 'Tüüp:',
@@ -5880,6 +5880,7 @@ Võid neid kõiki vaadata või muuta või uue komplekti luua.',
 /** Basque (Euskara)
  * @author An13sa
  * @author Bengoa
+ * @author Joxemai
  * @author Kobazulo
  */
 $messages['eu'] = array(
@@ -5922,6 +5923,7 @@ $messages['eu'] = array(
 	'centralauth-years-ago' => 'Orain dela {{PLURAL:$1|urte bat|$1 urte}}',
 	'centralauth-prefs-unattached' => 'Baieztatu gabe',
 	'centralauth-prefs-complete' => 'Dena behar bezala dago!',
+	'centralauth-log-status-locked' => 'blokeatua',
 	'centralauth-log-status-hidden' => 'ezkutatua',
 	'centralauth-rightslog-name' => 'Eskubide orokorren erregistroa',
 	'autologin' => 'Saio hasiera automatikoa',
@@ -5937,6 +5939,9 @@ $messages['eu'] = array(
 	'centralauth-editset-wikis' => 'Wikiak:',
 	'centralauth-editset-reason' => 'Arrazoia:',
 	'centralauth-editset-submit' => 'Bidali',
+	'centralauth-editset-submit-delete' => 'Ezabatu',
+	'centralauth-editset-nowikis' => 'Ez da fitxategirik zehaztu.',
+	'centralauth-editset-usage' => 'Sail hauetan erabilia:',
 );
 
 /** Extremaduran (Estremeñu)
@@ -7532,6 +7537,7 @@ D Passwerter fir di lokale Benutzerkonte wäre zruckgsetzt uf s urspringli Passw
 	'centralauth-prefs-count-unattached' => 'S git in $1 {{PLURAL:$1|Projäkt|Projäkt}} nit bstätigti Benutzerkonte mit Dyynem Name.',
 	'centralauth-prefs-detail-unattached' => 'Fir des Projäkt git s kei Bstätigung fir s zämmegfiert Benutzerkonto.',
 	'centralauth-prefs-manage' => 'Zämmegfiert Benutzerkonto verwalte',
+	'centralauth-prefs-view' => 'Informatione zum globale Benutzerkonto aaluege',
 	'centralauth-renameuser-merged' => '„Benutzer:$1“ isch scho in s wältwyt Benutzerkonte-Syschtem ibernuh wore. E Umnännig nimmt s lokal Benutzerkonto us em wältwyte Benutzerkonte-Syschtem use.',
 	'centralauth-renameuser-reserved' => '„Benutzer:$2“ isch as wältwyt Benutzerkonto reserviert.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datebank git s nit: $1',
@@ -10111,6 +10117,7 @@ $messages['ja'] = array(
 	'centralauth-prefs-count-unattached' => '同じ利用者名を持つ未統合のアカウントが$1{{PLURAL:$1|プロジェクト}}にあります。',
 	'centralauth-prefs-detail-unattached' => 'このプロジェクトサイトはまだ統一アカウントに承認されていません。',
 	'centralauth-prefs-manage' => '統一アカウントの管理',
+	'centralauth-prefs-view' => 'グローバル利用者情報を表示',
 	'centralauth-renameuser-merged' => '利用者$1は統一ログインシステムに移行しています。利用者名を変更するとグローバルアカウントからローカルのアカウントが切り離されます。',
 	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントで使用されています。',
 	'centralauth-invalid-wiki' => 'ウィキ・データベースが見つかりません: $1',
@@ -11614,7 +11621,7 @@ $messages['krc'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|тюрлендир]])',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -15947,6 +15954,7 @@ Le ciav për ij cont locaj creà prima dl'unificassion a tornëran ai sò valor 
 	'centralauth-prefs-count-unattached' => 'A resto dij cont nen confermà con sò stranòm ansima a $1 {{PLURAL:$1|proget|proget}}.',
 	'centralauth-prefs-detail-unattached' => "Ës sit-sì a l'é pa restà confermà coma bon për sò cont global.",
 	'centralauth-prefs-manage' => 'Gestion ëd sò cont global',
+	'centralauth-prefs-view' => "Vardé j'anformassion globaj an sl'utent",
 	'centralauth-renameuser-merged' => "L'utent $1 a l'é stàit migrà al sistema d'intrada unificà.
 Arnomélo a farà sì che ël cont local a sia dëstacà da col global.",
 	'centralauth-renameuser-reserved' => "L'utent $2 a l'é arzervà për un cont global.",
@@ -16302,6 +16310,7 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-prefs-count-unattached' => 'Ainda {{PLURAL:$1|existe uma conta não confirmada|existem contas não confirmadas}} com o seu nome de utilizador {{PLURAL:$1|numa wiki|em $1 wikis}}.',
 	'centralauth-prefs-detail-unattached' => 'Não foi confirmado que esta wiki esteja acoplada à conta global.',
 	'centralauth-prefs-manage' => 'Administrar a sua conta global',
+	'centralauth-prefs-view' => 'Ver informação global dos utilizadores',
 	'centralauth-renameuser-merged' => 'O utilizador $1 foi migrado para o sistema de autenticação unificada.
 Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-renameuser-reserved' => 'O nome de utilizador $2 está reservado para uma conta global.',
