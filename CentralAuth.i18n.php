@@ -12771,6 +12771,7 @@ $messages['ltg'] = array(
 );
 
 /** Latvian (Latviešu)
+ * @author Papuass
  * @author Xil
  * @author Yyy
  */
@@ -12814,12 +12815,17 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-merge-method-primary' => 'Mājas wiki',
 	'centralauth-merge-method-mail' => 'Apstiprināts ar e-pastu',
 	'centralauth-merge-method-password' => 'Apstiprināts ar paroli',
-	'centralauth-merge-method-login' => 'Apstiprināts ieejot',
+	'centralauth-merge-method-login' => 'izveidots ieejot',
 	'centralauth-finish-title' => 'Pabeigt apvienošanu',
 	'centralauth-finish-text' => 'Ja šie konti pieder tev, tu vari pabeigt kontu apvienošanu vienkārši šeit ierakstot to kontu paroli:',
 	'centralauth-finish-password' => 'Parole:',
 	'centralauth-finish-login' => 'Aiziet!',
 	'centralauth-finish-send-confirmation' => 'Aizsūtīt paroli uz e-pastu',
+	'centralauth-attach-submit' => 'Migrēt kontu',
+	'centralauth' => 'Globālo lietotāju pārvaldnieks',
+	'centralauth-admin-info-id' => 'Lietotāja ID:',
+	'centralauth-admin-yes' => 'jā',
+	'centralauth-admin-no' => 'nē',
 	'centralauth-admin-list-method' => 'Metode',
 	'centralauth-admin-reason' => 'Iemesls:',
 	'globalusers' => 'Globālo lietotāju uzskaitījums',
