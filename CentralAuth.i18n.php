@@ -11547,6 +11547,7 @@ $messages['ko'] = array(
 	'centralauth-prefs-count-unattached' => '당신과 같은 이름을 쓰는 확인되지 않은 계정이 $1개의 프로젝트에 존재합니다.',
 	'centralauth-prefs-detail-unattached' => '이 프로젝트 사이트에서는 통합 계정에 묶여 있음이 확인되지 않았습니다.',
 	'centralauth-prefs-manage' => '공통 계정 관리',
+	'centralauth-prefs-view' => '통합 계정 정보 보기',
 	'centralauth-renameuser-merged' => '$1 계정은 통합 로그인 시스템으로 옮겨졌습니다.
 이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.',
 	'centralauth-renameuser-reserved' => '사용자 이름 $2는 통합 계정으로 이미 사용되고 있습니다.',
