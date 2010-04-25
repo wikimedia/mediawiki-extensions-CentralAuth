@@ -820,7 +820,7 @@ Mire-se que igual ye prebando d'asinnar dreitos ta un usuario entibocato!",
 	'right-globalgrouppermissions' => 'Confegurar collas globals',
 );
 
-/** Old English (Anglo-Saxon) */
+/** Old English (Ænglisc) */
 $messages['ang'] = array(
 	'centralauth-admin-username' => 'Brūcendnama:',
 );
@@ -3501,8 +3501,10 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-reason-other' => 'Jiný/další důvod:',
 	'centralauth-admin-status' => 'Změnit stav globálního účtu',
 	'centralauth-admin-status-intro' => 'Pomocí tohoto formuláře můžete změnit stav tohoto globálního účtu.',
-	'centralauth-admin-status-locked' => 'Zamčený',
-	'centralauth-admin-status-hidden' => 'Skrytý',
+	'centralauth-admin-status-locked' => 'Zamčeno:',
+	'centralauth-admin-status-locked-no' => 'Účet není uzamčen',
+	'centralauth-admin-status-locked-yes' => 'Účet má uzamčenu možnost editace',
+	'centralauth-admin-status-hidden' => 'Skrytí:',
 	'centralauth-admin-status-hidden-no' => 'Účet není skrytý',
 	'centralauth-admin-status-hidden-list' => 'Účet není zobrazován ve veřejných seznamech',
 	'centralauth-admin-status-hidden-oversight' => 'Účet je zcela skrytý',
@@ -3515,6 +3517,8 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 * Běžné důvody zamčení a skrytí
 ** nepřijatelné uživatelské jméno
 ** nevhodné osobní údaje',
+	'centralauth-admin-logsnippet' => 'Předchozí změny globálního účtu',
+	'centralauth-admin-suppressreason' => 'Globálně utajil $1 se zdůvodněním: $2',
 	'globalusers' => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => 'existuje lokálně',
@@ -3542,6 +3546,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-logout-progress' => 'Automatické odhlášení z jiných projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-logout-no-others' => '{{GENDER:|Byl|Byla|Byli}} jste automaticky {{GENDER:|odhlášen|odhlášena|odhlášeni}} z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
+	'centralauth-hidden-blockreason' => 'globálně skryl $1 v $2 se zdůvodněním: $3',
 	'centralauth-log-name' => 'Kniha správy globálních účtů',
 	'centralauth-log-header' => 'Tato kniha obsahuje informace o operacích na globálních účtech: mazání, zamykání a odemykání.',
 	'centralauth-log-entry-delete' => 'smazal globální účet „$1“',
@@ -3553,6 +3558,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-log-entry-chgstatus' => 'mění stav globálního účtu „$1“: nastaveno $2, odebráno $3',
 	'centralauth-log-status-locked' => 'zamčený',
 	'centralauth-log-status-hidden' => 'skrytý',
+	'centralauth-log-status-oversighted' => 'utajeno',
 	'centralauth-log-status-none' => '(nic)',
 	'centralauth-rightslog-name' => 'Kniha globálních práv',
 	'centralauth-rightslog-entry-usergroups' => 'změnil seznam členů v globální skupině $1 z $2 na $3',
@@ -3564,6 +3570,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-rightslog-entry-setrename' => 'přejmenoval sadu wiki „$2“ na „$1“',
 	'centralauth-rightslog-entry-setnewtype' => 'změnil typ „$1“ z „$2“ na „$3“',
 	'centralauth-rightslog-entry-setchange' => 'změnil wiki v „$1“: přidány: $2; odstraněny: $3',
+	'centralauth-rightslog-entry-deleteset' => 'smazal sadu wiki „$1“',
 	'centralauth-rightslog-set-optin' => 'vyjmenované wiki',
 	'centralauth-rightslog-set-optout' => 'všechny wiki kromě vyjmenovaných',
 	'autologin' => 'Automatické přihlášení',
@@ -3600,18 +3607,28 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|upravit]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vyberte wiki, na níž má účet:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globální uživatel  '''$1''' není aktivní na wiki, kterou jste uvedli (''$2''). Možná se pokoušíte přidělit práva nesprávnému uživateli.",
-	'centralauth-editset' => 'Upravit sady wiki',
+	'centralauth-editset' => 'Sady wiki',
+	'centralauth-editset-legend-rw' => 'Upravit nebo vytvořit novou sadu wiki',
+	'centralauth-editset-legend-ro' => 'Seznam sad wiki',
+	'centralauth-editset-intro-rw' => 'Následující sady wiki už byly vytvořeny.
+Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
+	'centralauth-editset-intro-ro' => 'Níže je uveden seznam existujících sad wiki.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|smazat]])',
 	'centralauth-editset-new' => 'Vytvořit novou sadu',
 	'centralauth-editset-notfound' => 'Sada wiki „$1“ nebyla nalezena.',
 	'centralauth-editset-optin' => 'opt-in (jen určené wiki)',
 	'centralauth-editset-optout' => 'opt-out (všechny wiki kromě určených)',
 	'centralauth-editset-legend-edit' => 'Upravuje se sada wiki „$1“',
+	'centralauth-editset-legend-view' => 'Sada wiki „$1“',
 	'centralauth-editset-legend-new' => 'Vytváří se nová sada wiki',
+	'centralauth-editset-legend-delete' => 'Maže se sada wiki „$1“',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Seznam sad]]',
 	'centralauth-editset-name' => 'Název:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wiki:',
 	'centralauth-editset-reason' => 'Důvod:',
 	'centralauth-editset-submit' => 'Odeslat',
+	'centralauth-editset-submit-delete' => 'Smazat',
 	'centralauth-editset-badname' => 'Neplatný nebo prázdný název množiny.',
 	'centralauth-editset-badtype' => 'Neplatný typ sady.',
 	'centralauth-editset-setexists' => 'Sada s takovým názvem již existuje',
@@ -3620,6 +3637,7 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editset-usage' => 'Použité ve skupinách:',
 	'centralauth-editset-badwikis' => 'Následující wiki {{PLURAL:$2|neexistuje|neexistují}}: $1.',
 	'centralauth-editset-success' => 'Sada wiki úspěšně změněna.',
+	'centralauth-editset-success-delete' => 'Sada wiki úspěšně smazána.',
 	'centralauth-editset-return' => 'Zpět do hlavního pohledu',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
 	'right-centralauth-unmerge' => 'Rozlučování sloučených globálních účtů',
@@ -4283,7 +4301,6 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-newgroup-intro' => 'Sie können mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachten Sie, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
 	'centralauth-editgroup-success-text' => 'Sie haben erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
 	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Sie könnten irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
-	'centralauth-editset-intro' => 'Globale Berechtigungen sind beschränkt auf die Wikis in den folgenden Wikigruppen. Sie können jede von ihnen ansehen oder ändern sowie eine neue Gruppe erstellen.',
 	'centralauth-editset-badname' => 'Sie haben einen ungültigen oder leeren Gruppennamen angegeben.',
 	'centralauth-editset-badtype' => 'Sie haben einen ungültigen Typ angegeben.',
 );
@@ -12557,7 +12574,6 @@ $messages['lo'] = array(
 	'centralauth-finish-login' => 'ເຊັນເຂົ້າ',
 	'centralauth-attach-title' => 'ຍືນຍັນການເຊັນເຂົ້າ',
 	'centralauth-admin-username' => 'ຊື່ອຜູ້ໃຊ້ :',
-	'centralauth-admin-lookup' => 'ເບີ່ງຫຼືອດັດແກ້ຂ້ອມູນຂອງຜູ້ໃຊ້',
 );
 
 /** Lithuanian (Lietuvių)
@@ -12817,7 +12833,7 @@ Galbūt jūs bandote priskirti teises klaidingam naudotojui!",
 	'right-globalgrouppermissions' => 'Tvarkyti globaliąsias grupes',
 );
 
-/** Latgaļu (Latgaļu)
+/** Latgalian (Latgaļu)
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
@@ -21306,7 +21322,6 @@ Grup kanon pemoükön medü moükam gitätas valik onik.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vük, in kel labons kali:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Geban valemik: '''$1''' no binon jäfedik in vük fa ol pavilöl ('' $2 '').
 Ba steifülol ad givülön gitätis gebane dobik!",
-	'centralauth-editset-item' => '$1 ([[Special:EditWikiSets/$2|logön/bevobön]])',
 	'centralauth-editset-name' => 'Nem:',
 	'centralauth-editset-type' => 'Sot:',
 	'centralauth-editset-wikis' => 'Vüks:',
@@ -21352,7 +21367,7 @@ $messages['yi'] = array(
 	'centralauth-editset-reason' => 'אורזאַך:',
 );
 
-/** Yue (粵語)
+/** Cantonese (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
