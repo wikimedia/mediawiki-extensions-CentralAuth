@@ -2350,6 +2350,7 @@ $messages['bg'] = array(
 	'centralauth-editset-wikis' => 'Уикита:',
 	'centralauth-editset-reason' => 'Причина:',
 	'centralauth-editset-submit' => 'Изпращане',
+	'centralauth-editset-submit-delete' => 'Изтриване',
 	'centralauth-editset-badname' => 'Невалидно или празно име на множество.',
 	'centralauth-editset-badtype' => 'Невалиден тип на множество.',
 	'centralauth-editset-setexists' => 'Множество с такова име вече съществува',
@@ -9396,6 +9397,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
  * @author Borgx
  * @author Irwangatot
  * @author IvanLanin
+ * @author Kenrick95
  * @author Rex
  */
 $messages['id'] = array(
@@ -9495,6 +9497,7 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-admin-notblocked' => 'Tidak diblokir',
 	'centralauth-admin-blocked' => 'Blokir, berakhir $3 setelah $4. Alasan: $2',
 	'centralauth-admin-blocked-indef' => 'Blokir selamanya. Alasan: $1',
+	'centralauth-admin-blocklog' => 'Catatan pemblokiran',
 	'centralauth-admin-list-localwiki' => 'Wiki lokal',
 	'centralauth-admin-list-attached-on' => 'Tergabung pada',
 	'centralauth-admin-list-method' => 'Metode',
@@ -9622,6 +9625,7 @@ Suatu kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
 	'centralauth-editset-wikis' => 'Wiki-wiki:<br />(pisahkan dengan spasi)',
 	'centralauth-editset-reason' => 'Alasan:',
 	'centralauth-editset-submit' => 'Kirim',
+	'centralauth-editset-submit-delete' => 'Hapus',
 	'centralauth-editset-badname' => 'Anda meminta nama set yang tidak sah atau kosong.',
 	'centralauth-editset-badtype' => 'Anda meminta tipe set yang tidak sah.',
 	'centralauth-editset-setexists' => 'Set wiki dengan nama tersebut sudah ada',
@@ -14052,6 +14056,7 @@ Jekk xi ħadd ieħor ikun diġà ħa l-isem tal-utent fuq sit ieħor dan mhuwiex
 	'centralauth-prefs-status' => 'Stat tal-kont globali:',
 	'centralauth-prefs-not-managed' => 'Il-kont unifikat mhuwiex fl-użu',
 	'centralauth-prefs-complete' => "Kollox f'postu!",
+	'centralauth-prefs-count-attached' => "Il-kont tiegħek huwa attiv fuq $1 {{PLURAL:$1|sit wieħed|siti}} ta' proġett.",
 	'centralauth-prefs-manage' => 'Ġestjoni tal-kont globali',
 	'centralauth-login-progress' => 'Login effettwat fil-proġetti l-oħra tal-{{int:Centralauth-groupname}}:',
 	'centralauth-log-header' => 'Dan ir-reġistru jinvolvi operazzjonijiet fuq il-kontijiet globali: tħassir, blokki u żblokki.',
