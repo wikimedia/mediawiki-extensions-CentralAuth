@@ -10123,6 +10123,7 @@ $messages['ja'] = array(
 	'centralauth-admin-info-editcount' => '編集回数の合計:',
 	'centralauth-admin-info-locked' => 'ロック:',
 	'centralauth-admin-info-hidden' => '秘匿レベル:',
+	'centralauth-admin-nohome' => '決定できず',
 	'centralauth-admin-yes' => 'はい',
 	'centralauth-admin-no' => 'いいえ',
 	'centralauth-admin-hidden-list' => '公開リストから',
@@ -14072,19 +14073,20 @@ $messages['myv'] = array(
 	'centralauth-merge-step3-submit' => 'Вейтьсэндямс совамо таркатнень',
 	'centralauth-merge-method-empty' => 'путовкст арасть',
 	'centralauth-merge-method-new' => 'од совамо тарка',
-	'centralauth-merge-method-login' => 'кемекстык совамот',
+	'centralauth-merge-method-login' => 'шказь совамстот',
 	'centralauth-finish-password' => 'Совамо валось:',
 	'centralauth-admin-username' => 'Совицянь лем:',
 	'centralauth-admin-info-id' => 'Теицянь ID:',
 	'centralauth-admin-info-locked' => 'Сёлгозь:',
-	'centralauth-admin-info-hidden' => 'Кекшезь:',
+	'centralauth-admin-info-hidden' => 'Кекшезь чалгамо лангось:',
 	'centralauth-admin-yes' => 'истя',
 	'centralauth-admin-no' => 'арась',
 	'centralauth-admin-reason' => 'Тувталось:',
-	'centralauth-admin-status-locked' => 'Сёлгозь',
+	'centralauth-admin-status-locked' => 'Сёлгозь:',
 	'centralauth-listusers-locked' => 'сёлгозь',
 	'centralauth-prefs-unattached' => 'Апак кемекста',
 	'centralauth-log-status-locked' => 'сёлгозь',
+	'centralauth-log-status-hidden' => 'кекшезь',
 	'centralauth-editgroup-subtitle' => 'Витнят-петнят $1',
 	'centralauth-editgroup-name' => 'Куронть лемесь:',
 	'centralauth-editgroup-members' => 'Куронть ломантне:',
@@ -17526,6 +17528,24 @@ $messages['sah'] = array(
 	'right-globalgroupmembership' => 'аан бөлөхтөргө киириини уларытыы',
 	'right-centralauth-merge' => 'Ааттары холбооһун',
 	'right-globalgrouppermissions' => 'Аан бөлөхтөрү дьаһайыы',
+);
+
+/** Sicilian (Sicilianu)
+ * @author Gmelfi
+ */
+$messages['scn'] = array(
+	'mergeaccount' => "Prucessu d'unificazzioni di l'utenzi - status",
+	'centralauth' => 'Amministrazzioni dû login unificatu',
+	'centralauth-admin-intro' => "Sta ntirfaccia pò èssiri utilizzata pi l'amministrazzioni di l'utilizzatura glubbali.",
+	'centralauth-admin-manage' => "Gistioni dati di l'utilizzaturi",
+	'centralauth-admin-username' => 'Nomu utilizzaturi:',
+	'centralauth-admin-lookup-ro' => 'Talìa nfurmazzioni utilizzaturi',
+	'centralauth-admin-lookup-rw' => 'Gistioni account utilizzaturi',
+	'centralauth-admin-permission' => "Sulu li steward pònnu unificari l'account di l'àutri pi cuntu sòu.",
+	'centralauth-globalgroupperms-grouplist' => "Foru cunfigurati li gruppi glubbali ca sutta. 
+E' pussibbili taliari o mudificari li pirmissa assignati a nu gruppu, siddu si havi lu pirmissu pi fàrilu.
+Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
+	'centralauth-existinggroup-legend' => 'Gruppa esistenti',
 );
 
 /** Serbo-Croatian (Srpskohrvatski / Српскохрватски)
