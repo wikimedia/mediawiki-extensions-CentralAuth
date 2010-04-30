@@ -12136,6 +12136,7 @@ Wann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-info-editcount' => 'Gesamtzuel vun den Ännerungen',
 	'centralauth-admin-info-locked' => 'Gespaart:',
 	'centralauth-admin-info-hidden' => 'Verstoppten Niveau:',
+	'centralauth-admin-nohome' => 'konnt net erausfonnt ginn',
 	'centralauth-admin-yes' => 'jo',
 	'centralauth-admin-no' => 'neen',
 	'centralauth-admin-hidden-list' => 'vun ëffentleche Lëschten',
@@ -12207,6 +12208,7 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-prefs-count-unattached' => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat Ärem Numm.',
 	'centralauth-prefs-detail-unattached' => 'Dëse Projet gehéiert nach net zum Projet vun de globale Benotzerkonten.',
 	'centralauth-prefs-manage' => 'Geréiert äre globale Benotzerkont',
+	'centralauth-prefs-view' => 'Global Benotzerinformatioune weisen',
 	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System opgeholl.
 Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System eraus.',
 	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.',
