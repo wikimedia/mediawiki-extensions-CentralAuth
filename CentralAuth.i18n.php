@@ -10610,6 +10610,7 @@ $messages['ka'] = array(
 	'centralauth-finish-send-confirmation' => 'ი-მეილის პაროლი',
 	'centralauth-finish-problems' => 'პრობლემები შეგექნათ? არ ხართ ამ ანგარიშების მფლობელი?
 [[meta:Help:Unified login problems|გადახედეთ დახმარების გვერდებს (ინგლისურ ენაზე)]]…',
+	'centralauth-attach-list-attached' => 'ერთობლიცი ანგარიში "$1"  შეიცავს შემდეგ ჩანაწერებს:',
 	'centralauth-attach-title' => 'ანგარიშის დადასტურება',
 	'centralauth-attach-text' => 'ეს ანგარიში ჯერ არ გადატანილა ერთიანი ანგარიშის სისტემაში, თუ გლობალური ანგარიში ასევე თქვენ გეკუთნით, თქვენ შეგიძლიათ მოცემული ანგარიშის გაერთიანება, გლობალური ანგარიშის პაროლის მითითებით.',
 	'centralauth-attach-submit' => 'ანგარიშის გადატანა',
@@ -10717,7 +10718,12 @@ $messages['ka'] = array(
 	'centralauth-editset-legend-ro' => 'ვიკი სიები',
 	'centralauth-editset-name' => 'სახელი:',
 	'centralauth-editset-type' => 'ტიპი:',
+	'centralauth-editset-wikis' => 'ვიკიები:',
 	'centralauth-editset-reason' => 'მიზეზი:',
+	'centralauth-editset-submit' => 'შენახვა',
+	'centralauth-editset-submit-delete' => 'წაშლა',
+	'centralauth-editset-badname' => 'ცარიელი ან არასწორი სახელი',
+	'centralauth-editset-badtype' => 'არასწორი ტიპი.',
 	'centralauth-editset-nowikis' => 'არცერთი ვიკი-პროექტია მითითებული.',
 	'centralauth-editset-nouse' => '(არცერთი)',
 );
