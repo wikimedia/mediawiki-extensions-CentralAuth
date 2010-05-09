@@ -11636,7 +11636,7 @@ $messages['ko'] = array(
 	'centralauth-hidden-blockreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 $2에 숨겨졌습니다: $3',
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-header' => '이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.',
-	'centralauth-log-entry-delete' => '"$1"의 공통 계정을 삭제함',
+	'centralauth-log-entry-delete' => '통합 계정 "$1"을 삭제함',
 	'centralauth-log-entry-lock' => '공통 계정 "$1"를 잠금',
 	'centralauth-log-entry-unlock' => '공통 계정 "$1"을 잠금 해제하였습니다.',
 	'centralauth-log-entry-hide' => '공통 계정 "$1"를 숨김',
@@ -12902,6 +12902,7 @@ $messages['ltg'] = array(
 );
 
 /** Latvian (Latviešu)
+ * @author Marozols
  * @author Papuass
  * @author Xil
  * @author Yyy
@@ -12982,7 +12983,7 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-logout-progress' => 'Izlogojam tevi no citiem {{MediaWiki:Centralauth-groupname}} projektiem:',
 	'centralauth-log-name' => 'Globālo kontu reģistrs',
 	'centralauth-log-header' => 'Šis reģistrs satur operācijas ar globālajiem kontiem: dzēšanas, slēgšanas un atslēgšanas.',
-	'centralauth-editgroup-reason' => 'Izmaiņu iemesls:',
+	'centralauth-editgroup-reason' => 'Iemesls:',
 );
 
 /** Literary Chinese (文言)
@@ -21094,7 +21095,7 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-info-home' => 'Wiki chính:',
 	'centralauth-admin-info-editcount' => 'Tổng số lần sửa đổi:',
 	'centralauth-admin-info-locked' => 'Bị cấm:',
-	'centralauth-admin-info-hidden' => 'Bị ẩn:',
+	'centralauth-admin-info-hidden' => 'Cấp ẩn:',
 	'centralauth-admin-yes' => 'có',
 	'centralauth-admin-no' => 'không có',
 	'centralauth-admin-unattached' => 'Các tài khoản không ràng buộc',
@@ -21106,7 +21107,7 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-list-attached-on' => 'Ràng buộc với',
 	'centralauth-admin-list-method' => 'Phương thức',
 	'centralauth-admin-list-editcount' => 'Số lần sửa đổi',
-	'centralauth-admin-list-blocked' => 'Trạng thái cấm',
+	'centralauth-admin-list-blocked' => 'Cấm',
 	'centralauth-admin-unmerge' => 'Tách lựa chọn',
 	'centralauth-admin-merge' => 'Hợp nhất lựa chọn',
 	'centralauth-admin-bad-input' => 'Lựa chọn không hợp lệ',
@@ -21123,13 +21124,25 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-admin-delete-nonexistent' => 'Lỗi: tài khoản thống nhất "<nowiki>$1</nowiki>" không tồn tại.',
 	'centralauth-token-mismatch' => 'Rất tiếc, chúng tôi không thể thực hiện yêu cầu của bạn do mất dữ liệu phiên làm việc.',
 	'centralauth-admin-reason' => 'Lý do:',
+	'centralauth-admin-reason-other' => 'Lý do khác:',
 	'centralauth-admin-status' => 'Đặt trạng thái toàn hệ thống',
 	'centralauth-admin-status-intro' => 'Biểu mẫu này để thay đổi trạng thái của tài khoản toàn hệ thống này',
-	'centralauth-admin-status-locked' => 'Bị khóa',
-	'centralauth-admin-status-hidden' => 'Bị ẩn',
+	'centralauth-admin-status-locked' => 'Khóa:',
+	'centralauth-admin-status-locked-no' => 'Tài khoản không bị khóa',
+	'centralauth-admin-status-locked-yes' => 'Tài khoản bị khóa không được sửa đổi',
+	'centralauth-admin-status-hidden' => 'Ẩn:',
+	'centralauth-admin-status-hidden-no' => 'Tài khoản không bị ẩn',
+	'centralauth-admin-status-hidden-list' => 'Tài khoản bị ẩn khỏi những danh sách công cộng',
+	'centralauth-admin-status-hidden-oversight' => 'Tài khoản bị ẩn hẳn',
 	'centralauth-admin-status-submit' => 'Lưu trạng thái',
 	'centralauth-admin-status-nonexistent' => 'Lỗi: tài khoản toàn hệ thống “<nowiki>$1</nowiki>” không tồn tại.',
 	'centralauth-admin-setstatus-success' => 'Đã thay đổi trạng thái của tài khoản toàn hệ thống này thành công.',
+	'centralauth-admin-status-reasons' => '* Lý do khóa thường gặp
+** tài khoản chỉ phá hoại
+** tài khoản chỉ gửi spam
+* Lý do khóa–ẩn thường gặp
+** tên đăng ký gây xúc phạm
+** thông tin cá nhân không thích hợp',
 	'globalusers' => 'Danh sách người dùng thống nhất',
 	'centralauth-listusers-locked' => 'đã khóa',
 	'centralauth-listusers-attached' => 'tồn tại địa phương',
@@ -21226,6 +21239,7 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
 	'centralauth-editset-wikis' => 'Các wiki:',
 	'centralauth-editset-reason' => 'Lý do:',
 	'centralauth-editset-submit' => 'Lưu phạm vi',
+	'centralauth-editset-submit-delete' => 'Xóa',
 	'centralauth-editset-badname' => 'Tên phạm vi trống hay không hợp lệ.',
 	'centralauth-editset-badtype' => 'Loại phạm vi không hợp lệ.',
 	'centralauth-editset-setexists' => 'Phạm vi cùng tên đã tồn tại',
