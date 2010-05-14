@@ -11553,7 +11553,7 @@ $messages['ko'] = array(
 	'centralauth-admin-info-home' => '주 위키:',
 	'centralauth-admin-info-editcount' => '총 편집 횟수:',
 	'centralauth-admin-info-locked' => '잠김 여부:',
-	'centralauth-admin-info-hidden' => '숨겨진 수준:',
+	'centralauth-admin-info-hidden' => '숨김 여부:',
 	'centralauth-admin-nohome' => '확인할 수 없음',
 	'centralauth-admin-yes' => '예',
 	'centralauth-admin-no' => '아니오',
@@ -17815,7 +17815,7 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-merge-method-password' => 'potvrdené heslom',
 	'centralauth-merge-method-admin' => 'účet zlúčil správca',
 	'centralauth-merge-method-new' => 'nový účet',
-	'centralauth-merge-method-login' => 'potvrdené prihlasovacím menom',
+	'centralauth-merge-method-login' => 'vytvorené pri prihlásení',
 	'centralauth-finish-title' => 'Dokončiť zjednotenie',
 	'centralauth-finish-text' => 'Ak tieto účty naozaj patria vám, môžete skončiť proces zjednotenia jednoducho napísaním hesiel dotyčných účtov:',
 	'centralauth-finish-password' => 'Heslo:',
@@ -17830,16 +17830,21 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-attach-text' => 'Tento účet zatiaľ nebol migrovaný na zjednotený účet. Ak je globálny účet váš, môžete tento účet zlúčiť napísaním hesla ku globálnemu účtu:',
 	'centralauth-attach-submit' => 'Migrovať účet',
 	'centralauth-attach-success' => 'Účet bol migrovaný na zjednotený účet.',
-	'centralauth' => 'Administrácia zjednoteného prihlasovania',
+	'centralauth' => 'Globálny správca používateľov',
 	'centralauth-admin-intro' => 'Toto rozhranie je možné použiť na správu globálnych účtov.',
 	'centralauth-admin-manage' => 'Správa údajov o používateľoch',
 	'centralauth-admin-username' => 'Používateľské meno:',
+	'centralauth-admin-lookup-ro' => 'Zobraziť info o používateľovi',
+	'centralauth-admin-lookup-rw' => 'Spravovať účet používateľa',
 	'centralauth-admin-permission' => 'Iba stewardi môžu za druhých ľudí zlučovať ich účty.',
 	'centralauth-admin-no-unified' => 'Pre toto používateľské meno neexistujú žiadne zjednotené účty.',
+	'centralauth-admin-info-header' => 'Info o globálnom používateľovi',
 	'centralauth-admin-info-id' => 'ID používateľa:',
 	'centralauth-admin-info-registered' => 'Zaregistroval sa:',
+	'centralauth-admin-info-home' => 'Domovská wiki:',
+	'centralauth-admin-info-editcount' => 'Celkový počet úprav:',
 	'centralauth-admin-info-locked' => 'Zamknutý:',
-	'centralauth-admin-info-hidden' => 'Skrytý:',
+	'centralauth-admin-info-hidden' => 'Úroveň skrytia:',
 	'centralauth-admin-yes' => 'áno',
 	'centralauth-admin-no' => 'nie',
 	'centralauth-admin-unattached' => 'Nepripojené účty',
@@ -18778,6 +18783,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 
 /** Swedish (Svenska)
  * @author Boivie
+ * @author Dafer45
  * @author Lejonel
  * @author Leo Johannes
  * @author M.M.S.
@@ -18956,6 +18962,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-prefs-count-unattached' => 'Obekräftade konton med ditt namn finns fortfarande på {{PLURAL:$1|ett projekt|$1 projekt}}.',
 	'centralauth-prefs-detail-unattached' => 'Det är inte bekräftat att det här kontot tillhör det globala kontot.',
 	'centralauth-prefs-manage' => 'Hantera ditt gemensamma konto',
+	'centralauth-prefs-view' => 'Visa global användarinfo',
 	'centralauth-renameuser-merged' => 'Användare $1 har anslutits till systemet för gemensam inloggning. Att byta dess namn kommer att leda till att den lokala användaren separeras från sitt gemensamma konto.',
 	'centralauth-renameuser-reserved' => 'Användare $2 är reserverad för ett globalt konto.',
 	'centralauth-invalid-wiki' => 'Ingen sådan databas: $1',
