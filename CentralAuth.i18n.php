@@ -11440,6 +11440,7 @@ $messages['kn'] = array(
  * @author Devunt
  * @author Ficell
  * @author Kwj2772
+ * @author PuzzletChung
  * @author ToePeu
  * @author Yknok29
  */
@@ -11496,7 +11497,7 @@ $messages['ko'] = array(
 	'centralauth-disabled-dryrun' => '계정 합치기가 데모/디버그 모드로 설정되어 있습니다. 따라서 실제 계정 합치기가 비활성화되어 있습니다.
 죄송합니다!',
 	'centralauth-error-locked' => '당신의 계정이 잠겼기 때문에 편집할 수 없습니다.',
-	'centralauth-readmore-text' => ":[[meta:Help:Unified login|'''통합 로그인'''에 대해 더 보기]]...",
+	'centralauth-readmore-text' => ":[[meta:Help:Unified login/ko|'''통합 로그인'''에 대해 더 보기]]",
 	'centralauth-list-home-title' => '주 위키',
 	'centralauth-list-home-dryrun' => '통합 계정의 비밀번호와 이메일 주소는 이 위키에서 사용되고 있는 것으로 설정됩니다.',
 	'centralauth-list-attached-title' => '묶이는 계정',
@@ -11533,7 +11534,7 @@ $messages['ko'] = array(
 	'centralauth-finish-incomplete' => '계정 중 몇개는 이 암호로 확인되었습니다.
 다른 계정은 아직 확인되지 않았습니다.',
 	'centralauth-merge-attempt' => "'''합쳐지지 않은 계정에 대하여 비밀번호를 확인하는 중...'''",
-	'centralauth-attach-list-attached' => '통합계정 "$1"은(는) 다음 계정을 포함하고 있습니다.',
+	'centralauth-attach-list-attached' => '통합 계정 "$1"은(는) 다음 계정을 포함하고 있습니다.',
 	'centralauth-attach-title' => '계정 확인',
 	'centralauth-attach-text' => '이 계정은 아직 통합 계정과 합쳐지지 않았습니다.
 통합 계정이 당신의 계정이라면, 당신은 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:',
@@ -20289,6 +20290,7 @@ Eğer küresel hesap da sizinse, küresel hesap şifresini girerek bu hesabı bi
 	'centralauth-admin-info-editcount' => 'Toplam değişiklik sayısı',
 	'centralauth-admin-info-locked' => 'Kilitlenmiş:',
 	'centralauth-admin-info-hidden' => 'Gizlilik seviyesi:',
+	'centralauth-admin-nohome' => 'belirlenemiyor',
 	'centralauth-admin-yes' => 'evet',
 	'centralauth-admin-no' => 'hayır',
 	'centralauth-admin-hidden-list' => 'umumi listelerden',
@@ -20361,6 +20363,7 @@ Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmede
 	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1|projede|projede}} sizin adınızda doğrulanmamış hesaplar mevcut.',
 	'centralauth-prefs-detail-unattached' => 'Bu proje sitesi küresel hesaba ait olarak doğrulanmadı.',
 	'centralauth-prefs-manage' => 'Küresel hesabınızı yönetin',
+	'centralauth-prefs-view' => 'Küresel kullanıcı bilgisini gör',
 	'centralauth-renameuser-merged' => '$1 kullanıcısı birleşik giriş sistemine taşındı.
 Yeniden adlandırmak, yerel kullanıcının küreselden ayrılmasına sebep olacaktır.',
 	'centralauth-renameuser-reserved' => '$2 kullanıcısı küresel hesap için ayırtılmıştır.',
