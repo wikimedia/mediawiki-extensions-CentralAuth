@@ -21958,6 +21958,7 @@ $messages['zh-hans'] = array(
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
  * @author Gzdavidwong
+ * @author Horacewai2
  * @author Jasonzhuocn
  * @author Liangent
  * @author Mark85296341
@@ -22029,6 +22030,7 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-method-admin' => '管埋整合帳號',
 	'centralauth-merge-method-new' => '新帳號',
 	'centralauth-merge-method-login' => '經登入確認',
+	'centralauth-merge-method-primary-desc' => '這是該帳戶在維基系統中的最初合併。注意，它可能不同於真正維基的該用戶。',
 	'centralauth-finish-title' => '完成整合',
 	'centralauth-finish-text' => '如果這些帳號屬於您，請輸入這些帳號的密碼，以完成帳號整合：',
 	'centralauth-finish-password' => '密碼：',
@@ -22050,15 +22052,18 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-username' => '使用者名稱：',
 	'centralauth-admin-permission' => '只有監管員可以為用戶整合帳號。',
 	'centralauth-admin-no-unified' => '沒有這個整合帳戶名稱。',
+	'centralauth-admin-info-header' => '全域帳戶資訊',
 	'centralauth-admin-info-id' => '用戶編號：',
 	'centralauth-admin-info-registered' => '登錄時間：',
+	'centralauth-admin-info-home' => '主維基',
+	'centralauth-admin-info-editcount' => '編輯共計：',
 	'centralauth-admin-info-locked' => '鎖定：',
 	'centralauth-admin-info-hidden' => '隱藏：',
 	'centralauth-admin-yes' => '是',
 	'centralauth-admin-no' => '否',
 	'centralauth-admin-unattached' => '未附屬的帳戶',
 	'centralauth-admin-notblocked' => '沒有封禁',
-	'centralauth-admin-blocked' => '已經封禁，期限至 $1。原因： $2',
+	'centralauth-admin-blocked' => '已經封禁，將於$3 $4到期。原因：$2',
 	'centralauth-admin-blocked-indef' => '無限期封禁。原因： $1',
 	'centralauth-admin-list-localwiki' => '本地維基站',
 	'centralauth-admin-list-attached-on' => '合併時間',
