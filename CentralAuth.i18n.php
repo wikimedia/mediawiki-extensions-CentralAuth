@@ -21554,10 +21554,12 @@ $messages['yi'] = array(
 );
 
 /** Cantonese (粵語)
+ * @author Horacewai2
  * @author Shinjiman
  */
 $messages['yue'] = array(
 	'mergeaccount' => '登入統一狀態',
+	'centralauth-groupname' => '維基媒體基金會',
 	'centralauth-desc' => '響Wikimedia Foundation wiki度[[Special:MergeAccount|合併戶口]]',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|合併多個戶口]]用來統一登入',
 	'centralauth-merge-denied' => '對唔住，你無權限去存取呢一版。',
@@ -21591,8 +21593,7 @@ $messages['yue'] = array(
 請輸入自家wiki嘅密碼。',
 	'centralauth-complete' => '戶口統一已經搞掂！',
 	'centralauth-incomplete' => '戶口統一重未搞掂！',
-	'centralauth-complete-text' => '你而家可以響唔使個新戶口嘅情況之下登入任何一個Wikimedia嘅wiki網站；
-用同一個用戶名同密碼就可以登入響所有語言嘅維基百科、維基詞典、維基教科書同埋佢哋嘅其它姊妹計劃網站。',
+	'centralauth-complete-text' => '你而家可以響唔使個新戶口嘅情況之下登入任何一個維基媒體基金會嘅wiki網站；',
 	'centralauth-incomplete-text' => '一旦你嘅登入完成統一，你就可以登入所有Wikimedia嘅wiki網站，而無需再開個新戶口；
 用同一組用戶名同密碼就可以登入到所有語言嘅維基百科、維基詞典、維基教科書同埋佢哋嘅其它姊妹計劃網站。',
 	'centralauth-not-owner-text' => '用戶名 "$1" 已經自動分咗畀 $2 上面嘅戶口持有者。
