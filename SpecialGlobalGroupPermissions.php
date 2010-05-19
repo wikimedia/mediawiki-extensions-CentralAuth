@@ -83,7 +83,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$wgOut->addHTML( '<ul>' );
 
 			foreach ( $groups as $group ) {
-				$text = wfMsgExt( 'centralauth-globalgroupperms-grouplistitem', array( 'parseinline' ), User::getGroupName( $group ), $group );
+				$text = wfMsgExt( 'centralauth-globalgroupperms-grouplistitem', array( 'parseinline' ), User::getGroupName( $group ), $group, '<span class="centralauth-globalgroupperms-groupname">' . $group . '</span>' );
 
 				$wgOut->addHTML( "<li> $text </li>" );
 			}

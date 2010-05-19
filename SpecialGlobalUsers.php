@@ -30,7 +30,7 @@ class SpecialGlobalUsers extends SpecialPage {
 }
 
 class GlobalUsersPager extends UsersPager {
-	private $mGroup = false, $mUsername;
+	private $requestedGroup = false, $requestedUser;
 
 	function __construct() {
 		parent::__construct();
@@ -39,23 +39,23 @@ class GlobalUsersPager extends UsersPager {
 
 	function setGroup( $group = '' ) {
 		if ( !$group ) {
-			$this->mGroup = false;
+			$this->requestedGroup = false;
 			return;
 		}
 		$groups = array_keys( $this->getAllGroups() );
 		if ( in_array( $group, $groups ) ) {
-			$this->mGroup = $group;
+			$this->requestedGroup = $group;
 		} else {
-			$this->mGroup = false;
+			$this->requestedGroup = false;
 		}
 	}
 
 	function setUsername( $username = '' ) {
 		if ( !$username ) {
-			$this->mUsername = false;
+			$this->requestedUser = false;
 			return;
 		}
-		$this->mUsername = $username;
+		$this->requestedUser = $username;
 	}
 
 	function getIndexField() {
@@ -64,8 +64,8 @@ class GlobalUsersPager extends UsersPager {
 
 	function getDefaultQuery() {
 		$query = parent::getDefaultQuery();
-		if ( !isset( $query['group'] ) && $this->mGroup ) {
-			$query['group'] = $this->mGroup;
+		if ( !isset( $query['group'] ) && $this->requestedGroup ) {
+			$query['group'] = $this->requestedGroup;
 		}
 		return $this->mDefaultQuery = $query;
 
@@ -75,12 +75,12 @@ class GlobalUsersPager extends UsersPager {
 		$localwiki = wfWikiID();
 		$conds = array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE );
 
-		if ( $this->mGroup ) {
-			$conds['gug_group'] = $this->mGroup;
+		if ( $this->requestedGroup ) {
+			$conds['gug_group'] = $this->requestedGroup;
 		}
 
-		if ( $this->mUsername ) {
-			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->mUsername );
+		if ( $this->requestedUser ) {
+			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->requestedUser );
 		}
 
 		return array(
