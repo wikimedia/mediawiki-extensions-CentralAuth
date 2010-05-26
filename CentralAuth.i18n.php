@@ -9910,6 +9910,7 @@ Se si è il titolare dell\'utenza, per terminare il processo di unificazione è 
 	'centralauth-merge-method-admin-desc' => "Indica che l'account locale è stato unificato manualmente da uno steward.
 Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-merge-method-new-desc' => "Indica che l'account globale è stato creato automaticamente quando è stato creato l'account locale.",
+	'centralauth-merge-method-login-desc' => "Indica che l'account locale è stato creato automaticamente quando l'utente ha eseguito l'accesso.",
 	'centralauth-finish-title' => 'Completa il processo di unificazione',
 	'centralauth-finish-text' => 'Se si è il titolare di queste utenze, per completare il processo di unificazione degli account è sufficiente inserire le password relative alle utenze stesse qui di seguito:',
 	'centralauth-finish-password' => 'Password:',
@@ -10077,6 +10078,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
 	'centralauth-editset-legend-rw' => 'Modifica o crea insiemi di wiki',
 	'centralauth-editset-legend-ro' => 'Elenco degli insiemi di wiki',
 	'centralauth-editset-intro-ro' => "Di seguito è riportato l'elenco degli insiemi di wiki attualmente esistenti.",
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|cancella]])',
 	'centralauth-editset-new' => 'Crea un nuovo insieme',
 	'centralauth-editset-notfound' => 'Insieme di wiki "$1" non trovato.',
 	'centralauth-editset-optin' => "Basato sull'opt-in (include solo le wiki specificate)",
@@ -10100,6 +10102,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
 	'centralauth-editset-usage' => 'Usato nei gruppi:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2:La wiki seguente non esiste|Le wiki seguenti non esistono}}: $1',
 	'centralauth-editset-success' => 'Insieme di wiki modificato con successo.',
+	'centralauth-editset-success-delete' => 'Insieme di wiki cancellato con successo.',
 	'centralauth-editset-return' => 'Torna alla visualizzazione principale',
 	'right-globalgroupmembership' => "Modifica l'appartenenza ai gruppi globali",
 	'right-centralauth-merge' => 'Unifica il proprio account',
@@ -10676,21 +10679,61 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
  * @author გიორგიმელა
  */
 $messages['ka'] = array(
+	'mergeaccount' => 'გაერთიანებული ანგარიშის მდგომარეობა',
 	'centralauth-groupname' => 'ფონდი ვიკიმედია',
+	'centralauth-desc' => '[[Special:MergeAccount|ანგარიშის გაერთიანება]] ფონდ „ვიდიმედიას“ ყველა ვიკი-პროექტში',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|აერთიანებს რამდენიმე ანგარიშს]] მომხმარებლის ერთიან ანგარიშად',
+	'centralauth-merge-denied' => 'უკაცრავად, თქვენ არ გაქვთ ამ გვერდის ნახვის უფლება.',
+	'centralauth-merge-notlogged' => 'გთხოვთ <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} შეხვიდეთ სისტემაში]</span>, რათა შეამოწმოთ მოხდა თუ არა თქვენი ანგარიშების სრულად გაერთიანება.',
+	'centralauth-merge-welcome' => "'''თქვენი ანგარიში ჯერ კიდევ არ გასულა „ვიკიმედიის“ პროექტების ერთიანი ავტორიზაციის სისტემაზე.'''
+
+თუკი თქვენ გადასვლას გადაწყვეტთ, თქვენ შეგეძლებათ ფონდ „ვიკიმედიის“ ყველა ენაზე არსებულ ყველა პროექტში შესვლა ერთიდაიგივე მომხმარებლის სახელისა და პაროლის გამოყენებით.
+
+თუკი თქვენი მომხმარებლის სახელი უკვე დაკავებულია რომელიმე საიტზე, ეს მის მფლობელს არ შეაწუხებს. თქვენ კი მოგვიანებით შეგეძლებათ ამ პრობლემის როგორც პირადად მათთან, ისე რომელიმე ადმინისტრატორთან ერთად მოგვარება.",
 	'centralauth-merge-step1-title' => 'ანგარიშების გაერთიანების დაწყება',
 	'centralauth-merge-step1-detail' => 'გთხოვთ, შეიყვანოთ თქვენი ანგარიშის პაროლი. მოხდება თქვენი პაროლისა და ელ. ფოსტის მისამართის შედარება სხვა ვიკი-პროექტებზე არსებული ანგარიშების მონაცემებთან. არანაირი ცვლილება არ განხორციელდება თქვენს საბოლოო დასტურამდე.',
 	'centralauth-merge-step1-submit' => 'სისტემაში შესასვლელი ინფორმაციის დადასტურება',
 	'centralauth-merge-step2-title' => 'დამატებითი ანგარიშების დადასტურება',
+	'centralauth-merge-step2-detail' => 'ზოგიერთი ანგარიშის თქვენს მიერ მითითებულ მშობლიურ ვიკი-პროექტთან ავტომატური მიბმა ვერ ხორციელდება. თუ ეს ანგარიშები თქვენ გეკუთვნით, ამის დადასტურება მათი პაროლების შეყვანით შეგიძლიათ.',
+	'centralauth-merge-step2-submit' => 'სისტემაში შესასვლელი ინფორმაციის დადასტურება',
+	'centralauth-merge-dryrun-complete' => 'ყველა არსებული ანგარიში შეიძლება ავტომატურად გაერთიანდეს!
+
+ჯერ თქვენს ანგარიშებში არანაირი ცვლილება არ განხორციელებულა.',
+	'centralauth-merge-dryrun-incomplete' => 'თქვენ შეგიძლიათ განაგრძოთ შეწყმა, თუმცა ზოგიერთი ანგარიშის ავტომატურად გადამოწმება შეუძლებელია და მათი გარდაქმნა არ მოხდება.
+მათი გაერთიანება მოგვიანებით შეგეძლებათ.
+
+ჯერ თქვენს ანგარიშებში არანაირი ცვლილება არ განხორციელებულა.',
 	'centralauth-merge-dryrun-or' => "'''ან'''",
 	'centralauth-merge-dryrun-home' => 'მიგრაციის სისტემა ვერ ადასტურებს, რომ მშობლიური ვიკი-პროექტის ანგარიშის მომხმარებლის სახელი თქვენ გეკუთვნით.
 
 თუმცა, ამ მომხმარებლის სახელისთვის სხვა მშობლიური ვიკი-პროექტია აღმოჩენილი; მიჰყევით ქვემოთ მითითებულ ბმულს და შედით სისტემაში, რათა დასრულდეს მიგრაციის პროცედურა',
+	'centralauth-merge-step3-title' => 'გაერთიანებული ანგარიშის შექმნა',
+	'centralauth-merge-step3-detail' => 'იქმნება გაერთიანებული ანგარიში, რომელსაც მიუერთდება შემდეგი ვიკი-პროექტები:',
+	'centralauth-merge-step3-submit' => 'ანგარიშების გაერთიანება',
+	'centralauth-merge-no-accounts' => 'ანგარიშების ცენტრალურ ცხრილში ვერ მოიძებნა თქვენი სახელის შესატყვისი ჩანაწერი! მონაცემთა ბაზა დაზიანებულია.',
+	'centralauth-merge-home-password' => 'მშობლიურ ვიკი-პროექს ამ ანგარიშისთვის (მითითებულია ქვემოთ) თქვენს მიერ მითითებულისგან გასხვავებული პაროლი აქვს. გთხოვთ, შეიყვანოთ პაროლი მშობლიური ვიკი-პროექტისთვის.',
 	'centralauth-complete' => 'ანგარიშის გაერთიანება დასრულებულია!',
+	'centralauth-incomplete' => 'ანგარიშების გაერთიანება არ დასრულებულა!',
 	'centralauth-complete-text' => 'ახლა თქვენ უკვე შეგიძლიათ {{MediaWiki:Centralauth-groupname}} ვიკი-გვერდებზე შესვლა ახალი ანგარიშის გახსნის გარეშე',
+	'centralauth-incomplete-text' => 'მას შემდეგ, რაც მოხდება თქვენი ანგარიშების გაერთიანება, თქვენ შეგეძლებათ {{MediaWiki:Centralauth-groupname}}-ის ნებისმიერ ვიკი-პროექტში ახალი ანგარიშის გახსნის გარეშე შესვლა',
+	'centralauth-not-owner-text' => 'მომხმარებლის სახელი "$1" ავტომატურად მიება ამ ანგარიშის მფლობელს საიტზე: $2.
+
+თუ ეს თქვენ ხართ, ანგარიშის გაერთიანების პროცესის დასრულება თქვენი ძირითადი ანგარიშის პაროლის აქ შეყვანით შეგიძლიათ:',
+	'centralauth-blocked-text' => 'თქვენი მშობლიური ვიკი (მითითებულია ქვემოთ) დაბლოკილია რედაქტირებისთვის.
+გთხოვთ, დაუკავშირდეთ ამ ვიკის სისტემურ ადმინისტრატორს და ბლოკირების მოხსნა სთხოვოთ.
+ბლოკირების მოქმედების პერიოდში, თქვენი ანგარიშების გაერთიანება შეუძლებელია.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>სადემონსტრაციო რეჟიმი</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ანგარიშების გაერთიანება ამჟამად სადემონსტრაციო / სარემონტო რეჟიმში მიმდინარეობს. ამის გამო, გაერთიანების რეალური ოპერაციები გათიშულია. გიხდით ბოდიშს!',
-	'centralauth-error-locked' => 'თქვერ არ შეგიძლიათ რედაქტირება თქვენი ანგარიშის ბლოკირების გამო',
+	'centralauth-error-locked' => 'თქვერ არ შეგიძლიათ რედაქტირება, ვინაიდან თქვენი ანგარიში დაბლოკილია.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|დაწვრილებით '''გაერთიანებული ანგარიშის''' შესახებ (ინგლისურ ენაზე)]]…''",
 	'centralauth-list-home-title' => 'მშობლიური ვიკი',
+	'centralauth-list-home-dryrun' => 'თქვენი გაერთიანებული ანგარიშისთვის გამოყენებული იქნება ამ ვიკი-პროექტში მითითებული პაროლი და ელ. ფოსტის მისამართი.',
 	'centralauth-list-attached-title' => 'მიმაგრებული ანგარიშები',
+	'centralauth-list-attached' => 'ანგარიში სახელწოდებით "$1" ავტომატურად მიუერთდა გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:',
+	'centralauth-list-attached-dryrun' => 'ანგარიში სახელწოდებით "$1" ავტომატურად მიუერთება გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:',
+	'centralauth-list-unattached-title' => 'არა-მიერთებული ანგარიშები',
+	'centralauth-list-unattached' => 'ანგარიშის "$1" თქვენდამი კუთვნილება ვერ დასტურდება ავტომატურად შემდეგ საიტებზე;
+შესაძლოა, მათ თქვენი ძირითადი ანგარიშისგან განხვავებული პაროლი აქვთ:',
 	'centralauth-foreign-link' => 'მომხმარებელი $1  $2-ში',
 	'centralauth-merge-method-primary' => 'მშობლიური ვიკი',
 	'centralauth-merge-method-empty' => 'უწვლილო',
@@ -10699,6 +10742,9 @@ $messages['ka'] = array(
 	'centralauth-merge-method-admin' => 'ადმინისტრატორის გაერთიანებული ანგარიში',
 	'centralauth-merge-method-new' => 'ახალი ანგარიში',
 	'centralauth-merge-method-login' => 'ლოგინით დადასტურება',
+	'centralauth-merge-method-primary-desc' => 'ეს ის ვიკია, რომელსაც ანგარიში თავდაპირველად მიუერთდა.
+გაითვალისწინეთ, რომ ის შეიძლება განსხვავებული იყოს მშობლიური ვიკის მომხმარებლისაგან.',
+	'centralauth-merge-method-empty-desc' => 'ადგილობრივი ანგარიში მიუერთდა, ვინაიდან მას რედაქტირებები არ ჰქონდა.',
 	'centralauth-finish-title' => 'გაერთიენების დასრულება',
 	'centralauth-finish-text' => 'იმ შემთხვევაშ, თუ მოცემული ანგარიშები თქვენია, თქვენ შეგიძლიათ დაასრულოთ ერთიან ანგარიშზე გადასვლა მათდამი პაროლის შეყვანით',
 	'centralauth-finish-password' => 'პაროლი:',
@@ -11511,6 +11557,7 @@ $messages['km'] = array(
  * @author Nayvik
  */
 $messages['kn'] = array(
+	'centralauth-finish-password' => 'ಪ್ರವೇಶಪದ:',
 	'centralauth-finish-login' => 'ಲಾಗ್ ಇನ್',
 	'centralauth-admin-yes' => 'ಹೌದು',
 	'centralauth-admin-no' => 'ಇಲ್ಲ',
