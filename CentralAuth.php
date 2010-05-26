@@ -247,7 +247,6 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
 
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
-	wfLoadExtensionMessages( 'SpecialCentralAuth' );
 	$link = $skin ? $skin->makeLinkObj( $title, $params[0] ) : $params[0];
 	if ( $action == 'newset' ) {
 		$args = array( WikiSet::formatType( $params[1] ), $params[2] );

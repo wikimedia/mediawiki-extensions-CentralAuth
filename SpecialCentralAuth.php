@@ -4,7 +4,6 @@ class SpecialCentralAuth extends SpecialPage {
 	var $mGlobalUser, $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
 
 	function __construct() {
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		parent::__construct( 'CentralAuth' );
 	}
 

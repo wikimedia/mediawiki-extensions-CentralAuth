@@ -2,7 +2,6 @@
 
 class SpecialMergeAccount extends SpecialPage {
 	function __construct() {
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
 	}
 
