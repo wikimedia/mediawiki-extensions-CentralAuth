@@ -10,6 +10,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 	function SpecialGlobalGroupMembership() {
 		SpecialPage::SpecialPage( 'GlobalGroupMembership' );
+		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 
 		global $wgUser;
 		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );

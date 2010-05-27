@@ -23,6 +23,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 		$wgOut->enableClientCache( false );
 
 		if ( strlen( $tempToken ) == 0 ) {
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$this->setHeaders();
 			$wgOut->addWikiMsg( 'centralauth-autologin-desc' );
 			return;
@@ -35,6 +36,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 		if ( !$data ) {
 			$msg = 'Token is invalid or has expired';
 			wfDebug( __METHOD__ . ": $msg\n" );
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$this->setHeaders();
 			$wgOut->addWikiText( $msg );
 			return;
@@ -47,6 +49,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 		if ( $data['wiki'] != wfWikiID() ) {
 			$msg = 'Bad token (wrong wiki)';
 			wfDebug( __METHOD__ . ": $msg\n" );
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$this->setHeaders();
 			$wgOut->addWikiText( $msg );
 			return;
@@ -58,6 +61,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 		if ( $loginResult != 'ok' ) {
 			$msg = "Bad token: $loginResult";
 			wfDebug( __METHOD__ . ": $msg\n" );
+			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$this->setHeaders();
 			$wgOut->addWikiText( $msg );
 			return;
