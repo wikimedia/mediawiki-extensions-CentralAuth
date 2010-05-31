@@ -13107,6 +13107,7 @@ $messages['ltg'] = array(
 );
 
 /** Latvian (Latviešu)
+ * @author GreenZeb
  * @author Marozols
  * @author Papuass
  * @author Xil
@@ -13188,7 +13189,9 @@ visticamāk, ka šo kontu parole atšķiras no tava primārā konta paroles:',
 	'centralauth-logout-progress' => 'Izlogojam tevi no citiem {{MediaWiki:Centralauth-groupname}} projektiem:',
 	'centralauth-log-name' => 'Globālo kontu reģistrs',
 	'centralauth-log-header' => 'Šis reģistrs satur operācijas ar globālajiem kontiem: dzēšanas, slēgšanas un atslēgšanas.',
+	'globalgrouppermissions' => 'Globālo grupu pārvaldnieks',
 	'centralauth-editgroup-reason' => 'Iemesls:',
+	'right-centralauth-lock' => 'Slēgt vai noslēpt globālo kontu',
 );
 
 /** Literary Chinese (文言)
