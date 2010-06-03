@@ -6144,9 +6144,9 @@ $messages['fa'] = array(
 
 هنوز تغییری در حساب‌های کاربری شما داده نشده‌است.',
 	'centralauth-merge-dryrun-or' => "'''یا'''",
-	'centralauth-merge-dryrun-home' => 'سامانه انتقال نمی‌توان تایید کند که شما صاحب حساب کاربری مورد نظر در ویکی خانه هستید.
+	'centralauth-merge-dryrun-home' => 'سامانه انتقال نمی‌تواند تایید کند که شما صاحب حساب کاربری مورد نظر در ویکی خانه هستید.
 
-یک ویکی دیگر به عنوان ویکی خانه برای حساب‌ کاربری شما در نظر گرفته شد؛ پیوند زیر را دنبال کنید تا به سیستم وارد شوید و انتقال حساب کاربری خود را به پایان برسانید.',
+یک ویکی دیگر به عنوان ویکی خانه برای حساب‌ کاربری شما در نظر گرفته شد؛ پیوند زیر را دنبال کنید تا به سامانه وارد شوید و انتقال حساب کاربری خود را به پایان برسانید.',
 	'centralauth-merge-step3-title' => 'ایجاد حساب مشترک',
 	'centralauth-merge-step3-detail' => 'شما آماده‌اید که حساب مشترک خود را در ویکی‌های زیر ایجاد کنید:',
 	'centralauth-merge-step3-submit' => 'یکی کردن حساب‌ها',
@@ -6179,7 +6179,7 @@ $messages['fa'] = array(
 	'centralauth-merge-method-password' => 'تایید شده توسط گذرواژه',
 	'centralauth-merge-method-admin' => 'حساب کاربری ادغام شده توسط مدیر',
 	'centralauth-merge-method-new' => 'حساب کاربری جدید',
-	'centralauth-merge-method-login' => 'تایید شده توسط ورود به سامانه',
+	'centralauth-merge-method-login' => 'ایجاد شده توسط ورود به سامانه',
 	'centralauth-finish-title' => 'خاتمه ادغام',
 	'centralauth-finish-text' => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در این‌جا به پایان برسانید:',
 	'centralauth-finish-password' => 'کلمه عبور:',
@@ -6293,7 +6293,7 @@ $messages['fa'] = array(
 	'centralauth-rightslog-set-optout' => 'بر اساس از عضویت در آمدن',
 	'autologin' => 'ورود خودکار به سامانه',
 	'centralauth-autologin-desc' => 'این صفحهٔ ویژه به طور داخلی توسط مدیاویکی استفاده می‌شود.
-وقتی شما [[Special:UserLogin|به سیستم وارد می‌شوید]]، سامانهٔ ورود مرکزی به مرورگر شما دستور می‌دهد که این صفحه را از تمام دامنه‌های پیوند شده، با استفاده از پیوند تصاویر، دریافت کند.
+وقتی شما [[Special:UserLogin|به سامانه وارد می‌شوید]]، سامانهٔ ورود مرکزی به مرورگر شما دستور می‌دهد که این صفحه را از تمام دامنه‌های پیوند شده، با استفاده از پیوند تصاویر، دریافت کند.
 شما این صفحه را بدون هیچ‌گونه دادهٔ تصدیق درخواست کرده‌اید، پس اتفاقی نمی‌افتد.',
 	'globalgroupmembership' => 'عضویت در گروه‌های سراسری',
 	'globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
@@ -17851,6 +17851,7 @@ $messages['shi'] = array(
 
 /** Sinhala (සිංහල)
  * @author නන්දිමිතුරු
+ * @author බිඟුවා
  */
 $messages['si'] = array(
 	'mergeaccount' => 'ප්‍රවිෂ්ට සංයුක්තකිරීම් තත්ත්වය',
@@ -17929,6 +17930,8 @@ $messages['si'] = array(
 	'centralauth-admin-no-unified' => 'මෙම පරිශීලක නාමය සඳහා සංයුක්තනෙරුණු ගිණුමක් නොමැත.',
 	'centralauth-admin-info-id' => 'පරිශීලක අනන්‍යාංකය:',
 	'centralauth-admin-info-registered' => 'ලේඛනගතව:',
+	'centralauth-admin-info-home' => 'ජනක විකිය',
+	'centralauth-admin-info-editcount' => 'සම්පූර්ණ සංස්කරණ ගණන:',
 	'centralauth-admin-info-locked' => 'අහුරා:',
 	'centralauth-admin-info-hidden' => 'සඟවා:',
 	'centralauth-admin-yes' => 'ඔව්',
@@ -17936,6 +17939,7 @@ $messages['si'] = array(
 	'centralauth-admin-unattached' => 'නොබැඳි ගිණුම්',
 	'centralauth-admin-list-localwiki' => 'ස්ථානික විකිය',
 	'centralauth-admin-list-attached-on' => 'බැඳී ඇත්තේ',
+	'centralauth-admin-list-blocked' => 'ඇහිරීම',
 	'centralauth-admin-merge' => 'ඒකාබද්ධ කිරීම තෝරාගැණිනි',
 	'centralauth-admin-delete-title' => 'ගිණුම මකන්න',
 	'centralauth-admin-delete-button' => 'මෙම ගිණුම මකන්න',
@@ -17954,6 +17958,8 @@ $messages['si'] = array(
 	'centralauth-prefs-detail-unattached' => 'මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.',
 	'centralauth-renameuser-merged' => '$1 නමැති පරිශිලකයා සංයුක්ත කෙරුණු ප්‍රවිෂ්ට පද්ධතියට සංක්‍රමණය වී ඇත.
 එහි නම වෙනස් කිරීමෙන්, ස්ථානික පරිශීලකයා ගෝලීය එකෙන් වියුක්තවීම සිදුවනු ඇත.',
+	'centralauth-log-status-hidden' => 'සඟවා',
+	'centralauth-log-status-none' => '(කිසිවක් නොමැත)',
 );
 
 /** Slovak (Slovenčina)
@@ -19101,6 +19107,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-admin-info-editcount' => 'Totalt antal redigeringar:',
 	'centralauth-admin-info-locked' => 'Låst:',
 	'centralauth-admin-info-hidden' => 'Dold nivå:',
+	'centralauth-admin-nohome' => 'kan inte fastställa',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nej',
 	'centralauth-admin-hidden-list' => 'från offentliga listor',
@@ -19204,6 +19211,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-rightslog-entry-setrename' => 'ändrade namn på wikiinställningen "$2" till "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'ändrade typen på "$1" från $2 till $3',
 	'centralauth-rightslog-entry-setchange' => 'ändrade wikier i "$1": la till: $2; tog bort: $3',
+	'centralauth-rightslog-entry-deleteset' => 'raderat wikiset "$1"',
 	'centralauth-rightslog-set-optin' => 'opt-in-baserad',
 	'centralauth-rightslog-set-optout' => 'opt-out-baserad',
 	'autologin' => 'Automatisk inloggning',
@@ -19241,13 +19249,22 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
-	'centralauth-editset' => 'Redigera wikiset',
+	'centralauth-editset' => 'Wikiset',
+	'centralauth-editset-legend-rw' => 'Redigera eller skapa wikiset',
+	'centralauth-editset-legend-ro' => 'Lista över wikiset',
+	'centralauth-editset-intro-rw' => 'Följande wikiset har redan skapats.
+Du kan visa och ändra någon av dem eller skapa ett nytt set.',
+	'centralauth-editset-intro-ro' => 'Nedan finns en lista över befintliga wikiset.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|radera]])',
 	'centralauth-editset-new' => 'Skapa ett nytt set',
 	'centralauth-editset-notfound' => 'Wikisetet "$1" hittades inte.',
 	'centralauth-editset-optin' => 'Opt-in-baserad (inkluderar endast valda wikier)',
 	'centralauth-editset-optout' => 'Opt-out-baserad (inkluderar alla wikier utom de valda)',
 	'centralauth-editset-legend-edit' => 'Redigerar wikiset "$1"',
+	'centralauth-editset-legend-view' => 'Wikiset "$1"',
 	'centralauth-editset-legend-new' => 'Skapar nytt wikiset',
+	'centralauth-editset-legend-delete' => 'Raderar wikiset "$1"',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Lista över set]]',
 	'centralauth-editset-name' => 'Namn:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wikier:',
@@ -19262,6 +19279,7 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editset-usage' => 'Använd i dessa grupper:',
 	'centralauth-editset-badwikis' => 'Följande {{PLURAL:$2|wiki|wikier}} existerar inte: $1.',
 	'centralauth-editset-success' => 'Ändrade wikiset.',
+	'centralauth-editset-success-delete' => 'Lyckades radera wikiset.',
 	'centralauth-editset-return' => 'Tillbaka till huvudvisning',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
@@ -20239,7 +20257,7 @@ Kung iyo rin ang pandaigdigang kuwentang ito, maaari mong isanib ang akawnt na i
 	'centralauth-admin-list-attached-on' => 'Nakakabit sa',
 	'centralauth-admin-list-method' => 'Pamamaraan (metodo)',
 	'centralauth-admin-list-editcount' => 'Bilang ng pagbabago',
-	'centralauth-admin-list-blocked' => 'Kalagayan ng paghadlang',
+	'centralauth-admin-list-blocked' => 'Hinadlangan',
 	'centralauth-admin-unmerge' => 'Pinili ang huwag pagsanibin',
 	'centralauth-admin-merge' => 'Pinili ang pagsasanib (pagsamahin)',
 	'centralauth-admin-bad-input' => 'Hindi tanggap na pagpiling may kaugnayan sa pagsasanib',
@@ -20259,8 +20277,8 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-admin-reason-other' => 'Iba pa/karagdagang dahilan:',
 	'centralauth-admin-status' => 'Itakda ang kalagayang pandaigdigang akawnt',
 	'centralauth-admin-status-intro' => 'Magagamit mo ang pormularyong ito upang baguhin ang kalagayan ng pandaigdigang akawnt na ito',
-	'centralauth-admin-status-locked' => 'Ikinandado',
-	'centralauth-admin-status-hidden' => 'Nakakubli',
+	'centralauth-admin-status-locked' => 'Nakakandado:',
+	'centralauth-admin-status-hidden' => 'Nakatago:',
 	'centralauth-admin-status-submit' => 'Itakda ang kalagayan',
 	'centralauth-admin-status-nonexistent' => 'Kamalian: hindi umiiral ang pandaigdigang akawnt na "<nowiki>$1</nowiki>".',
 	'centralauth-admin-setstatus-success' => 'Matagumpay mong nabago ang kalagayan ng pandaigdigang akawnt na ito.',
