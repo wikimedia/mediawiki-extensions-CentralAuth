@@ -50,7 +50,7 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Create a CentralAuthUser object corresponding to the suppplied User, and
+	 * Create a CentralAuthUser object corresponding to the supplied User, and
 	 * cache it in the User object.
 	 * @param User $user
 	 */
