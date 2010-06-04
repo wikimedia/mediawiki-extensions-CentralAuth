@@ -453,6 +453,7 @@ class CentralAuthHooks {
 		// but they cannot change $userName, because CentralAuth
 		// expects user names on all wikis are the same.
 		if ( !wfRunHooks( 'CentralAuthAutoCreate', array( $user, $userName ) ) ) {
+			wfDebug( __METHOD__ . ": denied by other extensions\n" );
 			return false;
 		}
 
