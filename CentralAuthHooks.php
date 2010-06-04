@@ -449,6 +449,13 @@ class CentralAuthHooks {
 			return false;
 		}
 
+		// Give other extensions a chance to stop auto creation,
+		// but they cannot change $userName, because CentralAuth
+		// expects user names on all wikis are the same.
+		if ( !wfRunHooks( 'CentralAuthAutoCreate', array( $user, $userName ) ) ) {
+			return false;
+		}
+
 		// Checks passed, create the user
 		wfDebug( __METHOD__ . ": creating new user\n" );
 		$user->loadDefaults( $userName );
