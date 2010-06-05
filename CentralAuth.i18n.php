@@ -383,6 +383,7 @@ You may view and modify any of them, or create a new set.',
  * @author SPQRobin
  * @author Siebrand
  * @author Toliño
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}} and {{msg-mw|centralauth-login-progress}}.',
@@ -435,6 +436,9 @@ Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
 	'right-globalgroupmembership' => '{{doc-right}}',
+	'right-centralauth-unmerge' => '{{doc-right|centralauth-unmerge}}',
+	'right-centralauth-lock' => '{{doc-right|centralauth-lock}}',
+	'right-centralauth-oversight' => '{{doc-right|centralauth-oversight}}',
 	'right-centralauth-merge' => '{{doc-right}}
 
 The use of "their" in this message is actually a case of [[wikipedia:Singular they|singular they]]. So in this case, "their" must be translated as "his or her" or as "this person\'s", not as an actual plural. – McDutchie 16:46, 20 July 2008 (UTC)',
@@ -662,6 +666,7 @@ $messages['am'] = array(
 
 /** Aragonese (Aragonés)
  * @author Juanpabl
+ * @author Liangent
  */
 $messages['an'] = array(
 	'mergeaccount' => "Estau d'a unificazión de cuentas",
@@ -794,7 +799,7 @@ As palabras de paso t'as cuentas locals creyatas antis d'a unificazión tornará
 	'centralauth-invalid-wiki' => "No s'ha trobau a base de datos d'o wiki: $1",
 	'centralauth-account-exists' => "No s'ha puesto creyar a cuenta: o nombre d'usuario requiesto ya ye pillau en o sistema de cuentas unificato.",
 	'centralauth-login-progress' => 'Enzetando a suya sesión en os procheutos de {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => "Salindo d'a sesión en atros procheutos de Wikimedia:",
+	'centralauth-logout-progress' => "Salindo d'a sesión en atros procheutos de {{int:Centralauth-groupname}}:",
 	'centralauth-log-name' => "Rechistro d'almenistrazión de cuentas globals",
 	'centralauth-log-header' => 'Este rechistro contiene operazions feitas sobre cuentas globals: borraus, bloqueyos y esbloqueyos',
 	'centralauth-log-entry-delete' => 'Ha borrato a cuenta global "$1"',
@@ -16486,6 +16491,7 @@ $messages['ps'] = array(
 	'centralauth-admin-info-hidden' => 'پټ:',
 	'centralauth-admin-yes' => 'هو',
 	'centralauth-admin-no' => 'نه',
+	'centralauth-admin-blocklog' => 'د بنديز يادښت',
 	'centralauth-admin-delete-title' => 'کارن-حساب ړنګول',
 	'centralauth-admin-delete-button' => 'همدا کارن-حساب ړنګول',
 	'centralauth-admin-reason' => 'سبب:',
@@ -18291,7 +18297,7 @@ $messages['sr-ec'] = array(
 	'centralauth-merge-method-password' => 'оверен путем лозинке',
 	'centralauth-merge-method-admin' => 'сисоп је спојио налоге',
 	'centralauth-merge-method-new' => 'нови налог',
-	'centralauth-merge-method-login' => 'оверено по приступу',
+	'centralauth-merge-method-login' => 'направљено при улоговању',
 	'centralauth-finish-title' => 'Заврши спајање',
 	'centralauth-finish-text' => 'Уколико ови налози припадају вама, можете завршити процес спајања налога уписујући лозинку за остале налоге овде:',
 	'centralauth-finish-password' => 'Лозинка:',
@@ -18312,12 +18318,18 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-no-unified' => 'Нема сједињеног налога за ово сарадничко име.',
 	'centralauth-admin-info-id' => 'Кориснички ИД:',
 	'centralauth-admin-info-registered' => 'Регистрован:',
+	'centralauth-admin-info-editcount' => 'Бројач укупних измена:',
 	'centralauth-admin-info-locked' => 'Закључан:',
 	'centralauth-admin-info-hidden' => 'Сакривен:',
 	'centralauth-admin-yes' => 'да',
 	'centralauth-admin-no' => 'не',
 	'centralauth-admin-unattached' => 'откачени налози',
 	'centralauth-admin-notblocked' => 'Није блокиран',
+	'centralauth-admin-blocked' => 'Блокиран, истиче $3 у $4.
+Разлог: $2',
+	'centralauth-admin-blocked-indef' => 'Трајно блокиран.
+Разлог: $1',
+	'centralauth-admin-blocklog' => 'историја блокирања',
 	'centralauth-admin-list-localwiki' => 'Локална вики',
 	'centralauth-admin-list-attached-on' => 'Накачен на',
 	'centralauth-admin-list-method' => 'Метода',
@@ -18328,6 +18340,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-bad-input' => 'Лоше означавање сједињавања',
 	'centralauth-admin-none-selected' => 'Ниједан налог није означен за измену.',
 	'centralauth-admin-already-unmerged' => 'Прескачем $1, већ је растављен.',
+	'centralauth-admin-unmerge-success' => 'Успешно {{PLURAL:$1|раздвојен|раздвојено}} $1 {{PLURAL:$1|налог|налога}}',
 	'centralauth-admin-delete-title' => 'Обриши налог',
 	'centralauth-admin-delete-button' => 'Обриши овај налог',
 	'centralauth-admin-delete-success' => 'Успешно обрисан глобални налог за „<nowiki>$1</nowiki>”',
@@ -18335,8 +18348,12 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-delete-nonexistent' => 'Грешка: глобални налог „<nowiki>$1</nowiki>” не постоји.',
 	'centralauth-token-mismatch' => 'Жао нам је, не можемо да обрадимо ваш захтев због губљења података о сесији.',
 	'centralauth-admin-reason' => 'Разлог:',
-	'centralauth-admin-status-locked' => 'Закључан',
-	'centralauth-admin-status-hidden' => 'Сакривен',
+	'centralauth-admin-reason-other' => 'Други/додатни разлог:',
+	'centralauth-admin-status-locked' => 'Закључано:',
+	'centralauth-admin-status-hidden' => 'Сакривено:',
+	'centralauth-admin-status-hidden-no' => 'Налог није сакривен',
+	'centralauth-admin-status-hidden-list' => 'Налог је сакривен са јавних спискова',
+	'centralauth-admin-status-hidden-oversight' => 'Налог је потпуно сакривен',
 	'centralauth-admin-status-submit' => 'Подеси статус',
 	'globalusers' => 'Глобални списак корисника',
 	'centralauth-listusers-locked' => 'закључан',
@@ -18407,7 +18424,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editgroup-noset' => '(ништа)',
 	'centralauth-editgroup-submit' => 'Снимање измена права групе.',
 	'centralauth-editgroup-perms' => 'Додељена права:',
-	'centralauth-editgroup-reason' => 'Разлог промене:',
+	'centralauth-editgroup-reason' => 'Разлог:',
 	'centralauth-editgroup-success' => 'Права групе промењена.',
 	'centralauth-editgroup-success-text' => 'Успешно си променио права групи $1. [[Special:GlobalGroupPermissions|Порвратак на управљање групама]].',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики на коме има налог:',
@@ -20219,7 +20236,7 @@ Paumanhin!",
 	'centralauth-merge-method-password' => 'napatotohanan sa pamamagitan ng hudyat',
 	'centralauth-merge-method-admin' => 'kuwenta/akawnt na pinagsanib ng tagapangasiwa',
 	'centralauth-merge-method-new' => 'bagong kuwenta/akawnt',
-	'centralauth-merge-method-login' => 'napatotohanan sa pamamagitan ng paglagda',
+	'centralauth-merge-method-login' => 'nalikha noong lumagda',
 	'centralauth-finish-title' => 'Tapusin na ang pagsasanib',
 	'centralauth-finish-text' => 'Kung ikaw nga ang nagmamay-ari ng mga kuwenta na ito, maaaring mong tapusin na ang proseso ng pag-iisa ng paglagda sa pamamagitan lamang ng payak na pagmamakinilya ng mga hudyat para sa iba pang mga akawnt dito:',
 	'centralauth-finish-password' => 'Hudyat:',
@@ -20236,23 +20253,32 @@ Hindi pa napapatototohanan ang ibang mga akawnt.',
 Kung iyo rin ang pandaigdigang kuwentang ito, maaari mong isanib ang akawnt na ito kapag mamakinilyahin/ilalagay mo ang hudyat ng pandaigdigang akawnt:',
 	'centralauth-attach-submit' => 'Ilipat ng pook ang kuwenta (akawnt)',
 	'centralauth-attach-success' => 'Inilipat na ang kuwenta patungo sa pinag-isang akawnt.',
-	'centralauth' => 'Pangangasiwa ng pinag-isang paglagda',
+	'centralauth' => 'Tagapamahala ng pandaigdigang tagagamit',
 	'centralauth-admin-intro' => 'Magagamit ang ugnayang-hangganang ito para sa pangangasiwa ng pandaigdigang mga akawnt.',
 	'centralauth-admin-manage' => 'Pamahalaan ang dato ng tagagamit',
 	'centralauth-admin-username' => 'Pangalan ng tagagamit:',
+	'centralauth-admin-lookup-ro' => 'Tingnan ang kabatiran sa tagagamit',
+	'centralauth-admin-lookup-rw' => 'Pamahalaan ang akawnt ng tagagamit',
 	'centralauth-admin-permission' => "Mga bandahali (''steward'') lamang ang maaaring magsanib ng mga kuwenta ng ibang mga tao para sa kanila.",
 	'centralauth-admin-no-unified' => 'Walang pinag-isang kuwenta/akawnt para sa tagagamit na ito.',
+	'centralauth-admin-info-header' => 'Kabatiran sa pandaigdigang tagagamit',
 	'centralauth-admin-info-id' => 'ID ng tagagamit:',
 	'centralauth-admin-info-registered' => 'Nakatala:',
 	'centralauth-admin-info-home' => 'Tahanang wiki:',
+	'centralauth-admin-info-editcount' => 'Kabuuang bilang ng pamamatnugot:',
 	'centralauth-admin-info-locked' => 'Nakakandado:',
-	'centralauth-admin-info-hidden' => 'Nakatago:',
+	'centralauth-admin-info-hidden' => 'Nakatagong antas:',
+	'centralauth-admin-nohome' => 'hindi natukoy',
 	'centralauth-admin-yes' => 'oo',
 	'centralauth-admin-no' => 'hindi',
-	'centralauth-admin-unattached' => 'Hindi magkakabit na mga kuwenta (akawnt)',
+	'centralauth-admin-hidden-list' => 'mula sa mga talaang pangmadla',
+	'centralauth-admin-list-legend-ro' => 'Talaan ng katutubong mga akawnt',
+	'centralauth-admin-list-legend-rw' => 'Huwag pagsanibin ang katutubong mga akawnt',
+	'centralauth-admin-unattached' => 'hindi nakakabit',
 	'centralauth-admin-notblocked' => 'Hindi hinahadlangan',
 	'centralauth-admin-blocked' => 'Hinadlangang magtatapos sa $3 sa $4. Dahilan: $2',
 	'centralauth-admin-blocked-indef' => 'Hinadlangang walang tiyak ang katapusan. Dahilan: $1',
+	'centralauth-admin-blocklog' => 'tala ng pagharang',
 	'centralauth-admin-list-localwiki' => 'Katutubong wiki',
 	'centralauth-admin-list-attached-on' => 'Nakakabit sa',
 	'centralauth-admin-list-method' => 'Pamamaraan (metodo)',
@@ -20278,7 +20304,11 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-admin-status' => 'Itakda ang kalagayang pandaigdigang akawnt',
 	'centralauth-admin-status-intro' => 'Magagamit mo ang pormularyong ito upang baguhin ang kalagayan ng pandaigdigang akawnt na ito',
 	'centralauth-admin-status-locked' => 'Nakakandado:',
+	'centralauth-admin-status-locked-no' => 'Hindi nakakandado ang akawnt',
+	'centralauth-admin-status-locked-yes' => 'Ikinandado mula sa pamamatnugot ang akawnt',
 	'centralauth-admin-status-hidden' => 'Nakatago:',
+	'centralauth-admin-status-hidden-no' => 'Hindi nakatago ang akawnt',
+	'centralauth-admin-status-hidden-list' => 'Itinago ang akawnt mula sa mga talaang pangmadla',
 	'centralauth-admin-status-submit' => 'Itakda ang kalagayan',
 	'centralauth-admin-status-nonexistent' => 'Kamalian: hindi umiiral ang pandaigdigang akawnt na "<nowiki>$1</nowiki>".',
 	'centralauth-admin-setstatus-success' => 'Matagumpay mong nabago ang kalagayan ng pandaigdigang akawnt na ito.',
@@ -20301,6 +20331,7 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-prefs-count-unattached' => 'Nananatiling mga kuwenta (akawnt) na mayroong pangalan mo sa $1 {{PLURAL:$1|proyekto|mga proyekto}}.',
 	'centralauth-prefs-detail-unattached' => 'Hindi pa napapatotohanan kung nabibilang na sa pandaigdigang kuwenta (akawnt) ang pamproyektong sayt/sityong ito.',
 	'centralauth-prefs-manage' => 'Pamahalaan ang pandaigdigang kuwenta/akawnt mo',
+	'centralauth-prefs-view' => 'Tingnan ang kabatiran sa pandaigdigang tagagamit',
 	'centralauth-renameuser-merged' => 'Inilipat na ang tagagamit na si $1 patungo sa sistema ng pinag-isang paglagda.
 Ang muling pagpapangalan dito ay makasasanhi ng pagkakakalas ng katutubong tagagamit mula sa isang pandaigdigan.',
 	'centralauth-renameuser-reserved' => 'Nakalaan si tagagamit na $2 para sa isang pandaigdigang kuwenta/akawnt.',
@@ -20371,7 +20402,10 @@ Pakitaandaan lamang na hindi iiral ang isang pangkat hangga't hindi pa ito nabib
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kung saan sila mayroong isang akawnt/kuwenta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Hindi masigla ang pandaigdigang tagagamit na si '''$1''' sa tinukoy mong wiki ('' $2 '').
 Maaaring sinusubukan mong magtakda ng mga karapatan sa hindi tamang tagagamit!",
-	'centralauth-editset' => 'Baguhin ang mga pangkat ng wiki',
+	'centralauth-editset' => 'Mga pangkat ng wiki',
+	'centralauth-editset-legend-rw' => 'Baguhin o lumikha ng pangkat ng wiki',
+	'centralauth-editset-legend-ro' => 'Talaan ng mga pangkat ng wiki',
+	'centralauth-editset-intro-ro' => 'Nasa ibaba ang talaan ng umiiral na mga pangkat ng wiki.',
 	'centralauth-editset-new' => 'Lumikha ng isang bagong pangkat',
 	'centralauth-editset-notfound' => 'Hindi natagpuan ang pangkat ng Wiking "$1".',
 	'centralauth-editset-optin' => 'nakabatay sa pagsasali (kabilang lamang ang tinukoy na mga wiki)',
@@ -21783,6 +21817,7 @@ $messages['yi'] = array(
 
 /** Cantonese (粵語)
  * @author Horacewai2
+ * @author Liangent
  * @author Shinjiman
  */
 $messages['yue'] = array(
@@ -21821,9 +21856,8 @@ $messages['yue'] = array(
 請輸入自家wiki嘅密碼。',
 	'centralauth-complete' => '戶口統一已經搞掂！',
 	'centralauth-incomplete' => '戶口統一重未搞掂！',
-	'centralauth-complete-text' => '你而家可以響唔使個新戶口嘅情況之下登入任何一個維基媒體基金會嘅wiki網站；',
-	'centralauth-incomplete-text' => '一旦你嘅登入完成統一，你就可以登入所有Wikimedia嘅wiki網站，而無需再開個新戶口；
-用同一組用戶名同密碼就可以登入到所有語言嘅維基百科、維基詞典、維基教科書同埋佢哋嘅其它姊妹計劃網站。',
+	'centralauth-complete-text' => '你而家可以響唔使個新戶口嘅情況之下登入任何一個{{MediaWiki:Centralauth-groupname}}嘅wiki網站。',
+	'centralauth-incomplete-text' => '一旦你嘅登入完成統一，你就可以登入所有{{MediaWiki:Centralauth-groupname}}嘅wiki網站，而無需再開個新戶口',
 	'centralauth-not-owner-text' => '用戶名 "$1" 已經自動分咗畀 $2 上面嘅戶口持有者。
 如果呢個係你，你可以輸入響嗰個戶口嘅主密碼以完成登入統一嘅程序：',
 	'centralauth-blocked-text' => '你嘅自家wiki（響下面列出）而家封鎖緊唔畀編輯。請聯絡響呢個wiki嘅操作員去解封佢。當佢封鎖緊嗰陣，你係唔可以合併你嘅戶口。',
