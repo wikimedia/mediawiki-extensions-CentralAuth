@@ -14,7 +14,8 @@
  * Special page to allow managing global groups
  * Prototype for a similar system in core.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {

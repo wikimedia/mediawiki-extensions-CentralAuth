@@ -6,7 +6,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Unlisted Special page to set requisite cookies for being logged into this wiki.
  *
- * @addtogroup Extensions
+ * @ingroup Extensions
  */
 class SpecialAutoLogin extends UnlistedSpecialPage {
 	function __construct() {

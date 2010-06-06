@@ -1,9 +1,9 @@
 <?php
 /**
-  *
-  * Equivalent of Special:Userrights for global groups.
-  * @addtogroup extensions
-  */
+ * Equivalent of Special:Userrights for global groups.
+ *
+ * @ingroup Extensions
+ */
 
 class SpecialGlobalGroupMembership extends UserrightsPage {
 	var $mGlobalUser;

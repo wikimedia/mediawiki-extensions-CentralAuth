@@ -3,7 +3,8 @@
  * Special page to allow to edit "wikisets" which are used to restrict
  * specific global group permissions to certain wikis.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {
