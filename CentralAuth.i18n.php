@@ -3382,9 +3382,13 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'right-globalgrouppermissions' => 'Gestionar els grups globals',
 );
 
-/** Chechen (Нохчийн) */
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
 $messages['ce'] = array(
+	'centralauth-groupname' => 'Хьундуз Викимедиа',
 	'centralauth-admin-reason' => 'Бахьан:',
+	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин кхолламашкахь {{int:Centralauth-groupname}}:',
 	'centralauth-editgroup-reason' => 'Бахьан:',
 	'centralauth-editset-reason' => 'Бахьан:',
 );
@@ -9766,6 +9770,8 @@ $messages['io'] = array(
 	'centralauth-finish-password' => 'Pasovorto:',
 	'centralauth-finish-login' => 'Enirar',
 	'centralauth-finish-send-confirmation' => 'Sendar pasovorto e-poste',
+	'centralauth-attach-title' => 'Konfirmar konto',
+	'centralauth-attach-submit' => 'Migrar konto',
 	'centralauth-admin-username' => 'Uzantonomo:',
 	'centralauth-admin-info-id' => 'ID dil uzanto:',
 	'centralauth-admin-yes' => 'yes',
@@ -9773,10 +9779,12 @@ $messages['io'] = array(
 	'centralauth-admin-delete-title' => 'Efacar konto',
 	'centralauth-admin-delete-button' => 'Efacar ca konto',
 	'centralauth-admin-reason' => 'Motivo:',
+	'globalusers' => 'Uzanto-listo globala',
 	'centralauth-prefs-complete' => 'Omno es en bona stando!',
 	'centralauth-log-status-none' => '(nula)',
 	'centralauth-newgroup-legend' => 'Krear nova grupo',
 	'centralauth-editgroup-noset' => '(nula)',
+	'centralauth-editgroup-reason' => 'Motivo:',
 	'centralauth-editset-name' => 'Nomo:',
 	'centralauth-editset-reason' => 'Motivo:',
 	'centralauth-editset-submit' => 'Sendez',
