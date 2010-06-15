@@ -13331,7 +13331,7 @@ $messages['mk'] = array(
 	'centralauth-merge-method-new' => 'нова сметка',
 	'centralauth-merge-method-login' => 'создадена со најавување',
 	'centralauth-merge-method-primary-desc' => 'Ова е викито кадешто сметката е првично споена.
-Имајте во предвид дека ова може да не е вистинското матично вики на корисникот.',
+Имајте предвид дека ова може да не е вистинското матично вики на корисникот.',
 	'centralauth-merge-method-empty-desc' => 'Означува дека локалната сметка е споена бидејќи нема уредувања.',
 	'centralauth-merge-method-mail-desc' => 'Означува дека локалната сметка е споена бидејќи нејзината е-поштенска адреса се совпаднала со е-поштенската адреса на главната сметка',
 	'centralauth-merge-method-password-desc' => 'Означува дека локалната сметка е споена бидејќи корисникот назначил важечка лозинка за неа.',
@@ -13496,7 +13496,7 @@ $messages['mk'] = array(
 	'centralauth-existinggroup-legend' => 'Постоечки групи',
 	'centralauth-newgroup-legend' => 'Создај нова група',
 	'centralauth-newgroup-intro' => 'Со овој образец можете да доделувате дозволи на нова група.
-Имајте во предвид дека групата не постои доколку нема доделени дозволи.',
+Имајте предвид дека групата не постои доколку нема доделени дозволи.',
 	'centralauth-globalgroupperms-newgroupname' => 'Име на новата група:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Додели дозволи',
 	'centralauth-editgroup-subtitle' => 'Уредување на $1',
@@ -16751,7 +16751,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-renameuser-reserved' => 'O nome de utilizador $2 está reservado para uma conta global.',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para a wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de utilizador pretendido já está a ser utilizado no sistema de autenticação unificada.',
-	'centralauth-login-progress' => 'A autenticar nas wikis {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Está a ser autenticado nas wikis da {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'A desautenticar das wikis {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Foi automaticamente desautenticado das wikis {{int:Centralauth-groupname}}.',
@@ -16966,6 +16966,7 @@ Enquanto estiver bloqueada, não será possível fundir as contas.',
 	'centralauth-prefs-manage' => 'Gerenciar sua conta global',
 	'centralauth-renameuser-reserved' => '$2 está reservado para uma conta global.',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de usuário requisitado já está sendo utilizado no sistema de login unificado.',
+	'centralauth-login-progress' => 'Autenticando sessão em outros projetos da {{int:Centralauth-groupname}}:',
 	'centralauth-hidden-blockreason' => 'globalmente suprimida por $1 no $2 com o seguinte motivo: $3',
 	'centralauth-log-name' => 'Registro de gestão de contas globais',
 	'centralauth-log-entry-delete' => 'removeu conta global "$1"',
@@ -20282,6 +20283,12 @@ Paumanhin!",
 	'centralauth-merge-method-primary-desc' => 'Ito ang wiki kung saan unang isinanib ang akawnt.
 Tandaan na maaaring kaiba ito mula sa totoong tahanang wiki ng tagagamit na iyan.',
 	'centralauth-merge-method-empty-desc' => 'Nagpapahiwatig na ang lokal na akawnt ay isinanib dahil wala itong mga pamamatnugot.',
+	'centralauth-merge-method-mail-desc' => 'Nagpapahiwatig na ang katutubong akawnt ay isinanib dahil tumugma ang tirahan ng e-liham nito sa tirahan ng e-liham ng pangunahing akawnt.',
+	'centralauth-merge-method-password-desc' => 'Nagpapahiwatig na ang katutubong akawnt ay isinanib dahil tumukoy ang tagagamit ng isang tanggap na hudyat para rito.',
+	'centralauth-merge-method-admin-desc' => 'Nagpapahiwatig na ang katutubong akawnt ay kinakamay na isinanib ng mga katiwala.
+Hindi na pinapagana ang ganyang kasangkapang-katangian dahil sa mga dahilang pangkaligtasan.',
+	'centralauth-merge-method-new-desc' => 'Nagpapahiwatig na ang pandaigdigang akawnt ay kusang nalikha noong malikha ang katutubong akawnt na iyan.',
+	'centralauth-merge-method-login-desc' => 'Nagpapahiwatig na ang katutubong akawnt ay kusang nalikha noong lumagdang papasok ang tagagamit.',
 	'centralauth-finish-title' => 'Tapusin na ang pagsasanib',
 	'centralauth-finish-text' => 'Kung ikaw nga ang nagmamay-ari ng mga kuwenta na ito, maaaring mong tapusin na ang proseso ng pag-iisa ng paglagda sa pamamagitan lamang ng payak na pagmamakinilya ng mga hudyat para sa iba pang mga akawnt dito:',
 	'centralauth-finish-password' => 'Hudyat:',
@@ -20359,6 +20366,12 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-admin-status-submit' => 'Itakda ang kalagayan',
 	'centralauth-admin-status-nonexistent' => 'Kamalian: hindi umiiral ang pandaigdigang akawnt na "<nowiki>$1</nowiki>".',
 	'centralauth-admin-setstatus-success' => 'Matagumpay mong nabago ang kalagayan ng pandaigdigang akawnt na ito.',
+	'centralauth-admin-status-reasons' => '* Karaniwang dahilan ng pagkando
+** akawnt na pangbandalismo lang
+** akawnt na pangmanlulusob lang
+* Karaniwang dahilan ng pagkandado at pagtago
+** mapang-abusong pangalan ng tagagamit
+** hindi angkop na kabatirang pangsarili',
 	'centralauth-admin-logsnippet' => 'Nakaraang mga pagbabago sa pandaigdigang akawnt',
 	'centralauth-admin-suppressreason' => 'Pandaigdigang pinigil ni $1 dahil sa sumusunod na dahilan: $2',
 	'globalusers' => 'Talaan ng pandaigdigang tagagamit',
