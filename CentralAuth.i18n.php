@@ -16864,12 +16864,12 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Giro720
  * @author Hamilton Abreu
  * @author Heldergeovane
  * @author Luckas Blade
  * @author Sir Lestaty de Lioncourt
- * @author 555
  */
 $messages['pt-br'] = array(
 	'mergeaccount' => 'Estado da unificação de contas',
