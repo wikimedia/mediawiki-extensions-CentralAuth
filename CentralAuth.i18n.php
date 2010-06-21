@@ -10868,6 +10868,12 @@ $messages['ka'] = array(
 	'centralauth-admin-status-submit' => 'სტატუსის დაყენება',
 	'centralauth-admin-status-nonexistent' => 'შეცდომა. გლობალური ანგარიში «<nowiki>$1</nowiki>» არ არსებობს',
 	'centralauth-admin-setstatus-success' => 'თქვენ წარმატებით შეცვალეთ ამ გლობალური ანგარიშის სტატუსი.',
+	'centralauth-admin-status-reasons' => '* ბლოკირების სტანდარტული მიზეზები
+** შექმნილია ვანდალიზმისათვის
+** შექმნილია სპამირებისათვის
+* ბლოკირებისა და დამალვის სტანდარტული მიზეზები
+** შეურაცმყოფელი მომხმარებლისა სახელი
+** უადგილო პირადი ინფორმაცია',
 	'globalusers' => 'გლობალური მომხმარებლების სია',
 	'centralauth-listusers-locked' => 'ჩაკწტილია',
 	'centralauth-listusers-attached' => 'ლოკალურად არსებობს',
@@ -18718,10 +18724,10 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 	'centralauth-admin-info-registered' => 'Registrovan:',
 	'centralauth-admin-info-editcount' => 'Brojač ukupnih izmena:',
 	'centralauth-admin-info-locked' => 'Zaključan:',
-	'centralauth-admin-info-hidden' => 'Sakriven:',
+	'centralauth-admin-info-hidden' => 'Sakriveni nivo:',
 	'centralauth-admin-yes' => 'da',
 	'centralauth-admin-no' => 'ne',
-	'centralauth-admin-unattached' => 'otkačeni nalozi',
+	'centralauth-admin-unattached' => 'nije povezano',
 	'centralauth-admin-notblocked' => 'Nije blokiran',
 	'centralauth-admin-blocked' => 'Blokiran, ističe $3 u $4.
 Razlog: $2',
@@ -18732,7 +18738,7 @@ Razlog: $1',
 	'centralauth-admin-list-attached-on' => 'Nakačen na',
 	'centralauth-admin-list-method' => 'Metoda',
 	'centralauth-admin-list-editcount' => 'Brojač izmena',
-	'centralauth-admin-list-blocked' => 'Blokiran status',
+	'centralauth-admin-list-blocked' => 'Blokiran',
 	'centralauth-admin-unmerge' => 'Odvoji selektovane',
 	'centralauth-admin-merge' => 'Spoji selektovane',
 	'centralauth-admin-bad-input' => 'Loše označavanje sjedinjavanja',
@@ -18827,7 +18833,7 @@ Razlog: $1',
 	'centralauth-editgroup-success-text' => 'Uspešno si promenio prava grupi $1. [[Special:GlobalGroupPermissions|Porvratak na upravljanje grupama]].',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Viki na kome ima nalog:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalni saradnik '''$1''' nije aktivan na vikiju koji si odredio/la (''$2''). Možda pokušavaš da dodeliš prava pogrešnom saradniku!",
-	'centralauth-editset' => 'Izmena skupova vikija.',
+	'centralauth-editset' => 'Skupovi Vikija',
 	'centralauth-editset-new' => 'Stvaranje novog skupa.',
 	'centralauth-editset-notfound' => 'Skup vikija "$1" nije pronađen.',
 	'centralauth-editset-optin' => 'Zasnovano na pristupanju (uključuje samo određene vikije).',
