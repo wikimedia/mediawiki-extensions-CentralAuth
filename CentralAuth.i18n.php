@@ -13284,7 +13284,7 @@ $messages['mk'] = array(
 	'centralauth-merge-step1-title' => 'Започнете го обединувањето на најавувањето',
 	'centralauth-merge-step1-detail' => 'Тука внесете ја лозинката на сметката.
 Вашата лозинка и регистрираната е-поштенска адреса ќе бидат проверени и споредени со сметките на другите викија за да се потврди дека се совпаѓаат.
-Промените нема да биадт извршени пред да потврдите дека сè е во ред.',
+Промените нема да бидат извршени пред да потврдите дека сè е во ред.',
 	'centralauth-merge-step1-submit' => 'Потврди го најавувањето',
 	'centralauth-merge-step2-title' => 'Потврди уште сметки',
 	'centralauth-merge-step2-detail' => 'Некои од сметките не можеа автоматски да се приврзат со назначеното матично вики.
@@ -17280,6 +17280,7 @@ Kayrayku: $1",
 );
 
 /** Romanian (Română)
+ * @author Cin
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
@@ -17353,19 +17354,21 @@ Un alt wiki a fost fost determinat ca fiind contul de reședință pentru numele
 	'centralauth-admin-permission' => 'Numai stewarzii pot asimila conturile pentru alți utilizatori.',
 	'centralauth-admin-no-unified' => 'Nu există niciun cont unificat asociat acestui nume de utilizator.',
 	'centralauth-admin-info-id' => 'ID utilizator:',
-	'centralauth-admin-info-registered' => 'Înregistrate:',
+	'centralauth-admin-info-registered' => 'Înregistraţi:',
 	'centralauth-admin-info-locked' => 'Încuiat:',
-	'centralauth-admin-info-hidden' => 'Ascunse:',
+	'centralauth-admin-info-hidden' => 'Nivel ascuns:',
 	'centralauth-admin-yes' => 'da',
 	'centralauth-admin-no' => 'nu',
-	'centralauth-admin-unattached' => 'Conturi neatașate',
-	'centralauth-admin-notblocked' => 'Neîncuiat',
-	'centralauth-admin-blocked' => 'Încuiat, expiră $3 la $4. Motivul: $2',
-	'centralauth-admin-blocked-indef' => 'Încuiat pe termen nelimitat. Motivul: $1',
+	'centralauth-admin-unattached' => 'neataşat(e)',
+	'centralauth-admin-notblocked' => '—',
+	'centralauth-admin-blocked' => 'Blocat, expiră $3 la $4.
+Motivul: $2',
+	'centralauth-admin-blocked-indef' => 'Blocat pe termen nelimitat.
+Motivul: $1',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
-	'centralauth-admin-list-attached-on' => 'Atașate de',
+	'centralauth-admin-list-attached-on' => 'Ataşat în',
 	'centralauth-admin-list-method' => 'Metodă',
-	'centralauth-admin-list-blocked' => 'Statur încuiat',
+	'centralauth-admin-list-blocked' => 'Blocat',
 	'centralauth-admin-unmerge' => 'Disociați selecția',
 	'centralauth-admin-merge' => 'Asimilați selecția',
 	'centralauth-admin-bad-input' => 'Selecție de asimilare incorectă',
@@ -17380,9 +17383,9 @@ Parolele conturilor globale create anterior unificării vor reveni la valorile l
 	'centralauth-admin-nonexistent' => 'Nu există nici un cont global pentru "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Eroare: contul global „<nowiki>$1</nowiki>” nu există',
 	'centralauth-admin-reason' => 'Motiv:',
-	'centralauth-admin-status-locked' => 'Încuiat',
-	'centralauth-admin-status-hidden' => 'Ascuns',
-	'centralauth-admin-status-submit' => 'Stabilește statut',
+	'centralauth-admin-status-locked' => 'Încuiat:',
+	'centralauth-admin-status-hidden' => 'Ascuns:',
+	'centralauth-admin-status-submit' => 'Setează statutul',
 	'centralauth-admin-status-nonexistent' => 'Eroare: contul global „<nowiki>$1</nowiki>” nu există.',
 	'centralauth-admin-setstatus-success' => 'Ați schimbat cu succes statutul acestui cont global.',
 	'globalusers' => 'Listă de utilizatori globali',
@@ -17416,7 +17419,7 @@ Redenumirea va cauza utilizatorului local detașarea de la contul global.',
 	'centralauth-log-name' => 'Jurnal conturi globale',
 	'centralauth-log-entry-delete' => 'șters contul global "$1"',
 	'centralauth-log-entry-hide' => 'ascuns contul global "$1"',
-	'centralauth-log-status-locked' => 'blocat',
+	'centralauth-log-status-locked' => 'încuiat',
 	'centralauth-log-status-hidden' => 'ascuns',
 	'centralauth-log-status-none' => '(nimic)',
 	'centralauth-rightslog-name' => 'Jurnalul drepturilor globale',
