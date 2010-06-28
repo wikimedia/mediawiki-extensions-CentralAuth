@@ -17151,7 +17151,7 @@ Note que um grupo não existe se não tiver permissões atribuídas.',
 	'centralauth-editgroup-success-text' => 'Alterou com sucesso as permissões do grupo $1.
 [[Special:GlobalGroupPermissions|Voltar à administração de grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Selecione um wiki onde possua uma conta:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Selecione uma wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O usuário global '''$1''' não está ativo na wiki especificada (''$2''). É possível que esteja atribuindo direitos ao usuário errado!",
 	'centralauth-editset' => 'Conjuntos de wikis',
 	'centralauth-editset-legend-rw' => 'Editar ou criar um conjunto de wikis',
