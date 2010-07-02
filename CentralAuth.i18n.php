@@ -18665,6 +18665,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-wikis' => 'Викији:',
 	'centralauth-editset-reason' => 'Разлог:',
 	'centralauth-editset-submit' => 'унеси',
+	'centralauth-editset-submit-delete' => 'Обриши',
 	'centralauth-editset-badname' => 'Неисправно или празно име скупа.',
 	'centralauth-editset-badtype' => 'Непознат тип скупа.',
 	'centralauth-editset-setexists' => 'Скуп са овим именом већ постоји',
