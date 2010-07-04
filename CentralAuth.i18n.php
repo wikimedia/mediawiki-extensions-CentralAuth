@@ -4978,9 +4978,17 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
 );
 
-/** Ewe (Eʋegbe) */
+/** Ewe (Eʋegbe)
+ * @author Natsubee
+ */
 $messages['ee'] = array(
+	'centralauth-merge-denied' => 'Taflatse, womeɖe mɔ na wò bena na kpɔ axa sia o.',
 	'centralauth-finish-login' => 'Ge ɖe eme',
+	'centralauth-admin-delete-button' => 'Tutu ŋkɔ sia',
+	'centralauth-log-status-hidden' => 'woɣlae',
+	'centralauth-editset-name' => 'Ŋkɔ:',
+	'centralauth-editset-submit' => 'Ɖoe ɖa',
+	'centralauth-editset-submit-delete' => 'Tutui',
 );
 
 /** Greek (Ελληνικά)
@@ -12854,7 +12862,7 @@ Doe kans de rechte van alle gróppe betrachte en bewirke es doe dao de rechte ve
 	'centralauth-editgroup-noset' => '(gein)',
 	'centralauth-editgroup-submit' => 'Wijzige aan groepsrechte opsloon',
 	'centralauth-editgroup-perms' => 'Toegekindje rech:',
-	'centralauth-editgroup-reason' => 'Ree:',
+	'centralauth-editgroup-reason' => 'Reeje:',
 	'centralauth-editgroup-success' => 'Groepsrech verangerdj',
 	'centralauth-editgroup-success-text' => 'Doe höbs de grópsrechte veur gróp $1 aangepas. [[Special:GlobalGroupPermissions|Trök nao grópsbeheer]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bewèrk]])',
@@ -15258,7 +15266,7 @@ Merk at gruppa ikkje finst med mindre ho har fått tildelt rettar.',
 	'centralauth-editset-name' => 'Namn:',
 	'centralauth-editset-type' => 'Type:',
 	'centralauth-editset-wikis' => 'Wikiar:',
-	'centralauth-editset-reason' => 'Grunn:',
+	'centralauth-editset-reason' => 'Årsak:',
 	'centralauth-editset-submit' => 'OK',
 	'centralauth-editset-badname' => 'Ugyldig eller tomt settnamn.',
 	'centralauth-editset-badtype' => 'Ugyldig settype.',
@@ -15941,6 +15949,7 @@ $messages['pdt'] = array(
  * @author Leinad
  * @author Maikking
  * @author Matma Rex
+ * @author Nux
  * @author Qblik
  * @author Sp5uhe
  * @author ToSter
@@ -15955,7 +15964,7 @@ $messages['pl'] = array(
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Zaloguj się]</span>, by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.',
 	'centralauth-merge-welcome' => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto uniwersalne w obrębie projektów {{MediaWiki:Centralauth-groupname}}.'''
 
-Funkcjonalność konta uniwersalnego pozwala na korzystanie z tej samej nazwy użytkownika i hasła do zalogowania się we wszystkich projektach {{MediaWiki:Centralauth-groupname}}, we wszystkich wersjach językowych. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub nawet konfliktów, które mogą powstać, gdy dwie osoby wybiorą tę samą nazwę użytkownika na różnych projektach.
+Posiadanie konta uniwersalnego pozwala na korzystanie z tej samej nazwy użytkownika i hasła do zalogowania się we wszystkich projektach {{MediaWiki:Centralauth-groupname}}, we wszystkich wersjach językowych. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub nawet konfliktów, które mogą powstać, gdy dwie osoby wybiorą tę samą nazwę użytkownika na różnych projektach.
 
 Jeśli ktoś inny wykorzystuje na innym projekcie identyczną nazwę użytkownika do Twojej, przekształcenie Twojego konta na konto uniwersalne nie stanie się dla niego problemem, lecz da Ci szansę na późniejsze znalezienie rozwiązania we współpracy bezpośrednio z tą osobą lub z wykorzystaniem pomocy któregoś z administratorów.",
 	'centralauth-merge-step1-title' => 'Przekształć na uniwersalne',
@@ -16017,7 +16026,7 @@ Zauważ, że inaczej może być na prawdziwej domowej wiki użytkownika.',
 	'centralauth-merge-method-mail-desc' => 'Wskazuje, że lokalne konto zostało przyłączone ponieważ ustawiony dla niego adres e‐mail jest identyczny jak dla konta głównego.',
 	'centralauth-merge-method-password-desc' => 'Wskazuje, że konto lokalne zostało przyłączone ponieważ użytkownik podał dla niego prawidłowe hasło.',
 	'centralauth-merge-method-admin-desc' => 'Wskazuje, że konto lokalne zostało ręcznie przyłączone przez stewardów.
-Ta funkcjonalność jest obecnie wyłączona ze względów bezpieczeństwa.',
+Ta funkcja jest obecnie wyłączona ze względów bezpieczeństwa.',
 	'centralauth-merge-method-new-desc' => 'Wskazuje, że konto uniwersalne zostało utworzone automatycznie w procesie tworzenia konta lokalnego.',
 	'centralauth-merge-method-login-desc' => 'Wskazuje, że konto lokalne zostało utworzone automatycznie w czasie logowania się przez niego.',
 	'centralauth-finish-title' => 'Zakończono tworzenie konta uniwersalnego',
@@ -22064,6 +22073,13 @@ $messages['vro'] = array(
 	'centralauth-groupname' => 'Tsihtasotus Wikimedia',
 	'centralauth-login-progress' => 'Läät nimega sisse ka tõisihe {{int:Centralauth-groupname}} projektehe:',
 	'centralauth-logout-progress' => 'Läät nime alt vällä ka tõisist {{MediaWiki:Centralauth-groupname}} projektest:',
+);
+
+/** Wu (吴语) */
+$messages['wuu'] = array(
+	'centralauth-admin-reason' => '理由：',
+	'centralauth-editgroup-reason' => '理由：',
+	'centralauth-editset-reason' => '理由：',
 );
 
 /** Yiddish (ייִדיש)
