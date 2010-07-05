@@ -4462,6 +4462,15 @@ belki hesaban de parolayan değişk esto:',
 	'centralauth-merge-method-admin' => 'hesabê adminî yew biyo',
 	'centralauth-merge-method-new' => 'hesabê newî',
 	'centralauth-merge-method-login' => 'ser cikewtîş de viraziya',
+	'centralauth-merge-method-primary-desc' => 'Ena wikiya ke hesab tiya de tewr verni de yew biya.
+Diqet biki belki ena heseb, wikiyê merkeziyê ena karberi ra ferqli ya.',
+	'centralauth-merge-method-empty-desc' => 'Ena nişan keni xesabê lokali yew biya cunki zerrê ey de vurnayiş cina.',
+	'centralauth-merge-method-mail-desc' => 'Ena nişan keni xesabê lokali yew biya cunki adresê emaili ena hesab u emailê hesebê merkezi eyni ye.',
+	'centralauth-merge-method-password-desc' => 'Ena nişan keni xesabê lokali yew biya cunki karber yew sifreyê raşti da.',
+	'centralauth-merge-method-admin-desc' => 'Ena nişan keno ke hesabê lokali stewardan yew kerd.
+Ena xacet qefiliyeyo seba sebebanê asayişi.',
+	'centralauth-merge-method-new-desc' => 'Ena işaret keno ke hesabê globali otomatiki viraziye key hesabê loklai viraziya.',
+	'centralauth-merge-method-login-desc' => 'Ena işaret keno ke hesabê lokali otomatiki viraziye key karber site kewto.',
 	'centralauth-finish-title' => 'Yew biyayîş qediya',
 	'centralauth-finish-text' => 'Eka enê hesaban tu yo, pê nuştişê parola ti eşkeno eno processê yew kerdişî biqed:',
 	'centralauth-finish-password' => 'Parola:',
@@ -4540,6 +4549,12 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-status-submit' => 'Statu rone',
 	'centralauth-admin-status-nonexistent' => 'Ğelet: hesabê globalî "<nowiki>$1</nowiki>" çini yo.',
 	'centralauth-admin-setstatus-success' => 'Ti statuyê hesabê gobalî vurna.',
+	'centralauth-admin-status-reasons' => '* 
+** vandalizm-teyna hesab
+** spam-teyna hesab
+* Sebebanê qilid kerdişi-u-sebabanê nimnaye
+** nameyê karberi ke arsizi
+** enformasyonê şêxsi ke uygun niya',
 	'centralauth-admin-logsnippet' => 'Vurnayişê hesabanê globali verini',
 	'centralauth-admin-suppressreason' => 'wikiyanê hemi de suppres biya pê $1, pê ena sebebanê: $2',
 	'globalusers' => 'Listeyê karberi yê globalî',
@@ -9829,11 +9844,14 @@ $messages['io'] = array(
 	'centralauth-prefs-complete' => 'Omno es en bona stando!',
 	'centralauth-log-status-none' => '(nula)',
 	'centralauth-newgroup-legend' => 'Krear nova grupo',
+	'centralauth-editgroup-subtitle' => 'Vu chanjas $1',
 	'centralauth-editgroup-noset' => '(nula)',
 	'centralauth-editgroup-reason' => 'Motivo:',
 	'centralauth-editset-name' => 'Nomo:',
+	'centralauth-editset-type' => 'Tipo:',
 	'centralauth-editset-reason' => 'Motivo:',
 	'centralauth-editset-submit' => 'Sendez',
+	'centralauth-editset-submit-delete' => 'Efacar',
 	'centralauth-editset-nouse' => '(nula)',
 );
 
