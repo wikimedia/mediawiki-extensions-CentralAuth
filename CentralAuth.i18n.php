@@ -889,6 +889,7 @@ $messages['ang'] = array(
 );
 
 /** Arabic (العربية)
+ * @author ;Hiba;1
  * @author Alnokta
  * @author Meno25
  * @author OsamaK
@@ -959,7 +960,9 @@ $messages['ar'] = array(
 	'centralauth-merge-method-password' => 'مؤكدة بواسطة كلمة السر',
 	'centralauth-merge-method-admin' => 'حساب إداري مدمج',
 	'centralauth-merge-method-new' => 'حساب جديد',
-	'centralauth-merge-method-login' => 'مؤكدة بواسطة تسجيل الدخول',
+	'centralauth-merge-method-login' => 'انشئ عمد الدخول',
+	'centralauth-merge-method-primary-desc' => 'هذا هو الويكي الذي تم دمج الحساب فيه. لاحظ أنه قد يختلف عن ويكي الحقيقي لهذا المستخدم.',
+	'centralauth-merge-method-new-desc' => 'يبين أنه تم إنشاء الحساب العالمي تلقائيا عندما تم إنشاء ذلك الحساب المحلي.',
 	'centralauth-finish-title' => 'انتهاء الدمج',
 	'centralauth-finish-text' => 'لو كانت هذه الحسابات تنتمي لك، يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمات السر للحسابات الأخرى هنا:',
 	'centralauth-finish-password' => 'كلمة السر:',
@@ -1002,7 +1005,7 @@ $messages['ar'] = array(
 	'centralauth-admin-list-attached-on' => 'مرتبطة',
 	'centralauth-admin-list-method' => 'طريقة',
 	'centralauth-admin-list-editcount' => 'عدد التعديلات',
-	'centralauth-admin-list-blocked' => 'حالة المنع',
+	'centralauth-admin-list-blocked' => 'محظور',
 	'centralauth-admin-unmerge' => 'تم اختيار الفصل',
 	'centralauth-admin-merge' => 'تم اختيار الدمج',
 	'centralauth-admin-bad-input' => 'اختيار دمج غير صحيح',
@@ -1122,6 +1125,7 @@ $messages['ar'] = array(
 	'centralauth-globalgroupmembership-badknownwiki' => "المستخدم العام '''$1''' ليس نشطا على الويكي الذي حددته (''$2'').
 ربما تكون تحاول إعطاء صلاحيات للمستخدم الخاطئ!",
 	'centralauth-editset' => 'تعديل مجموعات الويكي',
+	'centralauth-editset-legend-rw' => 'تحرير أو إنشاء مجموعة ويكي',
 	'centralauth-editset-new' => 'إنشاء مجموعة جديدة',
 	'centralauth-editset-notfound' => 'مجموعة الويكي "$1" لم يتم العثور عليها.',
 	'centralauth-editset-optin' => 'معتمد على الاشتراك (يشمل فقط الويكيات المحددة)',
@@ -1143,6 +1147,7 @@ $messages['ar'] = array(
 	'centralauth-editset-success' => 'تم تغيير مجموعة الويكي بنجاح.',
 	'centralauth-editset-return' => 'رجوع إلى القائمة الرئيسية',
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
+	'right-centralauth-lock' => 'إقفال أو إخفاء الحساب العالمي',
 	'right-centralauth-merge' => 'دمج حسابهم',
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 );
@@ -3751,6 +3756,7 @@ $messages['cy'] = array(
 	'centralauth-admin-info-registered' => 'Wedi cofrestri:',
 	'centralauth-admin-info-locked' => 'Ar glo:',
 	'centralauth-admin-info-hidden' => 'Lefel cudd:',
+	'centralauth-admin-list-editcount' => 'Nifer y golygiadau',
 	'centralauth-prefs-status' => 'Statws y cyfrif wici-gyfan:',
 	'centralauth-prefs-not-managed' => 'Ddim yn defnyddio cyfrif unedig',
 	'centralauth-prefs-unattached' => 'Heb ei gadarnhau',
@@ -5032,7 +5038,7 @@ $messages['el'] = array(
 
 Εάν κάποιος άλλος έχει ήδη πάρει το όνομα χρήστη σας σε άλλον ιστότοπο, αυτό δεν θα τον ενοχλήσει, θα σας δωθεί όμως την ευκαιρία αργότερα να λύσετε το πρόβλημα μαζί του ή με κάποιον διαχειριστή.",
 	'centralauth-merge-step1-title' => 'Έναρξη ενοποίησης των λογαριασμών',
-	'centralauth-merge-step1-detail' => 'Παρακαλώ εισάγεται τον κωδικό του λογαριασμού σας.
+	'centralauth-merge-step1-detail' => 'Παρακαλούμε εισάγετε τον κωδικό πρόσβασης του λογαριασμού σας.
 Ο κωδικός σας και η ηλεκτρονική διεύθυνση που έχετε δηλώσει θα υποβληθούν σε έλεγχο με τους λογαριασμούς σε άλλα εγχειρήματα για να επιβεβαιωθεί ότι ταιριάζουν.
 Δεν θα γίνει καμία αλλαγή έως ότου επιβεβαιώσετε ότι τα πάντα είναι εντάξει.',
 	'centralauth-merge-step1-submit' => 'Επαλήθευση των πληροφοριών σύνδεσης',
@@ -5085,6 +5091,12 @@ $messages['el'] = array(
 	'centralauth-merge-method-admin' => 'Συγχωνευμένος λογαριασμός λόγω ιδιότητας διαχειριστή',
 	'centralauth-merge-method-new' => 'νέος λογαριασμός',
 	'centralauth-merge-method-login' => 'δημιουργήθηκε κάνοντας σύνδεση',
+	'centralauth-merge-method-empty-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε διότι δεν είχαν γίνει επεξεργασίες από αυτόν.',
+	'centralauth-merge-method-mail-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε διότι η ηλεκτρονική διεύθυνσή του ταίριαξε στην ηλεκτρονική διεύθυνση του κυρίου λογαριασμού.',
+	'centralauth-merge-method-password-desc' => "Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε διότι ο χρήστης εισήγαγε έγκυρο κωδικό πρόσβασης γι' αυτόν.",
+	'centralauth-merge-method-admin-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε χειροκίνητα από τους stewards.<br /> 
+Εκείνη η λειτουργία είναι τώρα απενεργοποιημένη για λόγους ασφάλειας.',
+	'centralauth-merge-method-new-desc' => 'Ένδειξη ότι ο καθολικός λογαριασμός δημιουργήθηκε αυτόματα όταν ο τοπικός λογαριασμός δημιουργούνταν.',
 	'centralauth-finish-title' => 'Ολοκλήρωση της συγχώνευσης',
 	'centralauth-finish-text' => 'Εάν αυτοί οι λογαριασμοί ανήκουν πραγματικά σε σας, μπορείτε να ολοκληρώσετε απλά την διαδικασία ενοποίησης λογαριασμών πληκτρολογώντας εδώ τους κωδικούς πρόσβασης των άλλων λογαριασμών:',
 	'centralauth-finish-password' => 'Κωδικός:',
@@ -6663,17 +6675,20 @@ Ryhmää ei ole olemassa, jos sille ei ole annettu mitään oikeuksia.',
 	'centralauth-globalgroupmembership-badknownwiki' => "Yhdistettyä tunnusta '''$1''' ei ole olemassa wikissä '' $2 ''.
 Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 	'centralauth-editset' => 'Muokkaa wikijoukkoja',
+	'centralauth-editset-legend-ro' => 'Luettelo wikijoukoista',
 	'centralauth-editset-new' => 'Luo uusi joukko',
 	'centralauth-editset-notfound' => 'Wikijoukkoa ”$1” ei löytynyt.',
 	'centralauth-editset-optin' => 'Liittymisperusteinen (vain määritellyissä wikeissä)',
 	'centralauth-editset-optout' => 'Eroamisperusteinen (sisältäen kaikki wikit pois lukien määritellyt)',
 	'centralauth-editset-legend-edit' => 'Muokataan wikijoukkoa ”$1”',
+	'centralauth-editset-legend-view' => 'Wikijoukko ”$1”',
 	'centralauth-editset-legend-new' => 'Uusi wikijoukko',
 	'centralauth-editset-name' => 'Nimi:',
 	'centralauth-editset-type' => 'Tyyppi:',
 	'centralauth-editset-wikis' => 'Wikit:',
 	'centralauth-editset-reason' => 'Syy:',
 	'centralauth-editset-submit' => 'Lähetä',
+	'centralauth-editset-submit-delete' => 'Poista',
 	'centralauth-editset-badname' => 'Virheellinen tai tyhjä nimi joukolle.',
 	'centralauth-editset-badtype' => 'Virheellinen joukon tyyppi.',
 	'centralauth-editset-setexists' => 'Samanniminen joukko on jo olemassa',
@@ -6681,7 +6696,8 @@ Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 	'centralauth-editset-nouse' => '(ei mitään)',
 	'centralauth-editset-usage' => 'Käytetty ryhmissä:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|Seuraavaa wikiä|Seuraavia wikejä}} ei ole: $1.',
-	'centralauth-editset-success' => 'Wikijoukko muutettu onnistuneesti.',
+	'centralauth-editset-success' => 'Wikijoukon muuttaminen onnistui.',
+	'centralauth-editset-success-delete' => 'Wikijoukon poistaminen onnistui.',
 	'centralauth-editset-return' => 'Palaa päänäkymään',
 	'right-globalgroupmembership' => 'Muokata globaalien ryhmien jäsenyyksiä',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
@@ -13492,7 +13508,7 @@ $messages['mk'] = array(
 	'centralauth-months-ago' => 'пред $1 {{PLURAL:$1|месец|месеци}}',
 	'centralauth-years-ago' => 'пред $1 {{PLURAL:$1|година|години}}',
 	'centralauth-prefs-status' => 'Статус на глобална сметка:',
-	'centralauth-prefs-not-managed' => 'Не користи обединета сметка',
+	'centralauth-prefs-not-managed' => 'Не се користи обединета сметка',
 	'centralauth-prefs-unattached' => 'Непотврдено',
 	'centralauth-prefs-complete' => 'Сè е в ред!',
 	'centralauth-prefs-migration' => 'Во преселба',
