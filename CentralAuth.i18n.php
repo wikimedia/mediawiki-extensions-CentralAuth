@@ -16628,6 +16628,7 @@ $messages['ps'] = array(
 	'centralauth-editset-submit' => 'سپارل',
 	'centralauth-editset-submit-delete' => 'ړنګول',
 	'centralauth-editset-nouse' => '(هېڅ)',
+	'centralauth-editset-usage' => 'کارېدلی په ډله د:',
 );
 
 /** Portuguese (Português)
