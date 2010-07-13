@@ -377,6 +377,7 @@ You may view and modify any of them, or create a new set.',
  * @author Jon Harald Søby
  * @author Kwj2772
  * @author Lejonel
+ * @author Lloffiwr
  * @author McDutchie
  * @author Meno25
  * @author Mormegil
@@ -405,6 +406,9 @@ $messages['qqq'] = array(
 Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-admin-yes' => '{{Identical|Yes}}',
 	'centralauth-admin-no' => '{{Identical|No}}',
+	'centralauth-admin-hidden-oversight' => "Means that some deleted content or other information has been hidden by someone having the power of 'Oversight'.
+
+See [http://meta.wikimedia.org/wiki/Oversight meta] for explanation of 'oversight' or 'revision delete' function.",
 	'centralauth-admin-unattached' => '{{Identical|Unattached accounts}}',
 	'centralauth-admin-blocked' => '$1 is the date/time of expiry, $2 is the reason of the block, $3 is the date of expiry, $4 is the time of expiry.',
 	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying dates when local accounts were attached to a global account',
