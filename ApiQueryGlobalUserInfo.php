@@ -40,6 +40,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		$prop = array_flip( (array)$params['prop'] );
 		if ( is_null( $params['user'] ) ) {
 			$params['user'] = $wgUser->getName();
+			$this->getMain()->setVaryCookie();
 		}
 		$user = new CentralAuthUser( $params['user'] );
 		if ( !$user->exists() ) {
