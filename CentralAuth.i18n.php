@@ -2650,7 +2650,7 @@ $messages['br'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Kendeuziñ a ra ar c'hontoù implijer]] war wikioù {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Kendeuziñ a ra meur a gont]] evit ur marilhañ unvan',
 	'centralauth-merge-denied' => "Ho tigarez, n'oc'h ket aotreet da vont war ar bajenn-mañ.",
-	'centralauth-merge-notlogged' => 'Trugarez d\'en em <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} lugañ]</span> evit gwiriañ eo bet kendeuzet mat ho kontoù.',
+	'centralauth-merge-notlogged' => 'Trugarez da <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} gevreañ]</span> evit gwiriañ eo bet kendeuzet mat ho kontoù.',
 	'centralauth-merge-welcome' => "'''N'eo ket bet treuzkaset ho kontoù implijer davet reizhiad emlugañ unvan {{MediaWiki:Centralauth-groupname}} c'hoazh.'''
 
 Ma tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù {{MediaWiki:Centralauth-groupname}} en holl yezhoù a c'haller kaout.
@@ -2678,8 +2678,8 @@ Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer; kit
 	'centralauth-merge-step3-submit' => "Kendeuziñ ar c'hontoù",
 	'centralauth-complete' => "Kendeuzet eo ar c'hontoù !",
 	'centralauth-incomplete' => "N'eo ket echu kendeuziñ ar c'hontoù !",
-	'centralauth-complete-text' => 'Gallout a rit bremañ en em lugañ ouzh ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.',
-	'centralauth-incomplete-text' => "Pa vo bet kendeuzet an doare da vezañ anavezet e c'hallot en em lugañ war ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.",
+	'centralauth-complete-text' => 'Gallout a rit bremañ kevreañ ouzh ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.',
+	'centralauth-incomplete-text' => "Pa vo bet kendeuzet an doare da vezañ anavezet e c'hallot kevreañ war ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.",
 	'centralauth-not-owner-text' => 'Staget eo bet ent emgefre an anv implijer "$1" ouzh perc\'henn ar gont $2.
 
 Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :',
@@ -2774,7 +2774,7 @@ Abeg : $1',
 	'centralauth-admin-reason' => 'Abeg :',
 	'centralauth-admin-reason-other' => 'Abeg all/ouzhpenn :',
 	'centralauth-admin-status' => 'Kemmañ statud ar gont hollek',
-	'centralauth-admin-status-intro' => "Tu 'zo deoc'h implijout ar furmskrid-mañ evit kemmañ statud ar gont hollek-se",
+	'centralauth-admin-status-intro' => 'Gellout a rit implijout ar furmskrid-mañ evit kemmañ statud ar gont hollek-se',
 	'centralauth-admin-status-locked' => 'Prennet :',
 	'centralauth-admin-status-locked-no' => "N'eo ket stanket ar gont",
 	'centralauth-admin-status-locked-yes' => "Stanket eo ar gont evit ar c'hemmañ",
