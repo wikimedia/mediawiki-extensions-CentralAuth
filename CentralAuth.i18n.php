@@ -2642,6 +2642,7 @@ $messages['bn'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Gwendal
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -2744,6 +2745,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-yes' => 'ya',
 	'centralauth-admin-no' => 'ket',
 	'centralauth-admin-hidden-list' => 'eus ar rolloù publik',
+	'centralauth-admin-hidden-oversight' => 'kuzhet',
 	'centralauth-admin-list-legend-ro' => "Roll ar c'hontoù lec'hel",
 	'centralauth-admin-list-legend-rw' => "Nullañ kendeuzadur ar c'hontoù lec'hel",
 	'centralauth-admin-unattached' => 'distag',
@@ -16758,7 +16760,7 @@ Se a conta global também for sua, pode associar-lhe esta conta introduzindo a p
 	'centralauth-admin-yes' => 'sim',
 	'centralauth-admin-no' => 'não',
 	'centralauth-admin-hidden-list' => 'de listas públicas',
-	'centralauth-admin-hidden-oversight' => 'monitorizada',
+	'centralauth-admin-hidden-oversight' => 'suprimido',
 	'centralauth-admin-list-legend-ro' => 'Lista de contas locais',
 	'centralauth-admin-list-legend-rw' => 'Anular fusão das contas locais',
 	'centralauth-admin-unattached' => 'não acopladas',
