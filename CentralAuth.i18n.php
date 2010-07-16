@@ -896,6 +896,7 @@ $messages['ang'] = array(
  * @author ;Hiba;1
  * @author Alnokta
  * @author Meno25
+ * @author Moemin05
  * @author OsamaK
  */
 $messages['ar'] = array(
@@ -1141,6 +1142,7 @@ $messages['ar'] = array(
 	'centralauth-editset-wikis' => 'الويكيات:',
 	'centralauth-editset-reason' => 'السبب:',
 	'centralauth-editset-submit' => 'تنفيذ',
+	'centralauth-editset-submit-delete' => 'حذف',
 	'centralauth-editset-badname' => 'أنت حددت اسم مجموعة غير صحيح أو فارغ.',
 	'centralauth-editset-badtype' => 'أنت حددت نوع مجموعة غير صحيح.',
 	'centralauth-editset-setexists' => 'هناك مجموعة ويكي بهذا الاسم بالفعل',
@@ -6035,7 +6037,7 @@ Põhjus: $2',
 	'centralauth-prefs-manage' => 'Vaata oma ühendkontot',
 	'centralauth-renameuser-reserved' => 'Kasutajanime $2 hoitakse globaalse konto jaoks.',
 	'centralauth-account-exists' => 'Konntot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
-	'centralauth-login-progress' => 'Teid logitakse projektidesse, mida haldab {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Sind logitakse {{int:Centralauth-groupname}} projektidesse sisse:',
 	'centralauth-logout-progress' => 'Teid logitakse välja projektidest, mida haldab {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.',
@@ -9299,7 +9301,7 @@ $messages['ia'] = array(
 	'centralauth-merge-notlogged' => 'Per favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} aperi un session]</span> pro verificar que le fusion de tu contos sia complete.',
 	'centralauth-merge-welcome' => "'''Tu conto de usator non ha ancora essite migrate al systema de contos unificate del {{MediaWiki:Centralauth-groupname}}.'''
 
-Si tu opta pro migrar tu contos, tu potera usar le mesme nomine de usator e contrasigno pro identificar te a tote le wikis del {{MediaWiki:Centralauth-groupname}} in tote le linguas disponibile.
+Si tu opta pro migrar tu contos, tu potera usar le mesme nomine de usator e contrasigno pro aperir un session in tote le wikis del {{MediaWiki:Centralauth-groupname}} in tote le linguas disponibile.
 
 Si un altere persona ha ja occupate tu nomine de usator in un altere sito, iste operation non disturbara iste persona, sed tu potera negotiar le cosa plus tarde con iste persona o con un administrator.",
 	'centralauth-merge-step1-title' => 'Comenciar unification de contos',
@@ -9476,7 +9478,7 @@ Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-account-exists' => 'Non pote crear conto: le nomine de usator requestate es ja in uso in le systema de contos unificate.',
 	'centralauth-login-progress' => 'Apertura de tu session in le projectos del {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Clausura de tu session in le altere projectos del {{MediaWiki:Centralauth-groupname}}:',
-	'centralauth-login-no-others' => 'Tu ha essite automaticamente identificate in le altere projectos del {{int:Centralauth-groupname}}.',
+	'centralauth-login-no-others' => 'Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'celate globalmente per $1 a $2 pro le motivo sequente: $3',
 	'centralauth-log-name' => 'Registro de contos global',
