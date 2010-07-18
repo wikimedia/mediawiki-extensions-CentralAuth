@@ -7035,7 +7035,7 @@ $messages['frp'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusione los comptos utilisator]] sur los vouiquis de {{MediaWiki:Centralauth-groupname}}.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusione un mouél de comptos]] por lo branchement unifiâ.',
 	'centralauth-merge-denied' => 'Dèsolâ, vos avéd pas los drêts d’accès a ceta pâge.',
-	'centralauth-merge-notlogged' => 'Volyéd vos <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} branchiér]</span> por controlar se voutros comptos ont tôs bien étâ fusionâs.',
+	'centralauth-merge-notlogged' => 'Vos volyéd <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} branchiér]</span> por controlar se voutros comptos ont tôs bien étâ fusionâs.',
 	'centralauth-merge-welcome' => "'''Voutron compto utilisator at p’oncor étâ dèplaciê vers lo sistèmo de branchement unifiâ de {{MediaWiki:Centralauth-groupname}}.'''
 
 Se vos chouèsésséd de dèplaciér voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa por vos branchiér sur tôs los projèts de {{MediaWiki:Centralauth-groupname}} dens totes les lengoues disponibles.
@@ -7060,7 +7060,7 @@ Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd et pués
 	'centralauth-not-owner-text' => 'Lo compto utilisator « $1 » at étâ ôtomaticament assignê u propriètèro du compto dessus $2.
 
 S’o est vos, vos porréd chavonar lo procès de fusion des comptos en buchient lo mot de pâssa mêtre por cél compto dessus :',
-	'centralauth-notice-dryrun' => "<div class='successbox'>Fôrma de dèmonstracion solament</div><br clear='all'/>",
+	'centralauth-notice-dryrun' => "<div class='successbox'>Ren que la fôrma de dèmonstracion</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La fusion des comptos est ora en môdo de dèmonstracion ou d’èprôva, pôvont vêr p’oncor verément fusionar de comptos. Dèsolâ !',
 	'centralauth-error-locked' => 'Vos pouede ren changiér perce que voutron compto est vèrrolyê.',
 	'centralauth-readmore-text' => ":''[[w:frp:Vouiquipèdia:Login unico|Nen savêr de ples sur lo '''compto unico''']]...''",
