@@ -21155,6 +21155,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author NickK
  * @author Prima klasy4na
+ * @author Тест
  */
 $messages['uk'] = array(
 	'mergeaccount' => "Стан об'єднання облікових записів",
@@ -21283,6 +21284,7 @@ $messages['uk'] = array(
 	'centralauth-admin-status' => 'Установити стан глобального облікового запису',
 	'centralauth-admin-status-intro' => 'Ви можете використовувати цю форму для зміни стану цього глобального облікового запису',
 	'centralauth-admin-status-locked' => 'Заблокований:',
+	'centralauth-admin-status-locked-no' => 'Обліковий запис не заблокований',
 	'centralauth-admin-status-locked-yes' => 'З цього облікового запису заборонено редагувати',
 	'centralauth-admin-status-hidden' => 'Прихований:',
 	'centralauth-admin-status-hidden-no' => 'Обліковий запис не прихований',
