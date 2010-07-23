@@ -40,7 +40,6 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		$prop = array_flip( (array)$params['prop'] );
 		if ( is_null( $params['user'] ) ) {
 			$params['user'] = $wgUser->getName();
-			$this->getMain()->setVaryCookie();
 		}
 		$user = new CentralAuthUser( $params['user'] );
 		if ( !$user->exists() ) {
@@ -108,6 +107,16 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				$result->addValue( array( 'query', $this->getModuleName(), 'unattached' ), null, $a );
 			}
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
+		}
+	}
+
+	public function getCacheMode( $params ) {
+		if ( !is_null( $params['user'] ) ) {
+			// URL determines user, public caching is fine
+			return 'public';
+		} else {
+			// Code will fall back to $wgUser, don't cache
+			return 'private';
 		}
 	}
 
