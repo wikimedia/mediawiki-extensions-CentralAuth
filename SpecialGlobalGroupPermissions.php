@@ -112,7 +112,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function buildGroupView( $group ) {
-		global $wgOut, $wgUser, $wgScript;
+		global $wgOut, $wgUser;
 
 		$editable = $this->userCanEdit( $wgUser );
 
@@ -311,8 +311,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function addLogEntry( $group, $addRights, $removeRights, $reason ) {
-		global $wgRequest;
-
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry( 'groupprms2',
@@ -341,8 +339,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function addLogEntry2( $group, $old, $new, $reason ) {
-		global $wgRequest;
-
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry( 'groupprms3',
@@ -363,8 +359,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function invalidateRightsCache( $group ) {
-		global $wgMemc;
-
 		// Figure out all the users in this group.
 		$dbr = CentralAuthUser::getCentralDB();
 

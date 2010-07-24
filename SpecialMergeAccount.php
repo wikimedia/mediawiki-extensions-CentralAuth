@@ -209,7 +209,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function doInitialMerge() {
-		global $wgUser, $wgRequest, $wgOut, $wgCentralAuthDryRun;
+		global $wgUser, $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 
 		if ( $wgCentralAuthDryRun ) {
@@ -297,7 +297,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function showWelcomeForm() {
-		global $wgOut, $wgUser, $wgCentralAuthDryRun;
+		global $wgOut, $wgCentralAuthDryRun;
 
 		if ( $wgCentralAuthDryRun ) {
 			$wgOut->addWikiText( wfMsg( 'centralauth-notice-dryrun' ) );

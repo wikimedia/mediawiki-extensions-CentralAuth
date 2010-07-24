@@ -14,7 +14,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgUser, $wgMemc, $IP;
+		global $wgRequest, $wgOut, $wgMemc;
 
 		$tempToken = $wgRequest->getVal( 'token' );
 		$logout = $wgRequest->getBool( 'logout' );

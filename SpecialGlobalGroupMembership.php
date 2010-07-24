@@ -17,7 +17,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	function getSuccessURL() {
-		global $wgRequest;
 		$knownWikis = $this->mGlobalUser->listAttached();
 		$title = $this->getTitle( $this->mTarget );
 		return $title->getFullURL( 'wpKnownWiki=' . urlencode( $knownWikis[0] ) );
@@ -54,8 +53,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	function changeableGroups() {
-		global $wgUser;
-
 		# # Should be a global user
 		if ( !$this->mGlobalUser->exists() || !$this->mGlobalUser->isAttached() ) {
 			return array();
@@ -73,7 +70,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	function fetchUser( $username ) {
-		global $wgUser, $wgRequest;
+		global $wgRequest;
 
 		$knownwiki = $wgRequest->getVal( 'wpKnownWiki' );
 
@@ -100,8 +97,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
-		global $wgRequest;
-
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry( 'usergroups',

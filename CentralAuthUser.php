@@ -1705,7 +1705,6 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	protected function clearCookie( $name ) {
-		global $wgCentralAuthCookiePrefix;
 		self::setCookie( $name, '', - 86400 );
 	}
 
@@ -1742,8 +1741,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Called on logout.
 	 */
 	function deleteGlobalCookies() {
-		global $wgCentralAuthCookiePrefix;
-
 		$this->clearCookie( 'User' );
 		$this->clearCookie( 'Token' );
 		$this->clearCookie( 'Session' );

@@ -382,8 +382,6 @@ class CentralAuthHooks {
 	 * Helper function for onUserLoadFromSession
 	 */
 	static function initSession( $user, $token ) {
-		global $wgAuth;
-
 		$userName = $user->getName();
 		wfSetupSession();
 		if ( $token != @$_SESSION['globalloggedin'] ) {
@@ -545,7 +543,7 @@ class CentralAuthHooks {
 	 * Destroy local login cookies so that remote logout works
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
-		global $wgCentralAuthCookies, $wgCentralAuthCookieDomain;
+		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies || $user->isAnon() ) {
 			return true;
 		}

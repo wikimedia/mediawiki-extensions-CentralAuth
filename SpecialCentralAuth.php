@@ -86,7 +86,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function doSubmit() {
 		$deleted = false;
 		$globalUser = $this->mGlobalUser;
-		global $wgUser, $wgOut, $wgRequest;
+		global $wgUser, $wgRequest;
 		if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$this->showError( 'centralauth-token-mismatch' );
 		} elseif ( $this->mMethod == 'unmerge' && $this->mCanUnmerge ) {

@@ -66,7 +66,7 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	function buildMainView( $msg = '' ) {
-		global $wgOut, $wgScript, $wgUser;
+		global $wgOut, $wgUser;
 		$sk = $wgUser->getSkin();
 
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
@@ -272,7 +272,7 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	function doDelete( $set ) {
-		global $wgRequest, $wgContLang;
+		global $wgRequest;
 
 		$set = WikiSet::newFromID( $set );
 		if ( !$set ) {
