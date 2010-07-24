@@ -70,8 +70,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	function buildMainView() {
 		global $wgOut, $wgUser, $wgScript;
 
-		$sk = $wgUser->getSkin();
-
 		$groups = CentralAuthUser::availableGlobalGroups();
 
 		// Existing groups
@@ -228,7 +226,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function doSubmit( $group ) {
-		global $wgRequest, $wgOut, $wgScript, $wgUser;
+		global $wgRequest, $wgOut, $wgUser;
 
 		// Paranoia -- the edit token shouldn't match anyway
 		if ( !$this->userCanEdit( $wgUser ) )
