@@ -7030,29 +7030,40 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
-	'mergeaccount' => 'Statut de la fusion des comptos utilisator',
-	'centralauth-groupname' => 'la Fondacion Wikimedia',
-	'centralauth-desc' => '[[Special:MergeAccount|Fusione los comptos utilisator]] sur los vouiquis de {{MediaWiki:Centralauth-groupname}}.',
+	'mergeaccount' => 'Ètat de l’unificacion du branchement',
+	'centralauth-groupname' => 'la Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Fusione los comptos]] sur los vouiquis de {{MediaWiki:Centralauth-groupname}}.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusione un mouél de comptos]] por lo branchement unifiâ.',
 	'centralauth-merge-denied' => 'Dèsolâ, vos avéd pas los drêts d’accès a ceta pâge.',
 	'centralauth-merge-notlogged' => 'Vos volyéd <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} branchiér]</span> por controlar se voutros comptos ont tôs bien étâ fusionâs.',
-	'centralauth-merge-welcome' => "'''Voutron compto utilisator at p’oncor étâ dèplaciê vers lo sistèmo de branchement unifiâ de {{MediaWiki:Centralauth-groupname}}.'''
+	'centralauth-merge-welcome' => "'''Voutron compto utilisator at p’oncor étâ migrâ vers lo sistèmo de branchement unifiâ de {{MediaWiki:Centralauth-groupname}}.'''
 
-Se vos chouèsésséd de dèplaciér voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa por vos branchiér sur tôs los projèts de {{MediaWiki:Centralauth-groupname}} dens totes les lengoues disponibles.
+Se vos chouèsésséd de migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa por vos branchiér sur tôs los projèts de {{MediaWiki:Centralauth-groupname}} dens totes les lengoues disponibles.
 
 Se quârqu’un d’ôtro at chouèsi lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.",
-	'centralauth-merge-step1-title' => 'Comenciér lo procès de fusion des comptos',
+	'centralauth-merge-step1-title' => 'Comenciér l’unificacion du branchement',
 	'centralauth-merge-step1-detail' => 'Volyéd buchiér ique lo mot de pâssa de voutron compto.
-Voutron mot de pâssa et voutra adrèce èlèctronica encartâs vôlont étre comparâs avouéc celos des comptos homonimos sur los ôtros vouiquis por controlar que corrèspondont.
+Voutron mot de pâssa et voutra adrèce èlèctronica encartâ vôlont étre comparâs avouéc celos des comptos homonimos sur los ôtros vouiquis por controlar que corrèspondont.
 Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd et pués confirmâ que tot sè pâsse bien sur celos comptos.',
-	'centralauth-merge-step1-submit' => 'Confirmar les enformacions',
-	'centralauth-merge-step2-title' => 'Encllure d’ôtros comptos',
-	'centralauth-merge-step2-detail' => 'Cèrtins des comptos ont pas possu étre rapondus ôtomaticament a voutron compto principâl. Se celos comptos sont a vos, volyéd confirmar que sont a vos en entrent lo mot de pâssa corrèspondent.',
-	'centralauth-merge-step2-submit' => 'Confirmar les enformacions',
+	'centralauth-merge-step1-submit' => 'Confirmar les enformacions de branchement',
+	'centralauth-merge-step2-title' => 'Confirmar d’ôtros comptos',
+	'centralauth-merge-step2-detail' => 'Quârques-uns des comptos trovâs corrèspondont pas ôtomaticament a voutron compto principâl.
+Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo mot de pâssa corrèspondent.',
+	'centralauth-merge-step2-submit' => 'Confirmar les enformacions de branchement',
+	'centralauth-merge-dryrun-complete' => 'Tôs los comptos ègzistents pôvont étre unifiâs ôtomaticament !
+
+Por lo moment, nion changement at étâ fêt a voutros comptos.',
+	'centralauth-merge-dryrun-incomplete' => 'Vos éd dècidâ de continuar, mas un mouél de comptos ont pas possu étre controlâs ôtomaticament et pués seront pas migrâs d’abôrd.
+Vos los porréd fusionar ples târd.
+
+Por lo moment, nion changement at étâ fêt a voutros comptos.',
 	'centralauth-merge-dryrun-or' => "'''ou ben'''",
+	'centralauth-merge-dryrun-home' => 'Lo sistèmo de migracion at pas possu confirmar que vos éte lo propriètèro du compto du vouiqui principâl avouéc voutron nom d’utilisator.
+
+Un ôtro vouiqui at étâ dètèrmenâ coment lo compto principâl por voutron nom d’utilisator ; siude lo lim ce-desot et pués branchiéd-vos por chavonar la migracion de voutron compto.',
 	'centralauth-merge-step3-title' => 'Fâre un compto unifiâ',
-	'centralauth-merge-step3-detail' => 'Ora, vos éte prèst a fâre voutron compto unifiâ, uquint seront atachiês cetos vouiquis :',
-	'centralauth-merge-step3-submit' => 'Fusionar los comptos',
+	'centralauth-merge-step3-detail' => 'Ora, vos éte prèst a fâre voutron compto unifiâ, uquint seront rapondus cetos vouiquis :',
+	'centralauth-merge-step3-submit' => 'Unifiar los comptos',
 	'centralauth-complete' => 'Fusion des comptos chavonâ !',
 	'centralauth-incomplete' => 'Fusion des comptos pas chavonâ !',
 	'centralauth-complete-text' => 'Ora, vos vos pouede branchiér sur un projèt de {{MediaWiki:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
@@ -7092,7 +7103,7 @@ ils ont probâblament un mot de pâssa difèrent de celi de voutron compto princ
 	'centralauth-attach-title' => 'Confirmar lo compto',
 	'centralauth-attach-text' => 'Ceti compto at p’oncor étâ migrâ vers lo compto unifiâ.
 Se lo compto globâl est asse-ben a vos, vos pouede fusionar ceti compto se vos buchiéd lo mot de pâssa du compto globâl :',
-	'centralauth-attach-submit' => 'Migrar los comptos',
+	'centralauth-attach-submit' => 'Migrar lo compto',
 	'centralauth-attach-success' => 'Lo compto at étâ migrâ vers lo compto unifiâ.',
 	'centralauth' => 'Administrator ux utilisators globâls',
 	'centralauth-admin-intro' => 'Ceta entèrface pôt étre utilisâ por administrar los comptos globâls.',
