@@ -7048,7 +7048,7 @@ Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd et pués
 	'centralauth-merge-step1-submit' => 'Confirmar les enformacions de branchement',
 	'centralauth-merge-step2-title' => 'Confirmar d’ôtros comptos',
 	'centralauth-merge-step2-detail' => 'Quârques-uns des comptos trovâs corrèspondont pas ôtomaticament a voutron compto principâl.
-Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo mot de pâssa corrèspondent.',
+Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo mot de pâssa que corrèspond.',
 	'centralauth-merge-step2-submit' => 'Confirmar les enformacions de branchement',
 	'centralauth-merge-dryrun-complete' => 'Tôs los comptos ègzistents pôvont étre unifiâs ôtomaticament !
 
@@ -7064,10 +7064,14 @@ Un ôtro vouiqui at étâ dètèrmenâ coment lo compto principâl por voutron n
 	'centralauth-merge-step3-title' => 'Fâre un compto unifiâ',
 	'centralauth-merge-step3-detail' => 'Ora, vos éte prèst a fâre voutron compto unifiâ, uquint seront rapondus cetos vouiquis :',
 	'centralauth-merge-step3-submit' => 'Unifiar los comptos',
-	'centralauth-complete' => 'Fusion des comptos chavonâ !',
-	'centralauth-incomplete' => 'Fusion des comptos pas chavonâ !',
+	'centralauth-merge-no-accounts' => 'Nion compto que corrèspond a voutron nom at étâ trovâ dens la trâbla de survelyence des comptos centrâla !
+La bâsa de balyês pôt étre corrompua.',
+	'centralauth-merge-home-password' => 'Lo vouiqui principâl por ceti compto (listâ ce-desot) at un mot de pâssa difèrent de celi que vos éd buchiê.
+Volyéd buchiér lo mot de pâssa du vouiqui principâl.',
+	'centralauth-complete' => 'Unificacion du branchement chavonâ !',
+	'centralauth-incomplete' => 'Unificacion du branchement pas chavonâ !',
 	'centralauth-complete-text' => 'Ora, vos vos pouede branchiér sur un projèt de {{MediaWiki:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
-	'centralauth-incomplete-text' => 'Setout que voutron branchement serat unifiâ, vos porréd vos branchiér sur un projèt de {{MediaWiki:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
+	'centralauth-incomplete-text' => 'Setout que voutron branchement serat unifiâ, vos vos porréd branchiér sur un projèt de {{MediaWiki:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
 	'centralauth-not-owner-text' => 'Lo nom d’utilisator « $1 » at étâ assignê ôtomaticament u propriètèro du compto dessus $2.
 
 S’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lo mot de pâssa principâl por cél compto :',
