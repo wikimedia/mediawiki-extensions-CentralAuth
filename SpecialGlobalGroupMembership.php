@@ -9,7 +9,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	var $mGlobalUser;
 
 	function SpecialGlobalGroupMembership() {
-		SpecialPage::SpecialPage( 'GlobalGroupMembership' );
+		parent::SpecialPage( 'GlobalGroupMembership' );
 		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 
 		global $wgUser;
