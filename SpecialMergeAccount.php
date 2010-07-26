@@ -251,7 +251,6 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 		$password = $wgRequest->getText( 'wpPassword' );
 
-		$home = false;
 		$attached = array();
 		$unattached = array();
 		$ok = $globalUser->attemptPasswordMigration( $password, $attached, $unattached );
