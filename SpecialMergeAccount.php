@@ -225,10 +225,7 @@ class SpecialMergeAccount extends SpecialPage {
 			throw new MWException( "Submission error -- invalid input" );
 		}
 
-		$home = false;
-		$attached = array();
-		$unattached = array();
-		$ok = $globalUser->storeAndMigrate( $passwords );
+		$globalUser->storeAndMigrate( $passwords );
 		$this->clearWorkingPasswords();
 
 		$this->showCleanupForm();

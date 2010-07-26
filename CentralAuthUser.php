@@ -865,8 +865,6 @@ class CentralAuthUser extends AuthPluginUser {
 			$status->failCount++;
 		}
 
-		$invalidCount = count( $list ) - count( $valid );
-		$missingCount = 0;
 		$dbcw = self::getCentralDB();
 		$password = $this->getPassword();
 
@@ -1574,7 +1572,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$result->free();
 
 		// And while we're in here, look for user blocks :D
-		$blocks = array();
 		$result = $db->select( 'ipblocks',
 			array( 'ipb_expiry', 'ipb_reason' ),
 			array( 'ipb_user' => $data['id'] ),
