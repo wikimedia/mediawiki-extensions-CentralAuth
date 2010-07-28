@@ -22221,6 +22221,13 @@ $messages['yi'] = array(
 	'centralauth-editset-reason' => 'אורזאַך:',
 );
 
+/** Yoruba (Yorùbá)
+ * @author Demmy
+ */
+$messages['yo'] = array(
+	'centralauth-prefs-count-attached' => 'Àpamọ́ yín jẹ́ agbéṣe ní {{PLURAL:$1|ibi|àwọn ibi}} iṣẹ́-ọwọ́ $1.',
+);
+
 /** Cantonese (粵語)
  * @author Horacewai2
  * @author Liangent
@@ -22919,7 +22926,8 @@ $messages['zh-hant'] = array(
 	'centralauth-editset-nowikis' => '沒有指定wiki。',
 	'centralauth-editset-nouse' => '（無）',
 	'centralauth-editset-usage' => '組中的用戶：',
-	'centralauth-editset-success-delete' => '成功刪除維基設定。',
+	'centralauth-editset-success' => '成功更改維基集。',
+	'centralauth-editset-success-delete' => '成功刪除這個維基設定。',
 	'centralauth-editset-return' => '返回到主視圖',
 	'right-globalgroupmembership' => '編輯成員至全域組',
 	'right-centralauth-unmerge' => '取消合併本地帳戶',
