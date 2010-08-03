@@ -7152,11 +7152,15 @@ Volyéd buchiér lo mot de pâssa du vouiqui principâl.',
 	'centralauth-not-owner-text' => 'Lo nom d’utilisator « $1 » at étâ assignê ôtomaticament u propriètèro du compto dessus $2.
 
 S’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lo mot de pâssa principâl por cél compto :',
+	'centralauth-blocked-text' => 'Voutron compto sur lo vouiqui principâl (listâ ce-desot) est blocâ en ècritura.
+Vos volyéd veriér vers un administrator por lo dèblocar.
+Tant que cél compto résterat blocâ, vos porréd pas fusionar voutros comptos.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Ren que la fôrma de dèmonstracion</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'La fusion des comptos est ora en môdo de dèmonstracion ou d’èprôva, pôvont vêr p’oncor verément fusionar de comptos. Dèsolâ !',
+	'centralauth-disabled-dryrun' => 'Ora, l’unificacion des comptos est en fôrma de dèmonstracion ou ben d’èprôva, du côp les verés opèracions de fusion des comptos sont dèsactivâs.
+Dèsolâ !',
 	'centralauth-error-locked' => 'Vos pouede ren changiér perce que voutron compto est vèrrolyê.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|Nen savêr de ples sur lo '''branchement unifiâ''']]...''",
-	'centralauth-list-home-title' => 'Projèt principâl',
+	'centralauth-list-home-title' => 'Vouiqui principâl',
 	'centralauth-list-home-dryrun' => 'Lo mot de pâssa et l’adrèce èlèctronica encartâs sur ceti vouiqui principâl seront utilisâs por la crèacion de voutron compto unifiâ.',
 	'centralauth-list-attached-title' => 'Comptos rapondus',
 	'centralauth-list-attached' => 'Los comptos apelâs « $1 » sur châcun de cetos setos ont étâ rapondus ôtomaticament u compto unifiâ :',
@@ -7164,7 +7168,7 @@ S’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en 
 	'centralauth-list-unattached-title' => 'Comptos pas rapondus',
 	'centralauth-list-unattached' => 'Los comptos apelâs « $1 » sur cetos setos pôvont pas étre rapondus ôtomaticament ;
 ils ont probâblament un mot de pâssa difèrent de celi de voutron compto principâl :',
-	'centralauth-foreign-link' => 'Utilisator $1 dessus $2',
+	'centralauth-foreign-link' => 'Utilisator « $1 » dessus $2',
 	'centralauth-merge-method-primary' => 'vouiqui principâl',
 	'centralauth-merge-method-empty' => 'gins de contribucion',
 	'centralauth-merge-method-mail' => 'confirmâ per mèssageria èlèctronica',
@@ -9978,13 +9982,15 @@ Anda dapat melihat dan mengubahnya, atau membuat set baru.',
 	'right-globalgrouppermissions' => 'Pengaturan kelompok global',
 );
 
-/** Igbo (Igbo) */
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
 $messages['ig'] = array(
-	'centralauth-finish-password' => 'Mkpurụ okwu ejị a gafẹ:',
+	'centralauth-finish-password' => 'Okwúngáfè:',
 	'centralauth-finish-login' => 'Banyé',
-	'centralauth-admin-reason' => 'Mgbaghaputa:',
-	'centralauth-editgroup-reason' => 'Mgbaghaputa:',
-	'centralauth-editset-reason' => 'Mgbaghaputa:',
+	'centralauth-admin-reason' => 'Mgbághapụtà:',
+	'centralauth-editgroup-reason' => 'Mgbághapụtà:',
+	'centralauth-editset-reason' => 'Mgbághapụtà:',
 	'centralauth-editset-submit-delete' => 'Gbakashia',
 );
 
