@@ -97,25 +97,24 @@ class GlobalUsersPager extends UsersPager {
 	 * @return string HTML li element with username and info about this user
 	 */
 	function formatRow( $row ) {
-		global $wgLang;
+		global $wgLang, $wgContLang;
 		$user = htmlspecialchars( $row->gu_name );
 		$info = array();
 		if ( $row->gu_locked ) {
-			$info[] = wfMsgHtml( 'centralauth-listusers-locked' );
+			$info[] = wfMsg( 'centralauth-listusers-locked' );
 		}
 		if ( $row->lu_attached_method ) {
-			$userPage = Title::makeTitle( NS_USER, $row->gu_name );
-			$text = wfMsgHtml( 'centralauth-listusers-attached' );
-			$info[] = $this->getSkin()->makeLinkObj( $userPage, $text );
+			$info[] = wfMsg( 'centralauth-listusers-attached', $row->gu_name );
 		} else {
-			$info[] = wfMsgHtml( 'centralauth-listusers-nolocal' );
+			$info[] = wfMsg( 'centralauth-listusers-nolocal' );
 		}
 		$groups = $this->getUserGroups( $row );
+		
 		if ( $groups ) {
 			$info[] = $groups;
 		}
 		$info = $wgLang->commaList( $info );
-		return Html::rawElement( 'li', array(), wfSpecialList( $user, $info ) );
+		return Html::rawElement( 'li', array(), wfMsgExt( 'centralauth-listusers-item', array('parseinline'), $user, $info ) );
 	}
 
 	function getBody() {
@@ -134,22 +133,22 @@ class GlobalUsersPager extends UsersPager {
 		return AlphabeticPager::getBody();
 	}
 
-	function getUserGroups( $row ) {
+	protected function getUserGroups( $row ) {
 		if ( !$row->gug_numgroups ) {
 			return false;
 		}
 		if ( $row->gug_numgroups == 1 ) {
-			return self::buildGroupLink( $row->gug_singlegroup );
+			return User::makeGroupLinkWiki( $row->gug_singlegroup, User::getGroupMember( $row->gug_singlegroup ) );
 		}
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
 		$rights = array();
 		while ( $row2 = $this->mDb->fetchObject( $result ) ) {
-			$rights[] = self::buildGroupLink( $row2->gug_group );
+			$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
 		}
 		return implode( ', ', $rights );
 	}
 
-	function getAllGroups() {
+	protected function getAllGroups() {
 		$result = array();
 		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
 			$result[$group] = User::getGroupName( $group );
