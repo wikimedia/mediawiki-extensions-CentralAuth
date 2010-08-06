@@ -6110,8 +6110,7 @@ Põhjus: $2',
 	'centralauth-prefs-not-managed' => 'Ei kasuta ühendatud kontot',
 	'centralauth-prefs-unattached' => 'Kinnitamata',
 	'centralauth-prefs-complete' => 'Kõik korras!',
-	'centralauth-prefs-count-attached' => 'Teie konto on aktiivne $1 projekti lehekülgedel.
-<!-- oli kasutusel: {{PLURAL:$1|leheküljel|lehekülgedel}} -->',
+	'centralauth-prefs-count-attached' => 'Sinu konto on aktiivne {{PLURAL:$1|ühe|$1}} projekti lehekülgedel.',
 	'centralauth-prefs-manage' => 'Vaata oma ühendkontot',
 	'centralauth-renameuser-reserved' => 'Kasutajanime $2 hoitakse globaalse konto jaoks.',
 	'centralauth-account-exists' => 'Konntot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
@@ -6526,6 +6525,9 @@ $messages['fa'] = array(
 	'centralauth-editset-success' => 'تنظیمات ویکی را با موفقیت تغییر داد.',
 	'centralauth-editset-return' => 'بازگشت به نمای اصلی',
 	'right-globalgroupmembership' => 'ویرایش عضویت در گروه‌های سراسری',
+	'right-centralauth-unmerge' => 'جدا کردن حساب سراسری',
+	'right-centralauth-lock' => 'قفل یا پنهان کردن حساب سراسری',
+	'right-centralauth-oversight' => 'فرونشانی حساب سراسری',
 	'right-centralauth-merge' => 'ادغام حساب‌های کاربری آن‌ها',
 	'right-globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
 );
@@ -8039,6 +8041,14 @@ $messages['gv'] = array(
 	'centralauth-admin-delete-title' => 'Scryss coontys',
 	'centralauth-admin-delete-button' => 'Scryss y coontys shoh',
 	'centralauth-admin-reason' => 'Fa:',
+);
+
+/** Hausa (هَوُسَ) */
+$messages['ha'] = array(
+	'centralauth-admin-reason' => 'Dalili:',
+	'centralauth-editgroup-reason' => 'Dalili:',
+	'centralauth-editset-reason' => 'Dalili:',
+	'centralauth-editset-submit-delete' => 'Soke',
 );
 
 /** Hakka (Hak-kâ-fa)
