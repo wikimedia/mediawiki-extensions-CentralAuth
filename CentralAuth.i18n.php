@@ -1915,7 +1915,7 @@ $messages['bcc'] = array(
 	'centralauth-editset-legend-new' => 'نوکین مجوعه ویکی شرکنگنت',
 	'centralauth-editset-name' => 'نام:',
 	'centralauth-editset-type' => 'نوع:',
-	'centralauth-editset-wikis' => 'ویکیان:<br/>(space-separated)',
+	'centralauth-editset-wikis' => 'ویکیان:<br />(space-separated)',
 	'centralauth-editset-reason' => 'دلیل:',
 	'centralauth-editset-submit' => 'دیم دی',
 	'centralauth-editset-badname' => 'شما یک نامعتبرین یا هالیکین نام مجموعه ایء مشخض کتت',
@@ -2685,7 +2685,7 @@ $messages['bn'] = array(
 	'centralauth-editset-legend-new' => 'নতুন উইকি সেট তৈরি হচ্ছে',
 	'centralauth-editset-name' => 'নাম:',
 	'centralauth-editset-type' => 'ধরণ:',
-	'centralauth-editset-wikis' => 'উইকিসমূহ:<br/>(খালি অক্ষর দিয়ে আলাদাকৃত)',
+	'centralauth-editset-wikis' => 'উইকিসমূহ:<br />(খালি অক্ষর দিয়ে আলাদাকৃত)',
 	'centralauth-editset-reason' => 'কারণ:',
 	'centralauth-editset-submit' => 'পেশ করো',
 	'centralauth-editset-badname' => 'আপনি সঠিক নয় অথবা খালি সেট নাম দিয়েছেন।',
@@ -3482,6 +3482,15 @@ $messages['ceb'] = array(
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|ka adlaw|ka adlaw}} ang milabay',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|ka bulan|ka bulan}} ang milabay',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay',
+);
+
+/** Sorani (کوردی) */
+$messages['ckb'] = array(
+	'centralauth-admin-reason' => 'هۆکار:',
+	'centralauth-editgroup-reason' => 'هۆکار:',
+	'centralauth-editset-reason' => 'هۆکار:',
+	'centralauth-editset-submit' => 'ناردن',
+	'centralauth-editset-submit-delete' => 'سڕینەوە',
 );
 
 /** Crimean Turkish (Latin) (Qırımtatarca (Latin))
@@ -4299,7 +4308,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-prefs-unattached' => 'Unbestätigt',
 	'centralauth-prefs-complete' => 'Fertig!',
 	'centralauth-prefs-migration' => 'Zusammenführung in Arbeit',
-	'centralauth-prefs-count-attached' => 'Dein Benutzerkonto ist in $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
+	'centralauth-prefs-count-attached' => 'Dein Benutzerkonto ist bei $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
 	'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
 	'centralauth-prefs-manage' => 'Globales Benutzerkonto verwalten',
