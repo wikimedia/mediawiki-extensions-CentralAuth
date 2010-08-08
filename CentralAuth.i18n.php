@@ -21554,6 +21554,13 @@ $messages['uk'] = array(
 	'right-globalgrouppermissions' => 'керування глобальними групами',
 );
 
+/** Urdu (اردو) */
+$messages['ur'] = array(
+	'centralauth-admin-reason' => 'وجہ:',
+	'centralauth-editgroup-reason' => 'وجہ:',
+	'centralauth-editset-reason' => 'وجہ:',
+);
+
 /** Vèneto (Vèneto)
  * @author Candalua
  */
