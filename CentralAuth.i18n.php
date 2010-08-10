@@ -7143,7 +7143,7 @@ Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo mot
 
 Por lo moment, nion changement at étâ fêt a voutros comptos.',
 	'centralauth-merge-dryrun-incomplete' => 'Vos éd dècidâ de continuar, mas un mouél de comptos ont pas possu étre controlâs ôtomaticament et pués seront pas migrâs d’abôrd.
-Vos los porréd fusionar ples târd.
+Vos los porréd fusionar pués aprés.
 
 Por lo moment, nion changement at étâ fêt a voutros comptos.',
 	'centralauth-merge-dryrun-or' => "'''ou ben'''",
@@ -7188,12 +7188,22 @@ ils ont probâblament un mot de pâssa difèrent de celi de voutron compto princ
 	'centralauth-merge-method-admin' => 'compto fusionâ per l’administrator',
 	'centralauth-merge-method-new' => 'compto novél',
 	'centralauth-merge-method-login' => 'fêt pendent lo branchement',
-	'centralauth-finish-title' => 'Chavonar la fusion des comptos',
-	'centralauth-finish-text' => 'Se cetos comptos sont a vos, vos pouede chavonar lor fusion en buchient lors mots de pâssa ce-desot :',
+	'centralauth-merge-method-primary-desc' => 'O est lo vouiqui yô que lo compto at étâ fusionâ inicialament.
+Notâd que pôt étre difèrent du veré vouiqui principâl de cél utilisator.',
+	'centralauth-merge-method-empty-desc' => 'Endique que lo compto local at étâ fusionâ perce qu’il avêt gins de changement.',
+	'centralauth-merge-method-mail-desc' => 'Endique que lo compto local at étâ fusionâ perce que son adrèce èlèctronica corrèspond a cela du compto principâl.',
+	'centralauth-merge-method-password-desc' => 'Endique que lo compto local at étâ fusionâ perce que l’utilisator at spècefiâ un mot de pâssa valido por lui.',
+	'centralauth-merge-method-admin-desc' => 'Endique que lo compto local at étâ fusionâ a la man per los stevârds.
+Ora, cela fonccionalitât est dèsactivâ por des rêsons de sècuritât.',
+	'centralauth-merge-method-new-desc' => 'Endique que lo compto globâl at étâ fêt ôtomaticament quand cél compto local at étâ fêt.',
+	'centralauth-merge-method-login-desc' => 'Endique que lo compto local at étâ fêt ôtomaticament quand l’utilisator s’est branchiê.',
+	'centralauth-finish-title' => 'Chavonar la fusion',
+	'centralauth-finish-text' => 'Se cetos comptos sont a vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lors mots de pâssa :',
 	'centralauth-finish-password' => 'Mot de pâssa :',
-	'centralauth-finish-login' => 'Compto utilisator :',
+	'centralauth-finish-login' => 'Sè branchiér',
 	'centralauth-finish-send-confirmation' => 'Mandar lo mot de pâssa per mèssageria èlèctronica',
-	'centralauth-finish-problems' => 'En câs de problèmo ou ben se vos avéd pas cetos ôtros comptos, vêde [[meta:Help:Unified login problems|<span title="« Help:Unified login problems » : pâge en anglès" style="text-decoration:none">Problèmos</span>]]...',
+	'centralauth-finish-problems' => 'En câs de problèmo ou ben se vos avéd pas cetos ôtros comptos :
+vêde l’[[meta:Help:Unified login problems|éde sur lo branchement unifiâ]]...',
 	'centralauth-finish-noconfirms' => 'Nion compto at étâ confirmâ en utilisent ceti mot de pâssa.',
 	'centralauth-merge-attempt' => "'''Contrôlo du mot de pâssa forni por los comptos pas rapondus...'''",
 	'centralauth-attach-list-attached' => 'Lo compto unifiâ apelâ « $1 » encllut cetos comptos :',
@@ -7319,7 +7329,7 @@ at enlevâ $3',
 [[Special:GlobalGroupPermissions|Tornar a l’administracion a les tropes globâles]].',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|changiér]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vouiqui sur loquint ils ont un compto :',
-	'centralauth-editset' => 'Changement des juès de vouiquis',
+	'centralauth-editset' => 'Juès de vouiquis',
 	'centralauth-editset-new' => 'Fâre un juè de vouiquis novél',
 	'centralauth-editset-notfound' => 'Juè de vouiquis « $1 » entrovâblo.',
 	'centralauth-editset-optin' => 'Basâ per adhèsions èxprèsses (contint ren que los vouiquis spècefiâs)',
@@ -13839,7 +13849,7 @@ $messages['mk'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'mergeaccount' => 'ലോഗിൻ സം‌യോജിപ്പിക്കുന്നതിന്റെ തൽ‌സ്ഥിതി',
+	'mergeaccount' => 'ലോഗിൻ സം‌യോജിപ്പിക്കുന്നതിന്റെ തൽസ്ഥിതി',
 	'centralauth-groupname' => 'വിക്കിമീഡിയ ഫൗണ്ടേഷൻ',
 	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} വിക്കികളിലെ [[Special:MergeAccount|അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക]]',
 	'centralauth-mergeaccount-desc' => 'ഒറ്റ ഉപയോക്തൃ ലോഗിനു വേണ്ടി [[Special:MergeAccount|ബഹു അംഗത്വങ്ങളുടെ സം‌യോജനം]] ഉപയോഗിക്കുക',
@@ -13853,7 +13863,7 @@ $messages['ml'] = array(
 
 ഇതു പങ്കു വെക്കപ്പെട്ട സം‌രംഭങ്ങളായ [http://commons.wikimedia.org/ വിക്കിമീഡിയ കോമൺസിൽ] പ്രാമാണങ്ങൾ അപ്‌ലോഡ് ചെയ്യുന്നതിനും, ഒരേ ഉപയോക്തൃനാമം രണ്ടു പേർ ഉപയോഗിക്കുന്നതു മൂലം ഉണ്ടാകുന്ന ചിന്താക്കുഴപ്പങ്ങളും പ്രശ്നങ്ങളും ഒഴിവാക്കാൻ സഹായിക്കും.
 
-താങ്കൾ ഉപയോഗിക്കുന്ന ഉപയോക്തൃനാമം ഏതെങ്കിലും സൈറ്റിൽ മറ്റാരെങ്കിലും ഇതിനകം എടുത്തിട്ടിട്ടുണ്ടെങ്കിൽ ഇതവരെ ബാധിക്കില്ല. പക്ഷെ ഇതു സം‌ബന്ധിച്ച് അവരുമായോ ഏതെങ്കിലും കാര്യനിർ‌വാഹകനുമായോ പിന്നീട് സംസാരിക്കാവുന്നതാണ്‌.",
+താങ്കൾ ഉപയോഗിക്കുന്ന ഉപയോക്തൃനാമം ഏതെങ്കിലും സൈറ്റിൽ മറ്റാരെങ്കിലും ഇതിനകം എടുത്തിട്ടിട്ടുണ്ടെങ്കിൽ ഇതവരെ ബാധിക്കില്ല. പക്ഷെ ഇതു സം‌ബന്ധിച്ച് അവരുമായോ ഏതെങ്കിലും കാര്യനിർവാഹകനുമായോ പിന്നീട് സംസാരിക്കാവുന്നതാണ്‌.",
 	'centralauth-merge-step1-title' => 'ലോഗിൻ സം‌യോജിപ്പിക്കൽ ആരംഭിക്കുക',
 	'centralauth-merge-step1-detail' => 'താങ്കളുടെ അംഗത്വ രഹസ്യവാക്ക് ഇവിടെ നൽകുക.
 
@@ -13888,7 +13898,7 @@ $messages['ml'] = array(
 
 അതു താങ്കളാണെങ്കിൽ പ്രധാന അംഗത്വത്തിന്റെ രഹസ്യവാക്ക് ഇവിടെ കൊടുത്ത് താങ്കൾക്ക് സം‌യോജിത ലോഗിൻ പ്രക്രിയ പൂർത്തിയാക്കാവുന്നതാണ്‌.',
 	'centralauth-blocked-text' => 'താങ്കളുടെ പ്രഥമ വിക്കിയിൽ (താഴെ കൊടുത്തിരിക്കുന്നു) തിരുത്തുന്നതിൽ നിന്നും തടഞ്ഞിരിക്കുകയാണ്.
-ദയവായി ഈ വിക്കിയിലെ കാര്യനിർ‌‌വാഹകനെ സമീപിച്ച് അത് ഒഴിവാക്കാൻ ആവശ്യപ്പെടുക.
+ദയവായി ഈ വിക്കിയിലെ കാര്യനിർ‌വാഹകനെ സമീപിച്ച് അത് ഒഴിവാക്കാൻ ആവശ്യപ്പെടുക.
 അത് തടയപ്പെട്ടിരിക്കുമ്പോൾ താങ്കൾക്ക് അംഗത്വങ്ങൾ ലയിപ്പിക്കാൻ കഴിയുന്നതല്ല.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>പരീക്ഷണ ഘട്ടത്തിലാണ്‌</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'അംഗത്വ ലയനം ഇപ്പോൾ പരീക്ഷണ/ തെറ്റുതിരുത്തൽ രീതിയിൽ ആണ് പ്രവർത്തിക്കുന്നത്, അതുകൊണ്ട് ശരിക്കുമുള്ള ലയന ക്രിയകൾ സാദ്ധ്യമല്ലാതാക്കിയിരിക്കുന്നു.
@@ -13907,7 +13917,7 @@ $messages['ml'] = array(
 	'centralauth-merge-method-empty' => 'തിരുത്തലുകൾ ഒന്നും തന്നെയില്ല',
 	'centralauth-merge-method-mail' => 'ഇമെയിൽ വഴി സ്ഥിരീകരിച്ചു',
 	'centralauth-merge-method-password' => 'രഹസ്യവാക്ക് വഴി സ്ഥിരീകരിച്ചു',
-	'centralauth-merge-method-admin' => 'കാര്യനിർ‌വാഹകൻ സം‌യോജിപ്പിച്ച അംഗത്വം',
+	'centralauth-merge-method-admin' => 'കാര്യനിർവാഹകൻ സം‌യോജിപ്പിച്ച അംഗത്വം',
 	'centralauth-merge-method-new' => 'പുതിയ അംഗത്വം',
 	'centralauth-merge-method-login' => 'പ്രവേശനം വഴി സൃഷ്ടിച്ചു',
 	'centralauth-merge-method-primary-desc' => 'അംഗത്വം ആദ്യം സംയോജിപ്പിച്ച വിക്കിയാണിത്.
@@ -13935,7 +13945,7 @@ $messages['ml'] = array(
 	'centralauth-attach-text' => 'ഈ അംഗത്വം ഇതു വരെ സം‌യോജിത അംഗത്വത്തിലേക്കു കുടിയേറ്റിയിട്ടില്ല. ആഗോള അംഗത്വവും താങ്കളുടെയാണെങ്കിൽ രഹസ്യവാക്ക് ടൈപ്പ് ചെയ്ത് ഈ അംഗത്വം സം‌യോജിപ്പിക്കാവുന്നതാണ്‌:',
 	'centralauth-attach-submit' => 'അംഗത്വം കുടിയേറ്റുക',
 	'centralauth-attach-success' => 'ഈ അംഗത്വം സം‌യോജിത അംഗത്വത്തിലേക്കു കുടിയേറ്റിയിരിക്കുന്നു.',
-	'centralauth' => 'ആഗോള അംഗത്വ കാര്യനിർ‌വഹണം',
+	'centralauth' => 'ആഗോള അംഗത്വ കാര്യനിർവഹണം',
 	'centralauth-admin-intro' => 'ആഗോള അംഗത്വങ്ങളുടെ കൈകാര്യനിർവഹണത്തിനായി ഈ സമ്പർക്കമുഖം ഉപയോഗിക്കാവുന്നതാണ്.',
 	'centralauth-admin-manage' => 'ഉപയോക്തൃ ഡാറ്റ പരിപാലിക്കുക',
 	'centralauth-admin-username' => 'ഉപയോക്തൃനാമം:',
@@ -13945,7 +13955,7 @@ $messages['ml'] = array(
 	'centralauth-admin-no-unified' => 'ഈ ഉപയോക്തൃനാമത്തിനു സം‌യോജിത അംഗത്വം ഇല്ല.',
 	'centralauth-admin-info-header' => 'ആഗോളാംഗത്വ വിവരങ്ങൾ',
 	'centralauth-admin-info-id' => 'ഉപയോക്തൃ ഐ.ഡി.:',
-	'centralauth-admin-info-registered' => 'രജിസ്റ്റേ‌ർ‌ഡ്:',
+	'centralauth-admin-info-registered' => 'രജിസ്റ്റേ‌ർഡ്:',
 	'centralauth-admin-info-home' => 'തറവാട് വിക്കി:',
 	'centralauth-admin-info-editcount' => 'ആകെ തിരുത്തലുകളുടെ എണ്ണം:',
 	'centralauth-admin-info-locked' => 'ബന്ധിച്ചിരിക്കുന്നു:',
