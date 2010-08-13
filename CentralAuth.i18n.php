@@ -4425,6 +4425,7 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
+ * @author Kghbln
  * @author MichaelFrey
  * @author Umherirrender
  */
@@ -4471,7 +4472,7 @@ Wenn das globale Benutzerkonto auch von Ihnen ist, können Sie die Zusammenführ
 	'centralauth-token-mismatch' => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da Ihre Sitzungsdaten verloren gegangen sind.',
 	'centralauth-admin-status-intro' => 'Sie können dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern',
 	'centralauth-admin-setstatus-success' => 'Sie haben den Status für dieses globale Benutzerkonto erfolgreich geändert.',
-	'centralauth-prefs-count-attached' => 'Ihr Benutzerkonto ist in $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
+	'centralauth-prefs-count-attached' => 'Ihr Benutzerkonto ist bei $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit Ihrem Namen.',
 	'centralauth-login-progress' => 'Automatisch wurden Sie auch an folgenden Projekten {{int:Centralauth-groupname}} angemeldet:',
 	'centralauth-logout-progress' => 'Automatisch wurden Sie auch von folgenden Projekten {{MediaWiki:Centralauth-groupname}} abgemeldet:',
@@ -13587,6 +13588,15 @@ $messages['lzh'] = array(
 	'centralauth-blocked-text' => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
 );
 
+/** Malagasy (Malagasy)
+ * @author Jagwar
+ */
+$messages['mg'] = array(
+	'centralauth-prefs-status' => "Ny kaontinao any amin'ny wiki hafa :",
+	'centralauth-prefs-complete' => 'Milamina daholo !',
+	'centralauth-prefs-count-attached' => 'Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}',
+);
+
 /** Eastern Mari (Олык Марий)
  * @author Сай
  */
@@ -14666,15 +14676,35 @@ Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
 $messages['mt'] = array(
 	'mergeaccount' => 'Stat tat-twaħħid tal-utenzi',
 	'centralauth-groupname' => 'Fondazzjoni Wikimedia',
+	'centralauth-desc' => '[[Special:MergeAccount|Waħħad il-kontijiet]] fi ħdan il-wikis tal-{{MediaWiki:Centralauth-groupname}}',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Twaħħad aktar kontijiet]] għal Login Uniku',
+	'centralauth-merge-denied' => "Jiddispjaċina, m'għandikx permess taċċessa din il-paġna.",
+	'centralauth-merge-notlogged' => 'Jekk jogħġbok <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} effettwa l-login]</span> sabiex tiċċekkja jekk il-kontijiet tiegħek ġewx kompletament imwaħħda.',
 	'centralauth-merge-welcome' => "'''Il-kont tiegħek għadu ma ġiex impurtat fis-sistema ta' identifikazzjoni mwaħħda tal-{{MediaWiki:Centralauth-groupname}}.'''
 
 Jekk tkun tixtieq twaħħad il-kontijiet tiegħek, inti tkun tista' tuża' l-istess isem tal-utent u l-istess password biex tidħol fil-kont tiegħek f'kull wiki tal-{{MediaWiki:Centralauth-groupname}} f'kull lingwa disponibbli.
 
 Jekk xi ħadd ieħor ikun diġà ħa l-isem tal-utent fuq sit ieħor dan mhuwiex se jiddisturbahom, però jista' jkollok iċ-ċans biex taħdem magħhom jew ma' amministratur aktar tard.",
+	'centralauth-merge-step1-title' => 'Ibda t-twaħħid tal-login',
+	'centralauth-merge-step1-detail' => 'Jekk jogħġbok daħħal il-password tal-kont tiegħek.
+Il-password u l-indirizz elettroniku reġistrat se jiġu ċċekkjati mal-kontijiet fuq il-wikis l-oħra sabiex tikkonferma li jaqblu.
+Ebda tibdil ma jsir qabel il-konferma tiegħek li kollox jidher fl-ordni.',
 	'centralauth-merge-step1-submit' => 'Ikkonferma d-dettalji tal-login',
 	'centralauth-merge-step2-title' => 'Ikkonferma kontijiet oġra',
+	'centralauth-merge-step2-submit' => 'Ikkonferma l-informazzjoni dwar il-login',
 	'centralauth-merge-dryrun-or' => "'''jew'''",
+	'centralauth-merge-step3-title' => 'Oħloq kont imwaħħad',
+	'centralauth-merge-step3-detail' => 'Huwa kollox lest sabiex toħloq il-kont unifikat tiegħek, bil-wikis segwenti mehmuża:',
+	'centralauth-merge-step3-submit' => 'Waħħad il-kontijiet',
+	'centralauth-merge-no-accounts' => "Ma nstab l-ebda kont bl-isem tiegħek fit-tabella tal-kontijiet ċentrali!
+Id-databażi tista' tkun li hi korrotta.",
+	'centralauth-merge-home-password' => 'Il-wiki prinċipali għal dan il-kont (elenkata hawn taħt) għandha password differenti minn dik li daħħalt. Jekk jogħġbok daħħal il-password għall-wiki prinċipali.',
+	'centralauth-complete' => "Il-proċess ta' unifikazzjoni tal-login ġie komplut!",
+	'centralauth-incomplete' => "Il-proċess ta' unifikazzjoni tal-login ma ġiex komplut!",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Aqra aktar dwar il-'''login imwaħħad''']]…''",
+	'centralauth-list-attached' => 'Il-kontijiet bl-isem tal-utent "$1" fuq il-proġetti elenkati hawn taħt ġew awtomatikament imwaħħda ma\' xulxin.',
 	'centralauth-admin-username' => 'Isem tal-utent:',
+	'centralauth-admin-reason' => 'Raġuni:',
 	'centralauth-prefs-status' => 'Stat tal-kont globali:',
 	'centralauth-prefs-not-managed' => 'Il-kont unifikat mhuwiex fl-użu',
 	'centralauth-prefs-complete' => "Kollox f'postu!",
@@ -18764,7 +18794,12 @@ $messages['sl'] = array(
 	'centralauth-list-attached-title' => 'Pripeti računi',
 	'centralauth-list-attached' => 'Račun »$1« je bil na vsaki spodaj navedeni strani samodejno pripet enotnemu računu:',
 	'centralauth-list-attached-dryrun' => 'Račun »$1« bo na vsaki spodaj navedeni strani samodejno pripet enotnemu računu:',
+	'centralauth-merge-method-primary' => 'domači wiki',
+	'centralauth-merge-method-new' => 'nov račun',
+	'centralauth-merge-method-login' => 'ustvarjen ob prijavi',
+	'centralauth-finish-password' => 'Geslo:',
 	'centralauth-finish-login' => 'Prijava',
+	'centralauth-finish-send-confirmation' => 'Pošlji geslo po e-pošti',
 	'centralauth-attach-title' => 'Potrdi račun',
 	'centralauth-admin-username' => 'Uporabniško ime:',
 	'centralauth-admin-info-id' => 'Uporabnikov ID:',
@@ -21351,7 +21386,7 @@ $messages['ug-arab'] = array(
 	'centralauth-admin-username' => 'ئىشلەتكۇچى ئىسمى:',
 );
 
-/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -21364,6 +21399,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author NickK
  * @author Prima klasy4na
+ * @author Riwnodennyk
  * @author Тест
  */
 $messages['uk'] = array(
@@ -21607,6 +21643,7 @@ $messages['uk'] = array(
 	'centralauth-editset-wikis' => 'Вікі:',
 	'centralauth-editset-reason' => 'Причина:',
 	'centralauth-editset-submit' => 'Зберегти',
+	'centralauth-editset-submit-delete' => 'Вилучити',
 	'centralauth-editset-badname' => 'Недопустима або порожня назва набору.',
 	'centralauth-editset-badtype' => 'Неправильний тип набору.',
 	'centralauth-editset-setexists' => 'Набір з такою назвою вже існує',
