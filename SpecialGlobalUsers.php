@@ -148,7 +148,7 @@ class GlobalUsersPager extends UsersPager {
 		return implode( ', ', $rights );
 	}
 
-	protected function getAllGroups() {
+	public function getAllGroups() {
 		$result = array();
 		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
 			$result[$group] = User::getGroupName( $group );
