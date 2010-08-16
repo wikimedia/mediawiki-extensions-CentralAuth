@@ -6303,6 +6303,7 @@ $messages['ext'] = array(
  * @author Ebraminio
  * @author Huji
  * @author Mardetanha
+ * @author Wayiran
  */
 $messages['fa'] = array(
 	'mergeaccount' => 'وضعیت یکی کردن حساب‌ها',
@@ -6367,6 +6368,13 @@ $messages['fa'] = array(
 	'centralauth-merge-method-admin' => 'حساب کاربری ادغام شده توسط مدیر',
 	'centralauth-merge-method-new' => 'حساب کاربری جدید',
 	'centralauth-merge-method-login' => 'ایجاد شده توسط ورود به سامانه',
+	'centralauth-merge-method-primary-desc' => 'این ویکی آنیست که در ابتدا حساب‌ها در آن با هم ادغام شده‌اند.
+توجه داشته باشید که ممکن است با ویکی اصلی واقعی آن کاربر تفاوت داشته باشد.',
+	'centralauth-merge-method-password-desc' => 'نشان می‌دهد که حساب محلی ادغام شده است بدین خاطر که کاربر گذرواژهٔ معتبری برایش تعیین کرده است.',
+	'centralauth-merge-method-admin-desc' => 'نشان می‌دهد که حساب محلی به طور دستی توسط ویکی‌بدها ادغام شده است.
+این قابلیت در حال حاضر به خاطر دلایل امنیتی غیرفعال شده است.',
+	'centralauth-merge-method-new-desc' => 'نشان می‌دهد که حساب سراسری در هنگام ایجاد حساب محلی به طور خودکار ایجاد شد.',
+	'centralauth-merge-method-login-desc' => 'نشان می‌دهد که حساب محلی در هنگام وارد شدن کاربر به سایت به طور خودکار ایجاد شد.',
 	'centralauth-finish-title' => 'خاتمه ادغام',
 	'centralauth-finish-text' => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در این‌جا به پایان برسانید:',
 	'centralauth-finish-password' => 'کلمه عبور:',
@@ -6386,15 +6394,25 @@ $messages['fa'] = array(
 	'centralauth-admin-intro' => 'این رابط می‌تواند برای مدیریت حساب‌های سراسری استفاده شود.',
 	'centralauth-admin-manage' => 'مدیریت اطلاعات کاربر',
 	'centralauth-admin-username' => 'نام کاربری:',
+	'centralauth-admin-lookup-ro' => 'اطلاعات کاربر را ببین',
+	'centralauth-admin-lookup-rw' => 'حساب کاربر را مدیریت کن',
 	'centralauth-admin-permission' => 'تنها ویکیبدها می‌توانند حساب کاربری دیگر کاربرها را یکی کنند.',
 	'centralauth-admin-no-unified' => 'حساب کاربری مشترک برای این نام کاربری وجود ندارد.',
+	'centralauth-admin-info-header' => 'اطلاعات سراسری کاربر',
 	'centralauth-admin-info-id' => 'شماره کاربر:',
 	'centralauth-admin-info-registered' => 'ثبت شده:',
+	'centralauth-admin-info-home' => 'ویکی خانه:',
+	'centralauth-admin-info-editcount' => 'مجموع شمارندهٔ ویرایش:',
 	'centralauth-admin-info-locked' => 'قفل شده:',
-	'centralauth-admin-info-hidden' => 'پنهان شده:',
+	'centralauth-admin-info-hidden' => 'میزان پنهان‌شدگی:',
+	'centralauth-admin-nohome' => 'ناتوان به تخمین',
 	'centralauth-admin-yes' => 'بله',
 	'centralauth-admin-no' => 'خیر',
-	'centralauth-admin-unattached' => 'حساب‌های متصل نشده',
+	'centralauth-admin-hidden-list' => 'از فهرست‌های عممومی',
+	'centralauth-admin-hidden-oversight' => 'پنهان شده',
+	'centralauth-admin-list-legend-ro' => 'فهرست حساب‌های محلی',
+	'centralauth-admin-list-legend-rw' => 'حساب‌های محلی را ناادغام کن',
+	'centralauth-admin-unattached' => 'متصل نشده',
 	'centralauth-admin-notblocked' => 'دسترسی باز',
 	'centralauth-admin-blocked' => 'قطع دسترسی، خاتمه در $3 ساعت $4. دلیل: $2',
 	'centralauth-admin-blocked-indef' => 'قطع دسترسی بی‌پایان. دلیل: $1',
@@ -6402,7 +6420,7 @@ $messages['fa'] = array(
 	'centralauth-admin-list-attached-on' => 'متصل شده',
 	'centralauth-admin-list-method' => 'روش',
 	'centralauth-admin-list-editcount' => 'شمارش ویرایش‌ها',
-	'centralauth-admin-list-blocked' => 'وضعیت قطع دسترسی',
+	'centralauth-admin-list-blocked' => 'مسدود شده',
 	'centralauth-admin-unmerge' => 'از ادغام درآوردن موارد انتخاب شده',
 	'centralauth-admin-merge' => 'انتخاب ادغام',
 	'centralauth-admin-bad-input' => 'انتخاب غیرمجاز برای ادغام',
@@ -6419,10 +6437,16 @@ $messages['fa'] = array(
 	'centralauth-admin-delete-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-token-mismatch' => 'شرمنده! به علت از دست رفتن اطلاعات نشست کاربری، نمی‌توانیم فرم شما را پردازش کنیم.',
 	'centralauth-admin-reason' => 'دلیل:',
+	'centralauth-admin-reason-other' => 'دلایل دیگر/اضافی:',
 	'centralauth-admin-status' => 'تنظیم وضعیت حساب سراسری',
 	'centralauth-admin-status-intro' => 'شما می‌توانید فرم زیر را برای تغییر وضعیت این حساب سراسری استفاده کنید.',
-	'centralauth-admin-status-locked' => 'قفل شده',
-	'centralauth-admin-status-hidden' => 'پنهان',
+	'centralauth-admin-status-locked' => 'قفل شده:',
+	'centralauth-admin-status-locked-no' => 'حساب مسدود نشده‌است',
+	'centralauth-admin-status-locked-yes' => 'حساب از ویرایش کردن مسدود شده‌است.',
+	'centralauth-admin-status-hidden' => 'پنهان:',
+	'centralauth-admin-status-hidden-no' => 'حساب مخفی نیست.',
+	'centralauth-admin-status-hidden-list' => 'حساب از فهرست‌های عمومی پنهان است',
+	'centralauth-admin-status-hidden-oversight' => 'حساب به طور کامل پنهان است',
 	'centralauth-admin-status-submit' => 'تنظیم وضعیت',
 	'centralauth-admin-status-nonexistent' => 'خطا: حساب سراسری «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-admin-setstatus-success' => 'شما با موفقیت وضعیت این حساب سراسری را تغییر دادید.',
@@ -6445,6 +6469,7 @@ $messages['fa'] = array(
 	'centralauth-prefs-count-unattached' => 'حساب‌های کاربری تایید نشده‌ای با نام شما در $1 {{PLURAL:$1|پروژه|پروژه}} باقی می‌مانند.',
 	'centralauth-prefs-detail-unattached' => 'وبگاه این پروژه مورد تایید برای استفاده از حساب کاربری مشترک قرار نگرفته‌است.',
 	'centralauth-prefs-manage' => 'مدیریت حساب کاربری مشترک',
+	'centralauth-prefs-view' => 'مشاهدهٔ اطلاعات سراسری کاربر',
 	'centralauth-renameuser-merged' => 'کاربر $1 به سامانه ورود یکپارچه منتقل شده‌است.
 تغییر نام آن باعث می‌شود که حساب محلی کاربر از حساب مشترک وی جدا شود.',
 	'centralauth-renameuser-reserved' => 'کاربر $2 برای حساب کاربری مشترک رزرو شده‌است.',
@@ -6465,6 +6490,7 @@ $messages['fa'] = array(
 	'centralauth-log-entry-chgstatus' => 'تغییر وضعیت حساب سراسری «$1»: $2 تنظیم شد؛ $3 برداشته شد',
 	'centralauth-log-status-locked' => 'قفل شده',
 	'centralauth-log-status-hidden' => 'پنهان',
+	'centralauth-log-status-oversighted' => 'پنهان شده',
 	'centralauth-log-status-none' => '(هیچ)',
 	'centralauth-rightslog-name' => 'سیاههٔ اختیارات سراسری',
 	'centralauth-rightslog-entry-usergroups' => 'عضویت $1 در گروه‌های سراسری را از $2 به $3 تغییر داد',
@@ -6476,6 +6502,7 @@ $messages['fa'] = array(
 	'centralauth-rightslog-entry-setrename' => 'نام مجموعه ویکی «$2» را به «$1» تغییر داد',
 	'centralauth-rightslog-entry-setnewtype' => 'نوع «$1» را از $2 به $3 تغییر داد',
 	'centralauth-rightslog-entry-setchange' => 'ویکی‌های «$1» را تغییر داد: اضافه کرد: $2؛ حذف کرد: $3',
+	'centralauth-rightslog-entry-deleteset' => 'مجموعهٔ حذف‌شدهٔ ویکی "$1"',
 	'centralauth-rightslog-set-optin' => 'بر اساس عضو شدن',
 	'centralauth-rightslog-set-optout' => 'بر اساس از عضویت در آمدن',
 	'autologin' => 'ورود خودکار به سامانه',
@@ -6515,17 +6542,24 @@ $messages['fa'] = array(
 	'centralauth-globalgrouppermissions-knownwiki' => 'یک ویکی که در آن حساب دارید را انتخاب کنید:',
 	'centralauth-globalgroupmembership-badknownwiki' => "حساب مشترک '''$1''' در ویکی مورد نظر شما ('''$2''') فعال نیست. شاید شما در حال اختصاص دادن اختیارات به کاربر اشتباهی هستید!",
 	'centralauth-editset' => 'ویرایش مجموعه‌های ویکی',
+	'centralauth-editset-legend-rw' => 'ویرایش یا ایجاد مجموعهٔ ویکی',
+	'centralauth-editset-legend-ro' => 'فهرست مجموعه‌های ویکی',
+	'centralauth-editset-intro-ro' => 'در پایین فهرست مجموعه‌های ویکی موجود قرار دارد.',
 	'centralauth-editset-new' => 'ایجاد یک مجموعه جدید',
 	'centralauth-editset-notfound' => 'مجموعه ویکی «$1» پیدا نشد.',
 	'centralauth-editset-optin' => 'بر اساس عضو شدن (تنها شامل ویکی‌های مشخص شده)',
 	'centralauth-editset-optout' => 'بر اساس از عضویت در آمدن (شامل تمام ویکی‌های به جز موارد مشخص شده)',
 	'centralauth-editset-legend-edit' => 'ویرایش مجموعه ویکی «$1»',
+	'centralauth-editset-legend-view' => 'مجموعهٔ ویکی "$1"',
 	'centralauth-editset-legend-new' => 'ایجاد مجموعه ویکی جدید',
+	'centralauth-editset-legend-delete' => 'حذف مجموعهٔ ویکی "$1"',
+	'centralauth-editset-subtitle' => '[[ویژه:مجموعه‌های ویکی|فهرست مجموعه‌ها]]',
 	'centralauth-editset-name' => 'نام:',
 	'centralauth-editset-type' => 'نوع:',
 	'centralauth-editset-wikis' => 'ویکی‌ها:',
 	'centralauth-editset-reason' => 'دلیل:',
 	'centralauth-editset-submit' => 'ارسال',
+	'centralauth-editset-submit-delete' => 'حذف',
 	'centralauth-editset-badname' => 'نام غیر مجاز یا خالی مجموعه',
 	'centralauth-editset-badtype' => 'نوع غیر مجاز مجموعه',
 	'centralauth-editset-setexists' => 'مجموعه‌ای با این نام از قبل وجود دارد',
@@ -6534,6 +6568,7 @@ $messages['fa'] = array(
 	'centralauth-editset-usage' => 'استفاده شده در گروه:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|ویکی|ویکی‌های}} زیر وجود {{PLURAL:$2|ندارد|ندارند}}: $1.',
 	'centralauth-editset-success' => 'تنظیمات ویکی را با موفقیت تغییر داد.',
+	'centralauth-editset-success-delete' => 'مجموعه ویکی با موفقیت حذف شد.',
 	'centralauth-editset-return' => 'بازگشت به نمای اصلی',
 	'right-globalgroupmembership' => 'ویرایش عضویت در گروه‌های سراسری',
 	'right-centralauth-unmerge' => 'جدا کردن حساب سراسری',
@@ -17858,6 +17893,7 @@ $messages['roa-tara'] = array(
  * @author Kaganer
  * @author Kalan
  * @author Lockal
+ * @author MaxSem
  * @author VasilievVV
  * @author Александр Сигачёв
  */
@@ -18832,6 +18868,7 @@ $messages['sl'] = array(
  * @author Millosh
  * @author Sasa Stefanovic
  * @author Јованвб
+ * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -18893,7 +18930,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-manage' => 'Надгледање корисничких података',
 	'centralauth-admin-username' => 'Корисничко име:',
 	'centralauth-admin-permission' => 'Само стјуарди могу да споје остале корисничке налоге за њих.',
-	'centralauth-admin-no-unified' => 'Нема сједињеног налога за ово сарадничко име.',
+	'centralauth-admin-no-unified' => 'Нема сједињеног налога за ово корисничко име.',
 	'centralauth-admin-info-id' => 'Кориснички ИД:',
 	'centralauth-admin-info-registered' => 'Регистрован:',
 	'centralauth-admin-info-editcount' => 'Бројач укупних измена:',
@@ -18951,9 +18988,9 @@ $messages['sr-ec'] = array(
 	'centralauth-prefs-count-unattached' => 'Непотврђени налози са вашим надимком су преостали на $1 {{PLURAL:$1|пројекту|пројеката}}.',
 	'centralauth-prefs-detail-unattached' => 'Овај пројекат није потврђен као припадајући глобалном налогу.',
 	'centralauth-prefs-manage' => 'Организуј свој глобални налог.',
-	'centralauth-renameuser-reserved' => 'Сарадничко име $2 је резервисано за глобални налог.',
+	'centralauth-renameuser-reserved' => 'Корисничко име $2 је резервисано за глобални налог.',
 	'centralauth-invalid-wiki' => 'Не постоји база таквог викија: $1.',
-	'centralauth-account-exists' => 'Не може се направити налог: тражено сарадничко име је већ заузето јединственим налогом.',
+	'centralauth-account-exists' => 'Не може се направити налог: тражено корисничко име је већ заузето јединственим налогом.',
 	'centralauth-login-progress' => 'Присупање другим Викимедијиним пројектима.',
 	'centralauth-logout-progress' => 'Одјављивање са других Викимедијиних пројеката:',
 	'centralauth-log-name' => 'историја глобалних налога',
@@ -18997,7 +19034,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editgroup-member' => 'Локализована имена чланова групе:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|измена]])',
 	'centralauth-editgroup-members' => 'Списак чланова:',
-	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Списак сарадника са правима: $2.]]',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Списак корисника са правима: $2.]]',
 	'centralauth-editgroup-restrictions' => 'Скуп викија у којима је ова група активна:',
 	'centralauth-editgroup-noset' => '(ништа)',
 	'centralauth-editgroup-submit' => 'Снимање измена права групе.',
@@ -19006,7 +19043,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editgroup-success' => 'Права групе промењена.',
 	'centralauth-editgroup-success-text' => 'Успешно си променио права групи $1. [[Special:GlobalGroupPermissions|Порвратак на управљање групама]].',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики на коме има налог:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Глобални сарадник '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном сараднику!",
+	'centralauth-globalgroupmembership-badknownwiki' => "Глобални корисник '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
 	'centralauth-editset' => 'Скупови Викија',
 	'centralauth-editset-new' => 'Стварање новог скупа.',
 	'centralauth-editset-notfound' => 'Скуп викија "$1" није пронађен.',
