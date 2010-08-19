@@ -97,7 +97,7 @@ class GlobalUsersPager extends UsersPager {
 	 * @return string HTML li element with username and info about this user
 	 */
 	function formatRow( $row ) {
-		global $wgLang, $wgContLang;
+		global $wgLang;
 		$user = htmlspecialchars( $row->gu_name );
 		$info = array();
 		if ( $row->gu_locked ) {
