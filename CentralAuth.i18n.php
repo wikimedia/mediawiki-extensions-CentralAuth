@@ -385,13 +385,14 @@ You may view and modify any of them, or create a new set.',
  * @author Purodha
  * @author SPQRobin
  * @author Siebrand
+ * @author The Evil IP address
  * @author Toliño
  * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'mergeaccount' => 'Title of special page "MergeAccount".',
 	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}} and {{msg-mw|centralauth-login-progress}}.',
-	'centralauth-desc' => 'Short description of the Central Auth extension, shown on [[Special:Version]]. Do not translate or change links.',
+	'centralauth-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
 	'centralauth-merge-step1-submit' => "Submit button for 'Begin Login Unification', first step for creating a global user account.",
 	'centralauth-incomplete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{MediaWiki:Centralauth-groupname}}</nowiki>}} exactly as it is}}',
@@ -18893,6 +18894,7 @@ $messages['sl'] = array(
 	'centralauth-logout-progress' => 'Odjavljanje iz ostalih projektov {{int:Centralauth-groupname}}:',
 	'autologin' => 'Samodejna prijava',
 	'centralauth-editgroup-subtitle' => 'Urejanje $1',
+	'centralauth-editgroup-reason' => 'Razlog:',
 	'centralauth-editset-name' => 'Ime:',
 	'centralauth-editset-reason' => 'Razlog:',
 	'centralauth-editset-submit' => 'Potrdi',
