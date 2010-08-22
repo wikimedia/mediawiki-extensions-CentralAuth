@@ -7401,10 +7401,10 @@ at enlevâ $3',
 	'centralauth-globalgroupperms-nogroups' => 'Niona tropa globâla at étâ dèfenia.',
 	'centralauth-existinggroup-legend' => 'Tropes ègzistentes',
 	'centralauth-newgroup-legend' => 'Fâre una tropa novèla',
-	'centralauth-newgroup-intro' => 'Vos pouede utilisar ceti formulèro por assignér des pèrmissions a una tropa novèla.
-Notâd qu’una tropa pôt ègzistar ren que se des pèrmissions lyé sont assignês.',
+	'centralauth-newgroup-intro' => 'Vos pouede utilisar ceti formulèro por balyér des pèrmissions a una tropa novèla.
+Notâd qu’una tropa pôt ègzistar ren que se des pèrmissions lyé sont balyês.',
 	'centralauth-globalgroupperms-newgroupname' => 'Nom a la tropa novèla :',
-	'centralauth-globalgroupperms-creategroup-submit' => 'Assignér des pèrmissions',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Balyér des pèrmissions',
 	'centralauth-editgroup-subtitle' => 'Changement de $1',
 	'centralauth-editgroup-fieldset' => 'Pèrmissions por $1',
 	'centralauth-editgroup-name' => 'Nom a la tropa :',
@@ -7417,10 +7417,10 @@ Notâd qu’una tropa pôt ègzistar ren que se des pèrmissions lyé sont assig
 	'centralauth-editgroup-restrictions' => 'Juè de vouiquis yô que ceta tropa est activa :',
 	'centralauth-editgroup-noset' => '(nion)',
 	'centralauth-editgroup-submit' => 'Encartar los changements de pèrmissions a la tropa',
-	'centralauth-editgroup-perms' => 'Pèrmissions assignês :',
+	'centralauth-editgroup-perms' => 'Pèrmissions balyês :',
 	'centralauth-editgroup-reason' => 'Rêson :',
 	'centralauth-editgroup-success' => 'Les pèrmissions a la tropa ont bien étâ changiês',
-	'centralauth-editgroup-success-text' => 'Vos éd changiê avouéc reusséta les pèrmissions assignês a la tropa $1.
+	'centralauth-editgroup-success-text' => 'Vos éd changiê avouéc reusséta les pèrmissions balyês a la tropa $1.
 [[Special:GlobalGroupPermissions|Tornar a l’administracion a les tropes globâles]].',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|changiér]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vouiqui sur loquint ils ont un compto :',
@@ -7464,6 +7464,13 @@ Vos pouede vêre et changiér châcun de lor, ou ben fâre un juè novél.',
 	'right-centralauth-oversight' => 'Suprimar lo compto globâl',
 	'right-centralauth-merge' => 'Fusionar sos comptos',
 	'right-globalgrouppermissions' => 'Administrar les tropes globâles',
+);
+
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'autologin' => 'Automaatisk uunmeldin',
 );
 
 /** Friulian (Furlan)
