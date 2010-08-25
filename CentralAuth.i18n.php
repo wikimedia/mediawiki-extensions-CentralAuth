@@ -14829,6 +14829,7 @@ $messages['myv'] = array(
 
 /** Nahuatl (Nāhuatl)
  * @author Fluence
+ * @author Ricardo gs
  */
 $messages['nah'] = array(
 	'centralauth-admin-username' => 'Tlatequitiltilīltōcāitl:',
@@ -14837,6 +14838,7 @@ $messages['nah'] = array(
 	'centralauth-admin-no' => 'ahmo',
 	'centralauth-admin-reason' => 'Īxtlamatiliztli:',
 	'centralauth-editgroup-noset' => '(ahtlein)',
+	'centralauth-editset-name' => 'Tōcāitl:',
 	'centralauth-editset-reason' => 'Īxtlamatiliztli:',
 );
 
@@ -18995,8 +18997,8 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-list-method' => 'Метода',
 	'centralauth-admin-list-editcount' => 'Бројач измена',
 	'centralauth-admin-list-blocked' => 'Блокиран',
-	'centralauth-admin-unmerge' => 'Одвоји селектоване',
-	'centralauth-admin-merge' => 'Споји селектоване',
+	'centralauth-admin-unmerge' => 'Одвоји изабране',
+	'centralauth-admin-merge' => 'Споји изабране',
 	'centralauth-admin-bad-input' => 'Лоше означавање сједињавања',
 	'centralauth-admin-none-selected' => 'Ниједан налог није означен за измену.',
 	'centralauth-admin-already-unmerged' => 'Прескачем $1, већ је растављен.',
@@ -21459,6 +21461,21 @@ $messages['ts'] = array(
 	'centralauth-admin-info-registered' => 'Tsarisile:',
 	'centralauth-admin-yes' => 'Ina',
 	'centralauth-admin-no' => 'E e',
+);
+
+/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+ * @author Ильнар
+ */
+$messages['tt-cyrl'] = array(
+	'centralauth-prefs-status' => 'Глобаль кулланучы хисапнамәсе:',
+	'centralauth-prefs-not-managed' => 'Гомуми кулланучы хисапнамәсе кулланылмый',
+	'centralauth-prefs-unattached' => 'Расланмаган',
+	'centralauth-prefs-complete' => 'Бар да тәртиптә!',
+	'centralauth-prefs-migration' => 'Күчерелә',
+	'centralauth-prefs-count-attached' => 'Сезнең кулланучы хисапнамәсе $1 {{PLURAL:$1|проекта}} теркәлгән.',
+	'centralauth-prefs-count-unattached' => 'Расланмаган кулланучы хисапнамәләре $1 {{PLURAL:$1|проекта}} тора.',
+	'centralauth-prefs-detail-unattached' => 'Бу проект расланмаган.',
+	'centralauth-prefs-manage' => 'Глобаль кулланучы хисапнамәсе белән идарә итү',
 );
 
 /** ئۇيغۇرچە (ئۇيغۇرچە)
