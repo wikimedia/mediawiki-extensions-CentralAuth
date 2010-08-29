@@ -7083,7 +7083,7 @@ Aucun changement n’a été fait pour l’instant à vos comptes.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
 	'centralauth-merge-dryrun-home' => 'Le système de migration n’a pas pu confirmer que vous êtes l{{GENDER:|e|a|e}} propriétaire du compte du wiki principal associé à votre nom d’utilisateur.
 
-Un autre wiki a été déterminé comme étant l’hôte principal du compte associé à votre nom d’utilisateur ; suivez le lien ci-dessous et connectez-vous pour terminer la migration de votre compte.',
+Un autre wiki a été identifié comme étant l’hôte principal du compte associé à votre nom d’utilisateur ; suivez le lien ci-dessous et connectez-vous pour terminer la migration de votre compte.',
 	'centralauth-merge-step3-title' => 'Créer un compte unifié',
 	'centralauth-merge-step3-detail' => 'Vous êtes maintenant prêt{{GENDER:||e|(e)}} à créer votre compte unifié, auquel seront attachés les wikis suivants :',
 	'centralauth-merge-step3-submit' => 'Unifier les comptes',
