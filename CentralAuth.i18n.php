@@ -17643,7 +17643,7 @@ $messages['pt-br'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
 	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para acessar esta página.',
-	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} efectue login]</span> para verificar se as suas contas foram correctamente fundidas.',
+	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} autentique-se]</span> para verificar se as suas contas foram unificadas corretamente.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado de {{MediaWiki:Centralauth-groupname}}.'''
 
 Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis de {{MediaWiki:Centralauth-groupname}} em todas as línguas disponíveis.
@@ -17880,7 +17880,7 @@ Note que um grupo não existe se não tiver permissões atribuídas.',
 	'centralauth-editgroup-member' => 'Nome localizado dos membros do grupo:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editar]])',
 	'centralauth-editgroup-members' => 'Lista de membros:',
-	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de utilizadores com direitos $2]]',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de usuários com direitos $2]]',
 	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está ativo:',
 	'centralauth-editgroup-noset' => '(nenhum)',
 	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo',
