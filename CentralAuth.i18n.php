@@ -3004,6 +3004,7 @@ $messages['bn'] = array(
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
+ * @author Kouign-amann
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -3174,7 +3175,7 @@ Abeg : $1',
 	'centralauth-invalid-wiki' => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists' => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-login-progress' => "O kevreañ ac'hanoc'h da raktresoù {{int:Centralauth-groupname}} :",
-	'centralauth-logout-progress' => "O digevreañ ac'hanoc'h eus raktresoù all eus {{int:Centralauth-groupname}} :",
+	'centralauth-logout-progress' => "O tigevreañ ac'hanoc'h eus raktresoù all eus {{int:Centralauth-groupname}} :",
 	'centralauth-login-no-others' => "Kevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.",
 	'centralauth-logout-no-others' => "Digevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'kuzhet en un doare hollek gant $1 war $2 evit an abeg da-heul : $3',
@@ -11579,7 +11580,7 @@ $messages['ka'] = array(
 	'centralauth-admin-list-attached-on' => 'გაერთიანდა',
 	'centralauth-admin-list-method' => 'მეთოდი',
 	'centralauth-admin-list-editcount' => 'რედაქტირებათა მთვლელი',
-	'centralauth-admin-list-blocked' => 'ბლოკირების სტატუსი',
+	'centralauth-admin-list-blocked' => 'დაბლოკილია',
 	'centralauth-admin-unmerge' => 'არჩეულის დაყოფა',
 	'centralauth-admin-merge' => 'არჩეულის გაერთიანება',
 	'centralauth-admin-bad-input' => 'გაერთიანების არასწორი არჩევა',
@@ -11601,10 +11602,10 @@ $messages['ka'] = array(
 	'centralauth-admin-reason-other' => 'სხვა/დამატებითი მიზეზი:',
 	'centralauth-admin-status' => 'ანგარიშის გლობალური სტატუსის დაყენება.',
 	'centralauth-admin-status-intro' => 'თქვენ შეგიძლიათ ამ ფორმის გამოენება გლობალური ანგარიშის სტატუსის შესაცვლელად.',
-	'centralauth-admin-status-locked' => 'დაბლოკილია',
+	'centralauth-admin-status-locked' => 'დაიბლოკა:',
 	'centralauth-admin-status-locked-no' => 'ანგარიში არ არის დაბლოკილი',
 	'centralauth-admin-status-locked-yes' => 'ანგარიში დაბლოკილია რედაქტირებისაგან',
-	'centralauth-admin-status-hidden' => 'დამალულია',
+	'centralauth-admin-status-hidden' => 'დამალული:',
 	'centralauth-admin-status-hidden-no' => 'ანგარიში დამალული არ არის',
 	'centralauth-admin-status-hidden-list' => 'ანგარიში დამალულია საჯარო სიებისგან',
 	'centralauth-admin-status-hidden-oversight' => 'ანგარიში სრულად დამალულია',
@@ -19353,6 +19354,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-no-unified' => 'Нема сједињеног налога за ово корисничко име.',
 	'centralauth-admin-info-id' => 'Кориснички ИД:',
 	'centralauth-admin-info-registered' => 'Регистрован:',
+	'centralauth-admin-info-home' => 'Домаћи вики',
 	'centralauth-admin-info-editcount' => 'Бројач укупних измена:',
 	'centralauth-admin-info-locked' => 'Закључан:',
 	'centralauth-admin-info-hidden' => 'Сакривени ниво:',
