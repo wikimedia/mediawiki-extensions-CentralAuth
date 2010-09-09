@@ -8175,7 +8175,7 @@ $messages['got'] = array(
 $messages['grc'] = array(
 	'centralauth-merge-dryrun-or' => "'''ἢ'''",
 	'centralauth-finish-title' => 'Τελεῖν τὴν συγχώνευσιν',
-	'centralauth-finish-password' => 'Σύνθημα:',
+	'centralauth-finish-password' => 'Σῆμα:',
 	'centralauth-finish-login' => 'Συνδεῖσθαι',
 	'centralauth-finish-send-confirmation' => 'Πέμπειν ἠλεκτρονικῇ ἐπιστολῇ τὸ σύνθημα',
 	'centralauth-admin-username' => 'Ὄνομα χρωμένου:',
@@ -18603,6 +18603,14 @@ $messages['ru'] = array(
 	'right-centralauth-oversight' => 'подавление глобальных учётных записей',
 	'right-centralauth-merge' => 'объединение учётных записей',
 	'right-globalgrouppermissions' => 'управление глобальными группами',
+);
+
+/** Rusyn (Русиньскый)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'centralauth-admin-status' => 'Змінити став ґлобалного конта',
+	'centralauth-prefs-status' => 'Став ґлобалного конта:',
 );
 
 /** Yakut (Саха тыла)
