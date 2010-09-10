@@ -1754,8 +1754,8 @@ $messages['ba'] = array(
 Әгәр проекттарҙың ҡайһы берҙәрендә һеҙҙең исемегеҙ ҡулланыла икән, иҫәп яҙмаларын берләштереү был иҫәп яҙмаларына ҡағылмаясаҡ, һәм артабан һеҙ был ҡыйынлыҡты ошо ҡатнашыусылар менән йәки хәкимдәрҙең береһе менән һөйләшеп, хәл итә алаһығыҙ.",
 	'centralauth-merge-step1-title' => 'Иҫәп яҙмаларын берләштереүҙе башларға',
 	'centralauth-merge-step1-detail' => 'Иҫәп яҙмағыҙҙың паролен керетегеҙ, зинһар.
-Һеҙҙең паролегеҙ һәм электрон почтағыҙ адресы башҡа вики-проекттар иҫәп яҙмаһындағы мәғләмәттәр менән сағыштырыласаҡ.
-Һеҙ сағыштырыу һөҙөмтәһенең дөрөслөгөн раҫламаҫ элек, бер үҙгәреш тә индерелмәйәсәк.',
+Һеҙҙең паролегеҙ һәм электрон почтағыҙ адресы башҡа вики-проекттар иҫәп яҙмаһындағы мәғлүмәттәр менән сағыштырыласаҡ.
+Һеҙ сағыштырыу һөҙөмтәһенең дөрөҫлөгөн раҫламаҫ элек, бер үҙгәреш тә индерелмәйәсәк.',
 	'centralauth-merge-step1-submit' => 'Иҫәп яҙмаһы тураһында мәғлүмәтте раҫларға',
 	'centralauth-merge-step2-title' => 'Өҫтәмә иҫәп яҙмаларын раҫларға',
 	'centralauth-merge-step2-detail' => 'Ҡайһы бер иҫәп яҙмалары һеҙ күрһәткән башланғыс вики проекты менән берләшә алмай. Әгәр был иҫәп яҙмалары ысынлап та Һеҙҙеке булһа, уларҙың паролен керетеп, быны дәлилләгеҙ.',
@@ -13090,7 +13090,7 @@ Eng aner Wiki gouf als Heemechts-Wiki fir äre Benotzernumm ermëttelt; klickt o
 	'centralauth-merge-step3-title' => 'Globale Benotzerkont uleeën',
 	'centralauth-merge-step3-detail' => 'Dir kënnt elo e globale Benotzerkont opmaachen, de fir dës Wikien zielt:',
 	'centralauth-merge-step3-submit' => 'Benotzerkonten zesummeleeën',
-	'centralauth-merge-no-accounts' => "Et goufe keng Benotzerkonten déi mat Ärem Numm iwwereneestëmmen an der Tabell an däer all Benotzerkonten opgzeechent gi fonnt!
+	'centralauth-merge-no-accounts' => "Et goufe keng Benotzerkonten déi mat Ärem Numm iwwerteneestëmmen an der Tabell an där all Benotzerkonten opgezeechent gi fonnt!
 D'Datebank muss feelerhaft sinn.",
 	'centralauth-merge-home-password' => "D'Heemechtswiki fir dëse Benotzerkont (kuckt ënnendrënner) huet en anert Passwuert wéi dat, dat Dir aginn hutt.
 Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
@@ -13101,8 +13101,8 @@ Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
 	'centralauth-not-owner-text' => 'De Benotzernumm "$1" gouf automatesch dem Proprietaire vun dem Benotzerkont op $2 zougedeelt.
 
 Wann Dir dat sidd, kënnt Dir de Prozess vum Zesummeleeë vu Benotzerkonten ofschléissen andeems Dir d\'Haaptpasswuert fir dëse Benotzerkont hei agitt:',
-	'centralauth-blocked-text' => "Är Heemechtswiki (kuckt hei ënnendrënner) ass fir ännerunge gespaart.
-Kontaktéiert w.e.g. en Administrateur (Sysop) vun däer wiki fir déi d'Spär nees opzehiewen.
+	'centralauth-blocked-text' => "Är Heemechtswiki (kuckt hei ënnendrënner) ass fir Ännerunge gespaart.
+Kontaktéiert w.e.g. en Administrateur (Sysop) vun där Wiki fir déi d'Spär nees opzehiewen.
 Esoulaang wéi déi Spär besteet, kënnt Dir är Benotzerkonten net zesummeféieren.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demonstratiounsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "D'zesummeféierung vun de Benotzerkonten ass elo an engem Viféier- oder Test-Modus, dofir  kann een zur Zäit nach keng Benotzerkonten zesummeféieren. Pardon!",
@@ -13124,7 +13124,7 @@ wahrscheinlech hu si en anert Passwuert wéi Ären Haaptbenotzerkont:',
 	'centralauth-merge-method-admin' => 'vun engem Admin zesumegeluechte Benotzerkonten',
 	'centralauth-merge-method-new' => 'Neie Benotzerkont',
 	'centralauth-merge-method-login' => 'beim aloggen ugeluecht',
-	'centralauth-merge-method-primary-desc' => "Dëst ass d'Wiki op däer de Kont fir d'éischt zesummegeluecht gouf.
+	'centralauth-merge-method-primary-desc' => "Dëst ass d'Wiki op där de Kont fir d'éischt zesummegeluecht gouf.
 Denkt drun datt et eventuel net d'Heemechtswiki vum Benotzer ass.",
 	'centralauth-merge-method-empty-desc' => 'Gëtt un datt de lokale Benotzerkont zesummegeluecht gouf well e keng Ännerunge gemaach hat.',
 	'centralauth-merge-method-mail-desc' => 'Gëtt un datt de lokale Kont zesummegeluecht gouf well seng E-Mailadress mat der E-Mailadress vum Haaptkont iwwereneestëmmt.',
