@@ -9036,6 +9036,7 @@ $messages['hil'] = array(
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  * @author Ex13
+ * @author Herr Mlinka
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
@@ -9167,9 +9168,14 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-admin-delete-nonexistent' => 'Greška: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
 	'centralauth-token-mismatch' => 'Ispričavamo se, nismo mogli obraditi vaš zahtjev zbog gubitka podataka o prijavi.',
 	'centralauth-admin-reason' => 'Razlog:',
-	'centralauth-admin-status-locked' => 'Zaključano',
-	'centralauth-admin-status-hidden' => 'Skriven',
+	'centralauth-admin-status-locked' => 'Zaključano:',
+	'centralauth-admin-status-hidden' => 'Skriven:',
+	'centralauth-admin-status-hidden-no' => 'Račun nije skriven',
+	'centralauth-admin-status-hidden-list' => 'Račun je skriven od javnih lista',
+	'centralauth-admin-status-hidden-oversight' => 'Račun je u potpunosti skriven',
 	'centralauth-admin-status-submit' => 'Postavite status',
+	'centralauth-admin-status-nonexistent' => 'Greška: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
+	'centralauth-admin-setstatus-success' => 'Uspješno ste promijenili status ovog globalnog računa.',
 	'globalusers' => 'Popis suradnika sa središnjim računom',
 	'centralauth-listusers-locked' => 'zaključano',
 	'centralauth-listusers-attached' => '[[User:$1|postoji lokalno]]',
