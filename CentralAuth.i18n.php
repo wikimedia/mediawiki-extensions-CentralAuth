@@ -956,6 +956,7 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author ;Hiba;1
  * @author Alnokta
+ * @author Loya
  * @author Meno25
  * @author Moemin05
  * @author OsamaK
@@ -1028,6 +1029,7 @@ $messages['ar'] = array(
 	'centralauth-merge-method-new' => 'حساب جديد',
 	'centralauth-merge-method-login' => 'انشئ عمد الدخول',
 	'centralauth-merge-method-primary-desc' => 'هذا هو الويكي الذي تم دمج الحساب فيه. لاحظ أنه قد يختلف عن ويكي الحقيقي لهذا المستخدم.',
+	'centralauth-merge-method-empty-desc' => 'يشير إلى أنه تم دمج حساب محلي لأنه ليس لديه تعديلات.',
 	'centralauth-merge-method-new-desc' => 'يبين أنه تم إنشاء الحساب العالمي تلقائيا عندما تم إنشاء ذلك الحساب المحلي.',
 	'centralauth-finish-title' => 'انتهاء الدمج',
 	'centralauth-finish-text' => 'لو كانت هذه الحسابات تنتمي لك، يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمات السر للحسابات الأخرى هنا:',
@@ -2032,6 +2034,14 @@ $messages['ba'] = array(
 	'right-centralauth-oversight' => 'Дөйөм иҫәп яҙмаларын йәшереү',
 	'right-centralauth-merge' => 'Иҫәп яҙмаларын берләштереү',
 	'right-globalgrouppermissions' => 'Дөйөм төркөмдәр менән идара итеү',
+);
+
+/** Bavarian (Boarisch)
+ * @author Mucalexx
+ */
+$messages['bar'] = array(
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beorwaiten]])',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beorwaiten]])',
 );
 
 /** Samogitian (Žemaitėška)
@@ -12322,7 +12332,7 @@ $messages['km'] = array(
 	'centralauth-merge-method-mail' => 'ត្រូវបានបញ្ជាក់ដោយអ៊ីមែល',
 	'centralauth-merge-method-password' => 'ត្រូវបានបញ្ជាក់ដោយពាក្យសំងាត់',
 	'centralauth-merge-method-new' => 'គណនីថ្មី',
-	'centralauth-merge-method-login' => 'ត្រូវបានបញ្ជាក់ដោយការឡុកអ៊ីន',
+	'centralauth-merge-method-login' => 'ត្រូវបានបង្កើតពេកកត់ឈ្មោះចូល',
 	'centralauth-finish-title' => 'បញ្ចប់ការបញ្ចូលរួមគ្នា',
 	'centralauth-finish-password' => 'ពាក្យសំងាត់៖',
 	'centralauth-finish-login' => 'ឡុកអ៊ីន',
@@ -12334,7 +12344,8 @@ $messages['km'] = array(
 	'centralauth-admin-info-id' => 'ID អ្នកប្រើប្រាស់៖',
 	'centralauth-admin-info-registered' => 'ត្រូវបានចុះបញ្ជី៖',
 	'centralauth-admin-info-locked' => 'ត្រូវបានចាក់សោ៖',
-	'centralauth-admin-info-hidden' => 'ត្រូវបានលាក់៖',
+	'centralauth-admin-info-hidden' => 'កំរិតលាក់៖',
+	'centralauth-admin-nohome' => 'មិនអាចកំណត់បាន',
 	'centralauth-admin-yes' => 'បាទ/ចាស៎',
 	'centralauth-admin-no' => 'ទេ',
 	'centralauth-admin-list-editcount' => 'ចំនួនកំណែប្រែ',
@@ -12344,8 +12355,11 @@ $messages['km'] = array(
 	'centralauth-admin-nonexistent' => 'គ្មានគណនីសាកលសម្រាប់"<nowiki>$1</nowiki>"ទេ',
 	'centralauth-admin-delete-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
 	'centralauth-admin-reason' => 'មូលហេតុ៖',
-	'centralauth-admin-status-locked' => 'ត្រូវបានចាក់សោ',
+	'centralauth-admin-status-locked' => 'ត្រូវបានចាក់សោ៖',
+	'centralauth-admin-status-locked-no' => 'ទិន្នន័យមិនជាប់សោ',
+	'centralauth-admin-status-locked-yes' => 'ទិន្នន័យត្រូវបានចាក់សោមិនអោយធ្វើការកែប្រែ',
 	'centralauth-admin-status-hidden' => 'ត្រូវបានលាក់',
+	'centralauth-admin-status-hidden-no' => 'ទិន្នន័យមិនត្រូវបានលាក់',
 	'globalusers' => 'បញ្ជីអ្នកប្រើប្រាស់សាកល',
 	'centralauth-listusers-locked' => 'ត្រូវបានចាក់សោ',
 	'centralauth-seconds-ago' => '$1{{PLURAL:$1|វិនាទី|វិនាទី}}មុន',
