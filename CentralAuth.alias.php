@@ -6,6 +6,8 @@
  * @ingroup Extensions
  */
 
+$specialPageAliases = array();
+
 /** English
  * @author Jon Harald Søby
  */
