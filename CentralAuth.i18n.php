@@ -3061,6 +3061,10 @@ Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer; kit
 	'centralauth-merge-step3-title' => 'Krouiñ ur gont unvan',
 	'centralauth-merge-step3-detail' => "Prest oc'h bremañ da grouiñ ur gont unvan evit ar wikioù-mañ :",
 	'centralauth-merge-step3-submit' => "Kendeuziñ ar c'hontoù",
+	'centralauth-merge-no-accounts' => "N'eo bet kavet kont ebet gant ho anv e-barzh taolenn kreiz da heuliañ ar c'hontoù !
+An diaz roadennoù a c'hell bezañ breinet.",
+	'centralauth-merge-home-password' => "Ar wiki pennañ evit ar c'hont-mañ (listennet amañ dindan) en deus ur ger tremen disheñvel eus an hini ho peus roet.
+Roit ar ger tremen implijet evit ar wiki pennañ mar plij.",
 	'centralauth-complete' => "Kendeuzet eo ar c'hontoù !",
 	'centralauth-incomplete' => "N'eo ket echu kendeuziñ ar c'hontoù !",
 	'centralauth-complete-text' => 'Gallout a rit bremañ kevreañ ouzh ne vern pe raktres eus {{MediaWiki:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.',
@@ -3068,6 +3072,9 @@ Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer; kit
 	'centralauth-not-owner-text' => 'Staget eo bet ent emgefre an anv implijer "$1" ouzh perc\'henn ar gont $2.
 
 Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :',
+	'centralauth-blocked-text' => "Ne c'heller ket kemm ho wiki pennañ (listennet amañ dindan).
+Trugarez da vont e darempred gant ur merour eus ar wiki-mañ evit diglozañ anezhañ.
+A-keit ha ma vo stanket, ne c'helot ket kendeuziñ ho kontoù.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mod demo hepken</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Emañ ar c'hendeuziñ kontoù er mod arnodiñ / dizreinañ evit poent, setu n'haller ket c'hoazh kendeuziñ kontoù da vat. Hon digarezit !",
 	'centralauth-error-locked' => "N'hallit ket degas kemmoù pa'z eo prennet ho kont.",
@@ -3088,6 +3095,8 @@ evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont penn
 	'centralauth-merge-method-admin' => 'kont kendeuzet gant ar merour',
 	'centralauth-merge-method-new' => 'kont nevez',
 	'centralauth-merge-method-login' => 'krouet e-pad ar gevreañ',
+	'centralauth-merge-method-primary-desc' => "Sed aze ar wiki e-lec'h ma 'z eo bet kendeuzet ar c'hont.
+Gallout a ra bezañ disheñel ouzh wiki pennañ an implijer.",
 	'centralauth-merge-method-empty-desc' => "Merkañ a ra ez eo bet kendeuzet ar gont lec'hel dre ma ne oa ket a gemmoù.",
 	'centralauth-merge-method-mail-desc' => "Merkañ a ra ez eo bet kendeuzet ar gont lec'hel dre ma glot e chomlec'h postel gant hini ar gont pennañ.",
 	'centralauth-merge-method-password-desc' => "Diskouez a ra ez eo bet kendeuzet ar gont lec'hel dre m'en deus spisaet ur ger-tremen reizh evitañ.",
