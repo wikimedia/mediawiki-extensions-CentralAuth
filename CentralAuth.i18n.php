@@ -3254,10 +3254,15 @@ Pa [[Special:UserLogin|kevreoc'h]], ar reizhiad gwiriañ pennañ a c'houlenn dig
 Goulennet ho peus ar bajenn-mañ hep reiñ titouroù dilesadur ebet, dre-se ne ra netra.",
 	'globalgroupmembership' => "Ezel d'ar strolladoù hollek",
 	'globalgrouppermissions' => 'Merañ ar strolladoù hollek',
+	'centralauth-globalgroupperms-grouplist' => "Ar c'hontoù hollek-mañ a zo bet kefluniet.
+Gallout a rit gwelout pe kemm aotreoù roet d'ur strollad, ma 'z oc'h aotreet d'en ober.
+Ur strollad a c'hell bezañ dilamet en ur tennañ an holl aotreoù dezhañ.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|gwelet/kemmañ]])',
 	'centralauth-globalgroupperms-nogroups' => "N'eus bet termenet strollad hollek ebet.",
 	'centralauth-existinggroup-legend' => 'Strolladoù zo anezho dija',
 	'centralauth-newgroup-legend' => 'Krouiñ ur strollad nevez',
+	'centralauth-newgroup-intro' => "Gallout a rit impljout ar furmskrid-mañ evit reiñ aotreoù d'ur strollad nevez.
+Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Dereiñ aotreoù',
 	'centralauth-editgroup-subtitle' => "Oc'h aozañ $1",
@@ -3279,9 +3284,14 @@ Goulennet ho peus ar bajenn-mañ hep reiñ titouroù dilesadur ebet, dre-se ne r
 [[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù hollek]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|kemmañ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki o deus ur gont warno :',
+	'centralauth-globalgroupmembership-badknownwiki' => "An implijer hollek '''$1''' ho peus goulennet zo dizoberiant ('' $2 '').
+Chañsoù 'zo e klaskit lakaat gwriroù d'an implijer fall!",
 	'centralauth-editset' => "C'hoari wikioù",
 	'centralauth-editset-legend-rw' => "Kemmañ pe krouiñ ur c'hoari wikioù",
 	'centralauth-editset-legend-ro' => "Roll ar c'hoari wikioù",
+	'centralauth-editset-intro-rw' => 'An teskadoù wiki-mañ zo bet krouet dija.
+Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
+	'centralauth-editset-intro-ro' => 'A-is listenn an teskadoù wiki hag a zo anezho.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|dilemel]])',
 	'centralauth-editset-new' => "Krouiñ ur c'hoari nevez a wikioù",
 	'centralauth-editset-notfound' => 'N\'eo ket bet kavet ar c\'hoari a wikioù "$1"',
