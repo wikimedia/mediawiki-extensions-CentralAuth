@@ -7357,7 +7357,7 @@ Notez qu'il peut être différent du wiki principal de cet utilisateur.",
 	'centralauth-finish-title' => 'Terminer la fusion',
 	'centralauth-finish-text' => 'Si ces comptes vous appartiennent, vous pouvez terminer le processus d’unification des identifications en tapant leurs mots de passe respectifs actuels ci-dessous :',
 	'centralauth-finish-password' => 'Mot de passe :',
-	'centralauth-finish-login' => 'Nom d’utilisateur',
+	'centralauth-finish-login' => 'Connexion',
 	'centralauth-finish-send-confirmation' => 'Envoyer le mot de passe par courriel',
 	'centralauth-finish-problems' => 'En cas de problème ou si vous ne possédez pas ces autres comptes :
 Consultez l’[[meta:Help:Unified login/fr|aide sur la connexion unifiée]]…',
