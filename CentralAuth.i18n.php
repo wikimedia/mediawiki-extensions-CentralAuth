@@ -20520,13 +20520,30 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author TRYPPN
  * @author Trengarasu
  */
 $messages['ta'] = array(
+	'centralauth-merge-dryrun-or' => "'''அல்லது'''",
+	'centralauth-merge-method-new' => 'புதிய கணக்கு',
 	'centralauth-finish-password' => 'கடவுச்சொல்:',
 	'centralauth-finish-login' => 'புகுபதிகை',
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
 	'centralauth-admin-username' => 'பயனர் பெயர்:',
+	'centralauth-admin-yes' => 'ஆம்',
+	'centralauth-admin-no' => 'இல்லை',
+	'centralauth-admin-unattached' => 'இணைக்கப்படவில்லை',
+	'centralauth-admin-list-editcount' => 'தொகுப்புக்களின் எண்ணிக்கை',
+	'centralauth-admin-list-blocked' => 'தடுக்கப்பட்டது',
+	'centralauth-admin-delete-title' => 'கணக்கை நீக்கு',
+	'centralauth-admin-reason' => 'காரணம்:',
+	'centralauth-admin-status-locked' => 'மூடப்பட்டது:',
+	'centralauth-editgroup-members' => 'உறுப்பினர்களின் பட்டியல்:',
+	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
+	'centralauth-editgroup-reason' => 'காரணம்:',
+	'centralauth-editset-reason' => 'காரணம்:',
+	'centralauth-editset-submit' => 'சமர்ப்பி',
+	'centralauth-editset-submit-delete' => 'நீக்கவும்',
 );
 
 /** Telugu (తెలుగు)
