@@ -20538,6 +20538,7 @@ $messages['ta'] = array(
 	'centralauth-admin-list-editcount' => 'தொகுப்புக்களின் எண்ணிக்கை',
 	'centralauth-admin-list-blocked' => 'தடுக்கப்பட்டது',
 	'centralauth-admin-delete-title' => 'கணக்கை நீக்கு',
+	'centralauth-admin-delete-button' => 'இந்த கணக்கை நீக்கவும்',
 	'centralauth-admin-reason' => 'காரணம்:',
 	'centralauth-admin-status-locked' => 'மூடப்பட்டது:',
 	'centralauth-log-status-locked' => 'மூடப்பட்டது',
@@ -20547,9 +20548,11 @@ $messages['ta'] = array(
 	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
 	'centralauth-editgroup-reason' => 'காரணம்:',
 	'centralauth-editset-name' => 'பெயர்:',
+	'centralauth-editset-type' => 'வகை:',
 	'centralauth-editset-reason' => 'காரணம்:',
 	'centralauth-editset-submit' => 'சமர்ப்பி',
 	'centralauth-editset-submit-delete' => 'நீக்கவும்',
+	'centralauth-editset-nouse' => '(எதுவுமில்லை)',
 );
 
 /** Telugu (తెలుగు)
