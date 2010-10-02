@@ -5926,7 +5926,7 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-admin-list-blocked' => 'Forbarita',
 	'centralauth-admin-unmerge' => 'Malkunigi selektitaĵojn',
 	'centralauth-admin-merge' => 'Kunigi elektitaĵojn',
-	'centralauth-admin-bad-input' => 'Nevalida unuiga selekto',
+	'centralauth-admin-bad-input' => 'Nevalida unuiga elekto',
 	'centralauth-admin-none-selected' => 'Ne estas elektitaj ŝanĝendaj kontoj.',
 	'centralauth-admin-already-unmerged' => 'Preterlasante $1, jam nekunigitan.',
 	'centralauth-admin-unmerge-success' => 'Sukcese malkunigis $1 {{PLURAL:$1|konton|kontojn}}',
