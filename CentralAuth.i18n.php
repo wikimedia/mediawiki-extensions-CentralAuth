@@ -3284,8 +3284,8 @@ Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 [[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù hollek]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|kemmañ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki o deus ur gont warno :',
-	'centralauth-globalgroupmembership-badknownwiki' => "An implijer hollek '''$1''' ho peus goulennet zo dizoberiant ('' $2 '').
-Chañsoù 'zo e klaskit lakaat gwriroù d'an implijer fall!",
+	'centralauth-globalgroupmembership-badknownwiki' => "An implijer hollek '''$1''' ho peus goulennet zo dioberiant (''$2'').
+Chañsoù 'zo e klaskit lakaat gwirioù d'an implijer fall !",
 	'centralauth-editset' => "C'hoari wikioù",
 	'centralauth-editset-legend-rw' => "Kemmañ pe krouiñ ur c'hoari wikioù",
 	'centralauth-editset-legend-ro' => "Roll ar c'hoari wikioù",
@@ -20523,11 +20523,20 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Karthi.dr
  * @author TRYPPN
  * @author Trengarasu
  */
 $messages['ta'] = array(
+	'centralauth-merge-denied' => 'மன்னிக்கவும், இப்பக்கத்தை அணுக உங்களுக்கு  அனுமதி இல்லை.',
+	'centralauth-merge-step1-detail' => 'அருள்கூர்ந்து தங்களின் கடவுச்சொல்லை இடுங்கள்.
+தங்களின் கடவுச்சொல்லும் பதிவு செய்யப்பட்ட மின்னஞ்சலும் மற்ற விக்கிகளில் உள்ள  கணக்குகளோடு ஒப்பிட்டுச் சோதிக்கப்படும்.
+நீங்கள் எல்லாம்  சரியாக இருக்கிறது என்று உறுதி செய்யும் வரை எந்த மாற்றமும் ஏற்படுத்தப்படாது.',
+	'centralauth-merge-step1-submit' => 'புகுபதிகைத் தகவல்களை உறுதி செய்யவும்',
+	'centralauth-merge-step2-submit' => 'புகுபதிகைத் தகவல்களை உறுதி செய்யவும்',
 	'centralauth-merge-dryrun-or' => "'''அல்லது'''",
+	'centralauth-merge-step3-title' => 'ஒன்றாக்கப்பட்ட கணக்கை உருவாக்கவும்',
+	'centralauth-merge-step3-submit' => 'கணக்குகளை ஒன்றாக்கவும்',
 	'centralauth-merge-method-new' => 'புதிய கணக்கு',
 	'centralauth-finish-password' => 'கடவுச்சொல்:',
 	'centralauth-finish-login' => 'புகுபதிகை',
