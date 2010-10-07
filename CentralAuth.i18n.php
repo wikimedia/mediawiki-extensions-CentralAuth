@@ -18740,8 +18740,19 @@ $messages['ru'] = array(
  * @author Gazeb
  */
 $messages['rue'] = array(
+	'centralauth-finish-password' => 'Гесло:',
+	'centralauth-finish-login' => 'Приголосити ся',
+	'centralauth-finish-send-confirmation' => 'Послати нове гесло',
 	'centralauth-admin-status' => 'Змінити став ґлобалного конта',
 	'centralauth-prefs-status' => 'Став ґлобалного конта:',
+	'centralauth-editgroup-reason' => 'Причіна:',
+	'centralauth-editset-name' => 'Мено:',
+	'centralauth-editset-type' => 'Тіп:',
+	'centralauth-editset-wikis' => 'Вікі:',
+	'centralauth-editset-reason' => 'Причіна:',
+	'centralauth-editset-submit' => 'Одослати',
+	'centralauth-editset-submit-delete' => 'Вымазати',
+	'centralauth-editset-nouse' => '(жадне)',
 );
 
 /** Yakut (Саха тыла)
@@ -20601,13 +20612,18 @@ $messages['ta'] = array(
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
 	'centralauth-attach-title' => 'கணக்கை உறுதிசெய்',
 	'centralauth-admin-username' => 'பயனர் பெயர்:',
+	'centralauth-admin-lookup-ro' => 'பயனர் பற்றிய தகவல்களை பார்க்கவும்',
+	'centralauth-admin-info-id' => 'பயனர்:',
 	'centralauth-admin-info-registered' => 'பதிவுசெய்யப்பட்டது:',
 	'centralauth-admin-info-editcount' => 'மொத்தத் தொகுப்பின் எண்ணிக்கை:',
 	'centralauth-admin-info-locked' => 'மூடப்பட்டது:',
 	'centralauth-admin-info-hidden' => 'மறைக்கப்பட்ட நிலை:',
+	'centralauth-admin-nohome' => 'எந்தவொரு தீர்மானத்திற்கும் வரமுடியவில்லை',
 	'centralauth-admin-yes' => 'ஆம்',
 	'centralauth-admin-no' => 'இல்லை',
+	'centralauth-admin-hidden-list' => 'பொதுப்பட்டியல்களில் இருந்து',
 	'centralauth-admin-unattached' => 'இணைக்கப்படவில்லை',
+	'centralauth-admin-list-method' => 'செய்முறை',
 	'centralauth-admin-list-editcount' => 'தொகுப்புக்களின் எண்ணிக்கை',
 	'centralauth-admin-list-blocked' => 'தடுக்கப்பட்டது',
 	'centralauth-admin-none-selected' => 'மாறுதல் செய்வதற்காக எந்தவொரு கணக்கையும் தேர்ந்தெடுக்கவில்லை.',
@@ -20620,6 +20636,8 @@ $messages['ta'] = array(
 	'centralauth-admin-status-locked-yes' => 'இந்த கணக்குக்கு தொகுப்பதற்கு தடைவிதிக்கப்பட்டிருக்கிறது',
 	'centralauth-admin-status-hidden' => 'மறைக்கப்பட்டது:',
 	'centralauth-admin-status-hidden-no' => 'இந்த கணக்கு மறைக்கப்பட்டதல்ல',
+	'centralauth-admin-status-hidden-list' => 'இந்த கணக்கானது பொதுப்பார்வைக்கான பட்டியல்களில் இருந்து மறைக்கப்பட்டுள்ளது',
+	'centralauth-admin-status-hidden-oversight' => 'இந்த கணக்கானது முழுதுமாக மறைக்கப்பட்டுள்ளது',
 	'centralauth-listusers-locked' => 'மூடப்பட்டது',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|மணி|மணிகள்}} முன்பு',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|நாள்|நாட்கள்}} முன்பு',
