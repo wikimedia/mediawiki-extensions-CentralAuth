@@ -14512,7 +14512,7 @@ $messages['ml'] = array(
 
 സം‌യോജിതപ്രവേശന വ്യൂഹത്തിലേക്കു താങ്കളുടെ അംഗത്വം മാറ്റിയാൽ എല്ലാ ഭാഷകളിലുമുള്ള {{MediaWiki:Centralauth-groupname}} വിക്കി സം‌രംഭങ്ങളിൽ പ്രവേശിക്കുവാൻ താങ്കൾക്ക് ഒറ്റ ഉപയോക്തൃനാമവും രഹസ്യവാക്കും ഉപയോഗിക്കാവുന്നതാണ്‌.
 
-താങ്കളുടെ ഉപയോക്തൃനാമം മറ്റൊരു സൈറ്റിൽ മറ്റൊരാളെടുത്തിട്ടുണ്ടെങ്കിൽ ഇതവരെ ബാധിക്കില്ല, എന്നാലും ഒരു കാര്യനിർവ്വാഹകനെ സമീപിച്ചോ അല്ലാതെയോ ഇതു പരിഹരിക്കാനുള്ള അവസരമുണ്ട്.
+താങ്കളുടെ ഉപയോക്തൃനാമം മറ്റൊരു സൈറ്റിൽ മറ്റൊരാളെടുത്തിട്ടുണ്ടെങ്കിൽ ഇതവരെ ബാധിക്കില്ല, എന്നാലും ഒരു കാര്യനിർവാഹകനെ സമീപിച്ചോ അല്ലാതെയോ ഇതു പരിഹരിക്കാനുള്ള അവസരമുണ്ട്.
 
 ഇതു പങ്കു വെക്കപ്പെട്ട സം‌രംഭങ്ങളായ [http://commons.wikimedia.org/ വിക്കിമീഡിയ കോമൺസിൽ] പ്രാമാണങ്ങൾ അപ്‌ലോഡ് ചെയ്യുന്നതിനും, ഒരേ ഉപയോക്തൃനാമം രണ്ടു പേർ ഉപയോഗിക്കുന്നതു മൂലം ഉണ്ടാകുന്ന ചിന്താക്കുഴപ്പങ്ങളും പ്രശ്നങ്ങളും ഒഴിവാക്കാൻ സഹായിക്കും.
 
@@ -20674,12 +20674,19 @@ $messages['ta'] = array(
 	'centralauth-log-status-locked' => 'மூடப்பட்டது',
 	'centralauth-log-status-hidden' => 'மறைக்கப்பட்டது',
 	'centralauth-log-status-none' => '(எதுவுமில்லை)',
+	'autologin' => 'தானாக செய்யப்பட்ட புகுபதிகை',
+	'centralauth-existinggroup-legend' => 'இருக்கும் குழுக்கள்',
+	'centralauth-newgroup-legend' => 'புதியதாக ஒரு குழுவை உருவாக்கு',
+	'centralauth-globalgroupperms-newgroupname' => 'புதிய குழுவின் பெயர்:',
 	'centralauth-editgroup-subtitle' => '$1 தொகுக்கப்படுகிறது',
+	'centralauth-editgroup-name' => 'குழுவின் பெயர்:',
 	'centralauth-editgroup-members' => 'உறுப்பினர்களின் பட்டியல்:',
 	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
+	'centralauth-editgroup-perms' => 'கொடுக்கப்பட்ட அனுமதிகள்:',
 	'centralauth-editgroup-reason' => 'காரணம்:',
 	'centralauth-editset-name' => 'பெயர்:',
 	'centralauth-editset-type' => 'வகை:',
+	'centralauth-editset-wikis' => 'விக்கிகள்:',
 	'centralauth-editset-reason' => 'காரணம்:',
 	'centralauth-editset-submit' => 'சமர்ப்பி',
 	'centralauth-editset-submit-delete' => 'நீக்கவும்',
