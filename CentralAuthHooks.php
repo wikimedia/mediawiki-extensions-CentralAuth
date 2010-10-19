@@ -101,7 +101,7 @@ class CentralAuthHooks {
 	}
 
 	static function onUserLoginComplete( &$user, &$inject_html ) {
-		global $wgCentralAuthCookies;
+		global $wgCentralAuthCookies, $wgRequest;
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
 			return true;
@@ -118,6 +118,11 @@ class CentralAuthHooks {
 		if ( !$wgCentralAuthAutoLoginWikis ) {
 			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parsemag' );
+			return true;
+		}
+
+		if ( !$wgRequest->getCheck( 'wpCentralLogin' ) ) {
+			// The user requested to log in just on this wiki
 			return true;
 		}
 

@@ -249,4 +249,21 @@ class CentralAuthPlugin extends AuthPlugin {
 	public function getUserInstance( User &$user ) {
 		return CentralAuthUser::getInstance( $user );
 	}
+	
+	public function modifyUITemplate( &$template, &$type ) {
+		global $wgCentralAuthCookies;
+
+		$template->set( 'usedomain', false );
+
+		if ( !$wgCentralAuthCookies ) return;
+		
+		$label = Xml::checkLabel( wfMsg( 'centralauth-login-global' ), 'wpCentralLogin', 'wpCentralLogin', true, array( 'tabindex' => '4' ) );
+		$field = <<<HTML
+		<tr id="mw-centralauth-login">
+			<td></td>
+			<td class="mw-input">$label</td>
+		</tr>
+HTML;
+		$template->set( 'extrafields', $field );
+	}
 }
