@@ -35,7 +35,7 @@ No changes will be made until you have confirmed that things are in order.',
 	'centralauth-merge-step2-detail' => "Some of the accounts could not be automatically matched to the designated home wiki.
 If these accounts belong to you, you can confirm that they are yours by providing the password for them.",
 	'centralauth-merge-step2-submit' => 'Confirm login information',
-	'centralauth-login-global'       => 'Log me globally',
+	'centralauth-login-global'       => 'Log me in globally',
 
 	// Dry run messages
 	'centralauth-merge-dryrun-complete'   => 'All existing accounts can be automatically unified!
