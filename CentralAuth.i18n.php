@@ -2107,7 +2107,7 @@ $messages['bar'] = array(
 /** Samogitian (Žemaitėška)
  * @author Hugo.arg
  */
-$messages['bat-smg'] = array(
+$messages['sgs'] = array(
 	'mergeaccount' => 'Prisėregėstravėma unifikacėjės statosos',
 	'centralauth-merge-step3-title' => 'Sokortė bendra paskīra',
 	'globalusers' => 'Gluobaliū nauduotuoju sārošos',
