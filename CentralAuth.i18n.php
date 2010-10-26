@@ -8499,6 +8499,7 @@ Wänn eber ander Dyy Benutzername scho in eme andere Projäkt brucht, no stert s
 	'centralauth-merge-step2-title' => 'Bstätig wyteri Benutzerkonte',
 	'centralauth-merge-step2-detail' => 'E Teil vu dr Benutzerkonte hän nit automatisch chenne Dyynem Heimet-Wiki zuegordnet wäre. Wänn die Konte Dir ghere, no  chasch des bstätige, indäm Du s Passwort zue däne Konte yygisch.',
 	'centralauth-merge-step2-submit' => 'Aamäld-Informatione bstätige',
+	'centralauth-login-global' => 'Wältwyt aamälde',
 	'centralauth-merge-dryrun-complete' => 'Alli Benutzerkonte, wu s git, chenne automatisch zämmegfiert wäre!
 
 Bis jetz sin kei Änderige an Dyyne Benutzerkonte vorgnuh wore.',
@@ -8590,7 +8591,6 @@ Wänn s wältwyt Benutzerkonto au vu Dir isch, chasch d Zämmefierig aafange, in
 	'centralauth-admin-list-legend-ro' => 'Lischt vu lokale Benutzerkonte',
 	'centralauth-admin-list-legend-rw' => 'Lokali Benutzerkonte abhänke',
 	'centralauth-admin-unattached' => 'nit verbunde',
-	'centralauth-admin-notblocked' => 'Nit gsperrt',
 	'centralauth-admin-blocked' => 'Gsperrt bis am $3 am $4. Grund: $2',
 	'centralauth-admin-blocked-indef' => 'Uubschränkt gsperrt. Grund: $1',
 	'centralauth-admin-blocklog' => 'Sperrlogbuech',
@@ -11292,6 +11292,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
  * @author Marine-Blue
  * @author Muttley
  * @author Naohiro19
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'mergeaccount' => '統一ログイン状態',
@@ -11313,6 +11314,7 @@ $messages['ja'] = array(
 	'centralauth-merge-step2-title' => '外部アカウントの確認',
 	'centralauth-merge-step2-detail' => 'いくつかのアカウントで、ホームウィキとの自動照合ができませんでした。もしこれらのアカウントがあなたのものである場合、パスワードを入力することによって自分のものであると証明できます。',
 	'centralauth-merge-step2-submit' => 'ログイン情報の確認',
+	'centralauth-login-global' => 'グローバルにログイン',
 	'centralauth-merge-dryrun-complete' => '現在ある全てのアカウントが自動で統合できます！
 
 いかなる変更もまだあなたのアカウントに加えられていません。',
@@ -11400,7 +11402,6 @@ $messages['ja'] = array(
 	'centralauth-admin-list-legend-ro' => 'ローカルアカウントの一覧',
 	'centralauth-admin-list-legend-rw' => 'ローカルアカウントの統一を解除',
 	'centralauth-admin-unattached' => '統一されていないアカウント',
-	'centralauth-admin-notblocked' => 'ブロックされていません',
 	'centralauth-admin-blocked' => '$3 $4 を期限としてブロックされています。理由: $2',
 	'centralauth-admin-blocked-indef' => '無期限ブロックされました。理由: $1',
 	'centralauth-admin-blocklog' => 'ブロック記録',
@@ -14138,7 +14139,7 @@ Kitos paskyros dar nepatvirtintos.',
 Jei pagrindinė paskyra yra taip pat jūsų, jūs galite prijungti šią paskyrą, jei įvesite pagrindinės paskyros slaptažodį:',
 	'centralauth-attach-submit' => 'Migruoti paskyrą',
 	'centralauth-attach-success' => 'Paskyra buvo migruota į suvienytąją paskyrą.',
-	'centralauth' => 'Suvienytojo prisijungimo administravimas',
+	'centralauth' => 'Suvienyto prisijungimo administravimas',
 	'centralauth-admin-intro' => 'Ši sąsaja gali būti naudojama administruoti pagrindinėms paskyroms.',
 	'centralauth-admin-manage' => 'Naudotojo duomenų valdymas',
 	'centralauth-admin-username' => 'Naudotojo vardas:',
@@ -14154,15 +14155,14 @@ Jei pagrindinė paskyra yra taip pat jūsų, jūs galite prijungti šią paskyr�
 	'centralauth-admin-info-hidden' => 'Paslėpimo lygis:',
 	'centralauth-admin-yes' => 'taip',
 	'centralauth-admin-no' => 'ne',
-	'centralauth-admin-unattached' => 'Neprijungtos paskyros',
-	'centralauth-admin-notblocked' => 'Neužblokuotas',
+	'centralauth-admin-unattached' => 'neprijungta',
 	'centralauth-admin-blocked' => 'Blokuotas, baigiasi $3 $4. Priežastis: $2',
 	'centralauth-admin-blocked-indef' => 'Užblokuotas neribotam laikui. Priežastis: $1',
 	'centralauth-admin-list-localwiki' => 'Vietinis projektas',
 	'centralauth-admin-list-attached-on' => 'Prijungta prie',
 	'centralauth-admin-list-method' => 'Metodas',
 	'centralauth-admin-list-editcount' => 'Redagavimų skaičius',
-	'centralauth-admin-list-blocked' => 'Blokavimo būsena',
+	'centralauth-admin-list-blocked' => 'Užblokuota',
 	'centralauth-admin-unmerge' => 'Atskirti pažymėtus',
 	'centralauth-admin-merge' => 'Sujungti pažymėtus',
 	'centralauth-admin-bad-input' => 'Neleistinas sujungimo pasirinkimas',
@@ -14181,7 +14181,7 @@ Slaptažodžiai vietinėse paskyrose, sukurtose prieš sujungimą, bus grąžint
 	'centralauth-admin-reason' => 'Priežastis:',
 	'centralauth-admin-status' => 'Nustatyti bendrosios paskyros būseną',
 	'centralauth-admin-status-intro' => 'Galite pasinaudoti šia forma, norėdami pakeisti šios bendrosios paskyros būseną',
-	'centralauth-admin-status-locked' => 'Užrakinta',
+	'centralauth-admin-status-locked' => 'Užrakinta:',
 	'centralauth-admin-status-hidden' => 'Paslėpta:',
 	'centralauth-admin-status-submit' => 'Nustatykite būseną',
 	'centralauth-admin-status-nonexistent' => 'Klaida: bendroji paskyra „<nowiki>$1</nowiki>“ neegzistuoja.',
