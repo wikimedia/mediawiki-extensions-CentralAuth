@@ -2008,7 +2008,7 @@ $messages['ba'] = array(
 	'centralauth-log-status-oversighted' => 'тикшереүсе тарафынан йәшерелгән',
 	'centralauth-log-status-none' => '(юҡ)',
 	'centralauth-rightslog-name' => 'Дөйөм мөмкинлектәр яҙмалары журналы',
-	'centralauth-rightslog-entry-usergroups' => '$1 ҡатнашыусыһының кергән төркөмөн $2 төркөмөнән $3 төркөмөнә үҙгәртте',
+	'centralauth-rightslog-entry-usergroups' => '$1 ҡатнашыусыһының кергән дөйөм төркөмдәрен үҙгәрткән. Иҫке төркөмдәр: $2. Яңы төркөмдәр: $3',
 	'centralauth-rightslog-entry-groupperms' => '$1 төркөмөнөң хоҡуҡтарын $2 хоҡуғынан $3 хоҡуғына үҙгәртте',
 	'centralauth-rightslog-entry-groupperms2' => '$1 төркөмөнөң хоҡуҡтарын үҙгәртте. 
 Өҫтәлгән: $2; 
@@ -2104,8 +2104,8 @@ $messages['ba'] = array(
  * @author Mucalexx
  */
 $messages['bar'] = array(
-	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beorwaiten]])',
-	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beorwaiten]])',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beorweiten]])',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beorweiten]])',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
