@@ -18,7 +18,6 @@ class SpecialWikiSets extends SpecialPage {
 
 	function __construct() {
 		parent::__construct( 'WikiSets' );
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 	}
 
 	function getDescription() {

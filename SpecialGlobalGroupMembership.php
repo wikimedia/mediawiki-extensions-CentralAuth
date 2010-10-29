@@ -10,7 +10,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 	function __construct() {
 		parent::__construct( 'GlobalGroupMembership' );
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 
 		global $wgUser;
 		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );
@@ -40,7 +39,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
-			Xml::hidden( 'title',  $this->getTitle() ) .
+			Html::hidden( 'title',  $this->getTitle() ) .
 			Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', array(), wfMsg( 'userrights-lookup-user' ) ) .
 			Xml::inputLabel( wfMsg( 'userrights-user-editname' ), 'user', 'username', 30, $this->mTarget ) . ' <br />' .

@@ -26,7 +26,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 class SpecialGlobalGroupPermissions extends SpecialPage {
 	function __construct() {
 		parent::__construct( 'GlobalGroupPermissions' );
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 	}
 
 	function userCanEdit( $user ) {

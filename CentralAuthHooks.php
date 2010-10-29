@@ -27,7 +27,6 @@ class CentralAuthHooks {
 			return true;
 		}
 
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		$skin = $wgUser->getSkin();
 
 		// Possible states:
