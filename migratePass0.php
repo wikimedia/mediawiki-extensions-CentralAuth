@@ -29,7 +29,7 @@ function migratePassZero() {
 			"user_id BETWEEN $min AND $max",
 			__FUNCTION__ );
 
-		while ( $row = $dbr->fetchObject( $result ) ) {
+		foreach( $result as $row ) {
 			$users[intval( $row->user_id )] = $row->user_name;
 			++$migrated;
 		}

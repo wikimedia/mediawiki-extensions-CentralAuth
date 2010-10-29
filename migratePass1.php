@@ -18,7 +18,7 @@ function migratePassOne() {
 		array( 'gn_name' ),
 		'',
 		__METHOD__ );
-	while ( $row = $dbBackground->fetchObject( $result ) ) {
+	foreach( $result as $row ) {
 		$name = $row->gn_name;
 		$central = new CentralAuthUser( $name );
 		if ( $central->storeAndMigrate() ) {

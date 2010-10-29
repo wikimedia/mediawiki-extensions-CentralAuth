@@ -16,7 +16,7 @@ $result = $dbl->select(
 	'migrateStewards.php'
 );
 $localStewards = array();
-while ( $row = $dbl->fetchObject( $result ) ) {
+foreach ( $result as $row ) {
 	$localStewards[] = $row->user_name;
 }
 
@@ -33,7 +33,7 @@ $result = $dbg->select(
 	),
 	'migrateStewards.php'
 );
-while ( $row = $dbl->fetchObject( $result ) ) {
+foreach ( $result as $row ) {
 	$globalStewards[$row->gu_name] = $row->gu_id;
 }
 
