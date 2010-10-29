@@ -362,7 +362,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$res = $dbr->select( array( 'global_user_groups', 'globaluser' ), 'gu_name', array( 'gug_group' => $group, 'gu_id=gug_user' ), __METHOD__ );
 
 		// Invalidate their rights cache.
-		while ( $row = $res->fetchObject() ) {
+		foreach ( $res as $row ) {
 			$cu = new CentralAuthUser( $row->gu_name );
 			$cu->quickInvalidateCache();
 		}

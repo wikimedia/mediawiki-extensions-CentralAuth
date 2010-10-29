@@ -183,7 +183,7 @@ class WikiSet {
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$res = $dbr->select( 'wikiset', '*', false, __METHOD__ );
 		$result = array();
-		while ( $row = $dbr->fetchObject( $res ) ) {
+		foreach ( $res as $row ) {
 			$result[] = self::newFromRow( $row );
 		}
 		return $result;

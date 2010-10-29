@@ -124,7 +124,7 @@ class GlobalUsersPager extends UsersPager {
 
 		$this->mResult->rewind();
 
-		while ( $row = $this->mResult->fetchObject() ) {
+		foreach ( $this->mResult as $row ) {
 			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
 		}
 		$batch->execute();
@@ -141,7 +141,7 @@ class GlobalUsersPager extends UsersPager {
 		}
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
 		$rights = array();
-		while ( $row2 = $this->mDb->fetchObject( $result ) ) {
+		foreach ( $result as $row2 ) {
 			$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
 		}
 		return implode( ', ', $rights );
