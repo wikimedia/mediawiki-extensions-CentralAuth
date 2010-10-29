@@ -604,7 +604,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// If we've got an authenticated password to work with, we can
 		// also assume their e-mails are useful for this purpose...
 		if ( $passwords ) {
-			foreach ( $migrationSet as $wiki => $local ) {
+			foreach ( $migrationSet as $local ) {
 				if ( $local['email'] != ''
 					&& $local['emailAuthenticated']
 					&& $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
@@ -1561,7 +1561,6 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		// And we have to fetch groups separately, sigh...
-		$groups = array();
 		$result = $db->select( 'user_groups',
 			array( 'ug_group' ),
 			array( 'ug_user' => $data['id'] ),

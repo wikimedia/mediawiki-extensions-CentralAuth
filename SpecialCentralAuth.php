@@ -103,7 +103,6 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} else {
-				global $wgLang;
 				$this->showSuccess( 'centralauth-admin-delete-success', $this->mUserName );
 				$deleted = true;
 				$this->logAction( 'delete', $this->mUserName, $wgRequest->getVal( 'reason' ) );
