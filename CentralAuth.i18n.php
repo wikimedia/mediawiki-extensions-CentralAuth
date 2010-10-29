@@ -25013,6 +25013,7 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-step2-title' => '确认更多账户',
 	'centralauth-merge-step2-detail' => '有一部分的账户没有与主维基项目自动匹配上。如果您拥有这些账户，请提供这些账户的密码以确认它们的归属人。',
 	'centralauth-merge-step2-submit' => '确认账户数据',
+	'centralauth-login-global' => '全域登录',
 	'centralauth-merge-dryrun-complete' => '所有已存在的的账户都能被自动整合！
 
 目前尚未对您的帐号进行任何修改。',
