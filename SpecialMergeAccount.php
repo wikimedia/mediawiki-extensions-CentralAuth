@@ -426,10 +426,10 @@ class SpecialMergeAccount extends SpecialPage {
 					'method' => 'post',
 					'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::element( 'h2', array(), $title ) .
-			Xml::hidden( 'wpEditToken', $wgUser->editToken() ) .
-			Xml::hidden( 'wpMergeAction', $action ) .
-			Xml::hidden( 'wpMergeSessionToken', $this->mSessionToken ) .
-			Xml::hidden( 'wpMergeSessionKey', bin2hex( $this->mSessionKey ) ) .
+			Html::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			Html::hidden( 'wpMergeAction', $action ) .
+			Html::hidden( 'wpMergeSessionToken', $this->mSessionToken ) .
+			Html::hidden( 'wpMergeSessionKey', bin2hex( $this->mSessionKey ) ) .
 
 			$text .
 

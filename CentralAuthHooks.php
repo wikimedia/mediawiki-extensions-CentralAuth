@@ -92,7 +92,6 @@ class CentralAuthHooks {
 	static function onAbortNewAccount( $user, &$abortError ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists() ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$abortError = wfMsg( 'centralauth-account-exists' );
 			return false;
 		}
@@ -115,7 +114,6 @@ class CentralAuthHooks {
 		// On other domains
 		global $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthAutoLoginWikis ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parsemag' );
 			return true;
 		}
@@ -125,7 +123,6 @@ class CentralAuthHooks {
 			return true;
 		}
 
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		$inject_html .= '<div class="centralauth-login-box"><p>' .
 			wfMsgExt( 'centralauth-login-progress', array( 'parsemag' ), $user->getName() ) . "</p>\n<p>";
 		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
@@ -266,7 +263,6 @@ class CentralAuthHooks {
 			// Nothing to do.
 			return true;
 		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
 			return true;
 		}
@@ -276,13 +272,11 @@ class CentralAuthHooks {
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
 			return true;
 		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
 			return true;
 		}
 
 		// Generate the images
-		wfLoadExtensionMessages( 'SpecialCentralAuth' );
 		$inject_html .= '<div class="centralauth-logout-box"><p>' .
 			wfMsg( 'centralauth-logout-progress' ) . "</p>\n<p>";
 		$centralUser = new CentralAuthUser( $userName );
@@ -342,12 +336,10 @@ class CentralAuthHooks {
 	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
 		$oldCentral = new CentralAuthUser( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$warnings[] = array( 'centralauth-renameuser-merged', $oldName, $newName );
 		}
 		$newCentral = new CentralAuthUser( $newName );
 		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
-			wfLoadExtensionMessages( 'SpecialCentralAuth' );
 			$warnings[] = array( 'centralauth-renameuser-reserved', $oldName, $newName );
 		}
 		return true;
