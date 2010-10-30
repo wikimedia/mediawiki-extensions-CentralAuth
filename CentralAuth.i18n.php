@@ -1252,22 +1252,23 @@ $messages['ar'] = array(
 
 /** Aramaic (ܐܪܡܝܐ)
  * @author Basharh
+ * @author Michaelovic
  */
 $messages['arc'] = array(
 	'centralauth-merge-step2-title' => 'ܚܬܬ ܚܘܫܒܢ̈ܐ ܝܬܝܪ',
 	'centralauth-merge-step2-submit' => 'ܚܬܬ ܝܕ̈ܥܬܐ ܕܥܠܠܐ',
 	'centralauth-merge-dryrun-or' => "'''ܐܘ'''",
 	'centralauth-list-home-title' => 'ܘܝܩܝ ܪܫܝܐ',
-	'centralauth-foreign-link' => 'ܡܬܚܫܚܢܐ $1 ܒ $2',
+	'centralauth-foreign-link' => 'ܡܦܠܚܢܐ $1 ܒ $2',
 	'centralauth-merge-method-primary' => 'ܘܝܩܝ ܪܫܝܐ',
 	'centralauth-merge-method-empty' => 'ܠܝܬ ܫܘܬܦܘܝܬ̈ܐ',
 	'centralauth-merge-method-new' => 'ܚܘܫܒܢܐ ܚܕܬܐ',
 	'centralauth-finish-password' => 'ܡܠܬܐ ܕܥܠܠܐ:',
 	'centralauth-finish-login' => 'ܥܘܠ',
 	'centralauth-attach-title' => 'ܚܬܬ ܚܘܫܒܢܐ',
-	'centralauth' => 'ܕܒܘܪܐ ܕܥܠܠܐ ܡܚܝܕܐ (ܡܬܚܫܚܢܐ ܓܘܢܝܐ)',
-	'centralauth-admin-username' => 'ܫܡܐ ܕܡܬܚܫܚܢܐ:',
-	'centralauth-admin-info-id' => 'ܗܝܝܘܬܐ ܕܡܬܚܫܚܢܐ:',
+	'centralauth' => 'ܕܒܘܪܐ ܕܥܠܠܐ ܡܚܝܕܐ (ܡܦܠܚܢܐ ܓܘܢܝܐ)',
+	'centralauth-admin-username' => 'ܫܡܐ ܕܡܦܠܚܢܐ:',
+	'centralauth-admin-info-id' => 'ܗܝܝܘܬܐ ܕܡܦܠܚܢܐ:',
 	'centralauth-admin-info-home' => 'ܘܝܩܝ ܪܫܝܐ',
 	'centralauth-admin-info-hidden' => 'ܫܘܝܐ ܛܘܫܝܐ:',
 	'centralauth-admin-yes' => 'ܐܝܢ',
@@ -3981,8 +3982,8 @@ $messages['crh-latn'] = array(
 	'centralauth-prefs-unattached' => 'Tasdıqlanmağan',
 	'centralauth-prefs-complete' => 'Er şey yerinde!',
 	'centralauth-prefs-migration' => 'Köçmekte',
-	'centralauth-prefs-count-attached' => 'Esabıñız $1 prоyektte faaldir.',
-	'centralauth-prefs-count-unattached' => 'Adıñıznı taşığan tasdıqlanmağan esaplar $1 prоyektte qalıp tura.',
+	'centralauth-prefs-count-attached' => 'Esabıñız $1 leyha {{PLURAL:$1|saytında|saytında}} faaldir.',
+	'centralauth-prefs-count-unattached' => 'Adıñıznı taşığan tasdıqlanmağan esaplar $1 {{PLURAL:$1|leyhada|leyhada}} qalıp tura.',
 	'centralauth-prefs-manage' => 'Global esapnı idare et',
 );
 
@@ -3995,8 +3996,8 @@ $messages['crh-cyrl'] = array(
 	'centralauth-prefs-unattached' => 'Тасдыкъланмагъан',
 	'centralauth-prefs-complete' => 'Эр шей еринде!',
 	'centralauth-prefs-migration' => 'Кочьмекте',
-	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 проектте фаальдир.',
-	'centralauth-prefs-count-unattached' => 'Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 проектте къалып тура.',
+	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 лейха {{PLURAL:$1|сайтында|сайтында}} фаальдир.',
+	'centralauth-prefs-count-unattached' => 'Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 {{PLURAL:$1|лейхада|лейхада}} къалып тура.',
 	'centralauth-prefs-manage' => 'Глобаль эсапны идаре эт',
 );
 
