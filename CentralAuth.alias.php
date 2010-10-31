@@ -118,6 +118,7 @@ $specialPageAliases['es'] = array(
 	'MergeAccount' => array( 'Fusionar_cuenta_global', 'FusionarCuentaGlobal' ),
 	'GlobalGroupMembership' => array( 'Permisos_de_usuario_global', 'PermisosUsuarioGlobal' ),
 	'GlobalGroupPermissions' => array( 'Permisos_de_grupo_global', 'PermisosGrupoGlobal' ),
+	'WikiSets' => array( 'AjustesWiki', 'EditarAjustesWiki' ),
 	'GlobalUsers' => array( 'Usuarios_globales' ),
 );
 
@@ -293,7 +294,7 @@ $specialPageAliases['ko'] = array(
 	'AutoLogin' => array( '자동로그인' ),
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정' ),
-	'GlobalGroupPermissions' => array( '전체 그룹 권한' ),
+	'GlobalGroupPermissions' => array( '전체_그룹_권한' ),
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 );
 
