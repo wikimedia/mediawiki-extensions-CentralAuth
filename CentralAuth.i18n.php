@@ -18917,6 +18917,7 @@ $messages['roa-tara'] = array(
 	'centralauth-merge-step3-submit' => 'Aunifeche cunde',
 	'centralauth-complete' => 'Trasùte aunifecate combletate!',
 	'centralauth-incomplete' => 'Trasùte aunifecate non combletate!',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Sulamende 'u mode Demo</div><br clear='all'/>",
 	'centralauth-error-locked' => "Tu non ge puè cangià purcé 'u cunde tune jè bloccate.",
 	'centralauth-list-home-title' => 'Càse uicchi',
 	'centralauth-list-attached-title' => 'Cunde utinde allegate',
