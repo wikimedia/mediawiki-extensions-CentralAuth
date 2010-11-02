@@ -16043,6 +16043,7 @@ Reden: $1',
 );
 
 /** Dutch (Nederlands)
+ * @author Krinkle
  * @author McDutchie
  * @author Meursault2004
  * @author Naudefj
@@ -16089,7 +16090,7 @@ De database moet corrupt zijn.',
 Voer het wachtwoord voor de thuiswiki in.',
 	'centralauth-complete' => 'Samenvoegen gebruikers afgerond!',
 	'centralauth-incomplete' => 'Samenvoegen gebruikers niet volledig!',
-	'centralauth-complete-text' => 'U kunt nu aanmelden bij iedere wiki van {{MediaWiki:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
+	'centralauth-complete-text' => 'U kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
 	'centralauth-incomplete-text' => 'Als uw gebruikers zijn samengevoegd kunt u aanmelden bij iedere wiki van {{MediaWiki:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
 	'centralauth-not-owner-text' => 'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.
 
