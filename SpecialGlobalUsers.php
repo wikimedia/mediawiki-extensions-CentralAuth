@@ -18,7 +18,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		if ( $rqGroup ) {
 			$pg->setGroup( $rqGroup );
 		}
-		$rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) )
+		$rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}
