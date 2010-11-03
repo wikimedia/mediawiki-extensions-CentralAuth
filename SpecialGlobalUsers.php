@@ -14,10 +14,12 @@ class SpecialGlobalUsers extends SpecialPage {
 		if ( $par ) {
 			$pg->setGroup( $par );
 		}
-		if ( $rqGroup = $wgRequest->getVal( 'group' ) ) {
+		$rqGroup = $wgRequest->getVal( 'group' );
+		if ( $rqGroup ) {
 			$pg->setGroup( $rqGroup );
 		}
-		if ( $rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) ) ) {
+		$rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) )
+		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}
 
