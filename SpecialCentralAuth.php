@@ -8,7 +8,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function execute( $subpage ) {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgOut;
 		global $wgExtensionAssetsPath, $wgCentralAuthStyleVersion;
 		global $wgUser, $wgRequest;
 		$this->setHeaders();

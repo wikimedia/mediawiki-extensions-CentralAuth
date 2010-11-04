@@ -6,7 +6,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function execute( $subpage ) {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgOut, $wgUser;
 		$this->setHeaders();
 
 		if ( !$this->userCanExecute( $wgUser ) ) {
