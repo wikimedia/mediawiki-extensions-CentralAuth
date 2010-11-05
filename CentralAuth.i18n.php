@@ -9640,6 +9640,7 @@ Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich
 	'centralauth-merge-step2-title' => 'Dalše konta potwjerdźić',
 	'centralauth-merge-step2-detail' => 'Někotre z wužiwarskich kontow njemóžachu so awtomatisce zjednoćić. Hdyž su konta twoje, móžeš to z hesłom dopokazać.',
 	'centralauth-merge-step2-submit' => 'Přizjewjenske daty potwjerdźić',
+	'centralauth-login-global' => 'Globalnje přizjewić',
 	'centralauth-merge-dryrun-complete' => 'Wšě eksistowace konta dadźa so awtomatisce zjednoćić!
 
 Dotal njebuchu žane změny na twojich kontach přewjedźene.',
@@ -21578,6 +21579,7 @@ Ditt lösenord och din e-postadress kommer kontrolleras mot användarkonton på 
 	'centralauth-merge-step2-title' => 'Bekräfta fler konton',
 	'centralauth-merge-step2-detail' => 'Några av kontona kunde inte automatiskt matchas med kontot på den wiki som utsetts till hemwiki. Om dessa konton tillhör dig kan du bekräfta det genom att ange lösenorden för dem.',
 	'centralauth-merge-step2-submit' => 'Bekräfta inloggningsinformation',
+	'centralauth-login-global' => 'Logga in mig globalt',
 	'centralauth-merge-dryrun-complete' => 'Alla existerande konton kan automatiskt slås samman!
 
 Inga ändringar av dina konton har gjorts än.',
