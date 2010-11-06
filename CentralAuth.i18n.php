@@ -1281,6 +1281,8 @@ $messages['arc'] = array(
 	'centralauth-admin-status-locked' => 'ܩܦܝܠܐ:',
 	'centralauth-admin-status-hidden' => 'ܛܘܫܝܐ:',
 	'globalusers' => 'ܡܟܬܒܘܬܐ ܓܘܢܝܬܐ ܕܗܕ̈ܡܐ',
+	'centralauth-login-progress' => 'ܢܫܪܐ ܥܠܠܬܟ ܠܬܪ̈ܡܝܬܐ ܕ {{int:Centralauth-groupname}} ܐܚܪ̈ܢܬܐ:',
+	'centralauth-logout-progress' => 'ܢܫܪܐ ܦܠܛܟ ܡܢ ܬܪ̈ܡܝܬܐ ܕ {{int:Centralauth-groupname}} ܐܚܪ̈ܢܬܐ:',
 	'centralauth-log-status-locked' => 'ܩܦܝܠܐ',
 	'centralauth-log-status-hidden' => 'ܛܘܫܝܐ',
 	'centralauth-log-status-none' => '(ܠܐ ܡܕܡ)',
@@ -4311,6 +4313,7 @@ $messages['cu'] = array(
 	'centralauth-finish-password' => 'таино слово :',
 	'centralauth-admin-username' => 'по́льꙃєватєлꙗ и́мѧ :',
 	'centralauth-admin-no' => 'нѣ́тъ',
+	'centralauth-prefs-status' => 'вьсѥобьщѩ по́льꙃєватєлꙗ мѣста положєниѥ',
 	'centralauth-editset-name' => 'и́мѧ :',
 );
 
@@ -6216,6 +6219,7 @@ No se harán cambios hasta que confirmes que todo parece estar bien.',
 	'centralauth-merge-step2-detail' => 'Algunas de estas cuentas no pudieron relacionarse automáticamente con la de la wiki designada como principal.
 Si estas cuentas te pertenecen, confirma que son tuyas ingresando la contraseña de las mismas.',
 	'centralauth-merge-step2-submit' => 'Confirma la información de ingreso',
+	'centralauth-login-global' => 'Iniciar sesión globalmente',
 	'centralauth-merge-dryrun-complete' => '¡Todas las cuentas existentes pueden unificarse automáticamente!
 
 Todavía no se han realizado cambios a las cuentas.',
@@ -8788,7 +8792,7 @@ $messages['gv'] = array(
 	'centralauth-finish-password' => 'Fockle yn arrey:',
 	'centralauth-finish-login' => 'Log stiagh',
 	'centralauth-admin-username' => "Dt'ennym ymmydeyr:",
-	'centralauth-admin-info-hidden' => 'Follit:',
+	'centralauth-admin-info-hidden' => 'Keim follit:',
 	'centralauth-admin-yes' => 'ta',
 	'centralauth-admin-no' => 'cha',
 	'centralauth-admin-list-localwiki' => 'Wiki ynnydagh',
