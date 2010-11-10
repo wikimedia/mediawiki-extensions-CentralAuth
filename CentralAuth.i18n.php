@@ -18665,6 +18665,11 @@ Kayrayku: $1",
 	'centralauth-editset-wikis' => 'Wikikuna:',
 	'centralauth-editset-reason' => 'Kayrayku:',
 	'centralauth-editset-submit' => 'Kachay',
+	'centralauth-editset-submit-delete' => 'Qulluy',
+	'centralauth-editset-nowikis' => 'Manam wikipas akllasqachu.',
+	'centralauth-editset-nouse' => '(mana ima)',
+	'centralauth-editset-usage' => "Kay huñukunapi llamk'achisqa:",
+	'centralauth-editset-badwikis' => 'Kay {{PLURAL:$2|wikiqa|wikikunaqa}} manam kanchu: $1.',
 	'centralauth-editset-return' => 'Qhapaq qhawanaman kutimuy',
 );
 
