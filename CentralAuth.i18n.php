@@ -12854,6 +12854,7 @@ $messages['ko'] = array(
 	'centralauth-merge-step2-detail' => '계정 일부는 주 위키와 일치하지 않습니다.
 이 계정을 갖고 있는 것이 맞다면, 비밀번호를 넣어 확인할 수 있습니다.',
 	'centralauth-merge-step2-submit' => '로그인 정보 확인',
+	'centralauth-login-global' => '모든 위키에 로그인',
 	'centralauth-merge-dryrun-complete' => '모든 존재하는 계정이 자동으로 합쳐질 수 있습니다.
 
 아직은 계정에 적용되지 않습니다.',
