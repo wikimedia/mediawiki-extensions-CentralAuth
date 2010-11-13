@@ -23213,6 +23213,7 @@ Siz işlerin yolunda olduğunu onaylamadan hiçbir değişiklik yapılmayacak.',
 	'centralauth-merge-step2-detail' => 'Bazı hesaplar, belirlenen ev vikisiyle otomatik olarak eşleşmedi.
 Eğer bu hesaplar size aitse, şifrelerini sağlayarak sizin olduğunu doğrulayabilirsiniz.',
 	'centralauth-merge-step2-submit' => 'Giriş bilgisini doğrula',
+	'centralauth-login-global' => 'Küresel giriş yap',
 	'centralauth-merge-dryrun-complete' => 'Varolan bütün hesaplar otomatik olarak birleştirilebilir!
 
 Henüz hesaplarınıza herhangi bir değişiklik yapılmadı.',
