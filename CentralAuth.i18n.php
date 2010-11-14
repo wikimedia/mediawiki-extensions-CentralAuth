@@ -987,6 +987,7 @@ $messages['ang'] = array(
  * @author Alnokta
  * @author Loya
  * @author Meno25
+ * @author Mido
  * @author Moemin05
  * @author OsamaK
  */
@@ -1010,6 +1011,7 @@ $messages['ar'] = array(
 	'centralauth-merge-step2-title' => 'أكد مزيد من الحسابات',
 	'centralauth-merge-step2-detail' => 'بعض الحسابات لم يمكن مطابقتها تلقائيا لموقع الويكي الرئيسي المعين. لو أن هذه الحسابات تنتمي لك، يمكنك تأكيد ذلك عن طريق توفير كلمة السر لهم.',
 	'centralauth-merge-step2-submit' => 'أكد معلومات الدخول',
+	'centralauth-login-global' => 'تسجيل الدخول العام الموحد',
 	'centralauth-merge-dryrun-complete' => 'كل الحسابات الموجودة يمكن توحيدها تلقائيا!
 
 لا تغييرات تمت لحساباتك بعد.',
@@ -1059,7 +1061,12 @@ $messages['ar'] = array(
 	'centralauth-merge-method-login' => 'انشئ عمد الدخول',
 	'centralauth-merge-method-primary-desc' => 'هذا هو الويكي الذي تم دمج الحساب فيه. لاحظ أنه قد يختلف عن ويكي الحقيقي لهذا المستخدم.',
 	'centralauth-merge-method-empty-desc' => 'يشير إلى أنه تم دمج حساب محلي لأنه ليس لديه تعديلات.',
+	'centralauth-merge-method-mail-desc' => 'يشير إلى أن الحساب المحلي قد تم إلحاقه بالحساب العام بسبب مطابقة البريد الإلكتروني الخاص به للبريد التابع للحساب الأصلي.',
+	'centralauth-merge-method-password-desc' => 'يشير إلى أن الحساب المحلي قد تم إلحاقه بالحساب العام بسبب إدخال المستخدم كلمة سر صحيحة له.',
+	'centralauth-merge-method-admin-desc' => 'يشير إلى أن الحساب المحلي قد تم إلحاقه بالحساب العام يدويا بواسطة المضيفين.
+هذه الخاصية قد تم تعطيلها الأن لأسباب أمنية.',
 	'centralauth-merge-method-new-desc' => 'يبين أنه تم إنشاء الحساب العالمي تلقائيا عندما تم إنشاء ذلك الحساب المحلي.',
+	'centralauth-merge-method-login-desc' => 'يشير إلى أن الحساب المحلي قد تم إنشاءه آليا عند دخول المستخدم.',
 	'centralauth-finish-title' => 'انتهاء الدمج',
 	'centralauth-finish-text' => 'لو كانت هذه الحسابات تنتمي لك، يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمات السر للحسابات الأخرى هنا:',
 	'centralauth-finish-password' => 'كلمة السر:',
@@ -1085,14 +1092,20 @@ $messages['ar'] = array(
 	'centralauth-admin-lookup-rw' => 'أدر حساب المستخدم',
 	'centralauth-admin-permission' => 'فقط المضيفون يمكنهم أن يدمجوا حسابات الآخرين.',
 	'centralauth-admin-no-unified' => 'لا حساب موحد لاسم المستخدم هذا.',
+	'centralauth-admin-info-header' => 'حالة الدخول العام',
 	'centralauth-admin-info-id' => 'رقم المستخدم:',
 	'centralauth-admin-info-registered' => 'مسجلة:',
 	'centralauth-admin-info-home' => 'الويكي الرئيسية:',
 	'centralauth-admin-info-editcount' => 'مجموع عدد التعديلات:',
 	'centralauth-admin-info-locked' => 'مغلقة:',
 	'centralauth-admin-info-hidden' => 'مستوى مخفي:',
+	'centralauth-admin-nohome' => 'لا يمكن التحديد',
 	'centralauth-admin-yes' => 'نعم',
 	'centralauth-admin-no' => 'لا',
+	'centralauth-admin-hidden-list' => 'من القوائم العامة',
+	'centralauth-admin-hidden-oversight' => 'مخفية',
+	'centralauth-admin-list-legend-ro' => 'قائمة الحسابات المحلية',
+	'centralauth-admin-list-legend-rw' => 'إلغاء دمج الحسابات المحلية',
 	'centralauth-admin-unattached' => 'حسابات غير مرتبطة',
 	'centralauth-admin-blocked' => 'ممنوع بتاريخ انتهاء $3 في $4. السبب: $2',
 	'centralauth-admin-blocked-indef' => 'ممنوع دائما. السبب: $1',
@@ -1118,9 +1131,12 @@ $messages['ar'] = array(
 	'centralauth-admin-delete-nonexistent' => 'خطأ: الحساب العام "<nowiki>$1</nowiki>" غير موجود.',
 	'centralauth-token-mismatch' => 'عذرا، لم نستطع معالجة طلبك نتيجة لفقد بيانات الجلسة.',
 	'centralauth-admin-reason' => 'السبب:',
+	'centralauth-admin-reason-other' => 'سبب آخر/إضافي:',
 	'centralauth-admin-status' => 'ضبط حالة الحساب العام',
 	'centralauth-admin-status-intro' => 'يمكنك استخدام هذه الاستمارة لتغيير حالة هذا الحساب العام',
 	'centralauth-admin-status-locked' => 'مغلق:',
+	'centralauth-admin-status-locked-no' => 'الحساب ليس ممنوعا',
+	'centralauth-admin-status-locked-yes' => 'الحساب ممنوع من التحرير',
 	'centralauth-admin-status-hidden' => 'مخفي:',
 	'centralauth-admin-status-hidden-no' => 'الحساب ليس مخفيًا',
 	'centralauth-admin-status-hidden-list' => 'الحساب مخفي من القوائم العامة',
@@ -1128,6 +1144,12 @@ $messages['ar'] = array(
 	'centralauth-admin-status-submit' => 'ضبط الحالة',
 	'centralauth-admin-status-nonexistent' => 'خطأ: الحساب العام "<nowiki>$1</nowiki>" غير موجود.',
 	'centralauth-admin-setstatus-success' => 'أنت غيرت بنجاح حالة هذا الحساب العام.',
+	'centralauth-admin-status-reasons' => '* أسباب المنع المعتادة
+** حساب للتخريب فقط
+** حساب لوضع وصلات السخام فقط.
+* أسباب المنع والإخفاء معا المعتادة
+** اسم مستخدم مسئ
+** معلومات شخصية غير مناسبة',
 	'globalusers' => 'قائمة المستخدمين العامة',
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
@@ -10586,6 +10608,7 @@ Perubahan tidak akan dilakukan sampai Anda memberikan konfirmasi bahwa tak ada m
 	'centralauth-merge-step2-detail' => 'Beberapa akun tak dapat secara otomatis dicocokkan dengan wiki utama yang dipilih.
 Jika akun-akun ini milik Anda, Anda dapat mengkonfirmasikan kepemilikannya dengan memberikan kata sandi mereka.',
 	'centralauth-merge-step2-submit' => 'Konfirmasi informasi log masuk',
+	'centralauth-login-global' => 'Masuk log secara global',
 	'centralauth-merge-dryrun-complete' => 'Seluruh akun yang ditemukan dapat digabungkan secara otomatis!
 
 Saat ini belum ada perubahan yang dilakukan terhadap akun-akun Anda.',
@@ -17392,17 +17415,17 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth' => 'Zarządzanie kontami uniwersalnymi',
 	'centralauth-admin-intro' => 'Interfejs służy do zarządzania kontami uniwersalnymi.',
 	'centralauth-admin-manage' => 'Zarządzanie danymi użytkownika',
-	'centralauth-admin-username' => 'Nazwa użytkownika:',
+	'centralauth-admin-username' => 'Nazwa użytkownika',
 	'centralauth-admin-lookup-ro' => 'Pokaż informacje o użytkowniku',
 	'centralauth-admin-lookup-rw' => 'Zarządzaj kontem użytkownika',
 	'centralauth-admin-permission' => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
 	'centralauth-admin-no-unified' => 'Brak uniwersalnego konta dla tej nazwy użytkownika.',
 	'centralauth-admin-info-header' => 'Informacje o użytkowniku konta uniwersalnego',
 	'centralauth-admin-info-id' => 'ID użytkownika',
-	'centralauth-admin-info-registered' => 'Zarejestrowane:',
+	'centralauth-admin-info-registered' => 'Zarejestrowane',
 	'centralauth-admin-info-home' => 'Wiki domowa',
 	'centralauth-admin-info-editcount' => 'Wszystkich edycji',
-	'centralauth-admin-info-locked' => 'Zablokowane:',
+	'centralauth-admin-info-locked' => 'Zablokowane',
 	'centralauth-admin-info-hidden' => 'Ukryte',
 	'centralauth-admin-nohome' => 'niemożliwa do określenia',
 	'centralauth-admin-yes' => 'tak',
@@ -17516,7 +17539,7 @@ Po [[Special:UserLogin|zalogowaniu się]], przeglądarka na polecenie systemu ce
 Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak obsługi.',
 	'globalgroupmembership' => 'Przynależność do grup globalnych',
 	'globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
-	'centralauth-globalgroupperms-grouplist' => 'Skonfigurowane są następujące grupy globalne.
+	'centralauth-globalgroupperms-grouplist' => 'Skonfigurowane zostały następujące grupy globalne.
 Jeśli posiadasz odpowiednie uprawnienia możesz zobaczyć oraz zmienić uprawnienia dowolnej grupy.
 Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|podgląd i zmiana uprawnień]])',
@@ -17535,7 +17558,7 @@ Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|edytuj]])',
 	'centralauth-editgroup-members' => 'Lista członków:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Spis użytkowników z uprawnieniami $2]]',
-	'centralauth-editgroup-restrictions' => 'Zbiór wiki, w których ta grupa jest aktywna:',
+	'centralauth-editgroup-restrictions' => 'Zbiór wiki, w których ta grupa jest aktywna',
 	'centralauth-editgroup-noset' => '(brak)',
 	'centralauth-editgroup-submit' => 'Zapisz zmiany uprawnień grup',
 	'centralauth-editgroup-perms' => 'Przyznane uprawnienia:',
