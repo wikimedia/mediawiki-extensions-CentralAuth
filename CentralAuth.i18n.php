@@ -15772,6 +15772,7 @@ Id-databażi tista' tkun li hi korrotta.",
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
+	'centralauth-login-global' => 'Совавтомизьга весемева',
 	'centralauth-merge-dryrun-or' => "'''эли'''",
 	'centralauth-merge-step3-submit' => 'Вейтьсэндямс совамо таркатнень',
 	'centralauth-merge-method-empty' => 'путовкст арасть',
@@ -15786,14 +15787,17 @@ $messages['myv'] = array(
 	'centralauth-admin-yes' => 'истя',
 	'centralauth-admin-no' => 'арась',
 	'centralauth-admin-list-blocked' => 'Саймес саезь',
+	'centralauth-admin-delete-title' => 'Нардамс совамо тарканть',
 	'centralauth-admin-reason' => 'Тувталось:',
 	'centralauth-admin-status-locked' => 'Сёлгозь:',
+	'centralauth-admin-status-locked-no' => 'Совамо таркась апак сёлго',
 	'centralauth-admin-status-hidden' => 'Кекшезь:',
 	'centralauth-admin-status-hidden-no' => 'Совамо таркась апак кекше',
 	'centralauth-listusers-locked' => 'сёлгозь',
 	'centralauth-prefs-unattached' => 'Апак кемекста',
 	'centralauth-log-status-locked' => 'сёлгозь',
 	'centralauth-log-status-hidden' => 'кекшезь',
+	'centralauth-log-status-none' => '(арась мезе невтемс)',
 	'centralauth-editgroup-subtitle' => 'Витнят-петнят $1',
 	'centralauth-editgroup-name' => 'Куронть лемесь:',
 	'centralauth-editgroup-members' => 'Куронть ломантне:',
@@ -15804,6 +15808,7 @@ $messages['myv'] = array(
 	'centralauth-editset-reason' => 'Тувталось:',
 	'centralauth-editset-submit' => 'Максомс',
 	'centralauth-editset-submit-delete' => 'Нардамс',
+	'centralauth-editset-nouse' => '(арась мезе невтемс)',
 );
 
 /** Nahuatl (Nāhuatl)
