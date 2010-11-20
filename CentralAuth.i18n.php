@@ -5671,6 +5671,7 @@ $messages['ee'] = array(
  * @author Crochet.david
  * @author Flyax
  * @author Geraki
+ * @author Glavkos
  * @author K sal 15
  * @author Lou
  * @author Omnipaedista
@@ -5698,6 +5699,7 @@ $messages['el'] = array(
 	'centralauth-merge-step2-title' => 'Επιβεβαίωση περισσότερων λογαριασμών',
 	'centralauth-merge-step2-detail' => 'Μερικοί λογαριασμοί δεν έγινε δυνατό να συνταιριάξουν αυτόματα με το αρχικό προκαθορισμένο εγχείρημα. Εάν αυτοί οι λογαριασμοί σας ανήκουν, μπορείτε να επιβεβαιώσετε ότι είναι δικοί σας παρέχοντας τον κωδικό τους.',
 	'centralauth-merge-step2-submit' => 'Επιβεβαίωση πληροφοριών σύνδεσης',
+	'centralauth-login-global' => 'Συνδέστε με καθολικά',
 	'centralauth-merge-dryrun-complete' => 'Όλοι οι υπάρχοντες λογαριασμοί μπορούν να ενοποιηθούν αυτόματα!
 
 Δεν έχουν γίνει αλλαγές ακόμα στους λογαριασμούς σας.',
@@ -5750,6 +5752,7 @@ $messages['el'] = array(
 	'centralauth-merge-method-admin-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε χειροκίνητα από τους stewards.<br /> 
 Εκείνη η λειτουργία είναι τώρα απενεργοποιημένη για λόγους ασφάλειας.',
 	'centralauth-merge-method-new-desc' => 'Ένδειξη ότι ο καθολικός λογαριασμός δημιουργήθηκε αυτόματα όταν ο τοπικός λογαριασμός δημιουργούνταν.',
+	'centralauth-merge-method-login-desc' => 'Υποδεικνύει ότι ο τοπικός λογαριασμός δημιουργήθηκε  αυτόματα όταν  ο χρήστης συνδέθηκε.',
 	'centralauth-finish-title' => 'Ολοκλήρωση της συγχώνευσης',
 	'centralauth-finish-text' => 'Εάν αυτοί οι λογαριασμοί ανήκουν πραγματικά σε σας, μπορείτε να ολοκληρώσετε απλά την διαδικασία ενοποίησης λογαριασμών πληκτρολογώντας εδώ τους κωδικούς πρόσβασης των άλλων λογαριασμών:',
 	'centralauth-finish-password' => 'Κωδικός:',
@@ -5768,17 +5771,27 @@ $messages['el'] = array(
 	'centralauth-admin-intro' => 'Αυτή η επιφάνεια μπορεί να χρησιμοποιηθεί για διαχείριση των παγκόσμιων λογαριασμών.',
 	'centralauth-admin-manage' => 'Διαχείριση δεδομένων χρήστη',
 	'centralauth-admin-username' => 'Όνομα χρήστη:',
+	'centralauth-admin-lookup-ro' => 'Προβολή πληροφοριών χρήστη',
+	'centralauth-admin-lookup-rw' => 'Διαχείριση λογαριασμού χρήστη',
 	'centralauth-admin-permission' => 'Μόνο stewards μπορούν να συγχωνεύσουν λογαριασμούς άλλων χρηστών στη θέση τους.',
 	'centralauth-admin-no-unified' => 'Δεν υπάρχει ενοποιημένος λογαριασμός για αυτό το όνομα χρήστη.',
+	'centralauth-admin-info-header' => 'Πληροφορίες καθολικού χρήστη',
 	'centralauth-admin-info-id' => 'Ταυτότητα χρήστη:',
 	'centralauth-admin-info-registered' => 'Εγγράφηκε:',
+	'centralauth-admin-info-home' => 'Κεντρικό wiki:',
+	'centralauth-admin-info-editcount' => 'Συνολικός αριθμός επεξεργασιών:',
 	'centralauth-admin-info-locked' => 'Προστατευμένοι:',
 	'centralauth-admin-info-hidden' => 'Κρυμμένο επίπεδο:',
+	'centralauth-admin-nohome' => 'αδύνατος ο προσδιορισμός',
 	'centralauth-admin-yes' => 'ναι',
 	'centralauth-admin-no' => 'όχι',
+	'centralauth-admin-hidden-list' => 'από δημόσιους καταλόγους',
+	'centralauth-admin-list-legend-ro' => 'Κατάλογος τοπικών λογαριασμών',
+	'centralauth-admin-list-legend-rw' => 'Κατάργηση συγχώνευσης τοπικών λογαριασμών',
 	'centralauth-admin-unattached' => 'ανεπισύναπτος',
 	'centralauth-admin-blocked' => 'Φραγμένος, λήγει $3 στις $4. Αιτία: $2',
 	'centralauth-admin-blocked-indef' => 'Αόριστα φραγμένος. Αιτία: $1',
+	'centralauth-admin-blocklog' => 'Αρχείο καταγραφής φραγών',
 	'centralauth-admin-list-localwiki' => 'Τοπικό εγχείρημα',
 	'centralauth-admin-list-attached-on' => 'Επισυνάπτεται σε',
 	'centralauth-admin-list-method' => 'Μέθοδος',
@@ -5820,6 +5833,7 @@ $messages['el'] = array(
 ** κατάχρηση ονόματος χρήστη
 ** ακατάλληλες προσωπικές πληροφορίες',
 	'centralauth-admin-logsnippet' => 'Προηγούμενες αλλαγές παγκόσμιου λογαριασμού',
+	'centralauth-admin-suppressreason' => 'Καθολικά αποκλεισμένος λόγω $1 γιατι ακολούσε το λόγο : $2',
 	'globalusers' => 'Λίστα καθολικών χρηστών',
 	'centralauth-listusers-locked' => 'κλειδωμένο',
 	'centralauth-listusers-attached' => '[[User:$1|υπάρχει τοπικά]]',
@@ -5839,6 +5853,7 @@ $messages['el'] = array(
 	'centralauth-prefs-count-unattached' => 'Παραμένουν ανεπιβεβαίωτοι λογαριασμοί με το όνομά σας σε $1 {{PLURAL:$1|εγχείρημα|εγχειρήματα}}.',
 	'centralauth-prefs-detail-unattached' => 'Δεν έχει επιβεβαιωθεί ότι αυτό το εγχείρημα ανήκει στον καθολικό λογαριασμό.',
 	'centralauth-prefs-manage' => 'Διαχείριση του καθολικού σας λογαριασμού',
+	'centralauth-prefs-view' => 'Προβολή πληροφοριών καθολικού χρήστη',
 	'centralauth-renameuser-merged' => 'Ο χρήστης $1 έχει μετακινηθεί στο ενιαίο σύστημα σύνδεσης.
 Μετονομάζοντας το θα προκαλέσει την αποκόλλησει του τοπικού λογαριασμού από τον παγκόσμιο.',
 	'centralauth-renameuser-reserved' => 'Ο χρήστης $2 είναι κλεισμένος για παγκόσμιο λογαριασμό.',
@@ -5873,6 +5888,7 @@ $messages['el'] = array(
 	'centralauth-rightslog-entry-setrename' => 'αλλαγή του ονόματος του βικι-συνόλου "$2" σε "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'άλλαξε τον τύπο του "$1" από $2 σε $3',
 	'centralauth-rightslog-entry-setchange' => 'άλλαξε τα βίκι στο "$1": πρόσθεσε: $2, αφαίρεσε: $3',
+	'centralauth-rightslog-entry-deleteset' => 'Διαγράφεται wiki σύνολο "$1"',
 	'centralauth-rightslog-set-optin' => 'βασισμένο σε σαφείς προσκολλήσεις',
 	'centralauth-rightslog-set-optout' => 'βασισμένο σε σαφείς αποχωρἠσεις',
 	'autologin' => 'Αυτόματη σύνδεση',
@@ -5913,13 +5929,22 @@ $messages['el'] = array(
 	'centralauth-globalgrouppermissions-knownwiki' => 'Βίκι στο οποίο έχουν λογαριασμό:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ο παγκόσμιος χρήστης '''$1''' δεν είναι ενεργός στο βίκι που δώσατε ('' $2 '').
 Μπορεί να προσπαθέίτε να αναθέσετε δικαιώματα σε λάθος χρήστη!",
-	'centralauth-editset' => 'Επεξεργασία βικι-συνόλων',
+	'centralauth-editset' => 'Σύνολα wiki',
+	'centralauth-editset-legend-rw' => 'Επεξεργασία ή δημιουργία συνόλου  wiki',
+	'centralauth-editset-legend-ro' => 'Κατάλογος συνόλων wiki',
+	'centralauth-editset-intro-rw' => 'Τα παρακάτω wiki σύνολα έχουν ήδη δημιουργηθεί. 
+ Μπορείτε να δείτε και να τροποποιήσετε οποιοδήποτε  από αυτά, ή να δημιουργήσετε ένα νέο σύνολο.',
+	'centralauth-editset-intro-ro' => 'Παρακάτω είναι η λίστα των υπαρχόντων wiki συνόλων.',
+	'centralauth-editset-item-rw' => '[[Ειδικό: WikiSets /$2 |$1]] ([[Ειδικό:WikiSets /διαγραφή /$2|διαγραφή]])',
 	'centralauth-editset-new' => 'Δημιουργία νέου συνόλου',
 	'centralauth-editset-notfound' => 'Το βικι-σύνολο "$1" δεν βρέθηκε.',
 	'centralauth-editset-optin' => 'βασισμένο σε σαφείς προσκολλήσεις (περιλαμβάνει όλα τα καθορισμένα βίκι)',
 	'centralauth-editset-optout' => 'βασισμένο σε σαφείς αποχωρἠσεις (περιλαμβάνει όλα τα βίκι εκτός του καθορισμένου)',
 	'centralauth-editset-legend-edit' => 'Επεξεργασία του βικι-συνόλου "$1"',
+	'centralauth-editset-legend-view' => 'Wiki σύνολο "$1"',
 	'centralauth-editset-legend-new' => 'Δημιουργία νέου βικι-συνόλου',
+	'centralauth-editset-legend-delete' => 'Διαγραφή wiki συνόλου "$1"',
+	'centralauth-editset-subtitle' => '<[[Ειδικό:WikiSets|Κατάλογος των συνόλων]]',
 	'centralauth-editset-name' => 'Όνομα:',
 	'centralauth-editset-type' => 'Τύπος:',
 	'centralauth-editset-wikis' => 'Τα βίκι:',
@@ -5934,8 +5959,12 @@ $messages['el'] = array(
 	'centralauth-editset-usage' => 'Χρησιμοποιούμενο σε ομάδες:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|Το επόμενο βίκι δεν υπάρχει|Τα επόμενα βίκι δεν υπάρχουν}}: $1.',
 	'centralauth-editset-success' => 'Επιτυχής αλλαγή του βικι-συνόλου.',
+	'centralauth-editset-success-delete' => 'Επιτυχής διαγραφή  wiki συνόλου.',
 	'centralauth-editset-return' => 'Επιστροφή στην κύρια όψη',
 	'right-globalgroupmembership' => 'Επεξεργασία ιδιότητας μέλους στις καθολικές ομάδες',
+	'right-centralauth-unmerge' => 'Κατάργηση συγχώνευσης καθολικού λογαριασμού',
+	'right-centralauth-lock' => 'Κλείδωμα ή απόκρυψη καθολικού λογαριασμού',
+	'right-centralauth-oversight' => 'Φραγή καθολικού λογαριασμού',
 	'right-centralauth-merge' => 'Συγχωνεύστε τον λογαριασμό τους',
 	'right-globalgrouppermissions' => 'Διαχείριση καθολικών λογαριασμών',
 );
