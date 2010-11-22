@@ -4344,6 +4344,7 @@ $messages['cu'] = array(
  */
 $messages['cy'] = array(
 	'centralauth-groupname' => 'Sefydliad Wikimedia',
+	'centralauth-login-global' => 'Mewngofnodi wici-gyfan',
 	'centralauth-merge-dryrun-or' => "'''neu'''",
 	'centralauth-merge-step3-detail' => "Rydych yn barod i greu'ch cyfrif unedig, gyda'r wicïau canlynol ynghlwm wrtho:",
 	'centralauth-merge-step3-submit' => "Uno'r cyfrifon",
@@ -14429,6 +14430,7 @@ Bet kurį iš jų galite peržiūrėti ar keisti, ar sukurti naują.',
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
+	'centralauth-merge-dryrun-or' => "'''ci'''",
 	'centralauth-admin-reason' => 'Īmesle:',
 	'centralauth-editgroup-reason' => 'Īmesle:',
 	'centralauth-editset-reason' => 'Īmesle:',
@@ -17380,7 +17382,10 @@ $messages['pdt'] = array(
  * @author Xqt
  */
 $messages['pfl'] = array(
+	'centralauth-log-status-none' => '(kään)',
+	'centralauth-editgroup-noset' => '(kään)',
 	'centralauth-editset-submit-delete' => 'Lesche',
+	'centralauth-editset-nouse' => '(kään)',
 );
 
 /** Polish (Polski)
