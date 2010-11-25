@@ -4731,7 +4731,7 @@ Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge 
 	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen:',
 	'centralauth-merge-step3-submit' => 'Benutzerkonten zusammenführen',
 	'centralauth-merge-no-accounts' => 'Es wurden in der zentralen Datenbank keine Benutzerkonten gefunden, die mit deinem Namen übereinstimmen. Die Datenbank muss fehlerhaft sein.',
-	'centralauth-merge-home-password' => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von dir eingegeben. Bitte gebe das Passwort für dein Heimatwiki ein.',
+	'centralauth-merge-home-password' => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von dir eingegeben. Bitte gib das Passwort für dein Heimatwiki ein.',
 	'centralauth-complete' => 'Die Zusammenführung der Benutzerkonten ist vollständig.',
 	'centralauth-incomplete' => 'Zusammenführung unvollständig',
 	'centralauth-complete-text' => 'Du kannst dich nun auf jedem Wiki {{MediaWiki:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
