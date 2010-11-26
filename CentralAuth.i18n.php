@@ -5936,7 +5936,7 @@ $messages['el'] = array(
 	'centralauth-editset-intro-rw' => 'Τα παρακάτω wiki σύνολα έχουν ήδη δημιουργηθεί. 
  Μπορείτε να δείτε και να τροποποιήσετε οποιοδήποτε  από αυτά, ή να δημιουργήσετε ένα νέο σύνολο.',
 	'centralauth-editset-intro-ro' => 'Παρακάτω είναι η λίστα των υπαρχόντων wiki συνόλων.',
-	'centralauth-editset-item-rw' => '[[Ειδικό: WikiSets /$2 |$1]] ([[Ειδικό:WikiSets /διαγραφή /$2|διαγραφή]])',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]], ([[Special:WikiSets/delete/$2|delete]])',
 	'centralauth-editset-new' => 'Δημιουργία νέου συνόλου',
 	'centralauth-editset-notfound' => 'Το βικι-σύνολο "$1" δεν βρέθηκε.',
 	'centralauth-editset-optin' => 'βασισμένο σε σαφείς προσκολλήσεις (περιλαμβάνει όλα τα καθορισμένα βίκι)',
@@ -5945,7 +5945,7 @@ $messages['el'] = array(
 	'centralauth-editset-legend-view' => 'Wiki σύνολο "$1"',
 	'centralauth-editset-legend-new' => 'Δημιουργία νέου βικι-συνόλου',
 	'centralauth-editset-legend-delete' => 'Διαγραφή wiki συνόλου "$1"',
-	'centralauth-editset-subtitle' => '<[[Ειδικό:WikiSets|Κατάλογος των συνόλων]]',
+	'centralauth-editset-subtitle' => '< [[Ειδικό:WikiSets|Κατάλογος των συνόλων]]',
 	'centralauth-editset-name' => 'Όνομα:',
 	'centralauth-editset-type' => 'Τύπος:',
 	'centralauth-editset-wikis' => 'Τα βίκι:',
