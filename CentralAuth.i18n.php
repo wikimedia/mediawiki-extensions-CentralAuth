@@ -774,7 +774,7 @@ $messages['an'] = array(
 
 Si triga migrar as suyas cuentas, podrá usar o mesmo nombre d'usuario y parola de paso ta dentrar en totz os procheutos wiki de {{MediaWiki:Centralauth-groupname}} en todas as luengas disponibles.
 
-Si bel usuario más ha pillato o suyo nombre d'usuario en atro sitio, podrá contautar con el u con un almenistrador más entadebant.",
+Si bel usuario más ha pillato o suyo nombre d'usuario en atro sitio, podrá contautar con el u con un almenistrador más enta debant.",
 	'centralauth-merge-step1-title' => 'Prencipiar a unificación de cuentas',
 	'centralauth-merge-step1-detail' => "Por favor, escriba aquí a suya parola de paso.
 A suya parola de paso y adreza de correu-e rechistrada se comprebarán con as d'atras wikis ta confirmar si concuerdan.
@@ -2911,7 +2911,8 @@ $messages['bg'] = array(
  */
 $messages['bn'] = array(
 	'mergeaccount' => 'লগ-ইন একত্রিকরণ অবস্থা',
-	'centralauth-desc' => 'উইকিমিডিয়া ফাউন্ডেশন উইকিসমূহের মধ্যে [[Special:MergeAccount|অ্যাকাউন্ট একীভূত]] করো',
+	'centralauth-groupname' => 'উইকিমিডিয়া ফাউণ্ডেশন',
+	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} উইকিসমূহের মধ্যে [[Special:MergeAccount|অ্যাকাউন্ট একীভূত]] করো',
 	'centralauth-mergeaccount-desc' => 'অভিন্ন ব্যবহারকারী লগইন এর জন্য [[Special:MergeAccount|একাধিক অ্যাকাউন্ট একীভূতকরণ]]',
 	'centralauth-merge-denied' => 'দুঃখিত, এ পাতায় আপনার প্রবেশাধিকার নাই।',
 	'centralauth-merge-notlogged' => 'দয়াকরে <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} লগ-ইন করুন]</span> যাতে পরীক্ষা করতে পারেন আপনার অ্যাকাউন্ট সম্পূর্ণরূপে একীভূত হয়েছে কিনা।',
@@ -2995,7 +2996,7 @@ $messages['bn'] = array(
 	'centralauth-admin-info-home' => 'প্রধান উইকি:',
 	'centralauth-admin-info-editcount' => 'মোট সম্পাদনাসংখ্যা:',
 	'centralauth-admin-info-locked' => 'বন্ধ:',
-	'centralauth-admin-info-hidden' => 'লুকানো:',
+	'centralauth-admin-info-hidden' => 'লুকানোর মাত্রা:',
 	'centralauth-admin-yes' => 'হ্যাঁ',
 	'centralauth-admin-no' => 'না',
 	'centralauth-admin-hidden-list' => 'সর্বসাধারণের তালিকা থেকে',
@@ -3019,6 +3020,7 @@ $messages['bn'] = array(
 	'centralauth-admin-delete-nonexistent' => 'ত্রুটি: "<nowiki>$1</nowiki>" নামে কোন গ্লোবাল অ্যাকাউন্ট নাই।',
 	'centralauth-token-mismatch' => 'দুঃখিত, সেশন তথ্য হারিয়ে ফেলায় আমরা আপনার পেশ করা ফরম প্রক্রিয়াজাত করতে পারছি না।',
 	'centralauth-admin-reason' => 'কারণ:',
+	'centralauth-admin-reason-other' => 'অন্যান্য/বাড়তি কারণ:',
 	'centralauth-admin-status-locked' => 'বন্ধ:',
 	'centralauth-admin-status-hidden' => 'লুকায়িত:',
 	'centralauth-admin-status-submit' => 'অবস্থা সেট কর',
@@ -3737,6 +3739,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
 
 /** Catalan (Català)
  * @author Aleator
+ * @author El libre
  * @author Jordi Roqué
  * @author Paucabot
  * @author SMP
@@ -3761,6 +3764,7 @@ Si algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest pro
 	'centralauth-merge-step2-title' => 'Confirma més comptes',
 	'centralauth-merge-step2-detail' => 'Alguns dels vostres comptes no coincideixen amb les dades del compte de la vostra wiki principal. Si aquests comptes us pertanyen podeu confirmar-ho introduint les seves contrasenyes.',
 	'centralauth-merge-step2-submit' => 'Confirmació dels comptes',
+	'centralauth-login-global' => "Inicia'm sessió globalment",
 	'centralauth-merge-dryrun-complete' => "Tots els comptes existents el poden unificar automàticament!
 
 Encara no s'ha fet cap canvi als vostres comptes.",
@@ -3805,6 +3809,8 @@ segurament és perquè tenen una contrasenya diferent de la del vostre compte pr
 	'centralauth-merge-method-admin' => "compte d'administrador fusionat",
 	'centralauth-merge-method-new' => 'nou compte',
 	'centralauth-merge-method-login' => "Creat en l'inici de sessió",
+	'centralauth-merge-method-primary-desc' => "Aquest és el wiki en què es va fusionar el compte inicialment. 
+ Tingues en compte que pot diferir de l'inici real de la wiki d'aquest usuari/a.",
 	'centralauth-finish-title' => 'Finalitza la fusió',
 	'centralauth-finish-text' => "Si aquests comptes us pertanyen, podeu finalitzar el procés d'unificació escrivint a continuació les contrasenyes corresponents:",
 	'centralauth-finish-password' => 'Contrasenya:',
@@ -3825,17 +3831,28 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-intro' => "Aquesta interfície serveix per a l'administració dels comptes globals.",
 	'centralauth-admin-manage' => "Gestiona les dades d'usuari",
 	'centralauth-admin-username' => "Nom d'usuari:",
+	'centralauth-admin-lookup-ro' => "Veure informació de l'usuari/a",
+	'centralauth-admin-lookup-rw' => "Administra el compte d'usuari/a",
 	'centralauth-admin-permission' => "Només els stewards poden fusionar comptes d'altra gent.",
 	'centralauth-admin-no-unified' => "Cap compte unificat per aquest nom d'usuari.",
+	'centralauth-admin-info-header' => "Informació global de l'usuari/a",
 	'centralauth-admin-info-id' => "Identificador d'usuari:",
 	'centralauth-admin-info-registered' => 'Registrat:',
+	'centralauth-admin-info-home' => 'Inici wiki:',
+	'centralauth-admin-info-editcount' => "Total d'edicions:",
 	'centralauth-admin-info-locked' => 'Bloquejat:',
 	'centralauth-admin-info-hidden' => 'Nivell ocult:',
+	'centralauth-admin-nohome' => "no s'ha pogut determinar",
 	'centralauth-admin-yes' => 'sí',
 	'centralauth-admin-no' => 'no',
+	'centralauth-admin-hidden-list' => 'de les llistes públiques',
+	'centralauth-admin-hidden-oversight' => 'suprimit',
+	'centralauth-admin-list-legend-ro' => 'Llista de comptes locals',
+	'centralauth-admin-list-legend-rw' => 'Separa els comptes locals',
 	'centralauth-admin-unattached' => "No s'ha adjuntat",
 	'centralauth-admin-blocked' => 'Blocat, expira el $3 a $4. Motius: $2',
 	'centralauth-admin-blocked-indef' => 'Blocat indefinidament. Motius: $1',
+	'centralauth-admin-blocklog' => 'registre de bloquejos',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Associats el',
 	'centralauth-admin-list-method' => 'Mètode',
@@ -3855,13 +3872,20 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-delete-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
 	'centralauth-token-mismatch' => "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
 	'centralauth-admin-reason' => 'Motiu:',
+	'centralauth-admin-reason-other' => 'Altres/raó addicional:',
 	'centralauth-admin-status' => "Fixa l'estat del compte global",
 	'centralauth-admin-status-intro' => "Podeu usar aquest formulari per canviar l'estat d'aquest compte global",
 	'centralauth-admin-status-locked' => 'Bloquejat:',
+	'centralauth-admin-status-locked-no' => 'El compte no està bloquejat',
+	'centralauth-admin-status-locked-yes' => 'El compte es troba bloquejat per editar',
 	'centralauth-admin-status-hidden' => 'Ocult:',
+	'centralauth-admin-status-hidden-no' => 'El compte no és amagat',
+	'centralauth-admin-status-hidden-list' => 'El compte és amagat de les llistes públiques',
+	'centralauth-admin-status-hidden-oversight' => 'El compte és amagat completament',
 	'centralauth-admin-status-submit' => 'Fixa estat',
 	'centralauth-admin-status-nonexistent' => 'Error: el compte global "<nowiki>$1</nowiki>" no existeix.',
 	'centralauth-admin-setstatus-success' => "Heu canviat amb èxit l'estat d'aquest compte global.",
+	'centralauth-admin-logsnippet' => 'Canvis anteriors al compte global',
 	'globalusers' => "Llista global d'usuaris",
 	'centralauth-listusers-locked' => 'Blocat',
 	'centralauth-listusers-attached' => '[[User:$1|existeix localment]]',
@@ -3954,6 +3978,7 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Motiu:',
 	'centralauth-editset-submit' => 'Tramet',
+	'centralauth-editset-submit-delete' => 'Esborra',
 	'centralauth-editset-badname' => 'Conjunt no vàlid o buit.',
 	'centralauth-editset-badtype' => 'Tipus de conjunt no vàlid.',
 	'centralauth-editset-setexists' => 'Ja existeix un conjunt amb aquest nom',
@@ -3962,8 +3987,12 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editset-usage' => 'Usat en els grups:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|El següent wiki no existeix|Els següents wikis no existeixen}}: $1.',
 	'centralauth-editset-success' => "S'ha modificat correctament el conjunt de wikis.",
+	'centralauth-editset-success-delete' => "S'ha eliminat correctament el conjunt wiki.",
 	'centralauth-editset-return' => 'Tornar a la vista principal',
 	'right-globalgroupmembership' => 'Editar els membres dels grups globals',
+	'right-centralauth-unmerge' => 'Separa Compte global',
+	'right-centralauth-lock' => 'Bloqueja o amaga compte global',
+	'right-centralauth-oversight' => 'Suprimeix compte global',
 	'right-centralauth-merge' => 'Fusionar el seu compte',
 	'right-globalgrouppermissions' => 'Gestionar els grups globals',
 );
