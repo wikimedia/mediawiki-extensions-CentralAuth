@@ -2686,6 +2686,7 @@ $messages['bg'] = array(
 	'centralauth-merge-step2-detail' => 'За някои от сметките не можа да се направи автоматично съответствие със сметката ви в посоченото за „домашно“ уики.
 Ако тези сметки ви принадлежат, можете да потвърдите това, като предоставите за тях парола.',
 	'centralauth-merge-step2-submit' => 'Потвърждаване на информацията за влизане',
+	'centralauth-login-global' => 'Глобално влизане',
 	'centralauth-merge-dryrun-complete' => 'Всички съществуващи сметки могат да бъдат автоматично обединени!
 
 Все още не са извършени промени във вашите сметки.',
@@ -2791,6 +2792,7 @@ $messages['bg'] = array(
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-status-intro' => 'Този формуляр се използва за промяна на стратута на тази глобална сметка',
 	'centralauth-admin-status-locked' => 'Заключено',
+	'centralauth-admin-status-locked-no' => 'Сметката не е заключена',
 	'centralauth-admin-status-hidden' => 'Скрито',
 	'centralauth-admin-status-submit' => 'Задаване на състояние',
 	'centralauth-admin-status-nonexistent' => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
@@ -4373,6 +4375,7 @@ $messages['cu'] = array(
  */
 $messages['cy'] = array(
 	'centralauth-groupname' => 'Sefydliad Wikimedia',
+	'centralauth-merge-step1-submit' => "Cadarnhau'r manylion mewngofnodi",
 	'centralauth-login-global' => 'Mewngofnodi wici-gyfan',
 	'centralauth-merge-dryrun-or' => "'''neu'''",
 	'centralauth-merge-step3-detail' => "Rydych yn barod i greu'ch cyfrif unedig, gyda'r wicïau canlynol ynghlwm wrtho:",
@@ -14211,6 +14214,7 @@ Jokie pakeitimai neįvyks, kol jūs nepatvirtinsite, jog viskas yra gerai.',
 	'centralauth-merge-step2-detail' => 'Kai kurios paskyros negali būti automatiškai sujungtos, nes neatitinka jūsų pagrindinės paskyros.
 Jei šios paskyros priklauso jums, jūs galite patvirtinti, kad jos tikrai jūsų, įvesdami jų slaptažodžius.',
 	'centralauth-merge-step2-submit' => 'Patvirtinkite prisijungimo informaciją',
+	'centralauth-login-global' => 'Prijungti mane visur',
 	'centralauth-merge-dryrun-complete' => 'Visos egzistuojančios paskyros gali būti automatiškai sujungtos!
 
 Kol kas jokie pakeitimai su jūsų paskyromis neįvyko.',
