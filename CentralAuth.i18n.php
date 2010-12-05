@@ -11424,6 +11424,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
  * @author Marine-Blue
  * @author Muttley
  * @author Naohiro19
+ * @author Whym
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -11549,7 +11550,7 @@ $messages['ja'] = array(
 	'centralauth-admin-already-unmerged' => 'すでに統合解除されている$1をスキップ',
 	'centralauth-admin-unmerge-success' => '$1{{PLURAL:$1|アカウント}}の統合解除に成功しました。',
 	'centralauth-admin-delete-title' => 'アカウント削除',
-	'centralauth-admin-delete-description' => 'グローバルアカウントの削除を実施すると、グローバル個人設定が削除され、全てのローカルのアカウントの統合が解除され、任意の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
+	'centralauth-admin-delete-description' => 'グローバルアカウントを削除すると、あらゆるグローバル個人設定が削除され、全てのローカルのアカウントの統合が解除され、他の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
 	'centralauth-admin-delete-button' => 'このアカウントを削除',
 	'centralauth-admin-delete-success' => 'グローバルアカウント "<nowiki>$1</nowiki>" を削除しました',
 	'centralauth-admin-nonexistent' => 'グローバルアカウント "<nowiki>$1</nowiki>" は存在しません',
@@ -11636,7 +11637,7 @@ $messages['ja'] = array(
 	'centralauth-autologin-desc' => 'この特別ページはメディアウィキによって内部的に使用されています。あなたが[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。あなたがこのページをリクエストした際に認証データを送信していないため、何も影響はありません。',
 	'globalgroupmembership' => 'グローバルグループへの所属',
 	'globalgrouppermissions' => 'グローバルグループの管理',
-	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。あなたが必要な権限をもっている場合、任意のグループに割り当てられた権限を閲覧あるいは編集できます。全ての権限を除去されたグループは削除されます。',
+	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。あなたが必要な権限をもっている場合、各グループに割り当てられた権限を閲覧あるいは編集できます。全ての権限を除去されたグループは削除されます。',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|閲覧/編集]])',
 	'centralauth-globalgroupperms-nogroups' => 'グローバルグループが定義されていません',
 	'centralauth-existinggroup-legend' => '現在あるグループ',
