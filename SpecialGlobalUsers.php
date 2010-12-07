@@ -31,7 +31,7 @@ class SpecialGlobalUsers extends SpecialPage {
 }
 
 class GlobalUsersPager extends UsersPager {
-	private $requestedGroup = false, $requestedUser;
+	protected $requestedGroup = false, $requestedUser;
 
 	function __construct() {
 		parent::__construct();
