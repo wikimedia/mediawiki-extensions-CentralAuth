@@ -210,7 +210,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'globalusers'                    => 'Global user list',
 	'centralauth-listusers-locked'   => 'locked',
 	'centralauth-listusers-attached' => '[[User:$1|exists locally]]',
-	'centralauth-listusers-item'     => '$1 ($2) - [[Special:CentralAuth/$1|CentralAuth]]',
+	'centralauth-listusers-item'     => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
 
 	// Pretty timespan
