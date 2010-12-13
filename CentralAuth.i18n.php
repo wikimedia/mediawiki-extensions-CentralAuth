@@ -9266,6 +9266,7 @@ $messages['he'] = array(
  * @author Kaustubh
  * @author Kiranmayee
  * @author Shyam123.ckp
+ * @author Suman
  * @author आलोक
  */
 $messages['hi'] = array(
@@ -9415,6 +9416,9 @@ $messages['hi'] = array(
 	'centralauth-log-entry-unlock' => '"$1" का ताला खोल दिया गया हैं',
 	'centralauth-log-entry-hide' => '"$1" वैश्विक अकाउंट छुपायें',
 	'centralauth-log-entry-unhide' => '"$1" वैश्विक अकाउंट दर्शायें',
+	'centralauth-log-status-locked' => 'ब्लॉक किया हुआ हैं',
+	'centralauth-log-status-hidden' => 'छिपा हुआ',
+	'centralauth-log-status-oversighted' => 'ओवरसाईट',
 	'centralauth-rightslog-name' => 'वैश्विक अधिकार बदलाव सूची',
 	'centralauth-rightslog-entry-usergroups' => '$1 का वैश्विक गट सदस्यत्व $2 से $3 को बदला',
 	'centralauth-rightslog-entry-groupperms' => '$1 के गट अधिकार $2 से $3 को बदलें',
