@@ -4387,13 +4387,21 @@ $messages['cu'] = array(
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'mergeaccount' => 'Statws mewngofnodi unedig',
 	'centralauth-groupname' => 'Sefydliad Wikimedia',
 	'centralauth-merge-step1-submit' => "Cadarnhau'r manylion mewngofnodi",
+	'centralauth-merge-step2-title' => 'Cadarnhau rhagor o gyfrifon',
 	'centralauth-login-global' => 'Mewngofnodi wici-gyfan',
 	'centralauth-merge-dryrun-or' => "'''neu'''",
 	'centralauth-merge-step3-detail' => "Rydych yn barod i greu'ch cyfrif unedig, gyda'r wicïau canlynol ynghlwm wrtho:",
 	'centralauth-merge-step3-submit' => "Uno'r cyfrifon",
 	'centralauth-list-home-title' => 'Wici cartref',
+	'centralauth-merge-method-empty' => 'dim cyfraniadau',
+	'centralauth-merge-method-mail' => 'cadarnhawyd ag e-bost',
+	'centralauth-merge-method-password' => 'cadarnhawyd â chyfrinair',
+	'centralauth-merge-method-new' => 'cyfrif newydd',
+	'centralauth-finish-password' => 'Cyfrinair:',
+	'centralauth-finish-login' => 'Mewngofnodi',
 	'centralauth-admin-manage' => "Trin data'r defnyddiwr",
 	'centralauth-admin-username' => "Enw'r defnyddiwr:",
 	'centralauth-admin-lookup-ro' => 'Edrych ar y wybodaeth am y defnyddiwr',
@@ -20261,6 +20269,7 @@ $messages['shi'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Thameera123
  * @author නන්දිමිතුරු
  * @author බිඟුවා
  */
@@ -20282,6 +20291,8 @@ $messages['si'] = array(
 කරුණු වලට එකඟ විය හැකි බවට ඔබ විසින් තහවුරු කරන තෙක් කිසිදු වෙනසක් සිදු නොකරනු ලැබේ.',
 	'centralauth-merge-step1-submit' => 'ප්‍රවිෂ්ට වීමේ තොරතුරු තහවුරු කරන්න',
 	'centralauth-merge-step2-title' => 'තවත් ගිණුම් තහවුරු කරන්න',
+	'centralauth-merge-step2-detail' => 'සමහරක් ගිණුම් නියම කරන ලද නිවාස විකියට ස්වයංක්‍රීයව ගැළපිය නොහැකි විය.
+මේ ගිණුම් අයිති ඔබට නම්, ඒ ගිණුම් සඳහා මුරපද ලබාදීමෙන් ඒවා අයිති ඔබට බව තහවුරු කළ හැකිය.',
 	'centralauth-merge-step2-submit' => 'ප්‍රවිෂ්ට වීමේ තොරතුරු තහවුරු කරන්න',
 	'centralauth-merge-dryrun-complete' => 'පවතින සියළු ගිණුම් ස්වයංක්‍රීයව සංයුක්ත කල හැක!
 
@@ -20345,12 +20356,24 @@ $messages['si'] = array(
 	'centralauth-admin-info-editcount' => 'සම්පූර්ණ සංස්කරණ ගණන:',
 	'centralauth-admin-info-locked' => 'අහුරා:',
 	'centralauth-admin-info-hidden' => 'සඟවා:',
+	'centralauth-admin-nohome' => 'නිර්ණය කිරීමට නොහැකි විය',
 	'centralauth-admin-yes' => 'ඔව්',
 	'centralauth-admin-no' => 'නැත',
+	'centralauth-admin-hidden-list' => 'පොදු ලයිස්තුවලින්',
+	'centralauth-admin-list-legend-ro' => 'පෙදෙසි ගිණුම් ලයිස්තුව',
+	'centralauth-admin-list-legend-rw' => 'පෙදෙසි ගිණුම් වෙන් කරන්න',
 	'centralauth-admin-unattached' => 'නොබැඳි ගිණුම්',
+	'centralauth-admin-blocked' => 'වාරණය කරන ලදී. $3, $4 දී කල් ඉකුත්වේ.
+හේතුව: $2',
+	'centralauth-admin-blocked-indef' => 'අනිශ්චිත කාලයකට වාරණය කරන ලදී.
+හේතුව: $1',
+	'centralauth-admin-blocklog' => 'වාරණ ලොගය',
 	'centralauth-admin-list-localwiki' => 'ස්ථානික විකිය',
 	'centralauth-admin-list-attached-on' => 'බැඳී ඇත්තේ',
+	'centralauth-admin-list-method' => 'ක්‍රමය',
+	'centralauth-admin-list-editcount' => 'ගණන සංස්කරණය කරන්න',
 	'centralauth-admin-list-blocked' => 'ඇහිරීම',
+	'centralauth-admin-unmerge' => 'තේරීම් වෙන්කරන්න',
 	'centralauth-admin-merge' => 'ඒකාබද්ධ කිරීම තෝරාගැණිනි',
 	'centralauth-admin-delete-title' => 'ගිණුම මකන්න',
 	'centralauth-admin-delete-button' => 'මෙම ගිණුම මකන්න',
