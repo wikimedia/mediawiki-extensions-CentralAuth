@@ -4400,6 +4400,7 @@ $messages['cy'] = array(
 	'centralauth-merge-method-mail' => 'cadarnhawyd ag e-bost',
 	'centralauth-merge-method-password' => 'cadarnhawyd â chyfrinair',
 	'centralauth-merge-method-new' => 'cyfrif newydd',
+	'centralauth-merge-method-login' => 'gosodwyd wrth fewngofnodi',
 	'centralauth-finish-password' => 'Cyfrinair:',
 	'centralauth-finish-login' => 'Mewngofnodi',
 	'centralauth-admin-manage' => "Trin data'r defnyddiwr",
