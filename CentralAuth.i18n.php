@@ -1554,6 +1554,15 @@ $messages['arz'] = array(
 	'right-globalgrouppermissions' => 'التحكم فى المجموعات العامة',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Chaipau
+ */
+$messages['as'] = array(
+	'centralauth-finish-password' => 'গুপ্তশব্দ:',
+	'centralauth-finish-login' => 'প্রৱেশ',
+	'centralauth-finish-send-confirmation' => 'ই-মেইল গুপ্তশব্দ',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
@@ -2793,6 +2802,7 @@ $messages['bg'] = array(
 	'centralauth-admin-status-intro' => 'Този формуляр се използва за промяна на стратута на тази глобална сметка',
 	'centralauth-admin-status-locked' => 'Заключено',
 	'centralauth-admin-status-locked-no' => 'Сметката не е заключена',
+	'centralauth-admin-status-locked-yes' => 'Сметката е заключена за редактиране',
 	'centralauth-admin-status-hidden' => 'Скрито',
 	'centralauth-admin-status-submit' => 'Задаване на състояние',
 	'centralauth-admin-status-nonexistent' => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
@@ -4419,7 +4429,16 @@ $messages['cy'] = array(
 	'centralauth-admin-hidden-list' => "o'r golwg ar restrau cyhoeddus",
 	'centralauth-admin-hidden-oversight' => 'cuddiwyd gan Oruchwyliwr',
 	'centralauth-admin-blocklog' => 'lòg blocio',
+	'centralauth-admin-list-localwiki' => 'Wici lleol',
+	'centralauth-admin-list-method' => 'Dull',
 	'centralauth-admin-list-editcount' => 'Nifer y golygiadau',
+	'centralauth-admin-list-blocked' => 'Wedi ei flocio',
+	'centralauth-admin-delete-title' => "Dileu'r cyfrif",
+	'centralauth-admin-delete-button' => 'Dilëer y cyfrif hwn',
+	'centralauth-admin-reason' => 'Rheswm:',
+	'centralauth-admin-reason-other' => 'Rheswm arall:',
+	'centralauth-admin-status-locked' => 'Dan glo:',
+	'centralauth-admin-status-hidden' => 'Ynghudd:',
 	'centralauth-prefs-status' => 'Statws y cyfrif wici-gyfan:',
 	'centralauth-prefs-not-managed' => 'Ddim yn defnyddio cyfrif unedig',
 	'centralauth-prefs-unattached' => 'Heb ei gadarnhau',
@@ -20270,6 +20289,7 @@ $messages['shi'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Budhajeewa
  * @author Thameera123
  * @author නන්දිමිතුරු
  * @author බිඟුවා
@@ -20298,6 +20318,10 @@ $messages['si'] = array(
 	'centralauth-merge-dryrun-complete' => 'පවතින සියළු ගිණුම් ස්වයංක්‍රීයව සංයුක්ත කල හැක!
 
 තවමත්, ඔබගේ ගිණුම්වලට කිසිදු වෙනසක් සිදුකර නොමැත.',
+	'centralauth-merge-dryrun-incomplete' => 'ඔබ දැන් දායක වීමට සූදානම් නමුත් ඇතැම් ගිණුම් ස්‍වයංක්‍රීයවම තහවුරු කරගත නොහැකි වුනු නිසා ක්‍ෂණිකව ඇතුලත් නොවනු ඇත.
+ඔබට පසුව ඒවා සම්බන්ධ කිරීමට හැකි වනු ඇත.
+
+ඔබගේ ගිණුම් වලට දැනට කිසිදු වෙනසක් කොට නොමැත.',
 	'centralauth-merge-dryrun-or' => "'''හෝ'''",
 	'centralauth-merge-dryrun-home' => 'ඔබගේ පරිශීලක නාමය සඳහා මූල විකි ගිණුමෙහි හිමිකරු ඔබ බවට තහවුරු කර ගැනීමට සංක්‍රමණ පද්ධතියට නොහැකි විය.
 
@@ -20305,8 +20329,12 @@ $messages['si'] = array(
 	'centralauth-merge-step3-title' => 'සංයුක්තකෙරුණු ගිණුමක් තනන්න',
 	'centralauth-merge-step3-detail' => 'පහත විකි ඇතුලත්ව, ඔබගේ සංයුක්ත කෙරුණු ගිණුම තැනීමට ඔබ සුදානම්ය:',
 	'centralauth-merge-step3-submit' => 'ගිණුම් සංයුක්තකරණය කරන්න',
+	'centralauth-merge-home-password' => 'මෙම ගිණුම සඳහා නිවස්න විකියේ (පහත දක්වා ඇති) ඇත්තේ ඔබ ඇතුල් කළ මුරපදයට වෙනස් මුරපදයකි.
+
+කරුණාකර නිවස්න විකිය සඳහා වන මුරපදය ඇතුල් කරන්න.',
 	'centralauth-complete' => 'ප්‍රවිෂ්ට සංයුක්තකරණය අවසන්!',
 	'centralauth-incomplete' => 'ප්‍රවිෂ්ට සංයුක්තකරණය අවසන් නොමැත!',
+	'centralauth-complete-text' => 'ඔබට දැන් නව ගිණුම් තැනීමකින් තොරව{{MediaWiki:Centralauth-groupname}} හි ඕනෑම විකියකට ඇතුලු විය හැක.',
 	'centralauth-incomplete-text' => 'ඔබගේ ප්‍රවිෂ්ටය සංයුක්ත කෙරුණු කල්හි, නව ගිණුමක් නොතනා  {{MediaWiki:Centralauth-groupname}} හි ඕනෑම විකි අඩවියකට ප්‍රවිෂ්ට වීමට ඔබ හට හැකි වේ',
 	'centralauth-not-owner-text' => '$2 හි ගිණුම හිමිකරුට "$1" පරිශීලක නාමය ස්වයංක්‍රීයව පිරිනැමිණි.
 
@@ -20314,8 +20342,10 @@ $messages['si'] = array(
 	'centralauth-blocked-text' => 'ඔබගේ මුල් විකියෙහි (පහත ලැයිස්තුගතකොට ඇති) සංස්කරණය කිරීම වාරණය කොට ඇත.
 එම වාරණය අවලංගු කර ගැනුමට මෙම විකියෙහි පරිපාලකයෙකු හා සම්බන්ධ වන්න.
 එය වාරණය කොට පවතින තුරා, ඔබගේ ගිණුම් ඒකාබද්ධ කල නොහැක.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>ආදර්ශන ප්‍රකාරය පමණි</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ගිණුම් සංයුක්තකිරීම දැනට  ආදර්ශන / දොස්-හරණ ප්‍රක්‍රමයක ක්‍රියාත්මක වේ, එබැවින් සැබෑ ඒකාබද්ධ කිරීමේ ක්‍රියාවලීන් අක්‍රීය කොට ඇත.
 කණගාටුයි!',
+	'centralauth-error-locked' => 'ඔබගේ ගිණුම අගුලුලා ඇති බැවින් ඔබට සංස්කරණය කළ නොහැක.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login| '''සංයුක්ත කෙරුණු ප්‍රවිෂ්ටය''' පිළිබඳ තවත් අධ්‍යයනය කරන්න]]…''",
 	'centralauth-list-home-title' => 'ජනක විකිය',
 	'centralauth-list-home-dryrun' => 'මෙම විකියෙහි පරිස්ථාපනය කර ඇති මුරපදය හා විද්‍යුත්-තැපැල් ලිපිනය ඔබගේ සංයුක්ත කෙරුණු ගිණුම සඳහා භාවිතා කෙරේ.',
@@ -20323,6 +20353,8 @@ $messages['si'] = array(
 	'centralauth-list-attached' => 'පහත එක් එක් අඩවියන්හි "$1" යන නමැති ගිණුම, සංයුක්ත කෙරුණු ගිණුමට ස්වයංක්‍රීය ලෙස අමුණා ඇත:',
 	'centralauth-list-attached-dryrun' => 'පහත එක් එක් අඩවියන්හි "$1" යන නමැති ගිණුම, සංයුක්ත කෙරුණු ගිණුමට ස්වයංක්‍රීය ලෙස  ඇමිණෙනු ඇත:',
 	'centralauth-list-unattached-title' => 'නොබැඳි ගිණුම්',
+	'centralauth-list-unattached' => 'පහත අඩවියන්ගේ "$1" ගිණුම ඔබට අයත් බැව් ස්‍වයංක්‍රීයව තහවුරු කරගත නොහැක; ඔබගේ ප්‍රාථමික ගිණුමට වඩා වෙනස් මුරපදයන් ඒවායේ භාවිතා කොට ඇතුවා විය හැකියි.',
+	'centralauth-foreign-link' => '$2 ys $1 භාවිතාකරු',
 	'centralauth-merge-method-primary' => 'ජනක විකිය',
 	'centralauth-merge-method-empty' => 'දායකත්වයන් නොමැත',
 	'centralauth-merge-method-mail' => 'විද්‍යුත්-තැපෑල මගින් තහවුරුකරන ලදි',
@@ -20330,6 +20362,9 @@ $messages['si'] = array(
 	'centralauth-merge-method-admin' => 'පරිශීලක විසින් ඒකාබද්ධ කල ගිණුම',
 	'centralauth-merge-method-new' => 'නව ගිණුම',
 	'centralauth-merge-method-login' => 'ප්‍රවිෂ්ටය මගින් තහවුරුකරන ලදි',
+	'centralauth-merge-method-primary-desc' => 'මෙම ගිණුම මුලින්ම ඒකාබන්ධ කරන ලද්දේ මෙම විකියේදීය. මෙය මෙම භාවිතාකරුගේ නියම නිවෙස් විකියෙන් වෙනස් විය හැකි බව සලකන්න.',
+	'centralauth-merge-method-mail-desc' => 'ප්‍රධාන ගිණුමේ විද්‍යුත් තැපැල් ලිපිනය සමග මෙම ගිණුමේ විද්‍යුත් තැපැල් ලිපිනය සමාන බැවින් ඒකාබද්ධ කරන ලද බව දක්වයි.',
+	'centralauth-merge-method-password-desc' => 'නිවැරදි මුරපදයක් සැපයූ නිසා මෙම ගිණුම ඒකාබද්ධ කළ බව දක්වයි.',
 	'centralauth-finish-title' => 'ඒකාබද්ධ කිරීම අවසන් කරන්න',
 	'centralauth-finish-text' => 'මෙම ගිණුම්හි හිමිකම ඔබ සතුවේ නම්, අනෙකුත් ගිණුම් සඳහා මුරපද මෙහි ටයිප් කිරීමෙන් ප්‍රවිෂ්ට සංයුක්තකිරීමේ ක්‍රියාවලිය අවසන් කිරීමට ඔබ හට හැකිවනු ඇත:',
 	'centralauth-finish-password' => 'මුර පදය:',
@@ -20349,8 +20384,11 @@ $messages['si'] = array(
 	'centralauth' => 'සංයුක්ත කෙරුණු ප්‍රවිෂ්ට වීම් පරිපාලනය',
 	'centralauth-admin-manage' => 'පරිශීලක දත්ත කළමනාකරණය කරන්න',
 	'centralauth-admin-username' => 'පරිශීලක නාමය:',
+	'centralauth-admin-lookup-ro' => 'භාවිතාකරු තොරතුරු පෙන්වන්න',
+	'centralauth-admin-lookup-rw' => 'පරිශීලක ගිණුම හසුරුවන්න',
 	'centralauth-admin-permission' => 'ඔවුන් වෙනුවෙන් අනෙකුන්ගේ ගිණුම් ඒකාබද්ධ කල හැක්කේ භාරකරුවන්ට පමණි.',
 	'centralauth-admin-no-unified' => 'මෙම පරිශීලක නාමය සඳහා සංයුක්තනෙරුණු ගිණුමක් නොමැත.',
+	'centralauth-admin-info-header' => 'ගෝලීය පරිශීලක තොරතුරු',
 	'centralauth-admin-info-id' => 'පරිශීලක අනන්‍යාංකය:',
 	'centralauth-admin-info-registered' => 'ලේඛනගතව:',
 	'centralauth-admin-info-home' => 'ජනක විකිය',
@@ -20361,6 +20399,7 @@ $messages['si'] = array(
 	'centralauth-admin-yes' => 'ඔව්',
 	'centralauth-admin-no' => 'නැත',
 	'centralauth-admin-hidden-list' => 'පොදු ලයිස්තුවලින්',
+	'centralauth-admin-hidden-oversight' => 'ප්‍රමාද දෝෂ',
 	'centralauth-admin-list-legend-ro' => 'පෙදෙසි ගිණුම් ලයිස්තුව',
 	'centralauth-admin-list-legend-rw' => 'පෙදෙසි ගිණුම් වෙන් කරන්න',
 	'centralauth-admin-unattached' => 'නොබැඳි ගිණුම්',
@@ -20376,9 +20415,44 @@ $messages['si'] = array(
 	'centralauth-admin-list-blocked' => 'ඇහිරීම',
 	'centralauth-admin-unmerge' => 'තේරීම් වෙන්කරන්න',
 	'centralauth-admin-merge' => 'ඒකාබද්ධ කිරීම තෝරාගැණිනි',
+	'centralauth-admin-bad-input' => 'සදොස් ඒකාබද්ධ කෙරුම් තෝරාගැනුමකි',
+	'centralauth-admin-none-selected' => 'වෙනස් කෙරුමට කිසිදු ගිණුමක් තෝරා නැත.',
+	'centralauth-admin-already-unmerged' => '$1 මගහරිමින්, දැනටමත් විඒකාබද්ධ කොට ඇත.',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|ගිණුම|ගිණුම්}} සාර්ථකව විඒකාබද්ධ කෙරිනි',
 	'centralauth-admin-delete-title' => 'ගිණුම මකන්න',
+	'centralauth-admin-delete-description' => 'ගෝලීය ගිණුම මකාදැමීමෙන් ඔබේ ගෝලීය අභිරුචි මැකීයාම, සියලු පෙදෙසි ගිණුම් සමග බැඳීම් නැතිවී යාම, සහ ඔබේ ගෝලීය නම වෙනත් පරිශීලකයෙකුට ගැනීමට හැකිවීම යන කරුණු සිදුවිය හැකිය. 
+සියලු පෙදෙසි ගිණුම් දිගටම පවතිනු ඇත. 
+ඒකාබද්ධ කිරීමට පෙර සාදන ලද පෙදෙසි ගිණුම්වල මුරපද ඒකාබද්ධ කිරීමට පෙර පැවති අගයයන්වලට පත්වනු ඇත.',
 	'centralauth-admin-delete-button' => 'මෙම ගිණුම මකන්න',
+	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" සඳහා වන ගෝලීය ගිණුම සාර්ථකව මකනලදී',
+	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" සඳහා ගෝලීය ගිණුමක් නොමැත',
+	'centralauth-admin-delete-nonexistent' => 'දෝෂය: "<nowiki>$1</nowiki>" ගෝලීය ගිණුම නොපවතී.',
+	'centralauth-token-mismatch' => 'කණගාටුයි, සැසියේ දත්ත හානියක් නිසා ඔබේ පෝර්ම යොමුව සැකසීමට අපට නොහැකි විය.',
 	'centralauth-admin-reason' => 'හේතුව:',
+	'centralauth-admin-reason-other' => 'වෙනත්/වැඩිදුර හේතු:',
+	'centralauth-admin-status' => 'ගෝලීය ගිණුම් තත්වය සකසන්න',
+	'centralauth-admin-status-intro' => 'මෙම ගෝලීය ගිණුමේ තත්වය වෙනස් කෙරුමට මෙම ෆෝරමය භාවිතා කළ හැක.',
+	'centralauth-admin-status-locked' => 'අගුලුලා ඇත:',
+	'centralauth-admin-status-locked-no' => 'ගිණුම අගුලුලා නැත',
+	'centralauth-admin-status-locked-yes' => 'ගිණුම සංස්කරණය කිරීමෙන් අගුලුලා ඇත',
+	'centralauth-admin-status-hidden' => 'සඟවනලද:',
+	'centralauth-admin-status-hidden-no' => 'ගිණුම සඟවා නැත',
+	'centralauth-admin-status-hidden-list' => 'ගිණුම ප්‍රසිද්ධ ලයිස්තුවලින් සඟවා ඇත',
+	'centralauth-admin-status-hidden-oversight' => 'ගිණුම සම්පූර්ණයෙන් සඟවා ඇත',
+	'centralauth-admin-status-submit' => 'තත්වය සකසන්න',
+	'centralauth-admin-status-nonexistent' => 'දෝෂය: "<nowiki>$1</nowiki>" ගෝලීය ගිණුම නොපවතී.',
+	'centralauth-admin-setstatus-success' => 'ඔබ සාර්ථකව මෙම ගෝලීය ගිණුමේ තත්වය වෙනස්කොට ඇත.',
+	'centralauth-admin-status-reasons' => '* පොදු අගුලුලෑම් හේතු
+** විනාශකාරී ක්‍රියා පමණක් කළ ගිණුමකි
+** අයථා ප්‍රචාරන පමණක් කළ ගිණුමකි
+* පොදු අගුලුලෑම් හා සැඟවුම් හේතු
+** නොගැළපෙන පරිශීලක නාම
+** නොගැළපෙන පෞද්ගලික තොරතුරු',
+	'centralauth-admin-logsnippet' => 'පෙරකළ ගෝලීය ගිණුම් වෙනස්කම්',
+	'centralauth-admin-suppressreason' => '$1 මගින් පහත හේතුව නිසා ගෝලීයව යටපත් කරන ලදී: $2',
+	'globalusers' => 'ගෝලීය පරිශීලක ලයිස්තුව',
+	'centralauth-listusers-locked' => 'අගුලුලා ඇත',
+	'centralauth-listusers-attached' => '[[User:$1|මෙහි පවතී]]',
 	'centralauth-listusers-nolocal' => 'එක්කෝ කොබැඳි නැත්නම් ස්ථානීකව නොපවතියි',
 	'centralauth-seconds-ago' => ' {{PLURAL:$1|තත්පරයකට|තත්පර $1 කට}} පෙර',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|විනාඩියකට|විනාඩි $1 කට}} පෙර',
@@ -20386,15 +20460,130 @@ $messages['si'] = array(
 	'centralauth-days-ago' => ' {{PLURAL:$1|දිනයකට|දින $1 කට}} පෙර',
 	'centralauth-months-ago' => ' {{PLURAL:$1|මසකට|මාස $1 කට}} පෙර',
 	'centralauth-years-ago' => ' {{PLURAL:$1|වසරකට|වසර $1 නට}} පෙර',
+	'centralauth-prefs-status' => 'ගෝලීය ගිණුම් තත්වය:',
 	'centralauth-prefs-not-managed' => 'සංයුක්ත කෙරුණු ගිණුම භාවිතා නොකරමින්',
 	'centralauth-prefs-unattached' => 'තහවුරු නොකෙරිණි',
+	'centralauth-prefs-complete' => 'සියල්ල නිවැරදියි!',
 	'centralauth-prefs-migration' => 'සංක්‍රමණය වෙමින්',
+	'centralauth-prefs-count-attached' => 'ඔබේ ගිණුම $1 ව්‍යාපෘතිය {{PLURAL:$1|site|sites}} තුළ සක්‍රීයව ඇත.',
 	'centralauth-prefs-count-unattached' => ' {{PLURAL:$1|එක් ව්‍යාපෘතියක|ව්‍යාපෘති $1 ක }} ඔබගේ නම සහිත හා තහවුරු කොකෙරුණු ගිණුම්  තවමත් පවතියි.',
 	'centralauth-prefs-detail-unattached' => 'මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.',
+	'centralauth-prefs-manage' => 'ඔබේ ගෝලීය ගිණුම හසුරුවන්න',
+	'centralauth-prefs-view' => 'ගෝලීය පරිශීලක තොරතුරු බලන්න',
 	'centralauth-renameuser-merged' => '$1 නමැති පරිශිලකයා සංයුක්ත කෙරුණු ප්‍රවිෂ්ට පද්ධතියට සංක්‍රමණය වී ඇත.
 එහි නම වෙනස් කිරීමෙන්, ස්ථානික පරිශීලකයා ගෝලීය එකෙන් වියුක්තවීම සිදුවනු ඇත.',
+	'centralauth-renameuser-reserved' => 'භාවිතාකරු $2 ගෝලීය ගිණුමක් සඳහා වෙන් කොට ඇත.',
+	'centralauth-invalid-wiki' => 'මෙවන් විකි දත්තමූලයක් නැත: $1',
+	'centralauth-account-exists' => 'ගිණුම සෑදීමට නොහැකි විය: අයදුම් කළ පරිශීලක නාමය ඒකීය පිවිසුම් පද්ධතිය තුළ දැනටමත් යමෙක් ලබාගෙන ඇත.',
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}} හි ව්‍යාපෘතිවලට ඔබව ඇතුල් කරමින්:',
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘතිවලින් ඔබව පිට කරමින්:',
+	'centralauth-login-no-others' => 'ඔබ ස්‍වයංක්‍රීයවම {{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘති වලට ඇතුලත් කෙරිනි.',
+	'centralauth-logout-no-others' => 'ඔබ ස්‍වයංක්‍රීයවම {{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘති වලින් පිට කෙරිනි.',
+	'centralauth-hidden-blockreason' => '$1 විසින් $2 දී පහත හේතුව නිසා ගෝලීයව සඟවා ඇත: $3',
+	'centralauth-log-name' => 'ගෝලීය ගිණුම් ලොගය',
+	'centralauth-log-header' => 'මෙම ලොගයේ ගෝලීය ගිණුම් යටතේ කළ මෙහෙයුම් ඇතුලත්ය: මැකුම්, ඇගුලුලෑම් හා අගුලු-ඇරුම්.',
+	'centralauth-log-entry-delete' => '"$1" ගෝලීය ගිණුම මකන ලදී',
+	'centralauth-log-entry-lock' => '"$1" ගෝලීය ගිණුම අගුලුලන ලදී',
+	'centralauth-log-entry-unlock' => '"$1" ගෝලීය ගිණුම අගුලු-අරින ලදී',
+	'centralauth-log-entry-hide' => '"$1" ගෝලීය ගිණුම සඟවන ලදී',
+	'centralauth-log-entry-unhide' => '"$1" ගෝලීය ගිණුම සැඟවුම ඉවත් කරන ලදී',
+	'centralauth-log-entry-lockandhide' => '"$1" ගෝලීය ගිණුම අගුලුලා සඟවන ලදී',
+	'centralauth-log-entry-chgstatus' => '"$1" ගෝලීය ගිණුම සඳහා තත්වය වෙනස් කරන ලදී: Set $2; Unset $3',
+	'centralauth-log-status-locked' => 'අගුලුලා ඇත',
 	'centralauth-log-status-hidden' => 'සඟවා',
+	'centralauth-log-status-oversighted' => 'ප්‍රමාද දෝෂයක්',
 	'centralauth-log-status-none' => '(කිසිවක් නොමැත)',
+	'centralauth-rightslog-name' => 'ගෝලීය අයිති ලොගය',
+	'centralauth-rightslog-entry-usergroups' => '$1 සඳහා ගෝලීය කණ්ඩායම් සාමාජිකත්වය $2 සිට $3 දක්වා වෙනස්කෙරිණි',
+	'centralauth-rightslog-entry-groupperms' => '$1 සඳහා කණ්ඩායම් අවසරයන් $2 සිට $3 දක්වා වෙනස්කෙරිණි',
+	'centralauth-rightslog-entry-groupperms2' => '$1 කණ්ඩායම් අවසරයන් වෙනස්කරන ලදී.
+$2 එකතු කෙරිනි;
+$3 ඉවත් කෙරිනි',
+	'centralauth-rightslog-entry-groupperms3' => '$1 සඳහා සීමාකළ විකි කණ්ඩායම $2 සිට $3 ට වෙනස් කෙරිනි',
+	'centralauth-rightslog-header' => 'මෙම ලොගයේ ගෝලීය කණ්ඩායම්වල මෙහෙයුම් අඩංගුවේ: සාමාජිකත්ව හා අවසර වෙනස්කෙරුම්',
+	'centralauth-rightslog-entry-newset' => 'පහත සඳහන් විකි සමග $1 $2 විකි කට්ටලයක් සාදන ලදී: $3',
+	'centralauth-rightslog-entry-setrename' => '"$2" විකි එකතුව "$1" ලෙස ප්‍රතිනම්කෙරිනි',
+	'centralauth-rightslog-entry-setnewtype' => '"$1" හි වර්ගය $2 සිට $3 දක්වා වෙනස් කෙරිනි',
+	'centralauth-rightslog-entry-setchange' => '"$1" හි විකියන් වෙනස් කෙරිනි: $2 එක් කෙරිනි; $3 ඉවත් කෙරිනි',
+	'centralauth-rightslog-entry-deleteset' => '"$1" විකි එකතුව මකනලදී',
+	'centralauth-rightslog-set-optin' => 'තෝරාගැනීම් සම්බන්ධ',
+	'centralauth-rightslog-set-optout' => 'තෝරා නොගැනීම් සම්බන්ධ',
+	'autologin' => 'ස්‍වයංක්‍රීය ඇතුලුවීම',
+	'centralauth-autologin-desc' => 'මෙය මීඩියාවිකිය ඇතුළත භාවිතා කරන විශේෂ පිටුවකි.
+ඔබ [[Special:UserLogin|පිවිසෙන]] විට, ප්‍රධාන පිවිසුම් පද්ධතිය මෙම පිටුව සියලු සබැඳි ඩොමේනවලින් රූප සබැඳි මාර්ගයෙන් ඉල්ලුම් කරන මෙන් බ්‍රව්සරයට උපදෙස් දෙයි. 
+ඔබ මෙම පිටුව ඉල්ලුම් කර ඇත්තේ ඔබ ගැන කිසිදු ඔප්පුකිරීමේ දත්තයක් රහිතව නිසා එය කිසිත් නොකරනු ඇත',
+	'globalgroupmembership' => 'ගෝලීය කණ්ජායම්වල සමාජිකත්වය',
+	'globalgrouppermissions' => 'ගෝලීය කණ්ඩායම් හැසුරුම',
+	'centralauth-globalgroupperms-grouplist' => 'පහත සඳහන් ගෝලීය කණ්ඩායම් සකසන ලදී.
+ඔබට අවසර ඇතිනම්, ඒ ඒ කණ්ඩායම් වල අවසර නැරඹිය හෝ වෙනස් කළ හැක.
+කණ්ඩායමක් සඳහා වන සියළු අවසර ඉවත් කිරීමෙන් එය මැකිය හැක.',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|බලන්න/වෙනස් කරන්න]])',
+	'centralauth-globalgroupperms-nogroups' => 'කිසිදු ගෝලීය කණ්ඩායමක් සකසා නැත.',
+	'centralauth-existinggroup-legend' => 'පවතින කණ්ඩායම්',
+	'centralauth-newgroup-legend' => 'නව කණ්ඩායමක් තනන්න',
+	'centralauth-newgroup-intro' => 'නව කණ්ඩායමකට අවසර පැවරීමට මෙම ෆෝරමය භාවිතා කළ හැක.
+යම් කණ්ඩායමකට අවසර පවරා නැතිනම් එම කණ්ඩායම නොපවතින බව සලකන්න.',
+	'centralauth-globalgroupperms-newgroupname' => 'නව කණ්ඩායමේ නම:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'අවසර පවරන්න',
+	'centralauth-editgroup-subtitle' => '$1 සංස්කරණය කරමින්',
+	'centralauth-editgroup-fieldset' => '$1 සඳහා අවසර',
+	'centralauth-editgroup-name' => 'කණ්ඩායමේ නම:',
+	'centralauth-editgroup-display' => 'කණ්ඩායමේ දේශියකළ නම:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|සකසන්න]])',
+	'centralauth-editgroup-member' => 'කණ්ඩායම් සාමාජිකයන්ගේ දේශියකළ නම:',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|සකසන්න]])',
+	'centralauth-editgroup-members' => 'සාමාජික ලයිස්තුව:',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 අයිතීන් ඇති පරිශීලකයෝ]]',
+	'centralauth-editgroup-restrictions' => 'මෙම කණ්ඩායම සක්‍රීය විකියන්:',
+	'centralauth-editgroup-noset' => '(කිසිවක් නොමැත)',
+	'centralauth-editgroup-submit' => 'කණ්ඩායම් අවසරවල වෙනස්කම් සුරකින්න',
+	'centralauth-editgroup-perms' => 'පැවරූ අවසර',
+	'centralauth-editgroup-reason' => 'හේතුව:',
+	'centralauth-editgroup-success' => 'කණ්ඩායම් අවසර වෙනස්කරනලදී',
+	'centralauth-editgroup-success-text' => 'ඔබ විසින් $1 කණ්ඩායමේ අවසර සාර්ථකව වෙනස් කර ඇත. 
+[[Special:GlobalGroupPermissions|කණ්ඩායම් පාලක ස්ථානයට නැවත යන්න]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|සංස්කරණය කරන්න]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'ඔවුන්ට ගිණුමක් ඇති විකි:',
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ගෝලීය පරිශීලකයා ඔබ සඳහන් කළ විකිය ('' $2 '') තුළ සක්‍රීය නැත. 
+ඔබ විසින් අයිතීන් ලබාදීමට තැත් කරන්නේ වැරැදි පරිශීලකයාට විය යුතුය!",
+	'centralauth-editset' => 'විකි කට්ටල',
+	'centralauth-editset-legend-rw' => 'විකි කට්ටලය සංස්කරණය හෝ අළුතෙන් නිර්මාණය කරන්න',
+	'centralauth-editset-legend-ro' => 'විකි කට්ටල ලයිස්තුව',
+	'centralauth-editset-intro-rw' => 'පහත විකි කට්ටල දැනටමත් සාදා ඇත.
+ඔබට ඒවා බැලීම සහ සංස්කරණය කිරීම, එසේත් නැතිනම් අළුත් කට්ටලයක් නිර්මාණය කළ හැකිය.',
+	'centralauth-editset-intro-ro' => 'දැනට පවතින විකි කට්ටල පහත දැක්වේ.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|මකන්න]])',
+	'centralauth-editset-new' => 'අළුත් කට්ටලයක් නිර්මාණය කරන්න',
+	'centralauth-editset-notfound' => '"$1" විකි කට්ටලය හමු වුණේ නැත.',
+	'centralauth-editset-optin' => 'තෝරාගැනීම් සම්බන්ධ (විශේෂිත විකි පමණක් ඇතුළත්ය)',
+	'centralauth-editset-optout' => 'තෝරා නොගැනීම් සම්බන්ධ (සඳහන් කර ඇති විකි හැර අනෙක් සියලු විකි ඇතුළත්ය)',
+	'centralauth-editset-legend-edit' => '"$1" විකි කට්ටලය සංස්කරණය කරමින්',
+	'centralauth-editset-legend-view' => '"$1" විකි කට්ටලය',
+	'centralauth-editset-legend-new' => 'නව විකි කට්ටලය සාදමින්',
+	'centralauth-editset-legend-delete' => '"$1" විකි කට්ටලය මකා දමමින්',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|කට්ටල ලයිස්තුව]]',
+	'centralauth-editset-name' => 'නම:',
+	'centralauth-editset-type' => 'වර්ගය:',
+	'centralauth-editset-wikis' => 'විකි:',
+	'centralauth-editset-reason' => 'හේතුව:',
+	'centralauth-editset-submit' => 'යොමන්න',
+	'centralauth-editset-submit-delete' => 'මකන්න',
+	'centralauth-editset-badname' => 'අවලංගු හෝ හිස් කට්ටල නමකි.',
+	'centralauth-editset-badtype' => 'අවලංගු කට්ටල වර්ගයකි.',
+	'centralauth-editset-setexists' => 'එම නම ඇති කට්ටලයක් දැනටමත් පවතියි.',
+	'centralauth-editset-nowikis' => 'විකි කිසිවක් සඳහන් කර නැත',
+	'centralauth-editset-nouse' => '(කිසිවක් නැත)',
+	'centralauth-editset-usage' => 'යොදාගෙන ඇති කණ්ඩායම්:',
+	'centralauth-editset-badwikis' => 'පහත දැක්වෙන {{PLURAL:$2|විකිය|විකි}} නොපවතී: $1.',
+	'centralauth-editset-success' => 'විකි කට්ටලය සාර්ථකව වෙනස් කරන ලදී.',
+	'centralauth-editset-success-delete' => 'විකි කට්ටලය සාර්ථකව මකා දමන ලදී.',
+	'centralauth-editset-return' => 'ප්‍රධාන පෙනුමට නැවත යන්න',
+	'right-globalgroupmembership' => 'ගෝලීය කණ්ඩායම් සඳහා සාමාජිකත්වය සංස්කරණය කරන්න',
+	'right-centralauth-unmerge' => 'ගෝලීය ගිණුම අසංයුක්ත කරන්න',
+	'right-centralauth-lock' => 'ගෝලීය ගිණුම අගුළු දැමීම හෝ සැඟවීම කරන්න',
+	'right-centralauth-oversight' => 'ගෝලීය ගිණුම මැඩපවත්වන්න',
+	'right-centralauth-merge' => 'ඔවුන්ගේ ගිණුම සංයුක්ත කරන්න',
+	'right-globalgrouppermissions' => 'ගෝලීය කණ්ඩායම් පාලනය කරන්න',
 );
 
 /** Slovak (Slovenčina)
@@ -20991,6 +21180,33 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'right-centralauth-oversight' => 'Zatiranje globalnih računov',
 	'right-centralauth-merge' => 'Združevanje njihovih računov',
 	'right-globalgrouppermissions' => 'Upravljanje globalnih skupin',
+);
+
+/** Albanian (Shqip)
+ * @author Mikullovci11
+ */
+$messages['sq'] = array(
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-merge-dryrun-or' => "'''ose'''",
+	'centralauth-foreign-link' => 'Përdoruesi $ 1 nga $ 2',
+	'centralauth-merge-method-primary' => 'Faqja Kryesore',
+	'centralauth-merge-method-empty' => 'nuk ka kontribute',
+	'centralauth-merge-method-new' => 'llogari të re',
+	'centralauth-finish-password' => 'Fjalëkalimi:',
+	'centralauth-finish-login' => 'Hyni',
+	'centralauth-finish-send-confirmation' => 'Fjalëkalim E-mailit',
+	'centralauth-admin-username' => 'Përdoruesi:',
+	'centralauth-admin-info-id' => 'Nr. i identifikimit:',
+	'centralauth-admin-info-registered' => 'Regjistruar:',
+	'centralauth-admin-info-home' => 'Faqja Kryesore',
+	'centralauth-admin-yes' => 'po',
+	'centralauth-admin-no' => 'jo',
+	'centralauth-editset-name' => 'Emri:',
+	'centralauth-editset-type' => 'Lloji:',
+	'centralauth-editset-wikis' => 'Wikit:',
+	'centralauth-editset-reason' => 'Arsyeja:',
+	'centralauth-editset-submit' => 'Dërgo',
+	'centralauth-editset-submit-delete' => 'Grise',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
