@@ -1559,7 +1559,7 @@ $messages['arz'] = array(
  */
 $messages['as'] = array(
 	'centralauth-finish-password' => 'গুপ্তশব্দ:',
-	'centralauth-finish-login' => 'প্রৱেশ',
+	'centralauth-finish-login' => 'প্ৰৱেশ',
 	'centralauth-finish-send-confirmation' => 'ই-মেইল গুপ্তশব্দ',
 );
 
@@ -21184,10 +21184,17 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 
 /** Albanian (Shqip)
  * @author Mikullovci11
+ * @author Olsi
  */
 $messages['sq'] = array(
+	'mergeaccount' => 'Identfikoni statusin  e unifikuar.',
 	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Llogaria e shkrirë]] nëpër wiki-t e {{MediaWiki:Centralauth-groupname}}',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Shkrin shumë llogari]] në një përdorues të vetëm',
+	'centralauth-merge-denied' => 'Na vjen keq, ju nuk keni leje për të hyrë në këtë faqe.',
+	'centralauth-merge-notlogged' => 'Ju lutemi <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} identifikohuni]</span> për të kontrolluar nëse llogaritë tuaja janë shkrirë plotësisht.',
 	'centralauth-merge-dryrun-or' => "'''ose'''",
+	'centralauth-list-home-title' => 'Faqja Kryesore',
 	'centralauth-foreign-link' => 'Përdoruesi $ 1 nga $ 2',
 	'centralauth-merge-method-primary' => 'Faqja Kryesore',
 	'centralauth-merge-method-empty' => 'nuk ka kontribute',
@@ -21201,12 +21208,16 @@ $messages['sq'] = array(
 	'centralauth-admin-info-home' => 'Faqja Kryesore',
 	'centralauth-admin-yes' => 'po',
 	'centralauth-admin-no' => 'jo',
+	'centralauth-log-status-none' => '(asgjë)',
+	'centralauth-editgroup-noset' => '(asgjë)',
+	'centralauth-editgroup-reason' => 'Arsyeja:',
 	'centralauth-editset-name' => 'Emri:',
 	'centralauth-editset-type' => 'Lloji:',
 	'centralauth-editset-wikis' => 'Wikit:',
 	'centralauth-editset-reason' => 'Arsyeja:',
 	'centralauth-editset-submit' => 'Dërgo',
 	'centralauth-editset-submit-delete' => 'Grise',
+	'centralauth-editset-nouse' => '(asgjë)',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
