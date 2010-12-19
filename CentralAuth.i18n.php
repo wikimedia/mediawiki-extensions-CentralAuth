@@ -1561,6 +1561,7 @@ $messages['as'] = array(
 	'centralauth-finish-password' => 'গুপ্তশব্দ:',
 	'centralauth-finish-login' => 'প্ৰৱেশ',
 	'centralauth-finish-send-confirmation' => 'ই-মেইল গুপ্তশব্দ',
+	'centralauth-admin-info-id' => 'সদস্য চিহ্ন:',
 );
 
 /** Asturian (Asturianu)
@@ -20291,6 +20292,7 @@ $messages['shi'] = array(
 /** Sinhala (සිංහල)
  * @author Budhajeewa
  * @author Thameera123
+ * @author තඹරු විජේසේකර
  * @author නන්දිමිතුරු
  * @author බිඟුවා
  */
@@ -20465,7 +20467,7 @@ $messages['si'] = array(
 	'centralauth-prefs-unattached' => 'තහවුරු නොකෙරිණි',
 	'centralauth-prefs-complete' => 'සියල්ල නිවැරදියි!',
 	'centralauth-prefs-migration' => 'සංක්‍රමණය වෙමින්',
-	'centralauth-prefs-count-attached' => 'ඔබේ ගිණුම $1 ව්‍යාපෘතිය {{PLURAL:$1|site|sites}} තුළ සක්‍රීයව ඇත.',
+	'centralauth-prefs-count-attached' => 'ඔබේ ගිණුම ව්‍යාපෘතීන් $1 ක් තුළ සක්‍රීයව ඇත.',
 	'centralauth-prefs-count-unattached' => ' {{PLURAL:$1|එක් ව්‍යාපෘතියක|ව්‍යාපෘති $1 ක }} ඔබගේ නම සහිත හා තහවුරු කොකෙරුණු ගිණුම්  තවමත් පවතියි.',
 	'centralauth-prefs-detail-unattached' => 'මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.',
 	'centralauth-prefs-manage' => 'ඔබේ ගෝලීය ගිණුම හසුරුවන්න',
@@ -21208,6 +21210,8 @@ $messages['sq'] = array(
 	'centralauth-admin-info-home' => 'Faqja Kryesore',
 	'centralauth-admin-yes' => 'po',
 	'centralauth-admin-no' => 'jo',
+	'centralauth-admin-reason' => 'Arsyeja:',
+	'centralauth-listusers-locked' => 'i mbyllur',
 	'centralauth-log-status-none' => '(asgjë)',
 	'centralauth-editgroup-noset' => '(asgjë)',
 	'centralauth-editgroup-reason' => 'Arsyeja:',
