@@ -20295,6 +20295,7 @@ $messages['shi'] = array(
  * @author තඹරු විජේසේකර
  * @author නන්දිමිතුරු
  * @author බිඟුවා
+ * @author ශ්වෙත
  */
 $messages['si'] = array(
 	'mergeaccount' => 'ප්‍රවිෂ්ට සංයුක්තකිරීම් තත්ත්වය',
@@ -20317,6 +20318,7 @@ $messages['si'] = array(
 	'centralauth-merge-step2-detail' => 'සමහරක් ගිණුම් නියම කරන ලද නිවාස විකියට ස්වයංක්‍රීයව ගැළපිය නොහැකි විය.
 මේ ගිණුම් අයිති ඔබට නම්, ඒ ගිණුම් සඳහා මුරපද ලබාදීමෙන් ඒවා අයිති ඔබට බව තහවුරු කළ හැකිය.',
 	'centralauth-merge-step2-submit' => 'ප්‍රවිෂ්ට වීමේ තොරතුරු තහවුරු කරන්න',
+	'centralauth-login-global' => 'මා ගෝලීය ලෙසින් ප්‍රවිෂ්ට කරලන්න',
 	'centralauth-merge-dryrun-complete' => 'පවතින සියළු ගිණුම් ස්වයංක්‍රීයව සංයුක්ත කල හැක!
 
 තවමත්, ඔබගේ ගිණුම්වලට කිසිදු වෙනසක් සිදුකර නොමැත.',
@@ -20383,7 +20385,8 @@ $messages['si'] = array(
 ගෝලීය ගිණුමද ඔබ සතු එකක් නම්, ඔබ විසින්ගෝලීය ගිණුම් මුරපදය ටයිප් කල විට, මෙම ගිණුම ඒකාබද්ධ කිරීමට ඔබ හට හැකිවේ:',
 	'centralauth-attach-submit' => 'ගිණුම සංක්‍රමණය කරන්න',
 	'centralauth-attach-success' => 'සංයුක්ත කෙරුණු ගිණුම වෙත ගිණුම සංක්‍රමණය කෙරිණි.',
-	'centralauth' => 'සංයුක්ත කෙරුණු ප්‍රවිෂ්ට වීම් පරිපාලනය',
+	'centralauth' => 'ගෝලීය ගිණුම් කළමනාකරු',
+	'centralauth-admin-intro' => 'ගෝලීය ගිණුම් පරිපාලනය සඳහා මෙම අතුරුමුහුණත භාවිතා කල හැක.',
 	'centralauth-admin-manage' => 'පරිශීලක දත්ත කළමනාකරණය කරන්න',
 	'centralauth-admin-username' => 'පරිශීලක නාමය:',
 	'centralauth-admin-lookup-ro' => 'භාවිතාකරු තොරතුරු පෙන්වන්න',
@@ -20396,7 +20399,7 @@ $messages['si'] = array(
 	'centralauth-admin-info-home' => 'ජනක විකිය',
 	'centralauth-admin-info-editcount' => 'සම්පූර්ණ සංස්කරණ ගණන:',
 	'centralauth-admin-info-locked' => 'අහුරා:',
-	'centralauth-admin-info-hidden' => 'සඟවා:',
+	'centralauth-admin-info-hidden' => 'සැඟවුනු මට්ටම:',
 	'centralauth-admin-nohome' => 'නිර්ණය කිරීමට නොහැකි විය',
 	'centralauth-admin-yes' => 'ඔව්',
 	'centralauth-admin-no' => 'නැත',
@@ -20467,7 +20470,7 @@ $messages['si'] = array(
 	'centralauth-prefs-unattached' => 'තහවුරු නොකෙරිණි',
 	'centralauth-prefs-complete' => 'සියල්ල නිවැරදියි!',
 	'centralauth-prefs-migration' => 'සංක්‍රමණය වෙමින්',
-	'centralauth-prefs-count-attached' => 'ඔබේ ගිණුම ව්‍යාපෘතීන් $1 ක් තුළ සක්‍රීයව ඇත.',
+	'centralauth-prefs-count-attached' => 'ඔබගේ ගිණුම ව්‍යාපෘතීන් $1 ක් තුල සක්‍රීයව ඇත.',
 	'centralauth-prefs-count-unattached' => ' {{PLURAL:$1|එක් ව්‍යාපෘතියක|ව්‍යාපෘති $1 ක }} ඔබගේ නම සහිත හා තහවුරු කොකෙරුණු ගිණුම්  තවමත් පවතියි.',
 	'centralauth-prefs-detail-unattached' => 'මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.',
 	'centralauth-prefs-manage' => 'ඔබේ ගෝලීය ගිණුම හසුරුවන්න',
