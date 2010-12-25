@@ -3145,6 +3145,33 @@ $messages['bn'] = array(
 	'right-globalgrouppermissions' => 'গ্লোবাল গ্রুপ ব্যবস্থাপনা',
 );
 
+/** Tibetan (བོད་ཡིག)
+ * @author Freeyak
+ */
+$messages['bo'] = array(
+	'centralauth-merge-method-login' => 'ནང་འཛུལ་དུ་བཟོས་ཟིན།',
+	'centralauth-finish-password' => 'གསང་ཨང་།',
+	'centralauth-finish-login' => 'ནང་འཛུལ།',
+	'centralauth-finish-send-confirmation' => 'གློག་འཕྲིན་གསང་ཨང་།',
+	'centralauth-attach-title' => 'ཐེམ་ཐོ་གཏན་འཁེལ།',
+	'centralauth-admin-username' => 'བཀོལ་མིའི་མིང་།',
+	'centralauth-admin-lookup-ro' => 'བཀོལ་མིའི་གནས་ཚུལ་ལྟ་བ།',
+	'centralauth-admin-info-id' => 'ནང་འཛུལ་ཐོ་མིང་།',
+	'centralauth-admin-info-registered' => 'ཐེམ་ཐོ་བཀོད་ཟིན།',
+	'centralauth-admin-yes' => 'འགྲིག',
+	'centralauth-admin-no' => 'མི་འགྲིག',
+	'centralauth-admin-delete-title' => 'ཐེམ་ཐོ་བསུབས་པ།',
+	'centralauth-admin-delete-button' => 'ཐེམ་ཐོ་འདི་གསུབས་ཤིག',
+	'centralauth-admin-status-locked' => 'ཟྭ་བརྒྱབ།',
+	'centralauth-admin-status-locked-no' => 'ཐེམ་ཐོར་ཟྭ་བརྒྱབ་མི་འདུག',
+	'centralauth-newgroup-legend' => 'སྐོར་ཁག་གསར་བ་འཛུགས་པ།',
+	'centralauth-globalgroupperms-newgroupname' => 'སྐོར་ཁག་གསར་བའི་མིང་།',
+	'centralauth-editgroup-name' => 'སྐོར་ཁག་གི་མིང་།',
+	'centralauth-editset-name' => 'མིང་།',
+	'centralauth-editset-reason' => 'རྒྱུ་མཚན།',
+	'centralauth-editset-nouse' => 'སྟོང་པ།',
+);
+
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
@@ -6019,7 +6046,7 @@ $messages['el'] = array(
 	'centralauth-editset-legend-view' => 'Wiki σύνολο "$1"',
 	'centralauth-editset-legend-new' => 'Δημιουργία νέου βικι-συνόλου',
 	'centralauth-editset-legend-delete' => 'Διαγραφή wiki συνόλου "$1"',
-	'centralauth-editset-subtitle' => '< [[Ειδικό:WikiSets|Κατάλογος των συνόλων]]',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Κατάλογος συνόλων]]',
 	'centralauth-editset-name' => 'Όνομα:',
 	'centralauth-editset-type' => 'Τύπος:',
 	'centralauth-editset-wikis' => 'Τα βίκι:',
@@ -16324,7 +16351,7 @@ Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wac
 Hieronder staat aangegeven welke wiki dat is.
 Neem contact op met een systeembeheerder om deze beperking op te laten heffen.
 Zolang de wiki niet bewerkt kan worden, kunt u geen gebruikers samenvoegen.',
-	'centralauth-notice-dryrun' => "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
+	'centralauth-notice-dryrun' => '<div class="successbox">Alleen demonstratiemodus</div><div style="clear:both"></div>',
 	'centralauth-disabled-dryrun' => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
 	'centralauth-error-locked' => 'U kunt niet bewerken omdat uw gebruiker geblokkeerd is.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/nl|Meer lezen over '''samengevoegd aanmelden''']]…''",
@@ -17559,7 +17586,7 @@ Wprowadź hasło właściwe dla Twojej macierzystej wiki.',
 
 Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego podaj hasło konta na $2:',
 	'centralauth-blocked-text' => 'Możliwość edycji na Twojej macierzystej wiki (wymieniona poniżej) została zablokowana. Skontaktuj się z administratorem tej wiki, aby zdjął blokadę. W czasie, gdy jest zablokowana nie masz możliwości połączenia kont.',
-	'centralauth-notice-dryrun' => '<div class="successbox">Tylko tryb demonstracyjny</div><br style="clear:both" />',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Tylko tryb demonstracyjny</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym i usuwania usterek. Właściwe operacje łączenia kont są obecnie wyłączone.',
 	'centralauth-error-locked' => 'Nie możesz edytować, ponieważ Twoje konto jest zablokowane.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
