@@ -16351,7 +16351,7 @@ Als u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wac
 Hieronder staat aangegeven welke wiki dat is.
 Neem contact op met een systeembeheerder om deze beperking op te laten heffen.
 Zolang de wiki niet bewerkt kan worden, kunt u geen gebruikers samenvoegen.',
-	'centralauth-notice-dryrun' => '<div class="successbox">Alleen demonstratiemodus</div><div style="clear:both"></div>',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.',
 	'centralauth-error-locked' => 'U kunt niet bewerken omdat uw gebruiker geblokkeerd is.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/nl|Meer lezen over '''samengevoegd aanmelden''']]…''",
