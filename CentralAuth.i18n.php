@@ -4082,9 +4082,14 @@ $messages['ceb'] = array(
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay',
 );
 
-/** Sorani (کوردی) */
+/** Sorani (کوردی)
+ * @author Asoxor
+ */
 $messages['ckb'] = array(
 	'centralauth-admin-reason' => 'هۆکار:',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|ساڵ|ساڵی}} پێش',
+	'centralauth-prefs-status' => 'دۆخی ھەژماری گشتی:',
+	'centralauth-prefs-complete' => 'ھەموو شتێک ڕێکوپێکە!',
 	'centralauth-editgroup-reason' => 'هۆکار:',
 	'centralauth-editset-reason' => 'هۆکار:',
 	'centralauth-editset-submit' => 'ناردن',
