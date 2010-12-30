@@ -25507,6 +25507,7 @@ $messages['yue'] = array(
  * @author Chenzw
  * @author Gaoxuewei
  * @author Gzdavidwong
+ * @author Hydra
  * @author Liangent
  * @author PhiLiP
  * @author Xiaomingyan
@@ -25710,12 +25711,15 @@ $messages['zh-hans'] = array(
 	'centralauth-rightslog-entry-usergroups' => '已经更改$1的全域成员组由$2到$3',
 	'centralauth-rightslog-entry-groupperms' => '已经更改$1的成员组许可由$2到$3',
 	'centralauth-rightslog-entry-groupperms2' => '已经更改$1的成员组许可。加入$2；移除$3',
+	'centralauth-rightslog-entry-groupperms3' => '更改的组限制维基设置 $1 从 $2 至 $3',
 	'centralauth-rightslog-header' => '这个日志包含了全域组之动作：组及许可更改',
 	'centralauth-rightslog-entry-newset' => '已创建$2的包含条目$3的维基组$1',
 	'centralauth-rightslog-entry-setrename' => '将维基组"$2"重命名为"$1"',
 	'centralauth-rightslog-entry-setnewtype' => '将"$1"的类型由$2改为$3',
 	'centralauth-rightslog-entry-setchange' => '"$1"中更改了的维基: 已添加 $2; 已移除 $3',
 	'centralauth-rightslog-entry-deleteset' => '已删除的维基组"$1"',
+	'centralauth-rightslog-set-optin' => '选择的基础',
+	'centralauth-rightslog-set-optout' => '基于的退出',
 	'autologin' => '自动登录',
 	'centralauth-autologin-desc' => '这个特殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，中央登入系统会利用图像链接，指示您的浏览器向所有关联的域名请求这个页面。您在访问本页面时未提供验证数据，因此本页无效。',
 	'globalgroupmembership' => '在全域组中的成员',
@@ -25739,6 +25743,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-member-edit' => '$2 （[[MediaWiki:Group-$1-member|编辑]]）',
 	'centralauth-editgroup-members' => '成员表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2许可的用户名单]]',
+	'centralauth-editgroup-restrictions' => '在此组处于活动状态的维基：',
 	'centralauth-editgroup-noset' => '（无）',
 	'centralauth-editgroup-submit' => '保存更改到组许可',
 	'centralauth-editgroup-perms' => '已指定的许可：',
@@ -25757,6 +25762,8 @@ $messages['zh-hans'] = array(
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|删除]])',
 	'centralauth-editset-new' => '创建一个新组',
 	'centralauth-editset-notfound' => '没有找到维基组$1',
+	'centralauth-editset-optin' => '选择的基于 （包括仅指定维基）',
+	'centralauth-editset-optout' => '选择出基于（包括所有的维基，除了指定）',
 	'centralauth-editset-legend-edit' => '正在编辑维基组$1',
 	'centralauth-editset-legend-view' => '维基组$1',
 	'centralauth-editset-legend-new' => '创建新的维基组',
