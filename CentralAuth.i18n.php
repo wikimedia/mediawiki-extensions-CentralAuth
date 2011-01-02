@@ -21278,6 +21278,7 @@ $messages['sq'] = array(
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Јованвб
  * @author Жељко Тодоровић
@@ -21329,7 +21330,7 @@ $messages['sr-ec'] = array(
 	'centralauth-finish-text' => 'Уколико ови налози припадају вама, можете завршити процес спајања налога уписујући лозинку за остале налоге овде:',
 	'centralauth-finish-password' => 'Лозинка:',
 	'centralauth-finish-login' => 'Пријава',
-	'centralauth-finish-send-confirmation' => 'Пошаљи лозинку на е-пошту',
+	'centralauth-finish-send-confirmation' => 'Пошаљи ми нову лозинку',
 	'centralauth-finish-problems' => 'Имате проблем, или ви нисте власник осталих налога? [[meta:Help:Unified login problems|Помоћ]]...',
 	'centralauth-finish-noconfirms' => 'Нема налога који би могли бити оверени помоћу ове лозинке.',
 	'centralauth-finish-incomplete' => 'Неколико налога је спојено коришћењем ове лозинке. Остали налози још увек нису оверени.',
