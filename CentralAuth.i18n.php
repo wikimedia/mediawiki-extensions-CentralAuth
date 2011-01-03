@@ -20415,6 +20415,8 @@ $messages['si'] = array(
 	'centralauth-merge-method-empty-desc' => 'ප්‍රාදේශීය ගිණුම ඒකාබද්ධ කරන ලද්දේ එය සතුව කිසිදු සංස්කරණයක් නොතිබූ නිසා බව දක්වයි.',
 	'centralauth-merge-method-mail-desc' => 'ප්‍රධාන ගිණුමේ විද්‍යුත් තැපැල් ලිපිනය සමග මෙම ගිණුමේ විද්‍යුත් තැපැල් ලිපිනය සමාන බැවින් ඒකාබද්ධ කරන ලද බව දක්වයි.',
 	'centralauth-merge-method-password-desc' => 'නිවැරදි මුරපදයක් සැපයූ නිසා මෙම ගිණුම ඒකාබද්ධ කළ බව දක්වයි.',
+	'centralauth-merge-method-admin-desc' => 'ප්‍රාදේශිය ගිණුම භාරකරුවන් විසින් ඒකාබද්ධ කොට ඇති බව දක්වයි.
+ආරක්‍ෂක හේතූන් මත මෙම පහසුකම දැන් අක්‍රීයකොට ඇත.',
 	'centralauth-merge-method-new-desc' => 'ප්‍රාදේශිය ගිණුම තනන විට ස්‍වයංක්‍රීයවම ගෝලීය ගිණුම තැනුනු බව දක්වයි.',
 	'centralauth-merge-method-login-desc' => 'පරිශීලක ඇතුල්වූ විට ප්‍රාදේශීය ගිණුම ස්‍වයංක්‍රීයව තැනුනු බව දක්වයි.',
 	'centralauth-finish-title' => 'ඒකාබද්ධ කිරීම අවසන් කරන්න',
@@ -20519,7 +20521,7 @@ $messages['si'] = array(
 	'centralauth-prefs-unattached' => 'තහවුරු නොකෙරිණි',
 	'centralauth-prefs-complete' => 'සියල්ල නිවැරදියි!',
 	'centralauth-prefs-migration' => 'සංක්‍රමණය වෙමින්',
-	'centralauth-prefs-count-attached' => 'ඔබගේ ගිණුම ව්‍යාපෘති අඩවි $1 ක් තුල සක්‍රීයය.',
+	'centralauth-prefs-count-attached' => 'ඔබගේ ගිණුම ව්‍යාපෘති අඩවි $1 {{PLURAL:}}ක් තුල සක්‍රීයය.',
 	'centralauth-prefs-count-unattached' => ' {{PLURAL:$1|එක් ව්‍යාපෘතියක|ව්‍යාපෘති $1 ක }} ඔබගේ නම සහිත හා තහවුරු කොකෙරුණු ගිණුම්  තවමත් පවතියි.',
 	'centralauth-prefs-detail-unattached' => 'මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.',
 	'centralauth-prefs-manage' => 'ඔබේ ගෝලීය ගිණුම හසුරුවන්න',
