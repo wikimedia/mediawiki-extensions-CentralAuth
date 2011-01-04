@@ -10152,45 +10152,45 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 );
 
 /** Haitian (Kreyòl ayisyen)
+ * @author Boukman
  * @author Masterches
  */
 $messages['ht'] = array(
-	'mergeaccount' => 'Estati reyinyon, fizyon kont itilizatè yo',
-	'centralauth-desc' => '[[Special:MergeAccount|Mèt kont itilizatè yo ansanm]] nan tout kont nan wiki Fondasyon Wikimedia yo (reyini tout kont itilizatè yo pou fè yon sèl).',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Mèt ansanm plizyè kont itilizatè]] pou ou kapab idantifye w ak yon sèl kont, yon sèl non itilizatè.',
+	'mergeaccount' => 'Estati fizyon kont itilizatè yo',
+	'centralauth-desc' => '[[Special:MergeAccount|Vin fè yon sèl kont]] atravè tout wiki {{MediaWiki:Centralauth-groupname}} yo',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Mete ansanm plizyè kont itilizatè]] pou ou kapab idantifye w ak yon sèl non itilizatè.',
 	'centralauth-merge-denied' => 'Eskize nou, ou pa gen dwa rantre nan paj sa.',
-	'centralauth-merge-notlogged' => 'Souple <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} idantifye w]</span> pou gade si kont ou an byen fizyone, byen mèt ansanm ak tout lòt kont ou yo.',
-	'centralauth-merge-welcome' => "'''Kont itilizatè ou an poko fizyone, poko mèt ansanm ak lòt kont ou yo nan nouvo sistèm Wikimedia pou idantifye ou ak yon sèl kont.'''
+	'centralauth-merge-notlogged' => 'Tanpri <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} konekte w]</span> pou verifye si kont ou an byen fizyone ak tout lòt kont ou yo.',
+	'centralauth-merge-welcome' => "'''Kont itilizatè ou an poko fizyone nan nouvo sistèm kont inifye {{MediaWiki:Centralauth-groupname}}.'''
 
-Si ou chwazi mèt ansanm tout kont ou yo, ou ap kapab itilize menm non ak mopas nan tout pwojè wiki Wikimedya yo nan tout lang ki egziste.
-Sistèm sa ap rann kontribisyon ak jesyon pwojè yo pi fasil (tankou pa egzanp lè ou ap chaje kèk medya, fichye anlè [http://commons.wikimedia.org/ Wikimedia Commons] oubyen lè yon lòt moun, nan yon lòt pwojè wiki genyen men idantifyan ke ou menm menm).
-
-Tande byen, si yon moun deja genyen men non ak ou menm nan yon lòt pwojè, sa pa grav paske ou ke pe gen kontakt ak moun sa oubyen adminsitratè pwojè sa pou diskite e ranje kò nou.",
-	'centralauth-merge-step1-title' => 'koumanse operasyon fizyon kont sa, li ap mèt ansanm tout kont ou yo nan pwojè wikimedya yo',
-	'centralauth-merge-step1-detail' => 'N ap konpare kounye a adrès imèl ou an ak mopas ou an pou verifye ke yo ap mache anlè lòt wiki yo.
-Pyès chanjman pa ap fèt san ou pa valide etap sa.',
-	'centralauth-merge-step1-submit' => 'Konfime enfòmasyon pou idantifye w',
-	'centralauth-merge-step2-title' => 'Mete ansanm tou dòt kont ankò',
+Si ou chwazi mete tout kont ou yo ansanm, w ap kapab itilize menm non ak mopas nan tout pwojè wiki {{MediaWiki:Centralauth-groupname}} yo nan tout lang ki egziste.
+Si yon lòt moun genyen menm non itilizatè ave w nan yon lòt pwojè wiki, sa pap deranje yo, men w ap genyen pou ou kontakte moun sa oubyen yon administratè pi ta.",
+	'centralauth-merge-step1-title' => 'Koumanse fizyon kont yo',
+	'centralauth-merge-step1-detail' => 'Tanpri, antre mopas ou an.
+Nou pral konpare adrès imèl ou an ak mopas ou an pou verifye ke yo menm ak pa lòt wiki yo.
+Pap gen pyès chanjman k ap fèt san ou pa valide etap sa.',
+	'centralauth-merge-step1-submit' => 'Konfime enfòmasyon pou konekte w',
+	'centralauth-merge-step2-title' => 'Konfime lòt kont',
 	'centralauth-merge-step2-detail' => 'Kèk kont pa kapab mete ansanm ak kont prensipal ou an.
 Si ou se mèt kont sa yo ou kapab konfime bagay sa si ou rantre mopas ou yo pou yo.',
-	'centralauth-merge-step2-submit' => 'Konfime enfòmasyon ou idantifikasyon w',
+	'centralauth-merge-step2-submit' => 'Konfime enfòmasyon pou konekte w',
 	'centralauth-merge-dryrun-complete' => 'Tout kont yo kapab mete ansanm ak kont prensipal ou an !
 
-Pyès chanjman poko fèt nan kont ou an.',
-	'centralauth-merge-dryrun-incomplete' => 'Ou deside ale pi lwen,  ou deside kontinye,mè plizyè kont poko verifye, yo pe ke mete ansanm ak kont prensipal ou an. Ou mèt mete yo ansanm pi ta.
+Poko gen pyès chanjman ki fèt nan kont ou yo.',
+	'centralauth-merge-dryrun-incomplete' => 'Ou deside kontinye, men plizyè kont pa t ka verifye otomatikman, kidonk nou pap mete yo ansanm ak kont prensipal ou an kounye a.
+Ou mèt mete yo ansanm pi ta.
 
-Tande byen, pon chanjman fèt nan kont ou yo.',
+Poko gen pyès chanjman ki fèt nan kont ou yo.',
 	'centralauth-merge-dryrun-or' => "'''oubyen'''",
-	'centralauth-merge-dryrun-home' => 'Sistèm migrasyon, fizyon kont yo pa kapab konfime ke ou se mèt kont itilizatè wiki prensipal ou an.
+	'centralauth-merge-dryrun-home' => 'Sistèm pou fizyon kont yo pa kapab konfime ke ou se mèt kont itilizatè sou wiki prensipal la.
 
-Yon lòt kont wiki sanble kont prensipal ou an pou non itilizatè ou ap itilize; swiv lyen anba epi idantifye w pou fini migrasyon, fizyon kont ou an.',
-	'centralauth-merge-step3-title' => 'Kreye yon kont ki ap regwoupe tout lòt kont ou yo',
-	'centralauth-merge-step3-detail' => 'Ou pare pou kreye kont inik, inifye ou an, ak tout wiki sa yo :',
-	'centralauth-merge-step3-submit' => 'Mèt ansanm kont yo',
+Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anba epi konekte w pou fini fizyon kont ou an.',
+	'centralauth-merge-step3-title' => 'Kreye kont inik la',
+	'centralauth-merge-step3-detail' => 'Ou pare pou kreye kont inik ou an, ak tout wiki sa yo ki fè pati nan li:',
+	'centralauth-merge-step3-submit' => 'Mete kont yo ansanm',
 	'centralauth-complete' => 'Fizyon kont yo fini !',
 	'centralauth-incomplete' => 'Fizyon kont yo poko fini !',
-	'centralauth-complete-text' => 'Ou mèt kounye a konekte w nan nenpòt pwojè wiki Wikimedya a, san ou pa gen pou kreye yon nouvo kont;
-menm non itilizatè ak mopas kont prensipal ou an ap mache nan Wikipedya, Wikibooks epi lòt pwojè yo, nan tout lang.',
+	'centralauth-complete-text' => 'Ou mèt kounye a konekte w nan nenpòt pwojè wiki {{MediaWiki:Centralauth-groupname}} a san ou pa bezwen kreye yon nouvo kont.',
 );
 
 /** Hungarian (Magyar)
@@ -21264,6 +21264,7 @@ $messages['sq'] = array(
 	'centralauth-admin-info-home' => 'Faqja Kryesore',
 	'centralauth-admin-yes' => 'po',
 	'centralauth-admin-no' => 'jo',
+	'centralauth-admin-list-blocked' => 'I bllokuar',
 	'centralauth-admin-reason' => 'Arsyeja:',
 	'centralauth-listusers-locked' => 'i mbyllur',
 	'centralauth-log-status-none' => '(asgjë)',
@@ -21359,7 +21360,7 @@ $messages['sr-ec'] = array(
 Разлог: $2',
 	'centralauth-admin-blocked-indef' => 'Трајно блокиран.
 Разлог: $1',
-	'centralauth-admin-blocklog' => 'историја блокирања',
+	'centralauth-admin-blocklog' => 'Историјат забране приступа',
 	'centralauth-admin-list-localwiki' => 'Локална вики',
 	'centralauth-admin-list-attached-on' => 'Накачен на',
 	'centralauth-admin-list-method' => 'Метода',
