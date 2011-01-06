@@ -25830,6 +25830,7 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step2-title' => '確認更多帳號',
 	'centralauth-merge-step2-detail' => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。',
 	'centralauth-merge-step2-submit' => '確認登入資料',
+	'centralauth-login-global' => '把我在全域都登陸',
 	'centralauth-merge-dryrun-complete' => '所有已存在的的帳號都能被自動整合！
 
 目前尚未對您的帳號進行任何修改。',
@@ -26015,6 +26016,13 @@ $messages['zh-hant'] = array(
 	'centralauth-rightslog-entry-groupperms2' => '已經更改$1的成員組許可。加入$2；移除$3',
 	'centralauth-rightslog-entry-groupperms3' => '已更改限制維基組$1，由$2已改成$3。',
 	'centralauth-rightslog-header' => '這個日誌包含了全域組之動作：組及許可更改',
+	'centralauth-rightslog-entry-newset' => '創建了$2維基組$1，並包括以下的維基站點：$3',
+	'centralauth-rightslog-entry-setrename' => '將維基組"$2"重新命名為"$1"',
+	'centralauth-rightslog-entry-setnewtype' => '已將"$1"的類型由$2改為$3',
+	'centralauth-rightslog-entry-setchange' => '已更改在$1的維基：增加了$2，移除了$3',
+	'centralauth-rightslog-entry-deleteset' => '已刪除維基組$1',
+	'centralauth-rightslog-set-optin' => '選擇的基礎',
+	'centralauth-rightslog-set-optout' => '基於的退出',
 	'autologin' => '自動登錄',
 	'centralauth-autologin-desc' => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
 	該中央登入系統會利用圖片連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
@@ -26039,6 +26047,7 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-member-edit' => '$2 （[[MediaWiki:Group-$1-member|編輯]]）',
 	'centralauth-editgroup-members' => '成員表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2許可的用戶名單]]',
+	'centralauth-editgroup-restrictions' => '在此組處於活躍的維基站點：',
 	'centralauth-editgroup-noset' => '（無）',
 	'centralauth-editgroup-submit' => '保存更改到組許可',
 	'centralauth-editgroup-perms' => '已指定的許可:',
@@ -26048,6 +26057,17 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編輯]])',
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki（'' $2 ''）中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
+	'centralauth-editset' => '維基組',
+	'centralauth-editset-legend-rw' => '編輯或創建維基組',
+	'centralauth-editset-legend-ro' => '維基組列表',
+	'centralauth-editset-intro-rw' => '以下的維基組已創建。
+你可以觀看及更改它們，亦可以創建新的維基組',
+	'centralauth-editset-intro-ro' => '下面是現有的維基組列表',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|刪除]])',
+	'centralauth-editset-new' => '創建一個新維基組',
+	'centralauth-editset-notfound' => '維基組$1找不到',
+	'centralauth-editset-optin' => '選擇基於（包括僅指定維基）',
+	'centralauth-editset-legend-view' => '維基組$1',
 	'centralauth-editset-name' => '名字：',
 	'centralauth-editset-type' => '類型：',
 	'centralauth-editset-wikis' => 'Wiki：',
