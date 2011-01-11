@@ -521,6 +521,10 @@ class CentralAuthUser extends AuthPluginUser {
 		return $dbw->affectedRows() != 0;
 	}
 
+	/**
+	 * @param array $passwords
+	 * @return bool
+	 */
 	public function storeAndMigrate( $passwords = array() ) {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
@@ -823,6 +827,12 @@ class CentralAuthUser extends AuthPluginUser {
 		return false;
 	}
 
+	/**
+	 * @static
+	 * @throws MWException
+	 * @param  $list
+	 * @return array
+	 */
 	protected static function validateList( $list ) {
 		$unique = array_unique( $list );
 		$valid = array_intersect( $unique, self::getWikiList() );
@@ -835,6 +845,10 @@ class CentralAuthUser extends AuthPluginUser {
 		return $valid;
 	}
 
+	/**
+	 * @static
+	 * @return array
+	 */
 	public static function getWikiList() {
 		global $wgLocalDatabases;
 		static $wikiList;
@@ -1041,6 +1055,12 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->doCrosswikiSuppression( false, $wgUser->getName(), $reason );
 	}
 
+	/**
+	 * @param  $suppress
+	 * @param  $by
+	 * @param  $reason
+	 * @return void
+	 */
 	protected function doCrosswikiSuppression( $suppress, $by, $reason ) {
 		global $wgCentralAuthWikisPerSuppressJob;
 		$this->loadAttached();
@@ -1301,6 +1321,9 @@ class CentralAuthUser extends AuthPluginUser {
 		return $unattached;
 	}
 
+	/**
+	 * @return array
+	 */
 	function doListUnattached() {
 		$dbw = self::getCentralDB();
 
@@ -1322,6 +1345,10 @@ class CentralAuthUser extends AuthPluginUser {
 		return $dbs;
 	}
 
+	/**
+	 * @param  $wikiID
+	 * @return void
+	 */
 	function addLocalName( $wikiID ) {
 		$dbw = self::getCentralDB();
 		$this->lazyImportLocalNames();
@@ -1333,6 +1360,10 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'IGNORE' ) );
 	}
 
+	/**
+	 * @param  $wikiID
+	 * @return void
+	 */
 	function removeLocalName( $wikiID ) {
 		$dbw = self::getCentralDB();
 		$this->lazyImportLocalNames();
@@ -1343,6 +1374,9 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__ );
 	}
 
+	/**
+	 * @return bool
+	 */
 	function lazyImportLocalNames() {
 		$dbw = self::getCentralDB();
 
@@ -1588,16 +1622,26 @@ class CentralAuthUser extends AuthPluginUser {
 		return $data;
 	}
 
+	/**
+	 * @return
+	 */
 	function getEmail() {
 		$this->loadState();
 		return $this->mEmail;
 	}
 
+	/**
+	 * @return
+	 */
 	function getEmailAuthenticationTimestamp() {
 		$this->loadState();
 		return $this->mAuthenticationTimestamp;
 	}
 
+	/**
+	 * @param  $email
+	 * @return void
+	 */
 	function setEmail( $email ) {
 		$this->loadState();
 		if ( $this->mEmail !== $email ) {
@@ -1606,6 +1650,10 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 	}
 
+	/**
+	 * @param  $ts
+	 * @return void
+	 */
 	function setEmailAuthenticationTimestamp( $ts ) {
 		$this->loadState();
 		if ( $this->mAuthenticationTimestamp !== $ts ) {
@@ -1665,6 +1713,13 @@ class CentralAuthUser extends AuthPluginUser {
 		return $this->mPassword;
 	}
 
+	/**
+	 * @static
+	 * @param  $name
+	 * @param  $value
+	 * @param  $exp
+	 * @return void
+	 */
 	static function setCookie( $name, $value, $exp = -1 ) {
 		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieSecure,
 			$wgCookieExpiration, $wgCookieHttpOnly;
@@ -1700,6 +1755,10 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 	}
 
+	/**
+	 * @param  $name
+	 * @return void
+	 */
 	protected function clearCookie( $name ) {
 		self::setCookie( $name, '', - 86400 );
 	}
@@ -1768,6 +1827,9 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->saveSettings();
 	}
 
+	/**
+	 * @return
+	 */
 	function saveSettings() {
 		if ( !$this->mStateDirty ) return;
 		$this->mStateDirty = false;
@@ -1797,12 +1859,18 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->invalidateCache();
 	}
 
+	/**
+	 * @return
+	 */
 	function getGlobalGroups() {
 		$this->loadGroups();
 
 		return $this->mGroups;
 	}
 
+	/**
+	 * @return array
+	 */
 	function getGlobalRights() {
 		$this->loadGroups();
 
@@ -1820,6 +1888,10 @@ class CentralAuthUser extends AuthPluginUser {
 		return $rights;
 	}
 
+	/**
+	 * @param  $groups
+	 * @return void
+	 */
 	function removeFromGlobalGroups( $groups ) {
 		$dbw = self::getCentralDB();
 
@@ -1831,6 +1903,10 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->invalidateCache();
 	}
 
+	/**
+	 * @param  $groups
+	 * @return void
+	 */
 	function addToGlobalGroups( $groups ) {
 		$dbw = self::getCentralDB();
 
@@ -1851,6 +1927,10 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->invalidateCache();
 	}
 
+	/**
+	 * @static
+	 * @return array
+	 */
 	static function availableGlobalGroups() {
 		$dbr = self::getCentralSlaveDB();
 
@@ -1865,6 +1945,11 @@ class CentralAuthUser extends AuthPluginUser {
 		return $groups;
 	}
 
+	/**
+	 * @static
+	 * @param  $group
+	 * @return array
+	 */
 	static function globalGroupPermissions( $group ) {
 		$dbr = self::getCentralSlaveDB();
 
@@ -1880,6 +1965,10 @@ class CentralAuthUser extends AuthPluginUser {
 		return $rights;
 	}
 
+	/**
+	 * @param  $perm
+	 * @return bool
+	 */
 	function hasGlobalPermission( $perm ) {
 		$perms = $this->getGlobalRights();
 
@@ -1901,6 +1990,9 @@ class CentralAuthUser extends AuthPluginUser {
 		return $rights;
 	}
 
+	/**
+	 * @return void
+	 */
 	public function invalidateCache() {
 		if ( !$this->mDelayInvalidation ) {
 			wfDebugLog( 'CentralAuth', "Updating cache for global user {$this->mName}" );
@@ -1950,6 +2042,10 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->mDelayInvalidation = 1;
 	}
 
+	/**
+	 * @static
+	 * @return string
+	 */
 	static function memcKey( /*...*/ ) {
 		global $wgCentralAuthDatabase;
 		$args = func_get_args();
