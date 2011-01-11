@@ -141,6 +141,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			'prop' => array(
 				'Which properties to get:',
 				'  groups     - Get a list of global groups this user belongs to',
+				'  rights     - Get a list of global rights this user has',
 				'  merged     - Get a list of merged accounts',
 				'  unattached - Get a list of unattached accounts'
 			),
