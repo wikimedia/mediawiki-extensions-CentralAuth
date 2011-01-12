@@ -496,7 +496,7 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-editgroup-noset' => '{{identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
 	'centralauth-editset-name' => '{{identical|Name}}',
-	'centralauth-editset-type' => '{{identical|Type}}',
+	'centralauth-editset-type' => '{{Identical|Type}}',
 	'centralauth-editset-reason' => '{{identical|Reason}}',
 	'centralauth-editset-submit' => '{{Identical|Submit}}',
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
@@ -4058,11 +4058,20 @@ Es pot esborrar un grup retirant-li tots els drets.',
  * @author Sasan700
  */
 $messages['ce'] = array(
+	'mergeaccount' => 'ДIавазвалар цхьаьнатохаран хьал',
 	'centralauth-groupname' => 'Хьундуз Викимедиа',
+	'centralauth-complete' => 'ДIавазвалар цхьаьнатохар дика чакхдели!',
+	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
+	'centralauth' => 'Урхалла дар масхьа дIавазваларна',
 	'centralauth-admin-reason' => 'Бахьан:',
+	'globalusers' => 'Масхьара декъашхойн могIам',
 	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин кхолламашкахь {{int:Centralauth-groupname}}:',
+	'globalgrouppermissions' => 'Урхалла дар масхьара тобанашна',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|хийцам бар]])',
 	'centralauth-editgroup-reason' => 'Бахьан:',
 	'centralauth-editset-reason' => 'Бахьан:',
+	'right-globalgrouppermissions' => 'урхалла дар масхьара тобанашна',
 );
 
 /** Cebuano (Cebuano)
@@ -7017,6 +7026,7 @@ $messages['eu'] = array(
 	'centralauth-admin-username' => 'Erabiltzaile izena:',
 	'centralauth-admin-info-id' => 'Erabiltzailearen identifikazioa (ID):',
 	'centralauth-admin-info-registered' => 'Erregistratua:',
+	'centralauth-admin-info-editcount' => 'Edizio guztien kontagailua:',
 	'centralauth-admin-info-locked' => 'Babestua:',
 	'centralauth-admin-info-hidden' => 'Ezkutuko maila:',
 	'centralauth-admin-yes' => 'bai',
@@ -12097,6 +12107,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 /** Georgian (ქართული)
  * @author Alsandro
  * @author BRUTE
+ * @author Dawid Deutschland
  * @author Malafaya
  * @author გიორგიმელა
  */
@@ -12197,7 +12208,7 @@ $messages['ka'] = array(
 	'centralauth-admin-info-home' => 'მშობლიური ვიკი:',
 	'centralauth-admin-info-editcount' => 'სრული რედაქტირებათა მთვლელი:',
 	'centralauth-admin-info-locked' => 'დაიბლოკა:',
-	'centralauth-admin-info-hidden' => 'დამალულა:',
+	'centralauth-admin-info-hidden' => 'დამალულია:',
 	'centralauth-admin-nohome' => 'შეუძლებელია განსაზღვრა',
 	'centralauth-admin-yes' => 'ჰო',
 	'centralauth-admin-no' => 'არა',
@@ -12205,7 +12216,7 @@ $messages['ka'] = array(
 	'centralauth-admin-hidden-oversight' => 'დამალულია ზედამხედველის მიერ',
 	'centralauth-admin-list-legend-ro' => 'ადგილობრივი ანგარიშების სია',
 	'centralauth-admin-list-legend-rw' => 'ადგილობრივი ანგარიშების განცალკევება',
-	'centralauth-admin-unattached' => 'არაგაერთიანებული ანგარიშები',
+	'centralauth-admin-unattached' => 'დაუკავშირებელი',
 	'centralauth-admin-blocked' => 'დაბლოკილია $3 $4-მდე. მიზეზი: $2',
 	'centralauth-admin-blocked-indef' => 'სამუდამოდ დაიბლოკა. მიზეზი: $1',
 	'centralauth-admin-blocklog' => 'დაბლოკილთა აღრიცხვა',
@@ -21284,7 +21295,7 @@ $messages['sq'] = array(
 	'centralauth-editset-nouse' => '(asgjë)',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Sasa Stefanovic
@@ -21338,7 +21349,7 @@ $messages['sr-ec'] = array(
 	'centralauth-finish-text' => 'Уколико ови налози припадају вама, можете завршити процес спајања налога уписујући лозинку за остале налоге овде:',
 	'centralauth-finish-password' => 'Лозинка:',
 	'centralauth-finish-login' => 'Пријава',
-	'centralauth-finish-send-confirmation' => 'Пошаљи ми нову лозинку',
+	'centralauth-finish-send-confirmation' => 'Пошаљи лозинку на е-пошту',
 	'centralauth-finish-problems' => 'Имате проблем, или ви нисте власник осталих налога? [[meta:Help:Unified login problems|Помоћ]]...',
 	'centralauth-finish-noconfirms' => 'Нема налога који би могли бити оверени помоћу ове лозинке.',
 	'centralauth-finish-incomplete' => 'Неколико налога је спојено коришћењем ове лозинке. Остали налози још увек нису оверени.',
@@ -21365,7 +21376,7 @@ $messages['sr-ec'] = array(
 Разлог: $2',
 	'centralauth-admin-blocked-indef' => 'Трајно блокиран.
 Разлог: $1',
-	'centralauth-admin-blocklog' => 'Историјат забране приступа',
+	'centralauth-admin-blocklog' => 'историјат блокирања',
 	'centralauth-admin-list-localwiki' => 'Локална вики',
 	'centralauth-admin-list-attached-on' => 'Накачен на',
 	'centralauth-admin-list-method' => 'Метода',
@@ -21492,7 +21503,7 @@ $messages['sr-ec'] = array(
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Liangent
  * @author Michaello
  * @author Жељко Тодоровић
@@ -21569,7 +21580,7 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 Razlog: $2',
 	'centralauth-admin-blocked-indef' => 'Trajno blokiran.
 Razlog: $1',
-	'centralauth-admin-blocklog' => 'istorija blokiranja',
+	'centralauth-admin-blocklog' => 'istorijat blokiranja',
 	'centralauth-admin-list-localwiki' => 'Lokalna viki',
 	'centralauth-admin-list-attached-on' => 'Nakačen na',
 	'centralauth-admin-list-method' => 'Metoda',
@@ -25393,7 +25404,7 @@ $messages['yue'] = array(
 	'centralauth-merge-method-password' => '已用密碼確認',
 	'centralauth-merge-method-admin' => '管理合併戶口',
 	'centralauth-merge-method-new' => '新戶口',
-	'centralauth-merge-method-login' => '已用登入確認',
+	'centralauth-merge-method-login' => '登入時開戶',
 	'centralauth-finish-title' => '完成合併',
 	'centralauth-finish-text' => '如果呢啲戶口係屬於你嘅，你可以響呢度輸入其它戶口嘅密碼，以完成登入統一嘅程序:',
 	'centralauth-finish-password' => '密碼:',
