@@ -10201,6 +10201,8 @@ Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anb
 	'centralauth-complete' => 'Fizyon kont yo fini !',
 	'centralauth-incomplete' => 'Fizyon kont yo poko fini !',
 	'centralauth-complete-text' => 'Kounye a, ou mèt konekte w nan nenpòt pwojè wiki {{MediaWiki:Centralauth-groupname}} a san ou pa bezwen kreye yon nouvo kont.',
+	'centralauth-logout-progress' => 'Dekoneksyon de lòt pwojè {{int:Centralauth-groupname}} yo:',
+	'centralauth-logout-no-others' => 'Ou te otomatikman dekonekte de lòt pwojè {{int:Centralauth-groupname}} yo.',
 );
 
 /** Hungarian (Magyar)
@@ -16721,7 +16723,7 @@ Du kan ikkje slå saman kontoane dine medan den kontoen er blokkert.',
 	'centralauth-attach-success' => 'Kontoen vart kopla til hovudkontoen.',
 	'centralauth' => 'Administrasjon av globale brukarkontoar',
 	'centralauth-admin-intro' => 'Dette oppsettet kan verta nytta for å administrera globale kontoar.',
-	'centralauth-admin-manage' => 'Handsama brukardata',
+	'centralauth-admin-manage' => 'Handsam brukardata',
 	'centralauth-admin-username' => 'Brukarnamn:',
 	'centralauth-admin-lookup-ro' => 'Vis brukarinformasjon',
 	'centralauth-admin-permission' => 'Berre forvaltarar kan slå saman kontoane til andre for dei.',
@@ -21265,7 +21267,40 @@ $messages['sq'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Shkrin shumë llogari]] në një përdorues të vetëm',
 	'centralauth-merge-denied' => 'Na vjen keq, ju nuk keni leje për të hyrë në këtë faqe.',
 	'centralauth-merge-notlogged' => 'Ju lutemi <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} identifikohuni]</span> për të kontrolluar nëse llogaritë tuaja janë shkrirë plotësisht.',
+	'centralauth-merge-welcome' => "'''Llogaria juaj e përdoruesit nuk është shkrirë ende tek sistemi i hyrjes së unifikuar i {{MediaWiki:Centralauth-groupname}}.'''
+
+Nëse zgjidhni të shkrini llogaritë tuaja, ju do të keni mundësi të përdorni të njëjtin emër dhe fjalëkalim për të hyrë në të gjithë wiki-t e {{MediaWiki:Centralauth-groupname}} në të gjitha gjuhët e mundshme.
+
+Nëse dikush tjetër ka marrë emrin tuaj në një sajt tjetër, kjo nuk do ta shqetësojë atë, por do t'ju japë një mundësi të punoni me të ose me një administrues më vonë.",
+	'centralauth-merge-step1-title' => 'Filloni unifikimin e hyrjes brenda',
+	'centralauth-merge-step1-detail' => 'Ju lutemi shkruani fjalëkalimin e llogarisë suaj.
+Fjalëkalimi dhe adresa juaj e emailit do të kontrollohen nëse përputhen me llogaritë në wiki-t e tjerë.
+Asnjë ndryshim nuk do të ndodhë deri sa të konfirmoni se gjërat janë në rregull.',
+	'centralauth-merge-step1-submit' => 'Konfirmoni informacionin e hyrjes brenda',
+	'centralauth-merge-step2-title' => 'Konfirmoni më shumë llogari',
+	'centralauth-merge-step2-detail' => "Disa nga llogaritë nuk mund të përputheshin automatikisht tek wiki ku keni krijuar llogarinë.
+Nëse këto llogari ju përkasin juve, ju mund t'i konfirmoni që janë tuajat duke dhënë fjalëkalimin për to.",
+	'centralauth-merge-step2-submit' => 'Konfirmoni informacionin e hyrjes brenda',
+	'centralauth-login-global' => 'Më identifiko në nivel global',
+	'centralauth-merge-dryrun-complete' => 'Të gjitha llogaritë ekzistuese mund të unifikohen automatikisht!
+
+Asnjë ndryshim nuk ka ndodhur tek llogaritë tuaja ende.',
+	'centralauth-merge-dryrun-incomplete' => "Ju jeni të vendosur të vazhdoni, por disa llogari nuk mund të verifikoheshin automatikisht dhe nuk do të shkrihen menjëherë.
+Ju do të kani mundësinë t'i shkrini ato më vonë.
+
+Asnjë ndryshim nuk ka ndodhur tek llogaritë ende.",
 	'centralauth-merge-dryrun-or' => "'''ose'''",
+	'centralauth-merge-dryrun-home' => 'Sistemi i shkrirjes nuk mund ta konfirmonte se ju jeni pronari i llogarisë tek wiki ku keni krijuar llogarinë e parë.
+
+Një tjetër wiki u zbulua si wiki ku keni krijuar llogarinë tuaj të parë; ndiqni lidhjen e mëposhtme dhe hyni atje për të përfunduar shkrirjen e llogarive tuaja.',
+	'centralauth-merge-step3-title' => 'Krijoni llogarinë e unifikuar',
+	'centralauth-merge-step3-detail' => 'Ju jeni gati të krijoni llogarinë tuaj të unifikuar, me wiki-t e mëposhtëm të bashkëngjitur:',
+	'centralauth-merge-step3-submit' => 'Unifikoni llogaritë',
+	'centralauth-merge-no-accounts' => 'Asnjë llogari që përputhet me emrin tuaj nuk u gjet në tabelën përcjellëse qëndrore të llogarive!
+Baza e të dhënave duhet të jetë e korruptuar.',
+	'centralauth-merge-home-password' => 'LLogaria tek wiki ku keni krijuar llogarinë e parë ka një fjalëkalim tjetër nga ai që shkruat ju.
+Ju lutemi shkruan fjalëkalimin për wikin ku keni krijuar llogarinë e parë.',
+	'centralauth-complete' => 'Unifikimi i hyrjes përfundoi!',
 	'centralauth-list-home-title' => 'Faqja Kryesore',
 	'centralauth-foreign-link' => 'Përdoruesi $ 1 nga $ 2',
 	'centralauth-merge-method-primary' => 'Faqja Kryesore',
