@@ -5796,6 +5796,7 @@ $messages['ee'] = array(
  * @author Consta
  * @author Crazymadlover
  * @author Crochet.david
+ * @author Evropi
  * @author Flyax
  * @author Geraki
  * @author Glavkos
@@ -5883,7 +5884,7 @@ $messages['el'] = array(
 	'centralauth-finish-title' => 'Ολοκλήρωση της συγχώνευσης',
 	'centralauth-finish-text' => 'Εάν αυτοί οι λογαριασμοί ανήκουν πραγματικά σε σας, μπορείτε να ολοκληρώσετε απλά την διαδικασία ενοποίησης λογαριασμών πληκτρολογώντας εδώ τους κωδικούς πρόσβασης των άλλων λογαριασμών:',
 	'centralauth-finish-password' => 'Κωδικός:',
-	'centralauth-finish-login' => 'Σύνδεση',
+	'centralauth-finish-login' => 'Είσοδος',
 	'centralauth-finish-send-confirmation' => 'Αποστολή κωδικού',
 	'centralauth-finish-problems' => 'Συναντήσατε προβλήματα ή δεν είστε ο ιδιοκτήτης των λογαριασμών που ακολουθούν; [[meta:Help:Unified login problems|Πώς να βρείτε βοήθεια]]...',
 	'centralauth-finish-noconfirms' => 'Κανένας λογαριασμός δεν μπορούσε να επιβεβαιωθεί χρησιμοποιώντας αυτόν τον κωδικό.',
@@ -21522,7 +21523,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-type' => 'Тип:',
 	'centralauth-editset-wikis' => 'Викији:',
 	'centralauth-editset-reason' => 'Разлог:',
-	'centralauth-editset-submit' => 'унеси',
+	'centralauth-editset-submit' => 'Пошаљи',
 	'centralauth-editset-submit-delete' => 'Обриши',
 	'centralauth-editset-badname' => 'Неисправно или празно име скупа.',
 	'centralauth-editset-badtype' => 'Непознат тип скупа.',
@@ -25881,7 +25882,7 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step2-title' => '確認更多帳號',
 	'centralauth-merge-step2-detail' => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。',
 	'centralauth-merge-step2-submit' => '確認登入資料',
-	'centralauth-login-global' => '把我在全域都登陸',
+	'centralauth-login-global' => '全域登入',
 	'centralauth-merge-dryrun-complete' => '所有已存在的的帳號都能被自動整合！
 
 目前尚未對您的帳號進行任何修改。',
@@ -25895,13 +25896,13 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step3-title' => '建立整合帳號',
 	'centralauth-merge-step3-detail' => '您已經準備好在已加入的計劃中建立一個整合帳號：',
 	'centralauth-merge-step3-submit' => '整合帳號',
-	'centralauth-merge-no-accounts' => '在中央賬戶追蹤表中找不到配合您名字的賬戶！
-該數據庫必定損壞。',
-	'centralauth-merge-home-password' => '這個賬戶的自家wiki（列示如下）跟您輸入的密碼不同。
+	'centralauth-merge-no-accounts' => '在中央帳戶追蹤表中找不到配合您名字的帳戶！
+該資料庫必定損壞。',
+	'centralauth-merge-home-password' => '這個帳戶的自家wiki（列示如下）跟您輸入的密碼不同。
 請輸入自家wiki的密碼。',
 	'centralauth-complete' => '帳號整合完成！',
 	'centralauth-incomplete' => '帳號整合未完成！',
-	'centralauth-complete-text' => '您現在可以登錄到{{MediaWiki:Centralauth-groupname}}的任何wiki站點，而無需創建一個新的帳號。',
+	'centralauth-complete-text' => '您現在可以登入到{{MediaWiki:Centralauth-groupname}}的任何wiki站點，而無需建立一個新的帳號。',
 	'centralauth-incomplete-text' => '當您的帳號被整合後，您將能夠登錄到{{MediaWiki:Centralauth-groupname}}的任何一個wiki站點，而無需建立一個新的帳號。',
 	'centralauth-not-owner-text' => '使用者名稱："$1"已自動分配給$2上的帳號。
 
@@ -25925,7 +25926,7 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-method-empty' => '沒有任何貢獻',
 	'centralauth-merge-method-mail' => '經電子郵件確認',
 	'centralauth-merge-method-password' => '經密碼確認',
-	'centralauth-merge-method-admin' => '管埋整合帳號',
+	'centralauth-merge-method-admin' => '管理整合帳號',
 	'centralauth-merge-method-new' => '新帳號',
 	'centralauth-merge-method-login' => '經登入確認',
 	'centralauth-merge-method-primary-desc' => '這是該帳戶在維基系統中的最初合併。注意，它可能不同於真正維基的該用戶。',
@@ -25934,8 +25935,8 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-method-password-desc' => '表示該本地帳戶合併，因為用戶指定一個有效的密碼。',
 	'centralauth-merge-method-admin-desc' => '表示該本地帳戶由監管員手動合併。
 因為安全原因，這項功能已被禁用。',
-	'centralauth-merge-method-new-desc' => '表示全域帳戶時自動創建本地帳戶已創建。',
-	'centralauth-merge-method-login-desc' => '表示該本地帳戶登錄時自動創建。',
+	'centralauth-merge-method-new-desc' => '表示全域帳戶時自動建立本地帳戶已建立。',
+	'centralauth-merge-method-login-desc' => '表示該本地帳戶登入時自動建立。',
 	'centralauth-finish-title' => '完成整合',
 	'centralauth-finish-text' => '如果這些帳號屬於您，請輸入這些帳號的密碼，以完成帳號整合：',
 	'centralauth-finish-password' => '密碼：',
@@ -25955,12 +25956,12 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-intro' => '此介面用於全域帳號的管理。',
 	'centralauth-admin-manage' => '管理使用者資料',
 	'centralauth-admin-username' => '使用者名稱：',
-	'centralauth-admin-lookup-ro' => '查看用戶信息',
+	'centralauth-admin-lookup-ro' => '檢視用戶資訊',
 	'centralauth-admin-lookup-rw' => '管理用戶帳戶',
 	'centralauth-admin-permission' => '只有監管員可以為用戶整合帳號。',
 	'centralauth-admin-no-unified' => '沒有這個整合帳戶名稱。',
 	'centralauth-admin-info-header' => '全域帳戶資訊',
-	'centralauth-admin-info-id' => '用戶編號：',
+	'centralauth-admin-info-id' => '使用者ID：',
 	'centralauth-admin-info-registered' => '登錄時間：',
 	'centralauth-admin-info-home' => '主維基',
 	'centralauth-admin-info-editcount' => '編輯共計：',
@@ -25990,17 +25991,17 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-already-unmerged' => '正在跳過$1，已經取消合併',
 	'centralauth-admin-unmerge-success' => '已經取消合併$1個帳戶',
 	'centralauth-admin-delete-title' => '刪除帳戶',
-	'centralauth-admin-delete-description' => '刪除個全域帳戶會刪除任何的全域參數設置，解除全部附加上去的帳戶，保留全域名稱給另一位用戶使用。
-全部的本地戶口會繼續存在。
+	'centralauth-admin-delete-description' => '刪除個全域帳戶會刪除任何的全域偏好設定，解除全部附加上去的帳戶，保留全域名稱給另一位用戶使用。
+全部的本地帳戶會繼續存在。
 在合併之前已經建立了的本地帳戶會還原他們以前的值。',
 	'centralauth-admin-delete-button' => '刪除這個帳戶',
 	'centralauth-admin-delete-success' => '已經刪除"<nowiki>$1</nowiki>"的全域帳戶',
 	'centralauth-admin-nonexistent' => '全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-admin-delete-nonexistent' => '錯誤: 該全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-token-mismatch' => '對不起，由於階段資料遺失，我們不可以處理你的表格遞交',
-	'centralauth-admin-reason' => '理由:',
+	'centralauth-admin-reason' => '理由：',
 	'centralauth-admin-reason-other' => '其它／附加的理由：',
-	'centralauth-admin-status' => '設置全域帳號狀態',
+	'centralauth-admin-status' => '設定全域帳號狀態',
 	'centralauth-admin-status-intro' => '你可以使用這個表單來更改這個全域帳號的狀態',
 	'centralauth-admin-status-locked' => '鎖定：',
 	'centralauth-admin-status-locked-no' => '帳戶未鎖定',
@@ -26009,15 +26010,15 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-status-hidden-no' => '帳戶不是隱藏',
 	'centralauth-admin-status-hidden-list' => '帳戶在公眾名單是隱藏的',
 	'centralauth-admin-status-hidden-oversight' => '帳戶隱藏操作完成',
-	'centralauth-admin-status-submit' => '設置狀態',
+	'centralauth-admin-status-submit' => '設定狀態',
 	'centralauth-admin-status-nonexistent' => '錯誤：全域帳號“<nowiki>$1</nowiki>”不存在。',
 	'centralauth-admin-setstatus-success' => '你已經成功地改變了這個全域帳號的狀態。',
 	'centralauth-admin-status-reasons' => '* 一般
 ** 破壞
 * 一般封禁和隱藏用戶名的原因
 ** 不當用戶名
-** 不當濫用個人信息',
-	'centralauth-admin-logsnippet' => '前個全域戶口的變化',
+** 不當濫用個人資訊',
+	'centralauth-admin-logsnippet' => '前個全域帳戶的變化',
 	'centralauth-admin-suppressreason' => '在全域鎮壓$1，原因:$2',
 	'globalusers' => '全域帳戶名單',
 	'centralauth-listusers-locked' => '鎖定',
@@ -26040,10 +26041,10 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-manage' => '管理您的全域帳戶',
 	'centralauth-prefs-view' => '查看全域用戶信息',
 	'centralauth-renameuser-merged' => '用戶$1已經遷移至整合登入系統。改它的名字會令到本地用戶自全域中遷出。',
-	'centralauth-renameuser-reserved' => '用戶$2已經預留給全域賬戶使用。',
+	'centralauth-renameuser-reserved' => '用戶$2已經預留給全域帳戶使用。',
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
 	'centralauth-account-exists' => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
-	'centralauth-login-progress' => '正在為您登錄到{{int:Centralauth-groupname}}的其它計劃：',
+	'centralauth-login-progress' => '正在為您登入到{{int:Centralauth-groupname}}的其它計劃：',
 	'centralauth-logout-progress' => '正在為您登出{{int:Centralauth-groupname}}的其它計劃：',
 	'centralauth-login-no-others' => '你已經自動登錄到{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-logout-no-others' => '你已經自動登出{{int:Centralauth-groupname}}的其他項目。',
@@ -26056,7 +26057,7 @@ $messages['zh-hant'] = array(
 	'centralauth-log-entry-hide' => '隱藏全域帳戶 "$1"',
 	'centralauth-log-entry-unhide' => '解除隱藏全域帳戶 "$1"',
 	'centralauth-log-entry-lockandhide' => '鎖定並隱藏全域帳戶"$1"',
-	'centralauth-log-entry-chgstatus' => '更改全域帳號“$1”：設置$2；取消設置$3',
+	'centralauth-log-entry-chgstatus' => '更改全域帳號“$1”：設定$2；取消設定$3',
 	'centralauth-log-status-locked' => '已鎖定',
 	'centralauth-log-status-hidden' => '隱藏',
 	'centralauth-log-status-oversighted' => '隱藏',
@@ -26067,14 +26068,14 @@ $messages['zh-hant'] = array(
 	'centralauth-rightslog-entry-groupperms2' => '已經更改$1的成員組許可。加入$2；移除$3',
 	'centralauth-rightslog-entry-groupperms3' => '已更改限制維基組$1，由$2已改成$3。',
 	'centralauth-rightslog-header' => '這個日誌包含了全域組之動作：組及許可更改',
-	'centralauth-rightslog-entry-newset' => '創建了$2維基組$1，並包括以下的維基站點：$3',
+	'centralauth-rightslog-entry-newset' => '建立了$2維基組$1，並包括以下的維基站點：$3',
 	'centralauth-rightslog-entry-setrename' => '將維基組"$2"重新命名為"$1"',
 	'centralauth-rightslog-entry-setnewtype' => '已將"$1"的類型由$2改為$3',
 	'centralauth-rightslog-entry-setchange' => '已更改在$1的維基：增加了$2，移除了$3',
 	'centralauth-rightslog-entry-deleteset' => '已刪除維基組$1',
 	'centralauth-rightslog-set-optin' => '選擇的基礎',
 	'centralauth-rightslog-set-optout' => '基於的退出',
-	'autologin' => '自動登錄',
+	'autologin' => '自動登入',
 	'centralauth-autologin-desc' => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
 	該中央登入系統會利用圖片連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
 	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
@@ -26109,32 +26110,34 @@ $messages['zh-hant'] = array(
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki（'' $2 ''）中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
 	'centralauth-editset' => '維基組',
-	'centralauth-editset-legend-rw' => '編輯或創建維基組',
+	'centralauth-editset-legend-rw' => '編輯或建立維基組',
 	'centralauth-editset-legend-ro' => '維基組列表',
-	'centralauth-editset-intro-rw' => '以下的維基組已創建。
-你可以觀看及更改它們，亦可以創建新的維基組',
+	'centralauth-editset-intro-rw' => '以下的維基組已建立。
+你可以觀看及更改它們，亦可以建立新的維基組',
 	'centralauth-editset-intro-ro' => '下面是現有的維基組列表',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|刪除]])',
-	'centralauth-editset-new' => '創建一個新維基組',
+	'centralauth-editset-new' => '建立一個新維基組',
 	'centralauth-editset-notfound' => '維基組$1找不到',
 	'centralauth-editset-optin' => '選擇基於（包括僅指定維基）',
 	'centralauth-editset-legend-view' => '維基組$1',
+	'centralauth-editset-subtitle' => '[[Special:WikiSets|列表集]]',
 	'centralauth-editset-name' => '名字：',
 	'centralauth-editset-type' => '類型：',
 	'centralauth-editset-wikis' => 'Wiki：',
 	'centralauth-editset-reason' => '原因：',
 	'centralauth-editset-submit' => '提交',
 	'centralauth-editset-submit-delete' => '刪除',
-	'centralauth-editset-nowikis' => '沒有指定wiki。',
+	'centralauth-editset-nowikis' => '無指定的wiki。',
 	'centralauth-editset-nouse' => '（無）',
 	'centralauth-editset-usage' => '組中的用戶：',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|維基$1不存在|以下維基不存在：$1}}',
 	'centralauth-editset-success' => '成功更改維基集。',
 	'centralauth-editset-success-delete' => '成功刪除這個維基設定。',
 	'centralauth-editset-return' => '返回到主視圖',
 	'right-globalgroupmembership' => '編輯成員至全域組',
 	'right-centralauth-unmerge' => '取消合併本地帳戶',
 	'right-centralauth-lock' => '鎖定或隱藏全域帳戶',
-	'right-centralauth-oversight' => '廢止全球帳戶',
+	'right-centralauth-oversight' => '廢止全域帳戶',
 	'right-centralauth-merge' => '合併他們的帳戶',
 	'right-globalgrouppermissions' => '管理全域群組',
 );
