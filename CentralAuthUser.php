@@ -1805,6 +1805,16 @@ class CentralAuthUser extends AuthPluginUser {
 
 		self::deleteSession();
 	}
+	
+	/**
+	 * Get the domain parameter for setting a global cookie.
+	 * This allows other extensions to easily set global cookies without directly relying on 
+	 * $wgCentralAuthCookieDomain (in case CentralAuth's implementation changes at some point).
+	 */
+	static function getCookieDomain() {
+		global $wgCentralAuthCookieDomain;
+		return $wgCentralAuthCookieDomain;
+	}
 
 	/**
 	 * Check a global auth token against the one we know of in the database.
