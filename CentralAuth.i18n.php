@@ -7125,11 +7125,11 @@ $messages['fa'] = array(
 
 اگر نام کاربری شما قبلاً در پروژهٔ دیگری توسط شخص دیگری استفاده شده باشد، این کار باعث مزاحمت برای آن‌ها نمی‌شود بلکه به شما این امکان را می‌دهد که بعداً این مشکل را با کمک آن‌ها یا یک مدیر حل کنید.",
 	'centralauth-merge-step1-title' => 'آغاز یکی کردن حساب‌های کاربری',
-	'centralauth-merge-step1-detail' => 'کلمه عبور و نشانی پست الکترونیکی ثبت‌شده توسط شما با حساب‌های کاربری دیگر ویکی‌ها مقایسه می‌شود تا از مطابقت آن‌ها اطمینان حاصل گردد. تا زمانی که شما تایید نکنید که همه چیز درست است، تغییر صورت نمی‌گیرد.',
-	'centralauth-merge-step1-submit' => 'تایید اطلاعات ورود به سامانه',
-	'centralauth-merge-step2-title' => 'تایید حساب‌های کاربری بیشتر',
-	'centralauth-merge-step2-detail' => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند، شما می‌توانید این مساله را با وارد کردن کلمه عبور این حساب‌ها تایید کنید.',
-	'centralauth-merge-step2-submit' => 'تایید اطلاعات ورود به سامانه',
+	'centralauth-merge-step1-detail' => 'کلمه عبور و نشانی پست الکترونیکی ثبت‌شده توسط شما با حساب‌های کاربری دیگر ویکی‌ها مقایسه می‌شود تا از مطابقت آن‌ها اطمینان حاصل گردد. تا زمانی که شما تأیید نکنید که همه چیز درست است، تغییر صورت نمی‌گیرد.',
+	'centralauth-merge-step1-submit' => 'تأیید اطلاعات ورود به سامانه',
+	'centralauth-merge-step2-title' => 'تأیید حساب‌های کاربری بیشتر',
+	'centralauth-merge-step2-detail' => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند، شما می‌توانید این مساله را با وارد کردن کلمه عبور این حساب‌ها تأیید کنید.',
+	'centralauth-merge-step2-submit' => 'تأیید اطلاعات ورود به سامانه',
 	'centralauth-login-global' => 'مرا به طور سراسری وارد سامانه کن',
 	'centralauth-merge-dryrun-complete' => 'تمامی حساب‌های کاربری موجود را می‌توان به طور خودکار یکی کرد!
 
@@ -7139,7 +7139,7 @@ $messages['fa'] = array(
 
 هنوز تغییری در حساب‌های کاربری شما داده نشده‌است.',
 	'centralauth-merge-dryrun-or' => "'''یا'''",
-	'centralauth-merge-dryrun-home' => 'سامانه انتقال نمی‌تواند تایید کند که شما صاحب حساب کاربری مورد نظر در ویکی خانه هستید.
+	'centralauth-merge-dryrun-home' => 'سامانه انتقال نمی‌تواند تأیید کند که شما صاحب حساب کاربری مورد نظر در ویکی خانه هستید.
 
 یک ویکی دیگر به عنوان ویکی خانه برای حساب‌ کاربری شما در نظر گرفته شد؛ پیوند زیر را دنبال کنید تا به سامانه وارد شوید و انتقال حساب کاربری خود را به پایان برسانید.',
 	'centralauth-merge-step3-title' => 'ایجاد حساب مشترک',
@@ -7170,8 +7170,8 @@ $messages['fa'] = array(
 	'centralauth-foreign-link' => 'حساب کاربری $1 در $2',
 	'centralauth-merge-method-primary' => 'ویکی خانه',
 	'centralauth-merge-method-empty' => 'بدون مشارکت',
-	'centralauth-merge-method-mail' => 'تایید شده توسط پست الکترونیکی',
-	'centralauth-merge-method-password' => 'تایید شده توسط گذرواژه',
+	'centralauth-merge-method-mail' => 'تأیید شده توسط رایانامه',
+	'centralauth-merge-method-password' => 'تأیید شده توسط گذرواژه',
 	'centralauth-merge-method-admin' => 'حساب کاربری ادغام شده توسط مدیر',
 	'centralauth-merge-method-new' => 'حساب کاربری جدید',
 	'centralauth-merge-method-login' => 'ایجاد شده توسط ورود به سامانه',
@@ -7190,12 +7190,12 @@ $messages['fa'] = array(
 	'centralauth-finish-login' => 'ورود به سامانه',
 	'centralauth-finish-send-confirmation' => 'کلمه عبور پست الکترونیکی',
 	'centralauth-finish-problems' => 'دچار مشکلی شده‌اید یا صاحب حساب‌های کاربری دیگری که فهرست شده‌اند نیستید؟ [[meta:Help:Unified login problems|راهنما را بخوانید]]...',
-	'centralauth-finish-noconfirms' => 'هیچ حساب کاربری با این گذرواژه قابل تایید نیست.',
+	'centralauth-finish-noconfirms' => 'هیچ حساب کاربری با این گذرواژه قابل تأیید نیست.',
 	'centralauth-finish-incomplete' => 'چندین حساب کاربری توسط این گذرواژه یکی شدند.
-دیگر حساب‌های کاربری هنوز تایید نشده‌اند.',
+دیگر حساب‌های کاربری هنوز تأیید نشده‌اند.',
 	'centralauth-merge-attempt' => "'''مطابقت دادن کلمه عبور وارد شده با حساب‌های ادغام‌نشدهٔ باقی‌مانده...'''",
 	'centralauth-attach-list-attached' => 'حساب کاربری مشترک «$1» شامل این حساب‌های کاربری می‌شود:',
-	'centralauth-attach-title' => 'تایید حساب کاربری',
+	'centralauth-attach-title' => 'تأیید حساب کاربری',
 	'centralauth-attach-text' => 'این حساب کاربری هنوز به حساب کاربری مشترک انتقال داده نشده‌است. اگر حساب کاربری مشترک متعلق به شما است، می‌توانید این حساب را هم با وارد کردن کلمه عبور آن به حساب کاربری مشترک متصل کنید:',
 	'centralauth-attach-submit' => 'انتقال حساب کاربری',
 	'centralauth-attach-success' => 'حساب کاربری به حساب کاربری مشترک انتقال داده شد.',
@@ -7279,12 +7279,12 @@ $messages['fa'] = array(
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|سال|سال}} قبل',
 	'centralauth-prefs-status' => 'وضعیت حساب کاربری مشترک',
 	'centralauth-prefs-not-managed' => 'عدم استفاده از حساب کاربری مشترک',
-	'centralauth-prefs-unattached' => 'تایید نشده',
+	'centralauth-prefs-unattached' => 'تأیید نشده',
 	'centralauth-prefs-complete' => 'همه‌چیز مرتب است!',
 	'centralauth-prefs-migration' => 'در حال انتقال',
 	'centralauth-prefs-count-attached' => 'حساب کاربری شما در $1 {{PLURAL:$1|پروژه|پروژه}} فعال است.',
-	'centralauth-prefs-count-unattached' => 'حساب‌های کاربری تایید نشده‌ای با نام شما در $1 {{PLURAL:$1|پروژه|پروژه}} باقی می‌مانند.',
-	'centralauth-prefs-detail-unattached' => 'وبگاه این پروژه مورد تایید برای استفاده از حساب کاربری مشترک قرار نگرفته‌است.',
+	'centralauth-prefs-count-unattached' => 'حساب‌های کاربری تأیید نشده‌ای با نام شما در $1 {{PLURAL:$1|پروژه|پروژه}} باقی می‌مانند.',
+	'centralauth-prefs-detail-unattached' => 'وبگاه این پروژه مورد تأیید برای استفاده از حساب کاربری مشترک قرار نگرفته‌است.',
 	'centralauth-prefs-manage' => 'مدیریت حساب کاربری مشترک',
 	'centralauth-prefs-view' => 'مشاهدهٔ اطلاعات سراسری کاربر',
 	'centralauth-renameuser-merged' => 'کاربر $1 به سامانه ورود یکپارچه منتقل شده‌است.
@@ -12389,6 +12389,7 @@ $messages['ka'] = array(
 	'centralauth-editset-success' => 'ვიკი-ნაკრები წარმატებით შეიცვალა.',
 	'centralauth-editset-success-delete' => 'ვიკი-ნაკრები წარმატებით წაიშალა.',
 	'centralauth-editset-return' => 'მთავარ არეზე დაბრუნება',
+	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
 	'right-centralauth-merge' => 'მათი ანგარიშის გაერთიანება',
 	'right-globalgrouppermissions' => 'გლობალური ჯგუფების მართვა',
@@ -21510,7 +21511,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-none-selected' => 'Ниједан налог није означен за измену.',
 	'centralauth-admin-already-unmerged' => 'Прескачем $1, већ је растављен.',
 	'centralauth-admin-unmerge-success' => 'Успешно {{PLURAL:$1|раздвојен|раздвојено}} $1 {{PLURAL:$1|налог|налога}}',
-	'centralauth-admin-delete-title' => 'Обриши налог',
+	'centralauth-admin-delete-title' => 'Брисање налога',
 	'centralauth-admin-delete-button' => 'Обриши овај налог',
 	'centralauth-admin-delete-success' => 'Успешно обрисан глобални налог за „<nowiki>$1</nowiki>”',
 	'centralauth-admin-nonexistent' => 'Не постоји глобални налог за „<nowiki>$1</nowiki>”',
@@ -25946,6 +25947,7 @@ $messages['zh-hans'] = array(
  * @author Jasonzhuocn
  * @author Liangent
  * @author Mark85296341
+ * @author Waihorace
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -26205,7 +26207,11 @@ $messages['zh-hant'] = array(
 	'centralauth-editset-new' => '建立一個新維基組',
 	'centralauth-editset-notfound' => '維基組$1找不到',
 	'centralauth-editset-optin' => '選擇基於（包括僅指定維基）',
+	'centralauth-editset-optout' => '選擇出基於（包括所有的維基，除了指定）',
+	'centralauth-editset-legend-edit' => '正在編輯維基組$1',
 	'centralauth-editset-legend-view' => '維基組$1',
+	'centralauth-editset-legend-new' => '創建新的維基組',
+	'centralauth-editset-legend-delete' => '正在刪除維基組$1',
 	'centralauth-editset-subtitle' => '[[Special:WikiSets|列表集]]',
 	'centralauth-editset-name' => '名字：',
 	'centralauth-editset-type' => '類型：',
@@ -26213,6 +26219,9 @@ $messages['zh-hant'] = array(
 	'centralauth-editset-reason' => '原因：',
 	'centralauth-editset-submit' => '提交',
 	'centralauth-editset-submit-delete' => '刪除',
+	'centralauth-editset-badname' => '空的或不合法的組名',
+	'centralauth-editset-badtype' => '無效的類型。',
+	'centralauth-editset-setexists' => '已存在同名組',
 	'centralauth-editset-nowikis' => '無指定的wiki。',
 	'centralauth-editset-nouse' => '（無）',
 	'centralauth-editset-usage' => '組中的用戶：',
