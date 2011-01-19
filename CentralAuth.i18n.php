@@ -7109,6 +7109,7 @@ $messages['ext'] = array(
  * @author Huji
  * @author Ladsgroup
  * @author Mardetanha
+ * @author Mjbmr
  * @author Wayiran
  */
 $messages['fa'] = array(
@@ -7161,7 +7162,7 @@ $messages['fa'] = array(
 	'centralauth-error-locked' => 'شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اطلاعات بیشتر دربارهٔ '''حساب کاربری مشترک''']]...''",
 	'centralauth-list-home-title' => 'ویکی اصلی',
-	'centralauth-list-home-dryrun' => 'گذرواژه و رایانشانی (نشانی رایانامه) تنظیم شده در این ویکی، برای حساب یکپارچهٔ شما مورد استفاده قرار خواهد گرفت.',
+	'centralauth-list-home-dryrun' => 'گذرواژه و نشانی پست الکترونیکی تنظیم شده در این ویکی، برای حساب یکپارچهٔ شما مورد استفاده قرار خواهد گرفت.',
 	'centralauth-list-attached-title' => 'حساب‌های کاربری غیرمتصل',
 	'centralauth-list-attached' => 'حساب کاربری «$1» در هر یک از پروژه‌های زیر به طور خودکار به حساب کاربری مشترک شما متصل شده‌است:',
 	'centralauth-list-attached-dryrun' => 'حساب کاربری «$1» در هر یک از پروژه‌های زیر به طور خودکار به حساب کاربری مشترک شما متصل خواهد شد:',
@@ -7170,7 +7171,7 @@ $messages['fa'] = array(
 	'centralauth-foreign-link' => 'حساب کاربری $1 در $2',
 	'centralauth-merge-method-primary' => 'ویکی خانه',
 	'centralauth-merge-method-empty' => 'بدون مشارکت',
-	'centralauth-merge-method-mail' => 'تأیید شده توسط رایانامه',
+	'centralauth-merge-method-mail' => 'تأیید شده توسط پست الکترونیکی',
 	'centralauth-merge-method-password' => 'تأیید شده توسط گذرواژه',
 	'centralauth-merge-method-admin' => 'حساب کاربری ادغام شده توسط مدیر',
 	'centralauth-merge-method-new' => 'حساب کاربری جدید',
@@ -7178,7 +7179,7 @@ $messages['fa'] = array(
 	'centralauth-merge-method-primary-desc' => 'این ویکی آنیست که در ابتدا حساب‌ها در آن با هم ادغام شده‌اند.
 توجه داشته باشید که ممکن است با ویکی اصلی واقعی آن کاربر تفاوت داشته باشد.',
 	'centralauth-merge-method-empty-desc' => 'نشان می‌دهد که حساب محلی به این دلیل که ویرایشی نداشته، ادغام شده است.',
-	'centralauth-merge-method-mail-desc' => 'نشان می‌دهد که حساب محلی ادغام شد به این دلیل که رایانشانی (نشانی رایانامه) آن با رایانشانی حساب اصلی مطابق بود.',
+	'centralauth-merge-method-mail-desc' => 'نشان می‌دهد که حساب محلی ادغام شد به این دلیل که نشانی پست الکترونیکی آن با نشانی پست الکترونیکی حساب اصلی مطابق بود.',
 	'centralauth-merge-method-password-desc' => 'نشان می‌دهد که حساب محلی ادغام شده است بدین خاطر که کاربر گذرواژهٔ معتبری برایش تعیین کرده است.',
 	'centralauth-merge-method-admin-desc' => 'نشان می‌دهد که حساب محلی به طور دستی توسط ویکی‌بدها ادغام شده است.
 این قابلیت در حال حاضر به خاطر دلایل امنیتی غیرفعال شده است.',
@@ -21404,8 +21405,53 @@ Të gjitha llogaritë lokal do të vazhdojnë të ekzistojnë.
 Fjalëkalimet për llogaritë globale të krijuara përpara shkrirjes do të kthehen në vlerat e para-shkrirjes.',
 	'centralauth-admin-delete-button' => 'Fshini këtë llogari',
 	'centralauth-admin-delete-success' => 'Fshitë me sukses llogarinë globale për "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent' => 'Nuk ka llogari globale për "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Gabim: llogaria globale "<nowiki>$1</nowiki>" nuk ekziston.',
+	'centralauth-token-mismatch' => 'Na vjen keq, ne nuk mundëm ta procesonim paraqitjen tuaj të formularit për shkak të një humbje të të dhënave.',
 	'centralauth-admin-reason' => 'Arsyeja:',
+	'centralauth-admin-reason-other' => 'Arsye tjetër/shtesë:',
+	'centralauth-admin-status' => 'Vendosni statusin e llogarisë globale',
+	'centralauth-admin-status-intro' => 'Ju mund të përdorni këtë formular për të ndryshuar statusin e kësaj llogarie globale.',
+	'centralauth-admin-status-locked' => 'Mbyllur:',
+	'centralauth-admin-status-locked-no' => 'Llogaria nuk është e mbyllur',
+	'centralauth-admin-status-locked-yes' => 'Llogaria është e bllokuar nga redaktimi',
+	'centralauth-admin-status-hidden' => 'Fshehur:',
+	'centralauth-admin-status-hidden-no' => 'Llogaria nuk është e fshehur',
+	'centralauth-admin-status-hidden-list' => 'Llogaria është e fshehur nga listat publike',
+	'centralauth-admin-status-hidden-oversight' => 'Llogaria është fshehur krejtësisht',
+	'centralauth-admin-status-submit' => 'Vendosni statusin',
+	'centralauth-admin-status-nonexistent' => 'Gabim: llogaria globale "<nowiki>$1</nowiki>" nuk ekziston.',
+	'centralauth-admin-setstatus-success' => 'Ju keni ndryshuar me sukses statusin e kaj llogarie globale.',
+	'centralauth-admin-status-reasons' => '* Arsyet më të shpeshta të bllokimit
+** llogari vetëm për vandalizëm
+** llogari vetëm për spam
+* Arsyet më të shpeshta të bllokimt dhe fshehjes
+** emër përdoruesi abuziv
+** informacion personal i papërshtatshëm',
+	'centralauth-admin-logsnippet' => 'Ndryshimet e mëparshme të llogarisë globale',
+	'centralauth-admin-suppressreason' => 'U mbyll globalisht nga $1 për arsyen në vijim: $2',
+	'globalusers' => 'Lista e përdoruesve globalë',
 	'centralauth-listusers-locked' => 'i mbyllur',
+	'centralauth-listusers-attached' => '[[User:$1|ekziston në wiki-n lokal]]',
+	'centralauth-listusers-nolocal' => 'pabashkangjitur ose nuk ekziston në wiki-n lokal',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekondë|sekonda}} më parë',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minutë|minuta}} më parë',
+	'centralauth-hours-ago' => '$1 orë më parë',
+	'centralauth-days-ago' => '$1 ditë më parë',
+	'centralauth-months-ago' => '$1 muaj më parë',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|vit|vjet}} më parë',
+	'centralauth-prefs-status' => 'Statusi i llogarisë globale:',
+	'centralauth-prefs-not-managed' => 'Duke mos përdorur llogarinë e unifikuar',
+	'centralauth-prefs-unattached' => 'Pakonfirmuar',
+	'centralauth-prefs-complete' => 'Të gjitha në rregull!',
+	'centralauth-prefs-migration' => 'Në shkrirje',
+	'centralauth-prefs-count-attached' => 'Llogari juaj është aktive në {{PLURAL:$1|projekt|projekte}}.',
+	'centralauth-prefs-count-unattached' => 'Llogaritë e pakonfirmuara me emrin tuaj mbeten në $1 {{PLURAL:$1|projekt|projekte}}.',
+	'centralauth-prefs-detail-unattached' => 'Kjo faqe projekt nuk është konfirmuar si pjesëtarë të llogarisë globale.',
+	'centralauth-prefs-manage' => 'Manaxhoni llogarinë tuaj globale',
+	'centralauth-prefs-view' => 'Shiko të dhënat e përdoruesit global',
+	'centralauth-login-progress' => 'Duke hyrë brenda në projektet e {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Duke dalë nga projektet e tjera të {{int:Centralauth-groupname}}:',
 	'centralauth-log-status-none' => '(asgjë)',
 	'centralauth-editgroup-noset' => '(asgjë)',
 	'centralauth-editgroup-reason' => 'Arsyeja:',
