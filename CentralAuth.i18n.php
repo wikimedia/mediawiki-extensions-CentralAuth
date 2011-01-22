@@ -985,6 +985,7 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author ;Hiba;1
  * @author Alnokta
+ * @author Ciphers
  * @author Loya
  * @author Meno25
  * @author Mido
@@ -1150,6 +1151,7 @@ $messages['ar'] = array(
 * أسباب المنع والإخفاء معا المعتادة
 ** اسم مستخدم مسئ
 ** معلومات شخصية غير مناسبة',
+	'centralauth-admin-logsnippet' => 'تغييرات الحساب في كامل الموقع السابقة',
 	'globalusers' => 'قائمة المستخدمين العامة',
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
@@ -13693,6 +13695,14 @@ Künnt sin, dat De dem verkiehrte Metmaacher sing Rääschte ändere wells!',
 	'right-globalgrouppermissions' => 'Jemeinsame Metmaacher-Jruppe beärbeide',
 );
 
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'centralauth-merge-method-new' => 'hesabê nû',
+	'centralauth-finish-password' => 'Şîfre:',
+);
+
 /** Latin (Latina)
  * @author Rafaelgarcia
  * @author SPQRobin
@@ -15070,8 +15080,8 @@ $messages['mk'] = array(
 	'centralauth-editset-return' => 'Назад кон главниот поглед',
 	'right-globalgroupmembership' => 'Менување на членството во глобалните групи',
 	'right-centralauth-unmerge' => 'Раздвој глобална сметка',
-	'right-centralauth-lock' => 'Заклучи или сокриј глобална сметка',
-	'right-centralauth-oversight' => 'Сокриј глобална сметка',
+	'right-centralauth-lock' => 'Заклучи или скриј глобална сметка',
+	'right-centralauth-oversight' => 'Скриј глобална сметка',
 	'right-centralauth-merge' => 'Спојување на сметката',
 	'right-globalgrouppermissions' => 'Раководеење со глобални групи',
 );
@@ -21375,12 +21385,14 @@ Nëse llogaria globale është e juaja gjithashtu, ju mund ta shkrini këtë llo
 	'centralauth-admin-info-id' => 'Nr. i identifikimit:',
 	'centralauth-admin-info-registered' => 'Regjistruar:',
 	'centralauth-admin-info-home' => 'Faqja Kryesore',
+	'centralauth-admin-info-editcount' => 'Numëruesi i redaktimeve:',
 	'centralauth-admin-info-locked' => 'Mbyllur:',
 	'centralauth-admin-info-hidden' => 'Nivel i fshehur:',
 	'centralauth-admin-nohome' => 'nuk mund të përcaktohet',
 	'centralauth-admin-yes' => 'po',
 	'centralauth-admin-no' => 'jo',
 	'centralauth-admin-hidden-list' => 'nga listat publike',
+	'centralauth-admin-hidden-oversight' => 'Kujdestari',
 	'centralauth-admin-list-legend-ro' => 'Lista e llogarive lokale',
 	'centralauth-admin-list-legend-rw' => 'Çshkrini llogaritë lokale',
 	'centralauth-admin-unattached' => 'jo e bashkëngjitur',
@@ -21392,6 +21404,7 @@ Arsyeja: $1',
 	'centralauth-admin-list-localwiki' => 'Wki lokal',
 	'centralauth-admin-list-attached-on' => 'Bashkangjitur në',
 	'centralauth-admin-list-method' => 'Metoda',
+	'centralauth-admin-list-editcount' => 'Numëruësi i redaktimeve',
 	'centralauth-admin-list-blocked' => 'I bllokuar',
 	'centralauth-admin-unmerge' => 'Çshkrini të zgjedhurat',
 	'centralauth-admin-merge' => 'Shkrini të zgjedhurat',
@@ -21431,7 +21444,7 @@ Fjalëkalimet për llogaritë globale të krijuara përpara shkrirjes do të kth
 	'centralauth-admin-logsnippet' => 'Ndryshimet e mëparshme të llogarisë globale',
 	'centralauth-admin-suppressreason' => 'U mbyll globalisht nga $1 për arsyen në vijim: $2',
 	'globalusers' => 'Lista e përdoruesve globalë',
-	'centralauth-listusers-locked' => 'i mbyllur',
+	'centralauth-listusers-locked' => 'I bllokuar',
 	'centralauth-listusers-attached' => '[[User:$1|ekziston në wiki-n lokal]]',
 	'centralauth-listusers-nolocal' => 'pabashkangjitur ose nuk ekziston në wiki-n lokal',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekondë|sekonda}} më parë',
@@ -21464,16 +21477,78 @@ Riemërimi do t'i shkaktojë përdoruesit lokal shkëputjen nga përdoruesi glob
 	'centralauth-log-header' => 'Ky regjistër përmban operacione në llogaritë globale: grisje, bllokime dhe zhbllokime.',
 	'centralauth-log-entry-delete' => 'grisi llogarinë globale "$1"',
 	'centralauth-log-entry-lock' => 'bllokoi llogarinë globale: $1',
+	'centralauth-log-entry-unlock' => 'llogari globale e hapur "$1"',
+	'centralauth-log-entry-hide' => 'e fshehu llogarinë globale "$1"',
+	'centralauth-log-entry-unhide' => 'bëri llogarinë globale "$1" perseri të dukshme',
+	'centralauth-log-entry-lockandhide' => 'e bllokoi dhe e fshehu llogarinë globale "$1"',
+	'centralauth-log-entry-chgstatus' => 'ka ndryshuar statusin e llogarisë globale "$ 1 ": vendosur $ 2; grisur $ 3',
+	'centralauth-log-status-locked' => 'I bllokuar',
+	'centralauth-log-status-hidden' => 'i fshehur',
+	'centralauth-log-status-oversighted' => 'i shtypuar',
 	'centralauth-log-status-none' => '(asgjë)',
+	'centralauth-rightslog-entry-usergroups' => 'ndryshoi anëtarësimi e grupit globale për $1 nga $2 tek $3',
+	'centralauth-rightslog-entry-groupperms' => 'ndryshoi drejtat e grupit për $1 nga $2 tek $3',
+	'centralauth-rightslog-entry-groupperms2' => 'ndryshoi autorizimin e grupit për $1. Plotësuar $2; grisur $3',
+	'centralauth-rightslog-entry-groupperms3' => 'ndyrshoi grupet-wiki të aplikueshme për $1 nga $2 tek $3',
+	'centralauth-rightslog-header' => 'Kjo log përmban ndryshimet në grupet globale: Anëtarësimi dhe trejtat për ndryshimeve',
+	'centralauth-rightslog-entry-newset' => 'krijonte $2 grupin-wiki $1 me wikis në vijim: $3',
+	'centralauth-rightslog-entry-setrename' => 'vendosi emrin e grupit-wiki "$2" në "$1"',
+	'centralauth-rightslog-entry-setnewtype' => 'ndryshoi llojin prej "$1" nga $2 tek $3',
+	'centralauth-rightslog-entry-setchange' => 'ndryshoi wikit në "$1": plotësoi: $2; grisi: $3',
+	'centralauth-rightslog-entry-deleteset' => 'Grupi-wiki "$1" është grisur',
+	'centralauth-rightslog-set-optin' => 'opt-in',
+	'centralauth-rightslog-set-optout' => 'opt-out',
+	'autologin' => 'Identifikimi automatik',
+	'globalgroupmembership' => 'Anëtarësimi në grupet globale',
+	'globalgrouppermissions' => 'Menaxhimin e grupet globale',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|shiko/redakto]])',
+	'centralauth-globalgroupperms-nogroups' => 'Asnjë grup globale nuk janë përcaktuar.',
+	'centralauth-existinggroup-legend' => 'Grupet ekzistues',
+	'centralauth-newgroup-legend' => 'Krijo një grup të ri',
+	'centralauth-globalgroupperms-newgroupname' => 'Emri e grupit të ri:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'Caktoi drejtat',
+	'centralauth-editgroup-subtitle' => 'Duke redaktuar $1',
+	'centralauth-editgroup-fieldset' => 'Drejtat për $1',
+	'centralauth-editgroup-name' => 'Emri i grupit:',
+	'centralauth-editgroup-display' => 'Emri i grupit të lokalizuar:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|redakto]])',
+	'centralauth-editgroup-member' => 'Emri i anëtarëve të grupit të lokalizuar:',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|redakto]])',
+	'centralauth-editgroup-members' => 'Lista e anëtareve:',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista e përdoruesve me drejtat e $2]]',
+	'centralauth-editgroup-restrictions' => 'Grupet-wiki, në të cilin ky grup është aktiv:',
 	'centralauth-editgroup-noset' => '(asgjë)',
+	'centralauth-editgroup-submit' => 'Ruajni ndryshimet të drejtat e grupit',
+	'centralauth-editgroup-perms' => 'Drejtat të caktuara',
 	'centralauth-editgroup-reason' => 'Arsyeja:',
+	'centralauth-editgroup-success' => 'Drejtat të grupit janë ndryshuar',
+	'centralauth-editgroup-success-text' => 'Ju keni ndryshuar me sukses autorizimet e grupit-$1. [[Special:GlobalGroupPermissions|Kthehu në menaxhimin e grupeve globale]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redakto]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki në të cilat ju keni një llogari:',
+	'centralauth-editset' => 'Grupet-Wiki',
+	'centralauth-editset-legend-rw' => 'Redaktoni ose krijoni një Grup-wiki',
+	'centralauth-editset-legend-ro' => 'Lista e grupet-Wiki',
+	'centralauth-editset-intro-rw' => 'Grupet-wiki e mëposhtme janë krijuar.
+Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 	'centralauth-editset-name' => 'Emri:',
 	'centralauth-editset-type' => 'Lloji:',
 	'centralauth-editset-wikis' => 'Wikit:',
 	'centralauth-editset-reason' => 'Arsyeja:',
 	'centralauth-editset-submit' => 'Dërgo',
 	'centralauth-editset-submit-delete' => 'Grise',
+	'centralauth-editset-nowikis' => 'Asnjë wiki nuk është specifikuar.',
 	'centralauth-editset-nouse' => '(asgjë)',
+	'centralauth-editset-usage' => 'Duke përdorur në grupet:',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|Kjo wiki vijuës nuk është|Këto wiki vijuës nuk janë}} në dispozicion: $1.',
+	'centralauth-editset-success' => 'Grupi-Wiki u ndryshuar me sukses.',
+	'centralauth-editset-success-delete' => 'Grupi-wiki u grise me sukses.',
+	'centralauth-editset-return' => 'Kthehu tek pamje normale',
+	'right-globalgroupmembership' => 'Redaktoni anëtarësimin e grupet globale',
+	'right-centralauth-unmerge' => 'Anuloni bashkimin e llogarinë globale',
+	'right-centralauth-lock' => 'Bllokoni ose fsheheni llogarinë globale',
+	'right-centralauth-oversight' => 'Shtypni llogarit globale',
+	'right-centralauth-merge' => 'Bashkoni llogarit',
+	'right-globalgrouppermissions' => 'Menaxhoni grupet globale',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
@@ -25525,6 +25600,7 @@ Dájúdájú ibùdó dátà ti bàjẹ́.',
  * @author Horacewai2
  * @author Liangent
  * @author Shinjiman
+ * @author Waihorace
  */
 $messages['yue'] = array(
 	'mergeaccount' => '登入統一狀態',
