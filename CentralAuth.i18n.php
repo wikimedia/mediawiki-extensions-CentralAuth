@@ -1837,7 +1837,7 @@ $messages['avk'] = array(
 	'centralauth-editgroup-members' => 'Bewikeem :',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
  */
@@ -2370,7 +2370,7 @@ $messages['be'] = array(
 	'centralauth-editset-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author Cesco
  * @author EugeneZelenko
  * @author Jim-by
@@ -5112,7 +5112,7 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Kghbln
  * @author MichaelFrey
  * @author Umherirrender
@@ -17564,7 +17564,7 @@ $messages['pdt'] = array(
 	'centralauth-admin-username' => 'Bruckernome:',
 );
 
-/** Pfälzisch (Pfälzisch)
+/** Pälzisch (Pälzisch)
  * @author Xqt
  */
 $messages['pfl'] = array(
@@ -18553,6 +18553,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author 555
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Helder.wiki
  * @author Heldergeovane
  * @author Luckas Blade
  * @author Sir Lestaty de Lioncourt
@@ -21481,11 +21482,12 @@ Riemërimi do t'i shkaktojë përdoruesit lokal shkëputjen nga përdoruesi glob
 	'centralauth-log-entry-hide' => 'e fshehu llogarinë globale "$1"',
 	'centralauth-log-entry-unhide' => 'bëri llogarinë globale "$1" perseri të dukshme',
 	'centralauth-log-entry-lockandhide' => 'e bllokoi dhe e fshehu llogarinë globale "$1"',
-	'centralauth-log-entry-chgstatus' => 'ka ndryshuar statusin e llogarisë globale "$ 1 ": vendosur $ 2; grisur $ 3',
+	'centralauth-log-entry-chgstatus' => 'ndryshoi statusin e llogarisë globale "$1": Vendosi $2; Largoi $3',
 	'centralauth-log-status-locked' => 'I bllokuar',
 	'centralauth-log-status-hidden' => 'i fshehur',
 	'centralauth-log-status-oversighted' => 'i shtypuar',
 	'centralauth-log-status-none' => '(asgjë)',
+	'centralauth-rightslog-name' => 'Regjistri i të drejtave globale',
 	'centralauth-rightslog-entry-usergroups' => 'ndryshoi anëtarësimi e grupit globale për $1 nga $2 tek $3',
 	'centralauth-rightslog-entry-groupperms' => 'ndryshoi drejtat e grupit për $1 nga $2 tek $3',
 	'centralauth-rightslog-entry-groupperms2' => 'ndryshoi autorizimin e grupit për $1. Plotësuar $2; grisur $3',
@@ -21530,12 +21532,26 @@ Riemërimi do t'i shkaktojë përdoruesit lokal shkëputjen nga përdoruesi glob
 	'centralauth-editset-legend-ro' => 'Lista e grupet-Wiki',
 	'centralauth-editset-intro-rw' => 'Grupet-wiki e mëposhtme janë krijuar.
 Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
+	'centralauth-editset-intro-ro' => 'Më poshtë është lista e grupeve-wiki në dispozicion.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|Grise]])',
+	'centralauth-editset-new' => 'Krijoni një grup-wiki të ri',
+	'centralauth-editset-notfound' => 'Grupi-wiki "$1" nuk u gjet.',
+	'centralauth-editset-optin' => 'Opt-in (vëtem këto wiki që janë listuara i përkasin grupit)',
+	'centralauth-editset-optout' => 'Opt-out (vëtem këto wiki që nuk janë listuara i përkasin grupit)',
+	'centralauth-editset-legend-edit' => 'Duke redaktuar grupin-Wiki "$1"',
+	'centralauth-editset-legend-view' => 'Grupi-wiki "$1"',
+	'centralauth-editset-legend-new' => 'Duke krijuar një grup-wiki të ri',
+	'centralauth-editset-legend-delete' => 'Grise grupin-wiki "$1"',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Lista e grupet-wiki]]',
 	'centralauth-editset-name' => 'Emri:',
 	'centralauth-editset-type' => 'Lloji:',
 	'centralauth-editset-wikis' => 'Wikit:',
 	'centralauth-editset-reason' => 'Arsyeja:',
 	'centralauth-editset-submit' => 'Dërgo',
 	'centralauth-editset-submit-delete' => 'Grise',
+	'centralauth-editset-badname' => 'Ju keni dhënë një emër i pavlefshëm.',
+	'centralauth-editset-badtype' => 'Ju keni dhënë një lloji të pavlefshëm.',
+	'centralauth-editset-setexists' => 'Nofka që përdorët është në përdorim. Zgjidhni një nofkë tjetër.',
 	'centralauth-editset-nowikis' => 'Asnjë wiki nuk është specifikuar.',
 	'centralauth-editset-nouse' => '(asgjë)',
 	'centralauth-editset-usage' => 'Duke përdorur në grupet:',
