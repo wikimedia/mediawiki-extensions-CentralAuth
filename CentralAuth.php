@@ -248,20 +248,24 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 	$link = $skin ? $skin->makeLinkObj( $title, $params[0] ) : $params[0];
-	if ( $action == 'newset' ) {
-		$args = array( WikiSet::formatType( $params[1] ), $params[2] );
+
+	switch( $action ) {
+		case 'newset':
+			$args = array( WikiSet::formatType( $params[1] ), $params[2] );
+			break;
+		case 'setrename':
+			$args = array( $params[1] );
+			break;
+		case 'setnewtype':
+			$args = array( WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) );
+			break;
+		case 'setchange':
+			$args = array( $params[1]
+				? $params[1] : wfMsg( 'rightsnone' ), $params[2] ? $params[2] : wfMsg( 'rightsnone' ) );
+			break;
+		default: //'deleteset'
+			$args = array();
 	}
-	if ( $action == 'setrename' ) {
-		$args = array( $params[1] );
-	}
-	if ( $action == 'setnewtype' ) {
-		$args = array( WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) );
-	}
-	if ( $action == 'setchange' ) {
-		$args = array( $params[1] ? $params[1] : wfMsg( 'rightsnone' ), $params[2] ? $params[2] : wfMsg( 'rightsnone' ) );
-	}
-	if ( $action == 'deleteset' ) {
-		$args = array();
-	}
+
 	return wfMsgReal( "centralauth-rightslog-entry-{$action}", array_merge( array( $link ), $args ), true, !$skin );
 }
