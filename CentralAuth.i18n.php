@@ -2375,6 +2375,7 @@ $messages['be'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Zedlik
  */
 $messages['be-tarask'] = array(
 	'mergeaccount' => "Стан аб'яднаньня рахункаў",
@@ -2509,7 +2510,7 @@ $messages['be-tarask'] = array(
 	'centralauth-admin-already-unmerged' => 'Прапушчаны $1, ужо аддзелены',
 	'centralauth-admin-unmerge-success' => 'Пасьпяхова {{PLURAL:$1|аддзелены $1 рахунак|аддзеленыя $1 рахункі|аддзеленыя $1 рахункаў}}',
 	'centralauth-admin-delete-title' => 'Выдаленьне рахунку',
-	'centralauth-admin-delete-description' => "Выдаленьне глябальнага рахунку выдаліць усе глябальныя ўстаноўкі, прывядзе да аддзяленьня ўсіх лякальных рахункаў і вызваленьню глябальнага імя для іншых удзельнікаў.
+	'centralauth-admin-delete-description' => "Выдаленьне глябальнага рахунку выдаліць усе глябальныя налады, прывядзе да аддзяленьня ўсіх лякальных рахункаў і вызваленьню глябальнага імя для іншых удзельнікаў.
 Усе лякальныя рахункі застануцца.
 Лякальным паролям, створаным да аб'яднаньня, будуць вернутыя старыя значэньні.",
 	'centralauth-admin-delete-button' => 'Выдаліць гэты рахунак',
@@ -13679,7 +13680,7 @@ Künnt sin, dat De dem verkiehrte Metmaacher sing Rääschte ändere wells!',
 	'centralauth-editset-type' => 'Tüp:',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Jrond:',
-	'centralauth-editset-submit' => 'Loß jonn!',
+	'centralauth-editset-submit' => 'Lohß Jonn!',
 	'centralauth-editset-badname' => 'Do häß keine Jroppe-Name aanjejovve, udder dä Name douch nix.',
 	'centralauth-editset-badtype' => 'Esu ene Tüp kenne mer nit.',
 	'centralauth-editset-setexists' => 'De Wiki-Jrop met dämm Name es ald do',
@@ -13701,6 +13702,11 @@ Künnt sin, dat De dem verkiehrte Metmaacher sing Rääschte ändere wells!',
 $messages['ku-latn'] = array(
 	'centralauth-merge-method-new' => 'hesabê nû',
 	'centralauth-finish-password' => 'Şîfre:',
+	'centralauth-admin-username' => 'Navê bikarhêner:',
+	'centralauth-admin-yes' => 'erê',
+	'centralauth-editgroup-reason' => 'Sedem:',
+	'centralauth-editset-name' => 'Nav:',
+	'centralauth-editset-reason' => 'Sedem:',
 );
 
 /** Latin (Latina)
@@ -21749,7 +21755,7 @@ $messages['sr-ec'] = array(
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики на коме има налог:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Глобални корисник '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
 	'centralauth-editset' => 'Скупови Викија',
-	'centralauth-editset-new' => 'Стварање новог скупа.',
+	'centralauth-editset-new' => 'Направи нови скуп',
 	'centralauth-editset-notfound' => 'Скуп викија "$1" није пронађен.',
 	'centralauth-editset-optin' => 'Засновано на приступању (укључује само одређене викије).',
 	'centralauth-editset-optout' => 'Засновано на одустајању (укључује све викије изузев одређених).',
