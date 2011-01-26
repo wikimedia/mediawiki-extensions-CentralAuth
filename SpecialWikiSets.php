@@ -166,7 +166,8 @@ class SpecialWikiSets extends SpecialPage {
 		sort( $list );
 		$html = '<ul>';
 		foreach ( $list as $wiki ) {
-			$html .= "<li>{$wiki}</li>";
+			$escWiki = htmlspecialchars( $wiki );
+			$html .= "<li>{$escWiki}</li>";
 		}
 		$html .= '</ul>';
 		return $html;
