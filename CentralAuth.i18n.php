@@ -1837,6 +1837,15 @@ $messages['avk'] = array(
 	'centralauth-editgroup-members' => 'Bewikeem :',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author PPerviz
+ */
+$messages['az'] = array(
+	'centralauth-prefs-status' => 'Qlobal hesab statusu:',
+	'centralauth-prefs-complete' => 'Hər şey qaydasındadır!',
+	'centralauth-prefs-count-attached' => 'Sizin hesabınız $1 layihə saytında aktivdir.',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
