@@ -21516,6 +21516,9 @@ Riemërimi do t'i shkaktojë përdoruesit lokal shkëputjen nga përdoruesi glob
 	'centralauth-rightslog-set-optin' => 'opt-in',
 	'centralauth-rightslog-set-optout' => 'opt-out',
 	'autologin' => 'Identifikimi automatik',
+	'centralauth-autologin-desc' => 'Kjo faqe speciale është përdorur brenda nga MediaWiki.
+Kur ju [[Special:UserLogin|hyni]], sistemi qëndror udhëzon shfletuesin tuaj për të kërkuar këtë faqe nga të gjitha fushat e lidhura, duke përdorur lidhjet e figurës.
+Ju keni kërkuar kërkuar këtë faqe pa dhënë ndonjë të dhënë autentike, kështu që ajo nuk bën asgjë.',
 	'globalgroupmembership' => 'Anëtarësimi në grupet globale',
 	'globalgrouppermissions' => 'Menaxhimin e grupet globale',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|shiko/redakto]])',
@@ -21772,7 +21775,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-legend-new' => 'Стварање новог скупа викија.',
 	'centralauth-editset-name' => 'Име:',
 	'centralauth-editset-type' => 'Тип:',
-	'centralauth-editset-wikis' => 'Викији:',
+	'centralauth-editset-wikis' => 'Викије:',
 	'centralauth-editset-reason' => 'Разлог:',
 	'centralauth-editset-submit' => 'Пошаљи',
 	'centralauth-editset-submit-delete' => 'Обриши',
