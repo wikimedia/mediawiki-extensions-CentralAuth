@@ -15191,7 +15191,7 @@ $messages['ml'] = array(
 	'centralauth-finish-title' => 'സം‌യോജനം പൂർത്തിയാക്കുക',
 	'centralauth-finish-text' => 'ഈ അംഗത്വങ്ങൾ താങ്കളുടെ തന്നെയാണെങ്കിൽ, മറ്റുള്ള അംഗത്വങ്ങൾക്ക് രഹസ്യവാക്ക് ടൈപ്പു ചെയ്ത് സം‌യോജിത ലോഗിൻ പ്രക്രിയ താങ്കൾക്കു പൂർത്തിയാക്കാവുന്നതാണ്‌:',
 	'centralauth-finish-password' => 'രഹസ്യവാക്ക്:',
-	'centralauth-finish-login' => 'ലോഗിൻ',
+	'centralauth-finish-login' => 'പ്രവേശിക്കുക',
 	'centralauth-finish-send-confirmation' => 'രഹസ്യവാക്ക് ഇമെയിൽ ചെയ്യുക',
 	'centralauth-finish-problems' => 'താങ്കൾ എന്തെങ്കിലും ബുദ്ധിമുട്ടു അനുഭവിക്കുന്നോ, അല്ലെങ്കിൽ ഇവിടെ പ്രദർശിപ്പിച്ചിരിക്കുന്ന മറ്റു അംഗത്വങ്ങൾ താങ്കളുടെ അല്ലേ?
 [[meta:Help:Unified login problems|സഹായത്തിനു സന്ദർശിക്കുക]]…',
