@@ -376,6 +376,7 @@ You may view and modify any of them, or create a new set.',
  * @author Fryed-peach
  * @author Garas
  * @author Guillom
+ * @author Hydra
  * @author Jon Harald Søby
  * @author Kwj2772
  * @author Lejonel
@@ -465,6 +466,7 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-prefs-not-managed' => "Appears on user profile tab of 'Preferences' special page, after 'Global account status:'",
+	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
 	'centralauth-prefs-manage' => "Link on 'User profile' tab of 'Preferences' special page.",
 	'centralauth-login-progress' => '{{gender}}
 * (optional) $1 is the user name of the logged in user',
@@ -10650,8 +10652,8 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 	'centralauth-admin-list-method' => 'Methodo',
 	'centralauth-admin-list-editcount' => 'Numero de modificationes',
 	'centralauth-admin-list-blocked' => 'Blocate',
-	'centralauth-admin-unmerge' => 'Disfusionar seligites',
-	'centralauth-admin-merge' => 'Fusionar seligites',
+	'centralauth-admin-unmerge' => 'Disfusionar selection',
+	'centralauth-admin-merge' => 'Fusionar selection',
 	'centralauth-admin-bad-input' => 'Selection invalide pro fusion',
 	'centralauth-admin-none-selected' => 'Nulle contos seligite pro modificar.',
 	'centralauth-admin-already-unmerged' => '$1 es ignorate: ja disfusionate',
@@ -21672,8 +21674,8 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-list-method' => 'Метода',
 	'centralauth-admin-list-editcount' => 'Бројач измена',
 	'centralauth-admin-list-blocked' => 'Блокиран',
-	'centralauth-admin-unmerge' => 'Одвоји изабране',
-	'centralauth-admin-merge' => 'Споји изабране',
+	'centralauth-admin-unmerge' => 'Раздвоји изабрано',
+	'centralauth-admin-merge' => 'Споји изабрано',
 	'centralauth-admin-bad-input' => 'Лоше означавање сједињавања',
 	'centralauth-admin-none-selected' => 'Ниједан налог није означен за измену.',
 	'centralauth-admin-already-unmerged' => 'Прескачем $1, већ је растављен.',
