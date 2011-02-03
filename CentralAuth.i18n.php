@@ -1843,9 +1843,11 @@ $messages['avk'] = array(
  * @author PPerviz
  */
 $messages['az'] = array(
+	'centralauth-complete' => 'Hesabların birləşdirilməsi tamamlandı!',
 	'centralauth-prefs-status' => 'Qlobal hesab statusu:',
 	'centralauth-prefs-complete' => 'Hər şey qaydasındadır!',
 	'centralauth-prefs-count-attached' => 'Sizin hesabınız $1 layihə saytında aktivdir.',
+	'centralauth-prefs-manage' => 'Qlobal hesabın idarə edilməsi',
 );
 
 /** Bashkir (Башҡортса)
@@ -17698,7 +17700,7 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do niego to konto, podaj hasło uniwersalnego konta:',
 	'centralauth-attach-submit' => 'Przyłącz konto',
 	'centralauth-attach-success' => 'Konto zostało przyłączone do konta uniwersalnego',
-	'centralauth' => 'Zarządzanie kontami uniwersalnymi',
+	'centralauth' => 'Zarządzanie kontem uniwersalnym',
 	'centralauth-admin-intro' => 'Interfejs służy do zarządzania kontami uniwersalnymi.',
 	'centralauth-admin-manage' => 'Zarządzanie danymi użytkownika',
 	'centralauth-admin-username' => 'Nazwa użytkownika',
@@ -17783,7 +17785,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-prefs-count-unattached' => 'Nieprzyłączone konta o nazwie zbieżnej z Twoją są w $1 {{PLURAL:$1|projekcie|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Konto na tej witrynie nie zostało przyłączone do konta uniwersalnego.',
 	'centralauth-prefs-manage' => 'zarządzaj kontem uniwersalnym',
-	'centralauth-prefs-view' => 'Pokaż globalne informacje o użytkowniku',
+	'centralauth-prefs-view' => 'pokaż informacje o koncie uniwersalnym',
 	'centralauth-renameuser-merged' => 'Użytkownik $1 został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalny użytkownik zostanie odłączony od globalnego.',
 	'centralauth-renameuser-reserved' => 'Nazwa $2 jest już zajęta dla konta uniwersalnego.',
 	'centralauth-invalid-wiki' => 'Nie istnieje wiki DB: $1',
@@ -18235,7 +18237,7 @@ $messages['ps'] = array(
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|ورځ|ورځې}} دمخه',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|مياشت|مياشتې}} دمخه',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|کال|کاله}} پخوا',
-	'centralauth-prefs-count-attached' => 'ستاسو کارن-حساب د $1  {{PLURAL:$1|پروژې په ويبځي|پروژو په ويبځايونو}} باندې فعاله دی .',
+	'centralauth-prefs-count-attached' => 'ستاسو ګڼون د $1  {{PLURAL:$1|پروژې په ويبځي|پروژو په ويبځايونو}} باندې فعاله دی .',
 	'centralauth-log-status-locked' => 'تړل شوی',
 	'centralauth-log-status-hidden' => 'پټ',
 	'centralauth-log-status-none' => '(هېڅ)',
@@ -21293,6 +21295,7 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 /** Albanian (Shqip)
  * @author Mikullovci11
  * @author Olsi
+ * @author Techlik
  */
 $messages['sq'] = array(
 	'mergeaccount' => 'Identfikoni statusin  e unifikuar.',
@@ -21523,10 +21526,15 @@ Kur ju [[Special:UserLogin|hyni]], sistemi qëndror udhëzon shfletuesin tuaj p�
 Ju keni kërkuar kërkuar këtë faqe pa dhënë ndonjë të dhënë autentike, kështu që ajo nuk bën asgjë.',
 	'globalgroupmembership' => 'Anëtarësimi në grupet globale',
 	'globalgrouppermissions' => 'Menaxhimin e grupet globale',
+	'centralauth-globalgroupperms-grouplist' => 'Grupet globale në vazhdim janë konfiguruar.
+Ju mund të shikoni apo editoni lejet e caktuara në një grup, në qoftë se ju keni leje për ta bërë këtë.
+Një grup mund të fshihet duke i larguar të gjitha të drejtat.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|shiko/redakto]])',
 	'centralauth-globalgroupperms-nogroups' => 'Asnjë grup globale nuk janë përcaktuar.',
 	'centralauth-existinggroup-legend' => 'Grupet ekzistues',
 	'centralauth-newgroup-legend' => 'Krijo një grup të ri',
+	'centralauth-newgroup-intro' => 'Ju mund të përdorni këtë formular për të caktuar lejet për një grup të ri. 
+Vini re se një grup nuk ekziston nëse nuk ka leje të caktuar për të.',
 	'centralauth-globalgroupperms-newgroupname' => 'Emri e grupit të ri:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Caktoi drejtat',
 	'centralauth-editgroup-subtitle' => 'Duke redaktuar $1',
@@ -21547,6 +21555,8 @@ Ju keni kërkuar kërkuar këtë faqe pa dhënë ndonjë të dhënë autentike, 
 	'centralauth-editgroup-success-text' => 'Ju keni ndryshuar me sukses autorizimet e grupit-$1. [[Special:GlobalGroupPermissions|Kthehu në menaxhimin e grupeve globale]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redakto]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki në të cilat ju keni një llogari:',
+	'centralauth-globalgroupmembership-badknownwiki' => "Përdoruesi globlal '''$1''' nuk është aktiv në wiki që ju specifikuat ('' $2 '').
+Ju mund të jeni duke u përpjekur për të caktuar të drejtat për përdoruesin e gabuar!",
 	'centralauth-editset' => 'Grupet-Wiki',
 	'centralauth-editset-legend-rw' => 'Redaktoni ose krijoni një Grup-wiki',
 	'centralauth-editset-legend-ro' => 'Lista e grupet-Wiki',
