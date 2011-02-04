@@ -17628,7 +17628,7 @@ Hasło i zarejestrowany adres e‐mail zostaną porównane z kontami na innych w
 	'centralauth-merge-step2-detail' => 'Niektóre z kont nie mogły zostać automatycznie dopasowane do wiki wyznaczonej na macierzystą.
 Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje, podając do nich hasła.',
 	'centralauth-merge-step2-submit' => 'Potwierdź informacje dotyczące zalogowania się',
-	'centralauth-login-global' => 'Zaloguj mnie globalnie',
+	'centralauth-login-global' => 'Zaloguj mnie także do innych projektów używając konta uniwersalnego',
 	'centralauth-merge-dryrun-complete' => 'Wszystkie istniejące konta zostaną automatycznie połączone!
 
 Nie wykonano jeszcze żadnych zmian Twoich kont.',
@@ -18209,7 +18209,7 @@ $messages['ps'] = array(
 	'centralauth-merge-method-primary' => 'ويکي کور',
 	'centralauth-merge-method-empty' => 'هېڅ کومې ونډې نشته',
 	'centralauth-merge-method-mail' => 'د برېښليک له لارې يې پخلی شوی',
-	'centralauth-merge-method-new' => 'نوی کارن-حساب',
+	'centralauth-merge-method-new' => 'نوی ګڼون',
 	'centralauth-finish-password' => 'پټنوم:',
 	'centralauth-finish-login' => 'ننوتل',
 	'centralauth-finish-send-confirmation' => 'پټنوم رابرېښليک کول',
@@ -18226,8 +18226,8 @@ $messages['ps'] = array(
 	'centralauth-admin-blocklog' => 'د بنديز يادښت',
 	'centralauth-admin-list-localwiki' => 'سيمه ايز ويکي',
 	'centralauth-admin-list-editcount' => 'د سمونونو شمېر',
-	'centralauth-admin-delete-title' => 'کارن-حساب ړنګول',
-	'centralauth-admin-delete-button' => 'همدا کارن-حساب ړنګول',
+	'centralauth-admin-delete-title' => 'ګڼون ړنګول',
+	'centralauth-admin-delete-button' => 'همدا ګڼون ړنګول',
 	'centralauth-admin-reason' => 'سبب:',
 	'centralauth-admin-status-hidden' => 'پټ:',
 	'globalusers' => 'د نړيوال کارن لړليک',
