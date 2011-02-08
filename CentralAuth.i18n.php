@@ -13733,6 +13733,7 @@ $messages['ku-latn'] = array(
 	'centralauth-merge-method-new' => 'hesabê nû',
 	'centralauth-finish-password' => 'Şîfre:',
 	'centralauth-admin-username' => 'Navê bikarhêner:',
+	'centralauth-admin-lookup-ro' => 'Agahiyên bikarhêner bibîne',
 	'centralauth-admin-yes' => 'erê',
 	'centralauth-editgroup-reason' => 'Sedem:',
 	'centralauth-editset-name' => 'Nav:',
