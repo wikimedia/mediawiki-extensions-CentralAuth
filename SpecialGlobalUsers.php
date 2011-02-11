@@ -44,11 +44,7 @@ class GlobalUsersPager extends UsersPager {
 			return;
 		}
 		$groups = array_keys( $this->getAllGroups() );
-		if ( in_array( $group, $groups ) ) {
-			$this->requestedGroup = $group;
-		} else {
-			$this->requestedGroup = false;
-		}
+		$this->requestedGroup = $group;
 	}
 
 	function setUsername( $username = '' ) {
