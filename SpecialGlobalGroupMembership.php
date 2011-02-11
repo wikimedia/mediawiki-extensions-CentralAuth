@@ -9,7 +9,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	var $mGlobalUser;
 
 	function __construct() {
-		parent::__construct( 'GlobalGroupMembership' );
+		SpecialPage::__construct( 'GlobalGroupMembership' );
 
 		global $wgUser;
 		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );
