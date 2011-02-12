@@ -10,7 +10,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function execute( $subpage ) {
 		global $wgOut;
 		global $wgExtensionAssetsPath, $wgCentralAuthStyleVersion;
-		global $wgUser, $wgRequest;
+		global $wgUser, $wgRequest, $wgContLang;
 		$this->setHeaders();
 
 		$this->mCanUnmerge = $wgUser->isAllowed( 'centralauth-unmerge' );
@@ -28,6 +28,8 @@ class SpecialCentralAuth extends SpecialPage {
 			trim(
 				str_replace( '_', ' ',
 					$wgRequest->getText( 'target', $subpage ) ) );
+			
+		$this->mUserName = $wgContLang->ucfirst( $this->mUserName );
 
 		$this->mPosted = $wgRequest->wasPosted();
 		$this->mMethod = $wgRequest->getVal( 'wpMethod' );
