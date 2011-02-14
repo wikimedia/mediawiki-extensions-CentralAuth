@@ -238,6 +238,11 @@ The passwords for local accounts created before the merge will revert to their p
 Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-renameuser-reserved' => "User $2 is reserved for a global account.",
 
+	// Interaction with Special:Contributions
+	'centralauth-link-on-contribs' => 'global account status',
+	'centralauth-link-on-contribs-text' => 'Status of the global account for this user',
+	'centralauth-link-on-contribs-no' => 'no global account',
+
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',

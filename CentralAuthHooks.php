@@ -605,4 +605,23 @@ class CentralAuthHooks {
 		$params['url'] = $wiki->getUrl( 'User:' . str_replace( ' ', '_', $user->getName() ) );
 		return true;
 	}
+
+	public static function onContributionsToolLinks( $id, $user, &$tools ) {
+		global $wgUser;
+
+		$globalUser = CentralAuthUser::getInstance( $user );
+		if ( $globalUser->exists() ) {
+			if ( $wgUser->isAllowed( 'centralauth-merge' ) ) { // Paranoia. Currently this right is assigned to '*'
+				$sk = $wgUser->getSkin();
+				$tools[] = $sk->linkKnown(
+					SpecialPage::getTitleFor( 'CentralAuth', $user->getText() ),
+					wfMsg( 'centralauth-link-on-contribs' ),
+					array( 'title' => wfMsgExt( 'centralauth-link-on-contribs-text', 'parseinline' ) )
+				);
+			}
+		} else {
+			$tools[] = wfMsg( 'centralauth-link-on-contribs-no' );
+		}
+		return true;
+	}
 }
