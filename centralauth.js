@@ -21,7 +21,9 @@ function showMethodHint( methodName ) {
 	methodHint.style.left = wgCursorPosition.x + 'px';
 	methodHint.style.top = wgCursorPosition.y + 'px';
 	methodHint.setAttribute( 'onclick', 'hideMethodHint()' );
-	document.getElementById( 'globalWrapper' ).appendChild( methodHint );
+
+	var content = document.getElementById('content') || document.getElementById('mw_content') || document.body;
+	content.appendChild( methodHint );
 }
 
 function hideMethodHint() {
