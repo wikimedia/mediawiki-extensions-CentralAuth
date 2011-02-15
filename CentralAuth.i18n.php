@@ -2581,6 +2581,9 @@ $messages['be-tarask'] = array(
 	'centralauth-prefs-view' => 'Паказаць глябальную інфармацыю пра ўдзельніка',
 	'centralauth-renameuser-merged' => 'Удзельнік $1 перайшоў на глябальную сыстэму ўваходу. Яго перайменаваньне выкліча страту сувязі лякальнага рахунку з глябальным.',
 	'centralauth-renameuser-reserved' => 'Імя ўдзельніка $2 зарэзэрваванае для глябальнага рахунку.',
+	'centralauth-link-on-contribs' => 'статус глябальнага рахунку',
+	'centralauth-link-on-contribs-text' => 'Статус глябальнага рахунку для гэтага ўдзельніка',
+	'centralauth-link-on-contribs-no' => 'няма глябальнага рахунку',
 	'centralauth-invalid-wiki' => 'Не існуе такой базы зьвестак вікі: $1',
 	'centralauth-account-exists' => 'Немагчыма стварыць рахунак: гэтая назва ўжо занятая адзіным рахункам.',
 	'centralauth-login-progress' => 'Адбудзецца ўваход у сыстэму і ў іншых праектах {{int:Centralauth-groupname}}:',
@@ -8930,6 +8933,9 @@ D Passwerter fir di lokale Benutzerkonte wäre zruckgsetzt uf s urspringli Passw
 	'centralauth-prefs-view' => 'Informatione zum globale Benutzerkonto aaluege',
 	'centralauth-renameuser-merged' => '„Benutzer:$1“ isch scho in s wältwyt Benutzerkonte-Syschtem ibernuh wore. E Umnännig nimmt s lokal Benutzerkonto us em wältwyte Benutzerkonte-Syschtem use.',
 	'centralauth-renameuser-reserved' => '„Benutzer:$2“ isch as wältwyt Benutzerkonto reserviert.',
+	'centralauth-link-on-contribs' => 'Wältwyte Benutzerkonte-Status:',
+	'centralauth-link-on-contribs-text' => 'Status vum wältwyte Benutzerkonto vu däm Benutzer',
+	'centralauth-link-on-contribs-no' => 'S git kei wältwyt Benutzerkonto.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datebank git s nit: $1',
 	'centralauth-account-exists' => 'Benutzerkonto cha nit aagleit wäre: dr aagfrogt Benutzername wird scho fir s wältwyt Benutzerkonte-Syschtem bruucht.',
 	'centralauth-login-progress' => 'Du bisch automatisch au bi däne Projäkt {{int:Centralauth-groupname}} aagmäldet:',
@@ -13736,6 +13742,12 @@ En Jropp oohne et winischßt ei Rääsch jit et nit.',
 	'centralauth-globalgroupmembership-badknownwiki' => 'Dä Metmaacher met dä jemeinsame Aanmeldung „$1“ es im Wiki „$2“ ja nit aktiv.
 Künnt sin, dat De dem verkiehrte Metmaacher sing Rääschte ändere wells!',
 	'centralauth-editset' => 'Wiki-Jroppe',
+	'centralauth-editset-legend-rw' => 'Wikijropp aanlääje udder ändere',
+	'centralauth-editset-legend-ro' => 'Lėßß met de Wikijroppe',
+	'centralauth-editset-intro-rw' => 'De Wikijroppe heh noh sin alld doh.
+Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
+	'centralauth-editset-intro-ro' => 'Heh follsch de Leß met de Wikijroppe.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|fott schmieße]])',
 	'centralauth-editset-new' => 'Neu Wiki-Jrop opmaache',
 	'centralauth-editset-notfound' => 'Han de Wiki-Jrop „$1“ nit jefonge.',
 	'centralauth-editset-optin' => 'Op et Beitredde betrocke (met noor de Wikis dren, di he opjeliß sin)',
@@ -15367,6 +15379,9 @@ $messages['ml'] = array(
 	'centralauth-renameuser-merged' => '$1 എന്ന ഉപയോക്താവ് ആഗോള അംഗത്വത്തിലേക്ക് മാറിക്കഴിഞ്ഞു.
 പേരുമാറ്റുന്നതുകൊണ്ട് പ്രാദേശിക അംഗത്വം ആഗോള അംഗത്വത്തിൽ നിന്ന് ഒറ്റപ്പെട്ടു പോകുന്നതാണ്‌.',
 	'centralauth-renameuser-reserved' => 'ഉപയോക്താവ് $2 ആഗോള അംഗത്വത്തിനായി മാറ്റിവെച്ചിരിക്കുകയാണ്.',
+	'centralauth-link-on-contribs' => 'ആഗോള അംഗത്വ സ്ഥിതി',
+	'centralauth-link-on-contribs-text' => 'ഈ ഉപയോക്താവിന്റെ ആഗോള അംഗത്വത്തിന്റെ സ്ഥിതി',
+	'centralauth-link-on-contribs-no' => 'ആഗോൾ അംഗത്വം ഇല്ല',
 	'centralauth-invalid-wiki' => 'ഇങ്ങനെ ഒരു വിക്കി നിലവിലില്ല DB: $1',
 	'centralauth-account-exists' => 'അംഗത്വം ഉണ്ടാക്കുന്നതിനു സാദ്ധ്യമല്ല: ആവശ്യപ്പെട്ട ഉപയോക്തൃനാമം ഇതിനകം സം‌യോജിത ലോഗിൻ വ്യൂഹം ഉപയോഗിച്ചു കഴിഞ്ഞു.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}} പദ്ധതികളിൽ ലോഗിൻ ചെയ്തിരിക്കുന്നു:',
@@ -17860,7 +17875,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-renameuser-merged' => 'Użytkownik $1 został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalny użytkownik zostanie odłączony od globalnego.',
 	'centralauth-renameuser-reserved' => 'Nazwa $2 jest już zajęta dla konta uniwersalnego.',
 	'centralauth-link-on-contribs' => 'status konta uniwersalnego',
-	'centralauth-link-on-contribs-text' => 'Status konto uniwersalnego tego użytkownika',
+	'centralauth-link-on-contribs-text' => 'Status konta uniwersalnego tego użytkownika',
 	'centralauth-link-on-contribs-no' => 'brak konta uniwersalnego',
 	'centralauth-invalid-wiki' => 'Nie istnieje wiki DB: $1',
 	'centralauth-account-exists' => 'Utworzenie konta nie jest możliwe – wybrana nazwa użytkownika jest zajęta przez konto uniwersalne.',
@@ -18529,6 +18544,9 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-renameuser-merged' => 'O utilizador $1 foi migrado para o sistema de autenticação unificada.
 Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-renameuser-reserved' => 'O nome de utilizador $2 está reservado para uma conta global.',
+	'centralauth-link-on-contribs' => 'estado da conta global',
+	'centralauth-link-on-contribs-text' => 'Estado da conta global para este utilizador',
+	'centralauth-link-on-contribs-no' => 'não há conta global',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para a wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de utilizador pretendido já está a ser utilizado no sistema de autenticação unificada.',
 	'centralauth-login-progress' => 'Está a ser autenticado nas wikis da {{int:Centralauth-groupname}}:',
@@ -19706,6 +19724,9 @@ $messages['ru'] = array(
 	'centralauth-prefs-view' => 'Просмотр глобальных сведений об участнике',
 	'centralauth-renameuser-merged' => 'Участник $1 перешёл на единую систему входа, его переименование вызовет потерю связи локального участника с глобальной учётной записью.',
 	'centralauth-renameuser-reserved' => 'Имя участника $2 зарезервировано для глобальной учётной записи.',
+	'centralauth-link-on-contribs' => 'состояние глобальной учётной записи',
+	'centralauth-link-on-contribs-text' => 'Состояние глобальной учётной записи этого участника',
+	'centralauth-link-on-contribs-no' => 'нет глобальной учётной записи',
 	'centralauth-invalid-wiki' => 'Нет такой вики БД: $1',
 	'centralauth-account-exists' => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
 	'centralauth-login-progress' => 'Сеанс действует также и в других проектах {{int:Centralauth-groupname}}:',
@@ -21253,6 +21274,9 @@ Gesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihov
 	'centralauth-renameuser-merged' => 'Uporabnik $1 je bil preseljen v sistem enotne prijave.
 Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega uporabnika.',
 	'centralauth-renameuser-reserved' => 'Uporabnik $2 je rezerviran za globalni račun.',
+	'centralauth-link-on-contribs' => 'stanje globalnega računa',
+	'centralauth-link-on-contribs-text' => 'Stanje globalnega računa uporabnika',
+	'centralauth-link-on-contribs-no' => 'ni globalnega računa',
 	'centralauth-invalid-wiki' => 'Ni takšne zbirke podatkov wiki: $1',
 	'centralauth-account-exists' => 'Ne morem ustvariti računa: zahtevano uporabniško ime je že zasedeno v enotnem sistemu prijave.',
 	'centralauth-login-progress' => 'Prijavljanje v ostale projekte {{int:Centralauth-groupname}}:',
@@ -21687,7 +21711,7 @@ $messages['sr-ec'] = array(
 	'centralauth-groupname' => 'Викимедија Фондација',
 	'centralauth-desc' => '[[Special:MergeAccount|Сједињавање налога]] на Викијима из {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Сједињава више налога]] за јединствени кориснички приступ.',
-	'centralauth-merge-denied' => 'Немаш права да приступиш овој страни.',
+	'centralauth-merge-denied' => 'Немате права приступа овој страници.',
 	'centralauth-merge-notlogged' => 'Молимо вас да се <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} пријавите]</span> како бисте проверили да ли је ваш налог спојен успешно.',
 	'centralauth-merge-step1-title' => 'Започни сједињавање налога.',
 	'centralauth-merge-step1-submit' => 'Овери информације налога.',
@@ -24455,6 +24479,27 @@ $messages['tt-cyrl'] = array(
 	'centralauth-prefs-manage' => 'Глобаль кулланучы хисапнамәсе белән идарә итү',
 );
 
+/** Tuvinian (Тыва дыл)
+ * @author Sborsody
+ */
+$messages['tyv'] = array(
+	'centralauth-merge-dryrun-or' => "'''азы'''",
+	'centralauth-merge-method-new' => 'чаа бүрүткел бижик',
+	'centralauth-finish-password' => 'Чажыт сөс:',
+	'centralauth-finish-login' => 'Кирери',
+	'centralauth-finish-send-confirmation' => 'Меңээ чажыт сөсту чорудаары',
+	'centralauth-admin-username' => 'Ажыглакчының ады:',
+	'centralauth-admin-yes' => 'ийе',
+	'centralauth-admin-no' => 'чок',
+	'centralauth-admin-reason' => 'Чылдагаан:',
+	'centralauth-admin-status-hidden' => 'Чажыт:',
+	'centralauth-log-status-hidden' => 'чажыт',
+	'centralauth-editgroup-reason' => 'Чылдагаан:',
+	'centralauth-editset-name' => 'Ат:',
+	'centralauth-editset-type' => 'Янзы:',
+	'centralauth-editset-reason' => 'Чылдагаан:',
+);
+
 /** ئۇيغۇرچە (ئۇيغۇرچە)
  * @author Alfredie
  */
@@ -25270,7 +25315,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|ngày|ngày}} trước đây',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|tháng|tháng}} trước đây',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|năm|năm}} trước đây',
-	'centralauth-prefs-status' => 'Tình trạng của tài khoản chung:',
+	'centralauth-prefs-status' => 'Trạng thái tài khoản toàn hệ thống:',
 	'centralauth-prefs-not-managed' => 'Không sử dụng tài khoản hợp nhất',
 	'centralauth-prefs-unattached' => 'Chưa xác nhận',
 	'centralauth-prefs-complete' => 'Đã đâu vào đấy!',
@@ -25282,6 +25327,9 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-prefs-view' => 'Xem thông tin thành viên toàn cục',
 	'centralauth-renameuser-merged' => 'Tài khoản $1 đã được chuyển qua hệ thống tài khoản hợp nhất. Việc đổi tên sẽ tách tài khoản địa phương khỏi tài khoản hợp nhất.',
 	'centralauth-renameuser-reserved' => 'Tên $2 dành cho tài khoản chung.',
+	'centralauth-link-on-contribs' => 'trạng thái tài khoản toàn hệ thống',
+	'centralauth-link-on-contribs-text' => 'Trạng thái tài khoản toàn hệ thống của thành viên này',
+	'centralauth-link-on-contribs-no' => 'không có tài khoản toàn hệ thống',
 	'centralauth-invalid-wiki' => 'Không có CSDL wiki như vậy: $1',
 	'centralauth-account-exists' => 'Không thể tạo tài khoản: tên người dùng chỉ định đã được sử dụng trong hệ thống đăng nhập thống nhất.',
 	'centralauth-login-progress' => 'Bạn đang đăng nhập vào các dự án {{int:Centralauth-groupname}}:',
@@ -25917,6 +25965,7 @@ $messages['yue'] = array(
  * @author PhiLiP
  * @author Xiaomingyan
  * @author 下一次登录
+ * @author 阿pp
  */
 $messages['zh-hans'] = array(
 	'mergeaccount' => '用户账户整合',
@@ -26092,6 +26141,9 @@ $messages['zh-hans'] = array(
 	'centralauth-prefs-view' => '查看全域用户信息',
 	'centralauth-renameuser-merged' => '用户$1已经迁移至整合登入系统。改它的名字会令到本地用户自全域中迁出。',
 	'centralauth-renameuser-reserved' => '用户$2已经预留给全域账户使用。',
+	'centralauth-link-on-contribs' => '全局帐户状态',
+	'centralauth-link-on-contribs-text' => '此用户的全局账户状态',
+	'centralauth-link-on-contribs-no' => '没有全局帐户',
 	'centralauth-invalid-wiki' => '无这个wikil数据库: $1',
 	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
 	'centralauth-login-progress' => '正在为您登录到{{int:Centralauth-groupname}}的其它计划：',
