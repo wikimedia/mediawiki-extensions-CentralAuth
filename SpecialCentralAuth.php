@@ -260,9 +260,9 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( $span < 2 * $chunk ) {
 				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $wgLang->formatNum( $span ) );
 			}
-			$span = $wgLang->formatNum( intval( $span / $chunk ) );
+			$span = intval( $span / $chunk );
 		}
-		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $span );
+		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $wgLang->formatNum( $span ) );
 	}
 
 	function showInfo() {
