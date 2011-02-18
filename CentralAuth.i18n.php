@@ -539,6 +539,13 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
+/** Dusun Bundu-liwan (Dusun Bundu-liwan)
+ * @author FRANELYA
+ */
+$messages['dtp'] = array(
+	'centralauth-finish-login' => 'Sumuang log',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -6447,6 +6454,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author AlimanRuna
  * @author Ascánder
  * @author Crazymadlover
  * @author Dferg
@@ -18217,6 +18225,9 @@ Le ciav për ij cont locaj creà prima dl'unificassion a tornëran ai sò valor 
 	'centralauth-renameuser-merged' => "L'utent $1 a l'é stàit migrà al sistema d'intrada unificà.
 Arnomélo a farà sì che ël cont local a sia dëstacà da col global.",
 	'centralauth-renameuser-reserved' => "L'utent $2 a l'é arzervà për un cont global.",
+	'centralauth-link-on-contribs' => 'stat dël cont global',
+	'centralauth-link-on-contribs-text' => "Stat dël cont global për st'utent",
+	'centralauth-link-on-contribs-no' => 'pa gnun cont global',
 	'centralauth-invalid-wiki' => 'Pa gnun-a base ëd dàit wiki parèj: $1',
 	'centralauth-account-exists' => "Ël cont a peul pa esse creà: lë stranòm utent ciamà a l'é già pijà ant ël sistema d'intrada unificà.",
 	'centralauth-login-progress' => 'Intré ant ij proget ëd {{int:Centralauth-groupname}}:',
@@ -19023,6 +19034,7 @@ $messages['qu'] = array(
 	'centralauth-merge-step1-submit' => 'Yaykuna willakunata takyachiy',
 	'centralauth-merge-step2-title' => 'Aswan rakiqunakunata takyachiy',
 	'centralauth-merge-step2-submit' => 'Yaykuna willakunata takyachiy',
+	'centralauth-login-global' => 'Tukuy Wikimedia wikikunaman yaykuy',
 	'centralauth-merge-dryrun-or' => "'''icha'''",
 	'centralauth-merge-step3-title' => 'Huñunakusqa rakiqunata kamariy',
 	'centralauth-merge-step3-detail' => 'Kamarisqam kachkanki huñunakusqa rakiqunaykita kamarinaykipaq, kay qatiq wikikunata yaparquspa:',
@@ -21807,7 +21819,7 @@ $messages['sr-ec'] = array(
 	'centralauth-attach-title' => 'овера налога',
 	'centralauth-attach-submit' => 'премештање налога',
 	'centralauth-attach-success' => 'Налог је премештен у уједињени налог.',
-	'centralauth' => 'Глобално уређивање корисничких налога',
+	'centralauth' => 'Глобално управљање корисницима',
 	'centralauth-admin-manage' => 'Надгледање корисничких података',
 	'centralauth-admin-username' => 'Корисничко име:',
 	'centralauth-admin-permission' => 'Само стјуарди могу да споје остале корисничке налоге за њих.',
