@@ -6041,6 +6041,9 @@ $messages['el'] = array(
 	'centralauth-renameuser-merged' => 'Ο χρήστης $1 έχει μετακινηθεί στο ενιαίο σύστημα σύνδεσης.
 Μετονομάζοντας το θα προκαλέσει την αποκόλλησει του τοπικού λογαριασμού από τον παγκόσμιο.',
 	'centralauth-renameuser-reserved' => 'Ο χρήστης $2 είναι κλεισμένος για παγκόσμιο λογαριασμό.',
+	'centralauth-link-on-contribs' => 'κατάσταση καθολικού λογαριασμού',
+	'centralauth-link-on-contribs-text' => 'Κατάσταση του καθολικού λογαριασμού  για αυτόν το χρήστη',
+	'centralauth-link-on-contribs-no' => 'δεν υπάρχει καθολικός λογαριασμός',
 	'centralauth-invalid-wiki' => 'Δεν υπάρχει τέτοια βικι-βάση δεδομένων: $1',
 	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα χρήστη είναι ήδη κατοχυρωμένο στο σύστημα ενιαίας σύνδεσης.',
 	'centralauth-login-progress' => 'Σας συνδέουμε στα εγχειρήματα του {{int:Centralauth-groupname}}:',
@@ -7064,8 +7067,10 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
  * @author Kobazulo
  */
 $messages['eu'] = array(
+	'mergeaccount' => 'Saio-hasiera bateratua',
 	'centralauth-groupname' => 'Wikimedia Fundazioa',
 	'centralauth-merge-denied' => 'Barkatu, ez duzu orrialde honetara sartzeko baimenik.',
+	'centralauth-merge-notlogged' => 'Mesedez <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} saioa hasi]</span> zure kontua bateratu den egiaztatzeko.',
 	'centralauth-merge-step1-title' => 'Kontuen bateratzea hasi',
 	'centralauth-merge-step1-submit' => 'Baieztatu saioa hasteko informazioa',
 	'centralauth-merge-step2-title' => 'Kontu gehiago egiaztatu',
@@ -8619,6 +8624,9 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-renameuser-merged' => 'O usuario "$1" foi trasladado ao sistema de rexistro unificado.
 Ao renomealo, isto provocará que o usuario local sexa alonxado do global.',
 	'centralauth-renameuser-reserved' => 'O usuario "$2" está reservado para unha conta global.',
+	'centralauth-link-on-contribs' => 'estado da conta global',
+	'centralauth-link-on-contribs-text' => 'Estado da conta global deste usuario',
+	'centralauth-link-on-contribs-no' => 'sen conta global',
 	'centralauth-invalid-wiki' => 'Non existe a base de datos de tal wiki: $1',
 	'centralauth-account-exists' => 'Non se pode crear a conta: o nome de usuario solicitado xa é usado no sistema de unificación do rexistro.',
 	'centralauth-login-progress' => 'Accedendo ao sistema nos outros proxectos {{int:Centralauth-groupname}}:',
@@ -14052,6 +14060,9 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System opgeholl.
 Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System eraus.',
 	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.',
+	'centralauth-link-on-contribs' => 'Status vum globale Benotzerkont',
+	'centralauth-link-on-contribs-text' => 'Status vum globale Benotzerkont fir dëse Benotzer',
+	'centralauth-link-on-contribs-no' => 'Kee globale Benotzerkont',
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
 	'centralauth-login-progress' => 'Dir gouft an dës Projete vu(n) {{int:Centralauth-groupname}} ageloggt:',
@@ -21941,7 +21952,7 @@ $messages['sr-ec'] = array(
 	'centralauth-globalgroupmembership-badknownwiki' => "Глобални корисник '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
 	'centralauth-editset' => 'Скупови Викија',
 	'centralauth-editset-new' => 'Направи нови скуп',
-	'centralauth-editset-notfound' => 'Скуп викија "$1" није пронађен.',
+	'centralauth-editset-notfound' => 'Скуп викија „$1“ није пронађен.',
 	'centralauth-editset-optin' => 'Засновано на приступању (укључује само одређене викије).',
 	'centralauth-editset-optout' => 'Засновано на одустајању (укључује све викије изузев одређених).',
 	'centralauth-editset-legend-edit' => 'Измена скупа викија "$1".',
@@ -26315,6 +26326,7 @@ $messages['zh-hans'] = array(
  * @author Alexsh
  * @author Gzdavidwong
  * @author Horacewai2
+ * @author Hydra
  * @author Jasonzhuocn
  * @author Liangent
  * @author Mark85296341
@@ -26501,6 +26513,9 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-view' => '查看全域用戶信息',
 	'centralauth-renameuser-merged' => '用戶$1已經遷移至整合登入系統。改它的名字會令到本地用戶自全域中遷出。',
 	'centralauth-renameuser-reserved' => '用戶$2已經預留給全域帳戶使用。',
+	'centralauth-link-on-contribs' => '全球帳戶狀態',
+	'centralauth-link-on-contribs-text' => '此用戶的全局賬戶狀態',
+	'centralauth-link-on-contribs-no' => '沒有全局帳戶',
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
 	'centralauth-account-exists' => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 	'centralauth-login-progress' => '正在為您登入到{{int:Centralauth-groupname}}的其它計劃：',
