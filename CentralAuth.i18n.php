@@ -13872,6 +13872,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
  */
 $messages['ku-latn'] = array(
 	'centralauth-merge-dryrun-or' => " '''an'''",
+	'centralauth-foreign-link' => 'Bikarhêner $1 di $2',
 	'centralauth-merge-method-new' => 'hesabê nû',
 	'centralauth-finish-password' => 'Şîfre:',
 	'centralauth-finish-login' => 'Têketin',
@@ -13884,6 +13885,7 @@ $messages['ku-latn'] = array(
 	'centralauth-admin-info-hidden' => 'Seviyeya veşartî:',
 	'centralauth-admin-yes' => 'erê',
 	'centralauth-admin-no' => 'na',
+	'centralauth-admin-blocklog' => 'reşahîya astengkirinê',
 	'centralauth-admin-list-blocked' => 'Hate astengkirin',
 	'centralauth-admin-delete-title' => 'Hesabê jê bibe',
 	'centralauth-admin-delete-button' => 'Ve hesabê jê bibe',
@@ -13895,10 +13897,14 @@ $messages['ku-latn'] = array(
 	'centralauth-log-status-locked' => 'hate astengkirin',
 	'centralauth-log-status-hidden' => 'hate veşartin',
 	'centralauth-rightslog-name' => 'Reşahîya mafên global',
+	'centralauth-existinggroup-legend' => 'Grûpên hene',
+	'centralauth-editgroup-name' => 'Navê grûpê:',
+	'centralauth-editgroup-members' => 'Lîsteya endaman:',
 	'centralauth-editgroup-reason' => 'Sedem:',
 	'centralauth-editset-name' => 'Nav:',
 	'centralauth-editset-type' => 'Cure:',
 	'centralauth-editset-reason' => 'Sedem:',
+	'centralauth-editset-submit' => 'Tomar bike',
 	'centralauth-editset-submit-delete' => 'Jê bibe',
 );
 
