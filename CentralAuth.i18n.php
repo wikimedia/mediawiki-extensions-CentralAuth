@@ -710,6 +710,9 @@ Rede: $1',
 	'centralauth-editset-success-delete' => 'Die wikigroep is verwyder.',
 	'centralauth-editset-return' => 'Terug na hoofmenu',
 	'right-globalgroupmembership' => 'Wysig lidmaatskap aan globale groepe',
+	'right-centralauth-unmerge' => 'Ontknoop globale gebruiker',
+	'right-centralauth-lock' => 'Blokkeer of versteek globale gebruiker',
+	'right-centralauth-oversight' => 'Onderdruk globale gebruiker',
 	'right-centralauth-merge' => 'Versmelt gebruikers',
 	'right-globalgrouppermissions' => 'Bestuur globale groepe',
 );
@@ -18407,8 +18410,10 @@ A peule vardé e modifiché mincadun ëd lor, o creé n'ansema neuv.",
 
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ * @author GerardM
  */
 $messages['ps'] = array(
+	'centralauth-login-global' => 'په يو وار ټولو غونډالو کې ننوتل',
 	'centralauth-merge-dryrun-or' => "'''يا'''",
 	'centralauth-list-home-title' => 'ويکي کور',
 	'centralauth-foreign-link' => 'کارن $1 په $2',
