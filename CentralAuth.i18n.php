@@ -11911,7 +11911,7 @@ $messages['ja'] = array(
 	'centralauth-editset-legend-ro' => 'ウィキ集合のリスト',
 	'centralauth-editset-intro-rw' => '以下のウィキ群が既に作成されています。
 作成済みのウィキ群を確認・変更、または新しいウィキ群を作成することができます。',
-	'centralauth-editset-intro-ro' => '以下は毀損のウィキ群の一覧です。',
+	'centralauth-editset-intro-ro' => '以下は現在設定されているウィキ集合の一覧です。',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|削除]])',
 	'centralauth-editset-new' => '新しいウィキ集合を作成する',
 	'centralauth-editset-notfound' => 'ウィキ集合 "$1" は存在しません。',
