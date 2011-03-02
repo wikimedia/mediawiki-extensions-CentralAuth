@@ -1587,6 +1587,7 @@ $messages['as'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
 	'mergeaccount' => 'Estatus de fusión de cuentes',
@@ -1700,6 +1701,7 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-admin-delete-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
 	'centralauth-token-mismatch' => 'Sentímoslo, nun se pudo procesar el to formulariu pol mor una perda de datos de la sesión.',
 	'centralauth-admin-reason' => 'Motivu:',
+	'centralauth-admin-reason-other' => 'Motivu distintu/adicional:',
 	'globalusers' => "Llista d'usuarios globales",
 	'centralauth-listusers-locked' => 'bloquiáu',
 	'centralauth-listusers-attached' => '[[User:$1|esiste llocalmente]]',
