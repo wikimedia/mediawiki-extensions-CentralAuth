@@ -1324,8 +1324,8 @@ $messages['arc'] = array(
 	'centralauth-admin-status-locked' => 'ܩܦܝܠܐ:',
 	'centralauth-admin-status-hidden' => 'ܛܘܫܝܐ:',
 	'globalusers' => 'ܡܟܬܒܘܬܐ ܓܘܢܝܬܐ ܕܗܕ̈ܡܐ',
-	'centralauth-login-progress' => 'ܢܫܪܐ ܥܠܠܬܟ ܠܬܪ̈ܡܝܬܐ ܕ {{int:Centralauth-groupname}} ܐܚܪ̈ܢܬܐ:',
-	'centralauth-logout-progress' => 'ܢܫܪܐ ܦܠܛܟ ܡܢ ܬܪ̈ܡܝܬܐ ܕ {{int:Centralauth-groupname}} ܐܚܪ̈ܢܬܐ:',
+	'centralauth-login-progress' => 'ܢܫܪܐ ܥܠܠܬܟ ܠܬܪ̈ܡܝܬܐ ܕ {{int:Centralauth-groupname}} ܐܚܪ̈ܢܝܬܐ:',
+	'centralauth-logout-progress' => 'ܢܫܪܐ ܦܠܛܟ ܡܢ ܬܪ̈ܡܝܬܐ ܕ {{int:Centralauth-groupname}} ܐܚܪ̈ܢܝܬܐ:',
 	'centralauth-log-status-locked' => 'ܩܦܝܠܐ',
 	'centralauth-log-status-hidden' => 'ܛܘܫܝܐ',
 	'centralauth-log-status-none' => '(ܠܐ ܡܕܡ)',
@@ -2407,11 +2407,12 @@ $messages['be'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Wizardist
  * @author Zedlik
  */
 $messages['be-tarask'] = array(
 	'mergeaccount' => "Стан аб'яднаньня рахункаў",
-	'centralauth-groupname' => 'Фундацыя «Вікімэдыя»',
+	'centralauth-groupname' => 'Фундацыі «Вікімэдыя»',
 	'centralauth-desc' => "[[Special:MergeAccount|Аб'яднаньне рахункаў]] у праектах {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў удзельнікаў]] у адзін унівэрсальны",
 	'centralauth-merge-denied' => 'Прабачце, але Вы ня маеце правоў для доступу да гэтай старонкі.',
@@ -7377,6 +7378,9 @@ $messages['fa'] = array(
 	'centralauth-renameuser-merged' => 'کاربر $1 به سامانه ورود یکپارچه منتقل شده‌است.
 تغییر نام آن باعث می‌شود که حساب محلی کاربر از حساب مشترک وی جدا شود.',
 	'centralauth-renameuser-reserved' => 'کاربر $2 برای حساب کاربری مشترک رزرو شده‌است.',
+	'centralauth-link-on-contribs' => 'وضعیت حساب سراسری',
+	'centralauth-link-on-contribs-text' => 'وضعیت حساب سراسری برای این کاربر',
+	'centralauth-link-on-contribs-no' => 'هیچ حساب سراسری',
 	'centralauth-invalid-wiki' => 'چنین پایگاه اطلاعاتی وجود ندارد: $1',
 	'centralauth-account-exists' => 'امکان ایجاد حساب کاربری وجود ندارد: حساب کاربری مورد نظر پیش از این در سامانه حساب کاربری مشترک به کار گرفته شده‌است.',
 	'centralauth-login-progress' => 'شما وارد حساب خود در پروژه‌های دیگر {{int:Centralauth-groupname}} نیز می‌شوید:',
@@ -9671,6 +9675,7 @@ $messages['hil'] = array(
  * @author Dalibor Bosits
  * @author Ex13
  * @author Herr Mlinka
+ * @author Roberta F.
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
@@ -9860,6 +9865,9 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-renameuser-merged' => 'Suradnik $1 je prešao u sustav središnje prijave.
 Preimenovanje će uzrokovati odvajanje lokalnog računa od globalnog.',
 	'centralauth-renameuser-reserved' => 'Suradnički račun $2 je rezerviran za globalni račun.',
+	'centralauth-link-on-contribs' => 'Status središnjega suradničkog računa:',
+	'centralauth-link-on-contribs-text' => 'Status globalnog računa za ovog suradnika',
+	'centralauth-link-on-contribs-no' => 'nema globalnog računa',
 	'centralauth-invalid-wiki' => 'Nema wiki baze podataka: $1',
 	'centralauth-account-exists' => 'Račun nemože biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.',
 	'centralauth-login-progress' => 'Prijavljivanje na druge projekte {{int:Centralauth-groupname|gen}}:',
@@ -12293,10 +12301,12 @@ $messages['ka'] = array(
 	'centralauth-merge-method-password' => 'პაროლით დადასტურება',
 	'centralauth-merge-method-admin' => 'ადმინისტრატორის გაერთიანებული ანგარიში',
 	'centralauth-merge-method-new' => 'ახალი ანგარიში',
-	'centralauth-merge-method-login' => 'ლოგინით დადასტურება',
+	'centralauth-merge-method-login' => 'შეიქმნა შესვლისას',
 	'centralauth-merge-method-primary-desc' => 'ეს ის ვიკია, რომელსაც ანგარიში თავდაპირველად მიუერთდა.
 გაითვალისწინეთ, რომ ის შეიძლება განსხვავებული იყოს მშობლიური ვიკის მომხმარებლისაგან.',
 	'centralauth-merge-method-empty-desc' => 'ადგილობრივი ანგარიში მიუერთდა, ვინაიდან მას რედაქტირებები არ ჰქონდა.',
+	'centralauth-merge-method-new-desc' => 'აჩვენებს, რომ გლობალური ანგარიში ავტომატურად შეიქმნა, როდესაც მოხდა ადგილობრივი ანგარიშის რეგისტრაცია.',
+	'centralauth-merge-method-login-desc' => 'აჩვენებს, რომ გლობალური ანგარიში ავტომატურად შეიქმნა, როდესაც მომხმარებელი სისტემაში შემოვიდა.',
 	'centralauth-finish-title' => 'გაერთიენების დასრულება',
 	'centralauth-finish-text' => 'თუ ეს ანგარიშები თქვენ გეკუთვნით, ანგარიშის ერთიან სისტემაზე გადასვლის დასრულება მათი პაროლების აქ შეყვანით შეგიძლიათ:',
 	'centralauth-finish-password' => 'პაროლი:',
@@ -12313,7 +12323,7 @@ $messages['ka'] = array(
 	'centralauth-attach-text' => 'ეს ანგარიში ჯერ არ გადატანილა ერთიანი ანგარიშის სისტემაში, თუ გლობალური ანგარიში ასევე თქვენ გეკუთნით, თქვენ შეგიძლიათ მოცემული ანგარიშის გაერთიანება, გლობალური ანგარიშის პაროლის მითითებით.',
 	'centralauth-attach-submit' => 'ანგარიშის გადატანა',
 	'centralauth-attach-success' => 'ანგარიში გადატანილი იქნა ერთიანი ანგარიშის სისტემაში',
-	'centralauth' => 'სახელთა გაერთიანების ადმინისტრირება',
+	'centralauth' => 'გლობალურ ანგარიშთა მართვა',
 	'centralauth-admin-intro' => 'ეს ინტერფეისი შესაძლოა იქნას გამოყენებული გლობალური ანგარიშების მართვისთვის.',
 	'centralauth-admin-manage' => 'მომხმარებლებზე ინფორმაციის მართვა.',
 	'centralauth-admin-username' => 'მომხმარებლის სახელი:',
@@ -12381,6 +12391,8 @@ $messages['ka'] = array(
 * ბლოკირებისა და დამალვის სტანდარტული მიზეზები
 ** შეურაცმყოფელი მომხმარებლისა სახელი
 ** უადგილო პირადი ინფორმაცია',
+	'centralauth-admin-logsnippet' => 'გლობალური ანგარიშის წინა ცვლილებები',
+	'centralauth-admin-suppressreason' => 'გლობალურად შეჩერდა $1-ის მიერ. მიზეზი: $2',
 	'globalusers' => 'გლობალური მომხმარებლების სია',
 	'centralauth-listusers-locked' => 'ჩაკწტილია',
 	'centralauth-listusers-attached' => '[[User:$1|ლოკალურად არსებობს]]',
@@ -12402,6 +12414,9 @@ $messages['ka'] = array(
 	'centralauth-prefs-manage' => 'თქვენი გლობალური ანგარიშის მართვა',
 	'centralauth-prefs-view' => 'გლობალური მომხმარებლის ინფოს ნახვა',
 	'centralauth-renameuser-reserved' => 'მომხმარებელი $2 შენახულია გლობალური ანგარიშისთვის.',
+	'centralauth-link-on-contribs' => 'გლობალური ანგარიშის სტატუსი',
+	'centralauth-link-on-contribs-text' => 'ამ მომხმარებლის გლობალური ანგარიშის სტატუსი',
+	'centralauth-link-on-contribs-no' => 'გლობალური ანგარიში არ არსებობს',
 	'centralauth-invalid-wiki' => 'არ არსებობს ვიკი-მონაცემთა ბაზა სახელწოდებით: $1',
 	'centralauth-account-exists' => 'ანგარიშის შექმნა შეუძლებელია: სასურველი მომხმარებლის სახელი უკვე დაკავებულია გაერთიანებული ანგარიშის სისტემაში.',
 	'centralauth-login-progress' => 'თქვენ შეხვედით აგრეთვე {{int:Centralauth-groupname}}-ის სხვა პროექტებშიც:',
@@ -12446,6 +12461,7 @@ $messages['ka'] = array(
 თქვენ შეგიძლიათ ნებისმიერი ჯგუფისთვის მინიჭებული უფლებების ნახვა და რედაქტირება.
 ჯგუფის წაშლა მისთვის მინიჭებული ყველა უფლების მოხსნითაა შესაძლებელი.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|ნახვა/რედაქტირება]])',
+	'centralauth-globalgroupperms-nogroups' => 'გლობალური ჯგუფები მითითებული არაა.',
 	'centralauth-existinggroup-legend' => 'არსებული ჯგუფები',
 	'centralauth-newgroup-legend' => 'ახალი ჯგუფის შექმნა',
 	'centralauth-newgroup-intro' => 'თქვენ შეგიძლიათ ამ ფორმის გამოყენება ახალი ჯგუფისთვის უფლებების მისანიჭებლად. გაითვალისწინეთ, რომ ჯგუფის არსებობა შეუძლებელია მისთვის მინიჭებული უფლებების გარეშე.',
@@ -12475,6 +12491,8 @@ $messages['ka'] = array(
 	'centralauth-editset' => 'ვიკი ნაკრებები',
 	'centralauth-editset-legend-rw' => 'შეასწორეთ ან შექმენით ვიკი',
 	'centralauth-editset-legend-ro' => 'ვიკი სიები',
+	'centralauth-editset-intro-rw' => 'მოცემული ვიკიჯგუფები უკვე შექმნილია. 
+თქვენ შეგიძლიათ იხილოთ, არედაქტიროთ ან შექმნათ ახალი ჯგუფები.',
 	'centralauth-editset-intro-ro' => 'ქვემოთ ნაჩვენებია არსებული ვიკი-პროექტების სია.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|წაშლა]])',
 	'centralauth-editset-new' => 'ახალი ნაკრების შექმნა',
@@ -12504,6 +12522,8 @@ $messages['ka'] = array(
 	'centralauth-editset-return' => 'მთავარ არეზე დაბრუნება',
 	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
+	'right-centralauth-lock' => 'გლობალური ანგარიშის დაბლოკვა ან დამალვა',
+	'right-centralauth-oversight' => 'გლობალური ანგარიშის აკრძალვა',
 	'right-centralauth-merge' => 'მათი ანგარიშის გაერთიანება',
 	'right-globalgrouppermissions' => 'გლობალური ჯგუფების მართვა',
 );
@@ -15937,6 +15957,7 @@ Tiada perubahan akan dilakukan sehinggalah anda mengesahkan bahawa semuanya keli
 	'centralauth-merge-step2-detail' => 'Beberapa akaun tidak dapat dipadankan secara automatik dengan wiki rumah yang dinyatakan.
 Sekiranya akaun-akaun ini milik anda, anda boleh mengesahkannya dengan memberikan kata laluan bagi akaun-akaun tersebut.',
 	'centralauth-merge-step2-submit' => 'Sahkan maklumat akaun',
+	'centralauth-login-global' => 'Log masuk secara global',
 	'centralauth-merge-dryrun-complete' => 'Semua akaun yang sedia ada boleh digabungkan secara automatik!
 
 Belum ada perubahan yang dilakukan pada akaun-akaun anda.',
