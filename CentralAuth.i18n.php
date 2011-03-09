@@ -4982,7 +4982,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-permission' => 'Die Zusammenführung von Benutzerkonten für andere Benutzer kann nur durch Stewards erfolgen.',
 	'centralauth-admin-no-unified' => 'Für diesen Benutzernamen gibt es kein globales Benutzerkonto.',
 	'centralauth-admin-info-header' => 'Globale Benutzerinformation',
-	'centralauth-admin-info-id' => 'Benutzer-ID:',
+	'centralauth-admin-info-id' => 'Benutzerkennung:',
 	'centralauth-admin-info-registered' => 'Registriert:',
 	'centralauth-admin-info-home' => 'Heimatwiki:',
 	'centralauth-admin-info-editcount' => 'Anzahl der Bearbeitungen in allen Wikis:',
@@ -6719,7 +6719,7 @@ Eliminado $3',
 	'centralauth-rightslog-set-optout' => 'basado en exclusión',
 	'autologin' => 'Identificación automática',
 	'centralauth-autologin-desc' => 'Esta página especial es usada internamente por MediaWiki.
-Cuando [[Special:UserLogin|te identificas]], el sistema central de autorización ordena a tu navegador que solicite esta página para todos lod dominios enlazados, unsando enlaces a imágenes.
+Cuando [[Special:UserLogin|te identificas]], el sistema central de autorización ordena a tu navegador que solicite esta página para todos los dominios enlazados, usando enlaces a imágenes.
 Has solicitado esta página sin aportar ningún dato de autenticación, por lo que no hace nada.',
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Administración de grupos globales',
@@ -11112,6 +11112,9 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-prefs-view' => 'Lihat info pengguna global',
 	'centralauth-renameuser-merged' => 'Pengguna $1 telah menjadi sistem akun global. Penggantian nama yang bersangkutan akan menyebabkan akun lokal tersebut terpisahkan dari akun globalnya.',
 	'centralauth-renameuser-reserved' => 'Pengguna $2 telah dicadangkan sebagai akun global.',
+	'centralauth-link-on-contribs' => 'status akun global',
+	'centralauth-link-on-contribs-text' => 'Status akun global untuk pengguna ini',
+	'centralauth-link-on-contribs-no' => 'tidak ada akun global',
 	'centralauth-invalid-wiki' => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists' => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-login-progress' => 'Anda masuk log ke proyek-proyek {{int:Centralauth-groupname}}:',
@@ -15063,7 +15066,7 @@ $messages['mk'] = array(
 	'centralauth-merge-step3-detail' => 'Создавањето на обединетата сметка може да започне. Кон неа ќе бидат приложени следните викија:',
 	'centralauth-merge-step3-submit' => 'Обединување на сметките',
 	'centralauth-merge-no-accounts' => 'Во централната табела на сметки нема пронајдено сметки кои соодветствуваат на вашето име!
-Базата на податоци мора да е расипана.',
+Базата на податоци мора да е оштетена.',
 	'centralauth-merge-home-password' => 'Домашното вики за оваа сметка (наведено подолу) има поинаква лозинка од онаа која ја внесовте.
 Внесете ја лозинката на домашното вики.',
 	'centralauth-complete' => 'Обединувањето на најавувањето е завршено!',
@@ -15333,6 +15336,7 @@ $messages['mk'] = array(
  * @author Jacob.jose
  * @author Praveenp
  * @author Shijualex
+ * @author Vssun
  */
 $messages['ml'] = array(
 	'mergeaccount' => 'ലോഗിൻ സം‌യോജിപ്പിക്കുന്നതിന്റെ തൽസ്ഥിതി',
@@ -15361,7 +15365,7 @@ $messages['ml'] = array(
 	'centralauth-merge-step2-detail' => 'ചില അംഗത്വങ്ങൾക്ക് തറവാട് വിക്കിയിലെ അംഗത്വവുമായി യാന്ത്രികമായി ചേർച്ചയില്ല എന്നു കാണുന്നു.
 ഈ അംഗത്വങ്ങൾ താങ്കളുടെ തന്നെയാണെന്നുറപ്പുണ്ടെങ്കിൽ ശരിയായ രഹസ്യവാക്ക് കൊടുത്ത് താങ്കൾക്ക് ഈ അംഗത്വങ്ങളെ താങ്കൾക്ക് സ്ഥിരീകരിക്കാവുന്നതാണ്‌.',
 	'centralauth-merge-step2-submit' => 'ലോഗിൻ വിവരം സ്ഥിരീകരിക്കുക',
-	'centralauth-login-global' => 'എന്റെ പ്രവേശിക്കൽ എല്ലാ സംരംഭത്തിലും ബാധകമാക്കുക',
+	'centralauth-login-global' => 'എന്റെ പ്രവേശനം എല്ലാ സംരംഭങ്ങളിലും ബാധകമാക്കുക',
 	'centralauth-merge-dryrun-complete' => 'നിലവിലുള്ള എല്ലാ അംഗത്വങ്ങളും യാന്ത്രികമായി സം‌യോജിപ്പിക്കാവുന്നതാണ്‌.',
 	'centralauth-merge-dryrun-incomplete' => 'തുടർ പ്രക്രിയകൾക്കായി താങ്കൾ തയ്യാറായി കഴിഞ്ഞു. പക്ഷെ ചില അംഗത്വങ്ങൾ യാന്ത്രികമായി സ്ഥിരീകരിക്കുവാൻ പറ്റാഞ്ഞതിനാൽ അവ ഇപ്പോൾ സം‌യോജിത അംഗത്വവുമായി ബന്ധിപ്പിക്കില്ല. താങ്കൾക്ക് ഇവയെ പിന്നീടു സം‌യോജിപ്പിക്കാവുന്നതാണ്.
 
@@ -23988,6 +23992,7 @@ Walang mga pagbabagong gagawin hangga't hindi ka pa nagbibigay ng kasagutan na s
 	'centralauth-merge-step2-detail' => 'Hindi kusang maitutugma sa itinakdang tahanang wiki ang ilan sa mga kuwenta.
 Kung ikaw ang nagmamay-ari ng mga akawnt na ito, maaari mong patunayan na sa iyo nga ang mga ito sa pamamagitan ng pagbibigay ng kanilang mga hudyat.',
 	'centralauth-merge-step2-submit' => 'Patotohanan ang kabatiran na pangpaglalagda',
+	'centralauth-login-global' => 'Ilagda akong pangbuong mundo',
 	'centralauth-merge-dryrun-complete' => 'Lahat ng umiiral na mga kuwenta ay maaaring kusang pag-isahin!
 
 Wala pang nagagawang mga pagbabagong sa iyong mga akawnt.',
@@ -24152,6 +24157,9 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-renameuser-merged' => 'Inilipat na ang tagagamit na si $1 patungo sa sistema ng pinag-isang paglagda.
 Ang muling pagpapangalan dito ay makasasanhi ng pagkakakalas ng katutubong tagagamit mula sa isang pandaigdigan.',
 	'centralauth-renameuser-reserved' => 'Nakalaan si tagagamit na $2 para sa isang pandaigdigang kuwenta/akawnt.',
+	'centralauth-link-on-contribs' => 'Kalagayan ng akawnt na pangbuong mundo',
+	'centralauth-link-on-contribs-text' => 'Kalagayan ng akawnt na pangbuong mundo para sa tagagamit na ito',
+	'centralauth-link-on-contribs-no' => 'walang akawnt na pangbuong mundo',
 	'centralauth-invalid-wiki' => 'Walang ganyang kalipunan ng dato na pangwiki: $1',
 	'centralauth-account-exists' => 'Hindi malikha ang kuwenta: may nakakuha na ng hiniling na pangalang pantagagamit sa loob ng sistema ng pinag-isang paglagda.',
 	'centralauth-login-progress' => 'Inilalagda ka patungo sa mga proyekto ng {{int:Centralauth-groupname}}:',
