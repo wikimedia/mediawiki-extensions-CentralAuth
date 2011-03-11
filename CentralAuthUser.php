@@ -1129,7 +1129,7 @@ class CentralAuthUser extends AuthPluginUser {
 			}
 			# Ditto for BlockIpComplete hook.
 
-			IPBlockForm::suppressUserName( $this->mName, $data['id'], $dbw );
+			RevisionDeleteUser::suppressUserName( $this->mName, $data['id'], $dbw );
 
 			# Locally log to suppress ?
 		} else {
@@ -1145,7 +1145,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 			// Unsuppress only if unblocked
 			if ( $dbw->affectedRows() ) {
-				IPBlockForm::unsuppressUserName( $this->mName, $data['id'], $dbw );
+				RevisionDeleteUser::unsuppressUserName( $this->mName, $data['id'], $dbw );
 			}
 		}
 	}
