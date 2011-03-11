@@ -4885,7 +4885,7 @@ Du forsøger måske at give rettigheder til en forkert bruger.",
  * @author Umherirrender
  */
 $messages['de'] = array(
-	'mergeaccount' => 'Status der Benutzerkonten-Zusammenführung',
+	'mergeaccount' => 'Status der Benutzerkontenzusammenführung',
 	'centralauth-groupname' => 'der Wikimedia Foundation',
 	'centralauth-desc' => 'Ermöglicht eine Spezialseite zum [[Special:MergeAccount|Zusammmenführen]] von Benutzerkonten in Wikis von {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zusammenführen mehrerer Benutzerkonten]] für das ''Single User Login''",
@@ -4896,16 +4896,16 @@ $messages['de'] = array(
 Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, dich mit einem gemeinsamen Benutzernamen und Passwort in allen Projekten {{MediaWiki:Centralauth-groupname}} in allen verfügbaren Sprachen anzumelden.
 
 Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, so beeinträchtigt es diesen nicht, aber du hast die Möglichkeit, später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
-	'centralauth-merge-step1-title' => 'Beginn der Benutzerkonten-Zusammenführung',
+	'centralauth-merge-step1-title' => 'Beginn der Benutzerkontenzusammenführung',
 	'centralauth-merge-step1-detail' => 'Bitte gib dein Passwort ein.
 Es wird zusammen mit deiner eingetragenen E-Mail-Adresse mit Benutzerkonten in den anderen Wikis abgeglichen, um Übereinstimmungen zu finden.
 Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
-	'centralauth-merge-step1-submit' => 'Anmelde-Informationen bestätigen',
+	'centralauth-merge-step1-submit' => 'Anmeldeinformationen bestätigen',
 	'centralauth-merge-step2-title' => 'Weitere Benutzerkonten bestätigen',
 	'centralauth-merge-step2-detail' => 'Einige der Benutzerkonten konnten nicht automatisch deinem Heimat-Wiki zugeordnet werden. Wenn diese Konten dir gehören, kannst du dies bestätigen, indem du das Passwort zu diesen Konten eingibst.',
-	'centralauth-merge-step2-submit' => 'Anmelde-Informationen bestätigen',
+	'centralauth-merge-step2-submit' => 'Anmeldeinformationen bestätigen',
 	'centralauth-login-global' => 'Global anmelden',
-	'centralauth-merge-dryrun-complete' => 'Alle existierenden Benutzerkonten können automatisch zusammengeführt werden!
+	'centralauth-merge-dryrun-complete' => 'Alle vorhandenen Benutzerkonten können automatisch zusammengeführt werden!
 
 Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.',
 	'centralauth-merge-dryrun-incomplete' => 'Es geht weiter, aber einige Benutzerkonten konnten nicht automatisch geprüft werden und werden in diesem ersten Schritt nicht zusammengeführt.
@@ -5020,7 +5020,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-token-mismatch' => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.',
 	'centralauth-admin-reason' => 'Grund:',
-	'centralauth-admin-reason-other' => 'Anderer/ergänzender Grund:',
+	'centralauth-admin-reason-other' => 'Anderer/ ergänzender Grund:',
 	'centralauth-admin-status' => 'Globalen Kontenstatus ändern',
 	'centralauth-admin-status-intro' => 'Du kannst dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern',
 	'centralauth-admin-status-locked' => 'Gesperrt:',
@@ -5051,10 +5051,10 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-days-ago' => 'Vor $1 {{PLURAL:$1|Tag|Tagen}}',
 	'centralauth-months-ago' => 'Vor $1 {{PLURAL:$1|Monat|Monaten}}',
 	'centralauth-years-ago' => 'Vor $1 {{PLURAL:$1|Jahr|Jahren}}',
-	'centralauth-prefs-status' => 'Benutzerkonten-Status:',
+	'centralauth-prefs-status' => 'Globaler Benutzerkontenstatus:',
 	'centralauth-prefs-not-managed' => 'Es wird kein zusammengeführtes Benutzerkonto benutzt.',
 	'centralauth-prefs-unattached' => 'Unbestätigt',
-	'centralauth-prefs-complete' => 'Fertig!',
+	'centralauth-prefs-complete' => 'Alles in Ordnung!',
 	'centralauth-prefs-migration' => 'Zusammenführung in Arbeit',
 	'centralauth-prefs-count-attached' => 'Dein Benutzerkonto ist bei $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
@@ -24681,6 +24681,8 @@ $messages['tt-cyrl'] = array(
 	'centralauth-prefs-detail-unattached' => 'Бу проект расланмаган.',
 	'centralauth-prefs-manage' => 'Глобаль кулланучы хисапнамәсе белән идарә итү',
 	'centralauth-prefs-view' => 'Кулланучы турында глобаль мәгълүматларны карау',
+	'centralauth-editset' => 'Вики җыелмасы',
+	'centralauth-editset-legend-rw' => 'Вики җыелмасын ясау яисә үзгәртү',
 );
 
 /** Tuvinian (Тыва дыл)
