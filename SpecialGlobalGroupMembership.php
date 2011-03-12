@@ -37,6 +37,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			$selector->addOption( $wiki );
 		}
 
+		$wgOut->addModuleStyles( 'mediawiki.special' );
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
 			Html::hidden( 'title',  $this->getTitle() ) .
