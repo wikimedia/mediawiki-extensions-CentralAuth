@@ -540,9 +540,11 @@ $messages['niu'] = array(
 );
 
 /** Dusun Bundu-liwan (Dusun Bundu-liwan)
+ * @author FRANCIS5091
  * @author FRANELYA
  */
 $messages['dtp'] = array(
+	'centralauth-finish-password' => 'Kaatalib:',
 	'centralauth-finish-login' => 'Sumuang log',
 );
 
@@ -10320,6 +10322,7 @@ Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anb
 );
 
 /** Hungarian (Magyar)
+ * @author Adam78
  * @author Bdamokos
  * @author Dani
  * @author Dorgan
@@ -10517,7 +10520,7 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-login-no-others' => 'Automatikusan bejelentkeztél {{int:Centralauth-groupname}} más projektjeibe is.',
 	'centralauth-logout-no-others' => 'Automatikusan kijelentkeztél {{int:Centralauth-groupname}} más projektjeiből is.',
 	'centralauth-hidden-blockreason' => '$1 globálisan elrejtette $2-kor a következő ok miatt: $3',
-	'centralauth-log-name' => 'Globális fiók-kezelési napló',
+	'centralauth-log-name' => 'Globálisfiók-kezelési napló',
 	'centralauth-log-header' => 'Ez a napló a globális felhasználói nevekhez kapcsolódó műveleteket (törlés, lezárás, feloldás) listázza.',
 	'centralauth-log-entry-delete' => 'törölte a(z) „$1” nevű globális fiókot',
 	'centralauth-log-entry-lock' => 'lezárta a(z) „$1” nevű globális fiókot',
