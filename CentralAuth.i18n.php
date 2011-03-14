@@ -9253,7 +9253,7 @@ $messages['he'] = array(
 	'centralauth-attach-text' => 'חשבון זה לא נוסף עדיין לחשבון הממוזג. אם גם החשבון הממוזג שייך לכם, באפשרותכם למזג חשבון זה פשוט על־ידי הקלדת סיסמת החשבון הכללי:',
 	'centralauth-attach-submit' => 'מיזוג החשבון',
 	'centralauth-attach-success' => 'החשבון נוסף לחשבון הממוזג.',
-	'centralauth' => 'ניהול מיזוג חשבונות',
+	'centralauth' => 'ניהול החשבון הגלובלי',
 	'centralauth-admin-intro' => 'ניתן להשתמש בממשק זה לניהול חשבונות כלליים.',
 	'centralauth-admin-manage' => 'ניהול המידע על המשתמש',
 	'centralauth-admin-username' => 'שם משתמש:',
@@ -16598,6 +16598,21 @@ Reden: $1',
 	'centralauth-editgroup-reason' => 'Reden:',
 );
 
+/** Nepali (नेपाली)
+ * @author Bhawani Gautam Rhk
+ */
+$messages['ne'] = array(
+	'centralauth-merge-step1-submit' => 'प्रवेश सम्बन्धि सूचना सुनिश्चित गर्ने',
+	'centralauth-merge-step2-title' => 'अरु खाता सुनिश्चित गर्ने',
+	'centralauth-merge-dryrun-or' => "'''अथवा'''",
+	'centralauth-merge-step3-title' => 'एकीकृत खाता बनाउने',
+	'centralauth-merge-step3-submit' => 'खाताहरु एकीकृत गर्ने',
+	'centralauth-complete' => 'प्रवेश सम्बन्धित एकीकरण पूर्ण',
+	'centralauth-incomplete' => '्प्रवेश सम्बन्धित एकीकरण पूर्ण भएन!',
+	'centralauth-merge-method-password' => 'प्रवेश शव्दद्वारा सुनिश्चित',
+	'centralauth-merge-method-new' => 'नयाँ खाता',
+);
+
 /** Dutch (Nederlands)
  * @author Krinkle
  * @author McDutchie
@@ -17851,6 +17866,7 @@ $messages['pfl'] = array(
  * @author Matma Rex
  * @author Nux
  * @author Qblik
+ * @author Saper
  * @author Sp5uhe
  * @author ToSter
  * @author Ymar
@@ -17861,7 +17877,7 @@ $messages['pl'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Łączy konta]] pomiędzy projektami {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Łączy różne konta]] w jedno konto uniwersalne',
 	'centralauth-merge-denied' => 'Niestety nie masz uprawnień pozwalających na dostęp do tej strony.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Zaloguj się]</span>, by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}}}}} Zaloguj się]</span>, by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.',
 	'centralauth-merge-welcome' => "'''Twoje konto użytkownika nie zostało jeszcze przekształcone na konto uniwersalne w obrębie projektów {{MediaWiki:Centralauth-groupname}}.'''
 
 Posiadanie konta uniwersalnego pozwala na korzystanie z tej samej nazwy użytkownika i hasła do zalogowania się we wszystkich projektach {{MediaWiki:Centralauth-groupname}}, we wszystkich wersjach językowych. Ułatwia to np. ładowanie plików na [http://commons.wikimedia.org/ Wikimedia Commons] i pozwala unikać nieporozumień lub nawet konfliktów, które mogą powstać, gdy dwie osoby wybiorą tę samą nazwę użytkownika na różnych projektach.
@@ -22298,9 +22314,9 @@ $messages['stq'] = array(
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Touhoopefieren fon moorere Benutserkonten]] foar dät ''Single User Login''",
 	'centralauth-merge-denied' => 'Dät spiet uus, man du hääst neen Begjuchtigenge foar disse Siede.',
 	'centralauth-merge-notlogged' => 'Jädden <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} mäldje die an], </span> uum tou wröigjen, of dien Benutserkonten fulboodich touhoopefierd wuuden.',
-	'centralauth-merge-welcome' => "'''Dien Benutserkonto wuude noch nit in dät globoale Wikimedia-Anmälde-System uurfierd.'''
-In dän Fal du die foar ne Migration fon dien Benutserkonto äntschatst, wäd et die muugelk, die mäd n gemeensoamen Benutsernoome un Paaswoud in aal Wikimedia-Projekte in aal ferföigboare Sproaken antoumäldjen.
-Dit moaket ju Oarbaid in gemeensoam nutsede Projekte eenfacher, t.B. dät Hoochleeden fon Doatäie ätter [http://commons.wikimedia.org/ Wikimedia Commons] un fermit Fersjoon un Konflikte, do der äntstounde konnen, wan two Moanskene dän sälwen Benutsernoome in ferscheedene Projekte benutsje.
+	'centralauth-merge-welcome' => "'''Dien Benutserkonto wuude noch nit in dät globoale Wikimedia-Anmälde-System {{MediaWiki:Centralauth-groupname}} uurfierd.'''
+In dän Fal du die foar ne Migration fon dien Benutserkonto äntskatst, wäd et die muugelk, die mäd n gemeensoamen Benutsernoome un Paaswoud in aal Wikimedia-Projekte {{MediaWiki:Centralauth-groupname}} in aal ferföigboare Sproaken antoumäldjen.
+Dit moaket ju Oarbaid in gemeensoam nutsede Projekte eenfacher, t.B. dät Hoochleeden fon Doatäie ätter [http://commons.wikimedia.org/ Wikimedia Commons] un fermit Fersjoon un Konflikte, do der äntstounde konnen, wan two Moanskene dän sälwen Benutsernoome in ferskeedene Projekte benutsje.
 
 Wan uurswäl din Benutsernoome al in n uur Projekt benutset, so be-ienfloudet et dissen nit, man du hääst ju Muugelkhaid, leeter mäd dissen uur Benutser of in Touhoopeoarbaid mäd n Administrator ätter ne Löösenge tou säiken.",
 	'centralauth-merge-step1-title' => 'Ounfang fon ju Benutserkonten-Touhoopefierenge',
