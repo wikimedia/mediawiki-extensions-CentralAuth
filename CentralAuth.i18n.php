@@ -3903,7 +3903,12 @@ segurament és perquè tenen una contrasenya diferent de la del vostre compte pr
 	'centralauth-merge-method-primary-desc' => "Aquest és el wiki en què es va fusionar el compte inicialment. 
  Tingues en compte que pot diferir de l'inici real de la wiki d'aquest usuari/a.",
 	'centralauth-merge-method-empty-desc' => 'Indica que el compte local es va fusionar perquè no tenia edicions.',
+	'centralauth-merge-method-mail-desc' => "Indica que el compte local va ser fusionat perquè la seva adreça de correu electrònic coincidia amb l'adreça del compte principal.",
 	'centralauth-merge-method-password-desc' => "Indica que el compte local es va fusionar perquè l'usuari/a especifica una contrasenya vàlida per això.",
+	'centralauth-merge-method-admin-desc' => 'Indica que el compte local va ser fusionat manualment pels stewards.
+Actualment, aquesta funcionalitat està desactivada per motius de seguretat.',
+	'centralauth-merge-method-new-desc' => 'Indica que el compte global va ser creat de manera automàtica quan es va crear el compte local.',
+	'centralauth-merge-method-login-desc' => "Indica que el compte local va ser creat de forma automàtica quan l'usuari va entrar-hi.",
 	'centralauth-finish-title' => 'Finalitza la fusió',
 	'centralauth-finish-text' => "Si aquests comptes us pertanyen, podeu finalitzar el procés d'unificació escrivint a continuació les contrasenyes corresponents:",
 	'centralauth-finish-password' => 'Contrasenya:',
@@ -3978,7 +3983,14 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-status-submit' => 'Fixa estat',
 	'centralauth-admin-status-nonexistent' => 'Error: el compte global "<nowiki>$1</nowiki>" no existeix.',
 	'centralauth-admin-setstatus-success' => "Heu canviat amb èxit l'estat d'aquest compte global.",
+	'centralauth-admin-status-reasons' => "* Motius habituals de bloqueig
+** Compte per a fer vandalisme únicament
+** Compte per a fer publicitat únicament
+* Motius habituals per a blocar i ocultar
+** Nom d'usuari abusiu
+** Informació personal inapropiada",
 	'centralauth-admin-logsnippet' => 'Canvis anteriors al compte global',
+	'centralauth-admin-suppressreason' => 'Eliminada globalment per $1 amb el següent motiu: $2',
 	'globalusers' => "Llista global d'usuaris",
 	'centralauth-listusers-locked' => 'Blocat',
 	'centralauth-listusers-attached' => '[[User:$1|existeix localment]]',
@@ -4002,6 +4014,9 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-renameuser-merged' => "L'usuari $1 ha migrat al sistema de comptes unificats.
 El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global.",
 	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.",
+	'centralauth-link-on-contribs' => 'estat del compte global',
+	'centralauth-link-on-contribs-text' => 'Situació del compte global per aquest usuari',
+	'centralauth-link-on-contribs-no' => 'sense compte global',
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists' => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
 	'centralauth-login-progress' => 'Iniciant la sessió en els projectes de {{int:Centralauth-groupname}}:',
@@ -4026,6 +4041,7 @@ El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global."
 	'centralauth-rightslog-entry-usergroups' => 'canviat el grup global de $1 des de $2 a $3',
 	'centralauth-rightslog-entry-groupperms' => 'canviats els permisos de $1 des de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'Canviats els permisos de grup per $1. Afegit $2; Suprimit $3',
+	'centralauth-rightslog-entry-groupperms3' => 'canviat el conjunt de wikis restringit del grup $1 de $2 a $3',
 	'centralauth-rightslog-header' => 'Aquest registre conté operacions en grups globals: canvis de permisos i de membres',
 	'centralauth-rightslog-entry-newset' => 'ha creat $2 paràmetres wiki $1 amb  les wikis següents : $3',
 	'centralauth-rightslog-entry-setrename' => 'ha reanomenat el paràmetre wiki "$2" a "$1"',
@@ -4072,9 +4088,14 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editset' => 'Conjunts de wikis',
 	'centralauth-editset-legend-rw' => 'Edita o crea un conjunt de paràmetres wiki',
 	'centralauth-editset-legend-ro' => "Llista d'ajustos wiki",
+	'centralauth-editset-intro-rw' => "Els següents conjunts de wikis ja han estat creats.
+Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 	'centralauth-editset-intro-ro' => 'A continuació es mostra la llista dels conjunts wiki.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|esborra]])',
 	'centralauth-editset-new' => 'Creeu un nou conjunt',
 	'centralauth-editset-notfound' => 'No s\'ha trobat el conjunt de wikis "$1".',
+	'centralauth-editset-optin' => 'Inclou només els wikis especificats',
+	'centralauth-editset-optout' => 'Inclou tots els wikis excepte els especificats',
 	'centralauth-editset-legend-edit' => 'Editant el conjunt de wikis "$1"',
 	'centralauth-editset-legend-view' => 'Ajustos wiki "$1"',
 	'centralauth-editset-legend-new' => 'Creant un nou conjunt de wikis',
