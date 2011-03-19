@@ -14877,8 +14877,12 @@ Bet kurį iš jų galite peržiūrėti ar keisti, ar sukurti naują.',
  */
 $messages['ltg'] = array(
 	'centralauth-merge-dryrun-or' => "'''ci'''",
+	'centralauth-finish-password' => 'Paroļs:',
+	'centralauth-admin-yes' => 'nui',
+	'centralauth-admin-no' => 'nā',
 	'centralauth-admin-reason' => 'Īmesle:',
 	'centralauth-editgroup-reason' => 'Īmesle:',
+	'centralauth-editset-name' => 'Pasauka:',
 	'centralauth-editset-reason' => 'Īmesle:',
 );
 
@@ -16304,16 +16308,20 @@ $messages['myv'] = array(
 /** Nahuatl (Nāhuatl)
  * @author Fluence
  * @author Ricardo gs
+ * @author Teòtlalili
  */
 $messages['nah'] = array(
+	'centralauth-merge-dryrun-or' => "'''nòso'''",
+	'centralauth-list-home-title' => 'Wikichànë',
+	'centralauth-merge-method-primary' => 'wikinelwatl',
 	'centralauth-admin-username' => 'Tlatequitiltilīltōcāitl:',
 	'centralauth-admin-info-id' => 'Tlatequitiltilīlli ID:',
 	'centralauth-admin-yes' => 'quēmah',
 	'centralauth-admin-no' => 'ahmo',
-	'centralauth-admin-reason' => 'Īxtlamatiliztli:',
+	'centralauth-admin-reason' => 'Tlèka:',
 	'centralauth-editgroup-noset' => '(ahtlein)',
 	'centralauth-editset-name' => 'Tōcāitl:',
-	'centralauth-editset-reason' => 'Īxtlamatiliztli:',
+	'centralauth-editset-reason' => 'Tlèka:',
 );
 
 /** Low German (Plattdüütsch)
@@ -16625,13 +16633,36 @@ Reden: $1',
 $messages['ne'] = array(
 	'centralauth-merge-step1-submit' => 'प्रवेश सम्बन्धि सूचना सुनिश्चित गर्ने',
 	'centralauth-merge-step2-title' => 'अरु खाता सुनिश्चित गर्ने',
+	'centralauth-login-global' => 'वैश्विक रुपमा प्रवेश गर्ने',
 	'centralauth-merge-dryrun-or' => "'''अथवा'''",
 	'centralauth-merge-step3-title' => 'एकीकृत खाता बनाउने',
 	'centralauth-merge-step3-submit' => 'खाताहरु एकीकृत गर्ने',
 	'centralauth-complete' => 'प्रवेश सम्बन्धित एकीकरण पूर्ण',
 	'centralauth-incomplete' => '्प्रवेश सम्बन्धित एकीकरण पूर्ण भएन!',
+	'centralauth-error-locked' => 'तपाईंले सम्पादन गर्न सक्नुहुन्न किन भनें तपाईंको खातालाई प्रतिबन्धित गरिएकोछ।',
+	'centralauth-merge-method-empty' => 'योगदानहरु छैनन्',
+	'centralauth-merge-method-mail' => 'ईमेलद्वारा सुनिश्चित',
 	'centralauth-merge-method-password' => 'प्रवेश शव्दद्वारा सुनिश्चित',
 	'centralauth-merge-method-new' => 'नयाँ खाता',
+	'centralauth-finish-password' => 'प्रवेशशव्द:',
+	'centralauth-attach-title' => 'खाता सुनिश्चित गर्ने',
+	'centralauth-admin-info-locked' => 'प्रतिबन्धित:',
+	'centralauth-admin-unattached' => 'संलग्न नगरिएको',
+	'centralauth-admin-list-method' => 'विधि',
+	'centralauth-admin-delete-button' => 'यो खाता मेट्ने',
+	'centralauth-admin-reason' => 'कारण:',
+	'centralauth-admin-reason-other' => 'अरू/थप कारण:',
+	'centralauth-admin-status-hidden' => 'लुकेको',
+	'centralauth-admin-status-hidden-no' => 'खाता लुकाइएको छैन',
+	'centralauth-prefs-unattached' => 'अनिश्चित',
+	'centralauth-editset-name' => 'नाम:',
+	'centralauth-editset-type' => 'प्रकार:',
+	'centralauth-editset-wikis' => 'विकिहरु:',
+	'centralauth-editset-reason' => 'कारण:',
+	'centralauth-editset-submit' => 'बुझाउने',
+	'centralauth-editset-submit-delete' => 'मेट्ने',
+	'centralauth-editset-usage' => 'समूहमा प्रयुक्त:',
+	'right-centralauth-unmerge' => 'नमिलाइएको प्रयोगकर्ता खाता',
 );
 
 /** Dutch (Nederlands)
@@ -19314,6 +19345,7 @@ Parola și adresa de email înregistrată vor fi verificate în conturile de pe 
 	'centralauth-merge-step2-title' => 'Confirmă mai multe conturi',
 	'centralauth-merge-step2-detail' => 'Nu s-a putut verifica în mod automat corespondența dintre unele conturi și cel de pe wiki-ul de reședință. Dacă aceste conturi vă aparțin, puteți confirma că sunt ale dumneavoastră introducând parolele asociate acestora.',
 	'centralauth-merge-step2-submit' => 'Confirmați datele de autentificare',
+	'centralauth-login-global' => 'Autentifică-mă global',
 	'centralauth-merge-dryrun-complete' => 'Toate conturile existente pot fi asimilate automat!
 
 Încă nu s-a efectuat nici o modificare asupra conturilor dumneavoastră.',
