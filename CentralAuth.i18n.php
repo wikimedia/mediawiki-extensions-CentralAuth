@@ -3855,7 +3855,7 @@ Si algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest pro
 	'centralauth-merge-step2-title' => 'Confirma més comptes',
 	'centralauth-merge-step2-detail' => 'Alguns dels vostres comptes no coincideixen amb les dades del compte de la vostra wiki principal. Si aquests comptes us pertanyen podeu confirmar-ho introduint les seves contrasenyes.',
 	'centralauth-merge-step2-submit' => 'Confirmació dels comptes',
-	'centralauth-login-global' => "Inicia'm sessió globalment",
+	'centralauth-login-global' => "Inicia'm sessió també en altres projectes de {{int:Centralauth-groupname}}",
 	'centralauth-merge-dryrun-complete' => "Tots els comptes existents el poden unificar automàticament!
 
 Encara no s'ha fet cap canvi als vostres comptes.",
@@ -15470,7 +15470,7 @@ $messages['ml'] = array(
 	'centralauth-attach-success' => 'ഈ അംഗത്വം സം‌യോജിത അംഗത്വത്തിലേക്കു കുടിയേറ്റിയിരിക്കുന്നു.',
 	'centralauth' => 'ആഗോള അംഗത്വ കാര്യനിർവഹണം',
 	'centralauth-admin-intro' => 'ആഗോള അംഗത്വങ്ങളുടെ കൈകാര്യനിർവഹണത്തിനായി ഈ സമ്പർക്കമുഖം ഉപയോഗിക്കാവുന്നതാണ്.',
-	'centralauth-admin-manage' => 'ഉപയോക്തൃ ഡാറ്റ പരിപാലിക്കുക',
+	'centralauth-admin-manage' => 'ഉപയോക്തൃവിവരങ്ങളുടെ പരിപാലനം',
 	'centralauth-admin-username' => 'ഉപയോക്തൃനാമം:',
 	'centralauth-admin-lookup-ro' => 'ഉപയോക്തൃവിവരങ്ങൾ കാണുക',
 	'centralauth-admin-lookup-rw' => 'അംഗത്വ കാര്യനിർവഹണം',
@@ -19807,7 +19807,7 @@ $messages['ru'] = array(
 	'centralauth-merge-step2-title' => 'Подтвердить дополнительные учётные записи',
 	'centralauth-merge-step2-detail' => 'Некоторые учётные записи не могут быть автоматически привязаны к обозначенной вами «домашней» вики. Если эти учётные записи принадлежат вам и у вас есть соответствующие пароли — укажите их.',
 	'centralauth-merge-step2-submit' => 'Подтвердить информацию об учётной записи',
-	'centralauth-login-global' => 'Представиться системе глобально',
+	'centralauth-login-global' => 'Также представиться в других проектах {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Все существующие учётные записи могут быть автоматически объединены!
 
 Пока ваши учётные записи изменены не были.',
@@ -23159,7 +23159,7 @@ $messages['te'] = array(
 	'centralauth-merge-step2-title' => 'మరిన్ని ఖాతాలను నిర్ధారించండి',
 	'centralauth-merge-step2-detail' => 'కొన్ని ఖాతాలను లక్ష్యిత ప్రధాన వికీతో ఆటోమేటిగ్గా సరిపోల్చలేకపోయాం. ఈ ఖాతాలు మీకు సంబంధించినవైతే, వాటి సంకేతపదాలను ఇవ్వడం ద్వారా అవి మీవే అని నిర్ధారించవచ్చు.',
 	'centralauth-merge-step2-submit' => 'ప్రవేశపు సమాచారాన్ని నిర్ధారించండి',
-	'centralauth-login-global' => 'నన్ను సార్వత్రికంగా ప్రవేశింపజేయి',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}} ప్రాజెక్టుల లోనికి కూడా నన్ను ప్రవేశింపజేయి',
 	'centralauth-merge-dryrun-complete' => 'ప్రస్తుతం ఉనికిలో ఉన్న ఖాతాలన్నిటినీ ఏకీకరించవచ్చు!
 మీ ఖాతాల్లో ఇంకా మార్పులేమీ చెయ్యలేదు.',
 	'centralauth-merge-dryrun-incomplete' => 'మీరీ పనిని కొనసాగించవచ్చు. కానీ, కొన్ని ఖాతాలను ఆటోమాటిగ్గా ధృవీకరించలేకపోవడం వలన వాటిని ఇప్పుడు ఏకీకరించలేము.
