@@ -8509,7 +8509,7 @@ Non se realizarán cambios até que vostede confirme que todo está ben.',
 	'centralauth-merge-step2-detail' => 'Algunhas contas non se puideron comprobar automaticamente no wiki sinalado.
 Se estas contas lle pertencen, pode confirmar que son súas introducindo o contrasinal que usa nelas.',
 	'centralauth-merge-step2-submit' => 'Confirmar a información de rexistro',
-	'centralauth-login-global' => 'Conectarse globalmente',
+	'centralauth-login-global' => 'Acceder tamén nos outros proxectos {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Todas as contas de usuario existentes poden ser unificadas automaticamente!
 
 Aínda non se produciu ninún cambio nas súas contas.',
@@ -9210,7 +9210,7 @@ $messages['he'] = array(
 	'centralauth-merge-step2-detail' => 'לא ניתן היה לאשר אוטומטית שמספר חשבונות זהים לחשבון הראשי.
 אם החשבונות הללו שייכים לכם, תוכלו לאשר זאת באמצעות כתיבת סיסמאותיהם.',
 	'centralauth-merge-step2-submit' => 'אישור של מידע הכניסה',
-	'centralauth-login-global' => 'כניסה גלובלית',
+	'centralauth-login-global' => 'להכניס אותי גם למיזמים אחרים של {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'ניתן למזג אוטומטית את כל החשבונות הקיימים!
 
 לא בוצעו עדיין שינויים בחשבונות המשתמש שלכם.',
@@ -16980,6 +16980,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
  * @author Jon Harald Søby
  * @author Jorunn
  * @author Nghtwlkr
+ * @author Ranveig
  */
 $messages['nn'] = array(
 	'mergeaccount' => 'Status for samanslåing av kontoar',
@@ -17002,7 +17003,7 @@ Ingen endringar vil bli gjort før du har stadfesta at alt ser rett ut.',
 	'centralauth-merge-step2-detail' => 'For nokre av kontoane var det ikkje mogleg å automatisk avgjera om dei var den same som den på heimwikien.
 Om desse kontoane tilhøyrer deg, kan du stadfesta dette ved å oppgje passorda til dei.',
 	'centralauth-merge-step2-submit' => 'Stadfest innloggingsinformasjon',
-	'centralauth-login-global' => 'Logg meg inn globalt',
+	'centralauth-login-global' => 'Logg inn på alle prosjekta.',
 	'centralauth-merge-dryrun-complete' => 'Alle kontoar som finst frå før kan bli slegne saman automatisk!
 
 Ingen endringar har blitt gjort på dine kontoar enno.',
@@ -19585,7 +19586,7 @@ $messages['roa-tara'] = array(
 	'centralauth-merge-step1-submit' => "Conferme le 'mbormazziune de trasùte",
 	'centralauth-merge-step2-title' => 'Conferme cchiù cunde',
 	'centralauth-merge-step2-submit' => "Conferme le 'mbormazziune de trasùte",
-	'centralauth-login-global' => 'Famme trasè globbalmènde',
+	'centralauth-login-global' => "Famme trasè pure jndr'à l'otre pruggette de {{int:Centralauth-groupname}}",
 	'centralauth-merge-dryrun-or' => "'''o'''",
 	'centralauth-merge-step3-title' => "Ccreje 'nu cunde aunifecate",
 	'centralauth-merge-step3-detail' => "Sì pronde pè crijà 'u tue cunde aunifecate, cu le seguende allegate de uicchi:",
@@ -19689,6 +19690,7 @@ Mutive: $1',
 	'centralauth-renameuser-merged' => "L'utinde $1 hagghie migrate verse 'nu sisteme de trasùte aunificate.
 Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globbale.",
 	'centralauth-renameuser-reserved' => "L'utinde $2 jè reservate pè 'nu cunde globbale.",
+	'centralauth-link-on-contribs-no' => 'nisciune cunde utende globbale',
 	'centralauth-invalid-wiki' => 'Nisciune database cumme uicchi: $1',
 	'centralauth-log-name' => 'Archivije de le cunde utinde globbale',
 	'centralauth-log-entry-delete' => 'scangille \'u cunde globbale "$1"',
