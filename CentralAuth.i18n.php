@@ -8837,6 +8837,7 @@ $messages['grc'] = array(
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  */
 $messages['gsw'] = array(
@@ -8857,7 +8858,7 @@ Wänn eber ander Dyy Benutzername scho in eme andere Projäkt brucht, no stert s
 	'centralauth-merge-step2-title' => 'Bstätig wyteri Benutzerkonte',
 	'centralauth-merge-step2-detail' => 'E Teil vu dr Benutzerkonte hän nit automatisch chenne Dyynem Heimet-Wiki zuegordnet wäre. Wänn die Konte Dir ghere, no  chasch des bstätige, indäm Du s Passwort zue däne Konte yygisch.',
 	'centralauth-merge-step2-submit' => 'Aamäld-Informatione bstätige',
-	'centralauth-login-global' => 'Wältwyt aamälde',
+	'centralauth-login-global' => 'In allene Sproochversione vo Wikipedia aamälde',
 	'centralauth-merge-dryrun-complete' => 'Alli Benutzerkonte, wu s git, chenne automatisch zämmegfiert wäre!
 
 Bis jetz sin kei Änderige an Dyyne Benutzerkonte vorgnuh wore.',
@@ -18928,7 +18929,7 @@ Não serão feitas alterações até que confime que está tudo correcto.',
 	'centralauth-merge-step2-title' => 'Confirmar mais contas',
 	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a palavra-chave (senha) das mesmas.',
 	'centralauth-merge-step2-submit' => 'Confirmar informações de login',
-	'centralauth-login-global' => 'Entrar globalmente',
+	'centralauth-login-global' => 'Autenticar-me também nos outros projetos do grupo {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Todas as contas existentes podem ser unificadas automaticamente!
 
 Ainda não foram feitas modificaçãoes nas suas contas.',
@@ -26272,7 +26273,7 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-step2-title' => '确认更多账户',
 	'centralauth-merge-step2-detail' => '有一部分的账户没有与主维基项目自动匹配上。如果您拥有这些账户，请提供这些账户的密码以确认它们的归属人。',
 	'centralauth-merge-step2-submit' => '确认账户数据',
-	'centralauth-login-global' => '全域登录',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}}全域登录',
 	'centralauth-merge-dryrun-complete' => '所有已存在的的账户都能被自动整合！
 
 目前尚未对您的帐号进行任何修改。',
