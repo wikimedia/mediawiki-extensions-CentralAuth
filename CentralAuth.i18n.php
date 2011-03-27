@@ -2737,7 +2737,7 @@ $messages['bg'] = array(
 	'centralauth-merge-step2-detail' => 'За някои от сметките не можа да се направи автоматично съответствие със сметката ви в посоченото за „домашно“ уики.
 Ако тези сметки ви принадлежат, можете да потвърдите това, като предоставите за тях парола.',
 	'centralauth-merge-step2-submit' => 'Потвърждаване на информацията за влизане',
-	'centralauth-login-global' => 'Глобално влизане',
+	'centralauth-login-global' => 'Влизане и в другите проекти от {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Всички съществуващи сметки могат да бъдат автоматично обединени!
 
 Все още не са извършени промени във вашите сметки.',
@@ -2783,7 +2783,7 @@ $messages['bg'] = array(
 	'centralauth-merge-method-password' => 'потвърден с парола',
 	'centralauth-merge-method-admin' => 'слята от администратор сметка',
 	'centralauth-merge-method-new' => 'нова сметка',
-	'centralauth-merge-method-login' => 'потвърдена чрез влизане',
+	'centralauth-merge-method-login' => 'създадена при влизане',
 	'centralauth-finish-title' => 'Приключване на сливането',
 	'centralauth-finish-text' => 'Ако следните сметки са ваши, можете да приключите обединението на сметките, като въведете паролите за другите сметки тук:',
 	'centralauth-finish-password' => 'Парола:',
@@ -4079,7 +4079,7 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editgroup-noset' => '(cap)',
 	'centralauth-editgroup-submit' => 'Guardar els canvis a les autoritzacions de grup',
 	'centralauth-editgroup-perms' => 'Autoritzacions assignades:',
-	'centralauth-editgroup-reason' => 'Raó:',
+	'centralauth-editgroup-reason' => 'Motiu:',
 	'centralauth-editgroup-success' => 'Autoritzacions de grup canviades',
 	'centralauth-editgroup-success-text' => 'Heu canviat les autoritzacions de grup pel grup $1. [[Special:GlobalGroupPermissions|Tornar a gestió de grups]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editeu]])',
@@ -17822,6 +17822,16 @@ Los podètz afichar o modificar, o ne crear un autre.',
 	'right-globalgroupmembership' => 'Modificar las apartenéncias als gropes globals',
 	'right-centralauth-merge' => 'Fusionar son compte',
 	'right-globalgrouppermissions' => 'Gestion dels gropes globals',
+);
+
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Psubhashish
+ */
+$messages['or'] = array(
+	'centralauth-merge-step1-detail' => 'ଆପଣଙ୍କ ଖାତାର ପାସଉଆଡ଼ ଦିଅନ୍ତୁ ।
+ଆପଙ୍କ ପାସଉଆଡ଼ ଆଉ ଇ-ମେଲ ଆଇଡ଼ି ସବୁ ବାକି ଉଇକିରେ ଥିବା ଖାତା ସବୁରେ ମିଳାଯିବ ।
+ଆପଣ ସେସବୁକୁ ନ ମିଳାଇବା ଯାଏଁ କିଛି ବି ବଦଳାଇବେ ନାହିଁ ।',
+	'centralauth-merge-step1-submit' => 'ଲଗଇନ ସୁଚନା ଠିକ ବୋଲି ଜଣାନ୍ତୁ',
 );
 
 /** Ossetic (Иронау)
