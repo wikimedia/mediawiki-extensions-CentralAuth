@@ -1300,7 +1300,7 @@ $messages['ar'] = array(
 $messages['arc'] = array(
 	'centralauth-merge-step2-title' => 'ܚܬܬ ܚܘܫܒܢ̈ܐ ܝܬܝܪ',
 	'centralauth-merge-step2-submit' => 'ܚܬܬ ܝܕ̈ܥܬܐ ܕܥܠܠܐ',
-	'centralauth-login-global' => 'ܟܢ ܐܥܠ ܠܝ ܠܬܪ̈ܡܝܬܐ ܐܚܪ̈ܢܐ ܕ {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'ܟܢ ܐܥܠ ܠܝ ܠܬܪ̈ܡܝܬܐ ܐܚܪ̈ܢܝܬܐ ܕ {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-or' => "'''ܐܘ'''",
 	'centralauth-list-home-title' => 'ܘܝܩܝ ܪܫܝܐ',
 	'centralauth-foreign-link' => 'ܡܦܠܚܢܐ $1 ܒ $2',
@@ -2874,6 +2874,7 @@ $messages['bg'] = array(
 	'centralauth-renameuser-merged' => 'Потребителят $1 е преминал към унифицираната система за влизане.
 Преименуването му ще изключи локалната му сметка от глобалната.',
 	'centralauth-renameuser-reserved' => 'Потребител $2 е запазен за глобална сметка.',
+	'centralauth-link-on-contribs-text' => 'Статут на глобалната сметка за този потребител',
 	'centralauth-invalid-wiki' => 'Не съществува такава база данни: $1',
 	'centralauth-account-exists' => 'Не може да бъде създадена сметка: желаното потребителско име е заето от Единната система за влизане.',
 	'centralauth-login-progress' => 'Влизате автоматично и в следните проекти на {{int:Centralauth-groupname}}:',
@@ -2958,6 +2959,8 @@ $messages['bg'] = array(
 	'centralauth-editset-success-delete' => 'Наборът от уикита е успешно изтрит.',
 	'centralauth-editset-return' => 'Връщане към основния изглед',
 	'right-globalgroupmembership' => 'Промяна на членството в глобални групи',
+	'right-centralauth-unmerge' => 'Разделяне на глобалната сметка',
+	'right-centralauth-lock' => 'Заключване или скриване на глобална сметка',
 	'right-centralauth-merge' => 'Сливане на тяхната сметка',
 	'right-globalgrouppermissions' => 'Управление на глобалните групи',
 );
@@ -7269,7 +7272,7 @@ $messages['fa'] = array(
 	'centralauth-incomplete-text' => 'از زمانی که حساب‌های کاربری شما یکی شود، شما قادر خواهید بود در هر یک از ویکی‌های {{MediaWiki:Centralauth-groupname}} وارد شوید بدون آن که حساب کاربری جدیدی بسازید',
 	'centralauth-not-owner-text' => 'حساب کاربری «$1» به طور خودکار به صاحب حساب کاربری در $2 اختصاص داده شد.
 
-اگر شما صاحب این حساب هستید، شما می‌توانید روند یکی کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در این‌جا به پایان برسانید:',
+اگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در اینجا به پایان برسانید:',
 	'centralauth-blocked-text' => 'دسترسی ویرایش در ویکی خانهٔ شما (که در زیر فهرست شده‌است) بسته است. لطفاً با یکی از مدیران تماس بگیرید تا آن را باز کند. تا زمانی که این دسترسی بسته باشد نمی‌توانید حساب‌های کاربری‌تان را یکی کنید.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'سامانه یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست. متاسفیم!',
@@ -7300,7 +7303,7 @@ $messages['fa'] = array(
 	'centralauth-merge-method-new-desc' => 'نشان می‌دهد که حساب سراسری در هنگام ایجاد حساب محلی به طور خودکار ایجاد شد.',
 	'centralauth-merge-method-login-desc' => 'نشان می‌دهد که حساب محلی در هنگام وارد شدن کاربر به سایت به طور خودکار ایجاد شد.',
 	'centralauth-finish-title' => 'خاتمه ادغام',
-	'centralauth-finish-text' => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در این‌جا به پایان برسانید:',
+	'centralauth-finish-text' => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی کردن حساب‌های کاربری را با واردکردن کلمه عبور سراسری در اینجا به پایان برسانید:',
 	'centralauth-finish-password' => 'کلمه عبور:',
 	'centralauth-finish-login' => 'ورود به سامانه',
 	'centralauth-finish-send-confirmation' => 'کلمه عبور پست الکترونیکی',
@@ -7548,7 +7551,7 @@ Salasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä olev
 	'centralauth-merge-step2-title' => 'Muiden tunnusten yhdistäminen',
 	'centralauth-merge-step2-detail' => 'Joidenkin käyttäjätunnusten samuutta kotiwikin käyttäjätunnukseen ei voitu varmistaa. Jos nämä tunnukset kuuluvat sinulle, voit todistaa niiden kuuluvan sinulle antamalla niiden salasanan.',
 	'centralauth-merge-step2-submit' => 'Vahvista yhdistäminen',
-	'centralauth-login-global' => 'Kirjaudu sisään globaalisti',
+	'centralauth-login-global' => 'Kirjaudu myös muihin {{int:Centralauth-groupname}} -hankkeisiin',
 	'centralauth-merge-dryrun-complete' => 'Kaikki käyttäjätunnuksesi voidaan yhdistää automaattisesti.
 
 Mitään muutoksia ei ole vielä tehty.',
@@ -25944,7 +25947,7 @@ $messages['yi'] = array(
 	'centralauth-merge-denied' => 'אנטשולדיגט, איר האט נישט קיין דערלויבעניש פֿאַר דעם בלאַט.',
 	'centralauth-merge-step1-title' => 'אנהייבן איינלאגירן פֿאַראייניקן',
 	'centralauth-merge-step1-submit' => 'באַשטעטיקן ארײַנלאָגירן אינפֿאָרמאַציע',
-	'centralauth-login-global' => 'ארײַנלאגירן גלאבאַל',
+	'centralauth-login-global' => 'טוט מיך אַרײַנלאגירן אויך אין אַנדערע פראיעקטן פֿון  {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-or' => "'''אדער'''",
 	'centralauth-merge-step3-submit' => 'פֿאַראייניקן קאנטעס',
 	'centralauth-list-home-title' => 'היים וויקי',
