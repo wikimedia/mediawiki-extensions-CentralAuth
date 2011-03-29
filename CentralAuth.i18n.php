@@ -8861,7 +8861,7 @@ Wänn eber ander Dyy Benutzername scho in eme andere Projäkt brucht, no stert s
 	'centralauth-merge-step2-title' => 'Bstätig wyteri Benutzerkonte',
 	'centralauth-merge-step2-detail' => 'E Teil vu dr Benutzerkonte hän nit automatisch chenne Dyynem Heimet-Wiki zuegordnet wäre. Wänn die Konte Dir ghere, no  chasch des bstätige, indäm Du s Passwort zue däne Konte yygisch.',
 	'centralauth-merge-step2-submit' => 'Aamäld-Informatione bstätige',
-	'centralauth-login-global' => 'In allene Sproochversione vo Wikipedia aamälde',
+	'centralauth-login-global' => 'Mi au bi andre Projekt {{int:Centralauth-groupname}} aamälde',
 	'centralauth-merge-dryrun-complete' => 'Alli Benutzerkonte, wu s git, chenne automatisch zämmegfiert wäre!
 
 Bis jetz sin kei Änderige an Dyyne Benutzerkonte vorgnuh wore.',
@@ -11819,7 +11819,8 @@ $messages['ja'] = array(
 	'centralauth-admin-list-legend-ro' => 'ローカルアカウントの一覧',
 	'centralauth-admin-list-legend-rw' => 'ローカルアカウントの統一を解除',
 	'centralauth-admin-unattached' => '統一されていないアカウント',
-	'centralauth-admin-blocked' => '$3 $4 を期限としてブロックされています。理由: $2',
+	'centralauth-admin-blocked' => 'ブロックされています。期限 $3 $4。
+理由: $2',
 	'centralauth-admin-blocked-indef' => '無期限ブロックされました。理由: $1',
 	'centralauth-admin-blocklog' => 'ブロック記録',
 	'centralauth-admin-list-localwiki' => 'ローカル・ウィキ',
@@ -17835,6 +17836,28 @@ $messages['or'] = array(
 ଆପଙ୍କ ପାସଉଆଡ଼ ଆଉ ଇ-ମେଲ ଆଇଡ଼ି ସବୁ ବାକି ଉଇକିରେ ଥିବା ଖାତା ସବୁରେ ମିଳାଯିବ ।
 ଆପଣ ସେସବୁକୁ ନ ମିଳାଇବା ଯାଏଁ କିଛି ବି ବଦଳାଇବେ ନାହିଁ ।',
 	'centralauth-merge-step1-submit' => 'ଲଗଇନ ସୁଚନା ଠିକ ବୋଲି ଜଣାନ୍ତୁ',
+	'centralauth-merge-dryrun-or' => "'''ବା'''",
+	'centralauth-merge-step3-title' => 'ମିଳିତ ଖାତା ଖୋଲନ୍ତୁ',
+	'centralauth-merge-step3-detail' => 'ଆପଣ ମିଳିତ ଖାତା ଖୋଲିବା ପାଇଁ ପୁରା ସଜିଲ, ଯେଉଁଥିରେ ଏହିସବୁ ଉଇକି ରହିବ:',
+	'centralauth-merge-step3-submit' => 'ଖାତାଗୁଡ଼ିକୁ ମିଳାଇଦେବା',
+	'centralauth-merge-no-accounts' => 'ଆପଣଙ୍କ ନାଆଁରେ କିଛି ବି ଖାତା ମିଳିଲା ନାହିଁ, ଡାଟାବେସଟି ବୋଧେ ଭୁଲ ଅଛି ।',
+	'centralauth-merge-home-password' => 'ଆପଣ ଦେଇଥିବା ପାସଉଆଡଟି ମୁଳ ଉଇକିରେ ଥିବା ପାସଉଆଡଠାରୁ ଅଲଗା, ଦୟାକରି ମୁଳ ଉଇକି ପାଇଁ ଠିକ ପାସଉଆଡଟି ଦିଅନ୍ତୁ ।',
+	'centralauth-complete' => 'ଲଗଇନ ଏକାକିକରଣ ଶେଷ ହେଲା !',
+	'centralauth-incomplete' => 'ଲଗଇନ ଏକାକିକରଣ ଶେଷ ହୋଇପାରିନାହିଁ !',
+	'centralauth-complete-text' => 'ଆପଣ ଏବେ ନୁଆ ଖାତାଟିଏ ନଖୋଲି ବି {{MediaWiki:Centralauth-groupname}}ର ଯେକ୍ଔଣସି ସାଇଟ ଭିତରକୁ ଯାଇପାରିବେ ।',
+	'centralauth-foreign-link' => 'ଇଉଜର $1  $2 ଠାରେ',
+	'centralauth-merge-method-primary' => 'ମୁଳ ଉଇକି',
+	'centralauth-merge-method-empty' => 'କିଛି ବି ଅବଦାନ ନାହିଁ',
+	'centralauth-merge-method-mail' => 'ଇମେଲ ଦେଇ କନଫର୍ମ କରାଯାଇଛି',
+	'centralauth-merge-method-password' => 'ପାସଉଆଡ ଦେଇ କନଫର୍ମ କରାଯାଇଛି',
+	'centralauth-merge-method-admin' => 'ପରିଛାଙ୍କ ଦେଇ କନଫର୍ମ କରାଯାଇଛି',
+	'centralauth-merge-method-new' => 'ନୁଆ ଖାତା',
+	'centralauth-merge-method-login' => 'ଲଗଇନ ବେଳେ ତିଆରି କରାଯାଇଛି',
+	'centralauth-finish-password' => 'ପାସଉଆଡ଼',
+	'centralauth-finish-login' => 'ଲଗଇନ',
+	'centralauth-finish-send-confirmation' => 'ପାସଉଆଡଟିକୁ ଇମେଲ କରି ପଠାଇବା',
+	'centralauth-admin-delete-button' => 'ଏହି ଖାତାଟିକୁ ଲିଭାଇଦିଅନ୍ତୁ',
+	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" ଙ୍କର ଖାତାଟି ପୁରାପୁରି ଲିଭିଗଲା',
 );
 
 /** Ossetic (Иронау)
