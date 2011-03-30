@@ -42,8 +42,8 @@ class SpecialWikiSets extends SpecialPage {
 				$this->buildMainView();
 			}
 		} else {
-			if ( $subpage && !is_numeric( $subpage ) ) {
-				$set = WikiSet::newFromName( $subpage );
+			if ( $subpage ) {
+				$set = is_numeric( $subpage ) ? WikiSet::newFromId( $subpage ) : WikiSet::newFromName( $subpage );
 				if ( $set ) {
 					$subpage = $set->getID();
 				} else {
