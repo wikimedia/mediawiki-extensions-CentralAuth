@@ -11424,7 +11424,7 @@ Nessuna modifica sarà effettuata prima della tua conferma che tutto appare in r
 	'centralauth-merge-step2-title' => 'Conferma altri account',
 	'centralauth-merge-step2-detail' => 'Non è stato possibile collegare automaticamente alcuni account a quello sulla tua wiki principale. Se sei il titolare di questi account, prova che ti appartengono indicando le password per ciascuno di essi.',
 	'centralauth-merge-step2-submit' => 'Conferma le informazioni di login',
-	'centralauth-login-global' => 'Accedi globalmente',
+	'centralauth-login-global' => 'Accedi anche agli altri progetti di {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'È possibile unificare automaticamente tutti gli account esistenti.
 
 Al momento non è stata apportata alcuna modifica agli account.',
@@ -13272,6 +13272,7 @@ $messages['kn'] = array(
  * @author Albamhandae
  * @author Devunt
  * @author Ficell
+ * @author Klutzy
  * @author Kwj2772
  * @author PuzzletChung
  * @author ToePeu
@@ -13297,7 +13298,7 @@ $messages['ko'] = array(
 	'centralauth-merge-step2-detail' => '계정 일부는 주 위키와 일치하지 않습니다.
 이 계정을 갖고 있는 것이 맞다면, 비밀번호를 넣어 확인할 수 있습니다.',
 	'centralauth-merge-step2-submit' => '로그인 정보 확인',
-	'centralauth-login-global' => '모든 위키에 로그인',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}}의 모든 프로젝트에도 같이 로그인',
 	'centralauth-merge-dryrun-complete' => '모든 존재하는 계정이 자동으로 합쳐질 수 있습니다.
 
 아직은 계정에 적용되지 않습니다.',
@@ -13466,6 +13467,8 @@ $messages['ko'] = array(
 이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.',
 	'centralauth-renameuser-reserved' => '사용자 이름 $2는 통합 계정으로 이미 사용되고 있습니다.',
 	'centralauth-link-on-contribs' => '통합 계정 상태',
+	'centralauth-link-on-contribs-text' => '이 사용자의 전체 공유 계정 상태',
+	'centralauth-link-on-contribs-no' => '전체 공유 계정 없음',
 	'centralauth-invalid-wiki' => '다음과 같은 위키 데이터베이스가 없습니다: $1',
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}의 다른 프로젝트에도 로그인합니다:',
