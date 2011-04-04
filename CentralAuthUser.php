@@ -1221,6 +1221,15 @@ class CentralAuthUser extends AuthPluginUser {
 			return "no user";
 		}
 
+		// If the global account has been locked, we don't want to spam
+		// other wikis with local account creations. But, if we have explicitly
+		// given a list of pages that locked accounts should be able to edit,
+		// we'll allow it.
+		global $wgCentralAuthLockedCanEdit;
+		if (empty($wgCentralAuthLockedCanEdit) && $this->isLocked()) {
+			return "locked";
+		}
+
 		// Don't allow users to autocreate if they are oversighted.
 		// If they do, their name will appear on local user list
 		// (and since it contains private info, its inacceptable).
