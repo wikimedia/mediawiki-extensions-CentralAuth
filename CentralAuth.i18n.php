@@ -1656,7 +1656,7 @@ Mentes tea bloquiada, nun pues fusionar les tos cuentes.",
 	'centralauth-merge-method-password' => 'confirmáu per clave',
 	'centralauth-merge-method-admin' => "l'aliministrador fusionó la cuenta",
 	'centralauth-merge-method-new' => 'nueva cuenta',
-	'centralauth-merge-method-login' => 'confirmao por identificación',
+	'centralauth-merge-method-login' => 'creao al coneutase',
 	'centralauth-finish-title' => 'Completar la fusión',
 	'centralauth-finish-text' => 'Si estes cuentes son de to, pues finar el procesu de fusión de cuentes escribiendo simplemente les claves de les otres cuentes equí:',
 	'centralauth-finish-password' => 'Clave:',
@@ -1672,18 +1672,20 @@ Otres cuentes entá nun tán confirmaes.',
 	'centralauth-attach-text' => 'Esta cuenta inda nun foi migrada a la cuenta fusionada. Si la cuenta global tamién ye de to, pues fusionar esta cuenta escribiendo la clave de cuenta global:',
 	'centralauth-attach-submit' => 'Migrar cuenta',
 	'centralauth-attach-success' => 'La cuenta foi migrada a la cuenta fusionada.',
-	'centralauth' => 'Alministración de cuentes fusionaes',
+	'centralauth' => "Alministración global d'usuarios",
 	'centralauth-admin-manage' => "Remanar los datos d'usuariu",
 	'centralauth-admin-username' => "Nome d'usuariu:",
 	'centralauth-admin-permission' => "Namái los stewards puen fusionar les cuentes d'otres persones por ellos.",
 	'centralauth-admin-no-unified' => "Nun hai cuenta fusionada pa esti nome d'usuariu.",
 	'centralauth-admin-info-id' => "ID d'usuariu:",
 	'centralauth-admin-info-registered' => 'Rexistrada:',
+	'centralauth-admin-info-editcount' => "Cuenta total d'ediciones:",
 	'centralauth-admin-info-locked' => 'Candáu:',
-	'centralauth-admin-info-hidden' => 'Oculta:',
+	'centralauth-admin-info-hidden' => "Nivel d'anubrimientu:",
+	'centralauth-admin-nohome' => 'nun se pue determinar',
 	'centralauth-admin-yes' => 'sí',
 	'centralauth-admin-no' => 'non',
-	'centralauth-admin-unattached' => 'Cuentes non asociaes',
+	'centralauth-admin-unattached' => 'non asociaes',
 	'centralauth-admin-list-localwiki' => 'Wiki llocal',
 	'centralauth-admin-list-attached-on' => 'Asociada a',
 	'centralauth-admin-list-method' => 'Métodu',
@@ -1895,7 +1897,7 @@ $messages['ba'] = array(
 	'centralauth-merge-step2-title' => 'Өҫтәмә иҫәп яҙмаларын раҫларға',
 	'centralauth-merge-step2-detail' => 'Ҡайһы бер иҫәп яҙмалары һеҙ күрһәткән башланғыс вики проекты менән берләшә алмай. Әгәр был иҫәп яҙмалары ысынлап та Һеҙҙеке булһа, уларҙың паролен керетеп, быны дәлилләгеҙ.',
 	'centralauth-merge-step2-submit' => 'Иҫәп яҙмаһы тураһында мәғлүмәтте раҫларға',
-	'centralauth-login-global' => 'Системала дөйөм танылырға',
+	'centralauth-login-global' => 'Шулай уҡ {{int:Centralauth-groupname}} башҡа проекттарында танылырға',
 	'centralauth-merge-dryrun-complete' => 'Бөтә булған иҫәп яҙмалары берләштерелә ала!
 Әлегә һеҙҙең иҫәп яҙмалары үҙгәртелмәгән.',
 	'centralauth-merge-dryrun-incomplete' => 'Ҡайһы бер иҫәп яҙмалары берләштерелә алмаһа ла, дауам итергә мөмкин. Һеҙ уларҙы һуңынан берләштерә алаһығыҙ. 
@@ -2057,10 +2059,13 @@ $messages['ba'] = array(
 	'centralauth-renameuser-merged' => '$1 ҡатнашыусыһы дөйөм танылыу системаһына күсте.
 Уның исемен алыштырыу локаль ҡанташыусы менән дөйөм иҫәп яҙмаһы араһында бәйләнеш юғалыуға килтерәсәк.',
 	'centralauth-renameuser-reserved' => '$2 ҡатнашыусыһының исеме дөйөм иҫәп яҙмаһы өсөн һаҡланған.',
+	'centralauth-link-on-contribs' => 'дөйөм иҫәп яҙмаһы статусы',
+	'centralauth-link-on-contribs-text' => 'Был ҡатнашыусының дөйөм иҫәп яҙмаһының статусы',
+	'centralauth-link-on-contribs-no' => 'дөйөм иҫәп яҙмаһы юҡ',
 	'centralauth-invalid-wiki' => 'Бындай вики мәғлүмәттәр базаһы юҡ: $1',
 	'centralauth-account-exists' => 'Иҫәп яҙмаһын булдырып булмай. Һеҙ һораған исем дөйөм танылыу системаһында ҡулланыла.',
 	'centralauth-login-progress' => 'Һеҙ  шулай уҡ {{int:Centralauth-groupname}} башҡа проекттарында танылғанһығыҙ:',
-	'centralauth-logout-progress' => 'Һеҙ  шулай уҡ {{int:Centralauth-groupname}} башҡа проекттарында сеансты тамамлайһығыҙ:',
+	'centralauth-logout-progress' => 'Һеҙ шулай уҡ {{int:Centralauth-groupname}} башҡа проекттарында сеансты тамамлайһығыҙ:',
 	'centralauth-login-no-others' => 'Һеҙ  {{int:Centralauth-groupname}} бөтә проекттарында танылғанһығыҙ.',
 	'centralauth-logout-no-others' => 'Һеҙ  {{int:Centralauth-groupname}} бөтә проекттарында сеансты тамамланығыҙ.',
 	'centralauth-hidden-blockreason' => '$2 $1 ҡатнашыусыһы тарафынан түбәндәге сәбәп менән дөйөм йәшерелгән: $3',
@@ -4610,6 +4615,7 @@ $messages['cy'] = array(
  * @author Emilkris33
  * @author Jon Harald Søby
  * @author Masz
+ * @author Peter Alberti
  * @author Peter Andersen
  * @author Qaqqalik
  * @author Sarrus
@@ -4635,7 +4641,7 @@ Din angangskode og den registrerede e-mail-adresse vil blive tjekket op mod kont
 	'centralauth-merge-step2-detail' => 'For nogen af kontoerne var det ikke muligt automatisk at afgøre om de svarer til den angivne hjemwiki.
 Hvis disse kontoer tilhører dig, kan du bekræfte at de er dine ved at opgive deres adgangskoder.',
 	'centralauth-merge-step2-submit' => 'Bekræft indlogningsoplysninger',
-	'centralauth-login-global' => 'Log mig ind globalt',
+	'centralauth-login-global' => 'Log mig også ind på andre {{int:Centralauth-groupname}}-projekter',
 	'centralauth-merge-dryrun-complete' => 'Alle eksisterende kontoer kan automatisk slås sammen.
 
 Dine kontoer er ikke blevet ændret endnu.',
@@ -22787,6 +22793,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 );
 
 /** Swedish (Svenska)
+ * @author Ainali
  * @author Boivie
  * @author Dafer45
  * @author Lejonel
@@ -22817,7 +22824,7 @@ Ditt lösenord och din e-postadress kommer kontrolleras mot användarkonton på 
 	'centralauth-merge-step2-title' => 'Bekräfta fler konton',
 	'centralauth-merge-step2-detail' => 'Några av kontona kunde inte automatiskt matchas med kontot på den wiki som utsetts till hemwiki. Om dessa konton tillhör dig kan du bekräfta det genom att ange lösenorden för dem.',
 	'centralauth-merge-step2-submit' => 'Bekräfta inloggningsinformation',
-	'centralauth-login-global' => 'Logga in mig globalt',
+	'centralauth-login-global' => 'Logga också in mig i andra {{int:Centralauth-gruppnamn}}-projekt',
 	'centralauth-merge-dryrun-complete' => 'Alla existerande konton kan automatiskt slås samman!
 
 Inga ändringar av dina konton har gjorts än.',
@@ -22971,6 +22978,9 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-prefs-view' => 'Visa global användarinfo',
 	'centralauth-renameuser-merged' => 'Användare $1 har anslutits till systemet för gemensam inloggning. Att byta dess namn kommer att leda till att den lokala användaren separeras från sitt gemensamma konto.',
 	'centralauth-renameuser-reserved' => 'Användare $2 är reserverad för ett globalt konto.',
+	'centralauth-link-on-contribs' => 'globalt kontostatus',
+	'centralauth-link-on-contribs-text' => 'Status för det globala kontot för den här användaren',
+	'centralauth-link-on-contribs-no' => 'inget globalt konto',
 	'centralauth-invalid-wiki' => 'Ingen sådan databas: $1',
 	'centralauth-account-exists' => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
 	'centralauth-login-progress' => 'Loggar in dig till {{int:Centralauth-groupname}}s projekt:',
