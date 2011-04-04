@@ -1226,7 +1226,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// given a list of pages that locked accounts should be able to edit,
 		// we'll allow it.
 		global $wgCentralAuthLockedCanEdit;
-		if (empty($wgCentralAuthLockedCanEdit) && $this->isLocked()) {
+		if ( !count( $wgCentralAuthLockedCanEdit ) && $this->isLocked() ) {
 			return "locked";
 		}
 
