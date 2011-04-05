@@ -442,6 +442,13 @@ class CentralAuthHooks {
 			wfDebug( __METHOD__ . ": denied by other extensions\n" );
 			return false;
 		}
+		$abortMessage = '';
+		if ( !wfRunHooks( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
+			// In this case we have no way to return the message to the user,
+			// but we can log it.
+			wfDebug( __METHOD__ . ": denied by other extension: $abortMessage\n" );
+			return false;
+		}
 
 		// Checks passed, create the user
 		wfDebug( __METHOD__ . ": creating new user\n" );
