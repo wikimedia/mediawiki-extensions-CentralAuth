@@ -5928,7 +5928,7 @@ $messages['el'] = array(
 	'centralauth-merge-step2-title' => 'Επιβεβαίωση περισσότερων λογαριασμών',
 	'centralauth-merge-step2-detail' => 'Μερικοί λογαριασμοί δεν έγινε δυνατό να συνταιριάξουν αυτόματα με το αρχικό προκαθορισμένο εγχείρημα. Εάν αυτοί οι λογαριασμοί σας ανήκουν, μπορείτε να επιβεβαιώσετε ότι είναι δικοί σας παρέχοντας τον κωδικό τους.',
 	'centralauth-merge-step2-submit' => 'Επιβεβαίωση πληροφοριών σύνδεσης',
-	'centralauth-login-global' => 'Συνδέστε με καθολικά',
+	'centralauth-login-global' => 'Συνδέστε με επίσης και στα άλλα εγχειρήματα {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Όλοι οι υπάρχοντες λογαριασμοί μπορούν να ενοποιηθούν αυτόματα!
 
 Δεν έχουν γίνει αλλαγές ακόμα στους λογαριασμούς σας.',
@@ -7688,7 +7688,7 @@ Ennen yhdistämistä luotujen paikallisten tunnuksien salasanat palautuvat yhdis
 	'centralauth-admin-status-submit' => 'Aseta tila',
 	'centralauth-admin-status-nonexistent' => 'Virhe: Yhdistettyä käyttäjätunnusta <nowiki>$1</nowiki> ei ole olemassa.',
 	'centralauth-admin-setstatus-success' => 'Olet onnistuneesti muuttanut tämän yhdistetyn tunnuksen tilaa.',
-	'centralauth-admin-status-reasons' => '↓ * Yleiset lukitsemisen syyt
+	'centralauth-admin-status-reasons' => '* Yleiset lukitsemisen syyt
 ** Vain vandalismitarkoituksiin luotu tili
 ** Vain roskapostitarkoituksiin luotu tili
 * Yleiset lukitsemisen ja piilotuksen syyt
@@ -8784,8 +8784,8 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'centralauth-editset-nouse' => '(ningún)',
 	'centralauth-editset-usage' => 'Usado nos grupos:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|O seguinte wiki|Os seguintes wikis}} non {{PLURAL:$2|existe|existen}}: $1.',
-	'centralauth-editset-success' => 'Cambiouse con éxito a configuración do wiki.',
-	'centralauth-editset-success-delete' => 'Borrouse con éxito a configuración do wiki.',
+	'centralauth-editset-success' => 'A configuración do wiki cambiouse correctamente.',
+	'centralauth-editset-success-delete' => 'A configuración do wiki borrouse correctamente.',
 	'centralauth-editset-return' => 'Volver á vista principal',
 	'right-globalgroupmembership' => 'Editar os membros dos grupos globais',
 	'right-centralauth-unmerge' => 'Anular a fusión dunha conta global',
@@ -9146,6 +9146,7 @@ $messages['gu'] = array(
 
 /** Manx (Gaelg)
  * @author MacTire02
+ * @author Shimmin Beg
  */
 $messages['gv'] = array(
 	'centralauth-merge-dryrun-or' => "'''ny'''",
@@ -9163,6 +9164,8 @@ $messages['gv'] = array(
 	'centralauth-admin-delete-title' => 'Scryss coontys',
 	'centralauth-admin-delete-button' => 'Scryss y coontys shoh',
 	'centralauth-admin-reason' => 'Fa:',
+	'centralauth-editgroup-reason' => 'Fa:',
+	'centralauth-editset-reason' => 'Fa:',
 );
 
 /** Hausa (هَوُسَ) */
