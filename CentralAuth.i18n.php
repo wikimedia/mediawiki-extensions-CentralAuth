@@ -15984,6 +15984,7 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
  * @author Aurora
  * @author Aviator
  * @author Izzudin
@@ -16010,7 +16011,7 @@ Tiada perubahan akan dilakukan sehinggalah anda mengesahkan bahawa semuanya keli
 	'centralauth-merge-step2-detail' => 'Beberapa akaun tidak dapat dipadankan secara automatik dengan wiki rumah yang dinyatakan.
 Sekiranya akaun-akaun ini milik anda, anda boleh mengesahkannya dengan memberikan kata laluan bagi akaun-akaun tersebut.',
 	'centralauth-merge-step2-submit' => 'Sahkan maklumat akaun',
-	'centralauth-login-global' => 'Log masuk secara global',
+	'centralauth-login-global' => 'Saya juga nak log masuk ke dalam projek {{int:Centralauth-groupname}} yang lain',
 	'centralauth-merge-dryrun-complete' => 'Semua akaun yang sedia ada boleh digabungkan secara automatik!
 
 Belum ada perubahan yang dilakukan pada akaun-akaun anda.',
@@ -17285,7 +17286,7 @@ Ditt passord og din e-postadresse vil bli sjekket opp mot kontoene på andre wik
 	'centralauth-merge-step2-title' => 'Bekreft flere kontoer',
 	'centralauth-merge-step2-detail' => 'For noen av kontoene var det ikke mulig å automatisk avgjøre om de var den samme som den på hjemmewikien. Om disse kontoene tilhører deg kan du bekrefte at de er dine ved å oppgi kontoenes passord.',
 	'centralauth-merge-step2-submit' => 'Bekreft innloggingsinformasjon',
-	'centralauth-login-global' => 'Logg meg inn globalt',
+	'centralauth-login-global' => 'Logg meg også inn på andre {{int:Centralauth-groupname}}-prosjekter',
 	'centralauth-merge-dryrun-complete' => 'Alle eksisterende kontoer kan slås sammen automatisk.
 
 Kontoene dine har ikke blitt endret ennå.',
