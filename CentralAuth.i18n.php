@@ -395,6 +395,7 @@ You may view and modify any of them, or create a new set.',
  * @author The Evil IP address
  * @author Toliño
  * @author Umherirrender
+ * @author דולב
  */
 $messages['qqq'] = array(
 	'mergeaccount' => 'Title of special page "MergeAccount".',
@@ -471,6 +472,7 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-prefs-not-managed' => "Appears on user profile tab of 'Preferences' special page, after 'Global account status:'",
+	'centralauth-prefs-complete' => "This message is displayed as the global account status at a user's preferences page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
 	'centralauth-prefs-manage' => "Link on 'User profile' tab of 'Preferences' special page.",
 	'centralauth-login-progress' => '{{gender}}
@@ -9202,6 +9204,7 @@ $messages['haw'] = array(
  * @author Amire80
  * @author Rotem Liss
  * @author YaronSh
+ * @author דולב
  */
 $messages['he'] = array(
 	'mergeaccount' => 'מצב מיזוג החשבונות',
@@ -9370,7 +9373,7 @@ $messages['he'] = array(
 	'centralauth-prefs-status' => 'מצב החשבון הכללי:',
 	'centralauth-prefs-not-managed' => 'לא משתמש בחשבון ממוזג',
 	'centralauth-prefs-unattached' => 'בלתי מאומת',
-	'centralauth-prefs-complete' => 'הכל תקין!',
+	'centralauth-prefs-complete' => 'הכול תקין!',
 	'centralauth-prefs-migration' => 'בתהליך מיזוג',
 	'centralauth-prefs-count-attached' => 'החשבון שלכם פעיל ב{{PLURAL:$1|מיזם אחד|־$1 מיזמים}}.',
 	'centralauth-prefs-count-unattached' => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב{{PLURAL:$1|מיזם אחד|־$1 מיזמים}}.',
