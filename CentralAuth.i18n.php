@@ -15205,7 +15205,7 @@ $messages['mk'] = array(
 	'centralauth-admin-blocklog' => 'дневник на блокирања',
 	'centralauth-admin-list-localwiki' => 'Локално вики',
 	'centralauth-admin-list-attached-on' => 'Приложена кон',
-	'centralauth-admin-list-method' => 'Метод',
+	'centralauth-admin-list-method' => 'Начин',
 	'centralauth-admin-list-editcount' => 'Бројач на уредувања',
 	'centralauth-admin-list-blocked' => 'Блокирана',
 	'centralauth-admin-unmerge' => 'Раздели ги избраните',
@@ -20463,7 +20463,7 @@ $messages['sah'] = array(
 	'centralauth-merge-step2-title' => 'Атын ааттары бигэргэт',
 	'centralauth-merge-step2-detail' => 'Сорох ааттар аптамаатынан талыллыбыт аакка холбоммотулар. Ол ааттар эйиэннэрэ буоллаҕына тустаах киирии тылларын киллэрэн ону бигэргэт.',
 	'centralauth-merge-step2-submit' => 'Аат туһунан сибидиэнньэни бигэргэт',
-	'centralauth-login-global' => 'Тиһиликкэ аан аатынан киирии',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}} атын бырайыактарыгар эмиэ бу аатынан киирэргэ',
 	'centralauth-merge-dryrun-complete' => 'Туох баар ааттарыҥ холбонуохтарын сөп!
 
 Эн ааттарыҥ өссө холбонулла иликтэр.',
