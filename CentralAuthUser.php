@@ -54,7 +54,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * cache it in the User object.
 	 * @param User $user
 	 */
-	static function getInstance( $user ) {
+	static function getInstance( User $user ) {
 		if ( !isset( $user->centralAuthObj ) ) {
 			$user->centralAuthObj = new self( $user->getName() );
 		}
