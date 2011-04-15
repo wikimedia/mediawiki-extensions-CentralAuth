@@ -1263,6 +1263,7 @@ $messages['ar'] = array(
 ربما تكون تحاول إعطاء صلاحيات للمستخدم الخاطئ!",
 	'centralauth-editset' => 'تعديل مجموعات الويكي',
 	'centralauth-editset-legend-rw' => 'تحرير أو إنشاء مجموعة ويكي',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|احذف]])',
 	'centralauth-editset-new' => 'إنشاء مجموعة جديدة',
 	'centralauth-editset-notfound' => 'مجموعة الويكي "$1" لم يتم العثور عليها.',
 	'centralauth-editset-optin' => 'معتمد على الاشتراك (يشمل فقط الويكيات المحددة)',
@@ -4984,7 +4985,7 @@ Beachte, dass es sich vom Heimatwiki des Benutzers unterscheiden kann.',
 	'centralauth-merge-method-mail-desc' => 'Zeigt an, dass das lokale Benutzerkonto zusammengeführt wurde, da die E-Mail-Adresse identisch mit der des Haupt-Benutzerkontos war.',
 	'centralauth-merge-method-password-desc' => 'Zeigt an, dass das lokale Benutzerkonto zusammengeführt wurde, da der Benutzer ein gültiges Passwort eingegeben hat.',
 	'centralauth-merge-method-admin-desc' => 'Zeigt an, dass das lokale Benutzerkonto manuell durch Stewards zusammengeführt wurde.
-Diese Möglichkeit ist zur Zeit aus Sicherheitsgründen deaktiviert',
+Diese Möglichkeit ist zurzeit aus Sicherheitsgründen deaktiviert',
 	'centralauth-merge-method-new-desc' => 'Zeigt an, dass das globale Benutzerkonto automatisch erstellt wurde, als das lokale Benutzerkonto erstellt wurde.',
 	'centralauth-merge-method-login-desc' => 'Zeigt an, dass das lokale Benutzerkonto automatisch erstellt wurde, als der Benutzer sich anmeldete.',
 	'centralauth-finish-title' => 'Zusammenführung vollenden',
@@ -5093,9 +5094,6 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-renameuser-merged' => 'Der Benutzer „$1“ wurde bereits in das globale Benutzerkontensystem übernommen.
 Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkontensystem.',
 	'centralauth-renameuser-reserved' => 'Der Benutzer „$2“ ist als globales Benutzerkonto reserviert.',
-	'centralauth-link-on-contribs' => 'Globaler Benutzerkontenstatus',
-	'centralauth-link-on-contribs-text' => 'Status des globalen Benutzerkontos dieses Benutzers',
-	'centralauth-link-on-contribs-no' => 'Es ist kein globales Benutzerkonto vorhanden.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkontensystem verwendet.',
 	'centralauth-login-progress' => 'Automatisch wurdest du auch an folgenden Projekten {{int:Centralauth-groupname}} angemeldet:',
@@ -22096,7 +22094,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-blocklog' => 'историја блокирања',
 	'centralauth-admin-list-localwiki' => 'Локални вики',
 	'centralauth-admin-list-attached-on' => 'Прикључено',
-	'centralauth-admin-list-method' => 'Метода',
+	'centralauth-admin-list-method' => 'Начин',
 	'centralauth-admin-list-editcount' => 'Број измена',
 	'centralauth-admin-list-blocked' => 'Блокиран',
 	'centralauth-admin-unmerge' => 'Раздвоји изабрано',
@@ -22226,6 +22224,7 @@ $messages['sr-ec'] = array(
 /** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Liangent
  * @author Michaello
+ * @author Rancher
  * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
@@ -22304,7 +22303,7 @@ Razlog: $1',
 	'centralauth-admin-blocklog' => 'istorija blokiranja',
 	'centralauth-admin-list-localwiki' => 'Lokalna viki',
 	'centralauth-admin-list-attached-on' => 'Nakačen na',
-	'centralauth-admin-list-method' => 'Metoda',
+	'centralauth-admin-list-method' => 'Način',
 	'centralauth-admin-list-editcount' => 'Brojač izmena',
 	'centralauth-admin-list-blocked' => 'Blokiran',
 	'centralauth-admin-unmerge' => 'Odvoji selektovane',
