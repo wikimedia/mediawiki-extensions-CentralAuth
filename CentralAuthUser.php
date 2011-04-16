@@ -1092,7 +1092,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Suppresses a local account of a user.
 	 */
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
-		global $wgConf, $wgLanguageNames;
+		global $wgConf;
 
 		$lb = wfGetLB( $wiki );
 		$dbw = $lb->getConnection( DB_MASTER, array(), $wiki );
@@ -1100,7 +1100,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( $suppress ) {
 			list( $site, $lang ) = $wgConf->siteFromDB( $wiki );
-			$lang = isset( $wgLanguageNames[$lang] ) ? $lang : 'en';
+			$langNames = Language::getLanguageNames();
+			$lang = isset( $langNames[$lang] ) ? $lang : 'en';
 			$blockReason = wfMsgReal( 'centralauth-admin-suppressreason',
 				array( $by, $reason ), true, $lang );
 
