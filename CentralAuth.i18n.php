@@ -536,15 +536,6 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
-/** Dusun Bundu-liwan (Dusun Bundu-liwan)
- * @author FRANCIS5091
- * @author FRANELYA
- */
-$messages['dtp'] = array(
-	'centralauth-finish-password' => 'Kaatalib:',
-	'centralauth-finish-login' => 'Sumuang log',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -5873,6 +5864,15 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-centralauth-oversight' => 'Globalne konto pódtłocyś',
 	'right-centralauth-merge' => 'Konta zjadnośiś',
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
+);
+
+/** Dusun Bundu-liwan (Dusun Bundu-liwan)
+ * @author FRANCIS5091
+ * @author FRANELYA
+ */
+$messages['dtp'] = array(
+	'centralauth-finish-password' => 'Kaatalib:',
+	'centralauth-finish-login' => 'Sumuang log',
 );
 
 /** Ewe (Eʋegbe)
@@ -22078,7 +22078,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-username' => 'Корисничко име:',
 	'centralauth-admin-permission' => 'Само стјуарди могу да споје остале корисничке налоге за њих.',
 	'centralauth-admin-no-unified' => 'Нема сједињеног налога за ово корисничко име.',
-	'centralauth-admin-info-id' => 'Кориснички ИД:',
+	'centralauth-admin-info-id' => 'Кориснички ИБ:',
 	'centralauth-admin-info-registered' => 'Регистрован:',
 	'centralauth-admin-info-home' => 'Домаћи вики:',
 	'centralauth-admin-info-editcount' => 'Број измена:',
