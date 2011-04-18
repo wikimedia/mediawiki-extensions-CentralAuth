@@ -10,18 +10,14 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->setHeaders();
 
 		if ( !$this->userCanExecute( $wgUser ) ) {
-			$wgOut->addWikiText(
-				wfMsg( 'centralauth-merge-denied' ) .
-				"\n\n" .
-				wfMsg( 'centralauth-readmore-text' ) );
+			$wgOut->addWikiMsg( 'centralauth-merge-denied' );
+			$wgOut->addWikiMsg( 'centralauth-readmore-text' );
 			return;
 		}
 
 		if ( !$wgUser->isLoggedIn() ) {
-			$wgOut->addWikiText(
-				wfMsg( 'centralauth-merge-notlogged' ) .
-				"\n\n" .
-				wfMsg( 'centralauth-readmore-text' ) );
+			$wgOut->addWikiMsg( 'centralauth-merge-notlogged' );
+			$wgOut->addWikiMsg( 'centralauth-readmore-text' );
 
 			return;
 		}
@@ -157,7 +153,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $wgCentralAuthDryRun ) {
-			$wgOut->addWikiText( wfMsg( 'centralauth-notice-dryrun' ) );
+			$wgOut->addWikiMsg( 'centralauth-notice-dryrun' );
 		}
 
 		$password = $wgRequest->getVal( 'wpPassword' );
@@ -174,14 +170,14 @@ class SpecialMergeAccount extends SpecialPage {
 			// This is the global account or matched it
 			if ( count( $unattached ) == 0 ) {
 				// Everything matched -- very convenient!
-				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-complete' ) );
+				$wgOut->addWikiMsg( 'centralauth-merge-dryrun-complete' );
 			} else {
-				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-incomplete' ) );
+				$wgOut->addWikiMsg( 'centralauth-merge-dryrun-incomplete' );
 			}
 
 			if ( count( $unattached ) > 0 ) {
 				$wgOut->addHTML( $this->step2PasswordForm( $unattached ) );
-				$wgOut->addWikiText( wfMsg( 'centralauth-merge-dryrun-or' ) );
+				$wgOut->addWikiMsg( 'centralauth-merge-dryrun-or' );
 			}
 
 			$subAttached = array_diff( $attached, array( $home ) );
@@ -254,9 +250,9 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( !$ok ) {
 			if ( empty( $attached ) ) {
-				$wgOut->addWikiText( wfMsg( 'centralauth-finish-noconfirms' ) );
+				$wgOut->addWikiMsg( 'centralauth-finish-noconfirms' );
 			} else {
-				$wgOut->addWikiText( wfMsg( 'centralauth-finish-incomplete' ) );
+				$wgOut->addWikiMsg( 'centralauth-finish-incomplete' );
 			}
 		}
 		$this->showCleanupForm();
@@ -280,7 +276,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$password = $wgRequest->getText( 'wpPassword' );
 		if ( $globalUser->authenticate( $password ) == 'ok' ) {
 			$globalUser->attach( wfWikiID(), 'password' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-attach-success' ) );
+			$wgOut->addWikiMsg( 'centralauth-attach-success' );
 			$this->showCleanupForm();
 		} else {
 			$wgOut->addHTML(
@@ -295,13 +291,11 @@ class SpecialMergeAccount extends SpecialPage {
 		global $wgOut, $wgCentralAuthDryRun;
 
 		if ( $wgCentralAuthDryRun ) {
-			$wgOut->addWikiText( wfMsg( 'centralauth-notice-dryrun' ) );
+			$wgOut->addWikiMsg( 'centralauth-notice-dryrun' );
 		}
 
-		$wgOut->addWikiText(
-			wfMsg( 'centralauth-merge-welcome' ) .
-			"\n\n" .
-			wfMsg( 'centralauth-readmore-text' ) );
+		$wgOut->addWikiMsg( 'centralauth-merge-welcome' );
+		$wgOut->addWikiMsg( 'centralauth-readmore-text' );
 
 		$this->initSession();
 		$wgOut->addHTML(
@@ -326,7 +320,7 @@ class SpecialMergeAccount extends SpecialPage {
 		global $wgOut, $wgUser;
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 		$merged = $globalUser->listAttached();
-		$wgOut->addWikiText( wfMsg( 'centralauth-attach-list-attached', $this->mUserName ) );
+		$wgOut->addWikiMsg( 'centralauth-attach-list-attached', $this->mUserName );
 		$wgOut->addHTML( $this->listAttached( $merged ) );
 		$wgOut->addHTML( $this->attachActionForm() );
 	}
@@ -336,24 +330,24 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( count( $remainder ) > 0 ) {
 			$wgOut->setPageTitle( wfMsg( 'centralauth-incomplete' ) );
-			$wgOut->addWikiText( wfMsg( 'centralauth-incomplete-text' ) );
+			$wgOut->addWikiMsg( 'centralauth-incomplete-text' );
 		} else {
 			$wgOut->setPageTitle( wfMsg( 'centralauth-complete' ) );
-			$wgOut->addWikiText( wfMsg( 'centralauth-complete-text' ) );
+			$wgOut->addWikiMsg( 'centralauth-complete-text' );
 		}
-		$wgOut->addWikiText( wfMsg( 'centralauth-readmore-text' ) );
+		$wgOut->addWikiMsg( 'centralauth-readmore-text' );
 
 		if ( $merged ) {
 			$wgOut->addHTML( '<hr />' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-list-attached',
-				$this->mUserName ) );
+			$wgOut->addWikiMsg( 'centralauth-list-attached',
+				$this->mUserName );
 			$wgOut->addHTML( $this->listAttached( $merged ) );
 		}
 
 		if ( $remainder ) {
 			$wgOut->addHTML( '<hr />' );
-			$wgOut->addWikiText( wfMsg( 'centralauth-list-unattached',
-				$this->mUserName ) );
+			$wgOut->addWikiMsg( 'centralauth-list-unattached',
+				$this->mUserName );
 			$wgOut->addHTML( $this->listUnattached( $remainder ) );
 
 			// Try the password form!
@@ -519,6 +513,6 @@ class SpecialMergeAccount extends SpecialPage {
 
 	private function dryRunError() {
 		global $wgOut;
-		$wgOut->addWikiText( wfMsg( 'centralauth-disabled-dryrun' ) );
+		$wgOut->addWikiMsg( 'centralauth-disabled-dryrun' );
 	}
 }

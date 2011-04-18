@@ -115,10 +115,10 @@ class SpecialWikiSets extends SpecialPage {
 			if ( $groups ) {
 				$usage = "<ul>\n";
 				foreach ( $groups as $group )
-					$usage .= "<li>" . wfMsgExt( 'centralauth-editset-grouplink', array( 'parseinline' ), $group ) . "</li>\n";
+					$usage .= "<li>" . wfMsgExt( 'centralauth-editset-grouplink', 'parseinline', $group ) . "</li>\n";
 				$usage .= "</ul>";
 			} else {
-				$usage = wfMsgWikiHtml( 'centralauth-editset-nouse' );
+				$usage = wfMsgExt( 'centralauth-editset-nouse', 'parse' );
 			}
 		} else {
 			$usage = '';
