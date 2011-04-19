@@ -497,7 +497,7 @@ Variables $2 and $3 are a combination of the following:
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
-	'centralauth-editgroup-noset' => '{{identical|None}}',
+	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
 	'centralauth-editset-subtitle' => 'Do not translate the <code>Special:WikiSets<code> part.',
 	'centralauth-editset-name' => '{{identical|Name}}',
