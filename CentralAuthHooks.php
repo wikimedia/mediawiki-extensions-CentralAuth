@@ -98,6 +98,32 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * Show a nicer error when the user account does not exist on the local wiki, but
+	 * does exist globally
+	 * @param  $users Array
+	 * @param  $data Array
+	 * @param  $abortError String
+	 * @return bool
+	 */
+	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$abortError ) {
+		if ( count( $users ) == 0 || !$users[0] instanceof User ){
+			// We can't handle this
+			return true;
+		}
+
+		$firstUser = $users[0];
+		if( !$firstUser->getID() ) {
+			$centralUser = CentralAuthUser::getInstance( $firstUser );
+			if ( $centralUser->exists() ) {
+				$abortError = array( 'centralauth-account-exists-reset' );
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	static function onUserLoginComplete( &$user, &$inject_html ) {
 		global $wgCentralAuthCookies, $wgRequest;
 		if ( !$wgCentralAuthCookies ) {
