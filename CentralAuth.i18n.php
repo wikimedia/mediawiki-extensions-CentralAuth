@@ -2891,10 +2891,13 @@ $messages['bg'] = array(
 	'centralauth-token-mismatch' => 'За съжаление не успяхме да обработим изпратения формуляр поради загуба на данните за текущата ви сесия.',
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-status-intro' => 'Този формуляр се използва за промяна на стратута на тази глобална сметка',
-	'centralauth-admin-status-locked' => 'Заключено',
+	'centralauth-admin-status-locked' => 'Заключена:',
 	'centralauth-admin-status-locked-no' => 'Сметката не е заключена',
 	'centralauth-admin-status-locked-yes' => 'Сметката е заключена за редактиране',
-	'centralauth-admin-status-hidden' => 'Скрито',
+	'centralauth-admin-status-hidden' => 'Скрита:',
+	'centralauth-admin-status-hidden-no' => 'Сметката не е скрита',
+	'centralauth-admin-status-hidden-list' => 'Сметката е скрита от публичните списъци',
+	'centralauth-admin-status-hidden-oversight' => 'Сметката е напълно скрита',
 	'centralauth-admin-status-submit' => 'Задаване на състояние',
 	'centralauth-admin-status-nonexistent' => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-setstatus-success' => 'Успешно променихте статуса на глобалната си сметка.',
@@ -2921,7 +2924,6 @@ $messages['bg'] = array(
 	'centralauth-renameuser-merged' => 'Потребителят $1 е преминал към унифицираната система за влизане.
 Преименуването му ще изключи локалната му сметка от глобалната.',
 	'centralauth-renameuser-reserved' => 'Потребител $2 е запазен за глобална сметка.',
-	'centralauth-link-on-contribs-text' => 'Статут на глобалната сметка за този потребител',
 	'centralauth-invalid-wiki' => 'Не съществува такава база данни: $1',
 	'centralauth-account-exists' => 'Не може да бъде създадена сметка: желаното потребителско име е заето от Единната система за влизане.',
 	'centralauth-login-progress' => 'Влизате автоматично и в следните проекти на {{int:Centralauth-groupname}}:',
@@ -4440,11 +4442,9 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-prefs-view' => 'Zobrazit informace o globálním uživateli',
 	'centralauth-renameuser-merged' => 'Uživatel $1 již byl převeden na systém jednotného přihlašování. Pokud ho přejmenujete, bude lokální uživatel odpojen od globálního účtu.',
 	'centralauth-renameuser-reserved' => 'Uživatelské jméno $2 je vyhrazeno pro globální účet.',
-	'centralauth-link-on-contribs' => 'stav globálního účtu',
-	'centralauth-link-on-contribs-text' => 'Stav globálního účtu tohoto uživatele',
-	'centralauth-link-on-contribs-no' => 'bez globálního účtu',
 	'centralauth-invalid-wiki' => 'Taková DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Nelze vytvořit účet: Požadované uživatelské jméno je již registrováno v unifikovaném přihlašovacím systému.',
+	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale existuje v jednotném systému přihlašování.',
 	'centralauth-login-progress' => 'Automatické přihlášení na další projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-logout-progress' => 'Automatické odhlášení z jiných projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
@@ -7302,7 +7302,7 @@ $messages['fa'] = array(
 	'centralauth-merge-step2-title' => 'تأیید حساب‌های کاربری بیشتر',
 	'centralauth-merge-step2-detail' => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند، شما می‌توانید این مساله را با وارد کردن کلمه عبور این حساب‌ها تأیید کنید.',
 	'centralauth-merge-step2-submit' => 'تأیید اطلاعات ورود به سامانه',
-	'centralauth-login-global' => 'مرا به طور سراسری وارد سامانه کن',
+	'centralauth-login-global' => 'همچنین مرا به دیگر پروژه‌های {{int:Centralauth-groupname}} وارد کن',
 	'centralauth-merge-dryrun-complete' => 'تمامی حساب‌های کاربری موجود را می‌توان به طور خودکار یکی کرد!
 
 هنوز تغییری در حساب‌های کاربری شما داده نشده‌است.',
@@ -7462,11 +7462,9 @@ $messages['fa'] = array(
 	'centralauth-renameuser-merged' => 'کاربر $1 به سامانه ورود یکپارچه منتقل شده‌است.
 تغییر نام آن باعث می‌شود که حساب محلی کاربر از حساب مشترک وی جدا شود.',
 	'centralauth-renameuser-reserved' => 'کاربر $2 برای حساب کاربری مشترک رزرو شده‌است.',
-	'centralauth-link-on-contribs' => 'وضعیت حساب سراسری',
-	'centralauth-link-on-contribs-text' => 'وضعیت حساب سراسری برای این کاربر',
-	'centralauth-link-on-contribs-no' => 'هیچ حساب سراسری',
 	'centralauth-invalid-wiki' => 'چنین پایگاه اطلاعاتی وجود ندارد: $1',
 	'centralauth-account-exists' => 'امکان ایجاد حساب کاربری وجود ندارد: حساب کاربری مورد نظر پیش از این در سامانه حساب کاربری مشترک به کار گرفته شده‌است.',
+	'centralauth-account-exists-reset' => 'نام کاربری $1 در این ویکی ثبت نام نکرده است، اما در سامانهٔ ورود یکپارچه وجود دارد.',
 	'centralauth-login-progress' => 'شما وارد حساب خود در پروژه‌های دیگر {{int:Centralauth-groupname}} نیز می‌شوید:',
 	'centralauth-logout-progress' => 'شما از دیگر پروژه‌های {{MediaWiki:Centralauth-groupname}} نیز خارج می‌شوید:',
 	'centralauth-login-no-others' => 'به طور خودکار به همهٔ پروژه‌های {{int:Centralauth-groupname}} وارد شده‌اید.',
