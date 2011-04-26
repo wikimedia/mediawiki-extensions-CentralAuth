@@ -1889,6 +1889,7 @@ $messages['avk'] = array(
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
  * @author PPerviz
+ * @author Vugar 1981
  */
 $messages['az'] = array(
 	'centralauth-merge-dryrun-or' => "'''və ya'''",
@@ -1896,9 +1897,12 @@ $messages['az'] = array(
 	'centralauth-list-home-title' => 'Ev vikisi',
 	'centralauth-merge-method-primary' => 'ev vikisi',
 	'centralauth-merge-method-new' => 'yeni hesab',
+	'centralauth-merge-method-login' => 'giriş ilə yaradıldı',
 	'centralauth-finish-password' => 'Parol:',
 	'centralauth-finish-login' => 'Loqin',
+	'centralauth-finish-send-confirmation' => 'E-mail ilə yeni parol göndər',
 	'centralauth-admin-username' => 'İstifadəçi adı:',
+	'centralauth-admin-lookup-ro' => 'İstifadəçi məlumatını göndər',
 	'centralauth-admin-info-header' => 'Qlobal istifadəçi haqqında məlumatlar',
 	'centralauth-admin-info-id' => 'İstifadəçi ID:',
 	'centralauth-admin-info-home' => 'Ev vikisi:',
@@ -1910,20 +1914,42 @@ $messages['az'] = array(
 	'centralauth-admin-list-localwiki' => 'Lokal viki',
 	'centralauth-admin-list-method' => 'Üsul',
 	'centralauth-admin-list-blocked' => 'Bloklanmış',
+	'centralauth-admin-delete-button' => 'Bu hesabı sil',
 	'centralauth-admin-reason' => 'Səbəb:',
+	'centralauth-admin-status-hidden' => 'Gizli:',
 	'centralauth-prefs-status' => 'Qlobal hesab statusu:',
 	'centralauth-prefs-complete' => 'Hər şey qaydasındadır!',
 	'centralauth-prefs-count-attached' => 'Sizin hesabınız $1 layihə saytında aktivdir.',
 	'centralauth-prefs-manage' => 'Qlobal hesabın idarə edilməsi',
+	'centralauth-log-status-locked' => 'Bloklanmış',
+	'centralauth-log-status-hidden' => 'gizli',
 	'centralauth-log-status-oversighted' => 'təftişçi',
 	'centralauth-log-status-none' => '(heç biri)',
+	'centralauth-newgroup-legend' => 'Yeni qrup yarat',
+	'centralauth-globalgroupperms-newgroupname' => 'Yeni qrup adı:',
+	'centralauth-editgroup-subtitle' => 'Redaktə $1',
+	'centralauth-editgroup-name' => 'Qrupun adı:',
+	'centralauth-editgroup-members' => 'Üzvlərin siyahısı:',
 	'centralauth-editgroup-noset' => '(heç biri)',
+	'centralauth-editgroup-reason' => 'Səbəb:',
 	'centralauth-editset-name' => 'Ad:',
 	'centralauth-editset-type' => 'Tipi:',
+	'centralauth-editset-wikis' => 'Vikilər:',
 	'centralauth-editset-reason' => 'Səbəb:',
 	'centralauth-editset-submit' => 'Yolla',
 	'centralauth-editset-submit-delete' => 'Sil',
 	'centralauth-editset-nouse' => '(heç biri)',
+	'centralauth-editset-usage' => 'İstifadə olunduğu qruplar:',
+	'centralauth-editset-badwikis' => 'Bu {{PLURAL:$2|viki|vikilər}} mövcud deyil: $1',
+	'centralauth-editset-success' => 'Viki seti uğurla dəyişdirildi',
+	'centralauth-editset-success-delete' => 'Viki seti uğurla dəyişdirildi',
+	'centralauth-editset-return' => 'Ana görünüşə qayıt',
+	'right-globalgroupmembership' => 'Qlobal qruplarda hüquqları dəyişdir',
+	'right-centralauth-unmerge' => 'Qlobal hesabı aç',
+	'right-centralauth-lock' => 'Qlobal hesabı bağla və ya gizlə',
+	'right-centralauth-oversight' => 'Qlobal hesabı bağla',
+	'right-centralauth-merge' => 'Hesabları birləşdir',
+	'right-globalgrouppermissions' => 'Qlobal qrupları düzəlt',
 );
 
 /** Bashkir (Башҡортса)
@@ -9953,11 +9979,9 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-renameuser-merged' => 'Suradnik $1 je prešao u sustav središnje prijave.
 Preimenovanje će uzrokovati odvajanje lokalnog računa od globalnog.',
 	'centralauth-renameuser-reserved' => 'Suradnički račun $2 je rezerviran za globalni račun.',
-	'centralauth-link-on-contribs' => 'Status središnjega suradničkog računa:',
-	'centralauth-link-on-contribs-text' => 'Status globalnog računa za ovog suradnika',
-	'centralauth-link-on-contribs-no' => 'nema globalnog računa',
 	'centralauth-invalid-wiki' => 'Nema wiki baze podataka: $1',
 	'centralauth-account-exists' => 'Račun nemože biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.',
+	'centralauth-account-exists-reset' => 'Suradničko ime $1 nije registrirano na ovoj wiki, ali postoji u sustavusredišnje prijave.',
 	'centralauth-login-progress' => 'Prijavljivanje na druge projekte {{int:Centralauth-groupname|gen}}:',
 	'centralauth-logout-progress' => 'Odjavljivanje iz drugih projekata {{MediaWiki:Centralauth-groupname|gen}}:',
 	'centralauth-login-no-others' => 'Automatski ste prijavljeni na druge projekte {{int: Centralauth-groupname}}.',
@@ -10439,7 +10463,7 @@ Nem történik változás, míg meg nem erősíted, hogy minden rendben van.',
 	'centralauth-merge-step2-title' => 'Más fiókok megerősítése',
 	'centralauth-merge-step2-detail' => 'Néhány fiókot nem sikerült automatikusan párosítani a kijelölt saját wikihez. Ha ezek hozzád tartoznak, erősítsd meg a jelszó megadásával, hogy tényleg hozzád tartoznak.',
 	'centralauth-merge-step2-submit' => 'Bejelentkezési információ megerősítése',
-	'centralauth-login-global' => 'Globális bejelentkezés',
+	'centralauth-login-global' => 'Jelentkeztessen be a {{int:Centralauth-groupname}} további projektjeibe is',
 	'centralauth-merge-dryrun-complete' => 'Az összes felhasználói fiók automatikusan egyesíthető!
 
 Még semmilyen változtatás nem történt.',
@@ -10601,6 +10625,7 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-renameuser-reserved' => 'A(z) $2 név már egy globális fiók számára van fenntartva.',
 	'centralauth-invalid-wiki' => 'Nincs ilyen adatbázis: $1',
 	'centralauth-account-exists' => 'Nem sikerült új felhasználót létrehozni: az egységes bejelentkezési rendszerben már van ilyen felhasználónév.',
+	'centralauth-account-exists-reset' => 'Nincs $1 nevű felhasználó regisztrálva ezen a wikin, de létezik egy egységesített bejelentkezési rendszerben.',
 	'centralauth-login-progress' => 'Bejelentkeztetlek {{int:Centralauth-groupname}} többi projektjébe is:',
 	'centralauth-logout-progress' => 'Kijelentkeztetlek {{MediaWiki:Centralauth-groupname}} többi projektjéből is:',
 	'centralauth-login-no-others' => 'Automatikusan bejelentkeztél {{int:Centralauth-groupname}} más projektjeibe is.',
@@ -17874,6 +17899,7 @@ Los podètz afichar o modificar, o ne crear un autre.',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
+ * @author Odisha1
  * @author Psubhashish
  */
 $messages['or'] = array(
@@ -17917,8 +17943,10 @@ $messages['or'] = array(
 	'centralauth-finish-password' => 'ପାସବାଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
 	'centralauth-finish-send-confirmation' => 'ପାସବାଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବା',
+	'centralauth-admin-username' => 'ବ୍ୟବହାରକାରିକର ନାଆଁ:',
 	'centralauth-admin-delete-button' => 'ଏହି ଖାତାଟିକୁ ଲିଭାଇଦିଅନ୍ତୁ',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" ଙ୍କର ଖାତାଟି ପୁରାପୁରି ଲିଭିଗଲା',
+	'centralauth-admin-reason' => 'କାରଣ:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣଙ୍କୁ ଲଗଆଉଟ କରୁଅଛୁ:',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣ ଆପେଆପେ ଲଗଆଉଟ ହୋଇଯାଇଛନ୍ତି',
 	'centralauth-hidden-blockreason' => ': $3 ପାଇଁ $1 ଙ୍କ ଦେଇ $2 ଠାରେ ଲୁଚାଯାଇଛି',
@@ -17930,6 +17958,7 @@ $messages['or'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1|ଏଡିଟ]])',
 	'centralauth-editgroup-members' => 'ସଭ୍ୟମାନଙ୍କ ତାଲିକା:',
 	'centralauth-editgroup-reason' => 'କାରଣ:',
+	'centralauth-editset-reason' => 'କାରଣ:',
 	'centralauth-editset-submit-delete' => 'ଲିଭେଇବେ',
 );
 
@@ -19684,20 +19713,36 @@ $messages['roa-tara'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Merge account]] 'mbrà uicchi de {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Merges multiple accounts]] pè trasùte singole de utinde',
 	'centralauth-merge-denied' => "Sìme spiacende, ma tu non ge tène 'u permesse de trasè jndr'à stà pàgene.",
+	'centralauth-merge-notlogged' => 'Pe piacere <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} tràse]</span> pe verificà ce le cunde tune onne state scuagghiate cu successe.',
+	'centralauth-merge-welcome' => "'''<nowiki>'</nowiki>U cunde utende tune non g'ha state migrate jndr'à 'u sisteme de aunificazione de le trasute de {{MediaWiki:Centralauth-groupname}}.'''
+
+Cu tu scacchie de migrà le cunde tune, tu puè essere capace de ausà 'u stesse nome utende e passuord pe trasè jndr'à tutte le uicchi de {{MediaWiki:Centralauth-groupname}} jndr'à tutte le lènghe disponibbele.
+
+Ce quacchedun'otre ave ggià pigghiate 'u nome utende tune sus a 'n'otre site quiste non ge te distrurbe, ma jidde po avè 'na possibbilità de accordarse cu lore o cu l'amministratore cchiù tarde.",
 	'centralauth-merge-step1-title' => "Accumenze l'aunificaziune de le trasùte",
 	'centralauth-merge-step1-submit' => "Conferme le 'mbormazziune de trasùte",
 	'centralauth-merge-step2-title' => 'Conferme cchiù cunde',
 	'centralauth-merge-step2-submit' => "Conferme le 'mbormazziune de trasùte",
 	'centralauth-login-global' => "Famme trasè pure jndr'à l'otre pruggette de {{int:Centralauth-groupname}}",
+	'centralauth-merge-dryrun-complete' => "Tutte le cunde de l'utende avènene automaticamende aunificate!
+
+Nisciune cangiamende ha state fatte sus a le cunde utinde tune angore.",
 	'centralauth-merge-dryrun-or' => "'''o'''",
+	'centralauth-merge-dryrun-home' => "'U sisteme de migrazione non ge pò confermà ca tu sì 'u titolare d'u cunde utende de sta uicchi.
+
+'N'otra uicchi ave determinate cumme 'u cunde prengepàle pu nome utende tune; segue 'u collegamende aqquà sotte e tràse addà pe spiccià 'a migrazione d'u cunde utende tune.",
 	'centralauth-merge-step3-title' => "Ccreje 'nu cunde aunifecate",
 	'centralauth-merge-step3-detail' => "Sì pronde pè crijà 'u tue cunde aunifecate, cu le seguende allegate de uicchi:",
 	'centralauth-merge-step3-submit' => 'Aunifeche cunde',
 	'centralauth-complete' => 'Trasùte aunifecate combletate!',
 	'centralauth-incomplete' => 'Trasùte aunifecate non combletate!',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sulamende 'u mode Demo</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => "L'unificazione de le cunde utinde pe mò jè jndr'à 'u mode demo / debug, allore pe mò le operaziune de scuagghiamende avènene disabbilitate.
+Ne dispiace!",
 	'centralauth-error-locked' => "Tu non ge puè cangià purcé 'u cunde tune jè bloccate.",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Ligge de cchiù sus a '''trasute unificate''']]…''",
 	'centralauth-list-home-title' => 'Càse uicchi',
+	'centralauth-list-home-dryrun' => "'A passuord e 'u 'ndirizze e-mail ca è mise jndr'à sta uicchi avènene ausate pe aunificà le cunde tune.",
 	'centralauth-list-attached-title' => 'Cunde utinde allegate',
 	'centralauth-list-unattached-title' => 'Cunde utinde libbere',
 	'centralauth-foreign-link' => 'Utende $1 sus a $2',
@@ -19707,6 +19752,11 @@ $messages['roa-tara'] = array(
 	'centralauth-merge-method-password' => 'confermate pe passuord',
 	'centralauth-merge-method-new' => 'cunde utende nuève',
 	'centralauth-merge-method-login' => "Crijate cu 'a trasùte",
+	'centralauth-merge-method-empty-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate purcé non g'avere fatte cangiaminde.",
+	'centralauth-merge-method-mail-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate purcé l'indirizze e-mail ere satte-satte quidde d'u cunde utende prengepàle.",
+	'centralauth-merge-method-password-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate l'utende avere specificate 'na passuord valide pe jidde.",
+	'centralauth-merge-method-admin-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate a mane da le steward.
+Sta funzione jè desabbilitate mò pe mutive de securezze.",
 	'centralauth-finish-title' => 'Fusione spicciate',
 	'centralauth-finish-password' => 'Passuord:',
 	'centralauth-finish-login' => 'Tràse',
@@ -19769,6 +19819,12 @@ Mutive: $1',
 	'centralauth-admin-status-submit' => "'Mboste 'u state",
 	'centralauth-admin-status-nonexistent' => 'Errore: \'u cunde utende globbale "<nowiki>$1</nowiki>" non g\'esiste.',
 	'centralauth-admin-setstatus-success' => "Tu hagghie cangiate cu successe le 'mbostaziune de quiste cunde utinde globale.",
+	'centralauth-admin-status-reasons' => "* Mutive comune de blocche
+** cunde de utinde ca fanne vandalisme
+** cunde de utinde de spam
+* Mutive comune de blocche e scunnemende
+** nome utende abbusive
+** 'mbormaziune personale inapproppriate",
 	'centralauth-admin-logsnippet' => 'Precedente cangiaminde a le cunde globbale',
 	'globalusers' => "Liste de l'utinde globbale",
 	'centralauth-listusers-locked' => 'bloccate',
@@ -19792,7 +19848,6 @@ Mutive: $1',
 	'centralauth-renameuser-merged' => "L'utinde $1 hagghie migrate verse 'nu sisteme de trasùte aunificate.
 Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globbale.",
 	'centralauth-renameuser-reserved' => "L'utinde $2 jè reservate pè 'nu cunde globbale.",
-	'centralauth-link-on-contribs-no' => 'nisciune cunde utende globbale',
 	'centralauth-invalid-wiki' => 'Nisciune database cumme uicchi: $1',
 	'centralauth-log-name' => 'Archivije de le cunde utinde globbale',
 	'centralauth-log-entry-delete' => 'scangille \'u cunde globbale "$1"',
@@ -19817,7 +19872,9 @@ Luàte $3',
 	'centralauth-rightslog-set-optin' => 'opt-in basate',
 	'centralauth-rightslog-set-optout' => 'opt-out basate',
 	'autologin' => 'Trasùte automateche',
+	'globalgroupmembership' => "Membre jndr'à le gruppe globbale",
 	'globalgrouppermissions' => 'Gruppe de gestione globbale',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vide/cange]])',
 	'centralauth-globalgroupperms-nogroups' => 'Nisciune gruppe globbale jè state definite.',
 	'centralauth-existinggroup-legend' => 'Gruppe esistende',
 	'centralauth-newgroup-legend' => "Ccreje 'nu gruppe nuève",
@@ -21321,11 +21378,9 @@ Táto možnosť je v súčasnosti z bezpečnostných dôvodov vypnutá.',
 	'centralauth-prefs-view' => 'Zobraziť globálne informácie o používateľovi',
 	'centralauth-renameuser-merged' => 'Používateľ $1 bol prevedený do zjednoteného prihlasovacieho systému. Ak ho premenujete, lokálny používateľ bude odpojený od globálneho účtu.',
 	'centralauth-renameuser-reserved' => 'Používateľ $2 je vyhradený pre globálny účet.',
-	'centralauth-link-on-contribs' => 'stav globálneho účtu',
-	'centralauth-link-on-contribs-text' => 'Stav globálneho účtu pre tohto používateľa',
-	'centralauth-link-on-contribs-no' => 'žiaden globálny účet',
 	'centralauth-invalid-wiki' => 'Taká DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.',
+	'centralauth-account-exists-reset' => 'Používateľské meno $1 nie je zaregistrované na tejto wiki, ale existuje v zjednotenom prihlasovacom systéme.',
 	'centralauth-login-progress' => 'Týmto sa zároveň prihlasujete aj na ďalšie projekty {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Odhlasujete sa aj z ďalších projektov {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Boli ste automaticky prihlásený do ostatných projektov {{int:Centralauth-groupname}}.',
