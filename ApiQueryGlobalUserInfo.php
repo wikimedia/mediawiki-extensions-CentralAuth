@@ -78,8 +78,11 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		if ( $userExists && isset( $prop['merged'] ) ) {
 			$accounts = $user->queryAttached();
 			foreach ( $accounts as $account ) {
+				$dbname = $account['wiki'];
+
 				$a = array(
-					'wiki' => $account['wiki'],
+					'wiki' => $dbname,
+					'url' => $this->getUrl( $dbname ),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
 					'editcount' => $account['editCount']
@@ -111,6 +114,15 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			}
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
 		}
+	}
+
+	public function getUrl( $dbname ){
+		global $wgConf;
+
+		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
+		$minor = str_replace( '_', '-', $minor );
+		return $wgConf->get( 'wgServer', $dbname, $major,
+			array( 'lang' => $minor, 'site' => $major ) );
 	}
 
 	public function getCacheMode( $params ) {
