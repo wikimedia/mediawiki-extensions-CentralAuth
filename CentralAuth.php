@@ -145,21 +145,21 @@ $wgCentralAuthWikisPerSuppressJob = 10;
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = dirname( __FILE__ );
-$wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/SpecialCentralAuth.php";
-$wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/SpecialMergeAccount.php";
-$wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/SpecialGlobalUsers.php";
+$wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/specials/SpecialCentralAuth.php";
+$wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/specials/SpecialMergeAccount.php";
+$wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/SuppressUserJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
-$wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/SpecialAutoLogin.php";
+$wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/specials/SpecialAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
-$wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/SpecialGlobalGroupMembership.php";
+$wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/specials/SpecialGlobalGroupMembership.php";
 $wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/CentralAuthGroupMembershipProxy.php";
-$wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/SpecialGlobalGroupPermissions.php";
-$wgAutoloadClasses['SpecialWikiSets'] = "$caBase/SpecialWikiSets.php";
+$wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/specials/SpecialGlobalGroupPermissions.php";
+$wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/ApiQueryGlobalUserInfo.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
