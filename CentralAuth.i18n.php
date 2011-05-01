@@ -11166,7 +11166,7 @@ Kemungkinan besar ada kerusakan pada basis data.',
 Silakan masukkan kata sandi untuk wiki utama.',
 	'centralauth-complete' => 'Penggabungan log masuk global berhasil!',
 	'centralauth-incomplete' => 'Tidak semua akun berhasil digabungkan!',
-	'centralauth-complete-text' => 'Kini Anda dapat masuk log ke semua situs wiki {{MediaWiki:Centralauth-groupname}} manapun tanpa membuat akun baru.',
+	'centralauth-complete-text' => 'Kini Anda dapat masuk log ke semua situs wiki {{MediaWiki:Centralauth-groupname}} mana pun tanpa membuat akun baru.',
 	'centralauth-incomplete-text' => 'Setelah akun Anda diubah menjadi akun global, Anda akan dapat masuk log ke semua situs wiki {{MediaWiki:Centralauth-groupname}} tanpa harus membuat akun baru.',
 	'centralauth-not-owner-text' => 'Nama pengguna "$1" diberikan secara otomatis kepada pemilik akun $2.
 
@@ -11206,7 +11206,7 @@ Fitur tersebut saat ini dinonaktifkan karena alasan keamanan.',
 	'centralauth-finish-login' => 'Masuk log',
 	'centralauth-finish-send-confirmation' => 'Kirim kata sandi',
 	'centralauth-finish-problems' => 'Ada masalah, atau tidak memiliki akun-akun lain tersebut? [[meta:Help:Unified login problems|Bagaimana mendapat bantuan]]...',
-	'centralauth-finish-noconfirms' => 'Kata sandi ini tidak dapat digunakan untuk mengkonfirmasi akun-akun manapun.',
+	'centralauth-finish-noconfirms' => 'Kata sandi ini tidak dapat digunakan untuk mengkonfirmasi akun-akun mana pun.',
 	'centralauth-finish-incomplete' => 'Beberapa akun pengguna telah digabungkan menggunakan kata sandi ini.
 Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-merge-attempt' => "'''Mengecek kata sandi yang diberikan terhadap akun-akun yang belum digabungkan...'''",
@@ -22673,6 +22673,7 @@ Wan uurswäl din Benutsernoome al in n uur Projekt benutset, so be-ienfloudet et
 	'centralauth-merge-step2-title' => 'Bestätigje moor Benutserkonten',
 	'centralauth-merge-step2-detail' => 'Wäkke fon do Benutserkonten kuuden nit automatisk dien Heemat-Wiki toureekend wäide. Wan disse Konton die heere, koast du dät bestäätigje, deertruch dät du dät Paaswoud tou disse Konten ienrakst.',
 	'centralauth-merge-step2-submit' => 'Anmälde-Informatione bestäätigje',
+	'centralauth-login-global' => 'Mäldje mie uk bie uur {{int:Centralauth-groupname}}-Projekte an',
 	'centralauth-merge-dryrun-complete' => 'Aal existierjende Benutserkonten konnen automatisk touhoopefierd wäide!
 
 Bit nu wuuden neen Annerengen an dien Benutserkonten moaked.',
@@ -22716,6 +22717,8 @@ Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten
 	'centralauth-merge-method-admin' => 'truch Administrator touhoopefierd Benutserkonto',
 	'centralauth-merge-method-new' => 'näi Benutserkonto',
 	'centralauth-merge-method-login' => 'moaked truch Anmäldenge',
+	'centralauth-merge-method-primary-desc' => 'Dit is dät Wiki, wieroun dät Benutserkonto uursproangelk touhoopefierd wuude.
+Beoachtje, dät et sik fon dät Heematwiki fon dän Benutser unnerskeede kon.',
 	'centralauth-finish-title' => 'Touhoopefierenge kloor be-eendje',
 	'centralauth-finish-text' => 'Wan disse Benutserkonten die heere, koast du hier dän Prozess fon ju Benutserkonten-Touhoopefierenge truch ju Iengoawe fon dät Paaswoud foar do uur Benutserkonten kloor be-eendje":',
 	'centralauth-finish-password' => 'Paaswoud:',
@@ -25325,11 +25328,9 @@ $messages['uk'] = array(
 	'centralauth-prefs-view' => 'Переглянути глобальну інформацію про користувача',
 	'centralauth-renameuser-merged' => "Користувач $1 перейшов на глобальну систему входу. Його перейменування викличе втрату зв'язку локального користувача з глобальним обліковим записом.",
 	'centralauth-renameuser-reserved' => "Ім'я користувача $2 зарезервоване для глобального облікового запису.",
-	'centralauth-link-on-contribs' => 'стан глобального облікового запису',
-	'centralauth-link-on-contribs-text' => 'Стан глобального облікового запису цього користувача',
-	'centralauth-link-on-contribs-no' => 'нема глобального облікового запису',
 	'centralauth-invalid-wiki' => 'Нема такої вікі БД: $1',
 	'centralauth-account-exists' => "Неможливо створити обліковий запис. Таке ім'я вже зайняте для єдиного облікового запису.",
+	'centralauth-account-exists-reset' => 'Користувач $1 не зареєстрований на цьому вікі-сайті, але він існує в системі єдиних облікових записів.',
 	'centralauth-login-progress' => 'Вхід до системи також в інших проектах {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Вихід із системи також в інших проектах {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Ви автоматично ввійшли до системи в усіх проектах {{int:Centralauth-groupname}}.',
