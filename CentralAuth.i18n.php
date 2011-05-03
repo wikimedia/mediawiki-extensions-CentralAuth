@@ -8619,7 +8619,9 @@ $messages['fur'] = array(
 	'centralauth-list-attached-title' => 'Identitâts leadis',
 	'centralauth-foreign-link' => 'Utent $1 su $2',
 	'centralauth-merge-method-new' => 'gnove identitât',
-	'centralauth' => 'Aministrazion pe identitât unificade',
+	'centralauth-attach-title' => 'Conferme identitât',
+	'centralauth' => 'Aministradôr pe identitât globâl',
+	'centralauth-admin-username' => 'Non utent:',
 	'centralauth-admin-info-id' => 'ID utent:',
 	'centralauth-admin-yes' => 'sì',
 	'centralauth-admin-no' => 'no',
@@ -8627,8 +8629,8 @@ $messages['fur'] = array(
 	'globalusers' => 'Liste utents globâi',
 	'centralauth-prefs-status' => 'Stât de identitât globâl:',
 	'centralauth-prefs-count-attached' => 'La to identitât e je ative su $1 {{PLURAL:$1|sît|sîts}} di progjets.',
-	'centralauth-login-progress' => 'Daûr a jentrâ tai altris progjets di Wikimedia:',
-	'centralauth-logout-progress' => 'Daûr a jessi di chei altris progjets di Wikimedia:',
+	'centralauth-login-progress' => 'Daûr a jentrâ tai progjets di {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Daûr a jessi dai altris progjets di {{int:Centralauth-groupname}}:',
 	'autologin' => 'Jentrade automatiche',
 );
 
