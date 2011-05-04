@@ -96,7 +96,14 @@ class SpecialWikiSets extends SpecialPage {
 
 		$wgOut->setSubtitle( wfMsgExt( 'centralauth-editset-subtitle', 'parseinline' ) );
 
-		$set = $subpage ? WikiSet::newFromID( $subpage ) : null;
+		$set = ( $subpage || $subpage === '0' ) ? WikiSet::newFromID( $subpage ) : null;
+		if( !$set ) {
+			$wgOut->setPageTitle( wfMsg( 'error' ) );
+			$error = wfMsgExt( 'centralauth-editset-notfound', array( 'escapenoentities' ), $subpage );
+			$this->buildMainView( "<strong class='error'>{$error}</strong>" );
+			return;
+		}
+
 		if ( !$name ) $name = $set ? $set->getName() : '';
 		if ( !$type ) $type = $set ? $set->getType() : WikiSet::OPTIN;
 		if ( !$wikis ) $wikis = implode( "\n", $set ? $set->getWikisRaw() : array() );
