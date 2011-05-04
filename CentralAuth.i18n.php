@@ -4668,14 +4668,18 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
  * @author ОйЛ
  */
 $messages['cu'] = array(
-	'centralauth-merge-dryrun-or' => "'''и́ли'''",
-	'centralauth-foreign-link' => 'по́льꙃєватєл҄ь ⁖ $1 ⁖ въ ⁖ $2 ⁖',
+	'centralauth-groupname' => 'органїсмъ Викимєдїꙗ',
+	'centralauth-merge-dryrun-or' => "'''или'''",
+	'centralauth-foreign-link' => 'польꙃєватєл҄ь ⁖ $1 ⁖ въ ⁖ $2 ⁖',
 	'centralauth-merge-method-empty' => 'добродѣꙗнии нѣтъ',
+	'centralauth-merge-method-new' => 'ново мѣсто',
 	'centralauth-finish-password' => 'таино слово :',
-	'centralauth-admin-username' => 'по́льꙃєватєлꙗ и́мѧ :',
-	'centralauth-admin-no' => 'нѣ́тъ',
+	'centralauth-admin-username' => 'польꙃєватєлꙗ имѧ :',
+	'centralauth-admin-no' => 'нѣтъ',
 	'centralauth-prefs-status' => 'вьсѥобьщѩ по́льꙃєватєлꙗ мѣста положєниѥ',
-	'centralauth-editset-name' => 'и́мѧ :',
+	'centralauth-prefs-complete' => 'вьсꙗ добромь положєнии ѥстъ',
+	'centralauth-editset-name' => 'имѧ :',
+	'centralauth-editset-submit-delete' => 'поничьжєниѥ',
 );
 
 /** Welsh (Cymraeg)
@@ -11743,11 +11747,9 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente",
 	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.",
 	'centralauth-renameuser-reserved' => "L'utente $2 è riservato per un account globale.",
-	'centralauth-link-on-contribs' => "situazione dell'account globale",
-	'centralauth-link-on-contribs-text' => "Stato dell'account globale per questo utente",
-	'centralauth-link-on-contribs-no' => 'nessun account globale',
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
+	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.',
 	'centralauth-login-progress' => 'Accesso effettuato negli altri progetti di {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Uscita effettuata dagli altri progetti di {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
@@ -16863,13 +16865,14 @@ Uw wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruik
 Er worden geen wijzigingen gemaakt tot u hebt aangegeven dat alles in orde lijkt.",
 	'centralauth-merge-step1-submit' => 'Aanmeldinformatie bevestigen',
 	'centralauth-merge-step2-title' => 'Meer gebruikers bevestigen',
-	'centralauth-merge-step2-detail' => 'Een aantal van de gebruikers konden niet aan de opgegeven thuiswiki gekoppeld worden. Als deze gebruikers van u zijn, kunt u dat aangeven door het wachtwoord voor de gebruikers op te geven.',
+	'centralauth-merge-step2-detail' => 'Een aantal van de gebruikers kon niet aan de opgegeven thuiswiki gekoppeld worden.
+Als deze gebruikers van u zijn, kunt u dat aangeven door het wachtwoord voor de gebruikers op te geven.',
 	'centralauth-merge-step2-submit' => 'Aanmeldinformatie bevestigen',
 	'centralauth-login-global' => 'Mij ook aanmelden bij andere projecten van {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Alle bestaande gebruikers kunnen automatisch samengevoegd worden!
 
 Er zijn nog geen wijzigingen aan uw gebruiker gemaakt.',
-	'centralauth-merge-dryrun-incomplete' => 'U bent u klaar om verder te gaan, maar een aantal gebruikers konden niet automatisch bevestigd worden en worden dus niet automatisch gemigreerd. De kunt u op een later moment samenvoegen.
+	'centralauth-merge-dryrun-incomplete' => 'U bent nu klaar om verder te gaan, maar een aantal gebruikers konden niet automatisch bevestigd worden en worden dus niet automatisch gemigreerd. Die kunt u op een later moment samenvoegen.
 
 Er zijn nog geen wijzigingen aan uw gebruiker gemaakt.',
 	'centralauth-merge-dryrun-or' => "'''of'''",
@@ -16935,7 +16938,8 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 	'centralauth-merge-attempt' => "'''Bezig met het controleren van de opgegeven wachtwoorden voor de nog niet samengevoegde gebruikers…'''",
 	'centralauth-attach-list-attached' => 'De samengevoegde gebruiker "$1" bestaat uit de volgende gebruikers:',
 	'centralauth-attach-title' => 'Gebruiker bevestigen',
-	'centralauth-attach-text' => 'Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker. Als de overkoepelende gebruiker ook van u is, dan kunt u deze gebruiker samenvoegen als u het wachtwoord voor de overkoepelende gebruiker ingeeft:',
+	'centralauth-attach-text' => 'Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker.
+Als de overkoepelende gebruiker ook van u is, dan kunt u deze gebruiker samenvoegen als u het wachtwoord voor de overkoepelende gebruiker ingeeft:',
 	'centralauth-attach-submit' => 'Gebruiker migreren',
 	'centralauth-attach-success' => 'De gebruiker is gemigreerd naar de samengevoegde gebruiker.',
 	'centralauth' => 'Globaal gebruikersbeheer',
@@ -17137,6 +17141,54 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'right-centralauth-oversight' => 'Globale gebruiker onderdrukken',
 	'right-centralauth-merge' => 'Gebruikers samenvoegen',
 	'right-globalgrouppermissions' => 'Globale groepen beheren',
+);
+
+/** ‪Nederlands (informeel)‬ (‪Nederlands (informeel)‬)
+ * @author Siebrand
+ */
+$messages['nl-informal'] = array(
+	'centralauth-merge-denied' => 'Je hebt geen toegang tot deze pagina.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld je aan]</span> om te controleren of je gebruikers volledig zijn samengevoegd.',
+	'centralauth-merge-welcome' => "'''Je gebruiker is nog niet gemigreerd naar het samengevoegde aanmeldsysteem van {{MediaWiki:Centralauth-groupname}}.'''
+
+Als je ervoor kiest om je gebruikers te migreren, dan kan je met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle wiki's van {{MediaWiki:Centralauth-groupname}} in alle beschikbare talen.
+
+Als iemand anders met jouw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. Je hebt de mogelijkheid dat met die gebruiker of een beheerder op een later moment op te lossen.",
+	'centralauth-merge-step1-detail' => "Voer hier je wachtwoord in.
+Je wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki's om te bevestigen dat ze overeenkomen.
+Er worden geen wijzigingen gemaakt tot je hebt aangegeven dat alles in orde lijkt.",
+	'centralauth-merge-step2-detail' => 'Een aantal van de gebruikers kon niet aan de opgegeven thuiswiki gekoppeld worden. Als deze gebruikers van jou zijn, kan je dat aangeven door het wachtwoord voor de gebruikers op te geven.',
+	'centralauth-merge-dryrun-complete' => 'Alle bestaande gebruikers kunnen automatisch samengevoegd worden!
+
+Er zijn nog geen wijzigingen aan je gebruiker gemaakt.',
+	'centralauth-merge-dryrun-incomplete' => 'Je bent nu klaar om verder te gaan, maar een aantal gebruikers konden niet automatisch bevestigd worden en worden dus niet automatisch gemigreerd. Die kan je op een later moment samenvoegen.
+
+Er zijn nog geen wijzigingen aan je gebruiker gemaakt.',
+	'centralauth-merge-dryrun-home' => 'Het migratiesysteem kon niet bevestigen dat jij de eigenaar bent van de gebruiker op de thuiswiki voor je gebruiker.
+
+Er is een andere wiki vastgesteld als thuiswiki voor je gebruiker; volg de link hieronder en meld je daar aan om je gebruikersmigratie te voltooien.',
+	'centralauth-merge-step3-detail' => "Je kunt nu je samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki's:",
+	'centralauth-merge-no-accounts' => 'Er zijn geen gebruikers met jouw naam gevonden in de volgtabel voor globale gebruikers!
+De database moet corrupt zijn.',
+	'centralauth-merge-home-password' => 'De hieronder aangegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan jij hebt ingegeven.
+Voer het wachtwoord voor de thuiswiki in.',
+	'centralauth-complete-text' => 'Je kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
+	'centralauth-incomplete-text' => 'Als je gebruikers zijn samengevoegd kan je aanmelden bij iedere wiki van {{MediaWiki:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
+	'centralauth-not-owner-text' => 'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.
+
+Als jij dat bent, kan je het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:',
+	'centralauth-blocked-text' => 'Je thuiswiki kan niet bewerkt worden.
+Hieronder staat aangegeven welke wiki dat is.
+Neem contact op met een systeembeheerder om deze beperking op te laten heffen.
+Zolang de wiki niet bewerkt kan worden, kan je geen gebruikers samenvoegen.',
+	'centralauth-error-locked' => 'Je kunt niet bewerken omdat je gebruiker geblokkeerd is.',
+	'centralauth-list-home-dryrun' => 'Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor je samengevoegde gebruiker.',
+	'centralauth-list-unattached' => 'De gebruiker "$1" kon niet automatisch aan jou toegewezen worden voor de volgende sites; waarschijnlijk omdat het wachtwoord afwijkt van je primaire gebruiker:',
+	'centralauth-finish-text' => 'Als deze gebruikers bij jou horen, dan kan je het proces van samenvoegen afronden door de wachtwoorden voor de andere gebruikers hier in te voeren:',
+	'centralauth-finish-problems' => 'Kom je er niet uit of zijn deze gebruikers niet van jou?
+[[meta:Help:Unified login problems|Hoe hulp vinden]]…',
+	'centralauth-attach-text' => 'Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker.
+Als de overkoepelende gebruiker ook van jou is, dan kan je deze gebruiker samenvoegen als je het wachtwoord voor de overkoepelende gebruiker ingeeft:',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -18047,7 +18099,7 @@ $messages['or'] = array(
 	'centralauth-merge-method-login' => 'ଲଗଇନ ବେଳେ ତିଆରି କରାଯାଇଛି',
 	'centralauth-finish-password' => 'ପାସବାର୍ଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
-	'centralauth-finish-send-confirmation' => 'ପାସବାଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବା',
+	'centralauth-finish-send-confirmation' => 'ପାସବାଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବେ',
 	'centralauth-admin-username' => 'ବ୍ୟବହାରକାରିକର ନାଆଁ:',
 	'centralauth-admin-delete-button' => 'ଏହି ଖାତାଟିକୁ ଲିଭାଇଦିଅନ୍ତୁ',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" ଙ୍କର ଖାତାଟି ପୁରାପୁରି ଲିଭିଗଲା',
