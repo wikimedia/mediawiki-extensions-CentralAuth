@@ -4674,11 +4674,15 @@ $messages['cu'] = array(
 	'centralauth-merge-method-empty' => 'добродѣꙗнии нѣтъ',
 	'centralauth-merge-method-new' => 'ново мѣсто',
 	'centralauth-finish-password' => 'таино слово :',
+	'centralauth-finish-login' => 'въниди',
 	'centralauth-admin-username' => 'польꙃєватєлꙗ имѧ :',
+	'centralauth-admin-yes' => 'да',
 	'centralauth-admin-no' => 'нѣтъ',
 	'centralauth-prefs-status' => 'вьсѥобьщѩ по́льꙃєватєлꙗ мѣста положєниѥ',
 	'centralauth-prefs-complete' => 'вьсꙗ добромь положєнии ѥстъ',
+	'centralauth-log-status-none' => '(нѣстъ)',
 	'centralauth-editset-name' => 'имѧ :',
+	'centralauth-editset-type' => 'тѷпъ :',
 	'centralauth-editset-submit-delete' => 'поничьжєниѥ',
 );
 
