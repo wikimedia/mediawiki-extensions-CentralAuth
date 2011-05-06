@@ -43,7 +43,6 @@ class GlobalUsersPager extends UsersPager {
 			$this->requestedGroup = false;
 			return;
 		}
-		$groups = array_keys( $this->getAllGroups() );
 		$this->requestedGroup = $group;
 	}
 

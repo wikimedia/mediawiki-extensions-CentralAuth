@@ -53,6 +53,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Create a CentralAuthUser object corresponding to the supplied User, and
 	 * cache it in the User object.
 	 * @param User $user
+	 *
+	 * @return CentralAuthUser
 	 */
 	static function getInstance( User $user ) {
 		if ( !isset( $user->centralAuthObj ) ) {
@@ -79,6 +81,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
+	 *
+	 * @return CentralAuthUser
 	 */
 	public static function newFromRow( $row, $fromMaster = false ) {
 		$caUser = new self( $row->gu_name );
