@@ -1009,22 +1009,6 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Hide a global account
-	 * @deprecated Use adminSetHidden
-	 */
-	function adminHide() {
-		$this->adminSetHidden( self::HIDDEN_LISTS );
-	}
-
-	/**
-	 * Unhide a global account
-	 * @deprecated Use adminSetHidden
-	 */
-	function adminUnhide() {
-		$this->adminSetHidden( self::HIDDEN_NONE );
-	}
-
-	/**
 	 * Change account hiding level.
 	 */
 	function adminSetHidden( $level ) {
