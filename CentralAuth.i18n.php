@@ -14770,6 +14770,7 @@ $messages['lo'] = array(
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Eitvys200
  * @author Garas
  * @author Homo
  * @author Hugo.arg
@@ -14798,7 +14799,7 @@ Jokie pakeitimai neįvyks, kol jūs nepatvirtinsite, jog viskas yra gerai.',
 	'centralauth-merge-step2-detail' => 'Kai kurios paskyros negali būti automatiškai sujungtos, nes neatitinka jūsų pagrindinės paskyros.
 Jei šios paskyros priklauso jums, jūs galite patvirtinti, kad jos tikrai jūsų, įvesdami jų slaptažodžius.',
 	'centralauth-merge-step2-submit' => 'Patvirtinkite prisijungimo informaciją',
-	'centralauth-login-global' => 'Prijungti mane visur',
+	'centralauth-login-global' => 'Taip pat prisijunkit mane prie kitu projektų {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Visos egzistuojančios paskyros gali būti automatiškai sujungtos!
 
 Kol kas jokie pakeitimai su jūsų paskyromis neįvyko.',
@@ -14908,7 +14909,12 @@ Slaptažodžiai vietinėse paskyrose, sukurtose prieš sujungimą, bus grąžint
 	'centralauth-admin-status' => 'Nustatyti bendrosios paskyros būseną',
 	'centralauth-admin-status-intro' => 'Galite pasinaudoti šia forma, norėdami pakeisti šios bendrosios paskyros būseną',
 	'centralauth-admin-status-locked' => 'Užrakinta:',
+	'centralauth-admin-status-locked-no' => 'Sąskaitą neužrakinta',
+	'centralauth-admin-status-locked-yes' => 'Sąskaitos užrakinta nuo redagavimo',
 	'centralauth-admin-status-hidden' => 'Paslėpta:',
+	'centralauth-admin-status-hidden-no' => 'Sąskaitos nėra paslėpta',
+	'centralauth-admin-status-hidden-list' => 'Sąskaita yra paslėpta nuo viuešų sąrašų',
+	'centralauth-admin-status-hidden-oversight' => 'Sąskaita yra visiškai paslėpta',
 	'centralauth-admin-status-submit' => 'Nustatykite būseną',
 	'centralauth-admin-status-nonexistent' => 'Klaida: bendroji paskyra „<nowiki>$1</nowiki>“ neegzistuoja.',
 	'centralauth-admin-setstatus-success' => 'Jūs sėkmingai pakeitėte šios bendrosios paskyros būseną.',
@@ -18104,7 +18110,7 @@ $messages['or'] = array(
 	'centralauth-finish-password' => 'ପାସବାର୍ଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
 	'centralauth-finish-send-confirmation' => 'ପାସବାଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବେ',
-	'centralauth-admin-username' => 'ବ୍ୟବହାରକାରିକର ନାଆଁ:',
+	'centralauth-admin-username' => 'ବ୍ୟବାହରକାରୀଙ୍କର ନାଆଁ:',
 	'centralauth-admin-delete-button' => 'ଏହି ଖାତାଟିକୁ ଲିଭାଇଦିଅନ୍ତୁ',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" ଙ୍କର ଖାତାଟି ପୁରାପୁରି ଲିଭିଗଲା',
 	'centralauth-admin-reason' => 'କାରଣ:',
@@ -18120,7 +18126,9 @@ $messages['or'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1|ଏଡିଟ]])',
 	'centralauth-editgroup-members' => 'ସଭ୍ୟମାନଙ୍କ ତାଲିକା:',
 	'centralauth-editgroup-reason' => 'କାରଣ:',
+	'centralauth-editset-name' => 'ନାମ:',
 	'centralauth-editset-reason' => 'କାରଣ:',
+	'centralauth-editset-submit' => 'ଦାଖଲକରିବା',
 	'centralauth-editset-submit-delete' => 'ଲିଭେଇବେ',
 );
 
