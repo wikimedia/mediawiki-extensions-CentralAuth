@@ -248,7 +248,7 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
 
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
-	$link = $skin ? $skin->makeLinkObj( $title, $params[0] ) : $params[0];
+	$link = $skin ? $skin->makeLinkObj( $title, htmlspecialchars( $params[0] ) ) : $params[0];
 
 	switch( $action ) {
 		case 'newset':
