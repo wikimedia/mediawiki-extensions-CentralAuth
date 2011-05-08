@@ -11458,6 +11458,13 @@ $messages['ig'] = array(
 	'centralauth-editset-nouse' => '(efù)',
 );
 
+/** Ingush (ГІалгІай Ğalğaj)
+ * @author Sapral Mikail
+ */
+$messages['inh'] = array(
+	'centralauth-editgroup-reason' => 'Бахьан:',
+);
+
 /** Ido (Ido)
  * @author Malafaya
  * @author Wyvernoid
@@ -19529,7 +19536,7 @@ $messages['qu'] = array(
 	'centralauth-merge-step1-submit' => 'Yaykuna willakunata takyachiy',
 	'centralauth-merge-step2-title' => 'Aswan rakiqunakunata takyachiy',
 	'centralauth-merge-step2-submit' => 'Yaykuna willakunata takyachiy',
-	'centralauth-login-global' => 'Tukuy Wikimedia wikikunaman yaykuy',
+	'centralauth-login-global' => 'Wakin {{int:Centralauth-groupname}}pa wikinkunamanpas yaykuy',
 	'centralauth-merge-dryrun-or' => "'''icha'''",
 	'centralauth-merge-step3-title' => 'Huñunakusqa rakiqunata kamariy',
 	'centralauth-merge-step3-detail' => 'Kamarisqam kachkanki huñunakusqa rakiqunaykita kamarinaykipaq, kay qatiq wikikunata yaparquspa:',
