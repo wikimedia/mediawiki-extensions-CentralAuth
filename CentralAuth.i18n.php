@@ -1691,7 +1691,7 @@ Motivu: $1',
 	'centralauth-admin-list-localwiki' => 'Wiki llocal',
 	'centralauth-admin-list-attached-on' => 'Asociada a',
 	'centralauth-admin-list-method' => 'Métodu',
-	'centralauth-admin-list-editcount' => "Cuenta d'ediciones",
+	'centralauth-admin-list-editcount' => "Contador d'ediciones",
 	'centralauth-admin-list-blocked' => 'Bloquiáu',
 	'centralauth-admin-unmerge' => 'Dixebrar seleicionaes',
 	'centralauth-admin-merge' => 'Fusionar seleicionaes',
@@ -15585,11 +15585,13 @@ $messages['ml'] = array(
 ഈ അംഗത്വങ്ങൾ താങ്കളുടെ തന്നെയാണെന്നുറപ്പുണ്ടെങ്കിൽ ശരിയായ രഹസ്യവാക്ക് കൊടുത്ത് താങ്കൾക്ക് ഈ അംഗത്വങ്ങളെ താങ്കൾക്ക് സ്ഥിരീകരിക്കാവുന്നതാണ്‌.',
 	'centralauth-merge-step2-submit' => 'ലോഗിൻ വിവരം സ്ഥിരീകരിക്കുക',
 	'centralauth-login-global' => 'എന്റെ പ്രവേശനം എല്ലാ {{int:Centralauth-groupname}} പദ്ധതികളിലും ബാധകമാക്കുക',
-	'centralauth-merge-dryrun-complete' => 'നിലവിലുള്ള എല്ലാ അംഗത്വങ്ങളും യാന്ത്രികമായി സം‌യോജിപ്പിക്കാവുന്നതാണ്‌.',
+	'centralauth-merge-dryrun-complete' => 'നിലവിലുള്ള എല്ലാ അംഗത്വങ്ങളും യാന്ത്രികമായി സം‌യോജിപ്പിക്കാവുന്നതാണ്‌!
+
+താങ്കളുടെ അംഗത്വങ്ങളിൽ ഇതുവരെ മാറ്റങ്ങളൊന്നും വരുത്തിയിട്ടില്ല.',
 	'centralauth-merge-dryrun-incomplete' => 'തുടർ പ്രക്രിയകൾക്കായി താങ്കൾ തയ്യാറായി കഴിഞ്ഞു. പക്ഷെ ചില അംഗത്വങ്ങൾ യാന്ത്രികമായി സ്ഥിരീകരിക്കുവാൻ പറ്റാഞ്ഞതിനാൽ അവ ഇപ്പോൾ സം‌യോജിത അംഗത്വവുമായി ബന്ധിപ്പിക്കില്ല. താങ്കൾക്ക് ഇവയെ പിന്നീടു സം‌യോജിപ്പിക്കാവുന്നതാണ്.
 
 താങ്കളുടെ അംഗത്വങ്ങൾക്കു ഇതുവരെ മാറ്റമൊന്നും വരുത്തിയിട്ടില്ല.',
-	'centralauth-merge-dryrun-or' => 'അല്ലെങ്കിൽ',
+	'centralauth-merge-dryrun-or' => "'''അല്ലെങ്കിൽ'''",
 	'centralauth-merge-dryrun-home' => 'താങ്കളുടെ ഉപയോക്തൃനാമത്തിന്റെ തറവാട് വിക്കി ഇതാണെന്നു സ്ഥിരീകരിക്കുന്നതിനു കുടിയേറ്റ വ്യൂഹത്തിനു കഴിഞ്ഞില്ല.
 
 താങ്കളുടെ ഉപയോക്തൃനാമത്തിന്റെ തറവാട് വിക്കി വേറൊരു വിക്കിയാണെന്നു കുടിയേറ്റ വ്യൂഹം കണ്ടെത്തിയിരിക്കുന്നു. താഴെയുള്ള കണ്ണിയിൽ ഞെക്കി ആ വിക്കിയിലേക്ക് ലോഗിൻ ചെയ്ത് അംഗത്വത്തിന്റെ കുടിയേറ്റ പ്രക്രിയ പൂർത്തിയാക്കുക.',
