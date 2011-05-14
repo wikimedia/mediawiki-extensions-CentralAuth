@@ -8,9 +8,7 @@
 
 $specialPageAliases = array();
 
-/** English
- * @author Jon Harald Søby
- */
+/** English (English) */
 $specialPageAliases['en'] = array(
 	'CentralAuth' => array( 'CentralAuth' ),
 	'AutoLogin' => array( 'AutoLogin' ),
@@ -55,6 +53,13 @@ $specialPageAliases['bg'] = array(
 	'MergeAccount' => array( 'Обединяване на сметки' ),
 	'GlobalGroupMembership' => array( 'Глобални потребителски права' ),
 	'GlobalUsers' => array( 'Списък на глобалните сметки' ),
+);
+
+/** Breton (Brezhoneg) */
+$specialPageAliases['br'] = array(
+	'AutoLogin' => array( 'Emgevreañ' ),
+	'MergeAccount' => array( 'KendeuzKont' ),
+	'GlobalUsers' => array( 'ImplijerienHollek' ),
 );
 
 /** Bosnian (Bosanski) */
@@ -107,8 +112,11 @@ $specialPageAliases['el'] = array(
 
 /** Esperanto (Esperanto) */
 $specialPageAliases['eo'] = array(
+	'CentralAuth' => array( 'Centra_aŭtentigo' ),
 	'AutoLogin' => array( 'Aŭtomata_ensaluto' ),
 	'MergeAccount' => array( 'Unuigi_konton' ),
+	'GlobalGroupMembership' => array( 'Ĝeneralaj_uzantorajtoj' ),
+	'GlobalGroupPermissions' => array( 'Ĝeneralaj_gruprajtoj' ),
 	'GlobalUsers' => array( 'Ĉieaj_uzantoj' ),
 );
 
@@ -174,9 +182,9 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
-	'MergeAccount' => array( 'Fusionar contas' ),
-	'GlobalGroupMembership' => array( 'Dereitos de usuario globais' ),
-	'GlobalUsers' => array( 'Usuarios globais' ),
+	'MergeAccount' => array( 'Fusionar_contas' ),
+	'GlobalGroupMembership' => array( 'Dereitos_globais' ),
+	'GlobalUsers' => array( 'Usuarios_globais' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -228,6 +236,28 @@ $specialPageAliases['hsb'] = array(
 	'GlobalGroupPermissions' => array( 'Globalne_skupinske_prawa' ),
 	'WikiSets' => array( 'Wikisadźby_wobdźěłać' ),
 	'GlobalUsers' => array( 'Globalni_wužiwarjo' ),
+);
+
+/** 湘语 (湘语) */
+$specialPageAliases['hsn'] = array(
+	'CentralAuth' => array( '中心认证' ),
+	'AutoLogin' => array( '自动登录' ),
+	'MergeAccount' => array( '合并账户' ),
+	'GlobalGroupMembership' => array( '全局用户权限' ),
+	'GlobalGroupPermissions' => array( '全局群组权限' ),
+	'WikiSets' => array( '维基设置', '编辑维基设置' ),
+	'GlobalUsers' => array( '全局用户' ),
+);
+
+/** Haitian (Kreyòl ayisyen) */
+$specialPageAliases['ht'] = array(
+	'CentralAuth' => array( 'OtoriteSantral' ),
+	'AutoLogin' => array( 'OtoKoneksyon' ),
+	'MergeAccount' => array( 'FizyoneKont' ),
+	'GlobalGroupMembership' => array( 'DwaItilizatèGlobal', 'FèPatiGwoupGlobal' ),
+	'GlobalGroupPermissions' => array( 'PèmisyonGwoupGlobal' ),
+	'WikiSets' => array( 'AnsanmWiki', 'ModifyeAnsanmWiki' ),
+	'GlobalUsers' => array( 'ItilizatèGlobal' ),
 );
 
 /** Hungarian (Magyar) */
@@ -282,9 +312,15 @@ $specialPageAliases['ja'] = array(
 	'GlobalUsers' => array( 'グローバル利用者' ),
 );
 
+/** Georgian (ქართული) */
+$specialPageAliases['ka'] = array(
+	'GlobalGroupMembership' => array( 'გლობალურ_მომხმარებელთა_უფლებები' ),
+	'GlobalUsers' => array( 'გლობალური_მომხმარებელი' ),
+);
+
 /** Khmer (ភាសាខ្មែរ) */
 $specialPageAliases['km'] = array(
-	'AutoLogin' => array( 'ឡុកអ៊ីនដោយស្វ័យប្រវត្តិ' ),
+	'AutoLogin' => array( 'កត់ឈ្មោះចូលដោយស្វ័យប្រវត្តិ' ),
 	'MergeAccount' => array( 'ច្របាច់បញ្ចូលគណនី' ),
 );
 
@@ -337,11 +373,12 @@ $specialPageAliases['lt'] = array(
 
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
-	'CentralAuth' => array( 'ЦентралнаАвтентикација' ),
+	'CentralAuth' => array( 'ЦентралноПотврдување' ),
 	'AutoLogin' => array( 'АвтоматскоНајавување' ),
 	'MergeAccount' => array( 'СпојувањеНаСметки' ),
 	'GlobalGroupMembership' => array( 'ПраваНаГлобаленКорисник', 'ЧленствоВоГлобалнаГрупа' ),
 	'GlobalGroupPermissions' => array( 'ДозволиНаГлобалнаГрупа' ),
+	'WikiSets' => array( 'ВикиКомплети' ),
 	'GlobalUsers' => array( 'ГлобалниКорисници' ),
 );
 
@@ -491,6 +528,17 @@ $specialPageAliases['sa'] = array(
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
+/** Serbo-Croatian (Srpskohrvatski / Српскохрватски) */
+$specialPageAliases['sh'] = array(
+	'CentralAuth' => array( 'Centralna_prijava' ),
+	'AutoLogin' => array( 'Auto_prijava' ),
+	'MergeAccount' => array( 'Spoji_račun' ),
+	'GlobalGroupMembership' => array( 'Globalna_korisnička_prava' ),
+	'GlobalGroupPermissions' => array( 'Globalna_prava_grupa' ),
+	'WikiSets' => array( 'Uredi_wikiset' ),
+	'GlobalUsers' => array( 'Globalni_korisnici' ),
+);
+
 /** Sinhala (සිංහල) */
 $specialPageAliases['si'] = array(
 	'CentralAuth' => array( 'මධ්‍යඅවසර' ),
@@ -541,8 +589,9 @@ $specialPageAliases['tl'] = array(
 
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
+	'CentralAuth' => array( 'MerkeziKimlikDoğrulama' ),
 	'AutoLogin' => array( 'OtomatikOturumAçma' ),
-	'MergeAccount' => array( 'HesapBirleştirmeDurumu' ),
+	'MergeAccount' => array( 'HesapBirleştir', 'HesapBirleştirme' ),
 	'GlobalGroupMembership' => array( 'KüreselGrupÜyeliği' ),
 	'GlobalGroupPermissions' => array( 'KüreselGrupİzinleri' ),
 	'WikiSets' => array( 'VikiDizileriniDüzenle' ),
@@ -562,6 +611,14 @@ $specialPageAliases['vec'] = array(
 	'GlobalUsers' => array( 'UtentiGlobali' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'CentralAuth' => array( 'Thành_viên_toàn_cục' ),
+	'AutoLogin' => array( 'Đăng_nhập_tự_động' ),
+	'MergeAccount' => array( 'Hợp_nhất_tài_khoản' ),
+	'GlobalUsers' => array( 'Danh_sách_người_dùng_thống_nhất' ),
+);
+
 /** Simplified Chinese (‪中文(简体)‬) */
 $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
@@ -569,7 +626,7 @@ $specialPageAliases['zh-hans'] = array(
 	'MergeAccount' => array( '整合账户' ),
 	'GlobalGroupMembership' => array( '全域用户权利', '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),
-	'WikiSets' => array( '编辑wiki组' ),
+	'WikiSets' => array( '编辑维基组' ),
 	'GlobalUsers' => array( '全域用户' ),
 );
 
