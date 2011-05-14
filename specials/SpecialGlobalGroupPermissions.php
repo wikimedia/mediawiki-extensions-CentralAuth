@@ -189,7 +189,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$desc = $wgOut->parseInline( User::getRightDescription( $right ) ) . ' ' .
 						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
 
-			$checkbox = Xml::check( "wpRightAssigned-$right", $checked, $attribs );
+			$checkbox = Xml::check( "wpRightAssigned-$right", $checked, 
+				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
 			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
 					$desc );
 
