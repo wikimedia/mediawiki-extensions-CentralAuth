@@ -21136,6 +21136,7 @@ $messages['shi'] = array(
 
 /** Sinhala (සිංහල)
  * @author Budhajeewa
+ * @author Singhalawap
  * @author Thameera123
  * @author තඹරු විජේසේකර
  * @author නන්දිමිතුරු
@@ -21144,10 +21145,10 @@ $messages['shi'] = array(
  */
 $messages['si'] = array(
 	'mergeaccount' => 'ප්‍රවිෂ්ට සංයුක්තකිරීම් තත්ත්වය',
-	'centralauth-groupname' => 'විකිමාධ්‍ය පදනම',
+	'centralauth-groupname' => 'විකිමී‍ඩියා පදනම',
 	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} හි විකියන් අතුරෙහි [[Special:MergeAccount|ගිණුම ඒකාබද්ධ කරන්න]]',
 	'centralauth-mergeaccount-desc' => 'ඒක පරිශීලක ප්‍රවිෂ්ටයකින් ප්‍රවේශ කර ගත හැකි අයුරින් [[Special:MergeAccount| ගිණුම් බහු සංඛ්‍යාවක් ඒකාබද්ධ කෙරෙයි]]',
-	'centralauth-merge-denied' => 'කණගාටුයි, මෙම පිටුවට ප්‍රවේශ වීමට ඔබ හට අවසර නොමැත.',
+	'centralauth-merge-denied' => 'මෙම පිටුවට පිවිසීමට ඔබට අවසර නැත.',
 	'centralauth-merge-notlogged' => 'ඔබගේ ගිණුම් සම්පූර්ණ වශයෙන් ඒකාබද්ධ කර ඇතිදැයි පිරික්සා බැලුමට, කරුණාකර  <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ප්‍රවිෂ්ට වන්න]</span>.',
 	'centralauth-merge-welcome' => "''' {{MediaWiki:Centralauth-groupname}} හි සංයුක්ත කෙරුණු ප්‍රවිෂ්ට පද්ධතියට ඔබගේ පරිශීලක ගිණුම තවමත් සංක්‍රමණය කෙරී නොමැත.'''
 
@@ -21224,7 +21225,7 @@ $messages['si'] = array(
 	'centralauth-finish-title' => 'ඒකාබද්ධ කිරීම අවසන් කරන්න',
 	'centralauth-finish-text' => 'මෙම ගිණුම්හි හිමිකම ඔබ සතුවේ නම්, අනෙකුත් ගිණුම් සඳහා මුරපද මෙහි ටයිප් කිරීමෙන් ප්‍රවිෂ්ට සංයුක්තකිරීමේ ක්‍රියාවලිය අවසන් කිරීමට ඔබ හට හැකිවනු ඇත:',
 	'centralauth-finish-password' => 'මුර පදය:',
-	'centralauth-finish-login' => 'ප්‍රවිෂ්ටය',
+	'centralauth-finish-login' => 'පිවිසීම',
 	'centralauth-finish-send-confirmation' => 'මුරපදය විද්‍යුත්-තැපැල් කරන්න',
 	'centralauth-finish-problems' => 'ඔබට ගැටළුකාරී තත්ත්වයක් උද්ගතවී ඇතිද, නැතිනම් මෙම අනෙකුත් ගිණුම්හි හිමිකරු ඔබ නොවේද?
 [[meta:Help:Unified login problems|උදවු සපයාගන්නේ කෙසේද]]…',
@@ -21249,7 +21250,7 @@ $messages['si'] = array(
 	'centralauth-admin-info-header' => 'ගෝලීය පරිශීලක තොරතුරු',
 	'centralauth-admin-info-id' => 'පරිශීලක අනන්‍යාංකය:',
 	'centralauth-admin-info-registered' => 'ලේඛනගතව:',
-	'centralauth-admin-info-home' => 'ජනක විකිය',
+	'centralauth-admin-info-home' => 'ප්‍රධාන විකිය',
 	'centralauth-admin-info-editcount' => 'සම්පූර්ණ සංස්කරණ ගණන:',
 	'centralauth-admin-info-locked' => 'අහුරා:',
 	'centralauth-admin-info-hidden' => 'සැඟවුනු මට්ටම:',
