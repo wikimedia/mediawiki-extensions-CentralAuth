@@ -42,6 +42,7 @@ class SpecialWikiSets extends SpecialPage {
 				$this->buildMainView();
 			}
 		} else {
+			$newPage = ( $subpage === '0' && $this->mCanEdit );
 			if ( $subpage ) {
 				$set = is_numeric( $subpage ) ? WikiSet::newFromId( $subpage ) : WikiSet::newFromName( $subpage );
 				if ( $set ) {
@@ -54,9 +55,9 @@ class SpecialWikiSets extends SpecialPage {
 				}
 			}
 
-			if ( ( $subpage || $subpage === '0' ) && $this->mCanEdit && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+			if ( ( $subpage || $newPage ) && $this->mCanEdit && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 				$this->doSubmit( $subpage );
-			} else if ( ( $subpage || $subpage === '0' ) && is_numeric( $subpage ) ) {
+			} else if ( ( $subpage || $newPage ) && is_numeric( $subpage ) ) {
 				$this->buildSetView( $subpage );
 			} else {
 				$this->buildMainView();
@@ -97,12 +98,6 @@ class SpecialWikiSets extends SpecialPage {
 		$wgOut->setSubtitle( wfMsgExt( 'centralauth-editset-subtitle', 'parseinline' ) );
 
 		$set = ( $subpage || $subpage === '0' ) ? WikiSet::newFromID( $subpage ) : null;
-		if( !$set ) {
-			$wgOut->setPageTitle( wfMsg( 'error' ) );
-			$error = wfMsgExt( 'centralauth-editset-notfound', array( 'escapenoentities' ), $subpage );
-			$this->buildMainView( "<strong class='error'>{$error}</strong>" );
-			return;
-		}
 
 		if ( !$name ) $name = $set ? $set->getName() : '';
 		if ( !$type ) $type = $set ? $set->getType() : WikiSet::OPTIN;
