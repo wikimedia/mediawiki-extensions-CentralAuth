@@ -19633,6 +19633,13 @@ Kayrayku: $1",
 	'centralauth-admin-status-locked' => "Wichq'asqa:",
 	'centralauth-admin-status-hidden' => 'Pakasqa:',
 	'centralauth-admin-status-submit' => 'Kachkayta allichay',
+	'centralauth-admin-setstatus-success' => 'Kay tukuy wikikunapaq rakiqunap kachkayninqa aypalla hukchasqañam.',
+	'centralauth-admin-status-reasons' => "* Hark'aypaq sapsi raykukuna
+** wandalismullapaq rakiquna
+** spam nisqallapaq rakiquna
+* Hark'asqata pakaypaq sapsi raykukuna
+** ruraqpa millay sutin
+** ruraqmanta mana allin willasqakuna",
 	'globalusers' => 'Sapsi ruraqniyuq sutisuyu',
 	'centralauth-listusers-locked' => "hark'asqa",
 	'centralauth-listusers-attached' => "[[User:$1|k'itillapi kan]]",
@@ -19652,6 +19659,7 @@ Kayrayku: $1",
 	'centralauth-prefs-count-unattached' => 'Qusqayki sutiyuq mana takyachisqa rakiqunakunaqa $1 ruraykamay {{PLURAL:$1|tiyaypim|tiyaykunapim}} puchuchkan.',
 	'centralauth-prefs-detail-unattached' => 'Kay ruraykamay tiyaypa sapsi rakiqunaman kapuyninqa manaraqmi tayasqachu.',
 	'centralauth-prefs-manage' => 'Sapsi rakiqunaykita kamachiy',
+	'centralauth-prefs-view' => 'Tukuy wikikunapaq rakiqunamanta willakunata qhaway',
 	'centralauth-invalid-wiki' => 'Manam kanchu kay wiki willañiqintinchu: $1',
 	'centralauth-account-exists' => "Manam atinichu rakiqunata kamariyta: munasqayki ruraqpa sutinqa huñusqa yaykuna llikapi hap'isqañam.",
 	'centralauth-login-progress' => "{{int:Centralauth-groupname}} nisqap ruraykamayninkunapi llamk'apuy tiyayniykita qallarispa:",
