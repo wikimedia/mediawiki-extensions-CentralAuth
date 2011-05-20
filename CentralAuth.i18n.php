@@ -20968,11 +20968,9 @@ $messages['sah'] = array(
 	'centralauth-renameuser-merged' => '$1 диэн кыттааччы биирдэһиллибит тиһиликкэ киирбит.
 Онон бу ааты уларыттаххына аат биирдэһиллибит ааты кытта ситимэ быстыа.',
 	'centralauth-renameuser-reserved' => '$2 диэн аат биирдэһиллибит аат тиһилигэр анаммыт.',
-	'centralauth-link-on-contribs' => 'Биирдэһиллибит аат туруга',
-	'centralauth-link-on-contribs-text' => 'Бу кыттааччы биирдэһиллибит аатын туруга',
-	'centralauth-link-on-contribs-no' => 'биирдэһиллибит аата суох',
 	'centralauth-invalid-wiki' => 'Билэ тиһигэр (DB) маннык ааттаах биики суох: $1',
 	'centralauth-account-exists' => 'Ааты оҥорор кыах суох: киирэр тиһиликкэ маннык аат номнуо баар эбит.',
+	'centralauth-account-exists-reset' => '$1 аат бу биикигэ суох эбит, ол эрэн биирдэһиллибит тиһиликкэ баар.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}} атын бырайыактарыгар эмиэ киирдиҥ:',
 	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}} атын бырайыактарыттан эмиэ таҕыстыҥ:',
 	'centralauth-login-no-others' => 'Эн {{int:Centralauth-groupname}} бары бырайыактарыгар аптамаатынан бэлиэтэнниҥ.',
