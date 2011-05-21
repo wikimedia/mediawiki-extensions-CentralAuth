@@ -15369,7 +15369,7 @@ $messages['mk'] = array(
 	'centralauth-finish-title' => 'Заврши со спојување',
 	'centralauth-finish-text' => 'Ако овие сметки навистина ви припаѓаат вам, можете да го завршите процесот на обединување на најавувањето едноставно со впишување на лозинките на другите сметки овде:',
 	'centralauth-finish-password' => 'Лозинка:',
-	'centralauth-finish-login' => 'Најавување',
+	'centralauth-finish-login' => 'Најава',
 	'centralauth-finish-send-confirmation' => 'Испрати ја лозинката по е-пошта',
 	'centralauth-finish-problems' => 'Имате проблеми, или просто не сте имателот на другите сметки?
 [[meta:Help:Unified login problems|Побарајте помош]]…',
