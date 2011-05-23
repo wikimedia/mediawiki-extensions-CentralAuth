@@ -24172,6 +24172,7 @@ Digar hisobho to hol ta'jid naşudaand.",
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Korrawit
  * @author Manop
  * @author Mopza
  * @author Octahedron80
@@ -24197,7 +24198,7 @@ $messages['th'] = array(
 	'centralauth-merge-step2-detail' => 'บัญชีผู้ใช้บางรายการไม่สามารถจับคู่กับวิกิที่กำหนดได้
 ถ้าบัญชีู้ผู้ใช้เหล่านี้เป็นของคุณ คุณสามารถยืนยันการเป็นเจ้าของบัญชีได้โดยการใส่รหัสผ่านให้กับบัญชีผู้ใช้นั้น',
 	'centralauth-merge-step2-submit' => 'ยืนยันข้อมูลการล็อกอิน',
-	'centralauth-merge-dryrun-complete' => 'บัญชีผู้ใช้ที้งหมดสามาำรถถูกรวมได้โดยอัติโนมัติ
+	'centralauth-merge-dryrun-complete' => 'บัญชีผู้ใช้ทั้งหมดสามาำรถรวบรวมได้โดยอัตโนมัติ
 
 ไม่มีการเปลี่ยนแปลงเกิดขึ้นกับบัญชีผู้ใช้ของคุณ',
 	'centralauth-merge-dryrun-or' => "'''หรือ'''",
