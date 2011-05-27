@@ -1021,7 +1021,7 @@ $messages['ar'] = array(
 	'centralauth-merge-step2-title' => 'أكد مزيد من الحسابات',
 	'centralauth-merge-step2-detail' => 'بعض الحسابات لم يمكن مطابقتها تلقائيا لموقع الويكي الرئيسي المعين. لو أن هذه الحسابات تنتمي لك، يمكنك تأكيد ذلك عن طريق توفير كلمة السر لهم.',
 	'centralauth-merge-step2-submit' => 'أكد معلومات الدخول',
-	'centralauth-login-global' => 'تسجيل الدخول العام الموحد',
+	'centralauth-login-global' => 'أيضا سجل دخولي للمشاريع الأخرى ل{{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'كل الحسابات الموجودة يمكن توحيدها تلقائيا!
 
 لا تغييرات تمت لحساباتك بعد.',
@@ -1200,6 +1200,7 @@ $messages['ar'] = array(
 	'centralauth-log-entry-chgstatus' => 'غير الحالة للحساب العام "$1": ضبط $2؛ أزال ضبط $3',
 	'centralauth-log-status-locked' => 'مقفل',
 	'centralauth-log-status-hidden' => 'مخفي',
+	'centralauth-log-status-oversighted' => 'منظور',
 	'centralauth-log-status-none' => '(لاشيء)',
 	'centralauth-rightslog-name' => 'سجل الصلاحيات العام',
 	'centralauth-rightslog-entry-usergroups' => 'غير عضوية المجموعة العامة ل$1 من $2 إلى $3',
@@ -1253,8 +1254,9 @@ $messages['ar'] = array(
 	'centralauth-globalgrouppermissions-knownwiki' => 'الويكي حيث يمتلك حسابا:',
 	'centralauth-globalgroupmembership-badknownwiki' => "المستخدم العام '''$1''' ليس نشطا على الويكي الذي حددته (''$2'').
 ربما تكون تحاول إعطاء صلاحيات للمستخدم الخاطئ!",
-	'centralauth-editset' => 'تعديل مجموعات الويكي',
+	'centralauth-editset' => 'مجموعات الويكي',
 	'centralauth-editset-legend-rw' => 'تحرير أو إنشاء مجموعة ويكي',
+	'centralauth-editset-legend-ro' => 'قائمة مجموعات الويكي',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|احذف]])',
 	'centralauth-editset-new' => 'إنشاء مجموعة جديدة',
 	'centralauth-editset-notfound' => 'مجموعة الويكي "$1" لم يتم العثور عليها.',
