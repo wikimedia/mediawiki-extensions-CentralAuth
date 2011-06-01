@@ -1,7 +1,13 @@
 <?php
 class SpecialCentralAuth extends SpecialPage {
 	var $mUserName, $mCanUnmerge, $mCanLock, $mCanOversight, $mCanEdit;
-	var $mGlobalUser, $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
+
+	/**
+	 * @var CentralAuthUser
+	 */
+	var $mGlobalUser;
+
+	var $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
 
 	function __construct() {
 		parent::__construct( 'CentralAuth' );
@@ -73,12 +79,15 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->showUsernameForm();
 		if ( $continue ) {
 			$this->showInfo();
-			if ( $this->mCanLock )
+			if ( $this->mCanLock ) {
 				$this->showStatusForm();
-			if ( $this->mCanUnmerge )
+			}
+			if ( $this->mCanUnmerge ) {
 				$this->showActionForm( 'delete' );
-			if ( $this->mCanEdit )
+			}
+			if ( $this->mCanEdit ) {
 				$this->showLogExtract();
+			}
 			$this->showWikiLists();
 		}
 	}

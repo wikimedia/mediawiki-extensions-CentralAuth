@@ -28,7 +28,6 @@ function migratePassOne() {
 			migratePassOneReport( $migrated, $total, $start );
 		}
 	}
-	$dbBackground->freeResult( $result );
 	migratePassOneReport( $migrated, $total, $start );
 	echo "DONE\n";
 }

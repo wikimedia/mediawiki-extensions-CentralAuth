@@ -145,7 +145,6 @@ class CentralAuthUser extends AuthPluginUser {
 			"WHERE gu_name=?";
 		$result = $dbr->safeQuery( $sql, wfWikiID(), $this->mName );
 		$row = $dbr->fetchObject( $result );
-		$dbr->freeResult( $result );
 
 		$this->loadFromRow( $row, true );
 		$this->saveToCache();
@@ -1338,7 +1337,6 @@ class CentralAuthUser extends AuthPluginUser {
 		foreach ( $result as $row ) {
 			$dbs[] = $row->ln_wiki;
 		}
-		$dbw->freeResult( $result );
 
 		return $dbs;
 	}
@@ -1467,7 +1465,6 @@ class CentralAuthUser extends AuthPluginUser {
 		foreach ( $result as $row ) {
 			$wikis[] = $row->lu_wiki;
 		}
-		$dbw->freeResult( $result );
 
 		$this->mAttachedArray = $wikis;
 		$this->mAttachedList = implode( "\n", $wikis );
@@ -1520,7 +1517,6 @@ class CentralAuthUser extends AuthPluginUser {
 			$wikis[$row->lu_wiki] = array_merge( $wikis[$row->lu_wiki],
 												$this->localUserData( $row->lu_wiki ) );
 		}
-		$dbw->freeResult( $result );
 
 		return $wikis;
 	}

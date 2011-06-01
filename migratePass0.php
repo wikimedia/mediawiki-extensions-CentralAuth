@@ -33,7 +33,6 @@ function migratePassZero() {
 			$users[intval( $row->user_id )] = $row->user_name;
 			++$migrated;
 		}
-		$dbr->freeResult( $result );
 
 		CentralAuthUser::storeMigrationData( $wgDBname, $users );
 
