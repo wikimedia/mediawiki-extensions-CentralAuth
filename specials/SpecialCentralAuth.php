@@ -363,6 +363,12 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function listMergedWikiItem( $row ) {
 		global $wgLang;
+		if ( $row === null ) {
+			// https://bugzilla.wikimedia.org/show_bug.cgi?id=28767
+			// It seems sometimes local accounts aren't correctly created
+			// Revisiting the wiki solves the issue
+			return '';
+		}
 		return '<tr>' .
 			( $this->mCanUnmerge ? '<td>' . $this->adminCheck( $row['wiki'] ) . '</td>' : '' ) .
 			'<td>' . $this->foreignUserLink( $row['wiki'] ) . '</td>' .
