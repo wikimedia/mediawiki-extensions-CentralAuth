@@ -471,6 +471,7 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at a user's preferences page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
 	'centralauth-prefs-manage' => "Link on 'User profile' tab of 'Preferences' special page.",
+	'centralauth-prefs-view' => 'Used as a link on [[Special:Preferences]]',
 	'centralauth-login-progress' => '{{gender}}
 * (optional) $1 is the user name of the logged in user',
 	'centralauth-log-entry-chgstatus' => '[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example].
@@ -7585,7 +7586,7 @@ $messages['fa'] = array(
 	'centralauth-admin-delete-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-token-mismatch' => 'شرمنده! به علت از دست رفتن اطلاعات نشست کاربری، نمی‌توانیم فرم شما را پردازش کنیم.',
 	'centralauth-admin-reason' => 'دلیل:',
-	'centralauth-admin-reason-other' => 'دلایل دیگر/اضافی:',
+	'centralauth-admin-reason-other' => 'دلیل دیگر/اضافی:',
 	'centralauth-admin-status' => 'تنظیم وضعیت حساب سراسری',
 	'centralauth-admin-status-intro' => 'شما می‌توانید فرم زیر را برای تغییر وضعیت این حساب سراسری استفاده کنید.',
 	'centralauth-admin-status-locked' => 'قفل شده:',
