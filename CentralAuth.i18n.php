@@ -994,6 +994,7 @@ $messages['ang'] = array(
 
 /** Arabic (العربية)
  * @author ;Hiba;1
+ * @author Aiman titi
  * @author Alnokta
  * @author Ciphers
  * @author Loya
@@ -1181,15 +1182,18 @@ $messages['ar'] = array(
 	'centralauth-prefs-count-unattached' => 'حسابات غير مؤكدة باسمك موجودة في $1 {{PLURAL:$1|مشروع|مشروع}}.',
 	'centralauth-prefs-detail-unattached' => 'موقع المشروع هذا لم يتم تأكيده كمنتمي للحساب العام.',
 	'centralauth-prefs-manage' => 'أدر حسابك العام',
+	'centralauth-prefs-view' => 'عرض معلومات المستخدم العام',
 	'centralauth-renameuser-merged' => 'المستخدم $1 انتقل إلى نظام الدخول الموحد.
 إعادة تسميته ستؤدي إلى أن المستخدم المحلي سينفصل عن المستخدم العام.',
 	'centralauth-renameuser-reserved' => 'المستخدم $2 محجوز لحساب عام.',
 	'centralauth-invalid-wiki' => 'لا توجد قاعدة بيانات ويكي كهذه: $1',
 	'centralauth-account-exists' => 'لم يمكن إنشاء الحساب: اسم المستخدم المطلوب مأخوذ بالفعل في نظام الدخول الموحد.',
+	'centralauth-account-exists-reset' => 'اسم المستخدم $1 غير مسجل على هذا الويكي، ولكنه موجود في نظام الدخول الموحد.',
 	'centralauth-login-progress' => 'يجرى تسجيل دخولك إلى مشاريع {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'يجرى تسجيل خروجك من مشاريع {{MediaWiki:Centralauth-groupname}} الأخرى:',
 	'centralauth-login-no-others' => 'أنت تم تسجيل دخولك تلقائيا إلى المشاريع الأخرى ل{{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'أنت تم تسجيل خروجك تلقائيا من المشاريع الأخرى ل{{int:Centralauth-groupname}}.',
+	'centralauth-hidden-blockreason' => 'البيانات الشاملة تم إخفائها بواسطة $1 في $2 نتيجة للسبب التالي:$3',
 	'centralauth-log-name' => 'سجل إدارة الحساب العام',
 	'centralauth-log-header' => 'هذا السجل يحتوي على العمليات تحت الحسابات العامة: عمليات الحذف، الغلق ورفع الغلق.',
 	'centralauth-log-entry-delete' => 'حذف الحساب العام "$1"',
@@ -1215,6 +1219,7 @@ $messages['ar'] = array(
 	'centralauth-rightslog-entry-setrename' => 'أعاد تسمية مجموعة الويكي "$2" باسم "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'غير نوع "$1" من $2 إلى $3',
 	'centralauth-rightslog-entry-setchange' => 'غير الويكيات في "$1": أضاف: $2؛ أزال: $3',
+	'centralauth-rightslog-entry-deleteset' => 'حذف مجموعة الويكي "$1"',
 	'centralauth-rightslog-set-optin' => 'معتمد على الاشتراك',
 	'centralauth-rightslog-set-optout' => 'معتمد على إلغاء الاشتراك',
 	'autologin' => 'تسجيل دخول تلقائي',
@@ -1258,13 +1263,19 @@ $messages['ar'] = array(
 	'centralauth-editset' => 'مجموعات الويكي',
 	'centralauth-editset-legend-rw' => 'تحرير أو إنشاء مجموعة ويكي',
 	'centralauth-editset-legend-ro' => 'قائمة مجموعات الويكي',
+	'centralauth-editset-intro-rw' => 'مجموعات الويكي التالية قد تم إنشاؤها بالفعل.
+يمكنك عرض وتعديل أي منها أو إنشاء مجموعة جديدة .',
+	'centralauth-editset-intro-ro' => 'أدناه قائمة بمجموعات الويكي.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|احذف]])',
 	'centralauth-editset-new' => 'إنشاء مجموعة جديدة',
 	'centralauth-editset-notfound' => 'مجموعة الويكي "$1" لم يتم العثور عليها.',
 	'centralauth-editset-optin' => 'معتمد على الاشتراك (يشمل فقط الويكيات المحددة)',
 	'centralauth-editset-optout' => 'معتمد على عدم الاشتراك (يشمل كل الويكيات ماعدا المحددة)',
 	'centralauth-editset-legend-edit' => 'تعديل مجموعة الويكي "$1"',
+	'centralauth-editset-legend-view' => 'مجموعة ويكي " $1 "',
 	'centralauth-editset-legend-new' => 'إنشاء مجموعة ويكي جديدة',
+	'centralauth-editset-legend-delete' => 'حذف مجموعة الويكي "$1"',
+	'centralauth-editset-subtitle' => '[[Special:WikiSets|قائمة المجموعات]]',
 	'centralauth-editset-name' => 'الاسم:',
 	'centralauth-editset-type' => 'النوع:',
 	'centralauth-editset-wikis' => 'الويكيات:',
@@ -1279,9 +1290,12 @@ $messages['ar'] = array(
 	'centralauth-editset-usage' => 'مستخدم في المجموعات:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|الويكي التالي غير موجود|الويكيات التالية غير موجودة}}: $1.',
 	'centralauth-editset-success' => 'تم تغيير مجموعة الويكي بنجاح.',
+	'centralauth-editset-success-delete' => 'تم حذف مجموعة الويكي بنجاح.',
 	'centralauth-editset-return' => 'رجوع إلى القائمة الرئيسية',
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
+	'right-centralauth-unmerge' => 'إلغاء دمج الحسابات العامة.',
 	'right-centralauth-lock' => 'إقفال أو إخفاء الحساب العالمي',
+	'right-centralauth-oversight' => 'حضر الحسابات العامة',
 	'right-centralauth-merge' => 'دمج حسابهم',
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 );
@@ -5017,6 +5031,7 @@ Omdøbning vil betyde at den lokale bruger vil blive adskilt den globale konto.'
 	'centralauth-renameuser-reserved' => 'Brugernavnet $2 er reserveret til en global konto.',
 	'centralauth-invalid-wiki' => 'Der er ingen sådan wikidatabase: $1',
 	'centralauth-account-exists' => 'Kan ikke oprette konto: Det ønskede brugernavn er allerede brugt i det globale loginsystem.',
+	'centralauth-account-exists-reset' => 'Brugernavnet $1 er ikke registreret lokalt, men det findes globalt',
 	'centralauth-login-progress' => 'Logger dig på {{int:Centralauth-groupname}}s projekter:',
 	'centralauth-logout-progress' => 'Logger dig af fra andre af {{int:Centralauth-groupname}}s projekter:',
 	'centralauth-login-no-others' => 'Du er automatisk blevet logget på andre af {{int:Centralauth-groupname}}s projekter.',
@@ -18208,7 +18223,11 @@ $messages['os'] = array(
 	'centralauth-months-ago' => '$1 мæйы агъоммæ',
 	'centralauth-years-ago' => '$1 азы агъоммæ',
 	'centralauth-prefs-complete' => 'Алцыдæр у хорз!',
+	'centralauth-log-status-none' => '(нæй)',
+	'centralauth-globalgroupperms-newgroupname' => 'Ног къорды ном:',
+	'centralauth-editgroup-name' => 'Къорды ном:',
 	'centralauth-editgroup-noset' => '(нæй)',
+	'centralauth-editgroup-reason' => 'Аххос:',
 	'centralauth-editset-type' => 'Тип:',
 	'centralauth-editset-reason' => 'Аххос:',
 	'centralauth-editset-nouse' => '(нæй)',
