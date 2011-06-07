@@ -22081,6 +22081,7 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
  * @author Mikullovci11
  * @author Olsi
  * @author Techlik
+ * @author Vinie007
  */
 $messages['sq'] = array(
 	'mergeaccount' => 'Identfikoni statusin  e unifikuar.',
@@ -22103,7 +22104,7 @@ Asnjë ndryshim nuk do të ndodhë deri sa të konfirmoni se gjërat janë në r
 	'centralauth-merge-step2-detail' => "Disa nga llogaritë nuk mund të përputheshin automatikisht tek wiki ku keni krijuar llogarinë.
 Nëse këto llogari ju përkasin juve, ju mund t'i konfirmoni që janë tuajat duke dhënë fjalëkalimin për to.",
 	'centralauth-merge-step2-submit' => 'Konfirmoni informacionin e hyrjes brenda',
-	'centralauth-login-global' => 'Më identifiko në nivel global',
+	'centralauth-login-global' => 'Edhe mua hyni në për projekte të tjera të {{int: Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Të gjitha llogaritë ekzistuese mund të unifikohen automatikisht!
 
 Asnjë ndryshim nuk ka ndodhur tek llogaritë tuaja ende.',
@@ -22272,11 +22273,9 @@ Fjalëkalimet për llogaritë globale të krijuara përpara shkrirjes do të kth
 	'centralauth-renameuser-merged' => "Përdoruesi $1 është shkrirë në sistemin e unifikuar.
 Riemërimi do t'i shkaktojë përdoruesit lokal shkëputjen nga përdoruesi global.",
 	'centralauth-renameuser-reserved' => 'Përdoruesi $2 është rezervuar për një llogari globale.',
-	'centralauth-link-on-contribs' => 'statusi i llogarisë globale',
-	'centralauth-link-on-contribs-text' => 'Statusi i llogarisë globale për këtë përdorues',
-	'centralauth-link-on-contribs-no' => 'asnjë llogari globale',
 	'centralauth-invalid-wiki' => 'Nuk ka bazë të dhënash wiki të tillë: $1',
 	'centralauth-account-exists' => 'Nuk mund të krijohet llogaria: emri i përdoruesit i kërkuar është marrë në sistemin e hyrjes së unifikuar.',
+	'centralauth-account-exists-reset' => 'Emri i përdoruesit $1 nuk është i regjistruar në këtë wiki, por ajo nuk ekziston në hyrje sistem të unifikuar.',
 	'centralauth-login-progress' => 'Duke hyrë brenda në projektet e {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Duke dalë nga projektet e tjera të {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Ju keni hyrë brenda automatikisht në projektet e tjera të {{int:Centralauth-groupname}}.',
