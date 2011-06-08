@@ -1163,6 +1163,7 @@ $messages['ar'] = array(
 ** اسم مستخدم مسئ
 ** معلومات شخصية غير مناسبة',
 	'centralauth-admin-logsnippet' => 'تغييرات الحساب في كامل الموقع السابقة',
+	'centralauth-admin-suppressreason' => 'على الصعيد العام تم حضر $1 للسبب التالي:$2',
 	'globalusers' => 'قائمة المستخدمين العامة',
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
