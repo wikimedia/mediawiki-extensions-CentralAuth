@@ -21175,6 +21175,7 @@ $messages['shi'] = array(
  * @author Thameera123
  * @author තඹරු විජේසේකර
  * @author නන්දිමිතුරු
+ * @author පසිඳු කාවින්ද
  * @author බිඟුවා
  * @author ශ්වෙත
  */
@@ -21199,7 +21200,7 @@ $messages['si'] = array(
 	'centralauth-merge-step2-detail' => 'සමහරක් ගිණුම් නියම කරන ලද නිවාස විකියට ස්වයංක්‍රීයව ගැළපිය නොහැකි විය.
 මේ ගිණුම් අයිති ඔබට නම්, ඒ ගිණුම් සඳහා මුරපද ලබාදීමෙන් ඒවා අයිති ඔබට බව තහවුරු කළ හැකිය.',
 	'centralauth-merge-step2-submit' => 'ප්‍රවිෂ්ට වීමේ තොරතුරු තහවුරු කරන්න',
-	'centralauth-login-global' => 'මා ගෝලීය ලෙසින් ප්‍රවිෂ්ට කරලන්න',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}} වල අනෙකුත් ව්‍යාපෘති සදහාද මාව ප්‍රවිෂ්ට කරන්න',
 	'centralauth-merge-dryrun-complete' => 'පවතින සියළු ගිණුම් ස්වයංක්‍රීයව සංයුක්ත කල හැක!
 
 තවමත්, ඔබගේ ගිණුම්වලට කිසිදු වෙනසක් සිදුකර නොමැත.',
