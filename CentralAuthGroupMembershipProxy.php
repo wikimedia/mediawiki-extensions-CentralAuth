@@ -19,6 +19,7 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	public static function newFromName( $name ) {
+		$name = User::getCanonicalName( $name );
 		$globalUser = new CentralAuthUser( $name );
 		return $globalUser->exists() ? new CentralAuthGroupMembershipProxy( $globalUser ) : null;
 	}
