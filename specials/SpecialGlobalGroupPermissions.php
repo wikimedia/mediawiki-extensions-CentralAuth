@@ -59,7 +59,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		if ( $subpage != '' && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$this->doSubmit( $subpage );
-		} else if ( $subpage != '' ) {
+		} elseif ( $subpage != '' ) {
 			$this->buildGroupView( $subpage );
 		} else {
 			$this->buildMainView();
@@ -189,7 +189,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$desc = $wgOut->parseInline( User::getRightDescription( $right ) ) . ' ' .
 						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
 
-			$checkbox = Xml::check( "wpRightAssigned-$right", $checked, 
+			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
 			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
 					$desc );
@@ -249,7 +249,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			if ( !$alreadyAssigned && $wgRequest->getCheck( "wpRightAssigned-$right" ) ) {
 				$addRights[] = $right;
-			} else if ( $alreadyAssigned && !$wgRequest->getCheck( "wpRightAssigned-$right" ) ) {
+			} elseif ( $alreadyAssigned && !$wgRequest->getCheck( "wpRightAssigned-$right" ) ) {
 				$removeRights[] = $right;
 			} # Otherwise, do nothing.
 		}

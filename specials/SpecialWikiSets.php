@@ -57,7 +57,7 @@ class SpecialWikiSets extends SpecialPage {
 
 			if ( ( $subpage || $newPage ) && $this->mCanEdit && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 				$this->doSubmit( $subpage );
-			} else if ( ( $subpage || $newPage ) && is_numeric( $subpage ) ) {
+			} elseif ( ( $subpage || $newPage ) && is_numeric( $subpage ) ) {
 				$this->buildSetView( $subpage );
 			} else {
 				$this->buildMainView();
