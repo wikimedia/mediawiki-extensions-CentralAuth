@@ -5326,7 +5326,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkontensystem.',
 	'centralauth-renameuser-reserved' => 'Der Benutzer „$2“ ist als globales Benutzerkonto reserviert.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
-	'centralauth-account-exists' => 'Benutzerkonto kann nicht erstellt werden: der angefragte Benutzername wird bereits für das globale Benutzerkontensystem verwendet.',
+	'centralauth-account-exists' => 'Das Benutzerkonto kann nicht erstellt werden: Der angefragte Benutzername wird bereits für das globale Benutzerkontensystem verwendet.',
 	'centralauth-account-exists-reset' => 'Der Benutzername $1 ist nicht auf diesem Wiki registriert, allerdings ist er bereits im zentralen Anmeldesystem vorhanden.',
 	'centralauth-login-progress' => 'Automatisch wurdest du auch an folgenden Projekten {{int:Centralauth-groupname}} angemeldet:',
 	'centralauth-logout-progress' => 'Automatisch wurdest du auch von folgenden Projekten {{int:Centralauth-groupname}} abgemeldet:',
