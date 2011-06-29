@@ -244,8 +244,9 @@ $wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms
 $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms2';
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
 
-foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type )
+foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type ) {
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
+}
 
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 	$link = $skin ? $skin->makeLinkObj( $title, htmlspecialchars( $params[0] ) ) : $params[0];
