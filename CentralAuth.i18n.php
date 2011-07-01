@@ -23181,6 +23181,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Lejonel
  * @author Leo Johannes
  * @author M.M.S.
+ * @author MagnusA
  * @author Micke
  * @author NH
  * @author Najami
@@ -23465,7 +23466,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
 	'right-centralauth-lock' => 'Lås eller dölj globalt konto',
 	'right-centralauth-oversight' => 'Undanhåll globalt konto',
-	'right-centralauth-merge' => 'Sammanfoga deras konton',
+	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
 );
 
