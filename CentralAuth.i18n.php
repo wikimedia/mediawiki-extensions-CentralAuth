@@ -3194,11 +3194,12 @@ $messages['bg'] = array(
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Wikitanvir
  * @author Zaheen
  */
 $messages['bn'] = array(
 	'mergeaccount' => 'লগ-ইন একত্রিকরণ অবস্থা',
-	'centralauth-groupname' => 'উইকিমিডিয়া ফাউণ্ডেশন',
+	'centralauth-groupname' => 'উইকিমিডিয়া ফাউন্ডেশন',
 	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} উইকিসমূহের মধ্যে [[Special:MergeAccount|অ্যাকাউন্ট একীভূত]] করো',
 	'centralauth-mergeaccount-desc' => 'অভিন্ন ব্যবহারকারী লগইন এর জন্য [[Special:MergeAccount|একাধিক অ্যাকাউন্ট একীভূতকরণ]]',
 	'centralauth-merge-denied' => 'দুঃখিত, এ পাতায় আপনার প্রবেশাধিকার নাই।',
@@ -3218,7 +3219,7 @@ $messages['bn'] = array(
 	'centralauth-merge-step2-title' => 'আরও অ্যাকাউন্ট নিশ্চিত করুন',
 	'centralauth-merge-step2-detail' => 'কিছু অ্যাকাউন্টসমূহ সয়ংক্রিয় ভাবে আপনার প্রধান উইকির অ্যাকাউন্টের সাথে মিলে না। যদি ঐ অ্যাকাউন্টসমূহ আপনার হয়ে থাকে, শব্দচাবি ব্যবহার করে আপনি নিশ্চিত করুন যে  ঐ অ্যাকাউন্টগুলো আপনার।',
 	'centralauth-merge-step2-submit' => 'লগইন তথ্য নিশ্চিত করুন',
-	'centralauth-login-global' => 'বৈশ্বিকভাবে আমাকে প্রবেশ করান',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}}-এর অন্যান্য প্রকল্পগুলোতেও আমাকে প্রবেশ করাও',
 	'centralauth-merge-dryrun-complete' => 'সমস্ত অ্যাকাউন্টগুলো সয়ংক্রিয় ভাবে একীভূত করা যাবে!
 
 এখনও আপনার অ্যাকাউন্টে কোন পরিবর্তন করা হয় নাই।',
