@@ -16520,6 +16520,7 @@ Id-databażi tista' tkun li hi korrotta.",
 	'centralauth-incomplete' => "Il-proċess ta' unifikazzjoni tal-login ma ġiex komplut!",
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Aqra aktar dwar il-'''login imwaħħad''']]…''",
 	'centralauth-list-attached' => 'Il-kontijiet bl-isem tal-utent "$1" fuq il-proġetti elenkati hawn taħt ġew awtomatikament imwaħħda ma\' xulxin.',
+	'centralauth' => 'Amministrazzjoni tal-kontijiet globali',
 	'centralauth-admin-username' => 'Isem tal-utent:',
 	'centralauth-admin-reason' => 'Raġuni:',
 	'centralauth-prefs-status' => 'Stat tal-kont globali:',
@@ -16530,6 +16531,7 @@ Id-databażi tista' tkun li hi korrotta.",
 	'centralauth-login-progress' => 'Login effettwat fil-proġetti l-oħra tal-{{int:Centralauth-groupname}}:',
 	'centralauth-log-header' => 'Dan ir-reġistru jinvolvi operazzjonijiet fuq il-kontijiet globali: tħassir, blokki u żblokki.',
 	'centralauth-rightslog-header' => "Dan ir-reġistru jinkludi operazzjonijiet fuq il-gruppi globali: tibdil fis-sħubija u l-permessi mogħtija 'l-gruppi",
+	'globalgrouppermissions' => 'Ġestjoni tal-gruppi globali',
 );
 
 /** Erzya (Эрзянь)
