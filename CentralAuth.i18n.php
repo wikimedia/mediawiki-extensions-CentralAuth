@@ -725,7 +725,7 @@ $messages['aln'] = array(
 	'centralauth-admin-setstatus-success' => 'Ju keni ndryshuar me sukses statusi i tërë këtij llogari globale.',
 	'centralauth-admin-status-reasons' => '* Lock arsye të përbashkëta vetëm për llogari
 ** vandalizëm vetëm për llogari spam
-* përbashkëta bllokohet-dhe-fshehin arsyet 
+* përbashkëta bllokohet-dhe-fshehin arsyet
 ** emrin e përdoruesit abuzive personale informacion të papërshtatshme',
 	'centralauth-admin-logsnippet' => 'Previous llogari ndryshimet globale',
 	'centralauth-admin-suppressreason' => 'ndrydhur Globalisht nga $1 për këto arsye: $2',
@@ -932,8 +932,8 @@ Quan vusté [[Special:UserLogin|encete una sesión]], o sistema d'acceso instruy
 Ha demandau ista pachina sin furnir datos d'autentificación, asinas que no fa cosa.",
 	'globalgroupmembership' => 'Pertenencia a collas globals',
 	'globalgrouppermissions' => 'Confeguración de collas globals',
-	'centralauth-globalgroupperms-grouplist' => "S'han confegurato as collas globals siguients. 
-Puede veyer u editar os premisos asignatos ta qualsiquier colla si tiene premisos ta ello. 
+	'centralauth-globalgroupperms-grouplist' => "S'han confegurato as collas globals siguients.
+Puede veyer u editar os premisos asignatos ta qualsiquier colla si tiene premisos ta ello.
 Se puede borrar una colla sacando-le totz os dreitos asignatos.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|amostrar/editar]])',
 	'centralauth-existinggroup-legend' => 'Collas existents',
@@ -2119,7 +2119,7 @@ $messages['ba'] = array(
 	'centralauth-login-global' => 'Шулай уҡ {{int:Centralauth-groupname}} башҡа проекттарында танылырға',
 	'centralauth-merge-dryrun-complete' => 'Бөтә булған иҫәп яҙмалары берләштерелә ала!
 Әлегә һеҙҙең иҫәп яҙмалары үҙгәртелмәгән.',
-	'centralauth-merge-dryrun-incomplete' => 'Ҡайһы бер иҫәп яҙмалары берләштерелә алмаһа ла, дауам итергә мөмкин. Һеҙ уларҙы һуңынан берләштерә алаһығыҙ. 
+	'centralauth-merge-dryrun-incomplete' => 'Ҡайһы бер иҫәп яҙмалары берләштерелә алмаһа ла, дауам итергә мөмкин. Һеҙ уларҙы һуңынан берләштерә алаһығыҙ.
 
 Әлегә һеҙҙең иҫәп яҙмаларығыҙ үҙгәртелмәгән.',
 	'centralauth-merge-dryrun-or' => "'''йәки'''",
@@ -2139,7 +2139,7 @@ $messages['ba'] = array(
 	'centralauth-incomplete-text' => 'Иҫәп яҙмаларын берләштереү тамамланғас, һеҙгә {{MediaWiki:Centralauth-groupname}} һәр проектында айырым теркәлергә кәрәкмәйәсәк.',
 	'centralauth-not-owner-text' => '"$1" исеме $2 иҫәп яҙмаһының хужаһына беркетелде.
 Әгәр ул ысынлап та һеҙҙең исемегеҙ икән, иҫәп яҙмаларын берләштереүҙе тамамлау өсөн, ошонда төп иҫәп яҙмаһының паролен керетегеҙ:',
-	'centralauth-blocked-text' => 'һеҙҙең баш вики (түбәндә күрһәтелгән) үҙгәртеүҙәр өсөн бикле. 
+	'centralauth-blocked-text' => 'һеҙҙең баш вики (түбәндә күрһәтелгән) үҙгәртеүҙәр өсөн бикле.
 Бикте асыу өсөн, ошо викиның хәкименә мөрәжәғәт итегеҙ ,зинһар.
 Бик асылмайынсма, һеҙ үҙегеҙҙең иҫәп яҙмаларығыҙҙы берләшерә алмаясаҡһығыҙ.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демо режим</div><br clear='all'/>",
@@ -2208,9 +2208,9 @@ $messages['ba'] = array(
 	'centralauth-admin-list-legend-ro' => 'Локаль иҫәп яҙмалары исемлеге',
 	'centralauth-admin-list-legend-rw' => 'Берләштелмәгән локаль иҫәп яҙмалары',
 	'centralauth-admin-unattached' => 'берләштерелмәгән',
-	'centralauth-admin-blocked' => '$3 $4 тиклем бикле. 
+	'centralauth-admin-blocked' => '$3 $4 тиклем бикле.
 Сәбәбе: $2',
-	'centralauth-admin-blocked-indef' => 'Билдәһеҙ ваҡытҡа бикле. 
+	'centralauth-admin-blocked-indef' => 'Билдәһеҙ ваҡытҡа бикле.
 Сәбәбе: $1',
 	'centralauth-admin-blocklog' => 'блоклау яҙмалары',
 	'centralauth-admin-list-localwiki' => 'Локаль вики',
@@ -2250,7 +2250,7 @@ $messages['ba'] = array(
 	'centralauth-admin-status-reasons' => '* Ғәҙәттәге бикләү сәбәптәре
 ** вандализм өсөн генә булдырылған иҫәп яҙмаһы
 ** спам өсөн генә булдырылған иҫәп яҙмаһы
-* Ғәҙәттәге бикләү һәм йәшереү сәбәптәре 
+* Ғәҙәттәге бикләү һәм йәшереү сәбәптәре
 ** әҙәпһеҙ ҡатнашыусы исеме
 ** урынһыҙ шәхси мәғлүмәт',
 	'centralauth-admin-logsnippet' => 'Дөйөм иҫәп яҙмаларҙа алдағы үҙгәртеүҙәр',
@@ -2304,8 +2304,8 @@ $messages['ba'] = array(
 	'centralauth-rightslog-name' => 'Дөйөм мөмкинлектәр яҙмалары журналы',
 	'centralauth-rightslog-entry-usergroups' => '$1 ҡатнашыусыһының кергән дөйөм төркөмдәрен үҙгәрткән. Иҫке төркөмдәр: $2. Яңы төркөмдәр: $3',
 	'centralauth-rightslog-entry-groupperms' => '$1 төркөмөнөң хоҡуҡтарын $2 хоҡуғынан $3 хоҡуғына үҙгәртте',
-	'centralauth-rightslog-entry-groupperms2' => '$1 төркөмөнөң хоҡуҡтарын үҙгәртте. 
-Өҫтәлгән: $2; 
+	'centralauth-rightslog-entry-groupperms2' => '$1 төркөмөнөң хоҡуҡтарын үҙгәртте.
+Өҫтәлгән: $2;
 Юйылған: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 өсөн вики йыйылмаһының төркөм сикләүҙәрен үҙгәртте. Иҫкеһе: $2, яңыһы: $3',
 	'centralauth-rightslog-header' => 'Был журнал дөйөм төркөмдәр менән үткәрелгән түбәндәге яҙмаларҙы үҙ эсенә ала: ағзаларын һәм хоҡуҡтарын үҙгәртеү',
@@ -2318,7 +2318,7 @@ $messages['ba'] = array(
 	'centralauth-rightslog-set-optout' => 'сығарыу ҡағиҙәһе нигеҙендә',
 	'autologin' => 'Автоматик танылыу',
 	'centralauth-autologin-desc' => 'Был махсус бит MediaWiki эсендә ҡулланыла.
-Һеҙ [[Special:UserLogin|танылған]]  саҡта, үҙәк танылыу системаһы һеҙҙең браузерығыҙға, график һылтанмалар ҡулланып, был биткә бөтә домендарҙан мөрәжәғәт итергә күрһәтмә бирә. 
+Һеҙ [[Special:UserLogin|танылған]]  саҡта, үҙәк танылыу системаһы һеҙҙең браузерығыҙға, график һылтанмалар ҡулланып, был биткә бөтә домендарҙан мөрәжәғәт итергә күрһәтмә бирә.
 Һеҙ был биткә танылыу тураһында мәғлүмәт бирмәйенсә мөрәжәғәт иттегеҙ, шуға күрә бер ни ҙә сыҡмай.',
 	'globalgroupmembership' => 'Ҡатнашыусы ҡараған дөйөм төркөмдәр',
 	'globalgrouppermissions' => 'Дөйөм төркөмдәр менән идара итеү',
@@ -3571,9 +3571,9 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-list-legend-ro' => "Roll ar c'hontoù lec'hel",
 	'centralauth-admin-list-legend-rw' => "Nullañ kendeuzadur ar c'hontoù lec'hel",
 	'centralauth-admin-unattached' => 'distag',
-	'centralauth-admin-blocked' => "Stanket, termen d'an $3 da $4. 
+	'centralauth-admin-blocked' => "Stanket, termen d'an $3 da $4.
 Abeg : $2",
-	'centralauth-admin-blocked-indef' => 'Stanket da viken. 
+	'centralauth-admin-blocked-indef' => 'Stanket da viken.
 Abeg : $1',
 	'centralauth-admin-blocklog' => 'Roll ar stankadennoù',
 	'centralauth-admin-list-localwiki' => "Wiki lec'hel",
@@ -4127,7 +4127,7 @@ segurament és perquè tenen una contrasenya diferent de la del vostre compte pr
 	'centralauth-merge-method-admin' => "compte d'administrador fusionat",
 	'centralauth-merge-method-new' => 'nou compte',
 	'centralauth-merge-method-login' => "Creat en l'inici de sessió",
-	'centralauth-merge-method-primary-desc' => "Aquest és el wiki en què es va fusionar el compte inicialment. 
+	'centralauth-merge-method-primary-desc' => "Aquest és el wiki en què es va fusionar el compte inicialment.
  Tingues en compte que pot diferir de l'inici real de la wiki d'aquest usuari/a.",
 	'centralauth-merge-method-empty-desc' => 'Indica que el compte local es va fusionar perquè no tenia edicions.',
 	'centralauth-merge-method-mail-desc' => "Indica que el compte local va ser fusionat perquè la seva adreça de correu electrònic coincidia amb l'adreça del compte principal.",
@@ -5676,7 +5676,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-status-submit' => 'Statu rone',
 	'centralauth-admin-status-nonexistent' => 'Ğelet: hesabê globalî "<nowiki>$1</nowiki>" çini yo.',
 	'centralauth-admin-setstatus-success' => 'Ti statuyê hesabê gobalî vurna.',
-	'centralauth-admin-status-reasons' => '* 
+	'centralauth-admin-status-reasons' => '*
 ** vandalizm-teyna hesab
 ** spam-teyna hesab
 * Sebebanê qilid kerdişi-u-sebabanê nimnaye
@@ -6232,7 +6232,7 @@ $messages['el'] = array(
 	'centralauth-merge-method-empty-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε διότι δεν είχαν γίνει επεξεργασίες από αυτόν.',
 	'centralauth-merge-method-mail-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε διότι η ηλεκτρονική διεύθυνσή του ταίριαξε στην ηλεκτρονική διεύθυνση του κυρίου λογαριασμού.',
 	'centralauth-merge-method-password-desc' => "Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε διότι ο χρήστης εισήγαγε έγκυρο κωδικό πρόσβασης γι' αυτόν.",
-	'centralauth-merge-method-admin-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε χειροκίνητα από τους stewards.<br /> 
+	'centralauth-merge-method-admin-desc' => 'Ένδειξη ότι ο τοπικός λογαριασμός συγχωνεύτηκε χειροκίνητα από τους stewards.<br />
 Εκείνη η λειτουργία είναι τώρα απενεργοποιημένη για λόγους ασφάλειας.',
 	'centralauth-merge-method-new-desc' => 'Ένδειξη ότι ο καθολικός λογαριασμός δημιουργήθηκε αυτόματα όταν ο τοπικός λογαριασμός δημιουργούνταν.',
 	'centralauth-merge-method-login-desc' => 'Υποδεικνύει ότι ο τοπικός λογαριασμός δημιουργήθηκε  αυτόματα όταν  ο χρήστης συνδέθηκε.',
@@ -6420,7 +6420,7 @@ $messages['el'] = array(
 	'centralauth-editset' => 'Σύνολα wiki',
 	'centralauth-editset-legend-rw' => 'Επεξεργασία ή δημιουργία συνόλου  wiki',
 	'centralauth-editset-legend-ro' => 'Κατάλογος συνόλων wiki',
-	'centralauth-editset-intro-rw' => 'Τα παρακάτω wiki σύνολα έχουν ήδη δημιουργηθεί. 
+	'centralauth-editset-intro-rw' => 'Τα παρακάτω wiki σύνολα έχουν ήδη δημιουργηθεί.
  Μπορείτε να δείτε και να τροποποιήσετε οποιοδήποτε  από αυτά, ή να δημιουργήσετε ένα νέο σύνολο.',
 	'centralauth-editset-intro-ro' => 'Παρακάτω είναι η λίστα των υπαρχόντων wiki συνόλων.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]], ([[Special:WikiSets/delete/$2|delete]])',
@@ -11910,7 +11910,7 @@ Forse stai cercando di assegnare i permessi all'utente sbagliato!",
 	'centralauth-editset' => 'Insiemi di wiki',
 	'centralauth-editset-legend-rw' => 'Modifica o crea insiemi di wiki',
 	'centralauth-editset-legend-ro' => 'Elenco degli insiemi di wiki',
-	'centralauth-editset-intro-rw' => 'I seguenti set di wiki sono già stati creati. 
+	'centralauth-editset-intro-rw' => 'I seguenti set di wiki sono già stati creati.
 Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-editset-intro-ro' => "Di seguito è riportato l'elenco degli insiemi di wiki attualmente esistenti.",
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|cancella]])',
@@ -12774,7 +12774,7 @@ $messages['ka'] = array(
 	'centralauth-editset' => 'ვიკი ნაკრებები',
 	'centralauth-editset-legend-rw' => 'შეასწორეთ ან შექმენით ვიკი',
 	'centralauth-editset-legend-ro' => 'ვიკი სიები',
-	'centralauth-editset-intro-rw' => 'მოცემული ვიკიჯგუფები უკვე შექმნილია. 
+	'centralauth-editset-intro-rw' => 'მოცემული ვიკიჯგუფები უკვე შექმნილია.
 თქვენ შეგიძლიათ იხილოთ, არედაქტიროთ ან შექმნათ ახალი ჯგუფები.',
 	'centralauth-editset-intro-ro' => 'ქვემოთ ნაჩვენებია არსებული ვიკი-პროექტების სია.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|წაშლა]])',
@@ -17951,7 +17951,7 @@ Se es vos, poiretz acabar lo procediment d’unificacion de compte en picant lo 
 	'centralauth-merge-method-admin' => "compte d'administrator fusionat",
 	'centralauth-merge-method-new' => 'compte novèl',
 	'centralauth-merge-method-login' => 'creat a la connexion',
-	'centralauth-merge-method-primary-desc' => "Es lo wiki que lo compte i foguèt inicialament fusionat. 
+	'centralauth-merge-method-primary-desc' => "Es lo wiki que lo compte i foguèt inicialament fusionat.
 Pòt èsser diferent del wiki principal de l'utilizaire.",
 	'centralauth-merge-method-empty-desc' => "Indica que lo compte local foguèt fusionat que i aviá pas d'edicions.",
 	'centralauth-merge-method-mail-desc' => "Indica que lo compte local foguèt fusionat que l'adreça electronica associada èra la meteissa que la del compte principal.",
@@ -18127,7 +18127,7 @@ Un grop pòt èsser suprimit en li levant totas sas permissions.",
 	'centralauth-editset' => 'Grops de wikis',
 	'centralauth-editset-legend-rw' => 'Editar o crear un grop de wikis',
 	'centralauth-editset-legend-ro' => 'Lista dels grops de wikis',
-	'centralauth-editset-intro-rw' => 'Los grops de wiki que segon son ja creats. 
+	'centralauth-editset-intro-rw' => 'Los grops de wiki que segon son ja creats.
 Los podètz afichar o modificar, o ne crear un autre.',
 	'centralauth-editset-intro-ro' => 'Trobaretz çaijós una lista dels grops de wikis.',
 	'centralauth-editset-new' => 'Crear una preferéncia novèla',
@@ -19787,7 +19787,7 @@ Vă rugăm să introduceți parola sitului de origine.',
 	'centralauth-incomplete-text' => 'Dacă conturile au fost unificate, puteți să vă autentificați în orice proiect wiki al {{MediaWiki:Centralauth-groupname}} fără să vă creați un cont nou.',
 	'centralauth-not-owner-text' => 'Numele de utilizator "$1" a fost alocat automat drept proprietarul contului $2. Dacă vă aparține, puteți încheia procesul de unificare a conturilor tastând parola contului inițial aici:',
 	'centralauth-blocked-text' => 'Wikiul dvs. de origine (notat mai jos) este blocat.
-Vă rugăm să contactați un administrator al acestui wiki pentru a îl debloca. 
+Vă rugăm să contactați un administrator al acestui wiki pentru a îl debloca.
 Cât timp este blocat nu puteți să vă uniți conturile.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Operare în mod demonstrativ</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Unificarea conturilor este în stare demonstrativă sau de depanare, așa că operațiunea nu este posibilă în acest moment. Ne cerem scuze!',
@@ -20655,7 +20655,7 @@ $messages['rue'] = array(
 	'centralauth-admin-list-legend-ro' => 'Список локалных конт',
 	'centralauth-admin-list-legend-rw' => 'Розлучіти локалны конта',
 	'centralauth-admin-unattached' => 'неприпоєне',
-	'centralauth-admin-blocked' => 'Заблокованый до $4 $3. 
+	'centralauth-admin-blocked' => 'Заблокованый до $4 $3.
 Причіна: $2',
 	'centralauth-admin-blocked-indef' => 'Заблокованый  до одволаня. Причіна: $1',
 	'centralauth-admin-blocklog' => 'лоґ блокованя',
@@ -20746,7 +20746,7 @@ $messages['rue'] = array(
 	'centralauth-rightslog-name' => 'Лоґ ґлобалных прав',
 	'centralauth-rightslog-entry-usergroups' => 'змінив список членів в ґлобалній ґрупі $1 з $2 на $3',
 	'centralauth-rightslog-entry-groupperms' => 'змінив права ґрупы  $1 з $2 на $3',
-	'centralauth-rightslog-entry-groupperms2' => 'змінив права ґрупы $1. 
+	'centralauth-rightslog-entry-groupperms2' => 'змінив права ґрупы $1.
 Придав $2;
 Одстранив $3',
 	'centralauth-rightslog-entry-groupperms3' => 'змінив россяг хоснованя ґрупы $1 з сету $2 на $3',
@@ -21149,7 +21149,7 @@ $messages['scn'] = array(
 	'centralauth-admin-reason' => 'Mutivu:',
 	'centralauth-log-status-hidden' => 'ammucciatu',
 	'centralauth-log-status-none' => '(nuddu)',
-	'centralauth-globalgroupperms-grouplist' => "Foru cunfigurati li gruppi glubbali ca sutta. 
+	'centralauth-globalgroupperms-grouplist' => "Foru cunfigurati li gruppi glubbali ca sutta.
 E' pussibbili taliari o mudificari li pirmissa assignati a nu gruppu, siddu si havi lu pirmissu pi fàrilu.
 Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
 	'centralauth-existinggroup-legend' => 'Gruppa esistenti',
@@ -21332,8 +21332,8 @@ $messages['si'] = array(
 	'centralauth-admin-already-unmerged' => '$1 මගහරිමින්, දැනටමත් විඒකාබද්ධ කොට ඇත.',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|ගිණුම|ගිණුම්}} සාර්ථකව විඒකාබද්ධ කෙරිනි',
 	'centralauth-admin-delete-title' => 'ගිණුම මකන්න',
-	'centralauth-admin-delete-description' => 'ගෝලීය ගිණුම මකාදැමීමෙන් ඔබේ ගෝලීය අභිරුචි මැකීයාම, සියලු පෙදෙසි ගිණුම් සමග බැඳීම් නැතිවී යාම, සහ ඔබේ ගෝලීය නම වෙනත් පරිශීලකයෙකුට ගැනීමට හැකිවීම යන කරුණු සිදුවිය හැකිය. 
-සියලු පෙදෙසි ගිණුම් දිගටම පවතිනු ඇත. 
+	'centralauth-admin-delete-description' => 'ගෝලීය ගිණුම මකාදැමීමෙන් ඔබේ ගෝලීය අභිරුචි මැකීයාම, සියලු පෙදෙසි ගිණුම් සමග බැඳීම් නැතිවී යාම, සහ ඔබේ ගෝලීය නම වෙනත් පරිශීලකයෙකුට ගැනීමට හැකිවීම යන කරුණු සිදුවිය හැකිය.
+සියලු පෙදෙසි ගිණුම් දිගටම පවතිනු ඇත.
 ඒකාබද්ධ කිරීමට පෙර සාදන ලද පෙදෙසි ගිණුම්වල මුරපද ඒකාබද්ධ කිරීමට පෙර පැවති අගයයන්වලට පත්වනු ඇත.',
 	'centralauth-admin-delete-button' => 'මෙම ගිණුම මකන්න',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" සඳහා වන ගෝලීය ගිණුම සාර්ථකව මකනලදී',
@@ -21422,7 +21422,7 @@ $3 ඉවත් කෙරිනි',
 	'centralauth-rightslog-set-optout' => 'තෝරා නොගැනීම් සම්බන්ධ',
 	'autologin' => 'ස්‍වයංක්‍රීය ඇතුලුවීම',
 	'centralauth-autologin-desc' => 'මෙය මීඩියාවිකිය ඇතුළත භාවිතා කරන විශේෂ පිටුවකි.
-ඔබ [[Special:UserLogin|පිවිසෙන]] විට, ප්‍රධාන පිවිසුම් පද්ධතිය මෙම පිටුව සියලු සබැඳි ඩොමේනවලින් රූප සබැඳි මාර්ගයෙන් ඉල්ලුම් කරන මෙන් බ්‍රව්සරයට උපදෙස් දෙයි. 
+ඔබ [[Special:UserLogin|පිවිසෙන]] විට, ප්‍රධාන පිවිසුම් පද්ධතිය මෙම පිටුව සියලු සබැඳි ඩොමේනවලින් රූප සබැඳි මාර්ගයෙන් ඉල්ලුම් කරන මෙන් බ්‍රව්සරයට උපදෙස් දෙයි.
 ඔබ මෙම පිටුව ඉල්ලුම් කර ඇත්තේ ඔබ ගැන කිසිදු ඔප්පුකිරීමේ දත්තයක් රහිතව නිසා එය කිසිත් නොකරනු ඇත',
 	'globalgroupmembership' => 'ගෝලීය කණ්ජායම්වල සමාජිකත්වය',
 	'globalgrouppermissions' => 'ගෝලීය කණ්ඩායම් හැසුරුම',
@@ -21452,11 +21452,11 @@ $3 ඉවත් කෙරිනි',
 	'centralauth-editgroup-perms' => 'පැවරූ අවසර',
 	'centralauth-editgroup-reason' => 'හේතුව:',
 	'centralauth-editgroup-success' => 'කණ්ඩායම් අවසර වෙනස්කරනලදී',
-	'centralauth-editgroup-success-text' => 'ඔබ විසින් $1 කණ්ඩායමේ අවසර සාර්ථකව වෙනස් කර ඇත. 
+	'centralauth-editgroup-success-text' => 'ඔබ විසින් $1 කණ්ඩායමේ අවසර සාර්ථකව වෙනස් කර ඇත.
 [[Special:GlobalGroupPermissions|කණ්ඩායම් පාලක ස්ථානයට නැවත යන්න]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|සංස්කරණය කරන්න]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ඔවුන්ට ගිණුමක් ඇති විකි:',
-	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ගෝලීය පරිශීලකයා ඔබ සඳහන් කළ විකිය ('' $2 '') තුළ සක්‍රීය නැත. 
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ගෝලීය පරිශීලකයා ඔබ සඳහන් කළ විකිය ('' $2 '') තුළ සක්‍රීය නැත.
 ඔබ විසින් අයිතීන් ලබාදීමට තැත් කරන්නේ වැරැදි පරිශීලකයාට විය යුතුය!",
 	'centralauth-editset' => 'විකි කට්ටල',
 	'centralauth-editset-legend-rw' => 'විකි කට්ටලය සංස්කරණය හෝ අළුතෙන් නිර්මාණය කරන්න',
@@ -21650,11 +21650,11 @@ Táto možnosť je v súčasnosti z bezpečnostných dôvodov vypnutá.',
 	'centralauth-admin-status-submit' => 'Nastaviť stav',
 	'centralauth-admin-status-nonexistent' => 'Chyba: globálny účet „<nowiki>$1</nowiki>“ neexistuje.',
 	'centralauth-admin-setstatus-success' => 'Úspešne ste zmenili stav tohto globálneho účtu.',
-	'centralauth-admin-status-reasons' => '* Časté dôvody blokovania 
+	'centralauth-admin-status-reasons' => '* Časté dôvody blokovania
  ** účet len na vandalizmus
  ** účet len na spam
  * Časté dôvody na zamknutie a skrytie
- ** zneužívajúce používateľské meno 
+ ** zneužívajúce používateľské meno
  ** nevhodné osobné údaje',
 	'centralauth-admin-logsnippet' => 'Predošlé zmeny globálneho účtu',
 	'centralauth-admin-suppressreason' => 'Globálne potlačil $1 z týchto dôvodov: $2',
@@ -22339,7 +22339,7 @@ Një grup mund të fshihet duke i larguar të gjitha të drejtat.',
 	'centralauth-globalgroupperms-nogroups' => 'Asnjë grup globale nuk janë përcaktuar.',
 	'centralauth-existinggroup-legend' => 'Grupet ekzistues',
 	'centralauth-newgroup-legend' => 'Krijo një grup të ri',
-	'centralauth-newgroup-intro' => 'Ju mund të përdorni këtë formular për të caktuar lejet për një grup të ri. 
+	'centralauth-newgroup-intro' => 'Ju mund të përdorni këtë formular për të caktuar lejet për një grup të ri.
 Vini re se një grup nuk ekziston nëse nuk ka leje të caktuar për të.',
 	'centralauth-globalgroupperms-newgroupname' => 'Emri e grupit të ri:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Caktoi drejtat',
@@ -22561,7 +22561,7 @@ $messages['sr-ec'] = array(
 	'autologin' => 'Аутоматски логин',
 	'globalgroupmembership' => 'Чланство у глобалним групама.',
 	'globalgrouppermissions' => 'Управљање глобалним групама',
-	'centralauth-globalgroupperms-grouplist' => 'Следеће глобалне групе су подешене. 
+	'centralauth-globalgroupperms-grouplist' => 'Следеће глобалне групе су подешене.
 Можете прегледати и мењати права додата групи, уколико имате приступ истој.
 Група се брише уклањањем свих права из исте.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|види/измени]])',
@@ -22987,8 +22987,8 @@ Wan du die [[Special:UserLogin|ounmäldest]], instruiert dät zentroale Ounmäld
 Du hääst disse Spesioalsiede sunner Authentizierengsdoaten apruupen, so dät niks Wiederes geböärt.',
 	'globalgroupmembership' => 'Meeglidskup in globoale Gruppen',
 	'globalgrouppermissions' => 'Management fon globoale Gruppen',
-	'centralauth-globalgroupperms-grouplist' => 'Do foulgjende globoale Gruppen wuuden konfigurierd. 
-Du koast do älke Gruppe touwiesde Gjuchte sjo of annerje, sowied du deertou begjuchtiged bäst. 
+	'centralauth-globalgroupperms-grouplist' => 'Do foulgjende globoale Gruppen wuuden konfigurierd.
+Du koast do älke Gruppe touwiesde Gjuchte sjo of annerje, sowied du deertou begjuchtiged bäst.
 Ne Gruppe kon läsked wäide, as aal Gjuchte wächhoald wäide.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|bekiekje/beoarbaidje]])',
 	'centralauth-existinggroup-legend' => 'Bestoundende Gruppen',
@@ -25198,11 +25198,11 @@ $messages['tt-cyrl'] = array(
 	'centralauth-merge-notlogged' => 'Зинһар, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} теркәлегез]</span>, бу сезнең кулланучы язмаларыгыз тулысынча туплануы турында белергә кирәк.',
 	'centralauth-merge-welcome' => "'''Сезнең кулланучы язмалары {{MediaWiki:Centralauth-groupname}} проектының бербөтен идарә өлешенә әлегә күчмәде.'''
 
-Әгәр дә сез кулланучы язмаларыгызны {{MediaWiki:Centralauth-groupname}} проектының барлык тармакларына да күчерәсегез килсә, сез үзегезнең кулланучы исеме белән серсүзне куллана аласыз. 
+Әгәр дә сез кулланучы язмаларыгызны {{MediaWiki:Centralauth-groupname}} проектының барлык тармакларына да күчерәсегез килсә, сез үзегезнең кулланучы исеме белән серсүзне куллана аласыз.
 
 Ниндидер сәбәпләр аркасында сезнең кулланучы язмагыз исемле кулланучы исеме булса, бу сезнең эшчәнлегегезгә берничектә кагылмаячак. Сез бу  мәсьәләне идарәчеләр яисә бу кулланучы белән бергә чишә аласыз.",
 	'centralauth-merge-step1-title' => 'Кулланучы язмаларын берләштерүне башларга',
-	'centralauth-merge-step1-detail' => 'Зинһар, үзегезнең кулланучы язмагызның серсүзен кертегез. 
+	'centralauth-merge-step1-detail' => 'Зинһар, үзегезнең кулланучы язмагызның серсүзен кертегез.
 Бу башка вики-проектлардагы сезнең мәгълүматларыгыз белән сезнең электрон почта юлламасы һәм серсүзне тикшерү өчен кирәк.
 Әлеге үзгәртүләр бары тик сезнең ризалыгыгыздан гына башкарылачак.',
 	'centralauth-merge-step1-submit' => 'Кулланучы язмасы турындагы мәгълүматны расларга.',
@@ -25388,7 +25388,7 @@ $messages['uk'] = array(
 	'centralauth-merge-method-empty-desc' => "Вказує, що локальний обліковий запис був об'єднаний, тому що не був змінений.",
 	'centralauth-merge-method-mail-desc' => "Вказує, що локальний обліковий запис був об'єднаний, тому що його адреса електронної пошти відповідає адресі електронної пошти з основного облікового запису.",
 	'centralauth-merge-method-password-desc' => "Вказує, що локальний обліковий запис був об'єднаний, оскільки користувач вказав правильний пароль.",
-	'centralauth-merge-method-admin-desc' => "Вказує, що локальний обліковий запис був об'єднаний вручну одним із стюардів. 
+	'centralauth-merge-method-admin-desc' => "Вказує, що локальний обліковий запис був об'єднаний вручну одним із стюардів.
 Це функція відключена в даний час з-за міркувань безпеки.",
 	'centralauth-merge-method-new-desc' => 'Вказує, що глобальний обліковий запис було створено автоматично, коли був створений локальний обліковий запис.',
 	'centralauth-merge-method-login-desc' => 'Вказує, що локальний обліковий запис було створено автоматично, коли користувач увійшов до системи.',
@@ -26443,7 +26443,7 @@ $messages['yi'] = array(
 	'centralauth-merge-method-empty' => 'קיין בײַשטײַערונגען',
 	'centralauth-merge-method-new' => 'נײַע קאנטע',
 	'centralauth-merge-method-login' => 'באַשאַפֿן ביים ארײַנלאגירן',
-	'centralauth-merge-method-primary-desc' => "דאס איז די וויקיפּעדיע וואו די קאנטע איז לכתחילה צונויפֿגעגאסן. 
+	'centralauth-merge-method-primary-desc' => "דאס איז די וויקיפּעדיע וואו די קאנטע איז לכתחילה צונויפֿגעגאסן.
  באַמערקט אַז עס קען זײַן אַנדערש פון דער אמת'ער היים וויקיפּעדיע פון דעם באַניצער.",
 	'centralauth-merge-method-empty-desc' => 'די לאקאַלע קאנטע האט מען צונוייפֿגעגאסן צוליב קיין רעדאַקטירונגען.',
 	'centralauth-finish-password' => 'פאַסווארט:',
