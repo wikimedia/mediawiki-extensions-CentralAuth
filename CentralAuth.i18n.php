@@ -35,7 +35,7 @@ No changes will be made until you have confirmed that things are in order.',
 	'centralauth-merge-step2-detail' => "Some of the accounts could not be automatically matched to the designated home wiki.
 If these accounts belong to you, you can confirm that they are yours by providing the password for them.",
 	'centralauth-merge-step2-submit' => 'Confirm login information',
-	'centralauth-login-global'       => 'Also log me in to the other wikis of {{int:Centralauth-groupname}}',
+	'centralauth-login-global'       => 'Also log me in to other wikis of {{int:Centralauth-groupname}}',
 
 	// Dry run messages
 	'centralauth-merge-dryrun-complete'   => 'All existing accounts can be automatically unified!
@@ -242,8 +242,8 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
-	'centralauth-login-progress'     => 'Logging you in to the wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
-	'centralauth-logout-progress'    => 'Logging you out from the other wikis of {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
+	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
