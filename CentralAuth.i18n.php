@@ -11693,7 +11693,7 @@ Nessuna modifica sarà effettuata prima della tua conferma che tutto appare in r
 	'centralauth-merge-step2-title' => 'Conferma altri account',
 	'centralauth-merge-step2-detail' => 'Non è stato possibile collegare automaticamente alcuni account a quello sulla tua wiki principale. Se sei il titolare di questi account, prova che ti appartengono indicando le password per ciascuno di essi.',
 	'centralauth-merge-step2-submit' => 'Conferma le informazioni di login',
-	'centralauth-login-global' => 'Accedi anche agli altri progetti di {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Accedi anche alle altre wiki della {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'È possibile unificare automaticamente tutti gli account esistenti.
 
 Al momento non è stata apportata alcuna modifica agli account.',
@@ -11854,8 +11854,8 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.',
-	'centralauth-login-progress' => 'Accesso effettuato negli altri progetti di {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Uscita effettuata dagli altri progetti di {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Accesso effettuato nelle altre wiki della {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Uscita effettuata dalle altre wiki della {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Hai appena effettuato il log-out dagli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
@@ -15675,7 +15675,7 @@ $messages['ml'] = array(
 	'centralauth-merge-step2-detail' => 'ചില അംഗത്വങ്ങൾക്ക് തറവാട് വിക്കിയിലെ അംഗത്വവുമായി യാന്ത്രികമായി ചേർച്ചയില്ല എന്നു കാണുന്നു.
 ഈ അംഗത്വങ്ങൾ താങ്കളുടെ തന്നെയാണെന്നുറപ്പുണ്ടെങ്കിൽ ശരിയായ രഹസ്യവാക്ക് കൊടുത്ത് താങ്കൾക്ക് ഈ അംഗത്വങ്ങളെ താങ്കൾക്ക് സ്ഥിരീകരിക്കാവുന്നതാണ്‌.',
 	'centralauth-merge-step2-submit' => 'ലോഗിൻ വിവരം സ്ഥിരീകരിക്കുക',
-	'centralauth-login-global' => 'എന്റെ പ്രവേശനം എല്ലാ {{int:Centralauth-groupname}} പദ്ധതികളിലും ബാധകമാക്കുക',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}} പദ്ധതിയിലെ മറ്റ് വിക്കികളിലും എന്റെ പ്രവേശനം ബാധകമാക്കുക',
 	'centralauth-merge-dryrun-complete' => 'നിലവിലുള്ള എല്ലാ അംഗത്വങ്ങളും യാന്ത്രികമായി സം‌യോജിപ്പിക്കാവുന്നതാണ്‌!
 
 താങ്കളുടെ അംഗത്വങ്ങളിൽ ഇതുവരെ മാറ്റങ്ങളൊന്നും വരുത്തിയിട്ടില്ല.',
@@ -15842,8 +15842,8 @@ $messages['ml'] = array(
 	'centralauth-invalid-wiki' => 'ഇങ്ങനെ ഒരു വിക്കി നിലവിലില്ല DB: $1',
 	'centralauth-account-exists' => 'അംഗത്വം ഉണ്ടാക്കുന്നതിനു സാദ്ധ്യമല്ല: ആവശ്യപ്പെട്ട ഉപയോക്തൃനാമം ഇതിനകം സം‌യോജിത ലോഗിൻ വ്യൂഹം ഉപയോഗിച്ചു കഴിഞ്ഞു.',
 	'centralauth-account-exists-reset' => 'ഈ വിക്കിയിൽ $1 എന്ന ഉപയോക്തൃനാമം എടുക്കപ്പെട്ടിട്ടില്ല, പക്ഷേ അത് സംയോജിത പ്രവേശന വ്യൂഹത്തിൽ നിലവിലുണ്ട്.',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}} പദ്ധതികളിൽ ലോഗിൻ ചെയ്തിരിക്കുന്നു:',
-	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}} പദ്ധതികളിൽ നിന്നും താങ്കൾ ലോഗൗട്ട് ചെയ്തിരിക്കുന്നു:',
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}} പദ്ധതിയിലെ വിക്കികളിൽ ലോഗിൻ ചെയ്യുന്നു:',
+	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}} പദ്ധതിയിലെ വിക്കികളിൽ നിന്നും താങ്കളെ ലോഗൗട്ട് ചെയ്യുന്നു:',
 	'centralauth-login-no-others' => 'മറ്റു {{int:Centralauth-groupname}} പദ്ധതികളിൽ താങ്കൾ സ്വയം ലോഗിൻ ചെയ്യപ്പെടുന്നതാണ്.',
 	'centralauth-logout-no-others' => 'മറ്റു {{int:Centralauth-groupname}} പദ്ധതികളിൽ നിന്നും താങ്കൾ സ്വയം ലോഗൗട്ട് ആയിരിക്കുന്നു.',
 	'centralauth-hidden-blockreason' => '$1 $2-വിൽ ആഗോളമായി മറച്ചിരിക്കുന്നു, കാരണം: $3',
@@ -18415,7 +18415,7 @@ Hasło i zarejestrowany adres e‐mail zostaną porównane z kontami na innych w
 	'centralauth-merge-step2-detail' => 'Niektóre z kont nie mogły zostać automatycznie dopasowane do wiki wyznaczonej na macierzystą.
 Jeśli te konta należą do Ciebie, możesz potwierdzić, że są Twoje, podając do nich hasła.',
 	'centralauth-merge-step2-submit' => 'Potwierdź informacje dotyczące zalogowania się',
-	'centralauth-login-global' => 'Zaloguj mnie także do innych projektów {{int:Centralauth-groupname}} używając konta uniwersalnego',
+	'centralauth-login-global' => 'Zaloguj mnie także do innych wiki {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Wszystkie istniejące konta zostaną automatycznie połączone!
 
 Nie wykonano jeszcze żadnych zmian Twoich kont.',
@@ -18578,8 +18578,8 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-invalid-wiki' => 'Nie istnieje wiki DB: $1',
 	'centralauth-account-exists' => 'Utworzenie konta nie jest możliwe – wybrana nazwa użytkownika jest zajęta przez konto uniwersalne.',
 	'centralauth-account-exists-reset' => 'Nazwa użytkownika $1 nie jest zarejestrowana na tej wiki, ale nie ma jej również wśród kont uniwersalnych.',
-	'centralauth-login-progress' => '{{GENDER:|Zostałeś zalogowany|Zostałaś zalogowana|Zalogowano Cię}} także do innych projektów {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Wylogowano także z innych projektów {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-progress' => '{{GENDER:|Zostałeś zalogowany|Zostałaś zalogowana|Zalogowano Cię}} także do innych wiki {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Wylogowano także z innych wiki {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Zostałeś automatycznie zalogowany do innych projektów z {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Zostałeś automatycznie wylogowany z innych projektów z {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'centralnie ukryte przez $1 o $2 ponieważ $3',
@@ -19235,12 +19235,12 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-listusers-locked' => 'bloqueada',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'desacoplada ou não existe localmente',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|segundo|segundos}} atrás',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuto|minutos}} atrás',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|hora|horas}} atrás',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|dia|dias}} atrás',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|mês|meses}} atrás',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|ano|anos}} atrás',
+	'centralauth-seconds-ago' => 'há $1 {{PLURAL:$1|segundo|segundos}} atrás',
+	'centralauth-minutes-ago' => 'há $1 {{PLURAL:$1|minuto|minutos}} atrás',
+	'centralauth-hours-ago' => 'há $1 {{PLURAL:$1|hora|horas}} atrás',
+	'centralauth-days-ago' => 'há $1 {{PLURAL:$1|dia|dias}} atrás',
+	'centralauth-months-ago' => 'há $1 {{PLURAL:$1|mês|meses}} atrás',
+	'centralauth-years-ago' => 'há $1 {{PLURAL:$1|ano|anos}} atrás',
 	'centralauth-prefs-status' => 'Estado da conta global:',
 	'centralauth-prefs-not-managed' => 'Não está a usar a conta global',
 	'centralauth-prefs-unattached' => 'Não confirmado',
