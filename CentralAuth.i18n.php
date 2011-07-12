@@ -19,11 +19,11 @@ $messages['en'] = array(
 	'centralauth-mergeaccount-desc'  => '[[Special:MergeAccount|Merges multiple accounts]] for Single User Login',
 	'centralauth-merge-denied'       => 'Sorry, you do not have permission to access this page.',
 	'centralauth-merge-notlogged'    => 'Please <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} log in]</span> to check if your accounts have been fully merged.',
-	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to unified login system of {{MediaWiki:Centralauth-groupname}}.'''
+	'centralauth-merge-welcome'      => "'''Your user account has not yet been migrated to the unified login system of {{MediaWiki:Centralauth-groupname}}.'''
 
 If you choose to migrate your accounts, you will be able to use the same username and password to log in to all wikis of {{MediaWiki:Centralauth-groupname}} in all available languages.
 
-If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work out with them or an administrator later.",
+If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to  work it out with them or with an administrator later.",
 
 	'centralauth-merge-step1-title'  => 'Begin login unification',
 	'centralauth-merge-step1-detail' => 'Please enter your account password.
