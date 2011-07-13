@@ -23,7 +23,7 @@ $messages['en'] = array(
 
 If you choose to migrate your accounts, you will be able to use the same username and password to log in to all wikis of {{MediaWiki:Centralauth-groupname}} in all available languages.
 
-If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to  work it out with them or with an administrator later.",
+If someone else has already taken your username on another site this will not disturb them, but it will give you a chance to work it out with them or with an administrator later.",
 
 	'centralauth-merge-step1-title'  => 'Begin login unification',
 	'centralauth-merge-step1-detail' => 'Please enter your account password.
