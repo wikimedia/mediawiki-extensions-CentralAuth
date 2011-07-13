@@ -17030,7 +17030,7 @@ Er worden geen wijzigingen gemaakt tot u hebt aangegeven dat alles in orde lijkt
 	'centralauth-merge-step2-detail' => 'Een aantal van de gebruikers kon niet aan de opgegeven thuiswiki gekoppeld worden.
 Als deze gebruikers van u zijn, kunt u dat aangeven door het wachtwoord voor de gebruikers op te geven.',
 	'centralauth-merge-step2-submit' => 'Aanmeldinformatie bevestigen',
-	'centralauth-login-global' => 'Mij ook aanmelden bij andere projecten van {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Mij ook aanmelden bij andere wikis van {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Alle bestaande gebruikers kunnen automatisch samengevoegd worden!
 
 Er zijn nog geen wijzigingen aan uw gebruiker gemaakt.',
@@ -17199,8 +17199,8 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists' => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
 	'centralauth-account-exists-reset' => 'De gebruikersnaam "$1" is niet geregistreerd bij deze wiki, maar de globale gebruiker bestaat wel.',
-	'centralauth-login-progress' => 'U wordt aangemeld bij andere projecten van {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'U wordt afgemeld bij andere projecten van {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'U wordt aangemeld bij andere wikis van {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'U wordt afgemeld bij andere wikis van {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globaal verborgen door $1 op $2 met reden: $3',
@@ -20332,7 +20332,7 @@ $messages['ru'] = array(
 	'centralauth-merge-step2-title' => 'Подтвердить дополнительные учётные записи',
 	'centralauth-merge-step2-detail' => 'Некоторые учётные записи не могут быть автоматически привязаны к обозначенной вами «домашней» вики. Если эти учётные записи принадлежат вам и у вас есть соответствующие пароли — укажите их.',
 	'centralauth-merge-step2-submit' => 'Подтвердить информацию об учётной записи',
-	'centralauth-login-global' => 'Также представиться в других проектах {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Представиться также в других проектах {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Все существующие учётные записи могут быть автоматически объединены!
 
 Пока ваши учётные записи изменены не были.',
@@ -20495,8 +20495,8 @@ $messages['ru'] = array(
 	'centralauth-invalid-wiki' => 'Нет такой вики БД: $1',
 	'centralauth-account-exists' => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
 	'centralauth-account-exists-reset' => 'Имя участника $1 не зарегистрировано в этой вики, но оно присутствует в единой системе входа.',
-	'centralauth-login-progress' => 'Сеанс действует также и в других проектах {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Сеанс завершён также и в других проектах {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Обрабатывается вход в проекты {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Обрабатывается выход из проектов {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Вы автоматически авторизовались во всех проектах семейства {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Вы автоматически завершили сеанс во всех проектах семейства {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобально скрыт участником $1 $2 по следующей причине: $3',
