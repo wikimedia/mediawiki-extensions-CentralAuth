@@ -12003,7 +12003,7 @@ $messages['ja'] = array(
 	'centralauth-merge-step2-title' => '外部アカウントの確認',
 	'centralauth-merge-step2-detail' => 'いくつかのアカウントで、ホームウィキとの自動照合ができませんでした。もしこれらのアカウントがあなたのものである場合、パスワードを入力することによって自分のものであると証明できます。',
 	'centralauth-merge-step2-submit' => 'ログイン情報の確認',
-	'centralauth-login-global' => '{{int:Centralauth-groupname}}の他のプロジェクトにもログイン',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}}の他のウィキにもログイン',
 	'centralauth-merge-dryrun-complete' => '現在ある全てのアカウントが自動で統合できます！
 
 いかなる変更もまだあなたのアカウントに加えられていません。',
@@ -12160,8 +12160,8 @@ $messages['ja'] = array(
 	'centralauth-invalid-wiki' => 'ウィキ・データベースが見つかりません: $1',
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムですでに取得されています。',
 	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキでは登録されていませんが、統一ログインでは存在しています。',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のプロジェクト群にログインしました：',
-	'centralauth-logout-progress' => '{{MediaWiki:Centralauth-groupname}}の他のプロジェクトからもログアウトしました：',
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキにログインしました:',
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキからもログアウトしました:',
 	'centralauth-login-no-others' => 'あなたは自動的に、他の{{int:Centralauth-groupname}}のプロジェクトにログインしました。',
 	'centralauth-logout-no-others' => 'あなたは自動的に、他の{{int:Centralauth-groupname}}のプロジェクトからログアウトしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にプロジェクト横断的に秘匿。理由: $3',
@@ -13566,7 +13566,7 @@ $messages['ko'] = array(
 	'centralauth-merge-step2-detail' => '계정 일부는 주 위키와 일치하지 않습니다.
 이 계정을 갖고 있는 것이 맞다면, 비밀번호를 넣어 확인할 수 있습니다.',
 	'centralauth-merge-step2-submit' => '로그인 정보 확인',
-	'centralauth-login-global' => '{{int:Centralauth-groupname}}의 모든 프로젝트에도 같이 로그인',
+	'centralauth-login-global' => '{{int:Centralauth-groupname}}의 다른 프로젝트에도 함께 로그인',
 	'centralauth-merge-dryrun-complete' => '모든 존재하는 계정이 자동으로 합쳐질 수 있습니다.
 
 아직은 계정에 적용되지 않습니다.',
@@ -16502,7 +16502,7 @@ Sila ambil perhatian bahawa sesebuah kumpulan tidak wujud kecuali setelah diberi
 	'centralauth-editgroup-restrictions' => 'Wiki-wiki di mana kumpulan ini aktif:',
 	'centralauth-editgroup-noset' => '(tiada)',
 	'centralauth-editgroup-submit' => 'Simpan perubahan pada keizinan kumpulan',
-	'centralauth-editgroup-perms' => 'Keizinan diberi:',
+	'centralauth-editgroup-perms' => 'Keizinan yang diberikan:',
 	'centralauth-editgroup-reason' => 'Sebab:',
 	'centralauth-editgroup-success' => 'Keizinan kumpulan telah ditukar',
 	'centralauth-editgroup-success-text' => 'Anda telah menukar keizinan bagi kumpulan $1.
