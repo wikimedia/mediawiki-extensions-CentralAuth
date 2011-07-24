@@ -4088,7 +4088,7 @@ Si algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest pro
 	'centralauth-merge-step2-title' => 'Confirma més comptes',
 	'centralauth-merge-step2-detail' => 'Alguns dels vostres comptes no coincideixen amb les dades del compte de la vostra wiki principal. Si aquests comptes us pertanyen podeu confirmar-ho introduint les seves contrasenyes.',
 	'centralauth-merge-step2-submit' => 'Confirmació dels comptes',
-	'centralauth-login-global' => "Inicia'm sessió també en altres projectes de {{int:Centralauth-groupname}}",
+	'centralauth-login-global' => "Inicia'm sessió també en altres wikis de {{int:Centralauth-groupname}}",
 	'centralauth-merge-dryrun-complete' => "Tots els comptes existents el poden unificar automàticament!
 
 Encara no s'ha fet cap canvi als vostres comptes.",
@@ -4249,8 +4249,8 @@ El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global."
 	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.",
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists' => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
-	'centralauth-login-progress' => 'Iniciant la sessió en els projectes de {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Sortint de la sessió en els projectes de {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Iniciant la sessió en els wikis de {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Sortint de la sessió en els wikis de {{MediaWiki:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Automàticament us heu connectat en altres projectes de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => "Automàticament us heu desconnectat d'altres projectes de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'ocultat globalment per $1 a les $2 amb la següent raó: $3',
@@ -7828,7 +7828,7 @@ Salasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä olev
 	'centralauth-merge-step2-title' => 'Muiden tunnusten yhdistäminen',
 	'centralauth-merge-step2-detail' => 'Joidenkin käyttäjätunnusten samuutta kotiwikin käyttäjätunnukseen ei voitu varmistaa. Jos nämä tunnukset kuuluvat sinulle, voit todistaa niiden kuuluvan sinulle antamalla niiden salasanan.',
 	'centralauth-merge-step2-submit' => 'Vahvista yhdistäminen',
-	'centralauth-login-global' => 'Kirjaudu myös muihin {{int:Centralauth-groupname}} -hankkeisiin',
+	'centralauth-login-global' => 'Kirjaudu myös muihin {{int:Centralauth-groupname}} -wikeihin',
 	'centralauth-merge-dryrun-complete' => 'Kaikki käyttäjätunnuksesi voidaan yhdistää automaattisesti.
 
 Mitään muutoksia ei ole vielä tehty.',
@@ -7992,8 +7992,8 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-renameuser-reserved' => 'Käyttäjätunnus $2 on varattu yhdistetylle tunnukselle.',
 	'centralauth-invalid-wiki' => 'Wiki-tietokantaa $1 ei ole olemassa.',
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
-	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -hankkeisiin:',
-	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{MediaWiki:Centralauth-groupname}} -projekteista:',
+	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:',
+	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{MediaWiki:Centralauth-groupname}} -wikeistä:',
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
 	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.',
 	'centralauth-hidden-blockreason' => 'piilotettiin yleisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3',
@@ -8140,7 +8140,7 @@ Aucun changement ne sera effectué tant que vous n’aurez pas donné votre acco
 	'centralauth-merge-step2-title' => 'Confirmer d’autres comptes',
 	'centralauth-merge-step2-detail' => 'Certains des comptes trouvés ne correspondent pas automatiquement à votre compte principal. Si ces comptes vous appartiennent, veuillez confirmer qu’ils sont les vôtres en entrant le mot de passe correspondant.',
 	'centralauth-merge-step2-submit' => 'Confirmer les informations de connexion',
-	'centralauth-login-global' => 'Me connecter également aux autres projets de {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Me connecter également aux autres wikis de {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Tous les comptes existants peuvent être unifiés automatiquement !
 
 Aucun changement n’a été fait pour l’instant à vos comptes.',
@@ -8306,8 +8306,8 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
 	'centralauth-account-exists-reset' => "Le nom d'utilisateur $1 n'est pas enregistré sur ce wiki, mais existe dans le système de connexion unifié.",
-	'centralauth-login-progress' => 'Vous êtes connecté{{GENDER:||e|(e)}} aux projets de {{int:Centralauth-groupname}} :',
-	'centralauth-logout-progress' => 'Vous êtes déconnecté{{GENDER:||e|(e)}} des projets de {{MediaWiki:Centralauth-groupname}} :',
+	'centralauth-login-progress' => 'Vous êtes connecté{{GENDER:||e|(e)}} aux wikis de {{int:Centralauth-groupname}} :',
+	'centralauth-logout-progress' => 'Vous êtes déconnecté{{GENDER:||e|(e)}} des wikis de {{MediaWiki:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Vous avez été automatiquement déconnecté{{GENDER:||e|(e)}} des autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'masqué globalement par $1 sur $2 pour le motif suivant : $3',
