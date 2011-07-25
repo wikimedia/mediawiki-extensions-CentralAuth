@@ -16913,7 +16913,7 @@ Kann angahn, dat du den verkehrten Bruker Rechten totowiesen versöchst!",
 $messages['nds-nl'] = array(
 	'mergeaccount' => 'Staotus samenvoegen gebrukers',
 	'centralauth-groupname' => 'de Wikimedia Foundation',
-	'centralauth-desc' => "[[Special:MergeAccount|Samen-evoegen gebrukers]] in wiki's van {{MediaWiki:Centralauth-groupname}}",
+	'centralauth-desc' => "[[Special:MergeAccount|Samenevoegden gebrukers]] in wiki's van {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Meerdere gebrukers bie mekaar doon]] veur 't eenmaolige inlogsysteem",
 	'centralauth-merge-denied' => 'Je hemmen gien toegang tot disse pagina.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld an]</span> um nao te kieken of joew gebrukers allemaole bie mekaar edaon bin.',
@@ -21266,7 +21266,7 @@ $messages['shi'] = array(
  * @author ශ්වෙත
  */
 $messages['si'] = array(
-	'mergeaccount' => 'ප්‍රවිෂ්ට සංයුක්තකිරීම් තත්ත්වය',
+	'mergeaccount' => 'ප්‍රවිසීම් සංයුක්තකිරීම් තත්ත්වය',
 	'centralauth-groupname' => 'විකිමී‍ඩියා පදනම',
 	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} හි විකියන් අතුරෙහි [[Special:MergeAccount|ගිණුම ඒකාබද්ධ කරන්න]]',
 	'centralauth-mergeaccount-desc' => 'ඒක පරිශීලක ප්‍රවිෂ්ටයකින් ප්‍රවේශ කර ගත හැකි අයුරින් [[Special:MergeAccount| ගිණුම් බහු සංඛ්‍යාවක් ඒකාබද්ධ කෙරෙයි]]',
@@ -21306,7 +21306,7 @@ $messages['si'] = array(
 	'centralauth-merge-home-password' => 'මෙම ගිණුම සඳහා නිවස්න විකියේ (පහත දක්වා ඇති) ඇත්තේ ඔබ ඇතුල් කළ මුරපදයට වෙනස් මුරපදයකි.
 
 කරුණාකර නිවස්න විකිය සඳහා වන මුරපදය ඇතුල් කරන්න.',
-	'centralauth-complete' => 'ප්‍රවිෂ්ට සංයුක්තකරණය අවසන්!',
+	'centralauth-complete' => 'පිවිසීම් සංයුක්තකරණය අවසන්!',
 	'centralauth-incomplete' => 'ප්‍රවිෂ්ට සංයුක්තකරණය අවසන් නොමැත!',
 	'centralauth-complete-text' => 'ඔබට දැන් නව ගිණුම් තැනීමකින් තොරව{{MediaWiki:Centralauth-groupname}} හි ඕනෑම විකියකට ඇතුලු විය හැක.',
 	'centralauth-incomplete-text' => 'ඔබගේ ප්‍රවිෂ්ටය සංයුක්ත කෙරුණු කල්හි, නව ගිණුමක් නොතනා  {{MediaWiki:Centralauth-groupname}} හි ඕනෑම විකි අඩවියකට ප්‍රවිෂ්ට වීමට ඔබ හට හැකි වේ',
