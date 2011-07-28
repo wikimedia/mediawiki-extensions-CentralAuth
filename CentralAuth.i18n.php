@@ -2404,6 +2404,13 @@ $messages['bar'] = array(
 	'centralauth-desc' => 'Dameeglicht a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmmfyrn voh Benutzerkontos in Wikis ({{MediaWiki:Centralauth-groupname}})',
 	'centralauth-mergeaccount-desc' => "Ergänzt a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmfyrn voh mererne Benutzerkontos fys ''Single User Login''",
 	'centralauth-merge-denied' => 'Tschudige, ower du host koah Berechtigung fyr de Seiten do.',
+	'centralauth-list-home-title' => 'Hoamadwiki',
+	'centralauth-merge-method-primary' => 'Hoamadwiki',
+	'centralauth-merge-method-empty' => 'koane Benutzerbeitrég',
+	'centralauth-merge-method-mail' => 'bstäting durch E-Mail-Adress',
+	'centralauth-merge-method-password' => 'bstäting durch Posswort',
+	'centralauth-merge-method-admin' => 'durch an Administraator zåmmgfyrds Benutzerkontó',
+	'centralauth-merge-method-new' => 'neichs Benutzerkontó',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beorweiten]])',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beorweiten]])',
 );
@@ -3225,7 +3232,7 @@ $messages['bn'] = array(
 	'centralauth-merge-step2-title' => 'আরও অ্যাকাউন্ট নিশ্চিত করুন',
 	'centralauth-merge-step2-detail' => 'কিছু অ্যাকাউন্টসমূহ সয়ংক্রিয় ভাবে আপনার প্রধান উইকির অ্যাকাউন্টের সাথে মিলে না। যদি ঐ অ্যাকাউন্টসমূহ আপনার হয়ে থাকে, শব্দচাবি ব্যবহার করে আপনি নিশ্চিত করুন যে  ঐ অ্যাকাউন্টগুলো আপনার।',
 	'centralauth-merge-step2-submit' => 'লগইন তথ্য নিশ্চিত করুন',
-	'centralauth-login-global' => '{{int:Centralauth-groupname}}-এর অন্যান্য প্রকল্পগুলোতেও আমাকে প্রবেশ করাও',
+	'centralauth-login-global' => 'সেই সাথে {{int:Centralauth-groupname}}-এর অন্যান্য উইকিগুলোতেও আমাকে প্রবেশ করাও',
 	'centralauth-merge-dryrun-complete' => 'সমস্ত অ্যাকাউন্টগুলো সয়ংক্রিয় ভাবে একীভূত করা যাবে!
 
 এখনও আপনার অ্যাকাউন্টে কোন পরিবর্তন করা হয় নাই।',
@@ -14204,6 +14211,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 
 /** Kurdish (Latin) (Kurdî (Latin))
  * @author George Animal
+ * @author Welathêja
  */
 $messages['ku-latn'] = array(
 	'centralauth-merge-dryrun-or' => " '''an'''",
@@ -14226,9 +14234,10 @@ $messages['ku-latn'] = array(
 	'centralauth-admin-delete-button' => 'Ve hesabê jê bibe',
 	'centralauth-admin-reason' => 'Sedem:',
 	'centralauth-admin-status-locked' => 'Hate astengkirin:',
+	'centralauth-admin-status-locked-no' => 'Hesab nehat astengkirin',
 	'centralauth-admin-status-hidden-no' => 'Hesab ne veşartî ye',
+	'globalusers' => 'Lîsteya bikarhênerên global',
 	'centralauth-listusers-locked' => 'hate astengkirin',
-	'centralauth-link-on-contribs-no' => 'hesabê global tune',
 	'centralauth-log-status-locked' => 'hate astengkirin',
 	'centralauth-log-status-hidden' => 'hate veşartin',
 	'centralauth-rightslog-name' => 'Reşahîya mafên global',
