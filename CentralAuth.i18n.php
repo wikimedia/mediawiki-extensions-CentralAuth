@@ -20088,7 +20088,7 @@ Nisciune cangiaminde avène fatte fine ca tu non g'è confermate ca tutte le cos
 	'centralauth-merge-step2-detail' => "Quacchedune de le cunde utende non ge ponne essere automaticamende accocchiate a 'a uicchi prengepàle designate.
 Ce chiste cunde te seguene, tu puè confermà ca lore sonde le tune mettenne 'a passuord pe lore.",
 	'centralauth-merge-step2-submit' => "Conferme le 'mbormazziune de trasùte",
-	'centralauth-login-global' => "Famme trasè pure jndr'à l'otre pruggette de {{int:Centralauth-groupname}}",
+	'centralauth-login-global' => "Famme trasè pure jndr'à l'otre uicchi de {{int:Centralauth-groupname}}",
 	'centralauth-merge-dryrun-complete' => "Tutte le cunde de l'utende avènene automaticamende aunificate!
 
 Nisciune cangiamende ha state fatte sus a le cunde utinde tune angore.",
