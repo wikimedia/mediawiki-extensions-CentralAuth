@@ -82,7 +82,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
 				$a = array(
 					'wiki' => $dbname,
-					'url' => $this->getUrl( $dbname ),
+					'url' => wfExpandUrl( $this->getUrl( $dbname ) ),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
 					'editcount' => $account['editCount']
