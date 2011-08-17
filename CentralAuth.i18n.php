@@ -6169,7 +6169,7 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
 );
 
-/** Dusun Bundu-liwan (Dusun Bundu-liwan)
+/** Central Dusun (Dusun Bundu-liwan)
  * @author FRANCIS5091
  * @author FRANELYA
  */
@@ -18314,7 +18314,7 @@ $messages['or'] = array(
 	'centralauth-editset-submit-delete' => 'ଲିଭେଇବେ',
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  */
 $messages['os'] = array(
@@ -20922,7 +20922,7 @@ $messages['rue'] = array(
 	'right-globalgrouppermissions' => 'Адміністрація ґлобалных ґруп',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -21239,7 +21239,7 @@ $messages['scn'] = array(
 	'centralauth-admin-reason' => 'Mutivu:',
 	'centralauth-log-status-hidden' => 'ammucciatu',
 	'centralauth-log-status-none' => '(nuddu)',
-	'centralauth-globalgroupperms-grouplist' => "Foru cunfigurati li gruppi glubbali ca sutta.
+	'centralauth-globalgroupperms-grouplist' => "Foru cunfigurati li gruppi glubbali ca sutta. 
 E' pussibbili taliari o mudificari li pirmissa assignati a nu gruppu, siddu si havi lu pirmissu pi fàrilu.
 Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
 	'centralauth-existinggroup-legend' => 'Gruppa esistenti',
@@ -25288,11 +25288,11 @@ $messages['tt-cyrl'] = array(
 	'centralauth-merge-notlogged' => 'Зинһар, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} теркәлегез]</span>, бу сезнең кулланучы язмаларыгыз тулысынча туплануы турында белергә кирәк.',
 	'centralauth-merge-welcome' => "'''Сезнең кулланучы язмалары {{MediaWiki:Centralauth-groupname}} проектының бербөтен идарә өлешенә әлегә күчмәде.'''
 
-Әгәр дә сез кулланучы язмаларыгызны {{MediaWiki:Centralauth-groupname}} проектының барлык тармакларына да күчерәсегез килсә, сез үзегезнең кулланучы исеме белән серсүзне куллана аласыз.
+Әгәр дә сез кулланучы язмаларыгызны {{MediaWiki:Centralauth-groupname}} проектының барлык тармакларына да күчерәсегез килсә, сез үзегезнең кулланучы исеме белән серсүзне куллана аласыз. 
 
 Ниндидер сәбәпләр аркасында сезнең кулланучы язмагыз исемле кулланучы исеме булса, бу сезнең эшчәнлегегезгә берничектә кагылмаячак. Сез бу  мәсьәләне идарәчеләр яисә бу кулланучы белән бергә чишә аласыз.",
 	'centralauth-merge-step1-title' => 'Кулланучы язмаларын берләштерүне башларга',
-	'centralauth-merge-step1-detail' => 'Зинһар, үзегезнең кулланучы язмагызның серсүзен кертегез.
+	'centralauth-merge-step1-detail' => 'Зинһар, үзегезнең кулланучы язмагызның серсүзен кертегез. 
 Бу башка вики-проектлардагы сезнең мәгълүматларыгыз белән сезнең электрон почта юлламасы һәм серсүзне тикшерү өчен кирәк.
 Әлеге үзгәртүләр бары тик сезнең ризалыгыгыздан гына башкарылачак.',
 	'centralauth-merge-step1-submit' => 'Кулланучы язмасы турындагы мәгълүматны расларга.',
@@ -26514,6 +26514,17 @@ $messages['wuu'] = array(
 	'centralauth-admin-reason' => '理由：',
 	'centralauth-editgroup-reason' => '理由：',
 	'centralauth-editset-reason' => '理由：',
+);
+
+/** Kalmyk (Хальмг)
+ * @author Huuchin
+ */
+$messages['xal'] = array(
+	'centralauth-prefs-status' => 'Делкән бичгдлһнә бәәдл:',
+	'centralauth-prefs-complete' => 'Цугтнь чик!',
+	'centralauth-prefs-count-attached' => 'Тана бичгдлһн $1 {{PLURAL:$1|төслд|төслмүдт}} болҗана.',
+	'centralauth-prefs-manage' => 'Делкән бичгдлһнә заалт',
+	'centralauth-prefs-view' => 'Делкән демнчин туск медә',
 );
 
 /** Yiddish (ייִדיש)
