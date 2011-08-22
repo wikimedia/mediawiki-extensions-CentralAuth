@@ -1952,6 +1952,7 @@ $messages['avk'] = array(
  * @author PPerviz
  * @author Vago
  * @author Vugar 1981
+ * @author Wertuose
  */
 $messages['az'] = array(
 	'mergeaccount' => 'Hesab birləşdirmə halı',
@@ -1970,7 +1971,7 @@ $messages['az'] = array(
 	'centralauth-list-attached-title' => 'Əlavə edilmiş hesablar',
 	'centralauth-foreign-link' => "$2'dəki $1 istifadəçisi",
 	'centralauth-merge-method-primary' => 'ev vikisi',
-	'centralauth-merge-method-empty' => 'kömək yoxdur',
+	'centralauth-merge-method-empty' => 'fəaliyyət yoxdur',
 	'centralauth-merge-method-mail' => 'e-maillə təsdiqləndi',
 	'centralauth-merge-method-password' => 'parol ilə təsdiqləndi',
 	'centralauth-merge-method-admin' => 'idarəçi hesabı birləşdirdi',
@@ -2080,7 +2081,7 @@ Səbəb: $1',
 	'centralauth-editset-type' => 'Tipi:',
 	'centralauth-editset-wikis' => 'Vikilər:',
 	'centralauth-editset-reason' => 'Səbəb:',
-	'centralauth-editset-submit' => 'Yolla',
+	'centralauth-editset-submit' => 'Təsdiq et',
 	'centralauth-editset-submit-delete' => 'Sil',
 	'centralauth-editset-nouse' => '(heç biri)',
 	'centralauth-editset-usage' => 'İstifadə olunduğu qruplar:',
@@ -19205,7 +19206,25 @@ $messages['pnb'] = array(
 	'centralauth-editgroup-members' => 'سنگی لسٹ:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 حقوق رکھن آلے ورتن آلے]]',
 	'centralauth-editgroup-noset' => '(کوئی نئیں)',
+	'centralauth-editgroup-reason' => 'وجہ:',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|تبدیل کرو]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'جیناں وکیاں تے اوناں دا کھاتا اے:',
+	'centralauth-globalgroupmembership-badknownwiki' => "گلوبل کھاتے آلا '''$1''' تواڈے دسے ہوۓ وکی (''$2'') تے مجود نئیں اے۔
+تسی غلط ورتن آلے نوں حقوق دین دی کوشش کر رۓ ہو سکدے او!",
+	'centralauth-editset' => 'وکی سیٹ',
+	'centralauth-editset-legend-rw' => 'وکی سیٹ بناؤ یا تبدیل کرو',
+	'centralauth-editset-legend-ro' => 'وکی سیٹاں دی لسٹ',
+	'centralauth-editset-intro-rw' => 'اے وکی سیٹ پہلاں توں ای بناۓ جا چکے نیں۔
+تسی اوناں نوں وکیھ تے تبدیل کر سکدو یا فیر نواں سیٹ بنا لو۔',
+	'centralauth-editset-intro-ro' => 'تھلے وکی سیٹاں دی لسٹ اے۔',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|مٹاؤ]])',
 	'centralauth-editset-new' => 'اک نواں سیٹ بناؤ',
+	'centralauth-editset-notfound' => '"$1" وکی سیٹ نئیں لبیا۔',
+	'centralauth-editset-legend-edit' => '"$1" وکی سیٹ لکھ رۓ او',
+	'centralauth-editset-legend-view' => 'وکی سیٹ "$1"',
+	'centralauth-editset-legend-new' => 'نواں وکی سیٹ بنان لگے او',
+	'centralauth-editset-legend-delete' => '"$1" وکی سیٹ مٹان لگے او',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|سیٹاں دی لسٹ]]',
 	'centralauth-editset-name' => 'ناں:',
 	'centralauth-editset-type' => 'ٹائپ:',
 	'centralauth-editset-wikis' => 'وکی:',
@@ -19218,9 +19237,11 @@ $messages['pnb'] = array(
 	'centralauth-editset-nowikis' => 'کوئی خاص وکی نئیں دسیا گیا۔',
 	'centralauth-editset-nouse' => '(کوئی نئیں)',
 	'centralauth-editset-usage' => 'ٹولیاں چ ورتو',
+	'centralauth-editset-badwikis' => 'اے {{PLURAL:$2|وکی نئیں بنے ہوۓ|نئیں بنیا ہویا}}: $1',
 	'centralauth-editset-success' => 'وکی سیٹ بدل دتا کیا۔',
 	'centralauth-editset-success-delete' => 'وکی یٹ مٹا دتا گیا۔',
 	'centralauth-editset-return' => 'وڈے وکھالے ول لے چلو',
+	'right-globalgroupmembership' => 'گلوبل گروپاں دی سنگت تبدیل کرو',
 	'right-centralauth-unmerge' => 'گلوبل کھاتہ وکھرا کرو',
 	'right-centralauth-lock' => 'گلوبل کھاتہ لکاؤ یا تالہ لاؤ',
 	'right-centralauth-oversight' => 'گلوبل کھاتہ دبادیو',
