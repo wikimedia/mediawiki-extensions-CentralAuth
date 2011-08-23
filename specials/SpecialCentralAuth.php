@@ -282,7 +282,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
 			'id' => $globalUser->getId(),
-			'registered' => $wgLang->timeanddate( $reg ) . " ($age)",
+			'registered' => $wgLang->timeanddate( $reg, true ) . " ($age)",
 			'home' => $this->determineHomeWiki(),
 			'editcount' => $wgLang->formatNum( $this->evaluateTotalEditcount() ),
 			'locked' => $globalUser->isLocked() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ),
@@ -385,7 +385,7 @@ class SpecialCentralAuth extends SpecialPage {
 				// invisible, to make this column sortable
 				Html::element( 'span', array( 'style' => 'display: none' ), htmlspecialchars( $row['attachedTimestamp'] ) ) .
 				// visible date and time in users preference
-				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'] ) ) .
+				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'], true ) ) .
 			'</td>' .
 			'<td style="text-align: center">' . $this->formatMergeMethod( $row['attachedMethod'] ) . '</td>' .
 			'<td>' . $this->formatBlockStatus( $row ) . '</td>' .
@@ -409,9 +409,9 @@ class SpecialCentralAuth extends SpecialPage {
 				return wfMsgExt( 'centralauth-admin-blocked-indef', 'parseinline', array( $reason ) );
 			} else {
 				global $wgLang;
-				$expiry = $wgLang->timeanddate( $row['block-expiry'] );
-				$expiryd = $wgLang->date( $row['block-expiry'] );
-				$expiryt = $wgLang->time( $row['block-expiry'] );
+				$expiry = $wgLang->timeanddate( $row['block-expiry'], true );
+				$expiryd = $wgLang->date( $row['block-expiry'], true );
+				$expiryt = $wgLang->time( $row['block-expiry'], true );
 				$reason = $row['block-reason'];
 
 				$text = wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
