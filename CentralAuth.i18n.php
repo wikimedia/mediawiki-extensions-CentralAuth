@@ -3504,7 +3504,7 @@ Didermenet ez eus bet ur wiki all evel kont pennañ evit hoc'h anv implijer; kit
 	'centralauth-merge-step3-submit' => "Kendeuziñ ar c'hontoù",
 	'centralauth-merge-no-accounts' => "N'eo bet kavet kont ebet gant ho anv e-barzh taolenn kreiz da heuliañ ar c'hontoù !
 An diaz roadennoù a c'hell bezañ breinet.",
-	'centralauth-merge-home-password' => "Ar wiki pennañ evit ar c'hont-mañ (listennet amañ dindan) en deus ur ger tremen disheñvel eus an hini ho peus roet.
+	'centralauth-merge-home-password' => "Ar wiki pennañ evit ar c'hont-mañ (listennet amañ dindan) en deus ur ger-tremen disheñvel eus an hini ho peus roet.
 Roit ar ger tremen implijet evit ar wiki pennañ mar plij.",
 	'centralauth-complete' => "Kendeuzet eo ar c'hontoù !",
 	'centralauth-incomplete' => "N'eo ket echu kendeuziñ ar c'hontoù !",
