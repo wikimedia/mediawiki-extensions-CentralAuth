@@ -13038,7 +13038,9 @@ Other accounts are not yet confirmed.',
 	'right-globalgrouppermissions' => 'عالامدىق توپتاردى رەتتەۋ',
 );
 
-/** Kazakh (Cyrillic) (Қазақша (Cyrillic)) */
+/** Kazakh (Cyrillic) (Қазақша (Cyrillic))
+ * @author GaiJin
+ */
 $messages['kk-cyrl'] = array(
 	'mergeaccount' => 'Тіркелгі біріздендіру күйі',
 	'centralauth-desc' => 'Wikimedia қоры уикилер арасында [[Special:MergeAccount|тіркелгі біріктіру]]',
@@ -13060,6 +13062,7 @@ $messages['kk-cyrl'] = array(
 	'centralauth-merge-step2-detail' => 'Тіркелгілердің кейбіреулері келтірілген мекен уикиіңізге өздіктік сәйкестірілмеді.
 Егер осы тіркелгілер сізге тән болса, құпия сөзіңізді жетістіріп бұлар сіздікі екенін құптай аласыз.',
 	'centralauth-merge-step2-submit' => 'Тіркелгі деректерін құптау',
+	'centralauth-login-global' => 'Барлық Уикимедия жобаларына кіргіз',
 	'centralauth-merge-dryrun-complete' => 'Барлық бар тіркелгілер өздіктік біріздендірілуі мүмкін!
 
 Тіркелгілеріңізге әлі де еш өзгерістер жасалған жоқ.',
@@ -13170,6 +13173,7 @@ Other accounts are not yet confirmed.',
 	'centralauth-prefs-count-unattached' => 'Атыңыз бар құпталмаған тіркелгілер $1 жобада қалып тұр.',
 	'centralauth-prefs-detail-unattached' => 'Бұл жоба торабы ғаламдық тіркелгіге тәң деп құпталмаған.',
 	'centralauth-prefs-manage' => 'Ғаламдық тіркелгіңізді реттеу',
+	'centralauth-prefs-view' => 'Ғаламдық тіркелгі мәліметтерін қарау',
 	'centralauth-invalid-wiki' => 'Еш уики дерекқоры емес: $1',
 	'centralauth-account-exists' => 'Тіркелгі жасалмады: сұралған қатысушы аты алдақашан біріздендірілген кіру жүйесіне алынды.',
 	'centralauth-login-progress' => 'Wikimedia қорының басқа жобаларына кіргеніңіз:',
@@ -19197,6 +19201,7 @@ $messages['pnb'] = array(
 	'centralauth-log-status-oversighted' => 'چھڈیا گیا',
 	'centralauth-log-status-none' => '(کوئی نئیں)',
 	'centralauth-rightslog-name' => 'گلوبل ح‍قاں دی لاگ',
+	'autologin' => 'اپنے آپ لاگان',
 	'centralauth-globalgroupperms-newgroupname' => 'نویں ٹولی ناں:',
 	'centralauth-editgroup-subtitle' => 'تسی "$1" لکھ رہے او',
 	'centralauth-editgroup-fieldset' => '$1 واسطے اجازت',
@@ -23362,16 +23367,16 @@ Ne Gruppe kon läsked wäide, as aal Gjuchte wächhoald wäide.',
  */
 $messages['su'] = array(
 	'mergeaccount' => 'Status ngahijikeun log asup',
-	'centralauth-desc' => '[[Special:MergeAccount|Gabung Rekening]] di sakabéh wiki Yayasan Wikimédia',
+	'centralauth-groupname' => 'Yayasan Wikimedia',
+	'centralauth-desc' => '[[Special:MergeAccount|Gabungkeun akun]] di sakabéh wiki {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Gabungkeun sababaraha rekening]] pikeun Login Pamaké Tunggal',
 	'centralauth-merge-denied' => 'Punten, anjeun teu diwenangkeun muka ieu kaca.',
 	'centralauth-merge-notlogged' => 'Mangga <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} lebet log]</span> pikeun mariksa anggeus/henteuna rekening anjeun dihijieun.',
-	'centralauth-merge-welcome' => "'''Rekening pamaké anjeun can dipindahkeun ka sistem login tunggal Wikimédia.'''
+	'centralauth-merge-welcome' => "'''Akun anjeun can dipindahkeun ka sistem login tunggal {{MediaWiki:Centralauth-groupname}}.'''
 
-Mun milih mindahkeun rekening, anjeun bakal bisa migunakeun landihan jeung sandi nu sarua pikeun asup ka sakabéh wiki proyék Wikimédia di sakabéh vérsi basa.
-Hal ieu ngabantu pikeun proyék gabungan sarupaning ngunjal ka [http://commons.wikimedia.org/ Wikimedia Commons] sarta nyingkahan pahilina dua pamaké nu migunakeun landihan nu sarua di proyék nu béda.
+Mun milih mindahkeun akun, anjeun bakal bisa maké sandiasma jeung sandi anu sarua pikeun asup ka sakabéh wiki {{MediaWiki:Centralauth-groupname}} dina sakabéh vérsi basa nu aya.
 
-Mun landihan anjeun geus dipaké ku nu séjén di loka séjén, hal ieu moal ngaganggu maranéhna. Anjeun justru bisa rampak gawé jeung maranéhna atawa jeung kuncén, jaga.",
+Mun sandiasmana geus dipaké ku nu séjén di loka séjén, hal ieu moal ngaganggu maranéhna. Anjeun justru bisa rampak gawé jeung maranéhna atawa jeung kuncén, jaga.",
 	'centralauth-merge-step1-title' => 'Mitambeyan ngahijikeun login',
 	'centralauth-merge-step1-detail' => 'Sandi jeung alamat surélék anjeun bakal diakurkeun jeung rekening di wiki séjén.
 Asupkeun kecap sandi rekening pamaké Anjeun.
@@ -23382,6 +23387,7 @@ Parobahan moal dipigawé nepi ka Anjeun mikeun konfirmasi yén teu aya masalah.'
 	'centralauth-merge-step2-detail' => 'Sababaraha rekeningna teu bisa sacara otomatis dicocogkeun jeung wiki asal nu dimaksud.
 Mun éta rekening kagungan, anjeun bisa konfirmasi yén éta téh rekening anjeun ku cara ngasupkeun sandina.',
 	'centralauth-merge-step2-submit' => 'Konfirmasi émbaran login',
+	'centralauth-login-global' => 'Asupkeun ogé kuring ka wiki {{int:Centralauth-groupname}} lianna',
 	'centralauth-merge-dryrun-complete' => 'Sakabéh rekening nu aya bisa sacara otomatis dihijikeun!
 
 Can aya parobahan nu dilarapkeun ka rekening anjeun.',
@@ -23424,6 +23430,9 @@ Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku 
 	'centralauth-merge-method-admin' => 'rekening nu dihijikeun ku kuncén',
 	'centralauth-merge-method-new' => 'rekening anyar',
 	'centralauth-merge-method-login' => 'konfirmasi maké login',
+	'centralauth-merge-method-empty-desc' => 'Nandakeun yén akun lokalna digabungkeun kusabab teu kungsi ngédit.',
+	'centralauth-merge-method-mail-desc' => 'Nandakeun yén akun lokalna digabungkeun kusabab alamat surélékna cocog jeung bobogaan akun utama.',
+	'centralauth-merge-method-password-desc' => 'Nandakeun yén akun lokalna digabungkeun kusabab kontributorna ngasupkeun sandi anu bener.',
 	'centralauth-finish-title' => 'Réngsé ngahijikeun',
 	'centralauth-finish-text' => 'Mun rekening ieu bener boga anjeun, mangga réngsékeun prosés ngahijikeun log asup ku cara ngasupkeun sandi rekening lianna di dieu:',
 	'centralauth-finish-password' => 'Sandi:',
@@ -23441,18 +23450,34 @@ Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku 
 	'centralauth' => 'Administrasi log asup nu dihijikeun',
 	'centralauth-admin-manage' => 'Kokolakeun data pamaké',
 	'centralauth-admin-username' => 'Landihan pamaké:',
+	'centralauth-admin-lookup-ro' => 'Témbongkeun émbaran kontributor',
+	'centralauth-admin-lookup-rw' => 'Atur akun kontributor',
 	'centralauth-admin-permission' => 'Nu bisa ngahijikeun rekening batur mah ngan steward.',
 	'centralauth-admin-no-unified' => 'Euweuh rekening nunggal keur landihan ieu.',
+	'centralauth-admin-info-header' => 'Émbaran kontributor global',
 	'centralauth-admin-info-id' => 'Landihan pamaké:',
 	'centralauth-admin-info-registered' => 'Kadaptar:',
+	'centralauth-admin-info-home' => 'Wiki asal',
+	'centralauth-admin-info-editcount' => 'Jumlah sakabéh éditan:',
 	'centralauth-admin-info-locked' => 'Kakonci:',
-	'centralauth-admin-info-hidden' => 'Nyumput:',
+	'centralauth-admin-info-hidden' => 'Status nyumput:',
+	'centralauth-admin-nohome' => 'teu bisa nangtukeun',
 	'centralauth-admin-yes' => 'enya',
 	'centralauth-admin-no' => 'henteu',
+	'centralauth-admin-hidden-list' => 'ti béréndélan umum',
+	'centralauth-admin-list-legend-ro' => 'Béréndélan akun lokal',
+	'centralauth-admin-list-legend-rw' => 'Pisahkeun akun lokal',
 	'centralauth-admin-unattached' => 'Rekening nu teu kawengku',
+	'centralauth-admin-blocked' => 'Dipeungpeuk nepi ka $3 jam $4.
+Alesan: $2',
+	'centralauth-admin-blocked-indef' => 'Dipeungpeuk salamina.
+Alesan: $1',
+	'centralauth-admin-blocklog' => 'log peungpeuk',
 	'centralauth-admin-list-localwiki' => 'Wiki lokal',
 	'centralauth-admin-list-attached-on' => 'Kawengku di',
 	'centralauth-admin-list-method' => 'Cara',
+	'centralauth-admin-list-editcount' => 'Jumlah éditan',
+	'centralauth-admin-list-blocked' => 'Dipeungpeuk',
 	'centralauth-admin-unmerge' => 'Pisahkeun nu dipilih',
 	'centralauth-admin-merge' => 'Hijikeun nu dipilih',
 	'centralauth-admin-bad-input' => 'Pilihan ngagabungna salah',
@@ -23466,7 +23491,28 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 	'centralauth-admin-delete-button' => 'Hapus rekening ieu',
 	'centralauth-admin-delete-success' => 'Rekening global "<nowiki>$1</nowiki>" junun dihapus',
 	'centralauth-admin-nonexistent' => 'Euweuh rekening global nugaranna "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Kasalahan: akun global "<nowiki>$1</nowiki>" teu kapanggih.',
 	'centralauth-admin-reason' => 'Alesan:',
+	'centralauth-admin-reason-other' => 'Alesan lianna:',
+	'centralauth-admin-status' => 'Setél status akun global',
+	'centralauth-admin-status-intro' => 'Anjeun bids maké ieu formulir pikeun ngarobah status ieu akun global.',
+	'centralauth-admin-status-locked' => 'Dikonci:',
+	'centralauth-admin-status-locked-no' => 'Akun teu dikonci',
+	'centralauth-admin-status-locked-yes' => 'Akun dikonci tina ngédit',
+	'centralauth-admin-status-hidden' => 'Nyumput:',
+	'centralauth-admin-status-hidden-no' => 'Akun teu nyumput',
+	'centralauth-admin-status-hidden-list' => 'Akun disumputkeun tina béréndélan umum',
+	'centralauth-admin-status-hidden-oversight' => 'Akun sagemblengna nyumput',
+	'centralauth-admin-status-submit' => 'Setél status',
+	'centralauth-admin-status-nonexistent' => 'Kasalahan: akun global "<nowiki>$1</nowiki>" teu kapanggih.',
+	'centralauth-admin-setstatus-success' => 'Status ieu akun global geus anggeus dirobah.',
+	'centralauth-admin-status-reasons' => '* Alésan ngonci nu ilahar
+** akun ukur-vandalismeu
+** akun ukur-spam
+* Alesan konci-jeung-sumputkeun nu ilahar
+** sandiasma anu ngalécéhkeun
+** émbaran pribadi anu teu pantes',
+	'centralauth-admin-logsnippet' => 'Parobahan akun global saméméhna',
 	'globalusers' => 'Daptar pamaké global',
 	'centralauth-listusers-locked' => 'dikonci',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|detik|detik}} kaliwat',
