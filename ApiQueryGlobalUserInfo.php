@@ -167,7 +167,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		return 'Show information about a global user.';
 	}
 
-	protected function getExamples() {
+	public function getExamples() {
 		return array(
 			'api.php?action=query&meta=globaluserinfo',
 			'api.php?action=query&meta=globaluserinfo&guiuser=Catrope&guiprop=groups|merged|unattached'
