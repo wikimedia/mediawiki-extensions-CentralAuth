@@ -82,7 +82,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
 				$a = array(
 					'wiki' => $dbname,
-					'url' => wfExpandUrl( $this->getUrl( $dbname ) ),
+					'url' => $this->getUrl( $dbname ),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
 					'editcount' => $account['editCount']
@@ -121,7 +121,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
 		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
 		$minor = str_replace( '_', '-', $minor );
-		return $wgConf->get( 'wgServer', $dbname, $major,
+		return $wgConf->get( 'wgCanonicalServer', $dbname, $major,
 			array( 'lang' => $minor, 'site' => $major ) );
 	}
 

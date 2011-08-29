@@ -1188,8 +1188,7 @@ class CentralAuthUser extends AuthPluginUser {
 	protected static function getIRCLine( $userpage, $wikiID ) {
 		$title = RecentChange::cleanupForIRC( $userpage->getPrefixedText() );
 		$wikiID = RecentChange::cleanupForIRC( $wikiID );
-		// FIXME: *HACK* should be getFullURL(), hacked for SSL madness
-		$url = $userpage->getInternalURL();
+		$url = $userpage->getCanonicalURL();
 		$user = RecentChange::cleanupForIRC( $userpage->getText() );
 		# see http://www.irssi.org/documentation/formats for some colour codes. prefix is \003,
 		# no colour (\003) switches back to the term default
