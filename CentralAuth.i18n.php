@@ -6227,7 +6227,7 @@ $messages['el'] = array(
 	'centralauth-merge-step2-title' => 'Επιβεβαίωση περισσότερων λογαριασμών',
 	'centralauth-merge-step2-detail' => 'Μερικοί λογαριασμοί δεν έγινε δυνατό να συνταιριάξουν αυτόματα με το αρχικό προκαθορισμένο εγχείρημα. Εάν αυτοί οι λογαριασμοί σας ανήκουν, μπορείτε να επιβεβαιώσετε ότι είναι δικοί σας παρέχοντας τον κωδικό τους.',
 	'centralauth-merge-step2-submit' => 'Επιβεβαίωση πληροφοριών σύνδεσης',
-	'centralauth-login-global' => 'Συνδέστε με επίσης και στα άλλα εγχειρήματα {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Συνδέστε με επίσης και στα άλλα βίκι {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Όλοι οι υπάρχοντες λογαριασμοί μπορούν να ενοποιηθούν αυτόματα!
 
 Δεν έχουν γίνει αλλαγές ακόμα στους λογαριασμούς σας.',
@@ -6390,8 +6390,9 @@ $messages['el'] = array(
 	'centralauth-renameuser-reserved' => 'Ο χρήστης $2 είναι κλεισμένος για παγκόσμιο λογαριασμό.',
 	'centralauth-invalid-wiki' => 'Δεν υπάρχει τέτοια βικι-βάση δεδομένων: $1',
 	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα χρήστη είναι ήδη κατοχυρωμένο στο σύστημα ενιαίας σύνδεσης.',
-	'centralauth-login-progress' => 'Σας συνδέουμε στα εγχειρήματα του {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Σας αποσυνδέουμε από άλλα εγχειρήματα του {{int:Centralauth-groupname}}:',
+	'centralauth-account-exists-reset' => 'Το όνομα χρήστη $1 δεν είναι καταχωρημένο σε αυτό το βίκι, αλλά υπάρχει στο σύστημα ενοποιημένης σύνδεση.',
+	'centralauth-login-progress' => 'Σας συνδέουμε στα βίκι του {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Σας αποσυνδέουμε από άλλα βίκι του {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Έχετε συνδεθεί αυτόματα στα άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Έχετε αποσυνδεθεί αυτόματα από άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'παγκοσμίως αποκρυμμένο από $1 στο $2 με τον εξής λόγο: $3',
@@ -8462,6 +8463,7 @@ Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd et pués
 	'centralauth-merge-step2-detail' => 'Quârques-uns des comptos trovâs corrèspondont pas ôtomaticament a voutron compto principâl.
 Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo mot de pâssa que corrèspond.',
 	'centralauth-merge-step2-submit' => 'Confirmar les enformacions de branchement',
+	'centralauth-login-global' => 'Mè branchiér asse-ben ux ôtros vouiquis de {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Tôs los comptos ègzistents pôvont étre unifiâs ôtomaticament !
 
 Por lo moment, nion changement at étâ fêt a voutros comptos.',
@@ -8629,6 +8631,7 @@ Un changement de nom local dètachierat cél compto du compto globâl.',
 	'centralauth-renameuser-reserved' => 'L’utilisator $2 est resèrvâ por un compto globâl.',
 	'centralauth-invalid-wiki' => 'Gins de bâsa de balyês vouiqui : $1',
 	'centralauth-account-exists' => 'Empossiblo de fâre lo compto : lo nom d’utilisator demandâ est ja prês dens lo sistèmo de branchement unifiâ.',
+	'centralauth-account-exists-reset' => 'Lo nom d’utilisator $1 est pas encartâ sur cél vouiqui, mas ègziste dens lo sistèmo de branchement unifiâ.',
 	'centralauth-login-progress' => 'Vos éte branchiê ux vouiquis de {{int:Centralauth-groupname}} :',
 	'centralauth-logout-progress' => 'Vos éte dèbranchiê des ôtros vouiquis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vos avéd étâ branchiê ôtomaticament ux ôtros projèts de {{int:Centralauth-groupname}}.',
@@ -11274,7 +11277,7 @@ Perubahan tidak akan dilakukan sampai Anda memberikan konfirmasi bahwa tak ada m
 	'centralauth-merge-step2-detail' => 'Beberapa akun tak dapat secara otomatis dicocokkan dengan wiki utama yang dipilih.
 Jika akun-akun ini milik Anda, Anda dapat mengkonfirmasikan kepemilikannya dengan memberikan kata sandi mereka.',
 	'centralauth-merge-step2-submit' => 'Konfirmasi informasi log masuk',
-	'centralauth-login-global' => 'Masukkan saya ke dalam proyek-proyek lain dari {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Masukkan saya juga ke dalam wiki lain dari {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Seluruh akun yang ditemukan dapat digabungkan secara otomatis!
 
 Saat ini belum ada perubahan yang dilakukan terhadap akun-akun Anda.',
@@ -11437,8 +11440,8 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-invalid-wiki' => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists' => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-account-exists-reset' => 'Nama pengguna $1 tidak terdaftar di wiki ini, tapi terdaftar dalam sistem masuk terpadu.',
-	'centralauth-login-progress' => 'Anda masuk log ke proyek-proyek {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Anda keluar log dari proyek-proyek {{MediaWiki:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Sedang memasuklogkan Anda ke wiki {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Mengeluarlogkan Anda dari wiki {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Anda secara otomatis telah masuk log ke proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Anda secara otomatis telah keluar log dari proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'disembunyikan secara global oleh $1 pada $2 dengan alasan berikut: $3',
@@ -20966,7 +20969,7 @@ $messages['rue'] = array(
 	'centralauth-merge-step2-title' => 'Підтвердити веце конт',
 	'centralauth-merge-step2-detail' => 'Дакотры конта не было можне автоматічно прирядити ку становленок домашнёй вікі. Кідь суть тоты конта вашы, можете то підтвердити тым, же ку ним зазначіте платне гесло.',
 	'centralauth-merge-step2-submit' => 'Підтвердити інформацію про приголошіня',
-	'centralauth-login-global' => 'Приголосити ся ґлобално',
+	'centralauth-login-global' => 'Приголосити і до другых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}',
 	'centralauth-merge-dryrun-complete' => 'Вшыткы вашы єствуючі конта можуть быти зъєдночены!
 
 Дотеперь не были учінены жадны зміны вашого конта.',
@@ -21129,8 +21132,9 @@ $messages['rue'] = array(
 	'centralauth-renameuser-reserved' => 'Хосновательске імя $2 є резервоване про ґлобалне конто.',
 	'centralauth-invalid-wiki' => 'Така датабаза вікі не єствує: $1',
 	'centralauth-account-exists' => 'Не годен створити конто: Пожадоване хосновательске імя уж є реґістроване в уніфікованій сістемі приголосованя.',
-	'centralauth-login-progress' => 'Автоматічне приголошіня на далшы проєкты {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
-	'centralauth-logout-progress' => 'Автоматічне одголошіня з іншых проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
+	'centralauth-account-exists-reset' => 'Хосновательске імя $1 не є на тій вікі реґістроване, але екзістує в єднотній сістемі приголошованя.',
+	'centralauth-login-progress' => 'Приголошуєме вас на вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
+	'centralauth-logout-progress' => 'Одголошуєме вас з другых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Быв|Была|Быв}} сьте автоматічно {{GENDER:|приголошеный|приголошена|приголошеный}} на остатнї проєкты {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-logout-no-others' => '{{GENDER:|Быв|Была|Быв}} сьте автоматічно {{GENDER:|одголошеный|одголошена|одголошеный}} з остатнїх проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-hidden-blockreason' => 'ґлобално схованый $1 в $2 з причінов: $3',
