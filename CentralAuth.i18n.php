@@ -8014,6 +8014,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-renameuser-reserved' => 'Käyttäjätunnus $2 on varattu yhdistetylle tunnukselle.',
 	'centralauth-invalid-wiki' => 'Wiki-tietokantaa $1 ei ole olemassa.',
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
+	'centralauth-account-exists-reset' => 'Käyttäjätunnus $1 ei ole rekisteröity tässä wikissä, mutta se löytyy yhdistetystä kirjautumisjärjestelmästä.',
 	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:',
 	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{MediaWiki:Centralauth-groupname}} -wikeistä:',
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
@@ -18354,6 +18355,8 @@ $messages['or'] = array(
 	'centralauth-editgroup-members' => 'ସଭ୍ୟମାନଙ୍କ ତାଲିକା:',
 	'centralauth-editgroup-reason' => 'କାରଣ:',
 	'centralauth-editset-name' => 'ନାମ:',
+	'centralauth-editset-type' => 'ପ୍ରକାର:',
+	'centralauth-editset-wikis' => 'ବିକିସ:',
 	'centralauth-editset-reason' => 'କାରଣ:',
 	'centralauth-editset-submit' => 'ଦାଖଲକରିବା',
 	'centralauth-editset-submit-delete' => 'ଲିଭେଇବେ',
@@ -22811,7 +22814,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 	'right-globalgrouppermissions' => 'Menaxhoni grupet globale',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Sasa Stefanovic
@@ -22830,7 +22833,7 @@ $messages['sr-ec'] = array(
 	'centralauth-merge-step1-submit' => 'Овери информације налога.',
 	'centralauth-merge-step2-title' => 'Потврђивање више налога.',
 	'centralauth-merge-step2-submit' => 'Потврђивање информација из налога.',
-	'centralauth-login-global' => 'Пријави ме глобално',
+	'centralauth-login-global' => 'Пријави ме и на друге викије пројекта {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Сви постојећи налози су аутоматски сједињени!
 
 Измене још увек нису направљене на твојим налозима.',
@@ -22941,8 +22944,8 @@ $messages['sr-ec'] = array(
 	'centralauth-renameuser-reserved' => 'Корисничко име $2 је резервисано за глобални налог.',
 	'centralauth-invalid-wiki' => 'Не постоји база таквог викија: $1.',
 	'centralauth-account-exists' => 'Не може се направити налог: тражено корисничко име је већ заузето јединственим налогом.',
-	'centralauth-login-progress' => 'Пријављивање на све {{int:Centralauth-groupname}} пројекте:',
-	'centralauth-logout-progress' => 'Одјављивање са свих {{int:Centralauth-groupname}} пројеката:',
+	'centralauth-login-progress' => 'Пријављујем вас на друге викије пројекта {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Одјављујем вас са свих викија пројекта {{int:Centralauth-groupname}}:',
 	'centralauth-log-name' => 'историја глобалних налога',
 	'centralauth-log-header' => 'Овај лог садржи операције над глобалним налозима: брисање, закључавање и откључавање.',
 	'centralauth-log-entry-delete' => 'обрисан глобални налог "$1"',
