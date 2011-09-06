@@ -391,6 +391,7 @@ You may view and modify any of them, or create a new set.',
  * @author The Evil IP address
  * @author Toliño
  * @author Umherirrender
+ * @author Yekrats
  * @author דולב
  */
 $messages['qqq'] = array(
@@ -470,6 +471,7 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
+	'centralauth-listusers-locked' => '{{identical|locked}}',
 	'centralauth-prefs-not-managed' => "Appears on user profile tab of 'Preferences' special page, after 'Global account status:'",
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at a user's preferences page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
@@ -637,6 +639,7 @@ Rede: $1',
 	'centralauth-prefs-migration' => 'Besig met migrasie',
 	'centralauth-prefs-count-attached' => 'U gebruiker is op $1 {{plural:$1|projek|projekte}} aktief.',
 	'centralauth-prefs-manage' => 'Bestuur u globale gebruikersrekening',
+	'centralauth-prefs-view' => 'Wys inligting oor globale gebruiker',
 	'centralauth-invalid-wiki' => 'Die wikidatabasis bestaan nie: $1',
 	'centralauth-login-progress' => "U word by die wiki's van {{int:Centralauth-groupname}} aangemeld:",
 	'centralauth-logout-progress' => "U word vanaf die ander wiki's van {{int:Centralauth-groupname}} afgeteken:",
@@ -8580,6 +8583,9 @@ Rêson : $1',
 	'centralauth-admin-already-unmerged' => 'Sôtar $1, ja dèfusionâ',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|compto dèfusionâ|comptos dèfusionâs}} avouéc reusséta',
 	'centralauth-admin-delete-title' => 'Suprimar lo compto',
+	'centralauth-admin-delete-description' => 'La suprèssion du compto globâl suprimerat totes les prèferences globâles, dèpondrat l’ensemblo des comptos locals, et pués lèssierat lo nom globâl disponiblo por tot ôtro utilisator a prendre.
+Tôs los comptos locals continueront a ègzistar.
+Los mots de pâssa por los comptos locals fêts devant lor fusion retroveront lors valors de devant cela fusion.',
 	'centralauth-admin-delete-button' => 'Suprimar ceti compto',
 	'centralauth-admin-delete-success' => 'Lo compto globâl apelâ « <nowiki>$1</nowiki> » at étâ suprimâ avouéc reusséta.',
 	'centralauth-admin-nonexistent' => 'Ègziste gins de compto globâl apelâ « <nowiki>$1</nowiki> ».',
@@ -8667,8 +8673,14 @@ at enlevâ $3',
 	'centralauth-rightslog-set-optin' => 'basâ per adhèsions èxprèsses',
 	'centralauth-rightslog-set-optout' => 'basâ per retrèts èxprès',
 	'autologin' => 'Branchement ôtomatico',
+	'centralauth-autologin-desc' => 'Ceta pâge spèciâla est utilisâ en dedens per MediaWiki.
+Quand vos vos [[Special:UserLogin|branchiéd]], lo sistèmo de branchement unifiâ demande a voutron navigator de chargiér ceta pâge por tôs los domênos rapondus, u moyen de lims d’émâges.
+Vos éd demandâ ceta pâge sen balyér gins de balyê d’ôtenticacion, fât vêr ren.',
 	'globalgroupmembership' => 'Apartegnence a les tropes globâles',
 	'globalgrouppermissions' => 'Administracion a les tropes globâles',
+	'centralauth-globalgroupperms-grouplist' => 'Cetes tropes globâles ont étâ configurâs.
+Vos pouede vêre ou ben changiér les pèrmissions assignês a una tropa, se vos en avéd la pèrmission.
+Una tropa pôt étre suprimâ en lyé enlevent tôs sos drêts.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vêre / changiér]])',
 	'centralauth-globalgroupperms-nogroups' => 'Niona tropa globâla at étâ dèfenia.',
 	'centralauth-existinggroup-legend' => 'Tropes ègzistentes',
@@ -18297,6 +18309,12 @@ $messages['or'] = array(
 	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} ସବୁରେ [[Special:MergeAccount|ଖାତାଗୁଡ଼ିକୁ ମିଶାଇଦେବା]]',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|ଅନେକଗୁଡ଼ିଏ ଖାତା]]କୁ ମିଶାଇ ଗୋଟିଏ ଲଗଇନ କରିବା',
 	'centralauth-merge-denied' => 'କ୍ଷମା କରିବେ, ଆପଣଙ୍କୁ ଏହି ପୃଷ୍ଠାଟି ଭିତରକୁ ଯିବାକୁ ଅନୁମତି ନାହିଁ ।',
+	'centralauth-merge-notlogged' => 'ଆପଣଙ୍କ ଖାତା ପୁରାପୁରି ମିଶିଯାଇଛି କି ନାହିଁ ଜାଣିବା ନିମନ୍ତେ ଦୟାକରି <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ଲଗ ଇନ କରନ୍ତୁ]</span>',
+	'centralauth-merge-welcome' => "'''ଆପଣଙ୍କ ସଭ୍ୟ ଖାତାଟି ଏଯାଏଁ {{MediaWiki:Centralauth-groupname}}ର ଏକାକୀକରଣ ଲଗ ଇନ ସୁବିଧା ଭିତରକୁ ଘୁଞ୍ଚାଯାଇନାହିଁ ।'''
+
+ଯଦି ଆପଣ ଆପଣା ଖାତାସବୁକୁ ଘୁଞ୍ଚାଇବାକୁ ଚାହାନ୍ତି, ତେବେ ଏକା ଇଉଜର ନାମ ଓ ପାସବାର୍ଡ଼ ବ୍ୟବହାର କରି ଆପଣ {{MediaWiki:Centralauth-groupname}}ର ସବୁଯାକ ପ୍ରକଳ୍ପରେ ବିବିଧ ଭାଷାରେ ଲଗ ଇନ କରି ପାରିବେ ।
+
+ଯଦି ଆଗରୁ କେହିଜଣେ ଆଉ କେଉଁ ଉଇକିରେ ଆପଣଙ୍କ ଇଉଜର ନାମ ନେଇଯାଇଥିବ ତେବେ ବି କିଛି ଅସୁବିଧା ନାହିଁ, କିନ୍ତୁ ଏହା ପରେ ଆପଣଙ୍କୁ ଜଣେ ପରିଛାଙ୍କ ସହଯୋଗରେ ଏହାକୁ ଠିକ କରିବାରେ ସାହାଯ୍ୟ କରିବ ।",
 	'centralauth-merge-step1-title' => 'ଲଗିଇନ ଏକାକିକରଣ ଆରମ୍ଭ କରିବା',
 	'centralauth-merge-step1-detail' => 'ଆପଣଙ୍କ ଖାତାର ପାସବାଡ଼ ଦିଅନ୍ତୁ ।
 ଆପଙ୍କ ପାସବାଡ଼ ଆଉ ଇ-ମେଲ ଆଇଡ଼ି ସବୁ ବାକି ଉଇକିରେ ଥିବା ଖାତା ସବୁରେ ମିଳାଯିବ ।
@@ -18319,10 +18337,15 @@ $messages['or'] = array(
 ଏହା ଅଟକାଯାଇଥିବା ସମୟରେ, ଆପଣ ନିଜ ଖାତାକୁ ଏକାକିକରଣ କରିପାରିବେ ନାହିଁ ।',
 	'centralauth-notice-dryrun' => "<div class='successbox'>ଖାଲି ଦେଖିବା ପାଇଁ</div><br clear='all'/>",
 	'centralauth-error-locked' => 'ଆପଣଙ୍କ ଖାତାଟି ବନ୍ଦ କରାଯାଇଥିବାରୁ ଆପଣ କିଛି ବଦଳାଇପାରିବେ ନାହିଁ ।',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''ମିଶା ଲଗ ଇନ''' ବାବଦରେ ଅଧିକ ଜାଣନ୍ତୁ]]…''",
 	'centralauth-list-home-title' => 'ମୁଳ ଉଇକି',
 	'centralauth-list-home-dryrun' => 'ଏହି ଉଇକିରେ ବ୍ୟବହାର କରାଯାଇଥିବା ପାସବାର୍ଡ ଓ ଇ-ମେଲ ଆପଣଙ୍କ ଏକକ ଖାତାରେ ବ୍ୟବହାର କରାଯିବ ।',
 	'centralauth-list-attached-title' => 'ଯୋଡ଼ା ଖାତାସବୁ',
+	'centralauth-list-attached' => '"$1" ନାମରେ ତଲଲିଖିତ ସବୁ ସାଇଟରେ ଥିବା ଖାତାଟି ଏକ ମିଶା ଖାତାରେ ଆପେଆପେ ଯୋଡ଼ାଯାଇଛି:',
+	'centralauth-list-attached-dryrun' => '"$1" ନାମରେ ତଲଲିଖିତ ସବୁ ସାଇଟରେ ଥିବା ଖାତାଟି ଏକ ମିଶା ଖାତାରେ ଆପେଆପେ ଏହି ଖାତାରେ ଯୋଡ଼ାଯିବ:',
 	'centralauth-list-unattached-title' => 'ଯୋଡ଼ା ହୋଇନଥିବା ଖାତା',
+	'centralauth-list-unattached' => '"$1" ନାମରେ ଥିବା ଖାତାଟି ତଲଲିଖିତ ସବୁ ସାଇଟରେ ଥୟ କରାଯାଇପାରିବ ନାହିଁ;
+କାରଣ ସେସବୁରେ ଅଲଗା ଅଲଗା ପାସବାର୍ଡ଼ ଅଛି ଯାହା ଆପଣଙ୍କ ଏହି ମୂଳ ଖାତାର ପାସବାର୍ଡ଼ ଠାରୁ ଅଲଗା :',
 	'centralauth-foreign-link' => 'ଇଉଜର $1  $2 ଠାରେ',
 	'centralauth-merge-method-primary' => 'ମୁଳ ଉଇକି',
 	'centralauth-merge-method-empty' => 'କିଛି ବି ଅବଦାନ ନାହିଁ',
@@ -18331,6 +18354,8 @@ $messages['or'] = array(
 	'centralauth-merge-method-admin' => 'ପରିଛାଙ୍କ ଦେଇ ଥୟ କରାଯାଇଛି',
 	'centralauth-merge-method-new' => 'ନୁଆ ଖାତା',
 	'centralauth-merge-method-login' => 'ଲଗଇନ ବେଳେ ତିଆରି କରାଯାଇଛି',
+	'centralauth-merge-method-primary-desc' => 'ଏହା ହେଉଛି ସେହି ଉଇକି ଯେଉଁଥିରେ ଖାତାସବୁ ଆରମ୍ଭରେ ମିଶାଯାଇଥିଲା ।
+ଜାଣିରଖନ୍ତୁ ଯେ ଏହା ସେହି ସଭ୍ୟଙ୍କର ମୂଳ ଉଇକିରୁ ଅଲଗା ।',
 	'centralauth-finish-password' => 'ପାସବାର୍ଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
 	'centralauth-finish-send-confirmation' => 'ପାସବାର୍ଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବେ',
@@ -27512,6 +27537,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
+ * @author Anakmalaysia
  * @author Gzdavidwong
  * @author Horacewai2
  * @author Hydra
@@ -27542,7 +27568,7 @@ $messages['zh-hant'] = array(
 	'centralauth-merge-step2-title' => '確認更多帳號',
 	'centralauth-merge-step2-detail' => '有些帳號不會自動地跟您的主要維基計劃整合如果這些帳號是於您的，您可以為它們提供一個密碼去確認它們是屬於您的。',
 	'centralauth-merge-step2-submit' => '確認登入資料',
-	'centralauth-login-global' => '在{{int:Centralauth-groupname}}的其他計劃中為我全域登陸',
+	'centralauth-login-global' => '也讓我登錄到{{int:Centralauth-groupname}}的其他維基項目',
 	'centralauth-merge-dryrun-complete' => '所有已存在的的帳號都能被自動整合！
 
 目前尚未對您的帳號進行任何修改。',
@@ -27705,8 +27731,8 @@ $messages['zh-hant'] = array(
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
 	'centralauth-account-exists' => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 	'centralauth-account-exists-reset' => '用戶名$1並沒有在此維基註冊，但一個同名的全域帳戶存在。',
-	'centralauth-login-progress' => '正在為您登入到{{int:Centralauth-groupname}}的其它計劃：',
-	'centralauth-logout-progress' => '正在為您登出{{int:Centralauth-groupname}}的其它計劃：',
+	'centralauth-login-progress' => '正在為您登錄到{{int:Centralauth-groupname}}的維基項目：',
+	'centralauth-logout-progress' => '正在為您退出{{int:Centralauth-groupname}}的維基項目：',
 	'centralauth-login-no-others' => '你已經自動登錄到{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-logout-no-others' => '你已經自動登出{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-hidden-blockreason' => '全球隱藏 (在$1 $2)，原因：$3',
