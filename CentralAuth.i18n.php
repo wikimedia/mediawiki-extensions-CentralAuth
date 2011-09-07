@@ -6515,7 +6515,7 @@ $messages['el'] = array(
 $messages['eo'] = array(
 	'mergeaccount' => 'Statuso de unuigado de salutnomoj',
 	'centralauth-groupname' => 'la Fondaĵo Wikimedia',
-	'centralauth-desc' => '[[Special:MergeAccount|Kunigu konton]] trans vikioj de {{MediaWiki:Centralauth-groupname}}',
+	'centralauth-desc' => '[[Special:MergeAccount|Kunigi konton]] trans vikioj de {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unuigo de pluraj kontoj]] por ensaluto de unuopa uzulo',
 	'centralauth-merge-denied' => 'Bedaŭrinde, vi ne havas permeson por atingi ĉi tiun paĝon.',
 	'centralauth-merge-notlogged' => 'Bonvolu <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ensaluti]</span> por kontroli ĉu viaj kontoj ja plene kunfandiĝis.',
@@ -6536,11 +6536,11 @@ Se ĉi tiuj kontoj apartenas al vi, vi povas konfirmi, ke ili estas viaj proviza
 	'centralauth-login-global' => 'Ankaŭ ensaluti min en aliaj projektoj de {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Ĉiuj ekzistantaj kontoj povas esti aŭtomate unuigita!
 
-Neniu sxanĝo estis jam farita al viaj kontoj.',
+Neniu ŝanĝo estis jam farita al viaj kontoj.',
 	'centralauth-merge-dryrun-incomplete' => 'Vi decidis daŭrigi sed iuj kontoj ne povis esti aŭtomate kontrolitaj kaj ne estos migrigitaj tuje.
 Vi povos tion fari pli poste.
 
-Neniu sxanĝo estis jam farita al viaj kontoj.',
+Neniu ŝanĝo estis jam farita al viaj kontoj.',
 	'centralauth-merge-dryrun-or' => "'''aŭ'''",
 	'centralauth-merge-dryrun-home' => 'La migrada sistemo ne povis konfirmi ke vi estas la posedanto de la konto en la hejma vikio por via saltunomo.
 
@@ -19327,6 +19327,7 @@ $messages['pnb'] = array(
 $messages['ps'] = array(
 	'centralauth-login-global' => 'Also log me in to other projects of {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-or' => "'''يا'''",
+	'centralauth-merge-step3-submit' => 'ګڼونونه سره يوځای کول',
 	'centralauth-list-home-title' => 'ويکي کور',
 	'centralauth-foreign-link' => 'کارن $1 په $2',
 	'centralauth-merge-method-primary' => 'ويکي کور',
@@ -19349,6 +19350,7 @@ $messages['ps'] = array(
 	'centralauth-admin-blocklog' => 'د بنديز يادښت',
 	'centralauth-admin-list-localwiki' => 'سيمه ايز ويکي',
 	'centralauth-admin-list-editcount' => 'د سمونونو شمېر',
+	'centralauth-admin-list-blocked' => 'بنديز لګېدلی',
 	'centralauth-admin-delete-title' => 'ګڼون ړنګول',
 	'centralauth-admin-delete-button' => 'همدا ګڼون ړنګول',
 	'centralauth-admin-reason' => 'سبب:',
