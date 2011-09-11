@@ -1613,7 +1613,7 @@ $messages['ast'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusiona cuentes]] ente les wikis de {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Fusiona múltiples cuentes]] pa la Identificación Única d'Usuariu",
 	'centralauth-merge-denied' => "Sentímoslo, nun tienes permisu p'acceder a esta páxina.",
-	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
+	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
 	'centralauth-merge-welcome' => "'''La to cuenta d'usuariu inda nun foi migrada al sistema de cuentes fusionaes de {{MediaWiki:Centralauth-groupname}}.'''
 
 Si decides migrar les tos cuentes, podrás usar el mesmu nome d'usuariu y la mesma clave pa identificate en toles wikis de {{MediaWiki:Centralauth-groupname}} de cualesquier llingua disponible.
@@ -4459,7 +4459,7 @@ $messages['cs'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Sloučení účtů]] na jednotlivých wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sloučení účtů]] pro jednotné přihlašování',
 	'centralauth-merge-denied' => 'Na tuto stránku nemáte přístup.',
-	'centralauth-merge-notlogged' => 'Pokud se <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} přihlásíte]</span>, budete moci zkontrolovat, zda Vaše účty byly sloučeny.',
+	'centralauth-merge-notlogged' => 'Pokud se <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} přihlásíte]</span>, budete moci zkontrolovat, zda vaše účty byly sloučeny.',
 	'centralauth-merge-welcome' => "'''Váš uživatelský účet nebyl dosud převeden na jednotný systém přihlašování projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.'''
 
 Pokud se rozhodnete převést své účty, budete moci používat stejné uživatelské jméno a heslo k přihlášení do všech projektů {{grammar:2sg|{{int:Centralauth-groupname}}}} ve všech dostupných jazycích.
@@ -6519,7 +6519,7 @@ $messages['eo'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Kunigi konton]] trans vikioj de {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unuigo de pluraj kontoj]] por ensaluto de unuopa uzulo',
 	'centralauth-merge-denied' => 'Bedaŭrinde, vi ne havas permeson por atingi ĉi tiun paĝon.',
-	'centralauth-merge-notlogged' => 'Bonvolu <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ensaluti]</span> por kontroli ĉu viaj kontoj ja plene kunfandiĝis.',
+	'centralauth-merge-notlogged' => 'Bonvolu <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} ensaluti]</span> por kontroli ĉu viaj kontoj ja plene kunfandiĝis.',
 	'centralauth-merge-welcome' => "'''Via uzanto-konto ne jam estis migrigita al unuigita salutsistemo de {{MediaWiki:Centralauth-groupname}}.'''
 
 Se vi elektas migrigi viajn kontojn, vi povos uzi la saman uzulnomon kaj pasvorton por ensaluti en cxiuj vikioj de la projektoj de {{MediaWiki:Centralauth-groupname}} en ĉiuj haveblaj lingvoj.
@@ -9162,7 +9162,7 @@ $messages['gsw'] = array(
 	'centralauth-desc' => 'Benutzerkonte in Wiki {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zämmefiere]]',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zämmefiere vu mehrere Benutzerkonte]] fir s ''Single User Login''",
 	'centralauth-merge-denied' => 'Excusez, aber Du hesch kei Berächtigung fir die Syte.',
-	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} mäld Di aa]</span>, zum priefe, eb Dyyni Benutzerkonte vollständig zämmegfiert wore sin.',
+	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} mäld Di aa]</span>, zum priefe, eb Dyyni Benutzerkonte vollständig zämmegfiert wore sin.',
 	'centralauth-merge-welcome' => 'Dyy Benutzerkonto isch nonig in s wältwyt Wikimedia-Aamäld-Syschtem iberfiert wore.
 
 Wänn Du Di fir e Migration vu Dyynem Benutzerkonto entscheidesch, no isch Dir megli, Di mit eim gmeinsame Benutzername un Passwort in allene Projäkt {{MediaWiki:Centralauth-groupname/gsw}} in allene verfiegbare Sproche aazmälde.
@@ -9174,7 +9174,7 @@ Wänn eber ander Dyy Benutzername scho in eme andere Projäkt brucht, no stert s
 	'centralauth-merge-step2-title' => 'Bstätig wyteri Benutzerkonte',
 	'centralauth-merge-step2-detail' => 'E Teil vu dr Benutzerkonte hän nit automatisch chenne Dyynem Heimet-Wiki zuegordnet wäre. Wänn die Konte Dir ghere, no  chasch des bstätige, indäm Du s Passwort zue däne Konte yygisch.',
 	'centralauth-merge-step2-submit' => 'Aamäld-Informatione bstätige',
-	'centralauth-login-global' => 'Mi au bi andre Projekt {{int:Centralauth-groupname}} aamälde',
+	'centralauth-login-global' => 'Mi au bi andre Wiki {{int:Centralauth-groupname}} aamälde',
 	'centralauth-merge-dryrun-complete' => 'Alli Benutzerkonte, wu s git, chenne automatisch zämmegfiert wäre!
 
 Bis jetz sin kei Änderige an Dyyne Benutzerkonte vorgnuh wore.',
@@ -9336,8 +9336,8 @@ D Passwerter fir di lokale Benutzerkonte wäre zruckgsetzt uf s urspringli Passw
 	'centralauth-invalid-wiki' => 'Die Wiki-Datebank git s nit: $1',
 	'centralauth-account-exists' => 'Benutzerkonto cha nit aagleit wäre: dr aagfrogt Benutzername wird scho fir s wältwyt Benutzerkonte-Syschtem bruucht.',
 	'centralauth-account-exists-reset' => 'Dr Benutzername $1 isch uf däm Wiki nit regischtriert, s het e aber scho im zäntrale Aamäldesyschtem.',
-	'centralauth-login-progress' => 'Du bisch automatisch au bi däne Projäkt {{int:Centralauth-groupname}} aagmäldet:',
-	'centralauth-logout-progress' => 'Du bisch automatisch au bi däne Projäkt {{MediaWiki:Centralauth-groupname}} abgmäldet wore:',
+	'centralauth-login-progress' => 'Du bisch automatisch au bi däne Wiki {{int:Centralauth-groupname}} aagmäldet:',
+	'centralauth-logout-progress' => 'Du bisch automatisch au bi däne Wiki {{MediaWiki:Centralauth-groupname}} abgmäldet wore:',
 	'centralauth-login-no-others' => 'Du bisch au automatisch aagmäldet bi andere Projäkt {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Du bisch au automatisch abgmäldet bi andere Projäkt {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'wältwyt uusbländet dur $1 uf $2 us däm Grund: $3',
@@ -9515,7 +9515,7 @@ $messages['he'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|מיזוג חשבונות]] בין אתרי {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|מיזוג מספר חשבונות]] עבור חשבון המשתמש המאוחד',
 	'centralauth-merge-denied' => 'מצטערים, אין לך הרשאה להשתמש בדף זה.',
-	'centralauth-merge-notlogged' => 'אנא <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.',
+	'centralauth-merge-notlogged' => 'אנא <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.',
 	'centralauth-merge-welcome' => "'''חשבון המשתמש שלכם עדיין לא התווסף למערכת החשבונות הממוזגים של {{MediaWiki:Centralauth-groupname}}.'''
 
 אם תבחרו להוסיף את החשבונות שלכם, תוכלו להשתמש בשם משתמש וסיסמה זהים בכל מיזמי {{MediaWiki:Centralauth-groupname}} ובכל השפות.
@@ -10973,7 +10973,7 @@ $messages['ia'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusion de contos]] trans wikis del {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusion de plure contos]] pro identification unificate',
 	'centralauth-merge-denied' => 'Pardono, tu non ha le permission de acceder a iste pagina.',
-	'centralauth-merge-notlogged' => 'Per favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} aperi un session]</span> pro verificar que le fusion de tu contos sia complete.',
+	'centralauth-merge-notlogged' => 'Per favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} aperi un session]</span> pro verificar que le fusion de tu contos es complete.',
 	'centralauth-merge-welcome' => "'''Tu conto de usator non ha ancora essite migrate al systema de contos unificate del {{MediaWiki:Centralauth-groupname}}.'''
 
 Si tu opta pro migrar tu contos, tu potera usar le mesme nomine de usator e contrasigno pro aperir un session in tote le wikis del {{MediaWiki:Centralauth-groupname}} in tote le linguas disponibile.
@@ -12018,16 +12018,17 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
  * @author Muttley
  * @author Naohiro19
  * @author Ohgi
+ * @author Schu
  * @author Whym
  * @author 青子守歌
  */
 $messages['ja'] = array(
 	'mergeaccount' => '統一ログイン状態',
 	'centralauth-groupname' => 'ウィキメディア財団',
-	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}}が運営するウィキ間での[[Special:MergeAccount|アカウントを統合する]]',
+	'centralauth-desc' => '{{MediaWiki:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]します。',
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
 	'centralauth-merge-denied' => '申し訳ありませんが、このページへのアクセス権がありません。',
-	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ログイン]</span>して試してください。',
+	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} ログイン]</span>して確認してください。',
 	'centralauth-merge-welcome' => "'''あなたのアカウントは、{{MediaWiki:Centralauth-groupname}}の統一ログインシステムにまだ移行していません。'''
 
 このシステムにアカウントを移行すると、{{MediaWiki:Centralauth-groupname}}の全ウィキ、全言語版で同じ利用者名とパスワードを利用してログインできます。
@@ -14313,7 +14314,7 @@ $messages['lb'] = array(
 	'centralauth-desc' => 'Benotzerkonten op de Wikie vun  {{MediaWiki:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zesammeleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied' => 'Pardon, Dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Loggt Iech w.e.g. an]</span> fir nozekucken ob all är Benotzerkonte ganz zesummegefouert goufen.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}|WIKI}} Loggt Iech w.e.g. an]</span> fir nozekucken ob all Är Benotzerkonte ganz zesummegefouert goufen.',
 	'centralauth-merge-welcome' => "'''Äre Benotzerkont gouf nach net an de globale System vun {{MediaWiki:Centralauth-groupname}} migréiert.'''
 
 Wann Dir Äre Kont migréiere wëllt, da kënnt Dir deselwechte Benotzernumm an datselwecht Passwuert benotze fir Iech an all Wikie vun {{MediaWiki:Centralauth-groupname}} an alle Sproochen eranzeloggen.
@@ -15414,7 +15415,7 @@ $messages['mk'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Спојување на сметки]] од повеќе викија на {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Спојува повеќе сметки]] за да може да се користи Единствена корисничка сметка (Single User Login)',
 	'centralauth-merge-denied' => 'Жалиме, но немате дозвола за пристап кон оваа страница.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Најавете се]</span> за да проверите дали сметките ви се наполно споени.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} Најавете се]</span> за да проверите дали сметките ви се наполно споени.',
 	'centralauth-merge-welcome' => "'''Вашата корисничка сметка сè уште не е преселена на обединет систем за најавување на {{MediaWiki:Centralauth-groupname}}.'''
 
 Доколку решите да си ги преселите сметките, тогаш ќе можете да користите едно исто корисничко име и лозинка за да се најавувате на сите викија на {{MediaWiki:Centralauth-groupname}} на сите расположиви јазици.
@@ -16337,7 +16338,7 @@ $messages['ms'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Gabungkan Akaun]] di semua wiki kelolaan {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Menggabungkan pelbagai akaun]] untuk Akaun Tunggal',
 	'centralauth-merge-denied' => 'Harap maaf, anda tidak mempunyai keizinan untuk mencapai laman ini.',
-	'centralauth-merge-notlogged' => 'Sila <span class=\\"plainlinks\\">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} log masuk]</span> untuk menyemak sama ada akaun-akaun anda telah digabungkan sepenuhnya.',
+	'centralauth-merge-notlogged' => 'Sila <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} log masuk]</span> untuk menyemak sama ada akaun-akaun anda telah digabungkan sepenuhnya.',
 	'centralauth-merge-welcome' => "'''Akaun anda belum lagi dipindahkan ke sistem akaun gabungan {{MediaWiki:Centralauth-groupname}}.'''
 
 Anda boleh memindahkan akaun-akaun anda supaya dapat log masuk menggunakan nama pengguna dan kata laluan yang sama ke dalam semua wiki kelolaan {{MediaWiki:Centralauth-groupname}} dalam semua bahasa.
@@ -17101,7 +17102,7 @@ $messages['nl'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Samengevoegde gebruikers]] in wiki's van {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Meerdere gebruikers samenvoegen]] voor Single User Login',
 	'centralauth-merge-denied' => 'U hebt geen toegang tot deze pagina.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}}  Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
 	'centralauth-merge-welcome' => "'''Uw gebruiker is nog niet gemigreerd naar het samengevoegde aanmeldsysteem van {{MediaWiki:Centralauth-groupname}}.'''
 
 Als u ervoor kiest om uw gebruikers te migreren, dan kunt u met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle wiki's van {{MediaWiki:Centralauth-groupname}} in alle beschikbare talen.
@@ -20694,6 +20695,7 @@ Luàte $3',
 /** Russian (Русский)
  * @author Ahonc
  * @author AlexSm
+ * @author Dim Grits
  * @author HalanTul
  * @author Kaganer
  * @author Kalan
@@ -20708,7 +20710,7 @@ $messages['ru'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Объединение учётных]] записей в вики-проектах {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Объединяет несколько учётных записей]] в единую учётную запись участника (Single User Login)',
 	'centralauth-merge-denied' => 'Извините, у вас недостаточно прав для доступа к этой странице.',
-	'centralauth-merge-notlogged' => 'Пожалуйста, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} представьтесь системе]</span>, чтобы проверить были ли ваши учётные записи полностью объединены.',
+	'centralauth-merge-notlogged' => 'Пожалуйста, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} представьтесь системе]</span>, чтобы проверить были ли ваши учётные записи полностью объединены.',
 	'centralauth-merge-welcome' => "'''Ваша учётная запись ещё не переведена на единую систему авторизации проектов {{MediaWiki:Centralauth-groupname}}.'''
 
 Если вы решите перенести свои учётные записи, вы сможете использовать одни и те же имя участника и пароль для входа во все проекты {{MediaWiki:Centralauth-groupname}} во всех языковых разделах.
@@ -20863,6 +20865,7 @@ $messages['ru'] = array(
 	'globalusers' => 'Глобальный список участников',
 	'centralauth-listusers-locked' => 'заморозить',
 	'centralauth-listusers-attached' => '[[User:$1|существует локально]]',
+	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'неприсоединённый или не существует локально',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
@@ -20977,6 +20980,7 @@ $messages['ru'] = array(
 	'centralauth-editset-badtype' => 'Недопустимый тип набора.',
 	'centralauth-editset-setexists' => 'Набор с таким названием уже существует',
 	'centralauth-editset-nowikis' => 'Не указаны вики.',
+	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(нет)',
 	'centralauth-editset-usage' => 'Используется для групп:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|Следующей вики|Следующих вики}} не существует: $1.',
@@ -21000,7 +21004,7 @@ $messages['rue'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Зъєдночіня конт]] на єднотливых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Зъєдночіня конт]] про єднотне приголошованя',
 	'centralauth-merge-denied' => 'На тоту сторінку не маєте приступ.',
-	'centralauth-merge-notlogged' => 'Кідь ся <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} приголосите]</span>, будете мочі овірити, ці вашы конта были злучены.',
+	'centralauth-merge-notlogged' => 'Просиме, кідь ся <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} приголосите]</span>, будете мочі овірити, ці вашы конта были злучены.',
 	'centralauth-merge-welcome' => "'''Ваше хосновательске конто не было дотеперь переведене на єднотну сістему приголошіня проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}}.'''
 
 Кідь зволите перевести свої конта, будете мочі хосновати тото саме імя хоснователя і гесло про приголошіня до вшыткых проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}} на вшыткых доступных языках.
@@ -23690,6 +23694,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Ainali
  * @author Boivie
  * @author Dafer45
+ * @author Diupwijk
  * @author Lejonel
  * @author Leo Johannes
  * @author M.M.S.
@@ -23706,7 +23711,7 @@ $messages['sv'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Sammanfogar användarkonton]] på wikier som tillhör {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sammanfogar flera konton]] för gemensam inloggning',
 	'centralauth-merge-denied' => 'Du har tyvärr inte åtkomstsbehörighet till denna sida.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}}}}} Logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} Logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
 	'centralauth-merge-welcome' => "'''Ditt användarkonto har ännu inte flyttats över till det gemensamma inloggningssystemet för {{MediaWiki:Centralauth-groupname}}.'''
 
 Om du väljer att slå samman dina konton, så kommer du att kunna använda samma användarnamn och lösenord för att logga in på alla wikier som tillhör {{MediaWiki:Centralauth-groupname}} i alla tillgängliga språk.
@@ -25973,6 +25978,7 @@ $messages['uk'] = array(
 	'globalusers' => 'Список глобальних облікових записів',
 	'centralauth-listusers-locked' => 'заблокований',
 	'centralauth-listusers-attached' => '[[User:$1|існує локально]]',
+	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'неприєднаний або не існує локально',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунди|секунд}} тому',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}} тому',
@@ -26447,7 +26453,7 @@ $messages['vi'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Hợp nhất]] tài khoản tại các wiki của {{MediaWiki:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Hợp nhất các tài khoản]] để cho các thành viên chỉ cần đăng nhập một lần',
 	'centralauth-merge-denied' => 'Rất tiếc, bạn không có quyền truy cập vào trang này.',
-	'centralauth-merge-notlogged' => 'Xin hãy <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto=Special:MergeAccount}} đăng nhập]</span> để kiểm tra các tài khoản của bạn được hợp nhất hay không.',
+	'centralauth-merge-notlogged' => 'Xin hãy <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} đăng nhập]</span> để kiểm tra các tài khoản của bạn được hợp nhất hay không.',
 	'centralauth-merge-welcome' => "'''Tài khoản của bạn chưa được đổi qua hệ thống tài khoản hợp nhất của {{MediaWiki:Centralauth-groupname}}.'''
 
 Nếu bạn chọn hợp nhất tài khoản, bạn sẽ có thể sử dụng cùng tên hiệu và mật khẩu để đăng nhập vào tất cả các wiki của {{MediaWiki:Centralauth-groupname}} theo các ngôn ngữ hiện có.
@@ -27571,9 +27577,7 @@ $messages['zh-hant'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|整合]]{{MediaWiki:Centralauth-groupname}}的帳號',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|將多個帳號合併]]為單一使用者帳號',
 	'centralauth-merge-denied' => '很抱歉，您沒有權限存取這個頁面',
-	'centralauth-merge-notlogged' => '請<span class="plainlinks">
-		[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}}登入]
-		</span>以驗證您的帳號是否已經完成整合。',
+	'centralauth-merge-notlogged' => '請<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}}登入]</span>以驗證您的戶口是否已經完成整合。',
 	'centralauth-merge-welcome' => "'''您的使用者帳號尚未被遷移到{{MediaWiki:Centralauth-groupname}}的整合登錄系統。'''
 
 一旦您選擇遷移您的帳戶，您便可以透過相同的用戶名稱和密碼登錄到{{MediaWiki:Centralauth-groupname}}的所有wiki的所有語言版本。
