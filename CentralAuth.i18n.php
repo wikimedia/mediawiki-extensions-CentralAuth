@@ -2659,7 +2659,7 @@ $messages['be-tarask'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Аб'яднаньне рахункаў]] у праектах {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў удзельнікаў]] у адзін унівэрсальны",
 	'centralauth-merge-denied' => 'Прабачце, але Вы ня маеце правоў для доступу да гэтай старонкі.',
-	'centralauth-merge-notlogged' => 'Калі ласка, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} увайдзіце ў сыстэму]</span>, каб упэўніцца, што Вашыя рахункі поўнасьцю аб\'яднаныя.',
+	'centralauth-merge-notlogged' => 'Калі ласка, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} увайдзіце ў сыстэму]</span>, каб упэўніцца, што Вашыя рахункі поўнасьцю аб’яднаныя.',
 	'centralauth-merge-welcome' => "'''Ваш рахунак пакуль ня быў пераведзены на адзіную сыстэму аўтарызацыі праектаў {{MediaWiki:Centralauth-groupname}}.'''
 
 Калі Вы вырашыце перанесьці Вашыя рахункі, Вы зможаце выкарыстоўваць адно імя ўдзельніка і пароль, каб уваходзіць ва ўсе вікі {{MediaWiki:Centralauth-groupname}} ва ўсіх моўных разьдзелах.
@@ -7141,7 +7141,7 @@ $messages['et'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Ühendab kontod]] vikides, mida haldab {{MediaWiki:Centralauth-groupname}}.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Ühendab kontod]] ühtseks sisselogimiseks.',
 	'centralauth-merge-denied' => 'Vabandust, teil puudub sellele lehele ligipääs.',
-	'centralauth-merge-notlogged' => 'Palun <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} logi sisse]</span>, et näha, kas su kontod on terviklikult ühendatud.',
+	'centralauth-merge-notlogged' => 'Palun <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} logi sisse]</span>, et näha, kas kõik sinu kontod on ühendatud.',
 	'centralauth-merge-welcome' => "'''Sinu kasutajakontot pole veel ühendatud {{MediaWiki:Centralauth-groupname}} ühtse sisselogimissüsteemiga.'''
 
 Kui otsustad oma kontod siduda, saad kõigisse {{MediaWiki:Centralauth-groupname}} vikidesse sama kasutajanime ja parooliga sisse logida.
@@ -20444,7 +20444,7 @@ $messages['roa-tara'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Merge account]] 'mbrà uicchi de {{MediaWiki:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Merges multiple accounts]] pè trasùte singole de utinde',
 	'centralauth-merge-denied' => "Sìme spiacende, ma tu non ge tène 'u permesse de trasè jndr'à stà pàgene.",
-	'centralauth-merge-notlogged' => 'Pe piacere <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} tràse]</span> pe verificà ce le cunde tune onne state scuagghiate cu successe.',
+	'centralauth-merge-notlogged' => 'Pe piacere <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{urlencode:{{#special:MergeAccount}}|WIKI}}}} tràse]</span> pe verificà ce le cunde tune onne state scuagghiate cu successe.',
 	'centralauth-merge-welcome' => "'''<nowiki>'</nowiki>U cunde utende tune non g'ha state migrate jndr'à 'u sisteme de aunificazione de le trasute de {{MediaWiki:Centralauth-groupname}}.'''
 
 Cu tu scacchie de migrà le cunde tune, tu puè essere capace de ausà 'u stesse nome utende e passuord pe trasè jndr'à tutte le uicchi de {{MediaWiki:Centralauth-groupname}} jndr'à tutte le lènghe disponibbele.
