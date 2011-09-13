@@ -48,11 +48,11 @@ $specialPageAliases['arz'] = array(
 
 /** Bulgarian (Български) */
 $specialPageAliases['bg'] = array(
-	'CentralAuth' => array( 'Управление на единните сметки' ),
-	'AutoLogin' => array( 'Автоматично влизане' ),
-	'MergeAccount' => array( 'Обединяване на сметки' ),
-	'GlobalGroupMembership' => array( 'Глобални потребителски права' ),
-	'GlobalUsers' => array( 'Списък на глобалните сметки' ),
+	'CentralAuth' => array( 'Управление_на_единните_сметки' ),
+	'AutoLogin' => array( 'Автоматично_влизане' ),
+	'MergeAccount' => array( 'Обединяване_на_сметки' ),
+	'GlobalGroupMembership' => array( 'Глобални_потребителски_права' ),
+	'GlobalUsers' => array( 'Списък_на_глобалните_сметки' ),
 );
 
 /** Breton (Brezhoneg) */
@@ -267,7 +267,7 @@ $specialPageAliases['hu'] = array(
 	'MergeAccount' => array( 'Szerkesztői_fiókok_egyesítése', 'Felhasználói_fiókok_egyesítése' ),
 	'GlobalGroupMembership' => array( 'Globális_szerkesztői_jogok', 'Globális_felhasználói_jogok' ),
 	'GlobalGroupPermissions' => array( 'Globális_szerkesztői_engedélyek', 'Globális_felhasználói_engedélyek' ),
-	'WikiSets' => array( 'Wikicsoportok_szerkesztése' ),
+	'WikiSets' => array( 'Wikicsoportok', 'Wikicsoportok_szerkesztése' ),
 	'GlobalUsers' => array( 'Globális_szerkesztőlista', 'Globális_felhasználólista', 'Felhasználók_globális_listája' ),
 );
 
@@ -371,6 +371,14 @@ $specialPageAliases['lt'] = array(
 	'MergeAccount' => array( 'Sujungti_sąskaitas' ),
 );
 
+/** Malagasy (Malagasy) */
+$specialPageAliases['mg'] = array(
+	'AutoLogin' => array( 'Fidirana_ho_azy' ),
+	'MergeAccount' => array( 'Hampiray_ny_kaonty' ),
+	'GlobalGroupMembership' => array( 'Fahafahana_amin\'ny_sehatra_rehetra' ),
+	'GlobalGroupPermissions' => array( 'Fahafahan\'ny_vondrona_amin\'ny_sehatra_rehetra' ),
+);
+
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
 	'CentralAuth' => array( 'ЦентралноПотврдување' ),
@@ -427,11 +435,11 @@ $specialPageAliases['myv'] = array(
 
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
-	'CentralAuth' => array( 'Centraal_anmelden' ),
-	'AutoLogin' => array( 'Autematisch_anmelden' ),
+	'CentralAuth' => array( 'Sentraal_anmelden' ),
+	'AutoLogin' => array( 'Automaties_anmelden' ),
 	'MergeAccount' => array( 'Gebruker_samenvoegen' ),
-	'GlobalGroupMembership' => array( 'Globale_gebrukersrechen' ),
-	'GlobalGroupPermissions' => array( 'Globale_groepsrechen' ),
+	'GlobalGroupMembership' => array( 'Globale_gebrukersrechten' ),
+	'GlobalGroupPermissions' => array( 'Globale_groepsrechten' ),
 	'WikiSets' => array( 'Wikigroepen_bewarken' ),
 	'GlobalUsers' => array( 'Globale_gebrukers' ),
 );
@@ -528,7 +536,7 @@ $specialPageAliases['sa'] = array(
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
-/** Serbo-Croatian (Srpskohrvatski / Српскохрватски) */
+/** Serbo-Croatian (Srpskohrvatski) */
 $specialPageAliases['sh'] = array(
 	'CentralAuth' => array( 'Centralna_prijava' ),
 	'AutoLogin' => array( 'Auto_prijava' ),
@@ -598,7 +606,7 @@ $specialPageAliases['tr'] = array(
 	'GlobalUsers' => array( 'KüreselKullanıcılar' ),
 );
 
-/** Татарча (Татарча) */
+/** Tatar (Cyrillic script) (Татарча) */
 $specialPageAliases['tt-cyrl'] = array(
 	'GlobalUsers' => array( 'Глобаль_кулланучылар' ),
 );
@@ -624,7 +632,7 @@ $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
 	'AutoLogin' => array( '自动登录' ),
 	'MergeAccount' => array( '整合账户' ),
-	'GlobalGroupMembership' => array( '全域用户权利', '全域组成员资格' ),
+	'GlobalGroupMembership' => array( '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),
 	'WikiSets' => array( '编辑维基组' ),
 	'GlobalUsers' => array( '全域用户' ),
