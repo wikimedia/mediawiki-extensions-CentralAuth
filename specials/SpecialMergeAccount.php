@@ -28,7 +28,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		global $wgUser, $wgRequest;
+		global $wgRequest;
 		$this->mUserName = $wgUser->getName();
 
 		$this->mAttemptMerge = $wgRequest->wasPosted();
