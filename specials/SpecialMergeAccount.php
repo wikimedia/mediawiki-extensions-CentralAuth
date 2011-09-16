@@ -16,7 +16,9 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( !$wgUser->isLoggedIn() ) {
-			$wgOut->addWikiMsg( 'centralauth-merge-notlogged' );
+			$loginpage = SpecialPage::getTitleFor( 'Userlogin' );
+			$loginurl = $loginpage->getFullUrl( array( 'returnto' => $this->getTitle->getPrefixedText() ) );
+			$wgOut->addWikiMsg( 'centralauth-merge-notlogged', $loginurl );
 			$wgOut->addWikiMsg( 'centralauth-readmore-text' );
 
 			return;
