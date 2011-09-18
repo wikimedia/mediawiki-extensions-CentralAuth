@@ -3479,7 +3479,7 @@ $messages['br'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Kendeuziñ a ra ar c'hontoù implijer]] war wikioù {{int:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Kendeuziñ a ra meur a gont]] evit ur marilhañ unvan',
 	'centralauth-merge-denied' => "Ho tigarez, n'oc'h ket aotreet da vont war ar bajenn-mañ.",
-	'centralauth-merge-notlogged' => 'Trugarez da <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} gevreañ]</span> evit gwiriañ eo bet kendeuzet mat ho kontoù.',
+	'centralauth-merge-notlogged' => 'Trugarez <span class="plainlinks">[$1 da gevreañ]</span> evit gwiriañ eo bet kendeuzet ho kontoù ervat.',
 	'centralauth-merge-welcome' => "'''N'eo ket bet treuzkaset ho kontoù implijer davet reizhiad emlugañ unvan {{int:Centralauth-groupname}} c'hoazh.'''
 
 Ma tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù {{int:Centralauth-groupname}} en holl yezhoù a c'haller kaout.
@@ -3492,7 +3492,7 @@ Keñveriet e vo ho ker-tremen hag ho chomlec'h postel gant re ar c'hontoù dezho
 	'centralauth-merge-step2-title' => 'Lakaat kontoù all',
 	'centralauth-merge-step2-detail' => "Kontoù zo n'eus ket bet gallet stagañ anezho ent emgefre ouzh ar gont pennañ. Ma piaouit ar c'hontoù-se e c'hallit en kadarnaat en ur verkañ ar ger-tremen reizh evito.",
 	'centralauth-merge-step2-submit' => 'Kadarnaat an titouroù',
-	'centralauth-login-global' => "Ma c'hevreañ ouzh raktresoù all {{int:Centralauth-groupname}} ivez",
+	'centralauth-login-global' => "Ma c'hevreañ ouzh wikioù all {{int:Centralauth-groupname}} ivez",
 	'centralauth-merge-dryrun-complete' => "Gallout a reer kendeuziñ an holl gontoù en un doare emgefre !
 
 N'eus bet graet tamm cheñchamant ebet en ho kontoù evit c'hoazh.",
@@ -3660,8 +3660,8 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.",
 	'centralauth-invalid-wiki' => 'Bank-titouroù wiki ebet : $1',
 	'centralauth-account-exists' => 'Dibosupl krouiñ ar gont : er reizhiad kontoù unvanet emañ an anv implijer goulennet dija.',
 	'centralauth-account-exists-reset' => "N'eo ket enrolletan anv implijer $1 er wiki-mañ met emañ er reizhiad kevreañ unvan.",
-	'centralauth-login-progress' => "O kevreañ ac'hanoc'h da raktresoù {{int:Centralauth-groupname}} :",
-	'centralauth-logout-progress' => "O tigevreañ ac'hanoc'h eus raktresoù all eus {{int:Centralauth-groupname}} :",
+	'centralauth-login-progress' => "O kevreañ ac'hanoc'h da wikioù {{int:Centralauth-groupname}} :",
+	'centralauth-logout-progress' => "O tigevreañ ac'hanoc'h diouzh wikioù all eus {{int:Centralauth-groupname}} :",
 	'centralauth-login-no-others' => "Kevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.",
 	'centralauth-logout-no-others' => "Digevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'kuzhet en un doare hollek gant $1 war $2 evit an abeg da-heul : $3',
@@ -18332,11 +18332,18 @@ $messages['or'] = array(
 ଆପଣ ସେସବୁକୁ ନ ମିଳାଇବା ଯାଏଁ କିଛି ବି ବଦଳାଇବେ ନାହିଁ ।',
 	'centralauth-merge-step1-submit' => 'ଲଗଇନ ସୁଚନା ଠିକ ବୋଲି ଜଣାନ୍ତୁ',
 	'centralauth-merge-step2-title' => 'ଆହୁରି ବେଶୀ ଖାତା ଠିକକରିବା',
+	'centralauth-merge-step2-detail' => 'ନିର୍ଦେଶିତ ମୂଳ ଉଇକିସହ କେତେକ ଖାତା ଆପେଆପେ ମେଳ କରାଯାଇପାରିବ ନାହିଁ ।
+ଯଦି ଏହି ଖାତାସବୁ ଆପଣଙ୍କର, ତେବେ ଆପଣା ପାସବାର୍ଡ଼ ଦେଇ ସେଗୁଡ଼ିକ ନିଜର ବୋଲି ଥୟ କରିଦିଅନ୍ତୁ ।',
 	'centralauth-merge-step2-submit' => 'ଲଗଇନ ସୁଚନା ଠିକ ବୋଲି ଜଣାନ୍ତୁ',
 	'centralauth-login-global' => '{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରେ ଲଗଇନ କରାଇବେ',
 	'centralauth-merge-dryrun-complete' => 'ସବୁ ଯାକ ଖାତା ଆପେଆପେ ମିଶାଇଦିଆଯିବ!
 ଆପଣଙ୍କ ଖାତାରେ ଏ ଯାଏଁ କିଛି ବଦଳ କରାଯାଇନାହିଁ ।',
+	'centralauth-merge-dryrun-incomplete' => 'ଆପଣ ଏବେ ଆଗକୁ ବଢ଼ିପାରନ୍ତି, କିନ୍ତୁ କେତେକ ଖାତା ଆପେଆପେ ପରଖାଯାଇପାରିବ ନାହିଁ ଓ ସଙ୍ଗେ ସଙ୍ଗେ ଘୁଞ୍ଚାଯାଇପାରିବ ନାହିଁ ।
+ଆପଣ ଏସବୁ ପରେ ଯୋଡ଼ି ପାରିବେ ନାହିଁ ।
+
+ଆପଣଙ୍କର ଖାତାରେ ଏ ଯାଏଁ କିଛି ବି ବଦଳାଯାଇନାହିଁ ।',
 	'centralauth-merge-dryrun-or' => "'''ବା'''",
+	'centralauth-merge-dryrun-home' => 'ଘୁଞ୍ଚାଇବା ପଦ୍ଧତି ଆପଣଙ୍କ ଇଉଜର ନାମ ପାଇଁ ଆପଣ ମୂଳ ଉଇକି ଖାତାର ମାଲିକ ବୋଲି ଥାୟ କରି ପାରିଲା ନାହିଁ ।',
 	'centralauth-merge-step3-title' => 'ମିଳିତ ଖାତା ଖୋଲନ୍ତୁ',
 	'centralauth-merge-step3-detail' => 'ଆପଣ ଏବେ ମିଳିତ ଖାତା ଖୋଲିପାରିବେ, ଯେଉଁଥିରେ ଏହିସବୁ ଉଇକି ରହିବ:',
 	'centralauth-merge-step3-submit' => 'ଖାତାଗୁଡ଼ିକୁ ମିଳାଇଦେବା',
@@ -18369,9 +18376,16 @@ $messages['or'] = array(
 	'centralauth-merge-method-login' => 'ଲଗଇନ ବେଳେ ତିଆରି କରାଯାଇଛି',
 	'centralauth-merge-method-primary-desc' => 'ଏହା ହେଉଛି ସେହି ଉଇକି ଯେଉଁଥିରେ ଖାତାସବୁ ଆରମ୍ଭରେ ମିଶାଯାଇଥିଲା ।
 ଜାଣିରଖନ୍ତୁ ଯେ ଏହା ସେହି ସଭ୍ୟଙ୍କର ମୂଳ ଉଇକିରୁ ଅଲଗା ।',
+	'centralauth-merge-method-empty-desc' => 'ସ୍ଥାନୀୟ ଖାତାଟିରେ ଗୋଟିଏ ବି ସମ୍ପାଦନା ନଥିବାରୁ ଏହାକୁ ମିଶାଇଦିଆଗଲା ବୋଲି ସୂଚାଉଛି ।',
+	'centralauth-merge-method-mail-desc' => 'ସ୍ଥାନୀୟ ଖାତାଟିର ଇ-ମେଲ ଠିକଣା ମୂଳ ଖାତାର ଇ-ମେଲ ସହିତ ମିଶୁଅଛି ବୋଲି ସୂଚାଉଛି ।',
+	'centralauth-merge-method-password-desc' => 'ସଭ୍ୟ ଏକ ସଠିକ ପାସବାର୍ଡ଼ ଦେଇଥିବାରୁ ସ୍ଥାନୀୟ ଖାତାକୁ ମିଶାଇ ଦିଆଗଲା ବୋଲି ସୂଚାଉଛି ।',
+	'centralauth-merge-method-admin-desc' => 'ସ୍ଥାନୀୟ ଖାତାଟି ଷ୍ଟୁଆର୍ଡ଼ ମାନଙ୍କ ଦେଇ ମିଶାଇଦିଆଗଲା ବୋଲି ସୂଚାଉଛି ।
+ଏହି ସୁବିଧାଟି ଏବେ ସୁର଼କ୍ଷା କାରଣରୁ ଅଚଳ କରାଯାଇଅଛି ।',
+	'centralauth-finish-title' => 'ଯୋଡ଼ାଣ ସାରିବେ',
 	'centralauth-finish-password' => 'ପାସବାର୍ଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
 	'centralauth-finish-send-confirmation' => 'ପାସବାର୍ଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବେ',
+	'centralauth-finish-noconfirms' => 'ଏହି ପାସବାର୍ଡ଼ଟି ବ୍ୟବହାର କରି ଗୋଟିଏ ବି ଖାତା ଥୟ କରାଯାଇ ପାରିବ ନାହିଁ ।',
 	'centralauth-attach-title' => 'ଖାତାଟିକୁ ଥୟ କରିବେ',
 	'centralauth-attach-text' => 'ଏହି ଖାତାଟି ଏ ଯାଏଁ ଏକାକୀକରଣ ହୋଇଥିବା ଖାତାକୁ ଘୁଞ୍ଚାଯାଇ ନାହିଁ ।
 ଯଦି ବିଶ୍ଵ ଖାତାଟି ବି ଆପଣଙ୍କର ତେବେ ଆପଣ ବିଶ୍ଵ ସ୍ତରର ଖାତାର ପାସବାର୍ଡ଼ ଦିଅନ୍ତୁ :',
@@ -18424,7 +18438,7 @@ $messages['or'] = array(
 	'centralauth-token-mismatch' => 'କ୍ଷମା କରିବେ, ଅଧିବେସନ ନଷ୍ଟ ହୋଇଯିବା ହେତୁ ଆମ୍ଭେ ଆପଣଙ୍କର ଫର୍ମ ପଠାଇବାକୁ ଆଗେଇପାରିଲୁ ନାହିଁ ।',
 	'centralauth-admin-reason' => 'କାରଣ:',
 	'centralauth-admin-reason-other' => 'ବାକି/ଅଧିକ କାରଣ:',
-	'centralauth-admin-status' => 'ବିଶ୍ଵ ଖାତାର ସ୍ଥିତି ଥୟ କରିବେ',
+	'centralauth-admin-status' => 'ଜଗତୀକରଣ ଖାତାର  ସ୍ଥିତି ଥୟ କରିବେ',
 	'centralauth-admin-status-intro' => 'ଏହି ବିଶ୍ଵ ଖାତାର ସ୍ଥିତିକୁ ଥୟ କରିବା ନିମନ୍ତେ ଆପଣ ଏହି ଫର୍ମଟି ବ୍ୟବହାର କରିପାରିବେ ।',
 	'centralauth-admin-status-locked' => 'କିଳାଯାଇଅଛି:',
 	'centralauth-admin-status-locked-no' => 'ଖାତାଟି କିଳାଯାଇନାହିଁ',
@@ -18435,7 +18449,7 @@ $messages['or'] = array(
 	'centralauth-admin-status-hidden-oversight' => 'ଖାତାଟି ପୁରାପୁରି ଲୁଚାଇ ଦିଆଗଲା',
 	'centralauth-admin-status-submit' => 'ସ୍ଥିତି ଥୟ କରିବେ ।',
 	'centralauth-admin-status-nonexistent' => 'ଭୁଲ: "<nowiki>$1</nowiki>" ବିଶ୍ଵ ଖାତାଟି ନାହିଁ ।',
-	'centralauth-admin-setstatus-success' => 'ଆପଣ ନିଜର ବିଶ୍ଵ ଖାତାର ସ୍ଥିତି ସଫଳ ଭାବେ ବଦଳାଇ ଦେଲେ ।',
+	'centralauth-admin-setstatus-success' => 'ଆପଣ ନିଜର ଜଗତୀକରଣ ଖାତାର ସ୍ଥିତି ସଫଳ ଭାବେ ବଦଳାଇ ଦେଲେ ।',
 	'centralauth-admin-status-reasons' => '* ସାଧାରଣ କିଳାଯିବା କାରଣସବୁ
 ** କେବଳ ଗଣ୍ଡଗୋଳ ଖାତା
 ** କେବଳ ସ୍ପାମ ଖାତା
@@ -18454,7 +18468,7 @@ $messages['or'] = array(
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|ଦିନ|ଦିନ}} ଆଗରୁ',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|ମାସ|ମାସ}} ଆଗରୁ',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ବର୍ଷ|ବର୍ଷ}} ଆଗରୁ',
-	'centralauth-prefs-status' => 'ବିଶ୍ଵ ଖାତାର ସ୍ଥିତି:',
+	'centralauth-prefs-status' => 'ଜଗତୀକରଣ ଖାତାର ସ୍ଥିତି:',
 	'centralauth-prefs-not-managed' => 'ଏକାକୀକରଣ କରାଯାଇଥିବା ଖାତା',
 	'centralauth-prefs-unattached' => 'ଥୟ କରାଯାଇନଥିବା',
 	'centralauth-prefs-complete' => 'ସବୁ କିଛି ଠିକ ଅଛି !',
@@ -18483,7 +18497,7 @@ $messages['or'] = array(
 	'centralauth-log-entry-hide' => 'ବିଶ୍ଵ ଏକାକୀରଣ କରାଯାଇଥିବା ଖାତା "$1"ଟି ଲୁଚାଇ ଦିଆଗଲା',
 	'centralauth-log-entry-unhide' => 'ବିଶ୍ଵ ଏକାକୀରଣ କରାଯାଇଥିବା ଖାତା "$1" ଦେଖାଗଲା',
 	'centralauth-log-entry-lockandhide' => 'ବିଶ୍ଵ ଏକାକୀରଣ କରାଯାଇଥିବା ଖାତା "$1" କିଳାଯାଇଅଛି ଓ ଲୁଚାଯାଇଅଛି',
-	'centralauth-log-entry-chgstatus' => '"$1" ବିଶ୍ଵ ଏକାକୀକରଣ କରାଯାଇଥିବା ଖାତାର ସ୍ଥିତି ବଦଳାଗଲା: $2 ଗୋଠ ଭିତର କରିବେ; $3 ଗୋଠରୁ ବାହାର କରିବେ',
+	'centralauth-log-entry-chgstatus' => '"$1" ଜଗତୀକରଣ ଖାତାର ସ୍ଥିତି ବଦଳାଗଲା: $2 ଗୋଠ ଭିତର କରିବେ; $3 ଗୋଠରୁ ବାହାର କରିବେ',
 	'centralauth-log-status-locked' => 'କିଳାଯାଇଛି',
 	'centralauth-log-status-hidden' => 'ଲୁଚାଯାଇଛି',
 	'centralauth-log-status-oversighted' => 'ଅଜାଣତରେ ଅଣଦେଖା କରାଯାଇଛି',
@@ -18495,7 +18509,7 @@ $messages['or'] = array(
 $2 ଯୋଡ଼ାଗଲା;
 $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-rightslog-entry-groupperms3' => '$1 ପାଇଁ $2 ରୁ $3କୁ ଗୋଠ ଦେଇ ସୀମାବଦ୍ଧ ଉଇକିକୁ ବଦଳାଇ ଦିଆଗଲା',
-	'centralauth-rightslog-header' => 'ଏହି ଇତିହାସରେ ଏକାକୀକରଣ କରା ବିଶ୍ଵ ଗୋଠର କାମ ଯଥା ସଭ୍ୟ ପଦ ଓ ଅନୁମତି ବଦଳ ରହିଅଛି',
+	'centralauth-rightslog-header' => 'ଏହି ଇତିହାସରେ ଏକାକୀକରଣ କରା ଜଗତୀକରଣ ଗୋଠର କାମ ଯଥା: ସଭ୍ୟ ପଦ ଓ ଅନୁମତି ବଦଳ ରହିଅଛି',
 	'centralauth-rightslog-entry-newset' => '$3 ଉଇକିସମୂହ ପାଇଁ $1ର ସହ $2 ଉଇକି ଗୋଠ ତିଆରି କଲେ',
 	'centralauth-rightslog-entry-setrename' => 'ଉଇକି ଗୋଠ "$2" ର ନାମ "$1" କୁ ବଦଲାଗଲା',
 	'centralauth-rightslog-entry-setnewtype' => '"$1" ର ପ୍ରକାର $2 ରୁ $3କୁ ବଦଳାଗଲା',
@@ -18544,7 +18558,7 @@ $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-editset-intro-ro' => 'ତଳେ ଆଗରୁ ଥିବା ଉଇକି ଗୋଠମାନଙ୍କର ତାଲିକା ଦିଆଗଲା ।',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|ଲିଭାଇବେ]])',
 	'centralauth-editset-new' => 'ଏକ ନୂଆ ଗୋଠ ତିଆରିବେ',
-	'centralauth-editset-notfound' => 'ଉଇକି ଗୋଠ "$1" ମିଳିଲା ନାହିଁ ।',
+	'centralauth-editset-notfound' => '"$1" ଉଇକି ଗୋଠଟି ମିଳିଲା ନାହିଁ ।',
 	'centralauth-editset-optin' => 'ବିକଳ୍ପ ଭିତ୍ତିକ (କେବଳ କିଛି ବଛା ଉଇକି ନିମନ୍ତେ)',
 	'centralauth-editset-optout' => 'ବାହାର ବଛା ଭିତ୍ତିକ (ସୂଚିତ ଉଇକିକୁ ଛାଡ଼ି ବାକି ସବୁ ଉଇକିରେ)',
 	'centralauth-editset-legend-edit' => 'ଉଇକି ଗୋଠ "$1" ବ୍ୟବହାର କରୁଅଛି',
@@ -18688,7 +18702,7 @@ $messages['pfl'] = array(
 $messages['pl'] = array(
 	'mergeaccount' => 'Status tworzenia konta uniwersalnego',
 	'centralauth-groupname' => 'Fundacji Wikimedia',
-	'centralauth-desc' => '[[Special:MergeAccount|Łączy konta]] pomiędzy projektami {{int:Centralauth-groupname}}',
+	'centralauth-desc' => '[[Special:MergeAccount|Scala konta]] pomiędzy projektami {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Łączy różne konta]] w jedno konto uniwersalne',
 	'centralauth-merge-denied' => 'Niestety nie masz uprawnień pozwalających na dostęp do tej strony.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Zaloguj się]</span>, by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.',
@@ -18727,7 +18741,7 @@ Wprowadź hasło właściwe dla Twojej macierzystej wiki.',
 	'centralauth-complete' => 'Tworzenie konta uniwersalnego zakończone!',
 	'centralauth-incomplete' => 'Tworzenie konta uniwersalnego nie zostało ukończone!',
 	'centralauth-complete-text' => 'Możesz teraz zalogować się do każdej wiki należącej do {{int:Centralauth-groupname}} bez potrzeby zakładania nowego konta.',
-	'centralauth-incomplete-text' => 'Kiedy Twoje konto stanie są kontem uniwersalnym, będziesz mógł zalogować się do każdej wiki {{int:Centralauth-groupname}} bez potrzeby zakładania nowego konta.',
+	'centralauth-incomplete-text' => 'Kiedy przekształcisz konto na uniwersalne, będziesz mógł zalogować się do każdej wiki {{int:Centralauth-groupname}} bez potrzeby zakładania nowego konta.',
 	'centralauth-not-owner-text' => 'Nazwa użytkownika „$1” została automatycznie przypisana właścicielowi konta uniwersalnego na $2.
 
 Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego podaj hasło konta na $2:',
@@ -19577,6 +19591,7 @@ $messages['ps'] = array(
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
+ * @author SandroHc
  * @author Sir Lestaty de Lioncourt
  * @author Smeira
  * @author Waldir
@@ -19587,7 +19602,7 @@ $messages['pt'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Página especial]] para fundir contas nas wikis "{{int:Centralauth-groupname}}"',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] para a Autenticação Unificada',
 	'centralauth-merge-denied' => 'Desculpe, não tem permissão para aceder a esta página.',
-	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.',
+	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação unificada das wikis {{int:Centralauth-groupname}}.'''
 
 Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para entrar em todas as wikis da {{int:Centralauth-groupname}} em todas as línguas disponíveis.
