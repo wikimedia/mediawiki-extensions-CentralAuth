@@ -5582,8 +5582,8 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
  */
 $messages['diq'] = array(
 	'mergeaccount' => 'Statuyê cikewtîş ê hemî',
-	'centralauth-groupname' => 'Wekfê Wîkîmedîyayî',
-	'centralauth-desc' => 'Wîkîyê peranî {{int:Centralauth-groupname}} de [[Special:MergeAccount|hesaban yew bike]]',
+	'centralauth-groupname' => 'Weqfê Wikimedya',
+	'centralauth-desc' => '[[Special:MergeAccount|Hesabê pêrabestışi]] sera wikiyê de {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => 'Qe yew cikewtîşê karberî ser [[Special:MergeAccount|hesabanê hemî yew keno]]',
 	'centralauth-merge-denied' => 'Qusirê ma mevîne, ser cikewtîşê ena pele rê desturê ti çini yo.',
 	'centralauth-merge-notlogged' => 'Ma rica keno <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} log in]</span> hesabanê xo kontrol bike ke emin biy hesabanê tu pêran yew biy.',
@@ -5621,7 +5621,7 @@ Belki database de yew ğelet esto.',
 Qe wîkîyê lokalî ma rica keno eyni paraola binuse.',
 	'centralauth-complete' => 'Yew kerdişê cikewtîşî temam biyo!',
 	'centralauth-incomplete' => 'Yew kerdişê cikewtîşî temam nibiyo!',
-	'centralauth-complete-text' => 'Ti hin eşkeno sîteyanê {{int:Centralauth-groupname}}î rê pê yew hesab ra cikewt.',
+	'centralauth-complete-text' => 'Tı, bê vıraştışê hesabey newey, nêşenay pelê da wikiyê {{int:Centralauth-groupname}} kewê.',
 	'centralauth-incomplete-text' => 'Eka cikewtişê tu biy yew, ti hin eşkeno sîteyanê {{int:Centralauth-groupname}}î rê pê yew hesab ra cikewt',
 	'centralauth-not-owner-text' => 'Ena nameyê karber ê "$1"î, hesabê $2î rê otomatik reserve biyo.
 
@@ -17477,7 +17477,7 @@ Ingen endringar vil bli gjort før du har stadfesta at alt ser rett ut.',
 Om desse kontoane tilhøyrer deg, kan du stadfesta dette ved å oppgje passorda til dei.',
 	'centralauth-merge-step2-submit' => 'Stadfest innloggingsinformasjon',
 	'centralauth-login-global' => 'Logg inn på alle prosjekta.',
-	'centralauth-merge-dryrun-complete' => 'Alle kontoane som alt finst kan verta slegne saman automatisk.
+	'centralauth-merge-dryrun-complete' => 'Alle kontoane som alt finst kan automatisk slåast saman.
 
 Ingen endringar er gjorde på kontoane dine enno.',
 	'centralauth-merge-dryrun-incomplete' => 'Du kan halda fram, men nokre kontoar kunne ikkje verta automatisk stadfeste og vil ikkje verta slegne saman enno.
@@ -18343,7 +18343,7 @@ $messages['or'] = array(
 
 ଆପଣଙ୍କର ଖାତାରେ ଏ ଯାଏଁ କିଛି ବି ବଦଳାଯାଇନାହିଁ ।',
 	'centralauth-merge-dryrun-or' => "'''ବା'''",
-	'centralauth-merge-dryrun-home' => 'ଘୁଞ୍ଚାଇବା ପଦ୍ଧତି ଆପଣଙ୍କ ଇଉଜର ନାମ ପାଇଁ ଆପଣ ମୂଳ ଉଇକି ଖାତାର ମାଲିକ ବୋଲି ଥାୟ କରି ପାରିଲା ନାହିଁ ।',
+	'centralauth-merge-dryrun-home' => 'ଘୁଞ୍ଚାଇବା ପଦ୍ଧତି ଆପଣଙ୍କ ଇଉଜର ନାମ ପାଇଁ ଆପଣ ମୂଳ ଉଇକି ଖାତାର ମାଲିକ ବୋଲି ଥୟ କରି ପାରିଲା ନାହିଁ ।',
 	'centralauth-merge-step3-title' => 'ମିଳିତ ଖାତା ଖୋଲନ୍ତୁ',
 	'centralauth-merge-step3-detail' => 'ଆପଣ ଏବେ ମିଳିତ ଖାତା ଖୋଲିପାରିବେ, ଯେଉଁଥିରେ ଏହିସବୁ ଉଇକି ରହିବ:',
 	'centralauth-merge-step3-submit' => 'ଖାତାଗୁଡ଼ିକୁ ମିଳାଇଦେବା',
