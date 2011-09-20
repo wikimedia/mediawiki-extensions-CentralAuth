@@ -18352,6 +18352,7 @@ $messages['or'] = array(
 	'centralauth-complete' => 'ଲଗଇନ ଏକାକିକରଣ ଶେଷ ହେଲା !',
 	'centralauth-incomplete' => 'ଲଗଇନ ଏକାକିକରଣ ଶେଷ ହୋଇପାରିନାହିଁ !',
 	'centralauth-complete-text' => 'ଆପଣ ଏବେ ନୁଆ ଖାତାଟିଏ ନଖୋଲି ବି {{int:Centralauth-groupname}}ର ଯେକ୍ଔଣସି ସାଇଟ ଭିତରକୁ ଯାଇପାରିବେ ।',
+	'centralauth-incomplete-text' => 'ଥରେ ଆପଣଙ୍କ ଲଗ ଇନ ଥୟ ହୋଇଗଲେ ଆପଣ ନୂଆ ଖାତାଟିଏ ତିଆରି ନକରି କୌଣସି {{int:Centralauth-groupname}}ର କୌଣସିଟି ଉଇକିରେ ଲଗ ଇନ କରିପାରିବେ ।',
 	'centralauth-blocked-text' => 'ଆପଣଙ୍କ ମୂଳ ବିକିଟି ଅଟକାଯାଇଛି ।
 ଦୟାକରି କେହି ଜଣେ ପ୍ରଶାସକଙ୍କୁ ଏହାକୁ ଖୋଲିବାକୁ ଅନୁରୋଷ କରନ୍ତୁ ।
 ଏହା ଅଟକାଯାଇଥିବା ସମୟରେ, ଆପଣ ନିଜ ଖାତାକୁ ଏକାକିକରଣ କରିପାରିବେ ନାହିଁ ।',
