@@ -18351,12 +18351,17 @@ $messages['or'] = array(
 	'centralauth-merge-home-password' => 'ଆପଣ ଦେଇଥିବା ପାସବାଡ଼ଟି ମୁଳ ଉଇକିରେ ଥିବା ପାସଉଆଡଠାରୁ ଅଲଗା, ଦୟାକରି ମୁଳ ଉଇକି ପାଇଁ ଠିକ ପାସଉଆଡଟି ଦିଅନ୍ତୁ ।',
 	'centralauth-complete' => 'ଲଗଇନ ଏକାକିକରଣ ଶେଷ ହେଲା !',
 	'centralauth-incomplete' => 'ଲଗଇନ ଏକାକିକରଣ ଶେଷ ହୋଇପାରିନାହିଁ !',
-	'centralauth-complete-text' => 'ଆପଣ ଏବେ ନୁଆ ଖାତାଟିଏ ନଖୋଲି ବି {{int:Centralauth-groupname}}ର ଯେକ୍ଔଣସି ସାଇଟ ଭିତରକୁ ଯାଇପାରିବେ ।',
+	'centralauth-complete-text' => 'ଆପଣ ଏବେ ନୁଆ ଖାତାଟିଏ ନଖୋଲି ବି {{int:Centralauth-groupname}}ର ଯେକୌଣସି ସାଇଟ ଭିତରକୁ ଯାଇପାରିବେ ।',
 	'centralauth-incomplete-text' => 'ଥରେ ଆପଣଙ୍କ ଲଗ ଇନ ଥୟ ହୋଇଗଲେ ଆପଣ ନୂଆ ଖାତାଟିଏ ତିଆରି ନକରି କୌଣସି {{int:Centralauth-groupname}}ର କୌଣସିଟି ଉଇକିରେ ଲଗ ଇନ କରିପାରିବେ ।',
+	'centralauth-not-owner-text' => '"$1" ଇଉଜର ନାମଟି ଆପେଆପେ $2ର ମାଲିକଙ୍କୁ ଦିଆଯାଇଅଛି ।
+
+ଯଦି ସେହି ଜଣକ ଆପଣ ତେବେ ଆପଣ ଏଠାରେ ମୂଳ ପାସବାର୍ଡ଼ଟିକୁ ଦେଇ ଲଗ ଇନ ଏକାକୀକରଣ ପ୍ରକ୍ରିୟାକୁ ସାରିପାରିବେ:',
 	'centralauth-blocked-text' => 'ଆପଣଙ୍କ ମୂଳ ବିକିଟି ଅଟକାଯାଇଛି ।
 ଦୟାକରି କେହି ଜଣେ ପ୍ରଶାସକଙ୍କୁ ଏହାକୁ ଖୋଲିବାକୁ ଅନୁରୋଷ କରନ୍ତୁ ।
 ଏହା ଅଟକାଯାଇଥିବା ସମୟରେ, ଆପଣ ନିଜ ଖାତାକୁ ଏକାକିକରଣ କରିପାରିବେ ନାହିଁ ।',
 	'centralauth-notice-dryrun' => "<div class='successbox'>ଖାଲି ଦେଖିବା ପାଇଁ</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'ଖାତା ଏକାକୀକରଣ ଏବେ କେବଳ ଏକ ଦେଖଣା / ଭୁଲ ସୁଧରା ଅବସ୍ଥାରେ ରହିଅଛି, ତେଣୁ ପ୍ରକୃତ ଏକାକୀକରଣ କାମ ଏବେ ଅଚଳ କରାଯାଇଅଛି ।
+ସେଥି ନିମନ୍ତେ ଆମ୍ଭେ କ୍ଷମା ମାଗୁଅଛୁଁ!',
 	'centralauth-error-locked' => 'ଆପଣଙ୍କ ଖାତାଟି ବନ୍ଦ କରାଯାଇଥିବାରୁ ଆପଣ କିଛି ବଦଳାଇପାରିବେ ନାହିଁ ।',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''ମିଶା ଲଗ ଇନ''' ବାବଦରେ ଅଧିକ ଜାଣନ୍ତୁ]]…''",
 	'centralauth-list-home-title' => 'ମୂଳ ଉଇକି',
@@ -18382,11 +18387,20 @@ $messages['or'] = array(
 	'centralauth-merge-method-password-desc' => 'ସଭ୍ୟ ଏକ ସଠିକ ପାସବାର୍ଡ଼ ଦେଇଥିବାରୁ ସ୍ଥାନୀୟ ଖାତାକୁ ମିଶାଇ ଦିଆଗଲା ବୋଲି ସୂଚାଉଛି ।',
 	'centralauth-merge-method-admin-desc' => 'ସ୍ଥାନୀୟ ଖାତାଟି ଷ୍ଟୁଆର୍ଡ଼ ମାନଙ୍କ ଦେଇ ମିଶାଇଦିଆଗଲା ବୋଲି ସୂଚାଉଛି ।
 ଏହି ସୁବିଧାଟି ଏବେ ସୁର଼କ୍ଷା କାରଣରୁ ଅଚଳ କରାଯାଇଅଛି ।',
+	'centralauth-merge-method-new-desc' => 'ଏହା ସୂଚାଉଅଛି ଯେ ଜଗତ ଖାତାଟି ଆପେଆପେ ସ୍ଥାନୀୟ ଖାତା ତିଆରି ହେବା ପରେ ପରେ ତିଆରି ହୋଇଥିଲା ।',
+	'centralauth-merge-method-login-desc' => 'ଏହା ସୂଚାଉଅଛି ଯେ ସ୍ଥାନୀୟ ଖାତାଟି ଆପେଆପେ ସଭ୍ୟଜଣକ ଲଗ ଇନ କରିବା ବେଳେ ତିଆରି ହୋଇଥିଲା ।',
 	'centralauth-finish-title' => 'ଯୋଡ଼ାଣ ସାରିବେ',
+	'centralauth-finish-text' => 'ଯଦି ଏହି ଖାତାସବୁ ଆପଣଙ୍କର ତେବେ ଆପଣ ଏଠାରେ ବାକି ଖାତାମାନଙ୍କର ପାସବାର୍ଡ଼ ଟାଇପ କରି ଲଗ ଇନ ଏକାକୀକରଣ ପ୍ରକ୍ରିୟାକୁ ସହଜରେ ଶେଷ କରିପାରିବେ:',
 	'centralauth-finish-password' => 'ପାସବାର୍ଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
 	'centralauth-finish-send-confirmation' => 'ପାସବାର୍ଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବେ',
+	'centralauth-finish-problems' => 'ଆପଣ ଅସୁବିଧାରେ ପଡ଼ିଛନ୍ତି କି, ଅବା ଆପଣ ଏହି ସବୁ ଖାତାର ମାଲିକ ନୁହଁନ୍ତି?
+[[meta:Help:Unified login problems|କିପରି ସହଯୋଗ ଲାଭ କରିବେ]]…',
 	'centralauth-finish-noconfirms' => 'ଏହି ପାସବାର୍ଡ଼ଟି ବ୍ୟବହାର କରି ଗୋଟିଏ ବି ଖାତା ଥୟ କରାଯାଇ ପାରିବ ନାହିଁ ।',
+	'centralauth-finish-incomplete' => 'ଏହି ପାସବାର୍ଡ଼ ବ୍ୟବହାର କରି ଅନେକ ଗୁଡ଼ିଏ ଖାତା ଏକ କରାଯାଇଅଛି ।
+ବାକି କିଛି ଖାତା ଆହୁରି ଥୟ ହେବାପାଇଁ ଅଛନ୍ତି ।',
+	'centralauth-merge-attempt' => "'''ଯୋଡ଼ାଯାଇନଥିବା ବାକି ଖାତା ପାଇଁ ପାସବାର୍ଡ଼ ପରଖୁଅଛୁଁ...'''",
+	'centralauth-attach-list-attached' => 'ଯୋଡ଼ାଯାଇଥିବା ଏକ ଖାତା "$1" ଭିତରେ ଏହି ସବୁ ଖାତା ରହିଅଛି:',
 	'centralauth-attach-title' => 'ଖାତାଟିକୁ ଥୟ କରିବେ',
 	'centralauth-attach-text' => 'ଏହି ଖାତାଟି ଏ ଯାଏଁ ଏକାକୀକରଣ ହୋଇଥିବା ଖାତାକୁ ଘୁଞ୍ଚାଯାଇ ନାହିଁ ।
 ଯଦି ବିଶ୍ଵ ଖାତାଟି ବି ଆପଣଙ୍କର ତେବେ ଆପଣ ବିଶ୍ଵ ସ୍ତରର ଖାତାର ପାସବାର୍ଡ଼ ଦିଅନ୍ତୁ :',
@@ -18432,6 +18446,9 @@ $messages['or'] = array(
 	'centralauth-admin-already-unmerged' => '$1କୁ ବାଦ ଦିଆଗଲା, ଆଗରୁ ଯୋଡ଼ାଣରୁ ବାହାର କରାଯାଇଅଛି',
 	'centralauth-admin-unmerge-success' => '$1 ଟି {{PLURAL:$1|ଖାତା|ଖାତା}} ସଫଳଭାବେ ଯୋଡ଼ାଣରୁ ବାହାର କରାଗଲା',
 	'centralauth-admin-delete-title' => 'ଖାତାଟିକୁ ଲିଭାଇଦେବେ',
+	'centralauth-admin-delete-description' => 'ଜଗତ ଖାତାଟି ଲିଭାଇଦେଲେ ଏହା ଆପଣଙ୍କ ଜଗତ ପସନ୍ଦସମୂହକୁ ବି ଲିଭାଇଦେବ, ଯୋଡ଼ାଯାଇଥିବା ସବୁ ସ୍ଥାନୀୟ ଖାତାକୁ ମୁକୁଳାଇ ଜଗତ ନାମଟି ଆଉଜଣେ ସଭ୍ୟଙ୍କ ପାଇଁ ଛାଡ଼ିଦିଅନ୍ତୁ ।
+ସ୍ଥାନୀୟ ଖାତାସବୁ ଆଗପରି କାମ କରିବ ।
+ସ୍ଥାନୀୟ ଖାତାସବୁର ପାସବାର୍ଡ଼ ଯୋଡ଼ାଯିବା ଆଗରୁ ଥିବା ପାସବାର୍ଡ଼କୁ ଫେରିଯିବ ।',
 	'centralauth-admin-delete-button' => 'ଏହି ଖାତାଟିକୁ ଲିଭାଇଦିଅନ୍ତୁ',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" ଙ୍କର ଖାତାଟି ପୁରାପୁରି ଲିଭିଗଲା',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>"ଙ୍କ ପାଇଁ ଗୋଟିଏ ବି ବିଶ୍ଵ ଖାତା ନାହିଁ',
@@ -18519,6 +18536,9 @@ $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-rightslog-set-optin' => 'ବିକଳ୍ପ ଭିତ୍ତିକ',
 	'centralauth-rightslog-set-optout' => 'ବାହାର ବିକଳ୍ପ ଭିତ୍ତିକ',
 	'autologin' => 'ଆପେଆପେ ଲଗଇନ',
+	'centralauth-autologin-desc' => 'ଏଇ ନିଆରା ପୃଷ୍ଠାଟି ମିଡ଼ିଆଉଇକି ଦେଇ ଭିତରେ ବ୍ୟବହାର କରାଯାଉଅଛି ।
+ଯେତେବେଳେ ଆପଣ [[Special:UserLogin|ଲଗ ଇନ]] କରିବେ, କେନ୍ଦ୍ର ଲଗ ଇନ ସଂସ୍ଥା ଆପଣଙ୍କ ଯୋଡ଼ାଯାଇଥିବା ଡୋମେନଙ୍କୁ ବ୍ରାଉଜରକୁ ବାଟ କଢ଼ାଇଥାଏ ।
+ଆପଣ ଏହି ପୃଷ୍ଠାଟି କୌଣସି ଅନୁମୋଦିତ ତଥ୍ୟ ନ ଦେଇ ଅନୁରୋଧ କରିଅଛନ୍ତି, ତେଣୁ ଏହା କିଛି କରିବନାହିଁ ।',
 	'globalgroupmembership' => 'ବିଶ୍ଵଶ୍ରେଣୀର ଗୋଠମାନଙ୍କରେ ସଭ୍ୟପଦ',
 	'globalgrouppermissions' => 'ବିଶ୍ଵ ଗୋଠ ପରିଚାଳନା',
 	'centralauth-globalgroupperms-grouplist' => 'ତଳଲିଖିତ ବିଶ୍ଵ ଗୋଠ ସବୁ ସଂରଚିତ କରାଗଲା ।
@@ -18547,6 +18567,8 @@ $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-editgroup-perms' => 'ଅନୁମତି ଆରୋପିତ କରିବେ:',
 	'centralauth-editgroup-reason' => 'କାରଣ:',
 	'centralauth-editgroup-success' => 'ଗୋଠ ଅନୁମତିମାନ ବଦଳାଗଲା',
+	'centralauth-editgroup-success-text' => 'ଆପଣ ସଫଳ ଭାବେ $1 ଗୋଠ ଲାଗି ଗୋଠର ଅନୁମତି ବଦଳାଇଦେଲେ ।
+[[Special:GlobalGroupPermissions|ଗୋଠ ପରିଚାଳନାକୁ ଲେଉଟିବେ]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ବଦଳ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ସେହି ଉଇକି ଯେଉଁଥିରେ ସେମାନଙ୍କର ଖାତାମାନ ଅଛି :',
 	'centralauth-globalgroupmembership-badknownwiki' => "ବିଶ୍ଵ ଏକୀକରଣ କରାଯାଇଥିବା ସଭ୍ୟ '''$1''' ଆପଣ ଦେଇଥିବା ଉଇକିରେ ସଚଳ ନାହାନ୍ତି ('' $2 '') । 
