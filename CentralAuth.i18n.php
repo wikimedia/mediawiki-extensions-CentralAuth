@@ -7539,25 +7539,26 @@ $messages['ext'] = array(
  * @author Mardetanha
  * @author Mjbmr
  * @author Wayiran
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'mergeaccount' => 'وضعیت یکی کردن حساب‌ها',
 	'centralauth-groupname' => 'بنیاد ویکی‌مدیا',
 	'centralauth-desc' => '[[Special:MergeAccount|یکی کردن]] حساب‌های کاربری در ویکی‌های {{int:Centralauth-groupname}}',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|ادغام چند حساب کاربری]] به منظور یکی کردن حساب‌های کاربری',
-	'centralauth-merge-denied' => 'متاسفیم، شما اختیارات لازم برای دسترسی به این صفحه را ندارید.',
-	'centralauth-merge-notlogged' => 'لطفاً <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} به سامانه وارد شوید]</span> تا از ادغام حساب‌های کاربر‌ی‌تان اطمینان حاصل کنید.',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|ادغام چند حساب کاربری]] برای یکی کردن حساب‌های کاربری',
+	'centralauth-merge-denied' => 'متأسفیم، شما اختیارات لازم برای دسترسی به این صفحه را ندارید.',
+	'centralauth-merge-notlogged' => 'لطفاً <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} وارد سامانه شوید]</span> تا از ادغام حساب‌های کاربر‌ی‌تان اطمینان حاصل کنید.',
 	'centralauth-merge-welcome' => "حساب کاربری شما هنوز به سامانه یکی کردن حساب‌های {{int:Centralauth-groupname}} انتقال داده نشده‌است.'''
 
-اگر شما تصمیم بگیرید که حساب‌های کاربری‌تان را انتقال بدهید، شما قادر خواهید بود که با یک حساب کاربری و کلمه عبور در تمام پروژه‌های {{int:Centralauth-groupname}} به تمام زبان‌ها وارد شوید.
-این عمل باعث آسان‌تر شدن کار با پروژه‌های مشترک نظیر بارگذاری تصاویر در [http://commons.wikimedia.org/ ویکی‌انبار] می‌شود، و مانع از سردرگمی‌هایی می‌شود که از استفادهٔ دو نفر از یک نام کاربری در دو پروژهٔ مختلف ناشی می‌شود.
+اگر می‌خواهید حساب‌های کاربری‌تان را انتقال بدهید قادر خواهید بود با یک حساب کاربری و گذرواژه در تمام پروژه‌های {{int:Centralauth-groupname}} به تمام زبان‌ها وارد شوید.
+این عمل باعث آسان‌تر شدن کار با پروژه‌های مشترک مانند بارگذاری تصاویر در [http://commons.wikimedia.org/ ویکی‌انبار] می‌شود، و مانع از سردرگمی‌هایی می‌شود که از استفادهٔ دو نفر از یک نام کاربری در دو پروژهٔ مختلف ناشی می‌شود.
 
-اگر نام کاربری شما قبلاً در پروژهٔ دیگری توسط شخص دیگری استفاده شده باشد، این کار باعث مزاحمت برای آن‌ها نمی‌شود بلکه به شما این امکان را می‌دهد که بعداً این مشکل را با کمک آن‌ها یا یک مدیر حل کنید.",
+اگر نام کاربری شما قبلاً در پروژهٔ دیگری توسط شخص دیگری استفاده شده باشد، این کار باعث مزاحمت برای آن‌ها نمی‌شود؛ بلکه به شما این امکان را می‌دهد که بعداً این مشکل را با کمک آن‌ها یا یک مدیر حل کنید.",
 	'centralauth-merge-step1-title' => 'آغاز یکی کردن حساب‌های کاربری',
 	'centralauth-merge-step1-detail' => 'کلمه عبور و نشانی پست الکترونیکی ثبت‌شده توسط شما با حساب‌های کاربری دیگر ویکی‌ها مقایسه می‌شود تا از مطابقت آن‌ها اطمینان حاصل گردد. تا زمانی که شما تأیید نکنید که همه چیز درست است، تغییر صورت نمی‌گیرد.',
 	'centralauth-merge-step1-submit' => 'تأیید اطلاعات ورود به سامانه',
 	'centralauth-merge-step2-title' => 'تأیید حساب‌های کاربری بیشتر',
-	'centralauth-merge-step2-detail' => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند، شما می‌توانید این مساله را با وارد کردن کلمه عبور این حساب‌ها تأیید کنید.',
+	'centralauth-merge-step2-detail' => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند می‌توانید این مسئله را با وارد کردن گذرواژهٔ این حساب‌ها تأیید کنید.',
 	'centralauth-merge-step2-submit' => 'تأیید اطلاعات ورود به سامانه',
 	'centralauth-login-global' => 'همچنین مرا به دیگر پروژه‌های {{int:Centralauth-groupname}} وارد کن',
 	'centralauth-merge-dryrun-complete' => 'تمامی حساب‌های کاربری موجود را می‌توان به طور خودکار یکی کرد!
@@ -7576,17 +7577,17 @@ $messages['fa'] = array(
 	'centralauth-merge-step3-submit' => 'یکی کردن حساب‌ها',
 	'centralauth-merge-no-accounts' => 'حساب کاربری با نام شما در جدول پیگیری حساب‌های کاربری مرکزی پیدا نشد!
 احتمالاً پایگاه داده خراب شده‌است.',
-	'centralauth-merge-home-password' => 'ویکی خانه برای این حساب کاربری (هم‌چنان که در پایین فهرست شده) گذرواژه‌ای متفاوت از آن‌چه وارد کردید دارد. لطفاً گذرواژهٔ ویکی خانه را وارد کنید.',
+	'centralauth-merge-home-password' => 'ویکی خانه برای این حساب کاربری (همچنان که در پایین فهرست شده‌است) گذرواژه‌ای متفاوت با آنچه وارد کرده‌اید دارد. لطفاً گذرواژهٔ ویکی خانه را وارد کنید.',
 	'centralauth-complete' => 'یکی کردن حساب‌ها کامل شد!',
 	'centralauth-incomplete' => 'یکی کردن حساب‌ها کامل نشد!',
-	'centralauth-complete-text' => 'اکنون شما می‌توانید در هر یک از ویکی‌های {{int:Centralauth-groupname}} وارد شوید بدون آن که حساب جدیدی بسازید.',
-	'centralauth-incomplete-text' => 'از زمانی که حساب‌های کاربری شما یکی شود، شما قادر خواهید بود در هر یک از ویکی‌های {{int:Centralauth-groupname}} وارد شوید بدون آن که حساب کاربری جدیدی بسازید',
+	'centralauth-complete-text' => 'اکنون می‌توانید در هر یک از ویکی‌های {{int:Centralauth-groupname}} وارد شوید بدون آنکه حساب جدیدی بسازید.',
+	'centralauth-incomplete-text' => 'وقتی حساب‌های کاربری‌تان یکی شود خواهید توانست در هر یک از ویکی‌های {{int:Centralauth-groupname}} وارد شوید بدون آنکه حساب کاربری جدیدی بسازید',
 	'centralauth-not-owner-text' => 'حساب کاربری «$1» به طور خودکار به صاحب حساب کاربری در $2 اختصاص داده شد.
 
 اگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در اینجا به پایان برسانید:',
 	'centralauth-blocked-text' => 'دسترسی ویرایش در ویکی خانهٔ شما (که در زیر فهرست شده‌است) بسته است. لطفاً با یکی از مدیران تماس بگیرید تا آن را باز کند. تا زمانی که این دسترسی بسته باشد نمی‌توانید حساب‌های کاربری‌تان را یکی کنید.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'سامانه یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست. متاسفیم!',
+	'centralauth-disabled-dryrun' => 'متأسفیم! سامانهٔ یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست.',
 	'centralauth-error-locked' => 'شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اطلاعات بیشتر دربارهٔ '''حساب کاربری مشترک''']]...''",
 	'centralauth-list-home-title' => 'ویکی اصلی',
@@ -14634,7 +14635,7 @@ $messages['li'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Samegeveugde gebroekers]] binne Wikimedia Foundation wiki's",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Meerdere gebroekers samevoege]] veur Single User Login',
 	'centralauth-merge-denied' => 'Sorry, doe höbs gein rech om dees pagina te betrachte.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld dich aan]</span> óm te controlere of dien gebroekersaccounts al-oet zeen samegevoog.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1  Melj dich aan]</span> om te controlere of dien gebroekers gans zeen samegeveug.',
 	'centralauth-merge-welcome' => "'''Dien gebroekersaccount is nog neet gemigreerd nao 't samegevoog aanmeldsysteem van {{int:Centralauth-groupname}}.'''
 
 Es te d'rveur keus óm dien gebroekersaccounts te migrere, den kèns te dich mit dezelfde gebroekersnaam-wachwaordcombinatie aanmelje bie alle projekte van {{int:Centralauth-groupname}} in alle besjikbaar täöl.
@@ -14647,7 +14648,7 @@ Dien wachwaord en geregistreerd e-mailadres waere gecontroleerd taenge de gebroe
 	'centralauth-merge-step2-title' => 'Bevestig mieë gebroekers',
 	'centralauth-merge-step2-detail' => "'n Aantal van de gebroekers kóste neet aan de opgegaeve thoeswiki gekoppeldj waere. Es dees gebroekers van uch zeen, kintj geer uch det aangaeve door 't wachwaord veur de gebroekers op te gaeve.",
 	'centralauth-merge-step2-submit' => 'Konférmeer aanmeldinfermasie',
-	'centralauth-login-global' => 'Mel mich wikiwied aan',
+	'centralauth-login-global' => "Mel mich ouch aan bie anger wiki's van {{int:Centralauth-groupname}}",
 	'centralauth-merge-dryrun-complete' => "Alle bestaonde gebroekers linne autematisch samegevoog waere!
 
 D'r zeen nag gein verangeringe aan öche gebroeker gemaak.",
@@ -14696,6 +14697,15 @@ waorsjienlik ómdet \'t wachwaord aafwik van dien primair gebroekersaccount:',
 	'centralauth-merge-method-admin' => 'door admin samegevoog',
 	'centralauth-merge-method-new' => 'nuje gebroeker',
 	'centralauth-merge-method-login' => 'door aanmèlje gemaak',
+	'centralauth-merge-method-primary-desc' => "Dit is de wiki wo de gebroeker van orgine is samegeveug.
+De echte heimwiki vanne gebroeker kin 'nen angere wiki zeen.",
+	'centralauth-merge-method-empty-desc' => "Geuf aan det de lokale gebroeker is samegeveug ómdet t'r gein bewèrkinge haet gemaak.",
+	'centralauth-merge-method-mail-desc' => 'Geuf aan det de lokale gebroeker is samegeveug ómdet de e-mailadresse euverein kome.',
+	'centralauth-merge-method-password-desc' => "Geuf aan det de lokale gebroeker is samegeveug ómdet de gebroeker 'n gèljig wachwaord haet ópgegaeve.",
+	'centralauth-merge-method-admin-desc' => "Geuf aan det de lokale gebroeker handjmaotig is samegeveug door 'ne steward.
+Dees meugelikheid is noe óm veiligheidsredene oetgesjakeldj.",
+	'centralauth-merge-method-new-desc' => 'Geuf aan det de globale gebroeker autematis is aangemaak wie de lokale gebroeker is aangemaak.',
+	'centralauth-merge-method-login-desc' => "Geuf aan det de lokale gebroeker autematis is aangemaak bie 't aanmèlje.",
 	'centralauth-finish-title' => 'Samevoege aafrönje',
 	'centralauth-finish-text' => "Es dees gebroekers bie uch heure kinse 't proces van samevoege aafrönje door de wachwäörd veur de anger gebroekers hiej in te veure:",
 	'centralauth-finish-password' => 'Wachwaord:',
@@ -14773,6 +14783,12 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-admin-status-submit' => 'Zit staat',
 	'centralauth-admin-status-nonexistent' => 'Fówt: de globale gebroeker "<nowiki>$1</nowiki>" besteit neet.',
 	'centralauth-admin-setstatus-success' => 'De höbs good angerd de staat ven dit globaal gebroeker',
+	'centralauth-admin-status-reasons' => '* Väöl veurkómmendje blokkaasjreje
+** vandalis
+** spammer
+* Väöl veurkómmendje blok-en-verbèrgreje
+** óngepasdje gebroekersnaam
+** óngepasdje persuuenlike informatie',
 	'centralauth-admin-logsnippet' => 'Ierder verangeringe aan de wikiwieje gebroeker',
 	'centralauth-admin-suppressreason' => 'Wikiwied óngerdrók dórch $1 mit raeje: $2',
 	'globalusers' => 'Globale gebroekerslies',
@@ -14799,8 +14815,9 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-renameuser-reserved' => 'Gebroeker $2 is gezat veure globaal gebroeker.',
 	'centralauth-invalid-wiki' => 'De wikiDB besteit neet: $1',
 	'centralauth-account-exists' => "Deze gebroeker kan neet aangemaak waere: de gebroekersnaam is al in gebroek in 't systeem veur samegevoog aanmelje.",
-	'centralauth-login-progress' => 'Doe waers aangemeld bie anger projekte van {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Aafmeldjendje ven projekte ven {{int:Centralauth-groupname}}:',
+	'centralauth-account-exists-reset' => 'De gebroekersnaam "$1" is neet geregistreerd bie deze wiki, meh de globale gebroeker besteit waal.',
+	'centralauth-login-progress' => "Doe waers aangemeld bie anger wiki's van {{int:Centralauth-groupname}}:",
+	'centralauth-logout-progress' => "Doe waers aafgemeld bie anger wiki's van {{int:Centralauth-groupname}}:",
 	'centralauth-login-no-others' => 'De bös aangemeldj óp projekte ven {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'De bös aafgemeldj op projekte ven {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'wikiwied verbórge dórch $1 óp $2 mit raeje: $3',
@@ -14868,6 +14885,10 @@ Doe kans de rechte van alle gróppe betrachte en bewirke es doe dao de rechte ve
 	'centralauth-editset' => 'Wikigruup',
 	'centralauth-editset-legend-rw' => "Maak wikigroep aan of bewirk 'm",
 	'centralauth-editset-legend-ro' => 'Wikigruup',
+	'centralauth-editset-intro-rw' => "De vólgendje wikigruup bestaon al.
+Doe kins dees bekieken en verangere, of 'ne nuje groep aanmake.",
+	'centralauth-editset-intro-ro' => 'Dees lies haet bestäöndje wikigruup.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|wis]])',
 	'centralauth-editset-new' => 'Maak nuuje groop aan',
 	'centralauth-editset-notfound' => 'Wikigroop "$1" besteit neet.',
 	'centralauth-editset-optin' => "Opt-ingebaseerdj (bevatj allein aangegaeve wiki's)",
@@ -14875,6 +14896,8 @@ Doe kans de rechte van alle gróppe betrachte en bewirke es doe dao de rechte ve
 	'centralauth-editset-legend-edit' => 'Bewèrkendje wikigroop "$1"',
 	'centralauth-editset-legend-view' => 'Wikigroep "$1"',
 	'centralauth-editset-legend-new' => 'Nuuje wikigroop aanmakendje',
+	'centralauth-editset-legend-delete' => 'Bezig mit \'t wösje vanne wikigroep "$1"',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Lies mit gruup]]',
 	'centralauth-editset-name' => 'Naom:',
 	'centralauth-editset-type' => 'Type:',
 	'centralauth-editset-wikis' => 'Wikis:',
@@ -14889,6 +14912,7 @@ Doe kans de rechte van alle gróppe betrachte en bewirke es doe dao de rechte ve
 	'centralauth-editset-usage' => 'Gebroek in gruup:',
 	'centralauth-editset-badwikis' => "De vólgendje {{PLURAL:$2|wiki besteit|wiki's bestaon}} neet: $1.",
 	'centralauth-editset-success' => 'De wikigroop is verangerdj.',
+	'centralauth-editset-success-delete' => 'De wikigroop is gewösj.',
 	'centralauth-editset-return' => "Trögk nao 't huidmenu",
 	'right-globalgroupmembership' => 'Lidmaotsjap van globaal gróppe bewirke',
 	'right-centralauth-unmerge' => 'Koppel wikiwiej gebroekers los',
@@ -15728,7 +15752,7 @@ $messages['ml'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}} വിക്കികളിലെ [[Special:MergeAccount|അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക]]',
 	'centralauth-mergeaccount-desc' => 'ഒറ്റ ഉപയോക്തൃ ലോഗിനു വേണ്ടി [[Special:MergeAccount|ബഹു അംഗത്വങ്ങളുടെ സം‌യോജനം]] ഉപയോഗിക്കുക',
 	'centralauth-merge-denied' => 'ഈ താൾ പരിശോധിക്കുവാൻ താങ്കൾക്ക് അനുമതിയില്ല.',
-	'centralauth-merge-notlogged' => 'താങ്കളുടെ അംഗത്വങ്ങൾ പൂർണ്ണമായും സം‌യോജിപ്പിച്ചോ എന്നു പരിശോധിക്കാൻ <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} ലോഗിൻ]</span> ചെയ്യുക.',
+	'centralauth-merge-notlogged' => 'താങ്കളുടെ അംഗത്വങ്ങൾ പൂർണ്ണമായും സം‌യോജിപ്പിച്ചോ എന്നു പരിശോധിക്കാൻ ദയവായി <span class="plainlinks">[$1 പ്രവേശിക്കുക]</span>.',
 	'centralauth-merge-welcome' => "'''താങ്കളുടെ അംഗത്വം ഇതു വരെ {{int:Centralauth-groupname}} സം‌യോജിതപ്രവേശന വ്യൂഹത്തിലേക്കു മാറ്റിയിട്ടില്ല.'''
 
 സം‌യോജിതപ്രവേശന വ്യൂഹത്തിലേക്കു താങ്കളുടെ അംഗത്വം മാറ്റിയാൽ എല്ലാ ഭാഷകളിലുമുള്ള {{int:Centralauth-groupname}} വിക്കി സം‌രംഭങ്ങളിൽ പ്രവേശിക്കുവാൻ താങ്കൾക്ക് ഒറ്റ ഉപയോക്തൃനാമവും രഹസ്യവാക്കും ഉപയോഗിക്കാവുന്നതാണ്‌.
