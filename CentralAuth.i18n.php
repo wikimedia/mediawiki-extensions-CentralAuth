@@ -4859,7 +4859,7 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-listusers-locked' => 'ar glo',
 	'centralauth-listusers-attached' => '[[User:$1|ar gael yn lleol]]',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eiliad}} yn ôl',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munud|funud|funud|munud|munud|munud}} yn ôl',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munud|munud|funud|munud|munud|munud}} yn ôl',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|awr}} yn ôl',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|diwrnod|diwrnod|ddiwrnod|diwrnod|diwrnod|diwrnod}} yn ôl',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|mis|mis|fis|mis|mis|mis}} yn ôl',
@@ -5357,7 +5357,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-token-mismatch' => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.',
 	'centralauth-admin-reason' => 'Grund:',
-	'centralauth-admin-reason-other' => 'Anderer/ ergänzender Grund:',
+	'centralauth-admin-reason-other' => 'Anderer/ergänzender Grund:',
 	'centralauth-admin-status' => 'Globalen Kontenstatus ändern',
 	'centralauth-admin-status-intro' => 'Du kannst dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern',
 	'centralauth-admin-status-locked' => 'Gesperrt:',
@@ -18064,6 +18064,7 @@ $messages['nso'] = array(
 );
 
 /** Occitan (Occitan)
+ * @author Boulaur
  * @author Cedric31
  * @author Jfblanc
  */
@@ -18320,6 +18321,7 @@ Los podètz afichar o modificar, o ne crear un autre.',
 	'centralauth-editset-wikis' => 'Wikis :',
 	'centralauth-editset-reason' => 'Motiu :',
 	'centralauth-editset-submit' => 'Sometre',
+	'centralauth-editset-submit-delete' => 'Escafar',
 	'centralauth-editset-badname' => 'Avètz indicat un nom de preferéncia void o incorrècte.',
 	'centralauth-editset-badtype' => 'Avètz indicat un tipe de preferéncia incorrècte.',
 	'centralauth-editset-setexists' => 'Una configuracion amb aqueste nom de preferéncia existís ja',
