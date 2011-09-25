@@ -203,6 +203,8 @@ $wgAvailableRights[] = 'centralauth-lock';
 $wgAvailableRights[] = 'centralauth-oversight';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
+$wgAvailableRights[] = 'centralauth-autoaccount';
+
 $wgGroupPermissions['steward']['centralauth-unmerge'] = true;
 $wgGroupPermissions['steward']['centralauth-lock'] = true;
 $wgGroupPermissions['steward']['centralauth-oversight'] = true;
