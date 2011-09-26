@@ -11263,6 +11263,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'centralauth-editset-success-delete' => 'Gruppo de wikis delite con successo.',
 	'centralauth-editset-return' => 'Retornar al vista principal',
 	'right-globalgroupmembership' => 'Modificar membrato in gruppos global',
+	'right-centralauth-autoaccount' => 'Aperir session automaticamente con un conto global',
 	'right-centralauth-unmerge' => 'Disfusionar conto global',
 	'right-centralauth-lock' => 'Serrar o celar conto global',
 	'right-centralauth-oversight' => 'Supprimer conto global',
@@ -17417,6 +17418,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-success-delete' => 'De wikigroep is verwijderd.',
 	'centralauth-editset-return' => 'Terug naar hoofdmenu',
 	'right-globalgroupmembership' => 'Lidmaatschap van globale groepen bewerken',
+	'right-centralauth-autoaccount' => 'Automatisch aanmelden met een globale gebruiker',
 	'right-centralauth-unmerge' => 'Globale gebruiker loskoppelen',
 	'right-centralauth-lock' => 'Globale gebruiker blokkeren of verbergen',
 	'right-centralauth-oversight' => 'Globale gebruiker onderdrukken',
@@ -17757,6 +17759,7 @@ Merk at gruppa ikkje finst med mindre ho har fått tildelt rettar.',
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Atluxity
  * @author EivindJ
+ * @author Event
  * @author Harald Khan
  * @author Jon Harald Søby
  * @author Laaknor
@@ -17769,7 +17772,7 @@ $messages['no'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Slå sammen kontoer]] på {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Slå sammen flere kontoer]] for ''Single User Login''",
 	'centralauth-merge-denied' => 'Du har ikke tilgang til å bruke denne siden.',
-	'centralauth-merge-notlogged' => 'Vennligst <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto=Special:MergeAccount}} logg inn]</span> for å sjekke om kontoene dine har blitt fullstendig slått sammen.',
+	'centralauth-merge-notlogged' => 'Vennligst <span class="plainlinks">[$1 logg inn]</span> for å kontrollere at dine kontoer har blitt fullstendig sammenslått.',
 	'centralauth-merge-welcome' => "'''Din brukerkonto har ennå ikke gått over til {{int:Centralauth-groupname}}s enhetlige innlogginssystem.'''
 
 Om du velger å flytte kontoene dine kan du bruke samme brukernavn og passord for å logge inn på alle Wikimedias prosjekter på alle språk.
@@ -22789,6 +22792,7 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'centralauth-editset-success-delete' => 'Skupina wikijev je uspešno izbrisana.',
 	'centralauth-editset-return' => 'Vrnitev na glavni pogled',
 	'right-globalgroupmembership' => 'Urejanje članstva v globalnih skupinah',
+	'right-centralauth-autoaccount' => 'Samodejno prijavljanje z globalnim računom',
 	'right-centralauth-unmerge' => 'Razdruževanje globalnih računov',
 	'right-centralauth-lock' => 'Zaklepanje ali skrivanje globalnega računa',
 	'right-centralauth-oversight' => 'Zatiranje globalnih računov',
