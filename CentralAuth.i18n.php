@@ -361,12 +361,13 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-editset-return'                      => 'Return to main view',
 
 	// User rights
-	'right-globalgroupmembership'  => 'Edit membership to global groups',
-	'right-centralauth-unmerge'    => 'Unmerge global account',
-	'right-centralauth-lock'       => 'Lock or hide global account',
-	'right-centralauth-oversight'  => 'Suppress global account',
-	'right-centralauth-merge'      => 'Merge their account',
-	'right-globalgrouppermissions' => 'Manage global groups',
+	'right-globalgroupmembership'   => 'Edit membership to global groups',
+	'right-centralauth-autoaccount' => 'Automatically login with global account',
+	'right-centralauth-unmerge'     => 'Unmerge global account',
+	'right-centralauth-lock'        => 'Lock or hide global account',
+	'right-centralauth-oversight'   => 'Suppress global account',
+	'right-centralauth-merge'       => 'Merge their account',
+	'right-globalgrouppermissions'  => 'Manage global groups',
 );
 
 /** Message documentation (Message documentation)
@@ -517,6 +518,7 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
 	'right-globalgroupmembership' => '{{doc-right}}',
+	'right-centralauth-autoaccount' => '{{doc-right|centralauth-autoaccount}}',
 	'right-centralauth-unmerge' => '{{doc-right|centralauth-unmerge}}',
 	'right-centralauth-lock' => '{{doc-right|centralauth-lock}}',
 	'right-centralauth-oversight' => '{{doc-right|centralauth-oversight}}',

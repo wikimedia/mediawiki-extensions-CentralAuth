@@ -435,14 +435,18 @@ class CentralAuthHooks {
 		// The user can log in via Special:UserLogin to bypass the blacklist and get a proper
 		// error message.
 		$session = CentralAuthUser::getSession();
-		if ( isset( $session['auto-create-blacklist'] ) && in_array( wfWikiID(), (array)$session['auto-create-blacklist'] ) ) {
+		if ( isset( $session['auto-create-blacklist'] )
+			&& in_array( wfWikiID(), (array)$session['auto-create-blacklist'] ) )
+		{
 			wfDebug( __METHOD__ . ": blacklisted by session\n" );
 			return false;
 		}
 
 		// Is the user blocked?
 		$anon = new User;
-		if ( !$anon->isAllowedToCreateAccount() ) {
+		if ( !$anon->isAllowedAny( 'createaccount', 'centralauth-autoaccount' )
+			|| $this->isBlockedFromCreateAccount() )
+		{
 			// Blacklist the user to avoid repeated DB queries subsequently
 			// First load the session again in case it changed while the above DB query was in progress
 			wfDebug( __METHOD__ . ": user is blocked from this wiki, blacklisting\n" );
