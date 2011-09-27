@@ -547,6 +547,16 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
+/** Meänkieli (Meänkieli)
+ * @author Mestos
+ */
+$messages['fit'] = array(
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-merge-denied' => 'Valitan, sulla ei ole oikeus käyttää tätä sivua',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Lokkaa sisäle]</span>, jos haluat tarkistaa, jos sinun käyttäjätunnukset  on täyesti yhistetty.',
+	'centralauth-merge-step1-title' => 'Alota lokkauksen yhistämistä',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -1316,6 +1326,7 @@ $messages['ar'] = array(
  * @author Michaelovic
  */
 $messages['arc'] = array(
+	'mergeaccount' => 'ܐܝܟܢܝܘܬܐ ܕܥܠܠܐ ܡܚܝܕܐ',
 	'centralauth-groupname' => 'ܫܘܬܐܣܐ ܕܘܝܩܝܡܝܕܝܐ',
 	'centralauth-merge-step2-title' => 'ܚܬܬ ܚܘܫܒܢ̈ܐ ܝܬܝܪ',
 	'centralauth-merge-step2-submit' => 'ܚܬܬ ܝܕ̈ܥܬܐ ܕܥܠܠܐ',
@@ -2945,6 +2956,7 @@ $messages['be-tarask'] = array(
 	'centralauth-editset-success-delete' => 'Набор вікі пасьпяхова выдалены.',
 	'centralauth-editset-return' => 'Вярнуцца да галоўнай формы',
 	'right-globalgroupmembership' => 'Рэдагаваньне ўдзелу ў глябальных групах',
+	'right-centralauth-autoaccount' => 'аўтаматычны ўваход у сыстэму праз глябальны рахунак',
 	'right-centralauth-unmerge' => 'разьдзяленьне глябальных рахункаў',
 	'right-centralauth-lock' => 'блякаваньне альбо хаваньне глябальных рахункаў',
 	'right-centralauth-oversight' => 'падаўленьне глябальных рахункаў',
@@ -4740,6 +4752,7 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'centralauth-editset-success-delete' => 'Sada wiki úspěšně smazána.',
 	'centralauth-editset-return' => 'Zpět do hlavního pohledu',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
+	'right-centralauth-autoaccount' => 'Automatické přihlášení globálním účtem',
 	'right-centralauth-unmerge' => 'Rozlučování sloučených globálních účtů',
 	'right-centralauth-lock' => 'Zamykání a skrývání globálních účtů',
 	'right-centralauth-oversight' => 'Utajování globálních účtů',
@@ -5504,6 +5517,7 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 	'centralauth-editset-success-delete' => 'Wikigruppe wurde erfolgreich gelöscht.',
 	'centralauth-editset-return' => 'Zurück zur normalen Ansicht',
 	'right-globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen bearbeiten',
+	'right-centralauth-autoaccount' => 'Automatisch mit dem globalen Benutzerkonto anmelden',
 	'right-centralauth-unmerge' => 'Zusammenführung des globalen Benutzerkontos aufheben',
 	'right-centralauth-lock' => 'Globales Benutzerkonto sperren oder verstecken',
 	'right-centralauth-oversight' => 'Globales Benutzerkonto unterdrücken',
@@ -8141,6 +8155,7 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
  * @author Cedric31
  * @author Crochet.david
  * @author Dodoïste
+ * @author Ebe123
  * @author Grondin
  * @author Guillom
  * @author IAlex
@@ -8162,7 +8177,7 @@ $messages['fr'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusionne un compte utilisateur]] sur les wikis de {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusionne plusieurs comptes]] pour l’identification unique',
 	'centralauth-merge-denied' => 'Désolé, vous ne disposez pas des droits d’accès à cette page.',
-	'centralauth-merge-notlogged' => 'Veuillez <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} vous connecter]</span> pour vérifier si vos comptes ont bien été tous fusionnés.',
+	'centralauth-merge-notlogged' => 'Veuillez <span class="plainlinks">[$1 vous connecter]</span> pour vérifier si vos comptes ont bien été tous fusionnés.',
 	'centralauth-merge-welcome' => "'''Votre compte utilisateur n’a pas encore été transféré vers le système de connexion unique de {{int:Centralauth-groupname}}.'''
 
 Si vous choisissez de migrer vos comptes, vous pourrez utiliser le même nom d’utilisateur et le même mot de passe pour vous connecter sur tous les projets de {{int:Centralauth-groupname}} dans toutes les langues disponibles.
@@ -8446,6 +8461,7 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centralauth-editset-success-delete' => 'Jeu de wikis supprimé avec succès.',
 	'centralauth-editset-return' => 'Revenir à la vue principale',
 	'right-globalgroupmembership' => 'Modifier les appartenances aux groupes globaux',
+	'right-centralauth-autoaccount' => 'Connecter automatiquement avec le compte globale',
 	'right-centralauth-unmerge' => 'Annuler la fusion du compte global',
 	'right-centralauth-lock' => 'Verrouiller ou masquer compte global',
 	'right-centralauth-oversight' => 'Supprimer le compte global',
@@ -12009,6 +12025,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-editset-success-delete' => 'Insieme di wiki cancellato con successo.',
 	'centralauth-editset-return' => 'Torna alla visualizzazione principale',
 	'right-globalgroupmembership' => "Modifica l'appartenenza ai gruppi globali",
+	'right-centralauth-autoaccount' => 'Login automatico con account globale',
 	'right-centralauth-unmerge' => 'Scollega gli account globali',
 	'right-centralauth-lock' => "Blocca o nascondi l'account globale",
 	'right-centralauth-oversight' => "Elimina l'account globale",
@@ -13593,6 +13610,7 @@ $messages['kn'] = array(
  * @author Albamhandae
  * @author Devunt
  * @author Ficell
+ * @author Freebiekr
  * @author Klutzy
  * @author Kwj2772
  * @author PuzzletChung
@@ -13892,6 +13910,7 @@ $messages['ko'] = array(
 	'centralauth-editset-success-delete' => '위키 집합을 성공적으로 삭제하였습니다.',
 	'centralauth-editset-return' => '이전으로 돌아가기',
 	'right-globalgroupmembership' => '사용자의 공통 권한 조정',
+	'right-centralauth-autoaccount' => '통합 계정으로 자동 로그인하기',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
 	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
 	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기',
@@ -14918,6 +14937,7 @@ Doe kins dees bekieken en verangere, of 'ne nuje groep aanmake.",
 	'centralauth-editset-success-delete' => 'De wikigroop is gewösj.',
 	'centralauth-editset-return' => "Trögk nao 't huidmenu",
 	'right-globalgroupmembership' => 'Lidmaotsjap van globaal gróppe bewirke',
+	'right-centralauth-autoaccount' => "Mèld mich autematis aan mit 'ne wikiwieje gebroeker",
 	'right-centralauth-unmerge' => 'Koppel wikiwiej gebroekers los',
 	'right-centralauth-lock' => 'Blok of verberg wikiwieje gebroeker',
 	'right-centralauth-oversight' => 'Óngerdrók wikiwieje gebroeker',
@@ -15736,6 +15756,7 @@ $messages['mk'] = array(
 	'centralauth-editset-success-delete' => 'Збирот од викија е успешно избришан.',
 	'centralauth-editset-return' => 'Назад кон главниот поглед',
 	'right-globalgroupmembership' => 'Менување на членството во глобалните групи',
+	'right-centralauth-autoaccount' => 'Автоматска најава со глобална сметка',
 	'right-centralauth-unmerge' => 'Раздвој глобална сметка',
 	'right-centralauth-lock' => 'Заклучи или скриј глобална сметка',
 	'right-centralauth-oversight' => 'Скриј глобална сметка',
@@ -16653,6 +16674,7 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'centralauth-editset-success-delete' => 'Seti wiki berjaya dihapuskan.',
 	'centralauth-editset-return' => 'Kembali ke pandangan utama',
 	'right-globalgroupmembership' => 'Mengubah keahlian kumpulan sejagat',
+	'right-centralauth-autoaccount' => 'Log masuk secara automatik dengan akaun sejagat',
 	'right-centralauth-unmerge' => 'Menyahgabungkan akaun global',
 	'right-centralauth-lock' => 'Mengunci atau menyorokkan akaun global',
 	'right-centralauth-oversight' => 'Menyekat akaun global',
@@ -18637,6 +18659,7 @@ $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-editset-success-delete' => 'ଉଇକି ଗୋଠଟି ସଫଳଭାବେ ଲିଭାଗଲା ।',
 	'centralauth-editset-return' => 'ମୂଳ ଦେଖଣା ଲେଉଟି ଯାଆନ୍ତୁ',
 	'right-globalgroupmembership' => 'ବିଶ୍ଵଶ୍ରେଣୀର ଗୋଠମାନଙ୍କରେ ସଭ୍ୟପଦ ବଦଳାଇବେ',
+	'right-centralauth-autoaccount' => 'ଜଗତ ଖାତାରୁ ଆପେ ଆପେ ଲଗ ଇନ କରିବେ',
 	'right-centralauth-unmerge' => 'ଯୋଡ଼ି ରହିଥିବା ବିଶ୍ଵ ଖାତାକୁ ଅଲଗା କରିଦେବେ',
 	'right-centralauth-lock' => 'ବିଶ୍ଵ ଖାତାତିକୁ କିଳିବେ ଅବା ଲୁଚାଇବେ',
 	'right-centralauth-oversight' => 'ବିଶ୍ଵ ଖାତାତିକୁ ଚପାଇରଖିବେ',
@@ -19036,6 +19059,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'centralauth-editset-success-delete' => 'Usunięto zbiór wiki.',
 	'centralauth-editset-return' => 'Powrót do głównego widoku',
 	'right-globalgroupmembership' => 'Zmiana przynależności do grup globalnych',
+	'right-centralauth-autoaccount' => 'Automatyczne logowanie na konto uniwersalne',
 	'right-centralauth-unmerge' => 'Rozdzielenie konta uniwersalnego',
 	'right-centralauth-lock' => 'Blokowanie lub ukrywanie konta uniwersalnego',
 	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego',
@@ -26974,6 +26998,7 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'centralauth-editset-success-delete' => 'Đã xóa thành công tập wiki.',
 	'centralauth-editset-return' => 'Trở lại đầu',
 	'right-globalgroupmembership' => 'Sửa thành viên của nhóm toàn cầu',
+	'right-centralauth-autoaccount' => 'Tự động đăng nhập dùng tài khoản toàn hệ thống',
 	'right-centralauth-unmerge' => 'Đã bỏ hợp nhất tài khoản toàn cục',
 	'right-centralauth-lock' => 'Khóa hoặc ẩn tài khoản toàn cục',
 	'right-centralauth-oversight' => 'Cưỡng chế tài khoản toàn cục',
