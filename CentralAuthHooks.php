@@ -101,9 +101,9 @@ class CentralAuthHooks {
 	/**
 	 * Show a nicer error when the user account does not exist on the local wiki, but
 	 * does exist globally
-	 * @param  $users Array
-	 * @param  $data Array
-	 * @param  $abortError String
+	 * @param $users Array
+	 * @param $data Array
+	 * @param $abortError String
 	 * @return bool
 	 */
 	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$abortError ) {
@@ -124,6 +124,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user User
+	 * @param $inject_html string
+	 * @return bool
+	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
 		global $wgCentralAuthCookies, $wgRequest;
 		if ( !$wgCentralAuthCookies ) {
@@ -182,6 +187,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user User
+	 * @param $result
+	 * @return bool
+	 */
 	static function onUserLoadFromSession( $user, &$result ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 		if ( !$wgCentralAuthCookies ) {
@@ -267,6 +277,10 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user User
+	 * @return bool
+	 */
 	static function onUserLogout( &$user ) {
 		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies ) {
@@ -465,17 +479,17 @@ class CentralAuthHooks {
 			return false;
 		}
 
-		// Give other extensions a chance to stop auto creation, but they cannot 
-		// change $userName, because CentralAuth expects user names on all wikis 
-		// are the same. 
+		// Give other extensions a chance to stop auto creation, but they cannot
+		// change $userName, because CentralAuth expects user names on all wikis
+		// are the same.
 		//
-		// * $user (and usually $wgUser) is the half-created User object and 
-		//   should not be accessed in any way since calling any User methods 
+		// * $user (and usually $wgUser) is the half-created User object and
+		//   should not be accessed in any way since calling any User methods
 		//   in its half-initialised state will give incorrect results.
 		//
 		// * $userName is the new user name
 		//
-		// * $anon is an anonymous user object which can be safely used for 
+		// * $anon is an anonymous user object which can be safely used for
 		//   permissions checks.
 		if ( !wfRunHooks( 'CentralAuthAutoCreate', array( $user, $userName, $anon ) ) ) {
 			wfDebug( __METHOD__ . ": denied by other extensions\n" );
