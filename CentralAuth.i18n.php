@@ -6239,7 +6239,7 @@ $messages['el'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Συγχώνευση Λογαριασμών]] σε όλα τα wiki του {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Συγχωνεύει]] πολλαπλούς λογαριασμούς για ενιαία σύνδεση χρηστών',
 	'centralauth-merge-denied' => 'Συγνώμη, δεν έχετε άδεια πρόσβασης σε αυτή τη σελίδα',
-	'centralauth-merge-notlogged' => 'Παρακαλούμε <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} συνδεθείτε]</span> για να ελέγξετε εάν οι λογαριασμοί σας έχουν συγχωνευθεί πλήρως.',
+	'centralauth-merge-notlogged' => 'Παρακαλούμε <span class="plainlinks">[$1 συνδεθείτε]</span> για να ελέγξετε εάν οι λογαριασμοί σας έχουν συγχωνευθεί πλήρως.',
 	'centralauth-merge-welcome' => "'''Ο λογαριασμός χρήστη σας δεν έχει ακόμη μετακινηθεί στο σύστημα ενιαίας σύνδεσης του {{int:Centralauth-groupname}}.'''
 
 Εάν διαλέξετε να μετακινήσετε τους λογαριασμούς σας, θα μπορείτε να χρησιμοποιήσετε το ίδιο όνομα χρήστη και τον ίδιο κωδικό σε όλα τα εγχειρήματα του {{int:Centralauth-groupname}} σε όλες τις διαθέσιμες γλώσσες.
@@ -6375,9 +6375,9 @@ $messages['el'] = array(
 	'centralauth-admin-status-intro' => 'Μπορείς να χρησιμοποιήσεις αυτή τη φόρμα για να αλλάξεις την κατάσταση αυτού του παγκόσμιου λογαριασμού',
 	'centralauth-admin-status-locked' => 'Κλειδωμένο:',
 	'centralauth-admin-status-locked-no' => 'Ο λογαριασμός δεν είναι κλειδωμένος',
-	'centralauth-admin-status-locked-yes' => 'Ο λογαριασμός είναι κλειδωμένος από την επεξεργασία',
+	'centralauth-admin-status-locked-yes' => 'Ο λογαριασμός είναι κλειδωμένος, δεν μπορεί να κάνει επεξεργασίες',
 	'centralauth-admin-status-hidden' => 'Κρυμμένος:',
-	'centralauth-admin-status-hidden-no' => 'Ο λογαριασμός δεν είναι κρυφός',
+	'centralauth-admin-status-hidden-no' => 'Ο λογαριασμός δεν είναι κρυμμένος',
 	'centralauth-admin-status-hidden-list' => 'Ο λογαριασμός είναι κρυμμένος από δημόσιους καταλόγους',
 	'centralauth-admin-status-hidden-oversight' => 'Ο λογαριασμός είναι εντελώς κρυμμένος',
 	'centralauth-admin-status-submit' => 'Ρύθμιση κατάστασης',
@@ -6521,6 +6521,7 @@ $messages['el'] = array(
 	'centralauth-editset-success-delete' => 'Επιτυχής διαγραφή  wiki συνόλου.',
 	'centralauth-editset-return' => 'Επιστροφή στην κύρια όψη',
 	'right-globalgroupmembership' => 'Επεξεργασία ιδιότητας μέλους στις καθολικές ομάδες',
+	'right-centralauth-autoaccount' => 'Αυτόματη σύνδεση με καθολικό λογαριασμό',
 	'right-centralauth-unmerge' => 'Κατάργηση συγχώνευσης καθολικού λογαριασμού',
 	'right-centralauth-lock' => 'Κλείδωμα ή απόκρυψη καθολικού λογαριασμού',
 	'right-centralauth-oversight' => 'Φραγή καθολικού λογαριασμού',
@@ -8170,6 +8171,7 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
  * @author Sherbrooke
  * @author Urhixidur
  * @author Verdy p
+ * @author Wyz
  */
 $messages['fr'] = array(
 	'mergeaccount' => 'État de l’unification du compte',
@@ -8177,7 +8179,7 @@ $messages['fr'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusionne un compte utilisateur]] sur les wikis de {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusionne plusieurs comptes]] pour l’identification unique',
 	'centralauth-merge-denied' => 'Désolé, vous ne disposez pas des droits d’accès à cette page.',
-	'centralauth-merge-notlogged' => 'Veuillez <span class="plainlinks">[$1 vous connecter]</span> pour vérifier si vos comptes ont bien été tous fusionnés.',
+	'centralauth-merge-notlogged' => 'Veuillez <span class="plainlinks">[$1 vous connecter]</span> pour vérifier si vos comptes ont été complètement fusionnés.',
 	'centralauth-merge-welcome' => "'''Votre compte utilisateur n’a pas encore été transféré vers le système de connexion unique de {{int:Centralauth-groupname}}.'''
 
 Si vous choisissez de migrer vos comptes, vous pourrez utiliser le même nom d’utilisateur et le même mot de passe pour vous connecter sur tous les projets de {{int:Centralauth-groupname}} dans toutes les langues disponibles.
@@ -8461,7 +8463,7 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centralauth-editset-success-delete' => 'Jeu de wikis supprimé avec succès.',
 	'centralauth-editset-return' => 'Revenir à la vue principale',
 	'right-globalgroupmembership' => 'Modifier les appartenances aux groupes globaux',
-	'right-centralauth-autoaccount' => 'Connecter automatiquement avec le compte globale',
+	'right-centralauth-autoaccount' => 'Connecter automatiquement avec un compte global',
 	'right-centralauth-unmerge' => 'Annuler la fusion du compte global',
 	'right-centralauth-lock' => 'Verrouiller ou masquer compte global',
 	'right-centralauth-oversight' => 'Supprimer le compte global',
@@ -18972,7 +18974,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-log-entry-hide' => 'ukrył konto uniwersalne „$1”',
 	'centralauth-log-entry-unhide' => 'zakończył ukrywanie konta uniwersalnego „$1”',
 	'centralauth-log-entry-lockandhide' => 'zablokował i ukrył konto uniwersalne „$1”',
-	'centralauth-log-entry-chgstatus' => 'zmienił statusu konta uniwersalnego „$1“ – ustawił $2, usunął ustawienie $3',
+	'centralauth-log-entry-chgstatus' => 'zmienił status konta uniwersalnego „$1“ – ustawił $2, usunął ustawienie $3',
 	'centralauth-log-status-locked' => 'zablokowane',
 	'centralauth-log-status-hidden' => 'ukryte',
 	'centralauth-log-status-oversighted' => 'zrewidowane',
