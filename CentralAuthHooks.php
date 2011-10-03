@@ -334,7 +334,8 @@ class CentralAuthHooks {
 			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
 
 			$wiki = WikiMap::getWiki( $wiki );
-			$url = $wiki->getUrl( 'Special:AutoLogin' );
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = $wiki->getFullUrl( 'Special:AutoLogin' );
 
 			if ( strpos( $url, '?' ) > 0 ) {
 				$url .= "&logout=1&token=$loginToken";
