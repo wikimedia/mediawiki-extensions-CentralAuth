@@ -168,7 +168,8 @@ class CentralAuthHooks {
 			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
 
 			$wiki = WikiMap::getWiki( $wiki );
-			$url = wfAppendQuery( $wiki->getUrl( 'Special:AutoLogin' ), "token=$loginToken" );
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:AutoLogin' ), "token=$loginToken" );
 
 			$inject_html .= Xml::element( 'img',
 				array(
