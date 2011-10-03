@@ -1609,12 +1609,13 @@ $messages['arz'] = array(
 
 /** Assamese (অসমীয়া)
  * @author Chaipau
+ * @author Psneog
  */
 $messages['as'] = array(
-	'centralauth-finish-password' => 'গুপ্তশব্দ:',
-	'centralauth-finish-login' => 'প্ৰৱেশ',
-	'centralauth-finish-send-confirmation' => 'ই-মেইল গুপ্তশব্দ',
-	'centralauth-admin-info-id' => 'সদস্য চিহ্ন:',
+	'centralauth-finish-password' => 'পাচৱৰ্ড',
+	'centralauth-finish-login' => 'লগ ইন',
+	'centralauth-finish-send-confirmation' => 'ই-মেইলৰ পাচৱৰ্ড',
+	'centralauth-admin-info-id' => 'সদস্যৰ আই ডি',
 );
 
 /** Asturian (Asturianu)
@@ -1702,7 +1703,7 @@ Esta función anguaño tá desactivada por motivos de seguridá.',
 	'centralauth-finish-password' => 'Contraseña:',
 	'centralauth-finish-login' => 'Entrar',
 	'centralauth-finish-send-confirmation' => 'Unviar la clave',
-	'centralauth-finish-problems' => '¿Tienes problemes o nun poseyes estes otres cuentes? [[meta:Help:Unified login problems|Cómo atopar aida]]...',
+	'centralauth-finish-problems' => "¿Tienes problemes, o nun yes el dueñu d'eses otres cuentes? [[meta:Help:Unified login problems|Cómo atopar ayuda]]...",
 	'centralauth-finish-noconfirms' => 'Nun se pudo confirmar nenguna cuenta usando esta clave.',
 	'centralauth-finish-incomplete' => 'Fusionáronse delles cuentes usando esta clave.
 Otres cuentes entá nun tán confirmaes.',
@@ -3778,6 +3779,7 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'centralauth-editset-success-delete' => 'Diverket eo bet ar strobad wikioù ervat.',
 	'centralauth-editset-return' => "Distreiñ d'ar gwel pennañ",
 	'right-globalgroupmembership' => "Kemm perc'hennerez ar strolladoù hollek",
+	'right-centralauth-autoaccount' => 'Kevreañ ent emgefre gant ur gont hollek',
 	'right-centralauth-unmerge' => "Nullañ kendeuzadur ar c'hontoù hollek",
 	'right-centralauth-lock' => 'Prennañ pe kuzhat ar gont hollek',
 	'right-centralauth-oversight' => 'Dilemel ar gont hollek',
@@ -5219,6 +5221,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'centralauth-editset-success-delete' => 'Wikisættet er nu slettet.',
 	'centralauth-editset-return' => 'Tilbage til hovedvisning',
 	'right-globalgroupmembership' => 'Redigere medlemskab i globale grupper',
+	'right-centralauth-autoaccount' => 'Automatisk login med globale konto',
 	'right-centralauth-unmerge' => 'Ophæv fletning af global konto',
 	'right-centralauth-lock' => 'Lås eller skjul global konto',
 	'right-centralauth-oversight' => 'Undertryk global konto',
@@ -8965,7 +8968,7 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-admin-none-selected' => 'Non se seleccionaron contas que modificar.',
 	'centralauth-admin-already-unmerged' => 'Saltando $1, xa está anulada a fusión',
 	'centralauth-admin-unmerge-success' => 'Desfíxose con éxito a fusión {{PLURAL:$1|dunha conta|de $1 contas}}',
-	'centralauth-admin-delete-title' => 'Eliminar unha conta de usuario',
+	'centralauth-admin-delete-title' => 'Borrar a conta',
 	'centralauth-admin-delete-description' => 'Ao eliminar unha conta global bórranse todas as preferencias globais, todas as contas locais que non teñen relación e deixa libre o nome da conta global para que outro usuario a use.
 Todas as contas locais continuarán existindo.
 Os contrasinais das contas locais creados antes da fusión serán revertidos aos valores que tiñan antes da fusión.',
@@ -9122,6 +9125,7 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'centralauth-editset-success-delete' => 'A configuración do wiki borrouse correctamente.',
 	'centralauth-editset-return' => 'Volver á vista principal',
 	'right-globalgroupmembership' => 'Editar os membros dos grupos globais',
+	'right-centralauth-autoaccount' => 'Acceder automaticamente coa conta global',
 	'right-centralauth-unmerge' => 'Anular a fusión dunha conta global',
 	'right-centralauth-lock' => 'Bloquear ou agochar unha conta global',
 	'right-centralauth-oversight' => 'Suprimir unha conta global',
@@ -9814,6 +9818,7 @@ $messages['he'] = array(
 	'centralauth-editset-success-delete' => 'קבוצת אתרי הוויקי נמחקה בהצלחה.',
 	'centralauth-editset-return' => 'חזרה לתצוגה הראשית',
 	'right-globalgroupmembership' => 'עריכת חברות בקבוצות כלליות',
+	'right-centralauth-autoaccount' => 'להיכנס באופן אוטומטי לחשבון הגלובלי',
 	'right-centralauth-unmerge' => 'ביטול המיזוג של חשבון כללי',
 	'right-centralauth-lock' => 'נעילת או הסתרת חשבון כללי',
 	'right-centralauth-oversight' => 'הסתרה מוחלטת של חשבון כללי',
@@ -12630,7 +12635,7 @@ $messages['ka'] = array(
 	'centralauth-merge-step2-title' => 'დამატებითი ანგარიშების დადასტურება',
 	'centralauth-merge-step2-detail' => 'ზოგიერთი ანგარიშის თქვენს მიერ მითითებულ მშობლიურ ვიკი-პროექტთან ავტომატური მიბმა ვერ ხორციელდება. თუ ეს ანგარიშები თქვენ გეკუთვნით, ამის დადასტურება მათი პაროლების შეყვანით შეგიძლიათ.',
 	'centralauth-merge-step2-submit' => 'სისტემაში შესასვლელი ინფორმაციის დადასტურება',
-	'centralauth-login-global' => 'გლობალური შესვლა',
+	'centralauth-login-global' => 'შემიყვანე მე {{int:Centralauth-groupname}} ჯგუფის სხვა ვიკიებშიც',
 	'centralauth-merge-dryrun-complete' => 'ყველა არსებული ანგარიში შეიძლება ავტომატურად გაერთიანდეს!
 
 ჯერ თქვენს ანგარიშებში არანაირი ცვლილება არ განხორციელებულა.',
@@ -14628,6 +14633,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'centralauth-editset-success-delete' => 'Grupp vun de Wikie gouf geläscht.',
 	'centralauth-editset-return' => 'Zréck op déi normal Vue',
 	'right-globalgroupmembership' => 'Zougehéieregkeet zu lokale Gruppen änneren',
+	'right-centralauth-autoaccount' => 'Automatesch mam globale Benotzerkont aloggen.',
 	'right-centralauth-unmerge' => 'Globale Benotzerkont nees trennen',
 	'right-centralauth-lock' => 'Globale Benotzerkont spären oder verstoppen',
 	'right-centralauth-oversight' => 'Globale Benotzerkont suppriméieren',
@@ -16067,6 +16073,7 @@ $3 നീക്കംചെയ്തു',
 	'centralauth-editset-success-delete' => 'വിക്കി ഗണം വിജയകരമായി മായ്ച്ചിരിക്കുന്നു.',
 	'centralauth-editset-return' => 'പ്രധാന ദൃശ്യത്തിലേയ്ക്ക് തിരിച്ചുപോവുക',
 	'right-globalgroupmembership' => 'ആഗോള സംഘങ്ങളിലുള്ള അംഗത്വം തിരുത്തുക',
+	'right-centralauth-autoaccount' => 'സ്വയം ആഗോളാംഗത്വമുപയോഗിച്ച് ലോഗിൻ ചെയ്യുക',
 	'right-centralauth-unmerge' => 'ആഗോള അംഗത്വ സംയോജനം നീക്കുക',
 	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക',
 	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക',
@@ -18068,6 +18075,7 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 	'centralauth-editset-success-delete' => 'Slettet wikisett.',
 	'centralauth-editset-return' => 'Tilbake til hovedvisning',
 	'right-globalgroupmembership' => 'Rediger medlemskap i globale grupper',
+	'right-centralauth-autoaccount' => 'Automatisk innlogging med globalkonto',
 	'right-centralauth-unmerge' => 'Flett opp global konto',
 	'right-centralauth-lock' => 'Lås eller skjul global konto',
 	'right-centralauth-oversight' => 'Undertrykk global konto',
@@ -19381,7 +19389,12 @@ $messages['pnb'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Merge account]] across wikis of {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|کئی ورتن ناواں نوں کول]] دیو تے اکو ورتن ناں توں اندر آیا کرو',
 	'centralauth-merge-denied' => 'معاف کرنا، تھوانوں ایس صفے تک جان دی اجازت نیں۔',
-	'centralauth-merge-notlogged' => 'Please <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} log in]</span> to check if your accounts have been fully merged.',
+	'centralauth-merge-notlogged' => 'مہربانی کرکے <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} لاگان ہوو]</span> اے ویکھن لئی جے تواڈا کھاتہ رلیا.',
+	'centralauth-merge-welcome' => "'''تواڈے ورتن کھاتے نوں کٹھے لاکان پربندھ{{int:Centralauth-groupname}} چ ہلے نئیں پیجیا گیا.'''
+
+اکر تسیں اپنے کھاتے نوں لجان ول اندے او, تسیں اوسے ورتن ناں تے کنجی نوں ورت سکدے او سارے وکیاں چ لاگان ہون لئی  {{int:Centralauth-groupname}} .
+
+اگر کوئی تواڈا ورتن ناں کسے ہور سائیٹ تے اے تے ایہ اوناں نوں تنگ نئیں کریگا، پر ایہ توانوں موقعہ دیگا  جے تسیں اوناں نال اے طے کرو یا کسے مکھۓ نال مگروں.",
 	'centralauth-merge-step1-title' => 'لاگان کٹھا کرنا شروع کرو',
 	'centralauth-merge-step1-detail' => 'اپنے ورتن ناں دی کنجی لکھو۔
 تواڈی کنجی تے دتی گئی ای میل نوں دوجے وکیاں دے نال چیک کیتا جاۓ گا تا کے پتہ لگے کے اوہ اکو نیں۔
@@ -19395,7 +19408,11 @@ $messages['pnb'] = array(
 	'centralauth-merge-dryrun-complete' => 'تمام دوجے کھاتے آپنے آپ رلاۓ جا سکدے نیں!
 
 ہلے تک تواڈے کھاتے تے کوئی تبدیلی نئیں کیتی گئی۔',
+	'centralauth-merge-dryrun-incomplete' => 'تواڈے کم نوں چلن دتا جاریا اے پر کج کھاتے اپنے آپ پکے نئیں کیتے جاسکدے تے اوناں نوں اوسے ویلے لجایا وی نئیں جاسکدا۔ تسیں اوناں نوں فیر رلا سکدے او۔
+تواڈے کھاتے چ ہجے وی تبدیلیاں نئیں کیتایاں گیاں۔',
 	'centralauth-merge-dryrun-or' => "'''یا'''",
+	'centralauth-merge-dryrun-home' => 'لجان پربندھ اے گل پکی نئیں دسدا جے جے تسیں کعریلو وکی کھاتے دے  اپنے ورتن ناں لئی مالک او۔
+اک ہور وکی تے وی تواڈے کعریلو کھاتے دی گل سی؛ تھلے دتے گۓ جوڑ تے چلو تے اوتھے لاگان ہوو اپنے کھاتے دے اوتھے لجان دے کم نوں مکان تے۔',
 	'centralauth-merge-step3-title' => 'رلیا ہویا کھاتا بناؤ',
 	'centralauth-merge-step3-detail' => 'تسی ایناں وکیاں دے کھاتیاں نوں رلا کے اکو کھاتا بنان لگے او:',
 	'centralauth-merge-step3-submit' => 'اکاؤنٹ کٹھے کرو',
@@ -19410,16 +19427,28 @@ $messages['pnb'] = array(
 	'centralauth-not-owner-text' => 'اے کھاتا "$1" اس کھاتے "$2" دے مالک  نوں اپنے آپ دے دتا گیا سی۔
 
 اگر اے تواڈا کھاتا اے تے تسی اینوں رلان آلے کم نوں اس کھاتے دی ماسٹر کنجی دے کے مکمل کر سکدے او:',
+	'centralauth-blocked-text' => 'تواڈا کعریلو وکی (تھلے دسیا گیا) تبدیلی توں روک دتا گیا اے۔
+مہربانی کرکے کسی مکیۓ نال ملو ایس وکی تے تالا کھولن لئی۔
+جدوں تک ایدے تے تالا اے تسیں  اپنا کھاتہ نئیں رلا سکدے۔',
+	'centralauth-notice-dryrun' => "<div class='successbox'>صرف ڈیمو موڈ</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'کھاتہ رلانا ایس ویلے ڈیمو / ڈیبگنگ موڈ چ اے، ایس لئی رلان کم نوں روک دتا گیا جے۔',
 	'centralauth-error-locked' => 'تسیں تبدیلی نئیں کرسکدے تھواڈاڈا اکاؤنٹ بند کردتا گیا اے۔',
+	'centralauth-readmore-text' => ":''[[میٹا:مدد:کٹھا لاگان|کٹھا لاگان بارے ہور پڑھو''']]…''",
 	'centralauth-list-home-title' => 'ہوم وکی',
 	'centralauth-list-home-dryrun' => 'ایہ کنجی تے ای-میل پتہ ایس وکی تے چلدے نیں، کٹھے اکاؤنٹ تے وی ورتے جاسکدے نیں۔',
 	'centralauth-list-attached-title' => 'اٹیچڈ اکاؤنٹ',
+	'centralauth-list-attached' => 'کھاتہ ناں "$1" تھلے دتیاں ہر ساغٹ تے اپنے آپ جوڑ دتا گیا اے رلاۓ گۓ کھاتے نال:',
+	'centralauth-list-attached-dryrun' => 'کھاتہ ناں "$1" تھلے دتیاں گیاں ہر سائیٹاں تے اپنے آپ کٹھے کھاتے نال جڑ جاۓ گا۔',
 	'centralauth-list-unattached-title' => 'رلے اکاؤنٹ وکھرے کرو',
+	'centralauth-list-unattached' => 'کھاتہ "$1" اپنے آپ پکا نئیں کیتا جاسکدا جے ایہ تواڈا اے تھلے دتیاں گیاں ساغیٹاں تے؛ زیادہ اے ای ہوسکدا اے جے اوناں کول اک وکھری کنجی ہووے تواڈے پرائمری کھاتے توں:',
+	'centralauth-foreign-link' => 'ورتن والا$1 $2 تے',
 	'centralauth-merge-method-primary' => 'ہوم وکی',
 	'centralauth-merge-method-empty' => 'کوئی حصہ نئیں',
 	'centralauth-merge-method-mail' => 'ای-میل نال کنفرم کرو۔',
 	'centralauth-merge-method-password' => 'کنجی نال کنفرم کرو۔',
+	'centralauth-merge-method-admin' => 'میڈمن-رلایا کھاتہ',
 	'centralauth-merge-method-new' => 'نواں کھاتہ',
+	'centralauth-merge-method-login' => 'لاگان تے بنایا',
 	'centralauth-merge-method-primary-desc' => 'اے اوہ وکی اے جتھے شروع چ کھاتہ رلایا گیا سی۔
 اے گل یاد رکھنا جے ایہ ورتن والے دے اصل وکی کعر توں ہور ووے گا۔',
 	'centralauth-merge-method-empty-desc' => 'دسیا جاندا اے اے جے لوکل کھاتہ رلا دتا گیا  اے ایدے چ کوئي تبدیلیاں نشیں۔',
@@ -19429,10 +19458,16 @@ $messages['pnb'] = array(
 	'centralauth-merge-method-new-desc' => 'اے دسدا اے کے گلوبل کھاتا اس ویلے اپنے آپ ای بن گیا جدوں لوکل کھاتا بنایا گیا۔',
 	'centralauth-merge-method-login-desc' => 'اے دسدا اے کے گلوبل کھاتا اس ویلے اپنے آپ ای بن گیا جدوں ورتن آلا لاگ ان ہویا۔',
 	'centralauth-finish-title' => 'کٹھا کرنا بند کرو۔',
+	'centralauth-finish-text' => 'اگر ایہ کھاتے تواڈے نیں، تسیں لاگان رلن کم اسانی نال کرسکدے او دوجے کھاتیاں دی کنجیاں ایتھے لکھ کے۔',
 	'centralauth-finish-password' => 'کنجی',
 	'centralauth-finish-login' => 'اندر آؤ جی',
 	'centralauth-finish-send-confirmation' => 'ای میل کنجی',
+	'centralauth-finish-problems' => 'توانوں کوئی مسلہ اے یا تسیں ہور ایناں کھاتیاں دے مالک نئیں او؟
+[[میٹا:مدد:کٹھا کرن رپھڑے|مدد کنج لبو]]…',
 	'centralauth-finish-noconfirms' => 'ایس کنجی نال کوئی اکاؤنٹ کنفرم ناں ہووے۔',
+	'centralauth-finish-incomplete' => 'ک‏ی کھاتے ایس کنجی نوں ورتدیاں ہویا  رلاۓ گۓ نیں۔
+دوجے کھاتے ہلے پکے نئیں ہووے۔',
+	'centralauth-merge-attempt' => "'''چیک کرن لئی کنجی ریندے ہووے ناں رلے کھاتیاں لئی۔'''",
 	'centralauth-attach-list-attached' => 'رلے ہوۓ کھاتے "$1" چ اے کھاتے مجود نیں:',
 	'centralauth-attach-title' => 'اکاؤنٹ کنفرم کرو',
 	'centralauth-attach-text' => 'اے کھاتا ہلے تک رلے ہوۓ کھاتے چ نئیں پایا گیا۔
@@ -19501,6 +19536,12 @@ $messages['pnb'] = array(
 	'centralauth-admin-status-submit' => 'سٹیٹس سیٹ کرو',
 	'centralauth-admin-status-nonexistent' => 'مسئلہ: "<nowiki>$1</nowiki>" ناں دا گلوبل کھاتا نئیں اے۔',
 	'centralauth-admin-setstatus-success' => 'تسیں ایس گلوبل اکاؤنٹ دا سٹیٹس تبدیل کرچکے او۔',
+	'centralauth-admin-status-reasons' => '* روک دیاں عام وجہاں
+** صرف خراب کرن والا کھاتہ
+** غلط چیزاں والا کھاتہ
+* عام تالا تے لکان وجہاں
+** گندا ورتن ناں
+** غلط اپنے بارے جانکاری',
 	'centralauth-admin-logsnippet' => 'پہلیاں گلوبل اکاؤنٹ تبدیلیاں',
 	'centralauth-admin-suppressreason' => '$1 نے گلوبلی روکیا ہویا اے اس وجہ توں: $2',
 	'globalusers' => 'گلوبل ورتن لسٹ',
@@ -19527,23 +19568,48 @@ $messages['pnb'] = array(
 اس دا ناں بدلن توں لوکل کھاتا گلوبل کھاتے توں وکھرا ہو جاۓ گا۔',
 	'centralauth-renameuser-reserved' => '$2 ورتن ناں گلوبل کھاتے واسطے بچایا ہویا اے۔',
 	'centralauth-invalid-wiki' => 'انج دا کوئی وکی ڈیٹابیس نئیں: $1',
+	'centralauth-account-exists' => 'کھاتہ نئیں بنا سکدے: منگیا گیا ورتن ناں  پہلے ای کٹھے لاگان پربندھ چ لیا گیا اے۔',
+	'centralauth-account-exists-reset' => 'ورتن نان $1 ایس وکی تے رجسٹر نئیں، پر ایہ کٹھے لاگان پربندھ چ ہیگا اے۔',
+	'centralauth-login-progress' => 'توانوں {{int:Centralauth-groupname}} دیاں وکیاں چ لاگان کیتا جاریا اے:',
+	'centralauth-logout-progress' => 'توانوں {{int:Centralauth-groupname}} دیاں وکیاں چ لاکبار کیتا جاریا اے:',
+	'centralauth-login-no-others' => 'تسیں اپنے آپ ای {{int:Centralauth-groupname}} دے دوجے ویونت چ لاگان ہوگۓ او۔',
+	'centralauth-logout-no-others' => 'تسیں اپنے آپ ای {{int:Centralauth-groupname}} دے دوجے ویونت چوں بار نکل گۓ او۔',
+	'centralauth-hidden-blockreason' => 'پورے جگتوں $1 نے $2 تے ایناں وجہاں توں لکایا گیا:$3',
+	'centralauth-log-name' => 'جگت کھاتہ لاگ',
+	'centralauth-log-header' => 'ایس لاگ چ کم جگت کھاتیاں اندر اندے نیں: مٹالا، تالہ لانا یا کھولنا۔',
 	'centralauth-log-entry-delete' => 'مٹایا گیا گلوبل کھاتا "$1"',
 	'centralauth-log-entry-lock' => 'روکیا گیا گلوبل کھاتا "$1"',
 	'centralauth-log-entry-unlock' => 'ہٹائی گئی روک آلا گلوبل کھاتا "$1"',
 	'centralauth-log-entry-hide' => 'چھپایا گیا گلوبل کھاتا "$1"',
 	'centralauth-log-entry-unhide' => 'سامنے لیایا گیا گلوبل کھاتا "$1"',
 	'centralauth-log-entry-lockandhide' => 'روکیا گیا تے چھپایا گیا گلوبل کھاتا "$1"',
+	'centralauth-log-entry-chgstatus' => 'جگت کھاتے دا بدلیا سٹیٹس "$1": سیٹ $2؛ انسیٹ $3',
 	'centralauth-log-status-locked' => 'تالہ',
 	'centralauth-log-status-hidden' => 'لکیا',
 	'centralauth-log-status-oversighted' => 'چھڈیا گیا',
 	'centralauth-log-status-none' => '(کوئی نئیں)',
 	'centralauth-rightslog-name' => 'گلوبل ح‍قاں دی لاگ',
+	'centralauth-rightslog-entry-usergroups' => '$1 لئی بدلی گلوبل گروپ ممبرشپ $2 توں $3 تک۔',
+	'centralauth-rightslog-entry-groupperms' => 'بدلیاں ٹولی اجازتاں $1 لئی $2 توں $3 تک۔',
+	'centralauth-rightslog-entry-groupperms2' => '$1 لئی ٹولی اجازتاں بدلیاں
+جوڑے $2؛
+ہٹاۓ $3',
+	'centralauth-rightslog-entry-groupperms3' => 'بدلی وکی ٹولی روکاں $1 لئی سیٹ $2 $3 تک۔',
+	'centralauth-rightslog-header' => 'ایس لاگ چ جگت ٹولیاں دے کم نیں: ممبرشپ تے اجازت بدلدی اے۔',
+	'centralauth-rightslog-entry-newset' => '$2 بنایا گیا وکی سیٹ تھلے دتے گۓ وکیاں نال: $3',
+	'centralauth-rightslog-entry-setrename' => 'وکی سیٹ فیر لکھو "$2" توں "$1"',
+	'centralauth-rightslog-entry-setnewtype' => '"$1" دی بدلی ٹائپ $2 توں $3',
+	'centralauth-rightslog-entry-setchange' => '"$1" چ وکی بدلے: کٹھے ہوۓ: $2؛ ہٹاۓ گۓ: $3',
+	'centralauth-rightslog-entry-deleteset' => '"$1" سیٹ نال مٹایا گیا۔',
 	'autologin' => 'اپنے آپ لاگان',
 	'globalgroupmembership' => 'گلوبل ٹولیاں چ سنگت',
 	'globalgrouppermissions' => 'گلوبل ٹولی پربندھ',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[خاص:جگت ٹولی اجازت/$2|وکھالہ/تبدیلی]])',
 	'centralauth-globalgroupperms-nogroups' => 'کوئی گلوبل ٹولی نئیں دسی گئی۔',
 	'centralauth-existinggroup-legend' => 'موجود ٹولیاں',
 	'centralauth-newgroup-legend' => 'اک نویں ٹولی بناؤ',
+	'centralauth-newgroup-intro' => 'تسیں ایس فارم نوں  اک نویںٹولی کم دین لئی ورت سکدے او۔
+اے کل یاد رکھنا اک ٹولی اودوں تک نئیں ہوسکدی جدوں تک اونوں کم ناں دتا جاوے۔',
 	'centralauth-globalgroupperms-newgroupname' => 'نویں ٹولی ناں:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'اجازت دیو',
 	'centralauth-editgroup-subtitle' => 'تسی "$1" لکھ رہے او',
@@ -19574,6 +19640,7 @@ $messages['pnb'] = array(
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|مٹاؤ]])',
 	'centralauth-editset-new' => 'اک نواں سیٹ بناؤ',
 	'centralauth-editset-notfound' => '"$1" وکی سیٹ نئیں لبیا۔',
+	'centralauth-editset-optin' => 'اوپٹ ان بیسڈ (صرف دسے گۓ وکی)',
 	'centralauth-editset-legend-edit' => '"$1" وکی سیٹ لکھ رۓ او',
 	'centralauth-editset-legend-view' => 'وکی سیٹ "$1"',
 	'centralauth-editset-legend-new' => 'نواں وکی سیٹ بنان لگے او',
@@ -19596,6 +19663,7 @@ $messages['pnb'] = array(
 	'centralauth-editset-success-delete' => 'وکی یٹ مٹا دتا گیا۔',
 	'centralauth-editset-return' => 'وڈے وکھالے ول لے چلو',
 	'right-globalgroupmembership' => 'گلوبل گروپاں دی سنگت تبدیل کرو',
+	'right-centralauth-autoaccount' => 'اپنے آپ لاگان ہوو جگت کھاتے نال',
 	'right-centralauth-unmerge' => 'گلوبل کھاتہ وکھرا کرو',
 	'right-centralauth-lock' => 'گلوبل کھاتہ لکاؤ یا تالہ لاؤ',
 	'right-centralauth-oversight' => 'گلوبل کھاتہ دبادیو',
@@ -21260,6 +21328,7 @@ $messages['ru'] = array(
 	'centralauth-editset-success-delete' => 'Набор вики успешно удалён.',
 	'centralauth-editset-return' => 'Вернуться к главному виду',
 	'right-globalgroupmembership' => 'изменение членства в глобальных группах',
+	'right-centralauth-autoaccount' => 'aвтоматический вход с глобальной учётной записи',
 	'right-centralauth-unmerge' => 'разделение глобальных учётных записей',
 	'right-centralauth-lock' => 'блокировки и сокрытие глобальных учётных записей',
 	'right-centralauth-oversight' => 'подавление глобальных учётных записей',
