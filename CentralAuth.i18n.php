@@ -17817,7 +17817,7 @@ Ditt passord og din e-postadresse vil bli sjekket opp mot kontoene på andre wik
 	'centralauth-merge-step2-title' => 'Bekreft flere kontoer',
 	'centralauth-merge-step2-detail' => 'For noen av kontoene var det ikke mulig å automatisk avgjøre om de var den samme som den på hjemmewikien. Om disse kontoene tilhører deg kan du bekrefte at de er dine ved å oppgi kontoenes passord.',
 	'centralauth-merge-step2-submit' => 'Bekreft innloggingsinformasjon',
-	'centralauth-login-global' => 'Logg meg også inn på andre {{int:Centralauth-groupname}}-prosjekter',
+	'centralauth-login-global' => 'Logg meg også inn på andre {{int:Centralauth-groupname}}-wikier',
 	'centralauth-merge-dryrun-complete' => 'Alle eksisterende kontoer kan slås sammen automatisk.
 
 Kontoene dine har ikke blitt endret ennå.',
@@ -17976,8 +17976,8 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-invalid-wiki' => 'Ingen slik database: $1',
 	'centralauth-account-exists' => 'Kan ikke opprette konto. Det angitte brukernavnet er allerede tatt i bruk av en global konto.',
 	'centralauth-account-exists-reset' => 'Brukernavnet $1 er ikke registrert på denne wikien, men det finnes i det globale innloggingssystemet.',
-	'centralauth-login-progress' => 'Logger deg inn på {{int:Centralauth-groupname}}s øvrige prosjekter:',
-	'centralauth-logout-progress' => 'Logger deg ut av {{int:Centralauth-groupname}}s andre prosjekter:',
+	'centralauth-login-progress' => 'Logger deg inn på {{int:Centralauth-groupname}}s øvrige wikier:',
+	'centralauth-logout-progress' => 'Logger deg ut av øvrige wikier under {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Du har blitt automatisk innlogget på andre prosjekter av {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Du har blitt automatisk utlogget av andre prosjekter av {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalt skjult av $1 på $2 med følgende årsak: $3',
@@ -19601,9 +19601,17 @@ $messages['pnb'] = array(
 	'centralauth-rightslog-entry-setnewtype' => '"$1" دی بدلی ٹائپ $2 توں $3',
 	'centralauth-rightslog-entry-setchange' => '"$1" چ وکی بدلے: کٹھے ہوۓ: $2؛ ہٹاۓ گۓ: $3',
 	'centralauth-rightslog-entry-deleteset' => '"$1" سیٹ نال مٹایا گیا۔',
+	'centralauth-rightslog-set-optin' => 'اوپٹ ان بیسڈ',
+	'centralauth-rightslog-set-optout' => 'اوپٹ آؤٹ بیسڈ',
 	'autologin' => 'اپنے آپ لاگان',
+	'centralauth-autologin-desc' => 'ایس خاص صفے نوں میڈیاوکی نے اندر ای ورتیا اے۔
+جدوں تسیں [[خاص:ورتن لاگان|لاگان]] سنٹرل لاگان پربندھ تواڈے براؤزر نوں دسدا اے جے او ایس صفے نوں سارے جڑے ڈومینز، امیج جوڑ ورتدیاں ہویاں۔
+تساں اے صفہ منگیا اے کسے پکے ڈیٹا بنا، ایس لئی ایہ کم نئیں کردا۔',
 	'globalgroupmembership' => 'گلوبل ٹولیاں چ سنگت',
 	'globalgrouppermissions' => 'گلوبل ٹولی پربندھ',
+	'centralauth-globalgroupperms-grouplist' => 'تھلے دتے گۓ جگت جٹاں نوں ویکھ لیا گیا اے۔
+تسیں ویکھ سکدے اوہ یا تبدیلی کسے گروپ نوں ملی ہوئی نوں بدل سکدے اوہ، اگر توانوں اجازت ہووے۔
+کسے گروپ نوں مٹایا وی جاسکدا اے اودے کولوں سارے حق لے کے۔',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[خاص:جگت ٹولی اجازت/$2|وکھالہ/تبدیلی]])',
 	'centralauth-globalgroupperms-nogroups' => 'کوئی گلوبل ٹولی نئیں دسی گئی۔',
 	'centralauth-existinggroup-legend' => 'موجود ٹولیاں',
@@ -19618,7 +19626,7 @@ $messages['pnb'] = array(
 	'centralauth-editgroup-display' => 'ٹولی دا دیسی ناں:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|تبدیلی کرو]])',
 	'centralauth-editgroup-member' => 'ٹولی دے سنگیاں دے دیسی ناں:',
-	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1|تبدیلی کرو]])',
+	'centralauth-editgroup-member-edit' => '$2 ([[میڈیاوکی ٹولی-$1|تبدیلی کرو]])',
 	'centralauth-editgroup-members' => 'سنگی لسٹ:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 حقوق رکھن آلے ورتن آلے]]',
 	'centralauth-editgroup-restrictions' => 'اوہ وکی جتھے اے ٹولی کم کردی اے:',
@@ -19627,6 +19635,8 @@ $messages['pnb'] = array(
 	'centralauth-editgroup-perms' => 'اجازت دیو:',
 	'centralauth-editgroup-reason' => 'وجہ:',
 	'centralauth-editgroup-success' => 'ٹولی اجازت بدل گئی',
+	'centralauth-editgroup-success-text' => 'تساں کامیابی نال $1 ٹولی ۂی ٹولی اجازت بدل دتی اے۔
+[[خاص:گلوبل گروپ پرمشن|گروپ مینیجمنٹ ول واپس]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|تبدیل کرو]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'جیناں وکیاں تے اوناں دا کھاتا اے:',
 	'centralauth-globalgroupmembership-badknownwiki' => "گلوبل کھاتے آلا '''$1''' تواڈے دسے ہوۓ وکی (''$2'') تے مجود نئیں اے۔
@@ -19641,6 +19651,7 @@ $messages['pnb'] = array(
 	'centralauth-editset-new' => 'اک نواں سیٹ بناؤ',
 	'centralauth-editset-notfound' => '"$1" وکی سیٹ نئیں لبیا۔',
 	'centralauth-editset-optin' => 'اوپٹ ان بیسڈ (صرف دسے گۓ وکی)',
+	'centralauth-editset-optout' => 'اوپٹ آؤٹ بیسڈ (سارے وکی سواۓ دسے گۓ دے)',
 	'centralauth-editset-legend-edit' => '"$1" وکی سیٹ لکھ رۓ او',
 	'centralauth-editset-legend-view' => 'وکی سیٹ "$1"',
 	'centralauth-editset-legend-new' => 'نواں وکی سیٹ بنان لگے او',
@@ -27894,6 +27905,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editset-success-delete' => '成功删除这个wiki设置。',
 	'centralauth-editset-return' => '返回主视图',
 	'right-globalgroupmembership' => '编辑成员至全域组',
+	'right-centralauth-autoaccount' => '自动使用全域账户登陆',
 	'right-centralauth-unmerge' => '取消合并全域帐户',
 	'right-centralauth-lock' => '锁定或隐藏全域帐户',
 	'right-centralauth-oversight' => '废止全域帐户',
