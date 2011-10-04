@@ -461,7 +461,7 @@ class CentralAuthHooks {
 		// Is the user blocked?
 		$anon = new User;
 		if ( !$anon->isAllowedAny( 'createaccount', 'centralauth-autoaccount' )
-			|| $this->isBlockedFromCreateAccount() )
+			|| $anon->isBlockedFromCreateAccount() )
 		{
 			// Blacklist the user to avoid repeated DB queries subsequently
 			// First load the session again in case it changed while the above DB query was in progress
