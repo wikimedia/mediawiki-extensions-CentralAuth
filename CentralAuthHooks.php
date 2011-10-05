@@ -10,7 +10,7 @@ class CentralAuthHooks {
 	 * Make sure migration information in localuser table is populated
 	 * on local account creation
 	 */
-	static function onAddNewAccount( $user ) {
+	static function onAddNewAccount( $user, $byEmail ) {
 		$central = CentralAuthUser::getInstance( $user );
 		$central->addLocalName( wfWikiID() );
 		return true;
