@@ -20,6 +20,9 @@ class CentralAuthUser extends AuthPluginUser {
 	/*private*/ var $mVersion = 4;
 	/*private*/ var $mDelayInvalidation = 0;
 
+	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
+	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration;
+
 	static $mCacheVars = array(
 		'mGlobalId',
 		'mSalt',
@@ -83,6 +86,8 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
+	 * @param $row ResourceWrapper|object
+	 * @param $fromMaster bool
 	 * @return CentralAuthUser
 	 */
 	public static function newFromRow( $row, $fromMaster = false ) {
@@ -182,6 +187,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$sets = array();
 		foreach ( $resSets as $row ) {
+			/* @var $row object */
 			$sets[$row->ggr_group] = WikiSet::newFromRow( $row );
 		}
 
@@ -190,6 +196,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$groups = array();
 
 		foreach ( $res as $row ) {
+			/** @var $set User|bool */
 			$set = @$sets[$row->ggp_group];
 			$rights[] = array( 'right' => $row->ggp_permission, 'set' => $set ? $set->getID() : false );
 			$groups[$row->ggp_group] = 1;
@@ -201,6 +208,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Load user state from a joined globaluser/localuser row
+	 *
+	 * @param $row ResourceWrapper|object
+	 * @param $fromMaster bool
 	 */
 	protected function loadFromRow( $row, $fromMaster = false ) {
 		if ( $row ) {
@@ -228,6 +238,10 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Load data from memcached
+	 *
+	 * @param $cache Array
+	 * @param $fromMaster Bool
+	 * @return bool
 	 */
 	protected function loadFromCache( $cache = null, $fromMaster = false ) {
 		wfProfileIn( __METHOD__ );
@@ -254,6 +268,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Load user state from a cached array.
+	 *
+	 * @param $object Array
+	 * @param $fromMaster Bool
 	 */
 	protected function loadFromCacheObject( $object, $fromMaster = false ) {
 		wfDebugLog( 'CentralAuth', "Loading CentralAuthUser for user {$this->mName} from cache object" );
@@ -306,6 +323,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Return the global account ID number for this account, if it exists.
+	 * @return Int
 	 */
 	public function getId() {
 		$this->loadState();
@@ -314,6 +332,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Generate a valid memcached key for caching the object's data.
+	 * @return String
 	 */
 	protected function getCacheKey() {
 		return "centralauth-user-" . md5( $this->mName );
@@ -321,6 +340,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Return the global account's name, whether it exists or not.
+	 * @return String
 	 */
 	public function getName() {
 		return $this->mName;
@@ -435,6 +455,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Register a new, not previously existing, central user account
 	 * Remaining fields are expected to be filled out shortly...
 	 * eeeyuck
+	 *
+	 * @param $password String
+	 * @param $email String
+	 * @param $realname String
+	 * @return bool
 	 */
 	function register( $password, $email, $realname ) {
 		$dbw = self::getCentralDB();
@@ -503,6 +528,11 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Store global user data in the auth server's main table.
+	 *
+	 * @param $salt String
+	 * @param $hash String
+	 * @param $email String
+	 * @param $emailAuth String timestamp
 	 * @return bool Whether we were successful or not.
 	 */
 	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
@@ -591,10 +621,11 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Go through a list of migration data looking for those which
 	 * can be automatically migrated based on the available criteria.
-	 * @param array $migrationSet
-	 * @param string $passwords Optional, pre-authenticated passwords.
-	 *                          Should match an account which is known
-	 *                          to be attached.
+	 *
+	 * @param $migrationSet Array
+	 * @param $passwords Array Optional, pre-authenticated passwords.
+	 *     Should match an account which is known to be attached.
+	 * @return Array of <wiki> => <authentication method>
 	 */
 	function prepareMigration( $migrationSet, $passwords = array() ) {
 		// If the primary account has an e-mail address set,
@@ -655,13 +686,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Do a dry run -- pick a winning master account and try to auto-merge
 	 * as many as possible, but don't perform any actions yet.
 	 *
-	 * @param array $passwords
-	 * @param string &$home set to false if no permission to do checks
-	 * @param array &$attached on success, list of wikis which will be auto-attached
-	 * @param array &$unattached on success, list of wikis which won't be auto-attached
-	 * @param array &$methods on success, associative array of each wiki's attachment method
-	 * @param array &$blocked true if the home wiki is blocked
-	 *
+	 * @param $passwords array
+	 * @param &$home String set to false if no permission to do checks
+	 * @param &$attached Array on success, list of wikis which will be auto-attached
+	 * @param &$unattached Array on success, list of wikis which won't be auto-attached
+	 * @param &$methods Array on success, associative array of each wiki's attachment method	 *
 	 * @return Status object
 	 */
 	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
@@ -718,6 +747,8 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
+	 *
+	 * @param $passwords Array
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
 	protected function attemptAutoMigration( $passwords = array() ) {
@@ -928,6 +959,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Delete a global account
+	 *
+	 * @return Status
 	 */
 	function adminDelete() {
 		global $wgMemc;
@@ -940,6 +973,7 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'lu_name' => $this->mName ), __METHOD__ );
 		$name = $this->getName();
 		foreach ( $localUserRes as $localUserRow ) {
+			/** @var $localUserRow object */
 			$wiki = $localUserRow->lu_wiki;
 			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$lb = wfGetLB( $wiki );
@@ -972,6 +1006,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Lock a global account
+	 *
+	 * @return Status
 	 */
 	function adminLock() {
 		$dbw = self::getCentralDB();
@@ -991,6 +1027,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Unlock a global account
+	 *
+	 * @return Status
 	 */
 	function adminUnlock() {
 		$dbw = self::getCentralDB();
@@ -1010,6 +1048,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Change account hiding level.
+	 *
+	 * @param $level String CentralAuthUser::HIDDEN_ class constant
+	 * @return Status
 	 */
 	function adminSetHidden( $level ) {
 		$dbw = self::getCentralDB();
@@ -1029,6 +1070,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Suppresses all user accounts in all wikis.
+	 * @param $reason String
 	 */
 	function suppress( $reason ) {
 		global $wgUser;
@@ -1037,6 +1079,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Unsuppresses all user accounts in all wikis.
+	 *
+	 * @param $reason String
 	 */
 	function unsuppress( $reason ) {
 		global $wgUser;
@@ -1044,10 +1088,9 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * @param  $suppress
-	 * @param  $by
-	 * @param  $reason
-	 * @return void
+	 * @param $suppress Bool
+	 * @param $by String
+	 * @param $reason String
 	 */
 	protected function doCrosswikiSuppression( $suppress, $by, $reason ) {
 		global $wgCentralAuthWikisPerSuppressJob;
@@ -1078,6 +1121,12 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Suppresses a local account of a user.
+	 *
+	 * @param $suppress Bool
+	 * @param $wiki String
+	 * @param $by String
+	 * @param $reason String
+	 * @return Array|null Error array on failure
 	 */
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
 		global $wgConf;
@@ -1137,12 +1186,13 @@ class CentralAuthUser extends AuthPluginUser {
 				RevisionDeleteUser::unsuppressUserName( $this->mName, $data['id'], $dbw );
 			}
 		}
+		return null;
 	}
 
 	/**
 	 * Add a local account record for the given wiki to the central database.
-	 * @param string $wikiID
-	 * @param int $localid
+	 * @param $wikiID String
+	 * @param $method String
 	 *
 	 * Prerequisites:
 	 * - completed migration state
@@ -1272,10 +1322,10 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * @param $plaintext  User-provided password plaintext.
-	 * @param $salt       The hash "salt", eg a local id for migrated passwords.
-	 * @param $encrypted  Fully salted and hashed database crypto text from db.
-	 * @return bool true on match.
+	 * @param $plaintext  String User-provided password plaintext.
+	 * @param $salt       String The hash "salt", eg a local id for migrated passwords.
+	 * @param $encrypted  String Fully salted and hashed database crypto text from db.
+	 * @return Bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
 		if ( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
@@ -1335,6 +1385,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$dbs = array();
 		foreach ( $result as $row ) {
+			/** @var $row object */
 			$dbs[] = $row->ln_wiki;
 		}
 
@@ -1396,6 +1447,8 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Troll through the full set of local databases and list those
 	 * which exist into the 'localnames' table.
+	 *
+	 * @return Bool whether any results were found
 	 */
 	function importLocalNames() {
 		$rows = array();
@@ -1463,6 +1516,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$wikis = array();
 		foreach ( $result as $row ) {
+			/** @var $row object */
 			$wikis[] = $row->lu_wiki;
 		}
 
@@ -1505,6 +1559,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$wikis = array();
 		foreach ( $result as $row ) {
+			/** @var $row object */
 			$wikis[$row->lu_wiki] = array(
 				'wiki' => $row->lu_wiki,
 				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
@@ -1522,10 +1577,10 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Find any remaining migration records for this username
-	 * which haven't gotten attached to some global account.
-	 *
+	 * Find any remaining migration records for this username which haven't gotten attached to some global account.
 	 * Formatted as associative array with some data.
+	 *
+	 * @return Array
 	 */
 	public function queryUnattached() {
 		$wikiIDs = $this->listUnattached();
@@ -1545,6 +1600,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Fetch a row of user data needed for migration.
+	 *
+	 * @param $wikiID String
+	 * @return Array
 	 */
 	protected function localUserData( $wikiID ) {
 		$lb = wfGetLB( $wikiID );
@@ -1567,6 +1625,8 @@ class CentralAuthUser extends AuthPluginUser {
 			$lb->reuseConnection( $db );
 			return false;
 		}
+
+		/** @var $row object */
 
 		$data = array(
 			'wiki' => $wikiID,
@@ -1667,7 +1727,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Set the account's password
-	 * @param string $password plaintext
+	 * @param $password String plaintext
+	 * @return Bool true
 	 */
 	function setPassword( $password ) {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
@@ -1760,10 +1821,12 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Set a global cookie that auto-authenticates the user on other wikis
 	 * Called on login.
+	 *
+	 * @param $remember Bool|User
 	 * @return Session ID
 	 */
 	function setGlobalCookies( $remember = false ) {
-		if ( is_object( $remember ) ) {
+		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
 		}
@@ -1804,6 +1867,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Get the domain parameter for setting a global cookie.
 	 * This allows other extensions to easily set global cookies without directly relying on
 	 * $wgCentralAuthCookieDomain (in case CentralAuth's implementation changes at some point).
+	 *
+	 * @return String
 	 */
 	static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
@@ -1812,6 +1877,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Check a global auth token against the one we know of in the database.
+	 *
+	 * @param $token String
+	 * @return Bool
 	 */
 	function validateAuthToken( $token ) {
 		return ( $token == $this->getAuthToken() );
@@ -1943,6 +2011,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$groups = array();
 
 		foreach ( $res as $row ) {
+			/** @var $row object */
 			$groups[] = $row->ggp_group;
 		}
 
@@ -1963,6 +2032,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$rights = array();
 
 		foreach ( $res as $row ) {
+			/** @var $row object */
 			$rights[] = $row->ggp_permission;
 		}
 
@@ -1988,6 +2058,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$rights = array();
 
 		foreach ( $res as $row ) {
+			/** @var $row object */
 			$rights[] = $row->ggp_permission;
 		}
 
@@ -2058,6 +2129,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Get the central session data
+	 *
+	 * @return Array
 	 */
 	static function getSession() {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
@@ -2080,13 +2153,15 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Set the central session data
+	 *
+	 * @param $data Array
 	 * @return ID
 	 */
 	static function setSession( $data ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 		global $wgMemc;
 		if ( !$wgCentralAuthCookies ) {
-			return;
+			return null;
 		}
 		if ( !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			$id = wfGenerateToken();
@@ -2119,6 +2194,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Check if the user is attached on a given wiki id.
+	 *
+	 * @param $wiki String
+	 * @return Bool
 	 */
 	public function attachedOn( $wiki ) {
 		return $this->exists() && in_array( $wiki, $this->mAttachedArray );
