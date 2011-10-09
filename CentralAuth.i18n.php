@@ -517,15 +517,15 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
-	'right-globalgroupmembership' => '{{doc-right}}',
+	'right-globalgroupmembership' => '{{doc-right|globalgroupmembership}}',
 	'right-centralauth-autoaccount' => '{{doc-right|centralauth-autoaccount}}',
 	'right-centralauth-unmerge' => '{{doc-right|centralauth-unmerge}}',
 	'right-centralauth-lock' => '{{doc-right|centralauth-lock}}',
 	'right-centralauth-oversight' => '{{doc-right|centralauth-oversight}}',
-	'right-centralauth-merge' => '{{doc-right}}
+	'right-centralauth-merge' => '{{doc-right|centralauth-merge}}
 
 The use of "their" in this message is actually a case of [[wikipedia:Singular they|singular they]]. So in this case, "their" must be translated as "his or her" or as "this person\'s", not as an actual plural. – McDutchie 16:46, 20 July 2008 (UTC)',
-	'right-globalgrouppermissions' => '{{doc-right}}',
+	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -5536,7 +5536,7 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
  */
 $messages['de-formal'] = array(
 	'centralauth-merge-denied' => 'Entschuldigung, aber Sie haben keine Berechtigung für diese Seite.',
-	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} melden Sie sich an]</span>, um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
+	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[$1 melden Sie sich an]</span>, um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
 	'centralauth-merge-welcome' => "'''Ihr Benutzerkonto wurde noch nicht in das globale Anmeldesystem von {{int:Centralauth-groupname}} überführt.'''
 
 Falls Sei sich für eine Migration Ihres Benutzerkontos entscheiden, wird es Ihnen möglich sein, sich mit einem gemeinsamen Benutzernamen und Passwort in allen Projekten {{int:Centralauth-groupname}} in allen verfügbaren Sprachen anzumelden.
@@ -8912,7 +8912,7 @@ o máis probábel é que teñan un contrasinal diferente ao da súa conta primar
 Teña en conta que pode diferir do wiki principal deste usuario.',
 	'centralauth-merge-method-empty-desc' => 'Indica que a conta local foi fusionada porque non tiña edicións.',
 	'centralauth-merge-method-mail-desc' => 'Indica que a conta local foi fusionada porque o seu enderezo de correo electrónico coincidía co enderezo da conta principal.',
-	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi fusionada porque usuario especificou un contrasinal válido para ela.',
+	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi fusionada porque o usuario especificou un contrasinal válido para ela.',
 	'centralauth-merge-method-admin-desc' => 'Indica que a conta local foi fusionada manualmente polos stewards.
 Esta función está desactivada arestora por motivos de seguridade.',
 	'centralauth-merge-method-new-desc' => 'Indica que a conta global foi creada automaticamente cando a conta local se creou.',
@@ -9006,10 +9006,10 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-listusers-nolocal' => 'non existe neste wiki',
 	'centralauth-seconds-ago' => 'Hai {{PLURAL:$1|un segundo|$1 segundos}}',
 	'centralauth-minutes-ago' => 'Hai {{PLURAL:$1|un minuto|$1 minutos}}',
-	'centralauth-hours-ago' => 'Hai {{PLURAL:$1|unha hora|$1 horas}}',
-	'centralauth-days-ago' => 'Hai {{PLURAL:$1|un día|$1 días}}',
+	'centralauth-hours-ago' => 'hai {{PLURAL:$1|unha hora|$1 horas}}',
+	'centralauth-days-ago' => 'hai {{PLURAL:$1|un día|$1 días}}',
 	'centralauth-months-ago' => 'Hai {{PLURAL:$1|un mes|$1 meses}}',
-	'centralauth-years-ago' => 'Hai {{PLURAL:$1|un ano|$1 anos}}',
+	'centralauth-years-ago' => 'hai {{PLURAL:$1|un ano|$1 anos}}',
 	'centralauth-prefs-status' => 'Estado da conta global:',
 	'centralauth-prefs-not-managed' => 'Non está a usar a conta unificada',
 	'centralauth-prefs-unattached' => 'Sen confirmar',
@@ -12330,6 +12330,7 @@ $messages['ja'] = array(
 	'centralauth-editset-success-delete' => 'ウィキ集合は正常に削除されました。',
 	'centralauth-editset-return' => 'メイン画面に戻る',
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
+	'right-centralauth-autoaccount' => '自動的にグローバルアカウントでログインする',
 	'right-centralauth-unmerge' => 'グローバルアカウントの統一解除',
 	'right-centralauth-lock' => 'グローバルアカウントのロック、または秘匿',
 	'right-centralauth-oversight' => 'グローバルアカウントの秘匿',
@@ -15893,7 +15894,7 @@ $messages['ml'] = array(
 	'centralauth-admin-info-home' => 'തറവാട് വിക്കി:',
 	'centralauth-admin-info-editcount' => 'ആകെ തിരുത്തലുകളുടെ എണ്ണം:',
 	'centralauth-admin-info-locked' => 'ബന്ധിച്ചിരിക്കുന്നത്:',
-	'centralauth-admin-info-hidden' => 'മറയ്ക്കപ്പെട്ടിരിക്കുന്ന തലം:',
+	'centralauth-admin-info-hidden' => 'മറഞ്ഞിരിക്കുന്നത്:',
 	'centralauth-admin-nohome' => 'നിർണ്ണയിക്കാൻ സാദ്ധ്യമല്ല',
 	'centralauth-admin-yes' => 'അതെ',
 	'centralauth-admin-no' => 'അല്ല',
@@ -23239,7 +23240,7 @@ $messages['sr-ec'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Сједињавање налога]] на Викијима из {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Сједињава више налога]] за јединствени кориснички приступ.',
 	'centralauth-merge-denied' => 'Немате права приступа овој страници.',
-	'centralauth-merge-notlogged' => 'Молимо вас да се <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} пријавите]</span> како бисте проверили да ли је ваш налог спојен успешно.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Пријавите се]</span> да проверите да ли су ваши налози потпуно спојени.',
 	'centralauth-merge-step1-title' => 'Започни сједињавање налога.',
 	'centralauth-merge-step1-submit' => 'Овери информације налога.',
 	'centralauth-merge-step2-title' => 'Потврђивање више налога.',
@@ -23336,6 +23337,7 @@ $messages['sr-ec'] = array(
 	'globalusers' => 'Глобални списак корисника',
 	'centralauth-listusers-locked' => 'закључан',
 	'centralauth-listusers-attached' => '[[User:$1|постоји локално]]',
+	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'откачен или не постоји локално',
 	'centralauth-seconds-ago' => 'пре $1 {{PLURAL:$1|секунду|секунде|секунди}}',
 	'centralauth-minutes-ago' => 'пре $1 {{PLURAL:$1|минут|минута|минута}}',
@@ -23427,6 +23429,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-badtype' => 'Непознат тип скупа.',
 	'centralauth-editset-setexists' => 'Скуп са овим именом већ постоји',
 	'centralauth-editset-nowikis' => 'Ниједан вики није одређен.',
+	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ништа)',
 	'centralauth-editset-usage' => 'Коришћен у групама:',
 	'centralauth-editset-badwikis' => 'Следећи {{PLURAL:$2|вики|викији}} не постоје: $1.',
