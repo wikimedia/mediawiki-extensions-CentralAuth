@@ -1610,13 +1610,22 @@ $messages['arz'] = array(
 
 /** Assamese (অসমীয়া)
  * @author Chaipau
+ * @author Gitartha.bordoloi
  * @author Psneog
  */
 $messages['as'] = array(
-	'centralauth-finish-password' => 'পাচৱৰ্ড',
-	'centralauth-finish-login' => 'লগ ইন',
-	'centralauth-finish-send-confirmation' => 'ই-মেইলৰ পাচৱৰ্ড',
+	'centralauth-merge-denied' => 'ক্ষমা কৰিব, এই পৃষ্ঠাত আপোনাৰ প্ৰবেশাধিকাৰ নাই।',
+	'centralauth-merge-dryrun-or' => "'''বা'''",
+	'centralauth-merge-method-empty' => 'কোনো বৰঙণি নাই',
+	'centralauth-merge-method-mail' => 'ই-মেইলৰ দ্বাৰা নিশ্চিত কৰা হৈছে',
+	'centralauth-merge-method-password' => 'গুপ্তশব্দৰ দ্বাৰা নিশ্চিত কৰা হৈছে',
+	'centralauth-merge-method-new' => 'নতুন একাউণ্ট',
+	'centralauth-finish-password' => 'গুপ্তশব্দ',
+	'centralauth-finish-login' => 'প্ৰৱেশ',
+	'centralauth-finish-send-confirmation' => 'ই-মেইলৰ গুপ্তশব্দ',
 	'centralauth-admin-info-id' => 'সদস্যৰ আই ডি',
+	'globalusers' => 'গোলকীয় ব্যৱহাৰকাৰীৰ তালিকা',
+	'centralauth-editset-submit-delete' => 'বিলোপন',
 );
 
 /** Asturian (Asturianu)
@@ -2424,6 +2433,7 @@ $messages['bar'] = array(
 	'centralauth-desc' => 'Dameeglicht a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmmfyrn voh Benutzerkontos in Wikis ({{int:Centralauth-groupname}})',
 	'centralauth-mergeaccount-desc' => "Ergänzt a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmfyrn voh mererne Benutzerkontos fys ''Single User Login''",
 	'centralauth-merge-denied' => 'Tschudige, ower du host koah Berechtigung fyr de Seiten do.',
+	'centralauth-merge-step1-title' => 'Auhfaung voh da Benutzerkóntó-Zaummfiarung',
 	'centralauth-list-home-title' => 'Hoamadwiki',
 	'centralauth-merge-method-primary' => 'Hoamadwiki',
 	'centralauth-merge-method-empty' => 'koane Benutzerbeitrég',
@@ -2431,6 +2441,9 @@ $messages['bar'] = array(
 	'centralauth-merge-method-password' => 'bstäting durch Posswort',
 	'centralauth-merge-method-admin' => 'durch an Administraator zåmmgfyrds Benutzerkontó',
 	'centralauth-merge-method-new' => 'neichs Benutzerkontó',
+	'centralauth-admin-username' => 'Benutzernåm:',
+	'centralauth-admin-list-editcount' => 'Beorweitungszöer',
+	'centralauth-admin-delete-button' => 'Dés Benutzerkóntó léschen',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beorweiten]])',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beorweiten]])',
 );
