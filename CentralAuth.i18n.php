@@ -8788,6 +8788,7 @@ Vos pouede vêre et changiér châcun de lor, ou ben fâre un juè novél.',
 	'centralauth-editset-success-delete' => 'Juè de vouiquis suprimâ avouéc reusséta.',
 	'centralauth-editset-return' => 'Tornar a la vua principâla',
 	'right-globalgroupmembership' => 'Changiér l’apartegnence a les tropes globâles',
+	'right-centralauth-autoaccount' => 'Branchiér ôtomaticament avouéc un compto globâl',
 	'right-centralauth-unmerge' => 'Dèfusionar lo compto globâl',
 	'right-centralauth-lock' => 'Vèrrolyér ou ben cachiér lo compto globâl',
 	'right-centralauth-oversight' => 'Suprimar lo compto globâl',
@@ -13966,7 +13967,7 @@ $messages['ksh'] = array(
 	'centralauth-desc' => 'Der Metmaacher ier [[Special:MergeAccount|Aanmeldunge zosammeläje]] zwesche de Wikis fun de {{int:Centralauth-groupname}}.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Aanmeldunge zosamme läje]] för nur eimol enlogge ze mösse zwesche de Wikimedia Steftung ier Wikis',
 	'centralauth-merge-denied' => 'Deit mer leid, ävver Do häs nit dat Rääsch, op die Sigg hee zozejriefe.',
-	'centralauth-merge-notlogged' => 'Bes esu joot un don <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Enlogge]</span>,
+	'centralauth-merge-notlogged' => 'Bes esu joot un don <span class="plainlinks">[$1Enlogge]</span>,
 öm ze pröfe, ov Dinge Metmaacher-Name ald all zosamme jelaat wode sin.',
 	'centralauth-merge-welcome' => "'''Ding Aanmeldung es noch nit op et Süstem fun de jemeinsame Aanmeldunge fun {{int:Centralauth-groupname}} ömjeschtallt.'''
 
