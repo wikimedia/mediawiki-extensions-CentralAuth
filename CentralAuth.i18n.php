@@ -4118,7 +4118,7 @@ $messages['ca'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusiona els comptes]] dels wikis de {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Fusiona comptes]] per a la unificació d'usuaris",
 	'centralauth-merge-denied' => 'Ho sentim, no teniu permisos per a accedir a aquesta pàgina.',
-	'centralauth-merge-notlogged' => 'Si us plau, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} entreu amb un compte registrat]</span> per a comprovar si els vostres comptes s\'han pogut fusionar adequadament.',
+	'centralauth-merge-notlogged' => 'Si us plau, <span class="plainlinks">[$1 entreu amb un compte registrat]</span> per a comprovar si els vostres comptes s\'han pogut fusionar completament.',
 	'centralauth-merge-welcome' => "'''El vostre compte d'usuari encara no ha migrat al sistema unificat de comptes de {{int:Centralauth-groupname}}.'''
 
 Si decidiu migrar els vostres comptes, podreu fer servir el mateix nom d'usuari i contrasenya en els wikis de tots els projectes de {{int:Centralauth-groupname}} en qualsevol idioma. Això fa que la feina que involucra diferents projectes, com la càrrega d'imatges a [http://commons.wikimedia.org/ Wikimedia Commons] sigui molt més fàcil, i impedeix la confusió o conflicte que pugui resultar del fet que persones diferents hagin escollit el mateix nom d'usuari en diferents projectes.
@@ -4291,6 +4291,7 @@ El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global."
 	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.",
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists' => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
+	'centralauth-account-exists-reset' => "El nom d'usuari $1 no està registrat en aquest wiki, pero sí que existeix al registre unificat d'usuaris.",
 	'centralauth-login-progress' => 'Iniciant la sessió en els wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Sortint de la sessió en els wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Automàticament us heu connectat en altres projectes de {{int:Centralauth-groupname}}.',
@@ -4390,6 +4391,7 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 	'centralauth-editset-success-delete' => "S'ha eliminat correctament el conjunt wiki.",
 	'centralauth-editset-return' => 'Tornar a la vista principal',
 	'right-globalgroupmembership' => 'Editar els membres dels grups globals',
+	'right-centralauth-autoaccount' => 'Connectar-se automàticament amb compte global',
 	'right-centralauth-unmerge' => 'Anuŀlar la unificació del compte global',
 	'right-centralauth-lock' => 'Blocar o ocultar el compte global',
 	'right-centralauth-oversight' => 'Suprimir el compte global',
