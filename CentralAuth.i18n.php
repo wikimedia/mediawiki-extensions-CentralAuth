@@ -8265,7 +8265,7 @@ Ce mode permet toutefois de tester les comptes utilisateurs homonymes des diffé
 Notez qu'il peut être différent du wiki principal de cet utilisateur.",
 	'centralauth-merge-method-empty-desc' => "Indique que le compte local a été fusionné parce qu'il n'avait pas de modifications.",
 	'centralauth-merge-method-mail-desc' => 'Indique que le compte local a été fusionné parce que son adresse électronique correspond à celle du compte principal.',
-	'centralauth-merge-method-password-desc' => "Indique que le compte local a été fusionné parce que l'utilisateur a spécifié un mot de passe valide pour lui.",
+	'centralauth-merge-method-password-desc' => 'Indique que le compte local a été fusionné parce que l’utilisateur en connaît le mot de passe.',
 	'centralauth-merge-method-admin-desc' => 'Indique que le compte local a été fusionné manuellement par les stewards. Cette fonctionnalité est maintenant désactivée pour des raisons de sécurité.',
 	'centralauth-merge-method-new-desc' => 'Indique que le compte global a été créé automatiquement lorsque ce compte local a été créé.',
 	'centralauth-merge-method-login-desc' => "Indique que le compte local a été créé automatiquement quand l'utilisateur s'est identifié.",
@@ -12218,10 +12218,10 @@ $messages['ja'] = array(
 	'centralauth-admin-status-submit' => '状態を設定',
 	'centralauth-admin-status-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-admin-setstatus-success' => 'このグローバルアカウントの状態の変更に成功しました。',
-	'centralauth-admin-status-reasons' => '* 共通ロックの理由
+	'centralauth-admin-status-reasons' => '* よくあるロック理由
 ** 荒らし専用アカウント
 ** スパム専用アカウント
-* 共通ロックと秘匿の理由
+* よくあるロックと秘匿の理由
 ** 不適切な利用者名
 ** 不適切な個人情報',
 	'centralauth-admin-logsnippet' => '以前のグローバルアカウントの変更履歴',
