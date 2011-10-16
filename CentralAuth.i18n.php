@@ -1921,6 +1921,7 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'centralauth-editset-success-delete' => 'Conxuntu wiki desaniciáu correutamente.',
 	'centralauth-editset-return' => 'Tornar a la vista principal',
 	'right-globalgroupmembership' => 'Editar la pertenencia a grupos globales',
+	'right-centralauth-autoaccount' => 'Coneutase automáticamente cola cuenta global',
 	'right-centralauth-unmerge' => 'Anular la fusión de cuenta llocal',
 	'right-centralauth-lock' => 'Bloquiar o anubrir una cuenta global',
 	'right-centralauth-oversight' => 'Desaniciar una cuenta global',
@@ -20108,7 +20109,7 @@ $messages['pt-br'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
 	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para acessar esta página.',
-	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} autentique-se]</span> para verificar se as suas contas foram unificadas corretamente.',
+	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram fundidas corretamente.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado de {{int:Centralauth-groupname}}.'''
 
 Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis de {{int:Centralauth-groupname}} em todas as línguas disponíveis.
