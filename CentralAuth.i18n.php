@@ -4803,6 +4803,7 @@ $messages['cu'] = array(
 
 /** Welsh (Cymraeg)
  * @author Lloffiwr
+ * @author Xxglennxx
  */
 $messages['cy'] = array(
 	'mergeaccount' => 'Statws cyfrif cydwici',
@@ -4874,7 +4875,7 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-admin-list-editcount' => 'Nifer y golygiadau',
 	'centralauth-admin-list-blocked' => 'Wedi ei flocio',
 	'centralauth-admin-delete-title' => "Dileu'r cyfrif",
-	'centralauth-admin-delete-button' => 'Dilëer y cyfrif hwn',
+	'centralauth-admin-delete-button' => 'Dileer y cyfrif hwn',
 	'centralauth-token-mismatch' => "Mae'n ddrwg gennym, ni allem brosesu'r ffurflen a gyflwynwyd gennych oherwydd i ni golli data'r sesiwn.",
 	'centralauth-admin-reason' => 'Rheswm:',
 	'centralauth-admin-reason-other' => 'Rheswm arall:',
@@ -11317,6 +11318,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Aldnonymous
  * @author Bennylin
  * @author Borgx
  * @author Farras
@@ -11609,6 +11611,7 @@ Anda dapat melihat dan mengubahnya, atau membuat set baru.',
 	'centralauth-editset-success-delete' => 'Set wiki berhasil dihapus.',
 	'centralauth-editset-return' => 'Kembali ke tampilan utama',
 	'right-globalgroupmembership' => 'Sunting keanggotaan kelompok global',
+	'right-centralauth-autoaccount' => 'Login secara otomatis dengan akun global',
 	'right-centralauth-unmerge' => 'Jangan gabung akun global',
 	'right-centralauth-lock' => 'Kunci atau sembunyikan akun global',
 	'right-centralauth-oversight' => 'Hapus akun global',
@@ -27822,7 +27825,7 @@ $messages['zh-hans'] = array(
 ** 不当用户名
 ** 不当滥用个人信息',
 	'centralauth-admin-logsnippet' => '前个全域户口的变化',
-	'centralauth-admin-suppressreason' => '在全域镇压$1，原因:$2',
+	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因:$2',
 	'globalusers' => '全局用户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
@@ -28122,7 +28125,7 @@ $messages['zh-hant'] = array(
 ** 不當用戶名
 ** 不當濫用個人資訊',
 	'centralauth-admin-logsnippet' => '前個全域帳戶的變化',
-	'centralauth-admin-suppressreason' => '在全域鎮壓$1，原因:$2',
+	'centralauth-admin-suppressreason' => '由$1全域隱藏，原因：$2',
 	'globalusers' => '全域帳戶名單',
 	'centralauth-listusers-locked' => '鎖定',
 	'centralauth-listusers-attached' => '[[User:$1|於本地存在]]',
