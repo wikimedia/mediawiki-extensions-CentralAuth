@@ -5059,11 +5059,12 @@ Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver
 	'centralauth-admin-info-home' => 'Hjemmewiki',
 	'centralauth-admin-info-editcount' => 'Totalt antal redigeringer:',
 	'centralauth-admin-info-locked' => 'Låst:',
-	'centralauth-admin-info-hidden' => 'Skjult level:',
+	'centralauth-admin-info-hidden' => 'Skjult niveau:',
 	'centralauth-admin-nohome' => 'kan ikke afgøres',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nej',
 	'centralauth-admin-hidden-list' => 'fra offentlige lister',
+	'centralauth-admin-hidden-oversight' => 'censureret',
 	'centralauth-admin-list-legend-ro' => 'Oversigt over lokale konti',
 	'centralauth-admin-list-legend-rw' => 'Ophæv fletning af lokale konti',
 	'centralauth-admin-unattached' => 'ikke tilknyttet',
@@ -5111,6 +5112,7 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 ** Upassende brugernavn
 ** Upassende personlig information',
 	'centralauth-admin-logsnippet' => 'Tidligere globale kontoændringer',
+	'centralauth-admin-suppressreason' => 'Globalt undertrykt af $1 med følgende begrundelse: $2',
 	'globalusers' => 'Global brugerliste',
 	'centralauth-listusers-locked' => 'Låst',
 	'centralauth-listusers-attached' => '[[User:$1|findes lokalt]]',
@@ -5153,6 +5155,7 @@ Omdøbning vil betyde at den lokale bruger vil blive adskilt den globale konto.'
 	'centralauth-log-entry-chgstatus' => 'ændrede status for den globale konto "$1": Satte $2; fjernede $3',
 	'centralauth-log-status-locked' => 'låst',
 	'centralauth-log-status-hidden' => 'skjult',
+	'centralauth-log-status-oversighted' => 'censureret',
 	'centralauth-log-status-none' => '(ingen)',
 	'centralauth-rightslog-name' => 'Global rettighedslog',
 	'centralauth-rightslog-entry-usergroups' => 'ændrede globalt gruppemedlemskab for $1 fra $2 til $3',
@@ -5222,6 +5225,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'centralauth-editset-legend-view' => 'Wikisæt "$1"',
 	'centralauth-editset-legend-new' => 'Opretter ny wikigruppe',
 	'centralauth-editset-legend-delete' => 'Sletning af wikisæt "$1"',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Liste over sæt]]',
 	'centralauth-editset-name' => 'Navn:',
 	'centralauth-editset-type' => 'Type:',
 	'centralauth-editset-wikis' => 'Wikier:',
@@ -24090,6 +24094,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Boivie
  * @author Dafer45
  * @author Diupwijk
+ * @author GameOn
  * @author Lejonel
  * @author Leo Johannes
  * @author M.M.S.
@@ -24119,7 +24124,7 @@ Ditt lösenord och din e-postadress kommer kontrolleras mot användarkonton på 
 	'centralauth-merge-step2-title' => 'Bekräfta fler konton',
 	'centralauth-merge-step2-detail' => 'Några av kontona kunde inte automatiskt matchas med kontot på den wiki som utsetts till hemwiki. Om dessa konton tillhör dig kan du bekräfta det genom att ange lösenorden för dem.',
 	'centralauth-merge-step2-submit' => 'Bekräfta inloggningsinformation',
-	'centralauth-login-global' => 'Logga också in mig i andra wikier från {{int:Centralauth-gruppnamn}}',
+	'centralauth-login-global' => 'Logga också in mig i andra wikier från {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Alla existerande konton kan automatiskt slås samman!
 
 Inga ändringar av dina konton har gjorts än.',
