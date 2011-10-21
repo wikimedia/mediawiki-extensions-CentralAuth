@@ -11192,7 +11192,7 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 	'centralauth-seconds-ago' => 'ante $1 {{PLURAL:$1|secunda|secundas}}',
 	'centralauth-minutes-ago' => 'ante $1 {{PLURAL:$1|minuta|minutas}}',
 	'centralauth-hours-ago' => 'ante $1 {{PLURAL:$1|hora|horas}}',
-	'centralauth-days-ago' => 'ante $1 {{PLURAL:$1|die|dies}}',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|die|dies}} retro',
 	'centralauth-months-ago' => 'ante $1 {{PLURAL:$1|mense|menses}}',
 	'centralauth-years-ago' => 'ante $1 {{PLURAL:$1|anno|annos}}',
 	'centralauth-prefs-status' => 'Stato del conto global:',
