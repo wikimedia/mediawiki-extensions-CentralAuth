@@ -4811,7 +4811,7 @@ $messages['cy'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Uno cyfrif]] lel-led y wicïau sy'n perthyn i {{int:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Yn uno cyfrifon]] i alluogi Mewngofnodi Ar Y Cyd',
 	'centralauth-merge-denied' => "Mae'n ddrwg gennym, nid oes gennych ganiatâd i weld y dudalen hon.",
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Mewngofnodwch]</span> er mwyn sicrhau bod eich cyfrifon wedi cael eu huno\'n llwyr.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Mewngofnodwch]</span> er mwyn sicrhau bod eich cyfrifon wedi cael eu huno\'n llwyr.',
 	'centralauth-merge-welcome' => "'''Nid yw eich cyfrif defnyddiwr wedi cael ei drosglwyddo i'r sustem mewngofnodi ar y cyd ar {{int:Centralauth-groupname}}.'''
 
 Os y dymunwch drosglwyddo'ch cyfrifon, byddwch yn gallu defnyddio'r un enw defnyddiwr a chyfrinair i fewngofnodi i holl wicïau {{int:Centralauth-groupname}} ymhob iaith sydd ar gael.
@@ -4922,7 +4922,7 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-rightslog-name' => 'Lòg galluoedd cydwici',
 	'centralauth-rightslog-entry-usergroups' => 'wedi newid aelodaeth grŵp cydwici $1 o $2 i $3',
 	'centralauth-rightslog-entry-groupperms' => 'wedi newid galluoedd y grŵp $1 o $2 i $3',
-	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set wicïau "$1"',
+	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set o wicïau oedd yn cynnwys "$1"',
 	'autologin' => 'Mewngofnodi awtomatig',
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
 	'centralauth-newgroup-legend' => 'Creu grŵp newydd',
@@ -27680,7 +27680,7 @@ $messages['yue'] = array(
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
-	'mergeaccount' => '登录统一状况',
+	'mergeaccount' => '整合登录系统状态',
 	'centralauth-groupname' => '维基媒体基金会',
 	'centralauth-desc' => '[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的wiki帐号',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|将多个账户合并]]为单一用户账户',
@@ -27851,10 +27851,10 @@ $messages['zh-hans'] = array(
 	'centralauth-prefs-detail-unattached' => '此项目站点还未被确认到整合账户。',
 	'centralauth-prefs-manage' => '管理您的整合账户',
 	'centralauth-prefs-view' => '查看全局用户信息',
-	'centralauth-renameuser-merged' => '用户$1已经迁移至整合登入系统。改它的名字会令到本地用户自全域中迁出。',
+	'centralauth-renameuser-merged' => '用户$1已经迁移至整合登录系统。重命名用户将会令本地用户从全域账户中脱离。',
 	'centralauth-renameuser-reserved' => '用户$2已经预留给全域账户使用。',
 	'centralauth-invalid-wiki' => '无这个wikil数据库: $1',
-	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登入系统使用此名称。',
+	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登录系统使用此名称。',
 	'centralauth-account-exists-reset' => '用户名$1并没有在此wiki注册，但存在一个同名的全局账户。',
 	'centralauth-login-progress' => '正在为您登录到{{int:Centralauth-groupname}}的wiki：',
 	'centralauth-logout-progress' => '正在为您退出{{int:Centralauth-groupname}}的其他wiki：',
