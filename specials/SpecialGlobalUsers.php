@@ -9,7 +9,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		global $wgOut, $wgRequest, $wgContLang;
 		$this->setHeaders();
 
-		$pg = new GlobalUsersPager();
+		$pg = new GlobalUsersPager( $this->getContext(), $par );
 
 		if ( $par ) {
 			$pg->setGroup( $par );
@@ -33,8 +33,8 @@ class SpecialGlobalUsers extends SpecialPage {
 class GlobalUsersPager extends UsersPager {
 	protected $requestedGroup = false, $requestedUser;
 
-	function __construct() {
-		parent::__construct();
+	function __construct( IContextSource $context = null, $par = null ) {
+		parent::__construct( $context, $par );
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
 	}
 
