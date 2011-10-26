@@ -4803,6 +4803,7 @@ $messages['cu'] = array(
 
 /** Welsh (Cymraeg)
  * @author Lloffiwr
+ * @author Pwyll
  * @author Xxglennxx
  */
 $messages['cy'] = array(
@@ -4823,18 +4824,36 @@ Caiff eich cyfrinair a'r cyfeiriad e-bost a nodwyd gennych eu gwirio ar y cyfrif
 Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn iawn.",
 	'centralauth-merge-step1-submit' => "Cadarnhau'r manylion mewngofnodi",
 	'centralauth-merge-step2-title' => 'Cadarnhau rhagor o gyfrifon',
+	'centralauth-merge-step2-detail' => "Nid oedd modd cysylltu rhai o'r cyfrifon hyn yn awtomatig i'ch wici cartref penodedig. Os mai un o'ch cyfrifon chi oedd rhain, gallwch gadarnhau mai eich rhai chi oeddent trwy nodi'ch cyfrinair.",
 	'centralauth-merge-step2-submit' => 'Cadarnhaer y manylion mewngofnodi',
 	'centralauth-login-global' => 'Mewngofnodi i wicïau eraill {{int:Centralauth-groupname}} hefyd',
+	'centralauth-merge-dryrun-complete' => "Gellir uno pob cyfrif sy'n bodoli eisoes yn awtomatig!
+Ni wnaed unrhyw newidiadau i'ch cyfrifon hyd yn hyn.",
 	'centralauth-merge-dryrun-or' => "'''neu'''",
+	'centralauth-merge-dryrun-home' => "Ni allai'r system fudo gadarnhau mai chi yw perchennog y cyfrif wici cartref ar gyfer eich enw defnyddiwr.
+Pennwyd wici gwahanol fel y cyfrif cartref ar gyfer eich enw defnyddiwr: cliciwch ar y ddolen isod a mewngofnodwch yno er mwyn cwblhau mudo eich cyfrif.",
 	'centralauth-merge-step3-title' => 'Sefydlu cyfrif unedig',
 	'centralauth-merge-step3-detail' => "Rydych yn barod i greu'ch cyfrif unedig, gyda'r wicïau canlynol ynghlwm wrtho:",
 	'centralauth-merge-step3-submit' => "Uno'r cyfrifon",
+	'centralauth-merge-no-accounts' => "Ni ddaethpwyd o hyd i unrhyw gyfrifon yn cyfateb i'ch enw yn y tabl tracio cyfrifon canolog!
+Mae'n rhaid fod y gronfa ddata'n lygredig.",
+	'centralauth-merge-home-password' => "Mae gan y wici cartref ar gyfer y cyfrif hwn (a restrwyd isod) gyfrinair gwahanol i'r un a nodwyd gennych. 
+Nodwch y cyfrinair ar gyfer y wici cartref os gwelwch yn dda.",
 	'centralauth-complete' => 'Cyflawnwyd yr uno cyfrifon!',
 	'centralauth-incomplete' => "Ni chwblhawyd uno'r cyfrifon!",
 	'centralauth-complete-text' => "O hyn ymlaen gallwch fewngofnodi i unrhyw wefan wici sy'n perthyn i {{int:Centralauth-groupname}} heb ddechrau cyfrif newydd.",
+	'centralauth-incomplete-text' => "Cyn gynted ag y bydd eich mewngofnodiad wedi'i uno, gallwch fewngofnodi i unrhyw safle wici {{int:Centralauth-groupname}} heb greu cyfrif newydd.",
+	'centralauth-not-owner-text' => 'Pennwyd y defnyddiwr "$1" yn awtomatig i berchennog y cyfrif ar $2.
+Os mai chi yw\'r person hwnnw, gallwch gwblhau\'r broses o uno mewngofnodi trwy deipio\'r prif gyfrinair ar gyfer y cyfrif hwnnw yn y fan hon:',
+	'centralauth-blocked-text' => "Mae'ch wici cartref (a restrwyd isod) wedi'i flocio rhag golygu.
+Cysylltwch a gweinyddwr o'r wici hwn er mwyn ei ddad-flocio.
+Tra'i fod wedi blocio, ni allwch gyfuno cyfrifon.",
+	'centralauth-notice-dryrun' => "<div class='successbox'>Fersiwn enghreifftiol yn unig</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => "Ar hyn o bryd mae'r uno cyfrifon ar ffurf enghreifftiol / dad-fygio, ac felly mae gweithredoedd uno wedi'u analluogi. Mae'n ddrwg gennym!",
 	'centralauth-error-locked' => 'Ni allwch olygu oherwydd bod eich cyfrif ar glo.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Darllenwch fwy am '''fewngofnodi ar y cyd''']]…''",
 	'centralauth-list-home-title' => 'Y pen wici',
+	'centralauth-list-home-dryrun' => "Defnyddir y cyfrinair a'r cyfeiriad e-bost a osodir yn y wici hwn ar gyfer eich cyfrif cyfunedig.",
 	'centralauth-list-attached-title' => 'Cyfrifon atodedig',
 	'centralauth-list-attached' => "Mae'r cyfrif o'r enw \"\$1\" ar bob un o'r safleoedd canlynol wedi cael eu hatodi yn awtomatig i'r cyfrif unedig:",
 	'centralauth-list-unattached-title' => 'Cyfrifon heb eu hatodi',
@@ -4843,11 +4862,22 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-merge-method-empty' => 'dim cyfraniadau',
 	'centralauth-merge-method-mail' => 'cadarnhawyd ag e-bost',
 	'centralauth-merge-method-password' => 'cadarnhawyd â chyfrinair',
+	'centralauth-merge-method-admin' => 'Cyfrif a gyfunwyd gan weinyddwr',
 	'centralauth-merge-method-new' => 'cyfrif newydd',
 	'centralauth-merge-method-login' => 'gosodwyd wrth fewngofnodi',
+	'centralauth-merge-method-login-desc' => "Yn dynodi fod cyfrif lleol wedi'i chreu'n awtomatig pan fewngofnododd defnyddiwr.",
+	'centralauth-finish-title' => 'Gorffen cyfuno',
+	'centralauth-finish-text' => "Os mai eich cyfrifon chi yw rhain, gallwch gwblhau'r broses cyfuno mewngofnodi trwy deipio'ch cyfrineiriau ar gyfer y cyfrifon eraill yn y fan hon:",
 	'centralauth-finish-password' => 'Cyfrinair:',
 	'centralauth-finish-login' => 'Mewngofnodi',
 	'centralauth-finish-send-confirmation' => 'Anfoner y cyfrinair drwy e-bost',
+	'centralauth-finish-problems' => "Ydych chi'n cael trafferth, neu ai rhywun arall yw perchennog y cyfrifon eraill hyn?
+[[meta:Help:Unified login problems|Sut i gael cymorth]]...",
+	'centralauth-finish-noconfirms' => "Ni allwyd cadarnhau unrhyw gyfrifon gyda'r cyfrinair hwn.",
+	'centralauth-finish-incomplete' => "Cyfunwyd nifer o gyfrifon gan ddefnyddio'r cyfrinair hwn.
+Nid yw cyfrifon eraill wedi'u cadarnhau hyd yn hyn.",
+	'centralauth-merge-attempt' => "'''Yn gwirio'r cyfrinair a ddarparwyd gyda'r cyfrifon eraill sydd heb eu cyfuno...'''",
+	'centralauth-attach-title' => 'Cadarnhau cyfrif',
 	'centralauth' => 'Rheoli defnyddiwr cydwici',
 	'centralauth-admin-manage' => "Trin data'r defnyddiwr",
 	'centralauth-admin-username' => "Enw'r defnyddiwr:",
@@ -4867,13 +4897,24 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-admin-hidden-list' => "o'r golwg ar restrau cyhoeddus",
 	'centralauth-admin-hidden-oversight' => 'cuddiwyd gan Oruchwyliwr',
 	'centralauth-admin-list-legend-ro' => 'Rhestr y cyfrifon lleol',
+	'centralauth-admin-list-legend-rw' => 'Cyfrifon lleol heb eu cyfuno',
 	'centralauth-admin-unattached' => 'heb ei atodi',
+	'centralauth-admin-blocked' => 'Blociwyd, tan $3 am $4.
+Rheswm: $2',
+	'centralauth-admin-blocked-indef' => 'Blociwyd am gyfnod amhenodol.
+Rheswm: $1',
 	'centralauth-admin-blocklog' => 'lòg blocio',
 	'centralauth-admin-list-localwiki' => 'Wici lleol',
 	'centralauth-admin-list-attached-on' => 'Atodwyd am',
 	'centralauth-admin-list-method' => 'Dull',
 	'centralauth-admin-list-editcount' => 'Nifer y golygiadau',
 	'centralauth-admin-list-blocked' => 'Wedi ei flocio',
+	'centralauth-admin-unmerge' => 'Dewiswyd dad-gyfuno',
+	'centralauth-admin-merge' => 'Dewiswyd cyfuno',
+	'centralauth-admin-bad-input' => 'Dewisiad cyfuno annilys',
+	'centralauth-admin-none-selected' => "Ni ddewiswyd cyfrifon i'w haddasu.",
+	'centralauth-admin-already-unmerged' => "Yn neidio $1, wedi'i gyfuno eisoes",
+	'centralauth-admin-unmerge-success' => 'Dad-gyfuniad llwyddiannus $1 {{PLURAL:$1|account|accounts}}',
 	'centralauth-admin-delete-title' => "Dileu'r cyfrif",
 	'centralauth-admin-delete-button' => 'Dileer y cyfrif hwn',
 	'centralauth-token-mismatch' => "Mae'n ddrwg gennym, ni allem brosesu'r ffurflen a gyflwynwyd gennych oherwydd i ni golli data'r sesiwn.",
@@ -4890,9 +4931,16 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-admin-status-submit' => 'Gosod statws',
 	'centralauth-admin-status-nonexistent' => 'Gwall: Nid yw\'r cyfrif cydwici "<nowiki>$1</nowiki>" ar gael.',
 	'centralauth-admin-setstatus-success' => 'Rydych wedi llwyddo newid statws y cyfrif cydwici hwn.',
+	'centralauth-admin-status-reasons' => '*Rhesymau cyffredin dros gloi
+** cyfrif fandaliaeth
+** cyfrif spam
+* Rhesymau Cloi a Chuddio cyffredin
+** enw defnyddiwr bygythiol
+** gwybodaeth bersonol amhriodol',
 	'globalusers' => 'Rhestr defnyddwyr cydwici',
 	'centralauth-listusers-locked' => 'ar glo',
 	'centralauth-listusers-attached' => '[[User:$1|ar gael yn lleol]]',
+	'centralauth-listusers-nolocal' => "Digyswllt neu ddim yn bodoli'n lleol",
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eiliad}} yn ôl',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munud|munud|funud|munud|munud|munud}} yn ôl',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|awr}} yn ôl',
@@ -4903,17 +4951,24 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-prefs-not-managed' => 'Ddim yn defnyddio cyfrif unedig',
 	'centralauth-prefs-unattached' => 'Heb ei gadarnhau',
 	'centralauth-prefs-complete' => 'Popeth yn iawn!',
+	'centralauth-prefs-migration' => 'Yn cael ei fudo',
 	'centralauth-prefs-count-attached' => "Mae'ch cyfrif ar waith ar $1 {{PLURAL:$1|safle|safle|safle|safle|safle|safle}} prosiect.",
 	'centralauth-prefs-detail-unattached' => "Ni chadarnhawyd bod y safle prosiect hwn yn aelod o'r cyfrif cydwici.",
 	'centralauth-prefs-manage' => "Rheoli'ch cyfrif cydwici",
+	'centralauth-invalid-wiki' => "Dim cronfa ddata wici o'r fath: $1",
+	'centralauth-account-exists' => "Ni allwyd greu cyfrif; mae'r enw defnyddiwr a geisiwyd wedi'i gymryd yn y system fewngofnodi cyfunedig.",
+	'centralauth-account-exists-reset' => "Nid yw'r enw defnyddiwr $1 wedi'i gofrestru ar y wici hwn, ond mae'n bodoli yn y system fewngofnodi cyfunedig.",
 	'centralauth-login-progress' => "Yn mewngofnodi i wicïau sy'n perthyn i {{int:Centralauth-groupname}}:",
 	'centralauth-logout-progress' => "Yn allgofnodi o wicïau eraill sy'n perthyn i {{int:Centralauth-groupname}}:",
+	'centralauth-login-no-others' => "Cawsoch eich mewngofnodi'n awtomatig i brosiectau eraill {{int:Centralauth-groupname}}.",
+	'centralauth-logout-no-others' => "Cawsoch eich allgofnodi'n awtomatig o brosiectau eraill {{int:Centralauth-groupname}}.",
 	'centralauth-log-name' => 'Lòg cyfrifon cydwici',
 	'centralauth-log-header' => "Mae'r lòg hwn yn cynnwys gweithrediadau ar gyfrifon cydwici: dileu, cloi a datgloi.",
 	'centralauth-log-entry-delete' => 'wedi dileu cyfrif cydwici "$1"',
 	'centralauth-log-entry-lock' => 'wedi cloi cyfrif cydwici "$1"',
 	'centralauth-log-entry-unlock' => 'wedi datgloi cyfrif cydwici "$1"',
 	'centralauth-log-entry-hide' => 'wedi cuddio cyfrif cydwici "$1"',
+	'centralauth-log-entry-lockandhide' => 'wedi cloi a chuddio cydwici "$1"',
 	'centralauth-log-entry-chgstatus' => 'wedi newid statws y cyfrif cydwici "$1": Gosodwyd $2; Gwrthdrowyd y statws $3',
 	'centralauth-log-status-locked' => 'ar glo',
 	'centralauth-log-status-hidden' => "o'r golwg",
@@ -4922,6 +4977,9 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-rightslog-name' => 'Lòg galluoedd cydwici',
 	'centralauth-rightslog-entry-usergroups' => 'wedi newid aelodaeth grŵp cydwici $1 o $2 i $3',
 	'centralauth-rightslog-entry-groupperms' => 'wedi newid galluoedd y grŵp $1 o $2 i $3',
+	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1.
+Ychwanegwyd $2:
+Gwaredwyd $3',
 	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set o wicïau oedd yn cynnwys "$1"',
 	'autologin' => 'Mewngofnodi awtomatig',
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
@@ -7471,6 +7529,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
  * @author Bengoa
  * @author Joxemai
  * @author Kobazulo
+ * @author Xabier Armendaritz
  */
 $messages['eu'] = array(
 	'mergeaccount' => 'Saio-hasiera bateratua',
@@ -7519,8 +7578,8 @@ $messages['eu'] = array(
 	'centralauth-minutes-ago' => 'Orain dela {{PLURAL:$1|minutu bat|$1 minutu}}',
 	'centralauth-hours-ago' => 'Orain dela {{PLURAL:$1|ordu bat|$1 ordu}}',
 	'centralauth-days-ago' => 'Orain dela {{PLURAL:$1|egun bat|$1 egun}}',
-	'centralauth-months-ago' => 'Orain dela {{PLURAL:$1|hilabete bat|$1 hilabete}}',
-	'centralauth-years-ago' => 'Orain dela {{PLURAL:$1|urte bat|$1 urte}}',
+	'centralauth-months-ago' => 'Orain dela {{PLURAL:$1|hilabete|$1 hilabete}}',
+	'centralauth-years-ago' => 'Orain dela {{PLURAL:$1|urtebete|$1 urte}}',
 	'centralauth-prefs-unattached' => 'Baieztatu gabe',
 	'centralauth-prefs-complete' => 'Dena behar bezala dago!',
 	'centralauth-log-status-locked' => 'blokeatua',
@@ -14304,6 +14363,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 	'centralauth-editset-success-delete' => 'Die Wiki-Jrop es fottjeschmeße.',
 	'centralauth-editset-return' => 'Zeröck zor Houpaansich',
 	'right-globalgroupmembership' => 'Metjleedschaff en jemeinsame Metmaacher-Jruppe beärbeide',
+	'right-centralauth-autoaccount' => 'Automatėsch med ene jemeinsame Aanmäldong aanmälde',
 	'right-centralauth-unmerge' => 'För en jemeinsam Aanmeldung zosammejelaate Zohjäng wider opdeile',
 	'right-centralauth-lock' => 'Metmaacher med en jemeinsam Aanmeldung sperre udder vershteishe',
 	'right-centralauth-oversight' => 'Metmaacher med en jemeinsam Aanmeldung ongerdröcke',
@@ -25764,6 +25824,7 @@ $messages['tpi'] = array(
 );
 
 /** Turkish (Türkçe)
+ * @author Emperyan
  * @author Erkan Yilmaz
  * @author Homonihilis
  * @author Joseph
@@ -25780,7 +25841,7 @@ $messages['tr'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}} vikilerinde [[Special:MergeAccount|hesap birleştir]]',
 	'centralauth-mergeaccount-desc' => 'Tek Kullanıcı Girişi için [[Special:MergeAccount|çoklu hesapları birleştirir]]',
 	'centralauth-merge-denied' => 'Üzgünüz, bu sayfaya erişmek için izniniz yok.',
-	'centralauth-merge-notlogged' => 'Lütfen bütün hesaplarınızın tam olarak birleştirildiğini kontrol etmek için <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} oturum açın]</span>.',
+	'centralauth-merge-notlogged' => 'Lütfen bütün hesaplarınızın tam olarak birleştirildiğini kontrol etmek için <span class="plainlinks">[$1 oturum açın]</span>.',
 	'centralauth-merge-welcome' => "'''Kullanıcı hesabınız henüz {{int:Centralauth-groupname}} birleşik giriş sistemine taşınmadı.'''
 
 Eğer hesaplarınızı taşımayı seçerseniz, tüm mevcut dillerdeki {{int:Centralauth-groupname}} viki sitelerinde giriş yapmak için aynı kullanıcı adı ve şifreyi kullanabileceksiniz.
