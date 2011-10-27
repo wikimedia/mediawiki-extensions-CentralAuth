@@ -8239,6 +8239,39 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-globalgrouppermissions' => 'Hallinnoida globaaleja ryhmiä',
 );
 
+/** Faroese (Føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'centralauth-groupname' => 'Wikimedia Grunnurin',
+	'centralauth-desc' => "[[Special:MergeAccount|Flættað kontur]] tvørtur um wiki'ir hjá {{int:Centralauth-groupname}}",
+	'centralauth-merge-denied' => 'Haldið okkum tilgóðar, men tú hevur ikki loyvi til at fara inn á hesa síðuna.',
+	'centralauth-merge-step1-detail' => 'Vinarliga skriva loyniorðið á tínari konto.
+Títt loyniorð og skrásetta teldupost adressa verður so samanborin við kontur tínar á øðrum wikium fyri at staðfesta, at tær hóska saman.
+Ongar broytingar verða gjørdar til tú hevur váttað, at alt er í lagi.',
+	'centralauth-merge-step1-submit' => 'Váttað logg inn kunning',
+	'centralauth-merge-step2-title' => 'Váttað aðrar konti',
+	'centralauth-merge-step2-detail' => "Summar av kontunum kundu ikki sjálvvirkandi verða staðfestar til at passa saman við útvaldu heima wiki'ini.
+Um tú eigur hesar wiki kontur, so kanst tú vátta at tær eru tínar við at skriva tey loyniorðini, sum hoyra til tær.",
+	'centralauth-merge-step2-submit' => 'Váttað logg inn kunning',
+	'centralauth-login-global' => 'Logga meg eisini inn á aðrar wikiir hjá {{int:Centralauth-groupname}}',
+	'centralauth-merge-dryrun-complete' => 'Allar verandi kontur kunnu verða samantvinnaðar sjálvvirkandi!
+Ongar broytingar eru gjørdar á tínum wiki kontum enn.',
+	'centralauth-merge-dryrun-incomplete' => 'Tú sleppur at halda fram, men summar av kontunum kundu ikki verða góðkendar sjálvvirkandi og verða ikki samantvinnaðar beinanvegin.
+Tú fær høvi til at flætta tær saman seinni.
+
+Ongar broytingar eru gjørdar á tínar kontur enn.',
+	'centralauth-merge-dryrun-or' => "'''ella'''",
+	'centralauth-merge-dryrun-home' => 'Flytingar skipanin kundi ikki vátta, at tú ert eigarin av heima wiki kontuni fyri hetta brúkaranavnið.
+Ein onnur wiki var staðfest sum heima konto fyri títt brúkaranavn; fylg slóðini her undir og logga á har fyri at gera flytingina av tínari wiki-konto lidna.',
+	'centralauth-merge-step3-title' => 'Skapa sameinda wiki kontu',
+	'centralauth-merge-step3-detail' => 'Tú ert klárur til at skapa tína sameindu wiki kontu, við fylgjandi wikium viðheftum:',
+	'centralauth-merge-step3-submit' => 'Samein kontur',
+	'centralauth-complete' => 'Logg inn sameinan er fullgjørd!',
+	'centralauth-incomplete' => 'Logg inn sameinan er ikki fullførd!',
+	'centralauth-complete-text' => 'Tú kanst nú logga inn á einhvørja wiki síðu hjá {{int:Centralauth-groupname}} uttan at skapa nýggja kontu.',
+);
+
 /** French (Français)
  * @author Cedric31
  * @author Crochet.david
@@ -10449,7 +10482,7 @@ $messages['hsb'] = array(
 	'centralauth-desc' => 'Konta we wikijach {{int:Centralauth-groupname}} [[Special:MergeAccount|zjednoćić]]',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zjednoćenje wjacorych kontow]] za jednotne přizjewjenje',
 	'centralauth-merge-denied' => 'Wodaj, ale nimaš dowolnosć za přistup na tutu stronu.',
-	'centralauth-merge-notlogged' => 'Prošu <span class="plainlinks"> [{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.',
+	'centralauth-merge-notlogged' => 'Prošu <span class="plainlinks"> [$1 přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.',
 	'centralauth-merge-welcome' => "'''Twoje wužiwarske konto njeje so hišće do zhromadneho systema přizjewjenja {{int:Centralauth-groupname}} přeměstniło.'''
 
 Hdyž so rozsudźiš twoje konta přeměstnić, budźe móžno smasne wužiwarske mjeno a hesło we wšěch
@@ -10464,7 +10497,7 @@ Twoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich
 	'centralauth-merge-step2-title' => 'Dalše konta potwjerdźić',
 	'centralauth-merge-step2-detail' => 'Někotre z wužiwarskich kontow njemóžachu so awtomatisce zjednoćić. Hdyž su konta twoje, móžeš to z hesłom dopokazać.',
 	'centralauth-merge-step2-submit' => 'Přizjewjenske daty potwjerdźić',
-	'centralauth-login-global' => 'Mje tež pola druhich projektow {{int:Centralauth-groupname}} přizjewić',
+	'centralauth-login-global' => 'Mje tež pola druhich wikijow {{int:Centralauth-groupname}} přizjewić',
 	'centralauth-merge-dryrun-complete' => 'Wšě eksistowace konta dadźa so awtomatisce zjednoćić!
 
 Dotal njebuchu žane změny na twojich kontach přewjedźene.',
@@ -10623,8 +10656,9 @@ Přemjenowanje wuskutkuje, zo lokalny wužiwar so z globalneho wužiwarskeho kon
 	'centralauth-renameuser-reserved' => 'Wužiwar $2 je za globalne konto rezerwowany.',
 	'centralauth-invalid-wiki' => 'Tajka wikijowa datowa banka njeeksistuje: $1',
 	'centralauth-account-exists' => 'Konto njeda so wutowrić: požadane wužiwarske mjeno bu hižo do jednotneho přizjewjenskeho systema přewzate.',
-	'centralauth-login-progress' => 'Přizjewješ so w projektach {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Wozjewješ so z druhich projektow {{int:Centralauth-groupname}}:',
+	'centralauth-account-exists-reset' => 'Wužiwarske mjeno $1 njeje na tutym wikiju zregistrowane, ale eksistuje w zjednoćenym přizjewjenskim systemje.',
+	'centralauth-login-progress' => 'Přizjewješ so k wikijam {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Wotzjewješ so z druhich wikijow {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Sy so awtomatisce do druhich projektow {{int:Centralauth-groupname}} přizjewił.',
 	'centralauth-logout-no-others' => 'Sy so awtomatisce z druhich projektow {{int:Centralauth-groupname}} wotzjewił.',
 	'centralauth-hidden-blockreason' => 'wot $1 $2 ze slědowaceje přičiny globalnje schowany: $3',
@@ -10725,6 +10759,7 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'centralauth-editset-success-delete' => 'Wuspěšnje wušmórnjena wikiskupina.',
 	'centralauth-editset-return' => 'Wróćo k hłownemu napohladej',
 	'right-globalgroupmembership' => 'Čłonstwo w globalnych skupinach wobdźěłać',
+	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatisce přizjewić',
 	'right-centralauth-unmerge' => 'Zjednoćenje globalneho konta zběhnyć',
 	'right-centralauth-lock' => 'Globalne konto zawrěć abo schować',
 	'right-centralauth-oversight' => 'Globalne konto potłóčić',
@@ -11713,6 +11748,69 @@ $messages['ig'] = array(
 	'centralauth-editset-submit' => 'Dànyé',
 	'centralauth-editset-submit-delete' => 'Kàcha',
 	'centralauth-editset-nouse' => '(efù)',
+);
+
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'mergeaccount' => 'Status ti pinagmaysa ti serrekan',
+	'centralauth-groupname' => 'ti Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilan]] ti amin nga wiki {{int:Centralauth-groupname}}',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponen dagiti sabsabali nga pakabilan]] para iti maysa pagserrek ti agar-aramat',
+	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubos mo ti sumrek ditoy nga panid',
+	'centralauth-merge-notlogged' => 'Pangngaasi nga <span class="plainlinks">[$1 sumrekka]</span> ta kitaem dagiti pakabilam ket napagtipon aminen.',
+	'centralauth-merge-step1-submit' => 'Pasingkedan ti informasion ti pagserrekmo',
+	'centralauth-merge-step2-title' => 'Pasingkedan dagiti dadduma pay nga pakabilan',
+	'centralauth-login-global' => 'Ket iserreknak met kdagiti sabsabali a wiki ti {{int:Centralauth-groupname}}',
+	'centralauth-merge-dryrun-complete' => 'Dagiti amin adda nga pakabilan ket maiautomatiko nga ipakamaysa:
+
+Awan pay ti nasukatan kadagita pakabilan mo.',
+	'centralauth-merge-dryrun-or' => "'''wenno'''",
+	'centralauth-merge-step3-title' => 'Agaramid ti pagkamaysa a pakabilan',
+	'centralauth-complete' => 'Ti pinagtipon ti pagkaserrek mo ket nalpasen!',
+	'centralauth-incomplete' => 'Ti pinagtipon ti pagkaserrek mo ket saan pay a nalpas!',
+	'centralauth-error-locked' => 'Saan ka nga makapagbaliw ngamin ket naserraan ti pakabilam.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Bassan pay dagita '''pagtipon ti pagserrek''']]…''",
+	'centralauth-foreign-link' => 'Agar-aramat $1 idiay $2',
+	'centralauth-merge-method-empty' => 'awan dagiti naaramidan',
+	'centralauth-merge-method-mail' => 'napasingkedan iti e-surat',
+	'centralauth-merge-method-password' => 'napasingkedan iti pasesbalikas',
+	'centralauth-merge-method-new' => 'baro a pakabilan',
+	'centralauth-merge-method-login' => 'naaramid idi nakastrek',
+	'centralauth-finish-title' => 'Lippasen ti pinagmaysa',
+	'centralauth-finish-password' => 'Password:',
+	'centralauth-finish-login' => 'Sumrek',
+	'centralauth-finish-send-confirmation' => 'E-surat iti pasesbalikas',
+	'centralauth-finish-noconfirms' => 'Awan dagiti pakabilan ti napasingkedan nga agus-usar daytoy a pasesbalikas.',
+	'centralauth-merge-attempt' => "'''Kitkitaen dagiti naited nga pasebalikas kontra kadagiti nabati nga pakabilan a saan nga napamaysa …'''",
+	'centralauth-attach-list-attached' => 'Ti pinagmaysa a pakabilan nga agnagan ti "$1" ket nairaman kadagiti sumaganad a pakabilan:',
+	'centralauth-attach-title' => 'Pasingkedan ti pakabilan',
+	'centralauth-attach-submit' => 'Iyalkar dagiti pakabilan',
+	'centralauth-admin-username' => 'Nagan ti agar-aramat:',
+	'centralauth-admin-lookup-ro' => 'Kitaen ti informasion ti agar-aramat',
+	'centralauth-admin-info-id' => 'ID ti agar-aramat:',
+	'centralauth-admin-info-registered' => 'Nakarehistro:',
+	'centralauth-admin-info-editcount' => 'Amin nga dagup ti binaliwan:',
+	'centralauth-admin-info-locked' => 'Napengdan:',
+	'centralauth-admin-nohome' => 'saan nga naammuan',
+	'centralauth-admin-yes' => 'wen',
+	'centralauth-admin-no' => 'saan',
+	'centralauth-admin-hidden-list' => 'naggapu ti listaan nga publiko',
+	'centralauth-admin-hidden-oversight' => 'napalasinan',
+	'centralauth-admin-list-legend-ro' => 'Listaan dagiti lokal  nga pakabilan',
+	'centralauth-admin-list-legend-rw' => 'Ikkaten pinagmaysa dagiti pakabilan',
+	'centralauth-admin-unattached' => 'saan nga naikapet',
+	'centralauth-admin-blocked' => 'Naserraan, agpaso iti $3 ti oras nga $4.
+Rason: $2',
+	'centralauth-admin-blocked-indef' => 'Naserran ingat-ingana.
+Rason: $1',
+	'centralauth-admin-blocklog' => 'listaan ti serra',
+	'centralauth-admin-list-localwiki' => 'Lokal  nga wiki',
+	'centralauth-admin-list-attached-on' => 'Naikabit iti',
+	'centralauth-admin-list-method' => 'Ti inusar',
+	'centralauth-admin-list-editcount' => 'Bilang ti pabaliwan',
+	'centralauth-admin-list-blocked' => 'Naserraan',
 );
 
 /** Ingush (ГІалгІай Ğalğaj)
@@ -12704,6 +12802,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
  * @author David1010
  * @author Dawid Deutschland
  * @author Malafaya
+ * @author Nodar Kherkheulidze
  * @author გიორგიმელა
  */
 $messages['ka'] = array(
@@ -12745,7 +12844,7 @@ $messages['ka'] = array(
 	'centralauth-incomplete' => 'ანგარიშების გაერთიანება არ დასრულებულა!',
 	'centralauth-complete-text' => 'ახლა თქვენ უკვე შეგიძლიათ {{int:Centralauth-groupname}} ვიკი-გვერდებზე შესვლა ახალი ანგარიშის გახსნის გარეშე',
 	'centralauth-incomplete-text' => 'მას შემდეგ, რაც მოხდება თქვენი ანგარიშების გაერთიანება, თქვენ შეგეძლებათ {{int:Centralauth-groupname}}-ის ნებისმიერ ვიკი-პროექტში ახალი ანგარიშის გახსნის გარეშე შესვლა',
-	'centralauth-not-owner-text' => 'მომხმარებლის სახელი "$1" ავტომატურად მიება ამ ანგარიშის მფლობელს საიტზე: $2.
+	'centralauth-not-owner-text' => 'მომხმარებლის სახელი „$1“ ავტომატურად მიება ამ ანგარიშის მფლობელს საიტზე: $2.
 
 თუ ეს თქვენ ხართ, ანგარიშის გაერთიანების პროცესის დასრულება თქვენი ძირითადი ანგარიშის პაროლის აქ შეყვანით შეგიძლიათ:',
 	'centralauth-blocked-text' => 'თქვენი მშობლიური ვიკი (მითითებულია ქვემოთ) დაბლოკილია რედაქტირებისთვის.
