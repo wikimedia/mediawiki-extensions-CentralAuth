@@ -505,6 +505,8 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-rightslog-entry-newset' => "* \$1 is the name of the wiki set (example: \"''Test''\")
 * \$2 is \"''{{int:Centralauth-rightslog-set-optin}}''\" or \"''{{int:Centralauth-rightslog-set-optout}}''\"
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
+	'centralauth-rightslog-entry-deleteset' => 'Log entry. Parameters:
+* $1 is the name of a wiki set',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
@@ -4829,6 +4831,9 @@ Ni chaiff unrhyw newidiadau eu gwneud tan eich bod wedi cadarnhau bod popeth yn 
 	'centralauth-login-global' => 'Mewngofnodi i wicïau eraill {{int:Centralauth-groupname}} hefyd',
 	'centralauth-merge-dryrun-complete' => "Gellir uno pob cyfrif sy'n bodoli eisoes yn awtomatig!
 Ni wnaed unrhyw newidiadau i'ch cyfrifon hyd yn hyn.",
+	'centralauth-merge-dryrun-incomplete' => "Rydych yn barod i barhau, ond nid oedd modd gwirio rhai cyfrifon yn awtomatig ac felly ni fyddant yn cael eu mudo'n syth. Bydd modd i chi gyfuno'r cyfrifon hyn yn nes ymlaen.
+
+Ni wnaed unrhyw newidiadau i'ch cyfrif eto.",
 	'centralauth-merge-dryrun-or' => "'''neu'''",
 	'centralauth-merge-dryrun-home' => "Ni allai'r system fudo gadarnhau mai chi yw perchennog y cyfrif wici cartref ar gyfer eich enw defnyddiwr.
 Pennwyd wici gwahanol fel y cyfrif cartref ar gyfer eich enw defnyddiwr: cliciwch ar y ddolen isod a mewngofnodwch yno er mwyn cwblhau mudo eich cyfrif.",
@@ -4865,6 +4870,11 @@ Tra'i fod wedi blocio, ni allwch gyfuno cyfrifon.",
 	'centralauth-merge-method-admin' => 'Cyfrif a gyfunwyd gan weinyddwr',
 	'centralauth-merge-method-new' => 'cyfrif newydd',
 	'centralauth-merge-method-login' => 'gosodwyd wrth fewngofnodi',
+	'centralauth-merge-method-primary-desc' => "Dyma'r wici lle cyfunwyd y cyfrif yn wreiddiol.
+Noder y gall fod yn wahanol i wici cartref go iawn y defnyddiwr hwnnw.",
+	'centralauth-merge-method-empty-desc' => "Yn dynodi fod y cyfrif lleol wedi'i gyfuno am nad oedd ganddo olygiadau.",
+	'centralauth-merge-method-mail-desc' => "Yn dynodi fod y cyfrif lleol wedi'i gyfuno am fod ei gyfeiriad e-bost yn cyfateb i gyfeiriad e-bost y prif gyfrif.",
+	'centralauth-merge-method-password-desc' => "Yn dynodi fod y cyfrif lleol wedi'i gyfuno am fod y defnyddiwr wedi nodi cyfrinair dilys ar ei gyfer.",
 	'centralauth-merge-method-login-desc' => "Yn dynodi fod cyfrif lleol wedi'i chreu'n awtomatig pan fewngofnododd defnyddiwr.",
 	'centralauth-finish-title' => 'Gorffen cyfuno',
 	'centralauth-finish-text' => "Os mai eich cyfrifon chi yw rhain, gallwch gwblhau'r broses cyfuno mewngofnodi trwy deipio'ch cyfrineiriau ar gyfer y cyfrifon eraill yn y fan hon:",
@@ -4877,13 +4887,17 @@ Tra'i fod wedi blocio, ni allwch gyfuno cyfrifon.",
 	'centralauth-finish-incomplete' => "Cyfunwyd nifer o gyfrifon gan ddefnyddio'r cyfrinair hwn.
 Nid yw cyfrifon eraill wedi'u cadarnhau hyd yn hyn.",
 	'centralauth-merge-attempt' => "'''Yn gwirio'r cyfrinair a ddarparwyd gyda'r cyfrifon eraill sydd heb eu cyfuno...'''",
+	'centralauth-attach-list-attached' => "Mae'r cyfrif cyfunedig o'r enw $1 yn cynnwys y cyfrifon canlynol:",
 	'centralauth-attach-title' => 'Cadarnhau cyfrif',
+	'centralauth-attach-submit' => "Mudo'r cyfrif",
+	'centralauth-attach-success' => 'Mudwyd y cyfrif i gyfrif unedig.',
 	'centralauth' => 'Rheoli defnyddiwr cydwici',
 	'centralauth-admin-manage' => "Trin data'r defnyddiwr",
 	'centralauth-admin-username' => "Enw'r defnyddiwr:",
 	'centralauth-admin-lookup-ro' => 'Edrych ar y wybodaeth am y defnyddiwr',
 	'centralauth-admin-lookup-rw' => "Rheoli'r cyfrif defnyddiwr",
 	'centralauth-admin-permission' => 'Dim ond stiward all uno cyfrifon pobl eraill drostynt.',
+	'centralauth-admin-no-unified' => 'Dim cyfrif unedig ar gyfer yr enw defnyddiwr hwn.',
 	'centralauth-admin-info-header' => 'Gwybodaeth am y cyfrif cydwici',
 	'centralauth-admin-info-id' => 'ID y defnyddiwr:',
 	'centralauth-admin-info-registered' => 'Cofrestrwyd:',
@@ -4917,10 +4931,12 @@ Rheswm: $1',
 	'centralauth-admin-unmerge-success' => 'Dad-gyfuniad llwyddiannus $1 {{PLURAL:$1|account|accounts}}',
 	'centralauth-admin-delete-title' => "Dileu'r cyfrif",
 	'centralauth-admin-delete-button' => 'Dileer y cyfrif hwn',
+	'centralauth-admin-nonexistent' => 'Nid oes cyfrif byd-eang ar gyfer "<nowiki>$1</nowiki>"',
 	'centralauth-token-mismatch' => "Mae'n ddrwg gennym, ni allem brosesu'r ffurflen a gyflwynwyd gennych oherwydd i ni golli data'r sesiwn.",
 	'centralauth-admin-reason' => 'Rheswm:',
 	'centralauth-admin-reason-other' => 'Rheswm arall:',
 	'centralauth-admin-status' => 'Gosod statws y cyfrif cydwici',
+	'centralauth-admin-status-intro' => "Gallwch ddefnyddio'r ffurflen hon i newid statws y cyfrif byd-eang hwn.",
 	'centralauth-admin-status-locked' => 'Dan glo:',
 	'centralauth-admin-status-locked-no' => "Nid yw'r cyfrif ar glo",
 	'centralauth-admin-status-locked-yes' => "Mae'r cyfrif ar glo o ran golygu",
@@ -4937,6 +4953,7 @@ Rheswm: $1',
 * Rhesymau Cloi a Chuddio cyffredin
 ** enw defnyddiwr bygythiol
 ** gwybodaeth bersonol amhriodol',
+	'centralauth-admin-logsnippet' => 'Newidiadau cyfrif byd-eang blaenorol',
 	'globalusers' => 'Rhestr defnyddwyr cydwici',
 	'centralauth-listusers-locked' => 'ar glo',
 	'centralauth-listusers-attached' => '[[User:$1|ar gael yn lleol]]',
@@ -4955,6 +4972,8 @@ Rheswm: $1',
 	'centralauth-prefs-count-attached' => "Mae'ch cyfrif ar waith ar $1 {{PLURAL:$1|safle|safle|safle|safle|safle|safle}} prosiect.",
 	'centralauth-prefs-detail-unattached' => "Ni chadarnhawyd bod y safle prosiect hwn yn aelod o'r cyfrif cydwici.",
 	'centralauth-prefs-manage' => "Rheoli'ch cyfrif cydwici",
+	'centralauth-prefs-view' => 'Gweler gwybodaeth defnyddiwr byd-eang',
+	'centralauth-renameuser-reserved' => 'Cedwir defnyddiwr $2 ar gyfer cyfrif cydwici.',
 	'centralauth-invalid-wiki' => "Dim cronfa ddata wici o'r fath: $1",
 	'centralauth-account-exists' => "Ni allwyd greu cyfrif; mae'r enw defnyddiwr a geisiwyd wedi'i gymryd yn y system fewngofnodi cyfunedig.",
 	'centralauth-account-exists-reset' => "Nid yw'r enw defnyddiwr $1 wedi'i gofrestru ar y wici hwn, ond mae'n bodoli yn y system fewngofnodi cyfunedig.",
@@ -4968,6 +4987,7 @@ Rheswm: $1',
 	'centralauth-log-entry-lock' => 'wedi cloi cyfrif cydwici "$1"',
 	'centralauth-log-entry-unlock' => 'wedi datgloi cyfrif cydwici "$1"',
 	'centralauth-log-entry-hide' => 'wedi cuddio cyfrif cydwici "$1"',
+	'centralauth-log-entry-unhide' => 'wedi dadguddio cyfrif cydwici "$1"',
 	'centralauth-log-entry-lockandhide' => 'wedi cloi a chuddio cydwici "$1"',
 	'centralauth-log-entry-chgstatus' => 'wedi newid statws y cyfrif cydwici "$1": Gosodwyd $2; Gwrthdrowyd y statws $3',
 	'centralauth-log-status-locked' => 'ar glo',
@@ -23459,6 +23479,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Millosh
+ * @author Nikola Smolenski
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Јованвб
@@ -23652,7 +23673,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-legend-new' => 'Стварање новог скупа викија.',
 	'centralauth-editset-name' => 'Име:',
 	'centralauth-editset-type' => 'Врста:',
-	'centralauth-editset-wikis' => 'Викије:',
+	'centralauth-editset-wikis' => 'Викији:',
 	'centralauth-editset-reason' => 'Разлог:',
 	'centralauth-editset-submit' => 'Пошаљи',
 	'centralauth-editset-submit-delete' => 'Обриши',
