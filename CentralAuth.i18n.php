@@ -5000,7 +5000,7 @@ Rheswm: $1',
 	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1.
 Ychwanegwyd $2:
 Gwaredwyd $3',
-	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set o wicïau oedd yn cynnwys "$1"',
+	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set "$1" o wicïau',
 	'autologin' => 'Mewngofnodi awtomatig',
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
 	'centralauth-newgroup-legend' => 'Creu grŵp newydd',
@@ -5344,14 +5344,14 @@ $messages['de'] = array(
 	'centralauth-groupname' => 'der Wikimedia Foundation',
 	'centralauth-desc' => 'Ermöglicht eine [[Special:MergeAccount|Spezialseite]] zum Zusammmenführen von Benutzerkonten in Wikis ({{int:Centralauth-groupname}})',
 	'centralauth-mergeaccount-desc' => "Ergänzt eine [[Special:MergeAccount|Spezialseite]] zum Zusammenführen mehrerer Benutzerkonten für das ''Single User Login''",
-	'centralauth-merge-denied' => 'Entschuldigung, aber du hast keine Berechtigung für diese Seite.',
+	'centralauth-merge-denied' => 'Du hast nicht die erforderliche Berechtigung, um diese Seite aufrufen zu können.',
 	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[$1 melde dich an]</span>, um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.',
 	'centralauth-merge-welcome' => "'''Dein Benutzerkonto wurde noch nicht in das globale Anmeldesystem von {{int:Centralauth-groupname}} überführt.'''
 
 Falls du dich für eine Migration deines Benutzerkontos entscheidest, wird es dir möglich sein, dich mit einem gemeinsamen Benutzernamen und Passwort in allen Projekten {{int:Centralauth-groupname}} in allen verfügbaren Sprachen anzumelden.
 
 Wenn jemand anderes deinen Benutzernamen bereits in einem anderen Projekt benutzt, so beeinträchtigt es diesen nicht, aber du hast die Möglichkeit, später mit diesem anderen Benutzer oder in Zusammenarbeit mit einem Administrator nach einer Lösung zu suchen.",
-	'centralauth-merge-step1-title' => 'Beginn der Benutzerkontenzusammenführung',
+	'centralauth-merge-step1-title' => 'Benutzerkontenzusammenführung starten',
 	'centralauth-merge-step1-detail' => 'Bitte gib dein Passwort ein.
 Es wird zusammen mit deiner eingetragenen E-Mail-Adresse mit Benutzerkonten in den anderen Wikis abgeglichen, um Übereinstimmungen zu finden.
 Es werden keine Änderungen vorgenommen, bis du bestätigst, dass alles richtig ist.',
@@ -5557,7 +5557,7 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'centralauth-autologin-desc' => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn du dich [[Special:UserLogin|anmeldest]], instruiert das zentrale Anmeldesystem deinen Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.
 Du hast diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nichts weiter geschieht.',
 	'globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen',
-	'globalgrouppermissions' => 'Management globaler Gruppen',
+	'globalgrouppermissions' => 'Verwaltung globaler Benutzergruppen',
 	'centralauth-globalgroupperms-grouplist' => 'Die folgenden globalen Gruppen wurden konfiguriert.
 Du kannst die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern du dazu berechtigt bist.
 Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
@@ -5583,7 +5583,8 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-editgroup-perms' => 'Zugewiesene Rechte:',
 	'centralauth-editgroup-reason' => 'Grund:',
 	'centralauth-editgroup-success' => 'Gruppenrechte geändert',
-	'centralauth-editgroup-success-text' => 'Du hast erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
+	'centralauth-editgroup-success-text' => 'Du hast die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.
+[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bearbeiten]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähle ein Wiki, auf dem sie ein Benutzerkonto haben:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
@@ -5688,7 +5689,8 @@ Sie haben diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass ni
 Sie können die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern Sie dazu berechtigt sind.
 Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-newgroup-intro' => 'Sie können mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachten Sie, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
-	'centralauth-editgroup-success-text' => 'Sie haben erfolgreich die Gruppenrechte für die $1-Gruppe geändert. [[Special:GlobalGroupPermissions|Zurück zum Management globaler Gruppen]].',
+	'centralauth-editgroup-success-text' => 'Sie haben die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.
+[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].',
 	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Sie könnten irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
 	'centralauth-editset-badname' => 'Sie haben einen ungültigen oder leeren Gruppennamen angegeben.',
 	'centralauth-editset-badtype' => 'Sie haben einen ungültigen Typ angegeben.',
@@ -7660,6 +7662,7 @@ $messages['ext'] = array(
  * @author Ebraminio
  * @author Huji
  * @author Ladsgroup
+ * @author Leyth
  * @author Mardetanha
  * @author Mjbmr
  * @author Wayiran
@@ -7947,6 +7950,7 @@ $messages['fa'] = array(
 	'centralauth-editset-success-delete' => 'مجموعه ویکی با موفقیت حذف شد.',
 	'centralauth-editset-return' => 'بازگشت به نمای اصلی',
 	'right-globalgroupmembership' => 'ویرایش عضویت در گروه‌های سراسری',
+	'right-centralauth-autoaccount' => 'ورود خودکار با حساب سراسری',
 	'right-centralauth-unmerge' => 'جدا کردن حساب سراسری',
 	'right-centralauth-lock' => 'قفل یا پنهان کردن حساب سراسری',
 	'right-centralauth-oversight' => 'فرونشانی حساب سراسری',
@@ -11821,19 +11825,35 @@ $messages['ilo'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponen dagiti sabsabali nga pakabilan]] para iti maysa pagserrek ti agar-aramat',
 	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubos mo ti sumrek ditoy nga panid',
 	'centralauth-merge-notlogged' => 'Pangngaasi nga <span class="plainlinks">[$1 sumrekka]</span> ta kitaem dagiti pakabilam ket napagtipon aminen.',
+	'centralauth-merge-welcome' => "'''Ti pakabilam ket saan pay a naipan idiay sistema iti pinagtipon a pagserrek {{int:Centralauth-groupname}}.'''
+
+No pinilim nga ipapan dagiti pakabilam, mabalinmon to nga usaren ti naganmo ken pasesbalikas iti amin nga wiki ti  {{int:Centralauth-groupname}} iti amin nga adda pagsasao.
+
+No adda metten nakaala ti naganmo iti sabali nga site daytoy saan ket saan nga mangdisturbo, ngem mabalinmo a kasao kaniada wenno dagiti administrador.",
+	'centralauth-merge-step1-title' => 'Mangrugi ti sumrek ti pinagtipon',
+	'centralauth-merge-step1-detail' => 'Pangngaasi ti ikabil mi ti pasesbalikas ti pakabilam.
+Ti pasesbalikas mo ken ti nakarehistro nga e-surat adressmo ket maipadpada kadagiti pakabilam iti sabali nga wiki tapno mapasingkedan da nga agpada.
+Awan dagiti masukatan inggana no mapasingkedam nga nalimpiam aminen.',
 	'centralauth-merge-step1-submit' => 'Pasingkedan ti informasion ti pagserrekmo',
 	'centralauth-merge-step2-title' => 'Pasingkedan dagiti dadduma pay nga pakabilan',
+	'centralauth-merge-step2-detail' => 'Adda dagiti pakabilan nga saan nga mautomatiko nga ipada dita naited nga balay nga wikim.
+No dagitoy nga pakabilam ket kukuam, mapasingkedam nga kukuam no mangted ka ti pasesbalikas nga para kaniada.',
+	'centralauth-merge-step2-submit' => 'Pasingkedan ti informasion ti pagserrekmo',
 	'centralauth-login-global' => 'Ket iserreknak met kadagiti sabsabali a wiki {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Dagiti amin adda nga pakabilan ket maiautomatiko nga ipakamaysa:
 
 Awan pay ti nasukatan kadagita pakabilan mo.',
 	'centralauth-merge-dryrun-or' => "'''wenno'''",
 	'centralauth-merge-step3-title' => 'Agaramid ti pagkamaysa a pakabilan',
+	'centralauth-merge-step3-submit' => 'Pagtiponen dagiti pakabilan',
 	'centralauth-complete' => 'Ti pinagtipon ti pagkaserrek mo ket nalpasen!',
 	'centralauth-incomplete' => 'Ti pinagtipon ti pagkaserrek mo ket saan pay a nalpas!',
 	'centralauth-error-locked' => 'Saan ka nga makapagbaliw ngamin ket naserraan ti pakabilam.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Bassan pay dagita '''pagtipon ti pagserrek''']]…''",
+	'centralauth-list-home-title' => 'Balay mo nga wiki',
+	'centralauth-list-attached-title' => 'Naikabit a pakabilan',
 	'centralauth-foreign-link' => 'Agar-aramat $1 idiay $2',
+	'centralauth-merge-method-primary' => 'balay mo nga wiki',
 	'centralauth-merge-method-empty' => 'awan dagiti naaramidan',
 	'centralauth-merge-method-mail' => 'napasingkedan iti e-surat',
 	'centralauth-merge-method-password' => 'napasingkedan iti pasesbalikas',
@@ -11847,11 +11867,16 @@ Awan pay ti nasukatan kadagita pakabilan mo.',
 	'centralauth-merge-attempt' => "'''Kitkitaen dagiti naited nga pasebalikas kontra kadagiti nabati nga pakabilan a saan nga napamaysa …'''",
 	'centralauth-attach-list-attached' => 'Ti pinagmaysa a pakabilan nga agnagan ti "$1" ket nairaman kadagiti sumaganad a pakabilan:',
 	'centralauth-attach-title' => 'Pasingkedan ti pakabilan',
+	'centralauth-attach-text' => 'Daytoy a pakabilan ket saan pay naipay idiay pinagtipon a pakabilan.
+No ti paglubong a pakabilan ket kukuam, mabalin mo a pagtiponen no ikabil mo ti paglubong nga pakabilan.',
 	'centralauth-attach-submit' => 'Iyalkar dagiti pakabilan',
+	'centralauth-attach-success' => 'Daytoy a pakabilan ket naipan idiay pinagtipon a pakabilan.',
 	'centralauth-admin-username' => 'Nagan ti agar-aramat:',
 	'centralauth-admin-lookup-ro' => 'Kitaen ti informasion ti agar-aramat',
+	'centralauth-admin-no-unified' => 'Awan ti napagtipon a pakabilan ti daytoy nga agar-aramat.',
 	'centralauth-admin-info-id' => 'ID ti agar-aramat:',
 	'centralauth-admin-info-registered' => 'Nakarehistro:',
+	'centralauth-admin-info-home' => 'Balay mo nga wiki:',
 	'centralauth-admin-info-editcount' => 'Amin nga dagup ti binaliwan:',
 	'centralauth-admin-info-locked' => 'Napengdan:',
 	'centralauth-admin-nohome' => 'saan nga naammuan',
@@ -13879,7 +13904,7 @@ $messages['ko'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}}의 위키 사이의 [[Special:MergeAccount|계정 병합]]',
 	'centralauth-mergeaccount-desc' => '통합된 로그인을 위한 [[Special:MergeAccount|여러 계정 합치기]]',
 	'centralauth-merge-denied' => '접근할 권한이 없습니다.',
-	'centralauth-merge-notlogged' => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} 로그인]</span>해 주세요.',
+	'centralauth-merge-notlogged' => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[$1 로그인]</span>해 주세요.',
 	'centralauth-merge-welcome' => "'''당신의 계정은 {{MediaWiki:Centralauth-groupname/ko}}의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
 계정을 합치면, 같은 이름과 암호로 모든 언어의 모든 {{MediaWiki:Centralauth-groupname/ko}}의 프로젝트에 로그인할 수 있습니다.
@@ -14531,8 +14556,9 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 	'right-globalgrouppermissions' => 'Jemeinsame Metmaacher-Jruppe beärbeide',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
+ * @author Gomada
  * @author Welathêja
  */
 $messages['ku-latn'] = array(
@@ -14547,7 +14573,7 @@ $messages['ku-latn'] = array(
 	'centralauth-admin-info-id' => "ID'ya bikarhêner:",
 	'centralauth-admin-info-registered' => 'Xweqeydkirin:',
 	'centralauth-admin-info-locked' => 'Hatiye astengkirin:',
-	'centralauth-admin-info-hidden' => 'Seviyeya veşartî:',
+	'centralauth-admin-info-hidden' => 'Asta veşartî:',
 	'centralauth-admin-yes' => 'erê',
 	'centralauth-admin-no' => 'na',
 	'centralauth-admin-blocklog' => 'reşahîya astengkirinê',
