@@ -5371,12 +5371,12 @@ Bis jetzt wurden keine Änderungen an deinen Benutzerkonten vorgenommen.',
 	'centralauth-merge-dryrun-home' => 'Das Migrationssystem konnte nicht bestätigen, dass du der Eigentümer des Heimatwiki-Benutzerkontos für diesen Benutzernamen bist.
 
 Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge dem untenstehenden Link und melde dich dort an, um die Benutzerkonten-Zusammenführung abzuschließen.',
-	'centralauth-merge-step3-title' => 'Globales Benutzerkonto erzeugen',
+	'centralauth-merge-step3-title' => 'Globales Benutzerkonto erstellen',
 	'centralauth-merge-step3-detail' => 'Du kannst nun ein globales Benutzerkonto für die folgenden Wikis erzeugen:',
 	'centralauth-merge-step3-submit' => 'Benutzerkonten zusammenführen',
 	'centralauth-merge-no-accounts' => 'Es wurden in der zentralen Datenbank keine Benutzerkonten gefunden, die mit deinem Namen übereinstimmen. Die Datenbank muss fehlerhaft sein.',
 	'centralauth-merge-home-password' => 'Das Heimatwiki für dieses Benutzerkonto (siehe unten) hat ein anderes Passwort als von dir eingegeben. Bitte gib das Passwort für dein Heimatwiki ein.',
-	'centralauth-complete' => 'Die Zusammenführung der Benutzerkonten ist vollständig.',
+	'centralauth-complete' => 'Die Zusammenführung der Benutzerkonten ist abgeschlossen.',
 	'centralauth-incomplete' => 'Zusammenführung unvollständig',
 	'centralauth-complete-text' => 'Du kannst dich nun auf jedem Wiki {{int:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
 	'centralauth-incomplete-text' => 'Sobald deine Benutzerkonten zusammengeführt sind, kannst du dich auf jedem Wiki {{int:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.',
@@ -5635,7 +5635,7 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
-	'centralauth-merge-denied' => 'Entschuldigung, aber Sie haben keine Berechtigung für diese Seite.',
+	'centralauth-merge-denied' => 'Sie haben nicht die erforderliche Berechtigung, um diese Seite aufrufen zu können.',
 	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[$1 melden Sie sich an]</span>, um zu prüfen, ob Ihre Benutzerkonten vollständig zusammengeführt wurden.',
 	'centralauth-merge-welcome' => "'''Ihr Benutzerkonto wurde noch nicht in das globale Anmeldesystem von {{int:Centralauth-groupname}} überführt.'''
 
@@ -11819,8 +11819,8 @@ $messages['ig'] = array(
  * @author Lam-ang
  */
 $messages['ilo'] = array(
-	'mergeaccount' => 'Status ti pinagmaysa ti serrekan',
-	'centralauth-groupname' => 'ti Wikimedia Foundation',
+	'mergeaccount' => 'Istado ti pinagmaysa ti serrekan',
+	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilan]] ti amin nga wiki {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponen dagiti sabsabali nga pakabilan]] para iti maysa pagserrek ti agar-aramat',
 	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubos mo ti sumrek ditoy nga panid',
@@ -11874,6 +11874,7 @@ No ti paglubong a pakabilan ket kukuam, mabalin mo a pagtiponen no ikabil mo ti 
 	'centralauth-admin-username' => 'Nagan ti agar-aramat:',
 	'centralauth-admin-lookup-ro' => 'Kitaen ti informasion ti agar-aramat',
 	'centralauth-admin-no-unified' => 'Awan ti napagtipon a pakabilan ti daytoy nga agar-aramat.',
+	'centralauth-admin-info-header' => 'Paglubong nga informasiyon ti agar-aramat',
 	'centralauth-admin-info-id' => 'ID ti agar-aramat:',
 	'centralauth-admin-info-registered' => 'Nakarehistro:',
 	'centralauth-admin-info-home' => 'Balay mo nga wiki:',
@@ -19652,6 +19653,7 @@ A peule vardé e modifiché mincadun ëd lor, o creé n'ansema neuv.",
 	'centralauth-editset-success-delete' => "Scancelà l'ansema wiki për da bin.",
 	'centralauth-editset-return' => 'Artorna a la vista prinsipal',
 	'right-globalgroupmembership' => "Modìfica l'apartenensa a le partìe globaj",
+	'right-centralauth-autoaccount' => 'Intra automaticament con un cont global',
 	'right-centralauth-unmerge' => 'Anulé la fusion dël cont global',
 	'right-centralauth-lock' => 'Blòca o stërma cont globaj',
 	'right-centralauth-oversight' => 'Scancelé ël cont global',
