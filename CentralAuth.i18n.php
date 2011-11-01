@@ -6011,7 +6011,7 @@ $messages['dsb'] = array(
 	'centralauth-desc' => 'Konta pó wikijach {{int:Centralauth-groupname}} [[Special:MergeAccount|zjadnośiś]]',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zjadnośujo někotare konta]] za pśizjawjenja jadnotliwego wužywarja',
 	'centralauth-merge-denied' => 'Wódaj, ale njamaš pśistupne pšawo za toś ten bok.',
-	'centralauth-merge-notlogged' => 'Pšosym <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} pśizjaw se]</span>, aby pśeglědał, lěc twóje konta su dopołnje zjadnośone.',
+	'centralauth-merge-notlogged' => 'Pšosym <span class="plainlinks">[$1 pśizjaw se]</span>, aby pśeglědał, lěc twóje konta su dopołnje zjadnośone.',
 	'centralauth-merge-welcome' => "'''Twójo wužywarske konto njejo se hyšći spórało do jadnotnego systema pśizjawjenja {{int:Centralauth-groupname}}.'''
 
 Jolic coš swóje konta spóraś, móžoš samske wužywarske mě a gronidło wužywaś, aby se pla wšych wikijow {{int:Centralauth-groupname}} we wšych k dispoziciji stojecych rěcach pśizjawił.
@@ -6026,7 +6026,7 @@ Njezměnijo se nic, až njejo wobkšuśone, až jo wšo w pórěźe.',
 	'centralauth-merge-step2-detail' => 'Někotare konta njejsu se awtomatiski dali domacnemu wikijoju pśirědowaś.
 Jolic toś te konta tebje słušaju, móžoš to wobkšuśiś, z tym až zapódaš gronidło za nje.',
 	'centralauth-merge-step2-submit' => 'Pśizjawjeńske informacije wobkšuśiś',
-	'centralauth-login-global' => 'Globalnje pśizjawiś',
+	'centralauth-login-global' => 'Mě teke k drugim wikijam {{int:Centralauth-groupname}} pśizjawiś',
 	'centralauth-merge-dryrun-complete' => 'Wše eksistěrujuce konta daju se awtomatiski zjadnośiś!
 
 Doněnta njejo se nic na twójich kontach změniło.',
@@ -6193,8 +6193,9 @@ Pśemjenjowanje wótwónoźujo lokalnego wužywarja z jadnotnego systema.',
 	'centralauth-renameuser-reserved' => 'Wužywaŕ $2 jo za globalne konto rezerwěrowany.',
 	'centralauth-invalid-wiki' => 'Njejo taka wikijowa datowa banka: $1',
 	'centralauth-account-exists' => 'Konto njedajo se napóraś: wužywarske mě, kótarež se pomina, jo južo do systema jadnotnego pśizjawjenja pśewzete.',
-	'centralauth-login-progress' => 'Pśizjawijoš se do projektow {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Wótzjawijoš se z drugich projektow {{int:Centralauth-groupname}}:',
+	'centralauth-account-exists-reset' => 'Wužywarske mě $1 njejo na toś tom wikiju zregistrěrowane, ale eksistěrujo w zjadnośonem pśizjwajeńskem systemje.',
+	'centralauth-login-progress' => 'Pśizjawijoš se k wikijam {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Wótzjawijoš se z drugich wikijow{{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Sy se awtomatiski pśizjawił do drugich projektow {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Sy se awtomatiski wótzjawił z drugich projektow {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalnje schowany wót $1 $2 ze slědujuceje pśicyny: $3',
@@ -21338,6 +21339,7 @@ Luàte $3',
 /** Russian (Русский)
  * @author Ahonc
  * @author AlexSm
+ * @author Cryptocoryne
  * @author Dim Grits
  * @author HalanTul
  * @author Kaganer
@@ -21458,7 +21460,7 @@ $messages['ru'] = array(
 	'centralauth-admin-hidden-list' => 'из общедоступных списков',
 	'centralauth-admin-hidden-oversight' => 'скрыто ревизором',
 	'centralauth-admin-list-legend-ro' => 'Список локальных учётных записей',
-	'centralauth-admin-list-legend-rw' => 'Необъединённые локальные учётные записи',
+	'centralauth-admin-list-legend-rw' => 'Разделение локальных учётных записей',
 	'centralauth-admin-unattached' => 'неприсоединён',
 	'centralauth-admin-blocked' => 'Заблокирован до $3 $4. Причина: $2',
 	'centralauth-admin-blocked-indef' => 'Заблокирован бессрочно. Причина: $1',
