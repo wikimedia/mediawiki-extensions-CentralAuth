@@ -28083,7 +28083,7 @@ $messages['zh-hans'] = array(
 ** 不当用户名
 ** 不当滥用个人信息',
 	'centralauth-admin-logsnippet' => '前个全域户口的变化',
-	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因:$2',
+	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因：$2',
 	'globalusers' => '全局用户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
