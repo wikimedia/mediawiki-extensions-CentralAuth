@@ -11828,7 +11828,7 @@ $messages['ig'] = array(
 $messages['ilo'] = array(
 	'mergeaccount' => 'Istado ti pinagmaysa ti serrekan',
 	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilan]] ti amin nga wiki {{int:Centralauth-groupname}}',
+	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilan]] ti amin nga wiki ti {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponen dagiti sabsabali nga pakabilan]] para iti maysa pagserrek ti agar-aramat',
 	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubos mo ti sumrek ditoy nga panid',
 	'centralauth-merge-notlogged' => 'Pangngaasi nga <span class="plainlinks">[$1 sumrekka]</span> ta kitaem dagiti pakabilam ket napagtipon aminen.',
@@ -11850,15 +11850,37 @@ No dagitoy nga pakabilam ket kukuam, mapasingkedam nga kukuam no mangted ka ti p
 	'centralauth-merge-dryrun-complete' => 'Dagiti amin adda nga pakabilan ket maiautomatiko nga ipakamaysa:
 
 Awan pay ti nasukatan kadagita pakabilan mo.',
+	'centralauth-merge-dryrun-incomplete' => 'Mabalin mon ti mangrugi,ngem adda dagiti pakabilan nga saan nga ma-automatiko a masingkedan ken saan nga maikabil nga agdama.
+Maitipon mo dagitoy no madamdama.
+
+Awan pay ti nasukatan kadagiti pakabilam tatta.',
 	'centralauth-merge-dryrun-or' => "'''wenno'''",
+	'centralauth-merge-dryrun-home' => 'Ti pinagitipon nga daytoy ket saan na a masingkedan nga sika ti akinkukua ti pakabilan a balay ti wiki nga adda ti naganmo.
+
+Addaan ti sabali a wiki ti nakita a kas ti balay ti pakabilan nga adda ti naganmo; surutem ti panilpo dita baba ken sumrekka tapno malpasmo ti pinagtipon ti pakabilam.',
 	'centralauth-merge-step3-title' => 'Agaramid ti pagkamaysa a pakabilan',
+	'centralauth-merge-step3-detail' => 'Makairugi kan nga agaramid ti pinagmaysa nga pakabilam, nga dagita nga wiki ti naikabit:',
 	'centralauth-merge-step3-submit' => 'Pagtiponen dagiti pakabilan',
+	'centralauth-merge-no-accounts' => 'Awan nabirokan kadagiti pakabilan nga naipada iti naganmo idiay pakabilan a central ti pinagsursurot a tabla!
+Nadadael ngata ti database.',
+	'centralauth-merge-home-password' => 'Ti balay nga wiki para daytoy nga pakabilan (nailista dita bababa) ket addaan ti sabali a pasesbalikas ngem iti inkabil mo.
+Pangngaasi ta ikabil mo ti pasesbalikas iti balay nga wikim.',
 	'centralauth-complete' => 'Ti pinagtipon ti pagkaserrek mo ket nalpasen!',
 	'centralauth-incomplete' => 'Ti pinagtipon ti pagkaserrek mo ket saan pay a nalpas!',
+	'centralauth-complete-text' => 'Makastrekkan iti ania man nga wiki iti {{int:Centralauth-groupname}} nga saan ka nga agaramid ti baro nga pakabilan.',
+	'centralauth-incomplete-text' => 'No malpasen ti pinagmaysa ti iseserrekk mo, makastrekkan iti ania man nga wiki nga site iti {{int:Centralauth-groupname}} nga saan ka nga agaramid ti baro nga pakabilan.',
+	'centralauth-blocked-text' => 'Ti balay mo nga wiki (nailista dita baba)  ket naserran ti pinagbaliw.
+Pangngaasi ta kontakem ti administrador ditoy nga wiki ta luktan na ti serra.
+No naserraan daytoy, saan mo nga mabalin ti agipagtipon kadagiti pakabilam.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Padpadas laeng</div><br clear='all'/>",
 	'centralauth-error-locked' => 'Saan ka nga makapagbaliw ngamin ket naserraan ti pakabilam.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Bassan pay dagita '''pagtipon ti pagserrek''']]…''",
 	'centralauth-list-home-title' => 'Balay mo nga wiki',
+	'centralauth-list-home-dryrun' => 'Ti pasesbalikas ken e-surat address nga dagitoy iti ditoy nga wiki ket mausar to ti pinagmaysa ti pakabilan.',
 	'centralauth-list-attached-title' => 'Naikabit a pakabilan',
+	'centralauth-list-attached' => 'Ti pakabilan nga nainagan ti "$1" kadagiti sumaganad nga site ket na-automatiko nga naikabit iti pinagmaysa a pakabilan:',
+	'centralauth-list-attached-dryrun' => 'Ti pakabilan nga nainagan ti "$1" kadagiti sumaganad nga site ket ma-automatikonto  nga naikabit iti pinagmaysa a pakabilan:',
+	'centralauth-list-unattached-title' => 'Dagiti saan a naikabit a pakabilan',
 	'centralauth-foreign-link' => 'Agar-aramat $1 idiay $2',
 	'centralauth-merge-method-primary' => 'balay mo nga wiki',
 	'centralauth-merge-method-empty' => 'awan dagiti naaramidan',
@@ -11871,6 +11893,8 @@ Awan pay ti nasukatan kadagita pakabilan mo.',
 	'centralauth-finish-login' => 'Sumrek',
 	'centralauth-finish-send-confirmation' => 'E-surat iti pasesbalikas',
 	'centralauth-finish-noconfirms' => 'Awan dagiti pakabilan ti napasingkedan nga agus-usar daytoy a pasesbalikas.',
+	'centralauth-finish-incomplete' => 'Addan dagitoy nga pakabilan ti naipagtipon nga pinagusar iti  daytoy nga pasesbalikas.
+Dagiti sabali nga pakabilan ket saan pay ng anapasingkedan.',
 	'centralauth-merge-attempt' => "'''Kitkitaen dagiti naited nga pasebalikas kontra kadagiti nabati nga pakabilan a saan nga napamaysa …'''",
 	'centralauth-attach-list-attached' => 'Ti pinagmaysa a pakabilan nga agnagan ti "$1" ket nairaman kadagiti sumaganad a pakabilan:',
 	'centralauth-attach-title' => 'Pasingkedan ti pakabilan',
@@ -18382,7 +18406,7 @@ $messages['nov'] = array(
  * @author Mohau
  */
 $messages['nso'] = array(
-	'centralauth-foreign-link' => 'Moošomiši $1 go $2',
+	'centralauth-foreign-link' => 'Mošomiši $1 go $2',
 	'centralauth-finish-password' => 'Ditlhaka tša siphiri:',
 	'centralauth-admin-username' => 'Leina la mošomiši:',
 );
