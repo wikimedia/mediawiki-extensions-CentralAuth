@@ -17368,7 +17368,7 @@ $messages['nds-nl'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Samenevoegden gebrukers]] in wiki's van {{int:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Meerdere gebrukers bie mekaar doon]] veur t eenmaolige inlogsysteem',
 	'centralauth-merge-denied' => 'Je hebben gien toegang tot disse pagina.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld an]</span> um nao te kieken of joew gebrukers allemaole bie mekaar edaon bin.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1  Meld je eigen an]</span> um te kieken of joew gebrukers allemaole samenevoegd bin.',
 	'centralauth-merge-welcome' => "'''Joew gebruker is nog niet emigreerd naor t samenevoegden anmeldsysteem van {{int:Centralauth-groupname}}.'''
 
 A'j derveur kiezen um joew gebrukers te migreren, da'j ku'j mit de zelfde gebrukersnaam-wachtwoordkombinasie anmelden bie alle wiki's van {{int:Centralauth-groupname}} in alle beschikbaore talen.
