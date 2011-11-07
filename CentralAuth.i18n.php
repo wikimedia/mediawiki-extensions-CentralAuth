@@ -18992,6 +18992,7 @@ $3 ବାହାର କରିଦିଆଗଲା',
  * @author Amikeco
  */
 $messages['os'] = array(
+	'centralauth-merge-denied' => 'Хатыр, фæлæ ацы фарс фенынæн фаг бартæ дæм нæй.',
 	'centralauth-merge-dryrun-or' => "'''кæнæ'''",
 	'centralauth-finish-password' => 'Пароль:',
 	'centralauth-admin-username' => 'Архайæджы ном:',
@@ -28067,7 +28068,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-no' => '否',
 	'centralauth-admin-hidden-list' => '从公共名单',
 	'centralauth-admin-hidden-oversight' => '监督己被执行',
-	'centralauth-admin-list-legend-ro' => '地区账户列表',
+	'centralauth-admin-list-legend-ro' => '本地账户列表',
 	'centralauth-admin-list-legend-rw' => '取消合并本地帐户',
 	'centralauth-admin-unattached' => '未附属的帐户',
 	'centralauth-admin-blocked' => '已封禁，将于$3 $4过期。原因：$2',
