@@ -12018,7 +12018,7 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
 	'centralauth-attach-title' => 'Staðfesta aðgang',
 	'centralauth' => 'Stjórn altækra notenda',
 	'centralauth-admin-intro' => 'Þetta viðmót er hægt að nota til að stjórna altækum aðgöngum.',
-	'centralauth-admin-manage' => 'Stjórna notenda gögnum',
+	'centralauth-admin-manage' => 'Upplýsingar um notanda',
 	'centralauth-admin-username' => 'Notandanafn:',
 	'centralauth-admin-lookup-ro' => 'Skoða upplýsingar um notanda',
 	'centralauth-admin-info-header' => 'Upplýsingar altæks notanda',
@@ -12069,6 +12069,7 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
 	'centralauth-globalgroupperms-grouplist' => 'Eftirfarandi altækir hópar hafa verið stilltir.
 Þú mátt skoða eða breyta réttindum hóps, ef þú hefur réttindi til þess.
 Hóp má eyða með því að fjarlægja öll réttindi hans.',
+	'centralauth-existinggroup-legend' => 'Hópar sem til eru fyrir',
 	'centralauth-editset-name' => 'Nafn:',
 	'centralauth-editset-reason' => 'Ástæða:',
 	'centralauth-editset-submit' => 'Staðfesta',
@@ -26546,6 +26547,7 @@ $messages['ug-latn'] = array(
  * @author NickK
  * @author Prima klasy4na
  * @author Riwnodennyk
+ * @author Sodmy
  * @author Тест
  */
 $messages['uk'] = array(
@@ -26831,6 +26833,7 @@ $messages['uk'] = array(
 	'centralauth-editset-success-delete' => 'Набір вікі успішно видалено.',
 	'centralauth-editset-return' => 'Повернутися до головного виду',
 	'right-globalgroupmembership' => 'зміна членства у глобальних групах',
+	'right-centralauth-autoaccount' => 'Автоматичний вхід із глобального облікового запису',
 	'right-centralauth-unmerge' => "Роз'єднання глобальних облікових записів",
 	'right-centralauth-lock' => 'Блокування або приховання глобального облікового запису',
 	'right-centralauth-oversight' => 'Придушувати глобальні облікові записи',
