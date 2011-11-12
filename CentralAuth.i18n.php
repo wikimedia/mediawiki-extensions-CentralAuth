@@ -9678,8 +9678,18 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 
 /** Gujarati (ગુજરાતી)
  * @author Dineshjk
+ * @author Rangilo Gujarati
  */
 $messages['gu'] = array(
+	'mergeaccount' => 'લૉગિન એકીકરણ સ્થિતિ',
+	'centralauth-merge-denied' => 'માફ કરશો તમને આ પાનું વાપરવા માટે પરવાનગી નથી',
+	'centralauth-merge-step1-title' => 'પ્રવેશ એકીકરણ શરૂ',
+	'centralauth-merge-step1-detail' => 'તમારો પાસવર્ડ દાખલ કરો.
+તમારો પાસવર્ડ અને રજીસ્ટર ઈ મેલ બીજા વીકી પર ચેચ્ક તપાસવામાં આવશે.
+જ્યાં સુધી તમે પુષ્ટિ નહિ કરો કે વસ્તુઓ ક્રમમાં છે ત્યાં સુધી કોઈ ફેરફાર કરવામાં આવશે નહિ.',
+	'centralauth-merge-step1-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
+	'centralauth-merge-step2-title' => 'વધુ એકાઉન્ટ્સ ની ખાતરી કરો',
+	'centralauth-merge-step2-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
 	'centralauth-admin-username' => 'સભ્ય નામ:',
 	'centralauth-editgroup-noset' => '(કોઇપણ નહીં)',
 	'centralauth-editset-nouse' => '(કોઇપણ નહીં)',
@@ -11994,54 +12004,171 @@ $messages['io'] = array(
  * @author Spacebirdy
  */
 $messages['is'] = array(
+	'mergeaccount' => 'Staða samræmingar innskráningar',
+	'centralauth-groupname' => 'Wikimedia félagsins',
+	'centralauth-desc' => '[[Special:MergeAccount|Samræma aðgang]] á öllum wiki verkefnum {{int:Centralauth-groupname}}',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Samræma marga aðganga]] í eina innskráningu',
 	'centralauth-merge-denied' => 'Því miður, þú hefur ekki leyfi til að fara á þessa síðu.',
+	'centralauth-merge-notlogged' => 'Vinsamlegast <span class="plainlinks">[$1 skráðu þig inn]</span> til að athuga hvort aðgangar þínir hafi verið að fullu samræmdir.',
+	'centralauth-merge-welcome' => "'''Notanda aðgangurinn hefur ekki enn verið samræmdur á {{int:Centralauth-groupname}}.'''
+
+Ef þú villt samræma aðgangana þína, þá þarft þú að nota sama notandanafn og lykilorð á öllum wiki verkefnum {{int:Centralauth-groupname}} á öllum tiltækum tungumálum.
+
+Ef einhver annar en þú hefur skráð notendanafn þitt á annari síðu þá mun þessi aðgerð ekki trufla þá, en það gefur þér tækifæri til þess að leysa málið við þá eða möppudýr seinna meir.",
+	'centralauth-merge-step1-title' => 'Byrja innskráningar samræmingu',
+	'centralauth-merge-step1-detail' => 'Vinsamlegast sláðu inn lykilorð aðgangsins.
+Athugað verður hvort lykilorðið og netfangið sé það sama og á aðgöngum á öðrum wiki verkefnum.
+Engar breytingar verða gerðar fyrr en þú hefur staðfest að allt sé í lagi.',
 	'centralauth-merge-step1-submit' => 'Staðfesta innskráningarupplýsingar',
 	'centralauth-merge-step2-title' => 'Staðfesta fleiri aðganga',
+	'centralauth-merge-step2-detail' => 'Mistókst að samræma suma aðganga við aðgang þinn á heimawiki.
+Ef þú stofnaðir þessa aðganga, staðfestu það með því að gefa upp lykilorð þeirra.',
 	'centralauth-merge-step2-submit' => 'Staðfesta innskráningarupplýsingar',
+	'centralauth-login-global' => 'Einnig innskrá mig á wiki verkefni {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Alla aðganga er hægt að sameina sjálfkrafa!
 
 Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
+	'centralauth-merge-dryrun-incomplete' => 'Þú ert tilbúin/n að halda áfram, en sumir aðgangar voru ekki sjálfvirkt sannreyndir og verða ekki samræmdir samstundis.
+Þú getur samræmt þessa aðganga síðar.
+
+Engar breytingar hafa verið gerðar á aðgangi þínum ennþá.',
 	'centralauth-merge-dryrun-or' => "'''eða'''",
+	'centralauth-merge-dryrun-home' => 'Mistókst að staðfesta að þú sért eigandi heimawiki aðgangsins fyrir notendanafni þínu.
+
+Annað wiki var ákvarðað sem heimawiki notendanafns þíns; fylgdu eftir tenglinum hér fyrir neðan og skráðu þig inn það til að ljúka við samræmingu aðgangana.',
 	'centralauth-merge-step3-title' => 'Búa til sameinaðan aðgang',
+	'centralauth-merge-step3-detail' => 'Þú ert tilbúin/n að búa til samræmdan aðgang sem tengist eftirfarandi wiki verkefnum:',
 	'centralauth-merge-step3-submit' => 'Sameina aðganga',
+	'centralauth-merge-no-accounts' => 'Engir aðgangar pössuðu við notendanafnið í skrá yfir samræmda aðganga!
+Gangnabankinn gæti verið skemmdur.',
+	'centralauth-merge-home-password' => 'Heimawiki aðgangsins (tilgreindur hér fyrir neðan) hefur annað lykilorð en það sem þú sláðir inn.
+Vinsamlegast sláðu inn lykilorð heimawiki aðgangsins.',
+	'centralauth-complete' => 'Samræmingu aðganga lokið!',
+	'centralauth-incomplete' => 'Samræming aðganga mistókst!',
+	'centralauth-complete-text' => 'Þú getur nú skráð þig inn á hvaða wiki verkefni {{int:Centralauth-groupname}} án stofnunar nýs aðgangs.',
+	'centralauth-incomplete-text' => 'Þegar innskráningin hefur verið samræmd, þá getur þú skráð þig inn á öll wiki verkefni {{int:Centralauth-groupname}} án þess að búa til nýjan aðgang.',
+	'centralauth-not-owner-text' => 'Notandanafnið "$1" var sjálfvirkt úthlutað til eiganda aðgangsins $2.
+
+Ef þú átt þennan aðgang, þá er hægt að ljúka samræmingu aðgangana með því að slá inn lykilorð aðgangsins hér:',
+	'centralauth-blocked-text' => 'Heimawiki (tilgreint hér fyrir neðan) er í banni.
+Vinsamlegast hafðu samband við möppudýr á þessum wiki til að afbanna hann.
+Á meðan aðgangurinn er bannaður, þá getur þú ekki samræmt aðgangana þína.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Sýnis keyrsla eingöngu</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'Samræming aðganga er í sýniskeyrslu / villuleitun, þannig engir aðgangar verða sameinaðir.
+Því miður!',
+	'centralauth-error-locked' => 'Þú getur ekki breytt því aðgangur þinn er læstur.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lesa meira um '''samræmda innskráningu''']]…''",
 	'centralauth-list-home-title' => 'Heimawiki',
+	'centralauth-list-home-dryrun' => 'Uppgefið lykilorð og netfang aðgangsins á þessum wiki verður notað fyrir samræmda aðganginn þinn.',
+	'centralauth-list-attached-title' => 'Samræmdir aðgangar',
+	'centralauth-list-attached' => 'Aðgangi að nafni "$1" á eftirfarandi síðum var bætt við samræmda aðganginn:',
+	'centralauth-list-attached-dryrun' => 'Aðgangi að nafni "$1" á eftirfarandi síðum verður sjálfvirkt bætt við samræmda aðganginn:',
+	'centralauth-list-unattached-title' => 'Samræmdir aðgangar',
+	'centralauth-list-unattached' => 'Mistókst að samræma aðganginn "$1" við aðgang þinn, því það mistókst að sannreyna að aðgangurinn sé í þinni eigu á eftirfarandi síðum;
+líklegast hefur aðgangurinn annað lykilorð en aðal aðgangurinn þinn:',
 	'centralauth-foreign-link' => 'Notandi $1 á $2',
 	'centralauth-merge-method-primary' => 'heimawiki',
 	'centralauth-merge-method-empty' => 'ekkert framlag',
 	'centralauth-merge-method-mail' => 'staðfest með tölvupósti',
 	'centralauth-merge-method-password' => 'staðfest með lykilorði',
+	'centralauth-merge-method-admin' => 'möpppudýrs-samræmdur aðgangur',
 	'centralauth-merge-method-new' => 'nýr aðgangur',
 	'centralauth-merge-method-login' => 'staðfest við innskráningu',
+	'centralauth-merge-method-primary-desc' => 'Aðgangurinn var sameinaður á þessum wiki.
+Athugaðu að þetta er ekki það sama og heimawiki notandans.',
+	'centralauth-merge-method-empty-desc' => 'Gefur til kynna að svæðisbundni aðgangurinn hefur verið sameinaður því engar breytingar voru gerðar á honum.',
+	'centralauth-merge-method-mail-desc' => 'Gefur til kynna að svæðisbundni aðgangurinn var sameinaður því netfang hans passaði við netfang aðalaðgangsins.',
+	'centralauth-merge-method-password-desc' => 'Gefur til kynna að svæðisbundni aðgangurinn var sameinaður því notandinn tilgreindi gilt lykilorð fyrir hann.',
+	'centralauth-merge-method-admin-desc' => 'Gefur til kynna að staðbundinn aðgangur var sameinaður af steward.
+Þessi möguleiki er óvirkur í augnablikinu vegna öryggisástæðna.',
+	'centralauth-merge-method-new-desc' => 'Gefur til kynna að altæki aðgangurinn var búinn til sjálfkrafa þegar svæðisbundni aðgangurinn var stofnaður.',
+	'centralauth-merge-method-login-desc' => 'Gefur til kynna að svæðisbundni aðgangurinn var stofnaður sjálfkrafa þegar notandinn skráði sig inn.',
+	'centralauth-finish-title' => 'Ljúka samræmingu',
+	'centralauth-finish-text' => 'Ef þessir aðgangar voru stofnaðir af þér, ljúktu þá samræmingu aðganga með því að skrifa lykilorð aðgangana hér:',
 	'centralauth-finish-password' => 'Lykilorð:',
 	'centralauth-finish-login' => 'Innskráning',
 	'centralauth-finish-send-confirmation' => 'Senda lykilorð í tölvupósti',
+	'centralauth-finish-problems' => 'Ertu í vandræðum, eða ert þú ekki eigandi þessara aðganga?
+[[meta:Help:Unified login problems|Hvernig á að finna hjálp]]',
+	'centralauth-finish-noconfirms' => 'Mistókst að samræma aðganga með þessu lykilorði.',
+	'centralauth-finish-incomplete' => 'Sumir aðgangar voru samræmdir með þessu lykilorði.
+Aðrir aðgangar eru ekki enn staðfestir.',
+	'centralauth-merge-attempt' => "'''Athuga hvort tilgreint lykilorð er rétt á eftirliggjandi aðgöngum..'''",
+	'centralauth-attach-list-attached' => 'Samræmdi aðgangurinn "$1" innifelur eftirfarandi aðganga:',
 	'centralauth-attach-title' => 'Staðfesta aðgang',
+	'centralauth-attach-text' => 'Þessi aðgangur hefur ekki verið sameinaður samræmda aðganginum.
+Ef þessi altæki aðgangurinn er í þinni eigu einnig, þá getur þú sameinað hann með því að slá inn lykilorðið:',
+	'centralauth-attach-submit' => 'Flytja aðgang',
+	'centralauth-attach-success' => 'Aðgangurinn var sameinaður samræmda aðganginum.',
 	'centralauth' => 'Stjórn altækra notenda',
 	'centralauth-admin-intro' => 'Þetta viðmót er hægt að nota til að stjórna altækum aðgöngum.',
 	'centralauth-admin-manage' => 'Upplýsingar um notanda',
 	'centralauth-admin-username' => 'Notandanafn:',
 	'centralauth-admin-lookup-ro' => 'Skoða upplýsingar um notanda',
+	'centralauth-admin-lookup-rw' => 'Stjórn notanda aðgangs',
+	'centralauth-admin-permission' => 'Aðeins steward getur sameinað aðganga annara.',
+	'centralauth-admin-no-unified' => 'Engin samræmdur aðgangur er til fyrir þetta notendanafn.',
 	'centralauth-admin-info-header' => 'Upplýsingar altæks notanda',
 	'centralauth-admin-info-id' => 'Notandanúmer:',
 	'centralauth-admin-info-registered' => 'Skráð:',
+	'centralauth-admin-info-home' => 'Heimawiki:',
 	'centralauth-admin-info-editcount' => 'Fjöldi breytinga:',
 	'centralauth-admin-info-locked' => 'Læst:',
-	'centralauth-admin-info-hidden' => 'Falinn:',
+	'centralauth-admin-info-hidden' => 'Felu stig:',
+	'centralauth-admin-nohome' => 'mistókst að ákvarða',
 	'centralauth-admin-yes' => 'já',
 	'centralauth-admin-no' => 'nei',
-	'centralauth-admin-unattached' => 'Ótengdir aðgangar',
+	'centralauth-admin-hidden-list' => 'frá almennum listum',
+	'centralauth-admin-list-legend-ro' => 'Listi yfir staðbundna aðganga',
+	'centralauth-admin-list-legend-rw' => 'Aðgreina svæðisbundna aðganga',
+	'centralauth-admin-unattached' => 'ótengdur',
+	'centralauth-admin-blocked' => 'Bannaður, rennur út $3, kl $4.
+Ástæða: $2',
+	'centralauth-admin-blocked-indef' => 'Bannaður í ótiltekinn tíma.
+Ástæða: $1',
+	'centralauth-admin-blocklog' => 'Bönnunarskrá',
+	'centralauth-admin-list-localwiki' => 'Svæðisbundinn wiki',
 	'centralauth-admin-list-attached-on' => 'Tengdist þann',
 	'centralauth-admin-list-method' => 'Aðferð',
 	'centralauth-admin-list-editcount' => 'Fjöldi breytinga',
 	'centralauth-admin-list-blocked' => 'Bannaður',
+	'centralauth-admin-unmerge' => 'Aðgreining valin',
+	'centralauth-admin-merge' => 'Sameining valin',
+	'centralauth-admin-bad-input' => 'Ógilt val fyrir sameiningu',
 	'centralauth-admin-none-selected' => 'Engir aðgangar voru valdir til að breyta.',
+	'centralauth-admin-already-unmerged' => 'Sleppi $1, hefur þegar verið aðgreind',
+	'centralauth-admin-unmerge-success' => 'Tókst að aðgreina $1 {{PLURAL:$1|aðgang|aðganga}}',
 	'centralauth-admin-delete-title' => 'Eyða aðgangi',
+	'centralauth-admin-delete-description' => 'Eyðing altæka aðgangsins mun eyða öllum stillingum, aftengja hann frá staðbundnum aðgöngum og skilur notendanafnið eftir laust fyrir einhvern annan.
+Öll lykilorð á svæðisbundnum aðgöngum verða enn til.
+Lykilorð svæðisbundinna aðganga verða þau sömu og fyrir samræmingu aðgangana.',
 	'centralauth-admin-delete-button' => 'Eyða þessum aðgangi',
+	'centralauth-admin-delete-success' => 'Tókst að eyða altæka aðganginum "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent' => 'Það er enginn altækur aðgangur fyrir "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Villa: altæki aðgangurinn "<nowiki>$1</nowiki>" er ekki til.',
+	'centralauth-token-mismatch' => 'Mistókst að vinna úr tilgreindum upplýsingum því lotu gögn týndust.',
 	'centralauth-admin-reason' => 'Ástæða:',
 	'centralauth-admin-reason-other' => 'Aðrar/fleiri ástæður:',
+	'centralauth-admin-status' => 'Ákveða stöðu altæks aðgangs',
+	'centralauth-admin-status-intro' => 'Þú getur notað þetta eyðublað til að breyta stöðu altæks aðgangs.',
 	'centralauth-admin-status-locked' => 'Læstur:',
+	'centralauth-admin-status-locked-no' => 'Aðgangurinn er ólæstur',
+	'centralauth-admin-status-locked-yes' => 'Aðgangurinn er læstur',
 	'centralauth-admin-status-hidden' => 'Falinn:',
+	'centralauth-admin-status-hidden-no' => 'Aðgangurinn er sýnilegur',
+	'centralauth-admin-status-hidden-list' => 'Aðgangurinn er falinn á almennum listum',
+	'centralauth-admin-status-hidden-oversight' => 'Aðgangurinn er falinn allstaðar',
+	'centralauth-admin-status-submit' => 'Setja stöðu',
 	'centralauth-admin-status-nonexistent' => 'Villa: altæki aðgangurinn "<nowiki>$1</nowiki>" er ekki til.',
+	'centralauth-admin-setstatus-success' => 'Tókst að breyta stöðu altæks aðgangs.',
+	'centralauth-admin-status-reasons' => '* Algengar ástæður fyrir læsingu
+** Skemmdarverks aðgangur
+** Amasendinga aðgangur
+*Algengar læsa-og-fela ástæður
+** Móðgandi notandanafn
+** Óviðeigandi persónulegar upplýsingar',
+	'centralauth-admin-logsnippet' => 'Fyrri breytingar á altækum aðgangi',
+	'centralauth-admin-suppressreason' => 'Bældur niður altækt af $1 vegna: $2',
 	'globalusers' => 'Altækur notendalisti',
 	'centralauth-listusers-locked' => 'læstur',
 	'centralauth-listusers-attached' => '[[User:$1|er til staðbundið]]',
@@ -12051,8 +12178,28 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|klukkustund|klukkustundir}} síðan',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|dagur|dagar}} síðan',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|mánuður|mánuðir}} síðan',
-	'centralauth-years-ago' => '$1 ár síðan',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|ár|ár}} síðan',
+	'centralauth-prefs-status' => 'Staða altæks aðgangs:',
+	'centralauth-prefs-not-managed' => 'Notar ekki samræmdan aðgang',
+	'centralauth-prefs-unattached' => 'Óstaðfestur',
 	'centralauth-prefs-complete' => 'Allt á hreinu!',
+	'centralauth-prefs-migration' => 'Verið er að samræma aðganginn',
+	'centralauth-prefs-count-attached' => 'Aðgangurinn þinn er virkur á {{PLURAL:$1|einu verkefni|$1 verkefnum}}',
+	'centralauth-prefs-count-unattached' => 'Óstaðfestir aðgangar með þínu notendanafni eru enn á {{PLURAL:$1|einu verkefni|$1 verkefnum}}',
+	'centralauth-prefs-detail-unattached' => 'Þetta verkefni hefur ekki staðfest altæka notendur.',
+	'centralauth-prefs-manage' => 'Stjórnun þíns altæka aðgangs',
+	'centralauth-prefs-view' => 'Skoða upplýsingar altæks notanda',
+	'centralauth-renameuser-merged' => 'Notandinn $1 hefur samræmt aðganga sína.
+Breyting á notendanafni hans verður til þess að staðbundni aðgangur hans verður aftengdur þeim altæka.',
+	'centralauth-renameuser-reserved' => 'Notendanafnið $2 er frátekið fyrir altækan aðgang.',
+	'centralauth-invalid-wiki' => 'Enginn slíkur wiki gangnagrunnur: $1',
+	'centralauth-account-exists' => 'Mistókst að stofna aðgang: Tilgreint notendanafn er frátekið í samræmdu innskráningar kerfi.',
+	'centralauth-account-exists-reset' => 'Notendanafnið $1 er ekki skráð á þessum wiki, en það er til í samræmda innskráningar kerfinu.',
+	'centralauth-login-progress' => 'Skrái þig inn á wiki verkefni {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Útskrái þig frá wiki verkefnum {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Þú hefur sjálfvirkt verið útskráður á verkefnum {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Þú hefur sjálfvirkt verið útskráður á öðrum verkefnum {{int:Centralauth-groupname}}.',
+	'centralauth-hidden-blockreason' => 'falinn altækt af $1 $2 vegna: $3',
 	'centralauth-log-name' => 'Altæk aðgangaskrá',
 	'centralauth-log-header' => 'Þessi aðgerðarskrá inniheldur aðgerðir frá altækum notendum: eyðingar, verndanir og afverndanir.',
 	'centralauth-log-entry-delete' => 'eyddi altækum aðgangi "$1"',
@@ -12065,14 +12212,51 @@ Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
 	'centralauth-log-status-locked' => 'læstur',
 	'centralauth-log-status-hidden' => 'falinn',
 	'centralauth-log-status-none' => '(engin)',
+	'centralauth-rightslog-name' => 'Altæk réttindarskrá notenda',
+	'centralauth-rightslog-entry-usergroups' => 'breytti altækum réttindum $1 frá $2 í $3',
+	'centralauth-rightslog-entry-groupperms' => 'breytti hópa réttindum $1 frá $2 í $3',
+	'centralauth-rightslog-entry-groupperms2' => 'Breytti hópa réttindum $1.
+Bætti við $2;
+Fjarlægði $3',
+	'centralauth-rightslog-entry-groupperms3' => 'breytti takmörkuðum wiki verkefnum hópsins $1 frá $2 í $3',
+	'centralauth-rightslog-header' => 'Þessi skrá inniheldur aðgerðir altækra hópa: réttindabreytingar og nýja meðlimi',
+	'centralauth-rightslog-entry-newset' => 'bjó til $2 $1 wiki röð með eftirfarandi wiki verkefnum: $3',
+	'centralauth-rightslog-entry-setrename' => 'endurnefndi wiki röðina "$2" í "$1"',
+	'centralauth-rightslog-entry-setnewtype' => 'breytti gerð "$1" frá $2 í $3',
+	'centralauth-rightslog-entry-setchange' => 'breytti wiki verkefnum "$1": bætti við: $2; fjarlægði: $3',
+	'centralauth-rightslog-entry-deleteset' => 'eyddi wiki röðuninni "$1"',
+	'centralauth-rightslog-set-optin' => 'virka',
+	'centralauth-rightslog-set-optout' => 'óvirka',
+	'autologin' => 'Sjálfvirk innskráning',
+	'centralauth-autologin-desc' => 'Þessi kerfisíða er notuð innan MediaWiki kerfisins.
+Þegar þú [[Special:UserLogin|skráir þig inn]], beinir innskráningar kerfið vafrara þínum að óska eftir þessari síðu frá öllum wiki verkefnum, með tenglum.
+Þú hefur óskað eftir þessari síðu án þess að gefa neinar upp neinar notendaupplýsingar, þannig síðan gerir ekki neitt.',
+	'globalgroupmembership' => 'Meðlimir í altækum hópum',
 	'globalgrouppermissions' => 'Stjórnun altækra hópa',
 	'centralauth-globalgroupperms-grouplist' => 'Eftirfarandi altækir hópar hafa verið stilltir.
 Þú mátt skoða eða breyta réttindum hóps, ef þú hefur réttindi til þess.
 Hóp má eyða með því að fjarlægja öll réttindi hans.',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|skoða/breyta]])',
+	'centralauth-globalgroupperms-nogroups' => 'Engir altækir hópar eru skilgreindir.',
 	'centralauth-existinggroup-legend' => 'Hópar sem til eru fyrir',
+	'centralauth-editset' => 'Wiki raðir',
+	'centralauth-editset-legend-ro' => 'Listi yfir wiki raðir',
+	'centralauth-editset-intro-ro' => 'Hér fyrir neðan er listi yfir wiki raðir sem eru til fyrir.',
+	'centralauth-editset-optin' => 'Virkir meðlimir (inniheldur eingöngu tilgreind wiki verkefni)',
+	'centralauth-editset-optout' => 'Óvirkir meðlimir (inniheldur öll viki verkefni nema þau sem eru tilgreind)',
 	'centralauth-editset-name' => 'Nafn:',
+	'centralauth-editset-type' => 'Tegund:',
+	'centralauth-editset-wikis' => 'Wiki:',
 	'centralauth-editset-reason' => 'Ástæða:',
 	'centralauth-editset-submit' => 'Staðfesta',
+	'centralauth-editset-usage' => 'Notuð í hópnum:',
+	'right-globalgroupmembership' => 'Breyta meðlimum altækra hópa',
+	'right-centralauth-autoaccount' => 'Innskrá sjálfkrafa með altækum aðgangi',
+	'right-centralauth-unmerge' => 'Aðgreina altækan aðgang',
+	'right-centralauth-lock' => 'Læsa eða fela altækan aðgang',
+	'right-centralauth-oversight' => 'Bæla niður altækan aðgang',
+	'right-centralauth-merge' => 'Sameina aðganga',
+	'right-globalgrouppermissions' => 'Stjórna altækum hópum',
 );
 
 /** Italian (Italiano)
@@ -19971,7 +20155,7 @@ $messages['pnb'] = array(
 	'centralauth-globalgroupperms-grouplist' => 'تھلے دتے گۓ جگت جٹاں نوں ویکھ لیا گیا اے۔
 تسیں ویکھ سکدے اوہ یا تبدیلی کسے گروپ نوں ملی ہوئی نوں بدل سکدے اوہ، اگر توانوں اجازت ہووے۔
 کسے گروپ نوں مٹایا وی جاسکدا اے اودے کولوں سارے حق لے کے۔',
-	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[خاص:جگت ٹولی اجازت/$2|وکھالہ/تبدیلی]])',
+	'centralauth-globalgroupperms-grouplistitem' => '!$1 ([[Special:GlobalGroupPermissions/$2|وکھالہ/تبدیلی]])',
 	'centralauth-globalgroupperms-nogroups' => 'کوئی گلوبل ٹولی نئیں دسی گئی۔',
 	'centralauth-existinggroup-legend' => 'موجود ٹولیاں',
 	'centralauth-newgroup-legend' => 'اک نویں ٹولی بناؤ',
@@ -19985,7 +20169,7 @@ $messages['pnb'] = array(
 	'centralauth-editgroup-display' => 'ٹولی دا دیسی ناں:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|تبدیلی کرو]])',
 	'centralauth-editgroup-member' => 'ٹولی دے سنگیاں دے دیسی ناں:',
-	'centralauth-editgroup-member-edit' => '$2 ([[میڈیاوکی ٹولی-$1|تبدیلی کرو]])',
+	'centralauth-editgroup-member-edit' => '!$2 ([[MediaWiki:Group-$1-member|تبدیلی کرو]])',
 	'centralauth-editgroup-members' => 'سنگی لسٹ:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 حقوق رکھن آلے ورتن آلے]]',
 	'centralauth-editgroup-restrictions' => 'اوہ وکی جتھے اے ٹولی کم کردی اے:',
