@@ -10912,6 +10912,7 @@ Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anb
  * @author Adam78
  * @author Bdamokos
  * @author Dani
+ * @author Dj
  * @author Dorgan
  * @author Glanthor Reviol
  * @author Gondnok
@@ -10926,7 +10927,7 @@ $messages['hu'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Felhasználói fiókok egységesítése]] {{int:Centralauth-groupname}} wikijein',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Felhasználói fiókok összevonása]] az egységes bejelentkezéshez',
 	'centralauth-merge-denied' => 'Sajnáljuk, de nincs jogod az oldal megtekintéséhez.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Jelentkezz be]</span>, hogy ellenőrizhessük, felhasználói fiókjaid egyesítve vannak-e.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Jelentkezz be]</span>, hogy ellenőrizhessük, felhasználói fiókjaid egyesítve vannak-e.',
 	'centralauth-merge-welcome' => "'''A felhasználói fiókod még nincs integrálva {{int:Centralauth-groupname}} egységesített bejelentkezési rendszerébe.'''
 
 Ha fiókjaid egységesítését választod, egyetlen felhasználói névvel és jelszóval léphetsz be {{int:Centralauth-groupname}} összes wikijébe az összes elérhető nyelven.
@@ -12025,7 +12026,7 @@ Engar breytingar verða gerðar fyrr en þú hefur staðfest að allt sé í lag
 	'centralauth-merge-step2-detail' => 'Mistókst að samræma suma aðganga við aðgang þinn á heimawiki.
 Ef þú stofnaðir þessa aðganga, staðfestu það með því að gefa upp lykilorð þeirra.',
 	'centralauth-merge-step2-submit' => 'Staðfesta innskráningarupplýsingar',
-	'centralauth-login-global' => 'Einnig innskrá mig á wiki verkefni {{int:Centralauth-groupname}}',
+	'centralauth-login-global' => 'Einnig innskrá mig á önnur wiki verkefni {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Alla aðganga er hægt að sameina sjálfkrafa!
 
 Engar breytingar hafa enn verið gerðar á þínum aðgangi.',
@@ -12115,7 +12116,7 @@ Ef þessi altæki aðgangurinn er í þinni eigu einnig, þá getur þú sameina
 	'centralauth-admin-info-home' => 'Heimawiki:',
 	'centralauth-admin-info-editcount' => 'Fjöldi breytinga:',
 	'centralauth-admin-info-locked' => 'Læst:',
-	'centralauth-admin-info-hidden' => 'Felu stig:',
+	'centralauth-admin-info-hidden' => 'Falinn:',
 	'centralauth-admin-nohome' => 'mistókst að ákvarða',
 	'centralauth-admin-yes' => 'já',
 	'centralauth-admin-no' => 'nei',
