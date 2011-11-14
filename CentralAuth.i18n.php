@@ -7264,6 +7264,7 @@ Puedes ver y modificar todos ellos, o crear un ajuste nuevo.',
 );
 
 /** Estonian (Eesti)
+ * @author AivoK
  * @author Avjoska
  * @author Jaan513
  * @author Ker
@@ -7272,7 +7273,7 @@ Puedes ver y modificar todos ellos, o crear un ajuste nuevo.',
  */
 $messages['et'] = array(
 	'mergeaccount' => 'Kontode ühendamise seis',
-	'centralauth-groupname' => 'Wikimedia sihtasutuse',
+	'centralauth-groupname' => 'Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Ühendab kontod]] vikides, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Ühendab kontod]] ühtseks sisselogimiseks.',
 	'centralauth-merge-denied' => 'Vabandust, teil puudub sellele lehele ligipääs.',
@@ -7326,7 +7327,7 @@ Seni, kuni oled blokeeritud, ei saa sa kontosid ühendada.',
 	'centralauth-list-home-title' => 'Koduviki',
 	'centralauth-list-home-dryrun' => 'Ühendkonto hakkab kasutama selles vikis kasutusel olevat parooli ja e-posti aadressi.',
 	'centralauth-list-attached-title' => 'Ühendatud kontod',
-	'centralauth-list-attached' => 'Kasutajakonto nimega $1 järgnevatest vikidest on automaatselt liidetud ühendkontoga:',
+	'centralauth-list-attached' => 'Kasutajakonto $1 on järgnevates vikides automaatselt liidetud ühendkontoga:',
 	'centralauth-list-attached-dryrun' => 'Kasutajakonto nimega $1 järgnevatest vikidest liidetakse automaatselt ühendkontoga:',
 	'centralauth-list-unattached-title' => 'Ühendamata kontod',
 	'centralauth-list-unattached' => 'Järgmistes võrgukohtades ei saa konto "$1" sinule kuulumist automaatselt kindlaks teha;
@@ -12004,7 +12005,7 @@ $messages['io'] = array(
  * @author Spacebirdy
  */
 $messages['is'] = array(
-	'mergeaccount' => 'Staða samræmingar innskráningar',
+	'mergeaccount' => 'Staða samræmingu aðganga',
 	'centralauth-groupname' => 'Wikimedia félagsins',
 	'centralauth-desc' => '[[Special:MergeAccount|Samræma aðgang]] á öllum wiki verkefnum {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Samræma marga aðganga]] í eina innskráningu',
@@ -12015,7 +12016,7 @@ $messages['is'] = array(
 Ef þú villt samræma aðgangana þína, þá þarft þú að nota sama notandanafn og lykilorð á öllum wiki verkefnum {{int:Centralauth-groupname}} á öllum tiltækum tungumálum.
 
 Ef einhver annar en þú hefur skráð notendanafn þitt á annari síðu þá mun þessi aðgerð ekki trufla þá, en það gefur þér tækifæri til þess að leysa málið við þá eða möppudýr seinna meir.",
-	'centralauth-merge-step1-title' => 'Byrja innskráningar samræmingu',
+	'centralauth-merge-step1-title' => 'Byrja samræmingu aðganga',
 	'centralauth-merge-step1-detail' => 'Vinsamlegast sláðu inn lykilorð aðgangsins.
 Athugað verður hvort lykilorðið og netfangið sé það sama og á aðgöngum á öðrum wiki verkefnum.
 Engar breytingar verða gerðar fyrr en þú hefur staðfest að allt sé í lagi.',
@@ -19268,6 +19269,7 @@ $messages['pdc'] = array(
 	'centralauth-merge-method-primary' => 'Heemet-Wiki',
 	'centralauth-finish-password' => 'Paesswatt:',
 	'centralauth-finish-login' => 'Kumm nei',
+	'centralauth-finish-send-confirmation' => 'Neies Paesswadd eposchde',
 	'centralauth-admin-username' => 'Yuuser-Naame:',
 	'centralauth-admin-info-id' => 'Yuuser-ID:',
 	'centralauth-admin-info-home' => 'Heemet-Wiki:',
@@ -19290,6 +19292,7 @@ $messages['pdc'] = array(
 	'centralauth-editset-name' => 'Naame:',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Grund:',
+	'centralauth-editset-submit-delete' => 'Lesche',
 	'centralauth-editset-nouse' => '(ken)',
 	'centralauth-editset-usage' => 'Geyuust in Druppe:',
 );
