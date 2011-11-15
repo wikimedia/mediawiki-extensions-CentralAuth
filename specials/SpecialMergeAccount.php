@@ -1,6 +1,8 @@
 <?php
 
 class SpecialMergeAccount extends SpecialPage {
+
+	protected $mUserName, $mAttemptMerge, $mMergeAction, $mPassword, $mWikiIDs, $mSessionToken, $mSessionKey;
 	function __construct() {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
 	}
@@ -17,7 +19,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( !$wgUser->isLoggedIn() ) {
 			$loginpage = SpecialPage::getTitleFor( 'Userlogin' );
-			$loginurl = $loginpage->getFullUrl( array( 'returnto' => $this->getTitle->getPrefixedText() ) );
+			$loginurl = $loginpage->getFullUrl( array( 'returnto' => $this->getTitle()->getPrefixedText() ) );
 			$wgOut->addWikiMsg( 'centralauth-merge-notlogged', $loginurl );
 			$wgOut->addWikiMsg( 'centralauth-readmore-text' );
 
