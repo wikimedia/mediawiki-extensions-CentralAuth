@@ -91,7 +91,7 @@ Sorry!",
 	'centralauth-list-unattached'       => 'The account "$1" could not be automatically confirmed as belonging to you on the following sites;
 most likely they have a different password from your primary account:',
 	'centralauth-foreign-link'          => 'User $1 on $2',
-	'centralauth-foreign-contributions' => '$1 contributions',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribution|contributions}} on $2',
 
 	// Merge methods
 	'centralauth-merge-method-primary'  => 'home wiki',
@@ -415,7 +415,8 @@ $messages['qqq'] = array(
 *$2 is the name of the local wiki',
 	'centralauth-foreign-contributions' => 'Tool tip in list of local accounts (on the edit count column) on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
 
-	*$1 is the number of contributions',
+	*$1 is the number of contributions
+	*$2 is the name of the local wiki',
 	'centralauth-merge-method-primary' => '{{Identical|Home wiki}}',
 	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
 	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',

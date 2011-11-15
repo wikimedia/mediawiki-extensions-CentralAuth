@@ -429,13 +429,18 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function formatEditcount( $row ) {
+		$wiki = WikiMap::getWiki( $row['wiki'] );
+		if ( !$wiki ) {
+			throw new MWException( "Invalid wiki: {$row['wiki']}" );
+		}
+		$wikiname = $wiki->getDisplayName();
 		global $wgLang;
 		$editCount = $wgLang->formatNum( intval( $row['editCount'] ) );
 		return $this->foreignLink(
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
 			$editCount,
-			wfMsg( 'centralauth-foreign-contributions', $editCount )
+			wfMsgExt( 'centralauth-foreign-contributions', 'parseinline', $editCount, $wikiname )
 		);
 	}
 
@@ -467,8 +472,9 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		$url = $wiki->getUrl( $title );
-		if ( $params )
+		if ( $params ) {
 			$url .= '?' . $params;
+		}
 		return Xml::element( 'a',
 			array(
 				'href' => $url,
