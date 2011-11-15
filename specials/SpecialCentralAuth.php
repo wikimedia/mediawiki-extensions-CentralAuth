@@ -9,6 +9,8 @@ class SpecialCentralAuth extends SpecialPage {
 
 	var $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
 
+	var $mMethod, $mPosted, $mWikis;
+
 	function __construct() {
 		parent::__construct( 'CentralAuth' );
 	}
@@ -92,7 +94,9 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 	}
 
-	/** Returns true if the normal form should be displayed */
+	/**
+	 * @return bool Returns true if the normal form should be displayed
+	 */
 	function doSubmit() {
 		$deleted = false;
 		$globalUser = $this->mGlobalUser;
@@ -210,6 +214,9 @@ class SpecialCentralAuth extends SpecialPage {
 		return !$deleted;
 	}
 
+	/**
+	 * @param $wikitext string
+	 */
 	function showStatusError( $wikitext ) {
 		global $wgOut;
 		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $wikitext );
@@ -221,7 +228,6 @@ class SpecialCentralAuth extends SpecialPage {
 		$args = func_get_args();
 		$wgOut->wrapWikiMsg( '<div class="error">$1</div>', $args );
 	}
-
 
 	function showSuccess( /* varargs */ ) {
 		global $wgOut;
@@ -253,6 +259,10 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param $span
+	 * @return String
+	 */
 	function prettyTimespan( $span ) {
 		global $wgLang;
 		$units = array(
@@ -309,8 +319,9 @@ class SpecialCentralAuth extends SpecialPage {
 		$wgOut->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		$wgOut->addHTML( $this->listHeader() );
 		$wgOut->addHTML( $this->listMerged( $merged ) );
-		if ( $remainder )
+		if ( $remainder ) {
 			$wgOut->addHTML( $this->listRemainder( $remainder ) );
+		}
 		$wgOut->addHTML( $this->listFooter() );
 		$wgOut->addHTML( '</fieldset>' );
 	}
@@ -352,11 +363,19 @@ class SpecialCentralAuth extends SpecialPage {
 		return $footer;
 	}
 
+	/**
+	 * @param $list
+	 * @return string
+	 */
 	function listMerged( $list ) {
 		ksort( $list );
 		return implode( "\n", array_map( array( $this, 'listMergedWikiItem' ), $list ) );
 	}
 
+	/**
+	 * @param $list
+	 * @return string
+	 */
 	function listRemainder( $list ) {
 		ksort( $list );
 		$notMerged = wfMsgExt( 'centralauth-admin-unattached', array( 'parseinline' ) );
@@ -367,9 +386,13 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->foreignUserLink( $row['wiki'] ) .
 				"</td><td colspan='4'>{$notMerged}</td></tr>\n";
 		}
-		return implode( $rows );
+		return implode( '\n', $rows );
 	}
 
+	/**
+	 * @param $row
+	 * @return string
+	 */
 	function listMergedWikiItem( $row ) {
 		global $wgLang;
 		if ( $row === null ) {
@@ -393,6 +416,10 @@ class SpecialCentralAuth extends SpecialPage {
 			'</tr>';
 	}
 
+	/**
+	 * @param $method
+	 * @return string
+	 */
 	function formatMergeMethod( $method ) {
 		global $wgExtensionAssetsPath;
 
@@ -402,6 +429,10 @@ class SpecialCentralAuth extends SpecialPage {
 			"<span class=\"merge-method-help\" title=\"{$brief}\" onclick=\"showMethodHint('{$method}')\">(?)</span>";
 	}
 
+	/**
+	 * @param $row
+	 * @return String
+	 */
 	function formatBlockStatus( $row ) {
 		if ( $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
@@ -428,6 +459,11 @@ class SpecialCentralAuth extends SpecialPage {
 			'page=User:' . urlencode( $this->mUserName ) );
 	}
 
+	/**
+	 * @param $row
+	 * @return string
+	 * @throws MWException
+	 */
 	function formatEditcount( $row ) {
 		$wiki = WikiMap::getWiki( $row['wiki'] );
 		if ( !$wiki ) {
@@ -444,6 +480,10 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param $level
+	 * @return String
+	 */
 	function formatHiddenLevel( $level ) {
 		switch( $level ) {
 			case CentralAuthUser::HIDDEN_NONE:
@@ -455,12 +495,26 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $element
+	 * @param $cols
+	 * @return string
+	 */
 	function tableRow( $element, $cols ) {
 		return "<tr><$element>" .
 			implode( "</$element><$element>", $cols ) .
 			"</$element></tr>";
 	}
 
+	/**
+	 * @param $wikiID
+	 * @param $title
+	 * @param $text
+	 * @param string $hint
+	 * @param string $params
+	 * @return string
+	 * @throws MWException
+	 */
 	function foreignLink( $wikiID, $title, $text, $hint = '', $params = '' ) {
 		if ( $wikiID instanceof WikiReference ) {
 			$wiki = $wikiID;
@@ -483,6 +537,11 @@ class SpecialCentralAuth extends SpecialPage {
 			$text );
 	}
 
+	/**
+	 * @param $wikiID
+	 * @return string
+	 * @throws MWException
+	 */
 	function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
@@ -497,9 +556,12 @@ class SpecialCentralAuth extends SpecialPage {
 			wfMsg( 'centralauth-foreign-link', $this->mUserName, $wikiname ) );
 	}
 
+	/**
+	 * @param $wikiID
+	 * @return string
+	 */
 	function adminCheck( $wikiID ) {
-		return
-			Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
+		return Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
 	function showActionForm( $action ) {
@@ -601,6 +663,9 @@ class SpecialCentralAuth extends SpecialPage {
 		$wgOut->addHTML( $form );
 	}
 
+	/**
+	 *
+	 */
 	function showLogExtract() {
 		global $wgOut;
 		$user = $this->mGlobalUser->getName();
@@ -616,6 +681,9 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @return int|string
+	 */
 	function determineHomeWiki() {
 		foreach ( $this->mAttachedLocalAccounts as $wiki => $acc ) {
 			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
@@ -627,6 +695,9 @@ class SpecialCentralAuth extends SpecialPage {
 		return wfMsgHtml( 'centralauth-admin-nohome' );
 	}
 
+	/**
+	 * @return int
+	 */
 	function evaluateTotalEditcount() {
 		$total = 0;
 		foreach ( $this->mAttachedLocalAccounts as $acc ) {
