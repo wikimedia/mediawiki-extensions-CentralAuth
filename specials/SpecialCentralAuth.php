@@ -34,7 +34,7 @@ class SpecialCentralAuth extends SpecialPage {
 			trim(
 				str_replace( '_', ' ',
 					$wgRequest->getText( 'target', $subpage ) ) );
-			
+
 		$this->mUserName = $wgContLang->ucfirst( $this->mUserName );
 
 		$this->mPosted = $wgRequest->wasPosted();
@@ -430,11 +430,13 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function formatEditcount( $row ) {
 		global $wgLang;
+		$editCount = $wgLang->formatNum( intval( $row['editCount'] ) );
 		return $this->foreignLink(
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
-			$wgLang->formatNum( intval( $row['editCount'] ) ),
-			'contributions' );
+			$editCount,
+			wfMsg( 'centralauth-foreign-contributions', $editCount )
+		);
 	}
 
 	function formatHiddenLevel( $level ) {
@@ -487,7 +489,6 @@ class SpecialCentralAuth extends SpecialPage {
 			'User:' . $this->mUserName,
 			$wikiname,
 			wfMsg( 'centralauth-foreign-link', $this->mUserName, $wikiname ) );
-
 	}
 
 	function adminCheck( $wikiID ) {
