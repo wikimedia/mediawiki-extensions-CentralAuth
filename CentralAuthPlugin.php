@@ -86,9 +86,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 *
 	 * @param $username String: username.
 	 * @return bool
-	 * @public
 	 */
-	function strictUserAuth( $username ) {
+	public function strictUserAuth( $username ) {
 		// Authenticate locally if the global account doesn't exist,
 		// or the local account isn't attached
 		// If strict is on, local authentication won't work at all
@@ -104,10 +103,10 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * The User object is passed by reference so it can be modified; don't
 	 * forget the & on your function declaration.
 	 *
-	 * @param User $user
-	 * @public
+	 * @param $user User
+	 * @return bool
 	 */
-	function updateUser( &$user ) {
+	public function updateUser( &$user ) {
 		$central = CentralAuthUser::getInstance( $user );
 		if ( $central->exists() && $central->isAttached() &&
 			$central->getEmail() != $user->getEmail() )
@@ -132,9 +131,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * This is just a question, and shouldn't perform any actions.
 	 *
 	 * @return bool
-	 * @public
 	 */
-	function autoCreate() {
+	public function autoCreate() {
 		global $wgGroupPermissions;
 		// Yes unless account creation is restricted on this wiki
 		return !empty( $wgGroupPermissions['*']['createaccount'] )
@@ -148,9 +146,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param $user User object.
 	 * @param $password String: password.
 	 * @return bool
-	 * @public
 	 */
-	function setPassword( $user, $password ) {
+	public function setPassword( $user, $password ) {
 		// Fixme: password changes should happen through central interface.
 		$central = CentralAuthUser::getInstance( $user );
 		if ( $central->isAttached() ) {
@@ -167,9 +164,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 *
 	 * @param $user User object.
 	 * @return bool
-	 * @public
 	 */
-	function updateExternalDB( $user ) {
+	public function updateExternalDB( $user ) {
 		return true;
 	}
 
@@ -177,9 +173,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * Check to see if external accounts can be created.
 	 * Return true if external accounts can be created.
 	 * @return bool
-	 * @public
 	 */
-	function canCreateAccounts() {
+	public function canCreateAccounts() {
 		// Require accounts to be created through the central login interface?
 		return true;
 	}
@@ -196,9 +191,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param string $email
 	 * @param string $realname
 	 * @return bool
-	 * @public
 	 */
-	function addUser( $user, $password, $email = '', $realname = '' ) {
+	public function addUser( $user, $password, $email = '', $realname = '' ) {
 		global $wgCentralAuthAutoNew;
 		if ( $wgCentralAuthAutoNew ) {
 			$central = CentralAuthUser::getInstance( $user );
@@ -220,9 +214,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * This is just a question, and shouldn't perform any actions.
 	 *
 	 * @return bool
-	 * @public
 	 */
-	function strict() {
+	public function strict() {
 		global $wgCentralAuthStrict;
 		return $wgCentralAuthStrict;
 	}
@@ -236,9 +229,9 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * forget the & on your function declaration.
 	 *
 	 * @param $user User object.
-	 * @public
+	 * @param $autocreate bool
 	 */
-	function initUser( &$user, $autocreate = false ) {
+	public function initUser( &$user, $autocreate = false ) {
 		if ( $autocreate ) {
 			$central = CentralAuthUser::getInstance( $user );
 			if ( $central->exists() ) {
@@ -249,17 +242,26 @@ class CentralAuthPlugin extends AuthPlugin {
 		}
 	}
 
+	/**
+	 * @param User $user
+	 * @return CentralAuthUser
+	 */
 	public function getUserInstance( User &$user ) {
 		return CentralAuthUser::getInstance( $user );
 	}
-	
+
+	/**
+	 * @param $template
+	 * @param $type
+	 * @return mixed
+	 */
 	public function modifyUITemplate( &$template, &$type ) {
 		global $wgCentralAuthCookies;
 
 		$template->set( 'usedomain', false );
 
 		if ( !$wgCentralAuthCookies ) return;
-		
+
 		$label = Xml::checkLabel( wfMsg( 'centralauth-login-global' ), 'wpCentralLogin', 'wpCentralLogin', true, array( 'tabindex' => '4' ) );
 		$field = <<<HTML
 		<tr id="mw-centralauth-login">

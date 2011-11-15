@@ -1341,6 +1341,12 @@ class CentralAuthUser extends AuthPluginUser {
 		return false;
 	}
 
+	/**
+	 * @param $passwords
+	 * @param $salt
+	 * @param $encrypted
+	 * @return bool
+	 */
 	protected function matchHashes( $passwords, $salt, $encrypted ) {
 		foreach ( $passwords as $plaintext ) {
 			if ( $this->matchHash( $plaintext, $salt, $encrypted ) ) {

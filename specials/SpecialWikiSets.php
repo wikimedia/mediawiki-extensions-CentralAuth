@@ -156,6 +156,11 @@ class SpecialWikiSets extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $name
+	 * @param $value
+	 * @return string
+	 */
 	function buildTypeSelector( $name, $value ) {
 		$select = new XmlSelect( $name, 'set-type', $value );
 		foreach ( array( WikiSet::OPTIN, WikiSet::OPTOUT ) as $type ) {
@@ -164,6 +169,10 @@ class SpecialWikiSets extends SpecialPage {
 		return $select->getHTML();
 	}
 
+	/**
+	 * @param $list array
+	 * @return string
+	 */
 	function buildWikiList( $list ) {
 		sort( $list );
 		$html = '<ul>';
@@ -278,6 +287,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		$set = WikiSet::newFromID( $set );
 		if ( !$set ) {
+			// FIXME: $subpage is undefined
 			$this->buildMainView( '<strong class="error">' . wfMsgHtml( 'centralauth-editset-notfound', $subpage ) . '</strong>' );
 			return;
 		}

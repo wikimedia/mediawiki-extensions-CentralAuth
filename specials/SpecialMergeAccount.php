@@ -105,6 +105,9 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->mSessionKey = $key;
 	}
 
+	/**
+	 * @return array|mixed
+	 */
 	private function getWorkingPasswords() {
 		wfSuppressWarnings();
 		$passwords = unserialize(
@@ -139,6 +142,11 @@ class SpecialMergeAccount extends SpecialPage {
 		unset( $_SESSION['wsCentralAuthMigration'][$this->mSessionToken] );
 	}
 
+	/**
+	 * @param $text
+	 * @param $key
+	 * @return array
+	 */
 	function xorString( $text, $key ) {
 		if ( $key != '' ) {
 			for ( $i = 0; $i < strlen( $text ); $i++ ) {

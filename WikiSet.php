@@ -27,19 +27,60 @@ class WikiSet {
 
 	protected static function memcKey( $k ) { return "wikiset:{$k}"; }
 
+	/**
+	 * @return int
+	 */
 	public function getId() { return $this->mId; }
+
+	/**
+	 * @return bool
+	 */
 	public function exists() { return (bool)$this->getID(); }
+
+	/**
+	 * @return string
+	 */
 	public function getName() { return $this->mName; }
+
+	/**
+	 * @param $n
+	 * @param $commit bool
+	 */
 	public function setName( $n, $commit = false ) { return $this->setDbField( 'ws_name', $n, $commit ); }
+
+	/**
+	 * @return array
+	 */
 	public function getWikisRaw() { return $this->mWikis; }
+
+	/**
+	 * @param $w
+	 * @param $commit bool
+	 */
 	public function setWikisRaw( $w, $commit = false ) { return $this->setDbField( 'ws_wikis', $w, $commit ); }
+
+	/**
+	 * @return string
+	 */
 	public function getType() { return $this->mType; }
+
+	/**
+	 * @param $t
+	 * @param bool $commit bool
+	 * @return bool
+	 */
 	public function setType( $t, $commit = false ) {
 		if ( !in_array( $t, array( self::OPTIN, self::OPTOUT ) ) ) {
 			return false;
 		}
 		return $this->setDbField( 'ws_type', $t, $commit );
 	}
+
+	/**
+	 * @param $field
+	 * @param $value
+	 * @param $commit
+	 */
 	protected function setDbField( $field, $value, $commit ) {
 		$map = array( 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' );
 		$mname = $map[$field];
@@ -49,6 +90,10 @@ class WikiSet {
 		}
 	}
 
+	/**
+	 * @param $row
+	 * @return null|WikiSet
+	 */
 	public static function newFromRow( $row ) {
 		if ( !$row ) {
 			return null;
@@ -61,6 +106,11 @@ class WikiSet {
 		);
 	}
 
+	/**
+	 * @param $name
+	 * @param $useCache bool
+	 * @return null|WikiSet
+	 */
 	public static function newFromName( $name, $useCache = true ) {
 		if ( $useCache ) {
 			global $wgMemc;
@@ -86,6 +136,11 @@ class WikiSet {
 		return $ws;
 	}
 
+	/**
+	 * @param $id
+	 * @param $useCache bool
+	 * @return null|WikiSet
+	 */
 	public static function newFromID( $id, $useCache = true ) {
 		if ( $useCache ) {
 			global $wgMemc;
@@ -111,6 +166,9 @@ class WikiSet {
 		return $ws;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function commit() {
 		$dbw = CentralAuthUser::getCentralDB();
 		$dbw->replace( 'wikiset', array( 'ws_id' ),
@@ -129,6 +187,9 @@ class WikiSet {
 		return (bool)$dbw->affectedRows();
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function delete() {
 		$dbw = CentralAuthUser::getCentralDB();
 		$dbw->delete( 'wikiset', array( 'ws_id' => $this->mId ), __METHOD__ );
@@ -152,14 +213,21 @@ class WikiSet {
 		$wgMemc->set( self::memcKey( $this->mId ), $data );
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getWikis() {
 		if ( $this->mType == self::OPTIN ) {
 			return $this->mWikis;
-		}
-		else
+		} else {
 			return array_diff( CentralAuthUser::getWikiList(), $this->mWikis );
+		}
 	}
 
+	/**
+	 * @param $wiki string
+	 * @return bool
+	 */
 	public function inSet( $wiki = '' ) {
 		if ( !$wiki ) {
 			$wiki = wfWikiID();
@@ -167,6 +235,9 @@ class WikiSet {
 		return in_array( $wiki, $this->getWikis() );
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getRestrictedGroups() {
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$r = $dbr->select(
@@ -179,6 +250,9 @@ class WikiSet {
 		return $result;
 	}
 
+	/**
+	 * @return array
+	 */
 	public static function getAllWikiSets() {
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$res = $dbr->select( 'wikiset', '*', false, __METHOD__ );
@@ -189,12 +263,21 @@ class WikiSet {
 		return $result;
 	}
 
+	/**
+	 * @param $group
+	 * @return int
+	 */
 	public static function getWikiSetForGroup( $group ) {
 		$dbr = CentralAuthUser::getCentralSlaveDB();
 		$res = $dbr->selectRow( 'global_group_restrictions', '*', array( 'ggr_group' => $group ), __METHOD__ );
 		return $res ? $res->ggr_set : 0;
 	}
 
+	/**
+	 * @static
+	 * @param $type
+	 * @return string
+	 */
 	public static function formatType( $type ) {
 		return wfMsgHtml( "centralauth-rightslog-set-{$type}" );
 	}

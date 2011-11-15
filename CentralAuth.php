@@ -250,6 +250,15 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
 }
 
+/**
+ * @param $type
+ * @param $action
+ * @param $title
+ * @param $skin Skin
+ * @param $params
+ * @param $filterWikilinks bool
+ * @return String
+ */
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 	$link = $skin ? $skin->makeLinkObj( $title, htmlspecialchars( $params[0] ) ) : $params[0];
 

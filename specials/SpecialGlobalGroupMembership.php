@@ -90,12 +90,22 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		return CentralAuthUser::availableGlobalGroups();
 	}
 
+	/**
+	 * @param $user User
+	 * @param $output
+	 */
 	protected function showLogFragment( $user, $output ) {
 		$pageTitle = Title::makeTitleSafe( NS_USER, $user->getName() );
 		$output->addHTML( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $pageTitle->getPrefixedText() );
 	}
 
+	/**
+	 * @param $user User
+	 * @param $oldGroups
+	 * @param $newGroups
+	 * @param $reason
+	 */
 	function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
 		$log = new LogPage( 'gblrights' );
 

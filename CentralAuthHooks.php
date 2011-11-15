@@ -18,6 +18,8 @@ class CentralAuthHooks {
 
 	/**
 	 * Add a little pretty to the preferences user info section
+	 *
+	 * @param $user User
 	 */
 	static function onGetPreferences( $user, &$preferences ) {
 		global $wgUser, $wgLang;
@@ -410,6 +412,8 @@ class CentralAuthHooks {
 
 	/**
 	 * Helper function for onUserLoadFromSession
+	 * @param $user User
+	 * @param $token
 	 */
 	static function initSession( $user, $token ) {
 		$userName = $user->getName();
@@ -564,6 +568,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user User
+	 * @param $rights
+	 * @return bool
+	 */
 	static function onUserGetRights( $user, &$rights ) {
 		if ( !$user->isAnon() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
@@ -591,6 +600,10 @@ class CentralAuthHooks {
 
 	/**
 	 * Destroy local login cookies so that remote logout works
+	 * @param $user User
+	 * @param $session
+	 * @param $cookies
+	 * @return bool
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
 		global $wgCentralAuthCookies;
@@ -624,6 +637,13 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $title Title
+	 * @param $user User
+	 * @param $action
+	 * @param $result
+	 * @return bool
+	 */
 	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
 		global $wgCentralAuthLockedCanEdit;
 
@@ -644,6 +664,12 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $auth
+	 * @param $user User
+	 * @param $params
+	 * @return bool
+	 */
 	static function onSecurePoll_GetUserParams( $auth, $user, &$params ) {
 		if ( $user->isAnon() ) {
 			return true;

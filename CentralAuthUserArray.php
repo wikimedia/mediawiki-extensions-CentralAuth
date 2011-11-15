@@ -9,6 +9,9 @@ class CentralAuthUserArray {
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	var $globalData;
 
+	/**
+	 * @param $res ResultWrapper
+	 */
 	function __construct( $res ) {
 		parent::__construct( $res );
 
@@ -40,6 +43,9 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			array_keys( $this->globalData ) ) . "\n" );
 	}
 
+	/**
+	 * @param $row
+	 */
 	function setCurrent( $row ) {
 		parent::setCurrent( $row );
 
