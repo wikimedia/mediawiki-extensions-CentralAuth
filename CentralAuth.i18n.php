@@ -6079,6 +6079,7 @@ Wódaj!',
 	'centralauth-list-unattached-title' => 'Wótpowjesone konta',
 	'centralauth-list-unattached' => 'Konto "$1" njejo se dało awtomatiski wobkšuśiś ako twójo na slědujucych sedłach; nanejskerjej ma druge gronidło ako twójo primarne konto:',
 	'centralauth-foreign-link' => 'Wužywaŕ $1 na $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|pśinosk|pśinoska|pśinoski|pśinoskow}} na wikiju $2',
 	'centralauth-merge-method-primary' => 'Domowniski wiki',
 	'centralauth-merge-method-empty' => 'žedne pśinoski',
 	'centralauth-merge-method-mail' => 'pśez e-mail wobkšuśony',
@@ -6968,6 +6969,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Titoxd
  * @author Toliño
  * @author Translationista
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'mergeaccount' => 'Estado de la unificación de cuentas',
@@ -6975,7 +6977,7 @@ $messages['es'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Fusiona cuentas]] entre wikis de {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona múltiples cuentas]] para la Identificación de Unificada del Usuario (SUL)',
 	'centralauth-merge-denied' => 'Lo sentimos, no estás autorizado para acceder a esta página.',
-	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} inicia sesión]</span> para revisar que sus cuentas hayan sido completamente fusionadas.',
+	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[$1 inicie sesión]</span> para comprobar si sus cuentas se han fusionado completamente.',
 	'centralauth-merge-welcome' => "'''Tu cuenta de usuario no ha sido migrada al sistema de cuentas unificadas de {{int:Centralauth-groupname}}.'''
 
 Si decides migrar tus cuentas, podrás usar el mismo nombre de usuario y contraseña para ingresar a todas las wikis de los proyectos {{int:Centralauth-groupname}} en todos los idiomas.
@@ -7032,6 +7034,7 @@ Mientras esté bloqueado, no puede fusionar sus cuentas.',
 	'centralauth-list-unattached' => 'No se pudo confirmar automáticamente que la cuenta «$1» es tuya en los siguientes sitios;
 probablemente tienen una contraseña diferente a la de tu cuenta primaria:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribuciones}} en $2',
 	'centralauth-merge-method-primary' => 'wiki origen',
 	'centralauth-merge-method-empty' => 'sin contribuciones',
 	'centralauth-merge-method-mail' => 'confirmado por correo electrónico',
@@ -7263,6 +7266,7 @@ Puedes ver y modificar todos ellos, o crear un ajuste nuevo.',
 	'centralauth-editset-success-delete' => 'Ajuste wiki borrado satisfactoriamente.',
 	'centralauth-editset-return' => 'Volver a la vista principal',
 	'right-globalgroupmembership' => 'Editar pertenencia a grupos globales',
+	'right-centralauth-autoaccount' => 'Acceder automáticamente con la cuenta global',
 	'right-centralauth-unmerge' => 'Desunificar cuenta global',
 	'right-centralauth-lock' => 'Bloquear u ocultar cuenta global',
 	'right-centralauth-oversight' => 'Suprimir cuenta global',
@@ -8754,6 +8758,7 @@ Dèsolâ !',
 	'centralauth-list-unattached' => 'Los comptos apelâs « $1 » sur cetos setos pôvont pas étre rapondus ôtomaticament ;
 ils ont probâblament un mot de pâssa difèrent de celi de voutron compto principâl :',
 	'centralauth-foreign-link' => 'Utilisator « $1 » dessus $2',
+	'centralauth-foreign-contributions' => '$1 contribucion{{PLURAL:$1||s}} dessus $2',
 	'centralauth-merge-method-primary' => 'vouiqui principâl',
 	'centralauth-merge-method-empty' => 'gins de contribucion',
 	'centralauth-merge-method-mail' => 'confirmâ per mèssageria èlèctronica',
@@ -10640,6 +10645,7 @@ Druhi wiki bu jako domizniske konto za twoje wužiwarske mjeno postajeny; slědu
 	'centralauth-list-unattached-title' => 'Njepřipowěsnjene konta',
 	'centralauth-list-unattached' => 'Njeda so awtomatisce potwjerdźeć, zo by konto "$1" za slědowace sydła je twoje; najskerje je wone druhe hesło hač twoej primarne konto.',
 	'centralauth-foreign-link' => 'Wužiwar $1 na $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|přinošk|přinoškaj|přinoški|přinoškow}} na wikiju $2',
 	'centralauth-merge-method-primary' => 'Domizniski wiki',
 	'centralauth-merge-method-empty' => 'žane přinoški',
 	'centralauth-merge-method-mail' => 'přez e-mejlku wobkrućeny',
@@ -10990,6 +10996,7 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-list-unattached-title' => 'Csatolatlan felhasználói fiókok',
 	'centralauth-list-unattached' => 'A(z) „$1” nevű felhasználói fiókról nem sikerült automatikusan megállapítani, hogy hozzád tartozik az alábbi oldalakon; valószínűleg más jelszóval rendelkeznek:',
 	'centralauth-foreign-link' => '$1 szerkesztő, $2',
+	'centralauth-foreign-contributions' => '$1közreműködés itt: $2',
 	'centralauth-merge-method-primary' => 'elsődleges wiki',
 	'centralauth-merge-method-empty' => 'nincsenek szerkesztések',
 	'centralauth-merge-method-mail' => 'megerősítve e-mailen keresztül',
@@ -11217,6 +11224,7 @@ Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
 	'centralauth-editset-success-delete' => 'Wikicsoport sikeresen törölve.',
 	'centralauth-editset-return' => 'Visszatérés a főoldalra',
 	'right-globalgroupmembership' => 'globális csoportok tagjainak szerkesztése',
+	'right-centralauth-autoaccount' => 'Automatikus bejelentkezés a globális fiókba',
 	'right-centralauth-unmerge' => 'Globális fiók szétválasztása',
 	'right-centralauth-lock' => 'Globális fiók elrejtése vagy zárolása',
 	'right-centralauth-oversight' => 'Globális fiók elrejtése',
@@ -11288,6 +11296,7 @@ Si isto es tu, tu pote completar le processo de unification de contos simplement
 	'centralauth-list-unattached' => 'Le conto "$1" non pote esser automaticamente confirmate como pertinente a te in le sequente sitos;
 es probabile que illos ha un contrasigno differente de illo in tu conto primari:',
 	'centralauth-foreign-link' => 'Usator $1 in $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribution|contributiones}} in $2',
 	'centralauth-merge-method-primary' => 'wiki principal',
 	'centralauth-merge-method-empty' => 'nulle contributiones',
 	'centralauth-merge-method-mail' => 'confirmate per e-mail',
@@ -14960,6 +14969,7 @@ Esoulaang wéi déi Spär besteet, kënnt Dir är Benotzerkonten net zesummeféi
 	'centralauth-list-unattached' => 'De Benotzerkont "$1" konnt fir déi ënnendrënner opgelëschte Siten net automatesch confirméiert ginn;
 wahrscheinlech hu si en anert Passwuert wéi Ären Haaptbenotzerkont:',
 	'centralauth-foreign-link' => 'Benotzer $1 op $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|Ännerung|Ännerungen}} op $2',
 	'centralauth-merge-method-primary' => 'Heemechts-Wiki',
 	'centralauth-merge-method-empty' => 'Keng Kontributiounen',
 	'centralauth-merge-method-mail' => 'per E-Mail confirméiert',
@@ -15273,6 +15283,7 @@ Zlang de wiki neet bewirk kin waere, kinse gein gebroekers samevoge.",
 	'centralauth-list-unattached' => '\'t Gebroekersaccount "$1" kós neet automatisch aan dich toegeweze waere veur de volgende sites;
 waorsjienlik ómdet \'t wachwaord aafwik van dien primair gebroekersaccount:',
 	'centralauth-foreign-link' => 'Gebroeker $1 op $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|biedraag|biedraag}} op $2',
 	'centralauth-merge-method-primary' => 'thoeswiki',
 	'centralauth-merge-method-empty' => 'gein biedrages',
 	'centralauth-merge-method-mail' => 'per e-mail gezat',
