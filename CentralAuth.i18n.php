@@ -25738,6 +25738,7 @@ Digar hisobho to hol ta'jid naşudaand.",
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Horus
  * @author Korrawit
  * @author Manop
  * @author Mopza
@@ -25771,6 +25772,7 @@ $messages['th'] = array(
 	'centralauth-merge-step3-submit' => 'รวมบัญชีผู้ใช้',
 	'centralauth-complete' => 'การรวมบัญชีสำหรับล็อกอินเสร็จสมบูรณ์!',
 	'centralauth-incomplete' => 'การรวมบัญชีสำหรับล็อกอินไม่สำเร็จ',
+	'centralauth-error-locked' => 'คุณไม่สามารถแก้ไขได้เพราะบัญชีของคุณถูกล็อก',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/th|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
 	'centralauth-list-home-title' => 'วิกิเหย้า',
 	'centralauth-list-attached' => 'ชื่อบัญชี "$1" ในชื่อไซต์ต่อไปนี้ได้ถูกรวมเข้าชื่อบัญชีหลักอัตโนมัติ:',
@@ -25791,7 +25793,10 @@ $messages['th'] = array(
 	'centralauth-attach-submit' => 'ย้ายบัญชี',
 	'centralauth-admin-manage' => 'จัดการข้อมูลผู้ใช้',
 	'centralauth-admin-username' => 'ชื่อผู้ใช้:',
+	'centralauth-admin-lookup-ro' => 'ดูข้อมูลผู้ใช้',
+	'centralauth-admin-lookup-rw' => 'จัดการบัญชีผู้ใช้',
 	'centralauth-admin-info-id' => 'รหัสผู้ใช้:',
+	'centralauth-admin-info-registered' => 'ลงทะเบียน:',
 	'centralauth-admin-info-hidden' => 'ซ่อน:',
 	'centralauth-admin-yes' => 'ใช่',
 	'centralauth-admin-no' => 'ไม่ใช่',
@@ -25823,12 +25828,14 @@ $messages['th'] = array(
 	'autologin' => 'การล็อกอินอัตโนมัติ',
 	'centralauth-existinggroup-legend' => 'กลุ่มที่มีอยู่',
 	'centralauth-newgroup-legend' => 'สร้างกลุ่มใหม่',
+	'centralauth-globalgroupperms-newgroupname' => 'ชื่อกลุ่มใหม่:',
 	'centralauth-editgroup-subtitle' => 'กำลังแก้ไข $1',
 	'centralauth-editgroup-name' => 'ชื่อของกลุ่ม:',
 	'centralauth-editgroup-noset' => '(ไม่มี)',
 	'centralauth-editgroup-reason' => 'เหตุผล:',
 	'centralauth-editset-reason' => 'เหตุผล:',
 	'centralauth-editset-submit' => 'ตกลง',
+	'centralauth-editset-submit-delete' => 'ลบ',
 	'centralauth-editset-nouse' => '(ไม่มี)',
 );
 
