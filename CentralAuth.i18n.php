@@ -8088,7 +8088,7 @@ Tämä ominaisuus on nyt poistettu käytöstä tietoturvasyistä johtuen.',
 	'centralauth-admin-permission' => 'Vain ylivalvojat (steward) voivat yhdistää toisten ihmisten tunnuksia heidän puolestaan.',
 	'centralauth-admin-no-unified' => 'Käyttäjänimellä ei ole yhdistettyä käyttäjätunnusta.',
 	'centralauth-admin-info-header' => 'Yhdistetyn tunnuksen tiedot',
-	'centralauth-admin-info-id' => 'Käyttäjänumero',
+	'centralauth-admin-info-id' => 'Tunniste',
 	'centralauth-admin-info-registered' => 'Rekisteröity',
 	'centralauth-admin-info-home' => 'Kotiwiki',
 	'centralauth-admin-info-editcount' => 'Muokkauksia yhteensä',
@@ -20720,6 +20720,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author Helder.wiki
  * @author Heldergeovane
  * @author Luckas Blade
+ * @author Pedroca cerebral
  * @author Sir Lestaty de Lioncourt
  */
 $messages['pt-br'] = array(
@@ -20782,6 +20783,7 @@ Desculpe-nos.',
 	'centralauth-list-unattached-title' => 'Contas não unificadas',
 	'centralauth-list-unattached' => 'A conta "$1" não pôde ser automaticamente confirmada como sendo tua nos seguintes sítios; provavelmente elas tenham uma senha diferente de sua conta principal:',
 	'centralauth-foreign-link' => 'Usuário $1 na $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribuição|contribuições}} em $2',
 	'centralauth-merge-method-primary' => 'wiki local',
 	'centralauth-merge-method-empty' => 'sem contribuições',
 	'centralauth-merge-method-mail' => 'confirmação por e-mail',
@@ -21011,6 +21013,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'centralauth-editset-success-delete' => 'O conjunto de wikis foi eliminado com sucesso.',
 	'centralauth-editset-return' => 'Voltar à vista principal',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
+	'right-centralauth-autoaccount' => 'Acessar automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
 	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global',
 	'right-centralauth-oversight' => 'Suprimir a conta global',
