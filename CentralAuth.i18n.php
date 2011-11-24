@@ -478,6 +478,7 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
 	'centralauth-listusers-locked' => '{{identical|locked}}',
+	'centralauth-listusers-item' => '{{optional}}',
 	'centralauth-prefs-not-managed' => "Appears on user profile tab of 'Preferences' special page, after 'Global account status:'",
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at a user's preferences page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
@@ -1194,10 +1195,10 @@ $messages['ar'] = array(
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
 	'centralauth-listusers-nolocal' => 'غير مرتبط أو غير موجود محليا',
-	'centralauth-seconds-ago' => 'منذ $1 {{PLURAL:$1|ثانية|ثانية}}',
-	'centralauth-minutes-ago' => 'منذ $1 {{PLURAL:$1|دقيقة|دقيقة}}',
+	'centralauth-seconds-ago' => 'منذ {{PLURAL:$1|أقل من ثانية|ثانية واحدة|ثانيتين|$1 ثوانٍ|$1 ثانية}}',
+	'centralauth-minutes-ago' => 'منذ {{PLURAL:$1|أقل من دقيقة|دقيقة واحدة|دقيقتين|$1 دقائق|$1 دقيقة}}',
 	'centralauth-hours-ago' => 'منذ $1 {{PLURAL:$1|ساعة|ساعة}}',
-	'centralauth-days-ago' => 'منذ $1 {{PLURAL:$1|يوم|يوم}}',
+	'centralauth-days-ago' => 'منذ {{PLURAL:$1|أقل من يوم|يوم واحد|يومين|$1 أيام|$1 يومًا|$1 يوم}}',
 	'centralauth-months-ago' => 'منذ $1 {{PLURAL:$1|شهر|شهر}}',
 	'centralauth-years-ago' => 'منذ $1 {{PLURAL:$1|سنة|سنة}}',
 	'centralauth-prefs-status' => 'حالة الحساب العام:',
@@ -9694,6 +9695,7 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 );
 
 /** Gujarati (ગુજરાતી)
+ * @author Ankit
  * @author Dineshjk
  * @author Rangilo Gujarati
  */
@@ -9707,7 +9709,14 @@ $messages['gu'] = array(
 	'centralauth-merge-step1-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
 	'centralauth-merge-step2-title' => 'વધુ એકાઉન્ટ્સ ની ખાતરી કરો',
 	'centralauth-merge-step2-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
+	'centralauth-merge-method-new' => 'નવું ખાતુ',
+	'centralauth-merge-method-login' => 'પ્રવેશ દરમિયાન બનાવાયું',
+	'centralauth-finish-login' => 'પ્રવેશો',
+	'centralauth-finish-send-confirmation' => 'પાસવર્ડ',
 	'centralauth-admin-username' => 'સભ્ય નામ:',
+	'centralauth-admin-yes' => 'હા',
+	'centralauth-admin-no' => 'ના',
+	'centralauth-admin-hidden-list' => 'જાહેર યાદીઓમાંથી',
 	'centralauth-editgroup-noset' => '(કોઇપણ નહીં)',
 	'centralauth-editset-nouse' => '(કોઇપણ નહીં)',
 );
@@ -19405,9 +19414,29 @@ $messages['os'] = array(
 );
 
 /** Punjabi (ਪੰਜਾਬੀ)
+ * @author Aalam
  * @author Gman124
  */
 $messages['pa'] = array(
+	'mergeaccount' => 'ਲਾਗਇਨ ਯੂਨੀਫਕੇਸ਼ਨ ਹਾਲਤ',
+	'centralauth-groupname' => 'ਵਿਕਿਪੀਡਿਆ ਫਾਊਂਡੇਸ਼ਨ',
+	'centralauth-merge-denied' => 'ਅਫਸੋਸ, ਤੁਹਾਡੇ ਕੋਲ ਇਹ ਪੇਜ਼ ਲਈ ਅਧਿਕਾਰ ਨਹੀਂ ਹਨ।',
+	'centralauth-merge-step1-title' => 'ਲਾਗਇਨ ਯੂਨੀਫਕੇਸ਼ਨ ਸ਼ੁਰੂ ਕਰੋ',
+	'centralauth-merge-step1-submit' => 'ਲਾਗਇਨ ਜਾਣਕਾਰੀ ਪੁਸ਼ਟੀ',
+	'centralauth-merge-step2-title' => 'ਹੋਰ ਅਕਾਊਂਟ ਦੀ ਪੁਸ਼ਟੀ',
+	'centralauth-merge-step2-submit' => 'ਲਾਗਇਨ ਜਾਣਕਾਰੀ ਪੁਸ਼ਟੀ',
+	'centralauth-merge-dryrun-or' => "'''ਜਾਂ'''",
+	'centralauth-merge-step3-title' => 'ਯੂਨੀਫਾਈਡ ਅਕਾਊਂਟ ਬਣਾਓ',
+	'centralauth-merge-step3-submit' => 'ਯੂਨੀਫਾਈ ਅਕਾਊਂਟ',
+	'centralauth-complete' => 'ਲਾਗਇਨ ਯੂਨੀਫਿਕੇਸ਼ਨ ਪੂਰਾ ਹੋਇਆ!',
+	'centralauth-incomplete' => 'ਲਾਗਇਨ ਯੂਨੀਫਿਕੇਸ਼ਨ ਪੂਰਾ ਨਹੀਂ ਹੋਇਆ!',
+	'centralauth-error-locked' => 'ਤੁਸੀਂ ਸੋਧ ਨਹੀਂ ਸਕਦੇ, ਕਿਉਂਕਿ ਤੁਹਾਡਾ ਅਕਾਊਂਟ ਲਾਕ ਕੀਤਾ ਹੋਇਆ ਹੈ।',
+	'centralauth-list-home-title' => 'ਮੁੱਖ ਵਿਕਿ',
+	'centralauth-list-attached-title' => 'ਅਟੈਚ ਕੀਤੇ ਅਕਾਊਂਟ',
+	'centralauth-foreign-link' => '$2 ਉੱਤੇ $1 ਯੂਜ਼ਰ',
+	'centralauth-merge-method-primary' => 'ਮੁੱਖ ਵਿਕਿ',
+	'centralauth-merge-method-empty' => 'ਕੋਈ ਯੋਗਦਾਨ ਨਹੀਂ',
+	'centralauth-merge-method-mail' => 'ਈਮੇਲ ਰਾਹੀਂ ਪੁਸ਼ਟੀ',
 	'centralauth-merge-method-new' => 'ਨਵਾਂ ਅਕਾਊਂਟ',
 	'centralauth-finish-password' => 'ਪਾਸਵਰਡ:',
 	'centralauth-admin-username' => 'ਯੂਜ਼ਰ ਨਾਂ:',
@@ -21271,6 +21300,7 @@ Cât timp este blocat nu puteți să vă uniți conturile.',
 	'centralauth-list-unattached-title' => 'Conturi neatașate',
 	'centralauth-list-unattached' => 'Conturile "$1" nu au putut fi confirmate automat ca aparținându-vă pe următoarele site-uri; probabil acestea folosesc altă parolă decât cea a contului dumneavoastră primar:',
 	'centralauth-foreign-link' => 'Utilizator $1 pe $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribuție|contribuții|de contribuții}} la $2',
 	'centralauth-merge-method-primary' => 'wiki principal',
 	'centralauth-merge-method-empty' => 'nici o contribuție',
 	'centralauth-merge-method-mail' => 'confirmat prin e-mail',
