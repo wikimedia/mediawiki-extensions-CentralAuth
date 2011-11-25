@@ -251,7 +251,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	}
 
 	/**
-	 * @param $template
+	 * @param $template UserloginTemplate
 	 * @param $type
 	 * @return mixed
 	 */

@@ -40,7 +40,6 @@ function migratePassOneReport( $migrated, $total, $start ) {
 		$total / $delta,
 		$migrated,
 		$migrated / $total * 100.0 );
-
 }
 
 echo "CentralAuth migration pass 1:\n";

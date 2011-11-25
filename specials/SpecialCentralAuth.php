@@ -326,6 +326,9 @@ class SpecialCentralAuth extends SpecialPage {
 		$wgOut->addHTML( '</fieldset>' );
 	}
 
+	/**
+	 * @return string
+	 */
 	function listHeader() {
 		global $wgUser;
 		return
@@ -349,6 +352,9 @@ class SpecialCentralAuth extends SpecialPage {
 			'<tbody>';
 	}
 
+	/**
+	 * @return string
+	 */
 	function listFooter() {
 		$footer = '';
 		if ( $this->mCanUnmerge )
@@ -564,6 +570,9 @@ class SpecialCentralAuth extends SpecialPage {
 		return Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
+	/**
+	 * @param $action
+	 */
 	function showActionForm( $action ) {
 		global $wgOut, $wgUser;
 		$wgOut->addHTML(
@@ -718,6 +727,13 @@ class SpecialCentralAuth extends SpecialPage {
 		$wgOut->addInlineScript( $js );
 	}
 
+	/**
+	 * @param $action
+	 * @param $target
+	 * @param $reason string
+	 * @param $params array
+	 * @param $suppressLog bool
+	 */
 	function logAction( $action, $target, $reason = '', $params = array(), $suppressLog = false ) {
 		$logType = $suppressLog ? 'suppress' : 'globalauth';	// Not centralauth because of some weird length limitiations
 		$log = new LogPage( $logType );

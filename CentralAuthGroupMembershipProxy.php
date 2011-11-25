@@ -11,7 +11,7 @@ class CentralAuthGroupMembershipProxy {
 	private $mGlobalUser;
 
 	/**
-	 * @param $user User
+	 * @param $user CentralAuthUser
 	 */
 	private function __construct( $user ) {
 		$this->name = $user->getName();
@@ -24,7 +24,7 @@ class CentralAuthGroupMembershipProxy {
 	 * @return bool
 	 */
 	public static function whoIs( $wikiID, $id ) {
-		$user = self::newFromId( $wikiID, $id );
+		$user = self::newFromId( $wikiID, $id ); // FIXME: newFromId is undefined
 		if ( $user ) {
 			return $user->name;
 		} else {

@@ -15,6 +15,9 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );
 	}
 
+	/**
+	 * @return String
+	 */
 	function getSuccessURL() {
 		$knownWikis = $this->mGlobalUser->listAttached();
 		$title = $this->getTitle( $this->mTarget );
@@ -52,6 +55,9 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		);
 	}
 
+	/**
+	 * @return array
+	 */
 	function changeableGroups() {
 		# # Should be a global user
 		if ( !$this->mGlobalUser->exists() || !$this->mGlobalUser->isAttached() ) {
@@ -69,6 +75,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		}
 	}
 
+	/**
+	 * @param $username
+	 * @return Status
+	 */
 	function fetchUser( $username ) {
 		global $wgRequest;
 
@@ -86,6 +96,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		return Status::newGood( $user );
 	}
 
+	/**
+	 * @static
+	 * @return array
+	 */
 	protected static function getAllGroups() {
 		return CentralAuthUser::availableGlobalGroups();
 	}

@@ -116,6 +116,10 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 	}
 
+	/**
+	 * @param $dbname string
+	 * @return string
+	 */
 	public function getUrl( $dbname ){
 		global $wgConf;
 

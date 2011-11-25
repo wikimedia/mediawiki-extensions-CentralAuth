@@ -28,6 +28,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		parent::__construct( 'GlobalGroupPermissions' );
 	}
 
+	/**
+	 * @param $user
+	 * @return bool
+	 */
 	function userCanEdit( $user ) {
 		$globalUser = CentralAuthUser::getInstance( $user );
 
@@ -108,6 +112,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $group
+	 */
 	function buildGroupView( $group ) {
 		global $wgOut, $wgUser;
 
@@ -148,6 +155,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->showLogFragment( $group, $wgOut );
 	}
 
+	/**
+	 * @param $group
+	 * @return string
+	 */
 	function buildWikiSetSelector( $group ) {
 		$sets = WikiSet::getAllWikiSets();
 		$default = WikiSet::getWikiSetForGroup( $group );
@@ -166,6 +177,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return $select->getHTML() . "&#160;{$editlink}";
 	}
 
+	/**
+	 * @param $group
+	 * @return string
+	 */
 	function buildCheckboxes( $group ) {
 		global $wgUser, $wgOut;
 
@@ -179,8 +194,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$checkboxes = array();
 		$attribs = array();
 
-		if ( !$editable )
+		if ( !$editable ) {
 			$attribs['disabled'] = 'disabled';
+		}
 
 		foreach ( $rights as $right ) {
 			# Build a checkbox.
@@ -221,6 +237,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return $html;
 	}
 
+	/**
+	 * @param $group
+	 * @return array
+	 */
 	function getAssignedRights( $group ) {
 		return CentralAuthUser::globalGroupPermissions( $group );
 	}
@@ -279,6 +299,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$wgOut->addWikiMsg( 'centralauth-editgroup-success-text', $group );
 	}
 
+	/**
+	 * @param $group
+	 * @param $rights
+	 */
 	function revokeRightsFromGroup( $group, $rights ) {
 		$dbw = CentralAuthUser::getCentralDB();
 
@@ -286,6 +310,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$dbw->delete( 'global_group_permissions', array( 'ggp_group' => $group, 'ggp_permission' => $rights ), __METHOD__ );
 	}
 
+	/**
+	 * @param $group
+	 * @param $rights
+	 */
 	function grantRightsToGroup( $group, $rights ) {
 		$dbw = CentralAuthUser::getCentralDB();
 
@@ -302,12 +330,22 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$dbw->replace( 'global_group_permissions', array( 'ggp_group', 'ggp_permission' ), $insertRows, __METHOD__ );
 	}
 
+	/**
+	 * @param $group
+	 * @param $output
+	 */
 	protected function showLogFragment( $group, $output ) {
 		$title = SpecialPage::getTitleFor( 'GlobalUsers', $group );
 		$output->addHTML( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $title->getPrefixedText() );
 	}
 
+	/**
+	 * @param $group
+	 * @param $addRights
+	 * @param $removeRights
+	 * @param $reason
+	 */
 	function addLogEntry( $group, $addRights, $removeRights, $reason ) {
 		$log = new LogPage( 'gblrights' );
 
@@ -321,10 +359,19 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param $ids
+	 * @return string
+	 */
 	function makeRightsList( $ids ) {
 		return (bool)count( $ids ) ? implode( ', ', $ids ) : wfMsgForContent( 'rightsnone' );
 	}
 
+	/**
+	 * @param $group
+	 * @param $set
+	 * @return bool
+	 */
 	function setRestrictions( $group, $set ) {
 		$dbw = CentralAuthUser::getCentralDB();
 		if ( $set == 0 ) {
@@ -336,6 +383,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return (bool)$dbw->affectedRows();
 	}
 
+	/**
+	 * @param $group
+	 * @param $old
+	 * @param $new
+	 * @param $reason
+	 */
 	function addLogEntry2( $group, $old, $new, $reason ) {
 		$log = new LogPage( 'gblrights' );
 
@@ -350,12 +403,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function getWikiSetName( $id ) {
-		if ( $id )
+		if ( $id ) {
 			return WikiSet::newFromID( $id )->getName();
-		else
+		} else {
 			return wfMsgForContent( 'centralauth-editgroup-noset' );
+		}
 	}
 
+	/**
+	 * @param $group
+	 */
 	function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.
 		$dbr = CentralAuthUser::getCentralDB();

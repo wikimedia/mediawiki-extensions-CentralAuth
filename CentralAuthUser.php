@@ -67,18 +67,28 @@ class CentralAuthUser extends AuthPluginUser {
 		return $user->centralAuthObj;
 	}
 
+	/**
+	 * @return DatabaseBase
+	 */
 	public static function getCentralDB() {
 		global $wgCentralAuthDatabase;
 		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
 			$wgCentralAuthDatabase );
 	}
 
+	/**
+	 * @return DatabaseBase
+	 */
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;
 		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_SLAVE, 'centralauth',
 			$wgCentralAuthDatabase );
 	}
 
+	/**
+	 * @param $wikiID
+	 * @return DatabaseBase
+	 */
 	public static function getLocalDB( $wikiID ) {
 		return wfGetLB( $wikiID )->getConnection( DB_MASTER, array(), $wikiID );
 	}
@@ -687,10 +697,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * as many as possible, but don't perform any actions yet.
 	 *
 	 * @param $passwords array
-	 * @param &$home String set to false if no permission to do checks
-	 * @param &$attached Array on success, list of wikis which will be auto-attached
-	 * @param &$unattached Array on success, list of wikis which won't be auto-attached
-	 * @param &$methods Array on success, associative array of each wiki's attachment method	 *
+	 * @param $home String set to false if no permission to do checks
+	 * @param $attached Array on success, list of wikis which will be auto-attached
+	 * @param $unattached Array on success, list of wikis which won't be auto-attached
+	 * @param $methods Array on success, associative array of each wiki's attachment method	 *
 	 * @return Status object
 	 */
 	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
@@ -812,10 +822,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Attempt to migrate any remaining unattached accounts by virtue of
 	 * the password check.
 	 *
-	 * @param string $password plaintext password to try matching
-	 * @param $migrated out array of wiki IDs for records which were
+	 * @param $password string plaintext password to try matching
+	 * @param $migrated array array of wiki IDs for records which were
 	 *                  successfully migrated by this operation
-	 * @param $remaining out array of wiki IDs for records which are still
+	 * @param $remaining array of wiki IDs for records which are still
 	 *                   unattached after the operation
 	 * @return bool true if all accounts are migrated at the end
 	 */
@@ -2060,6 +2070,9 @@ class CentralAuthUser extends AuthPluginUser {
 		return in_array( $perm, $perms );
 	}
 
+	/**
+	 * @return array
+	 */
 	static function getUsedRights() {
 		$dbr = self::getCentralSlaveDB();
 
@@ -2076,9 +2089,6 @@ class CentralAuthUser extends AuthPluginUser {
 		return $rights;
 	}
 
-	/**
-	 * @return void
-	 */
 	public function invalidateCache() {
 		if ( !$this->mDelayInvalidation ) {
 			wfDebugLog( 'CentralAuth', "Updating cache for global user {$this->mName}" );

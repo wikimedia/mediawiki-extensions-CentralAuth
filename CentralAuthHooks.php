@@ -1,6 +1,11 @@
 <?php
 
 class CentralAuthHooks {
+
+	/**
+	 * @param $auth
+	 * @return bool
+	 */
 	static function onAuthPluginSetup( &$auth ) {
 		$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
 		return true;
@@ -9,6 +14,9 @@ class CentralAuthHooks {
 	/**
 	 * Make sure migration information in localuser table is populated
 	 * on local account creation
+	 * @param $user User
+	 * @param $byEmail
+	 * @return bool
 	 */
 	static function onAddNewAccount( $user, $byEmail ) {
 		$central = CentralAuthUser::getInstance( $user );
@@ -20,6 +28,8 @@ class CentralAuthHooks {
 	 * Add a little pretty to the preferences user info section
 	 *
 	 * @param $user User
+	 * @param $preferences array
+	 * @return bool
 	 */
 	static function onGetPreferences( $user, &$preferences ) {
 		global $wgUser, $wgLang;
@@ -28,8 +38,6 @@ class CentralAuthHooks {
 			// Not allowed to merge, don't display merge information
 			return true;
 		}
-
-		$skin = $wgUser->getSkin();
 
 		// Possible states:
 		// - account not merged at all
@@ -68,9 +76,9 @@ class CentralAuthHooks {
 		}
 
 		$manageLinks = array();
-		$manageLinks[] = $skin->linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
+		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
 			wfMsgExt( 'centralauth-prefs-manage', 'parseinline' ) );
-		$manageLinks[] = $skin->linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $wgUser->getName() ),
+		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $wgUser->getName() ),
 			wfMsgExt( 'centralauth-prefs-view', 'parseinline' ) );
 		$manageLinkList = wfMsg( 'parentheses', $wgLang->pipeList( $manageLinks ) );
 
@@ -91,6 +99,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user User
+	 * @param $abortError
+	 * @return bool
+	 */
 	static function onAbortNewAccount( $user, &$abortError ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists() ) {
@@ -300,6 +313,12 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user
+	 * @param $inject_html
+	 * @param $userName
+	 * @return bool
+	 */
 	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
 		global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthCookies ) {
@@ -361,6 +380,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $out
+	 * @param $cookies array
+	 * @return bool
+	 */
 	static function onGetCacheVaryCookies( $out, &$cookies ) {
 		global $wgCentralAuthCookiePrefix;
 		$cookies[] = $wgCentralAuthCookiePrefix . 'Token';
@@ -369,6 +393,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $userArray
+	 * @param $res
+	 * @return bool
+	 */
 	static function onUserArrayFromResult( &$userArray, $res ) {
 		$userArray = CentralAuthUserArray::newFromResult( $res );
 		return true;
@@ -376,6 +405,10 @@ class CentralAuthHooks {
 
 	/**
 	 * Warn bureaucrat about possible conflicts with unified accounts
+	 * @param $oldName
+	 * @param $newName
+	 * @param $warnings
+	 * @return bool
 	 */
 	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
 		$oldCentral = new CentralAuthUser( $oldName );
@@ -389,6 +422,12 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $uid
+	 * @param $oldName
+	 * @param $newName
+	 * @return bool
+	 */
 	static function onRenameUserPreRename( $uid, $oldName, $newName ) {
 		$oldCentral = new CentralAuthUser( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
@@ -399,6 +438,10 @@ class CentralAuthHooks {
 
 	/**
 	 * When renaming an account, ensure that the presence records are updated.
+	 * @param $userId
+	 * @param $oldName
+	 * @param $newName
+	 * @return bool
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
 		$oldCentral = new CentralAuthUser( $oldName );
@@ -432,7 +475,8 @@ class CentralAuthHooks {
 	/**
 	 * Attempt to add a user to the database
 	 * Does the required authentication checks and updates for auto-creation
-	 * @param User $user
+	 * @param $user User
+	 * @param $userName string
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user, $userName ) {
@@ -528,6 +572,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user
+	 * @param $email
+	 * @return bool
+	 */
 	static function onUserGetEmail( $user, &$email ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
@@ -536,6 +585,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user
+	 * @param $timestamp
+	 * @return bool
+	 */
 	static function onUserGetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
@@ -544,6 +598,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user
+	 * @param $email
+	 * @return bool
+	 */
 	static function onUserSetEmail( $user, &$email ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
@@ -552,6 +611,10 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user
+	 * @return bool
+	 */
 	static function onUserSaveSettings( $user ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
@@ -560,6 +623,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $user
+	 * @param $timestamp
+	 * @return bool
+	 */
 	static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
@@ -587,6 +655,10 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param $groups
+	 * @return bool
+	 */
 	static function onMakeGlobalVariablesScript( $groups ) {
 		global $wgUser;
 		if ( !$wgUser->isAnon() ) {
@@ -628,6 +700,9 @@ class CentralAuthHooks {
 
 	/**
 	 * Use the central LoggedOut cookie just like the local one
+	 * @param $user
+	 * @param $name
+	 * @return bool
 	 */
 	static function onUserLoadDefaults( $user, $name ) {
 		global $wgCentralAuthCookiePrefix;

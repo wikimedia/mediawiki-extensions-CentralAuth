@@ -12,7 +12,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit( 1 );
 }
 
-
 class SpecialWikiSets extends SpecialPage {
 	var $mCanEdit;
 
@@ -20,6 +19,9 @@ class SpecialWikiSets extends SpecialPage {
 		parent::__construct( 'WikiSets' );
 	}
 
+	/**
+	 * @return String
+	 */
 	function getDescription() {
 		return wfMsg( 'centralauth-editset' );
 	}
@@ -65,6 +67,9 @@ class SpecialWikiSets extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param string $msg
+	 */
 	function buildMainView( $msg = '' ) {
 		global $wgOut, $wgUser;
 		$sk = $wgUser->getSkin();
@@ -92,6 +97,14 @@ class SpecialWikiSets extends SpecialPage {
 		$wgOut->addHTML( '</ul></fieldset>' );
 	}
 
+	/**
+	 * @param $subpage
+	 * @param $error bool
+	 * @param $name
+	 * @param $type
+	 * @param $wikis
+	 * @param $reason
+	 */
 	function buildSetView( $subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null ) {
 		global $wgOut, $wgUser;
 
@@ -184,6 +197,10 @@ class SpecialWikiSets extends SpecialPage {
 		return $html;
 	}
 
+	/**
+	 * @param $subpage
+	 * @return mixed
+	 */
 	function buildDeleteView( $subpage ) {
 		global $wgOut, $wgUser;
 		$wgOut->setSubtitle( wfMsgExt( 'centralauth-editset-subtitle', 'parseinline' ) );
@@ -204,6 +221,10 @@ class SpecialWikiSets extends SpecialPage {
 		$wgOut->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
 	}
 
+	/**
+	 * @param $id
+	 * @return mixed
+	 */
 	function doSubmit( $id ) {
 		global $wgRequest, $wgContLang;
 
@@ -275,20 +296,22 @@ class SpecialWikiSets extends SpecialPage {
 			}
 		}
 
-		global $wgUser, $wgOut;
-		$sk = $wgUser->getSkin();
-		$returnLink = $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'centralauth-editset-return' ) );
+		global $wgOut;
+		$returnLink = Linker::makeKnownLinkObj( $this->getTitle(), wfMsg( 'centralauth-editset-return' ) );
 
 		$wgOut->addHTML( '<strong class="success">' . wfMsgHtml( 'centralauth-editset-success' ) . '</strong> <p>' . $returnLink . '</p>' );
 	}
 
+	/**
+	 * @param $set
+	 * @return mixed
+	 */
 	function doDelete( $set ) {
 		global $wgRequest;
 
 		$set = WikiSet::newFromID( $set );
 		if ( !$set ) {
-			// FIXME: $subpage is undefined
-			$this->buildMainView( '<strong class="error">' . wfMsgHtml( 'centralauth-editset-notfound', $subpage ) . '</strong>' );
+			$this->buildMainView( '<strong class="error">' . wfMsgHtml( 'centralauth-editset-notfound', $set ) . '</strong>' );
 			return;
 		}
 

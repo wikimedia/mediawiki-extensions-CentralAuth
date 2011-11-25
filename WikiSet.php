@@ -25,6 +25,10 @@ class WikiSet {
 		$this->mWikis = $wikis;
 	}
 
+	/**
+	 * @param $k string
+	 * @return string
+	 */
 	protected static function memcKey( $k ) { return "wikiset:{$k}"; }
 
 	/**

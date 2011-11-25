@@ -47,10 +47,20 @@ function migratePassZero() {
 	}
 }
 
+/**
+ * @param $userId
+ * @return int
+ */
 function getEditCount( $userId ) {
 	return countEdits( $userId, 'revision', 'rev_user' );
 }
 
+/**
+ * @param $userId
+ * @param $table
+ * @param $field
+ * @return int
+ */
 function countEdits( $userId, $table, $field ) {
 	$dbr = wfGetDB( DB_SLAVE );
 	$count = $dbr->selectField( $table, 'COUNT(*)',

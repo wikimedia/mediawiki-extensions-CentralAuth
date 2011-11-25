@@ -57,18 +57,19 @@ class SpecialMergeAccount extends SpecialPage {
 		if ( $this->mAttemptMerge ) {
 			switch( $this->mMergeAction ) {
 			case "dryrun":
-				return $this->doDryRunMerge();
+				$this->doDryRunMerge();
 			case "initial":
-				return $this->doInitialMerge();
+				$this->doInitialMerge();
 			case "cleanup":
-				return $this->doCleanupMerge();
+				$this->doCleanupMerge();
 			case "attach":
-				return $this->doAttachMerge();
+				$this->doAttachMerge();
 			case "remove":
-				return $this->doUnattach();
+				$this->doUnattach();
 			default:
-				return $this->invalidAction();
+				$this->invalidAction();
 			}
+			return;
 		}
 
 		$globalUser = new CentralAuthUser( $this->mUserName );
@@ -122,6 +123,9 @@ class SpecialMergeAccount extends SpecialPage {
 		return array();
 	}
 
+	/**
+	 * @param $password
+	 */
 	private function addWorkingPassword( $password ) {
 		$passwords = $this->getWorkingPasswords();
 		if ( !in_array( $password, $passwords ) ) {
@@ -220,7 +224,8 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = new CentralAuthUser( $wgUser->getName() );
 
 		if ( $wgCentralAuthDryRun ) {
-			return $this->dryRunError();
+			$this->dryRunError();
+			return;
 		}
 
 		if ( $globalUser->exists() ) {
@@ -251,7 +256,8 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $wgCentralAuthDryRun ) {
-			return $this->dryRunError();
+			$this->dryRunError();
+			return;
 		}
 		$password = $wgRequest->getText( 'wpPassword' );
 
@@ -283,7 +289,8 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $wgCentralAuthDryRun ) {
-			return $this->dryRunError();
+			$this->dryRunError();
+			return;
 		}
 		$password = $wgRequest->getText( 'wpPassword' );
 		if ( $globalUser->authenticate( $password ) == 'ok' ) {
@@ -337,6 +344,10 @@ class SpecialMergeAccount extends SpecialPage {
 		$wgOut->addHTML( $this->attachActionForm() );
 	}
 
+	/**
+	 * @param $merged
+	 * @param $remainder
+	 */
 	function showStatus( $merged, $remainder ) {
 		global $wgOut;
 
@@ -371,19 +382,39 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $wikiList
+	 * @param $methods array
+	 * @return string
+	 */
 	function listAttached( $wikiList, $methods = array() ) {
 		return $this->listWikis( $wikiList, $methods );
 	}
 
+	/**
+	 * @param $wikiList
+	 * @return string
+	 */
 	function listUnattached( $wikiList ) {
 		return $this->listWikis( $wikiList );
 	}
 
+	/**
+	 * @param $list
+	 * @param array $methods
+	 * @return string
+	 */
 	function listWikis( $list, $methods = array() ) {
 		asort( $list );
 		return $this->formatList( $list, $methods, array( $this, 'listWikiItem' ) );
 	}
 
+	/**
+	 * @param $items
+	 * @param $methods
+	 * @param $callback
+	 * @return string
+	 */
 	function formatList( $items, $methods, $callback ) {
 		if ( !$items ) {
 			return '';
@@ -399,11 +430,21 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $wikiID
+	 * @param $method
+	 * @return string
+	 */
 	function listWikiItem( $wikiID, $method ) {
 		return
 			$this->foreignUserLink( $wikiID ) . ( $method ? ' (' . wfMsgHtml( "centralauth-merge-method-$method" ) . ')' : '' );
 	}
 
+	/**
+	 * @param $wikiID
+	 * @return string
+	 * @throws MWException
+	 */
 	function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
@@ -423,6 +464,12 @@ class SpecialMergeAccount extends SpecialPage {
 			$hostname );
 	}
 
+	/**
+	 * @param $action
+	 * @param $title
+	 * @param $text
+	 * @return string
+	 */
 	private function actionForm( $action, $title, $text ) {
 		global $wgUser;
 		return
@@ -446,6 +493,13 @@ class SpecialMergeAccount extends SpecialPage {
 			'</div>';
 	}
 
+	/**
+	 * @param $action
+	 * @param $title
+	 * @param $text
+	 * @param $submit
+	 * @return string
+	 */
 	private function passwordForm( $action, $title, $text, $submit ) {
 		return $this->actionForm(
 			$action,
@@ -476,6 +530,9 @@ class SpecialMergeAccount extends SpecialPage {
 				'</table>' );
 	}
 
+	/**
+	 * @return string
+	 */
 	private function step1PasswordForm() {
 		return $this->passwordForm(
 			'dryrun',
@@ -484,6 +541,10 @@ class SpecialMergeAccount extends SpecialPage {
 			wfMsg( 'centralauth-merge-step1-submit' ) );
 	}
 
+	/**
+	 * @param $unattached
+	 * @return string
+	 */
 	private function step2PasswordForm( $unattached ) {
 		global $wgUser;
 		return $this->passwordForm(
@@ -494,6 +555,12 @@ class SpecialMergeAccount extends SpecialPage {
 			wfMsg( 'centralauth-merge-step2-submit' ) );
 	}
 
+	/**
+	 * @param $home
+	 * @param $attached
+	 * @param $methods
+	 * @return string
+	 */
 	private function step3ActionForm( $home, $attached, $methods ) {
 		global $wgUser;
 		return $this->actionForm(
@@ -515,6 +582,9 @@ class SpecialMergeAccount extends SpecialPage {
 			);
 	}
 
+	/**
+	 * @return string
+	 */
 	private function attachActionForm() {
 		return $this->passwordForm(
 			'attach',

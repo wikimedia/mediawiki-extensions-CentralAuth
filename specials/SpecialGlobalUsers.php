@@ -38,6 +38,10 @@ class GlobalUsersPager extends UsersPager {
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
 	}
 
+	/**
+	 * @param $group string
+	 * @return mixed
+	 */
 	function setGroup( $group = '' ) {
 		if ( !$group ) {
 			$this->requestedGroup = false;
@@ -46,6 +50,10 @@ class GlobalUsersPager extends UsersPager {
 		$this->requestedGroup = $group;
 	}
 
+	/**
+	 * @param $username string
+	 * @return mixed
+	 */
 	function setUsername( $username = '' ) {
 		if ( !$username ) {
 			$this->requestedUser = false;
@@ -54,19 +62,27 @@ class GlobalUsersPager extends UsersPager {
 		$this->requestedUser = $username;
 	}
 
+	/**
+	 * @return string
+	 */
 	function getIndexField() {
 		return 'gu_name';
 	}
 
+	/**
+	 * @return array
+	 */
 	function getDefaultQuery() {
 		$query = parent::getDefaultQuery();
 		if ( !isset( $query['group'] ) && $this->requestedGroup ) {
 			$query['group'] = $this->requestedGroup;
 		}
 		return $this->mDefaultQuery = $query;
-
 	}
 
+	/**
+	 * @return array
+	 */
 	function getQueryInfo() {
 		$localwiki = wfWikiID();
 		$conds = array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE );
@@ -105,7 +121,7 @@ class GlobalUsersPager extends UsersPager {
 			$info[] = wfMsg( 'centralauth-listusers-nolocal' );
 		}
 		$groups = $this->getUserGroups( $row );
-		
+
 		if ( $groups ) {
 			$info[] = $groups;
 		}
@@ -113,6 +129,9 @@ class GlobalUsersPager extends UsersPager {
 		return Html::rawElement( 'li', array(), wfMsgExt( 'centralauth-listusers-item', array('parseinline'), $user, $info ) );
 	}
 
+	/**
+	 * @return String
+	 */
 	function getBody() {
 		if ( !$this->mQueryDone ) {
 			$this->doQuery();
@@ -129,6 +148,10 @@ class GlobalUsersPager extends UsersPager {
 		return AlphabeticPager::getBody();
 	}
 
+	/**
+	 * @param $row
+	 * @return bool|string
+	 */
 	protected function getUserGroups( $row ) {
 		if ( !$row->gug_numgroups ) {
 			return false;
@@ -144,6 +167,9 @@ class GlobalUsersPager extends UsersPager {
 		return implode( ', ', $rights );
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getAllGroups() {
 		$result = array();
 		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {

@@ -1,6 +1,11 @@
 <?php
 
 class CentralAuthUserArray {
+
+	/**
+	 * @param $res ResultWrapper
+	 * @return CentralAuthUserArrayFromResult
+	 */
 	static function newFromResult( $res ) {
 		return new CentralAuthUserArrayFromResult( $res );
 	}
