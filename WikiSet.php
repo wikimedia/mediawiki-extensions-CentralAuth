@@ -18,6 +18,12 @@ class WikiSet {
 		'mVersion',
 	);
 
+	/**
+	 * @param $name string
+	 * @param $type string
+	 * @param $wikis array
+	 * @param $id int
+	 */
 	public function __construct( $name = '', $type = self::OPTIN, $wikis = array(), $id = 0 ) {
 		$this->mId = $id;
 		$this->mName = $name;
@@ -121,9 +127,10 @@ class WikiSet {
 			$data = $wgMemc->get( self::memcKey( "name:" . md5( $name ) ) );
 			if ( $data ) {
 				if ( $data['mVersion'] == self::VERSION ) {
-					$ws = new WikiSet( null, null, null );
-					foreach ( $data as $key => $val )
+					$ws = new WikiSet( null, null );
+					foreach ( $data as $key => $val ) {
 						$ws->$key = $val;
+					}
 					return $ws;
 				}
 			}
@@ -151,9 +158,10 @@ class WikiSet {
 			$data = $wgMemc->get( self::memcKey( $id ) );
 			if ( $data ) {
 				if ( $data['mVersion'] == self::VERSION ) {
-					$ws = new WikiSet( null, null, null );
-					foreach ( $data as $name => $val )
+					$ws = new WikiSet( null, null );
+					foreach ( $data as $name => $val ) {
 						$ws->$name = $val;
+					}
 					return $ws;
 				}
 			}

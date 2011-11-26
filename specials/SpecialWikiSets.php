@@ -36,10 +36,11 @@ class SpecialWikiSets extends SpecialPage {
 		if ( strpos( $subpage, 'delete/' ) === 0 && $this->mCanEdit ) {
 			$subpage = substr( $subpage, 7 );	// Remove delete/ part
 			if ( is_numeric( $subpage ) ) {
-				if ( $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) )
+				if ( $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 					$this->doDelete( $subpage );
-				else
+				} else {
 					$this->buildDeleteView( $subpage );
+				}
 			} else {
 				$this->buildMainView();
 			}
@@ -71,8 +72,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $msg
 	 */
 	function buildMainView( $msg = '' ) {
-		global $wgOut, $wgUser;
-		$sk = $wgUser->getSkin();
+		global $wgOut;
 
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
 		$legend = wfMsg( "centralauth-editset-legend-{$msgPostfix}" );
@@ -90,7 +90,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		if ( $this->mCanEdit ) {
 			$target = SpecialPage::getTitleFor( 'WikiSets', '0' );
-			$newlink = $sk->makeLinkObj( $target, wfMsgHtml( 'centralauth-editset-new' ) );
+			$newlink = Linker::makeLinkObj( $target, wfMsgHtml( 'centralauth-editset-new' ) );
 			$wgOut->addHTML( "<li>{$newlink}</li>" );
 		}
 

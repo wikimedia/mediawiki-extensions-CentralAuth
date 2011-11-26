@@ -499,6 +499,7 @@ class SpecialCentralAuth extends SpecialPage {
 			case CentralAuthUser::HIDDEN_OVERSIGHT:
 				return wfMsg( 'centralauth-admin-hidden-oversight' );
 		}
+		return '';
 	}
 
 	/**

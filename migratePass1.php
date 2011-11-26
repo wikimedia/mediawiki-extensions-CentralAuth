@@ -32,6 +32,11 @@ function migratePassOne() {
 	echo "DONE\n";
 }
 
+/**
+ * @param $migrated
+ * @param $total
+ * @param $start
+ */
 function migratePassOneReport( $migrated, $total, $start ) {
 	$delta = microtime( true ) - $start;
 	printf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated\n",
