@@ -698,7 +698,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function determineHomeWiki() {
 		foreach ( $this->mAttachedLocalAccounts as $wiki => $acc ) {
 			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
-				return self::foreignUserLink( $wiki );
+				return $this->foreignUserLink( $wiki );
 			}
 		}
 
