@@ -573,11 +573,13 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $action
+	 * @param $action String: Only 'delete' supported
 	 */
 	function showActionForm( $action ) {
 		global $wgOut, $wgUser;
 		$wgOut->addHTML(
+			# to be able to find messages: centralauth-admin-delete-title,
+			# centralauth-admin-delete-description, centralauth-admin-delete-button
 			Xml::fieldset( wfMsg( "centralauth-admin-{$action}-title" ) ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
