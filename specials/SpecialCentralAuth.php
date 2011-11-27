@@ -292,18 +292,19 @@ class SpecialCentralAuth extends SpecialPage {
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
 			'id' => $globalUser->getId(),
-			'registered' => $wgLang->timeanddate( $reg, true ) . " ($age)",
+			'registered' => htmlspecialchars( $wgLang->timeanddate( $reg, true ) . " ($age)" ),
 			'home' => $this->determineHomeWiki(),
-			'editcount' => $wgLang->formatNum( $this->evaluateTotalEditcount() ),
-			'locked' => $globalUser->isLocked() ? wfMsg( 'centralauth-admin-yes' ) : wfMsg( 'centralauth-admin-no' ),
-			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() ) );
+			'editcount' => htmlspecialchars( $wgLang->formatNum( $this->evaluateTotalEditcount() ) ),
+			'locked' => wfMsgHtml( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' ),
+			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
+		);
 		$out = '<fieldset id="mw-centralauth-info">';
-		$out .= '<legend>' . wfMsgHtml( 'centralauth-admin-info-header' ) . '</legend>';
+		$out .= '<legend>' . wfMsgHtml( 'centralauth-admin-info-header' ) . '</legend><ul>';
 		foreach ( $attribs as $tag => $data ) {
-			$out .= '<p><strong>' . wfMsgHtml( "centralauth-admin-info-$tag" ) . '</strong> ' .
-				htmlspecialchars( $data ) . '</p>';
+			$out .= '<li><strong>' . wfMsgHtml( "centralauth-admin-info-$tag" ) . '</strong> ' .
+				$data . '</li>';
 		}
-		$out .= '</fieldset>';
+		$out .= '</ul></fieldset>';
 		$wgOut->addHTML( $out );
 	}
 
@@ -493,11 +494,11 @@ class SpecialCentralAuth extends SpecialPage {
 	function formatHiddenLevel( $level ) {
 		switch( $level ) {
 			case CentralAuthUser::HIDDEN_NONE:
-				return wfMsg( 'centralauth-admin-no' );
+				return wfMsgHtml( 'centralauth-admin-no' );
 			case CentralAuthUser::HIDDEN_LISTS:
-				return wfMsg( 'centralauth-admin-hidden-list' );
+				return wfMsgHtml( 'centralauth-admin-hidden-list' );
 			case CentralAuthUser::HIDDEN_OVERSIGHT:
-				return wfMsg( 'centralauth-admin-hidden-oversight' );
+				return wfMsgHtml( 'centralauth-admin-hidden-oversight' );
 		}
 		return '';
 	}
@@ -697,7 +698,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function determineHomeWiki() {
 		foreach ( $this->mAttachedLocalAccounts as $wiki => $acc ) {
 			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
-				return $wiki;
+				return self::foreignUserLink( $wiki );
 			}
 		}
 
