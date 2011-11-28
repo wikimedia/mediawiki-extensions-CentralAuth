@@ -4569,6 +4569,7 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-list-unattached-title' => 'Nepřipojené účty',
 	'centralauth-list-unattached' => 'Nebylo možné automaticky potvrdit, že účet „$1“ na následujících projektech patří vám; pravděpodobně má jiné heslo, než váš primární účet:',
 	'centralauth-foreign-link' => 'Uživatel $1 na $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|příspěvek|příspěvky|příspěvků}} na $2',
 	'centralauth-merge-method-primary' => 'domovská wiki',
 	'centralauth-merge-method-empty' => 'žádné příspěvky',
 	'centralauth-merge-method-mail' => 'potvrzeno e-mailem',
@@ -8708,19 +8709,19 @@ $messages['frp'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusione un mouél de comptos]] por lo branchement unifiâ.',
 	'centralauth-merge-denied' => 'Dèsolâ, vos avéd pas los drêts d’accès a ceta pâge.',
 	'centralauth-merge-notlogged' => 'Vos volyéd <span class="plainlinks">[$1 branchiér]</span> por controlar se voutros comptos ont tôs bien étâ fusionâs.',
-	'centralauth-merge-welcome' => "'''Voutron compto utilisator at p’oncor étâ migrâ vers lo sistèmo de branchement unifiâ de {{int:Centralauth-groupname}}.'''
+	'centralauth-merge-welcome' => "'''Voutron compto usanciér at p’oncor étâ migrâ vers lo sistèmo de branchement unifiâ de {{int:Centralauth-groupname}}.'''
 
-Se vos chouèsésséd de migrar voutros comptos, vos porréd utilisar lo mémo nom d’utilisator et lo mémo mot de pâssa por vos branchiér sur tôs los projèts de {{int:Centralauth-groupname}} dens totes les lengoues disponibles.
+Se vos chouèsésséd de migrar voutros comptos, vos porréd utilisar lo mémo nom d’usanciér et lo mémo contresegno por vos branchiér sur tôs los projèts de {{int:Centralauth-groupname}} dens totes les lengoues disponibles.
 
-Se quârqu’un d’ôtro at chouèsi lo mémo nom d’utilisator que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.",
+Se quârqu’un d’ôtro at chouèsi lo mémo nom d’usanciér que vos sur un ôtro projèt, vos aréd l’ocasion de vos veriér vers cela pèrsona ou ben vers un administrator ples târd.",
 	'centralauth-merge-step1-title' => 'Comenciér l’unificacion du branchement',
-	'centralauth-merge-step1-detail' => 'Volyéd buchiér ique lo mot de pâssa de voutron compto.
-Voutron mot de pâssa et voutra adrèce èlèctronica encartâ vôlont étre comparâs avouéc celos des comptos homonimos sur los ôtros vouiquis por controlar que corrèspondont.
+	'centralauth-merge-step1-detail' => 'Volyéd buchiér ique lo contresegno de voutron compto.
+Voutron contresegno et voutra adrèce èlèctronica encartâ vôlont étre comparâs avouéc celos des comptos homonimos sur los ôtros vouiquis por controlar que corrèspondont.
 Nion changement serat fêt tant que vos aréd pas balyê voutron acôrd et pués confirmâ que tot sè pâsse bien sur celos comptos.',
 	'centralauth-merge-step1-submit' => 'Confirmar les enformacions de branchement',
 	'centralauth-merge-step2-title' => 'Confirmar d’ôtros comptos',
 	'centralauth-merge-step2-detail' => 'Quârques-uns des comptos trovâs corrèspondont pas ôtomaticament a voutron compto principâl.
-Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo mot de pâssa que corrèspond.',
+Se celos comptos sont a vos, volyéd confirmar que sont a vos en buchient lo contresegno que corrèspond.',
 	'centralauth-merge-step2-submit' => 'Confirmar les enformacions de branchement',
 	'centralauth-login-global' => 'Mè branchiér asse-ben ux ôtros vouiquis de {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-complete' => 'Tôs los comptos ègzistents pôvont étre unifiâs ôtomaticament !
@@ -8745,9 +8746,9 @@ Volyéd buchiér lo mot de pâssa du vouiqui principâl.',
 	'centralauth-incomplete' => 'Unificacion du branchement pas chavonâ !',
 	'centralauth-complete-text' => 'Ora, vos vos pouede branchiér sur un projèt de {{int:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
 	'centralauth-incomplete-text' => 'Setout que voutron branchement serat unifiâ, vos vos porréd branchiér sur un projèt de {{int:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
-	'centralauth-not-owner-text' => 'Lo nom d’utilisator « $1 » at étâ assignê ôtomaticament u propriètèro du compto dessus $2.
+	'centralauth-not-owner-text' => 'Lo nom d’usanciér « $1 » at étâ assignê ôtomaticament u propriètèro du compto dessus $2.
 
-S’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lo mot de pâssa principâl por cél compto :',
+S’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lo contresegno principâl por cél compto :',
 	'centralauth-blocked-text' => 'Voutron compto sur lo vouiqui principâl (listâ ce-desot) est blocâ en ècritura.
 Vos volyéd veriér vers un administrator por lo dèblocar.
 Tant que cél compto résterat blocâ, vos porréd pas fusionar voutros comptos.',
@@ -8757,13 +8758,13 @@ Dèsolâ !',
 	'centralauth-error-locked' => 'Vos pouede ren changiér perce que voutron compto est vèrrolyê.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/fr|Nen savêr més sur lo '''branchement unifiâ''']]...''",
 	'centralauth-list-home-title' => 'Vouiqui principâl',
-	'centralauth-list-home-dryrun' => 'Lo mot de pâssa et l’adrèce èlèctronica encartâs sur ceti vouiqui principâl seront utilisâs por la crèacion de voutron compto unifiâ.',
+	'centralauth-list-home-dryrun' => 'Lo contresegno et l’adrèce èlèctronica encartâs sur ceti vouiqui principâl seront utilisâs por la crèacion de voutron compto unifiâ.',
 	'centralauth-list-attached-title' => 'Comptos rapondus',
 	'centralauth-list-attached' => 'Los comptos apelâs « $1 » sur châcun de cetos setos ont étâ rapondus ôtomaticament u compto unifiâ :',
 	'centralauth-list-attached-dryrun' => 'Los comptos apelâs « $1 » sur châcun de cetos setos seront rapondus ôtomaticament u compto unifiâ :',
 	'centralauth-list-unattached-title' => 'Comptos pas rapondus',
 	'centralauth-list-unattached' => 'Los comptos apelâs « $1 » sur cetos setos pôvont pas étre rapondus ôtomaticament ;
-ils ont probâblament un mot de pâssa difèrent de celi de voutron compto principâl :',
+ils ont probâblament un contresegno difèrent de celi de voutron compto principâl :',
 	'centralauth-foreign-link' => 'Utilisator « $1 » dessus $2',
 	'centralauth-foreign-contributions' => '$1 contribucion{{PLURAL:$1||s}} dessus $2',
 	'centralauth-merge-method-primary' => 'vouiqui principâl',
@@ -8783,20 +8784,20 @@ Ora, cela fonccionalitât est dèsactivâ por des rêsons de sècuritât.',
 	'centralauth-merge-method-new-desc' => 'Endique que lo compto globâl at étâ fêt ôtomaticament quand cél compto local at étâ fêt.',
 	'centralauth-merge-method-login-desc' => 'Endique que lo compto local at étâ fêt ôtomaticament quand l’utilisator s’est branchiê.',
 	'centralauth-finish-title' => 'Chavonar la fusion',
-	'centralauth-finish-text' => 'Se cetos comptos sont a vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lors mots de pâssa :',
-	'centralauth-finish-password' => 'Mot de pâssa :',
+	'centralauth-finish-text' => 'Se cetos comptos sont a vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lors contresegnos :',
+	'centralauth-finish-password' => 'Contresegno :',
 	'centralauth-finish-login' => 'Sè branchiér',
-	'centralauth-finish-send-confirmation' => 'Mandar lo mot de pâssa per mèssageria èlèctronica',
+	'centralauth-finish-send-confirmation' => 'Mandar lo contresegno per mèssageria èlèctronica',
 	'centralauth-finish-problems' => 'En câs de problèmo ou ben se vos avéd pas cetos ôtros comptos :
 vêde l’[[meta:Help:Unified login problems|éde sur lo branchement unifiâ]]...',
 	'centralauth-finish-noconfirms' => 'Nion compto at étâ confirmâ en utilisent ceti mot de pâssa.',
 	'centralauth-finish-incomplete' => 'Un mouél de comptos ont étâ fusionâs en utilisent ceti mot de pâssa.
 Portant, d’ôtros comptos ont p’oncor étâ confirmâs.',
-	'centralauth-merge-attempt' => "'''Contrôlo du mot de pâssa balyê sur los comptos pas fusionâs que réstont...'''",
+	'centralauth-merge-attempt' => "'''Contrôlo du contresegno balyê sur los comptos pas fusionâs que réstont...'''",
 	'centralauth-attach-list-attached' => 'Lo compto unifiâ apelâ « $1 » encllut cetos comptos :',
 	'centralauth-attach-title' => 'Confirmar lo compto',
 	'centralauth-attach-text' => 'Ceti compto at p’oncor étâ migrâ vers lo compto unifiâ.
-Se lo compto globâl est asse-ben a vos, vos pouede fusionar ceti compto se vos buchiéd lo mot de pâssa du compto globâl :',
+Se lo compto globâl est asse-ben a vos, vos pouede fusionar ceti compto se vos buchiéd lo contresegno du compto globâl :',
 	'centralauth-attach-submit' => 'Migrar lo compto',
 	'centralauth-attach-success' => 'Lo compto at étâ migrâ vers lo compto unifiâ.',
 	'centralauth' => 'Administrator ux utilisators globâls',
@@ -20731,6 +20732,7 @@ Desculpe.',
 	'centralauth-list-unattached-title' => 'Contas não acopladas',
 	'centralauth-list-unattached' => 'Não foi possível confirmar automaticamente que a conta "$1" lhe pertence nos seguintes sites (provavelmente, porque a palavra-chave da conta primária é diferente):',
 	'centralauth-foreign-link' => 'Utilizador $1 na $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribuição|contribuições}} em $2',
 	'centralauth-merge-method-primary' => "wiki de acolhimento ''(home wiki)''",
 	'centralauth-merge-method-empty' => 'sem contribuições',
 	'centralauth-merge-method-mail' => 'confirmação por correio electrónico',
