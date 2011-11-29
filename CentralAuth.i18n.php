@@ -16935,6 +16935,7 @@ $messages['mn'] = array(
  * @author Htt
  * @author Kaustubh
  * @author Mahitgar
+ * @author Rahuldeshmukh101
  * @author Vinayak.kulkarni11
  */
 $messages['mr'] = array(
@@ -17037,6 +17038,7 @@ $messages['mr'] = array(
 	'centralauth-admin-no' => 'नाही',
 	'centralauth-admin-unattached' => 'न जोडलेली खाती',
 	'centralauth-admin-blocked-indef' => 'अनिश्चित काळासाठी प्रतिबन्धित',
+	'centralauth-admin-blocklog' => 'ब्लॉक यादी',
 	'centralauth-admin-list-localwiki' => 'स्थानिक विकि',
 	'centralauth-admin-list-attached-on' => 'ला जोडली',
 	'centralauth-admin-list-method' => 'पद्धत',
@@ -17058,6 +17060,8 @@ $messages['mr'] = array(
 	'centralauth-admin-delete-nonexistent' => 'त्रुटी: "<nowiki>$1</nowiki>" हे विश्व खाते अस्तित्वात नाही.',
 	'centralauth-token-mismatch' => 'माफ करा, सत्र विदेचा क्षयेमुळे आपला अर्ज पाठवू शकत नाही.',
 	'centralauth-admin-reason' => 'कारण:',
+	'centralauth-admin-status-locked' => 'कुलुपबंद:',
+	'centralauth-admin-status-hidden' => 'लपविलेले',
 	'centralauth-admin-status-hidden-list' => 'खाते सार्वजनिक यादि मधुन लपवलेले आहे',
 	'globalusers' => 'वैश्विक सदस्य यादी',
 	'centralauth-listusers-locked' => 'कुलुपबंद',
@@ -17090,6 +17094,8 @@ $messages['mr'] = array(
 	'centralauth-log-entry-unlock' => '"$1" या वैश्विक खात्याचे कुलुप काढले',
 	'centralauth-log-entry-hide' => '"$1" वैश्विक खाते लपवा',
 	'centralauth-log-entry-unhide' => '"$1" वैश्विक खाते लपविणे रद्द करा',
+	'centralauth-log-status-locked' => 'कुलुपबंद',
+	'centralauth-log-status-hidden' => 'लपविलेले',
 	'centralauth-log-status-none' => '(काहीही नाही)',
 	'centralauth-rightslog-name' => 'वैश्विक अधिकार नोंदी',
 	'centralauth-rightslog-entry-usergroups' => '$1 चे वैश्विक गट सदस्यत्व $2 पासून $3 ला बदलले',
@@ -17117,6 +17123,7 @@ $messages['mr'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|संपादा]])',
 	'centralauth-editgroup-members' => 'सदस्य यादी:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 अधिकार असणार्‍या सदस्यांची यादी]]',
+	'centralauth-editgroup-noset' => '(काहीही नाही)  निरंक',
 	'centralauth-editgroup-submit' => 'गट अधिकारांमधील बदल जतन करा',
 	'centralauth-editgroup-perms' => 'दिलेले अधिकार:',
 	'centralauth-editgroup-reason' => 'कारण:',
@@ -17139,6 +17146,7 @@ $messages['mr'] = array(
 	'centralauth-editset-submit-delete' => 'वगळा',
 	'centralauth-editset-badname' => 'अवैध्य वा रिकामे समुह नाव.',
 	'centralauth-editset-nowikis' => 'कोनतिपन विकि नाहि.',
+	'centralauth-editset-nouse' => '(काहीही नाही)  निरंक',
 	'centralauth-editset-usage' => 'समुहामधे वापरलेले आहे.',
 	'right-globalgroupmembership' => 'वैश्विक गट सदस्यत्व बदला',
 	'right-centralauth-merge' => 'त्यांची खाती एकत्र करा',
