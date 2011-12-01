@@ -8743,8 +8743,8 @@ Un ôtro vouiqui at étâ dètèrmenâ coment lo compto principâl por voutron n
 	'centralauth-merge-step3-submit' => 'Unifiar los comptos',
 	'centralauth-merge-no-accounts' => 'Nion compto que corrèspond a voutron nom at étâ trovâ dens la trâbla de survelyence des comptos centrâla !
 La bâsa de balyês pôt étre corrompua.',
-	'centralauth-merge-home-password' => 'Lo vouiqui principâl por ceti compto (listâ ce-desot) at un mot de pâssa difèrent de celi que vos éd buchiê.
-Volyéd buchiér lo mot de pâssa du vouiqui principâl.',
+	'centralauth-merge-home-password' => 'Lo vouiqui principâl por ceti compto (listâ ce-desot) at un contresegno difèrent de celi que vos éd buchiê.
+Volyéd buchiér lo contresegno du vouiqui principâl.',
 	'centralauth-complete' => 'Unificacion du branchement chavonâ !',
 	'centralauth-incomplete' => 'Unificacion du branchement pas chavonâ !',
 	'centralauth-complete-text' => 'Ora, vos vos pouede branchiér sur un projèt de {{int:Centralauth-groupname}} quint que seye sen avêr a fâre un compto novél.',
@@ -8768,12 +8768,12 @@ Dèsolâ !',
 	'centralauth-list-unattached-title' => 'Comptos pas rapondus',
 	'centralauth-list-unattached' => 'Los comptos apelâs « $1 » sur cetos setos pôvont pas étre rapondus ôtomaticament ;
 ils ont probâblament un contresegno difèrent de celi de voutron compto principâl :',
-	'centralauth-foreign-link' => 'Utilisator « $1 » dessus $2',
+	'centralauth-foreign-link' => 'Usanciér « $1 » dessus $2',
 	'centralauth-foreign-contributions' => '$1 contribucion{{PLURAL:$1||s}} dessus $2',
 	'centralauth-merge-method-primary' => 'vouiqui principâl',
 	'centralauth-merge-method-empty' => 'gins de contribucion',
 	'centralauth-merge-method-mail' => 'confirmâ per mèssageria èlèctronica',
-	'centralauth-merge-method-password' => 'confirmâ per mot de pâssa',
+	'centralauth-merge-method-password' => 'confirmâ per contresegno',
 	'centralauth-merge-method-admin' => 'compto fusionâ per l’administrator',
 	'centralauth-merge-method-new' => 'compto novél',
 	'centralauth-merge-method-login' => 'fêt pendent lo branchement',
@@ -8781,7 +8781,7 @@ ils ont probâblament un contresegno difèrent de celi de voutron compto princip
 Notâd que pôt étre difèrent du veré vouiqui principâl de cél utilisator.',
 	'centralauth-merge-method-empty-desc' => 'Endique que lo compto local at étâ fusionâ perce qu’il avêt gins de changement.',
 	'centralauth-merge-method-mail-desc' => 'Endique que lo compto local at étâ fusionâ perce que son adrèce èlèctronica corrèspond a cela du compto principâl.',
-	'centralauth-merge-method-password-desc' => 'Endique que lo compto local at étâ fusionâ perce que l’utilisator at spècefiâ un mot de pâssa valido por lui.',
+	'centralauth-merge-method-password-desc' => 'Endique que lo compto local at étâ fusionâ perce que l’usanciér at spècefiâ un contresegno valido por lui.',
 	'centralauth-merge-method-admin-desc' => 'Endique que lo compto local at étâ fusionâ a la man per los stevârds.
 Ora, cela fonccionalitât est dèsactivâ por des rêsons de sècuritât.',
 	'centralauth-merge-method-new-desc' => 'Endique que lo compto globâl at étâ fêt ôtomaticament quand cél compto local at étâ fêt.',
@@ -8793,8 +8793,8 @@ Ora, cela fonccionalitât est dèsactivâ por des rêsons de sècuritât.',
 	'centralauth-finish-send-confirmation' => 'Mandar lo contresegno per mèssageria èlèctronica',
 	'centralauth-finish-problems' => 'En câs de problèmo ou ben se vos avéd pas cetos ôtros comptos :
 vêde l’[[meta:Help:Unified login problems|éde sur lo branchement unifiâ]]...',
-	'centralauth-finish-noconfirms' => 'Nion compto at étâ confirmâ en utilisent ceti mot de pâssa.',
-	'centralauth-finish-incomplete' => 'Un mouél de comptos ont étâ fusionâs en utilisent ceti mot de pâssa.
+	'centralauth-finish-noconfirms' => 'Nion compto at étâ confirmâ en utilisent ceti contresegno.',
+	'centralauth-finish-incomplete' => 'Un mouél de comptos ont étâ fusionâs en utilisent ceti contresegno.
 Portant, d’ôtros comptos ont p’oncor étâ confirmâs.',
 	'centralauth-merge-attempt' => "'''Contrôlo du contresegno balyê sur los comptos pas fusionâs que réstont...'''",
 	'centralauth-attach-list-attached' => 'Lo compto unifiâ apelâ « $1 » encllut cetos comptos :',
@@ -8805,7 +8805,7 @@ Se lo compto globâl est asse-ben a vos, vos pouede fusionar ceti compto se vos 
 	'centralauth-attach-success' => 'Lo compto at étâ migrâ vers lo compto unifiâ.',
 	'centralauth' => 'Administrator ux utilisators globâls',
 	'centralauth-admin-intro' => 'Ceta entèrface pôt étre utilisâ por administrar los comptos globâls.',
-	'centralauth-admin-manage' => 'Administrar les balyês utilisator',
+	'centralauth-admin-manage' => 'Administrar les balyês usanciér',
 	'centralauth-admin-username' => 'Nom d’utilisator :',
 	'centralauth-admin-lookup-ro' => 'Fâre vêre les enformacions sur l’utilisator',
 	'centralauth-admin-lookup-rw' => 'Administrar lo compto utilisator',
@@ -8843,9 +8843,9 @@ Rêson : $1',
 	'centralauth-admin-already-unmerged' => 'Sôtar $1, ja dèfusionâ',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|compto dèfusionâ|comptos dèfusionâs}} avouéc reusséta',
 	'centralauth-admin-delete-title' => 'Suprimar lo compto',
-	'centralauth-admin-delete-description' => 'La suprèssion du compto globâl suprimerat totes les prèferences globâles, dèpondrat l’ensemblo des comptos locals, et pués lèssierat lo nom globâl disponiblo por tot ôtro utilisator a prendre.
+	'centralauth-admin-delete-description' => 'La suprèssion du compto globâl suprimerat totes les prèferences globâles, dèpondrat l’ensemblo des comptos locals, et pués lèssierat lo nom globâl disponiblo por tot ôtro usanciér a prendre.
 Tôs los comptos locals continueront a ègzistar.
-Los mots de pâssa por los comptos locals fêts devant lor fusion retroveront lors valors de devant cela fusion.',
+Los contresegnos por los comptos locals fêts devant lor fusion retroveront lors valors de devant cela fusion.',
 	'centralauth-admin-delete-button' => 'Suprimar ceti compto',
 	'centralauth-admin-delete-success' => 'Lo compto globâl apelâ « <nowiki>$1</nowiki> » at étâ suprimâ avouéc reusséta.',
 	'centralauth-admin-nonexistent' => 'Ègziste gins de compto globâl apelâ « <nowiki>$1</nowiki> ».',
