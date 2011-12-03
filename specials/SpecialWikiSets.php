@@ -152,7 +152,8 @@ class SpecialWikiSets extends SpecialPage {
 			}
 			$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
 			$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
-			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', false, $reason );
+			$form['centralauth-editset-restwikis'] = $this->buildRestWikiList( $set->getWikisRaw() );
+			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason );
 
 			$wgOut->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
 
@@ -164,6 +165,7 @@ class SpecialWikiSets extends SpecialPage {
 			$form['centralauth-editset-usage'] = $usage;
 			$form['centralauth-editset-type'] = wfMsg( "centralauth-editset-{$type}" );
 			$form['centralauth-editset-wikis'] = $this->buildWikiList( $set->getWikisRaw() );
+			$form['centralauth-editset-restwikis'] = $this->buildRestWikiList( $set->getWikisRaw() );
 
 			$wgOut->addHTML( Xml::buildForm( $form ) );
 		}
@@ -183,17 +185,63 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $list array
+	 * @param $list array List of wikis defined in the wiki set (either opt-in or opt-out)
 	 * @return string
 	 */
 	function buildWikiList( $list ) {
 		sort( $list );
-		$html = '<ul>';
-		foreach ( $list as $wiki ) {
+
+		$firstCol = round( count( $list ) / 2 );
+		$list1 = array_slice( $list, 0, $firstCol );
+		$list2 = array_slice( $list, $firstCol );
+
+		$html = '<table><tbody><tr style="vertical-align:top;"><td><ul>';
+		foreach ( $list1 as $wiki ) {
 			$escWiki = htmlspecialchars( $wiki );
 			$html .= "<li>{$escWiki}</li>";
 		}
-		$html .= '</ul>';
+		$html .= '</ul></td><td>&nbsp;</td><td><ul>';
+		foreach ( $list2 as $wiki ) {
+			$escWiki = htmlspecialchars( $wiki );
+			$html .= "<li>{$escWiki}</li>";
+		}
+		$html .= '</ul></td></tr></tbody></table>';
+
+		return $html;
+	}
+
+	/**
+	 * This list shows all databases *excluding* the defined ones
+	 * So for opt-out, it shows the databases on which the wiki set is enabled
+	 * And for opt-in, it shows the databases on which the wiki set is disabled
+	 *
+	 * @param $list array List of wikis defined in the wiki set (either opt-in or opt-out)
+	 * @return string
+	 */
+	function buildRestWikiList( $list ) {
+		global $wgLocalDatabases;
+
+		sort( $wgLocalDatabases );
+		foreach( $wgLocalDatabases as $wiki ) {
+			if( !in_array( $wiki, $list ) ) {
+				$restWikis[] = htmlspecialchars( $wiki );
+			}
+		}
+
+		if( $this->mCanEdit ) {
+			$html = Xml::textarea( 'wpWikis', implode( "\n", $restWikis ), 40, 5, array( 'readonly' => true ) );
+		} else {
+			$firstCol = round( count( $restWikis ) / 2 );
+			$list1 = array_slice( $restWikis, 0, $firstCol );
+			$list2 = array_slice( $restWikis, $firstCol );
+
+			$html = '<table><tbody><tr style="vertical-align:top;"><td><ul>' .
+				'<li>' . implode( '</li><li>', $list2 ) . '</li>' .
+				'</ul></td><td>&nbsp;</td><td><ul>' .
+				'<li>' . implode( '</li><li>', $list2 ) . '</li>' .
+				'</ul></td></tr></tbody></table>';
+		}
+
 		return $html;
 	}
 
