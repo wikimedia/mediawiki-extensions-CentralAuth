@@ -7625,6 +7625,7 @@ $messages['eu'] = array(
 	'centralauth-admin-yes' => 'bai',
 	'centralauth-admin-no' => 'ez',
 	'centralauth-admin-blocklog' => 'blokeaketa erregistroa',
+	'centralauth-admin-list-method' => 'Metodoa',
 	'centralauth-admin-delete-title' => 'Kontua ezabatu',
 	'centralauth-admin-delete-button' => 'Kontu hau ezabatu',
 	'centralauth-admin-delete-nonexistent' => 'Errorea: "<nowiki>$1</nowiki>" kontu globala ez da existitzen.',
@@ -16964,6 +16965,7 @@ $messages['mn'] = array(
  * @author Kaustubh
  * @author Mahitgar
  * @author Rahuldeshmukh101
+ * @author V.narsikar
  * @author Vinayak.kulkarni11
  * @author कोल्हापुरी
  */
@@ -17039,6 +17041,11 @@ $messages['mr'] = array(
 	'centralauth-merge-method-primary-desc' => 'या विकिवर खाते प्रथम एकजीव केले होते. 
 याची नाोंद घ्या की हा विकि सदस्याच्या मूळ विकिपेक्षा वेगळा असू शकेल.',
 	'centralauth-merge-method-empty-desc' => 'दर्शवते की स्थानीक खाते मिळाले होते, कारन त्यात् काही बदल झाले नव्हते',
+	'centralauth-merge-method-mail-desc' => 'दर्शविते कि, स्थानिक खाते प्रतिपालकांनी स्वहस्ते एकत्रित केले आहे. हे वैशिष्टय सुरक्षेच्या कारणास्तव सध्या अनुपलब्ध करण्यात आले आहे.',
+	'centralauth-merge-method-password-desc' => 'दर्शविते कि, स्थानिक खाते एकत्रित करण्यात आले आहे कारण सदस्याने वैध परवलीचा शब्द प्रस्तुत केला आहे.',
+	'centralauth-merge-method-admin-desc' => 'दर्शविते कि, स्थानिक खाते प्रतिपालकांनी स्वहस्ते एकत्रित केले आहे.
+ते वैशिष्ट्य सध्या सुरक्षेच्या कारणास्तव अनुपलब्ध करण्यात आले आहे.',
+	'centralauth-merge-method-new-desc' => 'दर्शविते कि, जेंव्हा स्थानिक खाते निर्माण केल्या गेले, वैश्विक खाते आपोआप निर्माण झाले आहे.',
 	'centralauth-merge-method-login-desc' => 'दर्शवते की स्थनीक खाते स्व:तहा तयार होईल जेव्हा खातेदार खात्याध्ये येईल्',
 	'centralauth-finish-title' => 'एकत्रिकरण संपवा',
 	'centralauth-finish-text' => 'जर खालील खाती तुमचीच असतील तर तुम्ही त्यांचा परवलीचा शब्द देऊन एकत्रीकरण करू शकता:',
@@ -17056,6 +17063,7 @@ $messages['mr'] = array(
 	'centralauth-attach-submit' => 'खाते स्थलांतरीत करा',
 	'centralauth-attach-success' => 'खाते एकत्रीत खात्यामध्ये टाकलेले आहे.',
 	'centralauth' => 'सामायिक प्रवेश प्रबंधन',
+	'centralauth-admin-intro' => 'हे  आंतरपृष्ठ/सुविधा वैश्विक खाते व्यवस्थापनासाठी वापरता येउ शकते.',
 	'centralauth-admin-manage' => 'सदस्य विदेचे प्रबंधन करा',
 	'centralauth-admin-username' => 'सदस्य नाव',
 	'centralauth-admin-lookup-ro' => 'उपयोजकाची माहिती पहा',
@@ -17104,6 +17112,8 @@ $messages['mr'] = array(
 	'centralauth-token-mismatch' => 'माफ करा, सत्र विदेचा क्षयेमुळे आपला अर्ज पाठवू शकत नाही.',
 	'centralauth-admin-reason' => 'कारण:',
 	'centralauth-admin-reason-other' => 'इतर/अतिरिक्त कारण:',
+	'centralauth-admin-status' => 'वैश्विक खात्याची स्थिती उद्युक्त करा.',
+	'centralauth-admin-status-intro' => 'आपण हा आवेदन-नमुना वैश्विक खात्याची स्थिती बदलविण्यासाठी वापरू शकता.',
 	'centralauth-admin-status-locked' => 'कुलुपबंद:',
 	'centralauth-admin-status-locked-no' => ' कुलूप बंद नसलेले खाते',
 	'centralauth-admin-status-locked-yes' => 'संपादनास अवरुद्ध केलेले खाते',
@@ -17114,6 +17124,7 @@ $messages['mr'] = array(
 	'centralauth-admin-status-submit' => 'संग्रहांची  स्थिती',
 	'centralauth-admin-setstatus-success' => 'आपण ह्या वैश्रविक खात्याची स्थिति यशस्वीरीत्या बदलवली आहे',
 	'centralauth-admin-logsnippet' => ' पूर्वीचे वैश्रविक खाते बदलले',
+	'centralauth-admin-suppressreason' => ' $1 ने खालील कारणांसाठी वैश्विक पातळीवर याचा बिमोड केला आहे: $2',
 	'globalusers' => 'वैश्विक सदस्य यादी',
 	'centralauth-listusers-locked' => 'कुलुपबंद',
 	'centralauth-listusers-attached' => '[[User:$1|स्थानिक पातळीवर अस्तित्व]]',
@@ -17134,10 +17145,16 @@ $messages['mr'] = array(
 	'centralauth-prefs-detail-unattached' => 'तुमच्या एकत्रीत खात्यामध्ये या प्रकल्पाच्या संकेतस्थळासाठी सहमती दिलेली नाही.',
 	'centralauth-prefs-manage' => 'तुमच्या एकत्रीत खात्याच्या पसंती बदला',
 	'centralauth-prefs-view' => 'वैश्विक वापरकर्ता चि माहिति पाहा.',
+	'centralauth-renameuser-merged' => 'सदस्य $1 याने एकीकृत प्रणालीद्वारे प्रवेशाचा मार्ग निवडला आहे.खात्याचे पुनर्नामाभिधान सदस्यास वैश्विक पातळीवरचा प्रवेश रोखण्यास कारणीभूत होइल.',
+	'centralauth-renameuser-reserved' => ' सदस्य $2 हा वैश्विक खात्यासाठी आरक्षित आहे.',
 	'centralauth-invalid-wiki' => 'असा विकि नाही DB: $1',
 	'centralauth-account-exists' => 'खाते तयार करू शकत नाही: मागितलेले सदस्यनाम खाते एकत्रीकरणासाठी अगोदरच वापरण्यात आलेले आहे.',
+	'centralauth-account-exists-reset' => 'या विकीवर  $1 हे सदस्यनाम नोंदणीकृत नाही पण ते एकीकृत प्रवेश प्रणालीत अस्तित्वात आहे.',
 	'centralauth-login-progress' => 'विकिमीडियाच्या अन्य प्रकल्पांमध्ये आपला प्रवेश नोंदवित आहोत:',
 	'centralauth-logout-progress' => 'विकिमीडियाच्या अन्य प्रकल्पांमधून आपल्याला अदाखल करीत आहोत:',
+	'centralauth-login-no-others' => 'आपणास आपोआप {{int:Centralauth-groupname}} मध्ये दाखल करण्यात येत आहे.',
+	'centralauth-logout-no-others' => 'आपणास आपोआप {{int:Centralauth-groupname}} मधून अदाखल करण्यात आले आहे.',
+	'centralauth-hidden-blockreason' => '$1 द्वारे वैश्विक पातळीवर   $2 येथे लपविण्यात आले. खालील कारणांसाठी: $3',
 	'centralauth-log-name' => 'वैश्विक खाते व्यवस्थापन नोंदी',
 	'centralauth-log-header' => 'ह्या नोंदींमध्ये वैश्विक खात्यांवर केलेल्या कार्यांची यादी आहे: वगळणे, कुलुप लावणे तसेच काढणे.',
 	'centralauth-log-entry-delete' => '"$1" हे वैश्विक खाते वगळले',
@@ -17145,6 +17162,7 @@ $messages['mr'] = array(
 	'centralauth-log-entry-unlock' => '"$1" या वैश्विक खात्याचे कुलुप काढले',
 	'centralauth-log-entry-hide' => '"$1" वैश्विक खाते लपवा',
 	'centralauth-log-entry-unhide' => '"$1" वैश्विक खाते लपविणे रद्द करा',
+	'centralauth-log-entry-lockandhide' => '"$1" वैश्विक खात्यास कुलुप लावुन लपविण्यात आले.',
 	'centralauth-log-status-locked' => 'कुलुपबंद',
 	'centralauth-log-status-hidden' => 'लपविलेले',
 	'centralauth-log-status-oversighted' => 'दुर्लक्षित',
@@ -17152,8 +17170,13 @@ $messages['mr'] = array(
 	'centralauth-rightslog-name' => 'वैश्विक अधिकार नोंदी',
 	'centralauth-rightslog-entry-usergroups' => '$1 चे वैश्विक गट सदस्यत्व $2 पासून $3 ला बदलले',
 	'centralauth-rightslog-entry-groupperms' => '$1 चे गट अधिकार $2 पासून $3 ला बदलले',
+	'centralauth-rightslog-entry-groupperms2' => '$1 ची गट परवानगी बदलविण्यात आली.
+$2 जोडले.
+$3 काढले.',
 	'centralauth-rightslog-header' => 'ही वैश्विक गटांवर झालेल्या कार्यांची नोंद आहे: सदस्यत्व आणि अधिकार बदल',
 	'centralauth-rightslog-entry-setrename' => '"$2" ते  "$1" विकी संग्रहाचे नामांतर केले',
+	'centralauth-rightslog-entry-setnewtype' => '"$1" चा प्रकार $2 ते $3 असा बदलविला.',
+	'centralauth-rightslog-entry-setchange' => '"$1"मधिल विकीप्रकल्प बदलविले:जोडले: $2; काढले: $3',
 	'centralauth-rightslog-entry-deleteset' => '"$1" विकी संग्रह वगळला',
 	'autologin' => 'आपोआप लॉगइन',
 	'centralauth-autologin-desc' => 'हे विशेष पान मीडियाविकिच्या खाजगी वापराचे आहे.
@@ -17163,6 +17186,7 @@ $messages['mr'] = array(
 	'globalgrouppermissions' => 'वैश्विक गट व्यवस्थापन',
 	'centralauth-globalgroupperms-grouplist' => 'खाली दिलेले वैश्विक गट उपलब्ध आहेत. तुम्ही कुठल्याही गटाला दिलेले अधिकार पाहू अथवा बदलू शकता. एखादा गट काढून टाकायचा असल्यास त्यातील सर्व अधिकार काढून टाका.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|अधिकार पहा व बदला]])',
+	'centralauth-globalgroupperms-nogroups' => 'कोणतेही वैश्विक गट प्रतिरूपित नाहीत.',
 	'centralauth-existinggroup-legend' => 'अस्तित्वात असलेले गट',
 	'centralauth-newgroup-legend' => 'नवीन गट तयार करा',
 	'centralauth-newgroup-intro' => 'एखाद्या नवीन गटाला अधिकार देण्यासाठी तुम्ही हा अर्ज वापरू शकता. एखाद्या गटाला जर काहीही अधिकार नसतील तर तो गट अस्तित्वात राहत नाही.',
@@ -17177,6 +17201,7 @@ $messages['mr'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|संपादा]])',
 	'centralauth-editgroup-members' => 'सदस्य यादी:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 अधिकार असणार्‍या सदस्यांची यादी]]',
+	'centralauth-editgroup-restrictions' => 'विकीगट जेथे हा गट कार्यप्रवण आहे:',
 	'centralauth-editgroup-noset' => '(काहीही नाही)  निरंक',
 	'centralauth-editgroup-submit' => 'गट अधिकारांमधील बदल जतन करा',
 	'centralauth-editgroup-perms' => 'दिलेले अधिकार:',
@@ -17191,6 +17216,7 @@ $messages['mr'] = array(
 	'centralauth-editset-legend-ro' => 'विकीसंचांची यादी',
 	'centralauth-editset-intro-rw' => 'खालील विकि समुह आगोदरच तयार केलेला आहे.
 आपान त्यापैकी कोनालापान पाहु वा बदलु शाकता किंवा नविन तयार करु शकता.',
+	'centralauth-editset-intro-ro' => 'खाली अस्तित्वात असलेल्या विकीगटांची यादी देण्यात आली आहे.',
 	'centralauth-editset-new' => 'नवा संच तयार करा',
 	'centralauth-editset-notfound' => 'विकी संच "$1" सापडत नाही.',
 	'centralauth-editset-legend-edit' => '"$1" विकी संग्रह संपादित केल्या जात आहे',
@@ -17200,6 +17226,7 @@ $messages['mr'] = array(
 	'centralauth-editset-name' => 'नाव:',
 	'centralauth-editset-type' => 'प्रकार:',
 	'centralauth-editset-wikis' => 'विकी:',
+	'centralauth-editset-restwikis' => 'असे विकी ज्यांचा वर अंतर्भाव करण्यात आलेला नाही:',
 	'centralauth-editset-reason' => 'कारण:',
 	'centralauth-editset-submit' => 'पाठवा',
 	'centralauth-editset-submit-delete' => 'वगळा',
@@ -25412,6 +25439,7 @@ $messages['szl'] = array(
 
 /** Tamil (தமிழ்)
  * @author Karthi.dr
+ * @author Shanmugamp7
  * @author TRYPPN
  * @author Trengarasu
  */
@@ -25433,6 +25461,7 @@ $messages['ta'] = array(
 	'centralauth-merge-method-password' => 'கடவுச்சொல் மூலம் உறுதி செய்யப்பட்டுள்ளது',
 	'centralauth-merge-method-new' => 'புதிய கணக்கு',
 	'centralauth-merge-method-login' => 'புகுபதிகை செய்தபோது உருவாக்கப்பட்டது',
+	'centralauth-finish-title' => 'ஒன்றுசேர்ப்பதை பூர்த்தி செய்',
 	'centralauth-finish-password' => 'கடவுச்சொல்:',
 	'centralauth-finish-login' => 'புகுபதிகை',
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
@@ -25464,6 +25493,7 @@ $messages['ta'] = array(
 	'centralauth-admin-status-hidden-no' => 'இந்த கணக்கு மறைக்கப்பட்டதல்ல',
 	'centralauth-admin-status-hidden-list' => 'இந்த கணக்கானது பொதுப்பார்வைக்கான பட்டியல்களில் இருந்து மறைக்கப்பட்டுள்ளது',
 	'centralauth-admin-status-hidden-oversight' => 'இந்த கணக்கானது முழுதுமாக மறைக்கப்பட்டுள்ளது',
+	'centralauth-admin-status-submit' => ' நிலைமை அமை',
 	'centralauth-listusers-locked' => 'மூடப்பட்டது',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|வினாடி|வினாடிகள்}} முன்பு',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|வினாடி|வினாடிகள்}} முன்பு',
