@@ -5,7 +5,7 @@
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Central Auth',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:CentralAuth',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 	'author' => 'Brion Vibber',
 	'descriptionmsg' => 'centralauth-desc',
 );
