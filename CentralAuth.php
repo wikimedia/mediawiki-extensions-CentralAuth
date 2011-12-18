@@ -163,7 +163,7 @@ $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/ApiQueryGlobalUserInfo.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
-$wgExtensionAliasesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.alias.php";
+$wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 
