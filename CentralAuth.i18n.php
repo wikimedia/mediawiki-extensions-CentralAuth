@@ -14637,6 +14637,7 @@ $messages['ko'] = array(
 	'centralauth-editset-name' => '이름:',
 	'centralauth-editset-type' => '유형:',
 	'centralauth-editset-wikis' => '위키:',
+	'centralauth-editset-restwikis' => '위에 포함되지 않은 위키:',
 	'centralauth-editset-reason' => '이유:',
 	'centralauth-editset-submit' => '저장',
 	'centralauth-editset-submit-delete' => '삭제',
@@ -18823,6 +18824,7 @@ Merk at gruppa ikkje finst med mindre ho har fått tildelt rettar.',
  * @author Jon Harald Søby
  * @author Laaknor
  * @author Nghtwlkr
+ * @author Njardarlogar
  * @author Stigmj
  */
 $messages['no'] = array(
@@ -18883,6 +18885,7 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-list-unattached-title' => 'Ikke tilsluttede kontoer',
 	'centralauth-list-unattached' => 'Kontoen «$1» på følgende kunne ikke automatisk stadfestes å tilhøre deg; sannsynligvis har de et annet passord enn hovedkontoen din.',
 	'centralauth-foreign-link' => 'Bruker $1 på $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|bidrag}} på $2',
 	'centralauth-merge-method-primary' => 'hjemmewiki',
 	'centralauth-merge-method-empty' => 'ingen bidrag',
 	'centralauth-merge-method-mail' => 'bekreftet via e-post',
@@ -19089,6 +19092,7 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 	'centralauth-editset-name' => 'Navn:',
 	'centralauth-editset-type' => 'Type:',
 	'centralauth-editset-wikis' => 'Wikier:',
+	'centralauth-editset-restwikis' => 'Wikier som ikke inkluderes ovenfor:',
 	'centralauth-editset-reason' => 'Årsak:',
 	'centralauth-editset-submit' => 'OK',
 	'centralauth-editset-submit-delete' => 'Slett',
@@ -25177,6 +25181,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Najami
  * @author Per
  * @author Sannab
+ * @author Stefan2
  */
 $messages['sv'] = array(
 	'mergeaccount' => 'Status för gemensam inloggning',
@@ -25440,6 +25445,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'centralauth-editset-name' => 'Namn:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wikier:',
+	'centralauth-editset-restwikis' => 'Wikier ej inkluderade ovan:',
 	'centralauth-editset-reason' => 'Anledning:',
 	'centralauth-editset-submit' => 'OK',
 	'centralauth-editset-submit-delete' => 'Radera',
