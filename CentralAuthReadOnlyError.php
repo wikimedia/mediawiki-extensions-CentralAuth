@@ -2,7 +2,7 @@
 
 /**
  * Show an error when the CentralAuth database is locked/read-only
- * and the user tries to do something that requires CentralAuth#
+ * and the user tries to do something that requires CentralAuth
  * write access
  * @ingroup Exception
  */

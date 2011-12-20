@@ -71,7 +71,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Gets a master (read/write) database connection to the CentralAuth database
 	 *
 	 * @return DatabaseBase
-	 * @throws ReadOnlyError
+	 * @throws CentralAuthReadOnlyError
 	 */
 	public static function getCentralDB() {
 		global $wgCentralAuthDatabase, $wgCentralAuthReadOnly;
@@ -84,7 +84,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Gets a slave (readonly) database connection to the CentralAuth database
-	 * 
+	 *
 	 * @return DatabaseBase
 	 */
 	public static function getCentralSlaveDB() {
