@@ -75,7 +75,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public static function getCentralDB() {
 		global $wgCentralAuthDatabase, $wgCentralAuthReadOnly;
-		if ( !$wgCentralAuthReadOnly ) {
+		if ( $wgCentralAuthReadOnly ) {
 			throw new CentralAuthReadOnlyError();
 		}
 		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
