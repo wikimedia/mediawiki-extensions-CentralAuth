@@ -765,7 +765,7 @@ class CentralAuthHooks {
 			$params['domain'] = $parts[2];
 		}
 		$params['properties']['ca-local-url'] = $params['url'];
-		$params['url'] = $wiki->getUrl( 'User:' . str_replace( ' ', '_', $user->getName() ) );
+		$params['url'] = $wiki->getUrl( 'User:' . $user->getTitleKey() );
 		return true;
 	}
 }
