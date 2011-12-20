@@ -263,6 +263,17 @@ $wgResourceModules['ext.centralauth'] = array(
 	'styles' => 'ext.centralauth.css',
 ) + $commonModuleInfo;
 
+// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
+if ( class_exists( 'AntiSpoof' ) ) {
+	$wgAutoloadClasses['CentralAuthSpoofUser'] = "$caBase/AntiSpoof/CentralAuthSpoofUser.php";
+	$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] = "$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
+
+	$wgHooks['AbortNewAccount'][] = 'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
+	$wgHooks['UserCreateForm'][] = 'CentralAuthAntiSpoofHooks::asUserCreateFormHook';
+	$wgHooks['AddNewAccount'][] = 'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
+	$wgHooks['RenameUserComplete'][] = 'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
+}
+
 /**
  * @param $type
  * @param $action
