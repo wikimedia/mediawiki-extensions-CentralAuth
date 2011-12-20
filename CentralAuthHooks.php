@@ -164,8 +164,11 @@ class CentralAuthHooks {
 			return true;
 		}
 
-		if ( !$wgRequest->getCheck( 'wpCentralLogin' ) ) {
+		if ( !$wgRequest->getCheck( 'wpCentralLogin' ) && !$wgRequest->getVal( 'wpCreateaccount' ) ) {
 			// The user requested to log in just on this wiki
+			// Or they just created an account
+			// Thankfully, we don't have the awful "Also log me in to other wikis of the Wikimedia Foundation"
+			// on the registration form too... Though, that would've caused this to not happen
 			return true;
 		}
 

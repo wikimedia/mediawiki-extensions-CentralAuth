@@ -260,7 +260,9 @@ class CentralAuthPlugin extends AuthPlugin {
 
 		$template->set( 'usedomain', false );
 
-		if ( !$wgCentralAuthCookies ) return;
+		if ( !$wgCentralAuthCookies ) {
+			return;
+		}
 
 		$label = Xml::checkLabel( wfMsg( 'centralauth-login-global' ), 'wpCentralLogin', 'wpCentralLogin', true, array( 'tabindex' => '4' ) );
 		$field = <<<HTML
