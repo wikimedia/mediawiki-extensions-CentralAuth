@@ -126,11 +126,6 @@ $wgCentralAuthUDPAddress = false;
 $wgCentralAuthNew2UDPPrefix = '';
 
 /**
- * A CSS file version. Change each time centralauth.css is changed.
- */
-$wgCentralAuthStyleVersion = 2;
-
-/**
  * List of local pages global users may edit while being globally locked.
  */
 $wgCentralAuthLockedCanEdit = array();
@@ -250,6 +245,17 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
 }
 
+$commonModuleInfo = array(
+	'localBasePath' => dirname( __FILE__ ) . '/modules',
+	'remoteExtPath' => 'CentralAuth/modules',
+);
+
+// Styles and any code common to all Special:Code subviews:
+$wgResourceModules['ext.centralauth'] = array(
+	'scripts' => 'ext.centralauth.js',
+	'styles' => 'ext.centralauth.css',
+) + $commonModuleInfo;
+
 /**
  * @param $type
  * @param $action
@@ -260,7 +266,7 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
  * @return String
  */
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
-	$link = $skin ? $skin->makeLinkObj( $title, htmlspecialchars( $params[0] ) ) : $params[0];
+	$link = Linker::makeLinkObj( $title, htmlspecialchars( $params[0] ) );
 
 	switch( $action ) {
 		case 'newset':

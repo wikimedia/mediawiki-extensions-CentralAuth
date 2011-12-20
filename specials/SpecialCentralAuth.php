@@ -17,7 +17,6 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function execute( $subpage ) {
 		global $wgOut;
-		global $wgExtensionAssetsPath, $wgCentralAuthStyleVersion;
 		global $wgUser, $wgRequest, $wgContLang;
 		$this->setHeaders();
 
@@ -26,10 +25,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanOversight = $wgUser->isAllowed( 'centralauth-oversight' );
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
 
-		$wgOut->addExtensionStyle( "{$wgExtensionAssetsPath}/CentralAuth/centralauth.css?" .
-			$wgCentralAuthStyleVersion );
-		$wgOut->addScriptFile( "{$wgExtensionAssetsPath}/CentralAuth/centralauth.js?" .
-			$wgCentralAuthStyleVersion );
+		$wgOut->addModules( 'ext.centralauth' );
 		$this->addMergeMethodDescriptions();
 
 		$this->mUserName =
