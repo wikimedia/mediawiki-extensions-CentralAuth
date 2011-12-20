@@ -145,7 +145,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
-		global $wgCentralAuthCookies, $wgRequest;
+		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
 			return true;
@@ -161,14 +161,6 @@ class CentralAuthHooks {
 		global $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthAutoLoginWikis ) {
 			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parsemag' );
-			return true;
-		}
-
-		if ( !$wgRequest->getCheck( 'wpCentralLogin' ) && !$wgRequest->getVal( 'wpCreateaccount' ) ) {
-			// The user requested to log in just on this wiki
-			// Or they just created an account
-			// Thankfully, we don't have the awful "Also log me in to other wikis of the Wikimedia Foundation"
-			// on the registration form too... Though, that would've caused this to not happen
 			return true;
 		}
 
