@@ -264,7 +264,9 @@ $wgResourceModules['ext.centralauth'] = array(
 ) + $commonModuleInfo;
 
 // If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
-if ( class_exists( 'AntiSpoof' ) ) {
+// Though, doing it this way, AntiSpoof has to be loaded/included first
+// I guess this is bug 30234
+if ( MWInit::classExists( 'AntiSpoof' ) ) {
 	$wgAutoloadClasses['CentralAuthSpoofUser'] = "$caBase/AntiSpoof/CentralAuthSpoofUser.php";
 	$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] = "$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
