@@ -137,6 +137,12 @@ $wgCentralAuthLockedCanEdit = array();
 $wgCentralAuthWikisPerSuppressJob = 10;
 
 /**
+ * Like $wgReadOnly, used to set extension to database read only mode
+ * @var bool
+ */
+$wgCentralAuthReadOnly = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = dirname( __FILE__ );
@@ -156,6 +162,7 @@ $wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/CentralAuthGrou
 $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/specials/SpecialGlobalGroupPermissions.php";
 $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/ApiQueryGlobalUserInfo.php";
+$wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";

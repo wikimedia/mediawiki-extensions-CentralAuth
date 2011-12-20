@@ -68,15 +68,23 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Gets a master (read/write) database connection to the CentralAuth database
+	 *
 	 * @return DatabaseBase
+	 * @throws ReadOnlyError
 	 */
 	public static function getCentralDB() {
-		global $wgCentralAuthDatabase;
+		global $wgCentralAuthDatabase, $wgCentralAuthReadOnly;
+		if ( !$wgCentralAuthReadOnly ) {
+			throw new CentralAuthReadOnlyError();
+		}
 		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
 			$wgCentralAuthDatabase );
 	}
 
 	/**
+	 * Gets a slave (readonly) database connection to the CentralAuth database
+	 * 
 	 * @return DatabaseBase
 	 */
 	public static function getCentralSlaveDB() {
@@ -1924,13 +1932,19 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return
 	 */
 	function saveSettings() {
-		if ( !$this->mStateDirty ) return;
+		if ( !$this->mStateDirty ) {
+			return;
+		}
 		$this->mStateDirty = false;
 
-		if ( wfReadOnly() ) return;
+		if ( wfReadOnly() ) {
+			return;
+		}
 
 		$this->loadState();
-		if ( !$this->mGlobalId ) return;
+		if ( !$this->mGlobalId ) {
+			return;
+		}
 
 		$dbw = self::getCentralDB();
 		$dbw->update( 'globaluser',
@@ -1972,8 +1986,9 @@ class CentralAuthUser extends AuthPluginUser {
 		foreach ( $this->mRights as $right ) {
 			if ( $right['set'] ) {
 				$set = isset( $sets[$right['set']] ) ?  $sets[$right['set']] : WikiSet::newFromID( $right['set'] );
-				if ( $set->inSet() )
+				if ( $set->inSet() ) {
 					$rights[] = $right['right'];
+				}
 			} else {
 				$rights[] = $right['right'];
 			}

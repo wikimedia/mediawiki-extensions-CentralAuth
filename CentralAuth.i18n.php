@@ -362,6 +362,9 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-editset-success-delete'              => 'Successfully deleted wiki set.',
 	'centralauth-editset-return'                      => 'Return to main view',
 
+	'centralauth-readonly' => 'CentralAuth Database locked',
+	'centralauth-readonlytext' => 'The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.',
+
 	// User rights
 	'right-globalgroupmembership'   => 'Edit membership to global groups',
 	'right-centralauth-autoaccount' => 'Automatically login with global account',
@@ -530,6 +533,10 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
+
+	'centralauth-readonly' => 'Error message displayed when the CentralAuth database is locked.',
+	'centralauth-readonlytext' => 'Description of the centralauth-readonlytext error',
+
 	'right-globalgroupmembership' => '{{doc-right|globalgroupmembership}}',
 	'right-centralauth-autoaccount' => '{{doc-right|centralauth-autoaccount}}',
 	'right-centralauth-unmerge' => '{{doc-right|centralauth-unmerge}}',
