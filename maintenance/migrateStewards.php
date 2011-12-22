@@ -1,6 +1,10 @@
 <?php
 
-require dirname( __FILE__ ) . '/../../maintenance/commandLine.inc';
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
+	$IP = dirname( __FILE__ ) . '/../../..';
+}
+requir_once( "$IP/maintenance/commandLine.inc" );
 
 echo "Populating global groups table with stewards...\n";
 

@@ -4,7 +4,11 @@
 // * generate 'globalnames' and 'localnames' entries for each user on each wiki
 // --> enable
 
-require dirname( __FILE__ ) . '/../../maintenance/commandLine.inc';
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
+	$IP = dirname( __FILE__ ) . '/../../..';
+}
+requir_once( "$IP/maintenance/commandLine.inc" );
 
 /**
  * Copy user data for this wiki into the localuser table

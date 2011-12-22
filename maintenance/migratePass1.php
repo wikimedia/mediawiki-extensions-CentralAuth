@@ -4,7 +4,11 @@
 // * go through all usernames in 'globalnames' and for those
 //   that can be automatically migrated, go ahead and do it.
 
-require dirname( __FILE__ ) . '/../../maintenance/commandLine.inc';
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
+	$IP = dirname( __FILE__ ) . '/../../..';
+}
+requir_once( "$IP/maintenance/commandLine.inc" );
 
 function migratePassOne() {
 	$migrated = 0;
