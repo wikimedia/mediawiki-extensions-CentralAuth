@@ -8702,6 +8702,8 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centralauth-editset-success' => 'Jeu de wikis modifié avec succès.',
 	'centralauth-editset-success-delete' => 'Jeu de wikis supprimé avec succès.',
 	'centralauth-editset-return' => 'Revenir à la vue principale',
+	'centralauth-readonly' => 'Base de données CentralAuth verrouillée',
+	'centralauth-readonlytext' => "La base de données CentralAuth est actuellement verrouillée pour de nouvelles entrées et d'autres modifications, probablement par une routine d'entretien de la base de données, après quoi tout reviendra à la normale.",
 	'right-globalgroupmembership' => 'Modifier les appartenances aux groupes globaux',
 	'right-centralauth-autoaccount' => 'Connecter automatiquement avec un compte global',
 	'right-centralauth-unmerge' => 'Annuler la fusion du compte global',
@@ -12380,7 +12382,7 @@ Breyting á notendanafni hans verður til þess að staðbundni aðgangur hans v
 	'centralauth-log-entry-hide' => 'fól altækan aðgang "$1"',
 	'centralauth-log-entry-unhide' => 'sýndi altækan aðgang "$1"',
 	'centralauth-log-entry-lockandhide' => 'læsti og fól altækan aðgang "$1"',
-	'centralauth-log-entry-chgstatus' => 'breytti stöðu altæks aðgangs "$1": Settur: $2; fjarlægður: $3',
+	'centralauth-log-entry-chgstatus' => 'breytti stöðu altæka aðgangsins "$1" frá $3 í $2',
 	'centralauth-log-status-locked' => 'læstur',
 	'centralauth-log-status-hidden' => 'falinn',
 	'centralauth-log-status-none' => '(engin)',
@@ -23969,6 +23971,8 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'centralauth-editset-success' => 'Skupina wikijev je uspešno spremenjena.',
 	'centralauth-editset-success-delete' => 'Skupina wikijev je uspešno izbrisana.',
 	'centralauth-editset-return' => 'Vrnitev na glavni pogled',
+	'centralauth-readonly' => 'Zbirka podatkov CentralAuth je zaklenjena',
+	'centralauth-readonlytext' => 'Zbirka podatkov CentralAuth je trenutno zaklenjena za nove vnose in druge spremembe, verjetno zaradi rutinskega vzdrževanja zbirke podatkov, po katerem se bo vrnila v normalno stanje.',
 	'right-globalgroupmembership' => 'Urejanje članstva v globalnih skupinah',
 	'right-centralauth-autoaccount' => 'Samodejno prijavljanje z globalnim računom',
 	'right-centralauth-unmerge' => 'Razdruževanje globalnih računov',
@@ -25527,6 +25531,21 @@ $messages['ta'] = array(
 	'centralauth-editset-submit' => 'சமர்ப்பி',
 	'centralauth-editset-submit-delete' => 'நீக்கவும்',
 	'centralauth-editset-nouse' => '(எதுவுமில்லை)',
+);
+
+/** Tulu (ತುಳು)
+ * @author VASANTH S.N.
+ */
+$messages['tcy'] = array(
+	'centralauth-finish-login' => 'ಲಾಗಿನ್ ಆಲೆ',
+	'centralauth-finish-send-confirmation' => 'ಪೊಸ ಪಾಸ್-ವರ್ಡ್’ನ್ ಇ-ಮೇಲ್ ಮಲ್ಪುಲೆ',
+	'centralauth-admin-info-id' => 'ಸದಸ್ಯೆರನ  ID',
+	'centralauth-admin-yes' => 'ಅಂದ್',
+	'centralauth-admin-no' => 'ಅತ್ತ್',
+	'centralauth-admin-delete-title' => 'ಖಾತೆನ್ ಮಾಜಾಲೆ',
+	'centralauth-admin-reason' => 'ಕಾರಣ',
+	'centralauth-prefs-complete' => 'ಮಾತಾ ಸರಿ ಉಂಡು!',
+	'centralauth-editgroup-reason' => 'ಕಾರಣ',
 );
 
 /** Telugu (తెలుగు)
@@ -28162,6 +28181,8 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'centralauth-editset-success' => 'Thay đổi phạm vi wiki thành công.',
 	'centralauth-editset-success-delete' => 'Đã xóa thành công tập wiki.',
 	'centralauth-editset-return' => 'Trở lại đầu',
+	'centralauth-readonly' => 'Cơ sở dữ liệu CentralAuth đã bị khóa',
+	'centralauth-readonlytext' => 'Cơ sở dữ liệu CentralAuth đang bị khóa không được tạo trang mới hoặc thực hiện những thay đổi khác, có lẽ để bảo trì thường lệ, sau đó nó sẽ trở lại bình thường.',
 	'right-globalgroupmembership' => 'Sửa thành viên của nhóm toàn cầu',
 	'right-centralauth-autoaccount' => 'Tự động đăng nhập dùng tài khoản toàn hệ thống',
 	'right-centralauth-unmerge' => 'Đã bỏ hợp nhất tài khoản toàn cục',
