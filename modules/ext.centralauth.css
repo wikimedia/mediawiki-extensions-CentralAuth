@@ -1,10 +1,3 @@
-.merge-method-help {
-	color: #aaa;
-	cursor: pointer;
-	font-size: 7pt;
-	padding: 3px;
-}
-
 .merge-method-help-div {
 	position: absolute;
 	z-index: 3;

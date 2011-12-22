@@ -26,6 +26,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
 
 		$wgOut->addModules( 'ext.centralauth' );
+		$wgOut->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->addMergeMethodDescriptions();
 
 		$this->mUserName =

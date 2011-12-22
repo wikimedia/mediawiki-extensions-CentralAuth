@@ -257,10 +257,13 @@ $commonModuleInfo = array(
 	'remoteExtPath' => 'CentralAuth/modules',
 );
 
-// Styles and any code common to all Special:Code subviews:
 $wgResourceModules['ext.centralauth'] = array(
 	'scripts' => 'ext.centralauth.js',
 	'styles' => 'ext.centralauth.css',
+) + $commonModuleInfo;
+
+$wgResourceModules['ext.centralauth.noflash'] = array(
+	'styles' => 'ext.centralauth.noflash.css',
 ) + $commonModuleInfo;
 
 // If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
