@@ -106,7 +106,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param $reason
 	 */
 	function buildSetView( $subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null ) {
-		global $wgOut, $wgUser;
+		global $wgOut, $wgUser, $wgLocalDatabases;
 
 		$wgOut->setSubtitle( wfMsgExt( 'centralauth-editset-subtitle', 'parseinline' ) );
 
@@ -139,6 +139,19 @@ class SpecialWikiSets extends SpecialPage {
 			$usage = '';
 		}
 
+		$sortedWikis = $set->getWikisRaw();
+		sort( $sortedWikis );
+
+		# Make an array of the opposite list of wikis
+		# (all databases *excluding* the defined ones)
+		$restWikis = array();
+		foreach( $wgLocalDatabases as $wiki ) {
+			if( !in_array( $wiki, $sortedWikis ) ) {
+				$restWikis[] = $wiki;
+			}
+		}
+		sort( $restWikis );
+
 		if ( $this->mCanEdit ) {
 			if ( $error ) {
 				$wgOut->addHTML( "<strong class='error'>{$error}</strong>" );
@@ -152,7 +165,8 @@ class SpecialWikiSets extends SpecialPage {
 			}
 			$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
 			$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
-			$form['centralauth-editset-restwikis'] = $this->buildRestWikiList( $set->getWikisRaw() );
+			$form['centralauth-editset-restwikis'] = Xml::textarea( 'wpRestWikis',
+				implode( "\n", $restWikis ), 40, 5, array( 'readonly' => true ) );
 			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason );
 
 			$wgOut->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
@@ -164,8 +178,8 @@ class SpecialWikiSets extends SpecialPage {
 			$form['centralauth-editset-name'] = htmlspecialchars( $name );
 			$form['centralauth-editset-usage'] = $usage;
 			$form['centralauth-editset-type'] = wfMsg( "centralauth-editset-{$type}" );
-			$form['centralauth-editset-wikis'] = $this->buildWikiList( $set->getWikisRaw() );
-			$form['centralauth-editset-restwikis'] = $this->buildRestWikiList( $set->getWikisRaw() );
+			$form['centralauth-editset-wikis'] = self::buildTableByList( $sortedWikis, 3, array( 'width' => '100%' ) );
+			$form['centralauth-editset-restwikis'] = self::buildTableByList( $restWikis, 3, array( 'width' => '100%' ) );
 
 			$wgOut->addHTML( Xml::buildForm( $form ) );
 		}
@@ -185,64 +199,43 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $list array List of wikis defined in the wiki set (either opt-in or opt-out)
-	 * @return string
-	 */
-	function buildWikiList( $list ) {
-		sort( $list );
-
-		$firstCol = round( count( $list ) / 2 );
-		$list1 = array_slice( $list, 0, $firstCol );
-		$list2 = array_slice( $list, $firstCol );
-
-		$html = '<table><tbody><tr style="vertical-align:top;"><td><ul>';
-		foreach ( $list1 as $wiki ) {
-			$escWiki = htmlspecialchars( $wiki );
-			$html .= "<li>{$escWiki}</li>";
-		}
-		$html .= '</ul></td><td>&nbsp;</td><td><ul>';
-		foreach ( $list2 as $wiki ) {
-			$escWiki = htmlspecialchars( $wiki );
-			$html .= "<li>{$escWiki}</li>";
-		}
-		$html .= '</ul></td></tr></tbody></table>';
-
-		return $html;
-	}
-
-	/**
-	 * This list shows all databases *excluding* the defined ones
-	 * So for opt-out, it shows the databases on which the wiki set is enabled
-	 * And for opt-in, it shows the databases on which the wiki set is disabled
+	 * Builds a table of several columns, and divides the items of
+	 * $list equally among each column. All items are escaped.
 	 *
-	 * @param $list array List of wikis defined in the wiki set (either opt-in or opt-out)
-	 * @return string
+	 * Could in the future be replaced by CSS column-count.
+	 *
+	 * @param $list array
+	 * @param $columns int: number of columns
+	 * @param $tableAttribs array: <table> attributes
+	 * @return string Table
 	 */
-	function buildRestWikiList( $list ) {
-		global $wgLocalDatabases;
-
-		sort( $wgLocalDatabases );
-		foreach( $wgLocalDatabases as $wiki ) {
-			if( !in_array( $wiki, $list ) ) {
-				$restWikis[] = htmlspecialchars( $wiki );
+	function buildTableByList( $list, $columns = 2, $tableAttribs = array() ) {
+		if( !is_array( $list ) ) {
+			return '';
+		}
+		$count = count( $list );
+		# If there are less items than columns, limit the number of columns
+		$columns = $count < $columns ? $count : $columns;
+		$itemsPerCol = round( $count / $columns );
+		$i = 0;
+		$splitLists = array();
+		while( $i < $columns ) {
+			$splitLists[$i] = array_slice( $list, $itemsPerCol*$i, $itemsPerCol );
+			$i++;
+		}
+		$body = '';
+		foreach( $splitLists as $column => $splitList ) {
+			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
+			foreach( $splitList as $listitem ) {
+				$body .= Html::element( 'li', array(), $listitem );
 			}
+			$body .= '</ul></td>';
 		}
-
-		if( $this->mCanEdit ) {
-			$html = Xml::textarea( 'wpWikis', implode( "\n", $restWikis ), 40, 5, array( 'readonly' => true ) );
-		} else {
-			$firstCol = round( count( $restWikis ) / 2 );
-			$list1 = array_slice( $restWikis, 0, $firstCol );
-			$list2 = array_slice( $restWikis, $firstCol );
-
-			$html = '<table><tbody><tr style="vertical-align:top;"><td><ul>' .
-				'<li>' . implode( '</li><li>', $list2 ) . '</li>' .
-				'</ul></td><td>&nbsp;</td><td><ul>' .
-				'<li>' . implode( '</li><li>', $list2 ) . '</li>' .
-				'</ul></td></tr></tbody></table>';
-		}
-
-		return $html;
+		return Html::rawElement( 'table', $tableAttribs,
+			'<tbody>' .
+				Html::rawElement( 'tr', array( 'style' => 'vertical-align:top;' ), $body ) .
+			'</tbody>'
+		);
 	}
 
 	/**
