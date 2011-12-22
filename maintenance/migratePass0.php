@@ -8,7 +8,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = dirname( __FILE__ ) . '/../../..';
 }
-requir_once( "$IP/maintenance/commandLine.inc" );
+require_once( "$IP/maintenance/commandLine.inc" );
 
 /**
  * Copy user data for this wiki into the localuser table
