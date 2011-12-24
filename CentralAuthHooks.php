@@ -32,7 +32,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onGetPreferences( $user, &$preferences ) {
-		global $wgUser, $wgLang;
+		global $wgLang;
 
 		if ( !$user->isAllowed( 'centralauth-merge' ) ) {
 			// Not allowed to merge, don't display merge information
@@ -45,7 +45,7 @@ class CentralAuthHooks {
 		// - this local account is attached, but migration incomplete
 		// - all local accounts are attached
 
-		$global = CentralAuthUser::getInstance( $wgUser );
+		$global = CentralAuthUser::getInstance( $user );
 		if ( $global->exists() ) {
 			if ( $global->isAttached() ) {
 				// Local is attached...
@@ -78,7 +78,7 @@ class CentralAuthHooks {
 		$manageLinks = array();
 		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
 			wfMsgExt( 'centralauth-prefs-manage', 'parseinline' ) );
-		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $wgUser->getName() ),
+		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
 			wfMsgExt( 'centralauth-prefs-view', 'parseinline' ) );
 		$manageLinkList = wfMsg( 'parentheses', $wgLang->pipeList( $manageLinks ) );
 
