@@ -11,8 +11,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	function __construct() {
 		SpecialPage::__construct( 'GlobalGroupMembership' );
 
-		global $wgUser;
-		$this->mGlobalUser = CentralAuthUser::getInstance( $wgUser );
+		$this->mGlobalUser = CentralAuthUser::getInstance( $this->getUser() );
 	}
 
 	/**
@@ -28,9 +27,9 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * Output a form to allow searching for a user
 	 */
 	function switchForm() {
-		global $wgOut, $wgScript, $wgRequest;
+		global $wgScript;
 
-		$knownwiki = $wgRequest->getVal( 'wpKnownWiki' );
+		$knownwiki = $this->getRequest()->getVal( 'wpKnownWiki' );
 		$knownwiki = $knownwiki ? $knownwiki : wfWikiId();
 
 		// Generate wiki selector
@@ -40,8 +39,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			$selector->addOption( $wiki );
 		}
 
-		$wgOut->addModuleStyles( 'mediawiki.special' );
-		$wgOut->addHTML(
+		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
+		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
 			Html::hidden( 'title',  $this->getTitle() ) .
 			Xml::openElement( 'fieldset' ) .
@@ -80,15 +79,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return Status
 	 */
 	function fetchUser( $username ) {
-		global $wgRequest;
-
-		$knownwiki = $wgRequest->getVal( 'wpKnownWiki' );
+		$knownwiki = $this->getRequest()->getVal( 'wpKnownWiki' );
 
 		$user = CentralAuthGroupMembershipProxy::newFromName( $username );
 
 		if ( !$user ) {
 			return Status::newFatal( 'nosuchusershort', $username );
-		} elseif ( !$wgRequest->getCheck( 'saveusergroups' ) && !$user->attachedOn( $knownwiki ) ) {
+		} elseif ( !$this->getRequest()->getCheck( 'saveusergroups' ) && !$user->attachedOn( $knownwiki ) ) {
 			return Status::newFatal( 'centralauth-globalgroupmembership-badknownwiki',
 					$username, $knownwiki );
 		}

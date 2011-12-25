@@ -45,23 +45,21 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function execute( $subpage ) {
-		global $wgRequest, $wgOut, $wgUser;
-
-		if ( !$this->userCanExecute( $wgUser ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
 
-		$wgOut->setPageTitle( wfMsg( 'globalgrouppermissions' ) );
-		$wgOut->setRobotPolicy( "noindex,nofollow" );
-		$wgOut->setArticleRelated( false );
-		$wgOut->enableClientCache( false );
+		$this->getOutput()->setPageTitle( wfMsg( 'globalgrouppermissions' ) );
+		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
+		$this->getOutput()->setArticleRelated( false );
+		$this->getOutput()->enableClientCache( false );
 
 		if ( $subpage == '' ) {
-			$subpage = $wgRequest->getVal( 'wpGroup' );
+			$subpage = $this->getRequest()->getVal( 'wpGroup' );
 		}
 
-		if ( $subpage != '' && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+		if ( $subpage != '' && $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
 			$this->doSubmit( $subpage );
 		} elseif ( $subpage != '' ) {
 			$this->buildGroupView( $subpage );
@@ -71,31 +69,31 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function buildMainView() {
-		global $wgOut, $wgUser, $wgScript;
+		global $wgScript;
 
 		$groups = CentralAuthUser::availableGlobalGroups();
 
 		// Existing groups
 		$html = Xml::fieldset( wfMsg( 'centralauth-existinggroup-legend' ) );
 
-		$wgOut->addHTML( $html );
+		$this->getOutput()->addHTML( $html );
 
 		if ( count( $groups ) ) {
-			$wgOut->addWikiMsg( 'centralauth-globalgroupperms-grouplist' );
-			$wgOut->addHTML( '<ul>' );
+			$this->getOutput()->addWikiMsg( 'centralauth-globalgroupperms-grouplist' );
+			$this->getOutput()->addHTML( '<ul>' );
 
 			foreach ( $groups as $group ) {
 				$text = wfMsgExt( 'centralauth-globalgroupperms-grouplistitem', array( 'parseinline' ), User::getGroupName( $group ), $group, '<span class="centralauth-globalgroupperms-groupname">' . $group . '</span>' );
 
-				$wgOut->addHTML( "<li> $text </li>" );
+				$this->getOutput()->addHTML( "<li> $text </li>" );
 			}
 		} else {
-			$wgOut->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
+			$this->getOutput()->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
 		}
 
-		$wgOut->addHTML( Xml::closeElement( 'ul' ) . Xml::closeElement( 'fieldset' ) );
+		$this->getOutput()->addHTML( Xml::closeElement( 'ul' ) . Xml::closeElement( 'fieldset' ) );
 
-		if ( $this->userCanEdit( $wgUser ) ) {
+		if ( $this->userCanEdit( $this->getUser() ) ) {
 			// "Create a group" prompt
 			$html = Xml::fieldset( wfMsg( 'centralauth-newgroup-legend' ) );
 			$html .= wfMsgExt( 'centralauth-newgroup-intro', array( 'parse' ) );
@@ -108,7 +106,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$html .= Xml::closeElement( 'form' );
 			$html .= Xml::closeElement( 'fieldset' );
 
-			$wgOut->addHTML( $html );
+			$this->getOutput()->addHTML( $html );
 		}
 	}
 
@@ -116,18 +114,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param $group
 	 */
 	function buildGroupView( $group ) {
-		global $wgOut, $wgUser;
+		$editable = $this->userCanEdit( $this->getUser() );
 
-		$editable = $this->userCanEdit( $wgUser );
-
-		$wgOut->setSubtitle( wfMsg( 'centralauth-editgroup-subtitle', $group ) );
+		$this->getOutput()->setSubtitle( wfMsg( 'centralauth-editgroup-subtitle', $group ) );
 
 		$html = Xml::fieldset( wfMsg( 'centralauth-editgroup-fieldset', $group ) );
 
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(), 'name' => 'centralauth-globalgroups-newgroup' ) );
 			$html .= Html::hidden( 'wpGroup', $group );
-			$html .= Html::hidden( 'wpEditToken', $wgUser->editToken() );
+			$html .= Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
 		}
 
 		$fields = array();
@@ -150,9 +146,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$html .= Xml::closeElement( 'fieldset' );
 
-		$wgOut->addHTML( $html );
+		$this->getOutput()->addHTML( $html );
 
-		$this->showLogFragment( $group, $wgOut );
+		$this->showLogFragment( $group, $this->getOutput() );
 	}
 
 	/**
@@ -163,8 +159,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$sets = WikiSet::getAllWikiSets();
 		$default = WikiSet::getWikiSetForGroup( $group );
 
-		global $wgUser;
-		if ( !$this->userCanEdit( $wgUser ) )
+		if ( !$this->userCanEdit( $this->getUser() ) )
 			return htmlspecialchars( $default );
 
 		$select = new XmlSelect( 'set', 'wikiset', $default );
@@ -182,9 +177,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string
 	 */
 	function buildCheckboxes( $group ) {
-		global $wgUser, $wgOut;
-
-		$editable = $this->userCanEdit( $wgUser );
+		$editable = $this->userCanEdit( $this->getUser() );
 
 		$rights = User::getAllRights();
 		$assignedRights = $this->getAssignedRights( $group );
@@ -202,7 +195,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			# Build a checkbox.
 			$checked = in_array( $right, $assignedRights );
 
-			$desc = $wgOut->parseInline( User::getRightDescription( $right ) ) . ' ' .
+			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
 						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
@@ -246,10 +239,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	function doSubmit( $group ) {
-		global $wgRequest, $wgOut, $wgUser;
-
 		// Paranoia -- the edit token shouldn't match anyway
-		if ( !$this->userCanEdit( $wgUser ) )
+		if ( !$this->userCanEdit( $this->getUser() ) )
 			return;
 
 		$newRights = array();
@@ -258,18 +249,18 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$oldRights = $this->getAssignedRights( $group );
 		$allRights = User::getAllRights();
 
-		$reason = $wgRequest->getVal( 'wpReason', '' );
+		$reason = $this->getRequest()->getVal( 'wpReason', '' );
 
 		foreach ( $allRights as $right ) {
 			$alreadyAssigned = in_array( $right, $oldRights );
 
-			if ( $wgRequest->getCheck( "wpRightAssigned-$right" ) ) {
+			if ( $this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
 				$newRights[] = $right;
 			}
 
-			if ( !$alreadyAssigned && $wgRequest->getCheck( "wpRightAssigned-$right" ) ) {
+			if ( !$alreadyAssigned && $this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
 				$addRights[] = $right;
-			} elseif ( $alreadyAssigned && !$wgRequest->getCheck( "wpRightAssigned-$right" ) ) {
+			} elseif ( $alreadyAssigned && !$this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
 				$removeRights[] = $right;
 			} # Otherwise, do nothing.
 		}
@@ -286,7 +277,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		// Change set
 		$current = WikiSet::getWikiSetForGroup( $group );
-		$new = $wgRequest->getVal( 'set' );
+		$new = $this->getRequest()->getVal( 'set' );
 		if ( $current != $new ) {
 			$this->setRestrictions( $group, $new );
 			$this->addLogEntry2( $group, $current, $new, $reason );
@@ -295,8 +286,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->invalidateRightsCache( $group );
 
 		// Display success
-		$wgOut->setSubTitle( wfMsg( 'centralauth-editgroup-success' ) );
-		$wgOut->addWikiMsg( 'centralauth-editgroup-success-text', $group );
+		$this->getOutput()->setSubTitle( wfMsg( 'centralauth-editgroup-success' ) );
+		$this->getOutput()->addWikiMsg( 'centralauth-editgroup-success-text', $group );
 	}
 
 	/**

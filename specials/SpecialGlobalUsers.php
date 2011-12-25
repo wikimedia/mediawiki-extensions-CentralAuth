@@ -6,7 +6,7 @@ class SpecialGlobalUsers extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgOut, $wgRequest, $wgContLang;
+		global $wgContLang;
 		$this->setHeaders();
 
 		$pg = new GlobalUsersPager( $this->getContext(), $par );
@@ -14,19 +14,19 @@ class SpecialGlobalUsers extends SpecialPage {
 		if ( $par ) {
 			$pg->setGroup( $par );
 		}
-		$rqGroup = $wgRequest->getVal( 'group' );
+		$rqGroup = $this->getRequest()->getVal( 'group' );
 		if ( $rqGroup ) {
 			$pg->setGroup( $rqGroup );
 		}
-		$rqUsername = $wgContLang->ucfirst( $wgRequest->getVal( 'username' ) );
+		$rqUsername = $wgContLang->ucfirst( $this->getRequest()->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}
 
-		$wgOut->addHTML( $pg->getPageHeader() );
-		$wgOut->addHTML( $pg->getNavigationBar() );
-		$wgOut->addHTML( '<ul>' . $pg->getBody() . '</ul>' );
-		$wgOut->addHTML( $pg->getNavigationBar() );
+		$this->getOutput()->addHTML( $pg->getPageHeader() );
+		$this->getOutput()->addHTML( $pg->getNavigationBar() );
+		$this->getOutput()->addHTML( '<ul>' . $pg->getBody() . '</ul>' );
+		$this->getOutput()->addHTML( $pg->getNavigationBar() );
 	}
 }
 

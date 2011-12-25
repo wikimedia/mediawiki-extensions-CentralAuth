@@ -14,17 +14,17 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgMemc;
+		global $wgMemc;
 
-		$tempToken = $wgRequest->getVal( 'token' );
-		$logout = $wgRequest->getBool( 'logout' );
+		$tempToken = $this->getRequest()->getVal( 'token' );
+		$logout = $this->getRequest()->getBool( 'logout' );
 
 		# Don't cache error messages
-		$wgOut->enableClientCache( false );
+		$this->getOutput()->enableClientCache( false );
 
 		if ( strlen( $tempToken ) == 0 ) {
 			$this->setHeaders();
-			$wgOut->addWikiMsg( 'centralauth-autologin-desc' );
+			$this->getOutput()->addWikiMsg( 'centralauth-autologin-desc' );
 			return;
 		}
 
@@ -36,7 +36,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 			$msg = 'Token is invalid or has expired';
 			wfDebug( __METHOD__ . ": $msg\n" );
 			$this->setHeaders();
-			$wgOut->addWikiText( $msg );
+			$this->getOutput()->addWikiText( $msg );
 			return;
 		}
 
@@ -48,7 +48,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 			$msg = 'Bad token (wrong wiki)';
 			wfDebug( __METHOD__ . ": $msg\n" );
 			$this->setHeaders();
-			$wgOut->addWikiText( $msg );
+			$this->getOutput()->addWikiText( $msg );
 			return;
 		}
 
@@ -59,7 +59,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 			$msg = "Bad token: $loginResult";
 			wfDebug( __METHOD__ . ": $msg\n" );
 			$this->setHeaders();
-			$wgOut->addWikiText( $msg );
+			$this->getOutput()->addWikiText( $msg );
 			return;
 		}
 
@@ -70,7 +70,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 			$centralUser->setGlobalCookies( $remember );
 		}
 
-		$wgOut->disable();
+		$this->getOutput()->disable();
 
 		wfResetOutputBuffers();
 		header( 'Cache-Control: no-cache' );

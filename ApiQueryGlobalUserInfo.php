@@ -34,12 +34,10 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	}
 
 	public function execute() {
-		global $wgUser;
-
 		$params = $this->extractRequestParams();
 		$prop = array_flip( (array)$params['prop'] );
 		if ( is_null( $params['user'] ) ) {
-			$params['user'] = $wgUser->getName();
+			$params['user'] = $this->getUser()->getName();
 		}
 		$user = new CentralAuthUser( $params['user'] );
 
