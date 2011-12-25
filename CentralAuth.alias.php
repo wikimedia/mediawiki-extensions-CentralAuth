@@ -177,13 +177,17 @@ $specialPageAliases['frp'] = array(
 	'GlobalGroupMembership' => array( 'Pèrmissions_globâles', 'PèrmissionsGlobâles' ),
 	'GlobalGroupPermissions' => array( 'Drêts_a_les_tropes_globâles', 'DrêtsALesTropesGlobâles' ),
 	'WikiSets' => array( 'Changiér_los_sèts_de_vouiquis', 'ChangiérLosSètsDeVouiquis' ),
-	'GlobalUsers' => array( 'Utilisators_globâls', 'UtilisatorsGlobâls' ),
+	'GlobalUsers' => array( 'Usanciérs_globâls', 'UsanciérsGlobâls' ),
 );
 
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
+	'CentralAuth' => array( 'Autenticación_central' ),
+	'AutoLogin' => array( 'Rexistro_automático' ),
 	'MergeAccount' => array( 'Fusionar_contas' ),
 	'GlobalGroupMembership' => array( 'Dereitos_globais' ),
+	'GlobalGroupPermissions' => array( 'Permisos_de_grupo_globais' ),
+	'WikiSets' => array( 'Configuracións_do_wiki' ),
 	'GlobalUsers' => array( 'Usuarios_globais' ),
 );
 
@@ -433,6 +437,17 @@ $specialPageAliases['myv'] = array(
 	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),
 );
 
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'CentralAuth' => array( 'Enhetlig_innlogging' ),
+	'AutoLogin' => array( 'Automatisk_innlogging' ),
+	'MergeAccount' => array( 'Kontosammenslåing' ),
+	'GlobalGroupMembership' => array( 'Globale_brukerrettigheter' ),
+	'GlobalGroupPermissions' => array( 'Globale_gruppetillatelser' ),
+	'WikiSets' => array( 'Rediger_wikisett' ),
+	'GlobalUsers' => array( 'Globale_brukere' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
 	'CentralAuth' => array( 'Sentraal_anmelden' ),
@@ -462,17 +477,6 @@ $specialPageAliases['nn'] = array(
 	'GlobalUsers' => array( 'Globale_brukarar' ),
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['nb'] = array(
-	'CentralAuth' => array( 'Enhetlig_innlogging' ),
-	'AutoLogin' => array( 'Automatisk_innlogging' ),
-	'MergeAccount' => array( 'Kontosammenslåing' ),
-	'GlobalGroupMembership' => array( 'Globale_brukerrettigheter' ),
-	'GlobalGroupPermissions' => array( 'Globale_gruppetillatelser' ),
-	'WikiSets' => array( 'Rediger_wikisett' ),
-	'GlobalUsers' => array( 'Globale_brukere' ),
-);
-
 /** Occitan (Occitan) */
 $specialPageAliases['oc'] = array(
 	'AutoLogin' => array( 'Login_Automatic', 'LoginAutomatic', 'LoginAuto' ),
@@ -490,6 +494,7 @@ $specialPageAliases['pl'] = array(
 	'MergeAccount' => array( 'Łączenie_kont', 'Konto_uniwersalne' ),
 	'GlobalGroupMembership' => array( 'Globalne_uprawnienia' ),
 	'GlobalGroupPermissions' => array( 'Globalne_uprawnienia_grup' ),
+	'WikiSets' => array( 'Zbiory_wiki' ),
 	'GlobalUsers' => array( 'Spis_kont_uniwersalnych' ),
 );
 
@@ -525,7 +530,7 @@ $specialPageAliases['ro'] = array(
 	'GlobalUsers' => array( 'Utilizatori_globali' ),
 );
 
-/** Sanskrit (संस्कृत) */
+/** Sanskrit (संस्कृतम्) */
 $specialPageAliases['sa'] = array(
 	'CentralAuth' => array( 'मध्यवर्तीप्रामान्य' ),
 	'AutoLogin' => array( 'स्वयमेवप्रवेश' ),
@@ -653,8 +658,3 @@ $specialPageAliases['zh-hant'] = array(
 $specialPageAliases['zh-hk'] = array(
 	'GlobalGroupMembership' => array( '全域用戶權限' ),
 );
-
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-$aliases =& $specialPageAliases;
