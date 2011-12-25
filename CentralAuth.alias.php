@@ -463,7 +463,7 @@ $specialPageAliases['nn'] = array(
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['no'] = array(
+$specialPageAliases['nb'] = array(
 	'CentralAuth' => array( 'Enhetlig_innlogging' ),
 	'AutoLogin' => array( 'Automatisk_innlogging' ),
 	'MergeAccount' => array( 'Kontosammenslåing' ),

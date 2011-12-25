@@ -18810,7 +18810,7 @@ Merk at gruppa ikkje finst med mindre ho har fått tildelt rettar.',
  * @author Njardarlogar
  * @author Stigmj
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'mergeaccount' => 'Status for sammenslåing av kontoer',
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Slå sammen kontoer]] på {{int:Centralauth-groupname}}',
