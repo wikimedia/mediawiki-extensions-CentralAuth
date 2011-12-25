@@ -109,7 +109,6 @@ class GlobalUsersPager extends UsersPager {
 	 * @return string HTML li element with username and info about this user
 	 */
 	function formatRow( $row ) {
-		global $wgLang;
 		$user = htmlspecialchars( $row->gu_name );
 		$info = array();
 		if ( $row->gu_locked ) {
@@ -125,7 +124,7 @@ class GlobalUsersPager extends UsersPager {
 		if ( $groups ) {
 			$info[] = $groups;
 		}
-		$info = $wgLang->commaList( $info );
+		$info = $this->getLanguage()->commaList( $info );
 		return Html::rawElement( 'li', array(), wfMsgExt( 'centralauth-listusers-item', array('parseinline'), $user, $info ) );
 	}
 

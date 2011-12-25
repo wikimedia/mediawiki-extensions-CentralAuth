@@ -104,9 +104,8 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} else {
-				global $wgLang;
 				$this->showSuccess( 'centralauth-admin-unmerge-success',
-					$wgLang->formatNum( $status->successCount ),
+					$this->getLanguage()->formatNum( $status->successCount ),
 					/* deprecated */ $status->successCount );
 			}
 		} elseif ( $this->mMethod == 'delete' && $this->mCanUnmerge ) {
@@ -257,7 +256,6 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return String
 	 */
 	function prettyTimespan( $span ) {
-		global $wgLang;
 		$units = array(
 			'seconds' => 60,
 			'minutes' => 60,
@@ -270,24 +268,23 @@ class SpecialCentralAuth extends SpecialPage {
 			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
 			// 'centralauth-days-ago', 'centralauth-months-ago', 'centralauth-years-ago'
 			if ( $span < 2 * $chunk ) {
-				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $wgLang->formatNum( $span ) );
+				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $this->getLanguage()->formatNum( $span ) );
 			}
 			$span = intval( $span / $chunk );
 		}
-		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $wgLang->formatNum( $span ) );
+		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $this->getLanguage()->formatNum( $span ) );
 	}
 
 	function showInfo() {
 		$globalUser = $this->mGlobalUser;
 
-		global $wgLang;
 		$reg = $globalUser->getRegistration();
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
 			'id' => $globalUser->getId(),
-			'registered' => htmlspecialchars( $wgLang->timeanddate( $reg, true ) . " ($age)" ),
+			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'home' => $this->determineHomeWiki(),
-			'editcount' => htmlspecialchars( $wgLang->formatNum( $this->evaluateTotalEditcount() ) ),
+			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
 			'locked' => wfMsgHtml( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' ),
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
 		);
@@ -392,7 +389,6 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	function listMergedWikiItem( $row ) {
-		global $wgLang;
 		if ( $row === null ) {
 			// https://bugzilla.wikimedia.org/show_bug.cgi?id=28767
 			// It seems sometimes local accounts aren't correctly created
@@ -406,7 +402,7 @@ class SpecialCentralAuth extends SpecialPage {
 				// invisible, to make this column sortable
 				Html::element( 'span', array( 'style' => 'display: none' ), htmlspecialchars( $row['attachedTimestamp'] ) ) .
 				// visible date and time in users preference
-				htmlspecialchars( $wgLang->timeanddate( $row['attachedTimestamp'], true ) ) .
+				htmlspecialchars( $this->getLanguage()->timeanddate( $row['attachedTimestamp'], true ) ) .
 			'</td>' .
 			'<td style="text-align: center">' . $this->formatMergeMethod( $row['attachedMethod'] ) . '</td>' .
 			'<td>' . $this->formatBlockStatus( $row ) . '</td>' .
@@ -437,10 +433,9 @@ class SpecialCentralAuth extends SpecialPage {
 			$reason = $row['block-reason'];
 				return wfMsgExt( 'centralauth-admin-blocked-indef', 'parseinline', array( $reason ) );
 			} else {
-				global $wgLang;
-				$expiry = $wgLang->timeanddate( $row['block-expiry'], true );
-				$expiryd = $wgLang->date( $row['block-expiry'], true );
-				$expiryt = $wgLang->time( $row['block-expiry'], true );
+				$expiry = $this->getLanguage()->timeanddate( $row['block-expiry'], true );
+				$expiryd = $this->getLanguage()->date( $row['block-expiry'], true );
+				$expiryt = $this->getLanguage()->time( $row['block-expiry'], true );
 				$reason = $row['block-reason'];
 
 				$text = wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
@@ -468,8 +463,7 @@ class SpecialCentralAuth extends SpecialPage {
 			throw new MWException( "Invalid wiki: {$row['wiki']}" );
 		}
 		$wikiname = $wiki->getDisplayName();
-		global $wgLang;
-		$editCount = $wgLang->formatNum( intval( $row['editCount'] ) );
+		$editCount = $this->getLanguage()->formatNum( intval( $row['editCount'] ) );
 		return $this->foreignLink(
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
@@ -708,10 +702,9 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	function addMergeMethodDescriptions() {
-		global $wgLang;
 		$js = "wgMergeMethodDescriptions = {\n";
 		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
-			$short = Xml::encodeJsVar( $wgLang->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
+			$short = Xml::encodeJsVar( $this->getLanguage()->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
 			$desc = Xml::encodeJsVar( wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" ) );
 			$js .= "\t'{$method}' : { 'short' : {$short}, 'desc' : {$desc} },\n";
 		}
