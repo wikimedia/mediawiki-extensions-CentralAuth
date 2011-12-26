@@ -1817,26 +1817,13 @@ class CentralAuthUser extends AuthPluginUser {
 			// Relative expiry
 			$exp += time();
 		}
-		$httpOnlySafe = version_compare( "5.2", PHP_VERSION, "<" );
-
-		if ( $httpOnlySafe && isset( $wgCookieHttpOnly ) ) {
-			setcookie( $wgCentralAuthCookiePrefix . $name,
-				$value,
-				$exp,
-				'/',
-				$wgCentralAuthCookieDomain,
-				$wgCookieSecure,
-				$wgCookieHttpOnly );
-		} else {
-			// setcookie() fails on PHP 5.1 if you give it future-compat paramters.
-			// stab stab!
-			setcookie( $wgCentralAuthCookiePrefix . $name,
-				$value,
-				$exp,
-				'/',
-				$wgCentralAuthCookieDomain,
-				$wgCookieSecure );
-		}
+		setcookie( $wgCentralAuthCookiePrefix . $name,
+			$value,
+			$exp,
+			'/',
+			$wgCentralAuthCookieDomain,
+			$wgCookieSecure,
+			$wgCookieHttpOnly );
 	}
 
 	/**
