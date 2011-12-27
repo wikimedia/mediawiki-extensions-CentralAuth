@@ -270,6 +270,13 @@ $wgResourceModules['ext.centralauth.noflash'] = array(
 // Though, doing it this way, AntiSpoof has to be loaded/included first
 // I guess this is bug 30234
 if ( MWInit::classExists( 'AntiSpoof' ) ) {
+	$wgExtensionCredits['antispam'][] = array(
+		'path' => __FILE__,
+		'name' => 'AntiSpoof for CentralAuth',
+		'url' => 'https://www.mediawiki.org/wiki/Extension:AntiSpoof',
+		'author' => 'Sam Reed',
+		'descriptionmsg' => 'centralauth-antispoof-desc',
+	);
 	$wgAutoloadClasses['CentralAuthSpoofUser'] = "$caBase/AntiSpoof/CentralAuthSpoofUser.php";
 	$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] = "$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
