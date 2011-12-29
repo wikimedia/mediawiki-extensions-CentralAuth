@@ -569,6 +569,13 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
+/** Emiliàn (Emiliàn)
+ * @author Reder
+ */
+$messages['egl'] = array(
+	'centralauth-merge-dryrun-or' => "'''o'''",
+);
+
 /** Meänkieli (Meänkieli)
  * @author Mestos
  */
@@ -4531,6 +4538,7 @@ $messages['cs'] = array(
 	'mergeaccount' => 'Stav sjednocení přihlašovacích účtů',
 	'centralauth-groupname' => 'nadace Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Sloučení účtů]] na jednotlivých wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}',
+	'centralauth-antispoof-desc' => 'Přidává do CentralAuth technologii AntiSpoof',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sloučení účtů]] pro jednotné přihlašování',
 	'centralauth-merge-denied' => 'Na tuto stránku nemáte přístup.',
 	'centralauth-merge-notlogged' => 'Pokud se <span class="plainlinks">[$1 přihlásíte]</span>, budete moci zkontrolovat, zda vaše účty byly sloučeny.',
@@ -6672,6 +6680,7 @@ $messages['el'] = array(
 	'centralauth-editset-name' => 'Όνομα:',
 	'centralauth-editset-type' => 'Τύπος:',
 	'centralauth-editset-wikis' => 'Τα βίκι:',
+	'centralauth-editset-restwikis' => 'Βίκι που δεν περιλαμβάνονται ανωτέρω:',
 	'centralauth-editset-reason' => 'Λόγος:',
 	'centralauth-editset-submit' => 'Υποβολή',
 	'centralauth-editset-submit-delete' => 'Διαγραφή',
@@ -6685,6 +6694,7 @@ $messages['el'] = array(
 	'centralauth-editset-success' => 'Επιτυχής αλλαγή του βικι-συνόλου.',
 	'centralauth-editset-success-delete' => 'Επιτυχής διαγραφή  wiki συνόλου.',
 	'centralauth-editset-return' => 'Επιστροφή στην κύρια όψη',
+	'centralauth-readonly' => 'Κλειδωμένη βάση δεδομένων του CentralAuth',
 	'right-globalgroupmembership' => 'Επεξεργασία ιδιότητας μέλους στις καθολικές ομάδες',
 	'right-centralauth-autoaccount' => 'Αυτόματη σύνδεση με καθολικό λογαριασμό',
 	'right-centralauth-unmerge' => 'Κατάργηση συγχώνευσης καθολικού λογαριασμού',
@@ -9896,6 +9906,7 @@ $messages['he'] = array(
 	'mergeaccount' => 'מצב מיזוג החשבונות',
 	'centralauth-groupname' => 'קרן ויקימדיה',
 	'centralauth-desc' => '[[Special:MergeAccount|מיזוג חשבונות]] בין אתרי {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'הוספת טכנולוגיה למניעת זיוף (AntiSpoof) ל־CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|מיזוג מספר חשבונות]] עבור חשבון המשתמש המאוחד',
 	'centralauth-merge-denied' => 'מצטערים, אין לך הרשאה להשתמש בדף זה.',
 	'centralauth-merge-notlogged' => 'אנא <span class="plainlinks">[$1 היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.',
@@ -12337,7 +12348,8 @@ Pammmo a ti bunngoy ket awan  mailaksid no nainaganan kadagiti pammalubos kanian
 	'centralauth-editgroup-perms' => 'Dagiti naited a pammalubos:',
 	'centralauth-editgroup-reason' => 'Rason:',
 	'centralauth-editgroup-success' => 'Nasukatan dagiti pammalubos ti bunggoy',
-	'centralauth-editgroup-success-text' => 'Nag-balligi ka a nagsukat  kadagiti pammalubos ti bunggoy para iti $1 a bunggoy.',
+	'centralauth-editgroup-success-text' => 'Nag-balligi ka a nagsukat  kadagiti pammalubos ti bunggoy para iti $1 a bunggoy.
+[[Special:GlobalGroupPermissions|Agsubli ti pagtaripatuen ti bunggoy]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|urnosen]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Ti wiki nga addaan kadagiti pakabilangan da:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ti sangalubongan nga agar-aramat '''$1''' ket saan a nasiglat idiay wiki a nainaganam ('' $2 '') .
@@ -17876,6 +17888,7 @@ Il-password u l-indirizz elettroniku reġistrat se jiġu ċċekkjati mal-kontiji
 Ebda tibdil ma jsir qabel il-konferma tiegħek li kollox jidher fl-ordni.',
 	'centralauth-merge-step1-submit' => 'Ikkonferma d-dettalji tal-login',
 	'centralauth-merge-step2-title' => 'Ikkonferma kontijiet oġra',
+	'centralauth-merge-step2-detail' => "Xi ftit minn dawn il-kontijiet ma setgħux jiġu magħquda ma' dawk tal-wiki prinċipali. Jekk dawn il-kontijiet huma tiegħek, tista' tikkonferma li huma tiegħek billi ddaħħal il-passwords tagħhom.",
 	'centralauth-merge-step2-submit' => 'Ikkonferma l-informazzjoni dwar il-login',
 	'centralauth-merge-dryrun-or' => "'''jew'''",
 	'centralauth-merge-step3-title' => 'Oħloq kont imwaħħad',
@@ -18066,6 +18079,11 @@ Kun af li grupp ma jeżistix sakemm ikunu għadhom ma ngħatawlux il-permessi.",
 	'centralauth-editgroup-success-text' => 'Għadek kif biddilt il-permessi tal-grupp għall-grupp $1.
 [[Special:GlobalGroupPermissions|Irritorna lura lejn il-ġestjoni tal-gruppi]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editja]])',
+	'centralauth-editset-new' => 'Oħloq sett ġdid',
+	'centralauth-editset-notfound' => 'Is-sett ta\' wikis "$1" ma nstabx.',
+	'centralauth-editset-legend-edit' => 'Modifika tas-sett ta\' wikis "$1"',
+	'centralauth-editset-legend-view' => 'Sett ta\' wikis "$1"',
+	'centralauth-editset-legend-new' => "Oħloq sett ta' wikis ġdid",
 	'centralauth-editset-name' => 'Isem:',
 	'centralauth-editset-type' => 'Tip:',
 	'centralauth-editset-wikis' => 'Wikis:',
@@ -18913,6 +18931,7 @@ $messages['nl'] = array(
 	'mergeaccount' => 'Status samenvoegen gebruikers',
 	'centralauth-groupname' => 'de Wikimedia Foundation',
 	'centralauth-desc' => "[[Special:MergeAccount|Samengevoegde gebruikers]] in wiki's van {{int:Centralauth-groupname}}",
+	'centralauth-antispoof-desc' => 'Voegt AntiSpoof-technologie toe aan CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Meerdere gebruikers samenvoegen]] voor Single User Login',
 	'centralauth-merge-denied' => 'U hebt geen toegang tot deze pagina.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1  Meld u aan]</span> om te controleren of uw gebruikers volledig zijn samengevoegd.',
@@ -20115,7 +20134,7 @@ $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-editset-restwikis' => 'ଉପରେ ନଥିବା ଉଇକିମାନ:',
 	'centralauth-editset-reason' => 'କାରଣ:',
 	'centralauth-editset-submit' => 'ଦାଖଲକରିବା',
-	'centralauth-editset-submit-delete' => 'ଲିଭେଇବେ',
+	'centralauth-editset-submit-delete' => 'ଲିଭାଇବେ',
 	'centralauth-editset-badname' => 'ଖାଲି ଅବା ଅବୈଧ ଗୋଠ ନାମ',
 	'centralauth-editset-badtype' => 'ଅବୈଧ ଗୋଠ ନାମ',
 	'centralauth-editset-setexists' => 'ଆଗରୁ ସେହି ଏକା ନାମରେ ଥିବା ଗୋଠ',
@@ -22570,6 +22589,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-log-status-oversighted' => 'supervisionate',
 	'centralauth-log-status-none' => '(ninde)',
 	'centralauth-rightslog-name' => 'Archivije de le deritte globbale',
+	'centralauth-rightslog-entry-groupperms' => "permesse d'u gruppe cangiate pe $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms2' => 'cangiate le autorizzazione de gruppe pè $1.
 Aggiunde $2;
 Luàte $3',
@@ -22667,6 +22687,7 @@ $messages['ru'] = array(
 	'mergeaccount' => 'Состояние объединения учётных записей',
 	'centralauth-groupname' => 'Фонда Викимедиа',
 	'centralauth-desc' => '[[Special:MergeAccount|Объединение учётных]] записей в вики-проектах {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Добавляет технологию AntiSpoof в CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Объединяет несколько учётных записей]] в единую учётную запись участника (Single User Login)',
 	'centralauth-merge-denied' => 'Извините, у вас недостаточно прав для доступа к этой странице.',
 	'centralauth-merge-notlogged' => 'Пожалуйста, <span class="plainlinks">[$1 представьтесь системе]</span>, чтобы проверить были ли ваши учётные записи полностью объединены.',
@@ -23633,6 +23654,7 @@ $messages['si'] = array(
 	'mergeaccount' => 'ප්‍රවිසීම් සංයුක්තකිරීම් තත්ත්වය',
 	'centralauth-groupname' => 'විකිමී‍ඩියා පදනම',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} හි විකියන් අතුරෙහි [[Special:MergeAccount|ගිණුම ඒකාබද්ධ කරන්න]]',
+	'centralauth-antispoof-desc' => 'ප්‍රතිප්‍රෝඩා තාක්ෂණය මධ්‍යඅවසරයට එක් කරයි',
 	'centralauth-mergeaccount-desc' => 'ඒක පරිශීලක ප්‍රවිෂ්ටයකින් ප්‍රවේශ කර ගත හැකි අයුරින් [[Special:MergeAccount| ගිණුම් බහු සංඛ්‍යාවක් ඒකාබද්ධ කෙරෙයි]]',
 	'centralauth-merge-denied' => 'මෙම පිටුවට පිවිසීමට ඔබට අවසර නැත.',
 	'centralauth-merge-notlogged' => 'ඔබගේ ගිණුම් සම්පූර්ණ වශයෙන් ඒකාබද්ධ කර ඇතිදැයි පිරික්සා බැලුමට, කරුණාකර <span class="plainlinks">[$1 ප්‍රවිෂ්ට වන්න]</span>.',
@@ -26259,8 +26281,12 @@ $messages['ta'] = array(
 	'centralauth-existinggroup-legend' => 'இருக்கும் குழுக்கள்',
 	'centralauth-newgroup-legend' => 'புதியதாக ஒரு குழுவை உருவாக்கு',
 	'centralauth-globalgroupperms-newgroupname' => 'புதிய குழுவின் பெயர்:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'அனுமதிகளை அமைக்கவும்',
 	'centralauth-editgroup-subtitle' => '$1 தொகுக்கப்படுகிறது',
+	'centralauth-editgroup-fieldset' => '$1 க்கான அனுமதிகள்',
 	'centralauth-editgroup-name' => 'குழுவின் பெயர்:',
+	'centralauth-editgroup-display' => 'குழுவின் உள்ளமைந்த பெயர்:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|திருத்தம்]])',
 	'centralauth-editgroup-members' => 'உறுப்பினர்களின் பட்டியல்:',
 	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
 	'centralauth-editgroup-perms' => 'கொடுக்கப்பட்ட அனுமதிகள்:',
@@ -28641,21 +28667,32 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
+	'centralauth-merge-method-primary' => 'kodiviki',
+	'centralauth-merge-method-empty' => 'Eile tondad',
+	'centralauth-merge-method-new' => "uz' kävutajan kirjutez",
 	'centralauth-finish-password' => 'Peitsana:',
 	'centralauth-finish-login' => 'Kirjutadas sistemha',
+	'centralauth-finish-send-confirmation' => 'Oigeta minei peitsana e-počtadme',
 	'centralauth-admin-username' => 'Kävutajan nimi:',
 	'centralauth-admin-info-id' => 'Kävutajan ID:',
+	'centralauth-admin-info-registered' => 'Registriruidud:',
+	'centralauth-admin-info-home' => 'Kodiviki:',
 	'centralauth-admin-info-locked' => 'Luklostadud:',
 	'centralauth-admin-info-hidden' => 'Peitmižen pordaz:',
 	'centralauth-admin-nohome' => 'ei voi märita',
 	'centralauth-admin-yes' => 'ka',
 	'centralauth-admin-no' => 'ei',
+	'centralauth-admin-list-localwiki' => 'Taholine viki',
+	'centralauth-admin-list-attached-on' => 'Sidotud',
 	'centralauth-admin-list-method' => 'Metod',
+	'centralauth-admin-list-editcount' => 'Redakcijoiden lugim',
+	'centralauth-admin-list-blocked' => 'Blokiruidud',
 	'centralauth-admin-reason' => 'Sü:',
 	'centralauth-admin-status-locked' => 'Luklostadud:',
 	'centralauth-admin-status-hidden' => 'Peittud:',
 	'centralauth-admin-status-submit' => 'Panda status',
 	'centralauth-listusers-locked' => 'luklostadud',
+	'centralauth-prefs-unattached' => 'Vahvištamata',
 	'centralauth-prefs-complete' => 'Kaik om hüvä!',
 	'centralauth-log-status-locked' => 'luklostadud',
 	'centralauth-log-status-hidden' => 'peittud',
@@ -28663,6 +28700,10 @@ $messages['vep'] = array(
 	'centralauth-existinggroup-legend' => 'Olijad olmas gruppad',
 	'centralauth-newgroup-legend' => "Säta uz' grupp",
 	'centralauth-globalgroupperms-newgroupname' => 'Uden gruppan nimi:',
+	'centralauth-editgroup-subtitle' => '$1-gruppan redaktiruind',
+	'centralauth-editgroup-fieldset' => 'Laskendad $1:n täht',
+	'centralauth-editgroup-name' => 'Gruppannimi:',
+	'centralauth-editgroup-display' => 'Lokaliziruidud gruppannimi:',
 	'centralauth-editgroup-members' => 'Ühtnijoiden nimikirjutez:',
 	'centralauth-editgroup-reason' => 'Sü:',
 	'centralauth-editgroup-success' => 'Gruppan oiktused oma vajehtadud',
@@ -28672,6 +28713,8 @@ $messages['vep'] = array(
 	'centralauth-editset-type' => 'Tip:',
 	'centralauth-editset-wikis' => 'Wikid:',
 	'centralauth-editset-reason' => 'Sü:',
+	'centralauth-editset-submit' => 'Oigeta',
+	'centralauth-editset-submit-delete' => 'Čuta poiš',
 	'centralauth-editset-nouse' => '(ei ole)',
 	'centralauth-editset-usage' => 'Om kävutadud gruppiš:',
 );
@@ -29177,6 +29220,7 @@ $messages['xal'] = array(
 );
 
 /** Yiddish (ייִדיש)
+ * @author Imre
  * @author פוילישער
  */
 $messages['yi'] = array(
@@ -29207,6 +29251,7 @@ $messages['yi'] = array(
 	'centralauth-admin-yes' => 'יא',
 	'centralauth-admin-no' => 'ניין',
 	'centralauth-admin-list-localwiki' => 'לאקאַלע וויקי',
+	'centralauth-admin-list-method' => 'מעטאָד',
 	'centralauth-admin-list-blocked' => 'בלאקירט',
 	'centralauth-admin-delete-title' => 'אויסמעקן קאנטע',
 	'centralauth-admin-delete-button' => 'אויסמעקן די קאנטע',
