@@ -5,7 +5,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = dirname( __FILE__ ) . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once( "$IP/extensions/AntiSpoof/maintenance/batchAntiSpoof.php" );
 
 class BatchCAAntiSpoof extends BatchAntiSpoof {
 
