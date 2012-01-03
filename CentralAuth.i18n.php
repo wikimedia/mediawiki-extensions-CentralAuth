@@ -591,28 +591,55 @@ $messages['fit'] = array(
  * @author Naudefj
  * @author SPQRobin
  * @author Spacebirdy
+ * @author පසිඳු කාවින්ද
  */
 $messages['af'] = array(
 	'mergeaccount' => 'Aanteken versmeltingstatus',
 	'centralauth-groupname' => 'die Wikimedia-stigting',
 	'centralauth-desc' => '[[Special:MergeAccount|Versmelt rekeninge]] oor{{int:Centralauth-groupname}} se wikis',
+	'centralauth-antispoof-desc' => 'Hiermee word AntiSpoof tegnologie te CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Versmelt verskeie rekeninge]] vir Single User Login',
 	'centralauth-merge-denied' => 'U het nie toegang tot hierdie bladsy nie.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld aan]</span> om te kontroleer of u gebruikers volledig versmelt is.',
 	'centralauth-merge-step1-title' => 'Begin versmelting van rekeninge',
+	'centralauth-merge-step1-detail' => 'Gee jou rekening wagwoord.
+Jou wagwoord en geregistreerde e-pos adres sal gekontroleer word teen die rekeninge op ander wikis te bevestig dat hulle ooreenstem.
+Geen veranderinge gemaak sal word totdat jy het bevestig dat alles in orde is.',
 	'centralauth-merge-step1-submit' => 'Bevestig aanteken inligting',
 	'centralauth-merge-step2-title' => 'Bevestig meer rekeninge',
+	'centralauth-merge-step2-detail' => 'Sommige van die rekeninge kan nie outomaties gekoppel aan die aangewese huis wiki.
+As hierdie rekeninge aan u behoort, kan jy bevestig dat hulle aan U behoort die wagwoord vir hulle.',
 	'centralauth-merge-step2-submit' => 'Bevestig aanmeldings-inligting',
+	'centralauth-merge-dryrun-complete' => 'Alle bestaande rekeninge kan word outomaties verenig!
+
+Geen veranderinge het plaasgevind na jou rekeninge nog.',
+	'centralauth-merge-dryrun-incomplete' => 'Jy is om voort te gaan, maar sommige rekeninge kan nie outomaties nagegaan en sal nie dadelik oorgeneem word.
+Jy sal in staat wees om hierdie te later saamsmelt.
+
+Geen veranderinge het plaasgevind na jou rekeninge nog.',
 	'centralauth-merge-dryrun-or' => "'''of'''",
+	'centralauth-merge-dryrun-home' => "Die migrasie kon nie bevestig dat jy die eienaar van die huis WIKI rekening vir jou gebruikersnaam.
+
+Nog 'n wiki is bepaal as die rekening vir jou gebruikersnaam, volg die skakel hieronder en teken daar in om jou rekening migrasie te voltooi.",
 	'centralauth-merge-step3-title' => 'Skep verenigde gebruikersrekening',
 	'centralauth-merge-step3-detail' => "U is nou gereed om 'n gekombineerde gebruiker vir die volgende wiki's skep:",
 	'centralauth-merge-step3-submit' => 'Verenig rekeninge',
+	'centralauth-merge-no-accounts' => 'Geen rekeninge wat ooreenstem met jou naam gevind is in die sentrale rekening dop tafel!
+Die databasis moet beskadig.',
+	'centralauth-merge-home-password' => "Die huis wiki vir hierdie rekening (hieronder) het 'n ander wagwoord in aan die een wat u verskaf het.
+Voer die wagwoord vir die huis wiki.",
 	'centralauth-complete' => 'Aantekenversmelting is voltooi!',
 	'centralauth-incomplete' => 'Aantekenversmelting is nie voltooi nie!',
+	'centralauth-blocked-text' => "Jou huis wiki (hieronder) is geblokkeer.
+Neem asseblief kontak met 'n administrateur in hierdie wiki het om dit te blokkeer.
+Terwyl dit is geblokkeer, kan jy nie jou rekeninge saam te smelt.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Slegs demonstrasiemodus</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => "Rekening eenwording is tans in 'n ​​demo / Ontfouting af, sodat werklike samesmelting bedrywighede is gestremdes.
+Jammer!",
 	'centralauth-error-locked' => 'U kan nie wysigings maak nie want u rekening is geblokkeer.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/af|Lees meer oor '''versmelte rekeninge''']]…''",
 	'centralauth-list-home-title' => 'Tuiswiki',
+	'centralauth-list-home-dryrun' => 'Die wagwoord en e-pos adres wat op hierdie wiki gebruik sal word vir jou verenigde rekening.',
 	'centralauth-list-attached-title' => 'Aangehegde rekeninge',
 	'centralauth-list-attached' => 'Die rekening genaamd "$1" op die volgende webwerwe was outomaties aangeheg by die versmelte rekening:',
 	'centralauth-list-unattached-title' => 'Onaangehegde rekeninge',
@@ -623,20 +650,38 @@ $messages['af'] = array(
 	'centralauth-merge-method-password' => 'met wagwoord bevestig',
 	'centralauth-merge-method-new' => 'nuwe gebruiker',
 	'centralauth-merge-method-login' => 'geskep deur aanmelding',
+	'centralauth-merge-method-primary-desc' => 'Dit is die wiki waar die rekening was aanvanklik saamgesmelt.
+Let daarop dat dit kan verskil van die werklike huis WIKI van daardie gebruiker.',
+	'centralauth-merge-method-empty-desc' => 'Dui daarop dat die plaaslike rekening saamgesmelt, want dit het geen wysigings.',
+	'centralauth-merge-method-mail-desc' => 'Dui daarop dat die plaaslike rekening is saamgevoeg omdat sy e-pos adres ooreenstem met die e-pos adres van die hoof rekening.',
+	'centralauth-merge-method-password-desc' => "Dui daarop dat die plaaslike rekening is saamgevoeg omdat die gebruiker 'n geldige wagwoord vir.",
+	'centralauth-merge-method-admin-desc' => 'Dui daarop dat die plaaslike rekening hand saamgesmelt deur rentmeesters.
+Dat die funksie is nou gestremd is as gevolg van sekuriteit.',
+	'centralauth-merge-method-new-desc' => 'Dui daarop dat die globale rekening is outomaties geskep wanneer daardie plaaslike rekening geskep het.',
+	'centralauth-merge-method-login-desc' => 'Dui daarop dat die plaaslike rekening geskep het outomaties wanneer gebruiker in geteken nie.',
 	'centralauth-finish-title' => 'Voltooi samevoeging',
 	'centralauth-finish-password' => 'Wagwoord:',
 	'centralauth-finish-login' => 'Inteken',
 	'centralauth-finish-send-confirmation' => 'E-pos wagwoord',
+	'centralauth-finish-noconfirms' => 'Geen rekeninge kan bevestig word deur gebruik te maak van hierdie wagwoord.',
+	'centralauth-finish-incomplete' => 'Verskeie rekeninge saamgesmelt met die wagwoord.
+Ander rekeninge is nog nie bevestig nie.',
 	'centralauth-attach-title' => 'Bevestig rekening',
 	'centralauth-attach-submit' => 'Migreer rekening',
+	'centralauth-attach-success' => 'Die rekening is migreer na die verenigde rekening.',
+	'centralauth' => 'Global Gebruikers Bestuur',
+	'centralauth-admin-intro' => 'Hierdie koppelvlak kan gebruik word vir die administrasie van die globale rekeninge.',
 	'centralauth-admin-manage' => 'Bestuur gebruikersdata',
 	'centralauth-admin-username' => 'Gebruikersnaam:',
 	'centralauth-admin-lookup-ro' => 'Wys gebruikersinligting',
 	'centralauth-admin-lookup-rw' => 'Beheer rekening',
+	'centralauth-admin-permission' => 'Slegs rentmeesters kan saamsmelt ander mense se rekeninge vir hulle.',
+	'centralauth-admin-no-unified' => 'Geen verenigde rekening vir hierdie gebruikersnaam.',
 	'centralauth-admin-info-header' => 'Inligting oor globale gebruiker',
 	'centralauth-admin-info-id' => 'Gebruiker-ID:',
 	'centralauth-admin-info-registered' => 'Geregistreerd:',
 	'centralauth-admin-info-home' => 'Tuiswiki:',
+	'centralauth-admin-info-editcount' => 'Totale editcount:',
 	'centralauth-admin-info-locked' => 'Gedeaktiveer:',
 	'centralauth-admin-info-hidden' => 'Verbergingsvlak:',
 	'centralauth-admin-nohome' => 'nie in staat om te bepaal nie',
@@ -645,6 +690,7 @@ $messages['af'] = array(
 	'centralauth-admin-hidden-list' => 'nie in publieke lyste',
 	'centralauth-admin-hidden-oversight' => 'slegs vir toesighouers',
 	'centralauth-admin-list-legend-ro' => 'Lys van lokale gebruikers',
+	'centralauth-admin-list-legend-rw' => 'Uninstallen plaaslike rekeninge',
 	'centralauth-admin-unattached' => 'nie aangeheg',
 	'centralauth-admin-blocked' => 'Geblokkeer met vervaldatum $3 om $4.
 Rede: $2',
@@ -656,19 +702,31 @@ Rede: $1',
 	'centralauth-admin-list-method' => 'Metode',
 	'centralauth-admin-list-editcount' => 'Aantal wysigings',
 	'centralauth-admin-list-blocked' => 'Geblokkeer',
+	'centralauth-admin-unmerge' => 'uninstallen gekies',
 	'centralauth-admin-merge' => 'Versmelt geselekteerde gebruikers',
+	'centralauth-admin-bad-input' => 'Ongeldige saamsmelt seleksie',
+	'centralauth-admin-none-selected' => 'Geen rekeninge gekies om aan te pas.',
 	'centralauth-admin-delete-title' => 'Skrap rekening',
 	'centralauth-admin-delete-button' => 'Verwyder die gebruiker',
+	'centralauth-token-mismatch' => "Jammer, ons kan nie jou vorm voorlegging as gevolg van 'n verlies aan sessie-data te verwerk.",
 	'centralauth-admin-reason' => 'Rede:',
 	'centralauth-admin-reason-other' => 'Ander/ekstra rede:',
+	'centralauth-admin-status' => 'Stel die status van Global account',
+	'centralauth-admin-status-intro' => 'U kan hierdie vorm gebruik om die status van hierdie globale rekening te verander.',
 	'centralauth-admin-status-locked' => 'Gesluit:',
 	'centralauth-admin-status-locked-no' => 'Gebruiker is nie geblokkeer nie',
+	'centralauth-admin-status-locked-yes' => 'Die rekening is gesluit die wysiging van',
 	'centralauth-admin-status-hidden' => 'Versteek:',
 	'centralauth-admin-status-hidden-no' => 'Gebruiker is nie verborge nie',
+	'centralauth-admin-status-hidden-list' => 'Rekening is weggesteek uit die openbare lyste',
+	'centralauth-admin-status-hidden-oversight' => 'Rekening is heeltemal weggesteek',
 	'centralauth-admin-status-submit' => 'Stel status',
+	'centralauth-admin-setstatus-success' => 'Jy het verander die status van hierdie globale rekening.',
+	'centralauth-admin-logsnippet' => 'Vorige globale rekening veranderinge',
 	'globalusers' => 'Globale gebruikerslys',
 	'centralauth-listusers-locked' => 'gesluit',
 	'centralauth-listusers-attached' => '[[User:$1|bestaan lokaal]]',
+	'centralauth-listusers-nolocal' => 'onverbonde of nie plaaslik bestaan',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekonde|sekondes}} gelede',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuut|minute}} gelede',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|uur|ure}} gelede',
@@ -676,17 +734,21 @@ Rede: $1',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|maand|maande}} gelede',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|jaar|jare}} gelede',
 	'centralauth-prefs-status' => 'Globale gebruikerstatus:',
+	'centralauth-prefs-not-managed' => 'Nie die gebruik van verenigde rekening',
 	'centralauth-prefs-unattached' => 'Nie bevestig',
 	'centralauth-prefs-complete' => 'Alles in orde!',
 	'centralauth-prefs-migration' => 'Besig met migrasie',
 	'centralauth-prefs-count-attached' => 'U gebruiker is op $1 {{plural:$1|projek|projekte}} aktief.',
+	'centralauth-prefs-detail-unattached' => "Hierdie projek site is nog nie bevestig as 'n deel uitmaak van die globale rekening.",
 	'centralauth-prefs-manage' => 'Bestuur u globale gebruikersrekening',
 	'centralauth-prefs-view' => 'Wys inligting oor globale gebruiker',
 	'centralauth-invalid-wiki' => 'Die wikidatabasis bestaan nie: $1',
 	'centralauth-login-progress' => "U word by die wiki's van {{int:Centralauth-groupname}} aangemeld:",
 	'centralauth-logout-progress' => "U word vanaf die ander wiki's van {{int:Centralauth-groupname}} afgeteken:",
+	'centralauth-log-name' => 'Global account log',
 	'centralauth-log-status-locked' => 'gesluit',
 	'centralauth-log-status-hidden' => 'verborge',
+	'centralauth-log-status-oversighted' => 'oversighted',
 	'centralauth-log-status-none' => '(geen)',
 	'centralauth-rightslog-name' => 'Logboek van globale regte',
 	'centralauth-rightslog-entry-groupperms' => 'Verander groepsregte vir $1 van $2 na $3',
@@ -699,10 +761,15 @@ Rede: $1',
 	'autologin' => 'Outomaties aangemeld',
 	'globalgroupmembership' => 'Lidmaatskap in globale groepe',
 	'globalgrouppermissions' => 'Globale groepsbeheer',
+	'centralauth-globalgroupperms-grouplist' => "Die volgende globale groepe is ingestel.
+Jy kan sien of wysig die toestemmings toegeskryf aan 'n groep, as jy toestemming het om te.
+'N groep kan verwyder word deur die verwydering van alle regte van dit.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|wys/wysig]])',
 	'centralauth-globalgroupperms-nogroups' => 'Geen globale groepe is gedefinieer nie.',
 	'centralauth-existinggroup-legend' => 'Bestaande groepe',
 	'centralauth-newgroup-legend' => "Skep 'n nuwe groep",
+	'centralauth-newgroup-intro' => "Jy kan hierdie vorm gebruik om permissies toe te ken aan 'n nuwe groep.
+Let daarop dat 'n groep nie bestaan ​​nie, tensy dit het regte aan hom opgedra.",
 	'centralauth-globalgroupperms-newgroupname' => 'Nuwe groepnaam:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Ken regte toe',
 	'centralauth-editgroup-subtitle' => 'Besig met wysiging van $1',
@@ -725,6 +792,8 @@ Rede: $1',
 	'centralauth-editset' => 'Wikigroepe',
 	'centralauth-editset-legend-rw' => 'Skep of wysig wikigroep',
 	'centralauth-editset-legend-ro' => 'Wikigroepe',
+	'centralauth-editset-intro-rw' => "Die volgende WIKI stelle reeds geskep.
+Jy kan besigtig en verander enige van hulle, of 'n nuwe stel.",
 	'centralauth-editset-intro-ro' => 'Hierdie lys bevat bestaande wikigroepe.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|verwyder]])',
 	'centralauth-editset-new' => "Skep 'n nuwe stel",
@@ -750,7 +819,10 @@ Rede: $1',
 	'centralauth-editset-success' => 'Die wikigroep is suksesvol gewysig.',
 	'centralauth-editset-success-delete' => 'Die wikigroep is verwyder.',
 	'centralauth-editset-return' => 'Terug na hoofmenu',
+	'centralauth-readonly' => 'CentralAuth Databasis gesluit',
+	'centralauth-readonlytext' => 'Die CentralAuth databasis is tans gesluit vir nuwe artikelwysigings en ​​ander veranderinge, waarskynlik vir roetine databasisonderhoud, waarna dit terug na normaal.',
 	'right-globalgroupmembership' => 'Wysig lidmaatskap aan globale groepe',
+	'right-centralauth-autoaccount' => "Outomaties inloggen met 'n globale rekening",
 	'right-centralauth-unmerge' => 'Ontknoop globale gebruiker',
 	'right-centralauth-lock' => 'Blokkeer of versteek globale gebruiker',
 	'right-centralauth-oversight' => 'Onderdruk globale gebruiker',
@@ -1665,6 +1737,7 @@ $messages['ast'] = array(
 	'mergeaccount' => 'Estatus de fusión de cuentes',
 	'centralauth-groupname' => 'la Fundación Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Fusiona cuentes]] ente les wikis de {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Amiesta teunoloxía AntiSpoof a CentralAuth',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Fusiona múltiples cuentes]] pa la Identificación Única d'Usuariu",
 	'centralauth-merge-denied' => "Sentímoslo, nun tienes permisu p'acceder a esta páxina.",
 	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[$1 identifícate]</span> pa comprobar si les tos cuentes se fusionaron completamente.',
@@ -1950,6 +2023,8 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'centralauth-editset-success' => 'Conxuntu wiki modificáu correutamente.',
 	'centralauth-editset-success-delete' => 'Conxuntu wiki desaniciáu correutamente.',
 	'centralauth-editset-return' => 'Tornar a la vista principal',
+	'centralauth-readonly' => 'La base de datos de CentralAuth ta bloquiada',
+	'centralauth-readonlytext' => 'Anguaño la base de datos de CentralAuth ta bloquiada pa entraes nueves y otros cambios, probablemente pol mantenimientu rutinariu de la base de datos; dempués del mesmu, volverá a la normalidá.',
 	'right-globalgroupmembership' => 'Editar la pertenencia a grupos globales',
 	'right-centralauth-autoaccount' => 'Coneutase automáticamente cola cuenta global',
 	'right-centralauth-unmerge' => 'Anular la fusión de cuenta llocal',
@@ -14796,11 +14871,14 @@ $messages['kn'] = array(
 	'centralauth-merge-step2-title' => 'ಹೆಚ್ಚು ಖಾತೆಗಳನ್ನು ದೃಢೀಕರಿಸಿ',
 	'centralauth-merge-step2-submit' => 'ಪ್ರವೇಶದ ಮಾಹಿತಿಯನ್ನು ದೃಢೀಕರಿಸಿ',
 	'centralauth-merge-dryrun-or' => "'''ಅಥವಾ'''",
+	'centralauth-merge-step3-title' => 'ಏಕೀಕೃತ ಖಾತೆಯನ್ನು ರಚಿಸಿ',
+	'centralauth-merge-step3-detail' => 'ನೀವು ಈ ಕೆಳಗಿನ ವಿಕಿಗಳನ್ನು ಲಗತ್ತಿಸಲಾದ ನಿಮ್ಮ ಏಕೀಕೃತ ಖಾತೆಯನ್ನು ರಚಿಸಲು ತಯಾರಾಗಿದ್ದೀರಿ:',
 	'centralauth-merge-step3-submit' => 'ಖಾತೆಗಳನ್ನು ಏಕೀಕರಿಸಿ',
 	'centralauth-complete' => 'ಪ್ರವೇಶ ಏಕೀಕರಣ ಸಫಲವಾಗಿದೆ!',
 	'centralauth-incomplete' => 'ಪ್ರವೇಶ ಏಕೀಕರಣ ಸಫಲವಾಗಲಿಲ್ಲ!',
 	'centralauth-notice-dryrun' => "<div class='successbox'>ಪ್ರಾತ್ಯಕ್ಷಿಕಾಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ</div><br clear='all'/>",
 	'centralauth-list-home-title' => 'ಗೃಹವಿಕಿ',
+	'centralauth-list-home-dryrun' => 'ಈ ವಿಕಿಯಲ್ಲಿ ಉಪಯೋಗಿಸಿದಂತಹ ಪ್ರವೇಶ ನಿಕುಂಚ ಹಾಗು ವಿದ್ಯುನ್ಮಾನಪತ್ರವಿಳಾಸವನ್ನು ನಿಮ್ಮ ಏಕೀಕೃತ ಖಾತೆಗೆ ಬಳಸಲಾಗುತ್ತದೆ.',
 	'centralauth-list-attached-title' => 'ಜೋಡಿಸಲಾದ ಖಾತೆಗಳನ್ನು',
 	'centralauth-list-unattached-title' => 'ಜೋಡಿತವಾಗಿಲ್ಲದ ಖಾತೆಗಳು',
 	'centralauth-foreign-link' => 'ಬಳಕೆದಾರ $1 $2ರೊಳಗೆ',
@@ -23536,6 +23614,27 @@ $messages['rue'] = array(
 	'right-globalgrouppermissions' => 'Адміністрація ґлобалных ґруп',
 );
 
+/** Sanskrit (संस्कृतम्)
+ * @author Ansumang
+ */
+$messages['sa'] = array(
+	'centralauth-merge-method-primary' => 'गृह विकि',
+	'centralauth-merge-method-new' => 'नूतन वृत्तान्त',
+	'centralauth-finish-password' => 'सङ्केतशब्द:',
+	'centralauth-finish-login' => 'प्रविश्यताम्',
+	'centralauth-finish-send-confirmation' => 'ई-मेल सङ्केतशब्द',
+	'centralauth-admin-username' => 'योजक नामन्:',
+	'centralauth-admin-info-id' => 'योजक आईड़ि:',
+	'centralauth-admin-info-home' => 'गृह विकि:',
+	'centralauth-admin-yes' => 'आम',
+	'centralauth-editgroup-reason' => 'कारणम् :',
+	'centralauth-editset-name' => 'नाम:',
+	'centralauth-editset-type' => 'प्रकारम्:',
+	'centralauth-editset-wikis' => 'विकि:',
+	'centralauth-editset-reason' => 'कारणम् :',
+	'centralauth-editset-submit' => 'क्षमते',
+);
+
 /** Sakha (Саха тыла)
  * @author HalanTul
  */
@@ -26413,6 +26512,7 @@ $messages['ta'] = array(
 	'centralauth-merge-dryrun-or' => "'''அல்லது'''",
 	'centralauth-merge-step3-title' => 'ஒன்றாக்கப்பட்ட கணக்கை உருவாக்கவும்',
 	'centralauth-merge-step3-submit' => 'கணக்குகளை ஒன்றாக்கவும்',
+	'centralauth-list-home-title' => 'முகப்பு விக்கி',
 	'centralauth-list-attached-title' => 'இணைக்கப்பட்ட கணக்குகள்',
 	'centralauth-list-unattached-title' => 'இணைக்கப்படாத கணக்குகள்',
 	'centralauth-merge-method-primary' => 'உள் விக்கி',
@@ -26436,6 +26536,7 @@ $messages['ta'] = array(
 	'centralauth-finish-login' => 'புகுபதிகை',
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
 	'centralauth-attach-title' => 'கணக்கை உறுதிசெய்',
+	'centralauth' => 'உலகளாவிய பயனர் மேலாளர்',
 	'centralauth-admin-manage' => 'பயனீட்டாளர் தரவை நிர்வகி',
 	'centralauth-admin-username' => 'பயனர் பெயர்:',
 	'centralauth-admin-lookup-ro' => 'பயனர் பற்றிய தகவல்களை பார்க்கவும்',
@@ -26542,6 +26643,11 @@ $messages['ta'] = array(
 	'centralauth-log-status-oversighted' => 'கவனக்குறைவு',
 	'centralauth-log-status-none' => '(எதுவுமில்லை)',
 	'centralauth-rightslog-name' => 'உலககளவிய உரிமைகள் குறிப்பேடு',
+	'centralauth-rightslog-entry-setrename' => 'பெயர்மாற்றப்பட்ட விக்கி அமைவுகள் "$2" லிருந்து "$1" க்கு.',
+	'centralauth-rightslog-entry-setnewtype' => 'மாற்றப்பட்ட "$1" ன் வகை  $2விலிருந்து  $3 க்கு',
+	'centralauth-rightslog-entry-setchange' => 'மாற்றப்பட்ட விக்கிகள்  "$1" ல்: சேர்க்கப்பட்டது: $2; நீக்கப்பட்டது: $3',
+	'centralauth-rightslog-entry-deleteset' => 'நீக்கப்பட்ட விக்கி அமைவு "$1"',
+	'centralauth-rightslog-set-optin' => 'தெரிவு-அடிப்படையிலான',
 	'autologin' => 'தானாக செய்யப்பட்ட புகுபதிகை',
 	'centralauth-existinggroup-legend' => 'இருக்கும் குழுக்கள்',
 	'centralauth-newgroup-legend' => 'புதியதாக ஒரு குழுவை உருவாக்கு',
@@ -29874,6 +29980,15 @@ $messages['yue'] = array(
 	'right-globalgrouppermissions' => '管理全域組',
 );
 
+/** Zeeuws (Zeêuws)
+ * @author Ooswesthoesbes
+ */
+$messages['zea'] = array(
+	'mergeaccount' => "Staotus samm'nvoeh'n hebrukers",
+	'centralauth-groupname' => 'de Wikimedia Foundation',
+	'centralauth-desc' => "[[Special:MergeAccount|Samm'nhevoehde hebrukers]] in wiki's von {{int:Centralauth-groupname}}",
+);
+
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
  * @author Anakmalaysia
@@ -30194,6 +30309,7 @@ $messages['zh-hant'] = array(
 	'mergeaccount' => '使用者帳號整合',
 	'centralauth-groupname' => '維基媒體基金會',
 	'centralauth-desc' => '[[Special:MergeAccount|整合]]{{int:Centralauth-groupname}}的帳號',
+	'centralauth-antispoof-desc' => '給CentralAuth添加AntiSpoof技術',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|將多個帳號合併]]為單一使用者帳號',
 	'centralauth-merge-denied' => '很抱歉，您沒有權限存取這個頁面',
 	'centralauth-merge-notlogged' => '請<span class="plainlinks">[$1 登入]</span>以驗證您的戶口是否已經完成整合。',
