@@ -123,7 +123,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(), 'name' => 'centralauth-globalgroups-newgroup' ) );
 			$html .= Html::hidden( 'wpGroup', $group );
-			$html .= Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+			$html .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		}
 
 		$fields = array();
@@ -323,7 +323,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	/**
 	 * @param $group
-	 * @param $output
+	 * @param $output OutputPage
 	 */
 	protected function showLogFragment( $group, $output ) {
 		$title = SpecialPage::getTitleFor( 'GlobalUsers', $group );

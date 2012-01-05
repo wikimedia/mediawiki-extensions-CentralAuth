@@ -103,7 +103,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 	/**
 	 * @param $user User
-	 * @param $output
+	 * @param $output OutputPage
 	 */
 	protected function showLogFragment( $user, $output ) {
 		$pageTitle = Title::makeTitleSafe( NS_USER, $user->getName() );

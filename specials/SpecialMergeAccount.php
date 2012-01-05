@@ -94,7 +94,6 @@ class SpecialMergeAccount extends SpecialPage {
 	 * data, so they won't be found floating in the same place.
 	 */
 	private function initSession() {
-		global $wgUser;
 		$this->mSessionToken = $this->getUser()->generateToken();
 
 		// Generate a random binary string
@@ -219,7 +218,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function doInitialMerge() {
-		global $wgUser, $wgCentralAuthDryRun;
+		global $wgCentralAuthDryRun;
 		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
 
 		if ( $wgCentralAuthDryRun ) {
@@ -326,7 +325,6 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function showCleanupForm() {
-		global $wgUser;
 		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
 
 		$merged = $globalUser->listAttached();
@@ -467,7 +465,6 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 */
 	private function actionForm( $action, $title, $text ) {
-		global $wgUser;
 		return
 			'<div id="userloginForm">' .
 			Xml::openElement( 'form',
@@ -475,7 +472,7 @@ class SpecialMergeAccount extends SpecialPage {
 					'method' => 'post',
 					'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::element( 'h2', array(), $title ) .
-			Html::hidden( 'wpEditToken', $this->getUser()->editToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'wpMergeAction', $action ) .
 			Html::hidden( 'wpMergeSessionToken', $this->mSessionToken ) .
 			Html::hidden( 'wpMergeSessionKey', bin2hex( $this->mSessionKey ) ) .
@@ -542,7 +539,6 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 */
 	private function step2PasswordForm( $unattached ) {
-		global $wgUser;
 		return $this->passwordForm(
 			'dryrun',
 			wfMsg( 'centralauth-merge-step2-title' ),
@@ -558,7 +554,6 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 */
 	private function step3ActionForm( $home, $attached, $methods ) {
-		global $wgUser;
 		return $this->actionForm(
 			'initial',
 			wfMsg( 'centralauth-merge-step3-title' ),

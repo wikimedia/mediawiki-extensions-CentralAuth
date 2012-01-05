@@ -87,7 +87,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				);
 				if ( $account['blocked'] ) {
 					$a['blocked'] = array(
-						'expiry' => Block::decodeExpiry( $account['block-expiry'], TS_ISO_8601 ),
+						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
 						'reason' => $account['block-reason']
 					);
 				}
@@ -104,7 +104,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				);
 				if ( $account['blocked'] ) {
 					$a['blocked'] = array(
-						'expiry' => Block::decodeExpiry( $account['block-expiry'], TS_ISO_8601 ),
+						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
 						'reason' => $account['block-reason']
 					);
 				}

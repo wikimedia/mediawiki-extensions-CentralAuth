@@ -167,7 +167,7 @@ class SpecialWikiSets extends SpecialPage {
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
 
-			$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+			$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 			$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
 		} else {
 			$form = array();
@@ -220,7 +220,7 @@ class SpecialWikiSets extends SpecialPage {
 			$i++;
 		}
 		$body = '';
-		foreach( $splitLists as $column => $splitList ) {
+		foreach( $splitLists as $splitList ) {
 			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
 			foreach( $splitList as $listitem ) {
 				$body .= Html::element( 'li', array(), $listitem );
@@ -250,7 +250,7 @@ class SpecialWikiSets extends SpecialPage {
 		$legend = wfMsgHtml( 'centralauth-editset-legend-delete', $set->getName() );
 		$form = array( 'centralauth-editset-reason' => Xml::input( 'wpReason' ) );
 		$url = htmlspecialchars( SpecialPage::getTitleFor( 'WikiSets', "delete/{$subpage}" )->getLocalUrl() );
-		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 
 		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend><form action='{$url}' method='post'>" );
 		$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit-delete' ) );

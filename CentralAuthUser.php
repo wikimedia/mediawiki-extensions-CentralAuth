@@ -48,6 +48,9 @@ class CentralAuthUser extends AuthPluginUser {
 	const HIDDEN_LISTS = 'lists';
 	const HIDDEN_OVERSIGHT = 'suppressed';
 
+	/**
+	 * @param $username string
+	 */
 	function __construct( $username ) {
 		$this->mName = $username;
 		$this->resetState();
@@ -1167,7 +1170,7 @@ class CentralAuthUser extends AuthPluginUser {
 				/* $reason */ $blockReason,
 				/* $timestamp */ wfTimestampNow(),
 				/* $auto */ false,
-				/* $expiry */ Block::infinity(),
+				/* $expiry */ $dbw->getInfinity(),
 				/* anonOnly */ false,
 				/* $createAccount */ true,
 				/* $enableAutoblock */ true,

@@ -328,7 +328,7 @@ class SpecialCentralAuth extends SpecialPage {
 						$this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
 					'id' => 'mw-centralauth-merged' ) ) .
 			Html::hidden( 'wpMethod', 'unmerge' ) .
-			Html::hidden( 'wpEditToken', $this->getUser()->editToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) . "\n" .
 			'<thead><tr>' .
 				( $this->mCanUnmerge ? '<th></th>' : '' ) .
@@ -570,7 +570,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
 				'id' => "mw-centralauth-$action" ) ) .
 			Html::hidden( 'wpMethod', $action ) .
-			Html::hidden( 'wpEditToken', $this->getUser()->editToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			wfMsgExt( "centralauth-admin-{$action}-description", 'parse' ) .
 			Xml::buildForm(
 				array( 'centralauth-admin-reason' => Xml::input( 'reason',
@@ -585,7 +585,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$form = '';
 		$form .= Xml::fieldset( wfMsg( 'centralauth-admin-status' ) );
 		$form .= Html::hidden( 'wpMethod', 'set-status' );
-		$form .= Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		$form .= wfMsgExt( 'centralauth-admin-status-intro', 'parse' );
 
 		// Radio buttons
