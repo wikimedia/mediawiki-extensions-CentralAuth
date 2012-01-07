@@ -17635,6 +17635,7 @@ $messages['mr'] = array(
 	'mergeaccount' => 'खाते एकत्रीकरण स्थिती',
 	'centralauth-groupname' => 'विकीमेडिया प्रतिष्ठान',
 	'centralauth-desc' => 'विकिमीडिया फाऊंडेशन विकिंमध्ये [[Special:MergeAccount|सदस्यत्व एकत्रीकरण]] करा',
+	'centralauth-antispoof-desc' => 'स्पूफरोधक तंत्रज्ञान CentralAuthला जोडते',
 	'centralauth-mergeaccount-desc' => 'एका सदस्यनामाची [[Special:MergeAccount|अनेक खाती]] एकत्रीत करा.',
 	'centralauth-merge-denied' => 'माफ करा, या पानावर जाण्याची तुम्हाला परवानगी नाही.',
 	'centralauth-merge-notlogged' => 'कृपया आपले खाते एकत्रीकरण व्यवस्थित आहे हे तपासण्यासाठी [$1प्रवेश करा] <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} प्रवेश करा]</span>',
@@ -17785,6 +17786,12 @@ $messages['mr'] = array(
 	'centralauth-admin-status-submit' => 'संग्रहांची  स्थिती',
 	'centralauth-admin-status-nonexistent' => 'त्रुटी: "<nowiki>$1</nowiki>" हे वैश्विक खाते अस्तित्वात नाही.',
 	'centralauth-admin-setstatus-success' => 'आपण या वैश्विक खात्याची स्थिति यशस्वीरीत्या बदलवली आहे.',
+	'centralauth-admin-status-reasons' => '*सामान्य प्रतिबंधन कारणे
+‌**केवळ-उपद्रवकारक खाते
+**केवळ-उत्पात खाते
+*सामान्य प्रतिबंधन आणि लपविण्याची कारणे
+**उत्पाती सदस्याचे सदस्य नाव
+**अयोग्य व्यक्तिगत माहिती',
 	'centralauth-admin-logsnippet' => 'पूर्वीचे वैश्विक खात्यातील बदल',
 	'centralauth-admin-suppressreason' => ' $1 ने खालील कारणांसाठी वैश्विक पातळीवर याचा बिमोड केला आहे: $2',
 	'globalusers' => 'वैश्विक सदस्य यादी',
@@ -17825,6 +17832,7 @@ $messages['mr'] = array(
 	'centralauth-log-entry-hide' => '"$1" वैश्विक खाते लपवा',
 	'centralauth-log-entry-unhide' => '"$1" वैश्विक खाते लपविणे रद्द करा',
 	'centralauth-log-entry-lockandhide' => '"$1" वैश्विक खात्यास कुलुप लावुन लपविण्यात आले.',
+	'centralauth-log-entry-chgstatus' => 'वैश्विक खात्याकरिता बदललेली स्थिती "$1":   $2 (सेट) करा;  $3 पूर्ववत (अनसेट)करा',
 	'centralauth-log-status-locked' => 'कुलुपबंद',
 	'centralauth-log-status-hidden' => 'लपविलेले',
 	'centralauth-log-status-oversighted' => 'दुर्लक्षित',
@@ -17835,12 +17843,15 @@ $messages['mr'] = array(
 	'centralauth-rightslog-entry-groupperms2' => '$1 ची गट परवानगी बदलविण्यात आली.
 $2 जोडले.
 $3 काढले.',
+	'centralauth-rightslog-entry-groupperms3' => '$1करिता $2पासून  $3 कडे बंधनातील विकिसंचांचे गट बदलले',
 	'centralauth-rightslog-header' => 'ही वैश्विक गटांवर झालेल्या कार्यांची नोंद आहे: सदस्यत्व आणि अधिकार बदल',
 	'centralauth-rightslog-entry-newset' => '$1 हा $2 विकिसंच तयार केल. यात पुढील विकि आहेत: $3',
 	'centralauth-rightslog-entry-setrename' => '"$2" ते  "$1" विकी संग्रहाचे नामांतर केले',
 	'centralauth-rightslog-entry-setnewtype' => '"$1" चा प्रकार $2 ते $3 असा बदलविला.',
 	'centralauth-rightslog-entry-setchange' => '"$1"मधिल विकीप्रकल्प बदलविले:जोडले: $2; काढले: $3',
 	'centralauth-rightslog-entry-deleteset' => '"$1" विकी संग्रह वगळला',
+	'centralauth-rightslog-set-optin' => 'स्वयं-निवडीच्या आधारावर',
+	'centralauth-rightslog-set-optout' => 'बाहेर पडण्याच्या निर्णयावर आधारीत',
 	'autologin' => 'आपोआप लॉगइन',
 	'centralauth-autologin-desc' => 'हे विशेष पान मीडियाविकिच्या खाजगी वापराचे आहे.
 जेव्हा तुम्ही [[Special:UserLogin|प्रवेश कराल]], मध्यवर्ती प्रवेश यंत्रणा तुमच्या ब्राउझरला सर्व जोडलेल्या डोमेनमधील हे पान चित्र दुवे वापरून मागवायची सूचना देईल.
@@ -17884,6 +17895,8 @@ $3 काढले.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|रद्द करा]])',
 	'centralauth-editset-new' => 'नवा संच तयार करा',
 	'centralauth-editset-notfound' => 'विकी संच "$1" सापडत नाही.',
+	'centralauth-editset-optin' => 'स्वयं-स्विकारनिर्णयाच्या आधारावर  (केवळ निर्देशित विकिंचा आंतर्भाव)',
+	'centralauth-editset-optout' => 'बाहेर-सोडण्याच्या आधारावर (निर्देशित केलेल्याशिवायचे सर्व विकि)',
 	'centralauth-editset-legend-edit' => '"$1" विकी संग्रह संपादित केल्या जात आहे',
 	'centralauth-editset-legend-view' => 'विकी संच "$1"',
 	'centralauth-editset-legend-new' => 'नवा विकी संच बनवा',
@@ -17906,6 +17919,8 @@ $3 काढले.',
 	'centralauth-editset-success' => 'विकी संग्रह यशस्वीरित्या बदलवला',
 	'centralauth-editset-success-delete' => 'विकी संग्रह यशस्वीरित्या वगळला',
 	'centralauth-editset-return' => 'मुख्य दृष्यावर चला',
+	'centralauth-readonly' => 'CentralAuth विदागारास ताळे लावले',
+	'centralauth-readonlytext' => 'बहूधा नियमीत देखभालीकरिता, CentralAuth  विदागार सध्या नव्या एंट्रीज आणि इतर बदलांपासून लॉक केला आहे ,देखभालीच्या कामानंतर तो सुरळीत होण्याची शक्यता आहे.',
 	'right-globalgroupmembership' => 'वैश्विक गट सदस्यत्व बदला',
 	'right-centralauth-autoaccount' => 'आपोआप वैश्विक खात्यासह दाखल व्हा.',
 	'right-centralauth-unmerge' => 'वैश्विक खाते असम्मीलित करा',
