@@ -220,7 +220,9 @@ class WikiSet {
 		global $wgMemc;
 		$data = array();
 		foreach ( self::$mCacheVars as $var ) {
-			$data[$var] = $this->$var;
+			if ( isset( $this->$var ) ) {
+				$data[$var] = $this->$var;
+			}
 		}
 		$wgMemc->set( self::memcKey( $this->mId ), $data );
 	}
