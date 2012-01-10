@@ -9,6 +9,9 @@ class WikiSet {
 	private $mName;	// Display name of the group
 	private $mType;	// Opt-in based or opt-out based
 	private $mWikis;	// List of wikis
+	// This property is used, don't remove it
+	// (That means you Reedy)
+	private $mVersion = self::VERSION;      // Caching purposes
 
 	static $mCacheVars = array(
 		'mId',
