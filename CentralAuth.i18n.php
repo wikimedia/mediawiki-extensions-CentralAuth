@@ -3196,7 +3196,7 @@ $messages['bg'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Сливане на потребителски сметки]] в няколко уикита от {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Слива няколко сметки]] за използване на Единно потребителско влизане',
 	'centralauth-merge-denied' => 'За съжаление, нямате права за достъп до тази страница.',
-	'centralauth-merge-notlogged' => 'Моля, <span class="plainlinks">[$1 влезте]</span>, за да проверите дали акаутите са напълно обединени.',
+	'centralauth-merge-notlogged' => 'Необходимо е <span class="plainlinks">[$1 да влезете]</span>, за да проверите дали сметките са напълно обединени.',
 	'centralauth-merge-welcome' => "Вашата потребителска сметка все още не е преминала към новата система на {{int:Centralauth-groupname}} за единна потребителска сметка.'''
 
 Ако решите да обедините сметките си, ще можете да използвате едно и също потребителско име и парола, за да влизате във всички уикита на {{int:Centralauth-groupname}} на всички достъпни езици.
@@ -3329,7 +3329,7 @@ $messages['bg'] = array(
 	'centralauth-admin-status-submit' => 'Задаване на състояние',
 	'centralauth-admin-status-nonexistent' => 'Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-setstatus-success' => 'Успешно променихте статуса на глобалната си сметка.',
-	'centralauth-admin-logsnippet' => 'Предишни промени в глобалния акаунт',
+	'centralauth-admin-logsnippet' => 'Предишни промени в глобалната сметка',
 	'globalusers' => 'Списък на глобалните сметки',
 	'centralauth-listusers-locked' => 'заключена',
 	'centralauth-listusers-attached' => '[[User:$1|съществува локално]]',
@@ -3438,7 +3438,7 @@ $messages['bg'] = array(
 	'centralauth-editset-success-delete' => 'Наборът от уикита е успешно изтрит.',
 	'centralauth-editset-return' => 'Връщане към основния изглед',
 	'right-globalgroupmembership' => 'Промяна на членството в глобални групи',
-	'right-centralauth-autoaccount' => 'Автоматично влизане с глобален акаунт',
+	'right-centralauth-autoaccount' => 'Автоматично влизане чрез глобална сметка',
 	'right-centralauth-unmerge' => 'Разделяне на глобалната сметка',
 	'right-centralauth-lock' => 'Заключване или скриване на глобална сметка',
 	'right-centralauth-merge' => 'Сливане на тяхната сметка',
