@@ -1954,7 +1954,7 @@ Motivu: $1',
 	'centralauth-admin-none-selected' => 'Nun se seleicionaron cuentes pa modificar.',
 	'centralauth-admin-already-unmerged' => 'Omitiendo $1, yá nun ta fusionada',
 	'centralauth-admin-unmerge-success' => '{{PLURAL:$1|Desfusionóse con ésitu $1 cuenta|Desfusionáronse con ésitu $1 cuentes}}',
-	'centralauth-admin-delete-title' => 'Eliminar cuenta',
+	'centralauth-admin-delete-title' => 'Desaniciar cuenta',
 	'centralauth-admin-delete-description' => 'Eliminar la cuenta global va eliminar cualesquies preferencia global, desasociar toles cuentes llocales y dexar el nome global llibre pa otros usuarios.
 Toles cuentes llocales van siguir esistiendo.
 Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los valores que teníen enantes de la fusión.',
