@@ -17720,23 +17720,21 @@ $messages['mr'] = array(
 	'centralauth-merge-denied' => 'माफ करा, या पानावर जाण्याची तुम्हाला परवानगी नाही.',
 	'centralauth-merge-notlogged' => 'कृपया आपले खाते एकत्रीकरण व्यवस्थित आहे हे तपासण्यासाठी [$1प्रवेश करा] <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} प्रवेश करा]</span>',
 	'centralauth-merge-welcome' => "'''तुमचे सदस्य खाते अजून विकिमीडियाच्या एकत्रीत खात्यात समाविष्ट करण्यात आलेले नाही.'''
-
 जर तुम्ही तुमचे खाते समाविष्ट केलेत, तर तुम्ही एकाच सदस्यनाम व परवलीचा शब्द वापरून सर्व भाषांतील सर्व विकि प्रकल्पांमध्ये प्रवेश करू शकता.
-ह्यामुळे तुम्हांला शेअर्ड प्रकल्पांमध्ये काम करणे सोईचे जाईल. उदा. [http://commons.wikimedia.org/ विकिमीडिया कॉमन्स] इथे संचिका चढविणे, तसेच दोन वेगवेगळ्या व्यक्ती एकाच सदस्यनामानी दोन प्रकल्पांमध्ये काम करीत असल्यास निर्माण होणार्‍या संभ्रमापासून सुटका मिळेल.
-
+ह्यामुळे तुम्हांला शेअर्ड प्रकल्पांमध्ये (बन्धु प्रकल्पांमध्ये) काम करणे सोईचे जाईल. उदा. [http://commons.wikimedia.org/ विकिमीडिया कॉमन्स] इथे संचिका चढविणे, तसेच दोन वेगवेगळ्या व्यक्ती एकाच सदस्यनामानी दोन प्रकल्पांमध्ये काम करीत असल्यास निर्माण होणार्‍या संभ्रमापासून सुटका मिळेल.
 जर इतर कोणीतरी तुमचे सदस्यनाम अगोदरच घेतले असेल तर तुम्ही त्यांच्याशी संपर्क करून अथवा प्रबंधकांकरवी बदल घडवून आणू शकता.",
 	'centralauth-merge-step1-title' => 'खाते एकत्रीकरण सुरू करा',
 	'centralauth-merge-step1-detail' => 'कृपया इथे तुमचा परवलीचा शब्द लिहा.
 तुमचा परवलीचा शब्द तसेच इ-मेल पत्ता इतर विकिंशी पडताळून पाहण्यात येईल.
 जोपर्यंत तुम्ही सहमती देत नाही तोपर्यंत कुठलेही बदल केले जाणार नाहीत.',
-	'centralauth-merge-step1-submit' => 'खाते माहिती निश्चितकरा',
+	'centralauth-merge-step1-submit' => 'खात्याची माहिती खात्री करा',
 	'centralauth-merge-step2-title' => 'अजून खाती निवडा',
-	'centralauth-merge-step2-detail' => 'तुम्ही सांगितलेल्या मुख्य विकिशी काही खाती जोडता आलेली नाहीत. जर ही खाती तुमचीच असतील तर तुम्ही ही खाती त्यांचा परवलीचा शब्द देऊन जोडून घेऊ शकता.',
+	'centralauth-merge-step2-detail' => 'तुम्ही सांगितलेल्या मुख्य विकिशी काही खाती जोडता आलेली नाहीत. जर ही खाती तुमचीच असतील तर तुम्ही ही खाती त्यांचा परवलीचा शब्द (पासवर्ड) देऊन जोडून घेऊ शकता.',
 	'centralauth-merge-step2-submit' => 'सदस्य प्रवेश माहिती तपासून पहा',
 	'centralauth-merge-dryrun-complete' => 'सध्या अस्तित्वात असलेल्या सर्व खात्यांचे आपोआप एकत्रीकरण करता येऊ शकते!
 
 तुमच्या खात्यांमध्ये अजून बदल करण्यात आलेले नाहीत.',
-	'centralauth-merge-dryrun-incomplete' => 'तुम्ही पुढे जायला तयार आहात, पण काही खाती ही आपोआप तपासता आलेली नाहीत व ती जोडली जाणार नाहीत. तुम्ही ती नंतर एकत्र करू शकता.
+	'centralauth-merge-dryrun-incomplete' => 'तुम्ही पुढे जाऊ शकता, पण काही खाती ही आपोआप तपासता आलेली नाहीत व ती जोडली जाणार नाहीत. तुम्ही ती नंतर एकत्र करू शकता.
 
 अजून तुमच्या खात्यांमध्ये बदल केलेले नाहीत.',
 	'centralauth-merge-dryrun-or' => "'''किंवा'''",
@@ -17773,8 +17771,8 @@ $messages['mr'] = array(
 	'centralauth-list-unattached' => '"$1" हे खाते आपोआप तुमचेच आहे याची खालील संकेतस्थळांवर खात्री होऊ शकलेली नाही; कदाचित त्यांचा परवलीचा शब्द तुमच्या मुख्य खात्यापेक्षा वेगळा असू शकतो:',
 	'centralauth-foreign-link' => '$2 वरील सदस्य $1',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|योगदान|योगदान}} on $2',
-	'centralauth-merge-method-primary' => 'मूळ विकी',
-	'centralauth-merge-method-empty' => 'संपादने नाहीत',
+	'centralauth-merge-method-primary' => 'मुख्य विकी',
+	'centralauth-merge-method-empty' => 'योगदान नाही',
 	'centralauth-merge-method-mail' => 'इ-मेलने शाबीत केले',
 	'centralauth-merge-method-password' => 'परवलीच्या शब्दाने सिद्ध केले',
 	'centralauth-merge-method-admin' => 'प्रबंधक-विलीन खाते',
@@ -17829,14 +17827,14 @@ $messages['mr'] = array(
 	'centralauth-admin-unattached' => 'न जोडलेली खाती',
 	'centralauth-admin-blocked' => 'अवरुद्ध केले,   $4. ला $3 समाप्त  होत आहे  
 कारण : $2',
-	'centralauth-admin-blocked-indef' => 'अनिश्चित काळासाठी प्रतिबंधित.
+	'centralauth-admin-blocked-indef' => 'अनिश्चित काळासाठी प्रतिबंधित (बंदी)
 कारण :$1',
 	'centralauth-admin-blocklog' => 'ब्लॉक यादी',
 	'centralauth-admin-list-localwiki' => 'स्थानिक विकि',
 	'centralauth-admin-list-attached-on' => 'ला जोडली',
 	'centralauth-admin-list-method' => 'पद्धत',
 	'centralauth-admin-list-editcount' => 'संपादन संख्या',
-	'centralauth-admin-list-blocked' => 'प्रतिबन्धित',
+	'centralauth-admin-list-blocked' => 'प्रतिबन्धित (बंदी घातलेले)',
 	'centralauth-admin-unmerge' => 'निवडलेले अविलग करा',
 	'centralauth-admin-merge' => 'निवडलेली खाती विलीन करा',
 	'centralauth-admin-bad-input' => ' विलीन निवड अवैध',
