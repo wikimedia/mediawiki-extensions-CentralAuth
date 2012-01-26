@@ -29237,7 +29237,7 @@ $messages['vep'] = array(
  */
 $messages['vi'] = array(
 	'mergeaccount' => 'Tình trạng hợp nhất tài khoản',
-	'centralauth-groupname' => 'Quỹ Hỗ trợ Wikimedia',
+	'centralauth-groupname' => 'Quỹ Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Hợp nhất]] tài khoản tại các wiki của {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Cung cấp công nghệ AntiSpoof cho CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Hợp nhất các tài khoản]] để cho các thành viên chỉ cần đăng nhập một lần',
