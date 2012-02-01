@@ -7598,6 +7598,7 @@ Puedes ver y modificar todos ellos, o crear un ajuste nuevo.',
  * @author Avjoska
  * @author Jaan513
  * @author Ker
+ * @author Morel
  * @author Pikne
  * @author WikedKentaur
  */
@@ -7771,6 +7772,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-prefs-not-managed' => 'Ei kasuta ühendatud kontot',
 	'centralauth-prefs-unattached' => 'Kinnitamata',
 	'centralauth-prefs-complete' => 'Kõik korras!',
+	'centralauth-prefs-migration' => 'Üleminekuseisundis',
 	'centralauth-prefs-count-attached' => 'Sinu konto on aktiivne {{PLURAL:$1|ühe|$1}} projekti lehekülgedel.',
 	'centralauth-prefs-count-unattached' => '{{PLURAL:$1|Ühes|$1}} projektis on endiselt ühendamata sinu nimega {{PLURAL:$1|konto|kontod}}.',
 	'centralauth-prefs-manage' => 'Vaata oma ühendkontot',
@@ -19375,6 +19377,7 @@ $messages['ne'] = array(
  * @author SPQRobin
  * @author Servien
  * @author Siebrand
+ * @author TBloemink
  */
 $messages['nl'] = array(
 	'mergeaccount' => 'Status samenvoegen gebruikers',
@@ -19496,7 +19499,7 @@ Als de overkoepelende gebruiker ook van u is, dan kunt u deze gebruiker samenvoe
 	'centralauth-admin-list-legend-ro' => 'Lijst met lokale gebruikers',
 	'centralauth-admin-list-legend-rw' => 'Lokale gebruikers loskoppelen',
 	'centralauth-admin-unattached' => 'niet verbonden',
-	'centralauth-admin-blocked' => 'Geblokkeerd met het vervaldatum $3 om $4.
+	'centralauth-admin-blocked' => 'Geblokkeerd met de vervaldatum $3 om $4.
 Reden: $2',
 	'centralauth-admin-blocked-indef' => 'Voor onbepaalde tijd geblokkeerd.
 Reden: $1',
@@ -23847,7 +23850,7 @@ $messages['sah'] = array(
 	'centralauth-attach-submit' => 'Ааты көһөрөргө',
 	'centralauth-attach-success' => 'Бу аат сүрүн аакка холбосто.',
 	'centralauth' => 'Холбоммут ааттар салайааччылара',
-	'centralauth-admin-intro' => 'Бу үнүстүрүмүөн көмөтүнэн биирдэһиллибит аан ааттары уларытыахха эбэтэр оноруохха сөп.',
+	'centralauth-admin-intro' => 'Бу сэбиргэл көмөтүнэн биирдэһиллибит аан ааттары уларытыахха эбэтэр оҥоруохха сөп.',
 	'centralauth-admin-manage' => 'Кыттааччылар тустарынан сибидиэнньэлэри көрүү/уларытыы',
 	'centralauth-admin-username' => 'Кыттааччы аата:',
 	'centralauth-admin-lookup-ro' => 'Кыттааччы туһунан сибидиэнньэлэри көрүү',
