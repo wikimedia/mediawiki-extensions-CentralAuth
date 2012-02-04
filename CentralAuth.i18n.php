@@ -10183,6 +10183,7 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 /** Gujarati (ગુજરાતી)
  * @author Ankit
  * @author Dineshjk
+ * @author Dsvyas
  * @author KartikMistry
  * @author Rangilo Gujarati
  * @author Sushant savla
@@ -10190,7 +10191,16 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 $messages['gu'] = array(
 	'mergeaccount' => 'લૉગિન એકીકરણ સ્થિતિ',
 	'centralauth-groupname' => 'ધ વિકિમીડિઆ ફાઉન્ડેશન',
+	'centralauth-desc' => '{{int:Centralauth-groupname}}ના બધા વિકિમાં [[Special:MergeAccount|ખાતું વિલીન કરો]]',
+	'centralauth-antispoof-desc' => 'CentralAuthમાં છેતરામણીરોધક ટેક્નોલોજી ઉમેરે છે',
+	'centralauth-mergeaccount-desc' => 'એકાકી સભ્ય પ્રવેશ માટે [[Special:MergeAccount|બહુવિધ ખાતાં વિલીન કરો]]',
 	'centralauth-merge-denied' => 'માફ કરશો તમને આ પાનું વાપરવા માટે પરવાનગી નથી',
+	'centralauth-merge-notlogged' => 'તમારાં ખાતાં સંપૂર્ણપણે વિલીન થઈ ગયા છે કે નહી તે ચકાસવા માટે કૃપા કરી <span class="plainlinks">[$1 પ્રવેશ કરો]</span>.',
+	'centralauth-merge-welcome' => "'''તમારૂં ખાતું હજુ સુધી {{int:Centralauth-groupname}}ની સંગઠિત પ્રવેશ પ્રણાલીમાં સ્થળાંતરિત નથી થયું.'''
+
+જો તમે તમારા ખાતાં સ્થળાંતરિત કરવાનું પસંદ કરશો તો તમારા એકજ સભ્ય નામ અને ગુપ્ત સંજ્ઞા વડે તમે બધીજ ભાષાઓમાં ઉપલબ્ધ {{int:Centralauth-groupname}}ના બધા જ વિકિમાં પ્રવેશ કરી શકશો.
+
+જો કોઈકે અન્ય કોઈક વિકિ જાળસ્થળમાં તમારૂં ઇચ્છિત સભ્ય નામ પેહેલેથી લઈ લીધું હશે તો તેમને આનાથી કોઇ અસર નહી થાય. પરંતુ તમને તેમની સાથે વાત કરીને કે જે-તે પ્રબંધકો સાથે મળીને તે સભ્યનામ મેળવવાનો મોકો આપવામાં આવશે.",
 	'centralauth-merge-step1-title' => 'પ્રવેશ એકીકરણ શરૂ',
 	'centralauth-merge-step1-detail' => 'તમારો પાસવર્ડ દાખલ કરો.
 તમારો પાસવર્ડ અને રજીસ્ટર ઈ મેલ બીજા વીકી પર ચેચ્ક તપાસવામાં આવશે.
@@ -10198,14 +10208,21 @@ $messages['gu'] = array(
 	'centralauth-merge-step1-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
 	'centralauth-merge-step2-title' => 'વધુ એકાઉન્ટ્સ ની ખાતરી કરો',
 	'centralauth-merge-step2-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
+	'centralauth-merge-dryrun-complete' => 'હાલમાં અસ્તિત્વમાં હોય તેવા બધાંજ ખાતાં સંગઠિત કરી શકાય તેમ છે!
+
+તમારા ખાતામાં હજુ સુધી કોઈ ફેરફાર કરવામાં આવ્યો નથી.',
 	'centralauth-merge-dryrun-or' => "'''અથવા'''",
 	'centralauth-merge-step3-title' => 'ઐક્ય ખાતું બનાવો',
+	'centralauth-merge-step3-submit' => 'ખાતાં સંગઠિત કરો',
 	'centralauth-complete' => 'લોગીન એકીકરણ સંપન્ન',
 	'centralauth-incomplete' => 'લોગીન એકીકરણ પૂર્ણ થયું નથી',
+	'centralauth-error-locked' => 'તમે ફેરફાર કરી શકતા નથી કારણકે તમારા ખાતાને તાળું મરાયેલ છે.',
+	'centralauth-list-home-title' => 'ઘર વિકિ',
 	'centralauth-list-attached-title' => 'જોડાયેલ ખાતા',
+	'centralauth-list-unattached-title' => 'ન જોડાયેલ ખાતાઓ',
 	'centralauth-foreign-link' => '$2 પર વપરાશકર્તા $1',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|સહભાગ|સહભાગ}} , $2 ની ઉપર',
-	'centralauth-merge-method-primary' => 'ગૃહ વિકિ',
+	'centralauth-merge-method-primary' => 'ઘર વિકિ',
 	'centralauth-merge-method-empty' => 'કંઈ યોગદાન નહી',
 	'centralauth-merge-method-mail' => 'ઈ-મેલ વડે ખાતરી કરો',
 	'centralauth-merge-method-password' => 'પાસવર્ડ વડે ખાતરી કરો',
@@ -10227,6 +10244,7 @@ $messages['gu'] = array(
 	'centralauth-admin-info-header' => 'વૈશ્વિક સભ્ય માહિતી',
 	'centralauth-admin-info-id' => 'સભ્ય નામ',
 	'centralauth-admin-info-registered' => 'નોંધેલ:',
+	'centralauth-admin-info-home' => 'ઘર વિકિ:',
 	'centralauth-admin-info-editcount' => 'ફેરફારોની સંખ્યા',
 	'centralauth-admin-info-locked' => 'તાળું મરાયેલું છે:',
 	'centralauth-admin-info-hidden' => 'ગોપીત સ્તર',
@@ -10289,6 +10307,7 @@ $messages['gu'] = array(
 	'centralauth-log-entry-hide' => 'વૈશ્વીક ખાતું  "$1" ને છુપાડો',
 	'centralauth-log-status-locked' => 'પ્રતિબંધીત',
 	'centralauth-log-status-hidden' => 'છુપાવેલ',
+	'centralauth-log-status-none' => '(કંઈ નહી)',
 	'autologin' => 'આપમેળે પ્રવેશ',
 	'centralauth-globalgroupperms-nogroups' => 'કોઇ પણ વૈશ્વીક સમૂહો ની વ્યાખ્યા નથી થઇ',
 	'centralauth-existinggroup-legend' => 'વિહરમાન સમૂહો',
@@ -10300,7 +10319,7 @@ $messages['gu'] = array(
 	'centralauth-editgroup-name' => 'સમૂહનું નામ:',
 	'centralauth-editgroup-display' => 'સમૂહનું સ્થાનીય નામ',
 	'centralauth-editgroup-members' => 'સભ્યોની યાદી',
-	'centralauth-editgroup-noset' => '(કોઇપણ નહીં)',
+	'centralauth-editgroup-noset' => '(કંઈ નહી)',
 	'centralauth-editgroup-submit' => 'ફેરફારોને સમૂહ ના હક્કોમાં સાચવો',
 	'centralauth-editgroup-perms' => 'અનુમતિઓ ફાળવાઈ',
 	'centralauth-editgroup-reason' => 'કારણ:',
@@ -10325,7 +10344,7 @@ $messages['gu'] = array(
 	'centralauth-editset-badname' => 'સમૂહનું નામ અવૈધ કે ખાલી',
 	'centralauth-editset-badtype' => 'અવૈધ સમૂહનો પ્રકાર',
 	'centralauth-editset-nowikis' => 'કોઇ પણ વિકિ બતાવાયા નથી',
-	'centralauth-editset-nouse' => '(કોઇપણ નહીં)',
+	'centralauth-editset-nouse' => '(કંઈ નહી)',
 	'centralauth-editset-success' => 'વિકિ સમૂહને સફળતા પૂર્વક બદલાવાયો',
 	'centralauth-editset-success-delete' => 'વિકિ સમૂહને સફળતા પૂર્વક હટાવાયો',
 	'centralauth-editset-return' => 'મુખ્ય પાના પર પાછા જાવ',
