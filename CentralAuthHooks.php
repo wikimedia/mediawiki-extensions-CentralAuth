@@ -154,6 +154,7 @@ class CentralAuthHooks {
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
+			$centralUser->deleteGlobalCookies();
 			return true;
 		}
 
