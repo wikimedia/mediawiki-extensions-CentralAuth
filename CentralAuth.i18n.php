@@ -10211,23 +10211,49 @@ $messages['gu'] = array(
 જ્યાં સુધી તમે પુષ્ટિ નહિ કરો કે વસ્તુઓ ક્રમમાં છે ત્યાં સુધી કોઈ ફેરફાર કરવામાં આવશે નહિ.',
 	'centralauth-merge-step1-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
 	'centralauth-merge-step2-title' => 'વધુ એકાઉન્ટ્સ ની ખાતરી કરો',
+	'centralauth-merge-step2-detail' => 'અમુક ખાતાઓ સ્વાચાલિત રીતે નિર્દિષ્ટ મૂખ્ય વિકિ સાથે સરખાવી શકાયા નથી.
+જો આ ખાતાં તમારા હોય તો તમે તેના માટેની ગુપ્ત સંજ્ઞા પૂરી પાડીને તેની પુષ્ટિ કરી શકો છો.',
 	'centralauth-merge-step2-submit' => 'પ્રવેશ જાણકારીની ખાતરી કરો',
 	'centralauth-merge-dryrun-complete' => 'હાલમાં અસ્તિત્વમાં હોય તેવા બધાંજ ખાતાં સંગઠિત કરી શકાય તેમ છે!
 
 તમારા ખાતામાં હજુ સુધી કોઈ ફેરફાર કરવામાં આવ્યો નથી.',
+	'centralauth-merge-dryrun-incomplete' => 'તમે આગળ વધી શકો છો, પરંતુ અમુક ખાતાઓની ખરાઈ આપોઆપ થઈ શકી નથી અને તેમનું તત્કાળ સ્થળાંતર થશે નહી. આપ પછીથી તેમને વિલીન કરી શકશો.
+
+તમારા ખાતામાં હજુ કોઈ ફેરફાર કરવામાં આવ્યો નથી.',
 	'centralauth-merge-dryrun-or' => "'''અથવા'''",
+	'centralauth-merge-dryrun-home' => 'સ્થળાંતર તંત્ર એ વાતની ખરાઈ કરી શક્યું નથી કે તમે મૂખ્ય વિકિ પરના તમારા આ સભ્યનામ વાળા ખાતાના માલિક છો.
+
+અન્ય વિકિને તમારા સભ્યનામ માટેના મૂખ્ય વિકિ તરિકે ઓળખવામાં આવ્યું છે; નીચેની કડીને અનુસરીને ત્યાં પ્રવેશ કરી તમારા ખાતાનું સ્થળાંતરણ પૂર્ણ કરો.',
 	'centralauth-merge-step3-title' => 'ઐક્ય ખાતું બનાવો',
 	'centralauth-merge-step3-detail' => 'તમે હવે નીચેની વિકિઓ સાથે જોડેલું તમારું સંગઠિત ખાતું ખોલવા માટે તૈયાર છો:',
 	'centralauth-merge-step3-submit' => 'ખાતાં સંગઠિત કરો',
+	'centralauth-merge-no-accounts' => 'તમારા નામ સાથે મેળ ખાતું કોઈ ખાતું કેન્દ્રિય ટ્રેકિંગ ટેબલમાં મળ્યું નથી!
+ડેટાબેઝ ભ્રષ્ટ થયો હોવો જોઈએ.',
+	'centralauth-merge-home-password' => 'આ ખાતાનું મૂખ્ય વિકિ (નીચે જણાવેલું) તમે દાખલ કરી છે તેના કરતાં જુદી ગુપ્તસંજ્ઞા ધરાવે છે.
+મૂખ્ય વિકિની ગુપ્તસંજ્ઞા દાખલ કરો.',
 	'centralauth-complete' => 'લોગીન એકીકરણ સંપન્ન',
 	'centralauth-incomplete' => 'લોગીન એકીકરણ પૂર્ણ થયું નથી',
 	'centralauth-complete-text' => 'તમે હવે {{int:Centralauth-groupname}} સાઈટની કોઈપણ વિકિમાં નવું ખાતું બનાવ્યા વગર પ્રવેશ પામી શકશો.',
+	'centralauth-incomplete-text' => 'એક વખત તમારું ખાતું સંગઠિત થઈ જશે પછી તમે {{int:Centralauth-groupname}}નાં કોઈપણ જાળસ્થળ પર નવું ખાતું ખોલાવ્યા વગર પ્રવેશ કરી શકશો.',
+	'centralauth-not-owner-text' => 'સભ્યનામ "$1" આપોઆપ $2 પરના ખાતાના માલિકને નામે કરવામાં આવ્યું છે.
+
+જો તે તમે હોવ તો, ફક્ત અહીં તમારી ગુરુકળ ટાઈપ કરીને તમારી સંગઠિત પ્રવેશ પ્રક્રિયા પૂરી કરી શકો છો:',
+	'centralauth-blocked-text' => 'તમારું મૂખ્ય વિકિ (નીચે જણાવેલું) ફેરફારો માટે પ્રતિબંધિત છે.
+પ્રતિબંધ ઉઠાવવા માટે આ વિકિના પ્રબંધકનો સંપર્ક કરો.
+જ્યાં સુધી તે પ્રતિબંધિત છે ત્યાં સુધી તમે તમારા ખાતાઓનું વિલીનીકરણ નહી કરી શકો.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>માત્ર નિદર્શન સ્થિતિ</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'ખાતાનું સંગઠન હાલમાં ફક્ત નિદર્શન/ડિબગિંગ મોડમાં છે, માટે વાસ્તવિક વિલીનીકરણ પ્રક્રિયાઓ અક્રિય કરવામાં આવી છે.
+દિલગીરી!',
 	'centralauth-error-locked' => 'તમે ફેરફાર કરી શકતા નથી કારણકે તમારા ખાતાને તાળું મરાયેલ છે.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''સંગઠિત પ્રવેશ''' વિશે વધુ વાંચો]]…''",
 	'centralauth-list-home-title' => 'ઘર વિકિ',
+	'centralauth-list-home-dryrun' => 'આ વિકિમાં દાખલ કરેલી ગુપ્તસંજ્ઞા અને ઈ-મેલ સરનામું તમારા સંગઠિત ખાતા માટે વાપરવામાં આવશે.',
 	'centralauth-list-attached-title' => 'જોડાયેલ ખાતા',
+	'centralauth-list-attached' => 'નીચેના બધાજ જાળસ્થળો માટે "$1" નામનું ખાતું આપોઆપ જ સંગઠિત ખાતા સાથે જોડવામાં આવ્યું છે:',
+	'centralauth-list-attached-dryrun' => 'નીચેના દરેક જાળસ્થળો માટે "$1" નામનું ખાતું આપોઆપ જ સંગઠિત ખાતા સાથે જોડવામાં આવશે:',
 	'centralauth-list-unattached-title' => 'ન જોડાયેલ ખાતાઓ',
+	'centralauth-list-unattached' => 'નીચેના જાળસ્થળો પર "$1" નામનું ખાતું તમારૂં છે તેવી ખરાઈ સ્વચાલિત રીતે કરી શકાઈ નથી;
+તમારા પ્રાથમિક ખાતા કરતાં તેમની ગુપ્તસંજ્ઞા જુદી હોવાની સંભાવના વધુ છે:',
 	'centralauth-foreign-link' => '$2 પર વપરાશકર્તા $1',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|સહભાગ|સહભાગ}} , $2 ની ઉપર',
 	'centralauth-merge-method-primary' => 'ઘર વિકિ',
@@ -10237,16 +10263,30 @@ $messages['gu'] = array(
 	'centralauth-merge-method-admin' => 'વ્યવસ્થાપક સંમિલીત ખાતા',
 	'centralauth-merge-method-new' => 'નવું ખાતુ',
 	'centralauth-merge-method-login' => 'પ્રવેશ દરમિયાન બનાવાયું',
+	'centralauth-merge-method-primary-desc' => 'આ એ વિકિ છે જ્યાં ખાતું શરૂઆતમાં વિલીન કરવામાં આવ્યું હતું.
+એ વાતની નોંધ લેશો કે તે સભ્યના ખરા મૂખ્ય વિકિ કરતા જુદું હોઈ શકે છે.',
 	'centralauth-merge-method-empty-desc' => 'આ દર્શાવે છે કે સ્થાનીય ખતાને વિલિન કરવું પડ્યું કેમકે તેમાં કોઈ પણ ફેરફાર કરેલા ન હતાં.',
+	'centralauth-merge-method-mail-desc' => 'દર્શાવે છે કે સ્થાનિય ખાતાઓ સમિલિત કરાઅયા કેમકે તેમના મૂળ ખાતાના ઈ-મેલ એડ્રેસ સમાન હતાં',
+	'centralauth-merge-method-password-desc' => 'દર્શાવે છે કે સ્થાનીય ખાતાને વિલિન કરાયાં કેમકે સભ્યએ તેમ કરવા વૈધ પાસવર્ડ આપ્યો.',
+	'centralauth-merge-method-admin-desc' => 'દર્શાવે છે કે કર્મચારીઓ દ્વારા સ્થાનીય ખાતાઓને માનવ હસ્તક્ષેપ દ્વારા વિલિન  કરાયાં.
+સુરક્ષાના કારણોસર તે સેવા હાલમાં નિષ્ક્રીય કરી દેવાઈ છે',
+	'centralauth-merge-method-new-desc' => 'દર્શાવે છે કે જ્યારે સ્થાનીય ખાતું બન્યું ત્યારે વૈશ્વીક ખાતું સ્વયંચાલિત રીતે બની ગયું',
+	'centralauth-merge-method-login-desc' => 'દર્શાવે છે કે જ્યારે સભ્ય સ્થાનીય રીતે પ્રવેશ કરે છે ત્યારે સ્થાનીય ખાતું સ્વયંચાલિત રીતે રચાય છે.',
 	'centralauth-finish-title' => 'સંમિલન પૂર્ણ કરો',
+	'centralauth-finish-text' => 'જો આ ખાતું તમારું હોય તો તમે સરળતા પૂર્વક અન્ય ખતાનો પાસવર્ડ અહીં મૂકી એકીકરણ કરી શકો છો.',
 	'centralauth-finish-password' => 'પાસવર્ડ:',
 	'centralauth-finish-login' => 'પ્રવેશો',
 	'centralauth-finish-send-confirmation' => 'પાસવર્ડ',
+	'centralauth-finish-problems' => 'તમને કોઈ તકલીફ છે અથવા તમે આ અન્ય  ખાતાના માલિક નથી?
+[[meta:Help:Unified login problems|How to find help]]…',
 	'centralauth-finish-noconfirms' => 'આ પાસવર્ડ વાપરીને કોઈ પણ ખાતાંઓ ખાતરી કરી શકાતા નથી.',
 	'centralauth-finish-incomplete' => 'કેટલાય ખાતાઓ આ પાસવર્ડનો ઉપયોગ કરીને ભેગા કરવામાં આવ્યા છે.
 બીજા ખાતાઓની હજી ખાતરી થઈ નથી.',
+	'centralauth-merge-attempt' => "'''પૂરી પાડેલી ગુપ્તસંજ્ઞાને બાકી રહેલા અવિલીન ખાતાઓ સાથે ચકાસવામાં આવી રહી છે.'''",
 	'centralauth-attach-list-attached' => '"$1" નામનું સંગઠિત ખાતું નીચેનાં ખાતાઓ ધરાવે છે:',
 	'centralauth-attach-title' => ' શું આ તે જ ખાતું છે? ખાત્રી કરશો.',
+	'centralauth-attach-text' => 'આ ખાતાને એકીક્રત નથી કરાયો.
+જો વૈશ્વીક ખાતું તમરું છે, તો તમે વૈશ્વીક પાસવર્ડ વાપરીને આ ખાતાને વિલિન કરી શકો છો',
 	'centralauth-attach-submit' => 'ખાતું સ્થળાંતરીત કરો',
 	'centralauth-attach-success' => 'આ ખાતાને એકીકૃત ખાતામાં સ્થળાંતરીત કરાયું હતું',
 	'centralauth' => 'વૈશ્વીક ખાતાનું વ્યવસ્થાપન',
@@ -10308,6 +10348,12 @@ $messages['gu'] = array(
 	'centralauth-admin-status-submit' => 'સ્થિતિ ગોઠવો',
 	'centralauth-admin-status-nonexistent' => 'ક્ષતિ: વૈશ્વિક ખાતું "<nowiki>$1</nowiki>" અસ્તિત્વ ધરાવતું નથી.',
 	'centralauth-admin-setstatus-success' => 'આ વૈશ્વિક ખાતાની સ્થિતિ તમે સફળતાપૂર્વક બદલી દીધી છે.',
+	'centralauth-admin-status-reasons' => "* પ્રતિબંધનાં સામાન્ય કારણો
+** ફક્ત ભાંગફોડ માટેનું ખાતું
+** ફક્ત સ્પામ ખાતું
+* 'પ્રતિબંધ અને છુપાવો' માટેના સામાન્ય કારણો
+** અપમાનજનક સભ્યનામ
+** અનુચિત વ્યક્તિગત માહિતી",
 	'centralauth-admin-logsnippet' => 'પહેલાંન વૈશ્વીક ખાતાના ફેરફારો',
 	'centralauth-admin-suppressreason' => '$1 દ્વારા નીચેના કારણસર વૈશ્વીક પ્રતિબંધ લગાડાયો: $2',
 	'globalusers' => 'વૈશ્વિક સભ્ય યાદી',
@@ -10340,6 +10386,7 @@ $messages['gu'] = array(
 	'centralauth-logout-no-others' => 'તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાંથી બહાર નીકળી ગયા છો.',
 	'centralauth-hidden-blockreason' => '$2 પર $1  દ્વારા નીચેના કારણસર વૈશ્વીક પ્રતિબંધ મુકાયો : $3',
 	'centralauth-log-name' => 'વેશ્વીક ખતાનો લોગ',
+	'centralauth-log-header' => 'આ યાદિમાં વૈશ્વિક ખાતાઓ હેઠળની પ્રવૃત્તિઓ સાંકળી લેવામાં આવી છે: દૂર કરવા, પ્રતિબંધ અને અપ્રતિબંધ.',
 	'centralauth-log-entry-delete' => 'વૈશ્વીક ખાતું  "$1" ને હટાવો.',
 	'centralauth-log-entry-lock' => 'વૈશ્વીક ખાતું  "$1" પર પ્રતિબંધ મુકાયો',
 	'centralauth-log-entry-unlock' => 'વૈશ્વીક ખાતું  "$1" ખોલો',
@@ -10373,6 +10420,8 @@ $messages['gu'] = array(
 	'centralauth-globalgroupperms-nogroups' => 'કોઇ પણ વૈશ્વીક સમૂહો ની વ્યાખ્યા નથી થઇ',
 	'centralauth-existinggroup-legend' => 'વિહરમાન સમૂહો',
 	'centralauth-newgroup-legend' => 'નવો સમૂહ બનાવો',
+	'centralauth-newgroup-intro' => 'તમે આ પત્રકનો ઉપયોગ કરીને નવા જૂથને પરવાનગીઓ આપી શકો છો.
+એ વાતની નોધ લેશો કે જ્યાં સુધી જૂથને પરવાનગીઓ આપવામાં નહી આવે ત્યાં સુધી તે અસ્તિત્વમાં નહી આવે.',
 	'centralauth-globalgroupperms-newgroupname' => 'નવા જૂથનું નામ',
 	'centralauth-globalgroupperms-creategroup-submit' => 'હક્ક વિતરણ કરો',
 	'centralauth-editgroup-subtitle' => '$1નો ફેરફાર કરી રહ્યા છે',
@@ -10390,8 +10439,12 @@ $messages['gu'] = array(
 	'centralauth-editgroup-perms' => 'અનુમતિઓ ફાળવાઈ',
 	'centralauth-editgroup-reason' => 'કારણ:',
 	'centralauth-editgroup-success' => 'સમૂહના હક્કો બદલાયા',
+	'centralauth-editgroup-success-text' => 'તમે સફળતા પૂર્વક $1 જૂથના જૂથ વિકલ્પો બદલ્યાં. 
+[[Special:GlobalGroupPermissions|Return to group management]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ફેરફાર]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'જે વિકિ પર તેઓ ખાતું ધરાવે છે.:',
+	'centralauth-globalgroupmembership-badknownwiki' => "વૈશ્વિક સભ્ય '''$1''' તમારા નિર્દિષ્ટ વિકિ પર સક્રિય નથી ('' $2 '').
+તમે ખોટા સભ્યને હક્કો પ્રદાન કરવાનો પ્રયત્ન કરતા લાગો છો.",
 	'centralauth-editset' => 'વિકિ જૂથ',
 	'centralauth-editset-legend-rw' => 'વિકિ જૂથ બનાવો કે સંપાદિત કરો',
 	'centralauth-editset-legend-ro' => 'વિકિ સમૂહોની યાદી',
@@ -10425,6 +10478,7 @@ $messages['gu'] = array(
 	'centralauth-editset-success' => 'વિકિ સમૂહને સફળતા પૂર્વક બદલાવાયો',
 	'centralauth-editset-success-delete' => 'વિકિ સમૂહને સફળતા પૂર્વક હટાવાયો',
 	'centralauth-editset-return' => 'મુખ્ય પાના પર પાછા જાવ',
+	'centralauth-readonly' => 'CentralAuth Database locked',
 	'right-globalgroupmembership' => 'વૈશ્વિક સમૂહોમાં સભ્યપદમાં ફેરફાર કરો',
 	'right-centralauth-autoaccount' => 'વૈશ્વીક ખાતા વગર સ્વય્ંચલિત રીતે પ્રવેશ કરો',
 	'right-centralauth-unmerge' => 'વૈશ્વીક ખતાઓને છૂટા પાડો',
@@ -12912,7 +12966,7 @@ No nanagan, ikkaten na ti lokal nga agar-aramat manipud idiay maysa sangalubogan
 	'centralauth-rightslog-entry-usergroups' => 'nasukatan ti sangalubongan a panagkameng iti bunggoy ti $1 manipud $2 iti $3',
 	'centralauth-rightslog-entry-groupperms' => 'nasukatan ti panagkameng iti bunggoy para iti $1 manipud ti $2 iti $3',
 	'centralauth-rightslog-entry-groupperms2' => 'sinukatan ti pammalubos ti kameng ni $1.
-Innayun $2;
+Innayon $2;
 Inikkat $3',
 	'centralauth-rightslog-entry-groupperms3' => 'sinukatan dagiti bunggoy dagiti disso ti wiki a naiparit para iti $1 manipud ti $2 iti $3',
 	'centralauth-rightslog-header' => 'Daytoy a listaan ket naglaon kadagiti operasion idiay sangalubongan a bung-bunggoy: panag-kameng ken dagiti panag-sukat ti pammalubos',
