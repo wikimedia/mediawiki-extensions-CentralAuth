@@ -915,16 +915,16 @@ $messages['an'] = array(
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 dentre con una cuenta rechistrada]</span> ta comprebar si as suyas cuentas s\'han puesto fusionar de tot.',
 	'centralauth-merge-welcome' => "A suya cuenta d'usuario no s'ha tresladato encara ta o sistema de cuentas unificato de {{int:Centralauth-groupname}}.'''
 
-Si triga migrar as suyas cuentas, podrá usar o mesmo nombre d'usuario y parola de paso ta dentrar en totz os procheutos wiki de {{int:Centralauth-groupname}} en todas as luengas disponibles.
+Si triga migrar as suyas cuentas, podrá usar os mesmos nombre d'usuario y clau ta dentrar en totz os procheutos wiki de {{int:Centralauth-groupname}} en todas as luengas disponibles.
 
 Si bel usuario más ha pillato o suyo nombre d'usuario en atro sitio, podrá contautar con el u con un almenistrador más enta debant.",
 	'centralauth-merge-step1-title' => 'Prencipiar a unificación de cuentas',
-	'centralauth-merge-step1-detail' => "Por favor, escriba aquí a suya parola de paso.
-A suya parola de paso y adreza de correu-e rechistrada se comprebarán con as d'atras wikis ta confirmar si concuerdan.
+	'centralauth-merge-step1-detail' => "Por favor, escriba aquí a suya clau d'acceso.
+A suya clau y adreza de correu-e rechistrada se comprebarán con as d'atras wikis ta confirmar si concuerdan.
 No se ferá garra cambio dica que confirme que to pareix conforme.",
 	'centralauth-merge-step1-submit' => "Confirmar a información d'a cuenta",
 	'centralauth-merge-step2-title' => 'Confirmar más cuentas',
-	'centralauth-merge-step2-detail' => "Bellas cuentas no s'han puesto concordar automaticament con o wiki endicato. Si estas cuentas le pertenexen, puede confirmar que son suyas escribindo as suyas parolas de paso.",
+	'centralauth-merge-step2-detail' => "Bellas cuentas no s'han puesto concordar automaticament con o wiki endicato. Si estas cuentas le pertenexen, puede confirmar que son suyas escribindo as suyas claus d'acceso.",
 	'centralauth-merge-step2-submit' => "Confirmar a información d'a cuenta",
 	'centralauth-merge-dryrun-complete' => "Todas as cuentas existents pueden unificar-se automaticament!
 
@@ -938,33 +938,33 @@ Encara no s'han feito cambios t'as suyas cuentas.",
 	'centralauth-merge-step3-detail' => 'Ya ye parau ta creyar una cuenta unificada, con os siguients wikis ligatos:',
 	'centralauth-merge-step3-submit' => 'Unificar cuentas',
 	'centralauth-merge-no-accounts' => "No s'ha trobato garra cuenta que concuerde con o suyo nombre en a tabla de seguimiento de cuentas centrals! A base de datos debe d'estar corrompida.",
-	'centralauth-merge-home-password' => "A wiki d'orichen ta esta cuenta (amostrada más tabaixo) tiene una parola de paso diferent d'a que ha escrito.
-Por favor, escriba a parola de paso t'a wiki d'orichen.",
+	'centralauth-merge-home-password' => "A wiki d'orichen ta esta cuenta (amostrada más tabaixo) tiene una clau diferent d'a que ha escrito.
+Por favor, escriba a clau d'o wiki d'orichen.",
 	'centralauth-complete' => "S'ha rematau a unificación d'as cuentas!",
 	'centralauth-incomplete' => "No s'ha rematau a unificación d'as cuentas!",
 	'centralauth-complete-text' => 'Agora puede identificar-se y dentrar en qualsiquier wiki de {{int:Centralauth-groupname}} sin haber de creyar una nueva cuenta.',
 	'centralauth-incomplete-text' => "Malas que tienga un nombre d'usuario unificato, podrá identificar-se y dentrar en qualsiquier wiki de {{int:Centralauth-groupname}} sin haber de creyar una nueva cuenta",
 	'centralauth-not-owner-text' => 'O nombre d\'usuario "$1" s\'ha asignato ta o proprietario d\'a cuenta en $2.
 
-Si ye vusté, puede rematar o proceso d\'unificación de cuentas escribindo aquí a parola de paso mayestra ta ixa cuenta.',
+Si ye vusté, puede rematar o proceso d\'unificación de cuentas escribindo aquí a clau mayestra ta ixa cuenta.',
 	'centralauth-blocked-text' => "A suya wiki d'orichen (endicata en o cobaixo) ye bloqueyata y no se puede editar. Por favor, contaute con un almenistrador d'ista wiki ta esbloqueyar-la. Mientres siga bloqueyata no pueden combinar as suyas cuentas.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sólo modo contrimuestra</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "A unificación de cuentas ye actualment en modo contrimuestra / prebatina, y por ixo, s'han desactivato as operacions de fusión. Lo sentimos!",
 	'centralauth-error-locked' => 'No puede editar porque a suya cuenta ye bloqueyata.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Leyer más sobre a '''cuenta unificata''']]...''",
 	'centralauth-list-home-title' => "Wiki d'orichen",
-	'centralauth-list-home-dryrun' => 'A parola de paso y a cuenta de correu que tiene establitas en iste wiki se ferán servir en a suya cuenta unificata.',
+	'centralauth-list-home-dryrun' => "A clau d'acceso y a cuenta de correu que tiene establitas en iste wiki se ferán servir en a suya cuenta unificata.",
 	'centralauth-list-attached-title' => 'Cuentas ligatas',
 	'centralauth-list-attached' => 'A cuenta dita "$1" en cadagún d\'os siguients procheutos s\'ha ligato automaticament t\'a cuenta unificata:',
 	'centralauth-list-attached-dryrun' => 'A cuenta dita "$1" en cadagún d\'istos procheutos se ligará automaticament t\'a cuenta unificata:',
 	'centralauth-list-unattached-title' => 'Cuentas no ligatas',
-	'centralauth-list-unattached' => 'No s\'ha puesto confirmar automaticament que a cuenta "$1" le pertenexca en os siguients procheutos; por un regular, será que tiene una parola de paso diferent d\'a suya cuenta primaria:',
+	'centralauth-list-unattached' => 'No s\'ha puesto confirmar automaticament que a cuenta "$1" le pertenexca en os siguients prochectos; por un regular, será que tiene una clau diferent d\'a suya cuenta primaria:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribucions}} en $2',
 	'centralauth-merge-method-primary' => "wiki d'orichen",
 	'centralauth-merge-method-empty' => 'sin de contrebucions',
 	'centralauth-merge-method-mail' => 'confirmata por correu eletronico',
-	'centralauth-merge-method-password' => 'confirmata por parola de paso',
+	'centralauth-merge-method-password' => 'confirmata por clau',
 	'centralauth-merge-method-admin' => "Cuenta d'almenistrador combinata",
 	'centralauth-merge-method-new' => 'nueva cuenta',
 	'centralauth-merge-method-login' => 'creyato en encetar a sesión',
@@ -972,24 +972,24 @@ Si ye vusté, puede rematar o proceso d\'unificación de cuentas escribindo aqu�
 Notar que puede diferir d'o wiki d'orichen real de l'usuario.",
 	'centralauth-merge-method-empty-desc' => 'Indica que a cuenta local fue unificada porque no teneba edicions.',
 	'centralauth-merge-method-mail-desc' => "Indica que a cuenta local fue unificada porque a suya adreza de correu electronico coincidió con l'adreza de correu electronico d'a cuenta prencipal.",
-	'centralauth-merge-method-password-desc' => "Indica que a cuenta local fue unificada porque l'usuario introdució una contrasenya valida ta ixo.",
+	'centralauth-merge-method-password-desc' => "Indica que a cuenta local fue unificada porque l'usuario escribió una clau valida ta ixo.",
 	'centralauth-merge-method-admin-desc' => 'Indica que a cuenta local fue unificada manualment por os stewards.
 Ixa capacidat ye desactivada por razons de seguranza.',
 	'centralauth-merge-method-new-desc' => 'Indica que a cuenta global fue creyada automaticament en creyar-se a cuenta local.',
 	'centralauth-merge-method-login-desc' => "Indica que a cuenta local fue creyada automaticament quan l'usuario encetó una sesión.",
 	'centralauth-finish-title' => 'Rematar a fusión',
-	'centralauth-finish-text' => "Si estas cuenta le perteneixen, puede rematar o proceso d'unificación de cuentas escribindo aquí as parolas de paso d'as atras cuentas.",
-	'centralauth-finish-password' => 'parola de paso:',
+	'centralauth-finish-text' => "Si estas cuenta le perteneixen, puede rematar o proceso d'unificación de cuentas escribindo aquí as claus d'as atras cuentas.",
+	'centralauth-finish-password' => "Clau d'acceso:",
 	'centralauth-finish-login' => "Nombre d'usuario",
-	'centralauth-finish-send-confirmation' => 'Parola de paso de correu-e',
+	'centralauth-finish-send-confirmation' => 'Clau de correu-e',
 	'centralauth-finish-problems' => 'Tiene dificultaz, u istas atras cuentas no son suyas? [[meta:Help:Unified login problems|Como mirar aduya]]...',
-	'centralauth-finish-noconfirms' => "No s'ha puesto confirmar garra cuenta con esta parola de paso.",
-	'centralauth-finish-incomplete' => "Bellas cuentas s'han combinato fendo servir esta parola de paso.
+	'centralauth-finish-noconfirms' => "No s'ha puesto confirmar garra cuenta con ista clau.",
+	'centralauth-finish-incomplete' => "Bellas cuentas s'han combinato fendo servir ista clau d'acceso.
 Atras cuentas no s'han confirmato encara.",
-	'centralauth-merge-attempt' => "'''Comprebando a parola de paso furnita con a reta de cuentas no unificatas...'''",
+	'centralauth-merge-attempt' => "'''Comprebando a clau d'acceso furnita con a resta de cuentas no unificatas...'''",
 	'centralauth-attach-list-attached' => 'A cuenta unificata "$1" encluye as siguients cuentas:',
 	'centralauth-attach-title' => 'Confirmar cuenta',
-	'centralauth-attach-text' => "Ista cuenta encara no s'ha migrato t'a cuenta unificata. Si a cuenta global ye suya, puede fusionar-ie ista cuenta escribindo a parola de paso d'a cuenta global:",
+	'centralauth-attach-text' => "Ista cuenta encara no s'ha migrato t'a cuenta unificata. Si a cuenta global ye suya, puede fusionar-ie ista cuenta escribindo a clau d'a cuenta global:",
 	'centralauth-attach-submit' => 'Migrar a cuenta',
 	'centralauth-attach-success' => "S'ha migrato a cuenta t'a cuenta unificata.",
 	'centralauth' => "Administrador d'usuarios globals",
@@ -1034,7 +1034,7 @@ Razón: $1',
 	'centralauth-admin-delete-title' => 'Borrar a cuenta',
 	'centralauth-admin-delete-description' => "En borrar a cuenta global borrará todas as preferencias globals, esligará todas as cuentas locals y deixará o nombre global libre ta que atro usuario pueda pillar-lo.
 Todas as cuentas locals continarán existindo.
-As parolas de paso t'as cuentas locals creyatas antis d'a unificación tornarán a estar as que yeran antis d'a mesma.",
+As claus d'acceso t'as cuentas locals creyatas antis d'a unificación tornarán a estar as que yeran antis d'a mesma.",
 	'centralauth-admin-delete-button' => 'Borrar esta cuenta',
 	'centralauth-admin-delete-success' => 'S\'ha borrato con exito a cuenta global ta "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'No bi ha garra cuenta global ta "<nowiki>$1</nowiki>"',
@@ -10424,6 +10424,9 @@ $messages['gu'] = array(
 તમે કોઈ પણ વૈધ માહિતી સિવાય પાનાની અરજી કરી છે, આથી કાંઈ પરિણામ આવી શક્યું નથી.',
 	'globalgroupmembership' => 'વૈશ્વિક સમૂહોમાં સભ્યપદ',
 	'globalgrouppermissions' => 'વૈશ્વિક જૂથ વ્યવસ્થા',
+	'centralauth-globalgroupperms-grouplist' => 'નીચેન વૈશ્વીક સમૂહોની ગોઠવણ કરાઈ છે.
+જો તમને પરવાનગી હોશે તો, સમૂહને મળેલી પરવાનગીઓ તને જોઈ કે સુધારી શકો છો.
+તેના હક્કો હટાવ્યાં પછી તમે તે સમૂહને હટાવી શકો છો.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|જુઓ/ફેરફાર]])',
 	'centralauth-globalgroupperms-nogroups' => 'કોઇ પણ વૈશ્વીક સમૂહો ની વ્યાખ્યા નથી થઇ',
 	'centralauth-existinggroup-legend' => 'વિહરમાન સમૂહો',
@@ -21647,7 +21650,7 @@ $messages['pnb'] = array(
 	'centralauth-antispoof-desc' => 'جوڑو AntiSpoof technology نوں CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|کئی ورتن ناواں نوں کول]] دیو تے اکو ورتن ناں توں اندر آیا کرو',
 	'centralauth-merge-denied' => 'معاف کرنا، تھوانوں ایس صفے تک جان دی اجازت نیں۔',
-	'centralauth-merge-notlogged' => 'مہربانی کرکے <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} لاگان ہوو]</span> اے ویکھن لئی جے تواڈا کھاتہ رلیا.',
+	'centralauth-merge-notlogged' => 'مہربانی کرکے <span class="plainlinks">[$1 لاگان ہوو]</span> ایہ ویکھن لئی جے تواڈا کھاتہ رل گیا کہ نئیں .',
 	'centralauth-merge-welcome' => "'''تواڈے ورتن کھاتے نوں کٹھے لاکان پربندھ{{int:Centralauth-groupname}} چ ہلے نئیں پیجیا گیا.'''
 
 اکر تسیں اپنے کھاتے نوں لجان ول اندے او, تسیں اوسے ورتن ناں تے کنجی نوں ورت سکدے او سارے وکیاں چ لاگان ہون لئی  {{int:Centralauth-groupname}} .
@@ -21699,7 +21702,7 @@ $messages['pnb'] = array(
 	'centralauth-list-unattached-title' => 'رلے اکاؤنٹ وکھرے کرو',
 	'centralauth-list-unattached' => 'کھاتہ "$1" اپنے آپ پکا نئیں کیتا جاسکدا جے ایہ تواڈا اے تھلے دتیاں گیاں ساغیٹاں تے؛ زیادہ اے ای ہوسکدا اے جے اوناں کول اک وکھری کنجی ہووے تواڈے پرائمری کھاتے توں:',
 	'centralauth-foreign-link' => 'ورتن والا$1 $2 تے',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|کم|کم}} تے  2$',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL : $1|کم|کم}}   2$ تے',
 	'centralauth-merge-method-primary' => 'ہوم وکی',
 	'centralauth-merge-method-empty' => 'کوئی حصہ نئیں',
 	'centralauth-merge-method-mail' => 'ای-میل نال کنفرم کرو۔',
