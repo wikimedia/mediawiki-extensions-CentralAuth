@@ -15117,8 +15117,11 @@ $messages['km'] = array(
 	'centralauth-merge-denied' => 'សូមអភ័យទោស! អ្នកមិនមានការអនុញ្ញាតឱ្យចូលទៅកាន់ទំព័រនេះទេ។',
 	'centralauth-merge-notlogged' => 'សូម<span class="plainlinks">[$1 កត់ឈ្មោះចូល]</span>ដើម្បីពិនិត្យមើលថា​តើគណនីរបស់អ្នកពិតជាបានច្របាច់បញ្ចូលគ្នា​ទាំងអស់ហើយនៅ។',
 	'centralauth-merge-step1-title' => 'ចាប់ផ្ដើមការបង្រួបបង្រួមការកត់ឈ្មោះចូល',
+	'centralauth-merge-step1-detail' => 'សូមវាយបញ្ចូលពាក្យសំងាត់របស់អ្នក។
+ពាក្យសំងាត់និងអាសយដ្ឋានអ៊ីមែលដែលចុះបញ្ជីហើយរបស់អ្នក នឹងត្រូវបានផ្ទៀងផ្ទាត់ជាមួយគណនីនៅលើវិគីដទៃទៀត ដើម្បីអោយច្បាស់ថាវាត្រូវគ្នាឬអត់។
+នឹងគ្មានការផ្លាស់ប្ដូរអ្វីទាំងអស់​ទាល់តែអ្នកត្រូវគេបញ្ជាក់ប្រាប់ថាអ្វីៗត្រូវបានធ្វើហើយរួចរាល់អស់ហើយ។',
 	'centralauth-merge-step1-submit' => 'បញ្ជាក់ទទួលស្គាល់ព័ត៌មានពីការកត់ឈ្មោះចូល',
-	'centralauth-merge-step2-title' => 'បញ្ជាក់ទទួលស្គាល់ ច្រើនគណនី ទៀត',
+	'centralauth-merge-step2-title' => 'បញ្ជាក់ទទួលស្គាល់គណនីច្រើនទៀត',
 	'centralauth-merge-step2-submit' => 'បញ្ជាក់ទទួលស្គាល់ព័ត៌មាននៃការកត់ឈ្មោះចូល',
 	'centralauth-merge-dryrun-or' => "'''ឬ'''",
 	'centralauth-merge-step3-title' => 'បង្កើត​គណនីរួមគ្នា',
@@ -15238,6 +15241,7 @@ $messages['km'] = array(
 	'centralauth-editset-name' => 'ឈ្មោះ​៖',
 	'centralauth-editset-type' => 'ប្រភេទ​៖',
 	'centralauth-editset-wikis' => 'វិគី៖',
+	'centralauth-editset-restwikis' => 'វិគីដែលគ្មានក្នុងបញ្ជីខាងលើ៖',
 	'centralauth-editset-reason' => 'មូលហេតុ៖',
 	'centralauth-editset-submit' => 'ដាក់ស្នើ',
 	'centralauth-editset-submit-delete' => 'លុបចោល',
