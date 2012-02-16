@@ -20,7 +20,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @return DatabaseBase
 	 */
 	protected function getDB() {
-		CentralAuthUser::getCentralDB();
+		return CentralAuthUser::getCentralDB();
 	}
 }
 
