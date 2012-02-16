@@ -22,6 +22,28 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	protected function getDB() {
 		return CentralAuthUser::getCentralDB();
 	}
+
+	/**
+	 * @return string
+	 */
+	protected function getTableName() {
+		return 'globaluser';
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getUserColumn() {
+		return 'gu_name';
+	}
+
+	/**
+	 * @param $name string
+	 * @return CentralAuthSpoofUser
+	 */
+	protected function makeSpoofUser( $name ) {
+		return new CentralAuthSpoofUser( $name );
+	}
 }
 
 $maintClass = "BatchCAAntiSpoof";
