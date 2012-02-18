@@ -14,4 +14,18 @@ class CentralAuthSpoofUser extends SpoofUser {
 	protected static function getDBMaster() {
 		return CentralAuthUser::getCentralDB();
 	}
+
+	/**
+	 * @return string
+	 */
+	protected function getTableName() {
+		return 'globaluser';
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getUserColumn() {
+		return 'gu_name';
+	}
 }
