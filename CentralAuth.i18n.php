@@ -7784,7 +7784,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 Kasutajanime muutmisega eraldatakse kohalik kasutaja globaalsest.',
 	'centralauth-renameuser-reserved' => 'Kasutajanime $2 hoitakse globaalse konto jaoks.',
 	'centralauth-invalid-wiki' => 'Sellist vikiandmebaasi pole: $1',
-	'centralauth-account-exists' => 'Konntot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
+	'centralauth-account-exists' => 'Kontot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
 	'centralauth-account-exists-reset' => 'Kasutajanimi $1 pole siin vikis registreeritud, aga on olemas ühendatud sisselogimissüsteemis.',
 	'centralauth-login-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidesse sisse:',
 	'centralauth-logout-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidest välja:',
@@ -16040,6 +16040,7 @@ $messages['lb'] = array(
 	'mergeaccount' => 'Status vun der Benotzerkonten-Zesummeféierung',
 	'centralauth-groupname' => 'der Wikimedia Fondatioun',
 	'centralauth-desc' => 'Benotzerkonten op de Wikie vun  {{int:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]',
+	'centralauth-antispoof-desc' => 'Setzt AntiSpoof Technologie bäi CentralAuth derbäi',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zesammeleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	'centralauth-merge-denied' => 'Pardon, Dir hutt net déi néideg Rechter fir op dës Säit ze goen.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Loggt Iech w.e.g. an]</span> fir nozekucken ob all Är Benotzerkonte ganz zesummegefouert goufen.',
@@ -26963,6 +26964,7 @@ $messages['szl'] = array(
 /** Tamil (தமிழ்)
  * @author Karthi.dr
  * @author Shanmugamp7
+ * @author Sodabottle
  * @author TRYPPN
  * @author Trengarasu
  */
@@ -27093,6 +27095,7 @@ $messages['ta'] = array(
 	'centralauth-account-exists' => 'கணக்கை உருவாக்க முடியாது: கோரிய பயனர்பெயர் ஏற்கனவே ஒன்றிணைந்த புகுபதிகை அமைப்பில் எடுத்துக் கொள்ளப்பட்டது.',
 	'centralauth-account-exists-reset' => 'பயனர்பெயர்  $1 இந்த விக்கியில்   பதிவு செய்யப்படவில்லை , ஆனால் இது ஒன்றிணைந்த புகுபதிகை அமைப்பிலும் இல்லை.',
 	'centralauth-login-progress' => 'உங்களை விக்கியின்  {{int:Centralauth-groupname}}: ல் உள்நுழைகிறது',
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} இன் பிற விக்கிகளில் இருந்து விடுபதிகை செய்துள்ளீர்கள்.',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}} இதன் இதர திட்டங்களுக்கு தானாகவே நீங்கள் உள்நுழைக்கப்பட்டாயிற்று',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}} இதன் இதர திட்டங்களுக்கு தானாகவே நீங்கள் வெளியேரிவிட்டீர்கள்',
 	'centralauth-log-name' => 'உலகலாவிய கணக்கு குறிப்பேடு',
