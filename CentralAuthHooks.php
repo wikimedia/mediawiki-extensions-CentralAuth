@@ -131,7 +131,7 @@ class CentralAuthHooks {
 		if( !$firstUser->getID() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
-				$abortError = array( 'centralauth-account-exists-reset' );
+				$abortError = array( 'centralauth-account-exists-reset', $centralUser->getName() );
 				return false;
 			}
 		}
