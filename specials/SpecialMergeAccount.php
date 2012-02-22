@@ -57,16 +57,22 @@ class SpecialMergeAccount extends SpecialPage {
 			switch( $this->mMergeAction ) {
 			case "dryrun":
 				$this->doDryRunMerge();
+				break;
 			case "initial":
 				$this->doInitialMerge();
+				break;
 			case "cleanup":
 				$this->doCleanupMerge();
+				break;
 			case "attach":
 				$this->doAttachMerge();
+				break;
 			case "remove":
-				$this->doUnattach();
+				$this->doUnattach(); // FIXME: Method is undefined
+				break;
 			default:
-				$this->invalidAction();
+				$this->invalidAction(); // FIXME: Method is undefined
+				break;
 			}
 			return;
 		}
