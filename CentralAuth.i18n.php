@@ -7608,6 +7608,7 @@ $messages['et'] = array(
 	'mergeaccount' => 'Kontode ühendamise seis',
 	'centralauth-groupname' => 'Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Ühendab kontod]] vikides, mida haldab {{int:Centralauth-groupname}}.',
+	'centralauth-antispoof-desc' => 'Lisab CentralAuthile AntiSpoof-vahendid.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Ühendab kontod]] ühtseks sisselogimiseks.',
 	'centralauth-merge-denied' => 'Vabandust, teil puudub sellele lehele ligipääs.',
 	'centralauth-merge-notlogged' => 'Palun <span class="plainlinks">[$1 logi sisse]</span>, et näha, kas kõik sinu kontod on ühendatud.',
@@ -7892,6 +7893,8 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'centralauth-editset-success' => 'Vikikomplekt edukalt muudetud.',
 	'centralauth-editset-success-delete' => 'Vikikomplekt edukalt kustutatud.',
 	'centralauth-editset-return' => 'Tagasi põhivaatesse',
+	'centralauth-readonly' => 'CentralAuthi andmebaas on lukustatud',
+	'centralauth-readonlytext' => 'CentralAuthi andmebaas on praegu lukus ning uusi sissekandeid ja muid muudatusi ei saa teha. Arvatavasti on tegu plaanipärase hooldustööga, mille järel taastatakse andmebaasi tavaseisund.',
 	'right-globalgroupmembership' => 'Muuta globaalsete rühmade liikmesust',
 	'right-centralauth-autoaccount' => 'Automaatselt sisse logida globaalse kontoga',
 	'right-centralauth-unmerge' => 'Lahti ühendada globaalset kontot',
@@ -10868,6 +10871,7 @@ $messages['he'] = array(
  * @author Kiranmayee
  * @author Pooja.srivastava
  * @author Shyam123.ckp
+ * @author Siddhartha Ghai
  * @author Suman
  * @author आलोक
  */
@@ -10875,6 +10879,7 @@ $messages['hi'] = array(
 	'mergeaccount' => 'खाता एकत्रिकरण स्थिती',
 	'centralauth-groupname' => 'वही विकिपीडिया बुनियाद',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} विकियोंमें [[Special:MergeAccount|सदस्यत्व एकत्रिकरण]] करें',
+	'centralauth-antispoof-desc' => 'CentralAuth में AntiSpoof तकनीक जोड़ता है',
 	'centralauth-mergeaccount-desc' => 'एक सदस्यकी [[Special:MergeAccount|सभी खातें]] एकत्रित करें।',
 	'centralauth-merge-denied' => 'माफ किजीये, इस पन्नेपर जानेकी आपको अनुमति नहीं हैं।',
 	'centralauth-merge-notlogged' => 'कृपया आपका खाता एकत्रिकरण बराबर हुआ हैं यह जाँचने के लिये <span class="plainlinks">[$1{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} लॉग इन]</span> करें।',
@@ -10941,6 +10946,8 @@ $messages['hi'] = array(
 मर्ज-विधि प्राथमिक अधिकार का वर्णन इस विकी जिस पर खाता शुरू में विलय कर दिया गया है.
 ध्यान दें कि यह है कि उपयोगकर्ता की असली घर विकी से अलग हो सकता.',
 	'centralauth-merge-method-empty-desc' => 'येह् दशाता है कि स्थानीय खाता हुआ था विलय क्युकि उसक कोई संपादन नही था',
+	'centralauth-merge-method-mail-desc' => 'दर्शाता है कि स्थानीय खाता मुख्य खाते में विलय कर दिया गया था क्योंकि उसमें दिया ई-मेल पता मुख्य खाते के ई-मेल पते से मेल खाता था।',
+	'centralauth-merge-method-password-desc' => 'दर्शाता है कि स्थानीय खाता विलय कर दिया गया था क्योंकि सदस्य ने उसके लिये सही कूटशब्द बताया था।',
 	'centralauth-merge-method-new-desc' => 'सूचित करता है की वैश्विक खाते स्वचालित रूप से निर्मित होता है जब स्थानीय खाते बनता है',
 	'centralauth-merge-method-login-desc' => 'सूचित करता है की स्थानीय खाते स्वचालित रूप से निर्मित होता है जब सदस्य लग इन करता है',
 	'centralauth-finish-title' => 'एकत्रिकरण खतम करें',
@@ -11120,7 +11127,7 @@ $3 हटाया गया',
 	'centralauth-editgroup-success-text' => 'आपने $1 ग्रुपके ग्रुप अधिकार बदल दिये हैं।
 [[Special:GlobalGroupPermissions|ग्रुप व्यवस्थापन की ओर वापस जायें]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|संपादन]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'जिस विकिपर उनका खाता हैं ऐसा विकि चुनें:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'विकि जिस पर उनका खाता है:',
 	'centralauth-globalgroupmembership-badknownwiki' => "आपने दिये हुए विकिपर (''$2'') '''$1''' यह वैश्विक सदस्य कार्यरत नहीं हैं। आप शायद गलत सदस्यको अधिकार दे रहें हैं!",
 	'centralauth-editset' => 'विकि सेट समूह',
 	'centralauth-editset-legend-rw' => 'संपादित करें या विकी सेट बनाने के लिए',
@@ -11149,6 +11156,7 @@ $3 हटाया गया',
 	'centralauth-editset-nowikis' => 'कोई विकि निर्दिष्ट नहीं हुआ है ।',
 	'centralauth-editset-nouse' => '(कोई नहीं)',
 	'centralauth-editset-usage' => 'समूहों में उपयोग:',
+	'centralauth-editset-badwikis' => 'निम्न विकी अस्तित्व में नहीं {{PLURAL:$2|है|हैं}}: $1',
 	'centralauth-editset-success' => 'विकी सफलतापूर्वक बदल से',
 	'centralauth-editset-success-delete' => 'सफलतापूर्वक नष्ट कर दिया विकी सेट',
 	'centralauth-editset-return' => 'मुख्य दृश्य पर वापस जाएँ',
@@ -12809,9 +12817,9 @@ Addaan ti sabali a wiki ti nakita a kas ti balay ti pakabilangan nga adda ti nag
 	'centralauth-merge-step3-title' => 'Agaramid ti pinagtipon a pakabilangan',
 	'centralauth-merge-step3-detail' => 'Makairugi ka nga agaramid ti pinagtipon ti pakabilangam, kadagita a wiki ti naikabit:',
 	'centralauth-merge-step3-submit' => 'Pagtiponen dagiti pakabilangan',
-	'centralauth-merge-no-accounts' => 'Awan ti nabirukan kadagiti pakabilangan a naipada iti naganmo idiay pakabilangan a centro ti pinagsursurot a tabla!
+	'centralauth-merge-no-accounts' => 'Awan ti nabirukan kadagiti pakabilangan a naipada iti naganmo idiay pakabilangan a sentro ti pinagsursurot a tabla!
 Nadadael ngata ti database.',
-	'centralauth-merge-home-password' => 'Ti balay a wiki para daytoy a pakabilangan (nailista dita baba) ket addaan ti sabali a kontrasenias ngem iti inkabil mo.
+	'centralauth-merge-home-password' => 'Ti balay a wiki para iti  daytoy a pakabilangan (nailista dita baba) ket addaan ti sabali a kontrasenias ngem iti inkabil mo.
 Pangngaasi ta ikabil mo ti kontrasenias iti balay a wikim.',
 	'centralauth-complete' => 'Ti pinagtipon ti pagkaserrek mo ket nalpasen!',
 	'centralauth-incomplete' => 'Ti pinagtipon ti pagkaserrek mo ket saan pay a nalpas!',
@@ -12911,7 +12919,7 @@ Rason: $1',
 	'centralauth-admin-already-unmerged' => 'Lablabsen ti $1, nalpasen a naiyakar',
 	'centralauth-admin-unmerge-success' => 'Balligi ti pinagikkat ti inyakar  $1 {{PLURAL:$1|pakabilangan|dagiti pakabilangan}}',
 	'centralauth-admin-delete-title' => 'Ikkaten ti pakabilangan',
-	'centralauth-admin-delete-description' => 'Ti panag-ikaat ti sangaubongan a pakibilangan ket ikkaten na ti ania man a sangalubongan a kaykayat, ikkaten na amin dagiti lokal a pakabilangan  ken baybayan na a mawayaan ti sangalubongan a nagan tapno mausar ti sabali nga agar-aramat.',
+	'centralauth-admin-delete-description' => 'Ti panag-ikaat ti sangalubongan a pakibilangan ket ikkaten na ti ania man a sangalubongan a kaykayat, ikkaten na amin dagiti lokal a pakabilangan  ken baybayan na a mawayaan ti sangalubongan a nagan tapno mausar ti sabali nga agar-aramat.',
 	'centralauth-admin-delete-button' => 'Ikkaten daytoy a pakabilangan',
 	'centralauth-admin-delete-success' => 'Balligi ti panag-ikkat ti sangalubongan a pakabilangan para kenni "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Awan ti sangalubongan a pakabilangan para kenni "<nowiki>$1</nowiki>"',
@@ -20726,7 +20734,7 @@ $messages['or'] = array(
 	'centralauth-merge-method-login-desc' => 'ଏହା ସୂଚାଉଅଛି ଯେ ସ୍ଥାନୀୟ ଖାତାଟି ଆପେଆପେ ସଭ୍ୟଜଣକ ଲଗ ଇନ କରିବା ବେଳେ ତିଆରି ହୋଇଥିଲା ।',
 	'centralauth-finish-title' => 'ଯୋଡ଼ାଣ ସାରିବେ',
 	'centralauth-finish-text' => 'ଯଦି ଏହି ଖାତାସବୁ ଆପଣଙ୍କର ତେବେ ଆପଣ ଏଠାରେ ବାକି ଖାତାମାନଙ୍କର ପାସବାର୍ଡ଼ ଟାଇପ କରି ଲଗ ଇନ ଏକାକୀକରଣ ପ୍ରକ୍ରିୟାକୁ ସହଜରେ ଶେଷ କରିପାରିବେ:',
-	'centralauth-finish-password' => 'ପାସବାର୍ଡ଼',
+	'centralauth-finish-password' => 'ପାସୱାର୍ଡ଼',
 	'centralauth-finish-login' => 'ଲଗଇନ',
 	'centralauth-finish-send-confirmation' => 'ପାସବାର୍ଡ଼ଟିକୁ ଇମେଲ କରି ପଠାଇବେ',
 	'centralauth-finish-problems' => 'ଆପଣ ଅସୁବିଧାରେ ପଡ଼ିଛନ୍ତି କି, ଅବା ଆପଣ ଏହି ସବୁ ଖାତାର ମାଲିକ ନୁହଁନ୍ତି?
