@@ -1985,7 +1985,7 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 * Motivos normales pa bloquiar y anubrir
 ** nome d'usuariu abusivu
 ** información personal non apropiada",
-	'centralauth-admin-logsnippet' => 'Cambeos anteriores na cuenta global',
+	'centralauth-admin-logsnippet' => 'Cambios anteriores na cuenta global',
 	'centralauth-admin-suppressreason' => 'Desaniciada globalmente por $1 pol motivu darréu: $2',
 	'globalusers' => "Llista d'usuarios globales",
 	'centralauth-listusers-locked' => 'candáu',
@@ -5643,6 +5643,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 /** German (Deutsch)
  * @author Church of emacs
  * @author DaSch
+ * @author Geitost
  * @author Kghbln
  * @author Metalhead64
  * @author MichaelFrey
@@ -5759,7 +5760,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-yes' => 'Ja',
 	'centralauth-admin-no' => 'Nein',
 	'centralauth-admin-hidden-list' => 'von öffentlichen Listen',
-	'centralauth-admin-hidden-oversight' => 'unterdrückt',
+	'centralauth-admin-hidden-oversight' => 'versteckt',
 	'centralauth-admin-list-legend-ro' => 'Liste lokaler Konten',
 	'centralauth-admin-list-legend-rw' => 'Zusammenführung für lokale Benutzerkonten aufheben',
 	'centralauth-admin-unattached' => 'nicht verbunden',
