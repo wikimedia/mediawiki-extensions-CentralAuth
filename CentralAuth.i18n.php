@@ -14755,6 +14755,7 @@ Other accounts are not yet confirmed.',
 
 /** Kazakh (Cyrillic script) (‪Қазақша (кирил)‬)
  * @author GaiJin
+ * @author Kaztrans
  */
 $messages['kk-cyrl'] = array(
 	'mergeaccount' => 'Тіркелгі біріздендіру күйі',
@@ -14803,7 +14804,7 @@ $messages['kk-cyrl'] = array(
 	'centralauth-blocked-text' => 'Мекен уикиіңіз (төменде тізімделінеді) өңдеуден бұғатталған. Бұның бұғаттауын өшіру үшін осы уикідің әкімшісімен қатынасыңыз. Бұғатталып тұрғанда тіркелгілеріңізді біріктіре алмайсыз.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Тек танысып шығу күйі</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Тіркелгі біріздендіру ағымда көрсету / мінету күйінде тұр, сонымен көкейкесті біріктіру әрекеттері өшірілген. Ғафу етіңіз!',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Бірегейлендірілген кіру''' туралы көбірек оқыңыз]]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Бір аккаунтты қолдану''' қызметі туралы көбірек біліңіз]]...''",
 	'centralauth-list-home-title' => 'Мекен уики',
 	'centralauth-list-home-dryrun' => 'Бұл уикиде енгізілген құпия сөз бен е-пошта мекенжайы біріздендірілген тіркелгіңіз үшін пайдаланылады.',
 	'centralauth-list-attached-title' => 'Тіркескен тіркелгілер',
@@ -24612,14 +24613,14 @@ $messages['si'] = array(
 	'centralauth-admin-no' => 'නැත',
 	'centralauth-admin-hidden-list' => 'පොදු ලයිස්තුවලින්',
 	'centralauth-admin-hidden-oversight' => 'ප්‍රමාද දෝෂ',
-	'centralauth-admin-list-legend-ro' => 'පෙදෙසි ගිණුම් ලයිස්තුව',
+	'centralauth-admin-list-legend-ro' => 'ප්‍රාදේශීය ගිණුම් ලයිස්තුව',
 	'centralauth-admin-list-legend-rw' => 'පෙදෙසි ගිණුම් වෙන් කරන්න',
 	'centralauth-admin-unattached' => 'නොබැඳි ගිණුම්',
 	'centralauth-admin-blocked' => 'වාරණය කරන ලදී. $3, $4 දී කල් ඉකුත්වේ.
 හේතුව: $2',
 	'centralauth-admin-blocked-indef' => 'අනිශ්චිත කාලයකට වාරණය කරන ලදී.
 හේතුව: $1',
-	'centralauth-admin-blocklog' => 'වාරණ ලොගය',
+	'centralauth-admin-blocklog' => 'වාරණ ලොග් සටහන',
 	'centralauth-admin-list-localwiki' => 'ස්ථානික විකිය',
 	'centralauth-admin-list-attached-on' => 'බැඳී ඇත්තේ',
 	'centralauth-admin-list-method' => 'ක්‍රමය',
