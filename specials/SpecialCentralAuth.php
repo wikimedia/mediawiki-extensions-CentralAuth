@@ -381,7 +381,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->foreignUserLink( $row['wiki'] ) .
 				"</td><td colspan='4'>{$notMerged}</td></tr>\n";
 		}
-		return implode( '\n', $rows );
+		return implode( "\n", $rows );
 	}
 
 	/**
