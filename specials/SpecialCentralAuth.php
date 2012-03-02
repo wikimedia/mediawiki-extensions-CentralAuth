@@ -26,7 +26,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
-		$this->addMergeMethodDescriptions();
+		$this->getOutput()->addJsConfigVars( 'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions() );
 
 		$this->mUserName =
 			trim(
@@ -701,15 +701,15 @@ class SpecialCentralAuth extends SpecialPage {
 		return $total;
 	}
 
-	function addMergeMethodDescriptions() {
-		$js = "wgMergeMethodDescriptions = {\n";
+	function getMergeMethodDescriptions() {
+		$mergeMethodDescriptions = array();
 		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
-			$short = Xml::encodeJsVar( $this->getLanguage()->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
-			$desc = Xml::encodeJsVar( wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" ) );
-			$js .= "\t'{$method}' : { 'short' : {$short}, 'desc' : {$desc} }\n";
+			$mergeMethodDescriptions[$method] = array(
+				'short' => $this->getLanguage()->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ),
+				'desc' => wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" )
+			);
 		}
-		$js .= "}";
-		$this->getOutput()->addInlineScript( $js );
+		return $mergeMethodDescriptions;
 	}
 
 	/**
