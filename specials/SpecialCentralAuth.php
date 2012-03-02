@@ -706,7 +706,7 @@ class SpecialCentralAuth extends SpecialPage {
 		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
 			$short = Xml::encodeJsVar( $this->getLanguage()->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ) );
 			$desc = Xml::encodeJsVar( wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" ) );
-			$js .= "\t'{$method}' : { 'short' : {$short}, 'desc' : {$desc} },\n";
+			$js .= "\t'{$method}' : { 'short' : {$short}, 'desc' : {$desc} }\n";
 		}
 		$js .= "}";
 		$this->getOutput()->addInlineScript( $js );
