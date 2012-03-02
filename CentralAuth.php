@@ -281,7 +281,6 @@ if ( MWInit::classExists( 'AntiSpoof' ) ) {
 	$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] = "$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
 	$wgHooks['AbortNewAccount'][] = 'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
-	$wgHooks['UserCreateForm'][] = 'CentralAuthAntiSpoofHooks::asUserCreateFormHook';
 	$wgHooks['AddNewAccount'][] = 'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
 	$wgHooks['RenameUserComplete'][] = 'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
 }
