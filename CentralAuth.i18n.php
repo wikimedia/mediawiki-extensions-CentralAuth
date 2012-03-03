@@ -5742,7 +5742,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-attach-submit' => 'Benutzerkonto integrieren',
 	'centralauth-attach-success' => 'Das Benutzerkonto wurde in das globale Benutzerkonto integriert.',
 	'centralauth' => 'Verwaltung globaler Benutzerkonten',
-	'centralauth-admin-intro' => 'Diese Spezialseite kann für die Verwaltung globaler Benutzerkonten verwendet werden.',
+	'centralauth-admin-intro' => 'Spezialseite zur Verwaltung globaler Benutzerkonten.',
 	'centralauth-admin-manage' => 'Benutzerdaten verwalten',
 	'centralauth-admin-username' => 'Benutzername:',
 	'centralauth-admin-lookup-ro' => 'Benutzerinformationen zeigen',
@@ -14287,7 +14287,7 @@ $messages['ka'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|ანგარიშის გაერთიანება]] ფონდ „ვიდიმედიას“ ყველა ვიკი-პროექტში',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|აერთიანებს რამდენიმე ანგარიშს]] მომხმარებლის ერთიან ანგარიშად',
 	'centralauth-merge-denied' => 'უკაცრავად, თქვენ არ გაქვთ ამ გვერდის ნახვის უფლება.',
-	'centralauth-merge-notlogged' => 'გთხოვთ <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} შეხვიდეთ სისტემაში]</span>, რათა შეამოწმოთ მოხდა თუ არა თქვენი ანგარიშების სრულად გაერთიანება.',
+	'centralauth-merge-notlogged' => 'გთხოვთ, <span class="plainlinks">[$1 შეხვიდეთ სისტემაში]</span> რათა შეამოწმოთ მოხდა თუ არა თქვენი ანგარიშების სრულად გაერთიანება.',
 	'centralauth-merge-welcome' => "'''თქვენი ანგარიში ჯერ კიდევ არ გასულა „ვიკიმედიის“ პროექტების ერთიანი ავტორიზაციის სისტემაზე.'''
 
 თუკი თქვენ გადასვლას გადაწყვეტთ, თქვენ შეგეძლებათ ფონდ „ვიკიმედიის“ ყველა ენაზე არსებულ ყველა პროექტში შესვლა ერთიდაიგივე მომხმარებლის სახელისა და პაროლის გამოყენებით.
@@ -14459,8 +14459,8 @@ $messages['ka'] = array(
 	'centralauth-renameuser-reserved' => 'მომხმარებელი $2 შენახულია გლობალური ანგარიშისთვის.',
 	'centralauth-invalid-wiki' => 'არ არსებობს ვიკი-მონაცემთა ბაზა სახელწოდებით: $1',
 	'centralauth-account-exists' => 'ანგარიშის შექმნა შეუძლებელია: სასურველი მომხმარებლის სახელი უკვე დაკავებულია გაერთიანებული ანგარიშის სისტემაში.',
-	'centralauth-login-progress' => 'თქვენ შეხვედით აგრეთვე {{int:Centralauth-groupname}}-ის სხვა პროექტებშიც:',
-	'centralauth-logout-progress' => 'სეანსი დასრულებულია ასევე {{int:Centralauth-groupname}} სხვა პროექტებში -',
+	'centralauth-login-progress' => 'თქვენ აგრეთვე შეხვედით {{int:Centralauth-groupname}}-ის სხვა პროექტებშიც :',
+	'centralauth-logout-progress' => 'თქვენ აგრეთვე გამოხვედით {{int:Centralauth-groupname}}-ის სხვა პროექტებიდანაც:',
 	'centralauth-login-no-others' => 'თქვენ ავტომატურად შეხვედით {{int:Centralauth-groupname}}-ის ყველა პროექტში.',
 	'centralauth-logout-no-others' => 'თქვენ ავტომატურად გახვედით {{int:Centralauth-groupname}}-ის ყველა პროექტიდან.',
 	'centralauth-hidden-blockreason' => 'გლობალურად დამალა მომხმარებელმა $1 $2 შემდეგი მიზეზის გამო: $3',
@@ -15340,7 +15340,7 @@ $messages['ko'] = array(
 계정을 합치면, 같은 이름과 암호로 모든 언어의 모든 {{MediaWiki:Centralauth-groupname/ko}}의 프로젝트에 로그인할 수 있습니다.
 
 만약 다른 누군가가 당신의 사용자 이름을 사용하고 있다면 이것을 빼앗을 수는 없습니다. 하지만 나중에 이 문제를 해결할 기회가 될 수는 있습니다.",
-	'centralauth-merge-step1-title' => '계정 통합 시작',
+	'centralauth-merge-step1-title' => '계정을 통합하기',
 	'centralauth-merge-step1-detail' => '여기에 계정의 비밀번호를 입력해 주세요.
 위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다. 모든 것을 확인하기 전까지 아무 것도 바뀌지 않습니다.',
 	'centralauth-merge-step1-submit' => '로그인 정보 확인',
@@ -15356,9 +15356,9 @@ $messages['ko'] = array(
 
 아직 계정에 적용되지 않았습니다.',
 	'centralauth-merge-dryrun-or' => "'''또는'''",
-	'centralauth-merge-dryrun-home' => '통합 계정 시스템이 주 위키에서의 계정이 당신의 것인지 확인하지 못했습니다.
+	'centralauth-merge-dryrun-home' => '통합 계정 시스템은 주된 위키 계정의 소유자가 당신인지 확인할 수 없었습니다.
 
-다른 위키가 주 위키로 정해졌습니다. 계정 통합을 마치려면 아래의 링크를 따라가 로그인하십시오.',
+다른 위키가 주된 위키로 정해졌습니다.  아래의 링크를 따라가 로그인하여 계정을 통합하십시오.',
 	'centralauth-merge-step3-title' => '통합 계정 만들기',
 	'centralauth-merge-step3-detail' => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
 	'centralauth-merge-step3-submit' => '계정 합치기',
@@ -15366,8 +15366,8 @@ $messages['ko'] = array(
 데이터베이스가 잘못되었을 수 있습니다.',
 	'centralauth-merge-home-password' => '아래에 나열된 계정의 주 위키의 비밀번호가 당신이 입력한 비밀번호와 다릅니다.
 주 위키의 비밀번호를 입력해주세요.',
-	'centralauth-complete' => '계정 통합이 완료되었습니다!',
-	'centralauth-incomplete' => '계정 통합 미완료',
+	'centralauth-complete' => '계정을 통합했습니다!',
+	'centralauth-incomplete' => '계정을 통합하지 못했습니다!',
 	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
 	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 {{int:Centralauth-groupname}}의 위키에 로그인할 수 있습니다.',
@@ -15483,8 +15483,8 @@ $messages['ko'] = array(
 	'centralauth-admin-status-hidden-list' => '계정이 통합 계정 목록에서 숨겨짐',
 	'centralauth-admin-status-hidden-oversight' => '계정이 완전히 숨겨짐',
 	'centralauth-admin-status-submit' => '설정',
-	'centralauth-admin-status-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"가 존재하지 않습니다.',
-	'centralauth-admin-setstatus-success' => '통합 계정의 상태를 변경하는 데 성공하였습니다.',
+	'centralauth-admin-status-nonexistent' => '오류:  "<nowiki>$1</nowiki>" 통합 계정이 없습니다.',
+	'centralauth-admin-setstatus-success' => '통합 계정의 상태를 변경했습니다.',
 	'centralauth-admin-status-reasons' => '* 일반적인 잠금 이유
 ** 훼손 목적의 계정
 ** 광고/스팸 목적의 계정
@@ -15503,15 +15503,15 @@ $messages['ko'] = array(
 	'centralauth-days-ago' => '$1일 전',
 	'centralauth-months-ago' => '$1달 전',
 	'centralauth-years-ago' => '$1년 전',
-	'centralauth-prefs-status' => '공통 계정 상태:',
+	'centralauth-prefs-status' => '통합 계정 상태:',
 	'centralauth-prefs-not-managed' => '통합 계정 사용하지 않음',
 	'centralauth-prefs-unattached' => '확인되지 않음',
 	'centralauth-prefs-complete' => '준비 완료!',
-	'centralauth-prefs-migration' => '이동 중',
+	'centralauth-prefs-migration' => '통합하고 있음',
 	'centralauth-prefs-count-attached' => '당신의 계정은 $1개의 프로젝트에서 활동하고 있습니다.',
 	'centralauth-prefs-count-unattached' => '당신과 같은 이름을 쓰는 확인되지 않은 계정이 $1개의 프로젝트에 존재합니다.',
 	'centralauth-prefs-detail-unattached' => '이 프로젝트 사이트에서는 통합 계정에 묶여 있음이 확인되지 않았습니다.',
-	'centralauth-prefs-manage' => '공통 계정 관리',
+	'centralauth-prefs-manage' => '통합 계정 관리하기',
 	'centralauth-prefs-view' => '통합 계정 정보 보기',
 	'centralauth-renameuser-merged' => '$1 계정은 통합 로그인 시스템으로 옮겨졌습니다.
 이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.',
@@ -15527,18 +15527,18 @@ $messages['ko'] = array(
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-header' => '이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.',
 	'centralauth-log-entry-delete' => '통합 계정 "$1"을 삭제함',
-	'centralauth-log-entry-lock' => '공통 계정 "$1"를 잠금',
-	'centralauth-log-entry-unlock' => '공통 계정 "$1"을 잠금 해제하였습니다.',
-	'centralauth-log-entry-hide' => '공통 계정 "$1"를 숨김',
-	'centralauth-log-entry-unhide' => '공통 계정 "$1"을 숨김 해제함',
-	'centralauth-log-entry-lockandhide' => '공통 계정 "$1"을 잠그고 숨김',
-	'centralauth-log-entry-chgstatus' => '통합 계정 "$1"의 상태를 변경: 설정: $2; 해제: $3',
+	'centralauth-log-entry-lock' => '"$1" 통합 계정을 잠금',
+	'centralauth-log-entry-unlock' => '"$1" 통합 계정 잠금 해제',
+	'centralauth-log-entry-hide' => '"$1" 통합 계정을 숨김',
+	'centralauth-log-entry-unhide' => '"$1" 통합 계정 숨김 해제',
+	'centralauth-log-entry-lockandhide' => '"$1" 통합 계정을 잠그고 숨김',
+	'centralauth-log-entry-chgstatus' => '"$1" 통합 계정의 상태를 변경: $2 설정; $3 설정 해제',
 	'centralauth-log-status-locked' => '잠금',
 	'centralauth-log-status-hidden' => '숨김',
 	'centralauth-log-status-oversighted' => '오버사이트됨',
 	'centralauth-log-status-none' => '(없음)',
 	'centralauth-rightslog-name' => '공통 권한 기록',
-	'centralauth-rightslog-entry-usergroups' => '$1의 공통 계정 권한을 $2에서 $3으로 변경',
+	'centralauth-rightslog-entry-usergroups' => '$1의 통합 그룹 소속을 $2에서 $3으로 변경',
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 변경',
 	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 변경함. 추가: $2; 제거: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 변경',
@@ -15586,8 +15586,8 @@ $messages['ko'] = array(
 [[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아가기]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-globalgrouppermissions-knownwiki' => '계정을 가지고 있는 위키:',
-	'centralauth-globalgroupmembership-badknownwiki' => "공통 계정 '''$1'''은 당신이 입력한 위키 ('' $2 '')에서 활동 중이지 않습니다.
-당신은 다른 사용자의 권한을 바꾸게 될 수 있습니다.",
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' 통합 계정은 당신이 지정한 위키('' $2 '')에서 유효하지 않습니다.
+당신은 권한을 엉뚱한 사용자에게 줄 수도 있습니다.",
 	'centralauth-editset' => '위키 집합',
 	'centralauth-editset-legend-rw' => '위키 집합 생성 및 편집하기',
 	'centralauth-editset-legend-ro' => '위키 집합의 목록',
@@ -15622,13 +15622,13 @@ $messages['ko'] = array(
 	'centralauth-editset-success-delete' => '위키 집합을 성공적으로 삭제하였습니다.',
 	'centralauth-editset-return' => '이전으로 돌아가기',
 	'centralauth-readonly' => 'CentralAuth 데이터베이스 잠김',
-	'centralauth-readonlytext' => '정기 데이터베이스 정비 작업 등의 이유로 인해 CentralAuth 데이터베이스가 항목 추가/수정 작업을 하지 못하도록 잠뎌 있습니다. 잠시 후 정상으로 되돌아올 것입니다.',
+	'centralauth-readonlytext' => '정기 데이터베이스 정비 작업 등의 이유로  지금 CentralAuth 데이터베이스가 잠겨서 항목을 만들거나 변경하지 못합니다. 작업이 끝나면 정상화될 것입니다.',
 	'right-globalgroupmembership' => '사용자의 공통 권한 조정',
 	'right-centralauth-autoaccount' => '통합 계정으로 자동 로그인하기',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
 	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
 	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기',
-	'right-centralauth-merge' => '자신의 계정 통합',
+	'right-centralauth-merge' => '자신의 계정을 통합하기',
 	'right-globalgrouppermissions' => '공통 권한 관리',
 );
 
@@ -26982,6 +26982,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Balajijagadesh
  * @author Karthi.dr
  * @author Shanmugamp7
  * @author Sodabottle
@@ -27031,6 +27032,7 @@ $messages['ta'] = array(
 	'centralauth-finish-login' => 'புகுபதிகை',
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
 	'centralauth-attach-title' => 'கணக்கை உறுதிசெய்',
+	'centralauth-attach-submit' => 'கணக்கை புலம் பெயர்',
 	'centralauth' => 'உலகளாவிய பயனர் மேலாளர்',
 	'centralauth-admin-manage' => 'பயனீட்டாளர் தரவை நிர்வகி',
 	'centralauth-admin-username' => 'பயனர் பெயர்:',
