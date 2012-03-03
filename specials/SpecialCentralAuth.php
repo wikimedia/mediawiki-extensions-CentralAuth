@@ -416,11 +416,26 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	function formatMergeMethod( $method ) {
 		global $wgExtensionAssetsPath;
+		
+		$brief = wfMessage( 'centralauth-merge-method-{$method}' )->text();
+		$html = 
+			Html::element(
+				'img', array(
+					'src' => "{$wgExtensionAssetsPath}/CentralAuth/icons/merged-{$method}.png",
+					'alt' => $brief,
+					'title' => $brief,
+				)
+			)
+			. Html::element(
+				'span', array(
+					'class' => 'merge-method-help',
+					'title' => $brief,
+					'data-centralauth-mergemethod' => $method
+				),
+				'(?)'
+			);
 
-		$img = htmlspecialchars( "{$wgExtensionAssetsPath}/CentralAuth/icons/merged-{$method}.png" );
-		$brief = wfMsgHtml( "centralauth-merge-method-{$method}" );
-		return "<img src=\"{$img}\" alt=\"{$brief}\" title=\"{$brief}\"/>" .
-			"<span class=\"merge-method-help\" title=\"{$brief}\" onclick=\"showMethodHint('{$method}')\">(?)</span>";
+		return $html;
 	}
 
 	/**

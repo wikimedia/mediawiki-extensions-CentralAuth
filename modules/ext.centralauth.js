@@ -1,34 +1,57 @@
-wgCursorPosition = { x : 0, y : 0 };
-function updateCursorPosition( e ) {
-	e = e || window.event;
-	wgCursorPosition.x = e.clientX + ( document.documentElement.scrollLeft || document.body.scrollLeft )
-		- document.documentElement.clientLeft;
-	wgCursorPosition.y = e.clientY + ( document.documentElement.scrollTop || document.body.scrollTop )
-		- document.documentElement.clientTop;
-}
-document.onmousemove = updateCursorPosition;
+( function ( mw, $, undefined ) {
+	var cursorPosition, $methodHint;
 
-methodHint = null;
-function showMethodHint( methodName ) {
-	hideMethodHint();
+	cursorPosition = {
+		x : 0,
+		y : 0
+	};
 
-	method = wgMergeMethodDescriptions[methodName];
-	helpHtml = "<p class='merge-method-help-name'>" + method.short + "</p>" + method.desc;
+	$(document).on( 'mousemove', function updateCursorPosition( e ) {
+		cursorPosition.x = 
+			e.clientX
+			+ ( document.documentElement.scrollLeft || document.body.scrollLeft )
+			- document.documentElement.clientLeft;
 
-	methodHint = document.createElement( 'div' );
-	methodHint.innerHTML = helpHtml;
-	methodHint.setAttribute( 'class', 'merge-method-help-div' );
-	methodHint.style.left = wgCursorPosition.x + 'px';
-	methodHint.style.top = wgCursorPosition.y + 'px';
-	methodHint.setAttribute( 'onclick', 'hideMethodHint()' );
+		cursorPosition.y =
+			e.clientY
+			+ ( document.documentElement.scrollTop || document.body.scrollTop )
+			- document.documentElement.clientTop;
+	} );
 
-	var content = document.getElementById('content') || document.getElementById('mw_content') || document.body;
-	content.appendChild( methodHint );
-}
+	function showMethodHint( methodName ) {
+		var content, hintHtml;
 
-function hideMethodHint() {
-	if( methodHint ) {
-		methodHint.parentNode.removeChild( methodHint );
-		methodHint = null;
+		if ( !$methodHint ) {
+			$methodHint = $( '<div>' )
+				.addClass( 'merge-method-help-div' )
+				.hide()
+				.click( function () {
+					$(this).fadeOut();
+				} );
+
+			content = document.getElementById( 'content' ) || document.getElementById( 'mw_content' ) || document.body;
+			$(content).append( $methodHint );
+		}
+	
+		hintHtml = mw.html.element( 'p', {
+			'class': 'merge-method-help-name'
+		}, mw.msg( 'centralauth-merge-method-' + methodName ) ) + mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
+	
+		$methodHint
+			.html( hintHtml )
+			.css({
+				left: cursorPosition.x + 'px',
+				top: cursorPosition.y + 'px'
+			});
+
+		$methodHint.fadeIn();
 	}
-}
+
+	$( document ).ready( function () {
+		// Bind an event listener to the common parent of all (?) elements
+		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function () {
+			showMethodHint( $(this).data( 'centralauth-mergemethod' ) );
+		} );
+	} );
+
+}( mediaWiki, jQuery ) );

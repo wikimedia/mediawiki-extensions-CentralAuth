@@ -260,6 +260,22 @@ $commonModuleInfo = array(
 $wgResourceModules['ext.centralauth'] = array(
 	'scripts' => 'ext.centralauth.js',
 	'styles' => 'ext.centralauth.css',
+	'messages' => array(
+		'centralauth-merge-method-primary',
+		'centralauth-merge-method-primary-desc',
+		'centralauth-merge-method-new',
+		'centralauth-merge-method-new-desc',
+		'centralauth-merge-method-empty',
+		'centralauth-merge-method-empty-desc',
+		'centralauth-merge-method-password',
+		'centralauth-merge-method-password-desc',
+		'centralauth-merge-method-mail',
+		'centralauth-merge-method-mail-desc',
+		'centralauth-merge-method-admin',
+		'centralauth-merge-method-admin-desc',
+		'centralauth-merge-method-login',
+		'centralauth-merge-method-login-desc',
+	),
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.noflash'] = array(

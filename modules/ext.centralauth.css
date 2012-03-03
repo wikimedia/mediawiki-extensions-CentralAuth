@@ -12,3 +12,8 @@
 .merge-method-help-name {
 	font-weight: bold;
 }
+
+/* Hide them when javascript fails or isn't enabled */
+.client-nojs .mw-centralauth-wikislist .merge-method-help {
+	display: none;
+}
