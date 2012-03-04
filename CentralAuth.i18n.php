@@ -3869,8 +3869,8 @@ Gallout a ra bezañ disheñel ouzh wiki pennañ an implijer.",
 	'centralauth-merge-method-empty-desc' => "Merkañ a ra ez eo bet kendeuzet ar gont lec'hel dre ma ne oa ket a gemmoù.",
 	'centralauth-merge-method-mail-desc' => "Merkañ a ra ez eo bet kendeuzet ar gont lec'hel dre ma glot e chomlec'h postel gant hini ar gont pennañ.",
 	'centralauth-merge-method-password-desc' => "Diskouez a ra ez eo bet kendeuzet ar gont lec'hel dre m'en deus spisaet ur ger-tremen reizh evitañ.",
-	'centralauth-merge-method-admin-desc' => "Ro da anavezout ez eo bet kendeuzet ar c'hont lec'hel gant stewaded.
-An arc'hweladur-mañ a zo bremañ diweredekaet evit ar surentez.",
+	'centralauth-merge-method-admin-desc' => "Reiñ a ra da c'houzout ez eo bet kendeuzet ar gont lec'hel gant bureveien.
+Diweredekaet eo an arc'hwel-mañ evit ar mare en abeg d'ar surentez.",
 	'centralauth-merge-method-new-desc' => "Merkañ a ra ez eo bet krouet ar gont lec'hel ez emgefre pa 'z eo bet krouet ar gont lec'hel-mañ.",
 	'centralauth-merge-method-login-desc' => "Merkañ a ra ez eo bet krouet ar gont lec'hel p' en deus kevreet an implijer.",
 	'centralauth-finish-title' => "Echuiñ ar c'hendeuziñ",
@@ -3949,7 +3949,7 @@ Abeg : $1',
 	'centralauth-admin-status-hidden-oversight' => 'Kuzhet eo penn-da-benn ar gont',
 	'centralauth-admin-status-submit' => 'Lakaat ar statud',
 	'centralauth-admin-status-nonexistent' => 'Fazi : N\'eus ket eus ar gont hollek "<nowiki>$1</nowiki>".',
-	'centralauth-admin-setstatus-success' => 'Kemmet ho peus statud ar gont hollek-mañ.',
+	'centralauth-admin-setstatus-success' => 'Kemmet eo bet ervat statud ar gont hollek-mañ.',
 	'centralauth-admin-status-reasons' => "* Abegoù stankañ kavet al liesañ
 ** kont a servij d'ar vandalerezh nemetken
 ** kont a servij da spamañ
