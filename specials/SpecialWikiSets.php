@@ -131,12 +131,12 @@ class SpecialWikiSets extends SpecialPage {
 			} else {
 				$usage = wfMsgExt( 'centralauth-editset-nouse', 'parse' );
 			}
+			$sortedWikis = $set->getWikisRaw();
+			sort( $sortedWikis );
 		} else {
 			$usage = '';
+			$sortedWikis = array();
 		}
-
-		$sortedWikis = $set->getWikisRaw();
-		sort( $sortedWikis );
 
 		# Make an array of the opposite list of wikis
 		# (all databases *excluding* the defined ones)
