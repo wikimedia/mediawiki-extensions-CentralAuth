@@ -163,15 +163,18 @@ class CentralAuthUser extends AuthPluginUser {
 		$globaluser = $dbr->tableName( 'globaluser' );
 		$localuser = $dbr->tableName( 'localuser' );
 
-		$sql =
-			"SELECT gu_id, lu_wiki, gu_salt, gu_password,gu_auth_token, " .
-			"gu_locked,gu_hidden, gu_registration, gu_email, " .
-			"gu_email_authenticated, gu_home_db " .
-			"FROM $globaluser " .
-			"LEFT OUTER JOIN $localuser ON gu_name=lu_name AND lu_wiki=? " .
-			"WHERE gu_name=?";
-		$result = $dbr->safeQuery( $sql, wfWikiID(), $this->mName );
-		$row = $dbr->fetchObject( $result );
+		$row = $dbr->selectRow( 
+			array( 'globaluser', 'localuser' ),
+			array(
+				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
+				'gu_locked', 'gu_hidden', 'gu_registration', 'gu_email',
+				'gu_email_authenticated', 'gu_home_db'
+			),
+			array( 'gu_name' => $this->mName ),
+			__METHOD__,
+			array(),
+			array( 'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) ) )
+		);
 
 		$this->loadFromRow( $row, true );
 		$this->saveToCache();
@@ -1401,14 +1404,14 @@ class CentralAuthUser extends AuthPluginUser {
 	function doListUnattached() {
 		$dbw = self::getCentralDB();
 
-		$sql = "
-		SELECT ln_wiki
-		FROM localnames
-		LEFT OUTER JOIN localuser
-			ON ln_wiki=lu_wiki AND ln_name=lu_name
-		WHERE ln_name=? AND lu_name IS NULL
-		";
-		$result = $dbw->safeQuery( $sql, $this->mName );
+		$result = $dbw->select(
+			array( 'localnames', 'localuser' ),
+			array( 'ln_wiki' ),
+			array( 'ln_name' => $this->mName, 'lu_name IS NULL' ),
+			__METHOD__,
+			array(),
+			array( 'localuser' => array( 'LEFT OUTER JOIN', array( 'ln_wiki=lu_wiki', 'ln_name=lu_name' ) ) )
+		);
 
 		$dbs = array();
 		foreach ( $result as $row ) {
