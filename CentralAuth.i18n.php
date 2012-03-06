@@ -8254,7 +8254,7 @@ $messages['fa'] = array(
 در صورتی که اختیارات لازم را داشته باشید، می‌توانید اختیارات داده شده به هر گروه را ببینید و ویرایش کنید.
 یک گروه را می‌توان با گرفتن تمام اختیاراتش حذف کرد.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|مشاهده و ویرایش اختیارات]])',
-	'centralauth-globalgroupperms-nogroups' => 'هیچ گروه سراسری تعریف نشده‌است.',
+	'centralauth-globalgroupperms-nogroups' => 'هیچ گروه سراسری‌ای تعریف نشده‌است.',
 	'centralauth-existinggroup-legend' => 'گروه‌های موجود',
 	'centralauth-newgroup-legend' => 'ایجاد یک گروه جدید',
 	'centralauth-newgroup-intro' => 'شما می‌توانید با استفاده از این فرم اختیاراتی را به یک گروه بدهید. توجه داشته باشید که یک گروه نمی‌تواند وجود داشته باشد مگر آن که اختیارات به وی داده شده باشد.',
@@ -8279,7 +8279,7 @@ $messages['fa'] = array(
 [[Special:GlobalGroupPermissions|به مدیریت گروه‌ها بازگردید]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ویرایش]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'یک ویکی که در آن حساب دارید را انتخاب کنید:',
-	'centralauth-globalgroupmembership-badknownwiki' => "حساب مشترک '''$1''' در ویکی مورد نظر شما ('''$2''') فعال نیست. شاید شما در حال اختصاص دادن اختیارات به کاربر اشتباهی هستید!",
+	'centralauth-globalgroupmembership-badknownwiki' => "حساب مشترک '''$1''' در ویکی مورد نظر شما ('' $2 '') فعال نیست. ممکن است در حال اختصاص‌دادن اختیارات به کاربر اشتباهی باشید!",
 	'centralauth-editset' => 'مجموعه‌های ویکی',
 	'centralauth-editset-legend-rw' => 'ویرایش یا ایجاد مجموعهٔ ویکی',
 	'centralauth-editset-legend-ro' => 'فهرست مجموعه‌های ویکی',
@@ -8287,11 +8287,11 @@ $messages['fa'] = array(
 شما می‌توانید هر یک از آن‌ها را مشاهده یا تغییر دهید، یا مجموعه‌ای جدید ایجاد کنید.',
 	'centralauth-editset-intro-ro' => 'در پایین فهرست مجموعه‌های ویکی موجود قرار دارد.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|حذف]])',
-	'centralauth-editset-new' => 'ایجاد یک مجموعه جدید',
-	'centralauth-editset-notfound' => 'مجموعه ویکی «$1» پیدا نشد.',
+	'centralauth-editset-new' => 'ایجاد یک مجموعهٔ جدید',
+	'centralauth-editset-notfound' => 'مجموعهٔ ویکی «$1» پیدا نشد.',
 	'centralauth-editset-optin' => 'بر اساس عضو شدن (تنها شامل ویکی‌های مشخص شده)',
 	'centralauth-editset-optout' => 'بر اساس از عضویت در آمدن (شامل تمام ویکی‌های به جز موارد مشخص شده)',
-	'centralauth-editset-legend-edit' => 'ویرایش مجموعه ویکی «$1»',
+	'centralauth-editset-legend-edit' => 'ویرایش مجموعهٔ ویکی «$1»',
 	'centralauth-editset-legend-view' => 'مجموعهٔ ویکی «$1»',
 	'centralauth-editset-legend-new' => 'ایجاد مجموعه ویکی جدید',
 	'centralauth-editset-legend-delete' => 'حذف مجموعهٔ ویکی «$1»',
@@ -14488,6 +14488,7 @@ $messages['ka'] = array(
 	'centralauth-rightslog-entry-newset' => 'შექმნა $2 ვიკის ჯგუდი $1 შემდეგი ვიკებით: $3',
 	'centralauth-rightslog-entry-setrename' => 'გადაარქვა შემდეგ ვიკებს  «$2»დან «$1»-ში',
 	'centralauth-rightslog-entry-setnewtype' => 'შეცვალა ტიპი  «$1»  $2-დან  $3-ზე',
+	'centralauth-rightslog-entry-setchange' => 'შეიცვალა ვიკი "$1"-ში: დაემატა: $2; წაიშალა: $3',
 	'centralauth-rightslog-entry-deleteset' => 'წაშლილი "$1" ვიკი-ნაკრები',
 	'centralauth-rightslog-set-optin' => 'დაშვების პრინციპით',
 	'centralauth-rightslog-set-optout' => 'გამორიცხვის პრინციპით',
@@ -14561,6 +14562,7 @@ $messages['ka'] = array(
 	'centralauth-editset-success-delete' => 'ვიკი-ნაკრები წარმატებით წაიშალა.',
 	'centralauth-editset-return' => 'მთავარ არეზე დაბრუნება',
 	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
+	'right-centralauth-autoaccount' => 'ავტომატური შესვლა გლობალური ანგარიშით',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
 	'right-centralauth-lock' => 'გლობალური ანგარიშის დაბლოკვა ან დამალვა',
 	'right-centralauth-oversight' => 'გლობალური ანგარიშის აკრძალვა',
@@ -20672,7 +20674,7 @@ $messages['or'] = array(
 	'centralauth-merge-notlogged' => 'ଦୟାକରି <span class="plainlinks">[$1 ଲଗ ଇନ କରନ୍ତୁ]</span> ଯାହା ଆପଣଙ୍କ ଖାତା ପୁରାପୁରି ମିଶିଯାଇଛି କି ନାହିଁ ଜାଣିବା ନିମନ୍ତେ ସହଯୋଗ କରିବ ।',
 	'centralauth-merge-welcome' => "'''ଆପଣଙ୍କ ସଭ୍ୟ ଖାତାଟି ଏଯାଏଁ {{int:Centralauth-groupname}}ର ଏକାକୀକରଣ ଲଗ ଇନ ସୁବିଧା ଭିତରକୁ ଘୁଞ୍ଚାଯାଇନାହିଁ ।'''
 
-ଯଦି ଆପଣ ଆପଣା ଖାତାସବୁକୁ ଘୁଞ୍ଚାଇବାକୁ ଚାହାନ୍ତି, ତେବେ ଏକା ଇଉଜର ନାମ ଓ ପାସବାର୍ଡ଼ ବ୍ୟବହାର କରି ଆପଣ {{int:Centralauth-groupname}}ର ସବୁଯାକ ପ୍ରକଳ୍ପରେ ବିବିଧ ଭାଷାରେ ଲଗ ଇନ କରି ପାରିବେ ।
+ଯଦି ଆପଣ ଆପଣା ଖାତାସବୁକୁ ଘୁଞ୍ଚାଇବାକୁ ଚାହାନ୍ତି, ତେବେ ଏକା ଇଉଜର ନାମ ଓ ପାସୱାର୍ଡ଼ ବ୍ୟବହାର କରି ଆପଣ {{int:Centralauth-groupname}}ର ସବୁଯାକ ପ୍ରକଳ୍ପରେ ବିବିଧ ଭାଷାରେ ଲଗ ଇନ କରି ପାରିବେ ।
 
 ଯଦି ଆଗରୁ କେହିଜଣେ ଆଉ କେଉଁ ଉଇକିରେ ଆପଣଙ୍କ ଇଉଜର ନାମ ନେଇଯାଇଥିବ ତେବେ ବି କିଛି ଅସୁବିଧା ନାହିଁ, କିନ୍ତୁ ଏହା ପରେ ଆପଣଙ୍କୁ ଜଣେ ପରିଛାଙ୍କ ସହଯୋଗରେ ଏହାକୁ ଠିକ କରିବାରେ ସାହାଯ୍ୟ କରିବ ।",
 	'centralauth-merge-step1-title' => 'ଲଗିଇନ ଏକାକିକରଣ ଆରମ୍ଭ କରିବା',
@@ -20682,7 +20684,7 @@ $messages['or'] = array(
 	'centralauth-merge-step1-submit' => 'ଲଗଇନ ସୁଚନା ଠିକ ବୋଲି ଜଣାନ୍ତୁ',
 	'centralauth-merge-step2-title' => 'ଆହୁରି ବେଶୀ ଖାତା ଠିକକରିବା',
 	'centralauth-merge-step2-detail' => 'ନିର୍ଦେଶିତ ମୂଳ ଉଇକିସହ କେତେକ ଖାତା ଆପେଆପେ ମେଳ କରାଯାଇପାରିବ ନାହିଁ ।
-ଯଦି ଏହି ଖାତାସବୁ ଆପଣଙ୍କର, ତେବେ ଆପଣା ପାସବାର୍ଡ଼ ଦେଇ ସେଗୁଡ଼ିକ ନିଜର ବୋଲି ଥୟ କରିଦିଅନ୍ତୁ ।',
+ଯଦି ଏହି ଖାତାସବୁ ଆପଣଙ୍କର, ତେବେ ଆପଣା ପାସୱାର୍ଡ଼ ଦେଇ ସେଗୁଡ଼ିକ ନିଜର ବୋଲି ନିଶ୍ଚିତ କରିଦିଅନ୍ତୁ ।',
 	'centralauth-merge-step2-submit' => 'ଲଗଇନ ସୁଚନା ଠିକ ବୋଲି ଜଣାନ୍ତୁ',
 	'centralauth-merge-dryrun-complete' => 'ସବୁ ଯାକ ଖାତା ଆପେଆପେ ମିଶାଇଦିଆଯିବ!
 ଆପଣଙ୍କ ଖାତାରେ ଏ ଯାଏଁ କିଛି ବଦଳ କରାଯାଇନାହିଁ ।',
@@ -20719,7 +20721,7 @@ $messages['or'] = array(
 	'centralauth-list-attached-dryrun' => '"$1" ନାମରେ ତଲଲିଖିତ ସବୁ ସାଇଟରେ ଥିବା ଖାତାଟି ଏକ ମିଶା ଖାତାରେ ଆପେଆପେ ଏହି ଖାତାରେ ଯୋଡ଼ାଯିବ:',
 	'centralauth-list-unattached-title' => 'ଯୋଡ଼ା ହୋଇନଥିବା ଖାତା',
 	'centralauth-list-unattached' => '"$1" ନାମରେ ଥିବା ଖାତାଟି ତଲଲିଖିତ ସବୁ ସାଇଟରେ ଥୟ କରାଯାଇପାରିବ ନାହିଁ;
-କାରଣ ସେସବୁରେ ଅଲଗା ଅଲଗା ପାସବାର୍ଡ଼ ଅଛି ଯାହା ଆପଣଙ୍କ ଏହି ମୂଳ ଖାତାର ପାସବାର୍ଡ଼ ଠାରୁ ଅଲଗା :',
+କାରଣ ସେସବୁରେ ଅଲଗା ଅଲଗା ପାସବାର୍ଡ଼ ଅଛି ଯାହା ଆପଣଙ୍କ ଏହି ମୂଳ ଖାତାର ପାସୱାର୍ଡ଼ ଠାରୁ ଅଲଗା :',
 	'centralauth-foreign-link' => 'ଇଉଜର $1  $2 ଠାରେ',
 	'centralauth-foreign-contributions' => '$2ରେ $1 ଗୋଟି {{PLURAL:$1|ଅବଦାନ|ଅବଦାନ}}',
 	'centralauth-merge-method-primary' => 'ମୂଳ ଉଇକି',
