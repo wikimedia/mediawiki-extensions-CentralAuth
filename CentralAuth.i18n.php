@@ -569,6 +569,13 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
+/** Lushai (Mizo ţawng)
+ * @author RMizo
+ */
+$messages['lus'] = array(
+	'centralauth-merge-method-empty' => 'thawh nei lo',
+);
+
 /** Emiliàn (Emiliàn)
  * @author Reder
  */
@@ -13880,7 +13887,7 @@ $messages['ja'] = array(
 	'centralauth-days-ago' => '$1{{PLURAL:$1|日}}前',
 	'centralauth-months-ago' => '$1か{{PLURAL:$1|月}}前',
 	'centralauth-years-ago' => '$1{{PLURAL:$1|年}}前',
-	'centralauth-prefs-status' => '統一アカウントの状態:',
+	'centralauth-prefs-status' => 'グローバルアカウントの状態：',
 	'centralauth-prefs-not-managed' => '統一アカウントを利用していません',
 	'centralauth-prefs-unattached' => '承認されていません',
 	'centralauth-prefs-complete' => '統一完了',
@@ -15336,7 +15343,7 @@ $messages['kn'] = array(
 $messages['ko'] = array(
 	'mergeaccount' => '통합 계정으로 로그인',
 	'centralauth-groupname' => '위키미디어 재단',
-	'centralauth-desc' => '{{int:Centralauth-groupname}}의 위키 사이의 [[Special:MergeAccount|계정 병합]]',
+	'centralauth-desc' => '{{int:Centralauth-groupname}}에서 운영하는 위키의 [[Special:MergeAccount|계정을 통합하기]]',
 	'centralauth-antispoof-desc' => 'CentralAuth에 안티스푸프 기술을 적용',
 	'centralauth-mergeaccount-desc' => '통합된 로그인을 위한 [[Special:MergeAccount|여러 계정 합치기]]',
 	'centralauth-merge-denied' => '접근할 권한이 없습니다.',
@@ -15512,7 +15519,7 @@ $messages['ko'] = array(
 	'centralauth-prefs-status' => '통합 계정 상태:',
 	'centralauth-prefs-not-managed' => '통합 계정 사용하지 않음',
 	'centralauth-prefs-unattached' => '확인되지 않음',
-	'centralauth-prefs-complete' => '준비 완료!',
+	'centralauth-prefs-complete' => '통합 완료!',
 	'centralauth-prefs-migration' => '통합하고 있음',
 	'centralauth-prefs-count-attached' => '당신의 계정은 $1개의 프로젝트에서 활동하고 있습니다.',
 	'centralauth-prefs-count-unattached' => '당신과 같은 이름을 쓰는 확인되지 않은 계정이 $1개의 프로젝트에 존재합니다.',
@@ -21160,7 +21167,7 @@ Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego p
 	'centralauth-list-unattached-title' => 'Niepowiązane konta',
 	'centralauth-list-unattached' => 'Dla witryn wymienionych poniżej konto o nazwie „$1” nie może zostać automatycznie przyłączone do konta uniwersalnego. Najbardziej prawdopodobną przyczyną problemów jest ustawienie dla tych witryn innego hasła niż dla konta macierzystego.',
 	'centralauth-foreign-link' => 'Użytkownik $1 na $2',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|wkład|wkłady|wkładów}} on $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|edycja|edycje|edycji}} na $2',
 	'centralauth-merge-method-primary' => 'macierzysta wiki',
 	'centralauth-merge-method-empty' => 'brak edycji',
 	'centralauth-merge-method-mail' => 'potwierdzone poprzez e‐mail',
@@ -21371,7 +21378,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'centralauth-editset-name' => 'Nazwa:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wiki:',
-	'centralauth-editset-restwikis' => 'Strony typu wiki nie wymienione powyżej:',
+	'centralauth-editset-restwikis' => 'Wiki nie wymienione powyżej:',
 	'centralauth-editset-reason' => 'Powód',
 	'centralauth-editset-submit' => 'Zatwierdź',
 	'centralauth-editset-submit-delete' => 'Usuń',
@@ -21385,7 +21392,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'centralauth-editset-success' => 'Zmodyfikowano zbiór wiki.',
 	'centralauth-editset-success-delete' => 'Usunięto zbiór wiki.',
 	'centralauth-editset-return' => 'Powrót do głównego widoku',
-	'centralauth-readonly' => 'Baza danych CentralAuth zablokowana',
+	'centralauth-readonly' => 'Baza danych CentralAuth jest zablokowana',
 	'centralauth-readonlytext' => 'Baza danych CentralAuth jest zablokowana do dodawania nowych wpisów i edycji, prawdopodobnie na czas rutynowej konserwacji bazy danych, po której powróci do normalności.',
 	'right-globalgroupmembership' => 'Zmiana przynależności do grup globalnych',
 	'right-centralauth-autoaccount' => 'Automatyczne logowanie na konto uniwersalne',
@@ -24413,7 +24420,9 @@ $messages['sah'] = array(
 	'centralauth-editset-success-delete' => 'Биики чөмөҕө сотулунна.',
 	'centralauth-editset-return' => 'Сүрүн көрүҥҥэ төнүн',
 	'centralauth-readonly' => 'CentralAuth баазата хааччахтаммыт',
+	'centralauth-readonlytext' => 'CentralAuth баазата саҥардыллаары билигин бүөлэнэн турар, арааһа куруук оҥоһуллар дьайыылары оҥороору буолуо, сотору кэминэн оннугар төннүөҕэ.',
 	'right-globalgroupmembership' => 'аан бөлөхтөргө киириини уларытыы',
+	'right-centralauth-autoaccount' => 'Аан аатынан аптамаатынан киирии',
 	'right-centralauth-unmerge' => 'Холбоммут аан ааттары араарыы',
 	'right-centralauth-lock' => 'Холбоммут аан ааттары хааччахтааһын уонна кистээһин',
 	'right-centralauth-oversight' => 'Холбоммут аан ааттары баттааһын',
