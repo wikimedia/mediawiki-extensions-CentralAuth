@@ -27004,8 +27004,10 @@ $messages['szl'] = array(
  * @author Sodabottle
  * @author TRYPPN
  * @author Trengarasu
+ * @author செல்வா
  */
 $messages['ta'] = array(
+	'mergeaccount' => 'உள்நுழைவு ஒருங்கிணைப்பு நிலை',
 	'centralauth-groupname' => 'விக்கிமீடியா அறக்கட்டளை',
 	'centralauth-merge-denied' => 'மன்னிக்கவும், இப்பக்கத்தை அணுக உங்களுக்கு  அனுமதி இல்லை.',
 	'centralauth-merge-step1-title' => 'புகுபதிகை ஒருங்கமைவை தொடங்கவும்',
@@ -27047,8 +27049,10 @@ $messages['ta'] = array(
 	'centralauth-finish-password' => 'கடவுச்சொல்:',
 	'centralauth-finish-login' => 'புகுபதிகை',
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
+	'centralauth-finish-noconfirms' => 'இக் கடவுச்சொல் கொண்டு எக்கணக்கையும் உறுதி செய்ய இயலவில்லை.',
 	'centralauth-attach-title' => 'கணக்கை உறுதிசெய்',
 	'centralauth-attach-submit' => 'கணக்கை புலம் பெயர்',
+	'centralauth-attach-success' => 'இக்கணக்கு ஒருங்கிணைக்கப்பட்ட கணக்கிற்கு நகர்த்தப்பட்டு விட்டது.',
 	'centralauth' => 'உலகளாவிய பயனர் மேலாளர்',
 	'centralauth-admin-manage' => 'பயனீட்டாளர் தரவை நிர்வகி',
 	'centralauth-admin-username' => 'பயனர் பெயர்:',
@@ -27165,8 +27169,11 @@ $messages['ta'] = array(
 	'centralauth-rightslog-entry-setchange' => 'மாற்றப்பட்ட விக்கிகள்  "$1" ல்: சேர்க்கப்பட்டது: $2; நீக்கப்பட்டது: $3',
 	'centralauth-rightslog-entry-deleteset' => 'நீக்கப்பட்ட விக்கி அமைவு "$1"',
 	'centralauth-rightslog-set-optin' => 'தெரிவு-அடிப்படையிலான',
+	'centralauth-rightslog-set-optout' => 'தெரிவு-அடிப்படையிலானது',
 	'autologin' => 'தானாக செய்யப்பட்ட புகுபதிகை',
+	'globalgroupmembership' => 'உலகளாவிய குழுக்களில் உறுப்பினர் நிலை',
 	'globalgrouppermissions' => 'உலகளவிய குழு மேலாண்மை',
+	'centralauth-globalgroupperms-nogroups' => 'உலகளாவிய குழு ஏதும் வரையறுக்கப்படவில்லை.',
 	'centralauth-existinggroup-legend' => 'இருக்கும் குழுக்கள்',
 	'centralauth-newgroup-legend' => 'புதியதாக ஒரு குழுவை உருவாக்கு',
 	'centralauth-globalgroupperms-newgroupname' => 'புதிய குழுவின் பெயர்:',
@@ -27180,6 +27187,8 @@ $messages['ta'] = array(
 	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
 	'centralauth-editgroup-perms' => 'கொடுக்கப்பட்ட அனுமதிகள்:',
 	'centralauth-editgroup-reason' => 'காரணம்:',
+	'centralauth-editgroup-success' => 'குழு அனுமதிகள் மாற்றப்பட்டது',
+	'centralauth-globalgrouppermissions-knownwiki' => 'அவர்கள் பயனர் கணக்கு கொண்டுள்ள விக்கி:',
 	'centralauth-editset' => 'விக்கி தொகுப்புகள்',
 	'centralauth-editset-legend-rw' => 'விக்கி தொகுப்பை உருவாக்கு அல்லது திருத்து',
 	'centralauth-editset-legend-ro' => 'விக்கி தொகுப்புகளின் பட்டியல்',
