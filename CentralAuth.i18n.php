@@ -569,13 +569,6 @@ $messages['niu'] = array(
 	'centralauth-admin-reason' => 'Kakano:',
 );
 
-/** Lushai (Mizo ţawng)
- * @author RMizo
- */
-$messages['lus'] = array(
-	'centralauth-merge-method-empty' => 'thawh nei lo',
-);
-
 /** Emiliàn (Emiliàn)
  * @author Reder
  */
@@ -17017,6 +17010,13 @@ $messages['ltg'] = array(
 	'centralauth-editset-reason' => 'Īmesle:',
 );
 
+/** Lushai (Mizo ţawng)
+ * @author RMizo
+ */
+$messages['lus'] = array(
+	'centralauth-merge-method-empty' => 'thawh nei lo',
+);
+
 /** Latvian (Latviešu)
  * @author GreenZeb
  * @author Marozols
@@ -27054,11 +27054,11 @@ $messages['ta'] = array(
 	'centralauth-attach-submit' => 'கணக்கை புலம் பெயர்',
 	'centralauth-attach-success' => 'இக்கணக்கு ஒருங்கிணைக்கப்பட்ட கணக்கிற்கு நகர்த்தப்பட்டு விட்டது.',
 	'centralauth' => 'உலகளாவிய பயனர் மேலாளர்',
-	'centralauth-admin-manage' => 'பயனீட்டாளர் தரவை நிர்வகி',
+	'centralauth-admin-manage' => 'பயனர் தரவை நிர்வகி',
 	'centralauth-admin-username' => 'பயனர் பெயர்:',
 	'centralauth-admin-lookup-ro' => 'பயனர் பற்றிய தகவல்களை பார்க்கவும்',
-	'centralauth-admin-lookup-rw' => 'பயனீட்டாளர் கணக்கை நிர்வகி',
-	'centralauth-admin-permission' => 'stewards  ஆல் மட்டுமே மற்ற நபர்களின் கணக்கை அவர்களுக்காக ஒன்று சேர்க்க முடியும்.',
+	'centralauth-admin-lookup-rw' => 'பயனர் கணக்கை நிர்வகி',
+	'centralauth-admin-permission' => 'மேலாளர்களால்  மட்டுமே மற்ற நபர்களின் கணக்கை அவர்களுக்காக ஒன்று சேர்க்க முடியும்.',
 	'centralauth-admin-no-unified' => 'இந்த பயனருக்கு ஒன்றுபட்ட கணக்கு எதுவும் இல்லை.',
 	'centralauth-admin-info-header' => 'உலகளாவிய பயனர் விவரம்',
 	'centralauth-admin-info-id' => 'பயனர்:',
@@ -27085,7 +27085,7 @@ $messages['ta'] = array(
 	'centralauth-admin-list-method' => 'செய்முறை',
 	'centralauth-admin-list-editcount' => 'தொகுப்புக்களின் எண்ணிக்கை',
 	'centralauth-admin-list-blocked' => 'தடுக்கப்பட்டது',
-	'centralauth-admin-unmerge' => 'தேர்ந்தெடுத்ததை பிரி',
+	'centralauth-admin-unmerge' => 'தேர்ந்தெடுத்ததைப் பிரி',
 	'centralauth-admin-merge' => 'தேர்ந்தெடுத்தவற்றை ஒன்றுசேர்',
 	'centralauth-admin-bad-input' => 'செல்லாத ஒன்றுசெர்த்தல் தேர்வு',
 	'centralauth-admin-none-selected' => 'மாறுதல் செய்வதற்காக எந்தவொரு கணக்கையும் தேர்ந்தெடுக்கவில்லை.',
