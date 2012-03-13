@@ -1525,17 +1525,14 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 
-		wfDebugLog( 'CentralAuth', "Loading attached wiki list for global user {$this->mName}." );
-
 		if ( isset( $this->mAttachedList ) ) {
-			wfDebugLog( 'CentralAuth', "-Found in cache." );
 			// We have a list already, probably from the cache.
 			$this->mAttachedArray = explode( "\n", $this->mAttachedList );
 
 			return;
 		}
 
-		wfDebugLog( 'CentralAuth', "-Loading from DB" );
+		wfDebugLog( 'CentralAuth', "Loading attached wiki list for global user {$this->mName} from DB" );
 
 		$dbw = self::getCentralDB();
 
