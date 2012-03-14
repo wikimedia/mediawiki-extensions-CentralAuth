@@ -17035,8 +17035,8 @@ $messages['lus'] = array(
 	'centralauth-admin-info-home' => 'Wiki-pui:',
 	'centralauth-admin-info-editcount' => 'Siamţhat zât:',
 	'centralauth-admin-info-locked' => 'Inkalh:',
-	'centralauth-admin-info-hidden' => 'Thurûk:',
-	'centralauth-admin-nohome' => 'chhut thei lo',
+	'centralauth-admin-info-hidden' => 'Thuhrûk chin:',
+	'centralauth-admin-nohome' => 'chhut chhuak thei lo',
 	'centralauth-admin-yes' => 'aw',
 	'centralauth-admin-no' => 'aih',
 );
