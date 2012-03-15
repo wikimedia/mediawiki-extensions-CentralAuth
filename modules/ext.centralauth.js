@@ -6,8 +6,8 @@
 		y : 0
 	};
 
-	$(document).on( 'mousemove', function updateCursorPosition( e ) {
-		cursorPosition.x = 
+	$(document).on( 'mousemove', function ( e ) {
+		cursorPosition.x =
 			e.clientX
 			+ ( document.documentElement.scrollLeft || document.body.scrollLeft )
 			- document.documentElement.clientLeft;
@@ -32,11 +32,11 @@
 			content = document.getElementById( 'content' ) || document.getElementById( 'mw_content' ) || document.body;
 			$(content).append( $methodHint );
 		}
-	
+
 		hintHtml = mw.html.element( 'p', {
 			'class': 'merge-method-help-name'
 		}, mw.msg( 'centralauth-merge-method-' + methodName ) ) + mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
-	
+
 		$methodHint
 			.html( hintHtml )
 			.css({
