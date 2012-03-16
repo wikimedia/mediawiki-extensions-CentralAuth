@@ -8333,6 +8333,7 @@ $messages['fa'] = array(
  * @author Nedergard
  * @author Nike
  * @author Olli
+ * @author Pxos
  * @author Silvonen
  * @author Str4nd
  * @author Tarmo
@@ -8578,7 +8579,7 @@ Ryhmää ei ole olemassa, jos sille ei ole annettu mitään oikeuksia.',
 	'centralauth-editgroup-member' => 'Ryhmän jäsenten käännetty nimi:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|muokkaa]])',
 	'centralauth-editgroup-members' => 'Jäsenluettelo:',
-	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Luettelo käyttöoikeuden $2 omaavista käyttäjistä]]',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Luettelo käyttäjistä, joilla on käyttöoikeus $2]]',
 	'centralauth-editgroup-restrictions' => 'Joukko wikejä joissa tämä ryhmä on aktiivinen:',
 	'centralauth-editgroup-noset' => '(ei mitään)',
 	'centralauth-editgroup-submit' => 'Tallenna ryhmän käyttöoikeuksien muutokset',
@@ -13201,6 +13202,7 @@ Vinsamlegast hafðu samband við möppudýr á þessum wiki til að afbanna hann
 	'centralauth-list-unattached' => 'Mistókst að samræma aðganginn "$1" við aðgang þinn, því það mistókst að sannreyna að aðgangurinn sé í þinni eigu á eftirfarandi síðum;
 líklegast hefur aðgangurinn annað lykilorð en aðal aðgangurinn þinn:',
 	'centralauth-foreign-link' => 'Notandi $1 á $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|breyting|breytingar}} á $2',
 	'centralauth-merge-method-primary' => 'heimawiki',
 	'centralauth-merge-method-empty' => 'ekkert framlag',
 	'centralauth-merge-method-mail' => 'staðfest með tölvupósti',
@@ -13253,6 +13255,7 @@ Ef þessi altæki aðgangurinn er í þinni eigu einnig, þá getur þú sameina
 	'centralauth-admin-yes' => 'já',
 	'centralauth-admin-no' => 'nei',
 	'centralauth-admin-hidden-list' => 'frá almennum listum',
+	'centralauth-admin-hidden-oversight' => 'falinn',
 	'centralauth-admin-list-legend-ro' => 'Listi yfir staðbundna aðganga',
 	'centralauth-admin-list-legend-rw' => 'Aðgreina svæðisbundna aðganga',
 	'centralauth-admin-unattached' => 'ótengdur',
@@ -15311,6 +15314,7 @@ $messages['kn'] = array(
 	'centralauth-finish-login' => 'ಲಾಗ್ ಇನ್',
 	'centralauth-admin-username' => 'ಬಳಕೆದಾರ ಹೆಸರು:',
 	'centralauth-admin-info-id' => 'ಬಳಕೆದಾರ ID:',
+	'centralauth-admin-info-home' => 'ಗೃಹ ವಿಕಿ:',
 	'centralauth-admin-yes' => 'ಹೌದು',
 	'centralauth-admin-no' => 'ಇಲ್ಲ',
 	'centralauth-admin-blocklog' => 'ತಡೆಹಿಡಿಯುವಿಕೆ ದಾಖಲೆ',
