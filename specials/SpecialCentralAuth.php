@@ -416,8 +416,8 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	function formatMergeMethod( $method ) {
 		global $wgExtensionAssetsPath;
-		
-		$brief = wfMessage( 'centralauth-merge-method-{$method}' )->text();
+
+		$brief = wfMessage( "centralauth-merge-method-{$method}" )->text();
 		$html = 
 			Html::element(
 				'img', array(
