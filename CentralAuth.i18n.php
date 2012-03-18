@@ -12311,12 +12311,12 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 	'centralauth-listusers-locked' => 'serrate',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'non attachate o non existe localmente',
-	'centralauth-seconds-ago' => 'ante $1 {{PLURAL:$1|secunda|secundas}}',
-	'centralauth-minutes-ago' => 'ante $1 {{PLURAL:$1|minuta|minutas}}',
-	'centralauth-hours-ago' => 'ante $1 {{PLURAL:$1|hora|horas}}',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|secunda|secundas}} retro',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuta|minutas}} retro',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|hora|horas}} retro',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|die|dies}} retro',
 	'centralauth-months-ago' => 'ante $1 {{PLURAL:$1|mense|menses}}',
-	'centralauth-years-ago' => 'ante $1 {{PLURAL:$1|anno|annos}}',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|anno|annos}} retro',
 	'centralauth-prefs-status' => 'Stato del conto global:',
 	'centralauth-prefs-not-managed' => 'Conto unificate non in uso',
 	'centralauth-prefs-unattached' => 'Non confirmate',
@@ -24859,14 +24859,16 @@ $3 ඉවත් කෙරිනි',
  * @author Helix84
  * @author Jkjk
  * @author Michawiki
+ * @author Teslaton
  */
 $messages['sk'] = array(
 	'mergeaccount' => 'Stav zjednotenia prihlasovacích účtov',
 	'centralauth-groupname' => 'Nadácie Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Zlúčenie účtov]] na jednotlivých wiki {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Pridáva do CentralAuth technológiu AntiSpoof',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zlúčenie účtov]] pre zjednotené prihlasovanie',
 	'centralauth-merge-denied' => 'Prepáčte, nemáte oprávnenie pristupovať na túto stránku.',
-	'centralauth-merge-notlogged' => 'Prosím, <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty celkom zjednotené.',
+	'centralauth-merge-notlogged' => 'Prosím <span class="plainlinks">[$1 prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty komplet zjednotené.',
 	'centralauth-merge-welcome' => "'''Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém {{int:Centralauth-groupname}}.'''
 
 Ak si zvolíte, aby vaše účty boli migrované, budete môcť používať rovnaké používateľské meno a heslo na prihlasovanie do každého z wiki projektov nadácie Wikimedia vo všetkých dostupných jazykoch.
@@ -24918,6 +24920,7 @@ Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísan
 	'centralauth-list-unattached-title' => 'Nepripojené účty',
 	'centralauth-list-unattached' => 'Nebolo možné automaticky potvrdiť, že účet „$1“ na nasledujúcich projektoch patrí vám; pravdepodobne má odlišné heslo ako váš primárny účet:',
 	'centralauth-foreign-link' => 'Užívateľ $1 na $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|príspevok|príspevky|príspevkov}} na $2',
 	'centralauth-merge-method-primary' => 'domovská wiki',
 	'centralauth-merge-method-empty' => 'žiadne príspevky',
 	'centralauth-merge-method-mail' => 'potvrdené emailom',
@@ -25124,6 +25127,7 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 	'centralauth-editset-name' => 'Názov:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wiki:',
+	'centralauth-editset-restwikis' => 'Vyššie nezahrnuté wiki databázy:',
 	'centralauth-editset-reason' => 'Dôvod:',
 	'centralauth-editset-submit' => 'Odoslať',
 	'centralauth-editset-submit-delete' => 'Zmazať',
@@ -25137,7 +25141,10 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 	'centralauth-editset-success' => 'Množina wiki úspešne zmenená.',
 	'centralauth-editset-success-delete' => 'Množina wiki úspešne zmazaná.',
 	'centralauth-editset-return' => 'Návrat na hlavnú obrazovku',
+	'centralauth-readonly' => 'Databáza CentralAuth je zamknutá',
+	'centralauth-readonlytext' => 'Databáza CentralAuth je momentálne zamknutá voči novým záznamom a iným zmenám, pravdepodobne kvôli rutinnej údržbe, po dokončení ktorej sa všetko vráti do normálu.',
 	'right-globalgroupmembership' => 'Upraviť členstvo v globálnych skupinách',
+	'right-centralauth-autoaccount' => 'Automaticky prihlásiť globálnym účtom',
 	'right-centralauth-unmerge' => 'Zrušiť zlúčenie globálneho účtu',
 	'right-centralauth-lock' => 'Zamknúť alebo skryť globálny účet',
 	'right-centralauth-oversight' => 'Potlačiť globálny účet',
