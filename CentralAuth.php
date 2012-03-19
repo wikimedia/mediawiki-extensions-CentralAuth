@@ -311,7 +311,11 @@ if ( MWInit::classExists( 'AntiSpoof' ) ) {
  * @return String
  */
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
-	$link = Linker::makeLinkObj( $title, htmlspecialchars( $params[0] ) );
+	if ( $skin ) {
+		$link = Linker::makeLinkObj( $title, htmlspecialchars( $params[0] ) );
+	} else {
+		$link = $params[0];
+	}
 
 	switch( $action ) {
 		case 'newset':
