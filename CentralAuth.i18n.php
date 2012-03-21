@@ -185,6 +185,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-token-mismatch'           => 'Sorry, we could not process your form submission due to a loss of session data.',
 	'centralauth-admin-reason'             => 'Reason:',
 	'centralauth-admin-reason-other'       => 'Other/additional reason:',
+	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-admin-status'             => 'Set global account status',
 	'centralauth-admin-status-intro'       => 'You can use this form to change the status of this global account.',
 	'centralauth-admin-status-locked'      => 'Locked:',
