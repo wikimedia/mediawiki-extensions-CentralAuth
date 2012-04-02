@@ -13,7 +13,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @param $items array
 	 */
 	protected function batchRecord( $items ) {
-		CentralAuthSpoofUser::batchRecord( $items );
+		CentralAuthSpoofUser::batchRecord( $this->getDB(), $items );
 	}
 
 	/**
