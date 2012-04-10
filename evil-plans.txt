@@ -127,7 +127,6 @@ Conflicting accounts should be notified by e-mail where possible.
 * Full edge<->core connectivity in cases:
  - pmtpa: same database cluster
  - pmtpa.enwiki: alternate database master
- - yaseo: offsite [could be implemented with a ssh tunnel to mysql]
 
 * Open login sessions should continue to function if core is offline
 
@@ -222,9 +221,8 @@ of conflicting wikis can be produced for immediate link-and-login.
 
 == Core implementation ==
 
-Either this can be done as local PHP code accessing a database (potentially
-via ssh tunnel for yaseo) or hit something over http/https. May want to
-examine this a bit.
+Either this can be done as local PHP code accessing a database or hit
+something over http/https. May want to examine this a bit.
 
 
 == Migration testing ==
