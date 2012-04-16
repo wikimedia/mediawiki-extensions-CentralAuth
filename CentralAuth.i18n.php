@@ -5171,7 +5171,8 @@ Tra'i fod wedi blocio, ni allwch gyfuno cyfrifon.",
 	'centralauth-list-home-title' => 'Y pen wici',
 	'centralauth-list-home-dryrun' => "Defnyddir y cyfrinair a'r cyfeiriad e-bost a osodir yn y wici hwn ar gyfer eich cyfrif cyfunedig.",
 	'centralauth-list-attached-title' => 'Cyfrifon atodedig',
-	'centralauth-list-attached' => "Mae'r cyfrif o'r enw \"\$1\" ar bob un o'r safleoedd canlynol wedi cael eu hatodi yn awtomatig i'r cyfrif unedig:",
+	'centralauth-list-attached' => "Mae'r cyfrif o'r enw \"\$1\" wedi cael ei atodi yn awtomatig i'r cyfrif unedig ar bob un o'r safleoedd canlynol:",
+	'centralauth-list-attached-dryrun' => "Mae'r cyfrif o'r enw \"\$1\" wedi cael ei atodi yn awtomatig i'r cyfrif unedig ar bob un o'r safleoedd canlynol:",
 	'centralauth-list-unattached-title' => 'Cyfrifon heb eu hatodi',
 	'centralauth-foreign-link' => 'Y defnyddiwr $1 ar $2',
 	'centralauth-merge-method-primary' => 'y pen wici',
@@ -5243,9 +5244,11 @@ Rheswm: $1',
 	'centralauth-admin-delete-title' => "Dileu'r cyfrif",
 	'centralauth-admin-delete-button' => 'Dileer y cyfrif hwn',
 	'centralauth-admin-nonexistent' => 'Nid oes cyfrif byd-eang ar gyfer "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Gwall: Nid yw\'r cyfrif cydwici "<nowiki>$1</nowiki>" ar gael.',
 	'centralauth-token-mismatch' => "Mae'n ddrwg gennym, ni allem brosesu'r ffurflen a gyflwynwyd gennych oherwydd i ni golli data'r sesiwn.",
 	'centralauth-admin-reason' => 'Rheswm:',
 	'centralauth-admin-reason-other' => 'Rheswm arall:',
+	'centralauth-admin-unhide-nonexistent' => 'Gwall: Nid yw\'r cyfrif cydwici "<nowiki>$1</nowiki>" ar gael.',
 	'centralauth-admin-status' => 'Gosod statws y cyfrif cydwici',
 	'centralauth-admin-status-intro' => "Gallwch ddefnyddio'r ffurflen hon i newid statws y cyfrif byd-eang hwn.",
 	'centralauth-admin-status-locked' => 'Dan glo:',
@@ -6044,6 +6047,7 @@ Sie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Erdemaslancan
  * @author Mirzali
  * @author Xoser
  */
@@ -6051,9 +6055,10 @@ $messages['diq'] = array(
 	'mergeaccount' => 'Statuyê cikewtîş ê hemî',
 	'centralauth-groupname' => 'Weqfê Wikimedya',
 	'centralauth-desc' => '[[Special:MergeAccount|Hesabê pêrabestışi]] sera wikiyê de {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Anti qesmerey teknolociye  u merkezi kerdış debyayo',
 	'centralauth-mergeaccount-desc' => 'Qe yew cikewtîşê karberî ser [[Special:MergeAccount|hesabanê hemî yew keno]]',
 	'centralauth-merge-denied' => 'Qusirê ma mevîne, ser cikewtîşê ena pele rê desturê ti çini yo.',
-	'centralauth-merge-notlogged' => 'Ma rica keno <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} log in]</span> hesabanê xo kontrol bike ke emin biy hesabanê tu pêran yew biy.',
+	'centralauth-merge-notlogged' => 'Kerem ke <span class="plainlinks">[$1 de qewê]</span> hesabiya xo kontrol bike ke emin biy hesabanê tu pêran yew biy.',
 	'centralauth-merge-welcome' => "'''Hesabê hama sistemê cikewtişê yewi {{int:Centralauth-groupname}} rê neqil nibiyo.'''
 
 Eka ti wazeno hesabê xio neqil bike, ti hin eşkeno ser eyni name u parola wîkîyanê {{int:Centralauth-groupname}}î rê cikewt.
@@ -6110,6 +6115,7 @@ Ma ef bike!',
 	'centralauth-list-unattached' => 'Hesabê "$1"î otomatik konfirme nibiyo ke ma zano ena hesab ena wîkîyan de tu yo;
 belki hesaban de parolayan değişk esto:',
 	'centralauth-foreign-link' => 'Ser $2 karber $1',
+	'centralauth-foreign-contributions' => '{{PLURAL:$1|İştıraki|iştırakê}} $1 ra $2',
 	'centralauth-merge-method-primary' => 'wîkîyê kîye',
 	'centralauth-merge-method-empty' => 'îştîrak çini yo',
 	'centralauth-merge-method-mail' => 'email ra konfirme biyo',
@@ -6191,6 +6197,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-token-mismatch' => 'Ef bike, ma nieşkê îştîrakê tu proses bike çunkî seansê datayî vin biyo.',
 	'centralauth-admin-reason' => 'Sebeb:',
 	'centralauth-admin-reason-other' => 'Sebebo bin:',
+	'centralauth-admin-unhide-nonexistent' => 'Xırab: hesabê globalî "<nowiki>$1</nowiki>" çini yo.',
 	'centralauth-admin-status' => 'Statuyê globalî birone',
 	'centralauth-admin-status-intro' => 'Ti ser ena form ra statuyê globalî eşkeno bivurne',
 	'centralauth-admin-status-locked' => 'Kilit biyo:',
@@ -6236,8 +6243,8 @@ Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.',
 	'centralauth-renameuser-reserved' => 'Karberê $2î qe yew hesabê globalî rê reserve biyo.',
 	'centralauth-invalid-wiki' => 'Eno databaseyê wîkîyî çini yo: $1',
 	'centralauth-account-exists' => 'Ni eşkeno hesab viraze: ena nameyê karberî sistemê cikewtîşî de zaten esto.',
-	'centralauth-login-progress' => 'Projeyê {{int:Centralauth-groupname}}î rê ti kewteno:',
-	'centralauth-logout-progress' => 'Projeyê {{int:Centralauth-groupname}}î rê ti veciyeno:',
+	'centralauth-login-progress' => 'Zewmi proceyan de {{int:Centralauth-groupname}}i rê abyeno:',
+	'centralauth-logout-progress' => 'Zewmi proceyan de {{int:Centralauth-groupname}}î rê racneyeno:',
 	'centralauth-login-no-others' => 'Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik kewto:',
 	'centralauth-logout-no-others' => 'Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik veciyo:',
 	'centralauth-hidden-blockreason' => 'wikiyanê hemi de pê $1, $2 de pê ena sebebanê: $3',
@@ -13458,6 +13465,7 @@ $messages['it'] = array(
 	'mergeaccount' => 'Processo di unificazione delle utenze - status',
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Unifica gli account]] sui siti gestiti da {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Aggiunge la tecnologia di AntiSpoof a CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unifica più account]] per il Login Unico',
 	'centralauth-merge-denied' => 'Non si possiedono i permessi necessari per accedere a questa pagina.',
 	'centralauth-merge-notlogged' => 'Si prega di <span class="plainlinks">[$1 effettuare il login]</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
@@ -13769,6 +13777,7 @@ $messages['ja'] = array(
 	'mergeaccount' => '統一ログイン状態',
 	'centralauth-groupname' => 'ウィキメディア財団',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]します。',
+	'centralauth-antispoof-desc' => 'CentralAuth に AntiSpoof 技術を追加する',
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
 	'centralauth-merge-denied' => '申し訳ありませんが、このページへのアクセス権がありません。',
 	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[$1 ログイン]</span>して確認してください。',
@@ -13878,7 +13887,7 @@ $messages['ja'] = array(
 	'centralauth-admin-blocked-indef' => '無期限ブロックされました。理由: $1',
 	'centralauth-admin-blocklog' => 'ブロック記録',
 	'centralauth-admin-list-localwiki' => 'ローカル・ウィキ',
-	'centralauth-admin-list-attached-on' => '統合先',
+	'centralauth-admin-list-attached-on' => '統合日時',
 	'centralauth-admin-list-method' => '方法',
 	'centralauth-admin-list-editcount' => '編集回数',
 	'centralauth-admin-list-blocked' => 'ブロック状態',
@@ -14024,6 +14033,7 @@ $messages['ja'] = array(
 	'centralauth-editset-name' => '名前:',
 	'centralauth-editset-type' => 'タイプ:',
 	'centralauth-editset-wikis' => 'ウィキ:',
+	'centralauth-editset-restwikis' => '上記に含まれないウィキ：',
 	'centralauth-editset-reason' => '理由：',
 	'centralauth-editset-submit' => '実行',
 	'centralauth-editset-submit-delete' => '削除',
@@ -14038,6 +14048,8 @@ $messages['ja'] = array(
 	'centralauth-editset-success' => 'ウィキ集合は正しく変更されました。',
 	'centralauth-editset-success-delete' => 'ウィキ集合は正常に削除されました。',
 	'centralauth-editset-return' => 'メイン画面に戻る',
+	'centralauth-readonly' => 'CentralAuth データベースがロックされています',
+	'centralauth-readonlytext' => 'CentralAuth データベースは現在ロックされおり、新しい項目作成やその他の変更ができません。おそらく定期的なデータベース保守作業を行うためにこの状態になっており、終わりしだい正常に戻ります。',
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
 	'right-centralauth-autoaccount' => '自動的にグローバルアカウントでログインする',
 	'right-centralauth-unmerge' => 'グローバルアカウントの統一解除',
@@ -14334,6 +14346,7 @@ $messages['ka'] = array(
 	'mergeaccount' => 'გაერთიანებული ანგარიშის მდგომარეობა',
 	'centralauth-groupname' => 'ფონდი ვიკიმედია',
 	'centralauth-desc' => '[[Special:MergeAccount|ანგარიშის გაერთიანება]] ფონდ „ვიდიმედიას“ ყველა ვიკი-პროექტში',
+	'centralauth-antispoof-desc' => 'ამატებს AntiSpoof-ის ტექნოლოგიას CentralAuth-ში',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|აერთიანებს რამდენიმე ანგარიშს]] მომხმარებლის ერთიან ანგარიშად',
 	'centralauth-merge-denied' => 'უკაცრავად, თქვენ არ გაქვთ ამ გვერდის ნახვის უფლება.',
 	'centralauth-merge-notlogged' => 'გთხოვთ, <span class="plainlinks">[$1 შეხვიდეთ სისტემაში]</span> რათა შეამოწმოთ მოხდა თუ არა თქვენი ანგარიშების სრულად გაერთიანება.',
@@ -14387,6 +14400,7 @@ $messages['ka'] = array(
 	'centralauth-list-unattached' => 'ანგარიშის "$1" თქვენდამი კუთვნილება ვერ დასტურდება ავტომატურად შემდეგ საიტებზე;
 შესაძლოა, მათ თქვენი ძირითადი ანგარიშისგან განხვავებული პაროლი აქვთ:',
 	'centralauth-foreign-link' => 'მომხმარებელი $1  $2-ში',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|ცვლილება|ცვლილება}} $2-ში',
 	'centralauth-merge-method-primary' => 'მშობლიური ვიკი',
 	'centralauth-merge-method-empty' => 'უწვლილო',
 	'centralauth-merge-method-mail' => 'ელექტრონული ფოსტის დადასტურება',
@@ -14397,6 +14411,10 @@ $messages['ka'] = array(
 	'centralauth-merge-method-primary-desc' => 'ეს ის ვიკია, რომელსაც ანგარიში თავდაპირველად მიუერთდა.
 გაითვალისწინეთ, რომ ის შეიძლება განსხვავებული იყოს მშობლიური ვიკის მომხმარებლისაგან.',
 	'centralauth-merge-method-empty-desc' => 'ადგილობრივი ანგარიში მიუერთდა, ვინაიდან მას რედაქტირებები არ ჰქონდა.',
+	'centralauth-merge-method-mail-desc' => 'ეს ნიშნავს, რომ ლოკალური ანგარიში გაერთიანდა, რადგან მისი ელ.ფოსტის მისამართი ემთხვევა ძირითადი ანგარიშის ელ.ფოსტის მისამართს.',
+	'centralauth-merge-method-password-desc' => 'ეს ნიშნავს, რომ ლოკალური ანგარიში გაერთიანდა, რადგან მომხმარებელმა მიუთითა სწორი პაროლი.',
+	'centralauth-merge-method-admin-desc' => 'აღნიშნავს, რომ ლოკალური ანგარიში ხელით გაერთიანდა ერთ-ერთი სტიუარტის მიერ.
+უსაფრთხოებიდან გამომდინარე ამჟამად ეს ფუნქცია გამორთულია.',
 	'centralauth-merge-method-new-desc' => 'აჩვენებს, რომ გლობალური ანგარიში ავტომატურად შეიქმნა, როდესაც მოხდა ადგილობრივი ანგარიშის რეგისტრაცია.',
 	'centralauth-merge-method-login-desc' => 'აჩვენებს, რომ გლობალური ანგარიში ავტომატურად შეიქმნა, როდესაც მომხმარებელი სისტემაში შემოვიდა.',
 	'centralauth-finish-title' => 'გაერთიენების დასრულება',
@@ -14465,6 +14483,7 @@ $messages['ka'] = array(
 	'centralauth-token-mismatch' => 'სამწუხაროდ ჩვენ ვერ გავაგრძელებთ თქვენი ფორმის დამუშავებას, რადგანაც სეანსის მონაცემები დაიკარგა.',
 	'centralauth-admin-reason' => 'მიზეზი:',
 	'centralauth-admin-reason-other' => 'სხვა/დამატებითი მიზეზი:',
+	'centralauth-admin-unhide-nonexistent' => 'შეცდომა. გლობალური ანგარიში  „<nowiki>$1</nowiki>“ არ არსებობს.',
 	'centralauth-admin-status' => 'ანგარიშის გლობალური სტატუსის დაყენება.',
 	'centralauth-admin-status-intro' => 'თქვენ შეგიძლიათ ამ ფორმის გამოენება გლობალური ანგარიშის სტატუსის შესაცვლელად.',
 	'centralauth-admin-status-locked' => 'დაიბლოკა:',
@@ -14505,9 +14524,12 @@ $messages['ka'] = array(
 	'centralauth-prefs-detail-unattached' => 'ამ პროექტის თქვენი გლობალური ანგარიშისადმი კუთვნილება არ დადასტურებულა.',
 	'centralauth-prefs-manage' => 'თქვენი გლობალური ანგარიშის მართვა',
 	'centralauth-prefs-view' => 'გლობალური მომხმარებლის ინფოს ნახვა',
+	'centralauth-renameuser-merged' => 'მომხმარებელი $1 გადავიდა შესვლის ერთიან სისტემაზე.
+სახელის გადარქმევა გამოიწვევს ლოკალური ანგარიშის კავშირის დაკარგვას გლობალურ ანგარიშთან.',
 	'centralauth-renameuser-reserved' => 'მომხმარებელი $2 შენახულია გლობალური ანგარიშისთვის.',
 	'centralauth-invalid-wiki' => 'არ არსებობს ვიკი-მონაცემთა ბაზა სახელწოდებით: $1',
 	'centralauth-account-exists' => 'ანგარიშის შექმნა შეუძლებელია: სასურველი მომხმარებლის სახელი უკვე დაკავებულია გაერთიანებული ანგარიშის სისტემაში.',
+	'centralauth-account-exists-reset' => 'მომხმარებლის სახელი $1 ამ ვიკიში დარეგისტრირებული არ არის, მაგრამ ის არსებობს შესვლის ერთიან სისტემაში.',
 	'centralauth-login-progress' => 'თქვენ აგრეთვე შეხვედით {{int:Centralauth-groupname}}-ის სხვა პროექტებშიც :',
 	'centralauth-logout-progress' => 'თქვენ აგრეთვე გამოხვედით {{int:Centralauth-groupname}}-ის სხვა პროექტებიდანაც:',
 	'centralauth-login-no-others' => 'თქვენ ავტომატურად შეხვედით {{int:Centralauth-groupname}}-ის ყველა პროექტში.',
@@ -14597,6 +14619,7 @@ $messages['ka'] = array(
 	'centralauth-editset-name' => 'სახელი:',
 	'centralauth-editset-type' => 'ტიპი:',
 	'centralauth-editset-wikis' => 'ვიკი-პროექტები:',
+	'centralauth-editset-restwikis' => 'ვიკი, რომელიც არ შედის ზევით:',
 	'centralauth-editset-reason' => 'მიზეზი:',
 	'centralauth-editset-submit' => 'შენახვა',
 	'centralauth-editset-submit-delete' => 'წაშლა',
@@ -14610,6 +14633,8 @@ $messages['ka'] = array(
 	'centralauth-editset-success' => 'ვიკი-ნაკრები წარმატებით შეიცვალა.',
 	'centralauth-editset-success-delete' => 'ვიკი-ნაკრები წარმატებით წაიშალა.',
 	'centralauth-editset-return' => 'მთავარ არეზე დაბრუნება',
+	'centralauth-readonly' => 'CentralAuth-ის მონაცემთა ბაზა დაბლოკილია',
+	'centralauth-readonlytext' => 'CentralAuth-ის მონაცემთა ბაზა მასში ახალი ჩანაწერებისა და სხვა ცვლილებებისათვის ამჟამად დაბლოკილია, სავარაუდოდ, მონაცემთა ბაზების ჩვეულებრივი მომსახურების მიზნით, რის შემდეგაც ის დაბრუნდება თავის ადგილას.',
 	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
 	'right-centralauth-autoaccount' => 'ავტომატური შესვლა გლობალური ანგარიშით',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
@@ -19071,6 +19096,46 @@ $messages['nah'] = array(
 	'centralauth-editset-reason' => 'Tlèka:',
 );
 
+/** Min Nan Chinese (Bân-lâm-gú)
+ * @author Ianbu
+ */
+$messages['nan'] = array(
+	'mergeaccount' => '單一登入的狀況',
+	'centralauth-groupname' => '維基媒體(Wikimedia)基金會',
+	'centralauth-desc' => '[[Special:MergeAccount|整合]]{{int:Centralauth-groupname}}的口座',
+	'centralauth-antispoof-desc' => '共CentralAuth加AntiSpoof的技術',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|合併濟个口座]]做單一用者登入',
+	'centralauth-merge-denied' => '歹勢，你無權權限處理這頁。',
+	'centralauth-merge-notlogged' => '請<span class="plainlinks">[$1 登入]</span>，看你的口座是毋是有全部合併。',
+	'centralauth-merge-welcome' => "'''你的用者口座猶未徙去{{int:Centralauth-groupname}}的單一登入系統。'''
+
+若你徙你的口座，你就會當用仝一个用者名稱佮密碼登入{{int:Centralauth-groupname}}的全部語言wiki網站。
+
+若佇別站，有用者已經佮你仝名，這是袂去干擾著伊，毋過佇這个機會，你會當佮伊抑管理員參詳看覓。",
+	'centralauth-merge-step1-title' => '開始登入整合',
+	'centralauth-merge-step1-detail' => '請拍你口座的密碼，
+會對你的密碼佮註冊的電子批地址，是毋是佮佇別个Wiki口座的仝款，
+佇你確認進前，袂做改變。',
+	'centralauth-merge-step1-submit' => '確認登入信息',
+	'centralauth-merge-step2-title' => '確認其他口座',
+	'centralauth-merge-step2-detail' => '有一寡口座袂自動佮你指定的Wiki相敆
+若遐的口座是你的，你愛提供密碼來共認。',
+	'centralauth-merge-step2-submit' => '確認登入信息',
+	'centralauth-merge-dryrun-complete' => '所有這馬的口座會當自動整合！
+
+這馬猶未改你的口座。',
+	'centralauth-merge-dryrun-incomplete' => '你準備欲繼續，毋過有一寡口座無法度自動確認佮馬上自動合併，你會當等一下才共合併。
+
+這馬猶未改你的口座。',
+	'centralauth-merge-dryrun-or' => "'''抑是'''",
+	'centralauth-merge-dryrun-home' => '搬徙系統無法度確定你的用者名稱就是你主要Wiki口座的主人。
+
+佇別个wiki已經有人用你的用者名稱做主要Wiki口座；請去下跤的連結佮登入，才通完成你的口座搬徙。',
+	'centralauth-merge-step3-title' => '建立單一口座',
+	'centralauth-merge-step3-detail' => '你已經準備好欲建立單一口座，包括下跤有連結的wiki：',
+	'centralauth-merge-step3-submit' => '單一化口座',
+);
+
 /** Norwegian Bokmål (‪Norsk (bokmål)‬)
  * @author Atluxity
  * @author EivindJ
@@ -21181,9 +21246,29 @@ $messages['pdt'] = array(
 );
 
 /** Pälzisch (Pälzisch)
+ * @author Manuae
  * @author Xqt
  */
 $messages['pfl'] = array(
+	'centralauth-merge-denied' => 'Dud uns leed, awa du derfschd do nix mache.',
+	'centralauth-merge-dryrun-or' => "'''oda'''",
+	'centralauth-error-locked' => 'Du konschd do nix mache, wail gschberd bischd.',
+	'centralauth-merge-method-empty' => 'Hod kä Baidräsch',
+	'centralauth-admin-yes' => 'Ja',
+	'centralauth-admin-no' => 'Nä',
+	'centralauth-admin-delete-button' => "S'Kondo vum Benudza lesche",
+	'centralauth-admin-reason' => 'Grund:',
+	'centralauth-admin-reason-other' => 'Annare Grund:',
+	'centralauth-admin-status-locked' => 'Gschberd:',
+	'centralauth-admin-status-locked-no' => "S'Kondo vum Benudza isch ned gschberd",
+	'centralauth-admin-status-locked-yes' => "S'Kondo vum Benudza is gschberd fas Schaffe",
+	'centralauth-admin-status-hidden' => 'Vaschdegld:',
+	'centralauth-admin-status-hidden-no' => "S'Kondo vum Benudza isch ned vaschdegld",
+	'centralauth-admin-status-hidden-oversight' => "S'Kondo isch gons vaschdegld",
+	'centralauth-listusers-locked' => 'gschberd',
+	'centralauth-prefs-unattached' => 'Ned iwabriefd',
+	'centralauth-log-status-locked' => 'gschberd',
+	'centralauth-log-status-hidden' => 'Vaschdegld',
 	'centralauth-log-status-none' => '(kään)',
 	'centralauth-editgroup-noset' => '(kään)',
 	'centralauth-editset-submit-delete' => 'Lesche',
@@ -24563,6 +24648,7 @@ $messages['scn'] = array(
 	'centralauth-admin-status-hidden' => 'Ammucciatu:',
 	'centralauth-listusers-locked' => 'firmatu',
 	'centralauth-prefs-complete' => 'Tuttu appostu!',
+	'centralauth-login-progress' => "La trasuta fu fatta puru nti l'àutri wiki di {{int:Centralauth-groupname}}:",
 	'centralauth-log-status-locked' => 'firmatu',
 	'centralauth-log-status-hidden' => 'ammucciatu',
 	'centralauth-log-status-none' => '(nuddu)',
@@ -24934,7 +25020,7 @@ $messages['sk'] = array(
 	'centralauth-antispoof-desc' => 'Pridáva do CentralAuth technológiu AntiSpoof',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zlúčenie účtov]] pre zjednotené prihlasovanie',
 	'centralauth-merge-denied' => 'Prepáčte, nemáte oprávnenie pristupovať na túto stránku.',
-	'centralauth-merge-notlogged' => 'Prosím <span class="plainlinks">[$1 prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty komplet zjednotené.',
+	'centralauth-merge-notlogged' => 'Prosím, <span class="plainlinks">[$1 prihláste sa]</span>, aby ste mohli skontrolovať, či sú vaše účty kompletne zjednotené.',
 	'centralauth-merge-welcome' => "'''Váš používateľský účet ešte nebol migrovaný na zjednotený prihlasovací systém {{int:Centralauth-groupname}}.'''
 
 Ak si zvolíte, aby vaše účty boli migrované, budete môcť používať rovnaké používateľské meno a heslo na prihlasovanie do každého z wiki projektov nadácie Wikimedia vo všetkých dostupných jazykoch.
@@ -30301,6 +30387,7 @@ $messages['yi'] = array(
 	'centralauth-attach-title' => 'באַשטעטיקן קאנטע',
 	'centralauth-admin-username' => 'באַניצער נאָמען:',
 	'centralauth-admin-lookup-ro' => 'באקוקן באניצער אינפארמאציע',
+	'centralauth-admin-info-header' => 'גלאבאלע באניצער אינפארמאציע',
 	'centralauth-admin-info-id' => 'באַניצער־נומער:',
 	'centralauth-admin-info-registered' => 'אײַנגעשריבן:',
 	'centralauth-admin-info-home' => 'היים וויקי:',
@@ -30690,11 +30777,12 @@ $messages['zea'] = array(
  * @author PhiLiP
  * @author Xiaomingyan
  * @author Yanmiao liu
+ * @author Yfdyh000
  * @author 下一次登录
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
-	'mergeaccount' => '整合登录系统状态',
+	'mergeaccount' => '登录统一状况',
 	'centralauth-groupname' => '维基媒体基金会',
 	'centralauth-desc' => '[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的wiki帐号',
 	'centralauth-antispoof-desc' => '给 CentralAuth 添加 AntiSpoof 技术',
@@ -30758,13 +30846,13 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-method-new' => '新账户',
 	'centralauth-merge-method-login' => '因登录而创建',
 	'centralauth-merge-method-primary-desc' => '这是该帐户在维基系统中的最初合并。注意，它可能不同于真正维基的该用户。',
-	'centralauth-merge-method-empty-desc' => '表示该本地帐户合并，因为它没有修改。',
-	'centralauth-merge-method-mail-desc' => '表示该本地帐户合并，因为它的电子邮件地址和主要帐户的电子邮件地址相匹配。',
-	'centralauth-merge-method-password-desc' => '表示该本地帐户合并，因为用户指定一个有效的密码。',
+	'centralauth-merge-method-empty-desc' => '表示该本地帐户已合并，因为它没有进行过编辑。',
+	'centralauth-merge-method-mail-desc' => '表示该本地帐户已合并，因为它的电子邮件地址和主帐户的电子邮件地址相匹配。',
+	'centralauth-merge-method-password-desc' => '表示该本地帐户已合并，因为用户为它指定了一个有效密码。',
 	'centralauth-merge-method-admin-desc' => '表示该本地帐户由监管员手动合并。
 因为安全原因，这项功能已被禁用。',
 	'centralauth-merge-method-new-desc' => '表示全域帐户时自动创建本地帐户已创建。',
-	'centralauth-merge-method-login-desc' => '表示该本地帐户登录时自动创建。',
+	'centralauth-merge-method-login-desc' => '表示该本地帐户在用户登录时自动创建。',
 	'centralauth-finish-title' => '合并完成',
 	'centralauth-finish-text' => '如果您的确拥有这些账户，您只需在此输入它们所使用的密码便可完成账户整合过程：',
 	'centralauth-finish-password' => '密码：',
@@ -30808,7 +30896,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-list-localwiki' => '地区维基',
 	'centralauth-admin-list-attached-on' => '添加时间',
 	'centralauth-admin-list-method' => '方法',
-	'centralauth-admin-list-editcount' => '编辑数',
+	'centralauth-admin-list-editcount' => '编辑次数',
 	'centralauth-admin-list-blocked' => '封禁',
 	'centralauth-admin-unmerge' => '拆分选中的账户',
 	'centralauth-admin-merge' => '合并选中的账户',
@@ -30822,8 +30910,8 @@ $messages['zh-hans'] = array(
 在合并之前已经建立了的本地账户会还原他们以前的值。',
 	'centralauth-admin-delete-button' => '删除这个账户',
 	'centralauth-admin-delete-success' => '已经删除"<nowiki>$1</nowiki>"的全域账户',
-	'centralauth-admin-nonexistent' => '这里无"<nowiki>$1</nowiki>"的全域账户',
-	'centralauth-admin-delete-nonexistent' => '错误: 该全域账户"<nowiki>$1</nowiki>"不存在。',
+	'centralauth-admin-nonexistent' => '这里没有"<nowiki>$1</nowiki>"的全域账户',
+	'centralauth-admin-delete-nonexistent' => '错误：该全域账户"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-token-mismatch' => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
 	'centralauth-admin-reason' => '原因：',
 	'centralauth-admin-reason-other' => '其他/附加原因：',
@@ -30845,7 +30933,7 @@ $messages['zh-hans'] = array(
 * 一般封禁和隐藏用户名的原因
 ** 不当用户名
 ** 不当滥用个人信息',
-	'centralauth-admin-logsnippet' => '前个全域户口的变化',
+	'centralauth-admin-logsnippet' => '以前的全域帐户变更',
 	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因：$2',
 	'globalusers' => '全局用户列表',
 	'centralauth-listusers-locked' => '锁定',
