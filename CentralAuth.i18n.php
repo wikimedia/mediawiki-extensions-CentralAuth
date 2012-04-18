@@ -13770,6 +13770,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
  * @author Naohiro19
  * @author Ohgi
  * @author Schu
+ * @author Shirayuki
  * @author Whym
  * @author 青子守歌
  */
@@ -13779,7 +13780,7 @@ $messages['ja'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]します。',
 	'centralauth-antispoof-desc' => 'CentralAuth に AntiSpoof 技術を追加する',
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
-	'centralauth-merge-denied' => '申し訳ありませんが、このページへのアクセス権がありません。',
+	'centralauth-merge-denied' => 'すみません、このページへのアクセス権がありません。',
 	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[$1 ログイン]</span>して確認してください。',
 	'centralauth-merge-welcome' => "'''あなたのアカウントは、{{int:Centralauth-groupname}}の統一ログインシステムにまだ移行していません。'''
 
@@ -13809,8 +13810,8 @@ $messages['ja'] = array(
 	'centralauth-merge-step3-submit' => 'アカウントの統一',
 	'centralauth-merge-no-accounts' => 'アカウント中央管理システムのデータベースにはあなたの利用者名と一致するアカウントが見つかりませんでした。データベースが破損していることが考えられます。',
 	'centralauth-merge-home-password' => 'このアカウントのホームウィキ(下に表示)に設定されたパスワードと入力したパスワードが一致しません。ホームウィキのパスワードを入力してください。',
-	'centralauth-complete' => 'アカウントの統一が完了しました！',
-	'centralauth-incomplete' => 'アカウントの統一に失敗しました！',
+	'centralauth-complete' => 'アカウントの統一が完了しました!',
+	'centralauth-incomplete' => 'アカウントの統一に失敗しました!',
 	'centralauth-complete-text' => '{{int:Centralauth-groupname}}の全てのウィキサイトに新しいアカウントを作成せずにログインできるようになりました。',
 	'centralauth-incomplete-text' => 'アカウントを統合すると、{{int:Centralauth-groupname}}の全てのウィキサイトに新しいアカウントを作成せずにログインすることが可能になります。',
 	'centralauth-not-owner-text' => '"$1" という利用者名は、アカウント $2 の利用者へ既に自動割当済みです。
@@ -13822,7 +13823,7 @@ $messages['ja'] = array(
 	'centralauth-error-locked' => 'あなたのアカウントはロックされたため編集を行うことができません。',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ja|'''統一ログイン'''についてもっと知る]]...''",
 	'centralauth-list-home-title' => 'ホームウィキ',
-	'centralauth-list-home-dryrun' => 'このウィキで設定されたパスワードと電子メールアドレスが統合されたアカウントに設定されます。',
+	'centralauth-list-home-dryrun' => 'このウィキで設定されたパスワードとメールアドレスが統合されたアカウントに設定されます。',
 	'centralauth-list-attached-title' => '関連付けされるアカウント',
 	'centralauth-list-attached' => '以下に示すサイトの "$1" という名前のアカウントは、統一アカウントへ自動的に関連付けられます:',
 	'centralauth-list-attached-dryrun' => '以下に示すサイトの "$1" という名前のアカウントは、統一アカウントへ自動的に関連付けられる予定です:',
@@ -13832,14 +13833,14 @@ $messages['ja'] = array(
 	'centralauth-foreign-contributions' => '$2で$1件の{{PLURAL:$1|投稿}}',
 	'centralauth-merge-method-primary' => 'ホームウィキ',
 	'centralauth-merge-method-empty' => '投稿なし',
-	'centralauth-merge-method-mail' => '電子メールアドレスの認証済み',
+	'centralauth-merge-method-mail' => 'メールアドレスで確認済み',
 	'centralauth-merge-method-password' => 'パスワードによって認証済み',
 	'centralauth-merge-method-admin' => '管理者によって統合されたアカウント',
 	'centralauth-merge-method-new' => '新規アカウント',
 	'centralauth-merge-method-login' => 'ログインによって作成',
 	'centralauth-merge-method-primary-desc' => 'これはアカウントが最初に統合されたウィキです。アカウント保有者の実際のホームウィキとは異なる可能性があります。',
 	'centralauth-merge-method-empty-desc' => 'ローカルのアカウントに編集履歴がなかったため統合されたことを示す',
-	'centralauth-merge-method-mail-desc' => 'ローカルのアカウントとメインアカウントの電子メールアドレスが一致したため統合したことを示す。',
+	'centralauth-merge-method-mail-desc' => 'メールアドレスがメインアカウントのメールアドレスと一致したため統合したことを示す。',
 	'centralauth-merge-method-password-desc' => 'ローカルのアカウントが有効なパスワードを入力したため統合されたことを示す。',
 	'centralauth-merge-method-admin-desc' => 'ローカルのアカウントがスチュワードによって手動で統合されたことを示す。本機能は安全上の理由から現在停止中です。',
 	'centralauth-merge-method-new-desc' => '本ローカルアカウントが作成されたときに、自動的にグローバルアカウントが作成されたことを示す。',
@@ -13848,7 +13849,7 @@ $messages['ja'] = array(
 	'centralauth-finish-text' => '以下のアカウントがあなたのものであるなら、それらのパスワードを入力することで、アカウント統一処理を簡単に完了することができます:',
 	'centralauth-finish-password' => 'パスワード:',
 	'centralauth-finish-login' => 'ログイン',
-	'centralauth-finish-send-confirmation' => 'パスワードを電子メールで送信',
+	'centralauth-finish-send-confirmation' => 'パスワードをメールで送信',
 	'centralauth-finish-problems' => 'トラブルが発生しました。本当にこれらはあなたのアカウントですか？
 [[meta:Help:Unified login problems|ヘルプを確認してください]]...',
 	'centralauth-finish-noconfirms' => 'このパスワードではいかなるアカウントも認証できません。',
@@ -13930,6 +13931,7 @@ $messages['ja'] = array(
 	'globalusers' => 'グローバルアカウントの登録利用者一覧',
 	'centralauth-listusers-locked' => 'ロック状態',
 	'centralauth-listusers-attached' => '[[User:$1|ローカルにアカウント作成済み]]',
+	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => '同名アカウント未統合またはローカルにアカウント未作成',
 	'centralauth-seconds-ago' => '$1{{PLURAL:$1|秒}}前',
 	'centralauth-minutes-ago' => '$1{{PLURAL:$1|分}}前',
