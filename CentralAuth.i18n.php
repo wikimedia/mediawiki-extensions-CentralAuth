@@ -9960,6 +9960,7 @@ $messages['gsw'] = array(
 	'mergeaccount' => 'Status vu dr Benutzerkonte-Zämmefierig',
 	'centralauth-groupname' => 'vu dr Wikimedia-Foundation',
 	'centralauth-desc' => 'Benutzerkonte in Wiki {{int:Centralauth-groupname}} [[Special:MergeAccount|zämmefiere]]',
+	'centralauth-antispoof-desc' => 'Macht CentralAuth d Nutzig vu dr AntiSpoof-Technologi megli',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Zämmefiere vu mehrere Benutzerkonte]] fir s ''Single User Login''",
 	'centralauth-merge-denied' => 'Excusez, aber Du hesch kei Berächtigung fir die Syte.',
 	'centralauth-merge-notlogged' => 'Bitte <span class="plainlinks">[$1 mäld Di aa]</span>, zum priefe, eb Dyyni Benutzerkonte vollständig zämmegfiert wore sin.',
@@ -9982,9 +9983,9 @@ Du chasch si aber speter allno zämmefiere.
 
 Bis jetz sin kei Änderige an Dyyne Benutzerkonte vorgnuh wore.',
 	'centralauth-merge-dryrun-or' => "'''oder'''",
-	'centralauth-merge-dryrun-home' => 'S Migrationssyschtem het nit chenne bstätige, ass Du Basitzer vum Heimetwiki-Benutzerkonto fir dää Benutzername bisch.
+	'centralauth-merge-dryrun-home' => 'S Migrationssyschtem het nit chenne bstätige, ass Du Besitzer vum Heimetwiki-Benutzerkonto fir dää Benutzername bisch.
 
-E ander Wiki isch fir Dyy Benutzername as Heimetwiki bstimmt wore. Gang im Gleich unte noch un mäld Di dert aa go d Benutzerkonte-Zämmefierig abschließe.',
+E ander Wiki isch fir Dyy Benutzername as Heimetwiki bstimmt wore. Gang im Link unte noch un mäld Di dert aa go d Benutzerkonte-Zämmefierig abschließe.',
 	'centralauth-merge-step3-title' => 'Leg e wältwyt Benutzerkonto aa',
 	'centralauth-merge-step3-detail' => 'Du chasch jetz e wältwyt Benutzerkonto fir die Wiki aalege:',
 	'centralauth-merge-step3-submit' => 'Benutzerkonte zämmefiere',
@@ -10011,6 +10012,7 @@ Wänn des Dyy Benutzername isch, chasch d Zämmefierig vu dr Benutzerkonte dur d
 	'centralauth-list-unattached' => 'S Benutzerkonto „$1“ het fir die Projäkt nit automatisch Dir chenne zuegordnet wäre;
 wahrschyns hets e ander Passwort wie Dyy primär Benutzerkonto:',
 	'centralauth-foreign-link' => 'Benutzer $1 uf $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|Bearbeitig|Bearbeitige}} uf $2',
 	'centralauth-merge-method-primary' => 'Heimetwiki',
 	'centralauth-merge-method-empty' => 'kei Benutzerbyyträg',
 	'centralauth-merge-method-mail' => 'bstätigt dur E-Mail-Adräss',
@@ -10219,6 +10221,7 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 	'centralauth-editset-name' => 'Name:',
 	'centralauth-editset-type' => 'Typ:',
 	'centralauth-editset-wikis' => 'Wikis:',
+	'centralauth-editset-restwikis' => 'Wiki, wu s dobe nit din het:',
 	'centralauth-editset-reason' => 'Grund:',
 	'centralauth-editset-submit' => 'In Ornig',
 	'centralauth-editset-submit-delete' => 'Lesche',
@@ -10232,6 +10235,8 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 	'centralauth-editset-success' => 'Wikigruppe erfolgryych gänderet.',
 	'centralauth-editset-success-delete' => 'Wikigruppe erfolgryych glescht.',
 	'centralauth-editset-return' => 'Zruck zue dr normale Aasicht',
+	'centralauth-readonly' => 'D CentralAuth-Datebank isch gsperrt',
+	'centralauth-readonlytext' => 'D CentralAuth-Datebank isch zurzyt fir neji Yytreg un anderi Änderige gsperrt. Des chunnt wahrschyns vu rutinemäßige Wartigsarbete, D Datebank isch noch em Abschluss vu däne wider regulär verfiegbar.',
 	'right-globalgroupmembership' => 'Mitglidschaft in wältwyte Gruppe bearbeite',
 	'right-centralauth-autoaccount' => 'Automatisch mit em globale Benutzerchonto aamälde',
 	'right-centralauth-unmerge' => 'Wältwyt Benutzerkonto abhänke',
@@ -19136,6 +19141,12 @@ $messages['nan'] = array(
 	'centralauth-merge-step3-title' => '建立單一口座',
 	'centralauth-merge-step3-detail' => '你已經準備好欲建立單一口座，包括下跤有連結的wiki：',
 	'centralauth-merge-step3-submit' => '單一化口座',
+	'centralauth-merge-no-accounts' => '佇中心口座的追蹤表內底揣無你的名！
+資料庫一定是毀掉去。',
+	'centralauth-merge-home-password' => '這个口座（佇下面）佇主wiki的密碼佮你拍的無仝，
+請拍入主wiki的密碼。',
+	'centralauth-complete' => '單一登入完成！',
+	'centralauth-incomplete' => '單一登入無完成！',
 );
 
 /** Norwegian Bokmål (‪Norsk (bokmål)‬)
@@ -20189,8 +20200,8 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-reason' => 'Reden:',
 	'centralauth-editset-submit' => 'Opslaan',
 	'centralauth-editset-submit-delete' => 'Verwijderen',
-	'centralauth-editset-badname' => 'U gaf een ongeldige of lege groepsnaam op.',
-	'centralauth-editset-badtype' => 'U gaf een ongeldig groepstype op.',
+	'centralauth-editset-badname' => 'U hebt een ongeldige of lege groepsnaam opgegeven.',
+	'centralauth-editset-badtype' => 'U hebt een ongeldig groepstype opgegeven.',
 	'centralauth-editset-setexists' => 'Er bestaat al een wikigroep met deze naam',
 	'centralauth-editset-nowikis' => "Geen wiki's aangegeven.",
 	'centralauth-editset-nouse' => '(geen)',
