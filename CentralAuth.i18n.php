@@ -19084,6 +19084,13 @@ $messages['myv'] = array(
 	'centralauth-editset-nouse' => '(арась мезе невтемс)',
 );
 
+/** Mazanderani (مازِرونی)
+ * @author محک
+ */
+$messages['mzn'] = array(
+	'centralauth-merge-method-login' => 'بساته بَیی، دله بموئن په',
+);
+
 /** Nahuatl (Nāhuatl)
  * @author Fluence
  * @author Ricardo gs
