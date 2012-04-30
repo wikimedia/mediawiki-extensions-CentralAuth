@@ -13923,7 +13923,7 @@ $messages['ja'] = array(
 	'centralauth-admin-status-hidden-list' => 'アカウントは公開リストから秘匿されています',
 	'centralauth-admin-status-hidden-oversight' => 'アカウントは完全に秘匿されています',
 	'centralauth-admin-status-submit' => '状態を設定',
-	'centralauth-admin-status-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
+	'centralauth-admin-status-nonexistent' => 'エラー：グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-admin-setstatus-success' => 'このグローバルアカウントの状態の変更に成功しました。',
 	'centralauth-admin-status-reasons' => '* よくあるロック理由
 ** 荒らし専用アカウント
@@ -18041,7 +18041,7 @@ $3 നീക്കംചെയ്തു',
 	'centralauth-editset-intro-ro' => 'ഇപ്പോൾ നിലവിലുള്ള വിക്കി ഗണങ്ങളുടെ പട്ടികയാണ് താഴെ നൽകിയിരിക്കുന്നത്.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|മായ്ക്കുക]])',
 	'centralauth-editset-new' => 'പുതിയൊരു ഗണം സൃഷ്ടിക്കുക',
-	'centralauth-editset-notfound' => 'വിക്കി ഗണം "$1" ലഭ്യമായില്ല.',
+	'centralauth-editset-notfound' => 'വിക്കി ഗണം "$1" കണ്ടെത്താനായില്ല.',
 	'centralauth-editset-optin' => 'ഐച്ഛിക ഉൾപ്പെടുത്തൽ അധിഷ്ഠിതം (വ്യക്തമാക്കുന്ന വിക്കികൾ മാത്രം ഉൾപ്പെടുത്തുന്നു)',
 	'centralauth-editset-optout' => 'ഐച്ഛിക നിരാകരണത്തിൽ അധിഷ്ഠിതം (വ്യക്തമാക്കിയത് ഒഴിച്ചുള്ള വിക്കികൾ ഉൾപ്പെടുത്തുന്നു)',
 	'centralauth-editset-legend-edit' => 'വിക്കി ഗണം "$1" തിരുത്തപ്പെടുന്നു',
