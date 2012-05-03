@@ -15,7 +15,7 @@ class CentralAuthHooks {
 	 * Make sure migration information in localuser table is populated
 	 * on local account creation
 	 * @param $user User
-	 * @param $byEmail
+	 * @param $byEmail bool
 	 * @return bool
 	 */
 	static function onAddNewAccount( $user, $byEmail ) {
@@ -377,7 +377,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $out
+	 * @param $out OutputPage
 	 * @param $cookies array
 	 * @return bool
 	 */
@@ -419,9 +419,9 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $uid
-	 * @param $oldName
-	 * @param $newName
+	 * @param $uid int
+	 * @param $oldName string
+	 * @param $newName string
 	 * @return bool
 	 */
 	static function onRenameUserPreRename( $uid, $oldName, $newName ) {
@@ -434,9 +434,9 @@ class CentralAuthHooks {
 
 	/**
 	 * When renaming an account, ensure that the presence records are updated.
-	 * @param $userId
-	 * @param $oldName
-	 * @param $newName
+	 * @param $userId int
+	 * @param $oldName string
+	 * @param $newName string
 	 * @return bool
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
@@ -696,7 +696,7 @@ class CentralAuthHooks {
 
 	/**
 	 * Use the central LoggedOut cookie just like the local one
-	 * @param $user
+	 * @param $user User
 	 * @param $name
 	 * @return bool
 	 */

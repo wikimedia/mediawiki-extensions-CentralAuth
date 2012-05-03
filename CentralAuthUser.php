@@ -107,7 +107,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
-	 * @param $row ResourceWrapper|object
+	 * @param $row ResultWrapper|object
 	 * @param $fromMaster bool
 	 * @return CentralAuthUser
 	 */
@@ -160,8 +160,6 @@ class CentralAuthUser extends AuthPluginUser {
 		// Get the master. We want to make sure we've got up to date information
 		// since we're caching it.
 		$dbr = self::getCentralDB();
-		$globaluser = $dbr->tableName( 'globaluser' );
-		$localuser = $dbr->tableName( 'localuser' );
 
 		$row = $dbr->selectRow( 
 			array( 'globaluser', 'localuser' ),
@@ -233,7 +231,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 *
-	 * @param $row ResourceWrapper|object
+	 * @param $row ResultWrapper|object
 	 * @param $fromMaster bool
 	 */
 	protected function loadFromRow( $row, $fromMaster = false ) {
@@ -601,6 +599,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * all privileged accounts or all accounts if none are privileged.
 	 *
 	 * @param array $migrationSet
+	 * @throws MWException
 	 * @return string
 	 */
 	function chooseHomeWiki( $migrationSet ) {
@@ -1566,7 +1565,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Get information about each local user attached to this account
 	 *
-	 * @return Map of database name to property table with members:
+	 * @return array Map of database name to property table with members:
 	 *    wiki                  The wiki ID (database name)
 	 *    attachedTimestamp     The MW timestamp when the account was attached
 	 *    attachedMethod        Attach method: password, mail or primary
@@ -1612,7 +1611,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Find any remaining migration records for this username which haven't gotten attached to some global account.
 	 * Formatted as associative array with some data.
 	 *
-	 * @return Array
+	 * @throws MWException
+	 * @return array
 	 */
 	public function queryUnattached() {
 		$wikiIDs = $this->listUnattached();
@@ -1842,7 +1842,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Called on login.
 	 *
 	 * @param $remember Bool|User
-	 * @return Session ID
+	 * @return string Session ID
 	 */
 	function setGlobalCookies( $remember = false ) {
 		if ( $remember instanceof User ) {
@@ -2181,7 +2181,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Set the central session data
 	 *
 	 * @param $data Array
-	 * @return ID
+	 * @return string
 	 */
 	static function setSession( $data ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;

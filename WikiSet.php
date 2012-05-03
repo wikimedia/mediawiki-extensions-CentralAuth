@@ -59,7 +59,7 @@ class WikiSet {
 	 * @param $n
 	 * @param $commit bool
 	 */
-	public function setName( $n, $commit = false ) { return $this->setDbField( 'ws_name', $n, $commit ); }
+	public function setName( $n, $commit = false ) { $this->setDbField( 'ws_name', $n, $commit ); }
 
 	/**
 	 * @return array
@@ -70,7 +70,7 @@ class WikiSet {
 	 * @param $w
 	 * @param $commit bool
 	 */
-	public function setWikisRaw( $w, $commit = false ) { return $this->setDbField( 'ws_wikis', $w, $commit ); }
+	public function setWikisRaw( $w, $commit = false ) { $this->setDbField( 'ws_wikis', $w, $commit ); }
 
 	/**
 	 * @return string
@@ -84,9 +84,9 @@ class WikiSet {
 	 */
 	public function setType( $t, $commit = false ) {
 		if ( !in_array( $t, array( self::OPTIN, self::OPTOUT ) ) ) {
-			return false;
+			return;
 		}
-		return $this->setDbField( 'ws_type', $t, $commit );
+		$this->setDbField( 'ws_type', $t, $commit );
 	}
 
 	/**
