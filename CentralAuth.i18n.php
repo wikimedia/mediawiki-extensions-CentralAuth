@@ -8160,7 +8160,7 @@ $messages['fa'] = array(
 	'centralauth-admin-intro' => 'این رابط می‌تواند برای مدیریت حساب‌های سراسری استفاده شود.',
 	'centralauth-admin-manage' => 'مدیریت اطلاعات کاربر',
 	'centralauth-admin-username' => 'نام کاربری:',
-	'centralauth-admin-lookup-ro' => 'اطلاعات کاربر را ببین',
+	'centralauth-admin-lookup-ro' => 'مشاهدهٔ اطلاعات کاربر',
 	'centralauth-admin-lookup-rw' => 'حساب کاربر را مدیریت کن',
 	'centralauth-admin-permission' => 'تنها ویکیبدها می‌توانند حساب کاربری دیگر کاربرها را یکی کنند.',
 	'centralauth-admin-no-unified' => 'حساب کاربری مشترک برای این نام کاربری وجود ندارد.',
@@ -16206,7 +16206,7 @@ Esoulaang wéi déi Spär besteet, kënnt Dir är Benotzerkonten net zesummeféi
 	'centralauth-error-locked' => 'Dir kënnt näischt ännere well Dir gespaart sidd.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Méi informatiounen iwwert déi '''global Benotzerkonten''']]...''",
 	'centralauth-list-home-title' => 'Heemechts-Wiki',
-	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi dir an dëser Wiki uginn hutt gi fir äre globale Benotzerkont benotzt.",
+	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi Dir an dëser Wiki uginn hutt gi fir Äre globale Benotzerkont benotzt.",
 	'centralauth-list-attached-title' => 'Verbonne Benotzerkonten',
 	'centralauth-list-attached' => 'De Benotzerkont mam Numm "$1" vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonnen:',
 	'centralauth-list-attached-dryrun' => 'De Benotzerkont mam Numm "$1" gëtt op all dëse Siten automatesch mat dem globale Benotzerkont verbonnen:',
@@ -25327,6 +25327,7 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 
 /** Slovenian (Slovenščina)
  * @author Dbc334
+ * @author Yerpo
  */
 $messages['sl'] = array(
 	'mergeaccount' => 'Stanje poenotene prijave',
@@ -25382,7 +25383,7 @@ Medtem ko je blokiran, ne morete združiti svojih računov.',
 	'centralauth-disabled-dryrun' => 'Poenotenje računov je trenutno v predstavitvenem načinu oz. načinu popravljanja napak, zato so dejanske dejavnosti združevanja onemogočene.
 Oprostite!',
 	'centralauth-error-locked' => 'Ne morete urejati, ker je vaš račun zaklenjen.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Preberite več o '''enotni prijavi''']] ...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/sl|Preberite več o '''enotni prijavi''']] ...''",
 	'centralauth-list-home-title' => 'Domači wiki',
 	'centralauth-list-home-dryrun' => 'Geslo in e-poštni naslov nastavljena na tem wikiju bosta uporabljena za vaš enotni račun.',
 	'centralauth-list-attached-title' => 'Pripeti računi',
@@ -25476,6 +25477,7 @@ Gesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihov
 	'centralauth-token-mismatch' => 'Oprostite, nismo mogli obdelati vašega poslanega obrazca zaradi izgube podatkov o seji.',
 	'centralauth-admin-reason' => 'Razlog:',
 	'centralauth-admin-reason-other' => 'Drugi/dodatni razlogi:',
+	'centralauth-admin-unhide-nonexistent' => 'Napaka: globalni račun »<nowiki>$1</nowiki>« ne obstaja.',
 	'centralauth-admin-status' => 'Nastavi stanje globalnega računa',
 	'centralauth-admin-status-intro' => 'Obrazec lahko uporabite za spreminjanje stanja tega globalnega računa.',
 	'centralauth-admin-status-locked' => 'Zaklenjen:',
@@ -25515,7 +25517,7 @@ Gesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihov
 	'centralauth-prefs-count-unattached' => 'Nepotrjeni računi z vašim imenom obstajajo na $1 {{PLURAL:$1|projektu|projektih}}.',
 	'centralauth-prefs-detail-unattached' => 'Ta stran projekta še ni bila potrjena kot pripadajoča globalnemu računu.',
 	'centralauth-prefs-manage' => 'Upravljajte svoj globalni račun',
-	'centralauth-prefs-view' => 'Poglej informacije globalnega uporabnika',
+	'centralauth-prefs-view' => 'Oglejte si informacije globalnega uporabnika',
 	'centralauth-renameuser-merged' => 'Uporabnik $1 je bil preseljen v sistem enotne prijave.
 Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega uporabnika.',
 	'centralauth-renameuser-reserved' => 'Uporabnik $2 je rezerviran za globalni račun.',
