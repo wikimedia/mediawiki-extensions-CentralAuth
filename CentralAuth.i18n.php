@@ -8064,6 +8064,7 @@ $messages['ext'] = array(
  * @author Leyth
  * @author Mardetanha
  * @author Mjbmr
+ * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
  */
@@ -8127,7 +8128,7 @@ $messages['fa'] = array(
 	'centralauth-foreign-contributions' => '$1 مشارکت در $2',
 	'centralauth-merge-method-primary' => 'ویکی خانه',
 	'centralauth-merge-method-empty' => 'بدون مشارکت',
-	'centralauth-merge-method-mail' => 'تأیید شده توسط پست الکترونیکی',
+	'centralauth-merge-method-mail' => 'تأیید شده توسط رایانامه',
 	'centralauth-merge-method-password' => 'تأیید شده توسط گذرواژه',
 	'centralauth-merge-method-admin' => 'حساب کاربری ادغام‌شده توسط مدیر',
 	'centralauth-merge-method-new' => 'حساب کاربری جدید',
@@ -28745,6 +28746,14 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 	'right-centralauth-oversight' => 'Pigilin ang pandaigdigang akawnt',
 	'right-centralauth-merge' => 'Pagsanibin/pagsamahin ang kanilang kuwenta (akawnt)',
 	'right-globalgrouppermissions' => 'Pamahalaan ang kapangkatang pandaigdigan',
+);
+
+/** Толышә зывон (Толышә зывон)
+ * @author Гусейн
+ */
+$messages['tly'] = array(
+	'centralauth-groupname' => 'Викимедијә Фонд',
+	'centralauth-antispoof-desc' => 'AntiSpoof технологијә зијод кардә бә CentralAuth',
 );
 
 /** Tok Pisin (Tok Pisin)
