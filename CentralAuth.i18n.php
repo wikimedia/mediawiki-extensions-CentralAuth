@@ -3464,7 +3464,7 @@ $messages['bjn'] = array(
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Panggabungan akun]] lintas wiki {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Tambahi tiknulugi AntiSpoof ka CentralAuth',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Panggabungan babarapa akun]] gasan Sistem Pamuruk Tunggal',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Panggabungan babarapa akun]] gasan Sistem Pamakai Tunggal',
 	'centralauth-merge-denied' => 'Ampun, Pian kada baisi ijin hagan maungkai tungkaran ngini.',
 	'centralauth-merge-notlogged' => 'Muhun <span class="plainlinks">[$1 babuat log]</span> hagan mamariksa amun akun Pian sudah bubujur digabungakan.',
 	'centralauth-merge-step3-title' => 'Ulah akun tunggal',
@@ -3478,13 +3478,14 @@ $messages['bjn'] = array(
 	'centralauth-finish-password' => 'Katasunduk:',
 	'centralauth-finish-login' => 'Babuat lo',
 	'centralauth-finish-send-confirmation' => 'Surili katasunduk',
-	'centralauth-admin-manage' => 'Kalula data pamuruk',
-	'centralauth-admin-username' => 'Ngaran pamuruk:',
-	'centralauth-admin-lookup-ro' => 'Tiringi inpo pamuruk',
-	'centralauth-admin-lookup-rw' => 'Kalula akun pamuruk',
+	'centralauth-admin-manage' => 'Kalula data pamakai',
+	'centralauth-admin-username' => 'Ngaran pamakai:',
+	'centralauth-admin-lookup-ro' => 'Tiringi inpo pamakai',
+	'centralauth-admin-lookup-rw' => 'Kalula akun pamakai',
 	'centralauth-admin-permission' => 'Pramugara haja nang kawa manggabungakan akun urang lain.',
-	'centralauth-admin-info-header' => 'Inpo pamuruk global',
-	'centralauth-admin-info-id' => 'ID pamuruk:',
+	'centralauth-admin-no-unified' => ' Baluman ada akun manunggal gasan ngaran-pamakai ngini.',
+	'centralauth-admin-info-header' => 'Inpo pamakai global',
+	'centralauth-admin-info-id' => 'ID pamakai:',
 	'centralauth-admin-info-registered' => 'Tadaptar:',
 	'centralauth-admin-info-home' => 'Wiki tatambaian',
 	'centralauth-admin-info-editcount' => 'Tutal rikinan-babakan:',
@@ -25952,6 +25953,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author FriedrickMILBarbarossa
  * @author Millosh
  * @author Nikola Smolenski
  * @author Rancher
@@ -26115,7 +26117,7 @@ $messages['sr-ec'] = array(
 	'centralauth-login-no-others' => 'Пријављени сте на друге пројекте које покреће {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Одјављени сте с других пројеката које покреће {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално сакривен од $1 у $2 због следећег разлога: $3',
-	'centralauth-log-name' => 'Историја глобалних налога',
+	'centralauth-log-name' => 'Дневник глобалних налога',
 	'centralauth-log-header' => 'Овај дневник садржи записе о операцијама за глобалне налоге: брисања, закључавања и откључавања.',
 	'centralauth-log-entry-delete' => '{{GENDER:|је обрисао|је обрисала|је обрисао}} глобални налог „$1“',
 	'centralauth-log-entry-lock' => '{{GENDER:|је закључао|је закључала|је закључао}} глобални налог „$1“',
@@ -26128,7 +26130,7 @@ $messages['sr-ec'] = array(
 	'centralauth-log-status-hidden' => 'сакривено',
 	'centralauth-log-status-oversighted' => 'надгледано',
 	'centralauth-log-status-none' => '(ништа)',
-	'centralauth-rightslog-name' => 'Историја глобалних права',
+	'centralauth-rightslog-name' => 'Дневник глобалних права',
 	'centralauth-rightslog-entry-usergroups' => '{{GENDER:|је променио|је променила|је променио}} глобално групно чланство за $1 из $2 у $3',
 	'centralauth-rightslog-entry-groupperms' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1 из $2 у $3',
 	'centralauth-rightslog-entry-groupperms2' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1.
@@ -26220,6 +26222,7 @@ $messages['sr-ec'] = array(
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
+ * @author FriedrickMILBarbarossa
  * @author Liangent
  * @author Michaello
  * @author Rancher
@@ -26379,7 +26382,7 @@ Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.',
 	'centralauth-login-no-others' => 'Prijavljeni ste na druge projekte koje pokreće {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Odjavljeni ste s drugih projekata koje pokreće {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalno sakriven od $1 u $2 zbog sledećeg razloga: $3',
-	'centralauth-log-name' => 'istorija globalnih naloga',
+	'centralauth-log-name' => 'Dnevnik globalnih naloga',
 	'centralauth-log-header' => 'Ovaj log sadrži operacije nad globalnim nalozima: brisanje, zaključavanje i otključavanje.',
 	'centralauth-log-entry-delete' => 'obrisan globalni nalog "$1"',
 	'centralauth-log-entry-lock' => 'zaključan globalni nalog "$1"',
@@ -26392,7 +26395,7 @@ Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.',
 	'centralauth-log-status-hidden' => 'sakriven',
 	'centralauth-log-status-oversighted' => 'nadgledano',
 	'centralauth-log-status-none' => '(ništa)',
-	'centralauth-rightslog-name' => 'istorija globalnih prava',
+	'centralauth-rightslog-name' => 'Dnevnik globalnih prava',
 	'centralauth-rightslog-entry-usergroups' => 'promenjena globalna grupa za nalog $1 sa $2 na $3',
 	'centralauth-rightslog-entry-groupperms' => 'promenjena prava grupe za grupu $1 sa $2 na $3',
 	'centralauth-rightslog-entry-groupperms2' => 'promenjena prava grupe za grupu $1: dodato $2; uklonjeno $3',
@@ -28754,6 +28757,13 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 $messages['tly'] = array(
 	'centralauth-groupname' => 'Викимедијә Фонд',
 	'centralauth-antispoof-desc' => 'AntiSpoof технологијә зијод кардә бә CentralAuth',
+	'centralauth-merge-dryrun-or' => "'''ја''",
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|дәгиши|дәгиши}} бә $2',
+	'centralauth-finish-password' => 'Парол:',
+	'centralauth-finish-login' => 'Ыштәни едаштеј',
+	'centralauth-admin-username' => 'Иштирокәкә ном:',
+	'centralauth-admin-info-id' => 'Иштирокәкә ID:',
+	'centralauth-admin-yes' => 'бәле',
 );
 
 /** Tok Pisin (Tok Pisin)
