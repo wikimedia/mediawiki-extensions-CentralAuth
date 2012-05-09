@@ -537,10 +537,16 @@ class CentralAuthHooks {
 		//
 		// * $anon is an anonymous user object which can be safely used for
 		//   permissions checks.
+		//
+		// NOTE! This hook is deprecated, please use AbortAutoAccount.
+		//
 		if ( !wfRunHooks( 'CentralAuthAutoCreate', array( $user, $userName, $anon ) ) ) {
 			wfDebug( __METHOD__ . ": denied by other extensions\n" );
 			return false;
 		}
+
+		// Give other extensions a chance to stop auto creation.
+		$user->loadDefaults( $userName );
 		$abortMessage = '';
 		if ( !wfRunHooks( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
 			// In this case we have no way to return the message to the user,
@@ -548,10 +554,13 @@ class CentralAuthHooks {
 			wfDebug( __METHOD__ . ": denied by other extension: $abortMessage\n" );
 			return false;
 		}
+		// Make sure the name has not been changed
+		if ( $user->getName() !== $userName ) {
+			throw new MWException( "AbortAutoAccount hook tried to change the user name" );
+		}
 
 		// Checks passed, create the user
 		wfDebug( __METHOD__ . ": creating new user\n" );
-		$user->loadDefaults( $userName );
 		$user->addToDatabase();
 		$user->addNewUserLogEntryAutoCreate();
 
