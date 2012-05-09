@@ -510,7 +510,6 @@ class CentralAuthHooks {
 			// Blacklist the user to avoid repeated DB queries subsequently
 			// First load the session again in case it changed while the above DB query was in progress
 			wfDebug( __METHOD__ . ": user is blocked from this wiki, blacklisting\n" );
-			$session = CentralAuthUser::getSession();
 			$session['auto-create-blacklist'][] = wfWikiID();
 			CentralAuthUser::setSession( $session );
 			return false;
@@ -519,7 +518,6 @@ class CentralAuthHooks {
 		// Check for validity of username
 		if ( !User::isValidUserName( $userName ) ) {
 			wfDebug( __METHOD__ . ": Invalid username\n" );
-			$session = CentralAuthUser::getSession();
 			$session['auto-create-blacklist'][] = wfWikiID();
 			CentralAuthUser::setSession( $session );
 			return false;
@@ -537,21 +535,34 @@ class CentralAuthHooks {
 		//
 		// * $anon is an anonymous user object which can be safely used for
 		//   permissions checks.
+		//
+		// NOTE! This hook is deprecated, please use AbortAutoAccount.
+		//
 		if ( !wfRunHooks( 'CentralAuthAutoCreate', array( $user, $userName, $anon ) ) ) {
 			wfDebug( __METHOD__ . ": denied by other extensions\n" );
+			$session['auto-create-blacklist'][] = wfWikiID();
+			CentralAuthUser::setSession( $session );
 			return false;
 		}
+
+		// Give other extensions a chance to stop auto creation.
+		$user->loadDefaults( $userName );
 		$abortMessage = '';
 		if ( !wfRunHooks( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
 			// In this case we have no way to return the message to the user,
 			// but we can log it.
 			wfDebug( __METHOD__ . ": denied by other extension: $abortMessage\n" );
+			$session['auto-create-blacklist'][] = wfWikiID();
+			CentralAuthUser::setSession( $session );
 			return false;
+		}
+		// Make sure the name has not been changed
+		if ( $user->getName() !== $userName ) {
+			throw new MWException( "AbortAutoAccount hook tried to change the user name" );
 		}
 
 		// Checks passed, create the user
 		wfDebug( __METHOD__ . ": creating new user\n" );
-		$user->loadDefaults( $userName );
 		$user->addToDatabase();
 		$user->addNewUserLogEntryAutoCreate();
 
