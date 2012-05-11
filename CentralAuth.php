@@ -143,6 +143,28 @@ $wgCentralAuthWikisPerSuppressJob = 10;
 $wgCentralAuthReadOnly = false;
 
 /**
+ * If set, users can put their custom JS and CSS code on pages
+ * User:Name/global.js and User:Name/global.css on a global wiki.
+ *
+ * Required properties:
+ * 	'wiki' - name of the global wiki database
+ * 	'source' - name of a ResourceLoader source pointing to the global wiki
+ *
+ * For example:
+ * $wgCentralAuthGlobalUserModule = array(
+ *     'wiki' => 'metawiki',
+ *     'source' => 'metawiki',
+ * );
+ * $wgResourceLoaderSources['metawiki'] = array(
+ *     'apiScript' => '//meta.wikimedia.org/w/api.php',
+ *     'loadScript' => '//meta.wikimedia.org/w/load.php',
+ * );
+ * @var array
+ */
+
+$wgCentralAuthGlobalUserModule = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = dirname( __FILE__ );
@@ -163,6 +185,8 @@ $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/specials/SpecialG
 $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/ApiQueryGlobalUserInfo.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
+$wgAutoloadClasses['ResourceLoaderGlobalUserModule'] = "$caBase/ResourceLoaderGlobalUserModule.php";
+$wgAutoloadClasses['ResourceLoaderRemoteGlobalUserModule'] = "$caBase/ResourceLoaderRemoteGlobalUserModule.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
@@ -190,6 +214,8 @@ $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
+$wgHooks['ResourceLoaderRegisterModules'][] = 'CentralAuthHooks::onResourceLoaderRegisterModules';
+$wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
