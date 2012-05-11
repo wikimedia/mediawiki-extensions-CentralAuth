@@ -143,6 +143,19 @@ $wgCentralAuthWikisPerSuppressJob = 10;
 $wgCentralAuthReadOnly = false;
 
 /**
+ * Identifier of wiki where global user pages are stored.
+ * If set, non-existent local user pages are replaced by
+ * global user pages.
+ * @var string
+ */
+$wgCentralAuthUserPageWiki = false;
+
+/**
+ * How long cached global user page data is stored in memcached.
+ */
+$wgCentralAuthUserPageCacheTime = 3600;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = dirname( __FILE__ );
@@ -163,6 +176,7 @@ $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/specials/SpecialG
 $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/ApiQueryGlobalUserInfo.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
+$wgAutoloadClasses['CentralAuthUserPage'] = "$caBase/CentralAuthUserPage.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
@@ -190,6 +204,8 @@ $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
+$wgHooks['ArticleFromTitle'][] = 'CentralAuthHooks::onArticleFromTitle';
+$wgHooks['TitleIsAlwaysKnown'][] = 'CentralAuthHooks::onTitleIsAlwaysKnown';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';

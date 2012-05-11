@@ -764,4 +764,44 @@ class CentralAuthHooks {
 		$params['url'] = $wiki->getUrl( 'User:' . $user->getTitleKey() );
 		return true;
 	}
+
+	/**
+	 * Handles global user pages.
+	 * @param $title Title
+	 * @param $article Article
+	 * @return bool
+	 */
+	static function onArticleFromTitle( &$title, &$article ) {
+		global $wgCentralAuthUserPageWiki;
+
+		if ( $wgCentralAuthUserPageWiki !== false && $title->getNamespace() === NS_USER ) {
+			$article = new CentralAuthUserPage( $title );
+		}
+		return true;
+	}
+
+	/**
+	 * Handles global user pages.
+	 *
+	 * FIXME: This is VERY VERY VERY VERY VERY INEFFICIENT.
+	 * 1. It is called for the same page multiple times
+	 *    with different title objects.
+	 * 2. It is called before any checks, there is no hook for coloring red
+	 *    links after checks. We need to mark as blue only red page links.
+	 *    We could save some processing time taking advantage of this.
+
+	 * Any ideas how to make it better?
+	 *
+	 * @param $title Title
+	 * @param $article bool
+	 * @return bool
+	 */
+	static function onTitleIsAlwaysKnown( $title, &$result ) {
+		global $wgCentralAuthUserPageWiki;
+
+		if ( !$result && $wgCentralAuthUserPageWiki !== false && $title->getNamespace() === NS_USER ) {
+			$result = CentralAuthUserPage::exists( $title ) ? true : null;
+		}
+		return true;
+	}
 }
