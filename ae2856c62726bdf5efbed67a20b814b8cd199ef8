@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALX//+sE\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-05-11T18:36:05Z",
+      "side": 1,
+      "message": "Please add message documentation (qqq)",
+      "revId": "ae2856c62726bdf5efbed67a20b814b8cd199ef8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALX//+sI\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-05-11T18:36:05Z",
+      "side": 1,
+      "message": "Hard coding \"User:\" like that doesn\u0027t seem like a good idea",
+      "revId": "ae2856c62726bdf5efbed67a20b814b8cd199ef8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
