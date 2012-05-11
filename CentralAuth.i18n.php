@@ -249,6 +249,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
+	'centralauth-userpage-header'    => 'This user page is a copy from [$1 $2].',
 
 	// Logging
 	'centralauth-log-name'         => 'Global account log',
@@ -550,6 +551,9 @@ Variables $2 and $3 are a combination of the following:
 
 The use of "their" in this message is actually a case of [[wikipedia:Singular they|singular they]]. So in this case, "their" must be translated as "his or her" or as "this person\'s", not as an actual plural. – McDutchie 16:46, 20 July 2008 (UTC)',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
+	'centralauth-userpage-header' => 'This message is shown on a user page along with global user page on wikis where a local user page does not exist.
+* $1 is a URL to the global page
+* $2 is a name of the global wiki',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
