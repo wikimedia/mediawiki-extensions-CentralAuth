@@ -1046,8 +1046,10 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onBeforePageDisplay( &$out, &$skin ) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
-		if ( $out->getUser()->isAnon() ) {
+		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging,
+		       $wgCentralAuthGlobalUserModule;
+		$user = $out->getUser();
+		if ( $user->isAnon() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
@@ -1067,7 +1069,7 @@ class CentralAuthHooks {
 				) . '</noscript>' );
 			}
 		} else {
-			$centralUser = CentralAuthUser::getInstance( $out->getUser() );
+			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
 				$out->addModules( 'ext.centralauth.centralautologin.clearcookie' );
 			}
@@ -1087,6 +1089,16 @@ class CentralAuthHooks {
 				}
 			}
 		}
+		$centralUser = CentralAuthUser::getInstance( $user );
+		// Load the user's global JS and CSS
+		// Check that the user is attached both here and the global wiki
+		if ( $wgCentralAuthGlobalUserModule && !$user->isAnon()
+			&& $centralUser->isAttached()
+			&& $centralUser->attachedOn( $wgCentralAuthGlobalUserModule['wiki'] )
+		) {
+			$out->addModules( 'ext.centralauth.global.user' );
+		}
+
 		return true;
 	}
 
@@ -1515,4 +1527,23 @@ class CentralAuthHooks {
 		$id = $centralUser->getId();
 		return true;
 	}
+
+	/**
+	 * Registers a global user module.
+	 * @param $resourceLoader ResourceLoader
+	 * @return bool
+	 */
+	static function onResourceLoaderRegisterModules( &$resourceLoader ) {
+		global $wgCentralAuthGlobalUserModule;
+
+		// Check if the global RL user module is enabled
+		if ( !$wgCentralAuthGlobalUserModule ) {
+			return true;
+		}
+
+		$module = array( 'class' => 'ResourceLoaderGlobalUserModule' );
+		$resourceLoader->register( 'ext.centralauth.global.user', $module );
+		return true;
+	}
+
 }
