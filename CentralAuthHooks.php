@@ -764,4 +764,65 @@ class CentralAuthHooks {
 		$params['url'] = $wiki->getUrl( 'User:' . $user->getTitleKey() );
 		return true;
 	}
+
+	/**
+	 * Registers a global user module.
+	 * @param $resourceLoader ResourceLoader
+	 * @return bool
+	 */
+	static function onResourceLoaderRegisterModules( &$resourceLoader ) {
+		global $wgCentralAuthGlobalUserModule, $wgDBname;
+
+		// Check if the global RL user module is enabled
+		if ( !$wgCentralAuthGlobalUserModule ) {
+			return true;
+		}
+
+		$module = null;
+		if ( $wgDBname === $wgCentralAuthGlobalUserModule['wiki'] ) {
+			// We are on a global wiki, use a local module
+			$module = array( 'class' => 'ResourceLoaderGlobalUserModule' );
+		} else {
+			// We are on a remote wiki, use a remote module
+			$resourceLoader->addSource( 'centralauthwiki', array(
+				'loadScript' => $wgCentralAuthGlobalUserModule['loadUrl'],
+				'apiScript' => $wgCentralAuthGlobalUserModule['apiUrl'],
+			) );
+			$module = array( 'class' => 'ResourceLoaderRemoteGlobalUserModule' );
+		}
+		$resourceLoader->register( 'ext.centralauth.global.user.module', $module );
+		return true;
+	}
+
+	/**
+	 * Requests loading of a global user module.
+	 * @param $out OutputPage
+	 * @return bool
+	 */
+	static function onBeforePageDisplay( $out ) {
+		global $wgCentralAuthGlobalUserModule;
+
+		// Check if the global RL user module is enabled
+		if ( !$wgCentralAuthGlobalUserModule ) {
+			return true;
+		}
+
+		// Anonymous users cannot have a global module
+		if ( $out->getUser()->isAnon() ) {
+			return true;
+		}
+		// Check if the user has his/her account attached on this wiki
+		$centralUser = CentralAuthUser::getInstance( $out->getUser() );
+		if ( !$centralUser->isAttached() ) {
+			return true;
+		}
+		// Check if the user has his/her account attached on global wiki
+		if ( !$centralUser->attachedOn( $wgCentralAuthGlobalUserModule['wiki'] ) ) {
+			return true;
+		}
+		// All requirements are met - load the global user module
+		$out->addModules( 'ext.centralauth.global.user.module' );
+
+		return true;
+	}
 }
