@@ -211,6 +211,28 @@ $wgCentralAuthReadOnly = false;
 $wgCentralAuthUseEventLogging = false;
 
 /**
+ * If set, users can put their custom JS and CSS code on pages
+ * User:Name/global.js and User:Name/global.css on a global wiki.
+ *
+ * Required properties:
+ * 	'wiki' - name of the global wiki database
+ * 	'source' - name of a ResourceLoader source pointing to the global wiki
+ *
+ * For example:
+ * $wgCentralAuthGlobalUserModule = array(
+ *     'wiki' => 'metawiki',
+ *     'source' => 'metawiki',
+ * );
+ * $wgResourceLoaderSources['metawiki'] = array(
+ *     'apiScript' => '//meta.wikimedia.org/w/api.php',
+ *     'loadScript' => '//meta.wikimedia.org/w/load.php',
+ * );
+ * @var array
+ */
+
+$wgCentralAuthGlobalUserModule = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
@@ -238,6 +260,8 @@ $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.p
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
+$wgAutoloadClasses['ResourceLoaderGlobalUserModule'] = "$caBase/ResourceLoaderGlobalUserModule.php";
+$wgAutoloadClasses['ResourceLoaderRemoteGlobalUserModule'] = "$caBase/ResourceLoaderRemoteGlobalUserModule.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -278,6 +302,7 @@ $wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthHooks::onApiTokensGetTokenTyp
 $wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
 $wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
 $wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
+$wgHooks['ResourceLoaderRegisterModules'][] = 'CentralAuthHooks::onResourceLoaderRegisterModules';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
