@@ -19114,52 +19114,6 @@ $messages['nah'] = array(
 	'centralauth-editset-reason' => 'Tlèka:',
 );
 
-/** Min Nan Chinese (Bân-lâm-gú)
- * @author Ianbu
- */
-$messages['nan'] = array(
-	'mergeaccount' => '單一登入的狀況',
-	'centralauth-groupname' => '維基媒體(Wikimedia)基金會',
-	'centralauth-desc' => '[[Special:MergeAccount|整合]]{{int:Centralauth-groupname}}的口座',
-	'centralauth-antispoof-desc' => '共CentralAuth加AntiSpoof的技術',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|合併濟个口座]]做單一用者登入',
-	'centralauth-merge-denied' => '歹勢，你無權權限處理這頁。',
-	'centralauth-merge-notlogged' => '請<span class="plainlinks">[$1 登入]</span>，看你的口座是毋是有全部合併。',
-	'centralauth-merge-welcome' => "'''你的用者口座猶未徙去{{int:Centralauth-groupname}}的單一登入系統。'''
-
-若你徙你的口座，你就會當用仝一个用者名稱佮密碼登入{{int:Centralauth-groupname}}的全部語言wiki網站。
-
-若佇別站，有用者已經佮你仝名，這是袂去干擾著伊，毋過佇這个機會，你會當佮伊抑管理員參詳看覓。",
-	'centralauth-merge-step1-title' => '開始登入整合',
-	'centralauth-merge-step1-detail' => '請拍你口座的密碼，
-會對你的密碼佮註冊的電子批地址，是毋是佮佇別个Wiki口座的仝款，
-佇你確認進前，袂做改變。',
-	'centralauth-merge-step1-submit' => '確認登入信息',
-	'centralauth-merge-step2-title' => '確認其他口座',
-	'centralauth-merge-step2-detail' => '有一寡口座袂自動佮你指定的Wiki相敆
-若遐的口座是你的，你愛提供密碼來共認。',
-	'centralauth-merge-step2-submit' => '確認登入信息',
-	'centralauth-merge-dryrun-complete' => '所有這馬的口座會當自動整合！
-
-這馬猶未改你的口座。',
-	'centralauth-merge-dryrun-incomplete' => '你準備欲繼續，毋過有一寡口座無法度自動確認佮馬上自動合併，你會當等一下才共合併。
-
-這馬猶未改你的口座。',
-	'centralauth-merge-dryrun-or' => "'''抑是'''",
-	'centralauth-merge-dryrun-home' => '搬徙系統無法度確定你的用者名稱就是你主要Wiki口座的主人。
-
-佇別个wiki已經有人用你的用者名稱做主要Wiki口座；請去下跤的連結佮登入，才通完成你的口座搬徙。',
-	'centralauth-merge-step3-title' => '建立單一口座',
-	'centralauth-merge-step3-detail' => '你已經準備好欲建立單一口座，包括下跤有連結的wiki：',
-	'centralauth-merge-step3-submit' => '單一化口座',
-	'centralauth-merge-no-accounts' => '佇中心口座的追蹤表內底揣無你的名！
-資料庫一定是毀掉去。',
-	'centralauth-merge-home-password' => '這个口座（佇下面）佇主wiki的密碼佮你拍的無仝，
-請拍入主wiki的密碼。',
-	'centralauth-complete' => '單一登入完成！',
-	'centralauth-incomplete' => '單一登入無完成！',
-);
-
 /** Norwegian Bokmål (‪Norsk (bokmål)‬)
  * @author Atluxity
  * @author EivindJ
