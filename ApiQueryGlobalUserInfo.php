@@ -74,6 +74,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$result->addValue( array( 'query', $this->getModuleName() ), 'rights', $rights );
 		}
 		if ( $userExists && isset( $prop['merged'] ) ) {
+			global $wgConf;
+			$wgConf->loadFullData();
 			$accounts = $user->queryAttached();
 			foreach ( $accounts as $account ) {
 				$dbname = $account['wiki'];
