@@ -1805,22 +1805,59 @@ $messages['arz'] = array(
 );
 
 /** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
  * @author Chaipau
  * @author Gitartha.bordoloi
  * @author Psneog
  */
 $messages['as'] = array(
 	'centralauth-merge-denied' => 'ক্ষমা কৰিব, এই পৃষ্ঠাত আপোনাৰ প্ৰবেশাধিকাৰ নাই।',
+	'centralauth-merge-step2-submit' => 'প্ৰৱেশৰ তথ্য নিশ্চিত কৰক',
 	'centralauth-merge-dryrun-or' => "'''বা'''",
 	'centralauth-merge-method-empty' => 'কোনো বৰঙণি নাই',
 	'centralauth-merge-method-mail' => 'ই-মেইলৰ দ্বাৰা নিশ্চিত কৰা হৈছে',
 	'centralauth-merge-method-password' => 'গুপ্তশব্দৰ দ্বাৰা নিশ্চিত কৰা হৈছে',
 	'centralauth-merge-method-new' => 'নতুন একাউণ্ট',
+	'centralauth-merge-method-login' => 'প্ৰৱেশৰ ওপৰত ভিত্তি কৰি সৃষ্টি',
+	'centralauth-finish-title' => 'একত্ৰীকৰণ কৰা হ’ল',
 	'centralauth-finish-password' => 'গুপ্তশব্দ',
 	'centralauth-finish-login' => 'প্ৰৱেশ',
 	'centralauth-finish-send-confirmation' => 'ই-মেইলৰ গুপ্তশব্দ',
+	'centralauth-attach-title' => 'একাউণ্ট নিশ্চিত কৰক',
+	'centralauth-attach-submit' => 'একাউন্ট স্থানান্তৰ কৰক',
+	'centralauth-admin-username' => 'সদস্য নাম:',
+	'centralauth-admin-lookup-ro' => 'সদস্যৰ বিৱৰণ',
+	'centralauth-admin-info-header' => 'গোলকীয় ব্যৱহাৰকাৰী তথ্য',
 	'centralauth-admin-info-id' => 'সদস্যৰ আই ডি',
+	'centralauth-admin-info-registered' => 'নিবন্ধিত',
+	'centralauth-admin-info-home' => 'মূখ্য ৱিকি',
+	'centralauth-admin-info-editcount' => 'মুঠ সম্পাদনাৰ সংখ্যা:',
+	'centralauth-admin-info-locked' => 'বন্ধ:',
+	'centralauth-admin-yes' => 'হয়',
+	'centralauth-admin-no' => 'নহয়',
+	'centralauth-admin-unattached' => 'সংয়ুক্ত নহয়',
+	'centralauth-admin-list-method' => 'পদ্ধতি',
+	'centralauth-admin-list-editcount' => 'সম্পাদনা সংখ্যা',
+	'centralauth-admin-list-blocked' => 'অৱৰোধ কৰা হৈছে',
+	'centralauth-admin-delete-title' => 'একাউণ্ট বিলোপ কৰক',
+	'centralauth-admin-delete-button' => 'এই একাউণ্ট বিলোপ কৰক',
+	'centralauth-admin-reason' => ' কাৰণ:',
+	'centralauth-admin-reason-other' => 'অন্য/অতিৰিক্ত কাৰণ:',
+	'centralauth-admin-status-locked' => 'বন্ধ:',
+	'centralauth-admin-status-hidden' => 'অদৃশ্য',
 	'globalusers' => 'গোলকীয় ব্যৱহাৰকাৰীৰ তালিকা',
+	'centralauth-prefs-unattached' => 'অনিশ্চিত',
+	'centralauth-prefs-view' => 'গোলকীয় ব্যৱহাৰকাৰীৰ তথ্য চাওক',
+	'centralauth-log-status-locked' => 'অৱৰোধ কৰা হৈছে',
+	'centralauth-log-status-hidden' => 'অদৃশ্য',
+	'centralauth-log-status-none' => 'একো নাই',
+	'autologin' => 'স্বয়ংক্ৰিয় প্ৰৱেশ',
+	'centralauth-newgroup-legend' => 'নতুন গোট সৃষ্টি কৰক',
+	'centralauth-globalgroupperms-newgroupname' => 'নতুন গোটৰ নাম:',
+	'centralauth-editgroup-subtitle' => '$1 সম্পাদনা',
+	'centralauth-editset-name' => 'নাম:',
+	'centralauth-editset-type' => 'প্ৰকাৰ:',
+	'centralauth-editset-reason' => 'কাৰণ:',
 	'centralauth-editset-submit-delete' => 'বিলোপন',
 );
 
@@ -2037,7 +2074,7 @@ Si se renoma fadrá que l'usuariu llocal seya dixebráu del usuariu global.",
 	'centralauth-log-status-hidden' => 'anubríu',
 	'centralauth-log-status-oversighted' => 'suprimíu',
 	'centralauth-log-status-none' => '(nengún)',
-	'centralauth-rightslog-name' => 'Rexistru de drechos globales',
+	'centralauth-rightslog-name' => 'Rexistru de permisos globales',
 	'centralauth-rightslog-entry-usergroups' => 'camudó la pertenencia de grupu global pa $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms' => 'camudó los permisos de grupu pa $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'camudó los permisos de grupu pa $1. Añadíos $2; Eliminaos $3',
@@ -3949,6 +3986,7 @@ Abeg : $1',
 	'centralauth-token-mismatch' => "Ho tigarez, n'omp ket bet gouest d'ober war-dro ho furmskrid rak kollet eo bet roadennoù an dalc'h.",
 	'centralauth-admin-reason' => 'Abeg :',
 	'centralauth-admin-reason-other' => 'Abeg all/ouzhpenn :',
+	'centralauth-admin-unhide-nonexistent' => 'Fazi : N\'eus ket eus ar gont hollek "<nowiki>$1</nowiki>".',
 	'centralauth-admin-status' => 'Kemmañ statud ar gont hollek',
 	'centralauth-admin-status-intro' => 'Gellout a rit implijout ar furmskrid-mañ evit kemmañ statud ar gont hollek-se',
 	'centralauth-admin-status-locked' => 'Prennet :',
@@ -7787,6 +7825,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-token-mismatch' => 'Läkitatud vormi töötlemine ei õnnestunud seansiandmete kaotsimineku tõttu.',
 	'centralauth-admin-reason' => 'Põhjus:',
 	'centralauth-admin-reason-other' => 'Muu või täiendav põhjus:',
+	'centralauth-admin-unhide-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
 	'centralauth-admin-status' => 'Määra globaalse konto seisund',
 	'centralauth-admin-status-intro' => 'Selle vormiga saad globaalse konto seisundit muuta.',
 	'centralauth-admin-status-locked' => 'Lukustatud:',
@@ -9086,12 +9125,12 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-admin-status-submit' => 'Changer le statut',
 	'centralauth-admin-status-nonexistent' => 'Erreur : le compte global « <nowiki>$1</nowiki> » n’existe pas.',
 	'centralauth-admin-setstatus-success' => 'Vous avez changé le statut de ce compte global avec succès.',
-	'centralauth-admin-status-reasons' => "* Motifs fréquents de blocage :
+	'centralauth-admin-status-reasons' => '* Motifs fréquents de blocage :
 ** compte servant uniquement à vandaliser
 ** compte servant uniquement à spammer
 * Motifs fréquents de blocage et masquage :
-** nom d'utilisateur abusif
-** informations personnelles inappropriées",
+** nom d’utilisateur abusif
+** informations personnelles inappropriées',
 	'centralauth-admin-logsnippet' => 'Changements précédents dans le compte global',
 	'centralauth-admin-suppressreason' => 'Supprimé globalement par $1 pour le motif suivant : $2',
 	'globalusers' => 'Liste des utilisateurs globaux',
@@ -9118,7 +9157,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-renameuser-reserved' => 'L’utilisateur $2 est réservé pour un compte global.',
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
-	'centralauth-account-exists-reset' => "Le nom d'utilisateur $1 n'est pas enregistré sur ce wiki, mais existe dans le système de connexion unifié.",
+	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais existe dans le système de connexion unifié.',
 	'centralauth-login-progress' => 'Vous êtes connecté{{GENDER:||e|(e)}} aux wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-logout-progress' => 'Vous êtes déconnecté{{GENDER:||e|(e)}} des wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
@@ -9162,7 +9201,7 @@ Vous avez demandé cette page sans fournir d’informations d’authentification
 Vous pouvez voir ou modifier les permissions assignées à chacun des groupes, si vous en avez la permission.
 Un groupe peut être supprimé en lui retirant toutes ses permissions.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|voir/modifier]])',
-	'centralauth-globalgroupperms-nogroups' => "Aucun groupe global n'a été défini.",
+	'centralauth-globalgroupperms-nogroups' => 'Aucun groupe global n’a été défini.',
 	'centralauth-existinggroup-legend' => 'Groupes globaux existants',
 	'centralauth-newgroup-legend' => 'Créer un nouveau groupe global',
 	'centralauth-newgroup-intro' => 'Vous pouvez utiliser ce formulaire pour assigner des permissions à un nouveau groupe global.
@@ -9224,7 +9263,7 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centralauth-editset-success-delete' => 'Jeu de wikis supprimé avec succès.',
 	'centralauth-editset-return' => 'Revenir à la vue principale',
 	'centralauth-readonly' => 'Base de données CentralAuth verrouillée',
-	'centralauth-readonlytext' => "La base de données CentralAuth est actuellement verrouillée pour de nouvelles entrées et d'autres modifications, probablement par une routine d'entretien de la base de données, après quoi tout reviendra à la normale.",
+	'centralauth-readonlytext' => 'La base de données CentralAuth est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine d’entretien de la base de données, après quoi tout reviendra à la normale.',
 	'right-globalgroupmembership' => 'Modifier les appartenances aux groupes globaux',
 	'right-centralauth-autoaccount' => 'Connecter automatiquement avec un compte global',
 	'right-centralauth-unmerge' => 'Annuler la fusion du compte global',
@@ -12848,7 +12887,7 @@ $messages['ilo'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilangan]] ti amin a wiki iti {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Agnayon ti AntiSpoof a teknolohia idiay CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponen dagiti adu a pakabilangan]] para iti Maysa a Pagserrek ti Agar-aramat',
-	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubos mo a sumrek ditoy a panid',
+	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubos mo a sumrek iti daytoy a panid',
 	'centralauth-merge-notlogged' => 'Pangngaasi a <span class="plainlinks">[$1 sumrekka]</span> ta kitaem dagiti pakabilangam ket napagtipon aminen.',
 	'centralauth-merge-welcome' => "'''Ti pakabilangam ket saan pay a naipan idiay sistema iti pinagtipon a pagserrek {{int:Centralauth-groupname}}.'''
 
@@ -12978,7 +13017,7 @@ Rason: $1',
 	'centralauth-admin-bad-input' => 'Imbalido ti napili a maiyakar',
 	'centralauth-admin-none-selected' => 'Awan dagiti napili a pakabilangan a baliwan.',
 	'centralauth-admin-already-unmerged' => 'Lablabsen ti $1, nalpasen a naiyakar',
-	'centralauth-admin-unmerge-success' => 'Balligi ti pinagikkat ti inyakar  $1 {{PLURAL:$1|pakabilangan|dagiti pakabilangan}}',
+	'centralauth-admin-unmerge-success' => 'Balligi ti panagikkat ti inyakar  $1 {{PLURAL:$1|pakabilangan|dagiti pakabilangan}}',
 	'centralauth-admin-delete-title' => 'Ikkaten ti pakabilangan',
 	'centralauth-admin-delete-description' => 'Ti panag-ikaat ti sangalubongan a pakibilangan ket ikkaten na ti ania man a sangalubongan a kaykayat, ikkaten na amin dagiti lokal a pakabilangan  ken baybayan na a mawayaan ti sangalubongan a nagan tapno mausar ti sabali nga agar-aramat.',
 	'centralauth-admin-delete-button' => 'Ikkaten daytoy a pakabilangan',
@@ -12988,6 +13027,7 @@ Rason: $1',
 	'centralauth-token-mismatch' => 'Pasensian a, saan  mi a maaramid ti  naited a kinabuklan ngamin ket napukaw ti linaon ti gimong.',
 	'centralauth-admin-reason' => 'Rason:',
 	'centralauth-admin-reason-other' => 'Sabali/dadduma pay a rason:',
+	'centralauth-admin-unhide-nonexistent' => 'Biddut: ti sangalubongan a pakabilangan "<nowiki>$1</nowiki>" ket awan.',
 	'centralauth-admin-status' => 'Idisso ti kasasaad ti sangalubongan a pakabilangan',
 	'centralauth-admin-status-intro' => 'Mausar mo daytoy a kinabuklan ti pinagsukat dagiti kasasaad iti sangalubongan a pakabilangan',
 	'centralauth-admin-status-locked' => 'Napengdan:',
@@ -13006,7 +13046,7 @@ Rason: $1',
 * Kadawyan a panagpengdan-ken-panagilemmeng a ras-rason
 ** agab-abuso a nagan ti agar-aramat
 ** di maiparbeng a bukod a pakaammo',
-	'centralauth-admin-logsnippet' => 'Dagiti nasakbayan a pinagsukat ti sangalubongan a pakabilangan',
+	'centralauth-admin-logsnippet' => 'Dagiti nasakbayan a panagsukat ti sangalubongan a pakabilangan',
 	'centralauth-admin-suppressreason' => 'Sangalubongan a pinasardeng ni $1 para iti sumaganad a rason: $2',
 	'globalusers' => 'Sangalubongan a listaan ti agar-aramat',
 	'centralauth-listusers-locked' => 'naserraan',
@@ -13067,7 +13107,7 @@ Inikkat $3',
 	'centralauth-rightslog-entry-deleteset' => 'inikkat ti disso a wiki "$1"',
 	'centralauth-rightslog-set-optin' => 'naibatay ti panag-pili',
 	'centralauth-rightslog-set-optout' => 'naibatay ti saan a panag-pili',
-	'autologin' => 'Automatiko a pinagserrek',
+	'autologin' => 'Automatiko a panagserrek',
 	'centralauth-autologin-desc' => 'Daytoy a naipangruna a panid ket us-usaren ti uneg babaen ti MediaWiki.
 No [[Special:UserLogin|sumrekka]], ti naipatengnga a sistema ti panag-serrek  ket ibaga na ti pagbasabasam ti agkiddaw iti daytoy a panid manipud kadagiti amin a pagturayan, nga agusar kadagiti panilpo ti imahen.
 Kiniddaw mo daytoy a panid nga awan ti napasingkedan a linaon, ket isu nga awan ti inaramid na.',
@@ -13095,7 +13135,7 @@ Pammmo a ti bunngoy ket awan  mailaksid no nainaganan kadagiti pammalubos kanian
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Listaan dagiti agar-aramat nga addaan kadagiti $2 a karbengan]]',
 	'centralauth-editgroup-restrictions' => 'Disso dagiti wiki a daytoy a bunggoy ket nasiglat:',
 	'centralauth-editgroup-noset' => '(awan)',
-	'centralauth-editgroup-submit' => 'Idulin dagiti pinagisukat kadagiti pammalubos ti bunggoy',
+	'centralauth-editgroup-submit' => 'Idulin dagiti panagisukat kadagiti pammalubos ti bunggoy',
 	'centralauth-editgroup-perms' => 'Dagiti naited a pammalubos:',
 	'centralauth-editgroup-reason' => 'Rason:',
 	'centralauth-editgroup-success' => 'Nasukatan dagiti pammalubos ti bunggoy',
@@ -13104,7 +13144,7 @@ Pammmo a ti bunngoy ket awan  mailaksid no nainaganan kadagiti pammalubos kanian
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|urnosen]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Ti wiki nga addaan kadagiti pakabilangan da:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ti sangalubongan nga agar-aramat '''$1''' ket saan a nasiglat idiay wiki a nainaganam ('' $2 '') .
-Mabalin a padpadasem ti aginag-nagan kadagiti karbengan ti saan nga husto a agar-aramat!",
+Mabalin a padasem ti aginag-nagan kadagiti karbengan ti saan a husto nga agar-aramat!",
 	'centralauth-editset' => 'Disso dagiti wiki',
 	'centralauth-editset-legend-rw' => 'Agurnos wenno agaramid ti disso a wiki',
 	'centralauth-editset-legend-ro' => 'Listaan  dagiti disso ti wiki',
@@ -13149,7 +13189,7 @@ Mabalin mo a makita ken mabaliwan ti ania man kaniada, wenno agaramid ti baro a 
 	'right-globalgrouppermissions' => 'Taripatuen dagiti sangalubongan a bunggoy',
 );
 
-/** Ingush (ГІалгІай Ğalğaj)
+/** Ingush (ГӀалгӀай)
  * @author Sapral Mikail
  */
 $messages['inh'] = array(
@@ -16455,6 +16495,59 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'right-centralauth-oversight' => 'Globale Benotzerkont suppriméieren',
 	'right-centralauth-merge' => 'Hire Benotzerkont zesummeféieren',
 	'right-globalgrouppermissions' => 'Gestioun vu globale Gruppen',
+);
+
+/** Lezghian (Лезги)
+ * @author Migraghvi
+ */
+$messages['lez'] = array(
+	'centralauth-list-home-title' => 'КIвалин вики',
+	'centralauth-list-attached-title' => 'ГалкIурнавай аккаунтар',
+	'centralauth-list-unattached-title' => 'ГалкIур тавунвай аккаунтар',
+	'centralauth-merge-method-primary' => 'кIвалин вики',
+	'centralauth-merge-method-empty' => 'кутур крар авайд ттуш',
+	'centralauth-merge-method-mail' => 'э-мейл куьмекдалди тестикьнава',
+	'centralauth-merge-method-new' => 'цıийи аккаунт',
+	'centralauth-finish-password' => 'Парол',
+	'centralauth-finish-login' => 'Гьахьун',
+	'centralauth-finish-send-confirmation' => 'парол э-почтадиз ракъурун',
+	'centralauth-admin-username' => 'Уртахдин тlвар',
+	'centralauth-admin-lookup-ro' => 'Уртахдикай малуматдиз килигун',
+	'centralauth-admin-info-header' => 'Уртахдикай глобал малумат',
+	'centralauth-admin-info-id' => 'Уртах тайин ийидайди:',
+	'centralauth-admin-info-registered' => 'Ригистрация авунва:',
+	'centralauth-admin-info-home' => 'КIвалин вики',
+	'centralauth-admin-info-editcount' => 'Вири дуьзар хъувунрин кьадар:',
+	'centralauth-admin-info-locked' => 'КIевирнава',
+	'centralauth-admin-info-hidden' => 'Чуьнуьхунин  дережа',
+	'centralauth-admin-nohome' => 'тайин авун мумкин ттуш',
+	'centralauth-admin-yes' => 'уън',
+	'centralauth-admin-no' => 'ваъ',
+	'centralauth-admin-hidden-list' => 'виридан гъил акакьдай сиягьрихъай',
+	'centralauth-admin-unattached' => 'галкIурнавач',
+	'centralauth-admin-unmerge' => 'Хкягънавайбур ччара авун',
+	'centralauth-admin-merge' => 'Хкягънавайбур сад авун',
+	'centralauth-admin-delete-title' => 'Аккаунт алудун',
+	'centralauth-admin-reason' => 'Себеб:',
+	'centralauth-admin-status-hidden' => 'Чуьнуьхнава',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд|секунд}} вилик',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|декъикъа|декъикъа}} идалай вилик',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сят|сят}} идалай вилик',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|югъ|югъ}} идалай вилик',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|варз|варз}} идалай вилик',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|йис|йис}} идалай вилик',
+	'centralauth-log-status-locked' => 'блокарнава',
+	'centralauth-log-status-hidden' => 'чуьнуьхнава',
+	'centralauth-log-status-oversighted' => 'ревизор патал чуьнуьхнава',
+	'centralauth-log-status-none' => '(садни)',
+	'centralauth-editgroup-subtitle' => '$1 Дуьзар хъувун',
+	'centralauth-editset-name' => 'Тlвар:',
+	'centralauth-editset-type' => 'Жуьре:',
+	'centralauth-editset-wikis' => 'Викияр:',
+	'centralauth-editset-reason' => 'Себеб:',
+	'centralauth-editset-submit' => 'Ракъурун',
+	'centralauth-editset-submit-delete' => 'Алудун',
+	'centralauth-editset-nouse' => '(садни)',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -22631,6 +22724,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author Hamilton Abreu
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author Jaideraf
  * @author Luckas Blade
  * @author Pedroca cerebral
  * @author Rafael Vargas
@@ -22672,7 +22766,7 @@ Outra wiki foi determinada como sendo a conta principal de seu nome de utilizado
 	'centralauth-merge-step3-submit' => 'Unificar contas',
 	'centralauth-merge-no-accounts' => 'Nenhuma conta correspondennte ao seu nome foi encontrada na tabela central de rastreio de contas!
 A base de dados deve estar corrompida.',
-	'centralauth-merge-home-password' => 'A wiki-residência desta conta (listada a seguir) possui uma senha diferente da que foi fornecida. Forneça a senha da wiki-residência.',
+	'centralauth-merge-home-password' => 'O wiki de origem desta conta (listada a seguir) possui uma senha diferente da que foi fornecida. Forneça a senha do wiki de origem.',
 	'centralauth-complete' => 'Unificação de logins completa!',
 	'centralauth-incomplete' => 'Unificação de logins incompleta!',
 	'centralauth-complete-text' => 'Agora você poderá efectuar login em qualquer sítio wiki de {{int:Centralauth-groupname}} sem ter de criar uma nova conta.',
@@ -22820,7 +22914,7 @@ As senhas das contas locais criadas antes da fusão serão revertidas para os se
 	'centralauth-renameuser-merged' => 'O usuário $1 foi migrado para o sistema de login unificado.
 Alterar o nome de usuário vai desunificar esta conta local da conta global.',
 	'centralauth-renameuser-reserved' => '$2 está reservado para uma conta global.',
-	'centralauth-invalid-wiki' => 'Não existe uma base de dados para a wiki: $1',
+	'centralauth-invalid-wiki' => 'Não existe uma base de dados para o wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de usuário requisitado já está sendo utilizado no sistema de login unificado.',
 	'centralauth-account-exists-reset' => 'O nome de usuário $1 não está registrado nesta wiki, mas ele existe no sistema de autentificação unificada.',
 	'centralauth-login-progress' => 'Você está sendo autenticado nas wikis da {{int:Centralauth-groupname}}:',
@@ -27899,7 +27993,7 @@ $messages['tg-cyrl'] = array(
 	'right-globalgrouppermissions' => 'Идоракунии гурӯҳҳои муштарак',
 );
 
-/** Tajik (Latin script) (tojikī)
+/** Tajik (Latin script) (Tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -28715,11 +28809,15 @@ $messages['tly'] = array(
 	'centralauth-antispoof-desc' => 'AntiSpoof технологијә зијод кардә бә CentralAuth',
 	'centralauth-merge-dryrun-or' => "'''ја''",
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|дәгиши|дәгиши}} бә $2',
+	'centralauth-merge-method-primary' => '"кә" вики-нәхшә',
 	'centralauth-finish-password' => 'Парол:',
 	'centralauth-finish-login' => 'Ыштәни едаштеј',
+	'centralauth-finish-send-confirmation' => 'Бә е-номә нујә парол вығандеј',
 	'centralauth-admin-username' => 'Иштирокәкә ном:',
 	'centralauth-admin-info-id' => 'Иштирокәкә ID:',
 	'centralauth-admin-yes' => 'бәле',
+	'centralauth-editset-name' => 'Ном:',
+	'centralauth-editset-type' => 'Тип:',
 );
 
 /** Tok Pisin (Tok Pisin)
@@ -29144,6 +29242,7 @@ $messages['tt-cyrl'] = array(
  */
 $messages['tyv'] = array(
 	'centralauth-merge-dryrun-or' => "'''азы'''",
+	'centralauth-merge-method-empty' => 'немелделер чок',
 	'centralauth-merge-method-new' => 'чаа бүрүткел бижик',
 	'centralauth-finish-password' => 'Чажыт сөс:',
 	'centralauth-finish-login' => 'Кирери',
@@ -29167,7 +29266,7 @@ $messages['ug-arab'] = array(
 	'centralauth-admin-username' => 'ئىشلەتكۇچى ئىسمى:',
 );
 
-/** Uyghur (Latin script) (Uyghurche‎)
+/** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -29777,7 +29876,7 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'right-globalgrouppermissions' => 'Gestion dei grupi globali',
 );
 
-/** Veps (Vepsän kel')
+/** Veps (Vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
