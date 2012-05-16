@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALX//9Us\u003d",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-05-16T00:57:05Z",
+      "side": 1,
+      "message": "Instead of configuring the URLs here and then automagically adding a source, I would prefer if this just took a source name and told people to configure a source themselves with $wgResourceLoaderSources[\u0027foo\u0027] \u003d array( \u0027apiScript\u0027 \u003d\u003e \u0027...\u0027, \u0027loadScript\u0027 \u003d\u003e \u0027...\u0027 ); .\n\nThat\u0027s what we do in the RL2 branch of the Gadgets extension as well, and that way you\u0027re sure that you won\u0027t get weird naming conflicts and you don\u0027t have to maintain a list of source names that are reserved because various pieces of software use them.",
+      "revId": "f694211df50528f1adbbb836d42a7efe8d92670b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
