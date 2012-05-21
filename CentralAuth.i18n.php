@@ -3511,6 +3511,7 @@ $messages['bg'] = array(
 
 /** Banjar (Bahasa Banjar)
  * @author J Subhi
+ * @author Riemogerz
  */
 $messages['bjn'] = array(
 	'mergeaccount' => 'Satatus panggabungan babuat log',
@@ -3520,7 +3521,40 @@ $messages['bjn'] = array(
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Panggabungan babarapa akun]] gasan Sistem Pamakai Tunggal',
 	'centralauth-merge-denied' => 'Ampun, Pian kada baisi ijin hagan maungkai tungkaran ngini.',
 	'centralauth-merge-notlogged' => 'Muhun <span class="plainlinks">[$1 babuat log]</span> hagan mamariksa amun akun Pian sudah bubujur digabungakan.',
+	'centralauth-merge-welcome' => "'''Akun pamakai Pian balum dimigrasiakan ka dalam sistim akun galubal {{int:Centralauth-groupname}}.'''
+
+Amun Pian mamilih gasan mamigrasiakan akun Pian, Pian kawa mamakai ngaran pamakai wan kata sandi nang sama gasan babuat log ka samua pruyik wiki {{int:Centralauth-groupname}} di samua bahasa nang tasadia.
+
+Amun urang lain sudah mamakai ngaran pamakai Pian di situs lain, hal nang kada cagar mangganggunya, tagal Pian kira-kira parlu gasan manuntungakan masalah naya lawan inya atawa salah sabuting pangurus (pambakal).",
+	'centralauth-merge-step1-title' => 'Mulai unipikasi log babuat galubal',
+	'centralauth-merge-step1-detail' => 'Masukakan kata sandi akun pamakai Pian.
+Kata sandi wan alamat suril tadaptar cagar dicucukakan lawan akun-akun di wiki lain gasan mamastiakan bahwa akun-akun nang dimaksud ampun pamakai nang sama.
+Paubahan kada cagar dilakuakan sampai Pian mambarii kunpirmasi bahwa kada ada masalah.',
+	'centralauth-merge-step1-submit' => 'Kunpirmasi inpurmasi log babuat galubal',
+	'centralauth-merge-step2-title' => 'Kunpirmasi akun lain',
+	'centralauth-merge-step2-detail' => 'Babarapa akun kada kawa sacara utumatis dicucukakan lawan wiki inti nang dipilih.
+Amun akun-akun naya ampun Pian, Pian kawa mangunpirmasiakan lawan mambarii kata sandinya.',
+	'centralauth-merge-step2-submit' => 'Kunpirmasi inpurmasi log babuat galubal',
+	'centralauth-merge-dryrun-complete' => 'Samua akun nang ditamui kawa digabungakan sacara utumatis!
+
+Wayah naya balum ada parubahan nang diulah gasan akun-akun Pian.',
+	'centralauth-merge-dryrun-incomplete' => 'Babarapa akun kada kawa diperipikasi sacara utumatis wan kada cagar umpat dimigrasiakan.
+Pian kawa manggabungakan akun-akun nintu kaina.
+
+Wayah naya balum ada parubahan nang diulah gasan akun Pian.',
+	'centralauth-merge-dryrun-or' => "'''atawa'''",
+	'centralauth-merge-dryrun-home' => 'Sistim migrasi kawa kawa mangkunpirmasiakan bahwa Pian adalah ampun matan akun pamakai naya di wiki utamanya.
+
+Wiki lain sudah ditantuakan sabagai akun utama gasan ngaran pamakai Pian; umpati pranala nintu wan babuat log di sana gasan malakuakan migrasi atas akun Pian.',
 	'centralauth-merge-step3-title' => 'Ulah akun tunggal',
+	'centralauth-merge-step3-detail' => 'Pian siap maulah akun galubal Pian lawan wiki-wiki naya:',
+	'centralauth-merge-step3-submit' => 'Gabungakan akun',
+	'centralauth-merge-no-accounts' => 'Kada ada akun lawan ngaran Pian di kutak daptar akun tangah!
+Kira-kira ada karusakan di basis data.',
+	'centralauth-merge-home-password' => 'Wiki inti gasan akun naya (itihi daptar di bawah) baisi kata sandi nang balain lawan kata sandi nang Pian masukakan.
+Cubai masukakan kata sandri gasan wiki inti.',
+	'centralauth-complete' => 'Panggabungan log babuat glubal tuntung!',
+	'centralauth-incomplete' => 'Kada samua akun kawa digabungakan!',
 	'centralauth-merge-method-primary' => 'wiki tatambaian',
 	'centralauth-merge-method-empty' => 'kadada sumbangan',
 	'centralauth-merge-method-mail' => 'diyakinakan lung suril',
@@ -16149,6 +16183,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 
 /** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
+ * @author Ghybu
  * @author Gomada
  * @author Welathêja
  */
@@ -16178,6 +16213,7 @@ $messages['ku-latn'] = array(
 	'globalusers' => 'Lîsteya bikarhênerên global',
 	'centralauth-listusers-locked' => 'hate astengkirin',
 	'centralauth-login-progress' => 'Tu dikevî wîkiyên {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Derketina te ya ji {{int:Centralauth-groupname}}:',
 	'centralauth-log-status-locked' => 'hate astengkirin',
 	'centralauth-log-status-hidden' => 'hate veşartin',
 	'centralauth-rightslog-name' => 'Reşahîya mafên global',
