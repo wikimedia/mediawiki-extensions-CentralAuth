@@ -578,16 +578,6 @@ $messages['egl'] = array(
 	'centralauth-merge-dryrun-or' => "'''o'''",
 );
 
-/** Meänkieli (Meänkieli)
- * @author Mestos
- */
-$messages['fit'] = array(
-	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-merge-denied' => 'Valitan, sulla ei ole oikeus käyttää tätä sivua',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Lokkaa sisäle]</span>, jos haluat tarkistaa, jos sinun käyttäjätunnukset  on täyesti yhistetty.',
-	'centralauth-merge-step1-title' => 'Alota lokkauksen yhistämistä',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -8765,6 +8755,16 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-centralauth-oversight' => 'Yleisen tilin estäminen',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
 	'right-globalgrouppermissions' => 'Hallinnoida globaaleja ryhmiä',
+);
+
+/** Meänkieli (Meänkieli)
+ * @author Mestos
+ */
+$messages['fit'] = array(
+	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-merge-denied' => 'Valitan, sulla ei ole oikeus käyttää tätä sivua',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Lokkaa sisäle]</span>, jos haluat tarkistaa, jos sinun käyttäjätunnukset  on täyesti yhistetty.',
+	'centralauth-merge-step1-title' => 'Alota lokkauksen yhistämistä',
 );
 
 /** Faroese (Føroyskt)
