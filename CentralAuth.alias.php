@@ -55,6 +55,17 @@ $specialPageAliases['bg'] = array(
 	'GlobalUsers' => array( 'Списък_на_глобалните_сметки' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'CentralAuth' => array( 'Uturitas_pusat' ),
+	'AutoLogin' => array( 'Babuat_log_utumatis' ),
+	'MergeAccount' => array( 'Gabungakan_akun' ),
+	'GlobalGroupMembership' => array( 'Hak_pamakai_global' ),
+	'GlobalGroupPermissions' => array( 'Hak_galambang_global' ),
+	'WikiSets' => array( 'Babak_galambang_wiki' ),
+	'GlobalUsers' => array( 'Pamakai_global' ),
+);
+
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
 	'AutoLogin' => array( 'Emgevreañ' ),
@@ -75,8 +86,8 @@ $specialPageAliases['bs'] = array(
 
 /** Catalan (Català) */
 $specialPageAliases['ca'] = array(
-	'MergeAccount' => array( 'Fusió de comptes' ),
-	'GlobalUsers' => array( 'Usuaris globals' ),
+	'MergeAccount' => array( 'Fusió_de_comptes' ),
+	'GlobalUsers' => array( 'Usuaris_globals' ),
 );
 
 /** German (Deutsch) */
@@ -88,6 +99,11 @@ $specialPageAliases['de'] = array(
 	'GlobalGroupPermissions' => array( 'Globale_Gruppenrechte' ),
 	'WikiSets' => array( 'Wikigruppen', 'Wikigruppen_bearbeiten', 'Wikisets_bearbeiten' ),
 	'GlobalUsers' => array( 'Globale_Benutzerliste' ),
+);
+
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'GlobalUsers' => array( 'KarberoGlobal' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
@@ -137,6 +153,7 @@ $specialPageAliases['et'] = array(
 	'MergeAccount' => array( 'Kontode_ühendamise_seis' ),
 	'GlobalGroupMembership' => array( 'Globaalse_kasutaja_õigused' ),
 	'GlobalGroupPermissions' => array( 'Globaalse_rühma_haldamine' ),
+	'WikiSets' => array( 'Vikikomplektid' ),
 	'GlobalUsers' => array( 'Globaalsed_kasutajad' ),
 );
 
@@ -193,13 +210,13 @@ $specialPageAliases['gl'] = array(
 
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
-	'CentralAuth' => array( 'Verwaltig Benutzerchonte-Zämmefierig' ),
-	'AutoLogin' => array( 'Automatischi Aamäldig' ),
-	'MergeAccount' => array( 'Benutzerchonte zämmefiere' ),
-	'GlobalGroupMembership' => array( 'Wältwyti Benutzerrächt' ),
-	'GlobalGroupPermissions' => array( 'Wältwyti Grupperächt' ),
-	'WikiSets' => array( 'Wikisets bearbeite' ),
-	'GlobalUsers' => array( 'Wältwyti Benutzerlischt' ),
+	'CentralAuth' => array( 'Verwaltig_Benutzerchonte-Zämmefierig' ),
+	'AutoLogin' => array( 'Automatischi_Aamäldig' ),
+	'MergeAccount' => array( 'Benutzerchonte_zämmefiere' ),
+	'GlobalGroupMembership' => array( 'Wältwyti_Benutzerrächt' ),
+	'GlobalGroupPermissions' => array( 'Wältwyti_Grupperächt' ),
+	'WikiSets' => array( 'Wikisets_bearbeite' ),
+	'GlobalUsers' => array( 'Wältwyti_Benutzerlischt' ),
 );
 
 /** Gujarati (ગુજરાતી) */
@@ -218,6 +235,15 @@ $specialPageAliases['he'] = array(
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
 	'WikiSets' => array( 'עריכת_קבוצות_אתרי_ויקי' ),
 	'GlobalUsers' => array( 'משתמשים_כלליים' ),
+);
+
+/** Hindi (हिन्दी) */
+$specialPageAliases['hi'] = array(
+	'AutoLogin' => array( 'स्वचालित_लॉगिन', 'स्वचालित_लौगिन', 'स्वचालित_सत्रारम्भ', 'स्वचालित_सत्रारंभ' ),
+	'MergeAccount' => array( 'खाता_विलय' ),
+	'GlobalGroupPermissions' => array( 'वैश्विक_समूह_अधिकार', 'केन्द्रीय_समूह_अधिकार', 'केंद्रीय_समूह_अधिकार' ),
+	'WikiSets' => array( 'विकिसेट' ),
+	'GlobalUsers' => array( 'वैश्विक_सदस्य_सूची' ),
 );
 
 /** Croatian (Hrvatski) */
@@ -318,8 +344,9 @@ $specialPageAliases['ja'] = array(
 
 /** Georgian (ქართული) */
 $specialPageAliases['ka'] = array(
+	'AutoLogin' => array( 'ავტომატური_შესვლა' ),
 	'GlobalGroupMembership' => array( 'გლობალურ_მომხმარებელთა_უფლებები' ),
-	'GlobalUsers' => array( 'გლობალური_მომხმარებელი' ),
+	'GlobalUsers' => array( 'გლობალური_მომხმარებლები' ),
 );
 
 /** Khmer (ភាសាខ្មែរ) */
@@ -345,6 +372,11 @@ $specialPageAliases['ksh'] = array(
 	'GlobalGroupPermissions' => array( 'JemeinsamJroppe' ),
 	'WikiSets' => array( 'WikiJroppe' ),
 	'GlobalUsers' => array( 'Jemeinsam_Metmaacher', 'JemeinsamMetmaacher', 'Jemeinsam_Medmaacher', 'JemeinsamMedmaacher' ),
+);
+
+/** Cornish (Kernowek) */
+$specialPageAliases['kw'] = array(
+	'AutoLogin' => array( 'AwtoOmgelmi' ),
 );
 
 /** Ladino (Ladino) */
@@ -505,6 +537,7 @@ $specialPageAliases['ps'] = array(
 
 /** Portuguese (Português) */
 $specialPageAliases['pt'] = array(
+	'CentralAuth' => array( 'Administração_de_contas_globais', 'Administração_global_de_contas' ),
 	'AutoLogin' => array( 'Autenticação_automática' ),
 	'MergeAccount' => array( 'Fundir_conta' ),
 	'GlobalGroupMembership' => array( 'Grupos_globais' ),
@@ -514,6 +547,7 @@ $specialPageAliases['pt'] = array(
 
 /** Brazilian Portuguese (Português do Brasil) */
 $specialPageAliases['pt-br'] = array(
+	'CentralAuth' => array( 'Administração_global_de_contas', 'Administração_de_contas_globais' ),
 	'AutoLogin' => array( 'Login_automático' ),
 	'MergeAccount' => array( 'Mesclar_conta' ),
 	'GlobalUsers' => array( 'Usuários_globais' ),
@@ -630,6 +664,11 @@ $specialPageAliases['vi'] = array(
 	'AutoLogin' => array( 'Đăng_nhập_tự_động' ),
 	'MergeAccount' => array( 'Hợp_nhất_tài_khoản' ),
 	'GlobalUsers' => array( 'Danh_sách_người_dùng_thống_nhất' ),
+);
+
+/** Yiddish (ייִדיש) */
+$specialPageAliases['yi'] = array(
+	'GlobalUsers' => array( 'גלאבאלע_באניצער' ),
 );
 
 /** Simplified Chinese (‪中文(简体)‬) */
