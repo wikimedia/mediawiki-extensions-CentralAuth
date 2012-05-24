@@ -6214,7 +6214,7 @@ Ena xacet qefiliyeyo seba sebebanê asayişi.',
 	'centralauth-finish-title' => 'Yew biyayîş qediya',
 	'centralauth-finish-text' => 'Eka enê hesaban tu yo, pê nuştişê parola ti eşkeno eno processê yew kerdişî biqed:',
 	'centralauth-finish-password' => 'Parola:',
-	'centralauth-finish-login' => 'Cikewtîş',
+	'centralauth-finish-login' => 'Dekewtış',
 	'centralauth-finish-send-confirmation' => 'Parala email ra bişirav',
 	'centralauth-finish-problems' => 'Sistem ti ra zor dano? Ya zi ti wahirê hesabanê binan niyo?
 [[meta:Help:Unified login problems|Ti seni yardim vîneno]] ...',
@@ -14752,6 +14752,15 @@ $messages['kaa'] = array(
 	'centralauth-prefs-status' => 'Global akkaunt statusı:',
 );
 
+/** Khowar (کھوار)
+ * @author Rachitrali
+ */
+$messages['khw'] = array(
+	'centralauth-admin-yes' => 'دی',
+	'centralauth-admin-no' => 'نو',
+	'centralauth-admin-status-hidden' => 'کھوشت',
+);
+
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
 	'mergeaccount' => 'تىركەلگى بىرىزدەندىرۋ كۇيى',
@@ -21859,6 +21868,7 @@ Le ciav për ij cont locaj creà prima dl'unificassion a tornëran ai sò valor 
 	'centralauth-token-mismatch' => 'An dëspias, i podoma pa processé la spedission ëd sò formolari për na pèrdita ëd dat ëd session.',
 	'centralauth-admin-reason' => 'Rason:',
 	'centralauth-admin-reason-other' => 'Rason àutra/adissional:',
+	'centralauth-admin-unhide-nonexistent' => 'Eror: ël cont global "<nowiki>$1</nowiki>" a esist pa.',
 	'centralauth-admin-status' => 'Ampòsta stat dël cont global',
 	'centralauth-admin-status-intro' => "A peul dovré sto formolari-sì për cangé lë statù d'ës cont global.",
 	'centralauth-admin-status-locked' => 'Blocà:',
