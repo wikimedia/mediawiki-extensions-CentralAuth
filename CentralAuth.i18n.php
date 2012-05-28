@@ -2020,7 +2020,20 @@ $messages['as'] = array(
 $2 যোগ কৰা হ'ল;
 $3 আঁতৰোৱা হ'ল",
 	'centralauth-rightslog-entry-groupperms3' => '$1ৰ বাবে গোট বাধাকৃত ৱিকি সংহতি $2ৰ পৰা $3লৈ সলনি কৰা হৈছে',
+	'centralauth-rightslog-header' => "এই ল'গত গোলকীয় গোটসমূহৰ কাৰ্যক্ৰম আছে: সদস্যপদ আৰু অনুমতি সালসলনিসমূহ",
+	'centralauth-rightslog-entry-newset' => 'এই ৱিকিসমূহৰ সৈতে $2 ৱিকি সংহতি $1 সৃষ্টি কৰা হৈছে: $3',
+	'centralauth-rightslog-entry-setrename' => 'ৱিকি সংহতি "$2"ৰ পৰা "$1"লৈ নামান্তৰ কৰা হৈছে',
+	'centralauth-rightslog-entry-setnewtype' => '"$1"ৰ প্ৰকাৰ $2ৰ পৰা $3লৈ সলনি কৰা হৈছে',
+	'centralauth-rightslog-entry-setchange' => '"$1"ৰ ৱিকিসমূহ পৰিৱৰ্তন কৰা হৈছে: যোগ কৰা হৈছে: $2; আঁতৰোৱা হৈছে: $3',
+	'centralauth-rightslog-entry-deleteset' => 'ৱিকি সংহতি "$1" বিলোপ কৰা হৈছে',
+	'centralauth-rightslog-set-optin' => 'অপ্ট-ইন্‌ ভিত্তিক',
+	'centralauth-rightslog-set-optout' => 'অপ্ট-আউট ভিত্তিক',
 	'autologin' => 'স্বয়ংক্ৰিয় প্ৰৱেশ',
+	'centralauth-autologin-desc' => 'এই বিশেষ পৃষ্ঠাখন মিডিয়াৱিকিৰ দ্বাৰা আভ্যন্তৰীণভাৱে ব্যৱহাৰ কৰা হয়।
+আপুনি [[Special:UserLogin|প্ৰৱেশ]] কৰিলে কেন্দ্ৰীয় লগ্-ইন প্ৰণালীয়ে আপোনাৰ ব্ৰাউজাৰক এই পৃষ্ঠাখন ছবি লিংক ব্যৱহাৰ কৰি সকলো সংযোজিত ডমেইনৰ পৰা অনুৰোধ কৰিবলৈ নিৰ্দেশ দিয়ে।
+আপুনি কোনো অনুমতি তথ্য প্ৰদান নকৰাকৈ এই পৃষ্ঠাখন অনুৰোধ কৰিছে, গতিকে ই একো নকৰে।',
+	'globalgroupmembership' => 'গোলকীয় গোটৰ সদস্যপদ',
+	'globalgrouppermissions' => 'গোলকীয় গোটৰ ব্যৱস্থাপনা',
 	'centralauth-newgroup-legend' => 'নতুন গোট সৃষ্টি কৰক',
 	'centralauth-globalgroupperms-newgroupname' => 'নতুন গোটৰ নাম:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'অনুমতি প্ৰদান কৰক',
@@ -2568,6 +2581,7 @@ Səbəb: $1',
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author ҒатаУлла
  */
 $messages['ba'] = array(
 	'mergeaccount' => 'Дөйөм иҫәп яҙмалары торошо',
@@ -2708,6 +2722,7 @@ $messages['ba'] = array(
 	'centralauth-token-mismatch' => 'Ҡыҙғанысҡа ҡаршы, һеҙҙең форманы эшкәртеүҙе дауам итеү мөмкин түгел, сөнки сеанс мәғлүмәттәре юғалған.',
 	'centralauth-admin-reason' => 'Сәбәп:',
 	'centralauth-admin-reason-other' => 'Башҡа/өҫтәмә сәбәп:',
+	'centralauth-admin-unhide-nonexistent' => 'Хата: "<nowiki>$1</nowiki>" дөйөм иҫәп яҙмаһы юҡ.',
 	'centralauth-admin-status' => 'Дөйөм иҫәп яҙмаһы статусын билдәләргә',
 	'centralauth-admin-status-intro' => 'Дөйөм иҫәп яҙмаһы статусын билдәләү өсөн ошо форманы ҡуллана алаһығыҙ.',
 	'centralauth-admin-status-locked' => 'Бикле:',
@@ -12980,8 +12995,8 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-invalid-wiki' => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists' => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-account-exists-reset' => 'Nama pengguna $1 tidak terdaftar di wiki ini, tapi terdaftar dalam sistem masuk terpadu.',
-	'centralauth-login-progress' => 'Sedang memasuklogkan Anda ke wiki {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Mengeluarlogkan Anda dari wiki {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => '$1, Anda telah masuk log ke wiki {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => '$1, Anda telah keluar log dari wiki {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Anda secara otomatis telah masuk log ke proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Anda secara otomatis telah keluar log dari proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'disembunyikan secara global oleh $1 pada $2 dengan alasan berikut: $3',
