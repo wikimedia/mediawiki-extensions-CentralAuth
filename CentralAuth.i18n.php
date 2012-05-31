@@ -1198,6 +1198,7 @@ $messages['ang'] = array(
 
 /** Arabic (العربية)
  * @author ;Hiba;1
+ * @author Abanima
  * @author Aiman titi
  * @author Alnokta
  * @author Ciphers
@@ -1267,6 +1268,7 @@ $messages['ar'] = array(
 	'centralauth-list-unattached-title' => 'حسابات غير ملحقة',
 	'centralauth-list-unattached' => 'الحساب "$1" لم يمكن تأكيده تلقائيا كمنتمي لك في المواقع التالية؛ على الأرجح لأنهم يمتلكون كلمة سر مختلفة عن حسابك الأساسي:',
 	'centralauth-foreign-link' => 'المستخدم $1 في $2',
+	'centralauth-foreign-contributions' => '{{PLURAL:$1|لا مساهمات|مساهمة واحدة|مساهمتان|$1 مساهمات|$1 مساهمة|$1 مساهمة}} في $2',
 	'centralauth-merge-method-primary' => 'الويكي الأساسي',
 	'centralauth-merge-method-empty' => 'لا مساهمات',
 	'centralauth-merge-method-mail' => 'مؤكدة بواسطة البريد الإلكتروني',
@@ -1484,6 +1486,7 @@ $messages['ar'] = array(
 	'centralauth-editset-name' => 'الاسم:',
 	'centralauth-editset-type' => 'النوع:',
 	'centralauth-editset-wikis' => 'الويكيات:',
+	'centralauth-editset-restwikis' => 'قواعد بيانات الويكي غير المدرجة أعلاه:',
 	'centralauth-editset-reason' => 'السبب:',
 	'centralauth-editset-submit' => 'أرسل',
 	'centralauth-editset-submit-delete' => 'حذف',
@@ -1497,6 +1500,8 @@ $messages['ar'] = array(
 	'centralauth-editset-success' => 'تم تغيير مجموعة الويكي بنجاح.',
 	'centralauth-editset-success-delete' => 'تم حذف مجموعة الويكي بنجاح.',
 	'centralauth-editset-return' => 'رجوع إلى القائمة الرئيسية',
+	'centralauth-readonly' => 'قاعدة بيانات الدخول الموحد مقفلة',
+	'centralauth-readonlytext' => 'قاعدة بيانات الدخول الموحد مقفلة حالياً ولا تستقبل مدخلات جديدة أو تعديلات أخرى، وذلك ربما بسبب الصيانة الروتينية، وبعد انتهائها ستعود إلى العمل كالعادة.',
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
 	'right-centralauth-autoaccount' => 'الدخول تلقائيا بواسطة الحساب العام',
 	'right-centralauth-unmerge' => 'إلغاء دمج الحسابات العامة.',
@@ -6498,7 +6503,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-admin-unattached' => 'ataç nibiyo',
 	'centralauth-admin-blocked' => 'Blok biy, rocê $3î u seetê $4î de a beno. Sebeb: $2',
 	'centralauth-admin-blocked-indef' => 'Ebedi blok biyo. Sebeb: $1',
-	'centralauth-admin-blocklog' => 'Cıkewtışê kılit-kerdışi',
+	'centralauth-admin-blocklog' => 'Qeydê kılit-kerdışi',
 	'centralauth-admin-list-localwiki' => 'Wîkîyê lokalî',
 	'centralauth-admin-list-attached-on' => 'Ci ra ataç biyo',
 	'centralauth-admin-list-method' => 'Metod',
@@ -17521,6 +17526,7 @@ $messages['lus'] = array(
 	'centralauth-merge-step1-submit' => 'Luhna hriatngai finfiahna',
 	'centralauth-merge-step2-title' => 'Siangchan dang finfiahna',
 	'centralauth-merge-step2-submit' => 'Luhna hriatngai finfiahna',
+	'centralauth-merge-dryrun-or' => "'''emaw'''",
 	'centralauth-list-home-title' => 'Wiki-pui:',
 	'centralauth-merge-method-empty' => 'thawh nei lo',
 	'centralauth-finish-password' => 'Thurûk:',
@@ -23523,6 +23529,7 @@ $messages['ro'] = array(
 	'mergeaccount' => 'Statusul despre unificarea autentificării',
 	'centralauth-groupname' => 'Fundația Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Unifică conturi]] între mai multe wikiuri ale Fundației Wikimedia',
+	'centralauth-antispoof-desc' => 'Adaugă tehnologia AntiSpoof la CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Asimilează conturi multiple]] pentru Autentificare Unificată (SUL)',
 	'centralauth-merge-denied' => 'Ne pare rău, nu aveți permisiunea de a accesa această pagină.',
 	'centralauth-merge-notlogged' => 'Vă rugăm, <span class="plainlinks">[$1 autentificați-vă]</span> pentru a verifica dacă v-au fost asimilate conturile.',
