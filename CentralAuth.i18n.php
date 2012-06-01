@@ -1202,6 +1202,7 @@ $messages['ang'] = array(
  * @author Aiman titi
  * @author Alnokta
  * @author Ciphers
+ * @author DRIHEM
  * @author Loya
  * @author Meno25
  * @author Mido
@@ -1212,6 +1213,7 @@ $messages['ar'] = array(
 	'mergeaccount' => 'حالة توحيد الدخول',
 	'centralauth-groupname' => 'مؤسسة ويكيميديا',
 	'centralauth-desc' => '[[Special:MergeAccount|دمج الحساب]] عبر ويكيات {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'تضيف تكنولوجيا AntiSpoof إلى CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|يدمج حسابات متعددة]] لدخول المستخدم الموحد',
 	'centralauth-merge-denied' => 'عذرا، أنت لا تمتلك السماح للدخول إلى هذه الصفحة.',
 	'centralauth-merge-notlogged' => 'من فضلك <span class="plainlinks">[$1 قم بتسجيل الدخول]</span></span> لتتحقق من أن حساباتك تم دمجها بالكامل.',
