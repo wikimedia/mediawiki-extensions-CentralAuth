@@ -6670,6 +6670,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'centralauth-editset-name' => 'Name:',
 	'centralauth-editset-type' => 'Babet:',
 	'centralauth-editset-wikis' => 'Wîkîyan:',
+	'centralauth-editset-restwikis' => 'Oke cord çınyo:',
 	'centralauth-editset-reason' => 'Sebeb:',
 	'centralauth-editset-submit' => 'Qeyd ke',
 	'centralauth-editset-submit-delete' => 'Biwedarne',
@@ -7639,7 +7640,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 	'right-globalgrouppermissions' => 'Administri ĝeneralajn grupojn',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Aleator
  * @author AlimanRuna
  * @author Ascánder
@@ -9256,7 +9257,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
 	'right-globalgrouppermissions' => 'Stýr globalum bólkum',
 );
 
-/** French (Français)
+/** French (français)
  * @author Cedric31
  * @author Crochet.david
  * @author Dodoïste
@@ -22730,7 +22731,7 @@ $messages['ps'] = array(
 	'right-globalgrouppermissions' => 'نړېوالې ډلې مهارول',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author GTNS
  * @author Giro720
@@ -23527,7 +23528,7 @@ Kayrayku: $1",
 	'centralauth-editset-return' => 'Qhapaq qhawanaman kutimuy',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Cin
  * @author Firilacroco
  * @author KlaudiuMihaila
