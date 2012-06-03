@@ -392,6 +392,7 @@ You may view and modify any of them, or create a new set.',
  * @author McDutchie
  * @author Meno25
  * @author Mormegil
+ * @author Nenino 10
  * @author Olli
  * @author Purodha
  * @author Raymond
@@ -495,6 +496,7 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-prefs-not-managed' => "Appears on user profile tab of 'Preferences' special page, after 'Global account status:'",
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at a user's preferences page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
+	'centralauth-prefs-count-attached' => 'Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.--Nenino 10 15:46, 2 June 2012 (UTC)',
 	'centralauth-prefs-manage' => "Link on 'User profile' tab of 'Preferences' special page.",
 	'centralauth-prefs-view' => 'Used as a link on [[Special:Preferences]]',
 	'centralauth-login-progress' => '{{gender}}
@@ -3990,7 +3992,10 @@ $messages['bn'] = array(
 	'centralauth-admin-unhide-nonexistent' => 'ত্রুটি: "<nowiki>$1</nowiki>" নামে কোন গ্লোবাল অ্যাকাউন্ট নাই।',
 	'centralauth-admin-status' => 'গ্লোবাল অ্যাকাউন্টের অবস্থা নির্ধারণ',
 	'centralauth-admin-status-locked' => 'বন্ধ:',
+	'centralauth-admin-status-locked-no' => 'অ্যাকাউন্ট তালাবদ্ধ নয়',
 	'centralauth-admin-status-hidden' => 'লুকায়িত:',
+	'centralauth-admin-status-hidden-no' => 'অ্যাকাউন্ট লুকায়িত নয়',
+	'centralauth-admin-status-hidden-oversight' => 'অ্যাকাউন্ট সম্পূর্ণভাবে লুকায়িত',
 	'centralauth-admin-status-submit' => 'অবস্থা সেট কর',
 	'globalusers' => 'গ্লোবাল ব্যবহাকারীর তালিকা',
 	'centralauth-listusers-locked' => 'বন্ধ',
@@ -7646,6 +7651,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Jatrobat
  * @author Locos epraix
  * @author Manuelt15
+ * @author Nenino 10
  * @author Pertile
  * @author Peter17
  * @author Piolinfax
@@ -7838,7 +7844,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-prefs-unattached' => 'No confirmado',
 	'centralauth-prefs-complete' => '¡Todo en orden!',
 	'centralauth-prefs-migration' => 'En migración',
-	'centralauth-prefs-count-attached' => 'Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.',
+	'centralauth-prefs-count-attached' => 'Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.--~~~~',
 	'centralauth-prefs-count-unattached' => 'Cuentas no confirmadas con su nombre permanecen en $1 {{PLURAL:$1|proyecto|proyectos}}.',
 	'centralauth-prefs-detail-unattached' => 'No se ha confirmado que este sitio de proyecto es de la cuenta global.',
 	'centralauth-prefs-manage' => 'Gestiona tu cuenta global',
@@ -22732,6 +22738,7 @@ $messages['ps'] = array(
  * @author João Sousa
  * @author Lijealso
  * @author Malafaya
+ * @author Rhaijin
  * @author SandroHc
  * @author Sir Lestaty de Lioncourt
  * @author Smeira
@@ -22741,6 +22748,7 @@ $messages['pt'] = array(
 	'mergeaccount' => 'Estado da autenticação unificada',
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Página especial]] para fundir contas nas wikis "{{int:Centralauth-groupname}}"',
+	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] para a Autenticação Unificada',
 	'centralauth-merge-denied' => 'Desculpe, não tem permissão para aceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.',
@@ -23034,6 +23042,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'centralauth-editset-success-delete' => 'O conjunto de wikis foi eliminado com sucesso.',
 	'centralauth-editset-return' => 'Voltar à vista principal',
 	'centralauth-readonly' => 'Banco de dados CentralAuth bloqueado',
+	'centralauth-readonlytext' => 'O banco de dados de CentralAuth está atualmente bloqueado para novas entradas e outras modificações, provavelmente para manutenção de banco de dados rotineiras, após o qual será voltar ao normal.',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
 	'right-centralauth-autoaccount' => 'Aceder automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
