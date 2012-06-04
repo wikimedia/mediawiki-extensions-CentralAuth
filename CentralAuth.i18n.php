@@ -410,13 +410,13 @@ $messages['qqq'] = array(
 	'centralauth-desc' => '{{desc}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
-	'centralauth-merge-denied'       => 'Error message displayed when trying to visit a web page without having the correct permissions.',
-	'centralauth-merge-notlogged'    => 'Notice displayed when visiting a page while not logged in.',
-	'centralauth-merge-welcome'      => 'Welcome message displayed to a user without a unified account.',
-	'centralauth-merge-step1-title'  => 'Title for a form to start account unification.',
+	'centralauth-merge-denied' => 'Error message displayed when trying to visit a web page without having the correct permissions.',
+	'centralauth-merge-notlogged' => 'Notice displayed when visiting a page while not logged in.',
+	'centralauth-merge-welcome' => 'Welcome message displayed to a user without a unified account.',
+	'centralauth-merge-step1-title' => 'Title for a form to start account unification.',
 	'centralauth-merge-step1-detail' => 'Directions for form to start account unification.',
 	'centralauth-merge-step1-submit' => "Submit button for 'Confirm more accounts', the second step for creating a global user account.",
-	'centralauth-merge-step2-title'  => 'Title for a form for account unification.',
+	'centralauth-merge-step2-title' => 'Title for a form for account unification.',
 	'centralauth-merge-step2-detail' => 'Directions for form for account unification.',
 	'centralauth-merge-step2-submit' => "Submit button for 'Begin Login Unification', first step for creating a global user account.",
 	'centralauth-merge-dryrun-complete' => 'Status message after a dry run to check if user accounts can be unified.',
@@ -436,12 +436,12 @@ Status message after incomplete unification of a user account.',
 	'centralauth-blocked-text' => 'Status message after failed unification of a user account because a wiki is closed.',
 	'centralauth-notice-dryrun' => 'Message displayed while account unification is in demonstration mode.',
 	'centralauth-disabled-dryrun' => 'Message displayed while account unification is disabled.',
-	'centralauth-error-locked' => 'Message displayed while account unification is not possible because the acting user\'s account is locked.',
+	'centralauth-error-locked' => "Message displayed while account unification is not possible because the acting user's account is locked.",
 	'centralauth-readmore-text' => 'Message that refers to more information on account unification.',
-	'centralauth-list-home-title' => 'Information about user\'s home wiki.
-{{Identical|Home wiki}}',
-	'centralauth-list-home-dryrun'      => 'Message that indication that provided information will be used for authenticating.',
-	'centralauth-list-attached-title'   => 'List title/header.',
+	'centralauth-list-home-title' => "Information about user's home wiki.
+{{Identical|Home wiki}}",
+	'centralauth-list-home-dryrun' => 'Message that indication that provided information will be used for authenticating.',
+	'centralauth-list-attached-title' => 'List title/header.',
 	'centralauth-list-attached' => 'Text before the list of local wikis attached to a unified account, shown on the special page "MergeAccount" (Login unification complete!). Parameters:
 * $1 is an account/user name.',
 	'centralauth-list-attached-dryrun' => 'Text to inform users of which accounts can be unified after a dry-run. Parameters:
@@ -4162,7 +4162,7 @@ $messages['bo'] = array(
 	'centralauth-editset-nouse' => 'སྟོང་པ།',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
@@ -4775,7 +4775,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
 	'right-globalgrouppermissions' => 'Upravljanje globalnim grupama',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Aleator
  * @author El libre
  * @author Jordi Roqué
@@ -9054,7 +9054,7 @@ $messages['fit'] = array(
 	'centralauth-merge-step1-title' => 'Alota lokkauksen yhistämistä',
 );
 
-/** Faroese (Føroyskt)
+/** Faroese (føroyskt)
  * @author Diupwijk
  * @author EileenSanda
  */
@@ -13833,7 +13833,7 @@ Hóp má eyða með því að fjarlægja öll réttindi hans.',
 	'right-globalgrouppermissions' => 'Stjórna altækum hópum',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author .anaconda
  * @author Aushulz
  * @author Beta16
@@ -20988,7 +20988,7 @@ $messages['nso'] = array(
 	'centralauth-admin-username' => 'Leina la mošomiši:',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Boulaur
  * @author Cedric31
  * @author Jfblanc
@@ -25054,7 +25054,7 @@ $messages['sah'] = array(
 	'right-globalgrouppermissions' => 'Аан бөлөхтөрү дьаһайыы',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  * @author Gmelfi
  */
@@ -25443,7 +25443,7 @@ $3 ඉවත් කෙරිනි',
 	'right-globalgrouppermissions' => 'ගෝලීය කණ්ඩායම් පාලනය කරන්න',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  * @author Jkjk
  * @author Michawiki
@@ -26055,7 +26055,7 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'right-globalgrouppermissions' => 'Upravljanje globalnih skupin',
 );
 
-/** Albanian (Shqip)
+/** Albanian (shqip)
  * @author Mikullovci11
  * @author Olsi
  * @author Techlik
@@ -26366,7 +26366,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 	'right-globalgrouppermissions' => 'Menaxhoni grupet globale',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author FriedrickMILBarbarossa
  * @author Millosh
  * @author Nikola Smolenski
@@ -26635,7 +26635,7 @@ $messages['sr-ec'] = array(
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author FriedrickMILBarbarossa
  * @author Liangent
  * @author Michaello
@@ -29516,7 +29516,7 @@ $messages['ts'] = array(
 	'centralauth-admin-no' => 'E e',
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
@@ -29638,7 +29638,7 @@ $messages['ug-latn'] = array(
 	'centralauth-admin-username' => 'Ishletkuchi ismi:',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Ahonc
  * @author Alex Khimich
