@@ -14181,7 +14181,7 @@ $messages['ja'] = array(
 	'centralauth-merge-step2-title' => '外部アカウントの確認',
 	'centralauth-merge-step2-detail' => 'いくつかのアカウントで、ホームウィキとの自動照合ができませんでした。もしこれらのアカウントがあなたのものであれば、パスワードを入力することによって自分のものだと証明できます。',
 	'centralauth-merge-step2-submit' => 'ログイン情報の確認',
-	'centralauth-merge-dryrun-complete' => '現在ある全てのアカウントが自動で統合できます！
+	'centralauth-merge-dryrun-complete' => '現在あるすべてのアカウントが自動で統合できます！
 
 いかなる変更もまだあなたのアカウントに加えられていません。',
 	'centralauth-merge-dryrun-incomplete' => '次の手順に進む準備ができましたが、自動的に認証できなかったアカウントがいくつかあります。これらのアカウントはそのままでは移行されませんが、後から統合することができます。
@@ -14198,7 +14198,7 @@ $messages['ja'] = array(
 	'centralauth-merge-home-password' => 'このアカウントのホームウィキ(下に表示)に設定されたパスワードと入力したパスワードが一致しません。ホームウィキのパスワードを入力してください。',
 	'centralauth-complete' => 'アカウントの統一が完了しました!',
 	'centralauth-incomplete' => 'アカウントの統一に失敗しました!',
-	'centralauth-complete-text' => '{{int:Centralauth-groupname}}の全てのウィキサイトに新しいアカウントを作成せずにログインできるようになりました。',
+	'centralauth-complete-text' => '{{int:Centralauth-groupname}}のすべてのウィキサイトに新しいアカウントを作成せずにログインできるようになりました。',
 	'centralauth-incomplete-text' => 'アカウントを統合すると、{{int:Centralauth-groupname}}のすべてのウィキサイトに新しいアカウントを作成せずにログインできるようになります。',
 	'centralauth-not-owner-text' => '"$1" という利用者名は、アカウント $2 の利用者へ既に自動割当済みです。
 
@@ -14285,7 +14285,7 @@ $messages['ja'] = array(
 	'centralauth-admin-already-unmerged' => '既に統合解除されている$1をスキップ',
 	'centralauth-admin-unmerge-success' => '$1{{PLURAL:$1|アカウント}}の統合解除に成功しました。',
 	'centralauth-admin-delete-title' => 'アカウント削除',
-	'centralauth-admin-delete-description' => 'グローバルアカウントを削除すると、あらゆるグローバル個人設定が削除され、全てのローカルのアカウントの統合が解除され、他の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
+	'centralauth-admin-delete-description' => 'グローバルアカウントを削除すると、あらゆるグローバル個人設定が削除され、すべてのローカルのアカウントの統合が解除され、他の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
 	'centralauth-admin-delete-button' => 'このアカウントを削除',
 	'centralauth-admin-delete-success' => 'グローバルアカウント "<nowiki>$1</nowiki>" を削除しました',
 	'centralauth-admin-nonexistent' => 'グローバルアカウント "<nowiki>$1</nowiki>" は存在しません',
@@ -14375,7 +14375,9 @@ $messages['ja'] = array(
 	'centralauth-autologin-desc' => 'この特別ページはメディアウィキによって内部的に使用されています。あなたが[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。あなたがこのページをリクエストした際に認証データを送信していないため、何も影響はありません。',
 	'globalgroupmembership' => 'グローバルグループへの所属',
 	'globalgrouppermissions' => 'グローバルグループの管理',
-	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。あなたが必要な権限をもっている場合、各グループに割り当てられた権限を閲覧あるいは編集できます。全ての権限を除去されたグループは削除されます。',
+	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。
+あなたが必要な権限を持っている場合は、各グループに割り当てられた権限を閲覧あるいは編集できます。
+すべての権限を除去すると、そのグループは削除されます。',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|閲覧/編集]])',
 	'centralauth-globalgroupperms-nogroups' => 'グローバルグループが定義されていません',
 	'centralauth-existinggroup-legend' => '現在あるグループ',
@@ -14412,7 +14414,7 @@ $messages['ja'] = array(
 	'centralauth-editset-new' => '新規ウィキ集合を作成',
 	'centralauth-editset-notfound' => 'ウィキ集合 "$1" は存在しません。',
 	'centralauth-editset-optin' => 'オプトイン設定(選択したウィキだけを含む)',
-	'centralauth-editset-optout' => 'オプトアウト設定(選択した以外のウィキを全て含む)',
+	'centralauth-editset-optout' => 'オプトアウト設定(選択したものを除くすべてのウィキを含む)',
 	'centralauth-editset-legend-edit' => 'ウィキ集合 "$1" を編集しています',
 	'centralauth-editset-legend-view' => 'ウィキ集合 "$1"',
 	'centralauth-editset-legend-new' => '新規ウィキ集合を作成する',
