@@ -37,6 +37,40 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//6wA\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-06-05T14:35:51Z",
+      "side": 1,
+      "message": "Please rephrase the default value for this message. The current version seems somewhat unclear/useless for the end user (\"This user page is a copy from SomeWiki\" !?).\n\nProposed alternative:\n\n\"This user does not have a user page on this wiki, but has one on [$3 $2]. The [$1 user page there] is shown below.\", \n\n* $1 is a URL to the global page\n* $2 is a name of the global wiki\n* $3 is a URL for the global wiki",
+      "revId": "ae2856c62726bdf5efbed67a20b814b8cd199ef8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//6wY\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-06-05T14:35:51Z",
+      "side": 1,
+      "message": "Perhaps make CentralAuthUserPage more generic to take $wgCentralAuthUserPageWiki as a parameter (instantiate it with it, and get information). Or otherwise restructure it. Currently it seems somewhat loose/unstable.\n\nIt it checking a variable\u0027s value because the internal code of the conditionally called function uses its value, also from global.",
+      "revId": "ae2856c62726bdf5efbed67a20b814b8cd199ef8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALX//+sI\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 1
