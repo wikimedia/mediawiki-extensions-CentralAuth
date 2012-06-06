@@ -6574,12 +6574,12 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-status-submit' => 'Statu rone',
 	'centralauth-admin-status-nonexistent' => 'Ğelet: hesabê globalî "<nowiki>$1</nowiki>" çini yo.',
 	'centralauth-admin-setstatus-success' => 'Ti statuyê hesabê gobalî vurna.',
-	'centralauth-admin-status-reasons' => '*
-** vandalizm-teyna hesab
+	'centralauth-admin-status-reasons' => '* Sebebê kilit kerden
+** Hesabo kê qandê vandalizmiyo
 ** spam-teyna hesab
-* Sebebanê qilid kerdişi-u-sebabanê nimnaye
-** nameyê karberi ke arsizi
-** enformasyonê şêxsi ke uygun niya',
+* Sebebanê kilit kerdışi-u-sebabê nımtışi
+** karberê ke hewl niyê
+** melumatê ke hewl niyê',
 	'centralauth-admin-logsnippet' => 'Vurnayişê hesabanê globali verini',
 	'centralauth-admin-suppressreason' => 'wikiyanê hemi de suppres biya pê $1, pê ena sebebanê: $2',
 	'globalusers' => 'Listeyê karberi yê globalî',
@@ -14163,8 +14163,8 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 $messages['ja'] = array(
 	'mergeaccount' => '統一ログイン状態',
 	'centralauth-groupname' => 'ウィキメディア財団',
-	'centralauth-desc' => '{{int:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]します。',
-	'centralauth-antispoof-desc' => 'CentralAuthにAntiSpoof技術を追加',
+	'centralauth-desc' => '{{int:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]する',
+	'centralauth-antispoof-desc' => 'CentralAuthにAntiSpoof技術を追加する',
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
 	'centralauth-merge-denied' => 'すみません、このページへのアクセス権がありません。',
 	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[$1 ログイン]</span>して確認してください。',
