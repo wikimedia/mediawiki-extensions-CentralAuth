@@ -1838,11 +1838,11 @@ $messages['arz'] = array(
  * @author Psneog
  */
 $messages['as'] = array(
-	'mergeaccount' => 'লগ্‌-ইন একত্ৰীকৰণ অৱস্থা',
+	'mergeaccount' => 'প্ৰৱেশ একত্ৰীকৰণ অৱস্থা',
 	'centralauth-groupname' => 'ৱিকিমিডিয়া ফাউণ্ডেশ্যন',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} ৱিকিসমূহৰ মাজত [[Special:MergeAccount|একাউণ্ট একত্ৰিত]] কৰক',
 	'centralauth-antispoof-desc' => 'CentralAuthত AntiSpoof প্ৰযুক্তি যোগ কৰে',
-	'centralauth-mergeaccount-desc' => 'এজন ব্যৱহাৰকাৰীৰ লগ্‌ইনৰ বাবে [[Special:MergeAccount|একাধিক একাউণ্টৰ একত্ৰীকৰণ]]',
+	'centralauth-mergeaccount-desc' => 'এজন ব্যৱহাৰকাৰীৰ প্ৰৱেশৰ বাবে [[Special:MergeAccount|একাধিক একাউণ্টৰ একত্ৰীকৰণ]]',
 	'centralauth-merge-denied' => 'ক্ষমা কৰিব, এই পৃষ্ঠাত আপোনাৰ প্ৰবেশাধিকাৰ নাই।',
 	'centralauth-merge-notlogged' => 'অনুগ্ৰহ কৰি আপোনাৰ একাউণ্টসমূহ সম্পূৰ্ণ একত্ৰিত হ\'লনে নাই চাবৰ বাবে <span class="plainlinks">[$1 লগ্‌ ইন]</span> কৰক।',
 	'centralauth-merge-welcome' => "'''আপোনাৰ সদস্য একাউণ্ট {{int:Centralauth-groupname}}ৰ একীভূত লগ্‌ইন প্ৰণালীলৈ প্ৰব্ৰজন হোৱা নাই।'''
@@ -1850,7 +1850,7 @@ $messages['as'] = array(
 আপোনাৰ একাউণ্ট প্ৰব্ৰজন কৰাব বিচাৰিলে আপুনি {{int:Centralauth-groupname}}ৰ সকলো ৱিকিত একে সদস্যনাম আৰু গুপ্তশব্দৰে প্ৰৱেশ কৰিব পাৰিব।
 
 যদি আপোনাৰ সদস্যনাম আন কোনোবাই বেলেগ ছাইটৰ ব্যৱহাৰ কৰিছে তেন্তে ই তেওঁক অসুবিধাত নেপেলায়, কিন্তু আপুনি পিছত এই কথাটো তেওঁ বা প্ৰশাসকৰ লগত আলোচনা কৰিবলৈ সুযোগ পাব।",
-	'centralauth-merge-step1-title' => 'লগ্‌ইন একীভূতকৰণ আৰম্ভ কৰক',
+	'centralauth-merge-step1-title' => 'প্ৰৱেশ একীভূতকৰণ আৰম্ভ কৰক',
 	'centralauth-merge-step1-detail' => "অনুগ্ৰহ কৰি আপোনাৰ একাউণ্টৰ গুপ্তশব্দ লিখক।
 আপোনাৰ গুপ্তশব্দ আৰু পঞ্জীভূত ই-মেইল ঠিকনা আন ৱিকিৰ একাউণ্টসমূহৰ লগত মিলাই চোৱা হ'ব।
 আপুনি সকলোবোৰ ঠিকমতে আছে বুলি নজনোৱালৈকে একো সালসলনি কৰা নহয়।",
@@ -1866,7 +1866,7 @@ $messages['as'] = array(
 আপুনি পিছত সেইবোৰ একত্ৰিত কৰিব পাৰিব।
 
 আপোনাৰ একাউণ্টত একো সালসলনি কৰা হোৱা নাই।",
-	'centralauth-merge-dryrun-or' => "'''বা'''",
+	'centralauth-merge-dryrun-or' => "'''অথবা'''",
 	'centralauth-merge-dryrun-home' => 'আপোনাৰ সদস্যনামত থকা প্ৰধান ৱিকি একাউণ্টটো যে আপোনাৰেই সেয়া প্ৰব্ৰজন প্ৰণালীয়ে নিশ্চিত কৰিব পৰা নাই।
 
 আপোনাৰ সদস্যনামৰ বাবে আন এটা ৱিকি প্ৰধান হিচাপে নিৰ্ধাৰণ কৰা হৈছিল; তলৰ লিংকটোত ক্লিক কৰি আৰু লগ্‌ ইন কৰি আপোনাৰ একাউণ্ট প্ৰব্ৰজন সমাপ্ত কৰক।',
@@ -1937,7 +1937,7 @@ $messages['as'] = array(
 	'centralauth-attach-success' => "এই একাউণ্টটো একত্ৰিত একাউণ্টলৈ প্ৰব্ৰজন কৰোৱা হ'ল।",
 	'centralauth' => 'গোলকীয় সদস্য ব্যৱস্থাপক',
 	'centralauth-admin-intro' => "গোলকীয় একাউণ্টৰ প্ৰশাসনৰ বাবে এই ইণ্টাৰফে'চ ব্যৱহাৰ কৰিব পাৰি।",
-	'centralauth-admin-manage' => 'ব্যৱহাৰকাৰী ডেটাৰ ব্যৱস্থাপনা কৰক',
+	'centralauth-admin-manage' => 'ব্যৱহাৰকাৰী তথ্যৰ ব্যৱস্থাপনা কৰক',
 	'centralauth-admin-username' => 'সদস্য নাম:',
 	'centralauth-admin-lookup-ro' => 'সদস্যৰ বিৱৰণ',
 	'centralauth-admin-lookup-rw' => 'ব্যৱহাৰকাৰী একাউণ্টৰ ব্যৱস্থাপনা কৰক',
@@ -2034,7 +2034,7 @@ $messages['as'] = array(
 	'centralauth-account-exists-reset' => 'সদস্যনাম $1 এই ৱিকিত পঞ্জীয়ন কৰা হোৱা নাই, কিন্তু একত্ৰিত প্ৰৱেশ প্ৰণালীত ইয়াৰ অস্তিত্ব আছে।',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}ৰ ৱিকিসমূহত আপোনাক লগ্‌ ইন্‌ কৰোৱা হৈছে:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}ৰ আন ৱিকিসমূহৰ পৰা আপোনাক লগ্‌ আউট কৰোৱা হৈছে:',
-	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}ৰ আন প্ৰকল্পসমূহত আপোনাক স্বয়ংক্ৰিয়ভাৱে লগ্‌ ইন্‌ কৰোৱা হৈছে।',
+	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}ৰ আন প্ৰকল্পসমূহত আপোনাক স্বয়ংক্ৰিয়ভাৱে প্ৰৱেশ কৰোৱা হৈছে।',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}ৰ আন প্ৰকল্পসমূহৰ পৰা আপোনাক স্বয়ংক্ৰিয়ভাৱে লগ্‌ আউট কৰোৱা হৈছে।',
 	'centralauth-hidden-blockreason' => ' এই কাৰণৰ বাবে $1ৰ দ্বাৰা $2ত গোলকীয়ভাৱে গোপন কৰা হৈছে: $3',
 	'centralauth-log-name' => 'গোলকীয় একাউণ্ট লগ',
@@ -19540,10 +19540,12 @@ $messages['myv'] = array(
 );
 
 /** Mazanderani (مازِرونی)
+ * @author Mehdi
  * @author محک
  */
 $messages['mzn'] = array(
 	'centralauth-merge-method-login' => 'بساته بَیی، دله بموئن په',
+	'centralauth-admin-blocked-indef' => 'بی‌پایون قطع‌دسترسی بیه. ونه دلیل:$1',
 );
 
 /** Nahuatl (Nāhuatl)
@@ -29648,6 +29650,7 @@ $messages['ug-latn'] = array(
  * @author Dim Grits
  * @author JenVan
  * @author NickK
+ * @author Olvin
  * @author Prima klasy4na
  * @author Riwnodennyk
  * @author Sodmy
@@ -29723,8 +29726,8 @@ $messages['uk'] = array(
 	'centralauth-merge-method-empty-desc' => "Вказує, що локальний обліковий запис був об'єднаний, тому що не був змінений.",
 	'centralauth-merge-method-mail-desc' => "Вказує, що локальний обліковий запис був об'єднаний, тому що його адреса електронної пошти відповідає адресі електронної пошти з основного облікового запису.",
 	'centralauth-merge-method-password-desc' => "Вказує, що локальний обліковий запис був об'єднаний, оскільки користувач вказав правильний пароль.",
-	'centralauth-merge-method-admin-desc' => "Вказує, що локальний обліковий запис був об'єднаний вручну одним із стюардів.
-Це функція відключена в даний час з-за міркувань безпеки.",
+	'centralauth-merge-method-admin-desc' => "Вказує, що локальний обліковий запис було об'єднано стюардами вручну.
+Це функція наразі відключена з міркувань безпеки.",
 	'centralauth-merge-method-new-desc' => 'Вказує, що глобальний обліковий запис було створено автоматично, коли був створений локальний обліковий запис.',
 	'centralauth-merge-method-login-desc' => 'Вказує, що локальний обліковий запис було створено автоматично, коли користувач увійшов до системи.',
 	'centralauth-finish-title' => "Закінчення об'єднання",
