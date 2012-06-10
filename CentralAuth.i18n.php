@@ -6500,7 +6500,7 @@ Ena xacet qefiliyeyo seba sebebanê asayişi.',
 	'centralauth-finish-text' => 'Eka enê hesaban tu yo, pê nuştişê parola ti eşkeno eno processê yew kerdişî biqed:',
 	'centralauth-finish-password' => 'Parola:',
 	'centralauth-finish-login' => 'Dekewtış',
-	'centralauth-finish-send-confirmation' => 'Parala email ra bişirav',
+	'centralauth-finish-send-confirmation' => 'Parola email ra bırşê',
 	'centralauth-finish-problems' => 'Sistem ti ra zor dano? Ya zi ti wahirê hesabanê binan niyo?
 [[meta:Help:Unified login problems|Ti seni yardim vîneno]] ...',
 	'centralauth-finish-noconfirms' => 'Ser ena paralo hesab çini yo.',
@@ -6712,7 +6712,9 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'centralauth-editset-success' => 'Setê wîkî vurîya.',
 	'centralauth-editset-success-delete' => 'Sete wikiyi wedarna.',
 	'centralauth-editset-return' => 'Merkezê vînayişî rê şi',
+	'centralauth-readonly' => 'Merkezi xeta malumati biya kılit',
 	'right-globalgroupmembership' => 'Eza biyayîşê globalî bivurne',
+	'right-centralauth-autoaccount' => 'Otomatik cıkewtışê hesab de globali',
 	'right-centralauth-unmerge' => 'Hesabê kurewi letey meke',
 	'right-centralauth-lock' => 'Hesabê kurewi kılit ke ya zi bınımne',
 	'right-centralauth-oversight' => 'Hesabê kurewi bıdewosne',
@@ -10626,6 +10628,7 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 
 /** Gujarati (ગુજરાતી)
  * @author Ankit
+ * @author Ashok modhvadia
  * @author Dineshjk
  * @author Dsvyas
  * @author KartikMistry
@@ -10860,7 +10863,7 @@ $messages['gu'] = array(
 	'centralauth-rightslog-set-optout' => 'ભાગ ન લેવા આધારિત',
 	'autologin' => 'આપમેળે પ્રવેશ',
 	'centralauth-autologin-desc' => 'આ ખાસ પાનાને મિડિયા વિકિ દ્વારા આંતરિક રીતે વપરાય છે.
-જ્યારે તેમે [[Special:UserLogin|પ્રવેશ કરો]], ત્યારે કેંદ્રીય લોગઈન પ્રણાલી તમારા બ્રાઉઝરને દરેક જોડાયેલા ડોમેઈનમાંથી ઈમેજ કડીઓ વાપરી આ પાનું લાવવામાં મદદ કરે છે.
+જ્યારે તમે [[Special:UserLogin|પ્રવેશ કરો]], ત્યારે કેંદ્રીય લોગઈન પ્રણાલી તમારા બ્રાઉઝરને દરેક જોડાયેલા ડોમેઈનમાંથી ઈમેજ કડીઓ વાપરી આ પાનું લાવવામાં મદદ કરે છે.
 તમે કોઈ પણ વૈધ માહિતી સિવાય પાનાની અરજી કરી છે, આથી કાંઈ પરિણામ આવી શક્યું નથી.',
 	'globalgroupmembership' => 'વૈશ્વિક સમૂહોમાં સભ્યપદ',
 	'globalgrouppermissions' => 'વૈશ્વિક જૂથ વ્યવસ્થા',
@@ -10891,7 +10894,7 @@ $messages['gu'] = array(
 	'centralauth-editgroup-reason' => 'કારણ:',
 	'centralauth-editgroup-success' => 'સમૂહના હક્કો બદલાયા',
 	'centralauth-editgroup-success-text' => 'તમે સફળતા પૂર્વક $1 જૂથના જૂથ વિકલ્પો બદલ્યાં.
-[[Special:GlobalGroupPermissions|Return to group management]]',
+[[Special:GlobalGroupPermissions|જૂથ વ્યવસ્થાપન પર પરત જાઓ]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ફેરફાર]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'જે વિકિ પર તેઓ ખાતું ધરાવે છે.:',
 	'centralauth-globalgroupmembership-badknownwiki' => "વૈશ્વિક સભ્ય '''$1''' તમારા નિર્દિષ્ટ વિકિ પર સક્રિય નથી ('' $2 '').
@@ -14175,18 +14178,19 @@ $messages['ja'] = array(
 もし他の誰かが既にあなたの利用者名を他のサイトで使っていた場合、その利用者名を統合することはできません。ただし、後からこの問題をその人や管理者と相談する事で解消することができるかもしれません。",
 	'centralauth-merge-step1-title' => '統一ログインの開始',
 	'centralauth-merge-step1-detail' => 'あなたのアカウントのパスワードを入力してください。
-パスワードとメールアドレスが他のWikiと一致するかどうか確認を行います。
-これらを確認するまでアカウントを統合を行うことは出来ません。',
-	'centralauth-merge-step1-submit' => 'ログイン情報の確認',
+パスワードとメールアドレスが他のWikiのものと一致するか確認します。
+確認が終わるまでは、いかなる変更も実行されません。',
+	'centralauth-merge-step1-submit' => 'ログイン情報を確認',
 	'centralauth-merge-step2-title' => '外部アカウントの確認',
 	'centralauth-merge-step2-detail' => 'いくつかのアカウントで、ホームウィキとの自動照合ができませんでした。もしこれらのアカウントがあなたのものであれば、パスワードを入力することによって自分のものだと証明できます。',
-	'centralauth-merge-step2-submit' => 'ログイン情報の確認',
-	'centralauth-merge-dryrun-complete' => '現在あるすべてのアカウントが自動で統合できます！
+	'centralauth-merge-step2-submit' => 'ログイン情報を確認',
+	'centralauth-merge-dryrun-complete' => '現在あるすべてのアカウントを自動的に統合できます！
 
-いかなる変更もまだあなたのアカウントに加えられていません。',
-	'centralauth-merge-dryrun-incomplete' => '次の手順に進む準備ができましたが、自動的に認証できなかったアカウントがいくつかあります。これらのアカウントはそのままでは移行されませんが、後から統合することができます。
+あなたのアカウントはまだ何も変更されていません。',
+	'centralauth-merge-dryrun-incomplete' => '次の手順に進む準備ができましたが、自動的に認証できなかったアカウントがいくつかあります。
+これらのアカウントはそのままでは移行されませんが、あとで統合できます。
 
-いかなる変更もまだあなたのアカウントに加えられていません。',
+あなたのアカウントはまだ何も変更されていません。',
 	'centralauth-merge-dryrun-or' => "'''または'''",
 	'centralauth-merge-dryrun-home' => 'ホームウィキにおけるアカウントの所有者があなたであることが移行システムによって確認できませんでした。
 
@@ -14203,7 +14207,9 @@ $messages['ja'] = array(
 	'centralauth-not-owner-text' => '"$1" という利用者名は、アカウント $2 の利用者へ既に自動割当済みです。
 
 もしこれがあなたであるならば、このアカウントのパスワードをここに入力することで、アカウント統一処理を簡単に完了することができます:',
-	'centralauth-blocked-text' => 'あなたのホームウィキ(下に表示)は投稿がブロックされています。投稿ブロックを解除するにはホームウィキの管理者に連絡をしてください。ホームウィキがブロックされている限り、アカウントの統合はできません。',
+	'centralauth-blocked-text' => 'あなたのホームウィキ(下に表示)は投稿がブロックされています。
+ブロックを解除するにはホームウィキの管理者に連絡してください。
+ブロックされている限り、アカウントを統合できません。',
 	'centralauth-notice-dryrun' => "<div class='successbox'>デモモード限定</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'アカウントの統一は、現在デモ / デバッグモードとなっており、実際の統合操作は行われません。すみません！',
 	'centralauth-error-locked' => 'あなたのアカウントはロックされたため編集を行うことができません。',
@@ -14372,7 +14378,9 @@ $messages['ja'] = array(
 	'centralauth-rightslog-set-optin' => 'オプトイン設定',
 	'centralauth-rightslog-set-optout' => 'オプトアウト設定',
 	'autologin' => '自動ログイン',
-	'centralauth-autologin-desc' => 'この特別ページはメディアウィキによって内部的に使用されています。あなたが[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。あなたがこのページをリクエストした際に認証データを送信していないため、何も影響はありません。',
+	'centralauth-autologin-desc' => 'この特別ページはメディアウィキが内部的に使用しています。
+[[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザーはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。
+このページをリクエストした際には認証データを送信していないため、何も影響はありません。',
 	'globalgroupmembership' => 'グローバルグループへの所属',
 	'globalgrouppermissions' => 'グローバルグループの管理',
 	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。
@@ -14403,7 +14411,8 @@ $messages['ja'] = array(
 	'centralauth-editgroup-success-text' => '$1 グループのグループ権限を変更しました。[[Special:GlobalGroupPermissions|グループ操作に戻る]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編集]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'アカウントのあるウィキ:',
-	'centralauth-globalgroupmembership-badknownwiki' => "グローバルユーザー '''$1''' は指定したウィキ ('' $2 '') では活動していません。間違った利用者に権限を付与しようとしていませんか？",
+	'centralauth-globalgroupmembership-badknownwiki' => "グローバル利用者 '''$1''' は指定したウィキ ('' $2 '') では活動していません。
+間違った利用者に権限を付与しようとしていませんか？",
 	'centralauth-editset' => 'ウィキ集合',
 	'centralauth-editset-legend-rw' => 'ウィキ集合を編集または作成',
 	'centralauth-editset-legend-ro' => 'ウィキ集合の一覧',
@@ -14414,7 +14423,7 @@ $messages['ja'] = array(
 	'centralauth-editset-new' => '新規ウィキ集合を作成',
 	'centralauth-editset-notfound' => 'ウィキ集合 "$1" は存在しません。',
 	'centralauth-editset-optin' => 'オプトイン設定(選択したウィキだけを含む)',
-	'centralauth-editset-optout' => 'オプトアウト設定(選択したものを除くすべてのウィキを含む)',
+	'centralauth-editset-optout' => 'オプトアウト設定（選択したもの以外のすべてのウィキを含む）',
 	'centralauth-editset-legend-edit' => 'ウィキ集合 "$1" を編集しています',
 	'centralauth-editset-legend-view' => 'ウィキ集合 "$1"',
 	'centralauth-editset-legend-new' => '新規ウィキ集合を作成する',
@@ -16518,7 +16527,8 @@ $messages['ku-latn'] = array(
 	'centralauth-log-status-locked' => 'hate astengkirin',
 	'centralauth-log-status-hidden' => 'hate veşartin',
 	'centralauth-rightslog-name' => 'Reşahîya mafên global',
-	'centralauth-existinggroup-legend' => 'Grûpên hene',
+	'centralauth-existinggroup-legend' => 'Komên hene',
+	'centralauth-globalgroupperms-newgroupname' => 'Navê koma nû:',
 	'centralauth-editgroup-name' => 'Navê grûpê:',
 	'centralauth-editgroup-members' => 'Lîsteya endaman:',
 	'centralauth-editgroup-reason' => 'Sedem:',
@@ -28876,6 +28886,7 @@ $messages['tl'] = array(
 	'mergeaccount' => 'Kalagayan ng pag-iisa ng paglagda',
 	'centralauth-groupname' => 'ang Pundasyong Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Isanib ang kuwenta/akawnt]] sa kahabaan ng mga wiki ng {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Nagdaragdag ng teknolohiyang AntiSpoof sa CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Magsasanib ng maramihang mga kuwenta]] para sa Isang Paglagda Lamang ng Tagagamit',
 	'centralauth-merge-denied' => 'Paumanhin, wala kang pahintulot upang puntahan/pasukin ang pahinang ito.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Lumagda]</span> po lamang upang masuri kung naging ganap na ang pagsasanib ng iyong mga kuwenta.',
@@ -28934,6 +28945,7 @@ Paumanhin!",
 	'centralauth-list-unattached-title' => 'Hindi nakakabit na mga kuwenta (akawnt)',
 	'centralauth-list-unattached' => 'Ang kuwentang "$1" ay hindi kusang mapatototohanan bilang pag-aari mo sa sumusunod na mga sityo/sayt; mas malamang na mayroon silang isang naiibang hudyat mula sa pangunahing akawnt mo:',
 	'centralauth-foreign-link' => 'Tagagamit na $1 sa $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kontribusyon|mga kontribusyon}} sa $2',
 	'centralauth-merge-method-primary' => 'tahanang wiki',
 	'centralauth-merge-method-empty' => 'walang mga ambag',
 	'centralauth-merge-method-mail' => 'napatotohanan sa pamamagitan ng e-liham',
@@ -29148,6 +29160,7 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 	'centralauth-editset-name' => 'Pangalan:',
 	'centralauth-editset-type' => 'Uri (tipo):',
 	'centralauth-editset-wikis' => 'Mga wiki:',
+	'centralauth-editset-restwikis' => 'Mga Wiki na hindi kabilang sa itaas:',
 	'centralauth-editset-reason' => 'Dahilan:',
 	'centralauth-editset-submit' => 'Ipasa',
 	'centralauth-editset-submit-delete' => 'Burahin',
@@ -29161,7 +29174,10 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 	'centralauth-editset-success' => "Matagumpay na nabago ang kapangkatang (''set'') pangwiki.",
 	'centralauth-editset-success-delete' => 'Matagumpay na nabura ang pangkat na pangwiki.',
 	'centralauth-editset-return' => 'Bumalik sa pangunahing tinginan/tanawan',
+	'centralauth-readonly' => 'Nakakandado ang Kalipunang Pangdato ng CentralAuth',
+	'centralauth-readonlytext' => 'Kasalukuyang nakakandado laban sa bagong mga pagpapasok at iba pang mga pagbabago ang kalipunang pangdato ng CentralAuth, maaaring para sa karaniwang pagpapanatili ng kalipunan ng dato, pagkalipas ay magbabalik na ito sa normal.',
 	'right-globalgroupmembership' => 'Baguhin ang kasapian sa mga kapangkatang pandaigdigan',
+	'right-centralauth-autoaccount' => 'Kusang lumagda sa pamamagitan ng akawnt na pangglobo',
 	'right-centralauth-unmerge' => 'Huwag pagsanibin ang pandaigdigang akawnt',
 	'right-centralauth-lock' => 'Ikandado o ikubli ang pandaigdigang akawnt',
 	'right-centralauth-oversight' => 'Pigilin ang pandaigdigang akawnt',
@@ -29643,6 +29659,7 @@ $messages['ug-latn'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author A1
  * @author AS
  * @author Ahonc
  * @author Alex Khimich
@@ -29660,6 +29677,7 @@ $messages['uk'] = array(
 	'mergeaccount' => "Стан об'єднання облікових записів",
 	'centralauth-groupname' => 'Фонду Вікімедіа',
 	'centralauth-desc' => "[[Special:MergeAccount|Об'єднання облікових записів]] на вікі-проектах {{int:Centralauth-groupname}}",
+	'centralauth-antispoof-desc' => 'Додає технологію AntiSpoof в CentralAuth',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Об'єднує кілька облікових записів]] у Єдиний обліковий запис користувача",
 	'centralauth-merge-denied' => 'Вибачте, у вас недостатньо прав для доступу до цієї сторінки.',
 	'centralauth-merge-notlogged' => 'Будь ласка, <span class="plainlinks">[$1 ввійдіть до системи]</span>, щоб перевірити, чи були ваші облікові записи об\'єднані.',
@@ -29940,6 +29958,7 @@ $messages['uk'] = array(
 	'centralauth-editset-success' => 'Набір вікі успішно змінений.',
 	'centralauth-editset-success-delete' => 'Набір вікі успішно видалено.',
 	'centralauth-editset-return' => 'Повернутися до головного виду',
+	'centralauth-readonly' => 'база даних CentralAuth заблокована',
 	'right-globalgroupmembership' => 'зміна членства у глобальних групах',
 	'right-centralauth-autoaccount' => 'Автоматичний вхід із глобального облікового запису',
 	'right-centralauth-unmerge' => "Роз'єднання глобальних облікових записів",
@@ -30379,7 +30398,7 @@ Nếu đây là bạn, bạn có thể kết thúc quá trình hợp nhất tài
 	'centralauth-foreign-contributions' => '$1 đóng góp trên $2',
 	'centralauth-merge-method-primary' => 'wiki chính',
 	'centralauth-merge-method-empty' => 'không có đóng góp',
-	'centralauth-merge-method-mail' => 'xác nhận nhờ e-mail',
+	'centralauth-merge-method-mail' => 'xác nhận nhờ thư điện tử',
 	'centralauth-merge-method-password' => 'xác nhận nhờ mật khẩu',
 	'centralauth-merge-method-admin' => 'tài khoản do quản lý viên tích hợp',
 	'centralauth-merge-method-new' => 'tài khoản mới',
@@ -30795,6 +30814,29 @@ $messages['vro'] = array(
 	'centralauth-groupname' => 'Tsihtasotus Wikimedia',
 	'centralauth-login-progress' => 'Läät nimega sisse ka tõisihe {{int:Centralauth-groupname}} projektehe:',
 	'centralauth-logout-progress' => 'Läät nime alt vällä ka tõisist {{int:Centralauth-groupname}} projektest:',
+);
+
+/** Walloon (walon)
+ * @author Srtxg
+ */
+$messages['wa'] = array(
+	'centralauth-merge-step3-detail' => 'Asteure, vos estoz presse po-z ahiver on conte unike, avou les Wikis ki shuvèt:',
+	'centralauth-complete' => 'Li rmetaedje-eshonne des contes est tot fwait!',
+	'centralauth-incomplete' => "Li rmetaedje-eshonne des contes n' a nén stî tot fwait !",
+	'centralauth-complete-text' => "Asteure, vos vos ploz raloyî a tolminme ké  pordjet {{int:Centralauth-groupname}}, sins aveur dandjî d' on novea conte; li minme no d’uzeu et l' minme sicret rotnut avou totes les waibes et tos les lingaedjes do pordjet.",
+	'centralauth-incomplete-text' => "On côp k' les contes seront rmetous eshonne, vos vos pôroz raloyî so tolminme ké pordjet {{int:Centralauth-groupname}} sins aveur a-z ahiver on novea conte; li minme no d' uzeu et di scret iront po totes les waibes et tos les lingaedjes do pordjet.",
+	'centralauth-finish-password' => 'Sicret:',
+	'centralauth-attach-list-attached' => 'Li conte unike «$1» comprind les contes ki shuvnut:',
+	'centralauth-attach-title' => "Acertiner l' conte",
+	'centralauth-attach-text' => "Ci conte ci n’ a nén co stî rmetou avou vosse conte unike.
+Si l' conte unike, c' est da vosse ossu, vos les ploz rmete eshonne tot tapant li scret do conte unike:",
+	'centralauth-attach-submit' => 'Rimete les contes eshonne',
+	'centralauth-attach-success' => 'Li conte a stî rmetou sol conte unike.',
+	'centralauth-admin-username' => "No d' elodjaedje:",
+	'centralauth-admin-yes' => 'oyi',
+	'centralauth-admin-no' => 'neni',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|conte|contes}} rischåyîs comifåt',
+	'centralauth-account-exists' => "Vos n' sårîz ahiver ç' conte la: li no d' uzeu est ddja eployî dins l' sistinme des contes unikes.",
 );
 
 /** Wu (吴语) */
@@ -31234,7 +31276,7 @@ $messages['zea'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Samm'nhevoehde hebrukers]] in wiki's von {{int:Centralauth-groupname}}",
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq
@@ -31534,7 +31576,7 @@ $messages['zh-hans'] = array(
 	'right-centralauth-unmerge' => '取消合并全域帐户',
 	'right-centralauth-lock' => '锁定或隐藏全域帐户',
 	'right-centralauth-oversight' => '废止全域帐户',
-	'right-centralauth-merge' => '合并他们的账户',
+	'right-centralauth-merge' => '合并自己的账户',
 	'right-globalgrouppermissions' => '管理全域组',
 );
 
