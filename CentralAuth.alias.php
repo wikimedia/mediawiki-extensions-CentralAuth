@@ -46,7 +46,7 @@ $specialPageAliases['arz'] = array(
 	'GlobalUsers' => array( 'يوزرات_عامين' ),
 );
 
-/** Bulgarian (Български) */
+/** Bulgarian (български) */
 $specialPageAliases['bg'] = array(
 	'CentralAuth' => array( 'Управление_на_единните_сметки' ),
 	'AutoLogin' => array( 'Автоматично_влизане' ),
@@ -66,14 +66,14 @@ $specialPageAliases['bjn'] = array(
 	'GlobalUsers' => array( 'Pamakai_global' ),
 );
 
-/** Breton (Brezhoneg) */
+/** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'AutoLogin' => array( 'Emgevreañ' ),
 	'MergeAccount' => array( 'KendeuzKont' ),
 	'GlobalUsers' => array( 'ImplijerienHollek' ),
 );
 
-/** Bosnian (Bosanski) */
+/** Bosnian (bosanski) */
 $specialPageAliases['bs'] = array(
 	'CentralAuth' => array( 'SredisnjaAutent' ),
 	'AutoLogin' => array( 'AutoPrijava' ),
@@ -84,7 +84,7 @@ $specialPageAliases['bs'] = array(
 	'GlobalUsers' => array( 'GlobalniKorisnici' ),
 );
 
-/** Catalan (Català) */
+/** Catalan (català) */
 $specialPageAliases['ca'] = array(
 	'MergeAccount' => array( 'Fusió_de_comptes' ),
 	'GlobalUsers' => array( 'Usuaris_globals' ),
@@ -103,6 +103,12 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
+	'CentralAuth' => array( 'MerkeziKimlikRaştkerdış' ),
+	'AutoLogin' => array( 'OtomatikCıkewtış' ),
+	'MergeAccount' => array( 'HesabJewkerdış' ),
+	'GlobalGroupMembership' => array( 'GlobalGrubaEzayan' ),
+	'GlobalGroupPermissions' => array( 'GlobalGrubaİcazeti' ),
+	'WikiSets' => array( 'SazanêWİkiBıvurne' ),
 	'GlobalUsers' => array( 'KarberoGlobal' ),
 );
 
@@ -136,7 +142,7 @@ $specialPageAliases['eo'] = array(
 	'GlobalUsers' => array( 'Ĉieaj_uzantoj' ),
 );
 
-/** Spanish (Español) */
+/** Spanish (español) */
 $specialPageAliases['es'] = array(
 	'AutoLogin' => array( 'Entrada_automática', 'Inicio_automático' ),
 	'MergeAccount' => array( 'Fusionar_cuenta_global', 'FusionarCuentaGlobal' ),
@@ -146,7 +152,7 @@ $specialPageAliases['es'] = array(
 	'GlobalUsers' => array( 'Usuarios_globales' ),
 );
 
-/** Estonian (Eesti) */
+/** Estonian (eesti) */
 $specialPageAliases['et'] = array(
 	'CentralAuth' => array( 'Kontode_ühendamine' ),
 	'AutoLogin' => array( 'Automaatne_sisselogimine' ),
@@ -168,7 +174,7 @@ $specialPageAliases['fa'] = array(
 	'GlobalUsers' => array( 'کاربران_سراسری' ),
 );
 
-/** Finnish (Suomi) */
+/** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
 	'CentralAuth' => array( 'Keskitetty_varmennus' ),
 	'AutoLogin' => array( 'Automaattikirjautuminen' ),
@@ -176,7 +182,7 @@ $specialPageAliases['fi'] = array(
 	'GlobalUsers' => array( 'Yhdistetyt_tunnukset' ),
 );
 
-/** French (Français) */
+/** French (français) */
 $specialPageAliases['fr'] = array(
 	'AutoLogin' => array( 'Connexion_automatique', 'ConnexionAutomatique', 'ConnexionAuto', 'Login_automatique', 'LoginAutomatique', 'LoginAuto' ),
 	'MergeAccount' => array( 'Fusionner_le_compte', 'FusionnerLeCompte' ),
@@ -186,7 +192,7 @@ $specialPageAliases['fr'] = array(
 	'GlobalUsers' => array( 'Utilisateurs_globaux', 'UtilisateursGlobaux' ),
 );
 
-/** Franco-Provençal (Arpetan) */
+/** Franco-Provençal (arpetan) */
 $specialPageAliases['frp'] = array(
 	'CentralAuth' => array( 'Administracion_des_comptos_fusionâs', 'AdministracionDesComptosFusionâs' ),
 	'AutoLogin' => array( 'Branchement_ôtomatico', 'BranchementÔtomatico' ),
@@ -246,7 +252,7 @@ $specialPageAliases['hi'] = array(
 	'GlobalUsers' => array( 'वैश्विक_सदस्य_सूची' ),
 );
 
-/** Croatian (Hrvatski) */
+/** Croatian (hrvatski) */
 $specialPageAliases['hr'] = array(
 	'CentralAuth' => array( 'Središnja_prijava' ),
 	'AutoLogin' => array( 'AutoPrijava' ),
@@ -290,7 +296,7 @@ $specialPageAliases['ht'] = array(
 	'GlobalUsers' => array( 'ItilizatèGlobal' ),
 );
 
-/** Hungarian (Magyar) */
+/** Hungarian (magyar) */
 $specialPageAliases['hu'] = array(
 	'CentralAuth' => array( 'Központi_azonosítás' ),
 	'AutoLogin' => array( 'Automatikus_bejelentkezés' ),
@@ -301,7 +307,7 @@ $specialPageAliases['hu'] = array(
 	'GlobalUsers' => array( 'Globális_szerkesztőlista', 'Globális_felhasználólista', 'Felhasználók_globális_listája' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'CentralAuth' => array( 'Auth_central' ),
 	'AutoLogin' => array( 'Autosession', 'AutoSession' ),
@@ -323,7 +329,7 @@ $specialPageAliases['id'] = array(
 	'GlobalUsers' => array( 'Pengguna_global', 'PenggunaGlobal' ),
 );
 
-/** Italian (Italiano) */
+/** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'MergeAccount' => array( 'UnificaUtenze' ),
 	'GlobalGroupMembership' => array( 'PermessiUtenteGlobale' ),
@@ -361,7 +367,8 @@ $specialPageAliases['ko'] = array(
 	'AutoLogin' => array( '자동로그인' ),
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정' ),
-	'GlobalGroupPermissions' => array( '전체_그룹_권한' ),
+	'GlobalGroupPermissions' => array( '전체그룹권한' ),
+	'WikiSets' => array( '위키설정', '위키설정편집' ),
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 );
 
@@ -374,7 +381,7 @@ $specialPageAliases['ksh'] = array(
 	'GlobalUsers' => array( 'Jemeinsam_Metmaacher', 'JemeinsamMetmaacher', 'Jemeinsam_Medmaacher', 'JemeinsamMedmaacher' ),
 );
 
-/** Cornish (Kernowek) */
+/** Cornish (kernowek) */
 $specialPageAliases['kw'] = array(
 	'AutoLogin' => array( 'AwtoOmgelmi' ),
 );
@@ -401,7 +408,7 @@ $specialPageAliases['lb'] = array(
 	'GlobalUsers' => array( 'Global_Benotzer' ),
 );
 
-/** Lithuanian (Lietuvių) */
+/** Lithuanian (lietuvių) */
 $specialPageAliases['lt'] = array(
 	'AutoLogin' => array( 'Automatinis_prisijungimas' ),
 	'MergeAccount' => array( 'Sujungti_sąskaitas' ),
@@ -415,7 +422,7 @@ $specialPageAliases['mg'] = array(
 	'GlobalGroupPermissions' => array( 'Fahafahan\'ny_vondrona_amin\'ny_sehatra_rehetra' ),
 );
 
-/** Macedonian (Македонски) */
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'CentralAuth' => array( 'ЦентралноПотврдување' ),
 	'AutoLogin' => array( 'АвтоматскоНајавување' ),
@@ -469,7 +476,7 @@ $specialPageAliases['myv'] = array(
 	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+/** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $specialPageAliases['nb'] = array(
 	'CentralAuth' => array( 'Enhetlig_innlogging' ),
 	'AutoLogin' => array( 'Automatisk_innlogging' ),
@@ -502,14 +509,14 @@ $specialPageAliases['nl'] = array(
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
 $specialPageAliases['nn'] = array(
 	'MergeAccount' => array( 'Kontosamanslåing' ),
 	'GlobalGroupMembership' => array( 'Globale_brukarrettar' ),
 	'GlobalUsers' => array( 'Globale_brukarar' ),
 );
 
-/** Occitan (Occitan) */
+/** Occitan (occitan) */
 $specialPageAliases['oc'] = array(
 	'AutoLogin' => array( 'Login_Automatic', 'LoginAutomatic', 'LoginAuto' ),
 	'MergeAccount' => array( 'Fusionar_lo_compte', 'FusionarLoCompte' ),
@@ -519,7 +526,7 @@ $specialPageAliases['oc'] = array(
 	'GlobalUsers' => array( 'Utilizaires_globals', 'UtilizairesGlobals' ),
 );
 
-/** Polish (Polski) */
+/** Polish (polski) */
 $specialPageAliases['pl'] = array(
 	'CentralAuth' => array( 'Zarządzanie_kontem_uniwersalnym' ),
 	'AutoLogin' => array( 'Automatyczne_logowanie' ),
@@ -535,7 +542,7 @@ $specialPageAliases['ps'] = array(
 	'GlobalUsers' => array( 'نړېوال_کارنان' ),
 );
 
-/** Portuguese (Português) */
+/** Portuguese (português) */
 $specialPageAliases['pt'] = array(
 	'CentralAuth' => array( 'Administração_de_contas_globais', 'Administração_global_de_contas' ),
 	'AutoLogin' => array( 'Autenticação_automática' ),
@@ -545,7 +552,7 @@ $specialPageAliases['pt'] = array(
 	'GlobalUsers' => array( 'Utilizadores_globais' ),
 );
 
-/** Brazilian Portuguese (Português do Brasil) */
+/** Brazilian Portuguese (português do Brasil) */
 $specialPageAliases['pt-br'] = array(
 	'CentralAuth' => array( 'Administração_global_de_contas', 'Administração_de_contas_globais' ),
 	'AutoLogin' => array( 'Login_automático' ),
@@ -553,7 +560,7 @@ $specialPageAliases['pt-br'] = array(
 	'GlobalUsers' => array( 'Usuários_globais' ),
 );
 
-/** Romanian (Română) */
+/** Romanian (română) */
 $specialPageAliases['ro'] = array(
 	'CentralAuth' => array( 'Autentificare_centrală' ),
 	'AutoLogin' => array( 'Autentificare_automată' ),
@@ -562,6 +569,13 @@ $specialPageAliases['ro'] = array(
 	'GlobalGroupPermissions' => array( 'Permisiuni_grup_globale' ),
 	'WikiSets' => array( 'Setări_modificare_Wiki' ),
 	'GlobalUsers' => array( 'Utilizatori_globali' ),
+);
+
+/** Russian (русский) */
+$specialPageAliases['ru'] = array(
+	'GlobalGroupMembership' => array( 'Глобальные_права_участника', 'Глобальное_членство' ),
+	'WikiSets' => array( 'Наборы_вики' ),
+	'GlobalUsers' => array( 'Глобальные_участники' ),
 );
 
 /** Sanskrit (संस्कृतम्) */
@@ -575,7 +589,7 @@ $specialPageAliases['sa'] = array(
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
-/** Serbo-Croatian (Srpskohrvatski) */
+/** Serbo-Croatian (srpskohrvatski / српскохрватски) */
 $specialPageAliases['sh'] = array(
 	'CentralAuth' => array( 'Centralna_prijava' ),
 	'AutoLogin' => array( 'Auto_prijava' ),
@@ -593,7 +607,7 @@ $specialPageAliases['si'] = array(
 	'MergeAccount' => array( 'ගිණුමඑක්කරන්න' ),
 );
 
-/** Slovak (Slovenčina) */
+/** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'CentralAuth' => array( 'CentrálneOverenie' ),
 	'AutoLogin' => array( 'AutomatickéPrihlasovanie' ),
@@ -609,7 +623,7 @@ $specialPageAliases['su'] = array(
 	'MergeAccount' => array( 'GabungRekening' ),
 );
 
-/** Swedish (Svenska) */
+/** Swedish (svenska) */
 $specialPageAliases['sv'] = array(
 	'CentralAuth' => array( 'Gemensam_inloggning' ),
 	'AutoLogin' => array( 'Automatisk_inloggning' ),
@@ -645,12 +659,12 @@ $specialPageAliases['tr'] = array(
 	'GlobalUsers' => array( 'KüreselKullanıcılar' ),
 );
 
-/** Tatar (Cyrillic script) (Татарча) */
+/** Tatar (Cyrillic script) (татарча) */
 $specialPageAliases['tt-cyrl'] = array(
 	'GlobalUsers' => array( 'Глобаль_кулланучылар' ),
 );
 
-/** Vèneto (Vèneto) */
+/** vèneto (vèneto) */
 $specialPageAliases['vec'] = array(
 	'MergeAccount' => array( 'UnissiUtense' ),
 	'GlobalGroupMembership' => array( 'DiritiUtenteGlobali' ),
@@ -671,7 +685,7 @@ $specialPageAliases['yi'] = array(
 	'GlobalUsers' => array( 'גלאבאלע_באניצער' ),
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文（简体）‬) */
 $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
 	'AutoLogin' => array( '自动登录' ),
@@ -682,7 +696,7 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalUsers' => array( '全域用户' ),
 );
 
-/** Traditional Chinese (‪中文(繁體)‬) */
+/** Traditional Chinese (‪中文（繁體）‬) */
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
 	'AutoLogin' => array( '自動登錄' ),
@@ -693,7 +707,7 @@ $specialPageAliases['zh-hant'] = array(
 	'GlobalUsers' => array( '全域用戶' ),
 );
 
-/** Chinese (Hong Kong) (‪中文(香港)‬) */
+/** Chinese (Hong Kong) (‪中文（香港）‬) */
 $specialPageAliases['zh-hk'] = array(
 	'GlobalGroupMembership' => array( '全域用戶權限' ),
 );
