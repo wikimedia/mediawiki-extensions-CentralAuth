@@ -2147,7 +2147,7 @@ $3 আঁতৰোৱা হ'ল",
 	'right-globalgrouppermissions' => 'গোলকীয় গোটসমূহৰ ব্যৱস্থাপনা কৰক',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
  */
@@ -2502,7 +2502,7 @@ $messages['avk'] = array(
 	'centralauth-editgroup-members' => 'Bewikeem :',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  * @author PPerviz
  * @author Vago
@@ -3175,7 +3175,7 @@ $messages['bcl'] = array(
 	'centralauth-finish-login' => 'Maglaog',
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Yury Tarasievich
  * @author Тест
  */
@@ -3518,7 +3518,7 @@ $messages['be-tarask'] = array(
 	'right-globalgrouppermissions' => 'кіраваньне глябальнымі рахункамі',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
@@ -4473,7 +4473,7 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'right-globalgrouppermissions' => 'Merañ ar strolladoù hollek',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -5109,7 +5109,7 @@ $messages['ceb'] = array(
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay',
 );
 
-/** Sorani (کوردی)
+/** Sorani Kurdish (کوردی)
  * @author Asoxor
  */
 $messages['ckb'] = array(
@@ -5125,7 +5125,7 @@ $messages['ckb'] = array(
 	'centralauth-editset-submit-delete' => 'سڕینەوە',
 );
 
-/** Corsican (Corsu) */
+/** Corsican (corsu) */
 $messages['co'] = array(
 	'centralauth-editset-name' => 'Nome:',
 );
@@ -5158,7 +5158,7 @@ $messages['crh-cyrl'] = array(
 	'centralauth-prefs-manage' => 'Глобаль эсапны идаре эт',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Danny B.
  * @author Jkjk
  * @author Li-sung
@@ -5710,7 +5710,7 @@ Gwaredwyd $3',
 	'centralauth-editset-badwikis' => "Nid yw'r {{PLURAL:$2|wici|wici|wicïau|wicïau|wicïau|wicïau}} sy'n dilyn ar gael: $1.",
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Byrial
  * @author Emilkris33
  * @author Jon Harald Søby
@@ -7037,7 +7037,7 @@ $messages['dtp'] = array(
 	'centralauth-finish-login' => 'Sumuang log',
 );
 
-/** Ewe (Eʋegbe)
+/** Ewe (eʋegbe)
  * @author Natsubee
  */
 $messages['ee'] = array(
@@ -8001,7 +8001,7 @@ Puedes ver y modificar todos ellos, o crear un ajuste nuevo.',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author AivoK
  * @author Avjoska
  * @author Jaan513
@@ -8311,7 +8311,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Bengoa
  * @author Joxemai
@@ -8419,7 +8419,7 @@ Ohartu zaitez talde bat ez dela existitzen, horretarako baimenak izan ezean.',
 	'centralauth-editset-badwikis' => 'Ondorengo {{PLURAL:$2|wikia|wikiak}} ez dira existitzen: $1.',
 );
 
-/** Extremaduran (Estremeñu)
+/** Extremaduran (estremeñu)
  * @author Better
  */
 $messages['ext'] = array(
@@ -8734,7 +8734,7 @@ $messages['fa'] = array(
 	'right-globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Agony
  * @author Cimon Avaro
  * @author Crt
@@ -9046,7 +9046,7 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-globalgrouppermissions' => 'Hallinnoida globaaleja ryhmiä',
 );
 
-/** Meänkieli (Meänkieli)
+/** meänkieli (meänkieli)
  * @author Mestos
  */
 $messages['fit'] = array(
@@ -9612,7 +9612,7 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'right-globalgrouppermissions' => 'Gérer les groupes globaux',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -9931,7 +9931,7 @@ $messages['frr'] = array(
 	'autologin' => 'Automaatisk uunmeldin',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -11615,7 +11615,7 @@ $messages['hil'] = array(
 	'centralauth-admin-reason' => 'Rason:',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Ex13
  * @author Herr Mlinka
@@ -12265,7 +12265,7 @@ Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anb
 	'centralauth-logout-no-others' => 'Ou te otomatikman dekonekte de lòt pwojè {{int:Centralauth-groupname}} yo.',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Adam78
  * @author Bdamokos
  * @author Dani
@@ -12576,7 +12576,7 @@ Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
 	'right-globalgrouppermissions' => 'globális csoportok kezelése',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author Julian Mendez
  * @author Malafaya
  * @author McDutchie
@@ -13572,7 +13572,7 @@ $messages['io'] = array(
 	'centralauth-editset-nouse' => '(nula)',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author Maxí
  * @author S.Örvarr.S
  * @author Snævar
@@ -14458,7 +14458,7 @@ $messages['ja'] = array(
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
 );
 
-/** Jutish (Jysk)
+/** Jutish (jysk)
  * @author Huslåke
  * @author Ælsån
  */
@@ -15597,7 +15597,7 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
 	'right-globalgrouppermissions' => 'Ğalamdıq toptardı rettew',
 );
 
-/** Kalaallisut (Kalaallisut)
+/** Kalaallisut (kalaallisut)
  * @author Qaqqalik
  */
 $messages['kl'] = array(
@@ -17231,7 +17231,7 @@ Doe kins dees bekieken en verangere, of 'ne nuje groep aanmake.",
 	'right-globalgrouppermissions' => 'Globaal gróppe behere',
 );
 
-/** Lumbaart (Lumbaart)
+/** lumbaart (lumbaart)
  * @author Dakrismeno
  */
 $messages['lmo'] = array(
@@ -17256,7 +17256,7 @@ $messages['lo'] = array(
 	'centralauth-admin-username' => 'ຊື່ອຜູ້ໃຊ້ :',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Garas
  * @author Homo
@@ -17550,7 +17550,7 @@ Bet kurį iš jų galite peržiūrėti ar keisti, ar sukurti naują.',
 	'right-globalgrouppermissions' => 'Tvarkyti globaliąsias grupes',
 );
 
-/** Latgalian (Latgaļu)
+/** Latgalian (latgaļu)
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
@@ -17600,7 +17600,7 @@ $messages['lus'] = array(
 	'centralauth-admin-no' => 'aih',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author GreenZeb
  * @author Marozols
  * @author Papuass
@@ -17917,7 +17917,7 @@ $messages['mhr'] = array(
 	'centralauth-editset-reason' => 'Амал:',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
  */
@@ -18542,7 +18542,7 @@ $3 നീക്കംചെയ്തു',
 	'right-globalgrouppermissions' => 'ആഗോള സംഘങ്ങൾ പരിപാലിക്കുക',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -20697,7 +20697,7 @@ Zolang de wiki niet bewerkt kan worden, kan je geen gebruikers samenvoegen.',
 Als de overkoepelende gebruiker ook van jou is, dan kan je deze gebruiker samenvoegen als je het wachtwoord voor de overkoepelende gebruiker ingeeft:',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Eirik
  * @author Gunnernett
  * @author Harald Khan
@@ -21719,7 +21719,7 @@ $messages['pfl'] = array(
 	'centralauth-editset-nouse' => '(kään)',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Beau
  * @author Derbeth
  * @author Equadus
@@ -23095,7 +23095,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-globalgrouppermissions' => 'Administrar grupos globais',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Giro720
  * @author Hamilton Abreu
@@ -23875,7 +23875,7 @@ Le puteți vizualiza sau modifica pe oricare dintre ele, sau puteți crea un set
 	'right-globalgrouppermissions' => 'Administrează grupurile globale',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  * @author Reder
  */
@@ -24138,7 +24138,7 @@ Luàte $3',
 	'right-globalgrouppermissions' => 'Gestisce le gruppe globbale',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Ahonc
  * @author AlexSm
  * @author Cryptocoryne
@@ -24765,7 +24765,7 @@ $messages['sa'] = array(
 	'centralauth-editset-submit' => 'क्षमते',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -25125,7 +25125,7 @@ $messages['sgs'] = array(
 	'centralauth-prefs-complete' => 'Vėsks tvarkuo!',
 );
 
-/** Serbo-Croatian (Srpskohrvatski)
+/** Serbo-Croatian (srpskohrvatski / српскохрватски)
  * @author OC Ripper
  */
 $messages['sh'] = array(
@@ -25755,7 +25755,7 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 	'right-globalgrouppermissions' => 'Spravovať globálne skupiny',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  * @author Yerpo
  */
@@ -27324,7 +27324,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 	'right-centralauth-merge' => 'Gabungkeun rekening ieu',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Ainali
  * @author Boivie
  * @author Dafer45
@@ -28184,7 +28184,7 @@ $3 తీసేసాం',
 	'right-globalgrouppermissions' => 'సార్వత్రిక గుంపులను నిర్వహించు',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
@@ -28196,7 +28196,7 @@ $messages['tet'] = array(
 	'centralauth-editset-reason' => 'Motivu:',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -28371,7 +28371,7 @@ $messages['tg-cyrl'] = array(
 	'right-globalgrouppermissions' => 'Идоракунии гурӯҳҳои муштарак',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -29185,7 +29185,7 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 	'right-globalgrouppermissions' => 'Pamahalaan ang kapangkatang pandaigdigan',
 );
 
-/** Толышә зывон (Толышә зывон)
+/** толышә зывон (толышә зывон)
  * @author Гусейн
  */
 $messages['tly'] = array(
@@ -29975,7 +29975,7 @@ $messages['ur'] = array(
 	'centralauth-editset-reason' => 'وجہ:',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -31580,7 +31580,7 @@ $messages['zh-hans'] = array(
 	'right-globalgrouppermissions' => '管理全域组',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq
