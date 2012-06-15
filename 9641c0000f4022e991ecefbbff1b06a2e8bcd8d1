@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+sM\u003d",
+        "filename": "ResourceLoaderRemoteGlobalUserModule.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-06-15T22:35:56Z",
+      "side": 1,
+      "message": "Is there something missing here? This module doesn\u0027t do anything. It doesn\u0027t even (indirectly or not) extend the ResourceLoaderWikiModule.\n\nI guess this has to do with the fact that it should only be registered on other wikis and then loaded cross-domain to where the other class is registered locally.\n\nBut on its own this looks broken, perhaps add a little comment here or construct this differently (do we need the class in order to add a load call?)",
+      "revId": "9641c0000f4022e991ecefbbff1b06a2e8bcd8d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
