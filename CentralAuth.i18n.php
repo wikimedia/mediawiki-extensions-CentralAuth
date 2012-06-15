@@ -7875,7 +7875,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-prefs-unattached' => 'No confirmado',
 	'centralauth-prefs-complete' => '¡Todo en orden!',
 	'centralauth-prefs-migration' => 'En migración',
-	'centralauth-prefs-count-attached' => 'Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.--~~~~',
+	'centralauth-prefs-count-attached' => 'Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.',
 	'centralauth-prefs-count-unattached' => 'Cuentas no confirmadas con su nombre permanecen en $1 {{PLURAL:$1|proyecto|proyectos}}.',
 	'centralauth-prefs-detail-unattached' => 'No se ha confirmado que este sitio de proyecto es de la cuenta global.',
 	'centralauth-prefs-manage' => 'Gestiona tu cuenta global',
@@ -27626,8 +27626,11 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
 );
 
-/** Swahili (Kiswahili) */
+/** Swahili (Kiswahili)
+ * @author Stephenwanjau
+ */
 $messages['sw'] = array(
+	'centralauth-merge-denied' => 'Samahani, hauna ruhusa ya kufikia ukurasa huu.',
 	'centralauth-finish-password' => 'Neno la siri:',
 	'centralauth-admin-username' => 'Jina la mtumiaji:',
 	'centralauth-admin-yes' => 'ndiyo',
@@ -29718,7 +29721,7 @@ $messages['uk'] = array(
 	'centralauth-not-owner-text' => "Ім'я «$1» було автоматично передане власнику облікового запису «$2».
 
 Якщо це ви, то ви можете завершити процес об'єднання облікових записів, увівши тут основний пароль для цього облікового запису:",
-	'centralauth-blocked-text' => "Ваша домашня вікі (зазначена ниджче) закрита для редагування. Будь ласка, зв'яжіться з адміністратором у цій вікі, щоб розблокувати її. Поки вона заблокована, ви не зможете об'єднати ваші облікові записи.",
+	'centralauth-blocked-text' => "Ваша домашня вікі (зазначена нижче) закрита для редагування. Будь ласка, зв'яжіться з адміністратором у цій вікі, щоб розблокувати її. Поки вона заблокована, ви не зможете об'єднати ваші облікові записи.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстраційний режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Об'єднання облікових записів зараз працює в демонстраційному режимі. Реальні операції об'єднання відключені. Вибачте.",
 	'centralauth-error-locked' => 'Ви не можете редагувати, бо ваш обліковий запис заблокований.',
