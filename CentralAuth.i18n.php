@@ -2653,6 +2653,7 @@ Səbəb: $1',
 
 /** Bashkir (Башҡортса)
  * @author Assele
+ * @author Comp1089
  * @author Haqmar
  * @author ҒатаУлла
  */
@@ -2931,6 +2932,7 @@ $messages['ba'] = array(
 	'centralauth-editset-name' => 'Исеме:',
 	'centralauth-editset-type' => 'Төрө:',
 	'centralauth-editset-wikis' => 'Викилар:',
+	'centralauth-editset-restwikis' => 'Юғарыла иҫкә алынмаған Вики',
 	'centralauth-editset-reason' => 'Сәбәп:',
 	'centralauth-editset-submit' => 'һаҡларға',
 	'centralauth-editset-submit-delete' => 'Юйырға',
@@ -2945,6 +2947,7 @@ $messages['ba'] = array(
 	'centralauth-editset-success-delete' => 'Вики йыйынтығы уңышлы юйылды.',
 	'centralauth-editset-return' => 'Төп күренешкә ҡайтырға',
 	'right-globalgroupmembership' => 'Ҡатнашыусы ҡараған дөйөм төркөмдәр исемлеген үҙгәртергә',
+	'right-centralauth-autoaccount' => 'Дөйөм иҫәп яҙыуынан үҙенән-үҙе инеү',
 	'right-centralauth-unmerge' => 'Дөйөм иҫәп яҙмаларын айырыу',
 	'right-centralauth-lock' => 'Дөйөм иҫәп яҙмаларын бикләү һәм йәшереү',
 	'right-centralauth-oversight' => 'Дөйөм иҫәп яҙмаларын йәшереү',
@@ -14230,11 +14233,13 @@ $messages['ja'] = array(
 	'centralauth-merge-method-admin' => '管理者によって統合されたアカウント',
 	'centralauth-merge-method-new' => '新規アカウント',
 	'centralauth-merge-method-login' => 'ログインによって作成',
-	'centralauth-merge-method-primary-desc' => 'これはアカウントが最初に統合されたウィキです。アカウント保有者の実際のホームウィキとは異なる可能性があります。',
-	'centralauth-merge-method-empty-desc' => 'ローカルのアカウントに編集履歴がなかったため統合されたことを示す',
+	'centralauth-merge-method-primary-desc' => 'これはアカウントが最初に統合されたウィキです。
+アカウント保有者の実際のホームウィキとは異なる可能性があります。',
+	'centralauth-merge-method-empty-desc' => 'ローカルのアカウントに編集履歴がなかったため統合されたことを示す。',
 	'centralauth-merge-method-mail-desc' => 'メールアドレスがメインアカウントのメールアドレスと一致したため統合したことを示す。',
 	'centralauth-merge-method-password-desc' => 'ローカルのアカウントが有効なパスワードを入力したため統合されたことを示す。',
-	'centralauth-merge-method-admin-desc' => 'ローカルのアカウントがスチュワードによって手動で統合されたことを示す。本機能は安全上の理由から現在停止中です。',
+	'centralauth-merge-method-admin-desc' => 'ローカルのアカウントがスチュワードによって手動で統合されたことを示す。
+この機能はセキュリティ上の理由から現在無効になっています。',
 	'centralauth-merge-method-new-desc' => '本ローカルアカウントが作成されたときに、自動的にグローバルアカウントが作成されたことを示す。',
 	'centralauth-merge-method-login-desc' => '利用者がログインしたときに自動的にローカルアカウントが作成されたことを示す。',
 	'centralauth-finish-title' => '統合完了',
@@ -14245,11 +14250,13 @@ $messages['ja'] = array(
 	'centralauth-finish-problems' => 'トラブルが発生しました。本当にこれらはあなたのアカウントですか？
 [[meta:Help:Unified login problems|ヘルプを確認してください]]...',
 	'centralauth-finish-noconfirms' => 'このパスワードではいかなるアカウントも認証できません。',
-	'centralauth-finish-incomplete' => 'このパスワードでいくつかのアカウントが統合されました。他にもまだ認証されていないアカウントがあります。',
-	'centralauth-merge-attempt' => "'''まだ統合されていないアカウントに対するパスワードを確認中です...'''",
+	'centralauth-finish-incomplete' => 'このパスワードを使用してアカウントをいくつか統合しました。
+他にもまだ認証されていないアカウントがあります。',
+	'centralauth-merge-attempt' => "'''まだ統合されていないアカウントに対して入力されたパスワードを確認しています…'''",
 	'centralauth-attach-list-attached' => '統一アカウント "$1" には、以下のアカウントが含まれます:',
 	'centralauth-attach-title' => 'アカウントの確認',
-	'centralauth-attach-text' => 'このアカウントは、まだ統一アカウントに移行していません。既に統一アカウントをお持ちの場合、そのパスワードを入力することで、このアカウントを統合することができます:',
+	'centralauth-attach-text' => 'このアカウントは、まだ統一アカウントに移行していません。
+既に統一アカウントをお持ちの場合、そのパスワードを入力することで、このアカウントを統合することができます:',
 	'centralauth-attach-submit' => 'アカウントの統合',
 	'centralauth-attach-success' => 'このアカウントは、統一アカウントへ移行されました。',
 	'centralauth' => 'グローバル利用者の管理',
@@ -14286,7 +14293,7 @@ $messages['ja'] = array(
 	'centralauth-admin-list-blocked' => 'ブロック状態',
 	'centralauth-admin-unmerge' => '選択された利用者の統合を解除',
 	'centralauth-admin-merge' => '選択された利用者を統合',
-	'centralauth-admin-bad-input' => '統合の選択が不正です',
+	'centralauth-admin-bad-input' => '統合の選択が無効です',
 	'centralauth-admin-none-selected' => '修正対象のアカウントがひとつも選択されていません。',
 	'centralauth-admin-already-unmerged' => '既に統合解除されている$1をスキップ',
 	'centralauth-admin-unmerge-success' => '$1{{PLURAL:$1|アカウント}}の統合解除に成功しました。',
@@ -18290,7 +18297,7 @@ $messages['ml'] = array(
 ദയവായി ഈ വിക്കിയിലെ കാര്യനിർ‌വാഹകനെ സമീപിച്ച് അത് ഒഴിവാക്കാൻ ആവശ്യപ്പെടുക.
 അത് തടയപ്പെട്ടിരിക്കുമ്പോൾ താങ്കൾക്ക് അംഗത്വങ്ങൾ ലയിപ്പിക്കാൻ കഴിയുന്നതല്ല.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>പരീക്ഷണ ഘട്ടത്തിലാണ്‌</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'അംഗത്വ ലയനം ഇപ്പോൾ പരീക്ഷണ/ തെറ്റുതിരുത്തൽ രീതിയിൽ ആണ് പ്രവർത്തിക്കുന്നത്, അതുകൊണ്ട് ശരിക്കുമുള്ള ലയന ക്രിയകൾ സാദ്ധ്യമല്ലാതാക്കിയിരിക്കുന്നു.
+	'centralauth-disabled-dryrun' => 'അംഗത്വ സംയോജനം ഇപ്പോൾ പരീക്ഷണ / തെറ്റുതിരുത്തൽ രീതിയിൽ ആണ് പ്രവർത്തിക്കുന്നത്, അതുകൊണ്ട് ശരിക്കുമുള്ള ലയന ക്രിയകൾ സാദ്ധ്യമല്ലാതാക്കിയിരിക്കുന്നു.
 ക്ഷമിക്കുക!',
 	'centralauth-error-locked' => 'താങ്കളുടെ അംഗത്വം പൂട്ടപ്പെട്ടിരിക്കുന്നതിനാൽ താങ്കൾക്ക് തിരുത്തലുകൾ നടത്താൻ കഴിയില്ല.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''സം‌യോജിത ലോഗിനെക്കുറിച്ച്''' കൂടുതൽ വായിക്കുക]]…''",
@@ -18376,9 +18383,9 @@ $messages['ml'] = array(
 	'centralauth-admin-delete-description' => 'ആഗോള അംഗത്വം മായ്ക്കുന്നത് ആഗോള ക്രമീകരണങ്ങൾ മായ്ക്കുകയും, ആഗോള അംഗത്വത്തിനോടൊപ്പം ചേർത്തിരിക്കുന്ന പ്രാദേശിക അംഗത്വങ്ങളെ സ്വതന്ത്രമാക്കുകയും, ആഗോള അംഗത്വത്തിന്റെ ഉപയോക്തൃനാമം മറ്റൊരു ഉപയോക്താവിനു തിരഞ്ഞെടുക്കാൻ പ്രാപ്തമാക്കുകയും ചെയ്യും.
 
 പ്രാദേശിക അംഗത്വങ്ങൾ അതത് വിക്കികളിൽ നിലനിൽക്കും. പ്രാദേശിക അംഗത്വങ്ങളുടെ രഹസ്യവാക്ക് സം‌യോജനത്തിനു മുൻപുണ്ടായിരുന്ന രഹസ്യവാക്ക് ആയിരിക്കും.',
-	'centralauth-admin-delete-button' => 'ഈ അംഗത്വം മായ്ക്കുക',
+	'centralauth-admin-delete-button' => 'ഈ അംഗത്വം നീക്കംചെയ്യുക',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" എന്ന ആഗോള അംഗത്വം വിജയകരമായി മായ്ച്ചിരിക്കുന്നു',
-	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>"-നു ആഗോള അംഗത്വം ഇല്ല.',
+	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" എന്ന ആഗോള അംഗത്വം ഇല്ല.',
 	'centralauth-admin-delete-nonexistent' => 'പിഴവ്: "<nowiki>$1</nowiki>" എന്ന ആഗോള അംഗത്വം നിലവിലില്ല.',
 	'centralauth-token-mismatch' => 'ക്ഷമിക്കണം. സെഷൻ ഡാറ്റ നഷ്ടപ്പെട്ടതിനാൽ താങ്കളുടെ ഫോം സമർപ്പിക്കുന്നതിനു കഴിഞ്ഞില്ല.',
 	'centralauth-admin-reason' => 'കാരണം:',
@@ -20341,6 +20348,7 @@ $messages['ne'] = array(
  * @author McDutchie
  * @author Meursault2004
  * @author Naudefj
+ * @author Romaine
  * @author SPQRobin
  * @author Servien
  * @author Siebrand
@@ -20529,11 +20537,11 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-unattached' => 'Niet bevestigd',
 	'centralauth-prefs-complete' => 'Alles in orde!',
 	'centralauth-prefs-migration' => 'Bezig met migreren',
-	'centralauth-prefs-count-attached' => 'Uw gebruiker is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.',
+	'centralauth-prefs-count-attached' => 'Uw gebruikersaccount is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.',
 	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached' => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
-	'centralauth-prefs-manage' => 'Globale gebruiker beheren',
-	'centralauth-prefs-view' => 'Informatie over globale gebruiker bekijken',
+	'centralauth-prefs-manage' => 'Globaal gebruikersaccount beheren',
+	'centralauth-prefs-view' => 'Informatie over globaal gebruikersaccount bekijken',
 	'centralauth-renameuser-merged' => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.',
 	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
@@ -31330,16 +31338,15 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-step3-submit' => '统一账户',
 	'centralauth-merge-no-accounts' => '在中央账户追踪表中找不到配合您名字的账户！
 该数据库必定损坏。',
-	'centralauth-merge-home-password' => '这个账户的自家wiki（列示如下）跟您输入的密码不同。
-请输入自家wiki的密码。',
-	'centralauth-complete' => '登录统一完成！',
-	'centralauth-incomplete' => '登录统一未完成！',
+	'centralauth-merge-home-password' => '这个账户在主维基站点上（在下方列出）的密码跟您输入的密码不同。请输入主维基站点的密码。',
+	'centralauth-complete' => '账户整合完成！',
+	'centralauth-incomplete' => '账户整合未完成！',
 	'centralauth-complete-text' => '您现在可以登录到{{int:Centralauth-groupname}}的任何wiki站点，而无需创建一个新的账号。',
 	'centralauth-incomplete-text' => '当您的帐号被整合后，您将能够登录到{{int:Centralauth-groupname}}的任何一个wiki站点，而无需创建一个新的帐号。',
 	'centralauth-not-owner-text' => '使用者名称："$1"已自动分配给$2上的账户。
 
 如果这是您的账户，请输入该账户的密码以完成账户整合：',
-	'centralauth-blocked-text' => '您的自家wiki（在下面列出）正在封锁中不能编辑。请联络在这个wiki上的操作员去解除封锁它。当它正被封锁时，您是不可以合并您的账户。',
+	'centralauth-blocked-text' => '您在主维基站点（在下面列出）上已被封禁不能编辑。请联络在这个计划上的管理员申请解封。被封禁时您不可以合并您的账户。',
 	'centralauth-notice-dryrun' => "<div class='successbox'>此功能处于演示模式。</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => '账户合并正处于演示／除错模式，因此实际的合并操作已被禁止。抱歉！',
 	'centralauth-error-locked' => '由于您的账户已被锁定，您目前无法编辑',
