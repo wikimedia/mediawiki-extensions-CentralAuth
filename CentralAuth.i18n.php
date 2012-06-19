@@ -28901,7 +28901,7 @@ $messages['tl'] = array(
 	'centralauth-antispoof-desc' => 'Nagdaragdag ng teknolohiyang AntiSpoof sa CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Magsasanib ng maramihang mga kuwenta]] para sa Isang Paglagda Lamang ng Tagagamit',
 	'centralauth-merge-denied' => 'Paumanhin, wala kang pahintulot upang puntahan/pasukin ang pahinang ito.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Lumagda]</span> po lamang upang masuri kung naging ganap na ang pagsasanib ng iyong mga kuwenta.',
+	'centralauth-merge-notlogged' => 'Mangyaring <span class="plainlinks">[$1 lumagda]</span> upang masuri kung ang mga akawnt mo ay buo ang naging pagsasanib.',
 	'centralauth-merge-welcome' => "'''Hindi pa naililipat ang iyong kuwenta patungo sa sistema ng pinag-isang paglagda ng {{int:Centralauth-groupname}}.'''
 
 Kapag pipiliin mong ilipat ang mga kuwenta mo, magkakaroon ka ng kakayahang gamitin ang katulad na pangalan ng tagagamit at hudyat upang lumagda sa lahat ng mga wiki ng {{int:Centralauth-groupname}} na nasa lahat ng makukuhang mga wika.
@@ -29085,8 +29085,8 @@ Ang muling pagpapangalan dito ay makasasanhi ng pagkakakalas ng katutubong tagag
 	'centralauth-invalid-wiki' => 'Walang ganyang kalipunan ng dato na pangwiki: $1',
 	'centralauth-account-exists' => 'Hindi malikha ang kuwenta: may nakakuha na ng hiniling na pangalang pantagagamit sa loob ng sistema ng pinag-isang paglagda.',
 	'centralauth-account-exists-reset' => 'Ang pangalan ng tagagamit na $1 ay hindi nakatala sa wiking ito, subalit umiiral ito sa sistema ng pinag-isang paglagda.',
-	'centralauth-login-progress' => 'Inilalagda ka patungo sa mga proyekto ng {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Iniaalis ka sa pagkakalagda mula sa mga proyekto ng {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Inilalagda ka patungo sa mga wiki ng {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Iniaalis ka sa pagkakalagda mula sa mga wiki ng {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Kusa kang inilagdang papasok sa loob ng iba pang mga proyekto ng {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Kusa kang inalis sa pagkakalagdang papalabas mula sa iba pang mga proyekto ng {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'pandaigdigang ikinubli ni $1 noong $2 na may kasunod na dahilang: $3',
@@ -30832,6 +30832,7 @@ $messages['vro'] = array(
  * @author Srtxg
  */
 $messages['wa'] = array(
+	'centralauth-groupname' => 'del Fondåcion Wikimedia',
 	'centralauth-merge-step3-detail' => 'Asteure, vos estoz presse po-z ahiver on conte unike, avou les Wikis ki shuvèt:',
 	'centralauth-complete' => 'Li rmetaedje-eshonne des contes est tot fwait!',
 	'centralauth-incomplete' => "Li rmetaedje-eshonne des contes n' a nén stî tot fwait !",
