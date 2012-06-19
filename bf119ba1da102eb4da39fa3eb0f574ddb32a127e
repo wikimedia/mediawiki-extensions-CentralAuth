@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANX///Gw\u003d",
+        "filename": "ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2012-06-19T21:13:30Z",
+      "side": 1,
+      "message": "loadFullData() is undocumented. What does that even do?",
+      "revId": "bf119ba1da102eb4da39fa3eb0f574ddb32a127e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
