@@ -9975,7 +9975,7 @@ $messages['ga'] = array(
 	'centralauth-admin-reason' => 'Fáth:',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Alma
  * @author Kaustubh
  * @author Prevert
@@ -10168,7 +10168,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-prefs-manage' => 'Xestionar a súa conta global',
 	'centralauth-prefs-view' => 'Ollar a información do usuario global',
 	'centralauth-renameuser-merged' => 'O usuario "$1" foi trasladado ao sistema de rexistro unificado.
-Ao renomealo, isto provocará que o usuario local sexa alonxado do global.',
+Ao renomealo, isto provocará que o usuario local sexa afastado do global.',
 	'centralauth-renameuser-reserved' => 'O usuario "$2" está reservado para unha conta global.',
 	'centralauth-invalid-wiki' => 'Non existe a base de datos de tal wiki: $1',
 	'centralauth-account-exists' => 'Non se pode crear a conta: o nome de usuario solicitado xa é usado no sistema de unificación do rexistro.',
