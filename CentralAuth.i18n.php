@@ -15828,6 +15828,7 @@ $messages['kn'] = array(
  * @author PuzzletChung
  * @author ToePeu
  * @author Yknok29
+ * @author 아라
  */
 $messages['ko'] = array(
 	'mergeaccount' => '통합 계정으로 로그인',
@@ -15963,7 +15964,7 @@ $messages['ko'] = array(
 	'centralauth-admin-bad-input' => '잘못된 계정 합치기 설정',
 	'centralauth-admin-none-selected' => '변경할 계정이 선택되지 않았습니다.',
 	'centralauth-admin-already-unmerged' => '이미 병합 해제되었기 때문에, $1을 건너뜁니다.',
-	'centralauth-admin-unmerge-success' => '$1개의 병합된 계정이 성공적으로 해제되었습니다.',
+	'centralauth-admin-unmerge-success' => '병합된 계정 $1개가 성공적으로 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
 	'centralauth-admin-delete-description' => '통합 계정 삭제는 모든 통합 설정을 삭제하고, 모든 로컬 계정을 분리하고, 다른 사람이 사용할 수 있도록 할 것입니다.
 모든 로컬의 계정은 계속 존재할 것입니다.
@@ -16011,8 +16012,8 @@ $messages['ko'] = array(
 	'centralauth-prefs-unattached' => '확인되지 않음',
 	'centralauth-prefs-complete' => '통합 완료!',
 	'centralauth-prefs-migration' => '통합하고 있음',
-	'centralauth-prefs-count-attached' => '당신의 계정은 $1개의 프로젝트에서 활동하고 있습니다.',
-	'centralauth-prefs-count-unattached' => '당신과 같은 이름을 쓰는 확인되지 않은 계정이 $1개의 프로젝트에 존재합니다.',
+	'centralauth-prefs-count-attached' => '당신의 계정은 프로젝트 사이트 $1개에서 활동하고 있습니다.',
+	'centralauth-prefs-count-unattached' => '당신과 같은 이름을 쓰는 확인되지 않은 계정이 프로젝트 $1개에 존재합니다.',
 	'centralauth-prefs-detail-unattached' => '이 프로젝트 사이트에서는 통합 계정에 묶여 있음이 확인되지 않았습니다.',
 	'centralauth-prefs-manage' => '통합 계정 관리하기',
 	'centralauth-prefs-view' => '통합 계정 정보 보기',
