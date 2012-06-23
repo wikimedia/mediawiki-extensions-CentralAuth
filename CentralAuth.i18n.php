@@ -6134,7 +6134,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-lookup-rw' => 'Benutzerkonto verwalten',
 	'centralauth-admin-permission' => 'Die Zusammenführung von Benutzerkonten für andere Benutzer kann nur durch Stewards erfolgen.',
 	'centralauth-admin-no-unified' => 'Für diesen Benutzernamen gibt es kein globales Benutzerkonto.',
-	'centralauth-admin-info-header' => 'Globale Benutzerinformation',
+	'centralauth-admin-info-header' => 'Globale Benutzerinformationen',
 	'centralauth-admin-info-id' => 'Benutzerkennung:',
 	'centralauth-admin-info-registered' => 'Registriert:',
 	'centralauth-admin-info-home' => 'Heimatwiki:',
@@ -16546,6 +16546,13 @@ $messages['ku-latn'] = array(
 	'centralauth-editset-reason' => 'Sedem:',
 	'centralauth-editset-submit' => 'Tomar bike',
 	'centralauth-editset-submit-delete' => 'Jê bibe',
+);
+
+/** Kirghiz (Кыргызча)
+ * @author Chorobek
+ */
+$messages['ky'] = array(
+	'centralauth-finish-login' => 'Кирүү',
 );
 
 /** Latin (Latina)
