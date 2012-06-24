@@ -16795,7 +16795,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-rightslog-entry-deleteset' => 'huet d\'Wiki-Groupe "$1" geläscht',
 	'centralauth-rightslog-set-optin' => 'explizit erkläre fir matzemaachen (opt-in)',
 	'centralauth-rightslog-set-optout' => 'explizit erkläre fir net matzemaachen (opt-out)',
-	'autologin' => 'Automatesch aloggen/umellen',
+	'autologin' => 'Automatesch aloggen',
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
 Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatioune fir dës Säit vun alle verlinkten Domaine mat Hellëf vu Billerlinken unzefroen.
 Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
