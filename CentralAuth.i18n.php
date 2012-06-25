@@ -17286,9 +17286,10 @@ $messages['lt'] = array(
 	'mergeaccount' => 'Prisijungimo suvienodinimo būsena',
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Sujungia paskyras]] tarp {{int:Centralauth-groupname}} projektų',
+	'centralauth-antispoof-desc' => 'Į CentralAuth prideda AntiSpoof technologiją',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sujungia kelias paskyras]] į vieną naudotojo prisijungimą',
 	'centralauth-merge-denied' => 'Atleiskite, bet jūs neturite leidimo patekti į šį puslapį.',
-	'centralauth-merge-notlogged' => 'Prašome <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prisijungti]</span>, jei norite patikrinti, ar jūsų paskyros buvo visiškai sujungtos.',
+	'centralauth-merge-notlogged' => 'Prašome <span class="plainlinks">[$1 prisijungti]</span>, jei norite patikrinti, ar jūsų paskyros buvo visiškai sujungtos.',
 	'centralauth-merge-welcome' => "'''Jūsų naudotojo paskyra dar nepervesta į vieningą {{int:Centralauth-groupname}} prisijungimo sistemą.'''
 
 Jei pasirinksite pervesti savo paskyras, galėsite naudojantis tuo pačiu naudotojo vardu ir slaptažodžiu prisijungti prie visų {{int:Centralauth-groupname}} projektų visomis galimomis kalbomis.
@@ -17918,6 +17919,24 @@ Alesane: $1',
  * @author Jagwar
  */
 $messages['mg'] = array(
+	'centralauth-merge-step1-title' => 'Fanombohana ny fampiraisana ny kaonty',
+	'centralauth-merge-step1-detail' => "Atsofohy eto ny tenimiafin'ny kaontinao.
+Ho ampitahaina amin'ny kaonty mitovy anarana eo amin'ny wiki hafa ny tenimiafina ary ny adiresy imailakao.
+Tsy hanova na inona na inona ny mpampiray kaonty raha tsy voamarinao fa milamina ny eo amin'ireo kaonty ireo.",
+	'centralauth-merge-step2-submit' => 'Marinana ny fampahalalana mikasika ny fidirana',
+	'centralauth-merge-dryrun-complete' => "Afaka ampiraisana ho azy ny kaonty rehetra misy !
+
+Tsy mbola misy fanovana eo amin'ny kaontinao.",
+	'centralauth-merge-dryrun-or' => "'''na'''",
+	'centralauth-merge-step3-title' => 'Hamorona kaonty ampiraisana',
+	'centralauth-merge-step3-detail' => "Vonona hamorona kaonty ampiraisana ianao, eo amin'ireo wiki ireo :",
+	'centralauth-merge-step3-submit' => 'Hampiray ny kaonty',
+	'centralauth-merge-no-accounts' => "Tsy nahitana ny kaonty miady amin'ny anaranao teo amin'ny tabilao fikarohana kaonty !
+Mety misy zavatra tsy miady eo amin'ny banky angona.",
+	'centralauth-merge-home-password' => "Manana tenimiafina samihafa amin'ny tenimiafinao ny wiki renin'ireo kaonty voalisitra eo ambany ireo.
+Atsofohy ny tenimiafina ampiasaina eo amin'ny wiki reniny.",
+	'centralauth-complete' => 'Tapitra ny fampiraisana ny anaram-pikambana !',
+	'centralauth-incomplete' => 'Tsy vita tanteraka ny fampiraisana ny anaram-pikambana !',
 	'centralauth-prefs-status' => "Ny kaontinao any amin'ny wiki hafa :",
 	'centralauth-prefs-complete' => 'Milamina daholo !',
 	'centralauth-prefs-count-attached' => 'Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}',
