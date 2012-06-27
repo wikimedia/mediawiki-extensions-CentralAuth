@@ -3211,7 +3211,7 @@ $messages['be'] = array(
 	'centralauth-editset-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author Cesco
  * @author EugeneZelenko
  * @author Jim-by
@@ -3222,7 +3222,7 @@ $messages['be'] = array(
 $messages['be-tarask'] = array(
 	'mergeaccount' => "Стан аб'яднаньня рахункаў",
 	'centralauth-groupname' => 'Фундацыі «Вікімэдыя»',
-	'centralauth-desc' => "[[Special:MergeAccount|Аб'яднаньне рахункаў]] у праектах {{int:Centralauth-groupname}}",
+	'centralauth-desc' => '[[Special:MergeAccount|Аб’яднаньне рахункаў]] у праектах {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Дадае тэхналёгію AntiSpoof да CentralAuth',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў удзельнікаў]] у адзін унівэрсальны",
 	'centralauth-merge-denied' => 'Прабачце, але Вы ня маеце правоў для доступу да гэтай старонкі.',
@@ -3232,7 +3232,7 @@ $messages['be-tarask'] = array(
 Калі Вы вырашыце перанесьці Вашыя рахункі, Вы зможаце выкарыстоўваць адно імя ўдзельніка і пароль, каб уваходзіць ва ўсе вікі {{int:Centralauth-groupname}} ва ўсіх моўных разьдзелах.
 
 Калі хто-небудзь заняў Вашае імя ўдзельніка на адным з праектаў, Ваш рахунак з чужым не аб'яднаецца, але Вы зможаце вырашыць гэтае пытаньне потым з удзельнікам альбо адміністратарам.",
-	'centralauth-merge-step1-title' => "Пачатак аб'яднаньня рахункаў",
+	'centralauth-merge-step1-title' => 'Пачаць аб’яднаньне рахункаў',
 	'centralauth-merge-step1-detail' => 'Калі ласка, увядзіце тут пароль Вашага рахунка.
 Ваш пароль і адрас электроннай пошты будуць параўнаныя са зьвесткамі рахункаў у іншых вікі-праектах.
 Зьмены ня будуць праведзеныя, пакуль Вы не пацьвердзіце правільнасьць супастаўленьня.',
@@ -16105,7 +16105,7 @@ $messages['ko'] = array(
 	'centralauth-editset-optout' => '옵트아웃 방식 (선택한 위키를 제외한 모든 위키를 포함)',
 	'centralauth-editset-legend-edit' => '위키 집합 "$1" 편집하기',
 	'centralauth-editset-legend-view' => '위키 집합 "$1"',
-	'centralauth-editset-legend-new' => '새 위키 설정을 생성하기',
+	'centralauth-editset-legend-new' => '새 위키 설정을 만들기',
 	'centralauth-editset-legend-delete' => '위키 집합 "$1" 삭제하기',
 	'centralauth-editset-subtitle' => '< [[Special:WikiSets|위키 집합 목록]]',
 	'centralauth-editset-name' => '이름:',
@@ -31491,7 +31491,7 @@ $messages['zh-hans'] = array(
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
 	'centralauth-listusers-nolocal' => '未附加或未于本地存在',
 	'centralauth-seconds-ago' => '$1秒前',
-	'centralauth-minutes-ago' => '$1分钟前',
+	'centralauth-minutes-ago' => '$1分前',
 	'centralauth-hours-ago' => '$1小时前',
 	'centralauth-days-ago' => '$1日前',
 	'centralauth-months-ago' => '$1月前',
