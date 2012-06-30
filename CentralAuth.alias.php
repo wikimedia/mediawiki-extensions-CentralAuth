@@ -46,6 +46,16 @@ $specialPageAliases['arz'] = array(
 	'GlobalUsers' => array( 'يوزرات_عامين' ),
 );
 
+/** Assamese (অসমীয়া) */
+$specialPageAliases['as'] = array(
+	'AutoLogin' => array( 'স্বয়ংক্ৰিয়_প্ৰৱেশ' ),
+	'MergeAccount' => array( 'একাউণ্ট_একত্ৰীকৰণ' ),
+	'GlobalGroupMembership' => array( 'গোলকীয়_সদস্যৰ_অধিকাৰসমূহ', 'গোলকীয়_গোটৰ_সদস্য' ),
+	'GlobalGroupPermissions' => array( 'গোলকীয়_গোটৰ_অনুমতি' ),
+	'WikiSets' => array( 'ৱিকিসংহতিসমূহ', 'ৱিকিসংহতিসমূহ_সম্পাদনা' ),
+	'GlobalUsers' => array( 'গোলকীয়_ব্যৱহাৰকাৰী' ),
+);
+
 /** Bulgarian (български) */
 $specialPageAliases['bg'] = array(
 	'CentralAuth' => array( 'Управление_на_единните_сметки' ),
@@ -112,7 +122,7 @@ $specialPageAliases['diq'] = array(
 	'GlobalUsers' => array( 'KarberoGlobal' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
+/** Lower Sorbian (dolnoserbski) */
 $specialPageAliases['dsb'] = array(
 	'CentralAuth' => array( 'Zjadnośenje_kontow' ),
 	'AutoLogin' => array( 'Awtomatiske_pśizjawjenje' ),
@@ -203,7 +213,7 @@ $specialPageAliases['frp'] = array(
 	'GlobalUsers' => array( 'Usanciérs_globâls', 'UsanciérsGlobâls' ),
 );
 
-/** Galician (Galego) */
+/** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'CentralAuth' => array( 'Autenticación_central' ),
 	'AutoLogin' => array( 'Rexistro_automático' ),
@@ -263,7 +273,7 @@ $specialPageAliases['hr'] = array(
 	'GlobalUsers' => array( 'Globalni_suradnici' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'CentralAuth' => array( 'Zjednoćenje_kontow' ),
 	'AutoLogin' => array( 'Awtomatiske_přizjewjenje' ),
@@ -368,7 +378,7 @@ $specialPageAliases['ko'] = array(
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정' ),
 	'GlobalGroupPermissions' => array( '전체그룹권한' ),
-	'WikiSets' => array( '위키설정', '위키설정편집' ),
+	'WikiSets' => array( '위키집합', '위키집합편집' ),
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 );
 
