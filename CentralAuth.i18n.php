@@ -923,7 +923,7 @@ $messages['am'] = array(
 	'centralauth-editset-reason' => 'ምክንያት:',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  * @author Liangent
  */
@@ -5460,7 +5460,7 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'right-globalgrouppermissions' => 'Spravování globálních skupin',
 );
 
-/** Church Slavic (Словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
@@ -6725,7 +6725,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'right-globalgrouppermissions' => 'Hesabanê globalî îdare bike',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -11924,7 +11924,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi skup.',
 	'right-globalgrouppermissions' => 'Uređivanje globalnih skupina',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Dundak
  * @author Michawiki
  */
@@ -24487,7 +24487,7 @@ $messages['ru'] = array(
 	'right-globalgrouppermissions' => 'управление глобальными группами',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
@@ -25150,7 +25150,7 @@ Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
 	'centralauth-editset-nouse' => '(nuddu)',
 );
 
-/** Samogitian (Žemaitėška)
+/** Samogitian (žemaitėška)
  * @author Hugo.arg
  */
 $messages['sgs'] = array(
@@ -27682,7 +27682,7 @@ $messages['sw'] = array(
 	'centralauth-editset-nouse' => '(hana)',
 );
 
-/** Silesian (Ślůnski)
+/** Silesian (ślůnski)
  * @author Herr Kriss
  */
 $messages['szl'] = array(
@@ -27694,6 +27694,7 @@ $messages['szl'] = array(
 /** Tamil (தமிழ்)
  * @author Balajijagadesh
  * @author Karthi.dr
+ * @author Logicwiki
  * @author Shanmugamp7
  * @author Sodabottle
  * @author TRYPPN
@@ -27720,6 +27721,7 @@ $messages['ta'] = array(
 	'centralauth-merge-step3-title' => 'ஒன்றாக்கப்பட்ட கணக்கை உருவாக்கவும்',
 	'centralauth-merge-step3-detail' => 'பின்வரும்  விக்கிகள் இணைக்கப்பட்ட ஒருங்கமைக்கப்பட்ட கணக்கை உருவாக்க நீங்கள் தயாராக உள்ளீர்கள்:',
 	'centralauth-merge-step3-submit' => 'கணக்குகளை ஒன்றாக்கவும்',
+	'centralauth-error-locked' => 'உங்கள் கணக்கு முடக்கப்பட்டுள்ளதால் உங்களால் இப்பக்கத்தை தொகு இயலாது',
 	'centralauth-list-home-title' => 'முகப்பு விக்கி',
 	'centralauth-list-attached-title' => 'இணைக்கப்பட்ட கணக்குகள்',
 	'centralauth-list-unattached-title' => 'இணைக்கப்படாத கணக்குகள்',
