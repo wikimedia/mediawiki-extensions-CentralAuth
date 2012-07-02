@@ -10731,8 +10731,8 @@ $messages['gu'] = array(
 	'centralauth-merge-attempt' => "'''પૂરી પાડેલી ગુપ્તસંજ્ઞાને બાકી રહેલા અવિલીન ખાતાઓ સાથે ચકાસવામાં આવી રહી છે.'''",
 	'centralauth-attach-list-attached' => '"$1" નામનું સંગઠિત ખાતું નીચેનાં ખાતાઓ ધરાવે છે:',
 	'centralauth-attach-title' => ' શું આ તે જ ખાતું છે? ખાત્રી કરશો.',
-	'centralauth-attach-text' => 'આ ખાતાને એકીક્રત નથી કરાયો.
-જો વૈશ્વીક ખાતું તમરું છે, તો તમે વૈશ્વીક પાસવર્ડ વાપરીને આ ખાતાને વિલિન કરી શકો છો',
+	'centralauth-attach-text' => 'આ ખાતાને હજુ સુધી એકીકૃત ખાતામાં લઈ જવાયું નથી.
+જો આ વૈશ્વિક ખાતું પણ તમારું હોય તો, તમે વૈશ્વિક પાસવર્ડ વાપરીને આ ખાતાને વિલીન કરી શકો છો:',
 	'centralauth-attach-submit' => 'ખાતું સ્થળાંતરીત કરો',
 	'centralauth-attach-success' => 'આ ખાતાને એકીકૃત ખાતામાં સ્થળાંતરીત કરાયું હતું',
 	'centralauth' => 'વૈશ્વીક ખાતાનું વ્યવસ્થાપન',
@@ -10741,7 +10741,7 @@ $messages['gu'] = array(
 	'centralauth-admin-username' => 'સભ્ય નામ:',
 	'centralauth-admin-lookup-ro' => 'સભ્ય માહિતી જુઓ',
 	'centralauth-admin-lookup-rw' => 'સભ્ય ખાતું સંચાલિત કરો',
-	'centralauth-admin-permission' => 'અન્ય લોકોના ખતાને માત્ર કર્મચારી વિલિન કરી શકે',
+	'centralauth-admin-permission' => 'અન્ય લોકોના ખાતાને માત્ર કર્મચારીઓ જ વિલીન કરી શકે છે.',
 	'centralauth-admin-no-unified' => 'આ સભ્યનામ માટે કોઈ સંગઠિત ખાતું નથી.',
 	'centralauth-admin-info-header' => 'વૈશ્વિક સભ્ય માહિતી',
 	'centralauth-admin-info-id' => 'સભ્ય નામ',
@@ -25148,6 +25148,15 @@ Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
 	'centralauth-editset-reason' => 'Mutivu:',
 	'centralauth-editset-submit-delete' => 'Elìmina',
 	'centralauth-editset-nouse' => '(nuddu)',
+);
+
+/** Northern Sami (sámegiella)
+ * @author Jeblad
+ */
+$messages['se'] = array(
+	'centralauth-prefs-status' => 'Váldodovddaldaga dilli:',
+	'centralauth-prefs-complete' => 'Buot bures!',
+	'centralauth-prefs-count-attached' => 'Du dovddaldat lea registrerejuvvon $1 {{PLURAL:$1|prošektii|prošeavttaide}}.',
 );
 
 /** Samogitian (žemaitėška)
