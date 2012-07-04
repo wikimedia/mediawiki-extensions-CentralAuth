@@ -239,7 +239,9 @@ $specialPageAliases['gsw'] = array(
 $specialPageAliases['gu'] = array(
 	'CentralAuth' => array( 'કેન્દ્રીયશપથ' ),
 	'AutoLogin' => array( 'સ્વયંભૂલોગીન' ),
-	'GlobalUsers' => array( 'વૈશ્વીકસભ્ય' ),
+	'GlobalGroupMembership' => array( 'વૈશ્વિકસભ્યહક્કો' ),
+	'GlobalGroupPermissions' => array( 'વૈશ્વિકસમૂહપરવાનગી' ),
+	'GlobalUsers' => array( 'વૈશ્વિકસભ્ય' ),
 );
 
 /** Hebrew (עברית) */
