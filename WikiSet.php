@@ -151,7 +151,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $id
+	 * @param $id string|int
 	 * @param $useCache bool
 	 * @return null|WikiSet
 	 */

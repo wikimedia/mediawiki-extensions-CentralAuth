@@ -238,6 +238,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return CentralAuthUser::globalGroupPermissions( $group );
 	}
 
+	/**
+	 * @param $group string
+	 */
 	function doSubmit( $group ) {
 		// Paranoia -- the edit token shouldn't match anyway
 		if ( !$this->userCanEdit( $this->getUser() ) )
@@ -393,6 +396,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param $id string|int
+	 * @return String
+	 */
 	function getWikiSetName( $id ) {
 		if ( $id ) {
 			return WikiSet::newFromID( $id )->getName();
@@ -402,7 +409,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
+	 * @param $group string
 	 */
 	function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.

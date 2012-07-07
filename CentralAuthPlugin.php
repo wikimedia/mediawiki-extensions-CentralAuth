@@ -199,7 +199,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			if ( !$central->exists() && !$central->listUnattached() ) {
 				// Username is unused; set up as a global account
 				// @fixme is this even vaguely reliable? pah
-				$central->register( $password, $email, $realname );
+				$central->register( $password, $email );
 				$central->attach( wfWikiID(), 'new' );
 			}
 		}
