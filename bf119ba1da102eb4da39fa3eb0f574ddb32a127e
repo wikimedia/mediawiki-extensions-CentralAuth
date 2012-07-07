@@ -16,6 +16,24 @@
       "revId": "bf119ba1da102eb4da39fa3eb0f574ddb32a127e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX///Js\u003d",
+        "filename": "ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-07-07T21:50:33Z",
+      "side": 1,
+      "message": "$wgConf-\u003efullLoadCallback \u003d \u0027wmfLoadInitialiseSettings\u0027;\n\nrequire( \"$wmfConfigDir/wgConf.php\" );\nfunction wmfLoadInitialiseSettings( $conf ) {\n\tglobal $wmfConfigDir, $wgConf, $wmfUdp2logDest;\n\t# $wgConf \u003d\u0026 $conf; # b/c alias\n\trequire( \"$wmfConfigDir/InitialiseSettings.php\" );\n}",
+      "parentUuid": "AAAANX///Gw\u003d",
+      "revId": "bf119ba1da102eb4da39fa3eb0f574ddb32a127e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
