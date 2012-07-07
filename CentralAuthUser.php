@@ -483,7 +483,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param $realname String
 	 * @return bool
 	 */
-	function register( $password, $email, $realname ) {
+	function register( $password, $email ) {
 		$dbw = self::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		$ok = $dbw->insert(
@@ -1918,9 +1918,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->saveSettings();
 	}
 
-	/**
-	 * @return
-	 */
 	function saveSettings() {
 		if ( !$this->mStateDirty ) {
 			return;

@@ -441,7 +441,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikiID
+	 * @param $wikiID string
 	 * @return string
 	 * @throws MWException
 	 */

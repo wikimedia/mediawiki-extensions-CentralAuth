@@ -716,6 +716,9 @@ class SpecialCentralAuth extends SpecialPage {
 		return $total;
 	}
 
+	/**
+	 * @return array
+	 */
 	function getMergeMethodDescriptions() {
 		$mergeMethodDescriptions = array();
 		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
