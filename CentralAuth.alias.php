@@ -651,13 +651,13 @@ $specialPageAliases['sw'] = array(
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'CentralAuth' => array( 'Lundayan ng pahintulot' ),
-	'AutoLogin' => array( 'Kusang paglagda' ),
-	'MergeAccount' => array( 'Pagsanibin ang akawnt' ),
-	'GlobalGroupMembership' => array( 'Mga karapatan ng pandaigdigang tagagamit', 'Kasapian sa pandaigdigang pangkat' ),
-	'GlobalGroupPermissions' => array( 'Mga kapahintulutan ng pandaigdigang pangkat' ),
-	'WikiSets' => array( 'Mga pangkat ng pamamatnugot ng wiki' ),
-	'GlobalUsers' => array( 'Pandaigdigang mga tagagamit' ),
+	'CentralAuth' => array( 'Lundayan_ng_pahintulot' ),
+	'AutoLogin' => array( 'Kusang_paglagda' ),
+	'MergeAccount' => array( 'Pagsanibin_ang_akawnt' ),
+	'GlobalGroupMembership' => array( 'Mga_karapatan_ng_pandaigdigang_tagagamit', 'Kasapian_sa_pandaigdigang_pangkat' ),
+	'GlobalGroupPermissions' => array( 'Mga_kapahintulutan_ng_pandaigdigang_pangkat' ),
+	'WikiSets' => array( 'Mga_pangkat_ng_pamamatnugot_ng_wiki' ),
+	'GlobalUsers' => array( 'Pandaigdigang_mga_tagagamit' ),
 );
 
 /** Turkish (Türkçe) */

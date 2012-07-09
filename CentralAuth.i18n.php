@@ -16163,7 +16163,7 @@ $messages['ksh'] = array(
 	'centralauth-desc' => 'Der Metmaacher ier [[Special:MergeAccount|Aanmeldunge zosammeläje]] zwesche de Wikis fun de {{int:Centralauth-groupname}}.',
 	'centralauth-antispoof-desc' => 'Deiht Täschneke jääje e Fälsche bei CentralAuth derbei.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Aanmeldunge zosamme läje]] för nur eimol enlogge ze mösse zwesche de Wikimedia Steftung ier Wikis',
-	'centralauth-merge-denied' => 'Deit mer leid, ävver Do häs nit dat Rääsch, op die Sigg hee zozejriefe.',
+	'centralauth-merge-denied' => 'Deit mer leid, ävver Do häs nit dat Rääsch, op di Sigg heh zohzejriife.',
 	'centralauth-merge-notlogged' => 'Bes esu joot un don <span class="plainlinks">[$1Enlogge]</span>,
 öm ze pröfe, ov Dinge Metmaacher-Name ald all zosamme jelaat wode sin.',
 	'centralauth-merge-welcome' => "'''Ding Aanmeldung es noch nit op et Süstem fun de jemeinsame Aanmeldunge fun {{int:Centralauth-groupname}} ömjeschtallt.'''
