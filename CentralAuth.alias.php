@@ -676,6 +676,11 @@ $specialPageAliases['tt-cyrl'] = array(
 	'GlobalUsers' => array( 'Глобаль_кулланучылар' ),
 );
 
+/** Ukrainian (українська) */
+$specialPageAliases['uk'] = array(
+	'GlobalGroupMembership' => array( 'Глобальні_права' ),
+);
+
 /** vèneto (vèneto) */
 $specialPageAliases['vec'] = array(
 	'MergeAccount' => array( 'UnissiUtense' ),
