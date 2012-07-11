@@ -483,7 +483,7 @@ $specialPageAliases['mt'] = array(
 	'GlobalUsers' => array( 'UtentiGlobali' ),
 );
 
-/** Erzya (Эрзянь) */
+/** Erzya (эрзянь) */
 $specialPageAliases['myv'] = array(
 	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),
 );

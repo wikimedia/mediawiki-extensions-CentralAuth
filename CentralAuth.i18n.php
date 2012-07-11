@@ -2651,7 +2651,7 @@ Səbəb: $1',
 	'right-globalgrouppermissions' => 'Qlobal qrupları düzəlt',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  * @author Comp1089
  * @author Haqmar
@@ -5074,7 +5074,7 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 	'right-globalgrouppermissions' => 'Gestionar els grups globals',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -5133,7 +5133,7 @@ $messages['co'] = array(
 	'centralauth-editset-name' => 'Nome:',
 );
 
-/** Crimean Turkish (Latin script) (‪Qırımtatarca (Latin)‬)
+/** Crimean Turkish (Latin script) (‪qırımtatarca (Latin)‬)
  * @author Don Alessandro
  */
 $messages['crh-latn'] = array(
@@ -5147,7 +5147,7 @@ $messages['crh-latn'] = array(
 	'centralauth-prefs-manage' => 'Global esapnı idare et',
 );
 
-/** Crimean Turkish (Cyrillic script) (‪Къырымтатарджа (Кирилл)‬)
+/** Crimean Turkish (Cyrillic script) (‪къырымтатарджа (Кирилл)‬)
  * @author Don Alessandro
  */
 $messages['crh-cyrl'] = array(
@@ -11609,6 +11609,17 @@ $3 हटाया गया',
 	'right-globalgrouppermissions' => 'वैश्विक ग्रुपोंको मैनेज करें',
 );
 
+/** Fiji Hindi (Latin script) (Fiji Hindi)
+ * @author Thakurji
+ */
+$messages['hif-latn'] = array(
+	'centralauth-merge-method-empty' => 'koi yogdaan nai hae',
+	'centralauth-finish-password' => 'Password:',
+	'centralauth-finish-login' => 'Login karo',
+	'centralauth-admin-username' => 'Sadasya ke naam:',
+	'centralauth-admin-info-id' => 'Sadasya ke ID:',
+);
+
 /** Hiligaynon (Ilonggo)
  * @author Jose77
  */
@@ -15246,7 +15257,7 @@ Other accounts are not yet confirmed.',
 	'right-globalgrouppermissions' => 'عالامدىق توپتاردى رەتتەۋ',
 );
 
-/** Kazakh (Cyrillic script) (‪Қазақша (кирил)‬)
+/** Kazakh (Cyrillic script) (‪қазақша (кирил)‬)
  * @author GaiJin
  * @author Kaztrans
  */
@@ -15428,7 +15439,7 @@ Other accounts are not yet confirmed.',
 	'right-globalgrouppermissions' => 'Ғаламдық топтарды реттеу',
 );
 
-/** Kazakh (Latin script) (‪Qazaqşa (latın)‬) */
+/** Kazakh (Latin script) (‪qazaqşa (latın)‬) */
 $messages['kk-latn'] = array(
 	'mergeaccount' => 'Tirkelgi birizdendirw küýi',
 	'centralauth-desc' => 'Wikimedia qorı wïkïler arasında [[Special:MergeAccount|tirkelgi biriktirw]]',
@@ -16046,7 +16057,7 @@ $messages['ko'] = array(
 	'centralauth-rightslog-entry-usergroups' => '$1의 통합 그룹 소속을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 변경함. 추가: $2; 제거: $3',
-	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 변경',
+	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 바꾸기 기록을 포함하고 있습니다.',
 	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 집합 $1을(를) 생성하였습니다: $3',
 	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 변경함',
@@ -16137,7 +16148,7 @@ $messages['ko'] = array(
 	'right-globalgrouppermissions' => '공통 권한 관리',
 );
 
-/** Karachay-Balkar (Къарачай-Малкъар)
+/** Karachay-Balkar (къарачай-малкъар)
  * @author Iltever
  */
 $messages['krc'] = array(
@@ -16878,7 +16889,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'right-globalgrouppermissions' => 'Gestioun vu globale Gruppen',
 );
 
-/** Lezghian (Лезги)
+/** Lezghian (лезги)
  * @author Migraghvi
  */
 $messages['lez'] = array(
@@ -17949,7 +17960,7 @@ Atsofohy ny tenimiafina ampiasaina eo amin'ny wiki reniny.",
 	'centralauth-prefs-count-attached' => 'Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}',
 );
 
-/** Eastern Mari (Олык Марий)
+/** Eastern Mari (олык марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -19547,7 +19558,7 @@ Kun af li grupp ma jeżistix sakemm ikunu għadhom ma ngħatawlux il-permessi.",
 	'centralauth-editset-badwikis' => 'Il-{{PLURAL:$2|wiki segwenti ma teżistix|wikis segwenti ma jeżistux}}: $1.',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Amdf
  * @author Botuzhaleny-sodamo
  */
@@ -19619,7 +19630,7 @@ $messages['nah'] = array(
 	'centralauth-editset-reason' => 'Tlèka:',
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Atluxity
  * @author EivindJ
  * @author Event
@@ -29679,7 +29690,7 @@ $messages['tt-cyrl'] = array(
 	'centralauth-editset-legend-rw' => 'Вики җыелмасын ясау яисә үзгәртү',
 );
 
-/** Tuvinian (Тыва дыл)
+/** Tuvinian (тыва дыл)
  * @author Sborsody
  */
 $messages['tyv'] = array(
@@ -30322,7 +30333,7 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'right-globalgrouppermissions' => 'Gestion dei grupi globali',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
@@ -30905,7 +30916,7 @@ $messages['wuu'] = array(
 	'centralauth-editset-reason' => '理由：',
 );
 
-/** Kalmyk (Хальмг)
+/** Kalmyk (хальмг)
  * @author Huuchin
  */
 $messages['xal'] = array(
