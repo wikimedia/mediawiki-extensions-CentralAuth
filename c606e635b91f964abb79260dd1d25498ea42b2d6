@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//8jE\u003d",
+        "filename": "ApiQueryGlobalUserInfo.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2012-07-11T20:26:19Z",
+      "side": 1,
+      "message": "\u0027url\u0027 used to be a $wgCanonicalServer it seems. Now it will be a protocol here. I\u0027m actually not sure how code in getHostname() makes any sense at all.",
+      "revId": "c606e635b91f964abb79260dd1d25498ea42b2d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
