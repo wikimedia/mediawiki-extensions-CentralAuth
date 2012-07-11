@@ -16,6 +16,24 @@
       "revId": "c606e635b91f964abb79260dd1d25498ea42b2d6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//8ic\u003d",
+        "filename": "ApiQueryGlobalUserInfo.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-07-11T21:00:06Z",
+      "side": 1,
+      "message": "https://gerrit.wikimedia.org/r/gitweb?p\u003dmediawiki/extensions/CentralAuth.git;a\u003dcommit;f\u003dApiQueryGlobalUserInfo.php;h\u003d459ec956465e6d36206d8fc3fdfc364c729719de\n\nhttps://bugzilla.wikimedia.org/show_bug.cgi?id\u003d26664\n\n\u003e $wiki \u003d WikiMap::getWiki( \u0027enwiki\u0027 );\n\n\u003e var_dump( $wiki-\u003egetHostname() );\nstring(16) \"en.wikipedia.org\"\n\n\u003e var_dump( $wiki );\nobject(WikiReference)#24 (5) {\n  [\"mMinor\":\"WikiReference\":private]\u003d\u003e\n  string(2) \"en\"\n  [\"mMajor\":\"WikiReference\":private]\u003d\u003e\n  string(9) \"wikipedia\"\n  [\"mCanonicalServer\":\"WikiReference\":private]\u003d\u003e\n  string(23) \"http://en.wikipedia.org\"\n  [\"mServer\":\"WikiReference\":private]\u003d\u003e\n  string(18) \"//en.wikipedia.org\"\n  [\"mPath\":\"WikiReference\":private]\u003d\u003e\n  string(8) \"/wiki/$1\"\n}\n\nI guess we probably want the protocol on it too.. so I should expose $mCanonicalServer and use that instead",
+      "parentUuid": "AAAAQX//8jE\u003d",
+      "revId": "c606e635b91f964abb79260dd1d25498ea42b2d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
