@@ -77,10 +77,10 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$accounts = $user->queryAttached();
 			foreach ( $accounts as $account ) {
 				$dbname = $account['wiki'];
-
+				$wiki = WikiMap::getWiki( $dbname );
 				$a = array(
 					'wiki' => $dbname,
-					'url' => $this->getUrl( $dbname ),
+					'url' => $wiki->getCanonicalServer(),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
 					'editcount' => $account['editCount']
@@ -112,19 +112,6 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			}
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
 		}
-	}
-
-	/**
-	 * @param $dbname string
-	 * @return string
-	 */
-	public function getUrl( $dbname ){
-		global $wgConf;
-
-		list( $major, $minor ) = $wgConf->siteFromDB( $dbname );
-		$minor = str_replace( '_', '-', $minor );
-		return $wgConf->get( 'wgCanonicalServer', $dbname, $major,
-			array( 'lang' => $minor, 'site' => $major ) );
 	}
 
 	public function getCacheMode( $params ) {
