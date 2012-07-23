@@ -608,6 +608,14 @@ $messages['egl'] = array(
 	'centralauth-merge-dryrun-or' => "'''o'''",
 );
 
+/** Ṫuroyo (Ṫuroyo)
+ * @author Ariyo
+ */
+$messages['tru'] = array(
+	'centralauth-editset-name' => 'Işmo:',
+	'centralauth-editset-type' => 'Şıkıl:',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -8742,6 +8750,7 @@ $messages['fa'] = array(
  * @author Cimon Avaro
  * @author Crt
  * @author Jaakonam
+ * @author Linnea
  * @author Nedergard
  * @author Nike
  * @author Olli
@@ -8752,7 +8761,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'mergeaccount' => 'Käyttäjätunnusten yhdistämisen tila',
-	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-groupname' => 'Wikimedia-säätiö',
 	'centralauth-desc' => 'Mahdollistaa [[Special:MergeAccount|käyttäjätunnusten yhdistämisen]] {{int:Centralauth-groupname}} -wikeissä.',
 	'centralauth-antispoof-desc' => 'Lisää AntiSpoof-tekniikan CentralAuthiin',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.',
@@ -8763,10 +8772,10 @@ $messages['fi'] = array(
 Jos päivität tunnuksesi, voit jatkossa kirjautua kaikkiin {{int:Centralauth-groupname}} -hankkeisiin ja niiden kieliversioihin samalla käyttäjätunnuksella ja salasanalla.
 
 Jos käyttäjänimesi on jo varattu toisessa projektissa, yhdistäminen ei haittaa näitä toisia käyttäjiä, mutta antaa sinulle mahdollisuuden neuvotella käyttäjänimestä näiden toisten käyttäjien kanssa, tai myöhemmin ylläpitäjän kanssa.",
-	'centralauth-merge-step1-title' => 'Tunnusten yhdistäminen',
+	'centralauth-merge-step1-title' => 'Aloita tunnusten yhdistäminen',
 	'centralauth-merge-step1-detail' => 'Anna tunnuksesi salasana tähän.
 Salasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä oleviin tunnuksiin, niiden samuuden varmistamiseksi. Mitään muutoksia ei toteuteta ennen kuin varmistat, että kaikki näyttää hyvältä.',
-	'centralauth-merge-step1-submit' => 'Vahvista yhdistäminen',
+	'centralauth-merge-step1-submit' => 'Vahvista sisäänkirjautumistiedot',
 	'centralauth-merge-step2-title' => 'Muiden tunnusten yhdistäminen',
 	'centralauth-merge-step2-detail' => 'Joidenkin käyttäjätunnusten samuutta kotiwikin käyttäjätunnukseen ei voitu varmistaa. Jos nämä tunnukset kuuluvat sinulle, voit todistaa niiden kuuluvan sinulle antamalla niiden salasanan.',
 	'centralauth-merge-step2-submit' => 'Vahvista yhdistäminen',
@@ -15862,7 +15871,8 @@ $messages['ko'] = array(
 만약 다른 누군가가 당신의 사용자 이름을 사용하고 있다면 이것을 빼앗을 수는 없습니다. 하지만 나중에 이 문제를 해결할 기회가 될 수는 있습니다.",
 	'centralauth-merge-step1-title' => '계정을 통합하기',
 	'centralauth-merge-step1-detail' => '여기에 계정의 비밀번호를 입력해 주세요.
-위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다. 모든 것을 확인하기 전까지 아무 것도 바뀌지 않습니다.',
+위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
+모든 것을 확인하기 전까지 아무 것도 바뀌지 않습니다.',
 	'centralauth-merge-step1-submit' => '로그인 정보 확인',
 	'centralauth-merge-step2-title' => '더 많은 계정 확인',
 	'centralauth-merge-step2-detail' => '계정 일부는 주 위키와 일치하지 않습니다.
@@ -15918,7 +15928,7 @@ $messages['ko'] = array(
 	'centralauth-merge-method-password' => '비밀번호로 확인됨',
 	'centralauth-merge-method-admin' => '통합된 계정 관리',
 	'centralauth-merge-method-new' => '새 계정',
-	'centralauth-merge-method-login' => '로그인으로 생성됨',
+	'centralauth-merge-method-login' => '로그인으로 만들어짐',
 	'centralauth-merge-method-primary-desc' => '이것은 계정이 처음 병합된 위키입니다.
 해당 사용자의 실제 주 위키와 다를 수 있습니다.',
 	'centralauth-merge-method-empty-desc' => '로컬 계정의 편집이 없기 때문에 계정이 병합되었음을 의미합니다.',
@@ -15926,8 +15936,8 @@ $messages['ko'] = array(
 	'centralauth-merge-method-password-desc' => '사용자가 로컬 계정의 비밀번호를 입력하여 계정이 병합되었음을 의미합니다.',
 	'centralauth-merge-method-admin-desc' => '사무장에 의해 로컬 계정이 병합되었음을 의미합니다.
 이 기능은 현재는 보안상의 이유로 비활성화되었습니다.',
-	'centralauth-merge-method-new-desc' => '로컬 계정을 생설할 때 통합 계정이 자동적으로 생성되었음을 의미합니다.',
-	'centralauth-merge-method-login-desc' => '로컬 계정이 사용자가 로그인할 때 자동적으로 생성되었음을 의미합니다.',
+	'centralauth-merge-method-new-desc' => '로컬 계정을 만들 때 통합 계정이 자동적으로 만들었음을 의미합니다.',
+	'centralauth-merge-method-login-desc' => '로컬 계정이 사용자가 로그인할 때 자동적으로 만들었음을 의미합니다.',
 	'centralauth-finish-title' => '통합 마치기',
 	'centralauth-finish-text' => '이 계정의 주인이라면 다른 계정의 암호를 여기에 쓰는 것으로 간단히 로그인 통합 과정을 마칠 수 있습니다.',
 	'centralauth-finish-password' => '비밀번호:',
@@ -15979,13 +15989,13 @@ $messages['ko'] = array(
 	'centralauth-admin-unmerge' => '선택한 계정 병합 해제',
 	'centralauth-admin-merge' => '선택한 계정 합치기',
 	'centralauth-admin-bad-input' => '잘못된 계정 합치기 설정',
-	'centralauth-admin-none-selected' => '변경할 계정이 선택되지 않았습니다.',
+	'centralauth-admin-none-selected' => '수정할 계정이 선택되지 않았습니다.',
 	'centralauth-admin-already-unmerged' => '이미 병합 해제되었기 때문에, $1을 건너뜁니다.',
 	'centralauth-admin-unmerge-success' => '병합된 계정 $1개가 성공적으로 해제되었습니다.',
 	'centralauth-admin-delete-title' => '계정 지우기',
 	'centralauth-admin-delete-description' => '통합 계정 삭제는 모든 통합 설정을 삭제하고, 모든 로컬 계정을 분리하고, 다른 사람이 사용할 수 있도록 할 것입니다.
 모든 로컬의 계정은 계속 존재할 것입니다.
-통합 이전에 생성된 로컬 계정의 비밀번호는 통합 이전의 비밀번호로 되돌려질 것입니다.',
+통합 이전에 만든 로컬 계정의 비밀번호는 통합 이전의 비밀번호로 되돌려질 것입니다.',
 	'centralauth-admin-delete-button' => '이 계정 지우기',
 	'centralauth-admin-delete-success' => '통합 계정 "<nowiki>$1</nowiki>"이 성공적으로 삭제되었습니다.',
 	'centralauth-admin-nonexistent' => '통합 계정 "<nowiki>$1</nowiki>"이(가) 존재하지 않습니다.',
@@ -16005,7 +16015,7 @@ $messages['ko'] = array(
 	'centralauth-admin-status-hidden-oversight' => '계정이 완전히 숨겨짐',
 	'centralauth-admin-status-submit' => '설정',
 	'centralauth-admin-status-nonexistent' => '오류:  "<nowiki>$1</nowiki>" 통합 계정이 없습니다.',
-	'centralauth-admin-setstatus-success' => '통합 계정의 상태를 변경했습니다.',
+	'centralauth-admin-setstatus-success' => '통합 계정의 상태를 바꾸었습니다.',
 	'centralauth-admin-status-reasons' => '* 일반적인 잠금 이유
 ** 훼손 목적의 계정
 ** 광고/스팸 목적의 계정
@@ -16061,13 +16071,15 @@ $messages['ko'] = array(
 	'centralauth-rightslog-name' => '공통 권한 기록',
 	'centralauth-rightslog-entry-usergroups' => '$1의 통합 그룹 소속을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 변경함. 추가: $2; 제거: $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 바꿈.
+추가: $2;
+제거: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 바꾸기 기록을 포함하고 있습니다.',
-	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 집합 $1을(를) 생성하였습니다: $3',
-	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 변경함',
+	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 집합 $1을(를) 만들었습니다: $3',
+	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 바꿈',
 	'centralauth-rightslog-entry-setnewtype' => '위키 집합 "$1"의 유형을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-entry-setchange' => '"$1"의 위키 설정을 변경함: 추가: $2; 제거: $3',
+	'centralauth-rightslog-entry-setchange' => '"$1"의 위키 설정을 바꿈: 추가: $2; 제거: $3',
 	'centralauth-rightslog-entry-deleteset' => '위키 집합 "$1"을 삭제함',
 	'centralauth-rightslog-set-optin' => '옵트인 방식',
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
@@ -16099,21 +16111,21 @@ $messages['ko'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 권한을 가진 사용자의 목록]]',
 	'centralauth-editgroup-restrictions' => '이 그룹을 활성화할 위키의 집합:',
 	'centralauth-editgroup-noset' => '(없음)',
-	'centralauth-editgroup-submit' => '그룹 권한에 대한 변경을 저장',
+	'centralauth-editgroup-submit' => '그룹 권한에 대한 바뀜을 저장',
 	'centralauth-editgroup-perms' => '부여된 권한:',
 	'centralauth-editgroup-reason' => '이유:',
-	'centralauth-editgroup-success' => '이 그룹의 권한이 변경되었습니다.',
-	'centralauth-editgroup-success-text' => '당신은 $1 그룹에 대한 권한을 성공적으로 변경하였습니다.
+	'centralauth-editgroup-success' => '이 그룹의 권한이 바뀌었습니다.',
+	'centralauth-editgroup-success-text' => '$1 그룹에 대한 권한을 성공적으로 바꾸었습니다.
 [[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아가기]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-globalgrouppermissions-knownwiki' => '계정을 가지고 있는 위키:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' 통합 계정은 당신이 지정한 위키('' $2 '')에서 유효하지 않습니다.
 당신은 권한을 엉뚱한 사용자에게 줄 수도 있습니다.",
 	'centralauth-editset' => '위키 집합',
-	'centralauth-editset-legend-rw' => '위키 집합 생성 및 편집하기',
+	'centralauth-editset-legend-rw' => '위키 집합 만들기 및 편집하기',
 	'centralauth-editset-legend-ro' => '위키 집합의 목록',
-	'centralauth-editset-intro-rw' => '다음 위키 집합이 이미 생성되어 있습니다.
-당신은 이 집합을 보거나, 수정 혹은 새 집합을 생성할 수 있습니다.',
+	'centralauth-editset-intro-rw' => '다음 위키 집합이 이미 만들어져 있습니다.
+당신은 이 집합을 보거나, 수정 혹은 새 집합을 만들 수 있습니다.',
 	'centralauth-editset-intro-ro' => '다음은 위키 집합의 목록입니다.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|삭제]])',
 	'centralauth-editset-new' => '새 설정 만들기',
@@ -16139,11 +16151,11 @@ $messages['ko'] = array(
 	'centralauth-editset-nouse' => '(없음)',
 	'centralauth-editset-usage' => '사용되는 권한:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2}}다음 위키는 존재하지 않습니다: $1.',
-	'centralauth-editset-success' => '위키 설정이 성공적으로 변경되었습니다.',
+	'centralauth-editset-success' => '위키 설정이 성공적으로 바뀌었습니다.',
 	'centralauth-editset-success-delete' => '위키 집합을 성공적으로 삭제하였습니다.',
 	'centralauth-editset-return' => '이전으로 돌아가기',
 	'centralauth-readonly' => 'CentralAuth 데이터베이스 잠김',
-	'centralauth-readonlytext' => '정기 데이터베이스 정비 작업 등의 이유로  지금 CentralAuth 데이터베이스가 잠겨서 항목을 만들거나 변경하지 못합니다. 작업이 끝나면 정상화될 것입니다.',
+	'centralauth-readonlytext' => '정기 데이터베이스 정비 작업 등의 이유로 지금 CentralAuth 데이터베이스가 잠겨서 항목을 만들거나 바꾸지 못합니다. 작업이 끝나면 정상화될 것입니다.',
 	'right-globalgroupmembership' => '사용자의 공통 권한 조정',
 	'right-centralauth-autoaccount' => '통합 계정으로 자동 로그인하기',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
@@ -30043,6 +30055,7 @@ $messages['uk'] = array(
 	'centralauth-editset-success-delete' => 'Набір вікі успішно видалено.',
 	'centralauth-editset-return' => 'Повернутися до головного виду',
 	'centralauth-readonly' => 'база даних CentralAuth заблокована',
+	'centralauth-readonlytext' => 'База даних централізованої автеніфікації наразі заблокована для нових записів та інших змін, імовірно, програмою догляду за базою, після якого вона повернеться до звичайного режиму.',
 	'right-globalgroupmembership' => 'зміна членства у глобальних групах',
 	'right-centralauth-autoaccount' => 'Автоматичний вхід із глобального облікового запису',
 	'right-centralauth-unmerge' => "Роз'єднання глобальних облікових записів",

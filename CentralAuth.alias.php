@@ -679,6 +679,7 @@ $specialPageAliases['tt-cyrl'] = array(
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
 	'GlobalGroupMembership' => array( 'Глобальні_права' ),
+	'WikiSets' => array( 'Набори_вікі' ),
 );
 
 /** vèneto (vèneto) */
