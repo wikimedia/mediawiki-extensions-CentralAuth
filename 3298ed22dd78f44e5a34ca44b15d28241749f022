@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//74o\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-29T21:15:32Z",
+      "side": 1,
+      "message": "Isn\u0027t the line above already supposed to guard against this? (Checking whether a \"CentralAuth\" account exists).\n\nDoing a db query here looks a bit weird.",
+      "revId": "3298ed22dd78f44e5a34ca44b15d28241749f022",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
