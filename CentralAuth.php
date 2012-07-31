@@ -282,6 +282,10 @@ $wgResourceModules['ext.centralauth.noflash'] = array(
 	'styles' => 'ext.centralauth.noflash.css',
 ) + $commonModuleInfo;
 
+$wgResourceModules['ext.centralauth.globalusers'] = array(
+	'styles' => 'ext.centralauth.globalusers.css',
+) + $commonModuleInfo;
+
 // If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
 // Though, doing it this way, AntiSpoof has to be loaded/included first
 // I guess this is bug 30234
