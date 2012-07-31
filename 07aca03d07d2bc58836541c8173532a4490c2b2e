@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//6ts\u003d",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-07-31T21:24:48Z",
+      "side": 1,
+      "message": "This queries the WikiSet data for all global groups in existence, which is overkill. Instead, what you should do is this:\n\n* after the global_user_groups query in getUserGroups(), iterate over the result, gathering all rows in an array and all the group names encountered in a separate array\n* do a single query to get the wikisets for those group names\n* iterate over the result of the first query again and process it for real this time, using the wikiset info you now have\n\nWhat would be even better (but outside of the scope of this change, because this issue was already present in the file before you touched it) is eliminating the query-per-row in getUserGroups() and instead getting all the needed data in two batch queries in a preprocessResult() function. If you\u0027d like to know more about that, talk to me on IRC.",
+      "revId": "07aca03d07d2bc58836541c8173532a4490c2b2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
