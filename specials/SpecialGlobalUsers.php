@@ -158,11 +158,29 @@ class GlobalUsersPager extends UsersPager {
 		if ( $row->gug_numgroups == 1 ) {
 			return User::makeGroupLinkWiki( $row->gug_singlegroup, User::getGroupMember( $row->gug_singlegroup ) );
 		}
+
+		$sets = array();
+		$resSets = $this->mDb->select(
+			array( 'global_user_groups', 'global_group_restrictions', 'wikiset' ),
+			array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
+			array( 'ggr_group=gug_group', 'ggr_set=ws_id', 'gug_user' => $row->gu_id ),
+			__METHOD__
+		);
+		foreach ( $resSets as $setRow ) {
+			$sets[$setRow->ggr_group] = WikiSet::newFromRow( $setRow );
+		}
+
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
 		$rights = array();
 		foreach ( $result as $row2 ) {
-			$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+			if ( isset( $sets[$row2->gug_group] ) && !$sets[$row2->gug_group]->inSet() ) {
+				$group = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+				$rights[] = Html::element( 'span', array( 'style' => 'color: grey;' ), $group );
+			} else {
+				$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+			}
 		}
+
 		return implode( ', ', $rights );
 	}
 

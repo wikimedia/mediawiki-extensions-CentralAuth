@@ -182,7 +182,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Load user groups and rights from the database.
 	 */
-	protected function loadGroups() {
+	public function loadGroups() {
 		if ( isset( $this->mGroups ) ) {
 			// Already loaded
 			return;
