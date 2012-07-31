@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//69o\u003d",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-07-31T17:24:14Z",
+      "side": 1,
+      "message": "You should use a CSS class rather than hardcoding color: grey here",
+      "revId": "79aebb0dd2546eb169c63629b46ddd6dd656acaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
