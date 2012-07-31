@@ -23,6 +23,7 @@ class SpecialGlobalUsers extends SpecialPage {
 			$pg->setUsername( $rqUsername );
 		}
 
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalusers' );
 		$this->getOutput()->addHTML( $pg->getPageHeader() );
 		$this->getOutput()->addHTML( $pg->getNavigationBar() );
 		$this->getOutput()->addHTML( '<ul>' . $pg->getBody() . '</ul>' );
@@ -32,10 +33,23 @@ class SpecialGlobalUsers extends SpecialPage {
 
 class GlobalUsersPager extends UsersPager {
 	protected $requestedGroup = false, $requestedUser;
+	private $wikiSets;
 
 	function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context, $par );
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
+
+		$wikiSets = array();
+		$resSets = $this->mDb->select(
+			array( 'global_group_restrictions', 'wikiset' ),
+			array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
+			array( 'ggr_set=ws_id' ),
+			__METHOD__
+		);
+
+		foreach ( $resSets as $setRow ) {
+			$this->wikiSets[$setRow->ggr_group] = WikiSet::newFromRow( $setRow );
+		}
 	}
 
 	/**
@@ -158,11 +172,18 @@ class GlobalUsersPager extends UsersPager {
 		if ( $row->gug_numgroups == 1 ) {
 			return User::makeGroupLinkWiki( $row->gug_singlegroup, User::getGroupMember( $row->gug_singlegroup ) );
 		}
+
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
 		$rights = array();
 		foreach ( $result as $row2 ) {
-			$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+			if ( isset( $this->wikiSets[$row2->gug_group] ) && !$this->wikiSets[$row2->gug_group]->inSet() ) {
+				$group = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+				$rights[] = Html::element( 'span', array( 'class' => 'groupnotappliedhere' ), $group );
+			} else {
+				$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+			}
 		}
+
 		return implode( ', ', $rights );
 	}
 
