@@ -23,6 +23,7 @@ class SpecialGlobalUsers extends SpecialPage {
 			$pg->setUsername( $rqUsername );
 		}
 
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalusers' );
 		$this->getOutput()->addHTML( $pg->getPageHeader() );
 		$this->getOutput()->addHTML( $pg->getNavigationBar() );
 		$this->getOutput()->addHTML( '<ul>' . $pg->getBody() . '</ul>' );
@@ -32,6 +33,7 @@ class SpecialGlobalUsers extends SpecialPage {
 
 class GlobalUsersPager extends UsersPager {
 	protected $requestedGroup = false, $requestedUser;
+	private $wikiSets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context, $par );
@@ -158,12 +160,39 @@ class GlobalUsersPager extends UsersPager {
 		if ( $row->gug_numgroups == 1 ) {
 			return User::makeGroupLinkWiki( $row->gug_singlegroup, User::getGroupMember( $row->gug_singlegroup ) );
 		}
+
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
+		$globalgroups = array();
+		foreach ( $result as $row2 ) {
+			if ( !isset( $this->wikiSets[$row2->gug_group] ) ) { // We don't need to get the sets of groups we already know about.
+				$globalgroups[] = $row2->gug_group;
+			}
+		}
+
+		if ( count ( $globalgroups ) != 0 ) {
+			$wikiSetQuery = $this->mDb->select(
+				array( 'global_group_restrictions', 'wikiset' ),
+				array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
+				array( 'ggr_set=ws_id', 'ggr_group' => $globalgroups ),
+				__METHOD__
+			);
+
+			foreach ( $wikiSetQuery as $wikiSetRow ) {
+				$this->wikiSets[$wikiSetRow->ggr_group] = WikiSet::newFromRow( $wikiSetRow );
+			}
+		}
+
 		$rights = array();
 		foreach ( $result as $row2 ) {
-			$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+			if ( isset( $this->wikiSets[$row2->gug_group] ) && !$this->wikiSets[$row2->gug_group]->inSet() ) {
+				$group = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+				$rights[] = Html::element( 'span', array( 'class' => 'groupnotappliedhere' ), $group );
+			} else {
+				$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+			}
 		}
-		return implode( ', ', $rights );
+
+		return $this->getLanguage()->listToText( $rights );
 	}
 
 	/**
