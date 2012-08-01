@@ -128,6 +128,17 @@ class GlobalUsersPager extends UsersPager {
 		return Html::rawElement( 'li', array(), wfMsgExt( 'centralauth-listusers-item', array('parseinline'), $user, $info ) );
 	}
 
+	function doBatchLookups() {
+		$batch = new LinkBatch();
+		# Give some pointers to make user links
+		foreach ( $this->mResult as $row ) {
+			$batch->add( NS_USER, $row->gu_name );
+			$batch->add( NS_USER_TALK, $row->gu_name );
+		}
+		$batch->execute();
+		$this->mResult->rewind();
+	}
+
 	/**
 	 * @return String
 	 */
