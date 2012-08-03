@@ -377,6 +377,7 @@ You may view and modify any of them, or create a new set.',
 );
 
 /** Message documentation (Message documentation)
+ * @author Angus
  * @author Aotake
  * @author Beau
  * @author Darth Kule
@@ -392,6 +393,7 @@ You may view and modify any of them, or create a new set.',
  * @author McDutchie
  * @author Meno25
  * @author Mormegil
+ * @author Nemo bis
  * @author Nenino 10
  * @author Olli
  * @author Purodha
@@ -559,6 +561,7 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
+	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
 	'centralauth-editset-subtitle' => 'Do not translate the <code>Special:WikiSets<code> part.',
 	'centralauth-editset-name' => '{{Identical|Name}}',
 	'centralauth-editset-type' => '{{Identical|Type}}',
@@ -573,7 +576,8 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-readonlytext' => 'Description of the centralauth-readonlytext error',
 	'right-globalgroupmembership' => '{{doc-right|globalgroupmembership}}',
 	'right-centralauth-autoaccount' => '{{doc-right|centralauth-autoaccount}}',
-	'right-centralauth-unmerge' => '{{doc-right|centralauth-unmerge}}',
+	'right-centralauth-unmerge' => "{{doc-right|centralauth-unmerge}}
+This is the opposite of merging a local (unlinked) account to a global account. It doesn't imply the complete disgregation of the global account, as even a single local account can be unmerged.",
 	'right-centralauth-lock' => '{{doc-right|centralauth-lock}}',
 	'right-centralauth-oversight' => '{{doc-right|centralauth-oversight}}',
 	'right-centralauth-merge' => '{{doc-right|centralauth-merge}}
@@ -13955,7 +13959,7 @@ Nota che potrebbe essere differente dalla wiki principale di questo utente.",
 	'centralauth-merge-method-password-desc' => "Indica che l'account locale è stato unificato poiché l'utente ha inserito una password valida.",
 	'centralauth-merge-method-admin-desc' => "Indica che l'account locale è stato unificato manualmente da uno steward.
 Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
-	'centralauth-merge-method-new-desc' => "Indica che l'account globale è stato creato automaticamente quando è stato creato l'account locale.",
+	'centralauth-merge-method-new-desc' => "Indica che l'utenza globale è stata creata automaticamente quando è stata creata l'utenza locale.",
 	'centralauth-merge-method-login-desc' => "Indica che l'account locale è stato creato automaticamente quando l'utente ha eseguito l'accesso.",
 	'centralauth-finish-title' => 'Completa il processo di unificazione',
 	'centralauth-finish-text' => 'Se si è il titolare di queste utenze, per completare il processo di unificazione degli account è sufficiente inserire le password relative alle utenze stesse qui di seguito:',
@@ -13968,7 +13972,7 @@ Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-merge-attempt' => "'''Verifica della password inserita sulle utenze non ancora unificate...'''",
 	'centralauth-attach-list-attached' => "L'account unificato chiamato \"'''\$1'''\" include i seguenti account:",
 	'centralauth-attach-title' => "Conferma l'account",
-	'centralauth-attach-text' => "Questo account non è ancora stato collegato all'account unificato. Se sei il titolare dell'account globale, puoi collegare questo account inserendo la password dell'account globale:",
+	'centralauth-attach-text' => "Questa utenza non è ancora stata collegata all'utenza globale. Se sei il titolare dell'utenza globale, puoi collegare questa utenza inserendo la password dell'utenza globale:",
 	'centralauth-attach-submit' => "Collega l'account",
 	'centralauth-attach-success' => "L'account è stato trasferito all'account unificato.",
 	'centralauth' => 'Amministrazione del login unificato',
@@ -14009,17 +14013,17 @@ Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-admin-already-unmerged' => 'Salto $1, già separato',
 	'centralauth-admin-unmerge-success' => '$1 account {{PLURAL:$1|separato|separati}} con successo',
 	'centralauth-admin-delete-title' => 'Elimina account',
-	'centralauth-admin-delete-description' => "La cancellazione dell'account globale eliminerà tutte le preferenze globali, disgiungerà tutti gli account locali e lascerà il nome globale libero perché un altro utente lo prenda.
-Tutti gli account locali continueranno ad esistere.
-Le password per gli account locali create prima della fusione torneranno ai loro valori precedenti la fusione.",
+	'centralauth-admin-delete-description' => "La cancellazione dell'utenza globale eliminerà tutte le preferenze globali, disgiungerà tutti gli account locali e lascerà il nome globale libero perché un altro utente lo prenda.
+Tutte le utenze locali continueranno a esistere.
+Le password per le utenze locali create prima della fusione torneranno ai loro valori precedenti la fusione.",
 	'centralauth-admin-delete-button' => 'Elimina questo account',
-	'centralauth-admin-delete-success' => 'Account globale per "<nowiki>$1</nowiki>" eliminato con successo',
-	'centralauth-admin-nonexistent' => 'Non esiste un account globale per "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Errore: l\'account globale "<nowiki>$1</nowiki>" non esiste.',
+	'centralauth-admin-delete-success' => 'Utenza globale "<nowiki>$1</nowiki>" eliminata con successo',
+	'centralauth-admin-nonexistent' => 'Non esiste un\'utenza globale "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Errore: l\'utenza globale "<nowiki>$1</nowiki>" non esiste.',
 	'centralauth-token-mismatch' => 'Spiacente, non possiamo processare la tua sottoscrizione del form per una perdita dei dati di sessione.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Altri motivi/dettagli:',
-	'centralauth-admin-unhide-nonexistent' => 'Errore: l\'account globale "<nowiki>$1</nowiki>" non esiste.',
+	'centralauth-admin-unhide-nonexistent' => 'Errore: l\'utenza globale "<nowiki>$1</nowiki>" non esiste.',
 	'centralauth-admin-status' => "Impostare lo stato dell'utenza globale",
 	'centralauth-admin-status-intro' => 'È possibile utilizzare questo modulo per modificare lo stato di questo utente globale',
 	'centralauth-admin-status-locked' => 'Bloccato:',
@@ -14038,7 +14042,7 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 *Comuni motivi per bloccare e nascondere
 ** nominativo utente offensivo
 ** informazioni personali non appropriate',
-	'centralauth-admin-logsnippet' => "Modifiche precedenti all'account globale",
+	'centralauth-admin-logsnippet' => "Modifiche precedenti all'utenza globale",
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'globalusers' => 'Lista degli utenti globali',
 	'centralauth-listusers-locked' => 'bloccato',
@@ -14050,18 +14054,18 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|giorno|giorni}} fa',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|mese|mesi}} fa',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|anno|anni}} fa',
-	'centralauth-prefs-status' => "Situazione dell'account globale:",
+	'centralauth-prefs-status' => "Situazione dell'utenza globale:",
 	'centralauth-prefs-not-managed' => 'Account unificato non in uso',
 	'centralauth-prefs-unattached' => 'Non confermato',
 	'centralauth-prefs-complete' => 'Tutto a posto!',
 	'centralauth-prefs-migration' => 'In corso di trasferimento',
 	'centralauth-prefs-count-attached' => 'Il tuo account è attivo su $1 {{PLURAL:$1|sito|siti}} di progetto.',
 	'centralauth-prefs-count-unattached' => 'Ci sono account non confermati con il tuo nome utente su $1 {{PLURAL:$1|progetto|progetti}}.',
-	'centralauth-prefs-detail-unattached' => "Questo sito di progetto non è stato confermato come appartenente all'account globale.",
-	'centralauth-prefs-manage' => 'Gestione del tuo account globale',
+	'centralauth-prefs-detail-unattached' => "Questo sito di progetto non è stato confermato come appartenente all'utenza globale.",
+	'centralauth-prefs-manage' => 'Gestione della tua utenza globale',
 	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente",
 	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.",
-	'centralauth-renameuser-reserved' => "L'utente $2 è riservato per un account globale.",
+	'centralauth-renameuser-reserved' => "L'utente $2 è riservato a un'utenza globale.",
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.',
@@ -14070,14 +14074,14 @@ Le password per gli account locali create prima della fusione torneranno ai loro
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Hai appena effettuato il log-out dagli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
-	'centralauth-log-name' => 'Account globali',
-	'centralauth-log-header' => 'Questo registro contiene le operazioni sugli account globali: cancellazioni, blocchi e sblocchi.',
-	'centralauth-log-entry-delete' => 'account globale "$1" cancellato',
-	'centralauth-log-entry-lock' => 'account globale "$1" bloccato',
-	'centralauth-log-entry-unlock' => 'account globale "$1" sbloccato',
-	'centralauth-log-entry-hide' => 'account globale "$1" nascosto',
-	'centralauth-log-entry-unhide' => 'account globale "$1" reso visibile',
-	'centralauth-log-entry-lockandhide' => 'account globale "$1" bloccato e nascosto',
+	'centralauth-log-name' => 'Utenze globali',
+	'centralauth-log-header' => 'Questo registro contiene le operazioni sulle utenze globali: cancellazioni, blocchi e sblocchi.',
+	'centralauth-log-entry-delete' => 'utenza globale "$1" cancellata',
+	'centralauth-log-entry-lock' => 'utenza globale "$1" bloccata',
+	'centralauth-log-entry-unlock' => 'utenza globale "$1" sbloccata',
+	'centralauth-log-entry-hide' => 'utenza globale "$1" nascosta',
+	'centralauth-log-entry-unhide' => 'utenza globale "$1" resa visibile',
+	'centralauth-log-entry-lockandhide' => 'utenza globale "$1" bloccata e nascosta',
 	'centralauth-log-entry-chgstatus' => 'cambiato stato per l\'utenza globale "$1: Impostato $2, Annullato $3',
 	'centralauth-log-status-locked' => 'bloccato',
 	'centralauth-log-status-hidden' => 'nascosto',
@@ -14170,10 +14174,10 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-readonly' => 'Il database di CentralAuth è bloccato',
 	'centralauth-readonlytext' => 'Il database di CentralAuth è al momento bloccato in scrittura, probabilmente per un operazione di manutenzione di routine, presto tutto tornerà alla normalità.',
 	'right-globalgroupmembership' => "Modifica l'appartenenza ai gruppi globali",
-	'right-centralauth-autoaccount' => 'Login automatico con account globale',
-	'right-centralauth-unmerge' => 'Scollega gli account globali',
-	'right-centralauth-lock' => "Blocca o nascondi l'account globale",
-	'right-centralauth-oversight' => "Elimina l'account globale",
+	'right-centralauth-autoaccount' => 'Accesso automatico con utenza globale',
+	'right-centralauth-unmerge' => 'Scollega dalle utenze globali',
+	'right-centralauth-lock' => "Blocca o nascondi l'utenza globale",
+	'right-centralauth-oversight' => "Elimina l'utenza globale",
 	'right-centralauth-merge' => 'Unifica il proprio account',
 	'right-globalgrouppermissions' => 'Gestisce i gruppi globali',
 );
@@ -24838,9 +24842,28 @@ $messages['sa'] = array(
 	'centralauth-merge-step1-detail' => 'कृपया भवतः अभिलेखस्य कूटशब्दं लिखतु ।
 भवतः कूटशब्दं पञ्जीकृतम् ईपत्रसङ्केतं च अन्यासु विकिशाखासु समानमस्ति वा इति दृढीक्रियते ।
 सर्वं समीचीनमस्ति इति दृढीकरणपर्यन्तं परिवर्तनानि न क्रियन्ते ।',
+	'centralauth-merge-step1-submit' => 'अभिलेखविवरणं दृढीक्रियताम्',
+	'centralauth-merge-step2-title' => 'अन्ये अभिलेखाः दृढीक्रियन्ताम्',
+	'centralauth-merge-step2-submit' => 'अभिलेखविवरणं दृढीक्रियताम्',
+	'centralauth-merge-dryrun-complete' => 'विद्यमानाः सर्वे अभिलेखाः स्वचालितरूपेण संयोक्तुं शक्यन्ते !
+भवतः अभिलेखे न किमपि परिवर्तनं कृतम् एतावता ।',
+	'centralauth-merge-dryrun-incomplete' => 'भवान् अग्रे अनुवर्तयितुम् अर्हति, किन्तु केचन अभिलेखाः स्वयं दृढीकर्तुं न शक्यते, झटिति तान् संयोक्तुं न शक्यते । 
+अग्रे एतान् संयोक्तुं शक्यते ।
+भवतः अभिलेखे एतावता न किमपि परिवर्तनं कृतम् ।',
+	'centralauth-merge-dryrun-or' => "'''अथवा'''",
+	'centralauth-merge-step3-title' => 'संयुक्ताभिलेखं निर्मातु',
+	'centralauth-merge-step3-detail' => 'अधोनिर्दिष्टानां विकीनां निमित्तं भवता संयुक्ताभिलेखः स्रष्टुं शक्यते ।',
 	'centralauth-merge-step3-submit' => 'अभिलेखाः संयोज्यन्ताम्',
+	'centralauth-merge-no-accounts' => 'केन्द्रीयाभिलेखप्रणाल्यां भवतः नामसादृश्यं न प्राप्तम् !
+विवरणसञ्चिका दुष्टा स्यात् ।',
+	'centralauth-merge-home-password' => 'अस्य अभिलेखस्य (अधोनिर्दिष्टस्य) मूलवीक्यां विद्यमानः कूटशब्दः अत्र दत्तात् कूटशब्दात् भिद्यते ।
+मूलवीक्याः कूटशब्दः कृपया लिख्यताम् ।',
 	'centralauth-complete' => 'अभिलेखसंयोजनं सम्पन्नम् !',
 	'centralauth-incomplete' => 'अभिलेखसंयोजनं न सम्पन्नम् !',
+	'centralauth-complete-text' => 'अधुना भवान् {{int:Centralauth-groupname}} इत्येतस्य कस्मिन्नपि क्षेत्रे नूतनाभिलेखं विना प्रवेष्टुम् अर्हति ।',
+	'centralauth-incomplete-text' => 'अभिलेखानां संयोगानन्तरं भवान् {{int:Centralauth-groupname}} कस्मिन्नपि क्षेत्रे नूतनाभिलेखं विना प्रवेष्टुम् अर्हति ।',
+	'centralauth-error-locked' => 'भवतः अभिलेखः अवरुद्धः इत्यतः सम्पादयितुं न शक्यते ।',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''संयुक्ताभिलेखः''' अभिकज्ञानाय]]...''",
 	'centralauth-list-home-title' => 'गृहविकि',
 	'centralauth-list-home-dryrun' => 'अस्यां विक्यां यः कूटशब्दः ईपत्रसङ्केतः च लिख्यते ते एकत्रिताभिलेखे उपयुज्यते ।',
 	'centralauth-list-attached-title' => 'योजिताः अभिलेखाः',
@@ -24863,10 +24886,14 @@ $messages['sa'] = array(
 	'centralauth-finish-login' => 'प्रविश्यताम्',
 	'centralauth-finish-send-confirmation' => 'ई-मेल सङ्केतशब्द',
 	'centralauth-attach-title' => 'अभिलेखः दृढीक्रियताम्',
+	'centralauth-attach-submit' => 'अभिलेखस्य स्थानान्तरणम्',
+	'centralauth-attach-success' => 'अभिलेखः संयुक्ताभिलेखं प्रति स्थानान्तरितम् ।',
 	'centralauth' => 'वैश्विकयोजकप्रबन्धकः',
+	'centralauth-admin-manage' => 'योजकविवरणस्य प्रबन्धनं क्रियताम्',
 	'centralauth-admin-username' => 'योजक नामन्:',
 	'centralauth-admin-lookup-ro' => 'योजकविवरणं दृश्यताम्',
 	'centralauth-admin-lookup-rw' => 'योजकविवरणं व्यवस्थाप्यताम्',
+	'centralauth-admin-no-unified' => 'अस्मिन् योजकनाम्नि संयुक्ताभिलेखः न विद्यते ।',
 	'centralauth-admin-info-header' => 'वैश्विकयोजकस्य विवरणम्',
 	'centralauth-admin-info-id' => 'योजक आईड़ि:',
 	'centralauth-admin-info-registered' => 'पञ्जीकृतम्:',
