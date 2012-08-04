@@ -1695,8 +1695,9 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'ipb_expiry', 'ipb_reason' ),
 			array( 'ipb_user' => $data['id'] ),
 			__METHOD__ );
+		global $wgLang;
 		foreach ( $result as $row ) {
-			if ( Block::decodeExpiry( $row->ipb_expiry ) > wfTimestampNow() ) {
+			if ( $wgLang->formatExpiry( $row->ipb_expiry ) > wfTimestampNow() ) {
 				$data['block-expiry'] = $row->ipb_expiry;
 				$data['block-reason'] = $row->ipb_reason;
 				$data['blocked'] = true;
