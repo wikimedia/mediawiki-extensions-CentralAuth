@@ -16091,7 +16091,7 @@ $messages['ko'] = array(
 제거: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 바꾸기 기록을 포함하고 있습니다.',
-	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 위키 집합 $1을(를) 만들었습니다: $3',
+	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 $1 위키 집합을 만들었습니다: $3',
 	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 바꿈',
 	'centralauth-rightslog-entry-setnewtype' => '위키 집합 "$1"의 유형을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-setchange' => '"$1"의 위키 설정을 바꿈: 추가: $2; 제거: $3',
