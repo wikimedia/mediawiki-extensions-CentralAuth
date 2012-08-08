@@ -24909,6 +24909,7 @@ $messages['sa'] = array(
 	'centralauth-attach-submit' => 'अभिलेखस्य स्थानान्तरणम्',
 	'centralauth-attach-success' => 'अभिलेखः संयुक्ताभिलेखं प्रति स्थानान्तरितम् ।',
 	'centralauth' => 'वैश्विकयोजकप्रबन्धकः',
+	'centralauth-admin-intro' => 'वैश्विकलेखानां प्रबन्धनाय अस्य मध्यस्थस्य उपयोगं कर्तुम् अर्हति ।',
 	'centralauth-admin-manage' => 'योजकविवरणस्य प्रबन्धनं क्रियताम्',
 	'centralauth-admin-username' => 'योजक नामन्:',
 	'centralauth-admin-lookup-ro' => 'योजकविवरणं दृश्यताम्',
