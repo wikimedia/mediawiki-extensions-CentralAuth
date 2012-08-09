@@ -5736,6 +5736,7 @@ Gwaredwyd $3',
 /** Danish (dansk)
  * @author Byrial
  * @author Emilkris33
+ * @author Hylle
  * @author Jon Harald Søby
  * @author Masz
  * @author Peter Alberti
@@ -5887,6 +5888,7 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 	'centralauth-token-mismatch' => 'Beklager, vi kunne ikke behandle den udfyldte formular fordi sessionsdataene er gået tabt.',
 	'centralauth-admin-reason' => 'Årsag:',
 	'centralauth-admin-reason-other' => 'Anden/yderligere årsag:',
+	'centralauth-admin-unhide-nonexistent' => 'Fejl: den globale konto "<nowiki>$1</nowiki>" eksisterer ikke.',
 	'centralauth-admin-status' => 'Sæt status for global konto:',
 	'centralauth-admin-status-intro' => 'Du kan bruge denne formular til at ændre denne globale kontos status',
 	'centralauth-admin-status-locked' => 'Låst:',
@@ -6555,7 +6557,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-admin-yes' => 'ye',
 	'centralauth-admin-no' => 'nê',
 	'centralauth-admin-hidden-list' => 'listeyanê kamuyi ra',
-	'centralauth-admin-hidden-oversight' => 'çımpawiya cı',
+	'centralauth-admin-hidden-oversight' => 'Çımpawiyayo',
 	'centralauth-admin-list-legend-ro' => 'Listeyê hesabanê lokali',
 	'centralauth-admin-list-legend-rw' => 'Hesabe lokali lete bike',
 	'centralauth-admin-unattached' => 'ataç nibiyo',
@@ -6647,7 +6649,7 @@ Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.',
 	'centralauth-log-entry-chgstatus' => 'seba hesabê kurewi "$1" halo vurnaye: Ayar $2; Bêayar $3',
 	'centralauth-log-status-locked' => 'kilit biy',
 	'centralauth-log-status-hidden' => 'nimne',
-	'centralauth-log-status-oversighted' => 'çımpawiya cı',
+	'centralauth-log-status-oversighted' => 'Çımpawiyayo',
 	'centralauth-log-status-none' => '(çini yo)',
 	'centralauth-rightslog-name' => 'Logê heqa globalî',
 	'centralauth-rightslog-entry-usergroups' => 'qe $1 ra $2 rê $3, eza biyayîşê grupî vurne',
@@ -10815,7 +10817,7 @@ $messages['gu'] = array(
 	'centralauth-admin-status-locked' => 'તાળું મરાયેલું છે:',
 	'centralauth-admin-status-locked-no' => 'ખાતા પર તાળું મરાયું નથી.',
 	'centralauth-admin-status-locked-yes' => 'આ ખાતા દ્વારા ફેરફાર કરવા પર પ્રતિબંધ છે.',
-	'centralauth-admin-status-hidden' => 'છુપાડાયેલ',
+	'centralauth-admin-status-hidden' => 'છુપાયેલ:',
 	'centralauth-admin-status-hidden-no' => 'ખાતું છુપાયેલું નથી',
 	'centralauth-admin-status-hidden-list' => 'ખાતું જાહેર યાદીઓથી છુપાયેલ છે',
 	'centralauth-admin-status-hidden-oversight' => 'ખાતું સંપૂર્ણ રીતે છુપાયેલ છે',
@@ -10871,7 +10873,7 @@ $messages['gu'] = array(
 	'centralauth-log-entry-lockandhide' => 'તાળાવાસિત અને સંતાયેલા વૈશ્વીક ખાતા "$1"',
 	'centralauth-log-entry-chgstatus' => 'વૈશ્વીક ખાતા "$1" નું સ્તર બદલાયું, : Set $2; Unset $3',
 	'centralauth-log-status-locked' => 'પ્રતિબંધીત',
-	'centralauth-log-status-hidden' => 'છુપાવેલ',
+	'centralauth-log-status-hidden' => 'છુપાયેલ',
 	'centralauth-log-status-oversighted' => 'દુર્લક્ષિત',
 	'centralauth-log-status-none' => '(કંઈ નહી)',
 	'centralauth-rightslog-name' => 'વૈશ્વીક હક્કનો લોગ',
@@ -16596,6 +16598,18 @@ $messages['ku-latn'] = array(
  * @author Chorobek
  */
 $messages['ky'] = array(
+	'mergeaccount' => 'Эсептерди бириктирүү абалы',
+	'centralauth-groupname' => 'Уикимедия Фонду',
+	'centralauth-merge-denied' => 'Кечиресиз, бул баракка киргенге сиздин укугуңуз жетишсиз.',
+	'centralauth-merge-step1-submit' => 'Эсептин маалыматын аныкта',
+	'centralauth-merge-step2-title' => 'Кошумча эсептерди аныкта',
+	'centralauth-merge-step2-submit' => 'Эсептин маалыматын аныкта',
+	'centralauth-merge-dryrun-complete' => 'Бардык эсептериңизди автоматтык түрдө бириктирсе болот!
+Азырынча эсептериңиз өзгөртүлө элек.',
+	'centralauth-merge-dryrun-or' => 'же',
+	'centralauth-merge-step3-title' => 'Бирдиктүү жалпы эсеп түзүү',
+	'centralauth-merge-step3-detail' => 'Төмөнкү уики-долбоорлор тиркелген бирдиктүү жалпы эсеп түзүүгө даяр',
+	'centralauth-merge-step3-submit' => 'Эсептерди бириктир',
 	'centralauth-finish-login' => 'Кирүү',
 );
 
@@ -17324,6 +17338,7 @@ $messages['lo'] = array(
  * @author Ignas693
  * @author Matasg
  * @author Siggis
+ * @author Vogone
  * @author Vpovilaitis
  */
 $messages['lt'] = array(
@@ -17431,6 +17446,7 @@ Jei pagrindinė paskyra taip pat yra jūsų, jūs galite susieti šią paskyrą,
 	'centralauth-admin-info-hidden' => 'Paslėpimo lygis:',
 	'centralauth-admin-yes' => 'taip',
 	'centralauth-admin-no' => 'ne',
+	'centralauth-admin-hidden-oversight' => 'peržiūra',
 	'centralauth-admin-list-legend-ro' => 'Vietinių paskyrų sąrašas',
 	'centralauth-admin-list-legend-rw' => 'Atskirti vietines paskyras',
 	'centralauth-admin-unattached' => 'neprijungta',
@@ -24545,6 +24561,7 @@ $messages['rue'] = array(
 	'mergeaccount' => 'Статус зъєдночіня конт',
 	'centralauth-groupname' => 'Фонд Вікімедія',
 	'centralauth-desc' => '[[Special:MergeAccount|Зъєдночіня конт]] на єднотливых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}',
+	'centralauth-antispoof-desc' => 'Додавать технолоґію CentralAuth до AntiSpoof',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Зъєдночіня конт]] про єднотне приголошованя',
 	'centralauth-merge-denied' => 'На тоту сторінку не маєте приступ.',
 	'centralauth-merge-notlogged' => 'Просиме, кідь ся <span class="plainlinks">[$1 приголосите]</span>, будете мочі овірити, ці вашы конта были злучены.',
@@ -24600,6 +24617,7 @@ $messages['rue'] = array(
 	'centralauth-list-unattached-title' => 'Неприпоєны конта',
 	'centralauth-list-unattached' => 'Не было можне підтвердити, же конто „$1“ на наслїднїх проєктах належыть вам; правдоподобно має інше гесло, як ваше прімарне конто:',
 	'centralauth-foreign-link' => 'Хоснователь $1 на $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|приспівок|приспівкы|приспівків}} на $2',
 	'centralauth-merge-method-primary' => 'домашня вікі',
 	'centralauth-merge-method-empty' => 'жадны приспевкы',
 	'centralauth-merge-method-mail' => 'підтвердженый ел. поштов',
@@ -24679,6 +24697,7 @@ $messages['rue'] = array(
 	'centralauth-token-mismatch' => 'На жаль, не было можне спрацовати дата з формуларя, котры сьте послали, з причіны страты інформацій о вашій сеансі.',
 	'centralauth-admin-reason' => 'Причіна:',
 	'centralauth-admin-reason-other' => 'Інша/далша причіна:',
+	'centralauth-admin-unhide-nonexistent' => 'Хыба: ґлобалне конто „<nowiki>$1</nowiki>“ не єствує.',
 	'centralauth-admin-status' => 'Змінити став ґлобалного конта',
 	'centralauth-admin-status-intro' => 'За помочі того формуларя можете змінити статус того ґлобалного конта.',
 	'centralauth-admin-status-locked' => 'Заблокованый:',
@@ -24810,6 +24829,7 @@ $messages['rue'] = array(
 	'centralauth-editset-name' => 'Мено:',
 	'centralauth-editset-type' => 'Тіп:',
 	'centralauth-editset-wikis' => 'Вікі:',
+	'centralauth-editset-restwikis' => 'Вікі, невключены высше:',
 	'centralauth-editset-reason' => 'Причіна:',
 	'centralauth-editset-submit' => 'Одослати',
 	'centralauth-editset-submit-delete' => 'Вымазати',
@@ -24823,7 +24843,10 @@ $messages['rue'] = array(
 	'centralauth-editset-success' => 'Вікі сет быв успішно зміненый',
 	'centralauth-editset-success-delete' => 'Вікі сет быв успішно змазаный.',
 	'centralauth-editset-return' => 'Назад до головного погляду',
+	'centralauth-readonly' => 'Датабаза CentralAuth є замкнута',
+	'centralauth-readonlytext' => 'Датабаза CentralAuth теперь замкнута против новым записам тай другым змінам, правдоподобно про рутінне утримованя, по котрім ся вшытко верне до звычайного режіму.',
 	'right-globalgroupmembership' => 'Зміна членства у ґлобалных ґрупах',
+	'right-centralauth-autoaccount' => 'Автоматічне приголошіня ґлобалным контом',
 	'right-centralauth-unmerge' => 'Розлучіти ґлобалны конта',
 	'right-centralauth-lock' => 'Блокованя і сховаваня ґлобалных конт',
 	'right-centralauth-oversight' => 'Затаёваня ґлобалных конт',
@@ -26781,6 +26804,13 @@ $messages['sr-ec'] = array(
 	'centralauth-merge-method-admin' => 'налог који је објединио администратор',
 	'centralauth-merge-method-new' => 'нови налог',
 	'centralauth-merge-method-login' => 'направљено при пријављивању',
+	'centralauth-merge-method-empty-desc' => 'Указује да је локални налог припојен зато што није имао измена.',
+	'centralauth-merge-method-mail-desc' => 'Указује да је локални налог био припојен зато што је његова имејл адреса одговарала имејл адреси главног налога.',
+	'centralauth-merge-method-password-desc' => 'Указује да је локални налог припојен јер је корисник навео исправну лозинку за њега.',
+	'centralauth-merge-method-admin-desc' => 'Указује да је су стјуарди ручно припојили локални налог.
+Та функција је сада онемогућена из сигурносних разлога.',
+	'centralauth-merge-method-new-desc' => 'Указује да је глобални налог био направљен аутоматско када је локални налог направљен.',
+	'centralauth-merge-method-login-desc' => 'Указује да је локални налог био направљен аутоматски када се корисник улоговао.',
 	'centralauth-finish-title' => 'Завршавање спајања',
 	'centralauth-finish-text' => 'Ако ови налози припадају вама, можете да завршите поступак обједињавања тако што ћете унети лозинке других налога овде:',
 	'centralauth-finish-password' => 'Лозинка:',
@@ -26794,9 +26824,12 @@ $messages['sr-ec'] = array(
 	'centralauth-merge-attempt' => "'''Проверавам наведену лозинку у осталим неспојеним налозима…'''",
 	'centralauth-attach-list-attached' => 'Обједињени налог „$1“ садржи следеће налоге:',
 	'centralauth-attach-title' => 'Потврда налога',
+	'centralauth-attach-text' => 'Овај налог још увек није мигриран на унифицирани налог.
+Ако Вам припада и глобални налог, можете да му припојите овај налог навођењем лозинке глобалног налога:',
 	'centralauth-attach-submit' => 'Пренеси налог',
 	'centralauth-attach-success' => 'Налог је премештен у обједињени налог.',
 	'centralauth' => 'Глобално управљање корисницима',
+	'centralauth-admin-intro' => 'Овај интерфејс служи за администрацију глобалних налога.',
 	'centralauth-admin-manage' => 'Управљање корисничким подацима',
 	'centralauth-admin-username' => 'Корисничко име:',
 	'centralauth-admin-lookup-ro' => 'Погледај корисничке податке',
@@ -28033,6 +28066,8 @@ $messages['ta'] = array(
 	'centralauth-merge-step3-title' => 'ஒன்றாக்கப்பட்ட கணக்கை உருவாக்கவும்',
 	'centralauth-merge-step3-detail' => 'பின்வரும்  விக்கிகள் இணைக்கப்பட்ட ஒருங்கமைக்கப்பட்ட கணக்கை உருவாக்க நீங்கள் தயாராக உள்ளீர்கள்:',
 	'centralauth-merge-step3-submit' => 'கணக்குகளை ஒன்றாக்கவும்',
+	'centralauth-complete' => 'ஒருங்கினைந்த உள்நுழைவு முழுமை',
+	'centralauth-incomplete' => 'ஒருங்கமைந்த உள்நுழைவு முழுமையாகவில்லை',
 	'centralauth-error-locked' => 'உங்கள் கணக்கு முடக்கப்பட்டுள்ளதால் உங்களால் இப்பக்கத்தை தொகு இயலாது',
 	'centralauth-list-home-title' => 'முகப்பு விக்கி',
 	'centralauth-list-attached-title' => 'இணைக்கப்பட்ட கணக்குகள்',
@@ -28193,6 +28228,7 @@ $messages['ta'] = array(
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|திருத்தம்]])',
 	'centralauth-editgroup-members' => 'உறுப்பினர்களின் பட்டியல்:',
 	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
+	'centralauth-editgroup-submit' => 'குழு அனுமதிகள் மாற்றங்களை சேமிக்க',
 	'centralauth-editgroup-perms' => 'கொடுக்கப்பட்ட அனுமதிகள்:',
 	'centralauth-editgroup-reason' => 'காரணம்:',
 	'centralauth-editgroup-success' => 'குழு அனுமதிகள் மாற்றப்பட்டது',
