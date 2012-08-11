@@ -614,7 +614,7 @@ $messages['egl'] = array(
 	'centralauth-merge-dryrun-or' => "'''o'''",
 );
 
-/** Ṫuroyo (Ṫuroyo)
+/** Turoyo (Ṫuroyo)
  * @author Ariyo
  */
 $messages['tru'] = array(
@@ -7099,7 +7099,7 @@ $messages['ee'] = array(
  */
 $messages['el'] = array(
 	'mergeaccount' => 'Κατάσταση της ενοποίησης λογαριασμών',
-	'centralauth-groupname' => 'το ίδρυμα Wikimedia',
+	'centralauth-groupname' => 'Ίδρυμα Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Συγχώνευση Λογαριασμών]] σε όλα τα wiki του {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Συγχωνεύει]] πολλαπλούς λογαριασμούς για ενιαία σύνδεση χρηστών',
 	'centralauth-merge-denied' => 'Συγνώμη, δεν έχετε άδεια πρόσβασης σε αυτή τη σελίδα',
@@ -7281,8 +7281,8 @@ $messages['el'] = array(
 	'centralauth-invalid-wiki' => 'Δεν υπάρχει τέτοια βικι-βάση δεδομένων: $1',
 	'centralauth-account-exists' => 'Αδύνατη η δημιουργία λογαριασμού: το ζητούμενο όνομα χρήστη είναι ήδη κατοχυρωμένο στο σύστημα ενιαίας σύνδεσης.',
 	'centralauth-account-exists-reset' => 'Το όνομα χρήστη $1 δεν είναι καταχωρημένο σε αυτό το βίκι, αλλά υπάρχει στο σύστημα ενοποιημένης σύνδεση.',
-	'centralauth-login-progress' => 'Σας συνδέουμε στα βίκι του {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Σας αποσυνδέουμε από άλλα βίκι του {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Σας συνδέουμε στα wiki στο {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Σας αποσυνδέουμε από άλλα wiki στο {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Έχετε συνδεθεί αυτόματα στα άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Έχετε αποσυνδεθεί αυτόματα από άλλα εγχειρήματα του {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'παγκοσμίως αποκρυμμένο από $1 στο $2 με τον εξής λόγο: $3',
@@ -7340,7 +7340,7 @@ $messages['el'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|επεξεργασία]])',
 	'centralauth-editgroup-members' => 'Λίστα μελών:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Λίστα χρηστών με $2 δικαιώματα]]',
-	'centralauth-editgroup-restrictions' => 'Σύνολο από βίκι στα οποία αυτή η ομάδα ήταν ενεργή:',
+	'centralauth-editgroup-restrictions' => 'Σύνολο από wiki στα οποία αυτή η ομάδα είναι ενεργή:',
 	'centralauth-editgroup-noset' => '(κανένα)',
 	'centralauth-editgroup-submit' => 'Αποθήκευση αλλαγών στις άδειες ομάδων',
 	'centralauth-editgroup-perms' => 'Απονομημένες άδειες:',
@@ -7370,7 +7370,7 @@ $messages['el'] = array(
 	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Κατάλογος συνόλων]]',
 	'centralauth-editset-name' => 'Όνομα:',
 	'centralauth-editset-type' => 'Τύπος:',
-	'centralauth-editset-wikis' => 'Τα βίκι:',
+	'centralauth-editset-wikis' => 'Τα wiki:',
 	'centralauth-editset-restwikis' => 'Βίκι που δεν περιλαμβάνονται ανωτέρω:',
 	'centralauth-editset-reason' => 'Λόγος:',
 	'centralauth-editset-submit' => 'Υποβολή',
@@ -22956,7 +22956,7 @@ $messages['pt'] = array(
 	'mergeaccount' => 'Estado da autenticação unificada',
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Página especial]] para fundir contas nas wikis "{{int:Centralauth-groupname}}"',
-	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof CentralAuth',
+	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof ao CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] para a Autenticação Unificada',
 	'centralauth-merge-denied' => 'Desculpe, não tem permissão para aceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.',
@@ -23250,7 +23250,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'centralauth-editset-success-delete' => 'O conjunto de wikis foi eliminado com sucesso.',
 	'centralauth-editset-return' => 'Voltar à vista principal',
 	'centralauth-readonly' => 'Banco de dados CentralAuth bloqueado',
-	'centralauth-readonlytext' => 'O banco de dados de CentralAuth está atualmente bloqueado para novas entradas e outras modificações, provavelmente para manutenção de banco de dados rotineiras, após o qual será voltar ao normal.',
+	'centralauth-readonlytext' => 'A base de dados do CentralAuth está bloqueada a novas entradas e outras modificações, provavelmente para manutenção de rotina, após a qual voltará ao normal.',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
 	'right-centralauth-autoaccount' => 'Aceder automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
@@ -27788,6 +27788,7 @@ $messages['sv'] = array(
 	'mergeaccount' => 'Status för gemensam inloggning',
 	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Sammanfogar användarkonton]] på wikier som tillhör {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Lägger till AntiSpoof-teknik till CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sammanfogar flera konton]] för gemensam inloggning',
 	'centralauth-merge-denied' => 'Du har tyvärr inte åtkomstsbehörighet till denna sida.',
 	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.',
@@ -28060,6 +28061,8 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'centralauth-editset-success' => 'Ändrade wikiset.',
 	'centralauth-editset-success-delete' => 'Lyckades radera wikiset.',
 	'centralauth-editset-return' => 'Tillbaka till huvudvisning',
+	'centralauth-readonly' => 'CentralAuth-databasen låst',
+	'centralauth-readonlytext' => 'CentralAuth-databasen är för närvarande låst för nya poster och andra förändringar, troligen för rutinmässig databasunderhåll, efter vilket det kommer att vara tillbaka till normalt tillstånd.',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-autoaccount' => 'Logga in automatiskt med globalt konto',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
