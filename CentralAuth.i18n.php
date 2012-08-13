@@ -1333,7 +1333,7 @@ $messages['ar'] = array(
 	'centralauth-finish-title' => 'انتهاء الدمج',
 	'centralauth-finish-text' => 'لو كانت هذه الحسابات تنتمي لك، يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمات السر للحسابات الأخرى هنا:',
 	'centralauth-finish-password' => 'كلمة السر:',
-	'centralauth-finish-login' => 'دخول',
+	'centralauth-finish-login' => 'تسجيل الدخول',
 	'centralauth-finish-send-confirmation' => 'أرسل كلمة السر عبر البريد الإلكتروني',
 	'centralauth-finish-problems' => 'لديك مشكلة، أو لا تمتلك هذه الحسابات الأخرى؟
 [[meta:Help:Unified login problems|كيف تجد المساعدة]]...',
@@ -3918,6 +3918,7 @@ Alasan: $1',
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Nasir8891
  * @author Wikitanvir
  * @author Zaheen
  */
@@ -3973,6 +3974,7 @@ $messages['bn'] = array(
 	'centralauth-list-unattached-title' => 'অসংগবদ্ধ অ্যাকাউন্ট',
 	'centralauth-list-unattached' => 'অ্যাকাউন্ট "$1" সয়ংক্রিয়ভাবে এই সমস্ত সাইটে আপনাকে দেওয়ার জন্য নিশ্চিত করা যাচ্ছে না; সম্ভবত এগুলোতে আপনার প্রধান অ্যাকাউন্ট থেকে ভিন্ন শব্দচাবি ব্যবহৃত হয়েছে:',
 	'centralauth-foreign-link' => 'ব্যবহারকারী $2 তে $1',
+	'centralauth-foreign-contributions' => '$2-এ $1 এর {{PLURAL:$1|অবদান|অবদান}}',
 	'centralauth-merge-method-primary' => 'প্রধান উইকি',
 	'centralauth-merge-method-empty' => 'কোন অবদান নাই',
 	'centralauth-merge-method-mail' => 'ইমেইল দ্বারা নিশ্চিত করা হয়েছে',
@@ -3980,6 +3982,9 @@ $messages['bn'] = array(
 	'centralauth-merge-method-admin' => 'প্রশাসক একীভূত অ্যাকাউন্ট',
 	'centralauth-merge-method-new' => 'নতুন অ্যাকাউন্ট',
 	'centralauth-merge-method-login' => 'লগইন উপর ভিত্তি করে তৈরি',
+	'centralauth-merge-method-primary-desc' => 'এই উইকি থেকে প্রথমিক অবস্থায় অ্যাকাউন্ট মার্জ করা হয়েছিলো।
+মনে রাখবেন এটি ব্যবহারকারীর মূল উইকি থেকে আলাদা হতে পারে।',
+	'centralauth-merge-method-empty-desc' => 'স্থানীয় উইকির অ্যাকাউন্টটি মার্জ করা হয়েছে কারণ সেখান থেকে কোনো সম্পাদনা করা হয়নি।',
 	'centralauth-finish-title' => 'একত্রীকরণ সম্পন্ন হয়েছে',
 	'centralauth-finish-text' => 'যদি এই অ্যাকাউন্টসমূহ আপনার হয়, তাহলে আপনি সহজেই অ্যাকাউন্টগুলোর জন্য শব্দচাবি প্রদান করে লগ-ইন একীভূতকরণের কাজ সম্পূর্ণ করতে পারেন:',
 	'centralauth-finish-password' => 'শব্দচাবি:',
@@ -4089,12 +4094,14 @@ $messages['bn'] = array(
 	'centralauth-rightslog-entry-setrename' => 'উইকি "$2" থেকে "$1" নামান্তরিত হয়েছে',
 	'centralauth-rightslog-entry-setnewtype' => '"$1"  এর ধরণ $2 থেকে $3 তে পরিবর্তন করা হয়েছে',
 	'centralauth-rightslog-entry-setchange' => '"$1" এর উইকিসমূহ পরিবর্তন করা হয়েছে: যোগ: $2; বাদ: $3',
+	'centralauth-rightslog-entry-deleteset' => '"$1" উইকি সেট অপসারণ করা হয়েছে',
 	'centralauth-rightslog-set-optin' => 'অপট-ইন',
 	'centralauth-rightslog-set-optout' => 'অপট-আউট',
 	'autologin' => 'স্বয়ংক্রিয় প্রবেশ',
 	'globalgroupmembership' => 'গ্লোবাল গ্রুপের সদস্যপদ',
 	'globalgrouppermissions' => 'গ্লোবাল গ্রুপ ব্যবস্থাপনা',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|দেখাও/সম্পাদনা করো]])',
+	'centralauth-globalgroupperms-nogroups' => 'কোনো গ্লোবাল গ্রুপ নির্ধারণ করা হয়নি।',
 	'centralauth-existinggroup-legend' => 'বিদ্যমান গ্রুপ',
 	'centralauth-newgroup-legend' => 'নতুন গ্রুপ তৈরি করো',
 	'centralauth-newgroup-intro' => 'আপনি এ ফরমটি নতুন গ্রুপকে অনুমতি প্রদানের কাজে ব্যবহার করতে পারবেন।
@@ -6614,6 +6621,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'globalusers' => 'Listeyê karberi yê globalî',
 	'centralauth-listusers-locked' => 'kilit biyo',
 	'centralauth-listusers-attached' => '[[User:$1|lokal de esto]]',
+	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'ataç nibiyo ya zi lokal de çini yo',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sanise|saniseyan}} vernî ra',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|dakika|dakikayan}} vernî de',
@@ -6736,6 +6744,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'centralauth-editset-badtype' => 'Tîpê seti yê ğeletî.',
 	'centralauth-editset-setexists' => 'Pê nameyê ke esto ey ra birone',
 	'centralauth-editset-nowikis' => 'Ti yew zi wîkî spesife nikerd.',
+	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(çini yo)',
 	'centralauth-editset-usage' => 'Grupan de kar keno:',
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|Ena wîkî|wîkîyan}} çini yo: $1.',
@@ -9796,6 +9805,7 @@ Los contresegnos por los comptos locals fêts devant lor fusion retroveront lors
 	'centralauth-token-mismatch' => 'Dèsolâ, nos povens pas sometre voutron formulèro a côsa d’una pèrta d’enformacions en rapôrt avouéc voutra sèance.',
 	'centralauth-admin-reason' => 'Rêson :',
 	'centralauth-admin-reason-other' => 'Ôtra rêson / rêson de ples :',
+	'centralauth-admin-unhide-nonexistent' => 'Fôta : lo compto globâl « <nowiki>$1</nowiki> » ègziste pas.',
 	'centralauth-admin-status' => 'Changiér lo statut du compto globâl',
 	'centralauth-admin-status-intro' => 'Vos pouede utilisar ceti formulèro por changiér lo statut de cél compto globâl.',
 	'centralauth-admin-status-locked' => 'Vèrrolyê :',
@@ -11651,8 +11661,16 @@ $messages['hif-latn'] = array(
 	'centralauth-admin-info-id' => 'Sadasya ke ID:',
 	'centralauth-admin-yes' => 'haan',
 	'centralauth-admin-no' => 'nai',
+	'centralauth-admin-list-editcount' => 'Badlao count',
 	'centralauth-admin-reason' => 'Kaaran:',
 	'centralauth-admin-reason-other' => 'Duusra/aur kaaran:',
+	'centralauth-editgroup-noset' => '(kuchh nai)',
+	'centralauth-editgroup-reason' => 'Kaaran:',
+	'centralauth-editset-name' => 'Naam:',
+	'centralauth-editset-reason' => 'Kaaran:',
+	'centralauth-editset-submit' => 'Submit karo',
+	'centralauth-editset-submit-delete' => 'Mitao',
+	'centralauth-editset-nouse' => '(kuchh nai)',
 );
 
 /** Hiligaynon (Ilonggo)
@@ -15983,7 +16001,7 @@ $messages['ko'] = array(
 	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
 같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
 	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 {{int:Centralauth-groupname}}의 위키에 로그인할 수 있습니다.',
-	'centralauth-not-owner-text' => '계정 이름 "$1"이 자동으로 $2의 계정의 주인으로 등록되었습니다.
+	'centralauth-not-owner-text' => '"$1" 사용자 이름이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
 사용자 본인이 맞다면 주 암호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
 	'centralauth-blocked-text' => '당신은 아래 목록에 있는 주 위키에서 차단되었습니다.
@@ -16040,7 +16058,7 @@ $messages['ko'] = array(
 	'centralauth' => '통합 계정 관리자',
 	'centralauth-admin-intro' => '이 인터페이스는 통합 계정 관리에 사용됩니다.',
 	'centralauth-admin-manage' => '사용자 자료 관리',
-	'centralauth-admin-username' => '계정 이름:',
+	'centralauth-admin-username' => '사용자 이름:',
 	'centralauth-admin-lookup-ro' => '사용자 정보 보기',
 	'centralauth-admin-lookup-rw' => '사용자 계정 관리',
 	'centralauth-admin-permission' => '사무장만이 다른 사용자의 계정을 병합할 수 있습니다.',
@@ -16102,7 +16120,7 @@ $messages['ko'] = array(
 ** 훼손 목적의 계정
 ** 광고/스팸 목적의 계정
 * 일반적인 계정 숨김-잠금 이유
-** 부적절한 계정 이름
+** 부적절한 사용자 이름
 ** 부적절한 개인 정보',
 	'centralauth-admin-logsnippet' => '이전의 통합 계정 기록',
 	'centralauth-admin-suppressreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 완전히 숨겨졌습니다: $2',
@@ -19467,6 +19485,7 @@ $messages['mt'] = array(
 	'mergeaccount' => 'Stat tat-twaħħid tal-utenzi',
 	'centralauth-groupname' => 'Fondazzjoni Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Waħħad il-kontijiet]] fi ħdan il-wikis tal-{{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => "Iżżid t-teknoloġija AntiSpoof ta' CentralAuth",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Twaħħad aktar kontijiet]] għal Login Uniku',
 	'centralauth-merge-denied' => "Jiddispjaċina, m'għandikx permess taċċessa din il-paġna.",
 	'centralauth-merge-notlogged' => 'Jekk jogħġbok <span class="plainlinks">[$1 idħol fil-kont tiegħek]</span> sabiex tiċċekkja jekk il-kontijiet tiegħek ġewx kompletament imwaħħda.',
@@ -19483,6 +19502,12 @@ Ebda tibdil ma jsir qabel il-konferma tiegħek li kollox jidher fl-ordni.',
 	'centralauth-merge-step2-title' => 'Ikkonferma kontijiet oġra',
 	'centralauth-merge-step2-detail' => "Xi ftit minn dawn il-kontijiet ma setgħux jiġu magħquda ma' dawk tal-wiki prinċipali. Jekk dawn il-kontijiet huma tiegħek, tista' tikkonferma li huma tiegħek billi ddaħħal il-passwords tagħhom.",
 	'centralauth-merge-step2-submit' => 'Ikkonferma l-informazzjoni dwar il-login',
+	'centralauth-merge-dryrun-complete' => "Il-kontijiet kollha eżistenti jistgħu jiġu mwaħħda ma' xulxin!
+
+L-ebda bidla għadha ma saret fil-kontijiet tagħkom.",
+	'centralauth-merge-dryrun-incomplete' => "Inti għażilt li tkompli, però ċerti kontijiet ma setgħux jiġu verifikati awtomatikament u mhux se jiġu emigrati mal-ewwel. Il-proċess ta' twaħħid ikun jista' jkompli iktar tard.
+
+L-ebda bidla ma saret fil-kontijiet tiegħek s'issa.",
 	'centralauth-merge-dryrun-or' => "'''jew'''",
 	'centralauth-merge-step3-title' => 'Oħloq kont imwaħħad',
 	'centralauth-merge-step3-detail' => 'Huwa kollox lest sabiex toħloq il-kont unifikat tiegħek, bil-wikis segwenti mehmuża:',
@@ -19492,8 +19517,16 @@ Id-databażi tista' tkun li hi korrotta.",
 	'centralauth-merge-home-password' => 'Il-wiki prinċipali għal dan il-kont (elenkata hawn taħt) għandha password differenti minn dik li daħħalt. Jekk jogħġbok daħħal il-password għall-wiki prinċipali.',
 	'centralauth-complete' => "Il-proċess ta' unifikazzjoni tal-login ġie komplut!",
 	'centralauth-incomplete' => "Il-proċess ta' unifikazzjoni tal-login ma ġiex komplut!",
+	'centralauth-blocked-text' => "Il-wiki prinċipali tiegħek (imniżżla hawn taħt) hi mblukkata għall-immodifikar. Jekk jogħġbok ikkuntatja amministratur f'din il-wiki sabiex tiżblukkaha. Waqt li hi mblukkata, inti ma tistax twaħħad il-kontijiet.",
+	'centralauth-error-locked' => 'Inti ma tistax timmodifika minħabba li l-kont tiegħek huwa mblukkat.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Aqra aktar dwar il-'''login imwaħħad''']]…''",
+	'centralauth-list-home-title' => 'Wiki prinċipali',
+	'centralauth-list-home-dryrun' => "Il-password u l-indirizz elettroniku reġistrati f'din il-wiki se jiġu wżati għall-kont imwaħħad.",
+	'centralauth-list-attached-title' => 'Kontijiet mehmuża',
 	'centralauth-list-attached' => 'Il-kontijiet bl-isem tal-utent "$1" fuq il-proġetti elenkati hawn taħt ġew awtomatikament imwaħħda ma\' xulxin.',
+	'centralauth-list-attached-dryrun' => 'Il-kont bl-isem "$1" fuq is-siti indikati hawnhekk se jiġu awtomatikament mehmuża mal-kont imwaħħad:',
+	'centralauth-list-unattached-title' => 'Kontijiet mhux mehmuża',
+	'centralauth-list-unattached' => 'Il-kont "$1" ma setax jiġi konfermat awtomatikament bħala tiegħek fuq is-siti segwenti; huwa probabbli li għandhom password differenti mill-kont prinċipali:',
 	'centralauth-foreign-link' => 'Utent $1 minn $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kontribuzzjoni|kontribuzzjonijiet}} fuq $2',
 	'centralauth-merge-method-primary' => 'wiki prinċipali',
@@ -19531,6 +19564,7 @@ Jekk il-kont globali huwa tiegħek, tista' twaħħad dan il-kont jekk tikteb il-
 	'centralauth-admin-username' => 'Isem tal-utent:',
 	'centralauth-admin-lookup-ro' => 'Ara l-informazzjoni dwar l-utent',
 	'centralauth-admin-lookup-rw' => 'Amministra l-kont tal-utent',
+	'centralauth-admin-permission' => "L-istwetti biss jistgħu jwaħħdu l-kontijiet ta' nies oħra għalihom",
 	'centralauth-admin-no-unified' => 'Ma jeżisti l-ebda kont imwaħħad għal dan l-isem tal-utent.',
 	'centralauth-admin-info-header' => 'Informazzjoni globali tal-utent',
 	'centralauth-admin-info-id' => 'ID tal-utent:',
@@ -19543,6 +19577,12 @@ Jekk il-kont globali huwa tiegħek, tista' twaħħad dan il-kont jekk tikteb il-
 	'centralauth-admin-no' => 'le',
 	'centralauth-admin-hidden-list' => 'mill-elenki pubbliċi',
 	'centralauth-admin-list-legend-ro' => "Lista ta' kontijiet lokali",
+	'centralauth-admin-list-legend-rw' => 'Skonnettja l-kontijiet lokali',
+	'centralauth-admin-unattached' => 'kont mhux kollegat',
+	'centralauth-admin-blocked' => 'Imblukkat sa $3 fil-$4.
+Raġuni: $2',
+	'centralauth-admin-blocked-indef' => 'Imblukkat indefinittivament.
+Raġuni: $1',
 	'centralauth-admin-blocklog' => 'reġistru tal-blokki',
 	'centralauth-admin-list-localwiki' => 'Wiki lokali',
 	'centralauth-admin-list-attached-on' => 'Kollegat nhar',
@@ -19565,6 +19605,7 @@ Il-passwords għall-kontijiet lokali maħluqa qabel it-twaħħid jirritornaw għ
 	'centralauth-token-mismatch' => 'Skużana, ma nistgħux nipproċessaw il-formola tiegħek minħabba li ntilfet l-informazzjoni tas-sessjoni.',
 	'centralauth-admin-reason' => 'Raġuni:',
 	'centralauth-admin-reason-other' => 'Raġuni oħra/addizzjonali:',
+	'centralauth-admin-unhide-nonexistent' => 'Żball: il-kont globali "<nowiki>$1</nowiki>" ma jeżistix.',
 	'centralauth-admin-status' => 'Agħżel l-istat tal-kont globali',
 	'centralauth-admin-status-intro' => "Tista' tuża din il-formola sabiex tbiddel l-istat ta' dan il-kont globali.",
 	'centralauth-admin-status-locked' => 'Imblukkat:',
@@ -19641,12 +19682,17 @@ Neħħa $3',
 	'centralauth-rightslog-entry-setnewtype' => 'biddel it-tip ta\' "$1" minn $2 għal $3',
 	'centralauth-rightslog-entry-setchange' => 'biddel il-wikis fis-sett "$1": żied: $2; neħħa: $3',
 	'centralauth-rightslog-entry-deleteset' => 'ħassar is-sett ta\' wikis "$1"',
+	'centralauth-rightslog-set-optin' => 'opt-in',
+	'centralauth-rightslog-set-optout' => 'opt-out',
 	'autologin' => 'Login awtomatiku',
 	'centralauth-autologin-desc' => "Din il-paġna speċjali hi wżata internament minn MediaWiki.
 Meta [[Special:UserLogin|tidħol fil-kont tiegħek]], is-sistema ċentrali tal-login tordna lill-browżer tiegħek sabiex jistaqsi għal din il-paġna mid-dominji kollha magħqudin, bl-użu ta' ħoloq tal-istampi.
 Għadek kif għamel rikjesta għal din il-paġna mingħajr informazzjoni fuq awtentikazzjoni, u għalhekk ma tagħmel xejn.",
 	'globalgroupmembership' => 'Sħubija fil-gruppi globali',
 	'globalgrouppermissions' => 'Ġestjoni tal-gruppi globali',
+	'centralauth-globalgroupperms-grouplist' => "Il-gruppi globali segwenti ġew ikkonfigurati.
+Tista' tara jew timmodifika l-permessi mogħtija lil grupp, jekk għandek il-permess li tagħmel dan.
+Grupp jista' jiġi mħassar billi tneħħilu d-drittijiet kollha tiegħu.",
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|ara/editja]])',
 	'centralauth-globalgroupperms-nogroups' => 'L-ebda grupp globali mhu definit.',
 	'centralauth-existinggroup-legend' => 'Gruppi eżistenti',
@@ -19673,11 +19719,25 @@ Kun af li grupp ma jeżistix sakemm ikunu għadhom ma ngħatawlux il-permessi.",
 	'centralauth-editgroup-success-text' => 'Għadek kif biddilt il-permessi tal-grupp għall-grupp $1.
 [[Special:GlobalGroupPermissions|Irritorna lura lejn il-ġestjoni tal-gruppi]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editja]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Agħżel wiki fuq liema għandu kont:',
+	'centralauth-globalgroupmembership-badknownwiki' => "L-utent globali '''$1''' mhuwiex attiv fuq il-wiki li speċifikajt ('' $2 '').
+Jista' jkun li qiegħed tipprova tagħti d-drittijiet lill-utent il-ħażin!",
+	'centralauth-editset' => "Settijiet ta' wikis",
+	'centralauth-editset-legend-rw' => "Immodifika jew oħloq sett ta' wikis",
+	'centralauth-editset-legend-ro' => "Lista ta' settijiet ta' wikis",
+	'centralauth-editset-intro-rw' => "Is-settijiet ta' wikis segwenti diġà ġew maħluqa.
+Tista' tara jew timmodifika kwalunkwe waħda minnhom, jew toħloq sett ġdid.",
+	'centralauth-editset-intro-ro' => "Hawn taħt tinsab lista ta' settijiet ta' wikis eżistenti.",
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|ħassar]])',
 	'centralauth-editset-new' => 'Oħloq sett ġdid',
 	'centralauth-editset-notfound' => 'Is-sett ta\' wikis "$1" ma nstabx.',
+	'centralauth-editset-optin' => "Ibbażat fuq ''opt-in'' (jinkludi biss il-wikis speċifikati)",
+	'centralauth-editset-optout' => "Ibbażat fuq ''opt-out'' (jinkludi l-wikis kollha minbarra dawk speċifiċi)",
 	'centralauth-editset-legend-edit' => 'Modifika tas-sett ta\' wikis "$1"',
 	'centralauth-editset-legend-view' => 'Sett ta\' wikis "$1"',
 	'centralauth-editset-legend-new' => "Oħloq sett ta' wikis ġdid",
+	'centralauth-editset-legend-delete' => 'Tħassir tas-sett ta\' wikis "$1"',
+	'centralauth-editset-subtitle' => "< [[Special:WikiSets|Lista ta' settijiet]]",
 	'centralauth-editset-name' => 'Isem:',
 	'centralauth-editset-type' => 'Tip:',
 	'centralauth-editset-wikis' => 'Wikis:',
@@ -19692,6 +19752,18 @@ Kun af li grupp ma jeżistix sakemm ikunu għadhom ma ngħatawlux il-permessi.",
 	'centralauth-editset-nouse' => '(l-ebda)',
 	'centralauth-editset-usage' => 'Użat fil-gruppi:',
 	'centralauth-editset-badwikis' => 'Il-{{PLURAL:$2|wiki segwenti ma teżistix|wikis segwenti ma jeżistux}}: $1.',
+	'centralauth-editset-success' => "Is-sett ta' wikis inbidel b'suċċess.",
+	'centralauth-editset-success-delete' => "Is-sett ta' wikis ġie mħassar.",
+	'centralauth-editset-return' => 'Irritorna lura għall-viżwalizzazzjoni prinċipali',
+	'centralauth-readonly' => "Id-databażi ta' CentralAuth hi mblukkata",
+	'centralauth-readonlytext' => "Id-databażi ta' CentralAuth hija attwalment imblukkata għal daħliet ġodda u modifiki oħra, probabilment minħabba rutina ta' manutenzjoni. Iktar tard kollox jiġi għan-normal.",
+	'right-globalgroupmembership' => 'Jimmodifika s-sħubija fi gruppi globali',
+	'right-centralauth-autoaccount' => "Jidħol awtomatikament b'kont globali",
+	'right-centralauth-unmerge' => 'Jiskonnettja kont globali',
+	'right-centralauth-lock' => 'Jimblokka jew jaħdi kont globali',
+	'right-centralauth-oversight' => 'Iħassar kont globali',
+	'right-centralauth-merge' => 'Iwaħħad il-kont tiegħu',
+	'right-globalgrouppermissions' => 'Jamministra l-gruppi globali',
 );
 
 /** Erzya (эрзянь)
@@ -25018,7 +25090,7 @@ $messages['sa'] = array(
 	'centralauth-finish-login' => 'प्रविश्यताम्',
 	'centralauth-finish-send-confirmation' => 'ई-मेल सङ्केतशब्द',
 	'centralauth-finish-problems' => 'भवतः कापि समस्या विद्यते किम् ? अथवा एतेषाम् अभिलेखानां स्वामी भवान् न किम् ?
-[[meta:Help:Unified login problems|सहाय्यं कथं प्राप्तव्यम्]...',
+[[meta:Help:Unified login problems|सहाय्यं कथं प्राप्तव्यम्]]...',
 	'centralauth-finish-noconfirms' => 'दत्तस्य कूटशब्दस्य उपयोगेन कोपि अभिलेखः दृढीकर्तुं न शक्यते ।',
 	'centralauth-finish-incomplete' => 'दत्तस्य कूटशब्दस्य उपयोगेन बहवः अभिलेखाः संयोजिताः ।
 अन्ये अभिलेखाः एतावता न दृढीकृताः ।',
@@ -25069,6 +25141,9 @@ $messages['sa'] = array(
 	'centralauth-admin-already-unmerged' => 'पूर्वमेव पृथक्कृतम् इत्यतः $1 त्यज्यते ।',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|अभिलेखः|अभिलेखाः}} पृथक्कृताः',
 	'centralauth-admin-delete-title' => 'अभिलेखः निरस्यताम्',
+	'centralauth-admin-delete-description' => 'वैश्विकलेखायाः निष्कासनेन सर्वं वैश्विकं प्रशस्तं निरस्तं भविष्यति, स्थानीयलेखाः वियुक्ताः भविष्यन्ति । तथा च तत् वैश्विकं नाम अन्यः उपयोक्तुम् अर्हति । 
+सर्वाः स्थानीयलेखाः शिष्यन्ते ।
+संयोगात् पूर्वं सृष्टाः स्थानीयलेखानां कूटशब्दाः पूर्ववदेव शिष्यन्ते ।',
 	'centralauth-admin-delete-button' => 'अयम् अभिलेखः विलोप्यताम्',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" इत्येतस्य वैश्विकाभिलेखः विलोपितः',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" इत्येतस्य वैश्विकाभिलेखः न विद्यते ।',
@@ -25089,6 +25164,13 @@ $messages['sa'] = array(
 	'centralauth-admin-status-submit' => 'स्थितिः नियोज्यताम्',
 	'centralauth-admin-status-nonexistent' => 'दोषः: "<nowiki>$1</nowiki>" अयं वैश्विकाभिलेखः न विद्यते ।',
 	'centralauth-admin-setstatus-success' => 'अस्य वैश्विकाभिलेखस्य स्थितेः परिवर्तनं समीचीनतया कृतं भवता ।',
+	'centralauth-admin-status-reasons' => '* अवरोधस्य साधारणानि कारणानि
+ ** नाशनार्थमेव लेखा
+ ** अनिष्टसन्देशायैव लेखा
+ * आम अवरोध-और-छुपाएँ कारण
+ ** साधारणानि कीलनोद्घाटनकारणानि
+ ** कुत्सितं योजकनाम
+ ** अनुचितं वैयक्तिकविवरणम्',
 	'centralauth-admin-logsnippet' => 'पूर्वतनः वैश्विकाभिलेखः परिवर्तितः',
 	'centralauth-admin-suppressreason' => 'अधोनिर्दिष्टेन कारणेन :$2 , $1 द्वारा वैश्विकस्तरे उपसंहृतमस्ति ।',
 	'globalusers' => 'वैश्विकयोजकावली',
@@ -25151,8 +25233,15 @@ $3 निष्कासितम्',
 	'centralauth-rightslog-set-optin' => 'आप्ट-इन आधारीकृतम्',
 	'centralauth-rightslog-set-optout' => 'आप्ट्-औट् आधारीकृतम्',
 	'autologin' => 'स्वचालितप्रवेशस्य कारणेन',
+	'centralauth-autologin-desc' => 'विकिमाध्यमेन इदं विशिष्टं पृष्ठम् अभ्यन्तरे उपयुज्यते ।
+यदा भवान् [[Special:UserLogin|प्रविशति]], तदा केन्द्रीयप्रवेशनव्यवस्था भवतः जालगवेशकं सर्वेभ्यः सम्बद्धक्षेत्रेभ्यः चित्रस्य अनुबन्धान् 
+उपयुज्य एतत् पृष्ठम् आनेतुम् आदिशति ।
+यतः प्रमाणं विना भवान् इदं पृष्ठं प्रार्थयते, अतः कार्यं न सिद्ध्यति ।',
 	'globalgroupmembership' => 'वैश्विकगणेषु सदस्यत्वम्',
 	'globalgrouppermissions' => 'वैश्विकगणस्य निर्वहणम्',
+	'centralauth-globalgroupperms-grouplist' => 'अधोनिर्दिष्टाः वैश्विकगणाः साकारतां प्राप्ताः ।
+यदि भवान् अनुमतः, तर्हि कस्यचित् गणस्य अनुमतानि द्रष्टुं सम्पादयितुं च अर्हति ।
+दत्तानाम् अधिकाराणां निष्कासनेन यः कोऽपि गणः निष्कासितो भवति ।',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|अधिकारः दर्श्यताम् / सम्पाद्यताम्]])',
 	'centralauth-globalgroupperms-nogroups' => 'कोपि वैश्विकगणः परिभाषितः नास्ति ।',
 	'centralauth-existinggroup-legend' => 'विद्यमानाः गणाः',
@@ -25216,6 +25305,7 @@ $3 निष्कासितम्',
 	'centralauth-editset-success-delete' => 'विकिव्यवस्था यशस्वितया विलोपिता अस्ति ।',
 	'centralauth-editset-return' => 'मुख्यदृश्यं प्रति प्रतिनिवर्त्यताम्',
 	'centralauth-readonly' => 'केन्द्रीयप्राधिकरणविषयविवरणम् अवरुद्धम्',
+	'centralauth-readonlytext' => 'नूतनप्रवेशनं परिवर्तनं च कर्तुं सेण्ट्रल्-आथ्-दत्तांशः प्रायः  दैनिकव्यवस्थापनाय सम्प्रति कीलितः । यश्च कालान्तरे पूर्वस्थितिं प्राप्स्यति ।',
 	'right-globalgroupmembership' => 'विश्विकगणसदस्यत्वं सम्पाद्यताम्',
 	'right-centralauth-autoaccount' => 'वैश्विकाभिलेखद्वारा स्वतः प्रविश्यताम्',
 	'right-centralauth-unmerge' => 'वैश्विकाभिलेखाः पृथक्क्रियन्ताम्',
@@ -28294,6 +28384,7 @@ $messages['ta'] = array(
 	'centralauth-finish-login' => 'புகுபதிகை',
 	'centralauth-finish-send-confirmation' => 'கடவுச்சொல்லை மின்னஞ்சல் செய்',
 	'centralauth-finish-noconfirms' => 'இக் கடவுச்சொல் கொண்டு எக்கணக்கையும் உறுதி செய்ய இயலவில்லை.',
+	'centralauth-merge-attempt' => "'''ஒன்றிணைக்கப்படாது எஞ்சியுள்ள கணக்குகளுடன் வழங்கப்பட்ட கடவுச் சொல்லைச் சரிபார்க்கிறது...'''",
 	'centralauth-attach-list-attached' => '"$1" என்ற ஒருங்கிணைக்கப்பட்ட கணக்கு பின்வரும் கணக்குகளை உள்ளடக்கியது:',
 	'centralauth-attach-title' => 'கணக்கை உறுதிசெய்',
 	'centralauth-attach-submit' => 'கணக்கை புலம் பெயர்',
