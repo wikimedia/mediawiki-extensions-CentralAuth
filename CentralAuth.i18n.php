@@ -1603,6 +1603,7 @@ $messages['arc'] = array(
 	'centralauth-editgroup-members' => 'ܡܟܬܒܘܬܐ ܕܗܕ̈ܡܐ:',
 	'centralauth-editgroup-noset' => '(ܠܐ ܡܕܡ)',
 	'centralauth-editgroup-reason' => 'ܥܠܬܐ:',
+	'centralauth-editset' => 'ܟܢܘܫܬ̈ܐ ܕܘܝܩܝ',
 	'centralauth-editset-name' => 'ܫܡܐ:',
 	'centralauth-editset-type' => 'ܐܕܫܐ:',
 	'centralauth-editset-wikis' => 'ܘܝܩܝ̈ܐ:',
@@ -4041,12 +4042,18 @@ $messages['bn'] = array(
 	'centralauth-admin-reason-other' => 'অন্যান্য/বাড়তি কারণ:',
 	'centralauth-admin-unhide-nonexistent' => 'ত্রুটি: "<nowiki>$1</nowiki>" নামে কোন গ্লোবাল অ্যাকাউন্ট নাই।',
 	'centralauth-admin-status' => 'গ্লোবাল অ্যাকাউন্টের অবস্থা নির্ধারণ',
+	'centralauth-admin-status-intro' => 'এই ফর্মটি ব্যবহার করে আপনি আপনার গ্লোবাল অ্যাকাউন্টটি পরিবর্তন করতে পারবেন।',
 	'centralauth-admin-status-locked' => 'বন্ধ:',
 	'centralauth-admin-status-locked-no' => 'অ্যাকাউন্ট তালাবদ্ধ নয়',
+	'centralauth-admin-status-locked-yes' => 'এই অ্যাকাউন্ট থেকে সম্পাদনার অনুমতি নেই',
 	'centralauth-admin-status-hidden' => 'লুকায়িত:',
 	'centralauth-admin-status-hidden-no' => 'অ্যাকাউন্ট লুকায়িত নয়',
+	'centralauth-admin-status-hidden-list' => 'অ্যাকাউন্টটি পাবলিক লিস্ট থেকে লুকিয়ে রাখা হয়েছে',
 	'centralauth-admin-status-hidden-oversight' => 'অ্যাকাউন্ট সম্পূর্ণভাবে লুকায়িত',
 	'centralauth-admin-status-submit' => 'অবস্থা সেট কর',
+	'centralauth-admin-status-nonexistent' => 'ত্রুটি: "<nowiki>$1</nowiki>" নামে কোন গ্লোবাল অ্যাকাউন্ট নাই।',
+	'centralauth-admin-setstatus-success' => 'আপনি সফলভাবে আপনার গ্লোবাল অ্যাকাউন্টটি পরিবর্তন করেছেন।',
+	'centralauth-admin-logsnippet' => 'পূর্বের প্লোবাল অ্যাকাউন্ট পরিবর্তন',
 	'globalusers' => 'গ্লোবাল ব্যবহাকারীর তালিকা',
 	'centralauth-listusers-locked' => 'বন্ধ',
 	'centralauth-listusers-attached' => '[[User:$1|স্থানীয় ভাবে রয়েছে]]',
@@ -4071,8 +4078,12 @@ $messages['bn'] = array(
 	'centralauth-renameuser-reserved' => 'ব্যবহারকারী $2 গ্লোবাল অ্যাকাউন্টের জন্য বরাদ্দ আছে।',
 	'centralauth-invalid-wiki' => 'এমন কোন ডাটাবেজ নাই: $1',
 	'centralauth-account-exists' => 'অ্যাকাউন্ট তৈরি করা যাবে না: অনুরোধকৃত ব্যবহারকারী নাম ইতিমধ্যে একীভূত লগইন সিস্টেমের জন্য নেওয়া হয়েছে।',
+	'centralauth-account-exists-reset' => '$1 ব্যবহারকারী নামটি এই উইকিতে নিবন্ধন করা নেই। কিন্তু কেন্দ্রীয় লগইন ব্যবস্থায় এটি তালিকাঘুক্ত রয়েছে।',
 	'centralauth-login-progress' => 'যে সকল উইকিমিডিয়ার প্রকল্পসমূহে আপনাকে লগইন করা হয়েছে {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'যে সকল উইকিমিডিয়ার প্রকল্পসমূহ থেকে আপনাকে লগআউট করা হয়েছে {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'আপনি সফলভাবে {{int:Centralauth-groupname}} এর একটি প্রকল্পে লগইন করেছেন।',
+	'centralauth-logout-no-others' => 'আপনি সয়ংক্রিয়ভাবে {{int:Centralauth-groupname}} এর অন্যান্য প্রকল্পগুলো থেকেও লগআউট হয়েছেন।',
+	'centralauth-hidden-blockreason' => '$3 কারণে $2 সময়ে $1 এই গ্লোবাল অ্যাকাউন্টটি হাইড করেছেন',
 	'centralauth-log-name' => 'গ্লোবাল অ্যাকাউন্ট লগ',
 	'centralauth-log-header' => 'এটি গ্লোবাল অ্যাকাউন্ট পরিচালনার কার্যক্রম লগ:মুছে ফেলা, বন্ধ এবং পুনরায় চালু করা।',
 	'centralauth-log-entry-delete' => 'গ্লোবাল অ্যাকাউন্ট "$1" মুছে ফেলো',
@@ -4081,6 +4092,7 @@ $messages['bn'] = array(
 	'centralauth-log-entry-hide' => 'গ্লোবাল অ্যাকাউন্ট "$1" লুকিয়ে ফেলো',
 	'centralauth-log-entry-unhide' => 'গ্লোবাল অ্যাকাউন্ট "$1" লুকানো অবস্থা থেকে বের করো',
 	'centralauth-log-entry-lockandhide' => 'গ্লোবাল অ্যাকাউন্ট "$1" বন্ধ এবং লুকিয়ে ফেলো',
+	'centralauth-log-entry-chgstatus' => '"$1" গ্লোবাল অ্যাকাউন্টের অবস্থা পরিবর্তন করা হয়েছে: $2 নির্ধারণ, $3 পরিবর্তন',
 	'centralauth-log-status-locked' => 'বন্ধ',
 	'centralauth-log-status-hidden' => 'লুকায়িত',
 	'centralauth-log-status-none' => '(কিছু নাই)',
@@ -5141,8 +5153,10 @@ $messages['ceb'] = array(
 
 /** Sorani Kurdish (کوردی)
  * @author Asoxor
+ * @author Muhammed taha
  */
 $messages['ckb'] = array(
+	'centralauth-merge-method-empty' => 'بێ بەشدارییە',
 	'centralauth-admin-reason' => 'هۆکار:',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ساڵ|ساڵی}} پێش',
 	'centralauth-prefs-status' => 'دۆخی ھەژماری گشتی:',
@@ -14735,6 +14749,8 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-admin-status-submit' => 'Atur status',
 	'centralauth-admin-status-nonexistent' => 'Kasalahan: akun global "<nowiki>$1</nowiki>" ora ana.',
 	'centralauth-admin-setstatus-success' => 'Sampéyan suksès ngganti status akun global iki.',
+	'centralauth-admin-logsnippet' => 'Owahan akun global sakdurungé',
+	'centralauth-admin-suppressreason' => 'Dipenet sacara global déning $1 amarga alesan iki: $2',
 	'globalusers' => 'Daftar panganggo global',
 	'centralauth-listusers-locked' => 'dikunci',
 	'centralauth-listusers-attached' => '[[User:$1|ana sacara lokal]]',
@@ -14754,6 +14770,7 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-prefs-count-unattached' => 'Rékening mawa jenengé panjenengan sing durung didhedhes (dikonfirmasi) isih ana ing $1 {{PLURAL:$1|proyèk|proyèk}}.',
 	'centralauth-prefs-detail-unattached' => 'Situs proyèk iki durung dikonfirmasi minangka bagéyan saka rékening global.',
 	'centralauth-prefs-manage' => 'Urusana rékening (akun) global panjenengan',
+	'centralauth-prefs-view' => 'Delok info panganggo global',
 	'centralauth-renameuser-merged' => 'Panganggo $1 wis mlebu sistem akun global. Ganti jeneng bakal nyebabaké akun lokal kasebut kapisah saka akun globalé.',
 	'centralauth-renameuser-reserved' => 'Panganggo $2 wis dicadhangaké kanggo akun global.',
 	'centralauth-invalid-wiki' => 'Ora ana basis data wiki sing kaya ngono: $1',
@@ -14770,6 +14787,7 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-log-entry-lockandhide' => 'akun "$1" wis dikunci lan didhelikaké',
 	'centralauth-log-status-locked' => 'kagembok',
 	'centralauth-log-status-hidden' => 'kadhelikaké',
+	'centralauth-log-status-oversighted' => 'katinjo',
 	'centralauth-log-status-none' => '(ora ana)',
 	'centralauth-rightslog-name' => 'Log hak-hak global',
 	'centralauth-rightslog-entry-usergroups' => 'ngganti kaanggotan kelompok global kanggo $1 saka $2 menyang $3',
@@ -16149,7 +16167,7 @@ $messages['ko'] = array(
 	'centralauth-renameuser-reserved' => '사용자 이름 $2는 통합 계정으로 이미 사용되고 있습니다.',
 	'centralauth-invalid-wiki' => '다음과 같은 위키 데이터베이스가 없습니다: $1',
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
-	'centralauth-account-exists-reset' => '계정 이름 $1이 이 위키에는 등록되지 않았지만 통합 계정 시스템에 계정이 등록되어 있습니다.',
+	'centralauth-account-exists-reset' => '$1 사용자 이름이 이 위키에는 등록되지 않았지만 통합 계정 시스템에 계정이 등록되어 있습니다.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}의 다른 프로젝트에도 로그인합니다:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}의 다른 프로젝트에서도 로그아웃합니다.',
 	'centralauth-login-no-others' => '당신은 자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.',
@@ -17042,6 +17060,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 
 /** Lezghian (лезги)
  * @author Migraghvi
+ * @author Namik
  */
 $messages['lez'] = array(
 	'centralauth-list-home-title' => 'КIвалин вики',
@@ -17068,6 +17087,7 @@ $messages['lez'] = array(
 	'centralauth-admin-no' => 'ваъ',
 	'centralauth-admin-hidden-list' => 'виридан гъил акакьдай сиягьрихъай',
 	'centralauth-admin-unattached' => 'галкIурнавач',
+	'centralauth-admin-list-editcount' => 'Расунрин сиягь',
 	'centralauth-admin-unmerge' => 'Хкягънавайбур ччара авун',
 	'centralauth-admin-merge' => 'Хкягънавайбур сад авун',
 	'centralauth-admin-delete-title' => 'Аккаунт алудун',
@@ -19517,7 +19537,13 @@ Id-databażi tista' tkun li hi korrotta.",
 	'centralauth-merge-home-password' => 'Il-wiki prinċipali għal dan il-kont (elenkata hawn taħt) għandha password differenti minn dik li daħħalt. Jekk jogħġbok daħħal il-password għall-wiki prinċipali.',
 	'centralauth-complete' => "Il-proċess ta' unifikazzjoni tal-login ġie komplut!",
 	'centralauth-incomplete' => "Il-proċess ta' unifikazzjoni tal-login ma ġiex komplut!",
+	'centralauth-incomplete-text' => "Ġaladarba l-kont tiegħek jiġi mwaħħad, inti tkun tista' tidħol fi kwalunkwe sit ta' {{int:Centralauth-groupname}} mingħajr ma toħloq kont ġdid",
+	'centralauth-not-owner-text' => 'L-isem tal-utent "$1" ġie awtomatikament assenjat lill-proprjetatarju tal-kont fuq il-proġett $2.
+
+Jekk int dan, tista\' tlesti dan il-proċess ta\' twaħħid tal-kontijiet billi ddaħħal il-password prinċipali tal-kont hawnhekk:',
 	'centralauth-blocked-text' => "Il-wiki prinċipali tiegħek (imniżżla hawn taħt) hi mblukkata għall-immodifikar. Jekk jogħġbok ikkuntatja amministratur f'din il-wiki sabiex tiżblukkaha. Waqt li hi mblukkata, inti ma tistax twaħħad il-kontijiet.",
+	'centralauth-notice-dryrun' => "<div class='successbox'>Modalità ta' prova biss</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => "It-twaħħid tal-kontijiet huwa attwalment f'modalità ta' prova jew iddibaggjar, għalhekk l-operazzjonijiet ta' twaħħid veru huma diżattivati. Skużana!",
 	'centralauth-error-locked' => 'Inti ma tistax timmodifika minħabba li l-kont tiegħek huwa mblukkat.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Aqra aktar dwar il-'''login imwaħħad''']]…''",
 	'centralauth-list-home-title' => 'Wiki prinċipali',
@@ -23003,6 +23029,7 @@ $messages['ps'] = array(
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|مياشت|مياشتې}} دمخه',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|کال|کاله}} پخوا',
 	'centralauth-prefs-status' => 'د نړيوال ګڼون دريځ:',
+	'centralauth-prefs-unattached' => 'ناتاييد شوی',
 	'centralauth-prefs-complete' => 'ټول په ترتيب دي!',
 	'centralauth-prefs-migration' => 'د لېږدون په حال کې',
 	'centralauth-prefs-count-attached' => 'ستاسو ګڼون د $1  {{PLURAL:$1|پروژې په ويبځي|پروژو په ويبځايونو}} باندې فعاله دی .',
@@ -24404,6 +24431,7 @@ Luàte $3',
 	'centralauth-editset-return' => "Torne ad 'a viste prengepàle",
 	'centralauth-readonly' => "Database d'u CentralAuth bloccate",
 	'right-globalgroupmembership' => "Cange l'appartenenze a le gruppe globbale",
+	'right-centralauth-autoaccount' => "E' trasute automaticamende cu 'u cunde globbale",
 	'right-centralauth-unmerge' => 'Scucchie le cunde globbale',
 	'right-centralauth-lock' => "Blocche o scunne 'u cunde globbale",
 	'right-centralauth-oversight' => "Remove 'u cunde globbale",
@@ -24728,11 +24756,11 @@ $messages['ru'] = array(
  * @author Gazeb
  */
 $messages['rue'] = array(
-	'mergeaccount' => 'Статус зъєдночіня конт',
+	'mergeaccount' => 'Статус зъєдинїня',
 	'centralauth-groupname' => 'Фонд Вікімедія',
-	'centralauth-desc' => '[[Special:MergeAccount|Зъєдночіня конт]] на єднотливых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}',
+	'centralauth-desc' => '[[Special:MergeAccount|Зъєдинїня конт]] на єднотливых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}',
 	'centralauth-antispoof-desc' => 'Додавать технолоґію CentralAuth до AntiSpoof',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Зъєдночіня конт]] про єднотне приголошованя',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Зъєдинїня конт]] на єднотне приголошованя',
 	'centralauth-merge-denied' => 'На тоту сторінку не маєте приступ.',
 	'centralauth-merge-notlogged' => 'Просиме, кідь ся <span class="plainlinks">[$1 приголосите]</span>, будете мочі овірити, ці вашы конта были злучены.',
 	'centralauth-merge-welcome' => "'''Ваше хосновательске конто не было дотеперь переведене на єднотну сістему приголошіня проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}}.'''
@@ -24740,7 +24768,7 @@ $messages['rue'] = array(
 Кідь зволите перевести свої конта, будете мочі хосновати тото саме імя хоснователя і гесло про приголошіня до вшыткых проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}} на вшыткых доступных языках.
 
 Кідь собі уж дахто другый взяв ваше імя хоснователя на іншім проєктї, так тото не овпливните, але будете мочі ся пізнїше догоднути на рїшіню, ці прямо, або за помочі адміністраторів.",
-	'centralauth-merge-step1-title' => 'Зачати зъєдночовати приголосованя',
+	'centralauth-merge-step1-title' => 'Започати зъєдиняти приголосованя',
 	'centralauth-merge-step1-detail' => 'Просиме, задайте гесло ку вашому конту.
 Ваше гесло і реґістрована адреса ел. пошты ся порівнають з контами на іншых вікі, жебы ся підтвердило, же ся згодують.
 Жадны зміны ся не учінять, покы не підтвердите, же вшытко є в порядку.',
@@ -24748,7 +24776,7 @@ $messages['rue'] = array(
 	'centralauth-merge-step2-title' => 'Підтвердити веце конт',
 	'centralauth-merge-step2-detail' => 'Дакотры конта не было можне автоматічно прирядити ку становленок домашнёй вікі. Кідь суть тоты конта вашы, можете то підтвердити тым, же ку ним зазначіте платне гесло.',
 	'centralauth-merge-step2-submit' => 'Підтвердити інформацію про приголошіня',
-	'centralauth-merge-dryrun-complete' => 'Вшыткы вашы єствуючі конта можуть быти зъєдночены!
+	'centralauth-merge-dryrun-complete' => 'Вшыткы вашы єствуючі конта можуть быти зъєдинены!
 
 Дотеперь не были учінены жадны зміны вашого конта.',
 	'centralauth-merge-dryrun-incomplete' => 'Можете продовжовати, але дакотры вашы конта ся не подарило автоматічно овірити і не будуть так переведены такой.
@@ -24761,24 +24789,24 @@ $messages['rue'] = array(
 Про ваше імя хоснователя была становлена інша вікі як домашня; перейдите на одказ ниже, приголосьте ся, жебы могла быти міґрація докінчена.',
 	'centralauth-merge-step3-title' => 'Створїня єднотного конта',
 	'centralauth-merge-step3-detail' => 'Створїня вашого єднотного конта є пририхтоване. Конта з наступных вікі будуть припоєны:',
-	'centralauth-merge-step3-submit' => 'Зъєднотити конта',
+	'centralauth-merge-step3-submit' => 'Зъєдинити конта',
 	'centralauth-merge-no-accounts' => 'В централній таблицї конт не были найджены жадны конта з вашым іменом!
 Датабаза ся здасть быти пошкоджена.',
 	'centralauth-merge-home-password' => 'Домашня вікі того конта (зазначена ниже) хоснує інше гесло, як сьте увели.
 Просиме, уведьте гесло на домашню вікі.',
-	'centralauth-complete' => 'Зъєдночіня конт было завершене!',
-	'centralauth-incomplete' => 'Зъєдночіня конт не было завершене!',
+	'centralauth-complete' => 'Зъєдинїня конт было завершене!',
+	'centralauth-incomplete' => 'Зъєдинїня конт не было завершене!',
 	'centralauth-complete-text' => 'Нынї ся можете приголосити на будьякый проєкт {{grammar:2sg|{{int:Centralauth-groupname}}}}, без того жебы сьте мусили закладати нове конто.',
-	'centralauth-incomplete-text' => 'Аж буде ваше приголосованя зъєдночене, будете ся мочі приголосити на хоцьякый проєкт {{grammar:2sg|{{int:Centralauth-groupname}}}}, без того, жебы сьте мусили закладати нове конто.',
+	'centralauth-incomplete-text' => 'Як буде ваше приголосованя зъєдинене, будете ся мочі приголосити на хоцьякый проєкт {{grammar:2sg|{{int:Centralauth-groupname}}}}, без того, жебы сьте мусили закладати нове конто.',
 	'centralauth-not-owner-text' => 'Хосновательске імя „$1“ было автоматічно передане властникові конта на проєктї $2.
 
-Кідь сьте то вы, можете докінчіти процес зъєдночіня приголосованя уведжінём гесла про дане конто:',
+Кідь сьте то вы, можете докінчіти процес зъєдинїня приголосованя уведжінём гесла про дане конто:',
 	'centralauth-blocked-text' => 'Ваше конто на вашей домашнєй вікі (зазначеной вікі) є блоковане. Просиме, контактуйте адміністратора з той вікі, жебы го одблоковав.
 Злучованя конт не може продовжовати, докы є блокованый.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонштратівный режім</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Злучіня конт біжыть моментално лем в демонштратівным режімі, также самы злучовачі операції суть выпнуты. Перебачте!',
 	'centralauth-error-locked' => 'Не можете едітовати, бо ваше конто было заблоковане.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Прочітайте собі веце о '''зъєдночіню приголосованя''']]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Прочітайте собі веце о '''зъєдинїню приголосованя''']]...''",
 	'centralauth-list-home-title' => 'Домашня вікі',
 	'centralauth-list-home-dryrun' => 'Гесло і адреса ел. пошты наставлены на той вікі будуть хоснованы і на вашім єднотнім контї.',
 	'centralauth-list-attached-title' => 'Припоєны конта',
@@ -24795,8 +24823,8 @@ $messages['rue'] = array(
 	'centralauth-merge-method-admin' => 'конто злучене адміністратором',
 	'centralauth-merge-method-new' => 'нове конто',
 	'centralauth-merge-method-login' => 'створено при приголошіню',
-	'centralauth-merge-method-primary-desc' => 'Тото є вікі, на котрій дішло ку першому зъєдночіню конт.
-Усвідомте собі, же ся може лишыти од основной вікі того хоснователя.',
+	'centralauth-merge-method-primary-desc' => 'Тото є вікі, на котрій дішло к першому зъєдинїню конт.
+Усвідомте собі, же ся може одрізняти од основной вікі того хоснователя.',
 	'centralauth-merge-method-empty-desc' => 'Значіть, же локалне конто было злучене, бо не мало жадны едітації.',
 	'centralauth-merge-method-mail-desc' => 'Значіть, же локалне конто было злучене, бо ёго адреса ел. пошты была згодна з адресов головного конта.',
 	'centralauth-merge-method-password-desc' => 'Значіть, же локалне конто было злучене, бо хоснователь ку нёму зазначів платне гесло.',
@@ -24948,8 +24976,8 @@ $messages['rue'] = array(
 	'centralauth-rightslog-set-optout' => 'на основі прінціпу выключіня',
 	'autologin' => 'Автоматічне приголошіня',
 	'centralauth-autologin-desc' => 'Тоту шпеціалну сторінку внутрїшнї хоснує софтвер MediaWiki.
-Почас [[Special:UserLogin|приголошіня]] сістема зъєдноченого приголошованя прикаже переглядачу выжадати собі тоту сторінку од вшыткых пропоєных домен за помочі одказів на образкы.
-Кідьже сьте о сторінку жадали без доданя автентізачных дат, ніч ся не выконало.',
+Почас [[Special:UserLogin|приголошіня]] сістема зъєдиненого приголошованя прикаже переглядачу выжадати собі тоту сторінку од вшыткых пропоєных домен за помочі одказів на образкы.
+Зато же сьте о сторінку жадали без доданя автентізачных дат, ніч ся не выконало.',
 	'globalgroupmembership' => 'Членство у ґлобалных ґрупах',
 	'globalgrouppermissions' => 'Адміністрація ґлобалных ґруп',
 	'centralauth-globalgroupperms-grouplist' => 'Были наставлены наступны ґлобалны ґрупы. Кідь про то маєте прав, можете переглядати і управляти права приданы єднотливым ґрупам. Ґрупа ся дасть одстранити так, же єй одоймете вшыткы права.',
@@ -25033,13 +25061,17 @@ $messages['sa'] = array(
 	'centralauth-groupname' => 'विकिमाधमसंस्थानम्',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} इत्येतेषु विकीषु [[Special:MergeAccount|प्रवेश-एकत्रिकरणम्]] क्रियताम्',
 	'centralauth-antispoof-desc' => 'CentralAuth कृते AntiSpoof तन्त्रांशं योजयति',
+	'centralauth-mergeaccount-desc' => 'एकत्रितयोजकप्रवेशाय [[Special:MergeAccount|विविधलेखाः संयोज्यन्ते]]।',
 	'centralauth-merge-denied' => 'क्षम्यताम्, इदं पृष्ठं प्राप्तुं भवतः अनुमतिः नास्ति ।',
+	'centralauth-merge-notlogged' => 'भवतः लेखायाः एकत्रीकरणस्थितेः दर्शनाय कृपया <span class="plainlinks">[$1{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} प्रवेशः]</span> क्रियताम् ।',
 	'centralauth-merge-step1-title' => 'नामाभिलेखस्य एकीकरणम् आरभताम्',
 	'centralauth-merge-step1-detail' => 'कृपया भवतः अभिलेखस्य कूटशब्दं लिखतु ।
 भवतः कूटशब्दं पञ्जीकृतम् ईपत्रसङ्केतं च अन्यासु विकिशाखासु समानमस्ति वा इति दृढीक्रियते ।
 सर्वं समीचीनमस्ति इति दृढीकरणपर्यन्तं परिवर्तनानि न क्रियन्ते ।',
 	'centralauth-merge-step1-submit' => 'अभिलेखविवरणं दृढीक्रियताम्',
 	'centralauth-merge-step2-title' => 'अन्ये अभिलेखाः दृढीक्रियन्ताम्',
+	'centralauth-merge-step2-detail' => 'काश्चन लेखाः गृहवीक्या सह स्वचालितरूपेण योजयितुं न शक्यते ।
+यदि एताः लेखाः भवदीयाः, तर्हि तेषां कूटसंख्यादानेन भवतः एव इति दृढीकर्तुम् अर्हति ।',
 	'centralauth-merge-step2-submit' => 'अभिलेखविवरणं दृढीक्रियताम्',
 	'centralauth-merge-dryrun-complete' => 'विद्यमानाः सर्वे अभिलेखाः स्वचालितरूपेण संयोक्तुं शक्यन्ते !
 भवतः अभिलेखे न किमपि परिवर्तनं कृतम् एतावता ।',
@@ -28203,11 +28235,14 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 );
 
 /** Swahili (Kiswahili)
+ * @author Kwisha
  * @author Stephenwanjau
  */
 $messages['sw'] = array(
+	'mergeaccount' => 'Kuunganishwa kwa hali ya kuingia',
 	'centralauth-groupname' => 'Wakfu wa Wikimedia',
 	'centralauth-merge-denied' => 'Samahani, hauna ruhusa ya kufikia ukurasa huu.',
+	'centralauth-merge-step1-title' => 'Anza kuunganisha kuingia',
 	'centralauth-merge-step1-submit' => 'Dhibitisha habari yako ya kuingia',
 	'centralauth-merge-step2-title' => 'Dhibitisha akaunti zingine',
 	'centralauth-merge-step2-submit' => 'Dhibitisha habari yako ya kuingia',
@@ -28217,12 +28252,15 @@ $messages['sw'] = array(
 	'centralauth-complete-text' => 'Unaweza sasa kuingia katika tovuti yoyote ya wiki {{int:Centralauth-groupname}} bila kufungua akaunti mpay.',
 	'centralauth-error-locked' => 'Hauwezi kuhariri maana akaunti yako imezuiwa.',
 	'centralauth-list-home-title' => 'Wiki ya mwanzo',
+	'centralauth-list-attached-title' => 'Akaunti zinazoandamana',
+	'centralauth-list-unattached-title' => 'Akaunti  ambazo haziandamani',
 	'centralauth-foreign-link' => 'Mtumiaji $1 kwa $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribution|michango}} kwa $2',
 	'centralauth-merge-method-primary' => 'Wiki ya mwanzo',
 	'centralauth-merge-method-empty' => 'hakuna michango',
 	'centralauth-merge-method-mail' => 'imethibitishwa kwa barua pepe',
 	'centralauth-merge-method-password' => 'imethibitishwa kwa nywila',
+	'centralauth-merge-method-admin' => 'Akaunti zilizo shikamanishwa na msimamizi',
 	'centralauth-merge-method-new' => 'akaunti mpya',
 	'centralauth-merge-method-login' => 'ilitengenezwa wakati wa kuingia',
 	'centralauth-finish-title' => 'Maliza kuunganisha',
@@ -28238,6 +28276,7 @@ $messages['sw'] = array(
 	'centralauth-admin-lookup-rw' => 'Kusimamia akaunti ya mtumiaji',
 	'centralauth-admin-info-id' => 'Namba ya mtumiaji:',
 	'centralauth-admin-info-registered' => 'Imejiandikisha:',
+	'centralauth-admin-info-home' => 'Wiki ya mwanzo:',
 	'centralauth-admin-info-editcount' => 'Jumla ya hariri:',
 	'centralauth-admin-info-locked' => 'Imefungwa:',
 	'centralauth-admin-info-hidden' => 'Kipimo kilijofichwa:',
@@ -28246,6 +28285,7 @@ $messages['sw'] = array(
 	'centralauth-admin-no' => 'la',
 	'centralauth-admin-hidden-list' => 'kutoka kwa orodha za umma',
 	'centralauth-admin-blocklog' => 'Kumbukumbu ya uzuio',
+	'centralauth-admin-list-localwiki' => 'Wiki ya nyumbani',
 	'centralauth-admin-list-method' => 'Mbinu',
 	'centralauth-admin-list-editcount' => 'Idadi ya mahariri',
 	'centralauth-admin-list-blocked' => 'Imezuia',
@@ -28273,9 +28313,11 @@ $messages['sw'] = array(
 	'centralauth-prefs-unattached' => 'Haijazibitishwa',
 	'centralauth-prefs-complete' => 'Yote shwari',
 	'centralauth-prefs-migration' => 'Katika uhamisho',
+	'centralauth-invalid-wiki' => 'Hakuna hifdhidata ya wiki kama hiyo: $1',
 	'centralauth-log-status-locked' => 'Imezuia',
 	'centralauth-log-status-hidden' => 'imefichwa',
 	'centralauth-log-status-none' => '(hana)',
+	'autologin' => 'Kuingia mara moja kwa moja',
 	'centralauth-existinggroup-legend' => 'Vikundi vilivyopo',
 	'centralauth-newgroup-legend' => 'Tengeneza kikundi kipya',
 	'centralauth-globalgroupperms-newgroupname' => 'Jina la Kikundi kipya:',
@@ -28287,10 +28329,18 @@ $messages['sw'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|hariri]])',
 	'centralauth-editgroup-members' => 'Orodha ya wanachama:',
 	'centralauth-editgroup-noset' => '(hana)',
+	'centralauth-editgroup-submit' => 'Hifadhi mabadiliko ya ruhusa ya kikundi',
 	'centralauth-editgroup-perms' => 'Ruhusa aliyopewa:',
 	'centralauth-editgroup-reason' => 'Sababu:',
 	'centralauth-editgroup-success' => 'Ruhusa ya kikundi imebadilishwa',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|hariri]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki ambayo wako na akaunti:',
+	'centralauth-editset' => 'Seti za wiki',
 	'centralauth-editset-legend-rw' => 'Hariri au tengeneza seti ya wiki',
+	'centralauth-editset-legend-ro' => 'Orodha ya seti za wiki',
+	'centralauth-editset-intro-ro' => 'Hapa chini ni orodha ya seti za wiki zilizopo.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|futa]])',
+	'centralauth-editset-new' => 'Tengeneza seti mpya',
 	'centralauth-editset-notfound' => 'Seti ya wiki "$1" haikupatikana',
 	'centralauth-editset-legend-edit' => 'Hariri seti ya wiki "$1"',
 	'centralauth-editset-legend-view' => 'Seti ya wiki "$1"',
@@ -28299,10 +28349,13 @@ $messages['sw'] = array(
 	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Orodha ya seti]]',
 	'centralauth-editset-name' => 'Jina:',
 	'centralauth-editset-type' => 'Aina:',
+	'centralauth-editset-wikis' => 'Wiki:',
 	'centralauth-editset-restwikis' => 'Wiki ambazo hazijamuishwa hapo juu:',
 	'centralauth-editset-reason' => 'Sababu:',
 	'centralauth-editset-submit' => 'Wasilisha',
 	'centralauth-editset-submit-delete' => 'Futa',
+	'centralauth-editset-badname' => 'Jina la seti ni batili au liko bure.',
+	'centralauth-editset-badtype' => 'Aina ya seti ni batili.',
 	'centralauth-editset-nouse' => '(hana)',
 	'centralauth-editset-usage' => 'Imetumika katika vikundi:',
 	'centralauth-editset-success' => 'Imefaulu kubadilisha seti ya Wiki.',
