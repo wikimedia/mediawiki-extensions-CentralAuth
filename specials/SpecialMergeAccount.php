@@ -453,7 +453,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$hostname = $wiki->getDisplayName();
 		$userPageName = 'User:' . $this->mUserName;
-		$url = $wiki->getUrl( $userPageName );
+		$url = $wiki->getFullUrl( $userPageName );
 		return Xml::element( 'a',
 			array(
 				'href' => $url,
