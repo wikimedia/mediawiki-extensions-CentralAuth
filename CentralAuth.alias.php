@@ -118,7 +118,7 @@ $specialPageAliases['diq'] = array(
 	'MergeAccount' => array( 'HesabJewkerdış' ),
 	'GlobalGroupMembership' => array( 'GlobalGrubaEzayan' ),
 	'GlobalGroupPermissions' => array( 'GlobalGrubaİcazeti' ),
-	'WikiSets' => array( 'SazanêWİkiBıvurne' ),
+	'WikiSets' => array( 'SazanêWikiBıvurne' ),
 	'GlobalUsers' => array( 'KarberoGlobal' ),
 );
 

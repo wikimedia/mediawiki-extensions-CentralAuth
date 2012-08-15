@@ -8372,6 +8372,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
  * @author Joxemai
  * @author Kobazulo
  * @author Xabier Armendaritz
+ * @author පසිඳු කාවින්ද
  */
 $messages['eu'] = array(
 	'mergeaccount' => 'Saio-hasiera bateratua',
@@ -8409,6 +8410,7 @@ $messages['eu'] = array(
 	'centralauth-admin-no' => 'ez',
 	'centralauth-admin-blocklog' => 'blokeaketa erregistroa',
 	'centralauth-admin-list-method' => 'Metodoa',
+	'centralauth-admin-list-editcount' => 'Edizio kontagailua',
 	'centralauth-admin-list-blocked' => 'Blokeatua',
 	'centralauth-admin-delete-title' => 'Kontua ezabatu',
 	'centralauth-admin-delete-button' => 'Kontu hau ezabatu',
@@ -8429,6 +8431,7 @@ $messages['eu'] = array(
 	'centralauth-prefs-complete' => 'Dena behar bezala dago!',
 	'centralauth-log-status-locked' => 'blokeatua',
 	'centralauth-log-status-hidden' => 'ezkutatua',
+	'centralauth-log-status-none' => '(Bat ere ez)',
 	'centralauth-rightslog-name' => 'Eskubide orokorren erregistroa',
 	'autologin' => 'Saio hasiera automatikoa',
 	'globalgroupmembership' => 'Lankidetza talde globaletan',
@@ -8470,6 +8473,7 @@ Ohartu zaitez talde bat ez dela existitzen, horretarako baimenak izan ezean.',
 	'centralauth-editset-submit' => 'Bidali',
 	'centralauth-editset-submit-delete' => 'Ezabatu',
 	'centralauth-editset-nowikis' => 'Ez da fitxategirik zehaztu.',
+	'centralauth-editset-nouse' => '(bat ere ez)',
 	'centralauth-editset-usage' => 'Sail hauetan erabilia:',
 	'centralauth-editset-badwikis' => 'Ondorengo {{PLURAL:$2|wikia|wikiak}} ez dira existitzen: $1.',
 );
@@ -10024,9 +10028,18 @@ $messages['fy'] = array(
 
 /** Irish (Gaeilge)
  * @author Alison
+ * @author පසිඳු කාවින්ද
  */
 $messages['ga'] = array(
+	'centralauth-finish-password' => "D'fhocal faire:",
+	'centralauth-finish-login' => 'Logáil isteach',
+	'centralauth-admin-username' => 'Ainm úsáideora:',
 	'centralauth-admin-reason' => 'Fáth:',
+	'centralauth-editgroup-reason' => 'Fáth:',
+	'centralauth-editset-name' => 'Ainm:',
+	'centralauth-editset-type' => 'Saghas:',
+	'centralauth-editset-reason' => 'Fáth:',
+	'centralauth-editset-submit-delete' => 'Scrios',
 );
 
 /** Galician (galego)
@@ -14372,7 +14385,7 @@ $messages['ja'] = array(
 	'centralauth-admin-list-attached-on' => '統合日時',
 	'centralauth-admin-list-method' => '方法',
 	'centralauth-admin-list-editcount' => '編集回数',
-	'centralauth-admin-list-blocked' => 'ブロック状態',
+	'centralauth-admin-list-blocked' => 'ブロック済',
 	'centralauth-admin-unmerge' => '選択した利用者を統合解除',
 	'centralauth-admin-merge' => '選択した利用者を統合',
 	'centralauth-admin-bad-input' => '統合の選択が無効です',
@@ -20817,10 +20830,10 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-unattached' => 'Niet bevestigd',
 	'centralauth-prefs-complete' => 'Alles in orde!',
 	'centralauth-prefs-migration' => 'Bezig met migreren',
-	'centralauth-prefs-count-attached' => 'Uw gebruikersaccount is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.',
+	'centralauth-prefs-count-attached' => 'Uw gebruiker is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.',
 	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached' => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
-	'centralauth-prefs-manage' => 'Globaal gebruikersaccount beheren',
+	'centralauth-prefs-manage' => 'Globale gebruiker beheren',
 	'centralauth-prefs-view' => 'Informatie over globaal gebruikersaccount bekijken',
 	'centralauth-renameuser-merged' => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.',
 	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
@@ -20942,7 +20955,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
  */
 $messages['nl-informal'] = array(
 	'centralauth-merge-denied' => 'Je hebt geen toegang tot deze pagina.',
-	'centralauth-merge-notlogged' => '<span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} Meld je aan]</span> om te controleren of je gebruikers volledig zijn samengevoegd.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1  Meld je aan]</span> om te controleren of je gebruikers volledig zijn samengevoegd.',
 	'centralauth-merge-welcome' => "'''Je gebruiker is nog niet gemigreerd naar het samengevoegde aanmeldsysteem van {{int:Centralauth-groupname}}.'''
 
 Als je ervoor kiest om je gebruikers te migreren, dan kan je met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle wiki's van {{int:Centralauth-groupname}} in alle beschikbare talen.
@@ -20983,6 +20996,26 @@ Zolang de wiki niet bewerkt kan worden, kan je geen gebruikers samenvoegen.',
 [[meta:Help:Unified login problems|Hoe hulp vinden]]…',
 	'centralauth-attach-text' => 'Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker.
 Als de overkoepelende gebruiker ook van jou is, dan kan je deze gebruiker samenvoegen als je het wachtwoord voor de overkoepelende gebruiker ingeeft:',
+	'centralauth-token-mismatch' => 'Vanwege verlies van de sessiegegevens kon je verzoek niet verwerkt worden.',
+	'centralauth-admin-status-intro' => 'Je kunt dit formulier gebruiken om de status van deze globale gebruiker te wijzigen',
+	'centralauth-prefs-count-attached' => 'Je gebruiker is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.',
+	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met jouw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
+	'centralauth-prefs-manage' => 'Je globale gebruiker beheren',
+	'centralauth-login-progress' => 'Je wordt aangemeld bij andere wikis van {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Je wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Je bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Je bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
+	'centralauth-autologin-desc' => 'Deze pagina wordt intern door MediaWiki gebruikt.
+Als je je [[Special:UserLogin|aanmeldt]], geeft het centrale aanmeldsysteem je browser de opdracht om deze pagina vanuit alle aangesloten domeinen op te vragen met behulp van een verwijzing naar een afbeelding.
+Je hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en daarom gebeurt er niets.',
+	'centralauth-globalgroupperms-grouplist' => 'De onderstaande globale groepen zijn ingesteld.
+Je kunt de rechten van alle groepen bekijken en bewerken als je daar de rechten voor hebt.
+Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
+	'centralauth-newgroup-intro' => 'Via dit formulier kan je rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn',
+	'centralauth-editgroup-success-text' => 'Je hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]',
+	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de aangegeven wiki ('' $2 ''). Probeer je misschien rechten toe te kennen aan de verkeerde gebruiker?",
+	'centralauth-editset-intro-rw' => 'De volgende wikigroepen bestaan al.
+Je kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 );
 
 /** Norwegian Nynorsk (‪norsk (nynorsk)‬)
