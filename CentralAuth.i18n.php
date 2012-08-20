@@ -396,6 +396,7 @@ You may view and modify any of them, or create a new set.',
  * @author Nemo bis
  * @author Nenino 10
  * @author Olli
+ * @author Pikne
  * @author Purodha
  * @author Raymond
  * @author SPQRobin
@@ -505,6 +506,7 @@ See [http://meta.wikimedia.org/wiki/Oversight meta] for explanation of 'oversigh
 
 Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.",
 	'centralauth-admin-list-legend-ro' => 'Header on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
+	'centralauth-admin-list-legend-rw' => 'Fieldset header ([[:File:CentralAuth admin.png|screenshot]])',
 	'centralauth-admin-unattached' => '{{Identical|Unattached accounts}}',
 	'centralauth-admin-blocked' => '$1 is the date/time of expiry, $2 is the reason of the block, $3 is the date of expiry, $4 is the time of expiry.',
 	'centralauth-admin-blocklog' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
@@ -8202,7 +8204,7 @@ Põhjus: $2',
 	'centralauth-admin-none-selected' => 'Muutmiseks pole kontosid valitud.',
 	'centralauth-admin-already-unmerged' => '$1 jäetakse vahele, juba lahutatud',
 	'centralauth-admin-unmerge-success' => '{{PLURAL:$1|Üks konto|$1 kontot}} on edukalt lahutatud.',
-	'centralauth-admin-delete-title' => 'Kustuta konto',
+	'centralauth-admin-delete-title' => 'Konto kustutamine',
 	'centralauth-admin-delete-description' => 'Globaalse konto kustutamisega kustutatakse kõik globaalsed eelistused, kõik kohalikud kontod ühendatakse lahti ja vabaneva globaalse nime saab valida mõni teine kasutaja.
 Kõik kohalikud kontod jäävad alles.
 Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
@@ -8214,7 +8216,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-admin-reason' => 'Põhjus:',
 	'centralauth-admin-reason-other' => 'Muu või täiendav põhjus:',
 	'centralauth-admin-unhide-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
-	'centralauth-admin-status' => 'Määra globaalse konto seisund',
+	'centralauth-admin-status' => 'Globaalse konto seisundi määramine',
 	'centralauth-admin-status-intro' => 'Selle vormiga saad globaalse konto seisundit muuta.',
 	'centralauth-admin-status-locked' => 'Lukustatud:',
 	'centralauth-admin-status-locked-no' => 'Konto pole lukus',
@@ -8223,7 +8225,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-admin-status-hidden-no' => 'Konto pole peidetud',
 	'centralauth-admin-status-hidden-list' => 'Konto on avalikest nimekirjadest peidetud',
 	'centralauth-admin-status-hidden-oversight' => 'Konto on täielikult peidetud',
-	'centralauth-admin-status-submit' => 'Määra olek',
+	'centralauth-admin-status-submit' => 'Määra seisund',
 	'centralauth-admin-status-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
 	'centralauth-admin-setstatus-success' => 'Globaalse konto seisund on edukalt muudetud.',
 	'centralauth-admin-status-reasons' => '* Tavalised lukustamispõhjused
@@ -8272,7 +8274,7 @@ Kasutajanime muutmisega eraldatakse kohalik kasutaja globaalsest.',
 	'centralauth-log-entry-hide' => 'peitis globaalse konto "$1"',
 	'centralauth-log-entry-unhide' => 'muutis globaalse konto "$1" jälle nähtavaks',
 	'centralauth-log-entry-lockandhide' => 'lukustas ja peitis globaalse konto "$1"',
-	'centralauth-log-entry-chgstatus' => 'muutis globaalse konto "$1" olekut. Määratud: $2. Ärastatud: $3',
+	'centralauth-log-entry-chgstatus' => 'muutis globaalse konto "$1" seisundit. Määratud: $2. Ärastatud: $3',
 	'centralauth-log-status-locked' => 'lukustatud',
 	'centralauth-log-status-hidden' => 'peidetud',
 	'centralauth-log-status-oversighted' => 'varjatud',
@@ -31454,8 +31456,8 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-listusers-locked' => 'đã khóa',
 	'centralauth-listusers-attached' => '[[User:$1|tồn tại địa phương]]',
 	'centralauth-listusers-nolocal' => 'chưa được liên kết hoặc chưa tồn tại địa phương',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|giây|giây}} trước đây',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|phút|phút}} trước đây',
+	'centralauth-seconds-ago' => '$1 giây trước đây',
+	'centralauth-minutes-ago' => '$1 phút trước đây',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|giờ|giờ}} trước đây',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|ngày|ngày}} trước đây',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|tháng|tháng}} trước đây',
