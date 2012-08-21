@@ -28,68 +28,68 @@ CREATE TABLE globalnames (
 -- only existing databases not yet migrated have to be loaded.
 --
 CREATE TABLE localnames (
-  ln_wiki varchar(255) binary not null,
-  ln_name varchar(255) binary not null,
+	ln_wiki varchar(255) binary not null,
+	ln_name varchar(255) binary not null,
 
-  primary key (ln_wiki, ln_name),
-  key (ln_name, ln_wiki)
+	primary key (ln_wiki, ln_name),
+	key (ln_name, ln_wiki)
 ) /*$wgDBTableOptions*/;
 
 --
 -- Global account data.
 --
 CREATE TABLE globaluser (
-  -- Internal unique ID for the authentication server
-  gu_id int auto_increment,
+	-- Internal unique ID for the authentication server
+	gu_id int auto_increment,
 
-  -- Username.
-  gu_name varchar(255) binary,
+	-- Username.
+	gu_name varchar(255) binary,
 
-  -- Timestamp and method used to create the global account
-  gu_enabled varchar(14) not null,
-  gu_enabled_method enum('opt-in', 'batch', 'auto', 'admin'),
+	-- Timestamp and method used to create the global account
+	gu_enabled varchar(14) not null,
+	gu_enabled_method enum('opt-in', 'batch', 'auto', 'admin'),
 
-  -- Local database name of the user's 'home' wiki.
-  -- By default, the 'winner' of a migration check for old accounts
-  -- or the account the user was first registered at for new ones.
-  -- May be changed over time.
-  gu_home_db varchar(255) binary,
+	-- Local database name of the user's 'home' wiki.
+	-- By default, the 'winner' of a migration check for old accounts
+	-- or the account the user was first registered at for new ones.
+	-- May be changed over time.
+	gu_home_db varchar(255) binary,
 
-  -- Registered email address, may be empty.
-  gu_email varchar(255) binary,
+	-- Registered email address, may be empty.
+	gu_email varchar(255) binary,
 
-  -- Timestamp when the address was confirmed as belonging to the user.
-  -- NULL if not confirmed.
-  gu_email_authenticated char(14) binary,
+	-- Timestamp when the address was confirmed as belonging to the user.
+	-- NULL if not confirmed.
+	gu_email_authenticated char(14) binary,
 
-  -- Salt and hashed password
-  -- For migrated passwords, the salt is the local user_id.
-  gu_salt varchar(16) binary,
-  gu_password tinyblob,
+	-- Salt and hashed password
+	-- For migrated passwords, the salt is the local user_id.
+	gu_salt varchar(16) binary,
+	gu_password tinyblob,
 
-  -- If true, this account cannot be used to log in on any wiki.
-  gu_locked bool not null default 0,
+	-- If true, this account cannot be used to log in on any wiki.
+	gu_locked bool not null default 0,
 
-  -- If true, this account should be hidden from most public user lists.
-  -- Used for "deleting" accounts without breaking referential integrity.
-  gu_hidden varbinary(255) not null default '',
+	-- If true, this account should be hidden from most public user lists.
+	-- Used for "deleting" accounts without breaking referential integrity.
+	gu_hidden varbinary(255) not null default '',
 
-  -- Registration time
-  gu_registration varchar(14) binary,
+	-- Registration time
+	gu_registration varchar(14) binary,
 
-  -- Random key for password resets
-  gu_password_reset_key tinyblob,
-  gu_password_reset_expiration varchar(14) binary,
+	-- Random key for password resets
+	gu_password_reset_key tinyblob,
+	gu_password_reset_expiration varchar(14) binary,
 
-  -- Random key for crosswiki authentication tokens
-  gu_auth_token varbinary(32) NULL,
+	-- Random key for crosswiki authentication tokens
+	gu_auth_token varbinary(32) NULL,
 
-  primary key (gu_id),
-  unique key (gu_name),
-  key (gu_email),
+	primary key (gu_id),
+	unique key (gu_name),
+	key (gu_email),
 
-  key gu_locked( gu_name(255), gu_locked ),
-  key gu_hidden( gu_name(255), gu_hidden(255) )
+	key gu_locked( gu_name(255), gu_locked ),
+	key gu_hidden( gu_name(255), gu_hidden(255) )
 ) /*$wgDBTableOptions*/;
 
 --
@@ -99,22 +99,23 @@ CREATE TABLE globaluser (
 -- All local DBs will be swept on an opt-in check event.
 --
 CREATE TABLE localuser (
-  lu_wiki varchar(255) binary not null,
-  lu_name varchar(255) binary not null,
+	lu_wiki varchar(255) binary not null,
+	lu_name varchar(255) binary not null,
 
-  -- Migration status/logging information, to help diagnose issues
-  lu_attached_timestamp varchar(14) binary,
-  lu_attached_method enum (
-    'primary',
-    'empty',
-    'mail',
-    'password',
-    'admin',
-    'new',
-    'login'),
+	-- Migration status/logging information, to help diagnose issues
+	lu_attached_timestamp varchar(14) binary,
+	lu_attached_method enum (
+		'primary',
+		'empty',
+		'mail',
+		'password',
+		'admin',
+		'new',
+		'login'
+	),
 
-  primary key (lu_wiki, lu_name),
-  key (lu_name, lu_wiki)
+	primary key (lu_wiki, lu_name),
+	key (lu_name, lu_wiki)
 ) /*$wgDBTableOptions*/;
 
 
