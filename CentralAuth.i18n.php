@@ -10051,6 +10051,7 @@ $messages['ga'] = array(
 /** Galician (galego)
  * @author Alma
  * @author Kaustubh
+ * @author McDutchie
  * @author Prevert
  * @author Toliño
  * @author Xosé
@@ -23147,6 +23148,7 @@ $messages['ps'] = array(
  * @author GTNS
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Helder.wiki
  * @author João Sousa
  * @author Lijealso
  * @author Malafaya
@@ -23263,7 +23265,7 @@ Se a conta global também for sua, pode associar-lhe esta conta introduzindo a p
 	'centralauth-admin-info-header' => 'Informação de utilizadores globais',
 	'centralauth-admin-info-id' => 'Número de identificação:',
 	'centralauth-admin-info-registered' => 'Registado:',
-	'centralauth-admin-info-home' => "Wiki de acolhimento ''(home wiki)'':",
+	'centralauth-admin-info-home' => 'Wiki de origem:',
 	'centralauth-admin-info-editcount' => 'Total de edições:',
 	'centralauth-admin-info-locked' => 'Bloqueada:',
 	'centralauth-admin-info-hidden' => 'Nível de ocultação:',
@@ -23579,7 +23581,7 @@ Se a conta global também for sua, você pode associa-lá esta conta introduzind
 	'centralauth-admin-info-header' => 'Informação de usuários globais',
 	'centralauth-admin-info-id' => 'Número de identificação:',
 	'centralauth-admin-info-registered' => 'Registrada:',
-	'centralauth-admin-info-home' => 'Wiki local:',
+	'centralauth-admin-info-home' => 'Wiki de origem:',
 	'centralauth-admin-info-editcount' => 'Total de edições:',
 	'centralauth-admin-info-locked' => 'Bloqueado:',
 	'centralauth-admin-info-hidden' => 'Nível de ocultação:',
