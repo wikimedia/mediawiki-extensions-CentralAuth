@@ -346,6 +346,7 @@ $specialPageAliases['it'] = array(
 	'MergeAccount' => array( 'UnificaUtenze' ),
 	'GlobalGroupMembership' => array( 'PermessiUtenteGlobale' ),
 	'GlobalGroupPermissions' => array( 'PermessiGruppoGlobale' ),
+	'WikiSets' => array( 'WikiSet', 'ModificaWikiSets' ),
 	'GlobalUsers' => array( 'UtentiGlobali' ),
 );
 

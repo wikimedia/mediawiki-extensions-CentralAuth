@@ -10355,7 +10355,7 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'right-centralauth-unmerge' => 'Anular a fusión dunha conta global',
 	'right-centralauth-lock' => 'Bloquear ou agochar unha conta global',
 	'right-centralauth-oversight' => 'Suprimir unha conta global',
-	'right-centralauth-merge' => 'Fusionar a conta de terceiras persoas',
+	'right-centralauth-merge' => 'Fusionar a conta propia',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
 );
 
@@ -12979,7 +12979,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'right-centralauth-unmerge' => 'Disfusionar conto global',
 	'right-centralauth-lock' => 'Serrar o celar conto global',
 	'right-centralauth-oversight' => 'Supprimer conto global',
-	'right-centralauth-merge' => 'Fusionar su conto',
+	'right-centralauth-merge' => 'Fusionar le proprie conto',
 	'right-globalgrouppermissions' => 'Gerer gruppos global',
 );
 
@@ -20675,6 +20675,7 @@ $messages['ne'] = array(
 
 /** Dutch (Nederlands)
  * @author Krinkle
+ * @author Kthoelen
  * @author McDutchie
  * @author Meursault2004
  * @author Naudefj
@@ -20877,7 +20878,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists' => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
 	'centralauth-account-exists-reset' => 'De gebruikersnaam "$1" is niet geregistreerd bij deze wiki, maar de globale gebruiker bestaat wel.',
-	'centralauth-login-progress' => 'U wordt aangemeld bij andere wikis van {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => "U wordt aangemeld bij andere wiki's van {{int:Centralauth-groupname}}:",
 	'centralauth-logout-progress' => 'U wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
