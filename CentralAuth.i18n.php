@@ -461,7 +461,7 @@ Status message after incomplete unification of a user account.',
 	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
 	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
 	'centralauth-merge-method-login' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-merge-method-questionmark'  => '{{optional}} Shown on Special:CentralAuth in the "Method" column to illustrate that there is a tooltip',
+	'centralauth-merge-method-questionmark' => '{{optional}} Shown on Special:CentralAuth in the "Method" column to illustrate that there is a tooltip',
 	'centralauth-finish-password' => '{{Identical|Password}}',
 	'centralauth-finish-login' => '{{Identical|Log in}}',
 	'centralauth-finish-send-confirmation' => 'Ability to send password using email.
@@ -6166,6 +6166,7 @@ Beachte, dass es sich vom Heimatwiki des Benutzers unterscheiden kann.',
 Diese Möglichkeit ist zurzeit aus Sicherheitsgründen deaktiviert',
 	'centralauth-merge-method-new-desc' => 'Zeigt an, dass das globale Benutzerkonto automatisch erstellt wurde, als das lokale Benutzerkonto erstellt wurde.',
 	'centralauth-merge-method-login-desc' => 'Zeigt an, dass das lokale Benutzerkonto automatisch erstellt wurde, als der Benutzer sich anmeldete.',
+	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => 'Zusammenführung vollenden',
 	'centralauth-finish-text' => 'Wenn diese Benutzerkonten dir gehören, kannst du hier den Prozess der Benutzerkonten-Zusammenführung durch die Eingabe des Passwortes für die anderen Benutzerkonten vollenden:',
 	'centralauth-finish-password' => 'Passwort:',
@@ -9373,6 +9374,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author Quentinv57
  * @author Seb35
  * @author Sherbrooke
+ * @author Tititou36
  * @author Urhixidur
  * @author Verdy p
  * @author Wyz
@@ -9455,6 +9457,7 @@ Notez qu’il peut être différent du wiki principal de cet utilisateur.',
 	'centralauth-merge-method-admin-desc' => 'Indique que le compte local a été fusionné manuellement par les stewards. Cette fonctionnalité est maintenant désactivée pour des raisons de sécurité.',
 	'centralauth-merge-method-new-desc' => 'Indique que le compte global a été créé automatiquement lorsque ce compte local a été créé.',
 	'centralauth-merge-method-login-desc' => 'Indique que le compte local a été créé automatiquement quand l’utilisateur s’est identifié.',
+	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => 'Terminer la fusion',
 	'centralauth-finish-text' => 'Si ces comptes vous appartiennent, vous pouvez terminer le processus d’unification des identifications en tapant leurs mots de passe respectifs actuels ci-dessous :',
 	'centralauth-finish-password' => 'Mot de passe :',
@@ -14346,6 +14349,7 @@ $messages['ja'] = array(
 この機能はセキュリティ上の理由から現在無効になっています。',
 	'centralauth-merge-method-new-desc' => '本ローカルアカウントが作成されたときに、自動的にグローバルアカウントが作成されたことを示す。',
 	'centralauth-merge-method-login-desc' => '利用者がログインしたときに自動的にローカルアカウントが作成されたことを示す。',
+	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => '統合完了',
 	'centralauth-finish-text' => '以下のアカウントがあなたのものであれば、それらのパスワードを入力することで、アカウント統一処理を簡単に完了することができます:',
 	'centralauth-finish-password' => 'パスワード：',
