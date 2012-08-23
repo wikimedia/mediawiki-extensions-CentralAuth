@@ -245,6 +245,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
+	'centralauth-globalname-exists'  => 'Cannot create account: the requested username "$1" is reserved for another user by the unified login system.',
 	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
 	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
@@ -376,6 +377,10 @@ You may view and modify any of them, or create a new set.',
 	'right-centralauth-oversight'   => 'Suppress global account',
 	'right-centralauth-merge'       => 'Merge their account',
 	'right-globalgrouppermissions'  => 'Manage global groups',
+
+	'centralauth-account-exists'     => 'Shown when aborting an account creation where there is a SUL account with this name.',
+	'centralauth-account-exists-reset' => 'Shown when requesting a password reset on a wiki where the username is not registered, but there is a SUL account with this name.',
+	'centralauth-globalname-exists'  => 'Shown when aborting an account creation where there is not a SUL account with this name, but there are users with this name on other wikis.',
 );
 
 /** Message documentation (Message documentation)
@@ -25321,7 +25326,7 @@ $messages['sa'] = array(
 	'centralauth-merge-step2-submit' => 'अभिलेखविवरणं दृढीक्रियताम्',
 	'centralauth-merge-dryrun-complete' => 'विद्यमानाः सर्वे अभिलेखाः स्वचालितरूपेण संयोक्तुं शक्यन्ते !
 भवतः अभिलेखे न किमपि परिवर्तनं कृतम् एतावता ।',
-	'centralauth-merge-dryrun-incomplete' => 'भवान् अग्रे अनुवर्तयितुम् अर्हति, किन्तु केचन अभिलेखाः स्वयं दृढीकर्तुं न शक्यते, झटिति तान् संयोक्तुं न शक्यते । 
+	'centralauth-merge-dryrun-incomplete' => 'भवान् अग्रे अनुवर्तयितुम् अर्हति, किन्तु केचन अभिलेखाः स्वयं दृढीकर्तुं न शक्यते, झटिति तान् संयोक्तुं न शक्यते ।
 अग्रे एतान् संयोक्तुं शक्यते ।
 भवतः अभिलेखे एतावता न किमपि परिवर्तनं कृतम् ।',
 	'centralauth-merge-dryrun-or' => "'''अथवा'''",
@@ -25430,7 +25435,7 @@ $messages['sa'] = array(
 	'centralauth-admin-already-unmerged' => 'पूर्वमेव पृथक्कृतम् इत्यतः $1 त्यज्यते ।',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|अभिलेखः|अभिलेखाः}} पृथक्कृताः',
 	'centralauth-admin-delete-title' => 'अभिलेखः निरस्यताम्',
-	'centralauth-admin-delete-description' => 'वैश्विकलेखायाः निष्कासनेन सर्वं वैश्विकं प्रशस्तं निरस्तं भविष्यति, स्थानीयलेखाः वियुक्ताः भविष्यन्ति । तथा च तत् वैश्विकं नाम अन्यः उपयोक्तुम् अर्हति । 
+	'centralauth-admin-delete-description' => 'वैश्विकलेखायाः निष्कासनेन सर्वं वैश्विकं प्रशस्तं निरस्तं भविष्यति, स्थानीयलेखाः वियुक्ताः भविष्यन्ति । तथा च तत् वैश्विकं नाम अन्यः उपयोक्तुम् अर्हति ।
 सर्वाः स्थानीयलेखाः शिष्यन्ते ।
 संयोगात् पूर्वं सृष्टाः स्थानीयलेखानां कूटशब्दाः पूर्ववदेव शिष्यन्ते ।',
 	'centralauth-admin-delete-button' => 'अयम् अभिलेखः विलोप्यताम्',
@@ -25523,7 +25528,7 @@ $3 निष्कासितम्',
 	'centralauth-rightslog-set-optout' => 'आप्ट्-औट् आधारीकृतम्',
 	'autologin' => 'स्वचालितप्रवेशस्य कारणेन',
 	'centralauth-autologin-desc' => 'विकिमाध्यमेन इदं विशिष्टं पृष्ठम् अभ्यन्तरे उपयुज्यते ।
-यदा भवान् [[Special:UserLogin|प्रविशति]], तदा केन्द्रीयप्रवेशनव्यवस्था भवतः जालगवेशकं सर्वेभ्यः सम्बद्धक्षेत्रेभ्यः चित्रस्य अनुबन्धान् 
+यदा भवान् [[Special:UserLogin|प्रविशति]], तदा केन्द्रीयप्रवेशनव्यवस्था भवतः जालगवेशकं सर्वेभ्यः सम्बद्धक्षेत्रेभ्यः चित्रस्य अनुबन्धान्
 उपयुज्य एतत् पृष्ठम् आनेतुम् आदिशति ।
 यतः प्रमाणं विना भवान् इदं पृष्ठं प्रार्थयते, अतः कार्यं न सिद्ध्यति ।',
 	'globalgroupmembership' => 'वैश्विकगणेषु सदस्यत्वम्',

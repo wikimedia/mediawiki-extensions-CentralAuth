@@ -110,6 +110,12 @@ class CentralAuthHooks {
 			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
 		}
+
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		if ( $dbr->selectRow( 'globalnames', 'gn_name', array( 'gn_name' => $user->getName() ) ) ) {
+			$abortError = wfMsg( 'centralauth-globalname-exists', $user->getName() );
+			return false;
+		}
 		return true;
 	}
 
