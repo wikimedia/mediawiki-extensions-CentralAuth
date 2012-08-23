@@ -432,7 +432,7 @@ class SpecialCentralAuth extends SpecialPage {
 					'title' => $brief,
 					'data-centralauth-mergemethod' => $method
 				),
-				'(?)'
+				wfMessage( 'centralauth-merge-method-questionmark' )->text()
 			);
 
 		return $html;

@@ -110,6 +110,7 @@ Note that it may differ from the real home wiki of that user.',
 That feature is disabled now because of security reasons.',
 	'centralauth-merge-method-new-desc'      => 'Indicates that the global account was created automatically when that local account was created.',
 	'centralauth-merge-method-login-desc'    => 'Indicates that the local account was created automatically when user logged in.',
+	'centralauth-merge-method-questionmark'  => '(?)',
 
 	// When not complete, offer to finish...
 	'centralauth-finish-title'             => 'Finish merge',
