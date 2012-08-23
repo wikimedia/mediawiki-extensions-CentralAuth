@@ -245,6 +245,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
+	'centralauth-globalname-exists'  => 'Cannot create account: the requested username "$1" is reserved for another user by the unified login system.',
 	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
 	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
@@ -684,6 +685,10 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 {{doc-singularthey}}',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
+
+	'centralauth-account-exists'     => 'Shown when aborting an account creation where there is a SUL account with this name.',
+	'centralauth-account-exists-reset' => 'Shown when requesting a password reset on a wiki where the username is not registered, but there is a SUL account with this name.',
+	'centralauth-globalname-exists'  => 'Shown when aborting an account creation where there is not a SUL account with this name, but there are users with this name on other wikis.',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
