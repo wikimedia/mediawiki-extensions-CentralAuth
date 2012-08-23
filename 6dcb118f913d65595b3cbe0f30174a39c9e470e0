@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//1SE\u003d",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-23T09:14:28Z",
+      "side": 1,
+      "message": "There\u0027s an i18n issue here.\n\nPlease change this to:\n\nreturn $this-\u003egetLanguage()-\u003elistToText( $rights );\n\nLanguage::listToText() takes a list of strings and build a locale-friendly comma-separated list, using the local comma-separator message. The last two strings are chained with an \"and\".",
+      "revId": "6dcb118f913d65595b3cbe0f30174a39c9e470e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
