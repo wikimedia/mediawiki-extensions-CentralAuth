@@ -110,6 +110,7 @@ Note that it may differ from the real home wiki of that user.',
 That feature is disabled now because of security reasons.',
 	'centralauth-merge-method-new-desc'      => 'Indicates that the global account was created automatically when that local account was created.',
 	'centralauth-merge-method-login-desc'    => 'Indicates that the local account was created automatically when user logged in.',
+	'centralauth-merge-method-questionmark'  => '(?)',
 
 	// When not complete, offer to finish...
 	'centralauth-finish-title'             => 'Finish merge',
@@ -460,6 +461,7 @@ Status message after incomplete unification of a user account.',
 	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
 	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
 	'centralauth-merge-method-login' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
+	'centralauth-merge-method-questionmark'  => '{{optional}} Shown on Special:CentralAuth in the "Method" column to illustrate that there is a tooltip',
 	'centralauth-finish-password' => '{{Identical|Password}}',
 	'centralauth-finish-login' => '{{Identical|Log in}}',
 	'centralauth-finish-send-confirmation' => 'Ability to send password using email.
