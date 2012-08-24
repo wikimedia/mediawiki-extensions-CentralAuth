@@ -8380,6 +8380,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
  * @author Bengoa
  * @author Joxemai
  * @author Kobazulo
+ * @author Unai Fdz. de Betoño
  * @author Xabier Armendaritz
  * @author පසිඳු කාවින්ද
  */
@@ -8410,6 +8411,7 @@ $messages['eu'] = array(
 	'centralauth-finish-send-confirmation' => 'Pasahitza e-posta bidez bidali',
 	'centralauth-attach-title' => 'Kontua egiaztatu',
 	'centralauth-admin-username' => 'Erabiltzaile izena:',
+	'centralauth-admin-lookup-ro' => 'Erabiltzaileari buruzko informazioa ikusi',
 	'centralauth-admin-info-id' => 'Erabiltzailearen identifikazioa (ID):',
 	'centralauth-admin-info-registered' => 'Erregistratua:',
 	'centralauth-admin-info-editcount' => 'Edizio guztien kontagailua:',
@@ -29811,6 +29813,7 @@ Tandaan na maaaring kaiba ito mula sa totoong tahanang wiki ng tagagamit na iyan
 Hindi na pinapagana ang ganyang kasangkapang-katangian dahil sa mga dahilang pangkaligtasan.',
 	'centralauth-merge-method-new-desc' => 'Nagpapahiwatig na ang pandaigdigang akawnt ay kusang nalikha noong malikha ang katutubong akawnt na iyan.',
 	'centralauth-merge-method-login-desc' => 'Nagpapahiwatig na ang katutubong akawnt ay kusang nalikha noong lumagdang papasok ang tagagamit.',
+	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => 'Tapusin na ang pagsasanib',
 	'centralauth-finish-text' => 'Kung ikaw nga ang nagmamay-ari ng mga kuwenta na ito, maaaring mong tapusin na ang proseso ng pag-iisa ng paglagda sa pamamagitan lamang ng payak na pagmamakinilya ng mga hudyat para sa iba pang mga akawnt dito:',
 	'centralauth-finish-password' => 'Hudyat:',
