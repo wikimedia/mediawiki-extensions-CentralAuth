@@ -9,7 +9,7 @@
 class CentralAuthReadOnlyError extends ErrorPageError {
 	public function __construct(){
 		parent::__construct(
-			'centralauth-readonly',
+			wfMessage( 'centralauth-readonly' )->text(),
 			'centralauth-readonlytext'
 		);
 	}

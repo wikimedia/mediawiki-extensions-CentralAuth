@@ -136,10 +136,10 @@ class SpecialCentralAuth extends SpecialPage {
 
 			if ( !$isLocked && $setLocked ) {
 				$lockStatus = $globalUser->adminLock();
-				$added[] = wfMsgForContent( 'centralauth-log-status-locked' );
+				$added[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
 			} elseif ( $isLocked && !$setLocked ) {
 				$lockStatus = $globalUser->adminUnlock();
-				$removed[] = wfMsgForContent( 'centralauth-log-status-locked' );
+				$removed[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
 			}
 
 			$reason = $this->getRequest()->getText( 'wpReasonList' );
@@ -147,7 +147,7 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( $reason == 'other' ) {
 				$reason = $reasonDetail;
 			} elseif ( $reasonDetail ) {
-				$reason .= wfMsgForContent( 'colon-separator' ) . $reasonDetail;
+				$reason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() . $reasonDetail;
 			}
 
 			if ( $oldHiddenLevel != $setHidden ) {
@@ -155,18 +155,18 @@ class SpecialCentralAuth extends SpecialPage {
 				switch( $setHidden ) {
 					case CentralAuthUser::HIDDEN_NONE:
 						$removed[] = $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT ?
-							wfMsgForContent( 'centralauth-log-status-oversighted' ) :
-							wfMsgForContent( 'centralauth-log-status-hidden' );
+							$this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text() :
+							$this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
 						break;
 					case CentralAuthUser::HIDDEN_LISTS:
-						$added[] = wfMsgForContent( 'centralauth-log-status-hidden' );
+						$added[] = $this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
 						if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
-							$removed[] = wfMsgForContent( 'centralauth-log-status-oversighted' );
+							$removed[] = $this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
 						break;
 					case CentralAuthUser::HIDDEN_OVERSIGHT:
-						$added[] = wfMsgForContent( 'centralauth-log-status-oversighted' );
+						$added[] = $this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
 						if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_LISTS )
-							$removed[] = wfMsgForContent( 'centralauth-log-status-hidden' );
+							$removed[] = $this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
 						break;
 				}
 
@@ -183,9 +183,9 @@ class SpecialCentralAuth extends SpecialPage {
 			// Logging etc
 			if ( $good && ( count( $added ) || count( $removed ) ) ) {
 				$added = count( $added ) ?
-					implode( ', ', $added ) : wfMsgForContent( 'centralauth-log-status-none' );
+					implode( ', ', $added ) : $this->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
 				$removed = count( $removed ) ?
-					implode( ', ', $removed ) : wfMsgForContent( 'centralauth-log-status-none' );
+					implode( ', ', $removed ) : $this->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
 
 				$this->logAction(
 									'setstatus',
@@ -230,17 +230,17 @@ class SpecialCentralAuth extends SpecialPage {
 	function showUsernameForm() {
 		global $wgScript;
 		$lookup = $this->mCanEdit ?
-			wfMsg( 'centralauth-admin-lookup-rw' ) :
-			wfMsg( 'centralauth-admin-lookup-ro' );
+			$this->msg( 'centralauth-admin-lookup-rw' )->text() :
+			$this->msg( 'centralauth-admin-lookup-ro' )->text();
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array(
 				'method' => 'get',
 				'action' => $wgScript ) ) .
 			'<fieldset>' .
-			Xml::element( 'legend', array(), wfMsg( 'centralauth-admin-manage' ) ) .
+			Xml::element( 'legend', array(), $this->msg( 'centralauth-admin-manage' )->text() ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			'<p>' .
-			Xml::inputLabel( wfMsg( 'centralauth-admin-username' ),
+			Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
 				'target', 'target', 25, $this->mUserName ) .
 			'</p>' .
 			'<p>' .
@@ -268,11 +268,11 @@ class SpecialCentralAuth extends SpecialPage {
 			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
 			// 'centralauth-days-ago', 'centralauth-months-ago', 'centralauth-years-ago'
 			if ( $span < 2 * $chunk ) {
-				return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $this->getLanguage()->formatNum( $span ) );
+				return $this->msg( "centralauth-$unit-ago" )->numParams( $span )->text();
 			}
 			$span = intval( $span / $chunk );
 		}
-		return wfMsgExt( "centralauth-$unit-ago", 'parsemag', $this->getLanguage()->formatNum( $span ) );
+		return $this->msg( "centralauth-$unit-ago" )->numParams( $span )->text();
 	}
 
 	function showInfo() {
@@ -285,13 +285,13 @@ class SpecialCentralAuth extends SpecialPage {
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'home' => $this->determineHomeWiki(),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
-			'locked' => wfMsgHtml( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' ),
+			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
 		);
 		$out = '<fieldset id="mw-centralauth-info">';
-		$out .= '<legend>' . wfMsgHtml( 'centralauth-admin-info-header' ) . '</legend><ul>';
+		$out .= '<legend>' . $this->msg( 'centralauth-admin-info-header' )->escaped() . '</legend><ul>';
 		foreach ( $attribs as $tag => $data ) {
-			$out .= '<li><strong>' . wfMsgHtml( "centralauth-admin-info-$tag" ) . '</strong> ' .
+			$out .= '<li><strong>' . $this->msg( "centralauth-admin-info-$tag" )->escaped() . '</strong> ' .
 				$data . '</li>';
 		}
 		$out .= '</ul></fieldset>';
@@ -303,8 +303,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$remainder = $this->mUnattachedLocalAccounts;
 
 		$legend = $this->mCanUnmerge ?
-			wfMsgHtml( 'centralauth-admin-list-legend-rw' ) :
-			wfMsgHtml( 'centralauth-admin-list-legend-ro' );
+			$this->msg( 'centralauth-admin-list-legend-rw' )->escaped() :
+			$this->msg( 'centralauth-admin-list-legend-ro' )->escaped();
 
 		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		$this->getOutput()->addHTML( $this->listHeader() );
@@ -332,11 +332,11 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) . "\n" .
 			'<thead><tr>' .
 				( $this->mCanUnmerge ? '<th></th>' : '' ) .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-localwiki' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-attached-on' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-method' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-blocked' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'centralauth-admin-list-editcount' ) . '</th>' .
+				'<th>' . $this->msg( 'centralauth-admin-list-localwiki' )->escaped() . '</th>' .
+				'<th>' . $this->msg( 'centralauth-admin-list-attached-on' )->escaped() . '</th>' .
+				'<th>' . $this->msg( 'centralauth-admin-list-method' )->escaped() . '</th>' .
+				'<th>' . $this->msg( 'centralauth-admin-list-blocked' )->escaped() . '</th>' .
+				'<th>' . $this->msg( 'centralauth-admin-list-editcount' )->escaped() . '</th>' .
 			'</tr></thead>' .
 			'<tbody>';
 	}
@@ -351,7 +351,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'<tr>' .
 				'<td style="border-right: none"></td>' .
 				'<td style="border-left: none" colspan="5">' .
-				Xml::submitButton( wfMsg( 'centralauth-admin-unmerge' ) ) .
+				Xml::submitButton( $this->msg( 'centralauth-admin-unmerge' )->text() ) .
 				'</td>' .
 				'</tr>';
 		$footer .= '</tbody></table></form>';
@@ -373,7 +373,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	function listRemainder( $list ) {
 		ksort( $list );
-		$notMerged = wfMsgExt( 'centralauth-admin-unattached', array( 'parseinline' ) );
+		$notMerged = $this->msg( 'centralauth-admin-unattached' )->parse();
 		$rows = array();
 		foreach ( $list as $row ) {
 			$rows[] = '<tr class="unattached-row"><td>' .
@@ -446,24 +446,24 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
 			$reason = $row['block-reason'];
-				return wfMsgExt( 'centralauth-admin-blocked-indef', 'parseinline', array( $reason ) );
+				return $this->msg( 'centralauth-admin-blocked-indef', array( $reason ) )->parse();
 			} else {
 				$expiry = $this->getLanguage()->timeanddate( $row['block-expiry'], true );
 				$expiryd = $this->getLanguage()->date( $row['block-expiry'], true );
 				$expiryt = $this->getLanguage()->time( $row['block-expiry'], true );
 				$reason = $row['block-reason'];
 
-				$text = wfMsgExt( 'centralauth-admin-blocked', 'parseinline', array( $expiry, $reason, $expiryd, $expiryt ) );
+				$text = $this->msg( 'centralauth-admin-blocked', $expiry, $reason, $expiryd, $expiryt )->parse();
 			}
 		} else {
-			$text = wfMsgExt( 'centralauth-admin-notblocked', 'parseinline' );
+			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
 		}
 
 		return $this->foreignLink(
 			$row['wiki'],
 			'Special:Log/block',
 			$text,
-			wfMsg( 'centralauth-admin-blocklog' ),
+			$this->msg( 'centralauth-admin-blocklog' )->text(),
 			'page=User:' . urlencode( $this->mUserName ) );
 	}
 
@@ -483,7 +483,8 @@ class SpecialCentralAuth extends SpecialPage {
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
 			$editCount,
-			wfMsgExt( 'centralauth-foreign-contributions', 'parseinline', $editCount, $wikiname )
+			$this->msg( 'centralauth-foreign-contributions' )
+				->numParams( $editCount )->params( $wikiname )->parse()
 		);
 	}
 
@@ -494,11 +495,11 @@ class SpecialCentralAuth extends SpecialPage {
 	function formatHiddenLevel( $level ) {
 		switch( $level ) {
 			case CentralAuthUser::HIDDEN_NONE:
-				return wfMsgHtml( 'centralauth-admin-no' );
+				return $this->msg( 'centralauth-admin-no' )->escaped();
 			case CentralAuthUser::HIDDEN_LISTS:
-				return wfMsgHtml( 'centralauth-admin-hidden-list' );
+				return $this->msg( 'centralauth-admin-hidden-list' )->escaped();
 			case CentralAuthUser::HIDDEN_OVERSIGHT:
-				return wfMsgHtml( 'centralauth-admin-hidden-oversight' );
+				return $this->msg( 'centralauth-admin-hidden-oversight' )->escaped();
 		}
 		return '';
 	}
@@ -561,7 +562,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$wiki,
 			'User:' . $this->mUserName,
 			$wikiname,
-			wfMsg( 'centralauth-foreign-link', $this->mUserName, $wikiname ) );
+			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text() );
 	}
 
 	/**
@@ -579,14 +580,14 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->getOutput()->addHTML(
 			# to be able to find messages: centralauth-admin-delete-title,
 			# centralauth-admin-delete-description, centralauth-admin-delete-button
-			Xml::fieldset( wfMsg( "centralauth-admin-{$action}-title" ) ) .
+			Xml::fieldset( $this->msg( "centralauth-admin-{$action}-title" )->text() ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
 				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
 				'id' => "mw-centralauth-$action" ) ) .
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-			wfMsgExt( "centralauth-admin-{$action}-description", 'parse' ) .
+				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
 			Xml::buildForm(
 				array( 'centralauth-admin-reason' => Xml::input( 'reason',
 					false, false, array( 'id' => "{$action}-reason" ) ) ),
@@ -598,36 +599,36 @@ class SpecialCentralAuth extends SpecialPage {
 	function showStatusForm() {
 		// Allows locking, hiding, locking and hiding.
 		$form = '';
-		$form .= Xml::fieldset( wfMsg( 'centralauth-admin-status' ) );
+		$form .= Xml::fieldset( $this->msg( 'centralauth-admin-status' )->text() );
 		$form .= Html::hidden( 'wpMethod', 'set-status' );
 		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$form .= wfMsgExt( 'centralauth-admin-status-intro', 'parse' );
+		$form .= $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock();
 
 		// Radio buttons
 		$radioLocked =
 			Xml::radioLabel(
-				wfMsgExt( 'centralauth-admin-status-locked-no', array( 'parseinline' ) ),
+				$this->msg( 'centralauth-admin-status-locked-no' )->parse(),
 				'wpStatusLocked',
 				'0',
 				'mw-centralauth-status-locked-no',
 				!$this->mGlobalUser->isLocked() ) .
 			'<br />' .
 			Xml::radioLabel(
-				wfMsgExt( 'centralauth-admin-status-locked-yes', array( 'parseinline' ) ),
+				$this->msg( 'centralauth-admin-status-locked-yes' )->parse(),
 				'wpStatusLocked',
 				'1',
 				'mw-centralauth-status-locked-yes',
 				$this->mGlobalUser->isLocked() );
 		$radioHidden =
 			Xml::radioLabel(
-				wfMsgExt( 'centralauth-admin-status-hidden-no', array( 'parseinline' ) ),
+				$this->msg( 'centralauth-admin-status-hidden-no' )->parse(),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_NONE,
 				'mw-centralauth-status-hidden-no',
 				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_NONE ) .
 			'<br />' .
 			Xml::radioLabel(
-				wfMsgExt( 'centralauth-admin-status-hidden-list', array( 'parseinline' ) ),
+				$this->msg( 'centralauth-admin-status-hidden-list' )->parse(),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_LISTS,
 				'mw-centralauth-status-hidden-list',
@@ -635,7 +636,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'<br />';
 		if ( $this->mCanOversight ) {
 			$radioHidden .= Xml::radioLabel(
-				wfMsgExt( 'centralauth-admin-status-hidden-oversight', array( 'parseinline' ) ),
+				$this->msg( 'centralauth-admin-status-hidden-oversight' )->parse(),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_OVERSIGHT,
 				'mw-centralauth-status-hidden-oversight',
@@ -646,8 +647,8 @@ class SpecialCentralAuth extends SpecialPage {
 		// Reason
 		$reasonList = Xml::listDropDown(
 			'wpReasonList',
-			wfMsgForContent( 'centralauth-admin-status-reasons' ),
-			wfMsgForContent( 'ipbreasonotherlist' )
+			$this->msg( 'centralauth-admin-status-reasons' )->inContentLanguage()->text(),
+			$this->msg( 'ipbreasonotherlist' )->inContentLanguage()->text()
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
 
@@ -687,7 +688,10 @@ class SpecialCentralAuth extends SpecialPage {
 			'',
 			array( 'showIfEmpty' => true ) );
 		if ( $numRows ) {
-			$this->getOutput()->addHTML( Xml::fieldset( wfMsg( 'centralauth-admin-logsnippet' ), $text ) );
+			$this->getOutput()->addHTML( Xml::fieldset(
+				$this->msg( 'centralauth-admin-logsnippet' )->text(),
+				$text
+			) );
 		}
 	}
 
@@ -702,7 +706,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		// Home account can be renamed or unmerged
-		return wfMsgHtml( 'centralauth-admin-nohome' );
+		return $this->msg( 'centralauth-admin-nohome' )->escaped();
 	}
 
 	/**
@@ -723,8 +727,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$mergeMethodDescriptions = array();
 		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
 			$mergeMethodDescriptions[$method] = array(
-				'short' => $this->getLanguage()->ucfirst( wfMsgHtml( "centralauth-merge-method-{$method}" ) ),
-				'desc' => wfMsgWikiHtml( "centralauth-merge-method-{$method}-desc" )
+				'short' => $this->getLanguage()->ucfirst( $this->msg( "centralauth-merge-method-{$method}" )->escaped() ),
+				'desc' => $this->msg( "centralauth-merge-method-{$method}-desc" )->escaped()
 			);
 		}
 		return $mergeMethodDescriptions;
