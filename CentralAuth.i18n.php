@@ -8115,7 +8115,7 @@ Andmebaas peab olema rikutud.',
 	'centralauth-merge-home-password' => 'Selle konto koduvikil (loetletud allpool) on sisestatust erinev parool.
 Palun sisesta koduviki parool.',
 	'centralauth-complete' => 'Ühendkonto on loodud.',
-	'centralauth-incomplete' => 'Ühendkonto loomine pole lõpetatud.',
+	'centralauth-incomplete' => 'Ühendkonto loomine pole lõpule viidud.',
 	'centralauth-complete-text' => 'Võid nüüd kõigisse vikidesse, mida haldab {{int:Centralauth-groupname}}, sisse logida uut kontot loomata.',
 	'centralauth-incomplete-text' => 'Kui su ühendkonto on loodud, saad kõigisse {{int:Centralauth-groupname}} vikidesse uut kontot loomata sisse logida.',
 	'centralauth-not-owner-text' => 'Kasutajanimi "$1" anti automaatselt konto $2 omanikule.
@@ -14570,7 +14570,7 @@ $messages['ja'] = array(
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
 	'right-centralauth-autoaccount' => 'グローバルアカウントで自動的にログイン',
 	'right-centralauth-unmerge' => 'グローバルアカウントの統一解除',
-	'right-centralauth-lock' => 'グローバルアカウントをロックまたは秘匿',
+	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿',
 	'right-centralauth-oversight' => 'グローバルアカウントを秘匿',
 	'right-centralauth-merge' => 'アカウントの統合',
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
