@@ -1,7 +1,4 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'CentralAuth' );
-}
 
 /**
  * Unlisted Special page to set requisite cookies for being logged into this wiki.

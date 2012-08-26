@@ -316,7 +316,7 @@ if ( MWInit::classExists( 'AntiSpoof' ) ) {
  */
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 	if ( $skin ) {
-		$link = Linker::makeLinkObj( $title, htmlspecialchars( $params[0] ) );
+		$link = Linker::link( $title, htmlspecialchars( $params[0] ) );
 	} else {
 		$link = $params[0];
 	}
@@ -333,7 +333,7 @@ function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filte
 			break;
 		case 'setchange':
 			$args = array( $params[1]
-				? $params[1] : wfMsg( 'rightsnone' ), $params[2] ? $params[2] : wfMsg( 'rightsnone' ) );
+				? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() );
 			break;
 		default: //'deleteset'
 			$args = array();
