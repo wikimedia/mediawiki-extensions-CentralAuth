@@ -44,11 +44,11 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
 			Html::hidden( 'title',  $this->getTitle() ) .
 			Xml::openElement( 'fieldset' ) .
-			Xml::element( 'legend', array(), wfMsg( 'userrights-lookup-user' ) ) .
-			Xml::inputLabel( wfMsg( 'userrights-user-editname' ), 'user', 'username', 30, $this->mTarget ) . ' <br />' .
-			Xml::label( wfMsg( 'centralauth-globalgrouppermissions-knownwiki' ), 'wpKnownWiki' ) . ' ' .
+			Xml::element( 'legend', array(), $this->msg( 'userrights-lookup-user' )->text() ) .
+			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username', 30, $this->mTarget ) . ' <br />' .
+			Xml::label( $this->msg( 'centralauth-globalgrouppermissions-knownwiki' )->text(), 'wpKnownWiki' ) . ' ' .
 			$selector->getHTML() . '<br />' .
-			Xml::submitButton( wfMsg( 'editusergroup' ) ) .
+			Xml::submitButton( $this->msg( 'editusergroup' )->text() ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
 		);
@@ -107,7 +107,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 */
 	protected function showLogFragment( $user, $output ) {
 		$pageTitle = Title::makeTitleSafe( NS_USER, $user->getName() );
-		$output->addHTML( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
+		$logPage = new LogPage( 'gblrights' );
+		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $pageTitle->getPrefixedText() );
 	}
 

@@ -10,7 +10,7 @@ class WikiSet {
 	private $mType;	// Opt-in based or opt-out based
 	private $mWikis;	// List of wikis
 	// This property is used, don't remove it
-	// (That means you Reedy)
+	// (That means you Reedy & Siebrand)
 	private $mVersion = self::VERSION;      // Caching purposes
 
 	static $mCacheVars = array(
@@ -296,6 +296,6 @@ class WikiSet {
 	 * @return string
 	 */
 	public static function formatType( $type ) {
-		return wfMsgHtml( "centralauth-rightslog-set-{$type}" );
+		return wfMessage( "centralauth-rightslog-set-{$type}" )->escaped();
 	}
 }
