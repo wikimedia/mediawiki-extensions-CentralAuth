@@ -53,34 +53,34 @@ class CentralAuthHooks {
 				$unattached = count( $global->listUnattached() );
 				if ( $unattached ) {
 					// Migration incomplete
-					$message = '<strong>' . wfMsgExt( 'centralauth-prefs-migration', 'parseinline' ) . '</strong>' .
+					$message = '<strong>' . wfMessage( 'centralauth-prefs-migration' )->parse() . '</strong>' .
 						'<br />' .
-						wfMsgExt( 'centralauth-prefs-count-attached', array( 'parseinline' ), $wgLang->formatNum( $attached ) ) .
+						wfMessage( 'centralauth-prefs-count-attached' )->numParams( $attached )->parse() .
 						'<br />' .
-						wfMsgExt( 'centralauth-prefs-count-unattached', array( 'parseinline' ), $wgLang->formatNum( $unattached ) );
+						wfMessage( 'centralauth-prefs-count-unattached' )->numParams( $unattached )->parse();
 				} else {
 					// Migration complete
-					$message = '<strong>' . wfMsgExt( 'centralauth-prefs-complete', 'parseinline' ) . '</strong>' .
+					$message = '<strong>' . wfMessage( 'centralauth-prefs-complete' )->parse() . '</strong>' .
 						'<br />' .
-						wfMsgExt( 'centralauth-prefs-count-attached', array( 'parseinline' ), $wgLang->formatNum( $attached ) );
+						wfMessage( 'centralauth-prefs-count-attached' )->numParams( $attached )->parse();
 				}
 			} else {
 				// Account is in migration, but the local account is not attached
-				$message = '<strong>' . wfMsgExt( 'centralauth-prefs-unattached', 'parseinline' ) . '</strong>' .
+				$message = '<strong>' . wfMessage( 'centralauth-prefs-unattached' )->parse() . '</strong>' .
 					'<br />' .
-					wfMsgExt( 'centralauth-prefs-detail-unattached', 'parseinline' );
+					wfMessage( 'centralauth-prefs-detail-unattached' )->parse();
 			}
 		} else {
 			// Not migrated.
-			$message = wfMsgExt( 'centralauth-prefs-not-managed', 'parseinline' );
+			$message = wfMessage( 'centralauth-prefs-not-managed' )->parse();
 		}
 
 		$manageLinks = array();
 		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
-			wfMsgExt( 'centralauth-prefs-manage', 'parseinline' ) );
+			wfMessage( 'centralauth-prefs-manage' )->parse() );
 		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
-			wfMsgExt( 'centralauth-prefs-view', 'parseinline' ) );
-		$manageLinkList = wfMsg( 'parentheses', $wgLang->pipeList( $manageLinks ) );
+			wfMessage( 'centralauth-prefs-view' )->parse() );
+		$manageLinkList = wfMessage( 'parentheses', $wgLang->pipeList( $manageLinks ) )->text();
 
 		$prefInsert =
 			array( 'globalaccountstatus' =>
@@ -107,7 +107,7 @@ class CentralAuthHooks {
 	static function onAbortNewAccount( $user, &$abortError ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists() ) {
-			$abortError = wfMsg( 'centralauth-account-exists' );
+			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
 		}
 		return true;
@@ -161,12 +161,12 @@ class CentralAuthHooks {
 		// On other domains
 		global $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthAutoLoginWikis ) {
-			$inject_html .= wfMsgExt( 'centralauth-login-no-others', 'parsemag' );
+			$inject_html .= wfMessage( 'centralauth-login-no-others' )->text();
 			return true;
 		}
 
 		$inject_html .= '<div class="centralauth-login-box"><p>' .
-			wfMsgExt( 'centralauth-login-progress', array( 'parsemag' ), $user->getName() ) . "</p>\n<p>";
+			wfMessage( 'centralauth-login-progress', $user->getName() )->text() . "</p>\n<p>";
 		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
 			$data = array(
 				'userName' => $user->getName(),
@@ -321,7 +321,7 @@ class CentralAuthHooks {
 			// Nothing to do.
 			return true;
 		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
-			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
+			$inject_html .= wfMessage( 'centralauth-logout-no-others' )->parseAsBlock();
 			return true;
 		}
 
@@ -330,13 +330,13 @@ class CentralAuthHooks {
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
 			return true;
 		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
-			$inject_html .= wfMsgExt( 'centralauth-logout-no-others', 'parse' );
+			$inject_html .= wfMessage( 'centralauth-logout-no-others' )->parseAsBlock();
 			return true;
 		}
 
 		// Generate the images
 		$inject_html .= '<div class="centralauth-logout-box"><p>' .
-			wfMsg( 'centralauth-logout-progress' ) . "</p>\n<p>";
+			wfMessage( 'centralauth-logout-progress' )->escaped() . "</p>\n<p>";
 		$centralUser = new CentralAuthUser( $userName );
 
 		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {

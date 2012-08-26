@@ -50,7 +50,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return;
 		}
 
-		$this->getOutput()->setPageTitle( wfMsg( 'globalgrouppermissions' ) );
+		$this->getOutput()->setPageTitle( $this->msg( 'globalgrouppermissions' ) );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
 		$this->getOutput()->enableClientCache( false );
@@ -74,7 +74,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$groups = CentralAuthUser::availableGlobalGroups();
 
 		// Existing groups
-		$html = Xml::fieldset( wfMsg( 'centralauth-existinggroup-legend' ) );
+		$html = Xml::fieldset( $this->msg( 'centralauth-existinggroup-legend' )->text() );
 
 		$this->getOutput()->addHTML( $html );
 
@@ -83,7 +83,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$this->getOutput()->addHTML( '<ul>' );
 
 			foreach ( $groups as $group ) {
-				$text = wfMsgExt( 'centralauth-globalgroupperms-grouplistitem', array( 'parseinline' ), User::getGroupName( $group ), $group, '<span class="centralauth-globalgroupperms-groupname">' . $group . '</span>' );
+				$text = $this->msg(
+					'centralauth-globalgroupperms-grouplistitem',
+					User::getGroupName( $group ),
+					$group,
+					'<span class="centralauth-globalgroupperms-groupname">' . $group . '</span>'
+				)->parse();
 
 				$this->getOutput()->addHTML( "<li> $text </li>" );
 			}
@@ -95,8 +100,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		if ( $this->userCanEdit( $this->getUser() ) ) {
 			// "Create a group" prompt
-			$html = Xml::fieldset( wfMsg( 'centralauth-newgroup-legend' ) );
-			$html .= wfMsgExt( 'centralauth-newgroup-intro', array( 'parse' ) );
+			$html = Xml::fieldset( $this->msg( 'centralauth-newgroup-legend' )->text() );
+			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'centralauth-globalgroups-newgroup' ) );
 			$html .= Html::hidden( 'title',  SpecialPage::getTitleFor( 'GlobalGroupPermissions' )->getPrefixedText() );
 
@@ -116,9 +121,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	function buildGroupView( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
 
-		$this->getOutput()->setSubtitle( wfMsg( 'centralauth-editgroup-subtitle', $group ) );
+		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editgroup-subtitle', $group ) );
 
-		$html = Xml::fieldset( wfMsg( 'centralauth-editgroup-fieldset', $group ) );
+		$html = Xml::fieldset( $this->msg( 'centralauth-editgroup-fieldset', $group )->text() );
 
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(), 'name' => 'centralauth-globalgroups-newgroup' ) );
@@ -129,9 +134,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$fields = array();
 
 		$fields['centralauth-editgroup-name'] = $group;
-		$fields['centralauth-editgroup-display'] = wfMsgExt( 'centralauth-editgroup-display-edit', array( 'parseinline' ), $group, User::getGroupName( $group ) );
-		$fields['centralauth-editgroup-member'] = wfMsgExt( 'centralauth-editgroup-member-edit', array( 'parseinline' ), $group, User::getGroupMember( $group ) );
-		$fields['centralauth-editgroup-members'] = wfMsgExt( 'centralauth-editgroup-members-link', array( 'parseinline' ), $group, User::getGroupMember( $group ) );
+		$fields['centralauth-editgroup-display'] = $this->msg( 'centralauth-editgroup-display-edit', $group, User::getGroupName( $group ) )->parse();
+		$fields['centralauth-editgroup-member'] = $this->msg( 'centralauth-editgroup-member-edit', $group, User::getGroupMember( $group ) )->parse();
+		$fields['centralauth-editgroup-members'] = $this->msg( 'centralauth-editgroup-members-link', $group, User::getGroupMember( $group ) )->parse();
 		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector( $group );
 		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes( $group );
 
@@ -163,12 +168,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return htmlspecialchars( $default );
 
 		$select = new XmlSelect( 'set', 'wikiset', $default );
-		$select->addOption( wfMsg( 'centralauth-editgroup-noset' ), '0' );
+		$select->addOption( $this->msg( 'centralauth-editgroup-noset' )->text(), '0' );
 		foreach ( $sets as $set ) {
 			$select->addOption( $set->getName(), $set->getID() );
 		}
 
-		$editlink = wfMsgExt( "centralauth-editgroup-editsets", array( "parseinline" ) );
+		$editlink = $this->msg( 'centralauth-editgroup-editsets' )->parse();
 		return $select->getHTML() . "&#160;{$editlink}";
 	}
 
@@ -196,7 +201,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$checked = in_array( $right, $assignedRights );
 
 			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
-						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
+						Xml::element( 'tt', null, $this->msg( 'parentheses', $right )->text() );
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
@@ -289,7 +294,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->invalidateRightsCache( $group );
 
 		// Display success
-		$this->getOutput()->setSubTitle( wfMsg( 'centralauth-editgroup-success' ) );
+		$this->getOutput()->setSubTitle( $this->msg( 'centralauth-editgroup-success' ) );
 		$this->getOutput()->addWikiMsg( 'centralauth-editgroup-success-text', $group );
 	}
 
@@ -330,7 +335,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 */
 	protected function showLogFragment( $group, $output ) {
 		$title = SpecialPage::getTitleFor( 'GlobalUsers', $group );
-		$output->addHTML( Xml::element( 'h2', null, LogPage::logName( 'gblrights' ) . "\n" ) );
+		$logPage = new LogPage( 'gblrights' );
+		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $title->getPrefixedText() );
 	}
 
@@ -358,7 +364,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string
 	 */
 	function makeRightsList( $ids ) {
-		return (bool)count( $ids ) ? implode( ', ', $ids ) : wfMsgForContent( 'rightsnone' );
+		return (bool)count( $ids ) ? implode( ', ', $ids ) : $this->msg( 'rightsnone' )->inContentLanguage()->text();
 	}
 
 	/**
@@ -404,7 +410,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $id ) {
 			return WikiSet::newFromID( $id )->getName();
 		} else {
-			return wfMsgForContent( 'centralauth-editgroup-noset' );
+			return $this->msg( 'centralauth-editgroup-noset' )->inContentLanguage()->text();
 		}
 	}
 
