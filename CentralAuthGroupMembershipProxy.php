@@ -4,7 +4,6 @@
  * user rights manipulation.
  */
 class CentralAuthGroupMembershipProxy {
-
 	/**
 	 * @var CentralAuthUser
 	 */
