@@ -1,7 +1,4 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'CentralAuth' );
-}
 
 /**
  * Unlisted Special page to set requisite cookies for being logged into this wiki.
@@ -80,7 +77,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 		if ( $wgCentralAuthLoginIcon ) {
 			readfile( $wgCentralAuthLoginIcon );
 		} else {
-			readfile( dirname( __FILE__ ) . '/1x1.png' );
+			readfile( __DIR__ . '/1x1.png' );
 		}
 	}
 }
