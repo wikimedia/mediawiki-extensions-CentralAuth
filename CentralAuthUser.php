@@ -1160,7 +1160,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( $suppress ) {
 			list( $site, $lang ) = $wgConf->siteFromDB( $wiki );
-			$langNames = Language::getLanguageNames();
+			$langNames = Language::fetchLanguageNames();
 			$lang = isset( $langNames[$lang] ) ? $lang : 'en';
 			$blockReason = wfMsgReal( 'centralauth-admin-suppressreason',
 				array( $by, $reason ), true, $lang );
