@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//zEY\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "There\u0027s not really a reason to have this function, especially since all the other cache keys are hardcoded anyway.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//ytg\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "What determines whether the user page can be shown?",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//zIg\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "Why would this cache key be local while the existence cache key is global? The condition of a user being attached to a central wiki is a global condition. That way, if one wiki determines the user page cannot be shown, it will be cached for all wikis.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//zEc\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "$wgMemc does not locally cache requests, so by calling get() here and below on line 105, you\u0027re making two memcached requests.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//y4g\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "I know I\u0027m being a little picky, but a more descriptive variable name should probably be used, maybe $textKey or something.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//zCk\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "Why use HTTP when you can just fetch the text directly from the central wiki\u0027s database (like you do below in exists() to fetch the page_id and see if it exists)? Using HTTP will be a lot slower since an entirely separate instance of MediaWiki has to be started to render the page.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//ytY\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-08-28T03:34:59Z",
+      "side": 1,
+      "message": "As above. Needs documentation that is descriptive.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
