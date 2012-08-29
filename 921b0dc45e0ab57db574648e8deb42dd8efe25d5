@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn///9M\u003d",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-08-29T22:56:31Z",
+      "side": 1,
+      "message": "You should use !isset( $this-\u003ewikiSets[$row2-\u003egug_group] ) here, it\u0027s more direct and more efficient because it does a hashtable lookup rather than a linear search through a brand new keys array.",
+      "revId": "921b0dc45e0ab57db574648e8deb42dd8efe25d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
