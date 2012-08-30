@@ -5161,6 +5161,7 @@ $messages['ceb'] = array(
 
 /** Sorani Kurdish (کوردی)
  * @author Asoxor
+ * @author Calak
  * @author Muhammed taha
  */
 $messages['ckb'] = array(
@@ -5178,7 +5179,7 @@ $messages['ckb'] = array(
 	'centralauth-attach-title' => 'دڵنیاکردنەوەی هەژمار',
 	'centralauth-attach-submit' => 'تێهەڵکێشکردنی هەژمار',
 	'centralauth-admin-username' => 'ناوی بەکارهێنەر:',
-	'centralauth-admin-lookup-ro' => 'پیشاندانی زانیاری بەکارهێنەر',
+	'centralauth-admin-lookup-ro' => 'پیشاندانی زانیاریی بەکارھێنەر',
 	'centralauth-admin-info-id' => 'ژمارەی بەکارھێنەر:',
 	'centralauth-admin-info-home' => 'ویکی سەرەکی:',
 	'centralauth-admin-yes' => 'بەڵێ',
