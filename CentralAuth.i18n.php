@@ -8525,6 +8525,7 @@ $messages['ext'] = array(
  * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
+ * @author پسر یاس
  */
 $messages['fa'] = array(
 	'mergeaccount' => 'وضعیت یکی‌کردن حساب‌های کاربری',
@@ -8575,12 +8576,12 @@ $messages['fa'] = array(
 	'centralauth-disabled-dryrun' => 'متأسفیم! سامانهٔ یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست.',
 	'centralauth-error-locked' => 'شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اطلاعات بیشتر دربارهٔ '''حساب کاربری مشترک''']]...''",
-	'centralauth-list-home-title' => 'ویکی اصلی',
+	'centralauth-list-home-title' => 'ویکی خانه',
 	'centralauth-list-home-dryrun' => 'گذرواژه و نشانی پست الکترونیکی تنظیم شده در این ویکی، برای حساب یکپارچهٔ شما مورد استفاده قرار خواهد گرفت.',
-	'centralauth-list-attached-title' => 'حساب‌های کاربری غیرمتصل',
+	'centralauth-list-attached-title' => 'حساب‌های کاربری متصل',
 	'centralauth-list-attached' => 'حساب کاربری «$1» در هر یک از پروژه‌های زیر به طور خودکار به حساب کاربری مشترک شما متصل شده‌است:',
 	'centralauth-list-attached-dryrun' => 'حساب کاربری «$1» در هر یک از پروژه‌های زیر به طور خودکار به حساب کاربری مشترک شما متصل خواهد شد:',
-	'centralauth-list-unattached-title' => 'حساب‌های کاربری متصل',
+	'centralauth-list-unattached-title' => 'حساب‌های کاربری غیرمتصل',
 	'centralauth-list-unattached' => 'حساب کاربری $1 را در وبگاه‌های زیر نمی‌توان به طور خودکار متعلق به شما دانست؛ به احتمال زیاد کلمه عبور آن‌ها با حساب کاربری اصلی شما متفاوت است:',
 	'centralauth-foreign-link' => 'حساب کاربری $1 در $2',
 	'centralauth-foreign-contributions' => '$1 مشارکت در $2',
@@ -8621,7 +8622,7 @@ $messages['fa'] = array(
 	'centralauth-admin-username' => 'نام کاربری:',
 	'centralauth-admin-lookup-ro' => 'مشاهدهٔ اطلاعات کاربر',
 	'centralauth-admin-lookup-rw' => 'حساب کاربر را مدیریت کن',
-	'centralauth-admin-permission' => 'تنها ویکیبدها می‌توانند حساب کاربری دیگر کاربرها را یکی کنند.',
+	'centralauth-admin-permission' => 'تنها ویکی بدها می‌توانند حساب کاربری دیگر کاربرها را یکی کنند.',
 	'centralauth-admin-no-unified' => 'حساب کاربری مشترک برای این نام کاربری وجود ندارد.',
 	'centralauth-admin-info-header' => 'اطلاعات سراسری کاربر',
 	'centralauth-admin-info-id' => 'شناسهٔ کاربر:',
@@ -8636,7 +8637,7 @@ $messages['fa'] = array(
 	'centralauth-admin-hidden-list' => 'از فهرست‌های عممومی',
 	'centralauth-admin-hidden-oversight' => 'پنهان‌شده',
 	'centralauth-admin-list-legend-ro' => 'فهرست حساب‌های محلی',
-	'centralauth-admin-list-legend-rw' => 'حساب‌های محلی را ناادغام کن',
+	'centralauth-admin-list-legend-rw' => 'حساب‌های محلی را جدا کن',
 	'centralauth-admin-unattached' => 'متصل نشده‌است',
 	'centralauth-admin-blocked' => 'قطع دسترسی، خاتمه در $3 ساعت $4. دلیل: $2',
 	'centralauth-admin-blocked-indef' => 'قطع دسترسی بی‌پایان. دلیل: $1',
@@ -8646,12 +8647,12 @@ $messages['fa'] = array(
 	'centralauth-admin-list-method' => 'روش',
 	'centralauth-admin-list-editcount' => 'شمارش ویرایش‌ها',
 	'centralauth-admin-list-blocked' => 'بسته شده',
-	'centralauth-admin-unmerge' => 'از ادغام درآوردن موارد انتخاب‌شده',
+	'centralauth-admin-unmerge' => 'جدا کردن موارد انتخاب‌شده',
 	'centralauth-admin-merge' => 'انتخاب ادغام',
 	'centralauth-admin-bad-input' => 'انتخاب غیرمجاز برای ادغام',
 	'centralauth-admin-none-selected' => 'هیچ حساب کاربری‌ای برای تغییر انتخاب نشده‌است.',
-	'centralauth-admin-already-unmerged' => 'گذر از $1، قبلاً از ادغام درآورده شده‌است',
-	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|حساب کاربری|حساب کاربری}} را با موفقیت از ادغام درآورد',
+	'centralauth-admin-already-unmerged' => 'گذر از $1، قبلاً از جدا شده‌است',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|حساب کاربری|حساب کاربری}} را با موفقیت جدا کرد',
 	'centralauth-admin-delete-title' => 'حذف حساب کاربری',
 	'centralauth-admin-delete-description' => 'حذف حساب کاربری مشترک باعث حذف تنظیمات مشترک و از ادغام در آمدن حساب‌های محلی می‌شود و نام کاربری مشترک را برای استفاده دیگر کاربرها آزاد می‌گذارد.
 حساب‌های کاربری محلی باقی خواهند ماند.
