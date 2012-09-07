@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//+co\u003d",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-09-07T23:48:56Z",
+      "side": 1,
+      "message": "Doesn\u0027t need -\u003etext(). OutputPage::setSubtitle() takes a message object.",
+      "revId": "a4bb4eb3dc4223a629a5a69485b052dd4bc4528c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
