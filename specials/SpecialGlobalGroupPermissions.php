@@ -116,7 +116,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	function buildGroupView( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
 
-		$this->getOutput()->setSubtitle( wfMsg( 'centralauth-editgroup-subtitle', $group ) );
+		$subtitleMessage = $editable ? 'centralauth-editgroup-subtitle' : 'centralauth-editgroup-subtitle-readonly';
+		$this->getOutput()->setSubtitle( wfMessage( $subtitleMessage )->params( $group ) );
 
 		$html = Xml::fieldset( wfMsg( 'centralauth-editgroup-fieldset', $group ) );
 

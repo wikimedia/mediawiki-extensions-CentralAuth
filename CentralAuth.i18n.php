@@ -306,6 +306,7 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-globalgroupperms-newgroupname'       => 'New group name:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Assign permissions',
 	'centralauth-editgroup-subtitle'                  => 'Editing $1',
+	'centralauth-editgroup-subtitle-readonly'         => 'View $1',
 	'centralauth-editgroup-fieldset'                  => 'Permissions for $1',
 	'centralauth-editgroup-name'                      => 'Name of group:',
 	'centralauth-editgroup-display'                   => 'Localised name of group:',
@@ -565,6 +566,10 @@ Variables $2 and $3 are a combination of the following:
 * $1 is the name of a wiki set',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
+	'centralauth-editgroup-subtitle' => 'Subtitle for Special:GlobalGroupPernissions for users who may edit these permission
+* $1: Name of the group',
+	'centralauth-editgroup-subtitle-readonly' => 'Subtitle for Special:GlobalGroupPernissions for users without edit right
+* $1: Name of the group',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
 	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
