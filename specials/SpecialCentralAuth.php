@@ -398,9 +398,7 @@ class SpecialCentralAuth extends SpecialPage {
 		return '<tr>' .
 			( $this->mCanUnmerge ? '<td>' . $this->adminCheck( $row['wiki'] ) . '</td>' : '' ) .
 			'<td>' . $this->foreignUserLink( $row['wiki'] ) . '</td>' .
-			'<td>' .
-				// invisible, to make this column sortable
-				Html::element( 'span', array( 'style' => 'display: none' ), htmlspecialchars( $row['attachedTimestamp'] ) ) .
+			'<td data-sort-value="' . htmlspecialchars( $row['attachedTimestamp'] ) . '">' .
 				// visible date and time in users preference
 				htmlspecialchars( $this->getLanguage()->timeanddate( $row['attachedTimestamp'], true ) ) .
 			'</td>' .
