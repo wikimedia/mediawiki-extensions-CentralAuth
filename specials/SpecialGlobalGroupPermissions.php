@@ -45,7 +45,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return;
 		}
 
+<<<<<<< HEAD
 		$this->getOutput()->setPageTitle( $this->msg( 'globalgrouppermissions' ) );
+=======
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalgrouppermissions' );
+		$this->getOutput()->setPageTitle( wfMsg( 'globalgrouppermissions' ) );
+>>>>>>> Make Special:GlobalGroupPermissions more readable in read only modus
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
 		$this->getOutput()->enableClientCache( false );
@@ -203,14 +208,23 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$checked = in_array( $right, $assignedRights );
 
 			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
+<<<<<<< HEAD
 						Xml::element( 'tt', null, $this->msg( 'parentheses', $right )->text() );
+=======
+						Xml::element( 'code', null, wfMsg( 'parentheses', $right ) );
+>>>>>>> Make Special:GlobalGroupPermissions more readable in read only modus
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
 			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
 					$desc );
 
-			$checkboxes[] = "<li>$checkbox&#160;$label</li>";
+			$liClass = '';
+			if ( !$editable ) {
+				# Makes output in read only modus more readable
+				$liClass = $checked ? 'mw-globalgrouppermissions-readonly-checked' : 'mw-globalgrouppermissions-readonly-unchecked';
+			}
+			$checkboxes[] = Html::rawElement( 'li', array( 'class' => $liClass ), "$checkbox&#160;$label" );
 		}
 
 		$count = count( $checkboxes );
