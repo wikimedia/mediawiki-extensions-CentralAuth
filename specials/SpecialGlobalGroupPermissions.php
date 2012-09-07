@@ -50,6 +50,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return;
 		}
 
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalgrouppermissions' );
 		$this->getOutput()->setPageTitle( wfMsg( 'globalgrouppermissions' ) );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
@@ -196,14 +197,19 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$checked = in_array( $right, $assignedRights );
 
 			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
-						Xml::element( 'tt', null, wfMsg( 'parentheses', $right ) );
+						Xml::element( 'code', null, wfMsg( 'parentheses', $right ) );
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
 			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
 					$desc );
 
-			$checkboxes[] = "<li>$checkbox&#160;$label</li>";
+			$liClass = '';
+			if ( !$editable ) {
+				# Makes output in read only modus more readable
+				$liClass = $checked ? 'mw-globalgrouppermissions-readonly-checked' : 'mw-globalgrouppermissions-readonly-unchecked';
+			}
+			$checkboxes[] = Html::rawElement( 'li', array( 'class' => $liClass ), "$checkbox&#160;$label" );
 		}
 
 		$count = count( $checkboxes );
