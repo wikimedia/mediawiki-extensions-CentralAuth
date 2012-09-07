@@ -46,6 +46,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 
 		$this->getOutput()->setPageTitle( $this->msg( 'globalgrouppermissions' ) );
+
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalgrouppermissions' );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
 		$this->getOutput()->enableClientCache( false );
@@ -119,7 +121,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$subtitleMessage = $editable ? 'centralauth-editgroup-subtitle' : 'centralauth-editgroup-subtitle-readonly';
 		$this->getOutput()->setSubtitle( $this->msg( $subtitleMessage, $group ) );
 
-		$html = Xml::fieldset( $this->msg( 'centralauth-editgroup-fieldset', $group )->text() );
+		$fieldsetClass = $editable ? 'mw-centralauth-editgroup' : 'mw-centralauth-editgroup-readonly';
+		$html = Xml::fieldset( $this->msg( 'centralauth-editgroup-fieldset', $group )->text(), false, array( 'class' => $fieldsetClass ) );
 
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(), 'name' => 'centralauth-globalgroups-newgroup' ) );
@@ -203,14 +206,15 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$checked = in_array( $right, $assignedRights );
 
 			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
-						Xml::element( 'tt', null, $this->msg( 'parentheses', $right )->text() );
+						Xml::element( 'code', null, $this->msg( 'parentheses', $right )->text() );
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
 			$label = Xml::tags( 'label', array( 'for' => "wpRightAssigned-$right" ),
 					$desc );
 
-			$checkboxes[] = "<li>$checkbox&#160;$label</li>";
+			$liClass = $checked ? 'mw-centralauth-editgroup-checked' : 'mw-centralauth-editgroup-unchecked';
+			$checkboxes[] = Html::rawElement( 'li', array( 'class' => $liClass ), "$checkbox&#160;$label" );
 		}
 
 		$count = count( $checkboxes );
