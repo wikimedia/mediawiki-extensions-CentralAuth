@@ -30065,6 +30065,7 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 );
 
 /** толышә зывон (толышә зывон)
+ * @author Erdemaslancan
  * @author Гусейн
  */
 $messages['tly'] = array(
@@ -30081,6 +30082,7 @@ $messages['tly'] = array(
 	'centralauth-admin-yes' => 'бәле',
 	'centralauth-editset-name' => 'Ном:',
 	'centralauth-editset-type' => 'Тип:',
+	'centralauth-editset-reason' => 'Сәбәб:',
 );
 
 /** Tok Pisin (Tok Pisin)
