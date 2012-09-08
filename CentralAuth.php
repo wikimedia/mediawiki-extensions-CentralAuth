@@ -172,6 +172,7 @@ $wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/api/ApiDeleteGlobalAccou
 $wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/api/ApiSetGlobalAccountStatus.php";
 $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.php";
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
+$wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
@@ -246,11 +247,15 @@ $wgSpecialPageGroups['WikiSets'] = 'wiki';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 $wgSpecialPageGroups['MultiLock'] = 'users';
 
+<<<<<<< HEAD
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
 $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
 $wgAPIListModules['globalgroups'] = 'ApiQueryGlobalGroups';
 $wgAPIListModules['wikisets'] = 'ApiQueryWikiSets';
+// API Query-Modules
+$wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
+$wgAPIListModules['globalallusers'] = 'ApiQueryGlobalAllUsers';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
