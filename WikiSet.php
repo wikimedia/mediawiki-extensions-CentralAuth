@@ -268,11 +268,28 @@ class WikiSet {
 	}
 
 	/**
+	 * @param $from string The wiki set name to start from (result is ordered by name)
+	 * @param $limit integer Limit for the selection (0 or null = no limit)
+	 * @param $orderByName boolean Order the result by name?
 	 * @return array
 	 */
-	public static function getAllWikiSets() {
+	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
 		$dbr = CentralAuthUser::getCentralSlaveDB();
-		$res = $dbr->select( 'wikiset', '*', false, __METHOD__ );
+		$where = array();
+		$options = array();
+
+		if ( $from != null ) {
+			$where[] = 'ws_name >= ' . $dbr->addQuotes( $from );
+			$orderByName = true;
+		}
+
+		if ( $limit ) {
+			$options['LIMIT'] = intval( $limit );
+		}
+
+		if ( $orderByName ) $options['ORDER BY'] = 'ws_name';
+
+		$res = $dbr->select( 'wikiset', '*', $where, __METHOD__, $options );
 		$result = array();
 		foreach ( $res as $row ) {
 			$result[] = self::newFromRow( $row );
