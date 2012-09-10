@@ -36,7 +36,7 @@ class GlobalUsersPager extends UsersPager {
 	private $wikiSets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
-		parent::__construct( $context, $par );
+		parent::__construct( $context );
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
 	}
 
