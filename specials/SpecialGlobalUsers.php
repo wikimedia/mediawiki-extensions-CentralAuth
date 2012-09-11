@@ -12,7 +12,11 @@ class SpecialGlobalUsers extends SpecialPage {
 		$pg = new GlobalUsersPager( $this->getContext(), $par );
 
 		if ( $par ) {
-			$pg->setGroup( $par );
+			if( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
+				$pg->setGroup( $par );
+			} else {
+				$pg->setUsername( $par );
+			}
 		}
 		$rqGroup = $this->getRequest()->getVal( 'group' );
 		if ( $rqGroup ) {
@@ -36,7 +40,7 @@ class GlobalUsersPager extends UsersPager {
 	private $wikiSets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
-		parent::__construct( $context, $par );
+		parent::__construct( $context );
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
 	}
 
