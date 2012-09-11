@@ -3483,6 +3483,7 @@ $messages['be-tarask'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'Назва новай групы:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Прызначыць правы',
 	'centralauth-editgroup-subtitle' => 'Рэдагаваньне групы $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Паказаць $1',
 	'centralauth-editgroup-fieldset' => 'Правы для $1',
 	'centralauth-editgroup-name' => 'Назва групы:',
 	'centralauth-editgroup-display' => 'Лякалізаваная назва групы:',
@@ -4216,6 +4217,7 @@ $messages['bo'] = array(
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
+ * @author Gwenn-Ael
  * @author Kouign-amann
  * @author Y-M D
  */
@@ -4459,6 +4461,7 @@ Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	'centralauth-globalgroupperms-newgroupname' => 'Anv ar strollad nevez :',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Dereiñ aotreoù',
 	'centralauth-editgroup-subtitle' => "Oc'h aozañ $1",
+	'centralauth-editgroup-subtitle-readonly' => 'Gwelet $1',
 	'centralauth-editgroup-fieldset' => 'Aotreoù evit $1',
 	'centralauth-editgroup-name' => 'Anv ar strollad :',
 	'centralauth-editgroup-display' => "Anv lec'helaet ar strollad :",
@@ -10334,6 +10337,7 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-globalgroupperms-newgroupname' => 'Nome do novo grupo:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Asignar os permisos',
 	'centralauth-editgroup-subtitle' => 'Editando "$1"',
+	'centralauth-editgroup-subtitle-readonly' => 'Ver "$1"',
 	'centralauth-editgroup-fieldset' => 'Permisos para $1',
 	'centralauth-editgroup-name' => 'Nome do grupo:',
 	'centralauth-editgroup-display' => 'Nome localizado do grupo:',
