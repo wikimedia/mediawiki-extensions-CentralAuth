@@ -2108,6 +2108,7 @@ $3 আঁতৰোৱা হ'ল",
 	'centralauth-globalgroupperms-newgroupname' => 'নতুন গোটৰ নাম:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'অনুমতি প্ৰদান কৰক',
 	'centralauth-editgroup-subtitle' => '$1 সম্পাদনা',
+	'centralauth-editgroup-subtitle-readonly' => '$1 চাওক',
 	'centralauth-editgroup-fieldset' => '$1ৰ বাবে অনুমতিসমূহ',
 	'centralauth-editgroup-name' => 'গোটৰ নাম:',
 	'centralauth-editgroup-display' => 'গোটৰ স্থানীয় নাম:',
@@ -19530,6 +19531,7 @@ Sila ambil perhatian bahawa sesebuah kumpulan tidak wujud kecuali setelah diberi
 	'centralauth-globalgroupperms-newgroupname' => 'Nama kumpulan baru:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Beri keizinan',
 	'centralauth-editgroup-subtitle' => 'Menyunting $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Lihat $1',
 	'centralauth-editgroup-fieldset' => 'Keizinan bagi $1',
 	'centralauth-editgroup-name' => 'Nama kumpulan:',
 	'centralauth-editgroup-display' => 'Nama tempatan kumpulan:',
@@ -22138,6 +22140,7 @@ $messages['pfl'] = array(
 
 /** Polish (polski)
  * @author Beau
+ * @author BeginaFelicysym
  * @author Derbeth
  * @author Equadus
  * @author Herr Kriss
@@ -22386,6 +22389,7 @@ Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-globalgroupperms-newgroupname' => 'Nazwa nowej grupy',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Przydzielanie uprawnień',
 	'centralauth-editgroup-subtitle' => 'Edycja $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Widok $1',
 	'centralauth-editgroup-fieldset' => 'Uprawnienia $1',
 	'centralauth-editgroup-name' => 'Nazwa grupy',
 	'centralauth-editgroup-display' => 'Przetłumaczona nazwa grupy',
