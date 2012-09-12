@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//9TM\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T02:26:11Z",
+      "side": 1,
+      "message": "Same as all global users, you don\u0027t need to do the defaults here...",
+      "revId": "f5910e0e4a3ef723a6d557715b8fbfc56aaaa428",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//9TE\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T02:26:11Z",
+      "side": 1,
+      "message": "Why are we using a integer offset?\n\nYou\u0027re not outputting the count, so the users would have to count it themelves\n\nUsing 0 based indexing too is un-intuitive for end users\n\n\n\nWhy don\u0027t you add a start point to something like getAllWikiSets() ? It\u0027d possibly make more sense to use either name, or more probably id",
+      "revId": "f5910e0e4a3ef723a6d557715b8fbfc56aaaa428",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//9TI\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T02:26:11Z",
+      "side": 1,
+      "message": "Why do we need user private caching?",
+      "revId": "f5910e0e4a3ef723a6d557715b8fbfc56aaaa428",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
