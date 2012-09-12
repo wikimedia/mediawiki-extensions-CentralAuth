@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//9Tg\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T01:44:42Z",
+      "side": 1,
+      "message": "You shouldn\u0027t be setting defaults here, the API framework will do this for you as you\u0027ve declared it below",
+      "revId": "c7dd9befb14690a9136dc80128980cc06552a9de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//9Tk\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T01:44:42Z",
+      "side": 1,
+      "message": "Do we need to create all these temporary variables?",
+      "revId": "c7dd9befb14690a9136dc80128980cc06552a9de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//9To\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T01:44:42Z",
+      "side": 1,
+      "message": "You might aswell add this inline to the $tables \u003d array(); line before\n\nSame for $fields etc",
+      "revId": "c7dd9befb14690a9136dc80128980cc06552a9de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//9Ts\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T01:44:42Z",
+      "side": 1,
+      "message": "We don\u0027t generally use tablename.column_name as nearly all columns are unique\n\nLoads more below...",
+      "revId": "c7dd9befb14690a9136dc80128980cc06552a9de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//9Tc\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-09-12T01:44:42Z",
+      "side": 1,
+      "message": "You might aswell collapse the inner if",
+      "revId": "c7dd9befb14690a9136dc80128980cc06552a9de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
