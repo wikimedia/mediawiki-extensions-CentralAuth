@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//7y8\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 447
+      },
+      "writtenOn": "2012-09-14T21:31:08Z",
+      "side": 1,
+      "message": "This can be simply intval( $params[\u0027limit\u0027] )",
+      "revId": "e66e66f8409a71393a957a4aa02b7de90e309f61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7y4\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 447
+      },
+      "writtenOn": "2012-09-14T21:31:08Z",
+      "side": 1,
+      "message": "You can just pass an array to $where[]; and the database layer will magically do the ORring for you.",
+      "revId": "e66e66f8409a71393a957a4aa02b7de90e309f61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7y0\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 447
+      },
+      "writtenOn": "2012-09-14T21:31:08Z",
+      "side": 1,
+      "message": "This will probably do one SQL query for every user in the result set. Isn\u0027t there a more efficient way to do this?",
+      "revId": "e66e66f8409a71393a957a4aa02b7de90e309f61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7yw\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 447
+      },
+      "writtenOn": "2012-09-14T21:31:08Z",
+      "side": 1,
+      "message": "This one is not implemented",
+      "revId": "e66e66f8409a71393a957a4aa02b7de90e309f61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
