@@ -459,10 +459,29 @@ Status message after incomplete unification of a user account.',
 	'centralauth-foreign-contributions' => 'Tool tip in list of local accounts (on the edit count column) on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. Parameters:
 * $1 is the number of contributions
 * $2 is the name of the local wiki',
-	'centralauth-merge-method-primary' => '{{Identical|Home wiki}}',
-	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-merge-method-login' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
+	'centralauth-merge-method-primary' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-primary-desc}}
+----
+{{Identical|Home wiki}}',
+	'centralauth-merge-method-empty' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-empty-desc}}',
+	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-mail-desc}}',
+	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-password-desc}}',
+	'centralauth-merge-method-admin' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-admin-desc}}',
+	'centralauth-merge-method-new' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-new-desc}}',
+	'centralauth-merge-method-login' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 	'centralauth-merge-method-questionmark' => '{{optional}} Shown on Special:CentralAuth in the "Method" column to illustrate that there is a tooltip',
 	'centralauth-finish-password' => '{{Identical|Password}}',
 	'centralauth-finish-login' => '{{Identical|Log in}}',
@@ -11911,7 +11930,7 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-admin-delete-button' => 'Obriši ovaj račun',
 	'centralauth-admin-delete-success' => 'Uspješno obrisan globalni račun za "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Ne postoji globalni račun za "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Greška: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
+	'centralauth-admin-delete-nonexistent' => 'Pogrješka: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
 	'centralauth-token-mismatch' => 'Ispričavamo se, nismo mogli obraditi vaš zahtjev zbog gubitka podataka o prijavi.',
 	'centralauth-admin-reason' => 'Razlog:',
 	'centralauth-admin-reason-other' => 'Drugi/dodatni razlog:',
@@ -11926,7 +11945,7 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-admin-status-hidden-list' => 'Račun je skriven od javnih lista',
 	'centralauth-admin-status-hidden-oversight' => 'Račun je u potpunosti skriven',
 	'centralauth-admin-status-submit' => 'Postavite status',
-	'centralauth-admin-status-nonexistent' => 'Greška: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
+	'centralauth-admin-status-nonexistent' => 'Pogrješka: globalni račun "<nowiki>$1</nowiki>" ne postoji.',
 	'centralauth-admin-setstatus-success' => 'Uspješno ste promijenili status ovog globalnog računa.',
 	'centralauth-admin-status-reasons' => '* Uobičajeni razlozi zaključavanja
 ** račun samo za vandalizam
@@ -14324,8 +14343,8 @@ $messages['ja'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]する',
 	'centralauth-antispoof-desc' => 'CentralAuthにAntiSpoof技術を追加する',
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
-	'centralauth-merge-denied' => 'すみません、このページへのアクセス権がありません。',
-	'centralauth-merge-notlogged' => 'あなたのアカウントが完全に統合されたかどうか、<span class="plainlinks">[$1 ログイン]</span>して確認してください。',
+	'centralauth-merge-denied' => '申し訳ありませんが、このページへのアクセス権がありません。',
+	'centralauth-merge-notlogged' => 'アカウントが完全に統合されたかどうか、<span class="plainlinks">[$1 ログイン]</span>して確認してください。',
 	'centralauth-merge-welcome' => "'''あなたのアカウントは、{{int:Centralauth-groupname}}の統一ログインシステムにまだ移行していません。'''
 
 このシステムにアカウントを移行すると、{{int:Centralauth-groupname}}の全ウィキ、全言語版で同じ利用者名とパスワードを利用してログインできます。
@@ -14333,13 +14352,13 @@ $messages['ja'] = array(
 もし他の誰かが既にあなたの利用者名を他のサイトで使っていた場合、その利用者名を統合することはできません。ただし、後からこの問題をその人や管理者と相談する事で解消することができるかもしれません。",
 	'centralauth-merge-step1-title' => '統一ログインの開始',
 	'centralauth-merge-step1-detail' => 'あなたのアカウントのパスワードを入力してください。
-パスワードとメールアドレスが他のWikiのものと一致するか確認します。
-確認が終わるまでは、いかなる変更も実行されません。',
+パスワードと登録済みのメールアドレスが他のウィキのものと一致するか確認します。
+確認が済むまでは、いかなる変更も実行されません。',
 	'centralauth-merge-step1-submit' => 'ログイン情報を確認',
 	'centralauth-merge-step2-title' => '外部アカウントの確認',
 	'centralauth-merge-step2-detail' => 'いくつかのアカウントで、ホームウィキとの自動照合ができませんでした。もしこれらのアカウントがあなたのものであれば、パスワードを入力することによって自分のものだと証明できます。',
 	'centralauth-merge-step2-submit' => 'ログイン情報を確認',
-	'centralauth-merge-dryrun-complete' => '現在あるすべてのアカウントを自動的に統合できます！
+	'centralauth-merge-dryrun-complete' => '現在あるすべてのアカウントを自動的に統合できます!
 
 あなたのアカウントはまだ何も変更されていません。',
 	'centralauth-merge-dryrun-incomplete' => '次の手順に進む準備ができましたが、自動的に認証できなかったアカウントがいくつかあります。
@@ -14347,14 +14366,16 @@ $messages['ja'] = array(
 
 あなたのアカウントはまだ何も変更されていません。',
 	'centralauth-merge-dryrun-or' => "'''または'''",
-	'centralauth-merge-dryrun-home' => 'ホームウィキにおけるアカウントの所有者があなたであることが移行システムによって確認できませんでした。
+	'centralauth-merge-dryrun-home' => 'ホームウィキのアカウントの所有者があなたであることを、移行システムが確認できませんでした。
 
-あなたの利用者名のホームウィキとして別のウィキが存在しています。下記のリンク先のウィキにログインしてアカウント移行作業を続けてください。',
+他のウィキを、あなたの利用者名のホームウィキと判断しました。下記のリンク先のウィキにログインしてアカウント移行作業を完了させてください。',
 	'centralauth-merge-step3-title' => '統一アカウントの作成',
 	'centralauth-merge-step3-detail' => '以下のウィキに関連付けられた、あなたの統一アカウントの作成準備が完了しました:',
-	'centralauth-merge-step3-submit' => 'アカウントの統一',
-	'centralauth-merge-no-accounts' => 'アカウント中央管理システムのデータベースにはあなたの利用者名と一致するアカウントが見つかりませんでした。データベースが破損していることが考えられます。',
-	'centralauth-merge-home-password' => 'このアカウントのホームウィキ(下に表示)に設定されたパスワードと入力したパスワードが一致しません。ホームウィキのパスワードを入力してください。',
+	'centralauth-merge-step3-submit' => 'アカウントを統一',
+	'centralauth-merge-no-accounts' => 'アカウント中央管理システムのデータベースで、あなたの利用者名と一致するアカウントが見つかりませんでした!
+データベースが破損しています。',
+	'centralauth-merge-home-password' => 'このアカウントのホームウィキ (以下に列挙) のパスワードと入力したパスワードが一致しません。
+ホームウィキのパスワードを入力してください。',
 	'centralauth-complete' => 'アカウントの統一が完了しました!',
 	'centralauth-incomplete' => 'アカウントの統一に失敗しました!',
 	'centralauth-complete-text' => '{{int:Centralauth-groupname}}のすべてのウィキサイトに新しいアカウントを作成せずにログインできるようになりました。',
@@ -14366,7 +14387,8 @@ $messages['ja'] = array(
 ブロックを解除するにはホームウィキの管理者に連絡してください。
 ブロックされている限り、アカウントを統合できません。',
 	'centralauth-notice-dryrun' => "<div class='successbox'>デモモード限定</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'アカウントの統一は、現在デモ / デバッグモードとなっており、実際の統合操作は行われません。すみません！',
+	'centralauth-disabled-dryrun' => 'アカウントの統一は現在、デモ / デバッグモードであるため、実際の統合操作は実行されません。
+申し訳ありません!',
 	'centralauth-error-locked' => 'あなたのアカウントはロックされているため、編集はできません。',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ja|'''統一ログイン'''についてもっと知る]]...''",
 	'centralauth-list-home-title' => 'ホームウィキ',
@@ -14378,14 +14400,14 @@ $messages['ja'] = array(
 	'centralauth-list-unattached' => '「$1」というアカウントは、以下に示すサイトではあなたのアカウントとして自動承認されませんでした。
 最初に指定したアカウントとパスワードが異なる可能性が高いです:',
 	'centralauth-foreign-link' => '$2 上の利用者 $1',
-	'centralauth-foreign-contributions' => '$2で$1件の{{PLURAL:$1|投稿}}',
+	'centralauth-foreign-contributions' => '$2 で $1 {{PLURAL:$1|件の投稿}}',
 	'centralauth-merge-method-primary' => 'ホームウィキ',
 	'centralauth-merge-method-empty' => '投稿なし',
 	'centralauth-merge-method-mail' => 'メールアドレスで確認済み',
-	'centralauth-merge-method-password' => 'パスワードによって認証済み',
-	'centralauth-merge-method-admin' => '管理者によって統合されたアカウント',
+	'centralauth-merge-method-password' => 'パスワードで認証済み',
+	'centralauth-merge-method-admin' => '管理者が統合したアカウント',
 	'centralauth-merge-method-new' => '新規アカウント',
-	'centralauth-merge-method-login' => 'ログインによって作成',
+	'centralauth-merge-method-login' => 'ログイン時に自動作成',
 	'centralauth-merge-method-primary-desc' => 'これはアカウントが最初に統合されたウィキです。
 アカウント保有者の実際のホームウィキとは異なる可能性があります。',
 	'centralauth-merge-method-empty-desc' => 'ローカルのアカウントに編集履歴がなかったため統合されたことを示す。',
@@ -14403,7 +14425,7 @@ $messages['ja'] = array(
 	'centralauth-finish-send-confirmation' => 'パスワードをメールで送信',
 	'centralauth-finish-problems' => 'トラブルが発生しました。本当にこれらはあなたのアカウントですか?
 [[meta:Help:Unified login problems|ヘルプを確認してください]]...',
-	'centralauth-finish-noconfirms' => 'このパスワードではいかなるアカウントも認証できません。',
+	'centralauth-finish-noconfirms' => 'このパスワードではどのアカウントも認証できませんでした。',
 	'centralauth-finish-incomplete' => 'このパスワードを使用してアカウントをいくつか統合しました。
 他にもまだ認証されていないアカウントがあります。',
 	'centralauth-merge-attempt' => "'''まだ統合されていないアカウントに対して入力されたパスワードを確認しています…'''",
@@ -14412,15 +14434,15 @@ $messages['ja'] = array(
 	'centralauth-attach-text' => 'このアカウントは、まだ統一アカウントに移行していません。
 既に統一アカウントをお持ちの場合、そのパスワードを入力することで、このアカウントを統合することができます:',
 	'centralauth-attach-submit' => 'アカウントの統合',
-	'centralauth-attach-success' => 'このアカウントは、統一アカウントへ移行されました。',
+	'centralauth-attach-success' => 'このアカウントは、統一アカウントに移行されました。',
 	'centralauth' => 'グローバル利用者の管理',
 	'centralauth-admin-intro' => 'このインターフェイスはグローバルアカウントの管理に利用できます。',
 	'centralauth-admin-manage' => '利用者データの管理',
 	'centralauth-admin-username' => '利用者名:',
 	'centralauth-admin-lookup-ro' => '利用者情報を表示',
 	'centralauth-admin-lookup-rw' => '利用者アカウントの管理',
-	'centralauth-admin-permission' => '他人同士のアカウントを統合できるのは、スチュワードだけです。',
-	'centralauth-admin-no-unified' => 'この利用者名には統一アカウントは存在していません。',
+	'centralauth-admin-permission' => '他人同士のアカウントを統合できるのは、スチュワードのみです。',
+	'centralauth-admin-no-unified' => 'この利用者名には統一アカウントはありません。',
 	'centralauth-admin-info-header' => 'グローバル利用者の情報',
 	'centralauth-admin-info-id' => '利用者 ID:',
 	'centralauth-admin-info-registered' => '登録:',
@@ -14458,7 +14480,7 @@ $messages['ja'] = array(
 	'centralauth-admin-delete-success' => 'グローバルアカウント「<nowiki>$1</nowiki>」を削除しました',
 	'centralauth-admin-nonexistent' => 'グローバルアカウント「<nowiki>$1</nowiki>」は存在しません',
 	'centralauth-admin-delete-nonexistent' => 'エラー：グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
-	'centralauth-token-mismatch' => '申し訳ありませんが、セッションデータが失われたため申請フォームの投稿を処理することができませんでした。',
+	'centralauth-token-mismatch' => '申し訳ありませんが、セッションデータが消失したため、フォームでの投稿を処理できませんでした。',
 	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-reason-other' => 'その他の理由:',
 	'centralauth-admin-unhide-nonexistent' => 'エラー：グローバルアカウント "<nowiki>$1</nowiki>" は存在しません。',
@@ -14487,12 +14509,12 @@ $messages['ja'] = array(
 	'centralauth-listusers-attached' => '[[User:$1|ローカルにアカウント作成済み]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => '同名アカウント未統合またはローカルにアカウント未作成',
-	'centralauth-seconds-ago' => '$1{{PLURAL:$1|秒}}前',
-	'centralauth-minutes-ago' => '$1{{PLURAL:$1|分}}前',
-	'centralauth-hours-ago' => '$1{{PLURAL:$1|時間}}前',
-	'centralauth-days-ago' => '$1{{PLURAL:$1|日}}前',
-	'centralauth-months-ago' => '$1{{PLURAL:$1|か月}}前',
-	'centralauth-years-ago' => '$1{{PLURAL:$1|年}}前',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|秒}}前',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|分}}前',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|時間}}前',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|日}}前',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|か月}}前',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|年}}前',
 	'centralauth-prefs-status' => 'グローバルアカウントの状態:',
 	'centralauth-prefs-not-managed' => '統一アカウントを利用していません',
 	'centralauth-prefs-unattached' => '承認されていません',
@@ -14563,9 +14585,9 @@ $messages['ja'] = array(
 	'centralauth-editgroup-subtitle-readonly' => '$1を閲覧',
 	'centralauth-editgroup-fieldset' => '$1の権限',
 	'centralauth-editgroup-name' => 'グループ名:',
-	'centralauth-editgroup-display' => 'グループのローカル名:',
+	'centralauth-editgroup-display' => 'グループ名を地域化したもの:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|編集]])',
-	'centralauth-editgroup-member' => 'グループメンバーのローカル名:',
+	'centralauth-editgroup-member' => 'グループメンバー名を地域化したもの:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|編集]])',
 	'centralauth-editgroup-members' => 'メンバー一覧:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2の権限を持つ利用者一覧]]',
@@ -14580,7 +14602,7 @@ $messages['ja'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編集]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'アカウントがあるウィキ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "グローバル利用者 '''$1''' は指定したウィキ ('' $2 '') では活動していません。
-間違った利用者に権限を付与しようとしていませんか？",
+間違った利用者に権限を付与しようとしているおそれがあります!",
 	'centralauth-editset' => 'ウィキ集合',
 	'centralauth-editset-legend-rw' => 'ウィキ集合を編集または作成',
 	'centralauth-editset-legend-ro' => 'ウィキ集合の一覧',
@@ -15221,6 +15243,7 @@ $messages['ka'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'ახალი ჯგუფის სახელი:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'უფლებების მინიჭება',
 	'centralauth-editgroup-subtitle' => 'რედაქტირება $1',
+	'centralauth-editgroup-subtitle-readonly' => 'იხილეთ $1',
 	'centralauth-editgroup-fieldset' => '$1-ის უფლებები',
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
 	'centralauth-editgroup-display' => 'ჯგუფის ლოკალიზებული სახელი:',
@@ -32323,6 +32346,7 @@ $messages['zea'] = array(
  * @author Hydra
  * @author Liangent
  * @author PhiLiP
+ * @author Shizhao
  * @author Xiaomingyan
  * @author Yanmiao liu
  * @author Yfdyh000
@@ -32375,7 +32399,7 @@ $messages['zh-hans'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>此功能处于演示模式。</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => '账户合并正处于演示／除错模式，因此实际的合并操作已被禁止。抱歉！',
 	'centralauth-error-locked' => '由于您的账户已被锁定，您目前无法编辑',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|关于'''账户整合'''的更多内容]]……''",
+	'centralauth-readmore-text' => ":[[meta:Help:Unified login/zh-hans|关于'''账户整合'''的更多内容]]……",
 	'centralauth-list-home-title' => '主维基项目',
 	'centralauth-list-home-dryrun' => '在本维基项目中设定的密码与电子邮件地址将会被用在您的整合账户中，而您在这里的用户页也会自动与其他项目的相关页面建立相互的链接。',
 	'centralauth-list-attached-title' => '并入账户',
