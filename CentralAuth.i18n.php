@@ -545,15 +545,60 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-unhide-nonexistent' => '{{Identical|Error: The global account "$1" does not exist.}}',
-	'centralauth-admin-status-hidden' => '{{Identical|Hidden}}',
-	'centralauth-listusers-locked' => '{{identical|locked}}',
+	'centralauth-admin-status' => 'This message is used as label of fieldset.',
+	'centralauth-admin-status-intro' => 'Introduction of the form.',
+	'centralauth-admin-status-locked' => 'Label of radio button. Options are:
+*{{msg-mw|Centralauth-admin-status-locked-no}}
+*{{msg-mw|Centralauth-admin-status-locked-yes}}',
+	'centralauth-admin-status-locked-no' => 'Radio button
+*{{msg-mw|Centralauth-admin-status-locked-no}}
+*{{msg-mw|Centralauth-admin-status-locked-yes}}',
+	'centralauth-admin-status-locked-yes' => 'Radio button
+*{{msg-mw|Centralauth-admin-status-locked-no}}
+*{{msg-mw|Centralauth-admin-status-locked-yes}}',
+	'centralauth-admin-status-hidden' => 'Label of radio button. Options are:
+*{{msg-mw|Centralauth-admin-status-hidden-no}}
+*{{msg-mw|Centralauth-admin-status-hidden-list}}
+*{{msg-mw|Centralauth-admin-status-hidden-oversight}}
+----
+{{Identical|Hidden}}',
+	'centralauth-admin-status-hidden-no' => 'Radio button
+*{{msg-mw|Centralauth-admin-status-hidden-no}}
+*{{msg-mw|Centralauth-admin-status-hidden-list}}
+*{{msg-mw|Centralauth-admin-status-hidden-oversight}}',
+	'centralauth-admin-status-hidden-list' => 'Radio button
+*{{msg-mw|Centralauth-admin-status-hidden-no}}
+*{{msg-mw|Centralauth-admin-status-hidden-list}}
+*{{msg-mw|Centralauth-admin-status-hidden-oversight}}',
+	'centralauth-admin-status-hidden-oversight' => 'Radio button
+*{{msg-mw|Centralauth-admin-status-hidden-no}}
+*{{msg-mw|Centralauth-admin-status-hidden-list}}
+*{{msg-mw|Centralauth-admin-status-hidden-oversight}}',
+	'centralauth-listusers-locked' => "This message is used as user's info:
+*{{msg-mw|centralauth-listusers-locked}}
+*{{msg-mw|centralauth-listusers-attached}}
+*{{msg-mw|centralauth-listusers-nolocal}}
+----
+{{identical|locked}}",
+	'centralauth-listusers-attached' => "This message is used as user's info:
+*{{msg-mw|centralauth-listusers-locked}}
+*{{msg-mw|centralauth-listusers-attached}}
+*{{msg-mw|centralauth-listusers-nolocal}}",
 	'centralauth-listusers-item' => '{{optional}}',
-	'centralauth-prefs-not-managed' => "Appears on user profile tab of 'Preferences' special page, after 'Global account status:'",
-	'centralauth-prefs-complete' => "This message is displayed as the global account status at a user's preferences page, when everything is alright with the user's unified account.",
-	'centralauth-prefs-migration' => 'Shown in [[Special:Preferences]] to show the status of the account being unified on all wikis.',
-	'centralauth-prefs-count-attached' => 'Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.--Nenino 10 15:46, 2 June 2012 (UTC)',
-	'centralauth-prefs-manage' => "Link on 'User profile' tab of 'Preferences' special page.",
-	'centralauth-prefs-view' => 'Used as a link on [[Special:Preferences]]',
+	'centralauth-listusers-nolocal' => "This message is used as user's info:
+*{{msg-mw|centralauth-listusers-locked}}
+*{{msg-mw|centralauth-listusers-attached}}
+*{{msg-mw|centralauth-listusers-nolocal}}",
+	'centralauth-prefs-not-managed' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is not merged at all.',
+	'centralauth-prefs-unattached' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is in migration but the local account is not attached.',
+	'centralauth-prefs-complete' => "This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when everything is alright with the user's unified account.",
+	'centralauth-prefs-migration' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is unified on all wikis.',
+	'centralauth-prefs-count-attached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page.',
+	'centralauth-prefs-count-unattached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page
+
+Shown when the migration is incomplete.',
+	'centralauth-prefs-manage' => "Link on '{{int:Prefs-personal}}' tab of '{{int:Preferences}}' special page.",
+	'centralauth-prefs-view' => 'Used as a link on [[Special:Preferences|{{int:Preferences}}]]',
 	'centralauth-invalid-wiki' => 'Error message.
 *$1 is wiki name',
 	'centralauth-login-progress' => '{{gender}}
@@ -567,10 +612,18 @@ Variables $2 and $3 are a combination of the following:
 *{{msg-mw|Centralauth-log-status-oversighted}}
 *{{msg-mw|Centralauth-log-status-none}}',
 	'centralauth-log-status-locked' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
-	'centralauth-log-status-hidden' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]
+	'centralauth-log-status-hidden' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
+
+This "hidden" stands for "hidden from public lists".
+
+[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example].
 
 {{Identical|Hidden}}',
-	'centralauth-log-status-oversighted' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
+	'centralauth-log-status-oversighted' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
+
+This "oversighted" stands for "hidden completely".
+
+[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
 	'centralauth-log-status-none' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]
 
 {{Identical|None}}',
@@ -595,6 +648,10 @@ Variables $2 and $3 are a combination of the following:
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
 	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
+	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
+	'centralauth-editset-legend-ro' => 'The legend of the fieldset. Displayed when the user cannot edit.',
+	'centralauth-editset-item-rw' => '*$1 - Name of wiki set
+*$2 - ID of wiki set',
 	'centralauth-editset-subtitle' => 'Do not translate the <code>Special:WikiSets<code> part.',
 	'centralauth-editset-name' => '{{Identical|Name}}',
 	'centralauth-editset-type' => '{{Identical|Type}}',
@@ -9679,6 +9736,7 @@ Notez qu’un groupe global ne peut exister que si des permissions lui sont assi
 	'centralauth-globalgroupperms-newgroupname' => 'Nom du nouveau groupe global :',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Assigner des permissions',
 	'centralauth-editgroup-subtitle' => 'Modification du groupe global $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Voir $1',
 	'centralauth-editgroup-fieldset' => 'Permissions assignées au groupe global $1',
 	'centralauth-editgroup-name' => 'Nom du groupe global :',
 	'centralauth-editgroup-display' => 'Nom localisé du groupe global :',
@@ -14340,16 +14398,16 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 $messages['ja'] = array(
 	'mergeaccount' => '統一ログイン状態',
 	'centralauth-groupname' => 'ウィキメディア財団',
-	'centralauth-desc' => '{{int:Centralauth-groupname}} が運営するウィキ間での[[Special:MergeAccount|アカウントを統合]]する',
+	'centralauth-desc' => '{{int:Centralauth-groupname}}が運営するウィキ間で[[Special:MergeAccount|アカウントを統合]]する',
 	'centralauth-antispoof-desc' => 'CentralAuthにAntiSpoof技術を追加する',
 	'centralauth-mergeaccount-desc' => 'シングルユーザーログインのための[[Special:MergeAccount|複数アカウント統合]]',
 	'centralauth-merge-denied' => '申し訳ありませんが、このページへのアクセス権がありません。',
 	'centralauth-merge-notlogged' => 'アカウントが完全に統合されたかどうか、<span class="plainlinks">[$1 ログイン]</span>して確認してください。',
 	'centralauth-merge-welcome' => "'''あなたのアカウントは、{{int:Centralauth-groupname}}の統一ログインシステムにまだ移行していません。'''
 
-このシステムにアカウントを移行すると、{{int:Centralauth-groupname}}の全ウィキ、全言語版で同じ利用者名とパスワードを利用してログインできます。
+このシステムにアカウントを移行すると、{{int:Centralauth-groupname}}のすべてのウィキ/すべての言語版に、同じ利用者名/パスワードでログインできます。
 
-もし他の誰かが既にあなたの利用者名を他のサイトで使っていた場合、その利用者名を統合することはできません。ただし、後からこの問題をその人や管理者と相談する事で解消することができるかもしれません。",
+あなたの利用者名を他の誰かが別のサイトで既に取得している場合は、このシステムでは統合できませんが、その人または管理者と相談することで解決できる可能性があります。",
 	'centralauth-merge-step1-title' => '統一ログインの開始',
 	'centralauth-merge-step1-detail' => 'あなたのアカウントのパスワードを入力してください。
 パスワードと登録済みのメールアドレスが他のウィキのものと一致するか確認します。
@@ -14410,12 +14468,12 @@ $messages['ja'] = array(
 	'centralauth-merge-method-login' => 'ログイン時に自動作成',
 	'centralauth-merge-method-primary-desc' => 'これはアカウントが最初に統合されたウィキです。
 アカウント保有者の実際のホームウィキとは異なる可能性があります。',
-	'centralauth-merge-method-empty-desc' => 'ローカルのアカウントに編集履歴がなかったため統合されたことを示す。',
-	'centralauth-merge-method-mail-desc' => 'メールアドレスがメインアカウントのメールアドレスと一致したため統合したことを示す。',
+	'centralauth-merge-method-empty-desc' => 'ローカルアカウントに編集履歴がなかったため、そのアカウントが統合されたことを示しています。',
+	'centralauth-merge-method-mail-desc' => 'ローカルアカウントのメールアドレスがメインアカウントのものと一致したため、ローカルアカウントが統合されたことを示しています。',
 	'centralauth-merge-method-password-desc' => '利用者が有効なパスワードを入力したため、ローカルアカウントが統合されたことを示します。',
-	'centralauth-merge-method-admin-desc' => 'ローカルのアカウントがスチュワードによって手動で統合されたことを示す。
-この機能はセキュリティ上の理由から現在無効になっています。',
-	'centralauth-merge-method-new-desc' => '本ローカルアカウントが作成されたときに、自動でグローバルアカウントが作成されたことを示します。',
+	'centralauth-merge-method-admin-desc' => 'ローカルアカウントがスチュワードによって手動で統合されたことを示しています。
+この機能は、セキュリティ上の理由で現在無効になっています。',
+	'centralauth-merge-method-new-desc' => 'このローカルアカウントが作成された際に、グローバルアカウントが自動作成されたことを示しています。',
 	'centralauth-merge-method-login-desc' => '利用者がログインしたときに、自動的にローカルアカウントが作成されたことを示します。',
 	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => '統合完了',
@@ -14432,18 +14490,18 @@ $messages['ja'] = array(
 	'centralauth-attach-list-attached' => '統一アカウント「$1」は、以下のアカウントを含みます:',
 	'centralauth-attach-title' => 'アカウントの確認',
 	'centralauth-attach-text' => 'このアカウントは、まだ統一アカウントに移行していません。
-既に統一アカウントをお持ちの場合、そのパスワードを入力することで、このアカウントを統合することができます:',
+グローバルアカウントがあなたのものであれば、そのパスワードを入力することで、このアカウントを統合できます:',
 	'centralauth-attach-submit' => 'アカウントの統合',
 	'centralauth-attach-success' => 'このアカウントは、統一アカウントに移行されました。',
 	'centralauth' => 'グローバル利用者の管理',
-	'centralauth-admin-intro' => 'このインターフェイスはグローバルアカウントの管理に利用できます。',
+	'centralauth-admin-intro' => 'このインターフェイスでは、グローバルアカウントを管理できます。',
 	'centralauth-admin-manage' => '利用者データの管理',
 	'centralauth-admin-username' => '利用者名:',
 	'centralauth-admin-lookup-ro' => '利用者情報を表示',
 	'centralauth-admin-lookup-rw' => '利用者アカウントの管理',
 	'centralauth-admin-permission' => '他人同士のアカウントを統合できるのは、スチュワードのみです。',
 	'centralauth-admin-no-unified' => 'この利用者名には統一アカウントはありません。',
-	'centralauth-admin-info-header' => 'グローバル利用者の情報',
+	'centralauth-admin-info-header' => 'グローバルアカウントの利用者情報',
 	'centralauth-admin-info-id' => '利用者 ID:',
 	'centralauth-admin-info-registered' => '登録:',
 	'centralauth-admin-info-home' => 'ホームウィキ:',
@@ -14453,11 +14511,11 @@ $messages['ja'] = array(
 	'centralauth-admin-nohome' => '決定できず',
 	'centralauth-admin-yes' => 'はい',
 	'centralauth-admin-no' => 'いいえ',
-	'centralauth-admin-hidden-list' => '公開リストから',
+	'centralauth-admin-hidden-list' => '公開一覧から秘匿済み',
 	'centralauth-admin-hidden-oversight' => '秘匿済み',
 	'centralauth-admin-list-legend-ro' => 'ローカルアカウントの一覧',
-	'centralauth-admin-list-legend-rw' => 'ローカルアカウントの統一を解除',
-	'centralauth-admin-unattached' => '統一されていないアカウント',
+	'centralauth-admin-list-legend-rw' => 'ローカルアカウントの統合解除',
+	'centralauth-admin-unattached' => '未統合',
 	'centralauth-admin-blocked' => 'ブロックされています。期限 $3 $4。
 理由: $2',
 	'centralauth-admin-blocked-indef' => '無期限ブロックされました。
@@ -14467,7 +14525,7 @@ $messages['ja'] = array(
 	'centralauth-admin-list-attached-on' => '統合日時',
 	'centralauth-admin-list-method' => '方法',
 	'centralauth-admin-list-editcount' => '編集回数',
-	'centralauth-admin-list-blocked' => 'ブロック済',
+	'centralauth-admin-list-blocked' => 'ブロック',
 	'centralauth-admin-unmerge' => '選択した利用者を統合解除',
 	'centralauth-admin-merge' => '選択した利用者を統合',
 	'centralauth-admin-bad-input' => '統合の選択が無効です',
@@ -14475,26 +14533,28 @@ $messages['ja'] = array(
 	'centralauth-admin-already-unmerged' => '既に統合解除されている$1をスキップ',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|アカウント}}を統合解除しました。',
 	'centralauth-admin-delete-title' => 'アカウント削除',
-	'centralauth-admin-delete-description' => 'グローバルアカウントを削除すると、あらゆるグローバル個人設定が削除され、すべてのローカルのアカウントの統合が解除され、他の利用者がこの利用者名によるグローバルアカウントを取得することができるようになります。ローカルのそれぞれのアカウントは削除されません。統合前から存在していたアカウントのパスワードは統合以前のものに戻ります。',
+	'centralauth-admin-delete-description' => 'グローバルアカウントを削除すると、グローバルな個人設定がすべて削除され、ローカルアカウントがすべて統合解除され、他の利用者がこの利用者名のグローバルアカウントを取得できるようになります。
+ローカルアカウントはすべて存続します。
+統合以前に作成したアカウントのパスワードは、統合以前のものに戻ります。',
 	'centralauth-admin-delete-button' => 'このアカウントを削除',
 	'centralauth-admin-delete-success' => 'グローバルアカウント「<nowiki>$1</nowiki>」を削除しました',
-	'centralauth-admin-nonexistent' => 'グローバルアカウント「<nowiki>$1</nowiki>」は存在しません',
-	'centralauth-admin-delete-nonexistent' => 'エラー：グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
+	'centralauth-admin-nonexistent' => 'グローバルアカウント「<nowiki>$1</nowiki>」はありません',
+	'centralauth-admin-delete-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-token-mismatch' => '申し訳ありませんが、セッションデータが消失したため、フォームでの投稿を処理できませんでした。',
 	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-reason-other' => 'その他の理由:',
-	'centralauth-admin-unhide-nonexistent' => 'エラー：グローバルアカウント "<nowiki>$1</nowiki>" は存在しません。',
-	'centralauth-admin-status' => 'グローバルアカウント状態の設定',
-	'centralauth-admin-status-intro' => 'このグローバルアカウントの状態を変更するために、このフォームを利用できます',
+	'centralauth-admin-unhide-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
+	'centralauth-admin-status' => 'グローバルアカウントの状態の設定',
+	'centralauth-admin-status-intro' => 'このフォームでは、このグローバルアカウントの状態を変更できます。',
 	'centralauth-admin-status-locked' => 'ロック:',
 	'centralauth-admin-status-locked-no' => 'アカウントはロックされていません',
-	'centralauth-admin-status-locked-yes' => 'アカウントは編集をロックされています',
+	'centralauth-admin-status-locked-yes' => 'アカウントは編集ロックされています',
 	'centralauth-admin-status-hidden' => '秘匿:',
 	'centralauth-admin-status-hidden-no' => 'アカウントは秘匿されていません',
-	'centralauth-admin-status-hidden-list' => 'アカウントは公開リストから秘匿されています',
+	'centralauth-admin-status-hidden-list' => 'アカウントは公開一覧から秘匿されています',
 	'centralauth-admin-status-hidden-oversight' => 'アカウントは完全に秘匿されています',
 	'centralauth-admin-status-submit' => '状態を設定',
-	'centralauth-admin-status-nonexistent' => 'エラー：グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
+	'centralauth-admin-status-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-admin-setstatus-success' => 'このグローバルアカウントの状態を変更しました。',
 	'centralauth-admin-status-reasons' => '* よくあるロック理由
 ** 荒らし専用アカウント
@@ -14503,12 +14563,12 @@ $messages['ja'] = array(
 ** 不適切な利用者名
 ** 不適切な個人情報',
 	'centralauth-admin-logsnippet' => '以前のグローバルアカウントの変更履歴',
-	'centralauth-admin-suppressreason' => 'あなたは以下の理由により、$1 によってグローバルに秘匿されています: $2',
-	'globalusers' => 'グローバルアカウントの登録利用者一覧',
-	'centralauth-listusers-locked' => 'ロック状態',
-	'centralauth-listusers-attached' => '[[User:$1|ローカルにアカウント作成済み]]',
+	'centralauth-admin-suppressreason' => 'あなたは以下の理由で、$1 によってグローバルに秘匿されています: $2',
+	'globalusers' => 'グローバルアカウントの利用者一覧',
+	'centralauth-listusers-locked' => 'ロックされている',
+	'centralauth-listusers-attached' => '[[User:$1|ローカルに作成済み]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
-	'centralauth-listusers-nolocal' => '同名アカウント未統合またはローカルにアカウント未作成',
+	'centralauth-listusers-nolocal' => '未統合、またはローカルに未作成',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|秒}}前',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|分}}前',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|時間}}前',
@@ -14516,38 +14576,38 @@ $messages['ja'] = array(
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|か月}}前',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|年}}前',
 	'centralauth-prefs-status' => 'グローバルアカウントの状態:',
-	'centralauth-prefs-not-managed' => '統一アカウントを利用していません',
-	'centralauth-prefs-unattached' => '承認されていません',
-	'centralauth-prefs-complete' => '統一完了',
+	'centralauth-prefs-not-managed' => '統一アカウントを使用していません',
+	'centralauth-prefs-unattached' => '未承認',
+	'centralauth-prefs-complete' => '統合完了!',
 	'centralauth-prefs-migration' => '移行中',
-	'centralauth-prefs-count-attached' => 'あなたのアカウントは、$1{{PLURAL:$1|プロジェクトのサイト}}で有効です。',
-	'centralauth-prefs-count-unattached' => '同じ利用者名を持つ未統合のアカウントが$1{{PLURAL:$1|プロジェクト}}にあります。',
-	'centralauth-prefs-detail-unattached' => 'このプロジェクトサイトはまだ統一アカウントに承認されていません。',
-	'centralauth-prefs-manage' => '統一アカウントの管理',
-	'centralauth-prefs-view' => 'グローバル利用者情報を表示',
-	'centralauth-renameuser-merged' => '利用者 $1 は統一ログインシステムに移行しています。
-利用者名を変更すると、ローカルのアカウントがグローバルアカウントから切り離されます。',
-	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントで使用されています。',
+	'centralauth-prefs-count-attached' => 'あなたのアカウントは、$1 {{PLURAL:$1|プロジェクトのサイト}}で有効です。',
+	'centralauth-prefs-count-unattached' => '同じ利用者名の未統合アカウントが、あと $1 {{PLURAL:$1|プロジェクト}}にあります。',
+	'centralauth-prefs-detail-unattached' => 'このプロジェクトのサイトは、グローバルアカウントとしてまだ承認されていません。',
+	'centralauth-prefs-manage' => 'グローバルアカウントを管理',
+	'centralauth-prefs-view' => 'グローバルアカウントの利用者情報を閲覧',
+	'centralauth-renameuser-merged' => '利用者 $1 は統一ログインシステムに移行済みです。
+利用者名を変更すると、ローカルアカウントがグローバルアカウントから切り離されます。',
+	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントとして使用されています。',
 	'centralauth-invalid-wiki' => 'そのようなウィキ データベースはありません: $1',
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムで既に取得されています。',
 	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、統一ログインには存在します。',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキにログインしました:',
-	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキからもログアウトしました:',
-	'centralauth-login-no-others' => 'あなたは自動的に、他の{{int:Centralauth-groupname}}のプロジェクトにログインしました。',
-	'centralauth-logout-no-others' => 'あなたは自動的に、他の{{int:Centralauth-groupname}}のプロジェクトからログアウトしました。',
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキ群にログインしました:',
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:',
+	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
+	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群から自動的にログアウトしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にプロジェクト横断的に秘匿。理由: $3',
 	'centralauth-log-name' => 'グローバルアカウント記録',
-	'centralauth-log-header' => 'このログにはグローバルアカウントの操作（削除、ロック、ロック解除）が記録されています。',
-	'centralauth-log-entry-delete' => 'グローバル アカウント「$1」を削除しました',
-	'centralauth-log-entry-lock' => 'グローバル アカウント「$1」をロックしました',
-	'centralauth-log-entry-unlock' => 'グローバル アカウント「$1」をロック解除しました',
-	'centralauth-log-entry-hide' => 'グローバル アカウント「$1」を秘匿しました',
-	'centralauth-log-entry-unhide' => 'グローバル アカウント「$1」を秘匿解除しました',
-	'centralauth-log-entry-lockandhide' => 'グローバル アカウント「$1」をロックおよび秘匿しました',
-	'centralauth-log-entry-chgstatus' => 'グローバル アカウント「$1」の状態を変更しました: $2を設定、$3を解除',
-	'centralauth-log-status-locked' => 'ロック済み',
-	'centralauth-log-status-hidden' => '秘匿',
-	'centralauth-log-status-oversighted' => '秘匿済み',
+	'centralauth-log-header' => 'これは、グローバルアカウントの操作 (削除、ロック、ロック解除) の記録です。',
+	'centralauth-log-entry-delete' => 'グローバルアカウント「$1」を削除しました',
+	'centralauth-log-entry-lock' => 'グローバルアカウント「$1」をロックしました',
+	'centralauth-log-entry-unlock' => 'グローバルアカウント「$1」をロック解除しました',
+	'centralauth-log-entry-hide' => 'グローバルアカウント「$1」を秘匿しました',
+	'centralauth-log-entry-unhide' => 'グローバルアカウント「$1」を秘匿解除しました',
+	'centralauth-log-entry-lockandhide' => 'グローバルアカウント「$1」をロックおよび秘匿しました',
+	'centralauth-log-entry-chgstatus' => 'グローバルアカウント「$1」の状態を変更しました: $2 を設定、$3 を解除',
+	'centralauth-log-status-locked' => 'ロック',
+	'centralauth-log-status-hidden' => '公開一覧から秘匿',
+	'centralauth-log-status-oversighted' => '秘匿',
 	'centralauth-log-status-none' => '(なし)',
 	'centralauth-rightslog-name' => 'グローバル権限変更記録',
 	'centralauth-rightslog-entry-usergroups' => '$1 のグローバルグループ所属を $2 から $3 に変更しました',
@@ -14559,7 +14619,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-header' => 'このログはグローバルグループの操作（メンバー管理、パーミッション変更）が記録されています。',
 	'centralauth-rightslog-entry-newset' => '$2ウィキ集合 $1 を以下のウィキで作成しました: $3',
 	'centralauth-rightslog-entry-setrename' => 'ウィキ集合「$2」の名前を「$1」に変更しました',
-	'centralauth-rightslog-entry-setnewtype' => '「$1」のタイプを $2 から $3 に変更しました',
+	'centralauth-rightslog-entry-setnewtype' => '「$1」の種類を $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-setchange' => '「$1」に属するウィキを変更しました。追加: $2、除去: $3',
 	'centralauth-rightslog-entry-deleteset' => 'ウィキ集合「$1」を削除しました',
 	'centralauth-rightslog-set-optin' => 'オプトイン設定',
@@ -14604,11 +14664,11 @@ $messages['ja'] = array(
 	'centralauth-globalgroupmembership-badknownwiki' => "グローバル利用者 '''$1''' は指定したウィキ ('' $2 '') では活動していません。
 間違った利用者に権限を付与しようとしているおそれがあります!",
 	'centralauth-editset' => 'ウィキ集合',
-	'centralauth-editset-legend-rw' => 'ウィキ集合を編集または作成',
+	'centralauth-editset-legend-rw' => 'ウィキ集合の編集/作成',
 	'centralauth-editset-legend-ro' => 'ウィキ集合の一覧',
 	'centralauth-editset-intro-rw' => '以下のウィキ集合が既に作成されています。
-これらの確認、変更、または新しいウィキ集合の作成ができます。',
-	'centralauth-editset-intro-ro' => '以下は現在設定されているウィキ集合の一覧です。',
+これらを閲覧/変更でき、新規ウィキ集合を作成できます。',
+	'centralauth-editset-intro-ro' => '既存のウィキ集合を以下に列挙します。',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|削除]])',
 	'centralauth-editset-new' => '新規ウィキ集合を作成',
 	'centralauth-editset-notfound' => 'ウィキ集合「$1」は存在しません。',
@@ -14620,14 +14680,14 @@ $messages['ja'] = array(
 	'centralauth-editset-legend-delete' => 'ウィキ集合「$1」の削除',
 	'centralauth-editset-subtitle' => '< [[Special:WikiSets|ウィキ集合一覧]]',
 	'centralauth-editset-name' => '名前:',
-	'centralauth-editset-type' => 'タイプ:',
+	'centralauth-editset-type' => '種類:',
 	'centralauth-editset-wikis' => 'ウィキ:',
 	'centralauth-editset-restwikis' => '上記に含まれないウィキ:',
 	'centralauth-editset-reason' => '理由:',
-	'centralauth-editset-submit' => '実行',
+	'centralauth-editset-submit' => '送信',
 	'centralauth-editset-submit-delete' => '削除',
 	'centralauth-editset-badname' => 'ウィキ集合の名前が無効または空です。',
-	'centralauth-editset-badtype' => 'ウィキ集合のタイプが無効です。',
+	'centralauth-editset-badtype' => 'ウィキ集合の種類が無効です。',
 	'centralauth-editset-setexists' => '指定した名前のウィキ集合は既に存在します',
 	'centralauth-editset-nowikis' => 'ウィキを指定していません。',
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
@@ -14640,8 +14700,8 @@ $messages['ja'] = array(
 	'centralauth-readonly' => 'CentralAuth データベースがロックされています',
 	'centralauth-readonlytext' => 'CentralAuth データベースが現在ロックされているため、新しい項目作成やその他の変更ができません。おそらく定期的なデータベース保守作業のためこの状態になっており、終わりしだい正常に戻ります。',
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
-	'right-centralauth-autoaccount' => 'グローバルアカウントで自動的にログイン',
-	'right-centralauth-unmerge' => 'グローバルアカウントを統一解除',
+	'right-centralauth-autoaccount' => 'グローバルアカウントで自動ログイン',
+	'right-centralauth-unmerge' => 'グローバルアカウントを統合解除',
 	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿',
 	'right-centralauth-oversight' => 'グローバルアカウントを秘匿',
 	'right-centralauth-merge' => 'アカウントを統合',
@@ -28353,6 +28413,7 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-globalgroupperms-newgroupname' => 'Namn på ny grupp:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Ge tillåtelser',
 	'centralauth-editgroup-subtitle' => 'Redigerar $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Visa $1',
 	'centralauth-editgroup-fieldset' => 'Tillåtelser för $1',
 	'centralauth-editgroup-name' => 'Namn på grupp:',
 	'centralauth-editgroup-display' => 'Översatt gruppnamn:',

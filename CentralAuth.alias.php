@@ -357,7 +357,7 @@ $specialPageAliases['ja'] = array(
 	'MergeAccount' => array( 'アカウント統合' ),
 	'GlobalGroupMembership' => array( 'グローバルグループへの所属' ),
 	'GlobalGroupPermissions' => array( 'グローバルグループ権限', 'グローバルグループパーミッション' ),
-	'WikiSets' => array( 'ウィキ集合', 'ウィキ群の編集' ),
+	'WikiSets' => array( 'ウィキ集合', 'ウィキ集合の編集' ),
 	'GlobalUsers' => array( 'グローバル利用者' ),
 );
 
