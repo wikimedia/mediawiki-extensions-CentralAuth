@@ -498,10 +498,14 @@ See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 	'centralauth-admin-info-id' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
 
 {{Identical|User ID}}",
-	'centralauth-admin-info-registered' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.",
+	'centralauth-admin-info-registered' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+
+The following message appears after the colon: date_time (time_span)",
 	'centralauth-admin-info-home' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.",
 	'centralauth-admin-info-editcount' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.",
-	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.",
+	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. The following messages can appear after the colon:
+*{{msg-mw|Centralauth-admin-yes}}
+*{{msg-mw|Centralauth-admin-no}}",
 	'centralauth-admin-info-hidden' => "Label of information on status of user, recording whether the user is hidden to anyone but users with the right 'oversight'. Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager special page]. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-hidden-oversight}}
 *{{msg-mw|Centralauth-admin-hidden-list}}
@@ -6769,8 +6773,8 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-prefs-count-attached' => 'Ser $1 projeyê {{PLURAL:$1|site|siteyan}}î de hesabê ti aktiv o.',
 	'centralauth-prefs-count-unattached' => 'Hesbanê konfirme nebiyo ke pê nameyê tu $1 {{PLURAL:$1|project|projects}} esto.',
 	'centralauth-prefs-detail-unattached' => 'Ena proje konfirme nibiyo ke hesabê globalî ra girediyayo.',
-	'centralauth-prefs-manage' => 'Hesabê globalî îdare bike',
-	'centralauth-prefs-view' => 'Enformasyonê ena karberi bivini',
+	'centralauth-prefs-manage' => 'Hesabê globali idare kerê',
+	'centralauth-prefs-view' => 'Global hesabê karberi bıvinê',
 	'centralauth-renameuser-merged' => 'Belki ena $1 karber sistemê cikewtişê yewî ta transfer biyo.
 Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.',
 	'centralauth-renameuser-reserved' => 'Karberê $2î qe yew hesabê globalî rê reserve biyo.',
@@ -14595,7 +14599,7 @@ $messages['ja'] = array(
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群から自動的にログアウトしました。',
-	'centralauth-hidden-blockreason' => '$1 により $2 にプロジェクト横断的に秘匿。理由: $3',
+	'centralauth-hidden-blockreason' => '$1 により $2 にグローバルに秘匿。理由: $3',
 	'centralauth-log-name' => 'グローバルアカウント記録',
 	'centralauth-log-header' => 'これは、グローバルアカウントの操作 (削除、ロック、ロック解除) の記録です。',
 	'centralauth-log-entry-delete' => 'グローバルアカウント「$1」を削除しました',
@@ -20061,6 +20065,7 @@ $messages['nah'] = array(
 
 /** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Atluxity
+ * @author Danmichaelo
  * @author EivindJ
  * @author Event
  * @author Harald Khan
@@ -20298,6 +20303,7 @@ En gruppe kan slettes ved å fjerne alle rettigheter fra den.',
 	'centralauth-globalgroupperms-newgroupname' => 'Navn på ny gruppe:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Gi tillatelser',
 	'centralauth-editgroup-subtitle' => 'Redigerer $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Vis $1',
 	'centralauth-editgroup-fieldset' => 'Tillatelser for $1',
 	'centralauth-editgroup-name' => 'Gruppenavn:',
 	'centralauth-editgroup-display' => 'Oversatt gruppenavn:',
@@ -26293,6 +26299,7 @@ $3 ඉවත් කෙරිනි',
 /** Slovak (slovenčina)
  * @author Helix84
  * @author Jkjk
+ * @author Kusavica
  * @author Michawiki
  * @author Teslaton
  */
@@ -26526,6 +26533,7 @@ Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 	'centralauth-globalgroupperms-newgroupname' => 'Názov novej skupiny:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Prideliť oprávnenia',
 	'centralauth-editgroup-subtitle' => 'Upravuje sa $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Zobraziť $1',
 	'centralauth-editgroup-fieldset' => 'Oprávnenia pre $1',
 	'centralauth-editgroup-name' => 'Názov skupiny:',
 	'centralauth-editgroup-display' => 'Lokalizovaný názov skupiny:',
