@@ -17185,6 +17185,7 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-globalgroupperms-newgroupname' => 'Neie Gruppennumm:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Rechter ginn',
 	'centralauth-editgroup-subtitle' => 'Ännerung vu(n) $1',
+	'centralauth-editgroup-subtitle-readonly' => '$1 weisen',
 	'centralauth-editgroup-fieldset' => 'Rechter fir $1',
 	'centralauth-editgroup-name' => 'Numm vun der Grupp:',
 	'centralauth-editgroup-display' => 'Lokaliséierten Numm vun der Grupp:',
@@ -22136,6 +22137,7 @@ $messages['os'] = array(
 /** Punjabi (ਪੰਜਾਬੀ)
  * @author Aalam
  * @author Gman124
+ * @author TariButtar
  */
 $messages['pa'] = array(
 	'mergeaccount' => 'ਲਾਗਇਨ ਯੂਨੀਫਕੇਸ਼ਨ ਹਾਲਤ',
@@ -22159,7 +22161,7 @@ $messages['pa'] = array(
 	'centralauth-merge-method-mail' => 'ਈਮੇਲ ਰਾਹੀਂ ਪੁਸ਼ਟੀ',
 	'centralauth-merge-method-new' => 'ਨਵਾਂ ਅਕਾਊਂਟ',
 	'centralauth-finish-password' => 'ਪਾਸਵਰਡ:',
-	'centralauth-admin-username' => 'ਯੂਜ਼ਰ ਨਾਂ:',
+	'centralauth-admin-username' => 'ਵਰਤੋਂਕਾਰ ਨਾਂ:',
 	'centralauth-admin-yes' => 'ਹਾਂ',
 	'centralauth-admin-no' => 'ਨਹੀਂ',
 	'centralauth-admin-delete-title' => 'ਅਕਾਊਂਟ ਹਟਾਓ',
