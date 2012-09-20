@@ -32,7 +32,7 @@ class SpecialGlobalUsers extends SpecialPage {
 }
 
 class GlobalUsersPager extends UsersPager {
-	protected $requestedGroup = false, $requestedUser;
+	public $requestedGroup = false, $requestedUser;
 	private $wikiSets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
@@ -114,12 +114,12 @@ class GlobalUsersPager extends UsersPager {
 		$user = htmlspecialchars( $row->gu_name );
 		$info = array();
 		if ( $row->gu_locked ) {
-			$info[] = wfMsg( 'centralauth-listusers-locked' );
+			$info[] = $this->msg( 'centralauth-listusers-locked' )->text();
 		}
 		if ( $row->lu_attached_method ) {
-			$info[] = wfMsg( 'centralauth-listusers-attached', $row->gu_name );
+			$info[] = $this->msg( 'centralauth-listusers-attached', $row->gu_name )->text();
 		} else {
-			$info[] = wfMsg( 'centralauth-listusers-nolocal' );
+			$info[] = $this->msg( 'centralauth-listusers-nolocal' )->text();
 		}
 		$groups = $this->getUserGroups( $row );
 
@@ -127,7 +127,7 @@ class GlobalUsersPager extends UsersPager {
 			$info[] = $groups;
 		}
 		$info = $this->getLanguage()->commaList( $info );
-		return Html::rawElement( 'li', array(), wfMsgExt( 'centralauth-listusers-item', array('parseinline'), $user, $info ) );
+		return Html::rawElement( 'li', array(), $this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
 	}
 
 	function doBatchLookups() {

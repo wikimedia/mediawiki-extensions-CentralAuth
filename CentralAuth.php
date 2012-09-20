@@ -145,7 +145,7 @@ $wgCentralAuthReadOnly = false;
 /**
  * Initialization of the autoloaders, and special extension pages.
  */
-$caBase = dirname( __FILE__ );
+$caBase = __DIR__;
 $wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/specials/SpecialCentralAuth.php";
 $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/specials/SpecialMergeAccount.php";
 $wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/specials/SpecialGlobalUsers.php";
@@ -253,7 +253,7 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 }
 
 $commonModuleInfo = array(
-	'localBasePath' => dirname( __FILE__ ) . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'CentralAuth/modules',
 );
 
@@ -316,7 +316,7 @@ if ( MWInit::classExists( 'AntiSpoof' ) ) {
  */
 function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 	if ( $skin ) {
-		$link = Linker::makeLinkObj( $title, htmlspecialchars( $params[0] ) );
+		$link = Linker::link( $title, htmlspecialchars( $params[0] ) );
 	} else {
 		$link = $params[0];
 	}
@@ -333,11 +333,16 @@ function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filte
 			break;
 		case 'setchange':
 			$args = array( $params[1]
-				? $params[1] : wfMsg( 'rightsnone' ), $params[2] ? $params[2] : wfMsg( 'rightsnone' ) );
+				? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() );
 			break;
 		default: //'deleteset'
 			$args = array();
 	}
 
-	return wfMsgReal( "centralauth-rightslog-entry-{$action}", array_merge( array( $link ), $args ), true, !$skin );
+	$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
+	if( $skin ) {
+		return $msg->text();
+	} else {
+		return $msg->inContentLanguage()->text();
+	}
 }

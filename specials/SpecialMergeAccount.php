@@ -27,7 +27,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( wfReadOnly() ) {
-			$this->getOutput()->setPagetitle( wfMsg( 'readonly' ) );
+			$this->getOutput()->setPagetitle( $this->msg( 'readonly' ) );
 			$this->getOutput()->addWikiMsg( 'readonlytext', wfReadOnlyReason() );
 			return;
 		}
@@ -100,7 +100,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * data, so they won't be found floating in the same place.
 	 */
 	private function initSession() {
-		$this->mSessionToken = $this->getUser()->generateToken();
+		$this->mSessionToken = MWCryptRand::generateHex( 32 );
 
 		// Generate a random binary string
 		$key = '';
@@ -212,8 +212,8 @@ class SpecialMergeAccount extends SpecialPage {
 			if ( $status->hasMessage( 'centralauth-blocked-text' )
 				|| $status->hasMessage( 'centralauth-merge-home-password' ) )
 			{
-				$out = '<h2>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h2>';
-				$out .= wfMsgExt( 'centralauth-list-home-dryrun', 'parse' );
+				$out = '<h2>' . $this->msg( 'centralauth-list-home-title' )->escaped() . '</h2>';
+				$out .= $this->msg( 'centralauth-list-home-dryrun' )->parseAsBlock();
 				$out .= $this->listAttached( array( $home ), array( $home => 'primary' ) );
 				$this->getOutput()->addHTML( $out );
 			}
@@ -304,7 +304,7 @@ class SpecialMergeAccount extends SpecialPage {
 		} else {
 			$this->getOutput()->addHTML(
 				'<div class="errorbox">' .
-					wfMsg( 'wrongpassword' ) .
+					$this->msg( 'wrongpassword' )->escaped() .
 				'</div>' .
 				$this->attachActionForm() );
 		}
@@ -324,9 +324,9 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->getOutput()->addHTML(
 			$this->passwordForm(
 				'dryrun',
-				wfMsg( 'centralauth-merge-step1-title' ),
-				wfMsg( 'centralauth-merge-step1-detail' ),
-				wfMsg( 'centralauth-merge-step1-submit' ) )
+				$this->msg( 'centralauth-merge-step1-title' )->escaped(),
+				$this->msg( 'centralauth-merge-step1-detail' )->escaped(),
+				$this->msg( 'centralauth-merge-step1-submit' )->text() )
 			);
 	}
 
@@ -352,10 +352,10 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	function showStatus( $merged, $remainder ) {
 		if ( count( $remainder ) > 0 ) {
-			$this->getOutput()->setPageTitle( wfMsg( 'centralauth-incomplete' ) );
+			$this->getOutput()->setPageTitle( $this->msg( 'centralauth-incomplete' ) );
 			$this->getOutput()->addWikiMsg( 'centralauth-incomplete-text' );
 		} else {
-			$this->getOutput()->setPageTitle( wfMsg( 'centralauth-complete' ) );
+			$this->getOutput()->setPageTitle( $this->msg( 'centralauth-complete' ) );
 			$this->getOutput()->addWikiMsg( 'centralauth-complete-text' );
 		}
 		$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
@@ -376,9 +376,9 @@ class SpecialMergeAccount extends SpecialPage {
 			// Try the password form!
 			$this->getOutput()->addHTML( $this->passwordForm(
 				'cleanup',
-				wfMsg( 'centralauth-finish-title' ),
-				wfMsgExt( 'centralauth-finish-text', array( 'parse' ) ),
-				wfMsg( 'centralauth-finish-login' ) ) );
+				$this->msg( 'centralauth-finish-title' )->escaped(),
+				$this->msg( 'centralauth-finish-text' )->parseAsBlock(),
+				$this->msg( 'centralauth-finish-login' )->text() ) );
 		}
 	}
 
@@ -436,8 +436,12 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 */
 	function listWikiItem( $wikiID, $method ) {
-		return
-			$this->foreignUserLink( $wikiID ) . ( $method ? ' (' . wfMsgHtml( "centralauth-merge-method-$method" ) . ')' : '' );
+		$return = $this->foreignUserLink( $wikiID );
+		if ( $method ) {
+			$return .= $this->msg( 'word-separator' )->text();
+			$return .= $this->msg( 'parentheses', $this->msg( 'centralauth-merge-method-'.$method )->text() )->escaped();
+		}
+		return $return;
 	}
 
 	/**
@@ -457,9 +461,9 @@ class SpecialMergeAccount extends SpecialPage {
 		return Xml::element( 'a',
 			array(
 				'href' => $url,
-				'title' => wfMsg( 'centralauth-foreign-link',
+				'title' => $this->msg( 'centralauth-foreign-link',
 					$this->mUserName,
-					$hostname ),
+					$hostname )->text(),
 			),
 			$hostname );
 	}
@@ -508,7 +512,7 @@ class SpecialMergeAccount extends SpecialPage {
 					'<tr>' .
 						'<td>' .
 							Xml::label(
-								wfMsg( 'centralauth-finish-password' ),
+								$this->msg( 'centralauth-finish-password' )->text(),
 								'wpPassword1' ) .
 						'</td>' .
 						'<td>' .
@@ -535,9 +539,9 @@ class SpecialMergeAccount extends SpecialPage {
 	private function step1PasswordForm() {
 		return $this->passwordForm(
 			'dryrun',
-			wfMsg( 'centralauth-merge-step1-title' ),
-			wfMsg( 'centralauth-merge-step1-detail' ),
-			wfMsg( 'centralauth-merge-step1-submit' ) );
+			$this->msg( 'centralauth-merge-step1-title' )->escaped(),
+			$this->msg( 'centralauth-merge-step1-detail' )->escaped(),
+			$this->msg( 'centralauth-merge-step1-submit' )->text() );
 	}
 
 	/**
@@ -547,10 +551,10 @@ class SpecialMergeAccount extends SpecialPage {
 	private function step2PasswordForm( $unattached ) {
 		return $this->passwordForm(
 			'dryrun',
-			wfMsg( 'centralauth-merge-step2-title' ),
-			wfMsgExt( 'centralauth-merge-step2-detail', 'parse', $this->getUser()->getName() ) .
+			$this->msg( 'centralauth-merge-step2-title' )->escaped(),
+			$this->msg( 'centralauth-merge-step2-detail', $this->getUser()->getName() )->parseAsBlock() .
 				$this->listUnattached( $unattached ),
-			wfMsg( 'centralauth-merge-step2-submit' ) );
+			$this->msg( 'centralauth-merge-step2-submit' )->text() );
 	}
 
 	/**
@@ -562,18 +566,18 @@ class SpecialMergeAccount extends SpecialPage {
 	private function step3ActionForm( $home, $attached, $methods ) {
 		return $this->actionForm(
 			'initial',
-			wfMsg( 'centralauth-merge-step3-title' ),
-			wfMsgExt( 'centralauth-merge-step3-detail', 'parse', $this->getUser()->getName() ) .
-				'<h3>' . wfMsgHtml( 'centralauth-list-home-title' ) . '</h3>' .
-				wfMsgExt( 'centralauth-list-home-dryrun', 'parse' ) .
+			$this->msg( 'centralauth-merge-step3-title' )->text(),
+			$this->msg( 'centralauth-merge-step3-detail', $this->getUser()->getName() )->parseAsBlock() .
+				'<h3>' . $this->msg( 'centralauth-list-home-title' )->escaped() . '</h3>' .
+				$this->msg( 'centralauth-list-home-dryrun' )->parseAsBlock() .
 				$this->listAttached( array( $home ), $methods ) .
 				( count( $attached )
-					? ( '<h3>' . wfMsgHtml( 'centralauth-list-attached-title' ) . '</h3>' .
-						wfMsgExt( 'centralauth-list-attached-dryrun', 'parse', $this->getUser()->getName() ) )
+					? ( '<h3>' . $this->msg( 'centralauth-list-attached-title' )->escaped() . '</h3>' .
+						$this->msg( 'centralauth-list-attached-dryrun', $this->getUser()->getName() )->parseAsBlock() )
 					: '' ) .
 				$this->listAttached( $attached, $methods ) .
 				'<p>' .
-					Xml::submitButton( wfMsg( 'centralauth-merge-step3-submit' ),
+					Xml::submitButton( $this->msg( 'centralauth-merge-step3-submit' )->text(),
 						array( 'name' => 'wpLogin' ) ) .
 				'</p>'
 			);
@@ -585,9 +589,9 @@ class SpecialMergeAccount extends SpecialPage {
 	private function attachActionForm() {
 		return $this->passwordForm(
 			'attach',
-			wfMsg( 'centralauth-attach-title' ),
-			wfMsg( 'centralauth-attach-text' ),
-			wfMsg( 'centralauth-attach-submit' ) );
+			$this->msg( 'centralauth-attach-title' )->escaped(),
+			$this->msg( 'centralauth-attach-text' )->escaped(),
+			$this->msg( 'centralauth-attach-submit' )->text() );
 	}
 
 	private function dryRunError() {
