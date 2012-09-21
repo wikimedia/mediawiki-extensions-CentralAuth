@@ -31111,6 +31111,14 @@ $messages['ur'] = array(
 	'centralauth-editset-return' => 'اہم نقطہ نظر کے لئے پر واپس',
 );
 
+/** Uzbek (oʻzbekcha)
+ * @author CoderSI
+ */
+$messages['uz'] = array(
+	'centralauth-prefs-status' => 'Global hisob holati:',
+	'centralauth-prefs-complete' => 'Hammasi joyida!',
+);
+
 /** vèneto (vèneto)
  * @author Candalua
  */
