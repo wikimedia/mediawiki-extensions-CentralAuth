@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH///bU\u003d",
+        "filename": "specials/SpecialMergeAccount.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-09-23T18:21:22Z",
+      "side": 1,
+      "message": "Variables inside of single quotes aren\u0027t resolved into their values, so this will actually use the message centralauth-merge-method-$method!",
+      "revId": "c9e6d23a9dfd96c67b89cfbbb6a7349e8d3e3b42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
