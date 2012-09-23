@@ -16,6 +16,24 @@
       "revId": "0b2ea80bb523a0992805294a7534cad329c5c2fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH///cI\u003d",
+        "filename": "specials/SpecialMergeAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-09-23T18:05:45Z",
+      "side": 1,
+      "message": "All wfMessage/$this-\u003emsg calls should have an output method (either plain/text/escaped/parse/parseAsBlock), as Hoo man says. Also: Use single quotes instead of double quotes for message keys (convention).\n\nAs for using a real message: That\u0027s indeed preferred, but generally more work, with little extra value after this has been in use for a long time.\n\nIf you\u0027re looking for improving your refactoring skills, though, feel free to do so! The message should be marked optional (so add it to maintenance/language/messagesTypes.inc, too), and would look something like this (I bet we already have one or more of those):\n\n\u0027somekey\u0027 -\u003e \u0027$1 ($2)\u0027\n\n$2 should be a raw parameter, so you\u0027d get something like:\n\nreturn $this-\u003emsg( \u0027somekey\u0027 )-\u003erawParams( $this-\u003eforeignUserLink( $wikiID ) )-\u003eparams( $this-\u003emsg( \"centralauth-merge-method-$method\" )-\u003etext() )-\u003eescaped()",
+      "parentUuid": "AAAATH///co\u003d",
+      "revId": "0b2ea80bb523a0992805294a7534cad329c5c2fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
