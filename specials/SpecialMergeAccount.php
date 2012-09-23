@@ -436,9 +436,12 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 */
 	function listWikiItem( $wikiID, $method ) {
-		// @todo FIXME: i18n: Hard coded parentheses.
-		return
-			$this->foreignUserLink( $wikiID ) . ( $method ? ' (' . $this->msg( "centralauth-merge-method-$method" )->escaped() . ')' : '' );
+		$return = $this->foreignUserLink( $wikiID );
+		if ( $method ) {
+			$return .= $this->msg( "word-separator" )->text();
+			$return .= $this->msg( "parentheses", $this->msg( "centralauth-merge-method-$method" )->text() )->escaped();
+		}
+		return $return;
 	}
 
 	/**
