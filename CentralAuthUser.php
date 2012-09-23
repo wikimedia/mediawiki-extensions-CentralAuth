@@ -480,7 +480,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 *
 	 * @param $password String
 	 * @param $email String
-	 * @param $realname String
 	 * @return bool
 	 */
 	function register( $password, $email ) {
@@ -1160,10 +1159,10 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( $suppress ) {
 			list( $site, $lang ) = $wgConf->siteFromDB( $wiki );
-			$langNames = Language::getLanguageNames();
+			$langNames = Language::fetchLanguageNames();
 			$lang = isset( $langNames[$lang] ) ? $lang : 'en';
-			$blockReason = wfMsgReal( 'centralauth-admin-suppressreason',
-				array( $by, $reason ), true, $lang );
+			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
+				->inLanguage( $lang )->text();
 
 			$block = new Block(
 				/* $address */ $this->mName,
@@ -1912,7 +1911,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	function resetAuthToken() {
 		// Generate a random token.
-		$this->mAuthToken = wfGenerateToken( $this->getId() );
+		$this->mAuthToken = MWCryptRand::generateHex( 32 );
 		$this->mStateDirty = true;
 
 		// Save it.
@@ -2188,7 +2187,7 @@ class CentralAuthUser extends AuthPluginUser {
 			return null;
 		}
 		if ( !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
-			$id = wfGenerateToken();
+			$id = MWCryptRand::generateHex( 32 );
 			self::setCookie( 'Session', $id, 0 );
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
