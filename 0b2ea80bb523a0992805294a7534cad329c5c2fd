@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH///co\u003d",
+        "filename": "specials/SpecialMergeAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-09-23T17:10:11Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be $this-\u003emsg( \"word-separator\" )-\u003etext() ?\nFurthermore this should maybe changed into a real if clause and using a var, for the sake of readability.",
+      "revId": "0b2ea80bb523a0992805294a7534cad329c5c2fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
