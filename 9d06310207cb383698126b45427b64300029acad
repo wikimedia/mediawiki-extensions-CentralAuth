@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH///eI\u003d",
+        "filename": "specials/SpecialWikiSets.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 371
+      },
+      "writtenOn": "2012-09-23T15:10:58Z",
+      "side": 1,
+      "message": "There is no escaping in Xml::buildForm() :\n\npublic static function buildForm( $fields, $submitLabel \u003d null ) {\n...\nforeach( $fields as $labelmsg \u003d\u003e $input ) { \n...\n$form .\u003d Xml::openElement( \u0027td\u0027, array( \u0027class\u0027 \u003d\u003e \u0027mw-input\u0027 ) ) . $input . Xml::closeElement( \u0027td\u0027 );",
+      "revId": "9d06310207cb383698126b45427b64300029acad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
