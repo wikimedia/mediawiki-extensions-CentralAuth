@@ -14365,7 +14365,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-editset-name' => 'Nome:',
 	'centralauth-editset-type' => 'Tipo:',
 	'centralauth-editset-wikis' => 'Wiki:',
-	'centralauth-editset-restwikis' => 'Wiki non incluso sopra:',
+	'centralauth-editset-restwikis' => 'Wiki non inclusi sopra:',
 	'centralauth-editset-reason' => 'Motivo:',
 	'centralauth-editset-submit' => 'Invia',
 	'centralauth-editset-submit-delete' => 'Cancella',
@@ -20073,7 +20073,7 @@ $messages['nah'] = array(
 	'centralauth-editset-reason' => 'Tlèka:',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Atluxity
  * @author Danmichaelo
  * @author EivindJ
@@ -21218,7 +21218,7 @@ Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 Je kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Dittaeva
  * @author Eirik
  * @author Gunnernett

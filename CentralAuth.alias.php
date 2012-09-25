@@ -489,7 +489,7 @@ $specialPageAliases['myv'] = array(
 	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'CentralAuth' => array( 'Enhetlig_innlogging' ),
 	'AutoLogin' => array( 'Automatisk_innlogging' ),
@@ -522,7 +522,7 @@ $specialPageAliases['nl'] = array(
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (norsk (nynorsk)‎) */
 $specialPageAliases['nn'] = array(
 	'MergeAccount' => array( 'Kontosamanslåing' ),
 	'GlobalGroupMembership' => array( 'Globale_brukarrettar' ),
@@ -704,7 +704,7 @@ $specialPageAliases['yi'] = array(
 	'GlobalUsers' => array( 'גלאבאלע_באניצער' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
 	'AutoLogin' => array( '自动登录' ),
@@ -715,7 +715,7 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalUsers' => array( '全域用户' ),
 );
 
-/** Traditional Chinese (‪中文（繁體）‬) */
+/** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
 	'AutoLogin' => array( '自動登錄' ),
@@ -726,7 +726,7 @@ $specialPageAliases['zh-hant'] = array(
 	'GlobalUsers' => array( '全域用戶' ),
 );
 
-/** Chinese (Hong Kong) (‪中文（香港）‬) */
+/** Chinese (Hong Kong) (中文（香港）‎) */
 $specialPageAliases['zh-hk'] = array(
 	'GlobalGroupMembership' => array( '全域用戶權限' ),
 );
