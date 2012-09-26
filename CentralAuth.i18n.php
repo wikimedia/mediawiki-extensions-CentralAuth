@@ -27514,7 +27514,7 @@ $messages['sr-ec'] = array(
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author FriedrickMILBarbarossa
  * @author Liangent
  * @author Michaello
@@ -27563,6 +27563,13 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 	'centralauth-merge-method-admin' => 'administrator je spojio naloge',
 	'centralauth-merge-method-new' => 'novi nalog',
 	'centralauth-merge-method-login' => 'napravljeno pri prijavljivanju',
+	'centralauth-merge-method-empty-desc' => 'Označava da je lokalni nalog bio spojen jer nije imao izmena.',
+	'centralauth-merge-method-mail-desc' => 'Označava da je lokalni nalog bio spojen jer se njegova mejl adresa poklopila s adresom glavnog naloga.',
+	'centralauth-merge-method-password-desc' => 'Označava da je lokalni nalog spojen jer je korisnik naveo važeću lozinku za njega.',
+	'centralauth-merge-method-admin-desc' => 'Označava da su lokalni nalog stjuardi ručno spojili.
+Sada je ta funkcija onemogućena iz bezbednosnih razloga.',
+	'centralauth-merge-method-new-desc' => 'Označava da je globalni nalog bio automatski otvoren pri otvaranju lokalnog naloga.',
+	'centralauth-merge-method-login-desc' => 'Označava da je lokalni nalog bio automatski otvoren pri prijavljivanju korisnika.',
 	'centralauth-finish-title' => 'Završi spajanje',
 	'centralauth-finish-text' => 'Ukoliko ovi nalozi pripadaju vama, možete završiti proces spajanja naloga upisujući lozinku za ostale naloge ovde:',
 	'centralauth-finish-password' => 'Lozinka:',
@@ -27574,9 +27581,12 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 	'centralauth-merge-attempt' => "'''Provera unete lozinke naspram ostalih naloga koji još nisu spojeni......'''",
 	'centralauth-attach-list-attached' => 'Sjedinjeni nalog pod imenom "$1" uključuje sledeće naloge:',
 	'centralauth-attach-title' => 'overa naloga',
+	'centralauth-attach-text' => 'Ovaj nalog još nije migriran na objedinjeni nalog.
+Ako je i globalni nalog Vaš, onda možete da ga spojite s ovim nalogom tako što ćete uneti lozinku globalnog naloga:',
 	'centralauth-attach-submit' => 'premeštanje naloga',
 	'centralauth-attach-success' => 'Nalog je premešten u ujedinjeni nalog.',
 	'centralauth' => 'Globalno upravljanje korisnicima',
+	'centralauth-admin-intro' => 'Ovo interfejs može da se koristi za administraciju globalnih naloga.',
 	'centralauth-admin-manage' => 'Nadgledanje korisničkih podataka',
 	'centralauth-admin-username' => 'Korisničko ime:',
 	'centralauth-admin-lookup-ro' => 'Pogledaj korisničke podatke',
@@ -29486,6 +29496,7 @@ Digar hisobho to hol ta'jid naşudaand.",
 	'centralauth-admin-delete-nonexistent' => 'Xato: hisobi muştaraki "<nowiki>$1</nowiki>" vuçud nadorad.',
 	'centralauth-token-mismatch' => 'Bubaxşed, mo natavonistem irsoli formi şumoro az sababi az bajn raftani dodahoi nişast ba ançom rasonem.',
 	'centralauth-admin-reason' => 'Sabab:',
+	'centralauth-admin-unhide-nonexistent' => 'Xato: hisobi sarosariji "<nowiki>$1</nowiki>" vuçud nadorad.',
 	'globalusers' => 'Fehristi korbari muştarak',
 	'centralauth-listusers-locked' => 'basta şud',
 	'centralauth-listusers-attached' => '[[User:$1|ba tavri mahallī vuçud dorad]]',
