@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9lY\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 66
+      },
+      "writtenOn": "2012-09-26T03:52:56Z",
+      "side": 1,
+      "message": "gauexcludegroup is broken when user is in multiple (n\u003e1) groups (it displays n-1 groups, obviously consequence of table join) or when it is in zero groups (then it is just omitted).\n\nAlso, the table join totally messes up the limit calculation (two users in two same groups, set limit\u003d1, still get two users, etc).",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9lU\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 66
+      },
+      "writtenOn": "2012-09-26T03:52:56Z",
+      "side": 1,
+      "message": "Here you deal with locked (lock !\u003d block, btw) accounts, but do not deal with hidden. Make sure that you filter hidden and *especially* oversighted names (see related code in CentralAuthUser).",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9lQ\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 66
+      },
+      "writtenOn": "2012-09-26T03:52:56Z",
+      "side": 1,
+      "message": "gu_locked is not a block flag, it\u0027s a log flag, those are two different entities (lock is much simplier).",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9lM\u003d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 66
+      },
+      "writtenOn": "2012-09-26T03:52:56Z",
+      "side": 1,
+      "message": "\"globalalluser\" -\u003e \"globalallusers\" (both lines)\n\n\"guiprop\" -\u003e \"gauprop\"",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
