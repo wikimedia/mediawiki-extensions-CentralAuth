@@ -23310,6 +23310,7 @@ $messages['ps'] = array(
 	'centralauth-editset-nowikis' => 'هېڅ کومه ويکي نه ده ځانګړې شوې.',
 	'centralauth-editset-nouse' => '(هېڅ)',
 	'centralauth-editset-usage' => 'کارېدلی په ډله د:',
+	'right-centralauth-lock' => 'نړيوال ګڼون تړل يا پټول',
 	'right-centralauth-merge' => 'د هغوی ګڼونونه سره اخږل',
 	'right-globalgrouppermissions' => 'نړېوالې ډلې مهارول',
 );
