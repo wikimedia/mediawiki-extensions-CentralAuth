@@ -56,6 +56,13 @@ $specialPageAliases['as'] = array(
 	'GlobalUsers' => array( 'গোলকীয়_ব্যৱহাৰকাৰী' ),
 );
 
+/** Bashkir (башҡортса) */
+$specialPageAliases['ba'] = array(
+	'GlobalGroupMembership' => array( 'GlobalUserRights' ),
+	'WikiSets' => array( 'WikiSets' ),
+	'GlobalUsers' => array( 'GlobalUsers' ),
+);
+
 /** Bulgarian (български) */
 $specialPageAliases['bg'] = array(
 	'CentralAuth' => array( 'Управление_на_единните_сметки' ),
