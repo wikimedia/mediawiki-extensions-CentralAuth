@@ -227,6 +227,7 @@ $wgSpecialPageGroups['WikiSets'] = 'wiki';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
 $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
+$wgAPIListModules['globalgroups'] = 'ApiQueryGlobalGroups';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
