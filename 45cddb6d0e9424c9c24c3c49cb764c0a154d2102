@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATX//+ZE\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 166
+      },
+      "writtenOn": "2012-09-30T20:31:01Z",
+      "side": 1,
+      "message": "This belongs in the message documentation section, not here.",
+      "revId": "45cddb6d0e9424c9c24c3c49cb764c0a154d2102",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//+Y8\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 25331,
+      "author": {
+        "id": 166
+      },
+      "writtenOn": "2012-09-30T20:31:01Z",
+      "side": 1,
+      "message": "This whitespace only change belongs in a separate commit. The same goes for the two others below.",
+      "revId": "45cddb6d0e9424c9c24c3c49cb764c0a154d2102",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//+Ys\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 166
+      },
+      "writtenOn": "2012-09-30T20:31:01Z",
+      "side": 1,
+      "message": "wfMsg() is deprecated; new code should use wfMessage() instead.",
+      "revId": "45cddb6d0e9424c9c24c3c49cb764c0a154d2102",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
