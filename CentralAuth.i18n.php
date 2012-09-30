@@ -6369,7 +6369,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 ** unangemessene persönliche Daten',
 	'centralauth-admin-logsnippet' => 'Vorherige Änderungen am globalen Benutzerkonto',
 	'centralauth-admin-suppressreason' => 'Global unterdrückt durch $1. Grund: $2',
-	'globalusers' => 'Globale Benutzerliste',
+	'globalusers' => 'Benutzerverzeichnis (global)',
 	'centralauth-listusers-locked' => 'gesperrt',
 	'centralauth-listusers-attached' => '[[User:$1|lokal vorhanden]]',
 	'centralauth-listusers-nolocal' => 'nicht verbunden oder lokal nicht vorhanden',
@@ -8945,7 +8945,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'mergeaccount' => 'Käyttäjätunnusten yhdistämisen tila',
-	'centralauth-groupname' => 'Wikimedia-säätiö',
+	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => 'Mahdollistaa [[Special:MergeAccount|käyttäjätunnusten yhdistämisen]] {{int:Centralauth-groupname}} -wikeissä.',
 	'centralauth-antispoof-desc' => 'Lisää AntiSpoof-tekniikan CentralAuthiin',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.',
@@ -9003,7 +9003,7 @@ Niin kauan kun tunnuksesi on estetty, et voi yhdistää tunnuksiasi.',
 	'centralauth-list-unattached-title' => 'Liittämättömät tunnukset',
 	'centralauth-list-unattached' => 'Tunnusta ”$1” ei voitu liittää automaattisesti seuraavista wikeistä, koska niissä todennäköisesti on eri salasana:',
 	'centralauth-foreign-link' => 'Tunnus $1 projektissa $2',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|muokkaus|muokkausta}} $2 -wikissä',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|muokkaus|muokkausta}} wikissä $2',
 	'centralauth-merge-method-primary' => 'kotiwiki',
 	'centralauth-merge-method-empty' => 'ei muokkauksia',
 	'centralauth-merge-method-mail' => 'vahvistettu sähköpostiosoitteella',
@@ -9147,12 +9147,12 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-log-status-hidden' => 'piilotettu',
 	'centralauth-log-status-oversighted' => 'häivytetty',
 	'centralauth-log-status-none' => '(ei mitään)',
-	'centralauth-rightslog-name' => 'Globaalikäyttöoikeusloki',
+	'centralauth-rightslog-name' => 'Järjestelmänlaajuinen käyttöoikeusloki',
 	'centralauth-rightslog-entry-usergroups' => 'vaihdettu globaalin ryhmän jäsenyys käyttäjälle $1 ryhmästä $2 ryhmään $3',
 	'centralauth-rightslog-entry-groupperms' => 'Vaihdettu ryhmän $1 käyttöoikeus $2 käyttöoikeuteen $3',
 	'centralauth-rightslog-entry-groupperms2' => 'Vaihdettu ryhmän $1 käyttöoikeuksia. Lisätty $2; Poistettu $3',
 	'centralauth-rightslog-entry-groupperms3' => 'vaihdettu ryhmän $1 rajoitetut wikit wikeistä $2 wikeihin $3',
-	'centralauth-rightslog-header' => 'Tämä loki sisältää globaalien ryhmien jäsenyys- ja käyttöoikeuksien muutosmerkinnät',
+	'centralauth-rightslog-header' => 'Tämä loki sisältää järjestelmänlaajuisten ryhmien jäsenyys- ja käyttöoikeuksien muutosmerkinnät',
 	'centralauth-rightslog-entry-newset' => 'luotu $2 wikijoukko $1 sisältäen seuraavat wikit: $3',
 	'centralauth-rightslog-entry-setrename' => 'vaihtoi wikijoukon ”$2” nimeksi ”$1”',
 	'centralauth-rightslog-entry-setnewtype' => 'vaihdettu "$1" tyyppi tyypistä $2 tyypiksi $3',
@@ -9164,13 +9164,13 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-autologin-desc' => 'Tämä toimintosivu on MediaWikin sisäisessä käytössä.
 Kun [[Special:UserLogin|kirjaudut sisään]], keskitetty sisäänkirjautumisjärjestelmä ohjeistaa selaimesi kuvien avulla kutsumaan tätä sivua kaikissa linkitetyissä domaineissa.
 Olet kutsunut tätä sivua ilman sisäänkirjautumistietoja, joten sivu ei tee mitään.',
-	'globalgroupmembership' => 'Jäsenyys globaaleissa ryhmissä',
-	'globalgrouppermissions' => 'Globaalien ryhmien hallinta',
-	'centralauth-globalgroupperms-grouplist' => 'Seuraavat globaalit ryhmät on määritelty.
+	'globalgroupmembership' => 'Jäsenyys järjestelmänlaajuisissa ryhmissä',
+	'globalgrouppermissions' => 'Järjestelmänlaajuisten ryhmien hallinta',
+	'centralauth-globalgroupperms-grouplist' => 'Seuraavat järjestelmänlaajuiset ryhmät on määritelty.
 Voit tarkastella tai muokata minkä tahansa ryhmän käyttöoikeuksia, jos sinulla on oikeudet.
 Ryhmä voidaan poistaa ottamalla siltä pois kaikki käyttöoikeudet.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|näytä tai muokkaa]])',
-	'centralauth-globalgroupperms-nogroups' => 'Globaaleja ryhmiä ei ole määritelty.',
+	'centralauth-globalgroupperms-nogroups' => 'Järjestelmänlaajuisia ryhmiä ei ole määritelty.',
 	'centralauth-existinggroup-legend' => 'Nykyiset ryhmät',
 	'centralauth-newgroup-legend' => 'Luo uusi ryhmä',
 	'centralauth-newgroup-intro' => 'Tällä lomakkeella voit antaa oikeuksia uusille ryhmille.
@@ -9234,13 +9234,13 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'centralauth-editset-return' => 'Palaa päänäkymään',
 	'centralauth-readonly' => 'CentralAuth-tietokanta lukittu',
 	'centralauth-readonlytext' => 'CentralAuth-tietokanta on lukittu eikä merkintöjä voi luoda tai muokata. Kyseessä on todennäköisesti tietokannan rutiiniylläpito, jonka jälkeen tietokanta toimii normaalisti.',
-	'right-globalgroupmembership' => 'Muokata globaalien ryhmien jäsenyyksiä',
+	'right-globalgroupmembership' => 'Muokata järjestelmänlaajuisten ryhmien jäsenyyksiä',
 	'right-centralauth-autoaccount' => 'Automaattinen kirjautuminen yleistilillä',
 	'right-centralauth-unmerge' => 'Yleisten tilien yhdistämisen kumoaminen',
 	'right-centralauth-lock' => 'Lukita tai piilottaa yhdistetty tunnus',
 	'right-centralauth-oversight' => 'Yleisen tilin estäminen',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
-	'right-globalgrouppermissions' => 'Hallinnoida globaaleja ryhmiä',
+	'right-globalgrouppermissions' => 'Hallinnoida järjestelmänlaajuisia ryhmiä',
 );
 
 /** meänkieli (meänkieli)
@@ -14623,7 +14623,7 @@ $messages['ja'] = array(
 	'centralauth-log-status-oversighted' => '秘匿',
 	'centralauth-log-status-none' => '(なし)',
 	'centralauth-rightslog-name' => 'グローバル権限変更記録',
-	'centralauth-rightslog-entry-usergroups' => '$1 のグローバルグループ所属を $2 から $3 に変更しました',
+	'centralauth-rightslog-entry-usergroups' => '$1 の所属グローバルグループを $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-groupperms' => '$1 のグループ権限を $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-groupperms2' => '$1 のグループ権限を変更しました。
 追加: $2、
