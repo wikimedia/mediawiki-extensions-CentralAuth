@@ -3325,7 +3325,7 @@ $messages['be'] = array(
 	'centralauth-editset-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Cesco
  * @author EugeneZelenko
  * @author Jim-by
@@ -5299,7 +5299,7 @@ $messages['co'] = array(
 	'centralauth-editset-name' => 'Nome:',
 );
 
-/** Crimean Turkish (Latin script) (‪qırımtatarca (Latin)‬)
+/** Crimean Turkish (Latin script) (qırımtatarca (Latin)‎)
  * @author Don Alessandro
  */
 $messages['crh-latn'] = array(
@@ -5313,7 +5313,7 @@ $messages['crh-latn'] = array(
 	'centralauth-prefs-manage' => 'Global esapnı idare et',
 );
 
-/** Crimean Turkish (Cyrillic script) (‪къырымтатарджа (Кирилл)‬)
+/** Crimean Turkish (Cyrillic script) (къырымтатарджа (Кирилл)‎)
  * @author Don Alessandro
  */
 $messages['crh-cyrl'] = array(
@@ -6517,7 +6517,7 @@ Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge 
 	'centralauth-readonlytext' => 'Die CentralAuth-Datenbank ist derzeit für neue Einträge und andere Änderungen gesperrt. Dies ist wahrscheinlich aufgrund routinemässiger Wartungsarbeiten der Fall, nach deren Abschluss die Datenbank wieder regulär verfügbar sein wird.',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Imre
  * @author Kghbln
  * @author MichaelFrey
@@ -11181,7 +11181,7 @@ $messages['gv'] = array(
 	'centralauth-editset-reason' => 'Fa:',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'centralauth-admin-reason' => 'Dalili:',
 	'centralauth-editgroup-reason' => 'Dalili:',
@@ -15397,7 +15397,7 @@ $messages['khw'] = array(
 	'centralauth-admin-status-hidden' => 'کھوشت',
 );
 
-/** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
+/** Kazakh (Arabic script) (قازاقشا (تٴوتە)‏) */
 $messages['kk-arab'] = array(
 	'mergeaccount' => 'تىركەلگى بىرىزدەندىرۋ كۇيى',
 	'centralauth-desc' => 'Wikimedia قورى ۋىيكىيلەر اراسىندا [[Special:MergeAccount|تىركەلگى بىرىكتىرۋ]]',
@@ -15575,7 +15575,7 @@ Other accounts are not yet confirmed.',
 	'right-globalgrouppermissions' => 'عالامدىق توپتاردى رەتتەۋ',
 );
 
-/** Kazakh (Cyrillic script) (‪қазақша (кирил)‬)
+/** Kazakh (Cyrillic script) (қазақша (кирил)‎)
  * @author GaiJin
  * @author Kaztrans
  */
@@ -15757,7 +15757,7 @@ Other accounts are not yet confirmed.',
 	'right-globalgrouppermissions' => 'Ғаламдық топтарды реттеу',
 );
 
-/** Kazakh (Latin script) (‪qazaqşa (latın)‬) */
+/** Kazakh (Latin script) (qazaqşa (latın)‎) */
 $messages['kk-latn'] = array(
 	'mergeaccount' => 'Tirkelgi birizdendirw küýi',
 	'centralauth-desc' => 'Wikimedia qorı wïkïler arasında [[Special:MergeAccount|tirkelgi biriktirw]]',
@@ -16839,7 +16839,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 	'right-globalgrouppermissions' => 'Jemeinsame Metmaacher-Jruppe beärbeide',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  * @author Ghybu
  * @author Gomada
@@ -21150,7 +21150,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'right-globalgrouppermissions' => 'Globale groepen beheren',
 );
 
-/** ‪Nederlands (informeel)‬ (‪Nederlands (informeel)‬)
+/** Nederlands (informeel)‎ (Nederlands (informeel)‎)
  * @author Siebrand
  */
 $messages['nl-informal'] = array(
@@ -27236,7 +27236,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 	'right-globalgrouppermissions' => 'Menaxhoni grupet globale',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author FriedrickMILBarbarossa
  * @author Millosh
  * @author Nikola Smolenski
@@ -32438,7 +32438,7 @@ $messages['zea'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Samm'nhevoehde hebrukers]] in wiki's von {{int:Centralauth-groupname}}",
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq
@@ -32742,7 +32742,7 @@ $messages['zh-hans'] = array(
 	'right-globalgrouppermissions' => '管理全域组',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq
