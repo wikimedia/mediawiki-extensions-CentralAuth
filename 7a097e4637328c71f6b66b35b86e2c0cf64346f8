@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAaX////g\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-10-04T15:02:06Z",
+      "side": 1,
+      "message": "The name of the wiki set to start from",
+      "revId": "7a097e4637328c71f6b66b35b86e2c0cf64346f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAaX////k\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-10-04T15:02:06Z",
+      "side": 1,
+      "message": "How many wiki sets to return",
+      "revId": "7a097e4637328c71f6b66b35b86e2c0cf64346f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAaX////o\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-10-04T15:02:06Z",
+      "side": 1,
+      "message": "Order results by name",
+      "revId": "7a097e4637328c71f6b66b35b86e2c0cf64346f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
