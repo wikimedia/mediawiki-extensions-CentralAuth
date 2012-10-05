@@ -193,7 +193,7 @@ class SpecialCentralAuth extends SpecialPage {
 									$this->mUserName,
 									$reason,
 									array( $added, $removed ),
-									$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT
+									$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT || $setHidden == CentralAuthUser::HIDDEN_LISTS
 								);
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
 			} elseif ( !$good ) {
