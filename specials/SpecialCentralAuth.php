@@ -132,8 +132,12 @@ class SpecialCentralAuth extends SpecialPage {
 				CentralAuthUser::HIDDEN_NONE,
 				CentralAuthUser::HIDDEN_LISTS,
 				CentralAuthUser::HIDDEN_OVERSIGHT );
-			if ( !in_array( $setHidden, $hiddenLevels ) )
+			if ( !in_array( $setHidden, $hiddenLevels ) ) {
 				$setHidden = '';
+			} elseif ( $setHidden && $oldHiddenLevel != $setHidden && !$this->mCanOversight ) {
+				// User tries to change the hidden level but isn't allowed to
+				$setHidden = '';
+			}
 
 			if ( !$isLocked && $setLocked ) {
 				$lockStatus = $globalUser->adminLock();
@@ -193,7 +197,7 @@ class SpecialCentralAuth extends SpecialPage {
 									$this->mUserName,
 									$reason,
 									array( $added, $removed ),
-									$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT
+									$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT || $setHidden == CentralAuthUser::HIDDEN_LISTS
 								);
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
 			} elseif ( !$good ) {
@@ -624,23 +628,24 @@ class SpecialCentralAuth extends SpecialPage {
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_NONE,
 				'mw-centralauth-status-hidden-no',
-				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_NONE ) .
-			'<br />' .
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-hidden-list' )->parse(),
-				'wpStatusHidden',
-				CentralAuthUser::HIDDEN_LISTS,
-				'mw-centralauth-status-hidden-list',
-				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_LISTS ) .
-			'<br />';
+				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_NONE );
 		if ( $this->mCanOversight ) {
-			$radioHidden .= Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-hidden-oversight' )->parse(),
-				'wpStatusHidden',
-				CentralAuthUser::HIDDEN_OVERSIGHT,
-				'mw-centralauth-status-hidden-oversight',
-				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_OVERSIGHT
-			);
+			$radioHidden .= '<br />' .
+				Xml::radioLabel(
+					$this->msg( 'centralauth-admin-status-hidden-list' )->parse(),
+					'wpStatusHidden',
+					CentralAuthUser::HIDDEN_LISTS,
+					'mw-centralauth-status-hidden-list',
+					$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_LISTS
+				) .
+				'<br />' .
+				Xml::radioLabel(
+					$this->msg( 'centralauth-admin-status-hidden-oversight' )->parse(),
+					'wpStatusHidden',
+					CentralAuthUser::HIDDEN_OVERSIGHT,
+					'mw-centralauth-status-hidden-oversight',
+					$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_OVERSIGHT
+				);
 		}
 
 		// Reason
