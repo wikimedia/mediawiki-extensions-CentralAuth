@@ -275,6 +275,7 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-merge-method-admin-desc',
 		'centralauth-merge-method-login',
 		'centralauth-merge-method-login-desc',
+		'centralauth-admin-delete-confirm',
 	),
 ) + $commonModuleInfo;
 

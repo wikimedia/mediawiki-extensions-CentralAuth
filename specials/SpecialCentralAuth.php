@@ -576,6 +576,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param $action String: Only 'delete' supported
 	 */
 	function showActionForm( $action ) {
+		$this->getOutput()->addModules( 'jquery.makeCollapsible' );
 		$this->getOutput()->addHTML(
 			# to be able to find messages: centralauth-admin-delete-title,
 			# centralauth-admin-delete-description, centralauth-admin-delete-button
@@ -583,7 +584,8 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
 				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
-				'id' => "mw-centralauth-$action" ) ) .
+				'id' => "mw-centralauth-$action",
+				'class' => 'mw-collapsible mw-collapsed' ) ) .
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
