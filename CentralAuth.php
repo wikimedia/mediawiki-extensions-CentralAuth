@@ -212,6 +212,7 @@ $wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUser
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
 $wgAvailableRights[] = 'centralauth-lock';
+$wgAvailableRights[] = 'centralauth-hide';
 $wgAvailableRights[] = 'centralauth-oversight';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
