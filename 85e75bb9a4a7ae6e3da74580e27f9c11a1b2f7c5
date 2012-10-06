@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAnH///+0\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "To remove duplication and provide a fast way to rename the key.",
+      "parentUuid": "AAAARX//zEY\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//ytg\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-08-28T03:34:59Z",
       "side": 1,
       "message": "What determines whether the user page can be shown?",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAnH///+g\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "Is the code below not readable? Can you point me to a line, so I can improve readability.",
+      "parentUuid": "AAAARX//ytg\u003d",
       "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAnH///+s\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "This condition is not global. There may be legacy unattached account. In this case global page cannot be used, because it is a different user. For example I have global account \u0027Beau\u0027, however there is Beau on en-wiki, that does not have a user page it is different person.",
+      "parentUuid": "AAAARX//zIg\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//zEc\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2012-08-28T03:34:59Z",
       "side": 1,
       "message": "$wgMemc does not locally cache requests, so by calling get() here and below on line 105, you\u0027re making two memcached requests.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAnH///+8\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "I have already raised that question in fourth comment to this change.",
+      "parentUuid": "AAAARX//zEc\u003d",
       "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAnH///+Q\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "I can change it.",
+      "parentUuid": "AAAARX//y4g\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//zCk\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAnH////A\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "I have already stated in my second comment to this change why this is done this way.",
+      "parentUuid": "AAAARX//zCk\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//ytY\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -115,6 +223,24 @@
       "writtenOn": "2012-08-28T03:34:59Z",
       "side": 1,
       "message": "As above. Needs documentation that is descriptive.",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAnH///+M\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2012-10-06T19:01:32Z",
+      "side": 1,
+      "message": "I\u0027ll throw some comments into the code.",
+      "parentUuid": "AAAARX//ytY\u003d",
       "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
