@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAnH///50\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-10-06T20:02:54Z",
+      "side": 1,
+      "message": "That\u0027s not the point. The documentation should describe what a function does. The point of doxygen is so that a developer explicitly doesn\u0027t have to look at the code and only has to worry about the interface.",
+      "parentUuid": "AAAAnH///+g\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//zIg\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAnH///5w\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-10-06T20:02:54Z",
+      "side": 1,
+      "message": "Mhm I see.",
+      "parentUuid": "AAAAnH///+s\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//zEc\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "I have already raised that question in fourth comment to this change.",
       "parentUuid": "AAAARX//zEc\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAnH///5s\u003d",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2012-10-06T20:02:54Z",
+      "side": 1,
+      "message": "?",
+      "parentUuid": "AAAAnH///+8\u003d",
       "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
