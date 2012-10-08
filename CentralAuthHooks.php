@@ -564,7 +564,13 @@ class CentralAuthHooks {
 
 		// Checks passed, create the user
 		wfDebug( __METHOD__ . ": creating new user\n" );
-		$user->addToDatabase();
+		$status = $user->addToDatabase();
+		if ( $status === null ) {
+			// MW before 1.21 -- ok, continue
+		} elseif ( !$status->isOK() ) {
+			wfDebug( __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
+			return false;
+		}
 		$user->addNewUserLogEntryAutoCreate();
 
 		$wgAuth->initUser( $user, true );
