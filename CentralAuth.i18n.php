@@ -14415,6 +14415,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
  * @author Muttley
  * @author Naohiro19
  * @author Ohgi
+ * @author Penn Station
  * @author Schu
  * @author Shirayuki
  * @author Whym
@@ -14488,7 +14489,7 @@ $messages['ja'] = array(
 	'centralauth-merge-method-primary' => 'ホームウィキ',
 	'centralauth-merge-method-empty' => '投稿なし',
 	'centralauth-merge-method-mail' => 'メールアドレスで確認済み',
-	'centralauth-merge-method-password' => 'パスワードで認証済み',
+	'centralauth-merge-method-password' => 'パスワードで確認済み',
 	'centralauth-merge-method-admin' => '管理者が統合したアカウント',
 	'centralauth-merge-method-new' => '新規アカウント',
 	'centralauth-merge-method-login' => 'ログイン時に自動作成',
@@ -14547,7 +14548,7 @@ $messages['ja'] = array(
 	'centralauth-admin-blocked-indef' => '無期限ブロックされました。
 理由: $1',
 	'centralauth-admin-blocklog' => 'ブロック記録',
-	'centralauth-admin-list-localwiki' => 'ローカル ウィキ',
+	'centralauth-admin-list-localwiki' => 'ローカルウィキ',
 	'centralauth-admin-list-attached-on' => '統合日時',
 	'centralauth-admin-list-method' => '方法',
 	'centralauth-admin-list-editcount' => '編集回数',
