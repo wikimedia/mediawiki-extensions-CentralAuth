@@ -82,7 +82,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->showStatusForm();
 			}
 			if ( $this->mCanUnmerge ) {
-				$this->showActionForm( 'delete' );
+				$this->showDeleteForm();
 			}
 			if ( $this->mCanEdit ) {
 				$this->showLogExtract();
@@ -572,27 +572,24 @@ class SpecialCentralAuth extends SpecialPage {
 		return Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
-	/**
-	 * @param $action String: Only 'delete' supported
-	 */
-	function showActionForm( $action ) {
+	function showDeleteForm() {
+		$this->getOutput()->addModules( 'jquery.makeCollapsible' );
 		$this->getOutput()->addHTML(
-			# to be able to find messages: centralauth-admin-delete-title,
-			# centralauth-admin-delete-description, centralauth-admin-delete-button
-			Xml::fieldset( $this->msg( "centralauth-admin-{$action}-title" )->text() ) .
+			Xml::fieldset( $this->msg( "centralauth-admin-delete-title" )->text() ) .
+			Xml::openElement( 'div', array( 'class' => 'mw-collapsible mw-collapsed' ) ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
 				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
-				'id' => "mw-centralauth-$action" ) ) .
-			Html::hidden( 'wpMethod', $action ) .
+				'id' => "mw-centralauth-delete" ) ) .
+			Html::hidden( 'wpMethod', 'delete' ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
+				$this->msg( "centralauth-admin-delete-description" )->parseAsBlock() .
 			Xml::buildForm(
 				array( 'centralauth-admin-reason' => Xml::input( 'reason',
-					false, false, array( 'id' => "{$action}-reason" ) ) ),
-				"centralauth-admin-{$action}-button"
+					false, false, array( 'id' => "delete-reason" ) ) ),
+				"centralauth-admin-delete-button"
 			) .
-			'</form></fieldset>' );
+			'</form></div></fieldset>' );
 	}
 
 	function showStatusForm() {
