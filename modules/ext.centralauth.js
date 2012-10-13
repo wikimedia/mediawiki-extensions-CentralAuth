@@ -6,7 +6,7 @@
 		y : 0
 	};
 
-	$(document).on( 'mousemove', function ( e ) {
+	$( document ).on( 'mousemove', function ( e ) {
 		cursorPosition.x =
 			e.clientX
 			+ ( document.documentElement.scrollLeft || document.body.scrollLeft )
@@ -54,4 +54,10 @@
 		} );
 	} );
 
+	// Confirm account deletions
+	$( document ).ready( function () {
+		$( '#mw-centralauth-delete input[type="submit"]' ).on( 'click', function () {
+			return confirm( mw.msg( 'centralauth-admin-delete-confirm' ) );
+		} );
+	} );
 }( mediaWiki, jQuery ) );
