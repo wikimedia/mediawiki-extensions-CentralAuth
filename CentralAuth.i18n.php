@@ -6352,6 +6352,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 Alle lokalen Benutzerkonten werden weiterhin bestehen bleiben.
 Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Passwort vor der Zusammenführung zurückgesetzt.',
 	'centralauth-admin-delete-button' => 'Dieses Benutzerkonto löschen',
+	'centralauth-admin-delete-confirm' => 'Bist du sicher, dass du dieses Konto löschen möchtest?',
 	'centralauth-admin-delete-success' => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich gelöscht.',
 	'centralauth-admin-nonexistent' => 'Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
@@ -7056,6 +7057,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 Wše lokalne konta budu dalej eksistěrowaś.
 Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu zasej gódnoty, kótarež su měli pśed zjadnośenim.',
 	'centralauth-admin-delete-button' => 'Toś to konto wulašowaś',
+	'centralauth-admin-delete-confirm' => 'Coš toś to konto napšawdu lašowaś?',
 	'centralauth-admin-delete-success' => 'Globalne konto za "<nowiki>$1</nowiki>" wuspěšnje wulašowane',
 	'centralauth-admin-nonexistent' => 'Njejo žedno globalne konto za "<nowiki>$1</nowiki>".',
 	'centralauth-admin-delete-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
@@ -11362,6 +11364,7 @@ $messages['he'] = array(
 	'centralauth-admin-delete-title' => 'מחיקת חשבון',
 	'centralauth-admin-delete-description' => 'מחיקת החשבון הכללי תמחק את כל ההעדפות הכלליות, תבטל את מיזוגם של כל החשבונות המקומיים, ותשאיר את השם הכללי חופשי למשתמשים אחרים. כל החשבונות הקיימים ימשיכו להתקיים. הסיסמאות לחשבונות מקומיים שנוצרו לפני המיזוג יוחזרו לערכיהם לפני המיזוג.',
 	'centralauth-admin-delete-button' => 'מחיקת חשבון זה',
+	'centralauth-admin-delete-confirm' => 'האם ברצונך באמת למחוק את החשבון הזה?',
 	'centralauth-admin-delete-success' => 'החשבון הראשי"<nowiki>$1</nowiki>" נמחק בהצלחה',
 	'centralauth-admin-nonexistent' => 'אין חשבון כללי בשם "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'שגיאה: החשבון הכללי "<nowiki>$1</nowiki>" אינו קיים.',
@@ -12309,6 +12312,7 @@ Druhe konta su hišće njewobkrućene.',
 Wšě lokalne konta budu dale eksistować.
 Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu hódnoty, kotrež mějachu před zjednoćenjom.',
 	'centralauth-admin-delete-button' => 'Tute konto zničić',
+	'centralauth-admin-delete-confirm' => 'Chceš tute konto woprawdźe zhašeć?',
 	'centralauth-admin-delete-success' => 'Globalne konto za "<nowiki>$1</nowiki>" bu wuspěšnje zničene',
 	'centralauth-admin-nonexistent' => 'Globalne konto za "nowiki>$1</nowiki>" njeje.',
 	'centralauth-admin-delete-nonexistent' => 'Zmylk: Globalne konto "<nowiki>$1</nowiki>" njeeksistuje.',
@@ -14733,7 +14737,7 @@ $messages['ja'] = array(
 	'right-centralauth-unmerge' => 'グローバルアカウントを統合解除',
 	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿',
 	'right-centralauth-oversight' => 'グローバルアカウントを秘匿',
-	'right-centralauth-merge' => 'アカウントを統合',
+	'right-centralauth-merge' => '自身のアカウントを統合',
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
 );
 
