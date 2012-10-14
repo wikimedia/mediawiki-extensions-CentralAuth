@@ -6744,6 +6744,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 Hesabanê lokalî niqefilneno.
 Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-delete-button' => 'Ena hesab biwedarne',
+	'centralauth-admin-delete-confirm' => 'Şıma heqeta wazenê no hesab esteriyo?',
 	'centralauth-admin-delete-success' => 'Qe "<nowiki>$1</nowiki>" hesabê globalî wedarne',
 	'centralauth-admin-nonexistent' => 'Ser "<nowiki>$1</nowiki>", hesabê globalî çini yo',
 	'centralauth-admin-delete-nonexistent' => 'Ğelet: hesabê globalî "<nowiki>$1</nowiki>" çini yo.',
@@ -9108,7 +9109,7 @@ Ennen yhdistämistä luotujen paikallisten tunnusten salasanat palautuvat yhdist
 	'centralauth-admin-status-hidden-oversight' => 'Tunnus on piilotettu kokonaan',
 	'centralauth-admin-status-submit' => 'Aseta tila',
 	'centralauth-admin-status-nonexistent' => 'Virhe: Järjestelmänlaajuista käyttäjätunnusta <nowiki>$1</nowiki> ei ole olemassa.',
-	'centralauth-admin-setstatus-success' => 'Olet onnistuneesti muuttanut tämän yhdistetyn tunnuksen tilaa.',
+	'centralauth-admin-setstatus-success' => 'Olet onnistuneesti muuttanut tämän järjestelmänlaajuisen tunnuksen tilaa.',
 	'centralauth-admin-status-reasons' => '* Yleiset lukitsemisen syyt
 ** Vain vandalismitarkoituksiin luotu tunnus
 ** Vain roskapostitarkoituksiin luotu tunnus
@@ -9148,7 +9149,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
 	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.',
 	'centralauth-hidden-blockreason' => 'piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3',
-	'centralauth-log-name' => 'Yhdistettyjen tunnusten käsittelyloki',
+	'centralauth-log-name' => 'Järjestelmänlaajuisten tunnusten käsittelyloki',
 	'centralauth-log-header' => 'Tässä lokissa on järjestelmänlaajuisten käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.',
 	'centralauth-log-entry-delete' => 'poisti järjestelmänlaajuisen käyttäjätunnuksen $1',
 	'centralauth-log-entry-lock' => 'lukitsi järjestelmänlaajuisen käyttäjätunnuksen $1',
@@ -9512,6 +9513,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author Louperivois
  * @author McDutchie
  * @author Meno25
+ * @author Moyg
  * @author Omnipaedista
  * @author Peter17
  * @author PieRRoMaN
@@ -9660,6 +9662,7 @@ Si le compte unifié vous appartient également, vous pouvez y fusionner votre c
 Tous les comptes locaux continueront à exister.
 Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront leurs valeurs d’avant cette fusion.',
 	'centralauth-admin-delete-button' => 'Supprimer ce compte',
+	'centralauth-admin-delete-confirm' => 'Voulez-vous vraiment effacer ce compte ?',
 	'centralauth-admin-delete-success' => 'Le compte global nommé « <nowiki>$1</nowiki> » a été supprimé avec succès',
 	'centralauth-admin-nonexistent' => 'Il n’existe aucun compte global nommé « <nowiki>$1</nowiki> »',
 	'centralauth-admin-delete-nonexistent' => 'Erreur : il n’existe pas de compte global nommé « <nowiki>$1</nowiki> ».',
@@ -10343,14 +10346,15 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-admin-delete-description' => 'Ao eliminar unha conta global bórranse todas as preferencias globais, todas as contas locais que non teñen relación e deixa libre o nome da conta global para que outro usuario a use.
 Todas as contas locais continuarán existindo.
 Os contrasinais das contas locais creados antes da fusión serán revertidos aos valores que tiñan antes da fusión.',
-	'centralauth-admin-delete-button' => 'Eliminar esta conta',
-	'centralauth-admin-delete-success' => 'A conta global chamada "<nowiki>$1</nowiki>" foi borrada con éxito',
+	'centralauth-admin-delete-button' => 'Borrar esta conta',
+	'centralauth-admin-delete-confirm' => 'Está seguro de querer borrar a conta?',
+	'centralauth-admin-delete-success' => 'A conta global chamada "<nowiki>$1</nowiki>" borrouse correctamente',
 	'centralauth-admin-nonexistent' => 'Non hai ningunha conta global chamada "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" non existe.',
+	'centralauth-admin-delete-nonexistent' => 'Erro: A conta global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-token-mismatch' => 'Sentímolo, non se pode procesar o formulario enviado debido a que se perderon os datos da sesión.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Outro motivo:',
-	'centralauth-admin-unhide-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" non existe.',
+	'centralauth-admin-unhide-nonexistent' => 'Erro: A conta global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-admin-status' => 'Establecer o estado da conta global',
 	'centralauth-admin-status-intro' => 'Pode usar este formulario para cambiar o estado desta conta global',
 	'centralauth-admin-status-locked' => 'Bloqueado:',
@@ -10361,7 +10365,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-admin-status-hidden-list' => 'A conta está agochada das listas públicas',
 	'centralauth-admin-status-hidden-oversight' => 'A conta está completamente agochada',
 	'centralauth-admin-status-submit' => 'Establecer o estado',
-	'centralauth-admin-status-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" non existe.',
+	'centralauth-admin-status-nonexistent' => 'Erro: A conta global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-admin-setstatus-success' => 'Cambiou con éxito o estado desta conta global.',
 	'centralauth-admin-status-reasons' => '* Motivos frecuentes para borrar
 ** conta que só realizou vandalismos
@@ -10375,11 +10379,11 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => '[[User:$1|existe neste wiki]]',
 	'centralauth-listusers-nolocal' => 'non existe neste wiki',
-	'centralauth-seconds-ago' => 'Hai {{PLURAL:$1|un segundo|$1 segundos}}',
-	'centralauth-minutes-ago' => 'Hai {{PLURAL:$1|un minuto|$1 minutos}}',
+	'centralauth-seconds-ago' => 'hai {{PLURAL:$1|un segundo|$1 segundos}}',
+	'centralauth-minutes-ago' => 'hai {{PLURAL:$1|un minuto|$1 minutos}}',
 	'centralauth-hours-ago' => 'hai {{PLURAL:$1|unha hora|$1 horas}}',
 	'centralauth-days-ago' => 'hai {{PLURAL:$1|un día|$1 días}}',
-	'centralauth-months-ago' => 'Hai {{PLURAL:$1|un mes|$1 meses}}',
+	'centralauth-months-ago' => 'hai {{PLURAL:$1|un mes|$1 meses}}',
 	'centralauth-years-ago' => 'hai {{PLURAL:$1|un ano|$1 anos}}',
 	'centralauth-prefs-status' => 'Estado da conta global:',
 	'centralauth-prefs-not-managed' => 'Non está a usar a conta unificada',
@@ -18506,6 +18510,7 @@ $messages['mk'] = array(
 Сите локални кориснички сметки и понатаму ќе си постојат.
 Лозинките за локалните кориснички сметки направени пред спојувањето ќе бидат вратени на нивните вредности пред спојувањето.',
 	'centralauth-admin-delete-button' => 'Бришење на сметката',
+	'centralauth-admin-delete-confirm' => 'Дали навистина сакате да ја избришете сметката?',
 	'centralauth-admin-delete-success' => 'Глобалната сметка за „<nowiki>$1</nowiki>“ е успешно избришана.',
 	'centralauth-admin-nonexistent' => 'Нема глобална корисничка сметка за „<nowiki>$1</nowiki>“',
 	'centralauth-admin-delete-nonexistent' => 'Грешка: глобалната корисничка сметка „<nowiki>$1</nowiki>“ не постои.',
