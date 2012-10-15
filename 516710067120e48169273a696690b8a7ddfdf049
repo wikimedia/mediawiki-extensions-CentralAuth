@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEn//+xg\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-10-15T13:00:39Z",
+      "side": 1,
+      "message": "I personally prefer a space after (array), but that\u0027s your choice ;)",
+      "revId": "516710067120e48169273a696690b8a7ddfdf049",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEn//+xk\u003d",
+        "filename": "api/ApiQueryWikiSets.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-10-15T13:00:39Z",
+      "side": 1,
+      "message": "This still is wikisINCLUDED... you might also want to test Reedy\u0027s example to verify this really works",
+      "revId": "516710067120e48169273a696690b8a7ddfdf049",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
