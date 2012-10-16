@@ -7872,6 +7872,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Aleator
  * @author AlimanRuna
  * @author Angus
+ * @author Armando-Martin
  * @author Ascánder
  * @author Bernardom
  * @author Crazymadlover
@@ -8033,6 +8034,7 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 Todas las cuentas locales seguirán existiendo.
 Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus valores anteriores a la fusión.',
 	'centralauth-admin-delete-button' => 'Borrar esta cuenta',
+	'centralauth-admin-delete-confirm' => '¿Estás seguro de querer borrar esta cuenta?',
 	'centralauth-admin-delete-success' => 'Se borró la cuenta global para «<nowiki>$1</nowiki>» con éxito',
 	'centralauth-admin-nonexistent' => 'No hay una cuenta global para «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Error: no existe la cuenta global «<nowiki>$1</nowiki>».',
@@ -8641,6 +8643,7 @@ $messages['ext'] = array(
  * @author Leyth
  * @author Mardetanha
  * @author Mjbmr
+ * @author Reza1615
  * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
@@ -8777,6 +8780,7 @@ $messages['fa'] = array(
 حساب‌های کاربری محلی باقی خواهند ماند.
 گذرواژهٔ حساب‌های کاربری که قبل از ادغام ایجاد شده بودند به مقدار قبل از ادغام بازگشت خواهد کرد.',
 	'centralauth-admin-delete-button' => 'حذف این حساب کاربری',
+	'centralauth-admin-delete-confirm' => 'آیا قصد حذف این اشتراک را دارید?',
 	'centralauth-admin-delete-success' => 'حساب کاربری مشترک «<nowiki>$1</nowiki>» را با موفقیت حذف کرد.',
 	'centralauth-admin-nonexistent' => 'حساب کاربری مشترکی برای «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-admin-delete-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
@@ -8879,6 +8883,7 @@ $messages['fa'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'نام گروه جدید:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'تعیین اختیارات',
 	'centralauth-editgroup-subtitle' => 'در حال ویرایش $1',
+	'centralauth-editgroup-subtitle-readonly' => 'نمایش $1',
 	'centralauth-editgroup-fieldset' => 'اختیارات $1',
 	'centralauth-editgroup-name' => 'نام گروه:',
 	'centralauth-editgroup-display' => 'نام محلی گروه:',
