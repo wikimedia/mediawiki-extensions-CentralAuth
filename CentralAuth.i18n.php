@@ -3480,6 +3480,7 @@ $messages['be-tarask'] = array(
 Усе лякальныя рахункі застануцца.
 Лякальным паролям, створаным да аб'яднаньня, будуць вернутыя старыя значэньні.",
 	'centralauth-admin-delete-button' => 'Выдаліць гэты рахунак',
+	'centralauth-admin-delete-confirm' => 'Вы ўпэўненыя, што жадаеце выдаліць гэты рахунак?',
 	'centralauth-admin-delete-success' => 'Пасьпяхова выдалены глябальны рахунак «<nowiki>$1</nowiki>»',
 	'centralauth-admin-nonexistent' => 'Не існуе глябальнага рахунку «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Памылка: глябальны рахунак «<nowiki>$1</nowiki>» не існуе.',
@@ -5526,7 +5527,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-renameuser-merged' => 'Uživatel $1 již byl převeden na systém jednotného přihlašování. Pokud ho přejmenujete, bude lokální uživatel odpojen od globálního účtu.',
 	'centralauth-renameuser-reserved' => 'Uživatelské jméno $2 je vyhrazeno pro globální účet.',
 	'centralauth-invalid-wiki' => 'Taková DB wiki neexistuje: $1',
-	'centralauth-account-exists' => 'Nelze vytvořit účet: Požadované uživatelské jméno je již registrováno v unifikovaném přihlašovacím systému.',
+	'centralauth-account-exists' => 'Účet nelze vytvořit: Požadované uživatelské jméno je již registrováno v systému jednotného přihlašování.',
 	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale existuje v jednotném systému přihlašování.',
 	'centralauth-login-progress' => 'Přihlašujeme vás na projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
@@ -6213,6 +6214,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
  * @author Church of emacs
  * @author DaSch
  * @author Geitost
+ * @author Hoo
  * @author Kghbln
  * @author Metalhead64
  * @author MichaelFrey
@@ -6348,7 +6350,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-none-selected' => 'Es wurden keine zu ändernden Benutzerkonten ausgewählt.',
 	'centralauth-admin-already-unmerged' => '$1 wird übersprungen, da bereits abgespaltet.',
 	'centralauth-admin-unmerge-success' => 'Es {{PLURAL:$1|wurde 1 Benutzerkonto|wurden $1 Benutzerkonten}} erfolgreich abgespalten.',
-	'centralauth-admin-delete-title' => 'Benutzerkonto gelöscht',
+	'centralauth-admin-delete-title' => 'Benutzerkonto löschen',
 	'centralauth-admin-delete-description' => 'Die Löschung des globalen Benutzerkontos wird alle globalen Benutzereinstellungen löschen, alle lokalen Benutzerkonten abspalten, und der globale Benutzername wird für eine erneute Verwendung frei werden.
 Alle lokalen Benutzerkonten werden weiterhin bestehen bleiben.
 Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Passwort vor der Zusammenführung zurückgesetzt.',
@@ -6745,7 +6747,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 Hesabanê lokalî niqefilneno.
 Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-delete-button' => 'Ena hesab biwedarne',
-	'centralauth-admin-delete-confirm' => 'Şıma raştay wazenê no hesab besterneyo?',
+	'centralauth-admin-delete-confirm' => 'Şıma raşti wazenê nê hesabi bıesterên?',
 	'centralauth-admin-delete-success' => 'Qe "<nowiki>$1</nowiki>" hesabê globalî wedarne',
 	'centralauth-admin-nonexistent' => 'Ser "<nowiki>$1</nowiki>", hesabê globalî çini yo',
 	'centralauth-admin-delete-nonexistent' => 'Ğelet: hesabê globalî "<nowiki>$1</nowiki>" çini yo.',
