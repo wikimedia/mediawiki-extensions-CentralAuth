@@ -5897,6 +5897,7 @@ Gwaredwyd $3',
  * @author Emilkris33
  * @author Hylle
  * @author Jon Harald Søby
+ * @author Kaare
  * @author Masz
  * @author Peter Alberti
  * @author Peter Andersen
@@ -6042,6 +6043,7 @@ Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver
 Alle lokale kontoer vil fortsat eksistere.
 Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage til hvad de var før sammenlægningen.',
 	'centralauth-admin-delete-button' => 'Slet denne konto',
+	'centralauth-admin-delete-confirm' => 'Ønsker du virkelig at slette denne konto?',
 	'centralauth-admin-delete-success' => 'Gennemførte sletning af den globale konto for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Der er ingen global konto for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fejl: den globale konto "<nowiki>$1</nowiki>" findes ikke.',
@@ -6146,6 +6148,7 @@ Bemærk at en gruppe ikke findes med mindre den har nogen rettigheder.',
 	'centralauth-globalgroupperms-newgroupname' => 'Navn på ny gruppe:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Tildel rettigheder',
 	'centralauth-editgroup-subtitle' => 'Redigerer $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Vis $1',
 	'centralauth-editgroup-fieldset' => 'Rettigheder for $1',
 	'centralauth-editgroup-name' => 'Gruppenavn:',
 	'centralauth-editgroup-display' => 'Oversat gruppenavn:',
@@ -26649,6 +26652,7 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 
 /** Slovenian (slovenščina)
  * @author Dbc334
+ * @author Eleassar
  * @author Yerpo
  */
 $messages['sl'] = array(
@@ -26705,7 +26709,7 @@ Medtem ko je blokiran, ne morete združiti svojih računov.',
 	'centralauth-disabled-dryrun' => 'Poenotenje računov je trenutno v predstavitvenem načinu oz. načinu popravljanja napak, zato so dejanske dejavnosti združevanja onemogočene.
 Oprostite!',
 	'centralauth-error-locked' => 'Ne morete urejati, ker je vaš račun zaklenjen.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/sl|Preberite več o '''enotni prijavi''']] ...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/sl|Preberite si več o '''enotni prijavi''']] ...''",
 	'centralauth-list-home-title' => 'Domači wiki',
 	'centralauth-list-home-dryrun' => 'Geslo in e-poštni naslov nastavljena na tem wikiju bosta uporabljena za vaš enotni račun.',
 	'centralauth-list-attached-title' => 'Pripeti računi',
