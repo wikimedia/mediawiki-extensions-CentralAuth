@@ -16698,6 +16698,7 @@ Der Jrond: $2.',
 * De einzel Aanmeldunge en de Wikis blieve bestonn.
 * De Passwööter fun dä einzel Aanmeldunge en de Wikis wäde widder op dä Zohstand fun für em Zosammelääje zoröck jesaz.',
 	'centralauth-admin-delete-button' => 'Schmieß fott!',
+	'centralauth-admin-delete-confirm' => 'Wells De heh dä Zohjang verhaftesch fott schmiiße?',
 	'centralauth-admin-delete-success' => 'De jemeinsame Aanmeldung onger dämm Metmaacher-Name „<nowiki>$1</nowiki>“ es jätz widder fott.',
 	'centralauth-admin-nonexistent' => 'Mer han kein jemeinsam Aanmeldung unger dämm Metmaacher-Name „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-delete-nonexistent' => 'En jemeinsame Aanmeldung unger dämm Metmaacher-Name
