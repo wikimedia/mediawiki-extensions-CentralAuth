@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//+MA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-21T03:02:40Z",
+      "side": 1,
+      "message": "(bug 23821)",
+      "revId": "3a168018e5ca8cb2faca308f701b86acc4f7278b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//+Bg\u003d",
+        "filename": "api/ApiSetStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-21T03:02:40Z",
+      "side": 1,
+      "message": "Specify user name:\n$this-\u003edieUsageMsg( array( \u0027nosuchuser\u0027, $globalUser-\u003egetName() ) );",
+      "revId": "3a168018e5ca8cb2faca308f701b86acc4f7278b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//+Bc\u003d",
+        "filename": "api/ApiSetStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-21T03:02:40Z",
+      "side": 1,
+      "message": "Only used once.",
+      "revId": "3a168018e5ca8cb2faca308f701b86acc4f7278b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//+BY\u003d",
+        "filename": "api/ApiSetStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-21T03:02:40Z",
+      "side": 1,
+      "message": "Only used once.",
+      "revId": "3a168018e5ca8cb2faca308f701b86acc4f7278b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
