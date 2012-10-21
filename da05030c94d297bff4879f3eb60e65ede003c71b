@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//95Y\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 371
+      },
+      "writtenOn": "2012-10-21T18:29:14Z",
+      "side": 1,
+      "message": "You should add ApiBase::PARAM_TYPE, too",
+      "revId": "da05030c94d297bff4879f3eb60e65ede003c71b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
