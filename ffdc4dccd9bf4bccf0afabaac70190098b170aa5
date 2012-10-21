@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//+BE\u003d",
+        "filename": "api/ApiQueryGlobalGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-21T03:15:30Z",
+      "side": 1,
+      "message": "$result \u003d $db-\u003eselect( \u0027global_group_permissions\u0027, $fields, array(), __METHOD__ );\n\nThen get rid of $tables, $where, $options and $join.",
+      "revId": "ffdc4dccd9bf4bccf0afabaac70190098b170aa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
