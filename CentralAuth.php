@@ -162,6 +162,7 @@ $wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/CentralAuthGrou
 $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/specials/SpecialGlobalGroupPermissions.php";
 $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/api/ApiQueryGlobalUserInfo.php";
+$wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/api/ApiDeleteGlobalAccount.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
@@ -190,6 +191,7 @@ $wgHooks['UserLoadDefaults'][] = 'CentralAuthHooks::onUserLoadDefaults';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
+$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
@@ -226,6 +228,7 @@ $wgSpecialPageGroups['GlobalGroupPermissions'] = 'users';
 $wgSpecialPageGroups['WikiSets'] = 'wiki';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
 
+$wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
 
 $wgLogTypes[]                      = 'globalauth';
