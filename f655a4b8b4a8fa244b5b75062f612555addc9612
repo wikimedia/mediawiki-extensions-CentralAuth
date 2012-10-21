@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//99Y\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-10-21T17:43:17Z",
+      "side": 1,
+      "message": "Use $params[\u0027user\u0027]",
+      "revId": "f655a4b8b4a8fa244b5b75062f612555addc9612",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//99U\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-10-21T17:43:17Z",
+      "side": 1,
+      "message": "Use $params[\u0027reason\u0027]",
+      "revId": "f655a4b8b4a8fa244b5b75062f612555addc9612",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//99Q\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-10-21T17:43:17Z",
+      "side": 1,
+      "message": "Use $params[\u0027reason\u0027]",
+      "revId": "f655a4b8b4a8fa244b5b75062f612555addc9612",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
