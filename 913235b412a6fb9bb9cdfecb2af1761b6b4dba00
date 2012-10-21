@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//98I\u003d",
+        "filename": "CentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 371
+      },
+      "writtenOn": "2012-10-21T16:23:05Z",
+      "side": 1,
+      "message": "I would use something that shows this is part of CentralAuth, maybe \u0027globallock\u0027 or \u0027globalsetstatus\u0027.",
+      "revId": "913235b412a6fb9bb9cdfecb2af1761b6b4dba00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//98E\u003d",
+        "filename": "api/ApiSetStatus.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 371
+      },
+      "writtenOn": "2012-10-21T16:23:05Z",
+      "side": 1,
+      "message": "Here you could use ApiBase::PARAM_TYPE with a array of CentralAuthUser::HIDDEN_NONE, CentralAuthUser::HIDDEN_LISTS, CentralAuthUser::HIDDEN_OVERSIGHT so the user know what types there are.",
+      "revId": "913235b412a6fb9bb9cdfecb2af1761b6b4dba00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
