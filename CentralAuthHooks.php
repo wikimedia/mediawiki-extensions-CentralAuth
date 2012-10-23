@@ -734,12 +734,15 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
-		global $wgCentralAuthLockedCanEdit;
-
+		global $wgCentralAuthLockedCanEdit, $wgDisableUnmergedEditing;
 		if ( $action == 'read' || $user->isAnon() ) {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( $wgDisableUnmergedEditing && $action === 'edit' && !$centralUser->exists() ) {
+			$result = 'centralauth-error-unmerged';
+			return false;
+		}
 		if ( !( $centralUser->exists() && $centralUser->isAttached() ) ) {
 			return true;
 		}
