@@ -131,6 +131,11 @@ $wgCentralAuthNew2UDPPrefix = '';
 $wgCentralAuthLockedCanEdit = array();
 
 /**
+ * Disable editing for non-global accounts (except on NS_USER_TALK and NS_PROJECT_TALK)
+ */
+$wgDisableUnmergedEditing = false;
+
+/**
  * Size of wikis handled in one suppress user job.
  * Keep in mind that one wiki requires ~10 queries.
  */
