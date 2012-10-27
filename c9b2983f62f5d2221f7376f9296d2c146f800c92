@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABdH////8\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-27T14:56:01Z",
+      "side": 1,
+      "message": "What\u0027s the difference between this and\n\n$abortError \u003d wfMessage( \u0027centralauth-globalname-exists\u0027, $user-\u003egetName() )-\u003etext();\n\n?",
+      "revId": "c9b2983f62f5d2221f7376f9296d2c146f800c92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
