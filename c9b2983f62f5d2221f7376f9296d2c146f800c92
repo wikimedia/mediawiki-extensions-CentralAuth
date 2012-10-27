@@ -16,6 +16,24 @@
       "revId": "c9b2983f62f5d2221f7376f9296d2c146f800c92",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABdX////w\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-10-27T15:30:23Z",
+      "side": 1,
+      "message": "As far as I can tell, nothing. I\u0027d suggest using my version though because that\u0027s the same way used in the rest of the extension.",
+      "parentUuid": "AAABdH////8\u003d",
+      "revId": "c9b2983f62f5d2221f7376f9296d2c146f800c92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
