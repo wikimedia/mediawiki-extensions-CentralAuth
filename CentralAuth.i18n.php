@@ -5272,6 +5272,7 @@ $messages['ckb'] = array(
 	'centralauth-prefs-complete' => 'ھەموو شتێک ڕێکوپێکە!',
 	'centralauth-prefs-count-attached' => 'ھەژمارەکەت لە $1 {{PLURAL:$1|سایت|سایت}}ی پرۆژەدا چالاکە.',
 	'centralauth-prefs-manage' => 'ھەژمارە جیھانییەکەت سەرپەرشتی بکە',
+	'centralauth-prefs-view' => 'دیتنی زانیاریی جیھانیی بەکارھێنەر',
 	'centralauth-editgroup-reason' => 'هۆکار:',
 	'centralauth-editset-reason' => 'هۆکار:',
 	'centralauth-editset-submit' => 'ناردن',
@@ -15234,6 +15235,7 @@ $messages['ka'] = array(
 Все локальные учётные записи продолжат существовать.
 Пароли локальных учётных записей, созданные до объединения, вернут свои старые значения.',
 	'centralauth-admin-delete-button' => 'ანგარიშის წაშლა',
+	'centralauth-admin-delete-confirm' => 'დარწმუნებული ხართ, რომ გსურთ ამ ანგარიშის წაშლა?',
 	'centralauth-admin-delete-success' => 'გლობალური ანგარიში წარმატებით წაიშალა «<nowiki>$1</nowiki>»',
 	'centralauth-admin-nonexistent' => 'გლობალური ანგარიში  «<nowiki>$1</nowiki>» არ არსებობს.',
 	'centralauth-admin-delete-nonexistent' => 'შეცდომა. გლობალური ანგარიში  «<nowiki>$1</nowiki>» არ არსებობს.',
