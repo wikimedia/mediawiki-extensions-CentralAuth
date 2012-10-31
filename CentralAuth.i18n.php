@@ -365,6 +365,7 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
 	'centralauth-editset-success-delete'              => 'Successfully deleted wiki set.',
 	'centralauth-editset-return'                      => 'Return to main view',
+	'centralauth-block-already-locked'                => 'The username $1 is locked globally.',
 
 	'centralauth-readonly' => 'CentralAuth Database locked',
 	'centralauth-readonlytext' => 'The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.',
@@ -676,6 +677,8 @@ This "oversighted" stands for "hidden completely".
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
+	'centralauth-block-already-locked' => 'Shown at Special:Block when the user is already globally locked.
+* $1 is the requested username',
 	'centralauth-readonly' => 'Error message displayed when the CentralAuth database is locked.',
 	'centralauth-readonlytext' => 'Description of the centralauth-readonlytext error',
 	'right-globalgroupmembership' => '{{doc-right|globalgroupmembership}}',
