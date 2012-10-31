@@ -21077,7 +21077,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached' => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
 	'centralauth-prefs-manage' => 'Globale gebruiker beheren',
-	'centralauth-prefs-view' => 'Informatie over globaal gebruikersaccount bekijken',
+	'centralauth-prefs-view' => 'Gegevens over globale gebruiker bekijken',
 	'centralauth-renameuser-merged' => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.',
 	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.',
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
