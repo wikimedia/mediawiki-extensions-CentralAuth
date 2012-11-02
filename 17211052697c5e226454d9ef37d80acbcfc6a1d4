@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAACIn///9M\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-02T23:28:02Z",
+      "side": 1,
+      "message": "$status is undefined",
+      "revId": "17211052697c5e226454d9ef37d80acbcfc6a1d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACIn///9c\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-02T23:28:02Z",
+      "side": 1,
+      "message": "Wrong description",
+      "revId": "17211052697c5e226454d9ef37d80acbcfc6a1d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACIn///9Y\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-02T23:28:02Z",
+      "side": 1,
+      "message": "Just say for deletion...",
+      "revId": "17211052697c5e226454d9ef37d80acbcfc6a1d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
