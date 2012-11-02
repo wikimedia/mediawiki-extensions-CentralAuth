@@ -366,7 +366,7 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
 	'centralauth-editset-success-delete'              => 'Successfully deleted wiki set.',
 	'centralauth-editset-return'                      => 'Return to main view',
-	'centralauth-block-already-locked'                => 'The user $1 is already locked globally.',
+	'centralauth-block-already-locked'                => 'The user [[Special:CentralAuth/$1|$1]] is already locked globally.',
 
 	'centralauth-readonly' => 'CentralAuth Database locked',
 	'centralauth-readonlytext' => 'The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.',

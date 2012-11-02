@@ -808,7 +808,7 @@ class CentralAuthHooks {
 			$msg[] = Html::rawElement(
 				'span',
 				array( 'class' => 'mw-centralauth-lock-loglink plainlinks' ),
-				wfMessage( 'centralauth-block-already-locked', $user )->escaped()
+				wfMessage( 'centralauth-block-already-locked', $user )->parse()
 			);
 		}
 		return true;
