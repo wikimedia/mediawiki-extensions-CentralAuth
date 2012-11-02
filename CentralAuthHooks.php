@@ -791,4 +791,26 @@ class CentralAuthHooks {
 		$params['url'] = $wiki->getUrl( 'User:' . $user->getTitleKey() );
 		return true;
 	}
+
+	/**
+	 * Creates a link to the global lock log
+	 * @param array $msg Message with a link to the global block log
+	 * @param string $user The username to be checked
+	 * @return boolean true
+	 */
+	static function getBlockLogLink( &$msg, $user ) {
+		if ( IP::isIPAddress( $user ) ) {
+			return true; // Return if it is an IP as only usernames can be locked.
+		}
+
+		$caUser = new CentralAuthUser( $user );
+		if ( $caUser->isLocked() && in_array( wfWikiID(), $caUser->listAttached() ) ) {
+			$msg[] = Html::rawElement(
+				'span',
+				array( 'class' => 'mw-centralauth-lock-loglink plainlinks' ),
+				wfMessage( 'centralauth-block-already-locked', $user )->escaped()
+			);
+		}
+		return true;
+	}
 }
