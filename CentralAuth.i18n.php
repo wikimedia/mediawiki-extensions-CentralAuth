@@ -77,6 +77,7 @@ While it is blocked, you cannot merge your accounts.',
 	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled.
 Sorry!",
 	'centralauth-error-locked'    => 'You cannot edit because your account is locked.',
+	'centralauth-error-unmerged'    => 'You cannot edit because your account is not unified.',
 
 	// Appended to various messages above
 	'centralauth-readmore-text'   => ":''[[meta:Help:Unified login|Read more about '''unified login''']]…''",
@@ -444,6 +445,7 @@ Status message after incomplete unification of a user account.',
 	'centralauth-notice-dryrun' => 'Message displayed while account unification is in demonstration mode.',
 	'centralauth-disabled-dryrun' => 'Message displayed while account unification is disabled.',
 	'centralauth-error-locked' => "Message displayed while account unification is not possible because the acting user's account is locked.",
+	'centralauth-error-unmerged' => "Message displayed when user is prevented from editing because they have not merged their account",
 	'centralauth-readmore-text' => 'Message that refers to more information on account unification.',
 	'centralauth-list-home-title' => "Information about user's home wiki.
 {{Identical|Home wiki}}",
