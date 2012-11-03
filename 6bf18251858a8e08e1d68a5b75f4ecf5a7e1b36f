@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAACMX////s\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2012-11-03T10:35:20Z",
+      "side": 1,
+      "message": "\"user\" needs GENDER but I am unsure if CentralAuth knows about the gender of the user.",
+      "revId": "6bf18251858a8e08e1d68a5b75f4ecf5a7e1b36f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
