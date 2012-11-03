@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAACI3///9w\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "Shouldn\u0027t MW do this for us? (As the parameter type is set in getAllowedParams)",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACI3///9s\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "This will automatically unlock the user if locked isn\u0027t set, you might want to change that, although I can\u0027t think of a use case where this API is called and we don\u0027t have this parameter set in some way.",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACI3///9U\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "this is done without checking for \u0027centralauth-oversight\u0027",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACI3///9Q\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACI3///9c\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "This should be $hideStatus",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACI3///+A\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "Wrong description",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACI3///9E\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-03T00:18:08Z",
+      "side": 1,
+      "message": "\u003d\u003e I%20can (I think this needs to be URL encoded)",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
