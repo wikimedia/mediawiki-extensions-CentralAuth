@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAACPH////o\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-11-03T23:03:15Z",
+      "side": 1,
+      "message": "Unset is false, set is true.\nIf we start ignoring on unset, how is an account supposed to be unlocked?",
+      "parentUuid": "AAACI3///9s\u003d",
+      "revId": "11ac7ca712ef375fadcaab2c6d6ef85ed152ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAACI3///9U\u003d",
         "filename": "api/ApiSetGlobalAccountStatus.php",
         "patchSetId": 6
