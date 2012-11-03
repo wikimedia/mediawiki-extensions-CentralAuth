@@ -680,7 +680,7 @@ This "oversighted" stands for "hidden completely".
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
 	'centralauth-block-already-locked' => 'Shown at Special:Block when the user is already globally locked.
-* $1 is the requested username',
+* $1 is the requested username {{gender}}',
 	'centralauth-readonly' => 'Error message displayed when the CentralAuth database is locked.',
 	'centralauth-readonlytext' => 'Description of the centralauth-readonlytext error',
 	'right-globalgroupmembership' => '{{doc-right|globalgroupmembership}}',
