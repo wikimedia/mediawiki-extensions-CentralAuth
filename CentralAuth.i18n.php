@@ -3057,6 +3057,7 @@ $messages['ba'] = array(
 );
 
 /** Bavarian (Boarisch)
+ * @author Bua333
  * @author Mucalexx
  */
 $messages['bar'] = array(
@@ -3079,6 +3080,8 @@ Es werd koah Änderrung vurgnummer, bis du bstätigst, daas oiss richtig is.",
 	'centralauth-merge-method-admin' => 'durch an Administraator zåmmgfyrds Benutzerkontó',
 	'centralauth-merge-method-new' => 'neichs Benutzerkontó',
 	'centralauth-admin-username' => 'Benutzernåm:',
+	'centralauth-admin-yes' => 'jo',
+	'centralauth-admin-no' => 'na',
 	'centralauth-admin-list-editcount' => 'Beorweitungszöer',
 	'centralauth-admin-delete-button' => 'Dés Benutzerkóntó léschen',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|beorweiten]])',
@@ -3372,6 +3375,7 @@ $messages['be-tarask'] = array(
 	'centralauth-disabled-dryrun' => "Аб'яднаньне рахункаў зараз працуе ў дэманстрацыйным/праверачным рэжыме, рэальныя апэрацыі аб'яднаньня рахункаў выключаныя.
 Прабачце!",
 	'centralauth-error-locked' => 'Вы ня можаце рэдагаваць, бо Ваш рахунак заблякаваны.',
+	'centralauth-error-unmerged' => 'Вы ня можаце рэдагаваць, бо Ваш рахунак не аб’яднаны.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Падрабязьней пра '''аб'яднаньне рахункаў''']]…''",
 	'centralauth-list-home-title' => '«Хатняя» вікі',
 	'centralauth-list-home-dryrun' => "Пароль і адрас электроннай пошты, якія пазначаныя ў {{GRAMMAR:месны|{{SITENAME}}}}, будуць выкарыстаны для стварэньня аб'яднанага рахунка.",
@@ -3613,6 +3617,7 @@ $messages['be-tarask'] = array(
 	'centralauth-editset-success' => 'Набор вікі пасьпяхова зьменены.',
 	'centralauth-editset-success-delete' => 'Набор вікі пасьпяхова выдалены.',
 	'centralauth-editset-return' => 'Вярнуцца да галоўнай формы',
+	'centralauth-block-already-locked' => '{{GENDER:$1|Удзельнік|Удзельніца}} [[Special:CentralAuth/$1|$1]] {{GENDER:$1|ужо заблякаваны паўсюль|ужо заблякаваная паўсюль}}.',
 	'centralauth-readonly' => 'База зьвестак CentralAuth заблякаваная',
 	'centralauth-readonlytext' => 'База зьвестак CentralAuth у цяперашні момант заблякаваная ад новых запісаў і іншых зьменаў, верагодна для звычайнага абслугоўваньня базы зьвестак, пасьля якога праца будзе адноўленая.',
 	'right-globalgroupmembership' => 'Рэдагаваньне ўдзелу ў глябальных групах',
