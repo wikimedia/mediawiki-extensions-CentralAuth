@@ -5881,6 +5881,7 @@ Gwaredwyd $3',
 
 /** Danish (dansk)
  * @author Byrial
+ * @author Christian List
  * @author Emilkris33
  * @author Hylle
  * @author Jon Harald Søby
@@ -5944,6 +5945,7 @@ Du kan ikke sammenlægge kontoer mens den er blokeret.',
 	'centralauth-disabled-dryrun' => 'Kontosammenlægning er i øjeblikket i en demonstrastions-/fejlretningsmodus, så faktisk sammenlægning er ikke mulig.
 Beklager!',
 	'centralauth-error-locked' => 'Du kan ikke redigere fordi din konto er låst.',
+	'centralauth-error-unmerged' => 'Du kan ikke redigere fordi din konto ikke er forenet.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Læs mere om '''kontosammenlægning''']]…''",
 	'centralauth-list-home-title' => 'Hjemwiki',
 	'centralauth-list-home-dryrun' => 'Adgangskoden og e-mail-adressen som bruges på denne wiki vil blive brugt til din sammenlagte konto.',
@@ -6189,6 +6191,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'centralauth-editset-success' => 'Wikigruppen er ændret.',
 	'centralauth-editset-success-delete' => 'Wikisættet er nu slettet.',
 	'centralauth-editset-return' => 'Tilbage til hovedvisning',
+	'centralauth-block-already-locked' => 'Brugeren [[Special:CentralAuth/$1|$1]] er allerede låst globalt.',
 	'centralauth-readonly' => 'CentralAuth database er låst',
 	'centralauth-readonlytext' => 'CentralAuth databasen er i øjeblikket låst for nyt indhold og andre ændringer, sandsynligvis på grund af standard database-vedligehold, hvorefter den vil vende tilbage til normal tilstand.',
 	'right-globalgroupmembership' => 'Redigere medlemskab i globale grupper',
@@ -15445,8 +15448,24 @@ $messages['kaa'] = array(
  * @author Rachitrali
  */
 $messages['khw'] = array(
+	'centralauth-admin-info-id' => 'ممبارو لمبار:/User ID:',
+	'centralauth-admin-info-registered' => 'رجسٹرڈ:',
+	'centralauth-admin-info-locked' => 'بند:',
 	'centralauth-admin-yes' => 'دی',
 	'centralauth-admin-no' => 'نو',
+	'centralauth-admin-blocklog' => 'پاوبندی لیگیکو چٹ',
+	'centralauth-admin-list-localwiki' => 'مقامی وکی',
+	'centralauth-admin-list-attached-on' => 'منسلک شیر/Attached on',
+	'centralauth-admin-list-method' => 'طریقہ کار',
+	'centralauth-admin-list-editcount' => 'اشمارا ترمیم کورے',
+	'centralauth-admin-list-blocked' => 'بلاک کاردو/Blocked',
+	'centralauth-admin-unmerge' => 'منتخب نو کاردو ضم/Unmerge selected',
+	'centralauth-admin-merge' => 'منتخب ضم/Merge selected',
+	'centralauth-admin-bad-input' => 'باطل ضم انتخاب/Invalid merge selection',
+	'centralauth-admin-none-selected' => 'کا اکاؤنٹسا ترمیمو بچے منتخب آریر.',
+	'centralauth-admin-delete-title' => 'اکاؤنٹو خارج کورے',
+	'centralauth-admin-delete-button' => 'ھیہ اکاؤنٹو حذف کورے(بوغاوے)',
+	'centralauth-admin-reason' => 'واجھہ',
 	'centralauth-admin-status-hidden' => 'کھوشت',
 );
 
@@ -18784,6 +18803,7 @@ $messages['ml'] = array(
 	'centralauth-disabled-dryrun' => 'അംഗത്വ സംയോജനം ഇപ്പോൾ പരീക്ഷണ / തെറ്റുതിരുത്തൽ രീതിയിൽ ആണ് പ്രവർത്തിക്കുന്നത്, അതുകൊണ്ട് ശരിക്കുമുള്ള ലയന ക്രിയകൾ സാദ്ധ്യമല്ലാതാക്കിയിരിക്കുന്നു.
 ക്ഷമിക്കുക!',
 	'centralauth-error-locked' => 'താങ്കളുടെ അംഗത്വം പൂട്ടപ്പെട്ടിരിക്കുന്നതിനാൽ താങ്കൾക്ക് തിരുത്തലുകൾ നടത്താൻ കഴിയില്ല.',
+	'centralauth-error-unmerged' => 'താങ്കുളുടെ അംഗത്വം സംയോജിപ്പിച്ചിട്ടില്ലാത്തതിനാൽ താങ്കൾക്ക് തിരുത്തലുകൾ നടത്താൻ കഴിയില്ല.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''സം‌യോജിത ലോഗിനെക്കുറിച്ച്''' കൂടുതൽ വായിക്കുക]]…''",
 	'centralauth-list-home-title' => 'തറവാട് വിക്കി',
 	'centralauth-list-home-dryrun' => 'ഈ വിക്കിയിൽ താങ്കൾ സജ്ജീകരിച്ചിരിക്കുന്ന രഹസ്യവാക്കും ഇമെയിൽ വിലാസവും താങ്കളുടെ സം‌യോജിത അംഗത്വത്തിനു വേണ്ടി ഉപയോഗിക്കും.',
@@ -19024,6 +19044,7 @@ $3 നീക്കംചെയ്തു',
 	'centralauth-editset-success' => 'വിക്കി ഗണം വിജയകരമായി മാറ്റിയിരിക്കുന്നു.',
 	'centralauth-editset-success-delete' => 'വിക്കി ഗണം വിജയകരമായി മായ്ച്ചിരിക്കുന്നു.',
 	'centralauth-editset-return' => 'പ്രധാന ദൃശ്യത്തിലേയ്ക്ക് തിരിച്ചുപോവുക',
+	'centralauth-block-already-locked' => 'ഉപയോക്താവ് [[Special:CentralAuth/$1|$1]] മുമ്പേ ആഗോളമായി തടഞ്ഞിട്ടുള്ളതാണ്.',
 	'centralauth-readonly' => 'കേന്ദ്രീകൃതാനുമതിനൽകൽ ഡേറ്റാബേസ് ബന്ധിച്ചിരിക്കുന്നു',
 	'centralauth-readonlytext' => 'കേന്ദ്രീകൃതാനുമതി ഡേറ്റാബേസ് ഇപ്പോൾ, പുതിയ ഉൾപ്പെടുത്തലും, മറ്റ് പുതുക്കലുകളും സാദ്ധ്യമാവാത്ത വിധത്തിൽ ബന്ധിച്ചിരിക്കുകയാണ്, അത് മിക്കവാറും പതിവു അറ്റകുറ്റപ്പണിക്കായിരിക്കും, അങ്ങനെയെങ്കിൽ അതിനുശേഷം സാധാരണ പോലെയാവുന്നതാണ്.',
 	'right-globalgroupmembership' => 'ആഗോള സംഘങ്ങളിലുള്ള അംഗത്വം തിരുത്തുക',
@@ -30785,6 +30806,13 @@ $messages['tyv'] = array(
 	'centralauth-editset-name' => 'Ат:',
 	'centralauth-editset-type' => 'Янзы:',
 	'centralauth-editset-reason' => 'Чылдагаан:',
+);
+
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'centralauth-finish-login' => 'ⴽⵛⵎ',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
