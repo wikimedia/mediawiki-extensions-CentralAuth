@@ -5381,6 +5381,7 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-notice-dryrun' => "<div class='successbox'>Toto je jen demonstrační režim</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Sloučení účtů probíhá momentálně jen v demonstračním / ladicím režimu, takže samotné slučovací operace jsou vypnuté. Promiňte!',
 	'centralauth-error-locked' => 'Nemůžete editovat, protože váš účet byl uzamčen.',
+	'centralauth-error-unmerged' => 'Nemůžete editovat, protože váš účet není sjednocen.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Přečtěte si více o '''sjednocení přihlašování''']]...''",
 	'centralauth-list-home-title' => 'Domovská wiki',
 	'centralauth-list-home-dryrun' => 'Heslo a e-mailová adresa nastavené na této wiki budou použity i na vašem jednotném účtu.',
@@ -5615,6 +5616,7 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'centralauth-editset-success' => 'Sada wiki úspěšně změněna.',
 	'centralauth-editset-success-delete' => 'Sada wiki úspěšně smazána.',
 	'centralauth-editset-return' => 'Zpět do hlavního pohledu',
+	'centralauth-block-already-locked' => 'Uživatelský účet [[Special:CentralAuth/$1|$1]] je již globálně uzamčen.',
 	'centralauth-readonly' => 'Databáze CentralAuth je uzamčena',
 	'centralauth-readonlytext' => 'Databáze CentralAuth je momentálně uzamčena proti novým záznamům a jiným změnám, pravděpodobně kvůli rutinní údržbě, po které se vše vrátí do normálu.',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
@@ -30812,7 +30814,23 @@ $messages['tyv'] = array(
  * @author Tifinaghes
  */
 $messages['tzm'] = array(
+	'centralauth-groupname' => 'ⵜⴰⵙⴷⴰⵡⵉⵜ ⵏ ⵡⵉⴽⵉⵎⵉⴷⵢⴰ',
+	'centralauth-merge-dryrun-or' => "'''ⵏⵖ'''",
+	'centralauth-list-home-title' => 'ⵡⵉⴽⵉ ⴰⵎⵣⵡⴰⵔⵓ',
+	'centralauth-merge-method-primary' => 'ⵡⵉⴽⵉ ⴰⵎⵣⵡⴰⵔⵓ',
+	'centralauth-merge-method-new' => 'ⴰⵙⴷⴰⵡ ⴰⵎⴰⵢⵏⵓ',
+	'centralauth-finish-password' => 'ⵜⴰⵡⴰⵍⵜ ⵓⵙⵉⴽⵍ:',
 	'centralauth-finish-login' => 'ⴽⵛⵎ',
+	'centralauth-admin-yes' => 'ⵢⴰⵀ',
+	'centralauth-admin-no' => 'ⵓⵀ ⵓ',
+	'centralauth-admin-reason' => 'ⴰⵙⵔⴰⴳ:',
+	'centralauth-editgroup-subtitle-readonly' => 'ⵥⵕ $1',
+	'centralauth-editgroup-name' => 'ⴰⵙⵙⴰⵖ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:',
+	'centralauth-editgroup-noset' => '(ⵡⴰⵔ)',
+	'centralauth-editset-name' => 'ⴰⵙⵙⴰⵖ:',
+	'centralauth-editset-type' => 'ⴰⵏⴰⵡ:',
+	'centralauth-editset-wikis' => 'ⵉⴷ ⵡⵉⴽⵉ:',
+	'centralauth-editset-reason' => 'ⴰⵙⵔⴰⴳ:',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
