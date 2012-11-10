@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAC9n////o\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-10T00:11:35Z",
+      "side": 1,
+      "message": "\"\u003d\u003d null\" is useless as false \u003d\u003d null",
+      "revId": "cf50fc6f9ce0b855c35ad0f5a494ee96cdb9141e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAC9n////w\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-10T00:11:35Z",
+      "side": 1,
+      "message": "You have to pass this to $this-\u003egetResult()-\u003eaddValue",
+      "revId": "cf50fc6f9ce0b855c35ad0f5a494ee96cdb9141e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAC9n////s\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-10T00:11:35Z",
+      "side": 1,
+      "message": "You have to pass this to $this-\u003egetResult()-\u003eaddValue",
+      "revId": "cf50fc6f9ce0b855c35ad0f5a494ee96cdb9141e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
