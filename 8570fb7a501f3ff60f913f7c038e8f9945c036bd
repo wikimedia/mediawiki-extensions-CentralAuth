@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAC93////w\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-11-10T00:38:50Z",
+      "side": 1,
+      "message": "I think this should be \u0027error\u0027, null, $this-\u003egetResult()-\u003econvert...?",
+      "revId": "8570fb7a501f3ff60f913f7c038e8f9945c036bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
