@@ -416,7 +416,7 @@ You may view and modify any of them, or create a new set.',
 $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|mergeaccount}}',
 	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}} and {{msg-mw|centralauth-login-progress}}.',
-	'centralauth-desc' => '{{desc}}',
+	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
 	'centralauth-merge-denied' => 'Error message displayed when trying to visit a web page without having the correct permissions.',
@@ -30821,6 +30821,8 @@ $messages['tzm'] = array(
 	'centralauth-merge-method-new' => 'ⴰⵙⴷⴰⵡ ⴰⵎⴰⵢⵏⵓ',
 	'centralauth-finish-password' => 'ⵜⴰⵡⴰⵍⵜ ⵓⵙⵉⴽⵍ:',
 	'centralauth-finish-login' => 'ⴽⵛⵎ',
+	'centralauth-admin-info-registered' => 'ⴰⵣⵎⵎⴻⵎ:',
+	'centralauth-admin-info-home' => 'ⵡⵉⴽⵉ ⴰⵎⵣⵡⴰⵔⵓ:',
 	'centralauth-admin-yes' => 'ⵢⴰⵀ',
 	'centralauth-admin-no' => 'ⵓⵀ ⵓ',
 	'centralauth-admin-reason' => 'ⴰⵙⵔⴰⴳ:',
@@ -30831,6 +30833,7 @@ $messages['tzm'] = array(
 	'centralauth-editset-type' => 'ⴰⵏⴰⵡ:',
 	'centralauth-editset-wikis' => 'ⵉⴷ ⵡⵉⴽⵉ:',
 	'centralauth-editset-reason' => 'ⴰⵙⵔⴰⴳ:',
+	'centralauth-editset-nouse' => '(ⵡⴰⵔ)',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
@@ -32916,6 +32919,7 @@ $messages['zh-hans'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Waihorace
+ * @author Wctaiwan
  * @author Wrightbus
  * @author Xiaomingyan
  */
@@ -33096,7 +33100,7 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-count-unattached' => '您在$1個計劃中還有未確認的帳戶。',
 	'centralauth-prefs-detail-unattached' => '這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage' => '管理您的全域帳戶',
-	'centralauth-prefs-view' => '查看全域用戶信息',
+	'centralauth-prefs-view' => '檢視全域帳戶資訊',
 	'centralauth-renameuser-merged' => '用戶$1已經遷移至整合登入系統。改它的名字會令到本地用戶自全域中遷出。',
 	'centralauth-renameuser-reserved' => '用戶$2已經預留給全域帳戶使用。',
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
