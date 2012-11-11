@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADH3///+Q\u003d",
+        "filename": "specials/SpecialWikiSets.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-11-11T15:03:42Z",
+      "side": 1,
+      "message": "Caused bug 42010, fixed in I1ebea245 by Reedy.",
+      "revId": "dc6094947dfdd1a9b6b7f73c1ca951da8c3e29ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
