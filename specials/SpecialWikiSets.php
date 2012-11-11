@@ -298,8 +298,8 @@ class SpecialWikiSets extends SpecialPage {
 				'centralauth-editset-badwikis',
 				implode( ', ', $badwikis ) )
 				->numParams( count( $badwikis ) )
-				->params( $name, $type, $wikis, $reason )
-				->escaped()
+				->escaped(),
+				$name, $type, $wikis, $reason
 			);
 			return;
 		}
