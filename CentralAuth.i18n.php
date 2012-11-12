@@ -14503,7 +14503,7 @@ $messages['ja'] = array(
 ホームウィキのパスワードを入力してください。',
 	'centralauth-complete' => 'アカウントの統一が完了しました!',
 	'centralauth-incomplete' => 'アカウントの統一に失敗しました!',
-	'centralauth-complete-text' => '{{int:Centralauth-groupname}}のすべてのウィキサイトに新しいアカウントを作成せずにログインできるようになりました。',
+	'centralauth-complete-text' => '{{int:Centralauth-groupname}}のすべてのウィキサイトに、新しいアカウントを作成することなくログインできるようになりました。',
 	'centralauth-incomplete-text' => 'アカウントを統合すると、{{int:Centralauth-groupname}}のすべてのウィキサイトに新しいアカウントを作成せずにログインできるようになります。',
 	'centralauth-not-owner-text' => '「$1」という利用者名は、アカウント $2 の利用者へ既に自動割り当て済みです。
 
@@ -14520,8 +14520,8 @@ $messages['ja'] = array(
 	'centralauth-list-home-title' => 'ホームウィキ',
 	'centralauth-list-home-dryrun' => 'このウィキで設定されたパスワードとメールアドレスが統合されたアカウントに設定されます。',
 	'centralauth-list-attached-title' => '関連付けされるアカウント',
-	'centralauth-list-attached' => '以下のサイトの「$1」というアカウントは、統一アカウントに自動で関連付けられました:',
-	'centralauth-list-attached-dryrun' => '以下のサイトの「$1」というアカウントは、統一アカウントに自動で関連付けられます:',
+	'centralauth-list-attached' => '以下のサイトの「$1」というアカウントは、統一アカウントに自動的に関連付けられました:',
+	'centralauth-list-attached-dryrun' => '以下のサイトの「$1」というアカウントは、統一アカウントに自動的に関連付けられます:',
 	'centralauth-list-unattached-title' => '関連付けされないアカウント',
 	'centralauth-list-unattached' => 'アカウント「$1」は、以下のサイトであなたのアカウントとして自動承認されませんでした。
 最初に指定したアカウントとパスワードが異なる可能性が高いです:',
