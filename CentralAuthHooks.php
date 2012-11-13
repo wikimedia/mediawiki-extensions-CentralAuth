@@ -709,7 +709,8 @@ class CentralAuthHooks {
 		} else {
 			$remember = false;
 		}
-		$centralUser->setGlobalCookies( $remember );
+		// Regenerate SessionID when setting central cookie (bug 40962)
+		$centralUser->setGlobalCookies( $remember, true );
 		return true;
 	}
 

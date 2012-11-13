@@ -1842,9 +1842,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Called on login.
 	 *
 	 * @param $remember Bool|User
+	 * @param $refesh Bool Refresh the SessionID when setting cookie
 	 * @return string Session ID
 	 */
-	function setGlobalCookies( $remember = false ) {
+	function setGlobalCookies( $remember = false, $refresh = false ) {
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -1864,7 +1865,7 @@ class CentralAuthUser extends AuthPluginUser {
 		} else {
 			$this->clearCookie( 'Token' );
 		}
-		return self::setSession( $session );
+		return self::setSession( $session, $refresh );
 	}
 
 	/**
@@ -2180,13 +2181,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param $data Array
 	 * @return string
 	 */
-	static function setSession( $data ) {
+	static function setSession( $data, $refresh = false ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 		global $wgMemc;
 		if ( !$wgCentralAuthCookies ) {
 			return null;
 		}
-		if ( !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
+		if ( $refresh || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			$id = MWCryptRand::generateHex( 32 );
 			self::setCookie( 'Session', $id, 0 );
 		} else {
