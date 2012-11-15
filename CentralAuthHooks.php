@@ -244,6 +244,7 @@ class CentralAuthHooks {
 		$title = Title::makeTitleSafe( NS_USER, $userName );
 		if ( !$title ) {
 			wfDebug( __METHOD__ . ": invalid username\n" );
+			return true;
 		}
 		$userName = $title->getText();
 
