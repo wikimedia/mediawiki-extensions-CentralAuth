@@ -350,6 +350,8 @@ $specialPageAliases['id'] = array(
 
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
+	'CentralAuth' => array( 'LoginUnificato' ),
+	'AutoLogin' => array( 'LoginAutomatico' ),
 	'MergeAccount' => array( 'UnificaUtenze' ),
 	'GlobalGroupMembership' => array( 'PermessiUtenteGlobale' ),
 	'GlobalGroupPermissions' => array( 'PermessiGruppoGlobale' ),
