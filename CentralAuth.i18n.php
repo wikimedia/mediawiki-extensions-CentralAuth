@@ -4919,6 +4919,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
  * @author SMP
  * @author Solde
  * @author Toniher
+ * @author Vriullop
  */
 $messages['ca'] = array(
 	'mergeaccount' => "Estat de fusió de comptes d'usuari",
@@ -5054,7 +5055,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-delete-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
 	'centralauth-token-mismatch' => "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
 	'centralauth-admin-reason' => 'Motiu:',
-	'centralauth-admin-reason-other' => 'Altres/raó addicional:',
+	'centralauth-admin-reason-other' => 'Motiu diferent o addicional:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: el compte global "<nowiki>$1</nowiki>" no existeix.',
 	'centralauth-admin-status' => "Fixa l'estat del compte global",
 	'centralauth-admin-status-intro' => "Podeu usar aquest formulari per canviar l'estat d'aquest compte global",
@@ -12560,6 +12561,7 @@ Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anb
 /** Hungarian (magyar)
  * @author Adam78
  * @author Bdamokos
+ * @author Bináris
  * @author Dani
  * @author Dj
  * @author Dorgan
@@ -12827,9 +12829,9 @@ Valószínűleg rossz felhasználó számára akarsz jogokat adni.",
 	'centralauth-editset' => 'Wikicsoportok',
 	'centralauth-editset-legend-rw' => 'Wikicsoport szerkesztése vagy létrehozása',
 	'centralauth-editset-legend-ro' => 'Wikicsoportok listája',
-	'centralauth-editset-intro-rw' => 'Az alábbi wikikészletek léteznek.
+	'centralauth-editset-intro-rw' => 'Ezek a meglévő wikicsoportok.
 Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
-	'centralauth-editset-intro-ro' => 'Alább láthatóak a létező wikikészletek.',
+	'centralauth-editset-intro-ro' => 'Alább láthatóak a létező wikicsoportok.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|törlés]])',
 	'centralauth-editset-new' => 'Új wikicsoport készítése',
 	'centralauth-editset-notfound' => 'Nincs „$1” nevű wikicsoport.',
@@ -20229,6 +20231,7 @@ Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn h
 	'centralauth-notice-dryrun' => "<div class='successbox'>Kun demonstrasjonsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontosammenslåing er foreløpig i en demonstrasjonsmodus, så faktisk sammenslåing er ikke mulig. Beklager!',
 	'centralauth-error-locked' => 'Du kan ikke redigere ettersom kontoen din er låst.',
+	'centralauth-error-unmerged' => 'Du kan ikke redigere fordi kontoen din ikke er sammenslått.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Les mer om '''kontosammenslåing''']]…''",
 	'centralauth-list-home-title' => 'Hjemmewiki',
 	'centralauth-list-home-dryrun' => 'Passordet og e-postadressen som brukes på denne wikien vil bli brukt for din sammenslåtte konto.',
@@ -20309,6 +20312,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-admin-delete-title' => 'Slett konto',
 	'centralauth-admin-delete-description' => 'Sletting av den globale kontoen vil slette globale innstillinger, skille ut alle kontoer, og gjøre det globale navnet tilgjengelig for andre brukere. Alle lokale kontoer vil fortsette å eksistere. Passordene til lokale kontoer laget før sammenslåingen vil gå tilbake til verdiene de var før sammenslåingen.',
 	'centralauth-admin-delete-button' => 'Slett denne kontoen',
+	'centralauth-admin-delete-confirm' => 'Vil du virkelig slette denne kontoen?',
 	'centralauth-admin-delete-success' => 'Slettet den globale kontoen for «<nowiki>$1</nowiki>»',
 	'centralauth-admin-nonexistent' => 'Det er ingen global konto for «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Feil: Den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.',
@@ -20461,6 +20465,7 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 	'centralauth-editset-success' => 'Endret wikisett.',
 	'centralauth-editset-success-delete' => 'Slettet wikisett.',
 	'centralauth-editset-return' => 'Tilbake til hovedvisning',
+	'centralauth-block-already-locked' => 'Brukeren [[Special:CentralAuth/$1|$1]] er allerede låst globalt.',
 	'centralauth-readonly' => 'CentralAuth-databasen er låst',
 	'centralauth-readonlytext' => 'CentralAuth-databasen er låst for nytt innhold og andre endringer, sannsynligvis på grunn av rutinemessig vedlikehold. Den vil snart fungere som vanlig igjen.',
 	'right-globalgroupmembership' => 'Rediger medlemskap i globale grupper',
