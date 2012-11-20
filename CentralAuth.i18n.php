@@ -29350,6 +29350,7 @@ $messages['tet'] = array(
 	'centralauth-seconds-ago' => 'hori {{PLURAL:$1|segundu|segundu}} $1',
 	'centralauth-minutes-ago' => 'hori {{PLURAL:$1|minutu|minutu}} $1',
 	'centralauth-hours-ago' => 'hori {{PLURAL:$1|oras|oras}} $1',
+	'centralauth-days-ago' => '{{PLURAL:$1|1=horiseik|2=hori-bainruak|3=hori-baintolu|4=hori-bainhaat|5=hori-bainlima|6=hori-bainneen|hori loron $1}}',
 	'centralauth-months-ago' => 'hori {{PLURAL:$1|fulan|fulan}} $1',
 	'centralauth-years-ago' => 'hori {{PLURAL:$1|tinan|tinan}} $1',
 	'centralauth-editset-name' => 'Naran:',
