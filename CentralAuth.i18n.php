@@ -22283,6 +22283,13 @@ $messages['pa'] = array(
 	'centralauth-admin-delete-title' => 'ਅਕਾਊਂਟ ਹਟਾਓ',
 );
 
+/** Picard (Picard)
+ * @author Geoleplubo
+ */
+$messages['pcd'] = array(
+	'globalusers' => 'Lisse des globaux uzeus',
+);
+
 /** Deitsch (Deitsch)
  * @author Xqt
  */
