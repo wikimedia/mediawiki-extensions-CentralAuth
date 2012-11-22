@@ -611,6 +611,17 @@ $specialPageAliases['sa'] = array(
 	'GlobalUsers' => array( 'वैश्विकयोजक' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'CentralAuth' => array( 'LoginUnificato' ),
+	'AutoLogin' => array( 'LoginAutomatico' ),
+	'MergeAccount' => array( 'UnificaUtenze' ),
+	'GlobalGroupMembership' => array( 'PermessiUtenteGlobale' ),
+	'GlobalGroupPermissions' => array( 'PermessiGruppoGlobale' ),
+	'WikiSets' => array( 'WikiSet', 'ModificaWikiSets' ),
+	'GlobalUsers' => array( 'UtentiGlobali' ),
+);
+
 /** Serbo-Croatian (srpskohrvatski / српскохрватски) */
 $specialPageAliases['sh'] = array(
 	'CentralAuth' => array( 'Centralna_prijava' ),
@@ -690,6 +701,11 @@ $specialPageAliases['tt-cyrl'] = array(
 $specialPageAliases['uk'] = array(
 	'GlobalGroupMembership' => array( 'Глобальні_права' ),
 	'WikiSets' => array( 'Набори_вікі' ),
+);
+
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = array(
+	'MergeAccount' => array( 'ضم_کھاتہ' ),
 );
 
 /** vèneto (vèneto) */

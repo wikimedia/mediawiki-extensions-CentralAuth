@@ -32937,6 +32937,7 @@ $messages['zh-hans'] = array(
  * @author Jasonzhuocn
  * @author Liangent
  * @author Mark85296341
+ * @author Simon Shek
  * @author Waihorace
  * @author Wctaiwan
  * @author Wrightbus
@@ -33040,7 +33041,7 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-permission' => '只有監管員可以為用戶整合帳號。',
 	'centralauth-admin-no-unified' => '沒有這個整合帳戶名稱。',
 	'centralauth-admin-info-header' => '全域帳戶資訊',
-	'centralauth-admin-info-id' => '使用者ID：',
+	'centralauth-admin-info-id' => '用戶ID：',
 	'centralauth-admin-info-registered' => '登錄時間：',
 	'centralauth-admin-info-home' => '主維基',
 	'centralauth-admin-info-editcount' => '編輯共計：',
