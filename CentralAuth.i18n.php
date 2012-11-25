@@ -15189,6 +15189,7 @@ $messages['ka'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>სადემონსტრაციო რეჟიმი</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ანგარიშების გაერთიანება ამჟამად სადემონსტრაციო / სარემონტო რეჟიმში მიმდინარეობს. ამის გამო, გაერთიანების რეალური ოპერაციები გათიშულია. გიხდით ბოდიშს!',
 	'centralauth-error-locked' => 'თქვერ არ შეგიძლიათ რედაქტირება, ვინაიდან თქვენი ანგარიში დაბლოკილია.',
+	'centralauth-error-unmerged' => 'თქვერ არ შეგიძლიათ რედაქტირება, ვინაიდან თქვენი ანგარიში არ არის გაერთიანებული.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|დაწვრილებით '''გაერთიანებული ანგარიშის''' შესახებ (ინგლისურ ენაზე)]]…''",
 	'centralauth-list-home-title' => 'მშობლიური ვიკი',
 	'centralauth-list-home-dryrun' => 'თქვენი გაერთიანებული ანგარიშისთვის გამოყენებული იქნება ამ ვიკი-პროექტში მითითებული პაროლი და ელ. ფოსტის მისამართი.',
@@ -15434,6 +15435,7 @@ $messages['ka'] = array(
 	'centralauth-editset-success' => 'ვიკი-ნაკრები წარმატებით შეიცვალა.',
 	'centralauth-editset-success-delete' => 'ვიკი-ნაკრები წარმატებით წაიშალა.',
 	'centralauth-editset-return' => 'მთავარ არეზე დაბრუნება',
+	'centralauth-block-already-locked' => 'მომხმარებელი [[Special:CentralAuth/$1|$1]] უკვე არის გლობალურად დაბლოკილი.',
 	'centralauth-readonly' => 'CentralAuth-ის მონაცემთა ბაზა დაბლოკილია',
 	'centralauth-readonlytext' => 'CentralAuth-ის მონაცემთა ბაზა მასში ახალი ჩანაწერებისა და სხვა ცვლილებებისათვის ამჟამად დაბლოკილია, სავარაუდოდ, მონაცემთა ბაზების ჩვეულებრივი მომსახურების მიზნით, რის შემდეგაც ის დაბრუნდება თავის ადგილას.',
 	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
@@ -32941,6 +32943,7 @@ $messages['zh-hans'] = array(
  * @author Horacewai2
  * @author Hydra
  * @author Jasonzhuocn
+ * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
@@ -32997,6 +33000,7 @@ $messages['zh-hant'] = array(
 	'centralauth-disabled-dryrun' => '目前為示範模式，
 實際的整合動作已停用。',
 	'centralauth-error-locked' => '由於您的帳戶已被鎖住，您目前無法編輯',
+	'centralauth-error-unmerged' => '因為您的帳戶尚未統一，您不能編輯。',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|了解更多'''帳號整合'''細節]]...''",
 	'centralauth-list-home-title' => '主要維基計劃',
 	'centralauth-list-home-dryrun' => '您在這個計劃中使用的密碼以及電子郵件地址將會用來做您的整合帳號，同時您在這裡的用戶頁會由其它的計劃中自動連結過來。',
@@ -33081,6 +33085,7 @@ $messages['zh-hant'] = array(
 全部的本地帳戶會繼續存在。
 在合併之前已經建立了的本地帳戶會還原他們以前的值。',
 	'centralauth-admin-delete-button' => '刪除這個帳戶',
+	'centralauth-admin-delete-confirm' => '確實要刪除此帳戶？',
 	'centralauth-admin-delete-success' => '已經刪除"<nowiki>$1</nowiki>"的全域帳戶',
 	'centralauth-admin-nonexistent' => '全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-admin-delete-nonexistent' => '錯誤: 該全域帳戶"<nowiki>$1</nowiki>"不存在。',
@@ -33179,6 +33184,7 @@ $messages['zh-hant'] = array(
 	'centralauth-globalgroupperms-newgroupname' => '新組名:',
 	'centralauth-globalgroupperms-creategroup-submit' => '指定許可',
 	'centralauth-editgroup-subtitle' => '編輯$1',
+	'centralauth-editgroup-subtitle-readonly' => '查看$1',
 	'centralauth-editgroup-fieldset' => '$1的許可',
 	'centralauth-editgroup-name' => '組名:',
 	'centralauth-editgroup-display' => '本地化組名:',
@@ -33230,6 +33236,7 @@ $messages['zh-hant'] = array(
 	'centralauth-editset-success' => '成功更改維基集。',
 	'centralauth-editset-success-delete' => '成功刪除這個維基設定。',
 	'centralauth-editset-return' => '返回到主視圖',
+	'centralauth-block-already-locked' => '用戶[[Special:CentralAuth/$1|$1]]而被全域鎖定。',
 	'centralauth-readonly' => 'CentralAuth資料庫被鎖',
 	'centralauth-readonlytext' => 'CentralAuth資料庫是目前被鎖定，所以無法接受新條目和其他修改。它可能正在進行常規的資料庫維護，然後將恢復正常。',
 	'right-globalgroupmembership' => '編輯成員至全域組',
