@@ -2752,6 +2752,13 @@ Səbəb: $1',
 	'right-globalgrouppermissions' => 'Qlobal qrupları düzəlt',
 );
 
+/** تورکجه (تورکجه)
+ * @author E THP
+ */
+$messages['azb'] = array(
+	'centralauth-finish-password' => 'رمز',
+);
+
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Comp1089
@@ -3633,6 +3640,7 @@ $messages['be-tarask'] = array(
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
+ * @author Stanqo
  * @author Turin
  * @author Vladimir Penov
  */
@@ -3640,6 +3648,7 @@ $messages['bg'] = array(
 	'mergeaccount' => 'Състояние на обединението на сметки',
 	'centralauth-groupname' => 'Фондация Уикимедия',
 	'centralauth-desc' => '[[Special:MergeAccount|Сливане на потребителски сметки]] в няколко уикита от {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Добавя AntiSpoof технология за потребителски',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Слива няколко сметки]] за използване на Единно потребителско влизане',
 	'centralauth-merge-denied' => 'За съжаление, нямате права за достъп до тази страница.',
 	'centralauth-merge-notlogged' => 'Необходимо е <span class="plainlinks">[$1 да влезете]</span>, за да проверите дали сметките са напълно обединени.',
@@ -3686,6 +3695,7 @@ $messages['bg'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Обединението на сметки в момента е в демонстрационен режим / режим на дебъгване, затова операциите по сливанията са спрени. Съжаляваме!',
 	'centralauth-error-locked' => 'Не можете да редактирате, тъй като сметката ви е заключена.',
+	'centralauth-error-unmerged' => 'Не можете да редактирате, тъй като сметката ви е заключена.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/bg|Прочетете повече за системата за '''единни потребителски сметки''']]…''",
 	'centralauth-list-home-title' => 'Домашно уики',
 	'centralauth-list-home-dryrun' => 'Паролата и електронната поща за настоящото уики ще бъдат използвани за глобалната ви сметка.',
