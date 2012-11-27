@@ -509,7 +509,7 @@ $specialPageAliases['nb'] = array(
 	'GlobalUsers' => array( 'Globale_brukere' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'CentralAuth' => array( 'Sentraal_anmelden' ),
 	'AutoLogin' => array( 'Automaties_anmelden' ),
