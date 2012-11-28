@@ -3648,7 +3648,7 @@ $messages['bg'] = array(
 	'mergeaccount' => 'Състояние на обединението на сметки',
 	'centralauth-groupname' => 'Фондация Уикимедия',
 	'centralauth-desc' => '[[Special:MergeAccount|Сливане на потребителски сметки]] в няколко уикита от {{int:Centralauth-groupname}}',
-	'centralauth-antispoof-desc' => 'Добавя AntiSpoof технология за потребителски',
+	'centralauth-antispoof-desc' => 'Добавя AntiSpoof технология към CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Слива няколко сметки]] за използване на Единно потребителско влизане',
 	'centralauth-merge-denied' => 'За съжаление, нямате права за достъп до тази страница.',
 	'centralauth-merge-notlogged' => 'Необходимо е <span class="plainlinks">[$1 да влезете]</span>, за да проверите дали сметките са напълно обединени.',
@@ -3695,7 +3695,7 @@ $messages['bg'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Обединението на сметки в момента е в демонстрационен режим / режим на дебъгване, затова операциите по сливанията са спрени. Съжаляваме!',
 	'centralauth-error-locked' => 'Не можете да редактирате, тъй като сметката ви е заключена.',
-	'centralauth-error-unmerged' => 'Не можете да редактирате, тъй като сметката ви е заключена.',
+	'centralauth-error-unmerged' => 'Редактирането е невъзмможно, тъй като сметката не е единна.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/bg|Прочетете повече за системата за '''единни потребителски сметки''']]…''",
 	'centralauth-list-home-title' => 'Домашно уики',
 	'centralauth-list-home-dryrun' => 'Паролата и електронната поща за настоящото уики ще бъдат използвани за глобалната ви сметка.',
@@ -3748,6 +3748,7 @@ $messages['bg'] = array(
 	'centralauth-admin-no' => 'не',
 	'centralauth-admin-hidden-list' => 'от публични списъци',
 	'centralauth-admin-list-legend-ro' => 'Списък на локалните сметки',
+	'centralauth-admin-list-legend-rw' => 'Разделяне на глобалната сметка',
 	'centralauth-admin-unattached' => 'неприкачени',
 	'centralauth-admin-blocked' => 'Блокиран до $3 в $4. Причина: $2',
 	'centralauth-admin-blocked-indef' => 'Блокиран безсрочно. Причина: $1',
@@ -3768,6 +3769,7 @@ $messages['bg'] = array(
 Всички локални сметки ще продължат да съществуват.
 Паролите за локалните сметки, създадени преди сливането ще бъдат върнати към стойностите преди сливането.',
 	'centralauth-admin-delete-button' => 'Изтриване на сметката',
+	'centralauth-admin-delete-confirm' => 'Наистина ли искате да изтриете този акаунт?',
 	'centralauth-admin-delete-success' => 'Глобалната сметка за „<nowiki>$1</nowiki>“ беше изтрита успешно',
 	'centralauth-admin-nonexistent' => 'Не съществува глобална сметка за „<nowiki>$1</nowiki>”',
 	'centralauth-admin-delete-nonexistent' => 'Грешка: Не съществува глобална сметка „<nowiki>$1</nowiki>”.',
@@ -22299,6 +22301,7 @@ $messages['pa'] = array(
  * @author Geoleplubo
  */
 $messages['pcd'] = array(
+	'mergeaccount' => "Étot éd l’unificacion éd l'idintifiant (logache)",
 	'globalusers' => 'Lisse des globaux uzeus',
 );
 

@@ -554,7 +554,7 @@ $specialPageAliases['pa'] = array(
 	'MergeAccount' => array( 'ਖਾਤਾ_ਰਲਾਓ' ),
 	'GlobalGroupMembership' => array( 'ਗਲੋਬਲ_ਵਰਤੋਂਕਾਰ_ਹੱਕ', 'ਗਲੋਬਲ_ਗਰੁੱਪ_ਮੈਂਬਰਸ਼ਿੱਪ' ),
 	'GlobalGroupPermissions' => array( 'ਗਲੋਬਲ_ਗਰੁੱਪ_ਇਜਾਜ਼ਤਾਂ' ),
-	'GlobalUsers' => array( 'ਗਲੋਬਲ_ਵਰਤੋਂਕਾਰ' ),
+	'GlobalUsers' => array( 'ਗਲੋਬਲ_ਮੈਂਬਰ' ),
 );
 
 /** Polish (polski) */
