@@ -2752,7 +2752,7 @@ Səbəb: $1',
 	'right-globalgrouppermissions' => 'Qlobal qrupları düzəlt',
 );
 
-/** تورکجه (تورکجه)
+/** South Azerbaijani (تورکجه)
  * @author E THP
  */
 $messages['azb'] = array(
@@ -3748,7 +3748,7 @@ $messages['bg'] = array(
 	'centralauth-admin-no' => 'не',
 	'centralauth-admin-hidden-list' => 'от публични списъци',
 	'centralauth-admin-list-legend-ro' => 'Списък на локалните сметки',
-	'centralauth-admin-list-legend-rw' => 'Разделяне на глобалната сметка',
+	'centralauth-admin-list-legend-rw' => 'Разделяне на локалните сметки',
 	'centralauth-admin-unattached' => 'неприкачени',
 	'centralauth-admin-blocked' => 'Блокиран до $3 в $4. Причина: $2',
 	'centralauth-admin-blocked-indef' => 'Блокиран безсрочно. Причина: $1',
@@ -3769,7 +3769,7 @@ $messages['bg'] = array(
 Всички локални сметки ще продължат да съществуват.
 Паролите за локалните сметки, създадени преди сливането ще бъдат върнати към стойностите преди сливането.',
 	'centralauth-admin-delete-button' => 'Изтриване на сметката',
-	'centralauth-admin-delete-confirm' => 'Наистина ли искате да изтриете този акаунт?',
+	'centralauth-admin-delete-confirm' => 'Наистина ли желаете да изтриете тази сметка?',
 	'centralauth-admin-delete-success' => 'Глобалната сметка за „<nowiki>$1</nowiki>“ беше изтрита успешно',
 	'centralauth-admin-nonexistent' => 'Не съществува глобална сметка за „<nowiki>$1</nowiki>”',
 	'centralauth-admin-delete-nonexistent' => 'Грешка: Не съществува глобална сметка „<nowiki>$1</nowiki>”.',
@@ -22297,12 +22297,21 @@ $messages['pa'] = array(
 	'centralauth-admin-delete-title' => 'ਅਕਾਊਂਟ ਹਟਾਓ',
 );
 
+/** Pampanga (Kapampangan)
+ * @author Val2397
+ */
+$messages['pam'] = array(
+	'centralauth-admin-reason' => '↓Sangkan:',
+);
+
 /** Picard (Picard)
  * @author Geoleplubo
  */
 $messages['pcd'] = array(
 	'mergeaccount' => "Étot éd l’unificacion éd l'idintifiant (logache)",
-	'globalusers' => 'Lisse des globaux uzeus',
+	'centralauth' => 'Anménistrachon global des uzeus',
+	'globalusers' => 'Lisse des globals uzeus',
+	'globalgrouppermissions' => 'Anménistrachon des globals groupes',
 );
 
 /** Deitsch (Deitsch)
