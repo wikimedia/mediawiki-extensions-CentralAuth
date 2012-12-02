@@ -405,7 +405,11 @@ $specialPageAliases['ksh'] = array(
 
 /** Cornish (kernowek) */
 $specialPageAliases['kw'] = array(
-	'AutoLogin' => array( 'AwtoOmgelmi' ),
+	'AutoLogin' => array( 'AwtoOmgelmy' ),
+	'MergeAccount' => array( 'KesunyaAcont' ),
+	'GlobalGroupMembership' => array( 'GwiryowDevnydhyoryonOllvysel' ),
+	'GlobalGroupPermissions' => array( 'CumyasowBagasowOllvysel' ),
+	'GlobalUsers' => array( 'DevnydhyoryonOllvysel' ),
 );
 
 /** Ladino (Ladino) */

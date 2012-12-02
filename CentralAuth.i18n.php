@@ -16988,6 +16988,15 @@ $messages['ku-latn'] = array(
 	'centralauth-editset-submit-delete' => 'Jê bibe',
 );
 
+/** Cornish (kernowek)
+ * @author Kernoweger
+ */
+$messages['kw'] = array(
+	'centralauth-groupname' => 'Fondyans Wikimedia',
+	'centralauth-login-progress' => 'Orth agas omgelmy orth wikiow a {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Orth agas digelmy dhyworth wikiow erel a {{int:Centralauth-groupname}}:',
+);
+
 /** Kirghiz (Кыргызча)
  * @author Chorobek
  */
