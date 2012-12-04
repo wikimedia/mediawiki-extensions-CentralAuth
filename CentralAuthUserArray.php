@@ -55,8 +55,12 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		parent::setCurrent( $row );
 
 		if ( $row !== false ) {
-			$caRow = isset( $this->globalData[$row->user_name] ) ? $this->globalData[$row->user_name] : false;
-			$this->current->centralAuthObj = CentralAuthUser::newFromRow( $caRow );
+			if ( isset( $this->globalData[$row->user_name] ) ) {
+				$caRow = $this->globalData[$row->user_name];
+				$this->current->centralAuthObj = CentralAuthUser::newFromRow( $caRow );
+			} else {
+				$this->current->centralAuthObj = CentralAuthUser::newUnattached( $row->user_name );
+			}
 		}
 	}
 }

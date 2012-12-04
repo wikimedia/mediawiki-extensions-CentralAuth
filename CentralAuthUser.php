@@ -118,6 +118,17 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Create a CentralAuthUser object for a user who is known to be unattached.
+	 * @param $name The user name
+	 * @param $fromMaster bool
+	 */
+	public static function newUnattached( $name, $fromMaster = false ) {
+		$caUser = new self( $name );
+		$caUser->loadFromRow( false );
+		return $caUser;
+	}
+
+	/**
 	 * Clear state information cache
 	 * Does not clear $this->mName, so the state information can be reloaded with loadState()
 	 */
