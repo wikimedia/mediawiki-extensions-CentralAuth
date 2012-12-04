@@ -126,7 +126,7 @@ $specialPageAliases['diq'] = array(
 	'GlobalGroupMembership' => array( 'GlobalGrubaEzayan' ),
 	'GlobalGroupPermissions' => array( 'GlobalGrubaİcazeti' ),
 	'WikiSets' => array( 'SazanêWikiBıvurne' ),
-	'GlobalUsers' => array( 'KarberoGlobal' ),
+	'GlobalUsers' => array( 'KarberêGlobali' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */

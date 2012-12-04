@@ -2753,10 +2753,174 @@ Səbəb: $1',
 );
 
 /** South Azerbaijani (تورکجه)
+ * @author Amir a57
  * @author E THP
  */
 $messages['azb'] = array(
+	'mergeaccount' => 'حساب بیرلشدیرمه حالی',
+	'centralauth-groupname' => 'ویکی مئدیا بنیادی',
+	'centralauth-desc' => '{{int:Centralauth-groupname}} ویکیلریندی [[Special:MergeAccount | حساب بیرلش‌دیر]]', # Fuzzy
+	'centralauth-mergeaccount-desc' => 'تک ایستیفاده‌چی گیریشی اوچون [[Special:MergeAccount| چوخ‌لو حساب‌لاری بیرلشدیریر]]',
+	'centralauth-merge-denied' => 'عوذر ایستییریک، بو صحیفه‌یه داخیل اولماق اوچون ایجازه وئریلمیر.',
+	'centralauth-merge-notlogged' => 'خاهیش ائدیریک بوتون حساب‌لارینیزی تام اولا‌راق بیرلشدیریلدیگینده ایداره ائتمک اوچون <span class="plainlinks"> [$1داخیل اولون] </span>.',
+	'centralauth-merge-welcome' => "'''ایستیفاده‌چی حسابینیز هله {{int:Centralauth-groupname}} بیرلشمیش گیریش سیستئمینه تاشینمادی.'''
+
+اگر حساب‌لارینیزی داشیماغی سئچسه‌نیز، بوتون مؤوجود دیل‌لردکی {{int:Centralauth-groupname}} wiki سایت‌لاریندا داخیل ائتمک اوچون عینی ایستیفاده‌چی آدی و شیفرنی ایستیفاده ائده بیلجکسینیز.
+
+اگر بیر باشقاسی باشقا بیر ویکی سیزین آدینیزی آلمیش ایسه، بو اونلاری ناراهات ائتمز، اما بو سیزه داها سونرا اونلارلا و یا بیر ایداره‌چی ایله پروبلئمی هلل ائتمه شانسی وئریر.",
+	'centralauth-merge-step1-title' => 'گیریش بیرلشدیرمه‌سینه باشلا',
+	'centralauth-merge-step1-detail' => 'خاهیش ائدیریک بورا حساب شیفره‌نیزی داخیل ائدین.
+شیفره و قئیده ایمیل عنوانینیز دیگر ویکیلردکی حساب‌لاردا ایشلشتیغی‌نین تصدیقلنمه‌سی اوچون نظارت ائدیله‌جک.
+سیز ایشلرین یولوندا اولدوغونو راتیفیکاسیا ائتمه‌دن هئچ بیر دییشیک‌لیک ائدیلمه‌یه‌جک.',
+	'centralauth-merge-step1-submit' => 'گیریش معلوماتینی تصدیقله',
+	'centralauth-merge-step2-title' => 'داها چوخ حسابی تصدیقله',
+	'centralauth-merge-step2-detail' => 'بعضی حساب‌لار، تعیین اولونان ائو ویکیسیلئ آوتوماتیک اولا‌راق ائشلئشمئدی.
+اگر بو حساب‌لار سیزه مخصوص‌دورسا، پسووردلارینی تعمین ائده‌رک سیزین اولدوغونو دوغرولایابیلیرسینیز.',
+	'centralauth-merge-step2-submit' => 'گیریش معلوماتینی تصدیقله',
+	'centralauth-merge-dryrun-complete' => 'مؤوجود اولان بوتون حساب‌لار اوتوماتیک اولا‌راق بیرلش‌دیریله!
+
+هله حساب‌لارینیزا هر هانسی بیر دییشیک‌لیک ائدیلمییب.',
+	'centralauth-merge-dryrun-incomplete' => 'داوام ائتمیه سئچدینیز، آنجاق بعضی حساب‌لار آوتوماتیک اولا‌راق تصدیقلنمه‌دی و درهال تاشینمایاجاک.
+بون‌لاری داها سونرا بیرلش‌دیره.
+
+هله حساب‌لارینیزا هر هانسی بیر دییشیک‌لیک ائدیلمییب.',
+	'centralauth-merge-dryrun-or' => "'''و یا'''",
+	'centralauth-merge-dryrun-home' => 'داشینما سیستئمی، ایستیفاده‌چی آدینیزین ائو wiki حسابی صاحبی‌نین سیز اولدوغونو دوغرولایامادی.
+
+بیر باشقا wiki ایستیفاده‌چی آدینیز اوچون ائو ویکی‌سی تعیین اولونموش؛ حسابینیزی داشیماغی تاماملاماق اوچون آشاغی‌داکی لینکی تعقیب ائدیب، اورادا داخیل اولون.',
+	'centralauth-merge-step3-title' => 'واحید حساب آچ',
+	'centralauth-merge-step3-detail' => 'بیرلشمیش حسابینیزی میدانا گتیرمه‌یه هازیرسینیز، آشاغی‌داکی ویکی علاوه اولوندو:',
+	'centralauth-merge-step3-submit' => 'حساب‌لاری بیرلش‌دیر',
+	'centralauth-merge-no-accounts' => 'مرکز حساب ایزلئمئ و زرر حاقیندا حئساباتدا آدینیزا اویغون گلن حساب تاپیلمادی!
+وئریلن‌لر بازاسی پوزولموش اولما‌لی.',
+	'centralauth-merge-home-password' => 'بو حسابین ائو ویکی‌سی (آشاغیدا اولونموش) گیردیگینیزدن فرق‌لی بیر پسووردا صاحب.
+خاهیش ائدیریک ائو ویکی‌سی اوچون پسووردی داخیل ائدین.',
+	'centralauth-complete' => 'حساب‌لاری بیرلشدیریلمه‌سی تاماملاندی!',
+	'centralauth-incomplete' => 'گیریش بیرلشدیرمه تاماملانمادی!',
+	'centralauth-complete-text' => 'آرتیق هر هانسی بیر {{int:Centralauth-groupname}} wiki سایت‌لارینا یئنی بیر حساب آچماک‌سیزین داخیل ائده بیلرسینیز.',
+	'centralauth-incomplete-text' => 'داخیل ائدین بیرلشدیرسک، یئنی بیر حساب میدانا گتیرمه‌دن هر هانسی بیر {{int:Centralauth-groupname}} wiki سایتیندا ایجلاس آچا بیله‌جک‌لری',
+	'centralauth-not-owner-text' => '"$1" ایستیفاده‌چی آدی آوتوماتیک اولا‌راق $2 سایتین‌داکی حسابین صاحبینه تعیین ائدیلمیش‌دیر.
+
+اگر بو سیزسینیزسه، آنا پسووردی بورا یازا‌راق داخیل بیرلشدیرمه مدتینی تاماملایا:',
+	'centralauth-blocked-text' => 'ائو ویکی (آشاغیدا اولونموش) دییشیک‌لیک ائتمه‌یه مانعه تؤردیلمیش‌دیر.
+مانعنی قال‌دیرماق اوچون لطفاً بیر سیسوپ ایله علاقه قورون.
+اونی آچا، حساب‌لارینیزی بیرلشتیرمزسینیز.',
+	'centralauth-notice-dryrun' => "</div><br clear='all'/> یالنیز گوسترمه مودلی <div class='successbox'>",
+	'centralauth-disabled-dryrun' => 'عوذر ایستییریک!حساب بیرلشدیرمه هله‌لیک دئمو / آییرد ائتمه رئژیمینده، بونا گؤره گئرچک بیرلشدیرمه عملیات‌لاری دؤوره خاریجی بوراخیلمیش‌دیر.',
+	'centralauth-error-locked' => 'حسابینیز باغلاندیغینا گؤره دییشدیر ائده بیلمزسینیز.',
+	'centralauth-error-unmerged' => 'حسابینیز باغلاندیغینا گؤره دییشدیر ائده بیلمزسینیز.',
+	'centralauth-readmore-text' => ":'[[meta:Help:Unified login|بیرلئشیک گیریش هاککیندا داها فازلا بیلگی ائدی‌نین]]…",
+	'centralauth-list-home-title' => 'ائو ویکی‌سی',
+	'centralauth-list-home-dryrun' => 'بو ویکی قورولان پسوورد و ایمیل عنوانی، بیرلشمیش حسابینیز اوچون ایستیفاده ائدیله‌جک.',
+	'centralauth-list-attached-title' => 'علاوه ائدیلمیش حساب‌لار',
+	'centralauth-list-attached' => 'آشاغی‌داکی سایت‌لارداکی "$1" آدلی حساب آوتوماتیک اولا‌راق بیرلشمیش حسابا علاوه اولونموش‌دور:',
+	'centralauth-list-attached-dryrun' => 'آشاغی‌داکی سایت‌لارداکی "$1" آدلی حساب آوتوماتیک اولا‌راق بیرلشمیش حسابا علاوه اولونا‌جاق:',
+	'centralauth-list-unattached-title' => 'غیر اتصال حساب‌لار',
+	'centralauth-list-unattached' => '"$1" حسابینین سیزه عاید اولدوغو آشاغی‌داکی سایت‌لاردا اوتوماتیک اولا‌راق تصدیق‌لنه؛ بؤیوک احتیمالا ایلک حسابینیزدان فرق‌لی بیر پسوورد ‌یه صاحب اولدوق‌لاری اوچون:',
+	'centralauth-foreign-link' => '$2دکی $1 ایستیفاده‌چی‌سی',
+	'centralauth-foreign-contributions' => '$1 ایشتیراک قونودا $2', # Fuzzy
+	'centralauth-merge-method-primary' => 'ائو ویکی‌سی',
+	'centralauth-merge-method-empty' => 'فالیت یوخدور',
+	'centralauth-merge-method-mail' => 'ایمیل له تصدیقلندی',
+	'centralauth-merge-method-password' => 'پسوورد ایله تصدیقلندی',
+	'centralauth-merge-method-admin' => 'ایداره‌چی حسابی بیرلشدیردی',
+	'centralauth-merge-method-new' => 'یئنی حساب',
+	'centralauth-merge-method-login' => 'گیریش ایله یارادیلدی',
+	'centralauth-merge-method-primary-desc' => 'بو، حسابین ایلک بیرلشدیریلدیگی ویکی.
+بو حسابین، ایستیفاده‌چی‌نین اصل ائو ویکیسیندن فرق‌لی اولا اونوتمایین.',
+	'centralauth-merge-method-empty-desc' => 'هئچ بیر دییشیک‌لیک اولمادیغی اوچون یئرلی حسابین بیرلشدیریلدیگینده گؤستریر.',
+	'centralauth-merge-method-mail-desc' => 'ایمیل عنوانینین آنا حسابین ایمیل آدرسیله اویغون اولماسی سببیله یئرلی حسابین بیرلشدیریلدیگینده گؤستریر.',
+	'centralauth-merge-method-password-desc' => 'ایستیفاده‌چی‌نین اعتبارلی بیر پسوورد تعیین ائتمه‌سی سببیله یئرلی حسابین بیرلشدیریلدیگینده گؤستریر.',
+	'centralauth-merge-method-admin-desc' => 'یئرلی حاق-حساب ویکی مئدیا طرفین‌دن ال ایله بیرلشدیریلدیگینده گؤستریر.
+بو خصوصیت تهلوکه‌سیزلیک پروبلئم‌لری سببیله بو آندا ایستیفاده خاریجی‌دیر.',
+	'centralauth-merge-method-new-desc' => 'یئرلی حاق-حساب آچیلماسییلا سراسری حسابین دا اوتوماتیک اولا‌راق آچیلدیغینی گؤستریر.',
+	'centralauth-merge-method-login-desc' => 'یئرلی حاق-حساب، ایستیفاده‌چی‌نین گیریش اولماسییلا اوتوماتیک اولا‌راق آچیلدیغینی گؤستریر.',
+	'centralauth-finish-title' => 'بیرلشمنی بیتیر',
+	'centralauth-finish-text' => 'اگر بو حساب‌لار سیزه مخصوص‌دورسا، گیریش بیرلشدیرمه مدتینی دیگر حساب‌لارین پسوورد ‌لرینی بورا گیره‌رک آسان‌لیقلا بیتیره:',
 	'centralauth-finish-password' => 'رمز',
+	'centralauth-finish-login' => 'گیریش',
+	'centralauth-finish-send-confirmation' => 'ایمیل ایله یئنی گیریش یازی سینی گؤندر',
+	'centralauth-finish-problems' => 'پروبلئم مو یاشاییرسینیز، یوخسا بو حساب‌لارین صاحبی دئییل بیلرسینیزمی؟
+[[meta:Help:Unified login problems | نئجه کؤمک اولور]] ...',
+	'centralauth-finish-noconfirms' => 'بو گیریش یازی سی ایله هئچ بیر حساب تصدیق‌لنه.',
+	'centralauth-finish-incomplete' => 'بو پسوورد ایستیفاده ائده‌رک بیر چوخ حساب بیرلشدیریلدی.
+دیگر حساب‌لار داها تصدیقلنمه‌دی.',
+	'centralauth-merge-attempt' => "' 'قالان آیری حساب‌لار اوچون نظرده توتولان پسوورد نظارت ائدیلیر ...'",
+	'centralauth-attach-list-attached' => '"$1" آدلی بیرلشمیش حساب آشاغی‌داکی حساب‌لاری ائهتیوا ائدیر:',
+	'centralauth-attach-title' => 'حسابی تصدیقله',
+	'centralauth-attach-text' => 'بو حساب داها بیرلشمیش حسابا داشینمادی.
+اگر سراسری حساب دا سیزینسه، سراسری حساب پسوورد‌سینی گیره‌رک بو حسابی بیرلش‌دیره:',
+	'centralauth-attach-submit' => 'حسابین داشینماسی',
+	'centralauth-attach-success' => 'بو حساب واهید حسابا بیرلشدیریلیب.',
+	'centralauth' => 'سراسری ایستیفاده‌چی ایداره‌چی‌سی',
+	'centralauth-admin-intro' => 'بو رابط سراسری حساب‌لارین رهبرلیگی اوچون ایستیفاده ائدیله بیلر.',
+	'centralauth-admin-manage' => 'شخصی بیلگی‌لرین ایداره اولونماسی',
+	'centralauth-admin-username' => 'ایستیفاده‌چی آدی:',
+	'centralauth-admin-lookup-ro' => 'ایستیفاده‌چی معلوماتینی گؤندر',
+	'centralauth-admin-lookup-rw' => 'ایستیفاده‌چی حسابینین ایداره اولونماسی',
+	'centralauth-admin-permission' => 'ایستیفاده‌چی اوچون باشقا حساب‌لاری یالنیز پیس ویکی لر بیرلش‌دیره بیلر.',
+	'centralauth-admin-no-unified' => 'بو ایستیفاده‌چی آدی اوچون واحید حساب یوخ‌دور.',
+	'centralauth-admin-info-header' => 'سراسری ایستیفاده‌چی حاقیندا معلومات‌لار',
+	'centralauth-admin-info-id' => 'ایستیفاده‌چی ID:',
+	'centralauth-admin-info-registered' => 'قئیدیات آلیندی:',
+	'centralauth-admin-info-home' => 'ائو ویکی‌سی',
+	'centralauth-admin-info-editcount' => 'عمومی دییشدیرمه سایی:',
+	'centralauth-admin-info-locked' => 'کیلیدلنمیش',
+	'centralauth-admin-info-hidden' => 'گیزلی‌لیک سویه‌سی:',
+	'centralauth-admin-nohome' => 'بیلنمیر',
+	'centralauth-admin-yes' => 'بلی',
+	'centralauth-admin-no' => 'یوخ',
+	'centralauth-admin-hidden-list' => 'عمومی سیاهی‌لارین‌دان',
+	'centralauth-admin-hidden-oversight' => 'گیزلنمیش',
+	'centralauth-admin-list-legend-ro' => 'یئرلی حساب‌لارین سیاهی‌سی',
+	'centralauth-admin-list-legend-rw' => 'یئرلی حساب‌لاری بیرلشدیرمه',
+	'centralauth-admin-unattached' => 'اتصال اولمویوب',
+	'centralauth-admin-blocked' => '$3 $4 واختا کیمی باغلانیب.
+سبب: $2',
+	'centralauth-admin-blocked-indef' => 'مدت‌سیز باغلانیب.
+سبب: $1',
+	'centralauth-admin-blocklog' => 'باغلانما قئیدلری',
+	'centralauth-admin-list-localwiki' => 'یئرلی ویکی',
+	'centralauth-admin-list-attached-on' => 'اتصال اولوب دیر',
+	'centralauth-admin-list-method' => 'اوصول',
+	'centralauth-admin-list-editcount' => 'دییشدیرمه سایی',
+	'centralauth-admin-list-blocked' => 'باغلانمیش',
+	'centralauth-admin-unmerge' => 'سئچیلن‌لری آییرماق',
+	'centralauth-admin-merge' => 'سئچیلن‌لری بیرلش‌دیرمک',
+	'centralauth-admin-bad-input' => 'اعتبارسیز بیرلشدیرمه سئچیمی',
+	'centralauth-admin-none-selected' => 'دییشیک‌لیک ائتمک اوچون هئچ بیر حساب سئچیلمه‌ییب.',
+	'centralauth-admin-already-unmerged' => '$1 کئچیلیر، اونسوز دا بیرلئشتیریلمئمیش',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1 | حساب | حساب}} موفقیتله آیریلدی.',
+	'centralauth-admin-delete-title' => 'سیلینمیش حساب',
+	'centralauth-admin-delete-description' => 'سراسری حسابی سیلمک، هر هانسی بیر سراسری سئچیمی سیله‌جک، بوتون یئرلی حساب‌لاری آییرا‌جاق، و سراسری آدی باشقا بیر ایستیفاده‌چی‌نین آلابیلمه سینی ایمکان تعمین ائده‌جک شکیلده بوراخا‌جاق.
+بوتون یئرلی حساب‌لار مؤوجودلوغا داوام ائده‌جک.
+بیرلش‌دیرمک اول یارادیلان یئرلی حساب‌لار اوچون شیفره‌لر بیرلش‌دیرمک اوولکی دیرلرینه گئری قایتاریلا‌جاق.',
+	'centralauth-admin-delete-button' => 'بو حسابی سیل',
+	'centralauth-admin-delete-success' => '"<nowiki> $1 </ nowiki>" اوچون ایستفاده چی حساب موفقیتله سیلیندی.',
+	'centralauth-admin-nonexistent' => '"<nowiki> $1 </ nowiki>" اوچون ایستفاده چی حساب یوخ‌دور',
+	'centralauth-admin-delete-nonexistent' => 'خطا: "<nowiki> $1 </ nowiki>" ایستفاده چی حسابی مؤوجود دئییل.',
+	'centralauth-token-mismatch' => 'عوذر ایستییریک، ایجلاس معلومات ایتکی‌سین‌دن اؤتری فورما گؤندئریمینیزی ایشلیمیوروز.',
+	'centralauth-admin-reason' => 'ندن:',
+	'centralauth-admin-reason-other' => 'آیری/آرتیق دلیل:',
+	'centralauth-admin-unhide-nonexistent' => 'خطا: "<nowiki> $1 </ nowiki>" ایستفاده چی حسابی مؤوجود دئییل.',
+	'centralauth-admin-status' => 'سراسری حساب وضعیتینی نیزاملا',
+	'centralauth-admin-status-intro' => 'بو سراسری حسابین وضعیتینی دییش‌دیرمک اوچون بو فورمو ایستیفاده ائده بیلرسینیز',
+	'centralauth-admin-status-locked' => 'کیلیدلنمیش',
+	'centralauth-admin-status-locked-no' => 'حساب باغلانمیشدی',
+	'centralauth-admin-status-locked-yes' => 'حسابین دییشیک‌لیک ائتمه‌سی کیلیدلندی',
+	'centralauth-admin-status-hidden' => 'گیزلی',
+	'centralauth-admin-status-hidden-no' => 'حساب گیزلی دییل',
+	'centralauth-admin-status-hidden-list' => 'حساب عمومی سیاهی‌لاردان گیزلندی',
+	'centralauth-admin-status-hidden-oversight' => 'حساپ تامامن گیزلندی',
+	'centralauth-admin-status-submit' => 'وضعیت تنظیم لمه سی',
+	'centralauth-admin-status-nonexistent' => 'خطا: "<nowiki> $1 </ nowiki>" سراسری حسابی مؤوجود دئییل.',
+	'centralauth-admin-setstatus-success' => 'بو سراسری حسابین وضعیتینی موفقیتله دییشدیردینیز.',
+	'centralauth-admin-status-reasons' => 'عمومی کیلیدلمه سبب‌لری
+** صرف واندالیزم مقصدلی حساب
+** صرف ایسپام مقصدلی حساب
+* عمومی کیلیدلمه-و-گیزلمه سبب‌لری
+** توهین جه ایستیفاده‌چی آدی
+** مناسیب سیز فردی معلومات‌لار',
 );
 
 /** Bashkir (башҡортса)
