@@ -2921,6 +2921,56 @@ $messages['azb'] = array(
 * عمومی کیلیدلمه-و-گیزلمه سبب‌لری
 ** توهین جه ایستیفاده‌چی آدی
 ** مناسیب سیز فردی معلومات‌لار',
+	'centralauth-admin-logsnippet' => 'اوولکی سراسری حساب دییشیک‌لیک‌لری',
+	'centralauth-admin-suppressreason' => '$ 1 طرفین‌دن سراسری اولا‌راق قاباقی آلیندی. سبب: $ 2', # Fuzzy
+	'globalusers' => 'مشترک ایستیفاده‌چی سیاهی‌سی',
+	'centralauth-listusers-locked' => 'باغلانمیش',
+	'centralauth-listusers-attached' => '[[User:$1 | یئرلی اولا‌راق مؤوجود]]', # Fuzzy
+	'centralauth-listusers-nolocal' => 'متصل اولمویوب و یا یئرلی اولا‌راق مؤوجود دئییل',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|سانی|سانییه}} اونجه',
+	'centralauth-prefs-status' => 'سراسری مشترک حسابین وضعیتی',
+	'centralauth-prefs-not-managed' => 'بیرلشمیش حساب ایستیفاده',
+	'centralauth-prefs-unattached' => 'تصدیقلنممیش',
+	'centralauth-prefs-complete' => 'هر شئی قایداسیندا‌دیر!',
+	'centralauth-prefs-migration' => 'کئچید حالیندا',
+	'centralauth-prefs-count-attached' => 'سیزین حسابینیز $1 لاییهه سایتیندا آکتیو‌دیر.', # Fuzzy
+	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1| پروژه| پروژه}} سیزین آدینیزدا دوغرولانمامیش حساب‌لار مؤوجود.', # Fuzzy
+	'centralauth-prefs-detail-unattached' => 'بو لاییهه سایتی ایستفادچی حسابا عاید اولا‌راق تصدیقلنمه‌دی.',
+	'centralauth-prefs-manage' => 'ایستفاده چی حسابین ایداره ائدیلمه‌سی',
+	'centralauth-prefs-view' => 'سراسری ایستیفاده‌چی معلوماتینا باخ',
+	'centralauth-renameuser-merged' => '$1 ایستیفاده‌چی‌سی بیرلشمیش گیریش سیستئمینه داشیندی.
+یئنی‌دن آدلان‌دیرماق، یئرلی ایستیفاده‌چی‌نین حسابینین آیریلماسینا سبب اولا‌جاق.',
+	'centralauth-renameuser-reserved' => '$2 ایستیفاده‌چی‌سی سراسری حساب اوچون آییرتیلمیشتیر.',
+	'centralauth-invalid-wiki' => 'بئله wiki وئریلن‌لر بازاسی یوخ: $1',
+	'centralauth-account-exists' => 'حساب یارادیلا: ایستنن ایستیفاده‌چی آدی بیرلشمیش داخیل سیستئمینده داها اول‌دن آلینمیش.',
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}} لاییهه‌لرینده سئسسیانیز آچیلیر:',
+	'centralauth-logout-progress' => 'دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده سئسسیانیز باغلانیلیر:',
+	'centralauth-login-no-others' => 'دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده آوتوماتیک اولا‌راق داخیل ائتدینیز.',
+	'centralauth-logout-no-others' => 'دیگر {{int:Centralauth-groupname}} پرویئکت‌لرین‌دن آوتوماتیک اولا‌راق چیخیش ائتدینیز.',
+	'centralauth-hidden-blockreason' => '$1 طرفین‌دن سراسری اولا‌راق $2 ایلده بو سببله گیزلندی: $3',
+	'centralauth-log-name' => 'سراسری حساب گونده‌لیگی',
+	'centralauth-log-header' => 'بو گونده‌لیک ایستفاده چی حساب آلتین‌داکی عملیات‌لاری داخیل‌دیر: سیلمه‌لر، کیلیدلمه و کیلیدی آچما‌لاری.',
+	'centralauth-log-entry-delete' => '"$1" ایستفاده چی حسابی سیلیندی',
+	'centralauth-log-entry-lock' => '"$1" ایستفاده چی حسابی باغلاندی',
+	'centralauth-log-entry-unlock' => '"$1" ایستفاده چی حسابینین آچدی',
+	'centralauth-log-entry-hide' => '"$1" ایستفاده چی حسابی گیزلندی',
+	'centralauth-log-entry-unhide' => '"$1" ایستفاده چی حسابینین گیزلی‌لیگی گؤتورولدو',
+	'centralauth-log-entry-lockandhide' => '"$1" ایستفاده چی حسابی باغلاندی و گیزلندی',
+	'centralauth-log-entry-chgstatus' => 'ایستفاده چی حساب "$1 اوچون وضعیت دییشدی: $2 نیزاملاندی؛ $3 نیزاملانما گؤتورولدو',
+	'centralauth-log-status-locked' => 'باغلانمیش',
+	'centralauth-log-status-hidden' => 'گیزلی',
+	'centralauth-log-status-oversighted' => 'گیزلنمیش',
+	'centralauth-log-status-none' => '(هئچ)',
+	'centralauth-rightslog-name' => 'سراسری حقوق‌لار گونده‌لیگی',
+	'centralauth-rightslog-entry-usergroups' => '$1 آدلی ایستیفاده‌چی‌نین ایستیفاده‌چی گروه‌لارین‌داکی عضو‌لوگو دییشدیریلدی: $2 ► $3',
+	'centralauth-rightslog-entry-groupperms' => '$1 آدلی ایستیفاده‌چی‌نین ایستیفاده‌چی قروپ‌لارین‌داکی عضو‌لوگو دییشدیریلدی: $2 ► $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1 اوچون قروپ ایجازه‌لری دییشدیریلدی. $2 علاوه اولوندو؛ $3 چیخاریلدی',
+	'centralauth-rightslog-entry-groupperms3' => '$1 اوچون محدود ویکی سئتی قروپو $2دن $3-ا دییشدیریلدی',
+	'centralauth-rightslog-header' => 'بو گونده‌لیک سراسری گروه لاردا عملیات‌لاری داخیل‌دیر: اوزولوک و ایجازه دییشیک‌لیک‌لری',
+	'centralauth-rightslog-set-optin' => 'داخیل اولما اساس‌لی‌دیر',
+	'centralauth-rightslog-set-optout' => 'چیخیش اساس‌لی‌دیر',
+	'autologin' => 'اوتماتیک گیریش',
+	'globalgroupmembership' => 'سراسری گروه‌لاردا عضوولوک',
 );
 
 /** Bashkir (башҡортса)
