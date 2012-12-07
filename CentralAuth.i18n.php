@@ -2818,7 +2818,7 @@ $messages['azb'] = array(
 	'centralauth-list-unattached-title' => 'غیر اتصال حساب‌لار',
 	'centralauth-list-unattached' => '"$1" حسابینین سیزه عاید اولدوغو آشاغی‌داکی سایت‌لاردا اوتوماتیک اولا‌راق تصدیق‌لنه؛ بؤیوک احتیمالا ایلک حسابینیزدان فرق‌لی بیر پسوورد ‌یه صاحب اولدوق‌لاری اوچون:',
 	'centralauth-foreign-link' => '$2دکی $1 ایستیفاده‌چی‌سی',
-	'centralauth-foreign-contributions' => '$1 ایشتیراک قونودا $2', # Fuzzy
+	'centralauth-foreign-contributions' => '$1ایشتیراکلی $2', # Fuzzy
 	'centralauth-merge-method-primary' => 'ائو ویکی‌سی',
 	'centralauth-merge-method-empty' => 'فالیت یوخدور',
 	'centralauth-merge-method-mail' => 'ایمیل له تصدیقلندی',
@@ -2922,18 +2922,23 @@ $messages['azb'] = array(
 ** توهین جه ایستیفاده‌چی آدی
 ** مناسیب سیز فردی معلومات‌لار',
 	'centralauth-admin-logsnippet' => 'اوولکی سراسری حساب دییشیک‌لیک‌لری',
-	'centralauth-admin-suppressreason' => '$ 1 طرفین‌دن سراسری اولا‌راق قاباقی آلیندی. سبب: $ 2', # Fuzzy
+	'centralauth-admin-suppressreason' => '$1 طرفین‌دن سراسری اولا‌راق قاباقی آلیندی. سبب: $2',
 	'globalusers' => 'مشترک ایستیفاده‌چی سیاهی‌سی',
 	'centralauth-listusers-locked' => 'باغلانمیش',
 	'centralauth-listusers-attached' => '[[User:$1 | یئرلی اولا‌راق مؤوجود]]', # Fuzzy
 	'centralauth-listusers-nolocal' => 'متصل اولمویوب و یا یئرلی اولا‌راق مؤوجود دئییل',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|سانی|سانییه}} اونجه',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|دقیق|دقیقه}} اول',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ساات|ساات}} اول', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$11|گون|گون}} اول', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|ای|ای}} اول', # Fuzzy
+	'centralauth-years-ago' => '$1{{PLURAL:$1|یل |یل}} اول',
 	'centralauth-prefs-status' => 'سراسری مشترک حسابین وضعیتی',
 	'centralauth-prefs-not-managed' => 'بیرلشمیش حساب ایستیفاده',
 	'centralauth-prefs-unattached' => 'تصدیقلنممیش',
 	'centralauth-prefs-complete' => 'هر شئی قایداسیندا‌دیر!',
 	'centralauth-prefs-migration' => 'کئچید حالیندا',
-	'centralauth-prefs-count-attached' => 'سیزین حسابینیز $1 لاییهه سایتیندا آکتیو‌دیر.', # Fuzzy
+	'centralauth-prefs-count-attached' => 'سیزین حسابینیز $1{{PLURAL:$1|پروژه|پروژه}} سایتیندا آکتیو‌دیر.', # Fuzzy
 	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1| پروژه| پروژه}} سیزین آدینیزدا دوغرولانمامیش حساب‌لار مؤوجود.', # Fuzzy
 	'centralauth-prefs-detail-unattached' => 'بو لاییهه سایتی ایستفادچی حسابا عاید اولا‌راق تصدیقلنمه‌دی.',
 	'centralauth-prefs-manage' => 'ایستفاده چی حسابین ایداره ائدیلمه‌سی',
@@ -2967,10 +2972,89 @@ $messages['azb'] = array(
 	'centralauth-rightslog-entry-groupperms2' => '$1 اوچون قروپ ایجازه‌لری دییشدیریلدی. $2 علاوه اولوندو؛ $3 چیخاریلدی',
 	'centralauth-rightslog-entry-groupperms3' => '$1 اوچون محدود ویکی سئتی قروپو $2دن $3-ا دییشدیریلدی',
 	'centralauth-rightslog-header' => 'بو گونده‌لیک سراسری گروه لاردا عملیات‌لاری داخیل‌دیر: اوزولوک و ایجازه دییشیک‌لیک‌لری',
+	'centralauth-rightslog-entry-newset' => '$2 wiki سئتی $1 اولا‌راق بو ویکیلئرلئ یارادیلدی: $3',
+	'centralauth-rightslog-entry-setrename' => '"$2" wiki سئتی‌نین آدی "$1" اولا‌راق دییشدیریلدی',
+	'centralauth-rightslog-entry-setnewtype' => '"$1" \'ین تیپی $2دن $3-ا دییشدیریلدی',
+	'centralauth-rightslog-entry-setchange' => '"$1" اوچون دییشن ویکی: علاوه اولوندو: $2؛ چیخاریلدی: $3',
+	'centralauth-rightslog-entry-deleteset' => '"$1" ویکی دستینی سیلدی',
 	'centralauth-rightslog-set-optin' => 'داخیل اولما اساس‌لی‌دیر',
 	'centralauth-rightslog-set-optout' => 'چیخیش اساس‌لی‌دیر',
 	'autologin' => 'اوتماتیک گیریش',
+	'centralauth-autologin-desc' => 'بو خصوصی صحیفه مئدیاویکی طرفین‌دن داهیلئن ایستیفاده.
+[[Special:UserLogin | گیریش ائتدیکده]]، مرکز داخیل سیستئمی ایسکانئرینیزه تلیمات وئریر و ایسکانئرینیز بو صحیفنی بوتون باغلانمیش دوماینی، شکیل علاقه‌لرینی ایستیفاده ائده‌رک ایستر.
+سیز بو صحیفنی تسدیقلمه معلوماتی اولما‌دان ایستدینیز، بونا گؤره هئچ بیر شئی ائدیلمه‌دی.', # Fuzzy
 	'globalgroupmembership' => 'سراسری گروه‌لاردا عضوولوک',
+	'globalgrouppermissions' => 'سراسری گروه لار رهبرلیگی',
+	'centralauth-globalgroupperms-grouplist' => 'آشاغی‌داکی سراسری گروه لار قورولوب.
+بیر گروه لار تعیین اولونموش ایجازه‌لری گؤره بیلر و یا دییش‌دیره بیلرسینیز، اگر ایجازه‌نیز وارسا.
+بیر گروه بوتون حقوق‌لاری علین‌دن آلینا‌راق سیلینه بیلر.',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|باخ/دییشدیر]])',
+	'centralauth-globalgroupperms-nogroups' => 'سراسری گروه تاپیلمادی.',
+	'centralauth-existinggroup-legend' => 'مؤوجود اولان گروه لار',
+	'centralauth-newgroup-legend' => 'یئنی گروه یارات',
+	'centralauth-newgroup-intro' => 'بو فورمو یئنی بیر گروها ایجازه تعیین ائتمک اوچون ایستیفاده ائده بیلرسینیز.
+اونوتمایین کی بیر گروه، اونا ایجازه‌لر آتانمادیکچا وار اولا بیلمز.',
+	'centralauth-globalgroupperms-newgroupname' => 'یئنی گروه آدی:',
+	'centralauth-globalgroupperms-creategroup-submit' => 'حقوق وئر',
+	'centralauth-editgroup-subtitle' => 'دییشدیر $1',
+	'centralauth-editgroup-fieldset' => '$1 اوچون حقوق‌لار',
+	'centralauth-editgroup-name' => 'گروه آدی',
+	'centralauth-editgroup-display' => 'گروهون یئرلی آدی:',
+	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:گروه-$1|دییشدیر]])', # Fuzzy
+	'centralauth-editgroup-member' => 'گروه عضو‌لری‌نین یئرلیلشدیریلمیش آدلاری:',
+	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:گروه-$1-member|دییشدیر]])', # Fuzzy
+	'centralauth-editgroup-members' => 'عضو‌لرین سیاهی‌سی:',
+	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|سلاهیتینه صاحب ایستیفاده‌چی‌لر سیاهی‌سی$2]]',
+	'centralauth-editgroup-restrictions' => 'بو گروهون تأثیرلی اولدوغو wiki سئت‌لری:',
+	'centralauth-editgroup-noset' => '(هئچ بیری)',
+	'centralauth-editgroup-submit' => 'گروه ایجازه‌لرینی دییشیک‌لیک‌لری قئید ائت',
+	'centralauth-editgroup-perms' => 'تعیین اولونموش ایجازه‌لر:',
+	'centralauth-editgroup-reason' => 'ندن:',
+	'centralauth-editgroup-success' => 'گروه لار ایجازه‌لری دییشدیریلدی',
+	'centralauth-editgroup-success-text' => '$ 1 قروپو اوچون قروپ ایجازه‌لرینی موفقیتله دییشدیردینیز.
+[[Special:GlobalGroupPermissions| گروه رهبرلیگینه گئری دؤنون]]', # Fuzzy
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets| دییش‌دیر]])',
+	'centralauth-globalgrouppermissions-knownwiki' => 'بیر حسابا صاحب اولونان ویکی:',
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1 قلوبال ایستیفاده‌چی‌سی ایفاده ویکی('' $2 '')تأثیرلی دئییل.
+یانلیش ایستیفاده‌چییه سلاهیت تعیین اولونما‌لارینا چالیشیر اولا بیلرسینیز!",
+	'centralauth-editset' => 'ویکی دست‌لری',
+	'centralauth-editset-legend-rw' => 'ویکی مرکزینی دییشدیر یا دا یارات',
+	'centralauth-editset-legend-ro' => 'ویکی چوخلوق‌لاری سیاهی‌سی',
+	'centralauth-editset-intro-rw' => 'آشاغی‌داکی wiki سئت‌لری اونسوز دا یارادیلمیش.
+هر هانسی بیرینی گؤره بیلر و دییش‌دیره بیلرسینیز، یا دا یئنی بیر سئت میدانا گتیره بیلرسینیز.',
+	'centralauth-editset-intro-ro' => 'آشاغی‌داکی، مؤوجود wiki کومئلئری‌نین سیاهی‌سی‌دیر.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|سیل]])',
+	'centralauth-editset-new' => 'یئنی دست یارات',
+	'centralauth-editset-notfound' => '"$1" ویکی دستی تاپیلمادی.',
+	'centralauth-editset-optin' => 'داخیل اولماق اساس‌لی (یالنیز گؤستریلن ویکی داخیل‌دیر)',
+	'centralauth-editset-optout' => 'خاریجینده قالماق اساس‌لی (گؤستریلن خاریجینده بوتون ویکی داخیل‌دیر)',
+	'centralauth-editset-legend-edit' => '"$1" wiki سئتی دییشدیریلیر',
+	'centralauth-editset-legend-view' => '"$1" wiki هینی',
+	'centralauth-editset-legend-new' => 'یئنی wiki سئتی یارادیلیر',
+	'centralauth-editset-legend-delete' => '"$ 1" wiki هینی سیلینیر', # Fuzzy
+	'centralauth-editset-subtitle' => '<[[Special:WikiSets| چوخلوق سیاهی‌سی]]',
+	'centralauth-editset-name' => 'آد',
+	'centralauth-editset-type' => 'تیپ',
+	'centralauth-editset-wikis' => 'ویکی‌لر:',
+	'centralauth-editset-reason' => 'ندن:',
+	'centralauth-editset-submit' => 'گؤندر',
+	'centralauth-editset-submit-delete' => 'سیل',
+	'centralauth-editset-badname' => 'اعتبارسیز یا دا بوش سئت آدی.',
+	'centralauth-editset-badtype' => 'اعتبارسیز سئت تیپی.',
+	'centralauth-editset-setexists' => 'بو آددا بیر سئت اونسوز دا مؤوجود',
+	'centralauth-editset-nowikis' => 'هئچ wiki ایفاده ائدیلمه‌دی.',
+	'centralauth-editset-nouse' => '(هئچ بیری)',
+	'centralauth-editset-usage' => 'ایستیفاده اولوندوغو گروه‌لار:',
+	'centralauth-editset-badwikis' => 'بو {{PLURAL:$2|ویکی|ویکی‌لر}} مؤوجود دئییل: $1',
+	'centralauth-editset-success' => 'ویکی سئتی اوغورلا دییشدیریلدی',
+	'centralauth-editset-success-delete' => 'ویکی سئتی اوغورلا دییشدیریلدی',
+	'centralauth-editset-return' => 'آنا گؤرونوشه قاییت',
+	'right-globalgroupmembership' => 'سراسری گروه‌لاردا حقوق‌لاری دییش‌دیر',
+	'right-centralauth-unmerge' => 'سراسری حسابی آییر',
+	'right-centralauth-lock' => 'سراسری حسابی باغلا و یا گیزله',
+	'right-centralauth-oversight' => 'سراسری حسابی باغلا',
+	'right-centralauth-merge' => 'حساب‌لاری بیرلش‌دیر',
+	'right-globalgrouppermissions' => 'سراسری گروه لاری ایداره ائت',
 );
 
 /** Bashkir (башҡортса)
