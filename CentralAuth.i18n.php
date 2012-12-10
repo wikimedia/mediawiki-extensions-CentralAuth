@@ -2755,11 +2755,12 @@ Səbəb: $1',
 /** South Azerbaijani (تورکجه)
  * @author Amir a57
  * @author E THP
+ * @author Mousa
  */
 $messages['azb'] = array(
 	'mergeaccount' => 'حساب بیرلشدیرمه حالی',
 	'centralauth-groupname' => 'ویکی مئدیا بنیادی',
-	'centralauth-desc' => '{{int:Centralauth-groupname}} ویکیلریندی [[Special:MergeAccount | حساب بیرلش‌دیر]]', # Fuzzy
+	'centralauth-desc' => '{{int:Centralauth-groupname}} ویکیلرینده [[Special:MergeAccount|حساب بیرلش‌دیر]]',
 	'centralauth-mergeaccount-desc' => 'تک ایستیفاده‌چی گیریشی اوچون [[Special:MergeAccount| چوخ‌لو حساب‌لاری بیرلشدیریر]]',
 	'centralauth-merge-denied' => 'عوذر ایستییریک، بو صحیفه‌یه داخیل اولماق اوچون ایجازه وئریلمیر.',
 	'centralauth-merge-notlogged' => 'خاهیش ائدیریک بوتون حساب‌لارینیزی تام اولا‌راق بیرلشدیریلدیگینده ایداره ائتمک اوچون <span class="plainlinks"> [$1داخیل اولون] </span>.',
@@ -2818,7 +2819,7 @@ $messages['azb'] = array(
 	'centralauth-list-unattached-title' => 'غیر اتصال حساب‌لار',
 	'centralauth-list-unattached' => '"$1" حسابینین سیزه عاید اولدوغو آشاغی‌داکی سایت‌لاردا اوتوماتیک اولا‌راق تصدیق‌لنه؛ بؤیوک احتیمالا ایلک حسابینیزدان فرق‌لی بیر پسوورد ‌یه صاحب اولدوق‌لاری اوچون:',
 	'centralauth-foreign-link' => '$2دکی $1 ایستیفاده‌چی‌سی',
-	'centralauth-foreign-contributions' => '$1ایشتیراکلی $2', # Fuzzy
+	'centralauth-foreign-contributions' => '$2-ده {{PLURAL:$1|بیر|$1}} چالیشما',
 	'centralauth-merge-method-primary' => 'ائو ویکی‌سی',
 	'centralauth-merge-method-empty' => 'فالیت یوخدور',
 	'centralauth-merge-method-mail' => 'ایمیل له تصدیقلندی',
@@ -2925,21 +2926,21 @@ $messages['azb'] = array(
 	'centralauth-admin-suppressreason' => '$1 طرفین‌دن سراسری اولا‌راق قاباقی آلیندی. سبب: $2',
 	'globalusers' => 'مشترک ایستیفاده‌چی سیاهی‌سی',
 	'centralauth-listusers-locked' => 'باغلانمیش',
-	'centralauth-listusers-attached' => '[[User:$1 | یئرلی اولا‌راق مؤوجود]]', # Fuzzy
+	'centralauth-listusers-attached' => '[[User:$1|یئرلی اولا‌راق واردیر]]',
 	'centralauth-listusers-nolocal' => 'متصل اولمویوب و یا یئرلی اولا‌راق مؤوجود دئییل',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|سانی|سانییه}} اونجه',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|دقیق|دقیقه}} اول',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ساات|ساات}} اول', # Fuzzy
-	'centralauth-days-ago' => '$1 {{PLURAL:$11|گون|گون}} اول', # Fuzzy
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|ای|ای}} اول', # Fuzzy
+	'centralauth-hours-ago' => '{{PLURAL:$1|بیر|$1}} ساعات اؤنجه',
+	'centralauth-days-ago' => '{{PLURAL:$1|بیر|$1}} گون اؤنجه',
+	'centralauth-months-ago' => '{{PLURAL:$1|بیر|$1}} آی اؤنجه',
 	'centralauth-years-ago' => '$1{{PLURAL:$1|یل |یل}} اول',
 	'centralauth-prefs-status' => 'سراسری مشترک حسابین وضعیتی',
 	'centralauth-prefs-not-managed' => 'بیرلشمیش حساب ایستیفاده',
 	'centralauth-prefs-unattached' => 'تصدیقلنممیش',
 	'centralauth-prefs-complete' => 'هر شئی قایداسیندا‌دیر!',
 	'centralauth-prefs-migration' => 'کئچید حالیندا',
-	'centralauth-prefs-count-attached' => 'سیزین حسابینیز $1{{PLURAL:$1|پروژه|پروژه}} سایتیندا آکتیو‌دیر.', # Fuzzy
-	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1| پروژه| پروژه}} سیزین آدینیزدا دوغرولانمامیش حساب‌لار مؤوجود.', # Fuzzy
+	'centralauth-prefs-count-attached' => 'سیزین حسابینیز {{PLURAL:$1|بیر|$1}} پروژه سایتیندا آکتیو‌دیر.',
+	'centralauth-prefs-count-unattached' => '{{PLURAL:$1|بیر|$1}} پروژه‌ده سیزین آدینیزدا دوغرولانمامیش حسابلار قالیر.',
 	'centralauth-prefs-detail-unattached' => 'بو لاییهه سایتی ایستفادچی حسابا عاید اولا‌راق تصدیقلنمه‌دی.',
 	'centralauth-prefs-manage' => 'ایستفاده چی حسابین ایداره ائدیلمه‌سی',
 	'centralauth-prefs-view' => 'سراسری ایستیفاده‌چی معلوماتینا باخ',
@@ -14465,7 +14466,7 @@ $messages['it'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Unifica gli account]] sui siti gestiti da {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Aggiunge la tecnologia di AntiSpoof a CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unifica più account]] per il login unico',
-	'centralauth-merge-denied' => 'Non si possiedono i permessi necessari per accedere a questa pagina.',
+	'centralauth-merge-denied' => 'Non si dispone dei permessi necessari per accedere a questa pagina.',
 	'centralauth-merge-notlogged' => 'Si prega di <span class="plainlinks">[$1 effettuare il login]</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
 	'centralauth-merge-welcome' => "'''Il tuo account utente non è ancora stato importato nel sistema di identificazione unificato di {{int:Centralauth-groupname}}.'''
 
