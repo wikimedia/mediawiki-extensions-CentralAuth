@@ -210,6 +210,8 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-logsnippet'         => 'Previous global account changes',
 	'centralauth-admin-suppressreason'     => 'Globally suppressed by $1 for following reason: $2',
 
+	// API Interface
+	'centralauth-api-no-action' => 'No updates to the user were requested.',
 
 	// List of global users
 	'globalusers'                    => 'Global user list',
@@ -252,6 +254,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
+	'centralauth-not-authorized'     => 'You do not have the necessary privileges to perform that action',
 
 	// Logging
 	'centralauth-log-name'         => 'Global account log',
@@ -683,6 +686,8 @@ This "oversighted" stands for "hidden completely".
 * $1 is the requested username {{gender}}',
 	'centralauth-readonly' => 'Error message displayed when the CentralAuth database is locked.',
 	'centralauth-readonlytext' => 'Description of the centralauth-readonlytext error',
+	'centralauth-not-authorized' => 'Error message when the administrator does not have rights to perform the requested action',
+	'centralauth-api-no-action' => 'Error message when the administrator did not specify an action to perform on the user over the api',
 	'right-globalgroupmembership' => '{{doc-right|globalgroupmembership}}',
 	'right-centralauth-autoaccount' => '{{doc-right|centralauth-autoaccount}}',
 	'right-centralauth-unmerge' => "{{doc-right|centralauth-unmerge}}

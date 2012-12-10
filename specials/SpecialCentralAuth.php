@@ -119,91 +119,33 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->logAction( 'delete', $this->mUserName, $this->getRequest()->getVal( 'reason' ) );
 			}
 		} elseif ( $this->mMethod == 'set-status' && $this->mCanLock ) {
+
 			$setLocked = $this->getRequest()->getBool( 'wpStatusLocked' );
 			$setHidden = $this->getRequest()->getVal( 'wpStatusHidden' );
-			$isLocked = $globalUser->isLocked();
-			$oldHiddenLevel = $globalUser->getHiddenLevel();
-			$lockStatus = $hideStatus = null;
-			$added = array();
-			$removed = array();
-
-			// Sanitizing input value...
-			$hiddenLevels = array(
-				CentralAuthUser::HIDDEN_NONE,
-				CentralAuthUser::HIDDEN_LISTS,
-				CentralAuthUser::HIDDEN_OVERSIGHT );
-			if ( !in_array( $setHidden, $hiddenLevels ) )
-				$setHidden = '';
-
-			if ( !$isLocked && $setLocked ) {
-				$lockStatus = $globalUser->adminLock();
-				$added[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
-			} elseif ( $isLocked && !$setLocked ) {
-				$lockStatus = $globalUser->adminUnlock();
-				$removed[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
-			}
-
 			$reason = $this->getRequest()->getText( 'wpReasonList' );
 			$reasonDetail = $this->getRequest()->getText( 'wpReason' );
+
 			if ( $reason == 'other' ) {
 				$reason = $reasonDetail;
 			} elseif ( $reasonDetail ) {
 				$reason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() . $reasonDetail;
 			}
 
-			if ( $oldHiddenLevel != $setHidden ) {
-				$hideStatus = $globalUser->adminSetHidden( $setHidden );
-				switch( $setHidden ) {
-					case CentralAuthUser::HIDDEN_NONE:
-						$removed[] = $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT ?
-							$this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text() :
-							$this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
-						break;
-					case CentralAuthUser::HIDDEN_LISTS:
-						$added[] = $this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
-						if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
-							$removed[] = $this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
-						break;
-					case CentralAuthUser::HIDDEN_OVERSIGHT:
-						$added[] = $this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
-						if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_LISTS )
-							$removed[] = $this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
-						break;
-				}
+			$status = $globalUser->adminLockHide( $setLocked, $setHidden, $reason, $this->getContext() );
 
-				if ( $setHidden == CentralAuthUser::HIDDEN_OVERSIGHT )
-					$globalUser->suppress( $reason );
-				elseif ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
-					$globalUser->unsuppress( $reason );
-			}
-
-			$good =
-				( is_null( $lockStatus ) || $lockStatus->isGood() ) &&
-				( is_null( $hideStatus ) || $hideStatus->isGood() );
-
-			// Logging etc
-			if ( $good && ( count( $added ) || count( $removed ) ) ) {
-				$added = count( $added ) ?
-					implode( ', ', $added ) : $this->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
-				$removed = count( $removed ) ?
-					implode( ', ', $removed ) : $this->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
-
+			if ( $status->isGood() && $status->successCount > 0 ) {
 				$this->logAction(
-									'setstatus',
-									$this->mUserName,
-									$reason,
-									array( $added, $removed ),
-									$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT
-								);
+					'setstatus',
+					$this->mUserName,
+					$reason,
+					$status->success,
+					$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT
+				);
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
-			} elseif ( !$good ) {
-				if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
-					$this->showStatusError( $lockStatus->getWikiText() );
-				}
-				if ( !is_null( $hideStatus ) && !$hideStatus->isGood() ) {
-					$this->showStatusError( $hideStatus->getWikiText() );
-				}
+			} elseif ( !$status->isGood() ) {
+				$this->showStatusError( $status->getWikiText() );
 			}
+
 		} else {
 			$this->showError( 'centralauth-admin-bad-input' );
 		}
@@ -740,7 +682,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param $params array
 	 * @param $suppressLog bool
 	 */
-	function logAction( $action, $target, $reason = '', $params = array(), $suppressLog = false ) {
+	static function logAction( $action, $target, $reason = '', $params = array(), $suppressLog = false ) {
 		$logType = $suppressLog ? 'suppress' : 'globalauth';	// Not centralauth because of some weird length limitiations
 		$log = new LogPage( $logType );
 		$log->addEntry( $action, Title::newFromText( "User:{$target}@global" ), $reason, $params );
