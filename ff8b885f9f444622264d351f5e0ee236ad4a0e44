@@ -33,6 +33,24 @@
       "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//zpQ\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-11T22:32:23Z",
+      "side": 1,
+      "message": "This is the result properties, which always returns a boolean true or false.",
+      "parentUuid": "AAADbX//zrA\u003d",
+      "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
