@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//zoU\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2012-12-11T22:40:31Z",
+      "side": 1,
+      "message": "See comment below",
+      "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//zrA\u003d",
         "filename": "api/ApiSetGlobalAccountStatus.php",
         "patchSetId": 8
@@ -48,6 +65,24 @@
       "side": 1,
       "message": "This is the result properties, which always returns a boolean true or false.",
       "parentUuid": "AAADbX//zrA\u003d",
+      "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//zoY\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2012-12-11T22:40:31Z",
+      "side": 1,
+      "message": "Sorry, that comment should have been on line 152",
+      "parentUuid": "AAADbX//zpQ\u003d",
       "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
