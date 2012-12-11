@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//zrI\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2012-12-11T22:15:02Z",
+      "side": 1,
+      "message": "As Hoo said also, locked will never be null here, since locked is a bool, and ApiBase translates this into a getCheck call.",
+      "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//zrA\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2012-12-11T22:15:02Z",
+      "side": 1,
+      "message": "As mentioned above, because of this, the usage is a little misleading. Passing in locked\u003dfalse results in $setLocked getting set to true, since locked was passed in. Maybe use a string type with values of either \u0027true\u0027 or \u0027false\u0027?",
+      "revId": "ff8b885f9f444622264d351f5e0ee236ad4a0e44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
