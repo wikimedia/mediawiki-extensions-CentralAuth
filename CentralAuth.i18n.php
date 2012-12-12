@@ -1987,6 +1987,7 @@ $messages['as'] = array(
 	'centralauth-disabled-dryrun' => "একাউণ্ট একত্ৰীকৰণ বৰ্তমান ডেম'/ডিবাগিং অৱস্থাত আছে, গতিকে মূল একত্ৰীকৰণ কাম নিষ্ক্ৰিয় হৈ আছে।
 ক্ষমা কৰিব!",
 	'centralauth-error-locked' => 'আপুনি সম্পাদনা কৰিব নোৱাৰে কাৰণ আপোনাৰ একাউণ্টটো বন্ধ হৈ আছে।',
+	'centralauth-error-unmerged' => 'আপুনি সম্পাদনা কৰিব নোৱাৰে কাৰণ আপোনাৰ একাউণ্টটো একত্ৰীকৰণ কৰা হোৱা নাই।',
 	'centralauth-readmore-text' => "''[[meta:Help:Unified login|'''একত্ৰিত লগ্‌ ইন'''ৰ বিষয়ে অধিক জানক]]…''",
 	'centralauth-list-home-title' => 'মুখ্য ৱিকি',
 	'centralauth-list-home-dryrun' => "এই ৱিকিত দিয়া গুপ্তশব্দ আৰু ই-মেইল ঠিকনা আপোনাৰ একত্ৰিত একাউণ্টৰ বাবে ব্যৱহৃত হ'ব।",
@@ -2075,6 +2076,7 @@ $messages['as'] = array(
 সকলো স্থানীয় একাউণ্ট সক্ৰিয় হৈ থাকিব।
 একত্ৰীকৰণৰ পূৰ্বে সৃষ্টি কৰা স্থানীয় একাউণ্টসমূহৰ গুপ্তশব্দ আগৰ ৰূপলৈ ঘূৰি যাব।",
 	'centralauth-admin-delete-button' => 'এই একাউণ্ট বিলোপ কৰক',
+	'centralauth-admin-delete-confirm' => 'আপুনি এই একাউণ্টটো সঁচাকৈয়ে বিলোপ কৰিব বিচাৰিছে নেকি?',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>"ৰ বাবে গোলকীয় একাউণ্ট সফলতাৰে বিলোপ কৰা হ\'ল',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>"ৰ বাবে কোনো গোলকীয় একাউন্ট নাই',
 	'centralauth-admin-delete-nonexistent' => 'ত্ৰুটি: গোলকীয় একাউণ্ট "<nowiki>$1</nowiki>"ৰ কোনো অস্তিত্ব নাই।',
@@ -2233,6 +2235,7 @@ $3 আঁতৰোৱা হ'ল",
 	'centralauth-editset-success' => 'ৱিকি সংহতি সফলতাৰে সলনি কৰা হৈছে।',
 	'centralauth-editset-success-delete' => 'ৱিকি সংহতি সফলতাৰে বিলোপ কৰা হৈছে।',
 	'centralauth-editset-return' => 'মুখ্য দৰ্শনলৈ ঘূৰি যাওক',
+	'centralauth-block-already-locked' => 'সদস্য [[Special:CentralAuth/$1|$1]]ক ইতিমধ্যে গোলকীয়ভাৱে বাৰণ কৰা হৈছে।',
 	'centralauth-readonly' => 'CentralAuth তথ্যকোষ বন্ধ',
 	'centralauth-readonlytext' => "নতুন প্ৰৱেশ আৰু আন সালসলনিৰ বাবে CentralAuth তথ্যকোষ বন্ধ কৰি ৰখা হৈছে। নিয়মিত চোৱাচিতা শেষ হ'লেই ই স্বাভাৱিক অৱস্থালৈ ঘূৰি আহিব।",
 	'right-globalgroupmembership' => 'গোলকীয় গোটৰ সদস্যপদ সম্পাদনা কৰক',
@@ -2982,8 +2985,8 @@ $messages['azb'] = array(
 	'centralauth-rightslog-set-optout' => 'چیخیش اساس‌لی‌دیر',
 	'autologin' => 'اوتماتیک گیریش',
 	'centralauth-autologin-desc' => 'بو خصوصی صحیفه مئدیاویکی طرفین‌دن داهیلئن ایستیفاده.
-[[Special:UserLogin | گیریش ائتدیکده]]، مرکز داخیل سیستئمی ایسکانئرینیزه تلیمات وئریر و ایسکانئرینیز بو صحیفنی بوتون باغلانمیش دوماینی، شکیل علاقه‌لرینی ایستیفاده ائده‌رک ایستر.
-سیز بو صحیفنی تسدیقلمه معلوماتی اولما‌دان ایستدینیز، بونا گؤره هئچ بیر شئی ائدیلمه‌دی.', # Fuzzy
+[[Special:UserLogin|گیریش ائتدیکده]]، مرکز داخیل سیستئمی ایسکانئرینیزه تلیمات وئریر و ایسکانئرینیز بو صحیفنی بوتون باغلانمیش دوماینی، شکیل علاقه‌لرینی ایستیفاده ائده‌رک ایستر.
+سیز بو صحیفنی تسدیقلمه معلوماتی اولما‌دان ایستدینیز، بونا گؤره هئچ بیر شئی ائدیلمه‌دی.',
 	'globalgroupmembership' => 'سراسری گروه‌لاردا عضوولوک',
 	'globalgrouppermissions' => 'سراسری گروه لار رهبرلیگی',
 	'centralauth-globalgroupperms-grouplist' => 'آشاغی‌داکی سراسری گروه لار قورولوب.
@@ -3001,9 +3004,9 @@ $messages['azb'] = array(
 	'centralauth-editgroup-fieldset' => '$1 اوچون حقوق‌لار',
 	'centralauth-editgroup-name' => 'گروه آدی',
 	'centralauth-editgroup-display' => 'گروهون یئرلی آدی:',
-	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:گروه-$1|دییشدیر]])', # Fuzzy
+	'centralauth-editgroup-display-edit' => '$2([[MediaWiki:Group-$1|دییشدیر]])',
 	'centralauth-editgroup-member' => 'گروه عضو‌لری‌نین یئرلیلشدیریلمیش آدلاری:',
-	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:گروه-$1-member|دییشدیر]])', # Fuzzy
+	'centralauth-editgroup-member-edit' => '$2([[MediaWiki:Group-$1-member|دییشدیر]])',
 	'centralauth-editgroup-members' => 'عضو‌لرین سیاهی‌سی:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|سلاهیتینه صاحب ایستیفاده‌چی‌لر سیاهی‌سی$2]]',
 	'centralauth-editgroup-restrictions' => 'بو گروهون تأثیرلی اولدوغو wiki سئت‌لری:',
@@ -3012,8 +3015,8 @@ $messages['azb'] = array(
 	'centralauth-editgroup-perms' => 'تعیین اولونموش ایجازه‌لر:',
 	'centralauth-editgroup-reason' => 'ندن:',
 	'centralauth-editgroup-success' => 'گروه لار ایجازه‌لری دییشدیریلدی',
-	'centralauth-editgroup-success-text' => '$ 1 قروپو اوچون قروپ ایجازه‌لرینی موفقیتله دییشدیردینیز.
-[[Special:GlobalGroupPermissions| گروه رهبرلیگینه گئری دؤنون]]', # Fuzzy
+	'centralauth-editgroup-success-text' => '$1 قروپو اوچون قروپ ایجازه‌لرینی موفقیتله دییشدیردینیز.
+[[Special:GlobalGroupPermissions|گروه رهبرلیگینه گئری دؤنون]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets| دییش‌دیر]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'بیر حسابا صاحب اولونان ویکی:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1 قلوبال ایستیفاده‌چی‌سی ایفاده ویکی('' $2 '')تأثیرلی دئییل.
@@ -3032,7 +3035,7 @@ $messages['azb'] = array(
 	'centralauth-editset-legend-edit' => '"$1" wiki سئتی دییشدیریلیر',
 	'centralauth-editset-legend-view' => '"$1" wiki هینی',
 	'centralauth-editset-legend-new' => 'یئنی wiki سئتی یارادیلیر',
-	'centralauth-editset-legend-delete' => '"$ 1" wiki هینی سیلینیر', # Fuzzy
+	'centralauth-editset-legend-delete' => '"$1" wiki هینی سیلینیر',
 	'centralauth-editset-subtitle' => '<[[Special:WikiSets| چوخلوق سیاهی‌سی]]',
 	'centralauth-editset-name' => 'آد',
 	'centralauth-editset-type' => 'تیپ',
