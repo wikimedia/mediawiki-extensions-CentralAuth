@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//zXc\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-12T22:12:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADbX//zfU\u003d",
+      "revId": "54e25d258373b7c313dbe5fc4e499f78124d5e25",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//zfQ\u003d",
         "filename": "api/ApiDeleteGlobalAccount.php",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//zXg\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-12T22:12:45Z",
+      "side": 1,
+      "message": "adminDelete just returns Status::newGood... I don\u0027t think successCount is set here, unless you want me to fix that.",
+      "parentUuid": "AAADbX//zfQ\u003d",
+      "revId": "54e25d258373b7c313dbe5fc4e499f78124d5e25",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//zfI\u003d",
         "filename": "api/ApiDeleteGlobalAccount.php",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2012-12-11T23:34:04Z",
       "side": 1,
       "message": "It would be good to add a salt",
+      "revId": "54e25d258373b7c313dbe5fc4e499f78124d5e25",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//yfM\u003d",
+        "filename": "api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-12T22:12:45Z",
+      "side": 1,
+      "message": "I don\u0027t know how to do this properly.",
+      "parentUuid": "AAADbX//zfI\u003d",
       "revId": "54e25d258373b7c313dbe5fc4e499f78124d5e25",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
