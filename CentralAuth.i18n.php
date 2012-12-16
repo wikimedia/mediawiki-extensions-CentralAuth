@@ -379,6 +379,9 @@ You may view and modify any of them, or create a new set.',
 	'right-centralauth-oversight'   => 'Suppress global account',
 	'right-centralauth-merge'       => 'Merge their account',
 	'right-globalgrouppermissions'  => 'Manage global groups',
+
+	// AbuseFilter integration for global_user_groups variable - see CentralAuthHooks::abuseFilter*
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in',
 );
 
 /** Message documentation (Message documentation)
@@ -693,6 +696,7 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 {{doc-singularthey}}',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|abusefilter-edit-builder-group-group-vars}}.',
 );
 
 /** Afrikaans (Afrikaans)
