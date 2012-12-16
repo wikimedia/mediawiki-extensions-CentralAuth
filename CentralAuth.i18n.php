@@ -82,11 +82,11 @@ Sorry!",
 	'centralauth-list-home-title'       => 'Home wiki',
 	'centralauth-list-home-dryrun'      => 'The password and email address set at this wiki will be used for your unified account.',
 	'centralauth-list-attached-title'   => 'Attached accounts',
-	'centralauth-list-attached'         => 'The account named "$1" on each of the following sites has been automatically attached to the unified account:',
-	'centralauth-list-attached-dryrun'  => 'The account named "$1" on each of the following sites will be automatically attached to the unified account:',
+	'centralauth-list-attached'         => 'The accounts named "$1" on each of the following sites have been automatically attached to the unified account:',
+	'centralauth-list-attached-dryrun'  => 'The accounts named "$1" on each of the following sites will be automatically attached to the unified account:',
 	'centralauth-list-unattached-title' => 'Unattached accounts',
-	'centralauth-list-unattached'       => 'The account "$1" could not be automatically confirmed as belonging to you on the following sites;
-most likely they have a different password from your primary account:',
+	'centralauth-list-unattached'       => 'The {{PLURAL:$2|account|accounts}} named "$1" could not be automatically confirmed as belonging to you on the following {{PLURAL:$2|site|sites}};
+most likely {{PLURAL:$2|it has|they have}} a different password from your primary account:',
 	'centralauth-foreign-link'          => 'User $1 on $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribution|contributions}} on $2',
 
@@ -559,7 +559,8 @@ Parameters:
 * $1 is an account/user name.',
 	'centralauth-list-unattached-title' => '{{Identical|Unattached accounts}}',
 	'centralauth-list-unattached' => 'Used in Special:MergeAccount. Parameters:
-* $1 - username',
+* $1 - username
+* $2 - number of unattached accounts',
 	'centralauth-foreign-link' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 Parameters:
