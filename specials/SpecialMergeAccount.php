@@ -361,7 +361,8 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param $remainder
 	 */
 	function showStatus( $merged, $remainder ) {
-		if ( count( $remainder ) > 0 ) {
+		$remainderCount = count( $remainder );
+		if ( $remainderCount > 0 ) {
 			$this->getOutput()->setPageTitle( $this->msg( 'centralauth-incomplete' ) );
 			$this->getOutput()->addWikiMsg( 'centralauth-incomplete-text' );
 		} else {
@@ -379,8 +380,11 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( $remainder ) {
 			$this->getOutput()->addHTML( Xml::element( 'hr' ) );
-			$this->getOutput()->addWikiMsg( 'centralauth-list-unattached',
-				$this->mUserName );
+			$this->getOutput()->addWikiMsg(
+				'centralauth-list-unattached',
+				$this->mUserName,
+				$remainderCount
+			);
 			$this->getOutput()->addHTML( $this->listUnattached( $remainder ) );
 
 			// Try the password form!
