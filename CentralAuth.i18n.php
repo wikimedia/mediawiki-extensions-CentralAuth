@@ -86,10 +86,10 @@ Sorry!",
 	'centralauth-list-home-title'       => 'Home wiki',
 	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account.',
 	'centralauth-list-attached-title'   => 'Attached accounts',
-	'centralauth-list-attached'         => 'The account named "$1" on each of the following sites has been automatically attached to the unified account:',
-	'centralauth-list-attached-dryrun'  => 'The account named "$1" on each of the following sites will be automatically attached to the unified account:',
+	'centralauth-list-attached'         => 'The accounts named "$1" on each of the following sites have been automatically attached to the unified account:',
+	'centralauth-list-attached-dryrun'  => 'The accounts named "$1" on each of the following sites will be automatically attached to the unified account:',
 	'centralauth-list-unattached-title' => 'Unattached accounts',
-	'centralauth-list-unattached'       => 'The account "$1" could not be automatically confirmed as belonging to you on the following sites;
+	'centralauth-list-unattached'       => 'The accounts "$1" could not be automatically confirmed as belonging to you on the following sites;
 most likely they have a different password from your primary account:',
 	'centralauth-foreign-link'          => 'User $1 on $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribution|contributions}} on $2',
@@ -105,7 +105,7 @@ most likely they have a different password from your primary account:',
 	'centralauth-merge-method-primary-desc'  => 'This is the wiki at which the account was initially merged.
 Note that it may differ from the real home wiki of that user.',
 	'centralauth-merge-method-empty-desc'    => 'Indicates that the local account was merged because it had no edits.',
-	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its email address matched the e-mail address of the main account.',
+	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its e-mail address matched the e-mail address of the main account.',
 	'centralauth-merge-method-password-desc' => 'Indicates that the local account was merged because user specified a valid password for it.',
 	'centralauth-merge-method-admin-desc'    => 'Indicates that the local account was merged manually by stewards.
 That feature is disabled now because of security reasons.',
@@ -25798,7 +25798,7 @@ $messages['sa'] = array(
 	'centralauth-merge-step2-submit' => 'अभिलेखविवरणं दृढीक्रियताम्',
 	'centralauth-merge-dryrun-complete' => 'विद्यमानाः सर्वे अभिलेखाः स्वचालितरूपेण संयोक्तुं शक्यन्ते !
 भवतः अभिलेखे न किमपि परिवर्तनं कृतम् एतावता ।',
-	'centralauth-merge-dryrun-incomplete' => 'भवान् अग्रे अनुवर्तयितुम् अर्हति, किन्तु केचन अभिलेखाः स्वयं दृढीकर्तुं न शक्यते, झटिति तान् संयोक्तुं न शक्यते । 
+	'centralauth-merge-dryrun-incomplete' => 'भवान् अग्रे अनुवर्तयितुम् अर्हति, किन्तु केचन अभिलेखाः स्वयं दृढीकर्तुं न शक्यते, झटिति तान् संयोक्तुं न शक्यते ।
 अग्रे एतान् संयोक्तुं शक्यते ।
 भवतः अभिलेखे एतावता न किमपि परिवर्तनं कृतम् ।',
 	'centralauth-merge-dryrun-or' => "'''अथवा'''",
@@ -25907,7 +25907,7 @@ $messages['sa'] = array(
 	'centralauth-admin-already-unmerged' => 'पूर्वमेव पृथक्कृतम् इत्यतः $1 त्यज्यते ।',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|अभिलेखः|अभिलेखाः}} पृथक्कृताः',
 	'centralauth-admin-delete-title' => 'अभिलेखः निरस्यताम्',
-	'centralauth-admin-delete-description' => 'वैश्विकलेखायाः निष्कासनेन सर्वं वैश्विकं प्रशस्तं निरस्तं भविष्यति, स्थानीयलेखाः वियुक्ताः भविष्यन्ति । तथा च तत् वैश्विकं नाम अन्यः उपयोक्तुम् अर्हति । 
+	'centralauth-admin-delete-description' => 'वैश्विकलेखायाः निष्कासनेन सर्वं वैश्विकं प्रशस्तं निरस्तं भविष्यति, स्थानीयलेखाः वियुक्ताः भविष्यन्ति । तथा च तत् वैश्विकं नाम अन्यः उपयोक्तुम् अर्हति ।
 सर्वाः स्थानीयलेखाः शिष्यन्ते ।
 संयोगात् पूर्वं सृष्टाः स्थानीयलेखानां कूटशब्दाः पूर्ववदेव शिष्यन्ते ।',
 	'centralauth-admin-delete-button' => 'अयम् अभिलेखः विलोप्यताम्',
@@ -26000,7 +26000,7 @@ $3 निष्कासितम्',
 	'centralauth-rightslog-set-optout' => 'आप्ट्-औट् आधारीकृतम्',
 	'autologin' => 'स्वचालितप्रवेशस्य कारणेन',
 	'centralauth-autologin-desc' => 'विकिमाध्यमेन इदं विशिष्टं पृष्ठम् अभ्यन्तरे उपयुज्यते ।
-यदा भवान् [[Special:UserLogin|प्रविशति]], तदा केन्द्रीयप्रवेशनव्यवस्था भवतः जालगवेशकं सर्वेभ्यः सम्बद्धक्षेत्रेभ्यः चित्रस्य अनुबन्धान् 
+यदा भवान् [[Special:UserLogin|प्रविशति]], तदा केन्द्रीयप्रवेशनव्यवस्था भवतः जालगवेशकं सर्वेभ्यः सम्बद्धक्षेत्रेभ्यः चित्रस्य अनुबन्धान्
 उपयुज्य एतत् पृष्ठम् आनेतुम् आदिशति ।
 यतः प्रमाणं विना भवान् इदं पृष्ठं प्रार्थयते, अतः कार्यं न सिद्ध्यति ।',
 	'globalgroupmembership' => 'वैश्विकगणेषु सदस्यत्वम्',
