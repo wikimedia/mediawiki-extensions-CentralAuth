@@ -4,7 +4,10 @@
 -- GRANT all on centralauth.* to 'wikiuser'@'localhost';
 -- source central-auth.sql
 
---
+-- IMPORTANT: If you want to run the AntiSpoof Extention with
+-- CentralAuth, you must run patch-antispoof-global.mysql.sql,
+-- located in the AntiSpoof folder of this extension.
+
 -- This table simply lists all known usernames in the system.
 -- If no record is present here when migration processing begins,
 -- we know we have to sweep all the local databases and populate
