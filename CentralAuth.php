@@ -14,7 +14,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'MergeAccount',
 	'author'         => 'Brion Vibber',
-	'url'            => 'http://meta.wikimedia.org/wiki/Help:Unified_login',
+	'url'            => '//meta.wikimedia.org/wiki/Help:Unified_login',
 	'descriptionmsg' => 'centralauth-mergeaccount-desc',
 );
 
