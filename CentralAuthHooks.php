@@ -815,4 +815,46 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * Computes the global_user_groups variable
+	 * @param string $method
+	 * @param AbuseFilterVariableHolder $vars
+	 * @param array $parameters
+	 * @param null &$result
+	 */
+	static function abuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
+		if ( $method == 'global-user-groups' ) {
+			$user = new CentralAuthUser( $parameters['userName'] );
+			if ( $user->exists() && $user->isAttached() ) {
+				$result = $user->getGlobalGroups();
+			} else {
+				$result = array();
+			}
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * Load our global_user_groups variable
+	 * @param AbuseFilterVariableHolder $vars
+	 * @param Title $title
+	 */
+	static function abuseFilterFilterAction( $vars, $title ) {
+		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', array(
+			'userName' => $vars->getVar( 'user_name' )->toString()
+		) );
+		return true;
+	}
+
+	/**
+	 * Tell AbuseFilter about our global_user_groups variable
+	 * @param array &$builderValues
+	 */
+	static function abuseFilterBuilder( &$builderValues ) {
+		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
+		return true;
+	}
 }
