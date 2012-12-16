@@ -206,6 +206,11 @@ $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
 $wgHooks['RenameUserPreRename'][] = 'CentralAuthHooks::onRenameUserPreRename';
 $wgHooks['RenameUserComplete'][] = 'CentralAuthHooks::onRenameUserComplete';
 
+// For interaction with the Special:AbuseFilter extension
+$wgHooks['AbuseFilter-computeVariable'][] = 'CentralAuthHooks::abuseFilterComputeVariable';
+$wgHooks['AbuseFilter-filterAction'][] = 'CentralAuthHooks::abuseFilterFilterAction';
+$wgHooks['AbuseFilter-builder'][] = 'CentralAuthHooks::abuseFilterBuilder';
+
 // For SecurePoll
 $wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUserParams';
 
