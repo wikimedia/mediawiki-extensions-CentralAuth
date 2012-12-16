@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADfn///jM\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-16T19:21:08Z",
+      "side": 1,
+      "message": "Is the number of the following site(s) known? If so, it should be available to the message, as to be correct, it should depend on that.",
+      "revId": "8da5cd6d70c8c1120b36f91c47993b9abc5fd97e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn///jI\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-16T19:21:08Z",
+      "side": 1,
+      "message": "Is the number of the following site(s) known? If so, it should be available to the message, as to be correct, it should depend on that.",
+      "revId": "8da5cd6d70c8c1120b36f91c47993b9abc5fd97e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn///jE\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-16T19:21:08Z",
+      "side": 1,
+      "message": "Is the number of accounts known? If so, it should be available to the message, as to be correct, it should depend on that.",
+      "revId": "8da5cd6d70c8c1120b36f91c47993b9abc5fd97e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn///jA\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-16T19:21:08Z",
+      "side": 1,
+      "message": "Is the number of the following site(s) known? If so, it should be available to the message, as to be correct, it should depend on that.",
+      "revId": "8da5cd6d70c8c1120b36f91c47993b9abc5fd97e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
