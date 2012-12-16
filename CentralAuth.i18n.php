@@ -2759,12 +2759,14 @@ Səbəb: $1',
 /** South Azerbaijani (تورکجه)
  * @author Amir a57
  * @author E THP
+ * @author Ebrahimi-amir
  * @author Mousa
  */
 $messages['azb'] = array(
 	'mergeaccount' => 'حساب بیرلشدیرمه حالی',
 	'centralauth-groupname' => 'ویکی مئدیا بنیادی',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} ویکیلرینده [[Special:MergeAccount|حساب بیرلش‌دیر]]',
+	'centralauth-antispoof-desc' => 'آنتی‌گیج ائدیجی تکنولوژی‌نی اورتاق‌حسابا آرتیر',
 	'centralauth-mergeaccount-desc' => 'تک ایستیفاده‌چی گیریشی اوچون [[Special:MergeAccount| چوخ‌لو حساب‌لاری بیرلشدیریر]]',
 	'centralauth-merge-denied' => 'عوذر ایستییریک، بو صحیفه‌یه داخیل اولماق اوچون ایجازه وئریلمیر.',
 	'centralauth-merge-notlogged' => 'خاهیش ائدیریک بوتون حساب‌لارینیزی تام اولا‌راق بیرلشدیریلدیگینده ایداره ائتمک اوچون <span class="plainlinks"> [$1داخیل اولون] </span>.',
@@ -2901,6 +2903,7 @@ $messages['azb'] = array(
 بوتون یئرلی حساب‌لار مؤوجودلوغا داوام ائده‌جک.
 بیرلش‌دیرمک اول یارادیلان یئرلی حساب‌لار اوچون شیفره‌لر بیرلش‌دیرمک اوولکی دیرلرینه گئری قایتاریلا‌جاق.',
 	'centralauth-admin-delete-button' => 'بو حسابی سیل',
+	'centralauth-admin-delete-confirm' => 'سیز گئرچکدن بو حسابی سیلمک ایسته‌ییرسینیز؟',
 	'centralauth-admin-delete-success' => '"<nowiki> $1 </ nowiki>" اوچون ایستفاده چی حساب موفقیتله سیلیندی.',
 	'centralauth-admin-nonexistent' => '"<nowiki> $1 </ nowiki>" اوچون ایستفاده چی حساب یوخ‌دور',
 	'centralauth-admin-delete-nonexistent' => 'خطا: "<nowiki> $1 </ nowiki>" ایستفاده چی حسابی مؤوجود دئییل.',
@@ -2953,6 +2956,7 @@ $messages['azb'] = array(
 	'centralauth-renameuser-reserved' => '$2 ایستیفاده‌چی‌سی سراسری حساب اوچون آییرتیلمیشتیر.',
 	'centralauth-invalid-wiki' => 'بئله wiki وئریلن‌لر بازاسی یوخ: $1',
 	'centralauth-account-exists' => 'حساب یارادیلا: ایستنن ایستیفاده‌چی آدی بیرلشمیش داخیل سیستئمینده داها اول‌دن آلینمیش.',
+	'centralauth-account-exists-reset' => '$1 آدلی ایستیفاده‌چی بو ویکی‌ده قئیدیاتدان کئچمه‌ییب‌دیر، آنجاق بیرگه سیستمده حسابی وار.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}} لاییهه‌لرینده سئسسیانیز آچیلیر:',
 	'centralauth-logout-progress' => 'دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده سئسسیانیز باغلانیلیر:',
 	'centralauth-login-no-others' => 'دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده آوتوماتیک اولا‌راق داخیل ائتدینیز.',
@@ -3002,6 +3006,7 @@ $messages['azb'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'یئنی گروه آدی:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'حقوق وئر',
 	'centralauth-editgroup-subtitle' => 'دییشدیر $1',
+	'centralauth-editgroup-subtitle-readonly' => '$1 گؤستریلسین',
 	'centralauth-editgroup-fieldset' => '$1 اوچون حقوق‌لار',
 	'centralauth-editgroup-name' => 'گروه آدی',
 	'centralauth-editgroup-display' => 'گروهون یئرلی آدی:',
@@ -3041,6 +3046,7 @@ $messages['azb'] = array(
 	'centralauth-editset-name' => 'آد',
 	'centralauth-editset-type' => 'تیپ',
 	'centralauth-editset-wikis' => 'ویکی‌لر:',
+	'centralauth-editset-restwikis' => 'یوخاری‌دا داخیل اولمایان ویکی‌لر:',
 	'centralauth-editset-reason' => 'ندن:',
 	'centralauth-editset-submit' => 'گؤندر',
 	'centralauth-editset-submit-delete' => 'سیل',
@@ -3054,7 +3060,11 @@ $messages['azb'] = array(
 	'centralauth-editset-success' => 'ویکی سئتی اوغورلا دییشدیریلدی',
 	'centralauth-editset-success-delete' => 'ویکی سئتی اوغورلا دییشدیریلدی',
 	'centralauth-editset-return' => 'آنا گؤرونوشه قاییت',
+	'centralauth-block-already-locked' => 'بو ایستیفاده‌چی [[Special:CentralAuth/$1|$1]] حال‌حاضیردا ائورنسل صورتده باغلانیب‌دیر.',
+	'centralauth-readonly' => 'اورتاق حساب دیتا بیسی قیفیللیدیر',
+	'centralauth-readonlytext' => 'حال‌حاضیردا اورتاق حساب دیتا بیسی یئنی آرتیرمالار و سایر دَییشیکلر قاباغیندا قیفیللانیبدیر؛ بو دوروم دیتابیسی ساخلاماق اوچون اولا بیلر، مساله حلل اولاندان سونرا هر شئی عادی حالیندا اولاجاقدیر.',
 	'right-globalgroupmembership' => 'سراسری گروه‌لاردا حقوق‌لاری دییش‌دیر',
+	'right-centralauth-autoaccount' => 'ائورنسل حسابلا ائورنسل گیریش',
 	'right-centralauth-unmerge' => 'سراسری حسابی آییر',
 	'right-centralauth-lock' => 'سراسری حسابی باغلا و یا گیزله',
 	'right-centralauth-oversight' => 'سراسری حسابی باغلا',
