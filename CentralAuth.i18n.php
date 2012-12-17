@@ -22305,6 +22305,7 @@ $messages['or'] = array(
 	'centralauth-disabled-dryrun' => 'ଖାତା ଏକାକୀକରଣ ଏବେ କେବଳ ଏକ ଦେଖଣା / ଭୁଲ ସୁଧରା ଅବସ୍ଥାରେ ରହିଅଛି, ତେଣୁ ପ୍ରକୃତ ଏକାକୀକରଣ କାମ ଏବେ ଅଚଳ କରାଯାଇଅଛି ।
 ସେଥି ନିମନ୍ତେ ଆମ୍ଭେ କ୍ଷମା ମାଗୁଅଛୁଁ!',
 	'centralauth-error-locked' => 'ଆପଣଙ୍କ ଖାତାଟି ବନ୍ଦ କରାଯାଇଥିବାରୁ ଆପଣ କିଛି ବଦଳାଇପାରିବେ ନାହିଁ ।',
+	'centralauth-error-unmerged' => 'ଆପଣଙ୍କ ଖାତାଟିକୁ ଗ୍ରହଣ ନ କରାଯାଇଥିବାରୁ ଆପଣ କିଛି ବଦଳାଇପାରିବେ ନାହିଁ ।',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''ମିଶା ଲଗ ଇନ''' ବାବଦରେ ଅଧିକ ଜାଣନ୍ତୁ]]…''",
 	'centralauth-list-home-title' => 'ମୂଳ ଉଇକି',
 	'centralauth-list-home-dryrun' => 'ଏହି ଉଇକିରେ ବ୍ୟବହାର କରାଯାଇଥିବା ପାସବାର୍ଡ ଓ ଇ-ମେଲ ଆପଣଙ୍କ ଏକକ ଖାତାରେ ବ୍ୟବହାର କରାଯିବ ।',
@@ -22393,6 +22394,7 @@ $messages['or'] = array(
 ସ୍ଥାନୀୟ ଖାତାସବୁ ଆଗପରି କାମ କରିବ ।
 ସ୍ଥାନୀୟ ଖାତାସବୁର ପାସବାର୍ଡ଼ ଯୋଡ଼ାଯିବା ଆଗରୁ ଥିବା ପାସବାର୍ଡ଼କୁ ଫେରିଯିବ ।',
 	'centralauth-admin-delete-button' => 'ଏହି ଖାତାଟିକୁ ଲିଭାଇଦିଅନ୍ତୁ',
+	'centralauth-admin-delete-confirm' => 'ଆପଣ ପ୍ରକୃତରେ ଏହି ଖାତାଟିକୁ ବନ୍ଦ କରିବାକୁ ଚାହୁଁଛନ୍ତି ?',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" ଙ୍କର ଖାତାଟି ପୁରାପୁରି ଲିଭିଗଲା',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>"ଙ୍କ ପାଇଁ ଗୋଟିଏ ବି ବିଶ୍ଵ ଖାତା ନାହିଁ',
 	'centralauth-admin-delete-nonexistent' => 'ଭୁଲ: "<nowiki>$1</nowiki>" ବିଶ୍ଵ ଖାତାଟି ନାହିଁ ।',
@@ -22551,6 +22553,7 @@ $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-editset-success' => 'ଉଇକି ଗୋଠ ସଫଳଭାବେ ବଦଳାଗଲା ।',
 	'centralauth-editset-success-delete' => 'ଉଇକି ଗୋଠଟି ସଫଳଭାବେ ଲିଭାଗଲା ।',
 	'centralauth-editset-return' => 'ମୂଳ ଦେଖଣା ଲେଉଟି ଯାଆନ୍ତୁ',
+	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] ବ୍ୟବାହରକାରୀକୁ ବାରଣ କରାଯାଇଛି ।',
 	'centralauth-readonly' => 'CentralAuth ଡାଟାବେସ କିଳାଯାଇଛି',
 	'centralauth-readonlytext' => 'CentralAuth ଡାଟାବେସଟି ବୋଧେ ନିତିଦିନିଆ ରକ୍ଷଣାବେକ୍ଷଣା ପାଇଁ ଏବେ ନୂଆ ନିବେଶ କରିବାରୁ ଓ ଅନ୍ୟାନ୍ୟ  କରିବାରୁ କିଳାଯାଇଛି, ତାହାପରେ ଏହା ସାଧାରଣ ଅବସ୍ଥାକୁ ଫେରିଜୀବ ।',
 	'right-globalgroupmembership' => 'ବିଶ୍ଵଶ୍ରେଣୀର ଗୋଠମାନଙ୍କରେ ସଭ୍ୟପଦ ବଦଳାଇବେ',
