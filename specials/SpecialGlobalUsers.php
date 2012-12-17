@@ -172,9 +172,6 @@ class GlobalUsersPager extends UsersPager {
 		if ( !$row->gug_numgroups ) {
 			return false;
 		}
-		if ( $row->gug_numgroups == 1 ) {
-			return User::makeGroupLinkWiki( $row->gug_singlegroup, User::getGroupMember( $row->gug_singlegroup ) );
-		}
 
 		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
 		$globalgroups = array();
