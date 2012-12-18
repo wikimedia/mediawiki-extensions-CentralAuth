@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAADfn//+XQ\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-18T09:04:49Z",
+      "side": 1,
+      "message": "Would it be useful to mention where these account names already live?",
+      "revId": "7c925b8c1f3fdf7a7df22ea985c941e9f39eef8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn//+Ww\u003d",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-18T09:04:49Z",
+      "side": 1,
+      "message": "4th parameter (ID) is missing. See https://wikitech.wikimedia.org/view/TranslationNotifications_issues_2012-12#How_to_fix for details.",
+      "revId": "7c925b8c1f3fdf7a7df22ea985c941e9f39eef8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADfn//+bc\u003d",
         "filename": "specials/SpecialGlobalRenameUser.php",
         "patchSetId": 1
