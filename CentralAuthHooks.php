@@ -110,6 +110,17 @@ class CentralAuthHooks {
 			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
 		}
+
+		// Check for in-progress global rename
+		global $wgMemc;
+		if (
+			!CentralAuthUser::getCentralDB()->lockIsFree( "centralauth-globalrename:" . $user->getName(), __METHOD__ ) ||
+			$wgMemc->get( CentralAuthUser::memcKey( 'globalrename', sha1( $user->getName() ) ) )
+		) {
+			$abortError = wfMessage( 'centralauth-globalrename-createaccountdenied' )->text();
+			return false;
+		}
+
 		return true;
 	}
 
@@ -478,7 +489,7 @@ class CentralAuthHooks {
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user, $userName ) {
-		global $wgAuth, $wgCentralAuthCreateOnView;
+		global $wgAuth, $wgCentralAuthCreateOnView, $wgMemc;
 		// Denied by configuration?
 		if ( !$wgAuth->autoCreate() ) {
 			wfDebug( __METHOD__ . ": denied by configuration\n" );
@@ -522,6 +533,15 @@ class CentralAuthHooks {
 			wfDebug( __METHOD__ . ": Invalid username\n" );
 			$session['auto-create-blacklist'][] = wfWikiID();
 			CentralAuthUser::setSession( $session );
+			return false;
+		}
+
+		// Check for in-progress global rename
+		if (
+			!CentralAuthUser::getCentralDB()->lockIsFree( "centralauth-globalrename:" . $userName, __METHOD__ ) ||
+			$wgMemc->get( CentralAuthUser::memcKey( 'globalrename', sha1( $userName ) ) )
+		) {
+			wfDebug( __METHOD__ . ": Global rename in progress\n" );
 			return false;
 		}
 
@@ -854,6 +874,22 @@ class CentralAuthHooks {
 	static function abuseFilterBuilder( &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
 		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
+		return true;
+	}
+
+	/**
+	 * Can be used to allow us to abort the login process.
+	 * @param $user User object being authenticated against
+	 * @param $password string password being submitted (before validity checks)
+	 * @param &$retval int a LoginForm class constant to return from authenticateUserData (default is LoginForm::ABORTED)
+	 */
+	static function onAbortLogin( $user, $password, &$retval ) {
+		global $wgMemc;
+		$wikis = $wgMemc->get( CentralAuthUser::memcKey( 'globalrename', sha1( $user->getName() ) ) );
+		if ( $wikis && in_array( wfWikiId(), $wikis ) ) {
+			$retval = LoginForm::ABORTED;
+			return false;
+		}
 		return true;
 	}
 }
