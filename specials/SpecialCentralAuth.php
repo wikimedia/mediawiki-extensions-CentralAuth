@@ -24,6 +24,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanLock = $this->getUser()->isAllowed( 'centralauth-lock' );
 		$this->mCanOversight = $this->getUser()->isAllowed( 'centralauth-oversight' );
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
+		$this->mCanRename = $this->getUser()->isAllowed( 'centralauth-globalrename' ) && class_exists( 'SpecialRenameuser', false );
 
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
@@ -83,6 +84,9 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 			if ( $this->mCanUnmerge ) {
 				$this->showActionForm( 'delete' );
+			}
+			if ( $this->mCanRename ) {
+				$this->showActionForm( 'rename' );
 			}
 			if ( $this->mCanEdit ) {
 				$this->showLogExtract();
@@ -208,6 +212,91 @@ class SpecialCentralAuth extends SpecialPage {
 					$this->showStatusError( $hideStatus->getWikiText() );
 				}
 			}
+		} elseif ( $this->mMethod == 'rename' && $this->mCanRename ) {
+			if ( !$globalUser->exists() ) {
+				$this->showError( 'centralauth-globalrename-nonexistent', $globalUser->getName() );
+				return true;
+			}
+
+			$currentName = $globalUser->getName();
+			$newName = $this->getRequest()->getText( 'newname' );
+
+			$db = CentralAuthUser::getCentralDB();
+			$targetUsernameUses = $db->selectRow(
+				'localnames',
+				'ln_wiki',
+				array( 'ln_name' => $newName ),
+				__METHOD__
+			);
+
+			if ( $targetUsernameUses ) {
+				$this->showError( 'centralauth-globalrename-username-exists', $newName );
+				return true;
+			}
+
+			$startedLocked = $globalUser->isLocked();
+			// Lock the user before we start changing anything.
+			if ( !$startedLocked ) {
+				$globalUser->adminLock();
+			}
+
+			CentralAuthUser::getCentralDB()->lock( "centralauth-globalrename:" . $newName, __METHOD__ );
+
+			// Update the globaluser and localuser tables. The existing hooks should deal with globalnames/localnames...
+			$tables = array( 'globaluser' => 'gu', 'localuser' => 'lu' );
+			foreach ( $tables as $table => $prefix ) {
+				$db->update(
+					$table,
+					array( $prefix . '_name' => $newName ),
+					array( $prefix . '_name' => $currentName ),
+					__METHOD__
+				);
+			}
+
+			global $wgDBname;
+			// Create the job
+			$job = Job::factory(
+				'startLocalRenaming',
+				Title::makeTitleSafe( NS_USER, $globalUser->getName() ),
+				array(
+					'from' => $globalUser->getName(),
+					'to' => $newName,
+					'reason' => $this->getRequest()->getText( 'reason' ),
+					'startedLocked' => $startedLocked,
+					'startedFrom' => $wgDBname,
+					'startedByName' => $this->getUser()->getName(),
+					'startedById' => $this->getUser()->getID(),
+					'startedByIP' => $this->getRequest()->getIP()
+				)
+			);
+
+			global $wgMemc;
+			$wgMemc->set( CentralAuthUser::memcKey( 'globalrename', $currentName ), $globalUser->listAttached() );
+
+			// Put the job into the queue on each wiki it needs to run on
+			foreach ( $globalUser->listAttached() as $wiki ) {
+				$db = wfGetLB( $wiki )->getConnection( DB_MASTER, array(), $wiki );
+				/*$db->update(
+					'user',
+					array(
+						'user_name' => $newName,
+						'user_touched' => $db->timestamp()
+					),
+					array( 'user_name' => $currentName ),
+					__METHOD__
+				);*/
+
+				JobQueue::factory(
+					array(
+						'wiki' => $wiki,
+						'class' => 'JobQueueDB',
+						'type' => 'startLocalRenaming'
+					)
+				)->batchPush( array( $job ) );
+			}
+
+			$this->showSuccess( 'centralauth-globalrename-complete' );
+			return false;
 		} else {
 			$this->showError( 'centralauth-admin-bad-input' );
 		}
@@ -577,12 +666,19 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $action String: Only 'delete' supported
+	 * @param $action String: Only 'delete' and 'rename' supported
 	 */
 	function showActionForm( $action ) {
+		$inputs = array();
+		if ( $action == 'rename' ) {
+			$inputs['centralauth-admin-newname'] = Xml::input( 'newname', false, false, array( 'id' => 'rename-newname' ) );
+		}
+		$inputs['centralauth-admin-reason'] = Xml::input( 'reason', false, false, array( 'id' => "{$action}-reason" ) );
 		$this->getOutput()->addHTML(
 			# to be able to find messages: centralauth-admin-delete-title,
-			# centralauth-admin-delete-description, centralauth-admin-delete-button
+			# centralauth-admin-delete-description, centralauth-admin-delete-button,
+			# centralauth-admin-rename-title, centralauth-admin-rename-description,
+			# centralauth-admin-rename-button
 			Xml::fieldset( $this->msg( "centralauth-admin-{$action}-title" )->text() ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
@@ -591,11 +687,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
-			Xml::buildForm(
-				array( 'centralauth-admin-reason' => Xml::input( 'reason',
-					false, false, array( 'id' => "{$action}-reason" ) ) ),
-				"centralauth-admin-{$action}-button"
-			) .
+			Xml::buildForm( $inputs, "centralauth-admin-{$action}-button" ) .
 			'</form></fieldset>' );
 	}
 
