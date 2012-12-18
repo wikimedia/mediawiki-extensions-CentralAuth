@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADfn//+bc\u003d",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2012-12-18T04:42:36Z",
+      "side": 1,
+      "message": "Maybe stick the array from $globalUser-\u003elistAttached into a key in memcached, and have each job remove their wiki\u0027s name from the array, and the last job runner also unlocks the account?",
+      "revId": "7c925b8c1f3fdf7a7df22ea985c941e9f39eef8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
