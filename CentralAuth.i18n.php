@@ -210,6 +210,15 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-logsnippet'         => 'Previous global account changes',
 	'centralauth-admin-suppressreason'     => 'Globally suppressed by $1 for following reason: $2',
 
+	// Global renaming
+	'centralauth-admin-rename-title' => 'Global rename',
+	'centralauth-admin-rename-description' => 'Blah blah blah...',
+	'centralauth-admin-newname' => 'New name:',
+	'centralauth-admin-rename-button' => 'Rename',
+	'centralauth-globalrename-username-exists' => 'Username "<nowiki>$1</nowiki>" is already in use somewhere...',
+	'centralauth-globalrename-complete' => 'Global rename queued...',
+	'action-centralauth-globalrename' => 'globally rename a user',
+	'centralauth-globalrename-nonexistent' => 'Global account "<nowiki>$1</nowiki>" does not exist.',
 
 	// List of global users
 	'globalusers'                    => 'Global user list',
@@ -284,6 +293,7 @@ Removed $3',
 	'centralauth-rightslog-entry-deleteset'   => 'deleted wiki set "$1"',
 	'centralauth-rightslog-set-optin'         => 'opt-in based',
 	'centralauth-rightslog-set-optout'        => 'opt-out based',
+	'centralauth-renameuser-globalrenameuser' => 'renamed $1 to $2',
 
 	// Autologin
 	'autologin'                    => 'Automatic login',
@@ -379,6 +389,7 @@ You may view and modify any of them, or create a new set.',
 	'right-centralauth-oversight'   => 'Suppress global account',
 	'right-centralauth-merge'       => 'Merge their account',
 	'right-globalgrouppermissions'  => 'Manage global groups',
+	'right-centralauth-globalrename' => 'Globally rename users',
 );
 
 /** Message documentation (Message documentation)
@@ -693,6 +704,18 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 {{doc-singularthey}}',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
+
+	'centralauth-admin-rename-title' => 'Title for the global user rename form on Special:CentralAuth.',
+	'centralauth-admin-rename-description' => 'Description for the global user rename form on Special:CentralAuth.',
+	'centralauth-admin-newname' => 'New name label field for the global user rename form on Special:CentralAuth',
+	'centralauth-admin-rename-button' => 'Submit button for the global user rename form on Special:CentralAuth',
+	'centralauth-globalrename-username-exists' => 'Error message shown when the new username is already used somewhere. $1 is the name.',
+	'centralauth-globalrename-complete' => 'Text shown when all the relevant jobs for global renaming have been queued.',
+	'action-centralauth-globalrename' => '{{doc-action|centralauth-globalrename}}',
+	'centralauth-globalrename-nonexistent' => 'This message is shown when you try to globally rename a non-existent account. $1 is the name of the global account.',
+	'centralauth-renameuser-globalrenameuser' => '{{Logentry}}
+* $4 - the new username',
+	'right-centralauth-globalrename' => '{{doc-right|centralauth-globalrename}}',
 );
 
 /** Afrikaans (Afrikaans)
