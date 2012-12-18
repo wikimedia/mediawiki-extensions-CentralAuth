@@ -210,6 +210,18 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-logsnippet'         => 'Previous global account changes',
 	'centralauth-admin-suppressreason'     => 'Globally suppressed by $1 for following reason: $2',
 
+	// Global renaming
+	'centralauth-admin-rename-title' => 'Globally rename account',
+	'centralauth-admin-rename-description' => 'Globally renaming users can be a slow process - a job must be run on each wiki where the target has an attached account. When it\'s done, a log entry should be created on the wiki which you triggered the rename from.',
+	'centralauth-admin-newname' => 'New username:',
+	'centralauth-admin-rename-button' => 'Rename',
+	'centralauth-globalrename-username-exists' => 'Username "<nowiki>$1</nowiki>" is already in use somewhere...',
+	'centralauth-globalrename-complete' => 'Global rename queued...',
+	'action-centralauth-globalrename' => 'globally rename a user',
+	'centralauth-globalrename-nonexistent' => 'Global account "<nowiki>$1</nowiki>" does not exist.',
+	'centralauth-globalrename-in-progress' => 'There is already a global rename in progress for <nowiki>$1</nowiki>.',
+	'centralauth-globalrename-createaccountdenied' => 'There is currently a global rename in progress involving this name.',
+	'centralauth-globalrename-tempdisallowed' => 'Global account "<nowiki>$1</nowiki>" has more than $2 edits. Globally renaming such accounts has been temporarily disallowed while the code is experimental.',
 
 	// List of global users
 	'globalusers'                    => 'Global user list',
@@ -282,6 +294,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-entry-deleteset'   => 'deleted wiki set "$1"',
 	'centralauth-rightslog-set-optin'         => 'opt-in based',
 	'centralauth-rightslog-set-optout'        => 'opt-out based',
+	'centralauth-renameuser-globalrenameuser' => 'renamed $1 to $2',
 
 	// Autologin
 	'autologin'                    => 'Automatic login',
@@ -380,6 +393,8 @@ You may view and modify any of them, or create a new set.',
 
 	// AbuseFilter integration for global_user_groups variable - see CentralAuthHooks::abuseFilter*
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in',
+
+	'right-centralauth-globalrename' => 'Globally rename users',
 );
 
 /** Message documentation (Message documentation)
@@ -719,6 +734,23 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 See also:
 * {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
+
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}. Cf. {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
+
+	'centralauth-admin-rename-title' => 'Title for the global user rename form on Special:CentralAuth.',
+	'centralauth-admin-rename-description' => 'Description for the global user rename form on Special:CentralAuth.',
+	'centralauth-admin-newname' => 'New name label field for the global user rename form on Special:CentralAuth',
+	'centralauth-admin-rename-button' => 'Submit button for the global user rename form on Special:CentralAuth',
+	'centralauth-globalrename-username-exists' => 'Error message shown when the new username is already used somewhere. $1 is the name.',
+	'centralauth-globalrename-complete' => 'Text shown when all the relevant jobs for global renaming have been queued.',
+	'action-centralauth-globalrename' => '{{doc-action|centralauth-globalrename}}',
+	'centralauth-globalrename-nonexistent' => 'This message is shown when you try to globally rename a non-existent account. $1 is the name of the global account.',
+	'centralauth-renameuser-globalrenameuser' => '{{Logentry}}
+* $4 - the new username',
+	'right-centralauth-globalrename' => '{{doc-right|centralauth-globalrename}}',
+	'centralauth-globalrename-in-progress' => 'Error message shown when a global rename is already in progress on this username.',
+	'centralauth-globalrename-createaccountdenied' => 'Error message shown when trying to create an account with the name of a global account which is currently being renamed to or from.',
+	'centralauth-globalrename-tempdisallowed' => 'Error message shown when trying to rename a user with too many edits (default: 5000). This limitation will hopefully go away when we\'re happy with the system\'s reliability.',
 );
 
 /** Afrikaans (Afrikaans)
