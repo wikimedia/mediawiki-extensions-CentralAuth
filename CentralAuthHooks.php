@@ -856,4 +856,17 @@ class CentralAuthHooks {
 		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
 		return true;
 	}
+
+	/**
+	 * Can be used to allow us to abort the login process.
+	 * @param $user User object being authenticated against
+	 * @param $password string password being submitted (before validity checks)
+	 * @param &$retval int a LoginForm class constant to return from authenticateUserData (default is LoginForm::ABORTED)
+	 */
+	static function onAbortLogin( $user, $password, &$retval ) {
+		if ( !CentralAuthUser::getCentralDB()->lockIsFree( "centralauth-globalrename:" . $user->getName(), __METHOD__ ) ) {
+			$retval = LoginForm::ABORTED;
+		}
+		return true;
+	}
 }
