@@ -171,11 +171,13 @@ $wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/api/ApiDeleteGlobalAccou
 $wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/api/ApiSetGlobalAccountStatus.php";
 $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
+$wgAutoloadClasses['CentralAuthLocalRenameUserJob'] = "$caBase/LocalRenameUserJob.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
+$wgJobClasses['startLocalRenaming'] = 'CentralAuthLocalRenameUserJob';
 
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
@@ -199,6 +201,8 @@ $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPe
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
+$wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
+
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
 
@@ -222,6 +226,7 @@ $wgAvailableRights[] = 'centralauth-oversight';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
 $wgAvailableRights[] = 'centralauth-autoaccount';
+$wgAvailableRights[] = 'centralauth-globalrename';
 
 $wgGroupPermissions['steward']['centralauth-unmerge'] = true;
 $wgGroupPermissions['steward']['centralauth-lock'] = true;
@@ -257,6 +262,7 @@ $wgLogActions['globalauth/hide']   = 'centralauth-log-entry-hide';
 $wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
 $wgLogActions['globalauth/lockandhid'] = 'centralauth-log-entry-lockandhide';
 $wgLogActions['globalauth/setstatus'] = 'centralauth-log-entry-chgstatus';
+$wgLogActions['globalauth/rename'] = 'centralauth-log-entry-rename';
 $wgLogActions['suppress/setstatus'] = 'centralauth-log-entry-chgstatus';
 
 $wgLogTypes[]                          = 'gblrights';
@@ -266,6 +272,8 @@ $wgLogActions['gblrights/usergroups']  = 'centralauth-rightslog-entry-usergroups
 $wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms';
 $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms2';
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
+
+$wgLogActions['renameuser/globalrenameuser'] = 'centralauth-renameuser-globalrenameuser';
 
 foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type ) {
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
