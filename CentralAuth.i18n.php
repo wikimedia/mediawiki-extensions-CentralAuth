@@ -9446,7 +9446,7 @@ Ennen yhdistämistä luotujen paikallisten tunnusten salasanat palautuvat yhdist
 	'centralauth-token-mismatch' => 'Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.',
 	'centralauth-admin-reason' => 'Syy',
 	'centralauth-admin-reason-other' => 'Muu syy tai tarkennus',
-	'centralauth-admin-unhide-nonexistent' => 'Virhe: Järjestelmänlaajuista käyttäjätunnusta ”<nowiki>$1</nowiki>” ei ole olemassa.',
+	'centralauth-admin-unhide-nonexistent' => 'Virhe: Järjestelmänlaajuista käyttäjätunnusta <nowiki>$1</nowiki> ei ole olemassa.',
 	'centralauth-admin-status' => 'Aseta järjestelmänlaajuisen tunnuksen tila',
 	'centralauth-admin-status-intro' => 'Voit käyttää tätä lomaketta muuttaaksesi tämän järjestelmänlaajuisen tunnuksen tilaa.',
 	'centralauth-admin-status-locked' => 'Lukittu:',
@@ -28709,6 +28709,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Per
  * @author Sannab
  * @author Stefan2
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'mergeaccount' => 'Status för gemensam inloggning',
@@ -28836,6 +28837,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-admin-delete-title' => 'Radera konto',
 	'centralauth-admin-delete-description' => 'Radering av det globala kontot kommer ta bort globala inställningar, skilja ut alla konton, och göra det globala namnet tillgängligt för andra användare. Alla lokala konton kommer fortsätta att existera. Lösenorden till lokala konton sparat för sammanslagningen kommer gå tillbaka till värdena dom var före sammanslagningen.',
 	'centralauth-admin-delete-button' => 'Radera detta konto',
+	'centralauth-admin-delete-confirm' => 'Vill du verkligen ta bort detta konto?',
 	'centralauth-admin-delete-success' => 'Raderade det globala kontot för "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Det är inget globalt konto för "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fel: Det globala kontot "<nowiki>$1</nowiki>" finns inte.',
@@ -28988,6 +28990,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'centralauth-editset-success' => 'Ändrade wikiset.',
 	'centralauth-editset-success-delete' => 'Lyckades radera wikiset.',
 	'centralauth-editset-return' => 'Tillbaka till huvudvisning',
+	'centralauth-block-already-locked' => 'Användaren [[Special:CentralAuth/$1|$1]] är redan låst globalt.',
 	'centralauth-readonly' => 'CentralAuth-databasen låst',
 	'centralauth-readonlytext' => 'CentralAuth-databasen är för närvarande låst för nya poster och andra förändringar, troligen för rutinmässig databasunderhåll, efter vilket det kommer att vara tillbaka till normalt tillstånd.',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
