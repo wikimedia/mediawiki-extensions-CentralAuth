@@ -1319,6 +1319,7 @@ $messages['ang'] = array(
  * @author Abanima
  * @author Aiman titi
  * @author Alnokta
+ * @author Calak
  * @author Ciphers
  * @author DRIHEM
  * @author Loya
@@ -5590,7 +5591,7 @@ $messages['ckb'] = array(
 	'centralauth-merge-method-mail' => 'دڵنیاکراوەتەوە بەهۆی ئیمەیڵەوە',
 	'centralauth-merge-method-password' => 'دڵنیاکراوەتەوە بەهۆی تێپەڕوشە',
 	'centralauth-merge-method-new' => 'هەژماری نوێ',
-	'centralauth-merge-method-login' => 'دروستکراوە لەکاتی هاتنەژوورەوەدا',
+	'centralauth-merge-method-login' => 'لە کاتی ھاتنە ژوورەوەدا دروست کراوە',
 	'centralauth-finish-password' => 'تێپەڕوشە:',
 	'centralauth-finish-login' => 'بچۆ ژوورەوە',
 	'centralauth-finish-send-confirmation' => 'تێپەڕوشەیەکی نوێ بنێرە بۆ ئیمەیلەکەم',
@@ -5603,8 +5604,13 @@ $messages['ckb'] = array(
 	'centralauth-admin-info-editcount' => 'سەرجەمی ژمارەی دەستکارییەکان',
 	'centralauth-admin-yes' => 'بەڵێ',
 	'centralauth-admin-no' => 'نەخێر',
+	'centralauth-admin-blocked' => 'بەربەست کراوە، لە $3، $4 ماوەی بەسەر دەچێ.
+ھۆکار: $2',
+	'centralauth-admin-list-method' => 'شێواز',
 	'centralauth-admin-reason' => 'هۆکار:',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|خولەک}} لەمە پێش',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|کاتژمێر}} لەمە پێش',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|ڕۆژ}} لەمە پێش',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|مانگ}} لەمە پێش',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ساڵ}} لەمە پێش',
 	'centralauth-prefs-status' => 'دۆخی ھەژماری گشتی:',
@@ -32571,6 +32577,7 @@ $messages['xal'] = array(
 $messages['yi'] = array(
 	'mergeaccount' => 'ארײַנלאגירן צוזאמענפירן סטאטוס',
 	'centralauth-groupname' => 'די וויקימעדיע פֿונדאַציע',
+	'centralauth-desc' => '[[Special:MergeAccount|צונויפגיסן קאנטעס]] אריבער וויקיס פון {{int:Centralauth-groupname}}',
 	'centralauth-merge-denied' => 'אנטשולדיגט, איר האט נישט קיין דערלויבעניש פֿאַר דעם בלאַט.',
 	'centralauth-merge-step1-title' => 'אנהייבן איינלאגירן פֿאַראייניקן',
 	'centralauth-merge-step1-submit' => 'באַשטעטיקן ארײַנלאָגירן אינפֿאָרמאַציע',
@@ -32614,6 +32621,8 @@ $messages['yi'] = array(
 	'centralauth-admin-yes' => 'יא',
 	'centralauth-admin-no' => 'ניין',
 	'centralauth-admin-list-legend-ro' => 'ליסטע פון לאקאלע קאנטעס',
+	'centralauth-admin-blocked' => 'בלאקירט ביז $3, $4.
+סיבה: $2',
 	'centralauth-admin-blocklog' => 'בלאקירן לאגבוך',
 	'centralauth-admin-list-localwiki' => 'לאקאַלע וויקי',
 	'centralauth-admin-list-attached-on' => 'פֿארבונגן אום',
@@ -32643,6 +32652,14 @@ $messages['yi'] = array(
 	'centralauth-months-ago' => 'פֿאר $1 {{PLURAL:$1|חודש|חדשים}}',
 	'centralauth-years-ago' => 'פֿאר $1 {{PLURAL:$1|יאר|יאר}}',
 	'centralauth-prefs-unattached' => 'נישט באשטעטיקט',
+	'centralauth-login-progress' => 'אריינלאגירט אין וויקיס פון {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'ארויסלאגירן פון אנדערע וויקיס ביי {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'איר זענט אויטאמאטיש אריינלאגירט אין אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'איר זענט אויטאמאטיש ארויסלאגירט פון אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
+	'centralauth-hidden-blockreason' => 'גלאבאל באהאלטן דורך $1 ביי $2 מיטן גרונד: $3',
+	'centralauth-log-name' => 'גלאבאלע קאנטע־לאגבוך',
+	'centralauth-log-header' => 'דאס לאגבוך אנטהאלט אפעראציעס אונטער גלאבאלע קאנטעס: אויסמעקונגען, פארשליסן און אויפשליסן.',
+	'centralauth-log-entry-delete' => 'אויסגעמעקט גלאבאלע קאנטע "$1"',
 	'centralauth-log-status-locked' => 'פֿאַרשלאסן',
 	'centralauth-log-status-hidden' => 'באַהאַלטן',
 	'centralauth-log-status-none' => '(גארנישט)',
@@ -32663,6 +32680,7 @@ $messages['yi'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'נייע גרופע נאמען',
 	'centralauth-globalgroupperms-creategroup-submit' => 'צוגעבן רעכטן',
 	'centralauth-editgroup-subtitle' => 'רעדאקטירן $1',
+	'centralauth-editgroup-subtitle-readonly' => 'באקוקן $1',
 	'centralauth-editgroup-fieldset' => 'רעכטן פֿאר $1',
 	'centralauth-editgroup-name' => 'נאמען פון גרופע:',
 	'centralauth-editgroup-display' => 'לאקאליזירטער נאמען פון גרופע:',
@@ -32693,6 +32711,7 @@ $messages['yi'] = array(
 	'centralauth-editset-badwikis' => 'די פֿאלגנדע {{PLURAL:$2|וויקי עקזיסטירט נישט|וויקיס עקזיסטירן נישט}}: $1.',
 	'centralauth-editset-success' => 'וויקיגרופע דערפֿאלגרייך געענדערט.',
 	'centralauth-editset-success-delete' => 'וויקיגרופע דערפֿאלגרייך אויסגעמעקט.',
+	'right-globalgrouppermissions' => 'פארוואלטן גלאבאלע גרופעס',
 );
 
 /** Yoruba (Yorùbá)
