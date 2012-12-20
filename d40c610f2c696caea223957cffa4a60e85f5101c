@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//96g\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-12-20T20:25:18Z",
+      "side": 1,
+      "message": "$wgUser could probably be replaced with $user \u003d User::newFromName( $vars-\u003egetVar( \u0027user_name\u0027 )-\u003etoString() ); (You have to check whether $parameters[\u0027user\u0027] is a User object if you do so above).\n\nUsing the user name from AF has the advantage over $wgUser that it still works if the variable is created in the context of another user (could happen with debugging tools).",
+      "revId": "d40c610f2c696caea223957cffa4a60e85f5101c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
