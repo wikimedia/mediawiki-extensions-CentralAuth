@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//9uc\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 828,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-12-20T21:16:36Z",
+      "side": 1,
+      "message": "$parameters[\u0027user\u0027] will be false for anons, you have to check that or getInstance will complain",
+      "revId": "8372705da007919c68f851e995e97aa4bc677c47",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
