@@ -209,6 +209,7 @@ The passwords for local accounts created before the merge will revert to their p
 ** inappropriate personal information',
 	'centralauth-admin-logsnippet'         => 'Previous global account changes',
 	'centralauth-admin-suppressreason'     => 'Globally suppressed by $1 for following reason: $2',
+	'centralauth-admin-not-authorized'     => 'You do not have permissions to perform this action',
 
 
 	// List of global users
@@ -217,6 +218,20 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-listusers-attached' => '[[User:$1|exists locally]]',
 	'centralauth-listusers-item'     => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
+
+	// MultiLock
+	'multilock'                    			=> 'Lock Multiple Global Users',
+	'centralauth-admin-multi-username'		=> 'Enter one or more usernames, separated by new-line',
+	'centralauth-admin-multi-notfound'		=> 'Search returned no usernames.',
+	'centralauth-admin-multi-searchprefix'		=> 'Or, search for accounts with a prefix',
+	'centralauth-admin-multi-intro'			=> 'Update multiple global users at once',
+	'centralauth-admin-action-lock-nochange' 	=> 'Don\'t change locks',
+	'centralauth-admin-action-lock-lock' 		=> 'Lock selected accounts',
+	'centralauth-admin-action-lock-unlock' 		=> 'Unlock selected accounts',
+	'centralauth-admin-action-hide-nochange' 	=> 'Don\'t change hidden levels',
+	'centralauth-admin-action-hide-none'		=> 'Unhide selected accounts',
+	'centralauth-admin-action-hide-lists'		=> 'Hide selected accounts from public lists',
+	'centralauth-admin-action-hide-oversight'	=> 'Completely hide selected accounts',
 
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
@@ -590,12 +605,24 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 *{{msg-mw|Centralauth-admin-status-hidden-no}}
 *{{msg-mw|Centralauth-admin-status-hidden-list}}
 *{{msg-mw|Centralauth-admin-status-hidden-oversight}}',
+	'centralauth-admin-not-authorized' => 'Error message when the user doesn\'t have permission',
 	'centralauth-listusers-locked' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}
 ----
 {{identical|locked}}",
+	'centralauth-admin-action-lock-nochange' => 'Radio button, leave settings unchanged',
+	'centralauth-admin-action-lock-lock' => 'Radio button, lock accounts',
+	'centralauth-admin-action-lock-unlock' => 'Radio button, unlock accounts',
+	'centralauth-admin-action-hide-nochange' => 'Radio button, leave settings unchanged',
+	'centralauth-admin-action-hide-none' => 'Radio button, unhide accounts',
+	'centralauth-admin-action-hide-lists' => 'Radio button, hide accounts',
+	'centralauth-admin-action-hide-oversight' => 'Radio button, suppress accounts',
+	'centralauth-admin-multi-username' => 'Instructions for text box where admin will enter usernames, one per line',
+	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
+	'centralauth-admin-multi-searchprefix' => 'Instructions for alternative search method',
+	'centralauth-admin-multi-intro' => 'Description of this page',
 	'centralauth-listusers-attached' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
