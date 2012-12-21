@@ -1103,6 +1103,123 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Set locking and hiding settings for a Global User. This code was copied from
+	 * SpecialCentralAuth.php in the hopes that all special and api pages can use a
+	 * common function.
+	 *
+	 * @param $lock Bool|null
+	 *  true = lock
+	 *  false = unlock
+	 *  null = don't change
+	 * @param $hide String|null
+	 *  hidden level, one of the HIDDEN_ constants
+	 *  null = don't change
+	 * @param $reason String reason for hiding
+	 * @return Status
+	 */
+	public function adminLockHide( $setLocked, $setHidden, $reason, IContextSource $context ) {
+		$isLocked = $this->isLocked();
+		$oldHiddenLevel = $this->getHiddenLevel();
+		$lockStatus = $hideStatus = null;
+		$added = array();
+		$removed = array();
+
+		$adminUser = $context->getUser();
+
+		if ( is_null( $setLocked ) ) {
+			$setLocked = $isLocked;
+		} elseif ( !$context->getUser()->isAllowed( 'centralauth-lock' ) ) {
+			return Status::newFatal('centralauth-admin-not-authorized');
+		}
+
+		if ( is_null( $setHidden ) ) {
+			$setHidden = $oldHiddenLevel;
+		} elseif ( ( $setHidden != self::HIDDEN_NONE
+			|| $oldHiddenLevel != self::HIDDEN_NONE )
+			&& !$context->getUser()->isAllowed( 'centralauth-oversight' )
+		) {
+			return Status::newFatal('centralauth-admin-not-authorized');
+		}
+
+		$returnStatus = Status::newGood();
+
+		$hiddenLevels = array(
+			self::HIDDEN_NONE,
+			self::HIDDEN_LISTS,
+			self::HIDDEN_OVERSIGHT
+		);
+
+		if ( !in_array( $setHidden, $hiddenLevels ) ) {
+			$setHidden = '';
+		}
+
+		if ( !$isLocked && $setLocked ) {
+			$lockStatus = $this->adminLock();
+			$added[] = $context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
+		} elseif ( $isLocked && !$setLocked ) {
+			$lockStatus = $this->adminUnlock();
+			$removed[] = $context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
+		}
+
+		if ( $oldHiddenLevel != $setHidden ) {
+			$hideStatus = $this->adminSetHidden( $setHidden );
+			switch( $setHidden ) {
+				case self::HIDDEN_NONE:
+					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
+						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
+					} else {
+						$removed[] = $context->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
+					}
+					break;
+				case self::HIDDEN_LISTS:
+					$added[] = $context->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
+					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
+						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
+					}
+					break;
+				case self::HIDDEN_OVERSIGHT:
+					$added[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
+					if ( $oldHiddenLevel == self::HIDDEN_LISTS ) {
+						$removed[] = $context->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
+					}
+					break;
+			}
+
+			if ( $setHidden == self::HIDDEN_OVERSIGHT ) {
+				$this->suppress( $reason );
+			} elseif ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
+				$this->unsuppress( $reason );
+			}
+		}
+
+		$good =
+			( is_null( $lockStatus ) || $lockStatus->isGood() ) &&
+			( is_null( $hideStatus ) || $hideStatus->isGood() );
+
+		// Setup Status object to return all of the information for logging
+		if ( $good && ( count( $added ) || count( $removed ) ) ) {
+			$added = count( $added ) ?
+				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
+			$removed = count( $removed ) ?
+				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
+
+			$returnStatus->successCount = count( $added ) + count( $removed );
+			$returnStatus->success['added'] = $added;
+			$returnStatus->success['removed'] = $removed;
+
+		} elseif ( !$good ) {
+			if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
+				$returnStatus->merge(  $lockStatus );
+			}
+			if ( !is_null( $hideStatus ) && !$hideStatus->isGood() ) {
+				$returnStatus->merge(  $hideStatus );
+			}
+		}
+
+		return $returnStatus;
+	}
+
+	/**
 	 * Suppresses all user accounts in all wikis.
 	 * @param $reason String
 	 */
