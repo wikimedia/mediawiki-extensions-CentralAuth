@@ -2994,7 +2994,7 @@ $messages['azb'] = array(
 [[Special:UserLogin|گیریش ائتدیکده]]، مرکز داخیل سیستئمی ایسکانئرینیزه تلیمات وئریر و ایسکانئرینیز بو صحیفنی بوتون باغلانمیش دوماینی، شکیل علاقه‌لرینی ایستیفاده ائده‌رک ایستر.
 سیز بو صحیفنی تسدیقلمه معلوماتی اولما‌دان ایستدینیز، بونا گؤره هئچ بیر شئی ائدیلمه‌دی.',
 	'globalgroupmembership' => 'سراسری گروه‌لاردا عضوولوک',
-	'globalgrouppermissions' => 'سراسری گروه لار رهبرلیگی',
+	'globalgrouppermissions' => 'سراسری گروپ ایداره‌سی',
 	'centralauth-globalgroupperms-grouplist' => 'آشاغی‌داکی سراسری گروه لار قورولوب.
 بیر گروه لار تعیین اولونموش ایجازه‌لری گؤره بیلر و یا دییش‌دیره بیلرسینیز، اگر ایجازه‌نیز وارسا.
 بیر گروه بوتون حقوق‌لاری علین‌دن آلینا‌راق سیلینه بیلر.',
@@ -7843,6 +7843,7 @@ $messages['el'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'Καινούργιο όνομα ομάδας:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Απονομή αδειών',
 	'centralauth-editgroup-subtitle' => 'Επεξεργασία του $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Προβολή $1',
 	'centralauth-editgroup-fieldset' => 'Άδειες για το $1',
 	'centralauth-editgroup-name' => 'Όνομα ομάδας:',
 	'centralauth-editgroup-display' => 'Εντοπιοποιημένο όνομα της ομάδας:',
@@ -8150,6 +8151,7 @@ Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
 	'centralauth-globalgroupperms-newgroupname' => 'Nova nomo de grupo;',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Asigni rajtojn',
 	'centralauth-editgroup-subtitle' => 'Redaktante $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Rigardi $1',
 	'centralauth-editgroup-fieldset' => 'Rajtoj por $1',
 	'centralauth-editgroup-name' => 'Nomo de grupo:',
 	'centralauth-editgroup-display' => 'Asimilita nomo de grupo:',
@@ -13654,6 +13656,7 @@ Akun-akun lain belum dikonfirmasikan.',
 Seluruh akun lokal akan tetap ada.
 Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum penggabungan.',
 	'centralauth-admin-delete-button' => 'Hapus akun ini',
+	'centralauth-admin-delete-confirm' => 'Apakah Anda benar-benar ingin menghapus akun ini?',
 	'centralauth-admin-delete-success' => 'Akun global "<nowiki>$1</nowiki>" berhasil dihapuskan',
 	'centralauth-admin-nonexistent' => 'Tidak ada akun global dengan nama "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Kesalahan: akun global "<nowiki>$1</nowiki>" tidak ditemukan.',
@@ -13806,6 +13809,7 @@ Anda dapat melihat dan mengubahnya, atau membuat set baru.',
 	'centralauth-editset-success' => 'Set wiki berhasil diubah.',
 	'centralauth-editset-success-delete' => 'Set wiki berhasil dihapus.',
 	'centralauth-editset-return' => 'Kembali ke tampilan utama',
+	'centralauth-block-already-locked' => 'Pengguna [[Special:CentralAuth/$1|$1]] sudah terkunci secara global.',
 	'centralauth-readonly' => 'Basis data CentralAuth dikunci',
 	'centralauth-readonlytext' => 'Basis data CentralAuth saat ini terkunci untuk entri baru dan perubahan lainnya, mungkin untuk pemeliharaan basis data secara rutin, yang setelahnya akan kembali normal.',
 	'right-globalgroupmembership' => 'Sunting keanggotaan kelompok global',
@@ -18325,6 +18329,7 @@ Grupė neegzistuoja, kol ji neturi jai priskirtų teisių.',
 	'centralauth-globalgroupperms-newgroupname' => 'Naujos grupės pavadinimas:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Priskirti teises',
 	'centralauth-editgroup-subtitle' => 'Taisoma $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Peržiūrėti $1',
 	'centralauth-editgroup-fieldset' => '$1 teisės',
 	'centralauth-editgroup-name' => 'Grupės pavadinimas:',
 	'centralauth-editgroup-display' => 'Lokalizuotas grupės pavadinimas:',
@@ -24136,59 +24141,60 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author 555
  */
 $messages['pt-br'] = array(
-	'mergeaccount' => 'Estado da unificação de contas',
-	'centralauth-groupname' => 'a Fundação Wikimedia',
+	'mergeaccount' => 'Status da unificação de contas',
+	'centralauth-groupname' => 'a Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof ao CentralAuth',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fundir diversas contas]] para o Single User Login',
-	'centralauth-merge-denied' => 'Desculpe, você não tem permissão para acessar esta página.',
-	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram fundidas corretamente.',
-	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação (login) unificado de {{int:Centralauth-groupname}}.'''
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] na Autenticação Unificada',
+	'centralauth-merge-denied' => 'Desculpe-nos, você não tem permissão para acessar esta página.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Autentique-se]</span> para verificar se as suas contas foram fundidas corretamente.',
+	'centralauth-merge-welcome' => "'''A sua conta de usuário ainda não foi migrada para o sistema de autenticação unificado da {{int:Centralauth-groupname}}.'''
 
-Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para se autenticar em todos os wikis de {{int:Centralauth-groupname}} em todas as línguas disponíveis.
+Caso decida migrar as suas contas, será possível utilizar o mesmo nome de usuário e senha para se autenticar em todos os wikis da {{int:Centralauth-groupname}}, em todas as línguas disponíveis.
 
-Caso alguém já tenha um nome de utilizador idêntico ao seu em algum outro wiki, tal pessoa não será importunada. No entanto, será possível que dialogue com a mesma ou com um administrador posteriormente.",
+Caso alguém já tenha um nome de usuário idêntico ao seu em algum outro wiki, tal pessoa não será incomodada. No entanto, será possível que você dialogue posteriormente com ela ou com um administrador.",
 	'centralauth-merge-step1-title' => 'Começar a unificação de contas',
-	'centralauth-merge-step1-detail' => 'Por favor, introduza aqui a sua palavra-chave da conta.
-A sua palavra-chave (senha) e endereço de e-mail registado serão comparados com os de contas de outros wikis, para confirmar se coincidem.
-Não serão feitas alterações até que confime que está tudo correcto.',
+	'centralauth-merge-step1-detail' => 'Insira a senha de sua conta.
+Sua senha e endereço de e-mail registrado serão comparados com os de contas de outros wikis, para confirmar se coincidem.
+Não serão feitas alterações até que se confime estar tudo correto.',
 	'centralauth-merge-step1-submit' => 'Confirmar informações de login',
 	'centralauth-merge-step2-title' => 'Confirmar mais contas',
 	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a palavra-chave (senha) das mesmas.',
 	'centralauth-merge-step2-submit' => 'Confirmar informações de login',
 	'centralauth-merge-dryrun-complete' => 'Todas as contas existentes podem ser unificadas automaticamente!
 
-Ainda não foram feitas modificaçãoes nas suas contas.',
+Ainda não foram feitas modificações nas suas contas.',
 	'centralauth-merge-dryrun-incomplete' => 'Você pode prosseguir, mas algumas contas não puderam ser verificadas de forma automática e não serão migradas neste momento. Será possível fundi-las mais tarde.
 
 Não foram feitas modificações em suas contas até o momento.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
-	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar que você seja o proprietário da conta na wiki principal para o seu nome de utilizador.
+	'centralauth-merge-dryrun-home' => 'O sistema de migração de contas não pôde confirmar que você é o proprietário da conta do wiki-residência em seu nome de usuário.
 
-Outra wiki foi determinada como sendo a conta principal de seu nome de utilizador. Siga o seguinte link e autentique-se através dele para que a fusão de contas seja completada.',
+Outro wiki foi definido como contendo a conta principal de seu nome de usuário. Siga o seguinte link e autentique-se através dele para que a fusão de contas seja concluída.',
 	'centralauth-merge-step3-title' => 'Criar conta unificada',
-	'centralauth-merge-step3-detail' => 'Tudo pronto para que a sua conta unificada, com os seguintes wikis a ela relacionados, seja criada:',
+	'centralauth-merge-step3-detail' => 'Você está pronto para criar sua conta uificada, com os wikis a seguir nela associados:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
-	'centralauth-merge-no-accounts' => 'Nenhuma conta correspondennte ao seu nome foi encontrada na tabela central de rastreio de contas!
-A base de dados deve estar corrompida.',
-	'centralauth-merge-home-password' => 'O wiki de origem desta conta (listada a seguir) possui uma senha diferente da que foi fornecida. Forneça a senha do wiki de origem.',
-	'centralauth-complete' => 'Unificação de logins completa!',
+	'centralauth-merge-no-accounts' => 'Nenhuma conta correspondente ao seu nome foi encontrada na tabela central de rastreio de contas!
+Talvez o banco de dados esteja corrompido.',
+	'centralauth-merge-home-password' => 'O wiki de origem desta conta (listada a seguir) possui uma senha diferente da que foi fornecida.
+Insira a senha do wiki de origem.',
+	'centralauth-complete' => 'Unificação de logins concluída!',
 	'centralauth-incomplete' => 'Unificação de logins incompleta!',
-	'centralauth-complete-text' => 'Agora você poderá efectuar login em qualquer sítio wiki de {{int:Centralauth-groupname}} sem ter de criar uma nova conta.',
+	'centralauth-complete-text' => 'Agora você pode se autenticar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma nova conta.',
 	'centralauth-incomplete-text' => 'Uma vez estando o seu login unificado, poderá efectuar login em qualquer wiki de {{int:Centralauth-groupname}} sem ter de criar uma nova conta',
-	'centralauth-not-owner-text' => 'O nome de utilizador "$1" foi automaticamente relacionado ao proprietário da conta em $2.
+	'centralauth-not-owner-text' => 'O nome de usuário "$1" foi automaticamente relacionado ao proprietário da conta em $2.
 
-Se este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal de tal conta aqui:',
-	'centralauth-blocked-text' => 'Você se encontra bloqueado de editar em sua wiki-residência (listada a seguir).
-Entre em contacto com um administrador de tal wiki para desbloqueá-la.
-Enquanto estiver bloqueada, não será possível fundir as contas.',
+Se este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal dessa conta aqui:',
+	'centralauth-blocked-text' => 'Você está bloqueado de editar em seu wiki-residência (listado a seguir).
+Solicite o desbloqueio a um administrador de tal wiki.
+Enquanto ela estiver bloqueada, não será possível fundir as contas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas.
 Desculpe-nos.',
 	'centralauth-error-locked' => 'Você não tem como editar, já que sua conta está bloqueada.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/pt|Leia mais sobre o '''login unificado''']]...''",
 	'centralauth-list-home-title' => 'Wiki local',
-	'centralauth-list-home-dryrun' => 'A palavra-chave (senha) e endereço de e-mail definidos nesta wiki serão os utilizados em sua conta unificada; sua página de utilizador será automaticamente lincada a partir de outras wikis.',
+	'centralauth-list-home-dryrun' => 'A senha e endereço de e-mail definidos neste wiki serão os utilizados em sua conta unificada; sua página de usuário terá um link automático nos outros wikis.',
 	'centralauth-list-attached-title' => 'Contas unificadas',
 	'centralauth-list-attached' => 'As contas com o nome "$1" nos seguintes sites foram automaticamente unificadas à conta global:',
 	'centralauth-list-attached-dryrun' => 'As contas com o nome "$1" nos seguintes sites serão automaticamente unificadas à conta global:',
@@ -24198,45 +24204,46 @@ Desculpe-nos.',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribuição|contribuições}} em $2',
 	'centralauth-merge-method-primary' => 'wiki local',
 	'centralauth-merge-method-empty' => 'sem contribuições',
-	'centralauth-merge-method-mail' => 'confirmação por e-mail',
+	'centralauth-merge-method-mail' => 'confirmado por e-mail',
 	'centralauth-merge-method-password' => 'confirmado a partir da senha',
 	'centralauth-merge-method-admin' => 'conta unificada por administrador',
 	'centralauth-merge-method-new' => 'nova conta',
 	'centralauth-merge-method-login' => 'criada ao iniciar sessão',
-	'centralauth-merge-method-primary-desc' => 'Esta é a wiki a partir da qual a conta foi inicialmente unificada.
-Note que pode ser diferente da wiki local do usuário.',
+	'centralauth-merge-method-primary-desc' => 'Este é o wiki a partir do qual a conta foi unificada inicialmente.
+Note que pode ser diferente do wiki local do usuário.',
 	'centralauth-merge-method-empty-desc' => 'Indica que a conta local foi unificada porque não não possuia nenhuma edição.',
 	'centralauth-merge-method-mail-desc' => 'Indica que a conta local foi unificada porque o seu endereço de e-mail correspondia ao da conta principal.',
 	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi unificada porque o usuário especificou uma senha válida para isso.',
-	'centralauth-merge-method-admin-desc' => "Indica que a conta local foi unificada manualmente por ''stewards''.
-Esta funcionalidade está agora desativada por razões de segurança.",
+	'centralauth-merge-method-admin-desc' => 'Indica que a conta local foi unificada manualmente por stewards.
+Esta funcionalidade está desativada por segurança.',
 	'centralauth-merge-method-new-desc' => 'Indica que a conta global foi criada automaticamente quando a conta local foi criada.',
 	'centralauth-merge-method-login-desc' => 'Indica que a conta local foi criada automaticamente quando o usuário se autenticou.',
 	'centralauth-finish-title' => 'Completar unificação',
-	'centralauth-finish-text' => 'Se estas contas pertencem a ti, será possível concluir a unificação de logins simplesmente digitando as senhas das mesmas aqui:',
+	'centralauth-finish-text' => 'Se estas contas são suas, será possível concluir a unificação de logins simplesmente digitando as senhas das mesmas aqui:',
 	'centralauth-finish-password' => 'Senha:',
 	'centralauth-finish-login' => 'Entrar',
 	'centralauth-finish-send-confirmation' => 'Enviar senha por e-mail',
 	'centralauth-finish-problems' => 'Você está com problemas ou estas outras contas não são suas? [[meta:Help:Unified login problems|Como obter ajuda]]...',
 	'centralauth-finish-noconfirms' => 'Não é possível confirmar contas usando esta senha.',
-	'centralauth-finish-incomplete' => 'Diversas contas foram fundidas ao utilizar esta palavra-chave (senha). Outras contas ainda não foram confirmadas.',
+	'centralauth-finish-incomplete' => 'Diversas contas foram fundidas ao utilizar esta senha.
+Outras contas ainda não foram confirmadas.',
 	'centralauth-merge-attempt' => "'''Verificando a senha fornecida para encontrar as demais contas ainda não fundidas...'''",
 	'centralauth-attach-list-attached' => 'A conta unificada com o nome "$1" inclui as seguintes contas:',
 	'centralauth-attach-title' => 'Confirmar conta',
 	'centralauth-attach-text' => 'Esta conta ainda não foi unificada à conta global.
-Se a conta global também for sua, você pode associa-lá esta conta introduzindo a senha da conta global:',
+Se a conta global também for sua, você pode associa-lá nesta conta inserindo a senha da conta global:',
 	'centralauth-attach-submit' => 'Migrar conta',
 	'centralauth-attach-success' => 'A conta foi migrada para a conta unificada.',
 	'centralauth' => 'Administração global de contas',
 	'centralauth-admin-intro' => 'Esta interface pode ser usada para administração de contas globais.',
 	'centralauth-admin-manage' => 'Administrar dados de usuários',
 	'centralauth-admin-username' => 'Usuário:',
-	'centralauth-admin-lookup-ro' => 'Ver informação do usuário',
+	'centralauth-admin-lookup-ro' => 'Ver informações de usuário',
 	'centralauth-admin-lookup-rw' => 'Administrar a conta do usuário',
 	'centralauth-admin-permission' => 'Só os stewards podem unificar as contas de outras pessoas.',
-	'centralauth-admin-no-unified' => 'Nenhuma conta unificada para este nome de usuário.',
+	'centralauth-admin-no-unified' => 'Não há contas unificadas para este nome de usuário.',
 	'centralauth-admin-info-header' => 'Informação de usuários globais',
-	'centralauth-admin-info-id' => 'Número de identificação:',
+	'centralauth-admin-info-id' => 'ID do usuário:',
 	'centralauth-admin-info-registered' => 'Registrada:',
 	'centralauth-admin-info-home' => 'Wiki de origem:',
 	'centralauth-admin-info-editcount' => 'Total de edições:',
@@ -24250,9 +24257,10 @@ Se a conta global também for sua, você pode associa-lá esta conta introduzind
 	'centralauth-admin-list-legend-ro' => 'Lista de contas locais',
 	'centralauth-admin-list-legend-rw' => 'Desfazer a unificação das contas locais',
 	'centralauth-admin-unattached' => 'não unificadas',
-	'centralauth-admin-blocked' => 'Bloqueado com validade $3 em $4.
+	'centralauth-admin-blocked' => 'Bloqueado até às $4 de $3.
 Motivo: $2',
-	'centralauth-admin-blocked-indef' => 'Bloqueado indefinidamente. Motivo: $1',
+	'centralauth-admin-blocked-indef' => 'Bloqueado indefinidamente.
+Motivo: $1',
 	'centralauth-admin-blocklog' => 'registro de bloqueio',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
 	'centralauth-admin-list-attached-on' => 'Unificada em',
@@ -24841,6 +24849,7 @@ Rețineți că un grup nu există dacă nu are permisiuni.',
 	'centralauth-globalgroupperms-newgroupname' => 'Numele grupului nou:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Acordă permisiuni',
 	'centralauth-editgroup-subtitle' => 'Modificare $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Vizualizare $1',
 	'centralauth-editgroup-fieldset' => 'Permisiuni pentru $1',
 	'centralauth-editgroup-name' => 'Numele grupului:',
 	'centralauth-editgroup-display' => 'Numele localizat al grupului:',
@@ -26739,6 +26748,7 @@ $3 ඉවත් කෙරිනි',
 	'centralauth-globalgroupperms-newgroupname' => 'නව කණ්ඩායමේ නම:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'අවසර පවරන්න',
 	'centralauth-editgroup-subtitle' => '$1 සංස්කරණය කරමින්',
+	'centralauth-editgroup-subtitle-readonly' => '$1 නරඹන්න',
 	'centralauth-editgroup-fieldset' => '$1 සඳහා අවසර',
 	'centralauth-editgroup-name' => 'කණ්ඩායමේ නම:',
 	'centralauth-editgroup-display' => 'කණ්ඩායමේ දේශියකළ නම:',

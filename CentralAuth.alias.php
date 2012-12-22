@@ -714,6 +714,7 @@ $specialPageAliases['tt-cyrl'] = array(
 $specialPageAliases['uk'] = array(
 	'GlobalGroupMembership' => array( 'Глобальні_права' ),
 	'WikiSets' => array( 'Набори_вікі' ),
+	'GlobalUsers' => array( 'Глобальні_користувачі' ),
 );
 
 /** Urdu (اردو) */
