@@ -271,9 +271,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-name'              => 'Global rights log',
 	'centralauth-rightslog-entry-usergroups'  => 'changed global group membership for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms'  => 'changed group permissions for $1 from $2 to $3',
-	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1.
-Added $2;
-Removed $3',
+	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1. Added $2; Removed $3',
 	'centralauth-rightslog-entry-groupperms3' => 'changed group restricted wikis set for $1 from $2 to $3',
 	'centralauth-rightslog-header'            => 'This log contains operations on global groups: membership and permissions changes',
 
