@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX///3U\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-25T20:02:54Z",
+      "side": 1,
+      "message": "This is a weird combination of elements made from normal strings and generated using the Xml/Html classes...",
+      "revId": "4eb1c023e3df68421d09fad9edfe166ff52b6bfd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///3g\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-25T20:02:54Z",
+      "side": 1,
+      "message": "missing space before (",
+      "revId": "4eb1c023e3df68421d09fad9edfe166ff52b6bfd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///3Y\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-25T20:02:54Z",
+      "side": 1,
+      "message": "This is only used once. We could substitute it straight in or use the identical one in SpecialCentralAuth instead.",
+      "revId": "4eb1c023e3df68421d09fad9edfe166ff52b6bfd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
