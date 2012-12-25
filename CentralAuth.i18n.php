@@ -1536,9 +1536,7 @@ $messages['ar'] = array(
 	'centralauth-rightslog-name' => 'سجل الصلاحيات العام',
 	'centralauth-rightslog-entry-usergroups' => 'غير عضوية المجموعة العامة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-entry-groupperms' => 'غير سماحات المجموعة ل$1 من $2 إلى $3',
-	'centralauth-rightslog-entry-groupperms2' => 'غير صلاحيات المجموعة ل$1.
-أضاف $2؛
-أزال $3',
+	'centralauth-rightslog-entry-groupperms2' => 'غير صلاحيات المجموعة ل$1. أضاف $2؛ أزال $3',
 	'centralauth-rightslog-entry-groupperms3' => 'غير مجموعة الويكيات المحددة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-header' => 'هذا السجل يسجل التغييرات للصلاحيات العامة، بما في ذلك التغييرات لعضوية المجموعات والسماحات المعطاة للمجموعات.',
 	'centralauth-rightslog-entry-newset' => 'أنشأ $2 مجموعة الويكي $1 بالويكيات التالية: $3',
@@ -2151,9 +2149,7 @@ $messages['as'] = array(
 	'centralauth-rightslog-name' => 'গোলকীয় অধিকাৰ অভিলেখ',
 	'centralauth-rightslog-entry-usergroups' => "$1-ৰ গোলকীয় গোট সদস্যপদ $2-ৰ পৰা $3-লৈ সলনি কৰা হ'ল",
 	'centralauth-rightslog-entry-groupperms' => "$1-ৰ গোট অনুমতিসমূহ $2-ৰ পৰা $3-লৈ সলনি কৰা হ'ল",
-	'centralauth-rightslog-entry-groupperms2' => "$1ৰ বাবে গোট অনুমতিসমূহ সলনি কৰা হ'ল।
-$2 যোগ কৰা হ'ল;
-$3 আঁতৰোৱা হ'ল",
+	'centralauth-rightslog-entry-groupperms2' => "$1ৰ বাবে গোট অনুমতিসমূহ সলনি কৰা হ'ল। $2 যোগ কৰা হ'ল; $3 আঁতৰোৱা হ'ল",
 	'centralauth-rightslog-entry-groupperms3' => '$1ৰ বাবে গোট বাধাকৃত ৱিকি সংহতি $2ৰ পৰা $3লৈ সলনি কৰা হৈছে',
 	'centralauth-rightslog-header' => "এই ল'গত গোলকীয় গোটসমূহৰ কাৰ্যক্ৰম আছে: সদস্যপদ আৰু অনুমতি সালসলনিসমূহ",
 	'centralauth-rightslog-entry-newset' => 'এই ৱিকিসমূহৰ সৈতে $2 ৱিকি সংহতি $1 সৃষ্টি কৰা হৈছে: $3',
@@ -2992,7 +2988,7 @@ $messages['azb'] = array(
 [[Special:UserLogin|گیریش ائتدیکده]]، مرکز داخیل سیستئمی ایسکانئرینیزه تلیمات وئریر و ایسکانئرینیز بو صحیفنی بوتون باغلانمیش دوماینی، شکیل علاقه‌لرینی ایستیفاده ائده‌رک ایستر.
 سیز بو صحیفنی تسدیقلمه معلوماتی اولما‌دان ایستدینیز، بونا گؤره هئچ بیر شئی ائدیلمه‌دی.',
 	'globalgroupmembership' => 'سراسری گروه‌لاردا عضوولوک',
-	'globalgrouppermissions' => 'سراسری گروپ ایداره‌سی',
+	'globalgrouppermissions' => 'سراسری قروپ ایداره‌سی',
 	'centralauth-globalgroupperms-grouplist' => 'آشاغی‌داکی سراسری گروه لار قورولوب.
 بیر گروه لار تعیین اولونموش ایجازه‌لری گؤره بیلر و یا دییش‌دیره بیلرسینیز، اگر ایجازه‌نیز وارسا.
 بیر گروه بوتون حقوق‌لاری علین‌دن آلینا‌راق سیلینه بیلر.',
@@ -3042,7 +3038,7 @@ $messages['azb'] = array(
 	'centralauth-editset-legend-new' => 'یئنی wiki سئتی یارادیلیر',
 	'centralauth-editset-legend-delete' => '"$1" wiki هینی سیلینیر',
 	'centralauth-editset-subtitle' => '<[[Special:WikiSets| چوخلوق سیاهی‌سی]]',
-	'centralauth-editset-name' => 'آد',
+	'centralauth-editset-name' => 'آد:',
 	'centralauth-editset-type' => 'تیپ',
 	'centralauth-editset-wikis' => 'ویکی‌لر:',
 	'centralauth-editset-restwikis' => 'یوخاری‌دا داخیل اولمایان ویکی‌لر:',
@@ -3283,9 +3279,7 @@ $messages['ba'] = array(
 	'centralauth-rightslog-name' => 'Дөйөм мөмкинлектәр яҙмалары журналы',
 	'centralauth-rightslog-entry-usergroups' => '$1 ҡатнашыусыһының кергән дөйөм төркөмдәрен үҙгәрткән. Иҫке төркөмдәр: $2. Яңы төркөмдәр: $3',
 	'centralauth-rightslog-entry-groupperms' => '$1 төркөмөнөң хоҡуҡтарын $2 хоҡуғынан $3 хоҡуғына үҙгәртте',
-	'centralauth-rightslog-entry-groupperms2' => '$1 төркөмөнөң хоҡуҡтарын үҙгәртте.
-Өҫтәлгән: $2;
-Юйылған: $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1 төркөмөнөң хоҡуҡтарын үҙгәртте. Өҫтәлгән: $2; Юйылған: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 өсөн вики йыйылмаһының төркөм сикләүҙәрен үҙгәртте. Иҫкеһе: $2, яңыһы: $3',
 	'centralauth-rightslog-header' => 'Был журнал дөйөм төркөмдәр менән үткәрелгән түбәндәге яҙмаларҙы үҙ эсенә ала: ағзаларын һәм хоҡуҡтарын үҙгәртеү',
 	'centralauth-rightslog-entry-newset' => '$2 $1 түбәндәге викилар менән вики йыйынтығы булдырҙы:  $3',
@@ -4837,9 +4831,7 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.",
 	'centralauth-rightslog-name' => 'Marilh ar gwirioù hollek',
 	'centralauth-rightslog-entry-usergroups' => 'en deus kemmet gwirioù ar strollad hollek $1 eus $2 da $3',
 	'centralauth-rightslog-entry-groupperms' => 'kemmet aotreoù ar strollad $1 eus $2 da $3',
-	'centralauth-rightslog-entry-groupperms2' => 'en deus kemmet aotreoù ar strollad evit $1.
-Ouzhpennet $2 ;
-Tennet $3',
+	'centralauth-rightslog-entry-groupperms2' => 'en deus kemmet aotreoù ar strollad evit $1. Ouzhpennet $2 ; Tennet $3',
 	'centralauth-rightslog-entry-groupperms3' => 'kemmet rik ar wikioù evit ar strolladoù $1 e $2 da $3',
 	'centralauth-rightslog-header' => 'Ar marilh-mañ a zo ennañ oberoù war strolladoù hollek : kemmoù war an implijerien hag an aotreoù roet da bep strollad',
 	'centralauth-rightslog-entry-newset' => "en deus krouet ar c'hoari wikioù $1 $2 gant ar wikioù da-heul : $3",
@@ -5985,6 +5977,24 @@ $messages['cu'] = array(
 	'centralauth-editset-submit-delete' => 'поничьжєниѥ',
 );
 
+/** Chuvash (Чӑвашла)
+ * @author Salam
+ */
+$messages['cv'] = array(
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|ҫеккунт|ҫеккунт}} каялла', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут|минут}} каялла', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сехет|сехет}} каялла', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|кун|кун}} каялла', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|уйӑх|уйӑх}} каялла', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|ҫуо|ҫул}} каялла',
+	'centralauth-editgroup-noset' => '(çук)',
+	'centralauth-editgroup-reason' => 'Сӑлтав:',
+	'centralauth-editgroup-success' => 'Ушкӑн ирӗкӗсем улӑштарнӑ.',
+	'centralauth-editset-name' => 'Ят:',
+	'centralauth-editset-reason' => 'Сӑлтав:',
+	'centralauth-editset-submit-delete' => 'Тӗпле',
+);
+
 /** Welsh (Cymraeg)
  * @author Lloffiwr
  * @author Pwyll
@@ -6181,9 +6191,7 @@ Rheswm: $1',
 	'centralauth-rightslog-name' => 'Lòg galluoedd cydwici',
 	'centralauth-rightslog-entry-usergroups' => 'wedi newid aelodaeth grŵp cydwici $1 o $2 i $3',
 	'centralauth-rightslog-entry-groupperms' => 'wedi newid galluoedd y grŵp $1 o $2 i $3',
-	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1.
-Ychwanegwyd $2:
-Gwaredwyd $3',
+	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1. Ychwanegwyd $2: Gwaredwyd $3',
 	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set "$1" o wicïau',
 	'autologin' => 'Mewngofnodi awtomatig',
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
@@ -6444,9 +6452,7 @@ Omdøbning vil betyde at den lokale bruger vil blive adskilt den globale konto.'
 	'centralauth-rightslog-name' => 'Global rettighedslog',
 	'centralauth-rightslog-entry-usergroups' => 'ændrede globalt gruppemedlemskab for $1 fra $2 til $3',
 	'centralauth-rightslog-entry-groupperms' => 'ændrede gruppetilladelser for $1 fra $2 til $3',
-	'centralauth-rightslog-entry-groupperms2' => 'ændrede brugerrettigheder for $1.
-Tilføjede $2;
-slettede $3',
+	'centralauth-rightslog-entry-groupperms2' => 'ændrede brugerrettigheder for $1. Tilføjede $2; slettede $3',
 	'centralauth-rightslog-entry-groupperms3' => 'ændrede hvilke wikier som er i gruppen $1 fra $2 til $3',
 	'centralauth-rightslog-header' => 'Denne log indeholder ændringer i globale grupper: medlemskab og rettighedsændringer',
 	'centralauth-rightslog-entry-newset' => 'oprettede wikigruppen "$1" $2 med følgende wikier: $3',
@@ -7156,9 +7162,7 @@ Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.',
 	'centralauth-rightslog-name' => 'Logê heqa globalî',
 	'centralauth-rightslog-entry-usergroups' => 'qe $1 ra $2 rê $3, eza biyayîşê grupî vurne',
 	'centralauth-rightslog-entry-groupperms' => 'qe $1 ra $2 rê $3, desturê grupî vurne',
-	'centralauth-rightslog-entry-groupperms2' => 'Qe $1, desturê grupî vurno.
-$2 de kerd;
-$3 wedarno',
+	'centralauth-rightslog-entry-groupperms2' => 'Qe $1, desturê grupî vurno. $2 de kerd; $3 wedarno',
 	'centralauth-rightslog-entry-groupperms3' => 'qe $1 ra $2 rê $3, eza grupî restriksiyonê wîkî vurne',
 	'centralauth-rightslog-header' => 'Ena qeyd de operasyonê grup ê globalî esto: ezayê u vurnayîşê desturî',
 	'centralauth-rightslog-entry-newset' => 'setê $2 wîkî yê $1î viraşt pê ena wîkîyan: $3',
@@ -7741,12 +7745,14 @@ $messages['el'] = array(
 Όλοι οι τοπικοί λογαριασμοί θα συνεχίσουν να υπάρχουν.
 Οι κωδικοί για τους τοπικούς λογαριασμούς που δημιουργήθηκαν πριν τη μετακίνηση θα αναστραφούν στις προ-μετακίνησης αξίες.',
 	'centralauth-admin-delete-button' => 'Διαγραφή του λογαριασμού',
+	'centralauth-admin-delete-confirm' => 'Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν το λογαριασμό;',
 	'centralauth-admin-delete-success' => 'Διαγράφηκε επιτυχώς ο παγκόσμιος λογαριασμός για τον "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Δεν υπάρχει καθολικός λογαριασμός ονόματι "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Σφάλμα: ο παγκόσμιος λογαριασμός "<nowiki>$1</nowiki>" δεν υπάρχει.',
 	'centralauth-token-mismatch' => 'Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.',
 	'centralauth-admin-reason' => 'Αιτία:',
 	'centralauth-admin-reason-other' => 'Άλλος/πρόσθετος λόγος:',
+	'centralauth-admin-unhide-nonexistent' => 'Σφάλμα: ο καθολικός λογαριασμός «<nowiki>$1</nowiki>» δεν υπάρχει.',
 	'centralauth-admin-status' => 'Ρύθμιση της κατάστασης του καθολικού λογαριασμού',
 	'centralauth-admin-status-intro' => 'Μπορείς να χρησιμοποιήσεις αυτή τη φόρμα για να αλλάξεις την κατάσταση αυτού του παγκόσμιου λογαριασμού',
 	'centralauth-admin-status-locked' => 'Κλειδωμένο:',
@@ -7814,9 +7820,7 @@ $messages['el'] = array(
 	'centralauth-rightslog-name' => 'Ιστορικό καθολικών δικαιωμάτων',
 	'centralauth-rightslog-entry-usergroups' => 'άλλαξε τα παγκόσμια δικαιώματα χρηστών για τον/την $1 από $2 σε $3',
 	'centralauth-rightslog-entry-groupperms' => 'άλλαξε τις άδειες ομάδων για τον/την $1 από $2 σε $3',
-	'centralauth-rightslog-entry-groupperms2' => 'αλλαγή αδειών χρήστη για τον $1.
-Προσθήκη $2;
-Αφαίρεση $3',
+	'centralauth-rightslog-entry-groupperms2' => 'αλλαγή αδειών χρήστη για τον $1. Προσθήκη $2; Αφαίρεση $3',
 	'centralauth-rightslog-entry-groupperms3' => 'άλλαξε την ομάδα της περιορισμένης σειράς βίκι για $1 από $2 σε $3',
 	'centralauth-rightslog-header' => 'Αυτή η καραγραφή περιέχει λειτουργίες σε παγκόσμιες ομάδες: αλλαγές σε μέλη και άδειες',
 	'centralauth-rightslog-entry-newset' => 'δημιούργησε $2 σειρά βίκι $1 με τα ακόλουθα βίκι: $3',
@@ -8460,9 +8464,7 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-rightslog-name' => 'Registro de derechos globales',
 	'centralauth-rightslog-entry-usergroups' => 'modificó los grupos globales a los que pertenece $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms' => 'modificó los permisos del grupo $1 de $2 a $3',
-	'centralauth-rightslog-entry-groupperms2' => 'modificó los permisos del grupo $1.
-Añadido $2;
-Eliminado $3',
+	'centralauth-rightslog-entry-groupperms2' => 'modificó los permisos del grupo $1. Añadido $2; Eliminado $3',
 	'centralauth-rightslog-entry-groupperms3' => 'modificó el conjunto de ajustes wiki restringidos de $1 de $2 a $3',
 	'centralauth-rightslog-header' => 'Este registro contiene operaciones en grupos globales: cambios de pertenencia a grupos y permisos',
 	'centralauth-rightslog-entry-newset' => 'creó ajuste wiki $2 $1 con los siguientes wikis: $3',
@@ -8778,9 +8780,7 @@ Kasutajanime muutmisega eraldatakse kohalik kasutaja globaalsest.',
 	'centralauth-rightslog-name' => 'Globaalsete õiguste logi',
 	'centralauth-rightslog-entry-usergroups' => 'muutis kasutaja $1 globaalse rühma liikmesuse rühmast $2 rühma $3',
 	'centralauth-rightslog-entry-groupperms' => 'muutis rühma $1 kasutajaõigused $2 õigusteks $3',
-	'centralauth-rightslog-entry-groupperms2' => 'muutis rühma $1 õigusi.
-Lisatud $2.
-Eemaldatud $3',
+	'centralauth-rightslog-entry-groupperms2' => 'muutis rühma $1 õigusi. Lisatud $2. Eemaldatud $3',
 	'centralauth-rightslog-entry-groupperms3' => 'muutis rühma $1 kasutava vikikomplekti $2 komplektiks $3',
 	'centralauth-rightslog-header' => 'Siin logis on globaalsete rühmade liikmesuse ja õigustega seotud muudatused.',
 	'centralauth-rightslog-entry-newset' => 'lõi $2 vikide komplekti $1, millesse kuuluvad järgnevad vikid: $3',
@@ -9529,9 +9529,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-rightslog-name' => 'Järjestelmänlaajuinen käyttöoikeusloki',
 	'centralauth-rightslog-entry-usergroups' => 'muutti käyttäjän $1 järjestelmänlaajuisen ryhmän jäsenyyttä ryhmästä $2 ryhmään $3',
 	'centralauth-rightslog-entry-groupperms' => 'muutti ryhmän $1 käyttöoikeuden $2 käyttöoikeuteen $3',
-	'centralauth-rightslog-entry-groupperms2' => 'muutti ryhmän $1 käyttöoikeuksia.
-Lisätty $2.
-Poistettu $3',
+	'centralauth-rightslog-entry-groupperms2' => 'muutti ryhmän $1 käyttöoikeuksia. Lisätty $2. Poistettu $3',
 	'centralauth-rightslog-entry-groupperms3' => 'muutti ryhmän $1 rajoitetut wikit wikeistä $2 wikeihin $3',
 	'centralauth-rightslog-header' => 'Tämä loki sisältää järjestelmänlaajuisten ryhmien jäsenyys- ja käyttöoikeuksien muutosmerkinnät',
 	'centralauth-rightslog-entry-newset' => 'loi $2 wikijoukon $1, joka sisältää seuraavat wikit: $3',
@@ -9799,9 +9797,7 @@ Orsøk: $1',
 	'centralauth-rightslog-name' => 'Global rættindi loggur',
 	'centralauth-rightslog-entry-usergroups' => 'broytti globalt bólka limaskap fyri $1 frá $2 til $3',
 	'centralauth-rightslog-entry-groupperms' => 'broytti bólka loyvir fyri $1 frá $2 til $3',
-	'centralauth-rightslog-entry-groupperms2' => 'broytti bólkaloyvir fyri $1.
-Legði afturat $2;
-Tók burtur $3',
+	'centralauth-rightslog-entry-groupperms2' => 'broytti bólkaloyvir fyri $1. Legði afturat $2; Tók burtur $3',
 	'centralauth-rightslog-entry-newset' => 'upprættaði $2 wiki bólkin $1 við fylgjandi wikium: $3',
 	'centralauth-rightslog-entry-setrename' => 'gav wiki bólkinum nýtt navn frá "$2" til "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'broytti slag av "$1" frá $2 til $3',
@@ -10102,9 +10098,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-rightslog-name' => 'Journal des droits globaux',
 	'centralauth-rightslog-entry-usergroups' => 'a modifié le groupe d’appartenance du compte global « $1 » de $2 à $3',
 	'centralauth-rightslog-entry-groupperms' => 'a modifié les permissions du groupe global $1 de $2 à $3',
-	'centralauth-rightslog-entry-groupperms2' => 'a modifié les permissions du groupe global $1 :
-a ajouté $2 ;
-a retiré $3',
+	'centralauth-rightslog-entry-groupperms2' => 'a modifié les permissions du groupe global $1 : a ajouté $2 ; a retiré $3',
 	'centralauth-rightslog-entry-groupperms3' => 'a modifié le jeu restreint de wikis pour le groupe global $1 de $2 sur $3',
 	'centralauth-rightslog-header' => 'Ce journal contient les opérations relatives aux groupes globaux : modifications des membres et des permissions assignées à chaque groupe',
 	'centralauth-rightslog-entry-newset' => 'a créé le jeu de wikis $1 $2 avec les wikis suivants : $3',
@@ -10362,11 +10356,11 @@ Los contresegnos por los comptos locals fêts devant lor fusion retroveront lors
 	'centralauth-admin-status-submit' => 'Changiér lo statut',
 	'centralauth-admin-status-nonexistent' => 'Èrror : lo compto globâl « <nowiki>$1</nowiki> » ègziste pas.',
 	'centralauth-admin-setstatus-success' => 'Vos éd changiê lo statut de ceti compto globâl avouéc reusséta.',
-	'centralauth-admin-status-reasons' => '* Rêsons de vèrrolyâjo les ples corentes
-** compto que sèrvét ren qu’a vandalisar
-** compto que sèrvét ren qu’a spamar
-* Rêsons de vèrrolyâjo et cachiê les ples corentes
-** nom d’usanciér abusif
+	'centralauth-admin-status-reasons' => '* Rêsons corentes de vèrroly
+** compto que sèrvét justo a vandalisar
+** compto que sèrvét justo a fâre de spame
+* Rêsons corentes de vèrroly et cachiê
+** nom d’utilisator abusif
 ** enformacions a sè que vont pas avouéc',
 	'centralauth-admin-logsnippet' => 'Changements devant dens lo compto globâl',
 	'centralauth-admin-suppressreason' => 'Suprimâ dens l’ensemblo per $1 por ceta rêson : $2',
@@ -10417,9 +10411,7 @@ Un changement de nom local dètachierat cél compto du compto globâl.',
 	'centralauth-rightslog-name' => 'Jornal des drêts globâls',
 	'centralauth-rightslog-entry-usergroups' => 'at changiê l’apartegnence a les tropes globâles por « $1 » de $2 a $3',
 	'centralauth-rightslog-entry-groupperms' => 'at changiê les pèrmissions a la tropa por « $1 » de $2 a $3',
-	'centralauth-rightslog-entry-groupperms2' => 'at changiê les pèrmissions a la tropa por « $1 » :
-at apondu $2 ;
-at enlevâ $3',
+	'centralauth-rightslog-entry-groupperms2' => 'at changiê les pèrmissions a la tropa por « $1 » : at apondu $2 ; at enlevâ $3',
 	'centralauth-rightslog-entry-groupperms3' => 'at changiê lo juè rètrent de vouiquis por la tropa « $1 » de $2 a $3',
 	'centralauth-rightslog-header' => 'Ceti jornal contint les opèracions sur les tropes globâles : changements d’apartegnence et de les pèrmissions.',
 	'centralauth-rightslog-entry-newset' => 'at fêt lo juè de vouiquis $1 $2 avouéc cetos vouiquis : $3',
@@ -11452,9 +11444,7 @@ $messages['gu'] = array(
 	'centralauth-rightslog-name' => 'વૈશ્વીક હક્કનો લોગ',
 	'centralauth-rightslog-entry-usergroups' => '$1 માટેનું વૈશ્વીક સમૂહ સભ્યપદ $2 થી $3 પર બદલ્યું',
 	'centralauth-rightslog-entry-groupperms' => '$1 માટેની સમૂહ પરવાનગિઓ $2 થી $3 પર બદલી',
-	'centralauth-rightslog-entry-groupperms2' => '$1 માટે જૂથ પરવાનગીઓ બદલેલ છે.
-ઉમેરેલ $2;
-દૂર કરેલ $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1 માટે જૂથ પરવાનગીઓ બદલેલ છે. ઉમેરેલ $2; દૂર કરેલ $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 માટે વિકિ પ્રતિબંધ સમૂહ  $2 થી $3 પર ગોઠવ્યો',
 	'centralauth-rightslog-header' => 'આ લોગમાં વિશ્વીક સમૂહ તેમની સભ્યપદ અને પરવાનગિઓના ફરક આદિને બતાવે છે.',
 	'centralauth-rightslog-entry-newset' => '$2 વિકિ સમૂહ $1 નીચેની વિકિઓ સાથે બનાવ્યો: $3',
@@ -12125,9 +12115,7 @@ $messages['hi'] = array(
 	'centralauth-rightslog-name' => 'वैश्विक अधिकार बदलाव सूची',
 	'centralauth-rightslog-entry-usergroups' => '$1 का वैश्विक गट सदस्यत्व $2 से $3 को बदला',
 	'centralauth-rightslog-entry-groupperms' => '$1 के गट अधिकार $2 से $3 को बदलें',
-	'centralauth-rightslog-entry-groupperms2' => '$1 के लिये  समूह के अनुमतियाँ परिवर्तित
-$2 जोड़ा गया
-$3 हटाया गया',
+	'centralauth-rightslog-entry-groupperms2' => '$1 के लिये  समूह के अनुमतियाँ परिवर्तित $2 जोड़ा गया $3 हटाया गया',
 	'centralauth-rightslog-entry-groupperms3' => '$1 के लिए $2 से $3 तक, बदली गयी विकि समूह सेट किया गया है',
 	'centralauth-rightslog-header' => 'केंद्रीय प्रमाणित-अधिकार लॉग इन-हैडर',
 	'centralauth-rightslog-entry-newset' => '$2 निर्मित विकि सेट  $1  निम्नलिखित विकिसमूह के साथ: $3',
@@ -14081,9 +14069,7 @@ No nanagan, ikkaten na ti lokal nga agar-aramat manipud idiay maysa sangalubogan
 	'centralauth-rightslog-name' => 'Listaan dagiti sangalubongan a  karbengan',
 	'centralauth-rightslog-entry-usergroups' => 'nasukatan ti sangalubongan a panagkameng iti bunggoy ti $1 manipud $2 iti $3',
 	'centralauth-rightslog-entry-groupperms' => 'nasukatan ti panagkameng iti bunggoy para iti $1 manipud ti $2 iti $3',
-	'centralauth-rightslog-entry-groupperms2' => 'sinukatan ti pammalubos ti kameng ni $1.
-Innayon $2;
-Inikkat $3',
+	'centralauth-rightslog-entry-groupperms2' => 'sinukatan ti pammalubos ti kameng ni $1. Innayon $2; Inikkat $3',
 	'centralauth-rightslog-entry-groupperms3' => 'sinukatan dagiti bunggoy dagiti disso ti wiki a naiparit para iti $1 manipud ti $2 iti $3',
 	'centralauth-rightslog-header' => 'Daytoy a listaan ket naglaon kadagiti operasion idiay sangalubongan a bung-bunggoy: panag-kameng ken dagiti panag-sukat ti pammalubos',
 	'centralauth-rightslog-entry-newset' => 'inaramid ti $2 disso a wiki $1 babaen dagiti sumagad a wiki: $3',
@@ -14438,9 +14424,7 @@ Breyting á notendanafni hans verður til þess að staðbundni aðgangur hans v
 	'centralauth-rightslog-name' => 'Altæk réttindarskrá notenda',
 	'centralauth-rightslog-entry-usergroups' => 'breytti altækum réttindum $1 frá $2 í $3',
 	'centralauth-rightslog-entry-groupperms' => 'breytti hópa réttindum $1 frá $2 í $3',
-	'centralauth-rightslog-entry-groupperms2' => 'Breytti hópa réttindum $1.
-Bætti við $2;
-Fjarlægði $3',
+	'centralauth-rightslog-entry-groupperms2' => 'Breytti hópa réttindum $1. Bætti við $2; Fjarlægði $3',
 	'centralauth-rightslog-entry-groupperms3' => 'breytti takmörkuðum wiki verkefnum hópsins $1 frá $2 í $3',
 	'centralauth-rightslog-header' => 'Þessi skrá inniheldur aðgerðir altækra hópa: réttindabreytingar og nýja meðlimi',
 	'centralauth-rightslog-entry-newset' => 'bjó til $2 $1 wiki röð með eftirfarandi wiki verkefnum: $3',
@@ -15035,9 +15019,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-name' => 'グローバル権限変更記録',
 	'centralauth-rightslog-entry-usergroups' => '$1 の所属グローバルグループを $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-groupperms' => '$1 のグループ権限を $2 から $3 に変更しました',
-	'centralauth-rightslog-entry-groupperms2' => '$1 のグループ権限を変更しました。
-追加: $2、
-除去: $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1 のグループ権限を変更しました。追加: $2、除去: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 に対して制限されているウィキ集合を $2 から $3 に変更しました',
 	'centralauth-rightslog-header' => 'このログはグローバルグループの操作（メンバー管理、パーミッション変更）が記録されています。',
 	'centralauth-rightslog-entry-newset' => '$2ウィキ集合 $1 を以下のウィキで作成しました: $3',
@@ -15700,9 +15682,7 @@ $messages['ka'] = array(
 	'centralauth-rightslog-name' => 'გლობალური უფლებების ჟურნალი',
 	'centralauth-rightslog-entry-usergroups' => 'შესწორდა მომხმარებლის გლობალური ჯგუფები $1  $2-დან  $3-ზე',
 	'centralauth-rightslog-entry-groupperms' => 'შესწორდა მომხმარებლის ჯგუფების უფლება $1  $2-სთვის  $3-ზე',
-	'centralauth-rightslog-entry-groupperms2' => 'შეცვალა ჯგუდი $1-სთვის.
-ჩაამატა $2;
-მოხსნა $3',
+	'centralauth-rightslog-entry-groupperms2' => 'შეცვალა ჯგუდი $1-სთვის. ჩაამატა $2; მოხსნა $3',
 	'centralauth-rightslog-entry-groupperms3' => 'შეცვალა ვიკის ჯგუფობრივი აღკვეთა $1-დან $2-დან $3-მდე',
 	'centralauth-rightslog-header' => 'ეს ჟურნალი შეიცავს გლობალურ ჯგუფებთან დაკავშირებულ ინფორმაციას.',
 	'centralauth-rightslog-entry-newset' => 'შექმნა $2 ვიკის ჯგუდი $1 შემდეგი ვიკებით: $3',
@@ -16814,9 +16794,7 @@ $messages['ko'] = array(
 	'centralauth-rightslog-name' => '공통 권한 기록',
 	'centralauth-rightslog-entry-usergroups' => '$1의 통합 그룹 소속을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 바꿈.
-추가: $2;
-제거: $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 바꿈. 추가: $2; 제거: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한의 바꾸기 기록을 포함하고 있습니다.',
 	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 $1 위키 집합을 만들었습니다: $3',
@@ -16999,6 +16977,7 @@ Mer künne et zwa Förföhre, wi et wöhr, ävver dat es nit
 der Müjjelschkeite loore.
 Deit uns leid!',
 	'centralauth-error-locked' => 'Do kann kein Sigge beärbeide. Doför bes De jespert.',
+	'centralauth-error-unmerged' => 'Do kann kein Sigge beärbeide. Do häs keine zosammejelaate Zohjang.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Liß mieh övver de '''Jemeinsame Aanmeldunge''']]…''",
 	'centralauth-list-home-title' => 'Heim-Wiki',
 	'centralauth-list-home-dryrun' => 'Dat Paßwoot un die e-mail Address en dämm Wiki wäde eets ens för Ding jemeinsame Aanmeldung noh em Zosammelääje jenumme.',
@@ -17265,6 +17244,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 	'centralauth-editset-success' => 'Wiki-Jrop jeändert.',
 	'centralauth-editset-success-delete' => 'Die Wiki-Jrop es fottjeschmeße.',
 	'centralauth-editset-return' => 'Zeröck zor Houpaansich',
+	'centralauth-block-already-locked' => '{{GENDER:$1|Dä|Dat|Dä Metmaacher|De|Dat}} [[Special:CentralAuth/$1|$1]] es ald övverall jeschpärrt.',
 	'centralauth-readonly' => 'De Daatebangk vun CentralAuth Database es jesperrt.',
 	'centralauth-readonlytext' => 'De Daatebangk vun CentralAuth Database es em Momang jesperrt un nemmp kein neue udder veränderte Daate aan. Dat künnt jood wääje dä nomaale Waadong esu sin, dernoh es dann alles wider nomaal.',
 	'right-globalgroupmembership' => 'Metjleedschaff en jemeinsame Metmaacher-Jruppe beärbeide',
@@ -18308,9 +18288,7 @@ Pakeitus jo vardą, jis bus atsietas nuo bendrosios paskyros.',
 	'centralauth-rightslog-name' => 'Globalus teisių sąrašas',
 	'centralauth-rightslog-entry-usergroups' => 'pakeista $1 globalioji grupės narystė iš $2 į $3',
 	'centralauth-rightslog-entry-groupperms' => 'pakeistos $1 grupės teisės iš $2 į $3',
-	'centralauth-rightslog-entry-groupperms2' => 'pakeistos $1 grupės teisės.
-Pridėta $2;
-Pašalinta $3',
+	'centralauth-rightslog-entry-groupperms2' => 'pakeistos $1 grupės teisės. Pridėta $2; Pašalinta $3',
 	'centralauth-rightslog-entry-groupperms3' => 'pakeista $1 grupės apribotų projektų rinkinys iš $2 į $3',
 	'centralauth-rightslog-header' => 'Šiame sąraše rodomos globaliųjų grupių operacijos: narystės ir teisių keitimai',
 	'centralauth-rightslog-entry-newset' => 'sukurtas $2 projektų rinkinys $1 su šiais projektais: $3',
@@ -18608,9 +18586,7 @@ Iemesls: $1',
 	'centralauth-log-status-oversighted' => 'pārlūkots',
 	'centralauth-log-status-none' => '(nav)',
 	'centralauth-rightslog-name' => 'Globālo tiesību reģistrs',
-	'centralauth-rightslog-entry-groupperms2' => 'izmainītas $1 grupu atļaujas.
-Pievienots $2;
-Noņemts $3',
+	'centralauth-rightslog-entry-groupperms2' => 'izmainītas $1 grupu atļaujas. Pievienots $2; Noņemts $3',
 	'autologin' => 'Automātiska pieslēgšanās',
 	'globalgrouppermissions' => 'Globālo grupu pārvaldnieks',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|skatīt/labot]])',
@@ -19012,9 +18988,7 @@ $messages['mk'] = array(
 	'centralauth-rightslog-name' => 'Дневник на глобални права',
 	'centralauth-rightslog-entry-usergroups' => 'го промени глобалното групно членство за $1 од $2 на $3',
 	'centralauth-rightslog-entry-groupperms' => 'ги промени групните дозволи за $1 од $2 на $3',
-	'centralauth-rightslog-entry-groupperms2' => 'ги измени групните права за $1.
-Додадено $2;
-Отстрането $3',
+	'centralauth-rightslog-entry-groupperms2' => 'ги измени групните права за $1. Додадено $2; Отстрането $3',
 	'centralauth-rightslog-entry-groupperms3' => 'ги промени групните ограничувања за збировите од викија за $1 од $2 на $3',
 	'centralauth-rightslog-header' => 'Овој дневник содржи операции со глобални групи: промени во членството и дозволите',
 	'centralauth-rightslog-entry-newset' => '$2 го создаде збирот од викија $1 со следниве викија: $3',
@@ -19333,9 +19307,7 @@ $messages['ml'] = array(
 	'centralauth-rightslog-name' => 'ആഗോള അവകാശ പ്രവർത്തന രേഖ',
 	'centralauth-rightslog-entry-usergroups' => '$1 എന്ന ഉപയോക്താവിന്റെ ആഗോള സംഘ അംഗത്വം $2 എന്നതിൽ നിന്നു $3 എന്നതിലേക്കു മാറ്റിയിരിക്കുന്നു',
 	'centralauth-rightslog-entry-groupperms' => '$1 എന്ന ഉപയോക്താവിന്റെ സംഘ അംഗത്വം $2 എന്നതിൽ നിന്നു $3 എന്നതിലേക്കു മാറ്റിയിരിക്കുന്നു',
-	'centralauth-rightslog-entry-groupperms2' => '$1 കൈവശം വച്ചിരുന്ന സംഘ അനുമതികൾക്ക് മാറ്റം വരുത്തിയിരിക്കുന്നു.
-$2 കൂട്ടിച്ചേർത്തു;
-$3 നീക്കംചെയ്തു',
+	'centralauth-rightslog-entry-groupperms2' => '$1 കൈവശം വച്ചിരുന്ന സംഘ അനുമതികൾക്ക് മാറ്റം വരുത്തിയിരിക്കുന്നു. $2 കൂട്ടിച്ചേർത്തു; $3 നീക്കംചെയ്തു',
 	'centralauth-rightslog-entry-groupperms3' => '$1 ഗണത്തിനു പരിമിതപ്പെടുത്തിയ വിക്കികൾ $2 എന്നതിൽ നിന്നു $3 എന്നതിലേയ്ക്ക് മാറ്റിയിരിക്കുന്നു',
 	'centralauth-rightslog-header' => 'ഈ പ്രവർത്തന രേഖയിൽ ആഗോള ഗ്രൂപ്പുകളുടെ വിവിധ പ്രവർത്തനങ്ങൾ ഉൾപ്പെടുന്നു: അംഗത്വവും അവകാശ മാറ്റങ്ങളും',
 	'centralauth-rightslog-entry-newset' => 'താഴെ കൊടുത്തിരിക്കുന്ന വിക്കികളുൾപ്പെടെ $1 വിക്കി ഗണത്തിൽ $2 സൃഷ്ടിച്ചിരിക്കുന്നു: $3',
@@ -19757,9 +19729,7 @@ $messages['mr'] = array(
 	'centralauth-rightslog-name' => 'वैश्विक अधिकार नोंदी',
 	'centralauth-rightslog-entry-usergroups' => '$1 चे वैश्विक गट सदस्यत्व $2 पासून $3 ला बदलले',
 	'centralauth-rightslog-entry-groupperms' => '$1 चे गट अधिकार $2 पासून $3 ला बदलले',
-	'centralauth-rightslog-entry-groupperms2' => '$1 ची गट परवानगी बदलविण्यात आली.
-$2 जोडले.
-$3 काढले.',
+	'centralauth-rightslog-entry-groupperms2' => '$1 ची गट परवानगी बदलविण्यात आली. $2 जोडले. $3 काढले.',
 	'centralauth-rightslog-entry-groupperms3' => '$1करिता $2पासून  $3 कडे बंधनातील विकिसंचांचे गट बदलले',
 	'centralauth-rightslog-header' => 'ही वैश्विक गटांवर झालेल्या कार्यांची नोंद आहे: सदस्यत्व आणि अधिकार बदल',
 	'centralauth-rightslog-entry-newset' => '$1 हा $2 विकिसंच तयार केल. यात पुढील विकि आहेत: $3',
@@ -20367,9 +20337,7 @@ Il-passwords għall-kontijiet lokali maħluqa qabel it-twaħħid jirritornaw għ
 	'centralauth-rightslog-name' => 'Drittijiet globali',
 	'centralauth-rightslog-entry-usergroups' => 'biddel is-sħubija fil-gruppi globali għal $1 minn $2 għal $3',
 	'centralauth-rightslog-entry-groupperms' => 'biddel il-permess tal-grupp għal $1 minn $2 għal $3',
-	'centralauth-rightslog-entry-groupperms2' => 'biddel il-permessi tal-grupp għal $1.
-Żied $2;
-Neħħa $3',
+	'centralauth-rightslog-entry-groupperms2' => 'biddel il-permessi tal-grupp għal $1. Żied $2; Neħħa $3',
 	'centralauth-rightslog-entry-groupperms3' => "biddel il-grupp tas-sett ta' wikis ristretti għal $1 minn $2 għal $3",
 	'centralauth-rightslog-header' => "Dan ir-reġistru jinkludi operazzjonijiet fuq il-gruppi globali: tibdil fis-sħubija u l-permessi mogħtija 'l-gruppi",
 	'centralauth-rightslog-entry-newset' => "ħoloq is-sett ta' wikis $1 tat-tip $2 bil-wikis segwenti: $3",
@@ -22491,9 +22459,7 @@ $messages['or'] = array(
 	'centralauth-rightslog-name' => 'ବିଶ୍ଵ ଅଧିକାର ଇତିହାସ',
 	'centralauth-rightslog-entry-usergroups' => '$1 ପାଇଁ ଗୋଠ ବିଶ୍ଵ ସଭ୍ୟ ପଦର ଅବସ୍ଥା $2 ରୁ $3କୁ ବଦଳାଇଦିଆଗଲା',
 	'centralauth-rightslog-entry-groupperms' => '$1 ପାଇଁ ଗୋଠ ଅନୁମତି $2 ରୁ $3କୁ ବଦଳାଇଦିଆଗଲା',
-	'centralauth-rightslog-entry-groupperms2' => '$1 ପାଇଁ ଗୋଠ ଅନୁମତି ବଦଳାଗଲା ।
-$2 ଯୋଡ଼ାଗଲା;
-$3 ବାହାର କରିଦିଆଗଲା',
+	'centralauth-rightslog-entry-groupperms2' => '$1 ପାଇଁ ଗୋଠ ଅନୁମତି ବଦଳାଗଲା । $2 ଯୋଡ଼ାଗଲା; $3 ବାହାର କରିଦିଆଗଲା',
 	'centralauth-rightslog-entry-groupperms3' => '$1 ପାଇଁ $2 ରୁ $3କୁ ଗୋଠ ଦେଇ ସୀମାବଦ୍ଧ ଉଇକିକୁ ବଦଳାଇ ଦିଆଗଲା',
 	'centralauth-rightslog-header' => 'ଏହି ଇତିହାସରେ ଏକାକୀକରଣ କରା ଜଗତୀକରଣ ଗୋଠର କାମ ଯଥା: ସଭ୍ୟ ପଦ ଓ ଅନୁମତି ବଦଳ ରହିଅଛି',
 	'centralauth-rightslog-entry-newset' => '$3 ଉଇକିସମୂହ ପାଇଁ $1ର ସହ $2 ଉଇକି ଗୋଠ ତିଆରି କଲେ',
@@ -22809,6 +22775,7 @@ Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego p
 	'centralauth-notice-dryrun' => "<div class='successbox'>Tylko tryb demonstracyjny</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym i usuwania usterek. Właściwe operacje łączenia kont są obecnie wyłączone.',
 	'centralauth-error-locked' => 'Nie możesz edytować, ponieważ Twoje konto jest zablokowane.',
+	'centralauth-error-unmerged' => 'Nie możesz edytować, ponieważ Twoje konto nie zostało połączone.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
 	'centralauth-list-home-title' => 'Macierzysta wiki',
 	'centralauth-list-home-dryrun' => 'Ustawione na tej wiki hasło oraz adres e‐mail będą wykorzystywane przez Twoje konto uniwersalne.',
@@ -22892,6 +22859,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-delete-title' => 'Usuwanie konta',
 	'centralauth-admin-delete-description' => 'Usunięcie konta uniwersalnego spowoduje usunięcie wszystkich wspólnych preferencji, odłączenie wszystkich kont lokalnych oraz zwolnienie nazwy konta uniwersalnego do wykorzystania przez innego użytkownika. Lokalne konta nadal będą istniały. Hasła kont lokalnych utworzonych przed przyłączeniem ich do konta uniwersalnego zostaną przywrócone do wartości sprzed momentu przyłączenia.',
 	'centralauth-admin-delete-button' => 'Usuń to konto',
+	'centralauth-admin-delete-confirm' => 'Czy na pewno chcesz usunąć to konto?',
 	'centralauth-admin-delete-success' => 'Usunięto konto uniwersalne „<nowiki>$1</nowiki>”',
 	'centralauth-admin-nonexistent' => 'Brak konta uniwersalnego „<nowiki>$1</nowiki>”',
 	'centralauth-admin-delete-nonexistent' => 'Błąd – nie istnieje konto uniwersalne „<nowiki>$1</nowiki>”.',
@@ -23273,9 +23241,7 @@ Arnomélo a farà sì che ël cont local a sia dëstacà da col global.",
 	'centralauth-rightslog-name' => 'Registr dij drit globaj',
 	'centralauth-rightslog-entry-usergroups' => "a l'ha tramudà l'apartenensa a le partìe globaj për $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms' => 'cangià ij përmess ëd partìa për $1 da $2 a $3',
-	'centralauth-rightslog-entry-groupperms2' => "a l'ha cangià ij përmess ëd partìa për $1.
-Giontà $2;
-Gavà $3",
+	'centralauth-rightslog-entry-groupperms2' => "a l'ha cangià ij përmess ëd partìa për $1. Giontà $2; Gavà $3",
 	'centralauth-rightslog-entry-groupperms3' => "a l'ha cangià l'ansema arstrenzù ëd partìa ëd wiki për $1 da $2 a $3",
 	'centralauth-rightslog-header' => "Cost registr a conten j'operassion dzora le partìe globaj: ij cambiament d'apartenensa e ëd përmess",
 	'centralauth-rightslog-entry-newset' => "a l'ha creà l'ansema ëd wiki $1 ëd $2 con le wiki sì-dapress: $3",
@@ -23581,9 +23547,7 @@ $messages['pnb'] = array(
 	'centralauth-rightslog-name' => 'گلوبل ح‍قاں دی لاگ',
 	'centralauth-rightslog-entry-usergroups' => '$1 لئی بدلی گلوبل گروپ ممبرشپ $2 توں $3 تک۔',
 	'centralauth-rightslog-entry-groupperms' => 'بدلیاں ٹولی اجازتاں $1 لئی $2 توں $3 تک۔',
-	'centralauth-rightslog-entry-groupperms2' => '$1 لئی ٹولی اجازتاں بدلیاں
-جوڑے $2؛
-ہٹاۓ $3',
+	'centralauth-rightslog-entry-groupperms2' => '$1 لئی ٹولی اجازتاں بدلیاں جوڑے $2؛ ہٹاۓ $3',
 	'centralauth-rightslog-entry-groupperms3' => 'بدلی وکی ٹولی روکاں $1 لئی سیٹ $2 $3 تک۔',
 	'centralauth-rightslog-header' => 'ایس لاگ چ جگت ٹولیاں دے کم نیں: ممبرشپ تے اجازت بدلدی اے۔',
 	'centralauth-rightslog-entry-newset' => '$2 بنایا گیا وکی سیٹ تھلے 1$ دتے گۓ وکیاں نال: 3$', # Fuzzy
@@ -24045,9 +24009,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-rightslog-name' => 'Registo de direitos globais',
 	'centralauth-rightslog-entry-usergroups' => 'alterou a associação a grupos globais de $1, de $2 para $3',
 	'centralauth-rightslog-entry-groupperms' => 'alterou as permissões do grupo $1, de $2 para $3',
-	'centralauth-rightslog-entry-groupperms2' => 'alterou as permissões do grupo $1.
-Adicionou $2;
-Removeu $3',
+	'centralauth-rightslog-entry-groupperms2' => 'alterou as permissões do grupo $1. Adicionou $2; Removeu $3',
 	'centralauth-rightslog-entry-groupperms3' => 'alterou o conjunto de wikis restritas do grupo $1, de $2 para $3',
 	'centralauth-rightslog-header' => 'Este registo contém operações sobre grupos globais: alterações de membros e de permissões',
 	'centralauth-rightslog-entry-newset' => 'criou o conjunto de wikis $2 $1 com as seguintes wikis: $3',
@@ -24362,9 +24324,7 @@ Alterar o nome de usuário vai desunificar esta conta local da conta global.',
 	'centralauth-rightslog-name' => 'Registro de direitos globais',
 	'centralauth-rightslog-entry-usergroups' => 'alterou a associação a grupos globais de $1, de $2 para $3',
 	'centralauth-rightslog-entry-groupperms' => 'alterou as permissões do grupo $1, de $2 para $3',
-	'centralauth-rightslog-entry-groupperms2' => 'alterou as permissões do grupo $1.
-Adicionou $2;
-Removeu $3',
+	'centralauth-rightslog-entry-groupperms2' => 'alterou as permissões do grupo $1. Adicionou $2; Removeu $3',
 	'centralauth-rightslog-entry-groupperms3' => 'alterou o conjunto de wikis restritas do grupo $1, de $2 para $3',
 	'centralauth-rightslog-header' => 'Este registo contém operações sobre grupos globais: alterações de membros e de permissões',
 	'centralauth-rightslog-entry-newset' => 'criou o conjunto de wikis $2 $1 com as seguintes wikis: $3',
@@ -24758,6 +24718,7 @@ Motivul: $1',
 Toate conturile locale vor continua să existe.
 Parolele conturilor globale create anterior unificării vor reveni la valorile lor de dinainte de unificare.',
 	'centralauth-admin-delete-button' => 'Şterge acest cont',
+	'centralauth-admin-delete-confirm' => 'Doriți într-adevăr să ștergeți acest cont?',
 	'centralauth-admin-delete-success' => 'Şters cu succes contul global pentru „<nowiki>$1</nowiki>”',
 	'centralauth-admin-nonexistent' => 'Nu există nici un cont global pentru "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Eroare: contul global „<nowiki>$1</nowiki>” nu există',
@@ -24832,9 +24793,7 @@ Redenumirea va cauza utilizatorului local detașarea de la contul global.',
 	'centralauth-rightslog-name' => 'Jurnalul drepturilor globale',
 	'centralauth-rightslog-entry-usergroups' => 'a schimbat pentru $1 apartenența la grupul global de la $2 la $3',
 	'centralauth-rightslog-entry-groupperms' => 'a schimbat permisiunile de grup pentru $1 de la $2 la $3',
-	'centralauth-rightslog-entry-groupperms2' => 'a schimbat permisiunile grupului pentru $1.
-A adăugat $2;
-A eliminat $3',
+	'centralauth-rightslog-entry-groupperms2' => 'a schimbat permisiunile grupului pentru $1. A adăugat $2; A eliminat $3',
 	'centralauth-rightslog-entry-groupperms3' => 'a schimbat setul restricționat de wikiuri pentru $1 de la $2 la $3',
 	'centralauth-rightslog-header' => 'Acest jurnal conține operațiuni pe grupurile globale: schimbări de membri și permisiuni',
 	'centralauth-rightslog-entry-newset' => 'a creat setul wiki $1 $2 cu următoarele wikiuri: $3',
@@ -25107,9 +25066,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-log-status-none' => '(ninde)',
 	'centralauth-rightslog-name' => 'Archivije de le deritte globbale',
 	'centralauth-rightslog-entry-groupperms' => "permesse d'u gruppe cangiate pe $1 da $2 a $3",
-	'centralauth-rightslog-entry-groupperms2' => 'cangiate le autorizzazione de gruppe pè $1.
-Aggiunde $2;
-Luàte $3',
+	'centralauth-rightslog-entry-groupperms2' => 'cangiate le autorizzazione de gruppe pè $1. Aggiunde $2; Luàte $3',
 	'centralauth-rightslog-header' => "St'archivije condene operaziune sus a le gruppe globbale: cangiaminde de membre e permesse",
 	'centralauth-rightslog-entry-newset' => "ccrejate $2 'mbostazione de uicchi  $1 cu le seguende uicchi: $3",
 	'centralauth-rightslog-entry-setrename' => 'set uicchi renomenate "$2" a "$1"',
@@ -25261,6 +25218,7 @@ $messages['ru'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстрационный режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Объединение учётных записей сейчас работает в демонстрационном (отладочном) режиме, реальные операции объединения отключены. Извините.',
 	'centralauth-error-locked' => 'Вы не можете править, так как ваша учётная запись заблокирована.',
+	'centralauth-error-unmerged' => 'Вам недоступна функция редактирования, поскольку не выполнено создание единой учётной записи.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Единая учётная запись|Узнать больше о '''единой учётной записи''']]…''",
 	'centralauth-list-home-title' => '«Домашний» вики-проект',
 	'centralauth-list-home-dryrun' => 'Для вашей единой учётной записи будут использованы значения пароля и адреса электронной почты в этом вики-проекте.',
@@ -25345,6 +25303,7 @@ $messages['ru'] = array(
 Все локальные учётные записи продолжат существовать.
 Пароли локальных учётных записей, созданные до объединения, вернут свои старые значения.',
 	'centralauth-admin-delete-button' => 'Удалить учётную запись',
+	'centralauth-admin-delete-confirm' => 'Вы действительно хотите удалить эту учётную запись?',
 	'centralauth-admin-delete-success' => 'Успешно удалена глобальная учётная запись «<nowiki>$1</nowiki>»',
 	'centralauth-admin-nonexistent' => 'Не существует глобальной учётной записи «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
@@ -25446,6 +25405,7 @@ $messages['ru'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'Название новой группы:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Назначить права',
 	'centralauth-editgroup-subtitle' => 'Изменение группы $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Просмотреть группу «$1»?',
 	'centralauth-editgroup-fieldset' => 'Права для $1',
 	'centralauth-editgroup-name' => 'Название группы:',
 	'centralauth-editgroup-display' => 'Локализованное название группы:',
@@ -25719,9 +25679,7 @@ $messages['rue'] = array(
 	'centralauth-rightslog-name' => 'Лоґ ґлобалных прав',
 	'centralauth-rightslog-entry-usergroups' => 'змінив список членів в ґлобалній ґрупі $1 з $2 на $3',
 	'centralauth-rightslog-entry-groupperms' => 'змінив права ґрупы  $1 з $2 на $3',
-	'centralauth-rightslog-entry-groupperms2' => 'змінив права ґрупы $1.
-Придав $2;
-Одстранив $3',
+	'centralauth-rightslog-entry-groupperms2' => 'змінив права ґрупы $1. Придав $2; Одстранив $3',
 	'centralauth-rightslog-entry-groupperms3' => 'змінив россяг хоснованя ґрупы $1 з сету $2 на $3',
 	'centralauth-rightslog-header' => 'Тот лоґ обсягує операції на ґлобалных ґрупах: зміны членства і оправнїня',
 	'centralauth-rightslog-entry-newset' => 'створив $2 вікі сет $1 з наступныма вікі: $3',
@@ -26025,9 +25983,7 @@ $messages['sa'] = array(
 	'centralauth-rightslog-name' => 'वैश्विकाधिकारसूची',
 	'centralauth-rightslog-entry-usergroups' => '$1 एतस्य वैश्विकगणसदस्यत्वं $2 तः $3 प्रति परिवर्तितम्',
 	'centralauth-rightslog-entry-groupperms' => '$1 इत्यस्य गणाधिकारः $2 तः $3 प्रति परिवर्तितम् ।',
-	'centralauth-rightslog-entry-groupperms2' => '$1 इत्यस्य गणानुमतिः परिवर्तिता
-$2 योजितम्
-$3 निष्कासितम्',
+	'centralauth-rightslog-entry-groupperms2' => '$1 इत्यस्य गणानुमतिः परिवर्तिता $2 योजितम् $3 निष्कासितम्',
 	'centralauth-rightslog-entry-groupperms3' => '$1 इत्यस्य $2 तः $3 प्रति समूहविकिगणः परिवर्तितः',
 	'centralauth-rightslog-header' => 'एषा सूची वैश्विकगणानां कार्यैः युक्तः : सदस्यत्वम् अनुमतिपरिवर्तनानि',
 	'centralauth-rightslog-entry-newset' => '$2 निर्मितः विकिव्यवस्था $1  अधोनिर्दिष्टेन विकिसमूहेन सह : $3',
@@ -26329,9 +26285,7 @@ $messages['sah'] = array(
 	'centralauth-rightslog-name' => 'Аан бырааптар сурунааллара',
 	'centralauth-rightslog-entry-usergroups' => '$1 диэн киһи аан бөлөххө киириитин мантан $2 манна $3 уларытта',
 	'centralauth-rightslog-entry-groupperms' => '$1 диэн бөлөх бырааптарын мантан $2 манна $3 уларытта',
-	'centralauth-rightslog-entry-groupperms2' => 'манна анаан $1 бөлөх быраабын уларытта.
-Эбилиннэ $2;
-Сотулунна $3',
+	'centralauth-rightslog-entry-groupperms2' => 'манна анаан $1 бөлөх быраабын уларытта. Эбилиннэ $2; Сотулунна $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 биикилэр бөлөхтөрүн мантан $2 манна $3 уларытта',
 	'centralauth-rightslog-header' => 'Аан бөлөхтөр уларыйыыларын сурунаала: кинилэргэ киирии уонна бырааптара',
 	'centralauth-rightslog-entry-newset' => '$2 $1 биики бөлөҕүн оҥордо: $3',
@@ -26729,9 +26683,7 @@ $messages['si'] = array(
 	'centralauth-rightslog-name' => 'ගෝලීය අයිති ලොගය',
 	'centralauth-rightslog-entry-usergroups' => '$1 සඳහා ගෝලීය කණ්ඩායම් සාමාජිකත්වය $2 සිට $3 දක්වා වෙනස්කෙරිණි',
 	'centralauth-rightslog-entry-groupperms' => '$1 සඳහා කණ්ඩායම් අවසරයන් $2 සිට $3 දක්වා වෙනස්කෙරිණි',
-	'centralauth-rightslog-entry-groupperms2' => '$1 කණ්ඩායම් අවසරයන් වෙනස්කරන ලදී.
-$2 එකතු කෙරිනි;
-$3 ඉවත් කෙරිනි',
+	'centralauth-rightslog-entry-groupperms2' => '$1 කණ්ඩායම් අවසරයන් වෙනස්කරන ලදී. $2 එකතු කෙරිනි; $3 ඉවත් කෙරිනි',
 	'centralauth-rightslog-entry-groupperms3' => '$1 සඳහා සීමාකළ විකි කණ්ඩායම $2 සිට $3 ට වෙනස් කෙරිනි',
 	'centralauth-rightslog-header' => 'මෙම ලොගයේ ගෝලීය කණ්ඩායම්වල මෙහෙයුම් අඩංගුවේ: සාමාජිකත්ව හා අවසර වෙනස්කෙරුම්',
 	'centralauth-rightslog-entry-newset' => 'පහත සඳහන් විකි සමග $1 $2 විකි කට්ටලයක් සාදන ලදී: $3',
@@ -27346,9 +27298,7 @@ Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega uporabnika
 	'centralauth-rightslog-name' => 'Dnevnik globalnih pravic',
 	'centralauth-rightslog-entry-usergroups' => 'je spremenil(-a) globalno članstvo v skupini za $1 iz $2 v $3',
 	'centralauth-rightslog-entry-groupperms' => 'je spremenil(-a) pravice skupine za $1 iz $2 v $3',
-	'centralauth-rightslog-entry-groupperms2' => 'spremenil(-a) dovoljenja skupine za $1.
-Dodano: $2;
-Odstranjeno: $3',
+	'centralauth-rightslog-entry-groupperms2' => 'spremenil(-a) dovoljenja skupine za $1. Dodano: $2; Odstranjeno: $3',
 	'centralauth-rightslog-entry-groupperms3' => 'je spremenil(-a) množico na skupino omejenih wikijev za $1 iz $2 v $3',
 	'centralauth-rightslog-header' => 'Ta dnevnik vsebuje dejavnosti na področju globalnih skupin: članstva in spremembe dovoljenj',
 	'centralauth-rightslog-entry-newset' => 'je ustvaril(-a) skupino wikijev $1 $2 z naslednjimi wikiji: $3',
@@ -27947,9 +27897,7 @@ $messages['sr-ec'] = array(
 	'centralauth-rightslog-name' => 'Дневник глобалних права',
 	'centralauth-rightslog-entry-usergroups' => '{{GENDER:|је променио|је променила|је променио}} глобално групно чланство за $1 из $2 у $3',
 	'centralauth-rightslog-entry-groupperms' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1 из $2 у $3',
-	'centralauth-rightslog-entry-groupperms2' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1.
-Додато $2;
-Уклоњено $3',
+	'centralauth-rightslog-entry-groupperms2' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1. Додато $2; Уклоњено $3',
 	'centralauth-rightslog-entry-groupperms3' => '{{GENDER:|је променио|је променила|је променио}} ограничења групе за скупове викија за $1 из $2 у $3',
 	'centralauth-rightslog-header' => 'Овај дневник садржи операције о глобалним групама: промене у чланству и дозволама',
 	'centralauth-rightslog-entry-newset' => 'направљен $2 скуп викија $1 са следећим викијима: $3',
@@ -29351,9 +29299,7 @@ $messages['ta'] = array(
 	'centralauth-rightslog-name' => 'உலகளாவிய உரிமைகள் குறிப்பேடு',
 	'centralauth-rightslog-entry-usergroups' => '$1 என்பவருக்கான உலகக் குழு உறுப்புத்துவம் $2 என்பதிலிருந்து $3 என்பதற்கு மாற்றப்பட்டது',
 	'centralauth-rightslog-entry-groupperms' => '$1 என்பவருக்கான குழு இசைவுகள் $2 என்பதிலிருந்து $3 என்பதற்கு மாற்றப்பட்டன',
-	'centralauth-rightslog-entry-groupperms2' => ' $1 க்காக மாற்றப்பட்ட குழு அனுமதிகள்.
-சேர்க்கப்பட்டது $2;
-நீக்கப்பட்டது $3',
+	'centralauth-rightslog-entry-groupperms2' => ' $1 க்காக மாற்றப்பட்ட குழு அனுமதிகள். சேர்க்கப்பட்டது $2; நீக்கப்பட்டது $3',
 	'centralauth-rightslog-entry-setrename' => 'பெயர்மாற்றப்பட்ட விக்கி அமைவுகள் "$2" லிருந்து "$1" க்கு.',
 	'centralauth-rightslog-entry-setnewtype' => 'மாற்றப்பட்ட "$1" ன் வகை  $2விலிருந்து  $3 க்கு',
 	'centralauth-rightslog-entry-setchange' => 'மாற்றப்பட்ட விக்கிகள்  "$1" ல்: சேர்க்கப்பட்டது: $2; நீக்கப்பட்டது: $3',
@@ -29646,9 +29592,7 @@ $messages['te'] = array(
 	'centralauth-rightslog-name' => 'సార్వత్రిక హక్కుల చిట్టా',
 	'centralauth-rightslog-entry-usergroups' => '$1 యొక్క సార్వత్రిక గుంపు సభ్యత్వాన్ని $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-entry-groupperms' => '$1 యొక్క గుంపు అనుమతులను $2 నుండి $3 కు మార్చాం',
-	'centralauth-rightslog-entry-groupperms2' => '$1 యొక్క గుంపు అనుమతులను మార్చాం.
-$2 ఇచ్చాం;
-$3 తీసేసాం',
+	'centralauth-rightslog-entry-groupperms2' => '$1 యొక్క గుంపు అనుమతులను మార్చాం. $2 ఇచ్చాం; $3 తీసేసాం',
 	'centralauth-rightslog-entry-groupperms3' => '$1 కోసం సెట్ చేసిన గుంపు నిరోధక వికీలను $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-header' => 'సార్వత్రిక గుంపులపై జరిగిన చర్యల చిట్టా ఇది: సభ్యత్వం మరియు అనుమతుల మార్పులు',
 	'centralauth-rightslog-entry-setnewtype' => '"$1" యొక్క రకాన్ని $2 నుండి $3 కు మార్చాం',
@@ -32689,9 +32633,7 @@ $messages['yi'] = array(
 	'centralauth-rightslog-name' => 'גלאבאלער רעכטן לאגבוך',
 	'centralauth-rightslog-entry-usergroups' => 'געביטן גלאבאלע גרופע מיטגלידערשאַפֿט פֿאַר $1 פֿון $2 אויף $3',
 	'centralauth-rightslog-entry-groupperms' => 'געביטן גרופע רעכטן פֿאַר $1 פֿון $2 אויף $3',
-	'centralauth-rightslog-entry-groupperms2' => 'געענדערט גרופע רעכטן פֿאר $1.
-צוגעלייגט $2;
-אראפגענומען $3',
+	'centralauth-rightslog-entry-groupperms2' => 'געענדערט גרופע רעכטן פֿאר $1. צוגעלייגט $2; אראפגענומען $3',
 	'centralauth-rightslog-header' => 'דאס לאגבוך אנטהאלט אפעראציעס אויף גלאבאלע גרופעס: מיטגלידערשאפֿט און רעכטן ענדערונגען',
 	'centralauth-rightslog-entry-newset' => 'געשאפֿן $2 וויקיגרופע $1 מיט די פֿאלגנדע וויקיס: $3',
 	'centralauth-rightslog-entry-setnewtype' => 'געענדערט טיפ פֿון "$1" פֿון $2 אויף $3',
