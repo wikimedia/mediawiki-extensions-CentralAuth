@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//9+s\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-12-27T23:05:08Z",
+      "side": 1,
+      "message": "s/suppressed/CentralAuthUser::HIDDEN_OVERSIGHT/",
+      "revId": "001041973912ed1a965c37930fec84b24c0c45fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
