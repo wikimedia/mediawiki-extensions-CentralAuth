@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//+BE\u003d",
+        "filename": "api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-27T22:16:48Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you be modifying this?",
+      "revId": "de2ceb4f0d4abf2f5923d9615ab516f74e4d520f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//+BA\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-27T22:16:48Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this force unhide/unsuppress the user?",
+      "revId": "de2ceb4f0d4abf2f5923d9615ab516f74e4d520f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
