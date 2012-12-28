@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//9q0\u003d",
+        "filename": "api/ApiQueryGlobalGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-28T16:39:58Z",
+      "side": 1,
+      "message": "Usually we put these on multiple lines, like this:\n$result \u003d $dbr-\u003eselect(\n\t\u0027global_group_permissions\u0027,\n\t$fields,\n\tarray(),\n\t__METHOD__,\n\tarray( \u0027DISTINCT\u0027 )\n);",
+      "revId": "2b77f97ed13e2f86357678e67625de666677ff9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//9q8\u003d",
+        "filename": "api/ApiQueryGlobalGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2012-12-28T16:39:58Z",
+      "side": 1,
+      "message": "Why did you remove the rights prop from here?",
+      "revId": "2b77f97ed13e2f86357678e67625de666677ff9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
