@@ -47,6 +47,9 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		$userExists = $user->exists();
 
 		if ( $userExists ) {
+			if ( $user->getHiddenLevel() !== CentralAuthUser::HIDDEN_NONE && !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
+				$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			}
 			$data['home'] = $user->getHomeWiki();
 			$data['id'] = $user->getId();
 			$data['registration'] = wfTimestamp( TS_ISO_8601, $user->getRegistration() );
