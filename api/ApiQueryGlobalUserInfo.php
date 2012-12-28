@@ -46,7 +46,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		$data = array();
 		$userExists = $user->exists();
 
-		if ( $userExists ) {
+		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE || $this->getUser()->isAllowed( 'centralauth-oversight' ) ) ) {
+			// The global user exists and it's not hidden or the current user is allowed to see it
 			$data['home'] = $user->getHomeWiki();
 			$data['id'] = $user->getId();
 			$data['registration'] = wfTimestamp( TS_ISO_8601, $user->getRegistration() );
@@ -58,6 +59,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				$data['hidden'] = '';
 			}
 		} else {
+			// The user doesn't exist or we pretend it doesn't if it's hidden
 			$data['missing'] = '';
 		}
 		$result->addValue( 'query', $this->getModuleName(), $data );
