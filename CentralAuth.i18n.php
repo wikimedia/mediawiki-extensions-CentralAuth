@@ -18739,6 +18739,54 @@ Alesane: $1',
 	'centralauth-admin-unmerge-success' => 'Wis sukses mbatalna penggabungan $1 {{PLURAL:$1|akun|akun}}',
 	'centralauth-admin-delete-title' => 'Busek akun',
 	'centralauth-admin-delete-button' => 'Busek akun kiye',
+	'centralauth-admin-nonexistent' => 'Ora ana akun global kanggo "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Error: akun global "<nowiki>$1</nowiki>" ora ana.',
+	'centralauth-token-mismatch' => 'Ngapurane, inyong ora teyeng ngolah pangiriman formulire Rika jalaran data sesine ilang.',
+	'centralauth-admin-reason' => 'Alesan:',
+	'centralauth-admin-reason-other' => 'Alesan liyane/tambahan:',
+	'centralauth-admin-unhide-nonexistent' => 'Error: akun global "<nowiki>$1</nowiki>" ora ana.',
+	'centralauth-admin-status' => 'Nyetel status akun global',
+	'centralauth-admin-status-intro' => 'Rika teyeng nganggo formulir kiye kanggo ngganti statuse akun global kiye.',
+	'centralauth-admin-status-locked' => 'Dekunci:',
+	'centralauth-admin-status-locked-no' => 'Akun ora dekunci',
+	'centralauth-admin-status-locked-yes' => 'Akun dekunci sekang panyuntingan',
+	'centralauth-admin-status-hidden' => 'Diumpetna:',
+	'centralauth-admin-status-hidden-no' => 'Akun ora diumpetna',
+	'centralauth-admin-status-hidden-list' => 'Akun diumpetna sekang daptar publik',
+	'centralauth-admin-status-hidden-oversight' => 'Akun diumpetna sekumplite',
+	'centralauth-admin-status-submit' => 'Ngatur status',
+	'centralauth-admin-status-nonexistent' => 'Error: akun global "<nowiki>$1</nowiki>" ora ana.',
+	'centralauth-admin-setstatus-success' => 'Rika wis sukses gole ngganti statuse akun global kiye.',
+	'centralauth-admin-status-reasons' => '* Alesan kanggo ngunci sing umum
+** akun nggo pranti vandalisme thok
+** akun spam
+* Alesan kanggo ngunci-lan-ngumpetna sing umum
+** jeneng panganggo sing nglanggar aturan
+** informasi personal sing ora patut',
+	'centralauth-admin-logsnippet' => 'Owahan akun global sedurunge',
+	'centralauth-admin-suppressreason' => 'Dipenetsacara global nang $1 jalaran alesan kiye: $2',
+	'globalusers' => 'Daptar pangganggo global',
+	'centralauth-listusers-locked' => 'dekunci',
+	'centralauth-listusers-attached' => '[[User:$1|ana nang wiki lokal]]',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|detik|detik}} kapungkur', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|menit|menit}} kapungkur', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|jam|jam}} kapungkur', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|dina|dina}} kapungkur', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|sasi|sasi}} kapungkur', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|taun|taun}} kapungkur', # Fuzzy
+	'centralauth-prefs-status' => 'Status akun global:',
+	'centralauth-prefs-not-managed' => 'Ora nganggo akun global',
+	'centralauth-prefs-unattached' => 'Durung dekonfirmasi',
+	'centralauth-prefs-complete' => 'Kabeh beres!',
+	'centralauth-prefs-migration' => 'Proses migrasi',
+	'centralauth-prefs-count-attached' => 'Akune Rika kuwe aktif nang $1 {{PLURAL:$1|situs|situs}} proyek.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Akun sing durung dekonfirmasi nganggo jenenge Rika egin ana nang $1 {{PLURAL:$1|proyek|proyek}}.', # Fuzzy
+	'centralauth-prefs-detail-unattached' => 'Situs proyek kiye durung dikonfirmasi dadi bageyane sekang akun global.',
+	'centralauth-prefs-manage' => 'Ngatur akun globale Rika',
+	'centralauth-prefs-view' => 'Deleng info panganggo global',
+	'centralauth-renameuser-merged' => 'Panganggo $1 wis pindah ming sistem akun global. Ganti jeneng bakal marekna akun lokal kasebut kapisah sekang akun globalé.',
+	'centralauth-renameuser-reserved' => 'Panganggo $2 wis dicadhangna kanggo akun global.',
+	'centralauth-invalid-wiki' => 'Ora ana basis data wiki: $1',
 );
 
 /** Malagasy (Malagasy)
