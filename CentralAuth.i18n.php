@@ -68,10 +68,6 @@ Please enter the password for the home wiki.',
 	'centralauth-not-owner-text'  => 'The username "$1" was automatically assigned to the owner of the account on $2.
 
 If this is you, you can finish the login unification process simply by typing the master password for that account here:',
-	'centralauth-blocked-text'    => 'Your home wiki (listed below) is blocked from editing.
-Please contact an administrator in this wiki to unblock it.
-While it is blocked, you cannot merge your accounts.',
-
 	'centralauth-notice-dryrun'   => "<div class='successbox'>Demo mode only</div><br clear='all'/>",
 
 	'centralauth-disabled-dryrun' => "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled.
@@ -440,7 +436,6 @@ $messages['qqq'] = array(
 Status message after successful unification of a user account.',
 	'centralauth-incomplete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{int:Centralauth-groupname}}</nowiki>}} exactly as it is.}}
 Status message after incomplete unification of a user account.',
-	'centralauth-blocked-text' => 'Status message after failed unification of a user account because a wiki is closed.',
 	'centralauth-notice-dryrun' => 'Message displayed while account unification is in demonstration mode.',
 	'centralauth-disabled-dryrun' => 'Message displayed while account unification is disabled.',
 	'centralauth-error-locked' => "Message displayed while account unification is not possible because the acting user's account is locked.",
