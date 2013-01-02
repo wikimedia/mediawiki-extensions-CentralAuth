@@ -798,11 +798,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
 
-		if ( $home['blocked'] ) {
-			wfDebugLog( 'CentralAuth', $this->mHomeWiki . ' blocked, forbid migration' );
-			return false;
-		}
-
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
 		$ok = $this->storeGlobalData(
