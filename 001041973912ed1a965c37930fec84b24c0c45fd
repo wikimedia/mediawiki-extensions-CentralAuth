@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAADgX//6Iw\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-02T21:07:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADgX//9+s\u003d",
+      "revId": "001041973912ed1a965c37930fec84b24c0c45fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//5/w\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-02T21:07:29Z",
+      "side": 1,
+      "message": "Also a duplicate of SpecialCentralAuth, so removed.",
+      "revId": "001041973912ed1a965c37930fec84b24c0c45fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//9wI\u003d",
         "filename": "specials/SpecialMultiLock.php",
         "patchSetId": 2
@@ -30,6 +65,24 @@
       "writtenOn": "2012-12-28T14:15:54Z",
       "side": 1,
       "message": "Duplicate of SpecialCentralAuth::formatHiddenLevel",
+      "revId": "001041973912ed1a965c37930fec84b24c0c45fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//6Ho\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-02T21:07:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADgX//9wI\u003d",
       "revId": "001041973912ed1a965c37930fec84b24c0c45fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
