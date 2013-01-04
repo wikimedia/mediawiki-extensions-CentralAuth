@@ -32874,6 +32874,7 @@ $messages['yi'] = array(
 	'centralauth-admin-info-id' => 'באַניצער־נומער:',
 	'centralauth-admin-info-registered' => 'אײַנגעשריבן:',
 	'centralauth-admin-info-home' => 'היים וויקי:',
+	'centralauth-admin-info-editcount' => 'סה"כ רעדאקטירונגען צאל:',
 	'centralauth-admin-info-locked' => 'פֿאַרשלאסן:',
 	'centralauth-admin-info-hidden' => 'באַהאַלטענער ניווא:',
 	'centralauth-admin-nohome' => 'נישט מעגלעך פֿעסטשטעלן',
