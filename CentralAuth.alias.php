@@ -719,7 +719,9 @@ $specialPageAliases['uk'] = array(
 
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = array(
+	'AutoLogin' => array( 'خودکار_داخل_نوشتگی' ),
 	'MergeAccount' => array( 'ضم_کھاتہ' ),
+	'GlobalUsers' => array( 'عالمی_صارفین' ),
 );
 
 /** vèneto (vèneto) */
