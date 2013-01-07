@@ -210,6 +210,10 @@ $wgHooks['RenameUserComplete'][] = 'CentralAuthHooks::onRenameUserComplete';
 // For SecurePoll
 $wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUserParams';
 
+// For AbuseFilter
+$wgHooks['AbuseFilter-builder'][] = 'CentralAuthHooks::onAbuseFilterBuilder';
+$wgHooks['AbuseFilter-filterAction'][] = 'CentralAuthHooks::onAbuseFilterFilterAction';
+
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
 $wgAvailableRights[] = 'centralauth-lock';

@@ -9,6 +9,7 @@ class WikiSet {
 	private $mName;	// Display name of the group
 	private $mType;	// Opt-in based or opt-out based
 	private $mWikis;	// List of wikis
+	private $mWikiDiff = false; //Diff between mWikis on update
 	// This property is used, don't remove it
 	// (That means you Reedy & Siebrand)
 	private $mVersion = self::VERSION;      // Caching purposes
@@ -39,6 +40,15 @@ class WikiSet {
 	 * @return string
 	 */
 	protected static function memcKey( $k ) { return "wikiset:{$k}"; }
+
+	/**
+	 * Generate the key name where memc holds the list of wikisets for a given wiki
+	 * @param $wiki string
+	 * @return string
+	 */
+	public static function memcKeyWikiSetsForWiki( $wiki ) {
+		return self::memcKey( "wikisetforwiki/{$wiki}" );
+	}
 
 	/**
 	 * @return int
@@ -101,6 +111,14 @@ class WikiSet {
 		if ( $commit ) {
 			$this->commit();
 		}
+	}
+
+	/**
+	 * Set WikiSets different from the previous version
+	 * @param $wikis Array - array of wiki names (Strings)
+	 */
+	public function setWikiDiff( $wikis ) {
+		$this->mWikiDiff = $wikis;
 	}
 
 	/**
@@ -217,6 +235,66 @@ class WikiSet {
 		global $wgMemc;
 		$wgMemc->delete( self::memcKey( $this->mId ) );
 		$wgMemc->delete( self::memcKey( "name:" . md5( $this->mName ) ) );
+
+		$changedWikis = $this->mWikiDiff;
+		if ( !$changedWikis ) {
+			$changedWikis = CentralAuthUser::getWikiList();
+		}
+
+		foreach ( $changedWikis as $wiki ) {
+			$wgMemc->set(
+				self::memcKeyWikiSetsForWiki( $wiki ),
+				self::getWikiSetsForWiki( $wiki )
+			);
+		}
+	}
+
+	/**
+	 * Helper function to get all WikiSets for a given wiki, for the
+	 * rare case when we need to reference the other way.
+	 * @param String name of wiki
+	 * @return Array of WikiSet names (Strings)
+	 */
+	public static function getWikiSetsForWiki( $wiki ) {
+		wfProfileIn( __METHOD__ );
+
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$wikisets = array();
+
+		$resultOptIn = $dbr->select(
+			'wikiset',
+			array( 'ws_name', 'ws_wikis' ),
+			array( 'ws_type' => self::OPTIN,
+				'ws_wikis' . $dbr->buildLike(
+					$dbr->anyString(), $wiki, $dbr->anyString()
+				)
+			)
+		);
+
+		foreach ( $resultOptIn as $row ) {
+			if ( in_array( $wiki, explode(',', $row->ws_wikis) ) ) {
+				$wikisets[] = $row->ws_name;
+			}
+		}
+
+		$resultOptOut = $dbr->select(
+			'wikiset',
+			array( 'ws_name', 'ws_wikis' ),
+			array( 'ws_type' => self::OPTOUT,
+				'ws_wikis NOT' . $dbr->buildLike(
+					$dbr->anyString(), $wiki, $dbr->anyString()
+				)
+			)
+		);
+
+		foreach ( $resultOptOut as $row ) {
+			if ( !in_array( $wiki, explode(',', $row->ws_wikis) ) ) {
+				$wikisets[] = $row->ws_name;
+			}
+		}
+
+		wfProfileOut( __METHOD__ );
+		return $wikisets;
 	}
 
 	public function saveToCache() {

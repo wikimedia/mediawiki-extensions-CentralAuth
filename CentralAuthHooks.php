@@ -815,4 +815,36 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * Inject the current wiki's wikiset list into AbuseFilter logic
+	 */
+	public static function onAbuseFilterBuilder( &$realValues ) {
+		// This will generate code using i18n message
+		// abusefilter-edit-builder-vars-centralauth-wikisets
+		$realValues['vars']['centralauth_wikisets'] = 'centralauth-wikisets';
+		return true;
+	}
+
+	public static function onAbuseFilterFilterAction( &$vars, $title ) {
+		global $wgMemc;
+		static $wikisets = false;
+		wfProfileIn( __METHOD__ );
+
+		if ( $wikisets == false ) {
+
+			$wikisetKey = WikiSet::memcKeyWikiSetsForWiki( wfWikiID() );
+			$wikisets = $wgMemc->get( $wikisetKey );
+			if ( $wikisets === null || is_array( $wikisets ) === false ) {
+				$wikisets = WikiSet::getWikiSetsForWiki( wfWikiID() );
+				$wgMemc->set( $wikisetKey, $wikisets );
+			}
+		}
+		$vars->setVar( 'centralauth_wikisets', implode( ',', $wikisets ) );
+
+		wfProfileOut( __METHOD__ );
+		return true;
+	}
+
+
 }
