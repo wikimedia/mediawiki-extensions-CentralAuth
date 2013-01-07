@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//2n4\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-07T16:29:16Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to implement this as lazyLoadVar like it\u0027s done in I79a625e3 ? This way this var is set even when only local filters are executed.",
+      "revId": "5cacf67c712c1c3ff4162d59586f7940518ed354",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//2oE\u003d",
+        "filename": "WikiSet.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-07T16:29:16Z",
+      "side": 1,
+      "message": "Any reason to not just delete over here? Usually data is cached when needed...",
+      "revId": "5cacf67c712c1c3ff4162d59586f7940518ed354",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//2oY\u003d",
+        "filename": "WikiSet.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-07T16:29:16Z",
+      "side": 1,
+      "message": "Please add a comment telling that this might return partial matches as well (so that the sanity check below is needed)",
+      "revId": "5cacf67c712c1c3ff4162d59586f7940518ed354",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//2oU\u003d",
+        "filename": "WikiSet.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-07T16:29:16Z",
+      "side": 1,
+      "message": "Please add a comment telling that this might return partial matches as well (so that the sanity check below is needed)",
+      "revId": "5cacf67c712c1c3ff4162d59586f7940518ed354",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
