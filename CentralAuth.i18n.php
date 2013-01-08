@@ -577,7 +577,6 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 *{{msg-mw|Centralauth-admin-status-hidden-no}}
 *{{msg-mw|Centralauth-admin-status-hidden-list}}
 *{{msg-mw|Centralauth-admin-status-hidden-oversight}}
-----
 {{Identical|Hidden}}',
 	'centralauth-admin-status-hidden-no' => 'Radio button
 *{{msg-mw|Centralauth-admin-status-hidden-no}}
@@ -694,7 +693,7 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 {{doc-singularthey}}',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
-	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|abusefilter-edit-builder-group-group-vars}}.',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -6860,6 +6859,7 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 	'right-centralauth-oversight' => 'Globales Benutzerkonto unterdrücken',
 	'right-centralauth-merge' => 'Benutzerkonten zusammenführen',
 	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale Gruppen, in der der Benutzer ist',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7570,6 +7570,7 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-centralauth-oversight' => 'Globalne konto pódtłocyś',
 	'right-centralauth-merge' => 'Konta zjadnośiś',
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne kupki, w kótarychž wužywaŕ jo cłonk',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -10194,6 +10195,7 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'right-centralauth-oversight' => 'Supprimer le compte global',
 	'right-centralauth-merge' => 'Fusionner ses comptes',
 	'right-globalgrouppermissions' => 'Gérer les groupes globaux',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Groupes globaux auxquels appartient l'utilisateur",
 );
 
 /** Franco-Provençal (arpetan)
@@ -10878,6 +10880,7 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'right-centralauth-oversight' => 'Suprimir unha conta global',
 	'right-centralauth-merge' => 'Fusionar a conta propia',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globais aos que pertence o usuario',
 );
 
 /** Gothic (Gothic)
@@ -12850,6 +12853,7 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'right-centralauth-oversight' => 'Globalne konto potłóčić',
 	'right-centralauth-merge' => 'Jich konta zjednoćić',
 	'right-globalgrouppermissions' => 'Globalne skupiny zrjadować',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupiny, w kotrychž wužiwar je čłon',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -15031,7 +15035,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-entry-groupperms' => '$1 のグループ権限を $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-groupperms2' => '$1 のグループ権限を変更しました。追加: $2、除去: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 に対して制限されているウィキ集合を $2 から $3 に変更しました',
-	'centralauth-rightslog-header' => 'このログはグローバルグループの操作（メンバー管理、パーミッション変更）が記録されています。',
+	'centralauth-rightslog-header' => 'このログはグローバルグループの操作 (メンバー管理、パーミッション変更) が記録されています。',
 	'centralauth-rightslog-entry-newset' => '$2ウィキ集合 $1 を以下のウィキで作成しました: $3',
 	'centralauth-rightslog-entry-setrename' => 'ウィキ集合「$2」の名前を「$1」に変更しました',
 	'centralauth-rightslog-entry-setnewtype' => '「$1」の種類を $2 から $3 に変更しました',
@@ -15122,6 +15126,7 @@ $messages['ja'] = array(
 	'right-centralauth-oversight' => 'グローバルアカウントを秘匿',
 	'right-centralauth-merge' => '自身のアカウントを統合',
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
+	'abusefilter-edit-builder-vars-global-user-groups' => '利用者の所属グローバルグループ',
 );
 
 /** Jutish (jysk)
@@ -16802,11 +16807,11 @@ $messages['ko'] = array(
 	'centralauth-log-status-oversighted' => '오버사이트됨',
 	'centralauth-log-status-none' => '(없음)',
 	'centralauth-rightslog-name' => '공통 권한 기록',
-	'centralauth-rightslog-entry-usergroups' => '$1의 통합 그룹 소속을 $2에서 $3으로 바꿈',
+	'centralauth-rightslog-entry-usergroups' => '$1의 공통 권한 그룹 소속을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 바꿈',
 	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 바꿈. 추가: $2; 제거: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-header' => '이 기록은 공통 권한의 바꾸기 기록을 포함하고 있습니다.',
+	'centralauth-rightslog-header' => '이 기록은 공통 권한 그룹의 바뀜 기록을 포함하고 있습니다.',
 	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 $1 위키 집합을 만들었습니다: $3',
 	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 바꿈',
 	'centralauth-rightslog-entry-setnewtype' => '위키 집합 "$1"의 유형을 $2에서 $3으로 바꿈',
@@ -16818,7 +16823,7 @@ $messages['ko'] = array(
 	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
 당신이 [[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
 당신은 인증 정보를 제공하지 않고 이 페이지를 방문하였습니다. 따라서 이 페이지는 아무 역할도 하지 않습니다.',
-	'globalgroupmembership' => '사용자의 공통 권한 조정',
+	'globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
 당신은 권한이 있다면, 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.
@@ -16889,13 +16894,14 @@ $messages['ko'] = array(
 	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] 사용자는 이미 통합 계정이 잠겨 있습니다.',
 	'centralauth-readonly' => 'CentralAuth 데이터베이스 잠김',
 	'centralauth-readonlytext' => '정기 데이터베이스 정비 작업 등의 이유로 지금 CentralAuth 데이터베이스가 잠겨서 항목을 만들거나 바꾸지 못합니다. 작업이 끝나면 정상화될 것입니다.',
-	'right-globalgroupmembership' => '사용자의 공통 권한 조정',
+	'right-globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'right-centralauth-autoaccount' => '통합 계정으로 자동 로그인하기',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
 	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
 	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기',
 	'right-centralauth-merge' => '자신의 계정을 통합하기',
-	'right-globalgrouppermissions' => '공통 권한 관리',
+	'right-globalgrouppermissions' => '공통 권한 그룹 관리',
+	'abusefilter-edit-builder-vars-global-user-groups' => '사용자가 속한 공통 권한 그룹',
 );
 
 /** Karachay-Balkar (къарачай-малкъар)
@@ -32602,6 +32608,7 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'right-centralauth-oversight' => 'Cưỡng chế tài khoản toàn cục',
 	'right-centralauth-merge' => 'Trộn tài khoản của họ',
 	'right-globalgrouppermissions' => 'Quản lý nhóm toàn cầu',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Các nhóm toàn cầu bao gồm người dùng',
 );
 
 /** Volapük (Volapük)
