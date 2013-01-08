@@ -824,6 +824,7 @@ class CentralAuthHooks {
 	 * @param null &$result
 	 */
 	static function abuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
+		global $wgMemc;
 		if ( $method == 'global-user-groups' ) {
 			$user = CentralAuthUser::getInstance( $parameters['user'] );
 			if ( $user->exists() && $user->isAttached() ) {
@@ -831,6 +832,15 @@ class CentralAuthHooks {
 			} else {
 				$result = array();
 			}
+			return false;
+		} elseif ( $method == 'centralauth-wikisets' ) {
+			$wikisetKey = WikiSet::memcKeyWikiSetsForWiki( wfWikiID() );
+			$wikisets = $wgMemc->get( $wikisetKey );
+			if ( $wikisets === null || is_array( $wikisets ) === false ) {
+				$wikisets = WikiSet::getWikiSetsForWiki( wfWikiID() );
+				$wgMemc->set( $wikisetKey, $wikisets );
+			}
+			$result = $wikisets;
 			return false;
 		} else {
 			return true;
@@ -844,6 +854,7 @@ class CentralAuthHooks {
 	 */
 	static function abuseFilterGenerateUserVars( $vars, $user ) {
 		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', array( 'user' => $user ) );
+		$vars->setLazyLoadVar( 'centralauth_wikisets', 'centralauth-wikisets', array() );
 		return true;
 	}
 
@@ -854,6 +865,8 @@ class CentralAuthHooks {
 	static function abuseFilterBuilder( &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
 		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
+		// Uses: 'abusefilter-edit-builder-vars-centralauth-wikisets'
+		$builderValues['vars']['centralauth_wikisets'] = 'centralauth-wikisets';
 		return true;
 	}
 }

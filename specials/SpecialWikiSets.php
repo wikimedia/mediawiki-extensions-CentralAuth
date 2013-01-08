@@ -314,6 +314,10 @@ class SpecialWikiSets extends SpecialPage {
 		}
 		$set->setName( $name );
 		$set->setType( $type );
+		$set->setWikiDiff( array_merge(
+			array_diff( $oldwikis, $wikis ),
+			array_diff( $wikis, $oldwikis )
+		) );
 		$set->setWikisRaw( $wikis );
 		$set->commit();
 
