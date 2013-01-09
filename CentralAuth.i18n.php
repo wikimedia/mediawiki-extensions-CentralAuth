@@ -2556,6 +2556,7 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'right-centralauth-oversight' => 'Desaniciar una cuenta global',
 	'right-centralauth-merge' => 'Fusionar la so cuenta',
 	'right-globalgrouppermissions' => 'Remanar grupos globales',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Grupos globales nos que ta l'usuariu",
 );
 
 /** Kotava (Kotava)
@@ -14793,6 +14794,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'right-centralauth-oversight' => "Elimina l'utenza globale",
 	'right-centralauth-merge' => 'Unifica il proprio account',
 	'right-globalgrouppermissions' => 'Gestisce i gruppi globali',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppi globali a cui appartiene l'utente",
 );
 
 /** Japanese (日本語)
@@ -19164,6 +19166,7 @@ $messages['mk'] = array(
 	'right-centralauth-oversight' => 'Скриј глобална сметка',
 	'right-centralauth-merge' => 'Спојување на сметката',
 	'right-globalgrouppermissions' => 'Раководеење со глобални групи',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобални групи во кои членува корисникот',
 );
 
 /** Malayalam (മലയാളം)
@@ -23444,6 +23447,7 @@ A peule vardé e modifiché mincadun ëd lor, o creé n'ansema neuv.",
 	'right-centralauth-oversight' => 'Scancelé ël cont global',
 	'right-centralauth-merge' => 'Unìfica ij sò cont',
 	'right-globalgrouppermissions' => 'Gestì le partìe globaj',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Partìe globaj anté a-i é l'utent",
 );
 
 /** Western Punjabi (پنجابی)
@@ -25257,6 +25261,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'right-centralauth-oversight' => "Remove 'u cunde globbale",
 	'right-centralauth-merge' => "Aunifiche 'u cunde proprie",
 	'right-globalgrouppermissions' => 'Gestisce le gruppe globbale',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppe globbale addò l'utende stè jndre",
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -27508,6 +27513,7 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'right-centralauth-oversight' => 'Zatiranje globalnih računov',
 	'right-centralauth-merge' => 'Združevanje njihovih računov',
 	'right-globalgrouppermissions' => 'Upravljanje globalnih skupin',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupine, v katere je uvrščen uporabnik',
 );
 
 /** Albanian (shqip)
