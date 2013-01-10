@@ -422,7 +422,8 @@ $messages['qqq'] = array(
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
 	'centralauth-merge-denied' => 'Error message displayed when trying to visit a web page without having the correct permissions.',
 	'centralauth-merge-notlogged' => 'Notice displayed when visiting a page while not logged in.',
-	'centralauth-merge-welcome' => 'Welcome message displayed to a user without a unified account.',
+	'centralauth-merge-welcome' => '{{doc-singularthey}}
+Welcome message displayed to a user without a unified account.',
 	'centralauth-merge-step1-title' => 'Title for a form to start account unification.',
 	'centralauth-merge-step1-detail' => 'Directions for form to start account unification.',
 	'centralauth-merge-step1-submit' => "Submit button for 'Confirm more accounts', the second step for creating a global user account.",
@@ -663,6 +664,7 @@ This "oversighted" stands for "hidden completely".
 * $1: Name of the group',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
+	'centralauth-globalgrouppermissions-knownwiki' => '{{doc-singularthey}}',
 	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
 	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
 	'centralauth-editset-legend-ro' => 'The legend of the fieldset. Displayed when the user cannot edit.',
@@ -3944,6 +3946,7 @@ $messages['be-tarask'] = array(
 	'right-centralauth-oversight' => 'падаўленьне глябальных рахункаў',
 	'right-centralauth-merge' => "Аб'яднаньне гэтых рахункаў",
 	'right-globalgrouppermissions' => 'кіраваньне глябальнымі рахункамі',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Глябальныя групы, у якія ўваходзіць удзельнік',
 );
 
 /** Bulgarian (български)
@@ -14699,7 +14702,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-log-status-hidden' => 'nascosto',
 	'centralauth-log-status-oversighted' => 'la soppressione',
 	'centralauth-log-status-none' => '(nessuno)',
-	'centralauth-rightslog-name' => 'Permessi globali',
+	'centralauth-rightslog-name' => 'Diritti globali',
 	'centralauth-rightslog-entry-usergroups' => "modificata l'appartenenza ai gruppi globali di $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms' => 'cambiati i permessi di gruppo per $1 da $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'cambiati i permessi di gruppo per $1. Aggiunto $2; Rimosso $3',
