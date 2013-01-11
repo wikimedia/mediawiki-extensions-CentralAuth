@@ -274,6 +274,9 @@ $commonModuleInfo = array(
 $wgResourceModules['ext.centralauth'] = array(
 	'scripts' => 'ext.centralauth.js',
 	'styles' => 'ext.centralauth.css',
+	'dependencies' => array(
+		'mediawiki.util',
+	),
 	'messages' => array(
 		'centralauth-merge-method-primary',
 		'centralauth-merge-method-primary-desc',

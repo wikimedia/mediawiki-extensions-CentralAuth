@@ -1,25 +1,8 @@
 ( function ( mw, $, undefined ) {
-	var cursorPosition, $methodHint;
+	var $methodHint;
 
-	cursorPosition = {
-		x : 0,
-		y : 0
-	};
-
-	$( document ).on( 'mousemove', function ( e ) {
-		cursorPosition.x =
-			e.clientX
-			+ ( document.documentElement.scrollLeft || document.body.scrollLeft )
-			- document.documentElement.clientLeft;
-
-		cursorPosition.y =
-			e.clientY
-			+ ( document.documentElement.scrollTop || document.body.scrollTop )
-			- document.documentElement.clientTop;
-	} );
-
-	function showMethodHint( methodName ) {
-		var content, hintHtml;
+	function showMethodHint( methodName, e ) {
+		var hintHtml;
 
 		if ( !$methodHint ) {
 			$methodHint = $( '<div>' )
@@ -28,34 +11,32 @@
 				.click( function () {
 					$(this).fadeOut();
 				} );
-
-			content = document.getElementById( 'content' ) || document.getElementById( 'mw_content' ) || document.body;
-			$(content).append( $methodHint );
+			mw.util.$content.append( $methodHint );
 		}
 
-		hintHtml = mw.html.element( 'p', {
-			'class': 'merge-method-help-name'
-		}, mw.msg( 'centralauth-merge-method-' + methodName ) ) + mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
+		var hintHtml = mw.html.element(
+			'p', {
+				'class': 'merge-method-help-name'
+			},
+			mw.msg( 'centralauth-merge-method-' + methodName )
+		) +
+		mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
 
 		$methodHint
 			.html( hintHtml )
-			.css({
-				left: cursorPosition.x + 'px',
-				top: cursorPosition.y + 'px'
-			});
-
-		$methodHint.fadeIn();
+			.css( {
+				left: e.pageX + 'px',
+				top: e.pageY + 'px'
+			} )
+			.fadeIn();
 	}
 
 	$( document ).ready( function () {
-		// Bind an event listener to the common parent of all (?) elements
-		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function () {
-			showMethodHint( $(this).data( 'centralauth-mergemethod' ) );
+		// OnClick event listener for the "(?)" tooltips on Special:CentralAuth
+		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function ( event ) {
+			showMethodHint( $(this).data( 'centralauth-mergemethod' ), event );
 		} );
-	} );
-
-	// Confirm account deletions
-	$( document ).ready( function () {
+		// Confirm account deletions
 		$( '#mw-centralauth-delete input[type="submit"]' ).on( 'click', function () {
 			return confirm( mw.msg( 'centralauth-admin-delete-confirm' ) );
 		} );
