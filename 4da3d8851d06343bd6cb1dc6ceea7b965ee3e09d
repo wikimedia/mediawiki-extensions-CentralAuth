@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADg3///ME\u003d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-11T12:16:34Z",
+      "side": 1,
+      "message": "Any takers for log format update? https://www.mediawiki.org/wiki/Logging_to_Special:Log",
+      "revId": "4da3d8851d06343bd6cb1dc6ceea7b965ee3e09d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
