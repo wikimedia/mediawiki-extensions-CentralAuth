@@ -16635,7 +16635,7 @@ $messages['ko'] = array(
 	'centralauth-merge-step3-submit' => '계정 합치기',
 	'centralauth-merge-no-accounts' => '당신의 이름과 일치하는 계정을 찾지 못했습니다.
 데이터베이스가 잘못되었을 수 있습니다.',
-	'centralauth-merge-home-password' => '아래에 나열된 계정의 주 위키의 비밀번호가 당신이 입력한 비밀번호와 다릅니다.
+	'centralauth-merge-home-password' => '아래에 나열된 계정의 주 위키의 비밀번호가 입력한 비밀번호와 다릅니다.
 주 위키의 비밀번호를 입력해주세요.',
 	'centralauth-complete' => '계정을 통합했습니다!',
 	'centralauth-incomplete' => '계정을 통합하지 못했습니다!',
@@ -16645,9 +16645,9 @@ $messages['ko'] = array(
 	'centralauth-not-owner-text' => '"$1" 사용자 이름이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
 사용자 본인이 맞다면 주 암호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
-	'centralauth-blocked-text' => '당신은 아래 목록에 있는 주 위키에서 차단되었습니다.
+	'centralauth-blocked-text' => '아래 목록에 있는 주 위키에서 차단되었습니다.
 차단 해제를 요청하려면 해당 위키의 관리자에게 문의하십시오.
-차단되어 있는 동안, 당신은 계정을 합칠 수 없습니다.',
+차단되어 있는 동안 계정을 합칠 수 없습니다.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>데모 모드</div><br clear='all' />",
 	'centralauth-disabled-dryrun' => '계정 합치기가 데모/디버그 모드로 설정되어 있습니다. 따라서 실제 계정 합치기가 비활성화되어 있습니다.
 죄송합니다!',
@@ -16671,7 +16671,7 @@ $messages['ko'] = array(
 	'centralauth-merge-method-admin' => '통합된 계정 관리',
 	'centralauth-merge-method-new' => '새 계정',
 	'centralauth-merge-method-login' => '로그인으로 만들어짐',
-	'centralauth-merge-method-primary-desc' => '이것은 계정이 처음 병합된 위키입니다.
+	'centralauth-merge-method-primary-desc' => '계정이 처음 병합된 위키입니다.
 해당 사용자의 실제 주 위키와 다를 수 있습니다.',
 	'centralauth-merge-method-empty-desc' => '로컬 계정의 편집이 없기 때문에 계정이 병합되었음을 의미합니다.',
 	'centralauth-merge-method-mail-desc' => '주 계정과 로컬 계정의 이메일 주소가 일치하기 때문에 계정이 병합되었음을 의미합니다.',
@@ -16743,7 +16743,7 @@ $messages['ko'] = array(
 	'centralauth-admin-delete-success' => '통합 계정 "<nowiki>$1</nowiki>"이 성공적으로 삭제되었습니다.',
 	'centralauth-admin-nonexistent' => '통합 계정 "<nowiki>$1</nowiki>"이(가) 존재하지 않습니다.',
 	'centralauth-admin-delete-nonexistent' => '오류: 통합 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
-	'centralauth-token-mismatch' => '죄송합니다. 세션 데이터 손실로 당신의 양식을 제출하지 못했습니다.',
+	'centralauth-token-mismatch' => '죄송합니다. 세션 데이터 손실로 양식을 제출하지 못했습니다.',
 	'centralauth-admin-reason' => '이유:',
 	'centralauth-admin-reason-other' => '다른 이유/추가적인 이유:',
 	'centralauth-admin-unhide-nonexistent' => '오류: 공통 계정 "<nowiki>$1</nowiki>"이 존재하지 않습니다.',
@@ -16795,8 +16795,8 @@ $messages['ko'] = array(
 	'centralauth-account-exists-reset' => '$1 사용자 이름이 이 위키에는 등록되지 않았지만 통합 계정 시스템에 계정이 등록되어 있습니다.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}의 다른 프로젝트에도 로그인합니다:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}의 다른 프로젝트에서도 로그아웃합니다.',
-	'centralauth-login-no-others' => '당신은 자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.',
-	'centralauth-logout-no-others' => '당신은 자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그아웃되었습니다.',
+	'centralauth-login-no-others' => '자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.',
+	'centralauth-logout-no-others' => '자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그아웃되었습니다.',
 	'centralauth-hidden-blockreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 $2에 숨겨졌습니다: $3',
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-header' => '이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.',
@@ -16826,18 +16826,18 @@ $messages['ko'] = array(
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
 	'autologin' => '자동 로그인',
 	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
-당신이 [[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
-당신은 인증 정보를 제공하지 않고 이 페이지를 방문하였습니다. 따라서 이 페이지는 아무 역할도 하지 않습니다.',
+[[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
+인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
 	'globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
-당신은 권한이 있다면, 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.
+권한이 있다면, 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.
 모든 권한을 제거하면 해당 그룹은 삭제될 것입니다.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])',
 	'centralauth-globalgroupperms-nogroups' => '공통 권한 그룹이 정의되지 않았습니다.',
 	'centralauth-existinggroup-legend' => '존재하는 그룹',
 	'centralauth-newgroup-legend' => '새 그룹 만들기',
-	'centralauth-newgroup-intro' => '당신은 새 그룹에 권한을 부여하는 데 이 양식을 이용할 수 있습니다.
+	'centralauth-newgroup-intro' => '새 그룹에 권한을 부여하는 데 이 양식을 이용할 수 있습니다.
 어떤 권한이라도 부여되어 있지 않은 그룹은 존재하지 않을 것임을 알립니다.',
 	'centralauth-globalgroupperms-newgroupname' => '새 그룹 이름:',
 	'centralauth-globalgroupperms-creategroup-submit' => '권한 부여',
@@ -16861,13 +16861,13 @@ $messages['ko'] = array(
 [[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아가기]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-globalgrouppermissions-knownwiki' => '계정을 가지고 있는 위키:',
-	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' 통합 계정은 당신이 지정한 위키('' $2 '')에서 유효하지 않습니다.
-당신은 권한을 엉뚱한 사용자에게 줄 수도 있습니다.",
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' 통합 계정은 지정한 위키('' $2 '')에서 유효하지 않습니다.
+권한을 잘못된 사용자에게 줄 수도 있습니다!",
 	'centralauth-editset' => '위키 집합',
 	'centralauth-editset-legend-rw' => '위키 집합 만들기 및 편집하기',
 	'centralauth-editset-legend-ro' => '위키 집합의 목록',
 	'centralauth-editset-intro-rw' => '다음 위키 집합이 이미 만들어져 있습니다.
-당신은 이 집합을 보거나, 수정 혹은 새 집합을 만들 수 있습니다.',
+이 집합을 보거나, 수정 혹은 새 집합을 만들 수 있습니다.',
 	'centralauth-editset-intro-ro' => '다음은 위키 집합의 목록입니다.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|삭제]])',
 	'centralauth-editset-new' => '새 설정 만들기',
@@ -33900,4 +33900,5 @@ $messages['zh-hant'] = array(
 	'right-centralauth-oversight' => '廢止全域帳戶',
 	'right-centralauth-merge' => '合併他們的帳戶',
 	'right-globalgrouppermissions' => '管理全域群組',
+	'abusefilter-edit-builder-vars-global-user-groups' => '全域用戶群組',
 );
