@@ -440,8 +440,8 @@ Welcome message displayed to a user without a unified account.',
 	'centralauth-merge-home-password' => 'Status message during the account unification process indicating an incorrect password was entered.',
 	'centralauth-complete' => 'Title of special page "MergeAccount" when a user account is unified.',
 	'centralauth-incomplete' => 'Title of special page "Special:MergeAccount"',
-	'centralauth-complete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{int:Centralauth-groupname}}</nowiki>}} exactly as it is.}}
-Status message after successful unification of a user account.',
+	'centralauth-complete-text' => "{{doc-important|Please leave ''<nowiki>{{int:Centralauth-groupname}}</nowiki>'' exactly as it is.}}
+Status message after successful unification of a user account.",
 	'centralauth-incomplete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{int:Centralauth-groupname}}</nowiki>}} exactly as it is.}}
 Status message after incomplete unification of a user account.',
 	'centralauth-blocked-text' => 'Status message after failed unification of a user account because a wiki is closed.',
@@ -21682,6 +21682,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'right-centralauth-oversight' => 'Globale gebruiker onderdrukken',
 	'right-centralauth-merge' => 'Gebruikers samenvoegen',
 	'right-globalgrouppermissions' => 'Globale groepen beheren',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale groepen waar de gebruiker lid van is',
 );
 
 /** Nederlands (informeel)‎ (Nederlands (informeel)‎)
