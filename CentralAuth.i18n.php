@@ -442,7 +442,7 @@ Welcome message displayed to a user without a unified account.',
 	'centralauth-incomplete' => 'Title of special page "Special:MergeAccount"',
 	'centralauth-complete-text' => "{{doc-important|Please leave ''<nowiki>{{int:Centralauth-groupname}}</nowiki>'' exactly as it is.}}
 Status message after successful unification of a user account.",
-	'centralauth-incomplete-text' => '{{doc-important|Please leave {{msg|Centralauth-groupname|text=<nowiki>{{int:Centralauth-groupname}}</nowiki>}} exactly as it is.}}
+	'centralauth-incomplete-text' => '{{doc-important|Please leave <nowiki>{{int:Centralauth-groupname}}</nowiki> exactly as it is.}}
 Status message after incomplete unification of a user account.',
 	'centralauth-blocked-text' => 'Status message after failed unification of a user account because a wiki is closed.',
 	'centralauth-notice-dryrun' => 'Message displayed while account unification is in demonstration mode.',
@@ -16607,9 +16607,9 @@ $messages['ko'] = array(
 	'centralauth-merge-notlogged' => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[$1 로그인]</span>해 주세요.',
 	'centralauth-merge-welcome' => "'''당신의 계정은 {{MediaWiki:Centralauth-groupname/ko}}의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
-계정을 합치면, 같은 이름과 암호로 모든 언어의 모든 {{MediaWiki:Centralauth-groupname/ko}}의 프로젝트에 로그인할 수 있습니다.
+계정을 합치면, 같은 사용자 이름과 비밀번호로 모든 언어의 모든 {{MediaWiki:Centralauth-groupname/ko}}의 프로젝트에 로그인할 수 있습니다.
 
-만약 다른 누군가가 당신의 사용자 이름을 사용하고 있다면 이것을 빼앗을 수는 없습니다. 하지만 나중에 이 문제를 해결할 기회가 될 수는 있습니다.",
+만약 다른 누군가가 당신의 사용자 이름을 사용하고 있다면 이것을 빼앗을 수는 없지만 나중에 이 문제를 해결할 기회가 될 수는 있습니다.",
 	'centralauth-merge-step1-title' => '계정을 통합하기',
 	'centralauth-merge-step1-detail' => '여기에 계정의 비밀번호를 입력해 주세요.
 위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.
@@ -16644,7 +16644,7 @@ $messages['ko'] = array(
 	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 {{int:Centralauth-groupname}}의 위키에 로그인할 수 있습니다.',
 	'centralauth-not-owner-text' => '"$1" 사용자 이름이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
-사용자 본인이 맞다면 주 암호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
+사용자 본인이 맞다면 주 비밀번호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
 	'centralauth-blocked-text' => '아래 목록에 있는 주 위키에서 차단되었습니다.
 차단 해제를 요청하려면 해당 위키의 관리자에게 문의하십시오.
 차단되어 있는 동안 계정을 합칠 수 없습니다.',
@@ -16681,20 +16681,20 @@ $messages['ko'] = array(
 	'centralauth-merge-method-new-desc' => '로컬 계정을 만들 때 통합 계정이 자동적으로 만들었음을 의미합니다.',
 	'centralauth-merge-method-login-desc' => '로컬 계정이 사용자가 로그인할 때 자동적으로 만들었음을 의미합니다.',
 	'centralauth-finish-title' => '통합 마치기',
-	'centralauth-finish-text' => '이 계정의 주인이라면 다른 계정의 암호를 여기에 쓰는 것으로 간단히 로그인 통합 과정을 마칠 수 있습니다.',
+	'centralauth-finish-text' => '이 계정의 주인이라면 다른 계정의 비밀번호를 여기에 쓰는 것으로 간단히 로그인 통합 과정을 마칠 수 있습니다:',
 	'centralauth-finish-password' => '비밀번호:',
 	'centralauth-finish-login' => '로그인',
-	'centralauth-finish-send-confirmation' => '암호를 이메일로 보내기',
+	'centralauth-finish-send-confirmation' => '비밀번호를 이메일로 보내기',
 	'centralauth-finish-problems' => '문제가 있거나 다른 계정의 주인이 아니신가요?
 [[meta:Help:Unified login problems|이 도움말]]을 참고하세요.',
-	'centralauth-finish-noconfirms' => '이 암호를 사용하는 계정이 없습니다.',
-	'centralauth-finish-incomplete' => '계정 중 몇개는 이 암호로 확인되었습니다.
+	'centralauth-finish-noconfirms' => '이 비밀번호를 사용하는 계정이 없습니다.',
+	'centralauth-finish-incomplete' => '계정 중 몇 개는 이 비밀번호로 확인되었습니다.
 다른 계정은 아직 확인되지 않았습니다.',
-	'centralauth-merge-attempt' => "'''합쳐지지 않은 계정에 대하여 비밀번호를 확인하는 중...'''",
+	'centralauth-merge-attempt' => "'''합쳐지지 않은 계정에 대하여 비밀번호를 확인하는 중…'''",
 	'centralauth-attach-list-attached' => '통합 계정 "$1"은(는) 다음 계정을 포함하고 있습니다.',
 	'centralauth-attach-title' => '계정 확인',
 	'centralauth-attach-text' => '이 계정은 아직 통합 계정과 합쳐지지 않았습니다.
-통합 계정이 당신의 계정이라면, 당신은 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:',
+통합 계정이 당신의 계정이라면, 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:',
 	'centralauth-attach-submit' => '계정 합치기',
 	'centralauth-attach-success' => '계정이 통합 계정으로 옮겨졌습니다.',
 	'centralauth' => '통합 계정 관리자',
@@ -22660,6 +22660,7 @@ $messages['or'] = array(
 	'right-centralauth-oversight' => 'ବିଶ୍ଵ ଖାତାତିକୁ ଚପାଇରଖିବେ',
 	'right-centralauth-merge' => 'ତାହାଙ୍କର ଖାତାକୁ ଯୋଡ଼ିଦେବେ',
 	'right-globalgrouppermissions' => 'ବିଶ୍ଵ ଗୋଠ ପରିଚାଳନା କରିବେ',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'ଏହି ବ୍ୟବହାରକାରୀ ଥିବା ଗୋଷ୍ଠୀ ଗୁଡିକ',
 );
 
 /** Ossetic (Ирон)
