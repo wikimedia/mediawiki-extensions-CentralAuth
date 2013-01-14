@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//+RM\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-01-14T21:32:55Z",
+      "side": 1,
+      "message": "Nice catch, I didn\u0027t know jQuery normalises these as well (since not all browsers support event.pageX).\n\nBut this is nice (instead of manually calculating through `e.clientX + ( doc.scrollLeft || body.scrollLeft )`).\n\nsince jQuery polyfills it in browsers that don\u0027t support it:\n\n* http://api.jquery.com/event.pageX/\n* https://github.com/jquery/jquery/blob/1.8.3/src/event.js#L473",
+      "revId": "23c2a7a7c1e7a1e9f92dd98903c42e64100109a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
