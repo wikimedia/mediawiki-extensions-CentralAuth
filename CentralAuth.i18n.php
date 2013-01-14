@@ -1383,6 +1383,7 @@ $messages['ar'] = array(
 	'centralauth-disabled-dryrun' => 'توحيد الحساب حاليا في طور التجربة/تصحيح الأخطاء، لذا عمليات الدمج الفعلية معطلة.
 عذرا!',
 	'centralauth-error-locked' => 'لا يمكنك التعديل لأن حسابك مغلق.',
+	'centralauth-error-unmerged' => 'لا يمكنك التحرير لإن حسابك غير موحد.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اقرأ المزيد حول '''الدخول الموحد''']]...''",
 	'centralauth-list-home-title' => 'الويكي الرئيسي',
 	'centralauth-list-home-dryrun' => 'كلمة السر وعنوان البريد الإلكتروني المحدد في هذا الويكي سيتم استخدامهما لحسابك الموحد.',
@@ -1467,6 +1468,7 @@ $messages['ar'] = array(
 كل الحسابات المحلية ستستمر في الوجود.
 كلمات السر للحسابات المحلية المنشأة قبل الدمج ستسترجع إلى قيمها قبل الدمج.',
 	'centralauth-admin-delete-button' => 'حذف هذا الحساب',
+	'centralauth-admin-delete-confirm' => 'هل تريد فعلا حذف هذا الحساب؟',
 	'centralauth-admin-delete-success' => 'بنجاح حذف الحساب العام ل "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'لا يوجد حساب عام ل "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'خطأ: الحساب العام "<nowiki>$1</nowiki>" غير موجود.',
@@ -1569,6 +1571,7 @@ $messages['ar'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'اسم المجموعة الجديدة:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'إعطاء السماحات',
 	'centralauth-editgroup-subtitle' => 'تعديل $1',
+	'centralauth-editgroup-subtitle-readonly' => 'عرض $1',
 	'centralauth-editgroup-fieldset' => 'السماحات ل$1',
 	'centralauth-editgroup-name' => 'اسم المجموعة:',
 	'centralauth-editgroup-display' => 'الاسم المترجم للمجموعة:',
@@ -1622,6 +1625,7 @@ $messages['ar'] = array(
 	'centralauth-editset-success' => 'تم تغيير مجموعة الويكي بنجاح.',
 	'centralauth-editset-success-delete' => 'تم حذف مجموعة الويكي بنجاح.',
 	'centralauth-editset-return' => 'رجوع إلى القائمة الرئيسية',
+	'centralauth-block-already-locked' => 'الحساب [[Special:CentralAuth/$1|$1]] مقفل بالفعل عموما.',
 	'centralauth-readonly' => 'قاعدة بيانات الدخول الموحد مقفلة',
 	'centralauth-readonlytext' => 'قاعدة بيانات الدخول الموحد مقفلة حالياً ولا تستقبل مدخلات جديدة أو تعديلات أخرى، وذلك ربما بسبب الصيانة الروتينية، وبعد انتهائها ستعود إلى العمل كالعادة.',
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
@@ -1631,6 +1635,7 @@ $messages['ar'] = array(
 	'right-centralauth-oversight' => 'حضر الحسابات العامة',
 	'right-centralauth-merge' => 'دمج حسابهم',
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'المجموعات العامة التي ينتمي لها الحساب',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -6433,7 +6438,7 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 	'centralauth-prefs-manage' => 'Administrér din globale konto',
 	'centralauth-prefs-view' => 'Vis globale brugeroplysninger',
 	'centralauth-renameuser-merged' => 'Bruger $1 er gået over til det globale kontosystem.
-Omdøbning vil betyde at den lokale bruger vil blive adskilt den globale konto.',
+Omdøbning vil betyde at den lokale bruger vil blive adskilt fra den globale konto.',
 	'centralauth-renameuser-reserved' => 'Brugernavnet $2 er reserveret til en global konto.',
 	'centralauth-invalid-wiki' => 'Der er ingen sådan wikidatabase: $1',
 	'centralauth-account-exists' => 'Kan ikke oprette konto: Det ønskede brugernavn er allerede brugt i det globale loginsystem.',
@@ -11904,6 +11909,7 @@ $messages['he'] = array(
 	'right-centralauth-oversight' => 'הסתרה מוחלטת של חשבון כללי',
 	'right-centralauth-merge' => 'מיזוג החשבון של עצמם',
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'קבוצות גלובליות שמשתמש זה חבר בהן',
 );
 
 /** Hindi (हिन्दी)
@@ -25258,6 +25264,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-editset-success' => 'Set wiki cangiate cu successe.',
 	'centralauth-editset-success-delete' => 'Set wiki scangillate cu successe.',
 	'centralauth-editset-return' => "Torne ad 'a viste prengepàle",
+	'centralauth-block-already-locked' => "L'utende [[Special:CentralAuth/$1|$1]] jè ggià bloccate globbalmende.",
 	'centralauth-readonly' => "Database d'u CentralAuth bloccate",
 	'right-globalgroupmembership' => "Cange l'appartenenze a le gruppe globbale",
 	'right-centralauth-autoaccount' => "E' trasute automaticamende cu 'u cunde globbale",
