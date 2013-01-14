@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAADhH//+UE\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 519
+      },
+      "writtenOn": "2013-01-14T20:55:22Z",
+      "side": 1,
+      "message": "Why is this being changed?  The left uses event delegation, so you don\u0027t need to a separate binding for every wiki.",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//+V8\u003d",
         "filename": "modules/ext.centralauth.js",
         "patchSetId": 1
