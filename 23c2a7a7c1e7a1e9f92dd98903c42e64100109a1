@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAADhH//+EA\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2013-01-14T22:37:43Z",
+      "side": 1,
+      "message": "You could drop the \u0027undefined\u0027 part, it\u0027s not necessary on modern browsers, and nobody in their right mind would try to override undefined anyway. (Even jQuery doesn\u0027t try to support this.) CCs also suggest not using this kind of closure.",
+      "revId": "23c2a7a7c1e7a1e9f92dd98903c42e64100109a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//+DQ\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2013-01-14T22:37:43Z",
+      "side": 1,
+      "message": "You could create a DOM node with jQuery while we\u0027re already doing cleanup. Something like (untested):\n\n    $methodHint\n    \t.clear()\n    \t.append(\n    \t\t$( \u0027\u003cp\u003e\u0027 ).addClass( \u0027merge-method-help-name\u0027 ).text( mw.msg( \u0027centralauth-merge-method-\u0027 + methodName ) ),\n    \t\tmw.msg( \u0027centralauth-merge-method-\u0027 + methodName + \u0027-desc\u0027 ) // I think we can drop the escaped() since this is not longer interpreted as HTML\n    \t)\n    \t...\n\n(The second message could probably be wrapped in a \u003cp\u003e as well, but for some reason it\u0027s in the original code.)",
+      "revId": "23c2a7a7c1e7a1e9f92dd98903c42e64100109a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//+RM\u003d",
         "filename": "modules/ext.centralauth.js",
         "patchSetId": 3
