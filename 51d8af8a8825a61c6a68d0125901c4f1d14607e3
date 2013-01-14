@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADhH//+TQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T21:06:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADhH//+U8\u003d",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//+Uk\u003d",
         "filename": "modules/ext.centralauth.js",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-14T20:48:24Z",
       "side": 1,
       "message": "No space before \u0027(\u0027 for named functions.",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//+UA\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T21:06:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADhH//+Uk\u003d",
       "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAADhH//+T8\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T21:06:17Z",
+      "side": 1,
+      "message": "Almost forgot about them :P Done",
+      "parentUuid": "AAADhH//+VU\u003d",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//+Ww\u003d",
         "filename": "modules/ext.centralauth.js",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-01-14T20:48:24Z",
       "side": 1,
       "message": "var hintHtml should be at the top of the (inner) function. See [[mw:CC/JS#Declarations]].",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//+T4\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T21:06:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADhH//+Ww\u003d",
       "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAADhH//+Ts\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T21:06:17Z",
+      "side": 1,
+      "message": "You\u0027re right, I didn\u0027t think about that on my dev system... but on the live wikis where I eg. have 831 wikis attached to my account this makes sense.",
+      "parentUuid": "AAADhH//+UE\u003d",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//+V8\u003d",
         "filename": "modules/ext.centralauth.js",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-01-14T20:48:24Z",
       "side": 1,
       "message": "How many .merge-method-help elements are there? If there are a lot, it might be more efficient the other way; this adds N event handlers, while the other adds just one and does a slight bit of extra processing on click.\n\nAre any ever added dynamically? If so, this is broken. But at a glance it appears it\u0027s static.",
+      "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//+To\u003d",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T21:06:17Z",
+      "side": 1,
+      "message": "As above... it\u0027s static though",
+      "parentUuid": "AAADhH//+V8\u003d",
       "revId": "51d8af8a8825a61c6a68d0125901c4f1d14607e3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
