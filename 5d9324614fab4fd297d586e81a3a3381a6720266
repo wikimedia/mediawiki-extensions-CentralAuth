@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//+WU\u003d",
+        "filename": "WikiSet.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-14T20:28:37Z",
+      "side": 1,
+      "message": "Dunno in which cases purge() is called but recreating the list for ALL wikis could take some time on WMF wikis. In those cases you could IMO just delete all the memc keys...",
+      "revId": "5d9324614fab4fd297d586e81a3a3381a6720266",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
