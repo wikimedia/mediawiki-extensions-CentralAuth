@@ -22366,6 +22366,7 @@ $messages['or'] = array(
 	'mergeaccount' => 'ଲଗଇନ ଏକାକିକରଣ ସ୍ଥିତି',
 	'centralauth-groupname' => 'ଉଇକିମିଡ଼ିଆ ଫାଉଣ୍ଡେସନ',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} ସବୁରେ [[Special:MergeAccount|ଖାତାଗୁଡ଼ିକୁ ମିଶାଇଦେବା]]',
+	'centralauth-antispoof-desc' => 'ମଧ୍ୟସ୍ତରୀୟ ସୁରକ୍ଷାରେ ଆଣ୍ଟିସ୍ପୂଫ ବୈଷକତା ଯୋଡନ୍ତୁ',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|ଅନେକଗୁଡ଼ିଏ ଖାତା]]କୁ ମିଶାଇ ଗୋଟିଏ ଲଗଇନ କରିବା',
 	'centralauth-merge-denied' => 'କ୍ଷମା କରିବେ, ଆପଣଙ୍କୁ ଏହି ପୃଷ୍ଠାଟି ଭିତରକୁ ଯିବାକୁ ଅନୁମତି ନାହିଁ ।',
 	'centralauth-merge-notlogged' => 'ଦୟାକରି <span class="plainlinks">[$1 ଲଗ ଇନ କରନ୍ତୁ]</span> ଯାହା ଆପଣଙ୍କ ଖାତା ପୁରାପୁରି ମିଶିଯାଇଛି କି ନାହିଁ ଜାଣିବା ନିମନ୍ତେ ସହଯୋଗ କରିବ ।',
@@ -31538,6 +31539,7 @@ $messages['ug-latn'] = array(
  * @author Prima klasy4na
  * @author Riwnodennyk
  * @author Sodmy
+ * @author Ата
  * @author Тест
  */
 $messages['uk'] = array(
@@ -31838,6 +31840,7 @@ $messages['uk'] = array(
 	'right-centralauth-oversight' => 'Придушувати глобальні облікові записи',
 	'right-centralauth-merge' => "Об'єднання облікових записів",
 	'right-globalgrouppermissions' => 'керування глобальними групами',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобальні групи, у яких знаходиться користувач',
 );
 
 /** Urdu (اردو)
