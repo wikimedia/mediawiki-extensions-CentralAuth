@@ -1,0 +1,12 @@
+Code-Review+1: Krinkle <ttijhof@wikimedia.org>
+Verified+1: jenkins-bot
+Code-Review+2: CSteipp <csteipp@wikimedia.org>
+Verified+2: CSteipp <csteipp@wikimedia.org>
+Code-Review+1: Anomie <bjorsch@wikimedia.org>
+Code-Review+1: Matmarex <matma.rex@gmail.com>
+Code-Review+1: Mattflaschen <mflaschen@wikimedia.org>
+Submitted-by: CSteipp <csteipp@wikimedia.org>
+Submitted-at: Wed, 16 Jan 2013 16:31:29 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/43601
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
