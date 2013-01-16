@@ -374,7 +374,7 @@ You may view and modify any of them, or create a new set.',
 	'right-centralauth-autoaccount' => 'Automatically login with global account',
 	'right-centralauth-unmerge'     => 'Unmerge global account',
 	'right-centralauth-lock'        => 'Lock or hide global account',
-	'right-centralauth-oversight'   => 'Suppress global account',
+	'right-centralauth-oversight'   => 'Suppress or hide global account',
 	'right-centralauth-merge'       => 'Merge their account',
 	'right-globalgrouppermissions'  => 'Manage global groups',
 

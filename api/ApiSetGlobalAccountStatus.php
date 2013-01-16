@@ -49,9 +49,8 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$oldHiddenLevel = $globalUser->getHiddenLevel();
 
 		if (
-			$this->getParameter( 'hidden' ) !== null && // hidden is set
+			$setHidden !== null && // hidden is set
 			$oldHiddenLevel != $setHidden && // it's not the same as the old hidden level
-			( $setHidden == CentralAuthUser::HIDDEN_OVERSIGHT || $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT ) && // it involves suppressing/unsuppressing
 			!$this->getUser()->isAllowed( 'centralauth-oversight' ) // but the user doesn't have the right - oops!
 		) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
@@ -69,7 +68,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			$removed[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
 		}
 
-		if ( $this->getParameter( 'hidden' ) !== null && $oldHiddenLevel != $setHidden ) {
+		if ( $setHidden !== null && $oldHiddenLevel != $setHidden ) {
 			$hideStatus = $globalUser->adminSetHidden( $setHidden );
 			switch ( $setHidden ) {
 				case CentralAuthUser::HIDDEN_NONE:
