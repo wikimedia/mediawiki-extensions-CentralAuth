@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//8Ig\u003d",
+        "filename": "api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-01-16T16:40:16Z",
+      "side": 1,
+      "message": "I thought we usually just pretended that they don\u0027t exist...",
+      "revId": "b00070e351da85e0ddf6cf1461892f29097d35b7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
