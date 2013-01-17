@@ -695,7 +695,7 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 {{doc-singularthey}}',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
-	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}. Cf. {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2614,6 +2614,7 @@ $messages['avk'] = array(
 );
 
 /** Azerbaijani (azərbaycanca)
+ * @author AZISS
  * @author Cekli829
  * @author PPerviz
  * @author Vago
@@ -2716,7 +2717,7 @@ Səbəb: $1',
 	'centralauth-log-status-locked' => 'Bloklanmış',
 	'centralauth-log-status-hidden' => 'gizli',
 	'centralauth-log-status-oversighted' => 'təftişçi',
-	'centralauth-log-status-none' => '(heç biri)',
+	'centralauth-log-status-none' => '(yoxdur)',
 	'centralauth-rightslog-name' => 'Qlobal hüquqlar gündəliyi',
 	'centralauth-rightslog-entry-usergroups' => '$1 adlı istifadəçinin istifadəçi qruplarındakı üzvlüyü dəyişdirildi: $2 ► $3',
 	'centralauth-rightslog-entry-groupperms' => '$1 adlı istifadəçinin istifadəçi qruplarındakı üzvlüyü dəyişdirildi: $2 ► $3',
@@ -2737,7 +2738,7 @@ Səbəb: $1',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|redaktə]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|redaktə]])',
 	'centralauth-editgroup-members' => 'Üzvlərin siyahısı:',
-	'centralauth-editgroup-noset' => '(heç biri)',
+	'centralauth-editgroup-noset' => '(yoxdur)',
 	'centralauth-editgroup-reason' => 'Səbəb:',
 	'centralauth-editset' => 'Viki dəstləri',
 	'centralauth-editset-new' => 'Yeni dəst yarat',
@@ -2748,7 +2749,7 @@ Səbəb: $1',
 	'centralauth-editset-reason' => 'Səbəb:',
 	'centralauth-editset-submit' => 'Təsdiq et',
 	'centralauth-editset-submit-delete' => 'Sil',
-	'centralauth-editset-nouse' => '(heç biri)',
+	'centralauth-editset-nouse' => '(yoxdur)',
 	'centralauth-editset-usage' => 'İstifadə olunduğu qruplar:',
 	'centralauth-editset-badwikis' => 'Bu {{PLURAL:$2|viki|vikilər}} mövcud deyil: $1',
 	'centralauth-editset-success' => 'Viki seti uğurla dəyişdirildi',
@@ -2757,7 +2758,7 @@ Səbəb: $1',
 	'right-globalgroupmembership' => 'Qlobal qruplarda hüquqları dəyişdir',
 	'right-centralauth-unmerge' => 'Qlobal hesabı aç',
 	'right-centralauth-lock' => 'Qlobal hesabı bağla və ya gizlə',
-	'right-centralauth-oversight' => 'Qlobal hesabı bağla',
+	'right-centralauth-oversight' => 'Qlobal hesabı bağla', # Fuzzy
 	'right-centralauth-merge' => 'Hesabları birləşdir',
 	'right-globalgrouppermissions' => 'Qlobal qrupları düzəlt',
 );
@@ -5962,9 +5963,10 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'right-centralauth-autoaccount' => 'Automatické přihlášení globálním účtem',
 	'right-centralauth-unmerge' => 'Rozlučování sloučených globálních účtů',
 	'right-centralauth-lock' => 'Zamykání a skrývání globálních účtů',
-	'right-centralauth-oversight' => 'Utajování globálních účtů',
+	'right-centralauth-oversight' => 'Utajování nebo skrývání globálních účtů',
 	'right-centralauth-merge' => 'Slučování jejich účtů',
 	'right-globalgrouppermissions' => 'Spravování globálních skupin',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globální skupiny, do kterých uživatel patří',
 );
 
 /** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
@@ -14800,7 +14802,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'right-centralauth-autoaccount' => 'Accesso automatico con utenza globale',
 	'right-centralauth-unmerge' => 'Scollega dalle utenze globali',
 	'right-centralauth-lock' => "Blocca o nascondi l'utenza globale",
-	'right-centralauth-oversight' => "Elimina l'utenza globale", # Fuzzy
+	'right-centralauth-oversight' => "Elimina o nasconde l'utenza globale",
 	'right-centralauth-merge' => 'Unifica il proprio account',
 	'right-globalgrouppermissions' => 'Gestisce i gruppi globali',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppi globali a cui appartiene l'utente",
@@ -19172,7 +19174,7 @@ $messages['mk'] = array(
 	'right-centralauth-autoaccount' => 'Автоматска најава со глобална сметка',
 	'right-centralauth-unmerge' => 'Раздвој глобална сметка',
 	'right-centralauth-lock' => 'Заклучи или скриј глобална сметка',
-	'right-centralauth-oversight' => 'Скриј глобална сметка', # Fuzzy
+	'right-centralauth-oversight' => 'Затајување или скривање на глобална сметка',
 	'right-centralauth-merge' => 'Спојување на сметката',
 	'right-globalgrouppermissions' => 'Раководеење со глобални групи',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобални групи во кои членува корисникот',
@@ -22664,7 +22666,7 @@ $messages['or'] = array(
 	'right-centralauth-autoaccount' => 'ଜଗତ ଖାତାରୁ ଆପେ ଆପେ ଲଗ ଇନ କରିବେ',
 	'right-centralauth-unmerge' => 'ଯୋଡ଼ି ରହିଥିବା ବିଶ୍ଵ ଖାତାକୁ ଅଲଗା କରିଦେବେ',
 	'right-centralauth-lock' => 'ବିଶ୍ଵ ଖାତାତିକୁ କିଳିବେ ଅବା ଲୁଚାଇବେ',
-	'right-centralauth-oversight' => 'ବିଶ୍ଵ ଖାତାତିକୁ ଚପାଇରଖିବେ', # Fuzzy
+	'right-centralauth-oversight' => 'ଜାଗତିକ ଖାତାଟିକୁ ଚପାଇରଖିବେ କିମ୍ବା ଲୁଚାଇବେ',
 	'right-centralauth-merge' => 'ତାହାଙ୍କର ଖାତାକୁ ଯୋଡ଼ିଦେବେ',
 	'right-globalgrouppermissions' => 'ବିଶ୍ଵ ଗୋଠ ପରିଚାଳନା କରିବେ',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'ଏହି ବ୍ୟବହାରକାରୀ ଥିବା ଗୋଷ୍ଠୀ ଗୁଡିକ',
@@ -31975,14 +31977,16 @@ $messages['uz'] = array(
 
 /** vèneto (vèneto)
  * @author Candalua
+ * @author GatoSelvadego
  */
 $messages['vec'] = array(
 	'mergeaccount' => 'Processo de unificazion de le utenze - status',
 	'centralauth-groupname' => 'la Fondasion Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Unifica i account]] sui siti gestìi da {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Xonta ła tenołoxia de AntiSpoof a CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unifica più account]] par el Login Unico',
 	'centralauth-merge-denied' => 'No te ghè i parmessi necessari par entrar su sta pagina.',
-	'centralauth-merge-notlogged' => 'Par piaser, de <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} fà el login]</span> par verificar se el processo de unificazion de le to utenze el xe conpleto.', # Fuzzy
+	'centralauth-merge-notlogged' => 'Par piaser <span class="plainlinks">[$1 fà el login]</span> par verifegar se el proceso de unificasion de łe to utense el xe conpleto.',
 	'centralauth-merge-welcome' => "'''El to account utente no'l xe gnancora stà inportà nel sistema de identificazion unificà de {{int:Centralauth-groupname}}.'''
 
 Se te decidi de unificar i to account, te podarè doparar el stesso nome utente e la stessa password par entrar in tuti quanti i progeti wiki de {{int:Centralauth-groupname}} in tute le lengue disponibili.
@@ -32024,6 +32028,7 @@ Se te sì ti el paron de l\'utenza, par finir el processo de unificazion basta c
 	'centralauth-notice-dryrun' => "<div class='successbox'>Solo modalità Demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "L'unificazion dei account par el momento la se pol sperimentar solo in modalità ''demo'' o ''debugging'', quindi le operazion de efetiva fusion dei dati le xe disabilità. Semo spiacenti!",
 	'centralauth-error-locked' => 'No ti pol far modifiche parché el to account el xe blocà.',
+	'centralauth-error-unmerged' => "No ti pol far modifeghe parché el to account nó 'l xe sta unifegà.",
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Par savérghene piassè sul '''login unico''']]...''",
 	'centralauth-list-home-title' => 'Wiki prinçipale',
 	'centralauth-list-home-dryrun' => "La password e l'indirizo e-mail registrà in sto wiki i sarà doparà par l'account unificà.",
@@ -32033,6 +32038,7 @@ Se te sì ti el paron de l\'utenza, par finir el processo de unificazion basta c
 	'centralauth-list-unattached-title' => 'Account mìa colegadi',
 	'centralauth-list-unattached' => 'No s\'à mìa podesto verificar automaticamente che i account con nome utente "$1" sui progeti elencà de seguito i gàvia el stesso paron; xe probabile che sia stà doparà na password difarente da quela de l\'account prinçipal:',
 	'centralauth-foreign-link' => 'Utente $1 su $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contributo|contributi}} so $2',
 	'centralauth-merge-method-primary' => 'wiki prinçipale',
 	'centralauth-merge-method-empty' => 'nissun contributo',
 	'centralauth-merge-method-mail' => 'confermà par e-mail',
@@ -32105,6 +32111,7 @@ Desso sta funsionalità la xe disativà par sicuressa.",
 Tuti quanti i account locali i continuarà a esìstar.
 Le password par i account locali creà prima de l'unificazion le tornarà indrio a i so valori precedenti l'unificazion.",
 	'centralauth-admin-delete-button' => 'Scancela sto account',
+	'centralauth-admin-delete-confirm' => 'Vuto veramente scansełar sta utensa?',
 	'centralauth-admin-delete-success' => 'Xe stà scancelà con sucesso l\'account globale par "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'No ghe xe nissun account globale par "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Eror: l\'account globale "<nowiki>$1</nowiki>" no l\'esiste mìa.',
@@ -32156,8 +32163,9 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 	'centralauth-renameuser-reserved' => "L'utenza $2 la xe riservà par un account globale.",
 	'centralauth-invalid-wiki' => 'No ghe xe un database wiki co sto nome: $1',
 	'centralauth-account-exists' => "No se pol crear l'account: el nome utente richiesto se l'à zà tolto qualchedun altro nel sistema de login unificà.",
-	'centralauth-login-progress' => 'Acesso ai altri progeti de {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Disconession dai altri progeti de {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-account-exists-reset' => "El nome utente $1 nó 'l xe notà so sta wiki, ma 'l xe prexente inte'l sistema de login unifegà.",
+	'centralauth-login-progress' => 'Aceso efetuà inte łe altre wiki de {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Disconesion efetuà da łe altre wiki de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Te sì stà automaticamente loggà su altri projeti de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Te sì stà automaticamente sloggà da altri projecy de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'sconto globalmente da $1 a $2 par el motivo seguente: $3',
@@ -32204,6 +32212,7 @@ Un grupo el pode èssar scancelà cavàndoghe tuti i parmessi che'l gà.",
 	'centralauth-globalgroupperms-newgroupname' => 'Nome del novo grupo:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Assegna i parmessi',
 	'centralauth-editgroup-subtitle' => 'Modifica de $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Varda $1',
 	'centralauth-editgroup-fieldset' => 'Parmessi par $1',
 	'centralauth-editgroup-name' => 'Nome del grupo:',
 	'centralauth-editgroup-display' => 'Nome local del grupo:',
@@ -32241,6 +32250,7 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'centralauth-editset-name' => 'Nome:',
 	'centralauth-editset-type' => 'Tipo:',
 	'centralauth-editset-wikis' => 'Elenco de le wiki:',
+	'centralauth-editset-restwikis' => 'Wiki nó incluxi sora:',
 	'centralauth-editset-reason' => 'Motivassion:',
 	'centralauth-editset-submit' => 'Manda',
 	'centralauth-editset-submit-delete' => 'Scanseła',
@@ -32254,12 +32264,17 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'centralauth-editset-success' => 'Insieme de wiki canbià.',
 	'centralauth-editset-success-delete' => 'Insieme de wiki scancelà.',
 	'centralauth-editset-return' => 'Torna indrìo a la vista prinsipal',
+	'centralauth-block-already-locked' => 'El utente [[Special:CentralAuth/$1|$1]] el xe xà blocà globalmente.',
+	'centralauth-readonly' => 'El database de CentralAuth el xe blocà',
+	'centralauth-readonlytext' => 'El database de CentralAuth el xe al momento blocà in scritura, probabilmente par na operasion de manutension de routine, presto tuto tornarà a ła normałità.',
 	'right-globalgroupmembership' => "Modifica l'apartenensa ai grupi globali",
+	'right-centralauth-autoaccount' => 'Aceso automatego có utensa globałe',
 	'right-centralauth-unmerge' => 'Destaca utensa globale',
 	'right-centralauth-lock' => 'Sara o scondi utensa globale',
-	'right-centralauth-oversight' => 'Soprimi utensa globale',
+	'right-centralauth-oversight' => "Soprimi o scondi l'utensa globałe",
 	'right-centralauth-merge' => 'Fondi insieme i account',
 	'right-globalgrouppermissions' => 'Gestion dei grupi globali',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Grupi globałi a cui apartien l'utente",
 );
 
 /** Veps (vepsän kel’)
