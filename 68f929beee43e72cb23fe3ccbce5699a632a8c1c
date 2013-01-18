@@ -16,6 +16,24 @@
       "revId": "68f929beee43e72cb23fe3ccbce5699a632a8c1c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//5Nw\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-18T19:19:24Z",
+      "side": 1,
+      "message": "Yes, I think so",
+      "parentUuid": "AAADhH//5Vg\u003d",
+      "revId": "68f929beee43e72cb23fe3ccbce5699a632a8c1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
