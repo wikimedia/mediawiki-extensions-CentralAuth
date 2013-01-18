@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAADhH//6J0\u003d",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-01-18T00:47:08Z",
+      "side": 1,
+      "message": "We probably need to find a way to completely disable global renaming if memcache isn\u0027t available on all wikis.",
+      "revId": "cbf4cc02388c34b8fbf74b3256a6b9d9892b9d43",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//6MY\u003d",
         "filename": "specials/SpecialCentralAuth.php",
         "patchSetId": 4
