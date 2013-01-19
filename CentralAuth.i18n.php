@@ -606,6 +606,12 @@ Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&targe
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}",
+	'centralauth-seconds-ago' => '{{Related|Centralauth-ago}}',
+	'centralauth-minutes-ago' => '{{Related|Centralauth-ago}}',
+	'centralauth-hours-ago' => '{{Related|Centralauth-ago}}',
+	'centralauth-days-ago' => '{{Related|Centralauth-ago}}',
+	'centralauth-months-ago' => '{{Related|Centralauth-ago}}',
+	'centralauth-years-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-prefs-not-managed' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is not merged at all.',
 	'centralauth-prefs-unattached' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is in migration but the local account is not attached.',
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when everything is alright with the user's unified account.",
@@ -621,6 +627,12 @@ Shown when the migration is incomplete.',
 	'centralauth-login-progress' => '{{gender}}
 * (optional) $1 is the user name of the logged in user',
 	'centralauth-log-name' => '{{doc-logpage}}',
+	'centralauth-log-entry-delete' => '{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-lock' => '{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-unlock' => '{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-hide' => '{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-unhide' => '{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-lockandhide' => '{{Related|Centralauth-log-entry}}',
 	'centralauth-log-entry-chgstatus' => '[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Meta-Wiki for example].
 
 Variables $2 and $3 are a combination of the following:
@@ -656,6 +668,10 @@ This "oversighted" stands for "hidden completely".
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
 	'centralauth-rightslog-entry-deleteset' => 'Log entry. Parameters:
 * $1 is the name of a wiki set',
+	'centralauth-rightslog-set-optin' => 'See also:
+* {{msg-mw|Centralauth-rightslog-set-optout}}',
+	'centralauth-rightslog-set-optout' => 'See also:
+* {{msg-mw|Centralauth-rightslog-set-optin}}',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
 	'centralauth-editgroup-subtitle' => 'Subtitle for Special:GlobalGroupPernissions for users who may edit these permission
@@ -695,7 +711,10 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 {{doc-singularthey}}',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
-	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}. Cf. {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.
+
+See also:
+* {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1639,6 +1658,7 @@ $messages['ar'] = array(
 );
 
 /** Aramaic (ܐܪܡܝܐ)
+ * @author 334a
  * @author Basharh
  * @author Michaelovic
  */
@@ -1653,7 +1673,7 @@ $messages['arc'] = array(
 	'centralauth-list-attached' => 'ܚܘܫܒܢܐ ܒܫܡܐ ܕ "$1" ܥܠ ܟܠ ܕܘܟ̈ܐ ܕܐܬܝܢ ܐܬܢܩܦ ܝܬܐܝܬ ܠܚܘܫܒܢܐ ܡܚܝܕܐ:',
 	'centralauth-foreign-link' => 'ܡܦܠܚܢܐ $1 ܒ $2',
 	'centralauth-merge-method-primary' => 'ܘܝܩܝ ܪܝܫܝܐ',
-	'centralauth-merge-method-empty' => 'ܠܝܬ ܫܘܬܦܘܝܬ̈ܐ',
+	'centralauth-merge-method-empty' => 'ܠܝܬ ܫܘܬܦܘ̈ܬܐ',
 	'centralauth-merge-method-new' => 'ܚܘܫܒܢܐ ܚܕܬܐ',
 	'centralauth-finish-password' => 'ܡܠܬܐ ܕܥܠܠܐ:',
 	'centralauth-finish-login' => 'ܥܘܠ',
