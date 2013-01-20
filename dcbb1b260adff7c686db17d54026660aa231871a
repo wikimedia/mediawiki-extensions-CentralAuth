@@ -16,6 +16,40 @@
       "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//4Vo\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-20T01:09:31Z",
+      "side": 1,
+      "message": "Isn\u0027t this mGlobalUser?",
+      "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//4Vg\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-20T01:09:31Z",
+      "side": 1,
+      "message": "Why not CentralAuthUser::listAttached? (Do we care about non-attached accounts?)",
+      "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
