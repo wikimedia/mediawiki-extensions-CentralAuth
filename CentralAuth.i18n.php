@@ -6266,6 +6266,7 @@ Rheswm: $1',
  * @author Jon Harald Søby
  * @author Kaare
  * @author Masz
+ * @author Palnatoke
  * @author Peter Alberti
  * @author Peter Andersen
  * @author Qaqqalik
@@ -6578,6 +6579,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'right-centralauth-oversight' => 'Undertryk global konto', # Fuzzy
 	'right-centralauth-merge' => 'Sammenlægge kontoer',
 	'right-globalgrouppermissions' => 'Administrere globale grupper',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale grupper, som brugeren er i',
 );
 
 /** German (Deutsch)
@@ -7269,7 +7271,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'centralauth-editset-restwikis' => 'Oke cord çınyo:',
 	'centralauth-editset-reason' => 'Sebeb:',
 	'centralauth-editset-submit' => 'Qeyd ke',
-	'centralauth-editset-submit-delete' => 'Besterne',
+	'centralauth-editset-submit-delete' => 'Bestere',
 	'centralauth-editset-badname' => 'Namayê vengî ya zi ğeletî.',
 	'centralauth-editset-badtype' => 'Tîpê seti yê ğeletî.',
 	'centralauth-editset-setexists' => 'Pê nameyê ke esto ey ra birone',
@@ -7288,7 +7290,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'right-centralauth-autoaccount' => 'Otomatik cıkewtışê hesab de globali',
 	'right-centralauth-unmerge' => 'Hesabê kurewi letey meke',
 	'right-centralauth-lock' => 'Hesabê kurewi kılit ke ya zi bınımne',
-	'right-centralauth-oversight' => 'Hesabê kurewi bıdewosne',
+	'right-centralauth-oversight' => 'Hesabê kurewi bıdewosne', # Fuzzy
 	'right-centralauth-merge' => 'Hesabanê înan yew bike',
 	'right-globalgrouppermissions' => 'Hesabanê globalî îdare bike',
 );
@@ -8289,9 +8291,9 @@ $messages['es'] = array(
 	'mergeaccount' => 'Estado de la unificación de cuentas',
 	'centralauth-groupname' => 'la Fundación Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Fusiona cuentas]] entre wikis de {{int:Centralauth-groupname}}',
-	'centralauth-antispoof-desc' => 'Añade soporte de AntiSpoof a CentralAuth.',
+	'centralauth-antispoof-desc' => 'Añade la tecnología de AntiSpoof a CentralAuth.',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona múltiples cuentas]] para la Identificación de Unificada del Usuario (SUL)',
-	'centralauth-merge-denied' => 'Lo sentimos, no estás autorizado para acceder a esta página.',
+	'centralauth-merge-denied' => 'Lo sentimos, no tienes permisos para acceder a esta página.',
 	'centralauth-merge-notlogged' => 'Por favor <span class="plainlinks">[$1 inicie sesión]</span> para comprobar si sus cuentas se han fusionado completamente.',
 	'centralauth-merge-welcome' => "'''Tu cuenta de usuario no ha sido migrada al sistema de cuentas unificadas de {{int:Centralauth-groupname}}.'''
 
@@ -8319,8 +8321,8 @@ Todavía no se han realizado cambios a tus cuentas.',
 
 Otra wiki se designó como la cuenta principal para tu nombre de usuario. Sigue el enlace e ingresa en ella para terminar la migración de las cuentas.',
 	'centralauth-merge-step3-title' => 'Crear una cuenta unificada',
-	'centralauth-merge-step3-detail' => 'Estás listo para crear tu cuenta unificada con las siguientes wikis adjuntas:',
-	'centralauth-merge-step3-submit' => 'Unificar cuentas',
+	'centralauth-merge-step3-detail' => 'Estás {{GENDER:|preparado|preparada}} para crear tu cuenta unificada con las siguientes wikis adjuntas:',
+	'centralauth-merge-step3-submit' => 'Unificar las cuentas',
 	'centralauth-merge-no-accounts' => '¡No existen cuentas que coincidan con tu nombre en la tabla central de búsqueda de cuentas!
 La base de datos puede estar dañada.',
 	'centralauth-merge-home-password' => 'La wiki de origen de la cuenta listada más abajo tiene una contraseña diferente a la que ha introducido.<br />
@@ -8329,7 +8331,7 @@ Por favor, introduzca la contraseña.',
 	'centralauth-incomplete' => '¡No se completó la unificación de cuentas!',
 	'centralauth-complete-text' => 'Ahora puedes iniciar sesión en cualquier wiki de {{int:Centralauth-groupname}} sin crear una cuenta nueva;',
 	'centralauth-incomplete-text' => 'Una vez que tus cuentas hayan sido unificadas, podrás ingresar a cualquier wiki de {{int:Centralauth-groupname}} sin crear una cuenta nueva',
-	'centralauth-not-owner-text' => 'El usuario "$1" ha sido asignado de forma automática al dueño de la cuenta en $2.
+	'centralauth-not-owner-text' => 'El nombre de usuario "$1" ha sido asignado de forma automática al dueño de la cuenta en $2.
 
 Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí la contraseña maestra para esa cuenta:',
 	'centralauth-blocked-text' => 'Actualmente se encuentra bloqueado en su wiki origen (listada abajo).
@@ -8354,7 +8356,7 @@ probablemente tienen una contraseña diferente a la de tu cuenta primaria:',
 	'centralauth-merge-method-empty' => 'sin contribuciones',
 	'centralauth-merge-method-mail' => 'confirmado por correo electrónico',
 	'centralauth-merge-method-password' => 'confirmada por contraseña',
-	'centralauth-merge-method-admin' => 'cuenta fusionada por administrador',
+	'centralauth-merge-method-admin' => 'cuenta fusionada por un administrador',
 	'centralauth-merge-method-new' => 'nueva cuenta',
 	'centralauth-merge-method-login' => 'creada al iniciar sesión',
 	'centralauth-merge-method-primary-desc' => 'Este es el wiki en el que la cuenta fue unificada inicialmente.
@@ -8589,9 +8591,10 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'right-centralauth-autoaccount' => 'Acceder automáticamente con la cuenta global',
 	'right-centralauth-unmerge' => 'Desunificar cuenta global',
 	'right-centralauth-lock' => 'Bloquear u ocultar cuenta global',
-	'right-centralauth-oversight' => 'Suprimir cuenta global',
+	'right-centralauth-oversight' => 'Suprimir o ocultar una cuenta global',
 	'right-centralauth-merge' => 'Fusionar su cuenta',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globales a los que pertenece {{GENDER:$1|el usuario|la usuaria}}', # Fuzzy
 );
 
 /** Estonian (eesti)
