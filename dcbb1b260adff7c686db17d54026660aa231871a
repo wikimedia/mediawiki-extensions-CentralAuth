@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAADhH//4HQ\u003d",
+        "filename": "CentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-20T19:34:28Z",
+      "side": 1,
+      "message": "This seems super ugly to me... shouldn\u0027t we consider logging this to the globalauth log?",
+      "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//4HI\u003d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-20T19:34:28Z",
+      "side": 1,
+      "message": "Two issues: We probably should log the user out of his old account first (dunno if that\u0027s already getting done) and this should show some kind of useful error.",
+      "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADhH//4hc\u003d",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 7
@@ -101,6 +135,41 @@
       "side": 1,
       "message": "This check is for target usernames which don\u0027t exist as a global account but may do as local one(s).",
       "parentUuid": "AAADhH//4Vg\u003d",
+      "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//4HY\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-20T19:34:28Z",
+      "side": 1,
+      "message": "Ah.. then use selectRow here and a simple if ( $target... ) below",
+      "parentUuid": "AAADhH//4T4\u003d",
+      "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//4HU\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-01-20T19:34:28Z",
+      "side": 1,
+      "message": "please list messages you\u0027re using... usages should be findable with simple grep",
       "revId": "dcbb1b260adff7c686db17d54026660aa231871a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
