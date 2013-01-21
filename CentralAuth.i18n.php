@@ -33634,9 +33634,10 @@ $messages['zh-hans'] = array(
 	'right-centralauth-autoaccount' => '自动使用全域账户登陆',
 	'right-centralauth-unmerge' => '取消合并全域帐户',
 	'right-centralauth-lock' => '锁定或隐藏全域帐户',
-	'right-centralauth-oversight' => '废止全域帐户',
+	'right-centralauth-oversight' => '废止或隐藏全域帐户',
 	'right-centralauth-merge' => '合并自己的账户',
 	'right-globalgrouppermissions' => '管理全域组',
+	'abusefilter-edit-builder-vars-global-user-groups' => '该用户的全域用户组',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
