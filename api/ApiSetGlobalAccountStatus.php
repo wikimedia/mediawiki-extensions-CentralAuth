@@ -153,7 +153,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 				ApiBase::PARAM_TYPE => array(
 					'lock',
 					'unlock',
-					null // Unset - basically means 'do not modify lock status'
+					'' // Unset - basically means 'do not modify lock status'
 				)
 			),
 			'hidden' => array(
