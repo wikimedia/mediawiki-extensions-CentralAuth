@@ -25079,6 +25079,7 @@ Nisciune cangiamende ha state fatte sus a le cunde utinde tune angore.",
 	'centralauth-disabled-dryrun' => "L'unificazione de le cunde utinde pe mò jè jndr'à 'u mode demo / debug, allore pe mò le operaziune de scuagghiamende avènene disabbilitate.
 Ne dispiace!",
 	'centralauth-error-locked' => "Tu non ge puè cangià purcé 'u cunde tune jè bloccate.",
+	'centralauth-error-unmerged' => "Tu non ge puè cangià purcé 'u cunde tune non g'è aunificate.",
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Ligge de cchiù sus a '''trasute unificate''']]…''",
 	'centralauth-list-home-title' => 'Càse uicchi',
 	'centralauth-list-home-dryrun' => "'A passuord e 'u 'ndirizze e-mail ca è mise jndr'à sta uicchi avènene ausate pe aunificà le cunde tune.",
