@@ -20,8 +20,9 @@ class SpecialGlobalUsers extends SpecialPage {
 		}
 		$rqGroup = $this->getRequest()->getVal( 'group' );
 		if ( $rqGroup ) {
-			$pg->setGroup( $rqGroup );
+			$pg->setGroup( Title::newFromText( $rqGroup )->getUserCaseDBKey() );
 		}
+
 		$rqUsername = $wgContLang->ucfirst( $this->getRequest()->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
