@@ -9657,7 +9657,7 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-centralauth-autoaccount' => 'Kirjautua automaattisesti järjestelmänlaajuisella tunnuksella',
 	'right-centralauth-unmerge' => 'Erottaa järjestelmänlaajuinen tunnus',
 	'right-centralauth-lock' => 'Lukita tai piilottaa järjestelmänlaajuinen tunnus',
-	'right-centralauth-oversight' => 'Häivyttää järjestelmänlaajuinen tunnus',
+	'right-centralauth-oversight' => 'Häivyttää tai piilottaa järjestelmänlaajuinen tunnus',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
 	'right-globalgrouppermissions' => 'Hallinnoida järjestelmänlaajuisia ryhmiä',
 );
@@ -16831,28 +16831,28 @@ $messages['ko'] = array(
 	'centralauth-hidden-blockreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 $2에 숨겨졌습니다: $3',
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-header' => '이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.',
-	'centralauth-log-entry-delete' => '통합 계정 "$1"을 삭제함',
-	'centralauth-log-entry-lock' => '"$1" 통합 계정을 잠금',
-	'centralauth-log-entry-unlock' => '"$1" 통합 계정 잠금 해제',
-	'centralauth-log-entry-hide' => '"$1" 통합 계정을 숨김',
-	'centralauth-log-entry-unhide' => '"$1" 통합 계정 숨김 해제',
-	'centralauth-log-entry-lockandhide' => '"$1" 통합 계정을 잠그고 숨김',
-	'centralauth-log-entry-chgstatus' => '"$1" 통합 계정의 상태를 바꿈: $2 설정; $3 설정 해제',
+	'centralauth-log-entry-delete' => '사용자가 "$1" 통합 계정을 삭제했습니다',
+	'centralauth-log-entry-lock' => '사용자가 "$1" 통합 계정을 잠궜습니다',
+	'centralauth-log-entry-unlock' => '사용자가 "$1" 통합 계정을 잠금 해제했습니다',
+	'centralauth-log-entry-hide' => '사용자가 "$1" 통합 계정을 숨겼습니다',
+	'centralauth-log-entry-unhide' => '사용자가 "$1" 통합 계정을 숨김 해제했습니다',
+	'centralauth-log-entry-lockandhide' => '사용자가 "$1" 통합 계정을 잠그고 숨겼습니다',
+	'centralauth-log-entry-chgstatus' => '사용자가 "$1" 통합 계정의 상태를 바꿨습니다: $2 설정; $3 설정 해제',
 	'centralauth-log-status-locked' => '잠금',
 	'centralauth-log-status-hidden' => '숨김',
 	'centralauth-log-status-oversighted' => '오버사이트됨',
 	'centralauth-log-status-none' => '(없음)',
 	'centralauth-rightslog-name' => '공통 권한 기록',
-	'centralauth-rightslog-entry-usergroups' => '$1의 공통 권한 그룹 소속을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-entry-groupperms' => '$1 그룹의 권한을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-entry-groupperms2' => '$1의 권한을 바꿈. 추가: $2; 제거: $3',
-	'centralauth-rightslog-entry-groupperms3' => '$1 권한에 대한 위키 집합을 $2에서 $3으로 바꿈',
+	'centralauth-rightslog-entry-usergroups' => '사용자가 $1 사용자의 공통 권한 그룹 소속을 $2에서 $3으로 바꿨습니다',
+	'centralauth-rightslog-entry-groupperms' => '사용자가 $1 그룹의 권한을 $2에서 $3으로 바꿨습니다',
+	'centralauth-rightslog-entry-groupperms2' => '사용자가 $1 사용자의 그룹 권한을 바꿨습니다. 추가: $2; 제거: $3',
+	'centralauth-rightslog-entry-groupperms3' => '사용자가 $1 사용자 권한에 대한 위키 집합을 $2에서 $3으로 바꿨습니다',
 	'centralauth-rightslog-header' => '이 기록은 공통 권한 그룹의 바뀜 기록을 포함하고 있습니다.',
-	'centralauth-rightslog-entry-newset' => '다음 위키를 포함하는 $2의 $1 위키 집합을 만들었습니다: $3',
-	'centralauth-rightslog-entry-setrename' => '위키 집합 "$2"의 이름을 "$1"로 바꿈',
-	'centralauth-rightslog-entry-setnewtype' => '위키 집합 "$1"의 유형을 $2에서 $3으로 바꿈',
-	'centralauth-rightslog-entry-setchange' => '"$1"의 위키 설정을 바꿈: 추가: $2; 제거: $3',
-	'centralauth-rightslog-entry-deleteset' => '위키 집합 "$1"을 삭제함',
+	'centralauth-rightslog-entry-newset' => '사용자가 다음 위키를 포함하는 $2의 $1 위키 집합을 만들었습니다: $3',
+	'centralauth-rightslog-entry-setrename' => '사용자가 "$2" 위키 집합의 이름을 "$1"로 바꿨습니다',
+	'centralauth-rightslog-entry-setnewtype' => '사용자가 "$1" 위키 집합의 유형을 $2에서 $3으로 바꿨습니다',
+	'centralauth-rightslog-entry-setchange' => '사용자가 "$1"의 위키 설정을 바꿨습니다: 추가: $2; 제거: $3',
+	'centralauth-rightslog-entry-deleteset' => '사용자가 "$1" 위키 집합을 삭제했습니다',
 	'centralauth-rightslog-set-optin' => '옵트인 방식',
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
 	'autologin' => '자동 로그인',
@@ -16934,7 +16934,7 @@ $messages['ko'] = array(
 	'right-centralauth-autoaccount' => '통합 계정으로 자동 로그인하기',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
 	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
-	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기', # Fuzzy
+	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기',
 	'right-centralauth-merge' => '자신의 계정을 통합하기',
 	'right-globalgrouppermissions' => '공통 권한 그룹 관리',
 	'abusefilter-edit-builder-vars-global-user-groups' => '사용자가 속한 공통 권한 그룹',
@@ -23943,6 +23943,7 @@ $messages['ps'] = array(
  * @author João Sousa
  * @author Lijealso
  * @author Malafaya
+ * @author Opraco
  * @author Rhaijin
  * @author SandroHc
  * @author Sir Lestaty de Lioncourt
@@ -23993,7 +23994,7 @@ Por favor, introduza a palavra-chave da wiki de acolhimento.',
 	'centralauth-complete' => 'Unificação da autenticação completa!',
 	'centralauth-incomplete' => 'Unificação da autenticação incompleta!',
 	'centralauth-complete-text' => 'Agora pode entrar em qualquer wiki {{int:Centralauth-groupname}} sem ter de criar uma conta nova.',
-	'centralauth-incomplete-text' => 'Quando a sua autenticação estiver unificada, poderá entrar em qualquer wiki {{int:Centralauth-groupname}} sem ter de criar uma conta nova',
+	'centralauth-incomplete-text' => 'Quando a sua autenticação estiver unificada, poderá entrar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma conta nova',
 	'centralauth-not-owner-text' => 'O nome de utilizador "$1" foi atribuído automaticamente ao proprietário da conta na $2.
 
 Se é o proprietário, pode concluir o processo de autenticação unificada introduzindo a palavra-chave dessa conta aqui:',
@@ -24143,7 +24144,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para a wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de utilizador pretendido já está a ser utilizado no sistema de autenticação unificada.',
 	'centralauth-account-exists-reset' => 'O utilizador $1 não está registado nesta wiki, mas existe no sistema de autentificação unificada',
-	'centralauth-login-progress' => 'Está a ser autenticado nas wikis da {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Está a ser autenticad{{GENDER:$1|o|a|o/a}} nas wikis da {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-logout-progress' => 'A sair das outras wikis da {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Foi automaticamente desautenticado das wikis {{int:Centralauth-groupname}}.',
@@ -24251,7 +24252,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-centralauth-autoaccount' => 'Aceder automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
 	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global',
-	'right-centralauth-oversight' => 'Suprimir a conta global',
+	'right-centralauth-oversight' => 'Suprimir a conta global', # Fuzzy
 	'right-centralauth-merge' => 'Fundir as contas',
 	'right-globalgrouppermissions' => 'Administrar grupos globais',
 );
@@ -24263,6 +24264,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author Heldergeovane
  * @author Jaideraf
  * @author Luckas Blade
+ * @author Opraco
  * @author Pedroca cerebral
  * @author Rafael Vargas
  * @author Sir Lestaty de Lioncourt
@@ -24270,7 +24272,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  */
 $messages['pt-br'] = array(
 	'mergeaccount' => 'Status da unificação de contas',
-	'centralauth-groupname' => 'a Wikimedia Foundation',
+	'centralauth-groupname' => 'Wikimedia Foundation',
 	'centralauth-desc' => '[[Special:MergeAccount|Fundir contas]] nos wikis da {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof ao CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] na Autenticação Unificada',
@@ -24309,7 +24311,7 @@ Insira a senha do wiki de origem.',
 	'centralauth-complete' => 'Unificação de logins concluída!',
 	'centralauth-incomplete' => 'Unificação de logins incompleta!',
 	'centralauth-complete-text' => 'Agora você pode se autenticar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma nova conta.',
-	'centralauth-incomplete-text' => 'Uma vez estando o seu login unificado, poderá efectuar login em qualquer wiki de {{int:Centralauth-groupname}} sem ter de criar uma nova conta',
+	'centralauth-incomplete-text' => 'Uma vez estando o seu login unificado, poderá efectuar login em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma nova conta',
 	'centralauth-not-owner-text' => 'O nome de usuário "$1" foi automaticamente relacionado ao proprietário da conta em $2.
 
 Se este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal dessa conta aqui:',
@@ -24458,7 +24460,7 @@ Alterar o nome de usuário vai desunificar esta conta local da conta global.',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para o wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de usuário requisitado já está sendo utilizado no sistema de login unificado.',
 	'centralauth-account-exists-reset' => 'O nome de usuário $1 não está registrado nesta wiki, mas ele existe no sistema de autentificação unificada.',
-	'centralauth-login-progress' => 'Você está sendo autenticado nas wikis da {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Você está sendo autenticad{{GENDER:$1|o|a|o/a}} nas wikis da {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-logout-progress' => 'Saindo das outras wikis da {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Você foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Você foi automaticamente desautenticado das wikis {{int:Centralauth-groupname}}.',
@@ -24565,7 +24567,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-centralauth-autoaccount' => 'Acessar automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
 	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global',
-	'right-centralauth-oversight' => 'Suprimir a conta global',
+	'right-centralauth-oversight' => 'Suprimir a conta global', # Fuzzy
 	'right-centralauth-merge' => 'Unificar as contas',
 	'right-globalgrouppermissions' => 'Gerenciar grupos globais',
 );
@@ -25316,6 +25318,7 @@ $messages['rtm'] = array(
  * @author Ahonc
  * @author AlexSm
  * @author Cryptocoryne
+ * @author DCamer
  * @author Dim Grits
  * @author Eugrus
  * @author HalanTul
@@ -25624,9 +25627,10 @@ $messages['ru'] = array(
 	'right-centralauth-autoaccount' => 'aвтоматический вход с глобальной учётной записи',
 	'right-centralauth-unmerge' => 'разделение глобальных учётных записей',
 	'right-centralauth-lock' => 'блокировки и сокрытие глобальных учётных записей',
-	'right-centralauth-oversight' => 'подавление глобальных учётных записей',
+	'right-centralauth-oversight' => 'Подавить или скрыть глобальную учетную запись',
 	'right-centralauth-merge' => 'объединение учётных записей',
 	'right-globalgrouppermissions' => 'управление глобальными группами',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобальные группы участника',
 );
 
 /** Rusyn (русиньскый)
