@@ -402,6 +402,7 @@ You may view and modify any of them, or create a new set.',
  * @author Nemo bis
  * @author Nenino 10
  * @author Olli
+ * @author Opraco
  * @author Pikne
  * @author Purodha
  * @author Raymond
@@ -416,7 +417,7 @@ You may view and modify any of them, or create a new set.',
  */
 $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|mergeaccount}}',
-	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}} and {{msg-mw|centralauth-login-progress}}.',
+	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}}, {{msg-mw|centralauth-login-progress}} and {{msg-mw|centralauth-logout-progress}}.',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -6263,6 +6264,7 @@ Rheswm: $1',
  * @author Christian List
  * @author Emilkris33
  * @author Hylle
+ * @author Jan Friberg
  * @author Jon Harald Søby
  * @author Kaare
  * @author Masz
@@ -6576,7 +6578,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'right-centralauth-autoaccount' => 'Automatisk login med globale konto',
 	'right-centralauth-unmerge' => 'Ophæv fletning af global konto',
 	'right-centralauth-lock' => 'Lås eller skjul global konto',
-	'right-centralauth-oversight' => 'Undertryk global konto', # Fuzzy
+	'right-centralauth-oversight' => 'Undertryk eller skjul global konto',
 	'right-centralauth-merge' => 'Sammenlægge kontoer',
 	'right-globalgrouppermissions' => 'Administrere globale grupper',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale grupper, som brugeren er i',
@@ -14937,7 +14939,7 @@ $messages['ja'] = array(
 	'centralauth-finish-password' => 'パスワード:',
 	'centralauth-finish-login' => 'ログイン',
 	'centralauth-finish-send-confirmation' => 'パスワードをメールで送信',
-	'centralauth-finish-problems' => 'トラブルが発生しました。本当にこれらはあなたのアカウントですか?
+	'centralauth-finish-problems' => 'トラブルが発生しました。これらは本当にあなたのアカウントですか?
 [[meta:Help:Unified login problems|ヘルプを確認してください]]...',
 	'centralauth-finish-noconfirms' => 'このパスワードではどのアカウントも認証できませんでした。',
 	'centralauth-finish-incomplete' => 'このパスワードを使用してアカウントをいくつか統合しました。
@@ -15159,7 +15161,7 @@ $messages['ja'] = array(
 	'right-centralauth-autoaccount' => 'グローバルアカウントで自動ログイン',
 	'right-centralauth-unmerge' => 'グローバルアカウントを統合解除',
 	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿',
-	'right-centralauth-oversight' => 'グローバルアカウントを秘匿',
+	'right-centralauth-oversight' => 'グローバルアカウントを秘匿', # Fuzzy
 	'right-centralauth-merge' => '自身のアカウントを統合',
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
 	'abusefilter-edit-builder-vars-global-user-groups' => '利用者の所属グローバルグループ',
