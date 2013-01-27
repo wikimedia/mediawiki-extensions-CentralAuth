@@ -475,6 +475,7 @@ class CentralAuthHooks {
 	 * Does the required authentication checks and updates for auto-creation
 	 * @param $user User
 	 * @param $userName string
+	 * @throws MWException
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user, $userName ) {

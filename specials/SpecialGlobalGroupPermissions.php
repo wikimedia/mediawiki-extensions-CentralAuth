@@ -381,10 +381,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	function setRestrictions( $group, $set ) {
 		$dbw = CentralAuthUser::getCentralDB();
 		if ( $set == 0 ) {
-			$dbw->delete( 'global_group_restrictions', array( 'ggr_group' => $group ), __METHOD__ );
+			$dbw->delete(
+				'global_group_restrictions',
+				array( 'ggr_group' => $group ),
+				__METHOD__
+			);
 		} else {
-			$dbw->replace( 'global_group_restrictions', array( 'ggr_group' ),
-				array( 'ggr_group' => $group, 'ggr_set' => $set, ), __METHOD__ );
+			$dbw->replace( 'global_group_restrictions',
+				array( 'ggr_group' ),
+				array( 'ggr_group' => $group, 'ggr_set' => $set, ),
+				__METHOD__
+			);
 		}
 		return (bool)$dbw->affectedRows();
 	}
