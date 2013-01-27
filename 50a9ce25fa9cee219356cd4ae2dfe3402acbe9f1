@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//7CA\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-01-27T21:02:12Z",
+      "side": 1,
+      "message": "Uncommenting this breaks things... Not sure how to fix it.",
+      "revId": "50a9ce25fa9cee219356cd4ae2dfe3402acbe9f1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
