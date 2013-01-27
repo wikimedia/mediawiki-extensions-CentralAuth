@@ -103,10 +103,14 @@ class GlobalUsersPager extends UsersPager {
 		}
 
 		return array(
-			'tables' => " (globaluser LEFT JOIN localuser ON gu_name = lu_name AND lu_wiki = '{$localwiki}') LEFT JOIN global_user_groups ON gu_id = gug_user ",
+			'tables' => array( 'globaluser', 'localuser', 'global_user_groups' ),
 			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'lu_attached_method', 'COUNT(gug_group) AS gug_numgroups', 'MAX(gug_group) AS gug_singlegroup'  ),
 			'conds' => $conds,
 			'options' => array( 'GROUP BY' => 'gu_name' ),
+			'join_conds' => array(
+				'localuser' => array( 'LEFT JOIN', array( 'gu_name = lu_name', 'lu_wiki' => $localwiki ) ),
+				'global_user_groups' => array( 'LEFT JOIN', 'gu_name = gug_user' )
+			),
 		);
 	}
 
