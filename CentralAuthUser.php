@@ -1953,7 +1953,7 @@ class CentralAuthUser extends AuthPluginUser {
 				'gu_salt' => $this->mSalt,
 				'gu_auth_token' => $this->mAuthToken,
 				'gu_locked' => $this->mLocked,
-				'gu_hidden' => $this->mHidden,
+				'gu_hidden' => $this->getHiddenLevel(),
 				'gu_email' => $this->mEmail,
 				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp )
 			),
