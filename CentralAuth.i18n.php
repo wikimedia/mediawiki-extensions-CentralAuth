@@ -417,7 +417,10 @@ You may view and modify any of them, or create a new set.',
  */
 $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|mergeaccount}}',
-	'centralauth-groupname' => 'Used within {{msg-mw|centralauth-incomplete-text}}, {{msg-mw|centralauth-login-progress}} and {{msg-mw|centralauth-logout-progress}}.',
+	'centralauth-groupname' => 'Used within the following messages:
+* {{msg-mw|centralauth-incomplete-text}}
+* {{msg-mw|centralauth-login-progress}}
+* {{msg-mw|centralauth-logout-progress}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -968,7 +971,7 @@ Jy kan besigtig en verander enige van hulle, of 'n nuwe stel.",
 	'right-centralauth-autoaccount' => "Outomaties inloggen met 'n globale rekening",
 	'right-centralauth-unmerge' => 'Ontknoop globale gebruiker',
 	'right-centralauth-lock' => 'Blokkeer of versteek globale gebruiker',
-	'right-centralauth-oversight' => 'Onderdruk globale gebruiker',
+	'right-centralauth-oversight' => 'Onderdruk globale gebruiker', # Fuzzy
 	'right-centralauth-merge' => 'Versmelt gebruikers',
 	'right-globalgrouppermissions' => 'Bestuur globale groepe',
 );
@@ -1326,7 +1329,7 @@ Puet veyer y modificar totz ells, u creyar un achuste nuevo.",
 	'right-centralauth-autoaccount' => 'Acceder automaticament con a cuenta global',
 	'right-centralauth-unmerge' => 'Deseparar a cuenta global',
 	'right-centralauth-lock' => 'Bloqueyar u amagar a cuenta global',
-	'right-centralauth-oversight' => 'Suprimir cuenta global',
+	'right-centralauth-oversight' => 'Suprimir cuenta global', # Fuzzy
 	'right-centralauth-merge' => 'Combinar a cuenta',
 	'right-globalgrouppermissions' => 'Confegurar collas globals',
 );
@@ -1671,7 +1674,7 @@ $messages['arc'] = array(
 	'centralauth-merge-dryrun-or' => "'''ܐܘ'''",
 	'centralauth-complete-text' => 'ܡܨܐ ܐܢܬ ܕܬܥܘܠ ܠܐܝܢܐ ܕܘܟܐ ܕܘܝܩܝ ܒ{{int:Centralauth-groupname}} ܒܠܥܕ ܗܝ ܕܬܒܪܝ ܚܘܫܒܢܐ ܚܕܬܐ.',
 	'centralauth-list-home-title' => 'ܘܝܩܝ ܪܝܫܝܐ',
-	'centralauth-list-attached' => 'ܚܘܫܒܢܐ ܒܫܡܐ ܕ "$1" ܥܠ ܟܠ ܕܘܟ̈ܐ ܕܐܬܝܢ ܐܬܢܩܦ ܝܬܐܝܬ ܠܚܘܫܒܢܐ ܡܚܝܕܐ:',
+	'centralauth-list-attached' => 'ܚܘܫܒܢܐ ܒܫܡܐ ܕ "$1" ܥܠ ܟܠ ܕ̈ܘܟܐ ܕܐܬܝܢ ܐܬܢܩܦ ܝܬܐܝܬ ܠܚܘܫܒܢܐ ܡܚܝܕܐ:',
 	'centralauth-foreign-link' => 'ܡܦܠܚܢܐ $1 ܒ $2',
 	'centralauth-merge-method-primary' => 'ܘܝܩܝ ܪܝܫܝܐ',
 	'centralauth-merge-method-empty' => 'ܠܝܬ ܫܘܬܦܘ̈ܬܐ',
@@ -1697,7 +1700,7 @@ $messages['arc'] = array(
 	'globalusers' => 'ܡܟܬܒܘܬܐ ܓܘܢܝܬܐ ܕܗܕ̈ܡܐ',
 	'centralauth-prefs-status' => 'ܐܝܟܢܘܬܐ ܕܚܘܫܒܢܐ ܓܘܢܝܐ:',
 	'centralauth-prefs-complete' => 'ܟܠ ܡܕܡ ܡܛܟܣܐ!',
-	'centralauth-prefs-count-attached' => 'ܚܘܫܒܢܟ ܙܪܝܙܐ ܐܝܬܘܗܝ ܒ $1 {{PLURAL:$1|ܕܘܟܐ|ܕܘܟ̈ܐ}} ܕܬܪܡܝܬܐ.',
+	'centralauth-prefs-count-attached' => 'ܚܘܫܒܢܟ ܙܪܝܙܐ ܐܝܬܘܗܝ ܒ $1 {{PLURAL:$1|ܕܘܟܐ|ܕ̈ܘܟܐ}} ܕܬܪܡܝܬܐ.',
 	'centralauth-prefs-manage' => 'ܕܒܪ ܚܘܫܒܢܟ ܓܘܢܝܐ',
 	'centralauth-prefs-view' => 'ܚܘܝ ܝܕ̈ܥܬܐ ܕܡܦܠܚܢܐ ܓܘܢܝܐ',
 	'centralauth-login-progress' => 'ܢܫܪܐ ܥܠܠܬܟ ܠܘܝܩܝ̈ܐ ܕ {{int:Centralauth-groupname}}:',
@@ -2269,7 +2272,7 @@ $messages['as'] = array(
 	'right-centralauth-autoaccount' => 'গোলকীয় একাউণ্টেৰে স্বয়ংক্ৰিয়ভাৱে প্ৰৱেশ',
 	'right-centralauth-unmerge' => 'গোলকীয় একাউণ্টৰ একত্ৰীকৰণ নোহোৱা কৰক',
 	'right-centralauth-lock' => 'গোলকীয় একাউণ্ট বন্ধ বা গোপন কৰক',
-	'right-centralauth-oversight' => 'গোলকীয় একাউণ্ট নিবাৰণ কৰক',
+	'right-centralauth-oversight' => 'গোলকীয় একাউণ্ট নিবাৰণ কৰক', # Fuzzy
 	'right-centralauth-merge' => 'তেওঁলোকৰ একাউণ্ট একত্ৰিত কৰক',
 	'right-globalgrouppermissions' => 'গোলকীয় গোটসমূহৰ ব্যৱস্থাপনা কৰক',
 );
@@ -3095,7 +3098,7 @@ $messages['azb'] = array(
 	'right-centralauth-autoaccount' => 'ائورنسل حسابلا ائورنسل گیریش',
 	'right-centralauth-unmerge' => 'سراسری حسابی آییر',
 	'right-centralauth-lock' => 'سراسری حسابی باغلا و یا گیزله',
-	'right-centralauth-oversight' => 'سراسری حسابی باغلا',
+	'right-centralauth-oversight' => 'سراسری حسابی باغلا', # Fuzzy
 	'right-centralauth-merge' => 'حساب‌لاری بیرلش‌دیر',
 	'right-globalgrouppermissions' => 'سراسری گروه لاری ایداره ائت',
 );
@@ -3397,7 +3400,7 @@ $messages['ba'] = array(
 	'right-centralauth-autoaccount' => 'Дөйөм иҫәп яҙыуынан үҙенән-үҙе инеү',
 	'right-centralauth-unmerge' => 'Дөйөм иҫәп яҙмаларын айырыу',
 	'right-centralauth-lock' => 'Дөйөм иҫәп яҙмаларын бикләү һәм йәшереү',
-	'right-centralauth-oversight' => 'Дөйөм иҫәп яҙмаларын йәшереү',
+	'right-centralauth-oversight' => 'Дөйөм иҫәп яҙмаларын йәшереү', # Fuzzy
 	'right-centralauth-merge' => 'Иҫәп яҙмаларын берләштереү',
 	'right-globalgrouppermissions' => 'Дөйөм төркөмдәр менән идара итеү',
 );
@@ -4357,7 +4360,7 @@ Alasan: $1',
 	'right-centralauth-autoaccount' => 'Utumatis babuat log awan akun global',
 	'right-centralauth-unmerge' => 'Kada usah gabungi akun global',
 	'right-centralauth-lock' => 'Sunduk atawa sungkupakan akun global',
-	'right-centralauth-oversight' => 'Tikin akun global',
+	'right-centralauth-oversight' => 'Tikin akun global', # Fuzzy
 	'right-centralauth-merge' => 'Gabungakan akun mereka',
 	'right-globalgrouppermissions' => 'Kalula galambang global',
 );
@@ -4953,7 +4956,7 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'right-centralauth-autoaccount' => 'Kevreañ ent emgefre gant ur gont hollek',
 	'right-centralauth-unmerge' => "Nullañ kendeuzadur ar c'hontoù hollek",
 	'right-centralauth-lock' => 'Prennañ pe kuzhat ar gont hollek',
-	'right-centralauth-oversight' => 'Dilemel ar gont hollek',
+	'right-centralauth-oversight' => 'Dilemel ar gont hollek', # Fuzzy
 	'right-centralauth-merge' => "Kendeuziñ o c'hontoù",
 	'right-globalgrouppermissions' => 'Merañ ar strolladoù hollek',
 );
@@ -5255,7 +5258,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
 	'right-globalgroupmembership' => 'Uređivanje članstva globalnih grupa',
 	'right-centralauth-unmerge' => 'Odvajanje globalnih računa',
 	'right-centralauth-lock' => 'Zaključavanje ili sakrivanje globalnog računa',
-	'right-centralauth-oversight' => 'Sakrivanje globalnih računa',
+	'right-centralauth-oversight' => 'Sakrivanje globalnih računa', # Fuzzy
 	'right-centralauth-merge' => 'Spajanje njegovog računa',
 	'right-globalgrouppermissions' => 'Upravljanje globalnim grupama',
 );
@@ -5562,7 +5565,7 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 	'right-centralauth-autoaccount' => 'Connectar-se automàticament amb compte global',
 	'right-centralauth-unmerge' => 'Anuŀlar la unificació del compte global',
 	'right-centralauth-lock' => 'Blocar o ocultar el compte global',
-	'right-centralauth-oversight' => 'Suprimir el compte global',
+	'right-centralauth-oversight' => 'Suprimir el compte global', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar el compte propi',
 	'right-globalgrouppermissions' => 'Gestionar els grups globals',
 );
@@ -7602,7 +7605,7 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatiski pśizjawiś',
 	'right-centralauth-unmerge' => 'Zjadnośenje globalnego konta anulěrowaś',
 	'right-centralauth-lock' => 'Globalne konto zastajiś abo schowaś',
-	'right-centralauth-oversight' => 'Globalne konto pódtłocyś',
+	'right-centralauth-oversight' => 'Globalne konto pódtłocyś', # Fuzzy
 	'right-centralauth-merge' => 'Konta zjadnośiś',
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne kupki, w kótarychž wužywaŕ jo cłonk',
@@ -7947,7 +7950,7 @@ $messages['el'] = array(
 	'right-centralauth-autoaccount' => 'Αυτόματη σύνδεση με καθολικό λογαριασμό',
 	'right-centralauth-unmerge' => 'Κατάργηση συγχώνευσης καθολικού λογαριασμού',
 	'right-centralauth-lock' => 'Κλείδωμα ή απόκρυψη καθολικού λογαριασμού',
-	'right-centralauth-oversight' => 'Φραγή καθολικού λογαριασμού',
+	'right-centralauth-oversight' => 'Φραγή καθολικού λογαριασμού', # Fuzzy
 	'right-centralauth-merge' => 'Συγχωνεύστε τον λογαριασμό τους',
 	'right-globalgrouppermissions' => 'Διαχείριση καθολικών λογαριασμών',
 );
@@ -8257,7 +8260,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 	'right-centralauth-autoaccount' => 'Aŭtomate ensaluti kun ĝenerala konto',
 	'right-centralauth-unmerge' => 'Malkunigi ĝeneralan konton',
 	'right-centralauth-lock' => 'Ŝlosi aŭ kaŝi ĝeneralan konton',
-	'right-centralauth-oversight' => 'Subpremi ĝeneralan konton',
+	'right-centralauth-oversight' => 'Subpremi ĝeneralan konton', # Fuzzy
 	'right-centralauth-merge' => 'Kunfandi la konton',
 	'right-globalgrouppermissions' => 'Administri ĝeneralajn grupojn',
 );
@@ -8906,7 +8909,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-centralauth-autoaccount' => 'Automaatselt sisse logida globaalse kontoga',
 	'right-centralauth-unmerge' => 'Lahti ühendada globaalset kontot',
 	'right-centralauth-lock' => 'Lukustada või peita globaalset kontot',
-	'right-centralauth-oversight' => 'Varjata globaalset kontot',
+	'right-centralauth-oversight' => 'Varjata globaalset kontot', # Fuzzy
 	'right-centralauth-merge' => 'Luua ühendkonto',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
 );
@@ -9339,7 +9342,7 @@ $messages['fa'] = array(
 	'right-centralauth-autoaccount' => 'ورود خودکار با حساب سراسری',
 	'right-centralauth-unmerge' => 'جدا کردن حساب سراسری',
 	'right-centralauth-lock' => 'قفل یا پنهان کردن حساب سراسری',
-	'right-centralauth-oversight' => 'فرونشانی حساب سراسری',
+	'right-centralauth-oversight' => 'فرونشانی حساب سراسری', # Fuzzy
 	'right-centralauth-merge' => 'ادغام حساب‌های کاربری آن‌ها',
 	'right-globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
 );
@@ -10541,7 +10544,7 @@ Vos pouede vêre et changiér châcun de lor, ou ben fâre un juè novél.',
 	'right-centralauth-autoaccount' => 'Branchiér ôtomaticament avouéc un compto globâl',
 	'right-centralauth-unmerge' => 'Dèfusionar lo compto globâl',
 	'right-centralauth-lock' => 'Vèrrolyér ou ben cachiér lo compto globâl',
-	'right-centralauth-oversight' => 'Suprimar lo compto globâl',
+	'right-centralauth-oversight' => 'Suprimar lo compto globâl', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar sos comptos',
 	'right-globalgrouppermissions' => 'Administrar les tropes globâles',
 );
@@ -11259,7 +11262,7 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 	'right-centralauth-autoaccount' => 'Automatisch mit em globale Benutzerchonto aamälde',
 	'right-centralauth-unmerge' => 'Wältwyt Benutzerkonto abhänke',
 	'right-centralauth-lock' => 'Wältwyt Benutzerkonto sperre oder uusblände',
-	'right-centralauth-oversight' => 'Wältwyt Benutzerkonto unterdrucke',
+	'right-centralauth-oversight' => 'Wältwyt Benutzerkonto unterdrucke', # Fuzzy
 	'right-centralauth-merge' => 'Benutzerkonte zämmefiere',
 	'right-globalgrouppermissions' => 'Wältwyti Gruppe verwalte',
 );
@@ -11576,7 +11579,7 @@ $messages['gu'] = array(
 	'right-centralauth-autoaccount' => 'વૈશ્વીક ખાતા વગર સ્વય્ંચલિત રીતે પ્રવેશ કરો',
 	'right-centralauth-unmerge' => 'વૈશ્વિક ખાતાઓને છૂટા પાડો',
 	'right-centralauth-lock' => 'વૈશ્વિક ખાતું સ્થગિત કરો કે છુપાવો',
-	'right-centralauth-oversight' => 'વૈશ્વીક ખાતાને છુપાડીદો',
+	'right-centralauth-oversight' => 'વૈશ્વીક ખાતાને છુપાડીદો', # Fuzzy
 	'right-centralauth-merge' => 'તેમના ખાતા સંમિલીત કરો',
 	'right-globalgrouppermissions' => 'વૈશ્વીક સમૂહનું વ્યવસ્થાપન',
 );
@@ -12243,7 +12246,7 @@ $messages['hi'] = array(
 	'right-centralauth-autoaccount' => 'वैश्विक खाते के साथ स्वत: लोंग इन',
 	'right-centralauth-unmerge' => 'वैश्विक खाता अलग करें',
 	'right-centralauth-lock' => 'वैश्विक खाता अवरोधित करें या छुपाएँ',
-	'right-centralauth-oversight' => 'वैश्विक खाते को रोकें',
+	'right-centralauth-oversight' => 'वैश्विक खाते को रोकें', # Fuzzy
 	'right-centralauth-merge' => 'उनके खाते एकत्रित करें',
 	'right-globalgrouppermissions' => 'वैश्विक ग्रुपोंको मैनेज करें',
 );
@@ -12583,7 +12586,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi skup.',
 	'right-globalgroupmembership' => 'Uređivanje članstva za globalne skupine',
 	'right-centralauth-unmerge' => 'Razdvoji globalni račun',
 	'right-centralauth-lock' => 'Zaključaj ili sakrij globalni račun',
-	'right-centralauth-oversight' => 'Sakrivanje globalnog računa',
+	'right-centralauth-oversight' => 'Sakrivanje globalnog računa', # Fuzzy
 	'right-centralauth-merge' => 'Spajanje svojih računa',
 	'right-globalgrouppermissions' => 'Uređivanje globalnih skupina',
 );
@@ -12887,7 +12890,7 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatisce přizjewić',
 	'right-centralauth-unmerge' => 'Zjednoćenje globalneho konta zběhnyć',
 	'right-centralauth-lock' => 'Globalne konto zawrěć abo schować',
-	'right-centralauth-oversight' => 'Globalne konto potłóčić',
+	'right-centralauth-oversight' => 'Globalne konto potłóčić', # Fuzzy
 	'right-centralauth-merge' => 'Jich konta zjednoćić',
 	'right-globalgrouppermissions' => 'Globalne skupiny zrjadować',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupiny, w kotrychž wužiwar je čłon',
@@ -13248,7 +13251,7 @@ Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
 	'right-centralauth-autoaccount' => 'Automatikus bejelentkezés a globális fiókba',
 	'right-centralauth-unmerge' => 'Globális fiók szétválasztása',
 	'right-centralauth-lock' => 'Globális fiók elrejtése vagy zárolása',
-	'right-centralauth-oversight' => 'Globális fiók elrejtése',
+	'right-centralauth-oversight' => 'Globális fiók elrejtése', # Fuzzy
 	'right-centralauth-merge' => 'saját fiókok egyesítése',
 	'right-globalgrouppermissions' => 'globális csoportok kezelése',
 );
@@ -13553,7 +13556,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'right-centralauth-autoaccount' => 'Aperir session automaticamente con un conto global',
 	'right-centralauth-unmerge' => 'Disfusionar conto global',
 	'right-centralauth-lock' => 'Serrar o celar conto global',
-	'right-centralauth-oversight' => 'Supprimer conto global',
+	'right-centralauth-oversight' => 'Supprimer conto global', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar le proprie conto',
 	'right-globalgrouppermissions' => 'Gerer gruppos global',
 );
@@ -13864,7 +13867,7 @@ Anda dapat melihat dan mengubahnya, atau membuat set baru.',
 	'right-centralauth-autoaccount' => 'Login secara otomatis dengan akun global',
 	'right-centralauth-unmerge' => 'Jangan gabung akun global',
 	'right-centralauth-lock' => 'Kunci atau sembunyikan akun global',
-	'right-centralauth-oversight' => 'Hapus akun global',
+	'right-centralauth-oversight' => 'Hapus akun global', # Fuzzy
 	'right-centralauth-merge' => 'Menggabungkan akun mereka',
 	'right-globalgrouppermissions' => 'Pengaturan kelompok global',
 );
@@ -14208,7 +14211,7 @@ Mabalin mo a makita ken mabaliwan ti ania man kaniada, wenno agaramid ti baro a 
 	'right-centralauth-autoaccount' => 'Automatiko a sumrek ti sangalubongan a pakabilangan',
 	'right-centralauth-unmerge' => 'Ikkaten ti pinatipon ti sangalubongan a pakabilangan',
 	'right-centralauth-lock' => 'Serraan wenno ilemmeng ti sangalubongan a pakabilangan',
-	'right-centralauth-oversight' => 'Pasardengan ti sangalubongan a pakabilangan',
+	'right-centralauth-oversight' => 'Pasardengan ti sangalubongan a pakabilangan', # Fuzzy
 	'right-centralauth-merge' => 'Pagtiponen ti pakabilangan da',
 	'right-globalgrouppermissions' => 'Taripatuen dagiti sangalubongan a bunggoy',
 );
@@ -14513,7 +14516,7 @@ Hóp má eyða með því að fjarlægja öll réttindi hans.',
 	'right-centralauth-autoaccount' => 'Innskrá sjálfkrafa með altækum aðgangi',
 	'right-centralauth-unmerge' => 'Aðgreina altækan aðgang',
 	'right-centralauth-lock' => 'Læsa eða fela altækan aðgang',
-	'right-centralauth-oversight' => 'Bæla niður altækan aðgang',
+	'right-centralauth-oversight' => 'Bæla niður altækan aðgang', # Fuzzy
 	'right-centralauth-merge' => 'Sameina aðganga',
 	'right-globalgrouppermissions' => 'Stjórna altækum hópum',
 );
@@ -15510,7 +15513,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'right-centralauth-autoaccount' => 'Mlebu sacara otomatis nganggo akun global',
 	'right-centralauth-unmerge' => 'Aja gabung akun global',
 	'right-centralauth-lock' => 'Gemboka utawa dhelikna akun global',
-	'right-centralauth-oversight' => 'Busak akun global',
+	'right-centralauth-oversight' => 'Busak akun global', # Fuzzy
 	'right-centralauth-merge' => 'Gabung rékening-rékeningé',
 	'right-globalgrouppermissions' => 'Ngurus kelompok-kelompok global',
 );
@@ -15823,7 +15826,7 @@ $messages['ka'] = array(
 	'right-centralauth-autoaccount' => 'ავტომატური შესვლა გლობალური ანგარიშით',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
 	'right-centralauth-lock' => 'გლობალური ანგარიშის დაბლოკვა ან დამალვა',
-	'right-centralauth-oversight' => 'გლობალური ანგარიშის აკრძალვა',
+	'right-centralauth-oversight' => 'გლობალური ანგარიშის აკრძალვა', # Fuzzy
 	'right-centralauth-merge' => 'მათი ანგარიშის გაერთიანება',
 	'right-globalgrouppermissions' => 'გლობალური ჯგუფების მართვა',
 );
@@ -17305,7 +17308,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 	'right-centralauth-autoaccount' => 'Automatėsch med ene jemeinsame Aanmäldong aanmälde',
 	'right-centralauth-unmerge' => 'För en jemeinsam Aanmeldung zosammejelaate Zohjäng wider opdeile',
 	'right-centralauth-lock' => 'Metmaacher med en jemeinsam Aanmeldung sperre udder vershteishe',
-	'right-centralauth-oversight' => 'Metmaacher med en jemeinsam Aanmeldung ongerdröcke',
+	'right-centralauth-oversight' => 'Metmaacher med en jemeinsam Aanmeldung ongerdröcke', # Fuzzy
 	'right-centralauth-merge' => 'Eije Metmaacher-Name op en jemeinsam Aanmeldung zosamme lääje',
 	'right-globalgrouppermissions' => 'Jemeinsame Metmaacher-Jruppe beärbeide',
 );
@@ -17733,7 +17736,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'right-centralauth-autoaccount' => 'Automatesch mam globale Benotzerkont aloggen.',
 	'right-centralauth-unmerge' => 'Globale Benotzerkont nees trennen',
 	'right-centralauth-lock' => 'Globale Benotzerkont spären oder verstoppen',
-	'right-centralauth-oversight' => 'Globale Benotzerkont suppriméieren',
+	'right-centralauth-oversight' => 'Globale Benotzerkont suppriméieren', # Fuzzy
 	'right-centralauth-merge' => 'Hire Benotzerkont zesummeféieren',
 	'right-globalgrouppermissions' => 'Gestioun vu globale Gruppen',
 );
@@ -18105,7 +18108,7 @@ Doe kins dees bekieken en verangere, of 'ne nuje groep aanmake.",
 	'right-centralauth-autoaccount' => "Mèld mich autematis aan mit 'ne wikiwieje gebroeker",
 	'right-centralauth-unmerge' => 'Koppel wikiwiej gebroekers los',
 	'right-centralauth-lock' => 'Blok of verberg wikiwieje gebroeker',
-	'right-centralauth-oversight' => 'Óngerdrók wikiwieje gebroeker',
+	'right-centralauth-oversight' => 'Óngerdrók wikiwieje gebroeker', # Fuzzy
 	'right-centralauth-merge' => 'Gebroekers samevoge',
 	'right-globalgrouppermissions' => 'Globaal gróppe behere',
 );
@@ -18432,7 +18435,7 @@ Bet kurį iš jų galite peržiūrėti ar keisti, ar sukurti naują.',
 	'right-centralauth-autoaccount' => 'Automatiškai prisijungti su bendrąja paskyra',
 	'right-centralauth-unmerge' => 'Atsieti bendrąją paskyrą',
 	'right-centralauth-lock' => 'Užrakinti arba slėpti bendrąją paskyrą',
-	'right-centralauth-oversight' => 'Paslėpti bendrąją paskyrą',
+	'right-centralauth-oversight' => 'Paslėpti bendrąją paskyrą', # Fuzzy
 	'right-centralauth-merge' => 'Sujungti savo paskyrą',
 	'right-globalgrouppermissions' => 'Tvarkyti globaliąsias grupes',
 );
@@ -19516,7 +19519,7 @@ $messages['ml'] = array(
 	'right-centralauth-autoaccount' => 'സ്വയം ആഗോളാംഗത്വമുപയോഗിച്ച് ലോഗിൻ ചെയ്യുക',
 	'right-centralauth-unmerge' => 'ആഗോള അംഗത്വ സംയോജനം നീക്കുക',
 	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക',
-	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക',
+	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക', # Fuzzy
 	'right-centralauth-merge' => 'അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക',
 	'right-globalgrouppermissions' => 'ആഗോള സംഘങ്ങൾ പരിപാലിക്കുക',
 );
@@ -19935,7 +19938,7 @@ $messages['mr'] = array(
 	'right-centralauth-autoaccount' => 'आपोआप वैश्विक खात्यासह दाखल व्हा.',
 	'right-centralauth-unmerge' => 'वैश्विक खाते असम्मीलित करा',
 	'right-centralauth-lock' => 'वैश्विक खाते कुलुपबंद करा किंवा लपवा',
-	'right-centralauth-oversight' => 'वैश्विक खाते दडपा',
+	'right-centralauth-oversight' => 'वैश्विक खाते दडपा', # Fuzzy
 	'right-centralauth-merge' => 'त्यांची खाती एकत्र करा',
 	'right-globalgrouppermissions' => 'वैश्विक गटांचे व्यवस्थापन करा',
 );
@@ -20247,7 +20250,7 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'right-centralauth-autoaccount' => 'Log masuk secara automatik dengan akaun sejagat',
 	'right-centralauth-unmerge' => 'Menyahgabungkan akaun global',
 	'right-centralauth-lock' => 'Mengunci atau menyorokkan akaun global',
-	'right-centralauth-oversight' => 'Menyekat akaun global',
+	'right-centralauth-oversight' => 'Menyekat akaun global', # Fuzzy
 	'right-centralauth-merge' => 'Menggabungkan akaun sendiri',
 	'right-globalgrouppermissions' => 'Menguruskan kumpulan sejagat',
 );
@@ -20547,7 +20550,7 @@ Tista' tara jew timmodifika kwalunkwe waħda minnhom, jew toħloq sett ġdid.",
 	'right-centralauth-autoaccount' => "Jidħol awtomatikament b'kont globali",
 	'right-centralauth-unmerge' => 'Jiskonnettja kont globali',
 	'right-centralauth-lock' => 'Jimblokka jew jaħdi kont globali',
-	'right-centralauth-oversight' => 'Iħassar kont globali',
+	'right-centralauth-oversight' => 'Iħassar kont globali', # Fuzzy
 	'right-centralauth-merge' => 'Iwaħħad il-kont tiegħu',
 	'right-globalgrouppermissions' => 'Jamministra l-gruppi globali',
 );
@@ -20925,7 +20928,7 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 	'right-centralauth-autoaccount' => 'Automatisk innlogging med globalkonto',
 	'right-centralauth-unmerge' => 'Flett opp global konto',
 	'right-centralauth-lock' => 'Lås eller skjul global konto',
-	'right-centralauth-oversight' => 'Undertrykk global konto',
+	'right-centralauth-oversight' => 'Undertrykk global konto', # Fuzzy
 	'right-centralauth-merge' => 'Slå sammen kontoene deres',
 	'right-globalgrouppermissions' => 'Behandle av globale grupper',
 );
@@ -21173,7 +21176,7 @@ Kann angahn, dat du den verkehrten Bruker Rechten totowiesen versöchst!",
 	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
 );
 
-/** Nedersaksisch (Nedersaksisch)
+/** Nedersaksies (Nedersaksies)
  * @author Servien
  * @author Slomox
  */
@@ -21712,7 +21715,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'right-centralauth-autoaccount' => 'Automatisch aanmelden met een globale gebruiker',
 	'right-centralauth-unmerge' => 'Globale gebruiker loskoppelen',
 	'right-centralauth-lock' => 'Globale gebruiker blokkeren of verbergen',
-	'right-centralauth-oversight' => 'Globale gebruiker onderdrukken', # Fuzzy
+	'right-centralauth-oversight' => 'Globale gebruiker onderdrukken of verbergen',
 	'right-centralauth-merge' => 'Gebruikers samenvoegen',
 	'right-globalgrouppermissions' => 'Globale groepen beheren',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale groepen waar de gebruiker lid van is',
@@ -23172,7 +23175,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'right-centralauth-autoaccount' => 'Automatyczne logowanie na konto uniwersalne',
 	'right-centralauth-unmerge' => 'Rozdzielenie konta uniwersalnego',
 	'right-centralauth-lock' => 'Blokowanie lub ukrywanie konta uniwersalnego',
-	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego',
+	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego', # Fuzzy
 	'right-centralauth-merge' => 'Łączenie ich konta',
 	'right-globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 );
@@ -23788,7 +23791,7 @@ $messages['pnb'] = array(
 	'right-centralauth-autoaccount' => 'اپنے آپ لاگان ہوو جگت کھاتے نال',
 	'right-centralauth-unmerge' => 'گلوبل کھاتہ وکھرا کرو',
 	'right-centralauth-lock' => 'گلوبل کھاتہ لکاؤ یا تالہ لاؤ',
-	'right-centralauth-oversight' => 'گلوبل کھاتہ دبادیو',
+	'right-centralauth-oversight' => 'گلوبل کھاتہ دبادیو', # Fuzzy
 	'right-centralauth-merge' => 'ایناں دا کھاتہ رلادیو',
 	'right-globalgrouppermissions' => 'کلوبل ٹولیاں نون ویکھو',
 );
@@ -25036,7 +25039,7 @@ Le puteți vizualiza sau modifica pe oricare dintre ele, sau puteți crea un set
 	'right-centralauth-autoaccount' => 'Autentificare automată cu un cont global',
 	'right-centralauth-unmerge' => 'Dezunificarea contului global',
 	'right-centralauth-lock' => 'Blocarea sau ascunderea contului global',
-	'right-centralauth-oversight' => 'Suprimarea contului global',
+	'right-centralauth-oversight' => 'Suprimarea contului global', # Fuzzy
 	'right-centralauth-merge' => 'Unifică conturile sale',
 	'right-globalgrouppermissions' => 'Administrează grupurile globale',
 );
@@ -25928,7 +25931,7 @@ $messages['rue'] = array(
 	'right-centralauth-autoaccount' => 'Автоматічне приголошіня ґлобалным контом',
 	'right-centralauth-unmerge' => 'Розлучіти ґлобалны конта',
 	'right-centralauth-lock' => 'Блокованя і сховаваня ґлобалных конт',
-	'right-centralauth-oversight' => 'Затаёваня ґлобалных конт',
+	'right-centralauth-oversight' => 'Затаёваня ґлобалных конт', # Fuzzy
 	'right-centralauth-merge' => 'Злучованя їх конт',
 	'right-globalgrouppermissions' => 'Адміністрація ґлобалных ґруп',
 );
@@ -26237,7 +26240,7 @@ $messages['sa'] = array(
 	'right-centralauth-autoaccount' => 'वैश्विकाभिलेखद्वारा स्वतः प्रविश्यताम्',
 	'right-centralauth-unmerge' => 'वैश्विकाभिलेखाः पृथक्क्रियन्ताम्',
 	'right-centralauth-lock' => 'वैश्विकाभिलेखः अवरुद्ध्यताम् अथवा विलोप्यताम्',
-	'right-centralauth-oversight' => 'वैश्विकाभिलेखः निरस्यताम्',
+	'right-centralauth-oversight' => 'वैश्विकाभिलेखः निरस्यताम्', # Fuzzy
 	'right-centralauth-merge' => 'तेषाम् अभिलेखाः संयोज्यताम्',
 	'right-globalgrouppermissions' => 'वैश्विकगणाः निरूह्यन्ताम्',
 );
@@ -26538,7 +26541,7 @@ $messages['sah'] = array(
 	'right-centralauth-autoaccount' => 'Аан аатынан аптамаатынан киирии',
 	'right-centralauth-unmerge' => 'Холбоммут аан ааттары араарыы',
 	'right-centralauth-lock' => 'Холбоммут аан ааттары хааччахтааһын уонна кистээһин',
-	'right-centralauth-oversight' => 'Холбоммут аан ааттары баттааһын',
+	'right-centralauth-oversight' => 'Холбоммут аан ааттары баттааһын', # Fuzzy
 	'right-centralauth-merge' => 'Ааттары холбооһун',
 	'right-globalgrouppermissions' => 'Аан бөлөхтөрү дьаһайыы',
 );
@@ -26938,7 +26941,7 @@ $messages['si'] = array(
 	'right-centralauth-autoaccount' => 'ගෝලීය ගිණුම සමඟ ස්වයංක්‍රීයව පිවිසෙන්න',
 	'right-centralauth-unmerge' => 'ගෝලීය ගිණුම අසංයුක්ත කරන්න',
 	'right-centralauth-lock' => 'ගෝලීය ගිණුම අගුළු දැමීම හෝ සැඟවීම කරන්න',
-	'right-centralauth-oversight' => 'ගෝලීය ගිණුම මැඩපවත්වන්න',
+	'right-centralauth-oversight' => 'ගෝලීය ගිණුම මැඩපවත්වන්න', # Fuzzy
 	'right-centralauth-merge' => 'ඔවුන්ගේ ගිණුම සංයුක්ත කරන්න',
 	'right-globalgrouppermissions' => 'ගෝලීය කණ්ඩායම් පාලනය කරන්න',
 );
@@ -27238,7 +27241,7 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 	'right-centralauth-autoaccount' => 'Automaticky prihlásiť globálnym účtom',
 	'right-centralauth-unmerge' => 'Zrušiť zlúčenie globálneho účtu',
 	'right-centralauth-lock' => 'Zamknúť alebo skryť globálny účet',
-	'right-centralauth-oversight' => 'Potlačiť globálny účet',
+	'right-centralauth-oversight' => 'Potlačiť globálny účet', # Fuzzy
 	'right-centralauth-merge' => 'Zlúčiť ich účty',
 	'right-globalgrouppermissions' => 'Spravovať globálne skupiny',
 );
@@ -27870,7 +27873,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 	'right-centralauth-autoaccount' => 'Hyrje automatike me llogari globale',
 	'right-centralauth-unmerge' => 'Anuloni bashkimin e llogarinë globale',
 	'right-centralauth-lock' => 'Bllokoni ose fsheheni llogarinë globale',
-	'right-centralauth-oversight' => 'Shtypni llogarit globale',
+	'right-centralauth-oversight' => 'Shtypni llogarit globale', # Fuzzy
 	'right-centralauth-merge' => 'Bashkoni llogarit',
 	'right-globalgrouppermissions' => 'Menaxhoni grupet globale',
 );
@@ -28147,7 +28150,7 @@ $messages['sr-ec'] = array(
 	'right-centralauth-autoaccount' => 'самопријављивање с глобалним налогом',
 	'right-centralauth-unmerge' => 'раздвајање глобалних налога',
 	'right-centralauth-lock' => 'закључавање или сакривање глобалних налога',
-	'right-centralauth-oversight' => 'сакривање глобалних налога',
+	'right-centralauth-oversight' => 'сакривање глобалних налога', # Fuzzy
 	'right-centralauth-merge' => 'Спајање њихових налога.',
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
 );
@@ -28420,7 +28423,7 @@ Možete da ih pregledate i izmenite, ili pak da napravite novi skup.',
 	'right-centralauth-autoaccount' => 'samoprijavljivanje s globalnim nalogom',
 	'right-centralauth-unmerge' => 'razdvajanje globalnih naloga',
 	'right-centralauth-lock' => 'zaključavanje ili sakrivanje globalnih naloga',
-	'right-centralauth-oversight' => 'sakrivanje globalnih naloga',
+	'right-centralauth-oversight' => 'sakrivanje globalnih naloga', # Fuzzy
 	'right-centralauth-merge' => 'Spajanje njihovih naloga.',
 	'right-globalgrouppermissions' => 'Upravljanje globalnim grupama.',
 );
@@ -29141,7 +29144,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-centralauth-autoaccount' => 'Logga in automatiskt med globalt konto',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
 	'right-centralauth-lock' => 'Lås eller dölj globalt konto',
-	'right-centralauth-oversight' => 'Undanhåll globalt konto',
+	'right-centralauth-oversight' => 'Undanhåll globalt konto', # Fuzzy
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
 );
@@ -29542,7 +29545,7 @@ $messages['ta'] = array(
 	'right-centralauth-autoaccount' => 'தானாகவே உலகளாவிய கணக்கின் மூலம்  உள்நுழை.',
 	'right-centralauth-unmerge' => 'உலகளாவிய கணக்கை பிரிக்கவும்',
 	'right-centralauth-lock' => 'உலகளாவிய கணக்கை பூட்டு அல்லது மறை',
-	'right-centralauth-oversight' => 'உலகளாவிய கணக்கை ஒடுக்கவும்',
+	'right-centralauth-oversight' => 'உலகளாவிய கணக்கை ஒடுக்கவும்', # Fuzzy
 	'right-centralauth-merge' => 'அவர்களின் கணக்குகளை ஒன்றுசேர்',
 	'right-globalgrouppermissions' => 'உலகளாவிய குழுக்களை நிர்வகி',
 );
@@ -29836,7 +29839,7 @@ $messages['te'] = array(
 	'right-globalgroupmembership' => 'సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు',
 	'right-centralauth-unmerge' => 'సార్వత్రిక ఖాతాను విడదీయి',
 	'right-centralauth-lock' => 'సార్వత్రిక ఖాతాకు తాళం వెయ్యి లేదా దాచు',
-	'right-centralauth-oversight' => 'సార్వత్రిక ఖాతాను అణచి పెట్టు',
+	'right-centralauth-oversight' => 'సార్వత్రిక ఖాతాను అణచి పెట్టు', # Fuzzy
 	'right-centralauth-merge' => 'వారి ఖాతాలను విలీనం చెయ్యి',
 	'right-globalgrouppermissions' => 'సార్వత్రిక గుంపులను నిర్వహించు',
 );
@@ -30543,7 +30546,7 @@ Olaryň islendigini görüp ýa-da redaktirläp bilersiňiz, ýa-da täze toplum
 	'right-globalgroupmembership' => 'Global toparlara agzalygy redaktirle',
 	'right-centralauth-unmerge' => 'Global hasaby bölekle',
 	'right-centralauth-lock' => 'Global hasaby gulpla ýa-da gizle',
-	'right-centralauth-oversight' => 'Global hasaby bökde',
+	'right-centralauth-oversight' => 'Global hasaby bökde', # Fuzzy
 	'right-centralauth-merge' => 'Olaryň hasaplaryny birleşdir',
 	'right-globalgrouppermissions' => 'Global toparlary dolandyr',
 );
@@ -30852,7 +30855,7 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 	'right-centralauth-autoaccount' => 'Kusang lumagda sa pamamagitan ng akawnt na pangglobo',
 	'right-centralauth-unmerge' => 'Huwag pagsanibin ang pandaigdigang akawnt',
 	'right-centralauth-lock' => 'Ikandado o ikubli ang pandaigdigang akawnt',
-	'right-centralauth-oversight' => 'Pigilin ang pandaigdigang akawnt',
+	'right-centralauth-oversight' => 'Pigilin ang pandaigdigang akawnt', # Fuzzy
 	'right-centralauth-merge' => 'Pagsanibin/pagsamahin ang kanilang kuwenta (akawnt)',
 	'right-globalgrouppermissions' => 'Pamahalaan ang kapangkatang pandaigdigan',
 );
@@ -31193,7 +31196,7 @@ Herhangi birini görebilir ve değiştirebilirsiniz, ya da yeni bir set oluştur
 	'right-globalgroupmembership' => 'Küresel gruplara üyeliği değiştir',
 	'right-centralauth-unmerge' => 'Küresel hesabı çöz',
 	'right-centralauth-lock' => 'Küresel hesabı kilitle ya da gizle',
-	'right-centralauth-oversight' => 'Küresel hesabı bastır',
+	'right-centralauth-oversight' => 'Küresel hesabı bastır', # Fuzzy
 	'right-centralauth-merge' => 'Hesaplarını birleştir',
 	'right-globalgrouppermissions' => 'Küresel grupları düzenle',
 );
@@ -31544,7 +31547,7 @@ $messages['ug-arab'] = array(
 	'right-centralauth-autoaccount' => 'ئومۇمىيەت ھېساباتىدا ئۆزلۈكىدىن تىزىم كىرىدۇ',
 	'right-centralauth-unmerge' => 'ئومۇمىيەت ھېساباتىنى پارچىلا',
 	'right-centralauth-lock' => 'ئومۇمىيەت ھېساباتىنى قۇلۇپلا ياكى يوشۇر',
-	'right-centralauth-oversight' => 'ئومۇمىيەت ھېساباتىنى چەكلە',
+	'right-centralauth-oversight' => 'ئومۇمىيەت ھېساباتىنى چەكلە', # Fuzzy
 	'right-centralauth-merge' => 'ئۇلارنىڭ ھېساباتىنى بىرلەشتۈر',
 	'right-globalgrouppermissions' => 'ئومۇمىيەت گۇرۇپپىنى باشقۇر',
 );
