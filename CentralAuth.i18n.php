@@ -15603,6 +15603,7 @@ $messages['ka'] = array(
 უსაფრთხოებიდან გამომდინარე ამჟამად ეს ფუნქცია გამორთულია.',
 	'centralauth-merge-method-new-desc' => 'აჩვენებს, რომ გლობალური ანგარიში ავტომატურად შეიქმნა, როდესაც მოხდა ადგილობრივი ანგარიშის რეგისტრაცია.',
 	'centralauth-merge-method-login-desc' => 'აჩვენებს, რომ გლობალური ანგარიში ავტომატურად შეიქმნა, როდესაც მომხმარებელი სისტემაში შემოვიდა.',
+	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => 'გაერთიენების დასრულება',
 	'centralauth-finish-text' => 'თუ ეს ანგარიშები თქვენ გეკუთვნით, ანგარიშის ერთიან სისტემაზე გადასვლის დასრულება მათი პაროლების აქ შეყვანით შეგიძლიათ:',
 	'centralauth-finish-password' => 'პაროლი:',
@@ -27562,6 +27563,15 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'right-centralauth-merge' => 'Združevanje njihovih računov',
 	'right-globalgrouppermissions' => 'Upravljanje globalnih skupin',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupine, v katere je uvrščen uporabnik',
+);
+
+/** Somali (Soomaaliga)
+ * @author Abshirdheere
+ */
+$messages['so'] = array(
+	'centralauth-prefs-complete' => 'Isku Hagaaji dhaam!',
+	'centralauth-prefs-manage' => 'Maamul akoonkaada guud',
+	'centralauth-prefs-view' => 'Itus macluumaadka gude galaha',
 );
 
 /** Albanian (shqip)
