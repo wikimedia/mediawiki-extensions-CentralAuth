@@ -108,10 +108,17 @@ class SpecialWikiSets extends SpecialPage {
 
 		$set = ( $subpage || $subpage === '0' ) ? WikiSet::newFromID( $subpage ) : null;
 
-		if ( !$name ) $name = $set ? $set->getName() : '';
-		if ( !$type ) $type = $set ? $set->getType() : WikiSet::OPTIN;
-		if ( !$wikis ) $wikis = implode( "\n", $set ? $set->getWikisRaw() : array() );
-		else $wikis = implode( "\n", $wikis );
+		if ( !$name ) {
+			$name = $set ? $set->getName() : '';
+		}
+		if ( !$type ) {
+			$type = $set ? $set->getType() : WikiSet::OPTIN;
+		}
+		if ( !$wikis ) {
+			$wikis = implode( "\n", $set ? $set->getWikisRaw() : array() );
+		} else {
+			$wikis = implode( "\n", $wikis );
+		}
 		$url = SpecialPage::getTitleFor( 'WikiSets', $subpage )->getLocalUrl();
 		if ( $this->mCanEdit ) {
 			$legend = $this->msg( 'centralauth-editset-legend-' . ( $set ? 'edit' : 'new' ), $name )->escaped();
@@ -125,8 +132,9 @@ class SpecialWikiSets extends SpecialPage {
 			$groups = $set->getRestrictedGroups();
 			if ( $groups ) {
 				$usage = "<ul>\n";
-				foreach ( $groups as $group )
+				foreach ( $groups as $group ) {
 					$usage .= "<li>" . $this->msg( 'centralauth-editset-grouplink', $group )->parse() . "</li>\n";
+				}
 				$usage .= "</ul>";
 			} else {
 				$usage = $this->msg( 'centralauth-editset-nouse' )->parseAsBlock();
