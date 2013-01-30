@@ -16,6 +16,24 @@
       "revId": "394d3f553ff3a7919770837d22232a316356ac75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//3u4\u003d",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-30T18:49:10Z",
+      "side": 1,
+      "message": "I think I see what you mean. If I\u0027m understanding my debugging right, it\u0027s because the rename happens, then it tries to look at the attached accounts for the original name again, and since the user doesn\u0027t exist it causes an exception, which seems to be rolling back all of the changes.\n\nIt seems to work if I move the list creation inside the if ($continue) on line 80. I\u0027ll post a patchset that is working for me. Feel free to revert :)",
+      "parentUuid": "AAADiH//7As\u003d",
+      "revId": "394d3f553ff3a7919770837d22232a316356ac75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
