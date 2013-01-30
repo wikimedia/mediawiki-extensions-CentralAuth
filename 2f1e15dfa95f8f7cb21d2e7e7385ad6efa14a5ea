@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//4bQ\u003d",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-30T00:27:49Z",
+      "side": 1,
+      "message": "Is this is supposed to be gu_id \u003d gug_user? gug_user is an int.",
+      "revId": "2f1e15dfa95f8f7cb21d2e7e7385ad6efa14a5ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
