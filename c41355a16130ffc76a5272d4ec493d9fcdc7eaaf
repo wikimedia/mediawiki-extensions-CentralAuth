@@ -16,6 +16,24 @@
       "revId": "c41355a16130ffc76a5272d4ec493d9fcdc7eaaf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//3m4\u003d",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-01-30T19:21:55Z",
+      "side": 1,
+      "message": "Fatal error: Class \u0027RenameuserSQL\u0027 not found in /var/www/MediaWiki/Git/extensions/CentralAuth/LocalRenameUserJob.php on line 14",
+      "parentUuid": "AAADiH//3so\u003d",
+      "revId": "c41355a16130ffc76a5272d4ec493d9fcdc7eaaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
