@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//3so\u003d",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-01-30T18:51:19Z",
+      "side": 1,
+      "message": "I got a warning that the class was being redeclaired.. maybe check to see if it\u0027s already defined and then autoload it?",
+      "revId": "c41355a16130ffc76a5272d4ec493d9fcdc7eaaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
