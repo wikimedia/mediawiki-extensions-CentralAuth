@@ -15827,9 +15827,10 @@ $messages['ka'] = array(
 	'right-centralauth-autoaccount' => 'ავტომატური შესვლა გლობალური ანგარიშით',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
 	'right-centralauth-lock' => 'გლობალური ანგარიშის დაბლოკვა ან დამალვა',
-	'right-centralauth-oversight' => 'გლობალური ანგარიშის აკრძალვა', # Fuzzy
+	'right-centralauth-oversight' => 'გლობალური ანგარიშის შეჩერება ან დამალვა',
 	'right-centralauth-merge' => 'მათი ანგარიშის გაერთიანება',
 	'right-globalgrouppermissions' => 'გლობალური ჯგუფების მართვა',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'მომხმარებლის გლობალური ჯგუფები',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
