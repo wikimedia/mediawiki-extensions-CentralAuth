@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//0qY\u003d",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "CentralAuthUser \u003d\u003d\u003d self",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//0qU\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "We could use proper scopes over here no need to introduce any more PHP4 style vars",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//0qQ\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "false \u003d\u003d \u0027\u0027 so this is superfluous (I would use !\u003d\u003d \u0027\u0027)",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//0qM\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//0qI\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//0ps\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "Better do \u003d\u003d\u003d \u0027\u0027",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//0pY\u003d",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-02-03T20:54:41Z",
+      "side": 1,
+      "message": "The \");\" should go into a new line",
+      "revId": "1e1577a050fd3dfae12b3de82c639b92d39627ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
