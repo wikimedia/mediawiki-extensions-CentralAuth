@@ -502,7 +502,7 @@ $specialPageAliases['myv'] = array(
 	'MergeAccount' => array( 'ВейтьсэндямсСовамоТарка' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'CentralAuth' => array( 'Enhetlig_innlogging' ),
 	'AutoLogin' => array( 'Automatisk_innlogging' ),
@@ -535,7 +535,7 @@ $specialPageAliases['nl'] = array(
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎) */
+/** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
 	'MergeAccount' => array( 'Kontosamanslåing' ),
 	'GlobalGroupMembership' => array( 'Globale_brukarrettar' ),
