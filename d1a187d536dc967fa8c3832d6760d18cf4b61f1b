@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADi3//84A\u003d",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-02-09T01:10:36Z",
+      "side": 1,
+      "message": "These can move to the special page, since after that connection ends, the lock will be release.",
+      "revId": "d1a187d536dc967fa8c3832d6760d18cf4b61f1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
