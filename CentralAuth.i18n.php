@@ -9044,6 +9044,7 @@ $messages['ext'] = array(
  * @author Leyth
  * @author Mardetanha
  * @author Mjbmr
+ * @author Pouyana
  * @author Reza1615
  * @author Sahim
  * @author Wayiran
@@ -9098,6 +9099,7 @@ $messages['fa'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'متأسفیم! سامانهٔ یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست.',
 	'centralauth-error-locked' => 'شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.',
+	'centralauth-error-unmerged' => 'شما نمی‌توانید ویرایش کنید، چون حساب کاربری شما یکپارچه نشده‌است.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اطلاعات بیشتر دربارهٔ '''حساب کاربری مشترک''']]...''",
 	'centralauth-list-home-title' => 'ویکی خانه',
 	'centralauth-list-home-dryrun' => 'گذرواژه و نشانی پست الکترونیکی تنظیم شده در این ویکی، برای حساب یکپارچهٔ شما مورد استفاده قرار خواهد گرفت.',
@@ -9338,6 +9340,7 @@ $messages['fa'] = array(
 	'centralauth-editset-success' => 'تنظیمات ویکی را با موفقیت تغییر داد.',
 	'centralauth-editset-success-delete' => 'مجموعه ویکی با موفقیت حذف شد.',
 	'centralauth-editset-return' => 'بازگشت به نمای اصلی',
+	'centralauth-block-already-locked' => 'کاربر [[ویژه: CentralAuth / $1 | $1 ]] در گلوبال قفل شده‌است.', # Fuzzy
 	'centralauth-readonly' => 'پایگاه داده حساب مشترک قفل است',
 	'centralauth-readonlytext' => 'پایگاه داده حساب مشترک در حال حاضر در برابر موارد جدید و سایر تغییرات قفل شده است؛ این وضع معمولاً به خاطر نگهداری دوره‌ای پایگاه داده انجام می‌شود و پس از آن به حالت عادی بر می‌گردد.',
 	'right-globalgroupmembership' => 'ویرایش عضویت در گروه‌های سراسری',
@@ -9347,6 +9350,7 @@ $messages['fa'] = array(
 	'right-centralauth-oversight' => 'فرونشانی حساب سراسری', # Fuzzy
 	'right-centralauth-merge' => 'ادغام حساب‌های کاربری آن‌ها',
 	'right-globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'گروه گلوبال که کاربر در آن عضو است',
 );
 
 /** Finnish (suomi)
