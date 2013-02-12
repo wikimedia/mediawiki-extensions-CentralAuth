@@ -27576,6 +27576,8 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
  * @author Abshirdheere
  */
 $messages['so'] = array(
+	'centralauth-merge-method-new' => 'Akoon cusub',
+	'centralauth-merge-method-new-desc' => 'Waxa ay muujinaysaa  in la sameeyey akoon caalami ah si iskeed ah markii la sameeyey akoonkaan maxalliga ah.',
 	'centralauth-prefs-complete' => 'Isku Hagaaji dhaam!',
 	'centralauth-prefs-manage' => 'Maamul akoonkaada guud',
 	'centralauth-prefs-view' => 'Itus macluumaadka gude galaha',
@@ -31889,7 +31891,7 @@ $messages['uk'] = array(
 	'right-centralauth-autoaccount' => 'Автоматичний вхід із глобального облікового запису',
 	'right-centralauth-unmerge' => "Роз'єднання глобальних облікових записів",
 	'right-centralauth-lock' => 'Блокування або приховання глобального облікового запису',
-	'right-centralauth-oversight' => 'Придушувати глобальні облікові записи', # Fuzzy
+	'right-centralauth-oversight' => 'Придушення або приховування глобальних облікових записів',
 	'right-centralauth-merge' => "Об'єднання облікових записів",
 	'right-globalgrouppermissions' => 'керування глобальними групами',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобальні групи, у яких знаходиться користувач',
