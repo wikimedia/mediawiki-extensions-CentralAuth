@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dl85kAyY",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-02-15T22:29:59Z",
+      "side": 1,
+      "message": "$cdb",
+      "revId": "35677c2a1de667927dafa486d861a603632a1702",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
