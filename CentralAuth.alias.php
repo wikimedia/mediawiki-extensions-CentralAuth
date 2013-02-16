@@ -719,6 +719,7 @@ $specialPageAliases['uk'] = array(
 
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = array(
+	'CentralAuth' => array( 'اختیار_مرکزی' ),
 	'AutoLogin' => array( 'خودکار_داخل_نوشتگی' ),
 	'MergeAccount' => array( 'ضم_کھاتہ' ),
 	'GlobalUsers' => array( 'عالمی_صارفین' ),

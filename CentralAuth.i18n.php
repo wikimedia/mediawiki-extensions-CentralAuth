@@ -498,7 +498,7 @@ See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 	'centralauth-finish-send-confirmation' => 'Ability to send password using email.
 {{Identical|E-mail password}}',
 	'centralauth-attach-submit' => "Submit button 'Migrate account'",
-	'centralauth' => 'Title of [http://meta.wikimedia.org/wiki/Special:CentralAuth special page].',
+	'centralauth' => 'Title of [[meta:Special:CentralAuth|special page]].',
 	'centralauth-admin-intro' => 'Introduction to [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.',
 	'centralauth-admin-manage' => 'Heading of dialog box on [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.',
 	'centralauth-admin-username' => 'Input box label on [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.
@@ -8911,7 +8911,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-centralauth-autoaccount' => 'Automaatselt sisse logida globaalse kontoga',
 	'right-centralauth-unmerge' => 'Lahti ühendada globaalset kontot',
 	'right-centralauth-lock' => 'Lukustada või peita globaalset kontot',
-	'right-centralauth-oversight' => 'Varjata globaalset kontot', # Fuzzy
+	'right-centralauth-oversight' => 'Varjata või peita globaalset kontot',
 	'right-centralauth-merge' => 'Luua ühendkonto',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
 );
@@ -15826,7 +15826,7 @@ $messages['ka'] = array(
 	'centralauth-editset-success' => 'ვიკი-ნაკრები წარმატებით შეიცვალა.',
 	'centralauth-editset-success-delete' => 'ვიკი-ნაკრები წარმატებით წაიშალა.',
 	'centralauth-editset-return' => 'მთავარ არეზე დაბრუნება',
-	'centralauth-block-already-locked' => 'მომხმარებელი [[Special:CentralAuth/$1|$1]] უკვე არის გლობალურად დაბლოკილი.',
+	'centralauth-block-already-locked' => 'მომხმარებელი [[Special:CentralAuth/$1|$1]] უკვე გლობალურად არის დაბლოკილი.',
 	'centralauth-readonly' => 'CentralAuth-ის მონაცემთა ბაზა დაბლოკილია',
 	'centralauth-readonlytext' => 'CentralAuth-ის მონაცემთა ბაზა მასში ახალი ჩანაწერებისა და სხვა ცვლილებებისათვის ამჟამად დაბლოკილია, სავარაუდოდ, მონაცემთა ბაზების ჩვეულებრივი მომსახურების მიზნით, რის შემდეგაც ის დაბრუნდება თავის ადგილას.',
 	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
@@ -20258,9 +20258,10 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'right-centralauth-autoaccount' => 'Log masuk secara automatik dengan akaun sejagat',
 	'right-centralauth-unmerge' => 'Menyahgabungkan akaun global',
 	'right-centralauth-lock' => 'Mengunci atau menyorokkan akaun global',
-	'right-centralauth-oversight' => 'Menyekat akaun global', # Fuzzy
+	'right-centralauth-oversight' => 'Menyekat atau menyorokkan akaun sejagat',
 	'right-centralauth-merge' => 'Menggabungkan akaun sendiri',
 	'right-globalgrouppermissions' => 'Menguruskan kumpulan sejagat',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Kumpulan sejagat yang disertai oleh pengguna ini',
 );
 
 /** Maltese (Malti)
@@ -29508,6 +29509,7 @@ $messages['ta'] = array(
 	'centralauth-globalgroupperms-newgroupname' => 'புதிய குழுவின் பெயர்:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'அனுமதிகளை அமைக்கவும்',
 	'centralauth-editgroup-subtitle' => '$1 தொகுக்கப்படுகிறது',
+	'centralauth-editgroup-subtitle-readonly' => '$1 பார்',
 	'centralauth-editgroup-fieldset' => '$1 க்கான அனுமதிகள்',
 	'centralauth-editgroup-name' => 'குழுவின் பெயர்:',
 	'centralauth-editgroup-display' => 'குழுவின் உள்ளமைந்த பெயர்:',
