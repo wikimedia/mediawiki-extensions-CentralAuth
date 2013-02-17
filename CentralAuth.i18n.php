@@ -463,33 +463,35 @@ Status message after incomplete unification of a user account.',
 	'centralauth-list-attached-dryrun' => 'Text to inform users of which accounts can be unified after a dry-run. Parameters:
 * $1 is an account/user name.',
 	'centralauth-list-unattached-title' => '{{Identical|Unattached accounts}}',
-	'centralauth-foreign-link' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. Parameters:
+	'centralauth-foreign-link' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. Parameters:
 *$1 is the user name
 *$2 is the name of the local wiki',
-	'centralauth-foreign-contributions' => 'Tool tip in list of local accounts (on the edit count column) on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. Parameters:
+	'centralauth-foreign-contributions' => 'Tool tip in list of local accounts (on the edit count column) on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
+
+Parameters:
 * $1 is the number of contributions
 * $2 is the name of the local wiki',
-	'centralauth-merge-method-primary' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-primary' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-primary-desc}}
 ----
 {{Identical|Home wiki}}',
-	'centralauth-merge-method-empty' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-empty' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-empty-desc}}',
-	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-mail' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-mail-desc}}',
-	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-password' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-password-desc}}',
-	'centralauth-merge-method-admin' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-admin' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-admin-desc}}',
-	'centralauth-merge-method-new' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-new' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-new-desc}}',
-	'centralauth-merge-method-login' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-merge-method-login' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 	'centralauth-merge-method-questionmark' => '{{optional}} Shown on Special:CentralAuth in the "Method" column to illustrate that there is a tooltip',
@@ -499,30 +501,30 @@ See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 {{Identical|E-mail password}}',
 	'centralauth-attach-submit' => "Submit button 'Migrate account'",
 	'centralauth' => 'Title of [[meta:Special:CentralAuth|special page]].',
-	'centralauth-admin-intro' => 'Introduction to [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.',
-	'centralauth-admin-manage' => 'Heading of dialog box on [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.',
-	'centralauth-admin-username' => 'Input box label on [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.
+	'centralauth-admin-intro' => 'Introduction to [[meta:Special:CentralAuth|Global User Manager]] special page.',
+	'centralauth-admin-manage' => 'Heading of dialog box on [[meta:Special:CentralAuth|Global User Manager]] special page.',
+	'centralauth-admin-username' => 'Input box label on [[meta:Special:CentralAuth|Global User Manager]] special page.
 
 {{Identical|Username}}',
-	'centralauth-admin-lookup-ro' => 'Submit button on [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.
+	'centralauth-admin-lookup-ro' => 'Submit button on [[meta:Special:CentralAuth|Global User Manager]] special page.
 *{{msg-mw|Centralauth-admin-lookup-rw}}
 *{{msg-mw|Centralauth-admin-lookup-ro}}',
-	'centralauth-admin-lookup-rw' => 'Submit button on [http://meta.wikimedia.org/wiki/Special:CentralAuth Global User Manager] special page.
+	'centralauth-admin-lookup-rw' => 'Submit button on [[meta:Special:CentralAuth|Global User Manager]] special page.
 *{{msg-mw|Centralauth-admin-lookup-rw}}
 *{{msg-mw|Centralauth-admin-lookup-ro}}',
-	'centralauth-admin-info-header' => 'Header of box of information about a global user account. Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-admin-info-id' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-admin-info-header' => 'Header of box of information about a global user account. Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-info-id' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 {{Identical|User ID}}",
-	'centralauth-admin-info-registered' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.
+	'centralauth-admin-info-registered' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 The following message appears after the colon: date_time (time_span)",
-	'centralauth-admin-info-home' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.",
-	'centralauth-admin-info-editcount' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.",
-	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. The following messages can appear after the colon:
+	'centralauth-admin-info-home' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
+	'centralauth-admin-info-editcount' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
+	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-yes}}
 *{{msg-mw|Centralauth-admin-no}}",
-	'centralauth-admin-info-hidden' => "Label of information on status of user, recording whether the user is hidden to anyone but users with the right 'oversight'. Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager special page]. The following messages can appear after the colon:
+	'centralauth-admin-info-hidden' => "ìLabel of information on status of user, recording whether the user is hidden to anyone but users with the right 'oversight'. Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page]. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-hidden-oversight}}
 *{{msg-mw|Centralauth-admin-hidden-list}}
 *{{msg-mw|Centralauth-admin-no}}
@@ -530,35 +532,33 @@ The following message appears after the colon: date_time (time_span)",
 {{Identical|Hidden}}",
 	'centralauth-admin-nohome' => 'Shown in place of the wiki name if Special:CentralAuth cannot find out which wiki is home for the user.
 Label for this field is {{msg-mw|centralauth-admin-info-home}}',
-	'centralauth-admin-yes' => "Used in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. Can appear after {{msg-mw|Centralauth-admin-info-locked}}
-
+	'centralauth-admin-yes' => "Used in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. Can appear after {{msg-mw|Centralauth-admin-info-locked}}
 {{Identical|Yes}}",
-	'centralauth-admin-no' => "Used in box of 'Global user info' on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page. Can appear after either of the following:
+	'centralauth-admin-no' => "Used in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. Can appear after either of the following:
 *{{msg-mw|Centralauth-admin-info-locked}}
 *{{msg-mw|Centralauth-admin-info-hidden}}
-
 {{Identical|No}}",
 	'centralauth-admin-hidden-list' => "Means that some deleted content or other information has been hidden from public lists by someone having the power of 'Oversight'.
 
-See [http://meta.wikimedia.org/wiki/Oversight meta] for explanation of 'oversight' or 'revision delete' function.
+See [[meta:Oversight|meta]] for explanation of 'oversight' or 'revision delete' function.
 
-Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.",
+Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.",
 	'centralauth-admin-hidden-oversight' => "Means that some deleted content or other information has been hidden by someone having the power of 'Oversight'.
 
-See [http://meta.wikimedia.org/wiki/Oversight meta] for explanation of 'oversight' or 'revision delete' function.
+See [[meta:Oversight|meta]] for explanation of 'oversight' or 'revision delete' function.
 
-Used on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.",
-	'centralauth-admin-list-legend-ro' => 'Header on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
+Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.",
+	'centralauth-admin-list-legend-ro' => 'Header on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-legend-rw' => 'Fieldset header ([[:File:CentralAuth admin.png|screenshot]])',
 	'centralauth-admin-unattached' => '{{Identical|Unattached accounts}}',
 	'centralauth-admin-notblocked' => '{{notranslate}}',
 	'centralauth-admin-blocked' => '$1 is the date/time of expiry, $2 is the reason of the block, $3 is the date of expiry, $4 is the time of expiry.',
-	'centralauth-admin-blocklog' => 'Tool tip in list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-admin-list-localwiki' => 'Column header on list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-admin-list-method' => 'Column header on list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-admin-list-editcount' => 'Column header on list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
-	'centralauth-admin-list-blocked' => 'Column header on list of local accounts on [http://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=Siebrand Global user manager] special page.',
+	'centralauth-admin-blocklog' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-localwiki' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-method' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-editcount' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-blocked' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-unmerge-success' => 'Parameter $1 is the number of unmerged accounts.',
 	'centralauth-admin-delete-title' => 'Used as a fieldset legend. See [[:File:CentralAuth admin.png]].',
 	'centralauth-admin-delete-description' => 'Description text on Special:CentralAuth. See [[:File:CentralAuth admin.png]] for a screenshot.',
@@ -637,32 +637,32 @@ Shown when the migration is incomplete.',
 	'centralauth-log-entry-hide' => '{{Related|Centralauth-log-entry}}',
 	'centralauth-log-entry-unhide' => '{{Related|Centralauth-log-entry}}',
 	'centralauth-log-entry-lockandhide' => '{{Related|Centralauth-log-entry}}',
-	'centralauth-log-entry-chgstatus' => '[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Meta-Wiki for example].
+	'centralauth-log-entry-chgstatus' => '[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Meta-Wiki for example].
 
 Variables $2 and $3 are a combination of the following:
 *{{msg-mw|Centralauth-log-status-locked}}
 *{{msg-mw|Centralauth-log-status-hidden}}
 *{{msg-mw|Centralauth-log-status-oversighted}}
 *{{msg-mw|Centralauth-log-status-none}}',
-	'centralauth-log-status-locked' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
+	'centralauth-log-status-locked' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]',
 	'centralauth-log-status-hidden' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
 This "hidden" stands for "hidden from public lists".
 
-[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example].
-
+[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example].
 {{Identical|Hidden}}',
 	'centralauth-log-status-oversighted' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
 This "oversighted" stands for "hidden completely".
 
-[http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]',
-	'centralauth-log-status-none' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [http://meta.wikimedia.org/w/index.php?title=Special%3ALog&type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}} See Wikimedia Metawiki for example]
+[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]',
+	'centralauth-log-status-none' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
+[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
 {{Identical|None}}',
 	'centralauth-rightslog-name' => '{{doc-logpage}}',
-	'centralauth-rightslog-entry-usergroups' => '[http://meta.wikimedia.org/w/index.php?title=Special:Log&type=gblrights Example]',
-	'centralauth-rightslog-entry-groupperms' => 'log message in the [http://meta.wikimedia.org/w/index.php?title=Special:Log&type=gblrights Global rights log].',
+	'centralauth-rightslog-entry-usergroups' => '[{{canonicalurl:meta:Special:Log|type=gblrights}} Example]',
+	'centralauth-rightslog-entry-groupperms' => 'log message in the [{{canonicalurl:meta:Special:Log|type=gblrights}} Global rights log].',
 	'centralauth-rightslog-entry-groupperms3' => 'A log entry when a user changes the wiki set where the specified global group is applied.
 * <code>$1</code> is the name of the group being changed
 * <code>$2</code> is the name of the previous wiki set
@@ -691,7 +691,7 @@ This "oversighted" stands for "hidden completely".
 	'centralauth-editset-item-rw' => '*$1 - Name of wiki set
 *$2 - ID of wiki set',
 	'centralauth-editset-item-ro' => '{{notranslate}}',
-	'centralauth-editset-subtitle' => 'Do not translate the <code>Special:WikiSets<code> part.',
+	'centralauth-editset-subtitle' => '{{doc-important|Do not translate the <code>Special:WikiSets</code> part.}}',
 	'centralauth-editset-name' => '{{Identical|Name}}',
 	'centralauth-editset-type' => '{{Identical|Type}}',
 	'centralauth-editset-wikis' => 'List of wiki databases defined in this wiki set (either opt-in or opt-out)',
@@ -701,7 +701,7 @@ This "oversighted" stands for "hidden completely".
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
-	'centralauth-block-already-locked' => 'Shown at Special:Block when the user is already globally locked.
+	'centralauth-block-already-locked' => 'Shown at [[Special:Block]] when the user is already globally locked.
 * $1 is the requested username {{gender}}',
 	'centralauth-readonly' => 'Error message displayed when the CentralAuth database is locked.',
 	'centralauth-readonlytext' => 'Description of the centralauth-readonlytext error',
@@ -16782,7 +16782,7 @@ $messages['ko'] = array(
 	'centralauth-admin-delete-description' => '통합 계정 삭제는 모든 통합 설정을 삭제하고, 모든 로컬 계정을 분리하고, 다른 사람이 사용할 수 있도록 할 것입니다.
 모든 로컬의 계정은 계속 존재할 것입니다.
 통합 이전에 만든 로컬 계정의 비밀번호는 통합 이전의 비밀번호로 되돌려질 것입니다.',
-	'centralauth-admin-delete-button' => '이 계정 지우기',
+	'centralauth-admin-delete-button' => '이 계정 삭제',
 	'centralauth-admin-delete-confirm' => '정말로 이 계정을 삭제하겠습니까?',
 	'centralauth-admin-delete-success' => '통합 계정 "<nowiki>$1</nowiki>"이 성공적으로 삭제되었습니다.',
 	'centralauth-admin-nonexistent' => '통합 계정 "<nowiki>$1</nowiki>"이(가) 존재하지 않습니다.',
@@ -31366,12 +31366,13 @@ $messages['tzm'] = array(
 	'centralauth-admin-info-home' => 'ⵡⵉⴽⵉ ⴰⵎⵣⵡⴰⵔⵓ:',
 	'centralauth-admin-yes' => 'ⵢⴰⵀ',
 	'centralauth-admin-no' => 'ⵓⵀ ⵓ',
+	'centralauth-admin-list-method' => 'ⵜⴰⴱⵔⵉⴷⵜ',
 	'centralauth-admin-reason' => 'ⴰⵙⵔⴰⴳ:',
 	'centralauth-seconds-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⵜⴰⵙⵏⴰⵜ|ⵜⵉⵙⵏⴰⵜⵉⵏ}}',
 	'centralauth-minutes-ago' => 'ⵙⴳ $1 {{PLURAL: $1|ⵜⵓⵙⴷⴰⴷⵜ|ⵜⵓⵙⴷⴰⴷⵉⵏ}}',
 	'centralauth-hours-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⵜⴰⵙⵔⴰⴳⵜ|ⵜⵉⵙⵔⴰⴳⵉⵏ}}',
 	'centralauth-days-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⴰⵙⵙ|ⵓⵙⵙⴰⵏ}}',
-	'centralauth-months-ago' => 'ⵙⴳ $1 {{PLURAL:$1|month|months}}',
+	'centralauth-months-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⴰⵢⵢⵓⵔ|ⴰⵢⵢⵓⵔⵏ}}',
 	'centralauth-years-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⴰⵙⴳⴳⵯⴰⵙ|ⵉⵙⴳⴳⵯⴰⵙⵏ}}',
 	'centralauth-editgroup-subtitle-readonly' => 'ⵥⵕ $1',
 	'centralauth-editgroup-name' => 'ⴰⵙⵙⴰⵖ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:',
