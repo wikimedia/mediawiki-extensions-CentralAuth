@@ -3636,10 +3636,12 @@ $messages['bcl'] = array(
 /** Belarusian (беларуская)
  * @author Yury Tarasievich
  * @author Тест
+ * @author Хомелка
  */
 $messages['be'] = array(
 	'mergeaccount' => 'Стан уніфікацыі рахункаў',
-	'centralauth-desc' => "[[Special:MergeAccount|Аб'яднанне рахункаў]] на вікі-пляцоўках Фонду Вікімедыя", # Fuzzy
+	'centralauth-groupname' => 'Фонд Вікімедыя',
+	'centralauth-desc' => "[[Special:MergeAccount|Аб'яднанне рахункаў]] на вікі-пляцоўках {{int:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў]] у Адзінае Прадстаўленне",
 	'centralauth-merge-denied' => 'На жаль, вам не дазволены доступ да гэтай старонкі.',
 	'centralauth-merge-step3-submit' => "Аб'яднаць рахункі",
@@ -25089,6 +25091,8 @@ Nisciune cangiamende ha state fatte sus a le cunde utinde tune angore.",
 	'centralauth-merge-step3-title' => "Ccreje 'nu cunde aunifecate",
 	'centralauth-merge-step3-detail' => "Sì pronde pè crijà 'u tue cunde aunifecate, cu le seguende allegate de uicchi:",
 	'centralauth-merge-step3-submit' => 'Aunifeche cunde',
+	'centralauth-merge-no-accounts' => "Nisciune cunde soddisfe 'u nome tune ca avemme acchiate jndr'à tabbelle de le tracciaminde d'u cunde cendralizzate!
+L'archivije pò essere ca jè scuasciate.",
 	'centralauth-complete' => 'Trasùte aunifecate combletate!',
 	'centralauth-incomplete' => 'Trasùte aunifecate non combletate!',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sulamende 'u mode Demo</div><br clear='all'/>",
