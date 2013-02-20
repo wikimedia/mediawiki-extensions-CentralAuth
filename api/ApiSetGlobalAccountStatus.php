@@ -45,8 +45,13 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$setLocked = $this->getParameter( 'locked' ) == 'lock';
 		$setHidden = $this->getParameter( 'hidden' );
 		$reason = $this->getParameter( 'reason' );
+		$stateCheck = $this->getParameter( 'statecheck' );
 		$isLocked = $globalUser->isLocked();
 		$oldHiddenLevel = $globalUser->getHiddenLevel();
+
+		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
+			$this->dieUsage( "Edit conflict detected, Aborting." );
+		}
 
 		if (
 			$setHidden !== null && // hidden is set
@@ -170,6 +175,10 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
 			),
+			'statecheck' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false
+			),
 		);
 	}
 
@@ -179,7 +188,8 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			'locked' => 'Change whether this user is locked or not.',
 			'hidden' => 'Change whether this user is not hidden, hidden from lists, or suppressed.',
 			'reason' => "Reason for changing the user's status.",
-			'token' => 'Your edit token.'
+			'token' => 'Your edit token.',
+			'statecheck' => 'Optional MD5 of the expected current <username>:<hidden>:<locked>, to detect edit conflicts.'
 		);
 	}
 
@@ -221,6 +231,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 				'reason' => array(
 					ApiBase::PROP_TYPE => 'string',
 					ApiBase::PROP_NULLABLE => true
+				),
+				'statecheck' => array(
+					ApiBase::PROP_TYPE => 'string'
 				)
 			)
 		);
