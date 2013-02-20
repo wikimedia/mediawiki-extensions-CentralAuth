@@ -186,6 +186,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-nonexistent'        => 'There is no global account for "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-token-mismatch'           => 'Sorry, we could not process your form submission due to a loss of session data.',
+	'centralauth-state-mismatch'           => 'Error: An edit conflict for this user was detected. Please verify your change and try again.',
 	'centralauth-admin-reason'             => 'Reason:',
 	'centralauth-admin-reason-other'       => 'Other/additional reason:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
