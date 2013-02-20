@@ -97,6 +97,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function doSubmit() {
 		$deleted = false;
 		$globalUser = $this->mGlobalUser;
+		$stateCheck = ( $this->getRequest()->getVal( 'wpUserState' ) === $globalUser->getStateHash( true ) );
 
 		if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
 			$this->showError( 'centralauth-token-mismatch' );
@@ -118,6 +119,8 @@ class SpecialCentralAuth extends SpecialPage {
 				$deleted = true;
 				$this->logAction( 'delete', $this->mUserName, $this->getRequest()->getVal( 'reason' ) );
 			}
+		} elseif ( $this->mMethod == 'set-status' && !$stateCheck ) {
+			$this->showError( 'centralauth-state-mismatch' );
 		} elseif ( $this->mMethod == 'set-status' && $this->mCanLock ) {
 			$setLocked = $this->getRequest()->getBool( 'wpStatusLocked' );
 			$setHidden = $this->getRequest()->getVal( 'wpStatusHidden' );
@@ -605,6 +608,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$form .= Xml::fieldset( $this->msg( 'centralauth-admin-status' )->text() );
 		$form .= Html::hidden( 'wpMethod', 'set-status' );
 		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
+		$form .= Html::hidden( 'wpUserState', $this->mGlobalUser->getStateHash( false ) );
 		$form .= $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock();
 
 		// Radio buttons

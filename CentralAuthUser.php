@@ -2237,4 +2237,16 @@ class CentralAuthUser extends AuthPluginUser {
 	public function attachedOn( $wiki ) {
 		return $this->exists() && in_array( $wiki, $this->mAttachedArray );
 	}
+
+	/**
+	 * Get a hash representing the user/locked/hidden state of this user,
+	 * used to check for edit conflicts
+	 *
+	 * @param $recache - force a reload of the user from the database
+	 * @return String
+	 */
+	public function getStateHash( $recache = false ) {
+		$this->loadState( $recache );
+		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' . (int) $this->mLocked );
+	}
 }
