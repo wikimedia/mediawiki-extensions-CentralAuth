@@ -18904,6 +18904,14 @@ $messages['mhr'] = array(
 	'centralauth-editset-reason' => 'Амал:',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
+	'centralauth-prefs-view' => 'Lihek info pangguno global',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
