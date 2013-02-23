@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnS626z0",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "There should at least be a comment that this has a race condition. Ideally you\u0027d get the lock until CA finished deciding to make the account and made it (or decided not to). Otherwise the the lock could be set right after lockIsFree() is checked.\n\nI suppose you could do what you do know in cli mode, but call CentralAuthUser::getCentralDB()-\u003elock( ..., 1 ) in apache mode. This would hold the lock till the DB connection ends (at the end of the request). This would handle the racing problem. It still would lock longer than needed. If the if LoginForm::addNewAccountInternal() had a variable called $scopedLocks\u003darray() and passed it to the AbortNewAccount hook, you could set it in your handler function here like:\n\n$scopedLocks[] \u003d new ScopedCallback( function() (\n    CentralAuthUser::getCentralDB()-\u003eunlock( ... );\n) );\n\n...this would mean that the lock would be released as soon as the addNewAccountInternal() function exits, and would be appropriate in both sapi (apache) and cli mode.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dne6A004",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "You need to wrap the whole critical section around lock()/unlock(). I see lots of returns here, so use of ScopedCallback might ease this task.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dna5XewA",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Job type name could be better.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnYtHEXo",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Just use MWInit::classExists(), which will trigger the autoloader (as will a raw class_exists).",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnWtd9UQ",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "I\u0027d rather use the objectcache table of a central wiki instead of memcached.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnUsjWcE",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Can the log go into a central wiki? Otherwise finding renames will be a pita.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnSswHQA",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Making global renaming should only be initiated from meta. If you did that, then you could use the proper logging code to add logs (which would handle updating) IRC.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnesaBXo",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Similar issue as in the Job file.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnU4NpzU",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Do we really need to check the edits for this? If a user has 50,000 edits on wiki X, then the rename user job will just spawn more jobs. The job runners could probably have the slave lag check logic improved a bit though.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dna4eW1o",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "lock() can return false on timeout.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnY4jn6o",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "You really want wfWikiId() here, though they are the same on wmf",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnU42x.c",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Same comment about memc",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dne5Nc3Q",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "If you don\u0027t call reuseConnection( $db ) at the end of the loop body, this can make 950 connections at once. You also want to use autocommit mode to cut down on RTTS (you only need one query per DB instead of needing 3x via adding begin+commit) I\u0027d recommend doing:\n\n$db \u003d wfGetDB( DB_MASTER, array(), $wiki );\n$db-\u003ecommit( \u0027flush\u0027 );\n$trx \u003d $db-\u003eclearFlag( DBO_TRX )\n...\n$db-\u003esetFlag( $trx ? DBO_TRX : 0 );\nwfGetLB( $wiki )-\u003ereuseConnection( $db );\n\nIf you want to make sure that all 7 (now 8) clusters are available, you can connect to the masters for each in a previous loop (these connections will be reused when you do the changes), e.g:\n\nwfGetLBFactory()-\u003eforEachLB( function( $lb ) {\n    $lb-\u003egetConnection( DB_MASTER );\n} );\n\n...this will get a DB master connection for s1-s8 (with the db selected to the current wiki, which doesn\u0027t matter). If you leave this loop before the loop that actually does the updates you know that you were at least able to connect to all the masters (otherwise and exception would be thrown). The 8 connections will be reused throughout the main loop (via mysql_select_db() internally).",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dnc5StxI",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-02-23T01:13:23Z",
+      "side": 1,
+      "message": "Use JobQueueGroup::singleton( $wiki )-\u003epush( $jobs );\n\nThe code will know where to put the queue (via $wgJobTypeConf, which is the same on all wikis).",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
