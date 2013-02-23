@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "DnW7eI2w",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-02-23T01:30:29Z",
+      "side": 1,
+      "message": "... Do you have any suggestions?",
+      "parentUuid": "Dna5XewA",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnYtHEXo",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 20
@@ -104,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "DnY74P.Q",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-02-23T01:30:29Z",
+      "side": 1,
+      "message": "Should be tied to the wiki it was started from, like the other global actions, in my opinion.",
+      "parentUuid": "DnUsjWcE",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnSswHQA",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 20
@@ -115,6 +151,24 @@
       "writtenOn": "2013-02-23T01:13:23Z",
       "side": 1,
       "message": "Making global renaming should only be initiated from meta. If you did that, then you could use the proper logging code to add logs (which would handle updating) IRC.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dna7z.wg",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-02-23T01:30:29Z",
+      "side": 1,
+      "message": "This code is not run by meta (well, it could be, but not necessarily), but by the last wiki to process the rename. So I don\u0027t think we can just use the proper logging code as that would usually end up adding the log entries to the wrong wiki.",
+      "parentUuid": "DnSswHQA",
       "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -149,6 +203,24 @@
       "writtenOn": "2013-02-23T01:13:23Z",
       "side": 1,
       "message": "Do we really need to check the edits for this? If a user has 50,000 edits on wiki X, then the rename user job will just spawn more jobs. The job runners could probably have the slave lag check logic improved a bit though.",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnU7bZ3o",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-02-23T01:30:29Z",
+      "side": 1,
+      "message": "We deliberately try to run the logging code when all renames are completed. Removing this check could mean that logging code gets run before it is completed by all wikis.",
+      "parentUuid": "DnU4NpzU",
       "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
