@@ -29176,7 +29176,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-centralauth-autoaccount' => 'Logga in automatiskt med globalt konto',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
 	'right-centralauth-lock' => 'Lås eller dölj globalt konto',
-	'right-centralauth-oversight' => 'Undanhåll globalt konto', # Fuzzy
+	'right-centralauth-oversight' => 'Undertryck eller dölj globalt konto',
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
 );
