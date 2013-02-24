@@ -141,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "DnVSdOlM",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-02-24T01:00:16Z",
+      "side": 1,
+      "message": "Through SqlBagOStuff? Yes this seems like a good idea.",
+      "parentUuid": "DnQ7lbzk",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnUsjWcE",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 20
@@ -325,6 +343,24 @@
       "writtenOn": "2013-02-23T01:13:23Z",
       "side": 1,
       "message": "If you don\u0027t call reuseConnection( $db ) at the end of the loop body, this can make 950 connections at once. You also want to use autocommit mode to cut down on RTTS (you only need one query per DB instead of needing 3x via adding begin+commit) I\u0027d recommend doing:\n\n$db \u003d wfGetDB( DB_MASTER, array(), $wiki );\n$db-\u003ecommit( \u0027flush\u0027 );\n$trx \u003d $db-\u003eclearFlag( DBO_TRX )\n...\n$db-\u003esetFlag( $trx ? DBO_TRX : 0 );\nwfGetLB( $wiki )-\u003ereuseConnection( $db );\n\nIf you want to make sure that all 7 (now 8) clusters are available, you can connect to the masters for each in a previous loop (these connections will be reused when you do the changes), e.g:\n\nwfGetLBFactory()-\u003eforEachLB( function( $lb ) {\n    $lb-\u003egetConnection( DB_MASTER );\n} );\n\n...this will get a DB master connection for s1-s8 (with the db selected to the current wiki, which doesn\u0027t matter). If you leave this loop before the loop that actually does the updates you know that you were at least able to connect to all the masters (otherwise and exception would be thrown). The 8 connections will be reused throughout the main loop (via mysql_select_db() internally).",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnTSqvnM",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-02-24T01:00:16Z",
+      "side": 1,
+      "message": "We can rely on LBs being set up?",
+      "parentUuid": "Dne5Nc3Q",
       "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
