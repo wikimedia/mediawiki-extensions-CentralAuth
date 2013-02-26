@@ -738,6 +738,9 @@ $specialPageAliases['vi'] = array(
 	'CentralAuth' => array( 'Thành_viên_toàn_cục' ),
 	'AutoLogin' => array( 'Đăng_nhập_tự_động' ),
 	'MergeAccount' => array( 'Hợp_nhất_tài_khoản' ),
+	'GlobalGroupMembership' => array( 'Quyền_thành_viên_toàn_cục' ),
+	'GlobalGroupPermissions' => array( 'Quyền_nhóm_toàn_cục' ),
+	'WikiSets' => array( 'Bộ_wiki' ),
 	'GlobalUsers' => array( 'Danh_sách_người_dùng_thống_nhất' ),
 );
 

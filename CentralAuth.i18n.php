@@ -599,8 +599,7 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}
-----
-{{identical|locked}}",
+{{Identical|Locked}}",
 	'centralauth-listusers-attached' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
@@ -644,7 +643,8 @@ Variables $2 and $3 are a combination of the following:
 *{{msg-mw|Centralauth-log-status-hidden}}
 *{{msg-mw|Centralauth-log-status-oversighted}}
 *{{msg-mw|Centralauth-log-status-none}}',
-	'centralauth-log-status-locked' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]',
+	'centralauth-log-status-locked' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
+{{Identical|Locked}}',
 	'centralauth-log-status-hidden' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
 This "hidden" stands for "hidden from public lists".
@@ -664,9 +664,11 @@ This "oversighted" stands for "hidden completely".
 	'centralauth-rightslog-entry-usergroups' => '[{{canonicalurl:meta:Special:Log|type=gblrights}} Example]',
 	'centralauth-rightslog-entry-groupperms' => 'log message in the [{{canonicalurl:meta:Special:Log|type=gblrights}} Global rights log].',
 	'centralauth-rightslog-entry-groupperms3' => 'A log entry when a user changes the wiki set where the specified global group is applied.
-* <code>$1</code> is the name of the group being changed
-* <code>$2</code> is the name of the previous wiki set
-* <code>$3</code> is the name of the new wiki set',
+
+Parameters:
+* $1 - the name of the group being changed
+* $2 - the name of the previous wiki set
+* $3 - the name of the new wiki set',
 	'centralauth-rightslog-entry-newset' => "* \$1 is the name of the wiki set (example: \"''Test''\")
 * \$2 is \"''{{msg-mw|Centralauth-rightslog-set-optin}}''\" or \"''{{msg-mw|Centralauth-rightslog-set-optout}}''\"
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
@@ -678,10 +680,13 @@ This "oversighted" stands for "hidden completely".
 * {{msg-mw|Centralauth-rightslog-set-optin}}',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
-	'centralauth-editgroup-subtitle' => 'Subtitle for Special:GlobalGroupPernissions for users who may edit these permission
-* $1: Name of the group',
-	'centralauth-editgroup-subtitle-readonly' => 'Subtitle for [[Special:GlobalGroupPermissions]] for users without edit right
-* $1: Name of the group',
+	'centralauth-editgroup-subtitle' => 'Subtitle for Special:GlobalGroupPernissions for users who may edit these permission.
+
+Parameters:
+* $1 - Name of the group',
+	'centralauth-editgroup-subtitle-readonly' => 'Subtitle for Special:GlobalGroupPermissions for users without edit right.
+Parameters:
+* $1 - Name of the group',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
 	'centralauth-globalgrouppermissions-knownwiki' => '{{doc-singularthey}}',
@@ -696,7 +701,7 @@ This "oversighted" stands for "hidden completely".
 	'centralauth-editset-type' => '{{Identical|Type}}',
 	'centralauth-editset-wikis' => 'List of wiki databases defined in this wiki set (either opt-in or opt-out)',
 	'centralauth-editset-restwikis' => 'All wiki databases *not* defined in this wiki set (either opt-in or opt-out)',
-	'centralauth-editset-reason' => '{{identical|Reason}}',
+	'centralauth-editset-reason' => '{{Identical|Reason}}',
 	'centralauth-editset-submit' => '{{Identical|Submit}}',
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
 	'centralauth-editset-grouplink' => '{{optional}}',
@@ -13576,6 +13581,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
  * @author Farras
  * @author Irwangatot
  * @author IvanLanin
+ * @author Iwan Novirion
  * @author Kenrick95
  * @author Rex
  */
@@ -13767,8 +13773,8 @@ Kata sandi untuk akun-akun lokal secara otomatis kembali ke kata sandi sebelum p
 	'centralauth-invalid-wiki' => 'DB wiki tidak ditemukan: $1',
 	'centralauth-account-exists' => 'Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.',
 	'centralauth-account-exists-reset' => 'Nama pengguna $1 tidak terdaftar di wiki ini, tapi terdaftar dalam sistem masuk terpadu.',
-	'centralauth-login-progress' => 'Memasuklogkan Anda ke dalam wiki dari {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Mengeluarlogkan Anda dari wiki lain dari {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Anda masuk log juga pada {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Anda keluar log juga pada {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Anda secara otomatis telah masuk log ke proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Anda secara otomatis telah keluar log dari proyek-proyek lain dari {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'disembunyikan secara global oleh $1 pada $2 dengan alasan berikut: $3',
@@ -18910,6 +18916,8 @@ $messages['mhr'] = array(
 $messages['min'] = array(
 	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
 	'centralauth-prefs-view' => 'Lihek info pangguno global',
+	'centralauth-login-progress' => 'Sanak masuak log juo pado {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Sanak kalua log juo pado {{int:Centralauth-groupname}}:',
 );
 
 /** Macedonian (македонски)
@@ -32481,7 +32489,7 @@ Nếu đây là bạn, bạn có thể kết thúc quá trình hợp nhất tài
 	'centralauth-merge-method-empty' => 'không có đóng góp',
 	'centralauth-merge-method-mail' => 'xác nhận nhờ thư điện tử',
 	'centralauth-merge-method-password' => 'xác nhận nhờ mật khẩu',
-	'centralauth-merge-method-admin' => 'tài khoản do quản lý viên tích hợp',
+	'centralauth-merge-method-admin' => 'tài khoản do bảo quản viên hợp nhất',
 	'centralauth-merge-method-new' => 'tài khoản mới',
 	'centralauth-merge-method-login' => 'tạo ra nhờ đăng nhập',
 	'centralauth-merge-method-primary-desc' => 'Đây là wiki mà tại đó tài khoản bắt đầu được nhập.
