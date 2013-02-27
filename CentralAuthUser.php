@@ -662,7 +662,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Array of <wiki> => <authentication method>
 	 */
 	function prepareMigration( $migrationSet, $passwords = array() ) {
-		// If the primary account has an e-mail address set,
+		// If the primary account has an email address set,
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
@@ -675,7 +675,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		// If we've got an authenticated password to work with, we can
-		// also assume their e-mails are useful for this purpose...
+		// also assume their email addresses are useful for this purpose...
 		if ( $passwords ) {
 			foreach ( $migrationSet as $local ) {
 				if ( $local['email'] != ''
@@ -696,7 +696,7 @@ class CentralAuthUser extends AuthPluginUser {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
 			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
-				// Same e-mail as primary means we know they could
+				// Same email addresss as primary means we know they could
 				// reset their password, so we give them the account.
 				// Authenticated email addresses only to prevent merges with malicious users
 				$method = 'mail';

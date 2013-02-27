@@ -28,7 +28,7 @@ If someone else has already taken your username on another site this will not di
 
 	'centralauth-merge-step1-title'  => 'Begin login unification',
 	'centralauth-merge-step1-detail' => 'Please enter your account password.
-Your password and registered e-mail address will be checked against the accounts on other wikis to confirm that they match.
+Your password and registered email address will be checked against the accounts on other wikis to confirm that they match.
 No changes will be made until you have confirmed that things are in order.',
 	'centralauth-merge-step1-submit' => 'Confirm login information',
 
@@ -84,7 +84,7 @@ Sorry!",
 
 	// For lists of wikis/accounts:
 	'centralauth-list-home-title'       => 'Home wiki',
-	'centralauth-list-home-dryrun'      => 'The password and e-mail address set at this wiki will be used for your unified account.',
+	'centralauth-list-home-dryrun'      => 'The password and email address set at this wiki will be used for your unified account.',
 	'centralauth-list-attached-title'   => 'Attached accounts',
 	'centralauth-list-attached'         => 'The account named "$1" on each of the following sites has been automatically attached to the unified account:',
 	'centralauth-list-attached-dryrun'  => 'The account named "$1" on each of the following sites will be automatically attached to the unified account:',
@@ -97,7 +97,7 @@ most likely they have a different password from your primary account:',
 	// Merge methods
 	'centralauth-merge-method-primary'  => 'home wiki',
 	'centralauth-merge-method-empty'    => 'no contributions',
-	'centralauth-merge-method-mail'     => 'confirmed by e-mail',
+	'centralauth-merge-method-mail'     => 'confirmed by email',
 	'centralauth-merge-method-password' => 'confirmed by password',
 	'centralauth-merge-method-admin'    => 'admin-merged account',
 	'centralauth-merge-method-new'      => 'new account',
@@ -105,7 +105,7 @@ most likely they have a different password from your primary account:',
 	'centralauth-merge-method-primary-desc'  => 'This is the wiki at which the account was initially merged.
 Note that it may differ from the real home wiki of that user.',
 	'centralauth-merge-method-empty-desc'    => 'Indicates that the local account was merged because it had no edits.',
-	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its email address matched the e-mail address of the main account.',
+	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its email address matched the email address of the main account.',
 	'centralauth-merge-method-password-desc' => 'Indicates that the local account was merged because user specified a valid password for it.',
 	'centralauth-merge-method-admin-desc'    => 'Indicates that the local account was merged manually by stewards.
 That feature is disabled now because of security reasons.',
@@ -118,7 +118,7 @@ That feature is disabled now because of security reasons.',
 	'centralauth-finish-text'              => 'If these accounts do belong to you, you can finish the login unification process simply by typing the passwords for the other accounts here:',
 	'centralauth-finish-password'          => 'Password:',
 	'centralauth-finish-login'             => 'Login',
-	'centralauth-finish-send-confirmation' => 'E-mail password',
+	'centralauth-finish-send-confirmation' => 'Email password',
 	'centralauth-finish-problems'          => "Are you having trouble, or are you not the owner of these other accounts?
 [[meta:Help:Unified login problems|How to find help]]…",
 	'centralauth-finish-noconfirms'        => 'No accounts could be confirmed using this password.',

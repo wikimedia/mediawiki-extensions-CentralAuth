@@ -181,7 +181,7 @@ class CentralAuthPlugin extends AuthPlugin {
 
 	/**
 	 * Add a user to the external authentication database.
-	 * E-mail and real name addresses are provided by the
+	 * Email and real name addresses are provided by the
 	 * registering user, and may or may not be accepted.
 	 *
 	 * Return true if successful.
