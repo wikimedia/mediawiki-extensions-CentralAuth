@@ -17,6 +17,7 @@ $specialPageAliases['en'] = array(
 	'GlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),
 	'WikiSets' => array( 'WikiSets', 'EditWikiSets' ),
 	'GlobalUsers' => array( 'GlobalUsers' ),
+	'MultiLock' => array( 'MultiLock' ),
 );
 
 /** Afrikaans (Afrikaans) */
