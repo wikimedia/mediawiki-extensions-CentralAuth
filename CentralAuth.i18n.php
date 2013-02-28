@@ -613,24 +613,12 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 *{{msg-mw|Centralauth-admin-status-hidden-no}}
 *{{msg-mw|Centralauth-admin-status-hidden-list}}
 *{{msg-mw|Centralauth-admin-status-hidden-oversight}}',
-	'centralauth-admin-not-authorized' => 'Error message when the user doesn\'t have permission',
+	'centralauth-admin-not-authorized' => "Error message when the user doesn't have permission",
 	'centralauth-listusers-locked' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}
 {{identical|locked}}",
-	'centralauth-admin-action-lock-nochange' => 'Radio button, leave settings unchanged',
-	'centralauth-admin-action-lock-lock' => 'Radio button, lock accounts',
-	'centralauth-admin-action-lock-unlock' => 'Radio button, unlock accounts',
-	'centralauth-admin-action-hide-nochange' => 'Radio button, leave settings unchanged',
-	'centralauth-admin-action-hide-none' => 'Radio button, unhide accounts',
-	'centralauth-admin-action-hide-lists' => 'Radio button, hide accounts',
-	'centralauth-admin-action-hide-oversight' => 'Radio button, suppress accounts',
-	'centralauth-admin-multi-username' => 'Instructions for text box where admin will enter usernames, one per line',
-	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
-	'centralauth-admin-multi-searchprefix' => 'Instructions for alternative search method',
-	'centralauth-admin-multi-intro' => 'Description of this page',
-
 	'centralauth-listusers-attached' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
@@ -640,6 +628,17 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}",
+	'centralauth-admin-multi-username' => 'Instructions for text box where admin will enter usernames, one per line',
+	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
+	'centralauth-admin-multi-searchprefix' => 'Instructions for alternative search method',
+	'centralauth-admin-multi-intro' => 'Description of this page',
+	'centralauth-admin-action-lock-nochange' => 'Radio button, leave settings unchanged',
+	'centralauth-admin-action-lock-lock' => 'Radio button, lock accounts',
+	'centralauth-admin-action-lock-unlock' => 'Radio button, unlock accounts',
+	'centralauth-admin-action-hide-nochange' => 'Radio button, leave settings unchanged',
+	'centralauth-admin-action-hide-none' => 'Radio button, unhide accounts',
+	'centralauth-admin-action-hide-lists' => 'Radio button, hide accounts',
+	'centralauth-admin-action-hide-oversight' => 'Radio button, suppress accounts',
 	'centralauth-seconds-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-minutes-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-hours-ago' => '{{Related|Centralauth-ago}}',
@@ -755,9 +754,7 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 See also:
 * {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
-
-	// Associated actions - in the sentence "You do not have permission to X"
-	'action-centralauth-lock'		=> '{{Doc-action|lock}}',
+	'action-centralauth-lock' => '{{Doc-action|lock}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -8981,7 +8978,8 @@ $messages['eu'] = array(
 	'centralauth-complete' => 'Saio-hasiera bateratua egina!',
 	'centralauth-incomplete' => 'Saio-hasiera bateratua amaitu gabe!',
 	'centralauth-error-locked' => 'Ez duzu aldaketarik burutu zure kontua blokeatuta baitago.',
-	'centralauth-list-home-title' => 'Jatorrizko wikia',
+	'centralauth-list-home-title' => 'Wiki nagusia',
+	'centralauth-merge-method-primary' => 'wiki nagusia',
 	'centralauth-merge-method-empty' => 'ekarpenik gabe',
 	'centralauth-merge-method-mail' => 'e-posta bidez egiaztatua',
 	'centralauth-merge-method-password' => 'pasahitzaren bidez egiaztatua',
@@ -8996,7 +8994,7 @@ $messages['eu'] = array(
 	'centralauth-admin-lookup-ro' => 'Erabiltzaileari buruzko informazioa ikusi',
 	'centralauth-admin-info-id' => 'Erabiltzailearen identifikazioa (ID):',
 	'centralauth-admin-info-registered' => 'Erregistratua:',
-	'centralauth-admin-info-editcount' => 'Edizio guztien kontagailua:',
+	'centralauth-admin-info-editcount' => 'Edizio kopurua, guztira:',
 	'centralauth-admin-info-locked' => 'Babestua:',
 	'centralauth-admin-info-hidden' => 'Ezkutuko maila:',
 	'centralauth-admin-yes' => 'bai',
