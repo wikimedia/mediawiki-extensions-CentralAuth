@@ -16,6 +16,24 @@
       "revId": "6c2dc29bca6bd2fbab6e1ef71bce2e6be35a8dbf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoAvYxXc",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-01T22:45:51Z",
+      "side": 1,
+      "message": "You\u0027re using PHP 5.4 while Jenkins runs 5.3",
+      "parentUuid": "DoAuGhWg",
+      "revId": "6c2dc29bca6bd2fbab6e1ef71bce2e6be35a8dbf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
