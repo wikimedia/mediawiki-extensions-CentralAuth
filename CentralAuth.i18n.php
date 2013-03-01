@@ -285,6 +285,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-entry-groupperms'  => 'changed group permissions for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1. Added $2; Removed $3',
 	'centralauth-rightslog-entry-groupperms3' => 'changed group restricted wikis set for $1 from $2 to $3',
+	'centralauth-rightslog-entry-grouprename' => 'renamed group $2 to $1',
 	'centralauth-rightslog-header'            => 'This log contains operations on global groups: membership and permissions changes',
 
 	'centralauth-rightslog-entry-newset'      => 'created $2 wiki set $1 with following wikis: $3',
@@ -703,6 +704,9 @@ Parameters:
 * $1 - the name of the group being changed
 * $2 - the name of the previous wiki set
 * $3 - the name of the new wiki set',
+	'centralauth-rightslog-entry-grouprename' => 'A log entry when a user changes the name of a global group.
+* $1 is the original name of the group
+* $2 is the new name of the group',
 	'centralauth-rightslog-entry-newset' => "* \$1 is the name of the wiki set (example: \"''Test''\")
 * \$2 is \"''{{msg-mw|Centralauth-rightslog-set-optin}}''\" or \"''{{msg-mw|Centralauth-rightslog-set-optout}}''\"
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",

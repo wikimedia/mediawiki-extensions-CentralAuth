@@ -132,7 +132,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$fields = array();
 
-		$fields['centralauth-editgroup-name'] = $group;
+		if ( $editable ) {
+			$fields['centralauth-editgroup-name'] = '<div id="ca-ggp-name"><span id="ca-ggp-name-current">' . $group . '</span> ' . $this->msg( 'parentheses', '<a id="ca-ggp-name-edit" href="#">edit</a>' )->plain() . '</div>';
+			$this->getOutput()->addModules( 'ext.centralauth.globalgrouppermissions' );
+		} else {
+			$fields['centralauth-editgroup-name'] = $group;
+		}
+
 		if( $this->getUser()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
 			$fields['centralauth-editgroup-display'] = $this->msg( 'centralauth-editgroup-display-edit', $group, User::getGroupName( $group ) )->parse();
@@ -295,6 +301,35 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $current != $new ) {
 			$this->setRestrictions( $group, $new );
 			$this->addLogEntry2( $group, $current, $new, $reason );
+		}
+
+		$this->invalidateRightsCache( $group );
+
+		$newname = $this->getRequest()->getVal( 'newname' );
+		if ( !is_null( $newname ) && $group != $newname ) {
+			// Global group rename
+			$dbw = CentralAuthUser::getCentralDB();
+			$updates = array(
+				'global_group_permissions' => 'ggp_group',
+				'global_group_restrictions' => 'ggr_group',
+				'global_user_groups' => 'gug_user'
+			);
+
+			foreach ( $updates as $table => $field ) {
+				$dbw->update(
+					$table,
+					array( $field => $newname ),
+					array( $field => $group ),
+					__METHOD__
+				);
+			}
+
+			$lp = new LogPage( 'gblrights' );
+			$lp->addEntry( 'grouprename',
+				SpecialPage::getTitleFor( 'GlobalUsers', $newname ),
+				$reason,
+				array( $group )
+			);
 		}
 
 		$this->invalidateRightsCache( $group );
