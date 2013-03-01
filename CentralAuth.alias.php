@@ -117,6 +117,7 @@ $specialPageAliases['de'] = array(
 	'GlobalGroupPermissions' => array( 'Globale_Gruppenrechte' ),
 	'WikiSets' => array( 'Wikigruppen', 'Wikigruppen_bearbeiten', 'Wikisets_bearbeiten' ),
 	'GlobalUsers' => array( 'Globale_Benutzerliste' ),
+	'MultiLock' => array( 'Mehrfachsperre' ),
 );
 
 /** Zazaki (Zazaki) */
@@ -458,6 +459,7 @@ $specialPageAliases['mk'] = array(
 	'GlobalGroupPermissions' => array( 'ДозволиНаГлобалнаГрупа' ),
 	'WikiSets' => array( 'ВикиКомплети' ),
 	'GlobalUsers' => array( 'ГлобалниКорисници' ),
+	'MultiLock' => array( 'ПовеќекратноЗаклучување' ),
 );
 
 /** Malayalam (മലയാളം) */

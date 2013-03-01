@@ -578,6 +578,7 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 	'centralauth-admin-delete-description' => 'Description text on Special:CentralAuth. See [[:File:CentralAuth admin.png]] for a screenshot.',
 	'centralauth-admin-delete-button' => 'Submit button. See [[:File:CentralAuth admin.png]] for a screenshot.',
 	'centralauth-admin-delete-confirm' => 'Confirmation text asking whether the global account should really be deleted',
+	'centralauth-state-mismatch' => 'Error message when another admin has updated the user, and an edit conflict was detected',
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
 	'centralauth-admin-unhide-nonexistent' => '{{Identical|Error: The global account "$1" does not exist.}}',
@@ -610,7 +611,6 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 *{{msg-mw|Centralauth-admin-status-hidden-list}}
 *{{msg-mw|Centralauth-admin-status-hidden-oversight}}',
 	'centralauth-admin-not-authorized' => "Error message when the user doesn't have permission",
-	'centralauth-state-mismatch' => 'Error message when another admin has updated the user, and an edit conflict was detected',
 	'centralauth-listusers-locked' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
@@ -629,13 +629,20 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
 	'centralauth-admin-multi-searchprefix' => 'Instructions for alternative search method',
 	'centralauth-admin-multi-intro' => 'Description of this page',
-	'centralauth-admin-action-lock-nochange' => 'Radio button, leave settings unchanged',
-	'centralauth-admin-action-lock-lock' => 'Radio button, lock accounts',
-	'centralauth-admin-action-lock-unlock' => 'Radio button, unlock accounts',
-	'centralauth-admin-action-hide-nochange' => 'Radio button, leave settings unchanged',
-	'centralauth-admin-action-hide-none' => 'Radio button, unhide accounts',
-	'centralauth-admin-action-hide-lists' => 'Radio button, hide accounts',
-	'centralauth-admin-action-hide-oversight' => 'Radio button, suppress accounts',
+	'centralauth-admin-action-lock-nochange' => 'Radio button, leave settings unchanged.
+{{Related|Centralauth-admin-action}}',
+	'centralauth-admin-action-lock-lock' => 'Radio button, lock accounts.
+{{Related|Centralauth-admin-action}}',
+	'centralauth-admin-action-lock-unlock' => 'Radio button, unlock accounts.
+{{Related|Centralauth-admin-action}}',
+	'centralauth-admin-action-hide-nochange' => 'Radio button, leave settings unchanged.
+{{Related|Centralauth-admin-action}}',
+	'centralauth-admin-action-hide-none' => 'Radio button, unhide accounts.
+{{Related|Centralauth-admin-action}}',
+	'centralauth-admin-action-hide-lists' => 'Radio button, hide accounts.
+{{Related|Centralauth-admin-action}}',
+	'centralauth-admin-action-hide-oversight' => 'Radio button, suppress accounts.
+{{Related|Centralauth-admin-action}}',
 	'centralauth-seconds-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-minutes-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-hours-ago' => '{{Related|Centralauth-ago}}',
@@ -5354,7 +5361,6 @@ La base de dades podria estar espenyada.",
 	'centralauth-not-owner-text' => "El nom d'usuari «$1» ha estat automàticament assignat a l'usuari del compte $2.
 
 Si efectivament és vostre, podeu finalitzar el procés d'unificació escrivint a continuació la contrasenya mestra del compte:",
-	'centralauth-blocked-text' => "L'usuari de la vostra wiki principal (indicada a sota) està bloquejat. Si us plau, poseu-vos en contacte amb un administrador per a desbloquejar-lo. Mentre duri el bloqueig no podreu fusionar els vostres comptes.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Només mode de demostració</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La unificació de comptes es troba de moment en mode de proves o de demostració. Per tant, les operacions de fusió estan desactivades.',
 	'centralauth-error-locked' => 'No podeu editar perquè el vostre compte està blocat.',
@@ -5601,7 +5607,7 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 	'right-globalgroupmembership' => 'Editar els membres dels grups globals',
 	'right-centralauth-autoaccount' => 'Connectar-se automàticament amb compte global',
 	'right-centralauth-unmerge' => 'Anuŀlar la unificació del compte global',
-	'right-centralauth-lock' => 'Blocar o ocultar el compte global',
+	'right-centralauth-lock' => 'Blocar o ocultar el compte global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimir el compte global', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar el compte propi',
 	'right-globalgrouppermissions' => 'Gestionar els grups globals',
@@ -6680,7 +6686,6 @@ Ein anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge 
 	'centralauth-not-owner-text' => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.
 
 Wenn dies dein Benutzername ist, kannst du die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:',
-	'centralauth-blocked-text' => 'Du bist für Bearbeitungen in deinem Heimat-Wiki (siehe unten) gesperrt. Solange die Sperre besteht, ist eine Zusammenführung der Benutzerkonten nicht möglich.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Die Benutzerkontozusammenführung befindet sich gegenwärtig in einem Demonstrations-/Fehlersuchmodus. Zusammenführungsaktionen sind daher deaktiviert.',
 	'centralauth-error-locked' => 'Du darfst keine Seiten bearbeiten, da dein Benutzerkonto gesperrt ist.',
@@ -6775,6 +6780,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-admin-nonexistent' => 'Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-admin-delete-nonexistent' => 'Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.',
 	'centralauth-token-mismatch' => 'Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.',
+	'centralauth-state-mismatch' => 'Fehler: Es wurde ein Bearbeitungskonflikt für diesen Benutzer entdeckt. Bitte überprüfe deine Änderungen und versuche es erneut.',
 	'centralauth-admin-reason' => 'Grund:',
 	'centralauth-admin-reason-other' => 'Anderer/ergänzender Grund:',
 	'centralauth-admin-unhide-nonexistent' => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
@@ -6798,10 +6804,23 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 ** unangemessene persönliche Daten',
 	'centralauth-admin-logsnippet' => 'Vorherige Änderungen am globalen Benutzerkonto',
 	'centralauth-admin-suppressreason' => 'Global unterdrückt durch $1. Grund: $2',
+	'centralauth-admin-not-authorized' => 'Du hast keine Berechtigung, diese Aktion durchzuführen.',
 	'globalusers' => 'Benutzerverzeichnis (global)',
 	'centralauth-listusers-locked' => 'gesperrt',
 	'centralauth-listusers-attached' => '[[User:$1|lokal vorhanden]]',
 	'centralauth-listusers-nolocal' => 'nicht verbunden oder lokal nicht vorhanden',
+	'multilock' => 'Mehrere globale Benutzer sperren',
+	'centralauth-admin-multi-username' => 'Gib einen oder mehrere Benutzernamen ein, die durch Zeilenwechsel getrennt werden.',
+	'centralauth-admin-multi-notfound' => 'Die Suche hat keine Benutzernamen zurückgegeben.',
+	'centralauth-admin-multi-searchprefix' => 'Oder Suche nach Benutzerkonten mit einem Präfix',
+	'centralauth-admin-multi-intro' => 'Mehrere globale Benutzer in einem Schritt aktualisieren',
+	'centralauth-admin-action-lock-nochange' => 'Sperren nicht ändern',
+	'centralauth-admin-action-lock-lock' => 'Ausgewählte Benutzerkonten sperren',
+	'centralauth-admin-action-lock-unlock' => 'Ausgewählte Benutzerkonten freigeben',
+	'centralauth-admin-action-hide-nochange' => 'Versteckte Ebenen nicht ändern',
+	'centralauth-admin-action-hide-none' => 'Ausgewählte Benutzerkonten einblenden',
+	'centralauth-admin-action-hide-lists' => 'Ausgewählte Benutzerkonten von öffentlichen Listen verstecken',
+	'centralauth-admin-action-hide-oversight' => 'Ausgewählte Benutzerkonten komplett verstecken',
 	'centralauth-seconds-ago' => 'Vor $1 {{PLURAL:$1|Sekunde|Sekunden}}',
 	'centralauth-minutes-ago' => 'Vor $1 {{PLURAL:$1|Minute|Minuten}}',
 	'centralauth-hours-ago' => 'Vor $1 {{PLURAL:$1|Stunde|Stunden}}',
@@ -6930,11 +6949,12 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 	'right-globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen bearbeiten',
 	'right-centralauth-autoaccount' => 'Automatisch mit dem globalen Benutzerkonto anmelden',
 	'right-centralauth-unmerge' => 'Zusammenführung des globalen Benutzerkontos aufheben',
-	'right-centralauth-lock' => 'Globales Benutzerkonto sperren oder verstecken',
+	'right-centralauth-lock' => 'Globales Benutzerkonto sperren oder freigeben',
 	'right-centralauth-oversight' => 'Globales Benutzerkonto unterdrücken oder verstecken',
 	'right-centralauth-merge' => 'Benutzerkonten zusammenführen',
 	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale Gruppen, in der der Benutzer ist',
+	'action-centralauth-lock' => 'globale Benutzerkonten zu sperren oder freizugeben',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7386,9 +7406,6 @@ Datowa banka jo nejskerjej zmólkata.',
 	'centralauth-not-owner-text' => 'Wužywarske mě "$1" jo se awtomatiski wobsejźarjeju konta na $2 pśipokazało.
 
 Jolic tebje słuša, móžoš zjadnośeński proces jadnorje pśez zapódaśe głownego gronidła za toś to konto dokóńcyś:',
-	'centralauth-blocked-text' => 'Twój domacny wiki (glědaj dołojce) jo pśeśiwo wobźěłanjeju blokěrowany.
-Pšosym staj se z administratorom w tom wikiju do zwiska, aby jogo blokěrowanje wótpórał.
-Mjaztym až jo blokěrowany, njamóžoš zjadnośiś swóje konta.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Jano demonstraciski modus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Zjadnośenje kontow jo tuchylu w modusu demonstracije/pytanja zmólkow, togodla su akcije zjadnośena znjemóžnone.
 Wódaj!',
@@ -7641,8 +7658,8 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach wobźěłaś',
 	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatiski pśizjawiś',
 	'right-centralauth-unmerge' => 'Zjadnośenje globalnego konta anulěrowaś',
-	'right-centralauth-lock' => 'Globalne konto zastajiś abo schowaś',
-	'right-centralauth-oversight' => 'Globalne konto pódtłocyś', # Fuzzy
+	'right-centralauth-lock' => 'Globalne konto zastajiś abo schowaś', # Fuzzy
+	'right-centralauth-oversight' => 'Globalne konto pódtłocyś a schowaś',
 	'right-centralauth-merge' => 'Konta zjadnośiś',
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne kupki, w kótarychž wužywaŕ jo cłonk',
@@ -8376,9 +8393,6 @@ Por favor, introduzca la contraseña.',
 	'centralauth-not-owner-text' => 'El nombre de usuario "$1" ha sido asignado de forma automática al dueño de la cuenta en $2.
 
 Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí la contraseña maestra para esa cuenta:',
-	'centralauth-blocked-text' => 'Actualmente se encuentra bloqueado en su wiki origen (listada abajo).
-Por favor contacte con un administrador en esa wiki para ser desbloqueado.
-Mientras esté bloqueado, no puede fusionar sus cuentas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Únicamente modo demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La unificación de cuentas está por ahora en modo demostración / depuración, por lo que las operaciones de fusión están desactivadas. ¡Lo sentimos!',
 	'centralauth-error-locked' => 'No puedes editar porque tu cuenta está bloqueada.',
@@ -8632,7 +8646,7 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'right-globalgroupmembership' => 'Editar pertenencia a grupos globales',
 	'right-centralauth-autoaccount' => 'Acceder automáticamente con la cuenta global',
 	'right-centralauth-unmerge' => 'Desunificar cuenta global',
-	'right-centralauth-lock' => 'Bloquear u ocultar cuenta global',
+	'right-centralauth-lock' => 'Bloquear u ocultar cuenta global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimir o ocultar una cuenta global',
 	'right-centralauth-merge' => 'Fusionar su cuenta',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
@@ -10018,7 +10032,6 @@ Veuillez entrer le mot de passe utilisé sur le wiki principal.',
 	'centralauth-not-owner-text' => 'Le nom d’utilisateur unifié « $1 » a été automatiquement assigné au propriétaire du compte homonyme sur le wiki principal $2.
 
 Si vous êtes l{{GENDER:|e|a|e}} propriétaire de ce compte, vous pouvez compléter le processus d’unification du nom d’utilisateur en entrant ici le mot de passe correspondant au compte sur ce wiki principal :',
-	'centralauth-blocked-text' => 'Le compte sur le wiki principal (listé ci-dessous) est bloqué contre toute modification. Merci de contacter un administrateur pour le débloquer. Tant que ce compte restera bloqué, vous ne pourrez fusionner vos comptes.',
 	'centralauth-notice-dryrun' => '<div class="successbox">Mode de démonstration uniquement</div><br clear="all" />',
 	'centralauth-disabled-dryrun' => 'L’unification des comptes est actuellement en mode de démonstration ou de test, par conséquent les véritables opérations de fusion des comptes et de migration des données d’identification vers la base centrale des comptes unifiés sont désactivées.
 Désolé !
@@ -10138,10 +10151,23 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 ** informations personnelles inappropriées',
 	'centralauth-admin-logsnippet' => 'Changements précédents dans le compte global',
 	'centralauth-admin-suppressreason' => 'Supprimé globalement par $1 pour le motif suivant : $2',
+	'centralauth-admin-not-authorized' => 'Vous n’avez pas les droits pour effectuer cette action',
 	'globalusers' => 'Liste des utilisateurs globaux',
 	'centralauth-listusers-locked' => 'verrouillé',
 	'centralauth-listusers-attached' => '[[User:$1|existe localement]]',
 	'centralauth-listusers-nolocal' => 'non rattaché ou n’existe pas localement',
+	'multilock' => 'Verrouiller les utilisateurs globaux multiples',
+	'centralauth-admin-multi-username' => 'Entrez un ou plusieurs noms d’utilisateur, un par ligne',
+	'centralauth-admin-multi-notfound' => 'La recherche n’a renvoyé aucun nom d’utilisateur.',
+	'centralauth-admin-multi-searchprefix' => 'Ou, rechercher des comptes avec un préfixe',
+	'centralauth-admin-multi-intro' => 'Mettre à jour de multiples utilisateurs globaux à la fois',
+	'centralauth-admin-action-lock-nochange' => 'Ne pas changer les verrous',
+	'centralauth-admin-action-lock-lock' => 'Verrouiller les comptes sélectionnés',
+	'centralauth-admin-action-lock-unlock' => 'Déverrouiller les comptes sélectionnés',
+	'centralauth-admin-action-hide-nochange' => 'Ne pas modifier les niveaux cachés',
+	'centralauth-admin-action-hide-none' => 'Démasquer les comptes sélectionnés',
+	'centralauth-admin-action-hide-lists' => 'Masquer les comptes sélectionnés dans les listes publiques',
+	'centralauth-admin-action-hide-oversight' => 'Masquer complètement les comptes sélectionnés',
 	'centralauth-seconds-ago' => 'depuis $1 seconde{{PLURAL:$1||s}}',
 	'centralauth-minutes-ago' => 'depuis $1 minute{{PLURAL:$1||s}}',
 	'centralauth-hours-ago' => 'depuis $1 heure{{PLURAL:$1||s}}',
@@ -10272,11 +10298,12 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'right-globalgroupmembership' => 'Modifier les appartenances aux groupes globaux',
 	'right-centralauth-autoaccount' => 'Connecter automatiquement avec un compte global',
 	'right-centralauth-unmerge' => 'Annuler la fusion du compte global',
-	'right-centralauth-lock' => 'Verrouiller ou masquer compte global',
+	'right-centralauth-lock' => 'Verrouiller ou masquer compte global', # Fuzzy
 	'right-centralauth-oversight' => 'Supprimer ou masquer le compte global',
 	'right-centralauth-merge' => 'Fusionner ses comptes',
 	'right-globalgrouppermissions' => 'Gérer les groupes globaux',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Groupes globaux auxquels appartient l'utilisateur",
+	'action-centralauth-lock' => 'verrouiller ou déverrouiller les comptes globaux',
 );
 
 /** Franco-Provençal (arpetan)
@@ -10703,9 +10730,6 @@ Por favor, insira o contrasinal do wiki principal.',
 	'centralauth-not-owner-text' => 'O nome de usuario "$1" asignouse automaticamente ao propietario da conta en $2.
 
 Se se trata de vostede, pode completar o proceso de unificación do rexistro simplemente escribindo, aquí, o contrasinal mestre desa conta:',
-	'centralauth-blocked-text' => 'O seu wiki principal (escrito embaixo) está bloqueado fronte á edición.
-Por favor, contacte cun administrador dese wiki para que o desbloquee.
-Mentres estea bloqueado, non pode unificar as súas contas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demostración</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Actualmente a unificación de contas atópase no modo de demostración/depuración, polo que as operacións de unificación están dashabilitadas.
 Sentímolo!',
@@ -10823,6 +10847,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 ** información persoal inapropiada',
 	'centralauth-admin-logsnippet' => 'Cambios anteriores na conta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 polo seguinte motivo: $2',
+	'centralauth-admin-not-authorized' => 'Non ten os permisos necesarios para levar a cabo esta acción',
 	'globalusers' => 'Lista de usuarios globais',
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => '[[User:$1|existe neste wiki]]',
@@ -10957,11 +10982,12 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'right-globalgroupmembership' => 'Editar os membros dos grupos globais',
 	'right-centralauth-autoaccount' => 'Acceder automaticamente coa conta global',
 	'right-centralauth-unmerge' => 'Anular a fusión dunha conta global',
-	'right-centralauth-lock' => 'Bloquear ou agochar unha conta global',
+	'right-centralauth-lock' => 'Bloquear ou agochar unha conta global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimir ou agochar unha conta global',
 	'right-centralauth-merge' => 'Fusionar a conta propia',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globais aos que pertence o usuario',
+	'action-centralauth-lock' => 'bloquear ou desbloquear contas globais',
 );
 
 /** Gothic (Gothic)
@@ -12680,7 +12706,6 @@ Druhi wiki bu jako domizniske konto za twoje wužiwarske mjeno postajeny; slědu
 	'centralauth-complete-text' => 'Móžeš so nětko do někajkeho wikijoweho sydła na {{int:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
 	'centralauth-incomplete-text' => 'Tak ruče kaž waše přizjewjenje je so zjednoćiło, móžeš so do někajkeho wikijoweho sydła na {{int:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.',
 	'centralauth-not-owner-text' => 'Wužiwarske mjeno "$1" bu awtomatisce swójstwownikej wužiwarskeho konta $2 připokazane. Jeli je to twoje wužiwarske mjeno, móžeš zjednoćenje wužiwarskich kontow přez zapodaće hłowneho hesła za tute wužiwarske konto dokónčić:',
-	'centralauth-blocked-text' => 'Twój domizniski wiki (hlej deleka) je přećiwo wobdźěłowanju blokowany. Skontaktujće administratora w tutym wikiju, zo by jeho blokowanje zběhnył. Mjeztym zo je blokowany, njemóžeš swoje konta zjednoćić.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Jenož demonstraciski modus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontowe zjednoćenje je runje w demonstraciskim modusu abo při pytanju za zmylkami, tohodla su aktuelne zjednoćenske procesy znjemóžnjene. Bohužel!',
 	'centralauth-error-locked' => 'Njemóžeš wobdźěłać, dokelž twoje konto je zawrjene.',
@@ -12931,8 +12956,8 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'right-globalgroupmembership' => 'Čłonstwo w globalnych skupinach wobdźěłać',
 	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatisce přizjewić',
 	'right-centralauth-unmerge' => 'Zjednoćenje globalneho konta zběhnyć',
-	'right-centralauth-lock' => 'Globalne konto zawrěć abo schować',
-	'right-centralauth-oversight' => 'Globalne konto potłóčić', # Fuzzy
+	'right-centralauth-lock' => 'Globalne konto zawrěć abo schować', # Fuzzy
+	'right-centralauth-oversight' => 'Globalne konto potłóčić abo schować',
 	'right-centralauth-merge' => 'Jich konta zjednoćić',
 	'right-globalgrouppermissions' => 'Globalne skupiny zrjadować',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupiny, w kotrychž wužiwar je čłon',
@@ -13661,7 +13686,6 @@ Silakan masukkan kata sandi untuk wiki utama.',
 	'centralauth-not-owner-text' => 'Nama pengguna "$1" diberikan secara otomatis kepada pemilik akun $2.
 
 Jika ini adalah Anda, Anda dapat menyelesaikan proses penggabungan log masuk dengan hanya mengetikkan kata kunci utama untuk akun tersebut di sini:',
-	'centralauth-blocked-text' => 'Wiki utama Anda (terdaftar di bawah) sedang diblokir terhadap penyuntingan. Silakan hubungi opsis di wiki ini untuk membuka pemblokiran. Selama masih diblokir, Anda tidak dapat menggabungkan akun-akun Anda.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Hanya mode demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Penggabungan akun saat ini masih dalam mode demo/debugging, jadi operasi penggabungan yang sesungguhnya dinon-aktifkan. Mohon maaf!',
 	'centralauth-error-locked' => 'Anda tidak dapat menyunting karena akun Anda dikunci.',
@@ -13909,7 +13933,7 @@ Anda dapat melihat dan mengubahnya, atau membuat set baru.',
 	'right-globalgroupmembership' => 'Sunting keanggotaan kelompok global',
 	'right-centralauth-autoaccount' => 'Login secara otomatis dengan akun global',
 	'right-centralauth-unmerge' => 'Jangan gabung akun global',
-	'right-centralauth-lock' => 'Kunci atau sembunyikan akun global',
+	'right-centralauth-lock' => 'Kunci atau sembunyikan akun global', # Fuzzy
 	'right-centralauth-oversight' => 'Hapus akun global', # Fuzzy
 	'right-centralauth-merge' => 'Menggabungkan akun mereka',
 	'right-globalgrouppermissions' => 'Pengaturan kelompok global',
@@ -14944,9 +14968,6 @@ $messages['ja'] = array(
 	'centralauth-not-owner-text' => '「$1」という利用者名は、アカウント $2 の利用者へ既に自動割り当て済みです。
 
 もしこれがあなたである場合は、このアカウントのパスワードをここに入力することで、アカウント統一処理を簡単に完了できます:',
-	'centralauth-blocked-text' => 'あなたのホームウィキ(下に表示)は投稿がブロックされています。
-ブロックを解除するにはホームウィキの管理者に連絡してください。
-ブロックされている限り、アカウントを統合できません。',
 	'centralauth-notice-dryrun' => "<div class='successbox'>デモモード限定</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'アカウントの統一は現在、デモ / デバッグモードであるため、実際の統合操作は実行されません。
 申し訳ありません!',
@@ -15069,11 +15090,23 @@ $messages['ja'] = array(
 ** 不適切な個人情報',
 	'centralauth-admin-logsnippet' => '以前のグローバルアカウントの変更履歴',
 	'centralauth-admin-suppressreason' => 'あなたは以下の理由で、$1 によってグローバルに秘匿されています: $2',
+	'centralauth-admin-not-authorized' => 'あなたにはこの操作を実行する権限がありません',
 	'globalusers' => 'グローバルアカウントの利用者一覧',
 	'centralauth-listusers-locked' => 'ロックされている',
 	'centralauth-listusers-attached' => '[[User:$1|ローカルに作成済み]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => '未統合、またはローカルに未作成',
+	'multilock' => '複数のグローバル利用者をロック',
+	'centralauth-admin-multi-notfound' => '該当する利用者は見つかりませんでした。',
+	'centralauth-admin-multi-searchprefix' => 'または、接頭辞付きのアカウントを検索',
+	'centralauth-admin-multi-intro' => '複数のグローバルアカウントを一度に更新します',
+	'centralauth-admin-action-lock-nochange' => 'ロックを変更しない',
+	'centralauth-admin-action-lock-lock' => '選択したアカウントをロック',
+	'centralauth-admin-action-lock-unlock' => '選択したアカウントをロック解除',
+	'centralauth-admin-action-hide-nochange' => '秘匿レベルを変更しない',
+	'centralauth-admin-action-hide-none' => '選択したアカウントを秘匿解除',
+	'centralauth-admin-action-hide-lists' => '選択したアカウントを公開一覧から秘匿',
+	'centralauth-admin-action-hide-oversight' => '選択したアカウントを完全に秘匿',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|秒}}前',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|分}}前',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|時間}}前',
@@ -15206,11 +15239,12 @@ $messages['ja'] = array(
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
 	'right-centralauth-autoaccount' => 'グローバルアカウントで自動ログイン',
 	'right-centralauth-unmerge' => 'グローバルアカウントを統合解除',
-	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿',
+	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿', # Fuzzy
 	'right-centralauth-oversight' => 'グローバルアカウントを秘匿', # Fuzzy
 	'right-centralauth-merge' => '自身のアカウントを統合',
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
 	'abusefilter-edit-builder-vars-global-user-groups' => '利用者の所属グローバルグループ',
+	'action-centralauth-lock' => 'グローバルアカウントのロックまたはロック解除',
 );
 
 /** Jutish (jysk)
@@ -19000,9 +19034,6 @@ $messages['mk'] = array(
 	'centralauth-not-owner-text' => 'Корисничкото име „$1“ му беше автоматски припишано на имателот на сметката на $2.
 
 Ако тоа сте вие, можете да го довршите процесот на обединување едноставно со внесување на главната лозинка за таа сметка овде:',
-	'centralauth-blocked-text' => 'Вашето домашно вики (наведено подолу) е блокирано од уредување.
-Контактирајте администратор на ова вики за да го одблокирате.
-Додека тоа е блокирано, не можете да си ги споите сметките.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстрационен режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Обединувањето на сметки е моментално во демонстрационен режим / режим на отстранување грешки, и затоа операциите за спојување се оневозможени.
 Се извинуваме!',
@@ -19098,6 +19129,7 @@ $messages['mk'] = array(
 	'centralauth-admin-nonexistent' => 'Нема глобална корисничка сметка за „<nowiki>$1</nowiki>“',
 	'centralauth-admin-delete-nonexistent' => 'Грешка: глобалната корисничка сметка „<nowiki>$1</nowiki>“ не постои.',
 	'centralauth-token-mismatch' => 'Жалиме, но не можевме да го обработиме поднесениот образец заради губење на сесиски податоци.',
+	'centralauth-state-mismatch' => 'Грешка: Утврдена е спротиставеност во уредувањето на овој корисник. Потврдете ги вашите промени и обидете се повторно.',
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-reason-other' => 'Друга/дополнителна причина:',
 	'centralauth-admin-unhide-nonexistent' => 'Грешка: глобалната сметка „<nowiki>$1</nowiki>“ не постои.',
@@ -19121,10 +19153,23 @@ $messages['mk'] = array(
 ** непристојни лични податоци',
 	'centralauth-admin-logsnippet' => 'Претходни промени на глобалната сметка',
 	'centralauth-admin-suppressreason' => 'Глобално скриен од $1 од следнава причина: $2',
+	'centralauth-admin-not-authorized' => 'Ги немате потребните права за да го извршите ова дејство',
 	'globalusers' => 'Список на глобални корисници',
 	'centralauth-listusers-locked' => 'заклучена',
 	'centralauth-listusers-attached' => '[[User:$1|постои локално]]',
 	'centralauth-listusers-nolocal' => 'неприкачена или не постои локално',
+	'multilock' => 'Заклучување на повеќе глобални корисници',
+	'centralauth-admin-multi-username' => 'Внесете едно или повеќе кориснички имиња, секое во нов ред',
+	'centralauth-admin-multi-notfound' => 'Пребарувањето не најде ниедно корисничко име.',
+	'centralauth-admin-multi-searchprefix' => 'Или пак пребарајте сметки со префикс',
+	'centralauth-admin-multi-intro' => 'Поднова (измена) на повеќе глобални корисници наеднаш',
+	'centralauth-admin-action-lock-nochange' => 'Не ги менувај заклучувањата',
+	'centralauth-admin-action-lock-lock' => 'Заклучи ги избраните сметки',
+	'centralauth-admin-action-lock-unlock' => 'Отклучи избрани сметки',
+	'centralauth-admin-action-hide-nochange' => 'Не ги менувај скриените степени',
+	'centralauth-admin-action-hide-none' => 'Откриј ги избраните сметки',
+	'centralauth-admin-action-hide-lists' => 'Скриј избрани сметки од јавни списоци',
+	'centralauth-admin-action-hide-oversight' => 'Целосно скриј ги избраните сметки',
 	'centralauth-seconds-ago' => 'пред $1 {{PLURAL:$1|секунда|секунди}}',
 	'centralauth-minutes-ago' => 'пред $1 {{PLURAL:$1|минута|минути}}',
 	'centralauth-hours-ago' => 'пред $1 {{PLURAL:$1|час|часа}}',
@@ -19256,11 +19301,12 @@ $messages['mk'] = array(
 	'right-globalgroupmembership' => 'Менување на членството во глобалните групи',
 	'right-centralauth-autoaccount' => 'Автоматска најава со глобална сметка',
 	'right-centralauth-unmerge' => 'Раздвој глобална сметка',
-	'right-centralauth-lock' => 'Заклучи или скриј глобална сметка',
+	'right-centralauth-lock' => 'Заклучување или отклучување на глобална сметка',
 	'right-centralauth-oversight' => 'Затајување или скривање на глобална сметка',
 	'right-centralauth-merge' => 'Спојување на сметката',
 	'right-globalgrouppermissions' => 'Раководеење со глобални групи',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобални групи во кои членува корисникот',
+	'action-centralauth-lock' => 'заклучување или отклучување на глобални сметки',
 );
 
 /** Malayalam (മലയാളം)
@@ -19321,9 +19367,6 @@ $messages['ml'] = array(
 	'centralauth-not-owner-text' => '"$1" എന്ന ഉപയോക്തൃനാമം യാന്ത്രികമായി $2 എന്ന അംഗത്വത്തിന്റെ ഉടമസ്ഥനു കൊടുത്തിരിക്കുന്നു.
 
 അതു താങ്കളാണെങ്കിൽ പ്രധാന അംഗത്വത്തിന്റെ രഹസ്യവാക്ക് ഇവിടെ കൊടുത്ത് താങ്കൾക്ക് സം‌യോജിത ലോഗിൻ പ്രക്രിയ പൂർത്തിയാക്കാവുന്നതാണ്‌.',
-	'centralauth-blocked-text' => 'താങ്കളുടെ പ്രഥമ വിക്കിയിൽ (താഴെ കൊടുത്തിരിക്കുന്നു) തിരുത്തുന്നതിൽ നിന്നും തടഞ്ഞിരിക്കുകയാണ്.
-ദയവായി ഈ വിക്കിയിലെ കാര്യനിർ‌വാഹകനെ സമീപിച്ച് അത് ഒഴിവാക്കാൻ ആവശ്യപ്പെടുക.
-അത് തടയപ്പെട്ടിരിക്കുമ്പോൾ താങ്കൾക്ക് അംഗത്വങ്ങൾ ലയിപ്പിക്കാൻ കഴിയുന്നതല്ല.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>പരീക്ഷണ ഘട്ടത്തിലാണ്‌</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'അംഗത്വ സംയോജനം ഇപ്പോൾ പരീക്ഷണ / തെറ്റുതിരുത്തൽ രീതിയിൽ ആണ് പ്രവർത്തിക്കുന്നത്, അതുകൊണ്ട് ശരിക്കുമുള്ള ലയന ക്രിയകൾ സാദ്ധ്യമല്ലാതാക്കിയിരിക്കുന്നു.
 ക്ഷമിക്കുക!',
@@ -19441,10 +19484,23 @@ $messages['ml'] = array(
 **അനുചിതമായ വ്യക്തി വിവരങ്ങൾ',
 	'centralauth-admin-logsnippet' => 'ആഗോള അംഗത്വത്തിൽ മുമ്പുണ്ടായ മാറ്റങ്ങൾ',
 	'centralauth-admin-suppressreason' => '$1 ആഗോളമായി ഒതുക്കിയിരിക്കുന്നു, കാരണം: $2',
+	'centralauth-admin-not-authorized' => 'ഈ പ്രവൃത്തി ചെയ്യാനുള്ള അനുമതികൾ താങ്കൾക്കില്ല',
 	'globalusers' => 'ആഗോള അംഗങ്ങൾ',
 	'centralauth-listusers-locked' => 'ബന്ധിച്ചിരിക്കുന്നു',
 	'centralauth-listusers-attached' => '[[User:$1|പ്രാദേശിക വിക്കിയിൽ അംഗത്വം ഉണ്ട്]]',
 	'centralauth-listusers-nolocal' => 'ചേർക്കപ്പെട്ടിട്ടില്ല അല്ലെങ്കിൽ പ്രാദേശികമായി നിലവിലില്ല',
+	'multilock' => 'ഒന്നിലധികം ആഗോള ഉപയോക്താക്കളെ ബന്ധിക്കുക',
+	'centralauth-admin-multi-username' => 'ഒന്നോ അധിലധികമോ ഉപയോക്തൃനാമങ്ങൾ - പുതിയ വരിയാൽ വേർതിരിക്കപ്പെട്ടവ - നൽകുക',
+	'centralauth-admin-multi-notfound' => 'തിരച്ചിലിനു ഫലമായി ഉപയോക്തൃനാമങ്ങളൊന്നും ലഭിച്ചില്ല.',
+	'centralauth-admin-multi-searchprefix' => 'അല്ലെങ്കിൽ, അംഗത്വങ്ങൾ പൂർവ്വപദമനുസരിച്ച് തിരയുക',
+	'centralauth-admin-multi-intro' => 'ഒന്നിലധികം ആഗോള ഉപയോക്താക്കളെ ഒരുമിച്ച് പുതുക്കുക',
+	'centralauth-admin-action-lock-nochange' => 'ബന്ധനങ്ങളിൽ മാറ്റമൊന്നും വരുത്തേണ്ട',
+	'centralauth-admin-action-lock-lock' => 'തിരഞ്ഞെടുത്ത അംഗത്വങ്ങൾ ബന്ധിക്കുക',
+	'centralauth-admin-action-lock-unlock' => 'തിരഞ്ഞെടുത്ത അംഗത്വങ്ങൾ സ്വതന്ത്രമാക്കുക',
+	'centralauth-admin-action-hide-nochange' => 'മറയ്ക്കപ്പെട്ട തലങ്ങളിൽ വ്യത്യാസം വരുത്തേണ്ട',
+	'centralauth-admin-action-hide-none' => 'തിരഞ്ഞെടുത്ത അംഗത്വങ്ങൾ മറച്ചിരിക്കുന്നത് ഒഴിവാക്കുക',
+	'centralauth-admin-action-hide-lists' => 'തിരഞ്ഞെടുത്ത അംഗത്വങ്ങൾ പൊതുവേദികളിൽ നിന്ന് മറയ്ക്കുക',
+	'centralauth-admin-action-hide-oversight' => 'തിരഞ്ഞെടുത്ത അംഗത്വങ്ങൾ പൂർണ്ണമായി മറയ്ക്കുക',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|ഒരു സെക്കന്റ്|$1 സെക്കന്റ്}} മുൻപ്',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|ഒരു മിനിറ്റ്|$1 മിനിറ്റ്}} മുൻപ്',
 	'centralauth-hours-ago' => '{{PLURAL:$1|ഒരു മണിക്കൂർ|$1 മണിക്കൂർ}} മുൻപ്',
@@ -19573,10 +19629,12 @@ $messages['ml'] = array(
 	'right-globalgroupmembership' => 'ആഗോള സംഘങ്ങളിലുള്ള അംഗത്വം തിരുത്തുക',
 	'right-centralauth-autoaccount' => 'സ്വയം ആഗോളാംഗത്വമുപയോഗിച്ച് ലോഗിൻ ചെയ്യുക',
 	'right-centralauth-unmerge' => 'ആഗോള അംഗത്വ സംയോജനം നീക്കുക',
-	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക',
-	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക', # Fuzzy
+	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക', # Fuzzy
+	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക',
 	'right-centralauth-merge' => 'അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക',
 	'right-globalgrouppermissions' => 'ആഗോള സംഘങ്ങൾ പരിപാലിക്കുക',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'ഉപയോക്താവിന് അംഗത്വമുള്ള ആഗോള സംഘങ്ങൾ',
+	'action-centralauth-lock' => 'ആഗോള അംഗത്വങ്ങൾ ബന്ധിക്കുക അല്ലെങ്കിൽ സ്വതന്ത്രമാക്കുക',
 );
 
 /** Mongolian (монгол)
@@ -20052,7 +20110,6 @@ Sila masukkan kata laluan bagi wiki rumah tersebut.',
 	'centralauth-not-owner-text' => 'Nama pengguna "$1" telah diserahkan secara automatik kepada pemilik akaun di $2.
 
 Sekiranya anda pemilik akaun tersebut, anda boleh menamatkan proses penggabungan akaun dengan menaip kata laluan bagi akaun tersebut di sini:',
-	'centralauth-blocked-text' => 'Wiki rumah anda (disenaraikan di bawah) telah disekat daripada penyuntingan. Sila hubungi mana-mana penyelia yang bertugas di wiki ini untuk menarik balik sekatan tersebut. Anda tidak boleh menggabungkan akaun-akaun anda selagi disekat.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mod demonstrasi</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Pada masa sekarang, penggabungan akaun sedang dalam mod demonstrasi, oleh itu operasi penggabungan sebenar tidak dilakukan. Harap maaf!',
 	'centralauth-error-locked' => 'Anda tidak boleh menyunting kerana akaun anda telah dikunci.',
@@ -20170,10 +20227,14 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 ** maklumat peribadi yang tidak elok',
 	'centralauth-admin-logsnippet' => 'Perubahan akaun sejagat yang sebelumnya',
 	'centralauth-admin-suppressreason' => 'Disekat secara sejagat oleh $1 atas sebab berikut: $2',
+	'centralauth-admin-not-authorized' => 'Anda tidak mempunyai keizinan untuk melakukan tindakan ini.',
 	'globalusers' => 'Senarai pengguna sejagat',
 	'centralauth-listusers-locked' => 'dikunci',
 	'centralauth-listusers-attached' => '[[User:$1|tempatan]]',
 	'centralauth-listusers-nolocal' => 'tidak dicantumkan atau bukan tempatan',
+	'multilock' => 'Kunci Berbilang Pengguna Sejagat',
+	'centralauth-admin-multi-username' => 'Masukkan satu atau lebih nama pengguna, diasingkan sebaris demi sebaris',
+	'centralauth-admin-multi-notfound' => 'Carian tidak mendatangkan sebarang nama pengguna.',
 	'centralauth-seconds-ago' => '$1 saat yang lalu',
 	'centralauth-minutes-ago' => '$1 minit yang lalu',
 	'centralauth-hours-ago' => '$1 jam yang lalu',
@@ -20304,7 +20365,7 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'right-globalgroupmembership' => 'Mengubah keahlian kumpulan sejagat',
 	'right-centralauth-autoaccount' => 'Log masuk secara automatik dengan akaun sejagat',
 	'right-centralauth-unmerge' => 'Menyahgabungkan akaun global',
-	'right-centralauth-lock' => 'Mengunci atau menyorokkan akaun global',
+	'right-centralauth-lock' => 'Mengunci atau menyorokkan akaun global', # Fuzzy
 	'right-centralauth-oversight' => 'Menyekat atau menyorokkan akaun sejagat',
 	'right-centralauth-merge' => 'Menggabungkan akaun sendiri',
 	'right-globalgrouppermissions' => 'Menguruskan kumpulan sejagat',
@@ -28969,7 +29030,6 @@ En annan wiki har utsetts till hemwiki för ditt användarnamn. Följ länken h�
 	'centralauth-not-owner-text' => 'Användarnamnet "$1" tilldelades automatiskt ägaren av kontot på $2.
 
 Om du är ägaren av det kontot, så kan du slutföra sammanslagningen genom att ange lösenordet för det kontot här:',
-	'centralauth-blocked-text' => 'Din hemwiki (visas nedan) är blockerad från redigering. Var god kontakta en administratör på den här wikin för att avblockera den. Du kan inte slå ihop dina konton medan den är blockerad.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Endast demonstration</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Sammanslagning av konton körs för närvarande i demonstrations- eller debugläge, så funktionerna som gör kontosammanslagningar är avaktiverade.',
 	'centralauth-error-locked' => 'Du kan inte redigera eftersom ditt konto är låst.',
@@ -29212,7 +29272,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-autoaccount' => 'Logga in automatiskt med globalt konto',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
-	'right-centralauth-lock' => 'Lås eller dölj globalt konto',
+	'right-centralauth-lock' => 'Lås eller dölj globalt konto', # Fuzzy
 	'right-centralauth-oversight' => 'Undertryck eller dölj globalt konto',
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
@@ -31637,6 +31697,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Alex Khimich
  * @author Arturyatsko
+ * @author AtUkr
  * @author Base
  * @author Dim Grits
  * @author JenVan
@@ -31693,7 +31754,6 @@ $messages['uk'] = array(
 	'centralauth-not-owner-text' => "Ім'я «$1» було автоматично передане власнику облікового запису «$2».
 
 Якщо це ви, то ви можете завершити процес об'єднання облікових записів, увівши тут основний пароль для цього облікового запису:",
-	'centralauth-blocked-text' => "Ваша домашня вікі (зазначена нижче) закрита для редагування. Будь ласка, зв'яжіться з адміністратором у цій вікі, щоб розблокувати її. Поки вона заблокована, ви не зможете об'єднати ваші облікові записи.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстраційний режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Об'єднання облікових записів зараз працює в демонстраційному режимі. Реальні операції об'єднання відключені. Вибачте.",
 	'centralauth-error-locked' => 'Ви не можете редагувати, бо ваш обліковий запис заблокований.',
@@ -31809,11 +31869,16 @@ $messages['uk'] = array(
 ** недоречна особиста інформація",
 	'centralauth-admin-logsnippet' => 'Попередні зміни в глобальному обліковому записі',
 	'centralauth-admin-suppressreason' => 'Глобально прихований $1 з причини $2',
+	'centralauth-admin-not-authorized' => 'Ви не маєте дозволу виконувати цю дію',
 	'globalusers' => 'Список глобальних облікових записів',
 	'centralauth-listusers-locked' => 'заблокований',
 	'centralauth-listusers-attached' => '[[User:$1|існує локально]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'неприєднаний або не існує локально',
+	'multilock' => 'Блокування декількох глобальних користувачів',
+	'centralauth-admin-multi-username' => 'Введіть одне або кілька імен користувачів, розділені новими рядками',
+	'centralauth-admin-multi-notfound' => 'Не знайдено імен користувачів',
+	'centralauth-admin-multi-intro' => 'Оновлення декількох глобальних користувачів одночасно',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунди|секунд}} тому',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}} тому',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|годину|години|годин}} тому',
@@ -31942,7 +32007,7 @@ $messages['uk'] = array(
 	'right-globalgroupmembership' => 'зміна членства у глобальних групах',
 	'right-centralauth-autoaccount' => 'Автоматичний вхід із глобального облікового запису',
 	'right-centralauth-unmerge' => "Роз'єднання глобальних облікових записів",
-	'right-centralauth-lock' => 'Блокування або приховання глобального облікового запису',
+	'right-centralauth-lock' => 'Блокування або приховання глобального облікового запису', # Fuzzy
 	'right-centralauth-oversight' => 'Придушення або приховування глобальних облікових записів',
 	'right-centralauth-merge' => "Об'єднання облікових записів",
 	'right-globalgrouppermissions' => 'керування глобальними групами',
@@ -32499,7 +32564,6 @@ Xin hãy nhập mật khẩu cho wiki chính.',
 	'centralauth-not-owner-text' => 'Tên người dùng “$1” đã được gán tự động cho chủ tài khoản ở $2.
 
 Nếu đây là bạn, bạn có thể kết thúc quá trình hợp nhất tài khoản bằng cách gõ vào mật khẩu chủ cho tài khoản đó vào đây:',
-	'centralauth-blocked-text' => 'Wiki chính của bạn (được liệt kê phía dưới) bị cấm không cho phép sửa đổi. Xin hãy liên lạc với một sysop tại wiki này để bỏ cấm nó. Trong khi bị cấm, bạn không thể hợp nhất tài khoản của bạn.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mới chỉ đang thử</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Rất tiếc, mới chỉ đang thử chức năng hợp nhất tài khoản, nên thực sự chưa có thể hợp nhất.',
 	'centralauth-error-locked' => 'Bạn không thể sửa đổi vì tài khoản của bạn bị khóa.',
@@ -32615,10 +32679,23 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 ** thông tin cá nhân không thích hợp',
 	'centralauth-admin-logsnippet' => 'Các thay đổi tài khoản toàn cục trước đây',
 	'centralauth-admin-suppressreason' => 'Đã bị $1 cưỡng đoạt toàn cục vì lý do sau: $2',
+	'centralauth-admin-not-authorized' => 'Bạn không được phép thực hiện tác vụ này',
 	'globalusers' => 'Danh sách người dùng thống nhất',
 	'centralauth-listusers-locked' => 'đã khóa',
 	'centralauth-listusers-attached' => '[[User:$1|tồn tại địa phương]]',
 	'centralauth-listusers-nolocal' => 'chưa được liên kết hoặc chưa tồn tại địa phương',
+	'multilock' => 'Khóa nhiều người dùng toàn cầu',
+	'centralauth-admin-multi-username' => 'Nhập một hay nhiều tên người dùng, mỗi tên một dòng',
+	'centralauth-admin-multi-notfound' => 'Không tìm thấy tên người dùng.',
+	'centralauth-admin-multi-searchprefix' => 'Hoặc tìm kiếm tài khoản theo tiền tố',
+	'centralauth-admin-multi-intro' => 'Cập nhật nhiều người dùng toàn cầu cùng một lúc',
+	'centralauth-admin-action-lock-nochange' => 'Không đổi mức khóa',
+	'centralauth-admin-action-lock-lock' => 'Khóa các tài khoản được chọn',
+	'centralauth-admin-action-lock-unlock' => 'Mở khóa các tài khoản được chọn',
+	'centralauth-admin-action-hide-nochange' => 'Không đổi mức ẩn',
+	'centralauth-admin-action-hide-none' => 'Hiện các tài khoản được chọn',
+	'centralauth-admin-action-hide-lists' => 'Ẩn các tài khoản được chọn khỏi danh sách công khai',
+	'centralauth-admin-action-hide-oversight' => 'Ẩn hẳn các tài khoản được chọn',
 	'centralauth-seconds-ago' => '$1 giây trước đây',
 	'centralauth-minutes-ago' => '$1 phút trước đây',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|giờ|giờ}} trước đây',
@@ -32744,11 +32821,12 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'right-globalgroupmembership' => 'Sửa thành viên của nhóm toàn cầu',
 	'right-centralauth-autoaccount' => 'Tự động đăng nhập dùng tài khoản toàn hệ thống',
 	'right-centralauth-unmerge' => 'Đã bỏ hợp nhất tài khoản toàn cục',
-	'right-centralauth-lock' => 'Khóa hoặc ẩn tài khoản toàn cục',
+	'right-centralauth-lock' => 'Khóa hoặc ẩn tài khoản toàn cục', # Fuzzy
 	'right-centralauth-oversight' => 'Cưỡng chế hoặc ẩn tài khoản toàn cục',
 	'right-centralauth-merge' => 'Trộn tài khoản của họ',
 	'right-globalgrouppermissions' => 'Quản lý nhóm toàn cầu',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Các nhóm toàn cầu bao gồm người dùng',
+	'action-centralauth-lock' => 'khóa hoặc mở khóa tài khoản toàn cầu',
 );
 
 /** Volapük (Volapük)
