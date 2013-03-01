@@ -16,6 +16,24 @@
       "revId": "bb735e91a737d505366defc1b35effe8a62cfe97",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dnwww2.Y",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-01T16:18:10Z",
+      "side": 1,
+      "message": "I guess right-centralauth-lock should be changed to \"Lock, unlock, hide, unhide global account(s)\" or something similar.",
+      "parentUuid": "Dn8kz1ak",
+      "revId": "bb735e91a737d505366defc1b35effe8a62cfe97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
