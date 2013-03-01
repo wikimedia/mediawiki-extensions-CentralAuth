@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dn.kukUM",
+        "filename": "CentralAuth.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2013-03-01T09:35:52Z",
+      "side": 0,
+      "message": "$wgSpecialPageGroups[\u0027MultiLock\u0027] \u003d \u0027users\u0027;\n\nis missing",
+      "revId": "8bbf1f22f41662718ff3136b30ae054333eb4fe0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dn8kz1ak",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2013-03-01T09:35:52Z",
+      "side": 1,
+      "message": "Wording is inconsistent with \u0027right-centralauth-lock\u0027 \u003d\u003e \u0027Lock or hide global account\u0027,",
+      "revId": "bb735e91a737d505366defc1b35effe8a62cfe97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
