@@ -137,7 +137,7 @@ If the global account is yours too, you can merge this account if you type the g
 
 	// Administrator's console
 	'centralauth'                          => 'Global user manager',
-	'centralauth-admin-intro'			   => 'This interface can be used for administration of global accounts.',
+	'centralauth-admin-intro'              => 'This interface can be used for administration of global accounts.',
 	'centralauth-admin-manage'             => 'Manage user data',
 	'centralauth-admin-username'           => 'User name:',
 	'centralauth-admin-lookup-ro'          => 'View user info',
@@ -220,15 +220,15 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
 
 	// MultiLock
-	'multilock'                                     => 'Lock Multiple Global Users',
+	'multilock'                                     => 'Lock multiple global users',
 	'centralauth-admin-multi-username'              => 'Enter one or more usernames, separated by new-line',
 	'centralauth-admin-multi-notfound'              => 'Search returned no usernames.',
 	'centralauth-admin-multi-searchprefix'          => 'Or, search for accounts with a prefix',
 	'centralauth-admin-multi-intro'                 => 'Update multiple global users at once',
-	'centralauth-admin-action-lock-nochange'        => 'Don\'t change locks',
+	'centralauth-admin-action-lock-nochange'        => 'Do not change locks',
 	'centralauth-admin-action-lock-lock'            => 'Lock selected accounts',
 	'centralauth-admin-action-lock-unlock'          => 'Unlock selected accounts',
-	'centralauth-admin-action-hide-nochange'        => 'Don\'t change hidden levels',
+	'centralauth-admin-action-hide-nochange'        => 'Do not change hidden levels',
 	'centralauth-admin-action-hide-none'            => 'Unhide selected accounts',
 	'centralauth-admin-action-hide-lists'           => 'Hide selected accounts from public lists',
 	'centralauth-admin-action-hide-oversight'       => 'Completely hide selected accounts',
@@ -313,7 +313,7 @@ You have requested this page without providing any authentication data, so it do
 You may view or edit the permissions assigned to a group, if you have permission to.
 A group may be deleted by removing all rights from it.',
 	'centralauth-globalgroupperms-grouplistitem'      => '$1 ([[Special:GlobalGroupPermissions/$2|view/edit]])',
-	'centralauth-globalgroupperms-nogroups' 		  => 'No global groups are defined.',
+	'centralauth-globalgroupperms-nogroups'           => 'No global groups are defined.',
 	'centralauth-existinggroup-legend'                => 'Existing groups',
 	'centralauth-newgroup-legend'                     => 'Create a new group',
 	'centralauth-newgroup-intro'                      => 'You can use this form to assign permissions to a new group.
@@ -347,11 +347,11 @@ You may be attempting to assign rights to the wrong user!",
 	'centralauth-editset'                             => 'Wiki sets',
 	'centralauth-editset-legend-rw'                   => 'Edit or create wiki set',
 	'centralauth-editset-legend-ro'                   => 'List of wiki sets',
-	'centralauth-editset-intro-rw'                       => 'The following wiki sets have already been created.
+	'centralauth-editset-intro-rw'                    => 'The following wiki sets have already been created.
 You may view and modify any of them, or create a new set.',
-	'centralauth-editset-intro-ro'                       => 'Below is the list of existing wiki sets.',
-	'centralauth-editset-item-rw'                        => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|delete]])',
-	'centralauth-editset-item-ro'                        => '[[Special:WikiSets/$2|$1]]',
+	'centralauth-editset-intro-ro'                    => 'Below is the list of existing wiki sets.',
+	'centralauth-editset-item-rw'                     => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|delete]])',
+	'centralauth-editset-item-ro'                     => '[[Special:WikiSets/$2|$1]]',
 	'centralauth-editset-new'                         => 'Create a new set',
 	'centralauth-editset-notfound'                    => 'Wiki set "$1" not found.',
 	'centralauth-editset-optin'                       => 'Opt-in based (includes only specified wikis)',
@@ -381,7 +381,7 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-editset-return'                      => 'Return to main view',
 	'centralauth-block-already-locked'                => 'The user [[Special:CentralAuth/$1|$1]] is already locked globally.',
 
-	'centralauth-readonly' => 'CentralAuth Database locked',
+	'centralauth-readonly' => 'CentralAuth database locked',
 	'centralauth-readonlytext' => 'The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.',
 
 	// User rights
@@ -397,7 +397,7 @@ You may view and modify any of them, or create a new set.',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in',
 
 	// Associated actions - in the sentence "You do not have permission to X"
-	'action-centralauth-lock'		=> 'lock or unlock global accounts',
+	'action-centralauth-lock' => 'lock or unlock global accounts',
 );
 
 /** Message documentation (Message documentation)
