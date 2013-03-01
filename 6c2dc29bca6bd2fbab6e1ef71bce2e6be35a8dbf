@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoAuGhWg",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-01T22:30:53Z",
+      "side": 1,
+      "message": "For some reason Jenkins is erroring on this line when running php -l, but it runs fine on my computer.\n\n22:21:01     [apply] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in specials/SpecialGlobalGroupPermissions.php on line 327\n\n\n\nalex@alex:/var/www/MediaWiki/Git/extensions/CentralAuth (b27551)$ php -l specials/SpecialGlobalGroupPermissions.php \n\nNo syntax errors detected in specials/SpecialGlobalGroupPermissions.php",
+      "revId": "6c2dc29bca6bd2fbab6e1ef71bce2e6be35a8dbf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
