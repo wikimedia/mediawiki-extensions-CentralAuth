@@ -34,6 +34,24 @@
       "revId": "bb735e91a737d505366defc1b35effe8a62cfe97",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnwxJ.2A",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-01T16:38:24Z",
+      "side": 1,
+      "message": "No, with -lock you can\u0027t hide accounts... I only chose that description to match the purpose of the special page... going to fix that in a follow up.",
+      "parentUuid": "Dnwww2.Y",
+      "revId": "bb735e91a737d505366defc1b35effe8a62cfe97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
