@@ -747,12 +747,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$home = $this->chooseHomeWiki( $migrationSet );
 		$local = $migrationSet[$home];
 
-		// If home account is blocked...
-		if ( $local['blocked'] ) {
-			wfDebugLog( 'CentralAuth', "dry run: $home blocked, forbid migration" );
-			return Status::newFatal( 'centralauth-blocked-text' );
-		}
-
 		// And we need to match the home wiki before proceeding...
 		if ( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
 			wfDebugLog( 'CentralAuth', "dry run: passed password match to home $home" );
@@ -797,11 +791,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$home = $migrationSet[$this->mHomeWiki];
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
-
-		if ( $home['blocked'] ) {
-			wfDebugLog( 'CentralAuth', $this->mHomeWiki . ' blocked, forbid migration' );
-			return false;
-		}
 
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
