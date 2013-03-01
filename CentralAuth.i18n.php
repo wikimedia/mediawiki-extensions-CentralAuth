@@ -388,7 +388,7 @@ You may view and modify any of them, or create a new set.',
 	'right-globalgroupmembership'   => 'Edit membership to global groups',
 	'right-centralauth-autoaccount' => 'Automatically login with global account',
 	'right-centralauth-unmerge'     => 'Unmerge global account',
-	'right-centralauth-lock'        => 'Lock or hide global account',
+	'right-centralauth-lock'        => 'Lock or unlock global account',
 	'right-centralauth-oversight'   => 'Suppress or hide global account',
 	'right-centralauth-merge'       => 'Merge their account',
 	'right-globalgrouppermissions'  => 'Manage global groups',
@@ -754,7 +754,7 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 
 See also:
 * {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
-	'action-centralauth-lock' => '{{Doc-action|lock}}',
+	'action-centralauth-lock' => '{{Doc-action|centralauth-lock}}',
 );
 
 /** Afrikaans (Afrikaans)

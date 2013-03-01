@@ -243,6 +243,7 @@ $wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
 $wgSpecialPageGroups['GlobalGroupPermissions'] = 'users';
 $wgSpecialPageGroups['WikiSets'] = 'wiki';
 $wgSpecialPageGroups['GlobalUsers'] = 'users';
+$wgSpecialPageGroups['MultiLock'] = 'users';
 
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
