@@ -6308,6 +6308,7 @@ Rheswm: $1',
 /** Danish (dansk)
  * @author Byrial
  * @author Christian List
+ * @author Claus chr
  * @author Emilkris33
  * @author Hylle
  * @author Jan Friberg
@@ -6366,9 +6367,6 @@ Skriv venlgst adgangskoden for hjemwikien.',
 	'centralauth-not-owner-text' => 'Brugernavnet "$1" blev automatisk tildelt ejeren af kontoen på $2.
 
 Hvis det er dig, kan du fuldføre prosessen for fælles login ved at skrive adgangskoden for den konto her:',
-	'centralauth-blocked-text' => 'Kontoen på din hjemwiki (se nedenfor) er blokeret fra redigering.
-Kontakt venligst en administrator på den wiki for at få kontoen afblokereret.
-Du kan ikke sammenlægge kontoer mens den er blokeret.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Kun demonstrastionsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontosammenlægning er i øjeblikket i en demonstrastions-/fejlretningsmodus, så faktisk sammenlægning er ikke mulig.
 Beklager!',
@@ -6623,7 +6621,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'right-globalgroupmembership' => 'Redigere medlemskab i globale grupper',
 	'right-centralauth-autoaccount' => 'Automatisk login med globale konto',
 	'right-centralauth-unmerge' => 'Ophæv fletning af global konto',
-	'right-centralauth-lock' => 'Lås eller skjul global konto',
+	'right-centralauth-lock' => 'Lås global konto eller lås op',
 	'right-centralauth-oversight' => 'Undertryk eller skjul global konto',
 	'right-centralauth-merge' => 'Sammenlægge kontoer',
 	'right-globalgrouppermissions' => 'Administrere globale grupper',
@@ -7658,7 +7656,7 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach wobźěłaś',
 	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatiski pśizjawiś',
 	'right-centralauth-unmerge' => 'Zjadnośenje globalnego konta anulěrowaś',
-	'right-centralauth-lock' => 'Globalne konto zastajiś abo schowaś', # Fuzzy
+	'right-centralauth-lock' => 'Globalne konto zastajiś abo wótwóriś',
 	'right-centralauth-oversight' => 'Globalne konto pódtłocyś a schowaś',
 	'right-centralauth-merge' => 'Konta zjadnośiś',
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
@@ -12956,7 +12954,7 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'right-globalgroupmembership' => 'Čłonstwo w globalnych skupinach wobdźěłać',
 	'right-centralauth-autoaccount' => 'Z globalnym kontom awtomatisce přizjewić',
 	'right-centralauth-unmerge' => 'Zjednoćenje globalneho konta zběhnyć',
-	'right-centralauth-lock' => 'Globalne konto zawrěć abo schować', # Fuzzy
+	'right-centralauth-lock' => 'Globalne konto zawrěć abo wotewrěć',
 	'right-centralauth-oversight' => 'Globalne konto potłóčić abo schować',
 	'right-centralauth-merge' => 'Jich konta zjednoćić',
 	'right-globalgrouppermissions' => 'Globalne skupiny zrjadować',
@@ -13755,7 +13753,8 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-admin-list-legend-rw' => 'Jangan gabung akun lokal',
 	'centralauth-admin-unattached' => 'tidak tergabung',
 	'centralauth-admin-blocked' => 'Blokir, berakhir $3 setelah $4. Alasan: $2',
-	'centralauth-admin-blocked-indef' => 'Blokir selamanya. Alasan: $1',
+	'centralauth-admin-blocked-indef' => 'Blokir selamanya.
+Alasan:$1',
 	'centralauth-admin-blocklog' => 'Catatan pemblokiran',
 	'centralauth-admin-list-localwiki' => 'Wiki lokal',
 	'centralauth-admin-list-attached-on' => 'Tergabung pada',
@@ -15067,6 +15066,7 @@ $messages['ja'] = array(
 	'centralauth-admin-nonexistent' => 'グローバルアカウント「<nowiki>$1</nowiki>」はありません',
 	'centralauth-admin-delete-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-token-mismatch' => '申し訳ありませんが、セッションデータが消失したため、フォームでの投稿を処理できませんでした。',
+	'centralauth-state-mismatch' => 'エラー: この利用者について編集の競合が検出されました。変更内容を確認し、やり直してください。',
 	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-reason-other' => 'その他の理由:',
 	'centralauth-admin-unhide-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
@@ -15097,6 +15097,7 @@ $messages['ja'] = array(
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => '未統合、またはローカルに未作成',
 	'multilock' => '複数のグローバル利用者をロック',
+	'centralauth-admin-multi-username' => '利用者名が複数の場合は改行で区切ってください',
 	'centralauth-admin-multi-notfound' => '該当する利用者は見つかりませんでした。',
 	'centralauth-admin-multi-searchprefix' => 'または、接頭辞付きのアカウントを検索',
 	'centralauth-admin-multi-intro' => '複数のグローバルアカウントを一度に更新します',
@@ -15239,8 +15240,8 @@ $messages['ja'] = array(
 	'right-globalgroupmembership' => 'グローバルグループのメンバーを編集',
 	'right-centralauth-autoaccount' => 'グローバルアカウントで自動ログイン',
 	'right-centralauth-unmerge' => 'グローバルアカウントを統合解除',
-	'right-centralauth-lock' => 'グローバルアカウントをロック/秘匿', # Fuzzy
-	'right-centralauth-oversight' => 'グローバルアカウントを秘匿', # Fuzzy
+	'right-centralauth-lock' => 'グローバルアカウントをロックまたはロック解除',
+	'right-centralauth-oversight' => 'グローバルアカウントを秘匿または非表示',
 	'right-centralauth-merge' => '自身のアカウントを統合',
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
 	'abusefilter-edit-builder-vars-global-user-groups' => '利用者の所属グローバルグループ',
@@ -16760,9 +16761,6 @@ $messages['ko'] = array(
 	'centralauth-not-owner-text' => '"$1" 사용자 이름이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
 사용자 본인이 맞다면 주 비밀번호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
-	'centralauth-blocked-text' => '아래 목록에 있는 주 위키에서 차단되었습니다.
-차단 해제를 요청하려면 해당 위키의 관리자에게 문의하십시오.
-차단되어 있는 동안 계정을 합칠 수 없습니다.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>데모 모드</div><br clear='all' />",
 	'centralauth-disabled-dryrun' => '계정 합치기가 데모/디버그 모드로 설정되어 있습니다. 따라서 실제 계정 합치기가 비활성화되어 있습니다.
 죄송합니다!',
@@ -16882,10 +16880,13 @@ $messages['ko'] = array(
 ** 부적절한 개인 정보',
 	'centralauth-admin-logsnippet' => '이전의 통합 계정 기록',
 	'centralauth-admin-suppressreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 완전히 숨겨졌습니다: $2',
+	'centralauth-admin-not-authorized' => '이 작업을 수행할 권한이 없습니다',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-locked' => '잠겨짐',
 	'centralauth-listusers-attached' => '[[User:$1|로컬에 존재]]',
 	'centralauth-listusers-nolocal' => '묶이지 않았거나 로컬에 존재하지 않음',
+	'multilock' => '여러 통합 계정을 잠그기',
+	'centralauth-admin-action-lock-nochange' => '잠금을 바꾸지 마세요',
 	'centralauth-seconds-ago' => '$1{{PLURAL:$1|초}} 전',
 	'centralauth-minutes-ago' => '$1분 전',
 	'centralauth-hours-ago' => '$1{{PLURAL:$1|시간}} 전',
@@ -17017,11 +17018,12 @@ $messages['ko'] = array(
 	'right-globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'right-centralauth-autoaccount' => '통합 계정으로 자동 로그인하기',
 	'right-centralauth-unmerge' => '통합 계정 분리하기',
-	'right-centralauth-lock' => '통합 계정을 잠그거나 숨기기',
+	'right-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
 	'right-centralauth-oversight' => '통합 계정을 완전히 숨기기',
 	'right-centralauth-merge' => '자신의 계정을 통합하기',
 	'right-globalgrouppermissions' => '공통 권한 그룹 관리',
 	'abusefilter-edit-builder-vars-global-user-groups' => '사용자가 속한 공통 권한 그룹',
+	'action-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
 );
 
 /** Karachay-Balkar (къарачай-малкъар)
@@ -18977,10 +18979,13 @@ $messages['mhr'] = array(
  * @author Iwan Novirion
  */
 $messages['min'] = array(
+	'centralauth-admin-blocked-indef' => 'Blokir salamonyo.
+Alasan:$1',
 	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
 	'centralauth-prefs-view' => 'Lihek info pangguno global',
 	'centralauth-login-progress' => 'Sanak masuak log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Sanak kalua log juo pado {{int:Centralauth-groupname}}:',
+	'centralauth-log-header' => 'Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.',
 );
 
 /** Macedonian (македонски)
