@@ -2369,9 +2369,6 @@ Por favor escribi la conseña de la wiki principal.",
 	'centralauth-not-owner-text' => 'Se dio de mou automáticu\'l nome d\'usuariu "$1" al poseyedor de la cuenta en $2.
 
 Si yes tu, pues finar el procesu de fusión de cuentes sólo con escribir la conseña maestra pa esa cuenta equí:',
-	'centralauth-blocked-text' => "La to wiki principal (llistada embaxo) tien bloquiada la edición.
-Por favor contauta con un alministrador d'esa wiki pa desbloquiala.
-Mentes tea bloquiada, nun pues fusionar les tos cuentes.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Namái mou demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La fusión de cuentes ta nestos momentos nun estáu de depuración / demo, polo que les operaciones de fusión tán desactivaes anguaño. ¡Sentímoslo!',
 	'centralauth-error-locked' => 'Nun pues editar porque la to cuenta ta candada.',
@@ -2467,6 +2464,7 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-admin-nonexistent' => 'Nun hai cuenta global pa "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
 	'centralauth-token-mismatch' => 'Sentímoslo, nun se pudo procesar el to formulariu pol mor una perda de datos de la sesión.',
+	'centralauth-state-mismatch' => "Error: Detectose un conflictu d'edición pa esti usuariu. Por favor compruebe'l cambiu y vuelva a intentalo.",
 	'centralauth-admin-reason' => 'Motivu:',
 	'centralauth-admin-reason-other' => 'Motivu distintu/adicional:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
@@ -2490,10 +2488,23 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 ** información personal non apropiada",
 	'centralauth-admin-logsnippet' => 'Cambios anteriores na cuenta global',
 	'centralauth-admin-suppressreason' => 'Desaniciada globalmente por $1 pol motivu darréu: $2',
+	'centralauth-admin-not-authorized' => 'Nun tien permisos pa facer esta aición',
 	'globalusers' => "Llista d'usuarios globales",
 	'centralauth-listusers-locked' => 'candáu',
 	'centralauth-listusers-attached' => '[[User:$1|esiste llocalmente]]',
 	'centralauth-listusers-nolocal' => 'non asociáu o nun esiste llocalmente',
+	'multilock' => 'Candar múltiples usuarios globales',
+	'centralauth-admin-multi-username' => "Escriba unu o más nomes d'usuariu, separaos por un saltu de llinia",
+	'centralauth-admin-multi-notfound' => "La gueta nun devolvió dengún nome d'usuariu.",
+	'centralauth-admin-multi-searchprefix' => 'O busque cuentes con un prefixu',
+	'centralauth-admin-multi-intro' => 'Anovar múltiples usuarios globales al empar',
+	'centralauth-admin-action-lock-nochange' => 'Nun camudar candaos',
+	'centralauth-admin-action-lock-lock' => 'Candar cuentes esbillaes',
+	'centralauth-admin-action-lock-unlock' => 'Quitar candáu de cuentes esbillaes',
+	'centralauth-admin-action-hide-nochange' => 'Nun camudar los niveles anubríos',
+	'centralauth-admin-action-hide-none' => 'Desanubrir cuentes esbillaes',
+	'centralauth-admin-action-hide-lists' => 'Anubrir cuentes esbillaes de les llistes públiques',
+	'centralauth-admin-action-hide-oversight' => 'Anubrir completamente cuentes esbillaes',
 	'centralauth-seconds-ago' => 'hai $1 {{PLURAL:$1|segundu|segundos}}',
 	'centralauth-minutes-ago' => 'hai $1 {{PLURAL:$1|minutu|minutos}}',
 	'centralauth-hours-ago' => 'hai $1 {{PLURAL:$1|hora|hores}}',
@@ -2625,11 +2636,12 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'right-globalgroupmembership' => 'Editar la pertenencia a grupos globales',
 	'right-centralauth-autoaccount' => 'Coneutase automáticamente cola cuenta global',
 	'right-centralauth-unmerge' => 'Anular la fusión de cuenta llocal',
-	'right-centralauth-lock' => 'Bloquiar o anubrir una cuenta global',
-	'right-centralauth-oversight' => 'Desaniciar una cuenta global', # Fuzzy
+	'right-centralauth-lock' => 'Bloquiar o desbloquiar una cuenta global',
+	'right-centralauth-oversight' => 'Desaniciar o anubrir una cuenta global',
 	'right-centralauth-merge' => 'Fusionar la so cuenta',
 	'right-globalgrouppermissions' => 'Remanar grupos globales',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Grupos globales nos que ta l'usuariu",
+	'action-centralauth-lock' => 'candar o quitar candáu a cuentes globales',
 );
 
 /** Kotava (Kotava)
@@ -3761,9 +3773,6 @@ $messages['be-tarask'] = array(
 	'centralauth-not-owner-text' => "Імя ўдзельніка «$1» было аўтаматычна перададзенае ўладальніку рахунку $2.
 
 Калі гэта Вы, то для сканчэньня аб'яднаньня рахункаў, увядзіце пароль Вашага асноўнага рахунку тут:",
-	'centralauth-blocked-text' => "Ваша «хатняя» вікі (пазначаная ніжэй) заблякаваная для рэдагаваньняў.
-Калі ласка, зьвяжыцеся з адміністратарам гэтай вікі, каб разблякаваць яе.
-Пакуль яна заблякаваная, Вы ня зможаце аб'яднаць Вашы рахункі.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Дэманстрацыйны рэжым</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Аб'яднаньне рахункаў зараз працуе ў дэманстрацыйным/праверачным рэжыме, рэальныя апэрацыі аб'яднаньня рахункаў выключаныя.
 Прабачце!",
@@ -3860,6 +3869,7 @@ $messages['be-tarask'] = array(
 	'centralauth-admin-nonexistent' => 'Не існуе глябальнага рахунку «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Памылка: глябальны рахунак «<nowiki>$1</nowiki>» не існуе.',
 	'centralauth-token-mismatch' => 'Прабачце, немагчыма працягваць апрацоўку Вашай формы ў выніку страты зьвестак сэсіі.',
+	'centralauth-state-mismatch' => 'Памылка: выяўлены канфлікт рэдагаваньняў гэтага ўдзельніка. Праверце вашыя зьмены і паспрабуйце зноў.',
 	'centralauth-admin-reason' => 'Прычына:',
 	'centralauth-admin-reason-other' => 'Іншая/дадатковая прычына:',
 	'centralauth-admin-unhide-nonexistent' => 'Памылка: глябальны рахунак «<nowiki>$1</nowiki>» не існуе.',
@@ -3883,10 +3893,15 @@ $messages['be-tarask'] = array(
 ** неадпаведныя асабістыя зьвесткі',
 	'centralauth-admin-logsnippet' => 'Папярэднія зьмены глябальнага рахунку',
 	'centralauth-admin-suppressreason' => 'Глябальна схаваны $1 па наступнай прычыне: $2',
+	'centralauth-admin-not-authorized' => 'Вы ня маеце дазволу на выкананьне гэтага дзеяньня',
 	'globalusers' => 'Сьпіс глябальных рахункаў удзельнікаў',
 	'centralauth-listusers-locked' => 'заблякаваныя',
 	'centralauth-listusers-attached' => '[[User:$1|існуе лякальна]]',
 	'centralauth-listusers-nolocal' => 'недалучаны ці не існуе лякальна',
+	'multilock' => 'Блякаваньне некалькіх глябальных карыстальнікаў',
+	'centralauth-admin-multi-username' => 'Увядзіце адно ці некалькі імёнаў удзельнікаў, аддзеленых пераносам радка',
+	'centralauth-admin-multi-notfound' => 'Пошук па імёнах карыстальнікаў ня даў выніку.',
+	'centralauth-admin-multi-searchprefix' => 'Або шукайце рахункі паводле прэфіксу',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|сэкунда|сэкунды|сэкундаў}} таму',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|хвіліну|хвіліны|хвілінаў}} таму',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|гадзіна|гадзіны|гадзінаў}} таму',
@@ -4016,11 +4031,12 @@ $messages['be-tarask'] = array(
 	'right-globalgroupmembership' => 'Рэдагаваньне ўдзелу ў глябальных групах',
 	'right-centralauth-autoaccount' => 'аўтаматычны ўваход у сыстэму праз глябальны рахунак',
 	'right-centralauth-unmerge' => 'разьдзяленьне глябальных рахункаў',
-	'right-centralauth-lock' => 'блякаваньне альбо хаваньне глябальных рахункаў',
-	'right-centralauth-oversight' => 'падаўленьне глябальных рахункаў', # Fuzzy
+	'right-centralauth-lock' => 'блякаваць ці разблякоўваць глябальныя рахункі',
+	'right-centralauth-oversight' => 'падаўляць ці хаваць глябальныя рахункі',
 	'right-centralauth-merge' => "Аб'яднаньне гэтых рахункаў",
 	'right-globalgrouppermissions' => 'кіраваньне глябальнымі рахункамі',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глябальныя групы, у якія ўваходзіць удзельнік',
+	'action-centralauth-lock' => 'блякаваць ці разблякоўваць глябальныя рахункі',
 );
 
 /** Bulgarian (български)
@@ -9973,6 +9989,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author McDutchie
  * @author Meno25
  * @author Moyg
+ * @author Nicolas NALLET
  * @author Omnipaedista
  * @author Peter17
  * @author PieRRoMaN
@@ -10126,6 +10143,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-admin-nonexistent' => 'Il n’existe aucun compte global nommé « <nowiki>$1</nowiki> »',
 	'centralauth-admin-delete-nonexistent' => 'Erreur : il n’existe pas de compte global nommé « <nowiki>$1</nowiki> ».',
 	'centralauth-token-mismatch' => 'Désolé, nous ne pouvons soumettre votre formulaire, suite à la perte ou l’expiration des données de votre session.',
+	'centralauth-state-mismatch' => "Erreur : Un conflit d'édition avec cet utilisateur a été détecté. Merci de vérifier votre modification et de réessayer.",
 	'centralauth-admin-reason' => 'Motif :',
 	'centralauth-admin-reason-other' => 'Motif autre ou supplémentaire :',
 	'centralauth-admin-unhide-nonexistent' => 'Erreur : le compte global « <nowiki>$1</nowiki> » n’existe pas.',
@@ -10296,7 +10314,7 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'right-globalgroupmembership' => 'Modifier les appartenances aux groupes globaux',
 	'right-centralauth-autoaccount' => 'Connecter automatiquement avec un compte global',
 	'right-centralauth-unmerge' => 'Annuler la fusion du compte global',
-	'right-centralauth-lock' => 'Verrouiller ou masquer compte global', # Fuzzy
+	'right-centralauth-lock' => 'Verrouiller ou déverrouiller le compte global',
 	'right-centralauth-oversight' => 'Supprimer ou masquer le compte global',
 	'right-centralauth-merge' => 'Fusionner ses comptes',
 	'right-globalgrouppermissions' => 'Gérer les groupes globaux',
@@ -10980,7 +10998,7 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'right-globalgroupmembership' => 'Editar os membros dos grupos globais',
 	'right-centralauth-autoaccount' => 'Acceder automaticamente coa conta global',
 	'right-centralauth-unmerge' => 'Anular a fusión dunha conta global',
-	'right-centralauth-lock' => 'Bloquear ou agochar unha conta global', # Fuzzy
+	'right-centralauth-lock' => 'Bloquear ou desbloquear unha conta global',
 	'right-centralauth-oversight' => 'Suprimir ou agochar unha conta global',
 	'right-centralauth-merge' => 'Fusionar a conta propia',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
@@ -18981,6 +18999,7 @@ $messages['mhr'] = array(
 $messages['min'] = array(
 	'centralauth-admin-blocked-indef' => 'Blokir salamonyo.
 Alasan:$1',
+	'centralauth-prefs-complete' => 'Mantap sadonyo!',
 	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
 	'centralauth-prefs-view' => 'Lihek info pangguno global',
 	'centralauth-login-progress' => 'Sanak masuak log juo pado {{int:Centralauth-groupname}}:',
@@ -31851,6 +31870,7 @@ $messages['uk'] = array(
 	'centralauth-admin-nonexistent' => 'Нема глобального облікового запису «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Помилка: глобальний обліковий запис «<nowiki>$1</nowiki>» не існує.',
 	'centralauth-token-mismatch' => 'На жаль, ми не можемо продовжити обробку вашої форму, так як були втрачені дані сеансу.',
+	'centralauth-state-mismatch' => 'Помилка: виявлено конфлікт редагування цього користувача. Будь ласка, перегляньте ваші зміни та спробуйте знову.',
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-reason-other' => 'Інша/додаткова причина:',
 	'centralauth-admin-unhide-nonexistent' => 'Помилка: глобальний обліковий запис «<nowiki>$1</nowiki>» не існує.',
@@ -31883,7 +31903,15 @@ $messages['uk'] = array(
 	'multilock' => 'Блокування декількох глобальних користувачів',
 	'centralauth-admin-multi-username' => 'Введіть одне або кілька імен користувачів, розділені новими рядками',
 	'centralauth-admin-multi-notfound' => 'Не знайдено імен користувачів',
+	'centralauth-admin-multi-searchprefix' => 'Або шукати облікові записи за початком',
 	'centralauth-admin-multi-intro' => 'Оновлення декількох глобальних користувачів одночасно',
+	'centralauth-admin-action-lock-nochange' => 'Не змінюйте замки',
+	'centralauth-admin-action-lock-lock' => 'Заблокувати вибрані облікові записи',
+	'centralauth-admin-action-lock-unlock' => 'Розблокувати вибрані облікові записи',
+	'centralauth-admin-action-hide-nochange' => 'Не змінювати приховані рівні',
+	'centralauth-admin-action-hide-none' => 'Відобразити вибрані облікові записи',
+	'centralauth-admin-action-hide-lists' => 'Сховати вибрані рахунки з публічних списків',
+	'centralauth-admin-action-hide-oversight' => 'Повністю приховати вибрані облікові записи',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунди|секунд}} тому',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}} тому',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|годину|години|годин}} тому',
@@ -32012,11 +32040,12 @@ $messages['uk'] = array(
 	'right-globalgroupmembership' => 'зміна членства у глобальних групах',
 	'right-centralauth-autoaccount' => 'Автоматичний вхід із глобального облікового запису',
 	'right-centralauth-unmerge' => "Роз'єднання глобальних облікових записів",
-	'right-centralauth-lock' => 'Блокування або приховання глобального облікового запису', # Fuzzy
+	'right-centralauth-lock' => 'Блокування або приховання глобального облікового запису',
 	'right-centralauth-oversight' => 'Придушення або приховування глобальних облікових записів',
 	'right-centralauth-merge' => "Об'єднання облікових записів",
 	'right-globalgrouppermissions' => 'керування глобальними групами',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобальні групи, у яких знаходиться користувач',
+	'action-centralauth-lock' => 'блокування або розблокування глобальних облікових записів',
 );
 
 /** Urdu (اردو)
@@ -32661,6 +32690,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-admin-nonexistent' => 'Không có tài khoản thống nhất cho “<nowiki>$1</nowiki>”',
 	'centralauth-admin-delete-nonexistent' => 'Lỗi: tài khoản thống nhất “<nowiki>$1</nowiki>” không tồn tại.',
 	'centralauth-token-mismatch' => 'Rất tiếc, chúng tôi không thể thực hiện yêu cầu của bạn do mất dữ liệu phiên làm việc.',
+	'centralauth-state-mismatch' => 'Lỗi: Đã phát hiện mâu thuẫn sửa đổi cho người dùng này. Xin vui lòng kiểm tra thay đổi của bạn và thử lại.',
 	'centralauth-admin-reason' => 'Lý do:',
 	'centralauth-admin-reason-other' => 'Lý do khác:',
 	'centralauth-admin-unhide-nonexistent' => 'Lỗi: tài khoản thống nhất "<nowiki>$1</nowiki>" không tồn tại.',
@@ -32826,7 +32856,7 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'right-globalgroupmembership' => 'Sửa thành viên của nhóm toàn cầu',
 	'right-centralauth-autoaccount' => 'Tự động đăng nhập dùng tài khoản toàn hệ thống',
 	'right-centralauth-unmerge' => 'Đã bỏ hợp nhất tài khoản toàn cục',
-	'right-centralauth-lock' => 'Khóa hoặc ẩn tài khoản toàn cục', # Fuzzy
+	'right-centralauth-lock' => 'Khóa hoặc mở khóa tài khoản toàn cục',
 	'right-centralauth-oversight' => 'Cưỡng chế hoặc ẩn tài khoản toàn cục',
 	'right-centralauth-merge' => 'Trộn tài khoản của họ',
 	'right-globalgrouppermissions' => 'Quản lý nhóm toàn cầu',
