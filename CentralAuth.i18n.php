@@ -625,6 +625,7 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}",
+	'multilock' => '{{doc-special|multilock}}',
 	'centralauth-admin-multi-username' => 'Instructions for text box where admin will enter usernames, one per line',
 	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
 	'centralauth-admin-multi-searchprefix' => 'Instructions for alternative search method',
@@ -3902,6 +3903,14 @@ $messages['be-tarask'] = array(
 	'centralauth-admin-multi-username' => 'Увядзіце адно ці некалькі імёнаў удзельнікаў, аддзеленых пераносам радка',
 	'centralauth-admin-multi-notfound' => 'Пошук па імёнах карыстальнікаў ня даў выніку.',
 	'centralauth-admin-multi-searchprefix' => 'Або шукайце рахункі паводле прэфіксу',
+	'centralauth-admin-multi-intro' => 'Абнаўленьне некалькіх глябальных удзельнікаў адначасна',
+	'centralauth-admin-action-lock-nochange' => 'Не зьмяняць налады блякаваньня',
+	'centralauth-admin-action-lock-lock' => 'Заблякаваць выбраныя рахункі',
+	'centralauth-admin-action-lock-unlock' => 'Разблякаваць выбраныя рахункі',
+	'centralauth-admin-action-hide-nochange' => 'Не зьмяняць схаваныя роўні',
+	'centralauth-admin-action-hide-none' => 'Скасаваць хаваньне выбраных рахункаў',
+	'centralauth-admin-action-hide-lists' => 'Схаваць выбраныя рахункі з агульнадаступных сьпісаў',
+	'centralauth-admin-action-hide-oversight' => 'Цалкам схаваць выбраныя рахункі',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|сэкунда|сэкунды|сэкундаў}} таму',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|хвіліну|хвіліны|хвілінаў}} таму',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|гадзіна|гадзіны|гадзінаў}} таму',
@@ -15114,7 +15123,7 @@ $messages['ja'] = array(
 	'centralauth-listusers-attached' => '[[User:$1|ローカルに作成済み]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => '未統合、またはローカルに未作成',
-	'multilock' => '複数のグローバル利用者をロック',
+	'multilock' => '複数のグローバル利用者のロック',
 	'centralauth-admin-multi-username' => '利用者名が複数の場合は改行で区切ってください',
 	'centralauth-admin-multi-notfound' => '該当する利用者は見つかりませんでした。',
 	'centralauth-admin-multi-searchprefix' => 'または、接頭辞付きのアカウントを検索',
@@ -20228,6 +20237,7 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-admin-nonexistent' => 'Tiada akaun sejagat bagi "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Ralat: akaun sejagat "<nowiki>$1</nowiki>" tidak wujud.',
 	'centralauth-token-mismatch' => 'Harap maaf, kami tidak dapat memproses borang anda kerana kehilangan data sesi.',
+	'centralauth-state-mismatch' => 'Ralat: Satu konflik suntingan untuk pengguna ini telah dikesan. Sila sahkan perubahan anda dan cuba lagi.',
 	'centralauth-admin-reason' => 'Sebab:',
 	'centralauth-admin-reason-other' => 'Sebab lain/tambahan:',
 	'centralauth-admin-unhide-nonexistent' => 'Ralat: akaun sejagat "<nowiki>$1</nowiki>" tidak wujud.',
@@ -20259,6 +20269,15 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'multilock' => 'Kunci Berbilang Pengguna Sejagat',
 	'centralauth-admin-multi-username' => 'Masukkan satu atau lebih nama pengguna, diasingkan sebaris demi sebaris',
 	'centralauth-admin-multi-notfound' => 'Carian tidak mendatangkan sebarang nama pengguna.',
+	'centralauth-admin-multi-searchprefix' => 'Atau cari akaun dengan awalan',
+	'centralauth-admin-multi-intro' => 'Kemaskinikan berbilang pengguna sejagat sekali gus',
+	'centralauth-admin-action-lock-nochange' => 'Jangan tukar kunci',
+	'centralauth-admin-action-lock-lock' => 'Kunci akaun terpilih',
+	'centralauth-admin-action-lock-unlock' => 'Buka kunci akaun-akaun terpilih',
+	'centralauth-admin-action-hide-nochange' => 'Jangan ubah tingkat-tingkat tersorok',
+	'centralauth-admin-action-hide-none' => 'Dedahkan akaun-akaun terpilih',
+	'centralauth-admin-action-hide-lists' => 'Sorokkan akaun-akaun terpilih dari senarai umum',
+	'centralauth-admin-action-hide-oversight' => 'Sorokkan sama sekali akaun-akaun terpilih',
 	'centralauth-seconds-ago' => '$1 saat yang lalu',
 	'centralauth-minutes-ago' => '$1 minit yang lalu',
 	'centralauth-hours-ago' => '$1 jam yang lalu',
@@ -20389,11 +20408,12 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'right-globalgroupmembership' => 'Mengubah keahlian kumpulan sejagat',
 	'right-centralauth-autoaccount' => 'Log masuk secara automatik dengan akaun sejagat',
 	'right-centralauth-unmerge' => 'Menyahgabungkan akaun global',
-	'right-centralauth-lock' => 'Mengunci atau menyorokkan akaun global', # Fuzzy
+	'right-centralauth-lock' => 'Mengunci atau membuka kunci akaun sejagat',
 	'right-centralauth-oversight' => 'Menyekat atau menyorokkan akaun sejagat',
 	'right-centralauth-merge' => 'Menggabungkan akaun sendiri',
 	'right-globalgrouppermissions' => 'Menguruskan kumpulan sejagat',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Kumpulan sejagat yang disertai oleh pengguna ini',
+	'action-centralauth-lock' => 'mengunci atau membuka kunci akaun sejagat',
 );
 
 /** Maltese (Malti)
@@ -25446,7 +25466,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'right-globalgroupmembership' => "Cange l'appartenenze a le gruppe globbale",
 	'right-centralauth-autoaccount' => "E' trasute automaticamende cu 'u cunde globbale",
 	'right-centralauth-unmerge' => 'Scucchie le cunde globbale',
-	'right-centralauth-lock' => "Blocche o scunne 'u cunde globbale",
+	'right-centralauth-lock' => "Blocche o sblocche 'u cunde globbale",
 	'right-centralauth-oversight' => "Sopprime o scunne 'u cunde globbale",
 	'right-centralauth-merge' => "Aunifiche 'u cunde proprie",
 	'right-globalgrouppermissions' => 'Gestisce le gruppe globbale',
@@ -32626,7 +32646,7 @@ Chú ý là nó có thể khác với wiki chủ thật sự của thành viên.
 	'centralauth-merge-method-password-desc' => 'Cho thấy tài khoản địa phương đã được hợp nhất vì người dùng đã cung cấp mật khẩu hợp lệ cho nó.',
 	'centralauth-merge-method-admin-desc' => 'Cho thấy tài khoản địa phương đã được tiếp viên hợp nhất bằng tay.
 Tính năng này hiện đã tắt vì các lý do bảo mật.',
-	'centralauth-merge-method-new-desc' => 'Cho thấy tài khoản toàn cục được tạo tự động khi tài khoản địa phương được tạo ra.',
+	'centralauth-merge-method-new-desc' => 'Cho thấy tài khoản chung được tạo tự động khi tài khoản địa phương được tạo ra.',
 	'centralauth-merge-method-login-desc' => 'Cho thấy tài khoản địa phương được tạo tự động khi thành viên đăng nhập.',
 	'centralauth-finish-title' => 'Hợp nhất xong',
 	'centralauth-finish-text' => 'Nếu các tài khoản này của bạn, chỉ việc đưa vào mật khẩu của các tài khoản ở dưới để hợp nhất tài khoản:',
@@ -32640,7 +32660,7 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-merge-attempt' => "'''Đang so sánh những mật khẩu mà bạn đưa vào với các tài khoản chưa được hợp nhất…'''",
 	'centralauth-attach-list-attached' => 'Tài khoản hợp nhất dưới tên “$1” bao gồm các tài khoản sau:',
 	'centralauth-attach-title' => 'Xác nhận tài khoản',
-	'centralauth-attach-text' => 'Tài khoản này chưa được nhập vào tài khoản thống nhất. Nếu tài khoản toàn cục cũng là của bạn, bạn có thể nhập tài khoản này nếu bạn gõ vào mật khẩu của tài khoản toàn cục:',
+	'centralauth-attach-text' => 'Tài khoản này chưa được nhập vào tài khoản thống nhất. Nếu tài khoản toàn cục cũng là của bạn, bạn có thể nhập tài khoản này nếu bạn gõ vào mật khẩu của tài khoản chung:',
 	'centralauth-attach-submit' => 'Chuyển tài khoản',
 	'centralauth-attach-success' => 'Tài khoản này được chuyển qua tài khoản hợp nhất.',
 	'centralauth' => 'Quản lý thành viên toàn cục',
@@ -32712,7 +32732,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 * Lý do khóa–ẩn thường gặp
 ** tên người dùng gây xúc phạm
 ** thông tin cá nhân không thích hợp',
-	'centralauth-admin-logsnippet' => 'Các thay đổi tài khoản toàn cục trước đây',
+	'centralauth-admin-logsnippet' => 'Các thay đổi tài khoản chung trước đây',
 	'centralauth-admin-suppressreason' => 'Đã bị $1 cưỡng đoạt toàn cục vì lý do sau: $2',
 	'centralauth-admin-not-authorized' => 'Bạn không được phép thực hiện tác vụ này',
 	'globalusers' => 'Danh sách người dùng thống nhất',
@@ -32855,13 +32875,13 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'centralauth-readonlytext' => 'Cơ sở dữ liệu CentralAuth đang bị khóa không được tạo trang mới hoặc thực hiện những thay đổi khác, có lẽ để bảo trì thường lệ, sau đó nó sẽ trở lại bình thường.',
 	'right-globalgroupmembership' => 'Sửa thành viên của nhóm toàn cầu',
 	'right-centralauth-autoaccount' => 'Tự động đăng nhập dùng tài khoản toàn hệ thống',
-	'right-centralauth-unmerge' => 'Đã bỏ hợp nhất tài khoản toàn cục',
-	'right-centralauth-lock' => 'Khóa hoặc mở khóa tài khoản toàn cục',
-	'right-centralauth-oversight' => 'Cưỡng chế hoặc ẩn tài khoản toàn cục',
+	'right-centralauth-unmerge' => 'Bỏ hợp nhất tài khoản chung',
+	'right-centralauth-lock' => 'Khóa hoặc mở khóa tài khoản chung',
+	'right-centralauth-oversight' => 'Cưỡng chế hoặc ẩn tài khoản chung',
 	'right-centralauth-merge' => 'Trộn tài khoản của họ',
 	'right-globalgrouppermissions' => 'Quản lý nhóm toàn cầu',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Các nhóm toàn cầu bao gồm người dùng',
-	'action-centralauth-lock' => 'khóa hoặc mở khóa tài khoản toàn cầu',
+	'action-centralauth-lock' => 'khóa hoặc mở khóa tài khoản chung',
 );
 
 /** Volapük (Volapük)
@@ -33894,7 +33914,6 @@ $messages['zh-hant'] = array(
 	'centralauth-not-owner-text' => '使用者名稱："$1"已自動分配給$2上的帳號。
 
 如果這是您的帳號，請輸入該帳號的密碼以完成帳號整合：',
-	'centralauth-blocked-text' => '您的自家wiki（在下面列出）正在封鎖中不能編輯。請聯絡在這個wiki上的操作員去解除封鎖它。當它正被封鎖時，您是不可以合併您的帳戶。',
 	'centralauth-notice-dryrun' => "<div class='successbox'>目前為示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => '目前為示範模式，
 實際的整合動作已停用。',
@@ -34011,6 +34030,7 @@ $messages['zh-hant'] = array(
 ** 不當濫用個人資訊',
 	'centralauth-admin-logsnippet' => '前個全域帳戶的變化',
 	'centralauth-admin-suppressreason' => '由$1全域隱藏，原因：$2',
+	'centralauth-admin-not-authorized' => '您沒有進行此操作的權限',
 	'globalusers' => '全域帳戶名單',
 	'centralauth-listusers-locked' => '鎖定',
 	'centralauth-listusers-attached' => '[[User:$1|於本地存在]]',
@@ -34141,7 +34161,7 @@ $messages['zh-hant'] = array(
 	'right-globalgroupmembership' => '編輯成員至全域組',
 	'right-centralauth-autoaccount' => '自動使用全域賬戶登陸',
 	'right-centralauth-unmerge' => '取消合併本地帳戶',
-	'right-centralauth-lock' => '鎖定或隱藏全域帳戶',
+	'right-centralauth-lock' => '鎖定或隱藏全域帳戶', # Fuzzy
 	'right-centralauth-oversight' => '廢止全域帳戶', # Fuzzy
 	'right-centralauth-merge' => '合併他們的帳戶',
 	'right-globalgrouppermissions' => '管理全域群組',
