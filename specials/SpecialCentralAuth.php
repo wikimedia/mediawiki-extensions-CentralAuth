@@ -289,6 +289,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$reg = $globalUser->getRegistration();
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
+			'name' => $globalUser->getName(),
 			'id' => $globalUser->getId(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'home' => $this->determineHomeWiki(),
@@ -296,13 +297,22 @@ class SpecialCentralAuth extends SpecialPage {
 			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
 		);
-		$out = '<fieldset id="mw-centralauth-info">';
-		$out .= '<legend>' . $this->msg( 'centralauth-admin-info-header' )->escaped() . '</legend><ul>';
+
+		$content = Xml::openElement( "ul" );
 		foreach ( $attribs as $tag => $data ) {
-			$out .= '<li><strong>' . $this->msg( "centralauth-admin-info-$tag" )->escaped() . '</strong> ' .
-				$data . '</li>';
+			$content .= Xml::openElement( "li" ) . Xml::openElement( "strong" );
+			if ( $tag == 'name' ) {
+				$content .= $this->msg( "centralauth-admin-username" )->escaped();
+			} else {
+				$content .= $this->msg( "centralauth-admin-info-$tag" )->escaped();
+			}
+			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
 		}
-		$out .= '</ul></fieldset>';
+		$out = Xml::fieldset(
+			$this->msg( 'centralauth-admin-info-header' )->escaped(),
+			$content,
+			array( "id" => "mw-centralauth-info" )
+		);
 		$this->getOutput()->addHTML( $out );
 	}
 
