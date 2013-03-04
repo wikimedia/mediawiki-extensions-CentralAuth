@@ -75,8 +75,11 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$result->setIndexedTagName( $rights, 'r' );
 			$result->addValue( array( 'query', $this->getModuleName() ), 'rights', $rights );
 		}
+		$fetched = false;
+		$editcount = 0;
 		if ( $userExists && isset( $prop['merged'] ) ) {
 			$accounts = $user->queryAttached();
+			$fetched = true;
 			foreach ( $accounts as $account ) {
 				$dbname = $account['wiki'];
 				$wiki = WikiMap::getWiki( $dbname );
@@ -87,6 +90,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'method' => $account['attachedMethod'],
 					'editcount' => $account['editCount']
 				);
+				$editcount += $account['editCount'];
 				if ( $account['blocked'] ) {
 					$a['blocked'] = array(
 						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
@@ -96,6 +100,15 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				$result->addValue( array( 'query', $this->getModuleName(), 'merged' ), null, $a );
 			}
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
+		}
+		if ( $userExists && isset( $prop['editcount'] ) ) {
+			if (!$fetched) {
+				$accounts = $user->queryAttached();
+				foreach ( $accounts as $account ) {
+					$editcount += $account['editCount'];
+				}
+			}
+			$result->addValue( 'query', $this->getModuleName(), array( 'editcount' => $editcount ) );
 		}
 		if ( isset ( $prop['unattached'] ) ) {
 			$accounts = $user->queryUnattached();
@@ -134,7 +147,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'groups',
 					'rights',
 					'merged',
-					'unattached'
+					'unattached',
+					'editcount'
 				),
 				ApiBase::PARAM_ISMULTI => true
 			)
@@ -149,7 +163,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				'  groups     - Get a list of global groups this user belongs to',
 				'  rights     - Get a list of global rights this user has',
 				'  merged     - Get a list of merged accounts',
-				'  unattached - Get a list of unattached accounts'
+				'  unattached - Get a list of unattached accounts',
+				'  editcount  - Get users global editcount'
 			),
 		);
 	}
