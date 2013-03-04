@@ -289,6 +289,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$reg = $globalUser->getRegistration();
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
+			'name' => $globalUser->getName(),
 			'id' => $globalUser->getId(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'home' => $this->determineHomeWiki(),
@@ -299,8 +300,13 @@ class SpecialCentralAuth extends SpecialPage {
 		$out = '<fieldset id="mw-centralauth-info">';
 		$out .= '<legend>' . $this->msg( 'centralauth-admin-info-header' )->escaped() . '</legend><ul>';
 		foreach ( $attribs as $tag => $data ) {
-			$out .= '<li><strong>' . $this->msg( "centralauth-admin-info-$tag" )->escaped() . '</strong> ' .
-				$data . '</li>';
+			$out .= '<li><strong>';
+			if ( $tag == 'name' ) {
+				$out .= $this->msg( "centralauth-admin-username" )->escaped();
+			} else {
+				$out .= $this->msg( "centralauth-admin-info-$tag" )->escaped();
+			}
+			$out .= '</strong> ' . $data . '</li>';
 		}
 		$out .= '</ul></fieldset>';
 		$this->getOutput()->addHTML( $out );
