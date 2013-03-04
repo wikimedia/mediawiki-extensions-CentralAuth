@@ -141,6 +141,7 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-permission'         => "Only stewards may merge other people's accounts for them.",
 	'centralauth-admin-no-unified'         => 'No unified account for this username.',
 	'centralauth-admin-info-header'        => 'Global user info',
+	'centralauth-admin-info-username'      => 'User name:',
 	'centralauth-admin-info-id'            => 'User ID:',
 	'centralauth-admin-info-registered'    => 'Registered:',
 	'centralauth-admin-info-home'          => 'Home wiki:',
@@ -533,6 +534,7 @@ See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 	'centralauth-admin-info-registered' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 The following message appears after the colon: date_time (time_span)",
+	'centralauth-admin-info-username' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	'centralauth-admin-info-home' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	'centralauth-admin-info-editcount' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. The following messages can appear after the colon:
