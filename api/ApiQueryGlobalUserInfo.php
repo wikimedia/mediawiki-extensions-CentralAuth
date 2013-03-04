@@ -75,9 +75,14 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$result->setIndexedTagName( $rights, 'r' );
 			$result->addValue( array( 'query', $this->getModuleName() ), 'rights', $rights );
 		}
+
+		$attachedAccounts = null;
+		if ( $userExists && ( isset( $prop['merged'] ) || isset( $prop['editcount'] ) ) ){
+			$attachedAccounts = $user->queryAttached();
+		}
+
 		if ( $userExists && isset( $prop['merged'] ) ) {
-			$accounts = $user->queryAttached();
-			foreach ( $accounts as $account ) {
+			foreach ( $attachedAccounts as $account ) {
 				$dbname = $account['wiki'];
 				$wiki = WikiMap::getWiki( $dbname );
 				$a = array(
@@ -96,6 +101,13 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				$result->addValue( array( 'query', $this->getModuleName(), 'merged' ), null, $a );
 			}
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
+		}
+		if ( $userExists && isset( $prop['editcount'] ) ) {
+			$editcount = 0;
+			foreach ( $attachedAccounts as $account ) {
+				$editcount += $account['editCount'];
+			}
+			$result->addValue( 'query', $this->getModuleName(), array( 'editcount' => $editcount ) );
 		}
 		if ( isset ( $prop['unattached'] ) ) {
 			$accounts = $user->queryUnattached();
@@ -134,7 +146,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'groups',
 					'rights',
 					'merged',
-					'unattached'
+					'unattached',
+					'editcount'
 				),
 				ApiBase::PARAM_ISMULTI => true
 			)
@@ -149,7 +162,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				'  groups     - Get a list of global groups this user belongs to',
 				'  rights     - Get a list of global rights this user has',
 				'  merged     - Get a list of merged accounts',
-				'  unattached - Get a list of unattached accounts'
+				'  unattached - Get a list of unattached accounts',
+				'  editcount  - Get users global editcount'
 			),
 		);
 	}
