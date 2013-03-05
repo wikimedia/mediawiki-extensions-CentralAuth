@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoA4b6H8",
+        "filename": "api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-05T19:18:47Z",
+      "side": 1,
+      "message": "For performance reasons queryAttached shouldn\u0027t be executed more than once",
+      "revId": "6f700f70ef9e1bebcca0f4c8bd25f0cb07903923",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
