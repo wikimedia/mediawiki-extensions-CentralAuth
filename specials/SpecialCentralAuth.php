@@ -182,23 +182,21 @@ class SpecialCentralAuth extends SpecialPage {
 		$lookup = $this->mCanEdit ?
 			$this->msg( 'centralauth-admin-lookup-rw' )->text() :
 			$this->msg( 'centralauth-admin-lookup-ro' )->text();
-		$this->getOutput()->addHTML(
-			Xml::openElement( 'form', array(
-				'method' => 'get',
-				'action' => $wgScript ) ) .
-			'<fieldset>' .
-			Xml::element( 'legend', array(), $this->msg( 'centralauth-admin-manage' )->text() ) .
+
+		$html = Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
+		$html .= Xml::fieldset(
+			$this->msg( 'centralauth-admin-manage' )->text(),
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			'<p>' .
-			Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
-				'target', 'target', 25, $this->mUserName ) .
-			'</p>' .
-			'<p>' .
-			Xml::submitButton( $lookup ) .
-			'</p>' .
-			'</fieldset>' .
-			'</form>'
+				Xml::openElement( 'p' ) .
+				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
+					'target', 'target', 25, $this->mUserName ) .
+				Xml::closeElement( 'p' ) .
+				Xml::openElement( 'p' ) .
+				Xml::submitButton( $lookup ) .
+				Xml::closeElement( 'p' )
 		);
+		$html .= Xml::closeElement( 'form' );
+		$this->getOutput()->addHTML( $html );
 	}
 
 	/**
@@ -262,39 +260,50 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->msg( 'centralauth-admin-list-legend-rw' )->escaped() :
 			$this->msg( 'centralauth-admin-list-legend-ro' )->escaped();
 
-		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend>" );
+		$this->getOutput()->addHTML( Xml::fieldset( $legend ) );
 		$this->getOutput()->addHTML( $this->listHeader() );
 		$this->getOutput()->addHTML( $this->listMerged( $merged ) );
 		if ( $remainder ) {
 			$this->getOutput()->addHTML( $this->listRemainder( $remainder ) );
 		}
 		$this->getOutput()->addHTML( $this->listFooter() );
-		$this->getOutput()->addHTML( '</fieldset>' );
+		$this->getOutput()->addHTML( Xml::closeElement( 'fieldset' ) );
 	}
 
 	/**
 	 * @return string
 	 */
 	function listHeader() {
-		return
-			Xml::openElement( 'form',
-				array(
-					'method' => 'post',
-					'action' =>
-						$this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
-					'id' => 'mw-centralauth-merged' ) ) .
-			Html::hidden( 'wpMethod', 'unmerge' ) .
+		$columns = array(
+			"localwiki",   // centralauth-admin-list-localwiki
+			"attached-on", // centralauth-admin-list-attached-on
+			"method",      // centralauth-admin-list-method
+			"blocked",     // centralauth-admin-list-blocked
+			"editcount",   // centralauth-admin-list-editcount
+		);
+		$header = Xml::openElement( 'form',
+			array(
+				 'method' => 'post',
+				 'action' =>
+				 $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
+				 'id' => 'mw-centralauth-merged' ) );
+		$header .= Html::hidden( 'wpMethod', 'unmerge' ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) . "\n" .
-			'<thead><tr>' .
-				( $this->mCanUnmerge ? '<th></th>' : '' ) .
-				'<th>' . $this->msg( 'centralauth-admin-list-localwiki' )->escaped() . '</th>' .
-				'<th>' . $this->msg( 'centralauth-admin-list-attached-on' )->escaped() . '</th>' .
-				'<th>' . $this->msg( 'centralauth-admin-list-method' )->escaped() . '</th>' .
-				'<th>' . $this->msg( 'centralauth-admin-list-blocked' )->escaped() . '</th>' .
-				'<th>' . $this->msg( 'centralauth-admin-list-editcount' )->escaped() . '</th>' .
-			'</tr></thead>' .
-			'<tbody>';
+			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) .
+			"\n" . Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
+		if ( $this->mCanUnmerge ) {
+			$header .= Xml::openElement( 'th' ) . Xml::closeElement( 'th' );
+		}
+		foreach ( $columns as $c ) {
+			$header .= Xml::openElement( 'th' ) .
+				$this->msg( "centralauth-admin-list-$c" )->escaped() .
+				Xml::closeElement( 'th' );
+		}
+		$header .= Xml::closeElement( 'tr' ) .
+			Xml::closeElement( 'thead' ) .
+			Xml::openElement( 'tbody' );
+
+		return $header;
 	}
 
 	/**
@@ -302,15 +311,21 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	function listFooter() {
 		$footer = '';
-		if ( $this->mCanUnmerge )
-			$footer .=
-				'<tr>' .
-				'<td style="border-right: none"></td>' .
-				'<td style="border-left: none" colspan="5">' .
+		if ( $this->mCanUnmerge ) {
+			$footer .= Xml::openElement( 'tr' ) .
+				Xml::openElement( 'td', array( "style" => "border-right: none;" ) ) .
+				Xml::closeElement( 'td' ) .
+				Xml::openElement( 'td', array(
+					"style" => "border-left: none;",
+					"colspan" => "5"
+				) ) .
 				Xml::submitButton( $this->msg( 'centralauth-admin-unmerge' )->text() ) .
-				'</td>' .
-				'</tr>';
-		$footer .= '</tbody></table></form>';
+				Xml::closeElement( 'td' ) .
+				Xml::closeElement( 'tr' );
+		}
+		$footer .= Xml::closeElement( 'tbody' ) .
+			Xml::closeElement( 'table' ) .
+			Xml::closeElement( 'form' );
 		return $footer;
 	}
 
@@ -332,10 +347,17 @@ class SpecialCentralAuth extends SpecialPage {
 		$notMerged = $this->msg( 'centralauth-admin-unattached' )->parse();
 		$rows = array();
 		foreach ( $list as $row ) {
-			$rows[] = '<tr class="unattached-row"><td>' .
-				( $this->mCanUnmerge ? '</td><td>' : '' ) .
-				$this->foreignUserLink( $row['wiki'] ) .
-				"</td><td colspan='4'>{$notMerged}</td></tr>\n";
+			$content = Xml::openElement( 'tr', array( "class" => "unattached-row" ) );
+			if ( $this->mCanUnmerge ) {
+				$content .= Xml::closeElement( 'td' ) . Xml::openElement( 'td' );
+			}
+			$content .= $this->foreignUserLink( $row['wiki'] ) .
+				Xml::closeElement( 'td' ) .
+				Xml::openElement( 'td', array( 'colspan' => '4' ) ) .
+				$notMerged .
+				Xml::closeElement( 'td' ) .
+				Xml::closeElement( 'tr' ) . "\n";
+			$rows[] = $content;
 		}
 		return implode( "\n", $rows );
 	}
@@ -351,17 +373,31 @@ class SpecialCentralAuth extends SpecialPage {
 			// Revisiting the wiki solves the issue
 			return '';
 		}
-		return '<tr>' .
-			( $this->mCanUnmerge ? '<td>' . $this->adminCheck( $row['wiki'] ) . '</td>' : '' ) .
-			'<td>' . $this->foreignUserLink( $row['wiki'] ) . '</td>' .
-			'<td data-sort-value="' . htmlspecialchars( $row['attachedTimestamp'] ) . '">' .
-				// visible date and time in users preference
-				htmlspecialchars( $this->getLanguage()->timeanddate( $row['attachedTimestamp'], true ) ) .
-			'</td>' .
-			'<td style="text-align: center">' . $this->formatMergeMethod( $row['attachedMethod'] ) . '</td>' .
-			'<td>' . $this->formatBlockStatus( $row ) . '</td>' .
-			'<td style="text-align: right">' . $this->formatEditcount( $row ) . '</td>' .
-			'</tr>';
+		$html = Xml::openElement( 'tr' );
+		if ( $this->mCanUnmerge ){
+			$html .= Xml::openElement( 'td' ) .
+				$this->adminCheck( $row['wiki'] ) .
+				Xml::closeElement( 'td' );
+		}
+		$html .= Xml::openElement( 'td' ) .
+			$this->foreignUserLink( $row['wiki'] ) .
+			Xml::closeElement( 'td' ) .
+			Xml::openElement( 'td', array( 'data-sort-value' =>  htmlspecialchars( $row['attachedTimestamp'] ) ) ) .
+			// visible date and time in users preference
+			htmlspecialchars( $this->getLanguage()->timeanddate( $row['attachedTimestamp'], true ) ) .
+			Xml::closeElement( 'td' ) .
+			Xml::openElement( 'td', array( 'style' => "text-align: center;" ) ) .
+			$this->formatMergeMethod( $row['attachedMethod'] ) .
+			Xml::closeElement( 'td' ) .
+			Xml::openElement( 'td' ) .
+			$this->formatBlockStatus( $row ) .
+			Xml::closeElement( 'td' ) .
+			Xml::openElement( 'td', array( 'style' => "text-align: right;" ) ) .
+			$this->formatEditcount( $row ) .
+			Xml::closeElement( 'td' ) .
+			Xml::closeElement( 'tr' );
+
+		return $html;
 	}
 
 	/**
@@ -546,8 +582,7 @@ class SpecialCentralAuth extends SpecialPage {
 				array( 'centralauth-admin-reason' => Xml::input( 'reason',
 					false, false, array( 'id' => "{$action}-reason" ) ) ),
 				"centralauth-admin-{$action}-button"
-			) .
-			'</form></fieldset>' );
+			) . Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' ) );
 	}
 
 	function showStatusForm() {
@@ -617,7 +652,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'centralauth-admin-status-submit'
 		);
 
-		$form .= '</fieldset>';
+		$form .= Xml::closeElement( 'fieldset' );
 		$form = Xml::tags(
 			'form',
 			array(
