@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoJ0BdD8",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-05T00:16:55Z",
+      "side": 1,
+      "message": "While you\u0027re rewriting this, can you use the Xml:: or Html:: functions to build this?",
+      "revId": "b5f0a9c4453468cd67807e743b5353451bb86eda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
