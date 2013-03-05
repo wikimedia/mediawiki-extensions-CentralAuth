@@ -77,17 +77,19 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		if ( count( $groups ) ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-globalgroupperms-grouplist' );
-			$this->getOutput()->addHTML( '<ul>' );
+			$this->getOutput()->addHTML( Xml::openElement( 'ul' ) );
 
 			foreach ( $groups as $group ) {
 				$text = $this->msg(
 					'centralauth-globalgroupperms-grouplistitem',
 					User::getGroupName( $group ),
 					$group,
-					'<span class="centralauth-globalgroupperms-groupname">' . $group . '</span>'
+					Xml::element( 'span',
+						array( "class" => "centralauth-globalgroupperms-groupname"),
+						$group
+					)
 				)->parse();
-
-				$this->getOutput()->addHTML( "<li> $text </li>" );
+				$this->getOutput()->addHTML( Xml::element( 'li', null, ' ' . $text . ' ' ) );
 			}
 		} else {
 			$this->getOutput()->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
@@ -125,7 +127,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$html = Xml::fieldset( $this->msg( 'centralauth-editgroup-fieldset', $group )->text(), false, array( 'class' => $fieldsetClass ) );
 
 		if ( $editable ) {
-			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(), 'name' => 'centralauth-globalgroups-newgroup' ) );
+			$html .= Xml::openElement( 'form',
+				array(
+					 'method' => 'post',
+					 'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(),
+					 'name' => 'centralauth-globalgroups-newgroup'
+				)
+			);
 			$html .= Html::hidden( 'wpGroup', $group );
 			$html .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		}
@@ -224,19 +232,23 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$checkboxes1 = array_slice( $checkboxes, 0, $firstCol );
 		$checkboxes2 = array_slice( $checkboxes, $firstCol );
 
-		$html = '<table><tbody><tr><td><ul>';
+		$html = Xml::openElement( 'table' ) . Xml::openElement( 'tbody' ) .
+			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . Xml::openElement( 'ul' );
 
 		foreach ( $checkboxes1 as $cb ) {
 			$html .= $cb;
 		}
 
-		$html .= '</ul></td><td><ul>';
+		$html .= Xml::closeElement( 'ul' ) . Xml::closeElement( 'td' ) .
+			Xml::openElement( 'td' ) . Xml::openElement( 'ul' );
 
 		foreach ( $checkboxes2 as $cb ) {
 			$html .= $cb;
 		}
 
-		$html .= '</ul></td></tr></tbody></table>';
+		$html .= Xml::closeElement( 'ul' ) . Xml::closeElement( 'td' ) .
+			Xml::closeElement( 'tr' ) . Xml::closeElement( 'tbody' ) .
+			Xml::closeElement( 'table' );
 
 		return $html;
 	}
