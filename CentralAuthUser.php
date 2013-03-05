@@ -1104,6 +1104,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 *  hidden level, one of the HIDDEN_ constants
 	 *  null = don't change
 	 * @param $reason String reason for hiding
+	 * @param $context IContextSource
 	 * @return Status
 	 */
 	public function adminLockHide( $setLocked, $setHidden, $reason, IContextSource $context ) {
@@ -1139,7 +1140,7 @@ class CentralAuthUser extends AuthPluginUser {
 		);
 
 		if ( !in_array( $setHidden, $hiddenLevels ) ) {
-			$setHidden = '';
+			$setHidden = self::HIDDEN_NONE;
 		}
 
 		if ( !$isLocked && $setLocked ) {
@@ -1198,10 +1199,10 @@ class CentralAuthUser extends AuthPluginUser {
 
 		} elseif ( !$good ) {
 			if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
-				$returnStatus->merge(  $lockStatus );
+				$returnStatus->merge( $lockStatus );
 			}
 			if ( !is_null( $hideStatus ) && !$hideStatus->isGood() ) {
-				$returnStatus->merge(  $hideStatus );
+				$returnStatus->merge( $hideStatus );
 			}
 		}
 
