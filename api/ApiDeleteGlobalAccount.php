@@ -43,10 +43,8 @@ class ApiDeleteGlobalAccount extends ApiBase {
 			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
 		}
 
-		$status = $globalUser->adminDelete();
+		$status = $globalUser->adminDelete( $params['reason'] );
 		if ( $status->isGood() ) {
-			$sca = new SpecialCentralAuth;
-			$sca->logAction( 'delete', $globalUser->getName(), $params['reason'] );
 			$this->getResult()->addValue( null, $this->getModuleName(), array(
 				'user' => $globalUser->getName(),
 				'reason' => $params['reason']
