@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoNMAS20",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-05T12:11:15Z",
+      "side": 1,
+      "message": "Don\u0027t reuse this message without altering it\u0027s Qqq. Alternative would be to introduce centralauth-admin-info-name.",
+      "revId": "4478bae84cec65c4cd5de15237776b102600699d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
