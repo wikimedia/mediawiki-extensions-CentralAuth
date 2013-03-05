@@ -111,13 +111,12 @@ class SpecialCentralAuth extends SpecialPage {
 					/* deprecated */ $status->successCount );
 			}
 		} elseif ( $this->mMethod == 'delete' && $this->mCanUnmerge ) {
-			$status = $globalUser->adminDelete();
+			$status = $globalUser->adminDelete( $this->getRequest()->getVal( 'reason' ) );
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} else {
 				$this->showSuccess( 'centralauth-admin-delete-success', $this->mUserName );
 				$deleted = true;
-				$this->logAction( 'delete', $this->mUserName, $this->getRequest()->getVal( 'reason' ) );
 			}
 		} elseif ( $this->mMethod == 'set-status' && !$stateCheck ) {
 			$this->showError( 'centralauth-state-mismatch' );
@@ -140,17 +139,10 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->getContext()
 			);
 
-			// Logging etc
+			// Tell the user what happened
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} elseif ( $status->successCount > 0 ) {
-				$this->logAction(
-					'setstatus',
-					$globalUser->getName(),
-					$reason,
-					$status->success,
-					$setHidden != CentralAuthUser::HIDDEN_NONE
-				);
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
 			}
 		} else {
@@ -682,18 +674,5 @@ class SpecialCentralAuth extends SpecialPage {
 			);
 		}
 		return $mergeMethodDescriptions;
-	}
-
-	/**
-	 * @param $action
-	 * @param $target
-	 * @param $reason string
-	 * @param $params array
-	 * @param $suppressLog bool
-	 */
-	function logAction( $action, $target, $reason = '', $params = array(), $suppressLog = false ) {
-		$logType = $suppressLog ? 'suppress' : 'globalauth';	// Not centralauth because of some weird length limitiations
-		$log = new LogPage( $logType );
-		$log->addEntry( $action, Title::newFromText( "User:{$target}@global" ), $reason, $params );
 	}
 }
