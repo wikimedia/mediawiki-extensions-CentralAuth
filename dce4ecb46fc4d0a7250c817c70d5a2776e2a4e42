@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DoAXfPjg",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-06T20:46:46Z",
+      "side": 1,
+      "message": "That would be a good project, but for now, I think we should just add a comment here. We could even move the lock in SpecialCentralAuth to before we search for the target username (so do $cdb-\u003elock( ... $newName ) around line 228) to make the window even shorter. But even if that happened and a new user was registered between the check here and the update to globaluser, then the rename would hit an exception, the previous changes would be rolled back, and the only issue is the admin gets an ugly UX, and would get a nice error when they tried the rename again. It wouldn\u0027t leave the system in an inconsistent state.",
+      "parentUuid": "DnS626z0",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dne6A004",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 20
@@ -159,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "DoCWigrI",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-06T20:46:46Z",
+      "side": 1,
+      "message": "Yep, SqlBagOStuff.",
+      "parentUuid": "DnVSdOlM",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnUsjWcE",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 20
@@ -194,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "DoIWdjmQ",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-06T20:46:46Z",
+      "side": 1,
+      "message": "I actually think we want a log on all wikis were a rename happened. Otherwise a local admin looking at a user won\u0027t be able to tell that the rename happened, without checking yet another log.",
+      "parentUuid": "DnY74P.Q",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnSswHQA",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 20
@@ -223,6 +277,24 @@
       "side": 1,
       "message": "This code is not run by meta (well, it could be, but not necessarily), but by the last wiki to process the rename. So I don\u0027t think we can just use the proper logging code as that would usually end up adding the log entries to the wrong wiki.",
       "parentUuid": "DnSswHQA",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoEWQ5kk",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-06T20:46:46Z",
+      "side": 1,
+      "message": "Like with other Steward functions, it will be available on all wikis, but Stewards will typically do the work on meta.",
+      "parentUuid": "Dna7z.wg",
       "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -361,6 +433,24 @@
       "side": 1,
       "message": "We can rely on LBs being set up?",
       "parentUuid": "Dne5Nc3Q",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoAWbvmQ",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-06T20:46:46Z",
+      "side": 1,
+      "message": "CentralAuth seems to already make that assumption (in the detachment code), so I think it\u0027s safe.",
+      "parentUuid": "DnTSqvnM",
       "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
