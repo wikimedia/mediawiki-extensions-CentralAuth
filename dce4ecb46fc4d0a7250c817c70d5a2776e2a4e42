@@ -248,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "DoGX16n8",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-06T21:01:40Z",
+      "side": 1,
+      "message": "What if the user who started the rename doesn\u0027t have a merged account on an affected wiki? Who do we say did the rename in that wiki\u0027s logging database?",
+      "parentUuid": "DoIWdjmQ",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnSswHQA",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 20
@@ -295,6 +313,24 @@
       "side": 1,
       "message": "Like with other Steward functions, it will be available on all wikis, but Stewards will typically do the work on meta.",
       "parentUuid": "Dna7z.wg",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoCUoQu8",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-06T21:01:40Z",
+      "side": 1,
+      "message": "My point stands. This code is not guaranteed to be run by the initiating wiki, but by the last wiki to process the rename.\n\nAnyway, there\u0027s no way I\u0027m adding WMF-specific special cases for a database called \u0027metawiki\u0027.",
+      "parentUuid": "DoEWQ5kk",
       "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
