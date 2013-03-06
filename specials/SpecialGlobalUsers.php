@@ -31,7 +31,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalusers' );
 		$this->getOutput()->addHTML( $pg->getPageHeader() );
 		$this->getOutput()->addHTML( $pg->getNavigationBar() );
-		$this->getOutput()->addHTML( '<ul>' . $pg->getBody() . '</ul>' );
+		$this->getOutput()->addHTML( Html::rawElement( 'ul', null, $pg->getBody() ) );
 		$this->getOutput()->addHTML( $pg->getNavigationBar() );
 	}
 }
