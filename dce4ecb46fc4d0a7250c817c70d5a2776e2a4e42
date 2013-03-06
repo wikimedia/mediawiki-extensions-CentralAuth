@@ -355,6 +355,24 @@
     },
     {
       "key": {
+        "uuid": "DoPqS.J0",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-06T23:15:22Z",
+      "side": 1,
+      "message": "It hasn\u0027t as we never wanted to this (for several reasons). I think it\u0027s the best to log it locally on every wiki (we *need* local logs or the communities will run wild).",
+      "parentUuid": "DoLqzEEw",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnesaBXo",
         "filename": "specials/SpecialCentralAuth.php",
         "patchSetId": 20
