@@ -337,6 +337,24 @@
     },
     {
       "key": {
+        "uuid": "DoLqzEEw",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 531
+      },
+      "writtenOn": "2013-03-06T23:13:27Z",
+      "side": 1,
+      "message": "Surely the CentralAuth extension has a meta-wiki configuration variable or similar? It isn\u0027t unusual in a wiki farm or wiki family to define one wiki as the \"master.\"",
+      "parentUuid": "DoCUoQu8",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnesaBXo",
         "filename": "specials/SpecialCentralAuth.php",
         "patchSetId": 20
