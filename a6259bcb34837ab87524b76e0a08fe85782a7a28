@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DoPnMTb8",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2013-03-06T03:30:34Z",
+      "side": 1,
+      "message": "FIXME comment left in code",
+      "parentUuid": "AAAATH//9lY\u003d",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//9lU\u003d",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2012-09-26T03:52:56Z",
       "side": 1,
       "message": "Here you deal with locked (lock !\u003d block, btw) accounts, but do not deal with hidden. Make sure that you filter hidden and *especially* oversighted names (see related code in CentralAuthUser).",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoJnlATw",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2013-03-06T03:30:34Z",
+      "side": 1,
+      "message": "First part is done\n\nFixme comment left for the second part. gu_locked added to fields always to load",
+      "parentUuid": "AAAATH//9lU\u003d",
       "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "DoHnoPRI",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2013-03-06T03:30:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//9lQ\u003d",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//9lM\u003d",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2012-09-26T03:52:56Z",
       "side": 1,
       "message": "\"globalalluser\" -\u003e \"globalallusers\" (both lines)\n\n\"guiprop\" -\u003e \"gauprop\"",
+      "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoBn58eY",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2013-03-06T03:30:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//9lM\u003d",
       "revId": "a6259bcb34837ab87524b76e0a08fe85782a7a28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
