@@ -373,6 +373,24 @@
     },
     {
       "key": {
+        "uuid": "DoLqMcIE",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-06T23:17:08Z",
+      "side": 1,
+      "message": "It doesn\u0027t even matter! This code needs to be able to insert into another wiki\u0027s DB, regardless of whether we determine the DB name in the config or use $this-\u003eparams[\u0027startedFrom\u0027]!",
+      "parentUuid": "DoLqzEEw",
+      "revId": "dce4ecb46fc4d0a7250c817c70d5a2776e2a4e42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnesaBXo",
         "filename": "specials/SpecialCentralAuth.php",
         "patchSetId": 20
