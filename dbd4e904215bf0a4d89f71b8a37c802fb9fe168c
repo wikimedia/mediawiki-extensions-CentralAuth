@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoHpliB4",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-07T01:22:27Z",
+      "side": 1,
+      "message": "Is this text correct? It\u0027s based on something a user on IRC said earlier but I haven\u0027t checked.",
+      "revId": "dbd4e904215bf0a4d89f71b8a37c802fb9fe168c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
