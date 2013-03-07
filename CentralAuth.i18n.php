@@ -337,6 +337,7 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-success-text'              => 'You have successfully changed the group permissions for the $1 group.
 [[Special:GlobalGroupPermissions|Return to group management]]',
 	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|edit]])',
+	'centralauth-editgroup-nowikiset'                 => 'None, applies to all wikis.',
 	'centralauth-globalgrouppermissions-knownwiki'    => "Wiki on which they have an account:",
 	'centralauth-globalgroupmembership-badknownwiki'  => "The global user '''$1''' is not active on the wiki you specified ('' $2 '').
 You may be attempting to assign rights to the wrong user!",
@@ -727,6 +728,7 @@ Parameters:
 * $1 - Name of the group',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
+	'centralauth-editgroup-nowikiset' => 'Shown on Special:GlobalGroupPermissions for global groups which have no assigned WikiSet.',
 	'centralauth-globalgrouppermissions-knownwiki' => '{{doc-singularthey}}',
 	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
 	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
