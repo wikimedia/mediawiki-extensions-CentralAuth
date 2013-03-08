@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DpfHp0Bw",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-08T17:36:22Z",
+      "side": 1,
+      "message": "$html .\u003d Xml::openElement( \u0027form\u0027, array(\n    \u0027method\u0027 \u003d\u003e \u0027post\u0027,\n    \u0027action\u0027 \u003d\u003e SpecialPage::getTitleFor( \u0027GlobalGroupPermissions\u0027, $group )-\u003egetLocalUrl(),\n) );",
+      "revId": "64557192cc875b29f26fe615e81c985c96c1c901",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
