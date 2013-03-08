@@ -121,6 +121,8 @@ class SpecialWikiSets extends SpecialPage {
 		}
 		$url = SpecialPage::getTitleFor( 'WikiSets', $subpage )->getLocalUrl();
 		if ( $this->mCanEdit ) {
+			// Give grep a chance to find the usages:
+			// centralauth-editset-legend-edit, centralauth-editset-legend-new
 			$legend = $this->msg( 'centralauth-editset-legend-' . ( $set ? 'edit' : 'new' ), $name )->escaped();
 		} else {
 			$legend = $this->msg( 'centralauth-editset-legend-view', $name )->escaped();

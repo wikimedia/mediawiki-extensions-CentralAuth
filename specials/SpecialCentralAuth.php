@@ -240,6 +240,10 @@ class SpecialCentralAuth extends SpecialPage {
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
 		);
 
+		// Give grep a chance to find the usages:
+		// centralauth-admin-info-username, centralauth-admin-info-id, centralauth-admin-info-registered,
+		// centralauth-admin-info-home, centralauth-admin-info-editcount, centralauth-admin-info-locked,
+		// centralauth-admin-info-hidden
 		$content = Xml::openElement( "ul" );
 		foreach ( $attribs as $tag => $data ) {
 			$content .= Xml::openElement( "li" ) . Xml::openElement( "strong" );

@@ -14,6 +14,15 @@
 			mw.util.$content.append( $methodHint );
 		}
 
+		// Give grep a chance to find the usages:
+		// centralauth-merge-method-primary, centralauth-merge-method-empty,
+		// centralauth-merge-method-mail, centralauth-merge-method-password,
+		// centralauth-merge-method-admin, centralauth-merge-method-new,
+		// centralauth-merge-method-login,
+		// centralauth-merge-method-primary-desc, centralauth-merge-method-empty-desc,
+		// centralauth-merge-method-mail-desc, centralauth-merge-method-password-desc,
+		// centralauth-merge-method-admin-desc, centralauth-merge-method-new-desc,
+		// centralauth-merge-method-login-desc
 		hintHtml = mw.html.element(
 			'p', {
 				'class': 'merge-method-help-name'

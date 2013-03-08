@@ -436,6 +436,11 @@ class SpecialMergeAccount extends SpecialPage {
 	function listWikiItem( $wikiID, $method ) {
 		$return = $this->foreignUserLink( $wikiID );
 		if ( $method ) {
+			// Give grep a chance to find the usages:
+			// centralauth-merge-method-primary, centralauth-merge-method-empty,
+			// centralauth-merge-method-mail, centralauth-merge-method-password,
+			// centralauth-merge-method-admin, centralauth-merge-method-new,
+			// centralauth-merge-method-login,
 			$return .= $this->msg( 'word-separator' )->text();
 			$return .= $this->msg( 'parentheses', $this->msg( 'centralauth-merge-method-'.$method )->text() )->escaped();
 		}
