@@ -26,11 +26,19 @@ class SpecialMultiLock extends SpecialPage {
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod', '' );
 		$this->mActionLock = $this->getRequest()->getVal( 'wpActionLock', 'nochange' );
 		$this->mActionHide = $this->getRequest()->getVal( 'wpActionHide', 'nochange' );
-		$this->mReason = $this->getRequest()->getVal( 'wpReason' );
 		$this->mUserNames = $this->getRequest()->getVal( 'wpTarget', '' );
 		$this->mPrefixSearch = $this->getRequest()->getVal( 'wpSearchTarget', '' );
 		$this->mActionUserNames = $this->getRequest()->getArray( 'wpActionTarget' );
 		$this->mPosted = $this->getRequest()->wasPosted();
+
+		$this->mReason = $this->getRequest()->getText( 'wpReasonList' );
+		$reasonDetail = $this->getRequest()->getText( 'wpReason' );
+
+		if ( $this->mReason == 'other' ) {
+			$this->mReason = $reasonDetail;
+		} elseif ( $reasonDetail ) {
+			$this->mReason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() . $reasonDetail;
+		}
 
 		if ( $this->mUserNames !== '' ) {
 			$this->mUserNames = explode( "\n", $this->mUserNames );
