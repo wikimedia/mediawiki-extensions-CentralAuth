@@ -286,6 +286,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-entry-groupperms'  => 'changed group permissions for $1 from $2 to $3',
 	'centralauth-rightslog-entry-groupperms2' => 'changed group permissions for $1. Added $2; Removed $3',
 	'centralauth-rightslog-entry-groupperms3' => 'changed group restricted wikis set for $1 from $2 to $3',
+	'centralauth-rightslog-entry-grouprename' => 'renamed group $2 to $1',
 	'centralauth-rightslog-header'            => 'This log contains operations on global groups: membership and permissions changes',
 
 	'centralauth-rightslog-entry-newset'      => 'created $2 wiki set $1 with following wikis: $3',
@@ -329,12 +330,13 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-members'                   => 'Member list:',
 	'centralauth-editgroup-members-link'              => '[[Special:GlobalUsers/$1|List of users with $2 rights]]',
 	'centralauth-editgroup-restrictions'              => 'Set of wikis where this group is active:',
+	'centralauth-editgroup-rename-taken'              => 'Renaming failed: There already is a group with the name $1.',
 	'centralauth-editgroup-noset'                     => '(none)',
-	'centralauth-editgroup-submit'                    => 'Save changes to group permissions',
+	'centralauth-editgroup-submit'                    => 'Save global group changes',
 	'centralauth-editgroup-perms'                     => 'Assigned permissions:',
 	'centralauth-editgroup-reason'                    => 'Reason:',
-	'centralauth-editgroup-success'                   => 'Group permissions changed',
-	'centralauth-editgroup-success-text'              => 'You have successfully changed the group permissions for the $1 group.
+	'centralauth-editgroup-success'                   => 'Global group changed',
+	'centralauth-editgroup-success-text'              => 'Successfully updated the global group $1.
 [[Special:GlobalGroupPermissions|Return to group management]]',
 	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|edit]])',
 	'centralauth-globalgrouppermissions-knownwiki'    => "Wiki on which they have an account:",
@@ -707,6 +709,9 @@ Parameters:
 * $1 - the name of the group being changed
 * $2 - the name of the previous wiki set
 * $3 - the name of the new wiki set',
+	'centralauth-rightslog-entry-grouprename' => 'A log entry when a user renames a global group.
+* $1 is the title of the old group
+* $2 is the title of the new group',
 	'centralauth-rightslog-entry-newset' => "* \$1 is the name of the wiki set (example: \"''Test''\")
 * \$2 is \"''{{msg-mw|Centralauth-rightslog-set-optin}}''\" or \"''{{msg-mw|Centralauth-rightslog-set-optout}}''\"
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
@@ -726,7 +731,11 @@ Parameters:
 Parameters:
 * $1 - Name of the group',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
+	'centralauth-editgroup-rename-taken'              => 'Shown in case the renaming of the global group failed because there already is a group with the new name. $1 is the name the user wanted to rename the group to.',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
+	'centralauth-editgroup-submit' => 'Label of the button to submit changes to the global group',
+	'centralauth-editgroup-success' => 'Subtitle of Special:GlobalGroupPermissions after a group has successfully been altered',
+	'centralauth-editgroup-success-text' => 'Text on Special:GlobalGroupPermissions after a group has successfully been altered. $1 is the name of the global group.',
 	'centralauth-globalgrouppermissions-knownwiki' => '{{doc-singularthey}}',
 	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
 	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
