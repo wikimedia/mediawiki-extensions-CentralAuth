@@ -1443,9 +1443,6 @@ $messages['ar'] = array(
 	'centralauth-not-owner-text' => 'اسم المستخدم "$1" تم إعطاؤه تلقائيا لمالك الحساب على $2.
 
 لو كان هذا أنت، يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمة السر الرئيسية لذلك الحساب هنا:',
-	'centralauth-blocked-text' => 'الويكي الرئيسي الخاص بك (معروض بالأسفل) ممنوع من التعديل.
-من فضلك اتصل بمدير نظام في هذا الويكي لرفع المنع عنه.
-بينما هو ممنوع، لا يمكنك دمج حساباتك.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>نمط التجربة فقط</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'توحيد الحساب حاليا في طور التجربة/تصحيح الأخطاء، لذا عمليات الدمج الفعلية معطلة.
 عذرا!',
@@ -1502,6 +1499,7 @@ $messages['ar'] = array(
 	'centralauth-admin-permission' => 'فقط المضيفون يمكنهم أن يدمجوا حسابات الآخرين.',
 	'centralauth-admin-no-unified' => 'لا حساب موحد لاسم المستخدم هذا.',
 	'centralauth-admin-info-header' => 'حالة الدخول العام',
+	'centralauth-admin-info-username' => 'اسم المستخدم:',
 	'centralauth-admin-info-id' => 'رقم المستخدم:',
 	'centralauth-admin-info-registered' => 'التسجيل:',
 	'centralauth-admin-info-home' => 'الويكي الرئيسية:',
@@ -1563,10 +1561,14 @@ $messages['ar'] = array(
 ** معلومات شخصية غير مناسبة',
 	'centralauth-admin-logsnippet' => 'تغييرات الحساب في كامل الموقع السابقة',
 	'centralauth-admin-suppressreason' => 'على الصعيد العام تم حضر $1 للسبب التالي:$2',
+	'centralauth-admin-not-authorized' => 'ليس لديك السماحات المطلوبة للقيام بهذا الفعل.',
 	'globalusers' => 'قائمة المستخدمين العامة',
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
 	'centralauth-listusers-nolocal' => 'غير مرتبط أو غير موجود محليا',
+	'centralauth-admin-multi-username' => 'أدخل اسم مستخدم أو اكثر، مفصولين بسطر جديد',
+	'centralauth-admin-multi-notfound' => 'لم يرجع البحث أية أسماء مستخدمين.',
+	'centralauth-admin-multi-searchprefix' => 'أو ابحث عن حسابات مع بادئة',
 	'centralauth-seconds-ago' => 'منذ {{PLURAL:$1|أقل من ثانية|ثانية واحدة|ثانيتين|$1 ثوانٍ|$1 ثانية}}',
 	'centralauth-minutes-ago' => 'منذ {{PLURAL:$1|أقل من دقيقة|دقيقة واحدة|دقيقتين|$1 دقائق|$1 دقيقة}}',
 	'centralauth-hours-ago' => 'منذ $1 {{PLURAL:$1|ساعة|ساعة}}',
@@ -1698,11 +1700,12 @@ $messages['ar'] = array(
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
 	'right-centralauth-autoaccount' => 'الدخول تلقائيا بواسطة الحساب العام',
 	'right-centralauth-unmerge' => 'إلغاء دمج الحسابات العامة.',
-	'right-centralauth-lock' => 'إقفال أو إخفاء الحساب العالمي',
+	'right-centralauth-lock' => 'إقفال أو فتح الحساب العام',
 	'right-centralauth-oversight' => 'حضر الحسابات العامة', # Fuzzy
 	'right-centralauth-merge' => 'دمج حسابهم',
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'المجموعات العامة التي ينتمي لها الحساب',
+	'action-centralauth-lock' => 'إقفال أو فتح حسابات عامة',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -8737,9 +8740,6 @@ Palun sisesta koduviki parool.',
 	'centralauth-incomplete-text' => 'Kui su ühendkonto on loodud, saad kõigisse {{int:Centralauth-groupname}} vikidesse uut kontot loomata sisse logida.',
 	'centralauth-not-owner-text' => 'Kasutajanimi "$1" anti automaatselt konto $2 omanikule.
 Kui see oled sina, saad kontode ühendamise lõpetada, sisestades siia selle konto ülemparooli:',
-	'centralauth-blocked-text' => 'Sul on koduvikis (loetletud allpool) redigeerimine blokeeritud.
-Blokeeringu eemaldamiseks võta palun selles vikis administraatoriga ühendust.
-Seni, kuni oled blokeeritud, ei saa sa kontosid ühendada.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Üksnes proovimine</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontode ühendamise süsteem on praegu proovirežiimis. Seetõttu kontosid tegelikult ei ühendata.',
 	'centralauth-error-locked' => 'Sa ei saa toimetada, sest su kasutaja on lukustatud.',
@@ -8796,6 +8796,7 @@ Kui ka globaalne konto kuulub sulle, saad selle konto liita, sisestades globaals
 	'centralauth-admin-permission' => 'Ainult stjuuardid võivad teiste inimeste palvel nende kontosid ühendada.',
 	'centralauth-admin-no-unified' => 'Sel kasutajanimel ei ole ühendatud kontot.',
 	'centralauth-admin-info-header' => 'Globaalne kasutajateave',
+	'centralauth-admin-info-username' => 'Kasutajanimi:',
 	'centralauth-admin-info-id' => 'Kasutaja ID:',
 	'centralauth-admin-info-registered' => 'Registreeritud:',
 	'centralauth-admin-info-home' => 'Koduviki:',
@@ -8988,10 +8989,11 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-globalgroupmembership' => 'Muuta globaalsete rühmade liikmesust',
 	'right-centralauth-autoaccount' => 'Automaatselt sisse logida globaalse kontoga',
 	'right-centralauth-unmerge' => 'Lahti ühendada globaalset kontot',
-	'right-centralauth-lock' => 'Lukustada või peita globaalset kontot',
+	'right-centralauth-lock' => 'Lukustada globaalset kontot või seda lukust lahti teha',
 	'right-centralauth-oversight' => 'Varjata või peita globaalset kontot',
 	'right-centralauth-merge' => 'Luua ühendkonto',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
+	'action-centralauth-lock' => 'globaalset kontot lukustada ega seda lukust lahti teha',
 );
 
 /** Basque (euskara)
@@ -10815,6 +10817,7 @@ Outras contas aínda non están confirmadas.',
 	'centralauth-admin-permission' => 'Só os stewards poden unificar as contas doutra xente.',
 	'centralauth-admin-no-unified' => 'Non hai contas de usuario unificadas con este nome de usuario.',
 	'centralauth-admin-info-header' => 'Información global do usuario',
+	'centralauth-admin-info-username' => 'Nome de usuario:',
 	'centralauth-admin-info-id' => 'ID do usuario:',
 	'centralauth-admin-info-registered' => 'Rexistrado:',
 	'centralauth-admin-info-home' => 'Wiki principal:',
@@ -10853,6 +10856,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-admin-nonexistent' => 'Non hai ningunha conta global chamada "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Erro: A conta global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-token-mismatch' => 'Sentímolo, non se pode procesar o formulario enviado debido a que se perderon os datos da sesión.',
+	'centralauth-state-mismatch' => 'Erro: Detectouse un conflito de edición con este usuario. Comprobe as súas modificacións e inténteo de novo.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Outro motivo:',
 	'centralauth-admin-unhide-nonexistent' => 'Erro: A conta global "<nowiki>$1</nowiki>" non existe.',
@@ -10881,6 +10885,18 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => '[[User:$1|existe neste wiki]]',
 	'centralauth-listusers-nolocal' => 'non existe neste wiki',
+	'multilock' => 'Bloquear varios usuarios globais',
+	'centralauth-admin-multi-username' => 'Escriba un ou máis nomes de usuarios, un por liña',
+	'centralauth-admin-multi-notfound' => 'A procura non devolveu ningún nome de usuario.',
+	'centralauth-admin-multi-searchprefix' => 'Ou procure contas cun prefixo',
+	'centralauth-admin-multi-intro' => 'Actualizar varios usuarios globais á vez',
+	'centralauth-admin-action-lock-nochange' => 'Non cambiar os bloqueos',
+	'centralauth-admin-action-lock-lock' => 'Bloquear as contas seleccionadas',
+	'centralauth-admin-action-lock-unlock' => 'Desbloquear as contas seleccionadas',
+	'centralauth-admin-action-hide-nochange' => 'Non cambiar os niveis agochados',
+	'centralauth-admin-action-hide-none' => 'Descubrir as contas seleccionadas',
+	'centralauth-admin-action-hide-lists' => 'Agochar as contas seleccionadas das listas públicas',
+	'centralauth-admin-action-hide-oversight' => 'Agochar por completo as contas seleccionadas',
 	'centralauth-seconds-ago' => 'hai {{PLURAL:$1|un segundo|$1 segundos}}',
 	'centralauth-minutes-ago' => 'hai {{PLURAL:$1|un minuto|$1 minutos}}',
 	'centralauth-hours-ago' => 'hai {{PLURAL:$1|unha hora|$1 horas}}',
@@ -11742,6 +11758,7 @@ $messages['haw'] = array(
  * @author Rotemliss
  * @author YaronSh
  * @author דולב
+ * @author חיים
  */
 $messages['he'] = array(
 	'mergeaccount' => 'מצב מיזוג החשבונות',
@@ -11788,7 +11805,6 @@ $messages['he'] = array(
 	'centralauth-not-owner-text' => 'שם המשתמש "$1" הוקצה אוטומטית לבעלי החשבון באתר $2.
 
 אם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הכללי כאן:',
-	'centralauth-blocked-text' => 'החשבון באתר הראשי שלכם (הרשום להלן) נחסם מעריכה. אנא צרו קשר עם אחד ממפעילי המערכת באתר זה כדי לשחרר אותו. כל עוד הוא חסום, לא תוכלו למזג את חשבונותיכם.',
 	'centralauth-notice-dryrun' => '<div class="successbox">מצב הדגמה בלבד</div><br clear="all" />',
 	'centralauth-disabled-dryrun' => 'מיזוג החשבונות הוא כרגע במצב הדגמה ובדיקה, ולכן לא ניתן למזג את החשבונות. מצטערים!',
 	'centralauth-error-locked' => 'אינכם יכולים לערוך כיוון שהחשבון שלכם נעול.',
@@ -11842,6 +11858,7 @@ $messages['he'] = array(
 	'centralauth-admin-permission' => 'רק דיילים יכולים למזג את חשבונותיהם של אנשים אחרים עבורם.',
 	'centralauth-admin-no-unified' => 'אין חשבון ממוזג בשם זה.',
 	'centralauth-admin-info-header' => 'מידע על החשבון הכללי',
+	'centralauth-admin-info-username' => 'שם משתמש:',
 	'centralauth-admin-info-id' => 'מספר משתמש:',
 	'centralauth-admin-info-registered' => 'נרשם:',
 	'centralauth-admin-info-home' => 'האתר הראשי:',
@@ -12032,8 +12049,8 @@ $messages['he'] = array(
 	'right-globalgroupmembership' => 'עריכת חברות בקבוצות כלליות',
 	'right-centralauth-autoaccount' => 'להיכנס באופן אוטומטי לחשבון הגלובלי',
 	'right-centralauth-unmerge' => 'ביטול המיזוג של חשבון כללי',
-	'right-centralauth-lock' => 'נעילת או הסתרת חשבון כללי',
-	'right-centralauth-oversight' => 'הסתרה מוחלטת של חשבון כללי', # Fuzzy
+	'right-centralauth-lock' => 'נעילת או שיחרור חשבון כללי',
+	'right-centralauth-oversight' => 'להעלים או להסתיר את החשבון הכללי',
 	'right-centralauth-merge' => 'מיזוג החשבון של עצמם',
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'קבוצות גלובליות שמשתמש זה חבר בהן',
@@ -31550,6 +31567,9 @@ $messages['tzm'] = array(
 	'centralauth-editgroup-subtitle-readonly' => 'ⵥⵕ $1',
 	'centralauth-editgroup-name' => 'ⴰⵙⵙⴰⵖ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:',
 	'centralauth-editgroup-noset' => '(ⵡⴰⵔ)',
+	'centralauth-editset' => 'ⵜⵉⵔⵓⴱⴱⴰ ⵏ ⵡⵉⴽⵉ',
+	'centralauth-editset-legend-ro' => 'ⵓⵎⵓⵖ ⵏ ⵜⵔⵓⴱⴱⴰ ⵏ ⵡⵉⴽⵉ',
+	'centralauth-editset-legend-view' => 'ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵡⵉⴽⵉ "$1"',
 	'centralauth-editset-name' => 'ⴰⵙⵙⴰⵖ:',
 	'centralauth-editset-type' => 'ⴰⵏⴰⵡ:',
 	'centralauth-editset-wikis' => 'ⵉⴷ ⵡⵉⴽⵉ:',
