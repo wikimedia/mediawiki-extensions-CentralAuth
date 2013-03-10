@@ -132,7 +132,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$fields = array();
 
-		$fields['centralauth-editgroup-name'] = $group;
+		if ( $editable ) {
+			$fields['centralauth-editgroup-name'] = Xml::input( 'wpGlobalGroupName', 50, $group );
+		} else {
+			$fields['centralauth-editgroup-name'] = $group;
+		}
+
 		if( $this->getUser()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
 			$fields['centralauth-editgroup-display'] = $this->msg( 'centralauth-editgroup-display-edit', $group, User::getGroupName( $group ) )->parse();
@@ -263,16 +268,48 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 */
 	function doSubmit( $group ) {
 		// Paranoia -- the edit token shouldn't match anyway
-		if ( !$this->userCanEdit( $this->getUser() ) )
+		if ( !$this->userCanEdit( $this->getUser() ) ) {
 			return;
+		}
+		$reason = $this->getRequest()->getVal( 'wpReason', '' );
 
+
+		// Global group rename
+		$newname = $this->getRequest()->getVal( 'wpGlobalGroupName', $group );
+		if ( $group != $newname ) {
+
+			if ( in_array( $newname, CentralAuthUser::availableGlobalGroups() ) ) {
+				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-rename-taken', $newname );
+				return;
+			}
+
+			$dbw = CentralAuthUser::getCentralDB();
+			$updates = array(
+				'global_group_permissions' => 'ggp_group',
+				'global_group_restrictions' => 'ggr_group',
+				'global_user_groups' => 'gug_group'
+			);
+
+			foreach ( $updates as $table => $field ) {
+				$dbw->update(
+					$table,
+					array( $field => $newname ),
+					array( $field => $group ),
+					__METHOD__
+				);
+			}
+			$this->addRenameLog( $group, $newname, $reason );
+
+			// The rest of the changes here will be performed on the "new" group
+			$group = $newname;
+		}
+
+		// Permissions
 		$newRights = array();
 		$addRights = array();
 		$removeRights = array();
 		$oldRights = $this->getAssignedRights( $group );
 		$allRights = User::getAllRights();
-
-		$reason = $this->getRequest()->getVal( 'wpReason', '' );
 
 		foreach ( $allRights as $right ) {
 			$alreadyAssigned = in_array( $right, $oldRights );
@@ -296,14 +333,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		// Log it
 		if ( !( count( $addRights ) == 0 && count( $removeRights ) == 0 ) )
-			$this->addLogEntry( $group, $addRights, $removeRights, $reason );
+			$this->addPermissionLog( $group, $addRights, $removeRights, $reason );
 
 		// Change set
 		$current = WikiSet::getWikiSetForGroup( $group );
 		$new = $this->getRequest()->getVal( 'set' );
 		if ( $current != $new ) {
 			$this->setRestrictions( $group, $new );
-			$this->addLogEntry2( $group, $current, $new, $reason );
+			$this->addWikiSetLog( $group, $current, $new, $reason );
 		}
 
 		$this->invalidateRightsCache( $group );
@@ -356,20 +393,63 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
-	 * @param $addRights
-	 * @param $removeRights
-	 * @param $reason
+	 * Log permission changes
+	 *
+	 * @param $group string
+	 * @param $addRights array
+	 * @param $removeRights array
+	 * @param $reason string
 	 */
-	function addLogEntry( $group, $addRights, $removeRights, $reason ) {
+	function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
 		$log = new LogPage( 'gblrights' );
 
-		$log->addEntry( 'groupprms2',
+		$log->addEntry(
+			'groupprms2',
 			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
 			$reason,
 			array(
 				$this->makeRightsList( $addRights ),
 				$this->makeRightsList( $removeRights )
+			)
+		);
+	}
+
+	/**
+	 * Log the renaming of a global group
+	 *
+	 * @param $oldName string
+	 * @param $newName string
+	 * @param $reason string
+	 */
+	function addRenameLog( $oldName, $newName, $reason ) {
+		$log = new LogPage( 'gblrights' );
+
+		$log->addEntry(
+			'grouprename',
+			SpecialPage::getTitleFor( 'GlobalUsers', $newName ),
+			$reason,
+			array( SpecialPage::getTitleFor( 'GlobalUsers', $oldName ) )
+		);
+	}
+
+	/**
+	 * Log wikiset changes
+	 *
+	 * @param $group string
+	 * @param $old string
+	 * @param $new string
+	 * @param $reason string
+	 */
+	function addWikiSetLog( $group, $old, $new, $reason ) {
+		$log = new LogPage( 'gblrights' );
+
+		$log->addEntry(
+			'groupprms3',
+			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
+			$reason,
+			array(
+				$this->getWikiSetName( $old ),
+				$this->getWikiSetName( $new ),
 			)
 		);
 	}
@@ -406,25 +486,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
-	 * @param $old
-	 * @param $new
-	 * @param $reason
-	 */
-	function addLogEntry2( $group, $old, $new, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry( 'groupprms3',
-			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
-			$reason,
-			array(
-				$this->getWikiSetName( $old ),
-				$this->getWikiSetName( $new ),
-			)
-		);
-	}
-
-	/**
 	 * @param $id string|int
 	 * @return String
 	 */
@@ -441,6 +502,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 */
 	function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.
+		// Use the master over here as this could go horribly wrong with newly created or just renamed groups
 		$dbr = CentralAuthUser::getCentralDB();
 
 		$res = $dbr->select( array( 'global_user_groups', 'globaluser' ), 'gu_name', array( 'gug_group' => $group, 'gu_id=gug_user' ), __METHOD__ );
