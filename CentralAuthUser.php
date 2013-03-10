@@ -173,7 +173,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// since we're caching it.
 		$dbr = self::getCentralDB();
 
-		$row = $dbr->selectRow( 
+		$row = $dbr->selectRow(
 			array( 'globaluser', 'localuser' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
