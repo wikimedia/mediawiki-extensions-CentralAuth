@@ -4,54 +4,57 @@
 // * go through all usernames in 'globalnames' and for those
 //   that can be automatically migrated, go ahead and do it.
 
-$IP = getenv( 'MW_INSTALL_PATH' );
-if ( $IP === false ) {
-	$IP = __DIR__ . '/../../..';
+if ( getenv( 'MW_INSTALL_PATH' ) ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$IP = dirname( __FILE__ ) . '/../../..';
 }
-require_once( "$IP/maintenance/commandLine.inc" );
+require_once( "$IP/maintenance/Maintenance.php" );
 
-function migratePassOne() {
-	$migrated = 0;
-	$total = 0;
-	$chunkSize = 1000;
-	$start = microtime( true );
-
-	$dbBackground = CentralAuthUser::getCentralSlaveDB();
-	$result = $dbBackground->select(
-		'globalnames',
-		array( 'gn_name' ),
-		'',
-		__METHOD__ );
-	foreach( $result as $row ) {
-		$name = $row->gn_name;
-		$central = new CentralAuthUser( $name );
-		if ( $central->storeAndMigrate() ) {
-			$migrated++;
-		}
-		if ( ++$total % $chunkSize == 0 ) {
-			migratePassOneReport( $migrated, $total, $start );
-		}
+class MigratePass1 extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->mDescription = "Migrates local users to global users where possible";
+		$this->start = microtime( true );
+		$this->batchSize = 1000;
+		$this->migrated = 0;
+		$this->total = 0;
+		$this->fromPrefix = '';
 	}
-	migratePassOneReport( $migrated, $total, $start );
-	echo "DONE\n";
-}
 
-/**
- * @param $migrated
- * @param $total
- * @param $start
- */
-function migratePassOneReport( $migrated, $total, $start ) {
-	$delta = microtime( true ) - $start;
-	printf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated\n",
-		wfTimestamp( TS_DB ),
-		$total,
-		$total / $delta,
-		$migrated,
-		$migrated / $total * 100.0 );
-}
+	public function execute() {
+		echo "CentralAuth migration pass 1:\n";
+		echo "Finding accounts which can be migrated without interaction...\n";
 
-echo "CentralAuth migration pass 1:\n";
-echo "Finding accounts which can be migrated without interaction...\n";
-migratePassOne();
-echo "done.\n";
+		$dbBackground = CentralAuthUser::getCentralSlaveDB();
+		$result = $dbBackground->select(
+			'globalnames',
+			array( 'gn_name' ),
+			array( 'gn_name > ' . $dbBackground->addQuotes( $this->fromPrefix ), ),
+			__METHOD__ );
+		foreach( $result as $row ) {
+			$this->fromPrefix = $row->gn_name;
+			$central = new CentralAuthUser( $row->gn_name );
+			if ( $central->storeAndMigrate() ) {
+				$this->migrated++;
+			}
+			if ( ++$this->total % $this->batchSize == 0 ) {
+				$this->migratePassOneReport();
+			}
+		}
+		$this->migratePassOneReport();
+		echo "done.\n";
+	}
+
+	function migratePassOneReport() {
+		$delta = microtime( true ) - $this->start;
+		printf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated (@ %s)\n",
+			wfTimestamp( TS_DB ),
+			$this->total,
+			$this->total / $delta,
+			$this->migrated,
+			$this->migrated / $this->total * 100.0,
+			$this->fromPrefix
+		);
+	}
+}
