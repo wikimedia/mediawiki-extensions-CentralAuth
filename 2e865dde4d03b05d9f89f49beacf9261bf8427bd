@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqJ2y5wQ",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-11T21:43:02Z",
+      "side": 1,
+      "message": "Just oldName with some HTML escaping please. Otherwise we get logs like this for \u0027Global_bots\u0027 -\u003e \u0027Global bots\u0027:\n\n(Global rights log); 21:30 . . Krenair (Talk | contribs | block) renamed group Special:GlobalUsers/Global bots to Special:GlobalUsers/Global bots ‎(test)",
+      "revId": "2e865dde4d03b05d9f89f49beacf9261bf8427bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
