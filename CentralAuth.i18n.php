@@ -325,6 +325,7 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-name'                      => 'Name of group:',
 	'centralauth-editgroup-display'                   => 'Localised name of group:',
 	'centralauth-editgroup-display-edit'              => '$2 ([[MediaWiki:Group-$1|edit]])',
+	'centralauth-editgroup-invalid-name'              => 'Invalid global group name given',
 	'centralauth-editgroup-member'                    => 'Localised name of group members:',
 	'centralauth-editgroup-member-edit'               => '$2 ([[MediaWiki:Group-$1-member|edit]])',
 	'centralauth-editgroup-members'                   => 'Member list:',
@@ -724,6 +725,7 @@ Parameters:
 * {{msg-mw|Centralauth-rightslog-set-optin}}',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-globalgroupperms-newgroupname' => 'I think this needs to be translated as "Name of the new group", not as "New name of the group". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)',
+	'centralauth-editgroup-invalid-name'              => 'Error shown in case the name given for the global group is invalid',
 	'centralauth-editgroup-subtitle' => 'Subtitle for Special:GlobalGroupPernissions for users who may edit these permission.
 
 Parameters:

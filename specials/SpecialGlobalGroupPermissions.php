@@ -273,9 +273,24 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 		$reason = $this->getRequest()->getVal( 'wpReason', '' );
 
+		// Current name of the group
+		$group = Title::newFromText( $group );
+		if ( !$group ) {
+			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
+			return;
+		}
+		$group = $group->getPrefixedDBkey();
 
-		// Global group rename
+		// (Potentially) New name of the group
 		$newname = $this->getRequest()->getVal( 'wpGlobalGroupName', $group );
+
+		$newname = Title::newFromText( $newname );
+		if ( !$newname ) {
+			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
+			return;
+		}
+		$newname = $newname->getPrefixedDBkey();
+
 		if ( $group != $newname ) {
 
 			if ( in_array( $newname, CentralAuthUser::availableGlobalGroups() ) ) {
