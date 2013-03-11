@@ -169,8 +169,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$sets = WikiSet::getAllWikiSets();
 		$default = WikiSet::getWikiSetForGroup( $group );
 
-		if ( !$this->userCanEdit( $this->getUser() ) )
-			return htmlspecialchars( $default );
+		if ( !$this->userCanEdit( $this->getUser() ) ) {
+			$set = WikiSet::newFromID( $default );
+			if ( $set ) {
+				return Linker::link(
+					SpecialPage::getTitleFor( 'WikiSets', $set->getName() ),
+					htmlspecialchars( $set->getName() )
+				);
+			} else {
+				return $this->msg( 'centralauth-editgroup-nowikiset' );
+			}
+		}
 
 		$select = new XmlSelect( 'set', 'wikiset', $default );
 		$select->addOption( $this->msg( 'centralauth-editgroup-noset' )->text(), '0' );
