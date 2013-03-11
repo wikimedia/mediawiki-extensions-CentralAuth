@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DpzWUAOA",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-11T15:38:43Z",
+      "side": 1,
+      "message": "this file should be dropped from this commit",
+      "revId": "acf805915a8f64fe0147afca88201ab3b4ce2960",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dp-W.mGE",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-11T15:38:43Z",
+      "side": 1,
+      "message": "out of bug scope",
+      "revId": "acf805915a8f64fe0147afca88201ab3b4ce2960",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dp1WRjO4",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-11T15:38:43Z",
+      "side": 1,
+      "message": "out of bug scope",
+      "revId": "acf805915a8f64fe0147afca88201ab3b4ce2960",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
