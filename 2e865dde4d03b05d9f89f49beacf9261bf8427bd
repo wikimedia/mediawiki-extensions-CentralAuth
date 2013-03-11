@@ -16,6 +16,24 @@
       "revId": "2e865dde4d03b05d9f89f49beacf9261bf8427bd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqD2RW-A",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-11T22:58:41Z",
+      "side": 1,
+      "message": "Fixed (follow up makes sure the names are in DB key form)",
+      "parentUuid": "DqJ2y5wQ",
+      "revId": "2e865dde4d03b05d9f89f49beacf9261bf8427bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
