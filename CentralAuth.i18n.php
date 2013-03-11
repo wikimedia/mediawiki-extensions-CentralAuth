@@ -4781,9 +4781,6 @@ Roit ar ger tremen implijet evit ar wiki pennañ mar plij.",
 	'centralauth-not-owner-text' => 'Staget eo bet ent emgefre an anv implijer "$1" ouzh perc\'henn ar gont $2.
 
 Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :',
-	'centralauth-blocked-text' => "Ne c'heller ket kemm ho wiki pennañ (listennet amañ dindan).
-Trugarez da vont e darempred gant ur merour eus ar wiki-mañ evit diglozañ anezhañ.
-A-keit ha ma vo stanket, ne c'helot ket kendeuziñ ho kontoù.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mod demo hepken</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Emañ ar c'hendeuziñ kontoù er mod arnodiñ / dizreinañ evit poent, setu n'haller ket c'hoazh kendeuziñ kontoù da vat. Hon digarezit !",
 	'centralauth-error-locked' => "N'hallit ket degas kemmoù pa'z eo prennet ho kont.",
@@ -4904,6 +4901,8 @@ Abeg : $1',
 	'centralauth-listusers-locked' => 'prennet',
 	'centralauth-listusers-attached' => "[[User:$1|bez ez eus dioutañ en un doare lec'hel]]",
 	'centralauth-listusers-nolocal' => "nann-staget pe n'eus ket outañ en un doare lec'hel",
+	'centralauth-admin-action-lock-nochange' => 'Arabat cheñch ar morailhoù',
+	'centralauth-admin-action-hide-none' => "Diguzhat ar c'hontoù diuzet",
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munut|munut}} zo',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|eurvezh|eurvezh}} zo',
@@ -5034,7 +5033,7 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'right-globalgroupmembership' => "Kemm perc'hennerez ar strolladoù hollek",
 	'right-centralauth-autoaccount' => 'Kevreañ ent emgefre gant ur gont hollek',
 	'right-centralauth-unmerge' => "Nullañ kendeuzadur ar c'hontoù hollek",
-	'right-centralauth-lock' => 'Prennañ pe kuzhat ar gont hollek',
+	'right-centralauth-lock' => 'Prennañ pe kuzhat ar gont hollek', # Fuzzy
 	'right-centralauth-oversight' => 'Dilemel ar gont hollek', # Fuzzy
 	'right-centralauth-merge' => "Kendeuziñ o c'hontoù",
 	'right-globalgrouppermissions' => 'Merañ ar strolladoù hollek',
@@ -6355,6 +6354,7 @@ Rheswm: $1',
  * @author Peter Andersen
  * @author Qaqqalik
  * @author Sarrus
+ * @author Steenth
  */
 $messages['da'] = array(
 	'mergeaccount' => 'Status for sammenlægning af kontoer',
@@ -6460,6 +6460,7 @@ Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver
 	'centralauth-admin-permission' => 'Kun forvaltere kan sammenlægge andre personers kontoer for dem.',
 	'centralauth-admin-no-unified' => 'Der er ingen global konto for dette brugernavn.',
 	'centralauth-admin-info-header' => 'Global brugeroplysning',
+	'centralauth-admin-info-username' => 'Brugernavn:',
 	'centralauth-admin-info-id' => 'Bruger-id:',
 	'centralauth-admin-info-registered' => 'Registreret:',
 	'centralauth-admin-info-home' => 'Hjemmewiki',
@@ -6661,6 +6662,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'right-centralauth-merge' => 'Sammenlægge kontoer',
 	'right-globalgrouppermissions' => 'Administrere globale grupper',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale grupper, som brugeren er i',
+	'action-centralauth-lock' => 'låse eller låse op globale konti',
 );
 
 /** German (Deutsch)
@@ -6942,6 +6944,7 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-editgroup-success-text' => 'Du hast die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.
 [[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bearbeiten]])',
+	'centralauth-editgroup-nowikiset' => 'Keine, gilt für alle Wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähle ein Wiki, auf dem sie ein Benutzerkonto haben:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
 	'centralauth-editset' => 'Wikigruppen',
@@ -10986,6 +10989,7 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-editgroup-success' => 'Os permisos do grupo cambiaron',
 	'centralauth-editgroup-success-text' => 'Cambiou con éxito os permisos do grupo para o grupo $1. [[Special:GlobalGroupPermissions|Volver ao xestor dos grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
+	'centralauth-editgroup-nowikiset' => 'Ningún, aplícase a todos os wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki no que teñen unha conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O usuario global '''$1''' non está activo no wiki especificado (''$2'').
 Posiblemente estea intentando asignar dereitos ao usuario que non é!",
@@ -17633,12 +17637,10 @@ Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
 	'centralauth-not-owner-text' => 'De Benotzernumm "$1" gouf automatesch dem Proprietaire vun dem Benotzerkont op $2 zougedeelt.
 
 Wann Dir dat sidd, kënnt Dir de Prozess vum Zesummeleeë vu Benotzerkonten ofschléissen andeems Dir d\'Haaptpasswuert fir dëse Benotzerkont hei agitt:',
-	'centralauth-blocked-text' => "Är Heemechtswiki (kuckt hei ënnendrënner) ass fir Ännerunge gespaart.
-Kontaktéiert w.e.g. en Administrateur (Sysop) vun där Wiki fir déi d'Spär nees opzehiewen.
-Esoulaang wéi déi Spär besteet, kënnt Dir är Benotzerkonten net zesummeféieren.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demonstratiounsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "D'zesummeféierung vun de Benotzerkonten ass elo an engem Viféier- oder Test-Modus, dofir  kann een zur Zäit nach keng Benotzerkonten zesummeféieren. Pardon!",
 	'centralauth-error-locked' => 'Dir kënnt näischt ännere well Dir gespaart sidd.',
+	'centralauth-error-unmerged' => 'Dir kënnt näischt ännere well Äre Benotzerkont net zesummegeluecht ass.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Méi informatiounen iwwert déi '''global Benotzerkonten''']]...''",
 	'centralauth-list-home-title' => 'Heemechts-Wiki',
 	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi Dir an dëser Wiki uginn hutt gi fir Äre globale Benotzerkont benotzt.",
@@ -17690,6 +17692,7 @@ Wann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-permission' => "Nëmme Stewarde kënnen d'Benotzerkonte vun anere Benotzer fusionéieren.",
 	'centralauth-admin-no-unified' => 'Fir dëse Benotzernumm gëtt et kee globale Benotzerkont.',
 	'centralauth-admin-info-header' => 'Global Benotzerinformatioun',
+	'centralauth-admin-info-username' => 'Benotzernumm:',
 	'centralauth-admin-info-id' => 'Benotzernummer:',
 	'centralauth-admin-info-registered' => 'Ugemellt:',
 	'centralauth-admin-info-home' => 'Heemechts-Wiki:',
@@ -17750,6 +17753,7 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 ** net ubruechte perséinlech Informatiounen',
 	'centralauth-admin-logsnippet' => 'Vireg Ännerunge vum globale Benotzerkont',
 	'centralauth-admin-suppressreason' => 'Global suppriméiert vum $1 aus dësem Grond: $2',
+	'centralauth-admin-not-authorized' => "Dir hutt net d'Rechter fir dës Aktioun ze maachen.",
 	'globalusers' => 'Global Benotzerlëscht',
 	'centralauth-listusers-locked' => 'gespaart',
 	'centralauth-listusers-attached' => '[[User:$1|gëtt et lokal]]',
@@ -17879,13 +17883,14 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'centralauth-editset-success' => 'Grupp vun de Wikie gouf geännert',
 	'centralauth-editset-success-delete' => 'Grupp vun de Wikie gouf geläscht.',
 	'centralauth-editset-return' => 'Zréck op déi normal Vue',
+	'centralauth-block-already-locked' => 'De Benotzer [[Special:CentralAuth/$1|$1]] ass scho global gespaart.',
 	'centralauth-readonly' => "D'CentralAuth Datebank ass gespaart",
 	'centralauth-readonlytext' => "D'CentralAuth Datebank ass elo gespaart fir nei Androungen a fir aner Ännerungen, wahrscheinlech wéinst geplangten Aarbechten un der Datebank, duerno wäert nees alles normal fonctionnéieren.",
 	'right-globalgroupmembership' => 'Zougehéieregkeet zu lokale Gruppen änneren',
 	'right-centralauth-autoaccount' => 'Automatesch mam globale Benotzerkont aloggen.',
 	'right-centralauth-unmerge' => 'Globale Benotzerkont nees trennen',
-	'right-centralauth-lock' => 'Globale Benotzerkont spären oder verstoppen',
-	'right-centralauth-oversight' => 'Globale Benotzerkont suppriméieren', # Fuzzy
+	'right-centralauth-lock' => "Globale Benotzerkont spären oder d'Spär ophiewen",
+	'right-centralauth-oversight' => 'Globale Benotzerkont suppriméieren oder verstoppen',
 	'right-centralauth-merge' => 'Hire Benotzerkont zesummeféieren',
 	'right-globalgrouppermissions' => 'Gestioun vu globale Gruppen',
 );
@@ -32879,6 +32884,7 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
 	'centralauth-editgroup-success' => 'Quyền hạn nhóm đã thay đổi',
 	'centralauth-editgroup-success-text' => 'Bạn đã thay đổi thành công quyền hạn nhóm $1. [[Special:GlobalGroupPermissions|Quay lại quản lý nhóm]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|sửa]])',
+	'centralauth-editgroup-nowikiset' => 'Không có; áp dụng cho tất cả mọi wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki chứa tài khoản của họ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Thành viên toàn cầu '''$1''' không hoạt động trên wiki bạn chỉ định (''$2''). Có thể bạn đang gán quyền sai thành viên!",
 	'centralauth-editset' => 'Tập wiki',
