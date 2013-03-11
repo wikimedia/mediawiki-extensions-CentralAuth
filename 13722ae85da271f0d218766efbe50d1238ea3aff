@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DpypMn3A",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-11T00:41:26Z",
+      "side": 1,
+      "message": "Bug: 27551",
+      "revId": "13722ae85da271f0d218766efbe50d1238ea3aff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dp0pJ618",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-11T00:41:26Z",
+      "side": 1,
+      "message": "Might as well reset this file to HEAD^",
+      "revId": "13722ae85da271f0d218766efbe50d1238ea3aff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
