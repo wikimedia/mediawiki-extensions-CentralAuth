@@ -42,83 +42,32 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			$this->dieUsage( "At least one of the parameters locked, hidden is required", "missingparam" );
 		}
 
-		$setLocked = $this->getParameter( 'locked' ) == 'lock';
+		$setLocked = $this->getParameter( 'locked' );
+
+		if ( !$setLocked ) {
+			// Don't lock or unlock
+			$setLocked = null;
+		} else {
+			$setLocked = $setLocked === 'lock';
+		}
+
 		$setHidden = $this->getParameter( 'hidden' );
 		$reason = $this->getParameter( 'reason' );
 		$stateCheck = $this->getParameter( 'statecheck' );
-		$isLocked = $globalUser->isLocked();
-		$oldHiddenLevel = $globalUser->getHiddenLevel();
 
 		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
 			$this->dieUsage( "Edit conflict detected, Aborting." );
 		}
 
-		if (
-			$setHidden !== null && // hidden is set
-			$oldHiddenLevel != $setHidden && // it's not the same as the old hidden level
-			!$this->getUser()->isAllowed( 'centralauth-oversight' ) // but the user doesn't have the right - oops!
-		) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
-		}
-
-		$lockStatus = $hideStatus = null;
-		$added = array();
-		$removed = array();
-
-		if ( !$isLocked && $setLocked ) {
-			$lockStatus = $globalUser->adminLock();
-			$added[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
-		} elseif ( $this->getRequest()->getCheck( 'locked' ) && $isLocked && !$setLocked ) { // Check that 'locked' is actually set, so that hiding a locked user (without setting the locked parameter) doesn't unlock them.
-			$lockStatus = $globalUser->adminUnlock();
-			$removed[] = $this->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
-		}
-
-		if ( $setHidden !== null && $oldHiddenLevel != $setHidden ) {
-			$hideStatus = $globalUser->adminSetHidden( $setHidden );
-			switch ( $setHidden ) {
-				case CentralAuthUser::HIDDEN_NONE:
-					$removed[] = $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT ?
-						$this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text() :
-						$this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
-					break;
-				case CentralAuthUser::HIDDEN_LISTS:
-					$added[] = $this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
-					if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT )
-						$removed[] = $this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
-					break;
-				case CentralAuthUser::HIDDEN_OVERSIGHT:
-					$added[] = $this->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
-					if ( $oldHiddenLevel == CentralAuthUser::HIDDEN_LISTS )
-						$removed[] = $this->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
-					break;
-			}
-
-			if ( $setHidden == CentralAuthUser::HIDDEN_OVERSIGHT ) {
-				$globalUser->suppress( $reason );
-			} elseif ( $oldHiddenLevel == CentralAuthUser::HIDDEN_OVERSIGHT ) {
-				$globalUser->unsuppress( $reason );
-			}
-		}
-
-		$good =
-			( is_null( $lockStatus ) || $lockStatus->isGood() ) &&
-			( is_null( $hideStatus ) || $hideStatus->isGood() );
+		$status = $globalUser->adminLockHide(
+			$setLocked,
+			$setHidden,
+			$reason,
+			$this->getContext()
+		);
 
 		// Logging etc
-		if ( $good && ( count( $added ) || count( $removed ) ) ) {
-			$added = count( $added ) ?
-				implode( ', ', $added ) : $this->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
-			$removed = count( $removed ) ?
-				implode( ', ', $removed ) : $this->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
-
-			$sca = new SpecialCentralAuth;
-			$sca->logAction(
-				'setstatus',
-				$this->getParameter( 'user' ),
-				$reason,
-				array( $added, $removed ),
-				$setHidden == CentralAuthUser::HIDDEN_OVERSIGHT
-			);
+		if ( $status->isGood() ) {
 			$this->getResult()->addValue( null, $this->getModuleName(), array(
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),
@@ -126,20 +75,11 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 				'reason' => $reason
 			) );
 		} else {
-			if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
-				$this->getResult()->addValue(
-					'error',
-					null,
-					$this->getResult()->convertStatusToArray( $lockStatus )
-				);
-			}
-			if ( !is_null( $hideStatus ) && !$hideStatus->isGood() ) {
-				$this->getResult()->addValue(
-					'error',
-					null,
-					$this->getResult()->convertStatusToArray( $hideStatus )
-				);
-			}
+			$this->getResult()->addValue(
+				'error',
+				null,
+				$this->getResult()->convertStatusToArray( $status )
+			);
 			$this->getResult()->addValue( null, $this->getModuleName(), array(
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),

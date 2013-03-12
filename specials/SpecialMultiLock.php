@@ -336,7 +336,6 @@ class SpecialMultiLock extends SpecialPage {
 			return;
 		}
 
-		$sca = new SpecialCentralAuth;
 		$added = array();
 		$removed = array();
 		$setLocked = null;
@@ -368,13 +367,6 @@ class SpecialMultiLock extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} elseif ( $status->successCount > 0 ) {
-				$sca->logAction(
-					'setstatus',
-					$globalUser->getName(),
-					$this->mReason,
-					$status->success,
-					$setHidden != CentralAuthUser::HIDDEN_NONE
-				);
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $globalUser->getName() );
 			}
 		}

@@ -981,11 +981,12 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Delete a global account
+	 * Delete a global account and log what happened
 	 *
+	 * @reason string Reason for the deletion
 	 * @return Status
 	 */
-	function adminDelete() {
+	function adminDelete( $reason ) {
 		global $wgMemc;
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$centralDB = self::getCentralDB();
@@ -1022,6 +1023,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$centralDB->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
 		$centralDB->commit();
 
+		$this->logAction( 'delete', $reason );
 		$this->invalidateCache();
 
 		return Status::newGood();
@@ -1092,9 +1094,7 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Set locking and hiding settings for a Global User. This code was copied from
-	 * SpecialCentralAuth.php in the hopes that all special and api pages can use a
-	 * common function.
+	 * Set locking and hiding settings for a Global User and log the changes made.
 	 *
 	 * @param $lock Bool|null
 	 *  true = lock
@@ -1196,6 +1196,13 @@ class CentralAuthUser extends AuthPluginUser {
 			$returnStatus->successCount = count( $added ) + count( $removed );
 			$returnStatus->success['added'] = $added;
 			$returnStatus->success['removed'] = $removed;
+
+			$this->logAction(
+				'setstatus',
+				$reason,
+				$returnStatus->success,
+				$setHidden != self::HIDDEN_NONE
+			);
 
 		} elseif ( !$good ) {
 			if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
@@ -2355,5 +2362,20 @@ class CentralAuthUser extends AuthPluginUser {
 	public function getStateHash( $recache = false ) {
 		$this->loadState( $recache );
 		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' . (int) $this->mLocked );
+	}
+
+	/**
+	 * Log an action for the current user
+	 *
+	 * @param $action
+	 * @param $reason string
+	 * @param $params array
+	 * @param $suppressLog bool
+	 */
+	function logAction( $action, $reason = '', $params = array(), $suppressLog = false ) {
+		// Not centralauth because of some weird length limitiations
+		$logType = $suppressLog ? 'suppress' : 'globalauth';
+		$log = new LogPage( $logType );
+		$log->addEntry( $action, Title::newFromText( "User:{$this->mName}@global" ), $reason, $params );
 	}
 }
