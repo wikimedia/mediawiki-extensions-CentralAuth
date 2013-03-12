@@ -16,6 +16,24 @@
       "revId": "77d1cb249b80efc2b4f74c04d775a8968d1aa8b5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqJT3HNI",
+        "filename": "specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-12T17:59:19Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "DqDS2UD4",
+      "revId": "77d1cb249b80efc2b4f74c04d775a8968d1aa8b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
