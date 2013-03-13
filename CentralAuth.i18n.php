@@ -711,8 +711,8 @@ Parameters:
 * $2 - the name of the previous wiki set
 * $3 - the name of the new wiki set',
 	'centralauth-rightslog-entry-grouprename' => 'A log entry when a user renames a global group.
-* $1 is the title of the old group
-* $2 is the title of the new group',
+* $1 is the title of the new group
+* $2 is the title of the old group',
 	'centralauth-rightslog-entry-newset' => "* \$1 is the name of the wiki set (example: \"''Test''\")
 * \$2 is \"''{{msg-mw|Centralauth-rightslog-set-optin}}''\" or \"''{{msg-mw|Centralauth-rightslog-set-optout}}''\"
 * \$3 is a list of wikis (example: \"''srwiki, hrwiki''\")",
@@ -731,13 +731,17 @@ Parameters:
 	'centralauth-editgroup-subtitle-readonly' => 'Subtitle for Special:GlobalGroupPermissions for users without edit right.
 Parameters:
 * $1 - Name of the group',
+	'centralauth-editgroup-rename-taken' => 'Shown in case the renaming of the global group failed because there already is a group with the new name.
+
+Parameters:
+* $1 - the name the user wanted to rename the group to',
 	'centralauth-editgroup-noset' => '{{Identical|None}}',
-	'centralauth-editgroup-rename-taken'              => 'Shown in case the renaming of the global group failed because there already is a group with the new name. $1 is the name the user wanted to rename the group to.',
-	'centralauth-editgroup-nowikiset' => 'Shown on Special:GlobalGroupPermissions for global groups which have no assigned WikiSet.',
-	'centralauth-globalgrouppermissions-knownwiki' => '{{doc-singularthey}}',
+	'centralauth-editgroup-submit' => 'Used as label for the Submit button in Special:GlobalGroupPermissions.',
 	'centralauth-editgroup-reason' => '{{Identical|Reason}}',
 	'centralauth-editgroup-success' => 'Subtitle of Special:GlobalGroupPermissions after a group has successfully been altered',
 	'centralauth-editgroup-success-text' => 'Text on Special:GlobalGroupPermissions after a group has successfully been altered. $1 is the name of the global group.',
+	'centralauth-editgroup-nowikiset' => 'Shown on Special:GlobalGroupPermissions for global groups which have no assigned WikiSet.',
+	'centralauth-globalgrouppermissions-knownwiki' => '{{doc-singularthey}}',
 	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
 	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
 	'centralauth-editset-legend-ro' => 'The legend of the fieldset. Displayed when the user cannot edit.',
@@ -1661,12 +1665,12 @@ $messages['ar'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|قائمة المستخدمين بالصلاحيات $2]]',
 	'centralauth-editgroup-restrictions' => 'مجموعة الويكيات حيث هذه المجموعة نشطة:',
 	'centralauth-editgroup-noset' => '(لا شيء)',
-	'centralauth-editgroup-submit' => 'احفظ التغييرات على سماحات المجموعة',
+	'centralauth-editgroup-submit' => 'احفظ التغييرات على سماحات المجموعة', # Fuzzy
 	'centralauth-editgroup-perms' => 'السماحات المصاحبة:',
 	'centralauth-editgroup-reason' => 'السبب:',
-	'centralauth-editgroup-success' => 'سماحات المجموعة تم تغييرها',
+	'centralauth-editgroup-success' => 'سماحات المجموعة تم تغييرها', # Fuzzy
 	'centralauth-editgroup-success-text' => 'أنت غيرت بنجاح سماحات المجموعة للمجموعة $1.
-[[Special:GlobalGroupPermissions|الرجوع إلى إدارة المجموعة]]',
+[[Special:GlobalGroupPermissions|الرجوع إلى إدارة المجموعة]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|عدل]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'الويكي حيث يمتلك حسابا:',
 	'centralauth-globalgroupmembership-badknownwiki' => "المستخدم العام '''$1''' ليس نشطا على الويكي الذي حددته (''$2'').
@@ -2568,6 +2572,7 @@ Si se renoma fadrá que l'usuariu llocal seya dixebráu del usuariu global.",
 	'centralauth-rightslog-entry-groupperms' => 'camudó los permisos de grupu pa $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'camudó los permisos de grupu pa $1. Añadíos $2; Eliminaos $3',
 	'centralauth-rightslog-entry-groupperms3' => "camudó'l conxuntu de wikis con restricción de grupos pa $1 de $2 a $3",
+	'centralauth-rightslog-entry-grouprename' => "camudó'l nome del grupu $1 a $2",
 	'centralauth-rightslog-header' => 'Esti rexistru contién operaciones de grupos globales: pertenencia y cambeos de permisos',
 	'centralauth-rightslog-entry-newset' => 'creó $2 conxuntos wiki $1 coles siguientes wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'renomó\'l conxuntu wiki "$2" como "$1"',
@@ -2604,14 +2609,16 @@ Date cuenta qu'un grupu nun esiste a nun ser que tenga permisos asignaos.",
 	'centralauth-editgroup-members' => 'Llista de miembros:',
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Llista d'usuarios con drechos de $2]]",
 	'centralauth-editgroup-restrictions' => 'Conxuntu de wikis onde esti grupu ta activu:',
+	'centralauth-editgroup-rename-taken' => 'Fallu al camudar el nome: Yá esiste un grupu col nome $1.',
 	'centralauth-editgroup-noset' => '(nengún)',
-	'centralauth-editgroup-submit' => 'Guardar los cambeos de los permisos de grupu',
+	'centralauth-editgroup-submit' => 'Guardar los cambeos a los grupos globales',
 	'centralauth-editgroup-perms' => 'Permisos asignaos:',
 	'centralauth-editgroup-reason' => 'Motivu:',
-	'centralauth-editgroup-success' => 'Permisos de grupu camudaos',
-	'centralauth-editgroup-success-text' => 'Camudasti con ésitu los permisos de grupu del grupu $1.
-[[Special:GlobalGroupPermissions|Torna al remanamientu de grupos]]',
+	'centralauth-editgroup-success' => 'Grupu global camudáu',
+	'centralauth-editgroup-success-text' => "Anováu correutamente'l grupu global $1.
+[[Special:GlobalGroupPermissions|Volver a la xestión de grupos]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
+	'centralauth-editgroup-nowikiset' => 'Nengún, aplícase a toles wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wikis onde se tienen cuentes:',
 	'centralauth-globalgroupmembership-badknownwiki' => "L'usuariu global '''$1''' nun ta activu na wiki qu'especificasti ('' $2 '').
 ¡Seique teas intentando asignas drechos al usuariu erroneu!",
@@ -3973,6 +3980,7 @@ $messages['be-tarask'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'зьменены правы групы для $1 з $2 на $3',
 	'centralauth-rightslog-entry-groupperms2' => 'зьмяніў правы для групы $1. Дадаў $2; выдаліў $3',
 	'centralauth-rightslog-entry-groupperms3' => 'зьменены групавыя абмежаваньні вікі для $1 з $2 на $3',
+	'centralauth-rightslog-entry-grouprename' => 'група $2 перайменаваная ў $1',
 	'centralauth-rightslog-header' => 'Гэты журнал утрымлівае запісы пра дзеяньні з глябальнымі групамі: зьмены ўдзелаў і правоў',
 	'centralauth-rightslog-entry-newset' => 'створаны набор вікі $2 з назвай $1: $3',
 	'centralauth-rightslog-entry-setrename' => 'зьменена назва набору вікі «$2» на «$1»',
@@ -4009,14 +4017,16 @@ $messages['be-tarask'] = array(
 	'centralauth-editgroup-members' => 'Сьпіс удзельнікаў:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Сьпіс удзельнікаў з правамі $2]]',
 	'centralauth-editgroup-restrictions' => 'Набор вікі, у якіх гэта група зьяўляецца актыўнай:',
+	'centralauth-editgroup-rename-taken' => 'Не ўдалося перайменаваць: група з назвай «$1» ужо існуе.',
 	'centralauth-editgroup-noset' => '(няма)',
-	'centralauth-editgroup-submit' => 'Захаваць зьмены ў правах групы',
+	'centralauth-editgroup-submit' => 'Захаваць зьмены ў глябальных групах',
 	'centralauth-editgroup-perms' => 'Прызначаныя правы:',
 	'centralauth-editgroup-reason' => 'Прычына:',
-	'centralauth-editgroup-success' => 'Правы групы зьменены',
-	'centralauth-editgroup-success-text' => 'Вы пасьпяхова зьмянілі правы групы $1.
+	'centralauth-editgroup-success' => 'Глябальная група зьмененая',
+	'centralauth-editgroup-success-text' => 'Глябальная група «$1» была пасьпяхова абноўленая.
 [[Special:GlobalGroupPermissions|Вярнуцца да кіраваньня групамі]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|рэдагаваць]])',
+	'centralauth-editgroup-nowikiset' => 'Няма, пашырана на ўсі вікі.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вікі, у якіх яны маюць рахункі:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Глябальны ўдзельнік '''$1''' не актыўны ў пазначанай Вамі вікі ('' $2 '').
 Магчыма Вы спрабуеце прызначыць правы не таму ўдзельніку!",
@@ -4993,12 +5003,12 @@ Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Roll an implijerien dezho ar gwirioù $2]]',
 	'centralauth-editgroup-restrictions' => "C'hoari wikioù evit pere eo oberiant ar strollad :",
 	'centralauth-editgroup-noset' => '(hini ebet)',
-	'centralauth-editgroup-submit' => "Enrollañ ar c'hemmoù da aotreoù ar strollad",
+	'centralauth-editgroup-submit' => "Enrollañ ar c'hemmoù da aotreoù ar strollad", # Fuzzy
 	'centralauth-editgroup-perms' => 'Aotreoù deroet :',
 	'centralauth-editgroup-reason' => 'Abeg :',
-	'centralauth-editgroup-success' => 'Cheñchet eo aotreoù ar strollad',
+	'centralauth-editgroup-success' => 'Cheñchet eo aotreoù ar strollad', # Fuzzy
 	'centralauth-editgroup-success-text' => "Kemmet hoc'h eus an aotreoù roet d'ar strollad hollek $1.
-[[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù hollek]]",
+[[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù hollek]]", # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|kemmañ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki o deus ur gont warno :',
 	'centralauth-globalgroupmembership-badknownwiki' => "Dioberiant eo an implijer hollek '''$1''' war ar wiki merket ganeoc'h (''$2'').
@@ -5826,7 +5836,6 @@ Zadejte heslo na domácí wiki.',
 	'centralauth-not-owner-text' => 'Uživatelské jméno „$1“ bylo automaticky přiřazeno majiteli účtu na projektu $2.
 
 Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadáním hesla pro uvedený účet:',
-	'centralauth-blocked-text' => 'Váš účet na vaší domovské wiki (uvedené níže) je zablokován. Prosím, kontaktujte správce z této wiki, aby ho odblokoval. Slučování účtů nemůže pokračovat, dokud je zablokován.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Toto je jen demonstrační režim</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Sloučení účtů probíhá momentálně jen v demonstračním / ladicím režimu, takže samotné slučovací operace jsou vypnuté. Promiňte!',
 	'centralauth-error-locked' => 'Nemůžete editovat, protože váš účet byl uzamčen.',
@@ -5880,6 +5889,7 @@ Tato funkce je nyní z bezpečnostních důvodů vypnuta.',
 	'centralauth-admin-permission' => 'Pouze stevardi mohou slučovat účty za jiné uživatele.',
 	'centralauth-admin-no-unified' => 'Toto uživatelské jméno nemá žádný jednotný účet.',
 	'centralauth-admin-info-header' => 'Informace o globálním uživateli',
+	'centralauth-admin-info-username' => 'Uživatelské jméno:',
 	'centralauth-admin-info-id' => 'Uživatelské ID:',
 	'centralauth-admin-info-registered' => 'Registrováno:',
 	'centralauth-admin-info-home' => 'Domovská wiki:',
@@ -5918,6 +5928,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-nonexistent' => 'Globální účet „<nowiki>$1</nowiki>“ neexistuje.',
 	'centralauth-admin-delete-nonexistent' => 'Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.',
 	'centralauth-token-mismatch' => 'Je nám líto, nebylo možné zpracovat údaje z formuláře, které jste poslali, z důvodu ztráty informací o vaší relaci.',
+	'centralauth-state-mismatch' => 'Chyba: U tohoto uživatele byl detekován editační konflikt. Zkontrolujte své změny a zkuste to znovu.',
 	'centralauth-admin-reason' => 'Důvod:',
 	'centralauth-admin-reason-other' => 'Jiný/další důvod:',
 	'centralauth-admin-unhide-nonexistent' => 'Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.',
@@ -5941,6 +5952,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 ** nevhodné osobní údaje',
 	'centralauth-admin-logsnippet' => 'Předchozí změny globálního účtu',
 	'centralauth-admin-suppressreason' => 'Globálně utajil $1 se zdůvodněním: $2',
+	'centralauth-admin-not-authorized' => 'K provedení této akce nemáte oprávnění',
 	'globalusers' => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => '[[User:$1|existuje lokálně]]',
@@ -5989,6 +6001,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-rightslog-entry-groupperms' => 'změnil oprávnění skupiny $1 z $2 na $3',
 	'centralauth-rightslog-entry-groupperms2' => 'změnil oprávnění skupiny $1. Přidáno $2; odstraněno $3',
 	'centralauth-rightslog-entry-groupperms3' => 'změnil rozsah používání skupiny $1 ze sady $2 na $3',
+	'centralauth-rightslog-entry-grouprename' => 'přejmenoval skupinu $2 na $1',
 	'centralauth-rightslog-header' => 'Tato kniha obsahuje operace na globálních skupinách: změny členství a oprávnění.',
 	'centralauth-rightslog-entry-newset' => 'vytvořil sadu wiki $1 obsahující $2: $3',
 	'centralauth-rightslog-entry-setrename' => 'přejmenoval sadu wiki „$2“ na „$1“',
@@ -6022,14 +6035,16 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editgroup-members' => 'Seznam členů:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Seznam uživatelů s právy $2]]',
 	'centralauth-editgroup-restrictions' => 'Sada wiki, na kterých je tato skupina aktivní:',
+	'centralauth-editgroup-rename-taken' => 'Přejmenování se nezdařilo: Skupina s názvem $1 již existuje.',
 	'centralauth-editgroup-noset' => '(žádné)',
-	'centralauth-editgroup-submit' => 'Uložit změny v oprávněních skupiny',
+	'centralauth-editgroup-submit' => 'Uložit změny globální skupiny',
 	'centralauth-editgroup-perms' => 'Přiřazená oprávnění:',
 	'centralauth-editgroup-reason' => 'Důvod:',
-	'centralauth-editgroup-success' => 'Oprávnění skupiny byla změněna',
-	'centralauth-editgroup-success-text' => 'Úspěšně jste změnili oprávnění skupiny pro skupinu $1.
+	'centralauth-editgroup-success' => 'Globální skupina byla změněna',
+	'centralauth-editgroup-success-text' => 'Globální skupina $1 úspěšně změněna.
 [[Special:GlobalGroupPermissions|Návrat na správu skupin]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|upravit]])',
+	'centralauth-editgroup-nowikiset' => 'Žádná, vztahuje se na všechny wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vyberte wiki, na níž má účet:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globální uživatel  '''$1''' není aktivní na wiki, kterou jste uvedli (''$2''). Možná se pokoušíte přidělit práva nesprávnému uživateli.",
 	'centralauth-editset' => 'Sady wiki',
@@ -6071,11 +6086,12 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
 	'right-centralauth-autoaccount' => 'Automatické přihlášení globálním účtem',
 	'right-centralauth-unmerge' => 'Rozlučování sloučených globálních účtů',
-	'right-centralauth-lock' => 'Zamykání a skrývání globálních účtů',
+	'right-centralauth-lock' => 'Zamykání a odemykání globálních účtů',
 	'right-centralauth-oversight' => 'Utajování nebo skrývání globálních účtů',
 	'right-centralauth-merge' => 'Slučování jejich účtů',
 	'right-globalgrouppermissions' => 'Spravování globálních skupin',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globální skupiny, do kterých uživatel patří',
+	'action-centralauth-lock' => 'zamykat nebo odemykat globální účty',
 );
 
 /** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
@@ -6616,12 +6632,12 @@ Bemærk at en gruppe ikke findes med mindre den har nogen rettigheder.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Liste over brugere med $2-rettigheder]]',
 	'centralauth-editgroup-restrictions' => 'Wikigruppe hvor denne gruppe er aktiv:',
 	'centralauth-editgroup-noset' => '(ingen)',
-	'centralauth-editgroup-submit' => 'Gem ændringer af gruppetilladelser',
+	'centralauth-editgroup-submit' => 'Gem ændringer af gruppetilladelser', # Fuzzy
 	'centralauth-editgroup-perms' => 'Tildelte tilladelser:',
 	'centralauth-editgroup-reason' => 'Begrundelse:',
-	'centralauth-editgroup-success' => 'Gruppetilladelserne er ændret',
+	'centralauth-editgroup-success' => 'Gruppetilladelserne er ændret', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Du har ændret gruppetilladelsene til gruppen $1.
-[[Special:GlobalGroupPermissions|Tilbage til gruppeadministration]]',
+[[Special:GlobalGroupPermissions|Tilbage til gruppeadministration]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigér]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki hvor vedkommende har en konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globale bruger '''$1''' er ikke aktiv på det angivne wiki (''$2'').
@@ -6910,6 +6926,7 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'centralauth-rightslog-entry-groupperms' => 'änderte die Gruppenrechte für „$1“ von $2 auf $3',
 	'centralauth-rightslog-entry-groupperms2' => 'änderte die Gruppenberechtigung für $1. Ergänzt $2; entfernt $3',
 	'centralauth-rightslog-entry-groupperms3' => 'änderte anwendbare Wikigruppen für $1 von $2 auf $3',
+	'centralauth-rightslog-entry-grouprename' => 'hat die Gruppe „$2“ in „$1“ umbenannt',
 	'centralauth-rightslog-header' => 'Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen',
 	'centralauth-rightslog-entry-newset' => 'erstellte $2 die Wikigruppe $1 mit den folgenden Wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'benannte die Wikigruppe „$2“ in „$1“ um',
@@ -6944,12 +6961,13 @@ Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-editgroup-members' => 'Mitgliederliste:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Liste der Benutzer mit dem $2-Recht]]',
 	'centralauth-editgroup-restrictions' => 'Wikigruppe, in denen diese Gruppe aktiv ist:',
+	'centralauth-editgroup-rename-taken' => 'Umbenennung fehlgeschlagen: Es gibt bereits eine Gruppe mit dem Namen „$1“.',
 	'centralauth-editgroup-noset' => '(keine)',
-	'centralauth-editgroup-submit' => 'Änderungen an den Gruppenrechten speichern',
+	'centralauth-editgroup-submit' => 'Änderungen an globalen Gruppen speichern',
 	'centralauth-editgroup-perms' => 'Zugewiesene Rechte:',
 	'centralauth-editgroup-reason' => 'Grund:',
-	'centralauth-editgroup-success' => 'Gruppenrechte geändert',
-	'centralauth-editgroup-success-text' => 'Du hast die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.
+	'centralauth-editgroup-success' => 'Die globale Gruppe wurde geändert',
+	'centralauth-editgroup-success-text' => 'Die globale Gruppe „$1“ wurde erfolgreich aktualisiert.
 [[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bearbeiten]])',
 	'centralauth-editgroup-nowikiset' => 'Keine, gilt für alle Wikis.',
@@ -8953,12 +8971,12 @@ Pane tähele, et rühma pole olemas, kui sellele pole õiguseid antud.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Rühmaliikme $2 õigustega kasutajad]]',
 	'centralauth-editgroup-restrictions' => 'Vikide komplekte, kus see rühm on tegev:',
 	'centralauth-editgroup-noset' => '(ei midagi)',
-	'centralauth-editgroup-submit' => 'Salvesta rühma kasutusõiguste muudatused',
+	'centralauth-editgroup-submit' => 'Salvesta rühma kasutusõiguste muudatused', # Fuzzy
 	'centralauth-editgroup-perms' => 'Lubatud:',
 	'centralauth-editgroup-reason' => 'Põhjus:',
-	'centralauth-editgroup-success' => 'Rühma kasutusõigused muudetud',
+	'centralauth-editgroup-success' => 'Rühma kasutusõigused muudetud', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Oled edukalt rühma $1 õigused muutnud.
-[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]',
+[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muuda]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vikid, kus neil on konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globaalne konto '''$1''' pole valitud vikis ('' $2 '') aktiivne.
@@ -9709,12 +9727,12 @@ Ryhmää ei ole olemassa, jos sille ei ole annettu mitään oikeuksia.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Luettelo käyttäjistä, joilla on käyttöoikeus $2]]',
 	'centralauth-editgroup-restrictions' => 'Wikijoukot, joissa tämä ryhmä on aktiivinen:',
 	'centralauth-editgroup-noset' => '(ei mitään)',
-	'centralauth-editgroup-submit' => 'Tallenna ryhmän käyttöoikeuksien muutokset',
+	'centralauth-editgroup-submit' => 'Tallenna ryhmän käyttöoikeuksien muutokset', # Fuzzy
 	'centralauth-editgroup-perms' => 'Myönnetyt käyttöoikeudet:',
 	'centralauth-editgroup-reason' => 'Syy',
-	'centralauth-editgroup-success' => 'Ryhmän käyttöoikeudet vaihdettu',
+	'centralauth-editgroup-success' => 'Ryhmän käyttöoikeudet vaihdettu', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Ryhmän $1 käyttöoikeudet onnistuneesti vaihdettu.
-[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]',
+[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muokkaa]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki, jossa käyttäjällä on tunnus:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Järjestelmänlaajuista tunnusta '''$1''' ei ole olemassa wikissä ''$2''.
@@ -10293,12 +10311,12 @@ Notez qu’un groupe global ne peut exister que si des permissions lui sont assi
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Liste des utilisateurs globaux avec les droits $2]]',
 	'centralauth-editgroup-restrictions' => 'Jeu de wikis où ce groupe est actif :',
 	'centralauth-editgroup-noset' => '(néant)',
-	'centralauth-editgroup-submit' => 'Enregistrer les changements de permissions du groupe global',
+	'centralauth-editgroup-submit' => 'Enregistrer les changements de permissions du groupe global', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permissions assignées :',
 	'centralauth-editgroup-reason' => 'Motif :',
-	'centralauth-editgroup-success' => 'Les permissions du groupe global ont bien été modifiées',
+	'centralauth-editgroup-success' => 'Les permissions du groupe global ont bien été modifiées', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Vous avez modifié avec succès les permissions assignées au groupe global $1.
-[[Special:GlobalGroupPermissions|Revenir à la gestion des groupes globaux]]',
+[[Special:GlobalGroupPermissions|Revenir à la gestion des groupes globaux]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modifier]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki sur lequel ils ont un compte :',
 	'centralauth-globalgroupmembership-badknownwiki' => "L’utilisateur global '''$1''' est inactif sur le wiki que vous avez indiqué (''$2'').
@@ -10955,6 +10973,7 @@ Ao renomealo, isto provocará que o usuario local sexa afastado do global.',
 	'centralauth-rightslog-entry-groupperms' => 'cambiou os dereitos do grupo "$1" de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'cambiou os permisos que tiña o grupo $1. Engadiu $2; eliminou $3',
 	'centralauth-rightslog-entry-groupperms3' => 'cambiou o grupo restrinxido do wiki fixado para "$1" de $2 a $3',
+	'centralauth-rightslog-entry-grouprename' => 'cambiou o nome do grupo "$2" a "$1"',
 	'centralauth-rightslog-header' => 'Este rexistro contén as operacións nos grupos globais: membros e cambios de permisos',
 	'centralauth-rightslog-entry-newset' => 'creou unha configuración $2 chamada "$1" cos seguintes wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'renomeou a configuración chamada "$2" a "$1"',
@@ -10990,12 +11009,14 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-editgroup-members' => 'Lista de membros:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista dos usuarios con dereitos de $2]]',
 	'centralauth-editgroup-restrictions' => 'Parámetros dos wikis onde este grupo está activo:',
+	'centralauth-editgroup-rename-taken' => 'Erro ao cambiar o nome: Xa hai un grupo co nome "$1".',
 	'centralauth-editgroup-noset' => '(ningún)',
-	'centralauth-editgroup-submit' => 'Gardar os cambios dos permisos do grupo',
+	'centralauth-editgroup-submit' => 'Gardar os cambios no grupo global',
 	'centralauth-editgroup-perms' => 'Permisos asignados:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Os permisos do grupo cambiaron',
-	'centralauth-editgroup-success-text' => 'Cambiou con éxito os permisos do grupo para o grupo $1. [[Special:GlobalGroupPermissions|Volver ao xestor dos grupos]]',
+	'centralauth-editgroup-success' => 'O grupo global cambiou',
+	'centralauth-editgroup-success-text' => 'Actualizou correctamente o grupo global "$1".
+[[Special:GlobalGroupPermissions|Volver á administración dos grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-editgroup-nowikiset' => 'Ningún, aplícase a todos os wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki no que teñen unha conta:',
@@ -12016,11 +12037,11 @@ $messages['he'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|רשימת המשתמשים עם ההרשאה $2]]',
 	'centralauth-editgroup-restrictions' => 'קבוצת אתרי הוויקי בהם הקבוצה פעילה:',
 	'centralauth-editgroup-noset' => '(אין)',
-	'centralauth-editgroup-submit' => 'שמירת שינויים בהרשאות הקבוצה',
+	'centralauth-editgroup-submit' => 'שמירת שינויים בהרשאות הקבוצה', # Fuzzy
 	'centralauth-editgroup-perms' => 'הרשאות:',
 	'centralauth-editgroup-reason' => 'הסיבה:',
-	'centralauth-editgroup-success' => 'הרשאות הקבוצה שונו בהצלחה',
-	'centralauth-editgroup-success-text' => 'שיניתם בהצלחה את הרשאות הקבוצה $1. [[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].',
+	'centralauth-editgroup-success' => 'הרשאות הקבוצה שונו בהצלחה', # Fuzzy
+	'centralauth-editgroup-success-text' => 'שיניתם בהצלחה את הרשאות הקבוצה $1. [[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|עריכה]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'אתר שבו יש להם חשבון משתמש:',
 	'centralauth-globalgroupmembership-badknownwiki' => "החשבון הכללי '''$1''' אינו פעיל באתר הוויקי שציינתם ('''$2'''). ייתכן שאתם מנסים לשנות את ההרשאות של המשתמש הלא נכון!",
@@ -12968,12 +12989,12 @@ Wobkedźbuj, zo skupina njeeksistuje, doniž prawa njejsu připokazane.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lisćina wužiwarjow z prawami $2]]',
 	'centralauth-editgroup-restrictions' => 'Sadźba wikijow, hdźež tuta skupina je aktiwna:',
 	'centralauth-editgroup-noset' => '(žadyn)',
-	'centralauth-editgroup-submit' => 'Změny na skupinskich prawach změnić',
+	'centralauth-editgroup-submit' => 'Změny na skupinskich prawach změnić', # Fuzzy
 	'centralauth-editgroup-perms' => 'Připokazane prawa:',
 	'centralauth-editgroup-reason' => 'Přičina:',
-	'centralauth-editgroup-success' => 'Skupinske prawa změnjene',
+	'centralauth-editgroup-success' => 'Skupinske prawa změnjene', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Sy skupinske prawa za skupinu $1 wuspěšnje změnił.
-[[Special:GlobalGroupPermissions|Wróco k zrjadowanju globalnych skupinow]]',
+[[Special:GlobalGroupPermissions|Wróco k zrjadowanju globalnych skupinow]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|wobdźěłać]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wubjerće wiki, na kotrymž maja konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalny wužiwar '''$1''' njeje aktiwny we wikiju, kotryž sy podał ('' $2 '').
@@ -13947,12 +13968,12 @@ Suatu kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Daftar anggota dengan hak $2]]',
 	'centralauth-editgroup-restrictions' => 'Set wiki di mana kelompok ini aktif:',
 	'centralauth-editgroup-noset' => '(tidak ada)',
-	'centralauth-editgroup-submit' => 'Simpan perubahan hak kelompok',
+	'centralauth-editgroup-submit' => 'Simpan perubahan hak kelompok', # Fuzzy
 	'centralauth-editgroup-perms' => 'Hak yang diberikan:',
 	'centralauth-editgroup-reason' => 'Alasan:',
-	'centralauth-editgroup-success' => 'Perubahan hak kelompok telah tersimpan',
+	'centralauth-editgroup-success' => 'Perubahan hak kelompok telah tersimpan', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Anda telah berhasil mengubah hak kelompok $1.
-[[Special:GlobalGroupPermissions|Kembali ke manajemen kelompok]]',
+[[Special:GlobalGroupPermissions|Kembali ke manajemen kelompok]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|sunting]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki di mana mereka memiliki akun:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Pengguna global '''$1''' tidak aktif di wiki yang Anda pilih ('' $2 ''). Anda mungkin memberikan hak ke pengguna yang salah!",
@@ -14912,12 +14933,12 @@ Nota che un gruppo non esiste a meno che non gli siano stati assegnati i permess
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Elenco di utenti con permessi $2]]',
 	'centralauth-editgroup-restrictions' => 'Insieme di wiki dove questo gruppo è attivo:',
 	'centralauth-editgroup-noset' => '(nessuno)',
-	'centralauth-editgroup-submit' => 'Salva i cambiamenti ai permessi di gruppo',
+	'centralauth-editgroup-submit' => 'Salva i cambiamenti ai permessi di gruppo', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permessi assegnati:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Permessi di gruppo cambiati',
+	'centralauth-editgroup-success' => 'Permessi di gruppo cambiati', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Hai cambiato con successo i permessi di gruppo per il gruppo $1.
-[[Special:GlobalGroupPermissions|Torna alla gestione dei gruppi]]',
+[[Special:GlobalGroupPermissions|Torna alla gestione dei gruppi]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modifica]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Seleziona una wiki sulla quale ha un account:',
 	'centralauth-globalgroupmembership-badknownwiki' => "L'utente globale '''$1''' non è attivo sulla wiki che hai specificato ('' $2 '').
@@ -15221,6 +15242,7 @@ $messages['ja'] = array(
 	'centralauth-rightslog-entry-groupperms' => '$1 のグループ権限を $2 から $3 に変更しました',
 	'centralauth-rightslog-entry-groupperms2' => '$1 のグループ権限を変更しました。追加: $2、除去: $3',
 	'centralauth-rightslog-entry-groupperms3' => '$1 に対して制限されているウィキ集合を $2 から $3 に変更しました',
+	'centralauth-rightslog-entry-grouprename' => 'グループ名 $2 を $1 に変更',
 	'centralauth-rightslog-header' => 'このログはグローバルグループの操作 (メンバー管理、パーミッション変更) が記録されています。',
 	'centralauth-rightslog-entry-newset' => '$2ウィキ集合 $1 を以下のウィキで作成しました: $3',
 	'centralauth-rightslog-entry-setrename' => 'ウィキ集合「$2」の名前を「$1」に変更しました',
@@ -15257,12 +15279,13 @@ $messages['ja'] = array(
 	'centralauth-editgroup-members' => 'メンバー一覧:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2の権限を持つ利用者一覧]]',
 	'centralauth-editgroup-restrictions' => 'このグループが活動しているウィキ集合:',
+	'centralauth-editgroup-rename-taken' => '名前の変更に失敗しました: $1 という名前のグループは既にあります。',
 	'centralauth-editgroup-noset' => '(なし)',
-	'centralauth-editgroup-submit' => 'グループ権限への変更を保存',
+	'centralauth-editgroup-submit' => 'グローバルグループの変更内容を保存',
 	'centralauth-editgroup-perms' => '割り当てられた権限:',
 	'centralauth-editgroup-reason' => '理由:',
-	'centralauth-editgroup-success' => 'グループ権限を変更しました',
-	'centralauth-editgroup-success-text' => '$1 グループのグループ権限を変更しました。
+	'centralauth-editgroup-success' => 'グローバルグループを変更しました',
+	'centralauth-editgroup-success-text' => 'グローバルグループ $1 を更新しました。
 [[Special:GlobalGroupPermissions|グループ操作に戻る]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編集]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'アカウントがあるウィキ:',
@@ -17049,12 +17072,12 @@ $messages['ko'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 권한을 가진 사용자의 목록]]',
 	'centralauth-editgroup-restrictions' => '이 그룹을 활성화할 위키의 집합:',
 	'centralauth-editgroup-noset' => '(없음)',
-	'centralauth-editgroup-submit' => '그룹 권한에 대한 바뀜을 저장',
+	'centralauth-editgroup-submit' => '그룹 권한에 대한 바뀜을 저장', # Fuzzy
 	'centralauth-editgroup-perms' => '부여된 권한:',
 	'centralauth-editgroup-reason' => '이유:',
-	'centralauth-editgroup-success' => '이 그룹의 권한이 바뀌었습니다.',
+	'centralauth-editgroup-success' => '이 그룹의 권한이 바뀌었습니다.', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 그룹에 대한 권한을 성공적으로 바꾸었습니다.
-[[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아가기]]',
+[[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아가기]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-editgroup-nowikiset' => '모든 위키에 적용할 위키 집합이 없습니다.',
 	'centralauth-globalgrouppermissions-knownwiki' => '계정을 가지고 있는 위키:',
@@ -17849,12 +17872,12 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lëscht vu Benotzer matt $2 Rechter]]',
 	'centralauth-editgroup-restrictions' => 'Astellunge vun de Wikien op deenen dës Grupp aktiv ass',
 	'centralauth-editgroup-noset' => '(keen)',
-	'centralauth-editgroup-submit' => 'Ännerunge vun de Grupperechter späicheren',
+	'centralauth-editgroup-submit' => 'Ännerunge vun de Grupperechter späicheren', # Fuzzy
 	'centralauth-editgroup-perms' => 'Zougedeelte Rechter:',
 	'centralauth-editgroup-reason' => 'Grond:',
-	'centralauth-editgroup-success' => "D'Grupperechter si geännert",
+	'centralauth-editgroup-success' => "D'Grupperechter si geännert", # Fuzzy
 	'centralauth-editgroup-success-text' => "Dir hutt d'Rechter vum Grupp $1 geännert.
-[[Special:GlobalGroupPermissions|Zréck op d'Gestioun vu Gruppen]]",
+[[Special:GlobalGroupPermissions|Zréck op d'Gestioun vu Gruppen]]", # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|änneren]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki op där si e Benotzerkont hunn:',
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bemotzer '''$1''' ass net op där Wiki aktiv déi Dir uginn hutt ('' $2 '').
@@ -19342,12 +19365,12 @@ $messages['mk'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список на корисници со права на $2]]',
 	'centralauth-editgroup-restrictions' => 'Збир викија кадешто е активна групата:',
 	'centralauth-editgroup-noset' => '(нема)',
-	'centralauth-editgroup-submit' => 'Зачувај промени во групните дозволи',
+	'centralauth-editgroup-submit' => 'Зачувај промени во групните дозволи', # Fuzzy
 	'centralauth-editgroup-perms' => 'Доделени дозволи:',
 	'centralauth-editgroup-reason' => 'Причина:',
-	'centralauth-editgroup-success' => 'Групните дозволи се променети',
+	'centralauth-editgroup-success' => 'Групните дозволи се променети', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Успешно ги променивте групните дозволи на групата $1.
-[[Special:GlobalGroupPermissions|Назад кон раководењето со групи]]',
+[[Special:GlobalGroupPermissions|Назад кон раководењето со групи]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|уреди]])',
 	'centralauth-editgroup-nowikiset' => 'Нема. Важи за сите викија.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики на кое имаат сметка:',
@@ -21861,6 +21884,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-rightslog-entry-groupperms' => 'wijzigde groepsrechten voor $1 van $2 naar $3',
 	'centralauth-rightslog-entry-groupperms2' => 'heeft de rechten voor $1 gewijzigd. Toegevoegd: $2. Verwijderd: $3',
 	'centralauth-rightslog-entry-groupperms3' => 'heeft de beperkte wikigroep voor $1 van $2 naar $3 gewijzigd',
+	'centralauth-rightslog-entry-grouprename' => 'heeft de groep $2 hernoemd naar $1',
 	'centralauth-rightslog-header' => 'Dit logboek bevat wijzigingen aan globale groepen, zoals wijzigingen in groepslidmaatschap en toegewezen rechten',
 	'centralauth-rightslog-entry-newset' => "heeft $2 wikigroep $1 aangemaakt met de volgende wiki's: $3",
 	'centralauth-rightslog-entry-setrename' => 'heeft de wikigroep "$2" hernoemd naar "$1"',
@@ -21896,12 +21920,14 @@ Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 	'centralauth-editgroup-members' => 'Ledenlijst:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Gebruikers met het recht $2]]',
 	'centralauth-editgroup-restrictions' => "Groep van wiki's waar deze groep actief is:",
+	'centralauth-editgroup-rename-taken' => 'Hernoemen is mislukt: er bestaat al een groep met de naam "$1".',
 	'centralauth-editgroup-noset' => '(geen)',
-	'centralauth-editgroup-submit' => 'Wijzigingen aan groepsrechten opslaan',
+	'centralauth-editgroup-submit' => 'Wijzigingen aan globale groep opslaan',
 	'centralauth-editgroup-perms' => 'Toegekende rechten:',
 	'centralauth-editgroup-reason' => 'Reden:',
-	'centralauth-editgroup-success' => 'De groepsrechten zijn gewijzigd',
-	'centralauth-editgroup-success-text' => 'U hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]',
+	'centralauth-editgroup-success' => 'De globale groep is gewijzigd',
+	'centralauth-editgroup-success-text' => 'U hebt de globale groep "$1" bijgewerkt.
+[[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bewerken]])',
 	'centralauth-editgroup-nowikiset' => "Geen, van toepassing op alle wiki's.",
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki waarop hij of zij een gebruiker heeft:',
@@ -25344,6 +25370,7 @@ Ne dispiace!",
 Sta funzione jè desabbilitate mò pe mutive de securezze.",
 	'centralauth-merge-method-new-desc' => "Indichesce ca 'u cunde utende globbale ha state ccrejate automaticamende quanne 'u cunde utende locale ha state ccrejate.",
 	'centralauth-merge-method-login-desc' => "Indichesce ca 'u cunde utende locale ha state ccrejate automaticamende quanne l'utende ha trasute.",
+	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => 'Fusione spicciate',
 	'centralauth-finish-password' => 'Passuord:',
 	'centralauth-finish-login' => 'Tràse',
@@ -25364,6 +25391,7 @@ Otre cunde angore non g'onne state confermate.",
 	'centralauth-admin-permission' => 'Sule le steward pòtene aunì le cunde de le otre pè lòre.',
 	'centralauth-admin-no-unified' => 'Nisciune cunde aunifecate pè quiste nome.',
 	'centralauth-admin-info-header' => "Liste de l'utinde globbale",
+	'centralauth-admin-info-username' => 'Nome utende:',
 	'centralauth-admin-info-id' => "ID de l'utende:",
 	'centralauth-admin-info-registered' => 'Reggistrate:',
 	'centralauth-admin-info-home' => 'Casa uicchi:',
@@ -25424,6 +25452,7 @@ Mutive: $1',
 	'globalusers' => "Liste de l'utinde globbale",
 	'centralauth-listusers-locked' => 'bloccate',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmende]]',
+	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => "staccate o non g'esiste localmende",
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|seconde|seconde}} fà',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minute|minute}} fà',
@@ -25493,13 +25522,14 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-editgroup-members-link' => ' [[Special:GlobalUsers/$1|Liste de utinde cu $2 diritte]]',
 	'centralauth-editgroup-restrictions' => 'Totte le uicchi addò quiste gruppe jè attive:',
 	'centralauth-editgroup-noset' => '(ninde)',
-	'centralauth-editgroup-submit' => "Salve le cangiaminde a le autorizzazione d'u gruppe",
+	'centralauth-editgroup-submit' => 'Reggìstre le cangiaminde de le gruppe globbale',
 	'centralauth-editgroup-perms' => 'Permesse assegnate:',
 	'centralauth-editgroup-reason' => 'Mutive:',
-	'centralauth-editgroup-success' => "Autorizzazione d'u gruppe cangiate",
-	'centralauth-editgroup-success-text' => "Hagghie cangiate cu successe le autorizzazione d'u gruppe pè 'u $1 gruppe.
-[[Special:GlobalGroupPermissions|Torne ad 'a gestione d'u gruppe]]",
+	'centralauth-editgroup-success' => 'Gruppe globbale cangiate',
+	'centralauth-editgroup-success-text' => "Aggiornamende d'u gruppe globbale $1 riuscite
+[[Special:GlobalGroupPermissions|Tuèrne a 'a gestione d'u gruppe]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|cange]])',
+	'centralauth-editgroup-nowikiset' => 'Ninde, appliche a tutte le uicchi.',
 	'centralauth-globalgrouppermissions-knownwiki' => "Uicchi sus a cui se iacchie 'nu cunde:",
 	'centralauth-editset' => 'Apparecchie uicchi',
 	'centralauth-editset-legend-rw' => 'Cange o creje apparecchie uicchi',
@@ -25526,6 +25556,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-editset-badtype' => 'Inzieme de tipe invalide.',
 	'centralauth-editset-setexists' => "'Nu set cu quiste nome jè già esistende",
 	'centralauth-editset-nowikis' => 'Nisciune wiki specifecate.',
+	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ninde)',
 	'centralauth-editset-usage' => "Ausate jndr'à le gruppe:",
 	'centralauth-editset-badwikis' => "{{PLURAL:$2|Sta Uicchi non g'esiste|Ste Uicchi non g'esistene}}: $1.",
@@ -32087,11 +32118,11 @@ $messages['uk'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список користувачів із правами $2]]',
 	'centralauth-editgroup-restrictions' => 'Набір вікі, в яких ця група діє:',
 	'centralauth-editgroup-noset' => '(нема)',
-	'centralauth-editgroup-submit' => 'Зберегти зміни прав групи',
+	'centralauth-editgroup-submit' => 'Зберегти зміни прав групи', # Fuzzy
 	'centralauth-editgroup-perms' => 'Призначені права:',
 	'centralauth-editgroup-reason' => 'Причина:',
-	'centralauth-editgroup-success' => 'Права групи змінені',
-	'centralauth-editgroup-success-text' => 'Ви успішно змінили права груп для групи $1. [[Special:GlobalGroupPermissions|Повернутися до управління групами]]',
+	'centralauth-editgroup-success' => 'Права групи змінені', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Ви успішно змінили права груп для групи $1. [[Special:GlobalGroupPermissions|Повернутися до управління групами]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|змінити]])',
 	'centralauth-editgroup-nowikiset' => 'Ні, поширюється на всі проекти.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вікі, в яких вони мають облікові записи:',
@@ -32906,11 +32937,11 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Danh sách thành viên với quyền $2]]',
 	'centralauth-editgroup-restrictions' => 'Các wiki trong phạm vi của nhóm này:',
 	'centralauth-editgroup-noset' => '(không có)',
-	'centralauth-editgroup-submit' => 'Lưu thay đổi đối với quyền hạn nhóm',
+	'centralauth-editgroup-submit' => 'Lưu thay đổi đối với quyền hạn nhóm', # Fuzzy
 	'centralauth-editgroup-perms' => 'Quyền đã gán:',
 	'centralauth-editgroup-reason' => 'Lý do:',
-	'centralauth-editgroup-success' => 'Quyền hạn nhóm đã thay đổi',
-	'centralauth-editgroup-success-text' => 'Bạn đã thay đổi thành công quyền hạn nhóm $1. [[Special:GlobalGroupPermissions|Quay lại quản lý nhóm]]',
+	'centralauth-editgroup-success' => 'Quyền hạn nhóm đã thay đổi', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Bạn đã thay đổi thành công quyền hạn nhóm $1. [[Special:GlobalGroupPermissions|Quay lại quản lý nhóm]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|sửa]])',
 	'centralauth-editgroup-nowikiset' => 'Không có; áp dụng cho tất cả mọi wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki chứa tài khoản của họ:',
@@ -33298,6 +33329,8 @@ $messages['yi'] = array(
 	'autologin' => 'אויטאמאטיש איינלאגירן',
 	'globalgroupmembership' => 'מיטגלידערשאפֿט אין גלאבאלע גרופעס',
 	'globalgrouppermissions' => 'גלאבאלע גרופע פֿארוואלטונג',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|באקוקן/רעדאקטירן]])',
+	'centralauth-globalgroupperms-nogroups' => 'קיין גלאבאלע גרופעס נישט דעפינירט.',
 	'centralauth-globalgroupperms-newgroupname' => 'נייע גרופע נאמען',
 	'centralauth-globalgroupperms-creategroup-submit' => 'צוגעבן רעכטן',
 	'centralauth-editgroup-subtitle' => 'רעדאקטירן $1',
@@ -33312,10 +33345,13 @@ $messages['yi'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|ליסטע פון באניצער מיט $2 רעכטן]]',
 	'centralauth-editgroup-restrictions' => 'גרופע פון וויקיס וואו די גרופע איז אקטיוו:',
 	'centralauth-editgroup-noset' => '(קיין)',
-	'centralauth-editgroup-submit' => 'אויפהיטן ענדערונגען צו גרופע רעכטן',
+	'centralauth-editgroup-submit' => 'אויפהיטן גלאבאלע גרופע ענדערונגען',
 	'centralauth-editgroup-perms' => 'צוגעגעבענע רעכטן:',
 	'centralauth-editgroup-reason' => 'אורזאַך:',
-	'centralauth-editgroup-success' => 'גרופע רעכטן געענדערט',
+	'centralauth-editgroup-success' => 'גלאבאלע גרופע געענדערט',
+	'centralauth-editset' => 'וויקיגרופעס',
+	'centralauth-editset-legend-view' => 'וויקי גרופע "$1"',
+	'centralauth-editset-legend-new' => 'שאפן נייע וויקיגרופע',
 	'centralauth-editset-subtitle' => '< [[Special:WikiSets|ליסטע פון גרופעס]]',
 	'centralauth-editset-name' => 'נאָמען:',
 	'centralauth-editset-type' => 'טיפ:',
@@ -34193,11 +34229,11 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2許可的用戶名單]]',
 	'centralauth-editgroup-restrictions' => '在此組處於活躍的維基站點：',
 	'centralauth-editgroup-noset' => '（無）',
-	'centralauth-editgroup-submit' => '保存更改到組許可',
+	'centralauth-editgroup-submit' => '保存更改到組許可', # Fuzzy
 	'centralauth-editgroup-perms' => '已指定的許可:',
 	'centralauth-editgroup-reason' => '原因：',
-	'centralauth-editgroup-success' => '組許可已經更改',
-	'centralauth-editgroup-success-text' => '您已經成功地更改$1組的組許可。[[Special:GlobalGroupPermissions|回到組管理]]',
+	'centralauth-editgroup-success' => '組許可已經更改', # Fuzzy
+	'centralauth-editgroup-success-text' => '您已經成功地更改$1組的組許可。[[Special:GlobalGroupPermissions|回到組管理]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編輯]])',
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki（'' $2 ''）中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
