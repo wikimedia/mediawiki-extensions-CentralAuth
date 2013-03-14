@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqLcjNMA",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-14T22:57:58Z",
+      "side": 1,
+      "message": "was this changed to right on purpose?",
+      "revId": "b7b035562af8540b18287116008b14f273a7361d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqHctnKc",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-14T22:57:58Z",
+      "side": 1,
+      "message": "formset? Not fieldset?",
+      "revId": "b7b035562af8540b18287116008b14f273a7361d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
