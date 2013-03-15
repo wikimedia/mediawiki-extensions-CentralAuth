@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqKKg0JU",
+        "filename": "maintenance/migratePass1.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-15T00:57:58Z",
+      "side": 1,
+      "message": "extra comma",
+      "revId": "b658a30a533dc9c18a848507c40501d928697622",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqCKMwC4",
+        "filename": "maintenance/migratePass1.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-15T00:57:58Z",
+      "side": 1,
+      "message": "missing space",
+      "revId": "b658a30a533dc9c18a848507c40501d928697622",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
