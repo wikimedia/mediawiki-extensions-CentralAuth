@@ -761,7 +761,7 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalGroupPermissions' => array( '全域组权限' ),
 	'WikiSets' => array( '编辑维基组' ),
 	'GlobalUsers' => array( '全域用户' ),
-	'MultiLock' => array( '锁定多个' ),
+	'MultiLock' => array( '批量锁定' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
