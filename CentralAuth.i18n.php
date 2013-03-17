@@ -7788,11 +7788,11 @@ Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lisćina wužywarjow z pšawami $2]]',
 	'centralauth-editgroup-restrictions' => 'Wikikupka, źož toś ta kupka jo aktiwna:',
 	'centralauth-editgroup-noset' => '(žedne)',
-	'centralauth-editgroup-submit' => 'Změny na kupkowych pšawach składowaś',
+	'centralauth-editgroup-submit' => 'Změny na globalnych kupkach składowaś',
 	'centralauth-editgroup-perms' => 'Pśipokazane pšawa:',
 	'centralauth-editgroup-reason' => 'Pśicyna:',
-	'centralauth-editgroup-success' => 'Kupkowe pšawa změnjone',
-	'centralauth-editgroup-success-text' => 'Sy kupkowe pšawa za kupku $1 wuspěšnje změnił.
+	'centralauth-editgroup-success' => 'Globalna kupka změnjona',
+	'centralauth-editgroup-success-text' => 'Globalna kupka $1 jo se wuspěšnje změniła.
 [[Special:GlobalGroupPermissions|Slědk ku kupkowemu zastojanjeju]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|wobźěłaś]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wubjeŕ wiki, na kótaremž maju konto:',
@@ -10144,6 +10144,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author Gomoko
  * @author Grondin
  * @author Guillom
+ * @author Hello71
  * @author IAlex
  * @author Louperivois
  * @author McDutchie
@@ -10427,7 +10428,7 @@ Notez qu’un groupe global ne peut exister que si des permissions lui sont assi
 	'centralauth-editgroup-restrictions' => 'Jeu de wikis où ce groupe est actif :',
 	'centralauth-editgroup-rename-taken' => 'Le changement de nom a échoué : il existe déjà un groupe portant le nom $1.',
 	'centralauth-editgroup-noset' => '(néant)',
-	'centralauth-editgroup-submit' => 'Enregistrer les changements de permissions du groupe global', # Fuzzy
+	'centralauth-editgroup-submit' => 'Enregistrer les modifications du groupe global',
 	'centralauth-editgroup-perms' => 'Permissions assignées :',
 	'centralauth-editgroup-reason' => 'Motif :',
 	'centralauth-editgroup-success' => 'Les permissions du groupe global ont bien été modifiées', # Fuzzy
@@ -11121,6 +11122,7 @@ Un grupo pode ser eliminado quitándolle todos os dereitos.',
 	'centralauth-editgroup-name' => 'Nome do grupo:',
 	'centralauth-editgroup-display' => 'Nome localizado do grupo:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|editar]])',
+	'centralauth-editgroup-invalid-name' => 'Especificouse un nome de grupo global que non é válido',
 	'centralauth-editgroup-member' => 'Nome localizado dos membros do grupo:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editar]])',
 	'centralauth-editgroup-members' => 'Lista de membros:',
@@ -15446,6 +15448,7 @@ $messages['ja'] = array(
 	'centralauth-editgroup-success-text' => 'グローバルグループ $1 を更新しました。
 [[Special:GlobalGroupPermissions|グループ操作に戻る]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編集]])',
+	'centralauth-editgroup-nowikiset' => 'なし、すべてのウィキに適用されます。',
 	'centralauth-globalgrouppermissions-knownwiki' => 'アカウントがあるウィキ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "グローバルアカウントの利用者 '''$1''' は指定したウィキ ('' $2 '') では活動していません。
 間違った利用者に権限を付与しようとしているおそれがあります!",
@@ -27726,9 +27729,6 @@ Prosimo, vnesite geslo domačega wikija.',
 	'centralauth-not-owner-text' => 'Uporabniško ime »$1« je bilo samodejno dodeljeno lastniku računa na $2.
 
 Če ste to vi, lahko preprosto dokončate postopek enotne prijave tako, da tukaj vnesete glavno geslo tega računa:',
-	'centralauth-blocked-text' => 'Vaš domači wiki (naveden spodaj) je blokiran pred urejanji.
-Prosimo, obrnite se na administratorja tega wikija, da ga odblokira.
-Medtem ko je blokiran, ne morete združiti svojih računov.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Samo predstavitveni način</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Poenotenje računov je trenutno v predstavitvenem načinu oz. načinu popravljanja napak, zato so dejanske dejavnosti združevanja onemogočene.
 Oprostite!',
@@ -27936,11 +27936,11 @@ Pomnite, da skupina ne obstaja, dokler nima dodeljenih dovoljenj.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Seznam uporabnikov s pravicami $2]]',
 	'centralauth-editgroup-restrictions' => 'Množica wikijev, kjer je ta skupina dejavna:',
 	'centralauth-editgroup-noset' => '(noben)',
-	'centralauth-editgroup-submit' => 'Shrani spremembe dovoljenj skupine',
+	'centralauth-editgroup-submit' => 'Shrani spremembe globalne skupine',
 	'centralauth-editgroup-perms' => 'Dodeljena dovoljenja:',
 	'centralauth-editgroup-reason' => 'Razlog:',
-	'centralauth-editgroup-success' => 'Dovoljenja skupine so spremenjena',
-	'centralauth-editgroup-success-text' => 'Uspešno ste spremenili dovoljenja skupine $1.
+	'centralauth-editgroup-success' => 'Globalna skupina je spremenjena',
+	'centralauth-editgroup-success-text' => 'Uspešno ste posodobili globalno skupino $1.
 [[Special:GlobalGroupPermissions|Vrnite se na upravljanje skupin]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|uredi]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wikiji, na katerih imajo račune:',
@@ -27985,8 +27985,8 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'right-globalgroupmembership' => 'Urejanje članstva v globalnih skupinah',
 	'right-centralauth-autoaccount' => 'Samodejno prijavljanje z globalnim računom',
 	'right-centralauth-unmerge' => 'Razdruževanje globalnih računov',
-	'right-centralauth-lock' => 'Zaklepanje ali skrivanje globalnega računa',
-	'right-centralauth-oversight' => 'Zatiranje globalnih računov', # Fuzzy
+	'right-centralauth-lock' => 'Zaklepanje ali odklepanje globalnega računa',
+	'right-centralauth-oversight' => 'Zatiranje ali skrivanje globalnih računov',
 	'right-centralauth-merge' => 'Združevanje njihovih računov',
 	'right-globalgrouppermissions' => 'Upravljanje globalnih skupin',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupine, v katere je uvrščen uporabnik',
