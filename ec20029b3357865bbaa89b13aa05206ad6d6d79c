@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqMXioKM",
+        "filename": "maintenance/migratePass1.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-18T18:44:44Z",
+      "side": 1,
+      "message": "I think __DIR__ is preferred, but either way",
+      "revId": "ec20029b3357865bbaa89b13aa05206ad6d6d79c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqAW0GH0",
+        "filename": "maintenance/migratePass1.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-18T18:44:44Z",
+      "side": 1,
+      "message": "Don\u0027t you need\n$maintClass \u003d \"MigratePass1\";\nrequire_once( RUN_MAINTENANCE_IF_MAIN );",
+      "revId": "ec20029b3357865bbaa89b13aa05206ad6d6d79c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
