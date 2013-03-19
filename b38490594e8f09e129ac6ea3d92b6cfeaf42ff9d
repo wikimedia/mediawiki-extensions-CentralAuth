@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqeIknLY",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-19T00:22:24Z",
+      "side": 1,
+      "message": "wrong",
+      "revId": "b38490594e8f09e129ac6ea3d92b6cfeaf42ff9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqYINoDg",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-19T00:22:24Z",
+      "side": 1,
+      "message": "division by 0",
+      "revId": "b38490594e8f09e129ac6ea3d92b6cfeaf42ff9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
