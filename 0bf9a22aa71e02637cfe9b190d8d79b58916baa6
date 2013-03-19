@@ -34,6 +34,24 @@
       "revId": "0bf9a22aa71e02637cfe9b190d8d79b58916baa6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqQI0K6k",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-03-19T23:05:34Z",
+      "side": 1,
+      "message": "Yep, that\u0027s exactly what I\u0027m heading towards. I think it should be an easy change to renameuser\u0027s log formatter. And I think having the local log will make it easier for local admins to understand what happened when they see the new username making edits.",
+      "parentUuid": "DqTP7yEY",
+      "revId": "0bf9a22aa71e02637cfe9b190d8d79b58916baa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
