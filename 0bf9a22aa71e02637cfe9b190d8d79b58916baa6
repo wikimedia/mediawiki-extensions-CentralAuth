@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqZNUFFM",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-19T20:53:19Z",
+      "side": 1,
+      "message": "Global renames should *not* be logged locally because we can\u0027t signify that the performer may not be the same user as the one with the name on the local wiki, without adding even more ridiculous restrictions to who can globally rename. Please restore the old logging code.",
+      "revId": "0bf9a22aa71e02637cfe9b190d8d79b58916baa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
