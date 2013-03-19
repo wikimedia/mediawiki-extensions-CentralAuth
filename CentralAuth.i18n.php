@@ -10391,6 +10391,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-rightslog-entry-groupperms' => 'a modifié les permissions du groupe global $1 de $2 à $3',
 	'centralauth-rightslog-entry-groupperms2' => 'a modifié les permissions du groupe global $1 : a ajouté $2 ; a retiré $3',
 	'centralauth-rightslog-entry-groupperms3' => 'a modifié le jeu restreint de wikis pour le groupe global $1 de $2 sur $3',
+	'centralauth-rightslog-entry-grouprename' => 'groupe $2 renommé en $1',
 	'centralauth-rightslog-header' => 'Ce journal contient les opérations relatives aux groupes globaux : modifications des membres et des permissions assignées à chaque groupe',
 	'centralauth-rightslog-entry-newset' => 'a créé le jeu de wikis $1 $2 avec les wikis suivants : $3',
 	'centralauth-rightslog-entry-setrename' => 'a renommé le jeu de wikis « $2 » en « $1 »',
@@ -10422,6 +10423,7 @@ Notez qu’un groupe global ne peut exister que si des permissions lui sont assi
 	'centralauth-editgroup-name' => 'Nom du groupe global :',
 	'centralauth-editgroup-display' => 'Nom localisé du groupe global :',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|modifier]])',
+	'centralauth-editgroup-invalid-name' => 'Nom de groupe global fourni non valide',
 	'centralauth-editgroup-member' => 'Nom localisé des membres du groupe global :',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|modifier]])',
 	'centralauth-editgroup-members' => 'Liste des membres :',
@@ -10432,9 +10434,9 @@ Notez qu’un groupe global ne peut exister que si des permissions lui sont assi
 	'centralauth-editgroup-submit' => 'Enregistrer les modifications du groupe global',
 	'centralauth-editgroup-perms' => 'Permissions assignées :',
 	'centralauth-editgroup-reason' => 'Motif :',
-	'centralauth-editgroup-success' => 'Les permissions du groupe global ont bien été modifiées', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Vous avez modifié avec succès les permissions assignées au groupe global $1.
-[[Special:GlobalGroupPermissions|Revenir à la gestion des groupes globaux]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Groupe global modifié',
+	'centralauth-editgroup-success-text' => 'Groupe global $1 bien mis à jour.
+[[Special:GlobalGroupPermissions|Revenir à la gestion des groupes]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modifier]])',
 	'centralauth-editgroup-nowikiset' => "Aucun, s'applique à tous les wikis.",
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki sur lequel ils ont un compte :',
@@ -19496,6 +19498,7 @@ $messages['mk'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'ги промени групните дозволи за $1 од $2 на $3',
 	'centralauth-rightslog-entry-groupperms2' => 'ги измени групните права за $1. Додадено $2; Отстрането $3',
 	'centralauth-rightslog-entry-groupperms3' => 'ги промени групните ограничувања за збировите од викија за $1 од $2 на $3',
+	'centralauth-rightslog-entry-grouprename' => 'ја преименуваше групата $2 во $1',
 	'centralauth-rightslog-header' => 'Овој дневник содржи операции со глобални групи: промени во членството и дозволите',
 	'centralauth-rightslog-entry-newset' => '$2 го создаде збирот од викија $1 со следниве викија: $3',
 	'centralauth-rightslog-entry-setrename' => 'го преименува збирот од викија од „$2“ на „$1“',
@@ -19527,18 +19530,20 @@ $messages['mk'] = array(
 	'centralauth-editgroup-name' => 'Име на групата:',
 	'centralauth-editgroup-display' => 'Локализирано име на групата:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|уреди]])',
+	'centralauth-editgroup-invalid-name' => 'Зададено неважечко име на глобална група',
 	'centralauth-editgroup-member' => 'Локализирано име на членовите на групата:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|уреди]])',
 	'centralauth-editgroup-members' => 'Список на членови:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список на корисници со права на $2]]',
 	'centralauth-editgroup-restrictions' => 'Збир викија кадешто е активна групата:',
+	'centralauth-editgroup-rename-taken' => 'Преименувањето не успеа: Веќе постои група наречена „$1“.',
 	'centralauth-editgroup-noset' => '(нема)',
-	'centralauth-editgroup-submit' => 'Зачувај промени во групните дозволи', # Fuzzy
+	'centralauth-editgroup-submit' => 'Зачувај промени во глоб. група',
 	'centralauth-editgroup-perms' => 'Доделени дозволи:',
 	'centralauth-editgroup-reason' => 'Причина:',
-	'centralauth-editgroup-success' => 'Групните дозволи се променети', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Успешно ги променивте групните дозволи на групата $1.
-[[Special:GlobalGroupPermissions|Назад кон раководењето со групи]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Глобалната група е изменета',
+	'centralauth-editgroup-success-text' => 'Успешно подновена глобалната група $1.
+[[Special:GlobalGroupPermissions|Назад кон раководењето со групи]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|уреди]])',
 	'centralauth-editgroup-nowikiset' => 'Нема. Важи за сите викија.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики на кое имаат сметка:',
