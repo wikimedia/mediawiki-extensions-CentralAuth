@@ -16,6 +16,24 @@
       "revId": "0bf9a22aa71e02637cfe9b190d8d79b58916baa6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqTP7yEY",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-19T20:59:02Z",
+      "side": 1,
+      "message": "Actually looking at the code which adds the startedFrom wiki to the performer, this may be okay... You\u0027ll need to add code to core to parse the @wikiid bit out first though, so it links to the correct wiki instead of a broken link like \u003chttps://www.mediawiki.org/wiki/Special:Contributions/PerformerName@metawiki\u003e. See Ia784eaf3.",
+      "parentUuid": "DqZNUFFM",
+      "revId": "0bf9a22aa71e02637cfe9b190d8d79b58916baa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
