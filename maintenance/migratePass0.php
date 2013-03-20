@@ -16,7 +16,7 @@ require_once( "$IP/maintenance/commandLine.inc" );
 function migratePassZero() {
 	global $wgDBname;
 	$dbr = wfGetDB( DB_SLAVE );
-	$chunkSize = 1000;
+	$chunkSize = 10000;
 
 	$start = microtime( true );
 	$migrated = 0;
@@ -27,7 +27,7 @@ function migratePassZero() {
 
 	$lastUser = $dbr->selectField( 'user', 'MAX(user_id)', '', __FUNCTION__ );
 	for ( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
-		$max = $min + $chunkSize;
+		$max = $min + $chunkSize - 1;
 		$result = $dbr->select( 'user',
 			array( 'user_id', 'user_name' ),
 			"user_id BETWEEN $min AND $max",
@@ -48,6 +48,10 @@ function migratePassZero() {
 			min( $max, $lastUser ) / $lastUser * 100.0,
 			$delta,
 			$rate );
+
+		echo "Waiting for slaves to catch up ... ";
+		wfWaitForSlaves( false, 'centralauth' );
+		echo "done\n";
 	}
 }
 
