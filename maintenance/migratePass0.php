@@ -27,7 +27,7 @@ function migratePassZero() {
 
 	$lastUser = $dbr->selectField( 'user', 'MAX(user_id)', '', __FUNCTION__ );
 	for ( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
-		$max = $min + $chunkSize;
+		$max = $min + $chunkSize - 1;
 		$result = $dbr->select( 'user',
 			array( 'user_id', 'user_name' ),
 			"user_id BETWEEN $min AND $max",
@@ -39,6 +39,7 @@ function migratePassZero() {
 		}
 
 		CentralAuthUser::storeMigrationData( $wgDBname, $users );
+		$users = array(); // clear the array for the next pass
 
 		$delta = microtime( true ) - $start;
 		$rate = ( $delta == 0.0 ) ? 0.0 : $migrated / $delta;
@@ -48,6 +49,12 @@ function migratePassZero() {
 			min( $max, $lastUser ) / $lastUser * 100.0,
 			$delta,
 			$rate );
+
+		if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
+			echo "Waiting for slaves to catch up ... ";
+			wfWaitForSlaves( false, 'centralauth' );
+			echo "done\n";
+		}
 	}
 }
 
