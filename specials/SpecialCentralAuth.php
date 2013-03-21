@@ -367,6 +367,10 @@ class SpecialCentralAuth extends SpecialPage {
 	function formatMergeMethod( $method ) {
 		global $wgExtensionAssetsPath;
 
+		// Give grep a chance to find the usages:
+		// centralauth-merge-method-primary, centralauth-merge-method-empty, centralauth-merge-method-mail,
+		// centralauth-merge-method-password, centralauth-merge-method-admin, centralauth-merge-method-new,
+		// centralauth-merge-method-login
 		$brief = wfMessage( "centralauth-merge-method-{$method}" )->text();
 		$html =
 			Html::element(
@@ -676,6 +680,15 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return array
 	 */
 	function getMergeMethodDescriptions() {
+		// Give grep a chance to find the usages:
+		//  centralauth-merge-method-primary, centralauth-merge-method-new, centralauth-merge-method-empty,
+		//  centralauth-merge-method-password, centralauth-merge-method-mail, centralauth-merge-method-admin,
+		//  centralauth-merge-method-login
+		// Give grep a chance to find the usages:
+		//  centralauth-merge-method-primary-desc, centralauth-merge-method-new-desc,
+		//  centralauth-merge-method-empty-desc, centralauth-merge-method-password-desc,
+		//  centralauth-merge-method-mail-desc, centralauth-merge-method-admin-desc,
+		//  centralauth-merge-method-login-desc
 		$mergeMethodDescriptions = array();
 		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
 			$mergeMethodDescriptions[$method] = array(

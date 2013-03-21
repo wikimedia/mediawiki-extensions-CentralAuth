@@ -70,14 +70,17 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $msg
 	 */
 	function buildMainView( $msg = '' ) {
+		// Give grep a chance to find the usages: centralauth-editset-legend-rw, centralauth-editset-legend-ro
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
 		$legend = $this->msg( "centralauth-editset-legend-{$msgPostfix}" )->text();
 		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		if ( $msg )
 			$this->getOutput()->addHTML( $msg );
+		// Give grep a chance to find the usages: centralauth-editset-intro-rw, centralauth-editset-intro-ro
 		$this->getOutput()->addWikiMsg( "centralauth-editset-intro-{$msgPostfix}" );
 		$this->getOutput()->addHTML( '<ul>' );
 
+		// Give grep a chance to find the usages: centralauth-editset-item-rw, centralauth-editset-item-ro
 		$sets = WikiSet::getAllWikiSets();
 		foreach ( $sets as $set ) {
 			$text = $this->msg( "centralauth-editset-item-{$msgPostfix}", $set->getName(), $set->getID() )->parse();
@@ -180,6 +183,7 @@ class SpecialWikiSets extends SpecialPage {
 			$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 			$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
 		} else {
+			// Give grep a chance to find the usages: centralauth-editset-optin, centralauth-editset-optout
 			$form = array();
 			$form['centralauth-editset-name'] = htmlspecialchars( $name );
 			$form['centralauth-editset-usage'] = $usage;
@@ -197,6 +201,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @return string
 	 */
 	function buildTypeSelector( $name, $value ) {
+		// Give grep a chance to find the usages: centralauth-editset-optin, centralauth-editset-optout
 		$select = new XmlSelect( $name, 'set-type', $value );
 		foreach ( array( WikiSet::OPTIN, WikiSet::OPTOUT ) as $type ) {
 			$select->addOption( $this->msg( "centralauth-editset-{$type}" )->text(), $type );

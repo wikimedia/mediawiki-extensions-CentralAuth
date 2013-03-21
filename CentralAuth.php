@@ -371,6 +371,10 @@ function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filte
 			$args = array();
 	}
 
+	// Give grep a chance to find the usages:
+	// centralauth-rightslog-entry-newset, centralauth-rightslog-entry-setrename,
+	// centralauth-rightslog-entry-setnewtype, centralauth-rightslog-entry-setchange,
+	// centralauth-rightslog-entry-deleteset
 	$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
 	if( $skin ) {
 		return $msg->text();
