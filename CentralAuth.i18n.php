@@ -10926,7 +10926,7 @@ Sentímolo!',
 	'centralauth-list-attached-dryrun' => 'A conta chamada "$1" será relacionada automaticamente coa conta unificada en cada un dos seguintes sitios:',
 	'centralauth-list-unattached-title' => 'Contas non relacionadas',
 	'centralauth-list-unattached' => 'Non se puido confirmar que a conta "$1" lle pertenza a vostede nos seguintes sitios;
-o máis probábel é que teñan un contrasinal diferente ao da súa conta primaria:',
+o máis probable é que teñan un contrasinal diferente ao da súa conta primaria:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribucións}} en $2',
 	'centralauth-merge-method-primary' => 'wiki principal',
