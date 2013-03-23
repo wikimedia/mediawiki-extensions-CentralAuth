@@ -16,6 +16,24 @@
       "revId": "b5cdd5c639c2870bed9180a28edb2944cc4fffd7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqi4gOK8",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-23T21:28:42Z",
+      "side": 1,
+      "message": "Has been introduced in http://translatewiki.net/w/i.php?title\u003dMediaWiki%3ACentralauth-admin-info-hidden%2Fqqq\u0026diff\u003d4561226\u0026oldid\u003d2222311 not related to this.",
+      "parentUuid": "Dqk6gDKM",
+      "revId": "b5cdd5c639c2870bed9180a28edb2944cc4fffd7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
