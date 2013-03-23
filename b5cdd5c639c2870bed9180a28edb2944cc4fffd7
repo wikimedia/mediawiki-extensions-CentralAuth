@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dqk6gDKM",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-03-23T16:45:08Z",
+      "side": 1,
+      "message": "What\u0027s this ì here at the beginning of the value?",
+      "revId": "b5cdd5c639c2870bed9180a28edb2944cc4fffd7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
