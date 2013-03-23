@@ -552,7 +552,7 @@ The following message appears after the colon: date_time (time_span)",
 	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-yes}}
 *{{msg-mw|Centralauth-admin-no}}",
-	'centralauth-admin-info-hidden' => "ìLabel of information on status of user, recording whether the user is hidden to anyone but users with the right 'oversight'. Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page]. The following messages can appear after the colon:
+	'centralauth-admin-info-hidden' => "ìLabel of information on status of user, recording whether the user is hidden to anyone, but users with the right 'oversight'. Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page]. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-hidden-oversight}}
 *{{msg-mw|Centralauth-admin-hidden-list}}
 *{{msg-mw|Centralauth-admin-no}}
@@ -681,7 +681,7 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 	'centralauth-months-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-years-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-prefs-not-managed' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is not merged at all.',
-	'centralauth-prefs-unattached' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is in migration but the local account is not attached.',
+	'centralauth-prefs-unattached' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is in migration, but the local account is not attached.',
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is unified on all wikis.',
 	'centralauth-prefs-count-attached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page.',
