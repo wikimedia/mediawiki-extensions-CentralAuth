@@ -436,7 +436,7 @@ You may view and modify any of them, or create a new set.',
  * @author דולב
  */
 $messages['qqq'] = array(
-	'mergeaccount' => '{{doc-special|mergeaccount}}',
+	'mergeaccount' => '{{doc-special|MergeAccount}}',
 	'centralauth-groupname' => 'Used within the following messages:
 * {{msg-mw|centralauth-incomplete-text}}
 * {{msg-mw|centralauth-login-progress}}
@@ -641,6 +641,8 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 * $1 - username
 * $2 - reason',
 	'centralauth-admin-not-authorized' => "Error message when the user doesn't have permission",
+	'globalusers' => '{{doc-special|GlobalUsers}}
+See example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]',
 	'centralauth-listusers-locked' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
@@ -655,7 +657,7 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}",
-	'multilock' => '{{doc-special|multilock}}',
+	'multilock' => '{{doc-special|MultiLock}}',
 	'centralauth-admin-multi-username' => 'Instructions for text box where admin will enter usernames, one per line',
 	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
 	'centralauth-admin-multi-searchprefix' => 'Instructions for alternative search method',
@@ -774,7 +776,11 @@ Parameters:
 * {{msg-mw|Centralauth-rightslog-set-optout}}',
 	'centralauth-rightslog-set-optout' => 'See also:
 * {{msg-mw|Centralauth-rightslog-set-optin}}',
+	'autologin' => 'Used as page title in Special:Autologin. See example: [[w:Special:Autologin]].',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
+	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
+	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
+See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
 	'centralauth-globalgroupperms-grouplistitem' => '"view/edit" is link text which enables to view or edit the group.
 
 Parameters:
@@ -7220,6 +7226,7 @@ Sie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 /** Zazaki (Zazaki)
  * @author Aspar
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Mirzali
  * @author Xoser
  */
@@ -7270,9 +7277,6 @@ Qe wîkîyê lokalî ma rica keno eyni paraola binuse.',
 	'centralauth-not-owner-text' => 'Ena nameyê karber ê "$1"î, hesabê $2î rê otomatik reserve biyo.
 
 Eka ena tu ya, ti eşkeno processa yew kerdişî pê paraloya masterî nuştiş ra beqedne.',
-	'centralauth-blocked-text' => 'Wîkîyê tu lokalî (cor de liste biyo) blok biyo.
-Ma rica keno yew îdarakar rê yew mesaj bişirav ke ma unblok bike.
-Nika ti nieşkeno hesabanê xo yew biker.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Teyna mode demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Hesabê yewinî hewna versiyonê demo  / modê debugî de, yanî operasyonê yew kerdişî qefiniyayiyo.
 Ma ef bike!',
@@ -7331,6 +7335,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-admin-permission' => 'Teyna stewardan eşkeno hesaban yew bikerî.',
 	'centralauth-admin-no-unified' => 'Ser ena name de hesabê yewbiyayî çini yo.',
 	'centralauth-admin-info-header' => 'Melumatê karberiyê globalî',
+	'centralauth-admin-info-username' => 'Namey karberi:',
 	'centralauth-admin-info-id' => "ID'ê Karberi",
 	'centralauth-admin-info-registered' => 'Qeyd biyayış:',
 	'centralauth-admin-info-home' => 'Wikiya keyi:',
@@ -7480,12 +7485,12 @@ Yew grup ne esto heta ti heqanê hemî bido.',
 	'centralauth-editgroup-restrictions' => '
 Ça de ena grup aktiv o, setanê wîkî bimucne:',
 	'centralauth-editgroup-noset' => '(çini yo)',
-	'centralauth-editgroup-submit' => 'Desturê grupî rê vurnayîşî qeyd ke',
+	'centralauth-editgroup-submit' => 'Desturê grupî rê vurnayîşî qeyd ke', # Fuzzy
 	'centralauth-editgroup-perms' => 'Desturan bide:',
 	'centralauth-editgroup-reason' => 'Sebeb:',
-	'centralauth-editgroup-success' => 'Desturanê gruban vurîya',
+	'centralauth-editgroup-success' => 'Desturanê gruban vurîya', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Qe grupê $1î ti desturan da.
-[[Special:GlobalGroupPermissions|Îdareyê grupî rê reyna şi]]',
+[[Special:GlobalGroupPermissions|Îdareyê grupî rê reyna şi]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bivurne]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wîkîyê ke hesabê tu esto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Karberê globalî '''$1''' wîkîyê ke ti spesife kerd uca de aktiv niyo ('' $2 '').
@@ -7530,7 +7535,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'right-globalgroupmembership' => 'Eza biyayîşê globalî bivurne',
 	'right-centralauth-autoaccount' => 'Otomatik cıkewtışê hesab de globali',
 	'right-centralauth-unmerge' => 'Hesabê kurewi letey meke',
-	'right-centralauth-lock' => 'Hesabê kurewi kılit ke ya zi bınımne',
+	'right-centralauth-lock' => 'Hesabê kurewi kılit ke ya zi bınımne', # Fuzzy
 	'right-centralauth-oversight' => 'Hesabê kurewi bıdewosne', # Fuzzy
 	'right-centralauth-merge' => 'Hesabanê înan yew bike',
 	'right-globalgrouppermissions' => 'Hesabanê globalî îdare bike',
@@ -8776,12 +8781,12 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de usuarios con los derechos de $2]]',
 	'centralauth-editgroup-restrictions' => 'Conjunto de wikis donde este grupo está activo:',
 	'centralauth-editgroup-noset' => '(ninguno)',
-	'centralauth-editgroup-submit' => 'Guardar cambios a permisos de grupo',
+	'centralauth-editgroup-submit' => 'Guardar cambios a permisos de grupo', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permisos asignados:',
 	'centralauth-editgroup-reason' => 'Razón:',
-	'centralauth-editgroup-success' => 'Se han cambiado los permisos del grupo',
+	'centralauth-editgroup-success' => 'Se han cambiado los permisos del grupo', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Ha cambiado con éxito los permisos del grupo $1.
-[[Special:GlobalGroupPermissions|Volver a la gestión de grupos]]',
+[[Special:GlobalGroupPermissions|Volver a la gestión de grupos]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki en que tienen una cuenta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "El usuario global '''$1''' no está activo en el wiki que especificaste (''$2'').
@@ -8819,7 +8824,7 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'centralauth-editset-success' => 'Grupo de wikis cambiado exitosamente.',
 	'centralauth-editset-success-delete' => 'El grupo de wikis se borró con éxito.',
 	'centralauth-editset-return' => 'Volver a la vista principal',
-	'centralauth-block-already-locked' => 'El usuario [[Special:CentralAuth/$1|$1]] ya está bloqueado a nivel mundial.',
+	'centralauth-block-already-locked' => 'El usuario [[Special:CentralAuth/$1|$1]] ya está bloqueado a nivel global.',
 	'centralauth-readonly' => 'La base de datos de autentificación está bloqueada.',
 	'centralauth-readonlytext' => 'La base de datos no permite nuevas entradas u otras modificaciones de forma temporal, probablemente por mantenimiento rutinario, tras lo cual volverá a la normalidad.',
 	'right-globalgroupmembership' => 'Editar pertenencia a grupos globales',
@@ -9006,10 +9011,21 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 ** Sobimatud isikuandmed',
 	'centralauth-admin-logsnippet' => 'Varasemad globaalse konto muutmised',
 	'centralauth-admin-suppressreason' => 'Globaalselt varjanud kasutaja $1. Põhjus: $2',
+	'centralauth-admin-not-authorized' => 'Sul pole lubatud seda toimingut sooritada.',
 	'globalusers' => 'Globaalne kasutajate nimekiri',
 	'centralauth-listusers-locked' => 'lukustatud',
 	'centralauth-listusers-attached' => '[[User:$1|siinne konto olemas]]',
 	'centralauth-listusers-nolocal' => 'konto ühendamata või puudub siin vikis',
+	'multilock' => 'Mitme globaalse kasutaja lukustamine',
+	'centralauth-admin-multi-username' => 'Sisesta üks või enam kasutajanime, iga nimi eraldi real.',
+	'centralauth-admin-multi-notfound' => 'Ei leitud ühtki kasutajanime.',
+	'centralauth-admin-action-lock-nochange' => 'Ära muuda lukustust',
+	'centralauth-admin-action-lock-lock' => 'Lukusta valitud kontod',
+	'centralauth-admin-action-lock-unlock' => 'Tühista valitud kontode lukustus',
+	'centralauth-admin-action-hide-nochange' => 'Ära muuda peitmistasemeid',
+	'centralauth-admin-action-hide-none' => 'Tühista valitud kontode peitmine',
+	'centralauth-admin-action-hide-lists' => 'Peida valitud kontod avalikest loenditest',
+	'centralauth-admin-action-hide-oversight' => 'Peida valitud kontod täielikult',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|ühe|$1}} sekundi eest',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|ühe|$1}} minuti eest',
 	'centralauth-hours-ago' => '{{PLURAL:$1|ühe|$1}} tunni eest',
@@ -9054,6 +9070,7 @@ Kasutajanime muutmisega eraldatakse kohalik kasutaja globaalsest.',
 	'centralauth-rightslog-entry-groupperms' => 'muutis rühma $1 kasutajaõigused $2 õigusteks $3',
 	'centralauth-rightslog-entry-groupperms2' => 'muutis rühma $1 õigusi. Lisatud $2. Eemaldatud $3',
 	'centralauth-rightslog-entry-groupperms3' => 'muutis rühma $1 kasutava vikikomplekti $2 komplektiks $3',
+	'centralauth-rightslog-entry-grouprename' => 'nimetas rühma $2 ümber rühmaks $1',
 	'centralauth-rightslog-header' => 'Siin logis on globaalsete rühmade liikmesuse ja õigustega seotud muudatused.',
 	'centralauth-rightslog-entry-newset' => 'lõi $2 vikide komplekti $1, millesse kuuluvad järgnevad vikid: $3',
 	'centralauth-rightslog-entry-setrename' => 'nimetas vikikomplekti "$2" ümber komplektiks "$1"',
@@ -9081,19 +9098,22 @@ Pane tähele, et rühma pole olemas, kui sellele pole õiguseid antud.',
 	'centralauth-editgroup-name' => 'Rühma nimi:',
 	'centralauth-editgroup-display' => 'Rühma tõlgitud nimi:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|muuda]])',
+	'centralauth-editgroup-invalid-name' => 'Vigane globaalse rühma nimi',
 	'centralauth-editgroup-member' => 'Rühmaliikme tõlgitud nimetus:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|muuda]])',
 	'centralauth-editgroup-members' => 'Liikmete nimekiri:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Rühmaliikme $2 õigustega kasutajad]]',
 	'centralauth-editgroup-restrictions' => 'Vikide komplekte, kus see rühm on tegev:',
+	'centralauth-editgroup-rename-taken' => 'Ümbernimetamine ebaõnnestus: Rühm nimega $1 on juba olemas.',
 	'centralauth-editgroup-noset' => '(ei midagi)',
-	'centralauth-editgroup-submit' => 'Salvesta rühma kasutusõiguste muudatused', # Fuzzy
+	'centralauth-editgroup-submit' => 'Salvesta globaalse rühma muudatused',
 	'centralauth-editgroup-perms' => 'Lubatud:',
 	'centralauth-editgroup-reason' => 'Põhjus:',
-	'centralauth-editgroup-success' => 'Rühma kasutusõigused muudetud', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Oled edukalt rühma $1 õigused muutnud.
-[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Globaalne rühm muudetud',
+	'centralauth-editgroup-success-text' => 'Oled edukalt globaalset rühma $1 uuendanud.
+[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muuda]])',
+	'centralauth-editgroup-nowikiset' => 'Puudub, kehtib kõigis vikides.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vikid, kus neil on konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globaalne konto '''$1''' pole valitud vikis ('' $2 '') aktiivne.
 Veendu, et sa ei ürita valele kasutajale õiguseid anda!",
@@ -9140,6 +9160,7 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-centralauth-oversight' => 'Varjata või peita globaalset kontot',
 	'right-centralauth-merge' => 'Luua ühendkonto',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globaalsed rühmad, mille liige kasutaja on',
 	'action-centralauth-lock' => 'globaalset kontot lukustada ega seda lukust lahti teha',
 );
 
@@ -15902,9 +15923,6 @@ $messages['ka'] = array(
 	'centralauth-not-owner-text' => 'მომხმარებლის სახელი „$1“ ავტომატურად მიება ამ ანგარიშის მფლობელს საიტზე: $2.
 
 თუ ეს თქვენ ხართ, ანგარიშის გაერთიანების პროცესის დასრულება თქვენი ძირითადი ანგარიშის პაროლის აქ შეყვანით შეგიძლიათ:',
-	'centralauth-blocked-text' => 'თქვენი მშობლიური ვიკი (მითითებულია ქვემოთ) დაბლოკილია რედაქტირებისთვის.
-გთხოვთ, დაუკავშირდეთ ამ ვიკის სისტემურ ადმინისტრატორს და ბლოკირების მოხსნა სთხოვოთ.
-ბლოკირების მოქმედების პერიოდში, თქვენი ანგარიშების გაერთიანება შეუძლებელია.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>სადემონსტრაციო რეჟიმი</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ანგარიშების გაერთიანება ამჟამად სადემონსტრაციო / სარემონტო რეჟიმში მიმდინარეობს. ამის გამო, გაერთიანების რეალური ოპერაციები გათიშულია. გიხდით ბოდიშს!',
 	'centralauth-error-locked' => 'თქვერ არ შეგიძლიათ რედაქტირება, ვინაიდან თქვენი ანგარიში დაბლოკილია.',
@@ -15962,6 +15980,7 @@ $messages['ka'] = array(
 	'centralauth-admin-permission' => 'მხოლოდ სტიუარდებს შეუძლიათ სხვადასხვა ადამიანების ანგარიშების გაერთიანება.',
 	'centralauth-admin-no-unified' => 'ამ მომხმარებლის სახელის ერთიანი ანგარიში არ არსებობს',
 	'centralauth-admin-info-header' => 'გლობალური მომხმარებლის ინფო',
+	'centralauth-admin-info-username' => 'მომხმარებლის სახელი:',
 	'centralauth-admin-info-id' => 'მომხმარებლის იდენტიფიკაცია:',
 	'centralauth-admin-info-registered' => 'დარეგისტრირდა:',
 	'centralauth-admin-info-home' => 'მშობლიური ვიკი:',
@@ -16002,6 +16021,7 @@ $messages['ka'] = array(
 	'centralauth-admin-nonexistent' => 'გლობალური ანგარიში  „<nowiki>$1</nowiki>“ არ არსებობს.',
 	'centralauth-admin-delete-nonexistent' => 'შეცდომა. გლობალური ანგარიში  „<nowiki>$1</nowiki>“ არ არსებობს.',
 	'centralauth-token-mismatch' => 'სამწუხაროდ ჩვენ ვერ გავაგრძელებთ თქვენი ფორმის დამუშავებას, რადგანაც სეანსის მონაცემები დაიკარგა.',
+	'centralauth-state-mismatch' => 'შეცდომა: აღმოჩენილია ამ მომხმარებლის რედაქტირების კონფლიქტი. გთხოვთ, შეამოწმოთ თქვენი ცვლილება და თავიდან სცადოთ.',
 	'centralauth-admin-reason' => 'მიზეზი:',
 	'centralauth-admin-reason-other' => 'სხვა/დამატებითი მიზეზი:',
 	'centralauth-admin-unhide-nonexistent' => 'შეცდომა. გლობალური ანგარიში  „<nowiki>$1</nowiki>“ არ არსებობს.',
@@ -16025,10 +16045,23 @@ $messages['ka'] = array(
 ** უადგილო პირადი ინფორმაცია',
 	'centralauth-admin-logsnippet' => 'გლობალური ანგარიშის წინა ცვლილებები',
 	'centralauth-admin-suppressreason' => 'გლობალურად შეჩერდა $1-ის მიერ. მიზეზი: $2',
+	'centralauth-admin-not-authorized' => 'თქვენ არ გაქვთ ამ მოქმედების შესრულების ნებართვა',
 	'globalusers' => 'გლობალური მომხმარებლების სია',
 	'centralauth-listusers-locked' => 'ჩაკწტილია',
 	'centralauth-listusers-attached' => '[[User:$1|ლოკალურად არსებობს]]',
 	'centralauth-listusers-nolocal' => 'არ არის მიერთებული ან ლოკალურად არ არსებობს',
+	'multilock' => 'რამდენიმე გლობალური მომხმარებლის დაბლოკვა',
+	'centralauth-admin-multi-username' => 'შეიყვანეთ ერთი ან რამდენიმე მომხმარებლის სახელი, გამოყოფილი ახალი ხაზით',
+	'centralauth-admin-multi-notfound' => 'ძიება უშედეგოდ დასრულდა.',
+	'centralauth-admin-multi-searchprefix' => 'ან, მოძებნოს ანგარიშები პრეფიქსით',
+	'centralauth-admin-multi-intro' => 'ერთდროულად რამდენიმე გლობალური მომხმარებლის განახლება',
+	'centralauth-admin-action-lock-nochange' => 'არ შეცვალოთ ბლოკირებები',
+	'centralauth-admin-action-lock-lock' => 'არჩეული ანგარიშების ბლოკირება',
+	'centralauth-admin-action-lock-unlock' => 'არჩეული ანგარიშების განბლოკვა',
+	'centralauth-admin-action-hide-nochange' => 'არ შეცვალოთ დამალვის დონეები',
+	'centralauth-admin-action-hide-none' => 'არჩეული ანგარიშების გამოჩენა',
+	'centralauth-admin-action-hide-lists' => 'არჩეული ანგარიშების დამალვა საჯარო სიიდან',
+	'centralauth-admin-action-hide-oversight' => 'არჩეული ანგარიშების სრულად დამალვა',
 	'centralauth-seconds-ago' => '$1 წამის წინ',
 	'centralauth-minutes-ago' => '$1 წუთის წინ',
 	'centralauth-hours-ago' => '$1 საათის წინ',
@@ -16074,6 +16107,7 @@ $messages['ka'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'შესწორდა მომხმარებლის ჯგუფების უფლება $1  $2-სთვის  $3-ზე',
 	'centralauth-rightslog-entry-groupperms2' => 'შეცვალა ჯგუდი $1-სთვის. ჩაამატა $2; მოხსნა $3',
 	'centralauth-rightslog-entry-groupperms3' => 'შეცვალა ვიკის ჯგუფობრივი აღკვეთა $1-დან $2-დან $3-მდე',
+	'centralauth-rightslog-entry-grouprename' => 'გადაერქვა სახელი ჯგუფს „$2“ სახელზე „$1“',
 	'centralauth-rightslog-header' => 'ეს ჟურნალი შეიცავს გლობალურ ჯგუფებთან დაკავშირებულ ინფორმაციას.',
 	'centralauth-rightslog-entry-newset' => 'შექმნა $2 ვიკის ჯგუდი $1 შემდეგი ვიკებით: $3',
 	'centralauth-rightslog-entry-setrename' => 'გადაარქვა შემდეგ ვიკებს  «$2»დან «$1»-ში',
@@ -16104,19 +16138,22 @@ $messages['ka'] = array(
 	'centralauth-editgroup-name' => 'ჯგუფის სახელი:',
 	'centralauth-editgroup-display' => 'ჯგუფის ლოკალიზებული სახელი:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|რედაქტირება]])',
+	'centralauth-editgroup-invalid-name' => 'დაყენებულია არასწორი გლობალური ჯგუფის სახელი',
 	'centralauth-editgroup-member' => 'ჯგუფის წევრების ლოკალიზებული სახელები:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|რედაქტირება]])',
 	'centralauth-editgroup-members' => 'წევრთა სია:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|წევრების სია $2 უფლებებით]]',
 	'centralauth-editgroup-restrictions' => 'ვიკი-პროექტების ნაკრები, სადაც ეს ჯგუფი მოქმედებს:',
+	'centralauth-editgroup-rename-taken' => 'გადარქმევა ვერ მოხერხდა: უკვე არსებობს ჯგუფი სახელად $1.',
 	'centralauth-editgroup-noset' => '(არცერთი)',
-	'centralauth-editgroup-submit' => 'ჯგუფის უფლებებში ცვლილებების შენახვა.',
+	'centralauth-editgroup-submit' => 'გლობალური ჯგუფის ცვლილებების შენახვა',
 	'centralauth-editgroup-perms' => 'მინიჭებული უფლებები:',
 	'centralauth-editgroup-reason' => 'მიზეზი:',
-	'centralauth-editgroup-success' => 'ჯგუფის უფლებები შეცვლილია',
-	'centralauth-editgroup-success-text' => 'თქვენ წარმატებით შეცვალეთ ჯგუფის უფლებები ჯგუფისთვის: $1.
+	'centralauth-editgroup-success' => 'გლობალური ჯგუფი შეცვლილია',
+	'centralauth-editgroup-success-text' => 'წარმატებით განახლდა გლობალური ჯგუფის „$1“ უფლებები.
 [[Special:GlobalGroupPermissions|ჯგუფების მართვაზე დაბრუნება]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|რედაქტირება]])',
+	'centralauth-editgroup-nowikiset' => 'არ ვრცელდება ყველა ვიკიზე.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ვიკი-პროექტი, რომელზეც მათ ანგარიში აქვთ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "გლობალური მომხმარებელი '''$1''' არ არის აქტიური თქვენს მიერ მითითებულ ვიკი-პროექტზე ('' $2 '').
 შესაძლოა, უფლებების მინიჭებას სხვა მომხმარებლისთვის ცდილობთ!",
@@ -16159,11 +16196,12 @@ $messages['ka'] = array(
 	'right-globalgroupmembership' => 'გლობალურ ჯგუფებში წევრობის გადაკეთება',
 	'right-centralauth-autoaccount' => 'ავტომატური შესვლა გლობალური ანგარიშით',
 	'right-centralauth-unmerge' => 'ადგილობრივი ანგარიშის განცალკევება',
-	'right-centralauth-lock' => 'გლობალური ანგარიშის დაბლოკვა ან დამალვა',
+	'right-centralauth-lock' => 'გლობალური ანგარიშის დაბლოკვა ან განბლოკვა',
 	'right-centralauth-oversight' => 'გლობალური ანგარიშის შეჩერება ან დამალვა',
 	'right-centralauth-merge' => 'მათი ანგარიშის გაერთიანება',
 	'right-globalgrouppermissions' => 'გლობალური ჯგუფების მართვა',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'მომხმარებლის გლობალური ჯგუფები',
+	'action-centralauth-lock' => 'გლობალური ანგარიშების დაბლოკვა ან განბლოკვა',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
@@ -19710,6 +19748,7 @@ $messages['ml'] = array(
 	'centralauth-admin-permission' => 'സ്റ്റിവാർഡുകൾക്ക് മാത്രമേ മറ്റുപയോക്താക്കളുടെ അംഗത്വം അവർക്കു വേണ്ടി സം‌യോജനം നടത്താനുള്ള അവകാശമുള്ളൂ.',
 	'centralauth-admin-no-unified' => 'ഈ ഉപയോക്തൃനാമത്തിനു സം‌യോജിത അംഗത്വം ഇല്ല.',
 	'centralauth-admin-info-header' => 'ആഗോളാംഗത്വ വിവരങ്ങൾ',
+	'centralauth-admin-info-username' => 'ഉപയോക്തൃനാമം:',
 	'centralauth-admin-info-id' => 'ഉപയോക്തൃ ഐ.ഡി.:',
 	'centralauth-admin-info-registered' => 'രജിസ്റ്റേ‌ർഡ്:',
 	'centralauth-admin-info-home' => 'തറവാട് വിക്കി:',
@@ -19748,6 +19787,7 @@ $messages['ml'] = array(
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" എന്ന ആഗോള അംഗത്വം ഇല്ല.',
 	'centralauth-admin-delete-nonexistent' => 'പിഴവ്: "<nowiki>$1</nowiki>" എന്ന ആഗോള അംഗത്വം നിലവിലില്ല.',
 	'centralauth-token-mismatch' => 'ക്ഷമിക്കണം. സെഷൻ ഡാറ്റ നഷ്ടപ്പെട്ടതിനാൽ താങ്കളുടെ ഫോം സമർപ്പിക്കുന്നതിനു കഴിഞ്ഞില്ല.',
+	'centralauth-state-mismatch' => 'പിഴവ്: ഈ ഉപയോക്താവുമായി ഒരു തിരുത്തൽ സമരസപ്പെടായ്ക കണ്ടെത്താനായി. ദയവായി താങ്കളുടെ മാറ്റം പരിശോധിച്ച ശേഷം വീണ്ടും ശ്രമിക്കുക.',
 	'centralauth-admin-reason' => 'കാരണം:',
 	'centralauth-admin-reason-other' => 'മറ്റ്/കൂടുതൽ കാരണം:',
 	'centralauth-admin-unhide-nonexistent' => 'പിഴവ്: "<nowiki>$1</nowiki>" എന്ന ആഗോള അംഗത്വം നിലവിലില്ല.',
@@ -19833,6 +19873,7 @@ $messages['ml'] = array(
 	'centralauth-rightslog-entry-groupperms' => '$1 എന്ന ഉപയോക്താവിന്റെ സംഘ അംഗത്വം $2 എന്നതിൽ നിന്നു $3 എന്നതിലേക്കു മാറ്റിയിരിക്കുന്നു',
 	'centralauth-rightslog-entry-groupperms2' => '$1 കൈവശം വച്ചിരുന്ന സംഘ അനുമതികൾക്ക് മാറ്റം വരുത്തിയിരിക്കുന്നു. $2 കൂട്ടിച്ചേർത്തു; $3 നീക്കംചെയ്തു',
 	'centralauth-rightslog-entry-groupperms3' => '$1 ഗണത്തിനു പരിമിതപ്പെടുത്തിയ വിക്കികൾ $2 എന്നതിൽ നിന്നു $3 എന്നതിലേയ്ക്ക് മാറ്റിയിരിക്കുന്നു',
+	'centralauth-rightslog-entry-grouprename' => '$2 എന്ന സംഘം $2 എന്നു പേരുമാറ്റിയിരിക്കുന്നു', # Fuzzy
 	'centralauth-rightslog-header' => 'ഈ പ്രവർത്തന രേഖയിൽ ആഗോള ഗ്രൂപ്പുകളുടെ വിവിധ പ്രവർത്തനങ്ങൾ ഉൾപ്പെടുന്നു: അംഗത്വവും അവകാശ മാറ്റങ്ങളും',
 	'centralauth-rightslog-entry-newset' => 'താഴെ കൊടുത്തിരിക്കുന്ന വിക്കികളുൾപ്പെടെ $1 വിക്കി ഗണത്തിൽ $2 സൃഷ്ടിച്ചിരിക്കുന്നു: $3',
 	'centralauth-rightslog-entry-setrename' => '"$2" വിക്കി ഗണം "$1" എന്നു പുനർനാമകരണം ചെയ്തിരിക്കുന്നു',
@@ -19863,18 +19904,22 @@ $messages['ml'] = array(
 	'centralauth-editgroup-name' => 'സംഘത്തിന്റെ പേര്‌:',
 	'centralauth-editgroup-display' => 'സംഘത്തിന്റെ പ്രാദേശിക നാമം:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|തിരുത്തുക]])',
+	'centralauth-editgroup-invalid-name' => 'അസാധുവായ ആഗോളസംഘ നാമമാണ് നൽകിയത്',
 	'centralauth-editgroup-member' => 'സംഘ അംഗങ്ങളുടെ പ്രാദേശിക പേര്‌:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|തിരുത്തുക]])',
 	'centralauth-editgroup-members' => 'അംഗത്വ പട്ടിക:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 എന്ന അവകാശമുള്ള അംഗങ്ങളുടെ പട്ടിക]]',
 	'centralauth-editgroup-restrictions' => 'ഈ സംഘം സജീവമായിട്ടുള്ള വിക്കികളുടെ ഗണം:',
+	'centralauth-editgroup-rename-taken' => 'പുനർനാമകരണം പരാജയപ്പെട്ടു: $1 എന്ന പേരിൽ മുമ്പേയൊരു സംഘമുണ്ട്.',
 	'centralauth-editgroup-noset' => '(ഒന്നുമില്ല)',
-	'centralauth-editgroup-submit' => 'സംഘ അവകാശങ്ങളിൽ വരുത്തിയ മാറ്റങ്ങൾ സേവ് ചെയ്യുക',
+	'centralauth-editgroup-submit' => 'ആഗോള സംഘങ്ങളിൽ വരുത്തിയ മാറ്റങ്ങൾ സേവ് ചെയ്യുക',
 	'centralauth-editgroup-perms' => 'നിർണ്ണയിക്കപ്പെട്ട അവകാശങ്ങൾ:',
 	'centralauth-editgroup-reason' => 'കാരണം:',
-	'centralauth-editgroup-success' => 'സംഘ അവകാശങ്ങളിൽ മാറ്റം വരുത്തിയിരിക്കുന്നു',
-	'centralauth-editgroup-success-text' => '$1 എന്ന സംഘത്തിന്റെ അവകാശങ്ങൾ വിജയകരമായി മാറ്റിയിരിക്കുന്നു. [[Special:GlobalGroupPermissions|സംഘം പരിപാലന താളിലേക്ക് തിരിച്ചു പോവുക]]',
+	'centralauth-editgroup-success' => 'ആഗോളസംഘങ്ങളിൽ മാറ്റം വരുത്തിയിരിക്കുന്നു',
+	'centralauth-editgroup-success-text' => 'ആഗോളസംഘം $1 വിജയകരമായി പുതുക്കിയിരിക്കുന്നു.
+[[Special:GlobalGroupPermissions|സംഘം പരിപാലന താളിലേക്ക് തിരിച്ചു പോവുക]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|തിരുത്തുക]])',
+	'centralauth-editgroup-nowikiset' => 'ഒന്നുമില്ല, എല്ലാ വിക്കികൾക്കും ബാധകം.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'അംഗത്വമുള്ള വിക്കി:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1'''  എന്ന ആഗോള ഉപയോക്താവ് താങ്കൾ തിരഞ്ഞെടുത്ത വിക്കിയിൽ (''$2'') സജീവമല്ല. താങ്കൾ തെറ്റായ ഉപയോക്താവിനാണ്‌ അവകാശം കൊടുക്കുവാൻ ശ്രമിക്കുന്നതെന്നു തോന്നുന്നു.",
 	'centralauth-editset' => 'വിക്കി ഗണങ്ങൾ',
@@ -19916,7 +19961,7 @@ $messages['ml'] = array(
 	'right-globalgroupmembership' => 'ആഗോള സംഘങ്ങളിലുള്ള അംഗത്വം തിരുത്തുക',
 	'right-centralauth-autoaccount' => 'സ്വയം ആഗോളാംഗത്വമുപയോഗിച്ച് ലോഗിൻ ചെയ്യുക',
 	'right-centralauth-unmerge' => 'ആഗോള അംഗത്വ സംയോജനം നീക്കുക',
-	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക', # Fuzzy
+	'right-centralauth-lock' => 'ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ ബന്ധനം അഴിക്കുക',
 	'right-centralauth-oversight' => 'ആഗോള അംഗത്വം ഒതുക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക',
 	'right-centralauth-merge' => 'അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക',
 	'right-globalgrouppermissions' => 'ആഗോള സംഘങ്ങൾ പരിപാലിക്കുക',
@@ -32846,6 +32891,7 @@ $messages['vep'] = array(
 );
 
 /** Vietnamese (Tiếng Việt)
+ * @author Cheers!
  * @author Minh Nguyen
  * @author Vinhtantran
  */
@@ -33102,6 +33148,7 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
 	'centralauth-editgroup-name' => 'Tên nhóm:',
 	'centralauth-editgroup-display' => 'Tên địa phương hóa của nhóm:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|sửa]])',
+	'centralauth-editgroup-invalid-name' => 'Tên nhóm toàn cầu không hợp lệ',
 	'centralauth-editgroup-member' => 'Tên địa phương hóa của thành viên nhóm:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|sửa]])',
 	'centralauth-editgroup-members' => 'Dánh sách thành viên:',
@@ -33837,6 +33884,7 @@ $messages['zea'] = array(
  * @author Bencmq
  * @author Chenxiaoqino
  * @author Chenzw
+ * @author Dimension
  * @author Gaoxuewei
  * @author Gzdavidwong
  * @author Hydra
@@ -33943,6 +33991,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-permission' => '只有监管员才能为他人合并账户。',
 	'centralauth-admin-no-unified' => '该用户名没有统一账户。',
 	'centralauth-admin-info-header' => '全局用户信息',
+	'centralauth-admin-info-username' => '用户名：',
 	'centralauth-admin-info-id' => '用户ID：',
 	'centralauth-admin-info-registered' => '注册时间：',
 	'centralauth-admin-info-home' => '起始维基：',
@@ -33981,6 +34030,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-nonexistent' => '这里没有"<nowiki>$1</nowiki>"的全域账户',
 	'centralauth-admin-delete-nonexistent' => '错误：该全域账户"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-token-mismatch' => '对不起，由于阶段资料遗失，我们不可以处理你的表格递交',
+	'centralauth-state-mismatch' => '错误：检测到对此用户发生编辑冲突。请确认您的更改并重试。',
 	'centralauth-admin-reason' => '原因：',
 	'centralauth-admin-reason-other' => '其他/附加原因：',
 	'centralauth-admin-unhide-nonexistent' => '错误：全域账户"<nowiki>$1</nowiki>"不存在。',
@@ -34003,10 +34053,23 @@ $messages['zh-hans'] = array(
 ** 不当滥用个人信息',
 	'centralauth-admin-logsnippet' => '以前的全域帐户变更',
 	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因：$2',
+	'centralauth-admin-not-authorized' => '您没有权限来执行此操作',
 	'globalusers' => '全局用户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
 	'centralauth-listusers-nolocal' => '未附加或未于本地存在',
+	'multilock' => '锁定多个全域用户',
+	'centralauth-admin-multi-username' => '输入一个或多个用户名，以新行分隔',
+	'centralauth-admin-multi-notfound' => '搜索没有返回用户名。',
+	'centralauth-admin-multi-searchprefix' => '或者，用前缀搜索帐户',
+	'centralauth-admin-multi-intro' => '一次更新多个全域用户',
+	'centralauth-admin-action-lock-nochange' => '不要更改锁定',
+	'centralauth-admin-action-lock-lock' => '锁定选定帐户',
+	'centralauth-admin-action-lock-unlock' => '解锁选定帐户',
+	'centralauth-admin-action-hide-nochange' => '不要更改隐藏等级',
+	'centralauth-admin-action-hide-none' => '解除隐藏选定帐户',
+	'centralauth-admin-action-hide-lists' => '从公共列表中隐藏选定帐户',
+	'centralauth-admin-action-hide-oversight' => '完全隐藏选定帐户',
 	'centralauth-seconds-ago' => '$1秒前',
 	'centralauth-minutes-ago' => '$1分前',
 	'centralauth-hours-ago' => '$1小时前',
@@ -34051,6 +34114,7 @@ $messages['zh-hans'] = array(
 	'centralauth-rightslog-entry-groupperms' => '已经更改$1的成员组许可由$2到$3',
 	'centralauth-rightslog-entry-groupperms2' => '已经更改$1的成员组许可。加入$2；移除$3',
 	'centralauth-rightslog-entry-groupperms3' => '更改的组限制维基设置 $1 从 $2 至 $3',
+	'centralauth-rightslog-entry-grouprename' => '重命名$2为$1',
 	'centralauth-rightslog-header' => '这个日志包含了全域组之动作：组及许可更改',
 	'centralauth-rightslog-entry-newset' => '已创建$2的包含条目$3的维基组$1',
 	'centralauth-rightslog-entry-setrename' => '将维基组"$2"重命名为"$1"',
@@ -34085,13 +34149,16 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-members' => '成员表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2许可的用户名单]]',
 	'centralauth-editgroup-restrictions' => '在此组处于活动状态的维基：',
+	'centralauth-editgroup-rename-taken' => '重命名失败：已有一个组名称为$1。',
 	'centralauth-editgroup-noset' => '（无）',
-	'centralauth-editgroup-submit' => '保存更改到组许可', # Fuzzy
+	'centralauth-editgroup-submit' => '保存全局组更改',
 	'centralauth-editgroup-perms' => '已指定的许可：',
 	'centralauth-editgroup-reason' => '原因：',
-	'centralauth-editgroup-success' => '组许可已经更改', # Fuzzy
-	'centralauth-editgroup-success-text' => '您已经成功地更改$1组的组许可。[[Special:GlobalGroupPermissions|回到组管理]]', # Fuzzy
+	'centralauth-editgroup-success' => '全局组更改',
+	'centralauth-editgroup-success-text' => '已成功更新全局组$1。
+[[Special:GlobalGroupPermissions|回到组管理]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|编辑]])',
+	'centralauth-editgroup-nowikiset' => '无，适用所有wiki。',
 	'centralauth-globalgrouppermissions-knownwiki' => '选择一个他们有账户的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "该全域用户'''$1'''在您所指定的wiki（'' $2 ''）中并不活跃。您可能正在尝试指定许可到错的用户!",
 	'centralauth-editset' => '维基组',
@@ -34133,11 +34200,12 @@ $messages['zh-hans'] = array(
 	'right-globalgroupmembership' => '编辑成员至全域组',
 	'right-centralauth-autoaccount' => '自动使用全域账户登陆',
 	'right-centralauth-unmerge' => '取消合并全域帐户',
-	'right-centralauth-lock' => '锁定或隐藏全域帐户', # Fuzzy
+	'right-centralauth-lock' => '锁定或解锁全域帐户',
 	'right-centralauth-oversight' => '废止或隐藏全域帐户',
 	'right-centralauth-merge' => '合并自己的账户',
 	'right-globalgrouppermissions' => '管理全域组',
 	'abusefilter-edit-builder-vars-global-user-groups' => '该用户的全域用户组',
+	'action-centralauth-lock' => '锁定或解锁全局帐户',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
