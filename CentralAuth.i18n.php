@@ -526,7 +526,7 @@ See also: {{msg-mw|Centralauth-merge-method-login-desc}}',
 	'centralauth-attach-list-attached' => 'Used in Special:MergeAccount. Parameters:
 * $1 - username',
 	'centralauth-attach-submit' => "Submit button 'Migrate account'",
-	'centralauth' => 'Title of [[meta:Special:CentralAuth|special page]].',
+	'centralauth' => '{{doc-special|CentralAuth}}',
 	'centralauth-admin-intro' => 'Introduction to [[meta:Special:CentralAuth|Global User Manager]] special page.',
 	'centralauth-admin-manage' => 'Heading of dialog box on [[meta:Special:CentralAuth|Global User Manager]] special page.',
 	'centralauth-admin-username' => 'Input box label on [[meta:Special:CentralAuth|Global User Manager]] special page.
@@ -776,7 +776,8 @@ Parameters:
 * {{msg-mw|Centralauth-rightslog-set-optout}}',
 	'centralauth-rightslog-set-optout' => 'See also:
 * {{msg-mw|Centralauth-rightslog-set-optin}}',
-	'autologin' => 'Used as page title in Special:Autologin. See example: [[w:Special:Autologin]].',
+	'autologin' => '{{doc-special|AutoLogin|unlisted=1}}
+See example: [[w:Special:Autologin]].',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
@@ -824,7 +825,7 @@ Parameters:
 	'centralauth-globalgroupmembership-badknownwiki' => 'Used as error message. Parameters:
 * $1 - username
 * $2 - known wiki',
-	'centralauth-editset' => 'Se trata de grupos (o conjuntos) de wikis que pueden definirse, y adonde se pueden restringir grupos de usuarios. P. ej, los usuarios del grupo "global bot" sólo pueden editar en las wikis del grupo "global bot wikis". Definitivamente no son "ajustes" (!).',
+	'centralauth-editset' => '{{doc-special|WikiSets}}',
 	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
 	'centralauth-editset-legend-ro' => 'The legend of the fieldset. Displayed when the user cannot edit.',
 	'centralauth-editset-item-rw' => '*$1 - Name of wiki set
@@ -25863,7 +25864,6 @@ $messages['ru'] = array(
 	'centralauth-not-owner-text' => 'Имя участника «$1» было автоматически присвоено владельцу учётной записи на $2.
 
 Если это вы, то вы можете завершить процесс объединения учётных записей, введя здесь пароль от вашей основной учётной записи:',
-	'centralauth-blocked-text' => 'Ваша домашняя вики (указана ниже) закрыта для правок. Пожалуйста, свяжитесь с администратором в этой вики, чтобы разблокировать её. Пока она заблокирована, вы не сможете объединить ваши учётные записи.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстрационный режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Объединение учётных записей сейчас работает в демонстрационном (отладочном) режиме, реальные операции объединения отключены. Извините.',
 	'centralauth-error-locked' => 'Вы не можете править, так как ваша учётная запись заблокирована.',
@@ -25919,6 +25919,7 @@ $messages['ru'] = array(
 	'centralauth-admin-permission' => 'Только стюарды могут объединять учётные записи других людей.',
 	'centralauth-admin-no-unified' => 'Нет объединённой учётной записи для этого имени участника.',
 	'centralauth-admin-info-header' => 'Глобальные сведения об участнике',
+	'centralauth-admin-info-username' => 'Имя учётной записи:',
 	'centralauth-admin-info-id' => 'Идентификатор участника:',
 	'centralauth-admin-info-registered' => 'Зарегистрирован:',
 	'centralauth-admin-info-home' => '«Домашний» вики-проект:',
@@ -25980,6 +25981,7 @@ $messages['ru'] = array(
 ** неуместные личные сведения',
 	'centralauth-admin-logsnippet' => 'Предыдущие изменения в глобальных учётных записях',
 	'centralauth-admin-suppressreason' => 'Глобально скрыт $1 со следующим обоснованием: $2',
+	'centralauth-admin-not-authorized' => 'У вас нет прав для выполнения этого действия',
 	'globalusers' => 'Глобальный список участников',
 	'centralauth-listusers-locked' => 'заморозить',
 	'centralauth-listusers-attached' => '[[User:$1|существует локально]]',
@@ -26029,6 +26031,7 @@ $messages['ru'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'изменил права группы для $1 с $2 на $3',
 	'centralauth-rightslog-entry-groupperms2' => 'изменил права группы для $1. Добавлено $2; удалено $3',
 	'centralauth-rightslog-entry-groupperms3' => 'изменил групповые ограничения набора вики для $1 с $2 на $3',
+	'centralauth-rightslog-entry-grouprename' => 'переименовал группу «$2» в «$1»',
 	'centralauth-rightslog-header' => 'Этот журнал содержит записи об действиях с глобальными группами: изменение членства и прав',
 	'centralauth-rightslog-entry-newset' => 'создал $2 набора вики $1 со следующими вики: $3',
 	'centralauth-rightslog-entry-setrename' => 'переименовал набор вики «$2» в «$1»',
@@ -26065,11 +26068,11 @@ $messages['ru'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список участников с правами уровня $2]]',
 	'centralauth-editgroup-restrictions' => 'Набор вики, в которых группа действует:',
 	'centralauth-editgroup-noset' => '(нет)',
-	'centralauth-editgroup-submit' => 'Сохранить изменения в правах группы',
+	'centralauth-editgroup-submit' => 'Сохранить изменения в правах группы', # Fuzzy
 	'centralauth-editgroup-perms' => 'Назначенные права:',
 	'centralauth-editgroup-reason' => 'Причина:',
-	'centralauth-editgroup-success' => 'Права группы изменены',
-	'centralauth-editgroup-success-text' => 'Вы успешно изменили права группы для группы $1. [[Special:GlobalGroupPermissions|Вернуться к управлению группами]]',
+	'centralauth-editgroup-success' => 'Права группы изменены', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Вы успешно изменили права группы для группы $1. [[Special:GlobalGroupPermissions|Вернуться к управлению группами]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|изменить]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики, на которой они имеют учётные записи:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Глобальный участник '''$1''' неактивен на указанной вами вики (''$2''). Возможно, вы пытаетесь назначить права не тому участнику!",
@@ -26113,11 +26116,12 @@ $messages['ru'] = array(
 	'right-globalgroupmembership' => 'изменение членства в глобальных группах',
 	'right-centralauth-autoaccount' => 'aвтоматический вход с глобальной учётной записи',
 	'right-centralauth-unmerge' => 'разделение глобальных учётных записей',
-	'right-centralauth-lock' => 'блокировки и сокрытие глобальных учётных записей',
-	'right-centralauth-oversight' => 'Подавить или скрыть глобальную учетную запись',
+	'right-centralauth-lock' => 'наложение или снятие блокировки на глобальную учётную запись',
+	'right-centralauth-oversight' => 'подавление или сокрытие глобальной учётной записи',
 	'right-centralauth-merge' => 'объединение учётных записей',
 	'right-globalgrouppermissions' => 'управление глобальными группами',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобальные группы участника',
+	'action-centralauth-lock' => 'наложение или снятие блокировки на глобальную учётную запись',
 );
 
 /** Rusyn (русиньскый)

@@ -394,6 +394,7 @@ $specialPageAliases['ko'] = array(
 	'GlobalGroupPermissions' => array( '전체그룹권한' ),
 	'WikiSets' => array( '위키집합', '위키집합편집' ),
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
+	'MultiLock' => array( '다중잠금' ),
 );
 
 /** Colognian (Ripoarisch) */
