@@ -7330,13 +7330,13 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth' => 'İdarekarê hesab dê globali',
 	'centralauth-admin-intro' => 'Ena interface de ti eşkeno hesabanê globalî îdare biker.',
 	'centralauth-admin-manage' => 'Melumatê karberi idare bike',
-	'centralauth-admin-username' => 'Nameyê karberî:',
+	'centralauth-admin-username' => 'Nameyê karberi:',
 	'centralauth-admin-lookup-ro' => 'Hesabê karberi bivine',
 	'centralauth-admin-lookup-rw' => 'Hesabê karberi idare bike',
 	'centralauth-admin-permission' => 'Teyna stewardan eşkeno hesaban yew bikerî.',
 	'centralauth-admin-no-unified' => 'Ser ena name de hesabê yewbiyayî çini yo.',
 	'centralauth-admin-info-header' => 'Melumatê karberiyê globalî',
-	'centralauth-admin-info-username' => 'Namey karberi:',
+	'centralauth-admin-info-username' => 'Nameyê karberi:',
 	'centralauth-admin-info-id' => "ID'ê Karberi",
 	'centralauth-admin-info-registered' => 'Qeyd biyayış:',
 	'centralauth-admin-info-home' => 'Wikiya keyi:',
@@ -21395,6 +21395,7 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 );
 
 /** Low German (Plattdüütsch)
+ * @author Joachim Mos
  * @author Slomox
  */
 $messages['nds'] = array(
@@ -21441,9 +21442,6 @@ Geev man dat Passwoord för dien Heimatwiki in.',
 	'centralauth-not-owner-text' => 'De Brukernaam „$1“ is automaatsch den Egendömer vun dat Brukerkonto op $2 towiest worrn.
 
 Wenn dat dien Brukerkonto is, denn kannst du dat Tohoopföhren dör Ingeven vun dat Passwoort för dat Brukerkonto toenn bringen:',
-	'centralauth-blocked-text' => 'Dien Heimatwiki (steit ünnen) is sperrt.
-Schriev en Administrater vun dat Wiki, dat he de Sperr opheevt.
-Solang dat Brukerkonto sperrt is, köönt de Brukerkonten nich tohoopföhrt warrn.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demomodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Dat Tohoopföhren vun Brukerkonten is opstunns noch in’n Demo- un Fehlersöök-Modus. Dat Tohoopföhren sülvst geiht noch nich.',
 	'centralauth-error-locked' => 'Du dröffst keen Sieden ännern, dien Brukerkonto is sperrt.',
@@ -21484,8 +21482,10 @@ Wenn dat globale Brukerkonto ok dien is, denn kannst du dit Brukerkonto mit dat 
 	'centralauth-admin-username' => 'Brukernaam:',
 	'centralauth-admin-permission' => 'Dat Tohoopföhren vun Brukerkonten för annere Brukers köönt blot Stewards maken.',
 	'centralauth-admin-no-unified' => 'Gifft keen global Brukerkonto för dissen Brukernaam.',
+	'centralauth-admin-info-username' => 'Brukernaam:',
 	'centralauth-admin-info-id' => 'Bruker-ID:',
 	'centralauth-admin-info-registered' => 'Registreert:',
+	'centralauth-admin-info-home' => 'Heimatwiki',
 	'centralauth-admin-info-locked' => 'Sperrt:',
 	'centralauth-admin-info-hidden' => 'Versteken:', # Fuzzy
 	'centralauth-admin-yes' => 'Jo',
@@ -21601,12 +21601,12 @@ En ne’e Grupp gifft dat so lang noch nich, betdat dor Rechten towiest sünd.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|List vun Brukers mit $2-Rechten]]',
 	'centralauth-editgroup-restrictions' => 'Wikigrupp, in de disse Grupp aktiv is:',
 	'centralauth-editgroup-noset' => '(keen)',
-	'centralauth-editgroup-submit' => 'Ännern an de Gruppenrechten spiekern',
+	'centralauth-editgroup-submit' => 'Ännern an de Gruppenrechten spiekern', # Fuzzy
 	'centralauth-editgroup-perms' => 'Tokennt Rechten:',
 	'centralauth-editgroup-reason' => 'Grund:',
-	'centralauth-editgroup-success' => 'Gruppenrechten ännert',
+	'centralauth-editgroup-success' => 'Gruppenrechten ännert', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Du hest nu de Gruppenrechten för de Gruppe $1 ännert.
-[[Special:GlobalGroupPermissions|Trüch na dat Verwalten vun globale Gruppen]]',
+[[Special:GlobalGroupPermissions|Trüch na dat Verwalten vun globale Gruppen]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ännern]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähl en Wiki ut, op dat he oder se en Brukerkonto hett:',
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bruker '''$1''' is op dit Wiki (''$2'') nich aktiv.
@@ -21623,6 +21623,7 @@ Kann angahn, dat du den verkehrten Bruker Rechten totowiesen versöchst!",
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-reason' => 'Grund:',
 	'centralauth-editset-submit' => 'OK',
+	'centralauth-editset-submit-delete' => 'Wegdoon',
 	'centralauth-editset-badname' => 'Ungülligen oder leddigen Naam för de Wikigrupp.',
 	'centralauth-editset-badtype' => 'Ungülligen Gruppentyp.',
 	'centralauth-editset-setexists' => 'Dat gifft al en Wikigrupp mit dissen Naam',

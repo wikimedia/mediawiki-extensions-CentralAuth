@@ -774,6 +774,7 @@ $specialPageAliases['zh-hant'] = array(
 	'GlobalGroupPermissions' => array( '全域組權限' ),
 	'WikiSets' => array( '編輯Wiki組' ),
 	'GlobalUsers' => array( '全域用戶' ),
+	'MultiLock' => array( '批量鎖定' ),
 );
 
 /** Chinese (Hong Kong) (中文（香港）‎) */
