@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DqnHyc3A",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-29T01:52:41Z",
+      "side": 1,
+      "message": "Ah yes...",
+      "parentUuid": "DqtHYH-A",
+      "revId": "753f6e6e8e087ab0c37e11c36d75a5597af37dde",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DqjHTm9Y",
         "filename": "specials/SpecialGlobalGroupPermissions.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-29T01:50:26Z",
       "side": 1,
       "message": "We should probably update existing entries on WMF sites.",
+      "revId": "753f6e6e8e087ab0c37e11c36d75a5597af37dde",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqhHnd7A",
+        "filename": "specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-03-29T01:52:41Z",
+      "side": 1,
+      "message": "Chris is aware of the problem and will do that as needed :)",
+      "parentUuid": "DqjHTm9Y",
       "revId": "753f6e6e8e087ab0c37e11c36d75a5597af37dde",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
