@@ -279,7 +279,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
 			return;
 		}
-		$group = $group->getPrefixedDBkey();
+		$group = $group->getUserCaseDBKey();
 
 		// (Potentially) New name of the group
 		$newname = $this->getRequest()->getVal( 'wpGlobalGroupName', $group );
@@ -289,7 +289,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
 			return;
 		}
-		$newname = $newname->getPrefixedDBkey();
+		$newname = $newname->getUserCaseDBKey();
 
 		if ( $group != $newname ) {
 
@@ -441,9 +441,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$log->addEntry(
 			'grouprename',
-			SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName ),
+			// This has to point to 'Special:GlobalUsers so that self::showLogFragment can find it
+			SpecialPage::getTitleFor( 'GlobalUsers', $newName ),
 			$reason,
-			array( $oldName )
+			array(
+				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName ),
+				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName )
+			)
 		);
 	}
 
