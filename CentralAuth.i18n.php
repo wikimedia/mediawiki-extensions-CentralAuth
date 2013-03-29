@@ -915,11 +915,8 @@ Nog 'n wiki is bepaal as die rekening vir jou gebruikersnaam, volg die skakel hi
 Die databasis moet beskadig.',
 	'centralauth-merge-home-password' => "Die huis wiki vir hierdie rekening (hieronder) het 'n ander wagwoord in aan die een wat u verskaf het.
 Voer die wagwoord vir die huis wiki.",
-	'centralauth-complete' => 'Aantekenversmelting is voltooi!',
+	'centralauth-complete' => 'Samevoeging van gebruikers is voltooi!',
 	'centralauth-incomplete' => 'Aantekenversmelting is nie voltooi nie!',
-	'centralauth-blocked-text' => "Jou huis wiki (hieronder) is geblokkeer.
-Neem asseblief kontak met 'n administrateur in hierdie wiki het om dit te blokkeer.
-Terwyl dit is geblokkeer, kan jy nie jou rekeninge saam te smelt.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Slegs demonstrasiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Rekening eenwording is tans in 'n ​​demo / Ontfouting af, sodat werklike samesmelting bedrywighede is gestremdes.
 Jammer!",
@@ -1079,10 +1076,10 @@ Let daarop dat 'n groep nie bestaan ​​nie, tensy dit het regte aan hom opged
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lys van gebruikers met $2 regte]]',
 	'centralauth-editgroup-restrictions' => "Groep van wiki's waar hierdie groep aktief is:",
 	'centralauth-editgroup-noset' => '(geen)',
-	'centralauth-editgroup-submit' => 'Stoor veranderinge aan groepsregte',
+	'centralauth-editgroup-submit' => 'Stoor veranderinge aan groepsregte', # Fuzzy
 	'centralauth-editgroup-perms' => 'Toegekende regte:',
 	'centralauth-editgroup-reason' => 'Rede:',
-	'centralauth-editgroup-success' => 'Die groepsregte is verander',
+	'centralauth-editgroup-success' => 'Die groepsregte is verander', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|wysig]])',
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki waarop hy of sy 'n gebruiker het:",
 	'centralauth-editset' => 'Wikigroepe',
@@ -1122,7 +1119,7 @@ Jy kan besigtig en verander enige van hulle, of 'n nuwe stel.",
 	'right-globalgroupmembership' => 'Wysig lidmaatskap aan globale groepe',
 	'right-centralauth-autoaccount' => "Outomaties inloggen met 'n globale rekening",
 	'right-centralauth-unmerge' => 'Ontknoop globale gebruiker',
-	'right-centralauth-lock' => 'Blokkeer of versteek globale gebruiker',
+	'right-centralauth-lock' => 'Blokkeer of versteek globale gebruiker', # Fuzzy
 	'right-centralauth-oversight' => 'Onderdruk globale gebruiker', # Fuzzy
 	'right-centralauth-merge' => 'Versmelt gebruikers',
 	'right-globalgrouppermissions' => 'Bestuur globale groepe',
@@ -9020,6 +9017,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'multilock' => 'Mitme globaalse kasutaja lukustamine',
 	'centralauth-admin-multi-username' => 'Sisesta üks või enam kasutajanime, iga nimi eraldi real.',
 	'centralauth-admin-multi-notfound' => 'Ei leitud ühtki kasutajanime.',
+	'centralauth-admin-multi-searchprefix' => 'Või otsi kontosid eesliite järgi',
 	'centralauth-admin-action-lock-nochange' => 'Ära muuda lukustust',
 	'centralauth-admin-action-lock-lock' => 'Lukusta valitud kontod',
 	'centralauth-admin-action-lock-unlock' => 'Tühista valitud kontode lukustus',
