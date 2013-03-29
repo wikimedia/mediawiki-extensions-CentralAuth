@@ -271,7 +271,7 @@ $wgLogActions['gblrights/usergroups']  = 'centralauth-rightslog-entry-usergroups
 $wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms';
 $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms2';
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
-$wgLogActions['gblrights/grouprename'] = 'centralauth-rightslog-entry-grouprename';
+$wgLogActionsHandlers['gblrights/grouprename'] = 'efHandleGrouprenameLogEntry';
 
 foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type ) {
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
@@ -341,7 +341,7 @@ if ( MWInit::classExists( 'AntiSpoof' ) ) {
  * @param $type
  * @param $action
  * @param $title
- * @param $skin Skin
+ * @param $skin Skin|null If null, we want to use the wiki content language, since that will go to the IRC feed.
  * @param $params
  * @param $filterWikilinks bool
  * @return String
@@ -377,6 +377,36 @@ function efHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filte
 	// centralauth-rightslog-entry-deleteset
 	$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
 	if( $skin ) {
+		return $msg->text();
+	} else {
+		return $msg->inContentLanguage()->text();
+	}
+}
+
+/**
+ * Format global group rename log entries
+ *
+ * @param $type
+ * @param $action
+ * @param $title
+ * @param $skin Skin|null If null, we want to use the wiki content language, since that will go to the IRC feed.
+ * @param $params
+ * @param $filterWikilinks bool
+ *
+ * @return String
+ */
+function efHandleGrouprenameLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+	// $params[0] is the new one, $params[1] the old one
+	if ( $skin ) {
+		$params[0] = Linker::link( Title::newFromText( $params[0] ), htmlspecialchars( $params[0] ) );
+		$params[1] = Linker::link( Title::newFromText( $params[1] ), htmlspecialchars( $params[1] ) );
+	} else {
+		$params[0] = htmlspecialchars( $params[0] );
+		$params[1] = htmlspecialchars( $params[1] );
+	}
+
+	$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )->rawParams( $params[0], $params[1] );
+	if ( $skin ) {
 		return $msg->text();
 	} else {
 		return $msg->inContentLanguage()->text();
