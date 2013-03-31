@@ -4445,6 +4445,7 @@ $messages['bg'] = array(
 );
 
 /** Banjar (Bahasa Banjar)
+ * @author Ezagren
  * @author J Subhi
  * @author Riemogerz
  */
@@ -4470,13 +4471,13 @@ Paubahan kada cagar dilakuakan sampai Pian mambarii kunpirmasi bahwa kada ada ma
 	'centralauth-merge-step2-detail' => 'Babarapa akun kada kawa sacara utumatis dicucukakan lawan wiki inti nang dipilih.
 Amun akun-akun naya ampun Pian, Pian kawa mangunpirmasiakan lawan mambarii kata sandinya.',
 	'centralauth-merge-step2-submit' => 'Kunpirmasi inpurmasi log babuat galubal',
-	'centralauth-merge-dryrun-complete' => 'Samua akun nang ditamui kawa digabungakan sacara utumatis!
+	'centralauth-merge-dryrun-complete' => 'Samua akun nang didapati kawa digabungakan sacara utumatis!
 
-Wayah naya balum ada parubahan nang diulah gasan akun-akun Pian.',
-	'centralauth-merge-dryrun-incomplete' => 'Babarapa akun kada kawa diperipikasi sacara utumatis wan kada cagar umpat dimigrasiakan.
+Wayah naya balum ada paubahan nang diulah gasan akun-akun Pian.',
+	'centralauth-merge-dryrun-incomplete' => 'Babarapa akun kada kawa diverivikasi sacara utumatis wan kada cagar umpat dimigrasiakan.
 Pian kawa manggabungakan akun-akun nintu kaina.
 
-Wayah naya balum ada parubahan nang diulah gasan akun Pian.',
+Wayah naya balum ada paubahan nang diulah gasan akun Pian.',
 	'centralauth-merge-dryrun-or' => "'''atawa'''",
 	'centralauth-merge-dryrun-home' => 'Sistim migrasi kawa kawa mangkunpirmasiakan bahwa Pian adalah ampun matan akun pamakai naya di wiki utamanya.
 
@@ -4556,7 +4557,7 @@ Alasan: $1',
 	'right-globalgroupmembership' => 'Babak kaanggutaan ka galambang global',
 	'right-centralauth-autoaccount' => 'Utumatis babuat log awan akun global',
 	'right-centralauth-unmerge' => 'Kada usah gabungi akun global',
-	'right-centralauth-lock' => 'Sunduk atawa sungkupakan akun global',
+	'right-centralauth-lock' => 'Sunduk atawa sungkupakan akun global', # Fuzzy
 	'right-centralauth-oversight' => 'Tikin akun global', # Fuzzy
 	'right-centralauth-merge' => 'Gabungakan akun mereka',
 	'right-globalgrouppermissions' => 'Kalula galambang global',
@@ -17412,10 +17413,6 @@ enlogge, oohne dat De doh en extra Aanmeldung bruchs.',
 	'centralauth-not-owner-text' => 'Dä Metmaacher-Name „$1“ es automattsch däm Metmaacher zojschlare woode, dä dä Name op de $2 hät.
 
 Wann dat Do bes, dann kanns de dat Zosammelääje janz eifach fädesch maache, indämm dat de dat Houp-Paßwoot doför hee enjiß:',
-	'centralauth-blocked-text' => 'Do bes jesperrt för et Beärbeide fun Sigge en Dingem Heim-Wiki (süch unge)
-Bes esu joot un donn do enne Wiki-Köbes bedde,
-dat hä de Sperr ophiff.
-Esu lang wi di Sperr dooht, deit dat Zosammeläje nit fluppe.',
 	'centralauth-notice-dryrun' => '<div class="successbox" style="text-align:center">Nit Ääach!<br />Nor zom Zeije</div><br clear="all" />',
 	'centralauth-disabled-dryrun' => 'Dat Zosammelääje fun den Metmaachere jeit em Momang nit.
 Mer künne et zwa Förföhre, wi et wöhr, ävver dat es nit
@@ -17528,7 +17525,7 @@ Der Jrond: $2.',
 „<nowiki>$1</nowiki>“ jitt et nit, do künne mer och
 nix fott schmieße.',
 	'centralauth-token-mismatch' => 'Schad, mer kunnte nit beärrbeide, de Sessions-Date sin futsch. Donn et norr_ens versöke.',
-	'centralauth-admin-reason' => 'Aanlass:',
+	'centralauth-admin-reason' => 'Aanlaß:',
 	'centralauth-admin-reason-other' => 'Ene andere ov zohsäzlejje Jrund:',
 	'centralauth-admin-unhide-nonexistent' => 'En jemeinsame Aanmeldung unger dämm Metmaacher-Name
 „<nowiki>$1</nowiki>“ jitt et nit, do künne mer och
@@ -17646,12 +17643,12 @@ En Jropp oohne et winischßt ei Rääsch jit et nit.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Leß met de Metmaacher met däm Rääsch „$2“]]',
 	'centralauth-editgroup-restrictions' => 'De Wikis, wo et di Jropp jitt:',
 	'centralauth-editgroup-noset' => '(kein)',
-	'centralauth-editgroup-submit' => 'Don de Änderunge aan dä Jropp ier Rääschte fasshallde',
+	'centralauth-editgroup-submit' => 'Don de Änderunge aan dä Jropp ier Rääschte fasshallde', # Fuzzy
 	'centralauth-editgroup-perms' => 'Zojedeilte Rääschte:',
 	'centralauth-editgroup-reason' => 'Jrond:',
-	'centralauth-editgroup-success' => 'Jruppe-Rääsch jeändert',
+	'centralauth-editgroup-success' => 'Jruppe-Rääsch jeändert', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Do häs de Rääschte för de Metmaacher-Jrupp „$1“ jez jändert.
-[[Special:GlobalGroupPermissions|Jangk retuur, nohm Metmaacher-Jruppe-Rääschte beärrbeide]]',
+[[Special:GlobalGroupPermissions|Jangk retuur, nohm Metmaacher-Jruppe-Rääschte beärrbeide]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beärrbeide]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Don e Wiki ußwähle, wo di als Metmaacher aanjemeldt sin:',
 	'centralauth-globalgroupmembership-badknownwiki' => 'Dä Metmaacher met dä jemeinsame Aanmeldung „$1“ es im Wiki „$2“ ja nit aktiv.
@@ -17696,7 +17693,7 @@ Do kanns eine vun dänne aanllore udder ändere, udder en neue aanlääje.',
 	'right-globalgroupmembership' => 'Metjleedschaff en jemeinsame Metmaacher-Jruppe beärbeide',
 	'right-centralauth-autoaccount' => 'Automatėsch med ene jemeinsame Aanmäldong aanmälde',
 	'right-centralauth-unmerge' => 'För en jemeinsam Aanmeldung zosammejelaate Zohjäng wider opdeile',
-	'right-centralauth-lock' => 'Metmaacher med en jemeinsam Aanmeldung sperre udder vershteishe',
+	'right-centralauth-lock' => 'Metmaacher med en jemeinsam Aanmeldung sperre udder vershteishe', # Fuzzy
 	'right-centralauth-oversight' => 'Metmaacher med en jemeinsam Aanmeldung ongerdröcke', # Fuzzy
 	'right-centralauth-merge' => 'Eije Metmaacher-Name op en jemeinsam Aanmeldung zosamme lääje',
 	'right-globalgrouppermissions' => 'Jemeinsame Metmaacher-Jruppe beärbeide',
