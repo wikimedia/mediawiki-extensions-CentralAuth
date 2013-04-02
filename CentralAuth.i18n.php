@@ -9782,6 +9782,7 @@ Ennen yhdistämistä luotujen paikallisten tunnusten salasanat palautuvat yhdist
 	'centralauth-listusers-locked' => 'lukittu',
 	'centralauth-listusers-attached' => '[[User:$1|paikallinen tunnus olemassa]]',
 	'centralauth-listusers-nolocal' => 'yhdistämätön tai paikallista tunnusta ei ole',
+	'centralauth-admin-action-lock-lock' => 'Lukitse valitut tunnukset',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekunti|sekuntia}} sitten',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuutti|minuuttia}} sitten',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|tunti|tuntia}} sitten',
@@ -9917,6 +9918,7 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-centralauth-oversight' => 'Häivyttää tai piilottaa järjestelmänlaajuinen tunnus',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
 	'right-globalgrouppermissions' => 'Hallinnoida järjestelmänlaajuisia ryhmiä',
+	'action-centralauth-lock' => 'lukita tai avata järjestelmänlaajuisia tunnuksia',
 );
 
 /** meänkieli (meänkieli)
@@ -24745,6 +24747,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author Pedroca cerebral
  * @author Rafael Vargas
  * @author Sir Lestaty de Lioncourt
+ * @author Teles
  * @author 555
  */
 $messages['pt-br'] = array(
@@ -24792,13 +24795,11 @@ Insira a senha do wiki de origem.',
 	'centralauth-not-owner-text' => 'O nome de usuário "$1" foi automaticamente relacionado ao proprietário da conta em $2.
 
 Se este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal dessa conta aqui:',
-	'centralauth-blocked-text' => 'Você está bloqueado de editar em seu wiki-residência (listado a seguir).
-Solicite o desbloqueio a um administrador de tal wiki.
-Enquanto ela estiver bloqueada, não será possível fundir as contas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas.
 Desculpe-nos.',
 	'centralauth-error-locked' => 'Você não tem como editar, já que sua conta está bloqueada.',
+	'centralauth-error-unmerged' => 'Você não pode editar, pois sua conta não está unificada.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/pt|Leia mais sobre o '''login unificado''']]...''",
 	'centralauth-list-home-title' => 'Wiki local',
 	'centralauth-list-home-dryrun' => 'A senha e endereço de e-mail definidos neste wiki serão os utilizados em sua conta unificada; sua página de usuário terá um link automático nos outros wikis.',
@@ -24850,11 +24851,12 @@ Se a conta global também for sua, você pode associa-lá nesta conta inserindo 
 	'centralauth-admin-permission' => 'Só os stewards podem unificar as contas de outras pessoas.',
 	'centralauth-admin-no-unified' => 'Não há contas unificadas para este nome de usuário.',
 	'centralauth-admin-info-header' => 'Informação de usuários globais',
+	'centralauth-admin-info-username' => 'Nome de usuário:',
 	'centralauth-admin-info-id' => 'ID do usuário:',
 	'centralauth-admin-info-registered' => 'Registrada:',
 	'centralauth-admin-info-home' => 'Wiki de origem:',
 	'centralauth-admin-info-editcount' => 'Total de edições:',
-	'centralauth-admin-info-locked' => 'Bloqueado:',
+	'centralauth-admin-info-locked' => 'Travado:',
 	'centralauth-admin-info-hidden' => 'Nível de ocultação:',
 	'centralauth-admin-nohome' => 'não foi possível determinar',
 	'centralauth-admin-yes' => 'sim',
@@ -24996,12 +24998,12 @@ Note que um grupo não existe se não tiver permissões atribuídas.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de usuários com direitos $2]]',
 	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está ativo:',
 	'centralauth-editgroup-noset' => '(nenhum)',
-	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo',
+	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permissões atribuídas:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Permissões de grupo alteradas',
+	'centralauth-editgroup-success' => 'Permissões de grupo alteradas', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Alterou com sucesso as permissões do grupo $1.
-[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]',
+[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Selecione uma wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O usuário global '''$1''' não está ativo na wiki especificada (''$2''). É possível que esteja atribuindo direitos ao usuário errado!",
@@ -25043,7 +25045,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
 	'right-centralauth-autoaccount' => 'Acessar automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
-	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global',
+	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimir a conta global', # Fuzzy
 	'right-centralauth-merge' => 'Unificar as contas',
 	'right-globalgrouppermissions' => 'Gerenciar grupos globais',
