@@ -16,6 +16,24 @@
       "revId": "3f13006855662ba822f2007023e1482666948a36",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrIfeCWk",
+        "filename": "CentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-02T17:14:52Z",
+      "side": 1,
+      "message": "Notices aren\u0027t shown in production... of course we can build in an if clause for a single row which will be manually fixed anyway, dunno if that\u0027s worth the afford, though",
+      "parentUuid": "DrGezrU0",
+      "revId": "3f13006855662ba822f2007023e1482666948a36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
