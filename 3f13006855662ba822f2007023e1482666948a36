@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DrGezrU0",
+        "filename": "CentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-02T17:06:32Z",
+      "side": 1,
+      "message": "So that we don\u0027t get a warning for the lines that weren\u0027t logged correctly, can we do something like: if ( !isset( $params[1] ) ) { $params[1] \u003d $params[0]; $params[0] \u003d $title; }",
+      "revId": "3f13006855662ba822f2007023e1482666948a36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
