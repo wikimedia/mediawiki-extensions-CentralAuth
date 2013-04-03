@@ -15118,12 +15118,12 @@ Nota che un gruppo non esiste a meno che non gli siano stati assegnati i permess
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Elenco di utenti con permessi $2]]',
 	'centralauth-editgroup-restrictions' => 'Insieme di wiki dove questo gruppo è attivo:',
 	'centralauth-editgroup-noset' => '(nessuno)',
-	'centralauth-editgroup-submit' => 'Salva i cambiamenti ai permessi di gruppo', # Fuzzy
+	'centralauth-editgroup-submit' => 'Salva le modifiche al gruppo globale',
 	'centralauth-editgroup-perms' => 'Permessi assegnati:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Permessi di gruppo cambiati', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Hai cambiato con successo i permessi di gruppo per il gruppo $1.
-[[Special:GlobalGroupPermissions|Torna alla gestione dei gruppi]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Gruppo globale modificato',
+	'centralauth-editgroup-success-text' => 'Hai modificato con successo il gruppo globale $1.
+[[Special:GlobalGroupPermissions|Torna alla gestione dei gruppi]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modifica]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Seleziona una wiki sulla quale ha un account:',
 	'centralauth-globalgroupmembership-badknownwiki' => "L'utente globale '''$1''' non è attivo sulla wiki che hai specificato ('' $2 '').
