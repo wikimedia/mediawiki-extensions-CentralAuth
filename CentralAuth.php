@@ -195,6 +195,7 @@ $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.al
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 
+$wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
 $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
@@ -219,6 +220,10 @@ $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswor
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
+$wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthHooks::onApiTokensGetTokenTypes';
+$wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
+$wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
+$wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
