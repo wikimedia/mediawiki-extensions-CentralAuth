@@ -241,15 +241,19 @@ class CentralAuthHooks {
 		}
 
 		// Clean up username
-		$title = Title::makeTitleSafe( NS_USER, $userName );
-		if ( !$title ) {
+		$userName = User::getCanonicalName( $userName, 'creatable' );
+		if ( !$userName ) {
 			wfDebug( __METHOD__ . ": invalid username\n" );
 			return true;
 		}
-		$userName = $title->getText();
+		$user->setName( $userName );
 
 		// Try the central user
-		$centralUser = new CentralAuthUser( $userName );
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( !$centralUser->exists() ) {
+			wfDebug( __METHOD__ . ": global account doesn't exist\n" );
+			return true;
+		}
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
 			wfDebug( __METHOD__ . ": token mismatch\n" );
 			return true;
@@ -273,7 +277,7 @@ class CentralAuthHooks {
 
 		if ( !$localId ) {
 			// User does not exist locally, attempt to create it
-			if ( !self::attemptAddUser( $user, $userName ) ) {
+			if ( !self::attemptAddUser( $user ) ) {
 				// Can't create user, give up now
 				return true;
 			}
@@ -474,12 +478,13 @@ class CentralAuthHooks {
 	 * Attempt to add a user to the database
 	 * Does the required authentication checks and updates for auto-creation
 	 * @param $user User
-	 * @param $userName string
 	 * @throws MWException
 	 * @return bool Success
 	 */
-	static function attemptAddUser( $user, $userName ) {
+	static function attemptAddUser( $user ) {
 		global $wgAuth, $wgCentralAuthCreateOnView;
+
+		$userName = $user->getName();
 		// Denied by configuration?
 		if ( !$wgAuth->autoCreate() ) {
 			wfDebug( __METHOD__ . ": denied by configuration\n" );
@@ -576,7 +581,6 @@ class CentralAuthHooks {
 		$user->addNewUserLogEntryAutoCreate();
 
 		$wgAuth->initUser( $user, true );
-		$wgAuth->updateUser( $user );
 
 		# Notify hooks (e.g. Newuserlog)
 		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
