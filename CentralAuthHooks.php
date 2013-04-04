@@ -3,11 +3,129 @@
 class CentralAuthHooks {
 
 	/**
+	 * Check whether we're in API mode and the "centralauthtoken" parameter was
+	 * sent.
+	 * @return bool
+	 */
+	static function hasApiToken() {
+		global $wgCentralAuthCookies;
+		if ( !$wgCentralAuthCookies ) {
+			return false;
+		}
+
+		if ( defined( 'MW_API' ) ) {
+			global $wgRequest;
+			if ( strlen( $wgRequest->getVal( 'centralauthtoken' ) ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Get the CentralAuthUser for the API token.
+	 * @param bool $invalidateToken If true, invalidate the passed token
+	 * @return CentralAuthUser|null
+	 */
+	static function getApiCentralUser( $invalidateToken ) {
+		if ( !self::hasApiToken() ) {
+			return null;
+		}
+
+		global $wgRequest, $wgMemc;
+		static $cachedUser = false;
+
+		if ( $cachedUser === false ) {
+			$loginToken = $wgRequest->getVal( 'centralauthtoken' );
+			$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
+			$cachedUser = null;
+
+			$data = $wgMemc->get( $key );
+			if ( $invalidateToken ) {
+				$wgMemc->delete( $key );
+			}
+			if ( !is_array( $data ) ) {
+				return null;
+			}
+			$userName = $data['userName'];
+			$token = $data['token'];
+
+			// Clean up username
+			$title = Title::makeTitleSafe( NS_USER, $userName );
+			if ( !$title ) {
+				wfDebug( __METHOD__ . ": invalid username\n" );
+				return null;
+			}
+			$userName = $title->getText();
+
+			// Try the central user
+			$centralUser = new CentralAuthUser( $userName );
+			if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
+				wfDebug( __METHOD__ . ": token mismatch\n" );
+				return null;
+			}
+			if ( !$centralUser->exists() ) {
+				return null;
+			}
+			if ( !$centralUser->isAttached() && User::idFromName( $userName ) ) {
+				// User exists locally and is not attached. Fail!
+				return null;
+			}
+			$cachedUser = $centralUser;
+		} elseif ( $invalidateToken ) {
+			$loginToken = $wgRequest->getVal( 'centralauthtoken' );
+			$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
+			$wgMemc->delete( $key );
+		}
+
+		return $cachedUser;
+	}
+
+	/**
+	 * @return bool
+	 */
+	static function onSetupAfterCache() {
+		if ( self::hasApiToken() ) {
+			// If the API 'centralauthtoken' parameter is set, we don't want to
+			// be setting cookies. So disable setting of the session cookie
+			// and clear $_COOKIES.
+			// We can't try to load the cookies from memcached yet, because
+			// getting the central user requires that $wgContLang is set up.
+			ini_set( 'session.use_cookies', 0 );
+			$_COOKIES = array();
+		}
+		return true;
+	}
+
+	/**
 	 * @param $auth
 	 * @return bool
 	 */
 	static function onAuthPluginSetup( &$auth ) {
 		$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
+
+		// Now $wgContLang is set up, so load the cookies and session ids from
+		// memcached.
+		$centralUser = self::getApiCentralUser( false );
+		if ( $centralUser ) {
+			global $wgMemc;
+			$key = CentralAuthUser::memcKey( 'api-cookies', md5( $centralUser->getName() ), wfWikiID() );
+			$cookies = $wgMemc->get( $key );
+			if ( !is_array( $cookies ) ) {
+				$cookies = array();
+			}
+			if ( !isset( $cookies[session_name()] ) ) {
+				$cookies[session_name()] = MWCryptRand::generateHex( 32 );
+			}
+			global $wgCentralAuthCookiePrefix;
+			if ( !isset( $cookies[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
+				$cookies[$wgCentralAuthCookiePrefix . 'Session'] = MWCryptRand::generateHex( 32 );
+			}
+			$wgMemc->set( $key, $cookies, 86400 );
+			$_COOKIES = $cookies;
+			wfSetupSession( $cookies[session_name()] );
+		}
+
 		return true;
 	}
 
@@ -211,48 +329,58 @@ class CentralAuthHooks {
 			// Use local sessions only.
 			return true;
 		}
-		$prefix = $wgCentralAuthCookiePrefix;
 
 		if ( $user->isLoggedIn() ) {
 			// Already logged in; don't worry about the global session.
 			return true;
 		}
 
-		if ( isset( $_COOKIE["{$prefix}User"] ) && isset( $_COOKIE["{$prefix}Token"] ) ) {
-			$userName = $_COOKIE["{$prefix}User"];
-			$token = $_COOKIE["{$prefix}Token"];
-		} elseif ( (bool)( $session = CentralAuthUser::getSession() ) ) {
-			$token = $session['token'];
-			$userName = $session['user'];
+		if ( self::hasApiToken() ) {
+			$centralUser = self::getApiCentralUser( false );
+			if ( !$centralUser ) {
+				return true;
+			}
+			$userName = $centralUser->getName();
+			$token = $centralUser->getAuthToken();
 		} else {
-			wfDebug( __METHOD__ . ": no token or session\n" );
-			return true;
-		}
+			$prefix = $wgCentralAuthCookiePrefix;
 
-		// Sanity check to avoid session ID collisions, as reported on bug 19158
-		if ( !isset( $_COOKIE["{$prefix}User"] ) ) {
-			wfDebug( __METHOD__ . ": no User cookie, so unable to check for session mismatch\n" );
-			return true;
-		} elseif ( $_COOKIE["{$prefix}User"] != $userName ) {
-			wfDebug( __METHOD__ . ": Session ID/User mismatch. Possible session collision. " .
+			if ( isset( $_COOKIE["{$prefix}User"] ) && isset( $_COOKIE["{$prefix}Token"] ) ) {
+				$userName = $_COOKIE["{$prefix}User"];
+				$token = $_COOKIE["{$prefix}Token"];
+			} elseif ( (bool)( $session = CentralAuthUser::getSession() ) ) {
+				$token = $session['token'];
+				$userName = $session['user'];
+			} else {
+				wfDebug( __METHOD__ . ": no token or session\n" );
+				return true;
+			}
+
+			// Sanity check to avoid session ID collisions, as reported on bug 19158
+			if ( !isset( $_COOKIE["{$prefix}User"] ) ) {
+				wfDebug( __METHOD__ . ": no User cookie, so unable to check for session mismatch\n" );
+				return true;
+			} elseif ( $_COOKIE["{$prefix}User"] != $userName ) {
+				wfDebug( __METHOD__ . ": Session ID/User mismatch. Possible session collision. " .
 					"Expected: $userName; actual: " .
 					$_COOKIE["{$prefix}User"] . "\n" );
-			return true;
-		}
+				return true;
+			}
 
-		// Clean up username
-		$title = Title::makeTitleSafe( NS_USER, $userName );
-		if ( !$title ) {
-			wfDebug( __METHOD__ . ": invalid username\n" );
-			return true;
-		}
-		$userName = $title->getText();
+			// Clean up username
+			$title = Title::makeTitleSafe( NS_USER, $userName );
+			if ( !$title ) {
+				wfDebug( __METHOD__ . ": invalid username\n" );
+				return true;
+			}
+			$userName = $title->getText();
 
-		// Try the central user
-		$centralUser = new CentralAuthUser( $userName );
-		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
-			wfDebug( __METHOD__ . ": token mismatch\n" );
-			return true;
+			// Try the central user
+			$centralUser = new CentralAuthUser( $userName );
+			if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
+				wfDebug( __METHOD__ . ": token mismatch\n" );
+				return true;
+			}
 		}
 
 		// Try the local user from the slave DB
@@ -694,6 +822,10 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
+		if ( self::hasApiToken() ) {
+			throw new MWException( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
+		}
+
 		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies || $user->isAnon() ) {
 			return true;
@@ -855,6 +987,131 @@ class CentralAuthHooks {
 	static function abuseFilterBuilder( &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
 		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
+		return true;
+	}
+
+	/**
+	 * Tell the API's action=tokens about the centralauth token
+	 * @param array &$types
+	 * @return bool
+	 */
+	static function onApiTokensGetTokenTypes( &$types ) {
+		global $wgCentralAuthCookies;
+		if ( !$wgCentralAuthCookies ) {
+			return true;
+		}
+
+		$types['centralauth'] = array( 'CentralAuthHooks', 'getApiCentralAuthToken' );
+		return true;
+	}
+
+	/**
+	 * Create an API centralauth token
+	 * @return string|bool Token
+	 */
+	static function getApiCentralAuthToken() {
+		global $wgUser;
+		if ( !$wgUser->isAnon() && !self::hasApiToken() ) {
+			$centralUser = CentralAuthUser::getInstance( $wgUser );
+			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				$data = array(
+					'userName' => $wgUser->getName(),
+					'token' => $centralUser->getAuthToken(),
+				);
+				global $wgMemc;
+				do {
+					$loginToken = MWCryptRand::generateHex( 32 );
+					$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
+				} while ( !$wgMemc->add( $key, $data, 10 ) );
+				return $loginToken;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Inject the "centralauthtoken" parameter into the API
+	 * @param ApiBase &$module API module
+	 * @param array &$params Array of parameter specifications
+	 * @param int $flags Flags (omitted before 1.21)
+	 * @return bool
+	 */
+	static function onAPIGetAllowedParams( &$module, &$params, $flags = 1 ) {
+		global $wgCentralAuthCookies;
+		if ( !$wgCentralAuthCookies ) {
+			return true;
+		}
+
+		if ( $module instanceof ApiMain && $flags ) {
+			$params['centralauthtoken'] = array(
+				ApiBase::PARAM_TYPE => 'string',
+			);
+		}
+		return true;
+	}
+
+	/**
+	 * Inject the "centralauthtoken" parameter description into the API
+	 * @param ApiBase &$module API module
+	 * @param array &$desc Array of parameter descriptions
+	 * @return bool
+	 */
+	static function onAPIGetParamDescription( &$module, &$desc ) {
+		global $wgCentralAuthCookies;
+		if ( !$wgCentralAuthCookies ) {
+			return true;
+		}
+
+		if ( $module instanceof ApiMain ) {
+			$desc['centralauthtoken'] = array(
+				'When accessing the API using a cross-domain AJAX request (CORS), use this to authenticate as the current SUL user.',
+				'Use action=tokens&type=centralauth on this wiki to retrieve the token, before making the CORS request. Each token may only be used once, and expires after 10 seconds.',
+				'This should be included in any pre-flight request, and therefore should be included in the request URI (not the POST body).',
+			);
+		}
+		return true;
+	}
+
+	/**
+	 * Validate "centralauthtoken", and disable certain modules that make no
+	 * sense with "centralauthtoken".
+	 * @param ApiBase $module API module
+	 * @param User $user User
+	 * @param array &$message Error message key and params
+	 * @return bool
+	 */
+	static function onApiCheckCanExecute( $module, $user, &$message ) {
+		global $wgCentralAuthCookies;
+		if ( !$wgCentralAuthCookies ) {
+			return true;
+		}
+
+		if ( self::hasApiToken() ) {
+			$module->getMain()->getVal( 'centralauthtoken' ); # Mark used
+			$apiCentralUser = self::getApiCentralUser( true );
+			$centralUser = CentralAuthUser::getInstance( $user );
+			if ( !$apiCentralUser || !$centralUser ||
+				$apiCentralUser->getId() !== $centralUser->getId()
+			) {
+				// Bad design, API.
+				ApiBase::$messageMap['centralauth-api-badtoken'] = array(
+					'code' => 'badtoken',
+					'info' => 'The centralauthtoken is not valid',
+				);
+				$message = array( 'centralauth-api-badtoken' );
+				return false;
+			}
+
+			if ( $module instanceof ApiLogin || $module instanceof ApiLogout ) {
+				// Bad design, API.
+				ApiBase::$messageMap['centralauth-api-blacklistedmodule'] = array(
+					'code' => 'badparams',
+					'info' => 'The module "$1" may not be used with centralauthtoken',
+				);
+				$message = array( 'centralauth-api-blacklistedmodule', $module->getModuleName() );
+				return false;
+			}
+		}
 		return true;
 	}
 }
