@@ -68,6 +68,21 @@ $wgCentralAuthDryRun = false;
 $wgCentralAuthCookies = false;
 
 /**
+ * Database name of a central login wiki. This is an alternative to directly setting
+ * cross-domain cookies for each wiki in $wgCentralAuthAutoLoginWikis. If set, a single
+ * login wiki will use a session/cookie to handle unified login sessions across wikis.
+ *
+ * On login, users will be redirected to the login wiki's Special:CentralLogin/login
+ * page and then redirected to Special:CentralAutoLogin back on the originating wiki.
+ * In the process, the central login wiki cookie and session will be set.
+ * As the user accesses other wikis, the login wiki will be checked via JavaScript
+ * to check login status and set the local session and cookies.
+ *
+ * This requires $wgCentralAuthCookies.
+ */
+$wgCentralAuthLoginWiki = false;
+
+/**
  * Domain to set global cookies for.
  * For instance, '.wikipedia.org' to work on all wikipedia.org subdomains
  * instead of just the current one.
@@ -152,6 +167,7 @@ $wgCentralAuthReadOnly = false;
  */
 $caBase = __DIR__;
 $wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/specials/SpecialCentralAuth.php";
+$wgAutoloadClasses['SpecialCentralLogin'] = "$caBase/specials/SpecialCentralLogin.php";
 $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/specials/SpecialMergeAccount.php";
 $wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['SpecialMultiLock'] = "$caBase/specials/SpecialMultiLock.php";
@@ -231,6 +247,7 @@ $wgGroupPermissions['steward']['centralauth-oversight'] = true;
 $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
+$wgSpecialPages['CentralLogin'] = 'SpecialCentralLogin';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
@@ -304,6 +321,7 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-merge-method-login',
 		'centralauth-merge-method-login-desc',
 		'centralauth-admin-delete-confirm',
+		'centralauth-completelogin-back'
 	),
 ) + $commonModuleInfo;
 

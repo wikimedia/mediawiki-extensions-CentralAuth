@@ -173,7 +173,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// since we're caching it.
 		$dbr = self::getCentralDB();
 
-		$row = $dbr->selectRow( 
+		$row = $dbr->selectRow(
 			array( 'globaluser', 'localuser' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
@@ -1975,26 +1975,32 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Set a global cookie that auto-authenticates the user on other wikis
+	 * Set a global cookie that auto-authenticates the user on other wikis.
+	 * This also destroys and "pending_name"/"pending_guid" keys in the session,
+	 * which exist when a partially authenticated stub session is created.
+	 *
 	 * Called on login.
 	 *
+	 * $refreshId can have three values:
+	 *   - True   : refresh the SessionID when setting the cookie to a new random ID.
+	 *   - String : refresh the SessionID when setting the cookie to the given ID.
+	 *   - False  : use the SessionID of the client cookie (make a new one if there is none).
+	 *
 	 * @param $remember Bool|User
-	 * @param $refesh Bool Refresh the SessionID when setting cookie
+	 * @param $refreshId Bool|string
 	 * @return string Session ID
 	 */
-	function setGlobalCookies( $remember = false, $refresh = false ) {
+	function setGlobalCookies( $remember = false, $refreshId = false ) {
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
 		}
 
 		$session = array();
-		$exp = time() + 86400;
-
 		$session['user'] = $this->mName;
 		self::setCookie( 'User', $this->mName );
 		$session['token'] = $this->getAuthToken();
-		$session['expiry'] = $exp;
+		$session['expiry'] = time() + 86400;
 		$session['auto-create-blacklist'] = array();
 
 		if ( $remember ) {
@@ -2002,7 +2008,8 @@ class CentralAuthUser extends AuthPluginUser {
 		} else {
 			$this->clearCookie( 'Token' );
 		}
-		return self::setSession( $session, $refresh );
+
+		return self::setSession( $session, $refreshId );
 	}
 
 	/**
@@ -2312,17 +2319,22 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Set the central session data
 	 *
+	 * $refreshId can have three values:
+	 *   - True   : refresh the SessionID when setting the cookie to a new random ID.
+	 *   - String : refresh the SessionID when setting the cookie to the given ID.
+	 *   - False  : use the SessionID of the client cookie (make a new one if there is none).
+	 *
 	 * @param $data Array
-	 * @return string
+	 * @param $refreshId Bool|String
+	 * @return string Session ID
 	 */
-	static function setSession( $data, $refresh = false ) {
-		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
-		global $wgMemc;
+	static function setSession( $data, $refreshId = false ) {
+		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix, $wgMemc;
 		if ( !$wgCentralAuthCookies ) {
 			return null;
 		}
-		if ( $refresh || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
-			$id = MWCryptRand::generateHex( 32 );
+		if ( $refreshId || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
+			$id = is_string( $refreshId ) ? $refreshId : MWCryptRand::generateHex( 32 );
 			self::setCookie( 'Session', $id, 0 );
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
