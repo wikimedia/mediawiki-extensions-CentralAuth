@@ -142,6 +142,7 @@ class CentralAuthHooks {
 	/**
 	 * @param $user User
 	 * @param $inject_html string
+	 * @param $form LoginForm
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
@@ -152,11 +153,13 @@ class CentralAuthHooks {
 		}
 
 		$centralUser = CentralAuthUser::getInstance( $user );
-
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
 			$centralUser->deleteGlobalCookies();
 			return true;
 		}
+
+		// On central login wiki
+		self::doCentralWikiLoginRedirect( $user, $form );
 
 		// On other domains
 		global $wgCentralAuthAutoLoginWikis;
@@ -200,6 +203,74 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	protected static function doCentralWikiLoginRedirect( User $user ) {
+		global $wgCentralAuthLoginWiki, $wgMemc;
+
+		if ( !$wgCentralAuthLoginWiki || defined( 'MW_API' ) ) {
+			return true;
+		}
+
+		// Get the global user for this user
+		$caUser = CentralAuthUser::getInstance( $user );
+		if ( !$caUser->getId() ) {
+			return true; // user isn't unified?
+		}
+
+		// Check that this is actually for a special login page view
+		$context = RequestContext::getMain();
+		if ( $context->getTitle()->isSpecial( 'Userlogin' ) ) {
+			$url = WikiMap::getForeignURL( $wgCentralAuthLoginWiki, 'Special:CentralLogin/start' );
+			if ( strlen( $url ) ) {
+				$request = $context->getRequest();
+				// User will be redirected to Special:CentralLogin/start (central wiki),
+				// POST to Special:CentralAutoLogin (this wiki) and sent to the "returnto".
+				// Sanity check that "returnto" is not one of the central login pages. If it
+				// is, then clear the "returnto" options (LoginForm will use the main page).
+				$returnTo = $request->getVal( 'returnto', '' );
+				$returnToQuery = $request->getVal( 'returntoquery', '' );
+				$returnToTitle = Title::newFromText( $returnTo );
+				if ( $returnToTitle && $returnToTitle->isSpecial( 'CentralLogin' ) ) {
+					$returnTo = '';
+					$returnToQuery = '';
+				}
+
+				// When POSTs triggered from Special:CentralLogin/start are sent back to
+				// this wiki, the token will be checked to see if it was signed with this.
+				// This is needed as Special:CentralLogin/start only takes a token argument
+				// and we need to make sure an agent requesting such a URL actually initiated
+				// the login request that spawned that token server-side.
+				$secret = MWCryptRand::generateHex( 32 );
+				$_SESSION['CentralAuth:autologin:current-attempt'] = array(
+					'secret'        => $secret,
+					'remember'      => $request->getCheck( 'wpRemember' ),
+					'returnTo'      => $returnTo,
+					'returnToQuery' => $returnToQuery
+				);
+
+				// Create a new token to pass to Special:CentralLogin/start (central wiki)
+				$token = MWCryptRand::generateHex( 32 );
+				$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
+				$data = array(
+					'secret'        => $secret,
+					'name'          => $caUser->getName(),
+					'guid'          => $caUser->getId(),
+					'wikiId'        => wfWikiId(),
+					'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' ),
+					'returnTo'      => $returnTo,
+					'returnToQuery' => $returnToQuery
+				);
+				$wgMemc->set( $key, $data, 30 );
+
+				$url = wfAppendQuery( $url, array( 'token' => $token ) );
+				$context->getOutput()->redirect( $url );
+			} else {
+				wfDebug( "Unable to create Special:CentralLogin/start via WikiMap." );
+			}
+		}
+
+		return true;
+	}
+
 	/**
 	 * @param $user User
 	 * @param $result
@@ -222,8 +293,13 @@ class CentralAuthHooks {
 			$userName = $_COOKIE["{$prefix}User"];
 			$token = $_COOKIE["{$prefix}Token"];
 		} elseif ( (bool)( $session = CentralAuthUser::getSession() ) ) {
-			$token = $session['token'];
-			$userName = $session['user'];
+			if ( isset( $session['pending_name'] ) || isset( $session['pending_guid'] ) ) {
+				wfDebug( __METHOD__ . ": unintialized session\n" );
+				return true;
+			} else {
+				$token = $session['token'];
+				$userName = $session['user'];
+			}
 		} else {
 			wfDebug( __METHOD__ . ": no token or session\n" );
 			return true;

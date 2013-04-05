@@ -173,7 +173,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// since we're caching it.
 		$dbr = self::getCentralDB();
 
-		$row = $dbr->selectRow( 
+		$row = $dbr->selectRow(
 			array( 'globaluser', 'localuser' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
@@ -1964,7 +1964,10 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Set a global cookie that auto-authenticates the user on other wikis
+	 * Set a global cookie that auto-authenticates the user on other wikis.
+	 * This also destroys and "pending_name"/"pending_guid" keys in the session,
+	 * which exist when a partially authenticated stub session is created.
+	 *
 	 * Called on login.
 	 *
 	 * @param $remember Bool|User
