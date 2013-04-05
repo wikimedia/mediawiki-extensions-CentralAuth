@@ -145,29 +145,49 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
-		global $wgCentralAuthCookies;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthCookies;
+
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
 			return true;
 		}
 
 		$centralUser = CentralAuthUser::getInstance( $user );
-
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
 			$centralUser->deleteGlobalCookies();
 			return true;
 		}
 
-		// On other domains
-		global $wgCentralAuthAutoLoginWikis;
-		if ( !$wgCentralAuthAutoLoginWikis ) {
+		if ( $wgCentralAuthLoginWiki ) {
+			// Set $inject_html to some text to bypass the LoginForm redirection
 			$inject_html .= wfMessage( 'centralauth-login-no-others' )->text();
-			return true;
+			// Redirect to the central wiki and back to complete login
+			self::doCentralLoginRedirect( $user, $centralUser );
+		} else {
+			// Show icons to AutoLogin special page to create cross-domain cookies
+			$inject_html .= self::getDomainAutoLoginIconHtml( $user, $centralUser );
 		}
 
-		$inject_html .= '<div class="centralauth-login-box"><p>' .
+		return true;
+	}
+
+	public static function getDomainAutoLoginIconHtml( User $user, CentralAuthUser $centralUser ) {
+		global $wgCentralAuthAutoLoginWikis, $wgCentralAuthLoginWiki, $wgMemc;
+
+		$wikis = $wgCentralAuthAutoLoginWikis;
+		if ( $wgCentralAuthLoginWiki ) {
+			// Make sure the user gets any "remember me" token set on the central login wiki
+			$wikis[] = $wgCentralAuthLoginWiki;
+		}
+
+		// On other domains
+		if ( !$wikis ) {
+			return wfMessage( 'centralauth-login-no-others' )->text();
+		}
+
+		$inject_html = '<div class="centralauth-login-box"><p>' .
 			wfMessage( 'centralauth-login-progress', $user->getName() )->text() . "</p>\n<p>";
-		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
+		foreach ( $wikis as $alt => $wiki ) {
 			$data = array(
 				'userName' => $user->getName(),
 				'token' => $centralUser->getAuthToken(),
@@ -176,7 +196,6 @@ class CentralAuthHooks {
 			);
 
 			$loginToken = MWCryptRand::generateHex( 32 );
-			global $wgMemc;
 			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
 
 			$wiki = WikiMap::getWiki( $wiki );
@@ -196,6 +215,66 @@ class CentralAuthHooks {
 		}
 
 		$inject_html .= '</p></div>';
+
+		return $inject_html;
+	}
+
+	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser ) {
+		global $wgCentralAuthLoginWiki, $wgMemc;
+
+		if ( !$wgCentralAuthLoginWiki || defined( 'MW_API' ) ) {
+			return true;
+		}
+
+		// Check that this is actually for a special login page view
+		$context = RequestContext::getMain();
+		if ( $context->getTitle()->isSpecial( 'Userlogin' ) ) {
+			$request = $context->getRequest();
+			// User will be redirected to Special:CentralLogin/start (central wiki),
+			// POST to Special:CentralAutoLogin (this wiki) and sent to the "returnto".
+			// Sanity check that "returnto" is not one of the central login pages. If it
+			// is, then clear the "returnto" options (LoginForm will use the main page).
+			$returnTo = $request->getVal( 'returnto', '' );
+			$returnToQuery = $request->getVal( 'returntoquery', '' );
+			$returnToTitle = Title::newFromText( $returnTo );
+			if ( $returnToTitle && $returnToTitle->isSpecial( 'CentralLogin' ) ) {
+				$returnTo = '';
+				$returnToQuery = '';
+			}
+
+			// When POSTs triggered from Special:CentralLogin/start are sent back to
+			// this wiki, the token will be checked to see if it was signed with this.
+			// This is needed as Special:CentralLogin/start only takes a token argument
+			// and we need to make sure an agent requesting such a URL actually initiated
+			// the login request that spawned that token server-side.
+			$secret = MWCryptRand::generateHex( 32 );
+			$_SESSION['CentralAuth:autologin:current-attempt'] = array(
+				'secret'        => $secret,
+				'remember'      => $request->getCheck( 'wpRemember' ),
+				'returnTo'      => $returnTo,
+				'returnToQuery' => $returnToQuery,
+				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' )
+			);
+
+			// Create a new token to pass to Special:CentralLogin/start (central wiki)
+			$token = MWCryptRand::generateHex( 32 );
+			$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
+			$data = array(
+				'secret'        => $secret,
+				'name'          => $centralUser->getName(),
+				'guid'          => $centralUser->getId(),
+				'wikiId'        => wfWikiId()
+			);
+			$wgMemc->set( $key, $data, 15 );
+
+			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = wfExpandUrl( // redirects should not be relative per RFC 2396
+				wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), "token=$token" )
+			);
+
+			$context->getOutput()->redirect( $url );
+		}
 
 		return true;
 	}
@@ -222,8 +301,13 @@ class CentralAuthHooks {
 			$userName = $_COOKIE["{$prefix}User"];
 			$token = $_COOKIE["{$prefix}Token"];
 		} elseif ( (bool)( $session = CentralAuthUser::getSession() ) ) {
-			$token = $session['token'];
-			$userName = $session['user'];
+			if ( isset( $session['pending_name'] ) || isset( $session['pending_guid'] ) ) {
+				wfDebug( __METHOD__ . ": unintialized session\n" );
+				return true;
+			} else {
+				$token = $session['token'];
+				$userName = $session['user'];
+			}
 		} else {
 			wfDebug( __METHOD__ . ": no token or session\n" );
 			return true;
@@ -318,21 +402,26 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
-		global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis;
+		global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis, $wgCentralAuthLoginWiki;
+
 		if ( !$wgCentralAuthCookies ) {
 			// Nothing to do.
 			return true;
-		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
+		}
+
+		$wikis = $wgCentralAuthAutoLoginWikis;
+		if ( $wgCentralAuthLoginWiki ) {
+			// Make sure the user gets logged out on the central login wiki
+			$wikis[] = $wgCentralAuthLoginWiki;
+		}
+
+		if ( !$wikis ) {
 			$inject_html .= wfMessage( 'centralauth-logout-no-others' )->parseAsBlock();
 			return true;
 		}
 
 		$centralUser = CentralAuthUser::getInstance( $user );
-
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
-			return true;
-		} elseif ( !$wgCentralAuthAutoLoginWikis ) {
-			$inject_html .= wfMessage( 'centralauth-logout-no-others' )->parseAsBlock();
 			return true;
 		}
 
@@ -341,12 +430,13 @@ class CentralAuthHooks {
 			wfMessage( 'centralauth-logout-progress' )->escaped() . "</p>\n<p>";
 		$centralUser = new CentralAuthUser( $userName );
 
-		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
+		foreach ( $wikis as $alt => $wiki ) {
 			$data = array(
 				'userName' => $userName,
 				'token' => $centralUser->getAuthToken(),
 				'remember' => false,
-				'wiki' => $wiki
+				'wiki' => $wiki,
+				'action' => 'logout'
 			);
 			$loginToken = MWCryptRand::generateHex( 32 );
 			global $wgMemc;
