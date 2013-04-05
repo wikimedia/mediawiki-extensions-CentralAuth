@@ -41,6 +41,8 @@
 	}
 
 	$( document ).ready( function () {
+		// Automatic form submission on CentralLogin/start
+		$( '#mw-centralloginform' ).submit();
 		// OnClick event listener for the "(?)" tooltips on Special:CentralAuth
 		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function ( event ) {
 			showMethodHint( $(this).data( 'centralauth-mergemethod' ), event );
