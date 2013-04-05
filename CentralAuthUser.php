@@ -173,7 +173,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// since we're caching it.
 		$dbr = self::getCentralDB();
 
-		$row = $dbr->selectRow( 
+		$row = $dbr->selectRow(
 			array( 'globaluser', 'localuser' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
@@ -1964,14 +1964,18 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Set a global cookie that auto-authenticates the user on other wikis
+	 * Set a global cookie that auto-authenticates the user on other wikis.
+	 * This also destroys and "pending_name"/"pending_guid" keys in the session,
+	 * which exist when a partially authenticated stub session is created.
+	 *
 	 * Called on login.
 	 *
 	 * @param $remember Bool|User
 	 * @param $refesh Bool Refresh the SessionID when setting cookie
+	 * @param $id string Session ID string; one will be generated if not provided
 	 * @return string Session ID
 	 */
-	function setGlobalCookies( $remember = false, $refresh = false ) {
+	function setGlobalCookies( $remember = false, $refresh = false, $id = false ) {
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -1991,7 +1995,7 @@ class CentralAuthUser extends AuthPluginUser {
 		} else {
 			$this->clearCookie( 'Token' );
 		}
-		return self::setSession( $session, $refresh );
+		return self::setSession( $session, $refresh, $id );
 	}
 
 	/**
@@ -2305,16 +2309,17 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Set the central session data
 	 *
 	 * @param $data Array
+	 * @param $refesh Bool Refresh the SessionID when setting cookie
+	 * @param $id string Session ID string; one will be generated if not provided
 	 * @return string
 	 */
-	static function setSession( $data, $refresh = false ) {
-		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
-		global $wgMemc;
+	static function setSession( $data, $refresh = false, $id = false ) {
+		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix, $wgMemc;
 		if ( !$wgCentralAuthCookies ) {
 			return null;
 		}
-		if ( $refresh || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
-			$id = MWCryptRand::generateHex( 32 );
+		if ( $id || $refresh || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
+			$id = $id ?: MWCryptRand::generateHex( 32 );
 			self::setCookie( 'Session', $id, 0 );
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
