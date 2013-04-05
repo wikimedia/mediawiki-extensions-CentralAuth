@@ -41,6 +41,16 @@
 	}
 
 	$( document ).ready( function () {
+		// Automatic form submission on CentralLogin/start
+		$( '#mw-centralloginform' ).submit();
+		// Back link for CentralLogin/startDW
+		$( '#centralauth-backlink-section' ).append(
+			$( '<a href="javascript:void()">' + mw.msg( 'centralauth-completelogin-back' ) + '</a>' )
+				.click( function() {
+					parent.history.back();
+					return false;
+				})
+		);
 		// OnClick event listener for the "(?)" tooltips on Special:CentralAuth
 		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function ( event ) {
 			showMethodHint( $(this).data( 'centralauth-mergemethod' ), event );
