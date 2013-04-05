@@ -612,6 +612,7 @@ $specialPageAliases['ro'] = array(
 
 /** Russian (русский) */
 $specialPageAliases['ru'] = array(
+	'MergeAccount' => array( 'Объединение_учётных_записей' ),
 	'GlobalGroupMembership' => array( 'Глобальные_права_участника', 'Глобальное_членство' ),
 	'WikiSets' => array( 'Наборы_вики' ),
 	'GlobalUsers' => array( 'Глобальные_участники' ),

@@ -7012,7 +7012,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-prefs-unattached' => 'Unbestätigt',
 	'centralauth-prefs-complete' => 'Alles in Ordnung!',
 	'centralauth-prefs-migration' => 'Zusammenführung in Arbeit',
-	'centralauth-prefs-count-attached' => 'Dein Benutzerkonto ist bei $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.',
+	'centralauth-prefs-count-attached' => 'Dein Benutzerkonto ist in {{PLURAL:$1|einem Projekt|$1 Projekten}} aktiv.',
 	'centralauth-prefs-count-unattached' => 'Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.',
 	'centralauth-prefs-detail-unattached' => 'Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.',
 	'centralauth-prefs-manage' => 'Globales Benutzerkonto verwalten',
