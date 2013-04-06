@@ -21094,6 +21094,31 @@ $messages['nah'] = array(
 	'centralauth-editset-reason' => 'Tlèka:',
 );
 
+/** Neapolitan (Nnapulitano)
+ * @author Chelin
+ */
+$messages['nap'] = array(
+	'centralauth-merge-dryrun-or' => "'''o'''",
+	'centralauth-list-home-title' => 'Wiki prencepale',
+	'centralauth-foreign-link' => "Utente $1 ncopp'â $2",
+	'centralauth-foreign-contributions' => "$1 {{PLURAL:$1|contribbuto|contribbute}} ncopp'â $2",
+	'centralauth-merge-method-primary' => 'wiki prencepale',
+	'centralauth-merge-method-empty' => 'nisciuno contribbuto',
+	'centralauth-merge-method-new' => 'novo account',
+	'centralauth-finish-password' => 'Password:',
+	'centralauth-finish-login' => 'Tràse',
+	'centralauth-admin-username' => 'Nomme utente:',
+	'centralauth-admin-lookup-ro' => "Vede 'nfromme utente",
+	'centralauth-admin-lookup-rw' => 'Gestione utenza',
+	'centralauth-admin-info-username' => 'Nomme utente:',
+	'centralauth-admin-info-id' => 'ID utenza:',
+	'centralauth-admin-info-home' => 'Wiki prencepale:',
+	'centralauth-admin-yes' => 'sì',
+	'centralauth-admin-no' => 'no',
+	'centralauth-admin-hidden-list' => 'dda lista pubbreca',
+	'centralauth-admin-list-localwiki' => 'Wiki locale',
+);
+
 /** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Atluxity
  * @author Danmichaelo
