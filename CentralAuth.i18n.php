@@ -21956,7 +21956,7 @@ Er is een andere wiki vastgesteld als thuiswiki voor uw gebruiker; volg de link 
 	'centralauth-merge-step3-submit' => 'Gebruikers samenvoegen',
 	'centralauth-merge-no-accounts' => 'Er zijn geen gebruikers met uw naam gevonden in de volgtabel voor globale gebruikers!
 De database moet corrupt zijn.',
-	'centralauth-merge-home-password' => 'De hieronder aangegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan u hebt ingegeven.
+	'centralauth-merge-home-password' => 'De hieronder opgegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan u hebt opgegeven.
 Voer het wachtwoord voor de thuiswiki in.',
 	'centralauth-complete' => 'Samenvoegen gebruikers afgerond!',
 	'centralauth-incomplete' => 'Samenvoegen gebruikers niet volledig!',
@@ -22196,7 +22196,7 @@ Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bewerken]])',
 	'centralauth-editgroup-nowikiset' => "Geen, van toepassing op alle wiki's.",
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki waarop hij of zij een gebruiker heeft:',
-	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de aangegeven wiki ('' $2 ''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
+	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de opgegeven wiki ('' $2 ''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
 	'centralauth-editset' => 'Wikigroepen',
 	'centralauth-editset-legend-rw' => 'Wikigroep aanmaken of bewerken',
 	'centralauth-editset-legend-ro' => 'Wikigroepen',
@@ -22206,8 +22206,8 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|verwijderen]])',
 	'centralauth-editset-new' => 'Nieuwe set aanmaken',
 	'centralauth-editset-notfound' => 'De wikigroep "$1" bestaat niet.',
-	'centralauth-editset-optin' => "Opt-ingebaseerd (bevat alleen de aangegeven wiki's)",
-	'centralauth-editset-optout' => "Opt-outgebaseerd (bevat alle wiki's behalve de aangegeven wiki's)",
+	'centralauth-editset-optin' => "Opt-ingebaseerd (bevat alleen de opgegeven wiki's)",
+	'centralauth-editset-optout' => "Opt-outgebaseerd (bevat alle wiki's behalve de opgegeven wiki's)",
 	'centralauth-editset-legend-edit' => 'Bezig met het bewerken van wikigroep "$1"',
 	'centralauth-editset-legend-view' => 'Wikigroep "$1"',
 	'centralauth-editset-legend-new' => 'Bezig met het aanmaken van een nieuwe wikigroep',
@@ -22223,7 +22223,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-badname' => 'U hebt een ongeldige of lege groepsnaam opgegeven.',
 	'centralauth-editset-badtype' => 'U hebt een ongeldig groepstype opgegeven.',
 	'centralauth-editset-setexists' => 'Er bestaat al een wikigroep met deze naam',
-	'centralauth-editset-nowikis' => "Geen wiki's aangegeven.",
+	'centralauth-editset-nowikis' => "Geen wiki's opgegeven.",
 	'centralauth-editset-nouse' => '(geen)',
 	'centralauth-editset-usage' => 'Gebruikt in groepen:',
 	'centralauth-editset-badwikis' => "De volgende {{PLURAL:$2|wiki bestaat|wiki's bestaan}} niet: $1.",
@@ -22257,7 +22257,7 @@ Als je ervoor kiest om je gebruikers te migreren, dan kan je met dezelfde gebrui
 Als iemand anders met jouw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. Je hebt de mogelijkheid dat met die gebruiker of een beheerder op een later moment op te lossen.",
 	'centralauth-merge-step1-detail' => "Voer hier je wachtwoord in.
 Je wachtwoord en geregistreerd e-mailadres worden gecontroleerd tegen de gebruikers op andere wiki's om te bevestigen dat ze overeenkomen.
-Er worden geen wijzigingen gemaakt tot je hebt aangegeven dat alles in orde lijkt.",
+Er worden geen wijzigingen gemaakt tot je hebt bevestigd dat alles in orde lijkt.",
 	'centralauth-merge-step2-detail' => 'Een aantal van de gebruikers kon niet aan de opgegeven thuiswiki gekoppeld worden. Als deze gebruikers van jou zijn, kan je dat aangeven door het wachtwoord voor de gebruikers op te geven.',
 	'centralauth-merge-dryrun-complete' => 'Alle bestaande gebruikers kunnen automatisch samengevoegd worden!
 
@@ -22271,17 +22271,13 @@ Er is een andere wiki vastgesteld als thuiswiki voor je gebruiker; volg de link 
 	'centralauth-merge-step3-detail' => "Je kunt nu je samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki's:",
 	'centralauth-merge-no-accounts' => 'Er zijn geen gebruikers met jouw naam gevonden in de volgtabel voor globale gebruikers!
 De database moet corrupt zijn.',
-	'centralauth-merge-home-password' => 'De hieronder aangegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan jij hebt ingegeven.
+	'centralauth-merge-home-password' => 'De hieronder opgegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan jij hebt opgegeven.
 Voer het wachtwoord voor de thuiswiki in.',
 	'centralauth-complete-text' => 'Je kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
 	'centralauth-incomplete-text' => 'Als je gebruikers zijn samengevoegd kan je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.',
 	'centralauth-not-owner-text' => 'De gebruikersnaam "$1" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.
 
 Als jij dat bent, kan je het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:',
-	'centralauth-blocked-text' => 'Je thuiswiki kan niet bewerkt worden.
-Hieronder staat aangegeven welke wiki dat is.
-Neem contact op met een systeembeheerder om deze beperking op te laten heffen.
-Zolang de wiki niet bewerkt kan worden, kan je geen gebruikers samenvoegen.',
 	'centralauth-error-locked' => 'Je kunt niet bewerken omdat je gebruiker geblokkeerd is.',
 	'centralauth-error-unmerged' => 'Je kunt niet bewerken omdat je gebruiker niet is samengevoegd.',
 	'centralauth-list-home-dryrun' => 'Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor je samengevoegde gebruiker.',
@@ -22308,8 +22304,8 @@ Je hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en
 Je kunt de rechten van alle groepen bekijken en bewerken als je daar de rechten voor hebt.
 Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 	'centralauth-newgroup-intro' => 'Via dit formulier kan je rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn',
-	'centralauth-editgroup-success-text' => 'Je hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]',
-	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de aangegeven wiki ('' $2 ''). Probeer je misschien rechten toe te kennen aan de verkeerde gebruiker?",
+	'centralauth-editgroup-success-text' => 'Je hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]', # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de opgegeven wiki ('' $2 ''). Probeer je misschien rechten toe te kennen aan de verkeerde gebruiker?",
 	'centralauth-editset-intro-rw' => 'De volgende wikigroepen bestaan al.
 Je kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 );
@@ -23387,6 +23383,7 @@ $messages['pfl'] = array(
 /** Polish (polski)
  * @author Beau
  * @author BeginaFelicysym
+ * @author Chrumps
  * @author Derbeth
  * @author Equadus
  * @author Herr Kriss
@@ -23448,7 +23445,6 @@ Wprowadź hasło właściwe dla Twojej macierzystej wiki.',
 	'centralauth-not-owner-text' => 'Nazwa użytkownika „$1” została automatycznie przypisana właścicielowi konta uniwersalnego na $2.
 
 Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego podaj hasło konta na $2:',
-	'centralauth-blocked-text' => 'Możliwość edycji na Twojej macierzystej wiki (wymieniona poniżej) została zablokowana. Skontaktuj się z administratorem tej wiki, aby zdjął blokadę. W czasie, gdy jest zablokowana nie masz możliwości połączenia kont.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Tylko tryb demonstracyjny</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Tworzenie konta uniwersalnego jest dostępne tylko w trybie demonstracyjnym i usuwania usterek. Właściwe operacje łączenia kont są obecnie wyłączone.',
 	'centralauth-error-locked' => 'Nie możesz edytować, ponieważ Twoje konto jest zablokowane.',
@@ -23505,6 +23501,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-permission' => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
 	'centralauth-admin-no-unified' => 'Brak uniwersalnego konta dla tej nazwy użytkownika.',
 	'centralauth-admin-info-header' => 'Informacje o użytkowniku konta uniwersalnego',
+	'centralauth-admin-info-username' => 'Nazwa {{GENDER:|użytkownika|użytkowniczki}}:',
 	'centralauth-admin-info-id' => 'ID użytkownika',
 	'centralauth-admin-info-registered' => 'Zarejestrowane',
 	'centralauth-admin-info-home' => 'Wiki domowa',
@@ -23648,12 +23645,12 @@ Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Spis użytkowników z uprawnieniami $2]]',
 	'centralauth-editgroup-restrictions' => 'Zbiór wiki, w których ta grupa jest aktywna',
 	'centralauth-editgroup-noset' => '(brak)',
-	'centralauth-editgroup-submit' => 'Zapisz zmiany uprawnień grup',
+	'centralauth-editgroup-submit' => 'Zapisz zmiany uprawnień grup', # Fuzzy
 	'centralauth-editgroup-perms' => 'Przyznane uprawnienia:',
 	'centralauth-editgroup-reason' => 'Powód',
-	'centralauth-editgroup-success' => 'Uprawnienia grupy zostały zmienione',
+	'centralauth-editgroup-success' => 'Uprawnienia grupy zostały zmienione', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Zmieniłeś uprawnienia grupy $1.
-[[Special:GlobalGroupPermissions|Powrót do zarządzania grupą]]',
+[[Special:GlobalGroupPermissions|Powrót do zarządzania grupą]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|edytuj]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wybierz wiki, na której ma konto',
 	'centralauth-globalgroupmembership-badknownwiki' => "Konto uniwersalne '''$1''' nie jest aktywne na wybranej przez Ciebie wiki ('' $2 ''). Być może próbujesz nadać uprawnienia niewłaściwemu użytkownikowi!",
@@ -23695,7 +23692,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'right-globalgroupmembership' => 'Zmiana przynależności do grup globalnych',
 	'right-centralauth-autoaccount' => 'Automatyczne logowanie na konto uniwersalne',
 	'right-centralauth-unmerge' => 'Rozdzielenie konta uniwersalnego',
-	'right-centralauth-lock' => 'Blokowanie lub ukrywanie konta uniwersalnego',
+	'right-centralauth-lock' => 'Blokowanie lub ukrywanie konta uniwersalnego', # Fuzzy
 	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego', # Fuzzy
 	'right-centralauth-merge' => 'Łączenie ich konta',
 	'right-globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
@@ -29634,11 +29631,11 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista över användare med $2-rättigheter]]',
 	'centralauth-editgroup-restrictions' => 'Wikiinställning där den här gruppen är aktiv:',
 	'centralauth-editgroup-noset' => '(ingen)',
-	'centralauth-editgroup-submit' => 'Spara ändringar för grupptillåtelser',
+	'centralauth-editgroup-submit' => 'Spara ändringar för grupptillåtelser', # Fuzzy
 	'centralauth-editgroup-perms' => 'Angivna tillåtelser:',
 	'centralauth-editgroup-reason' => 'Anledning:',
-	'centralauth-editgroup-success' => 'Grupptillåtelser ändrade',
-	'centralauth-editgroup-success-text' => 'Du har ändrat grupptillåtelserna till gruppen $1. [[Special:GlobalGroupPermission|Tillbaka till gruppbehandling]]',
+	'centralauth-editgroup-success' => 'Global grupp ändrad',
+	'centralauth-editgroup-success-text' => 'Du har ändrat grupptillåtelserna till gruppen $1. [[Special:GlobalGroupPermission|Tillbaka till gruppbehandling]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
