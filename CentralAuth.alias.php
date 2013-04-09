@@ -47,7 +47,7 @@ $specialPageAliases['arz'] = array(
 	'GlobalUsers' => array( 'يوزرات_عامين' ),
 );
 
-/** Assamese (অসমীয়া) */
+/** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'AutoLogin' => array( 'স্বয়ংক্ৰিয়_প্ৰৱেশ' ),
 	'MergeAccount' => array( 'একাউণ্ট_একত্ৰীকৰণ' ),
@@ -612,8 +612,10 @@ $specialPageAliases['ro'] = array(
 
 /** Russian (русский) */
 $specialPageAliases['ru'] = array(
+	'AutoLogin' => array( 'Автоматический_вход' ),
 	'MergeAccount' => array( 'Объединение_учётных_записей' ),
 	'GlobalGroupMembership' => array( 'Глобальные_права_участника', 'Глобальное_членство' ),
+	'GlobalGroupPermissions' => array( 'Права_глобальных_групп' ),
 	'WikiSets' => array( 'Наборы_вики' ),
 	'GlobalUsers' => array( 'Глобальные_участники' ),
 );

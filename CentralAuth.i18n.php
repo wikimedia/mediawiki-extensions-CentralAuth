@@ -3890,8 +3890,8 @@ $messages['be-tarask'] = array(
 	'centralauth-merge-step3-submit' => "Аб'яднаць рахункі",
 	'centralauth-merge-no-accounts' => 'У цэнтральнай табліцы рахункаў ня знойдзена запісу, адпаведнага вашаму імені! База зьвестак пашкоджаная.',
 	'centralauth-merge-home-password' => 'Пароль рахунку ў «хатняй» вікі (пазначана ніжэй) адрозьніваецца ад таго, што Вы ўвялі. Калі ласка, увядзіце пароль для «хатняй» вікі.',
-	'centralauth-complete' => "Аб'яднаньне рахункаў скончана!",
-	'centralauth-incomplete' => "Аб'яднаньне рахункаў ня скончана!",
+	'centralauth-complete' => 'Аб’яднаньне рахункаў выканана!',
+	'centralauth-incomplete' => 'Аб’яднаньне рахункаў ня скончана!',
 	'centralauth-complete-text' => 'Цяпер Вы можаце карыстацца адзіным рахункам ва ўсіх праектах {{int:Centralauth-groupname}}.',
 	'centralauth-incomplete-text' => 'Калі Ваш рахунак стане адзіным, Вы зможаце ўваходзіць у кожную вікі {{int:Centralauth-groupname}} без стварэньня новага рахунку',
 	'centralauth-not-owner-text' => "Імя ўдзельніка «$1» было аўтаматычна перададзенае ўладальніку рахунку $2.
@@ -5467,6 +5467,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
  * @author El libre
  * @author Jordi Roqué
  * @author Paucabot
+ * @author Pitort
  * @author SMP
  * @author Solde
  * @author Toniher
@@ -5570,6 +5571,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-permission' => "Només els stewards poden fusionar comptes d'altra gent.",
 	'centralauth-admin-no-unified' => "Cap compte unificat per aquest nom d'usuari.",
 	'centralauth-admin-info-header' => "Informació global de l'usuari/a",
+	'centralauth-admin-info-username' => "Nom d'usuari:",
 	'centralauth-admin-info-id' => "Identificador d'usuari:",
 	'centralauth-admin-info-registered' => 'Registrat:',
 	'centralauth-admin-info-home' => 'Wiki principal:',
@@ -5714,11 +5716,11 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Llista d'usuaris amb drets de $2]]",
 	'centralauth-editgroup-restrictions' => 'Conjunt de wikis on aquest grup és actiu:',
 	'centralauth-editgroup-noset' => '(cap)',
-	'centralauth-editgroup-submit' => 'Guardar els canvis a les autoritzacions de grup',
+	'centralauth-editgroup-submit' => 'Guardar els canvis a les autoritzacions de grup', # Fuzzy
 	'centralauth-editgroup-perms' => 'Autoritzacions assignades:',
 	'centralauth-editgroup-reason' => 'Motiu:',
-	'centralauth-editgroup-success' => 'Autoritzacions de grup canviades',
-	'centralauth-editgroup-success-text' => 'Heu canviat les autoritzacions de grup pel grup $1. [[Special:GlobalGroupPermissions|Tornar a gestió de grups]]',
+	'centralauth-editgroup-success' => 'Autoritzacions de grup canviades', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Heu canviat les autoritzacions de grup pel grup $1. [[Special:GlobalGroupPermissions|Tornar a gestió de grups]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editeu]])',
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki on tinguin un compte d'usuari:",
 	'centralauth-globalgroupmembership-badknownwiki' => "L'usuari global '''$1''' no està actiu en el wiki que heu especificat ('' $2 ''). Podeu estar intentant d'assignar autoritzacions a un usuari erroni!",
@@ -20518,6 +20520,7 @@ Jika akaun sejagat tersebut adalah milik anda juga, anda boleh menggabungkan aka
 	'centralauth-admin-permission' => 'Hanya pengelola boleh menggabungkan akaun orang lain untuk dirinya.',
 	'centralauth-admin-no-unified' => 'Pengguna ini tidak memiliki akaun bersatu.',
 	'centralauth-admin-info-header' => 'Maklumat pengguna sejagat',
+	'centralauth-admin-info-username' => 'Nama pengguna:',
 	'centralauth-admin-info-id' => 'ID pengguna:',
 	'centralauth-admin-info-registered' => 'Berdaftar:',
 	'centralauth-admin-info-home' => 'Wiki utama:',
@@ -20641,6 +20644,7 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-rightslog-entry-groupperms' => 'menukar keizinan kumpulan bagi $1 daripada $2 menjadi $3',
 	'centralauth-rightslog-entry-groupperms2' => 'mengubah keizinan kumpulan $1. Menambah $2; Membuang $3',
 	'centralauth-rightslog-entry-groupperms3' => 'menukar set wiki lingkungan kumpulan $1 daripada $2 kepada $3',
+	'centralauth-rightslog-entry-grouprename' => 'menukar nama kumpulan $2 kepada $1',
 	'centralauth-rightslog-header' => 'Log ini mengandungi rekod perubahan hak sejagat, termasuklah perubahan keahlian kumpulan dan keizinan yang diberikan kepada kumpulan.',
 	'centralauth-rightslog-entry-newset' => 'mencipta $2 set wiki $1 dengan wiki-wiki berikut: $3',
 	'centralauth-rightslog-entry-setrename' => 'menukar nama set wiki "$2" menjadi "$1"',
@@ -20672,19 +20676,22 @@ Sila ambil perhatian bahawa sesebuah kumpulan tidak wujud kecuali setelah diberi
 	'centralauth-editgroup-name' => 'Nama kumpulan:',
 	'centralauth-editgroup-display' => 'Nama tempatan kumpulan:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|ubah]])',
+	'centralauth-editgroup-invalid-name' => 'Nama kumpulan sejagat yang diberikan tidak sah',
 	'centralauth-editgroup-member' => 'Nama tempatan ahli-ahli kumpulan:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|ubah]])',
 	'centralauth-editgroup-members' => 'Senarai ahli:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Senarai pengguna dengan hak $2]]',
 	'centralauth-editgroup-restrictions' => 'Wiki-wiki di mana kumpulan ini aktif:',
+	'centralauth-editgroup-rename-taken' => 'Penukaran nama gagal: Sudah ada kumpulan yang bernama $1.',
 	'centralauth-editgroup-noset' => '(tiada)',
-	'centralauth-editgroup-submit' => 'Simpan perubahan pada keizinan kumpulan',
+	'centralauth-editgroup-submit' => 'Simpan perubahan kumpulan sejagat',
 	'centralauth-editgroup-perms' => 'Keizinan yang diberikan:',
 	'centralauth-editgroup-reason' => 'Sebab:',
-	'centralauth-editgroup-success' => 'Keizinan kumpulan telah ditukar',
-	'centralauth-editgroup-success-text' => 'Anda telah menukar keizinan bagi kumpulan $1.
+	'centralauth-editgroup-success' => 'Kumpulan sejagat diubah',
+	'centralauth-editgroup-success-text' => 'Kumpulan sejagat $1 berjaya dikemaskinikan.
 [[Special:GlobalGroupPermissions|Kembali ke pengurusan kumpulan]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ubah]])',
+	'centralauth-editgroup-nowikiset' => 'Tiada, semua wiki kena.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki yang mengandungi akaun mereka:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Pengguna sejagat '''$1''' tidak aktif di wiki yang anda nyatakan ('' $2 '').
 Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
@@ -29635,7 +29642,7 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editgroup-perms' => 'Angivna tillåtelser:',
 	'centralauth-editgroup-reason' => 'Anledning:',
 	'centralauth-editgroup-success' => 'Global grupp ändrad',
-	'centralauth-editgroup-success-text' => 'Du har ändrat grupptillåtelserna till gruppen $1. [[Special:GlobalGroupPermission|Tillbaka till gruppbehandling]]', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Globala gruppen $1 har uppdaterats. [[Special:GlobalGroupPermission|Tillbaka till grupphantering]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
@@ -29678,7 +29685,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-globalgroupmembership' => 'Redigera medlemskap i globala grupper',
 	'right-centralauth-autoaccount' => 'Logga in automatiskt med globalt konto',
 	'right-centralauth-unmerge' => 'Ta isär globalt konto',
-	'right-centralauth-lock' => 'Lås eller dölj globalt konto', # Fuzzy
+	'right-centralauth-lock' => 'Lås eller lås upp globalt konto',
 	'right-centralauth-oversight' => 'Undertryck eller dölj globalt konto',
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
