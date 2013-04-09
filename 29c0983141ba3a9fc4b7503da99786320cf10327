@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dt3T6mbw",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-09T20:45:14Z",
+      "side": 1,
+      "message": "We might want to use \u0027valid\u0027 instead in case we have legacy user names?",
+      "revId": "29c0983141ba3a9fc4b7503da99786320cf10327",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dt1QBnbA",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-09T20:45:14Z",
+      "side": 1,
+      "message": "superfluous?",
+      "revId": "29c0983141ba3a9fc4b7503da99786320cf10327",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
