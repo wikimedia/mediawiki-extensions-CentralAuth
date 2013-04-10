@@ -303,6 +303,24 @@ Renaming it will cause the local user to be detached from the global one.",
 When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
 You have requested this page without providing any authentication data, so it does nothing.',
 
+	// Central login
+	'centralautologin'                    => 'Central login',
+	'centralauth-centralautologin-desc'   => 'This special page is used internally by MediaWiki.
+When you visit a linked domain while not logged in, the central login system uses this page to determine whether you are logged in to the central domain.
+You have requested this page without providing any authentication data, so it does nothing.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'You are already logged in locally',
+	'centralauth-centralautologin-badparams' => 'Authentication parameters specified were invalid',
+	'centralauth-centralautologin-lostsession' => 'Session data was lost',
+	'centralauth-centralautologin-badstate' => 'Invalid state "$1"',
+	'centralauth-centralautologin-notposted' => 'Central login form must be posted',
+	'centralauth-centralautologin-badstate-central' => 'State "$1" is not valid on the central wiki',
+	'centralauth-centralautologin-badstate-local' => 'State "$1" is not valid on the local wiki',
+	'centralauth-centralautologin-badwiki' => 'The wiki "$1" is not valid for central login',
+	'centralauth-centralautologin-corsfail' => 'CORS origin check failed',
+	'centralauth-centralautologin-p3p-explanation' => 'Certain browsers require a P3P compact policy for cookies to be sent or received in some cases, including the situation involved in the SUL login check. This is a needless hoop to jump through in this situation, considering that all pages involved are in the same wiki group and P3P itself is mostly obsolete and abandoned; fortunately, the invalid policy linking to this page is currently considered "good enough" by these browsers\' default configurations.
+
+Please review this site\'s human-readable privacy policy to determine how any information collected might be used.',
+
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
 
@@ -799,6 +817,23 @@ Parameters:
 	'autologin' => '{{doc-special|AutoLogin|unlisted=1}}
 See example: [[w:Special:Autologin]].',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
+	'centralautologin' => '{{doc-special|CentralAutoLogin|unlisted=1}}
+See example: [[w:Special:CentralAutoLogin]].',
+	'centralauth-centralautologin-desc'   => 'This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Error message shown when [[Special:CentralAutoLogin]] is called on the local wiki while the user is already logged in.',
+	'centralauth-centralautologin-badparams' => 'Error message when the required authentication parameters are missing or invalid',
+	'centralauth-centralautologin-lostsession' => 'Error message when the session data is lost or overwritten',
+	'centralauth-centralautologin-badstate' => 'Error message shown when an invalid state is given for [[Special:CentralAutoLogin]].
+* $1 - Name of the state',
+	'centralauth-centralautologin-notposted' => 'Error message shown when [[Special:CentralAutoLogin]] is called in form mode with an HTTP method other than POST',
+	'centralauth-centralautologin-badstate-central' => 'Error message shown when [[Special:CentralAutoLogin]] is called on the central wiki with a state intended for use on the local wiki.
+* $1 - Name of the state',
+	'centralauth-centralautologin-badstate-local' => 'Error message shown when [[Special:CentralAutoLogin]] is called on the local wiki with a state intended for use on the central wiki.
+* $1 - Name of the state',
+	'centralauth-centralautologin-badwiki' => 'Error message shown when an unacceptable wiki ID is given to [[Special:CentralAutoLogin]].
+* $1 - The wiki ID',
+	'centralauth-centralautologin-corsfail' => 'Error message shown when the CORS origin check fails.',
+	'centralauth-centralautologin-p3p-explanation' => 'Explanation for the P3P hack that allows IE to set cookies.',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
