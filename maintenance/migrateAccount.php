@@ -25,26 +25,44 @@ class MigrateAccount extends Maintenance {
 		$this->username = $this->getOption( 'username' );
 		$this->safe = $this->getOption( 'safe' );
 
-		if ( $this->safe ) {
-			$dbBackground = CentralAuthUser::getCentralSlaveDB();
-			$result = $dbBackground->select(
-				'localnames',
-				array( 'ln_wiki' ),
-				array( 'ln_name' => $this->username ),
-				__METHOD__ );
+		$this->output( "CentralAuth account migration for: " . $this->username . "\n");
 
-			if ( $result->numRows() !== 1 ) {
-				$this->output( "ERROR: More than 1 user account found for username:\n" );
-				foreach( $result as $row ) {
+		$dbBackground = CentralAuthUser::getCentralSlaveDB();
+
+		$globalusers = $dbBackground->select(
+			'globaluser',
+			array( 'gu_name' ),
+			array( 'gu_name' => $this->username ),
+			__METHOD__
+		);
+
+		if ( $globalusers->numRows() > 0 ) {
+			$this->output( "ERROR: A global account already exists for: $this->username\n" );
+			exit( 1 );
+		}
+
+		$localusers = $dbBackground->select(
+			'localnames',
+			array( 'ln_name', 'ln_wiki' ),
+			array( 'ln_name' => $this->username ),
+			__METHOD__
+		);
+
+		if ( $localusers->numRows() == 0 ) {
+			$this->output( "ERROR: No local accounts found for: $this->username\n" );
+			exit( 1 );
+		}
+
+		if ( $this->safe ) {
+			if ( $localusers->numRows() !== 1 ) {
+				$this->output( "ERROR: More than 1 local user account found for username:\n" );
+				foreach( $localusers as $row ) {
 					$this->output( "\t" . $row->ln_name . "@" . $row->ln_wiki . "\n" );
 				}
 				$this->output( "ABORTING\n" );
-				exit(1);
-
+				exit( 1 );
 			}
 		}
-
-		$this->output( "CentralAuth account migration for: " . $this->username );
 
 		$this->total++;
 
