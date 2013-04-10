@@ -303,6 +303,21 @@ Renaming it will cause the local user to be detached from the global one.",
 When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
 You have requested this page without providing any authentication data, so it does nothing.',
 
+	// Central login
+	'centrallogin'                    => 'Central login',
+	'centralauth-centrallogin-desc'   => 'This special page is used internally by MediaWiki.
+When you visit a linked domain while not logged in, the central login system uses this page to determine whether you are logged in to the central domain.
+You have requested this page without providing any authentication data, so it does nothing.',
+	'centralauth-centrallogin-alreadyloggedinlocally' => 'You are already logged in locally',
+	'centralauth-centrallogin-badparams' => 'Authentication parameters specified were invalid',
+	'centralauth-centrallogin-lostsession' => 'Session data was lost',
+	'centralauth-centrallogin-badstate' => 'Invalid state "$1"',
+	'centralauth-centrallogin-notposted' => 'Central login form must be posted',
+	'centralauth-centrallogin-badstate-central' => 'State "$1" is not valid on the central wiki',
+	'centralauth-centrallogin-badstate-local' => 'State "$1" is not valid on the local wiki',
+	'centralauth-centrallogin-badwiki' => 'The wiki "$1" is not valid for central login',
+	'centralauth-centrallogin-corsfail' => 'CORS origin check failed',
+
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
 
@@ -779,6 +794,22 @@ Parameters:
 	'autologin' => '{{doc-special|AutoLogin|unlisted=1}}
 See example: [[w:Special:Autologin]].',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
+	'centrallogin' => '{{doc-special|CentralLogin|unlisted=1}}
+See example: [[w:Special:CentralLogin]].',
+	'centralauth-centrallogin-desc'   => 'This is the text shown on [[Special:CentralLogin]] when this page is requested by a user, not by the automatic global login system.',
+	'centralauth-centrallogin-alreadyloggedinlocally' => 'Error message shown when [[Special:CentralLogin]] is called on the local wiki while the user is already logged in.',
+	'centralauth-centrallogin-badparams' => 'Error message when the required authentication parameters are missing or invalid',
+	'centralauth-centrallogin-lostsession' => 'Error message when the session data is lost or overwritten',
+	'centralauth-centrallogin-badstate' => 'Error message shown when an invalid state is given for [[Special:CentralLogin]].
+* $1 - Name of the state',
+	'centralauth-centrallogin-notposted' => 'Error message shown when [[Special:CentralLogin]] is called in form mode with an HTTP method other than POST',
+	'centralauth-centrallogin-badstate-central' => 'Error message shown when [[Special:CentralLogin]] is called on the central wiki with a state intended for use on the local wiki.
+* $1 - Name of the state',
+	'centralauth-centrallogin-badstate-local' => 'Error message shown when [[Special:CentralLogin]] is called on the local wiki with a state intended for use on the central wiki.
+* $1 - Name of the state',
+	'centralauth-centrallogin-badwiki' => 'Error message shown when an unacceptable wiki ID is given to [[Special:CentralLogin]].
+* $1 - The wiki ID',
+	'centralauth-centrallogin-corsfail' => 'Error message shown when the CORS origin check fails.',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',

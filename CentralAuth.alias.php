@@ -12,6 +12,7 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'CentralAuth' => array( 'CentralAuth' ),
 	'AutoLogin' => array( 'AutoLogin' ),
+	'CentralLogin' => array( 'CentralLogin' ),
 	'MergeAccount' => array( 'MergeAccount' ),
 	'GlobalGroupMembership' => array( 'GlobalUserRights', 'GlobalGroupMembership' ),
 	'GlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),

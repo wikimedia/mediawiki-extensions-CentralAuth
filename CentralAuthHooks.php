@@ -766,6 +766,34 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param &$out OutputPage
+	 * @param &$skin Skin
+	 * @return bool
+	 */
+	static function onBeforePageDisplay( &$out, &$skin ) {
+		global $wgCentralAuthCentralWiki;
+		if ( wfWikiID() !== $wgCentralAuthCentralWiki && $out->getUser()->isAnon() ) {
+			$out->addModules( 'ext.centralauth.centrallogin' );
+		}
+		return true;
+	}
+
+	/**
+	 * @param &$vars
+	 * @return bool
+	 */
+	static function onResourceLoaderGetConfigVars( &$vars ) {
+		global $wgUser, $wgCentralAuthCentralWiki;
+		if ( wfWikiID() !== $wgCentralAuthCentralWiki && $wgUser->isAnon() ) {
+			$vars['wgCentralAuthWikiID'] = wfWikiID();
+			$vars['wgCentralAuthCentralLoginEndpoint'] = WikiMap::getForeignURL(
+				$wgCentralAuthCentralWiki, 'Special:CentralLogin/$1'
+			);
+		}
+		return true;
+	}
+
+	/**
 	 * @param $auth
 	 * @param $user User
 	 * @param $params
