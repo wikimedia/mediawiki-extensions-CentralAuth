@@ -366,10 +366,11 @@ $specialPageAliases['ja'] = array(
 	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
 	'AutoLogin' => array( '自動ログイン' ),
 	'MergeAccount' => array( 'アカウント統合' ),
-	'GlobalGroupMembership' => array( 'グローバルグループへの所属' ),
+	'GlobalGroupMembership' => array( 'グローバル利用者権限', 'グローバルグループへの所属' ),
 	'GlobalGroupPermissions' => array( 'グローバルグループ権限', 'グローバルグループパーミッション' ),
 	'WikiSets' => array( 'ウィキ集合', 'ウィキ集合の編集' ),
 	'GlobalUsers' => array( 'グローバル利用者' ),
+	'MultiLock' => array( '複数利用者ロック' ),
 );
 
 /** Georgian (ქართული) */
