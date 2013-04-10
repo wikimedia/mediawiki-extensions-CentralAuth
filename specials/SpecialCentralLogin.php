@@ -174,8 +174,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// The user wants an HTTP redirect link (as well as other links) and
 			// this is on HTTPS, so send a redirect to the success page in HTTP.
 			$query = array(
-				'returnTo'      => $attempt['returnTo'],
-				'returnToQuery' => $attempt['returnToQuery']
+				'returnto'      => $attempt['returnTo'],
+				'returntoquery' => $attempt['returnToQuery']
 			);
 			$url = $this->getFullTitle()->getFullUrl( $query, false, PROTO_HTTP );
 			$this->getOutput()->redirect( $url );
@@ -201,8 +201,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Show the login success page
 		$form = new LoginForm( new FauxRequest() );
 		$form->showReturnToPage( 'success',
-			$this->getRequest()->getVal( 'returnTo', '' ),
-			$this->getRequest()->getVal( 'returnToQuery', '' )
+			$this->getRequest()->getVal( 'returnto', '' ),
+			$this->getRequest()->getVal( 'returntoquery', '' )
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 		// Show any icons that trigger cross-domain cookies
