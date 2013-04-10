@@ -34,7 +34,10 @@ class MigrateAccount extends Maintenance {
 				__METHOD__ );
 
 			if ( $result->numRows() !== 1 ) {
-				$this->output( "ERROR: More than 1 user account found for username.\n" );
+				$this->output( "ERROR: More than 1 user account found for username:\n" );
+				foreach( $result as $row ) {
+					$this->output( "\t" . $row->ln_name . "@" . $row->ln_wiki . "\n" );
+				}
 				$this->output( "ABORTING\n" );
 				exit(1);
 
