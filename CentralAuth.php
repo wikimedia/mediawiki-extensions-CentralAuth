@@ -83,6 +83,11 @@ $wgCentralAuthCookieDomain = '';
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
 /**
+ * Wiki ID of the central domain.
+ */
+$wgCentralAuthCentralWiki = null;
+
+/**
  * List of wiki IDs which should be called on login/logout to set third-party
  * cookies for the global session state.
  *
@@ -161,6 +166,7 @@ $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/SuppressUserJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
 $wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/specials/SpecialAutoLogin.php";
+$wgAutoloadClasses['SpecialCentralLogin'] = "$caBase/specials/SpecialCentralLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/specials/SpecialGlobalGroupMembership.php";
@@ -201,6 +207,8 @@ $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPe
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
+$wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
+$wgHooks['ResourceLoaderGetConfigVars'][] = 'CentralAuthHooks::onResourceLoaderGetConfigVars';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
 
@@ -232,6 +240,7 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
+$wgSpecialPages['CentralLogin'] = 'SpecialCentralLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
 $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
@@ -305,6 +314,10 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-merge-method-login-desc',
 		'centralauth-admin-delete-confirm',
 	),
+) + $commonModuleInfo;
+$wgResourceModules['ext.centralauth.centrallogin'] = array(
+	'scripts' => 'ext.centralauth.centrallogin.js',
+	'position' => 'top',
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.noflash'] = array(
