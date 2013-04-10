@@ -68,6 +68,21 @@ $wgCentralAuthDryRun = false;
 $wgCentralAuthCookies = false;
 
 /**
+ * Database name of a central login wiki. This is an alternative to directly setting
+ * cross-domain cookies for each wiki in $wgCentralAuthAutoLoginWikis. If set, a single
+ * login wiki will use a session/cookie to handle unified login sessions across wikis.
+ *
+ * On login, users will be redirected to the login wiki's Special:CentralLogin/login
+ * page and then redirected to Special:CentralLogin back on the originating wiki.
+ * In the process, the central login wiki cookie and session will be set.
+ * As the user accesses other wikis, the login wiki will be checked via JavaScript
+ * to check login status and set the local session and cookies.
+ *
+ * This requires $wgCentralAuthCookies.
+ */
+$wgCentralAuthLoginWiki = false;
+
+/**
  * Domain to set global cookies for.
  * For instance, '.wikipedia.org' to work on all wikipedia.org subdomains
  * instead of just the current one.
@@ -161,6 +176,7 @@ $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/SuppressUserJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
 $wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/specials/SpecialAutoLogin.php";
+$wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/specials/SpecialGlobalGroupMembership.php";
@@ -201,6 +217,8 @@ $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPe
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
+$wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
+$wgHooks['ResourceLoaderGetConfigVars'][] = 'CentralAuthHooks::onResourceLoaderGetConfigVars';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
 
@@ -232,6 +250,7 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
+$wgSpecialPages['CentralAutoLogin'] = 'SpecialCentralAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
 $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
@@ -305,6 +324,10 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-merge-method-login-desc',
 		'centralauth-admin-delete-confirm',
 	),
+) + $commonModuleInfo;
+$wgResourceModules['ext.centralauth.centralautologin'] = array(
+	'scripts' => 'ext.centralauth.centralautologin.js',
+	'position' => 'top',
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.noflash'] = array(
