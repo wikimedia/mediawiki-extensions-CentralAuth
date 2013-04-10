@@ -1977,6 +1977,23 @@ class CentralAuthUser extends AuthPluginUser {
 			$remember = $remember->getOption( 'rememberpassword' );
 		}
 
+		// IE requires that a P3P header be provided for the cookies to be
+		// visible to the js auto-login check.
+		global $wgCentralAuthCookiesP3P, $wgCentralAuthLoginWiki;
+		if ( $wgCentralAuthLoginWiki === wfWikiID() ) {
+			if ( $wgCentralAuthCookiesP3P === true ) {
+				// Note this policy is not valid: it has no valid tokens, while
+				// a valid policy would contain an "access" token and at least
+				// one statement, which would contain either the NID token or
+				// at least one "purpose" token, one "recipient" token, and one
+				// "retention" token.
+				$url = Title::makeTitle( NS_SPECIAL, 'CentralAutoLogin/P3P' )->getCanonicalURL();
+				header( "P3P: CP=\"This is not a P3P policy! See $url for more info.\"", true );
+			} elseif ( $wgCentralAuthCookiesP3P ) {
+				header( "P3P: $wgCentralAuthCookiesP3P", true );
+			}
+		}
+
 		$session = array();
 		$exp = time() + 86400;
 
