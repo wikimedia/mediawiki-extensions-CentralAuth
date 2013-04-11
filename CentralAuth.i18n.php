@@ -6892,7 +6892,7 @@ vermutlich hat es ein anderes Passwort als dein primäres Benutzerkonto:',
 	'centralauth-merge-method-primary-desc' => 'Dies ist das Wiki, in dem das Benutzerkonto ursprünglich zusammengeführt wurde.
 Beachte, dass es sich vom Heimatwiki des Benutzers unterscheiden kann.',
 	'centralauth-merge-method-empty-desc' => 'Zeigt an, dass das lokale Benutzerkonto zusammengeführt wurde, da es keine Bearbeitungen aufwies.',
-	'centralauth-merge-method-mail-desc' => 'Zeigt an, dass das lokale Benutzerkonto zusammengeführt wurde, da die E-Mail-Adresse identisch mit der des Haupt-Benutzerkontos war.',
+	'centralauth-merge-method-mail-desc' => 'Zeigt an, dass das lokale Benutzerkonto zusammengeführt wurde, da die E-Mail-Adresse identisch mit der des Hauptbenutzerkontos war.',
 	'centralauth-merge-method-password-desc' => 'Zeigt an, dass das lokale Benutzerkonto zusammengeführt wurde, da der Benutzer ein gültiges Passwort eingegeben hat.',
 	'centralauth-merge-method-admin-desc' => 'Zeigt an, dass das lokale Benutzerkonto manuell durch Stewards zusammengeführt wurde.
 Diese Möglichkeit ist zurzeit aus Sicherheitsgründen deaktiviert',
