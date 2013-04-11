@@ -55,7 +55,7 @@ class MigrateAccount extends Maintenance {
 
 		if ( $this->safe ) {
 			if ( $localusers->numRows() !== 1 ) {
-				$this->output( "ERROR: More than 1 local user account found for username:\n" );
+				$this->output( "ERROR: More than 1 local user account found for username: $this->username\n" );
 				foreach( $localusers as $row ) {
 					$this->output( "\t" . $row->ln_name . "@" . $row->ln_wiki . "\n" );
 				}
