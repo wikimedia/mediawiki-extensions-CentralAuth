@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuawZq4Q",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-12T19:40:04Z",
+      "side": 1,
+      "message": "Why is undefined here?",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuYwU500",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-12T19:40:04Z",
+      "side": 1,
+      "message": "Why these meaningless function names?",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Duewfo2c",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-12T19:40:04Z",
+      "side": 1,
+      "message": "You don\u0027t need to use an object for this",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
