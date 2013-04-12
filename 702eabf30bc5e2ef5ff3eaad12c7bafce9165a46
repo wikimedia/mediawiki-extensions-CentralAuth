@@ -16,6 +16,24 @@
       "revId": "702eabf30bc5e2ef5ff3eaad12c7bafce9165a46",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuekzFak",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-12T16:06:02Z",
+      "side": 1,
+      "message": "There are accounts in the WMF db with \u0027new\u0027 instead of \u0027primary\u0027, and sadly no key on that column so doing a rename of those would be a slow process. I *think* \u0027new\u0027 was an older way of marking what \u0027primary\u0027 is used for now.. but they may be different?",
+      "parentUuid": "DuP82YwE",
+      "revId": "702eabf30bc5e2ef5ff3eaad12c7bafce9165a46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
