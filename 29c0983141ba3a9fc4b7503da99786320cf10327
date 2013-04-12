@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "DuW9axU8",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-12T23:58:22Z",
+      "side": 1,
+      "message": "It actually looks like \u0027creatable\u0027 may be the most strict. makeTitleSafe allows #, /, and @ in names, while passing \u0027creatable\u0027 didn\u0027t allow any of them. Passing \u0027valid\u0027 allows @ in the name.",
+      "parentUuid": "DuEpIEzA",
+      "revId": "29c0983141ba3a9fc4b7503da99786320cf10327",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dt1QBnbA",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 2
