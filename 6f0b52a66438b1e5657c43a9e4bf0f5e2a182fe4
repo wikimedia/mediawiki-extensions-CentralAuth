@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DuSwGGyM",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-12T19:56:25Z",
+      "side": 1,
+      "message": "Copy-paste from whatever module I used as a skeleton. Probably modules/ext.centralauth.js.",
+      "parentUuid": "DuawZq4Q",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuYwU500",
         "filename": "modules/ext.centralauth.centrallogin.js",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "Duc-7sRE",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-12T19:56:25Z",
+      "side": 1,
+      "message": "They\u0027re not meaningless, they\u0027re named for the states in the auth check protocol. See https://www.mediawiki.org/wiki/Auth_systems/SUL2#Local_wiki_Javascript_Auth_check",
+      "parentUuid": "DuYwU500",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Duewfo2c",
         "filename": "modules/ext.centralauth.centrallogin.js",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-04-12T19:40:04Z",
       "side": 1,
       "message": "You don\u0027t need to use an object for this",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dua8K-R8",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-12T19:56:25Z",
+      "side": 1,
+      "message": "Left from when I used the \"width\" and \"height\" attributes instead of CSS.",
+      "parentUuid": "Duewfo2c",
       "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
