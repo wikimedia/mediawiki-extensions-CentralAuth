@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuP82YwE",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-12T12:57:10Z",
+      "side": 1,
+      "message": "Why \u0027new\u0027 as well? \u0027primary\u0027 is the home wiki attach method...",
+      "revId": "702eabf30bc5e2ef5ff3eaad12c7bafce9165a46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
