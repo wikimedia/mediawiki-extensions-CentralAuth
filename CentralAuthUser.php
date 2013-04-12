@@ -481,8 +481,16 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string
 	 */
 	public function getHomeWiki() {
-		$this->loadState();
-		return $this->mHomeWiki;
+		// FIXME: gu_home_db is never populated via CentralAuth
+		//$this->loadState();
+		//return $this->mHomeWiki;
+
+		foreach ( $this->queryAttached() as $wiki => $acc ) {
+			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
+				return $wiki;
+			}
+		}
+		return "";
 	}
 
 	/**
