@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "DuZKfIgA",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-13T15:55:15Z",
+      "side": 1,
+      "message": "s/MediaWiki/CentralAuth/",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuawZq4Q",
         "filename": "modules/ext.centralauth.centrallogin.js",
         "patchSetId": 1
@@ -37,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "DuRL7MkY",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-13T15:55:15Z",
+      "side": 1,
+      "message": "Using + for a implicit conversion to number doesn\u0027t seem very nice to me",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuYwU500",
         "filename": "modules/ext.centralauth.centrallogin.js",
         "patchSetId": 1
@@ -66,6 +100,58 @@
       "side": 1,
       "message": "They\u0027re not meaningless, they\u0027re named for the states in the auth check protocol. See https://www.mediawiki.org/wiki/Auth_systems/SUL2#Local_wiki_Javascript_Auth_check",
       "parentUuid": "DuYwU500",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuTL4tkY",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-13T15:55:15Z",
+      "side": 1,
+      "message": "Would be nice to have a link to that then, no?",
+      "parentUuid": "Duc-7sRE",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DubLrRnk",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-13T15:55:15Z",
+      "side": 1,
+      "message": "You could either take mediawiki.Api and add a wrapper here (though I guess that would add to much dependencies) or just wrap around these $.ajax calls a bit, seems a bit weird to do if ( ret.status \u003d\u003d\u003d \u0027ok\u0027 ) { in all callbacks.",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuVIBqjs",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-13T15:55:15Z",
+      "side": 1,
+      "message": "better use $.ajax(...).done",
       "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
