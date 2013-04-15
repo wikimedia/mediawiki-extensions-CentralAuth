@@ -7344,7 +7344,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-admin-info-locked' => 'Kilit biyo:',
 	'centralauth-admin-info-hidden' => 'Seviyeye nimnaye:',
 	'centralauth-admin-nohome' => 'nieşkena kerar bide',
-	'centralauth-admin-yes' => 'ye',
+	'centralauth-admin-yes' => 'eya',
 	'centralauth-admin-no' => 'nê',
 	'centralauth-admin-hidden-list' => 'listeyanê kamuyi ra',
 	'centralauth-admin-hidden-oversight' => 'Çımpawiyayo',
@@ -8935,7 +8935,7 @@ See funktsioon on praegu turvakaalutlusel keelatud.',
 Ülejäänud kontod on kinnitamata.',
 	'centralauth-merge-attempt' => "'''Sisestatud parooli ja ülejäänud ühendamata kontode vastavuse kontrollimine…'''",
 	'centralauth-attach-list-attached' => 'Ühendkonto $1 koosneb järgnevatest kontodest:',
-	'centralauth-attach-title' => 'Kinnita konto',
+	'centralauth-attach-title' => 'Konto kinnitamine',
 	'centralauth-attach-text' => 'See konto pole veel ühendkontoga seotud.
 Kui ka globaalne konto kuulub sulle, saad selle konto liita, sisestades globaalse konto parooli:',
 	'centralauth-attach-submit' => 'Ühenda konto',
@@ -8966,7 +8966,8 @@ Kui ka globaalne konto kuulub sulle, saad selle konto liita, sisestades globaals
 	'centralauth-admin-unattached' => 'ühendamata',
 	'centralauth-admin-blocked' => 'Blokeeritud aegumistähtajaga $3 kell $4.
 Põhjus: $2',
-	'centralauth-admin-blocked-indef' => 'Blokeeritud igaveseks. Põhjus: $1',
+	'centralauth-admin-blocked-indef' => 'Blokeeritud igaveseks.
+Põhjus: $1',
 	'centralauth-admin-blocklog' => 'blokeerimislogi',
 	'centralauth-admin-list-localwiki' => 'Kohalik viki',
 	'centralauth-admin-list-attached-on' => 'Ühendatud',
@@ -17475,7 +17476,7 @@ Et moß ävver nit et däm Metmaacher sing Heimat-Wiki jewääse sin.',
 	'centralauth-finish-send-confirmation' => 'e Paßwoot met e-mail schecke',
 	'centralauth-finish-problems' => 'Häß de Probleme, udder beß de nit dä Metmaacher met dä andere Name?
 [[meta:Help:Unified login problems|He jitt et Hölp]]…',
-	'centralauth-finish-noconfirms' => 'Kein einzijje Aanmeldung es müjjelsch met dämm Paßwoot.',
+	'centralauth-finish-noconfirms' => 'Keine einzijje Zohjang es möjjelesch ze beschtääteje met dämm Paßwoot.',
 	'centralauth-finish-incomplete' => 'E paa Metmaacher-Name sin zosamme jelaat woode met däm Paßwoot.
 Ävver ander Name kunnte domt nit opjemaat wääde.',
 	'centralauth-merge-attempt' => "'''Ben dat Paßwoot met dä üvverijje, noch nit zosamme jelaate Aanmeldunge am Pröfe…'''",
@@ -19315,8 +19316,11 @@ $messages['mhr'] = array(
  * @author Iwan Novirion
  */
 $messages['min'] = array(
+	'mergeaccount' => 'Status panggabuangan log masuak',
+	'centralauth' => 'Pangalolaan pangguno global',
 	'centralauth-admin-blocked-indef' => 'Blokir salamonyo.
 Alasan:$1',
+	'globalusers' => 'Dafta pangguno global',
 	'centralauth-prefs-complete' => 'Mantap sadonyo!',
 	'centralauth-prefs-count-attached' => 'Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.',
 	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
@@ -19324,6 +19328,7 @@ Alasan:$1',
 	'centralauth-login-progress' => 'Sanak masuak log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Sanak kalua log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-log-header' => 'Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.',
+	'globalgrouppermissions' => 'Manajemen kalompok global',
 );
 
 /** Macedonian (македонски)
@@ -23405,6 +23410,7 @@ $messages['pfl'] = array(
  * @author Saper
  * @author Sp5uhe
  * @author ToSter
+ * @author Ty221
  * @author Ymar
  */
 $messages['pl'] = array(
@@ -23546,6 +23552,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-nonexistent' => 'Brak konta uniwersalnego „<nowiki>$1</nowiki>”',
 	'centralauth-admin-delete-nonexistent' => 'Błąd – nie istnieje konto uniwersalne „<nowiki>$1</nowiki>”.',
 	'centralauth-token-mismatch' => 'Niemożliwe było wykonanie polecenia ze względu na utratę danych sesji.',
+	'centralauth-state-mismatch' => 'Błąd : Wykryto konflikt edycji. Sprawdź swoje zmiany i spróbuj ponownie',
 	'centralauth-admin-reason' => 'Powód',
 	'centralauth-admin-reason-other' => 'Inny lub dodatkowy powód',
 	'centralauth-admin-unhide-nonexistent' => 'Błąd – nie istnieje konto uniwersalne „<nowiki>$1</nowiki>”.',
@@ -23569,10 +23576,22 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 ** niewłaściwe dane osobowe',
 	'centralauth-admin-logsnippet' => 'Poprzednie zmiany dla konta uniwersalnego',
 	'centralauth-admin-suppressreason' => 'Centralnie ukryte przez $1 z powodu – $2',
+	'centralauth-admin-not-authorized' => 'Nie masz uprawnień do wykonywania tej akcji',
 	'globalusers' => 'Spis kont uniwersalnych',
 	'centralauth-listusers-locked' => 'zablokowane',
 	'centralauth-listusers-attached' => '[[User:$1|istnieje lokalnie]]',
 	'centralauth-listusers-nolocal' => 'nie jest przyłączone lub nie istnieje lokalnie',
+	'multilock' => 'Zablokuj wielu użytkowników globalnych',
+	'centralauth-admin-multi-username' => 'Podaj jedną lub więcej nazw użytkowników,  oddzielając je nową linią',
+	'centralauth-admin-multi-notfound' => 'Nie znaleziono nazw użytkowników',
+	'centralauth-admin-multi-searchprefix' => 'Lub szukaj kont wg prefiksów',
+	'centralauth-admin-multi-intro' => 'Aktualizacja wielu globalnych użytkowników jednocześnie',
+	'centralauth-admin-action-lock-nochange' => 'Nie należy zmieniać blokady',
+	'centralauth-admin-action-lock-lock' => 'Zablokuj wybrane konta',
+	'centralauth-admin-action-lock-unlock' => 'Odblokuj wybrane konta',
+	'centralauth-admin-action-hide-nochange' => 'Nie należy zmieniać ukrytych poziomów',
+	'centralauth-admin-action-hide-none' => 'Pokaż wybrane konta',
+	'centralauth-admin-action-hide-lists' => 'Ukryj wybrane konta z listy publicznej',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|przed sekundą|$1 sekundy temu|$1 sekund temu}}',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|przed minutą|$1 minuty temu|$1 minut temu}}',
 	'centralauth-hours-ago' => '{{PLURAL:$1|przed godziną|$1 godziny temu|$1 godzin temu}}',
@@ -24461,7 +24480,7 @@ $messages['ps'] = array(
 	'centralauth-editset-nowikis' => 'هېڅ کومه ويکي نه ده ځانګړې شوې.',
 	'centralauth-editset-nouse' => '(هېڅ)',
 	'centralauth-editset-usage' => 'کارېدلی په ډله د:',
-	'right-centralauth-lock' => 'نړيوال ګڼون تړل يا پټول',
+	'right-centralauth-lock' => 'نړيوال ګڼون تړل يا ناتړل',
 	'right-centralauth-merge' => 'د هغوی ګڼونونه سره اخږل',
 	'right-globalgrouppermissions' => 'نړېوالې ډلې مهارول',
 );
@@ -29639,11 +29658,12 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista över användare med $2-rättigheter]]',
 	'centralauth-editgroup-restrictions' => 'Wikiinställning där den här gruppen är aktiv:',
 	'centralauth-editgroup-noset' => '(ingen)',
-	'centralauth-editgroup-submit' => 'Spara ändringar för grupptillåtelser', # Fuzzy
+	'centralauth-editgroup-submit' => 'Spara globala gruppändringar',
 	'centralauth-editgroup-perms' => 'Angivna tillåtelser:',
 	'centralauth-editgroup-reason' => 'Anledning:',
 	'centralauth-editgroup-success' => 'Global grupp ändrad',
-	'centralauth-editgroup-success-text' => 'Globala gruppen $1 har uppdaterats. [[Special:GlobalGroupPermission|Tillbaka till grupphantering]]', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Uppdaterat den globala gruppen $1.
+[[Special:GlobalGroupPermissions|Tillbaka till grupphantering]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
