@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "Dup24j3U",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-16T18:38:23Z",
+      "side": 1,
+      "message": "It is, but the risk of someone finding a way to pass in userlist\u003d/etc/passwd seems worth the extra check.",
+      "parentUuid": "Dul1Xd1c",
+      "revId": "da788efa4e5cfb21fd035b0bda45efe81f8a334c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dup3N7zM",
         "filename": "maintenance/migrateAccount.php",
         "patchSetId": 3
@@ -65,6 +83,24 @@
       "writtenOn": "2013-04-16T18:31:18Z",
       "side": 1,
       "message": "I could, yes.  As you said, this is WMF-only, so I was planning on doing lists of 1000 which was okay per Asher.",
+      "parentUuid": "Dup3N7zM",
+      "revId": "da788efa4e5cfb21fd035b0bda45efe81f8a334c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dur2kc1o",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-16T18:38:23Z",
+      "side": 1,
+      "message": "I know that Peter is cutting these up into chunks of a few thousand, but I can see this being abused later on. Maybe pass in another int that tells it how many loops to do before waiting?",
       "parentUuid": "Dup3N7zM",
       "revId": "da788efa4e5cfb21fd035b0bda45efe81f8a334c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
