@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuhLYCXg",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-16T21:53:43Z",
+      "side": 1,
+      "message": "If the user has a session, and is logged in, then we should abort at this point too. There shouldn\u0027t be any problem with an attacker adding the centrallogin-token to a logged-in user\u0027s session, but I\u0027d rather avoid it all.",
+      "revId": "2bffbc7da45f1852e7949e8bdeb992c72693d46b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DujLBjYM",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-16T21:53:43Z",
+      "side": 1,
+      "message": "We should probably make this into a common function somewhere (at some point, fine for now)",
+      "revId": "2bffbc7da45f1852e7949e8bdeb992c72693d46b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
