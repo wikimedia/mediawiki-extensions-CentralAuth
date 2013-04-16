@@ -6733,7 +6733,7 @@ Du kan se eller redigere rettighederne som er tildelt en gruppe, hvis du har ret
 En gruppe kan slettes ved at fjerne alle rettigheder fra den.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vis/redigér]])',
 	'centralauth-globalgroupperms-nogroups' => 'Ingen globale grupper er definerede.',
-	'centralauth-existinggroup-legend' => 'Eksisterede grupper',
+	'centralauth-existinggroup-legend' => 'Eksisterende grupper',
 	'centralauth-newgroup-legend' => 'Opret en ny gruppe',
 	'centralauth-newgroup-intro' => 'Du kan bruge denne formular til at tildele tilladelser til en ny gruppe.
 Bemærk at en gruppe ikke findes med mindre den har nogen rettigheder.',
@@ -11618,9 +11618,6 @@ $messages['gu'] = array(
 	'centralauth-not-owner-text' => 'સભ્યનામ "$1" આપોઆપ $2 પરના ખાતાના માલિકને નામે કરવામાં આવ્યું છે.
 
 જો તે તમે હોવ તો, ફક્ત અહીં તમારી ગુરુકળ ટાઈપ કરીને તમારી સંગઠિત પ્રવેશ પ્રક્રિયા પૂરી કરી શકો છો:',
-	'centralauth-blocked-text' => 'તમારું મુખ્ય વિકિ (નીચે જણાવેલું) ફેરફારો માટે પ્રતિબંધિત છે.
-પ્રતિબંધ ઉઠાવવા માટે આ વિકિના પ્રબંધકનો સંપર્ક કરો.
-જ્યાં સુધી તે પ્રતિબંધિત છે ત્યાં સુધી તમે તમારા ખાતાઓનું વિલીનીકરણ નહી કરી શકો.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>માત્ર નિદર્શન સ્થિતિ</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ખાતાનું સંગઠન હાલમાં ફક્ત નિદર્શન/ડિબગિંગ મોડમાં છે, માટે વાસ્તવિક વિલીનીકરણ પ્રક્રિયાઓ અક્રિય કરવામાં આવી છે.
 દિલગીરી!',
@@ -11826,11 +11823,11 @@ $messages['gu'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 હક્ક ધરાવતા સભ્યોની યાદિ]]',
 	'centralauth-editgroup-restrictions' => 'વિકિઓનો સમૂહ જ્યાં આ જૂથ સક્રિય છે:',
 	'centralauth-editgroup-noset' => '(કંઈ નહી)',
-	'centralauth-editgroup-submit' => 'ફેરફારોને સમૂહ ના હક્કોમાં સાચવો',
+	'centralauth-editgroup-submit' => 'વૈશ્વીક જૂથ ફેરફારો સાચવો',
 	'centralauth-editgroup-perms' => 'અનુમતિઓ ફાળવાઈ',
 	'centralauth-editgroup-reason' => 'કારણ:',
-	'centralauth-editgroup-success' => 'સમૂહના હક્કો બદલાયા',
-	'centralauth-editgroup-success-text' => 'તમે સફળતા પૂર્વક $1 જૂથના જૂથ વિકલ્પો બદલ્યાં.
+	'centralauth-editgroup-success' => 'વૈશ્વીક જૂથ બદલાયા',
+	'centralauth-editgroup-success-text' => 'વૈશ્વીક જૂથ $1 સફળતાપૂર્વક અદ્યતન થયું.
 [[Special:GlobalGroupPermissions|જૂથ વ્યવસ્થાપન પર પરત જાઓ]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ફેરફાર]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'જે વિકિ પર તેઓ ખાતું ધરાવે છે.:',
@@ -11874,8 +11871,8 @@ $messages['gu'] = array(
 	'right-globalgroupmembership' => 'વૈશ્વિક સમૂહોમાં સભ્યપદમાં ફેરફાર કરો',
 	'right-centralauth-autoaccount' => 'વૈશ્વીક ખાતા વગર સ્વય્ંચલિત રીતે પ્રવેશ કરો',
 	'right-centralauth-unmerge' => 'વૈશ્વિક ખાતાઓને છૂટા પાડો',
-	'right-centralauth-lock' => 'વૈશ્વિક ખાતું સ્થગિત કરો કે છુપાવો',
-	'right-centralauth-oversight' => 'વૈશ્વીક ખાતાને છુપાડીદો', # Fuzzy
+	'right-centralauth-lock' => 'વૈશ્વીક ખાતું સ્થગિત કે અસ્થગિત કરો',
+	'right-centralauth-oversight' => 'વૈશ્વીક ખાતાને નાબૂદ કરો કે છુપાવો',
 	'right-centralauth-merge' => 'તેમના ખાતા સંમિલીત કરો',
 	'right-globalgrouppermissions' => 'વૈશ્વીક સમૂહનું વ્યવસ્થાપન',
 );
@@ -30799,9 +30796,9 @@ $messages['th'] = array(
 	'centralauth-merge-step1-submit' => 'ยืนยันข้อมูลการล็อกอิน',
 	'centralauth-merge-step2-title' => 'ยืนยันบัญชีอื่นเพิ่มเติม',
 	'centralauth-merge-step2-detail' => 'บัญชีผู้ใช้บางรายการไม่สามารถจับคู่กับวิกิที่กำหนดได้
-ถ้าบัญชีู้ผู้ใช้เหล่านี้เป็นของคุณ คุณสามารถยืนยันการเป็นเจ้าของบัญชีได้โดยการใส่รหัสผ่านให้กับบัญชีผู้ใช้นั้น',
+ถ้าบัญชีผู้ใช้เหล่านี้เป็นของคุณ คุณสามารถยืนยันการเป็นเจ้าของบัญชีได้โดยการใส่รหัสผ่านให้กับบัญชีผู้ใช้นั้น',
 	'centralauth-merge-step2-submit' => 'ยืนยันข้อมูลการล็อกอิน',
-	'centralauth-merge-dryrun-complete' => 'บัญชีผู้ใช้ทั้งหมดสามาำรถรวบรวมได้โดยอัตโนมัติ
+	'centralauth-merge-dryrun-complete' => 'บัญชีผู้ใช้ทั้งหมดสามารถรวบรวมได้โดยอัตโนมัติ
 
 ไม่มีการเปลี่ยนแปลงเกิดขึ้นกับบัญชีผู้ใช้ของคุณ',
 	'centralauth-merge-dryrun-or' => "'''หรือ'''",
@@ -30818,14 +30815,14 @@ $messages['th'] = array(
 	'centralauth-merge-method-empty' => 'ไม่มีประวัติการเขียน',
 	'centralauth-merge-method-mail' => 'ยืนยันทางอีเมล',
 	'centralauth-merge-method-password' => 'ยืนยันทางรหัสผ่าน',
-	'centralauth-merge-method-new' => 'บัญชีผู้ใช้ใหม่',
+	'centralauth-merge-method-new' => 'บัญชีผู้ใช้',
 	'centralauth-merge-method-login' => 'ยืนยันในการล็อกอิน', # Fuzzy
 	'centralauth-finish-title' => 'เสร็จสิ้นการรวม',
 	'centralauth-finish-password' => 'รหัสผ่าน:',
 	'centralauth-finish-login' => 'ล็อกอิน',
 	'centralauth-finish-send-confirmation' => 'อีเมลรหัสผ่าน',
 	'centralauth-finish-noconfirms' => 'ไม่พบบัญชีผู้ใช้ที่จะสามารถยืนยันได้ด้วยรหัสผ่านนี้',
-	'centralauth-attach-title' => 'ยืนยันบัญชีผู้ใช้',
+	'centralauth-attach-title' => 'ยืนยันบัญชี',
 	'centralauth-attach-submit' => 'ย้ายบัญชี',
 	'centralauth-admin-manage' => 'จัดการข้อมูลผู้ใช้',
 	'centralauth-admin-username' => 'ชื่อผู้ใช้:',
