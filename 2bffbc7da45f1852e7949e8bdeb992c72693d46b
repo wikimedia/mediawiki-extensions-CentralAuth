@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DupIjmcA",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T22:37:25Z",
+      "side": 1,
+      "message": "The call to $this-\u003echeckInputState( $par, false ) above will error out if the user is logged in locally, see lines 349-355. But an anonymous user might have a session if they saw a captcha or something.",
+      "parentUuid": "DuhLYCXg",
+      "revId": "2bffbc7da45f1852e7949e8bdeb992c72693d46b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DujLBjYM",
         "filename": "specials/SpecialCentralLogin.php",
         "patchSetId": 3
