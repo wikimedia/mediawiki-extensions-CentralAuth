@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dut12B6M",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-16T16:11:05Z",
+      "side": 1,
+      "message": "Just to prevent people from hurting themselves when they try to hack things to make maintenance scripts run from the web, maybe add an explicit check here that PHP_SAPI \u003d\u003d \u0027cli\u0027? Otherwise, maybe define a data directory and make sure that the file\u0027s realpath is in that directory?",
+      "revId": "f14c85e8ba26438ff491ccfd4bcb4921d61c3816",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dut0kx7Y",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-16T16:11:05Z",
+      "side": 1,
+      "message": "May want an else here to complain if neither username nor userlist was given.",
+      "revId": "f14c85e8ba26438ff491ccfd4bcb4921d61c3816",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
