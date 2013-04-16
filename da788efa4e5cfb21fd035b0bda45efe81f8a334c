@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dul1Xd1c",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-16T18:23:34Z",
+      "side": 1,
+      "message": "Is there any other way to execute Maintenance scripts? I doubt it... superflous, especially as CentralAuth is more or less WMF only",
+      "revId": "da788efa4e5cfb21fd035b0bda45efe81f8a334c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dup3N7zM",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-16T18:23:34Z",
+      "side": 1,
+      "message": "Depending on the size of the lists you want to pass in this might not be enough... you maybe want to pull it into the while loop above (maybe wait everytime after N users have been processed)",
+      "revId": "da788efa4e5cfb21fd035b0bda45efe81f8a334c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
