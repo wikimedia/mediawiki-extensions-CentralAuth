@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DuqKukoA",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T14:32:14Z",
+      "side": 1,
+      "message": "Matches centralauth-autologin-desc.",
+      "parentUuid": "DuZKfIgA",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuawZq4Q",
         "filename": "modules/ext.centralauth.centrallogin.js",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2013-04-13T15:55:15Z",
       "side": 1,
       "message": "Using + for a implicit conversion to number doesn\u0027t seem very nice to me",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DumKgmpU",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T14:32:14Z",
+      "side": 1,
+      "message": "Seems a common idiom to me.",
+      "parentUuid": "DuRL7MkY",
       "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -141,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "DuuK0itQ",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T14:32:14Z",
+      "side": 1,
+      "message": "That and these ajax requests are fired at the top of the page, rather that waiting for the whole DOM to load before checking the central login and possibly triggering a reload.\n\nI think adding yet another wrapper to check ret.status would be more confusing than just checking it in each callback.",
+      "parentUuid": "DubLrRnk",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuVIBqjs",
         "filename": "modules/ext.centralauth.centrallogin.js",
         "patchSetId": 1
@@ -152,6 +206,24 @@
       "writtenOn": "2013-04-13T15:55:15Z",
       "side": 1,
       "message": "better use $.ajax(...).done",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DugK6-r0",
+        "filename": "modules/ext.centralauth.centrallogin.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T14:32:14Z",
+      "side": 1,
+      "message": "Why?",
+      "parentUuid": "DuVIBqjs",
       "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -210,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "DuqKVMjI",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T14:32:14Z",
+      "side": 1,
+      "message": "While syntactically correct, that would not be semantically appropriate.",
+      "parentUuid": "DuTJ71r0",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DufJNPps",
         "filename": "specials/SpecialCentralLogin.php",
         "patchSetId": 1
@@ -221,6 +311,24 @@
       "writtenOn": "2013-04-13T18:28:35Z",
       "side": 1,
       "message": "are these \u0027\\n\u0027s and \u0027\\t\u0027s really necessary?",
+      "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DusKapl8",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-16T14:32:14Z",
+      "side": 1,
+      "message": "They make the output easier to read when testing the protocol.",
+      "parentUuid": "DufJNPps",
       "revId": "6f0b52a66438b1e5657c43a9e4bf0f5e2a182fe4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
