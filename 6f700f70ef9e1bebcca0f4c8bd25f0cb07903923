@@ -16,6 +16,24 @@
       "revId": "6f700f70ef9e1bebcca0f4c8bd25f0cb07903923",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DukV7Hbw",
+        "filename": "api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-04-17T01:28:23Z",
+      "side": 1,
+      "message": "Done, I added a check to make sure it hasn\u0027t already be called.",
+      "parentUuid": "DoA4b6H8",
+      "revId": "6f700f70ef9e1bebcca0f4c8bd25f0cb07903923",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
