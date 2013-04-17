@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DukXEfWE",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-17T00:21:21Z",
+      "side": 1,
+      "message": "Somewhere around here I was expecting to see:\n\n$key \u003d CentralAuthUser::memcKey( \u0027session\u0027, $info[\u0027sessionId\u0027 );\n$sess \u003d $wgMemc-\u003eget( $key );\n$sess[\u0027name\u0027]\u003d$centralUser-\u003egetName(); $sess[\u0027token\u0027]\u003d$centralUser-\u003egetAuthToken();\n$wgMemc-\u003eset( $key, $sess );\n\nOr is that somewhere else?",
+      "revId": "877cbc145cedd69777e6bfeba7fbb5144cc1117f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DugW6Bb4",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-17T00:21:21Z",
+      "side": 1,
+      "message": "I hate to add another redirect, but if the user has asked to not continue in ssl (stickHTTPS \u003d false), can we redirect to http before showing these? That will fix the bug preventing us from using wgSecureLogin and CentralAuth.",
+      "revId": "877cbc145cedd69777e6bfeba7fbb5144cc1117f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
