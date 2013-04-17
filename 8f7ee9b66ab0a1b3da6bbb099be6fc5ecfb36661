@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Du0ddbkQ",
+        "filename": "api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-17T19:05:38Z",
+      "side": 1,
+      "message": "fetched what (use descriptive names)? I guess it would be better to just cache the queryAttached array",
+      "revId": "8f7ee9b66ab0a1b3da6bbb099be6fc5ecfb36661",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Du.c24gE",
+        "filename": "api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-04-17T19:05:38Z",
+      "side": 1,
+      "message": "spaces",
+      "revId": "8f7ee9b66ab0a1b3da6bbb099be6fc5ecfb36661",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
