@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dvi2M1X8",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-18T18:56:31Z",
+      "side": 1,
+      "message": "While we\u0027re here, can we add an \u0027action\u0027\u003d\u003e\u0027logout\u0027 here, just to prevent confusion when we use this on the other wiki?",
+      "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dvu0zHak",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-18T18:56:31Z",
+      "side": 1,
+      "message": "Since $refresh\u003dtrue and passing in the $id are logically two different things (and should never be done together), can we have a check to make sure that doesn\u0027t happen? Or make it clear in the documentation that if $refresh\u003dtrue and an $id is passed in, the passed in id wins and the id is not refreshed.",
+      "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dvu3iPdg",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-18T18:56:31Z",
+      "side": 1,
+      "message": "(note to future self) I think using the session id will work, but let me try attacking it a few ways to make sure.",
+      "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
