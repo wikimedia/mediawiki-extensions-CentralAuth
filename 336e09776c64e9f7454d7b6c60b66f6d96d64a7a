@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "DvovVrrc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-19T15:51:18Z",
+      "side": 1,
+      "message": "So does Ib6e9cce4fa4c5f1482c59bfac28087f558786efe. Better title?",
+      "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DvqtcKnw",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-19T15:51:18Z",
+      "side": 1,
+      "message": "If wfWikiID() \u003d\u003d\u003d $wgCentralAuthLoginWiki, you should be able to skip the redirecting.",
+      "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dvi2M1X8",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 4
@@ -47,6 +81,23 @@
       "writtenOn": "2013-04-18T18:56:31Z",
       "side": 1,
       "message": "(note to future self) I think using the session id will work, but let me try attacking it a few ways to make sure.",
+      "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dvit..qw",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-04-19T15:51:18Z",
+      "side": 1,
+      "message": "You don\u0027t seem to be sending the right cookies for the user to be logged in on the central wiki anywhere in here.",
       "revId": "336e09776c64e9f7454d7b6c60b66f6d96d64a7a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
