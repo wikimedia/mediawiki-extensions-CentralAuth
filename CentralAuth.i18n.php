@@ -864,7 +864,9 @@ This is the opposite of merging a local (unlinked) account to a global account. 
 	'right-centralauth-oversight' => '{{doc-right|centralauth-oversight}}',
 	'right-centralauth-merge' => '{{doc-right|centralauth-merge}}
 
-{{doc-singularthey}}',
+{{doc-singularthey}}
+
+This user right allows the user to use [[Special:MergeAccount]] to merge his/her own account with accounts on other projects.',
 	'right-globalgrouppermissions' => '{{doc-right|globalgrouppermissions}}',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.
 
@@ -6192,7 +6194,7 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'right-centralauth-unmerge' => 'Rozlučování sloučených globálních účtů',
 	'right-centralauth-lock' => 'Zamykání a odemykání globálních účtů',
 	'right-centralauth-oversight' => 'Utajování nebo skrývání globálních účtů',
-	'right-centralauth-merge' => 'Slučování jejich účtů',
+	'right-centralauth-merge' => 'Sloučení svého účtu',
 	'right-globalgrouppermissions' => 'Spravování globálních skupin',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globální skupiny, do kterých uživatel patří',
 	'action-centralauth-lock' => 'zamykat nebo odemykat globální účty',
