@@ -190,7 +190,8 @@ class SpecialMultiLock extends SpecialPage {
 				'centralauth-admin-status-locked' => $radioLocked,
 				'centralauth-admin-status-hidden' => $radioHidden,
 				'centralauth-admin-reason' => $reasonList,
-				'centralauth-admin-reason-other' => $reasonField
+				'centralauth-admin-reason-other' => $reasonField,
+				'centralauth-admin-multi-bot' => Xml::check( 'bot' ) . $this->msg( 'centralauth-admin-multi-botcheck' )
 			),
 			'centralauth-admin-status-submit'
 		);
@@ -349,6 +350,13 @@ class SpecialMultiLock extends SpecialPage {
 			$setHidden = $this->mActionHide;
 		}
 
+		if ( $this->getRequest()->getBool( 'bot', true ) ) {
+			if ( in_array( 'bot', $this->getUser()->getRights() ) ) {
+				$this->getUser()->mRights[] = 'bot';
+				$toRemoveBotRight = true;
+			}
+		}
+
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 
 			if ( !$globalUser instanceof CentralAuthUser ) {
@@ -369,6 +377,10 @@ class SpecialMultiLock extends SpecialPage {
 			} elseif ( $status->successCount > 0 ) {
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $globalUser->getName() );
 			}
+		}
+
+		if ( $toRemoveBotRight ) {
+			unset( $this->getUser()->mRights[array_search( 'bot', $this->getUser()->mRights )] );
 		}
 	}
 
