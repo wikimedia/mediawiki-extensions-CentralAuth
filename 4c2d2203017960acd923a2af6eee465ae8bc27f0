@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DvtxX4-8",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-22T20:17:22Z",
+      "side": 1,
+      "message": "missing space after \u0027foreach\u0027",
+      "revId": "4c2d2203017960acd923a2af6eee465ae8bc27f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DvjxTlxg",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-22T20:17:22Z",
+      "side": 1,
+      "message": "I don\u0027t think we usually end if blocks with semi-colons. It\u0027s certainly not necessary",
+      "revId": "4c2d2203017960acd923a2af6eee465ae8bc27f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
