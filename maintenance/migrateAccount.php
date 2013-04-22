@@ -26,6 +26,7 @@ class MigrateAccount extends Maintenance {
 		$this->addOption( 'userlist', 'List of usernames to migrate', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
 		$this->addOption( 'safe', 'Only migrates accounts with one instance of the username across all wikis', false, false );
+		$this->addOption( 'attachmissing', 'Attach matching local accounts to global account', false, false );
 	}
 
 	public function execute() {
@@ -73,46 +74,79 @@ class MigrateAccount extends Maintenance {
 		$this->total++;
 		$this->output( "CentralAuth account migration for: " . $username . "\n");
 
-		$globalusers = $this->dbBackground->select(
-			'globaluser',
-			array( 'gu_name' ),
-			array( 'gu_name' => $username ),
-			__METHOD__
-		);
+		$central = new CentralAuthUser( $username );
 
-		if ( $globalusers->numRows() > 0 ) {
-			$this->output( "ERROR: A global account already exists for: $username\n" );
-			return false;
+		/**
+		 * Migration with an existing global account
+		 */
+		if ( $central->exists() ) {
+			if (
+				$this->getOption( 'attachmissing', false )
+				&& !is_null( $central->getEmailAuthenticationTimestamp() )
+			){
+				$unattached = $central->queryUnattached();
+				foreach ( $unattached as $wiki => $local ) {
+					if (
+						$central->getEmail() == $local['email']
+						&& !is_null( $local['emailAuthenticated'] )
+					){
+						$this->output( "ATTACHING: $username@$wiki\n" );
+						$central->attach( $wiki, 'mail' );
+						$this->migrated++;
+					}
+				}
+				return true;
+			} else {
+				$this->output( "ERROR: A global account already exists for: $username\n" );
+			}
 		}
+		/**
+		 * Migration without an existing global account
+		 */
+		else {
+			$unattached = $central->queryUnattached();
 
-		$localusers = $this->dbBackground->select(
-			'localnames',
-			array( 'ln_name', 'ln_wiki' ),
-			array( 'ln_name' => $username ),
-			__METHOD__
-		);
+			if ( count( $unattached ) == 0 ) {
+				$this->output( "ERROR: No local accounts found for: $username\n" );
+				return false;
+			}
 
-		if ( $localusers->numRows() == 0 ) {
-			$this->output( "ERROR: No local accounts found for: $username\n" );
-			return false;
-		}
-
-		if ( $this->safe ) {
-			if ( $localusers->numRows() !== 1 ) {
+			if ( $this->safe && count( $unattached ) !== 1 ) {
 				$this->output( "ERROR: More than 1 local user account found for username: $username\n" );
-				foreach( $localusers as $row ) {
-					$this->output( "\t" . $row->ln_name . "@" . $row->ln_wiki . "\n" );
+				foreach ( $unattached as $local ) {
+					$this->output( "\t" . $central->getName() . "@" . $local['wiki'] . "\n" );
 				}
 				return false;
 			}
-		}
 
-		$central = new CentralAuthUser( $username );
-		if ( $central->storeAndMigrate() ) {
-			$this->migrated++;
-			return true;
-		}
+			// check that all unattached (ie ALL) accounts have a confirmed email
+			// address and that the addresses are all the same.  we are using this
+			// to match accounts to the same user since we can't use the password
+			$emailMatch = true;
+			$email = null;
+			foreach( $unattached as $local ) {
+				if ( is_null( $email ) ) {
+					$email = $local['email'];
+				}
+				if ( $local['email'] == $email && !is_null( $local['emailAuthenticated'] ) ) {
+					continue;
+				}
+				$emailMatch = false;
+				break;
+			}
 
+			// all of the emails are the same and confirmed
+			if ( $emailMatch ) {
+				$this->output( "Email addresses match and are confirmed for: $username\n" );
+				if ( $central->storeAndMigrate() ) {
+					$this->migrated++;
+					return true;
+				};
+			} else {
+				$this->output( "ERROR: Email addresses do not match for: $username\n" );
+				// TODO: add the algorithm for choosing a winner and doing that migration
+			}
+		}
 		return false;
 	}
 
