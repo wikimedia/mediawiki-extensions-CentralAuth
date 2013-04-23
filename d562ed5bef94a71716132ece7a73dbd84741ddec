@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DvvDsPso",
+        "filename": "specials/SpecialMergeAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2013-04-23T17:57:44Z",
+      "side": 1,
+      "message": "Ouch for the hardcoded User:.\n\nWikiMap::getFullUrl() and the getLocalUrl() that calls want a string, not a Title object.\n\nCan also return null, but probably unlikely",
+      "revId": "d562ed5bef94a71716132ece7a73dbd84741ddec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
