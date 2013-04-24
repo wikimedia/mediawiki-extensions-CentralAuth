@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "DvhPTIdY",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 17
+      },
+      "writtenOn": "2013-04-24T05:17:26Z",
+      "side": 1,
+      "message": "The meaning of the validation options should be clear from the doc comment on User::getCanonicalName(). The defensible options are \"usable\" and \"creatable\". All three check for title validity, since isUsableName() calls isValidUserName() which does a title check, and isCreatableName() calls isUsableName(). \n\nI think \"usable\" is the best option, since this is a login and that\u0027s what the \"usable\" validation option is for. It doesn\u0027t really matter what it happens to do right now. What it does may change, but it will always correspond to the core\u0027s idea of appropriate validation for login.\n\nUser::isCreatableName() should be checked before autocreation.",
+      "parentUuid": "DuW9axU8",
+      "revId": "29c0983141ba3a9fc4b7503da99786320cf10327",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dt1QBnbA",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 2
