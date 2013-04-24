@@ -105,8 +105,12 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onAbortNewAccount( $user, &$abortError ) {
+		global $wgCentralAuthAbortNewClashingLocal;
 		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( $centralUser->exists() ) {
+		if (
+			$centralUser->exists() ||
+			( $wgCentralAuthAbortNewClashingLocal && count( $centralUser->queryUnattached() ) > 0 )
+		) {
 			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
 		}

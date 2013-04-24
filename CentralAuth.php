@@ -148,6 +148,13 @@ $wgCentralAuthWikisPerSuppressJob = 10;
 $wgCentralAuthReadOnly = false;
 
 /**
+ * Disallow the creation of new local accounts that clash with a local account
+ * on another wiki, even if there is no global account with that name.
+ * @var bool
+ */
+$wgCentralAuthAbortNewClashingLocal = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
