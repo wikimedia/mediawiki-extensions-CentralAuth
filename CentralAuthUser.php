@@ -1364,7 +1364,8 @@ class CentralAuthUser extends AuthPluginUser {
 				'lu_attached_timestamp' => $dbw->timestamp(),
 				'lu_attached_method'    => $method ),
 			__METHOD__,
-			array( 'IGNORE' ) );
+			array( 'IGNORE' )
+		);
 
 		if ( $dbw->affectedRows() == 0 ) {
 			wfDebugLog( 'CentralAuth',
@@ -2232,11 +2233,8 @@ class CentralAuthUser extends AuthPluginUser {
 		if ( !$this->mDelayInvalidation ) {
 			wfDebugLog( 'CentralAuth', "Updating cache for global user {$this->mName}" );
 
-			// Reload the state
+			// Reload the state and overwrite the cache.
 			$this->loadStateNoCache();
-
-			// Overwrite the cache.
-			$this->saveToCache();
 		} else {
 			wfDebugLog( 'CentralAuth', "Deferring cache invalidation because we're in a transaction" );
 		}

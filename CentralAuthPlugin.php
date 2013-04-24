@@ -206,7 +206,6 @@ class CentralAuthPlugin extends AuthPlugin {
 		return true;
 	}
 
-
 	/**
 	 * Return true to prevent logins that don't authenticate here from being
 	 * checked against the local database's password fields.
