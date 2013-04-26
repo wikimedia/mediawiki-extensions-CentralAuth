@@ -8,6 +8,15 @@
  */
 
 class CentralAuthPlugin extends AuthPlugin {
+
+	/**
+	 * Indicates that an alternate username was used to log in the user and the User
+	 * object should be updated on a call to updateUser().
+	 *
+	 * @var String: The username if an alternate has been used
+	 */
+	public $alternateUsername = null;
+
 	/**
 	 * Check whether there exists a user account with the given name.
 	 * The name will be normalized to MediaWiki's requirements, so
@@ -35,7 +44,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function authenticate( $username, $password ) {
-		global $wgCentralAuthAutoMigrate;
+		global $wgCentralAuthAutoMigrate, $wgCentralAuthCheckForRenamedAccount;
 
 		$central = new CentralAuthUser( $username );
 		if ( !$central->exists() ) {
@@ -47,6 +56,10 @@ class CentralAuthPlugin extends AuthPlugin {
 		}
 
 		$passwordMatch = $central->authenticate( $password ) == "ok";
+
+		if ( !$passwordMatch && $wgCentralAuthCheckForRenamedAccount ) {
+			return $this->authenticateAlternate( $username, $password );
+		}
 
 		if ( $passwordMatch && $wgCentralAuthAutoMigrate ) {
 			// If the user passed in the global password, we can identify
@@ -81,6 +94,47 @@ class CentralAuthPlugin extends AuthPlugin {
 	}
 
 	/**
+	 * Checks alternate usernames of the form $username~wiki in the post-SUL finalization
+	 * era.  This is a temporary function and should be removed at some point in the
+	 * future after an appropriate period.
+	 *
+	 * @param $username String: username.
+	 * @param $password String: user password.
+	 * @return bool
+	 * @public
+	 */
+	function authenticateAlternate( $username, $password ) {
+		global $wgCentralAuthCheckForRenamedAccount;
+		if ( !$wgCentralAuthCheckForRenamedAccount ) {
+			return false;
+		}
+
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$alternameNames = $dbr->select(
+			'globaluser',
+			array( 'gu_name' ),
+			array( 'gu_name LIKE ' . $dbr->addQuotes( $username . "~%" ) ),
+			__METHOD__
+		);
+
+		foreach ( $alternameNames as $an ) {
+			$alternateUsername = $an['gu_name'];
+			$central = new CentralAuthUser( $alternateUsername );
+
+			if ( $central->authenticate( $password ) == "ok" ) {
+				wfDebugLog(
+					'CentralAuth',
+					"plugin: alternate authentication succeeded as '$alternateUsername'"
+				);
+				$this->alternateUsername = $alternateUsername;
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Check if a user should authenticate locally if the global authentication fails.
 	 * If either this or strict() returns true, local authentication is not used.
 	 *
@@ -107,13 +161,22 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return bool
 	 */
 	public function updateUser( &$user ) {
+		global $wgCentralAuthCheckForRenamedAccount;
+
 		$central = CentralAuthUser::getInstance( $user );
-		if ( $central->exists() && $central->isAttached() &&
-			$central->getEmail() != $user->getEmail() )
-		{
-			$user->setEmail( $central->getEmail() );
-			$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
-			$user->saveSettings();
+		if ( $central->exists() && $central->isAttached() ) {
+			if ( $wgCentralAuthCheckForRenamedAccount && isset( $this->alternateUsername ) ){
+				$user = User::newFromName( $this->alternateUsername );
+				// dynamically add a flag so that we can notify the user in the
+				// CentralAuthHooks::onUserLoginComplete call
+				$user->alternateName = true;
+			}
+
+			if ( $central->getEmail() != $user->getEmail() ) {
+				$user->setEmail( $central->getEmail() );
+				$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
+				$user->saveSettings();
+			}
 		}
 		return true;
 	}

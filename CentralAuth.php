@@ -148,6 +148,14 @@ $wgCentralAuthWikisPerSuppressJob = 10;
 $wgCentralAuthReadOnly = false;
 
 /**
+ * As part of the SUL finalization some accounts will have to be forcibly renamed.
+ * If true, use the rename pattern to see if the provided credentials work on
+ * any renamed accounts that exist.
+ * @var bool
+ */
+$wgCentralAuthCheckForRenamedAccount = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
