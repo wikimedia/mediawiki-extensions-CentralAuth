@@ -720,6 +720,8 @@ $specialPageAliases['tt-cyrl'] = array(
 
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
+	'AutoLogin' => array( 'Автоматичний_вхід' ),
+	'MergeAccount' => array( 'Об\'єднання_облікових_записів' ),
 	'GlobalGroupMembership' => array( 'Глобальні_права' ),
 	'WikiSets' => array( 'Набори_вікі' ),
 	'GlobalUsers' => array( 'Глобальні_користувачі' ),

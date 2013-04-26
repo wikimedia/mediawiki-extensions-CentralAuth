@@ -19320,7 +19320,7 @@ $messages['min'] = array(
 	'centralauth' => 'Pangalolaan pangguno global',
 	'centralauth-admin-blocked-indef' => 'Blokir salamonyo.
 Alasan:$1',
-	'globalusers' => 'Dafta pangguno global',
+	'globalusers' => 'Daftar pangguno global',
 	'centralauth-prefs-complete' => 'Mantap sadonyo!',
 	'centralauth-prefs-count-attached' => 'Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.',
 	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
@@ -19450,11 +19450,11 @@ $messages['mk'] = array(
 	'centralauth-admin-yes' => 'да',
 	'centralauth-admin-no' => 'не',
 	'centralauth-admin-hidden-list' => 'од јавни списоци',
-	'centralauth-admin-hidden-oversight' => 'надгледувана',
+	'centralauth-admin-hidden-oversight' => 'скриено',
 	'centralauth-admin-list-legend-ro' => 'Список на локални сметки',
 	'centralauth-admin-list-legend-rw' => 'Оддели локални кориснички сметки',
 	'centralauth-admin-unattached' => 'неприсоединета',
-	'centralauth-admin-blocked' => 'Блокот истекува на $3 во $4. Причина: $2',
+	'centralauth-admin-blocked' => 'Блокот истекува на $3 во $4 ч. Причина за блокот: $2',
 	'centralauth-admin-blocked-indef' => 'Блокиран бесконечно. Причина: $1',
 	'centralauth-admin-blocklog' => 'дневник на блокирања',
 	'centralauth-admin-list-localwiki' => 'Локално вики',
@@ -19557,7 +19557,7 @@ $messages['mk'] = array(
 	'centralauth-log-entry-chgstatus' => 'го промени статусот на глобалната сметка „$1“: Поставено $2; Сменето $3',
 	'centralauth-log-status-locked' => 'заклучена',
 	'centralauth-log-status-hidden' => 'скриена',
-	'centralauth-log-status-oversighted' => 'надгледувана',
+	'centralauth-log-status-oversighted' => 'скриено',
 	'centralauth-log-status-none' => '(нема)',
 	'centralauth-rightslog-name' => 'Дневник на глобални права',
 	'centralauth-rightslog-entry-usergroups' => 'го промени глобалното групно членство за $1 од $2 на $3',
@@ -19655,7 +19655,7 @@ $messages['mk'] = array(
 	'right-centralauth-autoaccount' => 'Автоматска најава со глобална сметка',
 	'right-centralauth-unmerge' => 'Раздвој глобална сметка',
 	'right-centralauth-lock' => 'Заклучување или отклучување на глобална сметка',
-	'right-centralauth-oversight' => 'Затајување или скривање на глобална сметка',
+	'right-centralauth-oversight' => 'Пријување или скривање на глобална сметка',
 	'right-centralauth-merge' => 'Спојување на сметката',
 	'right-globalgrouppermissions' => 'Раководеење со глобални групи',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобални групи во кои членува корисникот',
@@ -23411,6 +23411,7 @@ $messages['pfl'] = array(
  * @author Sp5uhe
  * @author ToSter
  * @author Ty221
+ * @author WTM
  * @author Ymar
  */
 $messages['pl'] = array(
@@ -23721,7 +23722,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'right-centralauth-unmerge' => 'Rozdzielenie konta uniwersalnego',
 	'right-centralauth-lock' => 'Blokowanie lub ukrywanie konta uniwersalnego', # Fuzzy
 	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego', # Fuzzy
-	'right-centralauth-merge' => 'Łączenie ich konta',
+	'right-centralauth-merge' => 'Łączenie swojego konta',
 	'right-globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 );
 
@@ -33167,12 +33168,12 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-admin-action-hide-none' => 'Hiện các tài khoản được chọn',
 	'centralauth-admin-action-hide-lists' => 'Ẩn các tài khoản được chọn khỏi danh sách công khai',
 	'centralauth-admin-action-hide-oversight' => 'Ẩn hẳn các tài khoản được chọn',
-	'centralauth-seconds-ago' => '$1 giây trước đây',
-	'centralauth-minutes-ago' => '$1 phút trước đây',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|giờ|giờ}} trước đây',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|ngày|ngày}} trước đây',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|tháng|tháng}} trước đây',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|năm|năm}} trước đây',
+	'centralauth-seconds-ago' => 'cách đây $1 giây',
+	'centralauth-minutes-ago' => 'cách đây $1 phút',
+	'centralauth-hours-ago' => 'cách đây $1 giờ',
+	'centralauth-days-ago' => 'cách đây $1 ngày',
+	'centralauth-months-ago' => 'cách đây $1 tháng',
+	'centralauth-years-ago' => 'cách đây $1 năm',
 	'centralauth-prefs-status' => 'Trạng thái tài khoản toàn hệ thống:',
 	'centralauth-prefs-not-managed' => 'Không sử dụng tài khoản hợp nhất',
 	'centralauth-prefs-unattached' => 'Chưa xác nhận',
