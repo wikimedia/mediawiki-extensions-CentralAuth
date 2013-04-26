@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DvwzHm2g",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-26T23:26:26Z",
+      "side": 1,
+      "message": "Maybe \"Please wait and you will be redirected back to your wiki, unless JavaScript is disabled in your browser.\"?",
+      "revId": "9e651d32390b0916c18731bbc7354fb6a4e0d2f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dv9f7TBE",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-04-26T23:26:26Z",
+      "side": 1,
+      "message": "\u0026\u0026 $wgSecureLogin is true. Otherwise we will redirect even if they use https, since stickHTTPS is only defined if if $wgSecureLogin is set.",
+      "revId": "9e651d32390b0916c18731bbc7354fb6a4e0d2f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
