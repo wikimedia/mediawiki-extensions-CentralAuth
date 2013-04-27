@@ -19317,6 +19317,9 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'mergeaccount' => 'Status panggabuangan log masuak',
+	'centralauth-complete-text' => 'Kini Sanak dapek masuak log kasado laman wiki {{int:Centralauth-groupname}} manopun juo tanpa paralu mambuek akun baru.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
+	'centralauth-list-attached' => 'Akun "$1" pado daftar wiki barikuik alah digabuangkan sabagai akun global sacaro otomatis:',
 	'centralauth' => 'Pangalolaan pangguno global',
 	'centralauth-admin-blocked-indef' => 'Blokir salamonyo.
 Alasan:$1',
@@ -19328,6 +19331,7 @@ Alasan:$1',
 	'centralauth-login-progress' => 'Sanak masuak log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Sanak kalua log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-log-header' => 'Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.',
+	'centralauth-rightslog-header' => 'Iko log pancatatan parubahan kalompok global, tamasuak parubahan kaanggotaan kalompok jo hak-hak satiok kalompok.',
 	'globalgrouppermissions' => 'Manajemen kalompok global',
 );
 
