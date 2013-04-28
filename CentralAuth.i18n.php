@@ -14009,6 +14009,7 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-admin-permission' => 'Hanya steward yang dapat melakukan penggabungan akun orang lain.',
 	'centralauth-admin-no-unified' => 'Belum ada akun global dengan nama pengguna ini.',
 	'centralauth-admin-info-header' => 'Info pengguna global',
+	'centralauth-admin-info-username' => 'Nama pengguna:',
 	'centralauth-admin-info-id' => 'ID pengguna:',
 	'centralauth-admin-info-registered' => 'Terdaftar:',
 	'centralauth-admin-info-home' => 'Wiki utama:',
@@ -14023,7 +14024,7 @@ Akun-akun lain belum dikonfirmasikan.',
 	'centralauth-admin-list-legend-ro' => 'Daftar akun lokal',
 	'centralauth-admin-list-legend-rw' => 'Jangan gabung akun lokal',
 	'centralauth-admin-unattached' => 'tidak tergabung',
-	'centralauth-admin-blocked' => 'Blokir, berakhir $3 setelah $4. Alasan: $2',
+	'centralauth-admin-blocked' => 'Blokir, berakhir $3 pukul $4. Alasan: $2',
 	'centralauth-admin-blocked-indef' => 'Blokir selamanya.
 Alasan:$1',
 	'centralauth-admin-blocklog' => 'Catatan pemblokiran',
@@ -14037,7 +14038,7 @@ Alasan:$1',
 	'centralauth-admin-bad-input' => 'Pilihan penggabungan tidak sah',
 	'centralauth-admin-none-selected' => 'Tidak ada akun yang dipilih untuk diubah.',
 	'centralauth-admin-already-unmerged' => '$1 dilewatkan karena sudah dibatalkan penggabungannya',
-	'centralauth-admin-unmerge-success' => 'Berhasil membatalkan penggabungan $1 {{PLURAL:$1|akun|akun}}',
+	'centralauth-admin-unmerge-success' => 'Berhasil membatalkan penggabungan $1 {{PLURAL:$1|akun}}',
 	'centralauth-admin-delete-title' => 'Menghapus akun',
 	'centralauth-admin-delete-description' => 'Penghapusan akun global akan turut menghapus preferensi global, membatalkan penggabungan semua akun lokal, dan dengan demikian nama global tersebut dapat digunakan oleh pengguna lainnya.
 Seluruh akun lokal akan tetap ada.
@@ -17531,12 +17532,12 @@ Der Jrond: $2.',
 	'centralauth-admin-already-unmerged' => '„$1“ weed övverjange, es ald affjetrennt',
 	'centralauth-admin-unmerge-success' => '{{PLURAL:$1|Eine Metmaacher|$1 Metmaacher|Keine Metmaacher}} affjetrennt.',
 	'centralauth-admin-delete-title' => 'Metmaacher fottjeschmeße',
-	'centralauth-admin-delete-description' => 'De jemeinsame Aanmeldung fottzeschmieße hät Follje:
-* De jemeinsame Enstellunge jonn verlohre.
-* All de dohen zosamme jelaate Metmaacher-Name en de Wiki sin widder allein un un verbonge.
+	'centralauth-admin-delete-description' => 'De jemeinsame Aanmädlonge fottzeschmiiße hät Follje:
+* De jemeinsame Enschtällunge jonn verlohre.
+* All de dohen zosamme jelaate Metmaacher-Name en de Wikid sin widder allein un nit verbonge.
 * Dä jemeinsame Name es widder frei, un ene andere Metmaacher kann en sesch holle.
-* De einzel Aanmeldunge en de Wikis blieve bestonn.
-* De Passwööter fun dä einzel Aanmeldunge en de Wikis wäde widder op dä Zohstand fun für em Zosammelääje zoröck jesaz.',
+* De einzel Aanmäldonge en de Wikis blieve beschtonn.
+* De Paßwööter fun dä einzel Aanmäldonge en de Wikis wäde widder op dä Zohstand fun für em Zosammelääje zoröck jesaz.',
 	'centralauth-admin-delete-button' => 'Schmieß fott!',
 	'centralauth-admin-delete-confirm' => 'Wells De heh dä Zohjang verhaftesch fott schmiiße?',
 	'centralauth-admin-delete-success' => 'De jemeinsame Aanmeldung onger dämm Metmaacher-Name „<nowiki>$1</nowiki>“ es jätz widder fott.',
@@ -17575,6 +17576,7 @@ kei verstoche Aanmeldung widder seechba maache.',
 	'centralauth-listusers-locked' => 'jesperrt',
 	'centralauth-listusers-attached' => '[[User:$1|jit et em Wiki]]',
 	'centralauth-listusers-nolocal' => 'nit zosamme jelaat udder jit et nit em Wiki',
+	'multilock' => 'En Aanzahl jemeinsame Aanmädlonge schpärre',
 	'centralauth-admin-multi-notfound' => 'Beim Söhke es keinem Metmaacher singe Name erußjekumme.',
 	'centralauth-admin-action-lock-nochange' => 'Donn de Schpärre beschtonn lohße',
 	'centralauth-admin-action-lock-lock' => 'Donn de ußjesöhk Metmaacher_Zohjäng schpärre',
@@ -17610,7 +17612,7 @@ Dä Name es ald för en jemeinsam Aanmeldung reserveet.',
 	'centralauth-logout-no-others' => 'Do bes jetz automattesch och vun annder Projekte vun {{int:Centralauth-groupname}} ußjelogg.',
 	'centralauth-hidden-blockreason' => 'alljemein vershtoche {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1 op $2 wääje: $3',
 	'centralauth-log-name' => 'Logboch met de jemeinsame Aanmeldunge',
-	'centralauth-log-header' => 'Dat Logboch hee zeisch et Fottwerfe, Sperre un widder Freijevve fun jemeinsam Aanmedlunge.',
+	'centralauth-log-header' => 'Dat Logboch hee zeisch et Fottwerfe, Schpärre un widder Freijävve fun jemeinsame Aanmäldonge.',
 	'centralauth-log-entry-delete' => 'hät de jemeinsam Aanmeldung „$1“ fottjeschmeße.',
 	'centralauth-log-entry-lock' => 'hät de jemeinsam Aanmeldung „$1“ jesperrt.',
 	'centralauth-log-entry-unlock' => 'hät de jesperrte jemeinsame Aanmeldung „$1“ widder freijejovve.',
@@ -19321,18 +19323,59 @@ $messages['min'] = array(
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
 	'centralauth-list-attached' => 'Akun "$1" pado daftar wiki barikuik alah digabuangkan sabagai akun global sacaro otomatis:',
 	'centralauth' => 'Pangalolaan pangguno global',
-	'centralauth-admin-blocked-indef' => 'Blokir salamonyo.
+	'centralauth-admin-intro' => 'Antarmuko ko dapek digunoan untuak pangaturan akun global.',
+	'centralauth-admin-manage' => 'Atua data pangguno',
+	'centralauth-admin-username' => 'Namo pangguno:',
+	'centralauth-admin-lookup-ro' => 'Caliak info pangguno',
+	'centralauth-admin-lookup-rw' => 'Kalola akun pangguno',
+	'centralauth-admin-permission' => 'Hanyo steward nan dapek manggabuangan akun urang lain.',
+	'centralauth-admin-no-unified' => 'Alun ado akun global jo namo pangguno iko.',
+	'centralauth-admin-info-header' => 'Info pangguno global',
+	'centralauth-admin-info-username' => 'Namo pangguno:',
+	'centralauth-admin-info-id' => 'ID pangguno:',
+	'centralauth-admin-info-registered' => 'Tadaftar:',
+	'centralauth-admin-info-home' => 'Wiki utamo:',
+	'centralauth-admin-info-editcount' => 'Total suntiangan:',
+	'centralauth-admin-info-locked' => 'Takunci:',
+	'centralauth-admin-info-hidden' => 'Tingkek tasuruak:',
+	'centralauth-admin-nohome' => 'indak dapek ditantuan',
+	'centralauth-admin-yes' => 'yo',
+	'centralauth-admin-no' => 'indak',
+	'centralauth-admin-hidden-list' => 'dari daftar umum',
+	'centralauth-admin-hidden-oversight' => 'tatinjau',
+	'centralauth-admin-list-legend-ro' => 'Daftar akun lokal',
+	'centralauth-admin-list-legend-rw' => 'Jan gabuang akun lokal',
+	'centralauth-admin-unattached' => 'indak tagabuang',
+	'centralauth-admin-blocked' => 'Disakek, sampai $3 pukua $4. Alasan: $2',
+	'centralauth-admin-blocked-indef' => 'Disakek salamonyo.
 Alasan:$1',
+	'centralauth-admin-blocklog' => 'log sakek',
+	'centralauth-admin-list-localwiki' => 'Wiki lokal',
+	'centralauth-admin-list-attached-on' => 'Tagabuang pado',
+	'centralauth-admin-list-method' => 'Metode',
+	'centralauth-admin-list-editcount' => 'Jumlah suntiang',
+	'centralauth-admin-list-blocked' => 'Sakek',
+	'centralauth-admin-unmerge' => 'Batalan panggabuangan akun tapiliah',
+	'centralauth-admin-merge' => 'Gabuangkan akun tapiliah',
+	'centralauth-admin-bad-input' => 'Piliahan panggabuangan indak sah',
+	'centralauth-admin-none-selected' => 'Indak ado akun nan dipiliah untuak diubah.',
+	'centralauth-admin-already-unmerged' => '$1 dilewatkan dek alah dibatalan panggabuangannyo',
+	'centralauth-admin-unmerge-success' => 'Barasil mambatalan panggabuangan $1 {{PLURAL:$1|akun}}',
+	'centralauth-admin-delete-title' => 'Hapuih akun',
 	'globalusers' => 'Daftar pangguno global',
 	'centralauth-prefs-complete' => 'Mantap sadonyo!',
 	'centralauth-prefs-count-attached' => 'Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.',
 	'centralauth-prefs-manage' => 'Kalola akun global Sanak',
-	'centralauth-prefs-view' => 'Lihek info pangguno global',
+	'centralauth-prefs-view' => 'Caliak info pangguno global',
 	'centralauth-login-progress' => 'Sanak masuak log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Sanak kalua log juo pado {{int:Centralauth-groupname}}:',
 	'centralauth-log-header' => 'Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.',
 	'centralauth-rightslog-header' => 'Iko log pancatatan parubahan kalompok global, tamasuak parubahan kaanggotaan kalompok jo hak-hak satiok kalompok.',
 	'globalgrouppermissions' => 'Manajemen kalompok global',
+	'centralauth-globalgroupperms-grouplist' => 'Kalompok global barikuik alah diatua.
+Sanak dapek mancaliak jo manyuntiang hak nan diagiah ka satiok kalompok, jikok Sanak ado hak untuak itu.
+Suatu kalompok dapek dihapuihan dengan caro manghapuih kasado haknyo.',
+	'centralauth-existinggroup-legend' => 'Kalompok nan ado',
 );
 
 /** Macedonian (македонски)
@@ -21149,7 +21192,7 @@ $messages['nap'] = array(
 	'centralauth-admin-list-localwiki' => 'Wiki locale',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Atluxity
  * @author Danmichaelo
  * @author EivindJ
@@ -21205,7 +21248,6 @@ Vennligst skriv inn passordet for hjemmewikien.',
 	'centralauth-not-owner-text' => 'Brukernavnet «$1» ble automatisk tildelt eieren av kontoen på $2.
 
 Om dette er deg kan du fullføre prosessen for sammenslåing ved å skrive inn hovedpassordet for kontoen her:',
-	'centralauth-blocked-text' => 'Kontoen på hjemmewikien din (se nedenfor) er blokkert fra redigering. Kontakt en administrator på denne wikien for å avblokkere kontoen. Du kan ikke slå sammen kontoer mens den kontoen er blokkert.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Kun demonstrasjonsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontosammenslåing er foreløpig i en demonstrasjonsmodus, så faktisk sammenslåing er ikke mulig. Beklager!',
 	'centralauth-error-locked' => 'Du kan ikke redigere ettersom kontoen din er låst.',
@@ -21259,6 +21301,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-admin-permission' => 'Kun forvaltere kan slå sammen andres kontoer for dem.',
 	'centralauth-admin-no-unified' => 'Ingen sammenslått konto for dette brukernavnet.',
 	'centralauth-admin-info-header' => 'Global brukerinformasjon',
+	'centralauth-admin-info-username' => 'Brukernavn:',
 	'centralauth-admin-info-id' => 'Bruker-ID:',
 	'centralauth-admin-info-registered' => 'Registrert:',
 	'centralauth-admin-info-home' => 'Hjemmewiki:',
@@ -21402,11 +21445,11 @@ En gruppe kan slettes ved å fjerne alle rettigheter fra den.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Liste over brukere med $2-rettigheter]]',
 	'centralauth-editgroup-restrictions' => 'Wikisett der denne gruppen er aktiv:',
 	'centralauth-editgroup-noset' => '(ingen)',
-	'centralauth-editgroup-submit' => 'Lagre endringer i gruppetillatelser',
+	'centralauth-editgroup-submit' => 'Lagre endringer i gruppetillatelser', # Fuzzy
 	'centralauth-editgroup-perms' => 'Gitte tillatelser:',
 	'centralauth-editgroup-reason' => 'Årsak:',
-	'centralauth-editgroup-success' => 'Gruppetillatelser endret',
-	'centralauth-editgroup-success-text' => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]',
+	'centralauth-editgroup-success' => 'Gruppetillatelser endret', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|rediger]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki der vedkommende har en konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globale brukeren '''$1''' er ikke aktiv på det angitte prosjektet (<i>$2</i>). Det er mulig at du prøver å gi rettighetene til gal bruker.",
@@ -21449,7 +21492,7 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 	'right-globalgroupmembership' => 'Rediger medlemskap i globale grupper',
 	'right-centralauth-autoaccount' => 'Automatisk innlogging med globalkonto',
 	'right-centralauth-unmerge' => 'Flett opp global konto',
-	'right-centralauth-lock' => 'Lås eller skjul global konto',
+	'right-centralauth-lock' => 'Lås eller skjul global konto', # Fuzzy
 	'right-centralauth-oversight' => 'Undertrykk global konto', # Fuzzy
 	'right-centralauth-merge' => 'Slå sammen kontoene deres',
 	'right-globalgrouppermissions' => 'Behandle av globale grupper',
@@ -34487,6 +34530,11 @@ $messages['zh-hant'] = array(
 	'centralauth-listusers-locked' => '鎖定',
 	'centralauth-listusers-attached' => '[[User:$1|於本地存在]]',
 	'centralauth-listusers-nolocal' => '未附加或未於本地存在',
+	'multilock' => '鎖定多個全域用戶',
+	'centralauth-admin-multi-username' => '輸入一個或多個用戶名，以新行分隔',
+	'centralauth-admin-multi-notfound' => '搜索沒有返回任何用戶名。',
+	'centralauth-admin-multi-searchprefix' => '或者，用前綴搜索用戶。',
+	'centralauth-admin-multi-intro' => '一次過更新多個全域使用者',
 	'centralauth-seconds-ago' => '$1秒前',
 	'centralauth-minutes-ago' => '$1分鐘前',
 	'centralauth-hours-ago' => '$1小時前',
@@ -34613,7 +34661,7 @@ $messages['zh-hant'] = array(
 	'right-globalgroupmembership' => '編輯成員至全域組',
 	'right-centralauth-autoaccount' => '自動使用全域賬戶登陸',
 	'right-centralauth-unmerge' => '取消合併本地帳戶',
-	'right-centralauth-lock' => '鎖定或隱藏全域帳戶', # Fuzzy
+	'right-centralauth-lock' => '鎖定或解除鎖定全域帳戶',
 	'right-centralauth-oversight' => '廢止全域帳戶', # Fuzzy
 	'right-centralauth-merge' => '合併他們的帳戶',
 	'right-globalgrouppermissions' => '管理全域群組',
