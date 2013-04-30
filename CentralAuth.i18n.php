@@ -430,6 +430,7 @@ If you are just trying to log in as another user, please log out first.',
  * @author Fryed-peach
  * @author Garas
  * @author Guillom
+ * @author Hoo
  * @author Hydra
  * @author Jon Harald Søby
  * @author Kwj2772
@@ -571,7 +572,7 @@ The following message appears after the colon: date_time (time_span)",
 	'centralauth-admin-info-locked' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-yes}}
 *{{msg-mw|Centralauth-admin-no}}",
-	'centralauth-admin-info-hidden' => "ìLabel of information on status of user, recording whether the user is hidden to anyone, but users with the right 'oversight'. Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page]. The following messages can appear after the colon:
+	'centralauth-admin-info-hidden' => "Label of information on status of user, recording whether the user is hidden to anyone, but users with the right 'oversight'. Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page]. The following messages can appear after the colon:
 *{{msg-mw|Centralauth-admin-hidden-oversight}}
 *{{msg-mw|Centralauth-admin-hidden-list}}
 *{{msg-mw|Centralauth-admin-no}}
@@ -892,6 +893,15 @@ This user right allows the user to use [[Special:MergeAccount]] to merge his/her
 See also:
 * {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.',
 	'action-centralauth-lock' => '{{Doc-action|centralauth-lock}}',
+	'centrallogin' => '{{doc-special|CentralLogin|unlisted=1}}',
+	'centralloginsuccesful' => 'Used as page title.
+{{Identical|Login successful}}',
+	'centralauth-completelogin-legend' => 'Used as the fieldset label.
+
+Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.',
+	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
+	'centralauth-completelogin-back' => 'Used as action link text.',
+	'centralauth-warning-notloggedin' => 'Used as error message.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -7162,6 +7172,23 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale Gruppen, in der der Benutzer ist',
 	'action-centralauth-lock' => 'globale Benutzerkonten zu sperren oder freizugeben',
+	'centrallogin' => 'Zentrale Benutzeranmeldung',
+	'centralloginsuccesful' => 'Die Anmeldung war erfolgreich',
+	'centralauth-completelogin-legend' => 'Anmeldeprozess abschließen',
+	'centralauth-completelogin-text' => 'Die Authentifizierung deines Kontos auf Websites der Wikimedia Foundation ist fast abgeschlossen!
+
+Bitte warte und du wirst auf dein Wiki zurückgeleitet, sofern JavaScript in deinem Browser nicht deaktiviert ist.',
+	'centralauth-completelogin-submit' => 'Jetzt anmelden',
+	'centralauth-completelogin-back' => 'Zurück zur vorherigen Seite.',
+	'centralauth-error-nologinattempt' => 'Es ist kein aktiver Anmeldeversuch für deine Sitzung in Gang.',
+	'centralauth-error-badtoken' => 'Der angegebene Authentifizierungstoken ist entweder abgelaufen oder ungültig.',
+	'centralauth-error-token-wrongattempt' => 'Der Authentifikationstoken gehört nicht zu deinem aktuellen Anmeldeversuch.
+Ein anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.',
+	'centralauth-error-token-wronguser' => 'Der Token stimmt nicht mit deinem Sitzungsbenutzernamen überein.
+Ein anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.
+Wenn du dich unter einem anderen Benutzer anmelden möchtest, melde dich bitte zuerst ab.',
+	'centralauth-warning-notloggedin' => 'Du bist derzeit nicht angemeldet.',
+	'centralauth-warning-notattached' => 'Das lokale Benutzerkonto ist mit keinem globalen Konto verbunden.',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -10534,6 +10561,20 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'right-globalgrouppermissions' => 'Gérer les groupes globaux',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Groupes globaux auxquels appartient l'utilisateur",
 	'action-centralauth-lock' => 'verrouiller ou déverrouiller les comptes globaux',
+	'centrallogin' => 'Connexion utilisateur centralisée',
+	'centralloginsuccesful' => 'Connexion réussie',
+	'centralauth-completelogin-legend' => 'Terminer le processus de connexion',
+	'centralauth-completelogin-text' => 'L’authentification de votre compte sur les sites de la Fondation Wikimédia est presque achevée !
+
+Veuillez patienter et vous serez redirigé vers votre wiki, sauf si JavaScript est désactivé dans votre navigateur.',
+	'centralauth-completelogin-submit' => 'Se connecter maintenant',
+	'centralauth-completelogin-back' => 'Revenir à la page précédente.',
+	'centralauth-error-nologinattempt' => 'Aucune tentative de connexion active n’est en cours pour votre session.',
+	'centralauth-error-badtoken' => 'Le jeton d’authentification fourni est soit expiré, soit non valide.',
+	'centralauth-error-token-wrongattempt' => 'Le jeton d’authentification n’appartient pas à votre tentative de connexion actuelle. Quelqu’un pourrait essayer de vous connecter avec un compte malveillant.',
+	'centralauth-error-token-wronguser' => 'Le jeton ne correspond pas au nom d’utilisateur de votre session. Quelqu’un pourrait essayer de vous connecter sous un compte malveillant. Si vous essayez simplement de vous connecter avec un autre utilisateur, veuillez d’abord vous déconnecter.',
+	'centralauth-warning-notloggedin' => 'Vous n’êtes pas connecté pour le moment.',
+	'centralauth-warning-notattached' => 'Le compte local n’est pas attaché à un compte global.',
 );
 
 /** Franco-Provençal (arpetan)
@@ -15209,6 +15250,17 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'right-globalgrouppermissions' => 'Gestisce i gruppi globali',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppi globali a cui appartiene l'utente",
 	'action-centralauth-lock' => 'bloccare o sbloccare le utenze globali',
+	'centrallogin' => 'Accesso centrale utente',
+	'centralloginsuccesful' => 'Accesso effettuato',
+	'centralauth-completelogin-legend' => 'Completa il processo di login',
+	'centralauth-completelogin-text' => "L'autenticazione della tua utenza su siti della Wikimedia Foundation è quasi completa!
+
+Attendi e sarai reindirizzato verso il tuo wiki, a meno che JavaScript non sia disabilitato nel tuo browser.",
+	'centralauth-completelogin-submit' => 'Accedi ora',
+	'centralauth-completelogin-back' => 'Torna alla pagina precedente.',
+	'centralauth-error-nologinattempt' => 'Nessun tentativo di accesso attivo è in corso per la sessione.',
+	'centralauth-error-badtoken' => 'Il token di autenticazione fornito è scaduto o non valido.',
+	'centralauth-warning-notattached' => "L'utenza locale non è collegata ad una globale.",
 );
 
 /** Japanese (日本語)
@@ -15560,6 +15612,12 @@ $messages['ja'] = array(
 	'right-globalgrouppermissions' => 'グローバルグループを管理',
 	'abusefilter-edit-builder-vars-global-user-groups' => '利用者の所属グローバルグループ',
 	'action-centralauth-lock' => 'グローバルアカウントのロックまたはロック解除',
+	'centrallogin' => '中央管理 利用者ログイン',
+	'centralloginsuccesful' => 'ログインしました',
+	'centralauth-completelogin-legend' => 'ログイン処理の完了',
+	'centralauth-completelogin-submit' => '今すぐログイン',
+	'centralauth-completelogin-back' => '前のページに戻る。',
+	'centralauth-warning-notloggedin' => 'あなたは現在ログインしていません。',
 );
 
 /** Jutish (jysk)
@@ -19337,8 +19395,9 @@ $messages['mhr'] = array(
  * @author Iwan Novirion
  */
 $messages['min'] = array(
-	'mergeaccount' => 'Status panggabuangan log masuak',
-	'centralauth-complete-text' => 'Kini Sanak dapek masuak log kasado laman wiki {{int:Centralauth-groupname}} manopun juo tanpa paralu mambuek akun baru.',
+	'mergeaccount' => 'Statuih panggabuangan log masuak',
+	'centralauth-complete' => 'Panggabuangan log masuak global barasil!',
+	'centralauth-complete-text' => 'Kini Sanak dapek masuak log ka kasado laman wiki {{int:Centralauth-groupname}} manopun juo tanpa paralu mambuek akun baru.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
 	'centralauth-list-attached' => 'Akun "$1" pado daftar wiki barikuik alah digabuangkan sabagai akun global sacaro otomatis:',
 	'centralauth' => 'Pangalolaan pangguno global',
@@ -19400,6 +19459,7 @@ Suatu kalompok dapek dihapuihan dengan caro manghapuih kasado haknyo.',
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
+ * @author M4r51n
  */
 $messages['mk'] = array(
 	'mergeaccount' => 'Статус на обединувањето на најавувањето',
@@ -19436,7 +19496,7 @@ $messages['mk'] = array(
 Како матична сметка за вашето корисничко име е утврдено друго вики; проследете ја врската подолу и најавете се таму за да ја завршите процедурата за обединување на вашите сметки.',
 	'centralauth-merge-step3-title' => 'Создај обединета сметка',
 	'centralauth-merge-step3-detail' => 'Создавањето на обединетата сметка може да започне. Кон неа ќе бидат приложени следните викија:',
-	'centralauth-merge-step3-submit' => 'Обединување на сметките',
+	'centralauth-merge-step3-submit' => 'Обедини ги сметките',
 	'centralauth-merge-no-accounts' => 'Во централната табела на сметки нема пронајдено сметки кои соодветствуваат на вашето име!
 Базата на податоци мора да е оштетена.',
 	'centralauth-merge-home-password' => 'Домашното вики за оваа сметка (наведено подолу) има поинаква лозинка од онаа која ја внесовте.
@@ -19726,6 +19786,7 @@ $messages['mk'] = array(
 	'right-globalgrouppermissions' => 'Раководеење со глобални групи',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобални групи во кои членува корисникот',
 	'action-centralauth-lock' => 'заклучување или отклучување на глобални сметки',
+	'centralauth-completelogin-back' => 'Врати се на претходната страница.',
 );
 
 /** Malayalam (മലയാളം)
@@ -25847,6 +25908,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-rightslog-name' => 'Archivije de le deritte globbale',
 	'centralauth-rightslog-entry-groupperms' => "permesse d'u gruppe cangiate pe $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms2' => 'cangiate le autorizzazione de gruppe pè $1. Aggiunde $2; Luàte $3',
+	'centralauth-rightslog-entry-grouprename' => 'gruppe renominate da $2 a $1',
 	'centralauth-rightslog-header' => "St'archivije condene operaziune sus a le gruppe globbale: cangiaminde de membre e permesse",
 	'centralauth-rightslog-entry-newset' => "ccrejate $2 'mbostazione de uicchi  $1 cu le seguende uicchi: $3",
 	'centralauth-rightslog-entry-setrename' => 'set uicchi renomenate "$2" a "$1"',
@@ -25927,6 +25989,11 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'right-centralauth-merge' => "Aunifiche 'u cunde proprie",
 	'right-globalgrouppermissions' => 'Gestisce le gruppe globbale',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppe globbale addò l'utende stè jndre",
+	'centralloginsuccesful' => 'Tutte a poste, è trasute!',
+	'centralauth-completelogin-legend' => "Comblete 'u processe pe trasè",
+	'centralauth-completelogin-submit' => 'Tràse mò!',
+	'centralauth-completelogin-back' => "Tuèrne 'a pàgene d'apprime.",
+	'centralauth-error-nologinattempt' => "Nisciune tendative de trasè jè attive jndr'à sessiona toje.",
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -26606,9 +26673,6 @@ $messages['sa'] = array(
 	'centralauth-not-owner-text' => '"$1" योजकनाम $2 लेखायाः स्वामिने स्वचालितरूपेण प्रदत्तम् ।
 
 यदि सः, भवान् एव, तर्हि तस्या लेखायाः कृते मुख्यकूटशब्दम् अत्र लिखित्वा एकत्रीकरणप्रक्रियां समापयितुम् अर्हति :',
-	'centralauth-blocked-text' => 'भवतः मूलवीकी (अधोनिर्दिष्टा) सम्पादनार्थम् अवरुद्धा अस्ति ।
-अवरोधस्य मुक्त्यर्थं कस्यचन प्रबन्धकस्य सम्पर्कः क्रियताम् ।
-अवरुद्धस्थितौ, भवान् लेखाः संयोक्तुं न अर्हति ।',
 	'centralauth-notice-dryrun' => "<div class='successbox'>डेमो मोड् एव</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'क्षम्यताम् ! लेखायाः एकत्रीकरणम् अधुना डेमोमोड्/डिबग्गिङ्ग्-स्थितौ विद्यते, अतः एकत्रीकरणं न भवति ।',
 	'centralauth-error-locked' => 'भवतः अभिलेखः अवरुद्धः इत्यतः सम्पादयितुं न शक्यते ।',
@@ -26813,12 +26877,12 @@ $messages['sa'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 अधिकारयुक्ताः योजकावली]]',
 	'centralauth-editgroup-restrictions' => 'विकिसमूहः यत्र अयं गणः सक्रियः :',
 	'centralauth-editgroup-noset' => '(कोपि न विद्यते)',
-	'centralauth-editgroup-submit' => 'गणाधिकारेषु परिवर्तनानि रक्ष्यन्ताम्',
+	'centralauth-editgroup-submit' => 'गणाधिकारेषु परिवर्तनानि रक्ष्यन्ताम्', # Fuzzy
 	'centralauth-editgroup-perms' => 'दत्ताः अधिकाराः :',
 	'centralauth-editgroup-reason' => 'कारणम् :',
-	'centralauth-editgroup-success' => 'गणाधिकारः परिवर्तितः',
+	'centralauth-editgroup-success' => 'गणाधिकारः परिवर्तितः', # Fuzzy
 	'centralauth-editgroup-success-text' => 'भवान् $1 गणस्य गणाधिकारं यशस्वितया परिवर्तितवान् अस्ति ।
-[[Special:GlobalGroupPermissions|गणप्रबन्धनाय प्रतिनिवर्त्यताम्]]',
+[[Special:GlobalGroupPermissions|गणप्रबन्धनाय प्रतिनिवर्त्यताम्]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|सम्पादनम्]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'विकि यस्यां तेषाम् अभिलेखः विद्यते :',
 	'centralauth-globalgroupmembership-badknownwiki' => "भवता सूचितायां (''$2'') वीक्यां '''$1''' वैश्विकसदस्यः कार्यरतः नास्ति ।
@@ -26861,7 +26925,7 @@ $messages['sa'] = array(
 	'right-globalgroupmembership' => 'विश्विकगणसदस्यत्वं सम्पाद्यताम्',
 	'right-centralauth-autoaccount' => 'वैश्विकाभिलेखद्वारा स्वतः प्रविश्यताम्',
 	'right-centralauth-unmerge' => 'वैश्विकाभिलेखाः पृथक्क्रियन्ताम्',
-	'right-centralauth-lock' => 'वैश्विकाभिलेखः अवरुद्ध्यताम् अथवा विलोप्यताम्',
+	'right-centralauth-lock' => 'वैश्विकाभिलेखः अवरुद्ध्यताम् अथवा विलोप्यताम्', # Fuzzy
 	'right-centralauth-oversight' => 'वैश्विकाभिलेखः निरस्यताम्', # Fuzzy
 	'right-centralauth-merge' => 'तेषाम् अभिलेखाः संयोज्यताम्',
 	'right-globalgrouppermissions' => 'वैश्विकगणाः निरूह्यन्ताम्',
