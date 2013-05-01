@@ -343,7 +343,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$notMerged = $this->msg( 'centralauth-admin-unattached' )->parse();
 		$rows = array();
 		foreach ( $list as $row ) {
-			$content = Xml::openElement( 'tr', array( "class" => "unattached-row" ) );
+			$content = Xml::openElement( 'tr', array( "class" => "unattached-row" ) ) . Xml::openElement( 'td' );
 			if ( $this->mCanUnmerge ) {
 				$content .= Xml::closeElement( 'td' ) . Xml::openElement( 'td' );
 			}
