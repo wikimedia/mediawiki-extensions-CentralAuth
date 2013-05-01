@@ -347,7 +347,9 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( $this->mCanUnmerge ) {
 				$content .= Xml::closeElement( 'td' ) . Xml::openElement( 'td' );
 			}
-			$content .= $this->foreignUserLink( $row['wiki'] ) .
+			$content .=
+				Xml::openElement( 'td' ) .
+				$this->foreignUserLink( $row['wiki'] ) .
 				Xml::closeElement( 'td' ) .
 				Xml::openElement( 'td', array( 'colspan' => '4' ) ) .
 				$notMerged .
