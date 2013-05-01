@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwHaqOBs",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-01T21:12:34Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the \u003ctd\u003e open here? Otherwise if $this-\u003emCanUnmerge is true you\u0027ll get \u003ctr\u003e\u003c/td\u003e\u003ctd\u003e\u003ctd\u003e..",
+      "revId": "7a70df9faa3ae4964fd62f7010e1c4a535cb7bbd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
