@@ -17441,6 +17441,11 @@ $messages['krc'] = array(
 	'centralauth-admin-delete-button' => 'Бу аккаунтну кетер',
 	'centralauth-admin-reason' => 'Чурум:',
 	'globalusers' => 'Къошулуучуланы глобал списогу',
+	'centralauth-prefs-status' => 'Глобал тергеу джазыуну халы:',
+	'centralauth-prefs-complete' => 'Хар не да табды!',
+	'centralauth-prefs-count-attached' => 'Сизни тергеу джазыуугъуз $1 {{PLURAL:$1|проектде|проектде}} тириди.', # Fuzzy
+	'centralauth-prefs-manage' => 'Глобал тергеу джазыуну джюрютюу',
+	'centralauth-prefs-view' => 'Къошулуучуну юсюнден глобал билгилеге къарау',
 	'centralauth-login-progress' => 'Сеанс Викимедиа Фондну башха проектлеринде да хайырланады:', # Fuzzy
 	'centralauth-logout-progress' => 'Сеанс Викимедиа Фондну башха проектлеринде да бошалгъанды:', # Fuzzy
 	'globalgrouppermissions' => 'Глобал группаланы джюрютюу',
@@ -22382,6 +22387,23 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'right-globalgrouppermissions' => 'Globale groepen beheren',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale groepen waar de gebruiker lid van is',
 	'action-centralauth-lock' => 'globale gebruikers te ver- of ontgrendelen',
+	'centrallogin' => 'Centraal aanmelden',
+	'centralloginsuccesful' => 'Aangemeld',
+	'centralauth-completelogin-legend' => 'Aanmeldproces voltooien',
+	'centralauth-completelogin-text' => 'Aanmelden bij sites van de Wikimedia Foundation is bijna voltooid.
+
+Een moment geduld. U wordt doorverwezen naar uw wiki, tenzij JavaScript is uitgeschakeld in uw browser.',
+	'centralauth-completelogin-submit' => 'Nu aanmelden',
+	'centralauth-completelogin-back' => 'Terug naar de vorige pagina.',
+	'centralauth-error-nologinattempt' => 'Er is geen actieve aanmeldpoging voor uw sessie.',
+	'centralauth-error-badtoken' => 'Het opgegeven authenticatietoken is verlopen of ongeldig.',
+	'centralauth-error-token-wrongattempt' => 'Het authenticatietoken hoort niet bij uw huidige aanmeldpoging.
+Mogelijk probeert iemand anders als u aan te melden.',
+	'centralauth-error-token-wronguser' => 'Het token hoort niet bij de gebruikersnaam voor uw sessie.
+Mogelijk probeert iemand anders als u aan te melden.
+Als u probeert aan te melden als een andere gebruiker, meld u dan eerst af.',
+	'centralauth-warning-notloggedin' => 'U bent niet aangemeld.',
+	'centralauth-warning-notattached' => 'De lokale gebruiker is niet gekoppeld aan een globale gebruiker.',
 );
 
 /** Nederlands (informeel)‎ (Nederlands (informeel)‎)
@@ -33043,6 +33065,7 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'right-globalgrouppermissions' => 'Gestion dei grupi globali',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Grupi globałi a cui apartien l'utente",
 	'action-centralauth-lock' => 'blocar o desblocar le utense globali',
+	'centralauth-completelogin-back' => 'Torna a la pagina de prima.',
 );
 
 /** Veps (vepsän kel’)
@@ -33219,7 +33242,7 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-no-unified' => 'Không có tài khoản hợp nhất cho tên người dùng này.',
 	'centralauth-admin-info-header' => 'Thông tin thành viên toàn cục',
 	'centralauth-admin-info-username' => 'Tên người dùng:',
-	'centralauth-admin-info-id' => 'ID thành viên:',
+	'centralauth-admin-info-id' => 'Số thành viên:',
 	'centralauth-admin-info-registered' => 'Lúc mở tài khoản:',
 	'centralauth-admin-info-home' => 'Wiki chính:',
 	'centralauth-admin-info-editcount' => 'Tổng số lần sửa đổi:',
@@ -33433,6 +33456,23 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'right-globalgrouppermissions' => 'Quản lý nhóm toàn cầu',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Các nhóm toàn cầu bao gồm người dùng',
 	'action-centralauth-lock' => 'khóa hoặc mở khóa tài khoản chung',
+	'centrallogin' => 'Tên đăng nhập trung tâm',
+	'centralloginsuccesful' => 'Đăng nhập thành công',
+	'centralauth-completelogin-legend' => 'Hoàn tất thủ tục đăng nhập',
+	'centralauth-completelogin-text' => 'Xác thực tài khoản của bạn trên trang web của Quỹ hỗ trợ Wikimedia là gần như hoàn tất
+
+Xin vui lòng chờ đợi và bạn sẽ được chuyển hướng đến wiki của bạn, trừ khi JavaScript bị vô hiệu hóa trong trình duyệt của bạn.',
+	'centralauth-completelogin-submit' => 'Đăng nhập bây giờ',
+	'centralauth-completelogin-back' => 'Trở về trang trước.',
+	'centralauth-error-nologinattempt' => 'Không có đăng nhập được tiến hành trong phiên truy cập của bạn.',
+	'centralauth-error-badtoken' => 'Mã xác thực được cung cấp đã hết hạn hoặc không hợp lệ.',
+	'centralauth-error-token-wrongattempt' => 'Mã thông báo xác thực không phải cho lần đăng nhập hiện tại.
+Ai đó có thể cố gắng đăng nhập dùng tài khoản của bạn ở dạng một tài khoản độc hại.',
+	'centralauth-error-token-wronguser' => 'Mã thông báo không phù hợp với tên người sử dụng hiện tại.
+Ai đó có thể cố gắng đăng nhập vào tài khoản của bạn ở dạng một tài khoản độc hại.
+Nếu bạn cố gắng để đăng nhập dưới tên người dùng khác, xin vui lòng đăng xuất trước.',
+	'centralauth-warning-notloggedin' => 'Bạn hiện không đăng nhập.',
+	'centralauth-warning-notattached' => 'Tài khoản của bạn không khớp với tên tài khoản toàn cầu.',
 );
 
 /** Volapük (Volapük)
