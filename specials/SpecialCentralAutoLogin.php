@@ -283,8 +283,26 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'returntoquery' => $request->getVal( 'returntoquery' ),
 				) );
 				$data['script'] = 'top.location.href = ' . Xml::encodeJsVar( $url ) . ';';
+
+			case 'NW':
+				// To avoid cross-domain restrictions, we have
+				// to redirect to the original domain now. But
+				// don't actually redirect, to make sure
+				// cookies get set first.
+				$data['params']['domain'] = CentralAuthUser::getCookieDomain();
+				$data['nextState'] = 'NW';
 				break;
 			}
+			break;
+
+		case 'NW':
+			$this->isForm = true;
+			$domain = $this->getRequest()->getVal( 'domain' );
+			$data = array(
+				'status' => 'ok',
+				'script' => XML::encodeJsCall( 'top.mw.CentralAuth.loggedIn', array( $domain ) ),
+				'params' => array(),
+			);
 			break;
 
 		default:
@@ -437,6 +455,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					case 'C':
 						global $wgCentralAuthLoginWiki;
 						$target = $wgCentralAuthLoginWiki;
+						break;
+
+					case 'N':
+						$target = $this->getRequest()->getVal( 'notifywiki', wfWikiID() );
+						break;
 
 					default:
 						$target = $this->getRequest()->getVal( 'wikiid', wfWikiID() );
@@ -447,7 +470,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 						'action' => WikiMap::getForeignURL( $target, 'Special:CentralAutoLogin/' . $data['nextState'] ),
 					) ) . "\n";
 					$body .= Html::hidden( 'form', '1' ) . "\n";
-					foreach ( array( 'oncomplete', 'returnto', 'returntoquery' ) as $k ) {
+					foreach ( array( 'oncomplete', 'returnto', 'returntoquery', 'notifywiki' ) as $k ) {
 						$v = $this->getRequest()->getVal( $k );
 						if ( $v !== null ) {
 							$body .= Html::hidden( $k, $v ) . "\n";
