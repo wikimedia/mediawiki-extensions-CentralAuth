@@ -98,8 +98,8 @@ $wgCentralAuthCookieDomain = '';
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
 /**
- * List of wiki IDs which should be called on login/logout to set third-party
- * cookies for the global session state.
+ * List of wiki IDs which should be called on login/logout to try to set
+ * third-party cookies for the global session state.
  *
  * The wiki ID is typically the database name, except when table prefixes are
  * used, in which case it is the database name, a hyphen separator, and then
@@ -109,19 +109,13 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
  * session on all of them by hitting one wiki from each domain
  * (en.wikipedia.org, en.wikinews.org, etc).
  *
- * Done by $wgCentralAuthLoginIcon from Special:AutoLogin on each wiki.
+ * Done by opening hidden iframes to Special:CentralAutoLogin on each wiki.
  *
  * If empty, no other wikis will be hit.
  *
  * The key should be set to the cookie domain name.
  */
 $wgCentralAuthAutoLoginWikis = array();
-
-/**
- * Local filesystem path to the icon returned by Special:AutoLogin
- * Should be a 20x20px PNG.
- */
-$wgCentralAuthLoginIcon = false;
 
 /**
  * Specify a P3P header value to be used when setting CentralAuth cookies on
@@ -195,7 +189,6 @@ $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/SuppressUserJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
-$wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/specials/SpecialAutoLogin.php";
 $wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
@@ -222,7 +215,6 @@ $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLoadFromSession'][] = 'CentralAuthHooks::onUserLoadFromSession';
 $wgHooks['UserLogout'][] = 'CentralAuthHooks::onUserLogout';
-$wgHooks['UserLogoutComplete'][] = 'CentralAuthHooks::onUserLogoutComplete';
 $wgHooks['GetCacheVaryCookies'][] = 'CentralAuthHooks::onGetCacheVaryCookies';
 $wgHooks['UserArrayFromResult'][] = 'CentralAuthHooks::onUserArrayFromResult';
 $wgHooks['UserGetEmail'][] = 'CentralAuthHooks::onUserGetEmail';
@@ -270,7 +262,6 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['CentralLogin'] = 'SpecialCentralLogin';
-$wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['CentralAutoLogin'] = 'SpecialCentralAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
@@ -357,6 +348,17 @@ $wgResourceModules['ext.centralauth.centralautologin'] = array(
 	'messages' => array(
 		'centralautologin',
 		'centralauth-centralautologin-logged-in',
+	),
+) + $commonModuleInfo;
+$wgResourceModules['ext.centralauth.edgeautologin'] = array(
+	'scripts' => 'ext.centralauth.edgeautologin.js',
+	'position' => 'top',
+	'dependencies' => array(
+		'mediawiki.jqueryMsg',
+	),
+	'messages' => array(
+		'centralauth-edge-logged-in',
+		'centralauth-groupname',
 	),
 ) + $commonModuleInfo;
 
