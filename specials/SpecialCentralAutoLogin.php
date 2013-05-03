@@ -258,10 +258,29 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$data['script'] = 'top.history.go( -1 );';
 				break;
 
+			case 'notify':
+				// To avoid cross-domain restrictions, we have
+				// to redirect to the original domain now. But
+				// don't actually redirect, to make sure
+				// cookies get set first.
+				$data['params']['domain'] = CentralAuthUser::getCookieDomain();
+				$data['nextState'] = 'NW';
+				break;
+
 			case 'reload':
 				$data['script'] = 'top.location.reload( true );';
 				break;
 			}
+			break;
+
+		case 'NW':
+			$this->isForm = true;
+			$domain = $this->getRequest()->getVal( 'domain' );
+			$data = array(
+				'status' => 'ok',
+				'script' => XML::encodeJsCall( 'top.mw.CentralAuth.loggedIn', array( $domain ) ),
+				'params' => array(),
+			);
 			break;
 
 		default:
@@ -414,6 +433,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					case 'C':
 						global $wgCentralAuthLoginWiki;
 						$target = $wgCentralAuthLoginWiki;
+						break;
+
+					case 'N':
+						$target = $this->getRequest()->getVal( 'notifywiki', wfWikiID() );
+						break;
 
 					default:
 						$target = $this->getRequest()->getVal( 'wikiid', wfWikiID() );
@@ -427,6 +451,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					$body .= Html::hidden( 'oncomplete',
 						$this->getRequest()->getVal( 'oncomplete', 'reload' )
 					) . "\n";
+					if ( $this->getRequest()->getBool( 'notifywiki' ) ) {
+						$body .= Html::hidden( 'notifywiki',
+							$this->getRequest()->getVal( 'notifywiki' )
+						) . "\n";
+					}
 					foreach ( $data['params'] as $k => $v ) {
 						$body .= Html::hidden( $k, $v ) . "\n";
 					}
