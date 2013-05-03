@@ -260,8 +260,6 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
-	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
-	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
@@ -297,12 +295,6 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-set-optin'         => 'opt-in based',
 	'centralauth-rightslog-set-optout'        => 'opt-out based',
 
-	// Autologin
-	'autologin'                    => 'Automatic login',
-	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki.
-When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
-You have requested this page without providing any authentication data, so it does nothing.',
-
 	// Central login
 	'centralautologin'                    => 'Central login',
 	'centralauth-centralautologin-desc'   => 'This special page is used internally by MediaWiki.
@@ -321,6 +313,7 @@ You have requested this page without providing any authentication data, so it do
 
 Please review this site\'s human-readable privacy policy to determine how any information collected might be used.',
 	'centralauth-centralautologin-logged-in' => 'You are centrally logged in as $1. Reload the page to apply your user settings.',
+	'centralauth-edge-logged-in' => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}, including: $3',
 
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
@@ -496,9 +489,7 @@ This confirmation code will expire at $4.'
 $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|MergeAccount}}',
 	'centralauth-groupname' => 'Used within the following messages:
-* {{msg-mw|centralauth-incomplete-text}}
-* {{msg-mw|centralauth-login-progress}}
-* {{msg-mw|centralauth-logout-progress}}',
+* {{msg-mw|centralauth-incomplete-text}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -760,8 +751,6 @@ Shown when the migration is incomplete.',
 *$1 is wiki name',
 	'centralauth-account-exists-reset' => "Parameters:
 * $1 - global user's name",
-	'centralauth-login-progress' => '{{gender}}
-* (optional) $1 is the user name of the logged in user',
 	'centralauth-hidden-blockreason' => 'Unused at this time. Parameters:
 * $1 - username
 * $2 - ...
@@ -834,9 +823,6 @@ Parameters:
 * {{msg-mw|Centralauth-rightslog-set-optout}}',
 	'centralauth-rightslog-set-optout' => 'See also:
 * {{msg-mw|Centralauth-rightslog-set-optin}}',
-	'autologin' => '{{doc-special|AutoLogin|unlisted=1}}
-See example: [[w:Special:Autologin]].',
-	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralautologin' => '{{doc-special|CentralAutoLogin|unlisted=1}}
 See example: [[w:Special:CentralAutoLogin]].',
 	'centralauth-centralautologin-desc'   => 'This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.',
@@ -857,6 +843,10 @@ See example: [[w:Special:CentralAutoLogin]].',
 	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds.
 * $1 - User name
 * $2 - User gender code {{gender}}',
+	'centralauth-edge-logged-in' => 'Message used from JavaScript to tell the user that they have been logged in to additional sites.
+* $1 - mw.user object {{gender}}
+* $2 - Number of sites logged into
+* $3 - List of domains, space-separated',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
