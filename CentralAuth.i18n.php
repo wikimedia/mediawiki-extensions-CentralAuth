@@ -977,7 +977,7 @@ Dat die funksie is nou gestremd is as gevolg van sekuriteit.',
 	'centralauth-finish-title' => 'Voltooi samevoeging',
 	'centralauth-finish-text' => 'As hierdie rekeninge nie aan jou behoort nie, kan jy die aanmelding eenwording proses eenvoudig klaar deur die tik van die wagwoorde vir die ander rekeninge hier:',
 	'centralauth-finish-password' => 'Wagwoord:',
-	'centralauth-finish-login' => 'Inteken',
+	'centralauth-finish-login' => 'Meld aan',
 	'centralauth-finish-send-confirmation' => 'E-pos wagwoord',
 	'centralauth-finish-noconfirms' => 'Geen rekeninge kan bevestig word deur gebruik te maak van hierdie wagwoord.',
 	'centralauth-finish-incomplete' => 'Verskeie rekeninge saamgesmelt met die wagwoord.
@@ -9213,6 +9213,12 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globaalsed rühmad, mille liige kasutaja on',
 	'action-centralauth-lock' => 'globaalset kontot lukustada ega seda lukust lahti teha',
+	'centralloginsuccesful' => 'Sisselogimine edukas',
+	'centralauth-completelogin-legend' => 'Vii sisselogimisprotsess lõpule',
+	'centralauth-completelogin-submit' => 'Logi nüüd sisse',
+	'centralauth-completelogin-back' => 'Naase eelmisele leheküljele.',
+	'centralauth-warning-notloggedin' => 'Sa pole praegu sisse logitud.',
+	'centralauth-warning-notattached' => 'Kohalik konto pole ühendatud globaalsega.',
 );
 
 /** Basque (euskara)
@@ -17041,6 +17047,7 @@ $messages['km'] = array(
 /** Kannada (ಕನ್ನಡ)
  * @author Abhirama
  * @author Nayvik
+ * @author Omshivaprakash
  * @author VASANTH S.N.
  */
 $messages['kn'] = array(
@@ -17073,11 +17080,18 @@ $messages['kn'] = array(
 	'centralauth-finish-password' => 'ಪ್ರವೇಶಪದ:',
 	'centralauth-finish-login' => 'ಲಾಗ್ ಇನ್',
 	'centralauth-admin-username' => 'ಬಳಕೆದಾರ ಹೆಸರು:',
+	'centralauth-admin-info-username' => 'ಬಳಕೆದಾರ ಹೆಸರು:',
 	'centralauth-admin-info-id' => 'ಬಳಕೆದಾರ ID:',
 	'centralauth-admin-info-registered' => 'ನೋಂದಾಯಿತ:',
 	'centralauth-admin-info-home' => 'ಗೃಹ ವಿಕಿ:',
+	'centralauth-admin-info-editcount' => 'ಒಟ್ಟು ಸಂಪಾದನೆ:',
+	'centralauth-admin-info-locked' => 'ಹಿಡಿದಿಡಲಾಗಿದೆ:',
+	'centralauth-admin-info-hidden' => 'ಅದೃಶ್ಯ ಮಟ್ಟ:',
 	'centralauth-admin-yes' => 'ಹೌದು',
 	'centralauth-admin-no' => 'ಇಲ್ಲ',
+	'centralauth-admin-list-legend-ro' => 'ಸ್ಥಳೀಯ ಖಾತೆಗಳ ಪಟ್ಟಿ',
+	'centralauth-admin-list-legend-rw' => 'ಸ್ಥಳೀಯ ಖಾತೆಗಳನ್ನು ಬೇರೆಗೊಳಿಸಿ',
+	'centralauth-admin-unattached' => 'ಜೊತೆಗೂಡಿಸಿಲ್ಲ',
 	'centralauth-admin-blocklog' => 'ತಡೆಹಿಡಿಯುವಿಕೆ ದಾಖಲೆ',
 	'centralauth-admin-list-localwiki' => 'ಪ್ರಾದೇಶಿಕ ವಿಕಿ',
 	'centralauth-admin-delete-title' => 'ಖಾತೆಯನ್ನು ಅಳಿಸಿ',
@@ -23941,9 +23955,6 @@ Për piasì, ch'a anserissa la ciav ëd la wiki prinsipal.",
 	'centralauth-not-owner-text' => 'Lë stranòm "$1" e l\'é stait dait n\'aotomàtich al proprietari dël cont ansima a $2.
 
 Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia dë stranòm e ciav ën butand-ie ambelessì la ciav prinsipal dël cont:',
-	'centralauth-blocked-text' => "Soa wiki prinsipal (listà sì-sota) a l'é blocà për le modìfiche.
-Për piasì ch'a contata n'aministrator dë sta wiki-sì për dësblochela.
-Antant ch'a l'é blocà, a peul pa unifiché ij sò cont.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mach për dimostrassion, da bon a-i riva gnente</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Ch'a në scusa, ma l'unificassion dij cont për adess a la travaja mach coma dimostrativ, për corege ël programa. L'unificassion da bon as peul pa fesse.",
 	'centralauth-error-locked' => "A peul pa modifiché përchè sò cont a l'é blocà.",
@@ -24147,12 +24158,12 @@ Ch'a nòta che na partìa a esist pa, gavà che a l'abia dij përmess assignà."
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Lista dj'utent con drit $2]]",
 	'centralauth-editgroup-restrictions' => "Ansema ëd wiki andoa sta partìa-sì a l'é ativa:",
 	'centralauth-editgroup-noset' => '(gnun)',
-	'centralauth-editgroup-submit' => 'Salvé le modìfiche ai përmess dla partìa',
+	'centralauth-editgroup-submit' => 'Salvé le modìfiche ai përmess dla partìa', # Fuzzy
 	'centralauth-editgroup-perms' => 'Përmess assignà:',
 	'centralauth-editgroup-reason' => 'Rason:',
-	'centralauth-editgroup-success' => 'Përmess ëd partìa cangià',
+	'centralauth-editgroup-success' => 'Përmess ëd partìa cangià', # Fuzzy
 	'centralauth-editgroup-success-text' => "It l'has cangià da bin ij përmess ëd partìa për la partìa $1.
-[[Special:GlobalGroupPermissions|Artorna a la gestion ëd la partìa]]",
+[[Special:GlobalGroupPermissions|Artorna a la gestion ëd la partìa]]", # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modìfica]])',
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki andoa a l'han un cont:",
 	'centralauth-globalgroupmembership-badknownwiki' => "L'utent global '''$1''' a l'é pa ativ an sla wiki ch'a l'ha specificà ('' $2 '').
@@ -24196,11 +24207,11 @@ A peule vardé e modifiché mincadun ëd lor, o creé n'ansema neuv.",
 	'right-globalgroupmembership' => "Modìfica l'apartenensa a le partìe globaj",
 	'right-centralauth-autoaccount' => 'Intra automaticament con un cont global',
 	'right-centralauth-unmerge' => 'Anulé la fusion dël cont global',
-	'right-centralauth-lock' => 'Blòca o stërma cont globaj',
+	'right-centralauth-lock' => 'Blòca o stërma cont globaj', # Fuzzy
 	'right-centralauth-oversight' => 'Scancelé o stërmé ël cont global',
 	'right-centralauth-merge' => 'Unìfica ij sò cont',
 	'right-globalgrouppermissions' => 'Gestì le partìe globaj',
-	'abusefilter-edit-builder-vars-global-user-groups' => "Partìe globaj anté a-i é l'utent",
+	'abusefilter-edit-builder-vars-global-user-groups' => "Partìe globaj anté ch'a-i é l'utent",
 );
 
 /** Western Punjabi (پنجابی)
@@ -29684,6 +29695,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-admin-permission' => 'Endast stewarder kan slå samman andra användares konton åt dem.',
 	'centralauth-admin-no-unified' => 'Det finns inget gemensamt konto med det användarnamnet',
 	'centralauth-admin-info-header' => 'Global användarinformation',
+	'centralauth-admin-info-username' => 'Användarnamn:',
 	'centralauth-admin-info-id' => 'Användar-ID:',
 	'centralauth-admin-info-registered' => 'Registrerad:',
 	'centralauth-admin-info-home' => 'Hemwiki:',
@@ -32754,13 +32766,15 @@ $messages['ur'] = array(
 
 /** Uzbek (oʻzbekcha)
  * @author CoderSI
+ * @author Sociologist
  */
 $messages['uz'] = array(
 	'centralauth-prefs-status' => 'Global hisob holati:',
 	'centralauth-prefs-complete' => 'Hammasi joyida!',
-	'centralauth-prefs-count-attached' => 'Sizning hisobingiz $1 loyiha {{PLURAL:$1|saytida|saytlarida}} faol.',
-	'centralauth-prefs-manage' => 'Global hisob qaydini boshqarish',
-	'centralauth-prefs-view' => "Foydalanuvchi haqida global ma'lumotlarni ko'rish",
+	'centralauth-prefs-count-attached' => 'Sizning hisobingiz $1 ta loyihada faol.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Foydalanuvchi nomingiz hozirda $1 {{PLURAL:$1|loyihada|ta loyihada}} tasdiqlanmagan.',
+	'centralauth-prefs-manage' => 'Global hisob yozuvini boshqarish',
+	'centralauth-prefs-view' => 'Foydalanuvchi haqida global maʼlumotlarni koʻrish',
 );
 
 /** vèneto (vèneto)
@@ -32904,6 +32918,7 @@ Le password par i account locali creà prima de l'unificazion le tornarà indrio
 	'centralauth-admin-nonexistent' => 'No ghe xe nissun account globale par "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Eror: l\'account globale "<nowiki>$1</nowiki>" no l\'esiste mìa.',
 	'centralauth-token-mismatch' => "Ne dispiase, ma no gavemo mìa podesto elaborar el modulo che te ghè invià parché xe 'ndà persi i dati de la session.",
+	'centralauth-state-mismatch' => 'Eror: se gà verificà un conflito de edizion par sto utente. Par piaser verifica la to modifica e proa da novo.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Altra motivazion o motivazion agiuntiva:',
 	'centralauth-admin-unhide-nonexistent' => 'Eror: l\'account globale "<nowiki>$1</nowiki>" no l\'esiste mìa.',
@@ -33081,7 +33096,17 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'right-globalgrouppermissions' => 'Gestion dei grupi globali',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Grupi globałi a cui apartien l'utente",
 	'action-centralauth-lock' => 'blocar o desblocar le utense globali',
+	'centrallogin' => 'Login sentrale utente',
+	'centralloginsuccesful' => 'Aceso efetuà',
+	'centralauth-completelogin-legend' => 'Conpleta el processo de login',
+	'centralauth-completelogin-text' => "L'autenticasion de la to utensa sui siti de la Wikimedia Foundation le xe quasi conpleta!
+
+Speta n'atimo e te rimandemo verso la to wiki, a meno che JavaScript no'l sia disabilità sul to browser.",
+	'centralauth-completelogin-submit' => 'Entra desso',
 	'centralauth-completelogin-back' => 'Torna a la pagina de prima.',
+	'centralauth-error-nologinattempt' => 'No xe in corso nissun tentativo de login.',
+	'centralauth-error-badtoken' => 'El token de autenticasion fornìo el xe scadùo o mia valido.',
+	'centralauth-warning-notloggedin' => 'No te ghè mia fato el login.',
 	'centralauth-warning-notattached' => "L'utensa locale no la xe tacà a una globale.",
 );
 
@@ -34643,6 +34668,7 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-nonexistent' => '全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-admin-delete-nonexistent' => '錯誤: 該全域帳戶"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-token-mismatch' => '對不起，由於階段資料遺失，我們不可以處理你的表格遞交',
+	'centralauth-state-mismatch' => '錯誤：檢測到此用戶的編輯编辑衝突。請確認您的更改並重試。',
 	'centralauth-admin-reason' => '理由：',
 	'centralauth-admin-reason-other' => '其它／附加的理由：',
 	'centralauth-admin-unhide-nonexistent' => '{{int:Centralauth-admin-hide-nonexistent}}',
@@ -34675,6 +34701,9 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-multi-notfound' => '搜索沒有返回任何用戶名。',
 	'centralauth-admin-multi-searchprefix' => '或者，用前綴搜索用戶。',
 	'centralauth-admin-multi-intro' => '一次過更新多個全域使用者',
+	'centralauth-admin-action-lock-nochange' => '不更改鎖定',
+	'centralauth-admin-action-lock-lock' => '鎖定所選帳戶',
+	'centralauth-admin-action-lock-unlock' => '解鎖所選帳戶',
 	'centralauth-seconds-ago' => '$1秒前',
 	'centralauth-minutes-ago' => '$1分鐘前',
 	'centralauth-hours-ago' => '$1小時前',
@@ -34802,7 +34831,7 @@ $messages['zh-hant'] = array(
 	'right-centralauth-autoaccount' => '自動使用全域賬戶登陸',
 	'right-centralauth-unmerge' => '取消合併本地帳戶',
 	'right-centralauth-lock' => '鎖定或解除鎖定全域帳戶',
-	'right-centralauth-oversight' => '廢止全域帳戶', # Fuzzy
+	'right-centralauth-oversight' => '廢止或隱藏全域帳戶',
 	'right-centralauth-merge' => '合併他們的帳戶',
 	'right-globalgrouppermissions' => '管理全域群組',
 	'abusefilter-edit-builder-vars-global-user-groups' => '全域用戶群組',
