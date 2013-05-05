@@ -8567,6 +8567,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Jatrobat
  * @author Locos epraix
  * @author Manuelt15
+ * @author MarcoAurelio
  * @author Nenino 10
  * @author Pertile
  * @author Peter17
@@ -8683,6 +8684,7 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-permission' => 'Solo los stewards pueden fusionar otras cuentas de usuario por ellos.',
 	'centralauth-admin-no-unified' => 'No hay una cuenta unificada para este nombre de usuario.',
 	'centralauth-admin-info-header' => 'Información global del usuario',
+	'centralauth-admin-info-username' => 'Nombre de usuario:',
 	'centralauth-admin-info-id' => 'ID de usuario:',
 	'centralauth-admin-info-registered' => 'Registrado:',
 	'centralauth-admin-info-home' => 'Wiki origen:',
@@ -8721,6 +8723,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-nonexistent' => 'No hay una cuenta global para «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Error: no existe la cuenta global «<nowiki>$1</nowiki>».',
 	'centralauth-token-mismatch' => 'Lo sentimos, no pudimos procesar el envío del formulario a causa de una perdida de datos de sesión.',
+	'centralauth-state-mismatch' => 'Error: se detectó un conflicto de edición para este usuario. Comprueba tu cambio e inténtalo de nuevo.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Razones adicionales/otras:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: no existe la cuenta global «<nowiki>$1</nowiki>».',
@@ -8744,10 +8747,16 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 ** información personal inapropiada',
 	'centralauth-admin-logsnippet' => 'Cambios previos en el estado de la cuenta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 por la siguiente razón: $2',
+	'centralauth-admin-not-authorized' => 'No tienes permisos para realizar esta acción',
 	'globalusers' => 'Lista de usuarios globales',
 	'centralauth-listusers-locked' => 'bloqueado',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'no adjuntada o no existe localmente',
+	'centralauth-admin-multi-username' => 'Escribe uno o más nombres de usuario, uno por cada línea',
+	'centralauth-admin-multi-notfound' => 'La búsqueda no devolvió ningún nombre de usuario.',
+	'centralauth-admin-multi-searchprefix' => 'O busca cuentas con un prefijo',
+	'centralauth-admin-action-lock-lock' => 'Bloquear las cuentas seleccionadas',
+	'centralauth-admin-action-lock-unlock' => 'Desbloquear las cuentas seleccionadas',
 	'centralauth-seconds-ago' => 'hace $1 {{PLURAL:$1|segundo|segundos}}',
 	'centralauth-minutes-ago' => 'hace $1 {{PLURAL:$1|minuto|minutos}}',
 	'centralauth-hours-ago' => 'hace $1 {{PLURAL:$1|hora|horas}}',
@@ -8793,6 +8802,7 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-rightslog-entry-groupperms' => 'modificó los permisos del grupo $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'modificó los permisos del grupo $1. Añadido $2; Eliminado $3',
 	'centralauth-rightslog-entry-groupperms3' => 'modificó el conjunto de ajustes wiki restringidos de $1 de $2 a $3',
+	'centralauth-rightslog-entry-grouprename' => 'se renombró el grupo $2 a $1',
 	'centralauth-rightslog-header' => 'Este registro contiene operaciones en grupos globales: cambios de pertenencia a grupos y permisos',
 	'centralauth-rightslog-entry-newset' => 'creó ajuste wiki $2 $1 con los siguientes wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'renombró conjunto wiki «$2» a «$1»',
@@ -8824,19 +8834,22 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
 	'centralauth-editgroup-name' => 'Nombre de grupo:',
 	'centralauth-editgroup-display' => 'Nombre localizado del grupo:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|editar]])',
+	'centralauth-editgroup-invalid-name' => 'No se proporcionó un nombre de grupo global válido',
 	'centralauth-editgroup-member' => 'Nombre localizado de los miembros del grupo:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editar]])',
 	'centralauth-editgroup-members' => 'Lista de miembros:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de usuarios con los derechos de $2]]',
 	'centralauth-editgroup-restrictions' => 'Conjunto de wikis donde este grupo está activo:',
+	'centralauth-editgroup-rename-taken' => 'Falló el renombrado: Ya existe un grupo llamado $1.',
 	'centralauth-editgroup-noset' => '(ninguno)',
-	'centralauth-editgroup-submit' => 'Guardar cambios a permisos de grupo', # Fuzzy
+	'centralauth-editgroup-submit' => 'Guardar los cambios al grupo global',
 	'centralauth-editgroup-perms' => 'Permisos asignados:',
 	'centralauth-editgroup-reason' => 'Razón:',
-	'centralauth-editgroup-success' => 'Se han cambiado los permisos del grupo', # Fuzzy
+	'centralauth-editgroup-success' => 'Se ha cambiado el grupo global',
 	'centralauth-editgroup-success-text' => 'Ha cambiado con éxito los permisos del grupo $1.
 [[Special:GlobalGroupPermissions|Volver a la gestión de grupos]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
+	'centralauth-editgroup-nowikiset' => 'Ninguno, aplica a todos los wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki en que tienen una cuenta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "El usuario global '''$1''' no está activo en el wiki que especificaste (''$2'').
 ¡Puede que estes intentando dar derechos a un usuario incorrecto!",
@@ -8879,11 +8892,14 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'right-globalgroupmembership' => 'Editar pertenencia a grupos globales',
 	'right-centralauth-autoaccount' => 'Acceder automáticamente con la cuenta global',
 	'right-centralauth-unmerge' => 'Desunificar cuenta global',
-	'right-centralauth-lock' => 'Bloquear u ocultar cuenta global', # Fuzzy
+	'right-centralauth-lock' => 'Bloquear o desbloquear cuenta global',
 	'right-centralauth-oversight' => 'Suprimir o ocultar una cuenta global',
 	'right-centralauth-merge' => 'Fusionar su cuenta',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globales a los que pertenece {{GENDER:$1|el usuario|la usuaria}}', # Fuzzy
+	'centralloginsuccesful' => 'Se inició la sesión correctamente',
+	'centralauth-warning-notloggedin' => 'No has iniciado sesión.',
+	'centralauth-warning-notattached' => 'La cuenta local no está unida a una global.',
 );
 
 /** Estonian (eesti)
@@ -17444,6 +17460,8 @@ $messages['ko'] = array(
 	'right-globalgrouppermissions' => '공통 권한 그룹 관리',
 	'abusefilter-edit-builder-vars-global-user-groups' => '사용자가 속한 공통 권한 그룹',
 	'action-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
+	'centralloginsuccesful' => '로그인 성공',
+	'centralauth-warning-notattached' => '로컬 계정이 통합 계정에 묶여있지 않습니다.',
 );
 
 /** Karachay-Balkar (къарачай-малкъар)
@@ -33106,6 +33124,8 @@ Speta n'atimo e te rimandemo verso la to wiki, a meno che JavaScript no'l sia di
 	'centralauth-completelogin-back' => 'Torna a la pagina de prima.',
 	'centralauth-error-nologinattempt' => 'No xe in corso nissun tentativo de login.',
 	'centralauth-error-badtoken' => 'El token de autenticasion fornìo el xe scadùo o mia valido.',
+	'centralauth-error-token-wrongattempt' => "El token de autenticasion no'l corisponde mia al to tentativo de login atuale. Po darse che calcheduni staga sercando de farte far login con na utensa malvagia.",
+	'centralauth-error-token-wronguser' => "El token no'l corisponde mia al to nome utente de sesion. Po darse che calcheduni staga sercando de farte far login con na utensa malvagia. Se te vol solo far login con na utensa difarente, par piaser fà logout prima.",
 	'centralauth-warning-notloggedin' => 'No te ghè mia fato el login.',
 	'centralauth-warning-notattached' => "L'utensa locale no la xe tacà a una globale.",
 );
@@ -34522,6 +34542,7 @@ $messages['zh-hans'] = array(
  * @author Hydra
  * @author Jasonzhuocn
  * @author Justincheng12345
+ * @author Kevinhksouth
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
@@ -34704,6 +34725,10 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-action-lock-nochange' => '不更改鎖定',
 	'centralauth-admin-action-lock-lock' => '鎖定所選帳戶',
 	'centralauth-admin-action-lock-unlock' => '解鎖所選帳戶',
+	'centralauth-admin-action-hide-nochange' => '不要更改隱藏的級別',
+	'centralauth-admin-action-hide-none' => '取消隱藏所選帳戶',
+	'centralauth-admin-action-hide-lists' => '從公開清單隱藏所選帳戶',
+	'centralauth-admin-action-hide-oversight' => '完全隱藏所選帳戶',
 	'centralauth-seconds-ago' => '$1秒前',
 	'centralauth-minutes-ago' => '$1分鐘前',
 	'centralauth-hours-ago' => '$1小時前',
@@ -34748,6 +34773,7 @@ $messages['zh-hant'] = array(
 	'centralauth-rightslog-entry-groupperms' => '已經更改$1的成員組許可由$2到$3',
 	'centralauth-rightslog-entry-groupperms2' => '已經更改$1的成員組許可。加入$2；移除$3',
 	'centralauth-rightslog-entry-groupperms3' => '已更改限制維基組$1，由$2已改成$3。',
+	'centralauth-rightslog-entry-grouprename' => '把$2組重新命名為$1組',
 	'centralauth-rightslog-header' => '這個日誌包含了全域組之動作：組及許可更改',
 	'centralauth-rightslog-entry-newset' => '建立了$2維基組$1，並包括以下的維基站點：$3',
 	'centralauth-rightslog-entry-setrename' => '將維基組"$2"重新命名為"$1"',
@@ -34777,18 +34803,22 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-name' => '組名:',
 	'centralauth-editgroup-display' => '本地化組名:',
 	'centralauth-editgroup-display-edit' => '$2 （[[MediaWiki:Group-$1|編輯]]）',
+	'centralauth-editgroup-invalid-name' => '無效的通用群組名稱',
 	'centralauth-editgroup-member' => '本地化組成員名:',
 	'centralauth-editgroup-member-edit' => '$2 （[[MediaWiki:Group-$1-member|編輯]]）',
 	'centralauth-editgroup-members' => '成員表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2許可的用戶名單]]',
 	'centralauth-editgroup-restrictions' => '在此組處於活躍的維基站點：',
+	'centralauth-editgroup-rename-taken' => '重新命名失敗：已存在同名的群組 $1 。',
 	'centralauth-editgroup-noset' => '（無）',
-	'centralauth-editgroup-submit' => '保存更改到組許可', # Fuzzy
+	'centralauth-editgroup-submit' => '保存更改到通用群組',
 	'centralauth-editgroup-perms' => '已指定的許可:',
 	'centralauth-editgroup-reason' => '原因：',
-	'centralauth-editgroup-success' => '組許可已經更改', # Fuzzy
-	'centralauth-editgroup-success-text' => '您已經成功地更改$1組的組許可。[[Special:GlobalGroupPermissions|回到組管理]]', # Fuzzy
+	'centralauth-editgroup-success' => '通用群組已更改',
+	'centralauth-editgroup-success-text' => '已成功更新$1組。
+[[Special:GlobalGroupPermissions|返回組管理]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編輯]])',
+	'centralauth-editgroup-nowikiset' => '無，套用於所有維基網站。',
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki（'' $2 ''）中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
 	'centralauth-editset' => '維基組',
@@ -34835,4 +34865,15 @@ $messages['zh-hant'] = array(
 	'right-centralauth-merge' => '合併他們的帳戶',
 	'right-globalgrouppermissions' => '管理全域群組',
 	'abusefilter-edit-builder-vars-global-user-groups' => '全域用戶群組',
+	'action-centralauth-lock' => '鎖定或解除鎖定全域帳戶',
+	'centrallogin' => '中央使用者登入',
+	'centralloginsuccesful' => '登入成功',
+	'centralauth-completelogin-legend' => '完成登入過程',
+	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！
+
+請等待返回您的維基網站（若您的瀏覽器中未有停用JavaScript）。',
+	'centralauth-completelogin-submit' => '立即登入',
+	'centralauth-completelogin-back' => '回到上一頁。',
+	'centralauth-warning-notloggedin' => '您目前未有登入。',
+	'centralauth-warning-notattached' => '本地帳戶未有附加到全域帳戶。',
 );
