@@ -12022,6 +12022,7 @@ $messages['haw'] = array(
  * @author Rotem Liss
  * @author Rotemliss
  * @author YaronSh
+ * @author אור שפירא
  * @author דולב
  * @author חיים
  */
@@ -12339,6 +12340,23 @@ $messages['he'] = array(
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'קבוצות גלובליות שמשתמש זה חבר בהן',
 	'action-centralauth-lock' => 'נעילת או שיחרור חשבונות כלליים',
+	'centrallogin' => 'כניסת משתמש מרכזית',
+	'centralloginsuccesful' => 'הכניסה הושלמה בהצלחה',
+	'centralauth-completelogin-legend' => 'להשלים תהליך התחברות',
+	'centralauth-completelogin-text' => 'אימות החשבון שלך על אתרי קרן ויקימדיה הוא כמעט מוחלט!
+
+אנא המתן, תועבר בחזרה אל הויקי שלך, אלא אם כן לא מאופשר JavaScript בדפדפן שלך.',
+	'centralauth-completelogin-submit' => 'להתחבר עכשיו',
+	'centralauth-completelogin-back' => 'לחזור אל הדף הקודם.',
+	'centralauth-error-nologinattempt' => 'אין ניסיון כניסה בהפעלה הנוכחית.',
+	'centralauth-error-badtoken' => 'קוד האימות שסופק לא תקין או שפג תוקפו.',
+	'centralauth-error-token-wrongattempt' => 'קוד האימות אינו מתאים בניסיון הכניסה הנוכחי.
+ייתכן שמישהו מנסה להיכנס במקומך.',
+	'centralauth-error-token-wronguser' => 'הקוד האימות אינו תואם את שם המשתמש שלך בהפעלה זו.
+ייתכן שמישהו מנסה להיכנס במקומך.
+אם זהו ניסיון להתחבר כמשתמש אחר, אנא להתנתק תחילה.',
+	'centralauth-warning-notloggedin' => 'אתה לא מחובר כעת.',
+	'centralauth-warning-notattached' => 'החשבון המקומי אינו מחובר לחשבון גלובלי.',
 );
 
 /** Hindi (हिन्दी)
@@ -15282,6 +15300,7 @@ Attendi e sarai reindirizzato verso il tuo wiki, a meno che JavaScript non sia d
 	'centralauth-completelogin-back' => 'Torna alla pagina precedente.',
 	'centralauth-error-nologinattempt' => 'Nessun tentativo di accesso attivo è in corso per la sessione.',
 	'centralauth-error-badtoken' => 'Il token di autenticazione fornito è scaduto o non valido.',
+	'centralauth-warning-notloggedin' => 'Attualmente non sei connesso.',
 	'centralauth-warning-notattached' => "L'utenza locale non è collegata ad una globale.",
 );
 
@@ -19491,6 +19510,7 @@ Alasan:$1',
 Sanak dapek mancaliak jo manyuntiang hak nan diagiah ka satiok kalompok, jikok Sanak ado hak untuak itu.
 Suatu kalompok dapek dihapuihan dengan caro manghapuih kasado haknyo.',
 	'centralauth-existinggroup-legend' => 'Kalompok nan ado',
+	'right-centralauth-merge' => 'Manggabuangkan akun surang',
 );
 
 /** Macedonian (македонски)
