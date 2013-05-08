@@ -304,6 +304,7 @@ $wgResourceModules['ext.centralauth'] = array(
 	'styles' => 'ext.centralauth.css',
 	'dependencies' => array(
 		'mediawiki.util',
+		'jquery.spinner'
 	),
 	'messages' => array(
 		'centralauth-merge-method-primary',
@@ -321,7 +322,8 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-merge-method-login',
 		'centralauth-merge-method-login-desc',
 		'centralauth-admin-delete-confirm',
-		'centralauth-completelogin-back'
+		'centralauth-completelogin-back',
+		'centralauth-completelogin-finishing'
 	),
 ) + $commonModuleInfo;
 

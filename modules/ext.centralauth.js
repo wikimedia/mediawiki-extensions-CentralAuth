@@ -42,8 +42,11 @@
 
 	$( document ).ready( function () {
 		// Automatic form submission on CentralLogin/start
-		$( '#mw-centralloginform' ).submit();
-		// Back link for CentralLogin/startDW
+		$( '#mw-centralloginform' )
+			.before( $( '<p>' + mw.msg( 'centralauth-completelogin-finishing' ) + '</p>' ) )
+			.before( $.createSpinner({ size: 'small', type: 'inline' }) );
+		setTimeout( function () { $( '#mw-centralloginform' ).submit(); }, 2500 );
+		// Back link for CentralLogin/start
 		$( '#centralauth-backlink-section' ).append(
 			$( '<a href="javascript:void()">' + mw.msg( 'centralauth-completelogin-back' ) + '</a>' )
 				.click( function() {
