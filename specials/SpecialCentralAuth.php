@@ -449,7 +449,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
 		}
 
-		return $this->foreignLink(
+		return self::foreignLink(
 			$row['wiki'],
 			'Special:Log/block',
 			$text,
@@ -469,7 +469,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 		$wikiname = $wiki->getDisplayName();
 		$editCount = $this->getLanguage()->formatNum( intval( $row['editCount'] ) );
-		return $this->foreignLink(
+		return self::foreignLink(
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
 			$editCount,
@@ -514,7 +514,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 * @throws MWException
 	 */
-	function foreignLink( $wikiID, $title, $text, $hint = '', $params = '' ) {
+	public static function foreignLink( $wikiID, $title, $text, $hint = '', $params = '' ) {
 		if ( $wikiID instanceof WikiReference ) {
 			$wiki = $wikiID;
 		} else {
@@ -548,11 +548,12 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		$wikiname = $wiki->getDisplayName();
-		return $this->foreignLink(
+		return self::foreignLink(
 			$wiki,
 			'User:' . $this->mUserName,
 			$wikiname,
-			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text() );
+			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text()
+		);
 	}
 
 	/**

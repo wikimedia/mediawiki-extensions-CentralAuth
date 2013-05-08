@@ -459,19 +459,16 @@ class SpecialMergeAccount extends SpecialPage {
 	function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
-			throw new MWException( "no wiki for $wikiID" );
+			throw new MWException( "Invalid wiki: $wikiID" );
 		}
 
-		$hostname = $wiki->getDisplayName();
-		$userPageName = Title::makeTitleSafe( NS_USER, $this->mUserName );
-		return Xml::element( 'a',
-			array(
-				'href' => $userPageName->getFullUrl(),
-				'title' => $this->msg( 'centralauth-foreign-link',
-					$this->mUserName,
-					$hostname )->text(),
-			),
-			$hostname );
+		$wikiname = $wiki->getDisplayName();
+		return SpecialCentralAuth::foreignLink(
+			$wiki,
+			'User:' . $this->mUserName,
+			$wikiname,
+			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text()
+		);
 	}
 
 	/**
