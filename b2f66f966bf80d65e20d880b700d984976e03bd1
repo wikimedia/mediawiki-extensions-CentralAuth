@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwvYavXk",
+        "filename": "specials/SpecialMergeAccount.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-05-08T17:55:08Z",
+      "side": 1,
+      "message": "Caused bug 48264",
+      "revId": "b2f66f966bf80d65e20d880b700d984976e03bd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
