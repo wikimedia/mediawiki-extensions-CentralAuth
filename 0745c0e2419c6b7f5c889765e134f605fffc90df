@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwnJodrs",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-08T22:17:50Z",
+      "side": 1,
+      "message": "Please update/add message documentation.",
+      "revId": "0745c0e2419c6b7f5c889765e134f605fffc90df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
