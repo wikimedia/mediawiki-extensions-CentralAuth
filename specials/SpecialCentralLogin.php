@@ -98,10 +98,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$url = $wiki->getFullUrl( 'Special:CentralLogin/complete' );
 
 		$this->getOutput()->addHtml(
-			Html::rawElement( 'p',
-				null, $this->msg( 'centralauth-completelogin-text' )->parse() ) .
 			Xml::openElement( 'form',
 				array( 'method' => 'post', 'action' => $url, 'id' => 'mw-centralloginform' ) ) .
+			Html::rawElement( 'p', null,
+				$this->msg( 'centralauth-completelogin-text' )->parse() ) .
 			Html::hidden( 'token', $token ) .
 			Xml::openElement( 'fieldset' ) .
 			Html::rawElement( 'legend',
@@ -109,6 +109,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			Xml::submitButton( $this->msg( 'centralauth-completelogin-submit' )->text() ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
+		);
+		$this->getOutput()->addInlineStyle( // hide the form and let JS submit it
+			'.client-js #mw-centralloginform { display: none; }'
 		);
 	}
 
