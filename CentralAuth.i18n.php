@@ -5801,17 +5801,18 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
 	'mergeaccount' => 'ДIавазвалар цхьаьнатохаран хьал',
-	'centralauth-groupname' => 'Хьундуз Викимедиа',
+	'centralauth-groupname' => 'Викимедин фондан',
 	'centralauth-complete' => 'ДIавазвалар цхьаьнатохар дика чакхдели!',
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
 	'centralauth' => 'Урхалла дар масхьа дIавазваларна',
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-reason' => 'Бахьан:',
 	'globalusers' => 'Масхьара декъашхойн могIам',
-	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин кхолламашкахь {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин {{int:Centralauth-groupname}} кхолламашкахь:',
 	'globalgrouppermissions' => 'Урхалла дар масхьара тобанашна',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|хийцам бар]])',
@@ -6503,6 +6504,7 @@ Rheswm: $1',
  * @author Christian List
  * @author Claus chr
  * @author Emilkris33
+ * @author HenrikKbh
  * @author Hylle
  * @author Jan Friberg
  * @author Jon Harald Søby
@@ -6840,6 +6842,20 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'right-globalgrouppermissions' => 'Administrere globale grupper',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale grupper, som brugeren er i',
 	'action-centralauth-lock' => 'låse eller låse op globale konti',
+	'centrallogin' => 'Centralt bruger login',
+	'centralloginsuccesful' => 'Login lykkedes',
+	'centralauth-completelogin-legend' => 'Færdiggør login proces',
+	'centralauth-completelogin-text' => 'Medmindre JavaScript er slået fra i din browser, vil du snarest blive sendt tilbage til din wiki.',
+	'centralauth-completelogin-submit' => 'Login nu',
+	'centralauth-completelogin-back' => 'Vend tilbage til foregående side.',
+	'centralauth-error-nologinattempt' => 'Ingen aktive login forsøg i gang for din samling',
+	'centralauth-error-badtoken' => 'Den angivne godkendelses brik er enten udløbet eller ugyldig.',
+	'centralauth-error-token-wrongattempt' => 'Godkendelsesbrikken tilhører ikke dit nuværende login forsøg. Nogen forsøger muligvis at indmelde dig ved hjælp af en ondsindet konto.',
+	'centralauth-error-token-wronguser' => 'Denne brik svarer ikke til mødenavnet.
+Nogen forsøger muligvis, at indmelde dig ved hjælp af en ondsindet konto.
+Hvis du bare forsøger, at melde dig ind som en anden bruger, skal du melde dig ud først.',
+	'centralauth-warning-notloggedin' => 'Du er ikke meldt ind for øjeblikket.',
+	'centralauth-warning-notattached' => 'Den lokale konto er ikke tilknyttet en global konto.',
 );
 
 /** German (Deutsch)
@@ -11300,6 +11316,23 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'right-globalgrouppermissions' => 'Xestionar os grupos globais',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globais aos que pertence o usuario',
 	'action-centralauth-lock' => 'bloquear ou desbloquear contas globais',
+	'centrallogin' => 'Acceso central ao sistema',
+	'centralloginsuccesful' => 'Acceso exitoso',
+	'centralauth-completelogin-legend' => 'Complete o proceso de rexistro',
+	'centralauth-completelogin-text' => 'A autenticación da súa conta nos sitios da Fundación Wikimedia está case completa!
+
+Agarde e será redirixido de volta ao seu wiki, a menos que teña o JavaScript desactivado no seu navegador.',
+	'centralauth-completelogin-submit' => 'Acceder ao sistema agora',
+	'centralauth-completelogin-back' => 'Volver á páxina anterior.',
+	'centralauth-error-nologinattempt' => 'Non hai ningún intento de acceso activo para a súa sesión.',
+	'centralauth-error-badtoken' => 'O pase de autenticación achegado caducou ou non é válido.',
+	'centralauth-error-token-wrongattempt' => 'O pase de autenticación non pertence ao seu intento actual de acceso.
+Se cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.',
+	'centralauth-error-token-wronguser' => 'O pase non coincide co nome de usuario da súa sesión.
+Se cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.
+Se está intentando acceder como outro usuario, saia primeiro do sistema.',
+	'centralauth-warning-notloggedin' => 'Non accedeu ao sistema.',
+	'centralauth-warning-notattached' => 'A conta local non está ligada cunha conta global.',
 );
 
 /** Gothic (Gothic)
@@ -19510,6 +19543,8 @@ Alasan:$1',
 Sanak dapek mancaliak jo manyuntiang hak nan diagiah ka satiok kalompok, jikok Sanak ado hak untuak itu.
 Suatu kalompok dapek dihapuihan dengan caro manghapuih kasado haknyo.',
 	'centralauth-existinggroup-legend' => 'Kalompok nan ado',
+	'centralauth-editgroup-noset' => '(indak ado)',
+	'centralauth-editset-nouse' => '(indak ado)',
 	'right-centralauth-merge' => 'Manggabuangkan akun surang',
 );
 
@@ -22360,7 +22395,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-rightslog-entry-usergroups' => 'wijzigde globaal groepslidmaatschap voor $1 van $2 naar $3',
 	'centralauth-rightslog-entry-groupperms' => 'wijzigde groepsrechten voor $1 van $2 naar $3',
 	'centralauth-rightslog-entry-groupperms2' => 'heeft de rechten voor $1 gewijzigd. Toegevoegd: $2. Verwijderd: $3',
-	'centralauth-rightslog-entry-groupperms3' => 'heeft de beperkte wikigroep voor $1 van $2 naar $3 gewijzigd',
+	'centralauth-rightslog-entry-groupperms3' => 'heeft de beperkte wikigroep voor $1 gewijzigd van $2 naar $3',
 	'centralauth-rightslog-entry-grouprename' => 'heeft de groep $2 hernoemd naar $1',
 	'centralauth-rightslog-header' => 'Dit logboek bevat wijzigingen aan globale groepen, zoals wijzigingen in groepslidmaatschap en toegewezen rechten',
 	'centralauth-rightslog-entry-newset' => "heeft $2 wikigroep $1 aangemaakt met de volgende wiki's: $3",
