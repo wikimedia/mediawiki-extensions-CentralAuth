@@ -217,6 +217,7 @@ $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPe
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
+$wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
 
@@ -304,6 +305,7 @@ $wgResourceModules['ext.centralauth'] = array(
 	'styles' => 'ext.centralauth.css',
 	'dependencies' => array(
 		'mediawiki.util',
+		'jquery.spinner'
 	),
 	'messages' => array(
 		'centralauth-merge-method-primary',

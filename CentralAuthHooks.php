@@ -268,9 +268,10 @@ class CentralAuthHooks {
 			$wgMemc->set( $key, $data, 15 );
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+			$params = array( 'token' => $token, 'JSEnabled' => $request->getVal( 'JSEnabled' ) );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 			$context->getOutput()->redirect( // expands to PROTO_CURRENT
-				wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), "token=$token" )
+				wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), $params )
 			);
 		}
 
@@ -760,6 +761,18 @@ class CentralAuthHooks {
 			}
 		}
 
+		return true;
+	}
+
+	/**
+	 * @param $out OutputPage
+	 * @param $skin Skin
+	 */
+	static function onBeforePageDisplay( $out, $skin ) {
+		if ( $out->getTitle()->isSpecial( 'Userlogin' ) ) {
+			// Add hidden field to indicate that JS is enabled
+			$out->addModules( 'ext.centralauth' );
+		}
 		return true;
 	}
 

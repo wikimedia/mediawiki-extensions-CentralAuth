@@ -10,9 +10,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getOutput()->disallowUserJs(); // just in case...
 
 		$token = $this->getRequest()->getVal( 'token' );
+		$JSEnabled = $this->getRequest()->getVal( 'JSEnabled' );
 
 		if ( $subpage === 'start' ) {
-			$this->doLoginStart( $token );
+			$this->doLoginStart( $token, $JSEnabled );
 		} elseif ( $subpage === 'complete' && $this->getRequest()->wasPosted() ) {
 			$this->doLoginComplete( $token );
 		} elseif( $subpage === 'status' ) {
@@ -25,7 +26,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getOutput()->addModules( 'ext.centralauth' );
 	}
 
-	protected function doLoginStart( $token ) {
+	protected function doLoginStart( $token, $JSEnabled ) {
 		global $wgMemc;
 
 		$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
@@ -93,11 +94,17 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 		$url = $wiki->getFullUrl( 'Special:CentralLogin/complete' );
 
+		if ( $JSEnabled ) {
+			$this->getOutput()->addHtml( '<p id="mw-centralloginform-spinnertext">' .
+				$this->msg( 'centralauth-completelogin-finishing' )->parse() . '</p>' );
+		}
+
 		$this->getOutput()->addHtml(
-			Html::rawElement( 'p',
-				null, $this->msg( 'centralauth-completelogin-text' )->parse() ) .
 			Xml::openElement( 'form',
-				array( 'method' => 'post', 'action' => $url, 'id' => 'mw-centralloginform' ) ) .
+				array( 'method' => 'post', 'action' => $url, 'id' => 'mw-centralloginform',
+					'style' => $JSEnabled ? 'display:none' : 'display:inline' ) ) .
+			Html::rawElement( 'p', null,
+				$this->msg( 'centralauth-completelogin-text' )->parse() ) .
 			Html::hidden( 'token', $token ) .
 			Xml::openElement( 'fieldset' ) .
 			Html::rawElement( 'legend',

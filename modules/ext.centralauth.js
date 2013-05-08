@@ -41,9 +41,15 @@
 	}
 
 	$( document ).ready( function () {
+		// Hidden field to indicate JS presence at Userlogin
+		$( '#userloginForm form' ).append( $( '<input name="JSEnabled" value="1" type="hidden">' ) );
 		// Automatic form submission on CentralLogin/start
-		$( '#mw-centralloginform' ).submit();
-		// Back link for CentralLogin/startDW
+		$( '#mw-centralloginform-spinnertext' ).after( $.createSpinner({ size: 'small', type: 'inline' }) );
+		setTimeout( function () {
+			$( '#mw-centralloginform' ).submit(); },
+			2500
+		);
+		// Back link for CentralLogin/start
 		$( '#centralauth-backlink-section' ).append(
 			$( '<a href="javascript:void()">' + mw.msg( 'centralauth-completelogin-back' ) + '</a>' )
 				.click( function() {
