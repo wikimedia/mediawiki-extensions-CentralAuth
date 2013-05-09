@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwpjSe-4",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-09T16:23:12Z",
+      "side": 1,
+      "message": "P3P, SUL, bingo!\n\nMaybe make this really brief, document is somewhere on meta, and add a link for those that really care?",
+      "revId": "66e2298fcaa4d76590ee5043bfbd1ab1c6a75620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
