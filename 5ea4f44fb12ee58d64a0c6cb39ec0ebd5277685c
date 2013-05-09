@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwlILsn4",
+        "filename": ".jshintrc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-05-09T02:36:58Z",
+      "side": 1,
+      "message": "The \"// Enforcing\" comment is obsolete as the section is empty.",
+      "revId": "5ea4f44fb12ee58d64a0c6cb39ec0ebd5277685c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwjIQrqc",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-05-09T02:36:58Z",
+      "side": 1,
+      "message": "No space before \"global\". We write jshint commands like /*jshint, /*global and /*members to avoid confusion with regular comments.",
+      "revId": "5ea4f44fb12ee58d64a0c6cb39ec0ebd5277685c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwrIcvr8",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-05-09T02:36:58Z",
+      "side": 1,
+      "message": "preventDefault *and* `return false` is overkill.\n\nreturn false make jQuery (and browsers alike) call \"event.preventDefault(); event.stopPropagation();\" internally. In this case, it looks like event.stopPropagation() is not intended, so I\u0027d recommend keeping preventDefault and removing \"return false\".\n\nBut not have both. Either one or the other.",
+      "revId": "5ea4f44fb12ee58d64a0c6cb39ec0ebd5277685c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
