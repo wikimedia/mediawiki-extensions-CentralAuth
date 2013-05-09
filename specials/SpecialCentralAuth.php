@@ -676,7 +676,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$numRows = LogEventsList::showLogExtract(
 			$text,
 			array( 'globalauth', 'suppress' ),
-			Title::newFromText( "User:{$user}@global" )->getPrefixedText(),
+			Title::newFromText( "{$user}@global", NS_USER )->getPrefixedText(),
 			'',
 			array( 'showIfEmpty' => true ) );
 		if ( $numRows ) {
