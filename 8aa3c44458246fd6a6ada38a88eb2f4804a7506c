@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwpL7enY",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-05-09T01:56:08Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be:\nisset( $sets[$row-\u003eggp_group] ) ? $sets[$row-\u003eggp_group] : \u0027\u0027\n? Right now this will return true if the index exists and then we\u0027ll get a nice Fatal Error below...",
+      "revId": "8aa3c44458246fd6a6ada38a88eb2f4804a7506c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
