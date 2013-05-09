@@ -16,6 +16,23 @@
       "revId": "0745c0e2419c6b7f5c889765e134f605fffc90df",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwvtSoRE",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-09T19:28:56Z",
+      "side": 1,
+      "message": "Linebreak before \"}\"?",
+      "revId": "0745c0e2419c6b7f5c889765e134f605fffc90df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
