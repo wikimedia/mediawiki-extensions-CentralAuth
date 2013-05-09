@@ -56,7 +56,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$stateCheck = $this->getParameter( 'statecheck' );
 
 		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
-			$this->dieUsage( "Edit conflict detected, Aborting." );
+			$this->dieUsage( 'Edit conflict detected, Aborting.', 'editconflict' );
 		}
 
 		$status = $globalUser->adminLockHide(

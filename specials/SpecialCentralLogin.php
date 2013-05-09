@@ -25,6 +25,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getOutput()->addModules( 'ext.centralauth' );
 	}
 
+	/**
+	 * @param $token string
+	 * @throws MWException
+	 */
 	protected function doLoginStart( $token ) {
 		global $wgMemc;
 
@@ -108,6 +112,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		);
 	}
 
+	/**
+	 * @param $token string
+	 * @throws MWException
+	 */
 	protected function doLoginComplete( $token ) {
 		global $wgUser, $wgMemc, $wgSecureLogin;
 

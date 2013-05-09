@@ -119,7 +119,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * Create a CentralAuthUser object for a user who is known to be unattached.
-	 * @param $name The user name
+	 * @param $name string The user name
 	 * @param $fromMaster bool
 	 * @return CentralAuthUser
 	 */
@@ -231,7 +231,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		foreach ( $res as $row ) {
 			/** @var $set User|bool */
-			$set = @$sets[$row->ggp_group];
+			$set = isset( $sets[$row->ggp_group] ) ? $sets[$row->ggp_group] : '';
 			$rights[] = array( 'right' => $row->ggp_permission, 'set' => $set ? $set->getID() : false );
 			$groups[$row->ggp_group] = 1;
 		}
@@ -243,7 +243,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 *
-	 * @param $row ResultWrapper|object
+	 * @param $row ResultWrapper|object|bool
 	 * @param $fromMaster bool
 	 */
 	protected function loadFromRow( $row, $fromMaster = false ) {
@@ -993,7 +993,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Delete a global account and log what happened
 	 *
-	 * @reason string Reason for the deletion
+	 * @param $reason string Reason for the deletion
 	 * @return Status
 	 */
 	function adminDelete( $reason ) {
@@ -1106,11 +1106,11 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * Set locking and hiding settings for a Global User and log the changes made.
 	 *
-	 * @param $lock Bool|null
+	 * @param $setLocked Bool|null
 	 *  true = lock
 	 *  false = unlock
 	 *  null = don't change
-	 * @param $hide String|null
+	 * @param $setHidden String|null
 	 *  hidden level, one of the HIDDEN_ constants
 	 *  null = don't change
 	 * @param $reason String reason for hiding
@@ -1123,8 +1123,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$lockStatus = $hideStatus = null;
 		$added = array();
 		$removed = array();
-
-		$adminUser = $context->getUser();
 
 		if ( is_null( $setLocked ) ) {
 			$setLocked = $isLocked;
@@ -1294,7 +1292,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$data = $this->localUserData( $wiki );
 
 		if ( $suppress ) {
-			list( $site, $lang ) = $wgConf->siteFromDB( $wiki );
+			list( , $lang ) = $wgConf->siteFromDB( $wiki );
 			$langNames = Language::fetchLanguageNames();
 			$lang = isset( $langNames[$lang] ) ? $lang : 'en';
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )

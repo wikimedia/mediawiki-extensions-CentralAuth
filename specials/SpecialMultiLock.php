@@ -10,7 +10,7 @@
 class SpecialMultiLock extends SpecialPage {
 	private $mCanOversight;
 	private $mGlobalUsers, $mUserNames, $mPrefixSearch, $mPosted, $mMethod;
-	private $mActionLock, $mActionHide, $mReason;
+	private $mActionLock, $mActionHide, $mReason, $mActionUserNames;
 
 	function __construct() {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
@@ -75,6 +75,7 @@ class SpecialMultiLock extends SpecialPage {
 	/**
 	 * Get the CentralAuthUser from a line of text
 	 *
+	 * @param $username string
 	 * @return CentralAuthUser|string User object, or a string containing the error
 	 */
 	private function getGlobalUser( $username ) {
@@ -273,10 +274,6 @@ class SpecialMultiLock extends SpecialPage {
 		$this->showTableHeader();
 
 		foreach ( $this->mGlobalUsers as $globalUser ) {
-			$guName = '';
-			$guLocked = false;
-			$guHidden = '';
-
 			$rowtext = Xml::openElement( 'tr' );
 
 			if ( $globalUser === false ) {
@@ -336,8 +333,6 @@ class SpecialMultiLock extends SpecialPage {
 			return;
 		}
 
-		$added = array();
-		$removed = array();
 		$setLocked = null;
 		$setHidden = null;
 

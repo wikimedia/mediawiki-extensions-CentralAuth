@@ -171,6 +171,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param User $user
+	 * @param CentralAuthUser $centralUser
+	 * @return String
+	 */
 	public static function getDomainAutoLoginIconHtml( User $user, CentralAuthUser $centralUser ) {
 		global $wgCentralAuthAutoLoginWikis, $wgCentralAuthLoginWiki, $wgMemc;
 
@@ -219,6 +224,11 @@ class CentralAuthHooks {
 		return $inject_html;
 	}
 
+	/**
+	 * @param User $user
+	 * @param CentralAuthUser $centralUser
+	 * @return bool
+	 */
 	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser ) {
 		global $wgCentralAuthLoginWiki, $wgMemc;
 
@@ -551,7 +561,7 @@ class CentralAuthHooks {
 	static function initSession( $user, $token ) {
 		$userName = $user->getName();
 		wfSetupSession();
-		if ( $token != @$_SESSION['globalloggedin'] ) {
+		if ( $token != @$_SESSION['globalloggedin'] ) { // FIXME: Usage of @
 			$_SESSION['globalloggedin'] = $token;
 			if ( !wfReadOnly() ) {
 				$user->invalidateCache();
@@ -915,6 +925,7 @@ class CentralAuthHooks {
 	 * @param AbuseFilterVariableHolder $vars
 	 * @param array $parameters
 	 * @param null &$result
+	 * @return bool
 	 */
 	static function abuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
 		if ( $method == 'global-user-groups' ) {
@@ -934,6 +945,7 @@ class CentralAuthHooks {
 	 * Load our global_user_groups variable
 	 * @param AbuseFilterVariableHolder $vars
 	 * @param User $user
+	 * @return bool
 	 */
 	static function abuseFilterGenerateUserVars( $vars, $user ) {
 		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', array( 'user' => $user ) );
@@ -943,6 +955,7 @@ class CentralAuthHooks {
 	/**
 	 * Tell AbuseFilter about our global_user_groups variable
 	 * @param array &$builderValues
+	 * @return bool
 	 */
 	static function abuseFilterBuilder( &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
