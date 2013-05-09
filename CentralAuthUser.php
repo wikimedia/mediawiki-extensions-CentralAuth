@@ -796,8 +796,16 @@ class CentralAuthUser extends AuthPluginUser {
 			return false;
 		}
 
+		if ( isset( $this->mHomeWiki ) ) {
+			if ( !array_key_exists( $this->mHomeWiki, $migrationSet ) ) {
+				wfDebugLog( 'CentralAuth',
+					"Invalid home wiki specification '$this->mName'@'$this->mHomeWiki'" );
+				return false;
+			}
+		} else {
+			$this->mHomeWiki = $this->chooseHomeWiki( $migrationSet );
+		}
 
-		$this->mHomeWiki = $this->chooseHomeWiki( $migrationSet );
 		$home = $migrationSet[$this->mHomeWiki];
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
