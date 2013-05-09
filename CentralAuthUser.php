@@ -1673,7 +1673,7 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 
-		wfDebugLog( 'CentralAuth', "Loading attached wiki list for global user {$this->mName} from DB" );
+		wfDebugLog( 'CentralAuthVerbose', "Loading attached wiki list for global user {$this->mName} from DB" );
 
 		$dbw = self::getCentralDB();
 
