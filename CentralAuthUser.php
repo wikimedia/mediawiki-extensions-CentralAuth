@@ -2396,6 +2396,6 @@ class CentralAuthUser extends AuthPluginUser {
 		// Not centralauth because of some weird length limitiations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
 		$log = new LogPage( $logType );
-		$log->addEntry( $action, Title::newFromText( "User:{$this->mName}@global" ), $reason, $params );
+		$log->addEntry( $action, Title::newFromText( "{$this->mName}@global", NS_USER ), $reason, $params );
 	}
 }

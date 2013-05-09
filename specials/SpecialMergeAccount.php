@@ -465,7 +465,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$wikiname = $wiki->getDisplayName();
 		return SpecialCentralAuth::foreignLink(
 			$wiki,
-			'User:' . $this->mUserName,
+			$this->getUser()->getUserPage()->getPrefixedText(),
 			$wikiname,
 			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text()
 		);
