@@ -22,9 +22,12 @@ class MigrateAccount extends Maintenance {
 		$this->safe = false;
 		$this->dbBackground = null;
 		$this->batchSize = 1000;
+		$this->autoMigrate = false;
 
-		$this->addOption( 'userlist', 'List of usernames to migrate', false, true );
+		$this->addOption( 'auto', 'Allows migration using CentralAuthUser::attemptAutoMigration defaults', false, false );
+		$this->addOption( 'userlist', 'List of usernames to migrate in the format username\thomewiki, where \thomewiki is optional', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
+		$this->addOption( 'homewiki', 'The wiki to set as the homewiki. Can only be used with --username', false, true, 'h' );
 		$this->addOption( 'safe', 'Only migrates accounts with one instance of the username across all wikis', false, false );
 		$this->addOption( 'attachmissing', 'Attach matching local accounts to global account', false, false );
 	}
@@ -33,10 +36,18 @@ class MigrateAccount extends Maintenance {
 
 		$this->dbBackground = CentralAuthUser::getCentralSlaveDB();
 
+		if ( $this->getOption( 'safe', false ) !== false ) {
+			$this->safe = true;
+		}
+		if ( $this->getOption( 'auto', false ) !== false ) {
+			$this->autoMigrate = true;
+		}
+
 		// check to see if we are processing a single username
 		if ( $this->getOption( 'username', false ) !== false ) {
 			$username = $this->getOption( 'username' );
-			$this->migrate( $username );
+			$homewiki = $this->getOption( 'homewiki', null );
+			$this->migrate( $username, $homewiki );
 
 		} elseif ( $this->getOption( 'userlist', false ) !== false ) {
 			$list = $this->getOption( 'userlist' );
@@ -49,10 +60,19 @@ class MigrateAccount extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list" );
 				exit( 1 );
 			}
-			while( $username = fgets( $file ) ) {
-				$username = trim( $username ); // trim the \n
-				$this->migrate( $username );
-
+			while( $line = trim( fgets( $file ) ) ) {
+				$values = explode( "\t", $line );
+				switch( count( $values ) ){
+					case 1:
+						$this->migrate( $values[0] );
+						break;
+					case 2:
+						$this->migrate( $values[0], $values[1] );
+						break;
+					default:
+						$this->output( "ERROR: Invalid account specification: '$line'\n" );
+						continue;
+				}
 				if ( $this->total % $this->batchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
 					wfWaitForSlaves( false, 'centralauth' );
@@ -70,7 +90,7 @@ class MigrateAccount extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	function migrate( $username ) {
+	function migrate( $username, $homewiki=null ) {
 		$this->total++;
 		$this->output( "CentralAuth account migration for: " . $username . "\n");
 
@@ -119,6 +139,14 @@ class MigrateAccount extends Maintenance {
 				return false;
 			}
 
+			if ( isset( $homewiki ) ) {
+				if ( !array_key_exists( $homewiki, $unattached ) ) {
+					$this->output( "ERROR: Unattached user not found for $username@$homewiki" );
+					return false;
+				}
+				$central->mHomeWiki = $homewiki;
+			}
+
 			// check that all unattached (ie ALL) accounts have a confirmed email
 			// address and that the addresses are all the same.  we are using this
 			// to match accounts to the same user since we can't use the password
@@ -143,8 +171,15 @@ class MigrateAccount extends Maintenance {
 					return true;
 				}
 			} else {
-				$this->output( "ERROR: Email addresses do not match for: $username\n" );
-				// TODO: add the algorithm for choosing a winner and doing that migration
+				if ( isset( $central->mHomeWiki ) || $this->autoMigrate ) {
+					if ( $central->storeAndMigrate() ) {
+						$this->migrated++;
+						return true;
+					}
+					$this->output( "INFO: Incomplete migration for '$username'\n" );
+				} else {
+					$this->output( "ERROR: Auto migration is disabled and email addresses do not match for: $username\n" );
+				}
 			}
 		}
 		return false;
