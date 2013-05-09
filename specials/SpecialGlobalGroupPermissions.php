@@ -194,6 +194,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$select = new XmlSelect( 'set', 'wikiset', $default );
 		$select->addOption( $this->msg( 'centralauth-editgroup-noset' )->text(), '0' );
+		/**
+		 * @var $set WikiSet
+		 */
 		foreach ( $sets as $set ) {
 			$select->addOption( $set->getName(), $set->getID() );
 		}

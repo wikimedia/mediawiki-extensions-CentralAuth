@@ -82,6 +82,9 @@ class SpecialWikiSets extends SpecialPage {
 
 		// Give grep a chance to find the usages: centralauth-editset-item-rw, centralauth-editset-item-ro
 		$sets = WikiSet::getAllWikiSets();
+		/**
+		 * @var $set WikiSet
+		 */
 		foreach ( $sets as $set ) {
 			$text = $this->msg( "centralauth-editset-item-{$msgPostfix}", $set->getName(), $set->getID() )->parse();
 			$this->getOutput()->addHTML( "<li>{$text}</li>" );

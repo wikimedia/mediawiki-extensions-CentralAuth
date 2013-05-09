@@ -42,6 +42,9 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		$APIResult = $this->getResult();
 		$data = array();
 
+		/**
+		 * @var $wikiSet WikiSet
+		 */
 		foreach ( WikiSet::getAllWikiSets( $from, $params['limit'], $params['orderbyname'] ) as $wikiSet ) {
 			$entry = array();
 			$entry['id'] = $wikiSet->getId();
