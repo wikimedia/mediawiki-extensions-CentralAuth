@@ -16,6 +16,24 @@
       "revId": "66e2298fcaa4d76590ee5043bfbd1ab1c6a75620",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwrhOX78",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-09T17:25:36Z",
+      "side": 1,
+      "message": "The problem with a version on meta is that it would be WMF-specific, and requiring third-party users of CentralAuth (if any) to write their own version is IMO not the way to go.\n\nNote that most people won\u0027t care about or ever even see this, any more than they see http://support.google.com/accounts/bin/answer.py?answer\u003d151657 or http://fb.me/p3p (which is probably supposed to send you to http://www.facebook.com/help/327993273962160/ but doesn\u0027t (anymore?)).",
+      "parentUuid": "DwpjSe-4",
+      "revId": "66e2298fcaa4d76590ee5043bfbd1ab1c6a75620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
