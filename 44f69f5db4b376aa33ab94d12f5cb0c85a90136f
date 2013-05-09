@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwvLixtc",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-05-09T01:39:03Z",
+      "side": 1,
+      "message": "WikiReference::getCanonicalUrl says \"must be normalised before calling this function!\", so using a localised version isn\u0027t a good idea.",
+      "revId": "44f69f5db4b376aa33ab94d12f5cb0c85a90136f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwjLtTsU",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-05-09T01:39:03Z",
+      "side": 1,
+      "message": "WikiReference::getCanonicalUrl says \"must be normalised before calling this function!\", so using a localised version isn\u0027t a good idea.",
+      "revId": "44f69f5db4b376aa33ab94d12f5cb0c85a90136f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwtLc4hE",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-05-09T01:39:03Z",
+      "side": 1,
+      "message": "This will prevent old log entries from showing up on non-en Wikis",
+      "revId": "44f69f5db4b376aa33ab94d12f5cb0c85a90136f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwlLo0rU",
+        "filename": "specials/SpecialMergeAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-05-09T01:39:03Z",
+      "side": 1,
+      "message": "WikiReference::getCanonicalUrl says \"must be normalised before calling this function!\", so using a localised version isn\u0027t a good idea.",
+      "revId": "44f69f5db4b376aa33ab94d12f5cb0c85a90136f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
