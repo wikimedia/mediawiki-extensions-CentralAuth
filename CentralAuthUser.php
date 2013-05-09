@@ -167,7 +167,7 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 
-		wfDebugLog( 'CentralAuth', "Loading state for global user {$this->mName} from DB" );
+		wfDebugLog( 'CentralAuthVerbose', "Loading state for global user {$this->mName} from DB" );
 
 		// Get the master. We want to make sure we've got up to date information
 		// since we're caching it.
@@ -201,7 +201,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		// We need the user id from the database, but this should be checked by the getId accessor.
 
-		wfDebugLog( 'CentralAuth', "Loading groups for global user {$this->mName}" );
+		wfDebugLog( 'CentralAuthVerbose', "Loading groups for global user {$this->mName}" );
 
 		$dbr = self::getCentralDB(); // We need the master.
 
@@ -287,7 +287,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( !is_array( $cache ) || $cache['mVersion'] < $this->mVersion ) {
 			// Out of date cache.
-			wfDebugLog( 'CentralAuth', "Global User: cache miss for {$this->mName}, " .
+			wfDebugLog( 'CentralAuthVerbose', "Global User: cache miss for {$this->mName}, " .
 				"version {$cache['mVersion']}, expected {$this->mVersion}" );
 			wfProfileOut( __METHOD__ );
 			return false;
@@ -307,7 +307,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param $fromMaster Bool
 	 */
 	protected function loadFromCacheObject( $object, $fromMaster = false ) {
-		wfDebugLog( 'CentralAuth', "Loading CentralAuthUser for user {$this->mName} from cache object" );
+		wfDebugLog( 'CentralAuthVerbose', "Loading CentralAuthUser for user {$this->mName} from cache object" );
 		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
 		}
@@ -351,7 +351,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 	 	$obj = $this->getCacheObject();
-	 	wfDebugLog( 'CentralAuth', "Saving user {$this->mName} to cache." );
+	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
 	 	$wgMemc->set( $this->getCacheKey(), $obj, 86400 );
 	 }
 
@@ -886,7 +886,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( count( $remaining ) == 0 ) {
 			wfDebugLog( 'CentralAuth',
-				"Successfull auto migration for '$this->mName'" );
+				"Successful auto migration for '$this->mName'" );
 			return true;
 		}
 
@@ -2236,12 +2236,12 @@ class CentralAuthUser extends AuthPluginUser {
 
 	public function invalidateCache() {
 		if ( !$this->mDelayInvalidation ) {
-			wfDebugLog( 'CentralAuth', "Updating cache for global user {$this->mName}" );
+			wfDebugLog( 'CentralAuthVerbose', "Updating cache for global user {$this->mName}" );
 
 			// Reload the state and overwrite the cache.
 			$this->loadStateNoCache();
 		} else {
-			wfDebugLog( 'CentralAuth', "Deferring cache invalidation because we're in a transaction" );
+			wfDebugLog( 'CentralAuthVerbose', "Deferring cache invalidation because we're in a transaction" );
 		}
 	}
 
@@ -2251,7 +2251,7 @@ class CentralAuthUser extends AuthPluginUser {
 	public function quickInvalidateCache() {
 		global $wgMemc;
 
-		wfDebugLog( 'CentralAuth', "Quick cache invalidation for global user {$this->mName}" );
+		wfDebugLog( 'CentralAuthVerbose', "Quick cache invalidation for global user {$this->mName}" );
 
 		$wgMemc->delete( $this->getCacheKey() );
 	}
@@ -2263,7 +2263,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Intended to be used for things like migration.
 	 */
 	public function endTransaction() {
-		wfDebugLog( 'CentralAuth', "Finishing CentralAuthUser cache-invalidating transaction" );
+		wfDebugLog( 'CentralAuthVerbose', "Finishing CentralAuthUser cache-invalidating transaction" );
 		$this->mDelayInvalidation = false;
 		$this->invalidateCache();
 	}
@@ -2275,7 +2275,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Intended to be used for things like migration.
 	 */
 	public function startTransaction() {
-		wfDebugLog( 'CentralAuth', "Beginning CentralAuthUser cache-invalidating transaction" );
+		wfDebugLog( 'CentralAuthVerbose', "Beginning CentralAuthUser cache-invalidating transaction" );
 		// Delay cache invalidation
 		$this->mDelayInvalidation = 1;
 	}
