@@ -14043,7 +14043,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
  */
 $messages['id'] = array(
 	'mergeaccount' => 'Status penggabungan log masuk',
-	'centralauth-groupname' => 'Wikimedia Foundation',
+	'centralauth-groupname' => 'Yayasan Wikimedia',
 	'centralauth-desc' => '[[Special:MergeAccount|Menggabungkan akun]] lintas wiki {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Tambahkan teknologi AntiSpoof ke CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Menggabungkan beberapa akun]] untuk Sistem Akun Global',
@@ -19485,6 +19485,8 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'mergeaccount' => 'Statuih panggabuangan log masuak',
+	'centralauth-groupname' => 'Yayasan Wikimedia',
+	'centralauth-desc' => '[[Special:MergeAccount|Manggabuangan akun]] linteh wiki {{int:Centralauth-groupname}}',
 	'centralauth-complete' => 'Panggabuangan log masuak global barasil!',
 	'centralauth-complete-text' => 'Kini Sanak dapek masuak log ka kasado laman wiki {{int:Centralauth-groupname}} manopun juo tanpa paralu mambuek akun baru.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
@@ -34586,6 +34588,14 @@ $messages['zh-hans'] = array(
 	'right-globalgrouppermissions' => '管理全域组',
 	'abusefilter-edit-builder-vars-global-user-groups' => '该用户的全域用户组',
 	'action-centralauth-lock' => '锁定或解锁全局帐户',
+	'centrallogin' => '中央用户登录',
+	'centralloginsuccesful' => '登录成功',
+	'centralauth-completelogin-legend' => '完成登录过程',
+	'centralauth-completelogin-submit' => '现在登录',
+	'centralauth-completelogin-back' => '返回前一页',
+	'centralauth-error-badtoken' => '提供的身份令牌已过期或无效。',
+	'centralauth-warning-notloggedin' => '您目前没有登录。',
+	'centralauth-warning-notattached' => '本地帐户未附加到一个全域帐户。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
