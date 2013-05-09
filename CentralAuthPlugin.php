@@ -55,6 +55,8 @@ class CentralAuthPlugin extends AuthPlugin {
 			//
 			// That may or may not include the current wiki.
 			//
+			wfDebugLog( 'CentralAuth',
+				"plugin: attempting wgCentralAuthAutoMigrate for '$username'" );
 			$central->attemptPasswordMigration( $password );
 		}
 
