@@ -550,7 +550,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$wikiname = $wiki->getDisplayName();
 		return self::foreignLink(
 			$wiki,
-			'User:' . $this->mUserName,
+			MWNamespace::getCanonicalName( NS_USER ) . ':' . $this->mUserName,
 			$wikiname,
 			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text()
 		);
@@ -676,7 +676,9 @@ class SpecialCentralAuth extends SpecialPage {
 		$numRows = LogEventsList::showLogExtract(
 			$text,
 			array( 'globalauth', 'suppress' ),
-			Title::newFromText( "User:{$user}@global" )->getPrefixedText(),
+			Title::newFromText(
+				MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global"
+			)->getPrefixedText(),
 			'',
 			array( 'showIfEmpty' => true ) );
 		if ( $numRows ) {

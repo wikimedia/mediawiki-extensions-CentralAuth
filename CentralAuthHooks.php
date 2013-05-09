@@ -883,7 +883,7 @@ class CentralAuthHooks {
 			$params['domain'] = $parts[2];
 		}
 		$params['properties']['ca-local-url'] = $params['url'];
-		$params['url'] = $wiki->getUrl( 'User:' . $user->getTitleKey() );
+		$params['url'] = $wiki->getUrl( MWNamespace::getCanonicalName( NS_USER ) . ':' . $user->getTitleKey() );
 		return true;
 	}
 
