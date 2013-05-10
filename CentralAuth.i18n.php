@@ -5817,7 +5817,9 @@ $messages['ce'] = array(
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|хийцам бар]])',
 	'centralauth-editgroup-reason' => 'Бахьан:',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|дӀаяккха]])',
 	'centralauth-editset-reason' => 'Бахьан:',
+	'centralauth-editset-submit-delete' => 'ДӀаяккха',
 	'right-globalgrouppermissions' => 'урхалла дар масхьара тобанашна',
 );
 
