@@ -17,12 +17,14 @@ class MigrateAccount extends Maintenance {
 		parent::__construct();
 		$this->mDescription = "Migrates the specified local account to a global account";
 		$this->start = microtime( true );
+		$this->partial = 0;
 		$this->migrated = 0;
 		$this->total = 0;
 		$this->safe = false;
 		$this->dbBackground = null;
 		$this->batchSize = 1000;
 		$this->autoMigrate = false;
+		$this->resetToken = false;
 
 		$this->addOption( 'auto', 'Allows migration using CentralAuthUser::attemptAutoMigration defaults', false, false );
 		$this->addOption( 'userlist', 'List of usernames to migrate in the format username\thomewiki, where \thomewiki is optional', false, true );
@@ -30,6 +32,7 @@ class MigrateAccount extends Maintenance {
 		$this->addOption( 'homewiki', 'The wiki to set as the homewiki. Can only be used with --username', false, true, 'h' );
 		$this->addOption( 'safe', 'Only migrates accounts with one instance of the username across all wikis', false, false );
 		$this->addOption( 'attachmissing', 'Attach matching local accounts to global account', false, false );
+		$this->addOption( 'resettoken', 'Allows for the reset of auth tokens in certain circumstances', false, false );
 	}
 
 	public function execute() {
@@ -41,6 +44,9 @@ class MigrateAccount extends Maintenance {
 		}
 		if ( $this->getOption( 'auto', false ) !== false ) {
 			$this->autoMigrate = true;
+		}
+		if ( $this->getOption( 'resettoken', false ) !== false ) {
+			$this->resetToken = true;
 		}
 
 		// check to see if we are processing a single username
@@ -95,6 +101,7 @@ class MigrateAccount extends Maintenance {
 		$this->output( "CentralAuth account migration for: " . $username . "\n");
 
 		$central = new CentralAuthUser( $username );
+		$unattached = $central->queryUnattached();
 
 		/**
 		 * Migration with an existing global account
@@ -104,7 +111,6 @@ class MigrateAccount extends Maintenance {
 				$this->getOption( 'attachmissing', false )
 				&& !is_null( $central->getEmailAuthenticationTimestamp() )
 			){
-				$unattached = $central->queryUnattached();
 				foreach ( $unattached as $wiki => $local ) {
 					if (
 						$central->getEmail() == $local['email']
@@ -112,10 +118,8 @@ class MigrateAccount extends Maintenance {
 					){
 						$this->output( "ATTACHING: $username@$wiki\n" );
 						$central->attach( $wiki, 'mail' );
-						$this->migrated++;
 					}
 				}
-				return true;
 			} else {
 				$this->output( "ERROR: A global account already exists for: $username\n" );
 			}
@@ -124,8 +128,6 @@ class MigrateAccount extends Maintenance {
 		 * Migration without an existing global account
 		 */
 		else {
-			$unattached = $central->queryUnattached();
-
 			if ( count( $unattached ) == 0 ) {
 				$this->output( "ERROR: No local accounts found for: $username\n" );
 				return false;
@@ -167,31 +169,41 @@ class MigrateAccount extends Maintenance {
 			// all of the emails are the same and confirmed
 			if ( $emailMatch ) {
 				$this->output( "Email addresses match and are confirmed for: $username\n" );
-				if ( $central->storeAndMigrate() ) {
-					$this->migrated++;
-					return true;
-				}
+				$central->storeAndMigrate();
 			} else {
 				if ( isset( $central->mHomeWiki ) || $this->autoMigrate ) {
-					if ( $central->storeAndMigrate() ) {
-						$this->migrated++;
-						return true;
-					}
-					$this->output( "INFO: Incomplete migration for '$username'\n" );
+					$central->storeAndMigrate();
 				} else {
 					$this->output( "ERROR: Auto migration is disabled and email addresses do not match for: $username\n" );
 				}
 			}
+		}
+		$unattachedAfter = $central->queryUnattached();
+
+		if ( count( $unattachedAfter ) == 0 ) {
+			$this->migrated++;
+			return true;
+		}
+		elseif ( count( $unattachedAfter ) > 0 && count( $unattachedAfter ) < count( $unattached ) ) {
+			$this->partial++;
+			$this->output( "INFO: Incomplete migration for '$username'\n" );
+			if ( $this->resetToken ) {
+				$this->output( "INFO: Resetting CentralAuth auth token for '$username'\n" );
+				$central->resetAuthToken();
+			}
+			return true;
 		}
 		return false;
 	}
 
 	function migratePassOneReport() {
 		$delta = microtime( true ) - $this->start;
-		$this->output( sprintf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated\n",
+		$this->output( sprintf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated, %d (%.1f%%) partially migrated\n",
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->total / $delta,
+			$this->partial,
+			$this->total > 0 ? ( $this->partial / $this->total * 100.0 ) : 0,
 			$this->migrated,
 			$this->total > 0 ? ( $this->migrated / $this->total * 100.0 ) : 0
 		) );
