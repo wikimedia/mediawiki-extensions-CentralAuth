@@ -183,8 +183,7 @@ class MigrateAccount extends Maintenance {
 		if ( count( $unattachedAfter ) == 0 ) {
 			$this->migrated++;
 			return;
-		}
-		elseif ( count( $unattachedAfter ) > 0 && count( $unattachedAfter ) < count( $unattached ) ) {
+		} elseif ( count( $unattachedAfter ) > 0 && count( $unattachedAfter ) < count( $unattached ) ) {
 			$this->partial++;
 			$this->output( "INFO: Incomplete migration for '$username'\n" );
 		}
