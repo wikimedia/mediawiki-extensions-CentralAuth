@@ -34,6 +34,24 @@
       "revId": "fd9b4bdac367581406b01fb1d9ad944f80936ba2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw6jXP0k",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-10T19:46:10Z",
+      "side": 1,
+      "message": "2s seemed too short when I tried this with FF on my Win7 box at home. Trying it on my work laptop it seems kind of long. I\u0027ll see what I can lower it down too.",
+      "parentUuid": "Dw0UPfjg",
+      "revId": "fd9b4bdac367581406b01fb1d9ad944f80936ba2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
