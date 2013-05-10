@@ -78,7 +78,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		return array(
 			'user' => 'User to delete.',
 			'reason' => 'Reason for deleting the user.',
-			'token' => 'Your edit token.'
+			'token' => 'Your token (obtained from action=tokens&type=deleteglobalaccount).'
 		);
 	}
 
