@@ -16,6 +16,24 @@
       "revId": "fd9b4bdac367581406b01fb1d9ad944f80936ba2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw0UPfjg",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-10T18:47:38Z",
+      "side": 1,
+      "message": "2.5 does seem a little long. Google made their famous statement that .3 was about where people noticed the delay. Maybe we can start this at 1 or 1.5?",
+      "parentUuid": "Dw8UkLrc",
+      "revId": "fd9b4bdac367581406b01fb1d9ad944f80936ba2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
