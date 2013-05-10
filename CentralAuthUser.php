@@ -2061,6 +2061,9 @@ class CentralAuthUser extends AuthPluginUser {
 	 * not randomly log users out (so on logout, as is done currently, is a good time).
 	 */
 	function resetAuthToken() {
+		// Load state, since its hard to reset the token without it
+		$this->loadState();
+
 		// Generate a random token.
 		$this->mAuthToken = MWCryptRand::generateHex( 32 );
 		$this->mStateDirty = true;
