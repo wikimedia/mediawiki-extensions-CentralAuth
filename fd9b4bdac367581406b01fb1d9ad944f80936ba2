@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dw8UkLrc",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-10T13:46:07Z",
+      "side": 1,
+      "message": "I remember the reasoning from the UI meeting, but personally I hate adding an extra 2.5 seconds to the login process.",
+      "revId": "fd9b4bdac367581406b01fb1d9ad944f80936ba2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
