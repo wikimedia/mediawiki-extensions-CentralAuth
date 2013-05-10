@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dwy5ul5c",
+        "filename": "CentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-05-10T23:32:21Z",
+      "side": 1,
+      "message": "Actually the type and host should also probably be configureable",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
