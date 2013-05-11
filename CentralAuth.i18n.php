@@ -898,10 +898,10 @@ See also:
 	'centralauth-completelogin-legend' => 'Used as the fieldset label.
 
 Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.',
+	'centralauth-completelogin-finishing' => 'Shown next to a spinner while the user is being logged in',
 	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
 	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
-	'centralauth-completelogin-finishing' => 'Shown next to a spinner while the user is being logged in',
 );
 
 /** Afrikaans (Afrikaans)
@@ -6847,7 +6847,7 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'centrallogin' => 'Centralt bruger login',
 	'centralloginsuccesful' => 'Login lykkedes',
 	'centralauth-completelogin-legend' => 'Færdiggør login proces',
-	'centralauth-completelogin-text' => 'Medmindre JavaScript er slået fra i din browser, vil du snarest blive sendt tilbage til din wiki.',
+	'centralauth-completelogin-text' => 'Medmindre JavaScript er slået fra i din browser, vil du snarest blive sendt tilbage til din wiki.', # Fuzzy
 	'centralauth-completelogin-submit' => 'Login nu',
 	'centralauth-completelogin-back' => 'Vend tilbage til foregående side.',
 	'centralauth-error-nologinattempt' => 'Ingen aktive login forsøg i gang for din samling',
@@ -7193,9 +7193,8 @@ Du kannst eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 	'centrallogin' => 'Zentrale Benutzeranmeldung',
 	'centralloginsuccesful' => 'Die Anmeldung war erfolgreich',
 	'centralauth-completelogin-legend' => 'Anmeldeprozess abschließen',
-	'centralauth-completelogin-text' => 'Die Authentifizierung deines Kontos auf Websites der Wikimedia Foundation ist fast abgeschlossen!
-
-Bitte warte und du wirst auf dein Wiki zurückgeleitet, sofern JavaScript in deinem Browser nicht deaktiviert ist.',
+	'centralauth-completelogin-finishing' => 'Authentifizierung auf Websites der Wikimedia Foundation. Bitte warten …',
+	'centralauth-completelogin-text' => 'Die Authentifizierung deines Kontos auf Websites der Wikimedia Foundation ist fast abgeschlossen! Verwende die Schaltfläche unten, um deine Anmeldung zu bestätigen und abzuschließen.',
 	'centralauth-completelogin-submit' => 'Jetzt anmelden',
 	'centralauth-completelogin-back' => 'Zurück zur vorherigen Seite.',
 	'centralauth-error-nologinattempt' => 'Es ist kein aktiver Anmeldeversuch für deine Sitzung in Gang.',
@@ -10262,6 +10261,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author Hello71
  * @author IAlex
  * @author Louperivois
+ * @author Ltrlg
  * @author McDutchie
  * @author Meno25
  * @author Moyg
@@ -10604,9 +10604,8 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centrallogin' => 'Connexion utilisateur centralisée',
 	'centralloginsuccesful' => 'Connexion réussie',
 	'centralauth-completelogin-legend' => 'Terminer le processus de connexion',
-	'centralauth-completelogin-text' => 'L’authentification de votre compte sur les sites de la Fondation Wikimédia est presque achevée !
-
-Veuillez patienter et vous serez redirigé vers votre wiki, sauf si JavaScript est désactivé dans votre navigateur.',
+	'centralauth-completelogin-finishing' => 'Authentification sur les sites de la Wikimedia Fundation en cours, veuillez patienter…',
+	'centralauth-completelogin-text' => 'L’authentification de votre compte sur les sites de la Fondation Wikimédia est presque achevée ! Utilisez le bouton ci-dessous pour confirmer et compléter votre inscription.',
 	'centralauth-completelogin-submit' => 'Se connecter maintenant',
 	'centralauth-completelogin-back' => 'Revenir à la page précédente.',
 	'centralauth-error-nologinattempt' => 'Aucune tentative de connexion active n’est en cours pour votre session.',
@@ -11323,7 +11322,7 @@ Pode ollar e modificar calquera delas, ou crear unha nova.',
 	'centralauth-completelogin-legend' => 'Complete o proceso de rexistro',
 	'centralauth-completelogin-text' => 'A autenticación da súa conta nos sitios da Fundación Wikimedia está case completa!
 
-Agarde e será redirixido de volta ao seu wiki, a menos que teña o JavaScript desactivado no seu navegador.',
+Agarde e será redirixido de volta ao seu wiki, a menos que teña o JavaScript desactivado no seu navegador.', # Fuzzy
 	'centralauth-completelogin-submit' => 'Acceder ao sistema agora',
 	'centralauth-completelogin-back' => 'Volver á páxina anterior.',
 	'centralauth-error-nologinattempt' => 'Non hai ningún intento de acceso activo para a súa sesión.',
@@ -12378,9 +12377,8 @@ $messages['he'] = array(
 	'centrallogin' => 'כניסת משתמש מרכזית',
 	'centralloginsuccesful' => 'הכניסה הושלמה בהצלחה',
 	'centralauth-completelogin-legend' => 'להשלים תהליך התחברות',
-	'centralauth-completelogin-text' => 'אימות החשבון שלך על אתרי קרן ויקימדיה הוא כמעט מוחלט!
-
-אנא המתן, תועבר בחזרה אל הויקי שלך, אלא אם כן לא מאופשר JavaScript בדפדפן שלך.',
+	'centralauth-completelogin-finishing' => 'אימות פרטים באתרי קרן ויקימדיה, נא להמתין...',
+	'centralauth-completelogin-text' => 'אימות החשבון שלך על אתרי קרן ויקימדיה כמעט הושלם! נא להשתמש בכפתור להלן כדי לאשר ולסיים את הכניסה.',
 	'centralauth-completelogin-submit' => 'להתחבר עכשיו',
 	'centralauth-completelogin-back' => 'לחזור אל הדף הקודם.',
 	'centralauth-error-nologinattempt' => 'אין ניסיון כניסה בהפעלה הנוכחית.',
@@ -14784,9 +14782,6 @@ Vinsamlegast sláðu inn lykilorð heimawiki aðgangsins.',
 	'centralauth-not-owner-text' => 'Notandanafnið "$1" var sjálfvirkt úthlutað til eiganda aðgangsins $2.
 
 Ef þú átt þennan aðgang, þá er hægt að ljúka samræmingu aðgangana með því að slá inn lykilorð aðgangsins hér:',
-	'centralauth-blocked-text' => 'Heimawiki (tilgreint hér fyrir neðan) er í banni.
-Vinsamlegast hafðu samband við möppudýr á þessum wiki til að afbanna hann.
-Á meðan aðgangurinn er bannaður, þá getur þú ekki samræmt aðgangana þína.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sýnis keyrsla eingöngu</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Samræming aðganga er í sýniskeyrslu / villuleitun, þannig engir aðgangar verða sameinaðir.
 Því miður!',
@@ -14988,8 +14983,8 @@ Hóp má eyða með því að fjarlægja öll réttindi hans.',
 	'right-globalgroupmembership' => 'Breyta meðlimum altækra hópa',
 	'right-centralauth-autoaccount' => 'Innskrá sjálfkrafa með altækum aðgangi',
 	'right-centralauth-unmerge' => 'Aðgreina altækan aðgang',
-	'right-centralauth-lock' => 'Læsa eða fela altækan aðgang',
-	'right-centralauth-oversight' => 'Bæla niður altækan aðgang', # Fuzzy
+	'right-centralauth-lock' => 'Læsa eða aflæsa altækan aðgang',
+	'right-centralauth-oversight' => 'Bæla niður eða fela altækan aðgang',
 	'right-centralauth-merge' => 'Sameina aðganga',
 	'right-globalgrouppermissions' => 'Stjórna altækum hópum',
 );
@@ -15328,9 +15323,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centrallogin' => 'Accesso centrale utente',
 	'centralloginsuccesful' => 'Accesso effettuato',
 	'centralauth-completelogin-legend' => 'Completa il processo di login',
-	'centralauth-completelogin-text' => "L'autenticazione della tua utenza su siti della Wikimedia Foundation è quasi completa!
-
-Attendi e sarai reindirizzato verso il tuo wiki, a meno che JavaScript non sia disabilitato nel tuo browser.",
+	'centralauth-completelogin-text' => "L'autenticazione della tua utenza su siti della Wikimedia Foundation è quasi completa! Usa il bottone qui sotto per confermare e completare l'accesso.",
 	'centralauth-completelogin-submit' => 'Accedi ora',
 	'centralauth-completelogin-back' => 'Torna alla pagina precedente.',
 	'centralauth-error-nologinattempt' => 'Nessun tentativo di accesso attivo è in corso per la sessione.',
@@ -22497,9 +22490,8 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centrallogin' => 'Centraal aanmelden',
 	'centralloginsuccesful' => 'Aangemeld',
 	'centralauth-completelogin-legend' => 'Aanmeldproces voltooien',
-	'centralauth-completelogin-text' => 'Aanmelden bij sites van de Wikimedia Foundation is bijna voltooid.
-
-Een moment geduld. U wordt doorverwezen naar uw wiki, tenzij JavaScript is uitgeschakeld in uw browser.',
+	'centralauth-completelogin-finishing' => 'Verificatie voor Wikimedia Foundation sites. Even geduld...',
+	'centralauth-completelogin-text' => 'Aanmelden bij sites van de Wikimedia Foundation is bijna voltooid. Gebruik de onderstaande knop om te bevestigen en het aanmelden te voltooien.',
 	'centralauth-completelogin-submit' => 'Nu aanmelden',
 	'centralauth-completelogin-back' => 'Terug naar de vorige pagina.',
 	'centralauth-error-nologinattempt' => 'Er is geen actieve aanmeldpoging voor uw sessie.',
@@ -33178,7 +33170,7 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'centralauth-completelogin-legend' => 'Conpleta el processo de login',
 	'centralauth-completelogin-text' => "L'autenticasion de la to utensa sui siti de la Wikimedia Foundation le xe quasi conpleta!
 
-Speta n'atimo e te rimandemo verso la to wiki, a meno che JavaScript no'l sia disabilità sul to browser.",
+Speta n'atimo e te rimandemo verso la to wiki, a meno che JavaScript no'l sia disabilità sul to browser.", # Fuzzy
 	'centralauth-completelogin-submit' => 'Entra desso',
 	'centralauth-completelogin-back' => 'Torna a la pagina de prima.',
 	'centralauth-error-nologinattempt' => 'No xe in corso nissun tentativo de login.',
@@ -34938,7 +34930,7 @@ $messages['zh-hant'] = array(
 	'centralauth-completelogin-legend' => '完成登入過程',
 	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！
 
-請等待返回您的維基網站（若您的瀏覽器中未有停用JavaScript）。',
+請等待返回您的維基網站（若您的瀏覽器中未有停用JavaScript）。', # Fuzzy
 	'centralauth-completelogin-submit' => '立即登入',
 	'centralauth-completelogin-back' => '回到上一頁。',
 	'centralauth-warning-notloggedin' => '您目前未有登入。',
