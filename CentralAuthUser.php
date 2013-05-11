@@ -1868,7 +1868,7 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * @param  $email
+	 * @param string $email
 	 * @return void
 	 */
 	function setEmail( $email ) {

@@ -717,6 +717,20 @@ class CentralAuthHooks {
 
 	/**
 	 * @param $user
+	 * @return bool
+	 */
+	static function onUserInvalidateEmailComplete( $user ) {
+		$ca = CentralAuthUser::getInstance( $user );
+		if ( $ca->isAttached() ) {
+			$ca->setEmail( '' );
+			$ca->setEmailAuthenticationTimestamp( null );
+			$ca->saveSettings();
+		}
+		return true;
+	}
+
+	/**
+	 * @param $user
 	 * @param $email
 	 * @return bool
 	 */
