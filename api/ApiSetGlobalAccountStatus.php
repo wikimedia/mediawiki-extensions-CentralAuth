@@ -128,7 +128,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			'locked' => 'Change whether this user is locked or not.',
 			'hidden' => 'Change whether this user is not hidden, hidden from lists, or suppressed.',
 			'reason' => "Reason for changing the user's status.",
-			'token' => 'Your edit token.',
+			'token' => 'Your token (obtained from action=tokens&type=setglobalaccountstatus).',
 			'statecheck' => 'Optional MD5 of the expected current <username>:<hidden>:<locked>, to detect edit conflicts. Set <locked> to 1 for locked, 0 for unlocked.'
 		);
 	}
