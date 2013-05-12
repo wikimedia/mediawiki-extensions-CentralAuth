@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dw6hGGsE",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-05-12T14:43:10Z",
+      "side": 1,
+      "message": "Note that you changed the message from being parsed as html, to being inserted into the dom as a text node. That\u0027s an improvement since this message wasn\u0027t supposed to be parsed as html, but changing it in routine cleanup can sometimes cause unintended side-effects. Just pointing it out in case you wasn\u0027t aware. Thanks for the change either way.",
+      "revId": "0ae055e9c78e43e4af071048781331242a91bc2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
