@@ -33,6 +33,24 @@
       "revId": "a72173054217652bedf873ac03f097a1923be4f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw1JFdRY",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-13T20:43:46Z",
+      "side": 1,
+      "message": "That is about how I though \"case null\" worked. Anyway, I made the conversion explicit.",
+      "parentUuid": "DwyvoRLU",
+      "revId": "a72173054217652bedf873ac03f097a1923be4f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
