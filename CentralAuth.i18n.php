@@ -10009,6 +10009,8 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
 	'right-globalgrouppermissions' => 'Hallinnoida järjestelmänlaajuisia ryhmiä',
 	'action-centralauth-lock' => 'lukita tai avata järjestelmänlaajuisia tunnuksia',
+	'centralauth-completelogin-finishing' => 'Kirjaudutaan sisään Wikimedia-säätiön sivuille, odota...',
+	'centralauth-completelogin-text' => 'Sisäänkirjautuminen Wikimedia-säätiön sivuille on melkein valmis. Vahvista kirjautuminen alla olevilla painikkeilla.',
 );
 
 /** meänkieli (meänkieli)
@@ -19878,9 +19880,8 @@ $messages['mk'] = array(
 	'centrallogin' => 'Централна корисничка најава',
 	'centralloginsuccesful' => 'Најавата е успешна',
 	'centralauth-completelogin-legend' => 'Довршете ја постапката за најавување',
-	'centralauth-completelogin-text' => 'Заверката на вашата сметка на Викимедиините викија е речиси готова!
-
-Почекајте да бидете вратени на вашето вики (освен ако JavaScript ви е исклучен во прелистувачот).',
+	'centralauth-completelogin-finishing' => 'Вршам проверки на Викимедиините викија. Почекајте...',
+	'centralauth-completelogin-text' => 'Заверката на вашата сметка на Викимедиините викија е речиси готова! Стиснете на копчето подолу за да ја довршите најавата.',
 	'centralauth-completelogin-submit' => 'Најавете се сега',
 	'centralauth-completelogin-back' => 'Врати се на претходната страница.',
 	'centralauth-error-nologinattempt' => 'Нема тековен обид за најава во вашата сесија.',
@@ -33168,9 +33169,10 @@ Te poli vardarli o modificarli, o creàrghene uno novo.',
 	'centrallogin' => 'Login sentrale utente',
 	'centralloginsuccesful' => 'Aceso efetuà',
 	'centralauth-completelogin-legend' => 'Conpleta el processo de login',
-	'centralauth-completelogin-text' => "L'autenticasion de la to utensa sui siti de la Wikimedia Foundation le xe quasi conpleta!
+	'centralauth-completelogin-finishing' => "Autenticasion in corso sui siti de la Wikimedia Foundation, speta n'atimo...",
+	'centralauth-completelogin-text' => "L'autenticasion de la to utensa sui siti de la Wikimedia Foundation la xe quasi conpleta!
 
-Speta n'atimo e te rimandemo verso la to wiki, a meno che JavaScript no'l sia disabilità sul to browser.", # Fuzzy
+Struca qua soto par confermar e conpletar el login.",
 	'centralauth-completelogin-submit' => 'Entra desso',
 	'centralauth-completelogin-back' => 'Torna a la pagina de prima.',
 	'centralauth-error-nologinattempt' => 'No xe in corso nissun tentativo de login.',
@@ -33572,9 +33574,8 @@ Bạn có thể xem và chỉnh sửa chúng, hoặc tạo một tập mới.',
 	'centrallogin' => 'Đăng nhập thành viên trung ương',
 	'centralloginsuccesful' => 'Đăng nhập thành công',
 	'centralauth-completelogin-legend' => 'Hoàn tất thủ tục đăng nhập',
-	'centralauth-completelogin-text' => 'Gần như hoàn tất việc xác thực tài khoản của bạn trên các trang của Quỹ Wikimedia!
-
-Xin bạn vui lòng chờ đợi được chuyển hướng đến wiki của bạn, trừ khi JavaScript bị vô hiệu hóa trong trình duyệt của bạn.',
+	'centralauth-completelogin-finishing' => 'Đang xác thực trên các dịch vụ của Quỹ Wikimedia. Xin vui lòng chờ một chút…',
+	'centralauth-completelogin-text' => 'Gần như hoàn tất việc xác thực tài khoản của bạn trên các trang của Quỹ Wikimedia! Hãy bấm nút bên dưới để xác nhận tài khoản và đăng nhập xong xuôi.',
 	'centralauth-completelogin-submit' => 'Đăng nhập bây giờ',
 	'centralauth-completelogin-back' => 'Trở về trang trước.',
 	'centralauth-error-nologinattempt' => 'Không có đăng nhập được tiến hành trong phiên truy cập của bạn.',
@@ -34928,9 +34929,7 @@ $messages['zh-hant'] = array(
 	'centrallogin' => '中央使用者登入',
 	'centralloginsuccesful' => '登入成功',
 	'centralauth-completelogin-legend' => '完成登入過程',
-	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！
-
-請等待返回您的維基網站（若您的瀏覽器中未有停用JavaScript）。', # Fuzzy
+	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！使用下面的按鈕確認和完成登入。',
 	'centralauth-completelogin-submit' => '立即登入',
 	'centralauth-completelogin-back' => '回到上一頁。',
 	'centralauth-warning-notloggedin' => '您目前未有登入。',
