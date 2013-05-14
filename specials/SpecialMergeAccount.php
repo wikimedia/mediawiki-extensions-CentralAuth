@@ -11,6 +11,19 @@ class SpecialMergeAccount extends SpecialPage {
 		global $wgUser;
 		$this->setHeaders();
 
+		if ( !is_null( $subpage ) ) {
+			$user = User::newFromConfirmationCode( $subpage );
+
+			if ( is_object( $user ) ) {
+				$user->confirmEmail();
+				$user->saveSettings();
+				$this->getOutput()->addWikiMsg( 'confirmemail_success' );
+			} else {
+				$this->getOutput()->addWikiMsg( 'confirmemail_invalid' );
+				// return; // Let's be greedy and still show them MergeAccount
+			}
+		}
+
 		if ( !$this->userCanExecute( $wgUser ) ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-merge-denied' );
 			$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
