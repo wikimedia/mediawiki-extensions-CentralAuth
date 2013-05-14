@@ -6588,8 +6588,8 @@ sandsynligvis har de en anden adgangskode end din hovedkonto:',
 	'centralauth-merge-method-admin' => 'sammenlagt af en administrator',
 	'centralauth-merge-method-new' => 'ny konto',
 	'centralauth-merge-method-login' => 'oprettet ved login',
-	'centralauth-merge-method-primary-desc' => 'Det er det wiki, hvor kontoen oprindeligt var fusioneret.
-Bemærk, at det kan afvige fra det rigtige hjem wiki af den pågældende bruger.',
+	'centralauth-merge-method-primary-desc' => 'Det er den wiki hvorfra kontoen oprindeligt blev samlet.
+Bemærk at det ikke nødvendigvis er brugerens reelle hjemmewiki.',
 	'centralauth-merge-method-empty-desc' => 'Angiver, at den lokale konto blev fusioneret, fordi den ikke havde nogen redigeringer.',
 	'centralauth-merge-method-mail-desc' => 'Angiver, at den lokale konto blev flettet fordi dens emailadresse matchede hovedkontoens e-mail-adresse.',
 	'centralauth-merge-method-password-desc' => 'Angiver, at den lokale konto blev flettet, fordi brugeren har angivet en gyldig adgangskode til den.',
@@ -34929,6 +34929,7 @@ $messages['zh-hant'] = array(
 	'centrallogin' => '中央使用者登入',
 	'centralloginsuccesful' => '登入成功',
 	'centralauth-completelogin-legend' => '完成登入過程',
+	'centralauth-completelogin-finishing' => '正在進行維基媒體基金會網站的身份驗證，請稍候...',
 	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！使用下面的按鈕確認和完成登入。',
 	'centralauth-completelogin-submit' => '立即登入',
 	'centralauth-completelogin-back' => '回到上一頁。',
