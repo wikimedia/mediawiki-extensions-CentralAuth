@@ -419,6 +419,26 @@ Someone might be trying to log you in under a malicious account.
 If you are just trying to log in as another user, please log out first.',
 	'centralauth-warning-notloggedin' => 'You are not currently logged in.',
 	'centralauth-warning-notattached' => 'The local account is not attached to a global one.',
+
+	// Final unification
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} account confirmation',
+	'centralauth-finishglobaliseemail_body' => 'Your email address has been set as associated
+with the account "$2" on all Wikimedia projects, with your main account being
+on {{SITENAME}}.
+
+To confirm that this account really does belong to you, merge in any of your
+accounts that we could not do automatically, and allow you to recover your
+account if you lose your password, please open this link in your browser:
+
+$3
+
+If the account does *not* belong to you, follow this link to cancel the email
+address confirmation:
+
+$5
+
+This confirmation code will expire at $4.'
+
 );
 
 /** Message documentation (Message documentation)
@@ -902,6 +922,10 @@ Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.'
 	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
 	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
+
+	// Final unification
+	'centralauth-finishglobaliseemail_subject' => 'Subject field for account confirmation emails',
+	'centralauth-finishglobaliseemail_body' => 'Body text for account confirmation emails',
 );
 
 /** Afrikaans (Afrikaans)
