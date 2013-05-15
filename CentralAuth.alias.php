@@ -113,6 +113,7 @@ $specialPageAliases['ca'] = array(
 $specialPageAliases['de'] = array(
 	'CentralAuth' => array( 'Verwaltung_Benutzerkonten-Zusammenführung' ),
 	'AutoLogin' => array( 'Automatische_Anmeldung' ),
+	'CentralAutoLogin' => array( 'Zentrale_automatische_Anmeldung' ),
 	'MergeAccount' => array( 'Benutzerkonten_zusammenführen' ),
 	'GlobalGroupMembership' => array( 'Globale_Benutzerzugehörigkeit' ),
 	'GlobalGroupPermissions' => array( 'Globale_Gruppenrechte' ),
@@ -534,11 +535,13 @@ $specialPageAliases['nds-nl'] = array(
 $specialPageAliases['nl'] = array(
 	'CentralAuth' => array( 'CentraalAanmelden' ),
 	'AutoLogin' => array( 'AutomatischAanmelden', 'AutoAanmelden' ),
+	'CentralAutoLogin' => array( 'CentraalAutomatischAanmelden' ),
 	'MergeAccount' => array( 'GebruikerSamenvoegen' ),
 	'GlobalGroupMembership' => array( 'GlobaalGroepslidmaatschap' ),
 	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
 	'WikiSets' => array( 'WikigroepenBewerken' ),
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
+	'MultiLock' => array( 'MeervoudigAfsluiten' ),
 );
 
 /** Norwegian Nynorsk (norsk nynorsk) */

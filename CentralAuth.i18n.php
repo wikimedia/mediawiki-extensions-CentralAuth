@@ -470,6 +470,7 @@ This confirmation code will expire at $4.'
  * @author Guillom
  * @author Hoo
  * @author Hydra
+ * @author Jdforrester
  * @author Jon Harald Søby
  * @author Kwj2772
  * @author Lejonel
@@ -839,7 +840,7 @@ See example: [[w:Special:Autologin]].',
 	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralautologin' => '{{doc-special|CentralAutoLogin|unlisted=1}}
 See example: [[w:Special:CentralAutoLogin]].',
-	'centralauth-centralautologin-desc'   => 'This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.',
+	'centralauth-centralautologin-desc' => 'This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Error message shown when [[Special:CentralAutoLogin]] is called on the local wiki while the user is already logged in.',
 	'centralauth-centralautologin-badparams' => 'Error message when the required authentication parameters are missing or invalid',
 	'centralauth-centralautologin-lostsession' => 'Error message when the session data is lost or overwritten',
@@ -852,7 +853,9 @@ See example: [[w:Special:CentralAutoLogin]].',
 * $1 - Name of the state',
 	'centralauth-centralautologin-badwiki' => 'Error message shown when an unacceptable wiki ID is given to [[Special:CentralAutoLogin]].
 * $1 - The wiki ID',
-	'centralauth-centralautologin-corsfail' => 'Error message shown when the CORS origin check fails.',
+	'centralauth-centralautologin-corsfail' => 'Error message shown when the CORS origin check fails.
+
+CORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/',
 	'centralauth-centralautologin-p3p-explanation' => 'Explanation for the P3P hack that allows IE to set cookies.',
 	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds.
 * $1 - User name
@@ -961,12 +964,10 @@ Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.'
 	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
 	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
-
-	// Final unification
 	'centralauth-finishglobaliseemail_subject' => 'Subject field for account confirmation emails',
 	'centralauth-finishglobaliseemail_body' => 'Body text for account confirmation emails
-* $1 is the IP address of the user that changed the e-mail address
-* $2 is the name of the user
+* $1 is the IP address of the user or server script that triggered the reminder - not needed
+* $2 is the name of the user account
 * $3 is a URL to Special:ConfirmEmail
 * $4 is a time and date (duplicated by $6 and $7)
 * $5 is a URL to Special:InvalidateEmail
@@ -5882,6 +5883,11 @@ $messages['ce'] = array(
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-reason' => 'Бахьан:',
 	'globalusers' => 'Масхьара декъашхойн могIам',
+	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
+	'centralauth-prefs-complete' => 'Дик ду!',
+	'centralauth-prefs-count-attached' => 'Хьан йиш ю $1 {{PLURAL:$1|проектехь|проекташкахь|проекташкахь}} болх ба.', # Fuzzy
+	'centralauth-prefs-manage' => 'ЦӀерца болх ба йиш йолу проекташ',
+	'centralauth-prefs-view' => 'Декъашхочуьна глобальни хаам хьажар',
 	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин {{int:Centralauth-groupname}} кхолламашкахь:',
 	'globalgrouppermissions' => 'Урхалла дар масхьара тобанашна',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
@@ -7179,6 +7185,23 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'autologin' => 'Automatisches Anmelden',
 	'centralauth-autologin-desc' => 'Diese Spezialseite wird nur intern von MediaWiki benutzt. Wenn du dich [[Special:UserLogin|anmeldest]], instruiert das zentrale Anmeldesystem deinen Browser, ein Pixelbild auf dieser Seite für alle Domains aufzurufen.
 Du hast diese Spezialseite ohne Authentifizierungsdaten aufgerufen, so dass nichts weiter geschieht.',
+	'centralautologin' => 'Zentrale Anmeldung',
+	'centralauth-centralautologin-desc' => 'Diese Spezialseite wird von MediaWiki intern verwendet.
+Wenn du eine verlinkte Domain besuchst und du nicht angemeldet bist, verwendet das zentrale Anmeldesystem diese Seite, um zu bestimmen, ob du auf der zentralen Domain angemeldet bist.
+Du hast diese Seite ohne irgendwelche Authentifizierungsdaten angefordert, so dass nichts weiter geschieht.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Du bist bereits lokal angemeldet',
+	'centralauth-centralautologin-badparams' => 'Die angegebenen Authentifikationsparameter waren ungültig',
+	'centralauth-centralautologin-lostsession' => 'Die Sitzungsdaten sind verloren gegangen',
+	'centralauth-centralautologin-badstate' => 'Ungültiger Staat „$1“',
+	'centralauth-centralautologin-notposted' => 'Das zentrale Anmeldeformular muss mit der POST-Methode aufgerufen werden',
+	'centralauth-centralautologin-badstate-central' => 'Der Staat „$1“ ist auf dem zentralen Wiki nicht gültig',
+	'centralauth-centralautologin-badstate-local' => 'Der Staat „$1“ ist auf dem lokalen Wiki nicht gültig',
+	'centralauth-centralautologin-badwiki' => 'Das Wiki „$1“ ist zur zentralen Anmeldung ungültig',
+	'centralauth-centralautologin-corsfail' => 'CORS-Origin-Prüfung fehlgeschlagen',
+	'centralauth-centralautologin-p3p-explanation' => 'Bestimmte Browser erfordern eine P3P-kompakte Richtlinie für Cookies, die in einigen Fällen gesendet oder empfangen werden sollen, einschließlich der beteiligten Situation in der SUL-Anmeldeprüfung. Dies ist ein unnötiger Reifen, um durch diese Situation zu springen, in Anbetracht dessen, dass alle Seiten in der gleichen Wikigruppe verwickelt sind und P3P selbst meistens veraltet und verkommen ist. Glücklicherweise wird die ungültige Richtlinie, die auf diese Seite verlinkt, von den Standardkonfigurationen der Browser derzeit als „gut genug“ angesehen.
+
+Bitte überprüfe die durch Menschen lesbare Datenschutzrichtlinie der Website, um zu bestimmen, wie viele der gesammelten Informationen verwendet werden dürfen.',
+	'centralauth-centralautologin-logged-in' => 'Du bist als „$1“ zentral angemeldet. Aktualisiere die Seite, um deine Benutzereinstellungen anzuwenden.',
 	'globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen',
 	'globalgrouppermissions' => 'Verwaltung globaler Benutzergruppen',
 	'centralauth-globalgroupperms-grouplist' => 'Die folgenden globalen Gruppen wurden konfiguriert.
@@ -7276,6 +7299,23 @@ Ein anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkont
 Wenn du dich unter einem anderen Benutzer anmelden möchtest, melde dich bitte zuerst ab.',
 	'centralauth-warning-notloggedin' => 'Du bist derzeit nicht angemeldet.',
 	'centralauth-warning-notattached' => 'Das lokale Benutzerkonto ist mit keinem globalen Konto verbunden.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}-Benutzerkontenbestätigung',
+	'centralauth-finishglobaliseemail_body' => 'Deine E-Mail-Adresse wurde mit dem Benutzerkonto „$2“ auf allen
+Wikimedia-Projekten verknüpft, mit deinem Hauptkonto auf {{SITENAME}}.
+
+Um zu bestätigen, dass dieses Benutzerkonto wirklich dir gehört und um
+deine Konten zusammenzuführen, was wir nicht automatisch durchführen
+konnten, und dein Benutzerkonto wiederherzustellen, falls du dein
+Passwort verloren hast, öffne bitte diesen Link in deinem Browser:
+
+$3
+
+Falls das Konto *nicht* dir gehört, folge diesem Link, um die
+E-Mail-Adressbestätigung abzubrechen:
+
+$5
+
+Zeitpunkt des Ablaufs des Bestätigungscodes: $4.',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -8327,6 +8367,28 @@ $messages['el'] = array(
 	'right-centralauth-oversight' => 'Φραγή καθολικού λογαριασμού', # Fuzzy
 	'right-centralauth-merge' => 'Συγχωνεύστε τον λογαριασμό τους',
 	'right-globalgrouppermissions' => 'Διαχείριση καθολικών λογαριασμών',
+);
+
+/** British English (British English)
+ * @author Jdforrester
+ */
+$messages['en-gb'] = array(
+	'centralauth-finishglobaliseemail_body' => 'Your e-mail address has been set as associated
+with the account "$2" on all Wikimedia projects, with your main account being
+on {{SITENAME}}.
+
+To confirm that this account really does belong to you, merge in any of your
+accounts that we could not do automatically, and allow you to recover your
+account if you lose your password, please open this link in your browser:
+
+$3
+
+If the account does *not* belong to you, follow this link to cancel the e-mail
+address confirmation:
+
+$5
+
+This confirmation code will expire at $4.',
 );
 
 /** Esperanto (Esperanto)
@@ -10590,6 +10652,23 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-autologin-desc' => 'Cette page spéciale est utilisée par MediaWiki en interne.
 Quand vous vous [[Special:UserLogin|connectez]], le système d’identification unique demande à votre navigateur de charger cette page pour tous les domaines rattachés, au moyen de liens d’images.
 Vous avez demandé cette page sans fournir d’informations d’authentification, elle ne fait donc rien.',
+	'centralautologin' => 'Connexion centralisée',
+	'centralauth-centralautologin-desc' => 'Cette page spéciale est utilisée en interne par MédiaWiki.
+Quand vous visitez un domaine lié sans être connecté, le système de connexion centralisée utilise cette page pour déterminer si vous êtes connecté au domaine central.
+Vous avez demandé cette page sans fournir de donnée d’authentification ; elle ne fait donc rien.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Vous êtes déjà connecté localement',
+	'centralauth-centralautologin-badparams' => 'Les paramètres d’authentification spécifiés n’étaient pas valides',
+	'centralauth-centralautologin-lostsession' => 'Les données de session ont été perdues',
+	'centralauth-centralautologin-badstate' => 'État « $1 » non valide',
+	'centralauth-centralautologin-notposted' => 'Le formulaire de connexion centralisée doit être posté',
+	'centralauth-centralautologin-badstate-central' => 'L’état « $1 » n’est pas valide dans le wiki central',
+	'centralauth-centralautologin-badstate-local' => 'L’état « $1 » n’est pas valide sur le wiki local',
+	'centralauth-centralautologin-badwiki' => 'Le wiki «$1 » n’est pas valide pour la connexion centralisée',
+	'centralauth-centralautologin-corsfail' => 'La vérification d’origine CORS a échoué',
+	'centralauth-centralautologin-p3p-explanation' => 'Certains navigateurs nécessitent une politique P3P compacte pour envoyer ou recevoir des cookies dans certains cas, y compris la situation impliquée dans la vérification de la connexion SUL. C’est une étape inutile à franchir dans cette situation, vu que toutes les pages impliquées sont dans le même groupe de wiki et que P3P lui-même est en grande partie obsolète et abandonné; heureusement, la politique non valide menant à cette page est actuellement considérée comme « suffisamment bonne » par les configurations par défaut de ces navigateurs.
+
+Veuillez relire la politique de confidentialité lisible de ce site pour savoir comment toute information collectée pourrait être utilisée.',
+	'centralauth-centralautologin-logged-in' => 'Vous être connecté de façon centralisée en tant que$1. Rechargez la page pour appliquer vos préférences utilisateur.',
 	'globalgroupmembership' => 'Appartenance aux groupes globaux',
 	'globalgrouppermissions' => 'Gestion des groupes globaux',
 	'centralauth-globalgroupperms-grouplist' => 'Les groupes globaux suivants ont été configurés.
@@ -10686,6 +10765,18 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centralauth-error-token-wronguser' => 'Le jeton ne correspond pas au nom d’utilisateur de votre session. Quelqu’un pourrait essayer de vous connecter sous un compte malveillant. Si vous essayez simplement de vous connecter avec un autre utilisateur, veuillez d’abord vous déconnecter.',
 	'centralauth-warning-notloggedin' => 'Vous n’êtes pas connecté pour le moment.',
 	'centralauth-warning-notattached' => 'Le compte local n’est pas attaché à un compte global.',
+	'centralauth-finishglobaliseemail_subject' => 'Confirmation de compte de {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Votre adresse de courriel a été associée avec le compte « $2 » sur tous les projets de Wikimédia, avec votre compte principal sur {{SITENAME}}.
+
+Pour confirmer que ce compte vous appartient bien, fusionne avec tous les comptes que nous ne pouvons pas atteindre automatiquement, et vous permet de récupérer votre compte si vous perdez votre mot de passe, veuillez ouvrir ce lien dans votre navigateur :
+
+$3
+
+Si le compte ne vous appartient *pas*, suivez ce lien pour annuler la confirmation de l’adresse de courriel :
+
+$5
+
+Ce code de confirmation expirera à $4.',
 );
 
 /** Franco-Provençal (arpetan)
@@ -15669,6 +15760,15 @@ $messages['ja'] = array(
 	'centralauth-autologin-desc' => 'この特別ページはメディアウィキが内部的に使用しています。
 [[Special:UserLogin|ログイン]]すると、中央ログイン管理システムからの命令を受け、あなたのブラウザーはリンクされたドメインすべてにおけるこのページを画像リンクの形でリクエストします。
 このページをリクエストした際には認証データを送信していないため、何も影響はありません。',
+	'centralautologin' => '中央管理ログイン',
+	'centralauth-centralautologin-desc' => 'この特別ページは、MediaWiki が内部的に使用します。
+未ログインの状態でリンク済みドメインを訪れた際に、あなたがログイン済みかどうかを判定するために、中央管理ログインシステムがこのページを使用します。
+あなたは認証データを何も指定せずにこのページに訪れたため、何もしません。',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'ローカルで既にログインしています',
+	'centralauth-centralautologin-badparams' => '指定した認証パラメーターは無効です',
+	'centralauth-centralautologin-lostsession' => 'セッションデータが消失しました',
+	'centralauth-centralautologin-badwiki' => 'ウィキ「$1」は中央管理ログインとして有効ではありません',
+	'centralauth-centralautologin-logged-in' => '現在、$1 としてログインしています。利用者設定を適用するにはページを再読み込みしてください。',
 	'globalgroupmembership' => 'グローバルグループへの所属',
 	'globalgrouppermissions' => 'グローバルグループの管理',
 	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。
@@ -15759,6 +15859,7 @@ $messages['ja'] = array(
 	'centralauth-completelogin-submit' => '今すぐログイン',
 	'centralauth-completelogin-back' => '前のページに戻る。',
 	'centralauth-warning-notloggedin' => 'あなたは現在ログインしていません。',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}のアカウント確認',
 );
 
 /** Jutish (jysk)
@@ -19963,6 +20064,21 @@ $messages['mk'] = array(
 Ако всушност се обидувте да се најавите како друг корисник, тогаш најпрвин одјавете се.',
 	'centralauth-warning-notloggedin' => 'Во моментов не сте најавени.',
 	'centralauth-warning-notattached' => 'Локалната сметка не е сврзана со глобална.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} — Потврдете ја сметката',
+	'centralauth-finishglobaliseemail_body' => 'Укажавте дека оваа е-поштенската адреса принадлежи
+на сметката „$2“ на сите Викимедиини проекти (притоа  
+главната е
+на {{SITENAME}}).
+
+Потврдете дека оваа сметка навистина ви припаѓа вам. Вака ќе можете да ги обедините сметките што не можевме да ги споиме автоматски, со што воедно ќе добиете и можност за пристап ако ја заборавите лозинката. Појдете на следнава страница:
+
+$3
+
+Ако сметката *не* ви припаѓа вам, проследете ја врскава за да ај откажете потврдата:
+
+$5
+
+This confirmation code will expire at $4.',
 );
 
 /** Malayalam (മലയാളം)
@@ -33563,6 +33679,9 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-autologin-desc' => 'Trang đặc biệt này được MediaWiki dùng nội bộ.
 Khi bạn [[Special:UserLogin|đăng nhập]], hệ thống đăng nhập thống nhất sẽ hướng dẫn trình duyệt của bạn gửi yêu cầu trang này từ tất cả các không gian được liên kết đến, sử dụng liên kết hình ảnh.
 Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu xác nhận nào cả, do đó nó không làm gì hết.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Bạn đã đăng nhập tại wiki đại phương',
+	'centralauth-centralautologin-lostsession' => 'Mất dữ liệu phiên',
+	'centralauth-centralautologin-badstate' => 'Trạng thái “$1” không hợp lệ',
 	'globalgroupmembership' => 'Thành viên trong nhóm toàn cục',
 	'globalgrouppermissions' => 'Quản lý nhóm toàn cục',
 	'centralauth-globalgroupperms-grouplist' => 'Những nhóm toàn cục sau đã được cấu hình. Bạn có thể xem và sửa quyền hạn của mỗi nhóm, nếu có đủ quyền. Một nhóm có thể bị xóa bằng cách loại tất cả các quyền của nó.',
@@ -33657,6 +33776,7 @@ Ai đó có thể cố gắng đăng nhập vào tài khoản của bạn ở d�
 Nếu bạn chỉ muốn đăng nhập dưới tên người dùng khác, xin vui lòng đăng xuất trước tiên.',
 	'centralauth-warning-notloggedin' => 'Bạn hiện không đăng nhập.',
 	'centralauth-warning-notattached' => 'Tài khoản địa phương chưa được đính kèm vào một tài khoản toàn cục.',
+	'centralauth-finishglobaliseemail_subject' => 'Xác nhận tài khoản {{SITENAME}}',
 );
 
 /** Volapük (Volapük)
@@ -34916,6 +35036,8 @@ $messages['zh-hant'] = array(
 	'centralauth-autologin-desc' => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
 	該中央登入系統會利用圖片連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
 	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
+	'centralauth-centralautologin-alreadyloggedinlocally' => '你已經在本地登入',
+	'centralauth-centralautologin-badstate' => '狀態「$1 」無效',
 	'globalgroupmembership' => '在全域組中的成員',
 	'globalgrouppermissions' => '全域組管理',
 	'centralauth-globalgroupperms-grouplist' => '以下的全域群組已經被設定。
@@ -35005,4 +35127,5 @@ $messages['zh-hant'] = array(
 	'centralauth-completelogin-back' => '回到上一頁。',
 	'centralauth-warning-notloggedin' => '您目前未有登入。',
 	'centralauth-warning-notattached' => '本地帳戶未有附加到全域帳戶。',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} 帳戶確認',
 );
