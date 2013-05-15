@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dwwb8Sgg",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-15T06:00:02Z",
+      "side": 1,
+      "message": "This function could use some docs. Why is it setting cookies here? I could find specs for the API token feature on mw.org or the google doc about this.",
+      "revId": "7255c4734f4c45459e566efe8bc243d4caf7f17f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw2sM-0I",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-15T06:00:02Z",
+      "side": 1,
+      "message": "Can this user global user ID or at least SHA1 instead? We wouldn\u0027t want people to be able to find a way to make new account names that cause hash collisions here.",
+      "revId": "7255c4734f4c45459e566efe8bc243d4caf7f17f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwyYLTic",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-15T06:00:02Z",
+      "side": 1,
+      "message": "Not sure why this sets $_COOKIES or if that was meant to be $_COOKIE",
+      "revId": "7255c4734f4c45459e566efe8bc243d4caf7f17f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw6sGByA",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-15T06:00:02Z",
+      "side": 1,
+      "message": "What is this loop for? Just a sanity check to avoid collisions? If memcached is down this will get stuck. They only thing that makes this unlikely for us is that the key could keep changing and thus would hash to a different server some of the time (and 1 of the 16 should be up). But in any single apache server routing problem to memcached or a machine-local twemproxy going down (if we decide to use that) this will also get stuck.",
+      "revId": "7255c4734f4c45459e566efe8bc243d4caf7f17f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
