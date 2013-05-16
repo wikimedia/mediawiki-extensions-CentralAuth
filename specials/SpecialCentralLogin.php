@@ -91,7 +91,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
 		);
-		$wgMemc->set( $key, $data, 15 );
+		$wgMemc->add( $key, $data, 60 );
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
