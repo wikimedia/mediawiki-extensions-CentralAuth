@@ -102,10 +102,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'gu_id' => $gu_id,
 				'wikiid' => $wikiid,
 			);
-			do {
-				$token = MWCryptRand::generateHex( 32 );
-				$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
-			} while ( !$wgMemc->add( $key, $memcData, 10 ) );
+			$token = MWCryptRand::generateHex( 32 ) . dechex( $gu_id );
+			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
+			$wgMemc->add( $key, $memcData, 10 );
 
 			// Save memc token for L2
 			$this->getRequest()->setSessionData( 'centralautologin-token', $token );
