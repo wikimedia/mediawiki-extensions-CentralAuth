@@ -201,7 +201,7 @@ class CentralAuthHooks {
 			);
 
 			$loginToken = MWCryptRand::generateHex( 32 );
-			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
+			$wgMemc->add( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
 
 			$wiki = WikiMap::getWiki( $wiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -275,7 +275,7 @@ class CentralAuthHooks {
 				'guid'          => $centralUser->getId(),
 				'wikiId'        => wfWikiId()
 			);
-			$wgMemc->set( $key, $data, 15 );
+			$wgMemc->add( $key, $data, 60 );
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -452,7 +452,7 @@ class CentralAuthHooks {
 			);
 			$loginToken = MWCryptRand::generateHex( 32 );
 			global $wgMemc;
-			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
+			$wgMemc->add( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
 
 			$wiki = WikiMap::getWiki( $wiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
