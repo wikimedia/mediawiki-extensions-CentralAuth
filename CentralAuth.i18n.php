@@ -15400,6 +15400,9 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-autologin-desc' => 'Questa pagina speciale è usata internamente da MediaWiki.
 Quando tu [[Special:UserLogin|fai il login]], il sistema centrale di login dice al tuo browser di richiedere questa pagina da tutti i domini collegati, usando i link immagine.
 Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così non fa niente.',
+	'centralauth-centralautologin-badstate' => 'Stato "$1" non valido',
+	'centralauth-centralautologin-badstate-central' => 'Stato "$1" non valido nel wiki centrale',
+	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist' => 'I seguenti gruppi globali sono stati configurati.
@@ -19965,6 +19968,23 @@ $messages['mk'] = array(
 	'centralauth-autologin-desc' => 'Оваа специјална страница служи за внатрешна употреба на МедијаВики.
 Кога ќе [[Special:UserLogin|се најавите]], централниот најавен систем му кажува на вашиот прелистувач да ја побара оваа страница од сите сврзани домени, употребувајќи графички врски.
 Ја побаравте оваа страница без да наведете било какви потврдни податоци, и затоа не се случува ништо.',
+	'centralautologin' => 'Централна најава',
+	'centralauth-centralautologin-desc' => 'Оваа специјална страница служи за внатрешна употреба во МедијаВики.
+Кога ќе посетите домен од врска, а не сте најавени, системот на централна најава ја користи оваа страница за да утврди дали сте најавени на централниот домен.
+Ја побаравте страницава без да дадете податоци за вашата веродостојност, па затоа таа не прави ништо.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Веќе сте најавени локално',
+	'centralauth-centralautologin-badparams' => 'Укажаните параметри за заверка се неважечки',
+	'centralauth-centralautologin-lostsession' => 'Сесиските податоци се изгубени',
+	'centralauth-centralautologin-badstate' => 'Неважечка состојба „$1“',
+	'centralauth-centralautologin-notposted' => 'Образецот за централна најава мора да се испрати',
+	'centralauth-centralautologin-badstate-central' => 'Состојбата „$1“ не е важечка на централното вики',
+	'centralauth-centralautologin-badstate-local' => 'Состојбата „$1“ не е важечка на локалното вики',
+	'centralauth-centralautologin-badwiki' => 'Состојбата „$1“ не е важечка за централна најава',
+	'centralauth-centralautologin-corsfail' => 'Проверката на потекло со CORS не успеа',
+	'centralauth-centralautologin-p3p-explanation' => 'Извесни прелистувачи бараат во некои случаи да се испратат или примат компактни правила на P3P за колачиња, каде спаѓа и ситуацијата што е засегната од проверката на обединетата најава (SUL). Ова е сосем непотребна пречка во ситуацијава, земајќи предвид дека сите страници во случајот се во истата викигрупа, а самиот P3P е речиси сосема застарен и напуштен; за среќа, неважечкото правило што води до страницава во моментов се смета за „доволно добра“ од основно зададените поставки на овие прелистувачи.
+
+Прочитајте ги (човечки-читливите) правила за лични податоци/приватност  на ова мрежно место за да видите како би се користеле податоците што се земаат.',
+	'centralauth-centralautologin-logged-in' => 'Најавени сте централно како $1. Превчитајте ја страницата за да ги примените вашите кориснички поставки.',
 	'globalgroupmembership' => 'Членство во глобални групи',
 	'globalgrouppermissions' => 'Раководење со глобални групи',
 	'centralauth-globalgroupperms-grouplist' => 'Прилагодени се следниве глобални групи.
@@ -26223,6 +26243,8 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-rightslog-set-optin' => 'opt-in basate',
 	'centralauth-rightslog-set-optout' => 'opt-out basate',
 	'autologin' => 'Trasùte automateche',
+	'centralauth-centralautologin-badstate' => 'State invalide "$1"',
+	'centralauth-centralautologin-notposted' => "'U module cendralizzate pe trasè adda essere mannate",
 	'globalgroupmembership' => "Membre jndr'à le gruppe globbale",
 	'globalgrouppermissions' => 'Gruppe de gestione globbale',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vide/cange]])',
@@ -33679,9 +33701,23 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-autologin-desc' => 'Trang đặc biệt này được MediaWiki dùng nội bộ.
 Khi bạn [[Special:UserLogin|đăng nhập]], hệ thống đăng nhập thống nhất sẽ hướng dẫn trình duyệt của bạn gửi yêu cầu trang này từ tất cả các không gian được liên kết đến, sử dụng liên kết hình ảnh.
 Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu xác nhận nào cả, do đó nó không làm gì hết.',
+	'centralautologin' => 'Đăng nhận trung tâm',
+	'centralauth-centralautologin-desc' => 'Trang đặc biệt này được sử dụng trong nội bộ của MediaWiki.
+Khi bạn truy cập vào một tên miền được liên kết trong khi không đăng nhập, hệ thống Trung tâm đăng nhập sử dụng Trang này để xác định liệu bạn đã đăng nhập vào tiên miền trung tâm chưa.
+Bạn đã yêu cầu Trang này mà không cung cấp bất kỳ dữ liệu xác thực, do đó, nó không có gì.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Bạn đã đăng nhập tại wiki đại phương',
+	'centralauth-centralautologin-badparams' => 'Tham số xác thực được chỉ định là không hợp lệ',
 	'centralauth-centralautologin-lostsession' => 'Mất dữ liệu phiên',
 	'centralauth-centralautologin-badstate' => 'Trạng thái “$1” không hợp lệ',
+	'centralauth-centralautologin-notposted' => 'Mẫu đăng nhận trung tâm phải được đăng',
+	'centralauth-centralautologin-badstate-central' => 'Tình trạng "$1" không hợp lệ trên wiki trung tâm',
+	'centralauth-centralautologin-badstate-local' => 'Tình trạng "$1" không hợp lệ ở wiki địa phương',
+	'centralauth-centralautologin-badwiki' => 'Wiki "$1" không hợp lệ cho việc đăng nhập trung tâm',
+	'centralauth-centralautologin-corsfail' => 'Kiểm tra nguồn gốc CORS thất bại',
+	'centralauth-centralautologin-p3p-explanation' => 'Một số trình duyệt yêu cầu một chính sách nén P3P cho các cookie để gửi hoặc nhận trong một số trường hợp, bao gồm tình huống liên quan đến kiểm tra đăng nhận SUL. Đây là một vòng không cần thiết để nhảy qua trong tình huống này, xem xét rằng tất cả các trang liên quan đến cùng một nhóm wiki và P3P chủ yếu là lỗi thời và không còn được sử dụng; may mắn thay, các chính sách không hợp lệ liên kết đến trang này hiện nay là "đủ tốt" theo cấu hình mặc định của các trình duyện này.
+
+Vui lòng xem lại chính sách bảo mật mà con người có thể đọc được của trang web này để xác định làm thế nào bất kỳ thông tin nào được thu thập có thể được sử dụng.',
+	'centralauth-centralautologin-logged-in' => 'Bạn đã đăng nhập trung tâm với tên $1. Tải lại trang để kích hoạt thiết lập trang các nhân của bản.',
 	'globalgroupmembership' => 'Thành viên trong nhóm toàn cục',
 	'globalgrouppermissions' => 'Quản lý nhóm toàn cục',
 	'centralauth-globalgroupperms-grouplist' => 'Những nhóm toàn cục sau đã được cấu hình. Bạn có thể xem và sửa quyền hạn của mỗi nhóm, nếu có đủ quyền. Một nhóm có thể bị xóa bằng cách loại tất cả các quyền của nó.',
@@ -33777,6 +33813,18 @@ Nếu bạn chỉ muốn đăng nhập dưới tên người dùng khác, xin vu
 	'centralauth-warning-notloggedin' => 'Bạn hiện không đăng nhập.',
 	'centralauth-warning-notattached' => 'Tài khoản địa phương chưa được đính kèm vào một tài khoản toàn cục.',
 	'centralauth-finishglobaliseemail_subject' => 'Xác nhận tài khoản {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Địa chỉ email của bạn đã được thiết lập liên kết với tài khoản " $2 " trên tất cả các dự án Wikimedia, với tài khoản chính của bạn
+trên {{SITENAME}}.
+
+Để xác nhận rằng tài khoản này thực sự thuộc về bạn, hợp nhất bất kỳ tài khoản nào của bạn mà chúng tôi không thể thực hiện tự động, và cho phép bạn khôi phục tài khoản của bạn nếu bạn quên mật khẩu, xin vui lòng mở liên kết này trong trình duyệt của bạn:
+
+$3
+
+Nếu tài khoản không *không* thuộc về bạn, hãy thực hiện theo liên kết này để hủy bỏ việc xác nhận địa chỉ email:
+
+$5
+
+Mã xác nhận này sẽ hết hiệu lực vào $4 .',
 );
 
 /** Volapük (Volapük)
