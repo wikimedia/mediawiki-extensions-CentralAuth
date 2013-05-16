@@ -210,6 +210,9 @@ $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.p
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
 
+// only used by maintenance/sendConfirmAndMigrateEmail.php
+$wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
+
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
 
