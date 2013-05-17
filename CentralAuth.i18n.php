@@ -260,8 +260,6 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
-	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
 
 	// Logging
@@ -319,8 +317,6 @@ You have requested this page without providing any authentication data, so it do
 
 Please review this site\'s human-readable privacy policy to determine how any information collected might be used.',
 	'centralauth-centralautologin-logged-in' => 'You are centrally logged in as $1. Reload the page to apply your user settings.',
-	'centralauth-edge-logging-in' => 'Now automatically logging you into other projects of {{int:Centralauth-groupname}}.',
-	'centralauth-edge-logged-in' => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
@@ -422,11 +418,6 @@ You may view and modify any of them, or create a new set.',
 
 	'centrallogin' => 'Central user log in',
 	'centralloginsuccesful' => 'Login successful',
-	'centralauth-completelogin-legend' => 'Complete login process',
-	'centralauth-completelogin-finishing' => 'Authenticating on Wikimedia Foundation sites, please wait...',
-	'centralauth-completelogin-text' => 'Authentication of your account on Wikimedia Foundation sites is almost complete! Use the button below to confirm and complete your login.',
-	'centralauth-completelogin-submit' => 'Log in now',
-	'centralauth-completelogin-back' => 'Return to the previous page.',
 
 	'centralauth-error-nologinattempt' => 'No active login attempt is in progress for your session.',
 	'centralauth-error-badtoken' => 'The provided authentication token is either expired or invalid.',
@@ -856,14 +847,6 @@ CORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/',
 	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds.
 * $1 - User name
 * $2 - User gender code {{gender}}',
-	'centralauth-edge-logging-in' => 'Message used from JavaScript to tell the user that they are being logged in to additional sites.
-* $1 - mw.user object {{gender}}
-Used with the following messages:
-* {{msg-mw|centralauth-edge-logged-in}}',
-	'centralauth-edge-logged-in' => 'Message used from JavaScript to tell the user that they have been logged in to additional sites.
-* $1 - mw.user object {{gender}}
-Used with the following messages:
-* {{msg-mw|centralauth-edge-logging-in}}',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
@@ -961,12 +944,6 @@ See also:
 	'centrallogin' => '{{doc-special|CentralLogin|unlisted=1}}',
 	'centralloginsuccesful' => 'Used as page title.
 {{Identical|Login successful}}',
-	'centralauth-completelogin-legend' => 'Used as the fieldset label.
-
-Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.',
-	'centralauth-completelogin-finishing' => 'Shown next to a spinner while the user is being logged in',
-	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
-	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
 	'centralauth-finishglobaliseemail_subject' => 'Subject field for account confirmation emails',
 	'centralauth-finishglobaliseemail_body' => 'Body text for account confirmation emails
