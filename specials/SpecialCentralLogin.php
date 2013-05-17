@@ -45,7 +45,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws MWException
 	 */
 	protected function doLoginStart( $token ) {
-		global $wgMemc, $wgCentralAuthSilentLogin;
+		global $wgMemc;
 
 		$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
 
@@ -123,28 +123,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		//currentProto = the login form's protocol, so we go back to here. May then redir to finalProto
 		$url = $info['currentProto'] . ':' . $url;
 
-		if ( $wgCentralAuthSilentLogin ) {
-			$url = wfAppendQuery( $url, array( 'token' => $token ) ); // expands to PROTO_CURRENT if $url doesn't have protocol
-			wfRunHooks( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
-			$this->getOutput()->redirect( $url );
-		} else {
-			$this->getOutput()->addHtml(
-				Xml::openElement( 'form',
-				array( 'method' => 'post', 'action' => $url, 'id' => 'mw-centralloginform' ) ) .
-				Html::rawElement( 'p', null,
-					$this->msg( 'centralauth-completelogin-text' )->parse() ) .
-					Html::hidden( 'token', $token ) .
-					Xml::openElement( 'fieldset' ) .
-					Html::rawElement( 'legend',
-						null, $this->msg( 'centralauth-completelogin-legend' )->parse() ) .
-						Xml::submitButton( $this->msg( 'centralauth-completelogin-submit' )->text() ) .
-						Xml::closeElement( 'fieldset' ) .
-						Xml::closeElement( 'form' ) . "\n"
-					);
-			$this->getOutput()->addInlineStyle( // hide the form and let JS submit it
-				'.client-js #mw-centralloginform { display: none; }'
-			);
-		}
+		$url = wfAppendQuery( $url, array( 'token' => $token ) ); // expands to PROTO_CURRENT if $url doesn't have protocol
+		wfRunHooks( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
+		$this->getOutput()->redirect( $url );
 	}
 
 	/**
@@ -153,7 +134,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 */
 	protected function doLoginComplete( $token ) {
 		global $wgUser, $wgMemc, $wgSecureLogin;
-		global $wgCentralAuthSilentLogin;
 
 		$request = $this->getRequest();
 
@@ -215,41 +195,27 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
 
-		if ( $wgCentralAuthSilentLogin ) {
-			// Mark the session to include the edge login imgs on the next pageview
-			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+		// Mark the session to include the edge login imgs on the next pageview
+		$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 
-			// Show the login success page
-			$form = new LoginForm( new FauxRequest() );
+		// Show the login success page
+		$form = new LoginForm( new FauxRequest() );
 
-			// Allow other extensions to modify the returnTo and returnToQuery
-			wfRunHooks( 'CentralAuthPostLoginRedirect', array(
-				&$attempt['returnTo'],
-				&$attempt['returnToQuery'],
-				$attempt['stickHTTPS'],
-				$attempt['type']
-			) );
+		// Allow other extensions to modify the returnTo and returnToQuery
+		wfRunHooks( 'CentralAuthPostLoginRedirect', array(
+			&$attempt['returnTo'],
+			&$attempt['returnToQuery'],
+			$attempt['stickHTTPS'],
+			$attempt['type']
+		) );
 
-			$form->showReturnToPage(
-				'successredirect',
-				$attempt['returnTo'],
-				$attempt['returnToQuery'],
-				( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
-			);
-			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-		} else {
-			// Show the login success page
-			$form = new LoginForm( new FauxRequest() );
-			$form->showReturnToPage( 'success',
-				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
-			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-
-			// Show HTML to trigger cross-domain cookies.
-			// This will trigger filling in the "remember me" token cookie on the
-			// central wiki, which can only be done once authorization is completed.
-			$this->getOutput()->addHtml(
-				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
-		}
+		$form->showReturnToPage(
+			'successredirect',
+			$attempt['returnTo'],
+			$attempt['returnToQuery'],
+			( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
+		);
+		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 	}
 
 	protected function showLoginStatus() {

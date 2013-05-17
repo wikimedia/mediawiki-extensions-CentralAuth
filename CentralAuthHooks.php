@@ -287,7 +287,6 @@ class CentralAuthHooks {
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthCookies;
-		global $wgCentralAuthSilentLogin;
 
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
@@ -300,21 +299,8 @@ class CentralAuthHooks {
 			return true;
 		}
 
-		if ( $wgCentralAuthSilentLogin ) {
-			// Redirect to the central wiki and back to complete login, if necessary
-			self::doCentralLoginRedirect( $user, $centralUser, $inject_html );
-		} else {
-			if ( $wgCentralAuthLoginWiki ) {
-				// Set $inject_html to some text to bypass the LoginForm redirection
-				$inject_html .= wfMessage( 'centralauth-login-no-others' )->escaped();
-				// Redirect to the central wiki and back to complete login
-				$dummy = '';
-				self::doCentralLoginRedirect( $user, $centralUser, $dummy );
-			} else {
-				// Show HTML to create cross-domain cookies
-				$inject_html .= self::getDomainAutoLoginHtml( $user, $centralUser );
-			}
-		}
+		// Redirect to the central wiki and back to complete login, if necessary
+		self::doCentralLoginRedirect( $user, $centralUser, $inject_html );
 
 		return true;
 	}
@@ -1121,19 +1107,16 @@ class CentralAuthHooks {
 
 			if ( $out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' ) ) {
 				$out->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', null );
-				global $wgCentralAuthSilentLogin;
-				if ( $wgCentralAuthSilentLogin ) {
-					$out->addHTML( self::getEdgeLoginHTML() );
+				$out->addHTML( self::getEdgeLoginHTML() );
 
-					if ( $wgCentralAuthUseEventLogging ) {
-						// Need to correlate user_id across wikis
-						efLogServerSideEvent( 'CentralAuth', 5690875,
-							array( 'version' => 1,
-								'userId' => $centralUser->getId(),
-								'action' => 'sul2-autologin-login'
-							)
-						);
-					}
+				if ( $wgCentralAuthUseEventLogging ) {
+					// Need to correlate user_id across wikis
+					efLogServerSideEvent( 'CentralAuth', 5690875,
+						array( 'version' => 1,
+							'userId' => $centralUser->getId(),
+							'action' => 'sul2-autologin-login'
+						)
+					);
 				}
 			}
 		}

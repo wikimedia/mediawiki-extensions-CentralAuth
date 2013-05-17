@@ -118,12 +118,6 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
 $wgCentralAuthAutoLoginWikis = array();
 
 /**
- * Whether login should be done silently (with 302 redirects)
- * Note this may eventually be defaulted to true and removed.
- */
-$wgCentralAuthSilentLogin = false;
-
-/**
  * Local filesystem path to the icon returned by Special:CentralAutoLogin
  * Should be a 20x20px PNG.
  */
@@ -408,7 +402,6 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-merge-method-login-desc',
 		'centralauth-admin-delete-confirm',
 		'centralauth-completelogin-back',
-		'centralauth-completelogin-finishing'
 	),
 ) + $commonModuleInfo;
 $wgResourceModules['ext.centralauth.centralautologin'] = array(

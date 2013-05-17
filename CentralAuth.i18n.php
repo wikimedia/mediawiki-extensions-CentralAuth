@@ -424,10 +424,6 @@ You may view and modify any of them, or create a new set.',
 
 	'centrallogin' => 'Central user log in',
 	'centralloginsuccesful' => 'Login successful',
-	'centralauth-completelogin-legend' => 'Complete login process',
-	'centralauth-completelogin-finishing' => 'Authenticating on Wikimedia Foundation sites, please wait...',
-	'centralauth-completelogin-text' => 'Authentication of your account on Wikimedia Foundation sites is almost complete! Use the button below to confirm and complete your login.',
-	'centralauth-completelogin-submit' => 'Log in now',
 	'centralauth-completelogin-back' => 'Return to the previous page.',
 
 	'centralauth-error-nologinattempt' => 'No active login attempt is in progress for your session.',
@@ -1114,11 +1110,6 @@ See also:
 	'centrallogin' => '{{doc-special|CentralLogin|unlisted=1}}',
 	'centralloginsuccesful' => 'Used as page title.
 {{Identical|Login successful}}',
-	'centralauth-completelogin-legend' => 'Used as the fieldset label.
-
-Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.',
-	'centralauth-completelogin-finishing' => 'Shown next to a spinner while the user is being logged in',
-	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
 	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-error-token-wronguser' => 'Used as error message.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
