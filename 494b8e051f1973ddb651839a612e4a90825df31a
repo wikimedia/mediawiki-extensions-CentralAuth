@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DxXdOsMI",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-17T14:25:24Z",
+      "side": 1,
+      "message": "This one is called from CentralAuthUser. In this, it\u0027s similar to getDomainAutoLoginIconHtml.",
+      "parentUuid": "DxXEtIKg",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxTEMOEI",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-17T06:41:00Z",
       "side": 1,
       "message": "What happens if there is no local account? Where does it get created automatically?",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxbfxWGw",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-17T14:25:24Z",
+      "side": 1,
+      "message": "It gets created in onUserLoadFromSession(), the same way it does now with the cookie-based central login.",
+      "parentUuid": "DxTEMOEI",
       "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2013-05-17T06:41:00Z",
       "side": 1,
       "message": "If the parameter to getApiCentralUser() took constants/strings this will a bit more obvious (e.g. \"consumeToken\" ).",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dxbea.A8",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-17T14:25:24Z",
+      "side": 1,
+      "message": "True. I just hate defining constants that are only ever going to be used once, or using strings that are only ever going to be synonyms for \"yes\" and \"no\".",
+      "parentUuid": "DxczPN4s",
       "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
