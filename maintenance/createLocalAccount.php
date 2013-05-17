@@ -16,22 +16,20 @@ class CreateLocalAccount extends Maintenance {
 	public function execute() {
 		$username = $this->getArg( 0 );
 		if ( !User::isValidUserName( $username ) ) {
-			$this->error( "'$username' is an invalid username\n" );
-			die( 1 );
+			$this->error( "'$username' is an invalid username\n", 1 );
 		}
 
 		$user = User::newFromName( $username );
 		// Normalize username
 		$username = $user->getName();
 		if ( $user->getId() ) {
-			$this->error( "User '$username' already exists\n" );
+			$this->error( "User '$username' already exists\n", 1 );
 		} else {
 			global $wgAuth;
 
 			$central = CentralAuthUser::getInstance( $user );
 			if ( !$central->exists() ) {
-				$this->error( "No such global user: '$username'\n" );
-				die( 1 );
+				$this->error( "No such global user: '$username'\n", 1 );
 			}
 
 			$user->loadDefaults( $username );
@@ -47,7 +45,7 @@ class CreateLocalAccount extends Maintenance {
 			# Update user count
 			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
 			$ssUpdate->doUpdate();
-			$this->output( "User '$username' created" );
+			$this->output( "User '$username' created\n" );
 		}
 	}
 }
