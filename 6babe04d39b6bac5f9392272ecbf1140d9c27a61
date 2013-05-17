@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DxeYuj0M",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T17:22:25Z",
+      "side": 1,
+      "message": "I didn\u0027t know what other lines that patch changed.",
+      "parentUuid": "DxfIUjvU",
+      "revId": "6babe04d39b6bac5f9392272ecbf1140d9c27a61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxZIEKsQ",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "DxcYzk6k",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T17:22:25Z",
+      "side": 1,
+      "message": "Same",
+      "parentUuid": "DxZIEKsQ",
+      "revId": "6babe04d39b6bac5f9392272ecbf1140d9c27a61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxVLHQpk",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-05-17T15:12:18Z",
       "side": 1,
       "message": "I\u0027m not too fond of losing the collision avoidance, but if you insist.",
+      "revId": "6babe04d39b6bac5f9392272ecbf1140d9c27a61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxSYplzo",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T17:22:25Z",
+      "side": 1,
+      "message": "I think this was just lost in the conflict merge.",
+      "parentUuid": "DxVLHQpk",
       "revId": "6babe04d39b6bac5f9392272ecbf1140d9c27a61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
