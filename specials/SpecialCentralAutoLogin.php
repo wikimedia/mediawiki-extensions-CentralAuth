@@ -297,34 +297,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$data['script'] = 'top.location.href = ' . Xml::encodeJsVar( $url ) . ';';
 				break;
 
-			case 'NW':
-				// To avoid cross-domain restrictions, we have
-				// to redirect to the original domain now. But
-				// don't actually redirect, to make sure
-				// cookies get set first.
-				$data['params']['domain'] = CentralAuthUser::getCookieDomain();
-				$data['nextState'] = 'NW';
-				break;
-
 			case 'null':
 				break;
 			}
-			break;
-
-		case 'NW':
-			$this->isForm = true;
-			$domain = $this->getRequest()->getVal( 'domain' );
-			$msg = FormatJson::decode( $this->getRequest()->getVal( 'msg', 'null' ) );
-			$data = array(
-				'status' => 'ok',
-				'script' => XML::encodeJsCall(
-					'top.mw.CentralAuth.edgeLoginComplete', array(
-						new XmlJsCode( 'window.frameElement' ),
-						$domain, $msg
-					)
-				),
-				'params' => array(),
-			);
 			break;
 
 		default:
@@ -333,24 +308,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'msg' => array( 'centralauth-centralautologin-badstate', $par ),
 			);
 			break;
-		}
-
-		// Send notification to the login progress bar
-		if ( $this->isForm && $data['status'] === 'error'
-			&& $this->getRequest()->getVal( 'oncomplete', 'mw.notify' ) === 'NW' ) {
-			if ( $data['msg'][0] == 'centralauth-centralautologin-alreadyloggedinlocally' ) {
-				$domain = CentralAuthUser::getCookieDomain();
-			} else {
-				$domain = null;
-			}
-			$data = array(
-				'status' => 'ok',
-				'nextState' => 'NW',
-				'params' => array(
-					'domain' => $domain,
-					'msg' => FormatJson::encode( $data['msg'] ),
-				),
-			);
 		}
 
 		$this->outputData( $data );
@@ -485,10 +442,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					switch ( substr( $data['nextState'], 0, 1 ) ) {
 					case 'C':
 						$target = $this->loginWiki;
-						break;
-
-					case 'N':
-						$target = $this->getRequest()->getVal( 'notifywiki', wfWikiID() );
 						break;
 
 					default:

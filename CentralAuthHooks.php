@@ -287,7 +287,6 @@ class CentralAuthHooks {
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthCookies;
-		global $wgCentralAuthSilentLogin;
 
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
@@ -300,61 +299,10 @@ class CentralAuthHooks {
 			return true;
 		}
 
-		if ( $wgCentralAuthSilentLogin ) {
-			// Redirect to the central wiki and back to complete login, if necessary
-			self::doCentralLoginRedirect( $user, $centralUser, $inject_html );
-		} else {
-			if ( $wgCentralAuthLoginWiki ) {
-				// Set $inject_html to some text to bypass the LoginForm redirection
-				$inject_html .= wfMessage( 'centralauth-login-no-others' )->text();
-				// Redirect to the central wiki and back to complete login
-				$dummy = '';
-				self::doCentralLoginRedirect( $user, $centralUser, $dummy );
-			} else {
-				// Show HTML to create cross-domain cookies
-				$inject_html .= self::getDomainAutoLoginHtml( $user, $centralUser );
-			}
-		}
+		// Redirect to the central wiki and back to complete login, if necessary
+		self::doCentralLoginRedirect( $user, $centralUser, $inject_html );
 
 		return true;
-	}
-
-	/**
-	 * @deprecated Only used when $wgCentralAuthSilentLogin is false
-	 * @param User $user
-	 * @param CentralAuthUser $centralUser
-	 * @return String
-	 */
-	public static function getDomainAutoLoginHtml( User $user, CentralAuthUser $centralUser ) {
-		global $wgCentralAuthAutoLoginWikis;
-
-		// No other domains
-		if ( !$wgCentralAuthAutoLoginWikis ) {
-			return wfMessage( 'centralauth-login-no-others' )->text();
-		}
-
-		$out = RequestContext::getMain()->getOutput();
-		$out->addInlineStyle( // hide the non-JS text
-			'.client-js #centralauth-edge-login-info { display: none; }'
-		);
-		$out->addModules( 'ext.centralauth.edgeautologin.nonsilent' );
-		$inject_html = '<div id="centralauth-edge-login-info" class="centralauth-login-box">' .
-			wfMessage( 'centralauth-login-no-others' )->text() .
-			"</div>\n";
-		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
-			$wiki = WikiMap::getWiki( $wiki );
-			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/L0' ), array(
-				'oncomplete' => 'NW',
-				'notifywiki' => wfWikiID(),
-			) );
-			$inject_html .= Xml::element( 'span',
-				array( 'class' => 'centralauth-edge-login-url', 'data-src' => $url ),
-				'', false
-			);
-		}
-
-		return $inject_html;
 	}
 
 	/**
@@ -976,10 +924,7 @@ class CentralAuthHooks {
 		} else {
 			if ( $out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' ) ) {
 				$out->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', null );
-				global $wgCentralAuthSilentLogin;
-				if ( $wgCentralAuthSilentLogin ) {
-					$out->addModules( 'ext.centralauth.edgeautologin' );
-				}
+				$out->addModules( 'ext.centralauth.edgeautologin' );
 			}
 		}
 		return true;

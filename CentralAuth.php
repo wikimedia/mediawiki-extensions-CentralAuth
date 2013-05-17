@@ -118,12 +118,6 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
 $wgCentralAuthAutoLoginWikis = array();
 
 /**
- * Whether login should be done silently (with 302 redirects)
- * Note this may eventually be defaulted to true and removed.
- */
-$wgCentralAuthSilentLogin = false;
-
-/**
  * Local filesystem path to the icon returned by Special:AutoLogin
  * Should be a 20x20px PNG.
  */
@@ -377,24 +371,6 @@ $wgResourceModules['ext.centralauth.centralautologin'] = array(
 ) + $commonModuleInfo;
 $wgResourceModules['ext.centralauth.edgeautologin'] = array(
 	'scripts' => 'ext.centralauth.edgeautologin.js',
-) + $commonModuleInfo;
-$wgResourceModules['ext.centralauth.edgeautologin.nonsilent'] = array(
-	'scripts' => 'ext.centralauth.edgeautologin.nonsilent.js',
-	'styles' => 'ext.centralauth.edgeautologin.nonsilent.css',
-	'position' => 'top',
-	'dependencies' => array(
-		'mediawiki.jqueryMsg',
-		'jquery.ui.progressbar',
-	),
-	'messages' => array(
-		'centralauth-edge-logging-in',
-		'centralauth-edge-logged-in',
-		'centralauth-edge-logged-in-list',
-		'centralauth-groupname',
-		'and',
-		'word-separator',
-		'comma-separator',
-	),
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.noflash'] = array(
