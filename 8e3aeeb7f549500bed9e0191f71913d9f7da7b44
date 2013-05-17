@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DxYYtC6s",
+        "filename": "ConfirmAndMigrateUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-17T19:20:37Z",
+      "side": 1,
+      "message": "Minor, but maybe call this EmailableUser? I think we\u0027re going to want add to this for sending other centralauth email before we\u0027re done.",
+      "revId": "8e3aeeb7f549500bed9e0191f71913d9f7da7b44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
