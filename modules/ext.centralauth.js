@@ -43,22 +43,6 @@
 	$( document ).ready( function () {
 		/*global confirm */
 
-		// Automatic form submission on CentralLogin/start
-		$( '#mw-centralloginform' )
-			.before( $( '<p>' + mw.msg( 'centralauth-completelogin-finishing' ) + '</p>' ) )
-			.before( $.createSpinner({ size: 'small', type: 'inline' }) );
-		setTimeout( function () { $( '#mw-centralloginform' ).submit(); }, 600 );
-		// Back link for CentralLogin/start
-		$( '#centralauth-backlink-section' ).append(
-			$( '<a>' )
-				.attr( 'href', '#' )
-				.text( mw.msg( 'centralauth-completelogin-back' ) )
-				.click( function( e ) {
-					e.preventDefault();
-					parent.history.back();
-				} )
-		);
-
 		// OnClick event listener for the "(?)" tooltips on Special:CentralAuth
 		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function ( event ) {
 			showMethodHint( $(this).data( 'centralauth-mergemethod' ), event );
