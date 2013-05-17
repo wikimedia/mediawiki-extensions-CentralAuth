@@ -118,12 +118,6 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
 $wgCentralAuthAutoLoginWikis = array();
 
 /**
- * Local filesystem path to the icon returned by Special:AutoLogin
- * Should be a 20x20px PNG.
- */
-$wgCentralAuthLoginIcon = false;
-
-/**
  * Specify a P3P header value to be used when setting CentralAuth cookies on
  * the login wiki ($wgCentralAuthLoginWiki).
  *
@@ -195,7 +189,6 @@ $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/SuppressUserJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
-$wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/specials/SpecialAutoLogin.php";
 $wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
@@ -270,7 +263,6 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['CentralLogin'] = 'SpecialCentralLogin';
-$wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['CentralAutoLogin'] = 'SpecialCentralAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
