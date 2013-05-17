@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dxfy9gGM",
+        "filename": "maintenance/checkLocalNames.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-17T22:54:47Z",
+      "side": 1,
+      "message": "I think you want $result \u003d $centralSlave-\u003eselect( \u0027localnames\u0027,array( \u0027DISTINCT ln_wiki\u0027 ), \"\", __FUNCTION__, array( \"order by\" \u003d\u003e \"ln_wiki ASC\" ));",
+      "revId": "21c7c26c70871c7e43d267ac6be8226d93df7ad0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxXx7MLw",
+        "filename": "maintenance/checkLocalNames.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-17T22:54:47Z",
+      "side": 1,
+      "message": "\u0027ln_wiki\u0027 \u003d\u003e $wiki,",
+      "revId": "21c7c26c70871c7e43d267ac6be8226d93df7ad0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxdxIhI4",
+        "filename": "maintenance/checkLocalNames.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-17T22:54:47Z",
+      "side": 1,
+      "message": "\u0027limit\u0027 \u003d\u003e $this-\u003ebatchSize, \u0027ORDER BY\u0027 \u003d\u003e \u0027ln_name ASC\u0027",
+      "revId": "21c7c26c70871c7e43d267ac6be8226d93df7ad0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
