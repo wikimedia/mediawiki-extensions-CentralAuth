@@ -34,6 +34,24 @@
       "revId": "0f18dbbacf8671c1df2d778bdeebcb22e95dcc7c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxRzoLLU",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-05-17T21:30:37Z",
+      "side": 1,
+      "message": "User foo has local accounts on hewiki and enwiki, both the same password. Accounts renamed to foo~hewiki and foo~enwiki and globalized. If the user logs into hewiki as foo, login fails, we query the db and get (foo~enwiki, foo~hewiki), and attempt to login user foo~enwiki with the password. The login succeeds. So they\u0027re logged in as foo~enwiki on hewiki... which seems like it would cause confusion if they immediately try and request a rename. Or worse, make an edit, then they have 2 foo~X accounts on the wiki that will need to be merged.\n\nOTOH, you can make the case we\u0027ll need to merge the accounts anyway, so a one more place to merge probably isn\u0027t the end of the world.\n\nBut I\u0027d rather not make life more difficult if we can avoid it.",
+      "parentUuid": "DxcmFZF0",
+      "revId": "0f18dbbacf8671c1df2d778bdeebcb22e95dcc7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
