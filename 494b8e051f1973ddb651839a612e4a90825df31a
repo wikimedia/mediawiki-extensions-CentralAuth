@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "DxYbrS90",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T17:57:39Z",
+      "side": 1,
+      "message": "Right. Maybe it doesn\u0027t belong in the hook class then.",
+      "parentUuid": "DxXdOsMI",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxTEMOEI",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 4
