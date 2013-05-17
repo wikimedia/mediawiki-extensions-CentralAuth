@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DxXEtIKg",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T06:41:00Z",
+      "side": 1,
+      "message": "Since this is not actually a hook handler, it would be nice to mark it as protected to make that obvious. The same with any similar functions below.",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxTEMOEI",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T06:41:00Z",
+      "side": 1,
+      "message": "What happens if there is no local account? Where does it get created automatically?",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxdEaNHo",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T06:41:00Z",
+      "side": 1,
+      "message": "Ah, for some reason I thought setting this made PHP also *send* cookies, which it doesn\u0027t. I was a bit confused about that earlier.",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxWwaYxU",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T06:41:00Z",
+      "side": 1,
+      "message": "TTL might be too low per Tim\u0027s comment elsewhere. It could be 60.",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxczPN4s",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T06:41:00Z",
+      "side": 1,
+      "message": "If the parameter to getApiCentralUser() took constants/strings this will a bit more obvious (e.g. \"consumeToken\" ).",
+      "revId": "494b8e051f1973ddb651839a612e4a90825df31a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
