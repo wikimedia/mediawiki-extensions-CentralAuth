@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "Dw-r7tkI",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-17T01:36:33Z",
+      "side": 1,
+      "message": "Then this one can use SHA1 and another patch could change the existing instances.",
+      "parentUuid": "Dw8YwogM",
+      "revId": "7255c4734f4c45459e566efe8bc243d4caf7f17f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DwyYLTic",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 3
