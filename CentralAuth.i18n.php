@@ -260,10 +260,6 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
-	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
-	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
-	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
 
 	// Logging
@@ -422,10 +418,7 @@ You may view and modify any of them, or create a new set.',
 
 	'centrallogin' => 'Central user log in',
 	'centralloginsuccesful' => 'Login successful',
-	'centralauth-completelogin-legend' => 'Complete login process',
 	'centralauth-completelogin-finishing' => 'Authenticating on Wikimedia Foundation sites, please wait...',
-	'centralauth-completelogin-text' => 'Authentication of your account on Wikimedia Foundation sites is almost complete! Use the button below to confirm and complete your login.',
-	'centralauth-completelogin-submit' => 'Log in now',
 	'centralauth-completelogin-back' => 'Return to the previous page.',
 
 	'centralauth-error-nologinattempt' => 'No active login attempt is in progress for your session.',
@@ -497,9 +490,7 @@ This confirmation code will expire on $6 at $7.'
 $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|MergeAccount}}',
 	'centralauth-groupname' => 'Used within the following messages:
-* {{msg-mw|centralauth-incomplete-text}}
-* {{msg-mw|centralauth-login-progress}}
-* {{msg-mw|centralauth-logout-progress}}',
+* {{msg-mw|centralauth-incomplete-text}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -761,8 +752,6 @@ Shown when the migration is incomplete.',
 *$1 is wiki name',
 	'centralauth-account-exists-reset' => "Parameters:
 * $1 - global user's name",
-	'centralauth-login-progress' => '{{gender}}
-* (optional) $1 is the user name of the logged in user',
 	'centralauth-hidden-blockreason' => 'Unused at this time. Parameters:
 * $1 - username
 * $2 - ...
@@ -957,11 +946,7 @@ See also:
 	'centrallogin' => '{{doc-special|CentralLogin|unlisted=1}}',
 	'centralloginsuccesful' => 'Used as page title.
 {{Identical|Login successful}}',
-	'centralauth-completelogin-legend' => 'Used as the fieldset label.
-
-Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.',
 	'centralauth-completelogin-finishing' => 'Shown next to a spinner while the user is being logged in',
-	'centralauth-completelogin-submit' => 'Used as label for the Submit button.',
 	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
 	'centralauth-finishglobaliseemail_subject' => 'Subject field for account confirmation emails',
