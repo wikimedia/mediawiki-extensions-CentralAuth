@@ -305,8 +305,8 @@ class CentralAuthHooks {
 			// Redirect to the central wiki and back to complete login
 			self::doCentralLoginRedirect( $user, $centralUser );
 		} else {
-			// Show icons to AutoLogin special page to create cross-domain cookies
-			$inject_html .= self::getDomainAutoLoginIconHtml( $user, $centralUser );
+			// Show HTML to create cross-domain cookies
+			$inject_html .= self::getDomainAutoLoginHtml( $user, $centralUser );
 		}
 
 		return true;
@@ -317,50 +317,34 @@ class CentralAuthHooks {
 	 * @param CentralAuthUser $centralUser
 	 * @return String
 	 */
-	public static function getDomainAutoLoginIconHtml( User $user, CentralAuthUser $centralUser ) {
-		global $wgCentralAuthAutoLoginWikis, $wgCentralAuthLoginWiki, $wgMemc;
+	public static function getDomainAutoLoginHtml( User $user, CentralAuthUser $centralUser ) {
+		global $wgCentralAuthAutoLoginWikis;
 
-		$wikis = $wgCentralAuthAutoLoginWikis;
-		if ( $wgCentralAuthLoginWiki ) {
-			// Make sure the user gets any "remember me" token set on the central login wiki
-			$wikis[] = $wgCentralAuthLoginWiki;
-		}
-
-		// On other domains
-		if ( !$wikis ) {
+		// No other domains
+		if ( !$wgCentralAuthAutoLoginWikis ) {
 			return wfMessage( 'centralauth-login-no-others' )->text();
 		}
 
-		$inject_html = '<div class="centralauth-login-box"><p>' .
-			wfMessage( 'centralauth-login-progress', $user->getName() )->text() . "</p>\n<p>";
-		foreach ( $wikis as $alt => $wiki ) {
-			$data = array(
-				'userName' => $user->getName(),
-				'token' => $centralUser->getAuthToken(),
-				'remember' => $user->getOption( 'rememberpassword' ),
-				'wiki' => $wiki
-			);
-
-			$loginToken = MWCryptRand::generateHex( 32 );
-			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
-
+		$out = RequestContext::getMain()->getOutput();
+		$out->addInlineStyle( // hide the non-JS text
+			'.client-js #centralauth-edge-login-info { display: none; }'
+		);
+		$out->addModules( 'ext.centralauth.edgeautologin' );
+		$inject_html = '<div id="centralauth-edge-login-info" class="centralauth-login-box">' .
+			wfMessage( 'centralauth-login-no-others' )->text() .
+			"</div>\n";
+		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$wiki = WikiMap::getWiki( $wiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:AutoLogin' ), "token=$loginToken" );
-
-			$inject_html .= Xml::element( 'img',
-				array(
-					'src' => $url,
-					'alt' => $alt,
-					'title' => $alt,
-					'width' => 20,
-					'height' => 20,
-					'style' => 'border: 1px solid #ccc;',
-				)
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/L0' ), array(
+				'oncomplete' => 'NW',
+				'notifywiki' => wfWikiID(),
+			) );
+			$inject_html .= Xml::element( 'span',
+				array( 'class' => 'centralauth-edge-login-url', 'data-src' => $url ),
+				'', false
 			);
 		}
-
-		$inject_html .= '</p></div>';
 
 		return $inject_html;
 	}
@@ -556,79 +540,6 @@ class CentralAuthHooks {
 			$centralUser->resetAuthToken();
 		}
 
-		return true;
-	}
-
-	/**
-	 * @param $user
-	 * @param $inject_html
-	 * @param $userName
-	 * @return bool
-	 */
-	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
-		global $wgCentralAuthCookies, $wgCentralAuthAutoLoginWikis, $wgCentralAuthLoginWiki;
-
-		if ( !$wgCentralAuthCookies ) {
-			// Nothing to do.
-			return true;
-		}
-
-		$wikis = $wgCentralAuthAutoLoginWikis;
-		if ( $wgCentralAuthLoginWiki ) {
-			// Make sure the user gets logged out on the central login wiki
-			$wikis[] = $wgCentralAuthLoginWiki;
-		}
-
-		if ( !$wikis ) {
-			$inject_html .= wfMessage( 'centralauth-logout-no-others' )->parseAsBlock();
-			return true;
-		}
-
-		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
-			return true;
-		}
-
-		// Generate the images
-		$inject_html .= '<div class="centralauth-logout-box"><p>' .
-			wfMessage( 'centralauth-logout-progress' )->escaped() . "</p>\n<p>";
-		$centralUser = new CentralAuthUser( $userName );
-
-		foreach ( $wikis as $alt => $wiki ) {
-			$data = array(
-				'userName' => $userName,
-				'token' => $centralUser->getAuthToken(),
-				'remember' => false,
-				'wiki' => $wiki,
-				'action' => 'logout'
-			);
-			$loginToken = MWCryptRand::generateHex( 32 );
-			global $wgMemc;
-			$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
-
-			$wiki = WikiMap::getWiki( $wiki );
-			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = $wiki->getFullUrl( 'Special:AutoLogin' );
-
-			if ( strpos( $url, '?' ) > 0 ) {
-				$url .= "&logout=1&token=$loginToken";
-			} else {
-				$url .= "?logout=1&token=$loginToken";
-			}
-
-			$inject_html .= Xml::element( 'img',
-				array(
-					'src' => $url,
-					'alt' => $alt,
-					'title' => $alt,
-					'width' => 20,
-					'height' => 20,
-					'style' => 'border: 1px solid #ccc;',
-				)
-			);
-		}
-
-		$inject_html .= '</p></div>';
 		return true;
 	}
 

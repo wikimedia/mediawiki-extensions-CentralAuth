@@ -7,13 +7,26 @@
  */
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private $isForm = false;
+	private $loginWiki;
 
 	function __construct() {
 		parent::__construct( 'CentralAutoLogin' );
 	}
 
 	function execute( $par ) {
-		global $wgMemc, $wgUser;
+		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
+
+		$this->loginWiki = $wgCentralAuthLoginWiki;
+		if ( !$this->loginWiki ) {
+			// Ugh, no central wiki. If we're coming from the iframes generated
+			// by CentralAuthHooks::getDomainAutoLoginHtml, make the
+			// logged-into wiki the de-facto central wiki for this request so
+			// auto-login still works.
+			$notifywiki = $this->getRequest()->getVal( 'notifywiki' );
+			if ( $notifywiki !== null && WikiMap::getWiki( $notifywiki ) ) {
+				$this->loginWiki = $notifywiki;
+			}
+		}
 
 		switch ( strval( $par ) ) {
 		case '': // also null and false
@@ -282,8 +295,32 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'returntoquery' => $request->getVal( 'returntoquery' ),
 				) );
 				$data['script'] = 'top.location.href = ' . Xml::encodeJsVar( $url ) . ';';
+
+			case 'NW':
+				// To avoid cross-domain restrictions, we have
+				// to redirect to the original domain now. But
+				// don't actually redirect, to make sure
+				// cookies get set first.
+				$data['params']['domain'] = CentralAuthUser::getCookieDomain();
+				$data['nextState'] = 'NW';
 				break;
 			}
+			break;
+
+		case 'NW':
+			$this->isForm = true;
+			$domain = $this->getRequest()->getVal( 'domain' );
+			$msg = FormatJson::decode( $this->getRequest()->getVal( 'msg', 'null' ) );
+			$data = array(
+				'status' => 'ok',
+				'script' => XML::encodeJsCall(
+					'top.mw.CentralAuth.edgeLoginComplete', array(
+						new XmlJsCode( 'window.frameElement' ),
+						$domain, $msg
+					)
+				),
+				'params' => array(),
+			);
 			break;
 
 		default:
@@ -294,12 +331,28 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			break;
 		}
 
+		// Send notification to the login progress bar
+		if ( $this->isForm && $data['status'] === 'error'
+			&& $this->getRequest()->getVal( 'oncomplete', 'mw.notify' ) === 'NW' ) {
+			if ( $data['msg'][0] == 'centralauth-centralautologin-alreadyloggedinlocally' ) {
+				$domain = CentralAuthUser::getCookieDomain();
+			} else {
+				$domain = null;
+			}
+			$data = array(
+				'status' => 'ok',
+				'nextState' => 'NW',
+				'params' => array(
+					'domain' => $domain,
+					'msg' => FormatJson::encode( $data['msg'] ),
+				),
+			);
+		}
+
 		$this->outputData( $data );
 	}
 
 	private function checkInputState( $par, $central ) {
-		global $wgCentralAuthLoginWiki;
-
 		$request = $this->getRequest();
 		$this->isForm = $request->getBool( 'form' );
 
@@ -313,7 +366,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Validate the state for this wiki
 		if ( $central ) {
-			if ( wfWikiID() !== $wgCentralAuthLoginWiki ) {
+			if ( wfWikiID() !== $this->loginWiki ) {
 				return array(
 					'status' => 'error',
 					'msg' => array( 'centralauth-centralautologin-badstate-central', $par ),
@@ -321,7 +374,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			$wikiId = $request->getVal( 'wikiid' );
-			if ( $wikiId === $wgCentralAuthLoginWiki ) {
+			if ( $wikiId === $this->loginWiki ) {
 				return array(
 					'status' => 'error',
 					'msg' => array( 'centralauth-centralautologin-badwiki', $wikiId ),
@@ -369,7 +422,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->getOutput()->addVaryHeader( 'Origin' );
 			}
 		} else {
-			if ( wfWikiID() === $wgCentralAuthLoginWiki ) {
+			if ( wfWikiID() === $this->loginWiki ) {
 				return array(
 					'status' => 'error',
 					'msg' => array( 'centralauth-centralautologin-badstate-local', $par ),
@@ -425,28 +478,38 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				if ( isset( $data['nextState'] ) ) {
+					switch ( substr( $data['nextState'], 0, 1 ) ) {
+					case 'C':
+						$target = $this->loginWiki;
+						break;
+
+					case 'N':
+						$target = $this->getRequest()->getVal( 'notifywiki', wfWikiID() );
+						break;
+
+					default:
+						$target = $this->getRequest()->getVal( 'wikiid', wfWikiID() );
+						break;
+					}
+					$action = WikiMap::getForeignURL( $target, 'Special:CentralAutoLogin/' . $data['nextState'] );
+					if ( $action === false ) {
+						$script = '';
+						$body = wfMessage( 'centralauth-centralautologin-badwiki', $target )->escaped();
+						break;
+					}
+
 					$script .= "\n\nfunction doSubmit() {\n" .
 						"\tif ( document.forms[0] ) {\n" .
 						"\t\tdocument.forms[0].submit();\n" .
 						"\t}\n" .
 						"}";
 					$bodyParams['onload'] = 'doSubmit()';
-
-					switch ( substr( $data['nextState'], 0, 1 ) ) {
-					case 'C':
-						global $wgCentralAuthLoginWiki;
-						$target = $wgCentralAuthLoginWiki;
-
-					default:
-						$target = $this->getRequest()->getVal( 'wikiid', wfWikiID() );
-						break;
-					}
 					$body .= "\n" . Html::openElement( 'form', array(
 						'method' => 'POST',
-						'action' => WikiMap::getForeignURL( $target, 'Special:CentralAutoLogin/' . $data['nextState'] ),
+						'action' => $action,
 					) ) . "\n";
 					$body .= Html::hidden( 'form', '1' ) . "\n";
-					foreach ( array( 'oncomplete', 'returnto', 'returntoquery' ) as $k ) {
+					foreach ( array( 'oncomplete', 'returnto', 'returntoquery', 'notifywiki' ) as $k ) {
 						$v = $this->getRequest()->getVal( $k );
 						if ( $v !== null ) {
 							$body .= Html::hidden( $k, $v ) . "\n";
@@ -462,7 +525,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			case 'error':
 				$params = $data['msg'];
 				$key = array_shift( $params );
-				$body =  wfMessage( $key, $params )->escaped();
+				$body = wfMessage( $key, $params )->escaped();
 				break;
 			}
 
