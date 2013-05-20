@@ -375,6 +375,10 @@ foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' )
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
 }
 
+$wgRedactedFunctionArguments['CentralAuthPlugin::authenticate'] = 1;
+$wgRedactedFunctionArguments['CentralAuthUser::attemptPasswordMigration'] = 0;
+$wgRedactedFunctionArguments['CentralAuthUser::register'] = 0;
+
 $commonModuleInfo = array(
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'CentralAuth/modules',
