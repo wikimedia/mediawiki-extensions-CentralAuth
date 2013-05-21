@@ -392,6 +392,7 @@ $specialPageAliases['km'] = array(
 $specialPageAliases['ko'] = array(
 	'CentralAuth' => array( '통합계정관리' ),
 	'AutoLogin' => array( '자동로그인' ),
+	'CentralAutoLogin' => array( '통합계정로그인' ),
 	'MergeAccount' => array( '계정합치기', '사용자합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정' ),
 	'GlobalGroupPermissions' => array( '전체그룹권한' ),
@@ -749,13 +750,15 @@ $specialPageAliases['vec'] = array(
 
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
-	'CentralAuth' => array( 'Thành_viên_toàn_cục', 'Thành_viên_toàn_cầu', 'Người_dùng_toàn_cục', 'Người_dùng_toàn_cầu' ),
+	'CentralAuth' => array( 'Đăng_nhập_trung_ương', 'Thành_viên_toàn_cục', 'Thành_viên_toàn_cầu', 'Người_dùng_toàn_cục', 'Người_dùng_toàn_cầu' ),
 	'AutoLogin' => array( 'Đăng_nhập_tự_động' ),
+	'CentralAutoLogin' => array( 'Đăng_nhập_tự_động_trung_ương' ),
 	'MergeAccount' => array( 'Hợp_nhất_tài_khoản' ),
 	'GlobalGroupMembership' => array( 'Quyền_thành_viên_toàn_cục' ),
 	'GlobalGroupPermissions' => array( 'Quyền_nhóm_toàn_cục' ),
 	'WikiSets' => array( 'Bộ_wiki' ),
 	'GlobalUsers' => array( 'Danh_sách_thành_viên_toàn_cục', 'Danh_sách_thành_viên_toàn_cầu', 'Danh_sách_người_dùng_thống_nhất' ),
+	'MultiLock' => array( 'Khóa_tài_khoản_toàn_cục' ),
 );
 
 /** Yiddish (ייִדיש) */
