@@ -564,11 +564,11 @@ $specialPageAliases['oc'] = array(
 
 /** Punjabi (ਪੰਜਾਬੀ) */
 $specialPageAliases['pa'] = array(
-	'AutoLogin' => array( 'ਖੁਦਕਾਰ_ਲਾਗਇਨ' ),
+	'AutoLogin' => array( 'ਖ਼ੁਦਕਾਰ_ਲਾਗਇਨ' ),
 	'MergeAccount' => array( 'ਖਾਤਾ_ਰਲਾਓ' ),
 	'GlobalGroupMembership' => array( 'ਗਲੋਬਲ_ਵਰਤੋਂਕਾਰ_ਹੱਕ', 'ਗਲੋਬਲ_ਗਰੁੱਪ_ਮੈਂਬਰਸ਼ਿੱਪ' ),
 	'GlobalGroupPermissions' => array( 'ਗਲੋਬਲ_ਗਰੁੱਪ_ਇਜਾਜ਼ਤਾਂ' ),
-	'GlobalUsers' => array( 'ਗਲੋਬਲ_ਮੈਂਬਰ' ),
+	'GlobalUsers' => array( 'ਗਲੋਬਲ_ਵਰਤੋਂਕਾਰ' ),
 );
 
 /** Polish (polski) */

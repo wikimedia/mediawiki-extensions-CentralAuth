@@ -2778,6 +2778,15 @@ Si se renoma fadrá que l'usuariu llocal seya dixebráu del usuariu global.",
 	'centralauth-autologin-desc' => "Esta páxina especial úsala internamente MediaWiki.
 Cuando t'[[Special:UserLogin|identifiques]], el sistema central d'identificación fai que'l to navegador pida esta páxina en tolos dominios asociados, usando enllaces d'imaxe.
 Pidisti esta páxina ensin metar los datos d'autentificación, polo que nun fai nada.",
+	'centralautologin' => 'Aniciu de sesión central',
+	'centralauth-centralautologin-desc' => "MediaWiki utiliza internamente esta páxina especial.
+Cuando visita un dominiu enllazáu ensin aniciar sesión, o sistema d'aniciu de sesión central usa esta páxina pa determinar si ta coneutáu nel dominiu central.
+Vusté solicitó esta páxina ensin dar dengún datu d'autenticación, de mou que nun fai nada.",
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Yá anició sesión de mou llocal',
+	'centralauth-centralautologin-badparams' => "Los parámetros d'autenticación especificaos yeren inválidos",
+	'centralauth-centralautologin-lostsession' => 'Perdieronse los datos de sesión',
+	'centralauth-centralautologin-badstate' => 'Estáu inválidu "$1"',
+	'centralauth-centralautologin-notposted' => "L'aniciu de sesión central tien d'usar el métodu POST",
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Remanamientu de grupos globales',
 	'centralauth-globalgroupperms-grouplist' => 'Se configuraron los grupos globales darréu.
@@ -18402,6 +18411,7 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-listusers-locked' => 'gespaart',
 	'centralauth-listusers-attached' => '[[User:$1|gëtt et lokal]]',
 	'centralauth-listusers-nolocal' => 'net verbonnen oder existéiert net lokal',
+	'multilock' => 'Méi global Benotzer spären',
 	'centralauth-admin-multi-username' => 'Gitt een oder méi Benotzernimm an, déi duerch en Zeilewiessel getrennt sinn',
 	'centralauth-admin-multi-notfound' => 'Et goufe keng Benotzernimm fonnt.',
 	'centralauth-admin-action-lock-lock' => 'Déi erausgesicht Benotzerkonte spären',
@@ -18465,6 +18475,7 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
 Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatioune fir dës Säit vun alle verlinkten Domaine mat Hellëf vu Billerlinken unzefroen.
 Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
+	'centralautologin' => 'Zentrale Login',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
 	'centralauth-centralautologin-logged-in' => "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	'globalgroupmembership' => 'Member a globale Gruppen',
@@ -18491,6 +18502,7 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-editgroup-members' => 'Lëscht vun de Memberen:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lëscht vu Benotzer matt $2 Rechter]]',
 	'centralauth-editgroup-restrictions' => 'Astellunge vun de Wikien op deenen dës Grupp aktiv ass',
+	'centralauth-editgroup-rename-taken' => 'Ëmbenennen huet net fonctionnéiert: Et gëtt schonn e Groupe mam Numm $1.',
 	'centralauth-editgroup-noset' => '(keen)',
 	'centralauth-editgroup-submit' => 'Ännerunge vun de globale Gruppe späicheren',
 	'centralauth-editgroup-perms' => 'Zougedeelte Rechter:',
@@ -18499,6 +18511,7 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-editgroup-success-text' => "De globale Grupp $1 gouf geännert.
 [[Special:GlobalGroupPermissions|Zréck op d'Gestioun vu Gruppen]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|änneren]])',
+	'centralauth-editgroup-nowikiset' => 'Keng, gëllt fir all Wikien.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki op där si e Benotzerkont hunn:',
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bemotzer '''$1''' ass net op där Wiki aktiv déi Dir uginn hutt ('' $2 '').
 Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
@@ -26270,6 +26283,10 @@ Mutive: $1',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmende]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => "staccate o non g'esiste localmende",
+	'centralauth-admin-action-lock-nochange' => 'No cangià le blocche',
+	'centralauth-admin-action-lock-lock' => 'Blocche le cunde scacchiate',
+	'centralauth-admin-action-lock-unlock' => 'Sblocche le cunde scacchiate',
+	'centralauth-admin-action-hide-nochange' => 'No cangià le levèlle scunnute',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|seconde|seconde}} fà',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minute|minute}} fà',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ore|ore}} fà',
@@ -26392,11 +26409,13 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'right-centralauth-merge' => "Aunifiche 'u cunde proprie",
 	'right-globalgrouppermissions' => 'Gestisce le gruppe globbale',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppe globbale addò l'utende stè jndre",
+	'centrallogin' => "Trasute de l'utende cendralizzate",
 	'centralloginsuccesful' => 'Tutte a poste, è trasute!',
 	'centralauth-completelogin-legend' => "Comblete 'u processe pe trasè",
 	'centralauth-completelogin-submit' => 'Tràse mò!',
 	'centralauth-completelogin-back' => "Tuèrne 'a pàgene d'apprime.",
 	'centralauth-error-nologinattempt' => "Nisciune tendative de trasè jè attive jndr'à sessiona toje.",
+	'centralauth-finishglobaliseemail_subject' => "conferme d'u cunde de {{SITENAME}}",
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
