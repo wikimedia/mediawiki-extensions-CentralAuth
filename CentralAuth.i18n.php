@@ -1019,6 +1019,7 @@ Die databasis moet beskadig.',
 Voer die wagwoord vir die huis wiki.",
 	'centralauth-complete' => 'Samevoeging van gebruikers is voltooi!',
 	'centralauth-incomplete' => 'Aantekenversmelting is nie voltooi nie!',
+	'centralauth-complete-text' => "U kan nou by enige wiki van {{int:Centralauth-groupname}} inteken sonder om 'n nuwe rekening te skep.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Slegs demonstrasiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Rekening eenwording is tans in 'n ​​demo / Ontfouting af, sodat werklike samesmelting bedrywighede is gestremdes.
 Jammer!",
@@ -1067,6 +1068,7 @@ As die globale rekening is joune ook, kan jy hierdie rekening saamsmelt as jy ti
 	'centralauth-admin-permission' => 'Slegs rentmeesters kan saamsmelt ander mense se rekeninge vir hulle.',
 	'centralauth-admin-no-unified' => 'Geen verenigde rekening vir hierdie gebruikersnaam.',
 	'centralauth-admin-info-header' => 'Inligting oor globale gebruiker',
+	'centralauth-admin-info-username' => 'Gebruikersnaam:',
 	'centralauth-admin-info-id' => 'Gebruiker-ID:',
 	'centralauth-admin-info-registered' => 'Geregistreerd:',
 	'centralauth-admin-info-home' => 'Tuiswiki:',
@@ -1095,11 +1097,14 @@ Rede: $1',
 	'centralauth-admin-merge' => 'Versmelt geselekteerde gebruikers',
 	'centralauth-admin-bad-input' => 'Ongeldige saamsmelt seleksie',
 	'centralauth-admin-none-selected' => 'Geen rekeninge gekies om aan te pas.',
+	'centralauth-admin-already-unmerged' => '$1 oorgeslaan. Is reeds nie meer saamgevoeg nie.',
+	'centralauth-admin-unmerge-success' => 'Samevoeging is ongedaan gemaak vir $1 {{PLURAL:$1|gebruiker|gebruikers}}',
 	'centralauth-admin-delete-title' => 'Skrap rekening',
 	'centralauth-admin-delete-description' => "Die verwydering van die globale rekening sal verwyder globale voorkeure, unattach alle plaaslike rekeninge, en laat die globale naam vir 'n ander gebruiker te neem.
 Alle plaaslike rekeninge sal voortgaan om te bestaan.
 Die wagwoorde vir plaaslike rekeninge geskep voor die kombinering sal terugkeer na hul pre-merge waardes.",
 	'centralauth-admin-delete-button' => 'Verwyder die gebruiker',
+	'centralauth-admin-delete-confirm' => 'Is u seker u wil die gebruiker verwyder?',
 	'centralauth-token-mismatch' => "Jammer, ons kan nie jou vorm voorlegging as gevolg van 'n verlies aan sessie-data te verwerk.",
 	'centralauth-admin-reason' => 'Rede:',
 	'centralauth-admin-reason-other' => 'Ander/ekstra rede:',
@@ -1168,6 +1173,7 @@ Let daarop dat 'n groep nie bestaan ​​nie, tensy dit het regte aan hom opged
 	'centralauth-globalgroupperms-newgroupname' => 'Nuwe groepnaam:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Ken regte toe',
 	'centralauth-editgroup-subtitle' => 'Besig met wysiging van $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Wys $1',
 	'centralauth-editgroup-fieldset' => 'Regte vir $1',
 	'centralauth-editgroup-name' => 'Groepnaam:',
 	'centralauth-editgroup-display' => 'Gelokaliseerde groepnaam:',
@@ -22694,6 +22700,9 @@ U hebt deze pagina opgevraagd zonder aanmeldgegevens te verstrekken en in dat ge
 	'centralauth-centralautologin-badstate-local' => 'De status "$1" is niet geldig voor de lokale wiki',
 	'centralauth-centralautologin-badwiki' => 'De wiki "$1" is niet geldig voor centraal aanmelden',
 	'centralauth-centralautologin-corsfail' => 'De controle voor de CORS-oorsprong is mislukt',
+	'centralauth-centralautologin-p3p-explanation' => 'Bepaalde browsers vereisen in sommige gevallen een "P3P compact"-beleid voordat cookies worden verzonden of ontvangen; hier valt ook de SUL aanmeldcontrole onder. Dit is in deze situatie een onnodige hoepel om doorheen te springen, aangezien alle betrokken pagina\'s zich in dezelfde wikigroep bevinden en P3P zelf verouderd is. Gelukkig is het koppelen naar deze pagina voor het ongeldige beleid op dit moment "voldoende" voor de standaardinstellingen van deze browsers.
+
+Controleer het door mensen te lezen privacybeleid van deze site om te bepalen hoe deze verzamelde gegevens mag gebruiken.',
 	'centralauth-centralautologin-logged-in' => 'U bent centraal aangemeld als "$1". Herlaad de pagina om uw gebruikersinstellingen toe te passen.',
 	'globalgroupmembership' => 'Lidmaatschap van globale groepen',
 	'globalgrouppermissions' => 'Globaal groepsbeheer',
@@ -22793,6 +22802,20 @@ Als u probeert aan te melden als een andere gebruiker, meld u dan eerst af.',
 	'centralauth-warning-notloggedin' => 'U bent niet aangemeld.',
 	'centralauth-warning-notattached' => 'De lokale gebruiker is niet gekoppeld aan een globale gebruiker.',
 	'centralauth-finishglobaliseemail_subject' => 'Gebruikersbevestiging voor {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Uw emailadres is gekoppeld aan de gebruiker
+"$2" op alle projecten van Wikimedia. Uw hoofdgebruiker is die
+op {{SITENAME}}.
+
+Om te bevestigen dat deze gebruiker echt van u is, moet u niet automatisch samengevoegde gebruikers handmatig samenvoegen. U kunt even eventueel
+vergeten wachtwoord opvragen via de volgende koppeling:
+
+$3
+
+Als deze gebruiker *niet* van u is, volg dan deze koppeling om de bevestiging van het e-mailadres te annuleren:
+
+$5
+
+Deze bevestigingscode vervalt op $6 om $7.', # Fuzzy
 );
 
 /** Nederlands (informeel)‎ (Nederlands (informeel)‎)
@@ -26336,8 +26359,13 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-rightslog-set-optin' => 'opt-in basate',
 	'centralauth-rightslog-set-optout' => 'opt-out basate',
 	'autologin' => 'Trasùte automateche',
+	'centralauth-centralautologin-lostsession' => 'Le date de sessione onne state perse',
 	'centralauth-centralautologin-badstate' => 'State invalide "$1"',
 	'centralauth-centralautologin-notposted' => "'U module cendralizzate pe trasè adda essere mannate",
+	'centralauth-centralautologin-badstate-central' => 'State "$1" non g\'è valide sus \'a uicchi cendralizzate',
+	'centralauth-centralautologin-badstate-local' => 'State "$1" non g\'è valide sus a uicchi locale',
+	'centralauth-centralautologin-badwiki' => '\'A uicchi "$1" non g\'è valide pe trasè cendralizzate',
+	'centralauth-centralautologin-corsfail' => 'Verifiche de CORS origgenale fallite',
 	'globalgroupmembership' => "Membre jndr'à le gruppe globbale",
 	'globalgrouppermissions' => 'Gruppe de gestione globbale',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|vide/cange]])',
@@ -34836,6 +34864,9 @@ $messages['zh-hans'] = array(
 	'autologin' => '自动登录',
 	'centralauth-autologin-desc' => '这个特殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，中央登入系统会利用图像链接，指示您的浏览器向所有关联的域名请求这个页面。您在访问本页面时未提供验证数据，因此本页无效。',
 	'centralautologin' => '中央登录',
+	'centralauth-centralautologin-alreadyloggedinlocally' => '您已经在本地登录了',
+	'centralauth-centralautologin-lostsession' => '会话数据丢失',
+	'centralauth-centralautologin-badstate' => '无效状态“$1”',
 	'globalgroupmembership' => '在全域组中的成员',
 	'globalgrouppermissions' => '全局用户组管理',
 	'centralauth-globalgroupperms-grouplist' => '以下的全域组已经设置好。
