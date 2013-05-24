@@ -239,6 +239,8 @@ class CentralAuthPlugin extends AuthPlugin {
 				$central->attach( wfWikiID(), 'login' );
 				$central->addLocalName( wfWikiID() );
 				$this->updateUser( $user );
+				// Log the autocreation just happened
+				$user->addNewUserLogEntryAutoCreate();
 			}
 		}
 	}
