@@ -676,7 +676,6 @@ class CentralAuthHooks {
 			wfDebug( __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
 			return false;
 		}
-		$user->addNewUserLogEntryAutoCreate();
 
 		$wgAuth->initUser( $user, true );
 
