@@ -2793,6 +2793,14 @@ Vusté solicitó esta páxina ensin dar dengún datu d'autenticación, de mou qu
 	'centralauth-centralautologin-lostsession' => 'Perdieronse los datos de sesión',
 	'centralauth-centralautologin-badstate' => 'Estáu inválidu "$1"',
 	'centralauth-centralautologin-notposted' => "L'aniciu de sesión central tien d'usar el métodu POST",
+	'centralauth-centralautologin-badstate-central' => 'L\'estáu "$1" nun ye válidu na wiki central',
+	'centralauth-centralautologin-badstate-local' => 'L\'estáu "$1" nun ye válidu na wiki llocal',
+	'centralauth-centralautologin-badwiki' => 'La wiki "$1" nun ye válida pal aniciu de sesión central',
+	'centralauth-centralautologin-corsfail' => 'Falló la comprobación del orixe CORS',
+	'centralauth-centralautologin-p3p-explanation' => "Ciertos navegadores requieren una política P3P compauta pa unviar y recibir cookies en dalgunos casos, incluyendo la situación rellacionada cola comprobación d'aniciu de sesión SUL. Esto ye un enguedeyu innecesariu nesta situación, considerando que toles páxines implicaes tan nel mesmu grupu de wikis y la propia P3P ta anticuada y abandonada; por suerte, la política inválida qu'enllaza con esta páxina inda considerase \"lo bastante bona\" poles configuraciones predeterminaes d'esos navegadores.
+
+Por favor revise la política de proteición de datos lleíble por humanos d'esti sitiu pa determinar cómo pue usase la información collechada.",
+	'centralauth-centralautologin-logged-in' => "Tien fechu l'aniciu de sesión central como $1. Recargue la páxina p'aplicar la so configuración d'usuariu.",
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Remanamientu de grupos globales',
 	'centralauth-globalgroupperms-grouplist' => 'Se configuraron los grupos globales darréu.
@@ -2876,6 +2884,40 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'right-globalgrouppermissions' => 'Remanar grupos globales',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Grupos globales nos que ta l'usuariu",
 	'action-centralauth-lock' => 'candar o quitar candáu a cuentes globales',
+	'centrallogin' => "Aniciu de sesión d'usuariu central",
+	'centralloginsuccesful' => 'Aniciu de sesión correutu',
+	'centralauth-completelogin-legend' => "Complete'l procesu d'aniciu de sesión",
+	'centralauth-completelogin-finishing' => 'Autenticandose nos sitios de la Fundación Wikimedia; espere, por favor...',
+	'centralauth-completelogin-text' => "¡La autenticación de la cuenta nos sitios de la Fundación Wikimedia ta casi completa! Utilice'l botón inferior pa confirmar y completar l'aniciu de sesión.",
+	'centralauth-completelogin-submit' => 'Aniciar sesión agora',
+	'centralauth-completelogin-back' => 'Volver a la páxina anterior.',
+	'centralauth-error-nologinattempt' => "Nun hai nengún intentu d'aniciu de sesión activu pa la sesión.",
+	'centralauth-error-badtoken' => "El pase d'autenticación dau caducó o nun ye válidu.",
+	'centralauth-error-token-wrongattempt' => "El pase d'autenticación nun pertenez al intentu d'aniciu de sesión actual.
+Dalguién podría tar intentando qu'anicie sesión baxo una cuenta maliciosa.",
+	'centralauth-error-token-wronguser' => "El pase nun coincide col nome d'usuariu de la sesión.
+Dalguién podría tar intentando qu'anicie sesión baxo una cuenta maliciosa.
+Si sólo intentan aniciar sesión como otru usuariu, zarre primero la sesión.",
+	'centralauth-warning-notloggedin' => 'Nun anició sesión.',
+	'centralauth-warning-notattached' => 'La cuenta llocal nun ta xunida con una global.',
+	'centralauth-finishglobaliseemail_subject' => 'Confirmación de cuenta de {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'La so direición de corréu electrónicu asocióse
+cola cuenta "$2" en tolos proyeutos de Wikimedia, tando la so cuenta principal en {{SITENAME}}.
+
+Pa confirmar qu\'esta cuenta realmente ye suya,
+amieste toles demás cuentes que nun pudimos
+amestar automáticamente, y que-y permitirán
+recuperar la cuenta si pierde la contraseña;
+por favor, abra esti enllaz nel navegador:
+
+$3
+
+Si la cuenta *nun* ye suya, siga esti enllaz pa
+encaboxar la confirmación de la direición de corréu:
+
+$5
+
+Esti códigu de confirmación caducará\'l día $4',
 );
 
 /** Kotava (Kotava)
