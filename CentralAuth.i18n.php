@@ -455,7 +455,7 @@ address confirmation:
 
 $5
 
-This confirmation code will expire at $4.'
+This confirmation code will expire on $6 at $7.'
 
 );
 
@@ -969,7 +969,7 @@ Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.'
 * $1 is the IP address of the user or server script that triggered the reminder - not needed
 * $2 is the name of the user account
 * $3 is a URL to Special:ConfirmEmail
-* $4 is a time and date (duplicated by $6 and $7)
+* $4 is a timestamp (unused)
 * $5 is a URL to Special:InvalidateEmail
 * $6 is a date
 * $7 is a time',
