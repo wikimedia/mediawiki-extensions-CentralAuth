@@ -2917,7 +2917,7 @@ encaboxar la confirmación de la direición de corréu:
 
 $5
 
-Esti códigu de confirmación caducará\'l día $4',
+Esti códigu de confirmación caducará\'l día $4', # Fuzzy
 );
 
 /** Kotava (Kotava)
@@ -22857,7 +22857,7 @@ Als deze gebruiker *niet* van u is, volg dan deze koppeling om de bevestiging va
 
 $5
 
-Deze bevestigingscode vervalt op $6 om $7.', # Fuzzy
+Deze bevestigingscode vervalt op $6 om $7.',
 );
 
 /** Nederlands (informeel)‎ (Nederlands (informeel)‎)
@@ -30338,6 +30338,7 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 
 /** Swahili (Kiswahili)
  * @author Kwisha
+ * @author Lloffiwr
  * @author Stephenwanjau
  */
 $messages['sw'] = array(
@@ -30406,12 +30407,12 @@ $messages['sw'] = array(
 	'centralauth-admin-status-hidden-oversight' => 'Akaunti imefichwa kikamilifu',
 	'centralauth-admin-status-submit' => 'Weka hali',
 	'centralauth-listusers-locked' => 'Imezuia',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|sekunde}} zilizopita',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minute|dakika}} zilizopita',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|hour|masaa}} yaliyopita',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|day|masiku}} yaliyopita',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|month|miezi}} iliyopita',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|year|miaka}} iliyopita',
+	'centralauth-seconds-ago' => 'sekunde $1 {{PLURAL:$1|iliyo|zilizo}}pita',
+	'centralauth-minutes-ago' => 'dakika $1 {{PLURAL:$1|iliyo|zilizo}}pita',
+	'centralauth-hours-ago' => '{{PLURAL:$1|saa $1 iliyo|masaa $1 yaliyo}}pita',
+	'centralauth-days-ago' => '{{PLURAL:$1|siku $1 iliyo|siku $1 zilizo}}pita',
+	'centralauth-months-ago' => '{{PLURAL:$1|mwezi $1 ulio|miezi $1 iliyo}}pita',
+	'centralauth-years-ago' => '{{PLURAL:$1|mwaka $1 ulio|miaka $1 iliyo}}pita',
 	'centralauth-prefs-unattached' => 'Haijazibitishwa',
 	'centralauth-prefs-complete' => 'Yote shwari',
 	'centralauth-prefs-migration' => 'Katika uhamisho',
@@ -30432,10 +30433,10 @@ $messages['sw'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|hariri]])',
 	'centralauth-editgroup-members' => 'Orodha ya wanachama:',
 	'centralauth-editgroup-noset' => '(hana)',
-	'centralauth-editgroup-submit' => 'Hifadhi mabadiliko ya ruhusa ya kikundi',
+	'centralauth-editgroup-submit' => 'Hifadhi mabadiliko ya ruhusa ya kikundi', # Fuzzy
 	'centralauth-editgroup-perms' => 'Ruhusa aliyopewa:',
 	'centralauth-editgroup-reason' => 'Sababu:',
-	'centralauth-editgroup-success' => 'Ruhusa ya kikundi imebadilishwa',
+	'centralauth-editgroup-success' => 'Ruhusa ya kikundi imebadilishwa', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|hariri]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki ambayo wako na akaunti:',
 	'centralauth-editset' => 'Seti za wiki',
@@ -33988,7 +33989,7 @@ Nếu tài khoản *không* phải của bạn, hãy mở liên kết này để
 
 $5
 
-Mã xác nhận này sẽ hết hạn vào $4.',
+Mã xác nhận này sẽ hết hạn vào $4.', # Fuzzy
 );
 
 /** Volapük (Volapük)
