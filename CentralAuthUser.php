@@ -2045,7 +2045,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->clearCookie( 'Session' );
 
 		// Logged-out cookie -to fix caching.
-		self::setCookie( 'LoggedOut', wfTimestampNow() );
+		self::setCookie( 'LoggedOut', time() );
 
 		self::deleteSession();
 	}
