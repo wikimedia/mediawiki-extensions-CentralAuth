@@ -34,7 +34,6 @@ class CreateLocalAccount extends Maintenance {
 
 			$user->loadDefaults( $username );
 			$user->addToDatabase();
-			$user->addNewUserLogEntryAutoCreate();
 
 			$wgAuth->initUser( $user, true );
 			$wgAuth->updateUser( $user );
