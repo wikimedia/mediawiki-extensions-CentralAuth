@@ -7373,7 +7373,7 @@ E-Mail-Adressbestätigung abzubrechen:
 
 $5
 
-Zeitpunkt des Ablaufs des Bestätigungscodes: $4.',
+Dieser Bestätigungscode läuft am $6 um $7 ab.',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -12557,6 +12557,10 @@ $messages['he'] = array(
 	'centralauth-centralautologin-badstate-local' => 'המצב "$1" אינו תקין בוויקי המקומי',
 	'centralauth-centralautologin-badwiki' => 'הוויקי "$1" אינו מתאים לכניסה מרכזית',
 	'centralauth-centralautologin-corsfail' => 'בדיקת מקור CORS נכשלה',
+	'centralauth-centralautologin-p3p-explanation' => 'דפדפנים מסוימים דורשים מדיניות P3P מצומצמת לעוגיות שנשלחות או מתקבלות במקרים מסוימים, כולל במצב של בדיקת כניסה ב־SUL. זה לא באמת דבר נחוץ במצב הזה, מכיוון שכל הדפים המעורבים שייכים לאותה קבוצת אתרי ויקי ו־P3P עצמו זה דבר מיושן ונטוש; במזל, המדיניות הבלתי־תקינה שמקשרת לדף הזה "טובה מספיק" בשביל הדפדפנים האלה.
+
+נא לסקור את מדיניות הפרטיות (בשפה האנושית) כדי להבין לְמה מידע שייאסף יכול לשמש.',
+	'centralauth-centralautologin-logged-in' => 'נכנסת באופן מרכזי בשם $1. יש לרענן את הדף כדי להחיל את הגדרות המשתמש שלך.',
 	'globalgroupmembership' => 'חברות בקבוצות כלליות',
 	'globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'centralauth-globalgroupperms-grouplist' => 'הוגדרו הקבוצות הכלליות הבאות.
@@ -12654,6 +12658,23 @@ $messages['he'] = array(
 אם זהו ניסיון להתחבר כמשתמש אחר, אנא להתנתק תחילה.',
 	'centralauth-warning-notloggedin' => 'אתה לא מחובר כעת.',
 	'centralauth-warning-notattached' => 'החשבון המקומי אינו מחובר לחשבון גלובלי.',
+	'centralauth-finishglobaliseemail_subject' => 'אימות חשבון באתר {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'כתובת הדוא"ל שלך הוגדרה בתור משויכת
+לחשבון "$2" בכל מיזמי ויקימדיה, והחשבון הראשי שלך
+באתר {{SITENAME}}.
+
+כדי לאשר שהחשבון הזה באמת שייך לך, למזג את כל
+החשבונות שלך שלא הצלחנו למזג בעצמנו, ולאפשר לעצמך לשחזר
+את החשבון שלך למקרה שתאבד את הססמה, נא לפתוח את הקישור הבא בדפדפן שלך:
+
+$3
+
+אם החשבון הזה *אינו* שייך לך, נא ללכת אל הקישור הזה כדי לבטל את אימות
+כתובת הדוא"ל:
+
+$5
+
+קוד האימות הזה יפוג ב־$6 ב־$7.',
 );
 
 /** Hindi (हिन्दी)
@@ -14039,10 +14060,10 @@ Un altere wiki esseva determinate como le conto principal pro tu nomine de usato
 	'centralauth-not-owner-text' => 'Le nomine de usator "$1" esseva automaticamente assignate al proprietario del conto in $2.
 
 Si isto es tu, tu pote completar le processo de unification de contos simplemente per entrar hic le contrasigno principal de ille conto:',
-	'centralauth-blocked-text' => 'Tu wiki principal (listate infra) es blocate de facer modificationes. Per favor contacta un administrator in iste wiki pro disblocar lo. Durante iste blocada, tu non pote fusionar tu contos.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstration solmente</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Le unification del contos es pro le momento in modo de demonstration o de test, ergo le operationes real de fusionar es disactivate. Excusa!',
 	'centralauth-error-locked' => 'Tu non pote facer modificationes proque tu conto es serrate.',
+	'centralauth-error-unmerged' => 'Tu non pote facer modificationes proque tu conto non es unificate.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ia|Lege plus a proposito del '''unification de contos''']]…''",
 	'centralauth-list-home-title' => 'Wiki principal',
 	'centralauth-list-home-dryrun' => 'Le contrasigno e adresse de e-mail configurate in iste wiki essera usate pro tu conto unificate.',
@@ -14095,6 +14116,7 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 	'centralauth-admin-permission' => 'Solmente le stewards pote fusionar le contos de altere personas.',
 	'centralauth-admin-no-unified' => 'Non existe un conto unificate pro iste nomine de usator.',
 	'centralauth-admin-info-header' => 'Info global del usator',
+	'centralauth-admin-info-username' => 'Nomine de usator:',
 	'centralauth-admin-info-id' => 'ID del usator:',
 	'centralauth-admin-info-registered' => 'Registrate:',
 	'centralauth-admin-info-home' => 'Wiki principal:',
@@ -14128,10 +14150,12 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 Tote le contos local continuara a exister.
 Le contrasignos pro contos local create ante le fusion se revertera a lor valores de ante le fusion.',
 	'centralauth-admin-delete-button' => 'Deler iste conto',
+	'centralauth-admin-delete-confirm' => 'Vole tu realmente deler iste conto?',
 	'centralauth-admin-delete-success' => 'Le conto global pro "<nowiki>$1</nowiki>" ha essite delite con successo',
 	'centralauth-admin-nonexistent' => 'Non existe un conto global pro "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Error: le conto global "<nowiki>$1</nowiki>" non existe.',
 	'centralauth-token-mismatch' => 'Pardono, nos non poteva processar tu submission del formulario a causa de un perdita de datos del session.',
+	'centralauth-state-mismatch' => 'Error: un conflicto de modification ha essite detegite pro iste usator. Verifica le cambiamento e essaya de novo.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Altere/additional motivo:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: le conto global "<nowiki>$1</nowiki>" non existe.',
@@ -14155,10 +14179,23 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 ** information personal inappropriate',
 	'centralauth-admin-logsnippet' => 'Cambiamentos previe in le conto global',
 	'centralauth-admin-suppressreason' => 'Supprimite globalmente per $1 pro le motivo sequente: $2',
+	'centralauth-admin-not-authorized' => 'Tu non ha le permissiones necessari pro exequer iste action.',
 	'globalusers' => 'Lista de usatores global',
 	'centralauth-listusers-locked' => 'serrate',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'non attachate o non existe localmente',
+	'multilock' => 'Serrar multiple usatores global',
+	'centralauth-admin-multi-username' => 'Entra un o plure nomines de usator, un per linea',
+	'centralauth-admin-multi-notfound' => 'Le recerca non ha retornate alcun nomine de usator.',
+	'centralauth-admin-multi-searchprefix' => 'O cerca contos con un prefixo',
+	'centralauth-admin-multi-intro' => 'Actualisar plure usatores global insimul',
+	'centralauth-admin-action-lock-nochange' => 'Non cambiar serraturas',
+	'centralauth-admin-action-lock-lock' => 'Serrar le contos seligite',
+	'centralauth-admin-action-lock-unlock' => 'Disserrar le contos seligite',
+	'centralauth-admin-action-hide-nochange' => 'Non cambiar le nivellos celate',
+	'centralauth-admin-action-hide-none' => 'Revelar le contos seligite',
+	'centralauth-admin-action-hide-lists' => 'Celar le contos seligite in listas public',
+	'centralauth-admin-action-hide-oversight' => 'Celar completemente le contos seligite',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|secunda|secundas}} retro',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuta|minutas}} retro',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|hora|horas}} retro',
@@ -14204,6 +14241,7 @@ Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-rightslog-entry-groupperms' => 'cambiava permissiones de gruppo pro $1 de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'cambiava permissiones de gruppo pro $1. Addeva $2; eliminava $3',
 	'centralauth-rightslog-entry-groupperms3' => 'cambiava le gruppo de wikis restringite pro $1 de $2 a $3',
+	'centralauth-rightslog-entry-grouprename' => 'renominava le gruppo $2 a $1',
 	'centralauth-rightslog-header' => 'Iste registro contine operationes concernente le gruppos global; cambiamentos in membrato e permissiones',
 	'centralauth-rightslog-entry-newset' => 'creava le gruppo de wikis $2 "$1" con le sequente wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'renominava le gruppo de wikis "$2" a "$1"',
@@ -14216,6 +14254,22 @@ Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-autologin-desc' => 'Iste pagina special es pro uso interne per MediaWiki.
 Quando tu [[Special:UserLogin|aperi un session]], le systema central de sessiones demanda a tu navigator de requestar iste pagina de tote le sitos includite in tu conto unificate, per medio de ligamines verso imagines.
 Tu ha requestate iste pagina sin fornir alcun datos de authentication; illo face ergo nihil.',
+	'centralautologin' => 'Authentication central',
+	'centralauth-centralautologin-desc' => 'Iste pagina special es pro uso interne per MediaWiki.
+Si tu visita un dominio ligate sin session aperte, le systema de authentication central usa iste pagina pro determinar si tu es authenticate in le dominio central.
+Tu ha requestate iste pagina sin fornir alcun dato de authentication, dunque illo face nihil.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Tu es jam authenticate localmente',
+	'centralauth-centralautologin-badparams' => 'Le parametros de authentication specificate es invalide',
+	'centralauth-centralautologin-lostsession' => 'Le datos del session ha essite perdite',
+	'centralauth-centralautologin-badstate' => 'Stato "$1" non valide',
+	'centralauth-centralautologin-notposted' => 'Le formulario de authentication central debe usar le methodo POST',
+	'centralauth-centralautologin-badstate-central' => 'Le stato "$1" non es valide in le wiki central',
+	'centralauth-centralautologin-badstate-local' => 'Le stato "$1" non es valide in le wiki local',
+	'centralauth-centralautologin-badwiki' => 'Le wiki "$1" non es valide pro authentication central',
+	'centralauth-centralautologin-corsfail' => 'Le verification de origine CORS ha fallite',
+	'centralauth-centralautologin-p3p-explanation' => 'Certe navigatores require un politica compacte P3P pro le invio o reception de cookies in alcun casos, incluse le situation implicate in le verification de authentication SUL. Isto es un procedura superflue in iste situation, considerante que tote le paginas implicate es in le mesme gruppo de wikis e que P3P mesme es generalmente obsolete e abandonate; fortunatemente, le politica invalide que liga a iste pagina es actualmente considerate como sufficiente in le configuration predefinite de iste navigatores.
+
+Per favor consulta le politica de confidentialitate in texto normal pro determinar como le information colligite pote esser utilisate.',
 	'globalgroupmembership' => 'Membrato in gruppos global',
 	'globalgrouppermissions' => 'Gestion de gruppos global',
 	'centralauth-globalgroupperms-grouplist' => 'Le sequente gruppos global ha essite configurate.
@@ -14240,12 +14294,12 @@ Nota que un gruppo non existe si nulle permissiones ha essite assignate a illo.'
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de usatores con derectos de $2]]',
 	'centralauth-editgroup-restrictions' => 'Gruppo de wikis ubi iste gruppo es active:',
 	'centralauth-editgroup-noset' => '(nulle)',
-	'centralauth-editgroup-submit' => 'Confirmar modificationes al permissiones de gruppos',
+	'centralauth-editgroup-submit' => 'Confirmar modificationes al permissiones de gruppos', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permissiones assignate:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Le permissiones del gruppo ha essite cambiate',
+	'centralauth-editgroup-success' => 'Le permissiones del gruppo ha essite cambiate', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Tu ha cambiate le permissiones del gruppo $1 con successo.
-[[Special:GlobalGroupPermissions|Retornar al gestion de gruppos]]',
+[[Special:GlobalGroupPermissions|Retornar al gestion de gruppos]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modificar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Le wiki in que iste persona ha un conto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Le usator global '''$1''' non es active in le wiki que tu specificava ('' $2 '').
@@ -14288,7 +14342,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'right-globalgroupmembership' => 'Modificar membrato in gruppos global',
 	'right-centralauth-autoaccount' => 'Aperir session automaticamente con un conto global',
 	'right-centralauth-unmerge' => 'Disfusionar conto global',
-	'right-centralauth-lock' => 'Serrar o celar conto global',
+	'right-centralauth-lock' => 'Serrar o celar conto global', # Fuzzy
 	'right-centralauth-oversight' => 'Supprimer conto global', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar le proprie conto',
 	'right-globalgrouppermissions' => 'Gerer gruppos global',
@@ -18431,6 +18485,7 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-admin-nonexistent' => 'Et gëtt kee globale Benotzerkont fir "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Feeler: de globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
 	'centralauth-token-mismatch' => "Pardon, mir konnten d'Donnéeë vun ärer Demande (Formulaire) net verschaffe wëll Date vun ärer Sessioun verluer gi sinn.",
+	'centralauth-state-mismatch' => 'Feeler: En Ännerungskonflikt fir dëse Benotzer gouf fonnt. Kuckt w.e.g. Är Ännerung no a probéiert nach eng Kéier.',
 	'centralauth-admin-reason' => 'Grond:',
 	'centralauth-admin-reason-other' => 'Aneren/zousätzleche Grond:',
 	'centralauth-admin-unhide-nonexistent' => 'Feeler: De globale Benotzerkont "<nowiki>$1</nowiki>" gëtt et net.',
@@ -18462,8 +18517,10 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'multilock' => 'Méi global Benotzer spären',
 	'centralauth-admin-multi-username' => 'Gitt een oder méi Benotzernimm an, déi duerch en Zeilewiessel getrennt sinn',
 	'centralauth-admin-multi-notfound' => 'Et goufe keng Benotzernimm fonnt.',
+	'centralauth-admin-action-lock-nochange' => 'Spären net änneren',
 	'centralauth-admin-action-lock-lock' => 'Déi erausgesicht Benotzerkonte spären',
 	'centralauth-admin-action-lock-unlock' => 'Déi erausgesicht Benotzerkonten entspären',
+	'centralauth-admin-action-hide-lists' => 'Déi erausgesichte Benotzerkonten op ëffentleche Lëschte verstoppen',
 	'centralauth-admin-action-hide-oversight' => 'Déi erausgesicht Benotzerkonte komplett verstoppen',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|virun 1 Minutt| viru(n) $1 Minutten}}',
@@ -18607,6 +18664,10 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'right-centralauth-merge' => 'Hire Benotzerkont zesummeféieren',
 	'right-globalgrouppermissions' => 'Gestioun vu globale Gruppen',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Global Gruppen zu deenen de Benotzer gehéiert',
+	'action-centralauth-lock' => "Global Benotzerkonte spären oder d'Spär ophiewen",
+	'centrallogin' => 'Zentrale Login',
+	'centralloginsuccesful' => 'Umeldung huet geklappt',
+	'centralauth-completelogin-legend' => 'Aloggen ofschléissen',
 	'centralauth-completelogin-submit' => 'Elo aloggen',
 	'centralauth-completelogin-back' => 'Zréck op déi vireg Säit',
 	'centralauth-warning-notloggedin' => 'Dir sidd elo net ageloggt.',
@@ -19734,6 +19795,13 @@ Alesane: $1',
  * @author Jagwar
  */
 $messages['mg'] = array(
+	'mergeaccount' => "Satan'ny fahatokanan'ny kaonty",
+	'centralauth-groupname' => 'ny Wikimedia Foundation',
+	'centralauth-desc' => "[[Special:MergeAccount|Hampitokana ny kaonty]] eraky ny wiki-n'i {{int:Centralauth-grouname}}",
+	'centralauth-antispoof-desc' => "Hanampy ny teknôlôjia AntiSpoof amin'ny CentralAuth",
+	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Hampitokana kaonty maro]] ho an'ny fampahafantarana tokana",
+	'centralauth-merge-denied' => 'Miala tsiny fa tsy manana alalana mijery ity pejy ity ianao.',
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Midira]</span> azafady mba ho fantatra ny fahatokanana ny kaontinao.',
 	'centralauth-merge-step1-title' => 'Fanombohana ny fampiraisana ny kaonty',
 	'centralauth-merge-step1-detail' => "Atsofohy eto ny tenimiafin'ny kaontinao.
 Ho ampitahaina amin'ny kaonty mitovy anarana eo amin'ny wiki hafa ny tenimiafina ary ny adiresy imailakao.
@@ -19752,6 +19820,13 @@ Mety misy zavatra tsy miady eo amin'ny banky angona.",
 Atsofohy ny tenimiafina ampiasaina eo amin'ny wiki reniny.",
 	'centralauth-complete' => 'Tapitra ny fampiraisana ny anaram-pikambana !',
 	'centralauth-incomplete' => 'Tsy vita tanteraka ny fampiraisana ny anaram-pikambana !',
+	'centralauth-merge-method-primary' => 'wiki trano',
+	'centralauth-merge-method-empty' => "tsy misy fandraisan'anjara",
+	'centralauth-merge-method-mail' => "voamarina tamin'ny alalan'ny mailaka",
+	'centralauth-merge-method-password' => "voamarina tamin'ny alalan'ny tenimiafina",
+	'centralauth-merge-method-new' => 'kaonty vaovao',
+	'centralauth-merge-method-login' => 'noforonina tam-pidirana',
+	'centralauth' => 'Mpitantana ny mpikambana eraky ny wiki',
 	'centralauth-prefs-status' => "Ny kaontinao any amin'ny wiki hafa :",
 	'centralauth-prefs-complete' => 'Milamina daholo !',
 	'centralauth-prefs-count-attached' => 'Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}',
@@ -20214,7 +20289,7 @@ $3
 
 $5
 
-This confirmation code will expire at $4.',
+Потврдниот код истекува на  $6 во $7 ч.',
 );
 
 /** Malayalam (മലയാളം)
@@ -22318,6 +22393,7 @@ Reden: $1',
 /** Nepali (नेपाली)
  * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
+ * @author RajeshPandey
  */
 $messages['ne'] = array(
 	'mergeaccount' => 'प्रवेश एकीकरण स्थिति',
@@ -22455,6 +22531,7 @@ $messages['ne'] = array(
 	'centralauth-prefs-view' => 'वैश्विक प्रयोगकर्ता विवरण हेर्ने',
 	'centralauth-renameuser-reserved' => 'प्रयोगकर्ता $2 वैश्विक खाताको निम्ति आरक्षित छ',
 	'centralauth-invalid-wiki' => 'त्यस्तो विकि आँकडा नभएको: $1',
+	'centralauth-login-progress' => 'तपाइलाइ {{int:Centralauth-groupname}} का विकीहरुमा प्रवेश गराइँर्दै:',
 	'centralauth-editset-name' => 'नाम:',
 	'centralauth-editset-type' => 'प्रकार:',
 	'centralauth-editset-wikis' => 'विकिहरु:',
@@ -33989,7 +34066,7 @@ Nếu tài khoản *không* phải của bạn, hãy mở liên kết này để
 
 $5
 
-Mã xác nhận này sẽ hết hạn vào $4.', # Fuzzy
+Mã xác nhận này sẽ hết hạn vào $6 lúc $7.',
 );
 
 /** Volapük (Volapük)
@@ -35255,6 +35332,7 @@ $messages['zh-hant'] = array(
 	'centralauth-autologin-desc' => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
 	該中央登入系統會利用圖片連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
 	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
+	'centralautologin' => '中央登入',
 	'centralauth-centralautologin-alreadyloggedinlocally' => '你已經在本地登入',
 	'centralauth-centralautologin-badstate' => '狀態「$1 」無效',
 	'globalgroupmembership' => '在全域組中的成員',
