@@ -16,6 +16,211 @@
       "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dxul.UKs",
+        "filename": "CentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Can\u0027t this just point to a $wgObjectCaches entry by key name and have require config (throwing an exception for renames if not set or disabling that functionality)? The central DB would need the table to be manually created anyway.\n\nThis way you don\u0027t have to deal with trying to extract the config from LBFactory.",
+      "parentUuid": "Dwy5ul5c",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxglOHJc",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "You can use getInstance() instead, going along with my $wgCentralAuthRenameObjectStore comment",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxmlDYHA",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Unused.",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxklIJIk",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dxmk8AOA",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Why is this call needed?",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxuQzFfQ",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "The renames are done using the queue right? So I don\u0027t see a need for this check.",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxqSsbfA",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Why are there lock keys and DB lock calls()?",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxgRToRc",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "MySQL LOCK() releases any prior locks when subsequent ones are acquired.\n\nI think all this look could should be move to there own methods (or even their own class) to handle all this \"reserve list\"/\"name locking\" functionality. I think it would be easier to get right that way.",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxkT5KeY",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "IGNORE?",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxkR2SaE",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Normally you want to call wfGetLB( $wiki )-\u003ereuseConnection( $db ) at the end of each iteration.",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxkTSyVk",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "This releases the locks before committing. It should be the other way around.\nMaybe call wfGetLBFactory()-\u003ecommitMasterChanges() first.",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxuRl1eM",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-05-29T20:57:24Z",
+      "side": 1,
+      "message": "Use JobQueueGroup::singleton( $wiki )-\u003epush( $job );",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
