@@ -21293,6 +21293,19 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-autologin-desc' => 'Laman khas ini digunakan dari dalam MediaWiki.
 Ketika anda [[Special:UserLogin|log masuk]], sistem akaun pusat akan mengarah pelayar web anda supaya meminta laman ini melalui semua domain yang telah dipaut melalui penggunaan imej.
 Anda telah meminta laman ini tanpa membekalkan sebarang data pengesahan, oleh itu tiada apa-apa berlaku.',
+	'centralautologin' => 'Log masuk berpusat',
+	'centralauth-centralautologin-desc' => 'Halaman khas ini digunakan secara dalaman oleh MediaWiki.
+Apabila anda mengunjungi sebuah domain berkaitan sementara belum log masuk, sistem log masuk berpusat menggunakan halaman ini untuk menentukan sama ada anda telah log masuk atau tidak.
+Anda telah memohon halaman ini tanpa memberikan sebarang data penentusahan, jadi ia tidak membuat apa-apa.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Anda sudah log masuk secara setempat.',
+	'centralauth-centralautologin-badparams' => 'Parameter penentusahan yang dinyatakan itu tidak sah',
+	'centralauth-centralautologin-lostsession' => 'Data sesi hilang',
+	'centralauth-centralautologin-badstate' => 'Keadaan "$1" tidak sah',
+	'centralauth-centralautologin-notposted' => 'Borang log masuk berpusat mesti dihantar',
+	'centralauth-centralautologin-badstate-central' => 'Keadaan "$1" tidak sah di wiki pusat',
+	'centralauth-centralautologin-badstate-local' => 'Keadaan "$1" tidak sah di wiki setempat',
+	'centralauth-centralautologin-badwiki' => 'Wiki "$1" tidak sah untuk log masuk berpusat',
+	'centralauth-centralautologin-corsfail' => 'Penyemakan asal-usul CORS gagal',
 	'globalgroupmembership' => 'Keahlian dalam kumpulan sejagat',
 	'globalgrouppermissions' => 'Pengurusan kumpulan sejagat',
 	'centralauth-globalgroupperms-grouplist' => 'Kumpulan-kumpulan sejagat berikut telah ditubuhkan.
@@ -26478,6 +26491,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-rightslog-set-optin' => 'opt-in basate',
 	'centralauth-rightslog-set-optout' => 'opt-out basate',
 	'autologin' => 'Trasùte automateche',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Tu è ggià trasute in locale',
 	'centralauth-centralautologin-lostsession' => 'Le date de sessione onne state perse',
 	'centralauth-centralautologin-badstate' => 'State invalide "$1"',
 	'centralauth-centralautologin-notposted' => "'U module cendralizzate pe trasè adda essere mannate",
