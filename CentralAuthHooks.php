@@ -416,7 +416,7 @@ class CentralAuthHooks {
 				'guid'          => $centralUser->getId(),
 				'wikiId'        => wfWikiId()
 			);
-			$wgMemc->set( $key, $data, 15 );
+			$wgMemc->set( $key, $data, 60 );
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
