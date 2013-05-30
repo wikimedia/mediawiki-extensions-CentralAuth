@@ -132,7 +132,8 @@ class CentralAuthHooks {
 		$centralUser = self::getApiCentralUser( false );
 		if ( $centralUser ) {
 			global $wgMemc;
-			$key = CentralAuthUser::memcKey( 'api-cookies', md5( $centralUser->getName() ), wfWikiID() );
+			$key = CentralAuthUser::memcKey( 'api-cookies',
+				sha1( $centralUser->getName() ), wfWikiID() );
 			$cookies = $wgMemc->get( $key );
 			if ( !is_array( $cookies ) ) {
 				$cookies = array();

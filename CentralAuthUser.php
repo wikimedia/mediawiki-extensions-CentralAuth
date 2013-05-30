@@ -369,7 +369,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return String
 	 */
 	protected function getCacheKey() {
-		return "centralauth-user-" . md5( $this->mName );
+		return "centralauth-user-" . sha1( $this->mName );
 	}
 
 	/**
