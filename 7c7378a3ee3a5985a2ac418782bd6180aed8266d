@@ -16,6 +16,24 @@
       "revId": "7c7378a3ee3a5985a2ac418782bd6180aed8266d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxhqL.CE",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-05-30T13:18:41Z",
+      "side": 1,
+      "message": "Good catch. It looks like it will get set in the call from line 519 below if that code path is taken, but the other code path fails.",
+      "parentUuid": "DxgQMQaU",
+      "revId": "7c7378a3ee3a5985a2ac418782bd6180aed8266d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
