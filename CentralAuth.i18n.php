@@ -1339,7 +1339,6 @@ Por favor, escriba a clau d'o wiki d'orichen.",
 	'centralauth-not-owner-text' => 'O nombre d\'usuario "$1" s\'ha asignato ta o proprietario d\'a cuenta en $2.
 
 Si ye vusté, puede rematar o proceso d\'unificación de cuentas escribindo aquí a clau mayestra ta ixa cuenta.',
-	'centralauth-blocked-text' => "A suya wiki d'orichen (endicata en o cobaixo) ye bloqueyata y no se puede editar. Por favor, contaute con un almenistrador d'ista wiki ta esbloqueyar-la. Mientres siga bloqueyata no pueden combinar as suyas cuentas.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sólo modo contrimuestra</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "A unificación de cuentas ye actualment en modo contrimuestra / prebatina, y por ixo, s'han desactivato as operacions de fusión. Lo sentimos!",
 	'centralauth-error-locked' => 'No puede editar porque a suya cuenta ye bloqueyata.',
@@ -1538,11 +1537,11 @@ Se puede borrar una colla sacando-le totz os dreitos asignatos.",
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Lista d'usuarios con dreitos de $2]]",
 	'centralauth-editgroup-restrictions' => 'Conchunto de wikis an que ista colla ye activa:',
 	'centralauth-editgroup-noset' => '(garra)',
-	'centralauth-editgroup-submit' => "Alzar cambeos en os premisos d'a colla",
+	'centralauth-editgroup-submit' => "Alzar cambeos en os premisos d'a colla", # Fuzzy
 	'centralauth-editgroup-perms' => 'Premisos asignatos:',
 	'centralauth-editgroup-reason' => 'Razón:',
-	'centralauth-editgroup-success' => "S'han cambiato os premisos d'a colla",
-	'centralauth-editgroup-success-text' => "Ha cambiato con exito os premisos d'a colla $1. [[Special:GlobalGroupPermissions|Torne t'a confeguración de collas]]",
+	'centralauth-editgroup-success' => "S'han cambiato os premisos d'a colla", # Fuzzy
+	'centralauth-editgroup-success-text' => "Ha cambiato con exito os premisos d'a colla $1. [[Special:GlobalGroupPermissions|Torne t'a confeguración de collas]]", # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki en a que tienga una cuenta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "L'usuario global '''$1''' no ye activo en a wiki que ha especificato ('' $2 '').
@@ -1585,7 +1584,7 @@ Puet veyer y modificar totz ells, u creyar un achuste nuevo.",
 	'right-globalgroupmembership' => 'Editar a pertenencia ta collas globals',
 	'right-centralauth-autoaccount' => 'Acceder automaticament con a cuenta global',
 	'right-centralauth-unmerge' => 'Deseparar a cuenta global',
-	'right-centralauth-lock' => 'Bloqueyar u amagar a cuenta global',
+	'right-centralauth-lock' => 'Bloqueyar u amagar a cuenta global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimir cuenta global', # Fuzzy
 	'right-centralauth-merge' => 'Combinar a cuenta',
 	'right-globalgrouppermissions' => 'Confegurar collas globals',
@@ -2037,9 +2036,6 @@ $messages['arz'] = array(
 	'centralauth-not-owner-text' => 'اسم اليوزر "$1" اتخصص اوتوماتيكى لمالك الحساب على  $2.
 
 لو انت اليوزر دا،ممكن تخلص عملية توحيد الدخول ببساطة اذا كتبت الباسورد الرئيسية للحساب دا هنا.',
-	'centralauth-blocked-text' => 'الويكى الرئيسى (المعروض تحت)بتاعك ممنوع من التعديل
-لو سمحت تتصل ب السيسوب بتاع الويكى دا علشان يشيل المنع عنه.
-وهو مقفول،ما ينفعش تدمج حساباتك.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>نمط التجربة بس</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'توحيد الحساب دلوقتى لسة فى طور التجربة/تصحيح الغلطات،وعلشان كدة عمليات الدمج الحقيقية متعطلة.
 متأسفين!',
@@ -2184,12 +2180,12 @@ $messages['arz'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|لستة اليوزرز اللى  عندهم الصلاحيات $2 ]]',
 	'centralauth-editgroup-restrictions' => 'مجموعة الويكيهات اللى المجموعة دى نشيطة فيها:',
 	'centralauth-editgroup-noset' => '(ولا حاجة)',
-	'centralauth-editgroup-submit' => 'احفظ التغييرات اللى على اذونات المجموعة',
+	'centralauth-editgroup-submit' => 'احفظ التغييرات اللى على اذونات المجموعة', # Fuzzy
 	'centralauth-editgroup-perms' => 'الاذونات اللى معاها:',
 	'centralauth-editgroup-reason' => 'سبب:',
-	'centralauth-editgroup-success' => 'اذونات المجموعة اتغيرت',
+	'centralauth-editgroup-success' => 'اذونات المجموعة اتغيرت', # Fuzzy
 	'centralauth-editgroup-success-text' => 'انت غيرت بنجاح اذونات المجموعة للمجموعة $1.
-[[Special:GlobalGroupPermissions|ارجع لادارة المجموعة]]',
+[[Special:GlobalGroupPermissions|ارجع لادارة المجموعة]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|عدل]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'الويكى اللى عندهم فيه حساب:',
 	'centralauth-globalgroupmembership-badknownwiki' => "اليوزر العام '''$1'''  مش نشيط فى الويكى دا اللى انت حددته ('' $2 '').
@@ -2220,7 +2216,7 @@ $messages['arz'] = array(
 	'right-globalgrouppermissions' => 'التحكم فى المجموعات العامة',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Chaipau
  * @author Gitartha.bordoloi
@@ -2273,9 +2269,6 @@ $messages['as'] = array(
 	'centralauth-not-owner-text' => '"$1" সদস্যনামটো স্বয়ংক্ৰিয়ভাৱে $2 একাউণ্টৰ অধিকাৰীক প্ৰদান কৰা হ\'ল।
 
 যদি এয়া আপুনিয়েই, তেন্তে আপুনি সেই একাউণ্টৰ গুপ্তশব্দ টাইপ কৰি প্ৰৱেশ একত্ৰীকৰণ সমাপ্ত কৰিব পাৰে।',
-	'centralauth-blocked-text' => 'আপোনাৰ প্ৰধান ৱিকিক (তলত দিয়া) সম্পাদনাৰ পৰা বাৰণ কৰা হৈছে।
-অনুগ্ৰহ কৰি এই ৱিকিৰ এজন প্ৰশাসকৰ লগত সম্পৰ্ক স্থাপন কৰি প্ৰতিৰোধ উঠাই লোৱাওক।
-বাৰণ কৰা সময়ছোৱাত আপুনি আপোনাৰ একাউণ্টসমূহ একত্ৰিত কৰিব নোৱাৰে।',
 	'centralauth-notice-dryrun' => "<div class='successbox'>কেৱল পৰীক্ষামূলক অৱস্থা</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "একাউণ্ট একত্ৰীকৰণ বৰ্তমান ডেম'/ডিবাগিং অৱস্থাত আছে, গতিকে মূল একত্ৰীকৰণ কাম নিষ্ক্ৰিয় হৈ আছে।
 ক্ষমা কৰিব!",
@@ -2484,12 +2477,12 @@ $messages['as'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 অধিকাৰ থকা সদস্যসকলৰ তালিকা]]',
 	'centralauth-editgroup-restrictions' => 'এই গোটটো সক্ৰিয় হৈ থকা ৱিকিসমূহৰ ছেট',
 	'centralauth-editgroup-noset' => '(একো নাই)',
-	'centralauth-editgroup-submit' => 'গোটৰ অনুমতিসমূহৰ সালসলনি সাঁচি ৰাখক',
+	'centralauth-editgroup-submit' => 'গোটৰ অনুমতিসমূহৰ সালসলনি সাঁচি ৰাখক', # Fuzzy
 	'centralauth-editgroup-perms' => 'প্ৰদান কৰা অনুমতিসমূহ:',
 	'centralauth-editgroup-reason' => 'কাৰণ:',
-	'centralauth-editgroup-success' => 'গোটৰ অনুমতিসমূহ সলনি কৰা হৈছে',
+	'centralauth-editgroup-success' => 'গোটৰ অনুমতিসমূহ সলনি কৰা হৈছে', # Fuzzy
 	'centralauth-editgroup-success-text' => 'আপুনি $1 গোটৰ বাবে অনুমতিসমূহ সফলতাৰে সলনি কৰিছে।
-[[Special:GlobalGroupPermissions|গোট ব্যৱস্থাপনালৈ ঘূৰি যাওক]]',
+[[Special:GlobalGroupPermissions|গোট ব্যৱস্থাপনালৈ ঘূৰি যাওক]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|সম্পাদনা]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'তেওঁলোকৰ একাউণ্ট থকা ৱিকি:',
 	'centralauth-globalgroupmembership-badknownwiki' => "গোলকীয় ব্যৱহাৰকাৰী '''$1''' আপুনি নিৰ্দেশ কৰা ৱিকি ('' $2 '')ত সক্ৰিয় নহয়।
@@ -2533,7 +2526,7 @@ $messages['as'] = array(
 	'right-globalgroupmembership' => 'গোলকীয় গোটৰ সদস্যপদ সম্পাদনা কৰক',
 	'right-centralauth-autoaccount' => 'গোলকীয় একাউণ্টেৰে স্বয়ংক্ৰিয়ভাৱে প্ৰৱেশ',
 	'right-centralauth-unmerge' => 'গোলকীয় একাউণ্টৰ একত্ৰীকৰণ নোহোৱা কৰক',
-	'right-centralauth-lock' => 'গোলকীয় একাউণ্ট বন্ধ বা গোপন কৰক',
+	'right-centralauth-lock' => 'গোলকীয় একাউণ্ট বন্ধ বা গোপন কৰক', # Fuzzy
 	'right-centralauth-oversight' => 'গোলকীয় একাউণ্ট নিবাৰণ কৰক', # Fuzzy
 	'right-centralauth-merge' => 'তেওঁলোকৰ একাউণ্ট একত্ৰিত কৰক',
 	'right-globalgrouppermissions' => 'গোলকীয় গোটসমূহৰ ব্যৱস্থাপনা কৰক',
@@ -3111,7 +3104,7 @@ Səbəb: $1',
 	'centralauth-editset-return' => 'Ana görünüşə qayıt',
 	'right-globalgroupmembership' => 'Qlobal qruplarda hüquqları dəyişdir',
 	'right-centralauth-unmerge' => 'Qlobal hesabı aç',
-	'right-centralauth-lock' => 'Qlobal hesabı bağla və ya gizlə',
+	'right-centralauth-lock' => 'Qlobal hesabı bağla və ya gizlə', # Fuzzy
 	'right-centralauth-oversight' => 'Qlobal hesabı bağla', # Fuzzy
 	'right-centralauth-merge' => 'Hesabları birləşdir',
 	'right-globalgrouppermissions' => 'Qlobal qrupları düzəlt',
@@ -3170,9 +3163,6 @@ $messages['azb'] = array(
 	'centralauth-not-owner-text' => '"$1" ایستیفاده‌چی آدی آوتوماتیک اولا‌راق $2 سایتین‌داکی حسابین صاحبینه تعیین ائدیلمیش‌دیر.
 
 اگر بو سیزسینیزسه، آنا پسووردی بورا یازا‌راق داخیل بیرلشدیرمه مدتینی تاماملایا:',
-	'centralauth-blocked-text' => 'ائو ویکی (آشاغیدا اولونموش) دییشیک‌لیک ائتمه‌یه مانعه تؤردیلمیش‌دیر.
-مانعنی قال‌دیرماق اوچون لطفاً بیر سیسوپ ایله علاقه قورون.
-اونی آچا، حساب‌لارینیزی بیرلشتیرمزسینیز.',
 	'centralauth-notice-dryrun' => "</div><br clear='all'/> یالنیز گوسترمه مودلی <div class='successbox'>",
 	'centralauth-disabled-dryrun' => 'عوذر ایستییریک!حساب بیرلشدیرمه هله‌لیک دئمو / آییرد ائتمه رئژیمینده، بونا گؤره گئرچک بیرلشدیرمه عملیات‌لاری دؤوره خاریجی بوراخیلمیش‌دیر.',
 	'centralauth-error-locked' => 'حسابینیز باغلاندیغینا گؤره دییشدیر ائده بیلمزسینیز.',
@@ -3378,12 +3368,12 @@ $messages['azb'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|سلاهیتینه صاحب ایستیفاده‌چی‌لر سیاهی‌سی$2]]',
 	'centralauth-editgroup-restrictions' => 'بو گروهون تأثیرلی اولدوغو wiki سئت‌لری:',
 	'centralauth-editgroup-noset' => '(هئچ بیری)',
-	'centralauth-editgroup-submit' => 'گروه ایجازه‌لرینی دییشیک‌لیک‌لری قئید ائت',
+	'centralauth-editgroup-submit' => 'گروه ایجازه‌لرینی دییشیک‌لیک‌لری قئید ائت', # Fuzzy
 	'centralauth-editgroup-perms' => 'تعیین اولونموش ایجازه‌لر:',
 	'centralauth-editgroup-reason' => 'ندن:',
-	'centralauth-editgroup-success' => 'گروه لار ایجازه‌لری دییشدیریلدی',
+	'centralauth-editgroup-success' => 'گروه لار ایجازه‌لری دییشدیریلدی', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 قروپو اوچون قروپ ایجازه‌لرینی موفقیتله دییشدیردینیز.
-[[Special:GlobalGroupPermissions|گروه رهبرلیگینه گئری دؤنون]]',
+[[Special:GlobalGroupPermissions|گروه رهبرلیگینه گئری دؤنون]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets| دییش‌دیر]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'بیر حسابا صاحب اولونان ویکی:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1 قلوبال ایستیفاده‌چی‌سی ایفاده ویکی('' $2 '')تأثیرلی دئییل.
@@ -3427,7 +3417,7 @@ $messages['azb'] = array(
 	'right-globalgroupmembership' => 'سراسری گروه‌لاردا حقوق‌لاری دییش‌دیر',
 	'right-centralauth-autoaccount' => 'ائورنسل حسابلا ائورنسل گیریش',
 	'right-centralauth-unmerge' => 'سراسری حسابی آییر',
-	'right-centralauth-lock' => 'سراسری حسابی باغلا و یا گیزله',
+	'right-centralauth-lock' => 'سراسری حسابی باغلا و یا گیزله', # Fuzzy
 	'right-centralauth-oversight' => 'سراسری حسابی باغلا', # Fuzzy
 	'right-centralauth-merge' => 'حساب‌لاری بیرلش‌دیر',
 	'right-globalgrouppermissions' => 'سراسری گروه لاری ایداره ائت',
@@ -3481,9 +3471,6 @@ $messages['ba'] = array(
 	'centralauth-incomplete-text' => 'Иҫәп яҙмаларын берләштереү тамамланғас, һеҙгә {{int:Centralauth-groupname}} һәр проектында айырым теркәлергә кәрәкмәйәсәк.',
 	'centralauth-not-owner-text' => '"$1" исеме $2 иҫәп яҙмаһының хужаһына беркетелде.
 Әгәр ул ысынлап та һеҙҙең исемегеҙ икән, иҫәп яҙмаларын берләштереүҙе тамамлау өсөн, ошонда төп иҫәп яҙмаһының паролен керетегеҙ:',
-	'centralauth-blocked-text' => 'һеҙҙең баш вики (түбәндә күрһәтелгән) үҙгәртеүҙәр өсөн бикле.
-Бикте асыу өсөн, ошо викиның хәкименә мөрәжәғәт итегеҙ ,зинһар.
-Бик асылмайынсма, һеҙ үҙегеҙҙең иҫәп яҙмаларығыҙҙы берләшерә алмаясаҡһығыҙ.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демо режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Иҫәп яҙмаларын берләштереү хәҙер демо (төҙәтеү) режимында эшләй, ысын бешләштереүҙәр һүндерелгән. Ғәфү итегеҙ!',
 	'centralauth-error-locked' => 'Һеҙ үҙгәртә алмайһығыҙ, сөнки һеҙҙең иҫәп яҙмағыҙ бикле.',
@@ -3683,12 +3670,12 @@ $messages['ba'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 хоҡуғы булған ҡатнашыусылар исемлеге]]',
 	'centralauth-editgroup-restrictions' => 'Төркөм түбәндәге вики йыйынтығына ҡағыла:',
 	'centralauth-editgroup-noset' => '(юҡ)',
-	'centralauth-editgroup-submit' => 'Төркөм хоҡуҡтарындағы үҙгәрештәрҙе һаҡларға',
+	'centralauth-editgroup-submit' => 'Төркөм хоҡуҡтарындағы үҙгәрештәрҙе һаҡларға', # Fuzzy
 	'centralauth-editgroup-perms' => 'Бирелгән хоҡуҡтар:',
 	'centralauth-editgroup-reason' => 'Сәбәп:',
-	'centralauth-editgroup-success' => 'Төркөмдөң хоҡуҡтары үҙгәртелде',
+	'centralauth-editgroup-success' => 'Төркөмдөң хоҡуҡтары үҙгәртелде', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Һеҙ $1 төркөмөнөң хоҡуҡтарын уңышлы үҙгәрттегеҙ.
-[[Special:GlobalGroupPermissions|Төркөмдәр менән идара итеүгә ҡайтырға]].',
+[[Special:GlobalGroupPermissions|Төркөмдәр менән идара итеүгә ҡайтырға]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|үҙгәртергә]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Уларҙың иҫәп яҙыуҙары булған викилар:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' дөйөм ҡатнашыусыһы һеҙ күрһәткән викила юҡ ('' $2 '').
@@ -3729,7 +3716,7 @@ $messages['ba'] = array(
 	'right-globalgroupmembership' => 'Ҡатнашыусы ҡараған дөйөм төркөмдәр исемлеген үҙгәртергә',
 	'right-centralauth-autoaccount' => 'Дөйөм иҫәп яҙыуынан үҙенән-үҙе инеү',
 	'right-centralauth-unmerge' => 'Дөйөм иҫәп яҙмаларын айырыу',
-	'right-centralauth-lock' => 'Дөйөм иҫәп яҙмаларын бикләү һәм йәшереү',
+	'right-centralauth-lock' => 'Дөйөм иҫәп яҙмаларын бикләү һәм йәшереү', # Fuzzy
 	'right-centralauth-oversight' => 'Дөйөм иҫәп яҙмаларын йәшереү', # Fuzzy
 	'right-centralauth-merge' => 'Иҫәп яҙмаларын берләштереү',
 	'right-globalgrouppermissions' => 'Дөйөм төркөмдәр менән идара итеү',
@@ -3809,7 +3796,6 @@ $messages['bcc'] = array(
 	'centralauth-not-owner-text' => 'نام کاربری "$1"  اتوماتیکی په داروک حساب $2 نشان بوت.
 
 اگر شی شما ایت شما نوتیت مرحله یک داب کتنء گون وارد کتن اصلی کلمه رمز ادان تمام کنیت:',
-	'centralauth-blocked-text' => 'شمی لوگی ویکی(جهل لسیتن) چه اصلاح کتن منع بوتت. لطفا گون یکی چه مدیران سیستم ته ای ویکی تماس گریت دان آییء پچ کنت. تا وهدی که شی کبلنت شما نه تونیت وتی حسابانء چند وبند کنیت.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>مدل نمایش فقط</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'یک داب کتن حساب الان ته حالت آزمایشی/اصلاحی انت, اچه واقعی کار چند و بند کتن حساب غیر فعال انت. شرمنده!',
 	'centralauth-error-locked' => 'شما نه تونیت اصلاح کنیت په چی که شمی حساب کبلنت.',
@@ -3928,12 +3914,12 @@ $messages['bcc'] = array(
 	'centralauth-editgroup-members' => 'لیست عضو:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|لیست کابران گون $2 حقوق]]',
 	'centralauth-editgroup-noset' => '(هچ‌یک)',
-	'centralauth-editgroup-submit' => 'ذخیره کن تغییراتء په اجارتان گروه',
+	'centralauth-editgroup-submit' => 'ذخیره کن تغییراتء په اجارتان گروه', # Fuzzy
 	'centralauth-editgroup-perms' => 'داتگین اجارت ان:',
 	'centralauth-editgroup-reason' => 'دلیل:',
-	'centralauth-editgroup-success' => 'اجازت گروه عوض بوت',
+	'centralauth-editgroup-success' => 'اجازت گروه عوض بوت', # Fuzzy
 	'centralauth-editgroup-success-text' => 'شما گون موفقیت اجارتان گروهء په گروه  $1 عوض کت.
-[[Special:GlobalGroupPermissions|برگرد په گروه مدیریت]]',
+[[Special:GlobalGroupPermissions|برگرد په گروه مدیریت]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|اصلاح])', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'ویکیء که ته آی شما را حساب:',
 	'centralauth-globalgroupmembership-badknownwiki' => "('' $2 '').کاربر سراسری '''$1'''  ته ویکی ای که شما مشخص کت فعال نهنت
@@ -4436,7 +4422,6 @@ $messages['bg'] = array(
 	'centralauth-not-owner-text' => 'Потребителското име „$1“ беше автоматично приписано на притежателя на сметката в $2.
 
 Ако това сте вие, можете да завършите процедурата по обединение на сметки, като просто въведете главната парола за тази сметка тук:',
-	'centralauth-blocked-text' => 'Сметката в домашното ви уики (записано по-долу) е блокирана. Моля, свържете се с администратор там, за да я отблокира. Не можете да слеете сметките си, докато сте блокирани там.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Обединението на сметки в момента е в демонстрационен режим / режим на дебъгване, затова операциите по сливанията са спрени. Съжаляваме!',
 	'centralauth-error-locked' => 'Не можете да редактирате, тъй като сметката ви е заключена.',
@@ -4606,11 +4591,11 @@ $messages['bg'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Списък на потребителите с права на $2]]',
 	'centralauth-editgroup-restrictions' => 'Набор от уикита, където тази група е активна:',
 	'centralauth-editgroup-noset' => '(няма)',
-	'centralauth-editgroup-submit' => 'Съхраняване на промените в правата на групата',
+	'centralauth-editgroup-submit' => 'Съхраняване на промените в правата на групата', # Fuzzy
 	'centralauth-editgroup-perms' => 'Дадени права:',
 	'centralauth-editgroup-reason' => 'Причина:',
-	'centralauth-editgroup-success' => 'Правата на групата бяха променени',
-	'centralauth-editgroup-success-text' => 'Успяхте да промените правата на групата $1. [[Special:GlobalGroupPermissions|Обратно към управлението на групи]]',
+	'centralauth-editgroup-success' => 'Правата на групата бяха променени', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Успяхте да промените правата на групата $1. [[Special:GlobalGroupPermissions|Обратно към управлението на групи]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|редактиране]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Изберете уики, в което e сметката:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Глобалният потребител '''$1''' не е активен в указаното от вас уики ''($2)''. Възможно е да се опитвате да дадете права на грешния потребител!",
@@ -4644,7 +4629,7 @@ $messages['bg'] = array(
 	'right-globalgroupmembership' => 'Промяна на членството в глобални групи',
 	'right-centralauth-autoaccount' => 'Автоматично влизане чрез глобална сметка',
 	'right-centralauth-unmerge' => 'Разделяне на глобалната сметка',
-	'right-centralauth-lock' => 'Заключване или скриване на глобална сметка',
+	'right-centralauth-lock' => 'Заключване или скриване на глобална сметка', # Fuzzy
 	'right-centralauth-merge' => 'Сливане на тяхната сметка',
 	'right-globalgrouppermissions' => 'Управление на глобалните групи',
 );
@@ -4811,9 +4796,6 @@ $messages['bn'] = array(
 	'centralauth-not-owner-text' => 'ব্যবহারকারী নাম "$1" সয়ংক্রিয়ভাবে $2 তে অ্যাকাউন্টের মালিকের জন্য বরাদ্দ হয়েছে।
 
 যদি আপনিই তিনি হন, তাহলে এখনে দেওয়া মূল/মাস্টার শব্দচাবি দিতে লগ-ইন করে লগ-ইন একীভূতকরণ শেষ করতে পারেন:',
-	'centralauth-blocked-text' => 'আপনার স্থানীয় উইকিতে (নিম্নের তালিকাভুক্ত) সম্পাদনা করতে নিষেধাজ্ঞা রয়েছে।
-নিষেধাজ্ঞা তুলে নিতে দয়াকরে এই উইকির কোন প্রশাসকের সাথে যোগাযোগ করুন।
-নিষেধাজ্ঞা থাকা অবস্থায় আপনি আপনার অ্যাকাউন্ট একীভূত করতে পারবেন না।',
 	'centralauth-notice-dryrun' => "<div class='successbox'>ডেমো/পরীক্ষামূলক অবস্থা</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'অ্যাকাউন্ট একীভূতকরণ বর্তমানে ডেমো/পরীক্ষামূলক অবস্থায় আছে, তাই মূল একীকরণের কাজ সক্রিয় নয়। দুঃখিত!',
 	'centralauth-error-locked' => 'আপনি সম্পাদনা করতে পারবেন না কারণ আপনার অ্যাকাউন্টটি বন্ধ আছে।',
@@ -4982,12 +4964,12 @@ $messages['bn'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 অধিকার প্রাপ্ত ব্যবহারকারীদের তালিকা]]',
 	'centralauth-editgroup-restrictions' => 'এই গ্রুপটি সক্রিয় এমন উইকিসমূহের সেট:',
 	'centralauth-editgroup-noset' => '(কিছু নাই)',
-	'centralauth-editgroup-submit' => 'গ্রুপ অনুমতিসমূহ পরিবর্তন করা হয়েছে',
+	'centralauth-editgroup-submit' => 'গ্রুপ অনুমতিসমূহ পরিবর্তন করা হয়েছে', # Fuzzy
 	'centralauth-editgroup-perms' => 'প্রদানকৃত অনুমতিসমূহ:',
 	'centralauth-editgroup-reason' => 'কারণ:',
-	'centralauth-editgroup-success' => 'গ্রুপ অনুমতি পরিবর্তন করা হয়েছে',
+	'centralauth-editgroup-success' => 'গ্রুপ অনুমতি পরিবর্তন করা হয়েছে', # Fuzzy
 	'centralauth-editgroup-success-text' => 'আপনি সফল ভাবে $1 গ্রুপের অনুমতি পরিবর্তন করেছেন।
-[[Special:GlobalGroupPermissions|গ্রুপ ব্যবস্থাপনায় ফিরে যাও]]',
+[[Special:GlobalGroupPermissions|গ্রুপ ব্যবস্থাপনায় ফিরে যাও]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|সম্পাদনা]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'একটি উইকি নির্বাচন করুন যেখানে তাদের একটি অ্যাকাউন্ট আছে:',
 	'centralauth-editset' => 'উইকির সেটসমূহ',
@@ -5411,9 +5393,6 @@ Molimo unesite pravilnu širu za domaću wiki.',
 	'centralauth-not-owner-text' => 'Korisničko ime "$1" je automatski prispojeno vlasniku računa na $2.
 
 Ako ste ovo Vi, možete dovršiti proces unifikacije prijave putem jednostavnog upisivanja glavne šifre za taj račun ovdje:',
-	'centralauth-blocked-text' => 'Vaš domaći wiki (prikazan ispod) je blokiran za uređivanje.
-Molimo da kontaktirate administratora na ovoj wiki da Vas odblokira.
-Dok ste blokirani, ne možete spajati Vaše račune.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Samo mod probe</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Unifikacija računa je trenutno u probnom modu/ispravljanja grešaka, tako da stvarne operacije spajanja računa nisu moguće.
 Izvinjavamo se!',
@@ -5615,12 +5594,12 @@ Zapamtite da ova grupa ne postoji sve dok joj ne budu dodijeljena dopuštenja.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Spisak korisnika sa pravima $2]]',
 	'centralauth-editgroup-restrictions' => 'Set wikija gdje je ova grupa aktivna:',
 	'centralauth-editgroup-noset' => '(ništa)',
-	'centralauth-editgroup-submit' => 'Spremi promjene grupnih dopuštenja',
+	'centralauth-editgroup-submit' => 'Spremi promjene grupnih dopuštenja', # Fuzzy
 	'centralauth-editgroup-perms' => 'Dodijeljena dopuštenja:',
 	'centralauth-editgroup-reason' => 'Razlog:',
-	'centralauth-editgroup-success' => 'Promijenjene dozvole grupe',
+	'centralauth-editgroup-success' => 'Promijenjene dozvole grupe', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Uspješno se promijenili dopuštenja grupe za grupu $1.
-[[Special:GlobalGroupPermissions|Nazad na menadžment grupa]]',
+[[Special:GlobalGroupPermissions|Nazad na menadžment grupa]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|uredi]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki na kojima imaju račun:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalni korisnik '''$1''' nije aktivan na wikiju koji ste naveli ('' $2 '').
@@ -5659,7 +5638,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
 	'centralauth-editset-return' => 'Povratak na glavni pregled',
 	'right-globalgroupmembership' => 'Uređivanje članstva globalnih grupa',
 	'right-centralauth-unmerge' => 'Odvajanje globalnih računa',
-	'right-centralauth-lock' => 'Zaključavanje ili sakrivanje globalnog računa',
+	'right-centralauth-lock' => 'Zaključavanje ili sakrivanje globalnog računa', # Fuzzy
 	'right-centralauth-oversight' => 'Sakrivanje globalnih računa', # Fuzzy
 	'right-centralauth-merge' => 'Spajanje njegovog računa',
 	'right-globalgrouppermissions' => 'Upravljanje globalnim grupama',
@@ -6449,7 +6428,7 @@ $messages['cv'] = array(
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|ҫуо|ҫул}} каялла',
 	'centralauth-editgroup-noset' => '(çук)',
 	'centralauth-editgroup-reason' => 'Сӑлтав:',
-	'centralauth-editgroup-success' => 'Ушкӑн ирӗкӗсем улӑштарнӑ.',
+	'centralauth-editgroup-success' => 'Ушкӑн ирӗкӗсем улӑштарнӑ.', # Fuzzy
 	'centralauth-editset-name' => 'Ят:',
 	'centralauth-editset-reason' => 'Сӑлтав:',
 	'centralauth-editset-submit-delete' => 'Тӗпле',
@@ -6501,9 +6480,6 @@ Nodwch y cyfrinair ar gyfer y wici cartref os gwelwch yn dda.",
 	'centralauth-incomplete-text' => "Cyn gynted ag y bydd eich mewngofnodiad wedi'i uno, gallwch fewngofnodi i unrhyw safle wici {{int:Centralauth-groupname}} heb greu cyfrif newydd.",
 	'centralauth-not-owner-text' => 'Pennwyd y defnyddiwr "$1" yn awtomatig i berchennog y cyfrif ar $2.
 Os mai chi yw\'r person hwnnw, gallwch gwblhau\'r broses o uno mewngofnodi trwy deipio\'r prif gyfrinair ar gyfer y cyfrif hwnnw yn y fan hon:',
-	'centralauth-blocked-text' => "Mae'ch wici cartref (a restrwyd isod) wedi'i flocio rhag golygu.
-Cysylltwch a gweinyddwr o'r wici hwn er mwyn ei ddad-flocio.
-Tra'i fod wedi blocio, ni allwch gyfuno cyfrifon.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Fersiwn enghreifftiol yn unig</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Ar hyn o bryd mae'r uno cyfrifon ar ffurf enghreifftiol / dad-fygio, ac felly mae gweithredoedd uno wedi'u analluogi. Mae'n ddrwg gennym!",
 	'centralauth-error-locked' => 'Ni allwch olygu oherwydd bod eich cyfrif ar glo.',
@@ -7472,7 +7448,6 @@ Ein anderes Wiki wurde für Ihren Benutzernamen als Heimatwiki bestimmt; folgen 
 	'centralauth-not-owner-text' => 'Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.
 
 Wenn dies Ihr Benutzername ist, können Sie die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:',
-	'centralauth-blocked-text' => 'Sie sind für Bearbeitungen in Ihrem Heimat-Wiki (siehe unten) gesperrt. Solange die Sperre besteht, ist eine Zusammenführung der Benutzerkonten nicht möglich.',
 	'centralauth-error-locked' => 'Sie dürfen keine Seiten bearbeiten, da Ihr Benutzerkonto gesperrt ist.',
 	'centralauth-list-home-dryrun' => 'Das Passwort und die E-Mail-Adresse, die Sie in diesem Wiki eingetragen haben, wird für die Zusammenführung der Benutzerkonten verwendet.',
 	'centralauth-list-unattached' => 'Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht automatisch als zu Ihnen gehörend bestätigt werden;
@@ -7498,7 +7473,7 @@ Sie können die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern Sie 
 Eine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.',
 	'centralauth-newgroup-intro' => 'Sie können mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachten Sie, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.',
 	'centralauth-editgroup-success-text' => 'Sie haben die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.
-[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].',
+[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].', # Fuzzy
 	'centralauth-globalgroupmembership-badknownwiki' => "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Sie könnten irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
 	'centralauth-editset-intro-rw' => 'Die nachfolgenden Wikigruppen sind bereits angelegt.
 Sie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
@@ -8504,7 +8479,7 @@ address confirmation:
 
 $5
 
-This confirmation code will expire at $4.',
+This confirmation code will expire at $4.', # Fuzzy
 );
 
 /** Esperanto (Esperanto)
@@ -8561,7 +8536,6 @@ Bonvolu enigi la pasvorton por la hejma vikio.',
 	'centralauth-not-owner-text' => 'La salutnomo "$1" estis aŭtomate donita al la posedanto de la konto $2.
 
 Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la ĉefan pasvorton por tiu konto ĉi tien:',
-	'centralauth-blocked-text' => 'Via hejma vikio (jena) estas forbarita de redaktado. Bonvolu kontakti administranton en ĉi tiu vikio por malforbari ĝin. Dum forbaro, vi ne povas kunfandigi kontojn.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Nur demonstracia reĝimo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontunuigo estas nun en prova fazo, do la unuigaj agoj estas malaktivitaj. Ni bedaŭras!',
 	'centralauth-error-locked' => 'Vi ne povas redakti ĉar via konto estas ŝlosita.',
@@ -8764,11 +8738,11 @@ Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Listo de uzantoj kun rajtoj de $2]]',
 	'centralauth-editgroup-restrictions' => 'Vikiaro kie ĉi tiu grupo estas aktiva:',
 	'centralauth-editgroup-noset' => '(neniu)',
-	'centralauth-editgroup-submit' => 'Konservi ŝanĝojn de gruprajtoj',
+	'centralauth-editgroup-submit' => 'Konservi ŝanĝojn de gruprajtoj', # Fuzzy
 	'centralauth-editgroup-perms' => 'Asignitaj rajtoj:',
 	'centralauth-editgroup-reason' => 'Kialo:',
-	'centralauth-editgroup-success' => 'Rajtoj de grupoj ŝanĝis',
-	'centralauth-editgroup-success-text' => 'Vi sukcese ŝanĝis la gruprajtojn por la grupo $1. [[Special:GlobalGroupPermissions|Reiri al Grupadministrado]]',
+	'centralauth-editgroup-success' => 'Rajtoj de grupoj ŝanĝis', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Vi sukcese ŝanĝis la gruprajtojn por la grupo $1. [[Special:GlobalGroupPermissions|Reiri al Grupadministrado]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redakti]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vikio kie la uzanto havas konton:',
 	'centralauth-globalgroupmembership-badknownwiki' => "La ĝenerala uzanto '''$1''' ne estas aktiva en la aparta vikio ('' $2 ''). Eble vi provas rajtigi la malĝustan uzanton!",
@@ -8811,7 +8785,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 	'right-globalgroupmembership' => 'Redakti membrecon al ĝeneralaj grupoj',
 	'right-centralauth-autoaccount' => 'Aŭtomate ensaluti kun ĝenerala konto',
 	'right-centralauth-unmerge' => 'Malkunigi ĝeneralan konton',
-	'right-centralauth-lock' => 'Ŝlosi aŭ kaŝi ĝeneralan konton',
+	'right-centralauth-lock' => 'Ŝlosi aŭ kaŝi ĝeneralan konton', # Fuzzy
 	'right-centralauth-oversight' => 'Subpremi ĝeneralan konton', # Fuzzy
 	'right-centralauth-merge' => 'Kunfandi la konton',
 	'right-globalgrouppermissions' => 'Administri ĝeneralajn grupojn',
@@ -9597,12 +9571,12 @@ Ohartu zaitez talde bat ez dela existitzen, horretarako baimenak izan ezean.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 eskubideak dituzten lankideen zerrenda]]',
 	'centralauth-editgroup-restrictions' => 'Taldea aktiboa den wiki-multzoa:',
 	'centralauth-editgroup-noset' => '(bat ere ez)',
-	'centralauth-editgroup-submit' => 'Gorde aldaketak talde baimenei buruz',
+	'centralauth-editgroup-submit' => 'Gorde aldaketak talde baimenei buruz', # Fuzzy
 	'centralauth-editgroup-perms' => 'Esleitutako baimenak:',
 	'centralauth-editgroup-reason' => 'Arrazoia:',
-	'centralauth-editgroup-success' => 'Talde baimenak aldatuta',
+	'centralauth-editgroup-success' => 'Talde baimenak aldatuta', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 talderako baimenak aldatu dira arazorik gabe.
-[[Special:GlobalGroupPermissions|Talde kudeaketara itzuli]]',
+[[Special:GlobalGroupPermissions|Talde kudeaketara itzuli]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|aldatu]])',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|ezabatu]])',
 	'centralauth-editset-name' => 'Izena:',
@@ -9682,7 +9656,6 @@ $messages['fa'] = array(
 	'centralauth-not-owner-text' => 'حساب کاربری «$1» به طور خودکار به صاحب حساب کاربری در $2 اختصاص داده شد.
 
 اگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در اینجا به پایان برسانید:',
-	'centralauth-blocked-text' => 'دسترسی ویرایش در ویکی خانهٔ شما (که در زیر فهرست شده‌است) بسته است. لطفاً با یکی از مدیران تماس بگیرید تا آن را باز کند. تا زمانی که این دسترسی بسته باشد نمی‌توانید حساب‌های کاربری‌تان را یکی کنید.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'متأسفیم! سامانهٔ یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست.',
 	'centralauth-error-locked' => 'شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.',
@@ -9884,12 +9857,12 @@ $messages['fa'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|فهرست کاربران دارای اختیارات $2]]',
 	'centralauth-editgroup-restrictions' => 'مجموعه ویکی‌هایی که این گروه در آن‌ها فعال است:',
 	'centralauth-editgroup-noset' => '(هیچ)',
-	'centralauth-editgroup-submit' => 'ذخیره تغییرات داده شده در اختیارات گروه',
+	'centralauth-editgroup-submit' => 'ذخیره تغییرات داده شده در اختیارات گروه', # Fuzzy
 	'centralauth-editgroup-perms' => 'اختیارات داده شده:',
 	'centralauth-editgroup-reason' => 'دلیل:',
-	'centralauth-editgroup-success' => 'اختیارات گروه‌ها تغییر یافت',
+	'centralauth-editgroup-success' => 'اختیارات گروه‌ها تغییر یافت', # Fuzzy
 	'centralauth-editgroup-success-text' => 'شما توانستید اختیارات گروه $1 را با موفقیت تغییر دهید.
-[[Special:GlobalGroupPermissions|به مدیریت گروه‌ها بازگردید]]',
+[[Special:GlobalGroupPermissions|به مدیریت گروه‌ها بازگردید]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ویرایش]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'یک ویکی که در آن حساب دارید را انتخاب کنید:',
 	'centralauth-globalgroupmembership-badknownwiki' => "حساب مشترک '''$1''' در ویکی مورد نظر شما ('' $2 '') فعال نیست. ممکن است در حال اختصاص‌دادن اختیارات به کاربر اشتباهی باشید!",
@@ -9933,7 +9906,7 @@ $messages['fa'] = array(
 	'right-globalgroupmembership' => 'ویرایش عضویت در گروه‌های سراسری',
 	'right-centralauth-autoaccount' => 'ورود خودکار با حساب سراسری',
 	'right-centralauth-unmerge' => 'جدا کردن حساب سراسری',
-	'right-centralauth-lock' => 'قفل یا پنهان کردن حساب سراسری',
+	'right-centralauth-lock' => 'قفل یا پنهان کردن حساب سراسری', # Fuzzy
 	'right-centralauth-oversight' => 'فرونشانی حساب سراسری', # Fuzzy
 	'right-centralauth-merge' => 'ادغام حساب‌های کاربری آن‌ها',
 	'right-globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
@@ -10314,9 +10287,6 @@ Vinarliga skriva loyniorðið fyri heimawikiina.',
 	'centralauth-incomplete-text' => 'Tá tín innritan er sameind, fer tú at kunna rita teg inn á eina og hvørja wiki síðu av {{int:Centralauth-groupname}} uttan at skula upprætta nýggja konto',
 	'centralauth-not-owner-text' => 'Brúkaranavnið "$1" var sjálvvirkandi skrivað til eigaran av konto á $2.
 Um hetta er tú, so kanst tú fullfíggja gondina við at samanleggja kontur við heilt einfalt at skriva títt høvuðs loyniorðið fyri tað kontuna her:',
-	'centralauth-blocked-text' => 'Tín heimawiki (sí niðanfyri) er stongd fyri rættingum.
-Vinarliga set teg í samband við ein umboðsstjóra (administrator) á hesi wiki fyri at læsa hana upp aftur.
-Meðan hon er blokkað, kanst tú ikki samanleggja tínar kontur.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Bert framsýningar støða (demo mode)</div><br clear='all'/>",
 	'centralauth-error-locked' => 'Tú kanst ikki rætta, tí tín konta er stongd.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Les meira um '''sameinda innritan''']]…''",
@@ -10455,12 +10425,12 @@ Orsøk: $1',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Listi av brúkarum við $2 rættindum]]',
 	'centralauth-editgroup-restrictions' => 'Røð av wikium, har hesin bólkur er virkin:',
 	'centralauth-editgroup-noset' => '(ongin)',
-	'centralauth-editgroup-submit' => 'Goym broytingar til bólka loyvir',
+	'centralauth-editgroup-submit' => 'Goym broytingar til bólka loyvir', # Fuzzy
 	'centralauth-editgroup-perms' => 'Givin loyvir:',
 	'centralauth-editgroup-reason' => 'Orsøk:',
-	'centralauth-editgroup-success' => 'Bólka loyvir broytt',
+	'centralauth-editgroup-success' => 'Bólka loyvir broytt', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Tað hevur eydnast tær at broyta bólka loyvini fyri $1 bólkin.
-[[Special:GlobalGroupPermissions|Vend aftur til at stjórna bólkin]]',
+[[Special:GlobalGroupPermissions|Vend aftur til at stjórna bólkin]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|rætta]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki har tey hava eina kontu:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Tann globali brúkarin '''$1''' er ikki virkin á wikiini, sum tú útgreinaði ('' $2 '').
@@ -10495,7 +10465,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
 	'right-globalgroupmembership' => 'Broyt limaskap í globalum bólkum',
 	'right-centralauth-autoaccount' => 'Logga inn sjálvvirkandi við globalari kontu',
 	'right-centralauth-unmerge' => 'Skil sundur aftur globala konto',
-	'right-centralauth-lock' => 'Stong ella goym globala konto',
+	'right-centralauth-lock' => 'Stong ella goym globala konto', # Fuzzy
 	'right-centralauth-merge' => 'Flætta konto teirra',
 	'right-globalgrouppermissions' => 'Stýr globalum bólkum',
 );
@@ -10946,9 +10916,6 @@ Volyéd buchiér lo contresegno du vouiqui principâl.',
 	'centralauth-not-owner-text' => 'Lo nom d’usanciér « $1 » at étâ assignê ôtomaticament u propriètèro du compto dessus $2.
 
 S’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lo contresegno principâl por cél compto :',
-	'centralauth-blocked-text' => 'Voutron compto sur lo vouiqui principâl (listâ ce-desot) est blocâ en ècritura.
-Vos volyéd veriér vers un administrator por lo dèblocar.
-Tant que cél compto résterat blocâ, vos porréd pas fusionar voutros comptos.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Solament la fôrma de dèmonstracion</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Ora, l’unificacion des comptos est en fôrma de dèmonstracion ou ben d’èprôva, du côp les verés opèracions de fusion des comptos sont dèsactivâs.
 Dèsolâ !',
@@ -11154,12 +11121,12 @@ Notâd qu’una tropa pôt ègzistar ren que se des pèrmissions lyé sont baly�
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista ux usanciérs avouéc los drêts $2]]',
 	'centralauth-editgroup-restrictions' => 'Juè de vouiquis yô que ceta tropa est activa :',
 	'centralauth-editgroup-noset' => '(nion)',
-	'centralauth-editgroup-submit' => 'Encartar los changements de pèrmissions a la tropa',
+	'centralauth-editgroup-submit' => 'Encartar los changements de pèrmissions a la tropa', # Fuzzy
 	'centralauth-editgroup-perms' => 'Pèrmissions balyês :',
 	'centralauth-editgroup-reason' => 'Rêson :',
-	'centralauth-editgroup-success' => 'Les pèrmissions a la tropa ont bien étâ changiês',
+	'centralauth-editgroup-success' => 'Les pèrmissions a la tropa ont bien étâ changiês', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Vos éd changiê avouéc reusséta les pèrmissions balyês a la tropa $1.
-[[Special:GlobalGroupPermissions|Tornar a l’administracion a les tropes globâles]].',
+[[Special:GlobalGroupPermissions|Tornar a l’administracion a les tropes globâles]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|changiér]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vouiqui sur loquint ils ont un compto :',
 	'centralauth-globalgroupmembership-badknownwiki' => "L’utilisator globâl '''$1''' fât ren du tot sur lo vouiqui que vos éd spècifiâ ('' $2 '').
@@ -11202,7 +11169,7 @@ Vos pouede vêre et changiér châcun de lor, ou ben fâre un juè novél.',
 	'right-globalgroupmembership' => 'Changiér l’apartegnence a les tropes globâles',
 	'right-centralauth-autoaccount' => 'Branchiér ôtomaticament avouéc un compto globâl',
 	'right-centralauth-unmerge' => 'Dèfusionar lo compto globâl',
-	'right-centralauth-lock' => 'Vèrrolyér ou ben cachiér lo compto globâl',
+	'right-centralauth-lock' => 'Vèrrolyér ou ben cachiér lo compto globâl', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimar lo compto globâl', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar sos comptos',
 	'right-globalgrouppermissions' => 'Administrar les tropes globâles',
@@ -11527,6 +11494,9 @@ Vostede solicitou esta páxina sen achegar ningún dato de autenticación, de mo
 	'centralauth-centralautologin-badstate-local' => 'O estado "$1" non é válido no wiki local',
 	'centralauth-centralautologin-badwiki' => 'O wiki "$1" non é válido para o rexistro central',
 	'centralauth-centralautologin-corsfail' => 'Erro ao comprobar a orixe CORS',
+	'centralauth-centralautologin-p3p-explanation' => 'Algúns navegadores necesitan unha política compacta P3P para enviar cookies ou, nalgúns casos, recibilas, incluíndo a situación implicada na comprobación de rexistro SUL. Esta é unha etapa inútil nesta situación, considerando que todas as páxinas involucradas están no mesmo grupo de wikis e que o propio P3P está en gran parte obsoleto e abandonado; afortunadamente, a política non válida que liga con esta páxina está considerada "boa abondo" pola configuración predeterminada destes navegadores.
+
+Consulte a política de protección de datos do sitio para determinar como se pode utilizar calquera información recollida.',
 	'centralauth-centralautologin-logged-in' => 'Vostede está {{GENDER:$2|identificado|identificada}} centralmente como $1. Recargue a páxina para aplicar os seus parámetros de {{GENDER:$2|usuario|usuaria}}.', # Fuzzy
 	'globalgroupmembership' => 'Membros dos grupos globais',
 	'globalgrouppermissions' => 'Xestión dos grupos globais',
@@ -11643,7 +11613,7 @@ de correo electrónico:
 
 $5
 
-Este código de confirmación caduca o $6 ás $7.', # Fuzzy
+Este código de confirmación caduca o $6 ás $7.',
 );
 
 /** Gothic (Gothic)
@@ -11742,7 +11712,6 @@ E ander Wiki isch fir Dyy Benutzername as Heimetwiki bstimmt wore. Gang im Link 
 	'centralauth-not-owner-text' => 'Dr Benutzername „$1“ isch automatisch im Bsitzer vum Benutzerkonto uf $2 zuegwise wore.
 
 Wänn des Dyy Benutzername isch, chasch d Zämmefierig vu dr Benutzerkonte dur d Yygab vum Haupt-Passwort fir des Benutzerkonto vollände:',
-	'centralauth-blocked-text' => 'Du bisch fir Bearbeitige in Dyynem Heimet-Wiki (lueg unte) gsperrt. Solang s die Sperri git, isch e Zämmefierig vu dr Benutzerkonte nit megli.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'D Benutzerkonto-Zämmefierig isch im Momänt in eme Demonstrations/Fählersuech-Modus. Zämmefierigs-Aktione sin deaktiviert.',
 	'centralauth-error-locked' => 'Du derfsch kei Syte bearbeite, wel Dyy Benutzerkonto gsperrt isch.',
@@ -11939,11 +11908,11 @@ Du chasch d Rächt, wu e jedere Gruppe zuegwise wore sin, aaluege un ändere, w�
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lischt vu dr Benutzer mit em $2-Rächt]]',
 	'centralauth-editgroup-restrictions' => 'Wikigruppe, wu die Gruppe din aktiv isch:',
 	'centralauth-editgroup-noset' => '(keini)',
-	'centralauth-editgroup-submit' => 'Änderige an dr Grupperächt spychere',
+	'centralauth-editgroup-submit' => 'Änderige an dr Grupperächt spychere', # Fuzzy
 	'centralauth-editgroup-perms' => 'Zuegwiseni Rächt:',
 	'centralauth-editgroup-reason' => 'Grund:',
-	'centralauth-editgroup-success' => 'Grupperächt gänderet',
-	'centralauth-editgroup-success-text' => 'Du hesch mit Erfolg d Grupperächt fir d $1-Gruppe gänderet. [[Special:GlobalGroupPermissions|Zruck zue dr Verwaltig vu wältwyte Gruppe]].',
+	'centralauth-editgroup-success' => 'Grupperächt gänderet', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Du hesch mit Erfolg d Grupperächt fir d $1-Gruppe gänderet. [[Special:GlobalGroupPermissions|Zruck zue dr Verwaltig vu wältwyte Gruppe]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bearbeite]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wähl e Wiki, wu si e Benutzerkonto druf hän:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Dr wältwyt Benutzer „$1“ isch uf em Wiki, wu aagee woren isch ''($2)'', nit aktiv. Du chenntsch us Versäh im e falsche Benutzer die Rächt zuewyyse!",
@@ -11985,7 +11954,7 @@ Du chasch eini vun ene bschaue oder ändere, oder e neji aalege.',
 	'right-globalgroupmembership' => 'Mitglidschaft in wältwyte Gruppe bearbeite',
 	'right-centralauth-autoaccount' => 'Automatisch mit em globale Benutzerchonto aamälde',
 	'right-centralauth-unmerge' => 'Wältwyt Benutzerkonto abhänke',
-	'right-centralauth-lock' => 'Wältwyt Benutzerkonto sperre oder uusblände',
+	'right-centralauth-lock' => 'Wältwyt Benutzerkonto sperre oder uusblände', # Fuzzy
 	'right-centralauth-oversight' => 'Wältwyt Benutzerkonto unterdrucke', # Fuzzy
 	'right-centralauth-merge' => 'Benutzerkonte zämmefiere',
 	'right-globalgrouppermissions' => 'Wältwyti Gruppe verwalte',
@@ -12794,9 +12763,6 @@ $messages['hi'] = array(
 	'centralauth-not-owner-text' => '"$1" सदस्यनाम $2 पर इस सदस्यनाम के मालिक को स्वचालित रूप से दिया गया है।
 
 अगर यह आप ही हैं, तो आप उस खाते का मुख्य कूटशब्द यहाँ देकर लॉग इन एकत्रिकरण प्रक्रिया को पूरा कर सकते हैं:',
-	'centralauth-blocked-text' => 'आपका (नीचे दिया हुआ) मूल विकि संपादन से ब्लॉक कर दिया गया है।
-ब्लॉक हटाने के लिये कृपया उस विकि के किसी प्रबंधक से संपर्क करें।
-जब तक उसपर ब्लॉक है, तब तक आप अपने खाते एकत्रित नहीं कर सकते हैं।',
 	'centralauth-notice-dryrun' => "<div class='successbox'>सिर्फ़ डेमो मोड</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'क्षमा करें! खाता एकत्रिकरण अभी डेमो मोड में है, इसलिये सचमुच का एकत्रिकरण संभव नहीं है।',
 	'centralauth-error-locked' => 'आपके खाते को लॉक किया हुआ है, इसलिये आप बदलाव नहीं कर सकते।',
@@ -12995,12 +12961,12 @@ $messages['hi'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 अधिकार होने वाले सदस्योंकी सूची]]',
 	'centralauth-editgroup-restrictions' => 'सेट विकी की जहां इस समूह सक्रिय है',
 	'centralauth-editgroup-noset' => 'केंद्रीय प्रमाणित समूह, नहीं सेट संपादित करें',
-	'centralauth-editgroup-submit' => 'ग्रुप अधिकारोंमें किये बदलाव संजोयें',
+	'centralauth-editgroup-submit' => 'ग्रुप अधिकारोंमें किये बदलाव संजोयें', # Fuzzy
 	'centralauth-editgroup-perms' => 'दिये हुए अधिकार:',
 	'centralauth-editgroup-reason' => 'कारण:',
-	'centralauth-editgroup-success' => 'ग्रुप अधिकार बदल दियें',
+	'centralauth-editgroup-success' => 'ग्रुप अधिकार बदल दियें', # Fuzzy
 	'centralauth-editgroup-success-text' => 'आपने $1 ग्रुपके ग्रुप अधिकार बदल दिये हैं।
-[[Special:GlobalGroupPermissions|ग्रुप व्यवस्थापन की ओर वापस जायें]]',
+[[Special:GlobalGroupPermissions|ग्रुप व्यवस्थापन की ओर वापस जायें]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|संपादन]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'विकि जिस पर उनका खाता है:',
 	'centralauth-globalgroupmembership-badknownwiki' => "आपने दिये हुए विकिपर (''$2'') '''$1''' यह वैश्विक सदस्य कार्यरत नहीं हैं। आप शायद गलत सदस्यको अधिकार दे रहें हैं!",
@@ -13039,7 +13005,7 @@ $messages['hi'] = array(
 	'right-globalgroupmembership' => 'वैश्विक ग्रुप सदस्यत्व बदलें',
 	'right-centralauth-autoaccount' => 'वैश्विक खाते के साथ स्वत: लोंग इन',
 	'right-centralauth-unmerge' => 'वैश्विक खाता अलग करें',
-	'right-centralauth-lock' => 'वैश्विक खाता अवरोधित करें या छुपाएँ',
+	'right-centralauth-lock' => 'वैश्विक खाता अवरोधित करें या छुपाएँ', # Fuzzy
 	'right-centralauth-oversight' => 'वैश्विक खाते को रोकें', # Fuzzy
 	'right-centralauth-merge' => 'उनके खाते एकत्रित करें',
 	'right-globalgrouppermissions' => 'वैश्विक ग्रुपोंको मैनेज करें',
@@ -13133,9 +13099,6 @@ Molimo vas, upišite lozinku za glavnu wiki.',
 	'centralauth-not-owner-text' => 'Suradničko ime "$1" je automatski dodijeljeno suradniku na $2.
 
 Ukoliko ste to vi, možete dovršiti proces spajanja računa unošenjem glavne lozinke:',
-	'centralauth-blocked-text' => 'Vaša glavna wiki (popis dolje) je blokirana za uređivanje.
-Kontaktirajte administratora na toj wiki za odblokiranje.
-Dok ste blokirani, ne možete spojiti račune.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Samo demo mod</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Spajanje računa je trenutno u demo / debugging modu, pa je stvarno spajanje računa onemogućeno.',
 	'centralauth-error-locked' => 'Ne možete uređivati jer je vaš račun zaključan.',
@@ -13335,12 +13298,12 @@ Napomena, skupina ne postoji dok joj nisu dodijeljena prava.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Popis suradnika sa $2 pravima]]',
 	'centralauth-editgroup-restrictions' => 'Set wikija gdje je ova skupina aktivna:',
 	'centralauth-editgroup-noset' => '(ništa)',
-	'centralauth-editgroup-submit' => 'Spremi promjene prava za skupinu',
+	'centralauth-editgroup-submit' => 'Spremi promjene prava za skupinu', # Fuzzy
 	'centralauth-editgroup-perms' => 'Dodijeljena prava:',
 	'centralauth-editgroup-reason' => 'Razlog:',
-	'centralauth-editgroup-success' => 'Promijenjena prava skupine',
+	'centralauth-editgroup-success' => 'Promijenjena prava skupine', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Uspješno ste promijenili prava za skupinu $1.
-[[Special:GlobalGroupPermissions|Vrati se na upravljanje skupinama]]',
+[[Special:GlobalGroupPermissions|Vrati se na upravljanje skupinama]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|uredi]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wikiji na kojima imaju račun:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalni suradnik '''$1''' nije aktivan na wikiju kojeg se odabrali ('' $2 '').
@@ -13379,7 +13342,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi skup.',
 	'centralauth-editset-return' => 'Vrati se na glavno sučelje',
 	'right-globalgroupmembership' => 'Uređivanje članstva za globalne skupine',
 	'right-centralauth-unmerge' => 'Razdvoji globalni račun',
-	'right-centralauth-lock' => 'Zaključaj ili sakrij globalni račun',
+	'right-centralauth-lock' => 'Zaključaj ili sakrij globalni račun', # Fuzzy
 	'right-centralauth-oversight' => 'Sakrivanje globalnog računa', # Fuzzy
 	'right-centralauth-merge' => 'Spajanje svojih računa',
 	'right-globalgrouppermissions' => 'Uređivanje globalnih skupina',
@@ -13812,7 +13775,6 @@ Kérlek add meg a saját wikidhez tartozó jelszót.',
 	'centralauth-not-owner-text' => 'A(z) „$1” felhasználói nevet automatikusan hozzárendeltük a(z) $2-s tulajdonosához.
 
 Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni fiókodat:',
-	'centralauth-blocked-text' => 'A saját wikidben (lásd lent) blokkoltak. Lépj kapcsolatba egy adminisztrátorral, hogy oldja fel a blokkot, mert amíg él, addig nem egyesítheted a fiókjaidat.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demó mód</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'A felhasználói fiókok egységesítése jelenleg csak demó / hibakeresés céljából működik, ezért a valós egységesítés le van tiltva. Sajnáljuk!',
 	'centralauth-error-locked' => 'Nem szerkeszthetsz, mert a fiókod le van zárva.',
@@ -14014,12 +13976,12 @@ Egy csoport csak akkor létezhet, ha jogok vannak hozzá rendelve.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 jogokkal rendelkező szerkesztők listája]]',
 	'centralauth-editgroup-restrictions' => 'Wikicsoportok, ahol ez a csoport aktív:',
 	'centralauth-editgroup-noset' => '(semmi)',
-	'centralauth-editgroup-submit' => 'Csoport jogainak megváltoztatása',
+	'centralauth-editgroup-submit' => 'Csoport jogainak megváltoztatása', # Fuzzy
 	'centralauth-editgroup-perms' => 'Hozzátartozó jogok:',
 	'centralauth-editgroup-reason' => 'Indoklás:',
-	'centralauth-editgroup-success' => 'A csoporthoz tartozó jogok megváltoztatva',
+	'centralauth-editgroup-success' => 'A csoporthoz tartozó jogok megváltoztatva', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Sikeresen megváltoztattad a(z) $1 csoporthoz tartozó jogokat.
-[[Special:GlobalGroupPermissions|Vissza a csoportkezelőhöz]]',
+[[Special:GlobalGroupPermissions|Vissza a csoportkezelőhöz]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|szerkesztés]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Válassz ki egy wikit, ahol van felhasználói fiókja:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' nem aktív az általad kiválasztott wikin ('' $2 '').
@@ -14063,7 +14025,7 @@ Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
 	'right-globalgroupmembership' => 'globális csoportok tagjainak szerkesztése',
 	'right-centralauth-autoaccount' => 'Automatikus bejelentkezés a globális fiókba',
 	'right-centralauth-unmerge' => 'Globális fiók szétválasztása',
-	'right-centralauth-lock' => 'Globális fiók elrejtése vagy zárolása',
+	'right-centralauth-lock' => 'Globális fiók elrejtése vagy zárolása', # Fuzzy
 	'right-centralauth-oversight' => 'Globális fiók elrejtése', # Fuzzy
 	'right-centralauth-merge' => 'saját fiókok egyesítése',
 	'right-globalgrouppermissions' => 'globális csoportok kezelése',
@@ -14803,9 +14765,6 @@ Pangngaasi ta ikabil mo ti kontrasenias iti balay a wikim.',
 	'centralauth-not-owner-text' => 'Ti nagan ti agar-aramat "$1" ket nautomatiko a naikabil ti akinkukua iti pakabilangan idiay $2.
 
 No sika daytoy, mailippas mo ti pinagtipon no imakiniliam ti agturay a kontrasenias iti dayta a pakabilangan ditoy:',
-	'centralauth-blocked-text' => 'Ti balay mo a wiki (nailista dita baba)  ket naserran ti pinagurnos.
-Pangngaasi ta kontakem ti administrador ditoy a wiki ta luktan na ti serra.
-No naserraan daytoy, saan mo a mabalin ti agipagtipon kadagiti pakabilangam.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Pagsubokan laeng</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Pagsubokan laeng ti pinagtipon daytoy a pakabilangan / agsimsimpa daytoy a wagas, ti agpayso a pinagtipon ket nabaldado.
 Pasensian a!',
@@ -15010,12 +14969,12 @@ Pammmo a ti bunngoy ket awan  mailaksid no nainaganan kadagiti pammalubos kanian
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Listaan dagiti agar-aramat nga addaan kadagiti $2 a karbengan]]',
 	'centralauth-editgroup-restrictions' => 'Disso dagiti wiki a daytoy a bunggoy ket nasiglat:',
 	'centralauth-editgroup-noset' => '(awan)',
-	'centralauth-editgroup-submit' => 'Idulin dagiti panagisukat kadagiti pammalubos ti bunggoy',
+	'centralauth-editgroup-submit' => 'Idulin dagiti panagisukat kadagiti pammalubos ti bunggoy', # Fuzzy
 	'centralauth-editgroup-perms' => 'Dagiti naited a pammalubos:',
 	'centralauth-editgroup-reason' => 'Rason:',
-	'centralauth-editgroup-success' => 'Nasukatan dagiti pammalubos ti bunggoy',
+	'centralauth-editgroup-success' => 'Nasukatan dagiti pammalubos ti bunggoy', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Nag-balligi ka a nagsukat  kadagiti pammalubos ti bunggoy para iti $1 a bunggoy.
-[[Special:GlobalGroupPermissions|Agsubli ti pagtaripatuen ti bunggoy]]',
+[[Special:GlobalGroupPermissions|Agsubli ti pagtaripatuen ti bunggoy]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|urnosen]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Ti wiki nga addaan kadagiti pakabilangan da:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ti sangalubongan nga agar-aramat '''$1''' ket saan a nasiglat idiay wiki a nainaganam ('' $2 '') .
@@ -15058,7 +15017,7 @@ Mabalin mo a makita ken mabaliwan ti ania man kaniada, wenno agaramid ti baro a 
 	'right-globalgroupmembership' => 'Baliwan ti panag-kameng kadagiti sangalubongan a bunggoy',
 	'right-centralauth-autoaccount' => 'Automatiko a sumrek ti sangalubongan a pakabilangan',
 	'right-centralauth-unmerge' => 'Ikkaten ti pinatipon ti sangalubongan a pakabilangan',
-	'right-centralauth-lock' => 'Serraan wenno ilemmeng ti sangalubongan a pakabilangan',
+	'right-centralauth-lock' => 'Serraan wenno ilemmeng ti sangalubongan a pakabilangan', # Fuzzy
 	'right-centralauth-oversight' => 'Pasardengan ti sangalubongan a pakabilangan', # Fuzzy
 	'right-centralauth-merge' => 'Pagtiponen ti pakabilangan da',
 	'right-globalgrouppermissions' => 'Taripatuen dagiti sangalubongan a bunggoy',
@@ -16184,7 +16143,6 @@ Mangga isi tembung sandi kanggo wiki utama.',
 	'centralauth-not-owner-text' => 'Jeneng panganggo "$1" diwènèhaké sacara otomatis marang sing duwé rékening (akun) $2.
 
 Yèn iki panjenengan dhéwé, panjenengan bisa ngrampungaké prosès panggabungan log mlebu namung mawa ngetikaké tembung kunci utama kanggo rékening iku ing kéné:',
-	'centralauth-blocked-text' => 'Wiki utama panjenengan (kadhaptar ing ngisor) lagi diblokir saka panyuntingan. Mangga hubungi opsis ing wiki iki kanggo mbukak pamblokiran. Sasuwéné isih diblokir, panjenengan ora bisa nggabungaké akun-akun panjenengan.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mung modus démo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Panggabungan rékening (akun) saiki iki namung arupa modus demo/debugging, dadi operasi panggabungan sing sajati ora dilakokaké. Nuwun sèwu!',
 	'centralauth-error-locked' => 'Panjenengan ora bisa nyunting amarga akun panjenengan dikunci.',
@@ -16381,11 +16339,11 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Daftar panganggo karo hak-hak $2]]',
 	'centralauth-editgroup-restrictions' => 'Sèt wiki ing ngendi klompok iki aktif:',
 	'centralauth-editgroup-noset' => '(ora ana)',
-	'centralauth-editgroup-submit' => 'Simpen owah-owahan ing idin-idin kelompok',
+	'centralauth-editgroup-submit' => 'Simpen owah-owahan ing idin-idin kelompok', # Fuzzy
 	'centralauth-editgroup-perms' => 'Wènèhna idin-idin:',
 	'centralauth-editgroup-reason' => 'Alesan:',
-	'centralauth-editgroup-success' => 'Idin-idin kelompok diganti',
-	'centralauth-editgroup-success-text' => 'Panjenengan sacara suksès bisa ngganti idin kelompok kanggo kelompok $1. [[Special:GlobalGroupPermissions|Balia menyang pangurusan kelompok]]',
+	'centralauth-editgroup-success' => 'Idin-idin kelompok diganti', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Panjenengan sacara suksès bisa ngganti idin kelompok kanggo kelompok $1. [[Special:GlobalGroupPermissions|Balia menyang pangurusan kelompok]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|sunting]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki ing ngendi dhèwèké duwé akun:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Panganggo global '''$1''' ora aktif ing wiki sing panjenengan pilih ('' $2 ''). Panjenengan manawa mènèhi hak marang panganggo sing salah!",
@@ -16425,7 +16383,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'right-globalgroupmembership' => 'Sunting kaanggotan ing kelompok-kelompok global',
 	'right-centralauth-autoaccount' => 'Mlebu sacara otomatis nganggo akun global',
 	'right-centralauth-unmerge' => 'Aja gabung akun global',
-	'right-centralauth-lock' => 'Gemboka utawa dhelikna akun global',
+	'right-centralauth-lock' => 'Gemboka utawa dhelikna akun global', # Fuzzy
 	'right-centralauth-oversight' => 'Busak akun global', # Fuzzy
 	'right-centralauth-merge' => 'Gabung rékening-rékeningé',
 	'right-globalgrouppermissions' => 'Ngurus kelompok-kelompok global',
@@ -16841,7 +16799,6 @@ $messages['kk-arab'] = array(
 	'centralauth-not-owner-text' => '«$1» قاتىسۋشى اتى $2 دەگەندەگى تىركەلگى ىييەسىنە وزدىكتىك تۇيىستىرىلگەن.
 
 بۇل ٴوزىڭىز بولساڭىز, تىركەلگى بىرىزدەندىرۋ ۇدەرىسىن ٴبىتىرۋ ٴۇشىن, باسقى قۇپىييا ٴسوزىڭىزدى كادىمگىدەي مىندا ەنگىزىڭىز:',
-	'centralauth-blocked-text' => 'مەكەن ۋىيكىيىڭىز (تومەندە تىزىمدەلىنەدى) وڭدەۋدەن بۇعاتتالعان. بۇنىڭ بۇعاتتاۋىن ٴوشىرۋ ٴۇشىن وسى ۋىيكىدىڭ اكىمشىسىمەن قاتىناسىڭىز. بۇعاتتالىپ تۇرعاندا تىركەلگىلەرىڭىزدى بىرىكتىرە المايسىز.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>تەك تانىسىپ شىعۋ كۇيى</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'تىركەلگى بىرىزدەندىرۋ اعىمدا كورسەتۋ / مىنەتۋ كۇيىندە تۇر, سونىمەن كوكەيكەستى بىرىكتىرۋ ارەكەتتەرى وشىرىلگەن. عافۋ ەتىڭىز!',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''بىرەگەيلەندىرىلگەن كىرۋ''' تۋرالى كوبىرەك وقىڭىز]]...''",
@@ -16962,11 +16919,11 @@ Other accounts are not yet confirmed.',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|وڭدەۋ]])',
 	'centralauth-editgroup-members' => 'مۇشە ٴتىزىمى:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 رۇقساتتارى بار قاتىسۋشى ٴتىزىمى]]',
-	'centralauth-editgroup-submit' => 'توپ رۇقساتتارى وزگەرىستەرىن ساقتا',
+	'centralauth-editgroup-submit' => 'توپ رۇقساتتارى وزگەرىستەرىن ساقتا', # Fuzzy
 	'centralauth-editgroup-perms' => 'تۇيىستىرىلگەن رۇقساتتار:',
 	'centralauth-editgroup-reason' => 'سەبەبى:',
-	'centralauth-editgroup-success' => 'توپ رۇقساتتارى وزگەرتىلدى',
-	'centralauth-editgroup-success-text' => '$1 توبىنىڭ توپ رۇقساتتارىن ٴساتتى وزگەرتتىڭىز. [[Special:GlobalGroupPermissions|توپ رەتتەۋىنە قايتا كەلۋ]]',
+	'centralauth-editgroup-success' => 'توپ رۇقساتتارى وزگەرتىلدى', # Fuzzy
+	'centralauth-editgroup-success-text' => '$1 توبىنىڭ توپ رۇقساتتارىن ٴساتتى وزگەرتتىڭىز. [[Special:GlobalGroupPermissions|توپ رەتتەۋىنە قايتا كەلۋ]]', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'تىركەلگىسى بار ۋىيكىيدى بولەكتەڭىز:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' عالامدىق قاتىسۋشى كەلتىرگەنىڭىز ۋىيكىيدە بەلسەندى ەمەس ('' $2 ''). رۇقساتتاردى ٴجونسىز قاتىسۋشىعا ٴتۇيىستىرۋ تالاپ ەتكەن بولارسىز!",
 	'right-globalgroupmembership' => 'عالامدىق توپتارعا كىرۋىن وزگەرتۋ',
@@ -17022,7 +16979,6 @@ $messages['kk-cyrl'] = array(
 	'centralauth-not-owner-text' => '«$1» қатысушы аты $2 дегендегі тіркелгі иесіне өздіктік түйістірілген.
 
 Бұл өзіңіз болсаңыз, тіркелгі біріздендіру үдерісін бітіру үшін, басқы құпия сөзіңізді кәдімгідей мында енгізіңіз:',
-	'centralauth-blocked-text' => 'Мекен уикиіңіз (төменде тізімделінеді) өңдеуден бұғатталған. Бұның бұғаттауын өшіру үшін осы уикідің әкімшісімен қатынасыңыз. Бұғатталып тұрғанда тіркелгілеріңізді біріктіре алмайсыз.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Тек танысып шығу күйі</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Тіркелгі біріздендіру ағымда көрсету / мінету күйінде тұр, сонымен көкейкесті біріктіру әрекеттері өшірілген. Ғафу етіңіз!',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Бір аккаунтты қолдану''' қызметі туралы көбірек біліңіз]]...''",
@@ -17144,11 +17100,11 @@ Other accounts are not yet confirmed.',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|өңдеу]])',
 	'centralauth-editgroup-members' => 'Мүше тізімі:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 рұқсаттары бар қатысушы тізімі]]',
-	'centralauth-editgroup-submit' => 'Топ рұқсаттары өзгерістерін сақта',
+	'centralauth-editgroup-submit' => 'Топ рұқсаттары өзгерістерін сақта', # Fuzzy
 	'centralauth-editgroup-perms' => 'Түйістірілген рұқсаттар:',
 	'centralauth-editgroup-reason' => 'Себебі:',
-	'centralauth-editgroup-success' => 'Топ рұқсаттары өзгертілді',
-	'centralauth-editgroup-success-text' => '$1 тобының топ рұқсаттарын сәтті өзгерттіңіз. [[Special:GlobalGroupPermissions|Топ реттеуіне қайта келу]]',
+	'centralauth-editgroup-success' => 'Топ рұқсаттары өзгертілді', # Fuzzy
+	'centralauth-editgroup-success-text' => '$1 тобының топ рұқсаттарын сәтті өзгерттіңіз. [[Special:GlobalGroupPermissions|Топ реттеуіне қайта келу]]', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'Тіркелгісі бар уикиді бөлектеңіз:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ғаламдық қатысушы келтіргеніңіз уикиде белсенді емес ('' $2 ''). Рұқсаттарды жөнсіз қатысушыға түйістіру талап еткен боларсыз!",
 	'right-globalgroupmembership' => 'Ғаламдық топтарға кіруін өзгерту',
@@ -17202,7 +17158,6 @@ däl osı qatıswşı atıñız ben qupïya söziñiz Wïkïpedïya, Wïkïsözd
 	'centralauth-not-owner-text' => '«$1» qatıswşı atı $2 degendegi tirkelgi ïesine özdiktik tüýistirilgen.
 
 Bul öziñiz bolsañız, tirkelgi birizdendirw üderisin bitirw üşin, basqı qupïya söziñizdi kädimgideý mında engiziñiz:',
-	'centralauth-blocked-text' => 'Meken wïkïiñiz (tömende tizimdelinedi) öñdewden buğattalğan. Bunıñ buğattawın öşirw üşin osı wïkidiñ äkimşisimen qatınasıñız. Buğattalıp turğanda tirkelgileriñizdi biriktire almaýsız.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Tek tanısıp şığw küýi</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Tirkelgi birizdendirw ağımda körsetw / minetw küýinde tur, sonımen kökeýkesti biriktirw äreketteri öşirilgen. Ğafw etiñiz!',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Biregeýlendirilgen kirw''' twralı köbirek oqıñız]]...''",
@@ -17323,11 +17278,11 @@ Qaýsıbir teñdestirw derekter jetistirmeý bul betti surağansız, sodıqtan e
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|öñdew]])',
 	'centralauth-editgroup-members' => 'Müşe tizimi:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 ruqsattarı bar qatıswşı tizimi]]',
-	'centralauth-editgroup-submit' => 'Top ruqsattarı özgeristerin saqta',
+	'centralauth-editgroup-submit' => 'Top ruqsattarı özgeristerin saqta', # Fuzzy
 	'centralauth-editgroup-perms' => 'Tüýistirilgen ruqsattar:',
 	'centralauth-editgroup-reason' => 'Sebebi:',
-	'centralauth-editgroup-success' => 'Top ruqsattarı özgertildi',
-	'centralauth-editgroup-success-text' => '$1 tobınıñ top ruqsattarın sätti özgerttiñiz. [[Special:GlobalGroupPermissions|Top rettewine qaýta kelw]]',
+	'centralauth-editgroup-success' => 'Top ruqsattarı özgertildi', # Fuzzy
+	'centralauth-editgroup-success-text' => '$1 tobınıñ top ruqsattarın sätti özgerttiñiz. [[Special:GlobalGroupPermissions|Top rettewine qaýta kelw]]', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'Tirkelgisi bar wïkïdi bölekteñiz:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ğalamdıq qatıswşı keltirgeniñiz wïkïde belsendi emes ('' $2 ''). Ruqsattardı jönsiz qatıswşığa tüýistirw talap etken bolarsız!",
 	'right-globalgroupmembership' => 'Ğalamdıq toptarğa kirwin özgertw',
@@ -17476,9 +17431,9 @@ $messages['km'] = array(
 	'centralauth-editgroup-members' => 'បញ្ជីសមាជិក៖',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|បញ្ជី​អ្នកប្រើប្រាស់​ដែល​មានសិទ្ធិ​ជា$2]]',
 	'centralauth-editgroup-noset' => '(ទទេ)',
-	'centralauth-editgroup-submit' => 'រក្សារទុកបំលាស់ប្តូរចំពោះក្រុមសមាជិកភាព',
+	'centralauth-editgroup-submit' => 'រក្សារទុកបំលាស់ប្តូរចំពោះក្រុមសមាជិកភាព', # Fuzzy
 	'centralauth-editgroup-reason' => 'មូលហេតុ៖',
-	'centralauth-editgroup-success' => 'ក្រុមសមាជិកភាព​បានផ្លាស់ប្តូរហើយ',
+	'centralauth-editgroup-success' => 'ក្រុមសមាជិកភាព​បានផ្លាស់ប្តូរហើយ', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|កែប្រែ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'វិគីដែលពួកគេមានគណនី៖',
 	'centralauth-editset' => '​ការកំណត់​វិគី',
@@ -18858,10 +18813,6 @@ Veur t wachwaord veure heimwiki in.",
 	'centralauth-not-owner-text' => 'De gebroekersnaam "$1" is automatisch toegeweze aan de eigenaar van de gebroeker op $2.
 
 Es geer det böntj, kintj geer uch \'t samevoege van gebroekers aafrönje door hiej \'t wachwaprd veur dae gebroeker te gaeve:',
-	'centralauth-blocked-text' => "Diene heimwiki kin neet vewèrk waere.
-Hiejónger steit aangegaeve welke wiki det is.
-Nöm kontak op mit 'ne syteembeheerder óm dees bepèrking op te laote heffe.
-Zlang de wiki neet bewirk kin waere, kinse gein gebroekers samevoge.",
 	'centralauth-notice-dryrun' => "<div class='succesbox'>Allein demonstratiemodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Samevoege gebroekers is op dit memènt besjikbaar in demonstratie- en debugmodus. 't Sameviege van gebroekers is op dit memènt dus neet meugelik.",
 	'centralauth-error-locked' => "Gi'j junt neet bewerke omdat oew gebroeker geblokt is.",
@@ -19061,11 +19012,11 @@ Doe kans de rechte van alle gróppe betrachte en bewirke es doe dao de rechte ve
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Gebroekers mèt 't rech $2]]",
 	'centralauth-editgroup-restrictions' => "Groop ven wiki's wo deze groop aktief is:",
 	'centralauth-editgroup-noset' => '(gein)',
-	'centralauth-editgroup-submit' => 'Wijzige aan groepsrechte opsloon',
+	'centralauth-editgroup-submit' => 'Wijzige aan groepsrechte opsloon', # Fuzzy
 	'centralauth-editgroup-perms' => 'Toegekindje rech:',
 	'centralauth-editgroup-reason' => 'Reeje:',
-	'centralauth-editgroup-success' => 'Groepsrech verangerdj',
-	'centralauth-editgroup-success-text' => 'Doe höbs de grópsrechte veur gróp $1 aangepas. [[Special:GlobalGroupPermissions|Trök nao grópsbeheer]]',
+	'centralauth-editgroup-success' => 'Groepsrech verangerdj', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Doe höbs de grópsrechte veur gróp $1 aangepas. [[Special:GlobalGroupPermissions|Trök nao grópsbeheer]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bewèrk]])',
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki wo op t'r 'ne gebroeker haet:",
 	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebroeker '''$1''' is neet aktief op de aangegaeve wiki ('''$2'''). Probeert geer mesjiens rechte toe te kinne aan de verkeerde gebroeker?",
@@ -19107,7 +19058,7 @@ Doe kins dees bekieken en verangere, of 'ne nuje groep aanmake.",
 	'right-globalgroupmembership' => 'Lidmaotsjap van globaal gróppe bewirke',
 	'right-centralauth-autoaccount' => "Mèld mich autematis aan mit 'ne wikiwieje gebroeker",
 	'right-centralauth-unmerge' => 'Koppel wikiwiej gebroekers los',
-	'right-centralauth-lock' => 'Blok of verberg wikiwieje gebroeker',
+	'right-centralauth-lock' => 'Blok of verberg wikiwieje gebroeker', # Fuzzy
 	'right-centralauth-oversight' => 'Óngerdrók wikiwieje gebroeker', # Fuzzy
 	'right-centralauth-merge' => 'Gebroekers samevoge',
 	'right-globalgrouppermissions' => 'Globaal gróppe behere',
@@ -19196,9 +19147,6 @@ Prašome įvesti pagrindinio projekto slaptažodį.',
 	'centralauth-not-owner-text' => 'Naudotojo vardas „$1“ buvo automatiškai priskirtas $2 paskyros savininkui.
 
 Jei tai jūs, jūs galite baigti prisijungimo bendrinimą tiesiog čia įvesdami pagrindinį tos paskyros slaptažodį:',
-	'centralauth-blocked-text' => 'Jūsų pagrindiniame projekte (parodyta žemiau) yra blokuojamas redagavimas.
-Prašome susisiekti su administratoriumi šiame projekte, kad ją atblokuotų.
-Kol ji užblokuota, jūs negalite sujungti savo paskyrų.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Tik demonstracinis režimas</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Paskyrų suvienijimas šiuo metu yra demonstraciniame / derinimo režime, todėl tikrosios sujungimo operacijos yra išjungtos.
 Atsiprašome!',
@@ -19389,12 +19337,12 @@ Grupė neegzistuoja, kol ji neturi jai priskirtų teisių.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Narių su $2 teisėmis sąrašas]]',
 	'centralauth-editgroup-restrictions' => 'Projektų rinkinys, kur ši grupė yra aktyvi:',
 	'centralauth-editgroup-noset' => '(nėra)',
-	'centralauth-editgroup-submit' => 'Įrašyti grupės teisių pakeitimus',
+	'centralauth-editgroup-submit' => 'Įrašyti grupės teisių pakeitimus', # Fuzzy
 	'centralauth-editgroup-perms' => 'Priskirtos teisės:',
 	'centralauth-editgroup-reason' => 'Priežastis:',
-	'centralauth-editgroup-success' => 'Grupės teisės pakeistos',
+	'centralauth-editgroup-success' => 'Grupės teisės pakeistos', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Jūs sėkmingai pakeitėte $1 grupės teises.
-[[Special:GlobalGroupPermissions|Grįžti į grupių valdymą]]',
+[[Special:GlobalGroupPermissions|Grįžti į grupių valdymą]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|keisti]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Projektai, kur jie turi paskyrą:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalusis naudotojas '''$1''' nėra aktyvus projekte, kurį nurodėte (''$2'').
@@ -19434,7 +19382,7 @@ Bet kurį iš jų galite peržiūrėti ar keisti, ar sukurti naują.',
 	'right-globalgroupmembership' => 'Keisti globaliųjų grupių narystę',
 	'right-centralauth-autoaccount' => 'Automatiškai prisijungti su bendrąja paskyra',
 	'right-centralauth-unmerge' => 'Atsieti bendrąją paskyrą',
-	'right-centralauth-lock' => 'Užrakinti arba slėpti bendrąją paskyrą',
+	'right-centralauth-lock' => 'Užrakinti arba slėpti bendrąją paskyrą', # Fuzzy
 	'right-centralauth-oversight' => 'Paslėpti bendrąją paskyrą', # Fuzzy
 	'right-centralauth-merge' => 'Sujungti savo paskyrą',
 	'right-globalgrouppermissions' => 'Tvarkyti globaliąsias grupes',
@@ -19664,9 +19612,9 @@ Iemesls: $1',
 	'centralauth-editgroup-members' => 'Dalībnieku saraksts:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Saraksts ar lietotājiem ar $2 tiesībām]]',
 	'centralauth-editgroup-noset' => '(nav)',
-	'centralauth-editgroup-submit' => 'Saglabāt izmaiņas grupu atļaujām',
+	'centralauth-editgroup-submit' => 'Saglabāt izmaiņas grupu atļaujām', # Fuzzy
 	'centralauth-editgroup-reason' => 'Iemesls:',
-	'centralauth-editgroup-success' => 'Grupu atļaujas izmainītas',
+	'centralauth-editgroup-success' => 'Grupu atļaujas izmainītas', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|labot]])',
 	'centralauth-editset-name' => 'Nosaukums:',
 	'centralauth-editset-type' => 'Tips:',
@@ -19676,7 +19624,7 @@ Iemesls: $1',
 	'centralauth-editset-nouse' => '(nav)',
 	'centralauth-editset-usage' => 'Izmantots grupās:',
 	'centralauth-editset-return' => 'Atgriezties galvenajā skatā',
-	'right-centralauth-lock' => 'Slēgt vai noslēpt globālo kontu',
+	'right-centralauth-lock' => 'Slēgt vai noslēpt globālo kontu', # Fuzzy
 );
 
 /** Literary Chinese (文言)
@@ -19688,7 +19636,6 @@ $messages['lzh'] = array(
 	'centralauth-incomplete' => '未成矣﹗',
 	'centralauth-complete-text' => '而今而後，足下行乎維基，一號即可貫之，不必復籍焉。', # Fuzzy
 	'centralauth-incomplete-text' => '一號合矣，爾可貫之；同名號用典字書他也。', # Fuzzy
-	'centralauth-blocked-text' => '君見禁於己邦，遂不能通於諸域。請詣有秩，以求釋焉，而後為之。',
 );
 
 /** Basa Banyumasan (Basa Banyumasan)
@@ -19740,8 +19687,6 @@ Monggo lebokna tembung sandi nggo wiki asale akune Rika.',
 	'centralauth-not-owner-text' => 'Jeneng panganggo "$1" diwènèhna sacara otomatis marang sing duwé akun $2.
 
 Nek kiye pancen Rika dhéwék, panjenengan bisa ngrampungna prosès panggabungan log mlebu namung mawa ngetikna tembung kunci utama kanggo akun kuwe nang kene:',
-	'centralauth-blocked-text' => 'Wiki utamane Rika(kedaftar nang ngisor) lagi diblokir sekang panyuntingan. Monggo hubungi pangurus nang wiki kuwe nggo mbukak blokire.
-Angger esih diblokir, Rika ora teyeng nggabungna akun-akune Rika.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mung mode démo thok</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Panggabungan akun kiye esih nang mode demo/debugging thok, dadi operasi panggabungan sing sajati ora dilakokna. Nuwun sèwu!',
 	'centralauth-error-locked' => 'Rika ora teyeng nyunting jalaran akune Rika dikunci.',
@@ -20737,9 +20682,6 @@ $messages['mn'] = array(
 	'centralauth-not-owner-text' => '"$1" хэрэглэгчийн нэрийг $2 дээрх бүртгэл эзэмшигчид автоматаар оноолоо.
 
 Хэрэв энэ нь та бол энд өөрийн үндсэн нууц үгийг бичиж нэвтрэлт нэгтгэх явцыг дуусгаж болно:',
-	'centralauth-blocked-text' => 'Таны нүүр вики (доор бичсэн) дахь бүртгэл түгжигдсэн байна.
-Тус вики дахь администраторт хандаж түгжээг тайлна уу.
-Та бүртгэлүүдээ түгжигдсэн байхад нь нэгтгэх боломжгүй.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Зөвхөн туршилтын хувилбар</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Бүртгэлийг нэгтгэх үйлдэл одоогоор туршилтийн/алдааг засах төлөвт байна, иймд нэгтгэх үйлдлийг хийх боломжгүй.
 Уучлаарай!',
@@ -20862,7 +20804,6 @@ $messages['mr'] = array(
 	'centralauth-not-owner-text' => '$2 वर "$1" हे सदस्यनाव आपोआप दिले गेलेले आहे.
 
 जर हे तुम्हीच असाल, तर तुम्ही त्या खात्याचा मुख्य परवलीचा शब्द येथे देऊन प्रवेश प्रक्रिया पूर्ण करू शकता:',
-	'centralauth-blocked-text' => 'तुमचा मुख्य विकि (खाली दिलेला) बदल करण्यापासून सुरक्षित करण्यात आलेला आहे. कृपया या विकिवरील एखाद्या प्रबंधकाशी संपर्क करून ब्लॉक काढा. जोपर्यंत तो ब्लॉक आहे, तोपर्यंत खाते एकत्र करता येणार नाही.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>फक्त तपासणीसाठी</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'खाते एकत्रीकरण हे सध्या प्राथमिक तपासणी अवस्थेत आहे, त्यामुळे प्रत्यक्षात एकत्रीकरण करता येत नाही. माफ करा!',
 	'centralauth-error-locked' => 'तुमच्या खात्याला कुलुप लावलेले असल्याने तुम्ही संपादन करू शकत नाही.',
@@ -21059,12 +21000,12 @@ $messages['mr'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 अधिकार असणार्‍या सदस्यांची यादी]]',
 	'centralauth-editgroup-restrictions' => 'विकीगट जेथे हा गट कार्यप्रवण आहे:',
 	'centralauth-editgroup-noset' => '(काहीही नाही)  निरंक',
-	'centralauth-editgroup-submit' => 'गट अधिकारांमधील बदल जतन करा',
+	'centralauth-editgroup-submit' => 'गट अधिकारांमधील बदल जतन करा', # Fuzzy
 	'centralauth-editgroup-perms' => 'दिलेले अधिकार:',
 	'centralauth-editgroup-reason' => 'कारण:',
-	'centralauth-editgroup-success' => 'गट अधिकार बदलले',
+	'centralauth-editgroup-success' => 'गट अधिकार बदलले', # Fuzzy
 	'centralauth-editgroup-success-text' => 'तुम्ही $1 गटाचे गट अधिकार बदललेले आहेत.
-[[Special:GlobalGroupPermissions|गट व्यवस्थापनाकडे परत जा]]',
+[[Special:GlobalGroupPermissions|गट व्यवस्थापनाकडे परत जा]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|संपादन]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ज्या विकिवर त्यांचे खाते आहे असा विकि निवडा:',
 	'centralauth-globalgroupmembership-badknownwiki' => "तुम्ही दिलेल्या विकिवर (''$2'') '''$1''' हा वैश्विक सदस्य कार्यरत नाही. तुम्ही कदाचित चुकीच्या सदस्याला अधिकार देत आहात!",
@@ -21106,7 +21047,7 @@ $messages['mr'] = array(
 	'right-globalgroupmembership' => 'वैश्विक गट सदस्यत्व बदला',
 	'right-centralauth-autoaccount' => 'आपोआप वैश्विक खात्यासह दाखल व्हा.',
 	'right-centralauth-unmerge' => 'वैश्विक खाते असम्मीलित करा',
-	'right-centralauth-lock' => 'वैश्विक खाते कुलुपबंद करा किंवा लपवा',
+	'right-centralauth-lock' => 'वैश्विक खाते कुलुपबंद करा किंवा लपवा', # Fuzzy
 	'right-centralauth-oversight' => 'वैश्विक खाते दडपा', # Fuzzy
 	'right-centralauth-merge' => 'त्यांची खाती एकत्र करा',
 	'right-globalgrouppermissions' => 'वैश्विक गटांचे व्यवस्थापन करा',
@@ -21537,7 +21478,6 @@ Id-databażi tista' tkun li hi korrotta.",
 	'centralauth-not-owner-text' => 'L-isem tal-utent "$1" ġie awtomatikament assenjat lill-proprjetatarju tal-kont fuq il-proġett $2.
 
 Jekk int dan, tista\' tlesti dan il-proċess ta\' twaħħid tal-kontijiet billi ddaħħal il-password prinċipali tal-kont hawnhekk:',
-	'centralauth-blocked-text' => "Il-wiki prinċipali tiegħek (imniżżla hawn taħt) hi mblukkata għall-immodifikar. Jekk jogħġbok ikkuntatja amministratur f'din il-wiki sabiex tiżblukkaha. Waqt li hi mblukkata, inti ma tistax twaħħad il-kontijiet.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modalità ta' prova biss</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "It-twaħħid tal-kontijiet huwa attwalment f'modalità ta' prova jew iddibaggjar, għalhekk l-operazzjonijiet ta' twaħħid veru huma diżattivati. Skużana!",
 	'centralauth-error-locked' => 'Inti ma tistax timmodifika minħabba li l-kont tiegħek huwa mblukkat.',
@@ -21735,12 +21675,12 @@ Kun af li grupp ma jeżistix sakemm ikunu għadhom ma ngħatawlux il-permessi.",
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Lista ta' utenti bid-drittijiet $2]]",
 	'centralauth-editgroup-restrictions' => "Sett ta' wikis fejn dan il-grupp huwa attiv:",
 	'centralauth-editgroup-noset' => '(xejn)',
-	'centralauth-editgroup-submit' => 'Salva l-bidliet tal-permessi tal-grupp',
+	'centralauth-editgroup-submit' => 'Salva l-bidliet tal-permessi tal-grupp', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permessi mogħtija:',
 	'centralauth-editgroup-reason' => 'Raġuni:',
-	'centralauth-editgroup-success' => 'Il-permessi tal-grupp ġew mibdula',
+	'centralauth-editgroup-success' => 'Il-permessi tal-grupp ġew mibdula', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Għadek kif biddilt il-permessi tal-grupp għall-grupp $1.
-[[Special:GlobalGroupPermissions|Irritorna lura lejn il-ġestjoni tal-gruppi]]',
+[[Special:GlobalGroupPermissions|Irritorna lura lejn il-ġestjoni tal-gruppi]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editja]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Agħżel wiki fuq liema għandu kont:',
 	'centralauth-globalgroupmembership-badknownwiki' => "L-utent globali '''$1''' mhuwiex attiv fuq il-wiki li speċifikajt ('' $2 '').
@@ -21783,7 +21723,7 @@ Tista' tara jew timmodifika kwalunkwe waħda minnhom, jew toħloq sett ġdid.",
 	'right-globalgroupmembership' => 'Jimmodifika s-sħubija fi gruppi globali',
 	'right-centralauth-autoaccount' => "Jidħol awtomatikament b'kont globali",
 	'right-centralauth-unmerge' => 'Jiskonnettja kont globali',
-	'right-centralauth-lock' => 'Jimblokka jew jaħdi kont globali',
+	'right-centralauth-lock' => 'Jimblokka jew jaħdi kont globali', # Fuzzy
 	'right-centralauth-oversight' => 'Iħassar kont globali', # Fuzzy
 	'right-centralauth-merge' => 'Iwaħħad il-kont tiegħu',
 	'right-globalgrouppermissions' => 'Jamministra l-gruppi globali',
@@ -22436,7 +22376,7 @@ Kann angahn, dat du den verkehrten Bruker Rechten totowiesen versöchst!",
 	'right-globalgrouppermissions' => 'Globale Gruppen verwalten',
 );
 
-/** Nedersaksies (Nedersaksies)
+/** Low Saxon (Netherlands) (Nedersaksies)
  * @author Servien
  * @author Slomox
  */
@@ -23114,7 +23054,7 @@ Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 Je kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Dittaeva
  * @author Eirik
  * @author Gunnernett
@@ -23172,9 +23112,6 @@ Ver venleg og skriv inn passordet til heimewikien.',
 	'centralauth-not-owner-text' => 'Brukarnamnet «$1» vart automatisk tildeld eigaren av kontoen på $2.
 
 Om dette er deg kan du fullføre prosessen for samanslåing ved å skrive inn hovudpassordet for kontoen her:',
-	'centralauth-blocked-text' => 'Kontoen på heimewikien din (sjå nedanfor) er blokkert frå endring.
-Kontakt ein administrator på denne wikien for å avblokkera kontoen.
-Du kan ikkje slå saman kontoane dine medan den kontoen er blokkert.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Berre demonstrasjonsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Kontosamanslåing er for no berre i demonstrasjonsmodus; faktisk samanslåing er enno ikkje mogleg.',
 	'centralauth-error-locked' => 'Du kan ikkje endra med di kontoen din er låst.',
@@ -23373,12 +23310,12 @@ Merk at gruppa ikkje finst med mindre ho har fått tildelt rettar.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Liste over brukarar med $2-rettar]]',
 	'centralauth-editgroup-restrictions' => 'Wikisett der denne gruppa er aktiv:',
 	'centralauth-editgroup-noset' => '(ingen)',
-	'centralauth-editgroup-submit' => 'Lagra endringar i gruppeløyve',
+	'centralauth-editgroup-submit' => 'Lagra endringar i gruppeløyve', # Fuzzy
 	'centralauth-editgroup-perms' => 'Tildelte løyve:',
 	'centralauth-editgroup-reason' => 'Årsak:',
-	'centralauth-editgroup-success' => 'Gruppeløyve endra',
+	'centralauth-editgroup-success' => 'Gruppeløyve endra', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Du har endra gruppeløyva til gruppa $1.
-[[Special:GlobalGroupPermissions|Attende til gruppehandsaming]]',
+[[Special:GlobalGroupPermissions|Attende til gruppehandsaming]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|endra]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki der dei har ein konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globale brukaren '''$1''' er ikkje aktiv på det oppgjevne prosjektet (<i>$2</i>). Det er mogleg at du freistar å gje rettane til feil brukar!",
@@ -23484,7 +23421,6 @@ Picatz lo senhal sul wiki de basa.",
 	'centralauth-not-owner-text' => "Lo compte d'utilizaire « $1 » es estat automaticament assignat al proprietari del compte sus $2.
 
 Se es vos, poiretz acabar lo procediment d’unificacion de compte en picant lo senhal mèstre per aqueste compte sus :",
-	'centralauth-blocked-text' => "Lo compte sul wiki principal (listat çaijós) es blocat en escritura. Mercés de contactar un administrator per lo desblocar. Tant qu'aqueste compte es blocat, poiretz pas fusionar vòstres comptes.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mòde de demonstracion solament</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'La fusion dels comptes es actualament en mòde de demonstracion o de tèst, doncas, se pòt pas encara vertadièrament fusionar los comptes. O planhèm !',
 	'centralauth-error-locked' => 'Podètz pas modificar res perque vòstre compte es varrolhat.',
@@ -23670,11 +23606,11 @@ Un grop pòt èsser suprimit en li levant totas sas permissions.",
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista dels utilizaires amb lo drech $2]]',
 	'centralauth-editgroup-restrictions' => 'Paramètres dels wikis ont aqueste grop es actiu',
 	'centralauth-editgroup-noset' => '(nonrés)',
-	'centralauth-editgroup-submit' => 'Salvar los cambiaments de las permissions del grop',
+	'centralauth-editgroup-submit' => 'Salvar los cambiaments de las permissions del grop', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permissions atribuidas :',
 	'centralauth-editgroup-reason' => 'Motiu :',
-	'centralauth-editgroup-success' => 'Las permissions del grop son estadas modificadas',
-	'centralauth-editgroup-success-text' => 'Avètz modificat amb succès las permissions del grop $1. [[Special:GlobalGroupPermissions|Tornar a la gestion dels gropes]]',
+	'centralauth-editgroup-success' => 'Las permissions del grop son estadas modificadas', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Avètz modificat amb succès las permissions del grop $1. [[Special:GlobalGroupPermissions|Tornar a la gestion dels gropes]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modificar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki sulqual an un compte :',
 	'centralauth-globalgroupmembership-badknownwiki' => "Lo compte global '''$1''' es inactiu sul wiki qu'avètz indicat (''$2''). Es possible qu'ensajescatz d'assignar los dreches a la marrida persona !",
@@ -23710,7 +23646,7 @@ Los podètz afichar o modificar, o ne crear un autre.',
 	'right-globalgrouppermissions' => 'Gestion dels gropes globals',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Jnanaranjan Sahu
  * @author Odisha1
  * @author Psubhashish
@@ -24881,9 +24817,6 @@ $messages['pnb'] = array(
 	'centralauth-not-owner-text' => 'اے کھاتا "$1" اس کھاتے "$2" دے مالک  نوں اپنے آپ دے دتا گیا سی۔
 
 اگر اے تواڈا کھاتا اے تے تسی اینوں رلان آلے کم نوں اس کھاتے دی ماسٹر کنجی دے کے مکمل کر سکدے او:',
-	'centralauth-blocked-text' => 'تواڈا کعریلو وکی (تھلے دسیا گیا) تبدیلی توں روک دتا گیا اے۔
-مہربانی کرکے کسی مکیۓ نال ملو ایس وکی تے تالا کھولن لئی۔
-جدوں تک ایدے تے تالا اے تسیں  اپنا کھاتہ نئیں رلا سکدے۔',
 	'centralauth-notice-dryrun' => "<div class='successbox'>صرف ڈیمو موڈ</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'کھاتہ رلانا ایس ویلے ڈیمو / ڈیبگنگ موڈ چ اے، ایس لئی رلان کم نوں روک دتا گیا جے۔',
 	'centralauth-error-locked' => 'تسیں تبدیلی نئیں کرسکدے تھواڈاڈا اکاؤنٹ بند کردتا گیا اے۔',
@@ -25084,12 +25017,12 @@ $messages['pnb'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 حقوق رکھن آلے ورتن آلے]]',
 	'centralauth-editgroup-restrictions' => 'اوہ وکی جتھے اے ٹولی کم کردی اے:',
 	'centralauth-editgroup-noset' => '(کوئی نئیں)',
-	'centralauth-editgroup-submit' => 'ٹولی اجازت چ تبدیلیاں بچاؤ',
+	'centralauth-editgroup-submit' => 'ٹولی اجازت چ تبدیلیاں بچاؤ', # Fuzzy
 	'centralauth-editgroup-perms' => 'اجازت دیو:',
 	'centralauth-editgroup-reason' => 'وجہ:',
-	'centralauth-editgroup-success' => 'ٹولی اجازت بدل گئی',
+	'centralauth-editgroup-success' => 'ٹولی اجازت بدل گئی', # Fuzzy
 	'centralauth-editgroup-success-text' => 'تساں کامیابی نال $1 ٹولی ۂی ٹولی اجازت بدل دتی اے۔
-[[Special:GlobalGroupPermissions|گروپ مینیجمنٹ ول واپس]]',
+[[Special:GlobalGroupPermissions|گروپ مینیجمنٹ ول واپس]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|تبدیل کرو]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'جیناں وکیاں تے اوناں دا کھاتا اے:',
 	'centralauth-globalgroupmembership-badknownwiki' => "گلوبل کھاتے آلا '''$1''' تواڈے دسے ہوۓ وکی (''$2'') تے مجود نئیں اے۔
@@ -25132,7 +25065,7 @@ $messages['pnb'] = array(
 	'right-globalgroupmembership' => 'گلوبل گروپاں دی سنگت تبدیل کرو',
 	'right-centralauth-autoaccount' => 'اپنے آپ لاگان ہوو جگت کھاتے نال',
 	'right-centralauth-unmerge' => 'گلوبل کھاتہ وکھرا کرو',
-	'right-centralauth-lock' => 'گلوبل کھاتہ لکاؤ یا تالہ لاؤ',
+	'right-centralauth-lock' => 'گلوبل کھاتہ لکاؤ یا تالہ لاؤ', # Fuzzy
 	'right-centralauth-oversight' => 'گلوبل کھاتہ دبادیو', # Fuzzy
 	'right-centralauth-merge' => 'ایناں دا کھاتہ رلادیو',
 	'right-globalgrouppermissions' => 'کلوبل ٹولیاں نون ویکھو',
@@ -25345,9 +25278,6 @@ Por favor, introduza a palavra-chave da wiki de acolhimento.',
 	'centralauth-not-owner-text' => 'O nome de utilizador "$1" foi atribuído automaticamente ao proprietário da conta na $2.
 
 Se é o proprietário, pode concluir o processo de autenticação unificada introduzindo a palavra-chave dessa conta aqui:',
-	'centralauth-blocked-text' => 'A conta na sua wiki de acolhimento (listada abaixo) está bloqueada.
-Contacte um administrador dessa wiki para desbloqueá-la.
-Enquanto estiver bloqueada, não pode fundir as suas contas.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas.
 Desculpe.',
@@ -25550,12 +25480,12 @@ Note que um grupo não existe se não tiver permissões atribuídas.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de utilizadores com direitos $2]]',
 	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está activo:',
 	'centralauth-editgroup-noset' => '(nenhum)',
-	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo',
+	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permissões atribuídas:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Permissões do grupo alteradas',
+	'centralauth-editgroup-success' => 'Permissões do grupo alteradas', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Alterou com sucesso as permissões do grupo $1.
-[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]',
+[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Seleccione uma wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O utilizador global '''$1''' não está activo na wiki que especificou (''$2'').
@@ -25598,7 +25528,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
 	'right-centralauth-autoaccount' => 'Aceder automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
-	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global',
+	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimir a conta global', # Fuzzy
 	'right-centralauth-merge' => 'Fundir as contas',
 	'right-globalgrouppermissions' => 'Administrar grupos globais',
@@ -26133,9 +26063,6 @@ Vă rugăm să introduceți parola sitului de origine.',
 	'centralauth-complete-text' => 'Acum puteți să vă autentificați în orice proiect wiki al {{int:Centralauth-groupname}} fără să vă creați un nou cont.',
 	'centralauth-incomplete-text' => 'Dacă conturile au fost unificate, puteți să vă autentificați în orice proiect wiki al {{int:Centralauth-groupname}} fără să vă creați un cont nou.',
 	'centralauth-not-owner-text' => 'Numele de utilizator "$1" a fost alocat automat drept proprietarul contului $2. Dacă vă aparține, puteți încheia procesul de unificare a conturilor tastând parola contului inițial aici:',
-	'centralauth-blocked-text' => 'Wikiul dvs. de origine (notat mai jos) este blocat.
-Vă rugăm să contactați un administrator al acestui wiki pentru a îl debloca.
-Cât timp este blocat nu puteți să vă uniți conturile.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Operare în mod demonstrativ</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Unificarea conturilor este în stare demonstrativă sau de depanare, așa că operațiunea nu este posibilă în acest moment. Ne cerem scuze!',
 	'centralauth-error-locked' => 'Nu puteți face modificări deoarece contul dumneavoastră este blocat.',
@@ -26335,12 +26262,12 @@ Rețineți că un grup nu există dacă nu are permisiuni.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de utilizatori cu $2 drepturi]]',
 	'centralauth-editgroup-restrictions' => 'Setul de wikiuri unde grupul este activ:',
 	'centralauth-editgroup-noset' => '(nimic)',
-	'centralauth-editgroup-submit' => 'Salvați schimbări la permisiunile grupului',
+	'centralauth-editgroup-submit' => 'Salvați schimbări la permisiunile grupului', # Fuzzy
 	'centralauth-editgroup-perms' => 'Acordat permisiunile:',
 	'centralauth-editgroup-reason' => 'Motiv:',
-	'centralauth-editgroup-success' => 'Permisiile grupului au fost salvate',
+	'centralauth-editgroup-success' => 'Permisiile grupului au fost salvate', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Ați schimbat cu cucces permisiunile de grup pentru grupul $1.
-[[Special:GlobalGroupPermissions|Înapoi la gestionarea de grup]]',
+[[Special:GlobalGroupPermissions|Înapoi la gestionarea de grup]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editare]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki pe care ei au un cont:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Utilizatorul global '''$1''' nu este activ pe wikiul specificat (''$2'').
@@ -26381,7 +26308,7 @@ Le puteți vizualiza sau modifica pe oricare dintre ele, sau puteți crea un set
 	'right-globalgroupmembership' => 'Modificarea apartenenței la grupuri globale',
 	'right-centralauth-autoaccount' => 'Autentificare automată cu un cont global',
 	'right-centralauth-unmerge' => 'Dezunificarea contului global',
-	'right-centralauth-lock' => 'Blocarea sau ascunderea contului global',
+	'right-centralauth-lock' => 'Blocarea sau ascunderea contului global', # Fuzzy
 	'right-centralauth-oversight' => 'Suprimarea contului global', # Fuzzy
 	'right-centralauth-merge' => 'Unifică conturile sale',
 	'right-globalgrouppermissions' => 'Administrează grupurile globale',
@@ -27063,8 +26990,6 @@ $messages['rue'] = array(
 	'centralauth-not-owner-text' => 'Хосновательске імя „$1“ было автоматічно передане властникові конта на проєктї $2.
 
 Кідь сьте то вы, можете докінчіти процес зъєдинїня приголосованя уведжінём гесла про дане конто:',
-	'centralauth-blocked-text' => 'Ваше конто на вашей домашнєй вікі (зазначеной вікі) є блоковане. Просиме, контактуйте адміністратора з той вікі, жебы го одблоковав.
-Злучованя конт не може продовжовати, докы є блокованый.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонштратівный режім</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Злучіня конт біжыть моментално лем в демонштратівным режімі, также самы злучовачі операції суть выпнуты. Перебачте!',
 	'centralauth-error-locked' => 'Не можете едітовати, бо ваше конто было заблоковане.',
@@ -27259,12 +27184,12 @@ $messages['rue'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список хоснователїв із правами $2]]',
 	'centralauth-editgroup-restrictions' => 'Вікі сет, де є тота ґрупа актівна:',
 	'centralauth-editgroup-noset' => '(жадне)',
-	'centralauth-editgroup-submit' => 'Уложыти зміны в правах ґрупы',
+	'centralauth-editgroup-submit' => 'Уложыти зміны в правах ґрупы', # Fuzzy
 	'centralauth-editgroup-perms' => 'Призначены права:',
 	'centralauth-editgroup-reason' => 'Причіна:',
-	'centralauth-editgroup-success' => 'Права ґрупы змінены',
+	'centralauth-editgroup-success' => 'Права ґрупы змінены', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Успішно сьте змінили права ґрупы про ґрупу $1.
-[[Special:GlobalGroupPermissions|Навернутя на управлїня ґруп]]',
+[[Special:GlobalGroupPermissions|Навернутя на управлїня ґруп]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|змінити]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Выберьте вікі, на котрій має конто:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ґлобалный хоснователь  '''$1''' не є актівный на вікі, котру сьте увели (''$2''). Може пробуєте придати права не тому хоснователёві.",
@@ -27306,7 +27231,7 @@ $messages['rue'] = array(
 	'right-globalgroupmembership' => 'Зміна членства у ґлобалных ґрупах',
 	'right-centralauth-autoaccount' => 'Автоматічне приголошіня ґлобалным контом',
 	'right-centralauth-unmerge' => 'Розлучіти ґлобалны конта',
-	'right-centralauth-lock' => 'Блокованя і сховаваня ґлобалных конт',
+	'right-centralauth-lock' => 'Блокованя і сховаваня ґлобалных конт', # Fuzzy
 	'right-centralauth-oversight' => 'Затаёваня ґлобалных конт', # Fuzzy
 	'right-centralauth-merge' => 'Злучованя їх конт',
 	'right-globalgrouppermissions' => 'Адміністрація ґлобалных ґруп',
@@ -27666,9 +27591,6 @@ $messages['sah'] = array(
 	'centralauth-not-owner-text' => '«$1» аат аптамаатынан бу аакка «$2» холбонно.
 
 Ити эн буоллаххына ааттары холбооһуну сүрүн аат киирии тылын киллэрэн түмүктүөххүн сөп:',
-	'centralauth-blocked-text' => 'Эн дьиэ-биикиҥ аатынан (аллара көстөр) киирэн тугу эмэ уларытарыҥ бобуллубут.
-Бука диэн ол биики дьаһабылын кытта кэпсэтэн бобууну суох оҥоттор.
-Бу бобуу баар кэмигэр ааттаргын кыайан холбуур кыах суох.',
 	'centralauth-notice-dryrun' => 'Көрдөрөр (демо) режим',
 	'centralauth-disabled-dryrun' => 'Ааттары холбооһун билиһиннэрэр (демо) эрэсиимҥэ үлэлии турар, онон дьиҥнээх холбонуу дьайыылара арахсан тураллар. Баалама.',
 	'centralauth-error-locked' => 'Уларытар кыаҕыҥ суох, аатыҥ бобуллубут.',
@@ -27865,12 +27787,12 @@ $messages['sah'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 таһым бырааптаах кыттааччылар тиһиктэрэ]]',
 	'centralauth-editgroup-restrictions' => 'Бөлөх дьайар биикилэрэ:',
 	'centralauth-editgroup-noset' => '(суох)',
-	'centralauth-editgroup-submit' => 'Бөлөх бырааптарын уларытыыны бигэргэтии',
+	'centralauth-editgroup-submit' => 'Бөлөх бырааптарын уларытыыны бигэргэтии', # Fuzzy
 	'centralauth-editgroup-perms' => 'Бэриллибит бырааптар:',
 	'centralauth-editgroup-reason' => 'Төрүөтэ:',
-	'centralauth-editgroup-success' => 'Бөлөхтөр бырааптара уларыйда',
+	'centralauth-editgroup-success' => 'Бөлөхтөр бырааптара уларыйда', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 бөлөх быраабын сөпкө уларыттыҥ.
-[[Special:GlobalGroupPermissions|Бөлөхтөрү салайыыга төннүү]]',
+[[Special:GlobalGroupPermissions|Бөлөхтөрү салайыыга төннүү]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|уларыт]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Бэлиэтэммит биикилэрэ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' диэн кыттааччы ыйыллыбыт биикигэ киирбэтэх ('' $2 '').
@@ -27913,7 +27835,7 @@ $messages['sah'] = array(
 	'right-globalgroupmembership' => 'аан бөлөхтөргө киириини уларытыы',
 	'right-centralauth-autoaccount' => 'Аан аатынан аптамаатынан киирии',
 	'right-centralauth-unmerge' => 'Холбоммут аан ааттары араарыы',
-	'right-centralauth-lock' => 'Холбоммут аан ааттары хааччахтааһын уонна кистээһин',
+	'right-centralauth-lock' => 'Холбоммут аан ааттары хааччахтааһын уонна кистээһин', # Fuzzy
 	'right-centralauth-oversight' => 'Холбоммут аан ааттары баттааһын', # Fuzzy
 	'right-centralauth-merge' => 'Ааттары холбооһун',
 	'right-globalgrouppermissions' => 'Аан бөлөхтөрү дьаһайыы',
@@ -28058,9 +27980,6 @@ $messages['si'] = array(
 	'centralauth-not-owner-text' => '$2 හි ගිණුම හිමිකරුට "$1" පරිශීලක නාමය ස්වයංක්‍රීයව පිරිනැමිණි.
 
 මේ ඔබ නම්, එම ගිණුම සඳහා පාලක මුරපදය මෙහි ටයිප් කිරීමෙන්  පරිශීලක සංයුක්තකිරීම් ක්‍රියාවලිය අවසන් කිරීමට ඔබට හැකිවේ:',
-	'centralauth-blocked-text' => 'ඔබගේ මුල් විකියෙහි (පහත ලැයිස්තුගතකොට ඇති) සංස්කරණය කිරීම වාරණය කොට ඇත.
-එම වාරණය අවලංගු කර ගැනුමට මෙම විකියෙහි පරිපාලකයෙකු හා සම්බන්ධ වන්න.
-එය වාරණය කොට පවතින තුරා, ඔබගේ ගිණුම් ඒකාබද්ධ කල නොහැක.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>ආදර්ශන ප්‍රකාරය පමණි</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ගිණුම් සංයුක්තකිරීම දැනට  ආදර්ශන / දොස්-හරණ ප්‍රක්‍රමයක ක්‍රියාත්මක වේ, එබැවින් සැබෑ ඒකාබද්ධ කිරීමේ ක්‍රියාවලීන් අක්‍රීය කොට ඇත.
 කණගාටුයි!',
@@ -28265,12 +28184,12 @@ $messages['si'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 අයිතීන් ඇති පරිශීලකයෝ]]',
 	'centralauth-editgroup-restrictions' => 'මෙම කණ්ඩායම සක්‍රීය විකියන්:',
 	'centralauth-editgroup-noset' => '(කිසිවක් නොමැත)',
-	'centralauth-editgroup-submit' => 'කණ්ඩායම් අවසරවල වෙනස්කම් සුරකින්න',
+	'centralauth-editgroup-submit' => 'කණ්ඩායම් අවසරවල වෙනස්කම් සුරකින්න', # Fuzzy
 	'centralauth-editgroup-perms' => 'පැවරූ අවසර',
 	'centralauth-editgroup-reason' => 'හේතුව:',
-	'centralauth-editgroup-success' => 'කණ්ඩායම් අවසර වෙනස්කරනලදී',
+	'centralauth-editgroup-success' => 'කණ්ඩායම් අවසර වෙනස්කරනලදී', # Fuzzy
 	'centralauth-editgroup-success-text' => 'ඔබ විසින් $1 කණ්ඩායමේ අවසර සාර්ථකව වෙනස් කර ඇත.
-[[Special:GlobalGroupPermissions|කණ්ඩායම් පාලක ස්ථානයට නැවත යන්න]]',
+[[Special:GlobalGroupPermissions|කණ්ඩායම් පාලක ස්ථානයට නැවත යන්න]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|සංස්කරණය කරන්න]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ඔවුන්ට ගිණුමක් ඇති විකි:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ගෝලීය පරිශීලකයා ඔබ සඳහන් කළ විකිය ('' $2 '') තුළ සක්‍රීය නැත.
@@ -28313,7 +28232,7 @@ $messages['si'] = array(
 	'right-globalgroupmembership' => 'ගෝලීය කණ්ඩායම් සඳහා සාමාජිකත්වය සංස්කරණය කරන්න',
 	'right-centralauth-autoaccount' => 'ගෝලීය ගිණුම සමඟ ස්වයංක්‍රීයව පිවිසෙන්න',
 	'right-centralauth-unmerge' => 'ගෝලීය ගිණුම අසංයුක්ත කරන්න',
-	'right-centralauth-lock' => 'ගෝලීය ගිණුම අගුළු දැමීම හෝ සැඟවීම කරන්න',
+	'right-centralauth-lock' => 'ගෝලීය ගිණුම අගුළු දැමීම හෝ සැඟවීම කරන්න', # Fuzzy
 	'right-centralauth-oversight' => 'ගෝලීය ගිණුම මැඩපවත්වන්න', # Fuzzy
 	'right-centralauth-merge' => 'ඔවුන්ගේ ගිණුම සංයුක්ත කරන්න',
 	'right-globalgrouppermissions' => 'ගෝලීය කණ්ඩායම් පාලනය කරන්න',
@@ -28372,7 +28291,6 @@ Prosím, zadajte heslo domovskej wiki.',
 	'centralauth-not-owner-text' => 'Používateľské meno „$1“ bolo automaticky priradené vlastníkovi účtu na projekte $2.
 
 Ak ste to vy, môžete dokončiť proces zjednotenia účtov jednoducho napísaním hesla pre uvedený účet sem:',
-	'centralauth-blocked-text' => 'Vaša domovská wiki (uvedená dolu) má zablokované úpravy. Prosím, kontaktujte správcu z tejto wiki, aby ju odblokoval. Pokým je zablokovaná, nemôžete zlúčiť svoje účty.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Toto je iba demonštračný režim</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Zjednotenie účtov prebieha momentálne iba v demonštračnom / ladiacom režime, takže samotné operácie spojenia sú vypnuté. Prepáčte!',
 	'centralauth-error-locked' => 'Nemôžete vykonávať úpravy, pretože váš účet je zamknutý.',
@@ -28567,11 +28485,11 @@ Skupinu je možné odstrániť tým, že jej odoberiete všetky oprávnenia.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Zoznam používateľov s oprávnením $2]]',
 	'centralauth-editgroup-restrictions' => 'Množina wiki, kde je táto skupina aktívna:',
 	'centralauth-editgroup-noset' => '(žiadne)',
-	'centralauth-editgroup-submit' => 'Uložiť zmeny oprávnení skupiny',
+	'centralauth-editgroup-submit' => 'Uložiť zmeny oprávnení skupiny', # Fuzzy
 	'centralauth-editgroup-perms' => 'Pridelené oprávnenia:',
 	'centralauth-editgroup-reason' => 'Dôvod:',
-	'centralauth-editgroup-success' => 'Oprávnenia skupiny boli zmenené',
-	'centralauth-editgroup-success-text' => 'Úspešne ste zmenili oprávnenia skupiny $1. [[Special:GlobalGroupPermissions|Späť na správu skupín]]',
+	'centralauth-editgroup-success' => 'Oprávnenia skupiny boli zmenené', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Úspešne ste zmenili oprávnenia skupiny $1. [[Special:GlobalGroupPermissions|Späť na správu skupín]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|upraviť]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki, na ktorej má účet:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globálny používateľ '''$1''' nie je aktívny na wiki, ktorú ste uviedli (''$2''). Možno sa pokúšate prideliť práva nesprávnemu používateľovi!",
@@ -28613,7 +28531,7 @@ Môžete zobraziť a zmeniť ktorúkoľvek z nich alebo vytvoriť novú množinu
 	'right-globalgroupmembership' => 'Upraviť členstvo v globálnych skupinách',
 	'right-centralauth-autoaccount' => 'Automaticky prihlásiť globálnym účtom',
 	'right-centralauth-unmerge' => 'Zrušiť zlúčenie globálneho účtu',
-	'right-centralauth-lock' => 'Zamknúť alebo skryť globálny účet',
+	'right-centralauth-lock' => 'Zamknúť alebo skryť globálny účet', # Fuzzy
 	'right-centralauth-oversight' => 'Potlačiť globálny účet', # Fuzzy
 	'right-centralauth-merge' => 'Zlúčiť ich účty',
 	'right-globalgrouppermissions' => 'Spravovať globálne skupiny',
@@ -28999,9 +28917,6 @@ Ju lutemi shkruan fjalëkalimin për wikin ku keni krijuar llogarinë e parë.',
 	'centralauth-not-owner-text' => 'Emri i përdoruesit "$1" u caktua automatikisht pronari i llogarisë në $2.
 
 Nëse jeni ju, ju mund ta përfundoni procesin e unifikimit thjesht duke shkruar fjalëkalimin për atë llogari këtu:',
-	'centralauth-blocked-text' => "Llogaria juaj tek wiki kryesor (listuar poshtë) është bblokuar nga redaktimi.
-Ju lutemi kontaktoni një administrues në këtë wiki për ta zhbllokuar.
-Përderisa është e bllokuar, ju nuk mund t'i shkrini llogaritë tuaja.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Vetëm mënyra demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Unifikimi i llogarisë është në një mënyrë demo / debbuging, kështu që operacionet e shkrirjes janë të çaktivizuara.
 Na vjen keq!',
@@ -29206,11 +29121,11 @@ Vini re se një grup nuk ekziston nëse nuk ka leje të caktuar për të.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista e përdoruesve me drejtat e $2]]',
 	'centralauth-editgroup-restrictions' => 'Grupet-wiki, në të cilin ky grup është aktiv:',
 	'centralauth-editgroup-noset' => '(asgjë)',
-	'centralauth-editgroup-submit' => 'Ruajni ndryshimet të drejtat e grupit',
+	'centralauth-editgroup-submit' => 'Ruajni ndryshimet të drejtat e grupit', # Fuzzy
 	'centralauth-editgroup-perms' => 'Drejtat të caktuara',
 	'centralauth-editgroup-reason' => 'Arsyeja:',
-	'centralauth-editgroup-success' => 'Drejtat të grupit janë ndryshuar',
-	'centralauth-editgroup-success-text' => 'Ju keni ndryshuar me sukses autorizimet e grupit-$1. [[Special:GlobalGroupPermissions|Kthehu në menaxhimin e grupeve globale]]',
+	'centralauth-editgroup-success' => 'Drejtat të grupit janë ndryshuar', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Ju keni ndryshuar me sukses autorizimet e grupit-$1. [[Special:GlobalGroupPermissions|Kthehu në menaxhimin e grupeve globale]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redakto]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki në të cilat ju keni një llogari:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Përdoruesi globlal '''$1''' nuk është aktiv në wiki që ju specifikuat ('' $2 '').
@@ -29253,7 +29168,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
 	'right-globalgroupmembership' => 'Redaktoni anëtarësimin e grupet globale',
 	'right-centralauth-autoaccount' => 'Hyrje automatike me llogari globale',
 	'right-centralauth-unmerge' => 'Anuloni bashkimin e llogarinë globale',
-	'right-centralauth-lock' => 'Bllokoni ose fsheheni llogarinë globale',
+	'right-centralauth-lock' => 'Bllokoni ose fsheheni llogarinë globale', # Fuzzy
 	'right-centralauth-oversight' => 'Shtypni llogarit globale', # Fuzzy
 	'right-centralauth-merge' => 'Bashkoni llogarit',
 	'right-globalgrouppermissions' => 'Menaxhoni grupet globale',
@@ -29484,11 +29399,11 @@ $messages['sr-ec'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Списак корисника са правима: $2.]]',
 	'centralauth-editgroup-restrictions' => 'Скуп викија у којима је ова група активна:',
 	'centralauth-editgroup-noset' => '(ништа)',
-	'centralauth-editgroup-submit' => 'Снимање измена права групе.',
+	'centralauth-editgroup-submit' => 'Снимање измена права групе.', # Fuzzy
 	'centralauth-editgroup-perms' => 'Додељена права:',
 	'centralauth-editgroup-reason' => 'Разлог:',
-	'centralauth-editgroup-success' => 'Права групе промењена.',
-	'centralauth-editgroup-success-text' => 'Успешно си променио права групи $1. [[Special:GlobalGroupPermissions|Порвратак на управљање групама]].',
+	'centralauth-editgroup-success' => 'Права групе промењена.', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Успешно си променио права групи $1. [[Special:GlobalGroupPermissions|Порвратак на управљање групама]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|уреди]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики на коме има налог:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Глобални корисник '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
@@ -29530,7 +29445,7 @@ $messages['sr-ec'] = array(
 	'right-globalgroupmembership' => 'Измена чланства у глобалним групама.',
 	'right-centralauth-autoaccount' => 'самопријављивање с глобалним налогом',
 	'right-centralauth-unmerge' => 'раздвајање глобалних налога',
-	'right-centralauth-lock' => 'закључавање или сакривање глобалних налога',
+	'right-centralauth-lock' => 'закључавање или сакривање глобалних налога', # Fuzzy
 	'right-centralauth-oversight' => 'сакривање глобалних налога', # Fuzzy
 	'right-centralauth-merge' => 'Спајање њихових налога.',
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
@@ -29757,11 +29672,11 @@ Grupa se briše uklanjanjem svih prava iz iste.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Spisak korisnika sa pravima: $2.]]',
 	'centralauth-editgroup-restrictions' => 'Skup vikija u kojima je ova grupa aktivna:',
 	'centralauth-editgroup-noset' => '(ništa)',
-	'centralauth-editgroup-submit' => 'Snimanje izmena prava grupe.',
+	'centralauth-editgroup-submit' => 'Snimanje izmena prava grupe.', # Fuzzy
 	'centralauth-editgroup-perms' => 'Dodeljena prava:',
 	'centralauth-editgroup-reason' => 'Razlog:',
-	'centralauth-editgroup-success' => 'Prava grupe promenjena.',
-	'centralauth-editgroup-success-text' => 'Uspešno si promenio prava grupi $1. [[Special:GlobalGroupPermissions|Porvratak na upravljanje grupama]].',
+	'centralauth-editgroup-success' => 'Prava grupe promenjena.', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Uspešno si promenio prava grupi $1. [[Special:GlobalGroupPermissions|Porvratak na upravljanje grupama]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|uredi]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Viki na kome ima nalog:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalni korisnik '''$1''' nije aktivan na vikiju koji si odredio/la (''$2''). Možda pokušavaš da dodeliš prava pogrešnom korisniku!",
@@ -29803,7 +29718,7 @@ Možete da ih pregledate i izmenite, ili pak da napravite novi skup.',
 	'right-globalgroupmembership' => 'Izmena članstva u globalnim grupama.',
 	'right-centralauth-autoaccount' => 'samoprijavljivanje s globalnim nalogom',
 	'right-centralauth-unmerge' => 'razdvajanje globalnih naloga',
-	'right-centralauth-lock' => 'zaključavanje ili sakrivanje globalnih naloga',
+	'right-centralauth-lock' => 'zaključavanje ili sakrivanje globalnih naloga', # Fuzzy
 	'right-centralauth-oversight' => 'sakrivanje globalnih naloga', # Fuzzy
 	'right-centralauth-merge' => 'Spajanje njihovih naloga.',
 	'right-globalgrouppermissions' => 'Upravljanje globalnim grupama.',
@@ -29853,7 +29768,6 @@ N uur Wiki wuude foar din Benutsernoome as Heematwiki bestimd; foulgje ju unners
 	'centralauth-not-owner-text' => 'Die Benutsernoome „$1“ wuude automatisk dän Oaindummer fon dät Benutserkonto ap $2 touwiesd.
 
 Wan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten truch Iengoawe fon dät Haud-Paaswoud fon dit Benutserkonto be-eendje.',
-	'centralauth-blocked-text' => 'Du bäst foar Beoarbaidengen in dien Heemat-Wiki (sjuch unner) speerd. Soloange ju Speere bestoant, is ne Touhoopefierenge fon do Benutserkonten nit muugelk.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Ju Benutserkonto-Touhoopefierenge befint sik apstuuns in n Demonstrations/Failersäik-Modus. Touhoopefierengs-Aktione sunt deaktivierd.',
 	'centralauth-error-locked' => 'Du duurst neen Sieden beoarbaidje, deer dien Benutserkonto speerd is.',
@@ -29995,11 +29909,11 @@ Ne Gruppe kon läsked wäide, as aal Gjuchte wächhoald wäide.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lieste fon do Benutsere mäd dät $2-Gjucht]]',
 	'centralauth-editgroup-restrictions' => 'Wikigruppe, in do disse Gruppe aktiv is:',
 	'centralauth-editgroup-noset' => '(neen)',
-	'centralauth-editgroup-submit' => 'Annerengen an do Gruppengjuchte spiekerje',
+	'centralauth-editgroup-submit' => 'Annerengen an do Gruppengjuchte spiekerje', # Fuzzy
 	'centralauth-editgroup-perms' => 'Touwiesde Gjuchte:',
 	'centralauth-editgroup-reason' => 'Gruund:',
-	'centralauth-editgroup-success' => 'Gruppengjuchte annerd',
-	'centralauth-editgroup-success-text' => 'Du hääst mäd Ärfoulch do Gruppengjuchte foar ju $1-Gruppe annerd. [[Special:GlobalGroupPermissions|Tourääch tou Management fon globoale Gruppen]].',
+	'centralauth-editgroup-success' => 'Gruppengjuchte annerd', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Du hääst mäd Ärfoulch do Gruppengjuchte foar ju $1-Gruppe annerd. [[Special:GlobalGroupPermissions|Tourääch tou Management fon globoale Gruppen]].', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|beoarbaidje]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wääl n Wiki, wierap jo n Benutserkonto hääbe:',
 	'centralauth-globalgroupmembership-badknownwiki' => 'Die globoale Benutser "$1" is ap dän anroate Wiki \'\'($2)\'\' nit aktiv. Du kuust uut Fersjoon n falsken Benutser do Gjuchte touwiese!',
@@ -30077,7 +29991,6 @@ Pangkalan data sigana rusak.',
 	'centralauth-not-owner-text' => 'Landihan pamaké "$1" geus diajangkeun ka rekening di $2.
 
 Mun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku cara ngetikkeun sandi master pikeun éta rekening di dieu:',
-	'centralauth-blocked-text' => 'Wiki utami Anjeun (kadaptar di handap) keur dipeungpeuk tina éditan. Sumangga hubungi kuncé di wiki ieu pikeun muka peungpeukan . Salila dipeungpeuk, Anjeun henteu bisa ngagabungkeun rekening Anjeun.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Ukur mode démo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Nunggalkeun rekening téh kakara dina modeu démo/debugging, jadi sabenerna mah can bisa. Punten!',
 	'centralauth-error-locked' => 'Anjeun teu bisa ngédit alatan rekening ajeun keur dikonci.',
@@ -30216,7 +30129,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|édit]])',
 	'centralauth-editgroup-members' => 'Daptar anggota:',
 	'centralauth-editgroup-reason' => 'Alesan:',
-	'centralauth-editgroup-success' => 'Parobahan hak jumplukan geus disimpen',
+	'centralauth-editgroup-success' => 'Parobahan hak jumplukan geus disimpen', # Fuzzy
 	'centralauth-editset-reason' => 'Alesan:',
 	'right-centralauth-merge' => 'Gabungkeun rekening ieu',
 );
@@ -30899,10 +30812,10 @@ $messages['ta'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 உரிமைகளுடனான பயனர்களின் பட்டியல்]]',
 	'centralauth-editgroup-restrictions' => 'இக்குழு இயங்குநிலையில் உள்ள விக்கிகளின் தொகுதி:',
 	'centralauth-editgroup-noset' => '(எதுவுமில்லை)',
-	'centralauth-editgroup-submit' => 'குழு அனுமதிகள் மாற்றங்களை சேமிக்க',
+	'centralauth-editgroup-submit' => 'குழு அனுமதிகள் மாற்றங்களை சேமிக்க', # Fuzzy
 	'centralauth-editgroup-perms' => 'கொடுக்கப்பட்ட அனுமதிகள்:',
 	'centralauth-editgroup-reason' => 'காரணம்:',
-	'centralauth-editgroup-success' => 'குழு அனுமதிகள் மாற்றப்பட்டது',
+	'centralauth-editgroup-success' => 'குழு அனுமதிகள் மாற்றப்பட்டது', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|தொகுப்பு]]', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'அவர்கள் பயனர் கணக்கு கொண்டுள்ள விக்கி:',
 	'centralauth-globalgroupmembership-badknownwiki' => "உலகப் பயனர் '''$1''' நீங்கள் குறிப்பிட்ட விக்கியில் ('' $2 '') இயங்குநிலையில் இல்லை.
@@ -30945,7 +30858,7 @@ $messages['ta'] = array(
 	'right-globalgroupmembership' => 'உலகளாவிய குழுவின் உறுப்பினர்களை திருத்து',
 	'right-centralauth-autoaccount' => 'தானாகவே உலகளாவிய கணக்கின் மூலம்  உள்நுழை.',
 	'right-centralauth-unmerge' => 'உலகளாவிய கணக்கை பிரிக்கவும்',
-	'right-centralauth-lock' => 'உலகளாவிய கணக்கை பூட்டு அல்லது மறை',
+	'right-centralauth-lock' => 'உலகளாவிய கணக்கை பூட்டு அல்லது மறை', # Fuzzy
 	'right-centralauth-oversight' => 'உலகளாவிய கணக்கை ஒடுக்கவும்', # Fuzzy
 	'right-centralauth-merge' => 'அவர்களின் கணக்குகளை ஒன்றுசேர்',
 	'right-globalgrouppermissions' => 'உலகளாவிய குழுக்களை நிர்வகி',
@@ -31199,12 +31112,12 @@ $messages['te'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 అనుమతులు కలిగిన వాడుకరుల జాబితా]]',
 	'centralauth-editgroup-restrictions' => 'ఈ గుంపు చురుగ్గా ఉన్న వికీల సమూహం',
 	'centralauth-editgroup-noset' => '(ఏమీలేదు)',
-	'centralauth-editgroup-submit' => 'గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు',
+	'centralauth-editgroup-submit' => 'గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు', # Fuzzy
 	'centralauth-editgroup-perms' => 'ఇచ్చిన అనుమతులు:',
 	'centralauth-editgroup-reason' => 'కారణం:',
-	'centralauth-editgroup-success' => 'గుంపు అనుమతులను మార్చాం',
+	'centralauth-editgroup-success' => 'గుంపు అనుమతులను మార్చాం', # Fuzzy
 	'centralauth-editgroup-success-text' => 'మీరు $1 గుంపుకు అనుమతులను జయప్రదంగా మార్చారు.
-[[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]',
+[[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|మార్చండి]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'వారికి ఖాతా కలిగిన ఒక వికీ:',
 	'centralauth-globalgroupmembership-badknownwiki' => "సర్వత్రిక వాడుకరి '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేరు. మీరు హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేదు, గమనించండి!",
@@ -31239,7 +31152,7 @@ $messages['te'] = array(
 	'centralauth-editset-success-delete' => 'వికీ సమితిని విజయవంతంగా తొలగించారు.',
 	'right-globalgroupmembership' => 'సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు',
 	'right-centralauth-unmerge' => 'సార్వత్రిక ఖాతాను విడదీయి',
-	'right-centralauth-lock' => 'సార్వత్రిక ఖాతాకు తాళం వెయ్యి లేదా దాచు',
+	'right-centralauth-lock' => 'సార్వత్రిక ఖాతాకు తాళం వెయ్యి లేదా దాచు', # Fuzzy
 	'right-centralauth-oversight' => 'సార్వత్రిక ఖాతాను అణచి పెట్టు', # Fuzzy
 	'right-centralauth-merge' => 'వారి ఖాతాలను విలీనం చెయ్యి',
 	'right-globalgrouppermissions' => 'సార్వత్రిక గుంపులను నిర్వహించు',
@@ -31416,10 +31329,10 @@ $messages['tg-cyrl'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|вироиш]])',
 	'centralauth-editgroup-members' => 'Феҳристи аъзо:',
 	'centralauth-editgroup-noset' => '(ҳеҷ)',
-	'centralauth-editgroup-submit' => 'Захираи тағйироти додашуда дар ихтиёроти гурӯҳ',
+	'centralauth-editgroup-submit' => 'Захираи тағйироти додашуда дар ихтиёроти гурӯҳ', # Fuzzy
 	'centralauth-editgroup-perms' => 'Ихтиёроти таъйиншуда:',
 	'centralauth-editgroup-reason' => 'Сабаб:',
-	'centralauth-editgroup-success' => 'Ихтиёроти гурӯҳ тағйир ёфт',
+	'centralauth-editgroup-success' => 'Ихтиёроти гурӯҳ тағйир ёфт', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'Викие ки дар он онҳо ҳисоб доранд:',
 	'centralauth-editset' => 'Вироиши маҷмӯъҳои вики', # Fuzzy
 	'centralauth-editset-new' => 'Эҷоди як маҷмӯъаи нав',
@@ -31582,10 +31495,10 @@ Digar hisobho to hol ta'jid naşudaand.",
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|viroiş]])',
 	'centralauth-editgroup-members' => "Fehristi a'zo:",
 	'centralauth-editgroup-noset' => '(heç)',
-	'centralauth-editgroup-submit' => 'Zaxirai taƣjiroti dodaşuda dar ixtijoroti gurūh',
+	'centralauth-editgroup-submit' => 'Zaxirai taƣjiroti dodaşuda dar ixtijoroti gurūh', # Fuzzy
 	'centralauth-editgroup-perms' => "Ixtijoroti ta'jinşuda:",
 	'centralauth-editgroup-reason' => 'Sabab:',
-	'centralauth-editgroup-success' => 'Ixtijoroti gurūh taƣjir joft',
+	'centralauth-editgroup-success' => 'Ixtijoroti gurūh taƣjir joft', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vikie ki dar on onho hisob dorand:',
 	'centralauth-editset' => "Viroişi maçmū'hoi viki", # Fuzzy
 	'centralauth-editset-new' => "Eçodi jak maçmū'ai nav",
@@ -31902,12 +31815,12 @@ Beýleki hasaplar heniz tassyklanylmady.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 hukugyna eýe ulanyjylaryň sanawy]]',
 	'centralauth-editgroup-restrictions' => 'Şu toparyň işjeň bolan wikiler toplumy:',
 	'centralauth-editgroup-noset' => '(hiç biri)',
-	'centralauth-editgroup-submit' => 'Topar rugsatlaryny üýtgeşmeleri ýazdyr',
+	'centralauth-editgroup-submit' => 'Topar rugsatlaryny üýtgeşmeleri ýazdyr', # Fuzzy
 	'centralauth-editgroup-perms' => 'Bellenen rugsatlar:',
 	'centralauth-editgroup-reason' => 'Sebäp:',
-	'centralauth-editgroup-success' => 'Topar rugsatlary üýtgedildi',
+	'centralauth-editgroup-success' => 'Topar rugsatlary üýtgedildi', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 topary üçin topar rugsatlaryny şowly üýtgetdiňiz.
-[[Special:GlobalGroupPermissions|Topar dolandyryşyna gaýdyp baryň]]',
+[[Special:GlobalGroupPermissions|Topar dolandyryşyna gaýdyp baryň]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redaktirle]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Olaryň hasaby bar bolan wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' global ulanyjysy görkezen wikiňizde ('' $2 '') açyk däl.
@@ -31946,7 +31859,7 @@ Olaryň islendigini görüp ýa-da redaktirläp bilersiňiz, ýa-da täze toplum
 	'centralauth-editset-return' => 'Esasy görnüşe gaýdyp bar',
 	'right-globalgroupmembership' => 'Global toparlara agzalygy redaktirle',
 	'right-centralauth-unmerge' => 'Global hasaby bölekle',
-	'right-centralauth-lock' => 'Global hasaby gulpla ýa-da gizle',
+	'right-centralauth-lock' => 'Global hasaby gulpla ýa-da gizle', # Fuzzy
 	'right-centralauth-oversight' => 'Global hasaby bökde', # Fuzzy
 	'right-centralauth-merge' => 'Olaryň hasaplaryny birleşdir',
 	'right-globalgrouppermissions' => 'Global toparlary dolandyr',
@@ -32002,9 +31915,6 @@ Pakipasok ang hudyat na para sa tahanang wiki.',
 	'centralauth-not-owner-text' => 'Ang pangalan ng tagagamit na "$1" ay kusang itinalaga para sa may-ari ng kuwentang nasa $2.
 
 Kung ikaw ito, maaari mong tapusin ang pagsasagawa ng pag-iisa ng paglagda sa pamamagitan lamang ng payak na pagmamakiniliya dito ng pangunahing hudyat para sa akawnt na iyon:',
-	'centralauth-blocked-text' => "Ang iyong tahanang wiki (nakatala sa ibaba) ay hinadlangan sa paggawa ng pagbabago.
-Makipagugnayan lamang sa isang ''sysop'' (tagapagpatakbo ng sistema) sa wiking ito upang matanggal ang pagkakaharang dito.
-Habang hinahadlangan ito, hindi ka mo maaaring pagsanibin ang mga kuwenta mo.",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Nasa modalidad ng pagpapatunghay (pagpapamalas) lamang kung paano gagawin/gagamitin</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Kasalukuyang nasa modalidad na pagpapatunghay lamang / pagaalis ng depekto ang pag-iisa ng kuwenta, kaya't hindi pinapagana ang talagang mga pagsasagawa ng pagsasanib.
 Paumanhin!",
@@ -32207,11 +32117,11 @@ Pakitaandaan lamang na hindi iiral ang isang pangkat hangga't hindi pa ito nabib
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Talaan ng mga tagagamit na may $2 mga karapatan]]',
 	'centralauth-editgroup-restrictions' => 'Pangkat ng mga wiki kung saan masigla (aktibo) ang grupong ito:',
 	'centralauth-editgroup-noset' => '(wala)',
-	'centralauth-editgroup-submit' => 'Sagipin ang mga pagbabago sa kapahintulutang pangkapangkatan',
+	'centralauth-editgroup-submit' => 'Sagipin ang mga pagbabago sa kapahintulutang pangkapangkatan', # Fuzzy
 	'centralauth-editgroup-perms' => 'Itinalaga/itinakdang mga kapahintulutan:',
 	'centralauth-editgroup-reason' => 'Dahilan:',
-	'centralauth-editgroup-success' => 'Binago ang mga kapahintulutang pampangkat',
-	'centralauth-editgroup-success-text' => 'Matagumpay mong nabago ang kapahintulutang pampangkat para sa $1 pangkat. [[Special:GlobalGroupPermissions|Magbalik sa pamamahala ng pangkat]]',
+	'centralauth-editgroup-success' => 'Binago ang mga kapahintulutang pampangkat', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Matagumpay mong nabago ang kapahintulutang pampangkat para sa $1 pangkat. [[Special:GlobalGroupPermissions|Magbalik sa pamamahala ng pangkat]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|pagbabago]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kung saan sila mayroong isang akawnt/kuwenta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Hindi masigla ang pandaigdigang tagagamit na si '''$1''' sa tinukoy mong wiki ('' $2 '').
@@ -32255,7 +32165,7 @@ Maaari mong tingnan at baguhin ang alin man sa kanila, o lumikha ng isang bagong
 	'right-globalgroupmembership' => 'Baguhin ang kasapian sa mga kapangkatang pandaigdigan',
 	'right-centralauth-autoaccount' => 'Kusang lumagda sa pamamagitan ng akawnt na pangglobo',
 	'right-centralauth-unmerge' => 'Huwag pagsanibin ang pandaigdigang akawnt',
-	'right-centralauth-lock' => 'Ikandado o ikubli ang pandaigdigang akawnt',
+	'right-centralauth-lock' => 'Ikandado o ikubli ang pandaigdigang akawnt', # Fuzzy
 	'right-centralauth-oversight' => 'Pigilin ang pandaigdigang akawnt', # Fuzzy
 	'right-centralauth-merge' => 'Pagsanibin/pagsamahin ang kanilang kuwenta (akawnt)',
 	'right-globalgrouppermissions' => 'Pamahalaan ang kapangkatang pandaigdigan',
@@ -32349,9 +32259,6 @@ Lütfen ev vikisi için şifreyi girin.',
 	'centralauth-not-owner-text' => '"$1" kullanıcı adı otomatik olarak $2 sitesindeki hesabın sahibine atanmıştır.
 
 Eğer bu sizseniz, ana şifreyi buraya yazarak giriş birleştirme sürecini tamamlayabilirsiniz:',
-	'centralauth-blocked-text' => 'Ev vikiniz (aşağıda listelenmiş) değişiklik yapmaya engellenmiştir.
-Engeli kaldırmak için lütfen bir sysop ile irtibat kurun.
-Engelliyken, hesaplarınızı birleştiremezsiniz.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sadece demo kipi</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Hesap birleştirme şuanda demo / ayıklama modunda, bu yüzden gerçek birleştirme işlemleri devre dışı bırakılmıştır.
 Üzgünüz!',
@@ -32551,12 +32458,12 @@ Unutmayın ki bir grup, ona izinler atanmadıkça varolamaz.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 yetkisine sahip kullanıcılar listesi]]',
 	'centralauth-editgroup-restrictions' => 'Bu grubun etkin olduğu viki setleri:',
 	'centralauth-editgroup-noset' => '(hiç)',
-	'centralauth-editgroup-submit' => 'Grup izinlerine değişiklikleri kaydet',
+	'centralauth-editgroup-submit' => 'Grup izinlerine değişiklikleri kaydet', # Fuzzy
 	'centralauth-editgroup-perms' => 'Atanan izinler:',
 	'centralauth-editgroup-reason' => 'Sebep:',
-	'centralauth-editgroup-success' => 'Grup izinleri değiştirildi',
+	'centralauth-editgroup-success' => 'Grup izinleri değiştirildi', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 grubu için grup izinlerini başarıyla değiştirdiniz.
-[[Special:GlobalGroupPermissions|Grup yönetimine geri dönün]]',
+[[Special:GlobalGroupPermissions|Grup yönetimine geri dönün]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|değiştir]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Bir hesaba sahip olunan Viki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' küresel kullanıcısı belirttiğiniz vikide ('' $2 '') etkin değil.
@@ -32596,7 +32503,7 @@ Herhangi birini görebilir ve değiştirebilirsiniz, ya da yeni bir set oluştur
 	'centralauth-editset-return' => 'Ana görünüme dön',
 	'right-globalgroupmembership' => 'Küresel gruplara üyeliği değiştir',
 	'right-centralauth-unmerge' => 'Küresel hesabı çöz',
-	'right-centralauth-lock' => 'Küresel hesabı kilitle ya da gizle',
+	'right-centralauth-lock' => 'Küresel hesabı kilitle ya da gizle', # Fuzzy
 	'right-centralauth-oversight' => 'Küresel hesabı bastır', # Fuzzy
 	'right-centralauth-merge' => 'Hesaplarını birleştir',
 	'right-globalgrouppermissions' => 'Küresel grupları düzenle',
@@ -32909,10 +32816,10 @@ $messages['ug-arab'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 ئىجازىتى بار ئىشلەتكۈچى تىزىمى]]',
 	'centralauth-editgroup-restrictions' => 'بۇ گۇرۇپپا ئاكتىپ ھالەتتە تۇرۇۋاتقان ۋىكى تەڭشىكى:',
 	'centralauth-editgroup-noset' => '(يوق)',
-	'centralauth-editgroup-submit' => 'ئۆزگىرىشنى گۇرۇپپا ئىجازىتىگە ساقلا',
+	'centralauth-editgroup-submit' => 'ئۆزگىرىشنى گۇرۇپپا ئىجازىتىگە ساقلا', # Fuzzy
 	'centralauth-editgroup-perms' => 'بەلگىلەنگەن ئىجازەتلەر:',
 	'centralauth-editgroup-reason' => 'سەۋەب:',
-	'centralauth-editgroup-success' => 'گۇرۇپپا ئىجازىتى ئۆزگەردى',
+	'centralauth-editgroup-success' => 'گۇرۇپپا ئىجازىتى ئۆزگەردى', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|تەھرىر]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ئۇلارنىڭ ھېساباتى بار ۋىكىدىن بىرنى تاللاڭ:',
 	'centralauth-editset' => 'ۋىكى توپلىمى',
@@ -32951,7 +32858,7 @@ $messages['ug-arab'] = array(
 	'right-globalgroupmembership' => 'ئومۇمىيەت گۇرۇپپىسىنىڭ ئەزالىرىنى تەھرىرلەش',
 	'right-centralauth-autoaccount' => 'ئومۇمىيەت ھېساباتىدا ئۆزلۈكىدىن تىزىم كىرىدۇ',
 	'right-centralauth-unmerge' => 'ئومۇمىيەت ھېساباتىنى پارچىلا',
-	'right-centralauth-lock' => 'ئومۇمىيەت ھېساباتىنى قۇلۇپلا ياكى يوشۇر',
+	'right-centralauth-lock' => 'ئومۇمىيەت ھېساباتىنى قۇلۇپلا ياكى يوشۇر', # Fuzzy
 	'right-centralauth-oversight' => 'ئومۇمىيەت ھېساباتىنى چەكلە', # Fuzzy
 	'right-centralauth-merge' => 'ئۇلارنىڭ ھېساباتىنى بىرلەشتۈر',
 	'right-globalgrouppermissions' => 'ئومۇمىيەت گۇرۇپپىنى باشقۇر',
@@ -33401,7 +33308,7 @@ $messages['ur'] = array(
 	'centralauth-editgroup-noset' => 'کوئی بھی (نہیں)',
 	'centralauth-editgroup-perms' => 'تفویض کردہ اجازتیں:',
 	'centralauth-editgroup-reason' => 'وجہ:',
-	'centralauth-editgroup-success' => 'گروپ اجازتیں تبدیل کر دیا گیا',
+	'centralauth-editgroup-success' => 'گروپ اجازتیں تبدیل کر دیا گیا', # Fuzzy
 	'centralauth-editset' => 'وکی سیٹ',
 	'centralauth-editset-legend-rw' => 'میں ترمیم یا وکی سیٹ کی تخلیق',
 	'centralauth-editset-legend-ro' => 'وکی سیٹ کی فہرست',
@@ -33824,7 +33731,7 @@ $messages['vep'] = array(
 	'centralauth-editgroup-display' => 'Lokaliziruidud gruppannimi:',
 	'centralauth-editgroup-members' => 'Ühtnijoiden nimikirjutez:',
 	'centralauth-editgroup-reason' => 'Sü:',
-	'centralauth-editgroup-success' => 'Gruppan oiktused oma vajehtadud',
+	'centralauth-editgroup-success' => 'Gruppan oiktused oma vajehtadud', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|toižetada]])',
 	'centralauth-editset' => 'Vikin komplektad',
 	'centralauth-editset-name' => 'Nimi:',
@@ -34360,12 +34267,12 @@ Grup kanon pemoükön medü moükam gitätas valik onik.', # Fuzzy
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lised gebanas labü gitäts ela $2]]',
 	'centralauth-editgroup-restrictions' => 'Vüks, in kels grup at binon jäfedik:',
 	'centralauth-editgroup-noset' => '(nonik)',
-	'centralauth-editgroup-submit' => 'Dakipön votükamis grupadälas',
+	'centralauth-editgroup-submit' => 'Dakipön votükamis grupadälas', # Fuzzy
 	'centralauth-editgroup-perms' => 'Däls pegivülöls:',
 	'centralauth-editgroup-reason' => 'Kod:',
-	'centralauth-editgroup-success' => 'Grupadäls pevotükons',
+	'centralauth-editgroup-success' => 'Grupadäls pevotükons', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Evotükol benosekiko grupadälis grupa: $1.
-[[Special:GlobalGroupPermissions|Geikön lü grupiguvam]]',
+[[Special:GlobalGroupPermissions|Geikön lü grupiguvam]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bevobön]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vük, in kel labons kali:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Geban valemik: '''$1''' no binon jäfedik in vük fa ol pavilöl ('' $2 '').
@@ -34663,7 +34570,7 @@ Dájúdájú ibùdó dátà ti bàjẹ́.',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|àtúnṣe]])',
 	'centralauth-editgroup-noset' => '(kòsí)',
 	'centralauth-editgroup-reason' => 'Ìdíẹ̀:',
-	'centralauth-editgroup-success' => 'Àwọn ìyọ̀nda ẹgbẹ́ àdìpọ̀ ti yàtọ̀',
+	'centralauth-editgroup-success' => 'Àwọn ìyọ̀nda ẹgbẹ́ àdìpọ̀ ti yàtọ̀', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => 'Orí wiki tí wọ́n ní àpamọ́ sí:',
 	'centralauth-editset-name' => 'Orúkọ:',
 	'centralauth-editset-type' => 'Irú:',
@@ -34721,7 +34628,6 @@ $messages['yue'] = array(
 	'centralauth-incomplete-text' => '一旦你嘅登入完成統一，你就可以登入所有{{int:Centralauth-groupname}}嘅wiki網站，而無需再開個新戶口',
 	'centralauth-not-owner-text' => '用戶名 "$1" 已經自動分咗畀 $2 上面嘅戶口持有者。
 如果呢個係你，你可以輸入響嗰個戶口嘅主密碼以完成登入統一嘅程序：',
-	'centralauth-blocked-text' => '你嘅自家wiki（響下面列出）而家封鎖緊唔畀編輯。請聯絡響呢個wiki嘅操作員去解封佢。當佢封鎖緊嗰陣，你係唔可以合併你嘅戶口。',
 	'centralauth-notice-dryrun' => "<div class='successbox'>只係示範模式</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => '戶口統一而家係響示範／除錯模式，噉實際嘅合併動作已經停用。對唔住！',
 	'centralauth-error-locked' => '你唔可以編輯因為你個戶口鎖咗。',
@@ -34849,11 +34755,11 @@ $messages['yue'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|編輯]])',
 	'centralauth-editgroup-members' => '成員表:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|含有$2許可嘅用戶一覽]]',
-	'centralauth-editgroup-submit' => '保存更改到組許可',
+	'centralauth-editgroup-submit' => '保存更改到組許可', # Fuzzy
 	'centralauth-editgroup-perms' => '指定咗嘅許可:',
 	'centralauth-editgroup-reason' => '原因:',
-	'centralauth-editgroup-success' => '組許可已經更改',
-	'centralauth-editgroup-success-text' => '你已經成功噉改咗$1組嘅組許可。[[Special:GlobalGroupPermissions|返去組管理]]',
+	'centralauth-editgroup-success' => '組許可已經更改', # Fuzzy
+	'centralauth-editgroup-success-text' => '你已經成功噉改咗$1組嘅組許可。[[Special:GlobalGroupPermissions|返去組管理]]', # Fuzzy
 	'centralauth-globalgrouppermissions-knownwiki' => '揀一個響佢哋有戶口嘅wiki:',
 	'centralauth-globalgroupmembership-badknownwiki' => "個全域用戶'''$1'''響你所指定嘅wiki('' $2 '')並唔活躍。你可能嘗試指定緊許可到錯嘅用戶!",
 	'right-globalgroupmembership' => '編輯成員到全域組',
