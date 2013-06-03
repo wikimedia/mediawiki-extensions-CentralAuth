@@ -3962,8 +3962,54 @@ $messages['bcc'] = array(
 
 /** Bikol Central (Bikol Central)
  * @author Filipinayzd
+ * @author Geopoet
  */
 $messages['bcl'] = array(
+	'mergeaccount' => 'Estado kan pinagkasararong paglalaog',
+	'centralauth-groupname' => 'an Wikimedia Foundation',
+	'centralauth-desc' => '[[Special:MergeAccount|Pagkasararoon an Panindog]] sa gantaw nin mga wikis kan {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Minadugang nin AntiSpoof na teknolohiya sa CentralAuth',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Minapagkasararo nin kadakulon na mga panindog]] para sa Solong Paragamit na Panlaog',
+	'centralauth-merge-denied' => 'Pasensiya na, ika mayong permiso na makalaog sa pahinang ini.',
+	'centralauth-merge-notlogged' => 'Tabi man <span class="plainlinks">[$1 maglaog]</span> tanganing aramon kun an saimong mga panindog bilog nang pinagkasararo.',
+	'centralauth-merge-welcome' => "'''An saimong paragamit na panindog dae pa tabi naibabalyo pasiring sa pinagkasararong sistema in paglaog kan {{int:Centralauth-groupname}}.'''
+
+Kun pinili mong ipagbalyo an saimong mga panindog, magagamit mo an parehong pangaran nin paragamit asin sekretong panlaog tanganing maglaog sa gabos na mga wikis kan {{int:Centralauth-groupname}} sa gabos na yaon na mga lengguwahe.
+
+Kun igwa nang iba na naggagamit kan saimong pangaran nin paragamit sa ibang sityo ini dae man makakadisturbo sainda, alagad makakapagtao ini nin tsansa na makapaggibo kaini kaiba ninda or nin sarong administrador aro-atyan.",
+	'centralauth-merge-step1-title' => 'Pun-an na pagkasararoon an panlaog',
+	'centralauth-merge-step1-detail' => 'Pakikaag an saimong sekretong panlaog sa panindog.
+An saimong sekretong panlaog asin rehistradong estada kan e-surat ririkisahon kontra sa mga panindog sa ibang mga wikis tanganing kumpirmaron na sinda kaampad.
+Mayong mga kaliwatan an hihimoon sagkod na saimong makumpirma na kanuknong an yaon na mga bagay.',
+	'centralauth-merge-step1-submit' => 'Pakikumpirma an impormasyon nin paglaog',
+	'centralauth-merge-step2-title' => 'Kumpirmaron an iba pang mga panindog',
+	'centralauth-merge-step2-detail' => 'An iba sa mga panindog dae awtomatikong maisukno sa designadong harong nin wiki.
+Kun ining mga panindog pagsadire mo, kumpirmaron mo na sinda saimo sa paagi nin pagtao nin sekretong panlaog para sa sainda.',
+	'centralauth-merge-step2-submit' => 'Kumpirmaron an impormasyon sa paglaog',
+	'centralauth-merge-dryrun-complete' => 'Mayo pang mga kaliwatan an pinaghimo sa saimong mga panindog.',
+	'centralauth-merge-dryrun-incomplete' => 'Ika naiamdam na sa pagpadagos, alagad an ibang mga panindog dae awtomatikong pinagberipikar asin dae maipagbalyo tulos-tulos.
+Saimo ining mapagkasararo an mga ini aro-atyan.
+
+Mayo pang mga kaliwatan an pinaghihimo sa saimong mga panindog.',
+	'centralauth-merge-dryrun-or' => "'''o'''",
+	'centralauth-merge-dryrun-home' => 'An sistema nin pagbabalyo dae makakakumpirma na ika iyo an kagsadire kan panindog sa harong nin wiki para sa saimong pangaran nin paragamit.
+
+May sarong wiki na pinagdetermina bilang iyo an harong nin panindog para sa saimong pangaran nin paragamit; susugon an kilyaw sa ibaba asin magalaog dyan tanganing tapuson an saimong pagbabalyo.',
+	'centralauth-merge-step3-title' => 'Magmukna nin pinagkasararong panindog',
+	'centralauth-merge-step3-detail' => 'Andam ka na magmukna nin saimong pinagkasararong panindog, na yaon an mga minasunod na nakakabit na mga wikis:',
+	'centralauth-merge-step3-submit' => 'Pagkasararoon an mga panindog',
+	'centralauth-merge-no-accounts' => 'Mayong mga panindog na minanukno kan saimong pangaran an nanagboan sa sentral lamesa nin pan-antabay nin panindog!
+
+An datos-sarayan gayod nakoraptu.',
+	'centralauth-merge-home-password' => 'An harong nin wiki para kaining panindog (nakalista sa ibaba) igwa nin ibahon na sekretong panlaog sa saro na saimong pinagkaag.
+Pakikaag an sekretong panlaog para sa harong nin wiki.',
+	'centralauth-complete' => 'Pagkasararo kan panlaog nakumpleto na!',
+	'centralauth-incomplete' => 'Pagkasararo kan panlaog dae nakumpleto!',
+	'centralauth-complete-text' => 'Ika puwede nang makalaog sa arin man na sityo kan wiki sa {{int:Centralauth-groupname}} na dae na magmumukna nin baguhong panindog.',
+	'centralauth-incomplete-text' => 'Matapos na an saimong panlaog pinagkasararo na, ika puwede nang makapaglaog sa arinman na sityo kan wiki sa {{int:Centralauth-groupname}} na dae na magmumukna nin baguhong panindog.',
+	'centralauth-not-owner-text' => 'An pangaran nin paragamit "$1" awtomatikong pinagtuka sa kagsadire nin panindog sa $2.
+
+Kun ika ini, puwede mong tapuson nin simple an proseso na pagkasararoon an panlaog sa paagi nin pagdutdot kan maestrong sekreto nin paglaog para sa panindog na iyan digde:',
 	'centralauth-list-home-title' => 'Harong na wiki',
 	'centralauth-finish-login' => 'Maglaog',
 );
@@ -5934,8 +5980,10 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 $messages['ce'] = array(
 	'mergeaccount' => 'ДIавазвалар цхьаьнатохаран хьал',
 	'centralauth-groupname' => 'Викимедин фондан',
-	'centralauth-complete' => 'ДIавазвалар цхьаьнатохар дика чакхдели!',
+	'centralauth-desc' => '[[Special:MergeAccount|ДӀаяздарш цхьаьнатохар]]  вики-проекташкахь {{int:Centralauth-groupname}}',
+	'centralauth-complete' => 'ДIавазвалар/ялар цхьаьнатохар дика чакхдели!',
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
+	'centralauth-complete-text' => 'ХӀинца цхьан дӀаяздарца хьан йиш ю массо {{int:Centralauth-groupname}} проекташкахь болх ба.',
 	'centralauth' => 'Урхалла дар масхьа дIавазваларна',
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-reason' => 'Бахьан:',
@@ -5954,6 +6002,7 @@ $messages['ce'] = array(
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|дӀаяккха]])',
 	'centralauth-editset-reason' => 'Бахьан:',
 	'centralauth-editset-submit-delete' => 'ДӀаяккха',
+	'right-centralauth-merge' => 'ДӀаяздарш цхьаьнатохар',
 	'right-globalgrouppermissions' => 'урхалла дар масхьара тобанашна',
 );
 
@@ -8172,9 +8221,6 @@ $messages['el'] = array(
 	'centralauth-not-owner-text' => 'Το όνομα χρήστη "$1" παραχωρήθηκε αυτόματα στον ιδιοκτήτη του λογαριασμού στο έργο $2.
 
 Εάν είστε εσείς ο ίδιος, μπορείτε να ολοκληρώσετε την διαδικασία ενοποίησης των λογαριασμών πληκτρολογώντας τον κύριο κωδικό πρόσβασης εκείνου του λογαριασμού εδώ:',
-	'centralauth-blocked-text' => 'Το κεντρικό σας βίκι (αναφέρεται παρακάτω) είναι φραγμένο στην επεξεργασία.
-Παρακαλώ επικοινωνήστε με έναν διαχειριστή σε αυτό το βίκι για να αφαιρέσει τη φραγή.
-Καθώς είναι φραγμένο, δεν μπορείτε να μετακινήσετε τους λογαριασμούς σας.',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Πειραματική λειτουργία μόνο</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Λυπόμαστε πολύ αλλά, προς το παρόν, η ενοποίηση των λογαριασμών βρίσκεται σε πειραματική περίοδο. Γι' αυτόν τον λόγο, οι πραγματικές λειτουργίες συγχώνευσης έχουν απενεργοποιηθεί.",
 	'centralauth-error-locked' => 'Δεν μπορείτε να επεξεργαστείτε γιατί ο λογαριασμός σας είναι κλειδωμένος.',
@@ -8349,6 +8395,10 @@ $messages['el'] = array(
 	'centralauth-autologin-desc' => 'Αυτή η ειδική σελίδα χρησιμοποιείται εσωτερικά από το MediaWiki.
 Όταν [[Special:UserLogin|συνδέεσαι]], το κεντρικό σύστημα σύνδεσης οδηγεί τον πλοηγητή σας να ζητήσει αυτή τη σελίδα από όλα τις συνδεδεμένες περιοχές, χρησιμοποιόντας συνδέσεις εικόνας.
 Ζητήσατε αυτή τη σελίδα σωρίς να παράσχετε καθόλου δεδομένα πιστοποίησης, οπότε δεν κάνει τίποτα.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Έχετε συνδεθεί ήδη τοπικά',
+	'centralauth-centralautologin-lostsession' => 'Τα δεδομένα συνεδρίας χάθηκαν',
+	'centralauth-centralautologin-badstate' => 'Μη έγκυρη κατάσταση του " $1 "',
+	'centralauth-centralautologin-badwiki' => 'Το wiki " $1 " δεν είναι έγκυρο για κεντρική σύνδεση',
 	'globalgroupmembership' => 'Συμμετοχή σε καθολικές ομάδες',
 	'globalgrouppermissions' => 'Διαχείριση καθολικών ομάδων',
 	'centralauth-globalgroupperms-grouplist' => 'Οι παρακάτω παγκόσμιες ομάδες έχουν διαμορφωθεί.
@@ -8368,19 +8418,22 @@ $messages['el'] = array(
 	'centralauth-editgroup-name' => 'Όνομα ομάδας:',
 	'centralauth-editgroup-display' => 'Εντοπιοποιημένο όνομα της ομάδας:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|επεξεργασία]])',
+	'centralauth-editgroup-invalid-name' => 'Δόθηκε μη έγκυρο όνομα καθολικής ομάδας',
 	'centralauth-editgroup-member' => 'Εντοπιοποιημένο όνομα των μελών της ομάδας:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|επεξεργασία]])',
 	'centralauth-editgroup-members' => 'Λίστα μελών:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Λίστα χρηστών με $2 δικαιώματα]]',
 	'centralauth-editgroup-restrictions' => 'Σύνολο από wiki στα οποία αυτή η ομάδα είναι ενεργή:',
+	'centralauth-editgroup-rename-taken' => 'Μετονομασία απέτυχε: υπάρχει ήδη μια ομάδα με το όνομα  $1.',
 	'centralauth-editgroup-noset' => '(κανένα)',
-	'centralauth-editgroup-submit' => 'Αποθήκευση αλλαγών στις άδειες ομάδων',
+	'centralauth-editgroup-submit' => 'Αποθήκευση αλλαγών καθολικής ομάδας',
 	'centralauth-editgroup-perms' => 'Απονομημένες άδειες:',
 	'centralauth-editgroup-reason' => 'Αιτία:',
-	'centralauth-editgroup-success' => 'Οι άδειες των ομάδων έχουν αλλάξει',
+	'centralauth-editgroup-success' => 'Η καθολική ομάδα άλλαξε',
 	'centralauth-editgroup-success-text' => 'Έχετε αλλάξει επιτυχώς τις άδειες της ομάδας για την ομάδα $1.
-[[Special:GlobalGroupPermissions|Επιστρέψτε στη διαχείριση των ομάδων]]',
+[[Special:GlobalGroupPermissions|Επιστρέψτε στη διαχείριση των ομάδων]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|επεξεργασία]])',
+	'centralauth-editgroup-nowikiset' => 'Όχι, ισχύει σε όλα τα wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Βίκι στο οποίο έχουν λογαριασμό:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ο παγκόσμιος χρήστης '''$1''' δεν είναι ενεργός στο βίκι που δώσατε ('' $2 '').
 Μπορεί να προσπαθέίτε να αναθέσετε δικαιώματα σε λάθος χρήστη!",
@@ -8421,10 +8474,15 @@ $messages['el'] = array(
 	'right-globalgroupmembership' => 'Επεξεργασία ιδιότητας μέλους στις καθολικές ομάδες',
 	'right-centralauth-autoaccount' => 'Αυτόματη σύνδεση με καθολικό λογαριασμό',
 	'right-centralauth-unmerge' => 'Κατάργηση συγχώνευσης καθολικού λογαριασμού',
-	'right-centralauth-lock' => 'Κλείδωμα ή απόκρυψη καθολικού λογαριασμού',
-	'right-centralauth-oversight' => 'Φραγή καθολικού λογαριασμού', # Fuzzy
+	'right-centralauth-lock' => 'Κλείδωμα ή ξεκλείδωμα καθολικού λογαριασμού',
+	'right-centralauth-oversight' => 'Καταστολή ή απόκρυψη καθολικού λογαριασμού',
 	'right-centralauth-merge' => 'Συγχωνεύστε τον λογαριασμό τους',
 	'right-globalgrouppermissions' => 'Διαχείριση καθολικών λογαριασμών',
+	'centrallogin' => 'Κεντρική σύνδεση χρήστη',
+	'centralloginsuccesful' => 'Επιτυχής σύνδεση',
+	'centralauth-completelogin-legend' => 'Διαδικασία πλήρους σύνδεσης',
+	'centralauth-completelogin-submit' => 'Σύνδεση τώρα',
+	'centralauth-completelogin-back' => 'Επιστροφή στην προηγούμενη σελίδα.',
 );
 
 /** British English (British English)
@@ -10443,6 +10501,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
 );
 
 /** French (français)
+ * @author Automatik
  * @author Cedric31
  * @author Crochet.david
  * @author Dodoïste
@@ -10824,9 +10883,9 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'centralauth-warning-notloggedin' => 'Vous n’êtes pas connecté pour le moment.',
 	'centralauth-warning-notattached' => 'Le compte local n’est pas attaché à un compte global.',
 	'centralauth-finishglobaliseemail_subject' => 'Confirmation de compte de {{SITENAME}}',
-	'centralauth-finishglobaliseemail_body' => 'Votre adresse de courriel a été associée avec le compte « $2 » sur tous les projets de Wikimédia, avec votre compte principal sur {{SITENAME}}.
+	'centralauth-finishglobaliseemail_body' => "Votre adresse de courriel a été associée au compte « $2 » sur tous les projets de la fondation Wikimedia, votre compte principal étant sur « {{SITENAME}} ».
 
-Pour confirmer que ce compte vous appartient bien, fusionne avec tous les comptes que nous ne pouvons pas atteindre automatiquement, et vous permet de récupérer votre compte si vous perdez votre mot de passe, veuillez ouvrir ce lien dans votre navigateur :
+Pour confirmer que ce compte vous appartient bien, que vous voulez bien le fusionner avec tous les comptes que nous n'avons pas pu associer automatiquement, et pour enfin vous permettre de récupérer votre compte si vous perdez votre mot de passe, veuillez ouvrir ce lien dans votre navigateur :
 
 $3
 
@@ -10834,7 +10893,7 @@ Si le compte ne vous appartient *pas*, suivez ce lien pour annuler la confirmati
 
 $5
 
-Ce code de confirmation expirera à $4.',
+Ce code de confirmation expirera le $6 à $7.",
 );
 
 /** Franco-Provençal (arpetan)
@@ -16014,9 +16073,13 @@ $messages['ja'] = array(
 	'centrallogin' => '中央管理 利用者ログイン',
 	'centralloginsuccesful' => 'ログインしました',
 	'centralauth-completelogin-legend' => 'ログイン処理の完了',
+	'centralauth-completelogin-finishing' => 'ウィキメディア財団のサイトでの認証中です、お待ちください…',
+	'centralauth-completelogin-text' => 'ウィキメディア財団のサイトでのあなたのアカウントの認証がほぼ完了しました。以下のボタンを押してログインの確認と完了を行ってください。',
 	'centralauth-completelogin-submit' => '今すぐログイン',
 	'centralauth-completelogin-back' => '前のページに戻る。',
+	'centralauth-error-nologinattempt' => 'あなたのセッションに関して現在ログインの試行は行われていません。',
 	'centralauth-warning-notloggedin' => 'あなたは現在ログインしていません。',
+	'centralauth-warning-notattached' => 'ローカルのアカウントはグローバルのそれと結び付けられていません。',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}のアカウント確認',
 );
 
@@ -17755,6 +17818,7 @@ $messages['ko'] = array(
 	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
 [[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
 인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
+	'centralauth-centralautologin-lostsession' => '세션 데이터가 손실되었습니다.',
 	'globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
@@ -17840,6 +17904,7 @@ $messages['ko'] = array(
 	'action-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
 	'centralloginsuccesful' => '로그인 성공',
 	'centralauth-warning-notattached' => '로컬 계정이 통합 계정에 묶여있지 않습니다.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} 계정 인증',
 );
 
 /** Karachay-Balkar (къарачай-малкъар)
@@ -18582,6 +18647,7 @@ Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System �
 Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
 	'centralautologin' => 'Zentrale Login',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
+	'centralauth-centralautologin-lostsession' => 'Donnéeë vun der Sessioun si verluer gaang',
 	'centralauth-centralautologin-logged-in' => "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
@@ -21306,6 +21372,10 @@ Anda telah memohon halaman ini tanpa memberikan sebarang data penentusahan, jadi
 	'centralauth-centralautologin-badstate-local' => 'Keadaan "$1" tidak sah di wiki setempat',
 	'centralauth-centralautologin-badwiki' => 'Wiki "$1" tidak sah untuk log masuk berpusat',
 	'centralauth-centralautologin-corsfail' => 'Penyemakan asal-usul CORS gagal',
+	'centralauth-centralautologin-p3p-explanation' => 'Sesetengah pelayar memerlukan dasar pemampatan P3P untuk membolehkan penghantaran dan penerimaan cecikut dalam sesetengah hal, termasuk situasi yang terlibat dalam pemeriksaan log masuk SUL. Tindakan ini tidak perlu dalam situasi ini memandangkan semua halaman yang terlibat berada dalam kumpulan wiki yang sama padahal P3P sendiri rata-rat sudah lapuk dan terbiar; mujurlah dasar tak sah yang berpaut dengan halaman ini kini dianggap "sudah memadai" oleh konfigurasi azali pelayar-pelayar berkenaan.
+
+Sila semak dasar privasi tapak ini untuk menentukan bagaimana sebarang maklumat yang terkumpul boleh digunakan.',
+	'centralauth-centralautologin-logged-in' => 'Anda telah log masuk secara terpusat sebagai $1. Muat semula halaman untuk menghidupkan tetapan pengguna anda.',
 	'globalgroupmembership' => 'Keahlian dalam kumpulan sejagat',
 	'globalgrouppermissions' => 'Pengurusan kumpulan sejagat',
 	'centralauth-globalgroupperms-grouplist' => 'Kumpulan-kumpulan sejagat berikut telah ditubuhkan.
@@ -21389,6 +21459,34 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'right-globalgrouppermissions' => 'Menguruskan kumpulan sejagat',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Kumpulan sejagat yang disertai oleh pengguna ini',
 	'action-centralauth-lock' => 'mengunci atau membuka kunci akaun sejagat',
+	'centrallogin' => 'Log masuk pengguna terpusat',
+	'centralloginsuccesful' => 'Berjaya log masuk',
+	'centralauth-completelogin-legend' => 'Selesaikan proses log masuk',
+	'centralauth-completelogin-finishing' => 'Sedang membuat penentusahan di tapak-tapak Yayasan Wikimedia, sila tunggu...',
+	'centralauth-completelogin-text' => 'Penentusahan akaun anda di Yayasan Wikimedia hampir selesai! Tekan butang di bawah untuk mengesahkan dan melengkapkan log masuk anda.',
+	'centralauth-completelogin-submit' => 'Log masuk sekarang',
+	'centralauth-completelogin-back' => 'Kembali ke halaman sebelumnya.',
+	'centralauth-error-nologinattempt' => 'Tiada cubaan log masuk yang aktif sedang dilangsungkan untuk sesi anda.',
+	'centralauth-error-badtoken' => 'Token penentusahan yang diberikan sudah luput atau tidak sah.',
+	'centralauth-error-token-wrongattempt' => 'Token penentusahan ini bukan dari cubaan log masuk anda sekarang.
+Mungkin ada seseorang yang cuba log masuk bagi pihak anda dengan akaun yang berniat jahat.',
+	'centralauth-error-token-wronguser' => 'Token ini tidak sepadan dengan nama pengguna sesi anda.
+Mungkin ada seseorang yang cuba log masuk bagi pihak anda dengan akaun yang berniat jahat.
+Jika anda sekadar log masuk sebagai pengguna lain, sila log keluar dahulu.',
+	'centralauth-warning-notloggedin' => 'Anda tidak log masuk sekarang.',
+	'centralauth-warning-notattached' => 'Akaun setempat tidak dilampirkan pada akaun sejagat.',
+	'centralauth-finishglobaliseemail_subject' => 'Pengesahan akaun {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Alamat e-mel anda telah ditetapkan sebagai berkaitan dengan akaun "$2" di semua projek Wikimedia, dengan akaun utama anda di {{SITENAME}}.
+
+Untuk mengesahkan bahawa akaun ini benar-benar milik anda, gabungkan sebarang akaun-akaun yang tidak dapat kami gabungkan secara automatik, dan untuk membolehkan anda untuk mengambil semul akaun anda sekiranya anda terlupa kata laluan anda, sila buka pautan ini di pelayar anda:
+
+$3
+
+Jika akaun berkenaan *bukan* milik anda, sila ikuti pautan ini untuk membatalkan pengesahan alamat e-mel:
+
+$5
+
+Kod pengesahan ini akan luput pada $6, $7.',
 );
 
 /** Maltese (Malti)
@@ -24342,6 +24440,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-autologin-desc' => 'Ta strona specjalna jest wykorzystywana wewnętrznie przez oprogramowanie MediaWiki.
 Po [[Special:UserLogin|zalogowaniu się]], przeglądarka na polecenie systemu centralnego logowania, wczytuje tę stronę z każdej obsługiwanej domeny, używając linku jak do grafiki.
 Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak obsługi.',
+	'centralauth-centralautologin-lostsession' => 'Dane sesji zostały utracone',
 	'globalgroupmembership' => 'Przynależność do grup globalnych',
 	'globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 	'centralauth-globalgroupperms-grouplist' => 'Skonfigurowane zostały następujące grupy globalne.
@@ -24420,6 +24519,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'centralloginsuccesful' => 'Zalogowano pomyślnie',
 	'centralauth-completelogin-finishing' => 'Uwierzytelnianie na stronach Fundacji Wikimedia, proszę czekać...',
 	'centralauth-completelogin-text' => 'Uwierzytelnianie konta na stronach Fundacji Wikimedia jest prawie ukończone! Użyj przycisku poniżej, aby potwierdzić i zakończyć proces logowania.',
+	'centralauth-completelogin-submit' => 'Zaloguj się teraz',
 	'centralauth-completelogin-back' => 'Powrót do poprzedniej strony.',
 	'centralauth-warning-notloggedin' => 'Nie jesteś aktualnie zalogowany.',
 	'centralauth-warning-notattached' => 'Lokalne konto nie jest podłączone do globalnego.',
@@ -25510,6 +25610,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author Helder.wiki
  * @author Heldergeovane
  * @author Jaideraf
+ * @author Luckas
  * @author Luckas Blade
  * @author Opraco
  * @author Pedroca cerebral
@@ -25796,7 +25897,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'centralauth-editset-wikis' => 'Wikis:',
 	'centralauth-editset-restwikis' => 'Wikis não incluídas acima:',
 	'centralauth-editset-reason' => 'Motivo:',
-	'centralauth-editset-submit' => 'Submeter',
+	'centralauth-editset-submit' => 'Enviar',
 	'centralauth-editset-submit-delete' => 'Eliminar',
 	'centralauth-editset-badname' => 'Nome de conjunto inválido ou vazio.',
 	'centralauth-editset-badtype' => 'Tipo de conjunto inválido.',
@@ -26491,6 +26592,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-rightslog-set-optin' => 'opt-in basate',
 	'centralauth-rightslog-set-optout' => 'opt-out basate',
 	'autologin' => 'Trasùte automateche',
+	'centralautologin' => 'Trasute cendralizzate',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Tu è ggià trasute in locale',
 	'centralauth-centralautologin-lostsession' => 'Le date de sessione onne state perse',
 	'centralauth-centralautologin-badstate' => 'State invalide "$1"',
@@ -26513,6 +26615,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-editgroup-name' => "Nome d'u gruppe:",
 	'centralauth-editgroup-display' => "Nome d'u gruppe localizzate:",
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|cange]])',
+	'centralauth-editgroup-invalid-name' => "Nome d'u gruppe globbale invalide",
 	'centralauth-editgroup-member' => "Nome localizzate de le membre d'u gruppe:",
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|cange]])',
 	'centralauth-editgroup-members' => 'Elenghe de le membre:',
@@ -26576,6 +26679,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-completelogin-submit' => 'Tràse mò!',
 	'centralauth-completelogin-back' => "Tuèrne 'a pàgene d'apprime.",
 	'centralauth-error-nologinattempt' => "Nisciune tendative de trasè jè attive jndr'à sessiona toje.",
+	'centralauth-warning-notloggedin' => 'Tu pe mò non ge sì collegate.',
 	'centralauth-finishglobaliseemail_subject' => "conferme d'u cunde de {{SITENAME}}",
 );
 
@@ -30425,6 +30529,23 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-centralauth-oversight' => 'Undertryck eller dölj globalt konto',
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}-kontobekräftelse',
+	'centralauth-finishglobaliseemail_body' => 'Din e-postadress har valts ut som tillhörande kontot med namn "$2" på alla
+Wikimedia-projekt, med ditt huvudkonto på {{SITENAME}}.
+
+För att bekräfta att detta konto verkligen tillhör dig, slå ihop eventuella
+konton som är dina men inte kunde slås ihop automatiskt samt för att låta dig
+få tillbaka ditt konto om du blir av med lösenordet, vänligen öppna följande
+länk i din webbläsare:
+
+$3
+
+Om kontot *inte* tillhör dig, klicka på denna länk för att annullera
+e-postbekräftelsen:
+
+$5
+
+Denna bekräftelseskod kommer att förfalla $6 $7.',
 );
 
 /** Swahili (Kiswahili)
@@ -34999,8 +35120,11 @@ $messages['zh-hans'] = array(
 	'centralauth-autologin-desc' => '这个特殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，中央登入系统会利用图像链接，指示您的浏览器向所有关联的域名请求这个页面。您在访问本页面时未提供验证数据，因此本页无效。',
 	'centralautologin' => '中央登录',
 	'centralauth-centralautologin-alreadyloggedinlocally' => '您已经在本地登录了',
+	'centralauth-centralautologin-badparams' => '指定的认证参数无效',
 	'centralauth-centralautologin-lostsession' => '会话数据丢失',
 	'centralauth-centralautologin-badstate' => '无效状态“$1”',
+	'centralauth-centralautologin-notposted' => '中央登录表单必须以HTTP POST方式传递',
+	'centralauth-centralautologin-logged-in' => '您目前以$1登录。刷新页面以加载您的用户设置。',
 	'globalgroupmembership' => '在全域组中的成员',
 	'globalgrouppermissions' => '全局用户组管理',
 	'centralauth-globalgroupperms-grouplist' => '以下的全域组已经设置好。
@@ -35085,6 +35209,8 @@ $messages['zh-hans'] = array(
 	'centrallogin' => '中央用户登录',
 	'centralloginsuccesful' => '登录成功',
 	'centralauth-completelogin-legend' => '完成登录过程',
+	'centralauth-completelogin-finishing' => '正在进行维基媒体基金会站点的验证，请稍候...',
+	'centralauth-completelogin-text' => '即将完成验证您在维基媒体基金会站点的帐户！使用下面的按钮确认和完成登录。',
 	'centralauth-completelogin-submit' => '现在登录',
 	'centralauth-completelogin-back' => '返回前一页',
 	'centralauth-error-badtoken' => '提供的身份令牌已过期或无效。',
