@@ -11497,7 +11497,7 @@ Vostede solicitou esta páxina sen achegar ningún dato de autenticación, de mo
 	'centralauth-centralautologin-p3p-explanation' => 'Algúns navegadores necesitan unha política compacta P3P para enviar cookies ou, nalgúns casos, recibilas, incluíndo a situación implicada na comprobación de rexistro SUL. Esta é unha etapa inútil nesta situación, considerando que todas as páxinas involucradas están no mesmo grupo de wikis e que o propio P3P está en gran parte obsoleto e abandonado; afortunadamente, a política non válida que liga con esta páxina está considerada "boa abondo" pola configuración predeterminada destes navegadores.
 
 Consulte a política de protección de datos do sitio para determinar como se pode utilizar calquera información recollida.',
-	'centralauth-centralautologin-logged-in' => 'Vostede está {{GENDER:$2|identificado|identificada}} centralmente como $1. Recargue a páxina para aplicar os seus parámetros de {{GENDER:$2|usuario|usuaria}}.', # Fuzzy
+	'centralauth-centralautologin-logged-in' => 'Vostede está {{GENDER:$2|identificado|identificada}} centralmente como $1. Recargue a páxina para aplicar os seus parámetros de {{GENDER:$2|usuario|usuaria}}.',
 	'globalgroupmembership' => 'Membros dos grupos globais',
 	'globalgrouppermissions' => 'Xestión dos grupos globais',
 	'centralauth-globalgroupperms-grouplist' => 'Os seguintes grupos globais foron configurados.
@@ -12161,7 +12161,7 @@ $messages['gu'] = array(
 	'centralauth-account-exists' => 'ખાતું બનાવી શકાતું નથી: વિનંતી કરેલ સભ્યનામ ઐક્ય પ્રવેશ સિસ્ટમમાં પહેલેથી લેવાઈ ગયેલ છે.',
 	'centralauth-account-exists-reset' => 'સભ્યનામ $1 આ વિકિમાં નોંધણી થયેલ નથી, પણ તે ઐક્ય પ્રવેશ સિસ્ટમમાં અસ્તિત્વ ધરાવે છે.',
 	'centralauth-login-progress' => 'તમને {{int:Centralauth-groupname}} વિકિઓમાં પ્રવેશ કરાવે છે:',
-	'centralauth-logout-progress' => 'તમને {{int:Centralauth-groupname}} વિકિઓમાંથી બહાર નીકાળે છે:',
+	'centralauth-logout-progress' => 'તમને {{int:Centralauth-groupname}} તમામ વિકિઓમાંથી બહાર કાઢે છે :',
 	'centralauth-login-no-others' => 'તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાં પ્રવેશ મેળવી લીધો છે.',
 	'centralauth-logout-no-others' => 'તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાંથી બહાર નીકળી ગયા છો.',
 	'centralauth-hidden-blockreason' => '$2 પર $1  દ્વારા નીચેના કારણસર વૈશ્વીક પ્રતિબંધ મુકાયો : $3',
