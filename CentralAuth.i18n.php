@@ -3427,6 +3427,7 @@ $messages['azb'] = array(
  * @author Assele
  * @author Comp1089
  * @author Haqmar
+ * @author Рустам Нурыев
  * @author ҒатаУлла
  */
 $messages['ba'] = array(
@@ -3438,16 +3439,16 @@ $messages['ba'] = array(
 	'centralauth-merge-notlogged' => 'Иҫәп яҙмаларығыҙҙың тулыһынса берләшкән булыуын тикшерер өсөн, зинһар,  <span class="plainlinks">[$1 системала танылығыҙ]</span>.',
 	'centralauth-merge-welcome' => "'''Һеҙҙең иҫәп яҙмағыҙ {{int:Centralauth-groupname}} проекттарыда дөйөм танылыу системаһына күсерелмәгән әле.'''
 
-Әгәр иҫәп яҙмаларығыҙҙы күсерһәгеҙ, һеҙ {{int:Centralauth-groupname}} бөтә бөтә проекттарында, бөтә тел бүлектәрендә бер үк исем һәм пароль ҡуллана аласаҡһығыҙ.
+Әгәр иҫәп яҙмаларығыҙҙы күсерһәгеҙ, һеҙ {{int:Centralauth-groupname}} бөтә бөтә проекттарында, бөтә тел бүлектәрендә бер үк исем һәм серһүҙ ҡуллана аласаҡһығыҙ.
 
-Әгәр проекттарҙың ҡайһы берҙәрендә һеҙҙең исемегеҙ ҡулланыла икән, иҫәп яҙмаларын берләштереү был иҫәп яҙмаларына ҡағылмаясаҡ, һәм артабан һеҙ был ҡыйынлыҡты ошо ҡатнашыусылар менән йәки хәкимдәрҙең береһе менән һөйләшеп, хәл итә алаһығыҙ.",
+Әгәр проекттарҙың ҡайһы берҙәрендә һеҙҙең исемегеҙ ҡулланыла икән, иҫәп яҙмаларын берләштереү был иҫәп яҙмаларына ҡағылмаясаҡ, һәм артабан һеҙ был ҡыйынлыҡты ошо ҡатнашыусылар менән йәки хакимдәрҙең береһе менән һөйләшеп, хәл итә алаһығыҙ.",
 	'centralauth-merge-step1-title' => 'Иҫәп яҙмаларын берләштереүҙе башларға',
-	'centralauth-merge-step1-detail' => 'Иҫәп яҙмағыҙҙың паролен керетегеҙ, зинһар.
-Һеҙҙең паролегеҙ һәм электрон почтағыҙ адресы башҡа вики-проекттар иҫәп яҙмаһындағы мәғлүмәттәр менән сағыштырыласаҡ.
+	'centralauth-merge-step1-detail' => 'Иҫәп яҙмағыҙҙың серһүҙен керетегеҙ, зинһар.
+Һеҙҙең серһүҙегеҙ һәм электрон почтағыҙ адресы башҡа вики-проекттар иҫәп яҙмаһындағы мәғлүмәттәр менән сағыштырыласаҡ.
 Һеҙ сағыштырыу һөҙөмтәһенең дөрөҫлөгөн раҫламаҫ элек, бер үҙгәреш тә индерелмәйәсәк.',
 	'centralauth-merge-step1-submit' => 'Иҫәп яҙмаһы тураһында мәғлүмәтте раҫларға',
 	'centralauth-merge-step2-title' => 'Өҫтәмә иҫәп яҙмаларын раҫларға',
-	'centralauth-merge-step2-detail' => 'Ҡайһы бер иҫәп яҙмалары һеҙ күрһәткән башланғыс вики проекты менән берләшә алмай. Әгәр был иҫәп яҙмалары ысынлап та Һеҙҙеке булһа, уларҙың паролен керетеп, быны дәлилләгеҙ.',
+	'centralauth-merge-step2-detail' => 'Ҡайһы бер иҫәп яҙмалары һеҙ күрһәткән башланғыс вики проекты менән берләшә алмай. Әгәр был иҫәп яҙмалары ысынлап та Һеҙҙеке булһа, уларҙың серһүҙен керетеп, быны дәлилләгеҙ.',
 	'centralauth-merge-step2-submit' => 'Иҫәп яҙмаһы тураһында мәғлүмәтте раҫларға',
 	'centralauth-merge-dryrun-complete' => 'Бөтә булған иҫәп яҙмалары берләштерелә ала!
 Әлегә һеҙҙең иҫәп яҙмалары үҙгәртелмәгән.',
@@ -3463,56 +3464,56 @@ $messages['ba'] = array(
 	'centralauth-merge-step3-submit' => 'Иҫәп яҙмаларын берләштерергә',
 	'centralauth-merge-no-accounts' => 'Үҙәк иҫәп яҙмалар таблицаһында һеҙҙең исемегеҙ менән тап килгән бер иҫәп яҙмаһы ла табылманы!
 Мәғлүмәттәр базаһы боҙолған.',
-	'centralauth-merge-home-password' => 'Баш викилағы (түбәндә күрһәтелгән) иҫәп яҙмаһының пароле һеҙ кереткән пароль менән тап килмәй.
-Баш викилағы паролде керетегеҙ, зинһар.',
+	'centralauth-merge-home-password' => 'Баш викилағы (түбәндә күрһәтелгән) иҫәп яҙмаһының серһүҙе һеҙ кереткән серһүҙ менән тап килмәй.
+Баш викилағы серһүҙҙе керетегеҙ, зинһар.',
 	'centralauth-complete' => 'Иҫәп яҙмаларын берләштереү тамамланды!',
 	'centralauth-incomplete' => 'Иҫәп яҙмаларын берләштереү тамамланманы!',
 	'centralauth-complete-text' => 'Хәҙер һеҙ {{int:Centralauth-groupname}} бөтә проекттарында эшләү өсөн бер иҫәп яҙмаһын ҡуллана алаһығыҙ.',
 	'centralauth-incomplete-text' => 'Иҫәп яҙмаларын берләштереү тамамланғас, һеҙгә {{int:Centralauth-groupname}} һәр проектында айырым теркәлергә кәрәкмәйәсәк.',
 	'centralauth-not-owner-text' => '"$1" исеме $2 иҫәп яҙмаһының хужаһына беркетелде.
-Әгәр ул ысынлап та һеҙҙең исемегеҙ икән, иҫәп яҙмаларын берләштереүҙе тамамлау өсөн, ошонда төп иҫәп яҙмаһының паролен керетегеҙ:',
+Әгәр ул ысынлап та һеҙҙең исемегеҙ икән, иҫәп яҙмаларын берләштереүҙе тамамлау өсөн, ошонда төп иҫәп яҙмаһының серһүҙен керетегеҙ:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демо режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Иҫәп яҙмаларын берләштереү хәҙер демо (төҙәтеү) режимында эшләй, ысын бешләштереүҙәр һүндерелгән. Ғәфү итегеҙ!',
 	'centralauth-error-locked' => 'Һеҙ үҙгәртә алмайһығыҙ, сөнки һеҙҙең иҫәп яҙмағыҙ бикле.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Дөйөм иҫәп яҙмаһы|'''Дөйөм иҫәп яҙмаһы''' тураһында күберәк уҡырға]]…''",
 	'centralauth-list-home-title' => 'Баш вики',
-	'centralauth-list-home-dryrun' => 'Һеҙҙең иҫәп яҙмаһы өсөн ошо вики-проекттағы пароль һәм электрон почта адресы ҡулланыласаҡ.',
+	'centralauth-list-home-dryrun' => 'Һеҙҙең иҫәп яҙмаһы өсөн ошо вики-проекттағы серһүҙ һәм электрон почта адресы ҡулланыласаҡ.',
 	'centralauth-list-attached-title' => 'Берләштерелгән иҫәп яҙмалары',
 	'centralauth-list-attached' => 'Дөйөм иҫәп яҙмаһына түбәндәге сайттарҙың һәр береһенән "$1" исемле иҫәп яҙмалары берләштерелде:',
 	'centralauth-list-attached-dryrun' => 'Дөйөм иҫәп яҙмаһына түбәндәге сайттарҙың һәр береһенән "$1" исемле иҫәп яҙмалары берләштереләсәк:',
 	'centralauth-list-unattached-title' => 'Берләштерелмәгән иҫәп яҙмалары',
-	'centralauth-list-unattached' => '"$1" иҫәп яҙмаһының һеҙҙеке булыуы түбәндәге сайттарҙа раҫлана алмай; уларҙағы парроль һеҙҙең төп иҫәп яҙмаһы пароле менән тап килмәй, булырға тейеш:',
+	'centralauth-list-unattached' => '"$1" иҫәп яҙмаһының һеҙҙеке булыуы түбәндәге сайттарҙа раҫлана алмай; уларҙағы серһүҙ һеҙҙең төп иҫәп яҙмаһы серһүҙе менән тап килмәй, булырға тейеш:',
 	'centralauth-foreign-link' => '$1 ҡатнашыусыһы $2 сайтында',
 	'centralauth-foreign-contributions' => '$2: $1 {{PLURAL:$1|төҙәтеү}}',
 	'centralauth-merge-method-primary' => 'баш вики',
 	'centralauth-merge-method-empty' => 'ҡатнашыусы өлөшө юҡ',
 	'centralauth-merge-method-mail' => 'электрон почта ярҙамында раҫланған',
-	'centralauth-merge-method-password' => 'пароль ярҙамында раҫланған',
-	'centralauth-merge-method-admin' => 'хәким-берләштерелгән иҫәп яҙмаһы',
+	'centralauth-merge-method-password' => 'серһүҙ ярҙамында раҫланған',
+	'centralauth-merge-method-admin' => 'хаким - берләштерелгән иҫәп яҙмаһы',
 	'centralauth-merge-method-new' => 'яңы иҫәп яҙмаһы',
 	'centralauth-merge-method-login' => 'танылыу үткәндә булдырылған',
 	'centralauth-merge-method-primary-desc' => 'Был викила иҫәп яҙмаларын берләштереү башланған.
 Ул ҡулланыусының төп иҫәп яҙмаһынан айырыла алыуын иғтибарға алығыҙ.',
 	'centralauth-merge-method-empty-desc' => 'Локаль иҫәп яҙмаһы үҙгәртеүҙәре булмағанға күрә бершләштерелгән булыуын аңлата.',
 	'centralauth-merge-method-mail-desc' => 'Локаль иҫәп яҙмаһы электрон почта адресы төп иҫәп яҙмаһындағы электрон почта адресы менән килгәнгә күрә бершләштерелгән булыуын аңлата.',
-	'centralauth-merge-method-password-desc' => 'Локаль иҫәп яҙмаһы ҡулланыусы дөрөҫ пароль кереткәнгә күрә бершләштерелгән булыуын аңлата.',
+	'centralauth-merge-method-password-desc' => 'Урындағы иҫәп яҙмаһы ҡулланыусы дөрөҫ серһүҙ кереткәнгә күрә бершләштерелгән булыуын аңлата.',
 	'centralauth-merge-method-admin-desc' => 'Локаль иҫәп яҙмаһын стюардтарҙың береһе берләштергән булыуын аңлата.
 Әлеге ваҡытта был мөмкинлек хәүефһеҙлек өсөн һүндерелгән.',
 	'centralauth-merge-method-new-desc' => 'Дөйөм иҫәп яҙмаһы локаль иҫәп яҙмаһы булдырған ваҡытта булдырылған икәнен аңлата.',
 	'centralauth-merge-method-login-desc' => 'Локаль иҫәп яҙмаһы ҡатнашыусы танылыу үткән ваҡытта булдырылған икәнен аңлата.',
 	'centralauth-finish-title' => 'Тамамланған берләштереүҙәр',
-	'centralauth-finish-text' => 'Әгәр был иҫәп яҙмалары һеҙҙеке икән, һеҙ уларға пароль керетеп, дөйөм иҫәп яҙмаһына күсеүҙе тамамлай алаһығыҙ:',
-	'centralauth-finish-password' => 'Пароль:',
+	'centralauth-finish-text' => 'Әгәр был иҫәп яҙмалары һеҙҙеке икән, һеҙ уларға серһүҙ керетеп, дөйөм иҫәп яҙмаһына күсеүҙе тамамлай алаһығыҙ:',
+	'centralauth-finish-password' => 'Серһүҙ:',
 	'centralauth-finish-login' => 'Танылыу',
-	'centralauth-finish-send-confirmation' => 'Яңы пароль ебәрергә',
+	'centralauth-finish-send-confirmation' => 'Яңы серһүҙ ебәрергә',
 	'centralauth-finish-problems' => 'Әгәр ҡыйынлыҡтар тыуһа, йәки был иҫәп яҙмалар һеҙҙеке булмаһа, [[meta:Help:Unified login problems|белешмә мәғлүмәткә күҙ һалығыҙ]]…',
-	'centralauth-finish-noconfirms' => 'Был пароль менән раҫлана торған иҫәп яҙмалары юк.',
-	'centralauth-finish-incomplete' => 'Бер нисә иҫәп яҙмаһы ошо пароль ярҙамында берләштерелде.
+	'centralauth-finish-noconfirms' => 'Был серһүҙ менән раҫлана торған иҫәп яҙмалары юҡ.',
+	'centralauth-finish-incomplete' => 'Бер нисә иҫәп яҙмаһы ошо серһүҙ ярҙамында берләштерелде.
 Башҡа иҫәп яҙмалары әле раҫланмаған.',
-	'centralauth-merge-attempt' => "'''Керетелгән паролдең әле берләштерелмәгән иҫәп яҙмалары менән тап килеүенә тикшереү...'''",
+	'centralauth-merge-attempt' => "'''Керетелгән серһүҙҙең әле берләштерелмәгән иҫәп яҙмалары менән тап килеүенә тикшереү...'''",
 	'centralauth-attach-list-attached' => '"$1" иҫәп яҙмаһы түбәндәге иҫәп яҙмаларын үҙ эсенә ала:',
 	'centralauth-attach-title' => 'Иҫәп яҙмаһын раҫлау',
-	'centralauth-attach-text' => 'Был иҫәп яҙмаһы дөйөм иҫәп яҙмаһы системаһына күсерелмәгән әле. Әгәр дөйөм иҫәп яҙмаһы шулай уҡ һеҙҙеке булһа, дөйөм иҫәп яҙмаһының паролен керетеп, был иҫәп яҙмаһын да берләштерә алаһығыҙ:',
+	'centralauth-attach-text' => 'Был иҫәп яҙмаһы дөйөм иҫәп яҙмаһы системаһына күсерелмәгән әле. Әгәр дөйөм иҫәп яҙмаһы шулай уҡ һеҙҙеке булһа, дөйөм иҫәп яҙмаһының серһүҙен керетеп, был иҫәп яҙмаһын да берләштерә алаһығыҙ:',
 	'centralauth-attach-submit' => 'Иҫәп яҙмаһын күсерергә',
 	'centralauth-attach-success' => 'Иҫәп яҙмаһы дөйөм иҫәп яҙмаһы системаһына күсерелде.',
 	'centralauth' => 'Дөйөм иҫәп яҙмалар менән идара итеү',
@@ -3556,8 +3557,8 @@ $messages['ba'] = array(
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:иҫәп яҙмаһы||иҫәп яҙмаһы}} уңышлы айырылды',
 	'centralauth-admin-delete-title' => 'Иҫәп яҙмаһын юйыу',
 	'centralauth-admin-delete-description' => 'Дөйөп иҫәп яҙмаһын юйыу дөйөм көйләүҙәрҙең юйылыуына, бөтә иҫәп яҙмаларының айырымланыуына һәм дөйөм исемдең бушауына килтерәсәк, һәм уны башҡа ҡатнашыусы үҙләштерә аласаҡ.
-Бөтә локаль иҫәп яҙмалары артабан тороп ҡаласаҡ.
-Берләштереүгә тиклем булдырылған локаль иҫәп яҙмаларының паролдәре элекке хәленә ҡайтасаҡ.',
+Бөтә урындағы иҫәп яҙмалары артабан тороп ҡаласаҡ.
+Берләштереүгә тиклем булдырылған урындағы иҫәп яҙмаларының серһүҙҙәре элекке хәленә ҡайтасаҡ.',
 	'centralauth-admin-delete-button' => 'Иҫәп яҙмаһын юйырға',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" дөйөм иҫәп яҙмаһы уңышлы юйылды',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" дөйөм иҫәп яҙмаһы юҡ',
@@ -3996,8 +3997,217 @@ Pakikaag an sekretong panlaog para sa harong nin wiki.',
 	'centralauth-not-owner-text' => 'An pangaran nin paragamit "$1" awtomatikong pinagtuka sa kagsadire nin panindog sa $2.
 
 Kun ika ini, puwede mong tapuson nin simple an proseso na pagkasararoon an panlaog sa paagi nin pagdutdot kan maestrong sekreto nin paglaog para sa panindog na iyan digde:',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Moda nin demonstrasyon sana</div><br clear='all'/>",
+	'centralauth-disabled-dryrun' => 'An presenteng pagkasararoon na panindog yaon sa moda nin demo/panghihinguto, kaya an aktuwal na operasyon nin pagkakasararoon dae tabi pinaandar.
+Sori!',
+	'centralauth-error-locked' => 'Ika dae makakapagliwat nin huli ta an saimong panindog nakakandado.',
+	'centralauth-error-unmerged' => 'Ika dae makakapagliwat nin huli ta an saimong panindog bakong pinagkasararo.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Magbasa nin kadagdagan mapanununogd sa '''pinagkasararong paglalaog''']]…''",
 	'centralauth-list-home-title' => 'Harong na wiki',
+	'centralauth-list-home-dryrun' => 'An pasa-taramon asin e-surat na estada sa wiking ini gagamiton para sa saimong pinagkasararong panindog.',
+	'centralauth-list-attached-title' => 'Nakadukot na mga panindog',
+	'centralauth-list-attached' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pinagdukot na sa pinagkasararong panindog:',
+	'centralauth-list-attached-dryrun' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pagdudukuton sa pinagkasararong panindog:',
+	'centralauth-list-unattached-title' => 'Daeng kadukot na mga panindog',
+	'centralauth-list-unattached' => 'An panindog na "$1" dae awtomatikong makukumpirma bilang pagsadire mo sa mga minasunod na mga sityo;
+seguradong sinda igwa nin manlaen-laen na sekretong panglaog sa saimong pangenot na panindog:',
+	'centralauth-foreign-link' => 'Paragamit $1 sa $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kaarambagan|mga kaarambagan}} sa $2',
+	'centralauth-merge-method-primary' => 'ginikanang wiki',
+	'centralauth-merge-method-empty' => 'mayong mga kaarambagan',
+	'centralauth-merge-method-mail' => 'kumpirmado sa paagi nin e-surat',
+	'centralauth-merge-method-password' => 'kumpirmado sa paagi nin pasa-taramon',
+	'centralauth-merge-method-admin' => 'pinagkasararong panindog kan admin',
+	'centralauth-merge-method-new' => 'baguhong panindog',
+	'centralauth-merge-method-login' => 'pinagmukna kaidtong paglaog',
+	'centralauth-merge-method-primary-desc' => 'Ini an wiki na an panindog enot na pinagkasararo.
+Tadae na ini mapuwedeng laen sa tunay na ginikanang wiki kan paragamit na yan.',
+	'centralauth-merge-method-empty-desc' => 'Panandaan na an lokal na panindog pinagkasararo na nin huli ta ini mayo nang mga kaliwatan.',
+	'centralauth-merge-method-mail-desc' => 'Panandaan na an lokal na panindog pinagkasararo na nin huli ta an e-surat na estada nagtugma sa e-surat na estada kan kapamayuhang panindog.',
+	'centralauth-merge-method-password-desc' => 'Panandaan na an lokal na panindog pinagkasararo na nin huli ta an paragamit nagtuga nin sarong balidong pasa-taramon para kaini.',
+	'centralauth-merge-method-admin-desc' => 'Panandaan na an lokal na panindog manwal na pinagkasararo kan mga katarabang.
+An estimang ini dae pinagpaandar ngunyan nin huli sa mga rason nin seguridad.',
+	'centralauth-merge-method-new-desc' => 'Panandaan na an pankinabanon na panindog awtomatikong pinagmukna kunsoarin na an lokal na panindog pinagmukna man.',
+	'centralauth-merge-method-login-desc' => 'Panandaan na an lokal na panindog awtomatikong pinagmukna kunsoarin na an paragamit nakalaog na.',
+	'centralauth-finish-title' => 'Tapuson na pagkasararoon',
+	'centralauth-finish-text' => 'Kun ining mga panindog pagsadire mo, sayong mong matatapos mo an proseso kan pagkasararoon an panlaog sa paagi nin pagkaag kan mga sekretong panlaog para sa iba pang mga panindog na yaon digde:',
+	'centralauth-finish-password' => 'Pasa-taramon:',
 	'centralauth-finish-login' => 'Maglaog',
+	'centralauth-finish-send-confirmation' => 'Pakipadara sa e-surat an pasa-taramon',
+	'centralauth-finish-problems' => 'Nagkaproblema ka, o bakong ika an kagsadire kaining ibang mga panindog?
+[[meta:Help:Unified login problems|Paanuhon na makanagbo nin katabangan]]…',
+	'centralauth-finish-noconfirms' => 'Mayo nin mga panindog an puwedeng makapagkumpirma na minagamit kaining pasa-taramon.',
+	'centralauth-finish-incomplete' => 'Nagkapirang mga panindog an pinagkasararo na naggagamit kaining pasa-taramon.
+An ibang mga panindog dae pa tabi kumpirmado.',
+	'centralauth-merge-attempt' => "'''An pagririkisa nagtao nin pasa-taramon na laen sa natatadang dae pa pinagkasararong mga panindog…'''",
+	'centralauth-attach-list-attached' => 'An pinagkasararong panindog na pinagngaranan na "$1" minabali sa mga minasunod na mga panindog:',
+	'centralauth-attach-title' => 'Kumpirmaron an panindog',
+	'centralauth-attach-text' => 'Ining panindog dae pa naibabalyo sa pinagkasararong panindog. Kun an pankinaban na panindog pagsadire mo man, mapuwede mong maipagbalyo ining panindog kun maikaag mo an pankinaban na pasa-taramon kan panindog:',
+	'centralauth-attach-submit' => 'Ibalyo an panindog',
+	'centralauth-attach-success' => 'An panindog naipagbalyo na pasiring sa pinagkasararong panindog.',
+	'centralauth' => 'Pankinaban na tagapagmaneho nin paragamit',
+	'centralauth-admin-intro' => 'Ining olay-panlaog mapupuwedeng gamiton para sa administrasyon kan pankinaban na mga panindog.',
+	'centralauth-admin-manage' => 'Manihoon an datos kan paragamit',
+	'centralauth-admin-username' => 'Paragamit na ngaran:',
+	'centralauth-admin-lookup-ro' => 'Tanawon an impormasyon kan paragamit',
+	'centralauth-admin-lookup-rw' => 'Imaneho an panindog nin paragamit',
+	'centralauth-admin-permission' => 'An mga katarabang sana an puwedeng makapagbalyo para sainda kan mga panindog kan ibang tawo.',
+	'centralauth-admin-no-unified' => 'Mayo nin pinagkasararon panindog para kaining pangaran nin paragamit.',
+	'centralauth-admin-info-header' => 'Pankinaban na impormasyon kan paragamit',
+	'centralauth-admin-info-username' => 'Paragamit na pangaran:',
+	'centralauth-admin-info-id' => 'Paragamit na ID:',
+	'centralauth-admin-info-registered' => 'Rehistrado:',
+	'centralauth-admin-info-home' => 'Ginikanang wiki:',
+	'centralauth-admin-info-editcount' => 'Kabilogang bilang nin pagliwat:',
+	'centralauth-admin-info-locked' => 'Kinandado:',
+	'centralauth-admin-info-hidden' => 'Itinagong grado:',
+	'centralauth-admin-nohome' => 'dae madeterminaran',
+	'centralauth-admin-yes' => 'iyo',
+	'centralauth-admin-no' => 'dae',
+	'centralauth-admin-hidden-list' => 'gikan publikong mga listahan',
+	'centralauth-admin-hidden-oversight' => 'sobradong pagmansay',
+	'centralauth-admin-list-legend-ro' => 'Lista kan lokal na mga panindog',
+	'centralauth-admin-list-legend-rw' => 'Dae pinagkasararong lokal na mga panindog',
+	'centralauth-admin-unattached' => 'dae nakadukot',
+	'centralauth-admin-blocked' => 'Pinagkubkob, matapos sa petsa $3 mga alas $4.
+Rason: $2',
+	'centralauth-admin-blocked-indef' => 'Pinagkubkob na mayong siyertong tapos.
+Rason: $1',
+	'centralauth-admin-blocklog' => 'tala nin pagkubkob',
+	'centralauth-admin-list-localwiki' => 'Lokal na wiki',
+	'centralauth-admin-list-attached-on' => 'Nakadukot sa',
+	'centralauth-admin-list-method' => 'Metodo',
+	'centralauth-admin-list-editcount' => 'Bilang nin pagliwat',
+	'centralauth-admin-list-blocked' => 'Kinubkob',
+	'centralauth-admin-unmerge' => 'Napili an pagkasuhayon',
+	'centralauth-admin-merge' => 'Napili an pagkasararoon',
+	'centralauth-admin-bad-input' => 'Imbalido an napiling pagkasararoon',
+	'centralauth-admin-none-selected' => 'Mayong mga panindog an napili tanganing baguhon.',
+	'centralauth-admin-already-unmerged' => 'Piglalaktawan an $1, pinagsuhay na',
+	'centralauth-admin-unmerge-success' => 'Matrayumpong pinagsuhay na an $1 {{PLURAL:$1|panindog|mga panindog}}',
+	'centralauth-admin-delete-title' => 'Puraon an panindog',
+	'centralauth-admin-delete-description' => 'An pagpupura kan pankinaban na panindog magpupura kan arinman na pankinaban na mga kamuyahan, dae ipagdukot an gabos na mga lokal na panindog, asin bayaan an pankinaban na pangaran na libre para gamiton kan ibang paragamit.
+An gabos na lokal na mga panindog magpapadagos na yaon.
+An mga pasa-taramon para sa lokal na mga panindog bago pa man an pagkakasararo ibubuwelta sa dati nindang mga kabtangan.',
+	'centralauth-admin-delete-button' => 'Puraon ining panindog',
+	'centralauth-admin-delete-confirm' => 'Gusto mo talagang puraon ining panindog?',
+	'centralauth-admin-delete-success' => 'Matrayumpong pinagpura an pankinaban na panindog para ki "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent' => 'Mayo nin pankinaban na panindog para ki "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Kasalaan:an pankinaban na panindog na "<nowiki>$1</nowiki>" dae tabi eksistido.',
+	'centralauth-token-mismatch' => 'Sori, dae mi tabi maiproseso an saimong pagsumite kan porma nin huli sa kakulangan nin datos sa sesyon.',
+	'centralauth-state-mismatch' => 'Kasalaan:Sarong kumplikto sa pagliwat para sa paragamit na ini an namansayan. Pakirekisaha tabi an saimong kaliwatan asin otroha giraray.',
+	'centralauth-admin-reason' => 'Rason:',
+	'centralauth-admin-reason-other' => 'Iba pa/kadugangan na rason:',
+	'centralauth-admin-unhide-nonexistent' => 'Kasalaan:an pankinaban na panindog ni "<nowiki>$1</nowiki>" dae tabi eksistido.',
+	'centralauth-admin-status' => 'Ikaag an kamugtakan kan pankinaban na panindog',
+	'centralauth-admin-status-intro' => 'Ika makakagamit kaining porma tanganing liwaton an estado kaining pankinaban na panindog.',
+	'centralauth-admin-status-locked' => 'Nakakandado:',
+	'centralauth-admin-status-locked-no' => 'An panindog dae kinandado',
+	'centralauth-admin-status-locked-yes' => 'An panindog kinandado sa pagliliwat',
+	'centralauth-admin-status-hidden' => 'Pinagtago:',
+	'centralauth-admin-status-hidden-no' => 'An panindog dae pinagtago',
+	'centralauth-admin-status-hidden-list' => 'An panindog pinagtago gikan sa pampublikong mga listahan',
+	'centralauth-admin-status-hidden-oversight' => 'An panindog kumpleto nang pinagtago',
+	'centralauth-admin-status-submit' => 'Ikaag an kamugtakan',
+	'centralauth-admin-status-nonexistent' => 'Kasalaan:an pankinaban na panindog ni "<nowiki>$1</nowiki>" dae tabi eksistido.',
+	'centralauth-admin-setstatus-success' => 'Matrayumpo mong pinagbago an kamugtakan kaining pankinaban na panindog.',
+	'centralauth-admin-status-reasons' => '*Pirmehang mga rason nin pagkandado
+**bandalismo-panindog sana
+**espam-panindog sana
+*Pirmehang mga rason sa pagkandado-asin-pagtago
+**abusadong pangaran nin paragamit
+**bakong uyon na impormasyon personal',
+	'centralauth-admin-logsnippet' => 'Nakaaging pankinaban na mga kaliwatan nin panindog',
+	'centralauth-admin-suppressreason' => 'Pankinabanon na pagpupugol ni $1 para sa minasunod na rason: $2',
+	'centralauth-admin-not-authorized' => 'Ika mayo nin mga permiso tanganing gibohon an aksyon na ini',
+	'globalusers' => 'Pankinaban na listahan kan paragamit',
+	'centralauth-listusers-locked' => 'ikinandado',
+	'centralauth-listusers-attached' => '[[User:$1|lokal na eksistido]]',
+	'centralauth-listusers-nolocal' => 'dae nakadukot o dae eksistido sa lokal',
+	'multilock' => 'Kandaduhon an kadakulon na pankinaban na mga paragamit',
+	'centralauth-admin-multi-username' => 'Ilaog an saro o iba pang mga pangaran nin paragamit, separado nin baguhong linya',
+	'centralauth-admin-multi-notfound' => 'An paghanap nagbuwelta na mayong mga pangaran nin paragamit.',
+	'centralauth-admin-multi-searchprefix' => 'O, maghanap nin mga panindog na igwang pangenot na panigmit',
+	'centralauth-admin-multi-intro' => 'Haleong bilog an petsa sa kadaklan na pankinaban na mga paragamit',
+	'centralauth-admin-action-lock-nochange' => 'Dae liwaton an mga kandado',
+	'centralauth-admin-action-lock-lock' => 'Kandaduhon an pinagpiling mga panindog',
+	'centralauth-admin-action-lock-unlock' => 'Bukasan an pinagpiling mga panindog',
+	'centralauth-admin-action-hide-nochange' => 'Dae liwaton an itinagong mga grado',
+	'centralauth-admin-action-hide-none' => 'Dae tagoon an pinagpiling mga panindog',
+	'centralauth-admin-action-hide-lists' => 'Tagoon an pinagpiling mga panindog gikan sa pampublikong mga listahan',
+	'centralauth-admin-action-hide-oversight' => 'Kumpletong tagoon an pinagpiling mga panindog',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|segundo|segundos}} an nakaagi',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuto|minutos}} an nakaagi',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|oras|mga oras}} an nakaagi',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|aldaw|mga aldaw}} an nakaagi',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|bulan|mga bulan}} an nakaagi',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|anyo|anyos}} an nakaagi',
+	'centralauth-prefs-status' => 'Kamugtakan kan pankinaban na panindog:',
+	'centralauth-prefs-not-managed' => 'Dae minagamit kan pinagkasararong panindog',
+	'centralauth-prefs-unattached' => 'Bakong kumpirmado',
+	'centralauth-prefs-complete' => 'Gabos yaon sa tanos!',
+	'centralauth-prefs-migration' => 'Yaon sa pagbabalyo',
+	'centralauth-prefs-count-attached' => 'An saimong panindog aktibo sa $1 na proyekto {{PLURAL:$1|sityo|mga sityo}}.',
+	'centralauth-prefs-count-unattached' => 'Bako pang kumpirmadong mga panindog na yaon an saimong pangaran yaon pa sa $1 
+{{PLURAL:$1|proyekto|mga proyekto}}.',
+	'centralauth-prefs-detail-unattached' => 'Ining sityo kan proyekto bako pang kumpirmado na kabilang sa pankinaban na panindog.',
+	'centralauth-prefs-manage' => 'Mahinoon an saimong pankinaban na panindog',
+	'centralauth-prefs-view' => 'Tanawon an pankinaban na impormasyon kan paragamit',
+	'centralauth-renameuser-merged' => 'An paragamit na $1 pinagbalyo na pasiring sa pinagkasararong sistema nin paglalaog.
+An pagbabago nin pangaran magkakausa sa lokal na paragamit na mapagsuhay gikan sa pankinabanong pangaran niya.',
+	'centralauth-renameuser-reserved' => 'An paragamit na $2 reserbado na para sa sarong pankinabanong panindog.',
+	'centralauth-invalid-wiki' => 'Mayo tabi kaining datos-sarayan sa wiki: $1',
+	'centralauth-account-exists' => 'Dae makapagmukna nin panindog: an pinaghahagad na pangaran nin paragamit may nakakua na sa laog kan pinagkasararong sistema nin paglalaog.',
+	'centralauth-account-exists-reset' => 'An pangaran nin paragamit na $1 bakong rehistrado sa wiking ini, alagad ini eksistido sa pinagkasararong sistema nin paglalaog.',
+	'centralauth-login-progress' => 'Piglalaog ka sa mga wikis kan {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Pigluluwas ka gikan sa ibang mga wikis kan {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Ika tabi awtomatikong piglalaog sa ibang mga proyekto kan {{int:Centralauth-groupname}}:',
+	'centralauth-logout-no-others' => 'Ika tabi awtomationg pigluluwas sa ibang mga proyekto kan {{int:Centralauth-groupname}}:',
+	'centralauth-hidden-blockreason' => 'Pankinabanong ipinagtago ni $1 sa $2 na igwa kan minasunod na rason: $3',
+	'centralauth-log-name' => 'Talaan kan pankinabanong panindog',
+	'centralauth-log-header' => 'Ining talaan kinaagan kan mga operasyon sa laog kan mga pankinabanong panindog: mga kapuraan, kinakandado asin binubukasan.',
+	'centralauth-log-entry-delete' => 'pinagpurang pankinabanong panindog na "$1"',
+	'centralauth-log-entry-lock' => 'Kinandaduhan na pankinabanong panindog  na "$1"',
+	'centralauth-log-entry-unlock' => 'Binukasan na pankinabanong panindog "$1"',
+	'centralauth-log-entry-hide' => 'tagoon an pankinabanong panindog "$1"',
+	'centralauth-log-entry-unhide' => 'iluwas an pankinabanong panindog "$1"',
+	'centralauth-log-entry-lockandhide' => 'Kandaduhan asin tagoong an pankinabanong panindog "$1"',
+	'centralauth-log-entry-chgstatus' => 'Pinagliwat na kamugtakan para sa pankinabanong panindog "$1": Set $2; Dae ikaag $3',
+	'centralauth-log-status-locked' => 'pinagkandado',
+	'centralauth-log-status-hidden' => 'nakatago',
+	'centralauth-log-status-oversighted' => 'sobradong pagmansay',
+	'centralauth-log-status-none' => '(mayo)',
+	'centralauth-rightslog-name' => 'Talaan kan mga pankinabanong katanosan',
+	'centralauth-rightslog-entry-usergroups' => 'pinagribayan an pankinabanong grupo nin pagkamiyembro para ki $1 gikan sa $2 pasiring sa $3',
+	'centralauth-rightslog-entry-groupperms' => 'pinagribayan an mga permiso kan grupo para ki $1 gikan sa $2 pasiring sa $3',
+	'centralauth-rightslog-entry-groupperms2' => 'pinagribayan an mga permiso kan grupo para ki $1. Pinagdugang an $2; Pinaghali an $3',
+	'centralauth-rightslog-entry-groupperms3' => 'pinagliwat an restriktadong grupo nin mga wikis na kinaag para sa $1 gikan sa $2 pasiring sa $3',
+	'centralauth-rightslog-entry-grouprename' => 'grupong pinagliwat an pangaran na $2 na magin $1',
+	'centralauth-rightslog-header' => 'Ining talaan naglalaman kan mga operasyon nin pankinabanong mga grupo: pagkamiyembro asin mga kaliwatan sa mga permiso',
+	'centralauth-rightslog-entry-newset' => 'pinagmukna an $2 kapakat an wiki na $1 kaiba an minasunod na mga wikis: $3',
+	'centralauth-rightslog-entry-setrename' => 'pinagbagong pangaran sa kapakat na wiki na "$2" na magin "$1"',
+	'centralauth-rightslog-entry-setnewtype' => 'pinagliwat na tipo kan "$1" gikan sa $2 na magin $2', # Fuzzy
+	'centralauth-rightslog-entry-setchange' => 'pinagliwat na mga wikis sa "$1":pinagdugan:$2;pinaghali:$3',
+	'centralauth-rightslog-entry-deleteset' => 'pinagpura an kapakat an wiki na "$1"',
+	'centralauth-rightslog-set-optin' => 'piling-palaog nakabase',
+	'centralauth-rightslog-set-optout' => 'piling-paluwas nakabase',
+	'autologin' => 'Awtomatikong paglalaog',
+	'centralauth-autologin-desc' => 'Ining espesyal na pahina pinaggagamit sa panlaog kan MediaWiki.
+Kunsoarin na ika [[Special:UserLogin|maglaog]], an sentral na sistema nin paglalaog minapasunod sa saimong pangilyaw na maghagad kaining pahina gikan sa gabos na pinagkilyaw na mga kinasakupan, ginagamit an mga imaheng kasugpunan.
+Saimong pinaghahagad ining pahina na dae nagtatao nin arinman na datos nin pagpapatunay, kaya ini mayong ginigibo.',
+	'centralautologin' => 'Sentral na paglalaog',
+	'centralauth-centralautologin-desc' => 'Ining espesyal na pahina pinaggagamit sa panlaog kan MediaWiki.
+Kunsoarin na ika mabisita sa sarong pinagsugpon na kinasakupan mantang dae nakapaglaog, an sentral na sistema nin paglalaog minagamit kaining pahina sa pagdetermina kun ika nakapaglaog na sa sentral na kinasakupan.
+Saimong pinaghahagad ining pahina na dae nagtatao nin arinman na datos nin pagpapatunay, kaya ini mayong ginigibo.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Ika nakalaog na tabi sa lokal',
+	'centralauth-centralautologin-badparams' => 'Imbalido an pinagsambit na mga parametro nin pagpapatunay',
+	'centralauth-centralautologin-lostsession' => 'Nawara an datos nin sesyon',
+	'centralauth-centralautologin-badstate' => 'Imbalido an estado na "$1"',
+	'centralauth-centralautologin-notposted' => 'Dapat ipagpaskil an porma kan sentral na paglalaog',
+	'centralauth-centralautologin-badstate-central' => 'An estadong "$1" bakong balido sa sentral na wiki',
+	'centralauth-centralautologin-badstate-local' => 'An estadong "$1" bakong balido sa lokal na wiki',
+	'centralauth-centralautologin-badwiki' => 'An wiking "$1" bakong balido sa sentral na paglalaog',
+	'centralauth-centralautologin-corsfail' => 'An pagrikisa ginikanan kan CORS nagpalya',
 );
 
 /** Belarusian (беларуская)
@@ -9385,6 +9595,7 @@ Kasutajanime muutmisega eraldatakse kohalik kasutaja globaalsest.',
 	'centralauth-rightslog-set-optin' => 'kaasamispõhise',
 	'centralauth-rightslog-set-optout' => 'loobumispõhise',
 	'autologin' => 'Automaatne sisselogimine',
+	'centralauth-centralautologin-lostsession' => 'Seansiandmed läksid kaotsi.',
 	'globalgroupmembership' => 'Liikmesus globaalsetes rühmades',
 	'globalgrouppermissions' => 'Globaalse rühma haldamine',
 	'centralauth-globalgroupperms-grouplist' => 'Järgnevad globaalsed rühmad on määratletud.
@@ -15573,9 +15784,13 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-autologin-desc' => 'Questa pagina speciale è usata internamente da MediaWiki.
 Quando tu [[Special:UserLogin|fai il login]], il sistema centrale di login dice al tuo browser di richiedere questa pagina da tutti i domini collegati, usando i link immagine.
 Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così non fa niente.',
+	'centralautologin' => 'Accesso centrale',
+	'centralauth-centralautologin-alreadyloggedinlocally' => "Hai già effettuato l'accesso localmente.",
+	'centralauth-centralautologin-badparams' => 'I parametri di autenticazione specificati non sono validi',
 	'centralauth-centralautologin-badstate' => 'Stato "$1" non valido',
 	'centralauth-centralautologin-badstate-central' => 'Stato "$1" non valido nel wiki centrale',
 	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
+	'centralauth-centralautologin-corsfail' => 'Controllo di origine CORS non riuscito',
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist' => 'I seguenti gruppi globali sono stati configurati.
@@ -17534,7 +17749,7 @@ $messages['ko'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}}에서 운영하는 위키의 [[Special:MergeAccount|계정을 통합합니다]]',
 	'centralauth-antispoof-desc' => 'CentralAuth에 안티스푸프 기술을 적용합니다',
 	'centralauth-mergeaccount-desc' => '통합된 로그인을 위해 [[Special:MergeAccount|여러 계정을 통합합니다]]',
-	'centralauth-merge-denied' => '접근할 권한이 없습니다.',
+	'centralauth-merge-denied' => '죄송하지만 이 문서에 접근할 권한이 없습니다.',
 	'centralauth-merge-notlogged' => '계정이 완전히 합쳐졌는지 확인하기 위해<span class="plainlinks">[$1 로그인]</span>해 주세요.',
 	'centralauth-merge-welcome' => "'''당신의 계정은 {{MediaWiki:Centralauth-groupname/ko}}의 통합 로그인 체계로 완전히 옮겨지지 않았습니다.'''
 
@@ -17564,15 +17779,14 @@ $messages['ko'] = array(
 	'centralauth-merge-step3-title' => '통합 계정 만들기',
 	'centralauth-merge-step3-detail' => '아래의 위키에 대해 통합 계정을 만들 준비가 되었습니다.',
 	'centralauth-merge-step3-submit' => '계정 합치기',
-	'centralauth-merge-no-accounts' => '당신의 이름과 일치하는 계정을 찾지 못했습니다.
+	'centralauth-merge-no-accounts' => '통합 계정 테이블에 당신의 이름과 일치하는 계정을 찾지 못했습니다!
 데이터베이스가 잘못되었을 수 있습니다.',
 	'centralauth-merge-home-password' => '아래에 나열된 계정의 주 위키의 비밀번호가 입력한 비밀번호와 다릅니다.
 주 위키의 비밀번호를 입력해주세요.',
 	'centralauth-complete' => '계정을 통합했습니다!',
 	'centralauth-incomplete' => '계정을 통합하지 못했습니다!',
-	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키에 새 계정을 만들지 않고 로그인할 수 있습니다.
-같은 이름과 비밀번호를 모든 언어판의 위키백과, 위키낱말사전, 위키책과 그 자매 프로젝트에서 쓸 수 있습니다.',
-	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 {{int:Centralauth-groupname}}의 위키에 로그인할 수 있습니다.',
+	'centralauth-complete-text' => '이제 모든 {{MediaWiki:Centralauth-groupname/ko}}의 위키 사이트에 새 계정을 만들지 않고 로그인할 수 있습니다.',
+	'centralauth-incomplete-text' => '한번 계정을 통합하면 새 계정을 만들 필요 없이 모든 {{int:Centralauth-groupname}}의 위키에 로그인할 수 있습니다',
 	'centralauth-not-owner-text' => '"$1" 사용자 이름이 자동으로 $2의 계정의 주인으로 등록되었습니다.
 
 사용자 본인이 맞다면 주 비밀번호를 쓰는것으로 간단히 로그인 통합 작업을 끝낼 수 있습니다:',
@@ -17627,7 +17841,7 @@ $messages['ko'] = array(
 	'centralauth-attach-success' => '계정이 통합 계정으로 옮겨졌습니다.',
 	'centralauth' => '통합 계정 관리자',
 	'centralauth-admin-intro' => '이 인터페이스는 통합 계정 관리에 사용됩니다.',
-	'centralauth-admin-manage' => '사용자 자료 관리',
+	'centralauth-admin-manage' => '사용자 데이터 관리',
 	'centralauth-admin-username' => '사용자 이름:',
 	'centralauth-admin-lookup-ro' => '사용자 정보 보기',
 	'centralauth-admin-lookup-rw' => '사용자 계정 관리',
@@ -17773,7 +17987,23 @@ $messages['ko'] = array(
 	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
 [[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
 인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
-	'centralauth-centralautologin-lostsession' => '세션 데이터가 손실되었습니다.',
+	'centralautologin' => '중앙 관리 로그인',
+	'centralauth-centralautologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
+로그인되지 않은 연결된 도메인을 방문할 때, 통합 로그인 시스템은 이 문서가 통합 도메인에 로그인되어 있을 때 결정하는 데 사용합니다.
+인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => '이미 로컬에 로그인했습니다',
+	'centralauth-centralautologin-badparams' => '지정한 인증 변수가 잘못되었습니다',
+	'centralauth-centralautologin-lostsession' => '세션 데이터가 사라졌습니다',
+	'centralauth-centralautologin-badstate' => '"$1" 상태가 잘못되었습니다',
+	'centralauth-centralautologin-notposted' => '통합 로그인 양식은 post되어야 합니다',
+	'centralauth-centralautologin-badstate-central' => '"$1" 상태는 통합 위키로 올바르지 않습니다',
+	'centralauth-centralautologin-badstate-local' => '"$1" 상태는 로컬 위키로 올바르지 않습니다',
+	'centralauth-centralautologin-badwiki' => '"$1" 위키는 통합 로그인으로 올바르지 않습니다',
+	'centralauth-centralautologin-corsfail' => 'CORS 원점 확인 실패',
+	'centralauth-centralautologin-p3p-explanation' => '특정 브라우저에서 SUL 로그인 확인에 관련된 상황을 포함하는 일부 경우에, 쿠키를 보내거나 받기 위해서는 P3P 압축 정책이 필요합니다. 관련된 모든 문서가 같은 위키 그룹과 P3P 자체가 대부분 쓸모 없고 버려진 것을 고려하면, 이 상황을 통해 뛰어 넘는 불필요한 후프입니다. 다행히 이 문서로 링크한 잘못된 정책은 현재 이러한 브라우저의 기본 설정으로 "충분히 좋음"으로 간주됩니다.
+
+수집된 정보가 사용되는 방법을 결정하려면 이 사이트의 사람이 읽을 수 있는 개인정보 정책을 검토하세요.',
+	'centralauth-centralautologin-logged-in' => '$1 통합 계정으로 로그인되어 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.',
 	'globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
@@ -17857,9 +18087,39 @@ $messages['ko'] = array(
 	'right-globalgrouppermissions' => '공통 권한 그룹 관리',
 	'abusefilter-edit-builder-vars-global-user-groups' => '사용자가 속한 공통 권한 그룹',
 	'action-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
+	'centrallogin' => '중앙 관리 사용자 로그인',
 	'centralloginsuccesful' => '로그인 성공',
+	'centralauth-completelogin-legend' => '로그인 과정 완료',
+	'centralauth-completelogin-finishing' => '위키미디어 재단 사이트를 인증하는 중입니다, 기다리세요...',
+	'centralauth-completelogin-text' => '위키미디어 재단에 당신의 계정의 인증이 거의 완료되었습니다! 로그인을 인증하고 완료하려면 아래 버튼을 사용하세요.',
+	'centralauth-completelogin-submit' => '지금 로그인',
+	'centralauth-completelogin-back' => '이전 문서로 돌아갑니다.',
+	'centralauth-error-nologinattempt' => '당신의 세션에 대해 현재 로그인 시도가 이루어지고 있지 않습니다.',
+	'centralauth-error-badtoken' => '제공된 인증 토른이 만료되었거나 잘못되었습니다.',
+	'centralauth-error-token-wrongattempt' => '인증 토큰이 현재 로그인 시도에 속하지 않습니다.
+누군가가 악의적 계정으로 로그인하려고 했을 수 있습니다.',
+	'centralauth-error-token-wronguser' => '토른이 당신의 세션 사용자 이름과 일치하지 않습니다.
+누군가가 악의적 계정으로 로그인하려고 했을 수 있습니다.
+다른 사용자로 로그인하려고 했다면 먼저 로그아웃하세요.',
+	'centralauth-warning-notloggedin' => '현재 로그인하지 않았습니다.',
 	'centralauth-warning-notattached' => '로컬 계정이 통합 계정에 묶여있지 않습니다.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} 계정 인증',
+	'centralauth-finishglobaliseemail_body' => '이메일 주소는 {{SITENAME}}(을)를 주 계정으로
+모든 위키미디어 프로젝트에 "$2" 계정으로 연결되도록
+설정합니다.
+
+우리가 자동으로 병합할 수 없는 당신의 계정 중 하나에 병합하며,
+비밀번호를 분실했다면 당신의 계정으로 복구할 수 있는, 이 계정을
+당신이 소유하고 있음을 인증하려면 브라우저에서 이 링크를 여세요:
+
+$3
+
+계정을 당신이 소유하고 있지 *않으면*, 이메일 주소 인증을 취소하기 위해
+이 링크를 따르세요:
+
+$5
+
+이 인증 코드는 $6 $7에 만료됩니다.',
 );
 
 /** Karachay-Balkar (къарачай-малкъар)
@@ -18256,6 +18516,7 @@ $messages['ku-latn'] = array(
 	'centralauth-admin-username' => 'Navê bikarhêner:',
 	'centralauth-admin-lookup-ro' => 'Agahiyên bikarhêner bibîne',
 	'centralauth-admin-info-header' => 'Agahiya bikarhêner a global',
+	'centralauth-admin-info-username' => 'Navê bikarhêner:',
 	'centralauth-admin-info-id' => "ID'ya bikarhêner:",
 	'centralauth-admin-info-registered' => 'Xweqeydkirin:',
 	'centralauth-admin-info-locked' => 'Hatiye astengkirin:',
@@ -18291,11 +18552,27 @@ $messages['ku-latn'] = array(
 
 /** Cornish (kernowek)
  * @author Kernoweger
+ * @author Nrowe
  */
 $messages['kw'] = array(
-	'centralauth-groupname' => 'Fondyans Wikimedia',
-	'centralauth-login-progress' => 'Orth agas omgelmy orth wikiow a {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Orth agas digelmy dhyworth wikiow erel a {{int:Centralauth-groupname}}:',
+	'centralauth-groupname' => 'an Fondyans Wikimedia',
+	'centralauth-prefs-status' => 'Studh agas akont ollvysel:',
+	'centralauth-prefs-not-managed' => 'Nyns esowgh ow tevnydhya akont ollvysel',
+	'centralauth-prefs-unattached' => 'Heb y afydhya',
+	'centralauth-prefs-complete' => 'Puptra yw da!',
+	'centralauth-prefs-migration' => 'Ow tivroa',
+	'centralauth-prefs-count-attached' => 'Byw yw agas akont war $1 {{PLURAL:$1|wiasva|gwiasva}} ragdres.',
+	'centralauth-prefs-count-unattached' => "Yma akontow heb aga afydhya a's teves agas hanow hwath war $1 {{PLURAL:$1|ragdres}}.",
+	'centralauth-prefs-detail-unattached' => 'Ny afydhyas bos an akont ollvysel perhennek an wiasva ragdres-ma.',
+	'centralauth-prefs-manage' => 'Dyghtya agas akont ollvysel',
+	'centralauth-prefs-view' => 'Gweles kedhlow an devnydhyer ollvysel',
+	'centralauth-renameuser-merged' => "An devnydhyer $1 re beu divroas dhe'n system omgelmi kesunyes.
+Y dhashenwel a gaws distaga an devnydhyer leel dhyworth an huni ollvysel.",
+	'centralauth-renameuser-reserved' => 'Gwithys yw an hanow devnydhyer $2 rag akont ollvysel.',
+	'centralauth-account-exists' => "Ny yllir gwruthyl an akont; kemerys yw an hanow devnydhyer govynnys seulabrys y'n system omgelmi kesunyes.",
+	'centralauth-account-exists-reset' => "Nyns yw an hanow devnydhyer $1 kovskrifys war an wiki-ma, mes yma y'n system omgelmi kesunyes.",
+	'centralauth-login-progress' => 'Orth agas omgelmi orth wikiow a {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Orth agas digelmi dhyworth wikiow erel a {{int:Centralauth-groupname}}:',
 );
 
 /** Kirghiz (Кыргызча)
@@ -18537,9 +18814,12 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'multilock' => 'Méi global Benotzer spären',
 	'centralauth-admin-multi-username' => 'Gitt een oder méi Benotzernimm an, déi duerch en Zeilewiessel getrennt sinn',
 	'centralauth-admin-multi-notfound' => 'Et goufe keng Benotzernimm fonnt.',
+	'centralauth-admin-multi-searchprefix' => 'Oder no Benotzerkonte mat Prefix sichen',
+	'centralauth-admin-multi-intro' => 'Méi global Benotzer zesummen aktualiséieren',
 	'centralauth-admin-action-lock-nochange' => 'Spären net änneren',
 	'centralauth-admin-action-lock-lock' => 'Déi erausgesicht Benotzerkonte spären',
 	'centralauth-admin-action-lock-unlock' => 'Déi erausgesicht Benotzerkonten entspären',
+	'centralauth-admin-action-hide-nochange' => 'Verstoppte Niveauen net änneren',
 	'centralauth-admin-action-hide-lists' => 'Déi erausgesichte Benotzerkonten op ëffentleche Lëschte verstoppen',
 	'centralauth-admin-action-hide-oversight' => 'Déi erausgesicht Benotzerkonte komplett verstoppen',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}',
@@ -24139,6 +24419,7 @@ $messages['pfl'] = array(
  * @author ToSter
  * @author Ty221
  * @author WTM
+ * @author Woytecr
  * @author Ymar
  */
 $messages['pl'] = array(
@@ -24364,6 +24645,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-rightslog-entry-groupperms' => 'zmienił wszędzie uprawnienia $1 ($2 → $3)',
 	'centralauth-rightslog-entry-groupperms2' => 'zmienił przynależność $1 do grup. Dodane $2; usunięte $3',
 	'centralauth-rightslog-entry-groupperms3' => 'zmieniona grupa ograniczonych wiki o nazwie $1 z $2 na $3',
+	'centralauth-rightslog-entry-grouprename' => 'zmieniono nazwę grupy $2 na $1',
 	'centralauth-rightslog-header' => 'W tym rejestrze odnotowywane są operacje na globalnych grupach: dodawanie i usuwanie ich członków oraz zmiany uprawnień',
 	'centralauth-rightslog-entry-newset' => 'stworzył zbiór wiki $2 o nazwie $1 zawierający $3',
 	'centralauth-rightslog-entry-setrename' => 'zmienił nazwę zbioru wiki „$2” na „$1”',
@@ -24376,6 +24658,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-autologin-desc' => 'Ta strona specjalna jest wykorzystywana wewnętrznie przez oprogramowanie MediaWiki.
 Po [[Special:UserLogin|zalogowaniu się]], przeglądarka na polecenie systemu centralnego logowania, wczytuje tę stronę z każdej obsługiwanej domeny, używając linku jak do grafiki.
 Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak obsługi.',
+	'centralautologin' => 'Logowanie centralne',
 	'centralauth-centralautologin-lostsession' => 'Dane sesji zostały utracone',
 	'globalgroupmembership' => 'Przynależność do grup globalnych',
 	'globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
@@ -35379,8 +35662,20 @@ $messages['zh-hant'] = array(
 	該中央登入系統會利用圖片連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
 	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
 	'centralautologin' => '中央登入',
+	'centralauth-centralautologin-desc' => '此特殊頁面由MediaWiki於內部使用。當你未登入時進入一個相連域名，中央登入系統使用此頁以確定你是否已登入至中心域名。你請求本頁面沒有提供任何身份驗證資料，因此其它不會執行任何操作。',
 	'centralauth-centralautologin-alreadyloggedinlocally' => '你已經在本地登入',
+	'centralauth-centralautologin-badparams' => '指定的身份驗證參數無效',
+	'centralauth-centralautologin-lostsession' => '會話資料遺失',
 	'centralauth-centralautologin-badstate' => '狀態「$1 」無效',
+	'centralauth-centralautologin-notposted' => '中央登入表單必需以POST方式傳遞',
+	'centralauth-centralautologin-badstate-central' => '主維基的「$1」狀態無效',
+	'centralauth-centralautologin-badstate-local' => '本地維基的「$1」狀態無效',
+	'centralauth-centralautologin-badwiki' => '維基「$1」不可使用中央登入',
+	'centralauth-centralautologin-corsfail' => 'CORS起源檢查失敗',
+	'centralauth-centralautologin-p3p-explanation' => '某些瀏覽器於某些情況下需要使用P3P壓縮政策以發送或接收cookie，包括所涉及的SUL登入檢查。在此情況下，考慮到涉及的所有頁面都位於相同的維基組而P3P本身大多已過時並遺棄，此跳轉並不必要；幸運的是，連至此頁的無效政策於瀏覽器的預設設定來說已是「足夠」。
+
+請查看此網站的人類可讀隱私權原則以確定收集到的任何資訊將如何使用。',
+	'centralauth-centralautologin-logged-in' => '您目前以$1登入。刷新頁面以應用你的用戶設置。',
 	'globalgroupmembership' => '在全域組中的成員',
 	'globalgrouppermissions' => '全域組管理',
 	'centralauth-globalgroupperms-grouplist' => '以下的全域群組已經被設定。
@@ -35468,7 +35763,25 @@ $messages['zh-hant'] = array(
 	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！使用下面的按鈕確認和完成登入。',
 	'centralauth-completelogin-submit' => '立即登入',
 	'centralauth-completelogin-back' => '回到上一頁。',
+	'centralauth-error-nologinattempt' => '你的會話沒有主動登入嘗試正在進行。',
+	'centralauth-error-badtoken' => '提供的身份令牌已過期或無效。',
+	'centralauth-error-token-wrongattempt' => '身份驗證令牌並不屬於你目前的登入嘗試。
+有人可能試圖利用惡意賬號登入。',
+	'centralauth-error-token-wronguser' => '令牌與您的會話用戶名稱不匹配。
+有人可能試圖利用惡意賬號登入。
+若你只是希望以另一個賬號登入，請先登出。',
 	'centralauth-warning-notloggedin' => '您目前未有登入。',
 	'centralauth-warning-notattached' => '本地帳戶未有附加到全域帳戶。',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} 帳戶確認',
+	'centralauth-finishglobaliseemail_body' => '你的電郵地址與維基媒體計劃上的用戶「$2」連結，該用戶的主賬號位於{{SITENAME}}。
+
+為確保此賬號確實屬於閣下、合併你的所有賬號及容許你可以於失去密碼後恢復密碼，請開啟以下連結：
+
+$3
+
+若此賬號*並不*屬於閣下，請按以下連結以取消賬號確認：
+
+$5
+
+此確認號碼將於$6$7過期。',
 );

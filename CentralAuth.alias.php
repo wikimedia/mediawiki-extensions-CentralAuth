@@ -367,6 +367,7 @@ $specialPageAliases['it'] = array(
 $specialPageAliases['ja'] = array(
 	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
 	'AutoLogin' => array( '自動ログイン' ),
+	'CentralAutoLogin' => array( '中央管理自動ログイン' ),
 	'MergeAccount' => array( 'アカウント統合' ),
 	'GlobalGroupMembership' => array( 'グローバル利用者権限', 'グローバルグループへの所属' ),
 	'GlobalGroupPermissions' => array( 'グローバルグループ権限', 'グローバルグループパーミッション' ),
@@ -412,10 +413,10 @@ $specialPageAliases['ksh'] = array(
 
 /** Cornish (kernowek) */
 $specialPageAliases['kw'] = array(
-	'AutoLogin' => array( 'AwtoOmgelmy' ),
-	'MergeAccount' => array( 'KesunyaAcont' ),
+	'AutoLogin' => array( 'AwtoOmgelmi' ),
+	'MergeAccount' => array( 'KesunyaAkont' ),
 	'GlobalGroupMembership' => array( 'GwiryowDevnydhyoryonOllvysel' ),
-	'GlobalGroupPermissions' => array( 'CumyasowBagasowOllvysel' ),
+	'GlobalGroupPermissions' => array( 'KumyasowBagasowOllvysel' ),
 	'GlobalUsers' => array( 'DevnydhyoryonOllvysel' ),
 );
 
