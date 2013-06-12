@@ -16374,9 +16374,11 @@ $messages['ja'] = array(
 	'centralauth-warning-notloggedin' => 'あなたは現在ログインしていません。',
 	'centralauth-warning-notattached' => 'ローカルのアカウントはグローバルのそれと結び付けられていません。',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}のアカウント確認',
-	'centralauth-finishglobaliseemail_body' => 'あなたのメールアドレスは全ウィキメディアプロジェクト上で「$2」というアカウントと関連付けられました。主アカウントは {{SITENAME}} にあります。
+	'centralauth-finishglobaliseemail_body' => 'あなたのメールアドレスは全ウィキメディアプロジェクト上で「$2」というアカウントと関連付けられました。
+主アカウントは {{SITENAME}} にあります。
 
-このアカウントが本当にあなたのものであることを確認し、自動的に統合できなかったアカウントを統合し、パスワードを忘れたときにアカウントを復活させられるようにするため、次のリンクをブラウザで開いてください。
+このアカウントが本当にあなたのものであることを確認し、自動的に統合できなかったアカウントを統合し、
+パスワードを忘れたときにアカウントを復活させられるようにするため、次のリンクをブラウザで開いてください。
 
 $3
 
@@ -27626,12 +27628,12 @@ $messages['rue'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список хоснователїв із правами $2]]',
 	'centralauth-editgroup-restrictions' => 'Вікі сет, де є тота ґрупа актівна:',
 	'centralauth-editgroup-noset' => '(жадне)',
-	'centralauth-editgroup-submit' => 'Уложыти зміны в правах ґрупы', # Fuzzy
+	'centralauth-editgroup-submit' => 'Уложыти зміны в ґлобалных ґрупах',
 	'centralauth-editgroup-perms' => 'Призначены права:',
 	'centralauth-editgroup-reason' => 'Причіна:',
-	'centralauth-editgroup-success' => 'Права ґрупы змінены', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Успішно сьте змінили права ґрупы про ґрупу $1.
-[[Special:GlobalGroupPermissions|Навернутя на управлїня ґруп]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Ґлобална ґрупа была змінена',
+	'centralauth-editgroup-success-text' => 'Успішно была змінена ґлобална ґрупа $1.
+[[Special:GlobalGroupPermissions|Навернутя на управлїня ґруп]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|змінити]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Выберьте вікі, на котрій має конто:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Ґлобалный хоснователь  '''$1''' не є актівный на вікі, котру сьте увели (''$2''). Може пробуєте придати права не тому хоснователёві.",
@@ -27673,8 +27675,8 @@ $messages['rue'] = array(
 	'right-globalgroupmembership' => 'Зміна членства у ґлобалных ґрупах',
 	'right-centralauth-autoaccount' => 'Автоматічне приголошіня ґлобалным контом',
 	'right-centralauth-unmerge' => 'Розлучіти ґлобалны конта',
-	'right-centralauth-lock' => 'Блокованя і сховаваня ґлобалных конт', # Fuzzy
-	'right-centralauth-oversight' => 'Затаёваня ґлобалных конт', # Fuzzy
+	'right-centralauth-lock' => 'Блокованя і одблокованя ґлобалных конт',
+	'right-centralauth-oversight' => 'Затаёваня або скрываня ґлобалных конт',
 	'right-centralauth-merge' => 'Злучованя їх конт',
 	'right-globalgrouppermissions' => 'Адміністрація ґлобалных ґруп',
 );
@@ -33570,6 +33572,7 @@ $messages['uk'] = array(
 	'centralauth-autologin-desc' => 'Ця спеціальна сторінка призначена для внутрішнього використання у MediaWiki.
 Коли ви [[Special:UserLogin|входите до системи]], централізована система входу вказує вашому браузеру звернутись до цієї сторінки з усіх доменів, використовуючи графічні посилання.
 Ви запитали цю сторінку без надання інформації про автентифікацію, тому нічого не відбувається.',
+	'centralautologin' => 'Центральний вхід',
 	'globalgroupmembership' => 'Членство у глобальних групах',
 	'globalgrouppermissions' => 'Керування глобальними групами',
 	'centralauth-globalgroupperms-grouplist' => 'Були налаштовані наступні глобальні групи.
@@ -33594,7 +33597,7 @@ $messages['uk'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Список користувачів із правами $2]]',
 	'centralauth-editgroup-restrictions' => 'Набір вікі, в яких ця група діє:',
 	'centralauth-editgroup-noset' => '(нема)',
-	'centralauth-editgroup-submit' => 'Зберегти зміни прав групи', # Fuzzy
+	'centralauth-editgroup-submit' => 'Зберегти зміни у глобальній групі',
 	'centralauth-editgroup-perms' => 'Призначені права:',
 	'centralauth-editgroup-reason' => 'Причина:',
 	'centralauth-editgroup-success' => 'Права групи змінені', # Fuzzy
@@ -33649,6 +33652,9 @@ $messages['uk'] = array(
 	'right-globalgrouppermissions' => 'керування глобальними групами',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Глобальні групи, у яких знаходиться користувач',
 	'action-centralauth-lock' => 'блокування або розблокування глобальних облікових записів',
+	'centralauth-warning-notloggedin' => 'Наразі Ви не увійшли до системи.',
+	'centralauth-warning-notattached' => 'Локальний обліковий запис не приєднано до глобального.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} — підтвердження облікового запису',
 );
 
 /** Urdu (اردو)
@@ -33775,10 +33781,12 @@ $messages['ur'] = array(
  * @author Sociologist
  */
 $messages['uz'] = array(
+	'centralauth-finish-password' => 'Maxfiy soʻz:',
+	'centralauth-admin-info-username' => 'Foydalanuvchi nomi:',
 	'centralauth-prefs-status' => 'Global hisob holati:',
 	'centralauth-prefs-complete' => 'Hammasi joyida!',
 	'centralauth-prefs-count-attached' => 'Sizning hisobingiz $1 ta loyihada faol.', # Fuzzy
-	'centralauth-prefs-count-unattached' => 'Foydalanuvchi nomingiz hozirda $1 {{PLURAL:$1|loyihada|ta loyihada}} tasdiqlanmagan.',
+	'centralauth-prefs-count-unattached' => "Foydalanuvchi nomingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
 	'centralauth-prefs-manage' => 'Global hisob yozuvini boshqarish',
 	'centralauth-prefs-view' => 'Foydalanuvchi haqida global maʼlumotlarni koʻrish',
 );
