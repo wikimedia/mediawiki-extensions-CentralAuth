@@ -116,7 +116,9 @@
 			url: localEndpoint.replace( '$1', 'L2' ),
 			dataType: 'json',
 			type: 'POST',
-			data: {}
+			data: {
+				oncomplete: 'rewrite-p-personal'
+			}
 		} ).done( function ( ret ) {
 			if ( ret.status === 'ok' ) {
 				if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
@@ -124,15 +126,7 @@
 					url += ( url.indexOf( '?' ) < 0 ? '?' : '&' ) + getReturnToParams();
 					location.href = url;
 				} else {
-					mw.notify(
-						mw.message( 'centralauth-centralautologin-logged-in',
-							ret.userName, ret.userGender
-						), {
-							title: mw.message( 'centralautologin' ).plain(),
-							autoHide: false,
-							tag: 'CentralAutoLogin'
-						}
-					);
+					$( '#p-personal ul' ).html( ret.personal );
 				}
 			}
 		} );
@@ -149,9 +143,12 @@
 		// without our intervention.
 		$( function () {
 			var url = localEndpoint.replace( '$1', 'L0' );
+			url += ( url.indexOf( '?' ) < 0 ? '?' : '&' );
 			if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
-				url += ( url.indexOf( '?' ) < 0 ? '?' : '&' ) + 'oncomplete=status';
+				url += 'oncomplete=status';
 				url += '&' + getReturnToParams();
+			} else {
+				url += 'oncomplete=rewrite-p-personal';
 			}
 			$( '<iframe>' )
 				.css( {

@@ -265,27 +265,22 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'params' => array(),
 			);
 
-			switch ( $this->getRequest()->getVal( 'oncomplete', 'mw.notify' ) ) {
-			case 'mw.notify':
-				$user = User::newFromName( $centralUser->getName() );
-				$gender = $user->getOption( 'gender' );
-				if ( strval( $gender ) === '' ) {
-					$gender = 'unknown';
-				}
-				$data['script'] = Xml::encodeJsCall( 'top.mw.notify', array(
-					new XmlJsCode( trim( Xml::encodeJsCall( 'top.mw.message', array(
-						'centralauth-centralautologin-logged-in',
-						$user->getName(),
-						$gender
-					) ), ';' ) ),
-					array(
-						'title' => wfMessage( 'centralautologin' )->plain(),
-						'autoHide' => false,
-						'tag' => 'CentralAutoLogin',
-					),
-				) );
-				$data['params']['userName'] = $user->getName();
-				$data['params']['userGender'] = $gender;
+			switch ( $this->getRequest()->getVal( 'oncomplete', 'null' ) ) {
+			case 'rewrite-p-personal':
+				// This is hacky, and may not work right with all skins and
+				// other extensions.
+				global $wgUser;
+				$wgUser = User::newFromName( $centralUser->getName() );
+				$skin = $this->getSkin();
+				$skin->getContext()->setUser( $wgUser );
+				$html = $skin->getPersonalToolsList();
+
+				// This is also hacky.
+				$data['script'] = Xml::encodeJsCall(
+					'top.jQuery( \'#p-personal ul\' ).html',
+					array( $html )
+				);
+				$data['params']['personal'] = $html;
 				break;
 
 			case 'status':
