@@ -2910,7 +2910,7 @@ encaboxar la confirmación de la direición de corréu:
 
 $5
 
-Esti códigu de confirmación caducará\'l día $4', # Fuzzy
+Esti códigu de confirmación caducará\'l día $6 a les $7',
 );
 
 /** Kotava (Kotava)
@@ -24872,6 +24872,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'right-centralauth-merge' => 'Łączenie swojego konta',
 	'right-globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 	'centralloginsuccesful' => 'Zalogowano pomyślnie',
+	'centralauth-completelogin-legend' => 'Zakończ proces logowania',
 	'centralauth-completelogin-finishing' => 'Uwierzytelnianie na stronach Fundacji Wikimedia, proszę czekać...',
 	'centralauth-completelogin-text' => 'Uwierzytelnianie konta na stronach Fundacji Wikimedia jest prawie ukończone! Użyj przycisku poniżej, aby potwierdzić i zakończyć proces logowania.',
 	'centralauth-completelogin-submit' => 'Zaloguj się teraz',
