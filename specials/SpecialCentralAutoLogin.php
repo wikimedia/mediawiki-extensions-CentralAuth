@@ -295,6 +295,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'returntoquery' => $request->getVal( 'returntoquery' ),
 				) );
 				$data['script'] = 'top.location.href = ' . Xml::encodeJsVar( $url ) . ';';
+				break;
 
 			case 'NW':
 				// To avoid cross-domain restrictions, we have
