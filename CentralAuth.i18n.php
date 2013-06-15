@@ -2796,6 +2796,8 @@ Vusté solicitó esta páxina ensin dar dengún datu d'autenticación, de mou qu
 
 Por favor revise la política de proteición de datos lleíble por humanos d'esti sitiu pa determinar cómo pue usase la información collechada.",
 	'centralauth-centralautologin-logged-in' => "Tien fechu l'aniciu de sesión central como $1. Recargue la páxina p'aplicar la so configuración d'usuariu.",
+	'centralauth-edge-logging-in' => "Agora aniciando-y sesión automáticamente n'otros proyeutos de {{int:Centralauth-groupname}}.",
+	'centralauth-edge-logged-in' => "Anicióse-y sesión automáticamente n'otros proyeutos de {{int:Centralauth-groupname}}.",
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Remanamientu de grupos globales',
 	'centralauth-globalgroupperms-grouplist' => 'Se configuraron los grupos globales darréu.
@@ -4184,7 +4186,7 @@ An pagbabago nin pangaran magkakausa sa lokal na paragamit na mapagsuhay gikan s
 	'centralauth-rightslog-header' => 'Ining talaan naglalaman kan mga operasyon nin pankinabanong mga grupo: pagkamiyembro asin mga kaliwatan sa mga permiso',
 	'centralauth-rightslog-entry-newset' => 'pinagmukna an $2 kapakat an wiki na $1 kaiba an minasunod na mga wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'pinagbagong pangaran sa kapakat na wiki na "$2" na magin "$1"',
-	'centralauth-rightslog-entry-setnewtype' => 'pinagliwat an tipo kan "$1" gikan $2 pasiring $2', # Fuzzy
+	'centralauth-rightslog-entry-setnewtype' => 'tipong pinagliwat kan "$1" gikan sa $2 na magin $3',
 	'centralauth-rightslog-entry-setchange' => 'pinagliwat na mga wikis sa "$1":pinagdugan:$2;pinaghali:$3',
 	'centralauth-rightslog-entry-deleteset' => 'pinagpura an kapakat an wiki na "$1"',
 	'centralauth-rightslog-set-optin' => 'piling-palaog nakabase',
@@ -4208,6 +4210,8 @@ Saimong pinaghahagad ining pahina na dae nagtatao nin arinman na datos nin pagpa
 	'centralauth-centralautologin-corsfail' => 'An pagrikisa sa ginikanan kan CORS nagpalya',
 	'centralauth-centralautologin-p3p-explanation' => 'An siyertong mga pangilyaw naghahagad nin P3P kompak na palisiya para sa mga kokies na ipinapadara o nareresibe sa ibang kaso, kabali na an sitwasyon na imbuwelto sa pagrekisa kan SUL na paglaog. Ini bakong gayo kinakaipuhan na gutlang sa paglukso dagos kaining sitwasyon, kundi minakonsidera na an gabos na mga pahinang imbuwelto yaon sa laog nin kaparehong grupo kan wiki asin an P3P mismo iyo na an lumaon asin abandonado na; maray ngani, an imbalidong palisiya na nagsusugpon kaining pahina sa presente pinagkokonsiderang "labi karahay" kaining mga panugmad na konpigurasyon nin mga pangilyaw.',
 	'centralauth-centralautologin-logged-in' => 'Ika sentral na nakalaoag na bilang $1. Ikarga otro an pahina tanganing paganahon an saimong paragamit na mga panuytoy.',
+	'centralauth-edge-logging-in' => 'Ngunyan awtomatikong piglalaog ka sa iba pang mga proyekto kan {{int:Centralauth-groupname}}.',
+	'centralauth-edge-logged-in' => 'Ika tabi awtomatikong piglaog sa iba pang mga proyekto kan {{int:Centralauth-groupname}}:',
 	'globalgroupmembership' => 'Pagkamiyembro sa pankinabanong mga grupo',
 	'globalgrouppermissions' => 'Manihamento sa pankinabanong grupo',
 	'centralauth-globalgroupperms-grouplist' => 'An minasunod na mga grupong pankinaban pinagkonpigura na.
@@ -4239,6 +4243,42 @@ Tandai baya na an sarong grupo bakong eksistido laen lang kun ini igwa na nin mg
 	'centralauth-editgroup-perms' => 'Ipinagtugot na mga permiso:',
 	'centralauth-editgroup-reason' => 'Rason:',
 	'centralauth-editgroup-success' => 'Pinagliwat an pankinabanong grupo',
+	'centralauth-editgroup-success-text' => 'Matrayumpong pinagsugpunan an pankinabang grupo na $1.
+[[Special:GlobalGroupPermissions|Ibalik sa manihamento kan grupo]]',
+	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|liwaton]])',
+	'centralauth-editgroup-nowikiset' => 'Mayo, nagagamit sa gabos na wikis.',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kun saen sinda igwa nin panindog:',
+	'centralauth-globalgroupmembership-badknownwiki' => 'An pankinabang paragamit na si "$1" bakong aktibo sa wiki na saimong sinasambit ("$2").
+Ika nagprubar gayod na magtoka nin katanosan sa bakong tamang paragamit!',
+	'centralauth-editset' => 'Mga pag-iriba kan Wiki',
+	'centralauth-editset-legend-rw' => 'Magliwat or magmukna nin pag-iribang wiki',
+	'centralauth-editset-legend-ro' => 'Listahan kan mga pag-iribang wiki',
+	'centralauth-editset-intro-rw' => 'An minasunod na pag-iribang wiki pinagmukna na tabi.
+Puwedeng mong tanawon asin hirahon an arinman sainda, o magmukna nin baguhong pag-iriba.',
+	'centralauth-editset-intro-ro' => 'Yaon sa ibaba an listahan kan mga eksistido nang mga pag-iriba kan wiki.',
+	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|puraon]])',
+	'centralauth-editset-new' => 'Magmukna nin baguhong pag-iriba',
+	'centralauth-editset-notfound' => 'An pag-iribang wiki na "$1" dae nanagboan.',
+	'centralauth-editset-optin' => 'Nakabase sa panlaog-na-pagpipilian (minabale sana sa mga nasambit na mga wikis)',
+	'centralauth-editset-optout' => 'Nakabase sa paluwas-na-pagpipilian (minabale sa gabos na mga wiki laen sa pinagsambit)',
+	'centralauth-editset-legend-edit' => 'Pigliliwat na pag-iribang wiki na "$1"',
+	'centralauth-editset-legend-view' => 'Pag-iribang wiki na "$1"',
+	'centralauth-editset-legend-new' => 'Nagmumukna nin baguhong pag-iriba sa wiki',
+	'centralauth-editset-legend-delete' => 'Nagpupura sa pag-iriba sa wiki na "$1"',
+	'centralauth-editset-subtitle' => '< [[Special:WikiSets|Listahan kan mga pag-iriba]]',
+	'centralauth-editset-name' => 'Pangaran:',
+	'centralauth-editset-type' => 'Tipo:',
+	'centralauth-editset-wikis' => 'Mga Wikis:',
+	'centralauth-editset-restwikis' => 'Mga wikis na bakong kabale sa itaas:',
+	'centralauth-editset-reason' => 'Rason:',
+	'centralauth-editset-submit' => 'Isumite',
+	'centralauth-editset-submit-delete' => 'Paraon',
+	'centralauth-editset-badname' => 'Imbalido o mayong laog na pangaran nin pag-iriba',
+	'centralauth-editset-badtype' => 'Imbalidong tipo nin pag-iriba.',
+	'centralauth-editset-setexists' => 'An pag-iriba sa arog kaiyan na pangaran eksistido na',
+	'centralauth-editset-nowikis' => 'Mayong mga wikis an pinagsambit.',
+	'centralauth-editset-nouse' => '(mayo)',
+	'centralauth-editset-usage' => 'Pinaggamit sa mga grupo:',
 );
 
 /** Belarusian (беларуская)
@@ -16265,6 +16305,7 @@ $messages['ja'] = array(
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'ローカルで既にログインしています',
 	'centralauth-centralautologin-badparams' => '指定した認証パラメーターは無効です',
 	'centralauth-centralautologin-lostsession' => 'セッションデータが消失しました',
+	'centralauth-centralautologin-notposted' => '中央ログインフォームは POST メソッドで使用されなければなりません。',
 	'centralauth-centralautologin-badwiki' => 'ウィキ「$1」は中央管理ログインとして有効ではありません',
 	'centralauth-centralautologin-logged-in' => '現在、$1 としてログインしています。利用者設定を適用するにはページを再読み込みしてください。',
 	'centralauth-edge-logging-in' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログイン中です。',
@@ -19002,6 +19043,7 @@ Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
 	'centralauth-centralautologin-lostsession' => 'Donnéeë vun der Sessioun si verluer gaang',
 	'centralauth-centralautologin-logged-in' => "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
+	'centralauth-edge-logged-in' => 'Dir gouft automatesch op aner Projete vu(n) {{int:Centralauth-groupname}} ageloggt.',
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
 	'centralauth-globalgroupperms-grouplist' => "Dës global Gruppe goufe configuréiert.
@@ -19087,6 +19129,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'centrallogin' => 'Zentrale Login',
 	'centralloginsuccesful' => 'Umeldung huet geklappt',
 	'centralauth-completelogin-legend' => 'Aloggen ofschléissen',
+	'centralauth-completelogin-finishing' => 'Authentifizéierung op de Wikimedia Foundation Siten, waart w.e.g. ...',
 	'centralauth-completelogin-submit' => 'Elo aloggen',
 	'centralauth-completelogin-back' => 'Zréck op déi vireg Säit',
 	'centralauth-warning-notloggedin' => 'Dir sidd elo net ageloggt.',
@@ -20532,8 +20575,6 @@ $messages['mk'] = array(
 	'centralauth-invalid-wiki' => 'Нема таква вики-база на податоци: $1',
 	'centralauth-account-exists' => 'Не можам да ја создадам сметката: бараното корисничко име е зафатено во системот за најавување со обединета сметка.',
 	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но постои во системот за обединета најава.',
-	'centralauth-login-progress' => 'Ве најавувам во проектите на {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Ве одјавувам од другите проекти на {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално скриен од $1 во $2 од следнава причина: $3',
@@ -20585,6 +20626,8 @@ $messages['mk'] = array(
 
 Прочитајте ги (човечки-читливите) правила за лични податоци/приватност  на ова мрежно место за да видите како би се користеле податоците што се земаат.',
 	'centralauth-centralautologin-logged-in' => 'Најавени сте централно како $1. Превчитајте ја страницата за да ги примените вашите кориснички поставки.',
+	'centralauth-edge-logging-in' => 'Автоматски ве најавувам на други проекти на {{int:Centralauth-groupname}}.',
+	'centralauth-edge-logged-in' => 'Најавени сте автоматски на други проекти на {{int:Centralauth-groupname}}.',
 	'globalgroupmembership' => 'Членство во глобални групи',
 	'globalgrouppermissions' => 'Раководење со глобални групи',
 	'centralauth-globalgroupperms-grouplist' => 'Прилагодени се следниве глобални групи.
@@ -30560,6 +30603,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Dafer45
  * @author Diupwijk
  * @author GameOn
+ * @author Jopparn
  * @author Lejonel
  * @author Leo Johannes
  * @author M.M.S.
@@ -30730,6 +30774,12 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-listusers-locked' => 'låst',
 	'centralauth-listusers-attached' => '[[User:$1|existerar lokalt]]',
 	'centralauth-listusers-nolocal' => 'ej sammanslaget eller existerar ej lokalt',
+	'multilock' => 'Lås flera globala användare',
+	'centralauth-admin-multi-searchprefix' => 'Eller sök efter konton med ett prefix',
+	'centralauth-admin-action-lock-nochange' => 'Ändra inte lås',
+	'centralauth-admin-action-lock-lock' => 'Lås markerade konton',
+	'centralauth-admin-action-lock-unlock' => 'Lås upp markerade konton',
+	'centralauth-admin-action-hide-nochange' => 'Ändra inte dolda nivåer',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekund|sekunder}} sedan',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minut|minuter}} sedan',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|timme|timmar}} sedan',
@@ -30751,8 +30801,6 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-invalid-wiki' => 'Ingen sådan databas: $1',
 	'centralauth-account-exists' => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
 	'centralauth-account-exists-reset' => 'Användarnamnet $1 är inte registrerat på denna wiki, men det finns i det enhetligt inloggningssystemet.',
-	'centralauth-login-progress' => 'Loggar in dig till andra wikier från {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Loggar ut dig från andra wikier från {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Du har automatiskt blivit inloggad i andra projekt hos {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Du har automatiskt blivit utloggad ur andra projekt hos {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalt dold av $1 vid $2 med följande anledning: $3',
@@ -30786,6 +30834,12 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-autologin-desc' => 'Den här specialsidan används internt av MediaWiki.
 När du [[Special:UserLogin|loggar in]], instruerar det gemensamma inloggningssystemet din webbläsare att begära den här sidan från alla länkade domäner som använder bildlänkar.
 Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så den gör ingenting.',
+	'centralautologin' => 'Central inloggning',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Du är redan inloggad lokalt',
+	'centralauth-centralautologin-lostsession' => 'Sessionsdata förlorades',
+	'centralauth-centralautologin-badstate' => 'Ogiltigt format "$1"',
+	'centralauth-centralautologin-badstate-central' => 'Format "$1" är inte giltigt på den centrala wikin',
+	'centralauth-centralautologin-badstate-local' => 'Format "$1" är inte giltigt på den lokala wikin',
 	'globalgroupmembership' => 'Medlemskap i globala grupper',
 	'globalgrouppermissions' => 'Behandling av globala grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Följande globala grupper finns har blivit konfigurerade.
@@ -30862,6 +30916,13 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-centralauth-oversight' => 'Undertryck eller dölj globalt konto',
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
+	'action-centralauth-lock' => 'Lås eller lås upp globala konton',
+	'centrallogin' => 'Centrala användare logga in',
+	'centralloginsuccesful' => 'Inloggningen lyckades',
+	'centralauth-completelogin-legend' => 'Slutför inloggningsprocessen',
+	'centralauth-completelogin-submit' => 'Logga in nu',
+	'centralauth-completelogin-back' => 'Tillbaka till föregående sida.',
+	'centralauth-warning-notloggedin' => 'Du är inte inloggad för närvarande.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}-kontobekräftelse',
 	'centralauth-finishglobaliseemail_body' => 'Din e-postadress har valts ut som tillhörande kontot med namn "$2" på alla
 Wikimedia-projekt, med ditt huvudkonto på {{SITENAME}}.
