@@ -4279,6 +4279,50 @@ Puwedeng mong tanawon asin hirahon an arinman sainda, o magmukna nin baguhong pa
 	'centralauth-editset-nowikis' => 'Mayong mga wikis an pinagsambit.',
 	'centralauth-editset-nouse' => '(mayo)',
 	'centralauth-editset-usage' => 'Pinaggamit sa mga grupo:',
+	'centralauth-editset-badwikis' => 'An minasunod na {{PLURAL:$2|wiki dae|mga wikis dae}} eksistido: $1.',
+	'centralauth-editset-success' => 'Matrayumpong pinagliwat an pag-iriba kan wiki.',
+	'centralauth-editset-success-delete' => 'Matrayumpong pinagpura an pag-iriba kan wiki.',
+	'centralauth-editset-return' => 'Ibalik sa bungad na patanaw',
+	'centralauth-block-already-locked' => 'An paragamit [[Special:CentralAuth/$1|$1]] pankinaban nang kinandado.',
+	'centralauth-readonly' => 'An datos-sarayan sa CentralAuth ikinandado',
+	'centralauth-readonlytext' => 'An datos-sarayan sa CentralAuth sa ngunyan nakakandado sa mga baguhong entrada asin iba pang mga modipikasyon, seguradong para sa pirme-pirmehan nang pagpapakarhay, pagkatapos kaini mabalik man sa normal.',
+	'right-globalgroupmembership' => 'Liwaton an pagkamiyembro na magin pankinaban na mga grupo',
+	'right-centralauth-autoaccount' => 'Awtomatikong maglaog na yaon sa pankinaban na panindog',
+	'right-centralauth-unmerge' => 'Dae pagsalakon an pankinaban na panindog',
+	'right-centralauth-lock' => 'Ikandado o bukasan an pankinaban na panindog',
+	'right-centralauth-oversight' => 'Pugulan o tagoon an pankinaban na panindog',
+	'right-centralauth-merge' => 'Salakon an saindang panindog',
+	'right-globalgrouppermissions' => 'Manihoon an pankinaban na mga grupo',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Pankinaban na mga grupo na an paragamit kabali',
+	'action-centralauth-lock' => 'Ikandado o bukasan an pankinaban na mga panindog',
+	'centrallogin' => 'Sentral na paglaog kan paragamit',
+	'centralloginsuccesful' => 'Matrayumpo an paglaog',
+	'centralauth-completelogin-legend' => 'Kumpletuhon an proseso nin paglaog',
+	'centralauth-completelogin-finishing' => 'Pinapatotohanan pa sa mga sityo kan Wikimedia Foundation, pakihalat tabi...',
+	'centralauth-completelogin-text' => 'An pagpapatotoo kan saimong panindog sa mga sityo kan Wikimedia Foundation haros makumpleto na! Gamita an pindutan sa ibaba tanganing kumpirmaron asin makumpleto an saimong paglaog.',
+	'centralauth-completelogin-submit' => 'Maglaog ngunyan',
+	'centralauth-completelogin-back' => 'Ibalik sa nakaaging pahina.',
+	'centralauth-error-nologinattempt' => 'Mayo nin aktibong paglalaog na pinuprubaran sa ngunyan para sa saimong sesyon.',
+	'centralauth-error-badtoken' => 'An pinagtaong senyal nin pagpapatotoo nagpaso na o imbalido.',
+	'centralauth-error-token-wrongattempt' => 'An senyal nin pagpapatotoo bakong kabali sa ngunyan mong pagprubar nin paglaog.
+Baka may sarong tawo na nagprubar na ilaog ka sa irarom nin sarong malisyosong panindog.',
+	'centralauth-error-token-wronguser' => 'An senyal dae tabi nagtugma sa pangaran nin paragamit sa saimong sesyon.
+Baka may sarong tawo na pinuprubaran na ilaog ka sa laog nin sarong malisyosong panindog.
+Kun ika nagprubar na maglaog bilang laen na paragamit, enot magluwas ka nguna tabi.',
+	'centralauth-warning-notloggedin' => 'Ika dae sa ngunyan nakalaog.',
+	'centralauth-warning-notattached' => 'An lokal na panindog dae nakadukot sa sarong pankinabanon.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} kumpirmasyon sa panindog',
+	'centralauth-finishglobaliseemail_body' => 'An saimong estada sa e-surat ikinaag bilang asosyado sa panindog na "$2" sa gabos na mga proyekto kan Wikimedia, na an saimong pangenot na panindog na yaon sa {{SITENAME}}.
+
+Tanganing kumpirmaron na ining panindog tunay na pagsadire mo, salakon sa arinman na saimong mga panindog na dae mi awtomatikong magigibo, asin minatugot saimo na mabawi an saimong panindog kun mawara mo an saimong pasa-taramon, pakibukas tabi ining kasugpunan sa saimong pangilyaw.
+
+$3
+
+Kun an panindog bakong pagsadire mo, sunudon ining kasugpunan tanganing kanselaron an kumpirmasyon sa estada kan e-surat:
+
+$5
+
+An koda kaining kumpirmasyon mapaso sa $6 alas $7.',
 );
 
 /** Belarusian (беларуская)
@@ -6073,6 +6117,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-nonexistent' => 'No hi ha compte global per «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
 	'centralauth-token-mismatch' => "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
+	'centralauth-state-mismatch' => "Error: S'ha detectat un conflicte d'edició per a aquest usuari. Verifiqueu el canvi i torneu-ho a provar.",
 	'centralauth-admin-reason' => 'Motiu:',
 	'centralauth-admin-reason-other' => 'Motiu diferent o addicional:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: el compte global "<nowiki>$1</nowiki>" no existeix.',
@@ -6096,10 +6141,23 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 ** Informació personal inapropiada",
 	'centralauth-admin-logsnippet' => 'Canvis anteriors al compte global',
 	'centralauth-admin-suppressreason' => 'Eliminada globalment per $1 amb el següent motiu: $2',
+	'centralauth-admin-not-authorized' => 'No teniu permisos per executar aquesta acció',
 	'globalusers' => "Llista global d'usuaris",
 	'centralauth-listusers-locked' => 'Blocat',
 	'centralauth-listusers-attached' => '[[User:$1|existeix localment]]',
 	'centralauth-listusers-nolocal' => 'no unit o no existeix localment',
+	'multilock' => "Bloqueig múltiple d'usuaris globals",
+	'centralauth-admin-multi-username' => "Introduïu un o més noms d'usuari, un per línia",
+	'centralauth-admin-multi-notfound' => "La cerca no ha tornat cap nom d'usuari.",
+	'centralauth-admin-multi-searchprefix' => 'O bé cerca comptes amb un prefix',
+	'centralauth-admin-multi-intro' => 'Actualitza múltiples usuaris globals alhora',
+	'centralauth-admin-action-lock-nochange' => 'No canviïs els bloqueigs',
+	'centralauth-admin-action-lock-lock' => 'Bloca els comptes seleccionats',
+	'centralauth-admin-action-lock-unlock' => 'Desbloca els comptes seleccionats',
+	'centralauth-admin-action-hide-nochange' => 'No canviïs nivells ocults',
+	'centralauth-admin-action-hide-none' => 'Mostra comptes seleccionats',
+	'centralauth-admin-action-hide-lists' => 'Oculta els comptes seleccionats de llistes públiques',
+	'centralauth-admin-action-hide-oversight' => 'Oculta completament els comptes seleccionats',
 	'centralauth-seconds-ago' => 'fa $1 {{PLURAL:$1|segon|segons}}',
 	'centralauth-minutes-ago' => 'fa $1 {{PLURAL:$1|minut|minuts}}',
 	'centralauth-hours-ago' => 'fa $1 {{PLURAL:$1|hora|hores}}',
@@ -6122,8 +6180,6 @@ El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global."
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists' => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
 	'centralauth-account-exists-reset' => "El nom d'usuari $1 no està registrat en aquest wiki, pero sí que existeix al registre unificat d'usuaris.",
-	'centralauth-login-progress' => 'Iniciant la sessió en els wikis de {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Sortint de la sessió en els wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Automàticament us heu connectat en altres projectes de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => "Automàticament us heu desconnectat d'altres projectes de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'ocultat globalment per $1 a les $2 amb la següent raó: $3',
@@ -6145,6 +6201,7 @@ El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global."
 	'centralauth-rightslog-entry-groupperms' => 'canviats els permisos de $1 des de $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => 'Canviats els permisos de grup per $1. Afegit $2; Suprimit $3',
 	'centralauth-rightslog-entry-groupperms3' => 'canviat el conjunt de wikis restringit del grup $1 de $2 a $3',
+	'centralauth-rightslog-entry-grouprename' => "s'ha reanomenat el grup $2 a $1",
 	'centralauth-rightslog-header' => 'Aquest registre conté operacions en grups globals: canvis de permisos i de membres',
 	'centralauth-rightslog-entry-newset' => 'ha creat $2 paràmetres wiki $1 amb  les wikis següents : $3',
 	'centralauth-rightslog-entry-setrename' => 'ha reanomenat el paràmetre wiki "$2" a "$1"',
@@ -6157,6 +6214,21 @@ El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global."
 	'centralauth-autologin-desc' => "Aquesta pàgina local és usada internament per MediaWiki.
 Quan [[Special:UserLogin|us hi connecteu]], el sistema central de connexió fa que el vostre navegador demani aquesta pàgina a tots els dominis enllaçats, emprant enllaços d'imatge.
 Heu demanat aquesta pàgina sense haver proporcionat dades d'autentificació, així que no fa res.",
+	'centralautologin' => 'Connexió centralitzada',
+	'centralauth-centralautologin-desc' => "Aquesta pàgina especial és utilitzada internament per MediaWiki.
+Quan visiteu un domini vinculat sense tenir una sessió iniciada, el sistema central de connexió utilitza aquesta pàgina per determinar si heu iniciat la sessió en el domini central.
+Heu demanat aquesta pàgina sense proporcionar cap dada d'autenticació, per la qual cosa no fa res.",
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Ja esteu connectat localment',
+	'centralauth-centralautologin-badparams' => "Els paràmetres d'autenticació especificats no són vàlids",
+	'centralauth-centralautologin-lostsession' => 'Pèrdua de dades de la sessió',
+	'centralauth-centralautologin-badstate' => "L'estat «$1» no és vàlid",
+	'centralauth-centralautologin-notposted' => 'El formulari de connexió centralitzada ha de ser publicat',
+	'centralauth-centralautologin-badstate-central' => 'L’estat «$1» no és vàlid en el wiki central',
+	'centralauth-centralautologin-badstate-local' => 'L’estat «$1» no és vàlid en el wiki local',
+	'centralauth-centralautologin-badwiki' => 'El wiki «$1» no és vàlid per a connexió centralitzada',
+	'centralauth-centralautologin-corsfail' => 'La verificació d’origen CORS ha fallat',
+	'centralauth-centralautologin-logged-in' => 'Esteu connectats de forma centralitzada com a $1. Refresqueu la pàgina per aplicar la vostra configuració.',
+	'centralauth-edge-logged-in' => 'Esteu {{GENDER:$1|connectat|connectada}} automàticament en altres projectes de {{int:Centralauth-groupname}}.', # Fuzzy
 	'globalgroupmembership' => 'Pertinença a grups globals',
 	'globalgrouppermissions' => 'Gestió de grups globals',
 	'centralauth-globalgroupperms-grouplist' => 'Els següents grups globals han estat configurats.
@@ -6175,18 +6247,20 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editgroup-name' => 'Nom del grup:',
 	'centralauth-editgroup-display' => 'Trobat nom de grup:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|editeu]])',
+	'centralauth-editgroup-invalid-name' => 'El nom de grup global proporcionat no és vàlid',
 	'centralauth-editgroup-member' => 'Noms traduïts de membres de grups:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editeu]])',
 	'centralauth-editgroup-members' => 'Llista de membres:',
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Llista d'usuaris amb drets de $2]]",
 	'centralauth-editgroup-restrictions' => 'Conjunt de wikis on aquest grup és actiu:',
 	'centralauth-editgroup-noset' => '(cap)',
-	'centralauth-editgroup-submit' => 'Guardar els canvis a les autoritzacions de grup', # Fuzzy
+	'centralauth-editgroup-submit' => 'Desa els canvis de grup global',
 	'centralauth-editgroup-perms' => 'Autoritzacions assignades:',
 	'centralauth-editgroup-reason' => 'Motiu:',
-	'centralauth-editgroup-success' => 'Autoritzacions de grup canviades', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Heu canviat les autoritzacions de grup pel grup $1. [[Special:GlobalGroupPermissions|Tornar a gestió de grups]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Grup global modificat',
+	'centralauth-editgroup-success-text' => 'El grup global $1 ha estat actualitzat correctament.[[Special:GlobalGroupPermissions|Torna a la gestió de grups]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editeu]])',
+	'centralauth-editgroup-nowikiset' => "Cap, s'aplica a tots els wikis.",
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki on tinguin un compte d'usuari:",
 	'centralauth-globalgroupmembership-badknownwiki' => "L'usuari global '''$1''' no està actiu en el wiki que heu especificat ('' $2 ''). Podeu estar intentant d'assignar autoritzacions a un usuari erroni!",
 	'centralauth-editset' => 'Conjunts de wikis',
@@ -6222,15 +6296,42 @@ Podeu veure i modificar qualsevol d'ells, o crear un nou conjunt.",
 	'centralauth-editset-success' => "S'ha modificat correctament el conjunt de wikis.",
 	'centralauth-editset-success-delete' => "S'ha eliminat correctament el conjunt wiki.",
 	'centralauth-editset-return' => 'Tornar a la vista principal',
+	'centralauth-block-already-locked' => "{{GENDER:$1|L'usuari|La usuària}} [[Special:CentralAuth/$1|$1]] ja està {{GENDER:$1|blocat|blocada}} globalment.",
 	'centralauth-readonly' => "La base de dades d'autentificació està bloquejada",
 	'centralauth-readonlytext' => 'La base de dades no permet noves entrades o modificacions de forma temporal, possiblement per manteniment rutinari, després del qual tornarà a la normalitat.',
 	'right-globalgroupmembership' => 'Editar els membres dels grups globals',
 	'right-centralauth-autoaccount' => 'Connectar-se automàticament amb compte global',
 	'right-centralauth-unmerge' => 'Anuŀlar la unificació del compte global',
-	'right-centralauth-lock' => 'Blocar o ocultar el compte global', # Fuzzy
-	'right-centralauth-oversight' => 'Suprimir el compte global', # Fuzzy
+	'right-centralauth-lock' => 'Bloqueig o desbloqueig de compte global',
+	'right-centralauth-oversight' => 'Supressió o ocultació de compte global',
 	'right-centralauth-merge' => 'Fusionar el compte propi',
 	'right-globalgrouppermissions' => 'Gestionar els grups globals',
+	'abusefilter-edit-builder-vars-global-user-groups' => "Grups globals als que pertany l'usuari",
+	'action-centralauth-lock' => 'blocar o desblocar comptes globals',
+	'centrallogin' => "Connexió d'usuari centralitzada",
+	'centralloginsuccesful' => 'Iniciada la sessió correctament',
+	'centralauth-completelogin-legend' => 'Completa el procés de connexió',
+	'centralauth-completelogin-finishing' => 'Autenticació en curs als llocs de la Fundació Wikimedia, espereu...',
+	'centralauth-completelogin-text' => 'L’autenticació del vostre compte en els llocs de la Fundació Wikimedia està a punt de completar-se! Utilitzeu el botó de sota per confirmar i completar la connexió.',
+	'centralauth-completelogin-submit' => "Connecta'm ara",
+	'centralauth-completelogin-back' => 'Tornar a la pàgina anterior.',
+	'centralauth-warning-notloggedin' => 'Actualment no esteu connectat.',
+	'centralauth-warning-notattached' => 'El compte local no està lligat a cap de global.',
+	'centralauth-finishglobaliseemail_subject' => 'Confirmació de compte de {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => "La vostra adreça de correu ha estat associada
+amb el compte « $2 » en tots els projectes de Wikimedia, essent el compte principal a {{SITENAME}}.
+
+Per confirmar que aquest compte realment us pertany, per fusionar tots els vostres
+comptes que puguem fer automàticament, i per permetre que pugueu recuperar el vostre
+compte si perdeu la contrasenya, obriu aquest enllaç en el vostre navegador:
+
+$3
+
+Si el compte *no* és vostre, seguiu aquest enllaç per cancel·lar la confirmació d'adreça de correu:
+
+$5
+
+Aquest codi de confirmació expirarà el $6 a les $7.",
 );
 
 /** Chechen (нохчийн)
@@ -19042,6 +19143,7 @@ Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir
 	'centralautologin' => 'Zentrale Login',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
 	'centralauth-centralautologin-lostsession' => 'Donnéeë vun der Sessioun si verluer gaang',
+	'centralauth-centralautologin-badstate-central' => 'Status "$1" ass net valabel op der zentraler Wiki',
 	'centralauth-centralautologin-logged-in' => "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	'centralauth-edge-logged-in' => 'Dir gouft automatesch op aner Projete vu(n) {{int:Centralauth-groupname}} ageloggt.',
 	'globalgroupmembership' => 'Member a globale Gruppen',
@@ -24902,6 +25004,18 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'centralauth-completelogin-back' => 'Powrót do poprzedniej strony.',
 	'centralauth-warning-notloggedin' => 'Nie jesteś aktualnie zalogowany.',
 	'centralauth-warning-notattached' => 'Lokalne konto nie jest podłączone do globalnego.',
+	'centralauth-finishglobaliseemail_subject' => 'Potwierdzenie konta na {{GRAMMAR:MS.lp|{{SITENAME}}}}',
+	'centralauth-finishglobaliseemail_body' => 'Twój adres e-mail został powiązany z kontem „$2” na wszystkich projektach Wikimediów, z kontem na {{GRAMMAR:MS.lp|{{SITENAME}}}} ustawionym jako główne.
+
+Aby potwierdzić, że to konto faktycznie należy do Ciebie, połączyć z nim wszystkie te, które nie mogły zostać połączone automatycznie oraz umożliwić Ci odzyskanie hasła, przejdź pod poniższy link:
+
+$3
+
+Jeśli to konto *nie* należy do Ciebie, przejdź pod ten link, aby anulować potwierdzenie adresu e-mail:
+
+$5
+
+Kod potwierdzający wygasa $6, o godzinie $7.',
 );
 
 /** Piedmontese (Piemontèis)
@@ -27075,6 +27189,7 @@ $messages['rtm'] = array(
  * @author Dim Grits
  * @author Eugrus
  * @author HalanTul
+ * @author Iluvatar
  * @author Kaganer
  * @author Kalan
  * @author Lockal
@@ -27253,6 +27368,8 @@ $messages['ru'] = array(
 	'centralauth-listusers-attached' => '[[User:$1|существует локально]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'неприсоединённый или не существует локально',
+	'multilock' => 'Заблокировать несколько глобальных пользователей',
+	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часа|часов}} назад',
@@ -34435,8 +34552,6 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-invalid-wiki' => 'Không có CSDL wiki như vậy: $1',
 	'centralauth-account-exists' => 'Không thể tạo tài khoản: tên người dùng chỉ định đã được sử dụng trong hệ thống đăng nhập thống nhất.',
 	'centralauth-account-exists-reset' => 'Wiki này chưa có tài khoản với tên người dùng “$1”, nhưng tên này có tồn tại trong hệ thống đăng nhập thống nhất.',
-	'centralauth-login-progress' => 'Bạn đang đăng nhập vào các wiki của {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Bạn đang đăng xuất ra khỏi các wiki khác của {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Đã đăng nhập cùng lúc vào các dự án khác của {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Đã đăng xuất cùng lúc khỏi các dự án khác của {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'bị $1 ẩn toàn cục vào lúc $2 vì lý sao sau: $3',
@@ -34488,6 +34603,8 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
 
 Vui lòng xem lại quy định về quyền riêng tư cho người đọc của trang này để xác định thông tin nào được thu thập sẽ được sử dụng như thế nào.',
 	'centralauth-centralautologin-logged-in' => 'Bạn đã đăng nhập trung ương với tên $1. Hãy tải lại trang để kích hoạt thiết lập trang cá nhân của bạn.',
+	'centralauth-edge-logging-in' => 'Đang đăng nhập cùng lúc vào các dự án khác của {{int:Centralauth-groupname}}.',
+	'centralauth-edge-logged-in' => 'Đã đăng nhập cùng lúc vào các dự án khác của {{int:Centralauth-groupname}}.',
 	'globalgroupmembership' => 'Thành viên trong nhóm toàn cục',
 	'globalgrouppermissions' => 'Quản lý nhóm toàn cục',
 	'centralauth-globalgroupperms-grouplist' => 'Những nhóm toàn cục sau đã được cấu hình. Bạn có thể xem và sửa quyền hạn của mỗi nhóm, nếu có đủ quyền. Một nhóm có thể bị xóa bằng cách loại tất cả các quyền của nó.',
@@ -35621,6 +35738,7 @@ $messages['zh-hans'] = array(
  * @author Justincheng12345
  * @author Kevinhksouth
  * @author Liangent
+ * @author Liflon
  * @author Mark85296341
  * @author Simon Shek
  * @author Waihorace
@@ -35876,6 +35994,8 @@ $messages['zh-hant'] = array(
 
 請查看此網站的人類可讀隱私權原則以確定收集到的任何資訊將如何使用。',
 	'centralauth-centralautologin-logged-in' => '您目前以$1登入。刷新頁面以應用你的用戶設置。',
+	'centralauth-edge-logging-in' => '現正替您自動登入至 {{int:Centralauth-groupname}} 的其他計劃。',
+	'centralauth-edge-logged-in' => '已替您自動登入至 {{int:Centralauth-groupname}} 的其他計劃。',
 	'globalgroupmembership' => '在全域組中的成員',
 	'globalgrouppermissions' => '全域組管理',
 	'centralauth-globalgroupperms-grouplist' => '以下的全域群組已經被設定。
