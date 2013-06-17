@@ -15998,8 +15998,6 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.',
-	'centralauth-login-progress' => 'Accesso effettuato nelle altre wiki della {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Uscita effettuata dalle altre wiki della {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Hai appena effettuato il log-out dagli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
@@ -16037,6 +16035,7 @@ Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così n
 	'centralautologin' => 'Accesso centrale',
 	'centralauth-centralautologin-alreadyloggedinlocally' => "Hai già effettuato l'accesso localmente.",
 	'centralauth-centralautologin-badparams' => 'I parametri di autenticazione specificati non sono validi',
+	'centralauth-centralautologin-lostsession' => 'I dati della sessione sono andati perduti.',
 	'centralauth-centralautologin-badstate' => 'Stato "$1" non valido',
 	'centralauth-centralautologin-badstate-central' => 'Stato "$1" non valido nel wiki centrale',
 	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
@@ -16134,6 +16133,18 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-error-badtoken' => 'Il token di autenticazione fornito è scaduto o non valido.',
 	'centralauth-warning-notloggedin' => 'Attualmente non sei connesso.',
 	'centralauth-warning-notattached' => "L'utenza locale non è collegata ad una globale.",
+	'centralauth-finishglobaliseemail_subject' => 'Conferma utenza su {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Il tuo indirizzo email è stato associato con l\'utenza "$2" su tutti i progetti Wikimedia, con l\'account principale su {{SITENAME}}.
+
+Per confermare che questa utenza appartiene davvero a te, unire tutti i tuoi account che non è possibile farlo automaticamente, e permetterti di recuperare la password se la dimentichi, apri questo collegamento nel tuo browser:
+
+$3
+
+Se l\'utenza *non* appartiene a te, segui questo collegamento per annullare la conferma dell\'indirizzo email:
+
+$5
+
+Questo codice di conferma scadrà il $6 alle $7.',
 );
 
 /** Japanese (日本語)
@@ -16406,7 +16417,7 @@ $messages['ja'] = array(
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'ローカルで既にログインしています',
 	'centralauth-centralautologin-badparams' => '指定した認証パラメーターは無効です',
 	'centralauth-centralautologin-lostsession' => 'セッションデータが消失しました',
-	'centralauth-centralautologin-notposted' => '中央ログインフォームは POST メソッドで使用されなければなりません。',
+	'centralauth-centralautologin-notposted' => '中央管理ログインフォームは POST メソッドで使用してください',
 	'centralauth-centralautologin-badwiki' => 'ウィキ「$1」は中央管理ログインとして有効ではありません',
 	'centralauth-centralautologin-logged-in' => '現在、$1 としてログインしています。利用者設定を適用するにはページを再読み込みしてください。',
 	'centralauth-edge-logging-in' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログイン中です。',
@@ -27169,6 +27180,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-completelogin-back' => "Tuèrne 'a pàgene d'apprime.",
 	'centralauth-error-nologinattempt' => "Nisciune tendative de trasè jè attive jndr'à sessiona toje.",
 	'centralauth-warning-notloggedin' => 'Tu pe mò non ge sì collegate.',
+	'centralauth-warning-notattached' => "'U cunde locale non g'è attaccate a une globbale.",
 	'centralauth-finishglobaliseemail_subject' => "conferme d'u cunde de {{SITENAME}}",
 );
 
