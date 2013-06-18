@@ -19,9 +19,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->loginWiki = $wgCentralAuthLoginWiki;
 		if ( !$this->loginWiki ) {
 			// Ugh, no central wiki. If we're coming from the iframes generated
-			// by CentralAuthHooks::getDomainAutoLoginHtml, make the
-			// logged-into wiki the de-facto central wiki for this request so
-			// auto-login still works.
+			// by ext.centralauth.edgeautologin, make the logged-into wiki the
+			// de-facto central wiki for this request so auto-login still
+			// works.
 			$notifywiki = $this->getRequest()->getVal( 'notifywiki' );
 			if ( $notifywiki !== null && WikiMap::getWiki( $notifywiki ) ) {
 				$this->loginWiki = $notifywiki;
@@ -304,6 +304,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// cookies get set first.
 				$data['params']['domain'] = CentralAuthUser::getCookieDomain();
 				$data['nextState'] = 'NW';
+				break;
+
+			case 'null':
 				break;
 			}
 			break;
