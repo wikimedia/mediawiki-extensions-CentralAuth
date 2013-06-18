@@ -261,9 +261,7 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
 	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
-	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
 
 	// Logging
@@ -321,8 +319,6 @@ You have requested this page without providing any authentication data, so it do
 
 Please review this site\'s human-readable privacy policy to determine how any information collected might be used.',
 	'centralauth-centralautologin-logged-in' => 'You are centrally logged in as $1. Reload the page to apply your user settings.',
-	'centralauth-edge-logging-in' => 'Now automatically logging you into other projects of {{int:Centralauth-groupname}}.',
-	'centralauth-edge-logged-in' => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
@@ -500,8 +496,7 @@ $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|MergeAccount}}',
 	'centralauth-groupname' => 'Used within the following messages:
 * {{msg-mw|centralauth-incomplete-text}}
-* {{msg-mw|centralauth-login-progress}}
-* {{msg-mw|centralauth-logout-progress}}',
+* {{msg-mw|centralauth-login-progress}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -862,15 +857,6 @@ CORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/',
 	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds.
 * $1 - User name
 * $2 - User gender code {{gender}}',
-	'centralauth-edge-logging-in' => 'Message used from JavaScript to tell the user that they are being logged in to additional sites.
-* $1 - mw.user object {{gender}}
-Used with the following messages:
-* {{msg-mw|centralauth-edge-logged-in}}',
-	'centralauth-edge-logged-in' => 'Message used from JavaScript to tell the user that they hav
-e been logged in to additional sites.
-* $1 - mw.user object {{gender}}
-Used with the following messages:
-* {{msg-mw|centralauth-edge-logging-in}}',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
