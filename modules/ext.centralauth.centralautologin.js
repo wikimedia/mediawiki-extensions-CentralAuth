@@ -17,153 +17,27 @@
 		}
 	}
 
-	var centralEndpoint = mw.config.get( 'wgCentralAuthCentralAutoLoginEndpoint' ),
-		localEndpoint = mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/$1' ),
-		wikiId = mw.config.get( 'wgCentralAuthWikiID' );
+	// Ok, perform the acutal logged-in check via a <script> tag. The
+	// referenced URL will 302 a few times and then return appropriate
+	// JavaScript to complete the process.
+	var url, params, len, param, i;
 
-	function getReturnToParams() {
-		var params = location.search.slice( 1 ).split( '&' ),
-			len = params.length,
-			param, i,
-			ret = [];
+	url = mw.config.get( 'wgServer' ) +
+		mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/start' );
+	url += ( url.indexOf( '?' ) < 0 ? '?' : '&' ) + 'type=script';
+	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
+		url += '&return=1';
+
+		params = location.search.slice( 1 ).split( '&' );
+		len = params.length;
 		for ( i = 0; i < len; i++ ) {
 			param = params[i].split( '=' );
 			param = decodeURIComponent( param[0] );
 			if ( param === 'returnto' || param === 'returntoquery' ) {
-				ret.push( params[i] );
+				url += '&' + params[i];
 			}
 		}
-		return ret.join( '&' );
 	}
 
-	// These functions should be declared in the "if ( jQuery.support.cors )"
-	// where they're actually needed, but jshint insists they be placed up here
-	// instead.
-	// Documentation: [[mw:Auth systems/SUL2#Local wiki Javascript Auth check]]
-
-	// State C1
-	function fetchCentralUserId() {
-		// Also, disable this brain-damaged warning. We're not going to rewrite
-		// all the PHP code because it doesn't like "ret.gu_id".
-		/*jshint camelcase: false */
-		$.ajax( {
-			url: centralEndpoint.replace( '$1', 'C1' ),
-			dataType: 'json',
-			type: 'POST',
-			data: { wikiid: wikiId },
-			xhrFields: {
-				withCredentials: true
-			}
-		} ).done( function ( ret ) {
-			/*jshint camelcase: false */
-			if ( ret.status === 'ok' ) {
-				if ( +ret.gu_id <= 0 ) {
-					var t = new Date();
-					t.setTime( t.getTime() + 86400000 );
-					if ( 'localStorage' in window ) {
-						localStorage.setItem( 'CentralAuthAnon', t.getTime() );
-					} else {
-						document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';
-					}
-				} else {
-					if ( 'localStorage' in window ) {
-						localStorage.removeItem( 'CentralAuthAnon' );
-					}
-					if ( /(^|; )CentralAuthAnon=/.test( document.cookie ) ) {
-						document.cookie = 'CentralAuthAnon=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
-					}
-					createLocalSessionForCentralLogin( ret.gu_id );
-				}
-			}
-		} );
-	}
-
-	// State L1
-	function createLocalSessionForCentralLogin( guid ) {
-		/*jshint camelcase: false */
-		$.ajax( {
-			url: localEndpoint.replace( '$1', 'L1' ),
-			dataType: 'json',
-			type: 'POST',
-			data: { gu_id: guid }
-		} ).done( function ( ret ) {
-			if ( ret.status === 'ok' ) {
-				haveCentralWikiPutLoginDataInMemcached( ret.token );
-			}
-		} );
-	}
-
-	// State C2
-	function haveCentralWikiPutLoginDataInMemcached( token ) {
-		$.ajax( {
-			url: centralEndpoint.replace( '$1', 'C2' ),
-			dataType: 'json',
-			type: 'POST',
-			data: { token: token, wikiid: wikiId },
-			xhrFields: {
-				withCredentials: true
-			}
-		} ).done( function ( ret ) {
-			if ( ret.status === 'ok' ) {
-				checkMemcachedDataAndSetCentralAuthCookies();
-			}
-		} );
-	}
-
-	// State L2
-	function checkMemcachedDataAndSetCentralAuthCookies() {
-		$.ajax( {
-			url: localEndpoint.replace( '$1', 'L2' ),
-			dataType: 'json',
-			type: 'POST',
-			data: {}
-		} ).done( function ( ret ) {
-			if ( ret.status === 'ok' ) {
-				if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
-					var url = mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralLogin/Status' );
-					url += ( url.indexOf( '?' ) < 0 ? '?' : '&' ) + getReturnToParams();
-					location.href = url;
-				} else {
-					mw.notify(
-						mw.message( 'centralauth-centralautologin-logged-in',
-							ret.userName, ret.userGender
-						), {
-							title: mw.message( 'centralautologin' ).plain(),
-							autoHide: false,
-							tag: 'CentralAutoLogin'
-						}
-					);
-				}
-			}
-		} );
-	}
-
-	if ( jQuery.support.cors ) {
-		// We can do AJAX calls using CORS.
-
-		// Start by calling state C1
-		fetchCentralUserId();
-	} else {
-		// We have to do it with an iframe. State "L0" returns the first
-		// auto-posting form for us, and the protocol proceeds from there
-		// without our intervention.
-		$( function () {
-			var url = localEndpoint.replace( '$1', 'L0' );
-			if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
-				url += ( url.indexOf( '?' ) < 0 ? '?' : '&' ) + 'oncomplete=status';
-				url += '&' + getReturnToParams();
-			}
-			$( '<iframe>' )
-				.css( {
-					position: 'absolute',
-					top: 0,
-					left: '-10px',
-					width: '1px',
-					height: '1px'
-				} )
-				.attr( 'src', url )
-				.appendTo( document.body );
-		} );
-	}
-
+	mw.loader.load( url );
 }( mediaWiki, jQuery ) );

@@ -98,7 +98,7 @@ $wgCentralAuthCookieDomain = '';
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
 /**
- * List of wiki IDs which should be called on login/logout to set third-party
+ * List of wiki IDs which should be called on login to try to set third-party
  * cookies for the global session state.
  *
  * The wiki ID is typically the database name, except when table prefixes are
@@ -109,7 +109,7 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
  * session on all of them by hitting one wiki from each domain
  * (en.wikipedia.org, en.wikinews.org, etc).
  *
- * Done by $wgCentralAuthLoginIcon from Special:AutoLogin on each wiki.
+ * Done by accessing Special:CentralAutoLogin/start on each wiki.
  *
  * If empty, no other wikis will be hit.
  *
@@ -118,10 +118,46 @@ $wgCentralAuthCookiePrefix = 'centralauth_';
 $wgCentralAuthAutoLoginWikis = array();
 
 /**
- * Local filesystem path to the icon returned by Special:AutoLogin
+ * Whether login should be done silently (with 302 redirects)
+ * Note this may eventually be defaulted to true and removed.
+ */
+$wgCentralAuthSilentLogin = false;
+
+/**
+ * Local filesystem path to the icon returned by Special:CentralAutoLogin
  * Should be a 20x20px PNG.
  */
 $wgCentralAuthLoginIcon = false;
+
+/**
+ * Set this true until all wikis are running a version with
+ * Special:CentralAutoLogin/start available.
+ */
+$wgCentralAuthUseOldAutoLogin = true;
+
+/**
+ * User preferences for which we should recommend reloading the page after
+ * a successful central login query.
+ *
+ * If you need to do something more complicated than just
+ * $user->getOption( $pref ) !== User::getDefaultOption( $pref ), use the hook
+ * CentralAuthIsUIReloadRecommended.
+ */
+$wgCentralAuthPrefsForUIReload = array(
+	'skin',
+	'language',
+	'thumbsize',
+	'underline',
+	'stubthreshold',
+	'showhiddencats',
+	'justify',
+	'numberheadings',
+	'editondblclick',
+	'editsection',
+	'editsectiononrightclick',
+	'usenewrc',
+	'extendwatchlist',
+);
 
 /**
  * Specify a P3P header value to be used when setting CentralAuth cookies on
@@ -226,7 +262,6 @@ $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLoadFromSession'][] = 'CentralAuthHooks::onUserLoadFromSession';
 $wgHooks['UserLogout'][] = 'CentralAuthHooks::onUserLogout';
-$wgHooks['UserLogoutComplete'][] = 'CentralAuthHooks::onUserLogoutComplete';
 $wgHooks['GetCacheVaryCookies'][] = 'CentralAuthHooks::onGetCacheVaryCookies';
 $wgHooks['UserArrayFromResult'][] = 'CentralAuthHooks::onUserArrayFromResult';
 $wgHooks['UserGetEmail'][] = 'CentralAuthHooks::onUserGetEmail';
@@ -243,7 +278,6 @@ $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariabl
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
 $wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
-$wgHooks['ResourceLoaderGetConfigVars'][] = 'CentralAuthHooks::onResourceLoaderGetConfigVars';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthHooks::onApiTokensGetTokenTypes';
@@ -360,14 +394,11 @@ $wgResourceModules['ext.centralauth'] = array(
 ) + $commonModuleInfo;
 $wgResourceModules['ext.centralauth.centralautologin'] = array(
 	'scripts' => 'ext.centralauth.centralautologin.js',
+	'styles' => 'ext.centralauth.centralautologin.css',
 	'position' => 'top',
 	'dependencies' => array(
 		'mediawiki.notify',
 		'mediawiki.jqueryMsg',
-	),
-	'messages' => array(
-		'centralautologin',
-		'centralauth-centralautologin-logged-in',
 	),
 ) + $commonModuleInfo;
 

@@ -6,90 +6,84 @@
  * @ingroup Extensions
  */
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
-	private $isForm = false;
+	private $loginWiki;
 
 	function __construct() {
 		parent::__construct( 'CentralAutoLogin' );
 	}
 
 	function execute( $par ) {
-		global $wgMemc, $wgUser;
+		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
+
+		$request = $this->getRequest();
+
+		$this->loginWiki = $wgCentralAuthLoginWiki;
+		if ( !$this->loginWiki ) {
+			// Ugh, no central wiki. If we're coming from an edge login, make
+			// the logged-into wiki the de-facto central wiki for this request
+			// so auto-login still works.
+			$fromwiki = $request->getVal( 'from', $request->getVal( 'notifywiki' ) );
+			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
+				$this->loginWiki = $fromwiki;
+			}
+		}
+
+		$params = $request->getValues(
+			'type',
+			'from',
+			'return',
+			'returnto',
+			'returnquery'
+		);
 
 		switch ( strval( $par ) ) {
-		case '': // also null and false
-			$this->setHeaders();
-			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-desc' );
-			return;
-
 		case 'P3P': // Explain the bogus P3P header
 			$this->setHeaders();
 			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-p3p-explanation' );
 			return;
 
-		case 'L0': // Output form for C1
-			$this->isForm = 1;
-			if ( !$wgUser->isAnon() ) {
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-alreadyloggedinlocally' ),
-				);
-				break;
-			}
-			$data = array(
-				'status' => 'ok',
-				'nextState' => 'C1',
-				'params' => array(
-					'wikiid' => wfWikiID(),
-				),
-			);
-			break;
-
-		case 'C1': // Query gu_id
-			$data = $this->checkInputState( $par, true );
-			if ( $data ) {
-				break;
+		case 'start': // Main entry point
+			if ( !$this->checkIsLocalWiki() ) {
+				return;
 			}
 
-			global $wgUser;
+			CentralAuthUser::setP3P();
+			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', array(
+				'wikiid' => wfWikiID(),
+			) + $params );
+			return;
+
+		case 'checkLoggedIn': // Check if we're logged in centrally
+			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				return;
+			}
+
+			CentralAuthUser::setP3P();
 			$centralUser = CentralAuthUser::getInstance( $wgUser );
-			$data = array(
-				'status' => 'ok',
-				'nextState' => 'L1',
-				'params' => array(
-					'gu_id' => $centralUser ? $centralUser->getId() : 0,
-				)
-			);
-			break;
+			$this->do302Redirect( $wikiid, 'createSession', array(
+				'gu_id' => $centralUser ? $centralUser->getId() : 0,
+			) + $params );
+			return;
 
-		case 'L1': // Start session for gu_id
-			$data = $this->checkInputState( $par, false );
-			if ( $data ) {
-				break;
+		case 'createSession': // Create the local session and shared memcache token
+			if ( !$this->checkIsLocalWiki() ) {
+				return;
 			}
 
-			$gu_id = +$this->getRequest()->getVal( 'gu_id', 0 );
+			CentralAuthUser::setP3P();
+			$gu_id = +$request->getVal( 'gu_id', 0 );
 			if ( $gu_id <= 0 ) {
 				// Should only get here for iframe mode
-				$script = "var t = new Date();\n" .
-					"t.setTime( t.getTime() + 86400000 );\n" .
-					"if ( 'localStorage' in window ) {\n" .
-					"\tlocalStorage.setItem( 'CentralAuthAnon', t.getTime() );\n" .
-					"} else {\n" .
-					"\tdocument.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';\n" .
-					"}\n";
-				$data = array(
-					'status' => 'script',
-					'script' => $script,
-				);
-				break;
+				$script = "var t = new Date();" .
+					"t.setTime( t.getTime() + 86400000 );" .
+					"if ( 'localStorage' in window ) {" .
+					"localStorage.setItem( 'CentralAuthAnon', t.getTime() );" .
+					"} else {" .
+					"document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';" .
+					"}";
+				$this->doFinalOutput( false, 'Not centrally logged in', $script );
+				return;
 			}
-
-			$script = "if ( 'localStorage' in window ) {\n" .
-				"\tlocalStorage.removeItem( 'CentralAuthAnon' );\n" .
-				"}\n" .
-				"if ( /(^|; )CentralAuthAnon=/.test( document.cookie ) ) {\n" .
-				"\tdocument.cookie = 'CentralAuthAnon=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';\n" .
-				"}\n";
 
 			// Ensure that a session exists
 			if ( session_id() == '' ) {
@@ -106,35 +100,26 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
 			$wgMemc->set( $key, $memcData, 60 );
 
-			// Save memc token for L2
-			$this->getRequest()->setSessionData( 'centralautologin-token', $token );
+			// Save memc token for the 'setCookies' step
+			$request->setSessionData( 'centralautologin-token', $token );
 
-			$data = array(
-				'status' => 'ok',
-				'nextState' => 'C2',
-				'script' => $script,
-				'params' => array(
-					'token' => $token,
-					'wikiid' => wfWikiID(),
-				)
-			);
-			break;
+			$this->do302Redirect( $this->loginWiki, 'validateSession', array(
+				'token' => $token,
+				'wikiid' => $wikiid,
+			) + $params );
+			return;
 
-		case 'C2': // Complete session for memc token
-			$data = $this->checkInputState( $par, true );
-			if ( $data ) {
-				break;
+		case 'validateSession': // Validate the shared memcached token
+			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				return;
 			}
 
+			CentralAuthUser::setP3P();
 			// Validate params
-			$wikiid = $this->getRequest()->getVal( 'wikiid', '' );
-			$token = $this->getRequest()->getVal( 'token', '' );
-			if ( $token === '' || $wikiid === '' ) {
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-badparams' )
-				);
-				break;
+			$token = $request->getVal( 'token', '' );
+			if ( $token === '' ) {
+				$this->doFinalOutput( false, 'Invalid parameters' );
+				return;
 			}
 
 			// Load memc data
@@ -143,7 +128,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$wgMemc->delete( $key );
 
 			// Check memc data
-			global $wgUser;
 			$centralUser = CentralAuthUser::getInstance( $wgUser );
 			if ( !$memcData ||
 				$memcData['wikiid'] !== $wikiid ||
@@ -151,11 +135,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				!$centralUser->getId() ||
 				$memcData['gu_id'] != $centralUser->getId()
 			) {
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-badparams' )
-				);
-				break;
+				$this->doFinalOutput( false, 'Invalid parameters' );
+				return;
 			}
 
 			// Write info for session creation into memc
@@ -165,27 +146,20 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			);
 			$wgMemc->set( $key, $memcData, 60 );
 
-			$data = array(
-				'status' => 'ok',
-				'nextState' => 'L2',
-				'params' => array(),
-			);
-			break;
+			$this->do302Redirect( $wikiid, 'setCookies', $params );
+			return;
 
-		case 'L2': // Set cookies for session in memc
-			$data = $this->checkInputState( $par, false );
-			if ( $data ) {
-				break;
+		case 'setCookies': // Check that memcached is validated, and set cookies
+			if ( !$this->checkIsLocalWiki() ) {
+				return;
 			}
 
+			CentralAuthUser::setP3P();
 			// Check saved memc token
 			$token = $this->getRequest()->getSessionData( 'centralautologin-token' );
 			if ( $token === null ) {
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-lostsession' ),
-				);
-				break;
+				$this->doFinalOutput( false, 'Lost session' );
+				return;
 			}
 
 			// Load memc data
@@ -200,11 +174,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				!isset( $memcData['userName'] ) ||
 				!isset( $memcData['token'] )
 			) {
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-lostsession' ),
-				);
-				break;
+				$this->doFinalOutput( false, 'Lost session' );
+				return;
 			}
 
 			// Load and check CentralAuthUser
@@ -212,21 +183,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
 				$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
 				wfDebug( __METHOD__ . ": $msg\n" );
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-lostsession' ),
-				);
-				break;
+				$this->doFinalOutput( false, 'Lost session' );
+				return;
 			}
 			$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
 			if ( $loginResult != 'ok' ) {
 				$msg = "Bad token: $loginResult";
 				wfDebug( __METHOD__ . ": $msg\n" );
-				$data = array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-lostsession' ),
-				);
-				break;
+				$this->doFinalOutput( false, 'Lost session' );
+				return;
 			}
 
 			// Set a new session cookie, Just In Case™
@@ -247,22 +212,91 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Set central cookies too
 			$centralUser->setGlobalCookies( false );
 
-			$data = array(
-				'status' => 'ok',
-				'params' => array(),
+			// Now, figure out how to report this back to the user.
+
+			// If it's not a script callback, just go for it.
+			if ( $request->getVal( 'type' ) !== 'script' ) {
+				$this->doFinalOutput( true, 'success' );
+				return;
+			}
+
+			$script = "if ( 'localStorage' in window ) {" .
+				"localStorage.removeItem( 'CentralAuthAnon' );" .
+				"}" .
+				"if ( /(^|; )CentralAuthAnon=/.test( document.cookie ) ) {" .
+				"document.cookie = 'CentralAuthAnon=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';" .
+				"}\n";
+
+			// If we're returning to returnto, do that
+			if ( $request->getCheck( 'return' ) ) {
+				global $wgRedirectOnLogin;
+
+				if ( $wgRedirectOnLogin !== null ) {
+					$returnTo = $wgRedirectOnLogin;
+					$returnToQuery = array();
+				} else {
+					$returnTo = $request->getVal( 'returnto', '' );
+					$returnToQuery = wfCgiToArray( $request->getVal( 'returntoquery', '' ) );
+				}
+
+				$returnToTitle = Title::newFromText( $returnTo );
+				if ( !$returnToTitle ) {
+					$returnToTitle = Title::newMainPage();
+					$returnToQuery = array();
+				}
+
+				$redirectUrl = $returnToTitle->getFullURL( $returnToQuery );
+
+				$script .= "top.location.href = " . Xml::encodeJsVar( $redirectUrl ) . ';';
+
+				$this->doFinalOutput( true, 'success', $script );
+				return;
+			}
+
+			// Otherwise, we need to rewrite p-personal and maybe notify the user too
+
+			// This is hacky, and may not work right with all skins and
+			// other extensions.
+			$wgUser = User::newFromName( $centralUser->getName() );
+			$skin = $this->getSkin();
+			$skin->getContext()->setUser( $wgUser );
+			$html = $skin->getPersonalToolsList();
+
+			// This is also hacky.
+			$script .= Xml::encodeJsCall(
+				'top.jQuery( \'#p-personal ul\' ).html',
+				array( $html )
 			);
 
-			switch ( $this->getRequest()->getVal( 'oncomplete', 'mw.notify' ) ) {
-			case 'mw.notify':
-				$user = User::newFromName( $centralUser->getName() );
-				$gender = $user->getOption( 'gender' );
+			// Sigh.
+			$script .= 'top.jQuery( \'#p-personal\' ).addClass( \'centralAuthPPersonalAnimation\' );';
+
+			// Fire a hook for other extensions to listen for
+			$script .= 'mw.hook( \'centralauth-p-personal-reset\' ).fire();';
+
+			if ( CentralAuthHooks::isUIReloadRecommended( $wgUser ) ) {
+				$gender = $wgUser->getOption( 'gender' );
 				if ( strval( $gender ) === '' ) {
 					$gender = 'unknown';
 				}
-				$data['script'] = Xml::encodeJsCall( 'top.mw.notify', array(
-					new XmlJsCode( trim( Xml::encodeJsCall( 'top.mw.message', array(
+
+				// We want the message to be in the user's language, so set it
+				// from here now that we have an actual user.
+				// @todo RequestContext should automatically clear its internal
+				//     $lang when a new user is set.
+				$code = $wgUser->getOption( 'language' );
+				$code = RequestContext::sanitizeLangCode( $code );
+				wfRunHooks( 'UserGetLanguageObject', array( $wgUser, &$code, $this->getContext() ) );
+				$script .= Xml::encodeJsCall( 'top.mediaWiki.messages.set', array(
+					'centralauth-centralautologin-logged-in',
+					wfMessage( 'centralauth-centralautologin-logged-in' )
+						->inLanguage( $code )->plain()
+				) );
+
+				$script .= Xml::encodeJsCall( 'top.mediaWiki.notify', array(
+					new XmlJsCode( trim( Xml::encodeJsCall( 'top.mediaWiki.message', array(
 						'centralauth-centralautologin-logged-in',
-						$user->getName(),
+						$wgUser->getName(),
 						$gender
 					) ), ';' ) ),
 					array(
@@ -271,230 +305,83 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 						'tag' => 'CentralAutoLogin',
 					),
 				) );
-				$data['params']['userName'] = $user->getName();
-				$data['params']['userGender'] = $gender;
-				break;
-
-			case 'status':
-				$request = $this->getRequest();
-				$url = Title::newFromText( 'Special:CentralLogin/Status' )->getFullUrl( array(
-					'returnto' => $request->getVal( 'returnto' ),
-					'returntoquery' => $request->getVal( 'returntoquery' ),
-				) );
-				$data['script'] = 'top.location.href = ' . Xml::encodeJsVar( $url ) . ';';
-				break;
 			}
-			break;
+
+			$this->doFinalOutput( true, 'success', $script );
+			return;
 
 		default:
-			$data = array(
-				'status' => 'error',
-				'msg' => array( 'centralauth-centralautologin-badstate', $par ),
-			);
-			break;
+			$this->setHeaders();
+			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-desc' );
+			return;
 		}
-
-		$this->outputData( $data );
 	}
 
-	private function checkInputState( $par, $central ) {
-		global $wgCentralAuthLoginWiki;
-
-		$request = $this->getRequest();
-		$this->isForm = $request->getBool( 'form' );
-
-		// Make sure it was posted.
-		if ( !$request->wasPosted() && $request->getMethod() !== 'OPTIONS' ) {
-			return array(
-				'status' => 'error',
-				'msg' => array( 'centralauth-centralautologin-notposted' ),
-			);
-		}
-
-		// Validate the state for this wiki
-		if ( $central ) {
-			if ( wfWikiID() !== $wgCentralAuthLoginWiki ) {
-				return array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-badstate-central', $par ),
-				);
-			}
-
-			$wikiId = $request->getVal( 'wikiid' );
-			if ( $wikiId === $wgCentralAuthLoginWiki ) {
-				return array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-badwiki', $wikiId ),
-				);
-			}
-			$wiki = WikiMap::getWiki( $wikiId );
-			if ( !$wiki ) {
-				return array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-badwiki', $wikiId ),
-				);
-			}
-
-			// CORS request, validate origin and set CORS headers
-			if ( !$this->isForm ) {
-				$response = $request->response();
-
-				$originHeader = $request->getHeader( 'Origin' );
-				if ( $originHeader === false ) {
-					$origins = array();
-				} else {
-					$origins = explode( ' ', $originHeader );
-				}
-
-				$wikiOrigin = 'http://' . strtolower( $wiki->getHostname() );
-				$ok = false;
-				foreach ( $origins as $origin ) {
-					if ( $wikiOrigin === str_replace( 'https://', 'http://', strtolower( $origin ) ) ) {
-						$wikiOrigin = $origin;
-						$ok = true;
-						break;
-					}
-				}
-				if ( !$ok ) {
-					$message = HttpStatus::getMessage( 403 );
-					$response->header( "HTTP/1.1 403 $message", true, 403 );
-					return array(
-						'status' => 'error',
-						'msg' => array( 'centralauth-centralautologin-corsfail' )
-					);
-				}
-
-				$response->header( "Access-Control-Allow-Origin: $wikiOrigin" );
-				$response->header( 'Access-Control-Allow-Credentials: true' );
-				$this->getOutput()->addVaryHeader( 'Origin' );
-			}
+	private function do302Redirect( $target, $state, $params ) {
+		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
+		if ( $url === false ) {
+			$this->doFinalOutput( false, 'Invalid target wiki' );
 		} else {
-			if ( wfWikiID() === $wgCentralAuthLoginWiki ) {
-				return array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-badstate-local', $par ),
-				);
-			}
-
-			global $wgUser;
-			if ( !$wgUser->isAnon() ) {
-				return array(
-					'status' => 'error',
-					'msg' => array( 'centralauth-centralautologin-alreadyloggedinlocally' ),
-				);
-			}
-		}
-
-		if ( $request->getMethod() === 'OPTIONS' ) {
-			return array(
-				'status' => 'cors'
+			$this->getOutput()->redirect( // expands to PROTO_CURRENT
+				wfAppendQuery( $url, $params )
 			);
 		}
-
-		return null;
 	}
 
-	private function outputData( $data ) {
-		global $wgMimeType, $wgLanguageCode;
+	private function doFinalOutput( $ok, $status, $script = '' ) {
+		$this->getOutput()->disable();
+		wfResetOutputBuffers();
+		header( 'Cache-Control: no-cache' );
 
-		$output = $this->getOutput();
-		$output->enableClientCache( false );
-		$output->sendCacheControl();
-		$output->disable();
-		$response = $this->getRequest()->response();
+		$type = $this->getRequest()->getVal( 'type', 'script' );
+		if ( $type === 'icon' || $type === '1x1' ) {
+			header( 'Content-Type: image/png' );
+			header( "X-CentralAuth-Status: $status" );
 
-		if ( !$this->isForm ) {
-			$frameOptions = $output->getFrameOptions();
-			if ( $frameOptions ) {
-				$response->header( "X-Frame-Options: $frameOptions" );
+			global $wgCentralAuthLoginIcon;
+			if ( $ok && $wgCentralAuthLoginIcon && $type === 'icon' ) {
+				readfile( $wgCentralAuthLoginIcon );
+			} else {
+				readfile( __DIR__ . '/../1x1.png' );
 			}
-		}
-
-		if ( $this->isForm ) {
-			$script='';
-			$bodyParams = array();
-			$body='';
-			switch ( $data['status'] ) {
-			case 'script':
-				$script = $data['script'];
-				break;
-
-			case 'ok':
-				if ( isset( $data['script'] ) ) {
-					$script = $data['script'];
-				}
-
-				if ( isset( $data['nextState'] ) ) {
-					$script .= "\n\nfunction doSubmit() {\n" .
-						"\tif ( document.forms[0] ) {\n" .
-						"\t\tdocument.forms[0].submit();\n" .
-						"\t}\n" .
-						"}";
-					$bodyParams['onload'] = 'doSubmit()';
-
-					switch ( substr( $data['nextState'], 0, 1 ) ) {
-					case 'C':
-						global $wgCentralAuthLoginWiki;
-						$target = $wgCentralAuthLoginWiki;
-
-					default:
-						$target = $this->getRequest()->getVal( 'wikiid', wfWikiID() );
-						break;
-					}
-					$body .= "\n" . Html::openElement( 'form', array(
-						'method' => 'POST',
-						'action' => WikiMap::getForeignURL( $target, 'Special:CentralAutoLogin/' . $data['nextState'] ),
-					) ) . "\n";
-					$body .= Html::hidden( 'form', '1' ) . "\n";
-					foreach ( array( 'oncomplete', 'returnto', 'returntoquery' ) as $k ) {
-						$v = $this->getRequest()->getVal( $k );
-						if ( $v !== null ) {
-							$body .= Html::hidden( $k, $v ) . "\n";
-						}
-					}
-					foreach ( $data['params'] as $k => $v ) {
-						$body .= Html::hidden( $k, $v ) . "\n";
-					}
-					$body .= Html::closeElement( 'form' );
-				}
-				break;
-
-			case 'error':
-				$params = $data['msg'];
-				$key = array_shift( $params );
-				$body =  wfMessage( $key, $params )->escaped();
-				break;
-			}
-
-			$response->header( "Content-type: $wgMimeType; charset=UTF-8" );
-			$response->header( 'Content-language: ' . $wgLanguageCode );
-			print Html::htmlHeader();
-			print Html::openElement( 'head' );
-			print Html::element( 'title', null, $output->getHTMLTitle() );
-			if ( $script !== '' ) {
-				print Html::inlineScript( $script );
-			}
-			print Html::closeElement( 'head' );
-			print Html::openElement( 'body', $bodyParams );
-			print $body;
-			print Html::closeElement( 'body' );
-			print Html::closeElement( 'html' );
 		} else {
-			$response->header( "Content-type: application/json; charset=UTF-8" );
-			$response->header( 'Content-language: ' . $wgLanguageCode );
-			switch ( $data['status'] ) {
-			case 'cors':
-				break;
-
-			case 'ok':
-				$data['params']['status'] = 'ok';
-				print FormatJson::encode( $data['params'] );
-				break;
-
-			default:
-				print FormatJson::encode( $data );
-				break;
-			}
+			header( 'Content-Type: text/javascript' );
+			echo "/* $status */\n$script";
 		}
+	}
+
+	private function checkIsCentralWiki( &$wikiId ) {
+		if ( wfWikiID() !== $this->loginWiki ) {
+			$this->doFinalOutput( false, 'Not central wiki' );
+			return false;
+		}
+
+		$wikiId = $this->getRequest()->getVal( 'wikiid' );
+		if ( $wikiId === $this->loginWiki ) {
+			$this->doFinalOutput( false, 'Specified local wiki is the central wiki' );
+			return false;
+		}
+		$wiki = WikiMap::getWiki( $wikiId );
+		if ( !$wiki ) {
+			$this->doFinalOutput( false, 'Specified local wiki not found' );
+			return false;
+		}
+
+		return true;
+	}
+
+	private function checkIsLocalWiki() {
+		if ( wfWikiID() === $this->loginWiki ) {
+			$this->doFinalOutput( false, 'Is central wiki, should be local' );
+			return false;
+		}
+
+		global $wgUser;
+		if ( !$wgUser->isAnon() ) {
+			$this->doFinalOutput( true, 'Already logged in, nothing to do' );
+			return false;
+		}
+
+		return true;
 	}
 }
