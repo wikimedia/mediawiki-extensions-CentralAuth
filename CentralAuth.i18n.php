@@ -6639,6 +6639,8 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => '[[User:$1|existuje lokálně]]',
 	'centralauth-listusers-nolocal' => 'nepřipojený nebo lokálně neexistuje',
+	'multilock' => 'Hromadné zamčení globálních uživatelů',
+	'centralauth-admin-multi-username' => 'Zadejte jedno nebo více uživatelských jmen oddělených řádkovými zlomy',
 	'centralauth-seconds-ago' => 'před $1 {{PLURAL:$1|sekundou|sekundami|sekundami}}',
 	'centralauth-minutes-ago' => 'před $1 {{PLURAL:$1|minutou|minutami|minutami}}',
 	'centralauth-hours-ago' => 'před $1 {{PLURAL:$1|hodinou|hodinami|hodinami}}',
@@ -6660,8 +6662,6 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-invalid-wiki' => 'Taková DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Účet nelze vytvořit: Požadované uživatelské jméno je již registrováno v systému jednotného přihlašování.',
 	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale existuje v jednotném systému přihlašování.',
-	'centralauth-login-progress' => 'Přihlašujeme vás na projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
-	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-logout-no-others' => '{{GENDER:|Byl|Byla|Byli}} jste automaticky {{GENDER:|odhlášen|odhlášena|odhlášeni}} z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-hidden-blockreason' => 'globálně skryl $1 v $2 se zdůvodněním: $3',
@@ -6696,6 +6696,25 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-autologin-desc' => 'Tuto speciální stránku vnitřně využívá software MediaWiki.
 Při [[Special:UserLogin|přihlášení]] systém sjednoceného přihlašování přikáže prohlížeči vyžádat si tuto stránku od všech propojených domén pomocí odkazů na obrázky.
 Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, nic se neprovedlo.',
+	'centralautologin' => 'Ústřední přihlášení',
+	'centralauth-centralautologin-desc' => 'Tuto speciální stránku používá interně MediaWiki.
+Když navštívíte připojenou doménu jako nepřihlášený uživatel, systém ústředního přihlašování pomocí této stránky určí, zda jste přihlášeni do ústřední domény.
+V požadavku na tuto stránku jste neposkytli žádné autentizační údaje, takže nedělá nic.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Už jste lokálně {{GENDER:|přihlášen|přihlášena|přihlášeni}}.',
+	'centralauth-centralautologin-badparams' => 'Zadané autentizační parametry byly neplatné',
+	'centralauth-centralautologin-lostsession' => 'Data z relace byla ztracena',
+	'centralauth-centralautologin-badstate' => 'Neplatný stav „$1“',
+	'centralauth-centralautologin-notposted' => 'Ústřední přihlašovací formulář se musí odesílat metodou POST',
+	'centralauth-centralautologin-badstate-central' => 'Stav „$1“ není na ústřední wiki platný',
+	'centralauth-centralautologin-badstate-local' => 'Stav „$1“ není na lokální wiki platný',
+	'centralauth-centralautologin-badwiki' => 'Wiki „$1“ není použitelná pro ústřední přihlášení',
+	'centralauth-centralautologin-corsfail' => 'Kontrola původu CORS selhala',
+	'centralauth-centralautologin-p3p-explanation' => 'Některé prohlížeče v některých případech, zahrnujících i situaci při ověření jednotného přihlášení, vyžadují pro posílání nebo přijímání cookies kompaktní zásady P3P. V této situaci je to zbytečná překážka, vzhledem k tomu, že všechny dotčené stránky jsou částí stejné skupiny wiki a samotné P3P je víceméně zastaralé a opuštěné; naštěstí tyto prohlížeče v implicitním nastavení považují neplatné zásady odkazující na tuto stránku za „dostatečně dobré“.
+
+Pokud chcete zjistit, jak by mohly být sbírané údaje použity, přečtěte si prosím lidsky čitelná pravidla ochrany osobních údajů tohoto serveru.',
+	'centralauth-centralautologin-logged-in' => '{{GENDER:$2|Byl|Byla|Byli}} jste ústředně {{GENDER:$2|přihlášen|přihlášena|přihlášeni}} jako $1. Aby se použila vaše uživatelská nastavení, obnovte stránku.',
+	'centralauth-edge-logging-in' => 'Probíhá vaše automatické přihlášení do ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
+	'centralauth-edge-logged-in' => '{{GENDER:$1|Byl|Byla|Byli}} jste automaticky {{GENDER:$1|přihlášen|přihlášena|přihlášeni}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.', # Fuzzy
 	'globalgroupmembership' => 'Členství v globálních skupinách',
 	'globalgrouppermissions' => 'Správa globálních skupin',
 	'centralauth-globalgroupperms-grouplist' => 'Byly nastaveny následující globální skupiny. Pokud k tomu máte oprávnění, můžete prohlížet a upravovat oprávnění přidělená jednotlivým skupinám. Skupinu je možné odstranit tím, že jí odeberete všechna oprávnění.',
@@ -6712,6 +6731,7 @@ Jelikož jste o stránku požádali bez poskytnutí autentizačních údajů, ni
 	'centralauth-editgroup-name' => 'Jméno skupiny:',
 	'centralauth-editgroup-display' => 'Lokalizované jméno skupiny:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|editovat]])',
+	'centralauth-editgroup-invalid-name' => 'Zadán neplatný název globální skupiny',
 	'centralauth-editgroup-member' => 'Lokalizované jméno členů skupiny:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editovat]])',
 	'centralauth-editgroup-members' => 'Seznam členů:',
@@ -6774,6 +6794,40 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'right-globalgrouppermissions' => 'Spravování globálních skupin',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globální skupiny, do kterých uživatel patří',
 	'action-centralauth-lock' => 'zamykat nebo odemykat globální účty',
+	'centrallogin' => 'Ústřední přihlášení uživatele',
+	'centralloginsuccesful' => 'Přihlášení bylo úspěšné',
+	'centralauth-completelogin-legend' => 'Dokončení procesu přihlášení',
+	'centralauth-completelogin-finishing' => 'Probíhá autentizace na projektech nadace Wikimedia, prosím čekejte…',
+	'centralauth-completelogin-text' => 'Autentizace vašeho účtu na projektech nadace Wikimedia je téměř hotova! Pomocí tlačítka zobrazeného níže potvrďte a dokončete své přihlášení.',
+	'centralauth-completelogin-submit' => 'Přihlásit se',
+	'centralauth-completelogin-back' => 'Zpět na předchozí stránku.',
+	'centralauth-error-nologinattempt' => 'Ve vaší relaci neprobíhá žádný aktivní pokus o přihlášení.',
+	'centralauth-error-badtoken' => 'Zadaný autentizační token již vypršel nebo je neplatný.',
+	'centralauth-error-token-wrongattempt' => 'Autentizační token nepatří k aktuálnímu pokusu o přihlášení.
+Někdo se může pokoušet přihlásit vás k zlomyslnému účtu.',
+	'centralauth-error-token-wronguser' => 'Token neodpovídá uživatelskému jménu v této relaci.
+Někdo se může pokoušet přihlásit vás k zlomyslnému účtu.
+Pokud se jen snažíte přihlásit se jako jiný uživatel, nejprve se odhlašte.',
+	'centralauth-warning-notloggedin' => 'Momentálně nejste přihlášen(a).',
+	'centralauth-warning-notattached' => 'Lokální účet není připojen ke globálnímu.',
+	'centralauth-finishglobaliseemail_subject' => 'Potvrzení účtu na {{grammar:6sg|{{SITENAME}}}}',
+	'centralauth-finishglobaliseemail_body' => 'Vaše e-mailová adresa byla přiřazena k účtu „$2“
+na všech projektech nadace Wikimedia, přičemž hlavním účtem
+je ten na {{grammar:6sg|{{SITENAME}}}}.
+
+Pokud si přejete připojit všechny účty, u kterých jsme to nemohli
+provést automaticky, a umožnit znovuzpřístupnění účtu v případě, že
+ztratíte heslo, tak pro potvrzení, že tento účet opravdu patří vám,
+přejděte svým internetovým prohlížečem na následující adresu:
+
+$3
+
+Pokud vám tento účet *nepatří*, klikněte na následující
+odkaz, čímž potvrzení zrušíte:
+
+$5
+
+Platnost tohoto potvrzovacího kódu vyprší $6 v $7.',
 );
 
 /** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
