@@ -260,6 +260,8 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but it does exist in the unified login system.',
+	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
+	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
@@ -497,7 +499,9 @@ This confirmation code will expire on $6 at $7.'
 $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|MergeAccount}}',
 	'centralauth-groupname' => 'Used within the following messages:
-* {{msg-mw|centralauth-incomplete-text}}',
+* {{msg-mw|centralauth-incomplete-text}}
+* {{msg-mw|centralauth-login-progress}}
+* {{msg-mw|centralauth-logout-progress}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -759,6 +763,8 @@ Shown when the migration is incomplete.',
 *$1 is wiki name',
 	'centralauth-account-exists-reset' => "Parameters:
 * $1 - global user's name",
+	'centralauth-login-progress' => '{{gender}}
+* (optional) $1 is the user name of the logged in user',
 	'centralauth-hidden-blockreason' => 'Unused at this time. Parameters:
 * $1 - username
 * $2 - ...
@@ -860,7 +866,8 @@ CORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/',
 * $1 - mw.user object {{gender}}
 Used with the following messages:
 * {{msg-mw|centralauth-edge-logged-in}}',
-	'centralauth-edge-logged-in' => 'Message used from JavaScript to tell the user that they have been logged in to additional sites.
+	'centralauth-edge-logged-in' => 'Message used from JavaScript to tell the user that they hav
+e been logged in to additional sites.
 * $1 - mw.user object {{gender}}
 Used with the following messages:
 * {{msg-mw|centralauth-edge-logging-in}}',
