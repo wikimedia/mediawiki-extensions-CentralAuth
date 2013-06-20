@@ -130,12 +130,6 @@ $wgCentralAuthSilentLogin = false;
 $wgCentralAuthLoginIcon = false;
 
 /**
- * Set this true until all wikis are running a version with
- * Special:CentralAutoLogin/start available.
- */
-$wgCentralAuthUseOldAutoLogin = true;
-
-/**
  * User preferences for which we should recommend reloading the page after
  * a successful central login query.
  *
@@ -231,7 +225,6 @@ $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/SuppressUserJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/WikiSet.php";
-$wgAutoloadClasses['SpecialAutoLogin'] = "$caBase/specials/SpecialAutoLogin.php";
 $wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/CentralAuthUserArray.php";
@@ -313,7 +306,6 @@ $wgGroupPermissions['*']['centralauth-merge'] = true;
 
 $wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
 $wgSpecialPages['CentralLogin'] = 'SpecialCentralLogin';
-$wgSpecialPages['AutoLogin'] = 'SpecialAutoLogin';
 $wgSpecialPages['CentralAutoLogin'] = 'SpecialCentralAutoLogin';
 $wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
 $wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';

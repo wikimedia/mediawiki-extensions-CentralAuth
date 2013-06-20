@@ -297,12 +297,6 @@ Renaming it will cause the local user to be detached from the global one.",
 	'centralauth-rightslog-set-optin'         => 'opt-in based',
 	'centralauth-rightslog-set-optout'        => 'opt-out based',
 
-	// Autologin
-	'autologin'                    => 'Automatic login',
-	'centralauth-autologin-desc'   => 'This special page is used internally by MediaWiki.
-When you [[Special:UserLogin|log in]], the central login system instructs your browser to request this page from all linked domains, using image links.
-You have requested this page without providing any authentication data, so it does nothing.',
-
 	// Central login
 	'centralautologin'                    => 'Central login',
 	'centralauth-centralautologin-desc'   => 'This special page is used internally by MediaWiki.
@@ -839,9 +833,6 @@ Parameters:
 * {{msg-mw|Centralauth-rightslog-set-optout}}',
 	'centralauth-rightslog-set-optout' => 'See also:
 * {{msg-mw|Centralauth-rightslog-set-optin}}',
-	'autologin' => '{{doc-special|AutoLogin|unlisted=1}}
-See example: [[w:Special:Autologin]].',
-	'centralauth-autologin-desc' => 'This is the text shown on [[Special:AutoLogin]] when this page is requested by a user, not by the automatic global login system.',
 	'centralautologin' => '{{doc-special|CentralAutoLogin|unlisted=1}}
 See example: [[w:Special:CentralAutoLogin]].',
 	'centralauth-centralautologin-desc' => 'This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.',

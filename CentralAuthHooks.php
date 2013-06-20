@@ -337,26 +337,11 @@ class CentralAuthHooks {
 		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 			$wiki = WikiMap::getWiki( $wikiID );
 
-			global $wgCentralAuthUseOldAutoLogin;
-			if ( $wgCentralAuthUseOldAutoLogin ) {
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$data = array(
-					'userName' => $user->getName(),
-					'token' => $centralUser->getAuthToken(),
-					'remember' => $user->getOption( 'rememberpassword' ),
-					'wiki' => $wikiID
-				);
-
-				$loginToken = MWCryptRand::generateHex( 32 );
-				$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:AutoLogin' ), "token=$loginToken" );
-			} else {
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
-					'type' => 'icon',
-					'from' => wfWikiID(),
-				) );
-			}
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
+				'type' => 'icon',
+				'from' => wfWikiID(),
+			) );
 			$inject_html .= Xml::element( 'img',
 				array(
 					'src' => $url,
