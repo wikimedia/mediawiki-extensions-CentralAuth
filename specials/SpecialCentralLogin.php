@@ -191,11 +191,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$url = $this->getFullTitle()->getFullUrl( $query, false, PROTO_HTTP );
 			$this->getOutput()->redirect( $url );
 		} else {
-			// Show HTML to trigger cross-domain cookies.
+			// Show any icons that trigger cross-domain cookies.
 			// This will trigger filling in the "remember me" token cookie on the
 			// central wiki, which can only be done once authorization is completed.
 			$this->getOutput()->addHtml(
-				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
+				CentralAuthHooks::getDomainAutoLoginIconHtml( $user, $centralUser ) );
 		}
 	}
 
@@ -216,9 +216,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$this->getRequest()->getVal( 'returntoquery', '' )
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-		// Show HTML to trigger cross-domain cookies
+		// Show any icons that trigger cross-domain cookies
 		$this->getOutput()->addHtml(
-			CentralAuthHooks::getDomainAutoLoginHtml( $this->getUser(), $centralUser ) );
+			CentralAuthHooks::getDomainAutoLoginIconHtml( $this->getUser(), $centralUser ) );
 	}
 
 	protected function showError( /* varargs */ ) {
