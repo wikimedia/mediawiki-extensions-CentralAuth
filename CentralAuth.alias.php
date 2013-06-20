@@ -188,6 +188,7 @@ $specialPageAliases['et'] = array(
 $specialPageAliases['fa'] = array(
 	'CentralAuth' => array( 'ورود_متمرکز' ),
 	'AutoLogin' => array( 'ورود_خودکار' ),
+	'CentralAutoLogin' => array( 'ورودی_مرکزی_خودکار' ),
 	'MergeAccount' => array( 'ادغام_حساب' ),
 	'GlobalGroupMembership' => array( 'اختیارات_سراسری_کاربر' ),
 	'GlobalGroupPermissions' => array( 'اختیارات_سراسری_گروه' ),
