@@ -649,7 +649,8 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-method' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-editcount' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
-	'centralauth-admin-list-blocked' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-blocked' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
+{{Identical|Blocked}}',
 	'centralauth-admin-already-unmerged' => 'Parameters:
 * $1 - display name for the wiki',
 	'centralauth-admin-unmerge-success' => 'Parameter $1 is the number of unmerged accounts.',
@@ -1152,8 +1153,8 @@ Die wagwoorde vir plaaslike rekeninge geskep voor die kombinering sal terugkeer 
 	'centralauth-prefs-view' => 'Wys inligting oor globale gebruiker',
 	'centralauth-invalid-wiki' => 'Die wikidatabasis bestaan nie: $1',
 	'centralauth-account-exists' => 'Kan nie rekening skep: die gevraagde gebruikersnaam is reeds in die Unified login.',
-	'centralauth-login-progress' => "U word by die wiki's van {{int:Centralauth-groupname}} aangemeld:",
-	'centralauth-logout-progress' => "U word vanaf die ander wiki's van {{int:Centralauth-groupname}} afgeteken:",
+	'centralauth-login-progress' => "U word by al die wiki's van {{int:Centralauth-groupname}} aangemeld:",
+	'centralauth-logout-progress' => "U word vanaf die ander wiki's van {{int:Centralauth-groupname}} afgeteken:", # Fuzzy
 	'centralauth-log-name' => 'Global account log',
 	'centralauth-log-header' => 'Hierdie log bevat bedrywighede onder die globale rekeninge: skrappings, te sluit en ontsluiting.',
 	'centralauth-log-status-locked' => 'gesluit',
@@ -2752,8 +2753,8 @@ Si se renoma fadrá que l'usuariu llocal seya dixebráu del usuariu global.",
 	'centralauth-invalid-wiki' => 'Nun esiste la base de datos wiki: $1',
 	'centralauth-account-exists' => "Nun se pue crear la cuenta: el nome d'usuariu especificáu yá ta acutáu pol sistema de cuentes unificaes.",
 	'centralauth-account-exists-reset' => "El nome d'usuariu $1 nun ta rexistráu nesta wiki, pero esiste nel sistema de rexistru unificáu.",
-	'centralauth-login-progress' => 'Aniciando sesión nes wikis de {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => "Saliendo d'otres wikis de {{int:Centralauth-groupname}}:", # Fuzzy
+	'centralauth-login-progress' => 'Aniciando sesión nes wikis de {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => "Zarrando sesión n'otres wikis de {{int:Centralauth-groupname}}:",
 	'centralauth-login-no-others' => 'Tas coneutáu automáticamente en otros proyeutos de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => "Tas desconectáu automáticamente d'otros proyeutos de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'anubríu de mou global por $1 a les $2 col motivu darréu: $3',
@@ -6442,6 +6443,7 @@ $messages['ckb'] = array(
 	'centralauth-prefs-status' => 'دۆخی ھەژماری گشتی:',
 	'centralauth-prefs-not-managed' => 'بەکارنەھێنانی ھەژماری یەکگرتوو',
 	'centralauth-prefs-complete' => 'ھەموو شتێک ڕێکوپێکە!',
+	'centralauth-prefs-migration' => 'لە گواستنەوەدا',
 	'centralauth-prefs-count-attached' => 'ھەژمارەکەت لە $1 {{PLURAL:$1|پێگە}}ی پرۆژەدا چالاکە.',
 	'centralauth-prefs-count-unattached' => 'ھەژماری پشتڕاست نەکراو بە ناوی تۆ لە $1 {{PLURAL:$1|پروژە}}دا دەمێنێتەوە.',
 	'centralauth-prefs-manage' => 'ھەژمارە جیھانییەکەت سەرپەرشتی بکە',
@@ -6692,8 +6694,8 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-invalid-wiki' => 'Taková DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Účet nelze vytvořit: Požadované uživatelské jméno je již registrováno v systému jednotného přihlašování.',
 	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale existuje v jednotném systému přihlašování.',
-	'centralauth-login-progress' => 'Přihlašujeme vás na projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}:', # Fuzzy
+	'centralauth-login-progress' => 'Přihlašujeme vás na wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
+	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-logout-no-others' => '{{GENDER:|Byl|Byla|Byli}} jste automaticky {{GENDER:|odhlášen|odhlášena|odhlášeni}} z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-hidden-blockreason' => 'globálně skryl $1 v $2 se zdůvodněním: $3',
@@ -7701,8 +7703,8 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'centralauth-invalid-wiki' => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Das Benutzerkonto kann nicht erstellt werden: Der angefragte Benutzername wird bereits für das globale Benutzerkontensystem verwendet.',
 	'centralauth-account-exists-reset' => 'Der Benutzername $1 ist nicht auf diesem Wiki registriert, allerdings ist er bereits im zentralen Anmeldesystem vorhanden.',
-	'centralauth-login-progress' => 'Du wurdest auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch angemeldet:', # Fuzzy
-	'centralauth-logout-progress' => 'Du wurdest auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch abgemeldet:', # Fuzzy
+	'centralauth-login-progress' => 'Du wurdest auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch angemeldet:',
+	'centralauth-logout-progress' => 'Du wurdest auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch abgemeldet:',
 	'centralauth-login-no-others' => 'Du wurdest automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
 	'centralauth-logout-no-others' => 'Du wurdest automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.',
 	'centralauth-hidden-blockreason' => 'global versteckt durch $1 am $2. Grund: $3',
@@ -11254,8 +11256,8 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
 	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais existe dans le système de connexion unifié.',
-	'centralauth-login-progress' => 'Vous êtes connecté{{GENDER:||e|(e)}} aux wikis de {{int:Centralauth-groupname}} :', # Fuzzy
-	'centralauth-logout-progress' => 'Vous êtes déconnecté{{GENDER:||e|(e)}} des wikis de {{int:Centralauth-groupname}} :', # Fuzzy
+	'centralauth-login-progress' => 'Vous êtes en cours de connexion aux wikis de {{int:Centralauth-groupname}} :',
+	'centralauth-logout-progress' => 'Vous êtes en cours de déconnexion des autres wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Vous avez été automatiquement déconnecté{{GENDER:||e|(e)}} des autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'masqué globalement par $1 sur $2 pour le motif suivant : $3',
@@ -11998,8 +12000,8 @@ Ao renomealo, isto provocará que o usuario local sexa afastado do global.',
 	'centralauth-invalid-wiki' => 'Non existe a base de datos de tal wiki: $1',
 	'centralauth-account-exists' => 'Non se pode crear a conta: o nome de usuario solicitado xa é usado no sistema de unificación do rexistro.',
 	'centralauth-account-exists-reset' => 'O nome de usuario $1 non está rexistrado neste wiki, pero non existe no sistema de rexistro unificado.',
-	'centralauth-login-progress' => 'Accedendo ao sistema nos outros wikis {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Saíndo do sistema dos outros wikis {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Accedendo ao sistema nos wikis {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Saíndo do sistema dos outros wikis {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Accedeu automaticamente ao sistema doutros proxectos {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Saíu automaticamente do sistema doutros proxectos {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'agochada globalmente por $1 en $2 polo seguinte motivo: $3',
@@ -16090,8 +16092,8 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.',
-	'centralauth-login-progress' => 'Accesso effettuato nelle altre wiki della {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Uscita effettuata dalle altre wiki della {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Accesso effettuato nelle altre wiki della {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Uscita effettuata dalle altre wiki della {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Hai appena effettuato il log-out dagli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
@@ -19215,8 +19217,8 @@ Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System e
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
 	'centralauth-account-exists-reset' => 'De Benotzernumm $1 ass op dëser Wiki net enregistréiert, awer et gëtt et schonn am eenheetlech Login-System.',
-	'centralauth-login-progress' => 'Dir gouft an dës Wikie vu(n) {{int:Centralauth-groupname}} ageloggt:', # Fuzzy
-	'centralauth-logout-progress' => 'Iech aus anere Wikie vu(n) {{int:Centralauth-groupname}} ausloggen:', # Fuzzy
+	'centralauth-login-progress' => "Dir gouft an d'Wikie vu(n) {{int:Centralauth-groupname}} ageloggt:",
+	'centralauth-logout-progress' => 'Iech aus anere Wikie vu(n) {{int:Centralauth-groupname}} ausloggen:',
 	'centralauth-login-no-others' => 'Dir gouft automatesch an aner Projete vun {{int:Centralauth-groupname}} ageloggt:',
 	'centralauth-logout-no-others' => 'Dir gouft automatesch aus den anere Projete vun {{int:Centralauth-groupname}} ausgeloggt.',
 	'centralauth-hidden-blockreason' => 'global verstoppt vum $1 de(n) $2 mat dësem Grond: $3',
@@ -20788,8 +20790,8 @@ $messages['mk'] = array(
 	'centralauth-invalid-wiki' => 'Нема таква вики-база на податоци: $1',
 	'centralauth-account-exists' => 'Не можам да ја создадам сметката: бараното корисничко име е зафатено во системот за најавување со обединета сметка.',
 	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но постои во системот за обединета најава.',
-	'centralauth-login-progress' => 'Ве најавувам во проектите на {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Ве одјавувам од другите проекти на {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Ве најавувам на викијата на {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Ве одјавувам од другите викија на {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално скриен од $1 во $2 од следнава причина: $3',
