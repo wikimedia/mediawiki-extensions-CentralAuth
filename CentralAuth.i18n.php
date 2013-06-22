@@ -10978,12 +10978,12 @@ Orsøk: $1',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Listi av brúkarum við $2 rættindum]]',
 	'centralauth-editgroup-restrictions' => 'Røð av wikium, har hesin bólkur er virkin:',
 	'centralauth-editgroup-noset' => '(ongin)',
-	'centralauth-editgroup-submit' => 'Goym broytingar til bólka loyvir', # Fuzzy
+	'centralauth-editgroup-submit' => 'Goym globalar bólkabroytingar',
 	'centralauth-editgroup-perms' => 'Givin loyvir:',
 	'centralauth-editgroup-reason' => 'Orsøk:',
-	'centralauth-editgroup-success' => 'Bólka loyvir broytt', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Tað hevur eydnast tær at broyta bólka loyvini fyri $1 bólkin.
-[[Special:GlobalGroupPermissions|Vend aftur til at stjórna bólkin]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Globalur bólkur broyttur',
+	'centralauth-editgroup-success-text' => 'Tað hevur eydnast tær at dagføra globala bólkin $1 bólkin.
+[[Special:GlobalGroupPermissions|Vend aftur til at stýra bólkinum]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|rætta]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki har tey hava eina kontu:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Tann globali brúkarin '''$1''' er ikki virkin á wikiini, sum tú útgreinaði ('' $2 '').
@@ -11018,7 +11018,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
 	'right-globalgroupmembership' => 'Broyt limaskap í globalum bólkum',
 	'right-centralauth-autoaccount' => 'Logga inn sjálvvirkandi við globalari kontu',
 	'right-centralauth-unmerge' => 'Skil sundur aftur globala konto',
-	'right-centralauth-lock' => 'Stong ella goym globala konto', # Fuzzy
+	'right-centralauth-lock' => 'Stong ella lat upp globala konto',
 	'right-centralauth-merge' => 'Flætta konto teirra',
 	'right-globalgrouppermissions' => 'Stýr globalum bólkum',
 );
@@ -36130,8 +36130,8 @@ $messages['zh-hant'] = array(
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
 	'centralauth-account-exists' => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
 	'centralauth-account-exists-reset' => '用戶名$1並沒有在此維基註冊，但一個同名的全域帳戶存在。',
-	'centralauth-login-progress' => '正在為您登錄到{{int:Centralauth-groupname}}的維基項目：', # Fuzzy
-	'centralauth-logout-progress' => '正在為您退出{{int:Centralauth-groupname}}的維基項目：', # Fuzzy
+	'centralauth-login-progress' => '正為您登入到{{int:Centralauth-groupname}}的維基項目：',
+	'centralauth-logout-progress' => '正為您從{{int:Centralauth-groupname}}的維基項目登出：',
 	'centralauth-login-no-others' => '你已經自動登錄到{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-logout-no-others' => '你已經自動登出{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-hidden-blockreason' => '全球隱藏 (在$1 $2)，原因：$3',
