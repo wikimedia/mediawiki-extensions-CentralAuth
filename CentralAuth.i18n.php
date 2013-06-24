@@ -18946,6 +18946,8 @@ Y dhashenwel a gaws distaga an devnydhyer leel dhyworth an huni ollvysel.",
 	'centralauth-renameuser-reserved' => 'Gwithys yw an hanow devnydhyer $2 rag akont ollvysel.',
 	'centralauth-account-exists' => "Ny yllir gwruthyl an akont; kemerys yw an hanow devnydhyer govynnys seulabrys y'n system omgelmi kesunyes.",
 	'centralauth-account-exists-reset' => "Nyns yw an hanow devnydhyer $1 kovskrifys war an wiki-ma, mes yma y'n system omgelmi kesunyes.",
+	'centralauth-login-progress' => 'Orth agas omgelmi orth wikiow {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Orth agas digelmi dhyworth wikiow erel {{int:Centralauth-groupname}}:',
 );
 
 /** Kirghiz (Кыргызча)
@@ -21975,6 +21977,8 @@ Anda telah memohon halaman ini tanpa memberikan sebarang data penentusahan, jadi
 
 Sila semak dasar privasi tapak ini untuk menentukan bagaimana sebarang maklumat yang terkumpul boleh digunakan.',
 	'centralauth-centralautologin-logged-in' => 'Anda telah log masuk secara terpusat sebagai $1. Muat semula halaman untuk menghidupkan tetapan pengguna anda.',
+	'centralauth-edge-logging-in' => 'Anda sedang dilogmasukkan secara automatik ke dalam projek-projek {{int:Centralauth-groupname}} yang lain.',
+	'centralauth-edge-logged-in' => 'Anda telah dilogmasukkan secara automatik ke dalam projek-projek {{int:Centralauth-groupname}} yang lain.',
 	'globalgroupmembership' => 'Keahlian dalam kumpulan sejagat',
 	'globalgrouppermissions' => 'Pengurusan kumpulan sejagat',
 	'centralauth-globalgroupperms-grouplist' => 'Kumpulan-kumpulan sejagat berikut telah ditubuhkan.
@@ -31116,6 +31120,7 @@ En grupp kan raderas genom att alla rättigheter tas bort från den.',
 	'centralauth-editgroup-success-text' => 'Uppdaterat den globala gruppen $1.
 [[Special:GlobalGroupPermissions|Tillbaka till grupphantering]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redigera]])',
+	'centralauth-editgroup-nowikiset' => 'Ingen, gäller alla wikier.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki där användaren har ett konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Den globala användaren '''$1''' är inte aktiv på wikin du specifierade (''$2''). Du kanske ska försöka överlåta rättigheterna till den felaktiga användaren!",
 	'centralauth-editset' => 'Wikiset',
@@ -31161,12 +31166,14 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'right-centralauth-oversight' => 'Undertryck eller dölj globalt konto',
 	'right-centralauth-merge' => 'Slå ihop sina konton',
 	'right-globalgrouppermissions' => 'Behandling av globala grupper',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globala grupper som användaren är med i',
 	'action-centralauth-lock' => 'Lås eller lås upp globala konton',
 	'centrallogin' => 'Centrala användare logga in',
 	'centralloginsuccesful' => 'Inloggningen lyckades',
 	'centralauth-completelogin-legend' => 'Slutför inloggningsprocessen',
 	'centralauth-completelogin-submit' => 'Logga in nu',
 	'centralauth-completelogin-back' => 'Tillbaka till föregående sida.',
+	'centralauth-error-nologinattempt' => 'Inget aktivt inloggningsförsök pågår för din session.',
 	'centralauth-warning-notloggedin' => 'Du är inte inloggad för närvarande.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}}-kontobekräftelse',
 	'centralauth-finishglobaliseemail_body' => 'Din e-postadress har valts ut som tillhörande kontot med namn "$2" på alla
