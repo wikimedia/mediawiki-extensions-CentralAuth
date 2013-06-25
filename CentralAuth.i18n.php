@@ -4584,8 +4584,8 @@ $messages['be-tarask'] = array(
 	'centralauth-invalid-wiki' => 'Не існуе такой базы зьвестак вікі: $1',
 	'centralauth-account-exists' => 'Немагчыма стварыць рахунак: гэтая назва ўжо занятая адзіным рахункам.',
 	'centralauth-account-exists-reset' => 'Удзельнік «$1» не зарэгістраваны ў {{GRAMMAR:месны|{{SITENAME}}}}, але ён мае адзіны рахунак.',
-	'centralauth-login-progress' => 'Адбываецца ўваход у сыстэму і ў іншых праектах {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Адбываецца выхад з сыстэмы і ў іншых праектах {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Адбываецца ўваход у сыстэму і ў іншых праектах {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Адбываецца выхад з сыстэмы і ў іншых праектах {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Вы аўтаматычна ўвайшлі ў іншыя праекты {{GRAMMAR:родны|{{int:Centralauth-groupname}}}}.',
 	'centralauth-logout-no-others' => 'Вы аўтаматычна выйшлі зь іншых праектаў {{GRAMMAR:родны|{{int:Centralauth-groupname}}}}.',
 	'centralauth-hidden-blockreason' => 'глябальна схаваны $1 $2 па наступнай прычыне: $3',
@@ -4621,8 +4621,11 @@ $messages['be-tarask'] = array(
 Калі Вы [[Special:UserLogin|ўвойдзеце ў сыстэму]], цэнтралізаваная сыстэма ўваходу накіруе Ваш браўзэр на гэтую старонку з усіх дамэнаў, карыстаючыся спасылкамі з выяваў.
 Вы запыталі гэтую старонку бяз зьвестак аўтэнтыфікацыі, з-за гэтага нічога не адбываецца.',
 	'centralautologin' => 'Цэнтральны ўваход',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Вы ўжо ўвайшлі лякальна',
+	'centralauth-centralautologin-badparams' => 'Пазначаныя парамэтры аўтэнтыфікацыі былі няслушныя',
 	'centralauth-centralautologin-lostsession' => 'Зьвесткі сэсіі былі страчаныя',
 	'centralauth-centralautologin-badstate' => 'Няслушны стан «$1»',
+	'centralauth-centralautologin-notposted' => 'Неабходна даслаць форму цэнтральнага ўваходу',
 	'centralauth-centralautologin-corsfail' => 'Памылка праверкі крыніцы CORS',
 	'globalgroupmembership' => 'Удзел у глябальных групах',
 	'globalgrouppermissions' => 'Кіраваньне глябальнымі групамі',
@@ -4709,6 +4712,17 @@ $messages['be-tarask'] = array(
 	'centralloginsuccesful' => 'Пасьпяховы ўваход у сыстэму',
 	'centralauth-completelogin-back' => 'Вярнуцца да папярэдняй старонкі.',
 	'centralauth-finishglobaliseemail_subject' => 'Пацьверджаньне рахунку ў {{GRAMMAR:месны|{{SITENAME}}}}',
+	'centralauth-finishglobaliseemail_body' => 'Ваш адрас e-mail асацыюецца з рахункам «$2» ва ўсіх праектах Вікімэдыі, асноўны рахунак месьціцца ў {{GRAMMAR:месны|{{SITENAME}}}}.
+
+Каб пацьвердзіць, што гэты рахунак сапраўды належыць вам, а таксама злучыць рахункі, якія мы не змаглі злучыць аўтаматычна, і каб дазволіць вам аднавіць рахунак, калі вы забылі пароль, адкрыце гэтую спасылку ў браўзэры, калі ласка:
+
+$3
+
+Калі рахунак *не* належыць вам, націсьніце гэтую спасылку, каб скасаваць пацьверджаньне паштовага адрасу:
+
+$5
+
+Код для пацьверджаньня будзе страчаны $6 а $7.',
 );
 
 /** Bulgarian (български)
@@ -6376,7 +6390,8 @@ $messages['ce'] = array(
 	'centralauth-prefs-count-attached' => 'Хьан йиш ю $1 {{PLURAL:$1|проектехь|проекташкахь|проекташкахь}} болх ба.', # Fuzzy
 	'centralauth-prefs-manage' => 'ЦӀерца болх ба йиш йолу проекташ',
 	'centralauth-prefs-view' => 'Декъашхочуьна глобальни хаам хьажар',
-	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин {{int:Centralauth-groupname}} кхолламашкахь:',
+	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин {{int:Centralauth-groupname}} кхолламашкахь:', # Fuzzy
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} проекташкара араваларна/яларна обработка ю:',
 	'globalgrouppermissions' => 'Урхалла дар масхьара тобанашна',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|хийцам бар]])',
@@ -9879,6 +9894,8 @@ Kasutajanime muutmisega eraldatakse kohalik kasutaja globaalsest.',
 	'centralauth-invalid-wiki' => 'Sellist vikiandmebaasi pole: $1',
 	'centralauth-account-exists' => 'Kontot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
 	'centralauth-account-exists-reset' => 'Kasutajanimi $1 pole siin vikis registreeritud, aga on olemas ühendatud sisselogimissüsteemis.',
+	'centralauth-login-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidesse sisse:', # Fuzzy
+	'centralauth-logout-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidest välja:', # Fuzzy
 	'centralauth-login-no-others' => 'Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Globaalsete kontode logi',
@@ -9998,6 +10015,18 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'centralauth-completelogin-back' => 'Naase eelmisele leheküljele.',
 	'centralauth-warning-notloggedin' => 'Sa pole praegu sisse logitud.',
 	'centralauth-warning-notattached' => 'Kohalik konto pole ühendatud globaalsega.',
+	'centralauth-finishglobaliseemail_subject' => 'Konto kinnitus võrgukohas {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Sinu e-posti aadress on määratud kõigis Wikimedia projektides konto "$2" e-posti aadressiks. Sinu peamine konto on võrgukohas {{SITENAME}}.
+
+Kinnitamaks, et see konto kuulub tõesti sulle ning selleks et saaksid ühendada kõik oma kontod, mida ei õnnestunud ühendada automaatselt ja et saaksid oma konto tagasi, kui unustad parooli, ava palun oma võrgulehitsejas see link:
+
+$3
+
+Kui konto *ei* kuulu sulle, ava see link, et e-posti aadressi kinnitus tühistada:
+
+$5
+
+See kinnituskood aegub kuupäeval $6, kell $7.',
 );
 
 /** Basque (euskara)
@@ -27114,6 +27143,7 @@ Mutive: $1',
 	'centralauth-admin-unmerge-success' => 'Scucchiáte cu successe $1 {{PLURAL:$1|cunde|cunde}}',
 	'centralauth-admin-delete-title' => "Scangille 'u cunde utende",
 	'centralauth-admin-delete-button' => 'Scangille stu cunde utende',
+	'centralauth-admin-delete-confirm' => 'Avveramende vuè ccu scangille stu cunde?',
 	'centralauth-admin-nonexistent' => 'Non ge ste \'nu cunde utende globbale pe "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Errore: \'u cunde utende globbale "<nowiki>$1</nowiki>" non g\'esiste.',
 	'centralauth-token-mismatch' => "Ne dispiace, non ge putime processà 'u module de sottoscrizione tune purcé s'onne perse le date d'a sessione.",
@@ -27233,6 +27263,7 @@ Ce tu le renomine, l'utinde locale avrà da essere scucchiáte da le cunde globb
 	'centralauth-editgroup-members' => 'Elenghe de le membre:',
 	'centralauth-editgroup-members-link' => ' [[Special:GlobalUsers/$1|Liste de utinde cu $2 diritte]]',
 	'centralauth-editgroup-restrictions' => 'Totte le uicchi addò quiste gruppe jè attive:',
+	'centralauth-editgroup-rename-taken' => "Renomine fallite: Stè ggià 'nu gruppe cu 'u nome $1.",
 	'centralauth-editgroup-noset' => '(ninde)',
 	'centralauth-editgroup-submit' => 'Reggìstre le cangiaminde de le gruppe globbale',
 	'centralauth-editgroup-perms' => 'Permesse assegnate:',

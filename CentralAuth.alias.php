@@ -109,6 +109,11 @@ $specialPageAliases['ca'] = array(
 	'GlobalUsers' => array( 'Usuaris_globals' ),
 );
 
+/** Chechen (нохчийн) */
+$specialPageAliases['ce'] = array(
+	'MergeAccount' => array( 'ДIавазвалар/ялар_цхьаьнатохар' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'CentralAuth' => array( 'Verwaltung_Benutzerkonten-Zusammenführung' ),
