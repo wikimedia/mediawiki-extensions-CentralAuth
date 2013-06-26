@@ -6382,6 +6382,7 @@ $messages['ce'] = array(
 	'centralauth-complete-text' => 'ХӀинца цхьан дӀаяздарца хьан йиш ю массо {{int:Centralauth-groupname}} проекташкахь болх ба.',
 	'centralauth' => 'Урхалла дар масхьа дIавазваларна',
 	'centralauth-admin-yes' => 'хlаъ',
+	'centralauth-admin-blocked-indef' => 'Блоктоьхна хан чаккхе йоцуш. Бахьна: $1',
 	'centralauth-admin-reason' => 'Бахьан:',
 	'globalusers' => 'Масхьара декъашхойн могIам',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат|сахьат|сахьат}} тӀехьа', # Fuzzy
@@ -16501,8 +16502,8 @@ $messages['ja'] = array(
 	'centralauth-invalid-wiki' => 'そのようなウィキ データベースはありません: $1',
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムで既に取得されています。',
 	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、統一ログインには存在します。',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキ群にログインしました:', # Fuzzy
-	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:', # Fuzzy
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキ群にログインしました:',
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群から自動的にログアウトしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にグローバルに秘匿。理由: $3',
@@ -16637,7 +16638,7 @@ $messages['ja'] = array(
 	'centralloginsuccesful' => 'ログインしました',
 	'centralauth-completelogin-legend' => 'ログイン処理の完了',
 	'centralauth-completelogin-finishing' => 'ウィキメディア財団のサイトでの認証中です、お待ちください…',
-	'centralauth-completelogin-text' => 'ウィキメディア財団のサイトでのあなたのアカウントの認証がほぼ完了しました。以下のボタンを押してログインの確認と完了を行ってください。',
+	'centralauth-completelogin-text' => 'ウィキメディア財団のサイト群でのあなたのアカウントの認証がほぼ完了しました。以下のボタンを押してログインの確認と完了を行ってください。',
 	'centralauth-completelogin-submit' => '今すぐログイン',
 	'centralauth-completelogin-back' => '前のページに戻る。',
 	'centralauth-error-nologinattempt' => 'あなたのセッションに関して現在ログインの試行は行われていません。',
@@ -16648,7 +16649,7 @@ $messages['ja'] = array(
 主アカウントは {{SITENAME}} にあります。
 
 このアカウントが本当にあなたのものであることを確認し、自動的に統合できなかったアカウントを統合し、
-パスワードを忘れたときにアカウントを復活させられるようにするため、次のリンクをブラウザで開いてください。
+パスワードを忘れたときにアカウントを復活させられるようにするため、次のリンクをブラウザーで開いてください。
 
 $3
 
@@ -32979,7 +32980,7 @@ $messages['tpi'] = array(
  */
 $messages['tr'] = array(
 	'mergeaccount' => 'Hesap birleştirme durumu',
-	'centralauth-groupname' => 'Vikimedya Kuruluşu',
+	'centralauth-groupname' => 'Wikimedia Vakfı',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} vikilerinde [[Special:MergeAccount|hesap birleştir]]',
 	'centralauth-mergeaccount-desc' => 'Tek Kullanıcı Girişi için [[Special:MergeAccount|çoklu hesapları birleştirir]]',
 	'centralauth-merge-denied' => 'Üzgünüz, bu sayfaya erişmek için izniniz yok.',
