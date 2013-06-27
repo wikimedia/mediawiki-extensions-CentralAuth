@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "D1oJDI7I",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-06-27T04:18:44Z",
+      "side": 1,
+      "message": "I was doing some final testing, and I think this is causing the problem. When I load the success page (doing the old style autologin), I get back html with the error \"Bad token (wrong wiki)\". I think that\u0027s because this used to be the wiki name (string), and now it\u0027s a WikiReference.",
+      "revId": "bb66fe94ca5d448c7986bf04121d85ea1a4587c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
