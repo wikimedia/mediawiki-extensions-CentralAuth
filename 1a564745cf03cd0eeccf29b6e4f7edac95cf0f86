@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09d66d82_99d7274a",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-06-28T03:39:06Z",
+      "side": 1,
+      "message": "Can this use $this-\u003egetUser() in most of the spots below? Of course it will still need to set $wgUser in one line.",
+      "revId": "1a564745cf03cd0eeccf29b6e4f7edac95cf0f86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "09d66d82_9900c705",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-06-28T03:39:06Z",
+      "side": 1,
+      "message": "Can this use $this-\u003egetUser()?",
+      "revId": "1a564745cf03cd0eeccf29b6e4f7edac95cf0f86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
