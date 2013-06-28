@@ -112,6 +112,7 @@ $specialPageAliases['ca'] = array(
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'MergeAccount' => array( 'ДIавазвалар/ялар_цхьаьнатохар' ),
+	'GlobalUsers' => array( 'Глобальни_декъашхой' ),
 );
 
 /** German (Deutsch) */
