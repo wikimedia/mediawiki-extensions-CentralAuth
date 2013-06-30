@@ -230,6 +230,8 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-action-hide-none'            => 'Unhide selected accounts',
 	'centralauth-admin-action-hide-lists'           => 'Hide selected accounts from public lists',
 	'centralauth-admin-action-hide-oversight'       => 'Completely hide selected accounts',
+	'centralauth-admin-multi-bot'                   => 'Recent changes',
+	'centralauth-admin-multi-botcheck'              => 'Mark entries on [[Special:RecentChanges]] as bot entries.',
 
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
@@ -739,6 +741,8 @@ See example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]',
 {{Related|Centralauth-admin-action}}',
 	'centralauth-admin-action-hide-oversight' => 'Radio button, suppress accounts.
 {{Related|Centralauth-admin-action}}',
+	'centralauth-admin-multi-bot' => 'Label shown next to the bot checkbox on Special:MultiLock',
+	'centralauth-admin-multi-botcheck' => 'Explanation of the bot checkbox on Special:MultiLock',
 	'centralauth-seconds-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-minutes-ago' => '{{Related|Centralauth-ago}}',
 	'centralauth-hours-ago' => '{{Related|Centralauth-ago}}',

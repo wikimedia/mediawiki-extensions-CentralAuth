@@ -185,13 +185,15 @@ class SpecialMultiLock extends SpecialPage {
 			$this->msg( 'ipbreasonotherlist' )->inContentLanguage()->text()
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
+		$botField = Xml::check( 'markasbot' ) . $this->msg( 'centralauth-admin-multi-botcheck' );
 
 		$form .= Xml::buildForm(
 			array(
 				'centralauth-admin-status-locked' => $radioLocked,
 				'centralauth-admin-status-hidden' => $radioHidden,
 				'centralauth-admin-reason' => $reasonList,
-				'centralauth-admin-reason-other' => $reasonField
+				'centralauth-admin-reason-other' => $reasonField,
+				'centralauth-admin-multi-bot' => $botField
 			),
 			'centralauth-admin-status-submit'
 		);
@@ -344,6 +346,14 @@ class SpecialMultiLock extends SpecialPage {
 			$setHidden = $this->mActionHide;
 		}
 
+		if ( $this->getRequest()->getCheck( 'markasbot' ) ) {
+			if ( !$this->getUser()->isAllowed( 'bot' ) ) {
+				$this->getUser()->mRights[] = 'bot';
+				$toRemoveBotRight = true;
+			}
+			$this->getRequest()->setVal( 'bot', true );
+		}
+
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 
 			if ( !$globalUser instanceof CentralAuthUser ) {
@@ -364,6 +374,10 @@ class SpecialMultiLock extends SpecialPage {
 			} elseif ( $status->successCount > 0 ) {
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $globalUser->getName() );
 			}
+		}
+
+		if ( isset( $toRemoveBotRight ) ) {
+			unset( $this->getUser()->mRights[array_search( 'bot', $this->getUser()->mRights )] );
 		}
 	}
 
