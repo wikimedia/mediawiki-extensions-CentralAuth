@@ -130,13 +130,13 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'CentralAuth' => array( 'MerkeziKimlikRaştkerdış' ),
+	'CentralAuth' => array( 'MerkeziKimlıgAraştkerdış' ),
 	'AutoLogin' => array( 'OtomatikCıkewtış' ),
-	'MergeAccount' => array( 'HesabJewkerdış' ),
+	'MergeAccount' => array( 'HesabZewkerdış' ),
 	'GlobalGroupMembership' => array( 'GlobalGrubaEzayan' ),
 	'GlobalGroupPermissions' => array( 'GlobalGrubaİcazeti' ),
-	'WikiSets' => array( 'SazanêWikiBıvurne' ),
-	'GlobalUsers' => array( 'KarberêGlobali' ),
+	'WikiSets' => array( 'SazanéWikiBıvırne' ),
+	'GlobalUsers' => array( 'KarberéGlobali' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
