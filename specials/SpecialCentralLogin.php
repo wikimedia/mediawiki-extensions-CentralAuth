@@ -148,6 +148,23 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
+		// Make sure we're on the right protocol before much else
+		if ( ( $wgSecureLogin
+			&& WebRequest::detectProtocol() === 'https'
+			&& !$attempt['stickHTTPS'] )
+			|| $attempt['originalProto'] === 'http'
+		) {
+			// The user wants an HTTP redirect link (as well as other links) and
+			// this is on HTTPS, so send a redirect to the success page in HTTP.
+			$query = array(
+				'returnto'      => $attempt['returnTo'],
+				'returntoquery' => $attempt['returnToQuery']
+			);
+			$url = $this->getFullTitle()->getFullUrl( $query, false, PROTO_HTTP );
+			$this->getOutput()->redirect( $url );
+			return;
+		}
+
 		// Make sure this token belongs to the user who spawned the tokens.
 		// This prevents users from giving out links that log people in as them.
 		if ( $info['secret'] !== $attempt['secret'] ) {
@@ -180,41 +197,30 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
 
-		if ( $wgSecureLogin
-			&& WebRequest::detectProtocol() === 'https' && !$attempt['stickHTTPS'] )
-		{
-			// The user wants an HTTP redirect link (as well as other links) and
-			// this is on HTTPS, so send a redirect to the success page in HTTP.
-			$query = array(
-				'returnto'      => $attempt['returnTo'],
-				'returntoquery' => $attempt['returnToQuery']
-			);
-			$url = $this->getFullTitle()->getFullUrl( $query, false, PROTO_HTTP );
-			$this->getOutput()->redirect( $url );
+
+		if ( $wgCentralAuthSilentLogin ) {
+			// Mark the session to include the edge login imgs on the next pageview
+			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+
+			// Show the login success page
+			$form = new LoginForm( new FauxRequest() );
+			$form->showReturnToPage( 'successredirect',
+				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
+			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 		} else {
-			if ( $wgCentralAuthSilentLogin ) {
-				// Mark the session to include the edge login imgs on the next pageview
-				$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+			// Show the login success page
+			$form = new LoginForm( new FauxRequest() );
+			$form->showReturnToPage( 'success',
+				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
+			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 
-				// Show the login success page
-				$form = new LoginForm( new FauxRequest() );
-				$form->showReturnToPage( 'successredirect',
-					$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
-				$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-			} else {
-				// Show the login success page
-				$form = new LoginForm( new FauxRequest() );
-				$form->showReturnToPage( 'success',
-					$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
-				$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-
-				// Show HTML to trigger cross-domain cookies.
-				// This will trigger filling in the "remember me" token cookie on the
-				// central wiki, which can only be done once authorization is completed.
-				$this->getOutput()->addHtml(
-					CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
-			}
+			// Show HTML to trigger cross-domain cookies.
+			// This will trigger filling in the "remember me" token cookie on the
+			// central wiki, which can only be done once authorization is completed.
+			$this->getOutput()->addHtml(
+				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
 		}
+
 	}
 
 	protected function showLoginStatus() {

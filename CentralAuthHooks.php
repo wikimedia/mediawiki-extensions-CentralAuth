@@ -415,7 +415,8 @@ class CentralAuthHooks {
 				'remember'      => $request->getCheck( 'wpRemember' ),
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
-				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' )
+				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' ),
+				'originalProto' => $request->detectProtocol()
 			);
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
