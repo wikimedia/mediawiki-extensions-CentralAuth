@@ -882,6 +882,7 @@ Parameters:
 * $1 - Name of the group',
 	'centralauth-editgroup-fieldset' => 'Used as fieldset label. Parameters:
 * $1 - group name',
+	'centralauth-editgroup-display' => 'This is a label for a localised group name.',
 	'centralauth-editgroup-display-edit' => '"edit" is link text.
 
 Parameters:
@@ -4140,6 +4141,8 @@ An mga pasa-taramon para sa lokal na mga panindog bago pa man an pagkakasararo i
 	'centralauth-admin-action-hide-none' => 'Dae tagoon an pinagpiling mga panindog',
 	'centralauth-admin-action-hide-lists' => 'Tagoon an pinagpiling mga panindog gikan sa pampublikong mga listahan',
 	'centralauth-admin-action-hide-oversight' => 'Kumpletong tagoon an pinagpiling mga panindog',
+	'centralauth-admin-multi-bot' => 'Pinakahurihang mga kaliwatan',
+	'centralauth-admin-multi-botcheck' => 'Markahan an mga entrada sa [[Special:RecentChanges]] bilang kagantaw na mga entrada.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|segundo|segundos}} an nakaagi',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuto|minutos}} an nakaagi',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|oras|mga oras}} an nakaagi',
@@ -4163,10 +4166,8 @@ An pagbabago nin pangaran magkakausa sa lokal na paragamit na mapagsuhay gikan s
 	'centralauth-invalid-wiki' => 'Mayo tabi kaining datos-sarayan sa wiki: $1',
 	'centralauth-account-exists' => 'Dae makapagmukna nin panindog: an pinaghahagad na pangaran nin paragamit may nakakua na sa laog kan pinagkasararong sistema nin paglalaog.',
 	'centralauth-account-exists-reset' => 'An pangaran nin paragamit na $1 bakong rehistrado sa wiking ini, alagad ini eksistido sa pinagkasararong sistema nin paglalaog.',
-	'centralauth-login-progress' => 'Piglalaog ka sa mga wikis kan {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Pigluluwas ka gikan sa ibang mga wikis kan {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Piglalaog ka sa mga wikis kan {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Ika tabi awtomatikong piglalaog sa ibang mga proyekto kan {{int:Centralauth-groupname}}:',
-	'centralauth-logout-no-others' => 'Ika tabi awtomationg pigluluwas sa ibang mga proyekto kan {{int:Centralauth-groupname}}:',
 	'centralauth-hidden-blockreason' => 'Pankinabanong ipinagtago ni $1 sa $2 na igwa kan minasunod na rason: $3',
 	'centralauth-log-name' => 'Talaan kan pankinabanong panindog',
 	'centralauth-log-header' => 'Ining talaan kinaagan kan mga operasyon sa laog kan mga pankinabanong panindog: mga kapuraan, kinakandado asin binubukasan.',
@@ -4214,8 +4215,6 @@ Saimong pinaghahagad ining pahina na dae nagtatao nin arinman na datos nin pagpa
 	'centralauth-centralautologin-corsfail' => 'An pagrikisa sa ginikanan kan CORS nagpalya',
 	'centralauth-centralautologin-p3p-explanation' => 'An siyertong mga pangilyaw naghahagad nin P3P kompak na palisiya para sa mga kokies na ipinapadara o nareresibe sa ibang kaso, kabali na an sitwasyon na imbuwelto sa pagrekisa kan SUL na paglaog. Ini bakong gayo kinakaipuhan na gutlang sa paglukso dagos kaining sitwasyon, kundi minakonsidera na an gabos na mga pahinang imbuwelto yaon sa laog nin kaparehong grupo kan wiki asin an P3P mismo iyo na an lumaon asin abandonado na; maray ngani, an imbalidong palisiya na nagsusugpon kaining pahina sa presente pinagkokonsiderang "labi karahay" kaining mga panugmad na konpigurasyon nin mga pangilyaw.',
 	'centralauth-centralautologin-logged-in' => 'Ika sentral na nakalaoag na bilang $1. Ikarga otro an pahina tanganing paganahon an saimong paragamit na mga panuytoy.',
-	'centralauth-edge-logging-in' => 'Ngunyan awtomatikong piglalaog ka sa iba pang mga proyekto kan {{int:Centralauth-groupname}}.',
-	'centralauth-edge-logged-in' => 'Ika tabi awtomatikong piglaog sa iba pang mga proyekto kan {{int:Centralauth-groupname}}:',
 	'globalgroupmembership' => 'Pagkamiyembro sa pankinabanong mga grupo',
 	'globalgrouppermissions' => 'Manihamento sa pankinabanong grupo',
 	'centralauth-globalgroupperms-grouplist' => 'An minasunod na mga grupong pankinaban pinagkonpigura na.
@@ -6682,6 +6681,8 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-action-hide-none' => 'Odkrýt vybrané účty',
 	'centralauth-admin-action-hide-lists' => 'Skrýt vybrané účty z veřejných seznamů',
 	'centralauth-admin-action-hide-oversight' => 'Zcela skrýt vybrané účty',
+	'centralauth-admin-multi-bot' => 'Poslední změny',
+	'centralauth-admin-multi-botcheck' => 'Označit záznamy v [[Special:RecentChanges|posledních změnách]] jako změny provedené botem.',
 	'centralauth-seconds-ago' => 'před $1 {{PLURAL:$1|sekundou|sekundami|sekundami}}',
 	'centralauth-minutes-ago' => 'před $1 {{PLURAL:$1|minutou|minutami|minutami}}',
 	'centralauth-hours-ago' => 'před $1 {{PLURAL:$1|hodinou|hodinami|hodinami}}',
@@ -6704,9 +6705,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-account-exists' => 'Účet nelze vytvořit: Požadované uživatelské jméno je již registrováno v systému jednotného přihlašování.',
 	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale existuje v jednotném systému přihlašování.',
 	'centralauth-login-progress' => 'Přihlašujeme vás na wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
-	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
-	'centralauth-logout-no-others' => '{{GENDER:|Byl|Byla|Byli}} jste automaticky {{GENDER:|odhlášen|odhlášena|odhlášeni}} z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-hidden-blockreason' => 'globálně skryl $1 v $2 se zdůvodněním: $3',
 	'centralauth-log-name' => 'Kniha správy globálních účtů',
 	'centralauth-log-header' => 'Tato kniha obsahuje informace o operacích na globálních účtech: mazání, zamykání a odemykání.',
@@ -6756,8 +6755,6 @@ V požadavku na tuto stránku jste neposkytli žádné autentizační údaje, ta
 
 Pokud chcete zjistit, jak by mohly být sbírané údaje použity, přečtěte si prosím lidsky čitelná pravidla ochrany osobních údajů tohoto serveru.',
 	'centralauth-centralautologin-logged-in' => '{{GENDER:$2|Byl|Byla|Byli}} jste ústředně {{GENDER:$2|přihlášen|přihlášena|přihlášeni}} jako $1. Aby se použila vaše uživatelská nastavení, obnovte stránku.',
-	'centralauth-edge-logging-in' => 'Probíhá vaše automatické přihlášení do ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
-	'centralauth-edge-logged-in' => '{{GENDER:$1|Byl|Byla|Byli}} jste automaticky {{GENDER:$1|přihlášen|přihlášena|přihlášeni}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.', # Fuzzy
 	'globalgroupmembership' => 'Členství v globálních skupinách',
 	'globalgrouppermissions' => 'Správa globálních skupin',
 	'centralauth-globalgroupperms-grouplist' => 'Byly nastaveny následující globální skupiny. Pokud k tomu máte oprávnění, můžete prohlížet a upravovat oprávnění přidělená jednotlivým skupinám. Skupinu je možné odstranit tím, že jí odeberete všechna oprávnění.',
@@ -7078,6 +7075,7 @@ Rheswm: $1',
 	'centralauth-admin-multi-username' => 'Rhowch un neu ragor o enwau defnyddwyr, un enw bob yn linell',
 	'centralauth-admin-multi-notfound' => 'Ni chafwyd hyd i unrhyw enwau defnyddwyr.',
 	'centralauth-admin-multi-bot' => 'Newidiadau diweddar',
+	'centralauth-admin-multi-botcheck' => 'Marciwch eitemau ar [[Special:RecentChanges]] yn rai bot.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eiliad}} yn ôl',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munud|munud|funud|munud|munud|munud}} yn ôl',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|awr}} yn ôl',
@@ -7118,6 +7116,7 @@ Rheswm: $1',
 	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1. Ychwanegwyd $2: Gwaredwyd $3',
 	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set "$1" o wicïau',
 	'autologin' => 'Mewngofnodi awtomatig',
+	'centralauth-centralautologin-lostsession' => "Collwyd data'r sesiwn",
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
 	'centralauth-newgroup-legend' => 'Creu grŵp newydd',
 	'centralauth-globalgroupperms-newgroupname' => "Enw'r grŵp newydd:",
@@ -7176,6 +7175,20 @@ Efallai bod rhywun yn ceisio eich mewngofnodi yn enw rhyw gyfrif maleisus.",
 	'centralauth-warning-notloggedin' => 'Nid ydych wedi mewngofnodi ar hyn o bryd.',
 	'centralauth-warning-notattached' => "Nid yw'r cyfrif lleol hwn ynghlwm wrth gyfrif cyd-wici.",
 	'centralauth-finishglobaliseemail_subject' => 'Cadarnhau cyfrif ar {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => "Mae eich cyfeiriad ebost wedi ei gysylltu gyda'r cyfrif \"\$2\" ar holl brosiectau Wikimedia, a'ch cyfrif ar {{SITENAME}} sydd wedi ei osod yn brif gyfrif i chi.
+
+I gadarnhau bod y cyfrif hwn wir yn perthyn i chi, 
+i gyfuno unrhyw gyfrifon na lwyddwyd i'w cyfuno'n awtomatig, ac 
+i'ch galluogi i gael hyd i'ch cyfrinair os yr aiff ar goll, 
+agorwch y cyswllt hwn yn eich porwr:
+
+\$3
+
+Os *nad* ydy'r cyfrif yn perthyn i chi, dilynwch y cyswllt hwn i ddileu y gwaith o gadarnhau'r cyfeiriad ebost:
+
+\$5
+
+Bydd y cod cadarnhau hwn yn dod i ben ar \$6 am \$7.",
 );
 
 /** Danish (dansk)
@@ -19251,6 +19264,8 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-admin-action-hide-none' => 'Déi erausgesicht Benotzerkonten nees weisen',
 	'centralauth-admin-action-hide-lists' => 'Déi erausgesichte Benotzerkonten op ëffentleche Lëschte verstoppen',
 	'centralauth-admin-action-hide-oversight' => 'Déi erausgesicht Benotzerkonte komplett verstoppen',
+	'centralauth-admin-multi-bot' => 'Rezent Ännerungen',
+	'centralauth-admin-multi-botcheck' => 'Elementer an de [[Special:RecentChanges|Rezenten Ännerungen]] als Bot-Edite markéieren',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|virun 1 Minutt| viru(n) $1 Minutten}}',
 	'centralauth-hours-ago' => '{{PLURAL:$1|virun 1 Stonn| viru(n) $1 Stonnen}}',
@@ -19401,6 +19416,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'centralauth-completelogin-text' => "D'Authentifizéierung vun Ärem Benotzerkont op de Site vun der Wikimedia Foundation ass bal fäerdeg! Benotzt de Knäppchen hei drënner fir ze confirméieren an Äre Login ofzeschléissen",
 	'centralauth-completelogin-submit' => 'Elo aloggen',
 	'centralauth-completelogin-back' => 'Zréck op déi vireg Säit',
+	'centralauth-error-badtoken' => 'Déi Authentifizéierung déi Dir uginn hutt ass entweder ofgelaf oder net valabel.',
 	'centralauth-warning-notloggedin' => 'Dir sidd elo net ageloggt.',
 	'centralauth-warning-notattached' => 'De lokale Benotzerkont ass net mat engem globale Benotzerkont verbonn.',
 	'centralauth-finishglobaliseemail_subject' => 'Confirmatioun vum {{SITENAME}} Benotzerkont',
@@ -35268,6 +35284,8 @@ $messages['yi'] = array(
 	'centralauth-incomplete' => 'אריינלאגירן פאראייניקונג נישט פֿארענדיקט!',
 	'centralauth-complete-text' => 'אצינד קענט איר אריינלאגירן צו נארוועלכן וויקי זײַטל פון {{int:Centraluth-groupname}} אן שאפן א נייע קאנטע.',
 	'centralauth-error-locked' => 'איר קענט נישט רעדאקטירן ווייל אייער קאנטע איז פארשפארט.',
+	'centralauth-error-unmerged' => 'איר קענט נישט רעדאקטירן ווייל אייער קאנטע איז נישט פֿאראייניקט.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|לייענט נאך וועגן '''פאראייניקט ארײַנלאגירן''']]…''",
 	'centralauth-list-home-title' => 'היים וויקי',
 	'centralauth-foreign-link' => 'באַניצער $1 אויף $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|בײַשטײַיערונג|בײַשטײַיערונגען}} אויף $2',
@@ -35340,7 +35358,7 @@ $messages['yi'] = array(
 	'centralauth-months-ago' => 'פֿאר $1 {{PLURAL:$1|חודש|חדשים}}',
 	'centralauth-years-ago' => 'פֿאר $1 {{PLURAL:$1|יאר|יאר}}',
 	'centralauth-prefs-unattached' => 'נישט באשטעטיקט',
-	'centralauth-login-progress' => 'אריינלאגירט אין וויקיס פון {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'ארײַנלאגירן אײַך אין וויקיס פון {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'איר זענט אויטאמאטיש אריינלאגירט אין אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'גלאבאל באהאלטן דורך $1 ביי $2 מיטן גרונד: $3',
 	'centralauth-log-name' => 'גלאבאלע קאנטע־לאגבוך',
@@ -36233,6 +36251,8 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-action-hide-none' => '取消隱藏所選帳戶',
 	'centralauth-admin-action-hide-lists' => '從公開清單隱藏所選帳戶',
 	'centralauth-admin-action-hide-oversight' => '完全隱藏所選帳戶',
+	'centralauth-admin-multi-bot' => '最近更改',
+	'centralauth-admin-multi-botcheck' => '將[[Special:RecentChanges|Special:最近更改]]裡的項目標記為機械人的操作。',
 	'centralauth-seconds-ago' => '$1秒前',
 	'centralauth-minutes-ago' => '$1分鐘前',
 	'centralauth-hours-ago' => '$1小時前',
