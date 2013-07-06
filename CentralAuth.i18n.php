@@ -4139,7 +4139,7 @@ An mga pasa-taramon para sa lokal na mga panindog bago pa man an pagkakasararo i
 	'centralauth-admin-action-hide-none' => 'Dae tagoon an pinagpiling mga panindog',
 	'centralauth-admin-action-hide-lists' => 'Tagoon an pinagpiling mga panindog gikan sa pampublikong mga listahan',
 	'centralauth-admin-action-hide-oversight' => 'Kumpletong tagoon an pinagpiling mga panindog',
-	'centralauth-admin-multi-bot' => 'Pinakahurihang mga kaliwatan',
+	'centralauth-admin-multi-bot' => 'Pinakahuring mga kaliwatan',
 	'centralauth-admin-multi-botcheck' => 'Markahan an mga entrada sa [[Special:RecentChanges]] bilang kagantaw na mga entrada.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|segundo|segundos}} an nakaagi',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuto|minutos}} an nakaagi',
@@ -28827,19 +28827,19 @@ $messages['shi'] = array(
  * @author ශ්වෙත
  */
 $messages['si'] = array(
-	'mergeaccount' => 'ප්‍රවිසීම් සංයුක්තකිරීම් තත්ත්වය',
+	'mergeaccount' => 'පිවිසීම් සංයුක්තකිරීම් තත්ත්වය',
 	'centralauth-groupname' => 'විකිමී‍ඩියා පදනම',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} හි විකියන් අතුරෙහි [[Special:MergeAccount|ගිණුම ඒකාබද්ධ කරන්න]]',
 	'centralauth-antispoof-desc' => 'ප්‍රතිප්‍රෝඩා තාක්ෂණය මධ්‍යඅවසරයට එක් කරයි',
 	'centralauth-mergeaccount-desc' => 'ඒක පරිශීලක ප්‍රවිෂ්ටයකින් ප්‍රවේශ කර ගත හැකි අයුරින් [[Special:MergeAccount| ගිණුම් බහු සංඛ්‍යාවක් ඒකාබද්ධ කෙරෙයි]]',
-	'centralauth-merge-denied' => 'මෙම පිටුවට පිවිසීමට ඔබට අවසර නැත.',
+	'centralauth-merge-denied' => 'කණගාටුයි, මෙම පිටුවට පිවිසීමට ඔබට අවසර නැත.',
 	'centralauth-merge-notlogged' => 'ඔබගේ ගිණුම් සම්පූර්ණ වශයෙන් ඒකාබද්ධ කර ඇතිදැයි පිරික්සා බැලුමට, කරුණාකර <span class="plainlinks">[$1 ප්‍රවිෂ්ට වන්න]</span>.',
 	'centralauth-merge-welcome' => "''' {{int:Centralauth-groupname}} හි සංයුක්ත කෙරුණු ප්‍රවිෂ්ට පද්ධතියට ඔබගේ පරිශීලක ගිණුම තවමත් සංක්‍රමණය කෙරී නොමැත.'''
 
 ඔබගේ ගිණුම සංක්‍රමණය කෙරුම ඔබ විසින් තෝරාගත්තේ නම්, {{int:Centralauth-groupname}} හි සියළුම විකියන් වෙත, භාවිත සියළු භාෂා වලින් ප්‍රවිෂ්ට වීමට,  එකම පරිශීලක නාමය හා මුරපදය භාවිකා කෙරුමට ඔබ හට හැකි වනු ඇත.
 
 වෙනත් අයෙකු විසින් වෙනත් අඩවියක් තුල ඔබගේ පරිශීලක නාමය දැනටමත් තෝරාගෙන ඇත්නම්, ඔවුන් මෙයින් අපහසුතාවයට පත් නොවනු ඇති අතර, මෙය ඔවුන් හා සමගින් හෝ පරිපාලකවරයෙකු හා සමගින් හෝ පසුකාලීනව විසඳාගැනුමට ඔබහට අවස්ථාව ලැබෙනු ඇත.",
-	'centralauth-merge-step1-title' => 'ප්‍රවිසීම් සංයුක්තකිරීම් අරඹන්න',
+	'centralauth-merge-step1-title' => 'පිවිසීම් සංයුක්තකිරීම් අරඹන්න',
 	'centralauth-merge-step1-detail' => 'කරුණාකර ඔබගේ ගිණුම් මුර-පදය ඇතුළත් කරන්න.
 ඔබගේ මුර-පදය හා ලේඛනගත විද්‍යුත්-තැපැල් ලිපිනය, අනෙතුත් විකියන්ගේ ගිණුම් හා සමගින් ගැලපේද යන්න තහවුරු කරගනු වස්  සසඳනු ලැබේ.
 කරුණු වලට එකඟ විය හැකි බවට ඔබ විසින් තහවුරු කරන තෙක් කිසිදු වෙනසක් සිදු නොකරනු ලැබේ.',
@@ -29018,7 +29018,7 @@ $messages['si'] = array(
 	'centralauth-invalid-wiki' => 'මෙවන් විකි දත්තමූලයක් නැත: $1',
 	'centralauth-account-exists' => 'ගිණුම සෑදීමට නොහැකි විය: අයදුම් කළ පරිශීලක නාමය ඒකීය පිවිසුම් පද්ධතිය තුළ දැනටමත් යමෙක් ලබාගෙන ඇත.',
 	'centralauth-account-exists-reset' => '$1 පරිශීලක නාමය මෙම විකියෙහි ලියාපදිංචි කර නොමැත, නමුත් එය අනුමත පිවිසුම් පද්ධතියෙහිද අඩංගු නොවේ.',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}} හි ව්‍යාපෘතිවලට ඔබව ඇතුල් කරමින්:', # Fuzzy
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}} හී විකියන්වලට ඔබව ඇතුල් කරමින්:',
 	'centralauth-login-no-others' => 'ඔබ ස්‍වයංක්‍රීයවම {{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘති වලට ඇතුලත් කෙරිනි.',
 	'centralauth-hidden-blockreason' => '$1 විසින් $2 දී පහත හේතුව නිසා ගෝලීයව සඟවා ඇත: $3',
 	'centralauth-log-name' => 'ගෝලීය ගිණුම් ලොගය',
@@ -29080,8 +29080,8 @@ $messages['si'] = array(
 	'centralauth-editgroup-perms' => 'පැවරූ අවසර',
 	'centralauth-editgroup-reason' => 'හේතුව:',
 	'centralauth-editgroup-success' => 'ගෝලීය සමූහය වෙනස් කරන ලදී',
-	'centralauth-editgroup-success-text' => 'ඔබ විසින් $1 කණ්ඩායමේ අවසර සාර්ථකව වෙනස් කර ඇත.
-[[Special:GlobalGroupPermissions|කණ්ඩායම් පාලක ස්ථානයට නැවත යන්න]]', # Fuzzy
+	'centralauth-editgroup-success-text' => '$1 ගෝලීය කණ්ඩායම සාර්ථකව යාවත්කාලීන කර ඇත.
+[[Special:GlobalGroupPermissions|කණ්ඩායම් කළමනාකරණය වෙත නැවත යන්න]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|සංස්කරණය කරන්න]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ඔවුන්ට ගිණුමක් ඇති විකි:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' ගෝලීය පරිශීලකයා ඔබ සඳහන් කළ විකිය ('' $2 '') තුළ සක්‍රීය නැත.
