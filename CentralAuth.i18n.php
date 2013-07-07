@@ -14185,9 +14185,7 @@ Přemjenowanje wuskutkuje, zo lokalny wužiwar so z globalneho wužiwarskeho kon
 	'centralauth-account-exists' => 'Konto njeda so wutowrić: požadane wužiwarske mjeno bu hižo do jednotneho přizjewjenskeho systema přewzate.',
 	'centralauth-account-exists-reset' => 'Wužiwarske mjeno $1 njeje na tutym wikiju zregistrowane, ale eksistuje w zjednoćenym přizjewjenskim systemje.',
 	'centralauth-login-progress' => 'Přizjewješ so k wikijam {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Wotzjewješ so z druhich wikijow {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Sy so awtomatisce do druhich projektow {{int:Centralauth-groupname}} přizjewił.',
-	'centralauth-logout-no-others' => 'Sy so awtomatisce z druhich projektow {{int:Centralauth-groupname}} wotzjewił.',
 	'centralauth-hidden-blockreason' => 'wot $1 $2 ze slědowaceje přičiny globalnje schowany: $3',
 	'centralauth-log-name' => 'Protokol globalneho konta',
 	'centralauth-log-header' => 'Tutón protokol wobsahuje wše wušmórnjenja, zawrjenja a wotewrjenja globalnych kontow.',
@@ -14220,6 +14218,7 @@ Přemjenowanje wuskutkuje, zo lokalny wužiwar so z globalneho wužiwarskeho kon
 	'centralauth-autologin-desc' => 'Tuta specialna strona so jenož internje wot MediaWiki wužiwa.
 Hdyž [[Special:UserLogin|přizjewješ]], centralny přizjewjenski system instruuje twój wobhladowak, zo by tutu stronu z pomocu wobrazowych wotkazow ze wšěch zwjazanych domejnow požadał.
 Sy tutu stronu požadał, bjeztoho zo by awtentifikaciske daty podał, tak zo so ničo njestawa.',
+	'centralautologin' => 'Centralne přizjewjenje',
 	'globalgroupmembership' => 'Čłonstwo w globalnych skupinach',
 	'globalgrouppermissions' => 'Zrjadowanje globalnych skupinow',
 	'centralauth-globalgroupperms-grouplist' => 'Slědowace globalne skupiny buchu konfigurowane.

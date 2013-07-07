@@ -533,11 +533,13 @@ $specialPageAliases['nb'] = array(
 $specialPageAliases['nds-nl'] = array(
 	'CentralAuth' => array( 'Sentraal_anmelden' ),
 	'AutoLogin' => array( 'Automaties_anmelden' ),
+	'CentralAutoLogin' => array( 'Centraal_automaties_anmelden' ),
 	'MergeAccount' => array( 'Gebruker_samenvoegen' ),
 	'GlobalGroupMembership' => array( 'Globale_gebrukersrechten' ),
 	'GlobalGroupPermissions' => array( 'Globale_groepsrechten' ),
 	'WikiSets' => array( 'Wikigroepen_bewarken' ),
 	'GlobalUsers' => array( 'Globale_gebrukers' ),
+	'MultiLock' => array( 'Meervoudig_aofsluten' ),
 );
 
 /** Dutch (Nederlands) */
