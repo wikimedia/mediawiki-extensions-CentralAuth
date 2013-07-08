@@ -1970,9 +1970,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param  $name
 	 * @param  $value
 	 * @param  $exp
+	 * @param bool $secure
+	 *  true: Force setting the secure attribute when setting the cookie
+	 *  false: Force NOT setting the secure attribute when setting the cookie
+	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
 	 * @return void
 	 */
-	static function setCookie( $name, $value, $exp = -1 ) {
+	static function setCookie( $name, $value, $exp = -1, $secure = null ) {
 		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieSecure,
 			$wgCookieExpiration, $wgCookieHttpOnly;
 
@@ -1991,12 +1995,19 @@ class CentralAuthUser extends AuthPluginUser {
 			// Relative expiry
 			$exp += time();
 		}
+
+		// Set the cookie encryption requirements
+		$secureCookie = $secure;
+		if ( is_null( $secure ) ) {
+			$secureCookie = $wgCookieSecure;
+		}
+
 		setcookie( $wgCentralAuthCookiePrefix . $name,
 			$value,
 			$exp,
 			'/',
 			$wgCentralAuthCookieDomain,
-			$wgCookieSecure,
+			$secureCookie,
 			$wgCookieHttpOnly );
 	}
 
@@ -2022,9 +2033,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 *
 	 * @param $remember Bool|User
 	 * @param $refreshId Bool|string
+	 * @param bool $secure
+	 *  true: Force setting the secure attribute when setting the cookie
+	 *  false: Force NOT setting the secure attribute when setting the cookie
+	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
 	 * @return string Session ID
 	 */
-	function setGlobalCookies( $remember = false, $refreshId = false ) {
+	function setGlobalCookies( $remember = false, $refreshId = false, $secure = null ) {
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -2032,18 +2047,18 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$session = array();
 		$session['user'] = $this->mName;
-		self::setCookie( 'User', $this->mName );
+		self::setCookie( 'User', $this->mName, -1, $secure );
 		$session['token'] = $this->getAuthToken();
 		$session['expiry'] = time() + 86400;
 		$session['auto-create-blacklist'] = array();
 
 		if ( $remember ) {
-			self::setCookie( 'Token', $this->getAuthToken() );
+			self::setCookie( 'Token', $this->getAuthToken(), -1, $secure );
 		} else {
 			$this->clearCookie( 'Token' );
 		}
 
-		return self::setSession( $session, $refreshId );
+		return self::setSession( $session, $refreshId, $secure );
 	}
 
 	/**
@@ -2363,16 +2378,20 @@ class CentralAuthUser extends AuthPluginUser {
 	 *
 	 * @param $data Array
 	 * @param $refreshId Bool|String
+	 * @param bool $secure
+	 *  true: Force setting the secure attribute when setting the cookie
+	 *  false: Force NOT setting the secure attribute when setting the cookie
+	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
 	 * @return string Session ID
 	 */
-	static function setSession( $data, $refreshId = false ) {
+	static function setSession( $data, $refreshId = false, $secure = null ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix, $wgMemc;
 		if ( !$wgCentralAuthCookies ) {
 			return null;
 		}
 		if ( $refreshId || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			$id = is_string( $refreshId ) ? $refreshId : MWCryptRand::generateHex( 32 );
-			self::setCookie( 'Session', $id, 0 );
+			self::setCookie( 'Session', $id, 0, $secure );
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		}
