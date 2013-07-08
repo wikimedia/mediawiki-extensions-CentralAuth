@@ -207,9 +207,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				wfSetupSession( MWCryptRand::generateHex( 32 ) );
 				$_SESSION = $tmp;
 			}
-
-			// Set central cookies too
-			$centralUser->setGlobalCookies( false );
+			// Set central cookies too, with a refreshed sessionid
+			$centralUser->setGlobalCookies( false, true );
 
 			// Now, figure out how to report this back to the user.
 

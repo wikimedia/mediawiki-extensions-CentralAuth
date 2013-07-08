@@ -379,7 +379,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser, &$inject_html ) {
-		global $wgCentralAuthLoginWiki, $wgMemc;
+		global $wgCentralAuthLoginWiki, $wgMemc, $wgSecureLogin;
 
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
@@ -404,6 +404,12 @@ class CentralAuthHooks {
 				$returnToQuery = '';
 			}
 
+			// Determine the final protocol of page, after login
+			$finalProto = $request->detectProtocol();
+			if ( $wgSecureLogin ) {
+				$finalProto = $request->getCheck( 'wpStickHTTPS' ) ? 'https' : 'http';
+			}
+
 			// When POSTs triggered from Special:CentralLogin/start are sent back to
 			// this wiki, the token will be checked to see if it was signed with this.
 			// This is needed as Special:CentralLogin/start only takes a token argument
@@ -415,7 +421,7 @@ class CentralAuthHooks {
 				'remember'      => $request->getCheck( 'wpRemember' ),
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
-				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' )
+				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' ),
 			);
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
@@ -425,7 +431,9 @@ class CentralAuthHooks {
 				'secret'        => $secret,
 				'name'          => $centralUser->getName(),
 				'guid'          => $centralUser->getId(),
-				'wikiId'        => wfWikiId()
+				'wikiId'        => wfWikiId(),
+				'finalProto'	=> $finalProto,
+				'currentProto'  => $request->detectProtocol()
 			);
 			$wgMemc->set( $key, $data, 60 );
 
