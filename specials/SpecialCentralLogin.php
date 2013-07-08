@@ -30,7 +30,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws MWException
 	 */
 	protected function doLoginStart( $token ) {
-		global $wgMemc, $wgCentralAuthSilentLogin;
+		global $wgMemc, $wgCentralAuthSilentLogin, $wgCookieSecure;
 
 		$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
 
@@ -75,14 +75,21 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Delete the temporary token
 		$wgMemc->delete( $key );
 
+		// Determine if we can use the default cookie security, or if we need
+		// to override it to insecure
+		$secureCookie = null;
+		if ( $wgCookieSecure && $info['finalProto'] === 'http' ) {
+			$secureCookie = false;
+		}
+
 		// Start an unusable placeholder session stub and send a cookie.
 		// The cookie will not be usable until the session is unstubbed.
 		// Note: the "remember me" token must be dealt with later (security).
 		$newSessionId = CentralAuthUser::setSession( array(
 			'pending_name' => $centralUser->getName(),
 			'pending_guid' => $centralUser->getId()
-		) );
-		CentralAuthUser::setCookie( 'User', $centralUser->getName() );
+		), false, $secureCookie );
+		CentralAuthUser::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
@@ -96,9 +103,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 		$url = $wiki->getFullUrl( 'Special:CentralLogin/complete' );
+		// Ensure $url really is proto relative, and prepend the protocol of the original
+		// login. If the local wiki is using wgSecureLogin, it will be https.
+		$url = strstr( $url, '//' );
+		$url = $info['currentProto'] . ':' . $url;
 
 		if ( $wgCentralAuthSilentLogin ) {
-			$this->getOutput()->redirect( // expands to PROTO_CURRENT
+			$this->getOutput()->redirect( // expands to PROTO_CURRENT if $url doesn't have protocol
 				wfAppendQuery( $url, array( 'token' => $token ) )
 			);
 		} else {
@@ -126,7 +137,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws MWException
 	 */
 	protected function doLoginComplete( $token ) {
-		global $wgUser, $wgMemc, $wgSecureLogin;
+		global $wgUser, $wgMemc, $wgSecureLogin, $wgCookieSecure;
 		global $wgCentralAuthSilentLogin;
 
 		$request = $this->getRequest();
@@ -170,7 +181,20 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Fully initialize the stub central user session and send the domain cookie.
 		// This lets User::loadFromSession to initialize the User object from the local
 		// session now that the global session is complete.
-		$centralUser->setGlobalCookies( $_SESSION[$skey]['remember'], $info['sessionId'] );
+		// Without $wgSecureLogin, we should be on the correct protocol now, and we use the
+		// default cookie security. With $wgSecureLogin, we use the stickHTTPS checkbox.
+		$secureCookie = null;
+		if ( $wgCookieSecure && $wgSecureLogin && !$attempt['stickHTTPS'] ) {
+			$secureCookie = false;
+		}
+		$centralUser->setGlobalCookies( $_SESSION[$skey]['remember'], $info['sessionId'], $secureCookie );
+
+		//Add to the session the target protocol of the login, so autologin can use it
+		$centralSessionKey = CentralAuthUser::memcKey( 'session', $info['sessionId'] );
+		$centralSession = $wgMemc->get( $centralSessionKey );
+		$centralSession['finalProto'] = $attempt['finalProto'];
+		$wgMemc->set( $centralSessionKey, $centralSession, 86400 );
+
 		// Remove the "current login attempt" information
 		$request->setSessionData( $skey, null );
 
@@ -180,40 +204,27 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
 
-		if ( $wgSecureLogin
-			&& WebRequest::detectProtocol() === 'https' && !$attempt['stickHTTPS'] )
-		{
-			// The user wants an HTTP redirect link (as well as other links) and
-			// this is on HTTPS, so send a redirect to the success page in HTTP.
-			$query = array(
-				'returnto'      => $attempt['returnTo'],
-				'returntoquery' => $attempt['returnToQuery']
-			);
-			$url = $this->getFullTitle()->getFullUrl( $query, false, PROTO_HTTP );
-			$this->getOutput()->redirect( $url );
+		if ( $wgCentralAuthSilentLogin ) {
+			// Mark the session to include the edge login imgs on the next pageview
+			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+
+			// Show the login success page
+			$form = new LoginForm( new FauxRequest() );
+			$form->showReturnToPage( 'successredirect',
+				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
+			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 		} else {
-			if ( $wgCentralAuthSilentLogin ) {
-				// Mark the session to include the edge login imgs on the next pageview
-				$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+			// Show the login success page
+			$form = new LoginForm( new FauxRequest() );
+			$form->showReturnToPage( 'success',
+				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
+			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 
-				// Show the login success page
-				$form = new LoginForm( new FauxRequest() );
-				$form->showReturnToPage( 'successredirect',
-					$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
-				$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-			} else {
-				// Show the login success page
-				$form = new LoginForm( new FauxRequest() );
-				$form->showReturnToPage( 'success',
-					$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
-				$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-
-				// Show HTML to trigger cross-domain cookies.
-				// This will trigger filling in the "remember me" token cookie on the
-				// central wiki, which can only be done once authorization is completed.
-				$this->getOutput()->addHtml(
-					CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
-			}
+			// Show HTML to trigger cross-domain cookies.
+			// This will trigger filling in the "remember me" token cookie on the
+			// central wiki, which can only be done once authorization is completed.
+			$this->getOutput()->addHtml(
+				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
 		}
 	}
 
