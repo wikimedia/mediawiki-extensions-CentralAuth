@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69c609db_16d3fcd5",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-08T14:59:13Z",
+      "side": 1,
+      "message": "I think a better fix would be to just apply originalProto to $url here, on the first redirect back to the local wiki. Then there should be no need for all the hackiness below when the local wiki doesn\u0027t have $wgSecureLogin set.",
+      "revId": "2185d6ce43867e7051948a5d2cedfb2a4b55edae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_f69580e3",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-08T14:59:13Z",
+      "side": 1,
+      "message": "There\u0027s also the problem here if the local wiki has $wgSecureLogin set and the user unchecked wpStickHTTPS. Why not do what SpecialUserlogin.php does in lines 750–754: have setGlobalCookies take a \"$secure\" parameter that overrides $wgSecureCookies, and set that false if $wgSecureLogin \u0026\u0026 !$attempt[\u0027stickHTTPS\u0027]. At least then it\u0027s consistent, and doesn\u0027t break $wgSecureLogin with early insecure redirecting.",
+      "revId": "2185d6ce43867e7051948a5d2cedfb2a4b55edae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
