@@ -19412,6 +19412,7 @@ Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
 	'centralauth-centralautologin-lostsession' => 'Donnéeë vun der Sessioun si verluer gaang',
 	'centralauth-centralautologin-badstate-central' => 'Status "$1" ass net valabel op der zentraler Wiki',
+	'centralauth-centralautologin-badwiki' => 'D\'Wiki "$1" ass net valabel fir den zentrale Login',
 	'centralauth-centralautologin-logged-in' => "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	'globalgroupmembership' => 'Member a globale Gruppen',
 	'globalgrouppermissions' => 'Gestioun vun de globale Gruppen',
@@ -29763,6 +29764,7 @@ $messages['so'] = array(
 	'centralauth-prefs-complete' => 'Isku Hagaaji dhaam!',
 	'centralauth-prefs-manage' => 'Maamul akoonkaada guud',
 	'centralauth-prefs-view' => 'Itus macluumaadka gude galaha',
+	'centralauth-login-progress' => 'Waxaa kudaha ugalaysaa wikiyaasha kale ee {{int:Centralauth-groupname}}:',
 );
 
 /** Albanian (shqip)
@@ -34951,6 +34953,8 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-admin-action-hide-none' => 'Hiện các tài khoản được chọn',
 	'centralauth-admin-action-hide-lists' => 'Ẩn các tài khoản được chọn khỏi danh sách công khai',
 	'centralauth-admin-action-hide-oversight' => 'Ẩn hẳn các tài khoản được chọn',
+	'centralauth-admin-multi-bot' => 'Thay đổi gần đây',
+	'centralauth-admin-multi-botcheck' => 'Đánh dấu các mục trên [[Special:RecentChanges]] là mục bot.',
 	'centralauth-seconds-ago' => 'cách đây $1 giây',
 	'centralauth-minutes-ago' => 'cách đây $1 phút',
 	'centralauth-hours-ago' => 'cách đây $1 giờ',
