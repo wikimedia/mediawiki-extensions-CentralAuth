@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "69c609db_ff00ac05",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-09T14:55:32Z",
+      "side": 1,
+      "message": "Yeah, that\u0027s what I was thinking. loginwiki redirects at the apache level if it doesn\u0027t come in over https, but having a backup in the php would be nice eventually.",
+      "parentUuid": "69c609db_1c7af6ee",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "69c609db_5c6aaeef",
         "filename": "specials/SpecialCentralLogin.php",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-09T14:07:12Z",
       "side": 1,
       "message": "I\u0027m not entirely clear on what this is doing with respect to the secure cookie flag. I guess the point is to try to allow the JavaScript \"am I logged in?\" check from other wikis work over https, if loginwiki isn\u0027t configured with $wgServer as \"https://\" and it seems that the user doesn\u0027t mind browsing with http? Should that be commented?",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_5f1f4058",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-09T14:55:32Z",
+      "side": 1,
+      "message": "Yep, this is specifically for the case where someone either logs in from http on the local wiki, or they login over https, but uncheck the \"stay in ssl\" checkbox. Either way, they are asking to not use SSL for some reason. When that happens, both the centralauth_Session and the centralauth_User cookies need to be sent on unencrypted calls to the central wik, for the javascript ping and the SUL calls, for the central wiki to detect that the user is logged in. Without the User cookie, it sends back an error that it couldn\u0027t check the username.",
+      "parentUuid": "69c609db_bc1c82bf",
       "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "69c609db_ff7b8c87",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-09T14:55:32Z",
+      "side": 1,
+      "message": "I moved the (as commented, hopefully pointless) check here because the redirect on 183 in the base wasn\u0027t working. Since it redirects to $this-\u003egetFullTitle(), but without a token (since the token was deleted on base line168), you end up with the bad token error from base line 140.",
+      "parentUuid": "69c609db_3c62523f",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "69c609db_9c25460f",
         "filename": "specials/SpecialCentralLogin.php",
         "patchSetId": 1
@@ -98,6 +152,41 @@
       "writtenOn": "2013-07-09T14:07:12Z",
       "side": 1,
       "message": "As it is this never actually matters, since you kept the hacky early redirect above. Also, same comment as on line 81 on passing \"true\" here.\n\nSince this is executing on the local wiki, you really could just do the \"$wgSecureLogin \u0026\u0026 !$attempt[\u0027stickHTTPS\u0027]\" check here instead of worrying about finalProto.",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_9f6b78b8",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-09T14:55:32Z",
+      "side": 1,
+      "message": "Correct, this is redundant.",
+      "parentUuid": "69c609db_9c25460f",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_ff9c2cbe",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-09T14:55:32Z",
+      "side": 1,
+      "message": "If we really don\u0027t want the final token to be sent over http, we would need to detect here (for both branches of the if) and either redirect to an http success page, or the http version of the returnTo.",
       "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
