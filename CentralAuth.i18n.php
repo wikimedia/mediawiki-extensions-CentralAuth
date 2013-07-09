@@ -9015,6 +9015,7 @@ This confirmation code will expire on $6 at $7.',
 /** Esperanto (Esperanto)
  * @author Airon90
  * @author ArnoLagrange
+ * @author KuboF
  * @author LyzTyphone
  * @author Michawiki
  * @author Yekrats
@@ -9187,6 +9188,7 @@ La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunig
 	'centralauth-listusers-locked' => 'ŝlosita',
 	'centralauth-listusers-attached' => '[[User:$1|ekzistas loke]]',
 	'centralauth-listusers-nolocal' => 'neligita aŭ ne ekzistas loke',
+	'centralauth-admin-multi-bot' => 'Lastaj ŝanĝoj',
 	'centralauth-seconds-ago' => 'antaŭ $1 {{PLURAL:$1|sekundo|sekundoj}}',
 	'centralauth-minutes-ago' => 'antaŭ $1 {{PLURAL:$1|minuto|minutoj}}',
 	'centralauth-hours-ago' => 'antaŭ $1 {{PLURAL:$1|horo|horoj}}',
@@ -9209,10 +9211,8 @@ Renomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzant
 	'centralauth-invalid-wiki' => 'Nenia vikia datumbazo: $1',
 	'centralauth-account-exists' => 'Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.',
 	'centralauth-account-exists-reset' => 'La salutnomo $1 ne estas registrita en ĉi tiu vikio, sed ĝi ekzistas en la ĝenerala salut-sistemo.',
-	'centralauth-login-progress' => 'Ensalutante vin en la vikioj de {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Elsalutante vin al la aliaj vikioj de {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Ensalutante vin en la vikioj de {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Vi estis aŭtomate ensalutita aliajn projektojn de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Vi estis aŭtomate elsalutita aliajn projektojn de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'ĝenerale kaŝita de $1 je $2 kun la jena kialo: $3',
 	'centralauth-log-name' => 'Protokolo pri kontrolado de ĝeneralaj kontoj',
 	'centralauth-log-header' => 'Ĉi tiu protokolo enhavas operaciojn sub ĝeneralaj kontoj: forigojn, ŝlosadon, kaj malŝlosadon.',
@@ -9271,7 +9271,7 @@ Vi povas forigi grupon per forigo de ĉiuj ĝiaj rajtoj.',
 	'centralauth-editgroup-submit' => 'Konservi ŝanĝojn de gruprajtoj', # Fuzzy
 	'centralauth-editgroup-perms' => 'Asignitaj rajtoj:',
 	'centralauth-editgroup-reason' => 'Kialo:',
-	'centralauth-editgroup-success' => 'Rajtoj de grupoj ŝanĝis', # Fuzzy
+	'centralauth-editgroup-success' => 'Malloka grupo estis ŝanĝita',
 	'centralauth-editgroup-success-text' => 'Vi sukcese ŝanĝis la gruprajtojn por la grupo $1. [[Special:GlobalGroupPermissions|Reiri al Grupadministrado]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|redakti]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vikio kie la uzanto havas konton:',
@@ -10700,6 +10700,8 @@ Ennen yhdistämistä luotujen paikallisten tunnusten salasanat palautuvat yhdist
 	'centralauth-listusers-nolocal' => 'yhdistämätön tai paikallista tunnusta ei ole',
 	'multilock' => 'Lukitse useita järjestelmänlaajuisia käyttäjiä',
 	'centralauth-admin-multi-username' => 'Kirjoita yksi tai useampia käyttäjätunnuksia, erotettuna uudella rivillä',
+	'centralauth-admin-multi-notfound' => 'Haulla ei löytynyt käyttäjätunnuksia.',
+	'centralauth-admin-multi-searchprefix' => 'Tai etsi tunnuksia etuliitteellä',
 	'centralauth-admin-action-lock-lock' => 'Lukitse valitut tunnukset',
 	'centralauth-admin-multi-bot' => 'Tuoreet muutokset',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekunti|sekuntia}} sitten',
@@ -10724,7 +10726,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-invalid-wiki' => 'Wiki-tietokantaa $1 ei ole olemassa.',
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
 	'centralauth-account-exists-reset' => 'Käyttäjätunnus $1 ei ole rekisteröity tässä wikissä, mutta se löytyy yhdistetystä kirjautumisjärjestelmästä.',
-	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:', # Fuzzy
+	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:',
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
 	'centralauth-hidden-blockreason' => 'piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3',
 	'centralauth-log-name' => 'Järjestelmänlaajuisten tunnusten käsittelyloki',
