@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69c609db_1c7af6ee",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-09T14:07:12Z",
+      "side": 1,
+      "message": "Ideally, I suppose, we should add a redirect-to-secure here if $wgSecureLogin \u0026\u0026 $request-\u003edetectProtocol() \u003d\u003d \u0027http\u0027 at some point. But I suppose that could wait.",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_5c6aaeef",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-09T14:07:12Z",
+      "side": 1,
+      "message": "Technically, appropriate values for $secureCookie are \"false\" and either \"null\" or \"$wgCookieSecure\". If you pass true, that means the local wiki admin can\u0027t set $wgCookieSecure to false.",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_bc1c82bf",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-09T14:07:12Z",
+      "side": 1,
+      "message": "I\u0027m not entirely clear on what this is doing with respect to the secure cookie flag. I guess the point is to try to allow the JavaScript \"am I logged in?\" check from other wikis work over https, if loginwiki isn\u0027t configured with $wgServer as \"https://\" and it seems that the user doesn\u0027t mind browsing with http? Should that be commented?",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_dc1fbeb2",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-09T14:07:12Z",
+      "side": 1,
+      "message": "You don\u0027t really need to redirect to the *final* protocol here, do you? It seems to me this bypasses $wgSecureLogin on the local wiki, and I don\u0027t see what it solves if the secure flag for the cookie is determined correctly below.\n\nThe redirect to the final protocol need only be done at what was line 183 in the base version, as far as I can tell. This just needs to redirect to whichever protocol was actually in use when CentralAuthHooks::doCentralLoginRedirect was called.",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_3c62523f",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-09T14:07:12Z",
+      "side": 1,
+      "message": "If we determine the secure flag correctly and doLoginStart sent us back to the protocol that was in use when CentralAuthHooks::doCentralLoginRedirect was called, this isn\u0027t needed.\n\nThe problem in bug 50334 is that the local wiki had $wgSecureLogin clear, so it never expected to wind up on https here. But if $wgSecureLogin is set, we do expect to be in https here and the check on line 183 in the base version correctly handles redirecting back to http when necessary.",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c609db_9c25460f",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-09T14:07:12Z",
+      "side": 1,
+      "message": "As it is this never actually matters, since you kept the hacky early redirect above. Also, same comment as on line 81 on passing \"true\" here.\n\nSince this is executing on the local wiki, you really could just do the \"$wgSecureLogin \u0026\u0026 !$attempt[\u0027stickHTTPS\u0027]\" check here instead of worrying about finalProto.",
+      "revId": "c2690b1f767cf665347264652ec4b5b2de1fdf2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
