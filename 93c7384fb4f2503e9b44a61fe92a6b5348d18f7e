@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_0468f6b9",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-10T14:42:33Z",
+      "side": 1,
+      "message": "From PS1: Technically, appropriate values for $secureCookie are \"false\" and either \"null\" or \"$wgCookieSecure\". If you pass true, that means the local wiki admin can\u0027t set $wgCookieSecure to false.\n\nAlso, comment on why the insecure cookie is being set as mentioned in PS1?",
+      "revId": "93c7384fb4f2503e9b44a61fe92a6b5348d18f7e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_c4a6de11",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-10T14:42:33Z",
+      "side": 1,
+      "message": "At this point the comment on this line isn\u0027t needed anymore. But, meh.",
+      "revId": "93c7384fb4f2503e9b44a61fe92a6b5348d18f7e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_c47ffe61",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-10T14:42:33Z",
+      "side": 1,
+      "message": "No allowing the local admin to set $wgCookieSecure \u003d false here either?",
+      "revId": "93c7384fb4f2503e9b44a61fe92a6b5348d18f7e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
