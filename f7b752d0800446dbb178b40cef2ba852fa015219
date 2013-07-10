@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_e7703ca7",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-10T17:51:01Z",
+      "side": 1,
+      "message": "doh",
+      "parentUuid": "49c305cb_a7fbe411",
+      "revId": "f7b752d0800446dbb178b40cef2ba852fa015219",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_44066e23",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-10T17:20:43Z",
       "side": 1,
       "message": "Checking $wgCookieSecure isn\u0027t really necessary, as setting $secureCookie false when $wgCookieSecure is false doesn\u0027t make any difference.",
+      "revId": "f7b752d0800446dbb178b40cef2ba852fa015219",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_c7d1c055",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-10T17:51:01Z",
+      "side": 1,
+      "message": "Good point. Thanks.",
+      "parentUuid": "49c305cb_44066e23",
       "revId": "f7b752d0800446dbb178b40cef2ba852fa015219",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_e7ccbcbf",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-10T17:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c305cb_6409ea31",
+      "revId": "f7b752d0800446dbb178b40cef2ba852fa015219",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_473030e8",
         "filename": "specials/SpecialCentralLogin.php",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-10T17:20:43Z",
       "side": 1,
       "message": "I guess we can\u0027t use CentralAuthUser::getSession here because the key probably isn\u0027t set in $_COOKIE yet? :(",
+      "revId": "f7b752d0800446dbb178b40cef2ba852fa015219",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_27ded46a",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-10T17:51:01Z",
+      "side": 1,
+      "message": "Yep",
+      "parentUuid": "49c305cb_473030e8",
       "revId": "f7b752d0800446dbb178b40cef2ba852fa015219",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
