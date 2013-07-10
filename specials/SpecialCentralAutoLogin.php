@@ -138,10 +138,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
+			// Notify the attached wiki if cookies need to be insecure
+			$centralSession = $centralUser->getSession();
+
 			// Write info for session creation into memc
 			$memcData += array(
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
+				'cookieProto' => $centralSession['finalProto'],
 			);
 			$wgMemc->set( $key, $memcData, 60 );
 
@@ -208,8 +212,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$_SESSION = $tmp;
 			}
 
-			// Set central cookies too
-			$centralUser->setGlobalCookies( false );
+			// Set central cookies too, with a refreshed sessionid. Also, check if we
+			// need to override the default cookie security policy
+			$secureCookie = null;
+			if ( $memcData['cookieProto'] == 'http' ) {
+				$secureCookie = false;
+			}
+			$centralUser->setGlobalCookies( false, true, $secureCookie );
 
 			// Now, figure out how to report this back to the user.
 
