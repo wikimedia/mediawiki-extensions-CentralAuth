@@ -231,7 +231,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-action-hide-lists'           => 'Hide selected accounts from public lists',
 	'centralauth-admin-action-hide-oversight'       => 'Completely hide selected accounts',
 	'centralauth-admin-multi-bot'                   => 'Recent changes',
-	'centralauth-admin-multi-botcheck'              => 'Mark entries on [[Special:RecentChanges]] as bot entries.',
+	'centralauth-admin-multi-botcheck'              => 'Mark entries on [[Special:RecentChanges|{{int:recentchanges}}]] as bot entries.',
 
 	// Pretty timespan
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|second|seconds}} ago',
