@@ -246,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_0e85ac0a",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T20:43:38Z",
+      "side": 1,
+      "message": "list\u003dallusers accepts an \"auprefix\" option, so you can request e.g. a list of all users with usernames beginning \"Hoo\".",
+      "parentUuid": "49c305cb_0e1f6c59",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_beb809e7",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 13
