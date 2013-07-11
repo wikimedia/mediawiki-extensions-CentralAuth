@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_9e0a6dd2",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "Using \"gau\" as a prefix is probably not a great idea, since that\u0027s also used by generator\u003dallusers in core.\n\nMaybe rename it to \"allglobalusers\", with prefix \"agu\"?",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_3efa59bb",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "Unusual variable name.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_be2e4942",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "list\u003dallusers in core uses \"\u003c\u003d\" here. It will probably confuse people if this works differently.\n\nIn particular, using \"\u003c\u003d\" allows you to do \"xxfrom\u003dABC\u0026xxto\u003dABC\" if for some reason you really want just that one user.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_9e338daa",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "For list\u003dallusers in core, \"from\" and \"to\" specify the first and last user names returned, meaning that \"\u0026aufrom\u003dA\u0026auto\u003dB\u0026audir\u003ddescending\" gives no results, because if you start at A and move in descending order you\u0027re already past B. This module, on the other hand, is using \"from\" as the alphabetically-lower limit and \"to\" as the alphabetically-upper limit.\n\nWhile a good case could be made for doing it either way, it would be least confusing for users if both of these very-similar modules were to work in the same way.\n\nAn advantage of the way list\u003dallusers does it, BTW, is that continuation can just specify a new \"from\" value.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_de2d0546",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "You\u0027re fetching every global user-group mapping, in the entire database, with no limit? That seems like it won\u0027t scale too well, even though it works for now when we only have 428 entries in global_user_groups.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_7e1df10a",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "The API doesn\u0027t directly include booleans in the result; instead it handles boolean results by returning the property with the empty string as a value for true, and leaving the property out entirely for false.\n\nThis is an unfortunate side effect of it being originally coded for the XML format.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_5e1ab514",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_3ec9b95c",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "No \u0027prefix\u0027, like list\u003dallusers?",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_beb809e7",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-11T16:34:22Z",
+      "side": 1,
+      "message": "Why no excludegroup, like from list\u003dallusers?\n\nOh, I see it was there in PS11, but broken because it was being done wrong. What you want your SQL query to look like for excludegroup\u003dA|B|C is something like \"SELECT ... FROM globaluser LEFT JOIN global_user_groups ON( gug_user \u003d gu_id AND gug_group IN (\u0027A\u0027,\u0027B\u0027,\u0027C\u0027) ) WHERE gug_user IS NULL\".",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
