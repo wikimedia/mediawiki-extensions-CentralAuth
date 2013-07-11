@@ -244,6 +244,7 @@ $wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/api/ApiDeleteGlobalAccou
 $wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/api/ApiSetGlobalAccountStatus.php";
 $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.php";
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
+$wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
@@ -331,9 +332,12 @@ $wgSpecialPageGroups['MultiLock'] = 'users';
 
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
+
+// API Query-Modules
 $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
 $wgAPIListModules['globalgroups'] = 'ApiQueryGlobalGroups';
 $wgAPIListModules['wikisets'] = 'ApiQueryWikiSets';
+$wgAPIListModules['globalallusers'] = 'ApiQueryGlobalAllUsers';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
