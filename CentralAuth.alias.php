@@ -200,6 +200,7 @@ $specialPageAliases['fa'] = array(
 	'GlobalGroupPermissions' => array( 'اختیارات_سراسری_گروه' ),
 	'WikiSets' => array( 'ویرایش_مجموعه‌های_ویکی' ),
 	'GlobalUsers' => array( 'کاربران_سراسری' ),
+	'MultiLock' => array( 'چندقفلی' ),
 );
 
 /** Finnish (suomi) */
