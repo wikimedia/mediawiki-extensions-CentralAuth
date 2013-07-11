@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_7e4691c4",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c305cb_9e0a6dd2",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_3efa59bb",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-11T16:34:22Z",
       "side": 1,
       "message": "Unusual variable name.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_3e25390d",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c305cb_3efa59bb",
       "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_be7929fc",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c305cb_be2e4942",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_9e338daa",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 13
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_4b0f9638",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c305cb_9e338daa",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_de2d0546",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 13
@@ -81,6 +153,24 @@
       "writtenOn": "2013-07-11T16:34:22Z",
       "side": 1,
       "message": "You\u0027re fetching every global user-group mapping, in the entire database, with no limit? That seems like it won\u0027t scale too well, even though it works for now when we only have 428 entries in global_user_groups.",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_ce2434b7",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "I forgot that from and to isn\u0027t always set... that makes this a little expensive at times",
+      "parentUuid": "49c305cb_de2d0546",
       "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "49c305cb_0e1f6c59",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "core is prefixing these",
+      "parentUuid": "49c305cb_3ec9b95c",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c305cb_beb809e7",
         "filename": "api/ApiQueryGlobalAllUsers.php",
         "patchSetId": 13
@@ -149,6 +257,24 @@
       "writtenOn": "2013-07-11T16:34:22Z",
       "side": 1,
       "message": "Why no excludegroup, like from list\u003dallusers?\n\nOh, I see it was there in PS11, but broken because it was being done wrong. What you want your SQL query to look like for excludegroup\u003dA|B|C is something like \"SELECT ... FROM globaluser LEFT JOIN global_user_groups ON( gug_user \u003d gu_id AND gug_group IN (\u0027A\u0027,\u0027B\u0027,\u0027C\u0027) ) WHERE gug_user IS NULL\".",
+      "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_ee23f0a8",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-11T19:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c305cb_beb809e7",
       "revId": "36e7cb5af7479380df94eb0d04daba3245bd37c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
