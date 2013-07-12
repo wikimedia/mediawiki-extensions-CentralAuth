@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_ff61d83a",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "It might be nice to mention that it\u0027s heavily based on ApiQueryAllUsers.php from mediawiki/core, for attribution.",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_bf67604f",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "Nice!",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_bfc80024",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "In the API, boolean results are indicated by including the key with the empty string as value for true, and omitting the key entirely for false.\n\nThis is an unfortunate result of things originally being coded for the XML format.\n\nSo what you need here is something along the lines of\n\n  if ( isset( $prop[\u0027existslocally\u0027] ) \u0026\u0026 $row-\u003elu_wiki !\u003d null ) {\n      $entry[\u0027existslocally\u0027] \u003d \u0027\u0027;\n  }",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_ffd278cf",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "Same as line 157.",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_3fd530b6",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "This comment doesn\u0027t seem accurate anymore.",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_5fd8eced",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "Space needed after subtraction operator",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_df95fce3",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-12T15:52:44Z",
+      "side": 1,
+      "message": "May as well pass false for the $sort parameter here, since it doesn\u0027t matter how the results are ordered and it might let the database be more efficient about the query.",
+      "revId": "527882c185bc3627e3374a65e2bb71d2198d65b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
