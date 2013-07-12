@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_7017d544",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 401
+      },
+      "writtenOn": "2013-07-12T22:34:44Z",
+      "side": 1,
+      "message": "You need to document the hook parameters. I scanned through other extensions\u0027 wfRunHook calls and didn\u0027t find a doxygen block for a hook, maybe it\u0027s at the top of file.\n\nI added http://www.mediawiki.org/wiki/Extension:CentralAuth/CentralAuthPostLoginRedirect ,like the exising hook subpage CentralAuthWikiList .\n\nAs I understand the code following, users will only be auto-redirected if wgCentralAuthSilentLogin is true, otherwise LoginForm:showReturnPage() will show them the existing \"Welcome {logged-in,new} user\" end-of-form-submission page.  If that\u0027s true then extensions need to know what behavior is going to happen, maybe.",
+      "revId": "178862272a26cec40a7158b1b66db005ea8160d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
