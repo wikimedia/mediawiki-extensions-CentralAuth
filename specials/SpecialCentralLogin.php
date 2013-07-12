@@ -204,6 +204,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
 
+		// Allow other extensions to modify the returnTo and returnToQuery
+		wfRunHooks( 'CentralAuthPostLoginRedirect', array(
+				&$attempt['returnTo'],
+				&$attempt['returnToQuery'],
+				$attempt['type']
+		) );
+
 		if ( $wgCentralAuthSilentLogin ) {
 			// Mark the session to include the edge login imgs on the next pageview
 			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
