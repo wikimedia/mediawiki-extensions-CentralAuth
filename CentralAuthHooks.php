@@ -422,7 +422,8 @@ class CentralAuthHooks {
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
 				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' ),
-				'finalProto'    => $finalProto
+				'finalProto'    => $finalProto,
+				'type'          => $request->getText( 'type' )
 			);
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)

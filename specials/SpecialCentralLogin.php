@@ -210,6 +210,15 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 			// Show the login success page
 			$form = new LoginForm( new FauxRequest() );
+
+			// Allow other extensions to modify the returnTo and returnToQuery
+			wfRunHooks( 'CentralAuthPostLoginRedirect', array(
+				&$attempt['returnTo'],
+				&$attempt['returnToQuery'],
+				$attempt['stickHTTPS'],
+				$attempt['type']
+			) );
+
 			$form->showReturnToPage( 'successredirect',
 				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
 			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
