@@ -16,6 +16,24 @@
       "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_161ada77",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-13T21:35:23Z",
+      "side": 1,
+      "message": "It should for most cases. The hole is if the logged-into wiki doesn\u0027t have $wgCentralAuthLoginWiki while the remote wiki does, or vice versa.\n\nSay enwiki doesn\u0027t have $wgCentralAuthLoginWiki set while mediawikiwiki does. Someone logs in on enwiki, and since $wgCentralAuthLoginWiki isn\u0027t set there it doesn\u0027t do the redirect to loginwiki. Then when enwiki makes an iframe for mediawikiwiki, mediawikiwiki redirects over to loginwiki for the central query, which doesn\u0027t have any login, so it fails.\n\nConversely, if someone logs in on mediawikiwiki, it does the loginwiki redirect and then makes an iframe for enwiki. Since $wgCentralAuthLoginWiki isn\u0027t set on enwiki, it uses mediawikiwiki as its central wiki, but then mediawikiwiki rejects the query because it thinks the central query should have gone to loginwiki.\n\nIt seems that this patch is aimed at the latter situation.",
+      "parentUuid": "49c305cb_7626aed2",
+      "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
