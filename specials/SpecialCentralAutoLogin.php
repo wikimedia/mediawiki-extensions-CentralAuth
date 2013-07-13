@@ -360,7 +360,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	private function checkIsCentralWiki( &$wikiId ) {
-		if ( wfWikiID() !== $this->loginWiki ) {
+		if ( wfWikiID() !== $this->loginWiki
+			&& wfWikiID() !== $this->getRequest()->getVal( 'from' ) // if origin is spoofing central
+		) {
 			$this->doFinalOutput( false, 'Not central wiki' );
 			return false;
 		}
