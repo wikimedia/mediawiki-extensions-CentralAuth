@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_7626aed2",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-07-13T21:14:35Z",
+      "side": 1,
+      "message": "Isn\u0027t the code at the top of SpecialCentralAutoLogin::execute supposed to handle this?",
+      "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
