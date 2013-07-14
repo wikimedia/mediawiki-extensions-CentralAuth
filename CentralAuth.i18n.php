@@ -9337,6 +9337,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Imre
  * @author Jatrobat
  * @author Locos epraix
+ * @author Luis Felipe Schenone
  * @author Manuelt15
  * @author MarcoAurelio
  * @author Nenino 10
@@ -9535,6 +9536,8 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-action-hide-none' => 'Mostrar cuentas seleccionadas',
 	'centralauth-admin-action-hide-lists' => 'Ocultar las cuentas seleccionadas de las listas públicas',
 	'centralauth-admin-action-hide-oversight' => 'Ocultar completamente las cuentas seleccionadas',
+	'centralauth-admin-multi-bot' => 'Cambios recientes',
+	'centralauth-admin-multi-botcheck' => 'Marcar entradas en [[Especial:CambiosRecientes|{{int:recentchanges}}]] como entradas de bots.', # Fuzzy
 	'centralauth-seconds-ago' => 'hace $1 {{PLURAL:$1|segundo|segundos}}',
 	'centralauth-minutes-ago' => 'hace $1 {{PLURAL:$1|minuto|minutos}}',
 	'centralauth-hours-ago' => 'hace $1 {{PLURAL:$1|hora|horas}}',
@@ -9557,8 +9560,8 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-invalid-wiki' => 'No existe tal wiki en la base de datos: $1',
 	'centralauth-account-exists' => 'No se puede crear la cuenta: el nombre de usuario solicitado ya existe en el sistema unificado de autenticación.',
 	'centralauth-account-exists-reset' => 'El nombre de usuario $1 no está registrado en este wiki, pero existe en el sistema de identificación unificada.',
+	'centralauth-login-progress' => 'Iniciando sesión en wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Has sido automáticamente registrado dentro de otros proyectos de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Has sido automáticamente desregistrado de los otros proyectos de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'ocultada globalmente por $1 a las $2 con la siguiente razón: $3',
 	'centralauth-log-name' => 'Registro de administración de cuentas globales',
 	'centralauth-log-header' => 'Este registro contiene las operaciones bajo cuentas globales: borrados, protecciones y desprotecciones.',
@@ -9638,8 +9641,8 @@ Nota que un grupo no existe a menos que tenga permisos asignados a él.',
 	'centralauth-editgroup-perms' => 'Permisos asignados:',
 	'centralauth-editgroup-reason' => 'Razón:',
 	'centralauth-editgroup-success' => 'Se ha cambiado el grupo global',
-	'centralauth-editgroup-success-text' => 'Ha cambiado con éxito los permisos del grupo $1.
-[[Special:GlobalGroupPermissions|Volver a la gestión de grupos]]', # Fuzzy
+	'centralauth-editgroup-success-text' => 'El grupo global $1 fue actualizado con éxito.
+[[Special:GlobalGroupPermissions|Volver a la gestión de grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-editgroup-nowikiset' => 'Ninguno, aplica a todos los wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki en que tienen una cuenta:',
@@ -9688,7 +9691,7 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'right-centralauth-oversight' => 'Suprimir o ocultar una cuenta global',
 	'right-centralauth-merge' => 'Fusionar su cuenta',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
-	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globales a los que pertenece {{GENDER:$1|el usuario|la usuaria}}', # Fuzzy
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globales a los que pertenece el usuario',
 	'action-centralauth-lock' => 'Bloquear o desbloquear una cuenta global',
 	'centrallogin' => 'Registro del usuario central en',
 	'centralloginsuccesful' => 'Se inició la sesión correctamente',
@@ -13412,7 +13415,7 @@ $messages['hi'] = array(
 	'centralauth-list-unattached-title' => 'न जुडे हुए खातें',
 	'centralauth-list-unattached' => 'नीचे दी हुई साईट्स पर "$1" यह खाता आपकाही हैं इसकी निश्चिती अपने आप नहीं हो पाई हैं; शायद उनका कूटशब्द अलग हो सकता हैं:',
 	'centralauth-foreign-link' => '$2 पर सदस्य $1',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|योगदान|योगदान}} $2 पे',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|योगदान}} $2 पे',
 	'centralauth-merge-method-primary' => 'होम विकि',
 	'centralauth-merge-method-empty' => 'योगदान दिया नहीं हैं',
 	'centralauth-merge-method-mail' => 'इ-मेल द्वारा निश्चित किया गया',
@@ -13428,7 +13431,7 @@ $messages['hi'] = array(
 	'centralauth-merge-method-password-desc' => 'दर्शाता है कि स्थानीय खाता विलय कर दिया गया था क्योंकि सदस्य ने उसके लिये सही कूटशब्द बताया था।',
 	'centralauth-merge-method-new-desc' => 'सूचित करता है की वैश्विक खाते स्वचालित रूप से निर्मित होता है जब स्थानीय खाते बनता है',
 	'centralauth-merge-method-login-desc' => 'सूचित करता है की स्थानीय खाते स्वचालित रूप से निर्मित होता है जब सदस्य लग इन करता है',
-	'centralauth-finish-title' => 'एकत्रिकरण खतम करें',
+	'centralauth-finish-title' => 'एकत्रिकरण पूर्ण करें',
 	'centralauth-finish-text' => 'अगर निम्नलिखित अकाउंट आपही के हैं तो उनके कूटशब्द देकर आप इन्हें एकत्रित कर सकतें हैं:',
 	'centralauth-finish-password' => 'कूटशब्द:',
 	'centralauth-finish-login' => 'लॉग इन',
@@ -13445,7 +13448,7 @@ $messages['hi'] = array(
 अगर एकत्रित अकाउंट आपकाही हैं, तो उसका कूटशब्द देकर आप इसे जोड सकतें हैं:',
 	'centralauth-attach-submit' => 'खाता स्थलांतरित करें',
 	'centralauth-attach-success' => 'खाता एकत्रित खातेसे जोड दिया गया हैं।',
-	'centralauth' => 'केंद्रीय प्रमाणित',
+	'centralauth' => 'वैश्विक सदस्यता प्रबंधन',
 	'centralauth-admin-intro' => 'यह इंटरफ़ेस वैश्विक खाते की प्रबंधन के लिए उपयोग हो सकता है',
 	'centralauth-admin-manage' => 'सदस्य डाटा का व्यवस्थापन करें',
 	'centralauth-admin-username' => 'सदस्यनाम:',
@@ -13461,7 +13464,7 @@ $messages['hi'] = array(
 	'centralauth-admin-info-locked' => 'लॉक किया हुआ:',
 	'centralauth-admin-info-hidden' => 'छुपाया हुआ:', # Fuzzy
 	'centralauth-admin-nohome' => 'यह निर्धारित करने में असमर्थ',
-	'centralauth-admin-yes' => 'हां',
+	'centralauth-admin-yes' => 'हाँ',
 	'centralauth-admin-no' => 'नहीं',
 	'centralauth-admin-hidden-list' => 'सार्वजनिक सूची से',
 	'centralauth-admin-hidden-oversight' => 'ओवरसाईट',
@@ -13540,10 +13543,8 @@ $messages['hi'] = array(
 	'centralauth-invalid-wiki' => 'ऐसा विकि नहीं हैं DB: $1',
 	'centralauth-account-exists' => 'खाता खोल नहीं सकते: पूछा गया सदस्यनाम पहले से विश्व खाते के लिये सुरक्षित हैं।',
 	'centralauth-account-exists-reset' => 'य सदस्य $1 इस विकि पे पंजीकृत नहीं किया है, किन्तु एकीकृत लॉगइन सिस्टम में मौजूद है ।',
-	'centralauth-login-progress' => 'आप इन सब विकि में लगइन हो रहे हैं {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'आप इन सब विकि से लगआउट हो रहे हैं {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'आप इन सब विकि में लगइन हो रहे हैं {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'आप स्वचालित रूप से अन्य परियोजनाओं में लॉग इन हुए है {{int:Centralauth-समूहनाम}}।',
-	'centralauth-logout-no-others' => 'आप स्वचालित रूप से अन्य परियोजनाओं से लॉग आउट हुए है {{int:Centralauth-समूहनाम}}।',
 	'centralauth-hidden-blockreason' => '$1 द्वारा  दुनिया भर से छुपायागया $2 पर निम्नलिखित कारण के साथ: $3',
 	'centralauth-log-name' => 'वैश्विक अकाउंट व्यवस्थापन सूची',
 	'centralauth-log-header' => 'इस सूची में वैश्विक खातोंसे संबंधित कार्य दर्शाये गये हैं: हटाना, ताला लगाना तथा ताला खोलना।',
@@ -18550,7 +18551,7 @@ $messages['ko'] = array(
 	'centralauth-editgroup-name' => '그룹 이름:',
 	'centralauth-editgroup-display' => '번역된 그룹의 이름:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|편집]])',
-	'centralauth-editgroup-invalid-name' => '지정한 공통 그룹 이름이 잘못되었습니다',
+	'centralauth-editgroup-invalid-name' => '지정한 공통 권한 그룹 이름이 잘못되었습니다',
 	'centralauth-editgroup-member' => '그룹 구성원의 번역된 이름:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|편집]])',
 	'centralauth-editgroup-members' => '사용자 목록:',
@@ -18558,11 +18559,11 @@ $messages['ko'] = array(
 	'centralauth-editgroup-restrictions' => '이 그룹을 활성화할 위키의 집합:',
 	'centralauth-editgroup-rename-taken' => '이름 바꾸기를 실패했습니다: $1 이름으로 된 그룹이 이미 있습니다.',
 	'centralauth-editgroup-noset' => '(없음)',
-	'centralauth-editgroup-submit' => '공통 그룹 바뀜을 저장',
+	'centralauth-editgroup-submit' => '공통 권한 그룹 바뀜을 저장',
 	'centralauth-editgroup-perms' => '부여된 권한:',
 	'centralauth-editgroup-reason' => '이유:',
 	'centralauth-editgroup-success' => '공통 그룹이 바뀌었습니다',
-	'centralauth-editgroup-success-text' => '$1 공통 그룹을 성공적으로 업데이트했습니다.
+	'centralauth-editgroup-success-text' => '$1 공통 권한 그룹을 성공적으로 업데이트했습니다.
 [[Special:GlobalGroupPermissions|그룹 권한 관리로 돌아갑니다]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-editgroup-nowikiset' => '모든 위키에 적용할 위키 집합이 없습니다.',
@@ -24694,7 +24695,7 @@ $messages['or'] = array(
 	'centralauth-invalid-wiki' => 'ସେହିପରି କିଛି ଉଇକି ଡାଟାବେସ ନାହିଁ: $1',
 	'centralauth-account-exists' => 'ଖାତା ତିଆରି କରାଯାଇପାରିବ ନାହିଁ: ଅନୁରୋଧ କରାଯାଇଥିବା ଇଉଜର ନାମ ଆଗରୁ ଏକାକୀକରଣ ଲଗ ଇନ ସିଷ୍ଟମରେ ନିଆ ସରିଅଛି ।',
 	'centralauth-account-exists-reset' => '$1 ଇଉଜର ନାମଟି ଏହି ଉଇକିରେ ପଞ୍ଜିକରଣ କରାଯାଇନାହିଁ, କିନ୍ତୁ ଏହା ଏକାକୀକାରଣ ଲଗ ଇନ ସିଷ୍ଟମରେ ରହିଅଛି ।',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}} ର ବାକି ପ୍ରକଳ୍ପ ଭିତରକୁ ଆପଣଙ୍କୁ ପଶାଉଛୁ:', # Fuzzy
+	'centralauth-login-progress' => 'ଆପଣଙ୍କୁ {{int:Centralauth-groupname}}ର ଏହି ସବୁ ପ୍ରସଙ୍ଗରେ ଲଗ-ଇନ କରାଉଛୁ :',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣ ଆପେଆପେ ଲଗଆଉଟ ହୋଇଯାଇଛନ୍ତି',
 	'centralauth-hidden-blockreason' => ': $3 ପାଇଁ $1 ଙ୍କ ଦେଇ $2 ଠାରେ ଲୁଚାଯାଇଛି',
 	'centralauth-log-name' => 'ବିଶ୍ଵ ଖାତା ଇତିହାସ',
