@@ -34,6 +34,24 @@
       "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_ffdd5112",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-14T22:53:21Z",
+      "side": 1,
+      "message": "Correct, the 2nd case above is the one that is causing issues right now. People login to test2wiki, which opens an iframe to www.wikidata.org. wikidatawiki doesn\u0027t have $wgCentralAuthLoginWiki set, so it redirects back to test2wiki instead of loginwiki. So when people visit test.wikidata.org, they aren\u0027t logged in.\n\nThe first case above isn\u0027t too likely, since wiki which don\u0027t have $wgCentralAuthLoginWiki set should probably use the old-style auto login anyway. Unless there\u0027s a simple fix for that as well.",
+      "parentUuid": "49c305cb_161ada77",
+      "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
