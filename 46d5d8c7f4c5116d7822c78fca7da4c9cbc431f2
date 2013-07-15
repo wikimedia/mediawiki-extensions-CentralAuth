@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_c5524612",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-15T14:44:42Z",
+      "side": 1,
+      "message": "A comment explaining why you\u0027re adding this would be useful for future programmers looking at this code.",
+      "revId": "46d5d8c7f4c5116d7822c78fca7da4c9cbc431f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_055d7e1e",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-15T14:44:42Z",
+      "side": 1,
+      "message": "Separate lines, please. Vertical space isn\u0027t that expensive.",
+      "revId": "46d5d8c7f4c5116d7822c78fca7da4c9cbc431f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_25587a2f",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-15T14:44:42Z",
+      "side": 1,
+      "message": "First time through, you\u0027ll get an \"Undefined variable: previousName\" warning.",
+      "revId": "46d5d8c7f4c5116d7822c78fca7da4c9cbc431f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_85496e63",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-15T14:44:42Z",
+      "side": 1,
+      "message": "I see I was misunderstood in PS15. The declaration for addWhereRange looks like this:\n\n  protected function addWhereRange( $field, $dir, $start, $end, $sort \u003d true )\n\nSetting that 5th parameter false prevents it from adding an \u0027ORDER BY\u0027 clause to the query. You do need to pass the same $dir as the original query, because $firstUser and $lastUser depend on the direction.",
+      "revId": "46d5d8c7f4c5116d7822c78fca7da4c9cbc431f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
