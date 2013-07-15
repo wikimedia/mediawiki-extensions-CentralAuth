@@ -52,6 +52,24 @@
       "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_ea4d9174",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-07-15T03:36:24Z",
+      "side": 1,
+      "message": "I was more curious whether it could be fixed in that same code block, but it probably doesn\u0027t matter.",
+      "parentUuid": "49c305cb_ffdd5112",
+      "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
