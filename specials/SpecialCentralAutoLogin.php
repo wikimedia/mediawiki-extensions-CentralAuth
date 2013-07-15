@@ -26,6 +26,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
 				$this->loginWiki = $fromwiki;
 			}
+		} elseif( $request->getVal( 'from' ) === wfWikiId() && $wgCentralAuthLoginWiki !== wfWikiId() ) {
+			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
+			$this->do302Redirect( $wgCentralAuthLoginWiki, $par, $request->getValues() );
+			return;
 		}
 
 		$params = $request->getValues(
