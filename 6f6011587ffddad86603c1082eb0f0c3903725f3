@@ -88,6 +88,24 @@
       "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_c57ec6e0",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-15T17:11:41Z",
+      "side": 1,
+      "message": "I\u0027m fine either way. We just need to get a fix for this merged today.",
+      "parentUuid": "49c305cb_85f20e97",
+      "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
