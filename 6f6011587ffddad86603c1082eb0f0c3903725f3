@@ -70,6 +70,24 @@
       "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c305cb_85f20e97",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-15T16:49:13Z",
+      "side": 1,
+      "message": "Well, we could add something like this above line 29\n\n     } elseif ( $request-\u003egetVal( \u0027from\u0027 ) \u003d\u003d\u003d wfWikiId() \u0026\u0026 $wgCentralAuthLoginWiki !\u003d\u003d wfWikiId() ) {\n         // Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.\n         $this-\u003edo302Redirect( $wgCentralAuthLoginWiki, $par, $_GET );",
+      "parentUuid": "49c305cb_ea4d9174",
+      "revId": "6f6011587ffddad86603c1082eb0f0c3903725f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
