@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c305cb_c08cf182",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 519
+      },
+      "writtenOn": "2013-07-16T00:05:30Z",
+      "side": 1,
+      "message": "I agree with S.  It seems reasonable to either only call this hook for wgCentralAuthSilentLogin, or pass wgCentralAuthSilentLogin to the hook.\n\nI think I prefer the first.",
+      "revId": "a3f68bc64a76c74fb3361c11c688ea9dfb612cb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
