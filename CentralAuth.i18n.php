@@ -6380,6 +6380,7 @@ $messages['ce'] = array(
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-blocked-indef' => 'Блоктоьхна хан чаккхе йоцуш. Бахьна: $1',
 	'centralauth-admin-reason' => 'Бахьан:',
+	'centralauth-admin-status-intro' => 'Ахьа лело мега хӀара форма хӀокху глобальни дӀаяздаран статус хийцош.',
 	'globalusers' => 'Масхьара декъашхойн могIам',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат|сахьат|сахьат}} тӀехьа', # Fuzzy
 	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
