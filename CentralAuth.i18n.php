@@ -4007,7 +4007,7 @@ Sori!',
 	'centralauth-error-locked' => 'Ika dae makakapagliwat nin huli ta an saimong panindog nakakandado.',
 	'centralauth-error-unmerged' => 'Ika dae makakapagliwat nin huli ta an saimong panindog bakong pinagkasararo.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Magbasa nin kadagdagan mapanununogd sa '''pinagkasararong paglalaog''']]…''",
-	'centralauth-list-home-title' => 'Harong na wiki',
+	'centralauth-list-home-title' => 'Pagharongon kan wiki',
 	'centralauth-list-home-dryrun' => 'An pasa-taramon asin e-surat na estada sa wiking ini gagamiton para sa saimong pinagkasararong panindog.',
 	'centralauth-list-attached-title' => 'Nakadukot na mga panindog',
 	'centralauth-list-attached' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pinagdukot na sa pinagkasararong panindog:',
@@ -4061,7 +4061,7 @@ An ibang mga panindog dae pa tabi kumpirmado.',
 	'centralauth-admin-info-username' => 'Paragamit na pangaran:',
 	'centralauth-admin-info-id' => 'Paragamit na ID:',
 	'centralauth-admin-info-registered' => 'Rehistrado:',
-	'centralauth-admin-info-home' => 'Ginikanang wiki:',
+	'centralauth-admin-info-home' => 'Kapamayuhanang wiki:',
 	'centralauth-admin-info-editcount' => 'Kabilogang bilang nin pagliwat:',
 	'centralauth-admin-info-locked' => 'Kinandado:',
 	'centralauth-admin-info-hidden' => 'Itinagong grado:',
@@ -10221,6 +10221,7 @@ $messages['ext'] = array(
  * @author Huji
  * @author Ladsgroup
  * @author Leyth
+ * @author Mahdiz
  * @author Mardetanha
  * @author Mjbmr
  * @author Pouyana
@@ -10480,6 +10481,9 @@ $messages['fa'] = array(
 	'centralauth-centralautologin-badstate-local' => 'وضعیت «$1» در ویکی محلی معتبر نیست',
 	'centralauth-centralautologin-badwiki' => 'ویکی «$1» برای ثبت ورود مرکزی معتبر نیست',
 	'centralauth-centralautologin-corsfail' => 'بررسی خاستگاه اشتراک‌گذاری منابع میان‌خاستگاهی نافرجام ماند.',
+	'centralauth-centralautologin-p3p-explanation' => "برای ارسال و دریافت کوکی‌ها مرورگرهای بسیاری به P3P نیازمندند، که شامل وضعیت‌هایی که کنترل ورود به سامانهٔ SUL لازم است که یک پرش ناخواسته به این وضعیت است، در نظر بگیرید که همه صفحه‌های شامل یک گروه ویکی و P3P به تنهایی دورافتاده و رها شده‌اند. خوشبختانه سیاست پیوندهای غیرمعتبر به این صفحه، تنظیمات پیش‌فرض برای این مروگرها را ''به اندازهٔ کافی خوب'' در نظر می‌گیرد.
+
+لطفاً سیاست‌های حریم خصوصی قابل مطالعهٔ این وب‌گاه را مطالعه کنید و در آن چگونگی استفاده از اطلاعات جمع‌آوری‌شده را بیان می‌کند.",
 	'centralauth-centralautologin-logged-in' => 'شما به صورت مرکزی به عنوان $1 ثبت ورود شده‌اید. برای به کار بستن تنظیمات کاربری‌تان لطفاً صفحه را بازآوری کنید.',
 	'globalgroupmembership' => 'عضویت در گروه‌های سراسری',
 	'globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
@@ -10580,6 +10584,18 @@ $messages['fa'] = array(
 	'centralauth-warning-notloggedin' => 'شما در حال حاضر ثبت ورود نشده‌اید.',
 	'centralauth-warning-notattached' => 'حساب محلی به یک حساب سراسری نپیوسته است.',
 	'centralauth-finishglobaliseemail_subject' => 'تأیید حساب {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'آدرس رایانامه شما با توجه به حساب شما "$2" در تمامی پروژه ها هماهنگ شده است. حساب اصلی شما نیز در {{SITENAME}} قراردارد.
+
+برای تایید آنکه این اکانت واقعا به شما تعلق دارد. البته توجه داشته باشید که ادغام حساب های کاربری نمیتواندبه صورت خودکار انجام شود.
+همچنین اگر شما گذرواژه حساب خودتان را گم کرده اید میتوانید از پیوند زیر استفاده نمایید.
+
+$3
+
+اگر این حساب متعلق به شما نیست، لطفا وارد پیوند زیر شده تا این درخواست منقضی گردد.
+
+$5
+
+این درخواست در تاریخ $6 ساعت $7 منقضی می شود.',
 );
 
 /** Finnish (suomi)
@@ -22699,6 +22715,7 @@ $messages['myv'] = array(
 $messages['mzn'] = array(
 	'centralauth-merge-method-login' => 'بساته بَیی، دله بموئن په',
 	'centralauth-admin-blocked-indef' => 'بی‌پایون قطع‌دسترسی بیه. ونه دلیل:$1',
+	'centralauth-admin-multi-bot' => 'تازه دگاردسته‌ئون',
 );
 
 /** Nahuatl (Nāhuatl)
