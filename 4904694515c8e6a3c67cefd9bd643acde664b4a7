@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9845590_0362b03e",
+        "filename": "modules/ext.centralauth.centralautologin.css",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2013-07-18T18:55:40Z",
+      "side": 1,
+      "message": "This causes VisualEditor to render \"shields\" (transparent images on top of references and templates) as completely black for logged-out users. Isn\u0027t there a way that this style could be applied only where it\u0027s needed, rather than to the entire \u003cbody\u003e on every page?",
+      "revId": "4904694515c8e6a3c67cefd9bd643acde664b4a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
