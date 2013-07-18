@@ -282,12 +282,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// This is also hacky.
 			$script .= Xml::encodeJsCall(
-				"jQuery( '#p-personal ul' ).html",
+				"jQuery( '#p-personal' ).addClass( 'centralAuthPPersonal' )
+					.find( 'ul' ).html",
 				array( $html )
 			);
 
-			// Sigh.
-			$script .= "jQuery( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );";
+			// Trigger the animation
+			$script .= "jQuery( '#p-personal' ).addClass( 'centralAuthPPersonalLoggedin' );";
 
 			// Fire a hook for other extensions to listen for
 			$script .= "mediaWiki.hook( 'centralauth-p-personal-reset' ).fire();";
