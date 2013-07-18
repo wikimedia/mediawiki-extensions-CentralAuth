@@ -15,6 +15,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	function execute( $par ) {
 		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
 
+		$notLoggedInScript = "var t = new Date();" .
+			"t.setTime( t.getTime() + 86400000 );" .
+			"if ( 'localStorage' in window ) {" .
+			"localStorage.setItem( 'CentralAuthAnon', t.getTime() );" .
+			"} else {" .
+			"document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';" .
+			"}";
+
 		$request = $this->getRequest();
 
 		$this->loginWiki = $wgCentralAuthLoginWiki;
@@ -77,14 +85,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUser::setP3P();
 			$gu_id = +$request->getVal( 'gu_id', 0 );
 			if ( $gu_id <= 0 ) {
-				$script = "var t = new Date();" .
-					"t.setTime( t.getTime() + 86400000 );" .
-					"if ( 'localStorage' in window ) {" .
-					"localStorage.setItem( 'CentralAuthAnon', t.getTime() );" .
-					"} else {" .
-					"document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';" .
-					"}";
-				$this->doFinalOutput( false, 'Not centrally logged in', $script );
+				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
 				return;
 			}
 
@@ -191,6 +192,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
 				wfDebug( __METHOD__ . ": $msg\n" );
 				$this->doFinalOutput( false, 'Lost session' );
+				return;
+			}
+			if ( !$centralUser->isAttached() ) {
+				$this->doFinalOutput( false, 'Local user is not attached', $notLoggedInScript );
 				return;
 			}
 			$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
