@@ -25255,7 +25255,9 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-action-hide-nochange' => 'Nie należy zmieniać ukrytych poziomów',
 	'centralauth-admin-action-hide-none' => 'Pokaż wybrane konta',
 	'centralauth-admin-action-hide-lists' => 'Ukryj wybrane konta z listy publicznej',
+	'centralauth-admin-action-hide-oversight' => 'Całkowicie ukryj zaznaczone konta',
 	'centralauth-admin-multi-bot' => 'Ostatnie zmiany',
+	'centralauth-admin-multi-botcheck' => 'Oznacz wpisy na stronie [[Special:RecentChanges|{{int:recentchanges}}]] jako dokonane przez boty.',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|przed sekundą|$1 sekundy temu|$1 sekund temu}}',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|przed minutą|$1 minuty temu|$1 minut temu}}',
 	'centralauth-hours-ago' => '{{PLURAL:$1|przed godziną|$1 godziny temu|$1 godzin temu}}',
@@ -25277,7 +25279,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-invalid-wiki' => 'Nie istnieje wiki DB: $1',
 	'centralauth-account-exists' => 'Utworzenie konta nie jest możliwe – wybrana nazwa użytkownika jest zajęta przez konto uniwersalne.',
 	'centralauth-account-exists-reset' => 'Nazwa użytkownika $1 nie jest zarejestrowana na tej wiki, ale nie ma jej również wśród kont uniwersalnych.',
-	'centralauth-login-progress' => '{{GENDER:|Zostałeś zalogowany|Zostałaś zalogowana|Zalogowano Cię}} także do innych wiki {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => '{{GENDER:|Zostałeś zalogowany|Zostałaś zalogowana|Zalogowano Cię}} także do innych wiki {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Zostałeś automatycznie zalogowany do innych projektów z {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'centralnie ukryte przez $1 o $2 ponieważ $3',
 	'centralauth-log-name' => 'Rejestr zarządzania kontami uniwersalnymi',
@@ -25312,8 +25314,13 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 Po [[Special:UserLogin|zalogowaniu się]], przeglądarka na polecenie systemu centralnego logowania, wczytuje tę stronę z każdej obsługiwanej domeny, używając linku jak do grafiki.
 Zażądałeś tej strony bez podania informacji o uwierzytelnieniu, stąd brak obsługi.',
 	'centralautologin' => 'Logowanie centralne',
+	'centralauth-centralautologin-desc' => 'Ta strona specjalna jest używana wewnętrznie przez MediaWiki.
+Kiedy odwiedzasz linkowaną domenę gdy nie jesteś zalogowany, system centralnego logowania używa tej strony do określenia czy jesteś zalogowany na centralną domenę.
+Żądałeś wyświetlenia tej strony bez podania żadnych danych autoryzacyjnych, więc aktualnie ona nic nie wykona.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Jesteś już zalogowany lokalnie',
+	'centralauth-centralautologin-badparams' => 'Podane parametry uwierzytelnienia są nieprawidłowe',
 	'centralauth-centralautologin-lostsession' => 'Dane sesji zostały utracone',
+	'centralauth-centralautologin-logged-in' => '{{GENDER:$2|Zostałeś centralnie zalogowany|Zostałaś centralnie zalogowana|Zalogowano cię centralnie}} jako $1. Przeładuj stronę, aby zastosować ustawienia użytkownika.',
 	'globalgroupmembership' => 'Przynależność do grup globalnych',
 	'globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 	'centralauth-globalgroupperms-grouplist' => 'Skonfigurowane zostały następujące grupy globalne.
@@ -25338,10 +25345,10 @@ Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Spis użytkowników z uprawnieniami $2]]',
 	'centralauth-editgroup-restrictions' => 'Zbiór wiki, w których ta grupa jest aktywna',
 	'centralauth-editgroup-noset' => '(brak)',
-	'centralauth-editgroup-submit' => 'Zapisz zmiany uprawnień grup', # Fuzzy
+	'centralauth-editgroup-submit' => 'Zapisz zmiany globalnych grup',
 	'centralauth-editgroup-perms' => 'Przyznane uprawnienia:',
 	'centralauth-editgroup-reason' => 'Powód',
-	'centralauth-editgroup-success' => 'Uprawnienia grupy zostały zmienione', # Fuzzy
+	'centralauth-editgroup-success' => 'Grupa globalna została zmieniona',
 	'centralauth-editgroup-success-text' => 'Zmieniłeś uprawnienia grupy $1.
 [[Special:GlobalGroupPermissions|Powrót do zarządzania grupą]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|edytuj]])',
@@ -26174,6 +26181,7 @@ $messages['ps'] = array(
  * @author Helder.wiki
  * @author João Sousa
  * @author Lijealso
+ * @author Luckas
  * @author Malafaya
  * @author Opraco
  * @author Rhaijin
@@ -26257,7 +26265,7 @@ Note que pode ser diferente da wiki de acolhimento ''(home wiki)'' do utilizador
 	'centralauth-merge-method-mail-desc' => 'Indica que a conta local foi fundida porque o seu endereço de correio electrónico correspondia ao da conta principal.',
 	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi fundida porque o utilizador especificou uma palavra-chave válida.',
 	'centralauth-merge-method-admin-desc' => "Indica que a conta local foi fundida manualmente por ''stewards''.
-Esta funcionalidade está agora desactivada por razões de segurança.",
+Esta funcionalidade está agora desativada por razões de segurança.",
 	'centralauth-merge-method-new-desc' => 'Indica que a conta global foi criada automaticamente quando a conta local foi criada.',
 	'centralauth-merge-method-login-desc' => 'Indica que a conta local foi criada automaticamente quando o utilizador se autenticou.',
 	'centralauth-finish-title' => 'Completar fusão',
@@ -26374,9 +26382,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de utilizador pretendido já está a ser utilizado no sistema de autenticação unificada.',
 	'centralauth-account-exists-reset' => 'O utilizador $1 não está registado nesta wiki, mas existe no sistema de autentificação unificada',
 	'centralauth-login-progress' => 'Está a ser autenticad{{GENDER:$1|o|a|o/a}} nas wikis da {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'A sair das outras wikis da {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Foi automaticamente desautenticado das wikis {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalmente ocultada por $1 na $2 com o seguinte motivo: $3',
 	'centralauth-log-name' => 'Registo de contas globais',
 	'centralauth-log-header' => 'Este registo contém operações sobre contas globais: remoções, bloqueios e desbloqueios.',
@@ -31353,6 +31359,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-admin-action-hide-none' => 'Ta fram markerade konton',
 	'centralauth-admin-action-hide-lists' => 'Dölj markerade konton från offentliga listor',
 	'centralauth-admin-action-hide-oversight' => 'Dölj markerade konton helt',
+	'centralauth-admin-multi-bot' => 'Senaste ändringar',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekund|sekunder}} sedan',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minut|minuter}} sedan',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|timme|timmar}} sedan',
