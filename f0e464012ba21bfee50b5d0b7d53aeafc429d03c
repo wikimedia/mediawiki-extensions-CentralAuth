@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9845590_54a9ccdd",
+        "filename": "modules/ext.centralauth.centralautologin.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2013-07-18T20:56:23Z",
+      "side": 1,
+      "message": "Missing space between #p-personal and .  ? (Also for the first selector)",
+      "revId": "f0e464012ba21bfee50b5d0b7d53aeafc429d03c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
