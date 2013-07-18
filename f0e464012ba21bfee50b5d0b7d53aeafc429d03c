@@ -16,6 +16,24 @@
       "revId": "f0e464012ba21bfee50b5d0b7d53aeafc429d03c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9845590_145ca4e9",
+        "filename": "modules/ext.centralauth.centralautologin.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2013-07-18T21:16:45Z",
+      "side": 1,
+      "message": "No, that\u0027s correct. I guess the \"#p-personal\" part could be skipped, though.",
+      "parentUuid": "c9845590_54a9ccdd",
+      "revId": "f0e464012ba21bfee50b5d0b7d53aeafc429d03c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
