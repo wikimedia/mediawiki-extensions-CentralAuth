@@ -282,15 +282,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// This is also hacky.
 			$script .= Xml::encodeJsCall(
-				'window.jQuery( \'#p-personal ul\' ).html',
+				"jQuery( '#p-personal ul' ).html",
 				array( $html )
 			);
 
 			// Sigh.
-			$script .= 'window.jQuery( \'#p-personal\' ).addClass( \'centralAuthPPersonalAnimation\' );';
+			$script .= "jQuery( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );";
 
 			// Fire a hook for other extensions to listen for
-			$script .= 'mw.hook( \'centralauth-p-personal-reset\' ).fire();';
+			$script .= "mediaWiki.hook( 'centralauth-p-personal-reset' ).fire();";
 
 			if ( CentralAuthHooks::isUIReloadRecommended( $this->getUser() ) ) {
 				$gender = $this->getUser()->getOption( 'gender' );
@@ -305,14 +305,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$code = $this->getUser()->getOption( 'language' );
 				$code = RequestContext::sanitizeLangCode( $code );
 				wfRunHooks( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
-				$script .= Xml::encodeJsCall( 'window.mediaWiki.messages.set', array(
+				$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
 					'centralauth-centralautologin-logged-in',
 					wfMessage( 'centralauth-centralautologin-logged-in' )
 						->inLanguage( $code )->plain()
 				) );
 
-				$script .= Xml::encodeJsCall( 'window.mediaWiki.notify', array(
-					new XmlJsCode( trim( Xml::encodeJsCall( 'window.mediaWiki.message', array(
+				$script .= Xml::encodeJsCall( 'mediaWiki.notify', array(
+					new XmlJsCode( trim( Xml::encodeJsCall( 'mediaWiki.message', array(
 						'centralauth-centralautologin-logged-in',
 						$this->getUser()->getName(),
 						$gender
