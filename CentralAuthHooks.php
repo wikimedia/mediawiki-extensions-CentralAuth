@@ -325,50 +325,68 @@ class CentralAuthHooks {
 	 * @return String
 	 */
 	public static function getDomainAutoLoginHtml( User $user, CentralAuthUser $centralUser ) {
-		global $wgCentralAuthAutoLoginWikis, $wgMemc;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgMemc;
 
 		// No other domains
 		if ( !$wgCentralAuthAutoLoginWikis ) {
-			return wfMessage( 'centralauth-login-no-others' )->text();
-		}
+			$inject_html = wfMessage( 'centralauth-login-no-others' )->text();
+		} else {
+			$inject_html = '<div class="centralauth-login-box"><p>' .
+				wfMessage( 'centralauth-login-progress', $user->getName() )->text() . "</p>\n<p>";
+			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
+				$wiki = WikiMap::getWiki( $wikiID );
 
-		$inject_html = '<div class="centralauth-login-box"><p>' .
-			wfMessage( 'centralauth-login-progress', $user->getName() )->text() . "</p>\n<p>";
-		foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
-			$wiki = WikiMap::getWiki( $wikiID );
+				global $wgCentralAuthUseOldAutoLogin;
+				if ( $wgCentralAuthUseOldAutoLogin ) {
+					// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+					$data = array(
+						'userName' => $user->getName(),
+						'token' => $centralUser->getAuthToken(),
+						'remember' => $user->getOption( 'rememberpassword' ),
+						'wiki' => $wikiID
+					);
 
-			global $wgCentralAuthUseOldAutoLogin;
-			if ( $wgCentralAuthUseOldAutoLogin ) {
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$data = array(
-					'userName' => $user->getName(),
-					'token' => $centralUser->getAuthToken(),
-					'remember' => $user->getOption( 'rememberpassword' ),
-					'wiki' => $wikiID
+					$loginToken = MWCryptRand::generateHex( 32 );
+					$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
+					$url = wfAppendQuery( $wiki->getFullUrl( 'Special:AutoLogin' ), "token=$loginToken" );
+				} else {
+					// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+					$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
+						'type' => 'icon',
+						'from' => wfWikiID(),
+					) );
+				}
+				$inject_html .= Xml::element( 'img',
+					array(
+						'src' => $url,
+						'alt' => $alt,
+						'title' => $alt,
+						'width' => 20,
+						'height' => 20,
+						'style' => 'border: 1px solid #ccc;',
+					)
 				);
-
-				$loginToken = MWCryptRand::generateHex( 32 );
-				$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:AutoLogin' ), "token=$loginToken" );
-			} else {
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
-					'type' => 'icon',
-					'from' => wfWikiID(),
-				) );
 			}
+			$inject_html .= "</p></div>\n";
+		}
+		if ( $wgCentralAuthLoginWiki ) {
+			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
+				'type' => '1x1',
+				'wikiid' => wfWikiID(),
+			) );
 			$inject_html .= Xml::element( 'img',
 				array(
 					'src' => $url,
-					'alt' => $alt,
-					'title' => $alt,
-					'width' => 20,
-					'height' => 20,
-					'style' => 'border: 1px solid #ccc;',
+					'alt' => '',
+					'title' => '',
+					'width' => 1,
+					'height' => 1,
+					'style' => 'border: none; position: absolute;',
 				)
 			);
 		}
-		$inject_html .= "</p></div>\n";
 
 		return $inject_html;
 	}
@@ -1020,13 +1038,31 @@ class CentralAuthHooks {
 				$out->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', null );
 				global $wgCentralAuthSilentLogin;
 				if ( $wgCentralAuthSilentLogin ) {
-					global $wgCentralAuthAutoLoginWikis;
+					global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 					foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
 						$wiki = WikiMap::getWiki( $wiki );
 						// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 						$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
 							'type' => '1x1',
 							'from' => wfWikiID(),
+						) );
+						$out->addHTML( Xml::element( 'img',
+							array(
+								'src' => $url,
+								'alt' => '',
+								'title' => '',
+								'width' => 1,
+								'height' => 1,
+								'style' => 'border: none; position: absolute;',
+							)
+						) );
+					}
+					if ( $wgCentralAuthLoginWiki ) {
+						$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+						// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+						$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
+							'type' => '1x1',
+							'wikiid' => wfWikiID(),
 						) );
 						$out->addHTML( Xml::element( 'img',
 							array(

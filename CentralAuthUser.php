@@ -2037,9 +2037,12 @@ class CentralAuthUser extends AuthPluginUser {
 	 *  true: Force setting the secure attribute when setting the cookie
 	 *  false: Force NOT setting the secure attribute when setting the cookie
 	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
+	 * @param array $sessionData Extra key-value pairs to include in the session
 	 * @return string Session ID
 	 */
-	function setGlobalCookies( $remember = false, $refreshId = false, $secure = null ) {
+	function setGlobalCookies(
+		$remember = false, $refreshId = false, $secure = null, $sessionData = array()
+	) {
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -2051,6 +2054,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$session['token'] = $this->getAuthToken();
 		$session['expiry'] = time() + 86400;
 		$session['auto-create-blacklist'] = array();
+		$session += $sessionData;
 
 		if ( $remember ) {
 			self::setCookie( 'Token', $this->getAuthToken(), -1, $secure );
@@ -2395,6 +2399,7 @@ class CentralAuthUser extends AuthPluginUser {
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		}
+		$data['sessionId'] = $id;
 		$key = self::memcKey( 'session', $id );
 		$wgMemc->set( $key, $data, 86400 );
 		return $id;
