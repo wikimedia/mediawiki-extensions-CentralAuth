@@ -90,6 +90,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'pending_guid' => $centralUser->getId()
 		), true, $secureCookie );
 		CentralAuthUser::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
+		CentralAuthUser::setCookie( 'Token', '', -86400, $secureCookie );
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
@@ -187,13 +188,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $wgSecureLogin && !$attempt['stickHTTPS'] ) {
 			$secureCookie = false;
 		}
-		$centralUser->setGlobalCookies( $_SESSION[$skey]['remember'], $info['sessionId'], $secureCookie );
-
-		//Add to the session the target protocol of the login, so autologin can use it
-		$centralSessionKey = CentralAuthUser::memcKey( 'session', $info['sessionId'] );
-		$centralSession = $wgMemc->get( $centralSessionKey );
-		$centralSession['finalProto'] = $attempt['finalProto'];
-		$wgMemc->set( $centralSessionKey, $centralSession, 86400 );
+		$centralUser->setGlobalCookies( $attempt['remember'], $info['sessionId'], $secureCookie, array(
+			'finalProto' => $attempt['finalProto'],
+			'remember' => $attempt['remember'],
+		) );
 
 		// Remove the "current login attempt" information
 		$request->setSessionData( $skey, null );
