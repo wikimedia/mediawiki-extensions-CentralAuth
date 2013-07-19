@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9845590_e715d19a",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-19T17:10:52Z",
+      "side": 1,
+      "message": "Undefined property: ApiQueryGlobalAllUsers::$mDb in .../extensions/CentralAuth_orig/api/ApiQueryGlobalAllUsers.php on line 39\n\nYou need !isset, not is_null.",
+      "revId": "bd9fa850a7dfaf21bcc76b991c94704be28cfd81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9845590_c7628d41",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-19T17:10:52Z",
+      "side": 1,
+      "message": "count( $result ) will always be 1 (there\u0027s 1 ResultWrapper object). You probably want $result-\u003enumRows().",
+      "revId": "bd9fa850a7dfaf21bcc76b991c94704be28cfd81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9845590_47259d0b",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-19T17:10:52Z",
+      "side": 1,
+      "message": "PHP Notice:  Undefined index: 5 in .../extensions/CentralAuth_orig/api/ApiQueryGlobalAllUsers.php on line 156\n\nUse isset() or !empty().",
+      "revId": "bd9fa850a7dfaf21bcc76b991c94704be28cfd81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9845590_e7c87125",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-19T17:10:52Z",
+      "side": 1,
+      "message": "Double spaces?",
+      "revId": "bd9fa850a7dfaf21bcc76b991c94704be28cfd81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9845590_87516563",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-19T17:10:52Z",
+      "side": 1,
+      "message": "$result-\u003eseek() doesn\u0027t return the row, or anything for that matter. You\u0027ll need something like\n\n  $result-\u003eseek( 0 );\n  $firstUser \u003d $result-\u003efetchObject()-\u003egu_name;\n  $result-\u003eseek( $result-\u003enumRows() - 1 );\n  $lastUser \u003d $result-\u003efetchObject()-\u003egu_name;",
+      "revId": "bd9fa850a7dfaf21bcc76b991c94704be28cfd81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
