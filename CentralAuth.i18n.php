@@ -6377,6 +6377,7 @@ $messages['ce'] = array(
 	'centralauth-admin-manage' => 'Декъашхон хаам урхалла дар',
 	'centralauth-admin-username' => 'Декъашхон цӀе:',
 	'centralauth-admin-lookup-ro' => 'Декъашхон хааме хьажар',
+	'centralauth-admin-info-header' => 'Декъашхон глобальни хаам',
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-blocked-indef' => 'Блоктоьхна хан чаккхе йоцуш. Бахьна: $1',
 	'centralauth-admin-reason' => 'Бахьан:',
@@ -9350,6 +9351,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Luis Felipe Schenone
  * @author Manuelt15
  * @author MarcoAurelio
+ * @author Miguel2706
  * @author Nenino 10
  * @author Pertile
  * @author Peter17
@@ -9547,7 +9549,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-action-hide-lists' => 'Ocultar las cuentas seleccionadas de las listas públicas',
 	'centralauth-admin-action-hide-oversight' => 'Ocultar completamente las cuentas seleccionadas',
 	'centralauth-admin-multi-bot' => 'Cambios recientes',
-	'centralauth-admin-multi-botcheck' => 'Marcar entradas en [[Especial:CambiosRecientes|{{int:recentchanges}}]] como entradas de bots.', # Fuzzy
+	'centralauth-admin-multi-botcheck' => 'Marcar las entradas en [[Especial:CambiosRecientes| {{int:recentchanges}}]] como entradas de bot.', # Fuzzy
 	'centralauth-seconds-ago' => 'hace $1 {{PLURAL:$1|segundo|segundos}}',
 	'centralauth-minutes-ago' => 'hace $1 {{PLURAL:$1|minuto|minutos}}',
 	'centralauth-hours-ago' => 'hace $1 {{PLURAL:$1|hora|horas}}',
@@ -13233,6 +13235,8 @@ $messages['he'] = array(
 	'centralauth-admin-action-hide-none' => 'לבטל את ההסתרה של החשבונות הנבחרים',
 	'centralauth-admin-action-hide-lists' => 'להסתיר את החשבונות הנבחרים מרשימות ציבוריות',
 	'centralauth-admin-action-hide-oversight' => 'להסתיר לגמרי את החשבונות הנבחרים',
+	'centralauth-admin-multi-bot' => 'שינויים אחרונים',
+	'centralauth-admin-multi-botcheck' => 'סימון ישויות ב[[Special:RecentChanges|{{int:recentchanges}}]] בתור עיולי בוט.',
 	'centralauth-seconds-ago' => 'לפני {{PLURAL:$1|שנייה|$1 שניות}}',
 	'centralauth-minutes-ago' => 'לפני {{PLURAL:$1|דקה|$1 דקות}}',
 	'centralauth-hours-ago' => 'לפני {{PLURAL:$1|שעה|שעתיים|$1 שעות}}',
@@ -13254,10 +13258,8 @@ $messages['he'] = array(
 	'centralauth-invalid-wiki' => 'אין מסד נתונים בשם $1',
 	'centralauth-account-exists' => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
 	'centralauth-account-exists-reset' => 'שם המשתמש $1 לא רשום בוויקי הזה, אבל הוא קיים במערכת החשבון המאוחד.',
-	'centralauth-login-progress' => 'כניסה לחשבון באתרי ויקי של {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'יציאה מהחשבון באתרים אחרים של {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'מתבצעת כניסה לחשבונך באתרי ויקי של {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'נכנסתם באופן אוטומטי לחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'יצאתם באופן אוטומטי מהחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'הוסתר באופן גלובלי על ידי $1 ב־$2 מהסיבה הבאה: $3',
 	'centralauth-log-name' => 'יומן החשבון הכללי',
 	'centralauth-log-header' => 'יומן זה כולל פעולות שבוצעו על חשבונות כלליים: מחיקות, נעילות וביטולי נעילות.',
@@ -26330,7 +26332,7 @@ Motivo: $1',
 	'centralauth-admin-list-blocked' => 'Bloqueada',
 	'centralauth-admin-unmerge' => 'Desfazer a fusão das selecionadas',
 	'centralauth-admin-merge' => 'Fundir selecionadas',
-	'centralauth-admin-bad-input' => 'Selecção para fusão inválida',
+	'centralauth-admin-bad-input' => 'Seleção para fusão inválida',
 	'centralauth-admin-none-selected' => 'Não foram selecionadas contas para modificar.',
 	'centralauth-admin-already-unmerged' => 'Ignorando $1, fusão já foi desfeita',
 	'centralauth-admin-unmerge-success' => 'Fusão de $1 {{PLURAL:$1|conta|contas}} desfeita com sucesso',
