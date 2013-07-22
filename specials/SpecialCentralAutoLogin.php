@@ -54,6 +54,28 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-p3p-explanation' );
 			return;
 
+		case 'refreshCookies': // Refresh central cookies (e.g. in case 'remember me' was set)
+			if ( !$wgCentralAuthLoginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
+				return;
+			}
+
+			CentralAuthUser::setP3P();
+			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
+			if ( $centralUser && $centralUser->getId() ) {
+				$centralSession = $centralUser->getSession();
+				$secureCookie = null;
+				if ( $centralSession['finalProto'] == 'http' ) {
+					$secureCookie = false;
+				}
+				$centralUser->setGlobalCookies(
+					$centralSession['remember'], false, $secureCookie, $centralSession
+				);
+				$this->doFinalOutput( true, 'success' );
+			} else {
+				$this->doFinalOutput( false, 'Not logged in' );
+			}
+			return;
+
 		case 'start': // Main entry point
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
@@ -151,6 +173,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
 				'cookieProto' => $centralSession['finalProto'],
+				'remember' => $centralSession['remember'],
+				'sessionId' => $centralSession['sessionId'],
 			);
 			$wgMemc->set( $key, $memcData, 60 );
 
@@ -227,7 +251,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $memcData['cookieProto'] == 'http' ) {
 				$secureCookie = false;
 			}
-			$centralUser->setGlobalCookies( false, true, $secureCookie );
+			$centralUser->setGlobalCookies(
+				$memcData['remember'], $memcData['sessionId'], $secureCookie, array(
+					'finalProto' => $memcData['cookieProto'],
+					'remember' => $memcData['remember'],
+				)
+			);
 
 			// Now, figure out how to report this back to the user.
 
