@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9845590_a6b6603b",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-07-22T17:10:11Z",
+      "side": 1,
+      "message": "I guess this should actually be\n$limit +\u003d ( count( $params[\u0027group\u0027] ) -1 ) * $limit;",
+      "revId": "3d3de791a78250deb7ab84fe1c89a3022e55e3a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
