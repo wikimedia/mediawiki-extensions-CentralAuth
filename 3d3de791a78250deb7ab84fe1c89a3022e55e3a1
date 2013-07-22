@@ -16,6 +16,24 @@
       "revId": "3d3de791a78250deb7ab84fe1c89a3022e55e3a1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9845590_86c4fc94",
+        "filename": "api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-22T17:28:41Z",
+      "side": 1,
+      "message": "Not really. We don\u0027t need to care if the user requested limit\u003d50 and we only give back 1 user before continuing, the API is allowed to do that. We just need to make sure we return a continuation if continuation is needed.\n\nThe continue logic works by requesting one row more than what the user requested, and if we get that one extra row we know where to start next time. But in this situation requesting one extra row isn\u0027t enough, because it might belong to the same user as the last row we are actually returning. But we know that there are at most N rows per user, so we can ask for an extra N instead of an extra 1 and know things will still work.",
+      "parentUuid": "c9845590_a6b6603b",
+      "revId": "3d3de791a78250deb7ab84fe1c89a3022e55e3a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
