@@ -6379,13 +6379,13 @@ $messages['ce'] = array(
 	'centralauth-merge-method-primary' => '«ЦӀера» вики-проект',
 	'centralauth' => 'Глобальни декъашхойн дӀаяздаршан урхалла дар',
 	'centralauth-admin-intro' => 'ХӀара интерфейс лело мега глобальни декъашхойн дӀаяздаршан урхалла да.',
-	'centralauth-admin-manage' => 'Декъашхон хаам урхалла дар',
-	'centralauth-admin-username' => 'Декъашхон цӀе:',
-	'centralauth-admin-lookup-ro' => 'Декъашхон хааме хьажар',
-	'centralauth-admin-info-header' => 'Декъашхон глобальни хаам',
-	'centralauth-admin-info-username' => 'Декъашхон цӀе:',
-	'centralauth-admin-info-id' => 'Декъашхон ID:',
-	'centralauth-admin-info-registered' => 'Декъашхон дӀаяздар кхоьллина хан:',
+	'centralauth-admin-manage' => 'Декъашхочун хаам урхалла дар',
+	'centralauth-admin-username' => 'Декъашхочун цӀе:',
+	'centralauth-admin-lookup-ro' => 'Декъашхочун хааме хьажар',
+	'centralauth-admin-info-header' => 'Декъашхочун глобальни хаам',
+	'centralauth-admin-info-username' => 'Декъашхочун цӀе:',
+	'centralauth-admin-info-id' => 'Декъашхочун ID:',
+	'centralauth-admin-info-registered' => 'Декъашхочун дӀаяздар кхоьллина хан:',
 	'centralauth-admin-info-home' => '«ЦӀера» вики-проект:',
 	'centralauth-admin-info-editcount' => 'Массо нисдаршан ларар:',
 	'centralauth-admin-info-locked' => 'ГӀорина:',
@@ -6407,7 +6407,7 @@ $messages['ce'] = array(
 	'centralauth-prefs-complete' => 'Дик ду!',
 	'centralauth-prefs-count-attached' => 'Хьан йиш ю $1 {{PLURAL:$1|проектехь|проекташкахь|проекташкахь}} болх ба.', # Fuzzy
 	'centralauth-prefs-manage' => 'ЦӀерца болх ба йиш йолу проекташ',
-	'centralauth-prefs-view' => 'Декъашхон глобальни хаам хьажар',
+	'centralauth-prefs-view' => 'Декъашхочун глобальни хаам хьажар',
 	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин {{int:Centralauth-groupname}} кхолламашкахь:', # Fuzzy
 	'centralauth-log-status-none' => '(яц)',
 	'centralautologin' => 'Юкъара системин чугӀо меттиг',
@@ -6421,10 +6421,18 @@ $messages['ce'] = array(
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|хийцам бар]])',
 	'centralauth-editgroup-noset' => '(яц)',
 	'centralauth-editgroup-reason' => 'Бахьан:',
+	'centralauth-editset' => 'Вики гӀирсашан гулам',
+	'centralauth-editset-legend-ro' => 'Вики гӀирсашан могӀам',
+	'centralauth-editset-intro-ro' => 'Лахахь гайтина, болуш болу вики гӀирсашан гулам.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|дӀаяккха]])',
+	'centralauth-editset-optout' => 'Юкъара яхаран кепаца (юкъа туху массо, билгал йинарш йоцурш)',
+	'centralauth-editset-name' => 'Цlе:',
+	'centralauth-editset-type' => 'Тайп:',
+	'centralauth-editset-restwikis' => 'Юкъахь йоцу викеш лакхахь ю:',
 	'centralauth-editset-reason' => 'Бахьан:',
 	'centralauth-editset-submit-delete' => 'ДӀаяккха',
 	'centralauth-editset-nouse' => '(яц)',
+	'centralauth-editset-usage' => 'Лелош ю тобаншан:',
 	'right-centralauth-merge' => 'ДӀаяздарш цхьаьнатохар',
 	'right-globalgrouppermissions' => 'урхалла дар масхьара тобанашна',
 	'centrallogin' => 'Юкъара системин чугӀо меттиг',
@@ -16077,6 +16085,7 @@ Hóp má eyða með því að fjarlægja öll réttindi hans.',
  * @author Melos
  * @author Nemo bis
  * @author Pietrodn
+ * @author Wim b
  */
 $messages['it'] = array(
 	'mergeaccount' => 'Processo di unificazione delle utenze - status',
@@ -16319,6 +16328,7 @@ Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così n
 	'centralauth-centralautologin-badstate-central' => 'Stato "$1" non valido nel wiki centrale',
 	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
 	'centralauth-centralautologin-corsfail' => 'Controllo di origine CORS non riuscito',
+	'centralauth-centralautologin-logged-in' => 'Sei {{GENDER:$2|loggato|loggata|loggato}} globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.',
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist' => 'I seguenti gruppi globali sono stati configurati.
