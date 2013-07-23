@@ -6415,6 +6415,7 @@ $messages['ce'] = array(
 	'centralauth-globalgroupperms-grouplist' => 'Нийса йина лахара глобальни бакъонаш.
 Хьан йиш ю хьажа я хийца бакъонаш хьай оьшуш йолу бакъо елахь.
 Тоба дӀаяккха мега цара ерриг бакъонаш дӀаяхна.',
+	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|хийцамашка/хьажар]])',
 	'centralauth-existinggroup-legend' => 'Йолуш йолу бакъонаш',
 	'centralauth-newgroup-intro' => 'Ахьа лело мега хӀара форма керлачу тобана бакъонаш xӀoттo. Дагахь латтаде цӀа бакъо йоцуш тоба хийла йиш яц.',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
@@ -16328,7 +16329,7 @@ Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così n
 	'centralauth-centralautologin-badstate-central' => 'Stato "$1" non valido nel wiki centrale',
 	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
 	'centralauth-centralautologin-corsfail' => 'Controllo di origine CORS non riuscito',
-	'centralauth-centralautologin-logged-in' => 'Sei {{GENDER:$2|loggato|loggata|loggato}} globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.',
+	'centralauth-centralautologin-logged-in' => "Hai effettuato l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist' => 'I seguenti gruppi globali sono stati configurati.
@@ -26416,7 +26417,7 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-prefs-unattached' => 'Não confirmado',
 	'centralauth-prefs-complete' => 'Tudo em ordem!',
 	'centralauth-prefs-migration' => 'Em migração',
-	'centralauth-prefs-count-attached' => 'A sua conta encontra-se activa {{PLURAL:$1|num site|em $1 sites}}.',
+	'centralauth-prefs-count-attached' => 'A sua conta encontra-se ativa {{PLURAL:$1|num site|em $1 sites}}.',
 	'centralauth-prefs-count-unattached' => 'Ainda {{PLURAL:$1|existe uma conta não confirmada|existem contas não confirmadas}} com o seu nome de utilizador {{PLURAL:$1|numa wiki|em $1 wikis}}.',
 	'centralauth-prefs-detail-unattached' => 'Não foi confirmado que esta wiki esteja acoplada à conta global.',
 	'centralauth-prefs-manage' => 'Administrar a sua conta global',
@@ -31219,6 +31220,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Dafer45
  * @author Diupwijk
  * @author GameOn
+ * @author Hangsna
  * @author Jopparn
  * @author Lejonel
  * @author Leo Johannes
@@ -31406,6 +31408,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-admin-action-hide-lists' => 'Dölj markerade konton från offentliga listor',
 	'centralauth-admin-action-hide-oversight' => 'Dölj markerade konton helt',
 	'centralauth-admin-multi-bot' => 'Senaste ändringar',
+	'centralauth-admin-multi-botcheck' => 'Markera poster på [[Special: RecentChanges| {{int:recentchanges}}]] som botredigeringar.', # Fuzzy
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekund|sekunder}} sedan',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minut|minuter}} sedan',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|timme|timmar}} sedan',
@@ -36012,6 +36015,7 @@ $messages['zea'] = array(
  * @author Li3939108
  * @author Liangent
  * @author PhiLiP
+ * @author Qiyue2001
  * @author Shizhao
  * @author StephDC
  * @author Xiaomingyan
@@ -36249,11 +36253,19 @@ $messages['zh-hans'] = array(
 	'autologin' => '自动登录',
 	'centralauth-autologin-desc' => '这个特殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，中央登入系统会利用图像链接，指示您的浏览器向所有关联的域名请求这个页面。您在访问本页面时未提供验证数据，因此本页无效。',
 	'centralautologin' => '中央登录',
+	'centralauth-centralautologin-desc' => '此特殊页面由MediaWiki于内部使用。当你未登入时进入一个相连域名，中央登入系统使用此页以确定你是否已登入至中心域名。你请求本页面没有提供任何身份验证资料，因此其它不会执行任何操作。',
 	'centralauth-centralautologin-alreadyloggedinlocally' => '您已经在本地登录了',
 	'centralauth-centralautologin-badparams' => '指定的认证参数无效',
 	'centralauth-centralautologin-lostsession' => '会话数据丢失',
 	'centralauth-centralautologin-badstate' => '无效状态“$1”',
 	'centralauth-centralautologin-notposted' => '中央登录表单必须以HTTP POST方式传递',
+	'centralauth-centralautologin-badstate-central' => '主维基的“$1”状态无效',
+	'centralauth-centralautologin-badstate-local' => '本地维基的“$1”状态无效',
+	'centralauth-centralautologin-badwiki' => '维基“$1”不可使用中央登入',
+	'centralauth-centralautologin-corsfail' => 'CORS起源检查失败',
+	'centralauth-centralautologin-p3p-explanation' => '某些浏览器于某些情况下需要使用P3P压缩政策以发送或接收cookie，包括所涉及的SUL登入检查。在此情况下，考虑到涉及的所有页面都位于相同的维基组而P3P本身大多已过时并遗弃，此跳转并不必要；幸运的是，连至此页的无效政策于浏览器的预设设定来说已是“足够”。
+
+请查看此网站的人类可读隐私权原则以确定收集到的任何资讯将如何使用。',
 	'centralauth-centralautologin-logged-in' => '您目前以$1登录。刷新页面以加载您的用户设置。',
 	'globalgroupmembership' => '在全域组中的成员',
 	'globalgrouppermissions' => '全局用户组管理',
@@ -36343,10 +36355,27 @@ $messages['zh-hans'] = array(
 	'centralauth-completelogin-text' => '即将完成验证您在维基媒体基金会站点的帐户！使用下面的按钮确认和完成登录。',
 	'centralauth-completelogin-submit' => '现在登录',
 	'centralauth-completelogin-back' => '返回前一页',
+	'centralauth-error-nologinattempt' => '你的会话没有主动登入尝试正在进行。',
 	'centralauth-error-badtoken' => '提供的身份令牌已过期或无效。',
+	'centralauth-error-token-wrongattempt' => '身份验证令牌并不属于你目前的登入尝试。
+有人可能试图利用恶意账号登入。',
+	'centralauth-error-token-wronguser' => '令牌与您的会话用户名称不匹配。
+有人可能试图利用恶意账号登入。
+若你只是希望以另一个账号登入，请先登出。',
 	'centralauth-warning-notloggedin' => '您目前没有登录。',
 	'centralauth-warning-notattached' => '本地帐户未附加到一个全域帐户。',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} 帐户确认',
+	'centralauth-finishglobaliseemail_body' => '你的电邮地址与维基媒体计划上的用户“$2”连结，该用户的主账号位于{{SITENAME}}。
+
+为确保此账号确实属于阁下、合并你的所有账号及容许你可以于失去密码后恢复密码，请在浏览器中打开以下链接：
+
+$3
+
+若此账号*并不*属于阁下，请按以下连结以取消账号确认：
+
+$5
+
+此确认号码将于$6$7过期。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
