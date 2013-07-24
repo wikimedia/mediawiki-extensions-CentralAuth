@@ -420,7 +420,7 @@ $wgResourceModules['ext.centralauth.globalgrouppermissions'] = array(
 // If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
 // Though, doing it this way, AntiSpoof has to be loaded/included first
 // I guess this is bug 30234
-if ( MWInit::classExists( 'AntiSpoof' ) ) {
+if ( class_exists( 'AntiSpoof' ) ) {
 	$wgExtensionCredits['antispam'][] = array(
 		'path' => __FILE__,
 		'name' => 'AntiSpoof for CentralAuth',
