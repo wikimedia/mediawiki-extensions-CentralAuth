@@ -2,4 +2,4 @@
 host=gerrit.wikimedia.org
 port=29418
 project=mediawiki/extensions/CentralAuth.git
-defaultbranch=wmf/1.22wmf11
+defaultbranch=wmf/1.22wmf10
