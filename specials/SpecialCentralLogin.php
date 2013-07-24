@@ -110,9 +110,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$url = $info['currentProto'] . ':' . $url;
 
 		if ( $wgCentralAuthSilentLogin ) {
-			$url = wfAppendQuery( $url, array( 'token' => $token ) ); // expands to PROTO_CURRENT if $url doesn't have protocol
-			wfRunHooks( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
-			$this->getOutput()->redirect( $url );
+			$this->getOutput()->redirect( // expands to PROTO_CURRENT if $url doesn't have protocol
+				wfAppendQuery( $url, array( 'token' => $token ) )
+			);
 		} else {
 			$this->getOutput()->addHtml(
 				Xml::openElement( 'form',
