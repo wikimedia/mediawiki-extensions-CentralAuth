@@ -437,6 +437,7 @@ class CentralAuthHooks {
 				'finalProto'    => $finalProto,
 				'currentProto'  => $request->detectProtocol()
 			);
+			wfRunHooks( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
 			$wgMemc->set( $key, $data, 60 );
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
