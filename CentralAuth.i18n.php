@@ -6372,7 +6372,7 @@ $messages['ce'] = array(
 	'centralauth-merge-dryrun-home' => 'Системин цатарло дӀаяздар хьа хилар бакъдан цӀерачу вики чохь.
 
 Амма карийна хӀокху дӀаяздаран кхин «цӀера» вики-проект. Лахахь гайтина йолу хьажориган дихьа гӀой системин чугӀо.',
-	'centralauth-complete' => 'ДIавазвалар/ялар цхьаьнатохар дика чакхдели!',
+	'centralauth-complete' => 'Декъашхочун дӀаяздарш цхьаьнатохар дика чакхдели!',
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
 	'centralauth-complete-text' => 'ХӀинца цхьан дӀаяздарца хьан йиш ю массо {{int:Centralauth-groupname}} проекташкахь болх ба.',
 	'centralauth-list-home-title' => '«ЦӀера» вики-проект',
@@ -14668,10 +14668,8 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-invalid-wiki' => 'Nincs ilyen adatbázis: $1',
 	'centralauth-account-exists' => 'Nem sikerült új felhasználót létrehozni: az egységes bejelentkezési rendszerben már van ilyen felhasználónév.',
 	'centralauth-account-exists-reset' => 'Nincs $1 nevű felhasználó regisztrálva ezen a wikin, de létezik egy egységesített bejelentkezési rendszerben.',
-	'centralauth-login-progress' => 'Bejelentkeztetlek {{int:Centralauth-groupname}} többi projektjébe is:',
-	'centralauth-logout-progress' => 'Kijelentkeztetlek {{int:Centralauth-groupname}} többi projektjéből is:',
+	'centralauth-login-progress' => 'Bejelentkeztetlek {{int:Centralauth-groupname}} többi projektjébe is:', # Fuzzy
 	'centralauth-login-no-others' => 'Automatikusan bejelentkeztél {{int:Centralauth-groupname}} más projektjeibe is.',
-	'centralauth-logout-no-others' => 'Automatikusan kijelentkeztél {{int:Centralauth-groupname}} más projektjeiből is.',
 	'centralauth-hidden-blockreason' => '$1 globálisan elrejtette $2-kor a következő ok miatt: $3',
 	'centralauth-log-name' => 'Globálisfiók-kezelési napló',
 	'centralauth-log-header' => 'Ez a napló a globális felhasználói nevekhez kapcsolódó műveleteket (törlés, lezárás, feloldás) listázza.',
@@ -14781,6 +14779,7 @@ Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
 	'right-centralauth-oversight' => 'Globális fiók elrejtése', # Fuzzy
 	'right-centralauth-merge' => 'saját fiókok egyesítése',
 	'right-globalgrouppermissions' => 'globális csoportok kezelése',
+	'centralloginsuccesful' => 'Sikeres bejelentkezés',
 );
 
 /** Interlingua (interlingua)
@@ -14991,10 +14990,8 @@ Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-invalid-wiki' => 'Non existe le base de datos wiki: $1',
 	'centralauth-account-exists' => 'Non pote crear conto: le nomine de usator requestate es ja in uso in le systema de contos unificate.',
 	'centralauth-account-exists-reset' => 'Le nomine de usator $1 non es registrate in iste wiki, ma existe in le systema de authentication unificate.',
-	'centralauth-login-progress' => 'Apertura de session in le wikis del {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Clausura de session in le altere wikis del {{int:Centralauth-groupname}}:',
+	'centralauth-login-progress' => 'Apertura de session in le wikis del {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'celate globalmente per $1 a $2 pro le motivo sequente: $3',
 	'centralauth-log-name' => 'Registro de contos global',
 	'centralauth-log-header' => 'Iste registro contine operationes concernente contos global: deletiones, serramentos e disserramentos.',
@@ -15119,6 +15116,11 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'right-centralauth-oversight' => 'Supprimer conto global', # Fuzzy
 	'right-centralauth-merge' => 'Fusionar le proprie conto',
 	'right-globalgrouppermissions' => 'Gerer gruppos global',
+	'centralauth-completelogin-submit' => 'Aperir session ora',
+	'centralauth-completelogin-back' => 'Retornar al pagina precedente.',
+	'centralauth-error-nologinattempt' => 'Nulle active tentativa de aperir session es in progresso pro tu session.',
+	'centralauth-error-badtoken' => 'Le indicio de authentication fornite es o expirate o invalide.',
+	'centralauth-error-token-wrongattempt' => 'Le indicio de authentication non pertine a tu actual tentativa de aperir session. Es possibile que alcuno tenta de aperir un session tue sub un conto malitiose.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -21262,10 +21264,10 @@ $messages['mk'] = array(
 	'centralauth-completelogin-submit' => 'Најавете се сега',
 	'centralauth-completelogin-back' => 'Врати се на претходната страница.',
 	'centralauth-error-nologinattempt' => 'Нема тековен обид за најава во вашата сесија.',
-	'centralauth-error-badtoken' => 'Укажаниот жетон за заверка е истечен или неважечки.',
-	'centralauth-error-token-wrongattempt' => 'Жетонот за заверка не му припаѓа на вашиот тековен обид за најава.
+	'centralauth-error-badtoken' => 'Укажаната шифра за заверка е истечена или неважечка.',
+	'centralauth-error-token-wrongattempt' => 'Шифрата за заверка не му припаѓа на вашиот тековен обид за најава.
 Некој можеби сака да ве најави со штетна/злонамерна сметка.',
-	'centralauth-error-token-wronguser' => 'Жетонот не одговара на корисничкото име во сесијата.
+	'centralauth-error-token-wronguser' => 'Шифрата Сне одговара на корисничкото име во сесијата.
 Некој можеби сака да ве најави со штетна/злонамерна сметка.
 Ако всушност се обидувте да се најавите како друг корисник, тогаш најпрвин одјавете се.',
 	'centralauth-warning-notloggedin' => 'Во моментов не сте најавени.',
@@ -33582,6 +33584,7 @@ Yeniden adlandırmak, yerel kullanıcının küreselden ayrılmasına sebep olac
 	'centralauth-autologin-desc' => 'Bu özel sayfa MedyaViki tarafından dahilen kullanılmaktadır.
 [[Special:UserLogin|Giriş yaptığınızda]], merkez giriş sistemi tarayıcınıza talimat verir ve tarayıcınız bu sayfayı bütün bağlanmış domainlerden, resim bağlantılarını kullanarak ister.
 Siz bu sayfayı doğrulama verisi olmaksızın istediniz, bu yüzden hiç bir şey yapılmadı.',
+	'centralauth-centralautologin-logged-in' => 'Merkezi olarak $1 kullanıcı adıyla giriş yaptınız. Kullanıcı ayarlarını uygulamak için sayfayı yeniden yükleyin.',
 	'globalgroupmembership' => 'Küresel gruplarda üyelik',
 	'globalgrouppermissions' => 'Küresel grup yönetimi',
 	'centralauth-globalgroupperms-grouplist' => 'Aşağıdaki küresel gruplar yapılandırıldı.
