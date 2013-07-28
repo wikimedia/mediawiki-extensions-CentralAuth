@@ -14968,6 +14968,8 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 	'centralauth-admin-action-hide-none' => 'Revelar le contos seligite',
 	'centralauth-admin-action-hide-lists' => 'Celar le contos seligite in listas public',
 	'centralauth-admin-action-hide-oversight' => 'Celar completemente le contos seligite',
+	'centralauth-admin-multi-bot' => 'Modificationes recente',
+	'centralauth-admin-multi-botcheck' => 'Marcar entratas in [[Special:RecentChanges|{{int:recentchanges}}]] como entratas de robot.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|secunda|secundas}} retro',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuta|minutas}} retro',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|hora|horas}} retro',
@@ -14990,7 +14992,7 @@ Renominar lo causara que le conto local sia distachate del global.',
 	'centralauth-invalid-wiki' => 'Non existe le base de datos wiki: $1',
 	'centralauth-account-exists' => 'Non pote crear conto: le nomine de usator requestate es ja in uso in le systema de contos unificate.',
 	'centralauth-account-exists-reset' => 'Le nomine de usator $1 non es registrate in iste wiki, ma existe in le systema de authentication unificate.',
-	'centralauth-login-progress' => 'Apertura de session in le wikis del {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-login-progress' => 'Apertura de tu session in le wikis del {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'celate globalmente per $1 a $2 pro le motivo sequente: $3',
 	'centralauth-log-name' => 'Registro de contos global',
@@ -15040,6 +15042,7 @@ Tu ha requestate iste pagina sin fornir alcun dato de authentication, dunque ill
 	'centralauth-centralautologin-p3p-explanation' => 'Certe navigatores require un politica compacte P3P pro le invio o reception de cookies in alcun casos, incluse le situation implicate in le verification de authentication SUL. Isto es un procedura superflue in iste situation, considerante que tote le paginas implicate es in le mesme gruppo de wikis e que P3P mesme es generalmente obsolete e abandonate; fortunatemente, le politica invalide que liga a iste pagina es actualmente considerate como sufficiente in le configuration predefinite de iste navigatores.
 
 Per favor consulta le politica de confidentialitate in texto normal pro determinar como le information colligite pote esser utilisate.',
+	'centralauth-centralautologin-logged-in' => 'Tu ha essite authenticate centralmente como $1. Recarga le pagina pro applicar tu configuration de usator.',
 	'globalgroupmembership' => 'Membrato in gruppos global',
 	'globalgrouppermissions' => 'Gestion de gruppos global',
 	'centralauth-globalgroupperms-grouplist' => 'Le sequente gruppos global ha essite configurate.
@@ -15054,23 +15057,27 @@ Nota que un gruppo non existe si nulle permissiones ha essite assignate a illo.'
 	'centralauth-globalgroupperms-newgroupname' => 'Nomine del nove gruppo:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Assignar permissiones',
 	'centralauth-editgroup-subtitle' => 'Modification de $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Vider $1',
 	'centralauth-editgroup-fieldset' => 'Permissiones pro $1',
 	'centralauth-editgroup-name' => 'Nomine del gruppo:',
 	'centralauth-editgroup-display' => 'Nomine localisate del gruppo:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|modificar]])',
+	'centralauth-editgroup-invalid-name' => 'Le nomine de gruppo specificate non es valide',
 	'centralauth-editgroup-member' => 'Nomine localisate del membros del gruppo:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|modificar]])',
 	'centralauth-editgroup-members' => 'Lista de membros:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de usatores con derectos de $2]]',
 	'centralauth-editgroup-restrictions' => 'Gruppo de wikis ubi iste gruppo es active:',
+	'centralauth-editgroup-rename-taken' => 'Renomination fallite: existe jam un gruppo con le nomine $1.',
 	'centralauth-editgroup-noset' => '(nulle)',
-	'centralauth-editgroup-submit' => 'Confirmar modificationes al permissiones de gruppos', # Fuzzy
+	'centralauth-editgroup-submit' => 'Confirmar modificationes de gruppo global',
 	'centralauth-editgroup-perms' => 'Permissiones assignate:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Le permissiones del gruppo ha essite cambiate', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Tu ha cambiate le permissiones del gruppo $1 con successo.
-[[Special:GlobalGroupPermissions|Retornar al gestion de gruppos]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Gruppo global modificate',
+	'centralauth-editgroup-success-text' => 'Le gruppo global $1 ha essite actualisate.
+[[Special:GlobalGroupPermissions|Retornar al gestion de gruppos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modificar]])',
+	'centralauth-editgroup-nowikiset' => 'Nulle, se applica a tote le wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Le wiki in que iste persona ha un conto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Le usator global '''$1''' non es active in le wiki que tu specificava ('' $2 '').
 Es possibile que tu tenta assignar derectos al mal usator!",
@@ -15107,20 +15114,45 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'centralauth-editset-success' => 'Le gruppo de wikis ha essite cambiate con successo.',
 	'centralauth-editset-success-delete' => 'Gruppo de wikis delite con successo.',
 	'centralauth-editset-return' => 'Retornar al vista principal',
+	'centralauth-block-already-locked' => 'Le usator [[Special:CentralAuth/$1|$1]] es jam serrate globalmente.',
 	'centralauth-readonly' => 'Base de datos CentralAuth blocate',
 	'centralauth-readonlytext' => 'Al momento, le base de datos CentralAuth es blocate contra nove entratas e altere modificationes. Isto es probabilemente pro mantenentia routinari del base de datos. Postea, illo retornara al stato normal.',
 	'right-globalgroupmembership' => 'Modificar membrato in gruppos global',
 	'right-centralauth-autoaccount' => 'Aperir session automaticamente con un conto global',
 	'right-centralauth-unmerge' => 'Disfusionar conto global',
-	'right-centralauth-lock' => 'Serrar o celar conto global', # Fuzzy
-	'right-centralauth-oversight' => 'Supprimer conto global', # Fuzzy
+	'right-centralauth-lock' => 'Serrar o disserrar conto global',
+	'right-centralauth-oversight' => 'Supprimer o celar conto global',
 	'right-centralauth-merge' => 'Fusionar le proprie conto',
 	'right-globalgrouppermissions' => 'Gerer gruppos global',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Gruppos global al quales le usator pertine',
+	'action-centralauth-lock' => 'serrar o disserrar contos global',
+	'centrallogin' => 'Authentication central de usatores',
+	'centralloginsuccesful' => 'Session aperite con successo',
+	'centralauth-completelogin-legend' => 'Completar le processo de authentication',
+	'centralauth-completelogin-finishing' => 'Authentication in le sitos del Fundation Mediawiki. Un momento...',
+	'centralauth-completelogin-text' => 'Le authentication de tu conto in le sitos del Fundation MediaWiki es quasi complete! Usa le button sequente pro confirmar e completar le apertura de tu session.',
 	'centralauth-completelogin-submit' => 'Aperir session ora',
 	'centralauth-completelogin-back' => 'Retornar al pagina precedente.',
 	'centralauth-error-nologinattempt' => 'Nulle active tentativa de aperir session es in progresso pro tu session.',
 	'centralauth-error-badtoken' => 'Le indicio de authentication fornite es o expirate o invalide.',
 	'centralauth-error-token-wrongattempt' => 'Le indicio de authentication non pertine a tu actual tentativa de aperir session. Es possibile que alcuno tenta de aperir un session tue sub un conto malitiose.',
+	'centralauth-error-token-wronguser' => 'Le indicio non corresponde al nomine de usator de tu session.
+Es possibile que alcuno tenta authenticar se como tu per medio de un conto malitiose.
+Si tu simplemente tenta aperir session como un altere usator, per favor claude session primo.',
+	'centralauth-warning-notloggedin' => 'Tu non ha aperite session.',
+	'centralauth-warning-notattached' => 'Le conto local non es attachate a un conto global.',
+	'centralauth-finishglobaliseemail_subject' => 'Confirmation de conto in {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Tu adresse de e-mail ha essite associate al conto "$2" in tote le projectos de Wikimedia, le conto principal essente sur {{SITENAME}}.
+
+Pro confirmar que iste conto vermente pertine a te, pro fusionar eventual contos tue que nos non ha potite fusionar automaticamente, e pro permitter te a recuperar le conto si tu perde le contrasigno, aperi iste ligamine in un navigator del web:
+
+$3
+
+Si le conto *non* pertine a te, seque iste ligamine pro cancellar le confirmation del adresse de e-mail:
+
+$5
+
+Iste codice de confirmation expirara le $6 a $7.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -26249,7 +26281,7 @@ $messages['pt'] = array(
 	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof ao CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] para a Autenticação Unificada',
 	'centralauth-merge-denied' => 'Desculpe, não tem permissão para aceder a esta página.',
-	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.',
+	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram corretamente fundidas.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação unificada das wikis {{int:Centralauth-groupname}}.'''
 
 Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para entrar em todas as wikis da {{int:Centralauth-groupname}} em todas as línguas disponíveis.
@@ -26257,8 +26289,8 @@ Caso decida migrar as suas contas, será possível utilizar o mesmo nome de util
 Caso alguém já tenha um nome de utilizador idêntico ao seu nalguma outra wiki, essa pessoa não será importunada. Posteriormente, terá a possíbilidade de dialogar com a mesma ou com um administrador.",
 	'centralauth-merge-step1-title' => 'Iniciar a unificação da autenticação',
 	'centralauth-merge-step1-detail' => 'Por favor, introduza aqui a palavra-chave da sua conta.
-A palavra-chave e o endereço de correio electrónico serão comparados aos das contas nas outras wikis, para confirmar se coincidem.
-Não serão feitas alterações até que confirme que está tudo correcto.',
+A palavra-chave e o endereço de correio eletrónico serão comparados aos das contas nas outras wikis, para confirmar se coincidem.
+Não serão feitas alterações até que confirme que está tudo correto.',
 	'centralauth-merge-step1-submit' => 'Confirmar informações de autenticação',
 	'centralauth-merge-step2-title' => 'Confirmar contas adicionais',
 	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com a da wiki de acolhimento.
@@ -26578,7 +26610,7 @@ Sua senha e endereço de e-mail registrado serão comparados com os de contas de
 Não serão feitas alterações até que se confime estar tudo correto.',
 	'centralauth-merge-step1-submit' => 'Confirmar informações de login',
 	'centralauth-merge-step2-title' => 'Confirmar mais contas',
-	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a palavra-chave (senha) das mesmas.',
+	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a senha das mesmas.',
 	'centralauth-merge-step2-submit' => 'Confirmar informações de login',
 	'centralauth-merge-dryrun-complete' => 'Todas as contas existentes podem ser unificadas automaticamente!
 
