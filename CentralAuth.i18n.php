@@ -26859,9 +26859,9 @@ Note que um grupo não existe se não tiver permissões atribuídas.',
 	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo', # Fuzzy
 	'centralauth-editgroup-perms' => 'Permissões atribuídas:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Permissões de grupo alteradas', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Alterou com sucesso as permissões do grupo $1.
-[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Grupo global alterado.',
+	'centralauth-editgroup-success-text' => 'Atualizou com sucesso o grupo global $1.
+[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Selecione uma wiki onde possua uma conta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "O usuário global '''$1''' não está ativo na wiki especificada (''$2''). É possível que esteja atribuindo direitos ao usuário errado!",
@@ -26903,8 +26903,8 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
 	'right-centralauth-autoaccount' => 'Acessar automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
-	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global', # Fuzzy
-	'right-centralauth-oversight' => 'Suprimir a conta global', # Fuzzy
+	'right-centralauth-lock' => 'Bloquear ou desbloquear a conta global',
+	'right-centralauth-oversight' => 'Suprimir ou ocultar a conta global',
 	'right-centralauth-merge' => 'Unificar as contas',
 	'right-globalgrouppermissions' => 'Gerenciar grupos globais',
 );
