@@ -218,6 +218,11 @@ $wgCentralAuthWikisPerSuppressJob = 10;
 $wgCentralAuthReadOnly = false;
 
 /**
+ * Use the EventLogging extention to measure various activities
+ */
+$wgCentralAuthUseEventLogging = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
