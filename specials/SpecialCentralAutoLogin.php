@@ -300,6 +300,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Otherwise, we need to rewrite p-personal and maybe notify the user too
+			global $wgCentralAuthUseEventLogging;
+			if ( $wgCentralAuthUseEventLogging ) {
+				efLogServerSideEvent( 'CentralAuth', 5690875,
+					array( 'version' => 1,
+						'userId' => $centralUser->getId(),
+						'action' => 'sul2-autologin-fallbacklogin'
+					)
+				);
+			}
 
 			// This is hacky, and may not work right with all skins and
 			// other extensions.

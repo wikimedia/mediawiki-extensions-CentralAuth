@@ -1013,7 +1013,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onBeforePageDisplay( &$out, &$skin ) {
-		global $wgCentralAuthLoginWiki;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
 		if ( $out->getUser()->isAnon() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
 				$out->addModules( 'ext.centralauth.centralautologin' );
@@ -1075,6 +1075,17 @@ class CentralAuthHooks {
 								'style' => 'border: none; position: absolute;',
 							)
 						) );
+					}
+
+					if ( $wgCentralAuthUseEventLogging ) {
+						// Need to correlate user_id across wikis
+						$centralUser = CentralAuthUser::getInstance( $out->getUser() );
+						efLogServerSideEvent( 'CentralAuth', 5690875,
+							array( 'version' => 1,
+								'userId' => $centralUser->getId(),
+								'action' => 'sul2-autologin-login'
+							)
+						);
 					}
 				}
 			}
