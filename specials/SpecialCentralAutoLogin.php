@@ -45,7 +45,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'from',
 			'return',
 			'returnto',
-			'returnquery'
+			'returnquery',
+			'proto'
 		);
 
 		switch ( strval( $par ) ) {
@@ -62,14 +63,20 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUser::setP3P();
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			if ( $centralUser && $centralUser->getId() ) {
-				$centralSession = $centralUser->getSession();
+				$centralSession = $this->getCentralSession( $centralUser );
+
+				// Refresh 'remember me' preference
+				$remember = (bool)$centralSession['remember'];
+				if ( $remember != $this->getUser()->getBoolOption( 'rememberpassword' ) ) {
+					$this->getUser()->setOption( 'rememberpassword', $remember ? 1 : 0 );
+					$this->getUser()->saveSettings();
+				}
+
 				$secureCookie = null;
 				if ( $centralSession['finalProto'] == 'http' ) {
 					$secureCookie = false;
 				}
-				$centralUser->setGlobalCookies(
-					$centralSession['remember'], false, $secureCookie, $centralSession
-				);
+				$centralUser->setGlobalCookies( $remember, false, $secureCookie, $centralSession );
 				$this->doFinalOutput( true, 'success' );
 			} else {
 				$this->doFinalOutput( false, 'Not logged in' );
@@ -84,6 +91,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUser::setP3P();
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', array(
 				'wikiid' => wfWikiID(),
+				'proto' => $request->detectProtocol(),
 			) + $params );
 			return;
 
@@ -165,10 +173,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			// Notify the attached wiki if cookies need to be insecure
-			$centralSession = $centralUser->getSession();
-
 			// Write info for session creation into memc
+			$centralSession = $this->getCentralSession( $centralUser );
 			$memcData += array(
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
@@ -429,5 +435,29 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 
 		return true;
+	}
+
+	private function getCentralSession( $centralUser ) {
+		$centralSession = $centralUser->getSession();
+
+		// If there's no "finalProto", check if one was passed, and otherwise
+		// assume the current.
+		if ( !isset( $centralSession['finalProto'] ) ) {
+			$request = $this->getRequest();
+			$centralSession['finalProto'] = $request->getVal( 'proto', $request->detectProtocol() );
+		}
+
+		// If there's no "remember", pull from the user preference.
+		if ( !isset( $centralSession['remember'] ) ) {
+			$user = User::newFromName( $centralUser->getName() );
+			$centralSession['remember'] = $user->getBoolOption( 'rememberpassword' );
+		}
+
+		// Make sure there's a session id by creating a session if necessary.
+		if ( !isset( $centralSession['sessionId'] ) ) {
+			$centralSession['sessionId'] = $centralUser->setSession( $centralSession );
+		}
+
+		return $centralSession;
 	}
 }

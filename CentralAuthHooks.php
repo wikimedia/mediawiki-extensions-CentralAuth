@@ -375,6 +375,7 @@ class CentralAuthHooks {
 			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
 				'type' => '1x1',
 				'wikiid' => wfWikiID(),
+				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 			) );
 			$inject_html .= Xml::element( 'img',
 				array(
@@ -1064,6 +1065,7 @@ class CentralAuthHooks {
 						$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
 							'type' => '1x1',
 							'wikiid' => wfWikiID(),
+							'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 						) );
 						$out->addHTML( Xml::element( 'img',
 							array(
