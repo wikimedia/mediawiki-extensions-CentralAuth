@@ -119,7 +119,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			CentralAuthUser::setP3P();
-			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
+			if ( $this->getUser()->isLoggedIn() ) {
+				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
+			} else {
+				$centralUser = null;
+			}
 			$this->do302Redirect( $wikiid, 'createSession', array(
 				'gu_id' => $centralUser ? $centralUser->getId() : 0,
 			) + $params );
@@ -173,6 +177,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->enableClientCache( false );
 
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				return;
+			}
+
+			if ( !$this->getUser()->isLoggedIn() ) {
+				$this->doFinalOutput( false, 'Not logged in' );
 				return;
 			}
 

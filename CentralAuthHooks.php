@@ -509,7 +509,6 @@ class CentralAuthHooks {
 				return true;
 			}
 			$userName = $centralUser->getName();
-			$user->setName( $userName );
 			$token = $centralUser->getAuthToken();
 		} else {
 			$prefix = $wgCentralAuthCookiePrefix;
@@ -547,10 +546,10 @@ class CentralAuthHooks {
 				wfDebug( __METHOD__ . ": invalid username\n" );
 				return true;
 			}
-			$user->setName( $userName );
 
 			// Try the central user
-			$centralUser = CentralAuthUser::getInstance( $user );
+			// Don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
+			$centralUser = new CentralAuthUser( $userName );
 			if ( !$centralUser->exists() ) {
 				wfDebug( __METHOD__ . ": global account doesn't exist\n" );
 				return true;
@@ -579,8 +578,10 @@ class CentralAuthHooks {
 
 		if ( !$localId ) {
 			// User does not exist locally, attempt to create it
+			$user->setName( $userName );
 			if ( !self::attemptAddUser( $user ) ) {
 				// Can't create user, give up now
+				$user->setName( false );
 				return true;
 			}
 		} else {
