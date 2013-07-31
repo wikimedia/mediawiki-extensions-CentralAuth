@@ -468,6 +468,16 @@ $specialPageAliases['mg'] = array(
 	'GlobalGroupPermissions' => array( 'Fahafahan\'ny_vondrona_amin\'ny_sehatra_rehetra' ),
 );
 
+/** Minangkabau (Baso Minangkabau) */
+$specialPageAliases['min'] = array(
+	'CentralAuth' => array( 'OtoritehPusek' ),
+	'AutoLogin' => array( 'MasuakLogOtomatih' ),
+	'MergeAccount' => array( 'GabuangAkun' ),
+	'GlobalGroupMembership' => array( 'HakPanggunoGlobal' ),
+	'GlobalGroupPermissions' => array( 'HakKalompokGlobal' ),
+	'GlobalUsers' => array( 'PanggunoGlobal' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'CentralAuth' => array( 'ЦентралноПотврдување' ),

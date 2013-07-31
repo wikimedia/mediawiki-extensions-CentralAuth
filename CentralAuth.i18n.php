@@ -6505,6 +6505,7 @@ $messages['ckb'] = array(
 	'centralauth-editset-reason' => 'هۆکار:',
 	'centralauth-editset-submit' => 'ناردن',
 	'centralauth-editset-submit-delete' => 'سڕینەوە',
+	'right-centralauth-merge' => 'کردنەیەکی ھەژمارەکەیان',
 );
 
 /** Corsican (corsu)
