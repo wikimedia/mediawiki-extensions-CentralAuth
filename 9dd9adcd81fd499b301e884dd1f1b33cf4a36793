@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a989e1a9_50637645",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-07-31T16:40:44Z",
+      "side": 1,
+      "message": "Won\u0027t matter for the current WMF deployment, but this should be inside the if block ending on line 1079, and should only be done if $wgCentralAuthAutoLoginWikis is non-empty.",
+      "revId": "9dd9adcd81fd499b301e884dd1f1b33cf4a36793",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
