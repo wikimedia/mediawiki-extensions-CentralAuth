@@ -16,6 +16,24 @@
       "revId": "9dd9adcd81fd499b301e884dd1f1b33cf4a36793",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_b0be825d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-07-31T17:22:38Z",
+      "side": 1,
+      "message": "I had it outside the if so it would trigger, even if SilentLogin wasn\u0027t used, but talking with Anomie, it would probably be better to limit the scope.",
+      "parentUuid": "a989e1a9_50637645",
+      "revId": "9dd9adcd81fd499b301e884dd1f1b33cf4a36793",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
