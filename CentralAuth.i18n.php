@@ -6366,7 +6366,7 @@ Aquest codi de confirmació expirarà el $6 a les $7.",
  * @author Умар
  */
 $messages['ce'] = array(
-	'mergeaccount' => 'ДIавазвалар цхьаьнатохаран хьал',
+	'mergeaccount' => 'Декъашхочун дӀаяздарш цхьаьнатохаран хьал',
 	'centralauth-groupname' => 'Викимедин фондан',
 	'centralauth-desc' => '[[Special:MergeAccount|ДӀаяздарш цхьаьнатохар]]  вики-проекташкахь {{int:Centralauth-groupname}}',
 	'centralauth-merge-dryrun-home' => 'Системин цатарло дӀаяздар хьа хилар бакъдан цӀерачу вики чохь.
