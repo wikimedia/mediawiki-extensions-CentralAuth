@@ -1321,4 +1321,113 @@ class CentralAuthHooks {
 		wfRunHooks( 'CentralAuthIsUIReloadRecommended', array( $user, &$recommendReload ) );
 		return $recommendReload;
 	}
+
+	/**
+	 * Get the username from CentralAuth for a list of CentralAuth user id's. Sets the name
+	 * to false if the userid doesn't exist, or the username is hidden.
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param array &$namesById array of userIds=>names to associate
+	 * @param bool|User $audience show hidden names based on this user, or false for public
+	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 */
+	public static function onOAuthGetUserNamesFromCentralIds( $wgMWOAuthCentralWiki, &$namesById, $audience, $wgMWOAuthSharedUserSource ) {
+		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
+			// We aren't supposed to handle this
+			return true;
+		}
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		foreach ( $namesById as $userid => $name ) {
+			$name = $dbr->selectField(
+				'globaluser',
+				'gu_name',
+				array( 'gu_id' => $userid ),
+				__METHOD__
+			);
+			$namesById[$userid] = $name;
+			$centralUser = new CentralAuthUser( $name );
+			if ( $centralUser->getHiddenLevel() !== CentralAuthUser::HIDDEN_NONE
+				&& !( $audience instanceof User
+				&& $audience->isAllowed( 'centralauth-oversight' ) )
+			) {
+				$namesById[$userid] = '';
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Check that the local user object is part of a global account, and the account is
+	 * attached on this wiki, and the central OAuth wiki, so we know that the same username
+	 * on both wikis references the same user. Set the user object to false if they are not.
+	 * @param int $userId the central OAuth wiki user_id for this username
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param User &$user the loca user object
+	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 */
+	public static function onOAuthGetLocalUserFromCentralId( $userId, $wgMWOAuthCentralWiki, &$user, $wgMWOAuthSharedUserSource ) {
+		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
+			// We aren't supposed to handle this
+			return true;
+		}
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$user_name = $dbr->selectField(
+			'globaluser',
+			'gu_name',
+			array( 'gu_id' => $userId ),
+			__METHOD__
+		);
+
+		if ( !$user_name ) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": invalid userId ($userId) passed to CentralAuth by OAuth" );
+			$user = false;
+			return false;
+		}
+
+		$centralUser = new CentralAuthUser( $user_name );
+
+		if ( $centralUser->isLocked()
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": user '{$user_name}' cannot use OAuth on " . wfWikiID() );
+			$user = false;
+			return false;
+		}
+
+		$user = User::newFromName( $user_name );
+		// One last sanity check
+		if ( $user->getId() == 0 ) {
+			throw new MWException( "Attached user couldn't be loaded from name" );
+		}
+		return true;
+	}
+
+	/**
+	 * Set the user_id to false if the user is not a global user, or if the user is not
+	 * attached on both the local wiki, and the central OAuth wiki, where user grants
+	 * are tracked. This prevents OAuth from assuming the identity of a user on the local
+	 * wiki is the same as the user on the central wiki, even if they have the same username.
+	 * @param User $user the local user object
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param int &$id the user_id of the matching name on the central wiki
+	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 */
+	public static function onOAuthGetCentralIdFromLocalUser( $user, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
+		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
+			// We aren't supposed to handle this
+			return true;
+		}
+		$centralUser = new CentralAuthUser( $user->getName() );
+		if ( $centralUser->getId() == 0
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": user '{$user->getName()}' cannot use OAuth on " . wfWikiID() );
+			$id = false;
+			return false;
+		}
+
+		$id = $centralUser->getId();
+		return true;
+	}
 }
