@@ -1017,12 +1017,11 @@ class CentralAuthHooks {
 		if ( $out->getUser()->isAnon() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
 				$out->addModules( 'ext.centralauth.centralautologin' );
-				$url = Title::newFromText( 'Special:CentralAutoLogin/start' )->getFullURL( array(
-					'type' => '1x1',
-					'from' => wfWikiID(),
-				) );
 
 				// For non-JS clients
+				$url = Title::newFromText( 'Special:CentralAutoLogin/start' )->getFullURL( array(
+					'type' => '1x1',
+				) );
 				$out->addHTML( '<noscript>' . Xml::element( 'img',
 					array(
 						'src' => $url,
