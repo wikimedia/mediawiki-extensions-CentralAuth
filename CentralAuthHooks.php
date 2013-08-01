@@ -1321,4 +1321,60 @@ class CentralAuthHooks {
 		wfRunHooks( 'CentralAuthIsUIReloadRecommended', array( $user, &$recommendReload ) );
 		return $recommendReload;
 	}
+
+	/**
+	 * Check that the local user object is part of a global account, and the account is
+	 * attached on this wiki, and the central OAuth wiki, so we know that the same username
+	 * on both wikis references the same user. Set the user object to false if they are not.
+	 * @param int $userId the central OAuth wiki user_id for this username
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param User &$user the loca user object
+	 */
+	public static function onOAuthGetLocalUserFromCentralId( $userId, $wgMWOAuthCentralWiki, &$user ) {
+		$cdb = wfGetDB( DB_SLAVE, array(), $wgMWOAuthCentralWiki );
+		$cres = $cdb->selectRow(
+			'user',
+			'user_name',
+			array( 'user_id' => $userId ),
+			__METHOD__
+		);
+		$centralUser = new CentralAuthUser( $cres->user_name );
+
+		if ( $centralUser->getId() == 0
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			$user = false;
+			return false;
+		}
+
+		$user = User::newFromName( $cres->user_name );
+		// One last sanity check
+		if ( $user->getId() == 0 ) {
+			throw new MWException( "Attached user couldn't be loaded from name" );
+		}
+		return true;
+	}
+
+	/**
+	 * Set the user_id to false if the user is not a global user, or if the user is not
+	 * attached on both the local wiki, and the central OAuth wiki, where user grants
+	 * are tracked. This prevents OAuth from assuming the identity of a user on the local
+	 * wiki is the same as the user on the central wiki, even if they have the same username.
+	 * @param User $user the local user object
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param int &$id the user_id of the matching name on the central wiki
+	 */
+	public static function onOAuthGetCentralIdFromLocalUser( $user, $wgMWOAuthCentralWiki, &$id ) {
+		$centralUser = new CentralAuthUser( $user->getName() );
+		if ( $centralUser->getId() == 0
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			$id = false;
+			return false;
+		}
+
+		return true;
+	}
 }
