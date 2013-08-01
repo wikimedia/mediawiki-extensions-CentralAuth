@@ -1321,4 +1321,119 @@ class CentralAuthHooks {
 		wfRunHooks( 'CentralAuthIsUIReloadRecommended', array( $user, &$recommendReload ) );
 		return $recommendReload;
 	}
+
+	/**
+	 * Get the wiki username from the central wiki for a list of user id's. This hook must
+	 * enforce that a name is returned only if the user_id has a global account, and the user
+	 * is attached on both the central wiki and the current local wiki.
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param array &$namesById array of userIds=>names to associate
+	 */
+	public static function onOAuthGetUserNamesFromCentralIds( $wgMWOAuthCentralWiki, &$namesById ) {
+		wfDebugLog( 'OAuth', __METHOD__ . ": Attempting to find user names for central userIds" );
+		$cdb = wfGetDB( DB_SLAVE, array(), $wgMWOAuthCentralWiki );
+		foreach ( $namesById as $userid => $name ) {
+			$centralname = $cdb->selectField(
+				'user',
+				'user_name',
+				array( 'user_id' => $userid ),
+				__METHOD__
+			);
+
+			$centralUser = new CentralAuthUser( $centralname );
+
+			if ( $centralUser->getId() == 0
+				|| !$centralUser->isAttached()
+				|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+			) {
+				wfDebugLog( 'CentralAuth', __METHOD__ . ": user '{$username}' cannot use OAuth on " . wfWikiID() );
+				$name = false;
+			} else {
+				$namesById[$userid] = $centralname;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Check that the local user object is part of a global account, and the account is
+	 * attached on this wiki, and the central OAuth wiki, so we know that the same username
+	 * on both wikis references the same user. Set the user object to false if they are not.
+	 * @param int $userId the central OAuth wiki user_id for this username
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param User &$user the loca user object
+	 */
+	public static function onOAuthGetLocalUserFromCentralId( $userId, $wgMWOAuthCentralWiki, &$user ) {
+		wfDebugLog( 'OAuth', __METHOD__ . ": Attempting to find local user for $wgMWOAuthCentralWiki ($userId)" );
+		$cdb = wfGetDB( DB_SLAVE, array(), $wgMWOAuthCentralWiki );
+		$user_name = $cdb->selectField(
+			'user',
+			'user_name',
+			array( 'user_id' => $userId ),
+			__METHOD__
+		);
+
+		if ( !$user_name ) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": invalid userId ($userId) passed to CentralAuth by OAuth" );
+			$user = false;
+			return false;
+		}
+
+		$centralUser = new CentralAuthUser( $user_name );
+
+		if ( $centralUser->getId() == 0
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": user '{$user_name}' cannot use OAuth on " . wfWikiID() );
+			$user = false;
+			return false;
+		}
+
+		$user = User::newFromName( $user_name );
+		// One last sanity check
+		if ( $user->getId() == 0 ) {
+			throw new MWException( "Attached user couldn't be loaded from name" );
+		}
+		return true;
+	}
+
+	/**
+	 * Set the user_id to false if the user is not a global user, or if the user is not
+	 * attached on both the local wiki, and the central OAuth wiki, where user grants
+	 * are tracked. This prevents OAuth from assuming the identity of a user on the local
+	 * wiki is the same as the user on the central wiki, even if they have the same username.
+	 * @param User $user the local user object
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param int &$id the user_id of the matching name on the central wiki
+	 */
+	public static function onOAuthGetCentralIdFromLocalUser( $user, $wgMWOAuthCentralWiki, &$id ) {
+		wfDebugLog( 'OAuth', __METHOD__ . ": Attempting to find central userid for $wgMWOAuthCentralWiki ({$user->getName()})" );
+		$centralUser = new CentralAuthUser( $user->getName() );
+		if ( $centralUser->getId() == 0
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": user '{$user->getName()}' cannot use OAuth on " . wfWikiID() );
+			$id = false;
+			return false;
+		}
+
+		$cdb = wfGetDB( DB_SLAVE, array(), $wgMWOAuthCentralWiki );
+		$user_id = $cdb->selectField(
+			'user',
+			'user_id',
+			array( 'user_name' => $user->getName() ),
+			__METHOD__
+		);
+
+		if ( !$user_id ) {
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": user supposed to be attached, but not found" );
+			$id = false;
+			return false;
+		}
+
+		$id = $user_id;
+		return true;
+	}
 }
