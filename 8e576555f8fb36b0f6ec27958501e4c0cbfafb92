@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a989e1a9_f3300f03",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-08-01T16:57:36Z",
+      "side": 1,
+      "message": "Why not use selectField?",
+      "revId": "8e576555f8fb36b0f6ec27958501e4c0cbfafb92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_d3230bbf",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-08-01T16:57:36Z",
+      "side": 1,
+      "message": "PHP warning \"Trying to get property of non-object\" if the passed user id doesn\u0027t exist in $wgMWOAuthCentralWiki.",
+      "revId": "8e576555f8fb36b0f6ec27958501e4c0cbfafb92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_7315df47",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-08-01T16:57:36Z",
+      "side": 1,
+      "message": "You have to assign the user_id from $wgMWOAuthCentralWiki to $id before returning here.",
+      "revId": "8e576555f8fb36b0f6ec27958501e4c0cbfafb92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
