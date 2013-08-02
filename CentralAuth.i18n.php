@@ -6505,6 +6505,9 @@ $messages['ckb'] = array(
 	'centralauth-editset-reason' => 'هۆکار:',
 	'centralauth-editset-submit' => 'ناردن',
 	'centralauth-editset-submit-delete' => 'سڕینەوە',
+	'right-centralauth-unmerge' => 'جیاکردنەوەی ھەژماری جیھانی',
+	'right-centralauth-lock' => 'داخستن یان کردنەوەی ھەژماری جیھانی',
+	'right-centralauth-oversight' => 'شاردنەوەی ھەژماری جیھانی',
 	'right-centralauth-merge' => 'کردنەیەکی ھەژمارەکەیان',
 );
 
