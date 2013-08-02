@@ -9508,7 +9508,7 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-no-unified' => 'No hay una cuenta unificada para este nombre de usuario.',
 	'centralauth-admin-info-header' => 'Información global del usuario',
 	'centralauth-admin-info-username' => 'Nombre de usuario:',
-	'centralauth-admin-info-id' => 'ID de usuario:',
+	'centralauth-admin-info-id' => 'Id. de usuario:',
 	'centralauth-admin-info-registered' => 'Registrado:',
 	'centralauth-admin-info-home' => 'Wiki origen:',
 	'centralauth-admin-info-editcount' => 'Contador total de ediciones:',
