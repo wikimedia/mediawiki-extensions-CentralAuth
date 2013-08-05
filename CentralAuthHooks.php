@@ -395,6 +395,7 @@ class CentralAuthHooks {
 	/**
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
+	 * @param string $inject_html
 	 * @return bool
 	 */
 	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser, &$inject_html ) {
@@ -930,6 +931,7 @@ class CentralAuthHooks {
 	 * @param $user User
 	 * @param $session
 	 * @param $cookies
+	 * @throws MWException
 	 * @return bool
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
@@ -1040,7 +1042,7 @@ class CentralAuthHooks {
 				global $wgCentralAuthSilentLogin;
 				if ( $wgCentralAuthSilentLogin ) {
 					global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
-					foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wiki ) {
+					foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 						$wiki = WikiMap::getWiki( $wiki );
 						// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 						$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(

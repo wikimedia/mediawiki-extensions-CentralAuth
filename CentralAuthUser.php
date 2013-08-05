@@ -1967,13 +1967,14 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * @static
-	 * @param  $name
-	 * @param  $value
-	 * @param  $exp
+	 * @param $name
+	 * @param $value
+	 * @param $exp
 	 * @param bool $secure
 	 *  true: Force setting the secure attribute when setting the cookie
 	 *  false: Force NOT setting the secure attribute when setting the cookie
 	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
+	 * @throws MWException
 	 * @return void
 	 */
 	static function setCookie( $name, $value, $exp = -1, $secure = null ) {
