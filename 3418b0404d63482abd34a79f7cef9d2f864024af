@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_ca10d0ad",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-05T21:31:14Z",
+      "side": 1,
+      "message": "This should select the names in a batch and not worry about attachment. This is only used for showing user names in various places.",
+      "revId": "3418b0404d63482abd34a79f7cef9d2f864024af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_ea158c9a",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-05T21:31:14Z",
+      "side": 1,
+      "message": "This should use the normal centralauth DB",
+      "revId": "3418b0404d63482abd34a79f7cef9d2f864024af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_4a25a00b",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1374,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-05T21:31:14Z",
+      "side": 1,
+      "message": "Would be nice if CA just had a newFromId function.",
+      "revId": "3418b0404d63482abd34a79f7cef9d2f864024af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_4a6e8031",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1422,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-05T21:31:14Z",
+      "side": 1,
+      "message": "AFAIK, after the checks above this should just return $centralUser-\u003egetId(). These other checks below aren\u0027t needed.",
+      "revId": "3418b0404d63482abd34a79f7cef9d2f864024af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
