@@ -102,11 +102,11 @@ most likely they have a different password from your primary account:',
 Note that it may differ from the real home wiki of that user.',
 	'centralauth-merge-method-empty-desc'    => 'Indicates that the local account was merged because it had no edits.',
 	'centralauth-merge-method-mail-desc'     => 'Indicates that the local account was merged because its email address matched the email address of the main account.',
-	'centralauth-merge-method-password-desc' => 'Indicates that the local account was merged because user specified a valid password for it.',
+	'centralauth-merge-method-password-desc' => 'Indicates that the local account was merged because the user specified a valid password for it.',
 	'centralauth-merge-method-admin-desc'    => 'Indicates that the local account was merged manually by stewards.
 That feature is disabled now because of security reasons.',
 	'centralauth-merge-method-new-desc'      => 'Indicates that the global account was created automatically when that local account was created.',
-	'centralauth-merge-method-login-desc'    => 'Indicates that the local account was created automatically when user logged in.',
+	'centralauth-merge-method-login-desc'    => 'Indicates that the local account was created automatically when the user logged in.',
 	'centralauth-merge-method-questionmark'  => '(?)',
 
 	// When not complete, offer to finish...
@@ -132,16 +132,16 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-attach-success'       => 'The account was migrated to the unified account.',
 
 	// Administrator's console
-	'centralauth'                          => 'Global user manager',
+	'centralauth'                          => 'Global account manager',
 	'centralauth-admin-intro'              => 'This interface can be used for administration of global accounts.',
-	'centralauth-admin-manage'             => 'Manage user data',
-	'centralauth-admin-username'           => 'User name:',
+	'centralauth-admin-manage'             => 'Manage account data',
+	'centralauth-admin-username'           => 'Username:',
 	'centralauth-admin-lookup-ro'          => 'View user info',
 	'centralauth-admin-lookup-rw'          => 'Manage user account',
 	'centralauth-admin-permission'         => "Only stewards may merge other people's accounts for them.",
 	'centralauth-admin-no-unified'         => 'No unified account for this username.',
-	'centralauth-admin-info-header'        => 'Global user info',
-	'centralauth-admin-info-username'      => 'User name:',
+	'centralauth-admin-info-header'        => 'Global account info',
+	'centralauth-admin-info-username'      => 'Username:',
 	'centralauth-admin-info-id'            => 'User ID:',
 	'centralauth-admin-info-registered'    => 'Registered:',
 	'centralauth-admin-info-home'          => 'Home wiki:',
@@ -211,18 +211,18 @@ The passwords for local accounts created before the merge will revert to their p
 
 
 	// List of global users
-	'globalusers'                    => 'Global user list',
+	'globalusers'                    => 'Global accounts list',
 	'centralauth-listusers-locked'   => 'locked',
 	'centralauth-listusers-attached' => '[[User:$1|exists locally]]',
 	'centralauth-listusers-item'     => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
 
 	// MultiLock
-	'multilock'                                     => 'Lock multiple global users',
+	'multilock'                                     => 'Lock multiple global accounts',
 	'centralauth-admin-multi-username'              => 'Enter one or more usernames, separated by new-line',
 	'centralauth-admin-multi-notfound'              => 'Search returned no usernames.',
-	'centralauth-admin-multi-searchprefix'          => 'Or, search for accounts with a prefix',
-	'centralauth-admin-multi-intro'                 => 'Update multiple global users at once',
+	'centralauth-admin-multi-searchprefix'          => 'Or, search for usernames with a prefix',
+	'centralauth-admin-multi-intro'                 => 'Update multiple global accounts at once',
 	'centralauth-admin-action-lock-nochange'        => 'Do not change locks',
 	'centralauth-admin-action-lock-lock'            => 'Lock selected accounts',
 	'centralauth-admin-action-lock-unlock'          => 'Unlock selected accounts',
@@ -251,12 +251,12 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-prefs-count-unattached'  => 'Unconfirmed accounts with your name remain on $1 {{PLURAL:$1|project|projects}}.',
 	'centralauth-prefs-detail-unattached' => 'This project site has not been confirmed as belonging to the global account.',
 	'centralauth-prefs-manage'            => 'Manage your global account',
-	'centralauth-prefs-view'              => 'View global user info',
+	'centralauth-prefs-view'              => 'View global account info',
 
 	// Interaction with Special:Renameuser
 	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system.
-Renaming it will cause the local user to be detached from the global one.",
-	'centralauth-renameuser-reserved' => "User $2 is reserved for a global account.",
+Renaming it will cause the local account to be detached from the global one.",
+	'centralauth-renameuser-reserved' => "Username $2 is reserved for a global account.",
 
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
@@ -361,7 +361,7 @@ Note that a group does not exist unless it has permissions assigned to it.',
 	'centralauth-editgroup-editsets'                  => '([[Special:EditWikiSets|edit]])',
 	'centralauth-editgroup-nowikiset'                 => 'None, applies to all wikis.',
 	'centralauth-globalgrouppermissions-knownwiki'    => "Wiki on which they have an account:",
-	'centralauth-globalgroupmembership-badknownwiki'  => "The global user '''$1''' is not active on the wiki you specified ('' $2 '').
+	'centralauth-globalgroupmembership-badknownwiki'  => "The global account '''$1''' is not active on the wiki you specified ('' $2 '').
 You may be attempting to assign rights to the wrong user!",
 
 	// Wiki sets editing
@@ -400,7 +400,7 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-editset-success'                     => 'Successfully changed wiki set.',
 	'centralauth-editset-success-delete'              => 'Successfully deleted wiki set.',
 	'centralauth-editset-return'                      => 'Return to main view',
-	'centralauth-block-already-locked'                => 'The user [[Special:CentralAuth/$1|$1]] is already locked globally.',
+	'centralauth-block-already-locked'                => 'The account [[Special:CentralAuth/$1|$1]] is already locked globally.',
 
 	'centralauth-readonly' => 'CentralAuth database locked',
 	'centralauth-readonlytext' => 'The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.',
@@ -432,7 +432,7 @@ You may view and modify any of them, or create a new set.',
 	'centralauth-error-badtoken' => 'The provided authentication token is either expired or invalid.',
 	'centralauth-error-token-wrongattempt' => 'The authentication token does not belong to your current login attempt.
 Someone might be trying to log you in under a malicious account.',
-	'centralauth-error-token-wronguser' => 'The token does not match with your session user name.
+	'centralauth-error-token-wronguser' => 'The token does not match with your session username.
 Someone might be trying to log you in under a malicious account.
 If you are just trying to log in as another user, please log out first.',
 	'centralauth-warning-notloggedin' => 'You are not currently logged in.',
