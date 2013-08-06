@@ -56,6 +56,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'refreshCookies': // Refresh central cookies (e.g. in case 'remember me' was set)
+			// Do not cache this, we need to reset the cookies every time.
+			$this->getOutput()->enableClientCache( false );
+
 			if ( !$wgCentralAuthLoginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
 			}
@@ -84,6 +87,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'start': // Main entry point
+			// Note this is safe to cache, because the cache already varies on
+			// the session cookies.
+
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
@@ -96,6 +102,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'checkLoggedIn': // Check if we're logged in centrally
+			// Note this is safe to cache, because the cache already varies on
+			// the session cookies.
+
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
 			}
@@ -108,6 +117,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'createSession': // Create the local session and shared memcache token
+			// The initial checks here are safe to cache. Once we start setting
+			// cookies and memc, we can no longer cache it.
+
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
@@ -118,6 +130,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
 				return;
 			}
+
+			// At this point we can't cache anymore because we need to set
+			// cookies and memc each time.
+			$this->getOutput()->enableClientCache( false );
 
 			// Ensure that a session exists
 			if ( session_id() == '' ) {
@@ -144,6 +160,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'validateSession': // Validate the shared memcached token
+			// Do not cache this, we need to reset the cookies and memc every time.
+			$this->getOutput()->enableClientCache( false );
+
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
 			}
@@ -188,6 +207,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'setCookies': // Check that memcached is validated, and set cookies
+			// Do not cache this, we need to reset the cookies and memc every time.
+			$this->getOutput()->enableClientCache( false );
+
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
@@ -393,7 +415,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private function doFinalOutput( $ok, $status, $script = '' ) {
 		$this->getOutput()->disable();
 		wfResetOutputBuffers();
-		header( 'Cache-Control: no-cache' );
+		$this->getOutput()->sendCacheControl();
 
 		$type = $this->getRequest()->getVal( 'type', 'script' );
 		if ( $type === 'icon' || $type === '1x1' ) {
