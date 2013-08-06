@@ -1,0 +1,8 @@
+Code-Review+1: Mark Bergsma <mark@wikimedia.org>
+Verified+2: jenkins-bot
+Code-Review+2: CSteipp <csteipp@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 06 Aug 2013 23:11:03 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/76726
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
