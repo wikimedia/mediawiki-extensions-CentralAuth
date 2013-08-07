@@ -259,19 +259,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Set a new session cookie, Just In Case™
-			// If either we don't trust PHP's entropy, or if we need to change
-			// cookie settings when logging in, then change the session ID
-			// manually.
-			global $wgCookieSecure;
-			$cookieParams = session_get_cookie_params();
-			if ( wfCheckEntropy() && $wgCookieSecure == $cookieParams['secure'] ) {
-				session_regenerate_id( false );
-			} else {
-				$tmp = $_SESSION;
-				session_destroy();
-				wfSetupSession( MWCryptRand::generateHex( 32 ) );
-				$_SESSION = $tmp;
-			}
+			wfResetSessionID();
 
 			// Set central cookies too, with a refreshed sessionid. Also, check if we
 			// need to override the default cookie security policy
