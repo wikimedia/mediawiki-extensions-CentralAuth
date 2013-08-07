@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "898eddaf_7b206d4c",
+        "filename": "CentralAuth.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "Use an own table with custom structure, all in one object isn\u0027t really suitable if you expect several processes to edit in parallel.",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dwy5ul5c",
         "filename": "CentralAuth.php",
         "patchSetId": 26
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "Can\u0027t this just point to a $wgObjectCaches entry by key name and have require config (throwing an exception for renames if not set or disabling that functionality)? The central DB would need the table to be manually created anyway.\n\nThis way you don\u0027t have to deal with trying to extract the config from LBFactory.",
       "parentUuid": "Dwy5ul5c",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_1b104900",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "pointless",
       "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -71,6 +105,23 @@
     },
     {
       "key": {
+        "uuid": "898eddaf_5bfad1bb",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "pointless, probably",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxklIJIk",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 26
@@ -82,6 +133,91 @@
       "writtenOn": "2013-05-29T20:57:24Z",
       "side": 1,
       "message": "Same",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_bb0115b4",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "empty line",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_9b0459c4",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "@ return bool",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_3b2ee541",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 984,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "Maybe also show a notice if one tries to log in via the old name?",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_1b29293a",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "We need a custom message here",
+      "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_dbcfc18a",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-07T10:19:15Z",
+      "side": 1,
+      "message": "Do this via the Renameuser Extension",
       "revId": "4bd55850476a335e9cf88c90213e26652ef03321",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
