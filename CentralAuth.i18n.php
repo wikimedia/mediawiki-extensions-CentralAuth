@@ -455,7 +455,11 @@ address confirmation:
 
 $5
 
-This confirmation code will expire on $6 at $7.'
+This confirmation code will expire on $6 at $7.',
+
+	// API
+	'centralauth-centralauthtoken-in-use' => '"centralauthtoken" is included in the API request',
+	'centralauth-no-centralauthtoken-when' => 'Cannot use "centralauthtoken" when $1',
 
 );
 
@@ -980,6 +984,20 @@ Followed by the Submit button text {{msg-mw|Centralauth-completelogin-submit}}.'
 * $5 is a URL to Special:InvalidateEmail
 * $6 is a date
 * $7 is a time',
+'centralauth-centralauthtoken-in-use' => 'Message used when login is disabled because the "centralauthtoken" parameter is included in the API request.
+Do not translate "centralauthtoken".
+
+See also:
+* {{msg-mw|cantloginwhen}}
+* {{msg-mw|cantlogoutwhen}}
+* {{msg-mw|centralauth-no-centralauthtoken-when}}',
+	'centralauth-no-centralauthtoken-when' => 'Used as an error message when something else has already disabled login for this request.
+Do not translate "centralauthtoken".
+* $1 - reason
+See also:
+* {{msg-mw|cantloginwhen}}
+* {{msg-mw|cantlogoutwhen}}
+* {{msg-mw|centralauth-centralauthtoken-in-use}}',
 );
 
 /** Afrikaans (Afrikaans)

@@ -260,7 +260,7 @@ $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.al
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 
-$wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
+$wgHooks['SetupBeforeSetupSession'][] = 'CentralAuthHooks::onSetupBeforeSetupSession';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
 $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';

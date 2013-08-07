@@ -21,8 +21,7 @@ class CentralAuthHooks {
 	 *
 	 * @return bool
 	 */
-	// Only public because it needs to be called from CentralAuthUser
-	public static function hasApiToken() {
+	private static function hasApiToken() {
 		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies ) {
 			return false;
@@ -70,13 +69,6 @@ class CentralAuthHooks {
 			$userName = $data['userName'];
 			$token = $data['token'];
 
-			// Clean up username
-			$userName = User::getCanonicalName( $userName, 'valid' );
-			if ( !$userName ) {
-				wfDebug( __METHOD__ . ": invalid username\n" );
-				return null;
-			}
-
 			// Try the central user
 			$centralUser = new CentralAuthUser( $userName );
 			if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
@@ -101,19 +93,25 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * If the API 'centralauthtoken' parameter is set, we need to override the
+	 * current session and cookies.
+	 * @see CentralAuthHooks::hasApiToken()
 	 * @return bool
 	 */
-	static function onSetupAfterCache() {
+	static function onSetupBeforeSetupSession() {
 		if ( self::hasApiToken() ) {
-			// If the API 'centralauthtoken' parameter is set, we don't want to
-			// be setting cookies. So disable setting of the session cookie
-			// and clear $_COOKIE.
-			// We can't try to load the saved session cookies from memcached
-			// yet, because getting the central user requires that $wgContLang
-			// is set up.
-			// @see CentralAuthHooks::hasApiToken()
-			ini_set( 'session.use_cookies', 0 );
-			$_COOKIE = array();
+			$request = RequestContext::getMain()->getRequest();
+
+			$request->disableLogin(
+				'centralauth-centralauthtoken-in-use', 'centralauth-no-centralauthtoken-when'
+			);
+
+			// Replace the cookies with our own cookies. This includes the session cookie.
+			$centralUser = self::getApiCentralUser( false );
+			if ( $centralUser ) {
+				$key = CentralAuthUser::memcKey( 'api-cookies', md5( $centralUser->getName() ), wfWikiID() );
+				$request->setRequestData( 'privateCookies', $key );
+			}
 		}
 		return true;
 	}
@@ -124,31 +122,6 @@ class CentralAuthHooks {
 	 */
 	static function onAuthPluginSetup( &$auth ) {
 		$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
-
-		// If the API 'centralauthtoken' parameter is set, we don't use the
-		// browser-supplied cookies. Now that $wgContLang is set up, we can
-		// replace them with the cookies passed via memcached instead.
-		// @see CentralAuthHooks::hasApiToken()
-		$centralUser = self::getApiCentralUser( false );
-		if ( $centralUser ) {
-			global $wgMemc;
-			$key = CentralAuthUser::memcKey( 'api-cookies', md5( $centralUser->getName() ), wfWikiID() );
-			$cookies = $wgMemc->get( $key );
-			if ( !is_array( $cookies ) ) {
-				$cookies = array();
-			}
-			if ( !isset( $cookies[session_name()] ) ) {
-				$cookies[session_name()] = MWCryptRand::generateHex( 32 );
-			}
-			global $wgCentralAuthCookiePrefix;
-			if ( !isset( $cookies[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
-				$cookies[$wgCentralAuthCookiePrefix . 'Session'] = MWCryptRand::generateHex( 32 );
-			}
-			$wgMemc->set( $key, $cookies, 86400 );
-			$_COOKIE = $cookies;
-			wfSetupSession( $cookies[session_name()] );
-		}
-
 		return true;
 	}
 
@@ -935,10 +908,6 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
-		if ( self::hasApiToken() ) {
-			throw new MWException( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
-		}
-
 		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies || $user->isAnon() ) {
 			return true;
@@ -1213,7 +1182,9 @@ class CentralAuthHooks {
 	 */
 	static function getApiCentralAuthToken() {
 		global $wgUser;
-		if ( !$wgUser->isAnon() && !self::hasApiToken() ) {
+		if ( !$wgUser->isAnon() &&
+			!RequestContext::getMain()->getRequest()->getRequestData( 'disableLogin' )
+		) {
 			$centralUser = CentralAuthUser::getInstance( $wgUser );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
 				$data = array(
@@ -1274,8 +1245,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * Validate "centralauthtoken", and disable certain modules that make no
-	 * sense with "centralauthtoken".
+	 * Validate "centralauthtoken"
 	 * @param ApiBase $module API module
 	 * @param User $user User
 	 * @param array &$message Error message key and params
@@ -1300,16 +1270,6 @@ class CentralAuthHooks {
 					'info' => 'The centralauthtoken is not valid',
 				);
 				$message = array( 'centralauth-api-badtoken' );
-				return false;
-			}
-
-			if ( $module instanceof ApiLogin || $module instanceof ApiLogout ) {
-				// Bad design, API.
-				ApiBase::$messageMap['centralauth-api-blacklistedmodule'] = array(
-					'code' => 'badparams',
-					'info' => 'The module "$1" may not be used with centralauthtoken',
-				);
-				$message = array( 'centralauth-api-blacklistedmodule', $module->getModuleName() );
 				return false;
 			}
 		}
