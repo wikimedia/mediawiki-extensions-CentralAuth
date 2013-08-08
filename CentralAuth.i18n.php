@@ -18543,15 +18543,15 @@ $messages['ko'] = array(
 통합 계정이 당신의 계정이라면, 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:',
 	'centralauth-attach-submit' => '계정 합치기',
 	'centralauth-attach-success' => '계정이 통합 계정으로 옮겨졌습니다.',
-	'centralauth' => '통합 계정 관리자', # Fuzzy
+	'centralauth' => '통합 계정 관리',
 	'centralauth-admin-intro' => '이 인터페이스는 통합 계정 관리에 사용됩니다.',
-	'centralauth-admin-manage' => '사용자 데이터 관리', # Fuzzy
+	'centralauth-admin-manage' => '계정 데이터 관리',
 	'centralauth-admin-username' => '사용자 이름:',
 	'centralauth-admin-lookup-ro' => '사용자 정보 보기',
 	'centralauth-admin-lookup-rw' => '사용자 계정 관리',
 	'centralauth-admin-permission' => '사무장만이 다른 사용자의 계정을 병합할 수 있습니다.',
 	'centralauth-admin-no-unified' => '이런 이름의 통합 계정이 없습니다.',
-	'centralauth-admin-info-header' => '통합 계정에 대한 정보', # Fuzzy
+	'centralauth-admin-info-header' => '통합 계정 정보',
 	'centralauth-admin-info-username' => '사용자 이름:',
 	'centralauth-admin-info-id' => '사용자 ID:',
 	'centralauth-admin-info-registered' => '계정 등록:',
@@ -18618,15 +18618,15 @@ $messages['ko'] = array(
 	'centralauth-admin-logsnippet' => '이전의 통합 계정 기록',
 	'centralauth-admin-suppressreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 완전히 숨겨졌습니다: $2',
 	'centralauth-admin-not-authorized' => '이 작업을 수행할 권한이 없습니다',
-	'globalusers' => '통합 계정 목록', # Fuzzy
+	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-locked' => '잠겨짐',
 	'centralauth-listusers-attached' => '[[User:$1|로컬에 존재]]',
 	'centralauth-listusers-nolocal' => '묶이지 않았거나 로컬에 존재하지 않음',
-	'multilock' => '여러 통합 계정을 잠그기', # Fuzzy
+	'multilock' => '여러 통합 계정을 잠그기',
 	'centralauth-admin-multi-username' => '새 줄로 구분하여 하나 이상의 사용자 이름을 입력하세요',
 	'centralauth-admin-multi-notfound' => '해당 사용자 이름을 찾을 수 없습니다.',
-	'centralauth-admin-multi-searchprefix' => '또는 접두어로 계정 찾기', # Fuzzy
-	'centralauth-admin-multi-intro' => '한 번에 여러 통합 계정을 업데이트합니다', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => '또는 접두어로 사용자 이름 찾기',
+	'centralauth-admin-multi-intro' => '한 번에 여러 통합 계정을 업데이트합니다',
 	'centralauth-admin-action-lock-nochange' => '잠금을 바꾸지 마세요',
 	'centralauth-admin-action-lock-lock' => '선택한 계정 잠금',
 	'centralauth-admin-action-lock-unlock' => '선택한 계정 잠금 해제',
@@ -18651,10 +18651,10 @@ $messages['ko'] = array(
 	'centralauth-prefs-count-unattached' => '당신과 같은 이름을 쓰는 확인되지 않은 계정이 {{PLURAL:$1|프로젝트}} $1개에 존재합니다.',
 	'centralauth-prefs-detail-unattached' => '이 프로젝트 사이트에서는 통합 계정에 묶여 있음이 확인되지 않았습니다.',
 	'centralauth-prefs-manage' => '통합 계정 관리하기',
-	'centralauth-prefs-view' => '통합 계정 정보 보기', # Fuzzy
-	'centralauth-renameuser-merged' => '$1 계정은 통합 로그인 시스템으로 옮겨졌습니다.
-이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.', # Fuzzy
-	'centralauth-renameuser-reserved' => '사용자 이름 $2는 통합 계정으로 이미 사용되고 있습니다.', # Fuzzy
+	'centralauth-prefs-view' => '통합 계정 정보 보기',
+	'centralauth-renameuser-merged' => '$1 사용자는 통합 로그인 시스템으로 옮겨졌습니다.
+이름을 바꾸는 것은 통합 계정에서 로컬 계정을 분리하는 결과를 일으킬 것입니다.',
+	'centralauth-renameuser-reserved' => '$2 사용자 이름는 통합 계정으로 이미 사용되고 있습니다.',
 	'centralauth-invalid-wiki' => '다음과 같은 위키 데이터베이스가 없습니다: $1',
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 	'centralauth-account-exists-reset' => '$1 사용자 이름이 이 위키에는 등록되지 않았지만 통합 계정 시스템에 계정이 등록되어 있습니다.',
@@ -18692,7 +18692,7 @@ $messages['ko'] = array(
 	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
 [[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
 인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
-	'centralautologin' => '중앙 관리 로그인',
+	'centralautologin' => '통합 로그인',
 	'centralauth-centralautologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
 로그인되지 않은 연결된 도메인을 방문할 때, 통합 로그인 시스템은 이 문서가 통합 도메인에 로그인되어 있을 때 결정하는 데 사용합니다.
 인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
@@ -18745,8 +18745,8 @@ $messages['ko'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|편집]])',
 	'centralauth-editgroup-nowikiset' => '모든 위키에 적용할 위키 집합이 없습니다.',
 	'centralauth-globalgrouppermissions-knownwiki' => '계정을 가지고 있는 위키:',
-	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' 통합 계정은 지정한 위키('' $2 '')에서 유효하지 않습니다.
-권한을 잘못된 사용자에게 줄 수도 있습니다!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' 통합 계정은 지정한 위키('' $2 '')에서 활동하지 않습니다.
+잘못된 사용자에게 권한을 줄 수도 있습니다!",
 	'centralauth-editset' => '위키 집합',
 	'centralauth-editset-legend-rw' => '위키 집합 만들기 및 편집하기',
 	'centralauth-editset-legend-ro' => '위키 집합의 목록',
@@ -18780,7 +18780,7 @@ $messages['ko'] = array(
 	'centralauth-editset-success' => '위키 설정이 성공적으로 바뀌었습니다.',
 	'centralauth-editset-success-delete' => '위키 집합을 성공적으로 삭제하였습니다.',
 	'centralauth-editset-return' => '이전으로 돌아가기',
-	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] 사용자는 이미 통합 계정이 잠겨 있습니다.', # Fuzzy
+	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] 계정는 이미 통합 계정이 잠겨 있습니다.',
 	'centralauth-readonly' => 'CentralAuth 데이터베이스 잠김',
 	'centralauth-readonlytext' => '정기 데이터베이스 정비 작업 등의 이유로 지금 CentralAuth 데이터베이스가 잠겨서 항목을 만들거나 바꾸지 못합니다. 작업이 끝나면 정상화될 것입니다.',
 	'right-globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
@@ -18792,7 +18792,7 @@ $messages['ko'] = array(
 	'right-globalgrouppermissions' => '공통 권한 그룹 관리',
 	'abusefilter-edit-builder-vars-global-user-groups' => '사용자가 속한 공통 권한 그룹',
 	'action-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
-	'centrallogin' => '중앙 관리 사용자 로그인',
+	'centrallogin' => '통합 사용자 로그인',
 	'centralloginsuccesful' => '로그인 성공',
 	'centralauth-completelogin-legend' => '로그인 과정 완료',
 	'centralauth-completelogin-finishing' => '위키미디어 재단 사이트를 인증하는 중입니다, 기다리세요...',
@@ -19475,15 +19475,15 @@ Aner Benotzerkonte sinn nach net confirméiert.',
 Wann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zesummeféieren wann Dir d'Passwuert vum globale Benotzerkont ugitt:",
 	'centralauth-attach-submit' => 'Benotzerkont migréieren',
 	'centralauth-attach-success' => 'De Benotzerkont gouf mat dem globale Benotzerkont zesummegeféiert.',
-	'centralauth' => 'Manager vu globale Benotzer', # Fuzzy
+	'centralauth' => 'Manager vu globale Benotzerkonten',
 	'centralauth-admin-intro' => 'Dës Spezialsäit ka benotzt gi fir global Benotzerkonten ze verwalten.',
-	'centralauth-admin-manage' => 'Benotzerdate verwalten', # Fuzzy
+	'centralauth-admin-manage' => 'Date vu Benotzerkonte verwalten',
 	'centralauth-admin-username' => 'Benotzernumm:',
 	'centralauth-admin-lookup-ro' => 'Benotzerinformatioun weisen',
 	'centralauth-admin-lookup-rw' => 'Benotzerkont geréieren',
 	'centralauth-admin-permission' => "Nëmme Stewarde kënnen d'Benotzerkonte vun anere Benotzer fusionéieren.",
 	'centralauth-admin-no-unified' => 'Fir dëse Benotzernumm gëtt et kee globale Benotzerkont.',
-	'centralauth-admin-info-header' => 'Global Benotzerinformatioun', # Fuzzy
+	'centralauth-admin-info-header' => 'Informatioun vum globale Benotzerkont',
 	'centralauth-admin-info-username' => 'Benotzernumm:',
 	'centralauth-admin-info-id' => 'Benotzernummer:',
 	'centralauth-admin-info-registered' => 'Ugemellt:',
@@ -19547,15 +19547,15 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-admin-logsnippet' => 'Vireg Ännerunge vum globale Benotzerkont',
 	'centralauth-admin-suppressreason' => 'Global suppriméiert vum $1 aus dësem Grond: $2',
 	'centralauth-admin-not-authorized' => "Dir hutt net d'Rechter fir dës Aktioun ze maachen.",
-	'globalusers' => 'Global Benotzerlëscht', # Fuzzy
+	'globalusers' => 'Lëscht vu globale Benotzerkonten',
 	'centralauth-listusers-locked' => 'gespaart',
 	'centralauth-listusers-attached' => '[[User:$1|gëtt et lokal]]',
 	'centralauth-listusers-nolocal' => 'net verbonnen oder existéiert net lokal',
-	'multilock' => 'Méi global Benotzer spären', # Fuzzy
+	'multilock' => 'Méi global Benotzerkonte spären',
 	'centralauth-admin-multi-username' => 'Gitt een oder méi Benotzernimm an, déi duerch en Zeilewiessel getrennt sinn',
 	'centralauth-admin-multi-notfound' => 'Et goufe keng Benotzernimm fonnt.',
-	'centralauth-admin-multi-searchprefix' => 'Oder no Benotzerkonte mat Prefix sichen', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Méi global Benotzer zesummen aktualiséieren', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => 'Oder no Benotzerkonte mat engem Prefix sichen',
+	'centralauth-admin-multi-intro' => 'Méi global Benotzerkonten zesummen aktualiséieren',
 	'centralauth-admin-action-lock-nochange' => 'Spären net änneren',
 	'centralauth-admin-action-lock-lock' => 'Déi erausgesicht Benotzerkonte spären',
 	'centralauth-admin-action-lock-unlock' => 'Déi erausgesicht Benotzerkonten entspären',
@@ -19580,10 +19580,10 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-prefs-count-unattached' => 'Et gëtt op $1 {{PLURAL:$1|Projet|Projeten}} onbestätegt Benotzerkonte mat Ärem Numm.',
 	'centralauth-prefs-detail-unattached' => 'Dëse Projet gehéiert nach net zum Projet vun de globale Benotzerkonten.',
 	'centralauth-prefs-manage' => 'Geréiert äre globale Benotzerkont',
-	'centralauth-prefs-view' => 'Global Benotzerinformatioune weisen', # Fuzzy
-	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System opgeholl.
-Eng Ëmbenennung hëlt de lokale Benotzer aus dem globale Benotzerkonte-System eraus.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Benotzer $2 ass fir e globale Benotzerkont reservéiert.', # Fuzzy
+	'centralauth-prefs-view' => 'Informatioune vum globale Benotzerkont weisen',
+	'centralauth-renameuser-merged' => 'De Benotzer $1 gouf schonn an de globale Benotzerkonte-System migréiert.
+Eng Ëmbenennung hëlt de lokale Benotzerkont aus dem globale Benotzerkonte-System eraus.',
+	'centralauth-renameuser-reserved' => 'Benotzernumm $2 ass fir e globale Benotzerkont reservéiert.',
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
 	'centralauth-account-exists-reset' => 'De Benotzernumm $1 ass op dëser Wiki net enregistréiert, awer et gëtt et schonn am eenheetlech Login-System.',
@@ -19662,8 +19662,8 @@ Bedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt 
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|änneren]])',
 	'centralauth-editgroup-nowikiset' => 'Keng, gëllt fir all Wikien.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki op där si e Benotzerkont hunn:',
-	'centralauth-globalgroupmembership-badknownwiki' => "De globale Bemotzer '''$1''' ass net op där Wiki aktiv déi Dir uginn hutt ('' $2 '').
-Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "De globale Benotzerkont '''$1''' ass net op där Wiki aktiv déi Dir uginn hutt ('' $2 '').
+Vläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
 	'centralauth-editset' => 'Grupp vu Wikien',
 	'centralauth-editset-legend-rw' => 'Grupp vu Wikien änneren oder uleeën',
 	'centralauth-editset-legend-ro' => 'Lëscht vu Wikigruppen',
@@ -19697,7 +19697,7 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'centralauth-editset-success' => 'Grupp vun de Wikie gouf geännert',
 	'centralauth-editset-success-delete' => 'Grupp vun de Wikie gouf geläscht.',
 	'centralauth-editset-return' => 'Zréck op déi normal Vue',
-	'centralauth-block-already-locked' => 'De Benotzer [[Special:CentralAuth/$1|$1]] ass scho global gespaart.', # Fuzzy
+	'centralauth-block-already-locked' => 'De Benotzerkont [[Special:CentralAuth/$1|$1]] ass scho global gespaart.',
 	'centralauth-readonly' => "D'CentralAuth Datebank ass gespaart",
 	'centralauth-readonlytext' => "D'CentralAuth Datebank ass elo gespaart fir nei Androungen a fir aner Ännerungen, wahrscheinlech wéinst geplangten Aarbechten un der Datebank, duerno wäert nees alles normal fonctionnéieren.",
 	'right-globalgroupmembership' => 'Zougehéieregkeet zu lokale Gruppen änneren',
@@ -21347,6 +21347,7 @@ $5
 
 /** Malayalam (മലയാളം)
  * @author Jacob.jose
+ * @author Kavya Manohar
  * @author Praveenp
  * @author Shijualex
  * @author Vssun
@@ -21429,7 +21430,7 @@ $messages['ml'] = array(
 ഇത് ഉപയോക്താവിന്റെ ശരിക്കുമുള്ള തറവാട് വിക്കിയിൽ നിന്നും വ്യത്യസ്തമാകാവുന്നതാണെന്നോർക്കുക.',
 	'centralauth-merge-method-empty-desc' => 'പ്രാദേശിക അംഗത്വം തിരുത്തലുകളൊന്നുമില്ലാഞ്ഞതിനാൽ സംയോജിപ്പിച്ചതാണെന്നു സൂചിപ്പിക്കുന്നു.',
 	'centralauth-merge-method-mail-desc' => 'പ്രധാന അംഗത്വത്തിന്റെ ഇമെയിൽ വിലാസവുമായി പ്രാദേശിക അംഗത്വത്തിന്റെ ഇമെയിൽ വിലാസം ഒത്തുപോകുന്നതിനാൽ സംയോജിക്കപ്പെട്ടതെന്നു കുറിക്കുന്നു.',
-	'centralauth-merge-method-password-desc' => 'ഉപയോക്താവ് സാധുവായ രഹസ്യവാക്ക് നൽകിയതിനാലാണ് പ്രാദേശിക അംഗത്വം സംയോജിപ്പിക്കപ്പെട്ടതെന്നു കുറിക്കുന്നു.',
+	'centralauth-merge-method-password-desc' => 'ഉപയോക്താവ് സാധുവായ രഹസ്യവാക്ക് നൽകിയതിനാലാണ് പ്രാദേശിക അംഗത്വം സംയോജിപ്പിക്കപ്പെട്ടതെന്നു സൂചിപ്പിക്കുന്നു.',
 	'centralauth-merge-method-admin-desc' => 'പ്രാദേശിക അംഗത്വം സ്റ്റ്യൂവാർഡുകൾ നേരിട്ട്  സംയോജിപ്പിച്ചുവെന്നു കുറിക്കുന്നു.
 സുരക്ഷാകാരണങ്ങളാൽ ഈ സൗകര്യം ഇപ്പോൾ ലഭ്യമല്ല.',
 	'centralauth-merge-method-new-desc' => 'പ്രാദേശിക അംഗത്വം സൃഷ്ടിച്ചപ്പോൾ തന്നെ ആഗോള അംഗത്വം സ്വയം സൃഷ്ടിക്കപ്പെട്ടു എന്നു കുറിക്കുന്നു.',
@@ -21558,7 +21559,7 @@ $messages['ml'] = array(
 	'centralauth-prefs-manage' => 'താങ്കളുടെ ആഗോള അംഗത്വം പരിപാലിക്കുക',
 	'centralauth-prefs-view' => 'ആഗോള അംഗത്വ വിവരങ്ങൾ കാണുക',
 	'centralauth-renameuser-merged' => '$1 എന്ന ഉപയോക്താവ് ആഗോള അംഗത്വത്തിലേക്ക് മാറിക്കഴിഞ്ഞു.
-പേരുമാറ്റുന്നതുകൊണ്ട് പ്രാദേശിക അംഗത്വം ആഗോള അംഗത്വത്തിൽ നിന്ന് ഒറ്റപ്പെട്ടു പോകുന്നതാണ്‌.',
+പേരുമാറ്റുന്നതുകൊണ്ട് പ്രാദേശിക അംഗത്വം ആഗോള അംഗത്വത്തിൽ നിന്ന് വേർപെട്ടു പോകുന്നതാണ്‌.',
 	'centralauth-renameuser-reserved' => 'ഉപയോക്താവ് $2 ആഗോള അംഗത്വത്തിനായി മാറ്റിവെച്ചിരിക്കുകയാണ്.',
 	'centralauth-invalid-wiki' => 'ഇങ്ങനെ ഒരു വിക്കി നിലവിലില്ല DB: $1',
 	'centralauth-account-exists' => 'അംഗത്വം ഉണ്ടാക്കുന്നതിനു സാദ്ധ്യമല്ല: ആവശ്യപ്പെട്ട ഉപയോക്തൃനാമം ഇതിനകം സം‌യോജിത ലോഗിൻ വ്യൂഹം ഉപയോഗിച്ചു കഴിഞ്ഞു.',
@@ -22031,6 +22032,7 @@ $messages['mr'] = array(
 	'centralauth-autologin-desc' => 'हे विशेष पान मीडियाविकिच्या खाजगी वापराचे आहे.
 जेव्हा तुम्ही [[Special:UserLogin|प्रवेश कराल]], मध्यवर्ती प्रवेश यंत्रणा तुमच्या ब्राउझरला सर्व जोडलेल्या डोमेनमधील हे पान चित्र दुवे वापरून मागवायची सूचना देईल.
 तुम्ही हे पान कुठलीही माहिती न देता मागविलेले आहे, त्यामुळे ते काहीही करणार नाही.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'स्थानिकरित्या आपण पूर्वीच सनोंद-प्रवेशित आहात',
 	'globalgroupmembership' => 'वैश्विक गटातील सदस्यत्व',
 	'globalgrouppermissions' => 'वैश्विक गट व्यवस्थापन',
 	'centralauth-globalgroupperms-grouplist' => 'खाली दिलेले वैश्विक गट उपलब्ध आहेत. तुम्ही कुठल्याही गटाला दिलेले अधिकार पाहू अथवा बदलू शकता. एखादा गट काढून टाकायचा असल्यास त्यातील सर्व अधिकार काढून टाका.',
@@ -22052,13 +22054,14 @@ $messages['mr'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 अधिकार असणार्‍या सदस्यांची यादी]]',
 	'centralauth-editgroup-restrictions' => 'विकीगट जेथे हा गट कार्यप्रवण आहे:',
 	'centralauth-editgroup-noset' => '(काहीही नाही)  निरंक',
-	'centralauth-editgroup-submit' => 'गट अधिकारांमधील बदल जतन करा', # Fuzzy
+	'centralauth-editgroup-submit' => 'वैश्विक गटातले बदल जतन करा',
 	'centralauth-editgroup-perms' => 'दिलेले अधिकार:',
 	'centralauth-editgroup-reason' => 'कारण:',
-	'centralauth-editgroup-success' => 'गट अधिकार बदलले', # Fuzzy
-	'centralauth-editgroup-success-text' => 'तुम्ही $1 गटाचे गट अधिकार बदललेले आहेत.
-[[Special:GlobalGroupPermissions|गट व्यवस्थापनाकडे परत जा]]', # Fuzzy
+	'centralauth-editgroup-success' => 'वैश्विक गट बदलला',
+	'centralauth-editgroup-success-text' => 'तुम्ही $1 या वैश्विक गटास अद्ययावत् केले आहे.
+[[Special:GlobalGroupPermissions|गट व्यवस्थापनाकडे परत जा]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|संपादन]])',
+	'centralauth-editgroup-nowikiset' => 'काहीच नाही, सर्व विकिंना लागू.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ज्या विकिवर त्यांचे खाते आहे असा विकि निवडा:',
 	'centralauth-globalgroupmembership-badknownwiki' => " '''$1''' हा वैश्विक सदस्यखाते '''$1'''  हे तुम्ही दिलेल्या विकिवर (''$2'') कार्यान्वित नाही. तुम्ही कदाचित चुकीच्या सदस्यास अधिकार प्रदानाचा प्रयत्न करीत आहात!",
 	'centralauth-editset' => 'विकीसंच',
@@ -36101,14 +36104,14 @@ $messages['zea'] = array(
 $messages['zh-hans'] = array(
 	'mergeaccount' => '全域整合状况',
 	'centralauth-groupname' => '维基媒体基金会',
-	'centralauth-desc' => '[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的wiki帐号',
+	'centralauth-desc' => '[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的维基帐号',
 	'centralauth-antispoof-desc' => '给中央认证添加 AntiSpoof 技术',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|将多个账户合并]]为单一用户账户',
 	'centralauth-merge-denied' => '很抱歉，您没有权限访问这个页面',
 	'centralauth-merge-notlogged' => '请<span class="plainlinks">[$1 登录]</span>并检查您的账号是否已被完全合并。',
 	'centralauth-merge-welcome' => "'''您的用户帐号还未被迁移到{{int:Centralauth-groupname}}的整合登录系统。'''
 
-一旦您选择迁移您的帐号，您便可以通过相同的用户名和密码登录到{{int:Centralauth-groupname}}的所有wiki的所有语言版本。
+一旦您选择迁移您的帐号，您便可以通过相同的用户名和密码登录到{{int:Centralauth-groupname}}的所有维基的所有语言版本。
 
 如果在另一个站点上已有其他人选用了您的用户名，他们也不会受到干扰。不过，此后您将有一个与他们或管理员协商解决该问题的机会。",
 	'centralauth-merge-step1-title' => '开始整合用户账户',
@@ -36162,14 +36165,14 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-method-new' => '新账户',
 	'centralauth-merge-method-login' => '因登录而创建',
 	'centralauth-merge-method-primary-desc' => '这是该帐户最初账户合并的维基。
-请注意，它可能不同于该用户真正的主维基。',
+请注意，它可能不同于该用户真正的起始维基。',
 	'centralauth-merge-method-empty-desc' => '表示该本地帐户已合并，因为它没有进行过编辑。',
 	'centralauth-merge-method-mail-desc' => '表示该本地帐户已合并，因为它的电子邮件地址和主帐户的电子邮件地址相匹配。',
 	'centralauth-merge-method-password-desc' => '表示该本地帐户已合并，因为用户为它指定了一个有效密码。',
 	'centralauth-merge-method-admin-desc' => '表示该本地帐户由监管员手动合并。
 因为安全原因，这项功能已被禁用。',
-	'centralauth-merge-method-new-desc' => '表示全域帐户时自动创建本地帐户。',
-	'centralauth-merge-method-login-desc' => '表示该本地帐户在用户登录时自动创建。',
+	'centralauth-merge-method-new-desc' => '表示合并全域帐户时自动创建本地帐户。',
+	'centralauth-merge-method-login-desc' => '表示该帐户在用户登录时自动创建。',
 	'centralauth-finish-title' => '合并完成',
 	'centralauth-finish-text' => '如果您的确拥有这些账户，您只需在此输入它们所使用的密码便可完成账户整合过程：',
 	'centralauth-finish-password' => '密码：',
@@ -36184,15 +36187,15 @@ $messages['zh-hans'] = array(
 	'centralauth-attach-text' => '此账户还未被迁移到整合账户中。如果您已经拥有了一个整合账户，您可以在此输入该整合账户的密码来并入此账户：',
 	'centralauth-attach-submit' => '账户迁移',
 	'centralauth-attach-success' => '该账户已被迁移到整合账户中。',
-	'centralauth' => '全局用户管理器', # Fuzzy
+	'centralauth' => '全局账户管理器',
 	'centralauth-admin-intro' => '本界面可以用于全局账户管理。',
-	'centralauth-admin-manage' => '管理用户数据', # Fuzzy
+	'centralauth-admin-manage' => '管理帐户数据',
 	'centralauth-admin-username' => '用户名：',
 	'centralauth-admin-lookup-ro' => '查看用户信息',
 	'centralauth-admin-lookup-rw' => '管理用户帐户',
 	'centralauth-admin-permission' => '只有监管员才能为他人合并账户。',
 	'centralauth-admin-no-unified' => '该用户名没有统一账户。',
-	'centralauth-admin-info-header' => '全局用户信息', # Fuzzy
+	'centralauth-admin-info-header' => '全局帐户信息',
 	'centralauth-admin-info-username' => '用户名：',
 	'centralauth-admin-info-id' => '用户ID：',
 	'centralauth-admin-info-registered' => '注册时间：',
@@ -36256,15 +36259,15 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-logsnippet' => '以前的全域帐户变更',
 	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因：$2',
 	'centralauth-admin-not-authorized' => '您没有权限来执行此操作',
-	'globalusers' => '全局用户列表', # Fuzzy
+	'globalusers' => '全局帐户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
 	'centralauth-listusers-nolocal' => '未附加或未于本地存在',
-	'multilock' => '锁定多个全域用户', # Fuzzy
+	'multilock' => '锁定多个全域帐户',
 	'centralauth-admin-multi-username' => '输入一个或多个用户名，以新行分隔',
 	'centralauth-admin-multi-notfound' => '搜索没有返回用户名。',
-	'centralauth-admin-multi-searchprefix' => '或者，用前缀搜索帐户', # Fuzzy
-	'centralauth-admin-multi-intro' => '一次更新多个全域用户', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => '或者用前缀搜索帐户',
+	'centralauth-admin-multi-intro' => '一次更新多个全域帐户',
 	'centralauth-admin-action-lock-nochange' => '不要更改锁定',
 	'centralauth-admin-action-lock-lock' => '锁定选定帐户',
 	'centralauth-admin-action-lock-unlock' => '解锁选定帐户',
@@ -36289,9 +36292,9 @@ $messages['zh-hans'] = array(
 	'centralauth-prefs-count-unattached' => '您在$1个项目中还有未被确认的账户。',
 	'centralauth-prefs-detail-unattached' => '此项目站点还未被确认到整合账户。',
 	'centralauth-prefs-manage' => '管理您的整合账户',
-	'centralauth-prefs-view' => '查看全局用户信息', # Fuzzy
-	'centralauth-renameuser-merged' => '用户$1已经迁移至整合登录系统。重命名用户将会令本地用户从全域账户中脱离。', # Fuzzy
-	'centralauth-renameuser-reserved' => '用户$2已经预留给全域账户使用。', # Fuzzy
+	'centralauth-prefs-view' => '查看全局帐户信息',
+	'centralauth-renameuser-merged' => '用户$1已经迁移至整合登录系统。重命名用户将会令本地帐户从全域账户中脱离。',
+	'centralauth-renameuser-reserved' => '用户名$2已经预留给一个全域账户使用。',
 	'centralauth-invalid-wiki' => '无这个wikil数据库: $1',
 	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登录系统使用此名称。',
 	'centralauth-account-exists-reset' => '用户名$1并没有在此wiki注册，但存在一个同名的全局账户。',
@@ -36377,7 +36380,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|编辑]])',
 	'centralauth-editgroup-nowikiset' => '无，适用所有wiki。',
 	'centralauth-globalgrouppermissions-knownwiki' => '选择一个他们有账户的wiki:',
-	'centralauth-globalgroupmembership-badknownwiki' => "该全域用户'''$1'''在您所指定的wiki（'' $2 ''）中并不活跃。您可能正在尝试指定许可到错的用户!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "该全域帐户'''$1'''在您所指定的wiki（'' $2 ''）中并不活跃。您可能正在尝试指定错的用户!",
 	'centralauth-editset' => '维基组',
 	'centralauth-editset-legend-rw' => '编辑或添加维基组',
 	'centralauth-editset-legend-ro' => '维基组列表',
@@ -36411,7 +36414,7 @@ $messages['zh-hans'] = array(
 	'centralauth-editset-success' => '成功更改wiki设置。',
 	'centralauth-editset-success-delete' => '成功删除这个wiki设置。',
 	'centralauth-editset-return' => '返回主视图',
-	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] 的用户已被全域锁定。', # Fuzzy
+	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] 的帐户已被全域锁定。',
 	'centralauth-readonly' => 'CentralAuth数据库被锁',
 	'centralauth-readonlytext' => 'CentralAuth数据库是目前被锁定，所以无法接受新条目和其他修改。它可能正在进行常规的数据库维护，然后将恢复正常。',
 	'right-globalgroupmembership' => '编辑成员至全域组',
