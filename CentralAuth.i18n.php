@@ -19625,6 +19625,7 @@ Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
 	'centralauth-centralautologin-lostsession' => 'Donnéeë vun der Sessioun si verluer gaang',
 	'centralauth-centralautologin-badstate-central' => 'Status "$1" ass net valabel op der zentraler Wiki',
+	'centralauth-centralautologin-badstate-local' => 'Status "$1" ass net valabel op der lokaler Wiki',
 	'centralauth-centralautologin-badwiki' => 'D\'Wiki "$1" ass net valabel fir den zentrale Login',
 	'centralauth-centralautologin-logged-in' => "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	'globalgroupmembership' => 'Member a globale Gruppen',
@@ -36102,7 +36103,7 @@ $messages['zea'] = array(
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
-	'mergeaccount' => '全域整合状况',
+	'mergeaccount' => '统一登录状态',
 	'centralauth-groupname' => '维基媒体基金会',
 	'centralauth-desc' => '[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的维基帐号',
 	'centralauth-antispoof-desc' => '给中央认证添加 AntiSpoof 技术',
@@ -36259,11 +36260,11 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-logsnippet' => '以前的全域帐户变更',
 	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因：$2',
 	'centralauth-admin-not-authorized' => '您没有权限来执行此操作',
-	'globalusers' => '全局帐户列表',
+	'globalusers' => '全局账户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
 	'centralauth-listusers-nolocal' => '未附加或未于本地存在',
-	'multilock' => '锁定多个全域帐户',
+	'multilock' => '锁定多个全局账户',
 	'centralauth-admin-multi-username' => '输入一个或多个用户名，以新行分隔',
 	'centralauth-admin-multi-notfound' => '搜索没有返回用户名。',
 	'centralauth-admin-multi-searchprefix' => '或者用前缀搜索帐户',
