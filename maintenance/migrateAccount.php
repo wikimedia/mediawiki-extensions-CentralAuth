@@ -1,13 +1,7 @@
 <?php
 
-if ( PHP_SAPI != 'cli' ) {
-	print "This script must be run from a shell";
-	die();
-}
-
-if ( getenv( 'MW_INSTALL_PATH' ) ) {
-	$IP = getenv( 'MW_INSTALL_PATH' );
-} else {
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once( "$IP/maintenance/Maintenance.php" );
