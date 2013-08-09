@@ -481,8 +481,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string
 	 */
 	public function getHomeWiki() {
-		// FIXME: gu_home_db is never populated via CentralAuth
-		//$this->loadState();
+		// FIXME: gu_home_db is sometimes populated via CentralAuth
+		$this->loadState();
 		if ( $this->mHomeWiki === null ) {
 			$this->mHomeWiki = "";
 			foreach ( $this->queryAttached() as $wiki => $acc ) {
@@ -2138,7 +2138,8 @@ class CentralAuthUser extends AuthPluginUser {
 				'gu_locked' => $this->mLocked,
 				'gu_hidden' => $this->getHiddenLevel(),
 				'gu_email' => $this->mEmail,
-				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp )
+				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp ),
+				'gu_home_db' => $this->getHomeWiki()
 			),
 			array( # WHERE
 				'gu_id' => $this->mGlobalId
