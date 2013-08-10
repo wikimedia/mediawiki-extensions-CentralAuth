@@ -16135,68 +16135,68 @@ Hóp má eyða með því að fjarlægja öll réttindi hans.',
 $messages['it'] = array(
 	'mergeaccount' => 'Processo di unificazione delle utenze - status',
 	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-desc' => '[[Special:MergeAccount|Unifica gli account]] sui siti gestiti da {{int:Centralauth-groupname}}',
+	'centralauth-desc' => '[[Special:MergeAccount|Unifica le tue utenze]] sui siti gestiti da {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Aggiunge la tecnologia di AntiSpoof a CentralAuth',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Unifica più account]] per il login unico',
+	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Unifica le tue utenze]] in un'utenza globale",
 	'centralauth-merge-denied' => 'Non si dispone dei permessi necessari per accedere a questa pagina.',
 	'centralauth-merge-notlogged' => 'Si prega di <span class="plainlinks">[$1 effettuare il login]</span> per verificare se il processo di unificazione delle proprie utenze è completo.',
-	'centralauth-merge-welcome' => "'''Il tuo account utente non è ancora stato importato nel sistema di identificazione unificato di {{int:Centralauth-groupname}}.'''
+	'centralauth-merge-welcome' => "'''La tua utenza non è ancora stato importata nel sistema di identificazione unificato di {{int:Centralauth-groupname}}.'''
 
-Se decidi di unificare i tuoi account, potrai usare lo stesso nome utente e la stessa password per accedere a tutti i progetti wiki di {{int:Centralauth-groupname}} in tutte le lingue disponibili.
+Se decidi di unificare le tue utenze, potrai usare lo stesso nome utente e la stessa password per accedere a tutti i progetti wiki di {{int:Centralauth-groupname}} in tutte le lingue disponibili.
 
-Se qualcun altro ha già preso il tuo nome utente su un altro sito, questo non lo disturberà, ma l'unificazione darà a te la possibilità di sottoporre in futuro il problema all'altro utente o a un amministratore.",
+Se qualcun altro ha già usato il tuo nome utente su un altro sito, questo non lo disturberà, ma l'unificazione darà a te la possibilità di risolvere in futuro il problema insieme all'altro utente o a un amministratore.",
 	'centralauth-merge-step1-title' => "Avvia l'unificazione dei login",
-	'centralauth-merge-step1-detail' => "Inserisci qui la password del tuo account.
-La tua password e l'indirizzo e-mail registrato saranno ora controllati sugli account in altre wiki per confermare che corrispondano.
-Nessuna modifica sarà effettuata prima della tua conferma che tutto appare in regola.",
+	'centralauth-merge-step1-detail' => "Inserisci qui la password della tua utenza.
+La tua password e l'indirizzo di posta elettronica registrato saranno ora incrociati con le utenze in altre wiki per confermare che corrispondano.
+Nessuna modifica sarà effettuata prima della tua conferma che tutto appaia in regola.",
 	'centralauth-merge-step1-submit' => 'Conferma le informazioni per il login',
-	'centralauth-merge-step2-title' => 'Conferma altri account',
-	'centralauth-merge-step2-detail' => 'Non è stato possibile collegare automaticamente alcuni account a quello sulla tua wiki principale. Se sei il titolare di questi account, prova che ti appartengono indicando le password per ciascuno di essi.',
+	'centralauth-merge-step2-title' => 'Conferma altre utenze',
+	'centralauth-merge-step2-detail' => 'Non è stato possibile collegare automaticamente alcune utenze a quello sul tuo wiki principale. Se sei il titolare di queste utenze, prova che ti appartengono indicando le password per ciascuno di esse.',
 	'centralauth-merge-step2-submit' => 'Conferma le informazioni di login',
-	'centralauth-merge-dryrun-complete' => 'È possibile unificare automaticamente tutti gli account esistenti.
+	'centralauth-merge-dryrun-complete' => 'È possibile unificare automaticamente tutte le utenze esistenti.
 
-Al momento non è stata apportata alcuna modifica agli account.',
-	'centralauth-merge-dryrun-incomplete' => 'Si è scelto di continuare anche se non è stato possibile verificare automaticamente alcuni account. Per tali account non verrà effettuata ora la migrazione; il processo di unificazione potrà essere completato in un secondo tempo.
+Al momento non è stata apportata alcuna modifica alle utenze.',
+	'centralauth-merge-dryrun-incomplete' => 'Si è scelto di continuare anche se non è stato possibile verificare automaticamente alcune utenze. Per tali utenze non verrà effettuata ora la migrazione; il processo di unificazione potrà essere completato in un secondo tempo.
 
-Al momento non è stata apportata alcuna modifica agli account.',
+Al momento non è stata apportata alcuna modifica alle utenze.',
 	'centralauth-merge-dryrun-or' => "'''oppure'''",
-	'centralauth-merge-dryrun-home' => "Il sistema di trasferimento non è stato in grado di verificare che questo utente sia il proprietario dell'account con lo stesso nome sulla wiki principale.
+	'centralauth-merge-dryrun-home' => "Il sistema di trasferimento non è stato in grado di verificare che questo utente sia il proprietario dell'utenza con lo stesso nome sul wiki principale.
 
-È stato rilevato che a questo nome utente corrisponde un account principale su un'altra wiki. Seguire il collegamento indicato di seguito ed affettuare l'accesso su quel sito per completare il trasferimento dei propri account.",
+È stato rilevato che a questo nome utente corrisponde un'utenza principale su un altro wiki. Seguire il collegamento indicato di seguito ed effettuare l'accesso su quel sito per completare il trasferimento delle proprie utenze.",
 	'centralauth-merge-step3-title' => "Crea l'account unificato",
-	'centralauth-merge-step3-detail' => 'È tutto pronto per creare il tuo account unificato sulle seguenti wiki:',
-	'centralauth-merge-step3-submit' => 'Unifica gli account',
-	'centralauth-merge-no-accounts' => 'Non sono stati trovati account con il tuo nome nella tabella degli account centrali!
+	'centralauth-merge-step3-detail' => 'È tutto pronto per creare la tua utenza globale per i seguenti wiki:',
+	'centralauth-merge-step3-submit' => 'Unifica le utenze',
+	'centralauth-merge-no-accounts' => 'Non sono state trovate utenze con il tuo nome nella tabella centrale delle utenze!
 Il database deve essere corrotto.',
-	'centralauth-merge-home-password' => 'La wiki principale per questo account (elencata sotto) ha una password differente da quella che hai inserito.
-Per favore inserisci la password per la wiki principale.',
+	'centralauth-merge-home-password' => 'Il wiki principale per questa utenza (indicata sotto) ha una password differente da quella che hai inserito.
+Per favore inserisci la password per il wiki principale.',
 	'centralauth-complete' => 'Il processo di unificazione delle utenze è stato completato.',
 	'centralauth-incomplete' => 'Il processo di unificazione delle utenze non è ancora stato completato.',
-	'centralauth-complete-text' => 'È ora possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuovi account.',
-	'centralauth-incomplete-text' => 'Dopo aver unificato le proprie utenze, sarà possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuovi account',
+	'centralauth-complete-text' => 'È ora possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuove utenze.',
+	'centralauth-incomplete-text' => 'Dopo aver unificato le proprie utenze, sarà possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuove utenze',
 	'centralauth-not-owner-text' => 'Il nome utente "$1" è stato assegnato automaticamente al titolare dell\'account con lo stesso nome sul progetto $2.
 
 Se si è il titolare dell\'utenza, per terminare il processo di unificazione è sufficiente inserire la password principale di quell\'account qui di seguito:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Solo modalità Demo</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => "L'unificazione degli account attualmente può essere sperimentata solo in modalità ''demo'' o ''debugging'', quindi le operazioni di effettiva fusione dei dati sono disabilitate. Siamo spiacenti!",
-	'centralauth-error-locked' => 'Non puoi modificare perché il tuo account è bloccato.',
-	'centralauth-error-unmerged' => 'Non puoi modificare perché il tuo account non è stato unificato.',
+	'centralauth-disabled-dryrun' => "L'unificazione delle utenze attualmente può essere sperimentata solo in modalità ''demo'' o ''debugging'', quindi le operazioni di effettiva unificazione sono disabilitate. Siamo spiacenti!",
+	'centralauth-error-locked' => 'Non puoi fare modifiche perché la tua utenza globale è bloccata.',
+	'centralauth-error-unmerged' => 'Non puoi effettuare modifiche perché la tua utenza non è stata unificata.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/it|Per saperne di più sul '''login unificato''']]…''",
 	'centralauth-list-home-title' => 'Wiki principale',
 	'centralauth-list-home-dryrun' => "La password e l'indirizzo e-mail registrati in questo wiki saranno usati per l'account unificato.",
-	'centralauth-list-attached-title' => 'Account collegati',
-	'centralauth-list-attached' => 'Gli account con nome utente "$1" sui progetti elencati di seguito sono stati unificati automaticamente:',
-	'centralauth-list-attached-dryrun' => 'Gli account chiamati "$1" sui siti indicati di seguito saranno collegati automaticamente all\'account unificato:',
-	'centralauth-list-unattached-title' => 'Account non collegati',
-	'centralauth-list-unattached' => 'Non è stato possibile verificare automaticamente che gli account con nome utente "$1" sui progetti elencati di seguito appartengano allo stesso titolare; è probabile che sia stata usata una password diversa da quella dell\'account principale:',
+	'centralauth-list-attached-title' => 'Utenze unificate',
+	'centralauth-list-attached' => 'Le utenze con nome utente "$1" sui progetti elencati di seguito sono state unificate automaticamente:',
+	'centralauth-list-attached-dryrun' => 'Le utenze chiamate "$1" sui siti indicati di seguito saranno unificate automaticamente all\'utenza globale:',
+	'centralauth-list-unattached-title' => 'Utenze non unificate',
+	'centralauth-list-unattached' => 'Non è stato possibile verificare automaticamente che le utenze con nome utente "$1" sui progetti elencati di seguito appartengano allo stesso utente; è probabile che sia stata usata una password diversa da quella dell\'utenza principale:',
 	'centralauth-foreign-link' => 'Utente $1 su $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contributo|contributi}} su $2',
 	'centralauth-merge-method-primary' => 'wiki principale',
 	'centralauth-merge-method-empty' => 'nessun contributo',
 	'centralauth-merge-method-mail' => 'confermato mediante e-mail',
 	'centralauth-merge-method-password' => 'confermato mediante password',
-	'centralauth-merge-method-admin' => 'account unificati da un amministratore',
-	'centralauth-merge-method-new' => 'nuovo account',
+	'centralauth-merge-method-admin' => 'utenza unificata da un amministratore',
+	'centralauth-merge-method-new' => 'nuova utenza',
 	'centralauth-merge-method-login' => 'creato mediante accesso',
 	'centralauth-merge-method-primary-desc' => "Questa è la wiki in cui l'account è stato inizialmente unificato.
 Nota che potrebbe essere differente dalla wiki principale di questo utente.",
@@ -16208,28 +16208,28 @@ Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-merge-method-new-desc' => "Indica che l'utenza globale è stata creata automaticamente quando è stata creata l'utenza locale.",
 	'centralauth-merge-method-login-desc' => "Indica che l'account locale è stato creato automaticamente quando l'utente ha eseguito l'accesso.",
 	'centralauth-finish-title' => 'Completa il processo di unificazione',
-	'centralauth-finish-text' => 'Se si è il titolare di queste utenze, per completare il processo di unificazione degli account è sufficiente inserire le password relative alle utenze stesse qui di seguito:',
+	'centralauth-finish-text' => 'Se si è il titolare di queste utenze, per completare il processo di unificazione delle utenze è sufficiente inserire le password relative alle utenze stesse qui di seguito:',
 	'centralauth-finish-password' => 'Password:',
 	'centralauth-finish-login' => 'Esegui il login',
 	'centralauth-finish-send-confirmation' => 'Invia password via e-mail',
 	'centralauth-finish-problems' => 'Se non si è il titolare di queste utenze, o se si incontrano altri problemi, si invita a consultare la [[meta:Help:Unified login problems|pagina di aiuto]]...',
-	'centralauth-finish-noconfirms' => 'Impossibile confermare degli account mediante questa password.',
-	'centralauth-finish-incomplete' => 'Sono stati unificati alcuni account mediante questa password. Sono presenti altri account in attesa di conferma.',
+	'centralauth-finish-noconfirms' => 'È impossibile confermare alcuna utenza mediante questa password.',
+	'centralauth-finish-incomplete' => 'Sono state unificate alcune utenze mediante questa password. Sono presenti altre utenze in attesa di conferma.',
 	'centralauth-merge-attempt' => "'''Verifica della password inserita sulle utenze non ancora unificate...'''",
-	'centralauth-attach-list-attached' => "L'account unificato chiamato \"'''\$1'''\" include i seguenti account:",
+	'centralauth-attach-list-attached' => "L'utenza globale chiamata \"'''\$1'''\" include le seguenti utenze:",
 	'centralauth-attach-title' => "Conferma l'account",
 	'centralauth-attach-text' => "Questa utenza non è ancora stata collegata all'utenza globale. Se sei il titolare dell'utenza globale, puoi collegare questa utenza inserendo la password dell'utenza globale:",
 	'centralauth-attach-submit' => "Collega l'account",
 	'centralauth-attach-success' => "L'account è stato trasferito all'account unificato.",
-	'centralauth' => "Amministrazione dell'utenza globale",
+	'centralauth' => "Amministrazione dell'utenza globale", # Fuzzy
 	'centralauth-admin-intro' => "Questa interfaccia può essere utilizzata per l'amministrazione delle utenze globali.",
-	'centralauth-admin-manage' => 'Gestione dati utente',
+	'centralauth-admin-manage' => 'Gestione dati utente', # Fuzzy
 	'centralauth-admin-username' => 'Nome utente:',
 	'centralauth-admin-lookup-ro' => 'Vedi informazioni utente',
 	'centralauth-admin-lookup-rw' => 'Gestione utenza',
 	'centralauth-admin-permission' => 'Solo gli steward possono unificare le utenze altrui.',
 	'centralauth-admin-no-unified' => 'Non esistono utenze globali per questo nome utente.',
-	'centralauth-admin-info-header' => 'Informazioni globali utenza',
+	'centralauth-admin-info-header' => 'Informazioni globali utenza', # Fuzzy
 	'centralauth-admin-info-username' => 'Nome utente:',
 	'centralauth-admin-info-id' => 'ID utenza:',
 	'centralauth-admin-info-registered' => 'Registrata:',
@@ -16253,17 +16253,17 @@ Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-admin-list-method' => 'Metodo',
 	'centralauth-admin-list-editcount' => 'Conteggio delle modifiche',
 	'centralauth-admin-list-blocked' => 'Bloccato',
-	'centralauth-admin-unmerge' => 'Scollega gli account selezionati',
-	'centralauth-admin-merge' => 'Collega gli account selezionati',
+	'centralauth-admin-unmerge' => 'Scollega le utenze selezionate',
+	'centralauth-admin-merge' => 'Unifica le utenze selezionate',
 	'centralauth-admin-bad-input' => "Selezione per l'unificazione NON valida",
-	'centralauth-admin-none-selected' => 'Non sono stati selezionati account da modificare',
+	'centralauth-admin-none-selected' => 'Non sono stati selezionate utenze da modificare',
 	'centralauth-admin-already-unmerged' => 'Salto $1, già separato',
-	'centralauth-admin-unmerge-success' => '$1 account {{PLURAL:$1|separato|separati}} con successo',
-	'centralauth-admin-delete-title' => 'Elimina account',
-	'centralauth-admin-delete-description' => "La cancellazione dell'utenza globale eliminerà tutte le preferenze globali, disgiungerà tutti gli account locali e lascerà il nome globale libero perché un altro utente lo prenda.
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|utenza separata|utenze separate}} con successo',
+	'centralauth-admin-delete-title' => "Elimina l'utenza",
+	'centralauth-admin-delete-description' => "La cancellazione dell'utenza globale eliminerà tutte le preferenze globali, scollegherà tutte le utenze locali e lascerà il nome globale disponibile all'uso da parte di un altro utente.
 Tutte le utenze locali continueranno a esistere.
-Le password per le utenze locali create prima della fusione torneranno ai loro valori precedenti la fusione.",
-	'centralauth-admin-delete-button' => 'Elimina questo account',
+Le password per le utenze locali create prima della fusione torneranno ai loro valori precedenti l'unificazione.",
+	'centralauth-admin-delete-button' => 'Elimina questa utenza globale',
 	'centralauth-admin-delete-confirm' => 'Vuoi veramente cancellare questa utenza?',
 	'centralauth-admin-delete-success' => 'Utenza globale "<nowiki>$1</nowiki>" eliminata con successo',
 	'centralauth-admin-nonexistent' => 'Non esiste un\'utenza globale per "<nowiki>$1</nowiki>"',
@@ -16286,29 +16286,29 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-status-nonexistent' => 'Errore: l\'utente globale "<nowiki>$1</nowiki>" non esiste.',
 	'centralauth-admin-setstatus-success' => 'Hai modificato con successo lo stato di questa utenza globale.',
 	'centralauth-admin-status-reasons' => '*Comuni motivi di blocco
-** account usato solo per vandalismi
-** account usato solo per spam
+** utenza usata solo per vandalismi
+** utenza usata solo per spam
 *Comuni motivi per bloccare e nascondere
-** nominativo utente offensivo
+** nome utente offensivo
 ** informazioni personali non appropriate',
 	'centralauth-admin-logsnippet' => "Modifiche precedenti all'utenza globale",
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non hai i diritti per eseguire questa azione.',
-	'globalusers' => 'Lista degli utenti globali',
+	'globalusers' => 'Lista degli utenti globali', # Fuzzy
 	'centralauth-listusers-locked' => 'bloccato',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmente]]',
 	'centralauth-listusers-nolocal' => 'separato o non esiste localmente',
-	'multilock' => 'Blocca più utenze globali',
+	'multilock' => 'Blocca più utenze globali', # Fuzzy
 	'centralauth-admin-multi-username' => 'Inserisci uno o più nomi utente, uno per riga',
 	'centralauth-admin-multi-notfound' => 'La ricerca non ha restituito alcun nome utente.',
-	'centralauth-admin-multi-searchprefix' => 'Oppure, cerca le utenze con un prefisso',
-	'centralauth-admin-multi-intro' => 'Aggiorna più utenti globali in una sola volta',
+	'centralauth-admin-multi-searchprefix' => 'Oppure, cerca le utenze con un prefisso', # Fuzzy
+	'centralauth-admin-multi-intro' => 'Aggiorna più utenti globali in una sola volta', # Fuzzy
 	'centralauth-admin-action-lock-nochange' => 'Non modificare i blocchi',
-	'centralauth-admin-action-lock-lock' => 'Blocca gli account selezionati',
-	'centralauth-admin-action-lock-unlock' => 'Sblocca gli account selezionati',
-	'centralauth-admin-action-hide-none' => 'Mostra gli account selezionati',
-	'centralauth-admin-action-hide-lists' => 'Nascondi gli account selezionati dagli elenchi pubblici',
-	'centralauth-admin-action-hide-oversight' => 'Nascondi completamente gli account selezionati',
+	'centralauth-admin-action-lock-lock' => 'Blocca gli utenti selezionati',
+	'centralauth-admin-action-lock-unlock' => 'Sblocca gli utenti selezionati',
+	'centralauth-admin-action-hide-none' => 'Mostra le utenze selezionate',
+	'centralauth-admin-action-hide-lists' => 'Nascondi le utenze selezionate dagli elenchi pubblici',
+	'centralauth-admin-action-hide-oversight' => 'Nascondi completamente le utenze selezionate',
 	'centralauth-admin-multi-bot' => 'Ultime modifiche',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|secondo|secondi}} fa',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuto|minuti}} fa',
@@ -16317,17 +16317,17 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|mese|mesi}} fa',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|anno|anni}} fa',
 	'centralauth-prefs-status' => "Situazione dell'utenza globale:",
-	'centralauth-prefs-not-managed' => 'Account unificato non in uso',
+	'centralauth-prefs-not-managed' => 'Nessuna utenza globale',
 	'centralauth-prefs-unattached' => 'Non confermato',
 	'centralauth-prefs-complete' => 'Tutto a posto!',
 	'centralauth-prefs-migration' => 'In corso di trasferimento',
 	'centralauth-prefs-count-attached' => 'La tua utenza è attiva su $1 {{PLURAL:$1|sito|siti}} di progetto.',
-	'centralauth-prefs-count-unattached' => 'Ci sono account non confermati con il tuo nome utente su $1 {{PLURAL:$1|progetto|progetti}}.',
+	'centralauth-prefs-count-unattached' => 'Ci sono utenze non confermate con il tuo nome utente su $1 {{PLURAL:$1|progetto|progetti}}.',
 	'centralauth-prefs-detail-unattached' => "Questo sito di progetto non è stato confermato come appartenente all'utenza globale.",
 	'centralauth-prefs-manage' => 'Gestione della tua utenza globale',
-	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente",
-	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.",
-	'centralauth-renameuser-reserved' => "L'utente $2 è riservato a un'utenza globale.",
+	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente", # Fuzzy
+	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.", # Fuzzy
+	'centralauth-renameuser-reserved' => "L'utente $2 è riservato a un'utenza globale.", # Fuzzy
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.',
@@ -16409,9 +16409,9 @@ Nota che un gruppo non esiste a meno che non gli siano stati assegnati i permess
 [[Special:GlobalGroupPermissions|Torna alla gestione dei gruppi]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modifica]])',
 	'centralauth-editgroup-nowikiset' => 'Nessuno, si applica a tutti i wiki.',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Seleziona una wiki sulla quale ha un account:',
+	'centralauth-globalgrouppermissions-knownwiki' => "Seleziona un wiki su cui ha un'utenza:",
 	'centralauth-globalgroupmembership-badknownwiki' => "L'utente globale '''$1''' non è attivo sulla wiki che hai specificato ('' $2 '').
-Forse stai cercando di assegnare i permessi all'utente sbagliato!",
+Forse stai cercando di assegnare i permessi all'utente sbagliato!", # Fuzzy
 	'centralauth-editset' => 'Insiemi di wiki',
 	'centralauth-editset-legend-rw' => 'Modifica o crea insiemi di wiki',
 	'centralauth-editset-legend-ro' => 'Elenco degli insiemi di wiki',
@@ -16445,7 +16445,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-editset-success' => 'Insieme di wiki modificato con successo.',
 	'centralauth-editset-success-delete' => 'Insieme di wiki cancellato con successo.',
 	'centralauth-editset-return' => 'Torna alla visualizzazione principale',
-	'centralauth-block-already-locked' => "L'utente [[Special:CentralAuth/$1|$1]] è già bloccato globalmente.",
+	'centralauth-block-already-locked' => "L'utente [[Special:CentralAuth/$1|$1]] è già bloccato globalmente.", # Fuzzy
 	'centralauth-readonly' => 'Il database di CentralAuth è bloccato',
 	'centralauth-readonlytext' => 'Il database di CentralAuth è al momento bloccato in scrittura, probabilmente per un operazione di manutenzione di routine, presto tutto tornerà alla normalità.',
 	'right-globalgroupmembership' => "Modifica l'appartenenza ai gruppi globali",
@@ -16453,7 +16453,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'right-centralauth-unmerge' => 'Scollega dalle utenze globali',
 	'right-centralauth-lock' => 'Blocca o sblocca utenze globali',
 	'right-centralauth-oversight' => "Elimina o nasconde l'utenza globale",
-	'right-centralauth-merge' => 'Unifica il proprio account',
+	'right-centralauth-merge' => 'Unifica le proprie utenze',
 	'right-globalgrouppermissions' => 'Gestisce i gruppi globali',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Gruppi globali a cui appartiene l'utente",
 	'action-centralauth-lock' => 'bloccare o sbloccare le utenze globali',
@@ -16468,13 +16468,13 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-warning-notloggedin' => 'Attualmente non sei connesso.',
 	'centralauth-warning-notattached' => "L'utenza locale non è collegata ad una globale.",
 	'centralauth-finishglobaliseemail_subject' => 'Conferma utenza su {{SITENAME}}',
-	'centralauth-finishglobaliseemail_body' => 'Il tuo indirizzo email è stato associato con l\'utenza "$2" su tutti i progetti Wikimedia, con l\'account principale su {{SITENAME}}.
+	'centralauth-finishglobaliseemail_body' => 'Il tuo indirizzo di posta elettronica è stato associato con l\'utenza "$2" su tutti i progetti Wikimedia, con l\'utenza principale su {{SITENAME}}.
 
-Per confermare che questa utenza appartiene davvero a te, unire tutti i tuoi account che non è possibile farlo automaticamente, e permetterti di recuperare la password se la dimentichi, apri questo collegamento nel tuo browser:
+Per confermare che questa utenza appartiene davvero a te, unire tutte le utenze dove non sia stato possibile farlo automaticamente, e poter recuperare la password se la dimenticassi in futuro, apri questo collegamento nel tuo browser:
 
 $3
 
-Se l\'utenza *non* appartiene a te, segui questo collegamento per annullare la conferma dell\'indirizzo email:
+Se l\'utenza *non* appartiene a te, segui questo collegamento per annullare la conferma dell\'indirizzo di posta elettronica:
 
 $5
 
@@ -22212,15 +22212,15 @@ Akaun-akaun lain belum lagi disahkan.',
 Jika akaun sejagat tersebut adalah milik anda juga, anda boleh menggabungkan akaun ini dengan menaip kata laluan akaun sejagat tersebut:',
 	'centralauth-attach-submit' => 'Pindah akaun',
 	'centralauth-attach-success' => 'Akaun tersebut telah dipindahkan ke akaun gabungan.',
-	'centralauth' => 'Pengurus pengguna sejagat',
+	'centralauth' => 'Pengurus akaun sejagat',
 	'centralauth-admin-intro' => 'Antara muka ini boleh digunakan untuk penyelia akaun sejagat.',
-	'centralauth-admin-manage' => 'Urus data pengguna',
+	'centralauth-admin-manage' => 'Urus akaun pengguna',
 	'centralauth-admin-username' => 'Nama pengguna:',
 	'centralauth-admin-lookup-ro' => 'Lihat maklumat pengguna',
 	'centralauth-admin-lookup-rw' => 'Uruskan akaun pengguna',
 	'centralauth-admin-permission' => 'Hanya pengelola boleh menggabungkan akaun orang lain untuk dirinya.',
 	'centralauth-admin-no-unified' => 'Pengguna ini tidak memiliki akaun bersatu.',
-	'centralauth-admin-info-header' => 'Maklumat pengguna sejagat',
+	'centralauth-admin-info-header' => 'Maklumat akaun sejagat',
 	'centralauth-admin-info-username' => 'Nama pengguna:',
 	'centralauth-admin-info-id' => 'ID pengguna:',
 	'centralauth-admin-info-registered' => 'Berdaftar:',
@@ -22285,15 +22285,15 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-admin-logsnippet' => 'Perubahan akaun sejagat yang sebelumnya',
 	'centralauth-admin-suppressreason' => 'Disekat secara sejagat oleh $1 atas sebab berikut: $2',
 	'centralauth-admin-not-authorized' => 'Anda tidak mempunyai keizinan untuk melakukan tindakan ini.',
-	'globalusers' => 'Senarai pengguna sejagat',
+	'globalusers' => 'Senarai akaun sejagat',
 	'centralauth-listusers-locked' => 'dikunci',
 	'centralauth-listusers-attached' => '[[User:$1|tempatan]]',
 	'centralauth-listusers-nolocal' => 'tidak dicantumkan atau bukan tempatan',
-	'multilock' => 'Kunci Berbilang Pengguna Sejagat',
+	'multilock' => 'Kunci berbilang akaun sejagat',
 	'centralauth-admin-multi-username' => 'Masukkan satu atau lebih nama pengguna, diasingkan sebaris demi sebaris',
 	'centralauth-admin-multi-notfound' => 'Carian tidak mendatangkan sebarang nama pengguna.',
-	'centralauth-admin-multi-searchprefix' => 'Atau cari akaun dengan awalan',
-	'centralauth-admin-multi-intro' => 'Kemaskinikan berbilang pengguna sejagat sekali gus',
+	'centralauth-admin-multi-searchprefix' => 'Atau cari nama pengguna dengan awalan',
+	'centralauth-admin-multi-intro' => 'Kemaskinikan berbilang akaun sejagat sekali gus',
 	'centralauth-admin-action-lock-nochange' => 'Jangan tukar kunci',
 	'centralauth-admin-action-lock-lock' => 'Kunci akaun terpilih',
 	'centralauth-admin-action-lock-unlock' => 'Buka kunci akaun-akaun terpilih',
@@ -22318,9 +22318,9 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-prefs-count-unattached' => 'Akaun dengan nama anda di $1 buah projek belum disahkan.',
 	'centralauth-prefs-detail-unattached' => 'Projek ini tidak disahkan sebagai milikan akaun sejagat tersebut.',
 	'centralauth-prefs-manage' => 'Urus akaun sejagat anda',
-	'centralauth-prefs-view' => 'Lihat maklumat pengguna sejagat',
-	'centralauth-renameuser-merged' => 'Pengguna $1 telah dipindahkan ke sistem akaun gabungan. Penukaran nama akan menyebabkan pengguna ini dipisahkan daripada akaun sejagat.',
-	'centralauth-renameuser-reserved' => 'Pengguna $2 telah ditempah untuk akaun sejagat.',
+	'centralauth-prefs-view' => 'Lihat maklumat akaun sejagat',
+	'centralauth-renameuser-merged' => 'Pengguna $1 telah dipindahkan ke sistem log masuk bersepadu. Penukaran nama akan menyebabkan akaun setempat terpisah daripada akaun sejagat.',
+	'centralauth-renameuser-reserved' => 'Pengguna $2 telah dikhaskan untuk akaun sejagat.',
 	'centralauth-invalid-wiki' => 'Pangkalan data wiki tiada: $1',
 	'centralauth-account-exists' => 'Tidak dapat membuka akaun: nama pengguna yang diminta telah pun didaftarkan dalam sistem akaun gabungan.',
 	'centralauth-account-exists-reset' => 'Nama pengguna $1 tidak didaftarkan dalam wiki ini, tetapi wujud dalam sistem log masuk tersatu.',
@@ -22411,8 +22411,8 @@ Sila ambil perhatian bahawa sesebuah kumpulan tidak wujud kecuali setelah diberi
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ubah]])',
 	'centralauth-editgroup-nowikiset' => 'Tiada, semua wiki kena.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki yang mengandungi akaun mereka:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Pengguna sejagat '''$1''' tidak aktif di wiki yang anda nyatakan ('' $2 '').
-Barangkali anda cuba memberikan hak kepada pengguna yang tidak sepatutnya!",
+	'centralauth-globalgroupmembership-badknownwiki' => "Akaun sejagat '''$1''' tidak aktif di wiki yang anda nyatakan ('' $2 '').
+Barangkali anda cuba memberikan hak kepada pengguna yang salah!",
 	'centralauth-editset' => 'Set wiki',
 	'centralauth-editset-legend-rw' => 'Sunting atau cipta set wiki',
 	'centralauth-editset-legend-ro' => 'Senarai set wiki',
@@ -22446,7 +22446,7 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'centralauth-editset-success' => 'Set wiki berjaya diubah.',
 	'centralauth-editset-success-delete' => 'Set wiki berjaya dihapuskan.',
 	'centralauth-editset-return' => 'Kembali ke pandangan utama',
-	'centralauth-block-already-locked' => 'Pengguna [[Special:CentralAuth/$1|$1]] sudah dikunci sejagat.',
+	'centralauth-block-already-locked' => 'Akaun [[Special:CentralAuth/$1|$1]] sudah dikunci sejagat.',
 	'centralauth-readonly' => 'Pangkalan Data CentralAuth dikunci',
 	'centralauth-readonlytext' => 'Pangkalan data CentralAuth kini dikunci daripada entri baru dan lain-lain pengubahsuaian, mungkin untuk kerja penyelenggaraan pangakalan data rutin, selepas itu ia akan kembali normal.',
 	'right-globalgroupmembership' => 'Mengubah keahlian kumpulan sejagat',
