@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_d695c887",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-11T02:37:36Z",
+      "side": 1,
+      "message": "Single quotes",
+      "revId": "20c1209c911110c5282a0823ea49540f69b2098f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_f66804bd",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-11T02:37:36Z",
+      "side": 1,
+      "message": "This probably wont work as saveSettings only wants to alter the DB if  $central-\u003emStateDirty is true",
+      "revId": "20c1209c911110c5282a0823ea49540f69b2098f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_f6a9e4df",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-11T02:37:36Z",
+      "side": 1,
+      "message": "Spaces?! Why not a simple while( True ), btw?",
+      "revId": "20c1209c911110c5282a0823ea49540f69b2098f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_5681b84f",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-08-11T02:37:36Z",
+      "side": 1,
+      "message": "Single quotes",
+      "revId": "20c1209c911110c5282a0823ea49540f69b2098f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
