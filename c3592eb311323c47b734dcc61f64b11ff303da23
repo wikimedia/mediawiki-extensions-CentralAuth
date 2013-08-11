@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_56a298b2",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-08-11T04:51:31Z",
+      "side": 1,
+      "message": "Seems like this wouldn\u0027t work on non-mysql without an order by on the select",
+      "revId": "c3592eb311323c47b734dcc61f64b11ff303da23",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
