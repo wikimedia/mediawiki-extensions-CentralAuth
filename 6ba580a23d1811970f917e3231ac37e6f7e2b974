@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_1652d065",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2013-08-11T06:45:19Z",
+      "side": 1,
+      "message": "That\u0027s not the right place",
+      "revId": "6ba580a23d1811970f917e3231ac37e6f7e2b974",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
