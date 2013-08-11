@@ -109,6 +109,19 @@ $specialPageAliases['ca'] = array(
 	'GlobalUsers' => array( 'Usuaris_globals' ),
 );
 
+/** Min Dong Chinese (Mìng-dĕ̤ng-ngṳ̄) */
+$specialPageAliases['cdo'] = array(
+	'CentralAuth' => array( '中央授權' ),
+	'AutoLogin' => array( '自動躒底' ),
+	'CentralAutoLogin' => array( '中央自動躒底' ),
+	'MergeAccount' => array( '合併賬戶' ),
+	'GlobalGroupMembership' => array( '全局用戶權限' ),
+	'GlobalGroupPermissions' => array( '全局組權限' ),
+	'WikiSets' => array( '維基百科設置' ),
+	'GlobalUsers' => array( '全局用戶' ),
+	'MultiLock' => array( '多重鎖' ),
+);
+
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'AutoLogin' => array( 'Ша_чудалар' ),
