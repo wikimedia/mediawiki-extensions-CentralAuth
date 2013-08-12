@@ -500,7 +500,7 @@ $messages['qqq'] = array(
 * {{msg-mw|centralauth-incomplete-text}}
 * {{msg-mw|centralauth-login-progress}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
-	'centralauth-antispoof-desc' => '{{desc}}',
+	'centralauth-antispoof-desc' => '{{desc|name=AntiSpoof for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:AntiSpoof}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
 	'centralauth-merge-denied' => 'Error message displayed when trying to visit a web page without having the correct permissions.',
 	'centralauth-merge-notlogged' => 'Notice displayed when visiting a page while not logged in.',
@@ -7815,7 +7815,7 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'centralauth-renameuser-reserved' => 'Der Benutzername „$2“ ist als globales Benutzerkonto reserviert.',
 	'centralauth-invalid-wiki' => 'Die Wiki-Datenbank ist nicht vorhanden: $1',
 	'centralauth-account-exists' => 'Das Benutzerkonto kann nicht erstellt werden: Der angefragte Benutzername wird bereits für das globale Benutzerkontensystem verwendet.',
-	'centralauth-account-exists-reset' => 'Der Benutzername $1 ist nicht auf diesem Wiki registriert, allerdings ist er bereits im zentralen Anmeldesystem vorhanden.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Der Benutzername $1 ist nicht auf diesem Wiki registriert, allerdings kannst du das Passwort auf [[Special:CentralAuth/$1|einem der Wikis zurücksetzen, wo er vorhanden ist]].',
 	'centralauth-login-progress' => 'Du wurdest auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch angemeldet:',
 	'centralauth-login-no-others' => 'Du wurdest automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
 	'centralauth-hidden-blockreason' => 'global versteckt durch $1 am $2. Grund: $3',
@@ -9993,7 +9993,7 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-renameuser-reserved' => 'Kasutajanime $2 hoitakse globaalse konto jaoks.',
 	'centralauth-invalid-wiki' => 'Sellist vikiandmebaasi pole: $1',
 	'centralauth-account-exists' => 'Kontot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
-	'centralauth-account-exists-reset' => 'Kasutajanimi $1 pole siin vikis registreeritud, aga on olemas ühendatud sisselogimissüsteemis.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Kasutajanimi $1 pole siin vikis registreeritud, aga saad lähtestada selle parooli [[Special:CentralAuth/$1|ühes vikidest, kus see on registreeritud]].',
 	'centralauth-login-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidesse sisse:',
 	'centralauth-login-no-others' => 'Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Globaalsete kontode logi',
@@ -10063,7 +10063,7 @@ Pane tähele, et rühma pole olemas, kui sellele pole õiguseid antud.',
 	'centralauth-editgroup-nowikiset' => 'Puudub, kehtib kõigis vikides.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vikid, kus neil on konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globaalne konto '''$1''' pole valitud vikis ('' $2 '') aktiivne.
-Veendu, et sa ei ürita valele kasutajale õiguseid anda!", # Fuzzy
+Veendu, et sa ei ürita valele kasutajale õiguseid anda!",
 	'centralauth-editset' => 'Vikikomplektid',
 	'centralauth-editset-legend-rw' => 'Vikikomplekti muutmine või loomine',
 	'centralauth-editset-legend-ro' => 'Vikikomplektide loend',
@@ -11468,7 +11468,7 @@ Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-renameuser-reserved' => 'Le nom d’utilisateur $2 est réservé pour un compte global.',
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
-	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais existe dans le système de connexion unifié.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais vous pouvez réinitialiser son mot de passe sur [[Special:CentralAuth/$1|un des wikis où il se trouve]].',
 	'centralauth-login-progress' => 'Vous êtes en cours de connexion aux wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'masqué globalement par $1 sur $2 pour le motif suivant : $3',
@@ -16711,7 +16711,7 @@ $messages['ja'] = array(
 	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントとして使用されています。',
 	'centralauth-invalid-wiki' => 'そのようなウィキ データベースはありません: $1',
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムで既に取得されています。',
-	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、統一ログインには存在します。', # Fuzzy
+	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、[[Special:CentralAuth/$1|その利用者が登録されているウィキのいずれか]]でパスワードを再設定できます。',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキ群にログインしました:',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にグローバルに秘匿。理由: $3',
@@ -19587,7 +19587,7 @@ Eng Ëmbenennung hëlt de lokale Benotzerkont aus dem globale Benotzerkonte-Syst
 	'centralauth-renameuser-reserved' => 'Benotzernumm $2 ass fir e globale Benotzerkont reservéiert.',
 	'centralauth-invalid-wiki' => 'Et gëtt keng Wiki-Datebank: $1',
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
-	'centralauth-account-exists-reset' => 'De Benotzernumm $1 ass op dëser Wiki net enregistréiert, awer et gëtt et schonn am eenheetlech Login-System.', # Fuzzy
+	'centralauth-account-exists-reset' => 'De Benotzernumm $1 ass op dëser Wiki net enregistréiert, Dir kënnt awer säi Passwuert, op [[Special:CentralAuth/$1|enger vun de Wikie, wou en et ass]] änneren.',
 	'centralauth-login-progress' => "Dir gouft an d'Wikie vu(n) {{int:Centralauth-groupname}} ageloggt:",
 	'centralauth-login-no-others' => 'Dir gouft automatesch an aner Projete vun {{int:Centralauth-groupname}} ageloggt:',
 	'centralauth-hidden-blockreason' => 'global verstoppt vum $1 de(n) $2 mat dësem Grond: $3',
@@ -21179,7 +21179,7 @@ $messages['mk'] = array(
 	'centralauth-renameuser-reserved' => 'Корисничкото име $2 е резервирано за глобална сметка.',
 	'centralauth-invalid-wiki' => 'Нема таква вики-база на податоци: $1',
 	'centralauth-account-exists' => 'Не можам да ја создадам сметката: бараното корисничко име е зафатено во системот за најавување со обединета сметка.',
-	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но постои во системот за обединета најава.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но можете да му зададете нова лозинка на [[Special:CentralAuth/$1|едно од викијата кајшто постои]].',
 	'centralauth-login-progress' => 'Ве најавувам на викијата на {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално скриен од $1 во $2 од следнава причина: $3',
@@ -30386,7 +30386,7 @@ Ju mund të shikoni, të redaktoni, apo të krijoni një grup të ri.',
  */
 $messages['sr-ec'] = array(
 	'mergeaccount' => 'Стање обједињавања пријаве',
-	'centralauth-groupname' => 'Задужбина Викимедија',
+	'centralauth-groupname' => 'Задужбине Викимедије',
 	'centralauth-desc' => '[[Special:MergeAccount|Спајање налога]] с више викија на {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Спаја више налога]] ради коришћења јединствене корисничке пријаве',
 	'centralauth-merge-denied' => 'Немате права приступа овој страници.',
@@ -30459,7 +30459,8 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-lookup-rw' => 'Управљање корисничким налогом',
 	'centralauth-admin-permission' => 'Само стјуарди могу да спајају налоге других корисника.',
 	'centralauth-admin-no-unified' => 'Нема обједињеног налога за ово корисничко име.',
-	'centralauth-admin-info-header' => 'Глобални кориснички подаци', # Fuzzy
+	'centralauth-admin-info-header' => 'Глобални подаци налога',
+	'centralauth-admin-info-username' => 'Корисничко име:',
 	'centralauth-admin-info-id' => 'Кориснички ИБ:',
 	'centralauth-admin-info-registered' => 'Регистрован:',
 	'centralauth-admin-info-home' => 'Матични вики:',
@@ -30517,7 +30518,7 @@ $messages['sr-ec'] = array(
 ** неприкладни лични подаци',
 	'centralauth-admin-logsnippet' => 'Претходне промене глобалног налога',
 	'centralauth-admin-suppressreason' => 'Глобално сакривен од $1 због следећег разлога: $2',
-	'globalusers' => 'Списак глобалних корисника', # Fuzzy
+	'globalusers' => 'Списак глобалних налога',
 	'centralauth-listusers-locked' => 'закључан',
 	'centralauth-listusers-attached' => '[[User:$1|постоји локално]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
@@ -30537,7 +30538,7 @@ $messages['sr-ec'] = array(
 	'centralauth-prefs-count-unattached' => 'На $1 {{PLURAL:$1|пројекту|пројекта|пројеката}} су остали непотврђени налози с вашим именом.',
 	'centralauth-prefs-detail-unattached' => 'За овај пројекат није потврђено да припада глобалном налогу.',
 	'centralauth-prefs-manage' => 'Управљајте глобалним налогом',
-	'centralauth-prefs-view' => 'Прикажи глобалне податке корисника', # Fuzzy
+	'centralauth-prefs-view' => 'Прикажи глобалне податке налога',
 	'centralauth-renameuser-merged' => '{{GENDER:$1|Корисник је прешао|Корисница је прешла|Корисник је прешао}} на систем за пријављивање с уједињеним налогом.
 Преименовање ће узроковати да се локални корисник одвоји од глобалног.', # Fuzzy
 	'centralauth-renameuser-reserved' => 'Корисничко име $2 је резервисано за глобални налог.', # Fuzzy
@@ -30573,8 +30574,9 @@ $messages['sr-ec'] = array(
 	'centralauth-rightslog-entry-deleteset' => '{{GENDER:|је обрисао|је обрисала|је обрисао}} вики скуп „$1“',
 	'centralauth-rightslog-set-optin' => 'засновани на пристајању',
 	'centralauth-rightslog-set-optout' => 'засновани на одустајању',
-	'autologin' => 'Аутоматски логин',
+	'autologin' => 'Аутоматска пријава',
 	'centralautologin' => 'Јединствена пријава',
+	'centralauth-centralautologin-logged-in' => 'Јединствено сте пријављени као $1. Освежите страницу да примените ваша корисничка подешавања.',
 	'globalgroupmembership' => 'Чланство у глобалним групама.',
 	'globalgrouppermissions' => 'Управљање глобалним групама',
 	'centralauth-globalgroupperms-grouplist' => 'Следеће глобалне групе су подешене.
@@ -30650,6 +30652,7 @@ $messages['sr-ec'] = array(
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
 	'centrallogin' => 'Јединствена корисничка пријава',
 	'centralloginsuccesful' => 'Успешно пријављивање',
+	'centralauth-completelogin-submit' => 'Пријавите се сад',
 	'centralauth-completelogin-back' => 'Назад на претходну страницу.',
 	'centralauth-warning-notloggedin' => 'Тренутно нисте пријављени.',
 );
@@ -30664,7 +30667,7 @@ $messages['sr-ec'] = array(
  */
 $messages['sr-el'] = array(
 	'mergeaccount' => 'Status ujedinjenja naloga',
-	'centralauth-groupname' => 'Vikimedija Fondacija',
+	'centralauth-groupname' => 'Zadužbine Vikimedije',
 	'centralauth-desc' => '[[Special:MergeAccount|Sjedinjavanje naloga]] na Vikijima iz {{int:Centralauth-groupname}}',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Sjedinjava više naloga]] za jedinstveni korisnički pristup.',
 	'centralauth-merge-denied' => 'Nemate prava pristupa ovoj stranici.',
@@ -30690,14 +30693,14 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 	'centralauth-disabled-dryrun' => 'Sjedinjenje naloga je trenutno u pripremnom periodu, pa su tekuće operacije spajanja onemogućene.',
 	'centralauth-error-locked' => 'Ne možeš uređivati zato što je tvoj nalog zaključan.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Pročitajte više o '''spajanju naloga''']]...''",
-	'centralauth-list-home-title' => 'Domaći viki',
+	'centralauth-list-home-title' => 'Matični viki:',
 	'centralauth-list-attached-title' => 'Priloženi nalozi',
 	'centralauth-list-attached' => 'Nalog "$1" na sledećim sajtovima je automatski spojen:',
 	'centralauth-list-attached-dryrun' => 'Nalog pod imenom „$1“ na svakom od sledećih sajtova automatski će biti prikačen na sjedinjeni nalog:',
 	'centralauth-list-unattached-title' => 'Nenakačeni nalozi',
 	'centralauth-list-unattached' => 'Nalog "$1" se ne može automatski potvrditi da pripada vama na sledećim sajtovima; najverovatnije imaju različite lozinke nego vaš primaran nalog:',
 	'centralauth-foreign-link' => 'Korisnik $1 na $2',
-	'centralauth-merge-method-primary' => 'domaći viki',
+	'centralauth-merge-method-primary' => 'matični viki:',
 	'centralauth-merge-method-empty' => 'bez priloga',
 	'centralauth-merge-method-mail' => 'overeno putem imejla',
 	'centralauth-merge-method-password' => 'overen putem lozinke',
@@ -30737,7 +30740,7 @@ Ako je i globalni nalog Vaš, onda možete da ga spojite s ovim nalogom tako št
 	'centralauth-admin-info-header' => 'Globalni korisnički podaci', # Fuzzy
 	'centralauth-admin-info-id' => 'Korisnički ID:',
 	'centralauth-admin-info-registered' => 'Registrovan:',
-	'centralauth-admin-info-home' => 'Domaći viki:',
+	'centralauth-admin-info-home' => 'Matični viki:',
 	'centralauth-admin-info-editcount' => 'Broj izmena:',
 	'centralauth-admin-info-locked' => 'Zaključan:',
 	'centralauth-admin-info-hidden' => 'Sakriveni nivo:',
