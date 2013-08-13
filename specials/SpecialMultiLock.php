@@ -47,7 +47,7 @@ class SpecialMultiLock extends SpecialPage {
 		}
 
 		if ( $this->mPrefixSearch !== '' ) {
-			$this->mPrefixSearch = $this->getLang()->ucfirst( trim( $this->mPrefixSearch ) );
+			$this->mPrefixSearch = $this->getLanguage()->ucfirst( trim( $this->mPrefixSearch ) );
 		}
 
 		if ( $this->mMethod === '' ) {
@@ -83,7 +83,7 @@ class SpecialMultiLock extends SpecialPage {
 		if ( $username === '' ) {
 			return false;
 		}
-		$username = $this->getLang()->ucfirst( $username );
+		$username = $this->getLanguage()->ucfirst( $username );
 
 		$globalUser = new CentralAuthUser( $username );
 		if ( !$globalUser->exists()

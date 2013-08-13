@@ -1279,7 +1279,7 @@ class CentralAuthUser extends AuthPluginUser {
 					Title::makeTitleSafe( NS_USER, $this->getName() ),
 					$jobParams );
 			}
-			Job::batchInsert( $jobs );
+			JobQueueGroup::singleton()->push( $jobs );
 		}
 	}
 
