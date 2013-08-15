@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "698b69a3_df38969f",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-15T16:38:37Z",
+      "side": 1,
+      "message": "If the comments say to check this then they are wrong. Only the function getting the User object needs that.\n\nNormally the global name is the local name except for some special cases and this is just used for showing usernames/links so it generally should be fine. I don\u0027t want the names/links to break just because a user becomes unattached though (which could a problem for some of the special pages).\n\nMaybe some other patch could maybe make getLogTitle() try to get the name from the local attached user and fallback to blah@global or something like that. Alternatively, we could always use @global I guess.",
+      "parentUuid": "698b69a3_fc3ba0e6",
+      "revId": "c69ea3bb1694bd8ebb428c4df7e47ca2b31d117c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "698b69a3_dc29848c",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 6
