@@ -304,6 +304,11 @@ $wgHooks['AbuseFilter-builder'][] = 'CentralAuthHooks::abuseFilterBuilder';
 // For SecurePoll
 $wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUserParams';
 
+// For OAuth
+$wgHooks['OAuthGetLocalUserFromCentralId'][] = 'CentralAuthHooks::onOAuthGetLocalUserFromCentralId';
+$wgHooks['OAuthGetCentralIdFromLocalUser'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromLocalUser';
+$wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUserNamesFromCentralIds';
+
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
 $wgAvailableRights[] = 'centralauth-lock';
