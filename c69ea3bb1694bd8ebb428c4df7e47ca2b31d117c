@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "698b69a3_bc24b8b5",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-15T06:50:51Z",
+      "side": 1,
+      "message": "Attachment doesn\u0027t need to be checked for this method",
+      "revId": "c69ea3bb1694bd8ebb428c4df7e47ca2b31d117c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "698b69a3_dc29848c",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1385,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-15T06:50:51Z",
+      "side": 1,
+      "message": "This should go before $centralUser is assigned and should deal with user \"0\"",
+      "revId": "c69ea3bb1694bd8ebb428c4df7e47ca2b31d117c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
