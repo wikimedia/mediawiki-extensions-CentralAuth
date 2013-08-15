@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "499865f5_9fa1b7af",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 1380,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-15T19:58:01Z",
+      "side": 1,
+      "message": "Should check against false with \u003d\u003d\u003d",
+      "revId": "5c83e4a7c05a90684f7e6b0bb4c9d89e838aef64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "499865f5_3fca6370",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-08-15T19:58:01Z",
+      "side": 1,
+      "message": "The getInstance() method would perform better than the constructor here",
+      "revId": "5c83e4a7c05a90684f7e6b0bb4c9d89e838aef64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
