@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "698b69a3_fc3ba0e6",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-08-15T15:42:21Z",
+      "side": 1,
+      "message": "The comments on MWOAuthUtils::getCentralUserNameFromId indicate that attachment should be checked by the hook. Looking at the use for the Utils function, I think the only place attachment is assumed is MWOAuthConsumerSubmitControl::getLogTItle. If the user isn\u0027t attached there, then the log title wouldn\u0027t really make sense, unless we say \u003cuser\u003e@global.\n\nShould we split the function (and hooks?), one for getting the username, and one for testing if the user is attached?",
+      "parentUuid": "698b69a3_bc24b8b5",
+      "revId": "c69ea3bb1694bd8ebb428c4df7e47ca2b31d117c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "698b69a3_dc29848c",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 6
