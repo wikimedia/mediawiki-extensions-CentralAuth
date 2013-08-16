@@ -1203,6 +1203,13 @@ class CentralAuthHooks {
 			return true;
 		}
 
+		// Allow other extensions (like OAuth) to temporarily prevent CentralAuth tokens.
+		// This is meant to be a temporary hack, until we establish a more unified Authz
+		// stack in core.
+		if ( !wfRunHooks( 'CentralAuthAbortCentralAuthToken' ) ) {
+			return true;
+		}
+
 		$types['centralauth'] = array( 'CentralAuthHooks', 'getApiCentralAuthToken' );
 		return true;
 	}
