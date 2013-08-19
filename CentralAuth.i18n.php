@@ -6553,6 +6553,7 @@ $messages['crh-latn'] = array(
  * @author Jkjk
  * @author Li-sung
  * @author Matěj Grabovský
+ * @author Michaelbrabec
  * @author Mormegil
  */
 $messages['cs'] = array(
@@ -6644,15 +6645,15 @@ Tato funkce je nyní z bezpečnostních důvodů vypnuta.',
 	'centralauth-attach-text' => 'Tento účet nebyl dosud převeden na jednotný účet. Pokud je jednotný účet také váš, můžete připojit tento účet k jednotnému účtu, když napíšete heslo k jednotnému účtu:',
 	'centralauth-attach-submit' => 'Převést účet',
 	'centralauth-attach-success' => 'Účet byl převeden na jednotný účet.',
-	'centralauth' => 'Správa globálních uživatelských účtů', # Fuzzy
+	'centralauth' => 'Správa globálních uživatelských účtů',
 	'centralauth-admin-intro' => 'Toto rozhraní je možno používat na správu globálních účtů.',
-	'centralauth-admin-manage' => 'Správa údajů o uživatelích', # Fuzzy
+	'centralauth-admin-manage' => 'Správa údajů o uživatelích',
 	'centralauth-admin-username' => 'Uživatelské jméno:',
 	'centralauth-admin-lookup-ro' => 'Zobrazit informace o uživateli',
 	'centralauth-admin-lookup-rw' => 'Spravovat uživatelský účet',
 	'centralauth-admin-permission' => 'Pouze stevardi mohou slučovat účty za jiné uživatele.',
 	'centralauth-admin-no-unified' => 'Toto uživatelské jméno nemá žádný jednotný účet.',
-	'centralauth-admin-info-header' => 'Informace o globálním uživateli', # Fuzzy
+	'centralauth-admin-info-header' => 'Informace o globálním uživateli',
 	'centralauth-admin-info-username' => 'Uživatelské jméno:',
 	'centralauth-admin-info-id' => 'Uživatelské ID:',
 	'centralauth-admin-info-registered' => 'Registrováno:',
@@ -6717,15 +6718,15 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-logsnippet' => 'Předchozí změny globálního účtu',
 	'centralauth-admin-suppressreason' => 'Globálně utajil $1 se zdůvodněním: $2',
 	'centralauth-admin-not-authorized' => 'K provedení této akce nemáte oprávnění',
-	'globalusers' => 'Seznam globálních uživatelů', # Fuzzy
+	'globalusers' => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => '[[User:$1|existuje lokálně]]',
 	'centralauth-listusers-nolocal' => 'nepřipojený nebo lokálně neexistuje',
-	'multilock' => 'Hromadné zamčení globálních uživatelů', # Fuzzy
+	'multilock' => 'Hromadné zamčení globálních účtů',
 	'centralauth-admin-multi-username' => 'Zadejte jedno nebo více uživatelských jmen oddělených řádkovými zlomy',
 	'centralauth-admin-multi-notfound' => 'Hledáním se nenalezla žádná uživatelská jména.',
-	'centralauth-admin-multi-searchprefix' => 'Nebo hledejte účty podle počátku názvu', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Aktualizuje několik globálních uživatelů najednou', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => 'Nebo hledejte účty podle počátku názvu',
+	'centralauth-admin-multi-intro' => 'Aktualizuje několik globálních uživatelů najednou',
 	'centralauth-admin-action-lock-nochange' => 'Neměnit zámky',
 	'centralauth-admin-action-lock-lock' => 'Zamknout vybrané účty',
 	'centralauth-admin-action-lock-unlock' => 'Odemknout vybrané účty',
@@ -6751,8 +6752,8 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-prefs-detail-unattached' => 'Dosud nebylo potvrzeno, zda účet na tomto projektu patří k jednotnému účtu.',
 	'centralauth-prefs-manage' => 'Správa jednotného účtu',
 	'centralauth-prefs-view' => 'Zobrazit informace o globálním uživateli', # Fuzzy
-	'centralauth-renameuser-merged' => 'Uživatel $1 již byl převeden na systém jednotného přihlašování. Pokud ho přejmenujete, bude lokální uživatel odpojen od globálního účtu.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Uživatelské jméno $2 je vyhrazeno pro globální účet.', # Fuzzy
+	'centralauth-renameuser-merged' => 'Uživatel $1 již byl převeden na systém jednotného přihlašování. Pokud ho přejmenujete, bude lokální uživatel odpojen od globálního účtu.',
+	'centralauth-renameuser-reserved' => 'Uživatelské jméno $2 je vyhrazeno pro globální účet.',
 	'centralauth-invalid-wiki' => 'Taková DB wiki neexistuje: $1',
 	'centralauth-account-exists' => 'Účet nelze vytvořit: Požadované uživatelské jméno je již registrováno v systému jednotného přihlašování.',
 	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale heslo si můžete obnovit na [[Special:CentralAuth/$1|jedné z wiki, na kterých je]].',
@@ -6840,7 +6841,7 @@ Pokud chcete zjistit, jak by mohly být sbírané údaje použity, přečtěte s
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|upravit]])',
 	'centralauth-editgroup-nowikiset' => 'Žádná, vztahuje se na všechny wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Vyberte wiki, na níž má účet:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Globální uživatel  '''$1''' není aktivní na wiki, kterou jste uvedli (''$2''). Možná se pokoušíte přidělit práva nesprávnému uživateli.", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "Globální uživatel  '''$1''' není aktivní na wiki, kterou jste uvedli (''$2''). Možná se pokoušíte přidělit práva nesprávnému uživateli.",
 	'centralauth-editset' => 'Sady wiki',
 	'centralauth-editset-legend-rw' => 'Upravit nebo vytvořit novou sadu wiki',
 	'centralauth-editset-legend-ro' => 'Seznam sad wiki',
@@ -6874,7 +6875,7 @@ Můžete libovolnou z nich zobrazit a změnit nebo vytvořit novou.',
 	'centralauth-editset-success' => 'Sada wiki úspěšně změněna.',
 	'centralauth-editset-success-delete' => 'Sada wiki úspěšně smazána.',
 	'centralauth-editset-return' => 'Zpět do hlavního pohledu',
-	'centralauth-block-already-locked' => 'Uživatelský účet [[Special:CentralAuth/$1|$1]] je již globálně uzamčen.', # Fuzzy
+	'centralauth-block-already-locked' => 'Uživatelský účet [[Special:CentralAuth/$1|$1]] je již globálně uzamčen.',
 	'centralauth-readonly' => 'Databáze CentralAuth je uzamčena',
 	'centralauth-readonlytext' => 'Databáze CentralAuth je momentálně uzamčena proti novým záznamům a jiným změnám, pravděpodobně kvůli rutinní údržbě, po které se vše vrátí do normálu.',
 	'right-globalgroupmembership' => 'Upravování členství v globálních skupinách',
@@ -16226,15 +16227,15 @@ Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-attach-text' => "Questa utenza non è ancora stata collegata all'utenza globale. Se sei il titolare dell'utenza globale, puoi collegare questa utenza inserendo la password dell'utenza globale:",
 	'centralauth-attach-submit' => "Collega l'account",
 	'centralauth-attach-success' => "L'account è stato trasferito all'account unificato.",
-	'centralauth' => "Amministrazione dell'utenza globale", # Fuzzy
+	'centralauth' => "Amministrazione dell'utenza globale",
 	'centralauth-admin-intro' => "Questa interfaccia può essere utilizzata per l'amministrazione delle utenze globali.",
-	'centralauth-admin-manage' => 'Gestione dati utente', # Fuzzy
+	'centralauth-admin-manage' => 'Gestione dati utente',
 	'centralauth-admin-username' => 'Nome utente:',
 	'centralauth-admin-lookup-ro' => 'Vedi informazioni utente',
 	'centralauth-admin-lookup-rw' => 'Gestione utenza',
 	'centralauth-admin-permission' => 'Solo gli steward possono unificare le utenze altrui.',
 	'centralauth-admin-no-unified' => 'Non esistono utenze globali per questo nome utente.',
-	'centralauth-admin-info-header' => 'Informazioni globali utenza', # Fuzzy
+	'centralauth-admin-info-header' => 'Informazioni globali utenza',
 	'centralauth-admin-info-username' => 'Nome utente:',
 	'centralauth-admin-info-id' => 'ID utenza:',
 	'centralauth-admin-info-registered' => 'Registrata:',
@@ -16299,15 +16300,15 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-logsnippet' => "Modifiche precedenti all'utenza globale",
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non hai i diritti per eseguire questa azione.',
-	'globalusers' => 'Lista degli utenti globali', # Fuzzy
+	'globalusers' => 'Elenco degli utenti globali',
 	'centralauth-listusers-locked' => 'bloccato',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmente]]',
 	'centralauth-listusers-nolocal' => 'separato o non esiste localmente',
-	'multilock' => 'Blocca più utenze globali', # Fuzzy
+	'multilock' => 'Blocca più utenze globali',
 	'centralauth-admin-multi-username' => 'Inserisci uno o più nomi utente, uno per riga',
 	'centralauth-admin-multi-notfound' => 'La ricerca non ha restituito alcun nome utente.',
-	'centralauth-admin-multi-searchprefix' => 'Oppure, cerca le utenze con un prefisso', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Aggiorna più utenti globali in una sola volta', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => 'Oppure, cerca i nome utente con un prefisso',
+	'centralauth-admin-multi-intro' => 'Aggiorna più utenti globali in una sola volta',
 	'centralauth-admin-action-lock-nochange' => 'Non modificare i blocchi',
 	'centralauth-admin-action-lock-lock' => 'Blocca gli utenti selezionati',
 	'centralauth-admin-action-lock-unlock' => 'Sblocca gli utenti selezionati',
@@ -16330,9 +16331,9 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-prefs-count-unattached' => 'Ci sono utenze non confermate con il tuo nome utente su $1 {{PLURAL:$1|progetto|progetti}}.',
 	'centralauth-prefs-detail-unattached' => "Questo sito di progetto non è stato confermato come appartenente all'utenza globale.",
 	'centralauth-prefs-manage' => 'Gestione della tua utenza globale',
-	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente", # Fuzzy
+	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente",
 	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.", # Fuzzy
-	'centralauth-renameuser-reserved' => "L'utente $2 è riservato a un'utenza globale.", # Fuzzy
+	'centralauth-renameuser-reserved' => "Il nome utente $2 è riservato a un'utenza globale.",
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.', # Fuzzy
@@ -16450,7 +16451,7 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centralauth-editset-success' => 'Insieme di wiki modificato con successo.',
 	'centralauth-editset-success-delete' => 'Insieme di wiki cancellato con successo.',
 	'centralauth-editset-return' => 'Torna alla visualizzazione principale',
-	'centralauth-block-already-locked' => "L'utente [[Special:CentralAuth/$1|$1]] è già bloccato globalmente.", # Fuzzy
+	'centralauth-block-already-locked' => "L'utente [[Special:CentralAuth/$1|$1]] è già bloccato globalmente.",
 	'centralauth-readonly' => 'Il database di CentralAuth è bloccato',
 	'centralauth-readonlytext' => 'Il database di CentralAuth è al momento bloccato in scrittura, probabilmente per un operazione di manutenzione di routine, presto tutto tornerà alla normalità.',
 	'right-globalgroupmembership' => "Modifica l'appartenenza ai gruppi globali",
