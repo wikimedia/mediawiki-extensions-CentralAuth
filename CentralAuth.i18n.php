@@ -9447,8 +9447,8 @@ Otra wiki se designó como la cuenta principal para tu nombre de usuario. Sigue 
 La base de datos puede estar dañada.',
 	'centralauth-merge-home-password' => 'La wiki de origen de la cuenta listada más abajo tiene una contraseña diferente a la que ha introducido.<br />
 Por favor, introduzca la contraseña.',
-	'centralauth-complete' => '¡Unificación de cuentas completa!',
-	'centralauth-incomplete' => '¡No se completó la unificación de cuentas!',
+	'centralauth-complete' => 'Se ha completad la unificación de cuentas.',
+	'centralauth-incomplete' => 'No se ha completado la unificación de cuentas.',
 	'centralauth-complete-text' => 'Ahora puedes iniciar sesión en cualquier wiki de {{int:Centralauth-groupname}} sin crear una cuenta nueva;',
 	'centralauth-incomplete-text' => 'Una vez que tus cuentas hayan sido unificadas, podrás ingresar a cualquier wiki de {{int:Centralauth-groupname}} sin crear una cuenta nueva',
 	'centralauth-not-owner-text' => 'El nombre de usuario "$1" ha sido asignado de forma automática al dueño de la cuenta en $2.
@@ -9461,20 +9461,20 @@ Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí l
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Lee más acerca de la '''identificación unificada''']]…''",
 	'centralauth-list-home-title' => 'Wiki local',
 	'centralauth-list-home-dryrun' => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada.',
-	'centralauth-list-attached-title' => 'Cuentas adjuntas',
+	'centralauth-list-attached-title' => 'Cuentas vinculadas',
 	'centralauth-list-attached' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios ha sido automáticamente añadida a la cuenta unificada:',
 	'centralauth-list-attached-dryrun' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios será automáticamente añadida a la cuenta unificada:',
-	'centralauth-list-unattached-title' => 'Cuentas no adjuntas',
+	'centralauth-list-unattached-title' => 'Cuentas no vinculadas',
 	'centralauth-list-unattached' => 'No se pudo confirmar automáticamente que la cuenta «$1» es tuya en los siguientes sitios;
 probablemente tienen una contraseña diferente a la de tu cuenta primaria:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribuciones}} en $2',
-	'centralauth-merge-method-primary' => 'wiki origen',
+	'centralauth-merge-method-primary' => 'wiki de origen',
 	'centralauth-merge-method-empty' => 'sin contribuciones',
 	'centralauth-merge-method-mail' => 'confirmado por correo electrónico',
 	'centralauth-merge-method-password' => 'confirmada por contraseña',
 	'centralauth-merge-method-admin' => 'cuenta fusionada por un administrador',
-	'centralauth-merge-method-new' => 'nueva cuenta',
+	'centralauth-merge-method-new' => 'cuenta nueva',
 	'centralauth-merge-method-login' => 'creada al iniciar sesión',
 	'centralauth-merge-method-primary-desc' => 'Este es el wiki en el que la cuenta fue unificada inicialmente.
 Nótese que puede diferir del wiki de origen real del usuario.',
@@ -9502,9 +9502,9 @@ Otras cuentas no están confirmadas todavía.',
 Si la cuenta global también es suya, puede unir esta cuenta si escribe la contraseña de cuenta global:',
 	'centralauth-attach-submit' => 'Migrar cuenta',
 	'centralauth-attach-success' => 'La cuenta fue migrada a la cuenta unificada.',
-	'centralauth' => 'Administración de usuarios globales', # Fuzzy
-	'centralauth-admin-intro' => 'Esta interfaz puede ser usada para la administración de cuentas globales.',
-	'centralauth-admin-manage' => 'Gestionar datos de usuario', # Fuzzy
+	'centralauth' => 'Gestor de cuentas globales',
+	'centralauth-admin-intro' => 'Esta interfaz puede utilizarse para gestionar cuentas globales.',
+	'centralauth-admin-manage' => 'Gestionar datos de la cuenta',
 	'centralauth-admin-username' => 'Nombre de usuario:',
 	'centralauth-admin-lookup-ro' => 'Ver información del usuario',
 	'centralauth-admin-lookup-rw' => 'Administrar la cuenta del usuario',
@@ -9530,9 +9530,9 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-blocked-indef' => 'Bloqueado indefinidamente. Razón: $1',
 	'centralauth-admin-blocklog' => 'registro de bloqueos',
 	'centralauth-admin-list-localwiki' => 'Wiki local',
-	'centralauth-admin-list-attached-on' => 'Adjuntada el',
+	'centralauth-admin-list-attached-on' => 'Vinculada el',
 	'centralauth-admin-list-method' => 'Método',
-	'centralauth-admin-list-editcount' => 'Contador de ediciones',
+	'centralauth-admin-list-editcount' => 'Conteo de ediciones',
 	'centralauth-admin-list-blocked' => 'Bloqueado',
 	'centralauth-admin-unmerge' => 'Desunificar las cuentas seleccionadas',
 	'centralauth-admin-merge' => 'Fusionar las cuentas seleccionadas',
@@ -9540,7 +9540,7 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-none-selected' => 'No se ha seleccionado ninguna cuenta.',
 	'centralauth-admin-already-unmerged' => 'Saltando $1, ya desunida.',
 	'centralauth-admin-unmerge-success' => 'Se {{PLURAL:$1|desunió|desunieron}} $1 {{PLURAL:$1|cuenta|cuentas}} con éxito',
-	'centralauth-admin-delete-title' => 'Borrar cuenta',
+	'centralauth-admin-delete-title' => 'Eliminar la cuenta',
 	'centralauth-admin-delete-description' => 'Borrar la cuenta global borrará todas las preferencias globales, desconectará todas cuentas locales y dejará el nombre global disponible para otro usuario.
 Todas las cuentas locales seguirán existiendo.
 Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus valores anteriores a la fusión.',
@@ -9579,16 +9579,16 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-listusers-locked' => 'bloqueado',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'no adjuntada o no existe localmente',
-	'multilock' => 'Bloquear múltiples usuarios globalmente', # Fuzzy
+	'multilock' => 'Bloquear varias cuentas globales',
 	'centralauth-admin-multi-username' => 'Escribe uno o más nombres de usuario, uno por cada línea',
 	'centralauth-admin-multi-notfound' => 'La búsqueda no devolvió ningún nombre de usuario.',
-	'centralauth-admin-multi-searchprefix' => 'O busca cuentas con un prefijo', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Actualizar múltiples usuarios a la vez', # Fuzzy
-	'centralauth-admin-action-lock-nochange' => 'No cambie los bloqueos',
+	'centralauth-admin-multi-searchprefix' => 'O bien, buscar nombres de usuario con un prefijo',
+	'centralauth-admin-multi-intro' => 'Actualizar varias cuentas globales a la vez',
+	'centralauth-admin-action-lock-nochange' => 'No modificar los bloqueos',
 	'centralauth-admin-action-lock-lock' => 'Bloquear las cuentas seleccionadas',
 	'centralauth-admin-action-lock-unlock' => 'Desbloquear las cuentas seleccionadas',
-	'centralauth-admin-action-hide-nochange' => 'No cambien los niveles ocultos',
-	'centralauth-admin-action-hide-none' => 'Mostrar cuentas seleccionadas',
+	'centralauth-admin-action-hide-nochange' => 'No cambiar los niveles ocultos',
+	'centralauth-admin-action-hide-none' => 'Revelar las cuentas seleccionadas',
 	'centralauth-admin-action-hide-lists' => 'Ocultar las cuentas seleccionadas de las listas públicas',
 	'centralauth-admin-action-hide-oversight' => 'Ocultar completamente las cuentas seleccionadas',
 	'centralauth-admin-multi-bot' => 'Cambios recientes',
@@ -9614,7 +9614,7 @@ Renombrarlo causará que el usuario local se separe del global.', # Fuzzy
 	'centralauth-renameuser-reserved' => 'El usuario $2 está reservado en una cuenta global.', # Fuzzy
 	'centralauth-invalid-wiki' => 'No existe tal wiki en la base de datos: $1',
 	'centralauth-account-exists' => 'No se puede crear la cuenta: el nombre de usuario solicitado ya existe en el sistema unificado de autenticación.',
-	'centralauth-account-exists-reset' => 'El nombre de usuario $1 no está registrado en este wiki, pero existe en el sistema de identificación unificada.',
+	'centralauth-account-exists-reset' => 'El nombre de usuario $1 no está registrado en este wiki, pero existe en el sistema de identificación unificada.', # Fuzzy
 	'centralauth-login-progress' => 'Iniciando sesión en wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Has sido automáticamente registrado dentro de otros proyectos de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'ocultada globalmente por $1 a las $2 con la siguiente razón: $3',
@@ -9649,22 +9649,22 @@ Renombrarlo causará que el usuario local se separe del global.', # Fuzzy
 	'centralauth-autologin-desc' => 'Esta página especial es usada internamente por MediaWiki.
 Cuando [[Special:UserLogin|inicias sesión]], el sistema central de autorización ordena a tu navegador que solicite esta página para todos los dominios enlazados, usando enlaces a imágenes.
 Has solicitado esta página sin aportar ningún dato de autenticación, por lo que no hace nada.',
-	'centralautologin' => 'Administración central de usuarios globales',
+	'centralautologin' => 'Inicio de sesión central',
 	'centralauth-centralautologin-desc' => 'Esta página especial es utilizada internamente por MediaWiki.
 Cuando usted visita un dominio vinculado mientras que no se registran en el inicio de sesión del sistema, esta página es utilizada para determinar si se ha iniciado sesión con el dominio central.
 Se ha solicitado esta página sin proporcionar ningún tipo de datos de autenticación, por lo que no hace nada.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Usted ha iniciado sesión localmente',
 	'centralauth-centralautologin-badparams' => 'Los parámetros de autenticación especificados son inválidos',
 	'centralauth-centralautologin-lostsession' => 'Pérdida de información de la sesión',
-	'centralauth-centralautologin-badstate' => 'Formato inválido "$1"',
-	'centralauth-centralautologin-notposted' => 'El formulario del inicio de sesión central debe ser publicado',
-	'centralauth-centralautologin-badstate-central' => 'Formato "$1" no es válido en la wiki central',
-	'centralauth-centralautologin-badstate-local' => 'Formato "$1" no es válido en la wiki local',
+	'centralauth-centralautologin-badstate' => 'El estado «$1» no es válido',
+	'centralauth-centralautologin-notposted' => 'Se debe publicar el formulario de inicio de sesión central',
+	'centralauth-centralautologin-badstate-central' => 'El estado «$1» no es válido en el wiki central',
+	'centralauth-centralautologin-badstate-local' => 'El estado «$1» no es válido en el wiki local',
 	'centralauth-centralautologin-badwiki' => 'La wiki "$1" no es válida para el inicio de sesión central',
 	'centralauth-centralautologin-corsfail' => 'Verificación de origen CORS fallado',
 	'centralauth-centralautologin-p3p-explanation' => 'Algunos navegadores requieren un P3P de cookies para ser enviados o recibidos en algunos casos, incluyendo la verificación del inicio de sesión SUL. Se trata de un aro innecesario para saltar a través de esta situación, teniendo en cuenta que todas las páginas que están en el mismo grupo de wiki y P3P es en su mayoría son obsoletos y abandonados; Afortunadamente, la política con el enlace a esta página en la actualidad se considera "lo suficientemente buena" por parte de estos navegadores, en sus configuraciones por defecto.
 Por favor revise la política de privacidad de este sitio para determinar cómo puede utilizarse cualquier información.',
-	'centralauth-centralautologin-logged-in' => 'Usted esta logueado globalmente como $1. Vuelva a cargar la página para aplicar la configuración del usuario.',
+	'centralauth-centralautologin-logged-in' => 'Has iniciado sesión globalmente como «$1». Carga la página de nuevo para aplicar la configuración del usuario.',
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Administración de grupos globales',
 	'centralauth-globalgroupperms-grouplist' => 'Los siguientes grupos globales han sido configurados.
@@ -9748,7 +9748,7 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'right-globalgrouppermissions' => 'Manejar grupos de usuario globales',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globales a los que pertenece el usuario',
 	'action-centralauth-lock' => 'Bloquear o desbloquear una cuenta global',
-	'centrallogin' => 'Registro del usuario central en',
+	'centrallogin' => 'Inicio de sesión centralizado',
 	'centralloginsuccesful' => 'Se inició la sesión correctamente',
 	'centralauth-completelogin-legend' => 'Inicio de sesión completa',
 	'centralauth-completelogin-finishing' => 'Autenticación en los sitios de la Fundación Wikimedia, por favor espere...',
@@ -9764,7 +9764,7 @@ Alguien podría intentar entrar en su cuenta.
 Si usted está tratando de iniciar sesión como otro usuario, por favor primero iniciar sesión.',
 	'centralauth-warning-notloggedin' => 'No has iniciado sesión.',
 	'centralauth-warning-notattached' => 'La cuenta local no está unida a una global.',
-	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} cuenta de confirmación',
+	'centralauth-finishglobaliseemail_subject' => 'Confirmación de la cuenta de {{SITENAME}}',
 	'centralauth-finishglobaliseemail_body' => 'Su dirección de correo electrónico se ha establecido como asociado
 con la cuenta "$2" en todos los proyectos de Wikimedia, con su principal cuenta
 {{SITENAME}}.
@@ -11522,7 +11522,7 @@ Vous avez demandé cette page sans fournir de donnée d’authentification ; e
 	'centralauth-centralautologin-p3p-explanation' => 'Certains navigateurs nécessitent une politique P3P compacte pour envoyer ou recevoir des cookies dans certains cas, y compris la situation impliquée dans la vérification de la connexion SUL. C’est une étape inutile à franchir dans cette situation, vu que toutes les pages impliquées sont dans le même groupe de wiki et que P3P lui-même est en grande partie obsolète et abandonné; heureusement, la politique non valide menant à cette page est actuellement considérée comme « suffisamment bonne » par les configurations par défaut de ces navigateurs.
 
 Veuillez relire la politique de confidentialité lisible de ce site pour savoir comment toute information collectée pourrait être utilisée.',
-	'centralauth-centralautologin-logged-in' => 'Vous être connecté de façon centralisée en tant que$1. Rechargez la page pour appliquer vos préférences utilisateur.',
+	'centralauth-centralautologin-logged-in' => 'Vous être connecté de façon centralisée en tant que $1. Rechargez la page pour appliquer vos préférences utilisateur.',
 	'globalgroupmembership' => 'Appartenance aux groupes globaux',
 	'globalgrouppermissions' => 'Gestion des groupes globaux',
 	'centralauth-globalgroupperms-grouplist' => 'Les groupes globaux suivants ont été configurés.
@@ -16332,11 +16332,11 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-prefs-detail-unattached' => "Questo sito di progetto non è stato confermato come appartenente all'utenza globale.",
 	'centralauth-prefs-manage' => 'Gestione della tua utenza globale',
 	'centralauth-prefs-view' => "Mostra le informazioni globali sull'utente",
-	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utente locale si separerà da quello globale.", # Fuzzy
+	'centralauth-renameuser-merged' => "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utenza locale si separerà da quella globale.",
 	'centralauth-renameuser-reserved' => "Il nome utente $2 è riservato a un'utenza globale.",
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
-	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è presente nel sistema di login unificato.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è possibile reimpostare la sua password su [[Special:CentralAuth/$1|uno dei  wiki dove è presente]].',
 	'centralauth-login-progress' => 'Accesso effettuato nelle altre wiki della {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
@@ -16416,8 +16416,8 @@ Nota che un gruppo non esiste a meno che non gli siano stati assegnati i permess
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modifica]])',
 	'centralauth-editgroup-nowikiset' => 'Nessuno, si applica a tutti i wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => "Seleziona un wiki su cui ha un'utenza:",
-	'centralauth-globalgroupmembership-badknownwiki' => "L'utente globale '''$1''' non è attivo sulla wiki che hai specificato ('' $2 '').
-Forse stai cercando di assegnare i permessi all'utente sbagliato!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "L'utenza globale '''$1''' non è attiva sulla wiki che hai specificato ('' $2 '').
+Forse stai cercando di assegnare i permessi all'utente sbagliato!",
 	'centralauth-editset' => 'Insiemi di wiki',
 	'centralauth-editset-legend-rw' => 'Modifica o crea insiemi di wiki',
 	'centralauth-editset-legend-ro' => 'Elenco degli insiemi di wiki',
@@ -36150,6 +36150,7 @@ $messages['zea'] = array(
  * @author Gaoxuewei
  * @author Gzdavidwong
  * @author Hydra
+ * @author Hzy980512
  * @author Li3939108
  * @author Liangent
  * @author PhiLiP
@@ -36358,7 +36359,7 @@ $messages['zh-hans'] = array(
 	'centralauth-renameuser-reserved' => '用户名$2已经预留给一个全域账户使用。',
 	'centralauth-invalid-wiki' => '无这个wikil数据库: $1',
 	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登录系统使用此名称。',
-	'centralauth-account-exists-reset' => '用户名$1并没有在此wiki注册，但存在一个同名的全局账户。', # Fuzzy
+	'centralauth-account-exists-reset' => '此账号并非是在这个Wiki上注册的，但你可以在[[Special:CentralAuth/$1|它所在Wiki中的任意一个Wiki]]上重置它的密码。',
 	'centralauth-login-progress' => '正在为您登录到{{int:Centralauth-groupname}}的wiki：',
 	'centralauth-login-no-others' => '你已经自动登录到{{int:Centralauth-groupname}}的其他项目。',
 	'centralauth-hidden-blockreason' => '全球隐藏 (在$1 $2)，原因：$3',
