@@ -19,18 +19,18 @@ class PopulateHomeDB extends Maintenance {
 		$count = 0;
 		do {
 			$result = $db->select(
-				'globalnames',
-				array( 'gn_name' ),
-				$conds,
+				'globaluser',
+				array( 'gu_name' ),
+				$conds + array( 'gu_home_db' => null ),
 				__METHOD__,
 				array(
 					'LIMIT' => $this->mBatchSize,
-					'ORDER BY' => 'gn_name',
+					'ORDER BY' => 'gu_name',
 				)
 			);
 
 			foreach( $result as $row ) {
-				$central = new CentralAuthUser( $row->gn_name );
+				$central = new CentralAuthUser( $row->gu_name );
 				$central->mStateDirty = true;
 				$central->saveSettings();
 				$count++;
@@ -40,7 +40,7 @@ class PopulateHomeDB extends Maintenance {
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}
-			$conds = array( 'gn_name > ' . $db->addQuotes( $row->gn_name ) );
+			$conds = array( 'gn_name > ' . $db->addQuotes( $row->gu_name ) );
 		} while ( true );
 		$this->output( "done.\n" );
 	}
