@@ -261,7 +261,7 @@ Renaming it will cause the local account to be detached from the global one.",
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
-	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but you can reset its password on [[Special:CentralAuth/$1|one of the wiki where it is]].',
+	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but you can reset its password on [[Special:CentralAuth/$1|one of the wikis where it is]].',
 	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
