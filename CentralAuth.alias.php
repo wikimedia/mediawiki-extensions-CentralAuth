@@ -495,6 +495,7 @@ $specialPageAliases['min'] = array(
 $specialPageAliases['mk'] = array(
 	'CentralAuth' => array( 'ЦентралноПотврдување' ),
 	'AutoLogin' => array( 'АвтоматскоНајавување' ),
+	'CentralAutoLogin' => array( 'ЦентралнаАвтонајава' ),
 	'MergeAccount' => array( 'СпојувањеНаСметки' ),
 	'GlobalGroupMembership' => array( 'ПраваНаГлобаленКорисник', 'ЧленствоВоГлобалнаГрупа' ),
 	'GlobalGroupPermissions' => array( 'ДозволиНаГлобалнаГрупа' ),
