@@ -812,6 +812,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
+		// storeGlobalData clears $this->mHomeWiki
+		$homeWiki = $this->mHomeWiki;
 		$ok = $this->storeGlobalData(
 				$home['id'],
 				$home['password'],
@@ -830,7 +832,7 @@ class CentralAuthUser extends AuthPluginUser {
 		} else {
 			if ( count( $migrationSet ) == 1 ) {
 				wfDebugLog( 'CentralAuth',
-					"Singleton migration for '$this->mName' on " . $this->mHomeWiki );
+					"Singleton migration for '$this->mName' on $homeWiki" );
 			} else {
 				wfDebugLog( 'CentralAuth',
 					"Full automatic migration for '$this->mName'" );
