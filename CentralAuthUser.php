@@ -481,7 +481,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string
 	 */
 	public function getHomeWiki() {
-		// FIXME: gu_home_db is sometimes populated via CentralAuth
 		$this->loadState();
 		if ( $this->mHomeWiki === null ) {
 			$this->mHomeWiki = "";
