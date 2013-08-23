@@ -427,7 +427,7 @@ class CentralAuthHooks {
 			// Determine the final protocol of page, after login
 			$finalProto = $request->detectProtocol();
 			if ( $wgSecureLogin ) {
-				$finalProto = $request->getCheck( 'wpStickHTTPS' ) ? 'https' : 'http';
+				$finalProto = $user->getBoolOption( 'prefershttps' ) ? 'https' : 'http';
 			}
 
 			// When POSTs triggered from Special:CentralLogin/start are sent back to
@@ -441,7 +441,7 @@ class CentralAuthHooks {
 				'remember'      => $request->getCheck( 'wpRemember' ),
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
-				'stickHTTPS'    => $request->getCheck( 'wpStickHTTPS' ),
+				'stickHTTPS'    => $user->getBoolOption( 'prefershttps' ),
 				'finalProto'    => $finalProto,
 				'type'          => $request->getText( 'type' )
 			);
