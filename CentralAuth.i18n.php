@@ -503,7 +503,12 @@ $messages['qqq'] = array(
 	'centralauth-antispoof-desc' => '{{desc|name=AntiSpoof for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:AntiSpoof}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
 	'centralauth-merge-denied' => 'Error message displayed when trying to visit a web page without having the correct permissions.',
-	'centralauth-merge-notlogged' => 'Notice displayed when visiting a page while not logged in.',
+	'centralauth-merge-notlogged' => 'Notice displayed when visiting a page while not logged in.
+
+Followed by the message {{msg-mw|Centralauth-readmore-text}}.
+
+Parameters:
+* $1 - a link which points to [[Special:UserLogin]].',
 	'centralauth-merge-welcome' => '{{doc-singularthey}}
 Welcome message displayed to a user without a unified account.',
 	'centralauth-merge-step1-title' => 'Title for a form to start account unification.',
@@ -533,7 +538,14 @@ Status message after incomplete unification of a user account.',
 	'centralauth-disabled-dryrun' => 'Message displayed while account unification is disabled.',
 	'centralauth-error-locked' => "Message displayed while account unification is not possible because the acting user's account is locked.",
 	'centralauth-error-unmerged' => 'Message displayed when user is prevented from editing because they have not merged their account',
-	'centralauth-readmore-text' => 'Message that refers to more information on account unification.',
+	'centralauth-readmore-text' => 'Message that refers to more information on account unification.
+
+Preceded by any one of the following messages:
+* {{msg-mw|Centralauth-merge-denied}}
+* {{msg-mw|Centralauth-merge-notlogged}}
+* {{msg-mw|Centralauth-merge-welcome}}
+* {{msg-mw|Centralauth-incomplete-text}}
+* {{msg-mw|Centralauth-complete-text}}',
 	'centralauth-list-home-title' => "Information about user's home wiki.
 {{Identical|Home wiki}}",
 	'centralauth-list-home-dryrun' => 'Message that indication that provided information will be used for authenticating.',
@@ -708,11 +720,19 @@ See example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]',
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}
 {{identical|locked}}",
-	'centralauth-listusers-attached' => "This message is used as user's info:
-*{{msg-mw|centralauth-listusers-locked}}
-*{{msg-mw|centralauth-listusers-attached}}
-*{{msg-mw|centralauth-listusers-nolocal}}",
-	'centralauth-listusers-item' => '{{optional}}',
+	'centralauth-listusers-attached' => "This message is used as user's info. Parameters:
+* $1 - username
+See also:
+* {{msg-mw|Centralauth-listusers-locked}}
+* {{msg-mw|Centralauth-listusers-attached}}
+* {{msg-mw|Centralauth-listusers-nolocal}}",
+	'centralauth-listusers-item' => '{{optional}}
+Parameters:
+* $1 - username
+* $2 - list of informations. Can contain the following messages:
+** {{msg-mw|Centralauth-listusers-locked}}
+** {{msg-mw|Centralauth-listusers-attached}}
+** {{msg-mw|Centralauth-listusers-nolocal}}',
 	'centralauth-listusers-nolocal' => "This message is used as user's info:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
@@ -739,20 +759,40 @@ See example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]',
 	'centralauth-admin-multi-bot' => 'Label shown next to the bot checkbox on [[Special:MultiLock]].
 {{Identical|Recent changes}}',
 	'centralauth-admin-multi-botcheck' => 'Explanation of the bot checkbox on [[Special:MultiLock]].',
-	'centralauth-seconds-ago' => '{{Related|Centralauth-ago}}',
-	'centralauth-minutes-ago' => '{{Related|Centralauth-ago}}',
-	'centralauth-hours-ago' => '{{Related|Centralauth-ago}}',
-	'centralauth-days-ago' => '{{Related|Centralauth-ago}}',
-	'centralauth-months-ago' => '{{Related|Centralauth-ago}}',
-	'centralauth-years-ago' => '{{Related|Centralauth-ago}}',
+	'centralauth-seconds-ago' => 'Parameters:
+* $1 - number of seconds
+{{Related|Centralauth-ago}}',
+	'centralauth-minutes-ago' => 'Parameters:
+* $1 - number of minutes
+{{Related|Centralauth-ago}}',
+	'centralauth-hours-ago' => 'Parameters:
+* $1 - number of hours
+{{Related|Centralauth-ago}}',
+	'centralauth-days-ago' => 'Parameters:
+* $1 - number of days
+{{Related|Centralauth-ago}}',
+	'centralauth-months-ago' => 'Parameters:
+* $1 - number of months
+{{Related|Centralauth-ago}}',
+	'centralauth-years-ago' => 'Parameters:
+* $1 - number of years
+{{Related|Centralauth-ago}}',
 	'centralauth-prefs-not-managed' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is not merged at all.',
 	'centralauth-prefs-unattached' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is in migration, but the local account is not attached.',
 	'centralauth-prefs-complete' => "This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when everything is alright with the user's unified account.",
 	'centralauth-prefs-migration' => 'This message is displayed as the global account status at [[Special:Preferences|{{int:Preferences}}]] page, when the account is unified on all wikis.',
-	'centralauth-prefs-count-attached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page.',
-	'centralauth-prefs-count-unattached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page
+	'centralauth-prefs-count-attached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page. Parameters:
+* $1 - number of attached sites
+See also:
+* {{msg-mw|Centralauth-prefs-count-unattached}}',
+	'centralauth-prefs-count-unattached' => 'Used in [[Special:Preferences|{{int:Preferences}}]] special page.
 
-Shown when the migration is incomplete.',
+Shown when the migration is incomplete.
+
+Parameters:
+* $1 - number of unattached projects
+See also:
+* {{msg-mw|Centralauth-prefs-count-attached}}',
 	'centralauth-prefs-manage' => "Link on '{{int:Prefs-personal}}' tab of '{{int:Preferences}}' special page.",
 	'centralauth-prefs-view' => 'Used as a link on [[Special:Preferences|{{int:Preferences}}]]',
 	'centralauth-renameuser-merged' => 'Parameters:
@@ -772,12 +812,24 @@ Shown when the migration is incomplete.',
 * $2 - ...
 * $3 - reason',
 	'centralauth-log-name' => '{{doc-logpage}}',
-	'centralauth-log-entry-delete' => '{{Related|Centralauth-log-entry}}',
-	'centralauth-log-entry-lock' => '{{Related|Centralauth-log-entry}}',
-	'centralauth-log-entry-unlock' => '{{Related|Centralauth-log-entry}}',
-	'centralauth-log-entry-hide' => '{{Related|Centralauth-log-entry}}',
-	'centralauth-log-entry-unhide' => '{{Related|Centralauth-log-entry}}',
-	'centralauth-log-entry-lockandhide' => '{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-delete' => 'Parameters:
+* $1 - username
+{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-lock' => 'Parameters:
+* $1 - username
+{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-unlock' => 'Parameters:
+* $1 - username
+{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-hide' => 'Parameters:
+* $1 - username
+{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-unhide' => 'Parameters:
+* $1 - username
+{{Related|Centralauth-log-entry}}',
+	'centralauth-log-entry-lockandhide' => 'Parameters:
+* $1 - username
+{{Related|Centralauth-log-entry}}',
 	'centralauth-log-entry-chgstatus' => '[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Meta-Wiki for example].
 
 Variables $2 and $3 are a combination of the following:
@@ -803,10 +855,18 @@ This "oversighted" stands for "hidden completely".
 [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
 {{Identical|None}}',
 	'centralauth-rightslog-name' => '{{doc-logpage}}',
-	'centralauth-rightslog-entry-usergroups' => '[{{canonicalurl:meta:Special:Log|type=gblrights}} Example]',
-	'centralauth-rightslog-entry-groupperms' => 'log message in the [{{canonicalurl:meta:Special:Log|type=gblrights}} Global rights log].',
+	'centralauth-rightslog-entry-usergroups' => 'See [{{canonicalurl:meta:Special:Log|type=gblrights}} example]. Parameters:
+* $1 - username
+* $2 - list of old groups
+* $3 - list of new groups',
+	'centralauth-rightslog-entry-groupperms' => 'log message in the [{{canonicalurl:meta:Special:Log|type=gblrights}} Global rights log].
+
+Parameters:
+* $1 - username
+* $2 - list of old rights
+* $3 - list of new rights',
 	'centralauth-rightslog-entry-groupperms2' => 'Parameters:
-* $1 - ...
+* $1 - username
 * $2 - list of rights which were added
 * $3 - list of rights which were removed',
 	'centralauth-rightslog-entry-groupperms3' => 'A log entry when a user changes the wiki set where the specified global group is applied.
@@ -914,9 +974,17 @@ Parameters:
 	'centralauth-editset' => '{{doc-special|WikiSets}}',
 	'centralauth-editset-legend-rw' => 'The legend of the fieldset. Displayed when the user can edit.',
 	'centralauth-editset-legend-ro' => 'The legend of the fieldset. Displayed when the user cannot edit.',
-	'centralauth-editset-item-rw' => '*$1 - Name of wiki set
-*$2 - ID of wiki set',
-	'centralauth-editset-item-ro' => '{{notranslate}}',
+	'centralauth-editset-item-rw' => 'Parameters:
+* $1 - Name of wiki set
+* $2 - ID of wiki set
+See also:
+* {{msg-mw|Centralauth-editset-item-ro}} - Optional message',
+	'centralauth-editset-item-ro' => '{{notranslate}}
+Parameters:
+* $1 - name of wiki set
+* $2 - ID of wiki set
+See also:
+* {{msg-mw|Centralauth-editset-item-rw}}',
 	'centralauth-editset-notfound' => 'Parameters:
 * $1 - wiki set name',
 	'centralauth-editset-legend-edit' => 'Parameters:
@@ -934,7 +1002,9 @@ Parameters:
 	'centralauth-editset-reason' => '{{Identical|Reason}}',
 	'centralauth-editset-submit' => '{{Identical|Submit}}',
 	'centralauth-editset-submit-delete' => '{{Identical|Delete}}',
-	'centralauth-editset-grouplink' => '{{optional}}',
+	'centralauth-editset-grouplink' => '{{optional}}
+Parameters:
+* $1 - group name',
 	'centralauth-editset-nouse' => '{{Identical|None}}',
 	'centralauth-editset-badwikis' => 'Used as error message. Parameters:
 * $1 - list of bad wikis
@@ -2635,15 +2705,15 @@ Otres cuentes entá nun se confirmaron.',
 Si la cuenta global tamién ye de to, pues fusionar esta cuenta escribiendo la conseña de cuenta global:',
 	'centralauth-attach-submit' => 'Migrar cuenta',
 	'centralauth-attach-success' => 'La cuenta foi migrada a la cuenta fusionada.',
-	'centralauth' => "Alministración global d'usuarios",
+	'centralauth' => 'Alministrador global de cuentes',
 	'centralauth-admin-intro' => "Esta interfaz se pue usar p'alministrar les cuentes globales.",
-	'centralauth-admin-manage' => "Remanar los datos d'usuariu",
+	'centralauth-admin-manage' => 'Xestionar los datos de la cuenta',
 	'centralauth-admin-username' => "Nome d'usuariu:",
 	'centralauth-admin-lookup-ro' => "Ver info d'usuariu",
 	'centralauth-admin-lookup-rw' => "Xestionar cuenta d'usuariu",
 	'centralauth-admin-permission' => "Namái los stewards puen fusionar les cuentes d'otres persones por ellos.",
 	'centralauth-admin-no-unified' => "Nun hai cuenta fusionada pa esti nome d'usuariu.",
-	'centralauth-admin-info-header' => "Info global d'usuariu",
+	'centralauth-admin-info-header' => 'Info de cuenta global',
 	'centralauth-admin-info-username' => "Nome d'usuariu:",
 	'centralauth-admin-info-id' => "ID d'usuariu:",
 	'centralauth-admin-info-registered' => 'Rexistrada:',
@@ -2710,15 +2780,15 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-admin-logsnippet' => 'Cambios anteriores na cuenta global',
 	'centralauth-admin-suppressreason' => 'Desaniciada globalmente por $1 pol motivu darréu: $2',
 	'centralauth-admin-not-authorized' => 'Nun tien permisos pa facer esta aición',
-	'globalusers' => "Llista d'usuarios globales",
+	'globalusers' => 'Llista de cuentes globales',
 	'centralauth-listusers-locked' => 'candáu',
 	'centralauth-listusers-attached' => '[[User:$1|esiste llocalmente]]',
 	'centralauth-listusers-nolocal' => 'non asociáu o nun esiste llocalmente',
-	'multilock' => 'Candar múltiples usuarios globales',
+	'multilock' => 'Candar múltiples cuentes globales',
 	'centralauth-admin-multi-username' => "Escriba unu o más nomes d'usuariu, separaos por un saltu de llinia",
 	'centralauth-admin-multi-notfound' => "La gueta nun devolvió dengún nome d'usuariu.",
-	'centralauth-admin-multi-searchprefix' => 'O busque cuentes con un prefixu',
-	'centralauth-admin-multi-intro' => 'Anovar múltiples usuarios globales al empar',
+	'centralauth-admin-multi-searchprefix' => "O buscar nomes d'usuariu con un prefixu",
+	'centralauth-admin-multi-intro' => 'Anovar múltiples cuentes globales nel intre',
 	'centralauth-admin-action-lock-nochange' => 'Nun camudar candaos',
 	'centralauth-admin-action-lock-lock' => 'Candar cuentes esbillaes',
 	'centralauth-admin-action-lock-unlock' => 'Quitar candáu de cuentes esbillaes',
@@ -2743,13 +2813,13 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-prefs-count-unattached' => 'Queden cuentes non confirmaes col to nome {{PLURAL:$1|nun proyeutu|en $1 proyeutos}}.',
 	'centralauth-prefs-detail-unattached' => "Nun se confirmó la pertenencia d'esti sitiu de proyeutu a la cuenta global.",
 	'centralauth-prefs-manage' => 'Remanar la to cuenta global',
-	'centralauth-prefs-view' => 'Ver información global del usuariu',
-	'centralauth-renameuser-merged' => "L'usuariu $1 foi migráu al sistema d'unificación de cuentes.
-Si se renoma fadrá que l'usuariu llocal seya dixebráu del usuariu global.",
-	'centralauth-renameuser-reserved' => "L'usuariu $2 ta acutáu pa una cuenta global.",
+	'centralauth-prefs-view' => 'Ver información de cuenta global',
+	'centralauth-renameuser-merged' => "L'usuariu $1 migróse al sistema d'aniciu de sesión unificáu.
+Si se renoma causará la dixebra ente la cuenta llocal y la global.",
+	'centralauth-renameuser-reserved' => "El nome d'usuariu $2 ta acutáu por una cuenta global.",
 	'centralauth-invalid-wiki' => 'Nun esiste la base de datos wiki: $1',
 	'centralauth-account-exists' => "Nun se pue crear la cuenta: el nome d'usuariu especificáu yá ta acutáu pol sistema de cuentes unificaes.",
-	'centralauth-account-exists-reset' => "El nome d'usuariu $1 nun ta rexistráu nesta wiki, pero esiste nel sistema de rexistru unificáu.",
+	'centralauth-account-exists-reset' => "El nome d'usuariu $1 nun ta rexistráu nesta wiki, pero pue reaniciase la contraseña [[Special:CentralAuth/$1|n'una wiki onde tea]].",
 	'centralauth-login-progress' => 'Aniciando sesión nes wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Tas coneutáu automáticamente en otros proyeutos de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'anubríu de mou global por $1 a les $2 col motivu darréu: $3',
@@ -2837,8 +2907,8 @@ Date cuenta qu'un grupu nun esiste a nun ser que tenga permisos asignaos.",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
 	'centralauth-editgroup-nowikiset' => 'Nengún, aplícase a toles wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wikis onde se tienen cuentes:',
-	'centralauth-globalgroupmembership-badknownwiki' => "L'usuariu global '''$1''' nun ta activu na wiki qu'especificasti ('' $2 '').
-¡Seique teas intentando asignas drechos al usuariu erroneu!",
+	'centralauth-globalgroupmembership-badknownwiki' => "La cuenta global '''$1''' nun ta activa na wiki que conseñasti ('' $2 '').
+¡Seique teas intentando dar permisos al usuariu enquivocáu!",
 	'centralauth-editset' => 'Conxuntos wiki',
 	'centralauth-editset-legend-rw' => 'Editar o crear un conxuntu wiki',
 	'centralauth-editset-legend-ro' => 'Llista de conxuntos wiki',
@@ -2872,7 +2942,7 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'centralauth-editset-success' => 'Conxuntu wiki modificáu correutamente.',
 	'centralauth-editset-success-delete' => 'Conxuntu wiki desaniciáu correutamente.',
 	'centralauth-editset-return' => 'Tornar a la vista principal',
-	'centralauth-block-already-locked' => "L'usuariu [[Special:CentralAuth/$1|$1]] yá ta bloquiáu de mou global.",
+	'centralauth-block-already-locked' => 'La cuenta [[Special:CentralAuth/$1|$1]] yá ta bloquiada de mou global.',
 	'centralauth-readonly' => 'La base de datos de CentralAuth ta bloquiada',
 	'centralauth-readonlytext' => 'Anguaño la base de datos de CentralAuth ta bloquiada pa entraes nueves y otros cambios, probablemente pol mantenimientu rutinariu de la base de datos; dempués del mesmu, volverá a la normalidá.',
 	'right-globalgroupmembership' => 'Editar la pertenencia a grupos globales',
@@ -7127,6 +7197,13 @@ Rheswm: $1',
 	'multilock' => 'Cloi nifer o gyfrifon cydwici ar unwaith',
 	'centralauth-admin-multi-username' => 'Rhowch un neu ragor o enwau defnyddwyr, un enw bob yn linell',
 	'centralauth-admin-multi-notfound' => 'Ni chafwyd hyd i unrhyw enwau defnyddwyr.',
+	'centralauth-admin-action-lock-nochange' => 'Peidio â newid y cloion',
+	'centralauth-admin-action-lock-lock' => 'Cloi cyfrifon dewisedig',
+	'centralauth-admin-action-lock-unlock' => 'Datgloi cyfrifon dewisedig',
+	'centralauth-admin-action-hide-nochange' => 'Peidio â newid lefelau cudd',
+	'centralauth-admin-action-hide-none' => 'Datguddio cyfrifon dewisedig',
+	'centralauth-admin-action-hide-lists' => 'Cuddio cyfrifon dewisedig o restrau cyhoeddus',
+	'centralauth-admin-action-hide-oversight' => 'Cuddio cyfrifon dewisedig yn gyfangwbl',
 	'centralauth-admin-multi-bot' => 'Newidiadau diweddar',
 	'centralauth-admin-multi-botcheck' => 'Marciwch eitemau ar [[Special:RecentChanges|{{int:recentchanges}}]] yn rai bot.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eiliad}} yn ôl',
@@ -7169,6 +7246,7 @@ Rheswm: $1',
 	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1. Ychwanegwyd $2: Gwaredwyd $3',
 	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set "$1" o wicïau',
 	'autologin' => 'Mewngofnodi awtomatig',
+	'centralautologin' => 'Mewngofnodi canolog',
 	'centralauth-centralautologin-lostsession' => "Collwyd data'r sesiwn",
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
 	'centralauth-newgroup-legend' => 'Creu grŵp newydd',
@@ -11471,7 +11549,7 @@ Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-renameuser-reserved' => 'Le nom d’utilisateur $2 est réservé pour un compte global.',
 	'centralauth-invalid-wiki' => 'Base de données wiki inexistante : $1',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
-	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais vous pouvez réinitialiser son mot de passe sur [[Special:CentralAuth/$1|un des wikis où il se trouve]].', # Fuzzy
+	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais vous pouvez réinitialiser son mot de passe sur [[Special:CentralAuth/$1|un wiki où il se trouve]].',
 	'centralauth-login-progress' => 'Vous êtes en cours de connexion aux wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'masqué globalement par $1 sur $2 pour le motif suivant : $3',
@@ -16312,10 +16390,12 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-action-lock-nochange' => 'Non modificare i blocchi',
 	'centralauth-admin-action-lock-lock' => 'Blocca gli utenti selezionati',
 	'centralauth-admin-action-lock-unlock' => 'Sblocca gli utenti selezionati',
+	'centralauth-admin-action-hide-nochange' => 'Non modificare il livello di occultamento',
 	'centralauth-admin-action-hide-none' => 'Mostra le utenze selezionate',
 	'centralauth-admin-action-hide-lists' => 'Nascondi le utenze selezionate dagli elenchi pubblici',
 	'centralauth-admin-action-hide-oversight' => 'Nascondi completamente le utenze selezionate',
 	'centralauth-admin-multi-bot' => 'Ultime modifiche',
+	'centralauth-admin-multi-botcheck' => 'Contrassegna le voci in [[Special:RecentChanges|{{int:recentchanges}}]] come modifiche di bot.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|secondo|secondi}} fa',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuto|minuti}} fa',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ora|ore}} fa',
@@ -16336,7 +16416,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-renameuser-reserved' => "Il nome utente $2 è riservato a un'utenza globale.",
 	'centralauth-invalid-wiki' => 'Nessun DB wiki: $1',
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
-	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è possibile reimpostare la sua password su [[Special:CentralAuth/$1|uno dei  wiki dove è presente]].', # Fuzzy
+	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è possibile reimpostare la sua password su [[Special:CentralAuth/$1|un wiki in cui è presente]].',
 	'centralauth-login-progress' => 'Accesso effettuato nelle altre wiki della {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
@@ -16372,12 +16452,17 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 Quando tu [[Special:UserLogin|fai il login]], il sistema centrale di login dice al tuo browser di richiedere questa pagina da tutti i domini collegati, usando i link immagine.
 Hai richiesto questa pagina senza fornire nessun dato di autenticazione, così non fa niente.',
 	'centralautologin' => 'Accesso centrale',
+	'centralauth-centralautologin-desc' => 'Questa pagina speciale viene utilizzata internamente da MediaWiki.
+Quando si visita un dominio collegato mentre non si è loggati, il sistema centrale di accesso utilizza questa pagina per determinare se si è connessi al dominio centrale.
+Hai richiesto questa pagina senza fornire alcun dato di autenticazione, quindi non succede niente.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => "Hai già effettuato l'accesso localmente.",
 	'centralauth-centralautologin-badparams' => 'I parametri di autenticazione specificati non sono validi',
 	'centralauth-centralautologin-lostsession' => 'I dati della sessione sono andati perduti.',
 	'centralauth-centralautologin-badstate' => 'Stato "$1" non valido',
+	'centralauth-centralautologin-notposted' => 'Il modulo di accesso centralizzato deve essere inviato',
 	'centralauth-centralautologin-badstate-central' => 'Stato "$1" non valido nel wiki centrale',
 	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
+	'centralauth-centralautologin-badwiki' => 'Il wiki "$1" non è valido per l\'accesso centrale',
 	'centralauth-centralautologin-corsfail' => 'Controllo di origine CORS non riuscito',
 	'centralauth-centralautologin-logged-in' => "Hai effettuato l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
@@ -16466,11 +16551,14 @@ Puoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.',
 	'centrallogin' => 'Accesso centrale utente',
 	'centralloginsuccesful' => 'Accesso effettuato',
 	'centralauth-completelogin-legend' => 'Completa il processo di login',
+	'centralauth-completelogin-finishing' => "L'autenticazione sui siti della Wikimedia Foundation è in corso, si prega di attendere...",
 	'centralauth-completelogin-text' => "L'autenticazione della tua utenza su siti della Wikimedia Foundation è quasi completa! Usa il bottone qui sotto per confermare e completare l'accesso.",
 	'centralauth-completelogin-submit' => 'Accedi ora',
 	'centralauth-completelogin-back' => 'Torna alla pagina precedente.',
 	'centralauth-error-nologinattempt' => 'Nessun tentativo di accesso attivo è in corso per la sessione.',
 	'centralauth-error-badtoken' => 'Il token di autenticazione fornito è scaduto o non valido.',
+	'centralauth-error-token-wrongattempt' => 'Il token di autenticazione non appartiene al tuo tentativo di accesso corrente.
+Qualcuno potrebbe star cercando di farti accedere con un account manipolato.',
 	'centralauth-warning-notloggedin' => 'Attualmente non sei connesso.',
 	'centralauth-warning-notattached' => "L'utenza locale non è collegata ad una globale.",
 	'centralauth-finishglobaliseemail_subject' => 'Conferma utenza su {{SITENAME}}',
@@ -16716,7 +16804,7 @@ $messages['ja'] = array(
 	'centralauth-renameuser-reserved' => '利用者名 $2 はグローバルアカウントとして使用されています。',
 	'centralauth-invalid-wiki' => 'そのようなウィキ データベースはありません: $1',
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムで既に取得されています。',
-	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、[[Special:CentralAuth/$1|その利用者が登録されているウィキのいずれか]]でパスワードを再設定できます。',
+	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、[[Special:CentralAuth/$1|利用者が登録されているウィキ]]でパスワードを再設定できます。',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキ群にログインしました:',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にグローバルに秘匿。理由: $3',
@@ -21181,7 +21269,7 @@ $messages['mk'] = array(
 	'centralauth-renameuser-reserved' => 'Корисничкото име $2 е резервирано за глобална сметка.',
 	'centralauth-invalid-wiki' => 'Нема таква вики-база на податоци: $1',
 	'centralauth-account-exists' => 'Не можам да ја создадам сметката: бараното корисничко име е зафатено во системот за најавување со обединета сметка.',
-	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но можете да му зададете нова лозинка на [[Special:CentralAuth/$1|едно од викијата кајшто постои]].',
+	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но можете да му зададете нова лозинка на [[Special:CentralAuth/$1|викито кајшто постои]].',
 	'centralauth-login-progress' => 'Ве најавувам на викијата на {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално скриен од $1 во $2 од следнава причина: $3',
@@ -35297,7 +35385,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-renameuser-reserved' => 'Tên $2 dành cho tài khoản toàn cục.',
 	'centralauth-invalid-wiki' => 'Không có CSDL wiki như vậy: $1',
 	'centralauth-account-exists' => 'Không thể tạo tài khoản: tên người dùng chỉ định đã được sử dụng trong hệ thống đăng nhập thống nhất.',
-	'centralauth-account-exists-reset' => 'Wiki này chưa có tài khoản với tên người dùng “$1”, nhưng tên này có tồn tại trong hệ thống đăng nhập thống nhất.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Wiki này chưa có tài khoản với tên người dùng “$1”, nhưng bạn có thể đặt lại mật khẩu của bạn trên [[Special:CentralAuth/$1|một trong những wiki có tài khoản này]].',
 	'centralauth-login-progress' => 'Đang đăng nhập bạn vào các wiki của {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Đã đăng nhập cùng lúc vào các dự án khác của {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'bị $1 ẩn toàn cục vào lúc $2 vì lý sao sau: $3',
