@@ -426,8 +426,18 @@ class CentralAuthHooks {
 
 			// Determine the final protocol of page, after login
 			$finalProto = $request->detectProtocol();
+			$secureCookies = ( $finalProto === 'https' );
+
 			if ( $wgSecureLogin ) {
-				$finalProto = $user->getBoolOption( 'prefershttps' ) ? 'https' : 'http';
+				$finalProto = 'http';
+
+				if ( $request->getBool( 'wpForceHttps', false ) ||
+					( $user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() ) )
+				) {
+					$finalProto = 'https';
+				}
+
+				$secureCookies = ( ( $finalProto === 'https' ) && $user->getBoolOption( 'prefershttps' ) );
 			}
 
 			// When POSTs triggered from Special:CentralLogin/start are sent back to
@@ -441,8 +451,8 @@ class CentralAuthHooks {
 				'remember'      => $request->getCheck( 'wpRemember' ),
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
-				'stickHTTPS'    => $user->getBoolOption( 'prefershttps' ),
-				'finalProto'    => $finalProto,
+				'stickHTTPS'    => $secureCookies, // cookies set secure or not (local CentralAuth cookies)
+				'finalProto'    => $finalProto, // final page http or https
 				'type'          => $request->getText( 'type' )
 			);
 
@@ -454,8 +464,9 @@ class CentralAuthHooks {
 				'name'          => $centralUser->getName(),
 				'guid'          => $centralUser->getId(),
 				'wikiId'        => wfWikiId(),
-				'finalProto'    => $finalProto,
-				'currentProto'  => $request->detectProtocol()
+				'secureCookies' => $secureCookies, // (bool) cookies secure or not
+				'finalProto'    => $finalProto, // http or https for very final page
+				'currentProto'  => $request->detectProtocol() // current proto (in case login is https, but final page is http)
 			);
 			wfRunHooks( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
 			$wgMemc->set( $key, $data, 60 );

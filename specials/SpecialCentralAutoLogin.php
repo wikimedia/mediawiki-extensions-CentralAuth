@@ -75,10 +75,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					$this->getUser()->saveSettings();
 				}
 
-				$secureCookie = null;
-				if ( $centralSession['finalProto'] == 'http' ) {
-					$secureCookie = false;
-				}
+				$secureCookie = $centralSession['secureCookies'];
 				$centralUser->setGlobalCookies( $remember, false, $secureCookie, $centralSession );
 				$this->doFinalOutput( true, 'success' );
 			} else {
@@ -197,7 +194,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$memcData += array(
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
-				'cookieProto' => $centralSession['finalProto'],
+				'finalProto' => $centralSession['finalProto'],
+				'secureCookies' => $centralSession['secureCookies'],
 				'remember' => $centralSession['remember'],
 				'sessionId' => $centralSession['sessionId'],
 			);
@@ -263,13 +261,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Set central cookies too, with a refreshed sessionid. Also, check if we
 			// need to override the default cookie security policy
-			$secureCookie = null;
-			if ( $memcData['cookieProto'] == 'http' ) {
-				$secureCookie = false;
-			}
+			$secureCookie = $memcData['secureCookies'];
+
 			$centralUser->setGlobalCookies(
 				$memcData['remember'], $memcData['sessionId'], $secureCookie, array(
-					'finalProto' => $memcData['cookieProto'],
+					'finalProto' => $memcData['finalProto'],
+					'secureCookies' => $memcData['secureCookies'],
 					'remember' => $memcData['remember'],
 				)
 			);

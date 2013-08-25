@@ -77,10 +77,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		// Determine if we can use the default cookie security, or if we need
 		// to override it to insecure
-		$secureCookie = null;
-		if ( $info['finalProto'] == 'http' ) {
-			$secureCookie = false;
-		}
+		$secureCookie = $info['secureCookies'];
 
 		// Start an unusable placeholder session stub and send a cookie.
 		// The cookie will not be usable until the session is unstubbed.
@@ -107,6 +104,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Ensure $url really is proto relative, and prepend the protocol of the original
 		// login. If the local wiki is using wgSecureLogin, it will be https.
 		$url = strstr( $url, '//' );
+
+		//currentProto = the login form's protocol, so we go back to here. May then redir to finalProto
 		$url = $info['currentProto'] . ':' . $url;
 
 		if ( $wgCentralAuthSilentLogin ) {
@@ -184,12 +183,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// session now that the global session is complete.
 		// Without $wgSecureLogin, we should be on the correct protocol now, and we use the
 		// default cookie security. With $wgSecureLogin, we use the stickHTTPS checkbox.
-		$secureCookie = null;
-		if ( $wgSecureLogin && !$attempt['stickHTTPS'] ) {
-			$secureCookie = false;
-		}
+		$secureCookie = $attempt['stickHTTPS'];
+
 		$centralUser->setGlobalCookies( $attempt['remember'], $info['sessionId'], $secureCookie, array(
 			'finalProto' => $attempt['finalProto'],
+			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
 		) );
 
@@ -217,8 +215,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 				$attempt['type']
 			) );
 
-			$form->showReturnToPage( 'successredirect',
-				$attempt['returnTo'], $attempt['returnToQuery'], $attempt['stickHTTPS'] );
+			$form->showReturnToPage(
+				'successredirect',
+				$attempt['returnTo'],
+				$attempt['returnToQuery'],
+				( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
+			);
 			$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 		} else {
 			// Show the login success page
