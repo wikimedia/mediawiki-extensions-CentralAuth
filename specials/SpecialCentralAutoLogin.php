@@ -13,7 +13,21 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
+		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki, $wgSecureLogin;
+
+		$request = $this->getRequest();
+
+		// Enforce $wgSecureLogin
+		if ( $wgSecureLogin
+			&& $request->detectProtocol() == 'http'
+			&& wfCanIPUseHTTPS( $request->getIP() )
+		) {
+			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
+			$output = $this->getOutput();
+			$output->redirect( $redirUrl );
+			$output->output();
+			return;
+		}
 
 		$notLoggedInScript = "var t = new Date();" .
 			"t.setTime( t.getTime() + 86400000 );" .
@@ -22,8 +36,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			"} else {" .
 			"document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';" .
 			"}";
-
-		$request = $this->getRequest();
 
 		$this->loginWiki = $wgCentralAuthLoginWiki;
 		if ( !$this->loginWiki ) {

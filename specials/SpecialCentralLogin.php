@@ -6,6 +6,21 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $subpage ) {
+
+		// Enforce $wgSecureLogin
+		global $wgSecureLogin;
+		$request = $this->getRequest();
+		if ( $wgSecureLogin
+			&& $request->detectProtocol() == 'http'
+			&& wfCanIPUseHTTPS( $request->getIP() )
+		) {
+			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
+			$output = $this->getOutput();
+			$output->redirect( $redirUrl );
+			$output->output();
+			return;
+		}
+
 		$this->setHeaders();
 		$this->getOutput()->disallowUserJs(); // just in case...
 
