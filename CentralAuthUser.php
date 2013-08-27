@@ -482,8 +482,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public function getHomeWiki() {
 		$this->loadState();
-		if ( $this->mHomeWiki === null ) {
-			$this->mHomeWiki = "";
+		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
 			foreach ( $this->queryAttached() as $wiki => $acc ) {
 				if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
 					$this->mHomeWiki = $wiki;
