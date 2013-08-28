@@ -1974,10 +1974,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 *  true: Force setting the secure attribute when setting the cookie
 	 *  false: Force NOT setting the secure attribute when setting the cookie
 	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
+	 * @param $prefix cookie prefix, or false to use $wgCentralAuthCookiePrefix
 	 * @throws MWException
 	 * @return void
 	 */
-	static function setCookie( $name, $value, $exp = -1, $secure = null ) {
+	static function setCookie( $name, $value, $exp = -1, $secure = null, $prefix = false ) {
 		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieExpiration;
 
 		if ( CentralAuthHooks::hasApiToken() ) {
@@ -1996,9 +1997,13 @@ class CentralAuthUser extends AuthPluginUser {
 			$exp += time();
 		}
 
+		if ( $prefix === false ) {
+			 $prefix = $wgCentralAuthCookiePrefix;
+		}
+
 		RequestContext::getMain()->getRequest()->response()->setcookie(
 			$name, $value, $exp, array(
-				'prefix' => $wgCentralAuthCookiePrefix,
+				'prefix' => $prefix,
 				'path' => '/',
 				'domain' => $wgCentralAuthCookieDomain,
 				'secure' => $secure,
@@ -2038,6 +2043,7 @@ class CentralAuthUser extends AuthPluginUser {
 	function setGlobalCookies(
 		$remember = false, $refreshId = false, $secure = null, $sessionData = array()
 	) {
+		global $wgCookiePrefix;
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -2057,7 +2063,14 @@ class CentralAuthUser extends AuthPluginUser {
 			$this->clearCookie( 'Token' );
 		}
 
-		return self::setSession( $session, $refreshId, $secure );
+		$id = self::setSession( $session, $refreshId, $secure );
+
+		if ( $secure ) {
+			$forceTime = ( $remember ? -1 : 0 );
+			self::setCookie( 'forceHTTPS', '1', $forceTime, false, $wgCookiePrefix );
+		}
+
+		return $id;
 	}
 
 	/**
