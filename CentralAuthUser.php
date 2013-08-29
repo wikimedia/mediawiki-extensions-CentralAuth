@@ -2043,7 +2043,6 @@ class CentralAuthUser extends AuthPluginUser {
 	function setGlobalCookies(
 		$remember = false, $refreshId = false, $secure = null, $sessionData = array()
 	) {
-		global $wgCookiePrefix;
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -2067,7 +2066,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( $secure ) {
 			$forceTime = ( $remember ? -1 : 0 );
-			self::setCookie( 'forceHTTPS', '1', $forceTime, false, $wgCookiePrefix );
+			self::setCookie( 'forceHTTPS', '1', $forceTime, false, '' );
 		}
 
 		return $id;
