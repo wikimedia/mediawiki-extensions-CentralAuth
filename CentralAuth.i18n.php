@@ -645,7 +645,8 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 
 See [[meta:Oversight|meta]] for explanation of 'oversight' or 'revision delete' function.
 
-Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.",
+Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.
+{{Identical|Oversighted}}",
 	'centralauth-admin-list-legend-ro' => 'Header on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-legend-rw' => 'Fieldset header ([[:File:CentralAuth admin.png|screenshot]])',
 	'centralauth-admin-unattached' => '{{Identical|Unattached accounts}}',
@@ -832,25 +833,30 @@ See also:
 {{Related|Centralauth-log-entry}}',
 	'centralauth-log-entry-chgstatus' => '[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Meta-Wiki for example].
 
-Variables $2 and $3 are a combination of the following:
-*{{msg-mw|Centralauth-log-status-locked}}
-*{{msg-mw|Centralauth-log-status-hidden}}
-*{{msg-mw|Centralauth-log-status-oversighted}}
-*{{msg-mw|Centralauth-log-status-none}}',
-	'centralauth-log-status-locked' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}. [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
+Parameters:
+* $1 - username
+* $2 and $3 - a combination of the following messages:
+** {{msg-mw|Centralauth-log-status-locked}}
+** {{msg-mw|Centralauth-log-status-hidden}}
+** {{msg-mw|Centralauth-log-status-oversighted}}
+** {{msg-mw|Centralauth-log-status-none}}',
+	'centralauth-log-status-locked' => 'Used as <code>$2</code> or <code>$3</code> in {{msg-mw|Centralauth-log-entry-chgstatus}}.
+
+[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
 {{Identical|Locked}}',
-	'centralauth-log-status-hidden' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
+	'centralauth-log-status-hidden' => 'Used as <code>$2</code> or <code>$3</code> in {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
 This "hidden" stands for "hidden from public lists".
 
 [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example].
 {{Identical|Hidden}}',
-	'centralauth-log-status-oversighted' => 'Variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
+	'centralauth-log-status-oversighted' => 'Used as <code>$2</code> or <code>$3</code> in {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
 This "oversighted" stands for "hidden completely".
 
-[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]',
-	'centralauth-log-status-none' => 'Is variable $2 or $3 in message {{msg-mw|Centralauth-log-entry-chgstatus}}.
+[{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
+{{Identical|Oversighted}}',
+	'centralauth-log-status-none' => 'Used as <code>$2</code> or <code>$3</code> in {{msg-mw|Centralauth-log-entry-chgstatus}}.
 
 [{{canonicalurl:meta:Special:Log|type=globalauth&user=&page=&year=&month=-1&uselang={{SUBPAGENAME}}}} See Wikimedia Metawiki for example]
 {{Identical|None}}',
@@ -27689,6 +27695,8 @@ Nisciune cangiamende ha state fatte sus a le cunde tune angore.",
 	'centralauth-merge-step3-submit' => 'Aunifeche cunde',
 	'centralauth-merge-no-accounts' => "Nisciune cunde soddisfe 'u nome tune ca avemme acchiate jndr'à tabbelle de le tracciaminde d'u cunde cendralizzate!
 L'archivije pò essere ca jè scuasciate.",
+	'centralauth-merge-home-password' => "'A uicchi prengepàle pe stu cunde (elengate sotte) ave 'na passuord diverse a quedde ca tu è mise.
+Pe piacere mitte arrete 'a passuord pe sta uicchi.",
 	'centralauth-complete' => 'Trasùte aunifecate combletate!',
 	'centralauth-incomplete' => 'Trasùte aunifecate non combletate!',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sulamende 'u mode Demo</div><br clear='all'/>",
@@ -27841,9 +27849,11 @@ Ce tu le renomine, l'utende locale adda essere scucchiáte da 'u cunde globbale.
 	'centralauth-renameuser-reserved' => "L'utende $2 jè reservate pè 'nu cunde globbale.",
 	'centralauth-invalid-wiki' => 'Nisciune database cumme uicchi: $1',
 	'centralauth-account-exists' => "Non ge puè ccrejà 'u cunde utende: 'u nome de l'utende cercate ha state ggià pigghiate jndr'à 'u sisteme de le utinde aunificate.",
+	'centralauth-login-progress' => "Ste tràse jndr'à ste uicchi de {{int:Centralauth-groupname}}:",
 	'centralauth-login-no-others' => "Tu è trasute automaticamende jndr'à l'otre pruggette de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => "Globbalmende scunne da $1 a $2 cu 'u mutive seguende: $3",
 	'centralauth-log-name' => 'Archivije de le cunde utinde globbale',
+	'centralauth-log-header' => "St'archivije tène operaziune sotte a le cunde globbale: scangellazziune, blocche e sblocche.",
 	'centralauth-log-entry-delete' => 'scangille \'u cunde globbale "$1"',
 	'centralauth-log-entry-lock' => 'Blocche \'u cunde globbale "$1"',
 	'centralauth-log-entry-unlock' => 'sblocche \'u cunde globbale "$1"',
@@ -27859,6 +27869,7 @@ Ce tu le renomine, l'utende locale adda essere scucchiáte da 'u cunde globbale.
 	'centralauth-rightslog-entry-usergroups' => "cangiate le membre d'u gruppe globbale pe $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms' => "permesse d'u gruppe cangiate pe $1 da $2 a $3",
 	'centralauth-rightslog-entry-groupperms2' => 'cangiate le autorizzazione de gruppe pè $1. Aggiunde $2; Luàte $3',
+	'centralauth-rightslog-entry-groupperms3' => "cangiate restriziune de gruppe sus a le uicchi 'mbostate pe $1 da $2 a $3",
 	'centralauth-rightslog-entry-grouprename' => 'gruppe renominate da $2 a $1',
 	'centralauth-rightslog-header' => "St'archivije condene operaziune sus a le gruppe globbale: cangiaminde de membre e permesse",
 	'centralauth-rightslog-entry-newset' => "ccrejate $2 'mbostazione de uicchi  $1 cu le seguende uicchi: $3",
@@ -30016,13 +30027,13 @@ Ostali računi še niso potrjeni.',
 	'centralauth-attach-success' => 'Račun je bil združen z enotnim računom.',
 	'centralauth' => 'Upravitelj globalnega računa',
 	'centralauth-admin-intro' => 'Ta vmesnik se lahko uporablja za upravljanje globalnih računov.',
-	'centralauth-admin-manage' => 'Upravljajte z uporabniškimi podatki',
+	'centralauth-admin-manage' => 'Upravljajte s podatki računa',
 	'centralauth-admin-username' => 'Uporabniško ime:',
 	'centralauth-admin-lookup-ro' => 'Ogled informacij o uporabniku',
 	'centralauth-admin-lookup-rw' => 'Upravljajte uporabniške račune',
 	'centralauth-admin-permission' => 'Samo upravniki lahko združujejo račune drugih ljudi za njih.',
 	'centralauth-admin-no-unified' => 'Ni poenotenega računa za to uporabniško ime.',
-	'centralauth-admin-info-header' => 'Informacije globalnega uporabnika',
+	'centralauth-admin-info-header' => 'Informacije globalnega računa',
 	'centralauth-admin-info-username' => 'Uporabniško ime:',
 	'centralauth-admin-info-id' => 'Uporabnikov ID:',
 	'centralauth-admin-info-registered' => 'Registriran:',
@@ -30088,13 +30099,15 @@ Gesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihov
 	'centralauth-admin-logsnippet' => 'Pretekle spremembe globalnega računa',
 	'centralauth-admin-suppressreason' => 'Globalno zatrt s strani $1 zaradi naslednjega razloga: $2',
 	'centralauth-admin-not-authorized' => 'Nimate dovoljenj za izvedbo dejanja',
-	'globalusers' => 'Seznam globalnih uporabnikov',
+	'globalusers' => 'Seznam globalnih računov',
 	'centralauth-listusers-locked' => 'zaklenjen',
 	'centralauth-listusers-attached' => '[[User:$1|obstaja lokalno]]',
 	'centralauth-listusers-nolocal' => 'nepripet ali lokalno ne obstaja',
-	'multilock' => 'Zaklenite več globalnih uporabnikov',
+	'multilock' => 'Zaklenite več globalnih računov',
 	'centralauth-admin-multi-username' => 'Vnesite eno ali več uporabniških imen, ločenih z novo vrstico',
 	'centralauth-admin-multi-notfound' => 'Iskanje ni vrnilo nobenega uporabniškega imena.',
+	'centralauth-admin-multi-searchprefix' => 'Ali iščite uporabniška imena s predpono',
+	'centralauth-admin-multi-intro' => 'Posodobite več globalnih računov hkrati',
 	'centralauth-admin-action-lock-nochange' => 'Ne spremeni zaklepov',
 	'centralauth-admin-action-lock-lock' => 'Zakleni izbrane račune',
 	'centralauth-admin-action-lock-unlock' => 'Odkleni izbrane račune',
@@ -30102,6 +30115,8 @@ Gesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihov
 	'centralauth-admin-action-hide-none' => 'Prikaži izbrane račune',
 	'centralauth-admin-action-hide-lists' => 'Skrij izbrane račune z javnih seznamov',
 	'centralauth-admin-action-hide-oversight' => 'Izbrane račune popolnoma skrij',
+	'centralauth-admin-multi-bot' => 'Zadnje spremembe',
+	'centralauth-admin-multi-botcheck' => 'Označi vnose na [[Special:RecentChanges|{{int:recentchanges}}]] kot vnose botov.',
 	'centralauth-seconds-ago' => 'pred $1 {{PLURAL:$1|sekundo|sekundama|sekundami}}',
 	'centralauth-minutes-ago' => 'pred $1 {{PLURAL:$1|minuto|minutama|minutami}}',
 	'centralauth-hours-ago' => 'pred $1 {{PLURAL:$1|uro|urama|urami}}',
@@ -30117,13 +30132,13 @@ Gesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihov
 	'centralauth-prefs-count-unattached' => 'Nepotrjeni računi z vašim imenom obstajajo na $1 {{PLURAL:$1|projektu|projektih}}.',
 	'centralauth-prefs-detail-unattached' => 'Ta stran projekta še ni bila potrjena kot pripadajoča globalnemu računu.',
 	'centralauth-prefs-manage' => 'Upravljajte svoj globalni račun',
-	'centralauth-prefs-view' => 'Oglejte si informacije globalnega uporabnika',
-	'centralauth-renameuser-merged' => 'Uporabnik $1 je bil preseljen v sistem enotne prijave.
-Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega uporabnika.',
-	'centralauth-renameuser-reserved' => 'Uporabnik $2 je rezerviran za globalni račun.',
+	'centralauth-prefs-view' => 'Oglejte si informacije globalnega računa',
+	'centralauth-renameuser-merged' => 'Uporabnika $1 smo preselili v sistem enotne prijave.
+Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega računa.',
+	'centralauth-renameuser-reserved' => 'Uporabniško ime $2 je rezervirano za globalni račun.',
 	'centralauth-invalid-wiki' => 'Ni takšne zbirke podatkov wiki: $1',
 	'centralauth-account-exists' => 'Ne morem ustvariti računa: zahtevano uporabniško ime je že zasedeno v enotnem sistemu prijave.',
-	'centralauth-account-exists-reset' => 'Uporabniško ime $1 ni registrirano na tem wikiju, vendar obstaja v sistemu poenotene prijave.',
+	'centralauth-account-exists-reset' => 'Uporabniško ime $1 ni registrirano na tem wikiju, vendar lahko ponastavite njegovo geslo na [[Special:CentralAuth/$1|wikiju, kjer je]].',
 	'centralauth-login-progress' => 'Prijavljanje v wikije {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Samodejno ste bili vpisani v ostale projekte {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalno skril $1 dne $2 zaradi naslednjega razloga: $3',
@@ -30145,6 +30160,7 @@ Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega uporabnika
 	'centralauth-rightslog-entry-groupperms' => 'je spremenil(-a) pravice skupine za $1 iz $2 v $3',
 	'centralauth-rightslog-entry-groupperms2' => 'spremenil(-a) dovoljenja skupine za $1. Dodano: $2; Odstranjeno: $3',
 	'centralauth-rightslog-entry-groupperms3' => 'je spremenil(-a) množico na skupino omejenih wikijev za $1 iz $2 v $3',
+	'centralauth-rightslog-entry-grouprename' => 'je preimenoval(-a) skupino $2 v $1',
 	'centralauth-rightslog-header' => 'Ta dnevnik vsebuje dejavnosti na področju globalnih skupin: članstva in spremembe dovoljenj',
 	'centralauth-rightslog-entry-newset' => 'je ustvaril(-a) skupino wikijev $1 $2 z naslednjimi wikiji: $3',
 	'centralauth-rightslog-entry-setrename' => 'je preimenoval(-a) skupino wikijev »$2« v »$1«',
@@ -30157,6 +30173,7 @@ Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega uporabnika
 	'centralauth-autologin-desc' => 'Ta stran se uporablja znotraj MediaWiki.
 Ko se [[Special:UserLogin|prijavite]], osrednji prijavni sistem naroči vašemu brskalniku, da dostopa do te strani iz vseh povezanih domen z uporabo slikovnih povezav.
 Do strani ste dostopali brez navedbe overitvenih podatkov, zato ne naredi ničesar.',
+	'centralautologin' => 'Osrednja prijava',
 	'globalgroupmembership' => 'Članstvo v globalnih skupinah',
 	'globalgrouppermissions' => 'Upravljanje globalnih skupin',
 	'centralauth-globalgroupperms-grouplist' => 'Nastavljene so bile naslednje globalne skupine.
@@ -30190,8 +30207,8 @@ Pomnite, da skupina ne obstaja, dokler nima dodeljenih dovoljenj.',
 [[Special:GlobalGroupPermissions|Vrnite se na upravljanje skupin]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|uredi]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wikiji, na katerih imajo račune:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Globalni uporabnik '''$1''' ni dejaven na navedenem wikiju ('' $2 '').
-Morda poskušate dodeliti pravice napačnemu uporabniku!",
+	'centralauth-globalgroupmembership-badknownwiki' => "Globalni račun '''$1''' ni dejaven na navedenem wikiju ('' $2 '').
+Morda poskušate pravice dodeliti napačnemu uporabniku!",
 	'centralauth-editset' => 'Skupine wikijev',
 	'centralauth-editset-legend-rw' => 'Uredi ali ustvari skupino wikijev',
 	'centralauth-editset-legend-ro' => 'Seznam skupin wikijev',
@@ -30225,7 +30242,7 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'centralauth-editset-success' => 'Skupina wikijev je uspešno spremenjena.',
 	'centralauth-editset-success-delete' => 'Skupina wikijev je uspešno izbrisana.',
 	'centralauth-editset-return' => 'Vrnitev na glavni pogled',
-	'centralauth-block-already-locked' => 'Uporabnik [[Special:CentralAuth/$1|$1]] je že globalno zaklenjen.',
+	'centralauth-block-already-locked' => 'Račun [[Special:CentralAuth/$1|$1]] je že globalno zaklenjen.',
 	'centralauth-readonly' => 'Zbirka podatkov CentralAuth je zaklenjena',
 	'centralauth-readonlytext' => 'Zbirka podatkov CentralAuth je trenutno zaklenjena za nove vnose in druge spremembe, verjetno zaradi rutinskega vzdrževanja zbirke podatkov, po katerem se bo vrnila v normalno stanje.',
 	'right-globalgroupmembership' => 'Urejanje članstva v globalnih skupinah',
