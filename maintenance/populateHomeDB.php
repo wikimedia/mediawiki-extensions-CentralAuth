@@ -21,7 +21,7 @@ class PopulateHomeDB extends Maintenance {
 			$result = $db->select(
 				'globaluser',
 				array( 'gu_name' ),
-				$conds + array( 'gu_home_db IS NULL OR gu_home_db = ""' ),
+				array_merge( $conds, array( 'gu_home_db IS NULL OR gu_home_db = ""' ) ),
 				__METHOD__,
 				array(
 					'LIMIT' => $this->mBatchSize,
