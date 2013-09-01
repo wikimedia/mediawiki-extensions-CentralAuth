@@ -9736,15 +9736,15 @@ Has solicitado esta página sin aportar ningún dato de autenticación, por lo q
 	'centralauth-centralautologin-desc' => 'Esta página especial es utilizada internamente por MediaWiki.
 Cuando usted visita un dominio vinculado mientras que no se registran en el inicio de sesión del sistema, esta página es utilizada para determinar si se ha iniciado sesión con el dominio central.
 Se ha solicitado esta página sin proporcionar ningún tipo de datos de autenticación, por lo que no hace nada.',
-	'centralauth-centralautologin-alreadyloggedinlocally' => 'Usted ha iniciado sesión localmente',
-	'centralauth-centralautologin-badparams' => 'Los parámetros de autenticación especificados son inválidos',
-	'centralauth-centralautologin-lostsession' => 'Pérdida de información de la sesión',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Ya has iniciado sesión localmente',
+	'centralauth-centralautologin-badparams' => 'Los parámetros de autenticación especificados no son válidos',
+	'centralauth-centralautologin-lostsession' => 'Se perdieron los datos de la sesión',
 	'centralauth-centralautologin-badstate' => 'El estado «$1» no es válido',
 	'centralauth-centralautologin-notposted' => 'Se debe publicar el formulario de inicio de sesión central',
 	'centralauth-centralautologin-badstate-central' => 'El estado «$1» no es válido en el wiki central',
 	'centralauth-centralautologin-badstate-local' => 'El estado «$1» no es válido en el wiki local',
-	'centralauth-centralautologin-badwiki' => 'La wiki "$1" no es válida para el inicio de sesión central',
-	'centralauth-centralautologin-corsfail' => 'Verificación de origen CORS fallado',
+	'centralauth-centralautologin-badwiki' => 'El wiki «$1» no es válido para el inicio de sesión centralizado',
+	'centralauth-centralautologin-corsfail' => 'Ha fallado la comprobación de origen de CORS',
 	'centralauth-centralautologin-p3p-explanation' => 'Algunos navegadores requieren un P3P de cookies para ser enviados o recibidos en algunos casos, incluyendo la verificación del inicio de sesión SUL. Se trata de un aro innecesario para saltar a través de esta situación, teniendo en cuenta que todas las páginas que están en el mismo grupo de wiki y P3P es en su mayoría son obsoletos y abandonados; Afortunadamente, la política con el enlace a esta página en la actualidad se considera "lo suficientemente buena" por parte de estos navegadores, en sus configuraciones por defecto.
 Por favor revise la política de privacidad de este sitio para determinar cómo puede utilizarse cualquier información.',
 	'centralauth-centralautologin-logged-in' => 'Has iniciado sesión globalmente como «$1». Carga la página de nuevo para aplicar la configuración del usuario.',
@@ -9833,37 +9833,36 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'action-centralauth-lock' => 'Bloquear o desbloquear una cuenta global',
 	'centrallogin' => 'Inicio de sesión centralizado',
 	'centralloginsuccesful' => 'Se inició la sesión correctamente',
-	'centralauth-completelogin-legend' => 'Inicio de sesión completa',
-	'centralauth-completelogin-finishing' => 'Autenticación en los sitios de la Fundación Wikimedia, por favor espere...',
-	'centralauth-completelogin-text' => 'Autenticación de su cuenta en los sitios de la Fundación Wikimedia esta casi completa! Utilice el botón de abajo para confirmar y completar su inicio de sesión.',
-	'centralauth-completelogin-submit' => 'Inicia sesión',
-	'centralauth-completelogin-back' => 'Regresar a la página anterior.',
-	'centralauth-error-nologinattempt' => 'Ningún intento de inicio de sesión activa que este en curso para su sesión.',
-	'centralauth-error-badtoken' => 'El token de autenticación está caducado o no válido.',
+	'centralauth-completelogin-legend' => 'Completar el proceso de inicio de sesión',
+	'centralauth-completelogin-finishing' => 'Autenticando el usuario en los sitios de la Fundación Wikimedia, espera…',
+	'centralauth-completelogin-text' => 'Ya casi terminamos de autenticar tu cuenta en los sitios de la Fundación Wikimedia. Utiliza el siguiente botón para confirmar y completar el inicio de sesión.',
+	'centralauth-completelogin-submit' => 'Iniciar sesión ahora',
+	'centralauth-completelogin-back' => 'Volver a la página anterior.',
+	'centralauth-error-nologinattempt' => 'No hay ningún intento de inicio de sesión en curso',
+	'centralauth-error-badtoken' => 'La señal de autenticación proporcionada ha caducado o no es válida.',
 	'centralauth-error-token-wrongattempt' => 'El token de autenticación no pertenece a su intento de inicio de sesión actual.
 Alguien podría estar intentando entrar en su una cuenta.',
-	'centralauth-error-token-wronguser' => 'El token no coincide con su nombre de usuario de la sesión.
-Alguien podría intentar entrar en su cuenta.
-Si usted está tratando de iniciar sesión como otro usuario, por favor primero iniciar sesión.',
+	'centralauth-error-token-wronguser' => 'La señal no coincide con el nombre de usuario de la sesión.
+Puede que alguien esté intentando iniciar sesión con una cuenta maliciosa.
+Si solo estabas tratando de iniciar sesión con otro usuario, cierra esta sesión antes.',
 	'centralauth-warning-notloggedin' => 'No has iniciado sesión.',
 	'centralauth-warning-notattached' => 'La cuenta local no está unida a una global.',
 	'centralauth-finishglobaliseemail_subject' => 'Confirmación de la cuenta de {{SITENAME}}',
-	'centralauth-finishglobaliseemail_body' => 'Su dirección de correo electrónico se ha establecido como asociado
-con la cuenta "$2" en todos los proyectos de Wikimedia, con su principal cuenta
-{{SITENAME}}.
+	'centralauth-finishglobaliseemail_body' => 'Se ha asociado tu dirección de correo electrónico con la cuenta
+«$2» en todos los proyectos de Wikimedia, y tu cuenta principal
+es la de {{SITENAME}}.
 
-Para confirmar que esta cuenta realmente pertenecen a usted, fusionar cualquiera de sus
-cuentas, que no podemos hacer automáticamente y le permiten recuperar su
-cuenta si pierde su contraseña, por favor abra este enlace en su navegador:
+Para confirmar que esta cuenta realmente te pertenece, fusionar cualquier
+cuenta tuya que no hayamos podido fusionar automáticamente, y permitirte
+recuperar la cuenta si olvidas la contraseña, abre este enlace en el navegador:
 
 $3
-
-Si la cuenta no le pertenece a usted, siga este enlace para cancelar el correo electrónico de
-confirmación de la dirección:
+Si la cuenta *no* te pertenece, sigue este enlace para cancelar la confirmación
+de la dirección de correo electrónico:
 
 $5
 
-Este código de confirmación expirará en $6 a $7.',
+Este código de confirmación caducará el $6 a las $7.',
 );
 
 /** Estonian (eesti)
@@ -15088,7 +15087,7 @@ Renominar lo causara que le conto local se distacha del global.',
 	'centralauth-renameuser-reserved' => 'Le nomine de usator $2 es reservate pro un conto global.',
 	'centralauth-invalid-wiki' => 'Non existe le base de datos wiki: $1',
 	'centralauth-account-exists' => 'Non pote crear conto: le nomine de usator requestate es ja in uso in le systema de contos unificate.',
-	'centralauth-account-exists-reset' => 'Le nomine de usator $1 non es registrate in iste wiki, ma tu pote reinitialisar su contrasigno in [[Special:CentralAuth/$1|un del wikis ubi illo se trova]].', # Fuzzy
+	'centralauth-account-exists-reset' => 'Le nomine de usator $1 non es registrate in iste wiki, ma tu pote reinitialisar su contrasigno in [[Special:CentralAuth/$1|un wiki in que illo es presente]].',
 	'centralauth-login-progress' => 'Apertura de tu session in le wikis del {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'celate globalmente per $1 a $2 pro le motivo sequente: $3',
@@ -15176,8 +15175,8 @@ Nota que un gruppo non existe si nulle permissiones ha essite assignate a illo.'
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modificar]])',
 	'centralauth-editgroup-nowikiset' => 'Nulle, se applica a tote le wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Le wiki in que iste persona ha un conto:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Le usator global '''$1''' non es active in le wiki que tu specificava ('' $2 '').
-Es possibile que tu tenta assignar derectos al mal usator!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "Le conto global '''$1''' non es active in le wiki que tu specificava ('' $2 '').
+Es possibile que tu tenta assignar derectos al mal usator!",
 	'centralauth-editset' => 'Gruppos de wikis',
 	'centralauth-editset-legend-rw' => 'Modificar o crear un gruppo de wikis',
 	'centralauth-editset-legend-ro' => 'Lista de gruppos de wikis',
@@ -15211,7 +15210,7 @@ Tu pote vider e modificar qualcunque de illos, o crear un nove gruppo.',
 	'centralauth-editset-success' => 'Le gruppo de wikis ha essite cambiate con successo.',
 	'centralauth-editset-success-delete' => 'Gruppo de wikis delite con successo.',
 	'centralauth-editset-return' => 'Retornar al vista principal',
-	'centralauth-block-already-locked' => 'Le usator [[Special:CentralAuth/$1|$1]] es jam serrate globalmente.', # Fuzzy
+	'centralauth-block-already-locked' => 'Le conto [[Special:CentralAuth/$1|$1]] es jam serrate globalmente.',
 	'centralauth-readonly' => 'Base de datos CentralAuth blocate',
 	'centralauth-readonlytext' => 'Al momento, le base de datos CentralAuth es blocate contra nove entratas e altere modificationes. Isto es probabilemente pro mantenentia routinari del base de datos. Postea, illo retornara al stato normal.',
 	'right-globalgroupmembership' => 'Modificar membrato in gruppos global',
@@ -25517,15 +25516,15 @@ Pozostałe nie zostały jeszcze potwierdzone.',
 Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do niego to konto, podaj hasło uniwersalnego konta:',
 	'centralauth-attach-submit' => 'Przyłącz konto',
 	'centralauth-attach-success' => 'Konto zostało przyłączone do konta uniwersalnego',
-	'centralauth' => 'Zarządzanie kontem uniwersalnym', # Fuzzy
+	'centralauth' => 'Zarządzanie kontem uniwersalny',
 	'centralauth-admin-intro' => 'Interfejs służy do zarządzania kontami uniwersalnymi.',
-	'centralauth-admin-manage' => 'Zarządzanie danymi użytkownika', # Fuzzy
+	'centralauth-admin-manage' => 'Zarządzanie danymi konta',
 	'centralauth-admin-username' => 'Nazwa użytkownika',
 	'centralauth-admin-lookup-ro' => 'Pokaż informacje o użytkowniku',
 	'centralauth-admin-lookup-rw' => 'Zarządzaj kontem użytkownika',
 	'centralauth-admin-permission' => 'Tylko stewardzi mogą łączyć cudze konta w imieniu tych osób.',
 	'centralauth-admin-no-unified' => 'Brak uniwersalnego konta dla tej nazwy użytkownika.',
-	'centralauth-admin-info-header' => 'Informacje o użytkowniku konta uniwersalnego', # Fuzzy
+	'centralauth-admin-info-header' => 'Informacje o koncie uniwersalnym',
 	'centralauth-admin-info-username' => 'Nazwa {{GENDER:|użytkownika|użytkowniczki}}:',
 	'centralauth-admin-info-id' => 'ID użytkownika',
 	'centralauth-admin-info-registered' => 'Zarejestrowane',
@@ -25621,7 +25620,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-prefs-count-unattached' => 'Nieprzyłączone konta o nazwie zbieżnej z Twoją są w $1 {{PLURAL:$1|projekcie|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Konto na tej witrynie nie zostało przyłączone do konta uniwersalnego.',
 	'centralauth-prefs-manage' => 'zarządzaj kontem uniwersalnym',
-	'centralauth-prefs-view' => 'pokaż informacje o koncie uniwersalnym', # Fuzzy
+	'centralauth-prefs-view' => 'Pokaż informacje o koncie uniwersalnym',
 	'centralauth-renameuser-merged' => 'Użytkownik $1 został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalny użytkownik zostanie odłączony od globalnego.', # Fuzzy
 	'centralauth-renameuser-reserved' => 'Nazwa $2 jest już zajęta dla konta uniwersalnego.', # Fuzzy
 	'centralauth-invalid-wiki' => 'Nie istnieje wiki DB: $1',
@@ -36724,6 +36723,7 @@ $5
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq
+ * @author Chihongleegabriel
  * @author Gzdavidwong
  * @author Horacewai2
  * @author Hydra
@@ -36825,15 +36825,15 @@ $messages['zh-hant'] = array(
 	'centralauth-attach-text' => '這個帳戶尚未被遷移到整合帳戶中，如果您已經擁有一個整合帳戶，您可能在此輸入該整合帳戶的密碼以遷移此帳戶：',
 	'centralauth-attach-submit' => '遷移帳號',
 	'centralauth-attach-success' => '該帳戶已被遷移到整合帳戶中。',
-	'centralauth' => '全球用戶管理',
+	'centralauth' => '全局帳戶管理',
 	'centralauth-admin-intro' => '此介面用於全域帳號的管理。',
-	'centralauth-admin-manage' => '管理使用者資料',
+	'centralauth-admin-manage' => '管理帳戶資料',
 	'centralauth-admin-username' => '用戶名：',
 	'centralauth-admin-lookup-ro' => '檢視用戶資訊',
 	'centralauth-admin-lookup-rw' => '管理用戶帳戶',
 	'centralauth-admin-permission' => '只有監管員可以為用戶整合帳號。',
 	'centralauth-admin-no-unified' => '沒有這個整合帳戶名稱。',
-	'centralauth-admin-info-header' => '全域帳戶資訊',
+	'centralauth-admin-info-header' => '全局帳戶資訊',
 	'centralauth-admin-info-username' => '用戶名：',
 	'centralauth-admin-info-id' => '用戶ID：',
 	'centralauth-admin-info-registered' => '登錄時間：',
@@ -36898,15 +36898,15 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-logsnippet' => '前個全域帳戶的變化',
 	'centralauth-admin-suppressreason' => '由$1全域隱藏，原因：$2',
 	'centralauth-admin-not-authorized' => '您沒有進行此操作的權限',
-	'globalusers' => '全域帳戶名單',
+	'globalusers' => '全局帳戶名單',
 	'centralauth-listusers-locked' => '鎖定',
 	'centralauth-listusers-attached' => '[[User:$1|於本地存在]]',
 	'centralauth-listusers-nolocal' => '未附加或未於本地存在',
-	'multilock' => '鎖定多個全域用戶',
+	'multilock' => '鎖定多個全局帳戶',
 	'centralauth-admin-multi-username' => '輸入一個或多個用戶名，以新行分隔',
 	'centralauth-admin-multi-notfound' => '搜索沒有返回任何用戶名。',
-	'centralauth-admin-multi-searchprefix' => '或者，用前綴搜索用戶。',
-	'centralauth-admin-multi-intro' => '一次過更新多個全域使用者',
+	'centralauth-admin-multi-searchprefix' => '或用前綴以搜索帳戶。',
+	'centralauth-admin-multi-intro' => '一次過更新多個全局帳戶',
 	'centralauth-admin-action-lock-nochange' => '不更改鎖定',
 	'centralauth-admin-action-lock-lock' => '鎖定所選帳戶',
 	'centralauth-admin-action-lock-unlock' => '解鎖所選帳戶',
@@ -36931,12 +36931,12 @@ $messages['zh-hant'] = array(
 	'centralauth-prefs-count-unattached' => '您在$1個計劃中還有未確認的帳戶。',
 	'centralauth-prefs-detail-unattached' => '這個計劃網站還未確認到全域帳戶。',
 	'centralauth-prefs-manage' => '管理您的全域帳戶',
-	'centralauth-prefs-view' => '檢視全域帳戶資訊',
-	'centralauth-renameuser-merged' => '用戶$1已經遷移至整合登入系統。改它的名字會令到本地用戶自全域中遷出。',
-	'centralauth-renameuser-reserved' => '用戶$2已經預留給全域帳戶使用。',
+	'centralauth-prefs-view' => '檢視全局帳戶資訊',
+	'centralauth-renameuser-merged' => '戶$1已經遷移至整合登入系統。更改它的名字會令到本地帳戶自全局中遷出。',
+	'centralauth-renameuser-reserved' => '用戶$2已經預留給全局帳戶使用。',
 	'centralauth-invalid-wiki' => '無這個wiki資料庫: $1',
 	'centralauth-account-exists' => '無法建立帳號：已有其他用戶於整合登入系統使用此名稱。',
-	'centralauth-account-exists-reset' => '用戶名$1並沒有在此維基註冊，但一個同名的全域帳戶存在。',
+	'centralauth-account-exists-reset' => '用戶名$1並沒有在此維基註冊，但一個同名的全域帳戶存在。', # Fuzzy
 	'centralauth-login-progress' => '正為您登入到{{int:Centralauth-groupname}}的維基項目：',
 	'centralauth-login-no-others' => '你已經自動登錄到{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-hidden-blockreason' => '全球隱藏 (在$1 $2)，原因：$3',
@@ -37020,7 +37020,7 @@ $messages['zh-hant'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|編輯]])',
 	'centralauth-editgroup-nowikiset' => '無，套用於所有維基網站。',
 	'centralauth-globalgrouppermissions-knownwiki' => '選擇一個有這個帳戶的wiki:',
-	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki（'' $2 ''）中並不活躍。您可能正在嘗試指定許可到錯的用戶!",
+	'centralauth-globalgroupmembership-badknownwiki' => "該全域用戶'''$1'''在您所指定的wiki（'' $2 ''）中並不活躍。您可能正在嘗試指定許可到錯的用戶!", # Fuzzy
 	'centralauth-editset' => '維基組',
 	'centralauth-editset-legend-rw' => '編輯或建立維基組',
 	'centralauth-editset-legend-ro' => '維基組列表',
@@ -37054,7 +37054,7 @@ $messages['zh-hant'] = array(
 	'centralauth-editset-success' => '成功更改維基集。',
 	'centralauth-editset-success-delete' => '成功刪除這個維基設定。',
 	'centralauth-editset-return' => '返回到主視圖',
-	'centralauth-block-already-locked' => '用戶[[Special:CentralAuth/$1|$1]]而被全域鎖定。',
+	'centralauth-block-already-locked' => '用戶[[Special:CentralAuth/$1|$1]]而被全域鎖定。', # Fuzzy
 	'centralauth-readonly' => 'CentralAuth資料庫被鎖',
 	'centralauth-readonlytext' => 'CentralAuth資料庫是目前被鎖定，所以無法接受新條目和其他修改。它可能正在進行常規的資料庫維護，然後將恢復正常。',
 	'right-globalgroupmembership' => '編輯成員至全域組',
