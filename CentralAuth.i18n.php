@@ -651,9 +651,17 @@ Used on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user m
 	'centralauth-admin-list-legend-rw' => 'Fieldset header ([[:File:CentralAuth admin.png|screenshot]])',
 	'centralauth-admin-unattached' => '{{Identical|Unattached accounts}}',
 	'centralauth-admin-notblocked' => '{{notranslate}}',
-	'centralauth-admin-blocked' => '$1 is the date/time of expiry, $2 is the reason of the block, $3 is the date of expiry, $4 is the time of expiry.',
-	'centralauth-admin-blocked-indef' => 'Used in Special:CentralAuth to show block status. Parameters:
-* $1 - reason for the block',
+	'centralauth-admin-blocked' => 'Used in [[Special:CentralAuth]] to show block status. Parameters:
+* $1 - (Unused) the date/time of expiry
+* $2 - the reason of the block
+* $3 - the date of expiry
+* $4 - the time of expiry
+See also:
+* {{msg-mw|Centralauth-admin-blocked-indef}}',
+	'centralauth-admin-blocked-indef' => 'Used in [[Special:CentralAuth]] to show block status. Parameters:
+* $1 - reason for the block
+See also:
+* {{msg-mw|Centralauth-admin-blocked}}',
 	'centralauth-admin-blocklog' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-localwiki' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 {{Identical|Local wiki}}',
@@ -5562,7 +5570,7 @@ Kontoù all n'int ket bet kadarnaet avat.",
 Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur verkañ ger-tremen ar gont hollek :",
 	'centralauth-attach-submit' => "Treuzkas ar c'hontoù",
 	'centralauth-attach-success' => "Treuzkaset eo bet ar gont d'ar gont unvan.",
-	'centralauth' => "Merer ar c'hontoù hollek", # Fuzzy
+	'centralauth' => "Merer ar c'hontoù hollek",
 	'centralauth-admin-intro' => "An etrefas-mañ a c'hell bezañ implijer evit melestriñ ar gontoù hollek.",
 	'centralauth-admin-manage' => 'Merañ ar roadoù implijer', # Fuzzy
 	'centralauth-admin-username' => 'Anv implijer :',
@@ -5571,6 +5579,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-permission' => "N'eus nemet ar stewarded a c'hall kendeuziñ kontoù tud all en o flas.",
 	'centralauth-admin-no-unified' => 'Kont unvan ebet war anv an implijer-mañ',
 	'centralauth-admin-info-header' => 'Titouroù diwar-benn an implijer hollek', # Fuzzy
+	'centralauth-admin-info-username' => 'Anv implijer :',
 	'centralauth-admin-info-id' => 'Niverenn implijer :',
 	'centralauth-admin-info-registered' => 'Marilhet :',
 	'centralauth-admin-info-home' => 'Wiki pennañ :',
@@ -5604,6 +5613,7 @@ Abeg : $1',
 	'centralauth-admin-delete-title' => 'Diverkañ ar gont',
 	'centralauth-admin-delete-description' => "Diverkañ ar gont hollek a zistrujo an holl benndibaboù hollek, a zistago an holl gontoù lec'hel hag a laosko vak an anv hollek evit neb implijer all. Distreiñ a raio ar gerioù-tremen bet krouet a-raok kendeuziñ ar c'hontoù d'o zalvoudegezh kent.",
 	'centralauth-admin-delete-button' => 'Diverkañ ar gont-mañ',
+	'centralauth-admin-delete-confirm' => "Sur oc'h e fell deoc'h dilemel ar gont-mañ ?",
 	'centralauth-admin-delete-success' => 'Diverket mat eo bet ar gont hollek evit "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'N\'eus kont hollek ebet evit "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Fazi : ar gont hollek "<nowiki>$1</nowiki>" n\'eus ket anezhi.',
@@ -5631,11 +5641,16 @@ Abeg : $1',
 ** titouroù personnel ha n'o deus ket ho flas",
 	'centralauth-admin-logsnippet' => 'Kemmoù bet eus ar gont hollek',
 	'centralauth-admin-suppressreason' => 'Bet kemmet en un doare hollek gant $1 evit an abeg da-heul : $2',
+	'centralauth-admin-not-authorized' => "N'emañ ket an aotreoù ret ganeoc'h evit seveniñ an ober-mañ.",
 	'globalusers' => 'Roll an implijer hollek', # Fuzzy
 	'centralauth-listusers-locked' => 'prennet',
 	'centralauth-listusers-attached' => "[[User:$1|bez ez eus dioutañ en un doare lec'hel]]",
 	'centralauth-listusers-nolocal' => "nann-staget pe n'eus ket outañ en un doare lec'hel",
+	'centralauth-admin-multi-username' => 'Ebarzhit un anv implijer pe meur a hini, unan dre linenn',
+	'centralauth-admin-multi-intro' => 'Hizivaat meur a gont hollek war un dro',
 	'centralauth-admin-action-lock-nochange' => 'Arabat cheñch ar morailhoù',
+	'centralauth-admin-action-lock-lock' => "Morailhañ ar c'hontoù diuzet",
+	'centralauth-admin-action-lock-unlock' => "Divorailhañ ar c'hontoù diuzet",
 	'centralauth-admin-action-hide-none' => "Diguzhat ar c'hontoù diuzet",
 	'centralauth-admin-multi-bot' => 'Kemmoù diwezhañ',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
@@ -6477,6 +6492,7 @@ $messages['ce'] = array(
 	'centralauth-admin-list-method' => 'Белхан кеп',
 	'centralauth-admin-list-editcount' => 'Нисдаршан ларар',
 	'centralauth-admin-reason' => 'Бахьан:',
+	'centralauth-admin-reason-other' => 'Кхин бахьан:',
 	'centralauth-admin-status-intro' => 'Ахьа лело мега хӀара форма хӀокху глобальни дӀаяздаран статус хийцош.',
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат|сахьат|сахьат}} тӀехьа', # Fuzzy
@@ -24660,7 +24676,7 @@ $messages['oc'] = array(
 	'centralauth-desc' => "[[Special:MergeAccount|Fusionar los comptes d'utilizaires]] dels wikis de {{int:Centralauth-groupname}}",
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Fusiona maites comptes]] per l’identificacion unica',
 	'centralauth-merge-denied' => 'O planhèm, avètz pas los dreches per accedir a aquesta pagina.',
-	'centralauth-merge-notlogged' => 'Mercé de plan voler <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} vos connectar]</span> per verificar que vòstres comptes son estats unificats coma caliá.', # Fuzzy
+	'centralauth-merge-notlogged' => '<span class="plainlinks">[$1 Connectatz-vos]</span> per verificar se vòstres comptes son estats fusionats completament.',
 	'centralauth-merge-welcome' => "'''Vòstres comptes d'utilizaire son pas encara estats migrats cap al sistèma de compte unic de {{int:Centralauth-groupname}}.'''
 
 Se causissètz de fusionar vòstres comptes, poiretz utilizar lo meteis nom d’utilizaire e lo meteis senhal sus totes los projèctes de {{int:Centralauth-groupname}} dins totas las lengas.
@@ -25671,7 +25687,7 @@ Kiedy odwiedzasz linkowaną domenę gdy nie jesteś zalogowany, system centralne
 	'globalgroupmembership' => 'Przynależność do grup globalnych',
 	'globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
 	'centralauth-globalgroupperms-grouplist' => 'Skonfigurowane zostały następujące grupy globalne.
-Jeśli posiadasz odpowiednie uprawnienia możesz zobaczyć oraz zmienić uprawnienia dowolnej grupy.
+Jeśli posiadasz odpowiednie uprawnienia, możesz zobaczyć oraz zmienić uprawnienia dowolnej grupy.
 Grupę można usunąć poprzez odebranie jej wszystkich uprawnień.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|podgląd i zmiana uprawnień]])',
 	'centralauth-globalgroupperms-nogroups' => 'Brak zdefiniowanych grup globalnych.',
@@ -31763,7 +31779,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-renameuser-reserved' => 'Användarnamnet $2 är reserverat för ett globalt konto.',
 	'centralauth-invalid-wiki' => 'Ingen sådan databas: $1',
 	'centralauth-account-exists' => 'Kan inte skapa konto: det angivna användarnamnet används redan av ett gemensamt konto.',
-	'centralauth-account-exists-reset' => 'Användarnamnet $1 är inte registrerat på denna wiki, men du kan återställa dess lösenord på [[Special:CentralAuth/$1|en av wikierna där det är registrerat]].', # Fuzzy
+	'centralauth-account-exists-reset' => 'Användarnamnet $1 är inte registrerat på denna wiki, men du kan återställa dess lösenord på [[Special:CentralAuth/$1|en wiki där det är registrerat]].',
 	'centralauth-login-progress' => 'Loggar in dig på wikis från {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Du har automatiskt blivit inloggad i andra projekt hos {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalt dold av $1 vid $2 med följande anledning: $3',
