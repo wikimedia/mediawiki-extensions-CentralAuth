@@ -550,16 +550,20 @@ Preceded by any one of the following messages:
 {{Identical|Home wiki}}",
 	'centralauth-list-home-dryrun' => 'Message that indication that provided information will be used for authenticating.',
 	'centralauth-list-attached-title' => 'List title/header.',
-	'centralauth-list-attached' => 'Text before the list of local wikis attached to a unified account, shown on the special page "MergeAccount" (Login unification complete!). Parameters:
-* $1 is an account/user name.',
+	'centralauth-list-attached' => 'Text before the list of local wikis attached to a unified account, shown on the special page "MergeAccount" (Login unification complete!).
+
+Parameters:
+* $1 - an account/user name',
 	'centralauth-list-attached-dryrun' => 'Text to inform users of which accounts can be unified after a dry-run. Parameters:
 * $1 is an account/user name.',
 	'centralauth-list-unattached-title' => '{{Identical|Unattached accounts}}',
 	'centralauth-list-unattached' => 'Used in Special:MergeAccount. Parameters:
 * $1 - username',
-	'centralauth-foreign-link' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. Parameters:
-*$1 is the user name
-*$2 is the name of the local wiki',
+	'centralauth-foreign-link' => 'Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
+
+Parameters:
+* $1 - the username
+* $2 - the name of the local wiki',
 	'centralauth-foreign-contributions' => 'Tool tip in list of local accounts (on the edit count column) on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 
 Parameters:
@@ -935,9 +939,9 @@ See example: [[w:Special:CentralAutoLogin]].',
 
 CORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/',
 	'centralauth-centralautologin-p3p-explanation' => 'Explanation for the P3P hack that allows IE to set cookies.',
-	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds.
-* $1 - User name
-* $2 - User gender code {{gender}}',
+	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds. Parameters:
+* $1 - username
+* $2 - (Optional) user gender code, for GENDER support',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
@@ -5651,7 +5655,9 @@ Abeg : $1',
 	'centralauth-admin-action-lock-nochange' => 'Arabat cheñch ar morailhoù',
 	'centralauth-admin-action-lock-lock' => "Morailhañ ar c'hontoù diuzet",
 	'centralauth-admin-action-lock-unlock' => "Divorailhañ ar c'hontoù diuzet",
+	'centralauth-admin-action-hide-nochange' => 'Arabat cheñch al liveoù kuzhet',
 	'centralauth-admin-action-hide-none' => "Diguzhat ar c'hontoù diuzet",
+	'centralauth-admin-action-hide-oversight' => "Kuzhat penn-da-benn ar c'hontoù diuzet",
 	'centralauth-admin-multi-bot' => 'Kemmoù diwezhañ',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|eilenn|eilenn}} zo',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|munut|munut}} zo',
@@ -5736,7 +5742,7 @@ Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	'centralauth-editgroup-submit' => "Enrollañ ar c'hemmoù da aotreoù ar strollad", # Fuzzy
 	'centralauth-editgroup-perms' => 'Aotreoù deroet :',
 	'centralauth-editgroup-reason' => 'Abeg :',
-	'centralauth-editgroup-success' => 'Cheñchet eo aotreoù ar strollad', # Fuzzy
+	'centralauth-editgroup-success' => 'Cheñchet eo ar strollad hollek',
 	'centralauth-editgroup-success-text' => "Kemmet hoc'h eus an aotreoù roet d'ar strollad hollek $1.
 [[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù hollek]]", # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|kemmañ]])',
@@ -5782,10 +5788,12 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'right-centralauth-autoaccount' => 'Kevreañ ent emgefre gant ur gont hollek',
 	'right-centralauth-unmerge' => "Nullañ kendeuzadur ar c'hontoù hollek",
 	'right-centralauth-lock' => 'Prennañ pe kuzhat ar gont hollek', # Fuzzy
-	'right-centralauth-oversight' => 'Dilemel ar gont hollek', # Fuzzy
+	'right-centralauth-oversight' => 'Dilemel pe kuzhat ar gont hollek',
 	'right-centralauth-merge' => "Kendeuziñ o c'hontoù",
 	'right-globalgrouppermissions' => 'Merañ ar strolladoù hollek',
 	'centralauth-completelogin-submit' => 'Kevreañ bremañ',
+	'centralauth-completelogin-back' => "Distreiñ d'ar bajenn a-raok.",
+	'centralauth-warning-notloggedin' => "N'oc'h ket kevreet evit c'hoazh.",
 );
 
 /** Bosnian (bosanski)
@@ -16556,6 +16564,9 @@ Hai richiesto questa pagina senza fornire alcun dato di autenticazione, quindi n
 	'centralauth-centralautologin-badstate-local' => 'Stato "$1" non valido nel wiki locale',
 	'centralauth-centralautologin-badwiki' => 'Il wiki "$1" non è valido per l\'accesso centrale',
 	'centralauth-centralautologin-corsfail' => 'Controllo di origine CORS non riuscito',
+	'centralauth-centralautologin-p3p-explanation' => 'Alcuni browser richiedono una policy P3P compatta per l\'invio e la ricezione di cookie in determinati casi, compresa la situazione riguardante il controllo di accesso SUL. Questa è un\'inutile complicazione in questa situazione, considerando che tutte le pagine coinvolte sono nello stesso gruppo di wiki e P3P stesso è sostanzialmente obsoleto e abbandonato; fortunatamente, la policy non valida collegata a questa pagina è attualmente considerata "abbastanza buona" per le configurazioni predefinite di questi browser.
+
+Si prega di rileggere la policy di tutela della riservatezza di questo sito per determinare come potrebbero essere utilizzate tutte le informazioni raccolte.',
 	'centralauth-centralautologin-logged-in' => "Hai effettuato l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
