@@ -2066,6 +2066,15 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( $secure ) {
 			$forceTime = ( $remember ? -1 : 0 );
+
+			// Core set a forceHTTPS cookie with a different domain. Delete
+			// that one, and set our own.
+			RequestContext::getMain()->getRequest()->response()->setcookie(
+				'forceHTTPS', '', -86400, array(
+					'prefix' => '',
+					'secure' => false,
+				)
+			);
 			self::setCookie( 'forceHTTPS', '1', $forceTime, false, '' );
 		}
 
@@ -2080,6 +2089,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->clearCookie( 'User' );
 		$this->clearCookie( 'Token' );
 		$this->clearCookie( 'Session' );
+		self::setCookie( 'forceHTTPS', '', -86400, false, '' );
 
 		// Logged-out cookie -to fix caching.
 		self::setCookie( 'LoggedOut', time() );

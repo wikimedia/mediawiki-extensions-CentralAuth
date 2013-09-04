@@ -95,6 +95,23 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 			return;
 
+		case 'deleteCookies': // Delete central cookies
+			// Do not cache this, we need to reset the cookies every time.
+			$this->getOutput()->enableClientCache( false );
+
+			CentralAuthUser::setP3P();
+			$userName = $request->getVal( 'userName', '' );
+			$centralUser = new CentralAuthUser( $userName );
+			if ( !$centralUser || !$centralUser->exists() ) {
+				$this->doFinalOutput( false, 'No global user' );
+			} elseif ( !$centralUser->isAttached() ) {
+				$this->doFinalOutput( false, 'Not attached' );
+			} else {
+				$centralUser->deleteGlobalCookies();
+				$this->doFinalOutput( true, 'success' );
+			}
+			return;
+
 		case 'start': // Main entry point
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.

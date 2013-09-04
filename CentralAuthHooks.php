@@ -619,6 +619,70 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param $user
+	 * @param $inject_html
+	 * @param $userName
+	 * @return bool
+	 */
+	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
+		global $wgCentralAuthCookies, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgMemc;
+
+		if ( !$wgCentralAuthCookies ) {
+			return true;
+		}
+
+		$wikis = $wgCentralAuthAutoLoginWikis;
+		if ( $wgCentralAuthLoginWiki ) {
+			$wikis[$wgCentralAuthLoginWiki] = $wgCentralAuthLoginWiki;
+		}
+
+		// No other domains
+		if ( !$wikis ) {
+			$inject_html = wfMessage( 'centralauth-logout-no-others' )->text();
+		} else {
+			$inject_html = '<div class="centralauth-logout-box"><p>' .
+				wfMessage( 'centralauth-logout-progress', $user->getName() )->text() . "</p>\n<p>";
+			foreach ( $wikis as $alt => $wikiID ) {
+				$wiki = WikiMap::getWiki( $wikiID );
+
+				global $wgCentralAuthUseOldAutoLogin;
+				if ( $wgCentralAuthUseOldAutoLogin ) {
+					// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+					$data = array(
+						'userName' => $user->getName(),
+						'token' => $centralUser->getAuthToken(),
+						'remember' => $user->getOption( 'rememberpassword' ),
+						'wiki' => $wikiID,
+						'action' => 'logout',
+					);
+					$loginToken = MWCryptRand::generateHex( 32 );
+					$wgMemc->set( CentralAuthUser::memcKey( 'login-token', $loginToken ), $data, 600 );
+					$url = wfAppendQuery( $wiki->getFullUrl( 'Special:AutoLogin' ), "logout=1&token=$loginToken" );
+				} else {
+					// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+					$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/deleteCookies' ), array(
+						'userName' => $userName,
+						'type' => 'icon',
+					) );
+				}
+				$inject_html .= Xml::element( 'img',
+					array(
+						'src' => $url,
+						'alt' => $alt,
+						'title' => $alt,
+						'width' => 20,
+						'height' => 20,
+						'style' => 'border: 1px solid #ccc;',
+					)
+				);
+			}
+			$inject_html .= "</p></div>\n";
+		}
+
+		return true;
+	}
+
+	/**
 	 * @param $out OutputPage
 	 * @param $cookies array
 	 * @return bool

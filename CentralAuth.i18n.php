@@ -263,7 +263,9 @@ Renaming it will cause the local account to be detached from the global one.",
 	'centralauth-account-exists'     => 'Cannot create account: the requested username is already taken in the unified login system.',
 	'centralauth-account-exists-reset' => 'The username $1 is not registered on this wiki, but you can reset its password on [[Special:CentralAuth/$1|a wiki where it is]].',
 	'centralauth-login-progress'     => 'Logging you in to wikis of {{int:Centralauth-groupname}}:', # This message supports {{GENDER}}
+	'centralauth-logout-progress'    => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
 
 	// Logging
@@ -498,7 +500,8 @@ $messages['qqq'] = array(
 	'mergeaccount' => '{{doc-special|MergeAccount}}',
 	'centralauth-groupname' => 'Used within the following messages:
 * {{msg-mw|centralauth-incomplete-text}}
-* {{msg-mw|centralauth-login-progress}}',
+* {{msg-mw|centralauth-login-progress}}
+* {{msg-mw|centralauth-logout-progress}}',
 	'centralauth-desc' => '{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}',
 	'centralauth-antispoof-desc' => '{{desc|name=AntiSpoof for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:AntiSpoof}}',
 	'centralauth-mergeaccount-desc' => 'Description of the special page [[Special:MergeAccount]]',
@@ -816,6 +819,8 @@ See also:
 * $1 - global user's name",
 	'centralauth-login-progress' => '{{gender}}
 * (optional) $1 is the user name of the logged in user',
+	'centralauth-logout-progress' => '{{gender}}
+* (optional) $1 is the user name of the logged out user',
 	'centralauth-hidden-blockreason' => 'Unused at this time. Parameters:
 * $1 - username
 * $2 - ...
