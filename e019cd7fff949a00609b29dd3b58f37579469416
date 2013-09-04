@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "296ed1b0_13968c4b",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-09-04T19:38:07Z",
+      "side": 1,
+      "message": "Can we use escaped() here, in case someone decides that \u003c\u003e should be allowed in usernames?",
+      "revId": "e019cd7fff949a00609b29dd3b58f37579469416",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
