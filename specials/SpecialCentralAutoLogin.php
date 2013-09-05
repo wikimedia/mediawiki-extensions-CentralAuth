@@ -57,7 +57,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'from',
 			'return',
 			'returnto',
-			'returnquery',
+			'returntoquery',
 			'proto'
 		);
 
