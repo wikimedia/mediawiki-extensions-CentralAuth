@@ -306,7 +306,7 @@ class CentralAuthHooks {
 		} else {
 			if ( $wgCentralAuthLoginWiki ) {
 				// Set $inject_html to some text to bypass the LoginForm redirection
-				$inject_html .= wfMessage( 'centralauth-login-no-others' )->text();
+				$inject_html .= wfMessage( 'centralauth-login-no-others' )->escaped();
 				// Redirect to the central wiki and back to complete login
 				$dummy = '';
 				self::doCentralLoginRedirect( $user, $centralUser, $dummy );
@@ -329,10 +329,10 @@ class CentralAuthHooks {
 
 		// No other domains
 		if ( !$wgCentralAuthAutoLoginWikis ) {
-			$inject_html = wfMessage( 'centralauth-login-no-others' )->text();
+			$inject_html = wfMessage( 'centralauth-login-no-others' )->escaped();
 		} else {
 			$inject_html = '<div class="centralauth-login-box"><p>' .
-				wfMessage( 'centralauth-login-progress', $user->getName() )->text() . "</p>\n<p>";
+				wfMessage( 'centralauth-login-progress', $user->getName() )->escaped() . "</p>\n<p>";
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 
