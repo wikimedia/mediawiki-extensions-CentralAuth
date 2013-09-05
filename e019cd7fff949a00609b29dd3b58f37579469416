@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "893c1da4_d495d431",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-09-05T16:07:11Z",
+      "side": 1,
+      "message": "(see below)",
+      "revId": "e019cd7fff949a00609b29dd3b58f37579469416",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "296ed1b0_13968c4b",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2013-09-04T19:38:07Z",
       "side": 1,
       "message": "Can we use escaped() here, in case someone decides that \u003c\u003e should be allowed in usernames?",
+      "revId": "e019cd7fff949a00609b29dd3b58f37579469416",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "893c1da4_b4904843",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-09-05T16:07:11Z",
+      "side": 1,
+      "message": "I just copied this bit of the code from what was deleted in Ibf6e271f.\n\nI suppose we could. But on the other hand, we\u0027re using -\u003etext() above on line 335, and I imagine that allowing \u003c\u003e in user names would break a whole lot more than just this message. [[mw:Manual:$wgLegalTitleChars]] lists \u003c\u003e among the characters to never allow.\n\nSo, your call if we still want to do this despite that.",
+      "parentUuid": "296ed1b0_13968c4b",
       "revId": "e019cd7fff949a00609b29dd3b58f37579469416",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
