@@ -62,7 +62,7 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 
 		// Auth OK.
 		if ( $logout ) {
-			$centralUser->deleteGlobalCookies();
+			CentralAuthUser::deleteGlobalCookies();
 		} else {
 			$centralUser->setGlobalCookies( $remember );
 		}

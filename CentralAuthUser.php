@@ -2015,7 +2015,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param  $name
 	 * @return void
 	 */
-	protected function clearCookie( $name ) {
+	protected static function clearCookie( $name ) {
 		self::setCookie( $name, '', - 86400 );
 	}
 
@@ -2059,7 +2059,7 @@ class CentralAuthUser extends AuthPluginUser {
 		if ( $remember ) {
 			self::setCookie( 'Token', $this->getAuthToken(), -1, $secure );
 		} else {
-			$this->clearCookie( 'Token' );
+			self::clearCookie( 'Token' );
 		}
 
 		$id = self::setSession( $session, $refreshId, $secure );
@@ -2076,10 +2076,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Delete global cookies which auto-authenticate the user on other wikis.
 	 * Called on logout.
 	 */
-	function deleteGlobalCookies() {
-		$this->clearCookie( 'User' );
-		$this->clearCookie( 'Token' );
-		$this->clearCookie( 'Session' );
+	static function deleteGlobalCookies() {
+		self::clearCookie( 'User' );
+		self::clearCookie( 'Token' );
+		self::clearCookie( 'Session' );
 
 		// Logged-out cookie -to fix caching.
 		self::setCookie( 'LoggedOut', time() );
