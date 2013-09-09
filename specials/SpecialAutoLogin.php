@@ -52,8 +52,14 @@ class SpecialAutoLogin extends UnlistedSpecialPage {
 		$centralUser = new CentralAuthUser( $userName );
 		$loginResult = $centralUser->authenticateWithToken( $token );
 
-		if ( $loginResult != 'ok' ) {
+		if ( $loginResult !== 'ok' && !$logout ) {
 			$msg = "Bad token: $loginResult";
+			wfDebug( __METHOD__ . ": $msg\n" );
+			$this->setHeaders();
+			$this->getOutput()->addWikiText( $msg );
+			return;
+		} elseif ( $logout && $loginResult === 'ok' ) {
+			$msg = "Logout token, but user didn't log out";
 			wfDebug( __METHOD__ . ": $msg\n" );
 			$this->setHeaders();
 			$this->getOutput()->addWikiText( $msg );
