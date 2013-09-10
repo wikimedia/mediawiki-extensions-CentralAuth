@@ -648,6 +648,7 @@ class CentralAuthHooks {
 				global $wgCentralAuthUseOldAutoLogin;
 				if ( $wgCentralAuthUseOldAutoLogin ) {
 					// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+					$centralUser = CentralAuthUser::getInstance( $user );
 					$data = array(
 						'userName' => $user->getName(),
 						'token' => $centralUser->getAuthToken(),
