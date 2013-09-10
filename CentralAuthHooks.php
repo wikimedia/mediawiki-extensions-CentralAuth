@@ -1113,52 +1113,19 @@ class CentralAuthHooks {
 				) . '</noscript>' );
 			}
 		} else {
+			$centralUser = CentralAuthUser::getInstance( $out->getUser() );
+			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				$out->addModules( 'ext.centralauth.centralautologin.clearcookie' );
+			}
+
 			if ( $out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' ) ) {
 				$out->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', null );
 				global $wgCentralAuthSilentLogin;
 				if ( $wgCentralAuthSilentLogin ) {
-					global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
-					foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
-						$wiki = WikiMap::getWiki( $wiki );
-						// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-						$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
-							'type' => '1x1',
-							'from' => wfWikiID(),
-						) );
-						$out->addHTML( Xml::element( 'img',
-							array(
-								'src' => $url,
-								'alt' => '',
-								'title' => '',
-								'width' => 1,
-								'height' => 1,
-								'style' => 'border: none; position: absolute;',
-							)
-						) );
-					}
-					if ( $wgCentralAuthLoginWiki ) {
-						$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
-						// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-						$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
-							'type' => '1x1',
-							'wikiid' => wfWikiID(),
-							'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
-						) );
-						$out->addHTML( Xml::element( 'img',
-							array(
-								'src' => $url,
-								'alt' => '',
-								'title' => '',
-								'width' => 1,
-								'height' => 1,
-								'style' => 'border: none; position: absolute;',
-							)
-						) );
-					}
+					$out->addHTML( self::getEdgeLoginHTML() );
 
 					if ( $wgCentralAuthUseEventLogging ) {
 						// Need to correlate user_id across wikis
-						$centralUser = CentralAuthUser::getInstance( $out->getUser() );
 						efLogServerSideEvent( 'CentralAuth', 5690875,
 							array( 'version' => 1,
 								'userId' => $centralUser->getId(),
@@ -1170,6 +1137,52 @@ class CentralAuthHooks {
 			}
 		}
 		return true;
+	}
+
+	static function getEdgeLoginHTML() {
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
+
+		$html = '';
+
+		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
+			$wiki = WikiMap::getWiki( $wiki );
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
+				'type' => '1x1',
+				'from' => wfWikiID(),
+			) );
+			$html .= Xml::element( 'img',
+				array(
+					'src' => $url,
+					'alt' => '',
+					'title' => '',
+					'width' => 1,
+					'height' => 1,
+					'style' => 'border: none; position: absolute;',
+				)
+			);
+		}
+		if ( $wgCentralAuthLoginWiki ) {
+			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
+				'type' => '1x1',
+				'wikiid' => wfWikiID(),
+				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
+			) );
+			$html .= Xml::element( 'img',
+				array(
+					'src' => $url,
+					'alt' => '',
+					'title' => '',
+					'width' => 1,
+					'height' => 1,
+					'style' => 'border: none; position: absolute;',
+				)
+			);
+		}
+
+		return $html;
 	}
 
 	/**
