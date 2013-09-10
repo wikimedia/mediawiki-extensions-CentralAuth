@@ -308,6 +308,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Now, figure out how to report this back to the user.
 
+			// First, set to redo the edge login on the next pageview
+			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+
 			// If it's not a script callback, just go for it.
 			if ( $request->getVal( 'type' ) !== 'script' ) {
 				$this->doFinalOutput( true, 'success' );
@@ -410,6 +413,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					),
 				) );
 			}
+
+			// And for good measure, add the edge login HTML images to the page.
+			$script .= Xml::encodeJsCall( "jQuery( 'body' ).append", array(
+				CentralAuthHooks::getEdgeLoginHTML()
+			) );
 
 			$this->doFinalOutput( true, 'success', $script );
 			return;
