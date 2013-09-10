@@ -24076,6 +24076,7 @@ $messages['niu'] = array(
  * @author SPQRobin
  * @author Servien
  * @author Siebrand
+ * @author Southparkfan
  * @author TBloemink
  */
 $messages['nl'] = array(
@@ -24172,7 +24173,7 @@ Er zijn nog gebruikers die niet bevestigd zijn.',
 Als de overkoepelende gebruiker ook van u is, dan kunt u deze gebruiker samenvoegen als u het wachtwoord voor de overkoepelende gebruiker ingeeft:',
 	'centralauth-attach-submit' => 'Gebruiker migreren',
 	'centralauth-attach-success' => 'De gebruiker is gemigreerd naar de samengevoegde gebruiker.',
-	'centralauth' => 'Globaal gebruikersbeheer', # Fuzzy
+	'centralauth' => 'Globaal gebruikersbeheer',
 	'centralauth-admin-intro' => 'Deze interface kan gebruikt worden voor het beheer van globale gebruikers.',
 	'centralauth-admin-manage' => 'Gebruikersgegevens beheren',
 	'centralauth-admin-username' => 'Gebruikersnaam:',
@@ -24247,7 +24248,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-admin-logsnippet' => 'Eerdere wijzigingen aan de globale gebruiker',
 	'centralauth-admin-suppressreason' => 'Globaal onderdrukt door $1 met reden: $2',
 	'centralauth-admin-not-authorized' => 'U hebt geen rechten om deze handeling uit te voeren.',
-	'globalusers' => 'Gebruikerslijst (globaal)', # Fuzzy
+	'globalusers' => 'Gebruikerslijst (globaal)',
 	'centralauth-listusers-locked' => 'afgeschermd',
 	'centralauth-listusers-attached' => '[[User:$1|bestaat lokaal]]',
 	'centralauth-listusers-nolocal' => 'niet verbonden of bestaat lokaal niet',
@@ -24280,12 +24281,12 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-prefs-count-unattached' => 'Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.',
 	'centralauth-prefs-detail-unattached' => 'Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.',
 	'centralauth-prefs-manage' => 'Globale gebruiker beheren',
-	'centralauth-prefs-view' => 'Gegevens over globale gebruiker bekijken', # Fuzzy
+	'centralauth-prefs-view' => 'Gegevens over globaal account bekijken',
 	'centralauth-renameuser-merged' => 'Gebruiker $1 is een globale gebruiker. Door deze gebruiker te hernoemen wordt deze losgekoppeld van de globale gebruiker.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Gebruiker $2 is gereserveerd voor de globale gebruiker.', # Fuzzy
+	'centralauth-renameuser-reserved' => 'Gebruikersnaam $2 is gereserveerd voor een globale gebruiker.',
 	'centralauth-invalid-wiki' => 'De wikidatabase bestaat niet: $1',
 	'centralauth-account-exists' => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
-	'centralauth-account-exists-reset' => 'De gebruikersnaam "$1" is niet geregistreerd bij deze wiki, maar de globale gebruiker bestaat wel.', # Fuzzy
+	'centralauth-account-exists-reset' => 'De gebruikersnaam $1 is niet geregistreerd op deze wiki, maar u kunt het wachtwoord opnieuw instellen op de  [[Special:CentralAuth/$1|wiki waar het geregistreerd is]].',
 	'centralauth-login-progress' => "U wordt aangemeld bij wiki's van {{int:Centralauth-groupname}}:",
 	'centralauth-logout-progress' => 'U wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
@@ -36574,6 +36575,7 @@ $messages['zea'] = array(
  * @author Xiaomingyan
  * @author Yanmiao liu
  * @author Yfdyh000
+ * @author Zhuyifei1999
  * @author 下一次登录
  * @author 阿pp
  */
@@ -36775,7 +36777,9 @@ $messages['zh-hans'] = array(
 	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登录系统使用此名称。',
 	'centralauth-account-exists-reset' => '用户$1并不是在此Wiki上注册的，但你可以在[[Special:CentralAuth/$1|它所在Wiki中的任意一个Wiki]]上重置它的密码。',
 	'centralauth-login-progress' => '正在为您登录到{{int:Centralauth-groupname}}的wiki：',
+	'centralauth-logout-progress' => '正在为您登出{{int:Centralauth-groupname}}的其他wiki：',
 	'centralauth-login-no-others' => '你已经自动登录到{{int:Centralauth-groupname}}的其他项目。',
+	'centralauth-logout-no-others' => '你已经自动登出{{int:Centralauth-groupname}}的其他项目。',
 	'centralauth-hidden-blockreason' => '全球隐藏 (在$1 $2)，原因：$3',
 	'centralauth-log-name' => '全局账户日志',
 	'centralauth-log-header' => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
