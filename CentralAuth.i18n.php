@@ -513,7 +513,9 @@ Followed by the message {{msg-mw|Centralauth-readmore-text}}.
 Parameters:
 * $1 - a link which points to [[Special:UserLogin]].',
 	'centralauth-merge-welcome' => '{{doc-singularthey}}
-Welcome message displayed to a user without a unified account.',
+Welcome message displayed to a user without a unified account.
+
+Refers to {{msg-mw|Centralauth-groupname}}',
 	'centralauth-merge-step1-title' => 'Title for a form to start account unification.',
 	'centralauth-merge-step1-detail' => 'Directions for form to start account unification.',
 	'centralauth-merge-step1-submit' => "Submit button for 'Confirm more accounts', the second step for creating a global user account.",
@@ -530,10 +532,14 @@ Welcome message displayed to a user without a unified account.',
 	'centralauth-merge-home-password' => 'Status message during the account unification process indicating an incorrect password was entered.',
 	'centralauth-complete' => 'Title of special page "MergeAccount" when a user account is unified.',
 	'centralauth-incomplete' => 'Title of special page "Special:MergeAccount"',
-	'centralauth-complete-text' => "{{doc-important|Please leave ''<nowiki>{{int:Centralauth-groupname}}</nowiki>'' exactly as it is.}}
-Status message after successful unification of a user account.",
-	'centralauth-incomplete-text' => '{{doc-important|Please leave <nowiki>{{int:Centralauth-groupname}}</nowiki> exactly as it is.}}
-Status message after incomplete unification of a user account.',
+	'centralauth-complete-text' => '{{doc-important|Please leave <code><nowiki>{{int:Centralauth-groupname}}</nowiki></code> exactly as it is.}}
+Status message after successful unification of a user account.
+
+Refers to {{msg-mw|Centralauth-groupname}}.',
+	'centralauth-incomplete-text' => '{{doc-important|Please leave <code><nowiki>{{int:Centralauth-groupname}}</nowiki></code> exactly as it is.}}
+Status message after incomplete unification of a user account.
+
+Refers to {{msg-mw|Centralauth-groupname}}.',
 	'centralauth-not-owner-text' => 'Unused at this time. Parameters:
 * $1 - username
 * $2 - ...',
@@ -779,7 +785,9 @@ Parameters:
 {{Related|Centralauth-admin-action}}',
 	'centralauth-admin-multi-bot' => 'Label shown next to the bot checkbox on [[Special:MultiLock]].
 {{Identical|Recent changes}}',
-	'centralauth-admin-multi-botcheck' => 'Explanation of the bot checkbox on [[Special:MultiLock]].',
+	'centralauth-admin-multi-botcheck' => 'Explanation of the bot checkbox on [[Special:MultiLock]].
+
+Refers to {{msg-mw|Recentchanges}}.',
 	'centralauth-seconds-ago' => 'Parameters:
 * $1 - number of seconds
 {{Related|Centralauth-ago}}',
@@ -856,9 +864,27 @@ See also:
 	'centralauth-account-exists-reset' => "Parameters:
 * $1 - global user's name",
 	'centralauth-login-progress' => '{{gender}}
-* (optional) $1 is the user name of the logged in user',
+Refers to {{msg-mw|Centralauth-groupname}}.
+
+Parameters:
+* $1 - (Optional) the user name of the logged in user
+See also:
+* {{msg-mw|Centralauth-logout-progress}}',
 	'centralauth-logout-progress' => '{{gender}}
-* (optional) $1 is the user name of the logged out user',
+Refers to {{msg-mw|Centralauth-groupname}}.
+
+Parameters:
+* $1 - (Optional) the user name of the logged out user
+See also:
+* {{msg-mw|Centralauth-login-progress}}',
+	'centralauth-login-no-others' => 'Refers to {{msg-mw|Centralauth-groupname}}.
+
+See also:
+* {{msg-mw|Centralauth-logout-no-others}}',
+	'centralauth-logout-no-others' => 'Refers to {{msg-mw|Centralauth-groupname}}.
+
+See also:
+* {{msg-mw|Centralauth-login-no-others}}',
 	'centralauth-hidden-blockreason' => 'Unused at this time. Parameters:
 * $1 - username
 * $2 - ...
@@ -29444,6 +29470,20 @@ $messages['scn'] = array(
 	'centralauth-antispoof-desc' => 'Junci la ticnoluggìa di AntiSpoof a CentralAuth',
 	'centralauth-mergeaccount-desc' => "[[Special:MergeAccount|Unifica li tò utenzi]] nti n'utenza glubbali",
 	'centralauth-merge-denied' => "N'aviti a scusari, nun hai lu pirmissu di accèdiri â sta pàggina",
+	'centralauth-merge-notlogged' => 'Pi fauri <span class="plainlinks">[$1 trasiti cô login]</span> pi virificari siddu lu prucessu di unificazzioni dê propri utenzi è cumpletu.',
+	'centralauth-merge-welcome' => "'''La tò utenza nun fu ancora mpurtata ntô sistema di idintificazzioni unificatu di {{int:Centralauth-groupname}}.'''
+
+Siddu dicidi di unificari li tò utenzi, puoi usari lu stissu nomu utenti e la stissa password pi tràsiri nti tutti li pruggetti wiki di {{int:Centralauth-groupname}} nti tutti li lingui dispunibbili.
+
+Siddu quarchid'un àutru usàu già lu tò nomu utenti supra n'autru situ, chistu nun lu distrubba, ma l'unificazzioni ti duna la pussibbilitati di arrisòrviri n futuru lu prubblema nsemi a l'àutru utenti o n'amministraturi.",
+	'centralauth-merge-step1-title' => "Accuminza l'unificazzioni dê trasuti",
+	'centralauth-merge-step1-detail' => "Nzirìsci ccà la password dâ tò utenza.
+La tò password e lu nnirizzu di posta elittrònica arriggistratu sunu ora ncruciati cu l'utenzi n àutri wiki pi cunfirmari ca currispùnnunu.
+Nuddu canciamenti è effittuatu prima dâ tò cunferma ca tuttu è n règula.",
+	'centralauth-merge-step1-submit' => 'Cunfirma li nfurnazzioni pâ trasuta',
+	'centralauth-merge-step2-title' => 'Cunfirma àutri utenzi',
+	'centralauth-merge-step2-detail' => "Nun fu pussibbili liari autumaticamenti certuni dî tò utenzi a chiddu supra lu tò wiki principali. Siddu si lu titulari di sti utenzi, addimostra ca t'appartènunu nnicannu li password pi ogneduna di chissi.",
+	'centralauth-merge-step2-submit' => 'Cunfirma li nfurmazzioni di trasuta',
 	'centralauth-finish-password' => 'Parola chiavi:',
 	'centralauth-finish-login' => 'Trasi',
 	'centralauth' => 'Amministrazzioni dû login unificatu', # Fuzzy
@@ -29468,6 +29508,10 @@ $messages['scn'] = array(
 	'centralauth-listusers-locked' => 'firmatu',
 	'centralauth-prefs-status' => "Situazzioni di l'utenza glubbali",
 	'centralauth-prefs-complete' => 'Tuttu appostu!',
+	'centralauth-prefs-migration' => 'N cursu di trasfirimentu',
+	'centralauth-prefs-count-attached' => 'La tò utenza è attiva supra $1 {{PLURAL:$1|situ|sita}} di pruggettu.',
+	'centralauth-prefs-manage' => 'Gistioni dâ tò utenza glubbali',
+	'centralauth-prefs-view' => "Ammùscia li nfurmazzioni glubbali supra l'utenti",
 	'centralauth-login-progress' => "La trasuta fu fatta puru nti l'àutri wiki di {{int:Centralauth-groupname}}:", # Fuzzy
 	'centralauth-logout-progress' => "Nisciuta effittuata di l'àutri wiki dâ <Centralauth-groupname>:", # Fuzzy
 	'centralauth-log-status-locked' => 'firmatu',
@@ -36204,7 +36248,9 @@ $messages['yi'] = array(
 	'centralauth-years-ago' => 'פֿאר $1 {{PLURAL:$1|יאר|יאר}}',
 	'centralauth-prefs-unattached' => 'נישט באשטעטיקט',
 	'centralauth-login-progress' => 'ארײַנלאגירן אײַך אין וויקיס פון {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'ארויסלאגירן אײַך פון אנדערע וויקיס ביי {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'איר זענט אויטאמאטיש אריינלאגירט אין אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'איר זענט אויטאמאטיש ארויסלאגירט פון אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'גלאבאל באהאלטן דורך $1 ביי $2 מיטן גרונד: $3',
 	'centralauth-log-name' => 'גלאבאלע קאנטע־לאגבוך',
 	'centralauth-log-header' => 'דאס לאגבוך אנטהאלט אפעראציעס אונטער גלאבאלע קאנטעס: אויסמעקונגען, פארשליסן און אויפשליסן.',
