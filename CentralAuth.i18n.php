@@ -8025,9 +8025,9 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'centralauth-account-exists' => 'Das Benutzerkonto kann nicht erstellt werden: Der angefragte Benutzername wird bereits für das globale Benutzerkontensystem verwendet.',
 	'centralauth-account-exists-reset' => 'Der Benutzername $1 ist nicht auf diesem Wiki registriert, allerdings kannst du das Passwort auf [[Special:CentralAuth/$1|einem Wiki zurücksetzen, wo er vorhanden ist]].',
 	'centralauth-login-progress' => 'Du wurdest auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch angemeldet:',
-	'centralauth-logout-progress' => 'Du wurdest bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch abgemeldet:', # Fuzzy
+	'centralauth-logout-progress' => 'Du wurdest bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch abgemeldet:',
 	'centralauth-login-no-others' => 'Du wurdest automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
-	'centralauth-logout-no-others' => 'Du wurdest automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.', # Fuzzy
+	'centralauth-logout-no-others' => 'Du wurdest automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.',
 	'centralauth-hidden-blockreason' => 'global versteckt durch $1 am $2. Grund: $3',
 	'centralauth-log-name' => 'Globales Benutzerkonten-Logbuch',
 	'centralauth-log-header' => 'Dieses Logbuch zeigt alle Löschungen, Sperrungen und Entsperrungen globaler Benutzerkonten.',
@@ -11468,6 +11468,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author Guillom
  * @author Hello71
  * @author IAlex
+ * @author Jean-Frédéric
  * @author Louperivois
  * @author Ltrlg
  * @author McDutchie
@@ -11694,9 +11695,9 @@ Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-account-exists' => 'Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.',
 	'centralauth-account-exists-reset' => 'Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais vous pouvez réinitialiser son mot de passe sur [[Special:CentralAuth/$1|un wiki où il se trouve]].',
 	'centralauth-login-progress' => 'Vous êtes en cours de connexion aux wikis de {{int:Centralauth-groupname}} :',
-	'centralauth-logout-progress' => 'Vous êtes en cours de déconnexion des autres wikis de {{int:Centralauth-groupname}} :', # Fuzzy
+	'centralauth-logout-progress' => 'Vous êtes en cours de déconnexion des autres wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Vous avez été automatiquement déconnecté{{GENDER:||e|(e)}} des autres projets de {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Vous avez été automatiquement déconnecté{{GENDER:||e|(e)}} des autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'masqué globalement par $1 sur $2 pour le motif suivant : $3',
 	'centralauth-log-name' => 'Journal des comptes globaux',
 	'centralauth-log-header' => 'Ce journal contient les opérations relatives aux comptes globaux : suppressions, blocages et déblocages.',
@@ -16043,9 +16044,9 @@ Ti pananginagan manen daytoy ket pagbanagan ti pannakaikkat ti lokal a pakabilan
 	'centralauth-account-exists' => 'Saan a makaaramid ti pakabilangan: ti kiniddaw a nagan ti agar-aramat ket naalan idiay sistema ti panagkaykaysa ti panagserrek.',
 	'centralauth-account-exists-reset' => 'Ti nagan ti agar-aramat $1 ket saan a nairehisto iti daytoy a wiki, ngem mabalinmo nga iyasentar manen ti kontrasenias iti [[Special:CentralAuth/$1|wiki nga ayanna]].',
 	'centralauth-login-progress' => 'Iserreka kadagiti wiki iti {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Iruar kan manipud kadagiti sabali a wiki iti {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Iruarkan manipud kadagiti sabali a wiki iti {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Naiserrekkan nga automatiko kadagiti sabali a gandat iti {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Na-automatiko ka a nairuar kadagiti sabali  a gandat iti {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Automatikokan a nairuar kadagiti sabali a gandat iti {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'sangalubongan a nailemmeng babaen ni $1 idiay $2 nga addaan ti sumaganad a rason: $3',
 	'centralauth-log-name' => 'Listaan ti sangalubongan a pakabilangan',
 	'centralauth-log-header' => 'Daytoy a listaan ket aglaon kadagiti operasion babaen dagiti sangalubongan a pakabilangan: dagiti panagikkat, panagserra ken panaglukat.',
@@ -16731,9 +16732,9 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-account-exists' => "Non è possibile creare l'account: il nome utente richiesto è già stato preso nel sistema del login unificato.",
 	'centralauth-account-exists-reset' => 'Il nome utente $1 non è registrato su questo wiki, ma è possibile reimpostare la sua password su [[Special:CentralAuth/$1|un wiki in cui è presente]].',
 	'centralauth-login-progress' => 'Accesso effettuato negli altri wiki della {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Uscita effettuata dagli altri wiki della {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-login-no-others' => 'Hai appena effettuato il log-in negli altri progetti di {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Hai appena effettuato il log-out dagli altri progetti della {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-progress' => 'Uscita effettuata dagli altri wiki della {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => "Hai appena effettuato l'accesso negli altri progetti della {{int:Centralauth-groupname}}.",
+	'centralauth-logout-no-others' => "Hai appena effettuato l'uscita dagli altri progetti della {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
 	'centralauth-log-name' => 'Utenze globali',
 	'centralauth-log-header' => 'Questo registro contiene le operazioni sulle utenze globali: cancellazioni, blocchi e sblocchi.',
@@ -21615,9 +21616,9 @@ $messages['mk'] = array(
 	'centralauth-account-exists' => 'Не можам да ја создадам сметката: бараното корисничко име е зафатено во системот за најавување со обединета сметка.',
 	'centralauth-account-exists-reset' => 'Корисничкото име $1 не е регистрирано на ова вики, но можете да му зададете нова лозинка на [[Special:CentralAuth/$1|викито кајшто постои]].',
 	'centralauth-login-progress' => 'Ве најавувам на викијата на {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Ве одјавувам од другите викија на {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Ве одјавувам од другите викија на {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално скриен од $1 во $2 од следнава причина: $3',
 	'centralauth-log-name' => 'Дневник на глобални сметки',
 	'centralauth-log-header' => 'Овој дневник содржи записи за операциите со глобални сметки: бришења, заклучувања и отклучувања.',
@@ -27829,9 +27830,9 @@ Redenumirea va cauza utilizatorului local detașarea de la contul global.', # Fu
 	'centralauth-account-exists' => 'Contul nu a putut fi creat: acest nume de utilizator este deja alocat în sistemul de autentificare unificat.',
 	'centralauth-account-exists-reset' => 'Numele de utilizator $1 nu este înregistrat pe acest wiki, dar există în sistemul unificat de autentificare.', # Fuzzy
 	'centralauth-login-progress' => 'Sunteți în curs de autentificare la wikiurile susținute de {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Sunteți în curs de deconectare de la wikiurile susținute de {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Sunteți în curs de deconectare de la alte wikiuri ale {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Ați fost logat în mod automat în alte proiecte a {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Ați fost delogat în mod automat din alte proiecte a {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Ați fost deconectat în mod automat din alte proiecte ale {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'ascuns global de către $1 la $2 cu motivul următor: $3',
 	'centralauth-log-name' => 'Jurnal conturi globale',
 	'centralauth-log-header' => 'Acest jurnal conține operațiuni în cadrul conturilor globale: ștergeri, blocări și deblocări.',
@@ -28143,7 +28144,7 @@ Ce tu le renomine, l'utende locale adda essere scucchiáte da 'u cunde globbale.
 	'centralauth-account-exists' => "Non ge puè ccrejà 'u cunde utende: 'u nome de l'utende cercate ha state ggià pigghiate jndr'à 'u sisteme de le utinde aunificate.",
 	'centralauth-login-progress' => "Ste tràse jndr'à ste uicchi de {{int:Centralauth-groupname}}:",
 	'centralauth-login-no-others' => "Tu è trasute automaticamende jndr'à l'otre pruggette de {{int:Centralauth-groupname}}.",
-	'centralauth-logout-no-others' => "Tu è state automaticamende mise fore da l'otre pruggette de {{int:Centralauth-groupname}}.", # Fuzzy
+	'centralauth-logout-no-others' => "Tu è state automaticamende mise fore da l'otre pruggette de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => "Globbalmende scunne da $1 a $2 cu 'u mutive seguende: $3",
 	'centralauth-log-name' => 'Archivije de le cunde utinde globbale',
 	'centralauth-log-header' => "St'archivije tène operaziune sotte a le cunde globbale: scangellazziune, blocche e sblocche.",
@@ -34909,9 +34910,9 @@ $messages['uk'] = array(
 	'centralauth-account-exists' => "Неможливо створити обліковий запис. Таке ім'я вже зайняте для єдиного облікового запису.",
 	'centralauth-account-exists-reset' => 'Користувач $1 не зареєстрований на цьому вікі-сайті, але ви можете змінити його пароль на [[Special:CentralAuth/$1|вікі, де він зареєстрований]].',
 	'centralauth-login-progress' => 'Вхід до системи також в інших проектах {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Ваш вихід із інших вікіпроектів {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Ваш вихід із інших вікіпроектів {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Ви автоматично ввійшли до системи в усіх проектах {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Ви автоматично завершили сеанс в інших проектах {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Ви автоматично завершили сеанс в інших проектах {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобально прихований користувачем $1 $2 через $3',
 	'centralauth-log-name' => 'Журнал керування глобальними обліковими записами',
 	'centralauth-log-header' => 'Цей журнал містить записи про дії над глобальними обліковими записами: вилучення, блокування, розблокування.',
