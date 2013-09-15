@@ -7351,9 +7351,9 @@ Rheswm: $1',
 	'centralauth-account-exists' => "Ni ellid creu cyfrif; mae'r enw defnyddiwr a geisiwyd wedi'i gymryd yn y system fewngofnodi cyfunedig.",
 	'centralauth-account-exists-reset' => "Nid yw'r enw defnyddiwr $1 wedi'i gofrestru ar y wici hwn, ond gallwch ailosod cyfrinair y cyfrif ar [[Special:CentralAuth/$1|rhyw wici lle y mae wedi'i gofrestru]].",
 	'centralauth-login-progress' => "Yn mewngofnodi i wicïau sy'n perthyn i {{int:Centralauth-groupname}}:",
-	'centralauth-logout-progress' => "Yn allgofnodi o wicïau eraill sy'n perthyn i {{int:Centralauth-groupname}}:", # Fuzzy
+	'centralauth-logout-progress' => "Yn allgofnodi o wicïau eraill sy'n perthyn i {{int:Centralauth-groupname}}:",
 	'centralauth-login-no-others' => "Cawsoch eich mewngofnodi'n awtomatig i brosiectau eraill {{int:Centralauth-groupname}}.",
-	'centralauth-logout-no-others' => "Cawsoch eich allgofnodi'n awtomatig o brosiectau eraill {{int:Centralauth-groupname}}.", # Fuzzy
+	'centralauth-logout-no-others' => "Cawsoch eich allgofnodi'n awtomatig o brosiectau eraill {{int:Centralauth-groupname}}.",
 	'centralauth-log-name' => 'Lòg cyfrifon cydwici',
 	'centralauth-log-header' => "Mae'r lòg hwn yn cynnwys gweithrediadau ar gyfrifon cydwici: dileu, cloi a datgloi.",
 	'centralauth-log-entry-delete' => 'wedi dileu cyfrif cydwici "$1"',
@@ -12439,9 +12439,9 @@ Un cambio de nome provocará que a conta local se separe da global.',
 	'centralauth-account-exists' => 'Non se pode crear a conta: o nome de usuario solicitado xa é usado no sistema de unificación do rexistro.',
 	'centralauth-account-exists-reset' => 'O nome de usuario $1 non está rexistrado neste wiki, pero pode restablecer o seu contrasinal [[Special:CentralAuth/$1|nun wiki no que estea presente]].',
 	'centralauth-login-progress' => 'Accedendo ao sistema nos wikis {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Saíndo do sistema dos outros wikis {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Saíndo do sistema dos outros wikis {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Accedeu automaticamente ao sistema doutros proxectos {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Saíu automaticamente do sistema doutros proxectos {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Saíu automaticamente do sistema doutros proxectos {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'agochada globalmente por $1 en $2 polo seguinte motivo: $3',
 	'centralauth-log-name' => 'Rexistro de administración de contas de usuario globais',
 	'centralauth-log-header' => 'Este rexistro contén as operacións baixo contas de usuario globais: borrados, bloqueos e desbloqueos.',
@@ -19079,9 +19079,9 @@ $messages['ko'] = array(
 	'centralauth-account-exists' => '등록 실패. 이미 통합 로그인 체계에서 다른 사람이 쓰고 있는 이름입니다.',
 	'centralauth-account-exists-reset' => '$1 사용자 이름이 이 위키에는 등록되지 않았지만, [[Special:CentralAuth/$1|계정이 있는 위키]]에서 비밀번호를 재설정할 수 있습니다.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}의 위키에 로그인합니다:',
-	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}의 다른 위키에서 로그아웃합니다:', # Fuzzy
-	'centralauth-login-no-others' => '자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.',
-	'centralauth-logout-no-others' => '자동적으로 {{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그아웃되었습니다.', # Fuzzy
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}의 다른 위키에서 로그아웃합니다:',
+	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.',
+	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그아웃되었습니다.',
 	'centralauth-hidden-blockreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 $2에 숨겨졌습니다: $3',
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-header' => '이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.',
@@ -20011,9 +20011,9 @@ Eng Ëmbenennung hëlt de lokale Benotzerkont aus dem globale Benotzerkonte-Syst
 	'centralauth-account-exists' => 'De Benotzerkont kann net gemaach ginn: de gefrote Benotzernumm gëtt et schonn als globale Benotzernumm.',
 	'centralauth-account-exists-reset' => 'De Benotzernumm $1 ass op dëser Wiki net registréiert, Dir kënnt awer säi Passwuert, op [[Special:CentralAuth/$1|enger Wikie, wou en et ass]] änneren.',
 	'centralauth-login-progress' => "Dir gouft an d'Wikie vu(n) {{int:Centralauth-groupname}} ageloggt:",
-	'centralauth-logout-progress' => 'Iech aus anere Wikie vu(n) {{int:Centralauth-groupname}} ausloggen:', # Fuzzy
+	'centralauth-logout-progress' => 'Iech aus anere Wikie vu(n) {{int:Centralauth-groupname}} ausloggen:',
 	'centralauth-login-no-others' => 'Dir gouft automatesch an aner Projete vun {{int:Centralauth-groupname}} ageloggt:',
-	'centralauth-logout-no-others' => 'Dir gouft automatesch aus den anere Projete vun {{int:Centralauth-groupname}} ausgeloggt.', # Fuzzy
+	'centralauth-logout-no-others' => 'Dir gouft automatesch aus den anere Projete vu(n) {{int:Centralauth-groupname}} ausgeloggt.',
 	'centralauth-hidden-blockreason' => 'global verstoppt vum $1 de(n) $2 mat dësem Grond: $3',
 	'centralauth-log-name' => 'Lëscht vun de globale Benotzerkonten',
 	'centralauth-log-header' => 'An dëser Lëscht stinn all Operatioune déi global Benotzerkonten bereffen: Läsche, Spären a Ohiewe vu Spären.',
@@ -24376,7 +24376,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-login-progress' => "U wordt aangemeld bij wiki's van {{int:Centralauth-groupname}}:",
 	'centralauth-logout-progress' => 'U wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globaal verborgen door $1 op $2 met reden: $3',
 	'centralauth-log-name' => 'Globaal gebruikersbeheerlogboek',
 	'centralauth-log-header' => 'Dit logboek bevat handelingen voor globale gebruikers: verwijderingen, afsluiten en vrijgeven.',
@@ -24495,7 +24495,7 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'centralauth-editset-success' => 'De wikigroep is gewijzigd.',
 	'centralauth-editset-success-delete' => 'De wikigroep is verwijderd.',
 	'centralauth-editset-return' => 'Terug naar hoofdmenu',
-	'centralauth-block-already-locked' => 'De gebruiker [[Special:CentralAuth/$1|$1]] is al globaal geblokkeerd.', # Fuzzy
+	'centralauth-block-already-locked' => 'De gebruiker [[Special:CentralAuth/$1|$1]] is al globaal geblokkeerd.',
 	'centralauth-readonly' => 'De database voor CentralAuth is vergrendeld',
 	'centralauth-readonlytext' => 'De database voor CentralAuth is op het moment vergrendeld en er kunnen geen wijzigingen worden aangebracht. Dit komt waarschijnlijk door routine-onderhoud aan de database. Als dat is afgerond, is alles weer zoals het hoort te zijn.',
 	'right-globalgroupmembership' => 'Lidmaatschap van globale groepen bewerken',
@@ -27990,6 +27990,10 @@ Pe piacere mitte arrete 'a passuord pe sta uicchi.",
 	'centralauth-complete' => 'Trasùte aunifecate combletate!',
 	'centralauth-incomplete' => 'Trasùte aunifecate non combletate!',
 	'centralauth-complete-text' => "Tu puè trasè jndr'à tutte le uicchi de {{int:Centralauth-groupname}} senze ccrejà 'nu cunde nuève.",
+	'centralauth-incomplete-text' => "'Na vote ca 'a trasuta toje jè unificate, tu puè trasè jndr'à ogne site de uicchi de {{int:Centralauth-groupname}} senze ccrejè 'nu cunde nuève",
+	'centralauth-not-owner-text' => "'U nome utende \"\$1\" ha state assegnate automaticamende a 'u titolare d'u cunde sus a \$2.
+
+Ce quiste si tu, tu puè spiccià 'u processe de trasute pe aunificazione semblicemenne scrivenne 'a passuord prengepàle pu cunde aqquà:",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Sulamende 'u mode Demo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "L'unificazione de le cunde utinde pe mò jè jndr'à 'u mode demo / debug, allore pe mò le operaziune de scuagghiamende avènene disabbilitate.
 Ne dispiace!",
@@ -28002,6 +28006,8 @@ Ne dispiace!",
 	'centralauth-list-attached' => '\'U cunde utende nomenate "$1" sus a ognune de le seguende site ha state automaticamende attaccate a \'u cunde aunificate:',
 	'centralauth-list-attached-dryrun' => '\'U cunde utende nomenate "$1" sus a ognune de le seguende site adda essere automaticamende attaccate a \'u cunde aunificate:',
 	'centralauth-list-unattached-title' => 'Cunde utinde libbere',
+	'centralauth-list-unattached' => "'U cunde \"\$1\" non ge pò essere confermate automaticamende sus a le seguende site;
+assaije vote ste 'na differenze 'mbrà 'a passuord toje d'u cunde prengepàle:",
 	'centralauth-foreign-link' => 'Utende $1 sus a $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|condebbute|condrebbute}} sus a $2',
 	'centralauth-merge-method-primary' => 'casa uicchi',
@@ -28011,6 +28017,8 @@ Ne dispiace!",
 	'centralauth-merge-method-admin' => "amministratore-scuagghiamende d'u cunde utende",
 	'centralauth-merge-method-new' => 'cunde utende nuève',
 	'centralauth-merge-method-login' => "Crijate cu 'a trasùte",
+	'centralauth-merge-method-primary-desc' => "Queste jè 'a uicchi 'a quale 'u cunde ha state a l'inizie scuagghiate.
+Vide ca pò essere diverse da 'u nome reale d'a uicchi de quidde utende.",
 	'centralauth-merge-method-empty-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate purcé non g'avere fatte cangiaminde.",
 	'centralauth-merge-method-mail-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate purcé l'indirizze e-mail ere satte-satte quidde d'u cunde utende prengepàle.",
 	'centralauth-merge-method-password-desc' => "Indichesce ca 'u cunde utende locale ha state scuagghiate l'utende avere specificate 'na passuord valide pe jidde.",
@@ -28024,6 +28032,8 @@ Sta funzione jè desabbilitate mò pe mutive de securezze.",
 	'centralauth-finish-password' => 'Passuord:',
 	'centralauth-finish-login' => 'Tràse',
 	'centralauth-finish-send-confirmation' => "Passuord pe l'e-mail",
+	'centralauth-finish-problems' => "Ste ave probbleme, o non ge sì 'u titolare de ste otre cunde?
+[[meta:Help:Unified login problems|Cumme cercà aijute]]…",
 	'centralauth-finish-noconfirms' => 'Nisciune cunde utende pò essere confermate ausanne sta passuord.',
 	'centralauth-finish-incomplete' => "Diverse cunde utende onne state scuagghiate ausanne sta passuord.
 Otre cunde angore non g'onne state confermate.",
@@ -30258,7 +30268,7 @@ $messages['sl'] = array(
 	'centralauth-desc' => '[[Special:MergeAccount|Združite račune]] skozi wikije {{int:Centralauth-groupname}}',
 	'centralauth-antispoof-desc' => 'Doda tehnologijo AntiSpoof k CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Združi več računov]] za Prijavo enotnega uporabnika',
-	'centralauth-merge-denied' => 'Oprostite, nimate dovoljenja za dostop do te strani.',
+	'centralauth-merge-denied' => 'Oprostite, za dostop do te strani nimate dovoljenja.',
 	'centralauth-merge-notlogged' => 'Prosimo, <span class="plainlinks">[$1 prijavite se]</span>, da preverite, ali so bili vaši računi v celoti združeni.',
 	'centralauth-merge-welcome' => "'''Vaš uporabniški račun še ni bil preseljen v poenoten sistem prijave {{int:Centralauth-groupname}}.'''
 
@@ -30578,6 +30588,9 @@ Lahko si jih ogledate ali spremenite katero koli od njih, ali ustvarite novo sku
 	'right-centralauth-merge' => 'Združevanje njihovih računov',
 	'right-globalgrouppermissions' => 'Upravljanje globalnih skupin',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne skupine, v katere je uvrščen uporabnik',
+	'centrallogin' => 'Centralna prijava uporabnika',
+	'centralauth-completelogin-back' => 'Vrnitev na prejšnjo stran.',
+	'centralauth-error-nologinattempt' => 'Za vašo sejo ne poteka noben aktiven poskus prijave.',
 );
 
 /** Somali (Soomaaliga)
@@ -35828,9 +35841,9 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-account-exists' => 'Không thể tạo tài khoản: tên người dùng chỉ định đã được sử dụng trong hệ thống đăng nhập thống nhất.',
 	'centralauth-account-exists-reset' => 'Wiki này chưa có tài khoản với tên người dùng “$1”, nhưng bạn có thể đặt lại mật khẩu của bạn trên [[Special:CentralAuth/$1|một trong những wiki có tài khoản này]].',
 	'centralauth-login-progress' => 'Đang đăng nhập bạn vào các wiki của {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Đang đăng xuất bạn ra khỏi các wiki khác của {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Đang đăng xuất bạn ra khỏi các wiki khác của {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Đã đăng nhập cùng lúc vào các dự án khác của {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Đã tự động đăng xuất bạn cùng lúc khỏi các dự án khác của {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Đã tự động đăng xuất bạn cùng lúc khỏi các dự án khác của {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'bị $1 ẩn toàn cục vào lúc $2 vì lý sao sau: $3',
 	'centralauth-log-name' => 'Nhật trình quản lý tài khoản toàn cục',
 	'centralauth-log-header' => 'Nhật trình này chứa các tác vụ đối với tài khoản toàn cục: xóa, khóa và mở khóa.',
