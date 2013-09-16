@@ -6951,9 +6951,9 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-account-exists' => 'Účet nelze vytvořit: Požadované uživatelské jméno je již registrováno v systému jednotného přihlašování.',
 	'centralauth-account-exists-reset' => 'Uživatelské jméno $1 není na této wiki zaregistrováno, ale heslo si můžete obnovit na [[Special:CentralAuth/$1|některé wiki, na kterých je]].',
 	'centralauth-login-progress' => 'Přihlašujeme vás na wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
-	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Odhlašujeme vás z ostatních wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}:',
 	'centralauth-login-no-others' => '{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
-	'centralauth-logout-no-others' => '{{GENDER:|Byl|Byla|Byli}} jste automaticky {{GENDER:|odhlášen|odhlášena|odhlášeni}} z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.', # Fuzzy
+	'centralauth-logout-no-others' => '{{GENDER:|Byl|Byla|Byli}} jste automaticky {{GENDER:|odhlášen|odhlášena|odhlášeni}} z ostatních projektů {{grammar:2sg|{{int:Centralauth-groupname}}}}.',
 	'centralauth-hidden-blockreason' => 'globálně skryl $1 v $2 se zdůvodněním: $3',
 	'centralauth-log-name' => 'Kniha správy globálních účtů',
 	'centralauth-log-header' => 'Tato kniha obsahuje informace o operacích na globálních účtech: mazání, zamykání a odemykání.',
@@ -10211,9 +10211,9 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-account-exists' => 'Kontot ei saa luua, sest soovitud kasutajanimi on ühendkontode süsteemis juba kasutusel.',
 	'centralauth-account-exists-reset' => 'Kasutajanimi $1 pole siin vikis registreeritud, aga saad lähtestada selle parooli [[Special:CentralAuth/$1|ühes vikidest, kus see on registreeritud]].',
 	'centralauth-login-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidesse sisse:',
-	'centralauth-logout-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidest välja:', # Fuzzy
+	'centralauth-logout-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidest välja:',
 	'centralauth-login-no-others' => 'Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-log-name' => 'Globaalsete kontode logi',
 	'centralauth-log-header' => 'Siin logis on globaalsete kontode kustutamise, lukustamise ja lukust avamisega seotud muudatused.',
 	'centralauth-log-entry-delete' => 'kustutas globaalse konto "$1"',
@@ -15321,9 +15321,9 @@ Renominar lo causara que le conto local se distacha del global.',
 	'centralauth-account-exists' => 'Non pote crear conto: le nomine de usator requestate es ja in uso in le systema de contos unificate.',
 	'centralauth-account-exists-reset' => 'Le nomine de usator $1 non es registrate in iste wiki, ma tu pote reinitialisar su contrasigno in [[Special:CentralAuth/$1|un wiki in que illo es presente]].',
 	'centralauth-login-progress' => 'Apertura de tu session in le wikis del {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Clausura de tu session in le altere wikis del {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Clausura de tu session in le altere wikis del {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'celate globalmente per $1 a $2 pro le motivo sequente: $3',
 	'centralauth-log-name' => 'Registro de contos global',
 	'centralauth-log-header' => 'Iste registro contine operationes concernente contos global: deletiones, serramentos e disserramentos.',
@@ -28304,6 +28304,7 @@ $messages['rtm'] = array(
  * @author Kalan
  * @author Lockal
  * @author MaxSem
+ * @author Okras
  * @author Ole Yves
  * @author Putnik
  * @author VasilievVV
@@ -28401,15 +28402,15 @@ $messages['ru'] = array(
 	'centralauth-attach-text' => 'Эта учётная запись ещё не была перемещена в систему единой учётной записи. Если глобальная учётная запись также принадлежит вам, вы можете присоединить данную учётную запись, указав пароль глобальной учётной записи:',
 	'centralauth-attach-submit' => 'Перенести учётную запись',
 	'centralauth-attach-success' => 'Учётная запись была перенесена в систему единой учётной записи.',
-	'centralauth' => 'Менеджер глобальных учётных записей', # Fuzzy
+	'centralauth' => 'Менеджер глобальной учётной записи',
 	'centralauth-admin-intro' => 'Этот интерфейс может быть использован для управления глобальными учётными записями.',
-	'centralauth-admin-manage' => 'Управление информацией об участниках', # Fuzzy
+	'centralauth-admin-manage' => 'Управление данными учетной записи',
 	'centralauth-admin-username' => 'Имя участника:',
 	'centralauth-admin-lookup-ro' => 'Просмотр сведений об участнике',
 	'centralauth-admin-lookup-rw' => 'Управление учётной записью участника',
 	'centralauth-admin-permission' => 'Только стюарды могут объединять учётные записи других людей.',
 	'centralauth-admin-no-unified' => 'Нет объединённой учётной записи для этого имени участника.',
-	'centralauth-admin-info-header' => 'Глобальные сведения об участнике', # Fuzzy
+	'centralauth-admin-info-header' => 'Информация о глобальной учётной записи',
 	'centralauth-admin-info-username' => 'Имя учётной записи:',
 	'centralauth-admin-info-id' => 'Идентификатор участника:',
 	'centralauth-admin-info-registered' => 'Зарегистрирован:',
@@ -31091,7 +31092,7 @@ $messages['sr-ec'] = array(
 	'centralauth-login-progress' => 'Пријављујем вас на друге вики пројекте {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Одјављујем вас са свих викија пројекта {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Пријављени сте на друге пројекте које покреће {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Одјављени сте с других пројеката које покреће {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Аутоматски сте одјављени сте са свих пројеката {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално сакривен од $1 у $2 због следећег разлога: $3',
 	'centralauth-log-name' => 'Дневник глобалних налога',
 	'centralauth-log-header' => 'Овај дневник садржи записе о операцијама за глобалне налоге: брисања, закључавања и откључавања.',
@@ -31372,7 +31373,7 @@ Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.', # Fuz
 	'centralauth-login-progress' => 'Prijavljujem vas na druge viki projekte {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Odjavljujem vas sa svih vikija projekta {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Prijavljeni ste na druge projekte koje pokreće {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Odjavljeni ste s drugih projekata koje pokreće {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Automatski ste odjavljeni ste sa svih projekata {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalno sakriven od $1 u $2 zbog sledećeg razloga: $3',
 	'centralauth-log-name' => 'Dnevnik globalnih naloga',
 	'centralauth-log-header' => 'Ovaj log sadrži operacije nad globalnim nalozima: brisanje, zaključavanje i otključavanje.',
