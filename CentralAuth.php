@@ -416,6 +416,10 @@ $wgResourceModules['ext.centralauth.centralautologin'] = array(
 		'mediawiki.jqueryMsg',
 	),
 ) + $commonModuleInfo;
+$wgResourceModules['ext.centralauth.centralautologin.clearcookie'] = array(
+	'scripts' => 'ext.centralauth.centralautologin.clearcookie.js',
+	'position' => 'top',
+) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.noflash'] = array(
 	'styles' => 'ext.centralauth.noflash.css',
