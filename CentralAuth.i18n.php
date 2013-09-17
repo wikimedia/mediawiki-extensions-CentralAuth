@@ -13324,6 +13324,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author Guycn1
  * @author Inkbug
  * @author Rotem Liss
  * @author Rotemliss
@@ -13666,7 +13667,7 @@ $messages['he'] = array(
 	'right-centralauth-merge' => 'מיזוג החשבון של עצמם',
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'קבוצות גלובליות שמשתמש זה חבר בהן',
-	'action-centralauth-lock' => 'נעילת או שיחרור חשבונות כלליים',
+	'action-centralauth-lock' => 'נעילת או שחרור חשבונות כלליים',
 	'centrallogin' => 'כניסת משתמש מרכזית',
 	'centralloginsuccesful' => 'הכניסה הושלמה בהצלחה',
 	'centralauth-completelogin-legend' => 'להשלים תהליך התחברות',
@@ -19841,7 +19842,7 @@ Eng aner Wiki gouf als Heemechts-Wiki fir äre Benotzernumm ermëttelt; klickt o
 	'centralauth-merge-step3-title' => 'Globale Benotzerkont uleeën',
 	'centralauth-merge-step3-detail' => 'Dir kënnt elo e globale Benotzerkont opmaachen, de fir dës Wikien zielt:',
 	'centralauth-merge-step3-submit' => 'Benotzerkonten zesummeleeën',
-	'centralauth-merge-no-accounts' => "Et goufe keng Benotzerkonten déi mat Ärem Numm iwwerteneestëmmen an der Tabell an där all Benotzerkonten opgezeechent gi fonnt!
+	'centralauth-merge-no-accounts' => "Et goufe keng Benotzerkonten déi mat Ärem Numm iwwerenee stëmmen an der Tabell an där all Benotzerkonten opgezeechent gi fonnt!
 D'Datebank muss feelerhaft sinn.",
 	'centralauth-merge-home-password' => "D'Heemechtswiki fir dëse Benotzerkont (kuckt ënnendrënner) huet en anert Passwuert wéi dat, dat Dir aginn hutt.
 Gitt w.e.g. d'Passwuert vun der Heemechtswiki an.",
@@ -19856,7 +19857,7 @@ Wann Dir dat sidd, kënnt Dir de Prozess vum Zesummeleeë vu Benotzerkonten ofsc
 	'centralauth-disabled-dryrun' => "D'zesummeféierung vun de Benotzerkonten ass elo an engem Viféier- oder Test-Modus, dofir  kann een zur Zäit nach keng Benotzerkonten zesummeféieren. Pardon!",
 	'centralauth-error-locked' => 'Dir kënnt näischt ännere well Dir gespaart sidd.',
 	'centralauth-error-unmerged' => 'Dir kënnt näischt ännere well Äre Benotzerkont net zesummegeluecht ass.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Méi informatiounen iwwert déi '''global Benotzerkonten''']]...''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Méi Informatiounen iwwer déi '''global Benotzerkonten''']]...''",
 	'centralauth-list-home-title' => 'Heemechts-Wiki',
 	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi Dir an dëser Wiki uginn hutt gi fir Äre globale Benotzerkont benotzt.",
 	'centralauth-list-attached-title' => 'Verbonne Benotzerkonten',
@@ -31362,7 +31363,7 @@ Razlog: $1',
 	'centralauth-prefs-count-attached' => 'Vaš nalog je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}}.',
 	'centralauth-prefs-count-unattached' => 'Nepotvrđeni nalozi sa vašim nadimkom su preostali na $1 {{PLURAL:$1|projektu|projekata}}.',
 	'centralauth-prefs-detail-unattached' => 'Ovaj projekat nije potvrđen kao pripadajući globalnom nalogu.',
-	'centralauth-prefs-manage' => 'Organizuj svoj globalni nalog.',
+	'centralauth-prefs-manage' => 'Upravljajte globalnim nalogom',
 	'centralauth-prefs-view' => 'Prikaži globalne podatke korisnika', # Fuzzy
 	'centralauth-renameuser-merged' => '{{GENDER:$1|Korisnik je prešao|Korisnica je prešla|Korisnik je prešao}} na sistem za prijavljivanje s ujedinjenim nalogom.
 Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.', # Fuzzy
@@ -36289,7 +36290,9 @@ $messages['yi'] = array(
 	'centralauth-finish-noconfirms' => "מ'קען נישט באשטעטיקן קיין קאנטע מיט דעם פאסווארט",
 	'centralauth-finish-incomplete' => "מ'האט צונויפגעגאסן עטלעכע קאנטעס מיט דעם פאסווארט.
 אנדערע קאנטעס דארף מען נאך באשטעטיקן.",
+	'centralauth-attach-list-attached' => 'די פאראייניגטע קאנטע מיטן נאמען "$1" שליסט איין די פאלגנדע קאנטעס:',
 	'centralauth-attach-title' => 'באַשטעטיקן קאנטע',
+	'centralauth' => 'גלאבאלע קאנטע פארוואלטער',
 	'centralauth-admin-manage' => 'פארוואלטן קאנטע־דאטן',
 	'centralauth-admin-username' => 'באַניצער נאָמען:',
 	'centralauth-admin-lookup-ro' => 'באקוקן באניצער אינפארמאציע',
@@ -36342,9 +36345,9 @@ $messages['yi'] = array(
 	'centralauth-years-ago' => 'פֿאר $1 {{PLURAL:$1|יאר|יאר}}',
 	'centralauth-prefs-unattached' => 'נישט באשטעטיקט',
 	'centralauth-login-progress' => 'ארײַנלאגירן אײַך אין וויקיס פון {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'ארויסלאגירן אײַך פון אנדערע וויקיס ביי {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'ארויסלאגירן אײַך פון אנדערע וויקיס ביי {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'איר זענט אויטאמאטיש אריינלאגירט אין אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'איר זענט אויטאמאטיש ארויסלאגירט פון אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'איר זענט אויטאמאטיש ארויסלאגירט פון אנדערע פראיעקטן פון {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'גלאבאל באהאלטן דורך $1 ביי $2 מיטן גרונד: $3',
 	'centralauth-log-name' => 'גלאבאלע קאנטע־לאגבוך',
 	'centralauth-log-header' => 'דאס לאגבוך אנטהאלט אפעראציעס אונטער גלאבאלע קאנטעס: אויסמעקונגען, פארשליסן און אויפשליסן.',
