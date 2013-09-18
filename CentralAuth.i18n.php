@@ -6586,6 +6586,7 @@ $messages['ce'] = array(
 	'centralauth-admin-info-hidden' => 'Хьулдаран локхалла:',
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-no' => 'яц',
+	'centralauth-admin-list-legend-ro' => 'Локальни дӀаяздаршан могӀа',
 	'centralauth-admin-blocked-indef' => 'Блоктоьхна хан чаккхе йоцуш. Бахьна: $1',
 	'centralauth-admin-blocklog' => 'блоктохаршан тептар',
 	'centralauth-admin-list-localwiki' => 'Локальни вики-проект',
@@ -6597,6 +6598,7 @@ $messages['ce'] = array(
 	'centralauth-admin-status-intro' => 'Ахьа лело мега хӀара форма хӀокху глобальни дӀаяздаран статус хийцош.',
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат|сахьат|сахьат}} тӀехьа', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха',
 	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
 	'centralauth-prefs-complete' => 'Дик ду!',
@@ -28482,6 +28484,7 @@ $messages['ru'] = array(
 	'centralauth-listusers-nolocal' => 'неприсоединённый или не существует локально',
 	'multilock' => 'Заблокировать несколько глобальных пользователей', # Fuzzy
 	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
+	'centralauth-admin-multi-bot' => 'Свежие правки',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часа|часов}} назад',
@@ -33695,6 +33698,7 @@ Olaryň islendigini görüp ýa-da redaktirläp bilersiňiz, ýa-da täze toplum
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author Sky Harbor
  */
 $messages['tl'] = array(
 	'mergeaccount' => 'Kalagayan ng pag-iisa ng paglagda',
@@ -33714,7 +33718,7 @@ Kapag mayroon nang ibang taong nakakuha ng iyong pangalan ng tagagamit sa ibang 
 Susuriin ang iyong hudyat at nakatalang adres ng e-liham sa pamamagitan ng paghahambing sa mga akawt na nasa iba pang mga wiki upang mapatunayang nagtutugma sila.
 Walang mga pagbabagong gagawin hangga't hindi ka pa nagbibigay ng kasagutan na sa tingin mo ay maayos naman ang lahat.",
 	'centralauth-merge-step1-submit' => 'Patotohanan ang kabatirang panglagda',
-	'centralauth-merge-step2-title' => 'Magpapatoto ng mas marami pang mga akawnt/kuwenta',
+	'centralauth-merge-step2-title' => 'Magpatotoo ng mas marami pang kuwenta',
 	'centralauth-merge-step2-detail' => 'Hindi kusang maitutugma sa itinakdang tahanang wiki ang ilan sa mga kuwenta.
 Kung ikaw ang nagmamay-ari ng mga akawnt na ito, maaari mong patunayan na sa iyo nga ang mga ito sa pamamagitan ng pagbibigay ng kanilang mga hudyat.',
 	'centralauth-merge-step2-submit' => 'Patotohanan ang kabatiran na pangpaglalagda',
@@ -33729,9 +33733,9 @@ Wala pang mga pagbabagong nagawa para sa mga kuwenta mo.',
 	'centralauth-merge-dryrun-home' => 'Hindi mapatotohanan ng sistema ng paglilipat (migrasyon) na ikaw ang may-ari ng kuwenta para sa iyong pangalan ng tagagamit sa tahanang wiki.
 
 May iba pang wiki na napatunayan bilang tahanang kuwenta para sa iyong pangalan ng tagagamit; sundan ang kawing na nasa ibaba at lumagda doon upang matapos ang paglilipat ng kuwenta mo.',
-	'centralauth-merge-step3-title' => 'Likhain ang pinag-isang kuwenta (akawnt)',
+	'centralauth-merge-step3-title' => 'Likhain ang pinag-isang kuwenta',
 	'centralauth-merge-step3-detail' => 'Handa ka nang likhain ang pinag-isang kuwenta/akawnt mo, na nakakabit ang sumusunod na mga wiki:',
-	'centralauth-merge-step3-submit' => 'Pag-isahin ang mga kuwenta (akawnt)',
+	'centralauth-merge-step3-submit' => 'Pag-isahin ang mga kuwenta',
 	'centralauth-merge-no-accounts' => 'Walang mga kuwenta/akawnt sa loob ng tabla ng pangunaning panghanap ng bakas na tumutugma sa iyong pangalan!
 Maaaring maraming mga kamalian sa kalipunan ng dato.',
 	'centralauth-merge-home-password' => 'Ang tahanang wiki para sa kuwentang ito (nakatala sa ibaba) ay may hudyat na naiiba sa isang ipinasok mo.
@@ -33750,10 +33754,10 @@ Paumanhin!",
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Magbasa pa ng marami tungkol sa '''pinag-isang paglagda''']]…''",
 	'centralauth-list-home-title' => 'Tahanang wiki',
 	'centralauth-list-home-dryrun' => 'Ang nakatakda mong hudyat at adres ng e-liham sa wiking ito ay gagamitin para sa iyong pinag-isang kuwenta.',
-	'centralauth-list-attached-title' => 'Nakakabit na mga kuwenta (akawnt)',
+	'centralauth-list-attached-title' => 'Mga kuwentang nakakabit',
 	'centralauth-list-attached' => 'Ang kuwentang pinangalanang "$1" sa bawat isang sumusunod na mga sityo (sayt) ay kusang ikinabit sa pinagsanib na akawnt:',
 	'centralauth-list-attached-dryrun' => 'Ang kuwentang pinangalanang "$1" na nasa bawat isang sumusunod na mga sityo (sayt) ay kusang ikakabit sa pinag-isang akawnt:',
-	'centralauth-list-unattached-title' => 'Hindi nakakabit na mga kuwenta (akawnt)',
+	'centralauth-list-unattached-title' => "Mga kuwentang 'di-nakakabit",
 	'centralauth-list-unattached' => 'Ang kuwentang "$1" ay hindi kusang mapatototohanan bilang pag-aari mo sa sumusunod na mga sityo/sayt; mas malamang na mayroon silang isang naiibang hudyat mula sa pangunahing akawnt mo:',
 	'centralauth-foreign-link' => 'Tagagamit na $1 sa $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kontribusyon|mga kontribusyon}} sa $2',
@@ -33761,8 +33765,8 @@ Paumanhin!",
 	'centralauth-merge-method-empty' => 'walang mga ambag',
 	'centralauth-merge-method-mail' => 'napatotohanan sa pamamagitan ng e-liham',
 	'centralauth-merge-method-password' => 'napatotohanan sa pamamagitan ng hudyat',
-	'centralauth-merge-method-admin' => 'kuwenta/akawnt na pinagsanib ng tagapangasiwa',
-	'centralauth-merge-method-new' => 'bagong kuwenta/akawnt',
+	'centralauth-merge-method-admin' => 'kuwentang pinagsanib ng tagapangasiwa',
+	'centralauth-merge-method-new' => 'bagong kuwenta',
 	'centralauth-merge-method-login' => 'nalikha noong lumagda',
 	'centralauth-merge-method-primary-desc' => 'Ito ang wiki kung saan unang isinanib ang akawnt.
 Tandaan na maaaring kaiba ito mula sa totoong tahanang wiki ng tagagamit na iyan.',
@@ -33775,7 +33779,7 @@ Hindi na pinapagana ang ganyang kasangkapang-katangian dahil sa mga dahilang pan
 	'centralauth-merge-method-login-desc' => 'Nagpapahiwatig na ang katutubong akawnt ay kusang nalikha noong lumagdang papasok ang tagagamit.',
 	'centralauth-merge-method-questionmark' => '(?)',
 	'centralauth-finish-title' => 'Tapusin na ang pagsasanib',
-	'centralauth-finish-text' => 'Kung ikaw nga ang nagmamay-ari ng mga kuwenta na ito, maaaring mong tapusin na ang proseso ng pag-iisa ng paglagda sa pamamagitan lamang ng payak na pagmamakinilya ng mga hudyat para sa iba pang mga akawnt dito:',
+	'centralauth-finish-text' => 'Kung ikaw nga ang nagmamay-ari ng mga kuwentang ito, maaaring mong tapusin na ang proseso ng pag-iisa ng paglagda sa pamamagitan lamang ng payak na pagtitipa ng mga hudyat para sa iba pang mga kuwenta dito:',
 	'centralauth-finish-password' => 'Hudyat:',
 	'centralauth-finish-login' => 'Lumagda',
 	'centralauth-finish-send-confirmation' => 'Hudyat ng e-liham',
@@ -33785,11 +33789,11 @@ Hindi na pinapagana ang ganyang kasangkapang-katangian dahil sa mga dahilang pan
 Hindi pa napapatototohanan ang ibang mga akawnt.',
 	'centralauth-merge-attempt' => "'''Sinusuri/inihahambing ang ibinigay na hudyat laban sa nananatiling hindi pa napagsasanib na mga kuwenta/akawnt…'''",
 	'centralauth-attach-list-attached' => 'Kabilang sa pinag-isang kuwentang may pangalang "$1" ang sumusunod na mga akawnt:',
-	'centralauth-attach-title' => 'Patotohanan ang kuwenta (akawnt)',
+	'centralauth-attach-title' => 'Patotohanan ang kuwenta',
 	'centralauth-attach-text' => 'Ang kuwentang ito ay hindi pa naililipat sa pinag-sang akawnt.
 Kung iyo rin ang pandaigdigang kuwentang ito, maaari mong isanib ang akawnt na ito kapag mamakinilyahin/ilalagay mo ang hudyat ng pandaigdigang akawnt:',
-	'centralauth-attach-submit' => 'Ilipat ng pook ang kuwenta (akawnt)',
-	'centralauth-attach-success' => 'Inilipat na ang kuwenta patungo sa pinag-isang akawnt.',
+	'centralauth-attach-submit' => 'Ilipat ang kuwenta',
+	'centralauth-attach-success' => 'Inilipat na ang kuwenta patungo sa pinag-isang kuwenta.',
 	'centralauth' => 'Tagapamahala ng pandaigdigang tagagamit', # Fuzzy
 	'centralauth-admin-intro' => 'Magagamit ang ugnayang-hangganang ito para sa pangangasiwa ng pandaigdigang mga akawnt.',
 	'centralauth-admin-manage' => 'Pamahalaan ang dato ng tagagamit', # Fuzzy
@@ -33824,14 +33828,14 @@ Kung iyo rin ang pandaigdigang kuwentang ito, maaari mong isanib ang akawnt na i
 	'centralauth-admin-unmerge' => 'Pinili ang huwag pagsanibin',
 	'centralauth-admin-merge' => 'Pinili ang pagsasanib (pagsamahin)',
 	'centralauth-admin-bad-input' => 'Hindi tanggap na pagpiling may kaugnayan sa pagsasanib',
-	'centralauth-admin-none-selected' => 'Walang napiling mga kuwenta (akawnt) na babaguhin.',
+	'centralauth-admin-none-selected' => 'Walang napiling kuwentang babaguhin.',
 	'centralauth-admin-already-unmerged' => 'Nilalaktawan si $1, natanggal na mula sa pagkakasanib',
 	'centralauth-admin-unmerge-success' => 'Matagumpay na natanggal mula sa pagkakasanib ang $1 {{PLURAL:$1|akawnt|mga akawnt}}',
-	'centralauth-admin-delete-title' => 'Burahin ang kuwenta/akawnt',
+	'centralauth-admin-delete-title' => 'Burahin ang kuwenta',
 	'centralauth-admin-delete-description' => 'Ang pagbubura ng pandaigdigang kuwenta ay makasasanhi ng pagbura ng anumang mga kagustuhang pandaigdigan, tanggalin sa pagkakakabit ang lahat ng mga katutubong akawnt, at iwanan ang pandaigdigang pangalan na malaya para makuha ng iba pang tagagamit.
 Lahat ng mga katutubong kuwenta ay magpapatuloy sa pag-iral.
 Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pagsasanib ay magbabalik sa kanilang dating mga halaga bago nangyari ang pagsasanib.',
-	'centralauth-admin-delete-button' => 'Burahin ang kuwenta/akawnt na ito',
+	'centralauth-admin-delete-button' => 'Burahin ang kuwentang ito',
 	'centralauth-admin-delete-success' => 'Matagumpay na nabura ang pandaigdigang kuwenta para sa/kay "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Walang pandaigdigang kuwenta/akawnt para kay "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Kamalian: hindi umiiral ang akawnt/kuwentang "<nowiki>$1</nowiki>".',
@@ -36922,9 +36926,9 @@ $messages['zh-hans'] = array(
 	'centralauth-account-exists' => '无法建立账户：已有其他用户于整合登录系统使用此名称。',
 	'centralauth-account-exists-reset' => '用户$1并不是在此Wiki上注册的，但你可以在[[Special:CentralAuth/$1|它所在Wiki中的任意一个Wiki]]上重置它的密码。',
 	'centralauth-login-progress' => '正在为您登录到{{int:Centralauth-groupname}}的wiki：',
-	'centralauth-logout-progress' => '正在为您登出{{int:Centralauth-groupname}}的其他wiki：', # Fuzzy
+	'centralauth-logout-progress' => '正在为您登出{{int:Centralauth-groupname}}的其他wiki：',
 	'centralauth-login-no-others' => '你已经自动登录到{{int:Centralauth-groupname}}的其他项目。',
-	'centralauth-logout-no-others' => '你已经自动登出{{int:Centralauth-groupname}}的其他项目。', # Fuzzy
+	'centralauth-logout-no-others' => '你已经自动登出{{int:Centralauth-groupname}}的其他项目。',
 	'centralauth-hidden-blockreason' => '全球隐藏 (在$1 $2)，原因：$3',
 	'centralauth-log-name' => '全局账户日志',
 	'centralauth-log-header' => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',

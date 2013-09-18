@@ -284,6 +284,7 @@ $specialPageAliases['gu'] = array(
 $specialPageAliases['he'] = array(
 	'CentralAuth' => array( 'חשבון_משתמש_מאוחד' ),
 	'AutoLogin' => array( 'כניסה_אוטומטית' ),
+	'CentralAutoLogin' => array( 'כניסה_אוטומטית_מרכזית' ),
 	'MergeAccount' => array( 'מיזוג_חשבונות' ),
 	'GlobalGroupMembership' => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
