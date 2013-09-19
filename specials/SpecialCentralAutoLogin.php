@@ -271,16 +271,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			// Load and check CentralAuthUser
+			// Load and check CentralAuthUser. But don't check if it's
+			// attached, because then if the user is missing en.site they
+			// won't be auto logged in to any of the non-en versions either.
 			$centralUser = new CentralAuthUser( $memcData['userName'] );
 			if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
 				$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
 				wfDebug( __METHOD__ . ": $msg\n" );
 				$this->doFinalOutput( false, 'Lost session' );
-				return;
-			}
-			if ( !$centralUser->isAttached() ) {
-				$this->doFinalOutput( false, 'Local user is not attached', $notLoggedInScript );
 				return;
 			}
 			$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
@@ -314,6 +312,21 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// If it's not a script callback, just go for it.
 			if ( $request->getVal( 'type' ) !== 'script' ) {
 				$this->doFinalOutput( true, 'success' );
+				return;
+			}
+
+			// If it is a script callback, then we do want to create the user
+			// if it doesn't already exist locally (and fail if that can't be
+			// done).
+			if ( !User::idFromName( $centralUser->getName() ) ) {
+				$user = new User;
+				$user->setName( $userName );
+				if ( CentralAuthHooks::attemptAddUser( $user ) ) {
+					$centralUser->invalidateCache();
+				}
+			}
+			if ( !$centralUser->isAttached() ) {
+				$this->doFinalOutput( false, 'Local user is not attached', $notLoggedInScript );
 				return;
 			}
 
