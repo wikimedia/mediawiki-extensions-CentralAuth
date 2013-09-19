@@ -16,6 +16,24 @@
       "revId": "9e7fd536ccf5c2de915ff3e0497fd580577a795a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4946a543_93a08548",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-09-19T20:23:08Z",
+      "side": 1,
+      "message": "I forgot we already did that. So yeah, I\u0027ll take this out.",
+      "parentUuid": "4946a543_d825cc0d",
+      "revId": "9e7fd536ccf5c2de915ff3e0497fd580577a795a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
