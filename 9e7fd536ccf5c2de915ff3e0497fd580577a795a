@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4946a543_d825cc0d",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-09-19T19:50:05Z",
+      "side": 1,
+      "message": "Isn\u0027t this already taken care of by our hook on \u0027GetCacheVaryCookies\u0027? I see the proper entries in X-Vary-Options on the oauth test wiki without this patch applied.\n\nI don\u0027t see it on the live site, but I think that\u0027s because something in the caching layer is stripping it. Taking a hint from [[wikitech:How to deploy code]], if I send a request against mw1017 from terbium[1] it has the header with the proper values.\n\n [1]: curl -v -H \u0027Host: test.wikipedia.org\u0027 -H \u0027X-Forwarded-Proto: https\u0027 -o /dev/null \u0027http://mw1017/wiki/Special:CentralAutoLogin/start\u0027",
+      "revId": "9e7fd536ccf5c2de915ff3e0497fd580577a795a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
