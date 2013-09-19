@@ -112,6 +112,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		case 'start': // Main entry point
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.
+			$this->getOutput()->setSquidMaxage( 1200 );
 
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
@@ -127,6 +128,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		case 'checkLoggedIn': // Check if we're logged in centrally
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.
+			$this->getOutput()->setSquidMaxage( 1200 );
+			$this->getOutput()->addVaryHeader( 'Cookie', $this->getVaryCookieOptions() );
 
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
@@ -526,5 +529,19 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 
 		return $centralSession;
+	}
+
+	/**
+	 * Returns an array of Vary options, sent to OutputPage::addVaryHeader()
+	 * @returns array of cookie strings to vary on
+	 */
+	private function getVaryCookieOptions() {
+		global $wgCentralAuthCookiePrefix;
+		$cookiesOption = array();
+		$centralauthCookies = array( 'Session', 'Token', 'User' );
+		foreach ( $centralauthCookies as $cookieName ) {
+			$cookiesOption[] = 'string-contains=' . $wgCentralAuthCookiePrefix . $cookieName;
+		}
+		return $cookiesOption;
 	}
 }
