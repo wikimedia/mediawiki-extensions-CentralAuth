@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4946a543_d8422c41",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-09-19T18:33:50Z",
+      "side": 1,
+      "message": "$centralUser-\u003egetName() instead of $userName, I think...",
+      "revId": "16d7af11137310ca1e91575268c2e83648a235e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
