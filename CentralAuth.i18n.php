@@ -5784,6 +5784,7 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.", # Fuzzy
 	'centralauth-rightslog-entry-groupperms' => 'kemmet aotreoù ar strollad $1 eus $2 da $3',
 	'centralauth-rightslog-entry-groupperms2' => 'en deus kemmet aotreoù ar strollad evit $1. Ouzhpennet $2 ; Tennet $3',
 	'centralauth-rightslog-entry-groupperms3' => 'kemmet rik ar wikioù evit ar strolladoù $1 e $2 da $3',
+	'centralauth-rightslog-entry-grouprename' => 'Ar strollad $2 zo bet adanvet $1',
 	'centralauth-rightslog-header' => 'Ar marilh-mañ a zo ennañ oberoù war strolladoù hollek : kemmoù war an implijerien hag an aotreoù roet da bep strollad',
 	'centralauth-rightslog-entry-newset' => "en deus krouet ar c'hoari wikioù $1 $2 gant ar wikioù da-heul : $3",
 	'centralauth-rightslog-entry-setrename' => 'en deus adanvet ar c\'hoari wikioù "$2" da "$1"',
@@ -5798,6 +5799,7 @@ Pa [[Special:UserLogin|kevreoc'h]], ar reizhiad gwiriañ pennañ a c'houlenn dig
 Goulennet ho peus ar bajenn-mañ hep reiñ titouroù dilesadur ebet, dre-se ne ra netra.",
 	'centralautologin' => 'Kevreañ kreiz',
 	'centralauth-centralautologin-lostsession' => "Kollet eo bet roadennoù an dalc'h",
+	'centralauth-centralautologin-badstate' => 'Stad direizh "$1"',
 	'centralauth-centralautologin-corsfail' => "C'hwitet eo ar wiriadenn orin CORS",
 	'globalgroupmembership' => "Ezel d'ar strolladoù hollek",
 	'globalgrouppermissions' => 'Merañ ar strolladoù hollek',
@@ -13536,7 +13538,7 @@ $messages['he'] = array(
 	'centralauth-account-exists' => 'לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.',
 	'centralauth-account-exists-reset' => 'שם המשתמש $1 אינו רשום בוויקי הזה, אבל אפשר לאפס את הססמה שלו ב[[Special:CentralAuth/$1|אחד מהאתרים שבהם הוא כן]].',
 	'centralauth-login-progress' => 'מתבצעת כניסה לחשבונך באתרי ויקי של {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'יציאה מהחשבון באתרים אחרים של {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'מתבצעת יציאה מהחשבון באתרים אחרים של {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'נכנסתם באופן אוטומטי לחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'יצאתם באופן אוטומטי מהחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.', # Fuzzy
 	'centralauth-hidden-blockreason' => 'הוסתר באופן גלובלי על ידי $1 ב־$2 מהסיבה הבאה: $3',
@@ -17131,9 +17133,9 @@ $messages['ja'] = array(
 	'centralauth-account-exists' => 'アカウントが作成できません: 希望利用者名は統一ログインシステムで既に取得されています。',
 	'centralauth-account-exists-reset' => '利用者名 $1 はこのウィキには登録されていませんが、[[Special:CentralAuth/$1|利用者が登録されているウィキ]]でパスワードを再設定できます。',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}}のウィキ群にログインしました:',
-	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:', # Fuzzy
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:',
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
-	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群から自動的にログアウトしました。', # Fuzzy
+	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群から自動的にログアウトしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にグローバルに秘匿。理由: $3',
 	'centralauth-log-name' => 'グローバルアカウント記録',
 	'centralauth-log-header' => 'これは、グローバルアカウントの操作 (削除、ロック、ロック解除) の記録です。',
@@ -27237,7 +27239,7 @@ Outras contas ainda não foram confirmadas.',
 Se a conta global também for sua, você pode associa-lá nesta conta inserindo a senha da conta global:',
 	'centralauth-attach-submit' => 'Migrar conta',
 	'centralauth-attach-success' => 'A conta foi migrada para a conta unificada.',
-	'centralauth' => 'Administração global de contas', # Fuzzy
+	'centralauth' => 'Administração da conta global',
 	'centralauth-admin-intro' => 'Esta interface pode ser usada para administração de contas globais.',
 	'centralauth-admin-manage' => 'Administrar dados de contas',
 	'centralauth-admin-username' => 'Usuário:',
@@ -27351,7 +27353,7 @@ Renomear o usuário irá desunificar esta conta local da conta global.',
 	'centralauth-renameuser-reserved' => 'O nome de usuário $2 está reservado para uma conta global.',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para o wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de usuário requisitado já está sendo utilizado no sistema de login unificado.',
-	'centralauth-account-exists-reset' => 'O nome de usuário $1 não está registrado nesta wiki, mas ele existe no sistema de autentificação unificada.', # Fuzzy
+	'centralauth-account-exists-reset' => 'O nome de usuário $1 não está registrado nesta wiki, mas você pode redefinir sua senha na [[Special:CentralAuth/$1|a wiki onde está registrado]].',
 	'centralauth-login-progress' => 'Autenticando-lhe às wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Saindo das outras wikis da {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Você foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
@@ -27389,6 +27391,7 @@ Renomear o usuário irá desunificar esta conta local da conta global.',
 Quando você [[Special:UserLogin|se autentica]], o sistema de login universal faz com que seu navegador acesse esta página a partir de todos os domínios ligados, utilizando links em imagens.
 Você acessou esta página sem providenciar qualquer dado de autenticação, o que faz com que nada ocorra.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Você já está registrado localmente',
+	'centralauth-centralautologin-lostsession' => 'Os dados da seção foram perdidos',
 	'centralauth-centralautologin-badstate' => 'Estado inválido "$1"',
 	'globalgroupmembership' => 'Membros de grupos globais',
 	'globalgrouppermissions' => 'Administração de grupos globais',
@@ -27466,6 +27469,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-centralauth-oversight' => 'Suprimir ou ocultar a conta global',
 	'right-centralauth-merge' => 'Unificar as contas',
 	'right-globalgrouppermissions' => 'Gerenciar grupos globais',
+	'centralauth-completelogin-back' => 'Retornar à página anterior',
 	'centralauth-warning-notloggedin' => 'você não esta logado.',
 	'centralauth-finishglobaliseemail_subject' => 'confirmação conta {{SITENAME}}',
 );
@@ -28482,7 +28486,7 @@ $messages['ru'] = array(
 	'centralauth-listusers-attached' => '[[User:$1|существует локально]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'неприсоединённый или не существует локально',
-	'multilock' => 'Заблокировать несколько глобальных пользователей', # Fuzzy
+	'multilock' => 'Заблокировать несколько глобальных учётных записей',
 	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
 	'centralauth-admin-multi-bot' => 'Свежие правки',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
@@ -28619,7 +28623,7 @@ $messages['ru'] = array(
 	'centralauth-editset-success' => 'Набор вики успешно изменён.',
 	'centralauth-editset-success-delete' => 'Набор вики успешно удалён.',
 	'centralauth-editset-return' => 'Вернуться к главному виду',
-	'centralauth-block-already-locked' => 'Участни{{GENDER:$1|к|ца}} [[Special:CentralAuth/$1|$1]] уже заблокирован{{GENDER:$1||а}} глобально.', # Fuzzy
+	'centralauth-block-already-locked' => 'Учётная запись [[Special:CentralAuth/$1|$1]] уже заблокирована глобально.',
 	'centralauth-readonly' => 'база данных CentralAuth заблокирована',
 	'centralauth-readonlytext' => 'База данных CentralAuth в настоящее время заблокирована для внесения новых записей и других изменения, вероятно, в целях обыкновенного обслуживания базы данных, после которого она вернётся на место.',
 	'right-globalgroupmembership' => 'изменение членства в глобальных группах',
