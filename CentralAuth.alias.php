@@ -509,11 +509,13 @@ $specialPageAliases['mk'] = array(
 $specialPageAliases['ml'] = array(
 	'CentralAuth' => array( 'കേന്ദ്രീകൃത_അംഗീകാരം' ),
 	'AutoLogin' => array( 'സ്വയംപ്രവേശനം' ),
+	'CentralAutoLogin' => array( 'കേന്ദ്രീകൃതസ്വയംപ്രവേശനം' ),
 	'MergeAccount' => array( 'അംഗത്വസം‌യോജനം' ),
 	'GlobalGroupMembership' => array( 'ആഗോള_ഉപയോക്തൃ_അവകാശങ്ങൾ', 'ആഗോള_ഉപയോക്തൃ_അംഗത്വം' ),
 	'GlobalGroupPermissions' => array( 'ആഗോള_അംഗത്വാനുമതികൾ' ),
 	'WikiSets' => array( 'വിക്കിഗണങ്ങൾ_തിരുത്തുക' ),
 	'GlobalUsers' => array( 'ആഗോള_ഉപയോക്താക്കൾ' ),
+	'MultiLock' => array( 'അനവധിബന്ധിക്കൽ' ),
 );
 
 /** Marathi (मराठी) */

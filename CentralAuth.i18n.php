@@ -28325,14 +28325,14 @@ $messages['ru'] = array(
 	'centralauth-antispoof-desc' => 'Добавляет технологию AntiSpoof в CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Объединяет несколько учётных записей]] в единую учётную запись участника (Single User Login)',
 	'centralauth-merge-denied' => 'Извините, у вас недостаточно прав для доступа к этой странице.',
-	'centralauth-merge-notlogged' => 'Пожалуйста, <span class="plainlinks">[$1 представьтесь системе]</span>, чтобы проверить были ли ваши учётные записи полностью объединены.',
+	'centralauth-merge-notlogged' => 'Пожалуйста, <span class="plainlinks">[$1 авторизуйтесь]</span>, чтобы проверить были ли ваши учётные записи полностью объединены.',
 	'centralauth-merge-welcome' => "'''Ваша учётная запись ещё не переведена на единую систему авторизации проектов {{int:Centralauth-groupname}}.'''
 
 Если вы решите перенести свои учётные записи, вы сможете использовать одни и те же имя участника и пароль для входа во все проекты {{int:Centralauth-groupname}} во всех языковых разделах.
 
 Если кто-то уже занял в одном из проектов ваше имя, данная процедура не затронет эти учётные записи, и в дальнейшем вы сможете попробовать решить эту проблему, обсудив её с этими участниками или с кем-то из администраторов.",
 	'centralauth-merge-step1-title' => 'Начать объединение учётных записей',
-	'centralauth-merge-step1-detail' => 'Пожалуйста, введите пароль от вашей учётной записи.
+	'centralauth-merge-step1-detail' => 'Пожалуйста, введите пароль от своей учётной записи.
 Будет проведено сравнение вашего пароля и адреса электронной почты с данными учётных записей других вики-проектов.
 Изменения не будут сделаны до тех пор, пока вы не подтвердите правильность сопоставления.',
 	'centralauth-merge-step1-submit' => 'Подтвердить информацию об учётной записи',
@@ -28348,26 +28348,26 @@ $messages['ru'] = array(
 	'centralauth-merge-dryrun-or' => "'''или'''",
 	'centralauth-merge-dryrun-home' => 'Система миграции не может получить подтверждение, что вы являетесь владельцем учётной записи в «домашней» вики.
 
-Однако, для этой учётной записи обнаружен другой вики-проект, который определён как «домашний»; чтобы завершить процедуру миграции, перейдите по приведённой ниже ссылке и представьтесь системе.',
+Однако, для этой учётной записи обнаружен другой вики-проект, который определён как «домашний»; чтобы завершить процедуру миграции, перейдите по приведённой ниже ссылке и авторизуйтесь.',
 	'centralauth-merge-step3-title' => 'Создание единой учётной записи',
 	'centralauth-merge-step3-detail' => 'Будет создана единая учётная запись с присоединением следующих вики-проектов:',
 	'centralauth-merge-step3-submit' => 'Объединить учётные записи',
-	'centralauth-merge-no-accounts' => 'В центральной таблице учётных записей не найдено записи, соответствующей вашему имени!
+	'centralauth-merge-no-accounts' => 'В центральной таблице учётных записей не найдено записи, соответствующей вашей учётной записи!
 База данных повреждена.',
-	'centralauth-merge-home-password' => 'Пароль учётной записи в домашней вики (указана ниже) отличается от того, что вы ввели.
-Пожалуйста, введите пароль для домашней вики.',
+	'centralauth-merge-home-password' => 'Пароль учётной записи в «домашней» вики (указана ниже) отличается от того, что вы ввели.
+Пожалуйста, введите пароль для своей «домашней» вики.',
 	'centralauth-complete' => 'Объединение учётных записей завершено!',
 	'centralauth-incomplete' => 'Объединение учётных записей не завершено!',
 	'centralauth-complete-text' => 'Теперь вы можете использовать одну учётную запись для работы во всех проектах {{int:Centralauth-groupname}}.',
 	'centralauth-incomplete-text' => 'После того как будет завершено объединение учётных записей, вам не нужно будет регистрироваться отдельно в каждом проекте {{int:Centralauth-groupname}}.',
-	'centralauth-not-owner-text' => 'Имя участника «$1» было автоматически присвоено владельцу учётной записи на $2.
+	'centralauth-not-owner-text' => 'Имя участника «$1» было автоматически присвоено владельцу учётной записи в проекте $2.
 
-Если это вы, то вы можете завершить процесс объединения учётных записей, введя здесь пароль от вашей основной учётной записи:',
+Если это вы, то вы можете завершить процесс объединения учётных записей, введя здесь пароль от своей основной учётной записи:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>Демонстрационный режим</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Объединение учётных записей сейчас работает в демонстрационном (отладочном) режиме, реальные операции объединения отключены. Извините.',
-	'centralauth-error-locked' => 'Вы не можете править, так как ваша учётная запись заблокирована.',
+	'centralauth-error-locked' => 'Вы не можете вносить правки, так как ваша учётная запись заблокирована.',
 	'centralauth-error-unmerged' => 'Вам недоступна функция редактирования, поскольку не выполнено создание единой учётной записи.',
-	'centralauth-readmore-text' => ":''[[meta:Help:Единая учётная запись|Узнать больше о '''единой учётной записи''']]…''",
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ru|Узнать больше о '''единой учётной записи''']]…''",
 	'centralauth-list-home-title' => '«Домашний» вики-проект',
 	'centralauth-list-home-dryrun' => 'Для вашей единой учётной записи будут использованы значения пароля и адреса электронной почты в этом вики-проекте.',
 	'centralauth-list-attached-title' => 'Присоединённые учётные записи',
@@ -28384,13 +28384,13 @@ $messages['ru'] = array(
 	'centralauth-merge-method-admin' => 'админ. объединённая уч. запись',
 	'centralauth-merge-method-new' => 'новая учётная запись',
 	'centralauth-merge-method-login' => 'создан при входе в систему',
-	'centralauth-merge-method-primary-desc' => 'Эта вики, на которой было запущено объединение учётных записей.
-Обратите внимание, что она может отличаться от основной вики этого пользователя.',
+	'centralauth-merge-method-primary-desc' => 'Это вики, на которой было запущено объединение учётных записей.
+Обратите внимание, что она может отличаться от «домашней» вики этого пользователя.',
 	'centralauth-merge-method-empty-desc' => 'Означает, что локальная учётная запись была объединена, так как не имела правок.',
 	'centralauth-merge-method-mail-desc' => 'Означает, что локальная учетная запись была объединена, так как её электронный адрес соответствует адресу электронной почты основной учётной записи.',
 	'centralauth-merge-method-password-desc' => 'Означает, что локальная учетная запись была объединена, поскольку участник указал правильный пароль.',
 	'centralauth-merge-method-admin-desc' => 'Означает, что локальная учетная запись была объединена вручную одним из стюардов.
-В настоящее время эта функция отключена теперь из-за соображений безопасности.',
+В настоящее время эта функция отключена из-за соображений безопасности.',
 	'centralauth-merge-method-new-desc' => 'Означает, что глобальная учётная запись была создана автоматически при создании локальной учетной записи.',
 	'centralauth-merge-method-login-desc' => 'Означает, что локальная учётная запись была создана автоматически при входе участника в систему.',
 	'centralauth-finish-title' => 'Завершение объединения',
@@ -28432,7 +28432,7 @@ $messages['ru'] = array(
 	'centralauth-admin-hidden-oversight' => 'скрыто ревизором',
 	'centralauth-admin-list-legend-ro' => 'Список локальных учётных записей',
 	'centralauth-admin-list-legend-rw' => 'Разделение локальных учётных записей',
-	'centralauth-admin-unattached' => 'неприсоединён',
+	'centralauth-admin-unattached' => 'не присоединён',
 	'centralauth-admin-blocked' => 'Заблокирован до $3 $4. Причина: $2',
 	'centralauth-admin-blocked-indef' => 'Заблокирован бессрочно. Причина: $1',
 	'centralauth-admin-blocklog' => 'журнал блокировок',
@@ -28504,16 +28504,16 @@ $messages['ru'] = array(
 	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
 	'centralauth-prefs-detail-unattached' => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage' => 'Управление глобальной учётной записью',
-	'centralauth-prefs-view' => 'Просмотр глобальных сведений об участнике', # Fuzzy
-	'centralauth-renameuser-merged' => 'Участник $1 перешёл на единую систему входа, его переименование вызовет потерю связи локального участника с глобальной учётной записью.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Имя участника $2 зарезервировано для глобальной учётной записи.', # Fuzzy
+	'centralauth-prefs-view' => 'Сведения о глобальной учётной записи',
+	'centralauth-renameuser-merged' => 'Участник $1 перешёл на единую систему входа. Его переименование вызовет потерю связи локальной учётной записи с глобальной учётной записью.',
+	'centralauth-renameuser-reserved' => 'Имя участника $2 зарезервировано для глобальной учётной записи.',
 	'centralauth-invalid-wiki' => 'Нет такой вики БД: $1',
 	'centralauth-account-exists' => 'Невозможно создать учётную запись. Запрашиваемое имя уже занято в единой системе входа.',
-	'centralauth-account-exists-reset' => 'Имя участника $1 не зарегистрировано в этой вики, но оно присутствует в единой системе входа.', # Fuzzy
-	'centralauth-login-progress' => 'Обрабатывается вход в проекты {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Обрабатывается выход из проектов {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-login-no-others' => 'Вы автоматически авторизовались во всех проектах семейства {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Вы автоматически завершили сеанс во всех проектах семейства {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Имя участника $1 не зарегистрировано в этом проекте, но вы можете сбросить его пароль на [[Special:CentralAuth/$1|проектах, в которых он присутствует]].',
+	'centralauth-login-progress' => 'Обрабатывается вход в проекты {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Обрабатывается выход из проектов {{int:Centralauth-groupname}}:',
+	'centralauth-login-no-others' => 'Вы автоматически авторизовались во всех проектах {{int:Centralauth-groupname}}.',
+	'centralauth-logout-no-others' => 'Вы автоматически завершили сеанс во всех проектах {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобально скрыт участником $1 $2 по следующей причине: $3',
 	'centralauth-log-name' => 'Журнал управления глобальными учётными записями',
 	'centralauth-log-header' => 'Этот журнал содержит записи о действиях над глобальными учётными записями: удаления, заморозки и разморозки.',
@@ -28547,6 +28547,8 @@ $messages['ru'] = array(
 Когда вы [[Special:UserLogin|представляетесь системе]], централизованная система входа указывает вашему браузеру обратиться к этой странице со всех доменов, используя графические ссылки.
 Вы запросили эту страницу без предоставления информации об аутентификации, поэтому ничего не происходит.',
 	'centralautologin' => 'Центральный вход',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Вы уже авторизовались локально',
+	'centralauth-centralautologin-badparams' => 'Указаны недействительные параметры аутентификации',
 	'centralauth-centralautologin-lostsession' => 'Данные сеанса были потеряны',
 	'centralauth-centralautologin-badstate' => 'Недопустимое состояние «$1»',
 	'centralauth-centralautologin-notposted' => 'Необходимо отправить форму центрального логина',
@@ -28554,6 +28556,7 @@ $messages['ru'] = array(
 	'centralauth-centralautologin-badstate-local' => 'Состояние «$1» не является допустимым в локальной вики',
 	'centralauth-centralautologin-badwiki' => 'Вики «$1» не является допустимой для центрального входа',
 	'centralauth-centralautologin-corsfail' => 'Ошибка проверки источника CORS',
+	'centralauth-centralautologin-logged-in' => 'Вы авторизовались глобально как $1. Перезагрузите страницу, чтобы применились ваши персональные настройки.',
 	'globalgroupmembership' => 'Членство в глобальных группах',
 	'globalgrouppermissions' => 'Управление глобальными группами',
 	'centralauth-globalgroupperms-grouplist' => 'Были настроены следующие глобальные группы.
@@ -28572,6 +28575,7 @@ $messages['ru'] = array(
 	'centralauth-editgroup-name' => 'Название группы:',
 	'centralauth-editgroup-display' => 'Локализованное название группы:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|изменить]])',
+	'centralauth-editgroup-invalid-name' => 'Предоставлено недопустимое имя глобальной группы',
 	'centralauth-editgroup-member' => 'Локализованное название членов группы:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|изменить]])',
 	'centralauth-editgroup-members' => 'Список членов группы:',
@@ -28588,7 +28592,7 @@ $messages['ru'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|изменить]])',
 	'centralauth-editgroup-nowikiset' => 'Нет, применяется для всех вики.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Вики, на которой они имеют учётные записи:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Глобальный участник '''$1''' неактивен на указанной вами вики (''$2''). Возможно, вы пытаетесь назначить права не тому участнику!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "Глобальная учётная запись '''$1''' не активна на указанной вами вики (''$2''). Возможно, вы пытаетесь назначить права не тому участнику!",
 	'centralauth-editset' => 'Наборы вики',
 	'centralauth-editset-legend-rw' => 'Изменение или создание набора вики',
 	'centralauth-editset-legend-ro' => 'Список наборов вики',
@@ -28622,10 +28626,10 @@ $messages['ru'] = array(
 	'centralauth-editset-badwikis' => '{{PLURAL:$2|Следующей вики|Следующих вики}} не существует: $1.',
 	'centralauth-editset-success' => 'Набор вики успешно изменён.',
 	'centralauth-editset-success-delete' => 'Набор вики успешно удалён.',
-	'centralauth-editset-return' => 'Вернуться к главному виду',
+	'centralauth-editset-return' => 'Вернуться в основной режим',
 	'centralauth-block-already-locked' => 'Учётная запись [[Special:CentralAuth/$1|$1]] уже заблокирована глобально.',
 	'centralauth-readonly' => 'база данных CentralAuth заблокирована',
-	'centralauth-readonlytext' => 'База данных CentralAuth в настоящее время заблокирована для внесения новых записей и других изменения, вероятно, в целях обыкновенного обслуживания базы данных, после которого она вернётся на место.',
+	'centralauth-readonlytext' => 'База данных CentralAuth в настоящее время заблокирована для внесения новых записей и других изменения, вероятно, в целях обычного обслуживания базы данных, после которого она вернётся на место.',
 	'right-globalgroupmembership' => 'изменение членства в глобальных группах',
 	'right-centralauth-autoaccount' => 'aвтоматический вход с глобальной учётной записи',
 	'right-centralauth-unmerge' => 'разделение глобальных учётных записей',
@@ -28638,11 +28642,13 @@ $messages['ru'] = array(
 	'centrallogin' => 'Центральный вход в систему',
 	'centralloginsuccesful' => 'Опознание прошло успешно',
 	'centralauth-completelogin-legend' => 'Завершить процесс входа',
+	'centralauth-completelogin-finishing' => 'Аутентификация на сайтах Викимедиа; пожалуйста, подождите...',
+	'centralauth-completelogin-text' => 'Аутентификация вашей учетной записи на сайтах Викимедиа почти завершена! Используйте кнопку ниже, чтобы подтвердить и завершить процесс входа.',
 	'centralauth-completelogin-submit' => 'Войти сейчас',
 	'centralauth-completelogin-back' => 'Вернуться на предыдущую страницу.',
-	'centralauth-warning-notloggedin' => 'Вы не вошли в систему.',
+	'centralauth-warning-notloggedin' => 'Вы не авторизовались.',
 	'centralauth-warning-notattached' => 'Локальная учетная запись не присоединена к глобальной.',
-	'centralauth-finishglobaliseemail_subject' => 'Подтверждение учетной записи {{SITENAME}}',
+	'centralauth-finishglobaliseemail_subject' => 'Подтверждение учетной записи в проекте {{SITENAME}}',
 );
 
 /** Rusyn (русиньскый)
