@@ -7566,15 +7566,15 @@ Andre konti er fortsat ikke bekræftet.',
 Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver den globale kontos adgangskode:',
 	'centralauth-attach-submit' => 'Tilknyt konto',
 	'centralauth-attach-success' => 'Kontoen blev tilknyttet den globale konto.',
-	'centralauth' => 'Global bruger manager', # Fuzzy
+	'centralauth' => 'Global kontohåndtering',
 	'centralauth-admin-intro' => 'Denne grænseflade kan bruges til at administrere globale kontoer.',
-	'centralauth-admin-manage' => 'Administrér brugerdata', # Fuzzy
+	'centralauth-admin-manage' => 'Administrér brugerkontoinformation',
 	'centralauth-admin-username' => 'Brugernavn:',
 	'centralauth-admin-lookup-ro' => 'Se brugeroplysninger',
 	'centralauth-admin-lookup-rw' => 'Administrér brugerkonto',
 	'centralauth-admin-permission' => 'Kun forvaltere kan sammenlægge andre personers kontoer for dem.',
 	'centralauth-admin-no-unified' => 'Der er ingen global konto for dette brugernavn.',
-	'centralauth-admin-info-header' => 'Global brugeroplysning', # Fuzzy
+	'centralauth-admin-info-header' => 'Global brugerkontoinformation',
 	'centralauth-admin-info-username' => 'Brugernavn:',
 	'centralauth-admin-info-id' => 'Bruger-id:',
 	'centralauth-admin-info-registered' => 'Registreret:',
@@ -7639,15 +7639,15 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 	'centralauth-admin-logsnippet' => 'Tidligere globale kontoændringer',
 	'centralauth-admin-suppressreason' => 'Globalt undertrykt af $1 med følgende begrundelse: $2',
 	'centralauth-admin-not-authorized' => 'Du har ikke tilstrækkelige rettigheder til at udføre denne handling.',
-	'globalusers' => 'Global brugerliste', # Fuzzy
+	'globalusers' => 'Liste over globale brugerkonti',
 	'centralauth-listusers-locked' => 'låst',
 	'centralauth-listusers-attached' => '[[User:$1|findes lokalt]]',
 	'centralauth-listusers-nolocal' => 'ikke tilknyttet eller findes ikke lokalt',
-	'multilock' => 'Låse flere globale brugere', # Fuzzy
+	'multilock' => 'Låse flere globale brugerkonti',
 	'centralauth-admin-multi-username' => 'Angiv et eller flere brugernavne, adskilt af nye linjer',
 	'centralauth-admin-multi-notfound' => 'Søgningen returnerede ingen brugernavne.',
-	'centralauth-admin-multi-searchprefix' => 'Eller søge efter konti med et præfiks', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Opdatere flere globale brugere på én gang', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => 'Eller søg efter brugernavne med et præfiks',
+	'centralauth-admin-multi-intro' => 'Opdater flere globale brugerkonti på én gang',
 	'centralauth-admin-action-lock-nochange' => 'Ændre ikke låse',
 	'centralauth-admin-action-lock-lock' => 'Låse markerede konti',
 	'centralauth-admin-action-lock-unlock' => 'Lås op markerede konti',
@@ -7655,6 +7655,8 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 	'centralauth-admin-action-hide-none' => 'Vis igen de markerede konti',
 	'centralauth-admin-action-hide-lists' => 'Skjul markerede konti fra offentlige lister',
 	'centralauth-admin-action-hide-oversight' => 'Skjul helt de valgte konti',
+	'centralauth-admin-multi-bot' => 'Seneste ændringer',
+	'centralauth-admin-multi-botcheck' => 'Markér ændringer i listen over [[Special:RecentChanges|{{int:recentchanges}}]] som robotændringer.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekund|sekunder}} siden',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minut|minutter}} siden',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|time|timer}} siden',
@@ -7670,17 +7672,17 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 	'centralauth-prefs-count-unattached' => 'Der er fortsat ubekræftede kontoer med dit navn på $1 {{PLURAL:$1|projekt|projekter}}.',
 	'centralauth-prefs-detail-unattached' => 'Det er ikke bekræftet at denne konto tilhører den globale konto.',
 	'centralauth-prefs-manage' => 'Administrér din globale konto',
-	'centralauth-prefs-view' => 'Vis globale brugeroplysninger', # Fuzzy
+	'centralauth-prefs-view' => 'Vis globale brugerkontooplysninger',
 	'centralauth-renameuser-merged' => 'Bruger $1 er gået over til det globale kontosystem.
-Omdøbning vil betyde at den lokale bruger vil blive adskilt fra den globale konto.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Brugernavnet $2 er reserveret til en global konto.', # Fuzzy
+Omdøbning vil betyde at den lokale brugerkonto vil blive adskilt fra den globale brugerkonto.',
+	'centralauth-renameuser-reserved' => 'Brugernavnet $2 er reserveret til en global brugerkonto.',
 	'centralauth-invalid-wiki' => 'Der er ingen sådan wikidatabase: $1',
 	'centralauth-account-exists' => 'Kan ikke oprette konto: Det ønskede brugernavn er allerede brugt i det globale loginsystem.',
-	'centralauth-account-exists-reset' => 'Brugernavnet $1 er ikke registreret lokalt, men det findes globalt', # Fuzzy
-	'centralauth-login-progress' => 'Logger dig på {{int:Centralauth-groupname}}s projekter:', # Fuzzy
-	'centralauth-logout-progress' => 'Logger dig af andre af {{int:Centralauth-groupname}}s projekter:', # Fuzzy
+	'centralauth-account-exists-reset' => 'Brugernavnet $1 er ikke registreret lokalt på denne wiki, men du kan nulstille adgangskoden på [[Special:CentralAuth/$1|en wiki hvor det er]].',
+	'centralauth-login-progress' => 'Logger dig på {{int:Centralauth-groupname}}s projekter:',
+	'centralauth-logout-progress' => 'Logger dig af {{int:Centralauth-groupname}}s andre projekter:',
 	'centralauth-login-no-others' => 'Du er automatisk blevet logget på andre af {{int:Centralauth-groupname}}s projekter.',
-	'centralauth-logout-no-others' => 'Du er automatisk blevet logget af andre af {{int:Centralauth-groupname}}s projekter.', # Fuzzy
+	'centralauth-logout-no-others' => 'Du er automatisk blevet logget af {{int:Centralauth-groupname}}s andre projekter.',
 	'centralauth-hidden-blockreason' => 'skjult globalt af $1 på $2 med følgende begrundelse: $3',
 	'centralauth-log-name' => 'Global konto-log',
 	'centralauth-log-header' => 'Denne log indeholder hændelser for globale kontoer: sletninger, låsninger og oplåsninger.',
@@ -7713,6 +7715,19 @@ Omdøbning vil betyde at den lokale bruger vil blive adskilt fra den globale kon
 	'centralauth-autologin-desc' => 'Denne specialleside anvendes internt af MediaWiki.
 Når du [[Special:UserLogin|logger på]], vil det centrale loginsystem instruere din browser til at hente denne side fra alle angivne domæner, ved hjælp af billedlinks.
 Du har tilgået denne side uden at have angivet nogen autentifikationsoplysninger, derfor gør den ingenting.',
+	'centralautologin' => 'Central login',
+	'centralauth-centralautologin-desc' => 'Denne særlige side bruges internt af MediaWiki.
+Når du besøger et tilknyttet domæne mens du ikke er logget på, vil central login-systemet bruge denne side til at afgøre, om du er logget på det centrale domæne.
+Du har anmodet om denne side uden at give nogen godkendelsesdata, så den gør ingenting.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Du er allerede logget på lokalt',
+	'centralauth-centralautologin-badparams' => 'Godkendelsesparametrene der blev angivet var ugyldige',
+	'centralauth-centralautologin-lostsession' => 'Sessionsdata mistet',
+	'centralauth-centralautologin-badstate' => 'Ugyldig tilstand "$1"',
+	'centralauth-centralautologin-notposted' => 'Central login-formular, skal være indsendt',
+	'centralauth-centralautologin-badstate-central' => 'Tilstanden "$1" er ikke gyldig på den centrale wiki',
+	'centralauth-centralautologin-badstate-local' => 'Tilstanden "$1" er ikke gyldig på den lokale wiki',
+	'centralauth-centralautologin-badwiki' => 'Wiki "$1" er ikke gyldig for central login',
+	'centralauth-centralautologin-corsfail' => 'CORS oprindelse tjek mislykkedes',
 	'globalgroupmembership' => 'Medlemskab i globale grupper',
 	'globalgrouppermissions' => 'Administration af globale brugergrupper',
 	'centralauth-globalgroupperms-grouplist' => 'Følgende globale grupper er blevet konfigureret.
