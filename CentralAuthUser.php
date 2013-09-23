@@ -2043,6 +2043,8 @@ class CentralAuthUser extends AuthPluginUser {
 	function setGlobalCookies(
 		$remember = false, $refreshId = false, $secure = null, $sessionData = array()
 	) {
+		global $wgCookieSecure;
+
 		if ( $remember instanceof User ) {
 			// Older code passed a user object here. Be kind and do what they meant to do.
 			$remember = $remember->getOption( 'rememberpassword' );
@@ -2064,7 +2066,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$id = self::setSession( $session, $refreshId, $secure );
 
-		if ( $secure ) {
+		if ( $secure || ( $secure === null && $wgCookieSecure ) ) {
 			$forceTime = ( $remember ? -1 : 0 );
 
 			// Core set a forceHTTPS cookie with a different domain. Delete

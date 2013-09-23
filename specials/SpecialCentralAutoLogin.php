@@ -527,6 +527,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$centralSession['sessionId'] = $centralUser->setSession( $centralSession );
 		}
 
+		// Make sure there's a value for secureCookies
+		if ( !isset( $centralSession['secureCookies'] ) ) {
+			$request = $this->getRequest();
+			$user = User::newFromName( $centralUser->getName() );
+			$centralSession['secureCookies'] = (
+				$user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() )
+			);
+		}
+
 		return $centralSession;
 	}
 }
