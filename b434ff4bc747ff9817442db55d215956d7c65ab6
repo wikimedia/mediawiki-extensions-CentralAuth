@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4946a543_7f6749ba",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2013-09-23T23:12:29Z",
+      "side": 1,
+      "message": "Maybe this can reuse $user if set above (\u0027remember\u0027) and possibly allow for it to be passed in to the method (so $this-\u003egetUser() can be used).",
+      "revId": "b434ff4bc747ff9817442db55d215956d7c65ab6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
