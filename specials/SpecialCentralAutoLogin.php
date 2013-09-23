@@ -78,7 +78,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUser::setP3P();
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			if ( $centralUser && $centralUser->getId() ) {
-				$centralSession = $this->getCentralSession( $centralUser );
+				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
 
 				// Refresh 'remember me' preference
 				$remember = (bool)$centralSession['remember'];
@@ -227,7 +227,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Write info for session creation into memc
-			$centralSession = $this->getCentralSession( $centralUser );
+			$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
 			$memcData += array(
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
@@ -506,20 +506,26 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return true;
 	}
 
-	private function getCentralSession( $centralUser ) {
+	private function getCentralSession( $centralUser, $user ) {
 		$centralSession = $centralUser->getSession();
+		$request = $this->getRequest();
 
 		// If there's no "finalProto", check if one was passed, and otherwise
 		// assume the current.
 		if ( !isset( $centralSession['finalProto'] ) ) {
-			$request = $this->getRequest();
 			$centralSession['finalProto'] = $request->getVal( 'proto', $request->detectProtocol() );
 		}
 
 		// If there's no "remember", pull from the user preference.
 		if ( !isset( $centralSession['remember'] ) ) {
-			$user = User::newFromName( $centralUser->getName() );
 			$centralSession['remember'] = $user->getBoolOption( 'rememberpassword' );
+		}
+
+		// Make sure there's a value for secureCookies
+		if ( !isset( $centralSession['secureCookies'] ) ) {
+			$centralSession['secureCookies'] = (
+				$user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() )
+			);
 		}
 
 		// Make sure there's a session id by creating a session if necessary.
