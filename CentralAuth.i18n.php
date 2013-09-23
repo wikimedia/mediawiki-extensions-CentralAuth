@@ -8465,7 +8465,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 ** melumatê ke hewl niyê',
 	'centralauth-admin-logsnippet' => 'Vurnayişê hesabanê globali verini',
 	'centralauth-admin-suppressreason' => 'wikiyanê hemi de suppres biya pê $1, pê ena sebebanê: $2',
-	'globalusers' => 'Listeyê karberi yê globalî', # Fuzzy
+	'globalusers' => 'Listeya karberande globalan',
 	'centralauth-listusers-locked' => 'kilit biyo',
 	'centralauth-listusers-attached' => '[[User:$1|lokal de esto]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
@@ -8485,7 +8485,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-prefs-count-unattached' => 'Hesbanê konfirme nebiyo ke pê nameyê tu $1 {{PLURAL:$1|project|projects}} esto.',
 	'centralauth-prefs-detail-unattached' => 'Ena proje konfirme nibiyo ke hesabê globalî ra girediyayo.',
 	'centralauth-prefs-manage' => 'Hesabê globali idare kerê',
-	'centralauth-prefs-view' => 'Global hesabê karberi bıvinê', # Fuzzy
+	'centralauth-prefs-view' => 'Global hesabi bıvin',
 	'centralauth-renameuser-merged' => 'Belki ena $1 karber sistemê cikewtişê yewî ta transfer biyo.
 Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.', # Fuzzy
 	'centralauth-renameuser-reserved' => 'Karberê $2î qe yew hesabê globalî rê reserve biyo.', # Fuzzy
@@ -8527,6 +8527,7 @@ Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.', # Fuzzy
 	'centralauth-autologin-desc' => 'Ena pela xasî MediyaWîkî de sero kar beno.
 Çi wext ti [[Special:UserLogin|cikewtene]], sistemê cikewtiş ê merkezî browserê tu ra emir dano ke ena pele link biyo.
 Ti ena pele waşto feqet datayê tu authentic niyo, aye ra nihebitiyeno.',
+	'centralautologin' => 'Merkezi cı kewtış',
 	'globalgroupmembership' => 'Grupanê globayan de eza biyayîş',
 	'globalgrouppermissions' => 'Îdare kerdişê grupê globalî',
 	'centralauth-globalgroupperms-grouplist' => 'Enê grupanê globalî konfigure biyo.
@@ -28502,6 +28503,7 @@ $messages['ru'] = array(
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'неприсоединённый или не существует локально',
 	'multilock' => 'Заблокировать несколько глобальных учётных записей',
+	'centralauth-admin-multi-username' => 'Введите одно или несколько имен пользователей, по одному на строчку',
 	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
 	'centralauth-admin-multi-bot' => 'Свежие правки',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
