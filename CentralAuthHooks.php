@@ -1032,7 +1032,8 @@ class CentralAuthHooks {
 			$remember = false;
 		}
 		// Regenerate SessionID when setting central cookie (bug 40962)
-		$centralUser->setGlobalCookies( $remember, true );
+		$secureCookie = $user->getBoolOption( 'prefershttps' ) ? null : false;
+		$centralUser->setGlobalCookies( $remember, true, $secureCookie );
 		return true;
 	}
 

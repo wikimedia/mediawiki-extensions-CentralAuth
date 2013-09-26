@@ -2078,6 +2078,9 @@ class CentralAuthUser extends AuthPluginUser {
 				)
 			);
 			self::setCookie( 'forceHTTPS', '1', $forceTime, false, '' );
+		} else {
+			// Bug 54626: Explcitly clear forceHTTPS cookie when it's not wanted
+			self::setCookie( 'forceHTTPS', '', -86400, false, '' );
 		}
 
 		return $id;
