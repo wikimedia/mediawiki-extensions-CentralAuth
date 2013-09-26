@@ -48,8 +48,6 @@
 				returntoquery.push( params[i] );
 			}
 		}
-		url += '&returnto=' + encodeURIComponent( mw.config.get( 'wgPageName' ) );
-		url += '&returntoquery=' + encodeURIComponent( returntoquery.join( '&' ) );
 	}
 
 	mw.loader.load( url );
