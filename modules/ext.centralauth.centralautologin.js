@@ -20,7 +20,7 @@
 	// Ok, perform the acutal logged-in check via a <script> tag. The
 	// referenced URL will 302 a few times and then return appropriate
 	// JavaScript to complete the process.
-	var url, params, len, param, i, returntoquery;
+	var url, params, len, param, i;
 
 	url = mw.config.get( 'wgServer' ) +
 		mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/start' );
@@ -37,19 +37,6 @@
 				url += '&' + params[i];
 			}
 		}
-	} else {
-		returntoquery = [];
-		params = location.search.slice( 1 ).split( '&' );
-		len = params.length;
-		for ( i = 0; i < len; i++ ) {
-			param = params[i].split( '=' );
-			param = decodeURIComponent( param[0] );
-			if ( param !== 'title' && param !== 'returnto' && param !== 'returntoquery' ) {
-				returntoquery.push( params[i] );
-			}
-		}
-		url += '&returnto=' + encodeURIComponent( mw.config.get( 'wgPageName' ) );
-		url += '&returntoquery=' + encodeURIComponent( returntoquery.join( '&' ) );
 	}
 
 	mw.loader.load( url );

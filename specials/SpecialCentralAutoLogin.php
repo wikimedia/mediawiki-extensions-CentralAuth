@@ -390,6 +390,29 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				array( $html )
 			);
 
+			// We want to avoid passing returnto into Special:CentralAutoLogin
+			// for caching reasons, which means we need to fix these links with
+			// JavaScript instead. Ugh.
+			$script .= <<<EOJS
+mediaWiki.loader.using( 'mediawiki.Uri', function () {
+	var u, returntoquery, returnto;
+	u = new mediaWiki.Uri( location.href );
+	delete u.query.title;
+	delete u.query.returnto;
+	delete u.query.returntoquery;
+	returnto = mediaWiki.config.get( 'wgPageName' );
+	returntoquery = u.getQueryString();
+	jQuery( '#p-personal ul a' ).each( function( i, a ) {
+		var u = new mediaWiki.Uri( a.href );
+		if ( u.query.returnto || u.query.returntoquery ) {
+			u.query.returnto = returnto;
+			u.query.returntoquery = returntoquery;
+			a.href = u.toString();
+		}
+	} );
+} );
+EOJS;
+
 			// Sigh.
 			$script .= "jQuery( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );";
 
