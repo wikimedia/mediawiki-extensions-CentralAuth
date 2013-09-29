@@ -30,6 +30,7 @@ $specialPageAliases['af'] = array(
 $specialPageAliases['ar'] = array(
 	'CentralAuth' => array( 'تحقق_مركزي' ),
 	'AutoLogin' => array( 'دخول_تلقائي' ),
+	'CentralAutoLogin' => array( 'تسجيل_دخول_مركزي' ),
 	'MergeAccount' => array( 'دمج_حساب' ),
 	'GlobalGroupMembership' => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
