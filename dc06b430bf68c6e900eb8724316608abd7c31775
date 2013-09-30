@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29433135_6e8c4f81",
+        "filename": "EmailableUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 255
+      },
+      "writtenOn": "2013-09-30T16:04:25Z",
+      "side": 1,
+      "message": "Where is this class defined?",
+      "revId": "dc06b430bf68c6e900eb8724316608abd7c31775",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
