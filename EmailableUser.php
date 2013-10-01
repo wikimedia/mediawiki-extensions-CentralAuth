@@ -17,7 +17,7 @@ class EmailableUser extends User {
 	 *    User::getCanonicalName(), except that true is accepted as an alias
 	 *    for 'valid', for BC.
 	 *
-	 * @return ConfirmAndMigrateUser|bool ConfirmAndMigrateUser object, or false if the
+	 * @return EmailableUser|bool EmailableUser object, or false if the
 	 *    username is invalid (e.g. if it contains illegal characters or is an IP address).
 	 *    If the username is not present in the database, the result will be a user object
 	 *    with a name, zero user ID and default settings.
@@ -31,7 +31,7 @@ class EmailableUser extends User {
 			return false;
 		} else {
 			# Create unloaded user object
-			$u = new ConfirmAndMigrateUser;
+			$u = new EmailableUser;
 			$u->mName = $name;
 			$u->mFrom = 'name';
 			$u->setItemLoaded( 'name' );
