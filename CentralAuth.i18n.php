@@ -2884,9 +2884,9 @@ Si se renoma causará la dixebra ente la cuenta llocal y la global.",
 	'centralauth-account-exists' => "Nun se pue crear la cuenta: el nome d'usuariu especificáu yá ta acutáu pol sistema de cuentes unificaes.",
 	'centralauth-account-exists-reset' => "El nome d'usuariu $1 nun ta rexistráu nesta wiki, pero pue reaniciase la contraseña [[Special:CentralAuth/$1|n'una wiki onde tea]].",
 	'centralauth-login-progress' => 'Aniciando sesión nes wikis de {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => "Zarrando sesión n'otres wikis de {{int:Centralauth-groupname}}:", # Fuzzy
-	'centralauth-login-no-others' => 'Tas coneutáu automáticamente en otros proyeutos de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => "Tas desconectáu automáticamente d'otros proyeutos de {{int:Centralauth-groupname}}.", # Fuzzy
+	'centralauth-logout-progress' => "Zarrando sesión n'otres wikis de {{int:Centralauth-groupname}}:",
+	'centralauth-login-no-others' => "Tas coneutáu automáticamente n'otros proyeutos de {{int:Centralauth-groupname}}.",
+	'centralauth-logout-no-others' => "Tas desconectáu automáticamente d'otros proyeutos de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'anubríu de mou global por $1 a les $2 col motivu darréu: $3',
 	'centralauth-log-name' => 'Rexistru de cuenta global',
 	'centralauth-log-header' => 'Esti rexistru contién operaciones de tocantes a cuentes globales: eliminaciones, bloqueos y desbloqueos.',
@@ -2915,10 +2915,6 @@ Si se renoma causará la dixebra ente la cuenta llocal y la global.",
 	'centralauth-rightslog-entry-deleteset' => 'desanició la configuración wiki "$1"',
 	'centralauth-rightslog-set-optin' => "basada n'inclusión",
 	'centralauth-rightslog-set-optout' => "basada n'esclusión",
-	'autologin' => 'Identificación automática',
-	'centralauth-autologin-desc' => "Esta páxina especial úsala internamente MediaWiki.
-Cuando t'[[Special:UserLogin|identifiques]], el sistema central d'identificación fai que'l to navegador pida esta páxina en tolos dominios asociados, usando enllaces d'imaxe.
-Pidisti esta páxina ensin metar los datos d'autentificación, polo que nun fai nada.",
 	'centralautologin' => 'Aniciu de sesión central',
 	'centralauth-centralautologin-desc' => "MediaWiki utiliza internamente esta páxina especial.
 Cuando visita un dominiu enllazáu ensin aniciar sesión, o sistema d'aniciu de sesión central usa esta páxina pa determinar si ta coneutáu nel dominiu central.
@@ -3021,10 +3017,6 @@ Pues ver y camudar cuelesquiera d'ellos, o crear un conxuntu nuevu.",
 	'action-centralauth-lock' => 'candar o quitar candáu a cuentes globales',
 	'centrallogin' => "Aniciu de sesión d'usuariu central",
 	'centralloginsuccesful' => 'Aniciu de sesión correutu',
-	'centralauth-completelogin-legend' => "Complete'l procesu d'aniciu de sesión",
-	'centralauth-completelogin-finishing' => 'Autenticandose nos sitios de la Fundación Wikimedia; espere, por favor...',
-	'centralauth-completelogin-text' => "¡La autenticación de la cuenta nos sitios de la Fundación Wikimedia ta casi completa! Utilice'l botón inferior pa confirmar y completar l'aniciu de sesión.",
-	'centralauth-completelogin-submit' => 'Aniciar sesión agora',
 	'centralauth-completelogin-back' => 'Volver a la páxina anterior.',
 	'centralauth-error-nologinattempt' => "Nun hai nengún intentu d'aniciu de sesión activu pa la sesión.",
 	'centralauth-error-badtoken' => "El pase d'autenticación dau caducó o nun ye válidu.",
@@ -7689,10 +7681,6 @@ Omdøbning vil betyde at den lokale brugerkonto vil blive adskilt fra den global
 	'centralauth-rightslog-entry-deleteset' => 'slettet wikisæt $1',
 	'centralauth-rightslog-set-optin' => 'baseret på tilvalg',
 	'centralauth-rightslog-set-optout' => 'baseret på fravalg',
-	'autologin' => 'Automatisk indlogning',
-	'centralauth-autologin-desc' => 'Denne specialleside anvendes internt af MediaWiki.
-Når du [[Special:UserLogin|logger på]], vil det centrale loginsystem instruere din browser til at hente denne side fra alle angivne domæner, ved hjælp af billedlinks.
-Du har tilgået denne side uden at have angivet nogen autentifikationsoplysninger, derfor gør den ingenting.',
 	'centralautologin' => 'Central login',
 	'centralauth-centralautologin-desc' => 'Denne særlige side bruges internt af MediaWiki.
 Når du besøger et tilknyttet domæne mens du ikke er logget på, vil central login-systemet bruge denne side til at afgøre, om du er logget på det centrale domæne.
@@ -7792,10 +7780,6 @@ Du kan se eller ændre dem alle, eller oprette et nyt',
 	'action-centralauth-lock' => 'låse eller låse op globale konti',
 	'centrallogin' => 'Centralt bruger login',
 	'centralloginsuccesful' => 'Login lykkedes',
-	'centralauth-completelogin-legend' => 'Færdiggør login proces',
-	'centralauth-completelogin-finishing' => 'Godkender på Wikimedia Foundation-websteder, vent venligst...',
-	'centralauth-completelogin-text' => 'Godkendelse af din konto på Wikimedia Foundation-websteder er næsten færdig! Brug knappen nedenfor for at bekræfte og fuldføre dit logind.',
-	'centralauth-completelogin-submit' => 'Login nu',
 	'centralauth-completelogin-back' => 'Vend tilbage til foregående side.',
 	'centralauth-error-nologinattempt' => 'Ingen aktive login forsøg i gang for din samling',
 	'centralauth-error-badtoken' => 'Den angivne godkendelses brik er enten udløbet eller ugyldig.',
@@ -8515,10 +8499,6 @@ Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.', # Fuzzy
 	'centralauth-rightslog-entry-deleteset' => 'Sete Wiki "$1" wedarna',
 	'centralauth-rightslog-set-optin' => 'ser opt-in',
 	'centralauth-rightslog-set-optout' => 'ser opt-out',
-	'autologin' => 'Cikewtîşê otomatîkî',
-	'centralauth-autologin-desc' => 'Ena pela xasî MediyaWîkî de sero kar beno.
-Çi wext ti [[Special:UserLogin|cikewtene]], sistemê cikewtiş ê merkezî browserê tu ra emir dano ke ena pele link biyo.
-Ti ena pele waşto feqet datayê tu authentic niyo, aye ra nihebitiyeno.',
 	'centralautologin' => 'Merkezi cı kewtış',
 	'globalgroupmembership' => 'Grupanê globayan de eza biyayîş',
 	'globalgrouppermissions' => 'Îdare kerdişê grupê globalî',
@@ -9520,10 +9500,6 @@ Renomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzant
 	'centralauth-rightslog-entry-deleteset' => 'forigis vikiaro "$1"',
 	'centralauth-rightslog-set-optin' => 'bazite de elekto',
 	'centralauth-rightslog-set-optout' => 'ekskluziveble per elekto',
-	'autologin' => 'Aŭtomata ensaluto',
-	'centralauth-autologin-desc' => 'Ĉi tiu speciala paĝo estas uzata interne de MediaWiki.
-Kiam vi [[Special:UserLogin|ensalutas]], la centra ensalutsistemo instruktas vian retumilon por peti ĉi tiun paĝon de ĉiuj ligitaj domajnoj, uzante bildajn ligilojn.
-Vi petis ĉi tiun paĝon sen donante ian ajn aŭtentoinformon, do ĝi faras nenion.',
 	'centralauth-centralautologin-badstate' => 'Malvalida stato "$1"',
 	'globalgroupmembership' => 'Membreco en ĝeneralaj grupoj',
 	'globalgrouppermissions' => 'Ĝenerala administrado de grupoj',
@@ -9600,7 +9576,6 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 	'right-centralauth-oversight' => 'Subpremi ĝeneralan konton', # Fuzzy
 	'right-centralauth-merge' => 'Kunfandi la konton',
 	'right-globalgrouppermissions' => 'Administri ĝeneralajn grupojn',
-	'centralauth-completelogin-submit' => 'Ensaluti nun',
 );
 
 /** Spanish (español)
@@ -11741,10 +11716,6 @@ Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-rightslog-entry-deleteset' => 'jeu de wikis « $1 » supprimé',
 	'centralauth-rightslog-set-optin' => 'fondé par adhésions explicites',
 	'centralauth-rightslog-set-optout' => 'fondé par retraits explicites',
-	'autologin' => 'Connexion automatique',
-	'centralauth-autologin-desc' => 'Cette page spéciale est utilisée par MediaWiki en interne.
-Quand vous vous [[Special:UserLogin|connectez]], le système d’identification unique demande à votre navigateur de charger cette page pour tous les domaines rattachés, au moyen de liens d’images.
-Vous avez demandé cette page sans fournir d’informations d’authentification, elle ne fait donc rien.',
 	'centralautologin' => 'Connexion centralisée',
 	'centralauth-centralautologin-desc' => 'Cette page spéciale est utilisée en interne par MédiaWiki.
 Quand vous visitez un domaine lié sans être connecté, le système de connexion centralisée utilise cette page pour déterminer si vous êtes connecté au domaine central.
@@ -11847,10 +11818,6 @@ Vous pouvez voir et modifier chacun d’eux, ou créer un nouveau jeu.',
 	'action-centralauth-lock' => 'verrouiller ou déverrouiller les comptes globaux',
 	'centrallogin' => 'Connexion utilisateur centralisée',
 	'centralloginsuccesful' => 'Connexion réussie',
-	'centralauth-completelogin-legend' => 'Terminer le processus de connexion',
-	'centralauth-completelogin-finishing' => 'Authentification sur les sites de la Wikimedia Fundation en cours, veuillez patienter…',
-	'centralauth-completelogin-text' => 'L’authentification de votre compte sur les sites de la Fondation Wikimédia est presque achevée ! Utilisez le bouton ci-dessous pour confirmer et compléter votre inscription.',
-	'centralauth-completelogin-submit' => 'Se connecter maintenant',
 	'centralauth-completelogin-back' => 'Revenir à la page précédente.',
 	'centralauth-error-nologinattempt' => 'Aucune tentative de connexion active n’est en cours pour votre session.',
 	'centralauth-error-badtoken' => 'Le jeton d’authentification fourni est soit expiré, soit non valide.',
@@ -13580,10 +13547,6 @@ $messages['he'] = array(
 	'centralauth-rightslog-entry-deleteset' => 'מחק את קבוצת אתרי הוויקי "$1"',
 	'centralauth-rightslog-set-optin' => 'רשימה לבנה',
 	'centralauth-rightslog-set-optout' => 'רשימה שחורה',
-	'autologin' => 'כניסה אוטומטית',
-	'centralauth-autologin-desc' => 'מערכת מדיה־ויקי משתמשת בדף מיוחד זה באופן פנימי.
-כשאתם מבצעים [[Special:UserLogin|כניסה לחשבון]], המערכת המרכזית של כניסה לחשבון גורמת לדפדפן שלכם לבקש דף זה מכל הדומיינים המקושרים, באמצעות קישורים לתמונות.
-כיוון שביקשתם דף זה ללא מידע זיהוי, הוא לא יעשה דבר.',
 	'centralautologin' => 'כניסה מרכזית',
 	'centralauth-centralautologin-desc' => 'הדף המיוחד הזה משמש את מדיה־ויקי באופן פנימי.
 בעת ביקור במתחם מקושר שלא נכנסת אליו, מערכת הכניסה המרכזית משתמשת בדף הזה כדי להבין אם נכנסת למתחם המרכזי.
@@ -13685,10 +13648,6 @@ $messages['he'] = array(
 	'action-centralauth-lock' => 'נעילת או שחרור חשבונות כלליים',
 	'centrallogin' => 'כניסת משתמש מרכזית',
 	'centralloginsuccesful' => 'הכניסה הושלמה בהצלחה',
-	'centralauth-completelogin-legend' => 'להשלים תהליך התחברות',
-	'centralauth-completelogin-finishing' => 'אימות פרטים באתרי קרן ויקימדיה, נא להמתין...',
-	'centralauth-completelogin-text' => 'אימות החשבון שלך על אתרי קרן ויקימדיה כמעט הושלם! נא להשתמש בכפתור להלן כדי לאשר ולסיים את הכניסה.',
-	'centralauth-completelogin-submit' => 'להתחבר עכשיו',
 	'centralauth-completelogin-back' => 'לחזור אל הדף הקודם.',
 	'centralauth-error-nologinattempt' => 'אין ניסיון כניסה בהפעלה הנוכחית.',
 	'centralauth-error-badtoken' => 'קוד האימות שסופק לא תקין או שפג תוקפו.',
@@ -13972,10 +13931,6 @@ $messages['hi'] = array(
 	'centralauth-rightslog-entry-deleteset' => 'विकि-समूह "$1" हटा दिया',
 	'centralauth-rightslog-set-optin' => 'ऑप्ट-इन आधारित',
 	'centralauth-rightslog-set-optout' => 'ऑप्ट-आउट आधारित',
-	'autologin' => 'स्वचालित लॉगिन',
-	'centralauth-autologin-desc' => 'यह विशेष पृष्ठ मीडियाविकि केआतंरिक प्रयोग हेतु है।
-जब आप [[Special:UserLogin|लॉग इन]] करते हैं,  वैश्विक लॉग इन प्रणाली आपके ब्राउज़र को सभी जुड़ी हुई साइटों से यह पृष्ठ अनुरोध करने को कहता है, चित्र कड़ियों के माध्यम से।
-आपने यह पृष्ठ कोई भी प्रमाण जानकारी दिए बिना मँगाया है, इसलिये यह कुछ नहीं करेगा।',
 	'centralautologin' => 'वैश्विक लॉगिन',
 	'centralauth-centralautologin-desc' => 'यह विशेष पृष्ठ मीडियाविकि के आतंरिक प्रयोग हेतु है।
 जब आप किसी जुड़ी हुई साइट को लॉगिन किये बिना देखते हैं तो वैश्विक लॉगिन प्रणाली इस पृष्ठ का प्रयोग कर के यह सुनिश्चित करती है कि आप वैश्विक रूप से लॉगिन कर चुके हैं या नहीं।
@@ -14075,11 +14030,6 @@ $messages['hi'] = array(
 	'action-centralauth-lock' => 'वैश्विक खाते लॉक करें या लॉक हटाएँ',
 	'centrallogin' => 'वैश्विक सदस्य लॉगिन',
 	'centralloginsuccesful' => 'लॉग इन हो गया है',
-	'centralauth-completelogin-legend' => 'लॉगिन प्रक्रिया पूरी करें',
-	'centralauth-completelogin-finishing' => 'विकिमीडिया फ़ाउंडेशन साइटों पर प्रमाणित कर रहे हैं, कृपया प्रतीक्षा करें...',
-	'centralauth-completelogin-text' => 'विकिमीडिया फ़ाउंडेशन साइटों पर आपके खाते का प्रमाणीकरण लगभग पूरा हो चुका है!
-नीचे दिए बटन का प्रयोग कर के अपने लॉगिन की पुष्टि करें और लॉगिन प्रक्रिया सम्पूर्ण करें।',
-	'centralauth-completelogin-submit' => 'लॉगिन करें',
 	'centralauth-completelogin-back' => 'पिछले पृष्ठ पर वापिस जाएँ',
 	'centralauth-error-nologinattempt' => 'आपके सेशन के लिए कोई लॉगिन प्रयत्न जारी नहीं है।',
 	'centralauth-error-badtoken' => 'दिया गया प्रमाणीकरण टोकन या तो पुराना है या अमान्य है।',
@@ -17352,6 +17302,7 @@ Selv om indeværende er jer , jer kunne komme ind den login unification oparbejd
 );
 
 /** Javanese (Basa Jawa)
+ * @author Bennylin
  * @author Meursault2004
  * @author NoiX180
  * @author Pras
@@ -17560,7 +17511,7 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-log-status-oversighted' => 'katinjo',
 	'centralauth-log-status-none' => '(ora ana)',
 	'centralauth-rightslog-name' => 'Log hak-hak global',
-	'centralauth-rightslog-entry-usergroups' => 'ngganti kaanggotan kelompok global kanggo $1 saka $2 menyang $3',
+	'centralauth-rightslog-entry-usergroups' => 'ngganti kaanggotan kelompok global kanggo $1 saka $2 dadi $3',
 	'centralauth-rightslog-entry-groupperms' => 'ganti idin-idin kelompok dadi $1 saka $2 menyang $3',
 	'centralauth-rightslog-entry-groupperms2' => 'ngowahi hak klompok $1. Nambahaké $2; Mbusak $3',
 	'centralauth-rightslog-entry-groupperms3' => 'ngowahi sèt wiki kanggo $1 saka $2 dadi $3',
@@ -17572,10 +17523,6 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-rightslog-entry-deleteset' => 'wiki sèt kabusak "$1"',
 	'centralauth-rightslog-set-optin' => "gabung (''opt-in'')",
 	'centralauth-rightslog-set-optout' => "ora gabung (''opt-out'')",
-	'autologin' => 'Mlebu log otomatis',
-	'centralauth-autologin-desc' => 'Kaca istiméwa iki dipigunakaké sacara internal déning MediaWiki.
-Nalika panjenengan [[Special:UserLogin|mlebu log]], sistem mlebu log kapusat nginstruksèkaké panjelajah web panjenengan supaya ngaksès kaca iki saka kabèh domain sing kahubung, migunakaké pranala berkas.
-Panjenengan wis ngaksès kaca iki tanpa mènèhi data otentikasi, saéngga kaca iki ora mènèhi réaksi apa-apa.',
 	'globalgroupmembership' => 'Kaanggotan ing kelompok-kelompok global',
 	'globalgrouppermissions' => 'Ngurus kelompok global',
 	'centralauth-globalgroupperms-grouplist' => 'Klompok global sing kapacak ing ngisor iki wis dikonfigurasi.
@@ -18410,10 +18357,6 @@ Other accounts are not yet confirmed.',
 	'centralauth-rightslog-header' => 'Бұл журналда ғаламдық топтарға жасалған амалдар жазылып алынады: мүшелік және рұқсаттар өзгеруі',
 	'centralauth-rightslog-entry-newset' => '$1 уики жиынтығында $2 құрылды келесі уикилерде: $3',
 	'centralauth-rightslog-entry-setrename' => '"$2" дегеннен "$1" дегенге уики жиынтық атауын өзгертті',
-	'autologin' => 'Автоматты кіру',
-	'centralauth-autologin-desc' => 'Бұл арнайы бет MediaWiki ішкі қолдану үшін арналады.
-[[Special:UserLogin|Кіргеніңізде]], орталық кіру жүйесі сурет сілтемелерін қолданып, барлық сілтенген үйшіктерден бұл бетті сұрау үшін шолғышығыңызға нұсқамалар береді.
-Қайсыбір теңдестіру деректер жетістірмей бұл бетті сұрағансыз, содықтан ештеңе істелінбейді.',
 	'centralautologin' => 'Орталық кіруі',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Сіз әлдеқашан жергілікке кіргенсіз',
 	'centralauth-centralautologin-lostsession' => 'Дерек сессиялары жоғалған',
@@ -18458,8 +18401,6 @@ Other accounts are not yet confirmed.',
 	'right-centralauth-merge' => 'Тіркелгілерін біріктіру',
 	'right-globalgrouppermissions' => 'Ғаламдық топтарды реттеу',
 	'centralloginsuccesful' => 'Кіруіңіз сәтті өтті',
-	'centralauth-completelogin-legend' => 'Кіру үрдісі аяқталды',
-	'centralauth-completelogin-submit' => 'Қазір кіру',
 	'centralauth-completelogin-back' => 'Алдыңғы бетке қайта келу',
 );
 
@@ -19127,10 +19068,6 @@ $messages['ko'] = array(
 	'centralauth-rightslog-entry-deleteset' => '사용자가 "$1" 위키 집합을 삭제했습니다',
 	'centralauth-rightslog-set-optin' => '옵트인 방식',
 	'centralauth-rightslog-set-optout' => '옵트아웃 방식',
-	'autologin' => '자동 로그인',
-	'centralauth-autologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
-[[Special:UserLogin|로그인]]할 때, 통합 로그인 시스템은 브라우저가 이미지 링크를 통해 모든 도메인에 로그인을 요청하도록 합니다.
-인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.',
 	'centralautologin' => '통합 로그인',
 	'centralauth-centralautologin-desc' => '이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.
 로그인되지 않은 연결된 도메인을 방문할 때, 통합 로그인 시스템은 이 문서가 통합 도메인에 로그인되어 있을 때 결정하는 데 사용합니다.
@@ -19233,10 +19170,6 @@ $messages['ko'] = array(
 	'action-centralauth-lock' => '통합 계정을 잠그거나 잠금 해제',
 	'centrallogin' => '통합 사용자 로그인',
 	'centralloginsuccesful' => '로그인 성공',
-	'centralauth-completelogin-legend' => '로그인 과정 완료',
-	'centralauth-completelogin-finishing' => '위키미디어 재단 사이트를 인증하는 중입니다, 기다리세요...',
-	'centralauth-completelogin-text' => '위키미디어 재단에 당신의 계정의 인증이 거의 완료되었습니다! 로그인을 인증하고 완료하려면 아래 버튼을 사용하세요.',
-	'centralauth-completelogin-submit' => '지금 로그인',
 	'centralauth-completelogin-back' => '이전 문서로 돌아갑니다.',
 	'centralauth-error-nologinattempt' => '당신의 세션에 대해 현재 로그인 시도가 이루어지고 있지 않습니다.',
 	'centralauth-error-badtoken' => '제공된 인증 토른이 만료되었거나 잘못되었습니다.',
@@ -20059,10 +19992,6 @@ Eng Ëmbenennung hëlt de lokale Benotzerkont aus dem globale Benotzerkonte-Syst
 	'centralauth-rightslog-entry-deleteset' => 'huet d\'Wiki-Groupe "$1" geläscht',
 	'centralauth-rightslog-set-optin' => 'explizit erkläre fir matzemaachen (opt-in)',
 	'centralauth-rightslog-set-optout' => 'explizit erkläre fir net matzemaachen (opt-out)',
-	'autologin' => 'Automatesch aloggen',
-	'centralauth-autologin-desc' => 'Dës Spezialsäit gëtt intern vu MediaWiki benotzt.
-Wann Dir iech [[Special:UserLogin|aloggt]], da gëtt den zentrale Login-System ärem Browser déi néideg Informatioune fir dës Säit vun alle verlinkten Domaine mat Hellëf vu Billerlinken unzefroen.
-Dir hutt dës Säit ugefrot ouni Identificatiouns-Informatiounen unzeginn, dofir mecht dës Säit näischt.',
 	'centralautologin' => 'Zentrale Login',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Dir sidd scho lokal ageloggt.',
 	'centralauth-centralautologin-lostsession' => 'Donnéeë vun der Sessioun si verluer gaang',
@@ -20154,10 +20083,6 @@ Dir kënnt se kucken an änneren, oder eng nei Grupp uleeën.',
 	'action-centralauth-lock' => "Global Benotzerkonte spären oder d'Spär ophiewen",
 	'centrallogin' => 'Zentrale Login',
 	'centralloginsuccesful' => 'Umeldung huet geklappt',
-	'centralauth-completelogin-legend' => 'Aloggen ofschléissen',
-	'centralauth-completelogin-finishing' => 'Authentifizéierung op de Wikimedia Foundation Siten, waart w.e.g. ...',
-	'centralauth-completelogin-text' => "D'Authentifizéierung vun Ärem Benotzerkont op de Site vun der Wikimedia Foundation ass bal fäerdeg! Benotzt de Knäppchen hei drënner fir ze confirméieren an Äre Login ofzeschléissen",
-	'centralauth-completelogin-submit' => 'Elo aloggen',
 	'centralauth-completelogin-back' => 'Zréck op déi vireg Säit',
 	'centralauth-error-badtoken' => 'Déi Authentifizéierung déi Dir uginn hutt ass entweder ofgelaf oder net valabel.',
 	'centralauth-warning-notloggedin' => 'Dir sidd elo net ageloggt.',
@@ -22053,10 +21978,6 @@ $messages['ml'] = array(
 	'centralauth-rightslog-entry-deleteset' => 'വിക്കി ഗണം "$1" മായ്ക്കപ്പെട്ടു',
 	'centralauth-rightslog-set-optin' => 'ഐച്ഛിക സ്വീകരണത്തിലധിഷ്ഠിതം',
 	'centralauth-rightslog-set-optout' => 'ഐച്ഛിക നിരാകരണത്തിലധിഷ്ഠിതം',
-	'autologin' => 'സ്വയമുള്ള ലോഗിൻ',
-	'centralauth-autologin-desc' => 'ഈ പ്രത്യേക താൾ മീഡിയവിക്കിയുടെ ഉള്ളിൽ നിന്നാണ് പ്രവർത്തിക്കുക.
-താങ്കൾ [[Special:UserLogin|ലോഗിൻ]] ചെയ്യുമ്പോൾ, കേന്ദ്രീകൃത ലോഗിൻ സിസ്റ്റം താങ്കളുടെ ബ്രൗസറിനെ കണ്ണിവത്കരിക്കപ്പെട്ട എല്ലാ ഡൊമൈനുകളിലേയും ഈ താൾ, ചിത്രങ്ങളുടെ കണ്ണി വഴി ആവശ്യപ്പെടാൻ പഠിപ്പിക്കുന്നതാണ്.
-എന്തെങ്കിലും തിരിച്ചറിയാനുള്ള വിവരങ്ങൾ ഇല്ലാതെയാണ് താങ്കൾ ഈ താൾ ആവശ്യപ്പെട്ടിരിക്കുന്നത്, അതുകൊണ്ടിത് ഒന്നും ചെയ്യുന്നില്ല.',
 	'centralautologin' => 'കേന്ദ്രീകൃതപ്രവേശനം',
 	'centralauth-centralautologin-desc' => 'ഈ പ്രത്യേകതാൾ മീഡിയവിക്കിയുടെ ഉള്ളിൽ ഉപയോഗിക്കുന്നതാണ്. കണ്ണി ചേർക്കപ്പെട്ടിട്ടുള്ള ഒരു ഡൊമൈൻ താങ്കൾ സന്ദർശിക്കുമ്പോൾ, കേന്ദ്രീകൃതപ്രവേശനസംവിധാനം, താങ്കൾ കേന്ദ്രീകൃത ഡൊമൈനിൽ പ്രവേശിച്ചിട്ടുണ്ടോയെന്ന് ഈ താൾ ഉപയോഗിച്ച് നിർണ്ണയിക്കുന്നതാണ്.
 താങ്കൾ ഈ താൾ യാതൊരു ആധികാരിക വിവരങ്ങളുമില്ലാതെയാണ് ആവശ്യപ്പെട്ടത്, അതിനാലിതൊന്നും ചെയ്യില്ല.',
@@ -22503,10 +22424,6 @@ $messages['mr'] = array(
 	'centralauth-rightslog-entry-deleteset' => '"$1" विकी संग्रह वगळला',
 	'centralauth-rightslog-set-optin' => 'स्वयं-निवडीच्या आधारावर',
 	'centralauth-rightslog-set-optout' => 'बाहेर पडण्याच्या निर्णयावर आधारीत',
-	'autologin' => 'आपोआप लॉगइन',
-	'centralauth-autologin-desc' => 'हे विशेष पान मीडियाविकिच्या खाजगी वापराचे आहे.
-जेव्हा तुम्ही [[Special:UserLogin|प्रवेश कराल]], मध्यवर्ती प्रवेश यंत्रणा तुमच्या ब्राउझरला सर्व जोडलेल्या डोमेनमधील हे पान चित्र दुवे वापरून मागवायची सूचना देईल.
-तुम्ही हे पान कुठलीही माहिती न देता मागविलेले आहे, त्यामुळे ते काहीही करणार नाही.',
 	'centralautologin' => 'केंद्रिय सनोंद-प्रवेश',
 	'centralauth-centralautologin-desc' => 'मिडियाविकित हे पान अंतर्गतरित्या वापरल्या जाते.आपण सनोंद-प्रवेशित नसल्यास, जेंव्हा एखाद्या डोमेन दुव्यास भेट देता,केंद्रिय सनोंद-प्रवेश प्रणाली या पानाचा वापर, आपण केंद्रिय डोमेनमध्ये सनोंद प्रवेशित आहात काय ते तपासण्यास करते. आपण काहीही अधिकृत माहिती न देता या पानाची मागणी केली आहे, तेंव्हा ते काहीच काम करणार नाही.(यात माहिती भरा)',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'स्थानिकरित्या आपण पूर्वीच सनोंद-प्रवेशित आहात',
@@ -22598,10 +22515,6 @@ $messages['mr'] = array(
 	'action-centralauth-lock' => 'वैश्विक खाते कुलुपबंद करा किंवा टाळे खोला',
 	'centrallogin' => 'सदस्याचा केंद्रीभूत सनोंद प्रवेश',
 	'centralloginsuccesful' => 'आपल्या सनोंद-प्रवेशाची नोंदणी यशस्वीरीत्या पूर्ण झाली',
-	'centralauth-completelogin-legend' => 'संपूर्ण सनोंद प्रवेशाची प्रक्रिया',
-	'centralauth-completelogin-finishing' => '(आपणास) विकिमिडिया फाउंडेशनच्या संकेतस्थळांवर प्राधिकृत करण्यात येत आहे,कृपया थांबा...',
-	'centralauth-completelogin-text' => 'आपल्या खात्याचे विकिमिडिया फाउंडेशच्या संकेतस्थळांवर प्राधिकृतीकरण जवळपास पूर्ण होत आहे! आपला सनोंद प्रवेश पूर्ण व नक्की करण्यास कृपया खालील कळ टिचका.',
-	'centralauth-completelogin-submit' => 'आता सनोंद प्रवेश करा',
 	'centralauth-completelogin-back' => 'मागील पानावर चला',
 	'centralauth-error-nologinattempt' => 'आपल्या सत्रात, सक्रिय सनोंदप्रवेशाची काहीच खटपट दिसून आली नाही.',
 	'centralauth-error-badtoken' => 'प्रस्तूत केलेला प्राधिकृत बिल्ला हा एकतर मृतवत् आहे किंवा अवैध आहे.',
@@ -22857,10 +22770,6 @@ Kata laluan bagi akaun-akaun tempatan yang dicipta sebelum penggabungan akan dik
 	'centralauth-rightslog-entry-deleteset' => 'menghapuskan set wiki "$1"',
 	'centralauth-rightslog-set-optin' => 'berdasarkan penyertaan',
 	'centralauth-rightslog-set-optout' => 'berdasarkan pengecualian',
-	'autologin' => 'Log masuk automatik',
-	'centralauth-autologin-desc' => 'Laman khas ini digunakan dari dalam MediaWiki.
-Ketika anda [[Special:UserLogin|log masuk]], sistem akaun pusat akan mengarah pelayar web anda supaya meminta laman ini melalui semua domain yang telah dipaut melalui penggunaan imej.
-Anda telah meminta laman ini tanpa membekalkan sebarang data pengesahan, oleh itu tiada apa-apa berlaku.',
 	'centralautologin' => 'Log masuk berpusat',
 	'centralauth-centralautologin-desc' => 'Halaman khas ini digunakan secara dalaman oleh MediaWiki.
 Apabila anda mengunjungi sebuah domain berkaitan sementara belum log masuk, sistem log masuk berpusat menggunakan halaman ini untuk menentukan sama ada anda telah log masuk atau tidak.
@@ -22963,10 +22872,6 @@ Anda boleh melihat dan mengubah suai mana-mana satunya, atau mencipta set baru.'
 	'action-centralauth-lock' => 'mengunci atau membuka kunci akaun sejagat',
 	'centrallogin' => 'Log masuk pengguna terpusat',
 	'centralloginsuccesful' => 'Berjaya log masuk',
-	'centralauth-completelogin-legend' => 'Selesaikan proses log masuk',
-	'centralauth-completelogin-finishing' => 'Sedang membuat penentusahan di tapak-tapak Yayasan Wikimedia, sila tunggu...',
-	'centralauth-completelogin-text' => 'Penentusahan akaun anda di Yayasan Wikimedia hampir selesai! Tekan butang di bawah untuk mengesahkan dan melengkapkan log masuk anda.',
-	'centralauth-completelogin-submit' => 'Log masuk sekarang',
 	'centralauth-completelogin-back' => 'Kembali ke halaman sebelumnya.',
 	'centralauth-error-nologinattempt' => 'Tiada cubaan log masuk yang aktif sedang dilangsungkan untuk sesi anda.',
 	'centralauth-error-badtoken' => 'Token penentusahan yang diberikan sudah luput atau tidak sah.',
@@ -24392,7 +24297,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-account-exists' => 'Deze gebruiker kan niet aangemaakt worden: de gebruikersnaam is al in gebruik in het systeem voor samengevoegd aanmelden.',
 	'centralauth-account-exists-reset' => 'De gebruikersnaam $1 is niet geregistreerd op deze wiki, maar u kunt het wachtwoord opnieuw instellen op de  [[Special:CentralAuth/$1|wiki waar het geregistreerd is]].',
 	'centralauth-login-progress' => "U wordt aangemeld bij wiki's van {{int:Centralauth-groupname}}:",
-	'centralauth-logout-progress' => 'U wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'U wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globaal verborgen door $1 op $2 met reden: $3',
@@ -24423,10 +24328,6 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-rightslog-entry-deleteset' => 'heeft de wikigroep "$1" verwijderd',
 	'centralauth-rightslog-set-optin' => 'opt-ingebaseerd',
 	'centralauth-rightslog-set-optout' => 'opt-outgebaseerd',
-	'autologin' => 'Automatisch aangemeld',
-	'centralauth-autologin-desc' => 'Deze pagina wordt intern door MediaWiki gebruikt.
-Als u zich [[Special:UserLogin|aanmeldt]], geeft het centrale aanmeldsysteem uw browser de opdracht om deze pagina vanuit alle aangesloten domeinen op te vragen met behulp van een koppeling naar een afbeelding.
-U hebt deze pagina opgevraagd zonder enige authenticatiegegevens op te geven en daarom gebeurt er niets.',
 	'centralautologin' => 'Centraal aanmelden',
 	'centralauth-centralautologin-desc' => 'Deze speciale pagina is voor intern gebruik door MediaWiki
 Als u een gekoppeld domein bezoekt, terwijl u niet bent aangemeld, gebruikt het systeem voor centraal aanmelden deze pagina om te bepalen of u bent aangemeld bij het centrale domein.
@@ -24479,7 +24380,7 @@ Een groep kan verwijderd worden door alle rechten van de groep te verwijderen.',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bewerken]])',
 	'centralauth-editgroup-nowikiset' => "Geen, van toepassing op alle wiki's.",
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki waarop hij of zij een gebruiker heeft:',
-	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de opgegeven wiki ('' $2 ''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "De globale gebruiker '''$1''' is niet actief op de opgegeven wiki ('' $2 ''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
 	'centralauth-editset' => 'Wikigroepen',
 	'centralauth-editset-legend-rw' => 'Wikigroep aanmaken of bewerken',
 	'centralauth-editset-legend-ro' => 'Wikigroepen',
@@ -24527,10 +24428,6 @@ U kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.',
 	'action-centralauth-lock' => 'globale gebruikers te ver- of ontgrendelen',
 	'centrallogin' => 'Centraal aanmelden',
 	'centralloginsuccesful' => 'Aangemeld',
-	'centralauth-completelogin-legend' => 'Aanmeldproces voltooien',
-	'centralauth-completelogin-finishing' => 'Verificatie voor Wikimedia Foundation sites. Even geduld...',
-	'centralauth-completelogin-text' => 'Aanmelden bij sites van de Wikimedia Foundation is bijna voltooid. Gebruik de onderstaande knop om te bevestigen en het aanmelden te voltooien.',
-	'centralauth-completelogin-submit' => 'Nu aanmelden',
 	'centralauth-completelogin-back' => 'Terug naar de vorige pagina.',
 	'centralauth-error-nologinattempt' => 'Er is geen actieve aanmeldpoging voor uw sessie.',
 	'centralauth-error-badtoken' => 'Het opgegeven authenticatietoken is verlopen of ongeldig.',
@@ -26705,7 +26602,7 @@ $messages['ps'] = array(
 	'centralauth-finish-send-confirmation' => 'پټنوم رابرېښليک کول',
 	'centralauth-attach-title' => 'د گڼون تاييد',
 	'centralauth-attach-submit' => 'گڼون لېږدول',
-	'centralauth' => 'نړېوال کارن سمبالګر', # Fuzzy
+	'centralauth' => 'نړېوال گڼون سمبالگر',
 	'centralauth-admin-username' => 'کارن-نوم:',
 	'centralauth-admin-lookup-ro' => 'د کارن مالومات کتل',
 	'centralauth-admin-lookup-rw' => 'کارن گڼون مهارول',
@@ -26777,8 +26674,8 @@ $messages['ps'] = array(
 	'centralauth-prefs-count-unattached' => 'ستاسې په نوم گڼون په $1 {{PLURAL:$1|پروژې|پروژو}} ناتاييد شوی پاتې دی.',
 	'centralauth-prefs-view' => 'د نړيوال کارن مالومات کتل', # Fuzzy
 	'centralauth-invalid-wiki' => 'د ويکي دا ډول توکبنسټ نشته: $1',
-	'centralauth-login-progress' => 'تاسې د {{int:Centralauth-groupname}} په ويکي ګانو کې ننوتلۍ:', # Fuzzy
-	'centralauth-logout-progress' => 'تاسې د {{int:Centralauth-groupname}} له لاندې ويکي ګانو ووتلۍ:', # Fuzzy
+	'centralauth-login-progress' => 'تاسې د {{int:Centralauth-groupname}} په ويکي گانو کې ننوتلۍ:',
+	'centralauth-logout-progress' => 'تاسې د {{int:Centralauth-groupname}} له نورو ويکي گانو ووتلۍ:',
 	'centralauth-log-name' => 'د نړيوال گڼون يادښت',
 	'centralauth-log-entry-delete' => 'د "$1" نړېوال گڼون ړنگ شو',
 	'centralauth-log-entry-lock' => 'د "$1" نړېوال گڼون وتړل شو',
@@ -26791,7 +26688,6 @@ $messages['ps'] = array(
 	'centralauth-log-status-oversighted' => 'پټ شوی',
 	'centralauth-log-status-none' => '(هېڅ)',
 	'centralauth-rightslog-name' => 'د نړيوالو رښتو يادښت',
-	'autologin' => 'خپلکاره ننوتل',
 	'globalgrouppermissions' => 'د نړېوالې ډلې سمبالنه',
 	'centralauth-existinggroup-legend' => 'شته ډلې',
 	'centralauth-newgroup-legend' => 'يوه نوې ډله جوړول',
@@ -26819,7 +26715,6 @@ $messages['ps'] = array(
 	'right-centralauth-lock' => 'نړيوال گڼون تړل يا ناتړل',
 	'right-centralauth-merge' => 'د هغوی گڼونونه سره اخږل',
 	'right-globalgrouppermissions' => 'نړېوالې ډلې مهارول',
-	'centralauth-completelogin-submit' => 'همدا اوس ننوتل',
 );
 
 /** Portuguese (português)
@@ -27399,10 +27294,6 @@ Renomear o usuário irá desunificar esta conta local da conta global.',
 	'centralauth-rightslog-entry-deleteset' => 'eliminou o conjunto de wikis "$1"',
 	'centralauth-rightslog-set-optin' => 'opção de inclusão (só as especificadas)',
 	'centralauth-rightslog-set-optout' => 'opção de exclusão (todas exceto as especificadas)',
-	'autologin' => 'Autenticação automática',
-	'centralauth-autologin-desc' => 'Esta página especial é utilizada internamente pelo MediaWiki.
-Quando você [[Special:UserLogin|se autentica]], o sistema de login universal faz com que seu navegador acesse esta página a partir de todos os domínios ligados, utilizando links em imagens.
-Você acessou esta página sem providenciar qualquer dado de autenticação, o que faz com que nada ocorra.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Você já está registrado localmente',
 	'centralauth-centralautologin-lostsession' => 'Os dados da seção foram perdidos',
 	'centralauth-centralautologin-badstate' => 'Estado inválido "$1"',
@@ -28557,10 +28448,6 @@ $messages['ru'] = array(
 	'centralauth-rightslog-entry-deleteset' => 'удалил набор вики «$1»',
 	'centralauth-rightslog-set-optin' => 'на основе принципа включения',
 	'centralauth-rightslog-set-optout' => 'на основе принципа исключения',
-	'autologin' => 'Автоматический вход',
-	'centralauth-autologin-desc' => 'Эта служебная страница предназначена для внутреннего использования в MediaWiki.
-Когда вы [[Special:UserLogin|представляетесь системе]], централизованная система входа указывает вашему браузеру обратиться к этой странице со всех доменов, используя графические ссылки.
-Вы запросили эту страницу без предоставления информации об аутентификации, поэтому ничего не происходит.',
 	'centralautologin' => 'Центральный вход',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Вы уже авторизовались локально',
 	'centralauth-centralautologin-badparams' => 'Указаны недействительные параметры аутентификации',
@@ -28656,10 +28543,6 @@ $messages['ru'] = array(
 	'action-centralauth-lock' => 'наложение или снятие блокировки на глобальную учётную запись',
 	'centrallogin' => 'Центральный вход в систему',
 	'centralloginsuccesful' => 'Опознание прошло успешно',
-	'centralauth-completelogin-legend' => 'Завершить процесс входа',
-	'centralauth-completelogin-finishing' => 'Аутентификация на сайтах Викимедиа; пожалуйста, подождите...',
-	'centralauth-completelogin-text' => 'Аутентификация вашей учетной записи на сайтах Викимедиа почти завершена! Используйте кнопку ниже, чтобы подтвердить и завершить процесс входа.',
-	'centralauth-completelogin-submit' => 'Войти сейчас',
 	'centralauth-completelogin-back' => 'Вернуться на предыдущую страницу.',
 	'centralauth-warning-notloggedin' => 'Вы не авторизовались.',
 	'centralauth-warning-notattached' => 'Локальная учетная запись не присоединена к глобальной.',
@@ -30534,10 +30417,6 @@ Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega računa.',
 	'centralauth-rightslog-entry-deleteset' => 'je izbrisal(-a) skupino wikijev »$1«',
 	'centralauth-rightslog-set-optin' => 'na osnovi vključitve',
 	'centralauth-rightslog-set-optout' => 'na osnovi izključitve',
-	'autologin' => 'Samodejna prijava',
-	'centralauth-autologin-desc' => 'Ta stran se uporablja znotraj MediaWiki.
-Ko se [[Special:UserLogin|prijavite]], osrednji prijavni sistem naroči vašemu brskalniku, da dostopa do te strani iz vseh povezanih domen z uporabo slikovnih povezav.
-Do strani ste dostopali brez navedbe overitvenih podatkov, zato ne naredi ničesar.',
 	'centralautologin' => 'Osrednja prijava',
 	'centralauth-centralautologin-logged-in' => 'Ste centralno prijavljeni kot $1. Za uveljavitev svojih uporabniških nastavitev stran ponovno naložite.',
 	'globalgroupmembership' => 'Članstvo v globalnih skupinah',
@@ -31150,7 +31029,6 @@ $messages['sr-ec'] = array(
 	'centralauth-rightslog-entry-deleteset' => '{{GENDER:|је обрисао|је обрисала|је обрисао}} вики скуп „$1“',
 	'centralauth-rightslog-set-optin' => 'засновани на пристајању',
 	'centralauth-rightslog-set-optout' => 'засновани на одустајању',
-	'autologin' => 'Аутоматска пријава',
 	'centralautologin' => 'Јединствена пријава',
 	'centralauth-centralautologin-logged-in' => 'Јединствено сте пријављени као $1. Освежите страницу да примените ваша корисничка подешавања.',
 	'globalgroupmembership' => 'Чланство у глобалним групама.',
@@ -31228,7 +31106,6 @@ $messages['sr-ec'] = array(
 	'right-globalgrouppermissions' => 'Управљање глобалним групама.',
 	'centrallogin' => 'Јединствена корисничка пријава',
 	'centralloginsuccesful' => 'Успешно пријављивање',
-	'centralauth-completelogin-submit' => 'Пријавите се сад',
 	'centralauth-completelogin-back' => 'Назад на претходну страницу.',
 	'centralauth-warning-notloggedin' => 'Тренутно нисте пријављени.',
 );
@@ -32166,10 +32043,6 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-rightslog-entry-deleteset' => 'raderat wikiset "$1"',
 	'centralauth-rightslog-set-optin' => 'opt-in-baserad',
 	'centralauth-rightslog-set-optout' => 'opt-out-baserad',
-	'autologin' => 'Automatisk inloggning',
-	'centralauth-autologin-desc' => 'Den här specialsidan används internt av MediaWiki.
-När du [[Special:UserLogin|loggar in]], instruerar det gemensamma inloggningssystemet din webbläsare att begära den här sidan från alla länkade domäner som använder bildlänkar.
-Du har begärt den här sidan utan att ha angivit någon verifieringsdata, så den gör ingenting.',
 	'centralautologin' => 'Central inloggning',
 	'centralauth-centralautologin-desc' => 'Denna specialsida används internt av MediaWiki.
 När du besöker en länkad domän när du inte är inloggad använder det centrala inloggningssystemet denna sida för att avgöra om du är inloggad på den centrala domänen.
@@ -32271,10 +32144,6 @@ Du kan visa och ändra någon av dem eller skapa ett nytt set.',
 	'action-centralauth-lock' => 'Lås eller lås upp globala konton',
 	'centrallogin' => 'Centrala användare logga in',
 	'centralloginsuccesful' => 'Inloggningen lyckades',
-	'centralauth-completelogin-legend' => 'Slutför inloggningsprocessen',
-	'centralauth-completelogin-finishing' => 'Autentiserar på Wikimedia Foundations webbplatser, var god vänta...',
-	'centralauth-completelogin-text' => 'Autentisering av ditt konto på Wikimedia Foundations webbplatser är nästan färdig! Använd knappen nedan för att bekräfta och slutföra din inloggning.',
-	'centralauth-completelogin-submit' => 'Logga in nu',
 	'centralauth-completelogin-back' => 'Tillbaka till föregående sida.',
 	'centralauth-error-nologinattempt' => 'Inget aktivt inloggningsförsök pågår för din session.',
 	'centralauth-error-badtoken' => 'Den angivna autentiseringssymbolen är antingen utgången eller ogiltig.',
@@ -36983,8 +36852,6 @@ $messages['zh-hans'] = array(
 	'centralauth-rightslog-entry-deleteset' => '已删除的维基组"$1"',
 	'centralauth-rightslog-set-optin' => '选择的基础',
 	'centralauth-rightslog-set-optout' => '基于的退出',
-	'autologin' => '自动登录',
-	'centralauth-autologin-desc' => '这个特殊页面是在MediaWiki中内部使用的。当您[[Special:UserLogin|登入]]后，中央登入系统会利用图像链接，指示您的浏览器向所有关联的域名请求这个页面。您在访问本页面时未提供验证数据，因此本页无效。',
 	'centralautologin' => '中央登录',
 	'centralauth-centralautologin-desc' => '此特殊页面由MediaWiki于内部使用。当你未登入时进入一个相连域名，中央登入系统使用此页以确定你是否已登入至中心域名。你请求本页面没有提供任何身份验证资料，因此其它不会执行任何操作。',
 	'centralauth-centralautologin-alreadyloggedinlocally' => '您已经在本地登录了',
@@ -37083,10 +36950,6 @@ $messages['zh-hans'] = array(
 	'action-centralauth-lock' => '锁定或解锁全局帐户',
 	'centrallogin' => '中央用户登录',
 	'centralloginsuccesful' => '登录成功',
-	'centralauth-completelogin-legend' => '完成登录过程',
-	'centralauth-completelogin-finishing' => '正在进行维基媒体基金会站点的验证，请稍候...',
-	'centralauth-completelogin-text' => '即将完成验证您在维基媒体基金会站点的帐户！使用下面的按钮确认和完成登录。',
-	'centralauth-completelogin-submit' => '现在登录',
 	'centralauth-completelogin-back' => '返回前一页',
 	'centralauth-error-nologinattempt' => '你的会话没有主动登入尝试正在进行。',
 	'centralauth-error-badtoken' => '提供的身份令牌已过期或无效。',
