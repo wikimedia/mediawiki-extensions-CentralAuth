@@ -16,6 +16,24 @@
       "revId": "dc06b430bf68c6e900eb8724316608abd7c31775",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29433135_c50a7ed3",
+        "filename": "EmailableUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-10-01T13:41:40Z",
+      "side": 1,
+      "message": "It was defined in PS1... Fixed in Idf19ab05 by Nemo",
+      "parentUuid": "29433135_6e8c4f81",
+      "revId": "dc06b430bf68c6e900eb8724316608abd7c31775",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
