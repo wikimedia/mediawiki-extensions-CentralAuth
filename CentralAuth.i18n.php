@@ -267,6 +267,7 @@ Renaming it will cause the local account to be detached from the global one.",
 	'centralauth-login-no-others'    => 'You have been automatically logged into other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
+	'centralauth-welcomecreation-msg' => '', # do not translate or duplicate this message to other languages
 
 	// Logging
 	'centralauth-log-name'         => 'Global account log',
