@@ -195,22 +195,45 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
 
-		// Mark the session to include the edge login imgs on the next pageview
-		$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
-
 		// Show the login success page
 		$form = new LoginForm( new FauxRequest() );
+		$inject_html = '';
+
+		if ( $attempt['type'] === 'signup' ) {
+			$msg = $this->msg( 'centralauth-welcomecreation-msg' );
+			if ( !$msg->isDisabled() ) {
+				$inject_html .= $msg->params( wfEscapeWikiText( $user->getName() ) )->parseAsBlock();
+			}
+		}
 
 		// Allow other extensions to modify the returnTo and returnToQuery
 		wfRunHooks( 'CentralAuthPostLoginRedirect', array(
 			&$attempt['returnTo'],
 			&$attempt['returnToQuery'],
 			$attempt['stickHTTPS'],
-			$attempt['type']
+			$attempt['type'],
+			&$inject_html
 		) );
 
+		if ( $inject_html === '' ) {
+			$action = 'successredirect';
+
+			// Mark the session to include the edge login imgs on the next pageview
+			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+		} else {
+			$action = 'success';
+
+			$this->getOutput()->addHTML( $inject_html );
+
+			// Show HTML to trigger cross-domain cookies.
+			// This will trigger filling in the "remember me" token cookie on the
+			// central wiki, which can only be done once authorization is completed.
+			$this->getOutput()->addHtml(
+				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
+		}
+
 		$form->showReturnToPage(
-			'successredirect',
+			$action,
 			$attempt['returnTo'],
 			$attempt['returnToQuery'],
 			( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
