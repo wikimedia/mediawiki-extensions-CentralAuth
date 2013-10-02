@@ -741,6 +741,7 @@ $specialPageAliases['yi'] = array(
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
+	'CentralAutoLogin' => array( '中央认证登录' ),
 	'MergeAccount' => array( '整合账户' ),
 	'GlobalGroupMembership' => array( '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),

@@ -5763,11 +5763,8 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.", # Fuzzy
 	'centralauth-rightslog-entry-deleteset' => 'c\'hoari wikioù "$1" dilamet',
 	'centralauth-rightslog-set-optin' => 'Aozet diwar opt-in',
 	'centralauth-rightslog-set-optout' => 'Aozet diwar opt-out',
-	'autologin' => 'Kevreañ emgefre',
-	'centralauth-autologin-desc' => "Ar bajenn dibar-mañ zo implijet e diabarzh Mediawiki.
-Pa [[Special:UserLogin|kevreoc'h]], ar reizhiad gwiriañ pennañ a c'houlenn digant ho merdeer kargañ ar bajenn-mañ evit pep domani staget outañ, en ur implijout liammoù skeudennoù.
-Goulennet ho peus ar bajenn-mañ hep reiñ titouroù dilesadur ebet, dre-se ne ra netra.",
 	'centralautologin' => 'Kevreañ kreiz',
+	'centralauth-centralautologin-alreadyloggedinlocally' => "Kevreet oc'h c'hoazh ent lec'hel",
 	'centralauth-centralautologin-lostsession' => "Kollet eo bet roadennoù an dalc'h",
 	'centralauth-centralautologin-badstate' => 'Stad direizh "$1"',
 	'centralauth-centralautologin-corsfail' => "C'hwitet eo ar wiriadenn orin CORS",
@@ -5852,8 +5849,6 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Strolladoù hollek m'emañ an implijer",
 	'action-centralauth-lock' => 'prennañ pe dibrennañ kontoù hollek',
 	'centralloginsuccesful' => "Kevreet oc'h",
-	'centralauth-completelogin-legend' => 'Echuiñ an argerzh kevreañ',
-	'centralauth-completelogin-submit' => 'Kevreañ bremañ',
 	'centralauth-completelogin-back' => "Distreiñ d'ar bajenn a-raok.",
 	'centralauth-warning-notloggedin' => "N'oc'h ket kevreet evit c'hoazh.",
 	'centralauth-warning-notattached' => "n'eo ket stag ar gont lec'hel ouzh unan hollek.",
@@ -6654,6 +6649,7 @@ $messages['ckb'] = array(
 	'centralauth-admin-info-editcount' => 'سەرجەمی ژمارەی دەستکارییەکان',
 	'centralauth-admin-yes' => 'بەڵێ',
 	'centralauth-admin-no' => 'نەخێر',
+	'centralauth-admin-list-legend-ro' => 'پێرستی ھەژمارە خۆماڵییەکان',
 	'centralauth-admin-blocked' => 'بەربەست کراوە، لە $3، $4 ماوەی بەسەر دەچێ.
 ھۆکار: $2',
 	'centralauth-admin-list-method' => 'شێواز',
@@ -19016,7 +19012,7 @@ $messages['ko'] = array(
 	'centralauth-admin-multi-botcheck' => '봇 항목으로 [[Special:RecentChanges|{{int:recentchanges}}]]에 항목을 표시합니다.',
 	'centralauth-seconds-ago' => '$1{{PLURAL:$1|초}} 전',
 	'centralauth-minutes-ago' => '$1{{PLURAL:$1|분}} 전',
-	'centralauth-hours-ago' => '$1{{PLURAL:$1|시간}} 전',
+	'centralauth-hours-ago' => '$1시간 전',
 	'centralauth-days-ago' => '$1일 전',
 	'centralauth-months-ago' => '$1{{PLURAL:$1|달}} 전',
 	'centralauth-years-ago' => '$1{{PLURAL:$1|년}} 전',
@@ -26616,18 +26612,18 @@ $messages['ps'] = array(
 	'centralauth-admin-info-hidden' => 'پټ پوړ:',
 	'centralauth-admin-yes' => 'هو',
 	'centralauth-admin-no' => 'نه',
-	'centralauth-admin-hidden-list' => 'د ټولګړي لړليک نه',
+	'centralauth-admin-hidden-list' => 'د ټولگړي لړليک نه',
 	'centralauth-admin-hidden-oversight' => 'پټ شوی',
 	'centralauth-admin-list-legend-ro' => 'د سيمه ايزو ګڼونونو لړليک',
 	'centralauth-admin-list-legend-rw' => 'سيمه ايز گڼونونه نااخږل',
 	'centralauth-admin-blocked' => 'بنديز لګېدلی، د بنديز پای په $3 نېټه او $4 بجو.
 سبب: $2',
-	'centralauth-admin-blocked-indef' => 'ناپايه بنديز لګېدلی.
+	'centralauth-admin-blocked-indef' => 'ناپايه بنديز لگېدلی.
 سبب: $1',
 	'centralauth-admin-blocklog' => 'د بنديز يادښت',
 	'centralauth-admin-list-localwiki' => 'سيمه ايز ويکي',
 	'centralauth-admin-list-editcount' => 'د سمونونو شمېر',
-	'centralauth-admin-list-blocked' => 'بنديز لګېدلی',
+	'centralauth-admin-list-blocked' => 'بنديز لگېدلی',
 	'centralauth-admin-unmerge' => 'ټاکلي نااخږل',
 	'centralauth-admin-merge' => 'ټاکلي اخږل',
 	'centralauth-admin-bad-input' => 'د اخږلو ناسمه ټاکنه',
@@ -36979,6 +36975,7 @@ $5
  * @author Anakmalaysia
  * @author Bencmq
  * @author Chihongleegabriel
+ * @author Cwlin0416
  * @author Gzdavidwong
  * @author Horacewai2
  * @author Hydra
@@ -37224,10 +37221,6 @@ $messages['zh-hant'] = array(
 	'centralauth-rightslog-entry-deleteset' => '已刪除維基組$1',
 	'centralauth-rightslog-set-optin' => '選擇的基礎',
 	'centralauth-rightslog-set-optout' => '基於的退出',
-	'autologin' => '自動登入',
-	'centralauth-autologin-desc' => '這個版殊頁面是在MediaWiki中內部使用的。當您[[Special:UserLogin|登入]]後，
-	該中央登入系統會利用圖片連結，指示您的瀏覽器響全部連接的網域度請求這個頁面。
-	您在這一頁面中不需要再給出任何的認證資料，即是什麼也不用作。',
 	'centralautologin' => '中央登入',
 	'centralauth-centralautologin-desc' => '此特殊頁面由MediaWiki於內部使用。當你未登入時進入一個相連域名，中央登入系統使用此頁以確定你是否已登入至中心域名。你請求本頁面沒有提供任何身份驗證資料，因此其它不會執行任何操作。',
 	'centralauth-centralautologin-alreadyloggedinlocally' => '你已經在本地登入',
@@ -37250,7 +37243,7 @@ $messages['zh-hant'] = array(
 	'centralauth-globalgroupperms-grouplistitem' => '$1 （[[Special:GlobalGroupPermissions/$2|去查看及編輯許可]]）',
 	'centralauth-globalgroupperms-nogroups' => '沒有定義全域組。',
 	'centralauth-existinggroup-legend' => '現有的組',
-	'centralauth-newgroup-legend' => '建立一個新組',
+	'centralauth-newgroup-legend' => '建立一個新群組',
 	'centralauth-newgroup-intro' => '您可以用這個表格去指定一個新組的權限。要留意的就是該組不會存在，除非它有指定許可。',
 	'centralauth-globalgroupperms-newgroupname' => '新組名:',
 	'centralauth-globalgroupperms-creategroup-submit' => '指定許可',
@@ -37325,10 +37318,6 @@ $messages['zh-hant'] = array(
 	'action-centralauth-lock' => '鎖定或解除鎖定全域帳戶',
 	'centrallogin' => '中央使用者登入',
 	'centralloginsuccesful' => '登入成功',
-	'centralauth-completelogin-legend' => '完成登入過程',
-	'centralauth-completelogin-finishing' => '正在進行維基媒體基金會網站的身份驗證，請稍候...',
-	'centralauth-completelogin-text' => '即將完成驗證您在維基媒體基金會網站的帳戶！使用下面的按鈕確認和完成登入。',
-	'centralauth-completelogin-submit' => '立即登入',
 	'centralauth-completelogin-back' => '回到上一頁。',
 	'centralauth-error-nologinattempt' => '你的會話沒有主動登入嘗試正在進行。',
 	'centralauth-error-badtoken' => '提供的身份令牌已過期或無效。',
