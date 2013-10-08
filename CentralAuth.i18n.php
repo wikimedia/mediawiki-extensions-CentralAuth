@@ -8302,15 +8302,15 @@ Hesabanê binan hewna konfirme nibiyo.',
 Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-attach-submit' => 'Hesab bere',
 	'centralauth-attach-success' => 'Ena hesab, hesabê yew biyayî rê berd.',
-	'centralauth' => 'İdarekarê hesab dê globali', # Fuzzy
+	'centralauth' => 'Global hesabé idarekari',
 	'centralauth-admin-intro' => 'Ena interface de ti eşkeno hesabanê globalî îdare biker.',
-	'centralauth-admin-manage' => 'Melumatê karberi idare bike', # Fuzzy
+	'centralauth-admin-manage' => 'Melumaté karberi idare bık',
 	'centralauth-admin-username' => 'Nameyê karberi:',
 	'centralauth-admin-lookup-ro' => 'Hesabê karberi bivine',
 	'centralauth-admin-lookup-rw' => 'Hesabê karberi idare bike',
 	'centralauth-admin-permission' => 'Teyna stewardan eşkeno hesaban yew bikerî.',
 	'centralauth-admin-no-unified' => 'Ser ena name de hesabê yewbiyayî çini yo.',
-	'centralauth-admin-info-header' => 'Melumatê karberiyê globalî', # Fuzzy
+	'centralauth-admin-info-header' => 'Global malumaté hesabi',
 	'centralauth-admin-info-username' => 'Nameyê karberi:',
 	'centralauth-admin-info-id' => "ID'ê Karberi",
 	'centralauth-admin-info-registered' => 'Qeyd biyayış:',
@@ -8378,6 +8378,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-listusers-attached' => '[[User:$1|lokal de esto]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'ataç nibiyo ya zi lokal de çini yo',
+	'centralauth-admin-multi-bot' => 'Vırnayışé peyéni',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sanise|saniseyan}} vernî ra',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|dakika|dakikayan}} vernî de',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|seet|seetan}} vernî de',
@@ -8394,16 +8395,16 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-prefs-detail-unattached' => 'Ena proje konfirme nibiyo ke hesabê globalî ra girediyayo.',
 	'centralauth-prefs-manage' => 'Hesabê globali idare kerê',
 	'centralauth-prefs-view' => 'Global hesabi bıvin',
-	'centralauth-renameuser-merged' => 'Belki ena $1 karber sistemê cikewtişê yewî ta transfer biyo.
-Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Karberê $2î qe yew hesabê globalî rê reserve biyo.', # Fuzzy
+	'centralauth-renameuser-merged' => 'Belki karbe $1 sistemé cikewtişé zewira transfer biyo.
+Reyna name dayış belki ena karber sistemé globali ra wedarneno.',
+	'centralauth-renameuser-reserved' => '$2 namey karberi zew hesabdé globaliré abıryayayo',
 	'centralauth-invalid-wiki' => 'Eno databaseyê wîkîyî çini yo: $1',
 	'centralauth-account-exists' => 'Ni eşkeno hesab viraze: ena nameyê karberî sistemê cikewtîşî de zaten esto.',
-	'centralauth-account-exists-reset' => 'No namey karberi  $1  wiki  sero qeydın niyo lakin sistem dê ronıştışo yewbiyayen dı çınyo.', # Fuzzy
-	'centralauth-login-progress' => 'Zewmi proceyan de {{int:Centralauth-groupname}} rê abeno:', # Fuzzy
-	'centralauth-logout-progress' => 'Zewmi proceyan de {{int:Centralauth-groupname}} rê racneyeno:', # Fuzzy
+	'centralauth-account-exists-reset' => 'No namey karberi  $1  wiki  sero çınyo lakin sistemd ronıştışo [[Special:CentralAuth/$1|zewbi]]d esto.',
+	'centralauth-login-progress' => 'Zewmi proceyand {{int:Centralauth-groupname}}abeno:',
+	'centralauth-logout-progress' => 'Zewmi proceyand {{int:Centralauth-groupname}}racneyéno:',
 	'centralauth-login-no-others' => 'Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik kewto:',
-	'centralauth-logout-no-others' => 'Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik veciyo:', # Fuzzy
+	'centralauth-logout-no-others' => 'Projeyané {{int:Centralauth-groupname}} bıniré otomatikmen vıcyéno.',
 	'centralauth-hidden-blockreason' => 'wikiyanê hemi de pê $1, $2 de pê ena sebebanê: $3',
 	'centralauth-log-name' => 'Logê hesab ê globalî',
 	'centralauth-log-header' => 'Ena qeyd de operasyonanê hesaban ê globalî esto: wedarnayîşî, kilit kerdişî u qefilnayîşî.',
@@ -8423,6 +8424,7 @@ Reyna name dayiş belki ena karber sistemê gloablî ra wedarneno.', # Fuzzy
 	'centralauth-rightslog-entry-groupperms' => 'qe $1 ra $2 rê $3, desturê grupî vurne',
 	'centralauth-rightslog-entry-groupperms2' => 'Qe $1, desturê grupî vurno. $2 de kerd; $3 wedarno',
 	'centralauth-rightslog-entry-groupperms3' => 'qe $1 ra $2 rê $3, eza grupî restriksiyonê wîkî vurne',
+	'centralauth-rightslog-entry-grouprename' => "Gruba $2'ra $1 fına bi name",
 	'centralauth-rightslog-header' => 'Ena qeyd de operasyonê grup ê globalî esto: ezayê u vurnayîşê desturî',
 	'centralauth-rightslog-entry-newset' => 'setê $2 wîkî yê $1î viraşt pê ena wîkîyan: $3',
 	'centralauth-rightslog-entry-setrename' => 'Nameyê setê wîkî yê "$2"î, \'\'$1\'\' rê vurne',
