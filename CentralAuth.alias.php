@@ -233,6 +233,7 @@ $specialPageAliases['frp'] = array(
 /** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'CentralAuth' => array( 'Autenticación_central' ),
+	'CentralAutoLogin' => array( 'Rexistro_de_autenticación_central' ),
 	'MergeAccount' => array( 'Fusionar_contas' ),
 	'GlobalGroupMembership' => array( 'Dereitos_globais' ),
 	'GlobalGroupPermissions' => array( 'Permisos_de_grupo_globais' ),

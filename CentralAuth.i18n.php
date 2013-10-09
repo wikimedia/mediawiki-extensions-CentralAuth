@@ -10742,7 +10742,7 @@ $messages['fa'] = array(
 	'centralauth-warning-notloggedin' => 'شما در حال حاضر ثبت ورود نشده‌اید.',
 	'centralauth-warning-notattached' => 'حساب محلی به یک حساب سراسری نپیوسته است.',
 	'centralauth-finishglobaliseemail_subject' => 'تأیید حساب {{SITENAME}}',
-	'centralauth-finishglobaliseemail_body' => 'آدرس رایانامه شما با توجه به حساب شما "$2" در تمامی پروژه ها هماهنگ شده است. حساب اصلی شما نیز در {{SITENAME}} قراردارد.
+	'centralauth-finishglobaliseemail_body' => 'نشانی رایانامه شما با توجه به حساب شما «$2» در تمامی پروژه ها هماهنگ شده است. حساب اصلی شما نیز در {{SITENAME}} قراردارد.
 
 برای تایید آنکه این اکانت واقعا به شما تعلق دارد. البته توجه داشته باشید که ادغام حساب های کاربری نمیتواندبه صورت خودکار انجام شود.
 همچنین اگر شما گذرواژه حساب خودتان را گم کرده اید میتوانید از پیوند زیر استفاده نمایید.
@@ -28158,6 +28158,7 @@ $messages['ru'] = array(
 	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
 	'centralauth-admin-action-hide-oversight' => 'Полностью скрыть выбранные учётные записи',
 	'centralauth-admin-multi-bot' => 'Свежие правки',
+	'centralauth-admin-multi-botcheck' => 'Помечать записи на странице [[Special:RecentChanges|{{int:recentchanges}}]] как правки бота.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часа|часов}} назад',
