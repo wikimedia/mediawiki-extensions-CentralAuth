@@ -28156,6 +28156,7 @@ $messages['ru'] = array(
 	'centralauth-admin-multi-username' => 'Введите одно или несколько имен пользователей, по одному на строчку',
 	'centralauth-admin-multi-notfound' => 'Поиск не возвратил имён пользователей.',
 	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
+	'centralauth-admin-action-hide-lists' => 'Скрыть выбранные учётные записи из публичных списков',
 	'centralauth-admin-action-hide-oversight' => 'Полностью скрыть выбранные учётные записи',
 	'centralauth-admin-multi-bot' => 'Свежие правки',
 	'centralauth-admin-multi-botcheck' => 'Помечать записи на странице [[Special:RecentChanges|{{int:recentchanges}}]] как правки бота.',
