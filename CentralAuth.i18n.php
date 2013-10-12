@@ -13969,6 +13969,7 @@ $messages['hil'] = array(
  * @author Dalibor Bosits
  * @author Ex13
  * @author Herr Mlinka
+ * @author MaGa
  * @author Roberta F.
  * @author SpeedyGonsales
  */
@@ -14149,7 +14150,7 @@ Lozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijedno
 	'centralauth-prefs-complete' => 'Sve u redu!',
 	'centralauth-prefs-migration' => 'Migracija u tijeku',
 	'centralauth-prefs-count-attached' => 'Vaš suradnički račun je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}}.',
-	'centralauth-prefs-count-unattached' => 'Nepotvrđeni računi s vašim imenom postoje još na {{PLURAL:$1|sljedećem projektu|sljedećim projektima|sljedećim projektima}} $1.',
+	'centralauth-prefs-count-unattached' => 'Nepotvrđeni računi s vašim imenom postoje još na $1 {{PLURAL:$1|projektu|projekata}}.',
 	'centralauth-prefs-detail-unattached' => 'Pripadnost ovog projekta jedinstvenom sustavu prijave nije potvrđena.',
 	'centralauth-prefs-manage' => 'Uredite Vaš središnji suradnički račun',
 	'centralauth-prefs-view' => 'Pogledaj podatke globalnog suradnika', # Fuzzy
@@ -30673,7 +30674,7 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-list-legend-rw' => 'Раздвоји локалне налоге',
 	'centralauth-admin-unattached' => 'неповезано',
 	'centralauth-admin-blocked' => 'Блокада истиче $3 у $4. Разлог: $2',
-	'centralauth-admin-blocked-indef' => 'Блокиран бесконачно. Разлог: $1',
+	'centralauth-admin-blocked-indef' => 'Трајно блокиран. Разлог: $1',
 	'centralauth-admin-blocklog' => 'историја блокирања',
 	'centralauth-admin-list-localwiki' => 'Локални вики',
 	'centralauth-admin-list-attached-on' => 'Прикључено',
@@ -36587,7 +36588,7 @@ $messages['zh-hans'] = array(
 [[Special:GlobalGroupPermissions|回到组管理]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|编辑]])',
 	'centralauth-editgroup-nowikiset' => '无，适用所有wiki。',
-	'centralauth-globalgrouppermissions-knownwiki' => '选择一个他们有账户的wiki:',
+	'centralauth-globalgrouppermissions-knownwiki' => '他拥有账户的wiki：',
 	'centralauth-globalgroupmembership-badknownwiki' => "该全域帐户'''$1'''在您所指定的wiki（'' $2 ''）中并不活跃。您可能正在尝试指定错的用户!",
 	'centralauth-editset' => '维基组',
 	'centralauth-editset-legend-rw' => '编辑或添加维基组',
