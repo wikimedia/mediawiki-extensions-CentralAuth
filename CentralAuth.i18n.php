@@ -10945,6 +10945,7 @@ Ennen yhdistämistä luotujen paikallisten tunnusten salasanat palautuvat yhdist
 	'centralauth-admin-multi-notfound' => 'Haulla ei löytynyt käyttäjätunnuksia.',
 	'centralauth-admin-multi-searchprefix' => 'Tai etsi tunnuksia etuliitteellä',
 	'centralauth-admin-action-lock-lock' => 'Lukitse valitut tunnukset',
+	'centralauth-admin-action-hide-lists' => 'Piilota valitut tunnukset julkisista listoista',
 	'centralauth-admin-multi-bot' => 'Tuoreet muutokset',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekunti|sekuntia}} sitten',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minuutti|minuuttia}} sitten',
@@ -10967,7 +10968,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-renameuser-reserved' => 'Käyttäjätunnus $2 on varattu järjestelmänlaajuiselle tunnukselle.',
 	'centralauth-invalid-wiki' => 'Wiki-tietokantaa $1 ei ole olemassa.',
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
-	'centralauth-account-exists-reset' => 'Käyttäjätunnus $1 ei ole rekisteröity tässä wikissä, mutta se löytyy yhdistetystä kirjautumisjärjestelmästä.', # Fuzzy
+	'centralauth-account-exists-reset' => 'Käyttäjätunnusta $1 ei ole rekisteröity tässä wikissä, mutta voit resetoida sen salasanan [[Special:CentralAuth/$1|wikissä, jossa tunnus on]].',
 	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:',
 	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{int:Centralauth-groupname}} -wikeistä:', # Fuzzy
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
@@ -11038,7 +11039,7 @@ Ryhmää ei ole olemassa, jos sille ei ole annettu mitään oikeuksia.',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muokkaa]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki, jossa käyttäjällä on tunnus:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Järjestelmänlaajuista tunnusta '''$1''' ei ole olemassa wikissä ''$2''.
-Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!", # Fuzzy
+Tarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 	'centralauth-editset' => 'Wikijoukot',
 	'centralauth-editset-legend-rw' => 'Wikijoukkojen muokkaus ja poisto',
 	'centralauth-editset-legend-ro' => 'Luettelo wikijoukoista',
@@ -26012,16 +26013,16 @@ Le ciav për ij cont locaj creà prima dl'unificassion a tornëran ai sò valor 
 	'centralauth-prefs-detail-unattached' => "Ës sit-sì a l'é pa restà confermà coma bon për sò cont global.",
 	'centralauth-prefs-manage' => 'Gestion ëd sò cont global',
 	'centralauth-prefs-view' => "Vëdde j'anformassion globaj an sël cont",
-	'centralauth-renameuser-merged' => "L'utent $1 a l'é stàit migrà al sistema d'intrada unificà.
-Arnomélo a farà sì che ël cont local a sia dëstacà da col global.", # Fuzzy
-	'centralauth-renameuser-reserved' => "L'utent $2 a l'é arzervà për un cont global.", # Fuzzy
+	'centralauth-renameuser-merged' => "L'utent $1 a l'é stàit mudà al sistema d'intrada unificà.
+Arnomélo a farà sì che ël cont local a sia dëstacà da col global.",
+	'centralauth-renameuser-reserved' => "Lë stranòm $2 a l'é arservà për un cont global.",
 	'centralauth-invalid-wiki' => 'Pa gnun-a base ëd dàit wiki parèj: $1',
 	'centralauth-account-exists' => "Ël cont a peul pa esse creà: lë stranòm utent ciamà a l'é già pijà ant ël sistema d'intrada unificà.",
-	'centralauth-account-exists-reset' => "Lë stranòm $1 a l'é pa registrà ansima sta wiki, ma a esist ant ël sistema ëd conession unificà.", # Fuzzy
-	'centralauth-login-progress' => 'Intré ant le wiki ëd {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => "Seurte da j'àutre wiki ëd {{int:Centralauth-groupname}}:", # Fuzzy
+	'centralauth-account-exists-reset' => "Lë stranòm $1 a l'é pa registrà ansima a costa wiki, ma a peul reinissialisé soa ciav an s' [[Special:CentralAuth/$1|na wiki anté ch'a-l l'é]].",
+	'centralauth-login-progress' => "A l'é an camin ch'as colega a le wiki ëd {{int:Centralauth-groupname}}:",
+	'centralauth-logout-progress' => "A l'é an camin ch'a seurt da j'àutre wiki ëd {{int:Centralauth-groupname}}:",
 	'centralauth-login-no-others' => "It ses automaticament intrà ant j'àutri proget ëd {{int:Centralauth-groupname}}.",
-	'centralauth-logout-no-others' => "A l'é automaticament surtì da j'àutri proget ëd {{int:Centralauth-groupname}}.", # Fuzzy
+	'centralauth-logout-no-others' => "A l'é surtì an automàtich da j'àutri proget ëd {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'stërmà globalment da $1 a $2 con la rason sota: $3',
 	'centralauth-log-name' => 'Registr ëd cont global',
 	'centralauth-log-header' => "Sto registr-sì a conten j'operassion relative ai cont globaj: scancelament, blocagi e dësblocagi.",
@@ -26041,6 +26042,7 @@ Arnomélo a farà sì che ël cont local a sia dëstacà da col global.", # Fuzz
 	'centralauth-rightslog-entry-groupperms' => 'cangià ij përmess ëd partìa për $1 da $2 a $3',
 	'centralauth-rightslog-entry-groupperms2' => "a l'ha cangià ij përmess ëd partìa për $1. Giontà $2; Gavà $3",
 	'centralauth-rightslog-entry-groupperms3' => "a l'ha cangià l'ansema arstrenzù ëd partìa ëd wiki për $1 da $2 a $3",
+	'centralauth-rightslog-entry-grouprename' => 'partìa $2 arnominà a $1',
 	'centralauth-rightslog-header' => "Cost registr a conten j'operassion dzora le partìe globaj: ij cambiament d'apartenensa e ëd përmess",
 	'centralauth-rightslog-entry-newset' => "a l'ha creà l'ansema ëd wiki $1 ëd $2 con le wiki sì-dapress: $3",
 	'centralauth-rightslog-entry-setrename' => 'arnominà l\'ansema ëd wiki "$2" a "$1"',
@@ -26049,6 +26051,23 @@ Arnomélo a farà sì che ël cont local a sia dëstacà da col global.", # Fuzz
 	'centralauth-rightslog-entry-deleteset' => 'scancelà l\'ansema ëd wiki "$1"',
 	'centralauth-rightslog-set-optin' => "basà an sl'adesion esplìssita",
 	'centralauth-rightslog-set-optout' => 'basà an sël gavesse ëd fasson esplìssita',
+	'centralautologin' => 'Conession sentralisà',
+	'centralauth-centralautologin-desc' => "Costa pàgina special a l'é dovrà an antern da MediaWiki.
+Cand chiel a vìsita un domini con na liura sensa esse intrà ant ël sistema, ël sistema ëd conession sentralisà a deuvra costa pàgina për determiné se chiel a l'é colegà al domini sentral.
+A l'ha ciamà costa pàgina sensa dé ëd dàit d'autenticassion, donca chila a fà gnente.",
+	'centralauth-centralautologin-alreadyloggedinlocally' => "A l'é già intrà ant ël sistema an local",
+	'centralauth-centralautologin-badparams' => "Ij paràmeter d'autenticassion spessificà a j'ero nen bon",
+	'centralauth-centralautologin-lostsession' => 'Ij dàit ëd session a son ëstàit përdù',
+	'centralauth-centralautologin-badstate' => 'Stat «$1» nen vàlid',
+	'centralauth-centralautologin-notposted' => 'Ël formolari ëd conession sentralisà a dev esse publicà',
+	'centralauth-centralautologin-badstate-central' => "Lë stat «$1» a l'é nen vàlid ant la wiki sentral",
+	'centralauth-centralautologin-badstate-local' => "Lë stat «$1» a l'é nen vàlid an sla wiki local",
+	'centralauth-centralautologin-badwiki' => 'La wiki «$1» a va nen bin për la conession sentralisà',
+	'centralauth-centralautologin-corsfail' => "La verìfica d'orìgin CORS a l'ha falì",
+	'centralauth-centralautologin-p3p-explanation' => "Chèich navigador a l'han damanca ëd régole P3P satìe për mandé o arsèive dij bëscotin an chèich cas, dont la situassion amplicà ant la verìfica dla conession SUL. A l'é na tapa inùtil da fé an costa situassion, dagià che tute le pàgine amplicà a son ant la midema partìa ëd wiki e che l'istess P3P a l'é për la pipart vej e bandonà; për boneur, le régole nen vàlide ch'a armando a sta pàgina a son al moment considerà «bon-e a basta» da le configurassion dë stàndard ëd costi navigador.
+
+Për piasì, ch'a lesa torna le régole d'arservatëssa lesìbij da le përson-e ëd cost sit për savèj coma tuta anformassion cujìa a podrìa esse dovrà.",
+	'centralauth-centralautologin-logged-in' => "A l'é intrà ant ël sistema ëd fasson sentralisà tanme $1. Ch'a cria torna la pàgina për apliché ij sò gust utent.",
 	'globalgroupmembership' => 'Apartenensa a partìe globaj',
 	'globalgrouppermissions' => 'Gestion ëd le partìe globaj',
 	'centralauth-globalgroupperms-grouplist' => "Le partìe globaj sì-dapress a son ëstàite configurà.
@@ -26068,22 +26087,25 @@ Ch'a nòta che na partìa a esist pa, gavà che a l'abia dij përmess assignà."
 	'centralauth-editgroup-name' => 'Nòm ëd la partìa:',
 	'centralauth-editgroup-display' => 'Nòm localisà ëd la partìa:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|modìfica]])',
+	'centralauth-editgroup-invalid-name' => 'Nòm ëd partìa global fornì nen vàlid',
 	'centralauth-editgroup-member' => 'Nòm localisà dij mèmber dla partìa:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|modìfica]])',
 	'centralauth-editgroup-members' => 'Lista dij mèmber:',
 	'centralauth-editgroup-members-link' => "[[Special:GlobalUsers/$1|Lista dj'utent con drit $2]]",
 	'centralauth-editgroup-restrictions' => "Ansema ëd wiki andoa sta partìa-sì a l'é ativa:",
+	'centralauth-editgroup-rename-taken' => "Ël cangiament ëd nòm a l'ha falì: a-i é già na partìa ch'a pòrta ël nòm $1.",
 	'centralauth-editgroup-noset' => '(gnun)',
-	'centralauth-editgroup-submit' => 'Salvé le modìfiche ai përmess dla partìa', # Fuzzy
+	'centralauth-editgroup-submit' => 'Salvé le modìfiche dla partìa global',
 	'centralauth-editgroup-perms' => 'Përmess assignà:',
 	'centralauth-editgroup-reason' => 'Rason:',
-	'centralauth-editgroup-success' => 'Përmess ëd partìa cangià', # Fuzzy
-	'centralauth-editgroup-success-text' => "It l'has cangià da bin ij përmess ëd partìa për la partìa $1.
-[[Special:GlobalGroupPermissions|Artorna a la gestion ëd la partìa]]", # Fuzzy
+	'centralauth-editgroup-success' => 'Partìa global modificà',
+	'centralauth-editgroup-success-text' => 'Partìa global $1 agiornà për da bin.
+[[Special:GlobalGroupPermissions|Torné a la gestion ëd le partìe]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|modìfica]])',
+	'centralauth-editgroup-nowikiset' => 'Gnun, as àplica a tute le wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki andoa a l'han un cont:",
 	'centralauth-globalgroupmembership-badknownwiki' => "L'utent global '''$1''' a l'é pa ativ an sla wiki ch'a l'ha specificà ('' $2 '').
-A peul esse an camin ch'a assigna dij drit a l'utent ësbalià!", # Fuzzy
+A peul esse an camin ch'a assigna dij drit a l'utent ësbalià!",
 	'centralauth-editset' => 'Ansema ëd wiki',
 	'centralauth-editset-legend-rw' => "Modìfica o crea n'ansema ëd wiki",
 	'centralauth-editset-legend-ro' => "Lista dj'ansema ëd wiki",
@@ -26117,17 +26139,27 @@ A peule vardé e modifiché mincadun ëd lor, o creé n'ansema neuv.",
 	'centralauth-editset-success' => "Cangià da bin l'ansema ëd wiki.",
 	'centralauth-editset-success-delete' => "Scancelà l'ansema wiki për da bin.",
 	'centralauth-editset-return' => 'Artorna a la vista prinsipal',
-	'centralauth-block-already-locked' => "L'utent [[Special:CentralAuth/$1|$1]] a l'é già blocà globalment.", # Fuzzy
+	'centralauth-block-already-locked' => "Ël cont [[Special:CentralAuth/$1|$1]] a l'é già blocà ëd fasson global.",
 	'centralauth-readonly' => 'CentralAuth Database blocà',
 	'centralauth-readonlytext' => "La base ëd dàit CentralAuth a l'é al moment blocà për d'imission neuve e d'àutre modìfiche, miraco për na manutension ordinaria dla base ëd dàit, apress lòn tut a tornerà normal.",
 	'right-globalgroupmembership' => "Modìfica l'apartenensa a le partìe globaj",
 	'right-centralauth-autoaccount' => 'Intra automaticament con un cont global',
 	'right-centralauth-unmerge' => 'Anulé la fusion dël cont global',
-	'right-centralauth-lock' => 'Blòca o stërma cont globaj', # Fuzzy
+	'right-centralauth-lock' => 'Bloché o dësbloché ël cont global',
 	'right-centralauth-oversight' => 'Scancelé o stërmé ël cont global',
 	'right-centralauth-merge' => 'Unìfica ij sò cont',
 	'right-globalgrouppermissions' => 'Gestì le partìe globaj',
 	'abusefilter-edit-builder-vars-global-user-groups' => "Partìe globaj anté ch'a-i é l'utent",
+	'action-centralauth-lock' => 'bloché o dësbloché ij cont globaj',
+	'centrallogin' => 'Conession utent sentralisà',
+	'centralloginsuccesful' => "A l'é rintrà ant ël sistema",
+	'centralauth-completelogin-back' => 'Torné a la pàgina precedenta.',
+	'centralauth-error-nologinattempt' => "Gnun tentativ ëd conession ativ a l'é an cors për soa session.",
+	'centralauth-error-badtoken' => "Ël geton d'autenticassion fornì a l'é scadù o nen vàlid.",
+	'centralauth-error-token-wrongattempt' => "Ël geton d'autenticassion a aparten pa a sò tentativ atual ëd rintré ant ël sistema.
+Cheidun a podrìa sërché ëd felo rintré ant ël sistema con un cont clandestin.",
+	'centralauth-error-token-wronguser' => "Ël geton a corëspond pa a lë stranòm d'utent ëd soa session. Cheidun a podrìa sërché ëd felo rintré ant ël sistema con un cont clandestin. S'a l'é mach an camin ch'a sërca ëd rintré ant ël sistema tanme n'àutr utent, për piasì, prima ch'a seurta dal sistema.",
+	'centralauth-warning-notloggedin' => "Al moment a l'é nen rintrà ant ël sistema.",
 );
 
 /** Western Punjabi (پنجابی)
@@ -30221,9 +30253,9 @@ Njegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega računa.',
 	'centralauth-account-exists' => 'Ne morem ustvariti računa: zahtevano uporabniško ime je že zasedeno v enotnem sistemu prijave.',
 	'centralauth-account-exists-reset' => 'Uporabniško ime $1 ni registrirano na tem wikiju, vendar lahko ponastavite njegovo geslo na [[Special:CentralAuth/$1|wikiju, kjer je]].',
 	'centralauth-login-progress' => 'Prijavljanje v wikije {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'Odjavljanje iz ostalih wikijev {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => 'Odjavljanje iz ostalih wikijev {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Samodejno ste bili vpisani v ostale projekte {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Samodejno ste bili izpisani iz ostalih projektov {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Samodejno ste bili izpisani iz ostalih projektov {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalno skril $1 dne $2 zaradi naslednjega razloga: $3',
 	'centralauth-log-name' => 'Dnevnik globalnih računov',
 	'centralauth-log-header' => 'Ta dnevnik zajema dejavnosti v okviru globalnih računov: brisanja, zaklepe in odklepe.',
@@ -36506,7 +36538,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-list-legend-rw' => '取消合并本地帐户',
 	'centralauth-admin-unattached' => '未附属的帐户',
 	'centralauth-admin-blocked' => '已封禁，将于$3 $4过期。原因：$2',
-	'centralauth-admin-blocked-indef' => '永久封禁。理由：$1',
+	'centralauth-admin-blocked-indef' => '永久封禁。原因：$1',
 	'centralauth-admin-blocklog' => '封禁日志',
 	'centralauth-admin-list-localwiki' => '地区维基',
 	'centralauth-admin-list-attached-on' => '添加时间',
