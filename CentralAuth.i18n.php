@@ -20292,7 +20292,9 @@ $messages['lo'] = array(
  * @author Mogoeilor
  */
 $messages['lrc'] = array(
+	'centralauth-merge-dryrun-or' => "'''يا'''",
 	'centralauth-list-home-title' => 'سرآسونه ويكی',
+	'centralauth-foreign-link' => 'كارور $1 د $2',
 	'centralauth-merge-method-primary' => 'سرآسونه ويكی',
 	'centralauth-merge-method-empty' => 'بی هومياری',
 	'centralauth-merge-method-mail' => 'وا ايميل محكم بی',
@@ -26160,6 +26162,19 @@ A peule vardé e modifiché mincadun ëd lor, o creé n'ansema neuv.",
 Cheidun a podrìa sërché ëd felo rintré ant ël sistema con un cont clandestin.",
 	'centralauth-error-token-wronguser' => "Ël geton a corëspond pa a lë stranòm d'utent ëd soa session. Cheidun a podrìa sërché ëd felo rintré ant ël sistema con un cont clandestin. S'a l'é mach an camin ch'a sërca ëd rintré ant ël sistema tanme n'àutr utent, për piasì, prima ch'a seurta dal sistema.",
 	'centralauth-warning-notloggedin' => "Al moment a l'é nen rintrà ant ël sistema.",
+	'centralauth-warning-notattached' => "Ël cont local a l'é nen tacà a 'n cont global.",
+	'centralauth-finishglobaliseemail_subject' => 'Confirmassion ëd cont ëd {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => "Soa adrëssa ëd pòsta eletrònica a l'é stàita associà al cont «$2» ansima a tuti ij proget ëd Wikimedia, con sò cont prinsipal ansima a {{SITENAME}}.
+
+Për confirmé che 's cont a aparten për da bon a chiel, ch'a lo fonda con tuti ij cont ch'i l'oma nen podù assocé an automàtich, e për përmëttje d'arcuperé sò cont se a perd soa ciav, për piasì ch'a duverta costa liura an sò navigador:
+
+$3
+
+Se ël cont a j'aparten *pa*, ch'a-j vada dapress a sa liura për anulé la confirmassion ëd l'adrëssa ëd pòsta eletrònica:
+
+$5
+
+Ës còdes ëd confirmassion a scadrà ai $6 a $7.",
 );
 
 /** Western Punjabi (پنجابی)
@@ -28268,6 +28283,7 @@ $messages['ru'] = array(
 	'multilock' => 'Заблокировать несколько глобальных учётных записей',
 	'centralauth-admin-multi-username' => 'Введите одно или несколько имен пользователей, по одному на строчку',
 	'centralauth-admin-multi-notfound' => 'Поиск не возвратил имён пользователей.',
+	'centralauth-admin-multi-searchprefix' => 'Или поищите имена участников с префиксом',
 	'centralauth-admin-multi-intro' => 'Одновременно обновить несколько глобальных учётных записей',
 	'centralauth-admin-action-lock-lock' => 'Заблокировать выбранные учётные записи',
 	'centralauth-admin-action-lock-unlock' => 'Разблокировать выбранные учётные записи',
