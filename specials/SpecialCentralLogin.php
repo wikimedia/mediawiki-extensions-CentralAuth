@@ -16,6 +16,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		) {
 			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
 			$output = $this->getOutput();
+			$output->addVaryHeader( 'X-Forwarded-Proto' );
 			$output->redirect( $redirUrl );
 			$output->output();
 			return;
