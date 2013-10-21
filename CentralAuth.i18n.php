@@ -6539,7 +6539,7 @@ $messages['ce'] = array(
 	'centralautologin' => 'Юкъара системин чугӀо меттиг',
 	'globalgrouppermissions' => 'Урхалла дар масхьара тобанашна',
 	'centralauth-globalgroupperms-grouplist' => 'Нийса йина лахара глобальни бакъонаш.
-Хьан йиш ю хьажа я хийца бакъонаш хьай оьшуш йолу бакъо елахь.
+Хьа йиш ю хьажа я хийца бакъонаш хьан бакъо елахь.
 Тоба дӀаяккха мега цара ерриг бакъонаш дӀаяхна.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|хийцамашка/хьажар]])',
 	'centralauth-existinggroup-legend' => 'Йолуш йолу бакъонаш',
@@ -6568,8 +6568,14 @@ $messages['ce'] = array(
 	'centralauth-editset-submit-delete' => 'ДӀаяккха',
 	'centralauth-editset-nouse' => '(яц)',
 	'centralauth-editset-usage' => 'Лелош ю тобаншан:',
+	'right-globalgroupmembership' => 'глобальни тобанаш чохь дакъалацар хийцар',
+	'right-centralauth-autoaccount' => 'глобальни декъашхочун дӀаяздар тӀера aвтоматически чубовлар',
+	'right-centralauth-unmerge' => 'глобальни дӀаяздарш вовшах дахар',
+	'right-centralauth-lock' => 'глобальни декъашхочун дӀаяздаран блоктохар я дӀаяккхар',
+	'right-centralauth-oversight' => 'глобальни дӀаяздар дохор я хьулдар',
 	'right-centralauth-merge' => 'ДӀаяздарш цхьаьнатохар',
 	'right-globalgrouppermissions' => 'урхалла дар масхьара тобанашна',
+	'action-centralauth-lock' => 'глобальни декъашхочун дӀаяздаран блоктохар я дӀаяккхар',
 	'centrallogin' => 'Юкъара системин чугӀо меттиг',
 );
 
@@ -10423,7 +10429,7 @@ $messages['fa'] = array(
 
 اگر نام کاربری شما قبلاً در پروژهٔ دیگری توسط شخص دیگری استفاده شده باشد، این کار باعث مزاحمت برای آن‌ها نمی‌شود؛ بلکه به شما این امکان را می‌دهد که بعداً این مشکل را با کمک آن‌ها یا یک مدیر حل کنید.",
 	'centralauth-merge-step1-title' => 'آغاز یکی کردن حساب‌های کاربری',
-	'centralauth-merge-step1-detail' => 'کلمه عبور و نشانی پست الکترونیکی ثبت‌شده توسط شما با حساب‌های کاربری دیگر ویکی‌ها مقایسه می‌شود تا از مطابقت آن‌ها اطمینان حاصل گردد. تا زمانی که شما تأیید نکنید که همه چیز درست است، تغییر صورت نمی‌گیرد.',
+	'centralauth-merge-step1-detail' => 'گذرواژه و نشانی رایانامه ثبت‌شده توسط شما با حساب‌های کاربری دیگر ویکی‌ها مقایسه می‌شود تا از مطابقت آن‌ها اطمینان حاصل گردد. تا زمانی که شما تأیید نکنید که همه چیز درست است، تغییر صورت نمی‌گیرد.',
 	'centralauth-merge-step1-submit' => 'تأیید اطلاعات ورود به سامانه',
 	'centralauth-merge-step2-title' => 'تأیید حساب‌های کاربری بیشتر',
 	'centralauth-merge-step2-detail' => 'برخی از حساب‌های کاربری را نمی‌توان به طور خودکار با حساب ویکی اصلی مطابقت داد. اگر این حساب‌های کاربری متعلق به شما هستند می‌توانید این مسأله را با واردکردن گذرواژهٔ این حساب‌ها تأیید کنید.',
@@ -10451,9 +10457,9 @@ $messages['fa'] = array(
 	'centralauth-incomplete-text' => 'وقتی حساب‌های کاربری‌تان یکی شود خواهید توانست در هر یک از ویکی‌های {{int:Centralauth-groupname}} وارد شوید بدون آنکه حساب کاربری جدیدی بسازید',
 	'centralauth-not-owner-text' => 'حساب کاربری «$1» به طور خودکار به صاحب حساب کاربری در $2 اختصاص داده شد.
 
-اگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با وارد کردن کلمه عبور سراسری در اینجا به پایان برسانید:',
+اگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با واردکردن گذرواژه سراسری در اینجا به پایان برسانید:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
-	'centralauth-disabled-dryrun' => 'متأسفیم! سامانهٔ یکی کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست.',
+	'centralauth-disabled-dryrun' => 'متأسفیم! سامانهٔ یکی‌کردن حساب‌های کاربری در حال حاضر به طور آزمایشی و برای رفع ایراد فعال است، بنابراین یکی کردن واقعی حساب‌های کاربری هنوز فعال نیست.',
 	'centralauth-error-locked' => 'شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.',
 	'centralauth-error-unmerged' => 'شما نمی‌توانید ویرایش کنید، چون حساب کاربری شما یکپارچه نشده‌است.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|اطلاعات بیشتر دربارهٔ '''حساب کاربری مشترک''']]...''",
@@ -10463,7 +10469,7 @@ $messages['fa'] = array(
 	'centralauth-list-attached' => 'حساب کاربری «$1» در هر یک از پروژه‌های زیر به طور خودکار به حساب کاربری مشترک شما متصل شده‌است:',
 	'centralauth-list-attached-dryrun' => 'حساب کاربری «$1» در هر یک از پروژه‌های زیر به طور خودکار به حساب کاربری مشترک شما متصل خواهد شد:',
 	'centralauth-list-unattached-title' => 'حساب‌های کاربری غیرمتصل',
-	'centralauth-list-unattached' => 'حساب کاربری $1 را در وبگاه‌های زیر نمی‌توان به طور خودکار متعلق به شما دانست؛ به احتمال زیاد کلمه عبور آن‌ها با حساب کاربری اصلی شما متفاوت است:',
+	'centralauth-list-unattached' => 'حساب کاربری $1 را در وبگاه‌های زیر نمی‌توان به طور خودکار متعلق به شما دانست؛ به احتمال زیاد گذرواژهٔ آن‌ها با حساب کاربری اصلی شما متفاوت است:',
 	'centralauth-foreign-link' => 'حساب کاربری $1 در $2',
 	'centralauth-foreign-contributions' => '$1 مشارکت در $2',
 	'centralauth-merge-method-primary' => 'ویکی خانه',
@@ -10483,18 +10489,18 @@ $messages['fa'] = array(
 	'centralauth-merge-method-new-desc' => 'نشان می‌دهد که حساب سراسری در هنگام ایجاد حساب محلی به طور خودکار ایجاد شد.',
 	'centralauth-merge-method-login-desc' => 'نشان می‌دهد که حساب محلی در هنگام وارد شدن کاربر به سایت به طور خودکار ایجاد شد.',
 	'centralauth-finish-title' => 'خاتمه ادغام',
-	'centralauth-finish-text' => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی کردن حساب‌های کاربری را با واردکردن کلمه عبور سراسری در اینجا به پایان برسانید:',
-	'centralauth-finish-password' => 'کلمه عبور:',
+	'centralauth-finish-text' => 'اگر شما صاحب این حساب‌ها هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با واردکردن گذرواژهٔ سراسری در اینجا به پایان برسانید:',
+	'centralauth-finish-password' => 'گذرواژه:',
 	'centralauth-finish-login' => 'ورود به سامانه',
-	'centralauth-finish-send-confirmation' => 'کلمه عبور پست الکترونیکی',
+	'centralauth-finish-send-confirmation' => 'گذرواژهٔ رایانامه',
 	'centralauth-finish-problems' => 'دچار مشکلی شده‌اید یا صاحب حساب‌های کاربری دیگری که فهرست شده‌اند نیستید؟ [[meta:Help:Unified login problems|راهنما را بخوانید]]...',
 	'centralauth-finish-noconfirms' => 'هیچ حساب کاربری با این گذرواژه قابل تأیید نیست.',
 	'centralauth-finish-incomplete' => 'چندین حساب کاربری توسط این گذرواژه یکی شدند.
 دیگر حساب‌های کاربری هنوز تأیید نشده‌اند.',
-	'centralauth-merge-attempt' => "'''مطابقت دادن کلمه عبور وارد شده با حساب‌های ادغام‌نشدهٔ باقی‌مانده...'''",
+	'centralauth-merge-attempt' => "'''مطابقت دادن گذرواژهٔ واردشده با حساب‌های ادغام‌نشدهٔ باقی‌مانده...'''",
 	'centralauth-attach-list-attached' => 'حساب کاربری مشترک «$1» شامل این حساب‌های کاربری می‌شود:',
 	'centralauth-attach-title' => 'تأیید حساب کاربری',
-	'centralauth-attach-text' => 'این حساب کاربری هنوز به حساب کاربری مشترک انتقال داده نشده‌است. اگر حساب کاربری مشترک متعلق به شما است، می‌توانید این حساب را هم با وارد کردن کلمه عبور آن به حساب کاربری مشترک متصل کنید:',
+	'centralauth-attach-text' => 'این حساب کاربری هنوز به حساب کاربری مشترک انتقال داده نشده‌است. اگر حساب کاربری مشترک متعلق به شما است، می‌توانید این حساب را هم با واردکردن گذرواژهٔ آن به حساب کاربری مشترک متصل کنید:',
 	'centralauth-attach-submit' => 'انتقال حساب کاربری',
 	'centralauth-attach-success' => 'حساب کاربری به حساب کاربری مشترک انتقال داده شد.',
 	'centralauth' => 'مدیریت حساب کاربری سراسری', # Fuzzy
@@ -10531,7 +10537,7 @@ $messages['fa'] = array(
 	'centralauth-admin-list-blocked' => 'بسته شده',
 	'centralauth-admin-unmerge' => 'جدا کردن موارد انتخاب‌شده',
 	'centralauth-admin-merge' => 'انتخاب ادغام',
-	'centralauth-admin-bad-input' => 'انتخاب غیرمجاز برای ادغام',
+	'centralauth-admin-bad-input' => 'انتخاب نامجاز برای ادغام',
 	'centralauth-admin-none-selected' => 'هیچ حساب کاربری‌ای برای تغییر انتخاب نشده‌است.',
 	'centralauth-admin-already-unmerged' => 'گذر از $1، قبلاً از جدا شده‌است',
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|حساب کاربری|حساب کاربری}} را با موفقیت جدا کرد',
@@ -10983,7 +10989,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-account-exists' => 'Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo käytössä yhdistetyssä sisäänkirjautumisjärjestelmässä.',
 	'centralauth-account-exists-reset' => 'Käyttäjätunnusta $1 ei ole rekisteröity tässä wikissä, mutta voit resetoida sen salasanan [[Special:CentralAuth/$1|wikissä, jossa tunnus on]].',
 	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:',
-	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{int:Centralauth-groupname}} -wikeistä:', # Fuzzy
+	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{int:Centralauth-groupname}} -wikeistä:',
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
 	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.', # Fuzzy
 	'centralauth-hidden-blockreason' => 'piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3',
@@ -28372,6 +28378,9 @@ $messages['ru'] = array(
 	'centralauth-centralautologin-badstate-local' => 'Состояние «$1» не является допустимым в локальной вики',
 	'centralauth-centralautologin-badwiki' => 'Вики «$1» не является допустимой для центрального входа',
 	'centralauth-centralautologin-corsfail' => 'Ошибка проверки источника CORS',
+	'centralauth-centralautologin-p3p-explanation' => 'Некоторые браузеры требуют иногда отправки или получения данных, связанных с соблюдением P3P-политики для куки, в том числе включая случаи, связанные с проверкой входа в единую учётную запись. В данной ситуации это излишне, учитывая, что все страницы относятся к одной вики-группе. А P3P сама по себе — устаревшая и заброшенная технология. К счастью, неправильная политика ссылок на эту страницу в настоящее время считается «достаточно хорошей» этими браузерами при конфигурации по умолчанию.
+
+Пожалуйста, просмотрите на этом сайте политику конфиденциальности, которая написана в доступной форме, чтобы определить, каким образом может использоваться любая собранная информация.',
 	'centralauth-centralautologin-logged-in' => 'Вы авторизовались глобально как $1. Перезагрузите страницу, чтобы применились ваши персональные настройки.',
 	'globalgroupmembership' => 'Членство в глобальных группах',
 	'globalgrouppermissions' => 'Управление глобальными группами',
@@ -28468,6 +28477,17 @@ $messages['ru'] = array(
 	'centralauth-warning-notloggedin' => 'Вы не авторизовались.',
 	'centralauth-warning-notattached' => 'Локальная учетная запись не присоединена к глобальной.',
 	'centralauth-finishglobaliseemail_subject' => 'Подтверждение учетной записи в проекте {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Ваш адрес электронной почты был связан с учётной записью «$2» во всех проектах Викимедиа, с главной учётной записью, находящейся на проекте {{SITENAME}}.
+
+Чтобы подтвердить, что эта учётная запись действительно принадлежит вам, объединить любые из ваших учётных записей, так как мы не можем сделать это автоматически, и позволить вам восстановить вашу учётную запись в случае утери пароля, пожалуйста, откройте эту ссылку в вашем браузере:
+
+$3
+
+Если учётная запись *не* принадлежит вам, перейдите по этой ссылке для отмены подтверждение адреса электронной почты:
+
+$5
+
+Этот код подтверждения истекает $6 в $7.',
 );
 
 /** Rusyn (русиньскый)

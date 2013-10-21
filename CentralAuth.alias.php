@@ -119,8 +119,8 @@ $specialPageAliases['cdo'] = array(
 $specialPageAliases['ce'] = array(
 	'MergeAccount' => array( 'Декъашхочун_дӀаяздарш_цхьаьнатохар' ),
 	'GlobalGroupMembership' => array( 'Декъашхочун_глобальни_бакъонаш' ),
-	'GlobalGroupPermissions' => array( 'Глобальни_тобашан_бакъонаш' ),
-	'WikiSets' => array( 'Вики_гӀирсашан_гулам' ),
+	'GlobalGroupPermissions' => array( 'Глобальни_тобанийн_бакъонаш' ),
+	'WikiSets' => array( 'Вики_гӀирсийн_гулам' ),
 	'GlobalUsers' => array( 'Глобальни_декъашхой' ),
 );
 
