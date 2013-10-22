@@ -1755,6 +1755,7 @@ $messages['ang'] = array(
  * @author Moemin05
  * @author OsamaK
  * @author زكريا
+ * @author مشعل الحربي
  */
 $messages['ar'] = array(
 	'mergeaccount' => 'حالة توحيد الدخول',
@@ -1849,15 +1850,15 @@ $messages['ar'] = array(
 لو أن الحساب العام ملكك أيضا، يمكنك دمج هذا الحساب لو كتبت كلمة سر الحساب العام:',
 	'centralauth-attach-submit' => 'دمج الحساب',
 	'centralauth-attach-success' => 'الحساب تم دمجه مع الحساب الموحد.',
-	'centralauth' => 'إدارة الدخول الموحد', # Fuzzy
+	'centralauth' => 'إدارة الحساب الموحد',
 	'centralauth-admin-intro' => 'هذه الواجهة يمكن استخدامها لإدارة الحسابات العامة.',
-	'centralauth-admin-manage' => 'إدارة بيانات المستخدم', # Fuzzy
+	'centralauth-admin-manage' => 'إدارة بيانات الحساب',
 	'centralauth-admin-username' => 'اسم المستخدم:',
 	'centralauth-admin-lookup-ro' => 'أظهر معلومات المستخدم',
 	'centralauth-admin-lookup-rw' => 'أدر حساب المستخدم',
 	'centralauth-admin-permission' => 'فقط المضيفون يمكنهم أن يدمجوا حسابات الآخرين.',
 	'centralauth-admin-no-unified' => 'لا حساب موحد لاسم المستخدم هذا.',
-	'centralauth-admin-info-header' => 'حالة الدخول العام', # Fuzzy
+	'centralauth-admin-info-header' => 'حالة الحساب العام',
 	'centralauth-admin-info-username' => 'اسم المستخدم:',
 	'centralauth-admin-info-id' => 'رقم المستخدم:',
 	'centralauth-admin-info-registered' => 'التسجيل:',
@@ -1921,7 +1922,7 @@ $messages['ar'] = array(
 	'centralauth-admin-logsnippet' => 'تغييرات الحساب في كامل الموقع السابقة',
 	'centralauth-admin-suppressreason' => 'على الصعيد العام تم حضر $1 للسبب التالي:$2',
 	'centralauth-admin-not-authorized' => 'ليس لديك السماحات المطلوبة للقيام بهذا الفعل.',
-	'globalusers' => 'قائمة المستخدمين العامة', # Fuzzy
+	'globalusers' => 'قائمة الحسابات العامة',
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
 	'centralauth-listusers-nolocal' => 'غير مرتبط أو غير موجود محليا',
@@ -7352,6 +7353,10 @@ Rheswm: $1',
 	'centralauth-editset-usage' => 'Defnyddir yn y grwpiau:',
 	'centralauth-editset-badwikis' => "Nid yw'r {{PLURAL:$2|wici|wici|wicïau|wicïau|wicïau|wicïau}} sy'n dilyn ar gael: $1.",
 	'centralauth-editset-return' => "Yn ôl i'r prif olwg",
+	'right-centralauth-unmerge' => 'Daduno cyfrif cyd-wici',
+	'right-centralauth-lock' => 'Cloi neu ddatgloi cyfrif cyd-wici',
+	'right-centralauth-merge' => 'Cyfuno ei gyfrif',
+	'right-globalgrouppermissions' => 'Rheoli grwpiau cyd-wici',
 	'action-centralauth-lock' => 'cloi neu ddatgloi cyfrifon cydwici',
 	'centrallogin' => 'Mewngofnodi defnyddiwr cydwici',
 	'centralloginsuccesful' => 'Llwyddodd y mewngofnodi',
@@ -10725,8 +10730,8 @@ $messages['fa'] = array(
 	'centralauth-editset-reason' => 'دلیل:',
 	'centralauth-editset-submit' => 'ارسال',
 	'centralauth-editset-submit-delete' => 'حذف',
-	'centralauth-editset-badname' => 'نام غیر مجاز یا خالی مجموعه',
-	'centralauth-editset-badtype' => 'نوع غیر مجاز مجموعه',
+	'centralauth-editset-badname' => 'نام نامجاز یا خالی مجموعه',
+	'centralauth-editset-badtype' => 'نوع نامجاز مجموعه.',
 	'centralauth-editset-setexists' => 'مجموعه‌ای با این نام از قبل وجود دارد',
 	'centralauth-editset-nowikis' => 'هیچ ویکی‌ای مشخص نشد.',
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
@@ -10991,7 +10996,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-login-progress' => 'Kirjaudutaan {{int:Centralauth-groupname}} -wikeihin:',
 	'centralauth-logout-progress' => 'Kirjaudutaan ulos muista {{int:Centralauth-groupname}} -wikeistä:',
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
-	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.', # Fuzzy
+	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.',
 	'centralauth-hidden-blockreason' => 'piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3',
 	'centralauth-log-name' => 'Järjestelmänlaajuisten tunnusten käsittelyloki',
 	'centralauth-log-header' => 'Tässä lokissa on järjestelmänlaajuisten käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.',
@@ -11053,8 +11058,8 @@ Ryhmää ei ole olemassa, jos sille ei ole annettu mitään oikeuksia.',
 	'centralauth-editgroup-perms' => 'Myönnetyt käyttöoikeudet:',
 	'centralauth-editgroup-reason' => 'Syy',
 	'centralauth-editgroup-success' => 'Ryhmän käyttöoikeudet vaihdettu',
-	'centralauth-editgroup-success-text' => 'Ryhmän $1 käyttöoikeudet onnistuneesti vaihdettu.
-[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]', # Fuzzy
+	'centralauth-editgroup-success-text' => 'Ryhmän $1 käyttöoikeudet onnistuneesti päivitetty.
+[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|muokkaa]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki, jossa käyttäjällä on tunnus:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Järjestelmänlaajuista tunnusta '''$1''' ei ole olemassa wikissä ''$2''.
@@ -11102,13 +11107,14 @@ Voit katsella ja muokata mitä tahansa niistä, tai luoda uuden ryhmän.',
 	'right-centralauth-oversight' => 'Häivyttää tai piilottaa järjestelmänlaajuinen tunnus',
 	'right-centralauth-merge' => 'Yhdistää omat tunnuksensa',
 	'right-globalgrouppermissions' => 'Hallinnoida järjestelmänlaajuisia ryhmiä',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Järjestelmänlaajuiset ryhmät, joissa käyttäjä on',
 	'action-centralauth-lock' => 'lukita tai avata järjestelmänlaajuisia tunnuksia',
 	'centrallogin' => 'Keskitetty kirjautuminen',
 	'centralloginsuccesful' => 'Kirjautuminen onnistui',
 	'centralauth-completelogin-back' => 'Palaa edelliselle sivulle.',
 	'centralauth-warning-notloggedin' => 'Et ole kirjautuneena sisään.',
-	'centralauth-warning-notattached' => 'Paikallista tiliä ei ole yhdistetty järjestelmänlaajuiseen.',
-	'centralauth-finishglobaliseemail_subject' => 'Sivuston {{SITENAME}} tilin vahvistus',
+	'centralauth-warning-notattached' => 'Paikallista tunnusta ei ole liitetty järjestelmänlaajuiseen tunnukseen.',
+	'centralauth-finishglobaliseemail_subject' => 'Sivuston {{SITENAME}} tunnuksen vahvistus',
 	'centralauth-finishglobaliseemail_body' => 'Sähköpostiosoitteesi on yhdistetty tunnuksen "$2" kanssa kaikissa Wikimedia-projekteissa,
 jonka jälkeen päätunnuksesi on sivustolla {{SITENAME}}.
 
@@ -27339,14 +27345,14 @@ $messages['qu'] = array(
 	'centralauth-finish-send-confirmation' => 'Yaykuna rimata e-chaskiwan kachamuy',
 	'centralauth-attach-title' => 'Rakiqunata takyachiy',
 	'centralauth-attach-submit' => 'Rakiqunata mitmachiy',
-	'centralauth' => "Sapsi ruraqkunata hat'alliy", # Fuzzy
-	'centralauth-admin-manage' => "Ruraqmanta willakunata hat'alliy", # Fuzzy
+	'centralauth' => "Sapsi rakiqunakunata hat'alliq",
+	'centralauth-admin-manage' => "Rakiqunamanta willakunata hat'alliy",
 	'centralauth-admin-username' => 'Ruraqpa sutin:',
 	'centralauth-admin-lookup-ro' => 'Ruraqmanta willayta qhaway',
 	'centralauth-admin-lookup-rw' => "Ruraqpa rakiqunanta hat'alliy",
 	'centralauth-admin-permission' => 'Steward nisqallakunam wakin ruraqkunap rakiqunanta paykunapaq huñuyta atinku.',
 	'centralauth-admin-no-unified' => 'Kay ruraqpa sutinpaqqa huñusqa rakiquna manam kanchu.',
-	'centralauth-admin-info-header' => 'Sapsi ruraqmanta willay', # Fuzzy
+	'centralauth-admin-info-header' => 'Sapsi rakiqunamanta willay',
 	'centralauth-admin-info-id' => 'Ruraqpa kikin kaynin:',
 	'centralauth-admin-info-registered' => "Hallch'asqa:",
 	'centralauth-admin-info-home' => 'Wasi wiki:',
@@ -27403,7 +27409,7 @@ Kayrayku: $1",
 ** ruraqmanta mana allin willasqakuna",
 	'centralauth-admin-logsnippet' => 'Sapsi rakiqunapaq ñawpaq hukchasqakuna',
 	'centralauth-admin-suppressreason' => '$1 sutiyuq ruraqpa sapsilla rikurparisqan kayrayku: $2',
-	'globalusers' => 'Sapsi ruraqniyuq sutisuyu', # Fuzzy
+	'globalusers' => 'Sapsi rakiqunakunayuq sutisuyu',
 	'centralauth-listusers-locked' => "hark'asqa",
 	'centralauth-listusers-attached' => "[[User:$1|k'itillapi kan]]",
 	'centralauth-listusers-nolocal' => "mana yapasqa icha k'itillapi manam kanchu",
@@ -27422,13 +27428,13 @@ Kayrayku: $1",
 	'centralauth-prefs-count-unattached' => 'Qusqayki sutiyuq mana takyachisqa rakiqunakunaqa $1 ruraykamay {{PLURAL:$1|tiyaypim|tiyaykunapim}} puchuchkan.',
 	'centralauth-prefs-detail-unattached' => 'Kay ruraykamay tiyaypa sapsi rakiqunaman kapuyninqa manaraqmi tayasqachu.',
 	'centralauth-prefs-manage' => 'Sapsi rakiqunaykita kamachiy',
-	'centralauth-prefs-view' => 'Tukuy wikikunapaq rakiqunamanta willakunata qhaway', # Fuzzy
+	'centralauth-prefs-view' => 'Sapsi rakiqunamanta willakunata qhaway',
 	'centralauth-invalid-wiki' => 'Manam kanchu kay wiki willañiqintinchu: $1',
 	'centralauth-account-exists' => "Manam atinichu rakiqunata kamariyta: munasqayki ruraqpa sutinqa huñusqa yaykuna llikapi hap'isqañam.",
-	'centralauth-login-progress' => "{{int:Centralauth-groupname}} nisqap wikinkunapi llamk'apuy tiyayniykita qallarispa:", # Fuzzy
-	'centralauth-logout-progress' => "{{int:Centralauth-groupname}} nisqap wikinkunapi llamk'apuy tiyayniykimanta lluqsispa:", # Fuzzy
+	'centralauth-login-progress' => "{{int:Centralauth-groupname}} nisqap wikinkunapi llamk'apuy tiyayniykita qallarispa:",
+	'centralauth-logout-progress' => "{{int:Centralauth-groupname}} nisqap wikinkunapi llamk'apuy tiyayniykimanta lluqsispa:",
 	'centralauth-login-no-others' => "{{int:Centralauth-groupname}} nisqap huk ruraykamayninkunapi llamk'apuy tiyayniykita qallarirqankiñam.",
-	'centralauth-logout-no-others' => "{{int:Centralauth-groupname}} nisqap huk ruraykamayninkunapi llamk'apuy tiyayniykimanta lluqsirqankiñam.", # Fuzzy
+	'centralauth-logout-no-others' => "{{int:Centralauth-groupname}} nisqap huk ruraykamayninkunapi llamk'apuy tiyayniykimanta kikinmanta lluqsichisqa kankiñam.",
 	'centralauth-log-status-locked' => "wichq'asqa",
 	'centralauth-log-status-hidden' => 'pakasqa',
 	'centralauth-log-status-oversighted' => 'rikurparisqa',
