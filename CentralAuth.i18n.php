@@ -7419,7 +7419,7 @@ Hvis der er nogen der allerede har taget dit brugernavn på et andet projekt, vi
 	'centralauth-merge-step1-title' => 'Begynd sammenlægning af kontoer',
 	'centralauth-merge-step1-detail' => 'Skriv venligst din adgangskode her.
 
-Din angangskode og den registrerede e-mail-adresse vil blive tjekket op mod kontoerne på andre wikier for at bekræfte, at de stemmer overens. Der vil ikke blive foretaget nogen ændringer før du har bekræftet at alting ser rigtigt ud.',
+Din adgangskode og den registrerede e-mailadresse vil blive tjekket op mod kontoerne på andre wikier for at bekræfte, at de stemmer overens. Der vil ikke blive foretaget nogen ændringer før du har bekræftet at alting ser rigtigt ud.',
 	'centralauth-merge-step1-submit' => 'Bekræft indlogningsoplysninger',
 	'centralauth-merge-step2-title' => 'Bekræft flere kontoer',
 	'centralauth-merge-step2-detail' => 'For nogen af kontoerne var det ikke muligt automatisk at afgøre om de svarer til den angivne hjemwiki.
@@ -7456,7 +7456,7 @@ Beklager!',
 	'centralauth-error-unmerged' => 'Du kan ikke redigere fordi din konto ikke er forenet.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Læs mere om '''kontosammenlægning''']]…''",
 	'centralauth-list-home-title' => 'Hjemwiki',
-	'centralauth-list-home-dryrun' => 'Adgangskoden og e-mail-adressen som bruges på denne wiki vil blive brugt til din sammenlagte konto.',
+	'centralauth-list-home-dryrun' => 'Adgangskoden og e-mailadressen som bruges på denne wiki vil blive brugt til din sammenlagte konto.',
 	'centralauth-list-attached-title' => 'Tilknyttede kontoer',
 	'centralauth-list-attached' => 'Kontoen med navnet "$1" på hver af de følgende wikier er automatisk blevet knyttet til den sammenlagte konto:',
 	'centralauth-list-attached-dryrun' => 'Kontoen med navn "$1" på hver af de følgende wikier vil automatisk blive tilknyttet den sammenlagte konto:',
@@ -7475,7 +7475,7 @@ sandsynligvis har de en anden adgangskode end din hovedkonto:',
 	'centralauth-merge-method-primary-desc' => 'Det er den wiki hvorfra kontoen oprindeligt blev samlet.
 Bemærk at det ikke nødvendigvis er brugerens reelle hjemmewiki.',
 	'centralauth-merge-method-empty-desc' => 'Angiver, at den lokale konto blev fusioneret, fordi den ikke havde nogen redigeringer.',
-	'centralauth-merge-method-mail-desc' => 'Angiver, at den lokale konto blev flettet fordi dens emailadresse matchede hovedkontoens e-mail-adresse.',
+	'centralauth-merge-method-mail-desc' => 'Angiver, at den lokale konto blev flettet fordi dens e-mailadresse matchede hovedkontoens e-mailadresse.',
 	'centralauth-merge-method-password-desc' => 'Angiver, at den lokale konto blev flettet, fordi brugeren har angivet en gyldig adgangskode til den.',
 	'centralauth-merge-method-admin-desc' => 'Angiver, at den lokale konto blev flettet manuelt af en forvalter (steward).
 Denne funktion deaktiveres nu på grund af sikkerhedsmæssige årsager.',
@@ -7755,13 +7755,13 @@ Hvis du bare forsøger, at melde dig ind som en anden bruger, skal du melde dig 
 	'centralauth-warning-notloggedin' => 'Du er ikke meldt ind for øjeblikket.',
 	'centralauth-warning-notattached' => 'Den lokale konto er ikke tilknyttet en global konto.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} kontobekræftelse',
-	'centralauth-finishglobaliseemail_body' => 'Din e-mail-adresse er angivet som tilknyttet kontoen "$2" på alle Wikimediaprojekter, med din hovedkonto på {{SITENAME}}.
+	'centralauth-finishglobaliseemail_body' => 'Din e-mailadresse er angivet som tilknyttet kontoen "$2" på alle Wikimediaprojekter, med din hovedkonto på {{SITENAME}}.
 
 For at bekræfte, at denne konto virkelig hører til dig, flette nogen af dine kontoer vi ikke kunne gøre automatisk, og tillade dig at genoprette din konto hvis du mister din adgangskode, skal du åbne dette link i en browser:
 
 $3
 
-Hvis kontoen *ikke* tilhører dig, så følg dette link for at annullere e-mail adresse bekræftelse:
+Hvis kontoen *ikke* tilhører dig, så følg dette link for at annullere e-mailadresse bekræftelse:
 
 $5
 
