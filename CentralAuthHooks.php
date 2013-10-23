@@ -1491,4 +1491,31 @@ class CentralAuthHooks {
 		$id = $centralUser->getId();
 		return true;
 	}
+
+	/**
+	 * Get the username for the CentralAuth user that is also attached on the
+	 * the OAuth central wiki. False if the username isn't for a global account,
+	 * or that username isn't attached on the OAuth central wiki.
+	 * @param string $username the username
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param int &$id the user_id of the matching name on the central wiki
+	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 */
+	public static function onOAuthGetCentralIdFromUserName( $username, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
+		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
+			// We aren't supposed to handle this
+			return true;
+		}
+		$centralUser = new CentralAuthUser( $username );
+		if ( $centralUser->getId() == 0
+			|| !$centralUser->isAttached()
+			|| !$centralUser->attachedOn( $wgMWOAuthCentralWiki )
+		) {
+			$id = false;
+			return false;
+		}
+
+		$id = $centralUser->getId();
+		return true;
+	}
 }
