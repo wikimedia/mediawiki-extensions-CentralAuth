@@ -295,6 +295,7 @@ $wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUser
 // For OAuth
 $wgHooks['OAuthGetLocalUserFromCentralId'][] = 'CentralAuthHooks::onOAuthGetLocalUserFromCentralId';
 $wgHooks['OAuthGetCentralIdFromLocalUser'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromLocalUser';
+$wgHooks['OAuthGetCentralIdFromUserName'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromUserName';
 $wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUserNamesFromCentralIds';
 
 $wgAvailableRights[] = 'centralauth-merge';
