@@ -1491,4 +1491,28 @@ class CentralAuthHooks {
 		$id = $centralUser->getId();
 		return true;
 	}
+
+	/**
+	 * Get the id for the CentralAuth username. This hook should not be used
+	 * to determine attachment, so as long as the CentralAuth account exists,
+	 * we return the id.
+	 * @param string $username the username
+	 * @param string $wgMWOAuthCentralWiki
+	 * @param int &$id the user_id of the matching name on the central wiki
+	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 */
+	public static function onOAuthGetCentralIdFromUserName( $username, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
+		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
+			// We aren't supposed to handle this
+			return true;
+		}
+		$centralUser = new CentralAuthUser( $username );
+		if ( $centralUser->getId() == 0 ) {
+			$id = false;
+			return false;
+		}
+
+		$id = $centralUser->getId();
+		return true;
+	}
 }
