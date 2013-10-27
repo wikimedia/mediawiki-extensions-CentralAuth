@@ -6525,6 +6525,7 @@ $messages['ce'] = array(
 	'centralauth-listusers-locked' => 'гӀора йе',
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат|сахьат}} хьалха', # Fuzzy
+	'centralauth-days-ago' => '($1 {{PLURAL:$1|де|де}}) хьалха', # Fuzzy
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха',
 	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
@@ -24908,9 +24909,9 @@ Pòt èsser diferent del wiki principal de l'utilizaire.",
 	'centralauth-invalid-wiki' => 'Cap de banca de donada wiki : $1',
 	'centralauth-account-exists' => 'Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.',
 	'centralauth-login-progress' => 'Sètz en cors de connexion als wikis de {{int:Centralauth-groupname}} :',
-	'centralauth-logout-progress' => 'Vos sètz desconnectat(ada) dels autres projèctes de {{int:Centralauth-groupname}} :', # Fuzzy
+	'centralauth-logout-progress' => 'Sètz en cors de desconnexion dels wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Sètz estat(ada) connectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Sètz estat(ada) desconnectat(ada) automaticament als autres projèctes de la fondacion Wikimedia.', # Fuzzy
+	'centralauth-logout-no-others' => 'Sètz estat(ada) desconnectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupna', # Fuzzy
 	'centralauth-hidden-blockreason' => 'amagat globalament per $1 a $2 per aquela rason: $3',
 	'centralauth-log-name' => 'Jornal de la gestion dels comptes globals',
 	'centralauth-log-header' => 'Aqueste jornal conten las operacions que concernisson los comptes globals : supressions, varrolhatges e desvarrolhatges.',
@@ -28210,7 +28211,7 @@ $messages['ru'] = array(
 	'centralauth-merge-method-password-desc' => 'Означает, что локальная учетная запись была объединена, поскольку участник указал правильный пароль.',
 	'centralauth-merge-method-admin-desc' => 'Означает, что локальная учетная запись была объединена вручную одним из стюардов.
 В настоящее время эта функция отключена из-за соображений безопасности.',
-	'centralauth-merge-method-new-desc' => 'Означает, что глобальная учётная запись была создана автоматически при создании локальной учетной записи.',
+	'centralauth-merge-method-new-desc' => 'Означает, что глобальная учётная запись была создана автоматически при создании локальной учётной записи.',
 	'centralauth-merge-method-login-desc' => 'Означает, что локальная учётная запись была создана автоматически при входе участника в систему.',
 	'centralauth-finish-title' => 'Завершение объединения',
 	'centralauth-finish-text' => 'Если эти учётные записи ваши, то вы можете завершить процесс перехода на единую учётную запись, введя пароли к ним:',
@@ -28230,7 +28231,7 @@ $messages['ru'] = array(
 	'centralauth-attach-success' => 'Учётная запись была перенесена в систему единой учётной записи.',
 	'centralauth' => 'Менеджер глобальной учётной записи',
 	'centralauth-admin-intro' => 'Этот интерфейс может быть использован для управления глобальными учётными записями.',
-	'centralauth-admin-manage' => 'Управление данными учетной записи',
+	'centralauth-admin-manage' => 'Управление данными учётной записи',
 	'centralauth-admin-username' => 'Имя участника:',
 	'centralauth-admin-lookup-ro' => 'Просмотр сведений об участнике',
 	'centralauth-admin-lookup-rw' => 'Управление учётной записью участника',
@@ -28483,7 +28484,7 @@ $messages['ru'] = array(
 Если вы просто пытаетесь войти под другой учётной записью, пожалуйста, сначала завершите этот сеанс.',
 	'centralauth-warning-notloggedin' => 'Вы не авторизовались.',
 	'centralauth-warning-notattached' => 'Локальная учетная запись не присоединена к глобальной.',
-	'centralauth-finishglobaliseemail_subject' => 'Подтверждение учетной записи в проекте {{SITENAME}}',
+	'centralauth-finishglobaliseemail_subject' => 'Подтверждение учётной записи в проекте {{SITENAME}}',
 	'centralauth-finishglobaliseemail_body' => 'Ваш адрес электронной почты был связан с учётной записью «$2» во всех проектах Викимедиа, с главной учётной записью, находящейся на проекте {{SITENAME}}.
 
 Чтобы подтвердить, что эта учётная запись действительно принадлежит вам, объединить любые из ваших учётных записей, так как мы не можем сделать это автоматически, и позволить вам восстановить вашу учётную запись в случае утери пароля, пожалуйста, откройте эту ссылку в вашем браузере:
