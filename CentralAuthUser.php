@@ -1705,6 +1705,22 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Check if a rename to or from the provided name is in progress
+	 * @param string $name
+	 * @return bool
+	 */
+	public static function renameInProgress( $name ) {
+		$dbw = self::getCentralDB(); // Use a master to avoid race conditions
+		$res = $dbw->select(
+			'renameuser_status',
+			array( 'newname' ),
+			array( $dbw->makeList( array( 'oldname' => $name, 'newname' => $name ), LIST_OR ) ),
+			__METHOD__
+		);
+		return $res->numRows() != 0;
+	}
+
+	/**
 	 * Get information about each local user attached to this account
 	 *
 	 * @return array Map of database name to property table with members:
