@@ -244,6 +244,10 @@ $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyErr
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
 $wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
 $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormatter.php";
+$wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/LocalRenameUserJob.php";
+$wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/specials/SpecialGlobalRenameUser.php";
+$wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/specials/SpecialGlobalRenameProgress.php";
+$wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/GlobalRenameLogFormatter.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -254,12 +258,15 @@ $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.al
 $wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/CentralAuth.notranslate-alias.php";
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
+$wgJobClasses['LocalRenameUserJob'] = 'LocalRenameUserJob';
 
 $wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
 $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
+$wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
 $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
+$wgHooks['AbortAutoAccount'][] = 'CentralAuthHooks::onAbortAutoAccount';
 $wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLoadFromSession'][] = 'CentralAuthHooks::onUserLoadFromSession';
@@ -270,6 +277,7 @@ $wgHooks['ResourceLoaderGetConfigVars'][] = 'CentralAuthHooks::onResourceLoaderG
 $wgHooks['UserArrayFromResult'][] = 'CentralAuthHooks::onUserArrayFromResult';
 $wgHooks['UserGetEmail'][] = 'CentralAuthHooks::onUserGetEmail';
 $wgHooks['UserGetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserGetEmailAuthenticationTimestamp';
+$wgHooks['UserGetReservedNames'][] = 'CentralAuthHooks::onUserGetReservedNames';
 $wgHooks['UserInvalidateEmailComplete'][] = 'CentralAuthHooks::onUserInvalidateEmailComplete';
 $wgHooks['UserSetEmail'][] = 'CentralAuthHooks::onUserSetEmail';
 $wgHooks['UserSaveSettings'][] = 'CentralAuthHooks::onUserSaveSettings';
@@ -322,6 +330,7 @@ $wgAvailableRights[] = 'centralauth-oversight';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
 $wgAvailableRights[] = 'centralauth-autoaccount';
+$wgAvailableRights[] = 'centralauth-rename';
 
 $wgGroupPermissions['steward']['centralauth-unmerge'] = true;
 $wgGroupPermissions['steward']['centralauth-lock'] = true;
@@ -337,6 +346,8 @@ $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
 $wgSpecialPages['WikiSets'] = 'SpecialWikiSets';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
+$wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
+$wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
 $wgSpecialPageGroups['CentralAuth'] = 'users';
 $wgSpecialPageGroups['MergeAccount'] = 'login';
 $wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
@@ -367,6 +378,7 @@ $wgLogActions['globalauth/setstatus'] = 'centralauth-log-entry-chgstatus';
 $wgLogActions['suppress/setstatus'] = 'centralauth-log-entry-chgstatus';
 
 $wgLogTypes[]                          = 'gblrights';
+$wgLogTypes[]                          = 'gblrename';
 $wgLogNames['gblrights']               = 'centralauth-rightslog-name';
 $wgLogHeaders['gblrights']             = 'centralauth-rightslog-header';
 $wgLogActions['gblrights/usergroups']  = 'centralauth-rightslog-entry-usergroups';
@@ -374,6 +386,7 @@ $wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms
 $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms2';
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
 $wgLogActionsHandlers['gblrights/grouprename'] = 'efHandleGrouprenameLogEntry';
+$wgLogActionsHandlers['gblrename/rename'] = 'GlobalRenameLogFormatter';
 
 foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type ) {
 	$wgLogActionsHandlers["gblrights/{$type}"] = 'efHandleWikiSetLogEntry';
