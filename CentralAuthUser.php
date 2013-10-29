@@ -1603,6 +1603,37 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Updates the localname table after a rename
+	 * @param $wikiID
+	 * @param $newname
+	 */
+	function updateLocalName( $wikiID, $newname ) {
+		$dbw = self::getCentralDB();
+		$dbw->update(
+			'localnames',
+			array( 'ln_name' => $newname ),
+			array( 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ),
+			__METHOD__
+		);
+	}
+
+	/**
+	 * Updates the localuser table after a rename
+	 * @param $wikiID
+	 * @param $newname
+	 */
+	function updateLocalUser( $wikiID, $newname ) {
+		$dbw = self::getCentralDB();
+		$dbw->update(
+			'localuser',
+			array( 'lu_name' => $newname ),
+			array( 'lu_wiki' => $wikiID, 'lu_name' => $this->mName ),
+			__METHOD__
+		);
+	}
+
+
+	/**
 	 * @return bool
 	 */
 	function lazyImportLocalNames() {
@@ -1712,6 +1743,30 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadAttached();
 
 		return $this->mAttachedArray;
+	}
+
+	/**
+	 * Check if a rename from the old name is in progress
+	 * @param string $wiki wikiID to check on, if null check all wikis
+	 * @return stdClass|bool false if not in progress
+	 */
+	public function renameInProgress( $wiki = null ) {
+		$dbw = self::getCentralDB(); // Use a master to avoid race conditions
+		$conds = array( $dbw->makeList(
+			array( 'ru_oldname' => $this->mName, 'ru_newname' => $this->mName ),
+			LIST_OR
+		) );
+		if ( $wiki ) {
+			$conds['ru_wiki'] = $wiki;
+		}
+		$res = $dbw->selectRow(
+			'renameuser_status',
+			array( 'ru_oldname', 'ru_newname' ),
+			$conds,
+			__METHOD__
+		);
+
+		return $res;
 	}
 
 	/**

@@ -19,6 +19,8 @@ $specialPageAliases['en'] = array(
 	'WikiSets' => array( 'WikiSets', 'EditWikiSets' ),
 	'GlobalUsers' => array( 'GlobalUsers' ),
 	'MultiLock' => array( 'MultiLock' ),
+	'GlobalRenameUser' => array( 'GlobalRenameUser' ),
+	'RenameProgress' => array( 'RenameProgress' ),
 );
 
 /** Afrikaans (Afrikaans) */
