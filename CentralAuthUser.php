@@ -1593,6 +1593,21 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * @param $wikiID
+	 * @param $newname
+	 */
+	function updateLocalName( $wikiID, $newname ) {
+		$dbw = self::getCentralDB();
+		$this->lazyImportLocalNames(); // @todo check if this is needed
+		$dbw->update(
+			'localnames',
+			array( 'ln_name' => $newname ),
+			array( 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ),
+			__METHOD__
+		);
+	}
+
+	/**
 	 * @return bool
 	 */
 	function lazyImportLocalNames() {
@@ -1702,6 +1717,27 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadAttached();
 
 		return $this->mAttachedArray;
+	}
+
+	/**
+	 * Check if a rename from the old name is in progress
+	 * @param string $name
+	 * @param string $wiki wikiID to check on, if null check all wikis
+	 * @return bool
+	 */
+	public static function renameInProgress( $name, $wiki = null ) {
+		$dbw = self::getCentralDB(); // Use a master to avoid race conditions
+		$conds = array( $dbw->makeList( array( 'ru_oldname' => $name, 'ru_newname' => $name ), LIST_OR ) );
+		if ( $wiki ) {
+			$conds['ru_wiki'] = $wiki;
+		}
+		$res = $dbw->select(
+			'renameuser_status',
+			array( 'ru_newname' ),
+			$conds,
+			__METHOD__
+		);
+		return $res->numRows() != 0;
 	}
 
 	/**
