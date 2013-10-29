@@ -1603,6 +1603,21 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Updates the localname table after a rename
+	 * @param $wikiID
+	 * @param $newname
+	 */
+	function updateLocalName( $wikiID, $newname ) {
+		$dbw = self::getCentralDB();
+		$dbw->update(
+			'localnames',
+			array( 'ln_name' => $newname ),
+			array( 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ),
+			__METHOD__
+		);
+	}
+
+	/**
 	 * @return bool
 	 */
 	function lazyImportLocalNames() {
@@ -1712,6 +1727,54 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadAttached();
 
 		return $this->mAttachedArray;
+	}
+
+	public function clearRenameCache() {
+		global $wgMemc;
+		$wgMemc->delete( 'centralauth:renameprogress:' . $this->mName );
+	}
+
+	/**
+	 * Check if a rename from the old name is in progress
+	 * @param string $wiki wikiID to check on, if null check all wikis. Note this will not use the cache
+	 * @return stdClass|bool false if not in progress
+	 */
+	public function renameInProgress( $wiki = null ) {
+		global $wgMemc;
+
+		$key = 'centralauth:renameprogress:' . $this->mName;
+
+		$res = false;
+		if ( !$wiki ) {
+			$res = $wgMemc->get( $key );
+		}
+
+
+		if ( $res === false ) {
+			$dbw = self::getCentralDB(); // Use the master since we're caching
+			$conds = array( $dbw->makeList(
+				array( 'ru_oldname' => $this->mName, 'ru_newname' => $this->mName ),
+				LIST_OR
+			) );
+			if ( $wiki ) {
+				$conds['ru_wiki'] = $wiki;
+			}
+			$res = $dbw->selectRow(
+				'renameuser_status',
+				array( 'ru_oldname', 'ru_newname' ),
+				$conds,
+				__METHOD__
+			);
+			if ( $res === false ) {
+				// Don't cache a literal false...
+				$res = 'no';
+			}
+			if ( !$wiki ) {
+				$wgMemc->set( $key, $res );
+			}
+		}
+
+		return $res === 'no' ? false : $res;
 	}
 
 	/**
