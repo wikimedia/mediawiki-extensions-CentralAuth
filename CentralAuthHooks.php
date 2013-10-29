@@ -468,6 +468,15 @@ class CentralAuthHooks {
 			return true;
 		}
 
+		// Log the user out if they're being renamed. We'll give them an error message
+		// when they try logging in
+		// Also don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
+		$centralUser = new CentralAuthUser( $user->getName() );
+		if ( $centralUser->renameInProgress() ) {
+			$result = false;
+			return false;
+		}
+
 		if ( $user->isLoggedIn() ) {
 			// Already logged in; don't worry about the global session.
 			return true;
@@ -518,8 +527,6 @@ class CentralAuthHooks {
 			}
 
 			// Try the central user
-			// Don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
-			$centralUser = new CentralAuthUser( $userName );
 			if ( !$centralUser->exists() ) {
 				wfDebug( __METHOD__ . ": global account doesn't exist\n" );
 				return true;
@@ -564,6 +571,27 @@ class CentralAuthHooks {
 		self::initSession( $user, $token );
 		$user->centralAuthObj = $centralUser;
 		$result = true;
+
+		return true;
+	}
+
+	/**
+	 * Don't let the user login if their account is being renamed...
+	 * @param User $user
+	 * @param string $password
+	 * @param int $retval
+	 * @param string $msg
+	 * @return bool|string
+	 */
+	static function onAbortLogin( $user, $password, &$retval, &$msg ) {
+		$caUser = new CentralAuthUser( $user->getName() );
+		if ( $caUser->renameInProgress() ) {
+			$retval = LoginForm::NOT_EXISTS;
+			// This is an icky hack so the message is ->parse()d and
+			// gets the username as a parameter
+			$msg = 'centralauth-rename-abortlogin';
+			return false;
+		}
 
 		return true;
 	}
@@ -685,6 +713,8 @@ class CentralAuthHooks {
 	 */
 	static function onRenameUserPreRename( $uid, $oldName, $newName ) {
 		$oldCentral = new CentralAuthUser( $oldName );
+		// If we're doing a global rename, the account will not get unattached
+		// because the old account no longer exists
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
 			$oldCentral->adminUnattach( array( wfWikiID() ) );
 		}
@@ -700,10 +730,15 @@ class CentralAuthHooks {
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
 		$oldCentral = new CentralAuthUser( $oldName );
-		$oldCentral->removeLocalName( wfWikiID() );
-
 		$newCentral = new CentralAuthUser( $newName );
-		$newCentral->addLocalName( wfWikiID() );
+
+		if ( $newCentral->exists() && $oldCentral->renameInProgress( wfWikiID() ) ) {
+			// This is a global rename, just update the row.
+			$oldCentral->updateLocalName( wfWikiID(), $newName );
+		} else {
+			$oldCentral->removeLocalName( wfWikiID() );
+			$newCentral->addLocalName( wfWikiID() );
+		}
 
 		return true;
 	}
@@ -1513,6 +1548,16 @@ class CentralAuthHooks {
 		}
 
 		$id = $centralUser->getId();
+		return true;
+	}
+
+	/**
+	 * Handler for UserGetReservedNames
+	 * @param array $reservedUsernames
+	 * @return bool
+	 */
+	public static function onUserGetReservedNames( &$reservedUsernames ) {
+		$reservedUsernames[] = 'Global rename script';
 		return true;
 	}
 }
