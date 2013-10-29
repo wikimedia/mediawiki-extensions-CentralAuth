@@ -178,10 +178,9 @@ $wgCentralAuthCookiesP3P = true;
 $wgCentralAuthCreateOnView = false;
 
 /**
- * Settings for sending the CentralAuth events to the RC-to-UDP system
+ * Array of settings for sending the CentralAuth events to the RC Feeds
  */
-$wgCentralAuthUDPAddress = false;
-$wgCentralAuthNew2UDPPrefix = '';
+$wgCentralAuthRC = array();
 
 /**
  * List of local pages global users may edit while being globally locked.
