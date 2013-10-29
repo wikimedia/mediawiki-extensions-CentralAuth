@@ -10,6 +10,7 @@ $messages = array();
 
 /** English
  * @author Brion Vibber
+ * @author Kunal Mehta
  */
 $messages['en'] = array(
 	// When not logged in...
@@ -260,6 +261,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-renameuser-merged'   => "User $1 has been migrated to the unified login system.
 Renaming it will cause the local account to be detached from the global one.",
 	'centralauth-renameuser-reserved' => "Username $2 is reserved for a global account.",
+	'centralauth-renameuser-global-inprogress' => 'There is currently a global rename in progress for $1.',
 
 	// Other messages
 	'centralauth-invalid-wiki'       => 'No such wiki database: $1',
@@ -434,6 +436,41 @@ If you are just trying to log in as another user, please log out first.',
 	'centralauth-warning-notloggedin' => 'You are not currently logged in.',
 	'centralauth-warning-notattached' => 'The local account is not attached to a global one.',
 
+	// Global rename user
+	'right-centralauth-rename' => 'Rename global accounts',
+	'action-centralauth-rename' => 'rename global accounts',
+	'renameprogress' => 'Global rename progress',
+	'renameprogress-legend' => 'View global rename progress',
+	'globalrenameuser' => 'Rename global user',
+	'globalrenameuser-legend' => 'Rename global user',
+	'centralauth-rename-abortlogin' => 'Your account is currently being renamed. [[Special:RenameProgress/$1|View the status]].',
+	'centralauth-rename-form-oldname' => 'Current username',
+	'centralauth-rename-form-newname' => 'New username',
+	'centralauth-rename-form-reason' => 'Reason',
+	'centralauth-rename-form-movepages' => 'Move user pages',
+	'centralauth-rename-form-suppressredirects' => 'Suppress creation of redirects',
+	'centralauth-rename-notinstalled' => 'The Renameuser extension is not installed.',
+	'centralauth-rename-doesnotexist' => 'The provided account does not exist.',
+	'centralauth-rename-alreadyexists' => 'The requested username already exists.',
+	'centralauth-rename-unattached-intheway' => 'There are unattached accounts using the requested username.',
+	'centralauth-rename-badusername' => 'The requested username is not valid.',
+	'centralauth-rename-cannotself' => 'You cannot rename yourself.',
+	'centralauth-rename-alreadyinprogress' => 'There is already a rename for this user in progress.',
+	'centralauth-rename-queued' => 'Jobs to rename $1 to $2 have been queued on $3.
+
+View the progress at [[Special:RenameProgress/$2]].',
+	'centralauth-rename-progress-username' => 'Username',
+	'centralauth-rename-notinprogress' => 'There are no renames in progress for $1. They may have already finished.',
+	'centralauth-rename-table-domain' => 'Local wiki',
+	'centralauth-rename-table-status' => 'Status',
+	'centralauth-rename-table-status-inprogress' => 'In progress',
+	'centralauth-rename-table-status-queued' => 'Queued',
+	'centralauth-rename-table-status-done' => 'Done',
+	'centralauth-rename-viewprogress' => 'View progress',
+	'centralauth-rename-progress-fieldset' => 'List of local accounts',
+	'centralauth-rename-movelog' => 'Automatically moved page while renaming the user "[[Special:CentralAuth/$1|$1]]" to "[[Special:CentralAuth/$2|$2]]"',
+	'logentry-renameuser-global' => '$1 {{GENDER:$2}} globally renamed $4 to $5',
+
 	// Final unification
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} account confirmation',
 	'centralauth-finishglobaliseemail_body' => 'Your email address has been set as associated
@@ -468,6 +505,7 @@ This confirmation code will expire on $6 at $7.'
  * @author Hydra
  * @author Jdforrester
  * @author Jon Harald Søby
+ * @author Kunal Mehta
  * @author Kwj2772
  * @author Lejonel
  * @author Lloffiwr
@@ -861,6 +899,10 @@ See also:
 	'centralauth-renameuser-reserved' => 'Parameters:
 * $1 - old username (Unused)
 * $2 - new username',
+	'centralauth-renameuser-global-inprogress' => 'Warning shown when trying to localy rename a user if a global rename is in progres.
+
+Parameters:
+* $1 - username of user being renamed',
 	'centralauth-invalid-wiki' => 'Error message.
 *$1 is wiki name',
 	'centralauth-account-exists-reset' => "Parameters:
@@ -1120,6 +1162,50 @@ See also:
 	'centralauth-completelogin-back' => 'Used as action link text.',
 	'centralauth-error-token-wronguser' => 'Used as error message.',
 	'centralauth-warning-notloggedin' => 'Used as error message.',
+	'right-centralauth-rename' => '{{doc-right|centralauth-rename}}',
+	'action-centralauth-rename' => '{{doc-action|centralauth-rename}}',
+	'renameprogress' => '{{doc-special|RenameProgress}}',
+	'renameprogress-legend' => 'View global rename progress',
+	'globalrenameuser' => '{{doc-special|GlobalRenameUser}}',
+	'globalrenameuser-legend' => 'Label for fieldset around the form on Special:GlobalRenameUser',
+	'centralauth-rename-abortlogin' => 'Error message shown to the user when they try logging in while their account is being renamed.
+
+$1 is the user\'s username',
+	'centralauth-rename-form-oldname' => 'Label for form field of name of account to rename',
+	'centralauth-rename-form-newname' => 'Label for form field of new account name',
+	'centralauth-rename-form-reason' => 'Label for form field of log reason for the rename',
+	'centralauth-rename-form-movepages' => 'Label for checkbox of whether to move the user\'s userpages',
+	'centralauth-rename-form-suppressredirects' => 'Label for checkbox of whether to suppress redirects when moving the user\'s userpages',
+	'centralauth-rename-notinstalled' => 'Error message if the RenameUser extension is not installed.',
+	'centralauth-rename-doesnotexist' => 'Error message if the account provided does not exist.',
+	'centralauth-rename-alreadyexists' => 'Error message if there is already an account at the new username.',
+	'centralauth-rename-unattached-intheway' => 'Error message if there are unattached accounts using the new username.',
+	'centralauth-rename-badusername' => 'Error message if the new username is not valid.',
+	'centralauth-rename-cannotself' => 'Error message if the user tries renaming themselves.',
+	'centralauth-rename-alreadyinprogress' => 'Error message if the user is already being renamed.',
+	'centralauth-rename-queued' => 'Message shown after the rename has started.
+
+* $1 is the user\'s old name
+* $2 is the user\'s new name
+* $3 is a list of the database names where rename jobs have been queued',
+	'centralauth-rename-progress-username' => 'Label for username form field on Special:RenameProgress',
+	'centralauth-rename-notinprogress' => 'Message shown when there is no rename in progress for the provided user
+* $1 is the username',
+	'centralauth-rename-table-domain' => 'Table column header for domain name of wiki',
+	'centralauth-rename-table-status' => 'Table column header for status of rename',
+	'centralauth-rename-table-status-inprogress' => 'Status displayed if the job is still in progress',
+	'centralauth-rename-table-status-queued' => 'Status displayed if the job is still queued',
+	'centralauth-rename-table-status-done' => 'Status displayed if the job has completed successfully',
+	'centralauth-rename-viewprogress' => 'Text for submit button Special:RenameProgress',
+	'centralauth-rename-progress-fieldset' => 'Text on fieldset around rename progress table',
+	'centralauth-rename-movelog' => 'Move log comment used when automatically moving user pages
+
+* $1 is the user\'s old name
+* $2 is the user\'s new name',
+	'logentry-renameuser-global' => '{{logentry}}
+
+* $4 is a link to Special:CentralAuth with the user\'s old name
+* $5 is a link to Special:CentralAuth with the user\'s new name',
 	'centralauth-finishglobaliseemail_subject' => 'Subject field for account confirmation emails',
 	'centralauth-finishglobaliseemail_body' => 'Body text for account confirmation emails
 * $1 is the IP address of the user or server script that triggered the reminder - not needed
