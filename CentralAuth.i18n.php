@@ -430,6 +430,36 @@ If you are just trying to log in as another user, please log out first.',
 	'centralauth-warning-notloggedin' => 'You are not currently logged in.',
 	'centralauth-warning-notattached' => 'The local account is not attached to a global one.',
 
+	// Global rename user
+	'right-centralauth-rename' => 'Rename global accounts',
+	'action-centralauth-rename' => 'rename global accounts',
+	'renameprogress' => 'Global rename progress',
+	'renameprogress-legend' => 'View global rename progress',
+	'centralauth-rename-form-oldname' => 'Current username',
+	'centralauth-rename-form-newname' => 'New username',
+	'centralauth-rename-form-reason' => 'Reason',
+	'centralauth-rename-form-movepages' => 'Move user pages',
+	'centralauth-rename-form-suppressredirects' => 'Suppress creation of redirects',
+	'centralauth-rename-notinstalled' => 'The Renameuser extension is not installed.',
+	'centralauth-rename-doesnotexist' => 'The provided account does not exist.',
+	'centralauth-rename-alreadyexists' => 'The requested username already exists.',
+	'centralauth-rename-unattached-intheway' => 'There are unattached accounts using the requested username.',
+	'centralauth-rename-badusername' => 'The requested username is not valid.',
+	'centralauth-rename-cannotself' => 'You cannot rename yourself.',
+	'centralauth-rename-alreadyinprogress' => 'There is already a username for this user in progress.',
+	'centralauth-rename-queued' => 'Jobs to rename $1 to $2 have been queued on $3.
+
+View the progress at [[Special:RenameProgress/$2]].',
+	'centralauth-rename-progress-username' => 'Username',
+	'centralauth-rename-notinprogress' => 'There are no renames in progress for $1. They may have already finished.',
+	'centralauth-rename-table-domain' => 'Local wiki',
+	'centralauth-rename-table-status' => 'Status',
+	'centralauth-rename-table-status-inprogress' => 'In progress',
+	'centralauth-rename-table-status-queued' => 'Queued',
+	'centralauth-rename-table-status-done' => 'Done',
+	'centralauth-rename-viewprogress' => 'View progress',
+	'centralauth-rename-progress-fieldset' => 'List of local accounts',
+
 	// Final unification
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} account confirmation',
 	'centralauth-finishglobaliseemail_body' => 'Your email address has been set as associated
