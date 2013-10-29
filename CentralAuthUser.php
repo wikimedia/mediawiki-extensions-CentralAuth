@@ -17,11 +17,12 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 4;
+	/*private*/ var $mVersion = 5;
 	/*private*/ var $mDelayInvalidation = 0;
 
 	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
 	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
+	var $mBeingRenamed, $mBeingRenamedArray;
 	protected $mAttachedInfo;
 
 	static $mCacheVars = array(
@@ -37,6 +38,7 @@ class CentralAuthUser extends AuthPluginUser {
 		'mGroups',
 		'mRights',
 		'mHomeWiki',
+		'mBeingRenamed',
 
 		# Store the string list instead of the array, to save memory, and
 		# avoid unserialize() overhead
@@ -178,16 +180,22 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbw = self::getCentralDB();
 
 		$row = $dbw->selectRow(
-			array( 'globaluser', 'localuser' ),
+			array( 'globaluser', 'localuser', 'renameuser_status' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
 				'gu_locked', 'gu_hidden', 'gu_registration', 'gu_email',
-				'gu_email_authenticated', 'gu_home_db'
+				'gu_email_authenticated', 'gu_home_db', 'ru_oldname', 'ru_newname',
 			),
 			array( 'gu_name' => $this->mName ),
 			__METHOD__,
 			array(),
-			array( 'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) ) )
+			array(
+				'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) ),
+				'renameuser_status' => array( 'LEFT OUTER JOIN', array( $dbw->makeList(
+					array( 'ru_oldname=gu_name', 'ru_newname=gu_name' ),
+					LIST_OR
+				) ) )
+			)
 		);
 
 		$this->loadFromRow( $row, true );
@@ -265,6 +273,13 @@ class CentralAuthUser extends AuthPluginUser {
 				wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
 			$this->mFromMaster = $fromMaster;
 			$this->mHomeWiki = $row->gu_home_db;
+			if ( $row->ru_oldname ) {
+				$this->mBeingRenamedArray = array( $row->ru_oldname, $row->ru_newname );
+				$this->mBeingRenamed = implode( '|', $this->mBeingRenamedArray );
+			} else {
+				$this->mBeingRenamedArray = array();
+				$this->mBeingRenamed = '';
+			}
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
@@ -1603,6 +1618,21 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Updates the localname table after a rename
+	 * @param $wikiID
+	 * @param $newname
+	 */
+	function updateLocalName( $wikiID, $newname ) {
+		$dbw = self::getCentralDB();
+		$dbw->update(
+			'localnames',
+			array( 'ln_name' => $newname ),
+			array( 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ),
+			__METHOD__
+		);
+	}
+
+	/**
 	 * @return bool
 	 */
 	function lazyImportLocalNames() {
@@ -1712,6 +1742,46 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->loadAttached();
 
 		return $this->mAttachedArray;
+	}
+
+	/**
+	 * Same as $this->renameInProgress, but only checks one wiki
+	 * Not cached
+	 * @see CentralAuthUser::renameInProgress
+	 * @param string $wiki
+	 * @return array|bool
+	 */
+	public function renameInProgressOn( $wiki ) {
+		$dbw = self::getCentralDB();
+
+		$row = $dbw->selectRow(
+			'renameuser_status',
+			array( 'ru_oldname', 'ru_newname' ),
+			array( $dbw->makeList(
+				array( 'ru_oldname' => $this->mName, 'ru_newname' => $this->mName ),
+				LIST_OR
+			), 'ru_wiki' => $wiki ),
+			__METHOD__
+		);
+		if ( $row !== false ) {
+			return array( $row->ru_oldname, $row->ru_newname );
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Check if a rename from the old name is in progress
+	 * @return array (oldname, newname) if being renamed, or empty if not
+	 */
+	public function renameInProgress() {
+		$this->loadState();
+		if ( $this->mBeingRenamedArray === null ) {
+			$this->mBeingRenamedArray = empty( $this->mBeingRenamed )
+				? array() : explode( '|', $this->mBeingRenamed );
+		}
+
+		return $this->mBeingRenamedArray;
 	}
 
 	/**
