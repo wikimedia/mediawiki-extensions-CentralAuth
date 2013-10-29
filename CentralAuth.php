@@ -238,6 +238,8 @@ $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.p
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
+$wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/LocalRenameUserJob.php";
+$wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/SpecialGlobalRenameUser.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -251,6 +253,7 @@ $wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
 $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
+$wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
 $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLoadFromSession'][] = 'CentralAuthHooks::onUserLoadFromSession';
@@ -305,6 +308,7 @@ $wgAvailableRights[] = 'centralauth-oversight';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
 $wgAvailableRights[] = 'centralauth-autoaccount';
+$wgAvailableRights[] = 'centralauth-rename';
 
 $wgGroupPermissions['steward']['centralauth-unmerge'] = true;
 $wgGroupPermissions['steward']['centralauth-lock'] = true;
@@ -320,6 +324,7 @@ $wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
 $wgSpecialPages['WikiSets'] = 'SpecialWikiSets';
 $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
+$wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
 $wgSpecialPageGroups['CentralAuth'] = 'users';
 $wgSpecialPageGroups['MergeAccount'] = 'login';
 $wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
