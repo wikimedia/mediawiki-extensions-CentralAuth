@@ -1407,11 +1407,15 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->invalidateCache();
-		global $wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix;
-		if ( $wgCentralAuthUDPAddress ) {
-			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
-			RecentChange::sendToUDP( self::getIRCLine( $userpage, $wikiID ),
-				$wgCentralAuthUDPAddress, $wgCentralAuthNew2UDPPrefix );
+		global $wgCentralAuthRC;
+
+		$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
+		$line = self::getIRCLine( $userpage, $wikiID );
+
+		foreach ( $wgCentralAuthRC as $rc ) {
+			/** @var $engine RCFeedEngine */
+			$engine = RecentChange::getEngine( $rc['uri'] );
+			$engine->send( $rc, $line );
 		}
 	}
 
@@ -1422,15 +1426,14 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string
 	 */
 	protected static function getIRCLine( $userpage, $wikiID ) {
-		$title = RecentChange::cleanupForIRC( $userpage->getPrefixedText() );
-		$wikiID = RecentChange::cleanupForIRC( $wikiID );
+		$title = IRCColourfulRCFeedFormatter::cleanupForIRC( $userpage->getPrefixedText() );
+		$wikiID = IRCColourfulRCFeedFormatter::cleanupForIRC( $wikiID );
 		$url = $userpage->getCanonicalURL();
-		$user = RecentChange::cleanupForIRC( $userpage->getText() );
+		$user = IRCColourfulRCFeedFormatter::cleanupForIRC( $userpage->getText() );
 		# see http://www.irssi.org/documentation/formats for some colour codes. prefix is \003,
 		# no colour (\003) switches back to the term default
-		$fullString = "\00314[[\00307$title\00314]]\0034@$wikiID\00310 " .
+		return "\00314[[\00307$title\00314]]\0034@$wikiID\00310 " .
 			"\00302$url\003 \0035*\003 \00303$user\003 \0035*\003\n";
-		return $fullString;
 	}
 
 	/**
