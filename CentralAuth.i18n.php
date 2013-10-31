@@ -8404,6 +8404,13 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-listusers-attached' => '[[User:$1|lokal de esto]]',
 	'centralauth-listusers-item' => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal' => 'ataç nibiyo ya zi lokal de çini yo',
+	'multilock' => 'Seraseri hesabé zafınan bıvin',
+	'centralauth-admin-multi-notfound' => 'peyse şo bıgeyr namey karberi.',
+	'centralauth-admin-multi-intro' => 'Ayni zemandı seraseri hesaban ana roc ke',
+	'centralauth-admin-action-lock-nochange' => 'Kılitan mevırné',
+	'centralauth-admin-action-lock-lock' => 'Hesab weçinayışi kılit ke',
+	'centralauth-admin-action-lock-unlock' => 'Hesab weçinayışi kılit mek',
+	'centralauth-admin-action-hide-nochange' => 'Sewiyané nımıtan mevırné',
 	'centralauth-admin-multi-bot' => 'Vırnayışé peyéni',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sanise|saniseyan}} vernî ra',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|dakika|dakikayan}} vernî de',
@@ -8486,16 +8493,17 @@ Yew grup ne esto heta ti heqanê hemî bido.',
 	'centralauth-editgroup-restrictions' => '
 Ça de ena grup aktiv o, setanê wîkî bimucne:',
 	'centralauth-editgroup-noset' => '(çini yo)',
-	'centralauth-editgroup-submit' => 'Desturê grupî rê vurnayîşî qeyd ke', # Fuzzy
+	'centralauth-editgroup-submit' => 'Vınayışa global gruber qeyd ke',
 	'centralauth-editgroup-perms' => 'Desturan bide:',
 	'centralauth-editgroup-reason' => 'Sebeb:',
-	'centralauth-editgroup-success' => 'Desturanê gruban vurîya', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Qe grupê $1î ti desturan da.
-[[Special:GlobalGroupPermissions|Îdareyê grupî rê reyna şi]]', # Fuzzy
+	'centralauth-editgroup-success' => 'İzıné gruber vırneyay',
+	'centralauth-editgroup-success-text' => "Qandé grubda $1'i izınécı şıma vırné.
+[[Special:GlobalGroupPermissions|Peyse béré idareya gruber]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|bivurne]])',
+	'centralauth-editgroup-nowikiset' => 'Çınya, péro wikiyand ravérena.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wîkîyê ke hesabê tu esto:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Karberê globalî '''$1''' wîkîyê ke ti spesife kerd uca de aktiv niyo ('' $2 '').
-Belki ti heqan dano yew karbero bînî!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "Global hesabe'''$1''' wikida ('' $2 '') aktiv niya.
+Marak şımayé xırab karberiré icazet dané!",
 	'centralauth-editset' => 'Setanê wîkîyan',
 	'centralauth-editset-legend-rw' => 'Setanê wîkîyan bivurne ya zi biviraze',
 	'centralauth-editset-legend-ro' => 'Listeye setanê wîkîyan',
@@ -8530,16 +8538,19 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'centralauth-editset-success' => 'Setê wîkî vurîya.',
 	'centralauth-editset-success-delete' => 'Sete wikiyi wedarna.',
 	'centralauth-editset-return' => 'Merkezê vînayişî rê şi',
-	'centralauth-block-already-locked' => 'Karber [[Special:CentralAuth/$1|$1]] xora global kılit biyo.', # Fuzzy
+	'centralauth-block-already-locked' => 'Karber [[Special:CentralAuth/$1|$1]] ğora globald kılitın no.',
 	'centralauth-readonly' => 'Merkezi xeta malumati biya kılit',
 	'centralauth-readonlytext' => 'Database CentralAuth dı kewtışan de newan u ma ra ke rutin database waynayış do bıkediyo yana vurnayışan de binarê kerdo kılit.',
 	'right-globalgroupmembership' => 'Eza biyayîşê globalî bivurne',
 	'right-centralauth-autoaccount' => 'Otomatik cıkewtışê hesab de globali',
 	'right-centralauth-unmerge' => 'Hesabê kurewi letey meke',
-	'right-centralauth-lock' => 'Hesabê kurewi kılit ke ya zi bınımne', # Fuzzy
-	'right-centralauth-oversight' => 'Hesabê kurewi bıdewosne', # Fuzzy
+	'right-centralauth-lock' => 'Global hesabi kılit ke yana bınımn',
+	'right-centralauth-oversight' => 'Global hesabi bıdegusn ya na bınımn',
 	'right-centralauth-merge' => 'Hesabanê înan yew bike',
 	'right-globalgrouppermissions' => 'Hesabanê globalî îdare bike',
+	'centrallogin' => 'Merkezi hesabd ronıştış ak',
+	'centralloginsuccesful' => 'Hesab abıya',
+	'centralauth-completelogin-back' => 'Peyser şo perda verén.',
 );
 
 /** Lower Sorbian (dolnoserbski)
