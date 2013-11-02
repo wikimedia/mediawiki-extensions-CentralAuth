@@ -433,7 +433,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return String
 	 */
 	function formatBlockStatus( $row ) {
-		if ( $row['blocked'] ) {
+		if ( array_key_exists( 'blocked', $row ) && $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
 			$reason = $row['block-reason'];
 				return $this->msg( 'centralauth-admin-blocked-indef', array( $reason ) )->parse();
