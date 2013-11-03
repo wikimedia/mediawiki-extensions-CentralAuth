@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_8d1f8004",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-11-03T14:20:34Z",
+      "side": 1,
+      "message": "uhm, you want isset( $row[\u0027blocked\u0027] ) here, I guess",
+      "revId": "6a01ab4f88427e1fd9dfc73ac1d82d5658194234",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
