@@ -171,9 +171,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 		// Get the master. We want to make sure we've got up to date information
 		// since we're caching it.
-		$dbr = self::getCentralDB();
+		$dbw = self::getCentralDB();
 
-		$row = $dbr->selectRow(
+		$row = $dbw->selectRow(
 			array( 'globaluser', 'localuser' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
