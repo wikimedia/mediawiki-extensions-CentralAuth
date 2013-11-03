@@ -6524,8 +6524,8 @@ $messages['ce'] = array(
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-listusers-locked' => 'гӀора йе',
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат|сахьат}} хьалха', # Fuzzy
-	'centralauth-days-ago' => '($1 {{PLURAL:$1|де|де}}) хьалха', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат}} хьалха',
+	'centralauth-days-ago' => '($1 {{PLURAL:$1|де}}) хьалха',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха',
 	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
@@ -7312,6 +7312,7 @@ Rheswm: $1',
 	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set "$1" o wicïau',
 	'centralautologin' => 'Mewngofnodi canolog',
 	'centralauth-centralautologin-lostsession' => "Collwyd data'r sesiwn",
+	'globalgrouppermissions' => 'Rheoli grwpiau cydwici',
 	'centralauth-existinggroup-legend' => 'Grwpiau presennol',
 	'centralauth-newgroup-legend' => 'Creu grŵp newydd',
 	'centralauth-globalgroupperms-newgroupname' => "Enw'r grŵp newydd:",
@@ -24926,7 +24927,7 @@ Pòt èsser diferent del wiki principal de l'utilizaire.",
 	'centralauth-login-progress' => 'Sètz en cors de connexion als wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-logout-progress' => 'Sètz en cors de desconnexion dels wikis de {{int:Centralauth-groupname}} :',
 	'centralauth-login-no-others' => 'Sètz estat(ada) connectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Sètz estat(ada) desconnectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupna', # Fuzzy
+	'centralauth-logout-no-others' => 'Sètz {{GENDER:||estat desconnectat|estada desconnectada}} automaticament dels autres projèctes de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'amagat globalament per $1 a $2 per aquela rason: $3',
 	'centralauth-log-name' => 'Jornal de la gestion dels comptes globals',
 	'centralauth-log-header' => 'Aqueste jornal conten las operacions que concernisson los comptes globals : supressions, varrolhatges e desvarrolhatges.',
