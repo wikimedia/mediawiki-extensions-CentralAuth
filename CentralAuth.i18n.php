@@ -6524,6 +6524,8 @@ $messages['ce'] = array(
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-listusers-locked' => 'гӀора йе',
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд}} хьалха',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут}} хьалха',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьат}} хьалха',
 	'centralauth-days-ago' => '($1 {{PLURAL:$1|де}}) хьалха',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
@@ -20332,7 +20334,10 @@ $messages['lo'] = array(
  * @author Mogoeilor
  */
 $messages['lrc'] = array(
+	'centralauth-groupname' => 'بنیاد ویکی رسانه',
+	'centralauth-merge-step2-submit' => 'دونسمنیا اومائن وامین تونه مئکم بکیت',
 	'centralauth-merge-dryrun-or' => "'''يا'''",
+	'centralauth-merge-step3-title' => 'یه گل حساو بی شلک راس بکید',
 	'centralauth-list-home-title' => 'سرآسونه ويكی',
 	'centralauth-foreign-link' => 'كارور $1 د $2',
 	'centralauth-merge-method-primary' => 'سرآسونه ويكی',
@@ -30943,7 +30948,7 @@ $messages['sr-ec'] = array(
 	'centralauth-login-no-others' => 'Пријављени сте на друге пројекте које покреће {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Аутоматски сте одјављени сте са свих пројеката {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално сакривен од $1 у $2 због следећег разлога: $3',
-	'centralauth-log-name' => 'Дневник глобалних налога',
+	'centralauth-log-name' => 'Историја глобалних налога',
 	'centralauth-log-header' => 'Овај дневник садржи записе о операцијама за глобалне налоге: брисања, закључавања и откључавања.',
 	'centralauth-log-entry-delete' => '{{GENDER:|је обрисао|је обрисала|је обрисао}} глобални налог „$1“',
 	'centralauth-log-entry-lock' => '{{GENDER:|је закључао|је закључала|је закључао}} глобални налог „$1“',
@@ -31222,7 +31227,7 @@ Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.', # Fuz
 	'centralauth-login-no-others' => 'Prijavljeni ste na druge projekte koje pokreće {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Automatski ste odjavljeni ste sa svih projekata {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalno sakriven od $1 u $2 zbog sledećeg razloga: $3',
-	'centralauth-log-name' => 'Dnevnik globalnih naloga',
+	'centralauth-log-name' => 'Istorija globalnih naloga',
 	'centralauth-log-header' => 'Ovaj log sadrži operacije nad globalnim nalozima: brisanje, zaključavanje i otključavanje.',
 	'centralauth-log-entry-delete' => 'obrisan globalni nalog "$1"',
 	'centralauth-log-entry-lock' => 'zaključan globalni nalog "$1"',
