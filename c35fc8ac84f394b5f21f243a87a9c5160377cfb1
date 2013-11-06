@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_2bad82eb",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-06T21:06:25Z",
+      "side": 1,
+      "message": "This object is already instantiated 20 lines up in the else case, maybe re-use that?",
+      "revId": "c35fc8ac84f394b5f21f243a87a9c5160377cfb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ebce0a2d",
+        "filename": "ResourceLoaderGlobalUserModule.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-06T21:06:25Z",
+      "side": 1,
+      "message": "Be sure to both assert (and, if it turns out okay, to leave a comment in the code documenting) that this is in fact semantically incorrect as it normalises against the local wiki instead of the remote wiki.\n\nThis is also presumably why you, unlike how core does in UserModule, use getDBkey below instead of getPrefixedDBkey, because the latter would return a localised prefix that would lead to an unknown page title on the global wiki.\n\nThough it works around that, it isn\u0027t unlikely that there can be other subtle transformations in the normalisation process that might lead to unexpected results (for example, it uses lots of local wiki factors such as database, namespaces, language factors such as Language::lc(), wiki configuration for namespace title capitalisation such as Wiktionary\u0027s lowercase and more...).\n\nI think that is acceptable for now (until we find a bug), but we should at least make a note of it in the code here.",
+      "revId": "c35fc8ac84f394b5f21f243a87a9c5160377cfb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_cb094ee0",
+        "filename": "ResourceLoaderGlobalUserModule.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-06T21:06:25Z",
+      "side": 1,
+      "message": "Might as well return right away.",
+      "revId": "c35fc8ac84f394b5f21f243a87a9c5160377cfb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_2b72e27b",
+        "filename": "ResourceLoaderGlobalUserModule.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-06T21:06:25Z",
+      "side": 1,
+      "message": "This should be an option to the module constructor (similar to how options are given to core\u0027s ResourceLoaderFileModule)\n\n public function __construct( $options \u003d array() ) {\n   $this-\u003eglobalWiki \u003d\n   $this-\u003eglobalSource \u003d \n }\n\nThis also ensures that we can allows us to properly invalidate module cache in the future if these parameters change, which we can\u0027t if they are injected through globals like this.",
+      "revId": "c35fc8ac84f394b5f21f243a87a9c5160377cfb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ebb9aa78",
+        "filename": "ResourceLoaderGlobalUserModule.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-06T21:06:25Z",
+      "side": 1,
+      "message": "Might want to apply the same logic here as above (only specifying the explicit wiki if it isn\u0027t the local wiki). That way we don\u0027t need to give the backend the wiki name and it can probably do some additional optimisations, plus I don\u0027t know whether it is officially supported to open a connection to the remote name of the local wiki. It probably works, and it probably could be optimised for, but at this point I don\u0027t think that is the case so we might as well make use of the fact that we know it already.\n\n if wfWikiID() \u003d\u003d\u003d $wgCentralAuthGlobalUserModule[\u0027wiki\u0027]\n     return wfGetDB DB_SLAVE\n \n return wfGetDB DB_SLAVE, [], $wgCentralAuthGlobalUserModule[\u0027wiki\u0027]",
+      "revId": "c35fc8ac84f394b5f21f243a87a9c5160377cfb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
