@@ -17644,11 +17644,11 @@ $messages['ka'] = array(
 	'centralauth-listusers-locked' => 'ჩაკწტილია',
 	'centralauth-listusers-attached' => '[[User:$1|ლოკალურად არსებობს]]',
 	'centralauth-listusers-nolocal' => 'არ არის მიერთებული ან ლოკალურად არ არსებობს',
-	'multilock' => 'რამდენიმე გლობალური მომხმარებლის დაბლოკვა', # Fuzzy
+	'multilock' => 'რამდენიმე გლობალური ანგარიშის დაბლოკვა',
 	'centralauth-admin-multi-username' => 'შეიყვანეთ ერთი ან რამდენიმე მომხმარებლის სახელი, გამოყოფილი ახალი ხაზით',
 	'centralauth-admin-multi-notfound' => 'ძიება უშედეგოდ დასრულდა.',
-	'centralauth-admin-multi-searchprefix' => 'ან, მოძებნოს ანგარიშები პრეფიქსით', # Fuzzy
-	'centralauth-admin-multi-intro' => 'ერთდროულად რამდენიმე გლობალური მომხმარებლის განახლება', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => 'ან, მოძებნოს პრეფიქსიანი მომხმარებელთა სახელები',
+	'centralauth-admin-multi-intro' => 'ერთდროულად რამდენიმე გლობალური ანგარიშის განახლება',
 	'centralauth-admin-action-lock-nochange' => 'არ შეცვალოთ ბლოკირებები',
 	'centralauth-admin-action-lock-lock' => 'არჩეული ანგარიშების ბლოკირება',
 	'centralauth-admin-action-lock-unlock' => 'არჩეული ანგარიშების განბლოკვა',
@@ -17673,15 +17673,15 @@ $messages['ka'] = array(
 	'centralauth-prefs-manage' => 'თქვენი გლობალური ანგარიშის მართვა',
 	'centralauth-prefs-view' => 'გლობალური ანგარიშის ინფოს ნახვა',
 	'centralauth-renameuser-merged' => 'მომხმარებელი $1 გადავიდა შესვლის ერთიან სისტემაზე.
-სახელის გადარქმევა გამოიწვევს ლოკალური ანგარიშის კავშირის დაკარგვას გლობალურ ანგარიშთან.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'მომხმარებელი $2 შენახულია გლობალური ანგარიშისთვის.', # Fuzzy
+სახელის გადარქმევა გამოიწვევს ლოკალური ანგარიშის კავშირის დაკარგვას გლობალურ ანგარიშთან.',
+	'centralauth-renameuser-reserved' => 'მომხმარებლის სახელი $2 შენახულია გლობალური ანგარიშისთვის.',
 	'centralauth-invalid-wiki' => 'არ არსებობს ვიკი-მონაცემთა ბაზა სახელწოდებით: $1',
 	'centralauth-account-exists' => 'ანგარიშის შექმნა შეუძლებელია: სასურველი მომხმარებლის სახელი უკვე დაკავებულია გაერთიანებული ანგარიშის სისტემაში.',
-	'centralauth-account-exists-reset' => 'მომხმარებლის სახელი $1 ამ ვიკიში დარეგისტრირებული არ არის, მაგრამ ის არსებობს შესვლის ერთიან სისტემაში.', # Fuzzy
-	'centralauth-login-progress' => 'თქვენ აგრეთვე შეხვედით {{int:Centralauth-groupname}}-ის სხვა პროექტებშიც :', # Fuzzy
-	'centralauth-logout-progress' => 'თქვენ აგრეთვე გამოხვედით {{int:Centralauth-groupname}}-ის სხვა პროექტებიდანაც:', # Fuzzy
+	'centralauth-account-exists-reset' => 'მომხმარებლის სახელი $1 ამ ვიკიში დარეგისტრირებული არ არის, მაგრამ თქვენ შეგიძლიათ თავიდან დააყენოთ პაროლი [[Special:CentralAuth/$1|პროექტებში, სადაც ის არის]].',
+	'centralauth-login-progress' => 'Logging you in to wikis of {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Logging you out from other wikis of {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'თქვენ ავტომატურად შეხვედით {{int:Centralauth-groupname}}-ის ყველა პროექტში.',
-	'centralauth-logout-no-others' => 'თქვენ ავტომატურად გახვედით {{int:Centralauth-groupname}}-ის ყველა პროექტიდან.', # Fuzzy
+	'centralauth-logout-no-others' => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'გლობალურად დამალა მომხმარებელმა $1 $2 შემდეგი მიზეზის გამო: $3',
 	'centralauth-log-name' => 'გლობალური ანგარიშების ჟურნალი',
 	'centralauth-log-header' => 'ეს ჟურნალი შეიცავს ინფორმაციას წაშლის, დაბლოკვისა და ბლოკის მოხსნის შესახებ',
@@ -17745,8 +17745,8 @@ $messages['ka'] = array(
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|რედაქტირება]])',
 	'centralauth-editgroup-nowikiset' => 'არ ვრცელდება ყველა ვიკიზე.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ვიკი-პროექტი, რომელზეც მათ ანგარიში აქვთ:',
-	'centralauth-globalgroupmembership-badknownwiki' => "გლობალური მომხმარებელი '''$1''' არ არის აქტიური თქვენს მიერ მითითებულ ვიკი-პროექტზე ('' $2 '').
-შესაძლოა, უფლებების მინიჭებას სხვა მომხმარებლისთვის ცდილობთ!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "გლობალური ანგარიში '''$1''' არ არის აქტიური თქვენს მიერ მითითებულ ვიკი-პროექტზე ('' $2 '').
+შესაძლოა, თქვენ სხვა მომხმარებლისათვის ცდილობთ უფლებების მინიჭებას!",
 	'centralauth-editset' => 'ვიკი ნაკრებები',
 	'centralauth-editset-legend-rw' => 'შეასწორეთ ან შექმენით ვიკი',
 	'centralauth-editset-legend-ro' => 'ვიკი სიები',
