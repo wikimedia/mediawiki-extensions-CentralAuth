@@ -4070,6 +4070,7 @@ $messages['bcc'] = array(
 );
 
 /** Bikol Central (Bikol Central)
+ * @author Amire80
  * @author Filipinayzd
  * @author Geopoet
  */
@@ -4272,7 +4273,7 @@ An mga pasa-taramon para sa lokal na mga panindog bago pa man an pagkakasararo i
 	'centralauth-prefs-complete' => 'Gabos yaon sa tanos!',
 	'centralauth-prefs-migration' => 'Yaon sa pagbabalyo',
 	'centralauth-prefs-count-attached' => 'An saimong panindog aktibo sa $1 na proyekto {{PLURAL:$1|sityo|mga sityo}}.',
-	'centralauth-prefs-count-unattached' => 'Bako pang kumpirmadong mga panindog na yaon an saimong pangaran yaon pa sa $1 
+	'centralauth-prefs-count-unattached' => 'Bako pang kumpirmadong mga panindog na yaon an saimong pangaran yaon pa sa $1
 {{PLURAL:$1|proyekto|mga proyekto}}.',
 	'centralauth-prefs-detail-unattached' => 'Ining sityo kan proyekto bako pang kumpirmado na kabilang sa pankinaban na panindog.',
 	'centralauth-prefs-manage' => 'Mahinoon an saimong pankinaban na panindog',
@@ -7099,6 +7100,7 @@ $messages['cv'] = array(
 );
 
 /** Welsh (Cymraeg)
+ * @author Amire80
  * @author Lloffiwr
  * @author Pwyll
  * @author Xxglennxx
@@ -7377,9 +7379,9 @@ Efallai bod rhywun yn ceisio eich mewngofnodi yn enw rhyw gyfrif maleisus.",
 	'centralauth-finishglobaliseemail_subject' => 'Cadarnhau cyfrif ar {{SITENAME}}',
 	'centralauth-finishglobaliseemail_body' => "Mae eich cyfeiriad ebost wedi ei gysylltu gyda'r cyfrif \"\$2\" ar holl brosiectau Wikimedia, a'ch cyfrif ar {{SITENAME}} sydd wedi ei osod yn brif gyfrif i chi.
 
-I gadarnhau bod y cyfrif hwn wir yn perthyn i chi, 
-i gyfuno unrhyw gyfrifon na lwyddwyd i'w cyfuno'n awtomatig, ac 
-i'ch galluogi i gael hyd i'ch cyfrinair os yr aiff ar goll, 
+I gadarnhau bod y cyfrif hwn wir yn perthyn i chi,
+i gyfuno unrhyw gyfrifon na lwyddwyd i'w cyfuno'n awtomatig, ac
+i'ch galluogi i gael hyd i'ch cyfrinair os yr aiff ar goll,
 agorwch y cyswllt hwn yn eich porwr:
 
 \$3
@@ -13577,7 +13579,7 @@ $messages['he'] = array(
 	'centralauth-error-token-wronguser' => 'הקוד האימות אינו תואם את שם המשתמש שלך בהפעלה זו.
 ייתכן שמישהו מנסה להיכנס במקומך.
 אם זהו ניסיון להתחבר כמשתמש אחר, אנא להתנתק תחילה.',
-	'centralauth-warning-notloggedin' => 'אתה לא מחובר כעת.',
+	'centralauth-warning-notloggedin' => 'אינכם מחוברים כעת.',
 	'centralauth-warning-notattached' => 'החשבון המקומי אינו מחובר לחשבון גלובלי.',
 	'centralauth-finishglobaliseemail_subject' => 'אימות חשבון באתר {{SITENAME}}',
 	'centralauth-finishglobaliseemail_body' => 'כתובת הדוא"ל שלך הוגדרה בתור משויכת
@@ -18002,6 +18004,7 @@ Other accounts are not yet confirmed.',
 );
 
 /** Kazakh (Cyrillic script) (қазақша (кирил)‎)
+ * @author Amire80
  * @author Arystanbek
  * @author GaiJin
  * @author Kaztrans
@@ -18154,11 +18157,11 @@ Other accounts are not yet confirmed.',
 	'centralauth-admin-status-submit' => 'Күйді орнату',
 	'centralauth-admin-status-nonexistent' => 'Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.',
 	'centralauth-admin-setstatus-success' => 'Бұл ғаламдық тіркелгі күйін сәтті өзгертіңіз.',
-	'centralauth-admin-status-reasons' => '* Ортақ құлыпталу себептері 
+	'centralauth-admin-status-reasons' => '* Ортақ құлыпталу себептері
 ** тек бұзақы тіркелім
 ** тек спам тіркелім
 * Ортақ құлыпталу және жасырылған себептері
-** өрескел қатысушы есімі 
+** өрескел қатысушы есімі
 ** орынсыз жеке ақпараттары',
 	'centralauth-admin-logsnippet' => 'Алдыңғы ғаламдық тіркелім өзгерістері',
 	'centralauth-admin-not-authorized' => 'Бұл әрекетті орындауға рұқсатыңыз жоқ',
@@ -20971,6 +20974,7 @@ $messages['lzh'] = array(
 );
 
 /** Basa Banyumasan (Basa Banyumasan)
+ * @author Amire80
  * @author StefanusRA
  */
 $messages['map-bms'] = array(
@@ -21122,7 +21126,7 @@ Alesane: $1',
 	'centralauth-prefs-detail-unattached' => 'Situs proyek kiye durung dikonfirmasi dadi bageyane sekang akun global.',
 	'centralauth-prefs-manage' => 'Ngatur akun globale Rika',
 	'centralauth-prefs-view' => 'Deleng info panganggo global',
-	'centralauth-renameuser-merged' => 'Panganggo $1 wis pindah ming sistem akun global. 
+	'centralauth-renameuser-merged' => 'Panganggo $1 wis pindah ming sistem akun global.
 Ganti jeneng bakal marekna akun lokal kasebut kapisah sekang akun globalé.',
 	'centralauth-renameuser-reserved' => 'Panganggo $2 wis dicadhangna kanggo akun global.',
 	'centralauth-invalid-wiki' => 'Ora ana basis data wiki: $1',
@@ -21265,6 +21269,7 @@ Suatu kalompok dapek dihapuihan dengan caro manghapuih kasado haknyo.',
 );
 
 /** Macedonian (македонски)
+ * @author Amire80
  * @author Bjankuloski06
  * @author Brest
  * @author M4r51n
@@ -21623,11 +21628,13 @@ $messages['mk'] = array(
 	'centralauth-warning-notattached' => 'Локалната сметка не е сврзана со глобална.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} — Потврдете ја сметката',
 	'centralauth-finishglobaliseemail_body' => 'Укажавте дека оваа е-поштенската адреса принадлежи
-на сметката „$2“ на сите Викимедиини проекти (притоа  
-главната е
-на {{SITENAME}}).
+на сметката „$2“ на сите Викимедиини проекти (притоа
+главната е на {{SITENAME}}).
 
-Потврдете дека оваа сметка навистина ви припаѓа вам. Вака ќе можете да ги обедините сметките што не можевме да ги споиме автоматски, со што воедно ќе добиете и можност за пристап ако ја заборавите лозинката. Појдете на следнава страница:
+Потврдете дека оваа сметка навистина ви припаѓа вам.
+Вака ќе можете да ги обедините сметките што не можевме
+да ги споиме автоматски, со што воедно ќе добиете и можност
+за пристап ако ја заборавите лозинката. Појдете на следнава страница:
 
 $3
 
@@ -22117,6 +22124,7 @@ $messages['mn'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author Amire80
  * @author Balaji
  * @author Evision
  * @author Htt
@@ -22173,7 +22181,7 @@ $messages['mr'] = array(
 	'centralauth-incomplete-text' => 'एकदा तुमचे खाते एकत्रित झाल्यावर, तुम्ही कुठल्याही विकिमीडिया{{int:Centralauth-groupname}}  विकिवर नविन खाते न उघडता प्रवेश करू शकता',
 	'centralauth-not-owner-text' => '$2 वर "$1" हे सदस्यनाव आपोआप नेमून दिल्या गेले आहे.
 
-जर हे तुम्हीच असाल, तर तुम्ही त्या खात्याचा मुख्य परवलीचा शब्द येथे देऊन प्रवेश  
+जर हे तुम्हीच असाल, तर तुम्ही त्या खात्याचा मुख्य परवलीचा शब्द येथे देऊन प्रवेश
 एकत्रिकरण प्रक्रिया पूर्ण करू शकता:',
 	'centralauth-notice-dryrun' => "<div class='successbox'>फक्त प्रदर्शनासाठी</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'खाते एकत्रीकरण हे सध्या प्रदर्शन/गणकदोष-निवारण  अवस्थेत आहे, त्यामुळे प्रत्यक्षात एकत्रीकरण करता येत नाही.
@@ -22412,7 +22420,7 @@ $messages['mr'] = array(
 	'centralauth-editset' => 'विकीसंच',
 	'centralauth-editset-legend-rw' => 'विकींचा संच तयार अथवा संपादित करा',
 	'centralauth-editset-legend-ro' => 'विकीसंचांची यादी',
-	'centralauth-editset-intro-rw' => 'खालील विकि संच अगोदरच तयार केलेला आहे. 
+	'centralauth-editset-intro-rw' => 'खालील विकि संच अगोदरच तयार केलेला आहे.
 आपण त्यापैकी कोणताही पाहू अथवा बदलू शकता किंवा नविन तयार करु शकता.',
 	'centralauth-editset-intro-ro' => 'खाली अस्तित्वात असलेल्या विकीगटांची यादी देण्यात आली आहे.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|रद्द करा]])',
@@ -24002,6 +24010,7 @@ $messages['niu'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Amire80
  * @author Bever
  * @author HanV
  * @author Krinkle
@@ -24373,7 +24382,7 @@ U kunt bevestigen dat deze gebruikersnaam echt van u is via de volgende link:
 
 $3
 
-Ook wordt het zo mogelijk uw wachtwoord op te vragen indien u dit eventueel vergeet. Als op andere Wikimedia-projecten de gebruikersnaam $2 eveneens bestaat, kunt u deze zo handmatig aan uw e-mailadres koppelen, indien dit niet automatisch is gebeurd. 
+Ook wordt het zo mogelijk uw wachtwoord op te vragen indien u dit eventueel vergeet. Als op andere Wikimedia-projecten de gebruikersnaam $2 eveneens bestaat, kunt u deze zo handmatig aan uw e-mailadres koppelen, indien dit niet automatisch is gebeurd.
 
 Als deze gebruikersnaam *niet* van u is, volg dan deze link om de bevestiging van het e-mailadres te annuleren:
 
@@ -26532,6 +26541,7 @@ $messages['pnb'] = array(
 
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ * @author Amire80
  * @author GerardM
  */
 $messages['ps'] = array(
@@ -26609,8 +26619,8 @@ $messages['ps'] = array(
 	'centralauth-admin-status-nonexistent' => 'تېروتنه: د "<nowiki>$1</nowiki>" په نامه نړېوال گڼون نشته.',
 	'centralauth-admin-setstatus-success' => 'تاسې د دې نړېوال گڼون دريځ په برياليتوب سره بدل کړ.',
 	'centralauth-admin-status-reasons' => '* د بنديز ټولگړي سببونه
-** يوازې ورانکاری گڼون 
-** يوازې سپام گڼون 
+** يوازې ورانکاری گڼون
+** يوازې سپام گڼون
 * د تړلو او پټولو ټولگړي سببونه
 ** د سپکاوي ډک کارن-نوم
 ** ناسم شخصي مالومات',
@@ -34535,6 +34545,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Ahonc
  * @author Alex Khimich
+ * @author Amire80
  * @author Andriykopanytsia
  * @author Andygol
  * @author Arturyatsko
@@ -34832,7 +34843,7 @@ $messages['uk'] = array(
 	'centralauth-editgroup-perms' => 'Призначені права:',
 	'centralauth-editgroup-reason' => 'Причина:',
 	'centralauth-editgroup-success' => 'Глобальна група змінилась',
-	'centralauth-editgroup-success-text' => 'Ви успішно оновили глобальну групу $1. 
+	'centralauth-editgroup-success-text' => 'Ви успішно оновили глобальну групу $1.
 [[Special:GlobalGroupPermissions|Повернутися до управління групами]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|змінити]])',
 	'centralauth-editgroup-nowikiset' => 'Ні, поширюється на всі проекти.',
@@ -34898,10 +34909,10 @@ $messages['uk'] = array(
 	'centralauth-warning-notattached' => 'Локальний обліковий запис не приєднано до глобального.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} — підтвердження облікового запису',
 	'centralauth-finishglobaliseemail_body' => 'Ваша електронна адреса була асоційована
-з обліковим записом "$2" для всіх проектів Вікімедіа, головний обліковий запис знаходиться 
+з обліковим записом "$2" для всіх проектів Вікімедіа, головний обліковий запис знаходиться
 на {{SITENAME}}.
 
-Щоб підтвердити, що цей обліковий запис справді належить Вам, об\'єднайте записи, 
+Щоб підтвердити, що цей обліковий запис справді належить Вам, об\'єднайте записи,
 що у Вас є, і які ми не змогли об\'єднати автоматично, і щоб мати змогу відновити
 Вас обліковий запис у разі втрати паролю, будь ласка, перейдіть у Вашому браузері
 за цим посиланням:
