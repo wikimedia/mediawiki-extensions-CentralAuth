@@ -8332,7 +8332,7 @@ Hesabanê binan hewna konfirme nibiyo.',
 	'centralauth-attach-title' => 'Hesab konfirme bike',
 	'centralauth-attach-text' => 'Belki ena karber sistemê cikewtişê yewî ra transfer biyo.
 Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
-	'centralauth-attach-submit' => 'Hesab bere',
+	'centralauth-attach-submit' => 'Hesabi beré',
 	'centralauth-attach-success' => 'Ena hesab, hesabê yew biyayî rê berd.',
 	'centralauth' => 'Global hesabé idarekari',
 	'centralauth-admin-intro' => 'Ena interface de ti eşkeno hesabanê globalî îdare biker.',
@@ -8361,10 +8361,10 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-admin-blocked' => 'Blok biy, rocê $3î u seetê $4î de a beno. Sebeb: $2',
 	'centralauth-admin-blocked-indef' => 'Ebedi blok biyo. Sebeb: $1',
 	'centralauth-admin-blocklog' => 'Qeydê kılit-kerdışi',
-	'centralauth-admin-list-localwiki' => 'Wîkîyê lokalî',
+	'centralauth-admin-list-localwiki' => 'Lokal Wiki',
 	'centralauth-admin-list-attached-on' => 'Dekewten',
 	'centralauth-admin-list-method' => 'Metod',
-	'centralauth-admin-list-editcount' => 'Amarê vurnayîşî',
+	'centralauth-admin-list-editcount' => 'Amora Timar kerdışi',
 	'centralauth-admin-list-blocked' => 'Blok biya',
 	'centralauth-admin-unmerge' => 'Weçiniye yewkerden',
 	'centralauth-admin-merge' => 'Weçiniye yewkerden',
@@ -8445,7 +8445,7 @@ Reyna name dayış belki ena karber sistemé globali ra wedarneno.',
 	'centralauth-login-no-others' => 'Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik kewto:',
 	'centralauth-logout-no-others' => 'Projeyané {{int:Centralauth-groupname}} bıniré otomatikmen vıcyéno.',
 	'centralauth-hidden-blockreason' => 'wikiyanê hemi de pê $1, $2 de pê ena sebebanê: $3',
-	'centralauth-log-name' => 'Logê hesab ê globalî',
+	'centralauth-log-name' => 'Qeydé global hesabi',
 	'centralauth-log-header' => 'Ena qeyd de operasyonanê hesaban ê globalî esto: wedarnayîşî, kilit kerdişî u qefilnayîşî.',
 	'centralauth-log-entry-delete' => 'hesabo kurewi "$1" esteriya',
 	'centralauth-log-entry-lock' => 'hesabo kurewi "$1" kılit bi',
@@ -8458,7 +8458,7 @@ Reyna name dayış belki ena karber sistemé globali ra wedarneno.',
 	'centralauth-log-status-hidden' => 'nimne',
 	'centralauth-log-status-oversighted' => 'Çımpawiyayo',
 	'centralauth-log-status-none' => '(çini yo)',
-	'centralauth-rightslog-name' => 'Logê heqa globalî',
+	'centralauth-rightslog-name' => 'Qeydé hesab de globali',
 	'centralauth-rightslog-entry-usergroups' => 'qe $1 ra $2 rê $3, eza biyayîşê grupî vurne',
 	'centralauth-rightslog-entry-groupperms' => 'qe $1 ra $2 rê $3, desturê grupî vurne',
 	'centralauth-rightslog-entry-groupperms2' => 'Qe $1, desturê grupî vurno. $2 de kerd; $3 wedarno',
@@ -8557,6 +8557,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 	'centrallogin' => 'Merkezi hesabd ronıştış ak',
 	'centralloginsuccesful' => 'Hesab abıya',
 	'centralauth-completelogin-back' => 'Peyser şo perda verén.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} de malumata hesabi',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -15698,6 +15699,7 @@ $messages['ig'] = array(
 );
 
 /** Iloko (Ilokano)
+ * @author Amire80
  * @author Lam-ang
  */
 $messages['ilo'] = array(
@@ -16057,8 +16059,8 @@ No padpadasem laeng ti sumrek a kas sabali nga agar-aramat, pangngaasi nga umuna
 	'centralauth-finishglobaliseemail_body' => 'Ti esurat a pagtaengam ket naidisson a mainaig
 iti pakabilangan ni "$2" kadagiti amin a gandat ti Wikimedia, a ti nangruna a pakabilangam ket adda iti {{SITENAME}}.
 
-Tapno mapasingkedam a daytoy a pakabilangan ket agpayso a kukuam, itiponmo dagiti aniaman 
-a pakabilangam a saanmi a maaramid nga automatiko, ken mangpalubos kenka a makaipulang ti 
+Tapno mapasingkedam a daytoy a pakabilangan ket agpayso a kukuam, itiponmo dagiti aniaman
+a pakabilangam a saanmi a maaramid nga automatiko, ken mangpalubos kenka a makaipulang ti
 pakabilangam no mapukawmo ti bukodmo a kontrasenias, pangngaasi a lukatam daytoy idiay pagbasabasam:
 
 $3
@@ -24012,6 +24014,7 @@ $messages['niu'] = array(
 /** Dutch (Nederlands)
  * @author Amire80
  * @author Bever
+ * @author Ciell
  * @author HanV
  * @author Krinkle
  * @author Kthoelen
@@ -24382,7 +24385,7 @@ U kunt bevestigen dat deze gebruikersnaam echt van u is via de volgende link:
 
 $3
 
-Ook wordt het zo mogelijk uw wachtwoord op te vragen indien u dit eventueel vergeet. Als op andere Wikimedia-projecten de gebruikersnaam $2 eveneens bestaat, kunt u deze zo handmatig aan uw e-mailadres koppelen, indien dit niet automatisch is gebeurd.
+Ook wordt het zo mogelijk uw wachtwoord op te vragen indien u dit vergeet. Als op andere Wikimedia-projecten de gebruikersnaam $2 eveneens bestaat, kunt u deze zo handmatig aan uw e-mailadres koppelen, indien dit niet automatisch is gebeurd.
 
 Als deze gebruikersnaam *niet* van u is, volg dan deze link om de bevestiging van het e-mailadres te annuleren:
 
@@ -30967,7 +30970,7 @@ $messages['sr-ec'] = array(
 	'centralauth-login-no-others' => 'Пријављени сте на друге пројекте које покреће {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Аутоматски сте одјављени сте са свих пројеката {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално сакривен од $1 у $2 због следећег разлога: $3',
-	'centralauth-log-name' => 'Историја глобалних налога',
+	'centralauth-log-name' => 'Дневник глобалних налога',
 	'centralauth-log-header' => 'Овај дневник садржи записе о операцијама за глобалне налоге: брисања, закључавања и откључавања.',
 	'centralauth-log-entry-delete' => '{{GENDER:|је обрисао|је обрисала|је обрисао}} глобални налог „$1“',
 	'centralauth-log-entry-lock' => '{{GENDER:|је закључао|је закључала|је закључао}} глобални налог „$1“',
@@ -30980,7 +30983,7 @@ $messages['sr-ec'] = array(
 	'centralauth-log-status-hidden' => 'сакривено',
 	'centralauth-log-status-oversighted' => 'надгледано',
 	'centralauth-log-status-none' => '(ништа)',
-	'centralauth-rightslog-name' => 'Историја глобалних права',
+	'centralauth-rightslog-name' => 'Дневник глобалних права',
 	'centralauth-rightslog-entry-usergroups' => '{{GENDER:|је променио|је променила|је променио}} глобално групно чланство за $1 из $2 у $3',
 	'centralauth-rightslog-entry-groupperms' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1 из $2 у $3',
 	'centralauth-rightslog-entry-groupperms2' => '{{GENDER:|је променио|је променила|је променио}} дозволе групе за $1. Додато $2; Уклоњено $3',
@@ -31246,7 +31249,7 @@ Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.', # Fuz
 	'centralauth-login-no-others' => 'Prijavljeni ste na druge projekte koje pokreće {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Automatski ste odjavljeni ste sa svih projekata {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalno sakriven od $1 u $2 zbog sledećeg razloga: $3',
-	'centralauth-log-name' => 'Istorija globalnih naloga',
+	'centralauth-log-name' => 'Dnevnik globalnih naloga',
 	'centralauth-log-header' => 'Ovaj log sadrži operacije nad globalnim nalozima: brisanje, zaključavanje i otključavanje.',
 	'centralauth-log-entry-delete' => 'obrisan globalni nalog "$1"',
 	'centralauth-log-entry-lock' => 'zaključan globalni nalog "$1"',
@@ -31259,7 +31262,7 @@ Preimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.', # Fuz
 	'centralauth-log-status-hidden' => 'sakriven',
 	'centralauth-log-status-oversighted' => 'nadgledano',
 	'centralauth-log-status-none' => '(ništa)',
-	'centralauth-rightslog-name' => 'Istorija globalnih prava',
+	'centralauth-rightslog-name' => 'Dnevnik globalnih prava',
 	'centralauth-rightslog-entry-usergroups' => 'promenjena globalna grupa za nalog $1 sa $2 na $3',
 	'centralauth-rightslog-entry-groupperms' => 'promenjena prava grupe za grupu $1 sa $2 na $3',
 	'centralauth-rightslog-entry-groupperms2' => 'promenjena prava grupe za grupu $1: dodato $2; uklonjeno $3',
