@@ -34348,6 +34348,7 @@ $messages['tzm'] = array(
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Alfredie
  * @author Sahran
+ * @author Tel'et
  */
 $messages['ug-arab'] = array(
 	'mergeaccount' => 'بىر تۇتاش ھالەتتە تىزىمغا كىرىڭ',
@@ -34365,18 +34366,18 @@ $messages['ug-arab'] = array(
 	'centralauth-foreign-contributions' => '$2 دىكى $1 {{PLURAL:$1|تۆھپىكار}}',
 	'centralauth-merge-method-empty' => 'ھېچقانداق تۆھپە يوق',
 	'centralauth-merge-method-mail' => 'تورخەتتە جەزملەنگەن',
-	'centralauth-merge-method-password' => 'ئىم بىلەن جەزملەنگەن',
+	'centralauth-merge-method-password' => 'پارول بىلەن جەزملەنگەن',
 	'centralauth-merge-method-admin' => 'باشقۇرغۇچى بىرلەشتۈرگەن ھېسابات',
 	'centralauth-merge-method-new' => 'يېڭى ھېسابات',
 	'centralauth-merge-method-login' => 'تىزىمغا كىرىۋاتقان قۇرۇلغان',
 	'centralauth-merge-method-questionmark' => '(؟)',
 	'centralauth-finish-title' => 'بىرلەشتۈرۈش تامام',
-	'centralauth-finish-password' => 'ئىم:',
+	'centralauth-finish-password' => 'پارول:',
 	'centralauth-finish-login' => 'تىزىمغا كىرىڭ',
 	'centralauth-finish-send-confirmation' => 'تورخەت ئىم',
 	'centralauth-finish-problems' => 'مەسىلىگە يولۇقتىڭىزمۇ ياكى بۇ باشقا ھېساباتلار ئۆزىڭىزنىڭ ئەمەسمۇ؟
 …[[meta:Help:Unified login problems|ياردەمنى قانداق ئىزدەيدۇ]]',
-	'centralauth-finish-noconfirms' => 'بۇ ئىم بىلەن جەزملىگىلى بولىدىغان ھېسابات يوق.',
+	'centralauth-finish-noconfirms' => 'بۇ پارول بىلەن جەزملىگىلى بولىدىغان ھېسابات يوق.',
 	'centralauth-finish-incomplete' => 'بىر قانچە ھېسابات بۇ ئىم بىلەن بىرلەشتۈرۈلگەن.
 باشقا ھېساباتلار تېخى جەزملەنمىدى.',
 	'centralauth-merge-attempt' => "'''بىرلەشتۈرۈلمىگەن ھېساباتنىڭ ئىملىرىنى تەكشۈرۈۋاتىدۇ…'''",
