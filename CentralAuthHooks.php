@@ -956,6 +956,25 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param &$vars
+	 * @return bool
+	 */
+	static function onResourceLoaderGetConfigVars( &$vars ) {
+		global $wgCentralAuthLoginWiki;
+		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== wfWikiID() ) {
+			$url = WikiMap::getForeignURL(
+				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
+			);
+			if ( $url !== false ) {
+				$vars['wgCentralAuthCheckLoggedInURL'] = wfAppendQuery( $url, array(
+					'type' => 'script',
+					'wikiid' => wfWikiID(),
+				) );
+			}
+		}
+	}
+
+	/**
 	 * Destroy local login cookies so that remote logout works
 	 * @param $user User
 	 * @param $session
