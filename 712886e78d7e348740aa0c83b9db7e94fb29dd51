@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_5f5fa1e1",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-15T23:34:43Z",
+      "side": 1,
+      "message": "The location.href argument is redundant for mediawiki.Uri, it defaults to using the document.location.href, and when omitted it can do a cheap clone of the defaultUri parse result instead of re-parsing location.href.",
+      "revId": "712886e78d7e348740aa0c83b9db7e94fb29dd51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_3f4e6539",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-15T23:34:43Z",
+      "side": 1,
+      "message": "Selecting this seems wasteful, you could\u0027ve kept a reference to it already from a few lines up at \"jQuery( \u0027#p-personal ul\u0027 ).html\".\n\nHave this script extend that with a .find( \u0027a\u0027 ).",
+      "revId": "712886e78d7e348740aa0c83b9db7e94fb29dd51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
