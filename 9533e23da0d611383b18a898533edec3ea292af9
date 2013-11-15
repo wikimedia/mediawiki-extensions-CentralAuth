@@ -16,6 +16,24 @@
       "revId": "9533e23da0d611383b18a898533edec3ea292af9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ffddad6c",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-11-15T23:19:55Z",
+      "side": 1,
+      "message": "mw.config is provided in 2 parts.\n\n1) The startup module (runs hook ResourceLoaderGetConfigVars) which is provided site wide for all users (logged-in and not logged-in), cached for at least 5 minutes.\n\n2) OutputPage (runs hook MakeGlobalVariablesScript) which (like all server html output) is per-user and for anonymous users it is cached for \u003e 30 days and they all share the same cache.\n\nBoth #1 and #2 are fragmented by context (such as uselang and useskin).\n\nUsing the ResourceLoaderGetConfigVars hook this will fail badly because the startup module is sessionless, so that\u0027s a strict no-go. Using the other hook through OutputPage might work, but I doubt it.",
+      "parentUuid": "291c1151_bf741598",
+      "revId": "9533e23da0d611383b18a898533edec3ea292af9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
