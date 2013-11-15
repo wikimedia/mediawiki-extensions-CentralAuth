@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_bf741598",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-11-15T22:47:44Z",
+      "side": 1,
+      "message": "I thought resource loader config was cachable, but it looks like it also includes the user-specific language/skin, and this would be about the same thing. Unless they assume that all anonymous users get the same config?",
+      "revId": "9533e23da0d611383b18a898533edec3ea292af9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
