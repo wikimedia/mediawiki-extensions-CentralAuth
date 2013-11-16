@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "291c1151_3fbf45a8",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-11-16T01:01:39Z",
+      "side": 1,
+      "message": "Thanks Krinkle, that helps.  Brad, I *think* we can actually avoid this by always setting the url to PROTO_RELATIVE. If the user is logged in on loginwiki, but happens to hit http on a site where they\u0027re not logged in, the forceHTTPS cookie for loginwiki *should* redirect the call to //login.wm.o to https, then then checkLoggedIn will see they are logged in and progress accordingly.",
+      "parentUuid": "291c1151_ffddad6c",
+      "revId": "9533e23da0d611383b18a898533edec3ea292af9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "291c1151_bf6df505",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 1
