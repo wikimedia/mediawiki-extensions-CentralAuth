@@ -33582,7 +33582,7 @@ Wala pang mga pagbabagong nagawa para sa mga kuwenta mo.',
 
 May iba pang wiki na napatunayan bilang tahanang kuwenta para sa iyong pangalan ng tagagamit; sundan ang kawing na nasa ibaba at lumagda doon upang matapos ang paglilipat ng kuwenta mo.',
 	'centralauth-merge-step3-title' => 'Likhain ang pinag-isang kuwenta',
-	'centralauth-merge-step3-detail' => 'Handa ka nang likhain ang pinag-isang kuwenta/akawnt mo, na nakakabit ang sumusunod na mga wiki:',
+	'centralauth-merge-step3-detail' => 'Handa ka nang lumikha ng iyong pinag-isang kuwenta, kung saan nakakabit ang mga sumusunod na wiki:',
 	'centralauth-merge-step3-submit' => 'Pag-isahin ang mga kuwenta',
 	'centralauth-merge-no-accounts' => 'Walang mga kuwenta/akawnt sa loob ng tabla ng pangunaning panghanap ng bakas na tumutugma sa iyong pangalan!
 Maaaring maraming mga kamalian sa kalipunan ng dato.',
@@ -33590,7 +33590,7 @@ Maaaring maraming mga kamalian sa kalipunan ng dato.',
 Pakipasok ang hudyat na para sa tahanang wiki.',
 	'centralauth-complete' => 'Ganap na ang pag-iisa ng paglagda!',
 	'centralauth-incomplete' => 'Hindi pa ganap ang pag-iisa ng paglagda!',
-	'centralauth-complete-text' => 'Maaari ka nang lumagda sa anumang sityo/sayt ng wiking {{int:Centralauth-groupname}} na hindi kinakailangang lumikha pa ng isang bagong kuwenta (akawnt).',
+	'centralauth-complete-text' => 'Maaari ka nang lumagda sa anumang sayt ng wiking {{int:Centralauth-groupname}} nang hindi kailangang lumikha pa ng panibagong kuwenta.',
 	'centralauth-incomplete-text' => 'Kapag napag-isa na ang iyong paglagda, magkakaroon ka ng kakayahang lumagda sa anumang sayt/sityo ng wiki ng {{int:Centralauth-groupname}} na hindi na kinakailangan pang lumikha ng isang bagong kuwenta (akawnt).',
 	'centralauth-not-owner-text' => 'Ang pangalan ng tagagamit na "$1" ay kusang itinalaga para sa may-ari ng kuwentang nasa $2.
 
@@ -33598,7 +33598,7 @@ Kung ikaw ito, maaari mong tapusin ang pagsasagawa ng pag-iisa ng paglagda sa pa
 	'centralauth-notice-dryrun' => "<div class='successbox'>Nasa modalidad ng pagpapatunghay (pagpapamalas) lamang kung paano gagawin/gagamitin</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "Kasalukuyang nasa modalidad na pagpapatunghay lamang / pagaalis ng depekto ang pag-iisa ng kuwenta, kaya't hindi pinapagana ang talagang mga pagsasagawa ng pagsasanib.
 Paumanhin!",
-	'centralauth-error-locked' => 'Hindi ka maaaring mamatnugot (gumawa ng pagbabago) dahil nakakandado ang iyong kuwenta/akawnt.',
+	'centralauth-error-locked' => 'Hindi ka maaaring mamatnugot dahil nakakandado ang iyong kuwenta.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Magbasa pa ng marami tungkol sa '''pinag-isang paglagda''']]…''",
 	'centralauth-list-home-title' => 'Tahanang wiki',
 	'centralauth-list-home-dryrun' => 'Ang nakatakda mong hudyat at adres ng e-liham sa wiking ito ay gagamitin para sa iyong pinag-isang kuwenta.',
@@ -33722,15 +33722,15 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|araw|mga araw}} na ang lumipas',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|buwan|mga buwan}} na ang lumipas',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|taon|mga taon}} na ang lumipas',
-	'centralauth-prefs-status' => 'Kalagayan ng pandaigdigang kuwenta/akawnt:',
-	'centralauth-prefs-not-managed' => 'Hindi gumagamit ng pinag-isang kuwenta/akawnt',
+	'centralauth-prefs-status' => 'Kalagayan ng pandaigdigang kuwenta:',
+	'centralauth-prefs-not-managed' => 'Hindi gumagamit ng pinag-isang kuwenta',
 	'centralauth-prefs-unattached' => 'Hindi pa napapatotohanan',
 	'centralauth-prefs-complete' => 'Nasa ayos ang lahat!',
 	'centralauth-prefs-migration' => 'Umiiral ang paglilipat ng pook',
-	'centralauth-prefs-count-attached' => 'Masigla ang kuwenta (akawnt) mo sa $1 {{PLURAL:$1|sityo|mga sityo}} (sayt) ng proyekto',
-	'centralauth-prefs-count-unattached' => 'Nananatiling mga kuwenta (akawnt) na mayroong pangalan mo sa $1 {{PLURAL:$1|proyekto|mga proyekto}}.',
-	'centralauth-prefs-detail-unattached' => 'Hindi pa napapatotohanan kung nabibilang na sa pandaigdigang kuwenta (akawnt) ang pamproyektong sayt/sityong ito.',
-	'centralauth-prefs-manage' => 'Pamahalaan ang pandaigdigang kuwenta/akawnt mo',
+	'centralauth-prefs-count-attached' => 'Aktibo ang kuwenta mo sa $1 {{PLURAL:$1|sayt|sayt}} ng proyekto', # Fuzzy
+	'centralauth-prefs-count-unattached' => "May nananatiling kuwentang 'di-nakatiyak na may pangalan mo sa $1 {{PLURAL:$1|proyekto|proyekto}}.", # Fuzzy
+	'centralauth-prefs-detail-unattached' => 'Hindi pa natitiyak ang pamproyektong sayt na ito bilang kabilang sa kuwentang pandaigdig.',
+	'centralauth-prefs-manage' => 'Pamahalaan ang iyong kuwentang pandaigdig',
 	'centralauth-prefs-view' => 'Tingnan ang kabatiran sa pandaigdigang tagagamit', # Fuzzy
 	'centralauth-renameuser-merged' => 'Inilipat na ang tagagamit na si $1 patungo sa sistema ng pinag-isang paglagda.
 Ang muling pagpapangalan dito ay makasasanhi ng pagkakakalas ng katutubong tagagamit mula sa isang pandaigdigan.', # Fuzzy
@@ -33799,7 +33799,7 @@ Pakitaandaan lamang na hindi iiral ang isang pangkat hangga't hindi pa ito nabib
 	'centralauth-editgroup-success' => 'Binago ang mga kapahintulutang pampangkat', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Matagumpay mong nabago ang kapahintulutang pampangkat para sa $1 pangkat. [[Special:GlobalGroupPermissions|Magbalik sa pamamahala ng pangkat]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|pagbabago]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kung saan sila mayroong isang akawnt/kuwenta:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kung saan mayroon silang kuwenta:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Hindi masigla ang pandaigdigang tagagamit na si '''$1''' sa tinukoy mong wiki ('' $2 '').
 Maaaring sinusubukan mong magtakda ng mga karapatan sa hindi tamang tagagamit!", # Fuzzy
 	'centralauth-editset' => 'Mga pangkat ng wiki',
