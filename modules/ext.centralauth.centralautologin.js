@@ -22,22 +22,22 @@
 	// JavaScript to complete the process.
 	var url, params, len, param, i;
 
-	url = mw.config.get( 'wgServer' ) +
-		mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/start' );
-	url += ( url.indexOf( '?' ) < 0 ? '?' : '&' ) + 'type=script';
-	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
-		url += '&return=1';
+	url = mw.config.get( 'wgCentralAuthCheckLoggedInURL' );
+	if ( url ) {
+		url += '&proto=' + encodeURIComponent( location.protocol.replace( ':', '' ) );
+		if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
+			url += '&return=1';
 
-		params = location.search.slice( 1 ).split( '&' );
-		len = params.length;
-		for ( i = 0; i < len; i++ ) {
-			param = params[i].split( '=' );
-			param = decodeURIComponent( param[0] );
-			if ( param === 'returnto' || param === 'returntoquery' ) {
-				url += '&' + params[i];
+			params = location.search.slice( 1 ).split( '&' );
+			len = params.length;
+			for ( i = 0; i < len; i++ ) {
+				param = params[i].split( '=' );
+				param = decodeURIComponent( param[0] );
+				if ( param === 'returnto' || param === 'returntoquery' ) {
+					url += '&' + params[i];
+				}
 			}
 		}
+		mw.loader.load( url );
 	}
-
-	mw.loader.load( url );
 }( mediaWiki ) );
