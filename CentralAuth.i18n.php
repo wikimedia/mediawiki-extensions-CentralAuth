@@ -7784,6 +7784,7 @@ Denne bekræftelseskode udløber $6 $7.',
  * @author Geitost
  * @author Hoo
  * @author Kghbln
+ * @author MF-Warburg
  * @author Metalhead64
  * @author MichaelFrey
  * @author Raimond Spekking
@@ -7951,7 +7952,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 * Allgemeine Sperr- und Versteckgründe
 ** missbräuchlicher Benutzername
 ** unangemessene persönliche Daten',
-	'centralauth-admin-logsnippet' => 'Vorherige Änderungen am globalen Benutzerkonto',
+	'centralauth-admin-logsnippet' => 'Vorherige Änderungen an globalen Benutzerkonten',
 	'centralauth-admin-suppressreason' => 'Global unterdrückt durch $1. Grund: $2',
 	'centralauth-admin-not-authorized' => 'Du hast keine Berechtigung, diese Aktion durchzuführen.',
 	'globalusers' => 'Benutzerkontenverzeichnis (global)',
