@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_b1043c1a",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-11-19T18:20:09Z",
+      "side": 1,
+      "message": "Why not put this addition inside the if block just below? If the user isn\u0027t already logged in, won\u0027t $user-\u003egetName() be returning an IP which can\u0027t be a valid CentralAuthUser?",
+      "revId": "ff9f866f22ff7591a8f67fb0ff2b97baec884beb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_cc267fbc",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-11-19T18:20:09Z",
+      "side": 1,
+      "message": "Don\u0027t you need to check if $centralUser-\u003erenameInProgress() down here somewhere too, in case the user wasn\u0027t currently logged in but has the cookies that we would be logging them in right now?",
+      "revId": "ff9f866f22ff7591a8f67fb0ff2b97baec884beb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_2c22b3a6",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-11-19T18:20:09Z",
+      "side": 1,
+      "message": "I suppose NOT_EXISTS sort of makes sense, you could consider the user to not really exist during the time that it\u0027s being renamed. OTOH, ABORTED would be more obviously correct. If you need the username passed to the ABORTED message, why not submit that as a simple patch to core?",
+      "revId": "ff9f866f22ff7591a8f67fb0ff2b97baec884beb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ac47834c",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-11-19T18:20:09Z",
+      "side": 1,
+      "message": "I wonder how much of the other logic in CentralAuthHooks::attemptAddUser() is necessary?",
+      "revId": "ff9f866f22ff7591a8f67fb0ff2b97baec884beb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ec7dfb7c",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-11-19T18:20:09Z",
+      "side": 1,
+      "message": "$wgAuth-\u003einitUser() instead?",
+      "revId": "ff9f866f22ff7591a8f67fb0ff2b97baec884beb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_4c97ef8e",
+        "filename": "db_patches/patch-renameuser.sql",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-11-19T18:20:09Z",
+      "side": 1,
+      "message": "Do we need a LoadExtensionSchemaUpdates hook function to have this be run when someone uses update.php? Or do we not care about that for CentralAuth (since I don\u0027t see it for any of the other patch files in this directory).",
+      "revId": "ff9f866f22ff7591a8f67fb0ff2b97baec884beb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
