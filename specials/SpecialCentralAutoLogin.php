@@ -13,22 +13,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki, $wgSecureLogin;
+		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
 
 		$request = $this->getRequest();
-
-		// Enforce $wgSecureLogin
-		if ( $wgSecureLogin
-			&& $request->detectProtocol() == 'http'
-			&& wfCanIPUseHTTPS( $request->getIP() )
-		) {
-			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
-			$output = $this->getOutput();
-			$output->addVaryHeader( 'X-Forwarded-Proto' );
-			$output->redirect( $redirUrl );
-			$output->output();
-			return;
-		}
 
 		$notLoggedInScript = "var t = new Date();" .
 			"t.setTime( t.getTime() + 86400000 );" .
