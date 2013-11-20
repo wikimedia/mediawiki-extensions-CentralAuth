@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_567cd9b2",
+        "filename": "CentralAuth.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-11-20T00:32:21Z",
+      "side": 1,
+      "message": "I\u0027m not seeing wgResourceLoaderSources anywhere else?",
+      "revId": "6aa68f812f24bf9c74cd006c976d0aa26bf37a93",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_16b5017a",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-11-20T00:32:21Z",
+      "side": 1,
+      "message": "Maybe do an early return here for the isAnon case, or move the below block into the else. Either way, you\u0027ll be able to get rid of the !$user-\u003eisAnon condition, and you can delay getting the CentralAuthUser until you know you\u0027re not an anon (and save a function call for the 99.9% case).",
+      "revId": "6aa68f812f24bf9c74cd006c976d0aa26bf37a93",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
