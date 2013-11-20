@@ -9562,6 +9562,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Drini
  * @author Fitoschido
  * @author Igna
+ * @author Ihojose
  * @author Imre
  * @author Jatrobat
  * @author Locos epraix
@@ -9684,7 +9685,7 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-lookup-rw' => 'Administrar la cuenta del usuario',
 	'centralauth-admin-permission' => 'Solo los stewards pueden fusionar otras cuentas de usuario por ellos.',
 	'centralauth-admin-no-unified' => 'No hay una cuenta unificada para este nombre de usuario.',
-	'centralauth-admin-info-header' => 'Información global del usuario', # Fuzzy
+	'centralauth-admin-info-header' => 'Información global del usuario',
 	'centralauth-admin-info-username' => 'Nombre de usuario:',
 	'centralauth-admin-info-id' => 'Id. de usuario:',
 	'centralauth-admin-info-registered' => 'Registrado:',
@@ -9749,7 +9750,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-logsnippet' => 'Cambios previos en el estado de la cuenta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 por la siguiente razón: $2',
 	'centralauth-admin-not-authorized' => 'No tienes permisos para realizar esta acción',
-	'globalusers' => 'Lista de usuarios globales', # Fuzzy
+	'globalusers' => 'Lista de usuarios globales',
 	'centralauth-listusers-locked' => 'bloqueado',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'no adjuntada o no existe localmente',
@@ -9782,9 +9783,9 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-prefs-count-unattached' => 'Cuentas no confirmadas con su nombre permanecen en $1 {{PLURAL:$1|proyecto|proyectos}}.',
 	'centralauth-prefs-detail-unattached' => 'No se ha confirmado que este sitio de proyecto es de la cuenta global.',
 	'centralauth-prefs-manage' => 'Gestiona tu cuenta global',
-	'centralauth-prefs-view' => 'Ver información global {{GENDER:|del usuario|de la usuaria}}', # Fuzzy
+	'centralauth-prefs-view' => 'Ver información global {{GENDER:|del usuario|de la usuaria}}',
 	'centralauth-renameuser-merged' => 'El usuario $1 ha sido migrado al sistema unificado de autenticación.
-Renombrarlo causará que el usuario local se separe del global.', # Fuzzy
+Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-renameuser-reserved' => 'El nombre de usuario $2 está reservado para una cuenta global.',
 	'centralauth-invalid-wiki' => 'No existe tal wiki en la base de datos: $1',
 	'centralauth-account-exists' => 'No se puede crear la cuenta: el nombre de usuario solicitado ya existe en el sistema unificado de autenticación.',
@@ -9792,7 +9793,7 @@ Renombrarlo causará que el usuario local se separe del global.', # Fuzzy
 	'centralauth-login-progress' => 'Iniciando sesión en wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'Cerrando sesión en otros wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Has sido automáticamente registrado dentro de otros proyectos de {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Has sido automáticamente desregistrado de los otros proyectos de {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Automáticamente se ha cerrado la sesión de tu cuenta de los otros proyectos de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'ocultada globalmente por $1 a las $2 con la siguiente razón: $3',
 	'centralauth-log-name' => 'Registro de administración de cuentas globales',
 	'centralauth-log-header' => 'Este registro contiene las operaciones bajo cuentas globales: borrados, protecciones y desprotecciones.',
@@ -27023,6 +27024,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
  * @author Sir Lestaty de Lioncourt
  * @author Teles
  * @author TheGabrielZaum
+ * @author Tuliouel
  * @author 555
  */
 $messages['pt-br'] = array(
@@ -27344,7 +27346,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-centralauth-merge' => 'Unificar as contas',
 	'right-globalgrouppermissions' => 'Gerenciar grupos globais',
 	'centralauth-completelogin-back' => 'Retornar à página anterior',
-	'centralauth-warning-notloggedin' => 'você não esta logado.',
+	'centralauth-warning-notloggedin' => 'Você não esta logado.',
 	'centralauth-finishglobaliseemail_subject' => 'confirmação conta {{SITENAME}}',
 );
 
