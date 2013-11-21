@@ -18508,12 +18508,12 @@ $messages['km'] = array(
 	'centralauth-finish-send-confirmation' => 'ផ្ញើពាក្យសម្ងាត់តាមអ៊ីមែល',
 	'centralauth-finish-noconfirms' => 'គ្មានគណនីអាចត្រូវបានបញ្ជាក់ទទួលស្គាល់ដោយប្រើពាក្យសំងាត់នេះទេ។',
 	'centralauth-attach-title' => 'បញ្ជាក់ទទួលស្គាល់គណនី',
-	'centralauth-admin-manage' => 'គ្រប់គ្រងទិន្នន័យអ្នកប្រើប្រាស់', # Fuzzy
+	'centralauth-admin-manage' => 'គ្រប់គ្រងទិន្នន័យគណនី',
 	'centralauth-admin-username' => 'អត្តនាម៖',
 	'centralauth-admin-lookup-ro' => 'មើលព័ត៌មានអ្នកប្រើប្រាស់',
 	'centralauth-admin-lookup-rw' => 'គ្រប់គ្រងគណនីអ្នកប្រើប្រាស់',
 	'centralauth-admin-no-unified' => 'គ្មានគណនីរួមសំរាប់អត្តនាមនេះទេ។',
-	'centralauth-admin-info-header' => 'ព័ត៌មានអ្នកប្រើប្រាស់សាកល', # Fuzzy
+	'centralauth-admin-info-header' => 'ព័ត៌មានគណនីសាកល',
 	'centralauth-admin-info-username' => 'ឈ្មោះអ្នកប្រើប្រាស៖',
 	'centralauth-admin-info-id' => 'ID អ្នកប្រើប្រាស់៖',
 	'centralauth-admin-info-registered' => 'ត្រូវបានចុះបញ្ជី៖',
@@ -18544,7 +18544,7 @@ $messages['km'] = array(
 	'centralauth-admin-status-hidden-no' => 'ទិន្នន័យមិនត្រូវបានលាក់',
 	'centralauth-admin-status-hidden-list' => 'គណនីត្រូវបានលាក់ពីបញ្ជីសាធារណៈ',
 	'centralauth-admin-status-nonexistent' => 'កំហុស​៖ គណនី​សកល "<nowiki>$1</nowiki>" មិន​មាន​ទេ​។',
-	'globalusers' => 'បញ្ជីអ្នកប្រើប្រាស់សាកល', # Fuzzy
+	'globalusers' => 'បញ្ជីគណនីសាកល',
 	'centralauth-listusers-locked' => 'ត្រូវបានចាក់សោ',
 	'centralauth-seconds-ago' => '$1{{PLURAL:$1|វិនាទី|វិនាទី}}មុន',
 	'centralauth-minutes-ago' => '$1{{PLURAL:$1|នាទី|នាទី}}មុន',
@@ -18560,8 +18560,8 @@ $messages['km'] = array(
 	'centralauth-prefs-count-attached' => 'គណនីរបស់អ្នកសកម្មក្នុង$1គម្រោង{{PLURAL:$1|របស់វិគី|របស់វិគី}}។',
 	'centralauth-prefs-count-unattached' => 'គណនីប្រើឈ្មោះរបស់អ្នកដែលមិនទាន់បានបញ្ជាក់ទទួលស្គាល់ហើយ នៅលើ{{PLURAL:$1|គំរោង|គំរោង}}ចំនួន $1។',
 	'centralauth-prefs-manage' => 'គ្រប់គ្រងគណនីសាកលរបស់អ្នក',
-	'centralauth-prefs-view' => 'មើលព័ត៌មានអ្នកប្រើប្រាស់សាកល', # Fuzzy
-	'centralauth-renameuser-reserved' => 'អ្នកប្រើប្រាស់ $2 ត្រូវ​បាន​ទុកបម្រុង​សម្រាប់​គណនី​សាកល​។', # Fuzzy
+	'centralauth-prefs-view' => 'មើលព័ត៌មានគណនីសាកល',
+	'centralauth-renameuser-reserved' => 'អត្តនាម $2 ត្រូវ​បាន​ទុកបម្រុង​សម្រាប់​គណនី​សាកល​។',
 	'centralauth-login-progress' => 'អ្នកកំពុងកត់ឈ្មោះចូលក្នុងវិគីផ្សេងៗទៀតរបស់{{int:Centralauth-groupname}}៖', # Fuzzy
 	'centralauth-logout-progress' => 'អ្នកកំពុងកត់ឈ្មោះចេញពីវិគីផ្សេងៗទៀតរបស់{{int:Centralauth-groupname}}៖', # Fuzzy
 	'centralauth-log-name' => 'កំណត់ហេតុ​គណនី​សាកល',
@@ -18595,9 +18595,9 @@ $messages['km'] = array(
 	'centralauth-editgroup-members' => 'បញ្ជីសមាជិក៖',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|បញ្ជី​អ្នកប្រើប្រាស់​ដែល​មានសិទ្ធិ​ជា$2]]',
 	'centralauth-editgroup-noset' => '(ទទេ)',
-	'centralauth-editgroup-submit' => 'រក្សារទុកបំលាស់ប្តូរចំពោះក្រុមសមាជិកភាព', # Fuzzy
+	'centralauth-editgroup-submit' => 'រក្សាទុកបន្លាស់ប្តូរចំពោះក្រុមសមាជិកភាពសាកល',
 	'centralauth-editgroup-reason' => 'មូលហេតុ៖',
-	'centralauth-editgroup-success' => 'ក្រុមសមាជិកភាព​បានផ្លាស់ប្តូរហើយ', # Fuzzy
+	'centralauth-editgroup-success' => 'ក្រុមសមាជិកភាព​សាកលបានផ្លាស់ប្តូរហើយ',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|កែប្រែ]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'វិគីដែលពួកគេមានគណនី៖',
 	'centralauth-editset' => '​ការកំណត់​វិគី',
@@ -20392,13 +20392,17 @@ $messages['lrc'] = array(
 	'centralauth-admin-status-hidden' => 'قام بيه:',
 	'centralauth-admin-status-hidden-no' => 'حساو قام نبيه',
 	'centralauth-admin-status-submit' => 'شلك وادارش',
+	'globalusers' => 'نوم گه حساویا جهونی',
 	'centralauth-listusers-locked' => 'قلف بيه',
 	'centralauth-listusers-attached' => '[[User:$1|د شلك ولاتی هيئش]]',
 	'centralauth-admin-action-lock-nochange' => 'قلفيانه آلشت نكيد',
 	'centralauth-admin-action-lock-lock' => 'حساويا انتخاو بيه قلفه بوئه',
 	'centralauth-admin-multi-bot' => 'تغيريا تازه',
+	'centralauth-hours-ago' => '$1 {{جمی:$1|ساعت|ساعتیا}} دما', # Fuzzy
+	'centralauth-prefs-unattached' => 'محکم نبیه',
 	'centralauth-log-status-locked' => 'قلف بيه',
 	'centralauth-log-status-hidden' => 'قام بيه',
+	'centralauth-log-status-oversighted' => 'بیش د حد دیئه بیه',
 	'centralauth-log-status-none' => '(هيش كوم)',
 	'centralautologin' => 'وامین اومائن مئن گرا',
 	'centralauth-newgroup-legend' => 'گروه تازه راس بكيد',
@@ -33549,6 +33553,7 @@ Olaryň islendigini görüp ýa-da redaktirläp bilersiňiz, ýa-da täze toplum
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author Namayan
  * @author Sky Harbor
  */
 $messages['tl'] = array(
@@ -33593,7 +33598,7 @@ Maaaring maraming mga kamalian sa kalipunan ng dato.',
 Pakipasok ang hudyat na para sa tahanang wiki.',
 	'centralauth-complete' => 'Ganap na ang pag-iisa ng paglagda!',
 	'centralauth-incomplete' => 'Hindi pa ganap ang pag-iisa ng paglagda!',
-	'centralauth-complete-text' => 'Maaari ka nang lumagda sa anumang sayt ng wiking {{int:Centralauth-groupname}} nang hindi kailangang lumikha pa ng panibagong kuwenta.',
+	'centralauth-complete-text' => 'Maaari ka nang lumagda sa anumang site ng wiking {{int:Centralauth-groupname}} nang hindi kailangang lumikha pa ng panibagong kuwenta.',
 	'centralauth-incomplete-text' => 'Kapag napag-isa na ang iyong paglagda, magkakaroon ka ng kakayahang lumagda sa anumang sayt/sityo ng wiki ng {{int:Centralauth-groupname}} na hindi na kinakailangan pang lumikha ng isang bagong kuwenta (akawnt).',
 	'centralauth-not-owner-text' => 'Ang pangalan ng tagagamit na "$1" ay kusang itinalaga para sa may-ari ng kuwentang nasa $2.
 
@@ -33725,15 +33730,15 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|araw|mga araw}} na ang lumipas',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|buwan|mga buwan}} na ang lumipas',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|taon|mga taon}} na ang lumipas',
-	'centralauth-prefs-status' => 'Kalagayan ng pandaigdigang kuwenta:',
-	'centralauth-prefs-not-managed' => 'Hindi gumagamit ng pinag-isang kuwenta',
+	'centralauth-prefs-status' => 'Kalagayan ng global account:',
+	'centralauth-prefs-not-managed' => 'Hindi gumagamit ng unified account',
 	'centralauth-prefs-unattached' => 'Hindi pa napapatotohanan',
 	'centralauth-prefs-complete' => 'Nasa ayos ang lahat!',
 	'centralauth-prefs-migration' => 'Umiiral ang paglilipat ng pook',
 	'centralauth-prefs-count-attached' => 'Aktibo ang kuwenta mo sa $1 {{PLURAL:$1|sayt|sayt}} ng proyekto', # Fuzzy
 	'centralauth-prefs-count-unattached' => "May nananatiling kuwentang 'di-nakatiyak na may pangalan mo sa $1 {{PLURAL:$1|proyekto|proyekto}}.", # Fuzzy
-	'centralauth-prefs-detail-unattached' => 'Hindi pa natitiyak ang pamproyektong sayt na ito bilang kabilang sa kuwentang pandaigdig.',
-	'centralauth-prefs-manage' => 'Pamahalaan ang iyong kuwentang pandaigdig',
+	'centralauth-prefs-detail-unattached' => 'Hindi pa natitiyak ang pamproyektong site na ito bilang kabilang sa kuwentang pandaigdig.',
+	'centralauth-prefs-manage' => 'Pangasiwaan ang iyong global account',
 	'centralauth-prefs-view' => 'Tingnan ang kabatiran sa pandaigdigang tagagamit', # Fuzzy
 	'centralauth-renameuser-merged' => 'Inilipat na ang tagagamit na si $1 patungo sa sistema ng pinag-isang paglagda.
 Ang muling pagpapangalan dito ay makasasanhi ng pagkakakalas ng katutubong tagagamit mula sa isang pandaigdigan.', # Fuzzy
@@ -33802,7 +33807,7 @@ Pakitaandaan lamang na hindi iiral ang isang pangkat hangga't hindi pa ito nabib
 	'centralauth-editgroup-success' => 'Binago ang mga kapahintulutang pampangkat', # Fuzzy
 	'centralauth-editgroup-success-text' => 'Matagumpay mong nabago ang kapahintulutang pampangkat para sa $1 pangkat. [[Special:GlobalGroupPermissions|Magbalik sa pamamahala ng pangkat]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|pagbabago]])',
-	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kung saan mayroon silang kuwenta:',
+	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki kung saan mayroon silang account:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Hindi masigla ang pandaigdigang tagagamit na si '''$1''' sa tinukoy mong wiki ('' $2 '').
 Maaaring sinusubukan mong magtakda ng mga karapatan sa hindi tamang tagagamit!", # Fuzzy
 	'centralauth-editset' => 'Mga pangkat ng wiki',
