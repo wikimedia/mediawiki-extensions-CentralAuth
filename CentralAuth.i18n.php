@@ -17018,7 +17018,10 @@ $messages['ja'] = array(
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'ローカルで既にログインしています',
 	'centralauth-centralautologin-badparams' => '指定した認証パラメーターは無効です',
 	'centralauth-centralautologin-lostsession' => 'セッションデータが消失しました',
+	'centralauth-centralautologin-badstate' => '無効な状態「$1」',
 	'centralauth-centralautologin-notposted' => '中央管理ログインフォームは POST メソッドで使用してください',
+	'centralauth-centralautologin-badstate-central' => '状態「$1」は中央ウィキで有効ではありません。',
+	'centralauth-centralautologin-badstate-local' => '状態「$1」はローカルウィキで有効ではありません。',
 	'centralauth-centralautologin-badwiki' => 'ウィキ「$1」は中央管理ログインとして有効ではありません',
 	'centralauth-centralautologin-logged-in' => '現在、$1 としてログインしています。利用者設定を適用するにはページを再読み込みしてください。',
 	'globalgroupmembership' => 'グローバルグループへの所属',
@@ -17109,6 +17112,9 @@ $messages['ja'] = array(
 	'centralloginsuccesful' => 'ログインしました',
 	'centralauth-completelogin-back' => '前のページに戻る。',
 	'centralauth-error-nologinattempt' => 'あなたのセッションに関して現在ログインの試行は行われていません。',
+	'centralauth-error-badtoken' => '指定された認証トークンは期限切れまたは無効です。',
+	'centralauth-error-token-wrongattempt' => '認証トークンは現在のログインの試行に属していません。
+誰かがあなたを悪意のあるアカウントにログインさせようとしている可能性があります。',
 	'centralauth-error-token-wronguser' => 'トークンがセッションの利用者名と一致しません。
 誰かが悪意のあるアカウントのもとであなたをログインさせようとしているおそれがあります。
 別の利用者としてログインしようとしている場合は、まずログアウトしてください。',
@@ -18870,8 +18876,8 @@ $messages['ko'] = array(
 	'centralauth-listusers-nolocal' => '묶이지 않았거나 로컬에 존재하지 않음',
 	'multilock' => '여러 통합 계정을 잠그기',
 	'centralauth-admin-multi-username' => '새 줄로 구분하여 하나 이상의 사용자 이름을 입력하세요',
-	'centralauth-admin-multi-notfound' => '해당 사용자 이름을 찾을 수 없습니다.',
-	'centralauth-admin-multi-searchprefix' => '또는 접두어로 사용자 이름 찾기',
+	'centralauth-admin-multi-notfound' => '검색이 해당 사용자 이름을 반환할 수 없습니다.',
+	'centralauth-admin-multi-searchprefix' => '또는 접두어로 사용자 이름 검색',
 	'centralauth-admin-multi-intro' => '한 번에 여러 통합 계정을 업데이트합니다',
 	'centralauth-admin-action-lock-nochange' => '잠금을 바꾸지 마세요',
 	'centralauth-admin-action-lock-lock' => '선택한 계정 잠금',
