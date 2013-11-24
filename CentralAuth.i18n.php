@@ -6128,6 +6128,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
  * @author Arnaugir
  * @author BroOk
  * @author El libre
+ * @author Fitoschido
  * @author Jordi Roqué
  * @author Paucabot
  * @author Pitort
@@ -6379,7 +6380,7 @@ Heu demanat aquesta pàgina sense proporcionar cap dada d'autenticació, per la 
 	'centralauth-centralautologin-badstate-local' => 'L’estat «$1» no és vàlid en el wiki local',
 	'centralauth-centralautologin-badwiki' => 'El wiki «$1» no és vàlid per a connexió centralitzada',
 	'centralauth-centralautologin-corsfail' => 'La verificació d’origen CORS ha fallat',
-	'centralauth-centralautologin-logged-in' => 'Esteu connectats de forma centralitzada com a $1. Refresqueu la pàgina per aplicar la vostra configuració.',
+	'centralauth-centralautologin-logged-in' => 'Esteu connectat centralitzadament com a $1. Torneu a carregar la pàgina per aplicar la vostra configuració.',
 	'globalgroupmembership' => 'Pertinença a grups globals',
 	'globalgrouppermissions' => 'Gestió de grups globals',
 	'centralauth-globalgroupperms-grouplist' => 'Els següents grups globals han estat configurats.
