@@ -39,11 +39,13 @@ class SpecialGlobalUsers extends SpecialPage {
 	}
 }
 
-class GlobalUsersPager extends UsersPager {
+class GlobalUsersPager extends AlphabeticPager {
 	public $requestedGroup = false, $requestedUser;
 	private $wikiSets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
+		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
+
 		parent::__construct( $context );
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
 	}
@@ -151,6 +153,61 @@ class GlobalUsersPager extends UsersPager {
 		}
 		$batch->execute();
 		$this->mResult->rewind();
+	}
+
+	/**
+	 * @return string
+	 */
+	function getPageHeader() {
+		global $wgScript;
+
+		list( $self ) = explode( '/', $this->getTitle()->getPrefixedDBkey() );
+
+		# Form tag
+		$out = Xml::openElement(
+			'form',
+			array( 'method' => 'get', 'action' => $wgScript, 'id' => 'mw-listusers-form' )
+		) .
+			Xml::fieldset( $this->msg( 'listusers' )->text() ) .
+			Html::hidden( 'title', $self );
+
+		# Username field
+		$out .= Xml::label( $this->msg( 'listusersfrom' )->text(), 'offset' ) . ' ' .
+			Html::input(
+				'username',
+				$this->requestedUser,
+				'text',
+				array(
+					'id' => 'offset',
+					'size' => 20,
+					'autofocus' => $this->requestedUser === ''
+				)
+			) . ' ';
+
+		# Group drop-down list
+		$out .= Xml::label( $this->msg( 'group' )->text(), 'group' ) . ' ' .
+			Xml::openElement( 'select', array( 'name' => 'group', 'id' => 'group' ) ) .
+			Xml::option( $this->msg( 'group-all' )->text(), '' );
+		foreach ( $this->getAllGroups() as $group => $groupText ) {
+			$out .= Xml::option( $groupText, $group, $group == $this->requestedGroup );
+		}
+		$out .= Xml::closeElement( 'select' ) . '<br />';
+		# Descending sort checkbox
+		$out .= Xml::checkLabel(
+			$this->msg( 'listusers-desc' )->text(),
+			'desc',
+			'desc',
+			$this->mDefaultDirection
+		);
+		$out .= "<p />";
+
+		# Submit button and form bottom
+		$out .= Html::hidden( 'limit', $this->mLimit );
+		$out .= Xml::submitButton( $this->msg( 'allpagessubmit' )->text() );
+		$out .= Xml::closeElement( 'fieldset' ) .
+			Xml::closeElement( 'form' );
+
+		return $out;
 	}
 
 	/**
