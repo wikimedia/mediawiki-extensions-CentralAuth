@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_fc4db040",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-11-25T19:01:24Z",
+      "side": 1,
+      "message": "I doubt we should call this over here",
+      "revId": "4e26da82a093f97871bcf33b7c1a2ecf6c6e5b1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_dc5aecf8",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-11-25T19:01:24Z",
+      "side": 1,
+      "message": "I doubt we should call this over here",
+      "revId": "4e26da82a093f97871bcf33b7c1a2ecf6c6e5b1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
