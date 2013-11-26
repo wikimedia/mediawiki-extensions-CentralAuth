@@ -230,6 +230,13 @@ class SpecialCentralAuth extends SpecialPage {
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
 		);
 
+		$groups = $globalUser->getGlobalGroups();
+		if ( $groups ) {
+			$attribs['groups'] = htmlspecialchars( $this->getLanguage()->commaList( $groups ) );
+		} else {
+			$attribs['groups'] = $this->msg( 'centralauth-admin-info-nogroups' )->escaped();
+		}
+
 		// Give grep a chance to find the usages:
 		// centralauth-admin-info-username, centralauth-admin-info-id, centralauth-admin-info-registered,
 		// centralauth-admin-info-home, centralauth-admin-info-editcount, centralauth-admin-info-locked,
