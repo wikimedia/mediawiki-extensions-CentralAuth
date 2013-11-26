@@ -30838,6 +30838,7 @@ $messages['sr-ec'] = array(
 	'centralauth-merge-step3-title' => 'Отварање обједињеног налога',
 	'centralauth-merge-step3-detail' => 'Отварање обједињеног налога може да почне. Уз њега ће бити приложени следећи викији:',
 	'centralauth-merge-step3-submit' => 'Обједини налоге',
+	'centralauth-merge-home-password' => 'Главни вики за овај налог (приказан испод) има другачију лозинку од ове коју сте унели. Молимо унесите лозинку вашег главног викија.',
 	'centralauth-complete' => 'Обједињавање налога је завршено!',
 	'centralauth-incomplete' => 'Обједињавање налога није завршено!',
 	'centralauth-complete-text' => 'Сада можете да се пријавите на све вики-пројекте {{int:Centralauth-groupname}}, без отварања новог налога.',
