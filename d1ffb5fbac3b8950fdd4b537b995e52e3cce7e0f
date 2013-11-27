@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_1923b8a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-11-27T13:09:06Z",
+      "side": 1,
+      "message": "Please limit the length of the 1st line of the commit summary. Line 2 should be empty.\n\nSee https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines for details.",
+      "revId": "d1ffb5fbac3b8950fdd4b537b995e52e3cce7e0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
