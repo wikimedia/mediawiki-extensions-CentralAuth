@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_1e4f1ec2",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-11-27T12:07:37Z",
+      "side": 1,
+      "message": "As in core message \u0027prefs-memberingroups\u0027, this should support GENDER as well as PLURAL.\n\nSee for example: https://en.wikipedia.org/wiki/Special:Preferences?uselang\u003dqqx",
+      "revId": "ea0281f2020e72cef450203c37b93316ce909266",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
