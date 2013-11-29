@@ -6130,6 +6130,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
  * @author El libre
  * @author Fitoschido
  * @author Jordi Roqué
+ * @author Papapep
  * @author Paucabot
  * @author Pitort
  * @author SMP
@@ -6187,7 +6188,7 @@ Si efectivament és vostre, podeu finalitzar el procés d'unificació escrivint 
 	'centralauth-list-home-title' => 'Wiki principal',
 	'centralauth-list-home-dryrun' => "La contrasenya i l'adreça electrònica d'aquest wiki seran les que es faran servir al vostre compte unificat.",
 	'centralauth-list-attached-title' => 'Comptes vinculats',
-	'centralauth-list-attached' => 'El compte de nom «$1» de cadascun dels llocs següents ha estat associat automàticament al compte unificat:',
+	'centralauth-list-attached' => "S'ha associat automàticament el compte de nom «$1» de cadascun dels llocs següents al compte unificat:",
 	'centralauth-list-attached-dryrun' => "El compte de nom «$1» de cadascun dels llocs següents s'associaran al compte unificat:",
 	'centralauth-list-unattached-title' => 'Comptes no vinculats',
 	'centralauth-list-unattached' => "No s'ha pogut confirmar automàticament que us pertanyi el compte «$1» dels següents llocs web;
@@ -6268,7 +6269,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-delete-description' => "Esborrant el compte global també esborrareu les vostres preferències globals, desvinculareu tots els comptes locals, i alliberareu el nom global per si un altre usuari volgués prendre'l. Tots els comptes locals continuaran existint. Les contrasenyes dels comptes locals creats abans de la fusió revertiran als seus valors previs a aquesta.",
 	'centralauth-admin-delete-button' => 'Esborra aquest compte',
 	'centralauth-admin-delete-confirm' => 'Realment voleu suprimir aquest compte?',
-	'centralauth-admin-delete-success' => 'El compte global per a "<nowiki>$1</nowiki>" ha estat esborrat satisfactòriament',
+	'centralauth-admin-delete-success' => 'S\'ha suprimit satisfactòriament el compte global per a "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'No hi ha compte global per «<nowiki>$1</nowiki>»',
 	'centralauth-admin-delete-nonexistent' => 'Error: el compte global «<nowiki>$1</nowiki>» no existeix.',
 	'centralauth-token-mismatch' => "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
@@ -6410,7 +6411,7 @@ Es pot esborrar un grup retirant-li tots els drets.',
 	'centralauth-editgroup-perms' => 'Autoritzacions assignades:',
 	'centralauth-editgroup-reason' => 'Motiu:',
 	'centralauth-editgroup-success' => 'Grup global modificat',
-	'centralauth-editgroup-success-text' => 'El grup global $1 ha estat actualitzat correctament.[[Special:GlobalGroupPermissions|Torna a la gestió de grups]]',
+	'centralauth-editgroup-success-text' => "S'ha actualitzat correctament el grup global $1.[[Special:GlobalGroupPermissions|Torna a la gestió de grups]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editeu]])',
 	'centralauth-editgroup-nowikiset' => "Cap, s'aplica a tots els wikis.",
 	'centralauth-globalgrouppermissions-knownwiki' => "Wiki on tinguin un compte d'usuari:",
@@ -8239,6 +8240,7 @@ Sie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
  * @author Aspar
  * @author Erdemaslancan
  * @author Gorizon
+ * @author Marmase
  * @author Mirzali
  * @author Xoser
  */
@@ -8336,7 +8338,7 @@ Hesabanê binan hewna konfirme nibiyo.',
 	'centralauth-attach-title' => 'Hesab konfirme bike',
 	'centralauth-attach-text' => 'Belki ena karber sistemê cikewtişê yewî ra transfer biyo.
 Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
-	'centralauth-attach-submit' => 'Hesabi bere',
+	'centralauth-attach-submit' => 'Hesabi ber',
 	'centralauth-attach-success' => 'Ena hesab, hesabê yew biyayî rê berd.',
 	'centralauth' => 'Global hesabé idarekari',
 	'centralauth-admin-intro' => 'Ena interface de ti eşkeno hesabanê globalî îdare biker.',
@@ -16470,7 +16472,7 @@ Tale funzionalità è attualmente disattivata per motivi di sicurezza.",
 	'centralauth-finish-text' => 'Se si è il titolare di queste utenze, per completare il processo di unificazione delle utenze è sufficiente inserire le password relative alle utenze stesse qui di seguito:',
 	'centralauth-finish-password' => 'Password:',
 	'centralauth-finish-login' => 'Esegui il login',
-	'centralauth-finish-send-confirmation' => 'Invia password via e-mail',
+	'centralauth-finish-send-confirmation' => 'Invia password via email',
 	'centralauth-finish-problems' => 'Se non si è il titolare di queste utenze, o se si incontrano altri problemi, si invita a consultare la [[meta:Help:Unified login problems|pagina di aiuto]]...',
 	'centralauth-finish-noconfirms' => 'È impossibile confermare alcuna utenza mediante questa password.',
 	'centralauth-finish-incomplete' => 'Sono state unificate alcune utenze mediante questa password. Sono presenti altre utenze in attesa di conferma.',
@@ -20358,11 +20360,17 @@ $messages['lrc'] = array(
 	'centralauth-merge-dryrun-or' => "'''يا'''",
 	'centralauth-merge-step3-title' => 'یه گل حساو بی شلک راس بکید',
 	'centralauth-merge-step3-submit' => 'حساویا یه شلک',
+	'centralauth-complete' => 'یکاگری اومائن د سیستم کامل بیه',
+	'centralauth-incomplete' => 'یکاگری امائن د سیستم کامل نبی',
+	'centralauth-error-locked' => 'شما نتونید ویرایشت بکید سی یه که حساوتو قلف بیه',
+	'centralauth-error-unmerged' => 'شما نتونید ویرایشت بکید سی یه که حساوتو یکاگری نبیه',
 	'centralauth-list-home-title' => 'سرآسونه ويكی',
+	'centralauth-list-attached-title' => 'حساویا یکی بیه',
 	'centralauth-foreign-link' => 'كارور $1 د $2',
 	'centralauth-merge-method-primary' => 'سرآسونه ويكی',
 	'centralauth-merge-method-empty' => 'بی هومياری',
 	'centralauth-merge-method-mail' => 'وا ايميل محكم بی',
+	'centralauth-merge-method-password' => 'مئکم بیه وا پاسورد',
 	'centralauth-merge-method-new' => 'حساو تازه',
 	'centralauth-merge-method-login' => 'د حالت ورود راس بیه',
 	'centralauth-finish-title' => 'آخر گوشه',
@@ -20385,6 +20393,7 @@ $messages['lrc'] = array(
 	'centralauth-admin-yes' => 'هری',
 	'centralauth-admin-no' => 'نه',
 	'centralauth-admin-hidden-list' => 'د ليستيا عمومی',
+	'centralauth-admin-list-legend-ro' => 'نوم گه حساویه محلی',
 	'centralauth-admin-unattached' => 'وصل نبيه',
 	'centralauth-admin-list-localwiki' => 'ويكی ولاتی',
 	'centralauth-admin-list-method' => 'روشت',
