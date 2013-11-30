@@ -16,6 +16,24 @@
       "revId": "ea0281f2020e72cef450203c37b93316ce909266",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_21b076f0",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-11-30T01:04:30Z",
+      "side": 1,
+      "message": "What part of this message should use GENDER? \u0027prefs-memberingroups\u0027 has the word \"Member\", however this just has the word \u0027Global\u0027.\n\nWill add PLURAL support in a minute.",
+      "parentUuid": "0ee75395_1e4f1ec2",
+      "revId": "ea0281f2020e72cef450203c37b93316ce909266",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
