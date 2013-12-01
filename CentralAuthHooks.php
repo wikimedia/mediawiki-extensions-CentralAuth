@@ -1534,4 +1534,17 @@ class CentralAuthHooks {
 		$id = $centralUser->getId();
 		return true;
 	}
+
+	/**
+	 * Prevent "canonicalization" of Special:CentralAutoLogin to a localized
+	 * Special namespace name. See bug 54195.
+	 * @param WebRequest $request
+	 * @param Title $title
+	 * @param OutputPage $output
+	 * @return boolean
+	 */
+	public static function onTestCanonicalRedirect( $request, $title, $output ) {
+		return $title->getNamespace() !== NS_SPECIAL ||
+			strncmp( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/', 25 ) !== 0;
+	}
 }
