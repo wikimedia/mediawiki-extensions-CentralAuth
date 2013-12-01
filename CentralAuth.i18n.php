@@ -2669,6 +2669,14 @@ $messages['as'] = array(
 	'right-globalgrouppermissions' => 'গোলকীয় গোটসমূহৰ ব্যৱস্থাপনা কৰক',
 );
 
+/** American sign language (American sign language)
+ * @author Icemandeaf
+ */
+$messages['ase'] = array(
+	'centralauth-finish-login' => 'M538x521S2a200497x480S20b00462x508S11530523x482S15a37462x483S11551470x493',
+	'centralauth-admin-blocklog' => 'M512x523S15a19488x500S15a11489x500S26520492x478 M514x523S11541487x478S22f04489x509',
+);
+
 /** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
@@ -6125,6 +6133,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi set.',
 
 /** Catalan (català)
  * @author Aleator
+ * @author Alvaro Vidal-Abarca
  * @author Arnaugir
  * @author BroOk
  * @author El libre
@@ -6227,15 +6236,15 @@ Altres comptes encara no s'han confirmat.",
 Si el compte global és vostre, podeu associar-hi aquest compte escrivint la contrasenya:',
 	'centralauth-attach-submit' => 'Migra el compte',
 	'centralauth-attach-success' => "S'ha migrat el compte al sistema unificat.",
-	'centralauth' => "Administració d'usuaris globals", # Fuzzy
+	'centralauth' => "Administració d'usuaris globals",
 	'centralauth-admin-intro' => "Aquesta interfície serveix per a l'administració dels comptes globals.",
-	'centralauth-admin-manage' => "Gestiona les dades d'usuari", # Fuzzy
+	'centralauth-admin-manage' => "Gestiona les dades d'usuari",
 	'centralauth-admin-username' => "Nom d'usuari:",
 	'centralauth-admin-lookup-ro' => "Mostra informació de l'usuari",
 	'centralauth-admin-lookup-rw' => "Administra el compte d'usuari/a",
 	'centralauth-admin-permission' => "Només els stewards poden fusionar comptes d'altra gent.",
 	'centralauth-admin-no-unified' => "Cap compte unificat per aquest nom d'usuari.",
-	'centralauth-admin-info-header' => "Informació global de l'usuari/a", # Fuzzy
+	'centralauth-admin-info-header' => "Informació global de l'usuari/a",
 	'centralauth-admin-info-username' => "Nom d'usuari:",
 	'centralauth-admin-info-id' => "Identificador d'usuari:",
 	'centralauth-admin-info-registered' => 'Registrat:',
@@ -6298,15 +6307,15 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-admin-logsnippet' => 'Canvis anteriors al compte global',
 	'centralauth-admin-suppressreason' => 'Eliminada globalment per $1 amb el següent motiu: $2',
 	'centralauth-admin-not-authorized' => 'No teniu permisos per executar aquesta acció',
-	'globalusers' => "Llista global d'usuaris", # Fuzzy
+	'globalusers' => "Llista global d'usuaris",
 	'centralauth-listusers-locked' => 'Blocat',
 	'centralauth-listusers-attached' => '[[User:$1|existeix localment]]',
 	'centralauth-listusers-nolocal' => 'no unit o no existeix localment',
-	'multilock' => "Bloqueig múltiple d'usuaris globals", # Fuzzy
+	'multilock' => "Bloqueig múltiple d'usuaris globals",
 	'centralauth-admin-multi-username' => "Introduïu un o més noms d'usuari, un per línia",
 	'centralauth-admin-multi-notfound' => "La cerca no ha tornat cap nom d'usuari.",
-	'centralauth-admin-multi-searchprefix' => 'O bé cerca comptes amb un prefix', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Actualitza múltiples usuaris globals alhora', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => "O bé cerca noms d'usuari amb un prefix",
+	'centralauth-admin-multi-intro' => 'Actualitza múltiples usuaris globals alhora',
 	'centralauth-admin-action-lock-nochange' => 'No canviïs els bloqueigs',
 	'centralauth-admin-action-lock-lock' => 'Bloca els comptes seleccionats',
 	'centralauth-admin-action-lock-unlock' => 'Desbloca els comptes seleccionats',
@@ -6329,13 +6338,13 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-prefs-count-unattached' => 'Es mantenen comptes amb el vostre nom sense confirmar a $1 {{PLURAL:$1|projecte|projectes}}.',
 	'centralauth-prefs-detail-unattached' => "No s'ha confirmat que aquest projecte pugui accedir als comptes unificats.",
 	'centralauth-prefs-manage' => 'Administració del vostre compte global',
-	'centralauth-prefs-view' => "Mostra informació global d'usuari", # Fuzzy
-	'centralauth-renameuser-merged' => "L'usuari $1 ha migrat al sistema de comptes unificats.
-El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global.", # Fuzzy
-	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.", # Fuzzy
+	'centralauth-prefs-view' => "Mostra informació global d'usuari",
+	'centralauth-renameuser-merged' => "L'usuari $1 ha estat migrat al sistema de comptes unificats.
+El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global.",
+	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.",
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
 	'centralauth-account-exists' => "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza algun usuari del sistema unificat de comptes.",
-	'centralauth-account-exists-reset' => "El nom d'usuari $1 no està registrat en aquest wiki, pero sí que existeix al registre unificat d'usuaris.", # Fuzzy
+	'centralauth-account-exists-reset' => "El nom d'usuari $1 no està registrat en aquest wiki, però podeu reiniciar la seva contrasenya a [[Special:CentralAuth/$1|una wiki on sí que hi estigui registrat]].",
 	'centralauth-login-progress' => 'Iniciant la sessió en els wikis de {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-logout-progress' => 'Sortint de la sessió en els wikis de {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Automàticament us heu connectat en altres projectes de {{int:Centralauth-groupname}}.',
@@ -33927,6 +33936,7 @@ $messages['tr'] = array(
 	'mergeaccount' => 'Hesap birleştirme durumu',
 	'centralauth-groupname' => 'Wikimedia Vakfı',
 	'centralauth-desc' => '{{int:Centralauth-groupname}} vikilerinde [[Special:MergeAccount|hesap birleştir]]',
+	'centralauth-antispoof-desc' => "CentralAuth'a AntiSpoof teknolojisi ekler",
 	'centralauth-mergeaccount-desc' => 'Tek Kullanıcı Girişi için [[Special:MergeAccount|çoklu hesapları birleştirir]]',
 	'centralauth-merge-denied' => 'Üzgünüz, bu sayfaya erişmek için izniniz yok.',
 	'centralauth-merge-notlogged' => 'Lütfen bütün hesaplarınızın tam olarak birleştirildiğini kontrol etmek için <span class="plainlinks">[$1 oturum açın]</span>.',
@@ -33973,6 +33983,7 @@ Eğer bu sizseniz, ana şifreyi buraya yazarak giriş birleştirme sürecini tam
 	'centralauth-disabled-dryrun' => 'Hesap birleştirme şuanda demo / ayıklama modunda, bu yüzden gerçek birleştirme işlemleri devre dışı bırakılmıştır.
 Üzgünüz!',
 	'centralauth-error-locked' => 'Değişiklik yapamıyorsunuz çünkü kayıdınız kilitlenmiş.',
+	'centralauth-error-unmerged' => 'Değişiklik yapamazsınız çünkü hesabınız birleştirilmemiş.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''Birleşik giriş''' hakkında daha fazla bilgi edinin]]…''",
 	'centralauth-list-home-title' => 'Ev vikisi',
 	'centralauth-list-home-dryrun' => 'Bu vikide ayarlanan şifre ve e-posta adresi, birleşik hesabınız için kullanılacaktır.',
@@ -33982,6 +33993,7 @@ Eğer bu sizseniz, ana şifreyi buraya yazarak giriş birleştirme sürecini tam
 	'centralauth-list-unattached-title' => 'Eklenmemiş hesaplar',
 	'centralauth-list-unattached' => '"$1" hesabının size ait olduğu aşağıdaki sitelerde otomatik olarak doğrulanamadı; büyük ihtimalle birincil hesabınızdan farklı bir şifreye sahip oldukları için:',
 	'centralauth-foreign-link' => "$2'deki $1 kullanıcısı",
+	'centralauth-foreign-contributions' => '$2 vikisinde $1 {{PLURAL:$1|katkı|katkı}}',
 	'centralauth-merge-method-primary' => 'ev vikisi',
 	'centralauth-merge-method-empty' => 'hiçbir katkı',
 	'centralauth-merge-method-mail' => 'e-posta ile doğrulandı',
@@ -34015,15 +34027,16 @@ Diğer hesaplar daha doğrulanmadı.',
 Eğer küresel hesap da sizinse, küresel hesap şifresini girerek bu hesabı birleştirebilirsiniz:',
 	'centralauth-attach-submit' => 'Hesabı taşı',
 	'centralauth-attach-success' => 'Hesap, birleşik hesaba taşındı.',
-	'centralauth' => 'Küresel kullanıcı yöneticisi', # Fuzzy
+	'centralauth' => 'Küresel hesap yöneticisi',
 	'centralauth-admin-intro' => 'Bu arayüz küresel hesapların yönetimi için kullanılabilir.',
-	'centralauth-admin-manage' => 'Kullanıcı verisini yönet', # Fuzzy
+	'centralauth-admin-manage' => 'Hesap verisini yönet',
 	'centralauth-admin-username' => 'Kullanıcı adı:',
 	'centralauth-admin-lookup-ro' => 'Kullanıcı bilgilerini görüntüleyin',
 	'centralauth-admin-lookup-rw' => 'Kullanıcı hesabını yönet',
 	'centralauth-admin-permission' => 'Sadece stewardlar diğer insanların hesaplarını onlar için birleştirebilir.',
 	'centralauth-admin-no-unified' => 'Bu kullanıcı adı için hiçbir birleşik hesap yok.',
-	'centralauth-admin-info-header' => 'Küresel kullanıcı bilgileri', # Fuzzy
+	'centralauth-admin-info-header' => 'Küresel hesap bilgileri',
+	'centralauth-admin-info-username' => 'Kullanıcı adı:',
 	'centralauth-admin-info-id' => "Kullanıcı ID'si:",
 	'centralauth-admin-info-registered' => 'Kayıt:',
 	'centralauth-admin-info-home' => 'Ev vikisi:',
@@ -34057,10 +34070,12 @@ Eğer küresel hesap da sizinse, küresel hesap şifresini girerek bu hesabı bi
 Bütün yerel hesaplar varolmaya devam edecektir.
 Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmeden önceki değerlerine geri döndürülecektir.',
 	'centralauth-admin-delete-button' => 'Bu hesabı sil',
+	'centralauth-admin-delete-confirm' => 'Bu hesabı gerçekten silmek istiyor musunuz?',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" için küresel hesap başarıyla silindi.',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" için küresel hesap bulunmamaktadır',
 	'centralauth-admin-delete-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
 	'centralauth-token-mismatch' => 'Üzgünüz, oturum veri kaybından dolayı form gönderiminizi işleyemiyoruz.',
+	'centralauth-state-mismatch' => 'Hata: Bu kullanıcı için bir değişiklik çakışması algılandı. Lütfen değişikliklerinizi doğrulayın ve yeniden deneyin.',
 	'centralauth-admin-reason' => 'Neden:',
 	'centralauth-admin-reason-other' => 'Diğer/ilave neden:',
 	'centralauth-admin-unhide-nonexistent' => 'Hata: "<nowiki>$1</nowiki>" küresel hesabı mevcut değil.',
@@ -34084,10 +34099,25 @@ Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmede
 ** uygunsuz kişisel bilgiler',
 	'centralauth-admin-logsnippet' => 'Önceki küresel hesap değişiklikleri',
 	'centralauth-admin-suppressreason' => '$1 tarafından küresel olarak baskılandı. Sebep: $2',
-	'globalusers' => 'Küresel kullanıcı listesi', # Fuzzy
+	'centralauth-admin-not-authorized' => 'Bu eylemi gerçekleştirmeye yetkiniz yok.',
+	'globalusers' => 'Küresel hesaplar listesi',
 	'centralauth-listusers-locked' => 'kilitlendi',
 	'centralauth-listusers-attached' => '[[User:$1|yerel olarak mevcut]]',
 	'centralauth-listusers-nolocal' => 'eklenmemiş veya yerel olarak mevcut değil',
+	'multilock' => 'Birden çok küresel hesabı kilitle',
+	'centralauth-admin-multi-username' => 'Bir ya da daha fazla kullanıcı adı girin, yeni satırla ayırarak',
+	'centralauth-admin-multi-notfound' => 'Arama hiçbir kullanıcı adı döndürmedi.',
+	'centralauth-admin-multi-searchprefix' => 'Ya da, kullanıcı adlarını bir önek ile arayın',
+	'centralauth-admin-multi-intro' => 'Tek seferde birden çok küresel hesabı güncelleyin',
+	'centralauth-admin-action-lock-nochange' => 'Kilitleri değiştirme',
+	'centralauth-admin-action-lock-lock' => 'Seçili hesapları kilitle',
+	'centralauth-admin-action-lock-unlock' => 'Seçili hesapların kilidini aç',
+	'centralauth-admin-action-hide-nochange' => 'Gizlilik düzeylerini değiştirme',
+	'centralauth-admin-action-hide-none' => 'Seçili hesapları görünür yap',
+	'centralauth-admin-action-hide-lists' => 'Seçili hesapları genel listelerde gizle',
+	'centralauth-admin-action-hide-oversight' => 'Seçili hesapları tamamen gizle',
+	'centralauth-admin-multi-bot' => 'Son değişiklikler',
+	'centralauth-admin-multi-botcheck' => '[[Special:RecentChanges|{{int:recentchanges}}]] sayfasındaki girdileri bot girdisi olarak işaretle.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|saniye|saniye}} önce',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|dakika|dakika}} önce',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|saat|saat}} önce',
@@ -34103,16 +34133,16 @@ Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmede
 	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1|projede|projede}} sizin adınızda doğrulanmamış hesaplar mevcut.',
 	'centralauth-prefs-detail-unattached' => 'Bu proje sitesi küresel hesaba ait olarak doğrulanmadı.',
 	'centralauth-prefs-manage' => 'Küresel hesabınızı yönetin',
-	'centralauth-prefs-view' => 'Küresel kullanıcı bilgisini gör', # Fuzzy
+	'centralauth-prefs-view' => 'Küresel hesap bilgisini gör',
 	'centralauth-renameuser-merged' => '$1 kullanıcısı birleşik giriş sistemine taşındı.
 Yeniden adlandırmak, yerel kullanıcının küreselden ayrılmasına sebep olacaktır.', # Fuzzy
-	'centralauth-renameuser-reserved' => '$2 kullanıcısı küresel hesap için ayırtılmıştır.', # Fuzzy
+	'centralauth-renameuser-reserved' => '$2 kullanıcı adı küresel bir hesap için ayrılmıştır.',
 	'centralauth-invalid-wiki' => 'Böyle viki veritabanı yok: $1',
 	'centralauth-account-exists' => 'Hesap oluşturulamıyor: istenen kullanıcı adı birleşik giriş sisteminde daha önceden alınmış.',
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}} projelerinde oturumunuz açılıyor:', # Fuzzy
-	'centralauth-logout-progress' => 'Diğer {{int:Centralauth-groupname}} projelerinde oturumunuz kapatılıyor:', # Fuzzy
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}} projelerinde oturumunuz açılıyor:',
+	'centralauth-logout-progress' => 'Diğer {{int:Centralauth-groupname}} projelerinde oturumunuz kapatılıyor:',
 	'centralauth-login-no-others' => 'Diğer {{int:Centralauth-groupname}} projelerinde otomatik olarak giriş yaptınız.',
-	'centralauth-logout-no-others' => 'Diğer {{int:Centralauth-groupname}} projelerinden otomatik olarak çıkış yaptınız.', # Fuzzy
+	'centralauth-logout-no-others' => 'Diğer {{int:Centralauth-groupname}} projelerinden otomatik olarak çıkış yaptınız.',
 	'centralauth-hidden-blockreason' => '$1 tarafından küresel olarak $2 tarihinde şu sebeple gizlendi: $3',
 	'centralauth-log-name' => 'Küresel hesap günlüğü',
 	'centralauth-log-header' => 'Bu günlük küresel hesap altındaki operasyonları içerir: silmeler, kilitlemeler ve kilidi açmalar.',
@@ -34132,6 +34162,7 @@ Yeniden adlandırmak, yerel kullanıcının küreselden ayrılmasına sebep olac
 	'centralauth-rightslog-entry-groupperms' => "$1 için grup izinleri $2'den $3'e değiştirildi",
 	'centralauth-rightslog-entry-groupperms2' => '$1 için grup izinleri değiştirildi. $2 eklendi; $3 çıkarıldı',
 	'centralauth-rightslog-entry-groupperms3' => "$1 için kısıtlı vikiler seti grubu $2'den $3'e değiştirildi",
+	'centralauth-rightslog-entry-grouprename' => '$2 grubunu $1 olarak yeniden adlandırdı',
 	'centralauth-rightslog-header' => 'Bu günlük küresel gruplarda operasyonları içerir: üyelik ve izin değişiklikleri',
 	'centralauth-rightslog-entry-newset' => '$2 viki seti $1 olarak şu vikilerle oluşturuldu: $3',
 	'centralauth-rightslog-entry-setrename' => '"$2" viki setinin adı "$1" olarak değiştirildi',
@@ -34140,6 +34171,16 @@ Yeniden adlandırmak, yerel kullanıcının küreselden ayrılmasına sebep olac
 	'centralauth-rightslog-entry-deleteset' => '"$1" viki kümesini sildi',
 	'centralauth-rightslog-set-optin' => 'dahil olma esaslı',
 	'centralauth-rightslog-set-optout' => 'dışında kalma esaslı',
+	'centralautologin' => 'Merkezi giriş',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Zaten yerel olarak oturum açtınız',
+	'centralauth-centralautologin-badparams' => 'Belirtilen kimlik doğrulama parametreleri geçersiz',
+	'centralauth-centralautologin-lostsession' => 'Oturum verisi kaybedildi',
+	'centralauth-centralautologin-badstate' => 'Geçersiz durum "$1"',
+	'centralauth-centralautologin-notposted' => 'Merkezi giriş formu gönderilmeli',
+	'centralauth-centralautologin-badstate-central' => '"$1" durumu merkezi vikide geçerli değil',
+	'centralauth-centralautologin-badstate-local' => '"$1" durumu yerel vikide geçerli değil',
+	'centralauth-centralautologin-badwiki' => '"$1" vikisi merkezi giriş için geçersiz',
+	'centralauth-centralautologin-corsfail' => 'CORS kaynak denetimi başarısız oldu',
 	'centralauth-centralautologin-logged-in' => 'Merkezi olarak $1 kullanıcı adıyla giriş yaptınız. Kullanıcı ayarlarını uygulamak için sayfayı yeniden yükleyin.',
 	'globalgroupmembership' => 'Küresel gruplarda üyelik',
 	'globalgrouppermissions' => 'Küresel grup yönetimi',
@@ -34155,26 +34196,30 @@ Unutmayın ki bir grup, ona izinler atanmadıkça varolamaz.',
 	'centralauth-globalgroupperms-newgroupname' => 'Yeni grup adı:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'İzin ata',
 	'centralauth-editgroup-subtitle' => '$1 değiştiriliyor',
+	'centralauth-editgroup-subtitle-readonly' => '$1 grubunu gör',
 	'centralauth-editgroup-fieldset' => '$1 için izinler',
 	'centralauth-editgroup-name' => 'Grubun adı:',
 	'centralauth-editgroup-display' => 'Grubun yerelleştirilmiş adı:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|değiştir]])',
+	'centralauth-editgroup-invalid-name' => 'Geçersiz küresel grup adı verildi',
 	'centralauth-editgroup-member' => 'Grup üyelerinin yerelleştirilmiş adları:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|değiştir]])',
 	'centralauth-editgroup-members' => 'Üye listesi:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 yetkisine sahip kullanıcılar listesi]]',
 	'centralauth-editgroup-restrictions' => 'Bu grubun etkin olduğu viki setleri:',
+	'centralauth-editgroup-rename-taken' => 'Yeniden adlandırma başarısız oldu: $1 adında bir grup zaten var.',
 	'centralauth-editgroup-noset' => '(hiç)',
-	'centralauth-editgroup-submit' => 'Grup izinlerine değişiklikleri kaydet', # Fuzzy
+	'centralauth-editgroup-submit' => 'Küresel grup değişikliklerini kaydet',
 	'centralauth-editgroup-perms' => 'Atanan izinler:',
 	'centralauth-editgroup-reason' => 'Sebep:',
 	'centralauth-editgroup-success' => 'Grup izinleri değiştirildi', # Fuzzy
 	'centralauth-editgroup-success-text' => '$1 grubu için grup izinlerini başarıyla değiştirdiniz.
 [[Special:GlobalGroupPermissions|Grup yönetimine geri dönün]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|değiştir]])',
+	'centralauth-editgroup-nowikiset' => 'Hiçbiri, tüm vikilerde uygulanır.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Bir hesaba sahip olunan Viki:',
-	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' küresel kullanıcısı belirttiğiniz vikide ('' $2 '') etkin değil.
-Yanlış kullanıcıya yetki atamaya çalışıyor olabilirsiniz!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' küresel hesabı belirttiğiniz vikide ('' $2 '') etkin değil.
+Yanlış kullanıcıya yetki atamaya çalışıyor olabilirsiniz!",
 	'centralauth-editset' => 'Viki kümeleri',
 	'centralauth-editset-legend-rw' => 'Viki kümesini değiştir ya da oluştur',
 	'centralauth-editset-legend-ro' => 'Viki kümeleri listesi',
@@ -34194,6 +34239,7 @@ Herhangi birini görebilir ve değiştirebilirsiniz, ya da yeni bir set oluştur
 	'centralauth-editset-name' => 'İsim:',
 	'centralauth-editset-type' => 'Tip:',
 	'centralauth-editset-wikis' => 'Vikiler:',
+	'centralauth-editset-restwikis' => 'Yukarıda dahil edilmeyen vikiler:',
 	'centralauth-editset-reason' => 'Gerekçe:',
 	'centralauth-editset-submit' => 'Gönder',
 	'centralauth-editset-submit-delete' => 'Sil',
@@ -34208,12 +34254,23 @@ Herhangi birini görebilir ve değiştirebilirsiniz, ya da yeni bir set oluştur
 	'centralauth-editset-success' => 'Viki seti başarıyla değiştirildi.',
 	'centralauth-editset-success-delete' => 'Viki kümesi başarıyla silindi.',
 	'centralauth-editset-return' => 'Ana görünüme dön',
+	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] hesabı zaten küresel olarak kilitli.',
+	'centralauth-readonly' => 'CentralAuth veritabanı kilitlendi',
 	'right-globalgroupmembership' => 'Küresel gruplara üyeliği değiştir',
+	'right-centralauth-autoaccount' => 'Küresel hesapla otomatik olarak giriş yap',
 	'right-centralauth-unmerge' => 'Küresel hesabı çöz',
-	'right-centralauth-lock' => 'Küresel hesabı kilitle ya da gizle', # Fuzzy
-	'right-centralauth-oversight' => 'Küresel hesabı bastır', # Fuzzy
+	'right-centralauth-lock' => 'Küresel hesabı kilitle ya da kilidi aç',
+	'right-centralauth-oversight' => 'Küresel hesabı bastır ya da gizle',
 	'right-centralauth-merge' => 'Hesaplarını birleştir',
 	'right-globalgrouppermissions' => 'Küresel grupları düzenle',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Kullanıcının olduğu küresel gruplar',
+	'action-centralauth-lock' => 'küresel hesapları kilitlemeye ya da kilidini açmaya',
+	'centrallogin' => 'Merkezi kullanıcı girişi',
+	'centralloginsuccesful' => 'Giriş başarılı',
+	'centralauth-completelogin-back' => 'Önceki sayfaya geri dön.',
+	'centralauth-warning-notloggedin' => 'Şu anda oturum açmadınız.',
+	'centralauth-warning-notattached' => 'Yerel hesap küresel olana bağlı değil.',
+	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} hesap onayı',
 );
 
 /** Turoyo (Ṫuroyo)
