@@ -12,13 +12,16 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'CentralAuth' => array( 'CentralAuth' ),
-	'CentralAutoLogin' => array( 'CentralAutoLogin' ),
 	'MergeAccount' => array( 'MergeAccount' ),
 	'GlobalGroupMembership' => array( 'GlobalUserRights', 'GlobalGroupMembership' ),
 	'GlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),
 	'WikiSets' => array( 'WikiSets', 'EditWikiSets' ),
 	'GlobalUsers' => array( 'GlobalUsers' ),
 	'MultiLock' => array( 'MultiLock' ),
+
+	// Localizing Special:CentralAutoLogin causes issues (bug 54195) and is of
+	// miniscule benefit to users, so don't do so.
+	//'CentralAutoLogin' => array( 'CentralAutoLogin' ),
 );
 
 /** Afrikaans (Afrikaans) */
