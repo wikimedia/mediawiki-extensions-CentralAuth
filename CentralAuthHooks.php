@@ -255,6 +255,35 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param User $user
+	 * @param string $pass
+	 * @param integer &$retval
+	 * @param string &$msg
+	 * @return bool
+	 */
+	static function onAbortLogin( $user, $pass, &$retval, &$msg ) {
+		$centralUser = CentralAuthUser::getInstance( $user );
+		switch ( (string)$centralUser->canAuthenticate() ) {
+			case '1': // boolean true
+				return true;
+
+			case 'no user':
+				// If they're local, we still want to let them log in. And if they
+				// don't exist, this hook wouldn't have even been called.
+				return true;
+
+			case 'locked':
+				$msg = 'centralauth-login-error-locked';
+				$retval = LoginForm::USER_BLOCKED;
+				return false;
+
+			default:
+				throw new MWException( "Unexpected result from CentralAuthUser::canAuthenticate()" );
+		}
+		return true;
+	}
+
+	/**
 	 * Show a nicer error when the user account does not exist on the local wiki, but
 	 * does exist globally
 	 * @param $users Array
