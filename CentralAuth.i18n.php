@@ -2674,7 +2674,7 @@ $messages['as'] = array(
  */
 $messages['ase'] = array(
 	'centralauth-finish-login' => 'M538x521S2a200497x480S20b00462x508S11530523x482S15a37462x483S11551470x493',
-	'centralauth-admin-blocklog' => 'M512x523S15a19488x500S15a11489x500S26520492x478 M514x523S11541487x478S22f04489x509',
+	'centralauth-admin-blocklog' => 'M512x523S15a19488x500S15a11489x500S26520492x478 M518x536S15a37483x465S18550493x476S15a37483x509S15a51486x513',
 );
 
 /** Asturian (asturianu)
@@ -5713,7 +5713,7 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.", # Fuzzy
 	'centralauth-login-progress' => "O kevreañ ac'hanoc'h da wikioù {{int:Centralauth-groupname}} :",
 	'centralauth-logout-progress' => "O tigevreañ ac'hanoc'h diouzh wikioù all eus {{int:Centralauth-groupname}} :", # Fuzzy
 	'centralauth-login-no-others' => "Kevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.",
-	'centralauth-logout-no-others' => "Digevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.", # Fuzzy
+	'centralauth-logout-no-others' => "Digevreet oc'h bet ez emgefre da raktresoù all eus {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'kuzhet en un doare hollek gant $1 war $2 evit an abeg da-heul : $3',
 	'centralauth-log-name' => "Marilh ar c'hontoù hollek",
 	'centralauth-log-header' => "Ar marilh-mañ a zo ennañ oberoù ar c'hontoù hollek : dilemel, prennañ ha dibrenañ.",
@@ -6186,7 +6186,7 @@ La base de dades podria estar espenyada.",
 	'centralauth-incomplete' => "No s'ha completat la unificació dels comptes.",
 	'centralauth-complete-text' => "A partir d'ara podreu entrar a qualsevol wiki de {{int:Centralauth-groupname}} sense haver de crear un compte nou.",
 	'centralauth-incomplete-text' => 'Una vegada el vostre compte estigui unificat, podreu entrar en qualsevol wiki de {{int:Centralauth-groupname}} sense haver de crear un compte nou',
-	'centralauth-not-owner-text' => "El nom d'usuari «$1» ha estat automàticament assignat a l'usuari del compte $2.
+	'centralauth-not-owner-text' => "S'ha assignat el nom d'usuari «$1» a l'usuari del compte $2.
 
 Si efectivament és vostre, podeu finalitzar el procés d'unificació escrivint a continuació la contrasenya mestra del compte:",
 	'centralauth-notice-dryrun' => "<div class='successbox'>Només mode de demostració</div><br clear='all'/>",
@@ -6339,7 +6339,7 @@ Si el compte global és vostre, podeu associar-hi aquest compte escrivint la con
 	'centralauth-prefs-detail-unattached' => "No s'ha confirmat que aquest projecte pugui accedir als comptes unificats.",
 	'centralauth-prefs-manage' => 'Administració del vostre compte global',
 	'centralauth-prefs-view' => "Mostra informació global d'usuari",
-	'centralauth-renameuser-merged' => "L'usuari $1 ha estat migrat al sistema de comptes unificats.
+	'centralauth-renameuser-merged' => "S'ha migrat l'usuari $1 al sistema de comptes unificats.
 El fet de reanomenar-lo causarà que l'usuari local quedi deslligat del global.",
 	'centralauth-renameuser-reserved' => "El nom d'usuari $2 està reservat per un compte global.",
 	'centralauth-invalid-wiki' => "No s'ha trobat la base de dades del wiki: $1",
@@ -12982,15 +12982,15 @@ $messages['gu'] = array(
 જો આ વૈશ્વિક ખાતું પણ તમારું હોય તો, તમે વૈશ્વિક પાસવર્ડ વાપરીને આ ખાતાને વિલીન કરી શકો છો:',
 	'centralauth-attach-submit' => 'ખાતું સ્થળાંતરીત કરો',
 	'centralauth-attach-success' => 'આ ખાતાને એકીકૃત ખાતામાં સ્થળાંતરીત કરાયું હતું',
-	'centralauth' => 'વૈશ્વિક ખાતાનું વ્યવસ્થાપન', # Fuzzy
+	'centralauth' => 'વૈશ્વિક ખાતાનું વ્યવસ્થાપન',
 	'centralauth-admin-intro' => 'આ દેખાવ વૈશ્વિક ખાતાંઓના સંચાલન માટે વાપરી શકાશે.',
-	'centralauth-admin-manage' => 'સભ્ય ખાતાની માહિતીનું વ્યવસ્થાપન', # Fuzzy
+	'centralauth-admin-manage' => 'સભ્ય ખાતાની માહિતીનું વ્યવસ્થાપન',
 	'centralauth-admin-username' => 'સભ્ય નામ:',
 	'centralauth-admin-lookup-ro' => 'સભ્ય માહિતી જુઓ',
 	'centralauth-admin-lookup-rw' => 'સભ્ય ખાતું સંચાલિત કરો',
 	'centralauth-admin-permission' => 'અન્ય લોકોના ખાતાને માત્ર કર્મચારીઓ જ વિલીન કરી શકે છે.',
 	'centralauth-admin-no-unified' => 'આ સભ્યનામ માટે કોઈ સંગઠિત ખાતું નથી.',
-	'centralauth-admin-info-header' => 'વૈશ્વિક સભ્ય માહિતી', # Fuzzy
+	'centralauth-admin-info-header' => 'વૈશ્વિક ખાતાની માહિતી',
 	'centralauth-admin-info-id' => 'સભ્ય નામ',
 	'centralauth-admin-info-registered' => 'નોંધેલ:',
 	'centralauth-admin-info-home' => 'ઘર વિકિ:',
@@ -13053,7 +13053,7 @@ $messages['gu'] = array(
 ** અનુચિત વ્યક્તિગત માહિતી",
 	'centralauth-admin-logsnippet' => 'પહેલાંનાં વૈશ્વિક ખાતાના ફેરફારો',
 	'centralauth-admin-suppressreason' => '$1 દ્વારા નીચેના કારણસર વૈશ્વીક પ્રતિબંધ લગાડાયો: $2',
-	'globalusers' => 'વૈશ્વિક સભ્ય યાદી', # Fuzzy
+	'globalusers' => 'વૈશ્વિક ખાતાની યાદી',
 	'centralauth-listusers-locked' => 'પ્રતિબંધીત',
 	'centralauth-listusers-attached' => '[[User:$1|સ્થાનીય રીતે અસ્તિત્વ ધરાવે છે]]',
 	'centralauth-listusers-nolocal' => 'ન જોડાયેલ અથવા સ્થાનિક રીતે અસ્તિત્વ ધરાવતું નથી',
@@ -13072,15 +13072,15 @@ $messages['gu'] = array(
 	'centralauth-prefs-count-unattached' => 'તમારા નામ સાથેના ખાતરી ન કરાયેલ ખાતાઓ $1 {{PLURAL:$1|પ્રોજેક્ટ|પ્રોજેક્ટ્સ}} પર રહેશે.',
 	'centralauth-prefs-detail-unattached' => 'આ પરિયોજનાના પાનાને વૈશ્વીક ખાતાના ભાગ તરીકે માન્યતા નથી મળી.',
 	'centralauth-prefs-manage' => 'તમારા વૈશ્વિક ખાતાનું વ્યવસ્થાપન કરો',
-	'centralauth-prefs-view' => 'વૈશ્વિક સભ્યોની માહિતી મેળવો', # Fuzzy
+	'centralauth-prefs-view' => 'વૈશ્વિક ખાતાની માહિતી મેળવો',
 	'centralauth-renameuser-merged' => 'સભ્ય $1 ને એકીકૃત લોગીન પ્રણાલીમાં વિલિન કરાયો છે.
-તેનું નામ બદલશો તો તે વૈશ્વીક ખતા થી વિખૂટું પડી જશે.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'સભ્ય $2 એ વૈશ્વિક ખાતા માટે અનામત છે.', # Fuzzy
+તેનું નામ બદલશો તો તે સ્થાનીક ખાતું વૈશ્વીક ખાતાથી વિખૂટું પડી જશે.',
+	'centralauth-renameuser-reserved' => 'સભ્યનામ $2 વૈશ્વિક ખાતા માટે અનામત છે.',
 	'centralauth-invalid-wiki' => '$1 આવો કોઈ વિકી માહિતી સંચ નથી.',
 	'centralauth-account-exists' => 'ખાતું બનાવી શકાતું નથી: વિનંતી કરેલ સભ્યનામ ઐક્ય પ્રવેશ સિસ્ટમમાં પહેલેથી લેવાઈ ગયેલ છે.',
-	'centralauth-account-exists-reset' => 'સભ્યનામ $1 આ વિકિમાં નોંધણી થયેલ નથી, પણ તે ઐક્ય પ્રવેશ સિસ્ટમમાં અસ્તિત્વ ધરાવે છે.', # Fuzzy
-	'centralauth-login-progress' => 'તમને {{int:Centralauth-groupname}} વિકિઓમાં પ્રવેશ કરાવે છે:', # Fuzzy
-	'centralauth-logout-progress' => 'તમને {{int:Centralauth-groupname}} તમામ વિકિઓમાંથી બહાર કાઢે છે :', # Fuzzy
+	'centralauth-account-exists-reset' => 'સભ્યનામ $1 આ વિકિમાં નોંધણી થયેલ નથી, પણ તમે તેની ગુપ્તસંજ્ઞા [[Special:CentralAuth/$1|એ જે વિકિ પર છે]] ત્યાં બદલી શકો છો.',
+	'centralauth-login-progress' => 'તમને {{int:Centralauth-groupname}} વિકિઓમાં પ્રવેશ કરાવે છે:',
+	'centralauth-logout-progress' => 'તમને {{int:Centralauth-groupname}} તમામ વિકિઓમાંથી બહાર કાઢે છે :',
 	'centralauth-login-no-others' => 'તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાં પ્રવેશ મેળવી લીધો છે.',
 	'centralauth-logout-no-others' => 'તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાંથી બહાર નીકળી ગયા છો.', # Fuzzy
 	'centralauth-hidden-blockreason' => '$2 પર $1  દ્વારા નીચેના કારણસર વૈશ્વીક પ્રતિબંધ મુકાયો : $3',
@@ -13143,8 +13143,8 @@ $messages['gu'] = array(
 [[Special:GlobalGroupPermissions|જૂથ વ્યવસ્થાપન પર પરત જાઓ]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|ફેરફાર]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'જે વિકિ પર તેઓ ખાતું ધરાવે છે.:',
-	'centralauth-globalgroupmembership-badknownwiki' => "વૈશ્વિક સભ્ય '''$1''' તમારા નિર્દિષ્ટ વિકિ પર સક્રિય નથી ('' $2 '').
-તમે ખોટા સભ્યને હક્કો પ્રદાન કરવાનો પ્રયત્ન કરતા લાગો છો.", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "વૈશ્વિક ખાતું '''$1''' તમારા નિર્દિષ્ટ વિકિ પર સક્રિય નથી ('' $2 '').
+તમે ખોટા સભ્યને હક્કો પ્રદાન કરવાનો પ્રયત્ન કરતા લાગો છો.",
 	'centralauth-editset' => 'વિકિ જૂથ',
 	'centralauth-editset-legend-rw' => 'વિકિ જૂથ બનાવો કે સંપાદિત કરો',
 	'centralauth-editset-legend-ro' => 'વિકિ સમૂહોની યાદી',
@@ -13247,6 +13247,7 @@ $messages['haw'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author Guycn1
+ * @author Guycn2
  * @author Inkbug
  * @author Rotem Liss
  * @author Rotemliss
@@ -13303,7 +13304,7 @@ $messages['he'] = array(
 	'centralauth-notice-dryrun' => '<div class="successbox">מצב הדגמה בלבד</div><br clear="all" />',
 	'centralauth-disabled-dryrun' => 'מיזוג החשבונות הוא כרגע במצב הדגמה ובדיקה, ולכן לא ניתן למזג את החשבונות. מצטערים!',
 	'centralauth-error-locked' => 'אינכם יכולים לערוך כיוון שהחשבון שלכם נעול.',
-	'centralauth-error-unmerged' => 'אינ באפשרותך לערוך מכיוון שחשבונך אינו מאוחד.',
+	'centralauth-error-unmerged' => 'אין באפשרותך לערוך כיוון שחשבונך אינו מאוחד.',
 	'centralauth-readmore-text' => ":[[meta:Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",
 	'centralauth-list-home-title' => 'האתר הראשי',
 	'centralauth-list-home-dryrun' => 'הסיסמה וכתובת הדוא"ל שהוגדרו באתר הזה יהיו בשימוש עבור החשבון הממוזג שלכם.',
