@@ -268,6 +268,7 @@ Renaming it will cause the local account to be detached from the global one.",
 	'centralauth-logout-no-others'   => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globally hidden by $1 at $2 with following reason: $3',
 	'centralauth-welcomecreation-msg' => '', # do not translate or duplicate this message to other languages
+	'centralauth-login-error-locked' => 'You cannot log in because your account is globally locked.',
 
 	// Logging
 	'centralauth-log-name'         => 'Global account log',
@@ -877,6 +878,8 @@ See also:
 * $1 - username
 * $2 - ...
 * $3 - reason',
+	'centralauth-login-error-locked' => "Message displayed while login is not possible because the acting user's account is locked. Parameters:
+* $1 - username",
 	'centralauth-log-name' => '{{doc-logpage}}',
 	'centralauth-log-entry-delete' => 'Parameters:
 * $1 - username
