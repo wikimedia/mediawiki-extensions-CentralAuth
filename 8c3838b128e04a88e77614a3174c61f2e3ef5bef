@@ -34,6 +34,24 @@
       "revId": "8c3838b128e04a88e77614a3174c61f2e3ef5bef",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_c4b667d7",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-03T14:04:39Z",
+      "side": 1,
+      "message": "Good question. It could be a second .alias file that\u0027s not added to the Translate configuration, or a registration somewhere in the code. I thought I had some advice for you, but when Niklas reviewed my proposed reply here, he found a hole in it.\n\n$specialPageAliases is apparently processed in a local scope, so the alias cannot be registered in a global scope. I hope you have a better understanding of these scopes to assess if you can hack the registration in \"somewhere\" (sorry, again), or if a second aliases file should be used.",
+      "parentUuid": "0ee75395_84997f73",
+      "revId": "8c3838b128e04a88e77614a3174c61f2e3ef5bef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
