@@ -29,7 +29,6 @@ $specialPageAliases['af'] = array(
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = array(
 	'CentralAuth' => array( 'تحقق_مركزي' ),
-	'CentralAutoLogin' => array( 'تسجيل_دخول_مركزي' ),
 	'MergeAccount' => array( 'دمج_حساب' ),
 	'GlobalGroupMembership' => array( 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ),
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
@@ -106,7 +105,6 @@ $specialPageAliases['ca'] = array(
 /** Min Dong Chinese (Mìng-dĕ̤ng-ngṳ̄) */
 $specialPageAliases['cdo'] = array(
 	'CentralAuth' => array( '中央授權' ),
-	'CentralAutoLogin' => array( '中央自動躒底' ),
 	'MergeAccount' => array( '合併賬戶' ),
 	'GlobalGroupMembership' => array( '全局用戶權限' ),
 	'GlobalGroupPermissions' => array( '全局組權限' ),
@@ -127,7 +125,6 @@ $specialPageAliases['ce'] = array(
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'CentralAuth' => array( 'Verwaltung_Benutzerkonten-Zusammenführung' ),
-	'CentralAutoLogin' => array( 'Zentrale_automatische_Anmeldung' ),
 	'MergeAccount' => array( 'Benutzerkonten_zusammenführen' ),
 	'GlobalGroupMembership' => array( 'Globale_Benutzerzugehörigkeit' ),
 	'GlobalGroupPermissions' => array( 'Globale_Gruppenrechte' ),
@@ -195,7 +192,6 @@ $specialPageAliases['et'] = array(
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'CentralAuth' => array( 'ورود_متمرکز' ),
-	'CentralAutoLogin' => array( 'ورودی_مرکزی_خودکار' ),
 	'MergeAccount' => array( 'ادغام_حساب' ),
 	'GlobalGroupMembership' => array( 'اختیارات_سراسری_کاربر' ),
 	'GlobalGroupPermissions' => array( 'اختیارات_سراسری_گروه' ),
@@ -233,7 +229,6 @@ $specialPageAliases['frp'] = array(
 /** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'CentralAuth' => array( 'Autenticación_central' ),
-	'CentralAutoLogin' => array( 'Rexistro_de_autenticación_central' ),
 	'MergeAccount' => array( 'Fusionar_contas' ),
 	'GlobalGroupMembership' => array( 'Dereitos_globais' ),
 	'GlobalGroupPermissions' => array( 'Permisos_de_grupo_globais' ),
@@ -262,7 +257,6 @@ $specialPageAliases['gu'] = array(
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
 	'CentralAuth' => array( 'חשבון_משתמש_מאוחד' ),
-	'CentralAutoLogin' => array( 'כניסה_אוטומטית_מרכזית' ),
 	'MergeAccount' => array( 'מיזוג_חשבונות' ),
 	'GlobalGroupMembership' => array( 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ),
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
@@ -361,7 +355,6 @@ $specialPageAliases['it'] = array(
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
 	'CentralAuth' => array( 'アカウント統一管理', '統一ログインの管理' ),
-	'CentralAutoLogin' => array( '中央管理自動ログイン' ),
 	'MergeAccount' => array( 'アカウント統合' ),
 	'GlobalGroupMembership' => array( 'グローバル利用者権限', 'グローバルグループへの所属' ),
 	'GlobalGroupPermissions' => array( 'グローバルグループ権限', 'グローバルグループパーミッション' ),
@@ -384,7 +377,6 @@ $specialPageAliases['km'] = array(
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'CentralAuth' => array( '통합계정관리' ),
-	'CentralAutoLogin' => array( '통합계정로그인' ),
 	'MergeAccount' => array( '계정합치기' ),
 	'GlobalGroupMembership' => array( '공통권한조정', '공통권한그룹구성원' ),
 	'GlobalGroupPermissions' => array( '전역그룹권한' ),
@@ -453,7 +445,6 @@ $specialPageAliases['min'] = array(
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'CentralAuth' => array( 'ЦентралноПотврдување' ),
-	'CentralAutoLogin' => array( 'ЦентралнаАвтонајава' ),
 	'MergeAccount' => array( 'СпојувањеНаСметки' ),
 	'GlobalGroupMembership' => array( 'ПраваНаГлобаленКорисник', 'ЧленствоВоГлобалнаГрупа' ),
 	'GlobalGroupPermissions' => array( 'ДозволиНаГлобалнаГрупа' ),
@@ -465,7 +456,6 @@ $specialPageAliases['mk'] = array(
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
 	'CentralAuth' => array( 'കേന്ദ്രീകൃത_അംഗീകാരം' ),
-	'CentralAutoLogin' => array( 'കേന്ദ്രീകൃതസ്വയംപ്രവേശനം' ),
 	'MergeAccount' => array( 'അംഗത്വസം‌യോജനം' ),
 	'GlobalGroupMembership' => array( 'ആഗോള_ഉപയോക്തൃ_അവകാശങ്ങൾ', 'ആഗോള_ഉപയോക്തൃ_അംഗത്വം' ),
 	'GlobalGroupPermissions' => array( 'ആഗോള_അംഗത്വാനുമതികൾ' ),
@@ -517,7 +507,6 @@ $specialPageAliases['nb'] = array(
 /** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'CentralAuth' => array( 'Sentraal_anmelden' ),
-	'CentralAutoLogin' => array( 'Sentraal_automaties_anmelden' ),
 	'MergeAccount' => array( 'Gebruker_samenvoegen' ),
 	'GlobalGroupMembership' => array( 'Globale_gebrukersrechten' ),
 	'GlobalGroupPermissions' => array( 'Globale_groepsrechten' ),
@@ -529,7 +518,6 @@ $specialPageAliases['nds-nl'] = array(
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'CentralAuth' => array( 'CentraalAanmelden' ),
-	'CentralAutoLogin' => array( 'CentraalAutomatischAanmelden' ),
 	'MergeAccount' => array( 'GebruikerSamenvoegen' ),
 	'GlobalGroupMembership' => array( 'GlobaalGroepslidmaatschap' ),
 	'GlobalGroupPermissions' => array( 'GlobaleGroepsrechten' ),
@@ -726,7 +714,6 @@ $specialPageAliases['vec'] = array(
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'CentralAuth' => array( 'Đăng_nhập_trung_ương', 'Thành_viên_toàn_cục', 'Thành_viên_toàn_cầu', 'Người_dùng_toàn_cục', 'Người_dùng_toàn_cầu' ),
-	'CentralAutoLogin' => array( 'Đăng_nhập_tự_động_trung_ương' ),
 	'MergeAccount' => array( 'Hợp_nhất_tài_khoản' ),
 	'GlobalGroupMembership' => array( 'Quyền_thành_viên_toàn_cục' ),
 	'GlobalGroupPermissions' => array( 'Quyền_nhóm_toàn_cục' ),
@@ -743,7 +730,6 @@ $specialPageAliases['yi'] = array(
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
-	'CentralAutoLogin' => array( '中央认证登录' ),
 	'MergeAccount' => array( '合并账户', '整合账户' ),
 	'GlobalGroupMembership' => array( '全局用户权限', '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),
@@ -755,7 +741,6 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
-	'CentralAutoLogin' => array( '中央認證登錄' ),
 	'MergeAccount' => array( '整合賬戶' ),
 	'GlobalGroupMembership' => array( '全域用戶權利', '全域組成員資格', '全域用戶權限' ),
 	'GlobalGroupPermissions' => array( '全域組權限' ),
