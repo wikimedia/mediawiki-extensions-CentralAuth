@@ -1070,8 +1070,10 @@ class CentralAuthHooks {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
-				// For non-JS clients
-				$url = Title::newFromText( 'Special:CentralAutoLogin/start' )->getFullURL( array(
+				// For non-JS clients. Use WikiMap to avoid localization of the
+				// 'Special' namespace, see bug 54195.
+				$wiki = WikiMap::getWiki( wfWikiID() );
+				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
 					'type' => '1x1',
 				) );
 				$out->addHTML( '<noscript>' . Xml::element( 'img',
@@ -1533,5 +1535,18 @@ class CentralAuthHooks {
 
 		$id = $centralUser->getId();
 		return true;
+	}
+
+	/**
+	 * Prevent "canonicalization" of Special:CentralAutoLogin to a localized
+	 * Special namespace name. See bug 54195.
+	 * @param WebRequest $request
+	 * @param Title $title
+	 * @param OutputPage $output
+	 * @return boolean
+	 */
+	public static function onTestCanonicalRedirect( $request, $title, $output ) {
+		return $title->getNamespace() !== NS_SPECIAL ||
+			strncmp( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/', 25 ) !== 0;
 	}
 }

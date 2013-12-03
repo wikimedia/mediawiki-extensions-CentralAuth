@@ -1,6 +1,7 @@
 <?php
 /**
  * Aliases for special pages of CentralAuth  extension.
+ * See also CentralAuth.notranslate-alias.php
  *
  * @file
  * @ingroup Extensions
@@ -12,7 +13,6 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'CentralAuth' => array( 'CentralAuth' ),
-	'CentralAutoLogin' => array( 'CentralAutoLogin' ),
 	'MergeAccount' => array( 'MergeAccount' ),
 	'GlobalGroupMembership' => array( 'GlobalUserRights', 'GlobalGroupMembership' ),
 	'GlobalGroupPermissions' => array( 'GlobalGroupPermissions' ),

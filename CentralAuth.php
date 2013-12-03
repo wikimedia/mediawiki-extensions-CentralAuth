@@ -244,6 +244,7 @@ $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
 
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
+$wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/CentralAuth.notranslate-alias.php";
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 
@@ -279,6 +280,7 @@ $wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthHooks::onApiTokensGetTokenTyp
 $wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
 $wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
 $wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
+$wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
