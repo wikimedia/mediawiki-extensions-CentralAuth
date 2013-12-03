@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_4fc7154b",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1540,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-12-03T03:34:43Z",
+      "side": 1,
+      "message": "Why is this quoted? Maybe document what this is (wiki site id, wiki dbname, interwiki prefix, wiki url hostname etc.)",
+      "revId": "0c2668802cb1a2cca511fbc8cd3aa6e56d666b2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
