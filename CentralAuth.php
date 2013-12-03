@@ -301,6 +301,9 @@ $wgHooks['OAuthGetCentralIdFromLocalUser'][] = 'CentralAuthHooks::onOAuthGetCent
 $wgHooks['OAuthGetCentralIdFromUserName'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromUserName';
 $wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUserNamesFromCentralIds';
 
+// For GlobalCssJs
+$wgHooks['LoadGlobalCssJs'][] = 'CentralAuthHooks::onLoadGlobalCssJs';
+
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
 $wgAvailableRights[] = 'centralauth-lock';
