@@ -16,6 +16,24 @@
       "revId": "8c3838b128e04a88e77614a3174c61f2e3ef5bef",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_84997f73",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-12-03T14:01:31Z",
+      "side": 1,
+      "message": "Where is the \"somewhere else\" that will prevent translatewiki from translating it?",
+      "parentUuid": "0ee75395_210065ae",
+      "revId": "8c3838b128e04a88e77614a3174c61f2e3ef5bef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
