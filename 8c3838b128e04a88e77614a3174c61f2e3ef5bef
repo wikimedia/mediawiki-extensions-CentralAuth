@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_210065ae",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-03T09:50:20Z",
+      "side": 1,
+      "message": "If development warnings are enabled, per SpecialPageFactory.php:566\u0027s wfWarn() this will cause:\n\n Did not find alias for special page $name. Perhaps no aliases are defined for it?\n\nTo prevent this, need to add it somewhere else.",
+      "revId": "8c3838b128e04a88e77614a3174c61f2e3ef5bef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
