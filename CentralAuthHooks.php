@@ -1534,4 +1534,17 @@ class CentralAuthHooks {
 		$id = $centralUser->getId();
 		return true;
 	}
+
+	/**
+	 * @param User $user
+	 * @param string $global "global wiki"
+	 * @param string $local wiki user is currently visiting
+	 * @return bool
+	 * @see https://www.mediawiki.org/wiki/Extension:GlobalCssJs/LoadGlobalCssJs
+	 */
+	public static function onLoadGlobalCssJs( User $user, $global, $local ) {
+		$caUser = CentralAuthUser::getInstance( $user );
+
+		return $caUser->attachedOn( $global ) && $caUser->attachedOn( $local );
+	}
 }
