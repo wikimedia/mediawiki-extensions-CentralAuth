@@ -22008,7 +22008,7 @@ $messages['ml'] = array(
 	'centralauth-editgroup-reason' => 'കാരണം:',
 	'centralauth-editgroup-success' => 'ആഗോളസംഘങ്ങളിൽ മാറ്റം വരുത്തിയിരിക്കുന്നു',
 	'centralauth-editgroup-success-text' => 'ആഗോളസംഘം $1 വിജയകരമായി പുതുക്കിയിരിക്കുന്നു.
-[[Special:GlobalGroupPermissions|സംഘം പരിപാലന താളിലേക്ക് തിരിച്ചു പോവുക]]',
+[[Special:GlobalGroupPermissions|സംഘപരിപാലന താളിലേയ്ക്ക് മടങ്ങുക]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|തിരുത്തുക]])',
 	'centralauth-editgroup-nowikiset' => 'ഒന്നുമില്ല, എല്ലാ വിക്കികൾക്കും ബാധകം.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'അംഗത്വമുള്ള വിക്കി:',
