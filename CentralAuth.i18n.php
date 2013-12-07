@@ -1747,6 +1747,7 @@ $messages['ang'] = array(
  * @author Abanima
  * @author Aiman titi
  * @author Alnokta
+ * @author Avocato
  * @author Calak
  * @author Ciphers
  * @author DRIHEM
@@ -1824,7 +1825,7 @@ $messages['ar'] = array(
 	'centralauth-merge-method-password' => 'مؤكدة بواسطة كلمة السر',
 	'centralauth-merge-method-admin' => 'حساب إداري مدمج',
 	'centralauth-merge-method-new' => 'حساب جديد',
-	'centralauth-merge-method-login' => 'انشئ عمد الدخول',
+	'centralauth-merge-method-login' => 'أنشئ بتسجيل الدخول',
 	'centralauth-merge-method-primary-desc' => 'هذا هو الويكي الذي تم دمج الحساب فيه. لاحظ أنه قد يختلف عن ويكي الحقيقي لهذا المستخدم.',
 	'centralauth-merge-method-empty-desc' => 'يشير إلى أنه تم دمج حساب محلي لأنه ليس لديه تعديلات.',
 	'centralauth-merge-method-mail-desc' => 'يشير إلى أن الحساب المحلي قد تم إلحاقه بالحساب العام بسبب مطابقة البريد الإلكتروني الخاص به للبريد التابع للحساب الأصلي.',
@@ -6703,7 +6704,7 @@ $messages['crh-latn'] = array(
 	'centralauth-prefs-manage' => 'Global esapnı idare et',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Danny B.
  * @author Jkjk
  * @author Li-sung
@@ -7072,7 +7073,7 @@ $5
 Platnost tohoto potvrzovacího kódu vyprší $6 v $7.',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
