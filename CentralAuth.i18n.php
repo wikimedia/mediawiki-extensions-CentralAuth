@@ -36721,7 +36721,7 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-step3-title' => '创建统一账户',
 	'centralauth-merge-step3-detail' => '在以下维基项目中，您已为创建整合账户作好了准备：',
 	'centralauth-merge-step3-submit' => '统一账户',
-	'centralauth-merge-no-accounts' => '在中央账户追踪表中找不到配合您名字的账户！
+	'centralauth-merge-no-accounts' => '在中央账户追踪表中找不到符合您名字的账户！
 该数据库已经损坏。',
 	'centralauth-merge-home-password' => '这个账户在主维基站点上（在下方列出）的密码跟您输入的密码不同。请输入主维基站点的密码。',
 	'centralauth-complete' => '账户整合完成！',
