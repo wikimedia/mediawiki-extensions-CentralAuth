@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_526d4494",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-12-10T15:42:54Z",
+      "side": 1,
+      "message": "You could remove this line, the variable isn\u0027t used anymore in this code path.",
+      "revId": "61c6e63a99631e5c7a792d0a9786dc8aa7e27875",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
