@@ -127,7 +127,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
 				$centralUser = null;
+				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
+				return;
 			}
+
+			// We're pretty sure this user is logged in, so pass back
+			// headers to prevent caching, just in case
+			$this->getOutput()->enableClientCache( false );
+
 			$this->do302Redirect( $wikiid, 'createSession', array(
 				'gu_id' => $centralUser ? $centralUser->getId() : 0,
 			) + $params );
