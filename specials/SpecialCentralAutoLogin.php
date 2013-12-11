@@ -55,6 +55,32 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-p3p-explanation' );
 			return;
 
+		case 'toolslist':
+			// Do not cache this, we want updated Echo numbers and such.
+			$this->getOutput()->enableClientCache( false );
+			$user = $this->getUser();
+			if ( !$user->isAnon() ) {
+				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
+					$html = $this->getSkin()->getPersonalToolsList();
+					$json = FormatJSON::encode( array( 'toolslist' => $html ) );
+				} else {
+					$gender = $this->getUser()->getOption( 'gender' );
+					if ( strval( $gender ) === '' ) {
+						$gender = 'unknown';
+					}
+					$json = FormatJSON::encode( array(
+						'notify' => array(
+							'username' => $user->getName(),
+							'gender' => $gender
+						)
+					) );
+				}
+				$this->doFinalOutput( true, 'OK', $json, 'json' );
+			} else {
+				$this->doFinalOutput( false, 'Not logged in' );
+			}
+			return;
+
 		case 'refreshCookies': // Refresh central cookies (e.g. in case 'remember me' was set)
 			// Do not cache this, we need to reset the cookies every time.
 			$this->getOutput()->enableClientCache( false );
@@ -126,7 +152,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $this->getUser()->isLoggedIn() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
-				$centralUser = null;
 				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
 				return;
 			}
@@ -135,21 +160,46 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// headers to prevent caching, just in case
 			$this->getOutput()->enableClientCache( false );
 
+			$memcData = array( 'gu_id' => $centralUser->getId() );
+			$token = MWCryptRand::generateHex( 32 );
+			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token );
+			$wgMemc->set( $key, $memcData, 60 );
+
 			$this->do302Redirect( $wikiid, 'createSession', array(
-				'gu_id' => $centralUser ? $centralUser->getId() : 0,
+				'token' => $token,
 			) + $params );
 			return;
 
 		case 'createSession': // Create the local session and shared memcache token
-			// The initial checks here are safe to cache. Once we start setting
-			// cookies and memc, we can no longer cache it.
 
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
 
 			CentralAuthUser::setP3P();
-			$gu_id = +$request->getVal( 'gu_id', 0 );
+
+			$token = $request->getVal( 'token', '' );
+			$gid = $request->getVal( 'gu_id', '' );
+			if ( $token !== '' ) {
+				// Load memc data
+				$key = CentralAuthUser::memcKey( 'centralautologin-token', $token );
+				$memcData = $wgMemc->get( $key );
+				$wgMemc->delete( $key );
+
+				if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
+					$this->doFinalOutput( false, 'Invalid parameters' );
+					return;
+				}
+				$gu_id = intval( $memcData['gu_id'] );
+			} elseif ( $gid !== '' ) {
+				// Cached, or was logging in as we switched from gu_id to token
+				$gu_id = intval( $gid );
+			} else {
+				$this->doFinalOutput( false, 'Invalid parameters' );
+				return;
+			}
+
+
 			if ( $gu_id <= 0 ) {
 				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
 				return;
@@ -170,7 +220,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'gu_id' => $gu_id,
 				'wikiid' => $wikiid,
 			);
-			$token = MWCryptRand::generateHex( 32 ) . dechex( $gu_id );
+			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
 			$wgMemc->set( $key, $memcData, 60 );
 
@@ -371,81 +421,70 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				);
 			}
 
-			// This is hacky, and may not work right with all skins and
-			// other extensions.
-			$this->getContext()->setUser( User::newFromName( $centralUser->getName() ) );
-			$wgUser = $this->getUser();
-			$skin = $this->getSkin();
-			$skin->getContext()->setUser( $this->getUser() ); // Just in case
-			$html = $skin->getPersonalToolsList();
+			// Add a script to the page that will pull in the user's toolslist
+			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
+			$code = $this->getUser()->getOption( 'language' );
+			$code = RequestContext::sanitizeLangCode( $code );
+			wfRunHooks( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
+			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
+				'centralauth-centralautologin-logged-in',
+				wfMessage( 'centralauth-centralautologin-logged-in' )
+					->inLanguage( $code )->plain()
+			) );
+			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
+				'centralauth-centralautologin-logged-in-nouser',
+				wfMessage( 'centralauth-centralautologin-logged-in-nouser' )
+					->inLanguage( $code )->plain()
+			) );
+			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
+				'centralautologin',
+				wfMessage( 'centralautologin' )->inLanguage( $code )->plain()
+			) );
 
-			// This is also hacky.
-			$script .= Xml::encodeJsCall(
-				"jQuery( '#p-personal ul' ).html",
-				array( $html )
-			);
 
-			// We want to avoid passing returnto into Special:CentralAutoLogin
-			// for caching reasons, which means we need to fix these links with
-			// JavaScript instead. Ugh.
 			$script .= <<<EOJS
-mediaWiki.loader.using( 'mediawiki.Uri', function () {
-	var u, returntoquery, returnto;
-	u = new mediaWiki.Uri( location.href );
-	delete u.query.title;
-	delete u.query.returnto;
-	delete u.query.returntoquery;
-	returnto = mediaWiki.config.get( 'wgPageName' );
-	returntoquery = u.getQueryString();
-	jQuery( '#p-personal ul a' ).each( function( i, a ) {
-		var u = new mediaWiki.Uri( a.href );
-		if ( u.query.returnto || u.query.returntoquery ) {
-			u.query.returnto = returnto;
-			u.query.returntoquery = returntoquery;
-			a.href = u.toString();
-		}
-	} );
-} );
-EOJS;
+( function ( mw, $ ) {
+	mw.loader.using( 'mediawiki.Uri', function () {
+		var url, u;
 
-			// Sigh.
-			$script .= "jQuery( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );";
+		// Set returnto and returntoquery so the logout link in the returned
+		// html is correct.
+		u = new mediaWiki.Uri( location.href );
+		delete u.query.title;
+		delete u.query.returnto;
+		delete u.query.returntoquery;
+		url = new mediaWiki.Uri(
+			mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/toolslist' )
+		);
+		url.query.returnto = mw.config.get( 'wgPageName' );
+		url.query.returntoquery = u.getQueryString();
 
-			// Fire a hook for other extensions to listen for
-			$script .= "mediaWiki.hook( 'centralauth-p-personal-reset' ).fire();";
-
-			if ( CentralAuthHooks::isUIReloadRecommended( $this->getUser() ) ) {
-				$gender = $this->getUser()->getOption( 'gender' );
-				if ( strval( $gender ) === '' ) {
-					$gender = 'unknown';
-				}
-
-				// We want the message to be in the user's language, so set it
-				// from here now that we have an actual user.
-				// @todo RequestContext should automatically clear its internal
-				//     $lang when a new user is set.
-				$code = $this->getUser()->getOption( 'language' );
-				$code = RequestContext::sanitizeLangCode( $code );
-				wfRunHooks( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
-				$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
-					'centralauth-centralautologin-logged-in',
-					wfMessage( 'centralauth-centralautologin-logged-in' )
-						->inLanguage( $code )->plain()
-				) );
-
-				$script .= Xml::encodeJsCall( 'mediaWiki.notify', array(
-					new XmlJsCode( trim( Xml::encodeJsCall( 'mediaWiki.message', array(
-						'centralauth-centralautologin-logged-in',
-						$this->getUser()->getName(),
-						$gender
-					) ), ';' ) ),
-					array(
-						'title' => wfMessage( 'centralautologin' )->plain(),
-						'autoHide' => false,
-						'tag' => 'CentralAutoLogin',
+		$.getJSON( url.toString(), function ( data ) {
+			if ( data.toolslist ) {
+				$( '#p-personal ul' ).html( data.toolslist );
+				$( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );
+				mw.hook( 'centralauth-p-personal-reset' ).fire();
+			} else if ( data.notify ) {
+				mw.notify(
+					mw.message( 'centralauth-centralautologin-logged-in',
+						data.notify.username,
+						data.notify.gender
 					),
-				) );
+					{"title":mw.message('centralautologin'),"autoHide":false,"tag":"CentralAutoLogin"}
+				);
 			}
+		} )
+		.error(function() {
+			// This happens if the user is logged in securely,
+			// but auto-loggedin from an http page.
+			mw.notify(
+				mw.message( 'centralauth-centralautologin-logged-in-nouser' ),
+				{"title":mw.message('centralautologin'),"autoHide":false,"tag":"CentralAutoLogin"}
+			);
+		});
+	} );
+}( mediaWiki, jQuery ) );
+EOJS;
 
 			// And for good measure, add the edge login HTML images to the page.
 			$script .= Xml::encodeJsCall( "jQuery( 'body' ).append", array(
@@ -473,12 +512,12 @@ EOJS;
 		}
 	}
 
-	private function doFinalOutput( $ok, $status, $script = '' ) {
+	private function doFinalOutput( $ok, $status, $body = '', $type = false ) {
 		$this->getOutput()->disable();
 		wfResetOutputBuffers();
 		$this->getOutput()->sendCacheControl();
 
-		$type = $this->getRequest()->getVal( 'type', 'script' );
+		$type = $type ?: $this->getRequest()->getVal( 'type', 'script' );
 		if ( $type === 'icon' || $type === '1x1' ) {
 			header( 'Content-Type: image/png' );
 			header( "X-CentralAuth-Status: $status" );
@@ -489,9 +528,13 @@ EOJS;
 			} else {
 				readfile( __DIR__ . '/../1x1.png' );
 			}
+		} elseif ( $type === 'json' ) {
+			header( 'Content-Type: application/json' );
+			header( "X-CentralAuth-Status: $status" );
+			echo $body;
 		} else {
 			header( 'Content-Type: text/javascript' );
-			echo "/* $status */\n$script";
+			echo "/* $status */\n$body";
 		}
 	}
 

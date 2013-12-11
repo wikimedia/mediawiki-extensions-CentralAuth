@@ -322,6 +322,7 @@ You have requested this page without providing any authentication data, so it do
 
 Please review this site\'s human-readable privacy policy to determine how any information collected might be used.',
 	'centralauth-centralautologin-logged-in' => 'You are centrally logged in as $1. Reload the page to apply your user settings.',
+	'centralauth-centralautologin-logged-in-nouser' => 'You are centrally logged in. Reload the page to apply your user settings.',
 
 	// Global group membership
 	'globalgroupmembership' => 'Membership in global groups',
