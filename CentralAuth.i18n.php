@@ -216,6 +216,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-listusers-attached' => '[[User:$1|exists locally]]',
 	'centralauth-listusers-item'     => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
+	'centralauth-listusers-merged'   => 'merged on $1 at $2',
 
 	// MultiLock
 	'multilock'                                     => 'Lock multiple global accounts',
@@ -756,6 +757,10 @@ Parameters:
 *{{msg-mw|centralauth-listusers-locked}}
 *{{msg-mw|centralauth-listusers-attached}}
 *{{msg-mw|centralauth-listusers-nolocal}}",
+	'centralauth-listusers-merged' => "This message contains user's merge date info:
+Parameters:
+* $1 - date of merge
+* $2 - time of merge ",
 	'multilock' => '{{doc-special|MultiLock}}',
 	'centralauth-admin-multi-username' => 'Instructions for text box where admin will enter usernames, one per line',
 	'centralauth-admin-multi-notfound' => 'Error message when seach returned no results',
