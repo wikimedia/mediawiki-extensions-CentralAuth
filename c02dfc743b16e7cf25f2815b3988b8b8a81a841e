@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_a66d6097",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-12T23:30:04Z",
+      "side": 1,
+      "message": "I think you also want to hook AbortNewAccount, in case someone tries to create an account with the old account name while a rename is running.",
+      "revId": "c02dfc743b16e7cf25f2815b3988b8b8a81a841e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_26515012",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-12T23:30:04Z",
+      "side": 1,
+      "message": "So a user who doesn\u0027t have a global account, but there exists a global account with the same name, can\u0027t login while the global account is being renamed.\n\nI think you want to not abort if the username exists and is unattached on this wiki.",
+      "revId": "c02dfc743b16e7cf25f2815b3988b8b8a81a841e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_067f6c64",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-12T23:30:04Z",
+      "side": 1,
+      "message": "Probably want to warn if either old or new name is a username we\u0027re renaming",
+      "revId": "c02dfc743b16e7cf25f2815b3988b8b8a81a841e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_03475e7d",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-12T23:30:04Z",
+      "side": 1,
+      "message": "Should this set $this-\u003eupdateStatus( \u0027failed\u0027 )? If the wiki really doesn\u0027t have Renameuser, we\u0027ll get an unattached account.",
+      "revId": "c02dfc743b16e7cf25f2815b3988b8b8a81a841e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_061bec73",
+        "filename": "central-auth.sql",
+        "patchSetId": 15
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-12T23:30:04Z",
+      "side": 1,
+      "message": "This causes a db error as is on SpecialGlobalRenameUser.php line 140-- primary key violation when multiple rows are inserted. I think you just want a unique key on ru_oldname and ru_wiki (so the same oldname cannot be renamed twice), and we can add another index later iff these renames are really popular and we need have thousands of rows.",
+      "revId": "c02dfc743b16e7cf25f2815b3988b8b8a81a841e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
