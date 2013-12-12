@@ -13100,7 +13100,7 @@ $messages['gu'] = array(
 	'centralauth-prefs-count-unattached' => 'તમારા નામ સાથેના ખાતરી ન કરાયેલ ખાતાઓ $1 {{PLURAL:$1|પ્રોજેક્ટ|પ્રોજેક્ટ્સ}} પર રહેશે.',
 	'centralauth-prefs-detail-unattached' => 'આ પરિયોજનાના પાનાને વૈશ્વીક ખાતાના ભાગ તરીકે માન્યતા નથી મળી.',
 	'centralauth-prefs-manage' => 'તમારા વૈશ્વિક ખાતાનું વ્યવસ્થાપન કરો',
-	'centralauth-prefs-view' => 'વૈશ્વિક ખાતાની માહિતી મેળવો',
+	'centralauth-prefs-view' => 'વૈશ્વિક ખાતાની માહિતી જુઓ',
 	'centralauth-renameuser-merged' => 'સભ્ય $1 ને એકીકૃત લોગીન પ્રણાલીમાં વિલિન કરાયો છે.
 તેનું નામ બદલશો તો તે સ્થાનીક ખાતું વૈશ્વીક ખાતાથી વિખૂટું પડી જશે.',
 	'centralauth-renameuser-reserved' => 'સભ્યનામ $2 વૈશ્વિક ખાતા માટે અનામત છે.',
