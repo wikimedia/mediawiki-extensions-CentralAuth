@@ -107,7 +107,7 @@ class GlobalUsersPager extends UsersPager {
 
 		return array(
 			'tables' => array( 'globaluser', 'localuser', 'global_user_groups' ),
-			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'lu_attached_method', 'COUNT(gug_group) AS gug_numgroups', 'MAX(gug_group) AS gug_singlegroup'  ),
+			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'gu_registration', 'lu_attached_method', 'COUNT(gug_group) AS gug_numgroups', 'MAX(gug_group) AS gug_singlegroup'  ),
 			'conds' => $conds,
 			'options' => array( 'GROUP BY' => 'gu_name' ),
 			'join_conds' => array(
@@ -123,7 +123,9 @@ class GlobalUsersPager extends UsersPager {
 	 * @return string HTML li element with username and info about this user
 	 */
 	function formatRow( $row ) {
-		$user = htmlspecialchars( $row->gu_name );
+		$lang = $this->getLanguage();
+		$username = htmlspecialchars( $row->gu_name );
+		$user = $this->getUser();
 		$info = array();
 		if ( $row->gu_locked ) {
 			$info[] = $this->msg( 'centralauth-listusers-locked' )->text();
@@ -133,13 +135,19 @@ class GlobalUsersPager extends UsersPager {
 		} else {
 			$info[] = $this->msg( 'centralauth-listusers-nolocal' )->text();
 		}
+
+		$dateCreated = $lang->userDate( $row->gu_registration, $user );
+		$timeCreated = $lang->userTime( $row->gu_registration, $user );
+		$created = $this->msg( 'centralauth-listusers-merged', $dateCreated, $timeCreated, $username )->escaped();
+		$created = ' ' . $this->msg( 'parentheses' )->rawParams( $created )->escaped();
+
 		$groups = $this->getUserGroups( $row );
 
 		if ( $groups ) {
 			$info[] = $groups;
 		}
 		$info = $this->getLanguage()->commaList( $info );
-		return Html::rawElement( 'li', array(), $this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
+		return Html::rawElement( 'li', array(), $this->msg( 'centralauth-listusers-item', $username, $info )->parse() . $created);
 	}
 
 	function doBatchLookups() {

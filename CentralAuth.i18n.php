@@ -216,6 +216,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-listusers-attached' => '[[User:$1|exists locally]]',
 	'centralauth-listusers-item'     => '[[Special:CentralAuth/$1|$1]] ($2)',
 	'centralauth-listusers-nolocal'  => 'unattached or doesn\'t exist locally',
+	'centralauth-listusers-merged'   => 'Merged on $1 at $2',
 
 	// MultiLock
 	'multilock'                                     => 'Lock multiple global accounts',
