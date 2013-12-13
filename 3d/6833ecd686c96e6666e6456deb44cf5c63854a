@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Code-Review+1: Siebrand <siebrand@wikimedia.org>
+Code-Review+2: CSteipp <csteipp@wikimedia.org>
+Code-Review+1: PiRSquared17 <pirsquared17@gmail.com>
+Submitted-by: jenkins-bot
+Submitted-at: Fri, 13 Dec 2013 18:40:33 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/97757
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
