@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_692e0ba2",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2013-12-13T06:48:09Z",
+      "side": 1,
+      "message": "Space between $lang and equal sign",
+      "revId": "e6154d8a63044be9f9559274c265a72761d689a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_491fc771",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2013-12-13T06:48:09Z",
+      "side": 1,
+      "message": "Generally we don\u0027t use underscores in variable names. Also host suggests what IP the user has. Maybe a variable name like $requestUser would be better",
+      "revId": "e6154d8a63044be9f9559274c265a72761d689a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_292483bb",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2013-12-13T06:48:09Z",
+      "side": 1,
+      "message": "Use $dateCreated instead of $date_created. Ditto for $time_created",
+      "revId": "e6154d8a63044be9f9559274c265a72761d689a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_89314f03",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2013-12-13T06:48:09Z",
+      "side": 1,
+      "message": "This line has some extra tabs here where it should be empty",
+      "revId": "e6154d8a63044be9f9559274c265a72761d689a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_09153f4d",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2013-12-13T06:48:09Z",
+      "side": 1,
+      "message": "Generally in MediaWiki code we really like spaces. Put a space on both sides of the dot operator.",
+      "revId": "e6154d8a63044be9f9559274c265a72761d689a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
