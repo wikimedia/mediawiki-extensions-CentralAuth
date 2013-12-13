@@ -166,6 +166,7 @@ Reason: $1',
 	'centralauth-admin-list-attached-on'   => 'Attached on',
 	'centralauth-admin-list-method'        => 'Method',
 	'centralauth-admin-list-editcount'     => 'Edit count',
+	'centralauth-admin-list-groups'        => 'Groups',
 	'centralauth-admin-list-blocked'       => 'Blocked',
 	'centralauth-admin-unmerge'            => 'Unmerge selected',
 	'centralauth-admin-merge'              => 'Merge selected',
@@ -676,6 +677,7 @@ See also:
 	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-method' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-editcount' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-groups' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-blocked' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 {{Identical|Blocked}}',
 	'centralauth-admin-already-unmerged' => 'Parameters:

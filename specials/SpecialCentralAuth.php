@@ -276,6 +276,7 @@ class SpecialCentralAuth extends SpecialPage {
 			"method",      // centralauth-admin-list-method
 			"blocked",     // centralauth-admin-list-blocked
 			"editcount",   // centralauth-admin-list-editcount
+			"groups",      // centralauth-admin-list-groups
 		);
 		$header = Xml::openElement( 'form',
 			array(
@@ -391,6 +392,9 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'td', array( 'style' => "text-align: right;" ) ) .
 			$this->formatEditcount( $row ) .
 			Xml::closeElement( 'td' ) .
+			Xml::openElement( 'td' ) .
+			$this->formatGroups( $row ) .
+			Xml::closeElement( 'td' ) .
 			Xml::closeElement( 'tr' );
 
 		return $html;
@@ -476,6 +480,14 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->msg( 'centralauth-foreign-contributions' )
 				->numParams( $editCount )->params( $wikiname )->parse()
 		);
+	}
+
+	/**
+	 * @param $row
+	 * @return string
+	 */
+	function formatGroups( $row ) {
+		return htmlspecialchars( $this->getLanguage()->commaList( $row['groups'] ) );
 	}
 
 	/**
