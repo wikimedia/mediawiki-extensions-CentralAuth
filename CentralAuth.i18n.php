@@ -148,6 +148,8 @@ If the global account is yours too, you can merge this account if you type the g
 	'centralauth-admin-info-editcount'     => 'Total editcount:',
 	'centralauth-admin-info-locked'        => 'Locked:',
 	'centralauth-admin-info-hidden'        => 'Hidden level:',
+	'centralauth-admin-info-groups'        => 'Global {{PLURAL:$1|group|groups}}:',
+	'centralauth-admin-info-nogroups'      => 'none',
 	'centralauth-admin-nohome'             => 'unable to determine',
 	'centralauth-admin-yes'                => 'yes',
 	'centralauth-admin-no'                 => 'no',
@@ -637,6 +639,11 @@ The following message appears after the colon: date_time (time_span)",
 *{{msg-mw|Centralauth-admin-no}}
 
 {{Identical|Hidden}}",
+	'centralauth-admin-info-groups'=> "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
+A comma separated list will follow the message, or {{mw-msg|centralauth-admin-info-nogroups}}
+
+* $1 is the number of groups the user is in.",
+	'centralauth-admin-info-nogroups' => 'Shown when the user is not a member of any global groups',
 	'centralauth-admin-nohome' => 'Shown in place of the wiki name if Special:CentralAuth cannot find out which wiki is home for the user.
 Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-admin-yes' => "Used in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. Can appear after {{msg-mw|Centralauth-admin-info-locked}}
