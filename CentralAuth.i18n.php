@@ -639,7 +639,7 @@ The following message appears after the colon: date_time (time_span)",
 *{{msg-mw|Centralauth-admin-no}}
 
 {{Identical|Hidden}}",
-	'centralauth-admin-info-groups'=> "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
+	'centralauth-admin-info-groups' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 A comma separated list will follow the message, or {{mw-msg|centralauth-admin-info-nogroups}}
 
 * $1 is the number of groups the user is in.",
@@ -6510,6 +6510,13 @@ $messages['ce'] = array(
 	'mergeaccount' => 'Декъашхочун дӀаяздарш цхьаьнатохаран хьал',
 	'centralauth-groupname' => 'Викимедин фондан',
 	'centralauth-desc' => '[[Special:MergeAccount|ДӀаяздарш цхьаьнатохар]]  вики-проекташкахь {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'ТӀетуху технологи AntiSpoof CentralAuth тӀе',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Массийта декъашхочун дӀаяздарш ]] вовшах туху (Single User Login)',
+	'centralauth-merge-denied' => 'Бехк ма била, хьан бакъонаш тоьаш яц агӀона тӀекхача.',
+	'centralauth-merge-notlogged' => 'Дехар до, <span class="plainlinks">[$1 системин чугӀо]</span>, хьай декъашхочун дӀаяздарш массо вовшах тоьхна дуй хьажа.',
+	'centralauth-merge-step1-title' => 'ДӀадоладе декъашхочун дӀаяздарш вовшахтохар',
+	'centralauth-merge-step1-submit' => 'Декъашхочун дӀаяздарх лаьцна хаам бакъбе',
+	'centralauth-merge-step2-title' => 'Бакъде кхин декъашхочун дӀаяздарш',
 	'centralauth-merge-dryrun-home' => 'Системин цатарло дӀаяздар хьа хилар бакъдан цӀерачу вики чохь.
 
 Амма карийна хӀокху дӀаяздаран кхин «цӀера» вики-проект. Лахахь гайтина йолу хьажориган дихьа гӀой системин чугӀо.',
@@ -6517,17 +6524,28 @@ $messages['ce'] = array(
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
 	'centralauth-complete-text' => 'ХӀинца цхьан дӀаяздарца хьан йиш ю массо {{int:Centralauth-groupname}} проекташкахь болх ба.',
 	'centralauth-list-home-title' => '«ЦӀера» вики-проект',
+	'centralauth-foreign-link' => 'Декъашхо $1 $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|нисдар|нисдарш}} $2 чохь',
 	'centralauth-merge-method-primary' => '«ЦӀера» вики-проект',
+	'centralauth-merge-method-empty' => 'къинхьегам бац',
+	'centralauth-merge-method-mail' => 'электронан почто бакъдина',
+	'centralauth-merge-method-password' => 'пароло бакъдина',
+	'centralauth-merge-method-admin' => 'куьйгалхо. вовшахтоьхна дӀаяздар',
 	'centralauth-merge-method-new' => 'керла декъашхочун дӀаяздар',
 	'centralauth-merge-method-login' => 'кхечу вики-проектехь кхоьллина дӀаяздар',
 	'centralauth-merge-method-login-desc' => 'Иза бохург ду локальни декъашхочун дӀаяздар кхолийна автоматически декъашхо системин чу ваьлча/яьлча.',
+	'centralauth-finish-title' => 'Вовшахтохар чекх далар',
+	'centralauth-finish-password' => 'Пароль:',
+	'centralauth-finish-login' => 'ЧугӀо',
+	'centralauth-finish-send-confirmation' => 'Яийта пароль электронан почте',
+	'centralauth-attach-title' => 'Декъашхочун дӀаяздар бакъдар',
+	'centralauth-attach-submit' => 'Декъашхочун дӀаяздар дехьа дакха',
 	'centralauth' => 'Глобальни декъашхойн дӀаяздаршан урхалла дар', # Fuzzy
 	'centralauth-admin-intro' => 'ХӀара интерфейс лело мега глобальни декъашхойн дӀаяздаршан урхалла да.',
 	'centralauth-admin-manage' => 'Декъашхочун хаам урхалла дар', # Fuzzy
 	'centralauth-admin-username' => 'Декъашхочун цӀе:',
 	'centralauth-admin-lookup-ro' => 'Декъашхочун хааме хьажар',
-	'centralauth-admin-info-header' => 'Декъашхочун глобальни хаам', # Fuzzy
+	'centralauth-admin-info-header' => 'Глобальни декъашхойн дӀаяздаршан хаамаш',
 	'centralauth-admin-info-username' => 'Декъашхочун цӀе:',
 	'centralauth-admin-info-id' => 'Декъашхочун ID:',
 	'centralauth-admin-info-registered' => 'Декъашхочун дӀаяздар кхоьллина хан:',
@@ -6535,9 +6553,15 @@ $messages['ce'] = array(
 	'centralauth-admin-info-editcount' => 'Массо нисдаршан ларар:',
 	'centralauth-admin-info-locked' => 'ГӀорина:',
 	'centralauth-admin-info-hidden' => 'Хьулдаран локхалла:',
+	'centralauth-admin-nohome' => 'билгалдан цатарло',
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-no' => 'яц',
+	'centralauth-admin-hidden-list' => 'массо тӀекхочу могӀанийн юкъара',
+	'centralauth-admin-hidden-oversight' => 'ревизоро дӀахьулдина',
 	'centralauth-admin-list-legend-ro' => 'Локальни дӀаяздаршан могӀа',
+	'centralauth-admin-list-legend-rw' => 'Глобальни дӀаяздарш вовшах дахар',
+	'centralauth-admin-unattached' => 'юкъа цатуьйхи',
+	'centralauth-admin-blocked' => 'Блктоьхна $3 $4 кхаччалц. Бахьна: $2',
 	'centralauth-admin-blocked-indef' => 'Блоктоьхна хан чаккхе йоцуш. Бахьна: $1',
 	'centralauth-admin-blocklog' => 'блоктохаршан тептар',
 	'centralauth-admin-list-localwiki' => 'Локальни вики-проект',
@@ -6545,6 +6569,9 @@ $messages['ce'] = array(
 	'centralauth-admin-list-method' => 'Белхан кеп',
 	'centralauth-admin-list-editcount' => 'Нисдаршан ларар',
 	'centralauth-admin-list-blocked' => 'Блоктоьхна',
+	'centralauth-admin-unmerge' => 'Хаьржинарш вовшах даха',
+	'centralauth-admin-merge' => 'Хаьржинарш вовшахтоха',
+	'centralauth-admin-bad-input' => 'ГӀалате вовшах тохар харжар',
 	'centralauth-admin-delete-title' => 'Декъашхочун дӀаяздар дӀадаккхар',
 	'centralauth-admin-reason' => 'Бахьан:',
 	'centralauth-admin-reason-other' => 'Кхин бахьан:',
