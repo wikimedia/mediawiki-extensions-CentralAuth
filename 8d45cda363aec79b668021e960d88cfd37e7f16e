@@ -68,6 +68,24 @@
       "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_5d51be39",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2013-12-14T08:03:17Z",
+      "side": 1,
+      "message": "If we\u0027re going to make a new message, I would reccomend just adding on to the end of centralauth-listusers-item, in order to make the message less lego-y. I\u0027m also not sure if date and time have to be separate parameters like they are in Special:Listusers, could probably be changed to just use $lang-\u003euserTimeAndDate (Probably should double check that with the i18n folks)",
+      "parentUuid": "0ee75395_7df36269",
+      "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
