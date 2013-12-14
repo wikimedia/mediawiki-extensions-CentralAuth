@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0ee75395_9df62659",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 531
+      },
+      "writtenOn": "2013-12-14T06:28:46Z",
+      "side": 1,
+      "message": "I think there should be a space after the comma for consistency.",
+      "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_3d1efac4",
         "filename": "specials/SpecialGlobalUsers.php",
         "patchSetId": 2
@@ -30,6 +47,24 @@
       "writtenOn": "2013-12-14T04:41:07Z",
       "side": 1,
       "message": "I wonder if we should use a different message here, since for older accounts, the timestamp is just when they merged their account, not when it was actually created.",
+      "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_7df36269",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 531
+      },
+      "writtenOn": "2013-12-14T06:28:46Z",
+      "side": 1,
+      "message": "Good point.",
+      "parentUuid": "0ee75395_bd29eae2",
       "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
