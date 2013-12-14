@@ -86,6 +86,24 @@
       "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_7d2ec2a1",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1306
+      },
+      "writtenOn": "2013-12-14T09:29:04Z",
+      "side": 1,
+      "message": "I think we should add a new message, as it would maintain the structure.\nwhat text should it display?\nIs this fine :\n\u0027centralauth-listusers-merged\u0027   \u003d\u003e \u0027Merged on $1 at $2\u0027\nand\nI think I would got with date and parameters separated as it would provide flexibility to output string.",
+      "parentUuid": "0ee75395_5d51be39",
+      "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
