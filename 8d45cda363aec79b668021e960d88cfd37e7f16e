@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_3d1efac4",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-12-14T04:41:07Z",
+      "side": 1,
+      "message": "Since you can\u0027t transclude Special:GlobalUsers, I don\u0027t think you need to check for this-\u003eincluding, given that none of the other code does.\n\nYou can also safely assume that gu_registration was provided.",
+      "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_bd29eae2",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-12-14T04:41:07Z",
+      "side": 1,
+      "message": "I wonder if we should use a different message here, since for older accounts, the timestamp is just when they merged their account, not when it was actually created.",
+      "revId": "8d45cda363aec79b668021e960d88cfd37e7f16e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
