@@ -640,10 +640,13 @@ The following message appears after the colon: date_time (time_span)",
 
 {{Identical|Hidden}}",
 	'centralauth-admin-info-groups' => "Label of information shown in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
-A comma separated list will follow the message, or {{mw-msg|centralauth-admin-info-nogroups}}
 
-* $1 is the number of groups the user is in.",
-	'centralauth-admin-info-nogroups' => 'Shown when the user is not a member of any global groups',
+A comma separated list will follow the message, or {{msg-mw|Centralauth-admin-info-nogroups}}
+
+Parameters:
+* $1 - the number of groups the user is in",
+	'centralauth-admin-info-nogroups' => 'Shown when the user is not a member of any global groups.
+{{Identical|None}}',
 	'centralauth-admin-nohome' => 'Shown in place of the wiki name if Special:CentralAuth cannot find out which wiki is home for the user.
 Label for this field is {{msg-mw|centralauth-admin-info-home}}',
 	'centralauth-admin-yes' => "Used in box of 'Global user info' on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page. Can appear after {{msg-mw|Centralauth-admin-info-locked}}
@@ -684,7 +687,8 @@ See also:
 	'centralauth-admin-list-attached-on' => 'Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-method' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
 	'centralauth-admin-list-editcount' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
-	'centralauth-admin-list-groups' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.',
+	'centralauth-admin-list-groups' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
+{{Identical|Group}}',
 	'centralauth-admin-list-blocked' => 'Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.
 {{Identical|Blocked}}',
 	'centralauth-admin-already-unmerged' => 'Parameters:
@@ -6520,10 +6524,14 @@ $messages['ce'] = array(
 	'centralauth-merge-dryrun-home' => 'Системин цатарло дӀаяздар хьа хилар бакъдан цӀерачу вики чохь.
 
 Амма карийна хӀокху дӀаяздаран кхин «цӀера» вики-проект. Лахахь гайтина йолу хьажориган дихьа гӀой системин чугӀо.',
+	'centralauth-merge-step3-title' => 'Юкъара декъашхочун дӀаяздар кхоллар',
 	'centralauth-complete' => 'Декъашхочун дӀаяздарш цхьаьнатохар дика чакхдели!',
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
 	'centralauth-complete-text' => 'ХӀинца цхьан дӀаяздарца хьан йиш ю массо {{int:Centralauth-groupname}} проекташкахь болх ба.',
+	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ru|'''Юкъара декъашхочун дӀаяздарх''']]…'' лаьцна кхин хаар",
 	'centralauth-list-home-title' => '«ЦӀера» вики-проект',
+	'centralauth-list-attached' => '«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьаьнатоьхна лахара сайташ чохь:',
+	'centralauth-list-attached-dryrun' => '«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьанатухур ду лахара сайташ чохь:',
 	'centralauth-foreign-link' => 'Декъашхо $1 $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|нисдар|нисдарш}} $2 чохь',
 	'centralauth-merge-method-primary' => '«ЦӀера» вики-проект',
@@ -7281,6 +7289,7 @@ Nid yw cyfrifon eraill wedi'u cadarnhau hyd yn hyn.",
 	'centralauth-admin-info-editcount' => 'Cyfanswm y golygiadau:',
 	'centralauth-admin-info-locked' => 'Ar glo?:',
 	'centralauth-admin-info-hidden' => 'Wedi ei guddio?:',
+	'centralauth-admin-info-nogroups' => 'dim',
 	'centralauth-admin-nohome' => 'heb ei nodi',
 	'centralauth-admin-yes' => 'ydy',
 	'centralauth-admin-no' => 'nac ydy',
@@ -7298,6 +7307,7 @@ Rheswm: $1',
 	'centralauth-admin-list-attached-on' => 'Atodwyd am',
 	'centralauth-admin-list-method' => 'Dull',
 	'centralauth-admin-list-editcount' => 'Nifer y golygiadau',
+	'centralauth-admin-list-groups' => 'Grwpiau',
 	'centralauth-admin-list-blocked' => 'Wedi ei flocio',
 	'centralauth-admin-unmerge' => 'Dewiswyd dad-gyfuno',
 	'centralauth-admin-merge' => 'Dewiswyd cyfuno',
@@ -7973,6 +7983,8 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-info-editcount' => 'Anzahl der Bearbeitungen in allen Wikis:',
 	'centralauth-admin-info-locked' => 'Gesperrt:',
 	'centralauth-admin-info-hidden' => 'Versteckt:',
+	'centralauth-admin-info-groups' => 'Globale {{PLURAL:$1|Gruppe|Gruppen}}:',
+	'centralauth-admin-info-nogroups' => 'keine',
 	'centralauth-admin-nohome' => 'nicht feststellbar',
 	'centralauth-admin-yes' => 'Ja',
 	'centralauth-admin-no' => 'Nein',
@@ -7988,6 +8000,7 @@ Wenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung 
 	'centralauth-admin-list-attached-on' => 'Verbunden seit',
 	'centralauth-admin-list-method' => 'Methode',
 	'centralauth-admin-list-editcount' => 'Bearbeitungszähler',
+	'centralauth-admin-list-groups' => 'Gruppen',
 	'centralauth-admin-list-blocked' => 'Gesperrt',
 	'centralauth-admin-unmerge' => 'Ausgewählte Benutzerkonten trennen',
 	'centralauth-admin-merge' => 'Ausgewählte Benutzerkonten zusammenführen',
@@ -10357,8 +10370,10 @@ Võid kõiki neid vaadata ja muuta; või luua uue komplekti.',
 	'right-globalgrouppermissions' => 'Hallata globaalseid rühmi',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globaalsed rühmad, mille liige kasutaja on',
 	'action-centralauth-lock' => 'globaalset kontot lukustada ega seda lukust lahti teha',
+	'centrallogin' => 'Keskne sisselogimine',
 	'centralloginsuccesful' => 'Sisselogimine edukas',
 	'centralauth-completelogin-back' => 'Naase eelmisele leheküljele.',
+	'centralauth-error-badtoken' => 'Esitatud autentimisluba on kas iganenud või vigane.',
 	'centralauth-warning-notloggedin' => 'Sa pole praegu sisse logitud.',
 	'centralauth-warning-notattached' => 'Kohalik konto pole ühendatud globaalsega.',
 	'centralauth-finishglobaliseemail_subject' => 'Konto kinnitus võrgukohas {{SITENAME}}',
@@ -11489,6 +11504,7 @@ Tú kanst síggja og broyta hvørja sum helst av teimum, ella skapa eitt nýtt r
  * @author Meno25
  * @author Moyg
  * @author Nicolas NALLET
+ * @author Nobody
  * @author Omnipaedista
  * @author Peter17
  * @author PieRRoMaN
@@ -11611,6 +11627,7 @@ Si le compte unifié vous appartient également, vous pouvez y fusionner votre c
 	'centralauth-admin-info-editcount' => 'Nombre total de modifications :',
 	'centralauth-admin-info-locked' => 'Bloqué :',
 	'centralauth-admin-info-hidden' => 'Masqué :',
+	'centralauth-admin-info-nogroups' => 'aucun',
 	'centralauth-admin-nohome' => 'impossible de déterminer',
 	'centralauth-admin-yes' => 'oui',
 	'centralauth-admin-no' => 'non',
@@ -11626,6 +11643,7 @@ Si le compte unifié vous appartient également, vous pouvez y fusionner votre c
 	'centralauth-admin-list-attached-on' => 'Rattaché à',
 	'centralauth-admin-list-method' => 'Méthode',
 	'centralauth-admin-list-editcount' => 'Compteur de modifications',
+	'centralauth-admin-list-groups' => 'Groupes',
 	'centralauth-admin-list-blocked' => 'Bloqué',
 	'centralauth-admin-unmerge' => 'Défusionner la sélection',
 	'centralauth-admin-merge' => 'Fusionner la sélection',
@@ -13425,6 +13443,8 @@ $messages['he'] = array(
 	'centralauth-admin-info-editcount' => 'מספר עריכות כולל:',
 	'centralauth-admin-info-locked' => 'נעול:',
 	'centralauth-admin-info-hidden' => 'מוסתר:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|קבוצה גלובלית|קבוצות גלובליות}}',
+	'centralauth-admin-info-nogroups' => 'אין',
 	'centralauth-admin-nohome' => 'אין אפשרות להחליט',
 	'centralauth-admin-yes' => 'כן',
 	'centralauth-admin-no' => 'לא',
@@ -13440,6 +13460,7 @@ $messages['he'] = array(
 	'centralauth-admin-list-attached-on' => 'מוזג בתאריך',
 	'centralauth-admin-list-method' => 'שיטה',
 	'centralauth-admin-list-editcount' => 'מספר עריכות',
+	'centralauth-admin-list-groups' => 'קבוצות',
 	'centralauth-admin-list-blocked' => 'מצב חסימה',
 	'centralauth-admin-unmerge' => 'ביטול המיזוג של החשבונות שנבחרו',
 	'centralauth-admin-merge' => 'מיזוג החשבונות שנבחרו',
@@ -15205,6 +15226,8 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 	'centralauth-admin-info-editcount' => 'Total de modificationes:',
 	'centralauth-admin-info-locked' => 'Serrate:',
 	'centralauth-admin-info-hidden' => 'Nivello de celamento:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Gruppo|Gruppos}} global:',
+	'centralauth-admin-info-nogroups' => 'nulle',
 	'centralauth-admin-nohome' => 'non pote determinar',
 	'centralauth-admin-yes' => 'si',
 	'centralauth-admin-no' => 'no',
@@ -15220,6 +15243,7 @@ Si le conto global es etiam tue, tu pote fusionar iste conto si tu entra le cont
 	'centralauth-admin-list-attached-on' => 'Attachate le',
 	'centralauth-admin-list-method' => 'Methodo',
 	'centralauth-admin-list-editcount' => 'Numero de modificationes',
+	'centralauth-admin-list-groups' => 'Gruppos',
 	'centralauth-admin-list-blocked' => 'Blocate',
 	'centralauth-admin-unmerge' => 'Disfusionar selection',
 	'centralauth-admin-merge' => 'Fusionar selection',
@@ -16979,6 +17003,8 @@ $messages['ja'] = array(
 	'centralauth-admin-info-editcount' => '編集回数の合計:',
 	'centralauth-admin-info-locked' => 'ロック:',
 	'centralauth-admin-info-hidden' => '秘匿レベル:',
+	'centralauth-admin-info-groups' => 'グローバル {{PLURAL:$1|グループ}}:',
+	'centralauth-admin-info-nogroups' => 'なし',
 	'centralauth-admin-nohome' => '決定できず',
 	'centralauth-admin-yes' => 'はい',
 	'centralauth-admin-no' => 'いいえ',
@@ -16996,6 +17022,7 @@ $messages['ja'] = array(
 	'centralauth-admin-list-attached-on' => '統合日時',
 	'centralauth-admin-list-method' => '方法',
 	'centralauth-admin-list-editcount' => '編集回数',
+	'centralauth-admin-list-groups' => 'グループ',
 	'centralauth-admin-list-blocked' => 'ブロック',
 	'centralauth-admin-unmerge' => '選択した利用者を統合解除',
 	'centralauth-admin-merge' => '選択した利用者を統合',
@@ -19830,6 +19857,8 @@ Wann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-info-editcount' => 'Gesamtzuel vun den Ännerungen',
 	'centralauth-admin-info-locked' => 'Gespaart:',
 	'centralauth-admin-info-hidden' => 'Verstoppten Niveau:',
+	'centralauth-admin-info-groups' => 'Global {{PLURAL:$1|Grupp|Gruppen}}:',
+	'centralauth-admin-info-nogroups' => 'keng',
 	'centralauth-admin-nohome' => 'konnt net erausfonnt ginn',
 	'centralauth-admin-yes' => 'jo',
 	'centralauth-admin-no' => 'neen',
@@ -19845,6 +19874,7 @@ Wann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zes
 	'centralauth-admin-list-attached-on' => 'Verbonn mat',
 	'centralauth-admin-list-method' => 'Method',
 	'centralauth-admin-list-editcount' => 'Zuel vun den Ännerungen',
+	'centralauth-admin-list-groups' => 'Gruppen',
 	'centralauth-admin-list-blocked' => 'Gespaart',
 	'centralauth-admin-unmerge' => 'Gewielte Benotzerkonten trennen',
 	'centralauth-admin-merge' => 'Déi ausgewielten zesummeféieren',
@@ -21516,6 +21546,8 @@ $messages['mk'] = array(
 	'centralauth-admin-info-editcount' => 'Вкупно уредувања:',
 	'centralauth-admin-info-locked' => 'Заклучен:',
 	'centralauth-admin-info-hidden' => 'Ниво на скриеност:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Глобална група|Глобални групи}}:',
+	'centralauth-admin-info-nogroups' => 'ниедна',
 	'centralauth-admin-nohome' => 'не може да се утврди',
 	'centralauth-admin-yes' => 'да',
 	'centralauth-admin-no' => 'не',
@@ -21531,6 +21563,7 @@ $messages['mk'] = array(
 	'centralauth-admin-list-attached-on' => 'Приложена кон',
 	'centralauth-admin-list-method' => 'Начин',
 	'centralauth-admin-list-editcount' => 'Бројач на уредувања',
+	'centralauth-admin-list-groups' => 'Групи',
 	'centralauth-admin-list-blocked' => 'Блокирана',
 	'centralauth-admin-unmerge' => 'Раздели ги избраните',
 	'centralauth-admin-merge' => 'Обедини ги избраните',
@@ -22725,6 +22758,8 @@ Jika akaun sejagat tersebut adalah milik anda juga, anda boleh menggabungkan aka
 	'centralauth-admin-info-editcount' => 'Jumlah kiraan suntingan:',
 	'centralauth-admin-info-locked' => 'Dikunci:',
 	'centralauth-admin-info-hidden' => 'Aras tersembunyi:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Kumpulan|Kumpulan-kumpulan}} sejagat:',
+	'centralauth-admin-info-nogroups' => 'tiada',
 	'centralauth-admin-nohome' => 'tidak dapat ditentukan',
 	'centralauth-admin-yes' => 'ya',
 	'centralauth-admin-no' => 'tidak',
@@ -22740,6 +22775,7 @@ Jika akaun sejagat tersebut adalah milik anda juga, anda boleh menggabungkan aka
 	'centralauth-admin-list-attached-on' => 'Dicantumkan pada',
 	'centralauth-admin-list-method' => 'Kaedah',
 	'centralauth-admin-list-editcount' => 'Kiraan suntingan',
+	'centralauth-admin-list-groups' => 'Kumpulan',
 	'centralauth-admin-list-blocked' => 'Disekat',
 	'centralauth-admin-unmerge' => 'Pisahkan yang dipilih',
 	'centralauth-admin-merge' => 'Gabungkan yang dipilih',
@@ -27640,6 +27676,14 @@ Kayrayku: $1",
 	'centralauth-editset-return' => 'Qhapaq qhawanaman kutimuy',
 );
 
+/** Romansh (rumantsch)
+ * @author Kazu89
+ */
+$messages['rm'] = array(
+	'centralauth-log-name' => "Protocol da contos d'utilisaders globals",
+	'centralauth-rightslog-name' => 'Protocol dals dretgs globals',
+);
+
 /** Romanian (română)
  * @author Cin
  * @author Firilacroco
@@ -28420,6 +28464,8 @@ $messages['ru'] = array(
 	'centralauth-admin-info-editcount' => 'Общий счётчик правок:',
 	'centralauth-admin-info-locked' => 'Заморожен:',
 	'centralauth-admin-info-hidden' => 'Уровень сокрытия:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Глобальная группа|Глобальные группы}}:',
+	'centralauth-admin-info-nogroups' => 'нет',
 	'centralauth-admin-nohome' => 'невозможно определить',
 	'centralauth-admin-yes' => 'да',
 	'centralauth-admin-no' => 'нет',
@@ -28435,6 +28481,7 @@ $messages['ru'] = array(
 	'centralauth-admin-list-attached-on' => 'Присоединён',
 	'centralauth-admin-list-method' => 'Способ',
 	'centralauth-admin-list-editcount' => 'Счётчик правок',
+	'centralauth-admin-list-groups' => 'Группы',
 	'centralauth-admin-list-blocked' => 'Заблокирован',
 	'centralauth-admin-unmerge' => 'Разделить выбранные',
 	'centralauth-admin-merge' => 'Объединить выбранные',
@@ -34863,6 +34910,8 @@ $messages['uk'] = array(
 	'centralauth-admin-info-editcount' => 'Загальна кількість редагувань:',
 	'centralauth-admin-info-locked' => 'Заблокований:',
 	'centralauth-admin-info-hidden' => 'Прихований рівень:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Глобальна група|Глобальні групи}}:',
+	'centralauth-admin-info-nogroups' => 'немає',
 	'centralauth-admin-nohome' => 'неможливо визначити',
 	'centralauth-admin-yes' => 'так',
 	'centralauth-admin-no' => 'ні',
@@ -34878,6 +34927,7 @@ $messages['uk'] = array(
 	'centralauth-admin-list-attached-on' => 'Приєднаний',
 	'centralauth-admin-list-method' => 'Спосіб',
 	'centralauth-admin-list-editcount' => 'Лічильник редагувань',
+	'centralauth-admin-list-groups' => 'Групи',
 	'centralauth-admin-list-blocked' => 'Заблоковані',
 	'centralauth-admin-unmerge' => 'Розділити обрані',
 	'centralauth-admin-merge' => "Об'єднати обрані",
@@ -35763,6 +35813,8 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-info-editcount' => 'Tổng số lần sửa đổi:',
 	'centralauth-admin-info-locked' => 'Bị cấm:',
 	'centralauth-admin-info-hidden' => 'Cấp ẩn:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1}}Nhóm toàn cục:',
+	'centralauth-admin-info-nogroups' => 'không có',
 	'centralauth-admin-nohome' => 'không thể xác định',
 	'centralauth-admin-yes' => 'có',
 	'centralauth-admin-no' => 'không có',
@@ -35778,6 +35830,7 @@ Các tài khoản khác chưa được xác nhận.',
 	'centralauth-admin-list-attached-on' => 'Ngày đính kèm',
 	'centralauth-admin-list-method' => 'Phương thức',
 	'centralauth-admin-list-editcount' => 'Số lần sửa đổi',
+	'centralauth-admin-list-groups' => 'Nhóm',
 	'centralauth-admin-list-blocked' => 'Cấm',
 	'centralauth-admin-unmerge' => 'Tách lựa chọn',
 	'centralauth-admin-merge' => 'Hợp nhất lựa chọn',
