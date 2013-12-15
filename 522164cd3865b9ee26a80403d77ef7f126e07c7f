@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_51c1a557",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2013-12-15T15:57:44Z",
+      "side": 1,
+      "message": "Have you considered using $lang-\u003euserTimeAndDate? Or maybe even MWTimestamp::getHumanTimestamp()?",
+      "revId": "522164cd3865b9ee26a80403d77ef7f126e07c7f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_71f029c4",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2013-12-15T15:57:44Z",
+      "side": 1,
+      "message": "Needs space before closing parentheses.",
+      "revId": "522164cd3865b9ee26a80403d77ef7f126e07c7f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
