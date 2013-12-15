@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0ee75395_51ed2589",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2013-12-15T18:52:39Z",
+      "side": 1,
+      "message": "Please add message documentation per https://www.mediawiki.org/wiki/I18n#Message_documentation. Thanks.",
+      "revId": "522164cd3865b9ee26a80403d77ef7f126e07c7f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_51c1a557",
         "filename": "specials/SpecialGlobalUsers.php",
         "patchSetId": 4
