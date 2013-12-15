@@ -7609,6 +7609,8 @@ Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver
 	'centralauth-admin-info-editcount' => 'Totalt antal redigeringer:',
 	'centralauth-admin-info-locked' => 'Låst:',
 	'centralauth-admin-info-hidden' => 'Skjult niveau:',
+	'centralauth-admin-info-groups' => 'Globale {{PLURAL:$1|gruppe|grupper}}:',
+	'centralauth-admin-info-nogroups' => 'ingen',
 	'centralauth-admin-nohome' => 'kan ikke afgøres',
 	'centralauth-admin-yes' => 'ja',
 	'centralauth-admin-no' => 'nej',
@@ -7624,6 +7626,7 @@ Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver
 	'centralauth-admin-list-attached-on' => 'Tilknyttet',
 	'centralauth-admin-list-method' => 'Metode',
 	'centralauth-admin-list-editcount' => 'Antal redigeringer',
+	'centralauth-admin-list-groups' => 'Grupper',
 	'centralauth-admin-list-blocked' => 'Blokeret',
 	'centralauth-admin-unmerge' => 'Adskil de valgte',
 	'centralauth-admin-merge' => 'Tilknyt de valgte',
@@ -18821,6 +18824,7 @@ $messages['kn'] = array(
  * @author Kwj2772
  * @author PuzzletChung
  * @author ToePeu
+ * @author Yjs5497
  * @author Yknok29
  * @author 관인생략
  * @author 아라
@@ -18937,6 +18941,7 @@ $messages['ko'] = array(
 	'centralauth-admin-info-editcount' => '총 편집 횟수:',
 	'centralauth-admin-info-locked' => '잠김 여부:',
 	'centralauth-admin-info-hidden' => '숨김 여부:',
+	'centralauth-admin-info-nogroups' => '없음',
 	'centralauth-admin-nohome' => '확인할 수 없음',
 	'centralauth-admin-yes' => '예',
 	'centralauth-admin-no' => '아니오',
@@ -18954,6 +18959,7 @@ $messages['ko'] = array(
 	'centralauth-admin-list-attached-on' => '통합된 시간',
 	'centralauth-admin-list-method' => '방식',
 	'centralauth-admin-list-editcount' => '편집 횟수',
+	'centralauth-admin-list-groups' => '그룹',
 	'centralauth-admin-list-blocked' => '차단됨',
 	'centralauth-admin-unmerge' => '선택한 계정 병합 해제',
 	'centralauth-admin-merge' => '선택한 계정 합치기',
@@ -26158,6 +26164,8 @@ D'àutri cont a son ancó pa stàit confirmà.",
 	'centralauth-admin-info-editcount' => 'Conteur dle modìfiche an total:',
 	'centralauth-admin-info-locked' => 'Blocà:',
 	'centralauth-admin-info-hidden' => 'Livel stërmà:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Partìa global|partìe globaj}}:',
+	'centralauth-admin-info-nogroups' => 'gnun-a',
 	'centralauth-admin-nohome' => 'impossìbil da determiné',
 	'centralauth-admin-yes' => 'é!',
 	'centralauth-admin-no' => 'nò',
@@ -26175,6 +26183,7 @@ Rason: $1",
 	'centralauth-admin-list-attached-on' => 'Tacà a',
 	'centralauth-admin-list-method' => 'Métod',
 	'centralauth-admin-list-editcount' => 'Conteur ëd modìfiche',
+	'centralauth-admin-list-groups' => 'Partìe',
 	'centralauth-admin-list-blocked' => 'Blocà',
 	'centralauth-admin-unmerge' => 'Dasmës-cia selessionà',
 	'centralauth-admin-merge' => 'Mës-cia selessionà',
