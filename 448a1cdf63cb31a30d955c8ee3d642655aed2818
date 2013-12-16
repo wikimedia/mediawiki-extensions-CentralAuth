@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_914baa62",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-12-16T01:55:24Z",
+      "side": 1,
+      "message": "Why convert it to string (just turn the case \u00271\u0027 into a default at the bottom of the switch...)?\nIMO you could just test \u003d\u003d \u0027no user\u0027, that would be much simpler...",
+      "revId": "448a1cdf63cb31a30d955c8ee3d642655aed2818",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_b12a2e72",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-12-16T01:55:24Z",
+      "side": 1,
+      "message": "One more indentation level needed.",
+      "revId": "448a1cdf63cb31a30d955c8ee3d642655aed2818",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
