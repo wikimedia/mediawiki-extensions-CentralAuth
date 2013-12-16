@@ -34,6 +34,7 @@ $specialPageAliases['ar'] = array(
 	'GlobalGroupPermissions' => array( 'سماحات_المجموعة_العامة' ),
 	'WikiSets' => array( 'تعديل_مجموعات_الويكي' ),
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
+	'MultiLock' => array( 'قفل_متعدد' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
