@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_11cafaa2",
+        "filename": "specials/SpecialWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2013-12-16T02:28:10Z",
+      "side": 1,
+      "message": "group or number? ;)",
+      "revId": "55f9a3afcdd7cdf9238ad9688aa3b2ced9a4602b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
