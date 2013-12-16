@@ -196,6 +196,8 @@ class SpecialWikiSets extends SpecialPage {
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
 		}
+
+		$this->showLogFragment( $subpage );
 	}
 
 	/**
@@ -381,4 +383,16 @@ class SpecialWikiSets extends SpecialPage {
 
 		$this->buildMainView( '<strong class="success">' . $this->msg( 'centralauth-editset-success-delete' )->escaped() . '</strong>' );
 	}
+
+	/**
+	 * @param string $number
+	 */
+	protected function showLogFragment( $number ) {
+		$title = SpecialPage::getTitleFor( 'WikiSets', $number );
+		$logPage = new LogPage( 'gblrights' );
+		$out = $this->getOutput();
+		$out->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
+		LogEventsList::showLogExtract( $out, 'gblrights', $title->getPrefixedText() );
+	}
+
 }
