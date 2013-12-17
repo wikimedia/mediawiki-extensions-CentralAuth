@@ -84,9 +84,7 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( $this->mCanUnmerge ) {
 				$this->showActionForm( 'delete' );
 			}
-			if ( $this->mCanEdit ) {
-				$this->showLogExtract();
-			}
+			$this->showLogExtract();
 			$this->showWikiLists();
 		}
 	}
@@ -696,9 +694,13 @@ class SpecialCentralAuth extends SpecialPage {
 	function showLogExtract() {
 		$user = $this->mGlobalUser->getName();
 		$text = '';
+		$logTypes = array( 'globalauth' );
+		if ( $this->mCanOversight ) {
+			$logTypes[] = 'supress';
+		}
 		$numRows = LogEventsList::showLogExtract(
 			$text,
-			array( 'globalauth', 'suppress' ),
+			$logTypes,
 			Title::newFromText(
 				MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global"
 			)->getPrefixedText(),
