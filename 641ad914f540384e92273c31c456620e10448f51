@@ -69,6 +69,24 @@
       "revId": "641ad914f540384e92273c31c456620e10448f51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_551c8c6a",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1306
+      },
+      "writtenOn": "2013-12-18T21:14:41Z",
+      "side": 1,
+      "message": "Actually \"Merged\" was uppercased to remain in consistency with Special:Listusers",
+      "parentUuid": "eeebdf60_aa2ff39b",
+      "revId": "641ad914f540384e92273c31c456620e10448f51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
