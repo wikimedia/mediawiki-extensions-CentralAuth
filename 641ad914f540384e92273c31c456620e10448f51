@@ -51,6 +51,24 @@
       "revId": "641ad914f540384e92273c31c456620e10448f51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_aa2ff39b",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-18T21:09:10Z",
+      "side": 1,
+      "message": "IF this were to be merged as currently designed, \"Merged\" should be lower case to remain consistent with the lower case phrasing of \"unattached ...\".",
+      "parentUuid": "eeebdf60_aa77f3fc",
+      "revId": "641ad914f540384e92273c31c456620e10448f51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
