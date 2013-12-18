@@ -194,7 +194,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-status-intro'       => 'You can use this form to change the status of this global account.',
 	'centralauth-admin-status-locked'      => 'Locked:',
 	'centralauth-admin-status-locked-no'   => 'Account is not locked',
-	'centralauth-admin-status-locked-yes'  => 'Account is locked from editing',
+	'centralauth-admin-status-locked-yes'  => 'Account is locked from logging in',
 	'centralauth-admin-status-hidden'      => 'Hidden:',
 	'centralauth-admin-status-hidden-no'   => 'Account is not hidden',
 	'centralauth-admin-status-hidden-list' => 'Account is hidden from public lists',
