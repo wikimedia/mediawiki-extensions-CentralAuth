@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_87d9ca2e",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-18T20:08:10Z",
+      "side": 1,
+      "message": "Please remove trailing whitespace.",
+      "revId": "641ad914f540384e92273c31c456620e10448f51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_a7204ef3",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-18T20:08:10Z",
+      "side": 1,
+      "message": "This is starting to look really messy. Am I correct in assuming this is what an entry on\nhttps://meta.wikimedia.org/wiki/Special:GlobalUsers will look like:\n\n* aalku (unattached or doesn\u0027t exist locally) (Merged on December 18, 2013 at 19:39)",
+      "revId": "641ad914f540384e92273c31c456620e10448f51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
