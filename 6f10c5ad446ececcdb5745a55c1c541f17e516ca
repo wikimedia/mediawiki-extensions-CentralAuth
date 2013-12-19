@@ -16,6 +16,24 @@
       "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_80f2cb01",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-12-19T18:34:41Z",
+      "side": 1,
+      "message": "Hmm, so addUser checks $wgCentralAuthAutoNew as well. Technically the account already exists, so I don\u0027t think it should depend on that global. I\u0027ll just take the two lines that function actually does and directly call them.\n\nExcept...I dug a bit further and CentralAuthUser::register (called by $wgAuth-\u003eaddUser()) wants the user\u0027s raw password, which we don\u0027t have access too. Not sure what to do.. :/",
+      "parentUuid": "eeebdf60_8aef8a82",
+      "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
