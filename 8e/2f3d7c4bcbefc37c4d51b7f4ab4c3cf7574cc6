@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+1: Siebrand <siebrand@wikimedia.org>
+Code-Review+2: Legoktm <legoktm.wikipedia@gmail.com>
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 19 Dec 2013 05:03:35 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/38904
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
