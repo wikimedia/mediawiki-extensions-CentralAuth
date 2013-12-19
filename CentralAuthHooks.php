@@ -699,11 +699,22 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
+		global $wgCentralAuthAutoMigrate, $wgAuth;
 		$oldCentral = new CentralAuthUser( $oldName );
 		$oldCentral->removeLocalName( wfWikiID() );
 
 		$newCentral = new CentralAuthUser( $newName );
 		$newCentral->addLocalName( wfWikiID() );
+
+		// If auto migration is enabled, try globalizing the account (bug 53905)
+		if ( $wgCentralAuthAutoMigrate ) {
+			if ( !$newCentral->exists() && !$newCentral->listUnattached() ) {
+				$user = User::newFromId( $userId );
+				$user->load();
+				$newCentral->register( '', $user->getEmail(), $user->mPassword, '' );
+				$newCentral->attach( wfWikiID(), 'new' );
+			}
+		}
 
 		return true;
 	}

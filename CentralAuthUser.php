@@ -498,13 +498,17 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Remaining fields are expected to be filled out shortly...
 	 * eeeyuck
 	 *
-	 * @param $password String
+	 * @param $password String user's raw password
 	 * @param $email String
+	 * @param $hash string user's already hashed password, favored over $password
+	 * @param $salt string salt for the hashed password
 	 * @return bool
 	 */
-	function register( $password, $email ) {
+	function register( $password, $email, $hash = '', $salt = '' ) {
 		$dbw = self::getCentralDB();
-		list( $salt, $hash ) = $this->saltedPassword( $password );
+		if ( !$hash ) {
+			list( $salt, $hash ) = $this->saltedPassword( $password );
+		}
 		$ok = $dbw->insert(
 			'globaluser',
 			array(
