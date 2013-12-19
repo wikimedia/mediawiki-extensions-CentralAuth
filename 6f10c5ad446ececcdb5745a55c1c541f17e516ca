@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_8aef8a82",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-12-19T15:03:02Z",
+      "side": 1,
+      "message": "$wgAuth-\u003einitUser() appears to be for creating the local account when the global account already exists. It explicitly checks $central-\u003eexists() and does nothing if that is false.\n\nTo create the global account, I believe you want $wgAuth-\u003eaddUser().",
+      "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
