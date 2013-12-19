@@ -34,6 +34,24 @@
       "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_a39159fd",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2013-12-19T20:48:04Z",
+      "side": 1,
+      "message": "Copy the password hash from $oldCentral to $newCentral?\n\nYou should probably run that idea past Chris first.",
+      "parentUuid": "eeebdf60_80f2cb01",
+      "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
