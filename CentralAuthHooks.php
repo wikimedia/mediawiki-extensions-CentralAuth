@@ -699,11 +699,36 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
+		global $wgCentralAuthAutoMigrate;
 		$oldCentral = new CentralAuthUser( $oldName );
+		$wasAttached = $oldCentral->isAttached();
 		$oldCentral->removeLocalName( wfWikiID() );
 
 		$newCentral = new CentralAuthUser( $newName );
+		$newUnattached = $newCentral->listUnattached();
 		$newCentral->addLocalName( wfWikiID() );
+
+		// If auto migration is enabled, try globalizing the account (bug 53905)
+		if ( $wgCentralAuthAutoMigrate ) {
+			// Check there is no existing global account and no
+			// existing unattached accounts
+			if ( !$newCentral->exists() && !$newUnattached ) {
+				if ( $wasAttached ) {
+					// Used to have a global account, take the password and email from it
+					list( $salt, $password ) = $oldCentral->getPasswordHash();
+					$email = $oldCentral->getEmail();
+				} else {
+					// Take it from the local account
+					$user = User::newFromId( $userId );
+					$user->load();
+					$password = $user->mPassword;
+					$salt = ''; // CentralAuthUser::addUser will set '' for new accounts
+					$email = $user->getEmail();
+				}
+				$newCentral->registerWithHash( $password, $salt, $email );
+				$newCentral->attach( wfWikiID(), 'new' );
+			}
+		}
 
 		return true;
 	}

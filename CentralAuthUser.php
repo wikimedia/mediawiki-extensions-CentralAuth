@@ -498,13 +498,27 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Remaining fields are expected to be filled out shortly...
 	 * eeeyuck
 	 *
-	 * @param $password String
+	 * Should be used whenever you have the user's
+	 * raw password. If you only have the hashed version,
+	 * use registerWithHash instead.
+	 *
+	 * @param $password String user's raw password
 	 * @param $email String
 	 * @return bool
 	 */
 	function register( $password, $email ) {
-		$dbw = self::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
+		return $this->registerWithHash( $hash, $salt, $email );
+	}
+
+	/**
+	 * @param string $hash user's hashed password
+	 * @param string $salt the salt
+	 * @param string $email email address
+	 * @return bool
+	 */
+	function registerWithHash( $hash, $salt, $email ) {
+		$dbw = self::getCentralDB();
 		$ok = $dbw->insert(
 			'globaluser',
 			array(
