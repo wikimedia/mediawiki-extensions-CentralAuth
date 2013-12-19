@@ -52,6 +52,24 @@
       "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_94dc4d4d",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-19T23:56:09Z",
+      "side": 1,
+      "message": "Assuming the old name was attached on this wiki, then you could copy the hash from the old central user to the new one. Otherwise, you can use the hash from the local user account. We assume central auth has the same password system as the local wiki (we copy the central hash to the local wiki when we unlink the account).",
+      "parentUuid": "eeebdf60_a39159fd",
+      "revId": "6f10c5ad446ececcdb5745a55c1c541f17e516ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
