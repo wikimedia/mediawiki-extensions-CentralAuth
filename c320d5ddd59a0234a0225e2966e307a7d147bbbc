@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_09a6db50",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-12-21T17:30:27Z",
+      "side": 1,
+      "message": "What actually calls this function?",
+      "revId": "c320d5ddd59a0234a0225e2966e307a7d147bbbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
