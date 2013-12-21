@@ -232,6 +232,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$groups = $globalUser->getGlobalGroups();
 		if ( $groups ) {
+			$groups = array_map( 'User::getGroupName', $groups );
 			$attribs['groups'] = htmlspecialchars( $this->getLanguage()->commaList( $groups ) );
 		} else {
 			$attribs['groups'] = $this->msg( 'centralauth-admin-info-nogroups' )->escaped();
