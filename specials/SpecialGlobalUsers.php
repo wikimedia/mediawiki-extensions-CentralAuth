@@ -219,10 +219,6 @@ class GlobalUsersPager extends UsersPager {
 	 * @return array
 	 */
 	public function getAllGroups() {
-		$result = array();
-		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
-			$result[$group] = User::getGroupName( $group );
-		}
-		return $result;
+		return array_map( 'User::getGroupName', CentralAuthUser::availableGlobalGroups() );
 	}
 }
