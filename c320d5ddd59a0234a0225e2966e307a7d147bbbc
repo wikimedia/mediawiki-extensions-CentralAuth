@@ -34,6 +34,24 @@
       "revId": "c320d5ddd59a0234a0225e2966e307a7d147bbbc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_09337b0b",
+        "filename": "specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-12-21T17:43:16Z",
+      "side": 1,
+      "message": "It expects the result to have keys, so this breaks the \u0027Groups\u0027 selection box (it now has numerical values which don\u0027t work)",
+      "parentUuid": "eeebdf60_e9817793",
+      "revId": "c320d5ddd59a0234a0225e2966e307a7d147bbbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
