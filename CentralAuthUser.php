@@ -21,7 +21,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/*private*/ var $mDelayInvalidation = 0;
 
 	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
-	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration;
+	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
 
 	static $mCacheVars = array(
 		'mGlobalId',
@@ -47,6 +47,9 @@ class CentralAuthUser extends AuthPluginUser {
 	const HIDDEN_NONE = '';
 	const HIDDEN_LISTS = 'lists';
 	const HIDDEN_OVERSIGHT = 'suppressed';
+
+	// The maximum number of edits a user can have and still be hidden
+	const HIDE_CONTRIBLIMIT = 1000;
 
 	/**
 	 * @param $username string
@@ -491,6 +494,21 @@ class CentralAuthUser extends AuthPluginUser {
 			}
 		}
 		return $this->mHomeWiki;
+	}
+
+	/**
+	 * @return integer total number of edits for all wikis
+	 */
+	public function getGlobalEditCount() {
+		if ( $this->mGlobalEditCount === null ) {
+			$this->mGlobalEditCount = 0;
+			foreach ( $this->queryAttached() as $wiki => $acc ) {
+				if ( isset( $acc['editCount'] ) ) {
+					$this->mGlobalEditCount += (int)$acc['editCount'];
+				}
+			}
+		}
+		return $this->mGlobalEditCount;
 	}
 
 	/**
@@ -1140,11 +1158,13 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( is_null( $setHidden ) ) {
 			$setHidden = $oldHiddenLevel;
-		} elseif ( ( $setHidden != self::HIDDEN_NONE
-			|| $oldHiddenLevel != self::HIDDEN_NONE )
-			&& !$context->getUser()->isAllowed( 'centralauth-oversight' )
-		) {
-			return Status::newFatal( 'centralauth-admin-not-authorized' );
+		} elseif ( $setHidden != self::HIDDEN_NONE
+			|| $oldHiddenLevel != self::HIDDEN_NONE ) {
+			if ( !$context->getUser()->isAllowed( 'centralauth-oversight' ) ) {
+				return Status::newFatal( 'centralauth-admin-not-authorized' );
+			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
+				return Status::newFatal( wfMessage( 'centralauth-admin-too-many-edits', $this->mName )->numParams( self::HIDE_CONTRIBLIMIT ) );
+			}
 		}
 
 		$returnStatus = Status::newGood();
@@ -1713,6 +1733,12 @@ class CentralAuthUser extends AuthPluginUser {
 	 *    attachedMethod        Attach method: password, mail or primary
 	 */
 	public function queryAttached() {
+		// Cache $wikis to avoid expensive query whenever possible
+		static $wikis = null;
+		if ( $wikis !== null ) {
+			return $wikis;
+		}
+
 		$dbw = self::getCentralDB();
 
 		$result = $dbw->select(
