@@ -211,7 +211,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-admin-logsnippet'         => 'Previous global account changes',
 	'centralauth-admin-suppressreason'     => 'Globally suppressed by $1 for following reason: $2',
 	'centralauth-admin-not-authorized'     => 'You do not have permissions to perform this action',
-
+	'centralauth-admin-too-many-edits'     => 'The global account "<nowiki>$1</nowiki>" has over $2 {{PLURAL:$2|edit|edits}} and cannot be hidden.',
 
 	// List of global users
 	'globalusers'                    => 'Global accounts list',
@@ -746,6 +746,7 @@ See also:
 * $1 - username
 * $2 - reason',
 	'centralauth-admin-not-authorized' => "Error message when the user doesn't have permission",
+	'centralauth-admin-too-many-edits' => 'Error message when the user account being hidden has more global edits than a certain threshold.',
 	'globalusers' => '{{doc-special|GlobalUsers}}
 See example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]',
 	'centralauth-listusers-locked' => "This message is used as user's info:
