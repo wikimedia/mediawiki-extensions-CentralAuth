@@ -6548,6 +6548,7 @@ $messages['ce'] = array(
 	'centralauth-finish-login' => 'ЧугӀо',
 	'centralauth-finish-send-confirmation' => 'Яийта пароль электронан почте',
 	'centralauth-attach-title' => 'Декъашхочун дӀаяздар бакъдар',
+	'centralauth-attach-text' => 'ХӀара декъашхочун дӀаяздар юкъара дӀаяздарин системан юкъа тоьхна дац. Глобальни декъашхочун дӀаяздар хьа делахь хьан йиш ю хьай пароль дӀаязйина и юкъа тоха:',
 	'centralauth-attach-submit' => 'Декъашхочун дӀаяздар дехьа дакха',
 	'centralauth' => 'Глобальни декъашхойн дӀаяздаршан урхалла дар', # Fuzzy
 	'centralauth-admin-intro' => 'ХӀара интерфейс лело мега глобальни декъашхойн дӀаяздаршан урхалла да.',
@@ -6837,10 +6838,10 @@ Pokud to jste vy, můžete dokončit proces sjednocení přihlašování zadán�
 	'centralauth-list-home-title' => 'Domovská wiki',
 	'centralauth-list-home-dryrun' => 'Heslo a e-mailová adresa nastavené na této wiki budou použity i na vašem jednotném účtu.',
 	'centralauth-list-attached-title' => 'Připojené účty',
-	'centralauth-list-attached' => 'Účty se jménem „$1“ na všech následujících projektech byly automaticky připojeny k jednotnému účtu:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'Účty se jménem „$1“ na všech následujících projektech budou automaticky připojeny k jednotnému účtu:', # Fuzzy
+	'centralauth-list-attached' => 'Účty se jménem „$1“ na všech následujících projektech byly automaticky připojeny k jednotnému účtu:',
+	'centralauth-list-attached-dryrun' => 'Účty se jménem „$1“ na všech následujících projektech budou automaticky připojeny k jednotnému účtu:',
 	'centralauth-list-unattached-title' => 'Nepřipojené účty',
-	'centralauth-list-unattached' => 'Nebylo možné automaticky potvrdit, že účet „$1“ na následujících projektech patří vám; pravděpodobně má jiné heslo, než váš primární účet:', # Fuzzy
+	'centralauth-list-unattached' => 'Nebylo možné automaticky potvrdit, že {{PLURAL:$2|účet|účty}} „$1“ na {{PLURAL:$2|následujícím projektu|následujících projektech}} patří vám; pravděpodobně {{PLURAL:$2|má|mají}} jiné heslo, než váš primární účet:',
 	'centralauth-foreign-link' => 'Uživatel $1 na $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|příspěvek|příspěvky|příspěvků}} na $2',
 	'centralauth-merge-method-primary' => 'domovská wiki',
@@ -7557,11 +7558,11 @@ Beklager!',
 	'centralauth-list-home-title' => 'Hjemwiki',
 	'centralauth-list-home-dryrun' => 'Adgangskoden og e-mailadressen som bruges på denne wiki vil blive brugt til din sammenlagte konto.',
 	'centralauth-list-attached-title' => 'Tilknyttede kontoer',
-	'centralauth-list-attached' => 'Kontoen med navnet "$1" på hver af de følgende wikier er automatisk blevet knyttet til den sammenlagte konto:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'Kontoen med navn "$1" på hver af de følgende wikier vil automatisk blive tilknyttet den sammenlagte konto:', # Fuzzy
+	'centralauth-list-attached' => 'Kontoerne med navnet "$1" på hver af de følgende wikier er automatisk blevet knyttet til den sammenlagte konto:',
+	'centralauth-list-attached-dryrun' => 'Kontoerne med navnet "$1" på hver af de følgende wikier vil automatisk blive tilknyttet den sammenlagte konto:',
 	'centralauth-list-unattached-title' => 'Ikke tilknyttede kontoer',
-	'centralauth-list-unattached' => 'Kontoen "$1" kunne ikke automatisk bekræftes som tilhørende dig på de følgende wikier;
-sandsynligvis har de en anden adgangskode end din hovedkonto:', # Fuzzy
+	'centralauth-list-unattached' => '{{PLURAL:$2|Kontoen|Kontoerne}} med navnet "$1" kunne ikke automatisk bekræftes som tilhørende dig på {{PLURAL:$2|følgende wiki|de følgende wikier}};
+sandsynligvis har {{PLURAL:$2|den|de}} en anden adgangskode end din hovedkonto:',
 	'centralauth-foreign-link' => 'Bruger $1 på $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|bidrag|bidrag}} på $2',
 	'centralauth-merge-method-primary' => 'hjemwiki',
@@ -8723,10 +8724,10 @@ Wódaj!',
 	'centralauth-list-home-title' => 'Domowniski wiki',
 	'centralauth-list-home-dryrun' => 'Gronidło a e-mailowa adresa na toś tom wikiju budu se za twójo jadnotne konto wužywaś.',
 	'centralauth-list-attached-title' => 'Pśipowjesone konta',
-	'centralauth-list-attached' => 'Kont z mjenim "$1" na kuždym ze slědujucych sedłow su so awtomatiski jadnotnemu kontoju pśidali:',
-	'centralauth-list-attached-dryrun' => 'Konta z mjenim "$1" na slědujucych sedłach přidaju se awtomatiski jadnotnemu kontoju:',
+	'centralauth-list-attached' => 'Konta z mjenim "$1" su se na slědujucych sedłach awtomatiski jadnotnemu kontoju pśidali:',
+	'centralauth-list-attached-dryrun' => 'Konta z mjenim "$1" pśidaju se na slědujucych sedłach awtomatiski jadnotnemu kontoju:',
 	'centralauth-list-unattached-title' => 'Wótpowjesone konta',
-	'centralauth-list-unattached' => 'Konto "$1" njejo se dało awtomatiski wobkšuśiś ako twójo na slědujucych sedłach; nanejskerjej ma druge gronidło ako twójo primarne konto:',
+	'centralauth-list-unattached' => '{{PLURAL:$2|Konto|Konśe|Konta}} "$1" {{PLURAL:$2|njejo se dało|njejstej se dałej|njejsu se dali}} awtomatiski ako {{PLURAL:$2|twójo|twójej|twóje}} na {{PLURAL:$2|slědujucem sedle|slědujucyma sedłoma|slědujucych sedłach}} wobkšuśiś; nanejskerjej {{PLURAL:$2|ma|matej|maju}} druge gronidło ako twójo primarne konto:',
 	'centralauth-foreign-link' => 'Wužywaŕ $1 na $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|pśinosk|pśinoska|pśinoski|pśinoskow}} na wikiju $2',
 	'centralauth-merge-method-primary' => 'Domowniski wiki',
@@ -14488,10 +14489,10 @@ Druhi wiki bu jako domizniske konto za twoje wužiwarske mjeno postajeny; slědu
 	'centralauth-list-home-title' => 'Domjacy wiki',
 	'centralauth-list-home-dryrun' => 'Hesło a e-mejlowa adresa nastajenej w tutym wikiju budźetej so za twoje zjednoćene konto wužiwać, a twoja wužiwarska strona tu budźe so awtomatisce z druhich wwikijow wotkazować.',
 	'centralauth-list-attached-title' => 'Připowěsnjene konta',
-	'centralauth-list-attached' => 'Konto z mjenom "$1" na slědowacych sydłow buchu awtomatisce zjednoćenemu kontu přidate.',
-	'centralauth-list-attached-dryrun' => 'Konto z mjenom "$1" na kóždym ze slědowacych sydłow budźe so awtomatisće zjednoćenemu kontu přidać:',
+	'centralauth-list-attached' => 'Konta z mjenom "$1" na slědowacych sydłach su so awtomatisce zjednoćenemu kontu přidali.',
+	'centralauth-list-attached-dryrun' => 'Konta z mjenom "$1" na slědowacych sydłach budu so awtomatisće zjednoćenemu kontu přidać:',
 	'centralauth-list-unattached-title' => 'Njepřipowěsnjene konta',
-	'centralauth-list-unattached' => 'Njeda so awtomatisce potwjerdźeć, zo by konto "$1" za slědowace sydła je twoje; najskerje je wone druhe hesło hač twoej primarne konto.',
+	'centralauth-list-unattached' => '{{PLURAL:$2|Konto|Konće|Konta}} "$1" {{PLURAL:$2|njeje so dało|njejstej so dałoj|njejsu so dali}} awtomatisce jako {{PLURAL:$2|twoje|twojej|twoje}} na {{PLURAL:$2|slědowacym sydle|slědowacymaj sydłomaj|slědowacych sydłach}} wobkrućić; najskerje {{PLURAL:$2|ma|matej|maja}} druhe hesło jako twoje primarne konto:',
 	'centralauth-foreign-link' => 'Wužiwar $1 na $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|přinošk|přinoškaj|přinoški|přinoškow}} na wikiju $2',
 	'centralauth-merge-method-primary' => 'Domizniski wiki',
@@ -21517,11 +21518,11 @@ $messages['mk'] = array(
 	'centralauth-list-home-title' => 'Матично вики',
 	'centralauth-list-home-dryrun' => 'Лозинката и е-поштата наведена на ова вики ќе се користи за обединетата сметка.',
 	'centralauth-list-attached-title' => 'Приложени сметки',
-	'centralauth-list-attached' => 'Сметката по име „$1“ на секој од следниве страници е автоматски приложена кон обединетата сметка:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'Сметката по име „$1“ на секоја од следниве страници ќе биде автоматски приложена кон обединетата сметка:', # Fuzzy
+	'centralauth-list-attached' => 'Сметките по име „$1“ на секој од следниве викија е автоматски приложена кон обединетата сметка:',
+	'centralauth-list-attached-dryrun' => 'Сметките по име „$1“ на секоја од следниве викија ќе биде автоматски приложена кон обединетата сметка:',
 	'centralauth-list-unattached-title' => 'Неприврзани сметки',
-	'centralauth-list-unattached' => 'Сметката „$1“ не можеше автоматски да се потврди дека ви припаѓа вам на следниве страници;
-најверојатно тамошните лозинки се разликуваат од вашата главна лозинка:', # Fuzzy
+	'centralauth-list-unattached' => 'Сметката „$1“ не можеше автоматски да се потврди дека ви припаѓа вам на {{PLURAL:$2|следнава страница|следниве страници}};
+најверојатно {{PLURAL:$2|тамошната лозинка|тамошните лозинки}} се разликуваат од вашата главна лозинка:',
 	'centralauth-foreign-link' => 'Корисник $1 од $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|придонес|придонеси}} на $2',
 	'centralauth-merge-method-primary' => 'домашно вики',
@@ -25567,7 +25568,7 @@ $messages['os'] = array(
 	'centralauth-admin-reason' => 'Аххос:',
 	'centralauth-seconds-ago' => '$1 секунды агъоммæ', # Fuzzy
 	'centralauth-minutes-ago' => '$1 минуты агъоммæ', # Fuzzy
-	'centralauth-hours-ago' => '$1 сахаты агъоммæ', # Fuzzy
+	'centralauth-hours-ago' => '{{PLURAL:$1|$1 сахаты агъоммæ}}',
 	'centralauth-days-ago' => '$1 боны агъоммæ', # Fuzzy
 	'centralauth-months-ago' => '$1 мæйы агъоммæ', # Fuzzy
 	'centralauth-years-ago' => '$1 азы агъоммæ', # Fuzzy
@@ -26138,7 +26139,7 @@ Se as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia d�
 	'centralauth-list-attached' => 'Ij cont ch\'as ës-ciamo "$1" ansima a mincadun dij sit sì-dapress a son ëstàit tacà a \'n cont unificà n\'aotomàtich:',
 	'centralauth-list-attached-dryrun' => 'Ij cont con lë stranòm «$1» ëd mincadun dij sit sì-dapress a saran tacà an automàtich al cont unificà:',
 	'centralauth-list-unattached-title' => 'Cont nen unificà',
-	'centralauth-list-unattached' => "{{PLURAL:$2|Ël|Ij}} cont ciamà «$1» a {{PLURAL:$2|l'ha|son}} pa podusse confermé coma sò n'aotomàtich; a l'é belfé ch'a l'{{PLURAL:$2|abia|abio}}}} dle ciav diferente da cola ëd sò cont prinsipal:", # Fuzzy
+	'centralauth-list-unattached' => "{{PLURAL:$2|Ël|Ij}} cont ciamà «$1» a {{PLURAL:$2|l'ha|son}} pa podusse confermé coma sò n'aotomàtich; a l'é belfé ch'a l'{{PLURAL:$2|abia|abio}} dle ciav diferente da cola ëd sò cont prinsipal:",
 	'centralauth-foreign-link' => 'Stranòm $1 ansima a $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribussion|contribussions}} su $2',
 	'centralauth-merge-method-primary' => 'ca (wiki prinsipal)',
@@ -26908,6 +26909,7 @@ $messages['ps'] = array(
  * @author SandroHc
  * @author Sir Lestaty de Lioncourt
  * @author Smeira
+ * @author Vitorvicentevalente
  * @author Waldir
  * @author 555
  */
@@ -26926,7 +26928,7 @@ Caso decida migrar as suas contas, será possível utilizar o mesmo nome de util
 Caso alguém já tenha um nome de utilizador idêntico ao seu nalguma outra wiki, essa pessoa não será importunada. Posteriormente, terá a possíbilidade de dialogar com a mesma ou com um administrador.",
 	'centralauth-merge-step1-title' => 'Iniciar a unificação da autenticação',
 	'centralauth-merge-step1-detail' => 'Por favor, introduza aqui a palavra-chave da sua conta.
-A palavra-chave e o endereço de correio eletrónico serão comparados aos das contas nas outras wikis, para confirmar se coincidem.
+A palavra-chave e o endereço de correio electrónico serão comparados aos das contas nas outras wikis, para confirmar se coincidem.
 Não serão feitas alterações até que confirme que está tudo correto.',
 	'centralauth-merge-step1-submit' => 'Confirmar informações de autenticação',
 	'centralauth-merge-step2-title' => 'Confirmar contas adicionais',
@@ -26962,14 +26964,15 @@ Se é o proprietário, pode concluir o processo de autenticação unificada intr
 	'centralauth-disabled-dryrun' => 'A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas.
 Desculpe.',
 	'centralauth-error-locked' => 'Não pode editar porque a sua conta está bloqueada.',
+	'centralauth-error-unmerged' => 'Não pode editar porque a sua conta não está unificada.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/pt|Leia mais sobre a '''autenticação unificada''']]...''",
 	'centralauth-list-home-title' => 'Wiki de acolhimento',
 	'centralauth-list-home-dryrun' => 'A palavra-chave e endereço de correio electrónico definidos nesta wiki serão usados para a sua conta global.',
 	'centralauth-list-attached-title' => 'Contas acopladas',
-	'centralauth-list-attached' => 'As contas com o nome "$1" nos seguintes sites foram automaticamente acopladas à conta global:',
-	'centralauth-list-attached-dryrun' => 'As contas com o nome "$1" nos seguintes sites serão automaticamente acopladas à conta global:',
+	'centralauth-list-attached' => 'As contas com o nome "$1" nos seguintes sítios foram automaticamente acopladas à conta global:',
+	'centralauth-list-attached-dryrun' => 'As contas com o nome "$1" nos seguintes sítios serão automaticamente acopladas à conta global:',
 	'centralauth-list-unattached-title' => 'Contas não acopladas',
-	'centralauth-list-unattached' => 'Não foi possível confirmar automaticamente que a conta "$1" lhe pertence nos seguintes sites (provavelmente, porque a palavra-chave da conta primária é diferente):',
+	'centralauth-list-unattached' => 'Não foi possível confirmar automaticamente que a conta "$1" lhe pertence nos seguintes sites (provavelmente, porque a palavra-chave da conta primária é diferente):', # Fuzzy
 	'centralauth-foreign-link' => 'Utilizador $1 na $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribuição|contribuições}} em $2',
 	'centralauth-merge-method-primary' => "wiki de acolhimento ''(home wiki)''",
@@ -26985,7 +26988,7 @@ Note que pode ser diferente da wiki de acolhimento ''(home wiki)'' do utilizador
 	'centralauth-merge-method-mail-desc' => 'Indica que a conta local foi fundida porque o seu endereço de correio electrónico correspondia ao da conta principal.',
 	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi fundida porque o utilizador especificou uma palavra-chave válida.',
 	'centralauth-merge-method-admin-desc' => "Indica que a conta local foi fundida manualmente por ''stewards''.
-Esta funcionalidade está agora desativada por razões de segurança.",
+Esta funcionalidade está agora desactivada por razões de segurança.",
 	'centralauth-merge-method-new-desc' => 'Indica que a conta global foi criada automaticamente quando a conta local foi criada.',
 	'centralauth-merge-method-login-desc' => 'Indica que a conta local foi criada automaticamente quando o utilizador se autenticou.',
 	'centralauth-finish-title' => 'Completar fusão',
@@ -27004,21 +27007,24 @@ Outras contas ainda não estão confirmadas.',
 Se a conta global também for sua, pode associar-lhe esta conta introduzindo a palavra-chave da conta global:',
 	'centralauth-attach-submit' => 'Migrar conta',
 	'centralauth-attach-success' => 'A conta foi acoplada à conta global.',
-	'centralauth' => 'Administração de contas globais', # Fuzzy
+	'centralauth' => 'Administração de contas globais',
 	'centralauth-admin-intro' => 'Esta interface pode ser usada para administração de contas globais.',
-	'centralauth-admin-manage' => 'Administrar dados de utilizador', # Fuzzy
+	'centralauth-admin-manage' => 'Administrar dados de utilizador',
 	'centralauth-admin-username' => 'Utilizador:',
 	'centralauth-admin-lookup-ro' => 'Ver informação do utilizador',
 	'centralauth-admin-lookup-rw' => 'Administrar conta do utilizador',
-	'centralauth-admin-permission' => 'Só os stewards podem fundir as contas de outras pessoas.',
+	'centralauth-admin-permission' => "Só os ''stewards'' podem fundir as contas de outras pessoas.",
 	'centralauth-admin-no-unified' => 'Não há nenhuma conta global para este utilizador.',
-	'centralauth-admin-info-header' => 'Informação de utilizadores globais', # Fuzzy
+	'centralauth-admin-info-header' => 'Informação global de conta',
+	'centralauth-admin-info-username' => 'Nome de utilizador:',
 	'centralauth-admin-info-id' => 'Número de identificação:',
 	'centralauth-admin-info-registered' => 'Registado:',
 	'centralauth-admin-info-home' => 'Wiki de origem:',
 	'centralauth-admin-info-editcount' => 'Total de edições:',
 	'centralauth-admin-info-locked' => 'Bloqueada:',
 	'centralauth-admin-info-hidden' => 'Nível de ocultação:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Grupo global|Grupos globais}}:',
+	'centralauth-admin-info-nogroups' => 'nenhum',
 	'centralauth-admin-nohome' => 'não foi possível determinar',
 	'centralauth-admin-yes' => 'sim',
 	'centralauth-admin-no' => 'não',
@@ -27036,11 +27042,12 @@ Motivo: $1',
 	'centralauth-admin-list-attached-on' => 'Acoplada em',
 	'centralauth-admin-list-method' => 'Método',
 	'centralauth-admin-list-editcount' => 'Contagem de edições',
+	'centralauth-admin-list-groups' => 'Grupos',
 	'centralauth-admin-list-blocked' => 'Bloqueada',
-	'centralauth-admin-unmerge' => 'Desfazer a fusão das selecionadas',
-	'centralauth-admin-merge' => 'Fundir selecionadas',
-	'centralauth-admin-bad-input' => 'Seleção para fusão inválida',
-	'centralauth-admin-none-selected' => 'Não foram selecionadas contas para modificar.',
+	'centralauth-admin-unmerge' => 'Desfazer a fusão das seleccionadas',
+	'centralauth-admin-merge' => 'Fundir seleccionadas',
+	'centralauth-admin-bad-input' => 'Selecção para fusão inválida',
+	'centralauth-admin-none-selected' => 'Não foram seleccionadas contas para modificar.',
 	'centralauth-admin-already-unmerged' => 'Ignorando $1, fusão já foi desfeita',
 	'centralauth-admin-unmerge-success' => 'Fusão de $1 {{PLURAL:$1|conta|contas}} desfeita com sucesso',
 	'centralauth-admin-delete-title' => 'Eliminar conta',
@@ -27048,10 +27055,12 @@ Motivo: $1',
 Todas as contas locais continuarão a existir.
 As palavras-chave das contas locais criadas antes da fusão serão revertidas para os seus valores anteriores à fusão.',
 	'centralauth-admin-delete-button' => 'Eliminar esta conta',
+	'centralauth-admin-delete-confirm' => 'Tem a certeza que pretende eliminar esta conta?',
 	'centralauth-admin-delete-success' => 'A conta global "<nowiki>$1</nowiki>" foi eliminada com sucesso',
 	'centralauth-admin-nonexistent' => 'Não existe uma conta global para "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
 	'centralauth-token-mismatch' => 'Desculpe, não foi possível processar a sua submissão do formulário devido à perda dos dados da sessão.',
+	'centralauth-state-mismatch' => 'Erro: Um conflito de edição para este utilizador foi detectado. Por favor, verifique a sua alteração e tente novamente.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Motivo adicional ou outro:',
 	'centralauth-admin-unhide-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
@@ -27060,10 +27069,10 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-admin-status-locked' => 'Bloqueada:',
 	'centralauth-admin-status-locked-no' => 'A conta não tem bloqueios',
 	'centralauth-admin-status-locked-yes' => 'A conta está impedida de editar',
-	'centralauth-admin-status-hidden' => 'Ocultada:',
-	'centralauth-admin-status-hidden-no' => 'A conta não está ocultada',
-	'centralauth-admin-status-hidden-list' => 'A conta está ocultada das listas públicas',
-	'centralauth-admin-status-hidden-oversight' => 'A conta está completamente ocultada',
+	'centralauth-admin-status-hidden' => 'Oculta:',
+	'centralauth-admin-status-hidden-no' => 'A conta não está oculta',
+	'centralauth-admin-status-hidden-list' => 'A conta está oculta das listas públicas',
+	'centralauth-admin-status-hidden-oversight' => 'A conta está completamente oculta',
 	'centralauth-admin-status-submit' => 'Definir estado',
 	'centralauth-admin-status-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
 	'centralauth-admin-setstatus-success' => 'Alterou com sucesso o estado desta conta global.',
@@ -27075,10 +27084,24 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 ** informação pessoal não apropriada',
 	'centralauth-admin-logsnippet' => 'Alterações anteriores à conta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 pela seguinte razão: $2',
-	'globalusers' => 'Lista de utilizadores globais', # Fuzzy
+	'centralauth-admin-not-authorized' => 'Não possui privilégios para executar esta acção',
+	'globalusers' => 'Lista global de utilizadores',
 	'centralauth-listusers-locked' => 'bloqueada',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
 	'centralauth-listusers-nolocal' => 'desacoplada ou não existe localmente',
+	'multilock' => 'Bloquear contas múltiplas globais',
+	'centralauth-admin-multi-username' => 'Digite um ou mais nomes de utilizadores, separados por uma nova linha',
+	'centralauth-admin-multi-notfound' => 'A pesquisa não encontrou nenhuns nomes de utilizador.',
+	'centralauth-admin-multi-searchprefix' => 'Ou, procure por nomes de utilizador com um prefixo',
+	'centralauth-admin-multi-intro' => 'Actualizar várias contas globais ao mesmo tempo',
+	'centralauth-admin-action-lock-nochange' => 'Não altere bloqueios',
+	'centralauth-admin-action-lock-lock' => 'Bloquear contas seleccionadas',
+	'centralauth-admin-action-lock-unlock' => 'Desbloquear contas seleccionadas',
+	'centralauth-admin-action-hide-nochange' => 'Não altere o nível de ocultação',
+	'centralauth-admin-action-hide-none' => 'Desocultar as contas seleccionadas',
+	'centralauth-admin-action-hide-lists' => 'Ocultar as contas seleccionadas das listas públicas',
+	'centralauth-admin-action-hide-oversight' => 'Ocultar completamente as contas seleccionadas',
+	'centralauth-admin-multi-bot' => 'Alterações recentes',
 	'centralauth-seconds-ago' => 'há $1 {{PLURAL:$1|segundo|segundos}} atrás',
 	'centralauth-minutes-ago' => 'há $1 {{PLURAL:$1|minuto|minutos}} atrás',
 	'centralauth-hours-ago' => 'há $1 {{PLURAL:$1|hora|horas}} atrás',
@@ -27090,14 +27113,14 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-prefs-unattached' => 'Não confirmado',
 	'centralauth-prefs-complete' => 'Tudo em ordem!',
 	'centralauth-prefs-migration' => 'Em migração',
-	'centralauth-prefs-count-attached' => 'A sua conta encontra-se ativa {{PLURAL:$1|num site|em $1 sites}}.',
+	'centralauth-prefs-count-attached' => 'A sua conta encontra-se activa {{PLURAL:$1|num sítio|em $1 sítios}}.',
 	'centralauth-prefs-count-unattached' => 'Ainda {{PLURAL:$1|existe uma conta não confirmada|existem contas não confirmadas}} com o seu nome de utilizador {{PLURAL:$1|numa wiki|em $1 wikis}}.',
 	'centralauth-prefs-detail-unattached' => 'Não foi confirmado que esta wiki esteja acoplada à conta global.',
 	'centralauth-prefs-manage' => 'Administrar a sua conta global',
-	'centralauth-prefs-view' => 'Ver informação global dos utilizadores', # Fuzzy
+	'centralauth-prefs-view' => 'Ver informação global de conta',
 	'centralauth-renameuser-merged' => 'O utilizador $1 foi migrado para o sistema de autenticação unificada.
-Alterar o nome de utilizador vai desacoplar esta conta local da conta global.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'O nome de utilizador $2 está reservado para uma conta global.', # Fuzzy
+Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
+	'centralauth-renameuser-reserved' => 'O nome de utilizador $2 está reservado para uma conta global.',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para a wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de utilizador pretendido já está a ser utilizado no sistema de autenticação unificada.',
 	'centralauth-account-exists-reset' => 'O utilizador $1 não está registado nesta wiki, mas existe no sistema de autentificação unificada', # Fuzzy
@@ -27124,6 +27147,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.', 
 	'centralauth-rightslog-entry-groupperms' => 'alterou as permissões do grupo $1, de $2 para $3',
 	'centralauth-rightslog-entry-groupperms2' => 'alterou as permissões do grupo $1. Adicionou $2; Removeu $3',
 	'centralauth-rightslog-entry-groupperms3' => 'alterou o conjunto de wikis restritas do grupo $1, de $2 para $3',
+	'centralauth-rightslog-entry-grouprename' => 'grupo $2 renomeado para $1',
 	'centralauth-rightslog-header' => 'Este registo contém operações sobre grupos globais: alterações de membros e de permissões',
 	'centralauth-rightslog-entry-newset' => 'criou o conjunto de wikis $2 $1 com as seguintes wikis: $3',
 	'centralauth-rightslog-entry-setrename' => 'alterou o nome do conjunto de wikis "$2" para "$1"',
@@ -27132,6 +27156,14 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.', 
 	'centralauth-rightslog-entry-deleteset' => 'eliminou o conjunto de wikis "$1"',
 	'centralauth-rightslog-set-optin' => 'opção de inclusão (só as especificadas)',
 	'centralauth-rightslog-set-optout' => 'opção de exclusão',
+	'centralautologin' => 'Autenticação central',
+	'centralauth-centralautologin-desc' => 'Esta página especial é usada internamente pelo MediaWiki. 
+Quando visita um domínio vinculado enquanto não estiver conectado, o sistema de autenticação central usa esta página para determinar se está autenticado no domínio central. Solicitou esta página sem fornecer quaisquer dados de autenticação, por isso esta não faz nada.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Já está autenticado localmente',
+	'centralauth-centralautologin-badparams' => 'Os parâmetros de autenticação especificados eram inválidos',
+	'centralauth-centralautologin-lostsession' => 'Dados de sessão foram perdidos',
+	'centralauth-centralautologin-badstate' => 'Estado inválido "$1"',
+	'centralauth-centralautologin-logged-in' => 'Está autenticado centralmente como $1. Recarregue a página para aplicar as suas configurações de utilizador.',
 	'globalgroupmembership' => 'Membros de grupos globais',
 	'globalgrouppermissions' => 'Administração de grupos globais',
 	'centralauth-globalgroupperms-grouplist' => 'Foram configurados os seguintes grupos globais.
@@ -27146,26 +27178,30 @@ Note que um grupo não existe se não tiver permissões atribuídas.',
 	'centralauth-globalgroupperms-newgroupname' => 'Novo nome do grupo:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Atribuir permissões',
 	'centralauth-editgroup-subtitle' => 'A editar $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Ver $1',
 	'centralauth-editgroup-fieldset' => 'Permissões para $1',
 	'centralauth-editgroup-name' => 'Nome do grupo:',
 	'centralauth-editgroup-display' => 'Nome localizado do grupo:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|editar]])',
+	'centralauth-editgroup-invalid-name' => 'Nome de grupo global dado inválido',
 	'centralauth-editgroup-member' => 'Nome localizado dos membros do grupo:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|editar]])',
 	'centralauth-editgroup-members' => 'Lista de membros:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lista de utilizadores com direitos $2]]',
-	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está ativo:',
+	'centralauth-editgroup-restrictions' => 'Conjunto de wikis onde este grupo está activo:',
+	'centralauth-editgroup-rename-taken' => 'Renomeação falhada: Já existe um grupo com o nome $1.',
 	'centralauth-editgroup-noset' => '(nenhum)',
-	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo', # Fuzzy
+	'centralauth-editgroup-submit' => 'Gravar alterações às permissões do grupo',
 	'centralauth-editgroup-perms' => 'Permissões atribuídas:',
 	'centralauth-editgroup-reason' => 'Motivo:',
-	'centralauth-editgroup-success' => 'Permissões do grupo alteradas', # Fuzzy
+	'centralauth-editgroup-success' => 'Permissões do grupo alteradas',
 	'centralauth-editgroup-success-text' => 'Alterou com sucesso as permissões do grupo $1.
-[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]', # Fuzzy
+[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|editar]])',
+	'centralauth-editgroup-nowikiset' => 'Nenhum, aplica-se a todas as wikis.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Seleccione uma wiki onde possua uma conta:',
-	'centralauth-globalgroupmembership-badknownwiki' => "O utilizador global '''$1''' não está ativo na wiki que especificou (''$2'').
-Pode estar a tentar atribuir direitos ao utilizador errado!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "O utilizador global '''$1''' não está activo na wiki que especificou (''$2'').
+Pode estar a tentar atribuir direitos ao utilizador errado!",
 	'centralauth-editset' => 'Conjuntos de wikis',
 	'centralauth-editset-legend-rw' => 'Editar ou criar um conjunto de wikis',
 	'centralauth-editset-legend-ro' => 'Lista dos conjuntos de wikis',
@@ -27199,15 +27235,21 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'centralauth-editset-success' => 'Conjunto de wikis alterado com sucesso.',
 	'centralauth-editset-success-delete' => 'O conjunto de wikis foi eliminado com sucesso.',
 	'centralauth-editset-return' => 'Voltar à vista principal',
+	'centralauth-block-already-locked' => 'A conta [[Special:CentralAuth/$1|$1]] já está bloqueada globalmente.',
 	'centralauth-readonly' => 'Banco de dados CentralAuth bloqueado',
 	'centralauth-readonlytext' => 'A base de dados do CentralAuth está bloqueada a novas entradas e outras modificações, provavelmente para manutenção de rotina, após a qual voltará ao normal.',
 	'right-globalgroupmembership' => 'Editar associação a grupos globais',
 	'right-centralauth-autoaccount' => 'Aceder automaticamente com a conta global',
 	'right-centralauth-unmerge' => 'Desfazer a conta global',
-	'right-centralauth-lock' => 'Bloquear ou ocultar a conta global', # Fuzzy
-	'right-centralauth-oversight' => 'Suprimir a conta global', # Fuzzy
+	'right-centralauth-lock' => 'Bloquear ou desbloquear a conta global',
+	'right-centralauth-oversight' => 'Suprimir ou ocultar a conta global',
 	'right-centralauth-merge' => 'Fundir as contas',
 	'right-globalgrouppermissions' => 'Administrar grupos globais',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globais em que o utilizador está',
+	'action-centralauth-lock' => 'bloquear ou desbloquear contas globais',
+	'centralloginsuccesful' => 'Autenticação bem sucedida',
+	'centralauth-completelogin-back' => 'Regressar à página anterior.',
+	'centralauth-error-nologinattempt' => 'Nenhuma tentativa de autenticação activa em andamento para a sua sessão.',
 );
 
 /** Brazilian Portuguese (português do Brasil)
@@ -31054,11 +31096,11 @@ $messages['sr-ec'] = array(
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Прочитајте више о '''обједињеним налозима''']]…''",
 	'centralauth-list-home-title' => 'Матични вики',
 	'centralauth-list-attached-title' => 'Привезани налози',
-	'centralauth-list-attached' => 'Налог „$1“ на следећим викијима је аутоматски привезан с обједињеним налогом:',
-	'centralauth-list-attached-dryrun' => 'Налог под именом „$1“ на сваком од следећих сајтова аутоматски ће бити прикачен на сједињени налог:',
+	'centralauth-list-attached' => 'Налог „$1“ на следећим викијима је аутоматски привезан с обједињеним налогом:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Налог под именом „$1“ на сваком од следећих сајтова аутоматски ће бити прикачен на сједињени налог:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Непривезани налози',
 	'centralauth-list-unattached' => 'Налог „$1“ не може бити аутоматски потврђен да припада вама на следећим страницама;
-највероватније се тамошње лозинке разликују од ваше главне лозинке:',
+највероватније се тамошње лозинке разликују од ваше главне лозинке:', # Fuzzy
 	'centralauth-foreign-link' => 'Корисник $1 на $2',
 	'centralauth-merge-method-primary' => 'матични вики',
 	'centralauth-merge-method-empty' => 'нема доприноса',
@@ -31130,6 +31172,9 @@ $messages['sr-ec'] = array(
 	'centralauth-admin-already-unmerged' => 'Прескачем $1, већ је раздвојен',
 	'centralauth-admin-unmerge-success' => '{{PLURAL:$1|Раздвојен је $1 налог|Раздвојена су $1 налога|Раздвојено је $1 налога}}',
 	'centralauth-admin-delete-title' => 'Брисање налога',
+	'centralauth-admin-delete-description' => 'Брисање глобалног налога ће такође обрисати глобална подешавања, раздвојити све локалне налоге, и омогућити другим корисницима да преузму то глобално име.
+Сви локални налози ће и даље постојати.
+Лозинке локалних налога које су важиле пре спајања у глобални налог ће бити враћене на своје пређашње вредности.',
 	'centralauth-admin-delete-button' => 'Обриши овај налог',
 	'centralauth-admin-delete-success' => 'Глобални налог за „<nowiki>$1</nowiki>” је обрисан',
 	'centralauth-admin-nonexistent' => 'Не постоји глобални налог за „<nowiki>$1</nowiki>”',
@@ -31335,10 +31380,10 @@ Ukoliko ste ovo vi, možete jednostavno završiti proces spajanja upisujući loz
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Pročitajte više o '''spajanju naloga''']]...''",
 	'centralauth-list-home-title' => 'Matični viki:',
 	'centralauth-list-attached-title' => 'Priloženi nalozi',
-	'centralauth-list-attached' => 'Nalog "$1" na sledećim sajtovima je automatski spojen:',
-	'centralauth-list-attached-dryrun' => 'Nalog pod imenom „$1“ na svakom od sledećih sajtova automatski će biti prikačen na sjedinjeni nalog:',
+	'centralauth-list-attached' => 'Nalog "$1" na sledećim sajtovima je automatski spojen:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Nalog pod imenom „$1“ na svakom od sledećih sajtova automatski će biti prikačen na sjedinjeni nalog:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Nenakačeni nalozi',
-	'centralauth-list-unattached' => 'Nalog "$1" se ne može automatski potvrditi da pripada vama na sledećim sajtovima; najverovatnije imaju različite lozinke nego vaš primaran nalog:',
+	'centralauth-list-unattached' => 'Nalog "$1" se ne može automatski potvrditi da pripada vama na sledećim sajtovima; najverovatnije imaju različite lozinke nego vaš primaran nalog:', # Fuzzy
 	'centralauth-foreign-link' => 'Korisnik $1 na $2',
 	'centralauth-merge-method-primary' => 'matični viki:',
 	'centralauth-merge-method-empty' => 'bez priloga',
@@ -31551,7 +31596,7 @@ Možete da ih pregledate i izmenite, ili pak da napravite novi skup.',
 	'centralauth-editset-submit-delete' => 'Obriši',
 	'centralauth-editset-badname' => 'Neispravno ili prazno ime skupa.',
 	'centralauth-editset-badtype' => 'Nepoznat tip skupa.',
-	'centralauth-editset-setexists' => 'Skup sa ovim imenom već postoji',
+	'centralauth-editset-setexists' => 'Skup s tim nazivom već postoji',
 	'centralauth-editset-nowikis' => 'Nijedan viki nije određen.',
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ništa)',
@@ -35805,10 +35850,10 @@ Nếu đây là bạn, bạn có thể kết thúc quá trình hợp nhất tài
 	'centralauth-list-home-title' => 'Wiki chính',
 	'centralauth-list-home-dryrun' => 'Mật khẩu và địa chỉ thư điện tử ở wiki này sẽ được dùng cho tài khoản thống nhất của bạn.',
 	'centralauth-list-attached-title' => 'Các tài khoản đính kèm',
-	'centralauth-list-attached' => 'Tài khoản “$1” ở mỗi website sau được tự động đính kèm vào tài khoản hợp nhất:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'Tài khoản “$1” ở các website sau sẽ được tự động gắn vào tài khoản hợp nhất:', # Fuzzy
+	'centralauth-list-attached' => 'Các tài khoản có tên “$1” ở mỗi website sau được tự động đính kèm vào tài khoản hợp nhất:',
+	'centralauth-list-attached-dryrun' => 'Các tài khoản có tên “$1” ở các website sau sẽ được tự động gắn vào tài khoản hợp nhất:',
 	'centralauth-list-unattached-title' => 'Các tài khoản không ràng buộc',
-	'centralauth-list-unattached' => 'Tài khoản “$1” không thể tự động xác nhận thuộc quyền sở hữu của bạn trên các trang sau; rất có thể chúng có mật khẩu khác với tài khoản chính của bạn:', # Fuzzy
+	'centralauth-list-unattached' => '{{PLURAL:$2|Tài khoản|Các tài khoản}} có tên “$1” không thể tự động xác nhận thuộc quyền sở hữu của bạn trên {{PLURAL:$2|trang|các trang}} sau; rất có thể {{PLURAL:$2|nó|chúng}} có mật khẩu khác với tài khoản chính của bạn:',
 	'centralauth-foreign-link' => 'Thành viên $1 tại $2',
 	'centralauth-foreign-contributions' => '$1 đóng góp trên $2',
 	'centralauth-merge-method-primary' => 'wiki chính',
@@ -36862,7 +36907,7 @@ $messages['zh-hans'] = array(
 	'centralauth-merge-home-password' => '这个账户在主维基站点上（在下方列出）的密码跟您输入的密码不同。请输入主维基站点的密码。',
 	'centralauth-complete' => '账户整合完成！',
 	'centralauth-incomplete' => '账户整合未完成！',
-	'centralauth-complete-text' => '您现在可以登录到{{int:Centralauth-groupname}}的任何wiki站点，而无需创建一个新的账号。',
+	'centralauth-complete-text' => '现在，你可以无需创建新账户而登录{{int:Centralauth-groupname}}的任何wiki网站。',
 	'centralauth-incomplete-text' => '当您的帐号被整合后，您将能够登录到{{int:Centralauth-groupname}}的任何一个wiki站点，而无需创建一个新的帐号。',
 	'centralauth-not-owner-text' => '用户名："$1"已自动分配给$2的账户。
 
