@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_3b94448d",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-12-22T08:23:32Z",
+      "side": 1,
+      "message": "you can just do \"as $acc\" since $wiki is never used.",
+      "revId": "5ba9f2278abf9d35f09dcfbbdbe64dc812b51c86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_5b970894",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-12-22T08:23:32Z",
+      "side": 1,
+      "message": "$context-\u003emsg instead of wfMessage",
+      "revId": "5ba9f2278abf9d35f09dcfbbdbe64dc812b51c86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
