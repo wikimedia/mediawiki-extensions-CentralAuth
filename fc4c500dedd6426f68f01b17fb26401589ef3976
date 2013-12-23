@@ -16,6 +16,24 @@
       "revId": "fc4c500dedd6426f68f01b17fb26401589ef3976",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_fd3a4be3",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2013-12-23T23:40:51Z",
+      "side": 1,
+      "message": "Make it protected.",
+      "parentUuid": "eeebdf60_bd4de39d",
+      "revId": "fc4c500dedd6426f68f01b17fb26401589ef3976",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
