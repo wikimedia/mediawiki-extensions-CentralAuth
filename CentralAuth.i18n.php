@@ -746,7 +746,11 @@ See also:
 * $1 - username
 * $2 - reason',
 	'centralauth-admin-not-authorized' => "Error message when the user doesn't have permission",
-	'centralauth-admin-too-many-edits' => 'Error message when the user account being hidden has more global edits than a certain threshold.',
+	'centralauth-admin-too-many-edits' => 'Error message when the user account being hidden has more global edits than a certain threshold.
+
+Parameters:
+* $1 - username
+* $2 - number of edits',
 	'globalusers' => '{{doc-special|GlobalUsers}}
 See example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]',
 	'centralauth-listusers-locked' => "This message is used as user's info:
@@ -2435,17 +2439,17 @@ $messages['as'] = array(
 	'centralauth-list-home-title' => 'মুখ্য ৱিকি',
 	'centralauth-list-home-dryrun' => "এই ৱিকিত দিয়া গুপ্তশব্দ আৰু ই-মেইল ঠিকনা আপোনাৰ একত্ৰিত একাউণ্টৰ বাবে ব্যৱহৃত হ'ব।",
 	'centralauth-list-attached-title' => 'সংযোজিত একাউণ্ট',
-	'centralauth-list-attached' => 'তলত দিয়া ছাইটসমূহৰ "$1" নামৰ একাউণ্টটো স্বয়ংক্ৰিয়ভাৱে একত্ৰিত একাউণ্টৰ লগত সংযোগ কৰা হৈছে:',
-	'centralauth-list-attached-dryrun' => 'তলত দিয়া ছাইটসমূহৰ "$1" নামৰ একাউণ্টটো স্বয়ংক্ৰিয়ভাৱে একত্ৰিত একাউণ্টৰ লগত সংযোজিত কৰা হ\'ব:',
+	'centralauth-list-attached' => 'তলত দিয়া ছাইটসমূহৰ "$1" নামৰ একাউণ্টটো স্বয়ংক্ৰিয়ভাৱে একত্ৰিত একাউণ্টৰ লগত সংযোগ কৰা হৈছে:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'তলত দিয়া ছাইটসমূহৰ "$1" নামৰ একাউণ্টটো স্বয়ংক্ৰিয়ভাৱে একত্ৰিত একাউণ্টৰ লগত সংযোজিত কৰা হ\'ব:', # Fuzzy
 	'centralauth-list-unattached-title' => 'অসংযোজিত একাউণ্ট',
 	'centralauth-list-unattached' => '"$1" একাউণ্টটো তলৰ ছাইটসমূহত আপোনাৰ হয়নে নহয় সেয়া স্বয়ংক্ৰিয়ভাৱে নিশ্চিত কৰিব পৰা নগ\'ল;
-সম্ভৱতঃ সেইবোৰৰ গুপ্তশব্দ আপোনাৰ প্ৰাথমিক একাউণ্টতকৈ বেলেগ:',
+সম্ভৱতঃ সেইবোৰৰ গুপ্তশব্দ আপোনাৰ প্ৰাথমিক একাউণ্টতকৈ বেলেগ:', # Fuzzy
 	'centralauth-foreign-link' => '$2ত ব্যৱহাৰকাৰী $1',
 	'centralauth-foreign-contributions' => '$2ত $1 {{PLURAL:$1|বৰঙণি|বৰঙণি}}',
 	'centralauth-merge-method-primary' => 'মুখ্য ৱিকি',
 	'centralauth-merge-method-empty' => 'কোনো বৰঙণি নাই',
 	'centralauth-merge-method-mail' => 'ই-মেইলৰ দ্বাৰা নিশ্চিত কৰা হৈছে',
-	'centralauth-merge-method-password' => 'গুপ্তশব্দৰ দ্বাৰা নিশ্চিত কৰা হৈছে',
+	'centralauth-merge-method-password' => 'গুপ্তশব্দৰ জৰিয়তে নিশ্চিত কৰা হৈছে',
 	'centralauth-merge-method-admin' => 'প্ৰশাসক একীভূত একাউণ্ট',
 	'centralauth-merge-method-new' => 'নতুন একাউণ্ট',
 	'centralauth-merge-method-login' => 'প্ৰৱেশৰ ওপৰত ভিত্তি কৰি সৃষ্টি',
@@ -2454,8 +2458,8 @@ $messages['as'] = array(
 	'centralauth-merge-method-empty-desc' => "সূচায় যে কোনো সম্পাদনা নোহোৱা বাবে স্থানীয় একাউণ্টটো একত্ৰিত কৰা হ'ল।",
 	'centralauth-merge-method-mail-desc' => "সূচায় যে ইয়াৰ ই-মেইল ঠিকনাটো মুখ্য ৱিকিৰ ই-মেইল ঠিকনাৰ লগত মিলা বাবে স্থানীয় একাউণ্টটো একত্ৰিত কৰা হ'ল।",
 	'centralauth-merge-method-password-desc' => "সূচায় যে সদস্যজনে এটা বৈধ গুপ্তশব্দ নিৰ্দেশ কৰা বাবে স্থানীয় একাউণ্টটো একত্ৰিত কৰা হ'ল।",
-	'centralauth-merge-method-admin-desc' => "সূচায় যে স্থানীয় একাউণ্টটো ষ্টিৱাৰ্ডৰ দ্বাৰা একত্ৰিত কৰা হ'ল।
-সুৰক্ষাজনিত কাৰণত এই বিকল্পটো নিষ্ক্ৰিয় কৰা হৈছে।",
+	'centralauth-merge-method-admin-desc' => 'সূচায় যে স্থানীয় একাউণ্টটো ষ্টিৱাৰ্ডে একত্ৰিত কৰিলে।
+সুৰক্ষাজনিত কাৰণত এই বৈশিষ্টটো নিষ্ক্ৰিয় কৰা হৈছে।',
 	'centralauth-merge-method-new-desc' => 'সূচায় যে স্থানীয় একাউণ্টটো সৃষ্টি কৰোঁতে গোলকীয় একাউণ্টটোও স্বয়ংক্ৰিয়ভাৱে সৃষ্টি কৰা হৈছিল।',
 	'centralauth-merge-method-login-desc' => 'সূচায় যে ব্যৱহাৰকাৰীজনে প্ৰৱেশ কৰোঁতে স্থানীয় একাউণ্টটো সৃষ্টি কৰা হৈছিল।',
 	'centralauth-merge-method-questionmark' => '(?)',
@@ -2547,7 +2551,7 @@ $messages['as'] = array(
 ** অনুপযুক্ত সদস্যনাম
 ** অনুপযুক্ত ব্যক্তিগত তথ্য',
 	'centralauth-admin-logsnippet' => 'পূৰ্বৰ গোলকীয় একাউণ্ট সালসলনিসমূহ',
-	'centralauth-admin-suppressreason' => 'এই কাৰণসমূহৰ বাবে $1ৰ দ্বাৰা গোলকীয়ভাৱে নিবাৰণ কৰা হৈছে: $2',
+	'centralauth-admin-suppressreason' => 'এই কাৰণসমূহৰ বাবে $1-য়ে গোলকীয়ভাৱে বাৰণ কৰিছে: $2',
 	'globalusers' => 'গোলকীয় ব্যৱহাৰকাৰীৰ তালিকা', # Fuzzy
 	'centralauth-listusers-locked' => 'বন্ধ',
 	'centralauth-listusers-attached' => '[[User:$1|স্থানীয়ভাৱে আছে]]',
@@ -6525,7 +6529,7 @@ $messages['ce'] = array(
 	'centralauth-merge-step2-title' => 'Бакъде кхин декъашхочун дӀаяздарш',
 	'centralauth-merge-dryrun-home' => 'Системин цатарло дӀаяздар хьа хилар бакъдан цӀерачу вики чохь.
 
-Амма карийна хӀокху дӀаяздаран кхин «цӀера» вики-проект. Лахахь гайтина йолу хьажориган дихьа гӀой системин чугӀо.',
+Амма карийна хӀокху дӀаяздаран кхин «цӀера» вики-проект. Лахахь гайтина йолу хьажораган дихьа гӀой системин чугӀо.',
 	'centralauth-merge-step3-title' => 'Юкъара декъашхочун дӀаяздар кхоллар',
 	'centralauth-complete' => 'Декъашхочун дӀаяздарш цхьаьнатохар дика чакхдели!',
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
@@ -8052,6 +8056,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-admin-logsnippet' => 'Vorherige Änderungen an globalen Benutzerkonten',
 	'centralauth-admin-suppressreason' => 'Global unterdrückt durch $1. Grund: $2',
 	'centralauth-admin-not-authorized' => 'Du hast keine Berechtigung, diese Aktion durchzuführen.',
+	'centralauth-admin-too-many-edits' => 'Das globale Benutzerkonto „<nowiki>$1</nowiki>“ hat mehr als {{PLURAL:$2|eine Bearbeitung|$2 Bearbeitungen}} und kann nicht versteckt werden.',
 	'globalusers' => 'Benutzerkontenverzeichnis (global)',
 	'centralauth-listusers-locked' => 'gesperrt',
 	'centralauth-listusers-attached' => '[[User:$1|lokal vorhanden]]',
@@ -8764,15 +8769,15 @@ Druge konta hyšći njejsu wobkšuśone.',
 Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zapódajoš gronidło globalnego konta:',
 	'centralauth-attach-submit' => 'Konto spóraś',
 	'centralauth-attach-success' => 'Konto jo se do jadnotnego konta spórało.',
-	'centralauth' => 'Zastojanje globalnych wužywarjow', # Fuzzy
+	'centralauth' => 'Zastojnik globalnych kontow',
 	'centralauth-admin-intro' => 'Toś ten interfejs dajo se za administraciju globalnych kontow wužywaś.',
-	'centralauth-admin-manage' => 'Wužywarske daty zastojaś', # Fuzzy
+	'centralauth-admin-manage' => 'Kontowe daty zastojaś',
 	'centralauth-admin-username' => 'Wužywarske mě:',
 	'centralauth-admin-lookup-ro' => 'Wužywarske informacije pokazaś',
 	'centralauth-admin-lookup-rw' => 'Wužywarske konto zastojaś',
 	'centralauth-admin-permission' => 'Jano stewardy mógu konta drugich wužywarjow zjadnośiś.',
 	'centralauth-admin-no-unified' => 'Žedno jadnotne konto za toś to wužywarske mě.',
-	'centralauth-admin-info-header' => 'Informacije wó globalnem wužywarju', # Fuzzy
+	'centralauth-admin-info-header' => 'Informacije wó globalnem konśe',
 	'centralauth-admin-info-id' => 'ID wužywarja:',
 	'centralauth-admin-info-registered' => 'Zregistrěrowany:',
 	'centralauth-admin-info-home' => 'Domacny wiki:',
@@ -8834,7 +8839,7 @@ Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu z
 ** njepśiměrjone wósobinske informacije',
 	'centralauth-admin-logsnippet' => 'Pjerwjejšne změny globalnego konta',
 	'centralauth-admin-suppressreason' => 'Globalnje pódtłocony wót $1 ze slědujuceje pśicyny: $2',
-	'globalusers' => 'Lisćina globalnych wužywarjow', # Fuzzy
+	'globalusers' => 'Lisćina globalnych kontow',
 	'centralauth-listusers-locked' => 'zastajony',
 	'centralauth-listusers-attached' => '[[User:$1|eksistěrujo lokalnje]]',
 	'centralauth-listusers-nolocal' => 'wótpowjesony abo njeeksistěrujo lokalnje',
@@ -8853,17 +8858,17 @@ Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu z
 	'centralauth-prefs-count-unattached' => 'Su hyšći njewobkšuśone konta z twójim mjenim w $1 {{PLURAL:$1|projekśe|projektoma|projektach|projektach}}.',
 	'centralauth-prefs-detail-unattached' => 'Za toś ten projekt njejo wobkšuśenje, až słuša ku globalnemu kontoju.',
 	'centralauth-prefs-manage' => 'Twójo globalne konto zastojaś',
-	'centralauth-prefs-view' => 'Informacije wó globalnem wužywarju pokazaś', # Fuzzy
-	'centralauth-renameuser-merged' => 'Wužywaŕ $1 jo južo pśeśěgnuł do jadnotnego pśizjawjeńskego systema.
-Pśemjenjowanje wótwónoźujo lokalnego wužywarja z jadnotnego systema.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Wužywaŕ $2 jo za globalne konto rezerwěrowany.', # Fuzzy
+	'centralauth-prefs-view' => 'Informacije wó globalnem konśe pokazaś',
+	'centralauth-renameuser-merged' => 'Wužywaŕ $1 jo se južo do jadnotnego pśizjawjeńskego systema pśewzeł.
+Pśemjenjenje wustatkujo, až lokalne konto wótwńoźujo se z globalnego wužywarskego konta.',
+	'centralauth-renameuser-reserved' => 'Wužywarske mě $2 jo za globalne konto rezerwěrowane.',
 	'centralauth-invalid-wiki' => 'Njejo taka wikijowa datowa banka: $1',
 	'centralauth-account-exists' => 'Konto njedajo se napóraś: wužywarske mě, kótarež se pomina, jo južo do systema jadnotnego pśizjawjenja pśewzete.',
-	'centralauth-account-exists-reset' => 'Wužywarske mě $1 njejo na toś tom wikiju zregistrěrowane, ale eksistěrujo w zjadnośonem pśizjwajeńskem systemje.', # Fuzzy
-	'centralauth-login-progress' => 'Pśizjawijoš se k wikijam {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'Wótzjawijoš se z drugich wikijow{{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-account-exists-reset' => 'Wužywarske mě $1 njejo na toś tom wikiju zregistrěrowane, ale móžoš jogo gronidko na [[Special:CentralAuth/$1|wikiju, źož jo]] slědk stajiś.',
+	'centralauth-login-progress' => 'Pśizjawjaš se k wikijam {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'Wótzjawjaš se z drugich wikijow {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Sy se awtomatiski pśizjawił do drugich projektow {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Sy se awtomatiski wótzjawił z drugich projektow {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Sy se awtomatiski wótzjawił z drugich projektow {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalnje schowany wót $1 $2 ze slědujuceje pśicyny: $3',
 	'centralauth-log-name' => 'Protokol globalnego konta',
 	'centralauth-log-header' => 'Toś ten protokol wopśimujo akcije pód globalnymi kontami: lašowanja, zastajenja a pśipušćenja.',
@@ -8924,8 +8929,8 @@ Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 [[Special:GlobalGroupPermissions|Slědk ku kupkowemu zastojanjeju]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|wobźěłaś]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wubjeŕ wiki, na kótaremž maju konto:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Globalny wužywaŕ '''$1''' njejo aktiwny na wikiju, kótaryž sy pódał ('' $2 '').
-Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "Globalne konto '''$1''' njejo aktiwne na wikiju, kótaryž sy pódał ('' $2 '').
+Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'centralauth-editset' => 'Wikikupki',
 	'centralauth-editset-legend-rw' => 'Wikikupku wobźěłaś abo napóraś',
 	'centralauth-editset-legend-ro' => 'Lisćina wikikupkow',
@@ -8958,7 +8963,7 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!", # Fuzzy
 	'centralauth-editset-success' => 'Wikikupka wuspěšnje změnjona.',
 	'centralauth-editset-success-delete' => 'Wikikupka wuspěšnje wulašowana.',
 	'centralauth-editset-return' => 'Slědk ku głownemu naglědoju',
-	'centralauth-block-already-locked' => 'Wužywaŕ [[Special:CentralAuth/$1|$1]] jo se južo globalnje zastajił.', # Fuzzy
+	'centralauth-block-already-locked' => 'Konto [[Special:CentralAuth/$1|$1]] jo se južo globalnje zastajiło.',
 	'centralauth-readonly' => 'Datowa banka CentralAuth jo zastajona',
 	'centralauth-readonlytext' => 'Datowa banka CentralAuth jo tuchylu za nowe zapiski a druge změny zastajona, nejskerjej dla rutinowych wótwardowańskich źěłow, pó kótarychž dokóńcenju wšikno buźo normalne.',
 	'right-globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach wobźěłaś',
@@ -16699,6 +16704,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-logsnippet' => "Modifiche precedenti all'utenza globale",
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non hai i diritti per eseguire questa azione.',
+	'centralauth-admin-too-many-edits' => 'L\'utenza globale "<nowiki>$1</nowiki>" ha più di $2 {{PLURAL:$2|contributo|contributi}} e non può essere nascosta.',
 	'globalusers' => 'Elenco degli utenti globali',
 	'centralauth-listusers-locked' => 'bloccato',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmente]]',
@@ -17089,6 +17095,7 @@ $messages['ja'] = array(
 	'centralauth-admin-logsnippet' => '以前のグローバルアカウントの変更履歴',
 	'centralauth-admin-suppressreason' => 'あなたは以下の理由で、$1 によってグローバルに秘匿されています: $2',
 	'centralauth-admin-not-authorized' => 'あなたにはこの操作を実行する権限がありません',
+	'centralauth-admin-too-many-edits' => 'グローバルアカウント「<nowiki>$1</nowiki>」は編集回数が $2 {{PLURAL:$2|件}}を超過しているため非表示にできません。',
 	'globalusers' => 'グローバルアカウント一覧',
 	'centralauth-listusers-locked' => 'ロックされている',
 	'centralauth-listusers-attached' => '[[User:$1|ローカルに作成済み]]',
@@ -19944,6 +19951,7 @@ D'Passwierder vun alle Benotzerkonten déi zesummegefouert goufen, ginn nees op 
 	'centralauth-admin-logsnippet' => 'Vireg Ännerunge vum globale Benotzerkont',
 	'centralauth-admin-suppressreason' => 'Global suppriméiert vum $1 aus dësem Grond: $2',
 	'centralauth-admin-not-authorized' => "Dir hutt net d'Rechter fir dës Aktioun ze maachen.",
+	'centralauth-admin-too-many-edits' => 'De globale Benotzerkont "<nowiki>$1</nowiki>" huet méi wéi {{PLURAL:$2|eng Ännerung|$2 Ännerungen}} a kann net verstoppt ginn.',
 	'globalusers' => 'Lëscht vu globale Benotzerkonten',
 	'centralauth-listusers-locked' => 'gespaart',
 	'centralauth-listusers-attached' => '[[User:$1|gëtt et lokal]]',
@@ -25587,6 +25595,7 @@ $messages['os'] = array(
 /** Punjabi (ਪੰਜਾਬੀ)
  * @author Aalam
  * @author Gman124
+ * @author Satdeep gill
  * @author TariButtar
  */
 $messages['pa'] = array(
@@ -25612,6 +25621,7 @@ $messages['pa'] = array(
 	'centralauth-merge-method-new' => 'ਨਵਾਂ ਅਕਾਊਂਟ',
 	'centralauth-finish-password' => 'ਪਾਸਵਰਡ:',
 	'centralauth-admin-username' => 'ਵਰਤੋਂਕਾਰ ਨਾਂ:',
+	'centralauth-admin-info-id' => 'ਵਰਤੋਂਕਾਰ ਸ਼ਨਾਖਤੀ:',
 	'centralauth-admin-yes' => 'ਹਾਂ',
 	'centralauth-admin-no' => 'ਨਹੀਂ',
 	'centralauth-admin-delete-title' => 'ਅਕਾਊਂਟ ਹਟਾਓ',
@@ -26252,6 +26262,7 @@ Le ciav për ij cont locaj creà prima dl'unificassion a tornëran ai sò valor 
 	'centralauth-admin-logsnippet' => 'Cambiament precedent dël cont global',
 	'centralauth-admin-suppressreason' => 'Scancelà globalment da $1 për le rason sì-dapress: $2',
 	'centralauth-admin-not-authorized' => "A l'ha pa ij drit ëd fé costa assion",
+	'centralauth-admin-too-many-edits' => "Ël cont global «<nowiki>$1</nowiki>» a l'ha pi che che $2 {{PLURAL:$2|modìfica|modìfiche}} e a peul pa esse stërmà.",
 	'globalusers' => 'Lista dij cont globaj',
 	'centralauth-listusers-locked' => 'blocà',
 	'centralauth-listusers-attached' => '[[User:$1|a esist localment]]',
@@ -34328,6 +34339,7 @@ Birleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmede
 	'centralauth-admin-logsnippet' => 'Önceki küresel hesap değişiklikleri',
 	'centralauth-admin-suppressreason' => '$1 tarafından küresel olarak baskılandı. Sebep: $2',
 	'centralauth-admin-not-authorized' => 'Bu eylemi gerçekleştirmeye yetkiniz yok.',
+	'centralauth-admin-too-many-edits' => '"<nowiki>$1</nowiki>" küresel hesabı $2 {{PLURAL:$2|değişiklikten|değişiklikten}} fazlasına sahip ve gizlenemez.',
 	'globalusers' => 'Küresel hesaplar listesi',
 	'centralauth-listusers-locked' => 'kilitlendi',
 	'centralauth-listusers-attached' => '[[User:$1|yerel olarak mevcut]]',
@@ -34491,6 +34503,7 @@ Herhangi birini görebilir ve değiştirebilirsiniz, ya da yeni bir set oluştur
 	'centralauth-editset-return' => 'Ana görünüme dön',
 	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] hesabı zaten küresel olarak kilitli.',
 	'centralauth-readonly' => 'CentralAuth veritabanı kilitlendi',
+	'centralauth-readonlytext' => 'CentralAuth veritabanı şuanda yeni girişlere ve diğer değişikliklere kilitli, muhtemelen rutin veritabanı bakımı için, sonrasında normale dönecektir.',
 	'right-globalgroupmembership' => 'Küresel gruplara üyeliği değiştir',
 	'right-centralauth-autoaccount' => 'Küresel hesapla otomatik olarak giriş yap',
 	'right-centralauth-unmerge' => 'Küresel hesabı çöz',
@@ -37034,6 +37047,7 @@ $messages['zh-hans'] = array(
 	'centralauth-admin-logsnippet' => '以前的全域帐户变更',
 	'centralauth-admin-suppressreason' => '由$1全域隐藏，原因：$2',
 	'centralauth-admin-not-authorized' => '您没有权限来执行此操作',
+	'centralauth-admin-too-many-edits' => '全局账户“<nowiki>$1</nowiki>”已有超过$2次编辑，无法被隐藏。',
 	'globalusers' => '全局账户列表',
 	'centralauth-listusers-locked' => '锁定',
 	'centralauth-listusers-attached' => '[[User:$1|于本地存在]]',
@@ -37408,6 +37422,7 @@ $messages['zh-hant'] = array(
 	'centralauth-admin-logsnippet' => '前個全域帳戶的變化',
 	'centralauth-admin-suppressreason' => '由$1全域隱藏，原因：$2',
 	'centralauth-admin-not-authorized' => '您沒有進行此操作的權限',
+	'centralauth-admin-too-many-edits' => '全域賬戶“<nowiki>$1</nowiki>”已擁有超過$2次編輯並無法被隱藏。',
 	'globalusers' => '全局帳戶名單',
 	'centralauth-listusers-locked' => '鎖定',
 	'centralauth-listusers-attached' => '[[User:$1|於本地存在]]',
