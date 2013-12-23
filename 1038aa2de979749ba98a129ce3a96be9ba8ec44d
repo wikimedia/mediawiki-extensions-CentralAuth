@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_e7675b21",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-23T18:50:32Z",
+      "side": 1,
+      "message": "\u0027suppress\u0027",
+      "revId": "1038aa2de979749ba98a129ce3a96be9ba8ec44d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
