@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_67290b9a",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-23T19:00:33Z",
+      "side": 1,
+      "message": "This feels a little hacky, which I especially don\u0027t like in authentication code. Could you make a new function (registerWithHash, or something like that), with the common code moved to a new private function?",
+      "revId": "ccfa9840874433f6d6a1c6cb639a2e597b37972a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
