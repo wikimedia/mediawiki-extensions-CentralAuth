@@ -16,6 +16,24 @@
       "revId": "b3fa32d2a60103a9b38a4dee80e44f845d0c50f9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_27bd4317",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 574
+      },
+      "writtenOn": "2013-12-23T17:04:38Z",
+      "side": 1,
+      "message": "Consistency, the other messages had nowikis in them. I\u0027m not sure why, but I figured it would be better for them *all* to be removed in a future commit if that\u0027s what needs to be done.",
+      "parentUuid": "eeebdf60_0ca02499",
+      "revId": "b3fa32d2a60103a9b38a4dee80e44f845d0c50f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
