@@ -251,6 +251,9 @@ class SpecialMultiLock extends SpecialPage {
 				'<th>' .
 				$out->getContext()->msg( 'centralauth-admin-info-hidden' )->escaped() .
 				'</th>' .
+				'<th>' .
+				$out->getContext()->msg( 'centralauth-admin-info-editcount' )->escaped() .
+				'</th>' .
 			'</tr></thead>' .
 			'<tbody>';
 
@@ -292,6 +295,7 @@ class SpecialMultiLock extends SpecialPage {
 				if ( $globalUser->isLocked() ) {
 					$guLocked = $this->msg('centralauth-admin-status-locked-yes')->escaped();
 				}
+				$guEditCount = htmlspecialchars( $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() ) );
 				$rowtext .= Html::rawElement( 'td', array(),
 					Html::input(
 						'wpActionTarget['.$guName.']',
@@ -305,10 +309,11 @@ class SpecialMultiLock extends SpecialPage {
 				$rowtext .= Html::element( 'td', array(), $guRegister );
 				$rowtext .= Html::element( 'td', array(), $guLocked );
 				$rowtext .= Html::element( 'td', array(), $guHidden );
+				$rowtext .= Html::element( 'td', array(), $guEditCount );
 			} else {
 				$rowtext .= Html::element(
 					'td',
-					array( 'colspan' => 6 ),
+					array( 'colspan' => 7 ),
 					$globalUser
 				);
 			}
