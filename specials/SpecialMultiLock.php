@@ -272,6 +272,7 @@ class SpecialMultiLock extends SpecialPage {
 		}
 
 		$sca = new SpecialCentralAuth;
+		$sca->setContext( $this->getContext() );
 
 		$this->showTableHeader();
 
