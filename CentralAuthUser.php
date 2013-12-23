@@ -22,6 +22,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
 	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
+	protected $mAttachedInfo;
 
 	static $mCacheVars = array(
 		'mGlobalId',
@@ -1734,9 +1735,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public function queryAttached() {
 		// Cache $wikis to avoid expensive query whenever possible
-		static $wikis = null;
-		if ( $wikis !== null ) {
-			return $wikis;
+		if ( $this->mAttachedInfo !== null ) {
+			return $this->mAttachedInfo;
 		}
 
 		$dbw = self::getCentralDB();
@@ -1771,6 +1771,8 @@ class CentralAuthUser extends AuthPluginUser {
 			$wikis[$row->lu_wiki] = array_merge( $wikis[$row->lu_wiki],
 				$localUser );
 		}
+
+		$this->mAttachedInfo = $wikis;
 
 		return $wikis;
 	}
