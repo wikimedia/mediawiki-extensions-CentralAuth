@@ -5239,6 +5239,7 @@ Alasan: $1',
 /** Bengali (বাংলা)
  * @author Aftab1995
  * @author Bellayet
+ * @author Gitartha.bordoloi
  * @author Nasir8891
  * @author Wikitanvir
  * @author Zaheen
@@ -5285,10 +5286,10 @@ $messages['bn'] = array(
 	'centralauth-list-home-title' => 'প্রধান উইকি',
 	'centralauth-list-home-dryrun' => 'এই উইকিতে দেওয়া শব্দচাবি এবং ইমেইল ঠিকানা আপনার একীভূত অ্যাকাউন্টের জন্য ব্যবহৃত হবে।',
 	'centralauth-list-attached-title' => 'সংগবদ্ধ অ্যাকাউন্ট',
-	'centralauth-list-attached' => 'এই সমস্ত সাইটে সয়ংক্রিয়ভাবে অ্যাকাউন্ট নাম "$1" একীভূত অ্যাকাউন্টের সাথে যুক্ত হয়েছে:',
-	'centralauth-list-attached-dryrun' => 'এই সমস্ত সাইটে সয়ংক্রিয়ভাবে অ্যাকাউন্ট নাম "$1" একীভূত অ্যাকাউন্টের সাথে যুক্ত হবে:',
+	'centralauth-list-attached' => 'এই সমস্ত সাইটে সয়ংক্রিয়ভাবে অ্যাকাউন্ট নাম "$1" একীভূত অ্যাকাউন্টের সাথে যুক্ত হয়েছে:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'এই সমস্ত সাইটে সয়ংক্রিয়ভাবে অ্যাকাউন্ট নাম "$1" একীভূত অ্যাকাউন্টের সাথে যুক্ত হবে:', # Fuzzy
 	'centralauth-list-unattached-title' => 'অসংগবদ্ধ অ্যাকাউন্ট',
-	'centralauth-list-unattached' => 'অ্যাকাউন্ট "$1" সয়ংক্রিয়ভাবে এই সমস্ত সাইটে আপনাকে দেওয়ার জন্য নিশ্চিত করা যাচ্ছে না; সম্ভবত এগুলোতে আপনার প্রধান অ্যাকাউন্ট থেকে ভিন্ন শব্দচাবি ব্যবহৃত হয়েছে:',
+	'centralauth-list-unattached' => 'অ্যাকাউন্ট "$1" সয়ংক্রিয়ভাবে এই সমস্ত সাইটে আপনাকে দেওয়ার জন্য নিশ্চিত করা যাচ্ছে না; সম্ভবত এগুলোতে আপনার প্রধান অ্যাকাউন্ট থেকে ভিন্ন শব্দচাবি ব্যবহৃত হয়েছে:', # Fuzzy
 	'centralauth-foreign-link' => 'ব্যবহারকারী $2 তে $1',
 	'centralauth-foreign-contributions' => '$2-এ $1 এর {{PLURAL:$1|অবদান|অবদান}}',
 	'centralauth-merge-method-primary' => 'প্রধান উইকি',
@@ -6527,17 +6528,27 @@ $messages['ce'] = array(
 	'centralauth-merge-step1-title' => 'ДӀадоладе декъашхочун дӀаяздарш вовшахтохар',
 	'centralauth-merge-step1-submit' => 'Декъашхочун дӀаяздарх лаьцна хаам бакъбе',
 	'centralauth-merge-step2-title' => 'Бакъде кхин декъашхочун дӀаяздарш',
+	'centralauth-merge-step2-submit' => 'Декъашхочун дӀаяздарх лаьцна хаам бакъбе',
+	'centralauth-merge-dryrun-complete' => 'Долуш долу декъашхойн дӀаяздарш автоматически карладаха там бу!
+
+ХӀинца а хьан декъашхочун дӀаяздаршан хийцам бина бац.',
+	'centralauth-merge-dryrun-or' => "'''я'''",
 	'centralauth-merge-dryrun-home' => 'Системин цатарло дӀаяздар хьа хилар бакъдан цӀерачу вики чохь.
 
 Амма карийна хӀокху дӀаяздаран кхин «цӀера» вики-проект. Лахахь гайтина йолу хьажораган дихьа гӀой системин чугӀо.',
 	'centralauth-merge-step3-title' => 'Юкъара декъашхочун дӀаяздар кхоллар',
+	'centralauth-merge-step3-submit' => 'Декъашхочун дӀаяздарш цхьаьнатоха',
 	'centralauth-complete' => 'Декъашхочун дӀаяздарш цхьаьнатохар дика чакхдели!',
 	'centralauth-incomplete' => 'ДIавазвалар цхьаьнатохар чакх ца дели!',
 	'centralauth-complete-text' => 'ХӀинца цхьан дӀаяздарца хьан йиш ю массо {{int:Centralauth-groupname}} проекташкахь болх ба.',
+	'centralauth-notice-dryrun' => "<div class='successbox'>Гайтаран дӀахӀоттам</div><br clear='all'/>",
+	'centralauth-error-locked' => 'Хьа таро яц хийцамаш бан хьан декъашхочун дӀаяздар блоктоьхна хилар бахьнехь.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/ru|'''Юкъара декъашхочун дӀаяздарх''']]…'' лаьцна кхин хаар",
 	'centralauth-list-home-title' => '«ЦӀера» вики-проект',
+	'centralauth-list-attached-title' => 'Юкъа тоьхна декъашхочун дӀаяздарш',
 	'centralauth-list-attached' => '«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьаьнатоьхна лахара сайташ чохь:', # Fuzzy
 	'centralauth-list-attached-dryrun' => '«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьанатухур ду лахара сайташ чохь:', # Fuzzy
+	'centralauth-list-unattached-title' => 'Юкъа тоьхна доцу декъашхочун дӀаяздарш',
 	'centralauth-foreign-link' => 'Декъашхо $1 $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|нисдар|нисдарш}} $2 чохь',
 	'centralauth-merge-method-primary' => '«ЦӀера» вики-проект',
@@ -6568,6 +6579,7 @@ $messages['ce'] = array(
 	'centralauth-admin-info-editcount' => 'Массо нисдаршан ларар:',
 	'centralauth-admin-info-locked' => 'ГӀорина:',
 	'centralauth-admin-info-hidden' => 'Хьулдаран локхалла:',
+	'centralauth-admin-info-nogroups' => 'хӀахӀа',
 	'centralauth-admin-nohome' => 'билгалдан цатарло',
 	'centralauth-admin-yes' => 'хlаъ',
 	'centralauth-admin-no' => 'яц',
@@ -6583,15 +6595,18 @@ $messages['ce'] = array(
 	'centralauth-admin-list-attached-on' => 'Болх болийна',
 	'centralauth-admin-list-method' => 'Белхан кеп',
 	'centralauth-admin-list-editcount' => 'Нисдаршан ларар',
+	'centralauth-admin-list-groups' => 'Тобанаш',
 	'centralauth-admin-list-blocked' => 'Блоктоьхна',
 	'centralauth-admin-unmerge' => 'Хаьржинарш вовшах даха',
 	'centralauth-admin-merge' => 'Хаьржинарш вовшахтоха',
 	'centralauth-admin-bad-input' => 'ГӀалате вовшах тохар харжар',
 	'centralauth-admin-delete-title' => 'Декъашхочун дӀаяздар дӀадаккхар',
+	'centralauth-admin-delete-button' => 'ДӀадаккха декъашхочун дӀаяздар',
 	'centralauth-admin-reason' => 'Бахьан:',
 	'centralauth-admin-reason-other' => 'Кхин бахьан:',
 	'centralauth-admin-status-intro' => 'Ахьа лело мега хӀара форма хӀокху глобальни дӀаяздаран статус хийцош.',
 	'centralauth-admin-status-locked' => 'Блоктоьхна:',
+	'centralauth-admin-status-hidden' => 'Къайлаяккха:',
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-listusers-locked' => 'гӀора йе',
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
@@ -6609,8 +6624,19 @@ $messages['ce'] = array(
 	'centralauth-login-progress' => 'Хьан бакъо ю болх ба ишта кхин {{int:Centralauth-groupname}} кхолламашкахь:', # Fuzzy
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} проекташкара араваларна/яларна обработка ю:', # Fuzzy
 	'centralauth-log-name' => 'Глобальни декъашхойн дӀаяздаршан урхалла даран тептар',
+	'centralauth-log-header' => 'Глобальни декъашхойн дӀаяздаршан тӀехь динарг чохь долу тептар.',
+	'centralauth-log-entry-chgstatus' => 'хийцина глобальни декъашхочун дӀаяздаран статус «$1». ХӀоттина: $2; дӀаяьккхина $3',
+	'centralauth-log-status-locked' => 'блоктоьхна',
+	'centralauth-log-status-hidden' => 'къайлаяьккхина',
 	'centralauth-log-status-none' => '(яц)',
 	'centralauth-rightslog-name' => 'Глобальни бакъонашан тептар',
+	'centralauth-rightslog-entry-usergroups' => 'хийцина декъашхочун $1 глобальни бакъо $2 → $3',
+	'centralauth-rightslog-entry-groupperms' => 'хийцина декъашхочун $1 бакъо $2 → $3',
+	'centralauth-rightslog-entry-groupperms2' => 'хийцина декъашхочун бакъо $1. ТӀетоьхна $2; дӀаяьккхина $3',
+	'centralauth-rightslog-entry-groupperms3' => 'хийцина дукха доза тохар $1 $2 → $3',
+	'centralauth-rightslog-header' => 'ХӀокху тептар чохь гойту декъашхойн глобальни бакъонаш хийцар',
+	'centralauth-rightslog-entry-setnewtype' => 'хийцина тайп «$1» $2 → $3',
+	'centralauth-rightslog-entry-setchange' => 'хийцина вики  «$1» чохь: тӀетоьхна $2, дӀаяьккхина $3',
 	'centralautologin' => 'Юкъара системин чугӀо меттиг',
 	'globalgrouppermissions' => 'Урхалла дар масхьара тобанашна',
 	'centralauth-globalgroupperms-grouplist' => 'Нийса йина лахара глобальни бакъонаш.
@@ -12265,6 +12291,7 @@ $messages['ga'] = array(
 
 /** Galician (galego)
  * @author Alma
+ * @author Elisardojm
  * @author Kaustubh
  * @author McDutchie
  * @author Prevert
@@ -12328,11 +12355,11 @@ Sentímolo!',
 	'centralauth-list-home-title' => 'Wiki principal',
 	'centralauth-list-home-dryrun' => 'Usaranse o contrasinal e o enderezo de correo electrónico indicados neste wiki para a súa conta unificada.',
 	'centralauth-list-attached-title' => 'Contas relacionadas',
-	'centralauth-list-attached' => 'A conta chamada "$1" foi relacionada automaticamente coa conta unificada en cada un dos seguintes sitios:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'A conta chamada "$1" será relacionada automaticamente coa conta unificada en cada un dos seguintes sitios:', # Fuzzy
+	'centralauth-list-attached' => 'As contas chamadas "$1" foron relacionadas automaticamente coa conta unificada en cada un dos seguintes sitios:',
+	'centralauth-list-attached-dryrun' => 'A contas chamadas "$1" serán relacionadas automaticamente coa conta unificada en cada un dos seguintes sitios:',
 	'centralauth-list-unattached-title' => 'Contas non relacionadas',
-	'centralauth-list-unattached' => 'Non se puido confirmar que a conta "$1" lle pertenza a vostede nos seguintes sitios;
-o máis probable é que teñan un contrasinal diferente ao da súa conta primaria:', # Fuzzy
+	'centralauth-list-unattached' => 'Non se puido confirmar que {{PLURAL:$2|a conta|as contas}} "$1" lle {{PLURAL:$2|pertenza|pertenzan}} a vostede nos seguintes sitios;
+o máis probable é que {{PLURAL:$2|teña|teñan}} un contrasinal diferente ao da súa conta primaria:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribucións}} en $2',
 	'centralauth-merge-method-primary' => 'wiki principal',
@@ -12442,6 +12469,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-admin-logsnippet' => 'Cambios anteriores na conta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 polo seguinte motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non ten os permisos necesarios para levar a cabo esta acción',
+	'centralauth-admin-too-many-edits' => 'A conta global "<nowiki>$1</nowiki>" ten ao redor de $2 {{PLURAL:$2|edición|edicións}} e non se pode ocultar.',
 	'globalusers' => 'Lista de contas globais',
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => '[[User:$1|existe neste wiki]]',
@@ -13527,6 +13555,7 @@ $messages['he'] = array(
 	'centralauth-admin-logsnippet' => 'שינויים קודמים בחשבון הכללי',
 	'centralauth-admin-suppressreason' => 'הסתיר באופן גלובלי את $1 מהסיבה הבאה: $2',
 	'centralauth-admin-not-authorized' => 'אין לך הרשאות לביצוע פעולה זו',
+	'centralauth-admin-too-many-edits' => 'לחשבון הגלובלי "<nowiki>$1</nowiki>" יש יותר{{PLURAL:$2|מעריכה אחת|מ־$1 עריכות}} ולא ניתן להחביא אותו.',
 	'globalusers' => 'רשימת חשבונות גלובליים',
 	'centralauth-listusers-locked' => 'נעול',
 	'centralauth-listusers-attached' => '[[User:$1|[[User:$1|קיים באתר זה]]]]',
@@ -14549,6 +14578,8 @@ Druhe konta su hišće njewobkrućene.',
 	'centralauth-admin-info-editcount' => 'Ličba změnow dohromady:',
 	'centralauth-admin-info-locked' => 'Zawrjeny:',
 	'centralauth-admin-info-hidden' => 'Schowana runina:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Globalna skupina|Globalnej skupinje|Globalne skupiny}}:',
+	'centralauth-admin-info-nogroups' => 'žadyn',
 	'centralauth-admin-nohome' => 'njeje móžno postajić',
 	'centralauth-admin-yes' => 'haj',
 	'centralauth-admin-no' => 'ně',
@@ -14564,6 +14595,7 @@ Druhe konta su hišće njewobkrućene.',
 	'centralauth-admin-list-attached-on' => 'Připójsnjeny na',
 	'centralauth-admin-list-method' => 'Metoda',
 	'centralauth-admin-list-editcount' => 'Ličenje změnow',
+	'centralauth-admin-list-groups' => 'Skupiny',
 	'centralauth-admin-list-blocked' => 'Zablokowany',
 	'centralauth-admin-unmerge' => 'Wubrane wotdźělić',
 	'centralauth-admin-merge' => 'Wubrane zjednoćić',
@@ -14606,6 +14638,7 @@ Hesła za lokalne konta, kotrež buchu před zjednoćenjom wutworjene, dóstanu 
 	'centralauth-admin-logsnippet' => 'Prjedawše změny na globalnym konće',
 	'centralauth-admin-suppressreason' => 'Wot $1 ze slědowaceje přičiny globalnje potłóčeny: $2',
 	'centralauth-admin-not-authorized' => 'Nimaš prawa, zo by tutu akciju přewjedł',
+	'centralauth-admin-too-many-edits' => 'Globalne konto "<nowiki>$1</nowiki>" ma přez $2 {{PLURAL:$2|změnu|změnje|změny|změnow}} a njeda so schować.',
 	'globalusers' => 'Lisćina globalnych kontow',
 	'centralauth-listusers-locked' => 'zawrjeny',
 	'centralauth-listusers-attached' => '[[User:$1|lokalnje eksistowacy]]',
@@ -14688,6 +14721,7 @@ Přemjenowanje wuskutkuje, zo lokalne konto so z globalneho wužiwarskeho konta 
 	'centralauth-centralautologin-badstate-central' => 'Stat "$1" na centralnym wikiju płaćiwy njeje',
 	'centralauth-centralautologin-badstate-local' => 'Stat "$1" na lokalnym wikiju płaćiwy njeje',
 	'centralauth-centralautologin-badwiki' => 'Wiki "$1" za centralne přizjewjenje płaćiwy njeje',
+	'centralauth-centralautologin-corsfail' => 'Pruwowanje CORS-pochada je so njeporadźiło',
 	'centralauth-centralautologin-logged-in' => 'Sy centralnje jako $1 přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.',
 	'globalgroupmembership' => 'Čłonstwo w globalnych skupinach',
 	'globalgrouppermissions' => 'Zrjadowanje globalnych skupinow',
@@ -14778,6 +14812,8 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'centralauth-completelogin-back' => 'Wróćo k předchadnej stronje.',
 	'centralauth-error-nologinattempt' => 'Aktiwny přizjewjenski za twoje posedźenje njeběži.',
 	'centralauth-error-badtoken' => 'Podaty awtentifikaciski token jo pak spadnjeny pak njepłaćiwy.',
+	'centralauth-error-token-wrongattempt' => 'Awtentifikaciski token njesłuša k twojemu přizjewjenskemu pospytej.
+Něchtó móhł spytać, će pod złóstnym kontom přizjewić.',
 	'centralauth-warning-notloggedin' => 'Tuchwilu njejsy přizjewjeny.',
 	'centralauth-warning-notattached' => 'Lokalne konto njeje z globalnym kontom zwjazane.',
 	'centralauth-finishglobaliseemail_subject' => 'Kontowe wobkrućenje {{GRAMMAR:genitiw|{{SITENAME}}}}',
@@ -19838,11 +19874,11 @@ Wann Dir dat sidd, kënnt Dir de Prozess vum Zesummeleeë vu Benotzerkonten ofsc
 	'centralauth-list-home-title' => 'Heemechts-Wiki',
 	'centralauth-list-home-dryrun' => "D'Passwuert an d'E-Mailadress déi Dir an dëser Wiki uginn hutt gi fir Äre globale Benotzerkont benotzt.",
 	'centralauth-list-attached-title' => 'Verbonne Benotzerkonten',
-	'centralauth-list-attached' => 'De Benotzerkont mam Numm "$1" vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonnen:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'De Benotzerkont mam Numm "$1" gëtt op all dëse Siten automatesch mat dem globale Benotzerkont verbonnen:', # Fuzzy
+	'centralauth-list-attached' => 'De Benotzerkont mam Numm "$1" vun all dëse Site gouf automatesch mat dem globale Benotzerkont verbonn:',
+	'centralauth-list-attached-dryrun' => 'De Benotzerkont mam Numm "$1" gëtt op all dëse Siten automatesch mat dem globale Benotzerkont verbonn:',
 	'centralauth-list-unattached-title' => 'Net verbonne Benotzerkonten',
-	'centralauth-list-unattached' => 'De Benotzerkont "$1" konnt fir déi ënnendrënner opgelëschte Siten net automatesch confirméiert ginn;
-wahrscheinlech hu si en anert Passwuert wéi Ären Haaptbenotzerkont:', # Fuzzy
+	'centralauth-list-unattached' => '{{PLURAL:$2|De Benotzerkont}} "$1" {{PLURAL:$2|konnt|konnte}} fir déi ënnendrënner opgelëschte Siten net automatesch confirméiert ginn;
+wahrscheinlech {{PLURAL:$2|huet en|hu si}} en anert Passwuert wéi Ären Haaptbenotzerkont:',
 	'centralauth-foreign-link' => 'Benotzer $1 op $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|Ännerung|Ännerungen}} op $2',
 	'centralauth-merge-method-primary' => 'Heemechts-Wiki',
@@ -35074,6 +35110,7 @@ $messages['uk'] = array(
 	'centralauth-admin-logsnippet' => 'Попередні зміни в глобальному обліковому записі',
 	'centralauth-admin-suppressreason' => 'Глобально прихований $1 з такої причини: $2',
 	'centralauth-admin-not-authorized' => 'Ви не маєте дозволу виконувати цю дію',
+	'centralauth-admin-too-many-edits' => 'Глобальний обліковий запис "<nowiki>$1</nowiki>" має понад $2 {{PLURAL:$2|редагування|редагування|редагувань}} і не може бути схований.',
 	'globalusers' => 'Список глобальних облікових записів',
 	'centralauth-listusers-locked' => 'заблокований',
 	'centralauth-listusers-attached' => '[[User:$1|існує локально]]',
@@ -35977,6 +36014,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-admin-logsnippet' => 'Các thay đổi tài khoản chung trước đây',
 	'centralauth-admin-suppressreason' => 'Đã bị $1 cưỡng đoạt toàn cục vì lý do sau: $2',
 	'centralauth-admin-not-authorized' => 'Bạn không được phép thực hiện tác vụ này',
+	'centralauth-admin-too-many-edits' => 'Không thể ẩn tài khoản toàn cục “<nowiki>$1</nowiki>” vì nó đã sửa đổi hơn $2 lần.',
 	'globalusers' => 'Danh sách tài khoản toàn cục',
 	'centralauth-listusers-locked' => 'đã khóa',
 	'centralauth-listusers-attached' => '[[User:$1|tồn tại địa phương]]',
