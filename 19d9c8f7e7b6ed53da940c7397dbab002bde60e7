@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_3f165ef7",
+        "filename": "db_patches/patch-renameuser.sql",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-26T23:58:32Z",
+      "side": 1,
+      "message": "This should actually be\nUNIQUE KEY `ru_oldname` (`ru_oldname`,`ru_wiki`)",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_bff70ef2",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-26T23:58:32Z",
+      "side": 1,
+      "message": "localuser table is never updated",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_ff9fd6b7",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-26T23:58:32Z",
+      "side": 1,
+      "message": "If 2 admins are trying to rename the same user at the same time, this (should) fail. Gracefully handle an error here?",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_df0652d1",
+        "filename": "specials/SpecialRenameProgress.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2013-12-26T23:58:32Z",
+      "side": 1,
+      "message": "Getting the warning: Did not find alias for special page \u0027RenameProgress\u0027.",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
