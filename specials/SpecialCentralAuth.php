@@ -176,7 +176,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$html = Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$html .= Xml::fieldset(
 			$this->msg( 'centralauth-admin-manage' )->text(),
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::openElement( 'p' ) .
 				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
 					'target', 'target', 25, $this->mUserName ) .
@@ -292,7 +292,7 @@ class SpecialCentralAuth extends SpecialPage {
 			array(
 				 'method' => 'post',
 				 'action' =>
-				 $this->getTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
+				 $this->getPageTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
 				 'id' => 'mw-centralauth-merged' ) );
 		$header .= Html::hidden( 'wpMethod', 'unmerge' ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
@@ -596,7 +596,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::fieldset( $this->msg( "centralauth-admin-{$action}-title" )->text() ) .
 			Xml::openElement( 'form', array(
 				'method' => 'POST',
-				'action' => $this->getTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
+				'action' => $this->getPageTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
 				'id' => "mw-centralauth-$action" ) ) .
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
@@ -680,7 +680,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'form',
 			array(
 				'method' => 'POST',
-				'action' => $this->getTitle()->getFullURL(
+				'action' => $this->getPageTitle()->getFullURL(
 					array( 'target' => $this->mUserName )
 				),
 			),

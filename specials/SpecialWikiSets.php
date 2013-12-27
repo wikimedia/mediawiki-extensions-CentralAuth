@@ -357,7 +357,7 @@ class SpecialWikiSets extends SpecialPage {
 			}
 		}
 
-		$returnLink = Linker::linkKnown( $this->getTitle(), $this->msg( 'centralauth-editset-return' )->escaped() );
+		$returnLink = Linker::linkKnown( $this->getPageTitle(), $this->msg( 'centralauth-editset-return' )->escaped() );
 
 		$this->getOutput()->addHTML( '<strong class="success">' . $this->msg( 'centralauth-editset-success' )->escaped() . '</strong> <p>' . $returnLink . '</p>' );
 	}
