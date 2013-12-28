@@ -6982,6 +6982,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-logsnippet' => 'Předchozí změny globálního účtu',
 	'centralauth-admin-suppressreason' => 'Globálně utajil $1 se zdůvodněním: $2',
 	'centralauth-admin-not-authorized' => 'K provedení této akce nemáte oprávnění',
+	'centralauth-admin-too-many-edits' => 'Globální účet „<nowiki>$1</nowiki>“ má více než $2 {{PLURAL:$2|editaci|editace|editací}} a nelze ho skrýt.',
 	'globalusers' => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => '[[User:$1|existuje lokálně]]',
@@ -7280,7 +7281,7 @@ Os mai chi yw\'r person hwnnw, gallwch gwblhau\'r broses o uno mewngofnodi trwy 
 	'centralauth-list-attached' => "Mae'r cyfrifon o'r enw \"\$1\" wedi cael eu hatodi yn awtomatig i'r cyfrif unedig ar bob un o'r safleoedd canlynol:",
 	'centralauth-list-attached-dryrun' => 'Bydd y cyfrifon o\'r enw "$1" yn cael eu hatodi yn awtomatig i\'r cyfrif unedig ar bob un o\'r safleoedd canlynol:',
 	'centralauth-list-unattached-title' => 'Cyfrifon heb eu hatodi',
-	'centralauth-list-unattached' => 'Ni ellid cadarnhau\'n awtomatig fod y cyfrif "$1" yn perthyn i chi ar y gwefannau sy\'n dilyn; mwy na thebyg bod cyfrinair gwahanol i gyfrinair eich prif gyfrif ganddynt.', # Fuzzy
+	'centralauth-list-unattached' => 'Ni ellid cadarnhau\'n awtomatig fod y {{PLURAL:$2|cyfrif|cyfrif|cyfrifon}} a elwir yn "$1" yn perthyn i chi ar y {{PLURAL:$2||wefan|gwefannau}} sy\'n dilyn; mwy na thebyg bod cyfrinair gwahanol i gyfrinair eich prif gyfrif {{PLURAL:$2||ganddo|ganddynt}}.',
 	'centralauth-foreign-link' => 'Y defnyddiwr $1 ar $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|cyfraniadau|cyfraniad|gyfraniad|chyfraniad|chyfraniad|cyfraniad}} ar $2',
 	'centralauth-merge-method-primary' => 'y pen wici',
@@ -10151,11 +10152,11 @@ Kui see oled sina, saad kontode ühendamise lõpetada, sisestades siia selle kon
 	'centralauth-list-home-title' => 'Koduviki',
 	'centralauth-list-home-dryrun' => 'Ühendkonto hakkab kasutama selles vikis kasutusel olevat parooli ja e-posti aadressi.',
 	'centralauth-list-attached-title' => 'Ühendatud kontod',
-	'centralauth-list-attached' => 'Kasutajakonto $1 on järgnevates vikides automaatselt liidetud ühendkontoga:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'Kasutajakonto nimega $1 järgnevatest vikidest liidetakse automaatselt ühendkontoga:', # Fuzzy
+	'centralauth-list-attached' => 'Kasutajakontod nimega $1 on ühendatud kõigis järgnevates vikides automaatselt ühendkontoga:',
+	'centralauth-list-attached-dryrun' => 'Kasutajakontod nimega $1 ühendatakse kõigis järgnevates vikides automaatselt ühendkontoga:',
 	'centralauth-list-unattached-title' => 'Ühendamata kontod',
-	'centralauth-list-unattached' => 'Järgmistes võrgukohtades ei saa konto "$1" sinule kuulumist automaatselt kindlaks teha;
-tõenäoliselt on neil sinu peamisest kontost erinev parool:', # Fuzzy
+	'centralauth-list-unattached' => '{{PLURAL:$2|Järgmises võrgukohas|Järgmistes võrgukohtades}} ei saa {{PLURAL:$2|konto|kontode}} nimega $1 sinule kuulumist automaatselt kindlaks teha;
+tõenäoliselt on {{PLURAL:$2|sellel|neil}} sinu peamisest kontost erinev parool:',
 	'centralauth-foreign-link' => 'Kasutaja $1 projektis $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|redigeerimine|redigeerimist}} asukohas $2',
 	'centralauth-merge-method-primary' => 'koduviki',
@@ -13729,7 +13730,7 @@ $messages['he'] = array(
 	'right-centralauth-autoaccount' => 'כניסה לחשבון הגלובלי באופן אוטומטי',
 	'right-centralauth-unmerge' => 'ביטול המיזוג של חשבון כללי',
 	'right-centralauth-lock' => 'נעילת או שחרור חשבון כללי',
-	'right-centralauth-oversight' => 'להעלים או להסתיר את החשבון הכללי',
+	'right-centralauth-oversight' => 'העלמת או הסתרת החשבון הכללי',
 	'right-centralauth-merge' => 'מיזוג החשבון של המשתמש עצמו',
 	'right-globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'קבוצות גלובליות שמשתמש זה חבר בהן',
@@ -36712,6 +36713,7 @@ Dájúdájú ibùdó dátà ti bàjẹ́.',
 	'centralauth-newgroup-legend' => 'Ìdá ẹgbẹ́ àdìpọ̀ tuntun kan',
 	'centralauth-globalgroupperms-newgroupname' => 'Orúkọ ẹgbẹ́ àdìpọ̀ tuntun:',
 	'centralauth-editgroup-subtitle' => 'Àtúnṣe sí $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Ìgbéwò $1',
 	'centralauth-editgroup-fieldset' => 'Àwọn ìyọ̀nda fún $1',
 	'centralauth-editgroup-name' => 'Orúkọ ẹgbẹ́ àdìpọ̀:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|àtúnṣe]])',
