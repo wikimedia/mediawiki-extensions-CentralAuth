@@ -220,7 +220,7 @@ class SpecialMultiLock extends SpecialPage {
 			'form',
 			array(
 				'method' => 'POST',
-				'action' => $this->getPageTitle()->getFullUrl()
+				'action' => $this->getTitle()->getFullUrl()
 			)
 		);
 
@@ -414,7 +414,7 @@ class SpecialMultiLock extends SpecialPage {
 		$form = Xml::tags( 'form',
 			array(
 				'method' => 'post',
-				'action' => $this->getPageTitle()->getLocalUrl()
+				'action' => $this->getTitle()->getLocalUrl()
 			),
 			Xml::tags( 'fieldset', array(),
 				Xml::element( 'legend', array(), $this->msg( 'centralauth-admin-manage' )->text() ) .

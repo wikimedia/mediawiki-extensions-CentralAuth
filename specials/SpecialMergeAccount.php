@@ -32,7 +32,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( !$this->getUser()->isLoggedIn() ) {
 			$loginpage = SpecialPage::getTitleFor( 'Userlogin' );
-			$loginurl = $loginpage->getFullUrl( array( 'returnto' => $this->getPageTitle()->getPrefixedText() ) );
+			$loginurl = $loginpage->getFullUrl( array( 'returnto' => $this->getTitle()->getPrefixedText() ) );
 			$this->getOutput()->addWikiMsg( 'centralauth-merge-notlogged', $loginurl );
 			$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
 
@@ -500,7 +500,7 @@ class SpecialMergeAccount extends SpecialPage {
 			Xml::openElement( 'form',
 				array(
 					'method' => 'post',
-					'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ) ) .
+					'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) ) .
 			Xml::element( 'h2', array(), $title ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'wpMergeAction', $action ) .

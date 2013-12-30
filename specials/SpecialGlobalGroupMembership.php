@@ -19,7 +19,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 */
 	function getSuccessURL() {
 		$knownWikis = $this->mGlobalUser->listAttached();
-		$title = $this->getPageTitle( $this->mTarget );
+		$title = $this->getTitle( $this->mTarget );
 		return $title->getFullURL( 'wpKnownWiki=' . urlencode( $knownWikis[0] ) );
 	}
 
@@ -42,7 +42,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
-			Html::hidden( 'title',  $this->getPageTitle() ) .
+			Html::hidden( 'title',  $this->getTitle() ) .
 			Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', array(), $this->msg( 'userrights-lookup-user' )->text() ) .
 			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username', 30, $this->mTarget ) . ' <br />' .
