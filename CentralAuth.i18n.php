@@ -10243,6 +10243,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-admin-nonexistent' => 'Kasutajal "<nowiki>$1</nowiki>" pole globaalset kontot.',
 	'centralauth-admin-delete-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
 	'centralauth-token-mismatch' => 'Läkitatud vormi töötlemine ei õnnestunud seansiandmete kaotsimineku tõttu.',
+	'centralauth-state-mismatch' => 'Tõrge: Sattusid selle kasutajaga seoses redigeerimiskonflikti. Palun kontrolli oma muudatust ja proovi uuesti.',
 	'centralauth-admin-reason' => 'Põhjus:',
 	'centralauth-admin-reason-other' => 'Muu või täiendav põhjus:',
 	'centralauth-admin-unhide-nonexistent' => 'Tõrge: Globaalset kontot "<nowiki>$1</nowiki>" pole olemas.',
@@ -10267,6 +10268,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-admin-logsnippet' => 'Varasemad globaalse konto muutmised',
 	'centralauth-admin-suppressreason' => 'Globaalselt varjanud kasutaja $1. Põhjus: $2',
 	'centralauth-admin-not-authorized' => 'Sul pole lubatud seda toimingut sooritada.',
+	'centralauth-admin-too-many-edits' => 'Globaalsel kontol <nowiki>$1</nowiki> on üle {{PLURAL:$2|ühe|$2}} muudatuse ja seda ei saa peita.',
 	'globalusers' => 'Globaalne kontode nimekiri',
 	'centralauth-listusers-locked' => 'lukustatud',
 	'centralauth-listusers-attached' => '[[User:$1|siinne konto olemas]]',
@@ -10283,6 +10285,7 @@ Kohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.',
 	'centralauth-admin-action-hide-lists' => 'Peida valitud kontod avalikest loenditest',
 	'centralauth-admin-action-hide-oversight' => 'Peida valitud kontod täielikult',
 	'centralauth-admin-multi-bot' => 'Viimased muudatused',
+	'centralauth-admin-multi-botcheck' => 'Märgi kanded leheküljel "[[Special:RecentChanges|{{int:recentchanges}}]]" roboti sissekanneteks.',
 	'centralauth-seconds-ago' => '{{PLURAL:$1|ühe|$1}} sekundi eest',
 	'centralauth-minutes-ago' => '{{PLURAL:$1|ühe|$1}} minuti eest',
 	'centralauth-hours-ago' => '{{PLURAL:$1|ühe|$1}} tunni eest',
@@ -10331,11 +10334,14 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-rightslog-header' => 'Siin logis on globaalsete rühmade liikmesuse ja õigustega seotud muudatused.',
 	'centralauth-rightslog-entry-newset' => 'lõi $2 vikide komplekti $1, millesse kuuluvad järgnevad vikid: $3',
 	'centralauth-rightslog-entry-setrename' => 'nimetas vikikomplekti "$2" ümber komplektiks "$1"',
+	'centralauth-rightslog-entry-setnewtype' => 'asendas vikikomplekti "$1" tüübi "$2" tüübiga "$3"',
 	'centralauth-rightslog-entry-setchange' => 'muutis vikisid komplektis "$1". Lisatud: $2. Eemaldatud: $3',
 	'centralauth-rightslog-entry-deleteset' => 'kustutas vikikomplekti "$1"',
 	'centralauth-rightslog-set-optin' => 'kaasamispõhise',
 	'centralauth-rightslog-set-optout' => 'loobumispõhise',
 	'centralautologin' => 'Keskne sisselogimine',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Oled kohalikult juba sisse loginud.',
+	'centralauth-centralautologin-badparams' => 'Määratud autentimisparameetrid olid vigased.',
 	'centralauth-centralautologin-lostsession' => 'Seansiandmed läksid kaotsi.',
 	'centralauth-centralautologin-badstate' => 'Vigane olek "$1"',
 	'centralauth-centralautologin-logged-in' => 'Oled keskselt sisse logitud nimega $1. Laadi lehekülg uuesti, et rakendada oma kasutajaeelistused.',
@@ -19805,6 +19811,7 @@ $messages['la'] = array(
 /** Ladino (Ladino)
  * @author Jewbask
  * @author Maor X
+ * @author Menachem.Moreira
  */
 $messages['lad'] = array(
 	'centralauth-groupname' => 'la Fondasion Wikimedia',
@@ -19823,6 +19830,8 @@ $messages['lad'] = array(
 	'centralauth-finish-password' => 'Parola',
 	'centralauth-finish-login' => 'Entrar',
 	'centralauth-finish-send-confirmation' => 'Mandar una nueva parola por e-posta',
+	'centralauth-admin-yes' => 'si',
+	'centralauth-admin-no' => 'no',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
