@@ -497,6 +497,9 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	function formatGroups( $row ) {
+		if ( !count( $row['groups'] ) ) {
+			return '';
+		}
 		return htmlspecialchars( $this->getLanguage()->commaList( $row['groups'] ) );
 	}
 
