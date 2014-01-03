@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_4d5f1378",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-01-03T20:55:17Z",
+      "side": 1,
+      "message": "In testing, $newUnattached is never false for me. It\u0027s an array with the wiki where I did the rename. Maybe test there are no wikis except the current wiki?",
+      "revId": "700fe566e83d7db517514b877f162eb664e263da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
