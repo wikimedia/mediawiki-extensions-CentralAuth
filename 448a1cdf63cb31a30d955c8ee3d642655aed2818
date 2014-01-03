@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "eeebdf60_dbdcfd79",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-01-03T21:53:20Z",
+      "side": 1,
+      "message": "I would actually like to see that. If canAuthenticate() returns something else, I\u0027d rather it error out than silently continue.",
+      "parentUuid": "0ee75395_d765a2ac",
+      "revId": "448a1cdf63cb31a30d955c8ee3d642655aed2818",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_b12a2e72",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 1
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Optional, according to [[mw:CC]]. I may change it anyway, if I need to upload another revision for some other reason.\n\nThe style if switch indenting I personally prefer isn\u0027t an option at [[mw:CC]], so I don\u0027t really care much.",
       "parentUuid": "0ee75395_b12a2e72",
+      "revId": "448a1cdf63cb31a30d955c8ee3d642655aed2818",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_5bf10dfd",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-01-03T21:53:20Z",
+      "side": 1,
+      "message": "I would actually prefer 1 more indent too, but both styles are currently in use. I may add a followup to move all switches to one style later.",
+      "parentUuid": "0ee75395_1770aa6d",
       "revId": "448a1cdf63cb31a30d955c8ee3d642655aed2818",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
