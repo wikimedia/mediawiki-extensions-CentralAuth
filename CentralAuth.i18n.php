@@ -3633,12 +3633,12 @@ $messages['ba'] = array(
 	'centralauth-list-home-title' => 'Баш вики',
 	'centralauth-list-home-dryrun' => 'Һеҙҙең иҫәп яҙмаһы өсөн ошо вики-проекттағы серһүҙ һәм электрон почта адресы ҡулланыласаҡ.',
 	'centralauth-list-attached-title' => 'Берләштерелгән иҫәп яҙмалары',
-	'centralauth-list-attached' => 'Дөйөм иҫәп яҙмаһына түбәндәге сайттарҙың һәр береһенән "$1" исемле иҫәп яҙмалары берләштерелде:',
-	'centralauth-list-attached-dryrun' => 'Дөйөм иҫәп яҙмаһына түбәндәге сайттарҙың һәр береһенән "$1" исемле иҫәп яҙмалары берләштереләсәк:',
+	'centralauth-list-attached' => 'Дөйөм иҫәп яҙмаһына түбәндәге сайттарҙың һәр береһенән "$1" исемле иҫәп яҙмалары берләштерелде:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Дөйөм иҫәп яҙмаһына түбәндәге сайттарҙың һәр береһенән "$1" исемле иҫәп яҙмалары берләштереләсәк:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Берләштерелмәгән иҫәп яҙмалары',
-	'centralauth-list-unattached' => '"$1" иҫәп яҙмаһының һеҙҙеке булыуы түбәндәге сайттарҙа раҫлана алмай; уларҙағы серһүҙ һеҙҙең төп иҫәп яҙмаһы серһүҙе менән тап килмәй, булырға тейеш:',
+	'centralauth-list-unattached' => '"$1" иҫәп яҙмаһының һеҙҙеке булыуы түбәндәге сайттарҙа раҫлана алмай; уларҙағы серһүҙ һеҙҙең төп иҫәп яҙмаһы серһүҙе менән тап килмәй, булырға тейеш:', # Fuzzy
 	'centralauth-foreign-link' => '$1 ҡатнашыусыһы $2 сайтында',
-	'centralauth-foreign-contributions' => '$2: $1 {{PLURAL:$1|төҙәтеү}}',
+	'centralauth-foreign-contributions' => '$2: $1 {{PLURAL:$1|төҙәтеү}}', # Fuzzy
 	'centralauth-merge-method-primary' => 'баш вики',
 	'centralauth-merge-method-empty' => 'ҡатнашыусы өлөшө юҡ',
 	'centralauth-merge-method-mail' => 'электрон почта ярҙамында раҫланған',
@@ -3708,7 +3708,7 @@ $messages['ba'] = array(
 	'centralauth-admin-bad-input' => 'Берләштереү өсөн һайлау дөрөҫ түгел',
 	'centralauth-admin-none-selected' => 'Үҙгәртеү өсөн иҫәп яҙмалары һайланмаған.',
 	'centralauth-admin-already-unmerged' => '$1 айырылған, ҡалдырыла',
-	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:иҫәп яҙмаһы||иҫәп яҙмаһы}} уңышлы айырылды',
+	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:иҫәп яҙмаһы||иҫәп яҙмаһы}} уңышлы айырылды', # Fuzzy
 	'centralauth-admin-delete-title' => 'Иҫәп яҙмаһын юйыу',
 	'centralauth-admin-delete-description' => 'Дөйөп иҫәп яҙмаһын юйыу дөйөм көйләүҙәрҙең юйылыуына, бөтә иҫәп яҙмаларының айырымланыуына һәм дөйөм исемдең бушауына килтерәсәк, һәм уны башҡа ҡатнашыусы үҙләштерә аласаҡ.
 Бөтә урындағы иҫәп яҙмалары артабан тороп ҡаласаҡ.
@@ -3745,19 +3745,19 @@ $messages['ba'] = array(
 	'centralauth-listusers-locked' => 'бикләргә',
 	'centralauth-listusers-attached' => '[[User:$1|локаль иҫәп яҙмаһы бар]]',
 	'centralauth-listusers-nolocal' => 'берләштерелмәгән йәки локаль иҫәп яҙмаһы бар',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд|секунд}} элек',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут|минут}} элек',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сәғәт|сәғәт}} элек',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|көн|көн}} элек',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|ай|ай}} элек',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|йыл|йыл}} элек',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|1=секунд|секунд}} элек', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|1=минут|минут}} элек', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|1=сәғәт|сәғәт}} элек', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|1=көн|көн}} элек', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|1=ай|ай}} элек', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|1=йыл|йыл}} элек', # Fuzzy
 	'centralauth-prefs-status' => 'Дөйөм иҫәп яҙмаһы статусы:',
 	'centralauth-prefs-not-managed' => 'Дөйөм иҫәп яҙмаһы ҡулланылмай',
 	'centralauth-prefs-unattached' => 'Раҫланмаған',
 	'centralauth-prefs-complete' => 'Барыһы ла яҡшы!',
 	'centralauth-prefs-migration' => 'Күсерелә',
-	'centralauth-prefs-count-attached' => 'Һеҙҙең иҫәп яҙмағыҙ {{PLURAL:$1|проектта|проектта}} теркәлгән.',
-	'centralauth-prefs-count-unattached' => 'Һеҙҙең исем менән раҫланмаған иҫәп яҙмаһы $1 {{PLURAL:$1|проектта|проектта}} ҡала.',
+	'centralauth-prefs-count-attached' => 'Һеҙҙең иҫәп яҙмағыҙ {{PLURAL:$1|1=проектта|проектта}} теркәлгән.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Һеҙҙең исем менән раҫланмаған иҫәп яҙмаһы $1 {{PLURAL:$1|1=проектта|проектта}} ҡала.', # Fuzzy
 	'centralauth-prefs-detail-unattached' => 'Был проект һеҙҙең дөйөм иҫәп яҙмаһына ҡараған проект тип раҫланмаған.',
 	'centralauth-prefs-manage' => 'Дөйөм иҫәп яҙмаһы менән идара итеү',
 	'centralauth-prefs-view' => 'Ҡатнашыусы тураһында дөйөм мәғлүмәт', # Fuzzy
@@ -3860,7 +3860,7 @@ $messages['ba'] = array(
 	'centralauth-editset-nowikis' => 'Викилар күрһәтелмәгән.',
 	'centralauth-editset-nouse' => '(юҡ)',
 	'centralauth-editset-usage' => 'Түбәндәге төркөмдәрҙә ҡулланыла:',
-	'centralauth-editset-badwikis' => 'Түбәндәге {{PLURAL:$2|вики|викилар}} юҡ: $1.',
+	'centralauth-editset-badwikis' => 'Түбәндәге {{PLURAL:$2|1=вики|викилар}} юҡ: $1.', # Fuzzy
 	'centralauth-editset-success' => 'Вики йыйынтығы уңышлы үҙгәртелде.',
 	'centralauth-editset-success-delete' => 'Вики йыйынтығы уңышлы юйылды.',
 	'centralauth-editset-return' => 'Төп күренешкә ҡайтырға',
@@ -4822,7 +4822,7 @@ $messages['be-tarask'] = array(
 	'centralauth-editset-nowikis' => 'Ня вызначаны вікі.',
 	'centralauth-editset-nouse' => '(няма)',
 	'centralauth-editset-usage' => 'Выкарыстоўваецца ў групах:',
-	'centralauth-editset-badwikis' => '{{PLURAL:$2|Наступнай вікі|Наступных вікі}} не існуе: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|1=Наступнай вікі|Наступных вікі}} не існуе: $1.', # Fuzzy
 	'centralauth-editset-success' => 'Набор вікі пасьпяхова зьменены.',
 	'centralauth-editset-success-delete' => 'Набор вікі пасьпяхова выдалены.',
 	'centralauth-editset-return' => 'Вярнуцца да галоўнай формы',
@@ -6550,7 +6550,7 @@ $messages['ce'] = array(
 	'centralauth-list-attached-dryrun' => '«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьанатухур ду лахара сайташ чохь:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Юкъа тоьхна доцу декъашхочун дӀаяздарш',
 	'centralauth-foreign-link' => 'Декъашхо $1 $2',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|нисдар|нисдарш}} $2 чохь',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|1=нисдар|нисдарш}} $2 чохь', # Fuzzy
 	'centralauth-merge-method-primary' => '«ЦӀера» вики-проект',
 	'centralauth-merge-method-empty' => 'къинхьегам бац',
 	'centralauth-merge-method-mail' => 'электронан почто бакъдина',
@@ -6609,13 +6609,14 @@ $messages['ce'] = array(
 	'centralauth-admin-status-hidden' => 'Къайлаяккха:',
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-listusers-locked' => 'гӀора йе',
+	'centralauth-listusers-attached' => '[[User:$1|декъашхочун дӀаяздар локально ду]]',
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд}} хьалха',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут}} хьалха',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьт}} хьалха',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|де}} хьалха',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд}} хьалха', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут}} хьалха', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьт}} хьалха', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|де}} хьалха', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха', # Fuzzy
 	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
 	'centralauth-prefs-complete' => 'Дик ду!',
 	'centralauth-prefs-count-attached' => 'Хьан йиш ю $1 {{PLURAL:$1|проектехь|проекташкахь|проекташкахь}} болх ба.', # Fuzzy
@@ -6645,6 +6646,7 @@ $messages['ce'] = array(
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|хийцамашка/хьажар]])',
 	'centralauth-existinggroup-legend' => 'Йолуш йолу бакъонаш',
 	'centralauth-newgroup-intro' => 'Ахьа лело мега хӀара форма керлачу тобана бакъонаш xӀoттo. Дагахь латтаде цӀа бакъо йоцуш тоба хийла йиш яц.',
+	'centralauth-editgroup-subtitle-readonly' => 'Хьажа тобане «$1»?',
 	'centralauth-editgroup-name' => 'Тобан цӀе:',
 	'centralauth-editgroup-display' => 'Тобан локализовани цӀе:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|хийцам бар]])',
@@ -6757,6 +6759,7 @@ $messages['ckb'] = array(
 	'centralauth-prefs-count-unattached' => 'ھەژماری پشتڕاست نەکراو بە ناوی تۆ لە $1 {{PLURAL:$1|پروژە}}دا دەمێنێتەوە.',
 	'centralauth-prefs-manage' => 'ھەژمارە جیھانییەکەت سەرپەرشتی بکە',
 	'centralauth-prefs-view' => 'دیتنی زانیاریی جیھانیی ھەژمار',
+	'centralauth-account-exists' => 'ھەژمار دروست نەکرا: ناوی بەکارھێنەری داواکراو ھەر ئێستا لە سیستەمی چوونەژوورەوەی یەکگرتوودا گیراوەتەوە.',
 	'centralauth-log-status-none' => '(ھیچ)',
 	'centralauth-globalgroupperms-newgroupname' => 'ناوی گرووپی نوی:',
 	'centralauth-editgroup-members' => 'پێرستی ئەندامەکان:',
@@ -6790,8 +6793,8 @@ $messages['crh-cyrl'] = array(
 	'centralauth-prefs-unattached' => 'Тасдыкъланмагъан',
 	'centralauth-prefs-complete' => 'Эр шей еринде!',
 	'centralauth-prefs-migration' => 'Кочьмекте',
-	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 лейха {{PLURAL:$1|сайтында|сайтында}} фаальдир.',
-	'centralauth-prefs-count-unattached' => 'Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 {{PLURAL:$1|лейхада|лейхада}} къалып тура.',
+	'centralauth-prefs-count-attached' => 'Эсабынъыз $1 лейха {{PLURAL:$1|1=сайтында|сайтында}} фаальдир.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 {{PLURAL:$1|1=лейхада|лейхада}} къалып тура.', # Fuzzy
 	'centralauth-prefs-manage' => 'Глобаль эсапны идаре эт',
 );
 
@@ -7208,12 +7211,12 @@ $messages['cu'] = array(
  * @author Salam
  */
 $messages['cv'] = array(
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|ҫеккунт|ҫеккунт}} каялла', # Fuzzy
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут|минут}} каялла', # Fuzzy
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сехет|сехет}} каялла', # Fuzzy
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|кун|кун}} каялла', # Fuzzy
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|уйӑх|уйӑх}} каялла', # Fuzzy
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|ҫуо|ҫул}} каялла',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|1=минут|минут}} каялла', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|1=сехет|сехет}} каялла', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|1=кун|кун}} каялла', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|1=уйӑх|уйӑх}} каялла', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла', # Fuzzy
 	'centralauth-editgroup-noset' => '(çук)',
 	'centralauth-editgroup-reason' => 'Сӑлтав:',
 	'centralauth-editgroup-success' => 'Ушкӑн ирӗкӗсем улӑштарнӑ.', # Fuzzy
@@ -7631,7 +7634,7 @@ Andre konti er fortsat ikke bekræftet.',
 Hvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver den globale kontos adgangskode:',
 	'centralauth-attach-submit' => 'Tilknyt konto',
 	'centralauth-attach-success' => 'Kontoen blev tilknyttet den globale konto.',
-	'centralauth' => 'Global kontohåndtering',
+	'centralauth' => 'Administration af global konto',
 	'centralauth-admin-intro' => 'Denne grænseflade kan bruges til at administrere globale kontoer.',
 	'centralauth-admin-manage' => 'Administrér brugerkontoinformation',
 	'centralauth-admin-username' => 'Brugernavn:',
@@ -10206,8 +10209,9 @@ Kui ka globaalne konto kuulub sulle, saad selle konto liita, sisestades globaals
 	'centralauth-admin-info-home' => 'Koduviki:',
 	'centralauth-admin-info-editcount' => 'Redigeerimiste koguarv:',
 	'centralauth-admin-info-locked' => 'Lukustatud:',
-	'centralauth-admin-info-hidden' => 'Peitmistase:',
+	'centralauth-admin-info-hidden' => 'Peidetud:',
 	'centralauth-admin-info-groups' => '{{PLURAL:$1|Globaalne rühm|Globaalsed rühmad}}:',
+	'centralauth-admin-info-nogroups' => 'puuduvad',
 	'centralauth-admin-nohome' => 'teadmata',
 	'centralauth-admin-yes' => 'jah',
 	'centralauth-admin-no' => 'ei',
@@ -19304,7 +19308,7 @@ $messages['krc'] = array(
 	'globalusers' => 'Къошулуучуланы глобал списогу', # Fuzzy
 	'centralauth-prefs-status' => 'Глобал тергеу джазыуну халы:',
 	'centralauth-prefs-complete' => 'Хар не да табды!',
-	'centralauth-prefs-count-attached' => 'Сизни тергеу джазыуугъуз $1 {{PLURAL:$1|проектде|проектде}} тириди.', # Fuzzy
+	'centralauth-prefs-count-attached' => 'Сизни тергеу джазыуугъуз $1 {{PLURAL:$1|1=проектде|проектде}} тириди.', # Fuzzy
 	'centralauth-prefs-manage' => 'Глобал тергеу джазыуну джюрютюу',
 	'centralauth-prefs-view' => 'Къошулуучуну юсюнден глобал билгилеге къарау', # Fuzzy
 	'centralauth-login-progress' => 'Сеанс Викимедиа Фондну башха проектлеринде да хайырланады:', # Fuzzy
@@ -20239,12 +20243,12 @@ $messages['lez'] = array(
 	'centralauth-admin-delete-title' => 'Аккаунт алудун',
 	'centralauth-admin-reason' => 'Себеб:',
 	'centralauth-admin-status-hidden' => 'Чуьнуьхнава',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд|секунд}} вилик',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|декъикъа|декъикъа}} идалай вилик',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сят|сят}} идалай вилик',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|югъ|югъ}} идалай вилик',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|варз|варз}} идалай вилик',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|йис|йис}} идалай вилик',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|1=секунд|секунд}} вилик', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|1=декъикъа|декъикъа}} идалай вилик', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|1=сят|сят}} идалай вилик', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|1=югъ|югъ}} идалай вилик', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|1=варз|варз}} идалай вилик', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|1=йис|йис}} идалай вилик', # Fuzzy
 	'centralauth-log-status-locked' => 'блокарнава',
 	'centralauth-log-status-hidden' => 'чуьнуьхнава',
 	'centralauth-log-status-oversighted' => 'ревизор патал чуьнуьхнава',
@@ -28654,7 +28658,7 @@ $messages['ru'] = array(
 	'centralauth-list-unattached-title' => 'Неприсоединённые учётные записи',
 	'centralauth-list-unattached' => 'Принадлежность вам учётной записи «$1» не может быть автоматически подтверждена на указанных ниже сайтах; вероятно, пароль на них не совпадает с паролем вашей основной учётной записи:', # Fuzzy
 	'centralauth-foreign-link' => 'Участник $1 в $2',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|правка|правки|правок}} в $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|правка|правок|правки}} в $2', # Fuzzy
 	'centralauth-merge-method-primary' => '«домашний» вики-проект',
 	'centralauth-merge-method-empty' => 'нет вклада',
 	'centralauth-merge-method-mail' => 'подтверждена электронной почтой',
@@ -28703,7 +28707,7 @@ $messages['ru'] = array(
 	'centralauth-admin-info-editcount' => 'Общий счётчик правок:',
 	'centralauth-admin-info-locked' => 'Заморожен:',
 	'centralauth-admin-info-hidden' => 'Уровень сокрытия:',
-	'centralauth-admin-info-groups' => '{{PLURAL:$1|Глобальная группа|Глобальные группы}}:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:', # Fuzzy
 	'centralauth-admin-info-nogroups' => 'нет',
 	'centralauth-admin-nohome' => 'невозможно определить',
 	'centralauth-admin-yes' => 'да',
@@ -28727,7 +28731,7 @@ $messages['ru'] = array(
 	'centralauth-admin-bad-input' => 'Ошибочный выбор объединения',
 	'centralauth-admin-none-selected' => 'Не были выбраны учётные записи для изменения.',
 	'centralauth-admin-already-unmerged' => 'Пропуск $1, уже разделён',
-	'centralauth-admin-unmerge-success' => 'Успешно разделена $1 {{PLURAL:$1|учётная запись|учётных записи|учётных записей}}',
+	'centralauth-admin-unmerge-success' => 'Успешно разделена $1 {{PLURAL:$1|учётная запись|учётных записей|учётных записи}}', # Fuzzy
 	'centralauth-admin-delete-title' => 'Удаление учётной записи',
 	'centralauth-admin-delete-description' => 'Удаление глобальной учётной записи приведёт к удалению глобальных настроек, отсоединению всех учётных записей и освобождению глобального имени, что позволит занять его другому участнику.
 Все локальные учётные записи продолжат существовать.
@@ -28782,19 +28786,19 @@ $messages['ru'] = array(
 	'centralauth-admin-action-hide-oversight' => 'Полностью скрыть выбранные учётные записи',
 	'centralauth-admin-multi-bot' => 'Свежие правки',
 	'centralauth-admin-multi-botcheck' => 'Помечать записи на странице [[Special:RecentChanges|{{int:recentchanges}}]] как правки бота.',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунды|секунд}} назад',
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минуты|минут}} назад',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часа|часов}} назад',
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|день|дня|дней}} назад',
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|месяц|месяца|месяцев}} назад',
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|год|года|лет}} назад',
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунд|секунды}} назад', # Fuzzy
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минут|минуты}} назад', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часов|часа}} назад', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|день|дней|дня}} назад', # Fuzzy
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|месяц|месяцев|месяца}} назад', # Fuzzy
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|год|лет|года}} назад', # Fuzzy
 	'centralauth-prefs-status' => 'Состояние глобальной учётной записи:',
 	'centralauth-prefs-not-managed' => 'Не используется единая учётная запись',
 	'centralauth-prefs-unattached' => 'Не подтверждена',
 	'centralauth-prefs-complete' => 'Всё в порядке!',
 	'centralauth-prefs-migration' => 'Переносится',
-	'centralauth-prefs-count-attached' => 'Ваша учётная запись активна в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
-	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.',
+	'centralauth-prefs-count-attached' => 'Ваша учётная запись активна в $1 {{PLURAL:$1|проекте|проектах|проектах}}.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.', # Fuzzy
 	'centralauth-prefs-detail-unattached' => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage' => 'Управление глобальной учётной записью',
 	'centralauth-prefs-view' => 'Сведения о глобальной учётной записи',
@@ -28917,7 +28921,7 @@ $messages['ru'] = array(
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(нет)',
 	'centralauth-editset-usage' => 'Используется для групп:',
-	'centralauth-editset-badwikis' => '{{PLURAL:$2|Следующей вики|Следующих вики}} не существует: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|1=Следующей вики|Следующих вики}} не существует: $1.', # Fuzzy
 	'centralauth-editset-success' => 'Набор вики успешно изменён.',
 	'centralauth-editset-success-delete' => 'Набор вики успешно удалён.',
 	'centralauth-editset-return' => 'Вернуться в основной режим',
@@ -31485,7 +31489,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ништа)',
 	'centralauth-editset-usage' => 'Коришћен у групама:',
-	'centralauth-editset-badwikis' => 'Следећи {{PLURAL:$2|вики|викији}} не постоје: $1.',
+	'centralauth-editset-badwikis' => 'Следећи {{PLURAL:$2|1=вики|викији}} не постоје: $1.', # Fuzzy
 	'centralauth-editset-success' => 'Вики скуп је промењен.',
 	'centralauth-editset-success-delete' => 'Вики-скуп је обрисан.',
 	'centralauth-editset-return' => 'Повратак на главни преглед',
@@ -31614,7 +31618,7 @@ Razlog: $1',
 	'centralauth-admin-bad-input' => 'Loše označavanje sjedinjavanja',
 	'centralauth-admin-none-selected' => 'Nijedan nalog nije označen za izmenu.',
 	'centralauth-admin-already-unmerged' => 'Preskačem $1, već je rastavljen.',
-	'centralauth-admin-unmerge-success' => 'Uspešno {{PLURAL:$1|razdvojen|razdvojeno}} $1 {{PLURAL:$1|nalog|naloga}}',
+	'centralauth-admin-unmerge-success' => 'Uspešno {{PLURAL:$1|1=razdvojen|razdvojeno}} $1 {{PLURAL:$1|1=nalog|naloga}}', # Fuzzy
 	'centralauth-admin-delete-title' => 'Obriši nalog',
 	'centralauth-admin-delete-button' => 'Obriši ovaj nalog',
 	'centralauth-admin-delete-success' => 'Uspešno obrisan globalni nalog za „<nowiki>$1</nowiki>”',
@@ -31652,7 +31656,7 @@ Razlog: $1',
 	'centralauth-seconds-ago' => 'pre $1 {{PLURAL:$1|sekundu|sekunde|sekundi}}',
 	'centralauth-minutes-ago' => 'pre $1 {{PLURAL:$1|minutu|minute|minuta}}',
 	'centralauth-hours-ago' => 'pre $1 {{PLURAL:$1|sat|sata|sati}}',
-	'centralauth-days-ago' => 'Pre $1 {{PLURAL:$1|dan|dana}}',
+	'centralauth-days-ago' => 'Pre $1 {{PLURAL:$1|1=dan|dana}}', # Fuzzy
 	'centralauth-months-ago' => 'Pre $1 {{PLURAL:$1|mesec|meseca|meseci}}',
 	'centralauth-years-ago' => 'Pre $1 {{PLURAL:$1|godinu|godine|godina}}',
 	'centralauth-prefs-status' => 'Stanje globalnog naloga:',
@@ -31661,7 +31665,7 @@ Razlog: $1',
 	'centralauth-prefs-complete' => 'Sve je u redu!',
 	'centralauth-prefs-migration' => 'U premeštanju.',
 	'centralauth-prefs-count-attached' => 'Vaš nalog je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}}.',
-	'centralauth-prefs-count-unattached' => 'Nepotvrđeni nalozi sa vašim nadimkom su preostali na $1 {{PLURAL:$1|projektu|projekata}}.',
+	'centralauth-prefs-count-unattached' => 'Nepotvrđeni nalozi sa vašim nadimkom su preostali na $1 {{PLURAL:$1|1=projektu|projekata}}.', # Fuzzy
 	'centralauth-prefs-detail-unattached' => 'Ovaj projekat nije potvrđen kao pripadajući globalnom nalogu.',
 	'centralauth-prefs-manage' => 'Upravljajte globalnim nalogom',
 	'centralauth-prefs-view' => 'Prikaži globalne podatke korisnika', # Fuzzy
@@ -31763,7 +31767,7 @@ Možete da ih pregledate i izmenite, ili pak da napravite novi skup.',
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ništa)',
 	'centralauth-editset-usage' => 'Korišćen u grupama:',
-	'centralauth-editset-badwikis' => 'Sledeći {{PLURAL:$2|viki|vikiji}} ne postoje: $1.',
+	'centralauth-editset-badwikis' => 'Sledeći {{PLURAL:$2|1=viki|vikiji}} ne postoje: $1.', # Fuzzy
 	'centralauth-editset-success' => 'Uspešno promenjen skup vikija.',
 	'centralauth-editset-success-delete' => 'Viki-skup je obrisan.',
 	'centralauth-editset-return' => 'Povratak na glavni pregled',
@@ -34732,8 +34736,8 @@ $messages['tt-cyrl'] = array(
 	'centralauth-readmore-text' => ":''[[meta:Help:Гомуми кулланучы язмасы|'''Гомуми кулланучы язмасы''' турында күбрәк белү]]…''",
 	'centralauth-list-home-title' => 'Төп вики-проект',
 	'centralauth-list-attached-title' => 'Берләштерелгән язмалар',
-	'centralauth-list-attached' => 'Гомуми кулланучы язмаларына автоматик рәвештә «$1» атлы кулланучы язмалары аста бирелгән сәхифәләргә керде:',
-	'centralauth-list-attached-dryrun' => 'Гомуми кулланучы язмаларына автоматик рәвештә «$1» атлы кулланучы язмалары аста бирелгән сәхифәләргә керәчәк:',
+	'centralauth-list-attached' => 'Гомуми кулланучы язмаларына автоматик рәвештә «$1» атлы кулланучы язмалары аста бирелгән сәхифәләргә керде:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Гомуми кулланучы язмаларына автоматик рәвештә «$1» атлы кулланучы язмалары аста бирелгән сәхифәләргә керәчәк:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Берләштерелмәгән язмалар',
 	'centralauth-foreign-link' => '$2 эчендә $1 кулланучысы',
 	'centralauth-merge-method-primary' => 'төп вики-проект',
@@ -34772,8 +34776,8 @@ $messages['tt-cyrl'] = array(
 	'centralauth-prefs-unattached' => 'Расланмаган',
 	'centralauth-prefs-complete' => 'Бар да тәртиптә!',
 	'centralauth-prefs-migration' => 'Күчерелә',
-	'centralauth-prefs-count-attached' => 'Сезнең кулланучы хисапнамәсе $1 {{PLURAL:$1|проекта}} теркәлгән.',
-	'centralauth-prefs-count-unattached' => 'Расланмаган кулланучы хисапнамәләре $1 {{PLURAL:$1|проекта}} тора.',
+	'centralauth-prefs-count-attached' => 'Сезнең кулланучы хисапнамәсе $1 {{PLURAL:$1|проекта}} теркәлгән.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Расланмаган кулланучы хисапнамәләре $1 {{PLURAL:$1|проекта}} тора.', # Fuzzy
 	'centralauth-prefs-detail-unattached' => 'Бу проект расланмаган.',
 	'centralauth-prefs-manage' => 'Глобаль кулланучы хисапнамәсе белән идарә итү',
 	'centralauth-prefs-view' => 'Кулланучы турында глобаль мәгълүматларны карау', # Fuzzy
@@ -35115,7 +35119,7 @@ $messages['uk'] = array(
 	'centralauth-list-attached' => 'Обліковий запис «$1» на кожному з наступних сайтів був автоматично приєднаний до єдиного облікового запису:',
 	'centralauth-list-attached-dryrun' => 'Облікові записи, названі «$1», на кожному з перерахованих нижче сайтів будуть автоматично приєднані до єдиного облікового запису:',
 	'centralauth-list-unattached-title' => 'Неприєднані облікові записи',
-	'centralauth-list-unattached' => 'Неможливо автоматично підтвердити, що  {{PLURAL:$2|обліковий запис «$1» належить|облікові записи «$1» належать}} вам на {{PLURAL:$2|зазначеному нижче сайті|зазначених нижче сайтах}}; імовірно, пароль  {{PLURAL:$2|на ньому|на них}} не збігається з паролем вашого основного облікового запису:',
+	'centralauth-list-unattached' => 'Неможливо автоматично підтвердити, що  {{PLURAL:$2|1=обліковий запис «$1» належить|облікові записи «$1» належать}} вам на {{PLURAL:$2|1=зазначеному нижче сайті|зазначених нижче сайтах}}; імовірно, пароль  {{PLURAL:$2|1=на ньому|на них}} не збігається з паролем вашого основного облікового запису:',
 	'centralauth-foreign-link' => 'Користувач $1 на $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|редагування|редагування|редагувань}} у $2',
 	'centralauth-merge-method-primary' => 'домашня вікі',
@@ -35165,7 +35169,7 @@ $messages['uk'] = array(
 	'centralauth-admin-info-editcount' => 'Загальна кількість редагувань:',
 	'centralauth-admin-info-locked' => 'Заблокований:',
 	'centralauth-admin-info-hidden' => 'Прихований рівень:',
-	'centralauth-admin-info-groups' => '{{PLURAL:$1|Глобальна група|Глобальні групи}}:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|1=Глобальна група|Глобальні групи}}:',
 	'centralauth-admin-info-nogroups' => 'немає',
 	'centralauth-admin-nohome' => 'неможливо визначити',
 	'centralauth-admin-yes' => 'так',
@@ -35257,7 +35261,7 @@ $messages['uk'] = array(
 	'centralauth-prefs-complete' => 'Усе в порядку!',
 	'centralauth-prefs-migration' => 'Переноситься',
 	'centralauth-prefs-count-attached' => 'Ваш обліковий запис активний у $1 {{PLURAL:$1|проекті|проектах|проектах}}.',
-	'centralauth-prefs-count-unattached' => "Непідтверджені облікові записи з вашим ім'ям залишилися в $1 {{PLURAL:$1|проекті|проектах}}.",
+	'centralauth-prefs-count-unattached' => "Непідтверджені облікові записи з вашим ім'ям залишилися в $1 {{PLURAL:$1|1=проекті|проектах}}.",
 	'centralauth-prefs-detail-unattached' => 'Цей проект не був підтверджений як такий, що належить до вашого глобального облікового запису.',
 	'centralauth-prefs-manage' => 'Керування глобальним обліковим записом',
 	'centralauth-prefs-view' => 'Переглянути дані глобального облікового запису',
@@ -35381,7 +35385,7 @@ $messages['uk'] = array(
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(нема)',
 	'centralauth-editset-usage' => 'Використовується для груп:',
-	'centralauth-editset-badwikis' => '{{PLURAL:$2|Наступна вікі не існує|Наступні вікі не існують}}: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|1=Наступна вікі не існує|Наступні вікі не існують}}: $1.',
 	'centralauth-editset-success' => 'Набір вікі успішно змінений.',
 	'centralauth-editset-success-delete' => 'Набір вікі успішно видалено.',
 	'centralauth-editset-return' => 'Повернутися до головного виду',
@@ -36550,7 +36554,7 @@ $messages['wuu'] = array(
 $messages['xal'] = array(
 	'centralauth-prefs-status' => 'Делкән бичгдлһнә бәәдл:',
 	'centralauth-prefs-complete' => 'Цугтнь чик!',
-	'centralauth-prefs-count-attached' => 'Тана бичгдлһн $1 {{PLURAL:$1|төслд|төслмүдт}} болҗана.',
+	'centralauth-prefs-count-attached' => 'Тана бичгдлһн $1 {{PLURAL:$1|1=төслд|төслмүдт}} болҗана.', # Fuzzy
 	'centralauth-prefs-manage' => 'Делкән бичгдлһнә заалт',
 	'centralauth-prefs-view' => 'Делкән демнчин туск медә', # Fuzzy
 );
