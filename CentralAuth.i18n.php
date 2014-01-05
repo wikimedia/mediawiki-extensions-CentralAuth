@@ -1192,7 +1192,7 @@ Jammer!",
 	'centralauth-list-home-title' => 'Tuiswiki',
 	'centralauth-list-home-dryrun' => 'Die wagwoord en e-pos adres wat op hierdie wiki gebruik sal word vir jou verenigde rekening.',
 	'centralauth-list-attached-title' => 'Aangehegde rekeninge',
-	'centralauth-list-attached' => 'Die rekening genaamd "$1" op die volgende webwerwe was outomaties aangeheg by die versmelte rekening:',
+	'centralauth-list-attached' => 'Die rekening genaamd "$1" op die volgende webwerwe was outomaties aangeheg by die versmelte rekening:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Onaangehegde rekeninge',
 	'centralauth-foreign-link' => 'Gebruiker $1 op $2',
 	'centralauth-merge-method-primary' => 'tuiswiki',
@@ -1299,7 +1299,7 @@ Die wagwoorde vir plaaslike rekeninge geskep voor die kombinering sal terugkeer 
 	'centralauth-prefs-unattached' => 'Nie bevestig',
 	'centralauth-prefs-complete' => 'Alles in orde!',
 	'centralauth-prefs-migration' => 'Besig met migrasie',
-	'centralauth-prefs-count-attached' => 'U gebruiker is op $1 {{plural:$1|projek|projekte}} aktief.',
+	'centralauth-prefs-count-attached' => 'U gebruiker is op $1 {{PLURAL:$1|projek|projekte}} aktief.',
 	'centralauth-prefs-detail-unattached' => "Hierdie projek site is nog nie bevestig as 'n deel uitmaak van die globale rekening.",
 	'centralauth-prefs-manage' => 'Bestuur u globale gebruikersrekening',
 	'centralauth-prefs-view' => 'Wys inligting oor globale gebruiker', # Fuzzy
@@ -1835,10 +1835,10 @@ $messages['ar'] = array(
 	'centralauth-list-home-title' => 'الويكي الرئيسي',
 	'centralauth-list-home-dryrun' => 'كلمة السر وعنوان البريد الإلكتروني المحدد في هذا الويكي سيتم استخدامهما لحسابك الموحد.',
 	'centralauth-list-attached-title' => 'الحسابات الملحقة',
-	'centralauth-list-attached' => 'الحساب المسمى "$1" على كل من المواقع التالية تم إلحاقه تلقائيا بالحساب الموحد:',
-	'centralauth-list-attached-dryrun' => 'الحساب المسمى "$1" على كل من المواقع التالية سيتم إلحاقها تلقائيا للحساب الموحد:',
+	'centralauth-list-attached' => 'الحساب المسمى "$1" على كل من المواقع التالية تم إلحاقه تلقائيا بالحساب الموحد:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'الحساب المسمى "$1" على كل من المواقع التالية سيتم إلحاقها تلقائيا للحساب الموحد:', # Fuzzy
 	'centralauth-list-unattached-title' => 'حسابات غير ملحقة',
-	'centralauth-list-unattached' => 'الحساب "$1" لم يمكن تأكيده تلقائيا كمنتمي لك في المواقع التالية؛ على الأرجح لأنهم يمتلكون كلمة سر مختلفة عن حسابك الأساسي:',
+	'centralauth-list-unattached' => 'الحساب "$1" لم يمكن تأكيده تلقائيا كمنتمي لك في المواقع التالية؛ على الأرجح لأنهم يمتلكون كلمة سر مختلفة عن حسابك الأساسي:', # Fuzzy
 	'centralauth-foreign-link' => 'المستخدم $1 في $2',
 	'centralauth-foreign-contributions' => '{{PLURAL:$1|لا مساهمات|مساهمة واحدة|مساهمتان|$1 مساهمات|$1 مساهمة|$1 مساهمة}} في $2',
 	'centralauth-merge-method-primary' => 'الويكي الأساسي',
@@ -1958,7 +1958,7 @@ $messages['ar'] = array(
 	'centralauth-hours-ago' => 'منذ $1 {{PLURAL:$1|ساعة|ساعة}}',
 	'centralauth-days-ago' => 'منذ {{PLURAL:$1|أقل من يوم|يوم واحد|يومين|$1 أيام|$1 يومًا|$1 يوم}}',
 	'centralauth-months-ago' => 'منذ $1 {{PLURAL:$1|شهر|شهر}}',
-	'centralauth-years-ago' => 'منذ {{PLURAL: $1||سنة واحدة|سنتين|$1 سنين|$1 سنة}}',
+	'centralauth-years-ago' => 'منذ {{PLURAL:$1||سنة واحدة|سنتين|$1 سنين|$1 سنة}}',
 	'centralauth-prefs-status' => 'حالة الحساب العام:',
 	'centralauth-prefs-not-managed' => 'لا يستخدم الحساب الموحد',
 	'centralauth-prefs-unattached' => 'غير مؤكد',
@@ -6667,6 +6667,7 @@ $messages['ce'] = array(
 	'centralauth-editset-legend-ro' => 'Вики гӀирсашан могӀам',
 	'centralauth-editset-intro-ro' => 'Лахахь гайтина, болуш болу вики гӀирсашан гулам.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|дӀаяккха]])',
+	'centralauth-editset-optin' => 'Лахара википедеш чохь болх ба йиш ю',
 	'centralauth-editset-optout' => 'Юкъара яхаран кепаца (юкъа туху массо, билгал йинарш йоцурш)',
 	'centralauth-editset-legend-delete' => '«$1» википедин гулам дӀабаккхар',
 	'centralauth-editset-name' => 'Цlе:',
@@ -8137,6 +8138,7 @@ Eine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkont
 	'centralauth-login-no-others' => 'Du wurdest automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.',
 	'centralauth-logout-no-others' => 'Du wurdest automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.',
 	'centralauth-hidden-blockreason' => 'global versteckt durch $1 am $2. Grund: $3',
+	'centralauth-login-error-locked' => 'Du kannst dich nicht anmelden, da dein Benutzerkonto global gesperrt ist.',
 	'centralauth-log-name' => 'Globales Benutzerkonten-Logbuch',
 	'centralauth-log-header' => 'Dieses Logbuch zeigt alle Löschungen, Sperrungen und Entsperrungen globaler Benutzerkonten.',
 	'centralauth-log-entry-delete' => 'löschte das globale Benutzerkonto „$1“',
@@ -8564,7 +8566,7 @@ Paralanê ke qe hesabanê lokalan reset beno u şino paralonê verinî.',
 	'centralauth-admin-action-lock-lock' => 'Hesab weçinayışi kılit ke',
 	'centralauth-admin-action-lock-unlock' => 'Hesab weçinayışi kılit mek',
 	'centralauth-admin-action-hide-nochange' => 'Sewiyané nımıtan mevırné',
-	'centralauth-admin-multi-bot' => 'Vırnayışé bahdoyéni',
+	'centralauth-admin-multi-bot' => 'Vurnayışê peyêni',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sanise|saniseyan}} vernî ra',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|dakika|dakikayan}} vernî de',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|seet|seetan}} vernî de',
@@ -8708,6 +8710,7 @@ Ti eşkena setan bivini ya zi bivurni ya zi yew seta newe virazi.',
 );
 
 /** Lower Sorbian (dolnoserbski)
+ * @author Derbeth
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -8813,12 +8816,15 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-permission' => 'Jano stewardy mógu konta drugich wužywarjow zjadnośiś.',
 	'centralauth-admin-no-unified' => 'Žedno jadnotne konto za toś to wužywarske mě.',
 	'centralauth-admin-info-header' => 'Informacije wó globalnem konśe',
+	'centralauth-admin-info-username' => 'Wužywarske mě:',
 	'centralauth-admin-info-id' => 'ID wužywarja:',
 	'centralauth-admin-info-registered' => 'Zregistrěrowany:',
 	'centralauth-admin-info-home' => 'Domacny wiki:',
 	'centralauth-admin-info-editcount' => 'Licba změnow dogromady:',
 	'centralauth-admin-info-locked' => 'Zastajony:',
 	'centralauth-admin-info-hidden' => 'Schowana rownina:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Globalna kupka|Globalnej kupce|Globalne kupki}}:',
+	'centralauth-admin-info-nogroups' => 'žeden',
 	'centralauth-admin-nohome' => 'njejo móžno póstajiś',
 	'centralauth-admin-yes' => 'jo',
 	'centralauth-admin-no' => 'ně',
@@ -8834,6 +8840,7 @@ Jolic globalne konto tebje słuša, móžoš toś to konto zjadnośiś, gaž zap
 	'centralauth-admin-list-attached-on' => 'Pśipowjesony k',
 	'centralauth-admin-list-method' => 'Metoda',
 	'centralauth-admin-list-editcount' => 'Licenje změnow',
+	'centralauth-admin-list-groups' => 'Kupki',
 	'centralauth-admin-list-blocked' => 'Blokěrowany',
 	'centralauth-admin-unmerge' => 'Wubrane rozdźěliś',
 	'centralauth-admin-merge' => 'Wubrane zjadnośiś',
@@ -8851,6 +8858,7 @@ Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu z
 	'centralauth-admin-nonexistent' => 'Njejo žedno globalne konto za "<nowiki>$1</nowiki>".',
 	'centralauth-admin-delete-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
 	'centralauth-token-mismatch' => 'Wódaj, njejsmy mógli twóje formularne pódaśa pśeźěłaś, dokulaž pósejźeńske daty su se zgubili.',
+	'centralauth-state-mismatch' => 'Zmólka: Wobźěłowański konflikt za toś togo wužywarja jo se namakał. Pšosym pśeglědaj swóju změnu a wopytaj hyšći raz.',
 	'centralauth-admin-reason' => 'Pśicyna:',
 	'centralauth-admin-reason-other' => 'Druga/pśidatna pśicyna:',
 	'centralauth-admin-unhide-nonexistent' => 'Zmólka: globalne konto "<nowiki>$1</nowiki>" njeeksistěrujo.',
@@ -8874,10 +8882,26 @@ Gronidła za lokalne konta, kótarež su se napórali do zjadnośenja, dostanu z
 ** njepśiměrjone wósobinske informacije',
 	'centralauth-admin-logsnippet' => 'Pjerwjejšne změny globalnego konta',
 	'centralauth-admin-suppressreason' => 'Globalnje pódtłocony wót $1 ze slědujuceje pśicyny: $2',
+	'centralauth-admin-not-authorized' => 'Njamaš pšawa, aby toś tu akciju wuwjadł',
+	'centralauth-admin-too-many-edits' => 'Globalne konto "<nowiki>$1</nowiki>" ma wušej $2 {{PLURAL:$2|změny|změnowu|změnow}} a njedajo se schowaś.',
 	'globalusers' => 'Lisćina globalnych kontow',
 	'centralauth-listusers-locked' => 'zastajony',
 	'centralauth-listusers-attached' => '[[User:$1|eksistěrujo lokalnje]]',
 	'centralauth-listusers-nolocal' => 'wótpowjesony abo njeeksistěrujo lokalnje',
+	'multilock' => 'Někotare globalne konta zastajiś',
+	'centralauth-admin-multi-username' => 'Zapódaj jadno wužywarske mě abo někotare wužywarske mjenja, źělone pśez łamanje smužki',
+	'centralauth-admin-multi-notfound' => 'Pytanje njejo wužywarske mjenja wrośiło.',
+	'centralauth-admin-multi-searchprefix' => 'Abo pytaj za wužywarskimi mjenjami z prefiksom',
+	'centralauth-admin-multi-intro' => 'Někotare globalne konta naraz aktualizěrowaś',
+	'centralauth-admin-action-lock-nochange' => 'Zastajenja njezměniś',
+	'centralauth-admin-action-lock-lock' => 'Wubrane konta zastajiś',
+	'centralauth-admin-action-lock-unlock' => 'Wubrane konta wótwóriś',
+	'centralauth-admin-action-hide-nochange' => 'Schowane rowniny njezměniś',
+	'centralauth-admin-action-hide-none' => 'Wubrane konta pokazaś',
+	'centralauth-admin-action-hide-lists' => 'Wubrane konta ze zjawnych lisćinow schowaś',
+	'centralauth-admin-action-hide-oversight' => 'Wubrane konta dopołnje schowaś',
+	'centralauth-admin-multi-bot' => 'Aktualne změny',
+	'centralauth-admin-multi-botcheck' => 'Zapiski na [[Special:RecentChanges|{{int:recentchanges}}]] ako botowe zapiski wóznamjeniś.',
 	'centralauth-seconds-ago' => 'pśed $1 {{PLURAL:$1|sekundu|sekundoma|sekundami|sekundami}}',
 	'centralauth-minutes-ago' => 'pśed $1 {{PLURAL:$1|minutu|minutoma|minutami|minutami}}',
 	'centralauth-hours-ago' => 'pśed $1 {{PLURAL:$1|goźinu|goźinoma|goźinami|goźinami}}',
@@ -8923,6 +8947,7 @@ Pśemjenjenje wustatkujo, až lokalne konto wótwńoźujo se z globalnego wužyw
 	'centralauth-rightslog-entry-groupperms' => 'kupkowe pšawa za $1 wót $2 do $3 změnjone',
 	'centralauth-rightslog-entry-groupperms2' => 'kupkowe pšawa za $1 změnjone. $2 pśidany; $3 wótwónoźony',
 	'centralauth-rightslog-entry-groupperms3' => 'jo wobgranicowane wikije za $1 wót $2 do $3 změnił',
+	'centralauth-rightslog-entry-grouprename' => 'jo kupku $2 do $1 pśemjenił',
 	'centralauth-rightslog-header' => 'Toś ten protokol wopśimujo změny globalnych kupkow: cłonkojstwo a změny pšawow',
 	'centralauth-rightslog-entry-newset' => 'jo wikikupku $1 $2 ze slědujucymi wikijami napórał: $3',
 	'centralauth-rightslog-entry-setrename' => 'jo wikikupku "$2" do "$1" pśemjenił',
@@ -8931,6 +8956,17 @@ Pśemjenjenje wustatkujo, až lokalne konto wótwńoźujo se z globalnego wužyw
 	'centralauth-rightslog-entry-deleteset' => 'jo wulašował wikikupku "$1"',
 	'centralauth-rightslog-set-optin' => 'na zakłaźe zapśěgnjenja pó wuzwólenju',
 	'centralauth-rightslog-set-optout' => 'na zakłaźe wuzamknjenja pó wuzwólenju',
+	'centralautologin' => 'Centralne pśizjawjenje',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Sy južo lokalnje pśizjawjony.',
+	'centralauth-centralautologin-badparams' => 'Pódane awtentifikaciske parametry su njepłaśiwe byli',
+	'centralauth-centralautologin-lostsession' => 'Daty pósejźenja su se zgubili',
+	'centralauth-centralautologin-badstate' => 'Njepłaśiwy stat "$1"',
+	'centralauth-centralautologin-notposted' => 'Formular za centralne pśizjawjenje musy se z metodu POST rozpósłaś',
+	'centralauth-centralautologin-badstate-central' => 'Stat "$1" na centralnem wikiju njejo płaśiwy',
+	'centralauth-centralautologin-badstate-local' => 'Stat "$1" njejo płaśiwy na lokalnem wikiju',
+	'centralauth-centralautologin-badwiki' => 'Wiki "$1" njejo płaśiwy za centralne pśizjawjenje',
+	'centralauth-centralautologin-corsfail' => 'Pśeglědanje CORS-póchada njejo se raźiło',
+	'centralauth-centralautologin-logged-in' => 'Sy centralnje ako $1 pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.',
 	'globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach',
 	'globalgrouppermissions' => 'Zastojanje globalnych kupkow',
 	'centralauth-globalgroupperms-grouplist' => 'Slědujuce globalne kupki su konfigurěrowane.
@@ -8950,11 +8986,13 @@ Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 	'centralauth-editgroup-name' => 'Mě kupki:',
 	'centralauth-editgroup-display' => 'Lokalizěrowane mě kupki:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|wobźěłaś]])',
+	'centralauth-editgroup-invalid-name' => 'Njepłaśiwe mě globalneje kupki pódane',
 	'centralauth-editgroup-member' => 'Lokalizěrowane mě kupkowych cłonkow:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|wobźěłaś]])',
 	'centralauth-editgroup-members' => 'Lisćina cłonkow:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lisćina wužywarjow z pšawami $2]]',
 	'centralauth-editgroup-restrictions' => 'Wikikupka, źož toś ta kupka jo aktiwna:',
+	'centralauth-editgroup-rename-taken' => 'Pśemjenjenje jo se njeraźiło: Jo južo kupka z mjenim $1.',
 	'centralauth-editgroup-noset' => '(žedne)',
 	'centralauth-editgroup-submit' => 'Změny na globalnych kupkach składowaś',
 	'centralauth-editgroup-perms' => 'Pśipokazane pšawa:',
@@ -8963,6 +9001,7 @@ Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 	'centralauth-editgroup-success-text' => 'Globalna kupka $1 jo se wuspěšnje změniła.
 [[Special:GlobalGroupPermissions|Slědk ku kupkowemu zastojanjeju]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|wobźěłaś]])',
+	'centralauth-editgroup-nowikiset' => 'Žeden, płaśi za wšykne wikije.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wubjeŕ wiki, na kótaremž maju konto:',
 	'centralauth-globalgroupmembership-badknownwiki' => "Globalne konto '''$1''' njejo aktiwne na wikiju, kótaryž sy pódał ('' $2 '').
 Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
@@ -9009,6 +9048,15 @@ Sy snaź wopytał, pšawa wopacnemu wužywarjeju pśipokazaś!",
 	'right-centralauth-merge' => 'Konta zjadnośiś',
 	'right-globalgrouppermissions' => 'Globalne kupki zastojaś',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Globalne kupki, w kótarychž wužywaŕ jo cłonk',
+	'action-centralauth-lock' => 'Globalne konta zastajiś abo wótwóriś',
+	'centrallogin' => 'Centralne wužywarske pśizjawjenje',
+	'centralloginsuccesful' => 'Pśizjawjenje wuspěšne',
+	'centralauth-completelogin-back' => 'Slědk k pjerwjejšnemu bokoju.',
+	'centralauth-error-nologinattempt' => 'Aktiwny pśizjawjeński wopyt njeběžy za twójo pósejźenje.',
+	'centralauth-error-badtoken' => 'Pódany awtentifikaciski token jo pak pśepadnjony pak njepłaśiwy.',
+	'centralauth-warning-notloggedin' => 'Tuchylu njejsy pśizjawjony.',
+	'centralauth-warning-notattached' => 'Lokalne konto njejo z globalnym kontom zwězane.',
+	'centralauth-finishglobaliseemail_subject' => 'Kontowe wobkšuśenje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -9709,6 +9757,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Ihojose
  * @author Imre
  * @author Jatrobat
+ * @author LlamaAl
  * @author Locos epraix
  * @author Luis Felipe Schenone
  * @author Manuelt15
@@ -9721,6 +9770,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Platonides
  * @author Remember the dot
  * @author Sanbec
+ * @author Savh
  * @author Titoxd
  * @author Toliño
  * @author Translationista
@@ -9781,11 +9831,11 @@ Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí l
 	'centralauth-list-home-title' => 'Wiki local',
 	'centralauth-list-home-dryrun' => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada.',
 	'centralauth-list-attached-title' => 'Cuentas vinculadas',
-	'centralauth-list-attached' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios ha sido automáticamente añadida a la cuenta unificada:',
-	'centralauth-list-attached-dryrun' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios será automáticamente añadida a la cuenta unificada:',
+	'centralauth-list-attached' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios ha sido automáticamente añadida a la cuenta unificada:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios será automáticamente añadida a la cuenta unificada:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Cuentas no vinculadas',
 	'centralauth-list-unattached' => 'No se pudo confirmar automáticamente que la cuenta «$1» es tuya en los siguientes sitios;
-probablemente tienen una contraseña diferente a la de tu cuenta primaria:',
+probablemente tienen una contraseña diferente a la de tu cuenta primaria:', # Fuzzy
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribuciones}} en $2',
 	'centralauth-merge-method-primary' => 'wiki de origen',
@@ -9852,6 +9902,7 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-list-attached-on' => 'Vinculada el',
 	'centralauth-admin-list-method' => 'Método',
 	'centralauth-admin-list-editcount' => 'Conteo de ediciones',
+	'centralauth-admin-list-groups' => 'Grupos',
 	'centralauth-admin-list-blocked' => 'Bloqueado',
 	'centralauth-admin-unmerge' => 'Desunificar las cuentas seleccionadas',
 	'centralauth-admin-merge' => 'Fusionar las cuentas seleccionadas',
@@ -10053,7 +10104,7 @@ Puedes verlos y modificarlos, o crear un grupo nuevo.',
 	'centralauth-editset-success' => 'Grupo de wikis cambiado exitosamente.',
 	'centralauth-editset-success-delete' => 'El grupo de wikis se borró con éxito.',
 	'centralauth-editset-return' => 'Volver a la vista principal',
-	'centralauth-block-already-locked' => 'La cuenta [[Special:CentralAuth/$1|$1]] ya está bloqueada globalmente.',
+	'centralauth-block-already-locked' => 'La cuenta [[Special:CentralAuth/$1|$1]] ya está deshabilitada globalmente.',
 	'centralauth-readonly' => 'La base de datos de autentificación está bloqueada.',
 	'centralauth-readonlytext' => 'La base de datos no permite nuevas entradas u otras modificaciones de forma temporal, probablemente por mantenimiento rutinario, tras lo cual volverá a la normalidad.',
 	'right-globalgroupmembership' => 'Editar pertenencia a grupos globales',
@@ -13630,6 +13681,7 @@ $messages['he'] = array(
 	'centralauth-login-no-others' => 'נכנסתם באופן אוטומטי לחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'הוּצאת באופן אוטומטי מהחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'הוסתר באופן גלובלי על ידי $1 ב־$2 מהסיבה הבאה: $3',
+	'centralauth-login-error-locked' => 'אין באפשרותך להיכנס כי חשבונך נחסם גלובלית.',
 	'centralauth-log-name' => 'יומן החשבון הכללי',
 	'centralauth-log-header' => 'יומן זה כולל פעולות שבוצעו על חשבונות כלליים: מחיקות, נעילות וביטולי נעילות.',
 	'centralauth-log-entry-delete' => 'מחק את החשבון הכללי "$1"',
@@ -14505,7 +14557,7 @@ Možete vidjeti ili izmijeniti bilo koji od njih ili napraviti novi skup.',
 $messages['hsb'] = array(
 	'mergeaccount' => 'Status zjednoćenja wužiwarskich kontow',
 	'centralauth-groupname' => 'załožby Wikimedia Foundation',
-	'centralauth-desc' => 'We wikijach {{int:Centralauth-groupname}} [[Special:MergeAccount|Konta zjednoćić]]',
+	'centralauth-desc' => 'We wikijach {{int:Centralauth-groupname}} [[Special:MergeAccount|konta zjednoćić]]',
 	'centralauth-antispoof-desc' => 'Přidawa CentralAuth technologiju AntiSpoof',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Zjednoćenje wjacorych kontow]] za jednotne přizjewjenje',
 	'centralauth-merge-denied' => 'Wodaj, ale nimaš dowolnosć za přistup na tutu stronu.',
@@ -14742,6 +14794,9 @@ Přemjenowanje wuskutkuje, zo lokalne konto so z globalneho wužiwarskeho konta 
 	'centralauth-rightslog-set-optin' => 'Zapřijeće po wuwzolenju',
 	'centralauth-rightslog-set-optout' => 'wuzamknjenje po wuzwolenju',
 	'centralautologin' => 'Centralne přizjewjenje',
+	'centralauth-centralautologin-desc' => 'Tuta strona so internje přez MediaWiki wužiwa.
+Hdyž zwjazanu domenu wopytuješ, mjeztym zo njejsy přizjewjeny, wužiwa centralny přizjewjenski system tutu stronu, zo by zwěsćił, hač sy pod centralnej domenu přizjewjeny.
+Sy tutu stronu požadał, bjeztoho zo by awtentifkaciske daty podał, tak zo so ničo njestawa.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Sy hižo lokalnje přizjewjeny.',
 	'centralauth-centralautologin-badparams' => 'Podate awtentifikaciske parametry su njepłaćiwe byli',
 	'centralauth-centralautologin-lostsession' => 'Daty posedźenja su so zhubili',
@@ -14751,6 +14806,9 @@ Přemjenowanje wuskutkuje, zo lokalne konto so z globalneho wužiwarskeho konta 
 	'centralauth-centralautologin-badstate-local' => 'Stat "$1" na lokalnym wikiju płaćiwy njeje',
 	'centralauth-centralautologin-badwiki' => 'Wiki "$1" za centralne přizjewjenje płaćiwy njeje',
 	'centralauth-centralautologin-corsfail' => 'Pruwowanje CORS-pochada je so njeporadźiło',
+	'centralauth-centralautologin-p3p-explanation' => 'Wěste wobhladowaki wužaduja sej kompaktnu P3P-směrnicu za placki, kotrež maja so w někotrych padach pósłać abo dóstać, inkluziwnje situaciju w přizjewjenskej kontroli SUL. To je njetrěbna rynka, přez kotruž dyrbiš skakać, hdyž wobmysluješ, zo wšě strony su w samsnej wikiskupinje a P3P sam je do dalokeje měry zestarjeny a spušćeny; na zbožo standardne konfiguracije tutych wobhladowakow maja njepłaćiwu směrnicu, kotraž na tutu stronu wotkazuje, za "dobru dosć".
+
+Prošu přepruwuj wot čłowjeka čitajomne prawidła priwatnosće tutoho websydła, zo by zwěsćił, kak zhromadźene informacije bychu so wužiwali.',
 	'centralauth-centralautologin-logged-in' => 'Sy centralnje jako $1 přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.',
 	'globalgroupmembership' => 'Čłonstwo w globalnych skupinach',
 	'globalgrouppermissions' => 'Zrjadowanje globalnych skupinow',
@@ -14777,7 +14835,7 @@ Wobkedźbuj, zo skupina njeeksistuje, doniž prawa njejsu připokazane.',
 	'centralauth-editgroup-members' => 'Lisćina čłonow:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lisćina wužiwarjow z prawami $2]]',
 	'centralauth-editgroup-restrictions' => 'Sadźba wikijow, hdźež tuta skupina je aktiwna:',
-	'centralauth-editgroup-rename-taken' => 'Přemjenowanje so je njeporadźiło: Je hižo skupina z mjenom $1.',
+	'centralauth-editgroup-rename-taken' => 'Přemjenowanje je so njeporadźiło: Je hižo skupina z mjenom $1.',
 	'centralauth-editgroup-noset' => '(žadyn)',
 	'centralauth-editgroup-submit' => 'Změny na globalnej skupinje składować',
 	'centralauth-editgroup-perms' => 'Připokazane prawa:',
@@ -14839,13 +14897,27 @@ Móžeš někajku z nich wobhladać a změnić abo nowu skupinu wutworić.',
 	'centrallogin' => 'Centralne wužiwarske přizjewjenje',
 	'centralloginsuccesful' => 'Přizjewjenje je wuspěšne było',
 	'centralauth-completelogin-back' => 'Wróćo k předchadnej stronje.',
-	'centralauth-error-nologinattempt' => 'Aktiwny přizjewjenski za twoje posedźenje njeběži.',
-	'centralauth-error-badtoken' => 'Podaty awtentifikaciski token jo pak spadnjeny pak njepłaćiwy.',
+	'centralauth-error-nologinattempt' => 'Aktiwny přizjewjenski pospyt za twoje posedźenje njeběži.',
+	'centralauth-error-badtoken' => 'Podaty awtentifikaciski token je pak spadnjeny pak njepłaćiwy.',
 	'centralauth-error-token-wrongattempt' => 'Awtentifikaciski token njesłuša k twojemu přizjewjenskemu pospytej.
 Něchtó móhł spytać, će pod złóstnym kontom přizjewić.',
+	'centralauth-error-token-wronguser' => 'Token njewotpowěduje twojemu posedźenskemu wužiwarskemu mjenu.
+Něchtó móhł spytać, će pod złóstnym kontom přizjewić.
+Jeli chceš so jako druhi wužiwar přizjewić, wotzjew so najprjedy.',
 	'centralauth-warning-notloggedin' => 'Tuchwilu njejsy přizjewjeny.',
 	'centralauth-warning-notattached' => 'Lokalne konto njeje z globalnym kontom zwjazane.',
 	'centralauth-finishglobaliseemail_subject' => 'Kontowe wobkrućenje {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'centralauth-finishglobaliseemail_body' => 'Twoja e-mejlowa adresa je so na wšěch wikimedijowych projektach z kontom "$2" zwjazała, hłowne konto je na {{GRAMMAR:lokatiw|{{SITENAME}}}}.
+
+Zo by wobkrućił, zo tute konto woprawdźe tebi słuša, zo by twoje konta zjednoćił, kotrež njemóžachmy awtomatisce zjednoćić, a zo by dowolił, twoje konto wobnowić, jeli swoje hesło zhubiš, wočiń prošu tutón wotkaz w swojim wobhladowaku:
+
+$3
+
+Jeli konto tebi *nje*słuša, slěduj tutomu wotkazej, zo by wobkrućenje e-mejloweje adresy anulował:
+
+$5
+
+Tutón wobkrućenski kod budźe płaćiwy hač do $6 $7.',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -17464,15 +17536,16 @@ Yèn iki panjenengan dhéwé, panjenengan bisa ngrampungaké prosès panggabunga
 	'centralauth-notice-dryrun' => "<div class='successbox'>Mung modus démo</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'Panggabungan rékening (akun) saiki iki namung arupa modus demo/debugging, dadi operasi panggabungan sing sajati ora dilakokaké. Nuwun sèwu!',
 	'centralauth-error-locked' => 'Panjenengan ora bisa nyunting amarga akun panjenengan dikunci.',
+	'centralauth-error-unmerged' => 'Panjenengan ora bisa nyunting amarga akun panjenengan ora dadi siji.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|Mangga diwaca kanggo informasi sabanjuré ngenani '''log mlebu gabungan''']]...''",
 	'centralauth-list-home-title' => 'Wiki asal',
 	'centralauth-list-home-dryrun' => 'Tembung sandhi lan alamat e-mail ing wiki iki bisa dienggo kanggo rékening gabungan panjenengan, lan kaca panganggo ing kéné bisa sacara otomatis disambungaké saka wiki liya.',
 	'centralauth-list-attached-title' => 'Rékening (akun) sing digabung',
-	'centralauth-list-attached' => 'Rékening (akun) "$1" ing situs-situs sing kapacak ing ngisor iki wis digabung sacara otomatis:',
-	'centralauth-list-attached-dryrun' => 'Rékening (akun) mawa jeneng "$1" ing saben situs ing ngisor iki bakal disertakaké sacara otomatis sajroning rékening gabungan:',
+	'centralauth-list-attached' => 'Rékening (akun) mawa jeneng "$1" ing saben situs ing ngisor iki bakal disertakaké sacara otomatis sajroning rékening gabungan:',
+	'centralauth-list-attached-dryrun' => 'Rékening (akun) "$1" ing situs-situs sing kapacak ing ngisor iki wis digabung sacara otomatis:',
 	'centralauth-list-unattached-title' => 'Rékening sing kapisah',
 	'centralauth-list-unattached' => 'Rékening (akun) "$1" ora bisa didhedhes menawa sacara otomatis minangka darbèn panjenengan ing situs-situs iki;
-kamungkinan gedhé mbok-menawa rékening-rékening iki nduwé tembung sandhi sing séje saka rékening utama panjenengan:',
+kamungkinan gedhé mbok-menawa rékening-rékening iki nduwé tembung sandhi sing séje saka rékening utama panjenengan:', # Fuzzy
 	'centralauth-foreign-link' => 'Panganggo $1 ing $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kontribusi|kontribusi}} nèng $2',
 	'centralauth-merge-method-primary' => 'Wiki asal',
@@ -17482,9 +17555,13 @@ kamungkinan gedhé mbok-menawa rékening-rékening iki nduwé tembung sandhi sin
 	'centralauth-merge-method-admin' => 'Pangurus nggabung rékening (akun)',
 	'centralauth-merge-method-new' => 'akun utawa rékening anyar',
 	'centralauth-merge-method-login' => 'digawé dhèk mlebu log',
+	'centralauth-merge-method-primary-desc' => 'Ini adalah wiki tempat akun pertama kali digabungkan.
+Ingat bahwa wiki ini mungkin berbeda dari wiki utama si pengguna.',
 	'centralauth-merge-method-empty-desc' => 'Nuduhaké yèn akun lokal digabungaké amarga ora nduwé suntingan.',
 	'centralauth-merge-method-mail-desc' => 'Nuduhaké yèn akun lokal digabungaké amarga alamat layang èlèktroniké padha karo layang èlèktronik akun utama.',
 	'centralauth-merge-method-password-desc' => 'Nuduhaké yèn akun lokal digabungaké amarga panganggo ngawèhaké tembung sandhi sing sah kanggo akun kuwi.',
+	'centralauth-merge-method-admin-desc' => 'Menunjukkan bahwa akun lokal digabungkan secara manual oleh penatalayan.
+Fitur tersebut saat ini dinonaktifkan karena alasan keamanan.',
 	'centralauth-merge-method-new-desc' => 'Nuduhaké yèn akun globab digawé otomatis nalika akun lokal digawé.',
 	'centralauth-merge-method-login-desc' => 'Nuduhaké yèn akun lokal dogawé otomatis nalika panganggo mlebu log.',
 	'centralauth-finish-title' => 'Rampungna panggabungan',
@@ -17503,21 +17580,24 @@ Rékening-rékening liyané durung dikonfirmasi.',
 	'centralauth-attach-text' => 'Rékening iki durung dihijrahaké menyang rékening gabungan. Menawa rékening global iki darbèn panjenengan, panjenengan bisa nggabungaké rékening iki menawa panjenengan nglebokaké tembung sandhi rékening global:',
 	'centralauth-attach-submit' => 'Hijrahna rékening (akun)',
 	'centralauth-attach-success' => 'Rékening (akun) iki bisa dihijrahaké menyang rékening gabungan.',
-	'centralauth' => 'Panata panganggo global', # Fuzzy
+	'centralauth' => 'Panata panganggo global',
 	'centralauth-admin-intro' => 'Antarmuka iki bisa dianggo kanggo administrasi akun global.',
-	'centralauth-admin-manage' => 'Ngatur data panganggo', # Fuzzy
+	'centralauth-admin-manage' => 'Ngatur data panganggo',
 	'centralauth-admin-username' => 'Jeneng panganggo:',
 	'centralauth-admin-lookup-ro' => 'Delok info panganggo',
 	'centralauth-admin-lookup-rw' => 'Atur akun panganggo',
 	'centralauth-admin-permission' => "Namung para ''steward'' sing bisa nggabungaké rékening (akun) wong liya.",
 	'centralauth-admin-no-unified' => 'Ora ana rékening gabungan kanggo jeneng panganggo iki.',
-	'centralauth-admin-info-header' => 'Info panganggo global', # Fuzzy
+	'centralauth-admin-info-header' => 'Info panganggo global',
+	'centralauth-admin-info-username' => 'Jeneng panganggo:',
 	'centralauth-admin-info-id' => 'ID panganggo:',
 	'centralauth-admin-info-registered' => 'Kadaftar:',
 	'centralauth-admin-info-home' => 'Wiki utama:',
 	'centralauth-admin-info-editcount' => 'Cacahé kabéh suntingan:',
 	'centralauth-admin-info-locked' => 'Dikunci:',
 	'centralauth-admin-info-hidden' => 'Undhak-undhaké kadhelikané:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Grup|Grup}} global:',
+	'centralauth-admin-info-nogroups' => 'ora ana',
 	'centralauth-admin-nohome' => 'ora bisa diira-ira',
 	'centralauth-admin-yes' => 'inggih',
 	'centralauth-admin-no' => 'ora',
@@ -17535,6 +17615,7 @@ Alesan: $1',
 	'centralauth-admin-list-attached-on' => 'Kelèt ing',
 	'centralauth-admin-list-method' => 'Métode',
 	'centralauth-admin-list-editcount' => 'Cacahé suntingan',
+	'centralauth-admin-list-groups' => 'Grup',
 	'centralauth-admin-list-blocked' => 'Kablokir',
 	'centralauth-admin-unmerge' => 'Batalna panggabungan rékening kapilih',
 	'centralauth-admin-merge' => 'Gabungna rékening kapilih',
@@ -17547,6 +17628,7 @@ Alesan: $1',
 Kabèh rékening lokal isih tetep bakal ana.
 Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabungan iki bakal dibalèkaké menyang situasi pra-panggabungan.',
 	'centralauth-admin-delete-button' => 'Busaken rékening (akun) iki',
+	'centralauth-admin-delete-confirm' => 'Apakah Anda benar-benar ingin menghapus akun ini?',
 	'centralauth-admin-delete-success' => 'Bisa kasil mbusak rékening (akun) global kanggo "<nowiki>$1</nowiki>"',
 	'centralauth-admin-nonexistent' => 'Saiki ora ana rékening global kanggo "<nowiki>$1</nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'Kaluputan: rékening global "<nowiki>$1</nowiki>" ora ana.',
@@ -17574,10 +17656,12 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 ** informasi personal sing ora patut',
 	'centralauth-admin-logsnippet' => 'Owahan akun global sakdurungé',
 	'centralauth-admin-suppressreason' => 'Dipenet sacara global déning $1 amarga alesan iki: $2',
-	'globalusers' => 'Daftar panganggo global', # Fuzzy
+	'centralauth-admin-not-authorized' => 'Sampeyan ora duwe ijin sing dibutuhake kanggo nindakake tindakan iki.',
+	'globalusers' => 'Daftar akun global',
 	'centralauth-listusers-locked' => 'dikunci',
 	'centralauth-listusers-attached' => '[[User:$1|ana sacara lokal]]',
 	'centralauth-listusers-nolocal' => 'ora kagandhèng utawa ora ana sacara lokal',
+	'centralauth-admin-multi-bot' => 'Owah-owahan pungkasan',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|detik|detik}} kapungkur',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|menit|menit}} kapungkur',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|jam|jam}} kapungkur',
@@ -17602,7 +17686,7 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-login-progress' => 'Sampéyan mlebu log nèng wiki {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-logout-progress' => 'Sampéyan metu log saka wiki {{int:Centralauth-groupname}}:', # Fuzzy
 	'centralauth-login-no-others' => 'Sampéyan wis otomatis mlebu log nèng proyèk liya {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Sampéyan wis otomatis metu log saka proyèk liya {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Sampéyan wis otomatis metu log nèng proyèk liya {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'didhelikaké global déning $1 dhek $2 mawa alesan iki: $3',
 	'centralauth-log-name' => 'Log pangurusan rékening global',
 	'centralauth-log-header' => 'Log iki ngandhut operasi-operasi sing kalakokaké sangisoring rékening global: pambusakan, ngunci database lan pambukakan kunci database.',
@@ -17630,6 +17714,7 @@ Tembung-tembung sandhi kanggo rékening lokal sing digawé sadurungé panggabung
 	'centralauth-rightslog-entry-deleteset' => 'wiki sèt kabusak "$1"',
 	'centralauth-rightslog-set-optin' => "gabung (''opt-in'')",
 	'centralauth-rightslog-set-optout' => "ora gabung (''opt-out'')",
+	'centralauth-centralautologin-lostsession' => 'Data sesi ilang',
 	'globalgroupmembership' => 'Kaanggotan ing kelompok-kelompok global',
 	'globalgrouppermissions' => 'Ngurus kelompok global',
 	'centralauth-globalgroupperms-grouplist' => 'Klompok global sing kapacak ing ngisor iki wis dikonfigurasi.
@@ -17643,6 +17728,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'centralauth-globalgroupperms-newgroupname' => 'Jeneng kelompok anyar:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Wènèhna idin-idin',
 	'centralauth-editgroup-subtitle' => 'Nyunting $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Mirsani $1',
 	'centralauth-editgroup-fieldset' => 'Idin-idin kanggo $1',
 	'centralauth-editgroup-name' => 'Jeneng kelompok:',
 	'centralauth-editgroup-display' => 'Jeneng kelompok sing dilokalisasi:',
@@ -17664,6 +17750,8 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'centralauth-editset' => 'Sèt-sèt wiki',
 	'centralauth-editset-legend-rw' => 'Sunting utawa nggawé sèt wiki',
 	'centralauth-editset-legend-ro' => 'Daptar sèt wiki',
+	'centralauth-editset-intro-rw' => 'Set wiki berikut telah dibuat.
+Anda dapat melihat dan mengubahnya, atau membuat set baru.',
 	'centralauth-editset-intro-ro' => 'Ngisor iki daptar sèt wiki sing ana.',
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|busak]])',
 	'centralauth-editset-new' => 'Gawé sèt anyar',
@@ -17694,6 +17782,7 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'centralauth-editset-success-delete' => 'Sèt wiki kasil dibusak.',
 	'centralauth-editset-return' => 'Bali menyang tampilan utama',
 	'centralauth-readonly' => 'Basis data CentralAuth kagembok',
+	'centralauth-readonlytext' => 'Basis data CentralAuth saat ini terkunci untuk entri baru dan perubahan lainnya, mungkin untuk pemeliharaan basis data secara rutin, yang setelahnya akan kembali normal.',
 	'right-globalgroupmembership' => 'Sunting kaanggotan ing kelompok-kelompok global',
 	'right-centralauth-autoaccount' => 'Mlebu sacara otomatis nganggo akun global',
 	'right-centralauth-unmerge' => 'Aja gabung akun global',
@@ -17701,6 +17790,8 @@ Sawijining klompok bisa dibusak kanthi ngilangi kabèh hak saka klompok iku.',
 	'right-centralauth-oversight' => 'Busak akun global', # Fuzzy
 	'right-centralauth-merge' => 'Gabung rékening-rékeningé',
 	'right-globalgrouppermissions' => 'Ngurus kelompok-kelompok global',
+	'centralloginsuccesful' => 'Bisa suksès mlebu log',
+	'centralauth-completelogin-back' => 'Bali menyang kaca sadhurunge',
 );
 
 /** Georgian (ქართული)
@@ -20605,6 +20696,8 @@ $messages['lo'] = array(
  */
 $messages['lrc'] = array(
 	'centralauth-groupname' => 'بنیاد ویکی رسانه',
+	'centralauth-merge-denied' => 'بوخشه، شما نبوئه وه ای بلگه دسرسی داشتویت',
+	'centralauth-merge-notlogged' => 'لطف بکید <span class="plainlinks">[$1 log in]</span> سی وارسی یه که حساوتو کلا وه یک شی وسه.',
 	'centralauth-merge-step1-submit' => 'دونسمنیا اومائن وامین تونه مئکم بکیت',
 	'centralauth-merge-step2-title' => 'حساویا هنی نه مئکم بکید',
 	'centralauth-merge-step2-submit' => 'دونسمنیا اومائن وامین تونه مئکم بکیت',
@@ -28586,6 +28679,7 @@ $messages['rtm'] = array(
 /** Russian (русский)
  * @author Ahonc
  * @author AlexSm
+ * @author Amire80
  * @author Cryptocoryne
  * @author DCamer
  * @author Dim Grits
@@ -28656,12 +28750,12 @@ $messages['ru'] = array(
 	'centralauth-list-home-title' => '«Домашний» вики-проект',
 	'centralauth-list-home-dryrun' => 'Для вашей единой учётной записи будут использованы значения пароля и адреса электронной почты в этом вики-проекте.',
 	'centralauth-list-attached-title' => 'Присоединённые учётные записи',
-	'centralauth-list-attached' => 'К единой учётной записи были автоматически присоединены учётные записи с именем «$1» на каждом из перечисленных ниже сайтов:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'К единой учётной записи будут автоматически присоединены учётные записи с именем «$1» на каждом из перечисленных ниже сайтов:', # Fuzzy
+	'centralauth-list-attached' => 'К единой учётной записи были автоматически присоединены учётные записи с именем «$1» на каждом из перечисленных ниже сайтов:',
+	'centralauth-list-attached-dryrun' => 'К единой учётной записи будут автоматически присоединены учётные записи с именем «$1» на каждом из перечисленных ниже сайтов:',
 	'centralauth-list-unattached-title' => 'Неприсоединённые учётные записи',
-	'centralauth-list-unattached' => 'Принадлежность вам учётной записи «$1» не может быть автоматически подтверждена на указанных ниже сайтах; вероятно, пароль на них не совпадает с паролем вашей основной учётной записи:', # Fuzzy
+	'centralauth-list-unattached' => 'Принадлежность вам {{PLURAL:$2|1=учётной записи|учётных записей}} «$1» не может быть автоматически подтверждена на {{PLURAL:$2|1=указанном ниже сайте|указанных ниже сайтах}}; вероятно, пароль на них не совпадает с паролем вашей основной учётной записи:',
 	'centralauth-foreign-link' => 'Участник $1 в $2',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|правка|правок|правки}} в $2', # Fuzzy
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|правка|правок|правки}} в $2',
 	'centralauth-merge-method-primary' => '«домашний» вики-проект',
 	'centralauth-merge-method-empty' => 'нет вклада',
 	'centralauth-merge-method-mail' => 'подтверждена электронной почтой',
@@ -28710,7 +28804,7 @@ $messages['ru'] = array(
 	'centralauth-admin-info-editcount' => 'Общий счётчик правок:',
 	'centralauth-admin-info-locked' => 'Заморожен:',
 	'centralauth-admin-info-hidden' => 'Уровень сокрытия:',
-	'centralauth-admin-info-groups' => '{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:', # Fuzzy
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:',
 	'centralauth-admin-info-nogroups' => 'нет',
 	'centralauth-admin-nohome' => 'невозможно определить',
 	'centralauth-admin-yes' => 'да',
@@ -28734,7 +28828,7 @@ $messages['ru'] = array(
 	'centralauth-admin-bad-input' => 'Ошибочный выбор объединения',
 	'centralauth-admin-none-selected' => 'Не были выбраны учётные записи для изменения.',
 	'centralauth-admin-already-unmerged' => 'Пропуск $1, уже разделён',
-	'centralauth-admin-unmerge-success' => 'Успешно разделена $1 {{PLURAL:$1|учётная запись|учётных записей|учётных записи}}', # Fuzzy
+	'centralauth-admin-unmerge-success' => 'Успешно разделена $1 {{PLURAL:$1|учётная запись|учётных записей|учётных записи}}',
 	'centralauth-admin-delete-title' => 'Удаление учётной записи',
 	'centralauth-admin-delete-description' => 'Удаление глобальной учётной записи приведёт к удалению глобальных настроек, отсоединению всех учётных записей и освобождению глобального имени, что позволит занять его другому участнику.
 Все локальные учётные записи продолжат существовать.
@@ -28789,19 +28883,19 @@ $messages['ru'] = array(
 	'centralauth-admin-action-hide-oversight' => 'Полностью скрыть выбранные учётные записи',
 	'centralauth-admin-multi-bot' => 'Свежие правки',
 	'centralauth-admin-multi-botcheck' => 'Помечать записи на странице [[Special:RecentChanges|{{int:recentchanges}}]] как правки бота.',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунд|секунды}} назад', # Fuzzy
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минут|минуты}} назад', # Fuzzy
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часов|часа}} назад', # Fuzzy
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|день|дней|дня}} назад', # Fuzzy
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|месяц|месяцев|месяца}} назад', # Fuzzy
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|год|лет|года}} назад', # Fuzzy
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунду|секунд|секунды}} назад',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минуту|минут|минуты}} назад',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|час|часов|часа}} назад',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|день|дней|дня}} назад',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|месяц|месяцев|месяца}} назад',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|год|лет|года}} назад',
 	'centralauth-prefs-status' => 'Состояние глобальной учётной записи:',
 	'centralauth-prefs-not-managed' => 'Не используется единая учётная запись',
 	'centralauth-prefs-unattached' => 'Не подтверждена',
 	'centralauth-prefs-complete' => 'Всё в порядке!',
 	'centralauth-prefs-migration' => 'Переносится',
-	'centralauth-prefs-count-attached' => 'Ваша учётная запись активна в $1 {{PLURAL:$1|проекте|проектах|проектах}}.', # Fuzzy
-	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах|проектах}}.', # Fuzzy
+	'centralauth-prefs-count-attached' => 'Ваша учётная запись активна в $1 {{PLURAL:$1|проекте|проектах}}.',
+	'centralauth-prefs-count-unattached' => 'Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах}}.',
 	'centralauth-prefs-detail-unattached' => 'Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.',
 	'centralauth-prefs-manage' => 'Управление глобальной учётной записью',
 	'centralauth-prefs-view' => 'Сведения о глобальной учётной записи',
@@ -28924,7 +29018,7 @@ $messages['ru'] = array(
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(нет)',
 	'centralauth-editset-usage' => 'Используется для групп:',
-	'centralauth-editset-badwikis' => '{{PLURAL:$2|1=Следующей вики|Следующих вики}} не существует: $1.', # Fuzzy
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|1=Следующей вики|Следующих вики}} не существует: $1.',
 	'centralauth-editset-success' => 'Набор вики успешно изменён.',
 	'centralauth-editset-success-delete' => 'Набор вики успешно удалён.',
 	'centralauth-editset-return' => 'Вернуться в основной режим',
@@ -34828,7 +34922,7 @@ $messages['tzm'] = array(
 	'centralauth-admin-list-method' => 'ⵜⴰⴱⵔⵉⴷⵜ',
 	'centralauth-admin-reason' => 'ⴰⵙⵔⴰⴳ:',
 	'centralauth-seconds-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⵜⴰⵙⵏⴰⵜ|ⵜⵉⵙⵏⴰⵜⵉⵏ}}',
-	'centralauth-minutes-ago' => 'ⵙⴳ $1 {{PLURAL: $1|ⵜⵓⵙⴷⴰⴷⵜ|ⵜⵓⵙⴷⴰⴷⵉⵏ}}',
+	'centralauth-minutes-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⵜⵓⵙⴷⴰⴷⵜ|ⵜⵓⵙⴷⴰⴷⵉⵏ}}',
 	'centralauth-hours-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⵜⴰⵙⵔⴰⴳⵜ|ⵜⵉⵙⵔⴰⴳⵉⵏ}}',
 	'centralauth-days-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⴰⵙⵙ|ⵓⵙⵙⴰⵏ}}',
 	'centralauth-months-ago' => 'ⵙⴳ $1 {{PLURAL:$1|ⴰⵢⵢⵓⵔ|ⴰⵢⵢⵓⵔⵏ}}',
@@ -34938,11 +35032,11 @@ $messages['ug-arab'] = array(
 	'centralauth-listusers-attached' => '[[User:$1|يەرلىكتە مەۋجۈت]]',
 	'centralauth-listusers-nolocal' => 'قۇشۇلمىغان ياكى يەرلىكتە مەۋجۇت ئەمەس',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|سېكۇنت}} ئىلگىرى',
-	'centralauth-minutes-ago' => '$1 {{PLURAL: $1|مىنۇت}} ئىلگىرى',
-	'centralauth-hours-ago' => '$1 {{PLURAL: $1|سائەت}} ئىلگىرى',
-	'centralauth-days-ago' => '$1 {{PLURAL: $1|كۈن}} ئىلگىرى',
-	'centralauth-months-ago' => '$1 {{PLURAL: $1|ئاي}} ئىلگىرى',
-	'centralauth-years-ago' => '$1 {{PLURAL: $1|يىل}} ئىلگىرى',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|مىنۇت}} ئىلگىرى',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|سائەت}} ئىلگىرى',
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|كۈن}} ئىلگىرى',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|ئاي}} ئىلگىرى',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|يىل}} ئىلگىرى',
 	'centralauth-prefs-status' => 'ئومۇمىيەت ھېسابات ھالىتى',
 	'centralauth-prefs-not-managed' => 'بىر تۇتاش ھېسابات ئىشلىتىلمىگەن',
 	'centralauth-prefs-unattached' => 'جەزملەنمىگەن',
