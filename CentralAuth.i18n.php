@@ -541,8 +541,15 @@ Refers to {{msg-mw|Centralauth-groupname}}.',
 * $2 - ...',
 	'centralauth-notice-dryrun' => 'Message displayed while account unification is in demonstration mode.',
 	'centralauth-disabled-dryrun' => 'Message displayed while account unification is disabled.',
-	'centralauth-error-locked' => "Message displayed while account unification is not possible because the acting user's account is locked.",
-	'centralauth-error-unmerged' => 'Message displayed when user is prevented from editing because they have not merged their account',
+	'centralauth-error-locked' => "Message displayed while account unification is not possible because the acting user's account is locked.
+
+See also:
+* {{msg-mw|Centralauth-error-unmerged}}
+* {{msg-mw|Centralauth-login-error-locked}}",
+	'centralauth-error-unmerged' => 'Message displayed when user is prevented from editing because they have not merged their account.
+
+See also:
+* {{msg-mw|Centralauth-error-locked}}',
 	'centralauth-readmore-text' => 'Message that refers to more information on account unification.
 
 Preceded by any one of the following messages:
@@ -897,8 +904,12 @@ See also:
 * $1 - username
 * $2 - ...
 * $3 - reason',
-	'centralauth-login-error-locked' => "Message displayed while login is not possible because the acting user's account is locked. Parameters:
-* $1 - username",
+	'centralauth-login-error-locked' => "Message displayed while login is not possible because the acting user's account is locked.
+
+Parameters:
+* $1 - (Unused) username
+See also:
+* {{msg-mw|Centralauth-error-locked}}",
 	'centralauth-log-name' => '{{doc-logpage}}',
 	'centralauth-log-entry-delete' => 'Parameters:
 * $1 - username
@@ -2758,10 +2769,10 @@ Si yes tu, pues finar el procesu de fusión de cuentes sólo con escribir la con
 	'centralauth-list-home-title' => 'Wiki principal',
 	'centralauth-list-home-dryrun' => "La conseña y la direición de corréu electrónicu configuraos nesta wiki s'usarán pa la to cuenta unificada.",
 	'centralauth-list-attached-title' => 'Cuentes asociaes',
-	'centralauth-list-attached' => 'La cuenta nomada "$1" en caún de los siguientes sitios foi asociada automáticamente a la cuenta fusionada:',
-	'centralauth-list-attached-dryrun' => 'La cuenta nomada "$1" en caún de los siguientes sitios va ser asociada automáticamente a la cuenta fusionada:',
+	'centralauth-list-attached' => 'Les cuentes nomaes "$1" en caún de los siguientes sitios asociáronse automáticamente a la cuenta unificada:',
+	'centralauth-list-attached-dryrun' => 'Les cuentes nomaes "$1" en caún de los siguientes sitios asociaránse automáticamente a la cuenta unificada:',
 	'centralauth-list-unattached-title' => 'Cuentes non asociaes',
-	'centralauth-list-unattached' => 'Nun se pudo confirmar automáticamente que la cuenta "$1" ye de to nos siguientes sitios; lo más probable ye que tengan claves distintes a les de la to cuenta primaria:',
+	'centralauth-list-unattached' => 'Nun se pudo confirmar automáticamente que-y {{PLURAL:$2|perteneza la cuenta|pertenezan les cuentes}} "$1" {{PLURAL:$2|del siguiente sitiu|de los siguientes sitios}}; lo más probable ye que {{PLURAL:$2|tenga una contraseña distinta|tengan contraseñes distintes}} a la de la cuenta primaria:',
 	'centralauth-foreign-link' => 'Usuariu $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|collaboración|collaboraciones}} en $2',
 	'centralauth-merge-method-primary' => 'Wiki principal',
@@ -2812,6 +2823,8 @@ Si la cuenta global tamién ye de to, pues fusionar esta cuenta escribiendo la c
 	'centralauth-admin-info-editcount' => "Cuenta total d'ediciones:",
 	'centralauth-admin-info-locked' => 'Candáu:',
 	'centralauth-admin-info-hidden' => "Nivel d'anubrimientu:",
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Grupu global|Grupos globales}}:',
+	'centralauth-admin-info-nogroups' => 'dengún',
 	'centralauth-admin-nohome' => 'nun se pue determinar',
 	'centralauth-admin-yes' => 'sí',
 	'centralauth-admin-no' => 'non',
@@ -2829,6 +2842,7 @@ Motivu: $1',
 	'centralauth-admin-list-attached-on' => 'Asociada a',
 	'centralauth-admin-list-method' => 'Métodu',
 	'centralauth-admin-list-editcount' => "Contador d'ediciones",
+	'centralauth-admin-list-groups' => 'Grupos',
 	'centralauth-admin-list-blocked' => 'Bloquiáu',
 	'centralauth-admin-unmerge' => 'Dixebrar seleicionaes',
 	'centralauth-admin-merge' => 'Fusionar seleicionaes',
@@ -2871,6 +2885,7 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-admin-logsnippet' => 'Cambios anteriores na cuenta global',
 	'centralauth-admin-suppressreason' => 'Desaniciada globalmente por $1 pol motivu darréu: $2',
 	'centralauth-admin-not-authorized' => 'Nun tien permisos pa facer esta aición',
+	'centralauth-admin-too-many-edits' => 'La cuenta global "<nowiki>$1</nowiki>" tien más de $2 {{PLURAL:$2|edición|ediciones}} y nun se pue tapecer.',
 	'globalusers' => 'Llista de cuentes globales',
 	'centralauth-listusers-locked' => 'candáu',
 	'centralauth-listusers-attached' => '[[User:$1|esiste llocalmente]]',
@@ -2916,6 +2931,7 @@ Si se renoma causará la dixebra ente la cuenta llocal y la global.",
 	'centralauth-login-no-others' => "Tas coneutáu automáticamente n'otros proyeutos de {{int:Centralauth-groupname}}.",
 	'centralauth-logout-no-others' => "Tas desconectáu automáticamente d'otros proyeutos de {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'anubríu de mou global por $1 a les $2 col motivu darréu: $3',
+	'centralauth-login-error-locked' => 'Nun pue aniciar sesión porque la so cuenta ta candada globalmente.',
 	'centralauth-log-name' => 'Rexistru de cuenta global',
 	'centralauth-log-header' => 'Esti rexistru contién operaciones de tocantes a cuentes globales: eliminaciones, bloqueos y desbloqueos.',
 	'centralauth-log-entry-delete' => 'eliminó la cuenta global "$1"',
@@ -6734,6 +6750,7 @@ $messages['ckb'] = array(
 	'centralauth-admin-info-registered' => 'تۆمارکراو:',
 	'centralauth-admin-info-home' => 'ویکی سەرەکی:',
 	'centralauth-admin-info-editcount' => 'سەرجەمی ژمارەی دەستکارییەکان',
+	'centralauth-admin-info-nogroups' => 'ھیچ',
 	'centralauth-admin-yes' => 'بەڵێ',
 	'centralauth-admin-no' => 'نەخێر',
 	'centralauth-admin-list-legend-ro' => 'پێرستی ھەژمارە خۆماڵییەکان',
@@ -6745,6 +6762,7 @@ $messages['ckb'] = array(
 	'centralauth-admin-list-localwiki' => 'ویکیی خۆماڵی',
 	'centralauth-admin-list-method' => 'شێواز',
 	'centralauth-admin-list-editcount' => 'ژمارەی دەستکارییەکان',
+	'centralauth-admin-list-groups' => 'گرووپەکان',
 	'centralauth-admin-list-blocked' => 'بەربەسراو',
 	'centralauth-admin-delete-title' => 'سڕینەوەی ھەژمار',
 	'centralauth-admin-delete-button' => 'ئەم ھەژمارە بسڕەوە',
@@ -7760,6 +7778,7 @@ Omdøbning vil betyde at den lokale brugerkonto vil blive adskilt fra den global
 	'centralauth-login-no-others' => 'Du er automatisk blevet logget på andre af {{int:Centralauth-groupname}}s projekter.',
 	'centralauth-logout-no-others' => 'Du er automatisk blevet logget af {{int:Centralauth-groupname}}s andre projekter.',
 	'centralauth-hidden-blockreason' => 'skjult globalt af $1 på $2 med følgende begrundelse: $3',
+	'centralauth-login-error-locked' => 'Du kan ikke logge på, fordi din konto er låst globalt.',
 	'centralauth-log-name' => 'Global kontolog',
 	'centralauth-log-header' => 'Denne log indeholder hændelser for globale kontoer: sletninger, låsninger og oplåsninger.',
 	'centralauth-log-entry-delete' => 'slettede den globale konto "$1"',
@@ -8929,6 +8948,7 @@ Pśemjenjenje wustatkujo, až lokalne konto wótwńoźujo se z globalnego wužyw
 	'centralauth-login-no-others' => 'Sy se awtomatiski pśizjawił do drugich projektow {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Sy se awtomatiski wótzjawił z drugich projektow {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalnje schowany wót $1 $2 ze slědujuceje pśicyny: $3',
+	'centralauth-login-error-locked' => 'Njamóžoš se pśizjawiś, dokulaž twójo konto jo globalnje zastajone.',
 	'centralauth-log-name' => 'Protokol globalnego konta',
 	'centralauth-log-header' => 'Toś ten protokol wopśimujo akcije pód globalnymi kontami: lašowanja, zastajenja a pśipušćenja.',
 	'centralauth-log-entry-delete' => 'globalne konto "$1" wulašowane',
@@ -9495,10 +9515,10 @@ Se vi estas tiu, vi povas finfari la ensalutunuigan proceson simple tajpante la 
 	'centralauth-list-home-title' => 'Hejma vikio',
 	'centralauth-list-home-dryrun' => 'La pasvorto kaj retadreso en ĉi tiu vikio estos uzitaj por via unuigita konto.',
 	'centralauth-list-attached-title' => 'Ligitaj kontoj',
-	'centralauth-list-attached' => 'La konto nomita "$1" sur ĉiu el al sekvantaj paĝaroj estis aŭtomate ligita al la unuigita konto:',
-	'centralauth-list-attached-dryrun' => 'La konto nomita "$1" sur ĉiu el al sekvantaj paĝaroj estos aŭtomate ligita al la unuigita konto:',
+	'centralauth-list-attached' => 'La konto nomita "$1" sur ĉiu el al sekvantaj paĝaroj estis aŭtomate ligita al la unuigita konto:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'La konto nomita "$1" sur ĉiu el al sekvantaj paĝaroj estos aŭtomate ligita al la unuigita konto:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Neligitaj kontoj',
-	'centralauth-list-unattached' => 'La konto "$1" ne povis esti aŭtomate konfirmita kiel apartenanta al vi sur jenaj paĝaroj; plej verŝajne ili havas pasvorton malsaman de tiu de via ĉefa konto:',
+	'centralauth-list-unattached' => 'La konto "$1" ne povis esti aŭtomate konfirmita kiel apartenanta al vi sur jenaj paĝaroj; plej verŝajne ili havas pasvorton malsaman de tiu de via ĉefa konto:', # Fuzzy
 	'centralauth-foreign-link' => 'Uzanto $1 ĉe $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kontribuo|kontribuoj}} en $2',
 	'centralauth-merge-method-primary' => 'hejma vikio',
@@ -9536,13 +9556,13 @@ Se la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi ta
 	'centralauth-attach-success' => 'La konto estis migrigita al la unuigita konto.',
 	'centralauth' => 'Administranto de ĝeneralaj uzantoj', # Fuzzy
 	'centralauth-admin-intro' => 'Ĉi tiu interfaco estas uzebla por administrado de ĝeneralaj kontoj.',
-	'centralauth-admin-manage' => 'Prizorgi uzulajn datenojn', # Fuzzy
+	'centralauth-admin-manage' => 'Prizorgi kontajn datenojn',
 	'centralauth-admin-username' => 'Salutnomo:',
 	'centralauth-admin-lookup-ro' => 'Vidi uzant-informojn',
 	'centralauth-admin-lookup-rw' => 'Administri konton de uzanto',
 	'centralauth-admin-permission' => 'Nur stevardoj povas kunigi kontojn de aliaj uzantoj.',
 	'centralauth-admin-no-unified' => 'Ne estas unuigita konto por ĉi tiu uzanto.',
-	'centralauth-admin-info-header' => 'Infomo pri ĝeneralaj uzantoj', # Fuzzy
+	'centralauth-admin-info-header' => 'Informo pri tutvikia konto',
 	'centralauth-admin-info-username' => 'Salutnomo:',
 	'centralauth-admin-info-id' => 'Uzanta ID:',
 	'centralauth-admin-info-registered' => 'Registrita:',
@@ -9735,7 +9755,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
 	'right-globalgroupmembership' => 'Redakti membrecon al ĝeneralaj grupoj',
 	'right-centralauth-autoaccount' => 'Aŭtomate ensaluti kun ĝenerala konto',
 	'right-centralauth-unmerge' => 'Malkunigi ĝeneralan konton',
-	'right-centralauth-lock' => 'Ŝlosi aŭ kaŝi ĝeneralan konton', # Fuzzy
+	'right-centralauth-lock' => 'Ŝlosi aŭ malŝlosi tutvikian konton',
 	'right-centralauth-oversight' => 'Subpremi ĝeneralan konton', # Fuzzy
 	'right-centralauth-merge' => 'Kunfandi la konton',
 	'right-globalgrouppermissions' => 'Administri ĝeneralajn grupojn',
@@ -9749,6 +9769,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Ascánder
  * @author Benfutbol10
  * @author Bernardom
+ * @author Ciencia Al Poder
  * @author Crazymadlover
  * @author Dferg
  * @author Drini
@@ -9831,11 +9852,11 @@ Si éste eres tú, puedes terminar el proceso de unificación ingresando aquí l
 	'centralauth-list-home-title' => 'Wiki local',
 	'centralauth-list-home-dryrun' => 'La contraseña y la dirección de correo electrónico asignados a esta cuenta serán usados para la cuenta unificada.',
 	'centralauth-list-attached-title' => 'Cuentas vinculadas',
-	'centralauth-list-attached' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios ha sido automáticamente añadida a la cuenta unificada:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'La cuenta llamada "$1" en cada uno de los siguientes sitios será automáticamente añadida a la cuenta unificada:', # Fuzzy
+	'centralauth-list-attached' => 'La cuenta llamada «$1» en cada uno de los siguientes sitios ha sido añadida automáticamente a la cuenta unificada:',
+	'centralauth-list-attached-dryrun' => 'La cuenta llamada «$1» en cada uno de los siguientes sitios será añadida automáticamente a la cuenta unificada:',
 	'centralauth-list-unattached-title' => 'Cuentas no vinculadas',
-	'centralauth-list-unattached' => 'No se pudo confirmar automáticamente que la cuenta «$1» es tuya en los siguientes sitios;
-probablemente tienen una contraseña diferente a la de tu cuenta primaria:', # Fuzzy
+	'centralauth-list-unattached' => 'No se pudo confirmar que {{PLURAL:$2|la cuenta|las cuentas}} con nombre «$1» te {{PLURAL:$2|pertenece|pertenecen}} en {{PLURAL:$2|el siguiente|los siguientes sitios}};
+probablemente {{PLURAL:$2|tiene|tienen}} una contraseña diferente a la de tu cuenta principal:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribuciones}} en $2',
 	'centralauth-merge-method-primary' => 'wiki de origen',
@@ -9887,6 +9908,8 @@ Si la cuenta global también es suya, puede unir esta cuenta si escribe la contr
 	'centralauth-admin-info-editcount' => 'Contador total de ediciones:',
 	'centralauth-admin-info-locked' => 'Deshabilitada globalmente:',
 	'centralauth-admin-info-hidden' => 'Nivel de ocultación:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|Grupo|Grupos}} globales:',
+	'centralauth-admin-info-nogroups' => 'ninguno',
 	'centralauth-admin-nohome' => 'no se pudo determinar',
 	'centralauth-admin-yes' => 'sí',
 	'centralauth-admin-no' => 'no',
@@ -9945,6 +9968,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-logsnippet' => 'Cambios previos en el estado de la cuenta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 por la siguiente razón: $2',
 	'centralauth-admin-not-authorized' => 'No tienes permisos para realizar esta acción',
+	'centralauth-admin-too-many-edits' => 'La cuenta global "<nowiki>$1</nowiki>" tiene más de $2   {{PLURAL:$2|edición|ediciones}} y no puede ocultarse.',
 	'globalusers' => 'Lista de usuarios globales',
 	'centralauth-listusers-locked' => 'bloqueado',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
@@ -9962,7 +9986,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-action-hide-lists' => 'Ocultar las cuentas seleccionadas de las listas públicas',
 	'centralauth-admin-action-hide-oversight' => 'Ocultar completamente las cuentas seleccionadas',
 	'centralauth-admin-multi-bot' => 'Cambios recientes',
-	'centralauth-admin-multi-botcheck' => 'Marcar las entradas en [[Especial:CambiosRecientes| {{int:recentchanges}}]] como entradas de bot.', # Fuzzy
+	'centralauth-admin-multi-botcheck' => 'Marcar las entradas en [[Special:RecentChanges|{{int:recentchanges}}]] como entradas de bot.',
 	'centralauth-seconds-ago' => 'hace $1 {{PLURAL:$1|segundo|segundos}}',
 	'centralauth-minutes-ago' => 'hace $1 {{PLURAL:$1|minuto|minutos}}',
 	'centralauth-hours-ago' => 'hace $1 {{PLURAL:$1|hora|horas}}',
@@ -9990,6 +10014,7 @@ Renombrarlo causará que el usuario local se separe del global.',
 	'centralauth-login-no-others' => 'Has sido automáticamente registrado dentro de otros proyectos de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Automáticamente se ha cerrado la sesión de tu cuenta de los otros proyectos de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'ocultada globalmente por $1 a las $2 con la siguiente razón: $3',
+	'centralauth-login-error-locked' => 'No puedes iniciar sesión porque tu cuenta está bloqueada globalmente.',
 	'centralauth-log-name' => 'Registro de administración de cuentas globales',
 	'centralauth-log-header' => 'Este registro contiene las operaciones bajo cuentas globales: borrados, protecciones y desprotecciones.',
 	'centralauth-log-entry-delete' => 'borró la cuenta global «$1»',
@@ -11239,6 +11264,7 @@ Tunnuksen nimeäminen uudelleen aiheuttaa paikallisen käyttäjätunnuksen eroam
 	'centralauth-login-no-others' => 'Sinut on automaattisesti kirjattu sisään muihin {{int:Centralauth-groupname}} -hankkeisiin.',
 	'centralauth-logout-no-others' => 'Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.',
 	'centralauth-hidden-blockreason' => 'piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3',
+	'centralauth-login-error-locked' => 'Et voi kirjautua sisään, koska tunnuksesi on lukittu järjestelmänlaajuisesti.',
 	'centralauth-log-name' => 'Järjestelmänlaajuisten tunnusten käsittelyloki',
 	'centralauth-log-header' => 'Tässä lokissa on järjestelmänlaajuisten käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.',
 	'centralauth-log-entry-delete' => 'poisti järjestelmänlaajuisen käyttäjätunnuksen $1',
@@ -11858,6 +11884,7 @@ Un changement de nom local détachera ce compte du compte global.',
 	'centralauth-login-no-others' => 'Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Vous avez été automatiquement déconnecté{{GENDER:||e|(e)}} des autres projets de {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'masqué globalement par $1 sur $2 pour le motif suivant : $3',
+	'centralauth-login-error-locked' => 'Vous ne pouvez pas vous connecter parce que votre compte est bloqué globalement.',
 	'centralauth-log-name' => 'Journal des comptes globaux',
 	'centralauth-log-header' => 'Ce journal contient les opérations relatives aux comptes globaux : suppressions, blocages et déblocages.',
 	'centralauth-log-entry-delete' => 'a supprimé le compte global « $1 »',
@@ -14766,6 +14793,7 @@ Přemjenowanje wuskutkuje, zo lokalne konto so z globalneho wužiwarskeho konta 
 	'centralauth-login-no-others' => 'Sy so awtomatisce do druhich projektow {{int:Centralauth-groupname}} přizjewił.',
 	'centralauth-logout-no-others' => 'Sy so awtomatisce z druhich projektow {{int:Centralauth-groupname}} wotzjewił.',
 	'centralauth-hidden-blockreason' => 'wot $1 $2 ze slědowaceje přičiny globalnje schowany: $3',
+	'centralauth-login-error-locked' => 'Njemóžeš so přizjewić, dokelž twoje konto je globalnje zawrjene.',
 	'centralauth-log-name' => 'Protokol globalneho konta',
 	'centralauth-log-header' => 'Tutón protokol wobsahuje wše wušmórnjenja, zawrjenja a wotewrjenja globalnych kontow.',
 	'centralauth-log-entry-delete' => 'globalne konto "$1" zničene',
@@ -17279,6 +17307,7 @@ $messages['ja'] = array(
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群に自動的にログインしました。',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}の他のプロジェクト群から自動的にログアウトしました。',
 	'centralauth-hidden-blockreason' => '$1 により $2 にグローバルに秘匿。理由: $3',
+	'centralauth-login-error-locked' => 'あなたのアカウントはグローバルにロックされているため、ログインできません。',
 	'centralauth-log-name' => 'グローバルアカウント記録',
 	'centralauth-log-header' => 'これは、グローバルアカウントの操作 (削除、ロック、ロック解除) の記録です。',
 	'centralauth-log-entry-delete' => 'グローバルアカウント「$1」を削除しました',
@@ -20177,6 +20206,7 @@ Eng Ëmbenennung hëlt de lokale Benotzerkont aus dem globale Benotzerkonte-Syst
 	'centralauth-login-no-others' => 'Dir gouft automatesch an aner Projete vun {{int:Centralauth-groupname}} ageloggt:',
 	'centralauth-logout-no-others' => 'Dir gouft automatesch aus den anere Projete vu(n) {{int:Centralauth-groupname}} ausgeloggt.',
 	'centralauth-hidden-blockreason' => 'global verstoppt vum $1 de(n) $2 mat dësem Grond: $3',
+	'centralauth-login-error-locked' => 'Dir kënnt Iech net alogge well Äre Benotzerkont global gespaart ass.',
 	'centralauth-log-name' => 'Lëscht vun de globale Benotzerkonten',
 	'centralauth-log-header' => 'An dëser Lëscht stinn all Operatioune déi global Benotzerkonten bereffen: Läsche, Spären a Ohiewe vu Spären.',
 	'centralauth-log-entry-delete' => 'geläschte globale Benotzerkont "$1"',
@@ -21916,6 +21946,7 @@ $messages['mk'] = array(
 	'centralauth-login-no-others' => 'Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобално скриен од $1 во $2 од следнава причина: $3',
+	'centralauth-login-error-locked' => 'Не можете да се најавите бидејќи сметката ви е глобално заклучена.',
 	'centralauth-log-name' => 'Дневник на глобални сметки',
 	'centralauth-log-header' => 'Овој дневник содржи записи за операциите со глобални сметки: бришења, заклучувања и отклучувања.',
 	'centralauth-log-entry-delete' => 'ја избриша глобалната сметка „$1“',
@@ -26170,7 +26201,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-multi-username' => 'Podaj jedną lub więcej nazw użytkowników,  oddzielając je nową linią',
 	'centralauth-admin-multi-notfound' => 'Nie znaleziono nazw użytkowników',
 	'centralauth-admin-multi-searchprefix' => 'Lub szukaj kont wg prefiksów', # Fuzzy
-	'centralauth-admin-multi-intro' => 'Aktualizacja wielu globalnych użytkowników jednocześnie', # Fuzzy
+	'centralauth-admin-multi-intro' => 'Jednoczesna aktualizacja wielu kont globalnych',
 	'centralauth-admin-action-lock-nochange' => 'Nie należy zmieniać blokady',
 	'centralauth-admin-action-lock-lock' => 'Zablokuj wybrane konta',
 	'centralauth-admin-action-lock-unlock' => 'Odblokuj wybrane konta',
@@ -33149,10 +33180,10 @@ $messages['te'] = array(
 	'centralauth-list-home-title' => 'ప్రధాన వికీ',
 	'centralauth-list-home-dryrun' => 'ఈ వికీలోని మీ సంకేతపదం మరియు ఈ-మెయిల్ చిరునామాని మీ ఏకీకృత ఖాతాకి ఉపయోగిస్తాం.',
 	'centralauth-list-attached-title' => 'జోడించిన ఖాతాలు',
-	'centralauth-list-attached' => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:',
-	'centralauth-list-attached-dryrun' => 'ఈ క్రింద పేర్కొన్న సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకి జోడించబడతాయి:',
+	'centralauth-list-attached' => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'ఈ క్రింద పేర్కొన్న సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకి జోడించబడతాయి:', # Fuzzy
 	'centralauth-list-unattached-title' => 'జోడించని ఖాతాలు',
-	'centralauth-list-unattached' => 'ఈ క్రింద పేర్కొన్న సైట్లలో "$1" అనే ఖాతా మీదే అని నిర్ధారించలేకున్నాం; బహుశా వీటిల్లో సంకేతపదం మీ ప్రధాన ఖాతాది కాక వేరేది అయివుండవచ్చు:',
+	'centralauth-list-unattached' => 'ఈ క్రింద పేర్కొన్న సైట్లలో "$1" అనే ఖాతా మీదే అని నిర్ధారించలేకున్నాం; బహుశా వీటిల్లో సంకేతపదం మీ ప్రధాన ఖాతాది కాక వేరేది అయివుండవచ్చు:', # Fuzzy
 	'centralauth-foreign-link' => '$2లో వాడుకరి $1',
 	'centralauth-merge-method-primary' => 'ప్రధాన వికీ',
 	'centralauth-merge-method-empty' => 'రచనలేమీ లేవు',
@@ -33176,15 +33207,15 @@ $messages['te'] = array(
 	'centralauth-attach-text' => 'ఈ ఖాతా ఇంకా ఏకీకృత ఖాతాలో విలీనం కాలేదు. క్రింద పేర్కొన్న ఏకీకృత ఖాతా మీదే అయితే, దాని సంకేతపదాన్ని ఇచ్చి ఈ ఖాతాని విలీనం చేసుకోవచ్చు:',
 	'centralauth-attach-submit' => 'ఖాతాను బదిలీ చెయ్యండి',
 	'centralauth-attach-success' => 'ఈ ఖాతా ఏకీకృత ఖాతాకు బదిలీ చేయబడినది',
-	'centralauth' => 'సార్వత్రిక వాడుకరి నిర్వహణ', # Fuzzy
+	'centralauth' => 'సార్వత్రిక ఖాతా నిర్వహణ',
 	'centralauth-admin-intro' => 'సార్వత్రిక ఖాతాల నిర్వహణకై ఈ ముఖాంతరాన్ని ఉపయోగించవచ్చు.',
-	'centralauth-admin-manage' => 'వాడుకరి డాబాను నిర్వహించు', # Fuzzy
+	'centralauth-admin-manage' => 'ఖాతా డాటాను నిర్వహించు',
 	'centralauth-admin-username' => 'వాడుకరి పేరు:',
 	'centralauth-admin-lookup-ro' => 'వాడుకరి సమాచారాన్ని చూడండి',
 	'centralauth-admin-lookup-rw' => 'వాడుకరి ఖాతా నిర్వహణ',
 	'centralauth-admin-permission' => 'స్టీవార్డులు మాత్రమే ఇతరుల ఖాతాలను విలీనం చెయ్యగలరు.',
 	'centralauth-admin-no-unified' => 'ఈ వాడుకరిపేరుకి ఏకీకృత ఖాతా లేదు.',
-	'centralauth-admin-info-header' => 'సార్వత్రిక వాడుకరి సమాచారం', # Fuzzy
+	'centralauth-admin-info-header' => 'సార్వత్రిక ఖాతా సమాచారం',
 	'centralauth-admin-info-username' => 'వాడుకరి పేరు:',
 	'centralauth-admin-info-id' => 'వాడుకరి ID:',
 	'centralauth-admin-info-registered' => 'నమోదైనది:',
@@ -33238,7 +33269,7 @@ $messages['te'] = array(
 ** అనుచితమైన వ్యక్తిగత సమాచారం',
 	'centralauth-admin-logsnippet' => 'గత సార్వత్రిక ఖాతా మార్పులు',
 	'centralauth-admin-suppressreason' => '$1 సార్వత్రికంగా అణచివేసారు. కారణం: $2',
-	'globalusers' => 'సార్వత్రిక వాడుకరుల జాబితా', # Fuzzy
+	'globalusers' => 'సార్వత్రిక ఖాతాల జాబితా',
 	'centralauth-listusers-locked' => 'లాకు అయింది',
 	'centralauth-listusers-attached' => '[[User:$1|స్థానికంగా ఉనికిలో ఉంది]]',
 	'centralauth-listusers-nolocal' => 'దేనికీ జోడించి లేదు, లేదా స్థానికంగా లేదు',
@@ -33257,7 +33288,7 @@ $messages['te'] = array(
 	'centralauth-prefs-count-unattached' => '$1 {{PLURAL:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.',
 	'centralauth-prefs-detail-unattached' => 'ఈ ప్రాజెక్టు సైటు సార్వత్రిక ఖాతాకు చెందినదని నిర్ధారణ కాలేదు.',
 	'centralauth-prefs-manage' => 'మీ సార్వత్రిక ఖాతాను నిర్వహించుకోండి',
-	'centralauth-prefs-view' => 'సార్వత్రిక వాడుకరి సమాచారం చూపించు', # Fuzzy
+	'centralauth-prefs-view' => 'సార్వత్రిక ఖాతా సమాచారాన్ని చూడండి',
 	'centralauth-renameuser-merged' => 'వాడుకరి $1 ను ఏకీకృత లాగిన్ వ్యవస్థకు చేర్చాం.
 దాని పేరు మారిస్తే, స్థానిక వాడుకరి సార్వత్రిక వాడుకరి నుండి విడివడిపోతుంది.', # Fuzzy
 	'centralauth-renameuser-reserved' => 'వాడుకరి $2, ఓ సార్వత్రిక ఖాతా కోసం రిజర్వు చేయబడి ఉంది.', # Fuzzy
@@ -35372,6 +35403,7 @@ $messages['uk'] = array(
 	'centralauth-login-no-others' => 'Ви автоматично ввійшли до системи в усіх проектах {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Ви автоматично завершили сеанс в інших проектах {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобально прихований користувачем $1 $2 через $3',
+	'centralauth-login-error-locked' => 'Ви не можете увійти в систему тому, що ваш обліковий запис заблоковано глобально.',
 	'centralauth-log-name' => 'Журнал керування глобальними обліковими записами',
 	'centralauth-log-header' => 'Цей журнал містить записи про дії над глобальними обліковими записами: вилучення, блокування, розблокування.',
 	'centralauth-log-entry-delete' => 'вилучив глобальний обліковий запис «$1»',
@@ -36275,6 +36307,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-login-no-others' => 'Đã đăng nhập cùng lúc vào các dự án khác của {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Đã tự động đăng xuất bạn cùng lúc khỏi các dự án khác của {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'bị $1 ẩn toàn cục vào lúc $2 vì lý sao sau: $3',
+	'centralauth-login-error-locked' => 'Bạn không thể đăng nhập vì tài khoản của bạn bị khóa toàn cục.',
 	'centralauth-log-name' => 'Nhật trình quản lý tài khoản toàn cục',
 	'centralauth-log-header' => 'Nhật trình này chứa các tác vụ đối với tài khoản toàn cục: xóa, khóa và mở khóa.',
 	'centralauth-log-entry-delete' => 'đã xóa tài khoản toàn cục “$1”',
@@ -37347,6 +37380,7 @@ $messages['zh-hans'] = array(
 	'centralauth-login-no-others' => '你已经自动登录到{{int:Centralauth-groupname}}的其他项目。',
 	'centralauth-logout-no-others' => '你已经自动登出{{int:Centralauth-groupname}}的其他项目。',
 	'centralauth-hidden-blockreason' => '已由$1在$2全域隐藏，原因：$3',
+	'centralauth-login-error-locked' => '您不能登录因为您的账户已被全局锁定。',
 	'centralauth-log-name' => '全局账户日志',
 	'centralauth-log-header' => '这个日志包含全域账户的动作: 删除、锁定以及解除锁定。',
 	'centralauth-log-entry-delete' => '已经删除全域账户"$1"',
@@ -37722,6 +37756,7 @@ $messages['zh-hant'] = array(
 	'centralauth-login-no-others' => '你已經自動登錄到{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-logout-no-others' => '您已自動登出{{int:Centralauth-groupname}}的其他項目。',
 	'centralauth-hidden-blockreason' => '全球隱藏 (在$1 $2)，原因：$3',
+	'centralauth-login-error-locked' => '由於您的賬戶被全局鎖定，您目前無法登錄。',
 	'centralauth-log-name' => '全域帳戶管理日誌',
 	'centralauth-log-header' => '這個日誌包含全域帳戶的動作: 刪除、鎖定以及解除鎖定。',
 	'centralauth-log-entry-delete' => '已經刪除全域帳戶"$1"',
