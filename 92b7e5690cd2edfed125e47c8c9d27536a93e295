@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_95875966",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-01-06T17:59:16Z",
+      "side": 1,
+      "message": "You could use the 1 line form. I\u0027ve noticed that some people find that easier to digest (possibly because they see these comments as superfluous):\n\n /** @var $engine RCFeedEngine */",
+      "revId": "92b7e5690cd2edfed125e47c8c9d27536a93e295",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
