@@ -6590,6 +6590,7 @@ $messages['ce'] = array(
 	'centralauth-admin-manage' => 'Декъашхочун хаам урхалла дар', # Fuzzy
 	'centralauth-admin-username' => 'Декъашхочун цӀе:',
 	'centralauth-admin-lookup-ro' => 'Декъашхочун хааме хьажар',
+	'centralauth-admin-permission' => 'Стюардийн бен таро яц декъашхойн дӀаяздарш цхьаьнатоха.',
 	'centralauth-admin-info-header' => 'Глобальни декъашхойн дӀаяздаршан хаамаш',
 	'centralauth-admin-info-username' => 'Декъашхочун цӀе:',
 	'centralauth-admin-info-id' => 'Декъашхочун ID:',
@@ -8396,6 +8397,7 @@ Sie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.',
 );
 
 /** Zazaki (Zazaki)
+ * @author Asmen
  * @author Aspar
  * @author Erdemaslancan
  * @author Gorizon
@@ -8459,11 +8461,11 @@ Ma ef bike!',
 	'centralauth-list-home-title' => 'Wikiya keyi',
 	'centralauth-list-home-dryrun' => 'Parola u adresê e-mailî ke ena wîkî de qeyd biyo, ey hesabê yewînî de zi qeyd beno.',
 	'centralauth-list-attached-title' => 'Hesaban ke ataç biyo',
-	'centralauth-list-attached' => 'Hesabê "$1" ena di wikide otomatik hesab odo otomatik yewîna giredayeno:',
-	'centralauth-list-attached-dryrun' => 'Hesabê "$1" ena di wikide otomatik hesab odo otomatik yewîna giredayeno:',
+	'centralauth-list-attached' => 'Hesabi be namey "$1" hergı jûyê pelanê cêrênan otomatikmen do tewrê hesabê yewbiyaey bo (hesabo yewbiyae de tey bo):',
+	'centralauth-list-attached-dryrun' => 'Hesabi be namey "$1" hergı jûyê pelanê cêrênan otomatikmen do tewrê hesabê yewbiyaey bo (hesabo yewbiyae de tey bo):',
 	'centralauth-list-unattached-title' => 'Hesaban ke ataç nibiyo',
-	'centralauth-list-unattached' => '{{PLURAL:$2|Hesab}}ê "$1"î otomatik tesdiq nibiyo ke ma zano ena hesab ena {{PLURAL:$2|sita}} de de tu yo;
-belki hesaban de parolayan vurnaye {{PLURAL:$2|esto}}:',
+	'centralauth-list-unattached' => '{{PLURAL:$2|Hesab}}ê "$1" namekerdey nêşa otomatikmen tesdiq bo ke {{PLURAL:$2|sitey}} ê toyê;
+zafêr beno ke hesabê toyo verên ra şifreyê xoyo bin {{PLURAL:$2|esto}}:',
 	'centralauth-foreign-link' => 'Ser $2 karber $1',
 	'centralauth-foreign-contributions' => '$1 ra $2 {{PLURAL:$1|İştıraqi|iştıraqê}}',
 	'centralauth-merge-method-primary' => 'Wikiya keyi',
@@ -8515,7 +8517,7 @@ Eka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.',
 	'centralauth-admin-info-editcount' => 'Amariya vurnayışa pêron:',
 	'centralauth-admin-info-locked' => 'Kilit biyo:',
 	'centralauth-admin-info-hidden' => 'Seviyeye nimnaye:',
-	'centralauth-admin-info-groups' => 'Global {{PLURAL:$1|grub|grubi}}:',
+	'centralauth-admin-info-groups' => 'Global {{PLURAL:$1|grube|grubi}}:',
 	'centralauth-admin-info-nogroups' => 'çıniyo',
 	'centralauth-admin-nohome' => 'nieşkena kerar bide',
 	'centralauth-admin-yes' => 'eya',
@@ -9012,7 +9014,7 @@ Kupka dajo se lašowaś, z tym až wótwónoźujoš wše jeje pšawa.',
 	'centralauth-editgroup-members' => 'Lisćina cłonkow:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Lisćina wužywarjow z pšawami $2]]',
 	'centralauth-editgroup-restrictions' => 'Wikikupka, źož toś ta kupka jo aktiwna:',
-	'centralauth-editgroup-rename-taken' => 'Pśemjenjenje jo se njeraźiło: Jo južo kupka z mjenim $1.',
+	'centralauth-editgroup-rename-taken' => 'Pśemjenjenje njejo se raźiło: Jo južo kupka z mjenim $1.',
 	'centralauth-editgroup-noset' => '(žedne)',
 	'centralauth-editgroup-submit' => 'Změny na globalnych kupkach składowaś',
 	'centralauth-editgroup-perms' => 'Pśipokazane pšawa:',
@@ -10661,6 +10663,7 @@ $messages['ext'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Dalba
  * @author Ebraminio
  * @author Huji
@@ -10888,6 +10891,7 @@ $messages['fa'] = array(
 	'centralauth-login-no-others' => 'به طور خودکار به همهٔ پروژه‌های {{int:Centralauth-groupname}} وارد شده‌اید.',
 	'centralauth-logout-no-others' => 'به طور خودکار از سایر پروژه‌های {{int:Centralauth-groupname}} خارج شده‌اید.',
 	'centralauth-hidden-blockreason' => 'پنهان سراسری توسط $1 در $2 به دلیل: $3',
+	'centralauth-login-error-locked' => 'شما نمی‌توانید وارد شوید چون حساب شما کلاً قفل شده‌است.',
 	'centralauth-log-name' => 'سیاههٔ مدیریت حساب‌های کاربری مشترک',
 	'centralauth-log-header' => 'این سیاهه شامل عملکردهای مربوط به حساب‌های کاربری مشترک است: حذف، بستن و باز کردن.',
 	'centralauth-log-entry-delete' => 'حساب کاربری مشترک «$1» را حذف کرد',
@@ -13604,7 +13608,7 @@ $messages['he'] = array(
 	'centralauth-admin-info-editcount' => 'מספר עריכות כולל:',
 	'centralauth-admin-info-locked' => 'נעול:',
 	'centralauth-admin-info-hidden' => 'מוסתר:',
-	'centralauth-admin-info-groups' => '{{PLURAL:$1|קבוצה גלובלית|קבוצות גלובליות}}',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|קבוצה גלובלית|קבוצות גלובליות}}:',
 	'centralauth-admin-info-nogroups' => 'אין',
 	'centralauth-admin-nohome' => 'אין אפשרות להחליט',
 	'centralauth-admin-yes' => 'כן',
@@ -13696,7 +13700,7 @@ $messages['he'] = array(
 	'centralauth-prefs-count-unattached' => 'חשבונות בלתי מאומתים בשם המשתמש הזה נותרו ב{{PLURAL:$1|מיזם אחד|־$1 מיזמים}}.',
 	'centralauth-prefs-detail-unattached' => 'מיזם זה לא אושר כשייך לחשבון הכללי.',
 	'centralauth-prefs-manage' => 'ניהול החשבון הכללי',
-	'centralauth-prefs-view' => 'צפייה בפרטים של חשבון גלובלי',
+	'centralauth-prefs-view' => 'צפייה בפרטי החשבון הגלובלי',
 	'centralauth-renameuser-merged' => 'המשתמש $1 הועבר למערכת הכניסה המאוחדת.
 שינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הגלובלי.',
 	'centralauth-renameuser-reserved' => 'שם המתשמש $2 שמור לחשבון גלובלי.',
@@ -15523,6 +15527,7 @@ Renominar lo causara que le conto local se distacha del global.',
 	'centralauth-login-no-others' => 'Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'celate globalmente per $1 a $2 pro le motivo sequente: $3',
+	'centralauth-login-error-locked' => 'Tu non pote aperir session perque tu conto ha essite blocate globalmente.',
 	'centralauth-log-name' => 'Registro de contos global',
 	'centralauth-log-header' => 'Iste registro contine operationes concernente contos global: deletiones, serramentos e disserramentos.',
 	'centralauth-log-entry-delete' => 'deleva conto global "$1"',
@@ -16915,6 +16920,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-login-no-others' => "Hai appena effettuato l'accesso negli altri progetti della {{int:Centralauth-groupname}}.",
 	'centralauth-logout-no-others' => "Hai appena effettuato l'uscita dagli altri progetti della {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'Globalmente nascosto da $1 su $2 con la ragione: $3',
+	'centralauth-login-error-locked' => 'Non puoi accedere perché la tua utenza è bloccata globalmente.',
 	'centralauth-log-name' => 'Utenze globali',
 	'centralauth-log-header' => 'Questo registro contiene le operazioni sulle utenze globali: cancellazioni, blocchi e sblocchi.',
 	'centralauth-log-entry-delete' => 'utenza globale "$1" cancellata',
@@ -19034,6 +19040,7 @@ $messages['kn'] = array(
  * @author Devunt
  * @author Ficell
  * @author Freebiekr
+ * @author Jskang
  * @author Klutzy
  * @author Kwj2772
  * @author PuzzletChung
@@ -19262,6 +19269,7 @@ $messages['ko'] = array(
 	'centralauth-login-no-others' => '{{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.',
 	'centralauth-logout-no-others' => '{{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그아웃되었습니다.',
 	'centralauth-hidden-blockreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 $2에 숨겨졌습니다: $3',
+	'centralauth-login-error-locked' => '계정이 전 영역에 걸쳐 잠겨 있으므로 로그인 할 수 없습니다.',
 	'centralauth-log-name' => '통합 계정 기록',
 	'centralauth-log-header' => '이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.',
 	'centralauth-log-entry-delete' => '사용자가 "$1" 통합 계정을 삭제했습니다',
@@ -31748,6 +31756,7 @@ Razlog: $1',
 	'centralauth-admin-already-unmerged' => 'Preskačem $1, već je rastavljen.',
 	'centralauth-admin-unmerge-success' => 'Uspešno {{PLURAL:$1|1=razdvojen|razdvojeno}} $1 {{PLURAL:$1|1=nalog|naloga}}', # Fuzzy
 	'centralauth-admin-delete-title' => 'Obriši nalog',
+	'centralauth-admin-delete-description' => 'Brisanje globalnog naloga će takođe obrisati globalna podešavanja, razdvojiti sve lokalne naloge, i omogućiti drugim korisnicima da preuzmu to globalno ime. Svi lokalni nalozi će i dalje postojati. Lozinke lokalnih naloga koje su važile pre spajanja u globalni nalog će biti vraćene na svoje pređašnje vrednosti.',
 	'centralauth-admin-delete-button' => 'Obriši ovaj nalog',
 	'centralauth-admin-delete-success' => 'Uspešno obrisan globalni nalog za „<nowiki>$1</nowiki>”',
 	'centralauth-admin-nonexistent' => 'Ne postoji globalni nalog za „<nowiki>$1</nowiki>”',
