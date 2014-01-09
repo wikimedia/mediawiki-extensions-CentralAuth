@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "eeebdf60_c69f6605",
+        "filename": "CentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-01-09T05:10:00Z",
+      "side": 1,
+      "message": "Add a @see $wgRCFeeds so people know how it should be configured?",
+      "revId": "92b7e5690cd2edfed125e47c8c9d27536a93e295",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_95875966",
         "filename": "CentralAuthUser.php",
         "patchSetId": 3
