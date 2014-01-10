@@ -9652,7 +9652,7 @@ La pasvortoj por lokaj kontoj kreitaj antaŭ la kunigo retroiĝis al antaŭkunig
 	'centralauth-prefs-view' => 'Vidi la ĝeneralan informon pri uzanto', # Fuzzy
 	'centralauth-renameuser-merged' => 'Uzanto $1 estis migrita al la unuigita salutsistemo.
 Renomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzanton.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Uzanto $2 estas rezerva por ĝenerala konto.', # Fuzzy
+	'centralauth-renameuser-reserved' => 'Uzanto $2 estas rezerva por ĝenerala konto.',
 	'centralauth-invalid-wiki' => 'Nenia vikia datumbazo: $1',
 	'centralauth-account-exists' => 'Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.',
 	'centralauth-account-exists-reset' => 'La salutnomo $1 ne estas registrita en ĉi tiu vikio, sed ĝi ekzistas en la ĝenerala salut-sistemo.', # Fuzzy
@@ -15351,7 +15351,7 @@ Un altere wiki esseva determinate como le conto principal pro tu nomine de usato
 	'centralauth-merge-step3-title' => 'Crear conto unificate',
 	'centralauth-merge-step3-detail' => 'Tu es preste a crear tu conto unificate, attachante le sequente wikis:',
 	'centralauth-merge-step3-submit' => 'Unificar contos',
-	'centralauth-merge-no-accounts' => 'Nulle contos correspondente a tu nomine esseva trovate in le tabula central de contos! Le base de datos debe esser corrumpite.',
+	'centralauth-merge-no-accounts' => 'Nulle conto correspondente a tu nomine ha essite trovate in le tabella central de contos! Le base de datos debe esser corrumpite.',
 	'centralauth-merge-home-password' => 'Le wiki principal pro iste conto (listate infra) ha un contrasigno differente del contrasigno que tu entrava. Per favor entra le contrasigno pro le wiki principal.',
 	'centralauth-complete' => 'Unification de contos complete!',
 	'centralauth-incomplete' => 'Unification de contos non complete!',
@@ -20760,6 +20760,7 @@ $messages['lrc'] = array(
 هیژ آلشتی تا ایسه ری حساوتو انجوم نبیه.',
 	'centralauth-merge-dryrun-or' => "'''يا'''",
 	'centralauth-merge-step3-title' => 'یه گل حساو بی شلک راس بکید',
+	'centralauth-merge-step3-detail' => 'شما حاضر هیئت سی راس کردن حساو یکی بیه خوتو، وا دیندا گرتن ویکیا یکی بیه:',
 	'centralauth-merge-step3-submit' => 'حساویا یه شلک',
 	'centralauth-complete' => 'یکاگری اومائن د سیستم کامل بیه',
 	'centralauth-incomplete' => 'یکاگری امائن د سیستم کامل نبی',
@@ -22720,10 +22721,10 @@ $messages['mr'] = array(
 	'centralauth-list-home-title' => 'मूळ विकी',
 	'centralauth-list-home-dryrun' => 'या विकिवरील सदस्यनाम तसेच परवलीचा शब्द तुमच्या एकत्रीत खात्यासाठी वापरला जाईल.',
 	'centralauth-list-attached-title' => 'संलग्न खाती',
-	'centralauth-list-attached' => 'खालील प्रत्येक संकेतस्थळांवर असणारे "$1" हे सदस्यनाम आपोआप एकत्रीत खात्यामध्ये समाविष्ट झालेले आहे:',
-	'centralauth-list-attached-dryrun' => 'खालील प्रत्येक संकेतस्थळांवर असणारे "$1" हे सदस्यनाम आपोआप एकत्रीत खात्यामध्ये समाविष्ट होईल:',
+	'centralauth-list-attached' => 'खालील प्रत्येक संकेतस्थळांवर असणारे "$1" हे सदस्यनाम आपोआप एकत्रीत खात्यामध्ये जोडल्या गेलेले आहे:',
+	'centralauth-list-attached-dryrun' => 'खालील प्रत्येक संकेतस्थळांवर असणारे "$1" हे सदस्यनाम आपोआप एकत्रीत खात्यामध्ये जोडल्या जाईल:',
 	'centralauth-list-unattached-title' => 'असंलग्न खाती',
-	'centralauth-list-unattached' => '"$1" हे खाते तुमचेच आहे याची खालील संकेतस्थळांवर आपोआप खात्री होऊ शकलेली नाही; कदाचित त्यांचा परवलीचा शब्द तुमच्या प्राथमिक खात्यापेक्षा वेगळा असू शकतो:',
+	'centralauth-list-unattached' => '"$1" हे खाते तुमचेच आहे याची खालील {{PLURAL:$2|संकेतस्थळावर|संकेतस्थळांवर}} आपोआप निश्चिती होऊ शकलेली नाही;असे शक्य आहे कि कदाचित{{PLURAL:$2|त्याचा|त्यांचा}}  परवलीचा शब्द तुमच्या प्राथमिक खात्यापेक्षा वेगळा असू शकतो:',
 	'centralauth-foreign-link' => '$2 वरील सदस्य $1',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|योगदान}} $2 वर',
 	'centralauth-merge-method-primary' => 'मुख्य विकी',
@@ -22869,7 +22870,7 @@ $messages['mr'] = array(
 	'centralauth-renameuser-reserved' => ' सदस्यनाम $2 हे वैश्विक खात्यासाठी आरक्षित आहे.',
 	'centralauth-invalid-wiki' => 'अशी कोणतीही विकि डाटाबेस नाही: $1',
 	'centralauth-account-exists' => 'खाते तयार करू शकत नाही: विनंती केलेले सदस्यनाम खाते एकत्रीत सनोंदप्रवेश प्रणालीत अगोदरच घेण्यात आलेले आहे.',
-	'centralauth-account-exists-reset' => 'या विकीवर  $1 हे सदस्यनाम नोंदणीकृत नाही पण ते एकीकृत प्रवेश प्रणालीत अस्तित्वात आहे.', # Fuzzy
+	'centralauth-account-exists-reset' => '$1 हे सदस्यनाम या विकीवर नोंदणीकृत नाही पण, आपण त्याचा परवलीचा शब्द [[Special:CentralAuth/$1|ज्या विकिवर ते असेल तेथे ]] पुनर्स्थापित करू शकता.',
 	'centralauth-login-progress' => 'विकिमीडियाच्या {{int:Centralauth-groupname}} अन्य प्रकल्पांमध्येही आपला प्रवेश नोंदवित आहोत:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} विकिंच्या अन्य प्रकल्पांमधून आपल्याला अदाखल करीत आहोत:',
 	'centralauth-login-no-others' => 'आपणास आपोआप {{int:Centralauth-groupname}} मध्ये दाखल करण्यात येत आहे.',
@@ -27275,7 +27276,7 @@ $messages['pt'] = array(
 	'centralauth-antispoof-desc' => 'Adiciona tecnologia AntiSpoof ao CentralAuth',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Funde diversas contas]] para a Autenticação Unificada',
 	'centralauth-merge-denied' => 'Desculpe, não tem permissão para aceder a esta página.',
-	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram corretamente fundidas.',
+	'centralauth-merge-notlogged' => 'Por favor, <span class="plainlinks">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.',
 	'centralauth-merge-welcome' => "'''A sua conta de utilizador ainda não foi migrada para o sistema de autenticação unificada das wikis {{int:Centralauth-groupname}}.'''
 
 Caso decida migrar as suas contas, será possível utilizar o mesmo nome de utilizador e palavra-chave para entrar em todas as wikis da {{int:Centralauth-groupname}} em todas as línguas disponíveis.
@@ -27300,7 +27301,7 @@ Ainda não foram feitas alterações às suas contas.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
 	'centralauth-merge-dryrun-home' => 'Não foi possível confirmar que é o proprietário da conta com o seu nome de utilizador na wiki de acolhimento.
 
-Foi determinado que a conta principal do seu nome de utilizador está numa outra wiki. Siga o seguinte link e autentique-se nessa wiki para terminar a fusão de contas.',
+Foi determinado que a conta principal do seu nome de utilizador está numa outra wiki. Siga a seguinte ligação e autentique-se nessa wiki para terminar a fusão de contas.',
 	'centralauth-merge-step3-title' => 'Criar conta global',
 	'centralauth-merge-step3-detail' => 'Está pronto para criar a sua conta global, à qual serão acopladas as seguintes wikis:',
 	'centralauth-merge-step3-submit' => 'Unificar contas',
