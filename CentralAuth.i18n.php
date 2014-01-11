@@ -24551,6 +24551,7 @@ $messages['niu'] = array(
  * @author McDutchie
  * @author Meursault2004
  * @author Naudefj
+ * @author Niknetniko
  * @author Romaine
  * @author SPQRobin
  * @author Servien
@@ -24730,6 +24731,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-admin-logsnippet' => 'Eerdere wijzigingen aan de globale gebruiker',
 	'centralauth-admin-suppressreason' => 'Globaal onderdrukt door $1 met reden: $2',
 	'centralauth-admin-not-authorized' => 'U hebt geen rechten om deze handeling uit te voeren.',
+	'centralauth-admin-too-many-edits' => 'Het globale account "<nowiki>$1</nowiki>" heeft meer dan $2 {{PLURAL:$2|edit|edits}} en kan niet verborgen worden.',
 	'globalusers' => 'Gebruikerslijst (globaal)',
 	'centralauth-listusers-locked' => 'afgeschermd',
 	'centralauth-listusers-attached' => '[[User:$1|bestaat lokaal]]',
@@ -24774,6 +24776,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-login-no-others' => 'U bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'U bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globaal verborgen door $1 op $2 met reden: $3',
+	'centralauth-login-error-locked' => 'U kan niet aanmelden omdat uw account globaal vergrendeld is.',
 	'centralauth-log-name' => 'Globaal gebruikersbeheerlogboek',
 	'centralauth-log-header' => 'Dit logboek bevat handelingen voor globale gebruikers: verwijderingen, afsluiten en vrijgeven.',
 	'centralauth-log-entry-delete' => 'heeft de globale gebruiker "$1" verwijderd',
