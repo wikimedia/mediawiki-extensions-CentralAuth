@@ -6631,12 +6631,12 @@ $messages['ce'] = array(
 	'centralauth-listusers-locked' => 'гӀора йе',
 	'centralauth-listusers-attached' => '[[User:$1|декъашхочун дӀаяздар локально ду]]',
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
-	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд}} хьалха', # Fuzzy
-	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут}} хьалха', # Fuzzy
+	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд}} хьалха',
+	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут}} хьалха',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьт}} хьалха', # Fuzzy
-	'centralauth-days-ago' => '$1 {{PLURAL:$1|де}} хьалха', # Fuzzy
-	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха', # Fuzzy
-	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха', # Fuzzy
+	'centralauth-days-ago' => '$1 {{PLURAL:$1|де}} хьалха',
+	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
+	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха',
 	'centralauth-prefs-status' => 'Хьан цӀеран хьал:',
 	'centralauth-prefs-complete' => 'Дик ду!',
 	'centralauth-prefs-count-attached' => 'Хьан йиш ю $1 {{PLURAL:$1|проектехь|проекташкахь|проекташкахь}} болх ба.', # Fuzzy
@@ -7355,6 +7355,7 @@ Nid yw cyfrifon eraill wedi'u cadarnhau hyd yn hyn.",
 	'centralauth-admin-info-editcount' => 'Cyfanswm y golygiadau:',
 	'centralauth-admin-info-locked' => 'Ar glo?:',
 	'centralauth-admin-info-hidden' => 'Wedi ei guddio?:',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1||Grŵp|Grwpiau}} cyd-wici:',
 	'centralauth-admin-info-nogroups' => 'dim',
 	'centralauth-admin-nohome' => 'heb ei nodi',
 	'centralauth-admin-yes' => 'ydy',
@@ -7418,6 +7419,7 @@ Rheswm: $1',
 	'multilock' => 'Cloi nifer o gyfrifon cydwici ar unwaith',
 	'centralauth-admin-multi-username' => 'Rhowch un neu ragor o enwau defnyddwyr, un enw bob yn linell',
 	'centralauth-admin-multi-notfound' => 'Ni chafwyd hyd i unrhyw enwau defnyddwyr.',
+	'centralauth-admin-multi-searchprefix' => 'Neu, chwilio am enwau defnyddwyr gyda rhyw rhagddodiad',
 	'centralauth-admin-action-lock-nochange' => 'Peidio â newid y cloion',
 	'centralauth-admin-action-lock-lock' => 'Cloi cyfrifon dewisedig',
 	'centralauth-admin-action-lock-unlock' => 'Datgloi cyfrifon dewisedig',
@@ -7467,6 +7469,7 @@ Rheswm: $1',
 	'centralauth-rightslog-entry-usergroups' => 'wedi newid aelodaeth grŵp cydwici $1 o $2 i $3',
 	'centralauth-rightslog-entry-groupperms' => 'wedi newid galluoedd y grŵp $1 o $2 i $3',
 	'centralauth-rightslog-entry-groupperms2' => 'newidiwyd hawliau grwp $1. Ychwanegwyd $2: Gwaredwyd $3',
+	'centralauth-rightslog-entry-grouprename' => 'ailenwyd y grŵp $2 i $1',
 	'centralauth-rightslog-entry-deleteset' => 'wedi dileu\'r set "$1" o wicïau',
 	'centralautologin' => 'Mewngofnodi canolog',
 	'centralauth-centralautologin-lostsession' => "Collwyd data'r sesiwn",
@@ -19050,6 +19053,7 @@ $messages['kn'] = array(
  * @author Jskang
  * @author Klutzy
  * @author Kwj2772
+ * @author Priviet
  * @author PuzzletChung
  * @author ToePeu
  * @author Yjs5497
@@ -19231,6 +19235,7 @@ $messages['ko'] = array(
 	'centralauth-admin-logsnippet' => '이전의 통합 계정 기록',
 	'centralauth-admin-suppressreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 완전히 숨겨졌습니다: $2',
 	'centralauth-admin-not-authorized' => '이 작업을 수행할 권한이 없습니다',
+	'centralauth-admin-too-many-edits' => '글로벌 계정 "<nowiki> $1 </nowiki>"는  편집횟수가 $2   {{PLURAL:$2|회}}를 초과하여 숨길 수 없습니다.',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-locked' => '잠겨짐',
 	'centralauth-listusers-attached' => '[[User:$1|로컬에 존재]]',
@@ -19975,9 +19980,11 @@ $messages['lad'] = array(
 	'centralauth-merge-method-password' => 'konfirmado por parola',
 	'centralauth-merge-method-new' => 'kuento muevo',
 	'centralauth-merge-method-login' => 'kriada al entrar',
-	'centralauth-finish-password' => 'Parola',
+	'centralauth-finish-password' => 'Kontrasenya:',
 	'centralauth-finish-login' => 'Entrar',
 	'centralauth-finish-send-confirmation' => 'Mandar una nueva parola por e-posta',
+	'centralauth-admin-username' => 'Nombre de usuario:',
+	'centralauth-admin-info-username' => 'Nombre de usuario:',
 	'centralauth-admin-info-nogroups' => 'dinguno',
 	'centralauth-admin-yes' => 'si',
 	'centralauth-admin-no' => 'no',
@@ -20000,6 +20007,8 @@ $messages['lad'] = array(
 	'centralauth-editgroup-reason' => 'Razon',
 	'centralauth-editset-name' => 'Nombre:',
 	'centralauth-editset-reason' => 'Razon:',
+	'centralauth-editset-submit-delete' => 'Efasar',
+	'centralauth-editset-nouse' => '(dinguno)',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -20737,6 +20746,7 @@ $messages['lo'] = array(
 );
 
 /** لوری (لوری)
+ * @author Bonevarluri
  * @author Mogoeilor
  */
 $messages['lrc'] = array(
@@ -20764,6 +20774,7 @@ $messages['lrc'] = array(
 	'centralauth-merge-step3-submit' => 'حساویا یه شلک',
 	'centralauth-complete' => 'یکاگری اومائن د سیستم کامل بیه',
 	'centralauth-incomplete' => 'یکاگری امائن د سیستم کامل نبی',
+	'centralauth-notice-dryrun' => "<div class='successbox'>فقط شلک دمو</div><br clear='all'/>",
 	'centralauth-error-locked' => 'شما نتونید ویرایشت بکید سی یه که حساوتو قلف بیه',
 	'centralauth-error-unmerged' => 'شما نتونید ویرایشت بکید سی یه که حساوتو یکاگری نبیه',
 	'centralauth-list-home-title' => 'سرآسونه ويكی',
@@ -20781,11 +20792,13 @@ $messages['lrc'] = array(
 	'centralauth-finish-login' => 'وارد بيئن',
 	'centralauth-finish-send-confirmation' => 'رمز ايميل',
 	'centralauth-attach-title' => 'حساو محكم بكيد',
+	'centralauth-attach-submit' => 'حساو مالکنون کرده',
 	'centralauth' => 'مدیر جهان ون حساو',
 	'centralauth-admin-manage' => 'دونسمنیا حساو مدیریت بکیت',
 	'centralauth-admin-username' => 'نوم كاروری:',
 	'centralauth-admin-lookup-ro' => 'دونسمنيا كارور بوين',
 	'centralauth-admin-lookup-rw' => 'حساوتونه مديريت بكيد',
+	'centralauth-admin-no-unified' => 'سی ای نوم کاروری هیژ حساو یه شلکی نئ.',
 	'centralauth-admin-info-header' => 'دونسمنيا جهونی حساو',
 	'centralauth-admin-info-username' => 'نوم كاروری:',
 	'centralauth-admin-info-id' => 'نوم دياركن كارور:',
@@ -20823,6 +20836,8 @@ $messages['lrc'] = array(
 	'centralauth-admin-delete-title' => 'حساو نه پاك كو',
 	'centralauth-admin-delete-button' => 'ای حساو پاك كو',
 	'centralauth-admin-delete-confirm' => 'آیا شما واقعن میهایت ای حساو پاک بکید',
+	'centralauth-admin-nonexistent' => 'سی $1 هیژ حساو جهونی نئ "<nowiki></nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'خطا: حساو جهونی  "<nowiki>$1</nowiki>" نئیش.',
 	'centralauth-admin-reason' => 'دليل:',
 	'centralauth-admin-reason-other' => 'دليليا هنی:',
 	'centralauth-admin-status-locked' => 'قلف بيه:',
@@ -20833,6 +20848,7 @@ $messages['lrc'] = array(
 	'centralauth-admin-status-hidden-list' => 'حساو د نوگه یا عمومی قام بیه',
 	'centralauth-admin-status-hidden-oversight' => 'حساو کلا قام بیه',
 	'centralauth-admin-status-submit' => 'شلك وادارش',
+	'centralauth-admin-status-nonexistent' => 'خطا: حساو جهونی  "<nowiki>$1</nowiki>" نئیش.',
 	'centralauth-admin-logsnippet' => 'حساو جهونی دمایی آلشت بیه',
 	'globalusers' => 'نوم گه حساویا جهونی',
 	'centralauth-listusers-locked' => 'قلف بيه',
@@ -20854,17 +20870,28 @@ $messages['lrc'] = array(
 	'centralauth-hours-ago' => '$1 {{جمی:$1|ساعت|ساعتیا}} دما', # Fuzzy
 	'centralauth-months-ago' => '$1 {{جمی:$1|ما|مایا}}دما', # Fuzzy
 	'centralauth-years-ago' => '$1 {{جمی:$1|سال|سالیا}} دما', # Fuzzy
+	'centralauth-prefs-not-managed' => 'د حساو یه شلک بیه استفاده نبیه',
 	'centralauth-prefs-unattached' => 'محکم نبیه',
 	'centralauth-prefs-complete' => 'همه منظم بینه',
 	'centralauth-prefs-migration' => 'د رئتن',
+	'centralauth-prefs-count-attached' => 'حساو شما د پروجه $1 فعال هئ {{جمی:$1|مالگه|مالگه یا}}.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'حساویا مئکم نبیه د نومتو د $1 مننه{{جمی:$1|پروجه|پروجه یا}}.', # Fuzzy
+	'centralauth-prefs-detail-unattached' => 'ای پروجه سی یه که مال گل حساو جهونی بوئه، مئکم نبیه.',
 	'centralauth-prefs-view' => 'دونسمنيا جهونی حساو بونیت',
 	'centralauth-renameuser-reserved' => 'نوم کاروری 2 سی حساو جهونی ذخیره بیه.', # Fuzzy
 	'centralauth-invalid-wiki' => 'چنی پایگا دونسمنی ئی نئش:$1',
 	'centralauth-account-exists' => 'نبوئه حساو بسازیت:حساو کاروری حاسته بیه ایسه ها د سیستم یکی بیه وامئن اومائن.',
+	'centralauth-log-entry-delete' => ' حساو جهونی "$1" پاک بیه',
+	'centralauth-log-entry-lock' => 'حساو جهونی  "$1"  قلف بیه',
+	'centralauth-log-entry-unlock' => 'حساو جهونی  "$1" قلف نبیه',
+	'centralauth-log-entry-hide' => ' حساو جهونی "$1" قام با',
+	'centralauth-log-entry-unhide' => 'حساو جهونی  "$1"  قام نبا',
 	'centralauth-log-status-locked' => 'قلف بيه',
 	'centralauth-log-status-hidden' => 'قام بيه',
 	'centralauth-log-status-oversighted' => 'بیش د حد دیئه بیه',
 	'centralauth-log-status-none' => '(هيش كوم)',
+	'centralauth-rightslog-entry-grouprename' => 'گرو $2 د $1 د نو نوم بنیت',
+	'centralauth-rightslog-entry-newset' => '$1دسه ویکی $2 وا ویکیا نهایی درست بیه:$3',
 	'centralauth-rightslog-entry-setrename' => 'دسه ویکی نه د  "$2" تا "$1" دوواره نوم بنیئت',
 	'centralauth-rightslog-entry-setnewtype' => 'شلک "$1" سی $2تا $3 آلشت بیه',
 	'centralauth-rightslog-entry-setchange' => 'ویکیا د  "$1" آلشت بینه:اضاف بیه: $2; ورداشته بیه: $3',
@@ -20874,6 +20901,10 @@ $messages['lrc'] = array(
 	'centralautologin' => 'وامین اومائن مئن گرا',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'شما ایسه وه شلک ولات نشین وامئن اومایته',
 	'centralauth-centralautologin-lostsession' => 'دونسمنیا فصل گم بیه',
+	'centralauth-centralautologin-badstate' => 'شلک نامعتور"$1"',
+	'centralauth-centralautologin-badstate-central' => 'شلک $1 سی ویکی مینجاون معتور نئ',
+	'centralauth-centralautologin-badstate-local' => 'شلک $1 سی ویکی ولات نشین معتور نئ',
+	'centralauth-centralautologin-badwiki' => 'ویکی $1 سی وامین اومائن مینجاون معتور نئ',
 	'centralauth-centralautologin-corsfail' => 'وارسی اصلی کورس شکست حرد',
 	'globalgroupmembership' => 'اندوم بیئن د گرویا جهونی',
 	'centralauth-globalgroupperms-nogroups' => 'هیچ گرو جهونی مشقص نبیه.',
@@ -20883,18 +20914,26 @@ $messages['lrc'] = array(
 	'centralauth-editgroup-subtitle' => 'د حالت ويرايشت$1',
 	'centralauth-editgroup-subtitle-readonly' => 'دیئن$1',
 	'centralauth-editgroup-name' => 'نوم گروه:',
+	'centralauth-editgroup-display' => 'نوم ولات نشین بیه گرو:',
 	'centralauth-editgroup-display-edit' => '$2 ([[مدیا ویکی:گرو-$1|ویرایشت]])', # Fuzzy
 	'centralauth-editgroup-invalid-name' => 'سی گرو جهونی نوم نامعتور دئه بیه.',
+	'centralauth-editgroup-member' => 'نوم ولات نشین بیه سی اندومیا گرو:',
 	'centralauth-editgroup-member-edit' => '$2 ([[مدیاویکی:گرو-$1-اندوم|ویرایشت]])', # Fuzzy
 	'centralauth-editgroup-members' => 'شماره ليست:',
 	'centralauth-editgroup-restrictions' => 'دسه ویکی یا هان د جاگه ای که گرو کار می که:',
+	'centralauth-editgroup-rename-taken' => 'دووراه نوم نیاین شکست حرد:د ایسه یه گل گرو وا نوم $1 هئ.',
 	'centralauth-editgroup-noset' => '(هيش كوم)',
+	'centralauth-editgroup-submit' => 'آلشتیا گرو جهونی نه ذخیره کو',
 	'centralauth-editgroup-reason' => 'دليل:',
+	'centralauth-editgroup-success' => 'آلشتیا گرو جهونی',
+	'centralauth-editgroup-editsets' => '([[ویجه:ویرایشت دسه یا ویکی|ویرایشت]])', # Fuzzy
 	'centralauth-editgroup-nowikiset' => 'هیش کوم، وه کار بردن سی همه ویکیا.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'ویکی د ونو نی که یه گل حساو دارن:',
 	'centralauth-editset' => 'دسه یا ویکی',
 	'centralauth-editset-legend-rw' => 'یه دسه ویکی راس کو یا ویرایشت کو',
 	'centralauth-editset-legend-ro' => 'توم گه دسه یا ویکی',
+	'centralauth-editset-intro-ro' => 'دسه یا ویکی که هئشو هان د هار.',
+	'centralauth-editset-item-rw' => '[[ویجه:دسه یا ویکی/$2|$1]] ([[ویجه:دسه یا ویکی/پاک کردن/$2|پاک کردن]])', # Fuzzy
 	'centralauth-editset-new' => 'یه گل دسه هنی راس بکید',
 	'centralauth-editset-notfound' => 'دسه ویکی $1 پیدا نبی',
 	'centralauth-editset-legend-edit' => 'د حال ویرایشت دسه ویکی"$1"',
