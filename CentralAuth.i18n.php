@@ -29004,6 +29004,7 @@ $messages['ru'] = array(
 	'centralauth-admin-logsnippet' => 'Предыдущие изменения в глобальных учётных записях',
 	'centralauth-admin-suppressreason' => 'Глобально скрыт $1 со следующим обоснованием: $2',
 	'centralauth-admin-not-authorized' => 'У вас нет прав для выполнения этого действия',
+	'centralauth-admin-too-many-edits' => 'Глобальная учётная запись «<nowiki>$1</nowiki>» имеет более $2 {{PLURAL:$2|правки|правок}} и не может быть скрыта.',
 	'globalusers' => 'Глобальный список участников',
 	'centralauth-listusers-locked' => 'заморозить',
 	'centralauth-listusers-attached' => '[[User:$1|существует локально]]',
@@ -29049,6 +29050,7 @@ $messages['ru'] = array(
 	'centralauth-login-no-others' => 'Вы автоматически авторизовались во всех проектах {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Вы автоматически завершили сеанс во всех проектах {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'глобально скрыт участником $1 $2 по следующей причине: $3',
+	'centralauth-login-error-locked' => 'Вы не можете войти, потому что ваша учётная запись глобально заблокирована.',
 	'centralauth-log-name' => 'Журнал управления глобальными учётными записями',
 	'centralauth-log-header' => 'Этот журнал содержит записи о действиях над глобальными учётными записями: удаления, заморозки и разморозки.',
 	'centralauth-log-entry-delete' => 'удалил глобальную учётную запись «$1»',
@@ -35801,6 +35803,7 @@ $messages['ur'] = array(
  * @author Sociologist
  */
 $messages['uz'] = array(
+	'centralauth-merge-method-login-desc' => 'Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.',
 	'centralauth-finish-password' => 'Maxfiy soʻz:',
 	'centralauth-admin-info-username' => 'Foydalanuvchi nomi:',
 	'centralauth-prefs-status' => 'Global hisob holati:',
@@ -35809,6 +35812,7 @@ $messages['uz'] = array(
 	'centralauth-prefs-count-unattached' => "Foydalanuvchi nomingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
 	'centralauth-prefs-manage' => 'Global hisob yozuvini boshqarish',
 	'centralauth-prefs-view' => 'Foydalanuvchi haqida global maʼlumotlarni koʻrish', # Fuzzy
+	'centralauth-rightslog-entry-usergroups' => '$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi',
 );
 
 /** vèneto (vèneto)
