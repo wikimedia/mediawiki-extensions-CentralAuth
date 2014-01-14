@@ -8209,6 +8209,7 @@ Du hast diese Seite ohne irgendwelche Authentifizierungsdaten angefordert, so da
 
 Bitte überprüfe die durch Menschen lesbare Datenschutzrichtlinie der Website, um zu bestimmen, wie viele der gesammelten Informationen verwendet werden dürfen.',
 	'centralauth-centralautologin-logged-in' => 'Du bist als „$1“ zentral angemeldet. Aktualisiere die Seite, um deine Benutzereinstellungen anzuwenden.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Du bist zentral angemeldet. Lade die Seite erneut, um deine Benutzereinstellungen anzuwenden.',
 	'globalgroupmembership' => 'Mitgliedschaft in globalen Gruppen',
 	'globalgrouppermissions' => 'Verwaltung globaler Benutzergruppen',
 	'centralauth-globalgroupperms-grouplist' => 'Die folgenden globalen Gruppen wurden konfiguriert.
@@ -11939,6 +11940,7 @@ Vous avez demandé cette page sans fournir de donnée d’authentification ; e
 
 Veuillez relire la politique de confidentialité lisible de ce site pour savoir comment toute information collectée pourrait être utilisée.',
 	'centralauth-centralautologin-logged-in' => 'Vous être connecté de façon centralisée en tant que $1. Rechargez la page pour appliquer vos préférences utilisateur.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Vous êtes connecté en central. Rechargez la page pour appliquer vos préférences utilisateur.',
 	'globalgroupmembership' => 'Appartenance aux groupes globaux',
 	'globalgrouppermissions' => 'Gestion des groupes globaux',
 	'centralauth-globalgroupperms-grouplist' => 'Les groupes globaux suivants ont été configurés.
@@ -16971,6 +16973,7 @@ Hai richiesto questa pagina senza fornire alcun dato di autenticazione, quindi n
 
 Si prega di rileggere la policy di tutela della riservatezza di questo sito per determinare come potrebbero essere utilizzate tutte le informazioni raccolte.',
 	'centralauth-centralautologin-logged-in' => "Hai effettuato l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
+	'centralauth-centralautologin-logged-in-nouser' => "Hai effettuato l'accesso globalmente. Ricarica la pagina per applicare le impostazioni utente.",
 	'globalgroupmembership' => 'Appartenenza nei gruppi globali',
 	'globalgrouppermissions' => 'Gestione dei gruppi globali',
 	'centralauth-globalgroupperms-grouplist' => 'I seguenti gruppi globali sono stati configurati.
@@ -19051,6 +19054,7 @@ $messages['kn'] = array(
  * @author Devunt
  * @author Ficell
  * @author Freebiekr
+ * @author Hym411
  * @author Jskang
  * @author Klutzy
  * @author Kwj2772
@@ -19118,8 +19122,8 @@ $messages['ko'] = array(
 	'centralauth-list-home-title' => '주 위키',
 	'centralauth-list-home-dryrun' => '통합 계정의 비밀번호와 이메일 주소는 이 위키에서 사용되고 있는 것으로 설정됩니다.',
 	'centralauth-list-attached-title' => '묶이는 계정',
-	'centralauth-list-attached' => '아래의 위키에 있는 "$1" 계정을 자동으로 통합 계정으로 묶었습니다.', # Fuzzy
-	'centralauth-list-attached-dryrun' => '아래의 위키에 있는 "$1" 계정을 자동으로 통합 계정에 묶습니다.', # Fuzzy
+	'centralauth-list-attached' => '아래의 위키에 있는 "$1" 계정들이 자동으로 통합 계정으로 묶였습니다:',
+	'centralauth-list-attached-dryrun' => '아래의 위키에 있는 "$1" 계정들을 자동으로 통합 계정으로 묶습니다:',
 	'centralauth-list-unattached-title' => '묶이지 않은 계정',
 	'centralauth-list-unattached' => '"$1" 계정은 다음 위키에서 자동적으로 당신의 계정임을 확인하지 못했습니다;
 당신의 주 계정과 비밀번호가 다를 수 있습니다:', # Fuzzy
@@ -19327,6 +19331,7 @@ $messages['ko'] = array(
 
 수집된 정보가 사용되는 방법을 결정하려면 이 사이트의 사람이 읽을 수 있는 개인정보 정책을 검토하세요.',
 	'centralauth-centralautologin-logged-in' => '$1 통합 계정으로 로그인되어 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.',
+	'centralauth-centralautologin-logged-in-nouser' => '당신은 통합 계정으로 묶여 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.',
 	'globalgroupmembership' => '사용자의 공통 권한 그룹 조정',
 	'globalgrouppermissions' => '공통 권한 그룹 관리',
 	'centralauth-globalgroupperms-grouplist' => '다음 공통 권한 그룹이 설정되어 있습니다.
@@ -20782,16 +20787,19 @@ $messages['lrc'] = array(
 	'centralauth-list-attached-title' => 'حساویا یکی بیه',
 	'centralauth-list-unattached-title' => 'حساو جگا بیه.',
 	'centralauth-foreign-link' => 'كارور $1 د $2',
+	'centralauth-foreign-contributions' => '$1 {{جمی:$1|هومیاری|هومیاریا}}د  $2', # Fuzzy
 	'centralauth-merge-method-primary' => 'سرآسونه ويكی',
 	'centralauth-merge-method-empty' => 'بی هومياری',
 	'centralauth-merge-method-mail' => 'وا ايميل محكم بی',
 	'centralauth-merge-method-password' => 'مئکم بیه وا پاسورد',
+	'centralauth-merge-method-admin' => 'حساو دیووندار من',
 	'centralauth-merge-method-new' => 'حساو تازه',
 	'centralauth-merge-method-login' => 'د حالت ورود راس بیه',
 	'centralauth-finish-title' => 'آخر گوشه',
 	'centralauth-finish-password' => 'رمز',
 	'centralauth-finish-login' => 'وارد بيئن',
 	'centralauth-finish-send-confirmation' => 'رمز ايميل',
+	'centralauth-finish-noconfirms' => 'هیچ حساوی وا کارورد ای پاسورد مئکم نبیه.',
 	'centralauth-attach-title' => 'حساو محكم بكيد',
 	'centralauth-attach-submit' => 'حساو مالکنون کرده',
 	'centralauth' => 'مدیر جهان ون حساو',
@@ -20837,10 +20845,12 @@ $messages['lrc'] = array(
 	'centralauth-admin-delete-title' => 'حساو نه پاك كو',
 	'centralauth-admin-delete-button' => 'ای حساو پاك كو',
 	'centralauth-admin-delete-confirm' => 'آیا شما واقعن میهایت ای حساو پاک بکید',
+	'centralauth-admin-delete-success' => 'حساو جهونی د خوئی د "<nowiki>$1</nowiki>" پاک بیه',
 	'centralauth-admin-nonexistent' => 'سی $1 هیژ حساو جهونی نئ "<nowiki></nowiki>"',
 	'centralauth-admin-delete-nonexistent' => 'خطا: حساو جهونی  "<nowiki>$1</nowiki>" نئیش.',
 	'centralauth-admin-reason' => 'دليل:',
 	'centralauth-admin-reason-other' => 'دليليا هنی:',
+	'centralauth-admin-unhide-nonexistent' => 'خطا: حساو جهونی  "<nowiki>$1</nowiki>" نئیش.',
 	'centralauth-admin-status-locked' => 'قلف بيه:',
 	'centralauth-admin-status-locked-no' => 'حساو قلف نبيه',
 	'centralauth-admin-status-locked-yes' => 'حساو سی ویرایشت قلف بیه',
@@ -20878,6 +20888,7 @@ $messages['lrc'] = array(
 	'centralauth-prefs-count-attached' => 'حساو شما د پروجه $1 فعال هئ {{جمی:$1|مالگه|مالگه یا}}.', # Fuzzy
 	'centralauth-prefs-count-unattached' => 'حساویا مئکم نبیه د نومتو د $1 مننه{{جمی:$1|پروجه|پروجه یا}}.', # Fuzzy
 	'centralauth-prefs-detail-unattached' => 'ای پروجه سی یه که مال گل حساو جهونی بوئه، مئکم نبیه.',
+	'centralauth-prefs-manage' => 'حساو جهونی تونه دیوونداری بکید',
 	'centralauth-prefs-view' => 'دونسمنيا جهونی حساو بونیت',
 	'centralauth-renameuser-reserved' => 'نوم کاروری 2 سی حساو جهونی ذخیره بیه.', # Fuzzy
 	'centralauth-invalid-wiki' => 'چنی پایگا دونسمنی ئی نئش:$1',
@@ -20887,6 +20898,7 @@ $messages['lrc'] = array(
 	'centralauth-log-entry-unlock' => 'حساو جهونی  "$1" قلف نبیه',
 	'centralauth-log-entry-hide' => ' حساو جهونی "$1" قام با',
 	'centralauth-log-entry-unhide' => 'حساو جهونی  "$1"  قام نبا',
+	'centralauth-log-entry-lockandhide' => 'حساو جهونی  "$1" نه قلف بیه و قام بیه',
 	'centralauth-log-status-locked' => 'قلف بيه',
 	'centralauth-log-status-hidden' => 'قام بيه',
 	'centralauth-log-status-oversighted' => 'بیش د حد دیئه بیه',
@@ -20908,12 +20920,14 @@ $messages['lrc'] = array(
 	'centralauth-centralautologin-badwiki' => 'ویکی $1 سی وامین اومائن مینجاون معتور نئ',
 	'centralauth-centralautologin-corsfail' => 'وارسی اصلی کورس شکست حرد',
 	'globalgroupmembership' => 'اندوم بیئن د گرویا جهونی',
+	'globalgrouppermissions' => 'دیونداری گرو جهونی',
 	'centralauth-globalgroupperms-nogroups' => 'هیچ گرو جهونی مشقص نبیه.',
 	'centralauth-existinggroup-legend' => 'گرویایی که هئن',
 	'centralauth-newgroup-legend' => 'گروه تازه راس بكيد',
 	'centralauth-globalgroupperms-newgroupname' => 'نوم گرو تازه:',
 	'centralauth-editgroup-subtitle' => 'د حالت ويرايشت$1',
 	'centralauth-editgroup-subtitle-readonly' => 'دیئن$1',
+	'centralauth-editgroup-fieldset' => 'اجازه دئن سی $1',
 	'centralauth-editgroup-name' => 'نوم گروه:',
 	'centralauth-editgroup-display' => 'نوم ولات نشین بیه گرو:',
 	'centralauth-editgroup-display-edit' => '$2 ([[مدیا ویکی:گرو-$1|ویرایشت]])', # Fuzzy
@@ -20921,6 +20935,7 @@ $messages['lrc'] = array(
 	'centralauth-editgroup-member' => 'نوم ولات نشین بیه سی اندومیا گرو:',
 	'centralauth-editgroup-member-edit' => '$2 ([[مدیاویکی:گرو-$1-اندوم|ویرایشت]])', # Fuzzy
 	'centralauth-editgroup-members' => 'شماره ليست:',
+	'centralauth-editgroup-members-link' => '[[ویجه:کاروریا جهونی/$1|نوم کاروریا وا حقوق $2]]', # Fuzzy
 	'centralauth-editgroup-restrictions' => 'دسه ویکی یا هان د جاگه ای که گرو کار می که:',
 	'centralauth-editgroup-rename-taken' => 'دووراه نوم نیاین شکست حرد:د ایسه یه گل گرو وا نوم $1 هئ.',
 	'centralauth-editgroup-noset' => '(هيش كوم)',
@@ -20955,6 +20970,7 @@ $messages['lrc'] = array(
 	'centralauth-editset-nowikis' => 'هیچ ویکی مشقص نبیه.',
 	'centralauth-editset-nouse' => '(هيش كوم)',
 	'centralauth-editset-usage' => 'استفاده بیه د گرو',
+	'centralauth-editset-badwikis' => '{{جمی:$2|ویکی|ویکیا}} نهایی نیئش: $1.', # Fuzzy
 	'centralauth-editset-success' => 'ویکی دسه وا موفقیت آلشت بی',
 	'centralauth-editset-success-delete' => 'ویکی دسه وا موفقیت پاک بیه',
 	'centralauth-editset-return' => 'رو د دیئنی اصلی',
@@ -20966,6 +20982,7 @@ $messages['lrc'] = array(
 	'right-centralauth-lock' => 'قلف کردن یا نکردن حساو جهونی',
 	'right-centralauth-oversight' => 'جلوش بئریت یا حساو جهونی قام بکید',
 	'right-centralauth-merge' => 'حساویا شونه یکی بکید',
+	'right-globalgrouppermissions' => 'گرویا جهونی تونه دیوونداری بکید',
 	'action-centralauth-lock' => 'حساویا جهونی نه قلف بکید یا نکید',
 	'centrallogin' => 'اومائن د سیستم کارور مینجایی',
 	'centralloginsuccesful' => 'اومائن د سيستم موفق بی',
@@ -22097,6 +22114,7 @@ $messages['mk'] = array(
 
 Прочитајте ги (човечки-читливите) правила за лични податоци/приватност  на ова мрежно место за да видите како би се користеле податоците што се земаат.',
 	'centralauth-centralautologin-logged-in' => 'Најавени сте централно како $1. Превчитајте ја страницата за да ги примените вашите кориснички поставки.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Најавени сте централно. Превчитајте ја страницата за да ги спроведете корисничките поставки.',
 	'globalgroupmembership' => 'Членство во глобални групи',
 	'globalgrouppermissions' => 'Раководење со глобални групи',
 	'centralauth-globalgroupperms-grouplist' => 'Прилагодени се следниве глобални групи.
@@ -27991,7 +28009,7 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-globalgrouppermissions' => 'Gerenciar grupos globais',
 	'centralauth-completelogin-back' => 'Retornar à página anterior',
 	'centralauth-warning-notloggedin' => 'Você não esta logado.',
-	'centralauth-finishglobaliseemail_subject' => 'confirmação conta {{SITENAME}}',
+	'centralauth-finishglobaliseemail_subject' => 'confirmação da conta no {{SITENAME}}',
 );
 
 /** Quechua (Runa Simi)
@@ -32443,6 +32461,7 @@ Kecap sandi pikeun rekening-rekening lokal sacara otomatis balik ka kecap sandi 
  * @author Jopparn
  * @author Lejonel
  * @author Leo Johannes
+ * @author Lokal Profil
  * @author M.M.S.
  * @author MagnusA
  * @author Micke
@@ -32704,6 +32723,7 @@ Du har begärt denna sida utan att ge någon autentiseringsdata, så den gör in
 
 Var god läs igenom webbplatsens läsbara sekretesspolicy för att avgöra hur all information som samlas in kan användas.',
 	'centralauth-centralautologin-logged-in' => 'Du är inloggad som $1. Uppdatera sidan om du vill tillämpa dina användarinställningar.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Du är centralt inloggad. Ladda om sidan för att tillämpa dina användarinställningar.',
 	'globalgroupmembership' => 'Medlemskap i globala grupper',
 	'globalgrouppermissions' => 'Behandling av globala grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Följande globala grupper finns har blivit konfigurerade.
@@ -35567,6 +35587,7 @@ $messages['uk'] = array(
 
 Будь ласка, перегляньте читабельні правила приватності цього сайту, щоб визначити, як будь-яка зібрана інформація може бути використана.',
 	'centralauth-centralautologin-logged-in' => 'Зараз Ви увійшли як $1. Перезавантажте сторінку, щоб застосувались Ваші користувацькі налаштування.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Зараз Ви увійшли у систему. Перезавантажте сторінку, щоб застосувались Ваші користувацькі налаштування.',
 	'globalgroupmembership' => 'Членство у глобальних групах',
 	'globalgrouppermissions' => 'Керування глобальними групами',
 	'centralauth-globalgroupperms-grouplist' => 'Були налаштовані наступні глобальні групи.
@@ -36473,6 +36494,7 @@ Bạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu x�
 
 Vui lòng xem lại quy định về quyền riêng tư cho người đọc của trang này để xác định thông tin nào được thu thập sẽ được sử dụng như thế nào.',
 	'centralauth-centralautologin-logged-in' => 'Bạn đã đăng nhập trung ương với tên $1. Hãy tải lại trang để kích hoạt thiết lập trang cá nhân của bạn.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Bạn đã đăng nhập trung ương. Hãy tải lại trang để áp dụng các tùy chọn cá nhân của bạn.',
 	'globalgroupmembership' => 'Thành viên trong nhóm toàn cục',
 	'globalgrouppermissions' => 'Quản lý nhóm toàn cục',
 	'centralauth-globalgroupperms-grouplist' => 'Những nhóm toàn cục sau đã được cấu hình. Bạn có thể xem và sửa quyền hạn của mỗi nhóm, nếu có đủ quyền. Một nhóm có thể bị xóa bằng cách loại tất cả các quyền của nó.',
@@ -37544,6 +37566,7 @@ $messages['zh-hans'] = array(
 
 请查看此网站的人类可读隐私权原则以确定收集到的任何资讯将如何使用。',
 	'centralauth-centralautologin-logged-in' => '您目前以$1登录。刷新页面以加载您的用户设置。',
+	'centralauth-centralautologin-logged-in-nouser' => '您已经中央登录。请刷新页面以加载您的用户设置。',
 	'globalgroupmembership' => '在全域组中的成员',
 	'globalgrouppermissions' => '全局用户组管理',
 	'centralauth-globalgroupperms-grouplist' => '以下全局用户组已经配置。如果你有权限，你可以查看或编辑授予用户组的权限。用户组可以通过删除其所有权限而删除。',
@@ -37920,6 +37943,7 @@ $messages['zh-hant'] = array(
 
 請查看此網站的人類可讀隱私權原則以確定收集到的任何資訊將如何使用。',
 	'centralauth-centralautologin-logged-in' => '您目前以$1登入。刷新頁面以應用你的用戶設置。',
+	'centralauth-centralautologin-logged-in-nouser' => '您已中央登入。請刷新頁面以應用您的用戶設定。',
 	'globalgroupmembership' => '在全域組中的成員',
 	'globalgrouppermissions' => '全域組管理',
 	'centralauth-globalgroupperms-grouplist' => '以下的全域群組已經被設定。
