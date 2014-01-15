@@ -5603,11 +5603,11 @@ Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre ver
 	'centralauth-list-home-title' => 'Wiki pennañ',
 	'centralauth-list-home-dryrun' => "Ar ger-tremen hag ar chomlec'h postel merket evit ar wiki-mañ eo a vo implijet evit ho kont unvanet.",
 	'centralauth-list-attached-title' => 'Kontoù stag',
-	'centralauth-list-attached' => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
-	'centralauth-list-attached-dryrun' => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
+	'centralauth-list-attached' => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :', # Fuzzy
 	'centralauth-list-unattached-title' => 'Kontoù distag',
 	'centralauth-list-unattached' => "N'eus ket bet gallet kadarnaat ent emgefre eo deoc'h ar c'hontoù \"\$1\" war al lec'hiennoù da-heul;
-evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont pennañ :",
+evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont pennañ :", # Fuzzy
 	'centralauth-foreign-link' => 'Implijer $1 war $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|degasadenn|degasadenn}} diwar $2',
 	'centralauth-merge-method-primary' => 'wiki pennañ',
@@ -5659,6 +5659,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-info-editcount' => 'Niver hollek a gemmoù :',
 	'centralauth-admin-info-locked' => 'Prennet :',
 	'centralauth-admin-info-hidden' => 'Live kuzhet :',
+	'centralauth-admin-info-nogroups' => 'hini ebet',
 	'centralauth-admin-nohome' => 'dibosupl eo da dermeniñ',
 	'centralauth-admin-yes' => 'ya',
 	'centralauth-admin-no' => 'ket',
@@ -5676,6 +5677,7 @@ Abeg : $1',
 	'centralauth-admin-list-attached-on' => 'Stag ouzh',
 	'centralauth-admin-list-method' => 'Hentenn',
 	'centralauth-admin-list-editcount' => 'Kont tizhadennoù',
+	'centralauth-admin-list-groups' => 'Strolladoù',
 	'centralauth-admin-list-blocked' => 'Stanket',
 	'centralauth-admin-unmerge' => 'Dizunvaniñ ar pezh zo diuzet',
 	'centralauth-admin-merge' => 'Unvaniñ ar pezh zo diuzet',
@@ -5787,6 +5789,8 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.", # Fuzzy
 	'centralauth-centralautologin-alreadyloggedinlocally' => "Kevreet oc'h c'hoazh ent lec'hel",
 	'centralauth-centralautologin-lostsession' => "Kollet eo bet roadennoù an dalc'h",
 	'centralauth-centralautologin-badstate' => 'Stad direizh "$1"',
+	'centralauth-centralautologin-badstate-central' => 'N\'eo ket reizh ar stad "$1" war ar wiki kreiz',
+	'centralauth-centralautologin-badstate-local' => 'N\'eo ket reizh ar stad "$1" war ar wiki lec\'hel',
 	'centralauth-centralautologin-corsfail' => "C'hwitet eo ar wiriadenn orin CORS",
 	'globalgroupmembership' => "Ezel d'ar strolladoù hollek",
 	'globalgrouppermissions' => 'Merañ ar strolladoù hollek',
@@ -5821,6 +5825,7 @@ Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	'centralauth-editgroup-success-text' => "Kemmet hoc'h eus an aotreoù roet d'ar strollad hollek $1.
 [[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù]]",
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|kemmañ]])',
+	'centralauth-editgroup-nowikiset' => 'hini ebet, talvezout a ra evit an holl wikioù.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki o deus ur gont warno :',
 	'centralauth-globalgroupmembership-badknownwiki' => "Dioberiant eo an implijer hollek '''$1''' war ar wiki merket ganeoc'h (''$2'').
 Chañsoù zo e klaskit lakaat gwirioù d'an implijer fall !",
@@ -5857,6 +5862,7 @@ Gallout a rit gwelout ha kemm pep hini, pe krouiñ un teskad nevez.',
 	'centralauth-editset-success' => "Kemmet eo bet ar c'hoari a wikioù.",
 	'centralauth-editset-success-delete' => 'Diverket eo bet ar strobad wikioù ervat.',
 	'centralauth-editset-return' => "Distreiñ d'ar gwel pennañ",
+	'centralauth-block-already-locked' => 'Ar gont [[Special:CentralAuth/$1|$1]] zo prennet dija en un doare hollek.',
 	'centralauth-readonly' => 'Prennet eo diaz roadennoù CentralAuth',
 	'centralauth-readonlytext' => "Evit ar poent n'haller ket ouzhpennañ enmontoù nevez pe degas kemmoù war diaz roadennoù CentralAuth, abalamour da labourioù kempenn boas moarvat. A-benn nebeut ez aio plaen an traoù en-dro.",
 	'right-globalgroupmembership' => "Kemm perc'hennerez ar strolladoù hollek",
@@ -10404,6 +10410,7 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-logout-progress' => 'Sind logitakse {{int:Centralauth-groupname}} vikidest välja:',
 	'centralauth-login-no-others' => 'Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.',
+	'centralauth-login-error-locked' => 'Sa ei saa sisse logida, sest su konto on globaalselt lukustatud.',
 	'centralauth-log-name' => 'Globaalsete kontode logi',
 	'centralauth-log-header' => 'Siin logis on globaalsete kontode kustutamise, lukustamise ja lukust avamisega seotud muudatused.',
 	'centralauth-log-entry-delete' => 'kustutas globaalse konto "$1"',
@@ -10437,6 +10444,7 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-centralautologin-lostsession' => 'Seansiandmed läksid kaotsi.',
 	'centralauth-centralautologin-badstate' => 'Vigane olek "$1"',
 	'centralauth-centralautologin-logged-in' => 'Oled keskselt sisse logitud nimega $1. Laadi lehekülg uuesti, et rakendada oma kasutajaeelistused.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Oled juba keskselt sisse logitud. Laadi lehekülg uuesti, et rakendada oma eelistused.',
 	'globalgroupmembership' => 'Liikmesus globaalsetes rühmades',
 	'globalgrouppermissions' => 'Globaalse rühma haldamine',
 	'centralauth-globalgroupperms-grouplist' => 'Järgnevad globaalsed rühmad on määratletud.
@@ -10943,6 +10951,7 @@ $messages['fa'] = array(
 
 لطفاً سیاست‌های حریم خصوصی قابل مطالعهٔ این وب‌گاه را مطالعه کنید و در آن چگونگی استفاده از اطلاعات جمع‌آوری‌شده را بیان می‌کند.",
 	'centralauth-centralautologin-logged-in' => 'شما به صورت مرکزی به عنوان $1 ثبت ورود شده‌اید. برای به کار بستن تنظیمات کاربری‌تان لطفاً صفحه را بازآوری کنید.',
+	'centralauth-centralautologin-logged-in-nouser' => 'شما به صورت مرکزی وارد می‌شوید. صفحه را برای به کار بردن تنظیمات کاربریتان،دوباره بارگذاری کنید.',
 	'globalgroupmembership' => 'عضویت در گروه‌های سراسری',
 	'globalgrouppermissions' => 'مدیریت گروه‌های سراسری',
 	'centralauth-globalgroupperms-grouplist' => 'گروه‌های سراسری زیر تنظیم شده‌اند.
@@ -12475,9 +12484,9 @@ Sentímolo!',
 	'centralauth-list-home-dryrun' => 'Usaranse o contrasinal e o enderezo de correo electrónico indicados neste wiki para a súa conta unificada.',
 	'centralauth-list-attached-title' => 'Contas relacionadas',
 	'centralauth-list-attached' => 'As contas chamadas "$1" foron relacionadas automaticamente coa conta unificada en cada un dos seguintes sitios:',
-	'centralauth-list-attached-dryrun' => 'A contas chamadas "$1" serán relacionadas automaticamente coa conta unificada en cada un dos seguintes sitios:',
+	'centralauth-list-attached-dryrun' => 'As contas chamadas "$1" serán relacionadas automaticamente coa conta unificada en cada un dos seguintes sitios:',
 	'centralauth-list-unattached-title' => 'Contas non relacionadas',
-	'centralauth-list-unattached' => 'Non se puido confirmar que {{PLURAL:$2|a conta|as contas}} "$1" lle {{PLURAL:$2|pertenza|pertenzan}} a vostede nos seguintes sitios;
+	'centralauth-list-unattached' => 'Non se puido confirmar que {{PLURAL:$2|a conta|as contas}} "$1" lle {{PLURAL:$2|pertenza|pertenzan}} a vostede {{PLURAL:$2|no seguinte sitio|nos seguintes sitios}};
 o máis probable é que {{PLURAL:$2|teña|teñan}} un contrasinal diferente ao da súa conta primaria:',
 	'centralauth-foreign-link' => 'Usuario $1 en $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribución|contribucións}} en $2',
@@ -12588,7 +12597,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-admin-logsnippet' => 'Cambios anteriores na conta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 polo seguinte motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non ten os permisos necesarios para levar a cabo esta acción',
-	'centralauth-admin-too-many-edits' => 'A conta global "<nowiki>$1</nowiki>" ten ao redor de $2 {{PLURAL:$2|edición|edicións}} e non se pode ocultar.',
+	'centralauth-admin-too-many-edits' => 'A conta global "<nowiki>$1</nowiki>" ten máis de $2 {{PLURAL:$2|edición|edicións}} e non se pode agochar.',
 	'globalusers' => 'Lista de contas globais',
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => '[[User:$1|existe neste wiki]]',
@@ -13765,6 +13774,7 @@ $messages['he'] = array(
 
 נא לסקור את מדיניות הפרטיות (בשפה האנושית) כדי להבין לְמה מידע שייאסף יכול לשמש.',
 	'centralauth-centralautologin-logged-in' => 'נכנסת באופן מרכזי בשם $1. יש לרענן את הדף כדי להחיל את הגדרות המשתמש שלך.',
+	'centralauth-centralautologin-logged-in-nouser' => 'נכנסת באופן מרכזי. נא לטעון מחדש את הדף כדי להחיל את הגדרות המשתמש שלך.',
 	'globalgroupmembership' => 'חברות בקבוצות כלליות',
 	'globalgrouppermissions' => 'ניהול קבוצות כלליות',
 	'centralauth-globalgroupperms-grouplist' => 'הוגדרו הקבוצות הכלליות הבאות.
@@ -15580,6 +15590,7 @@ Tu ha requestate iste pagina sin fornir alcun dato de authentication, dunque ill
 
 Per favor consulta le politica de confidentialitate in texto normal pro determinar como le information colligite pote esser utilisate.',
 	'centralauth-centralautologin-logged-in' => 'Tu ha essite authenticate centralmente como $1. Recarga le pagina pro applicar tu configuration de usator.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Tu ha essite authenticate centralmente. Recarga le pagina pro applicar tu configuration de usator.',
 	'globalgroupmembership' => 'Membrato in gruppos global',
 	'globalgrouppermissions' => 'Gestion de gruppos global',
 	'centralauth-globalgroupperms-grouplist' => 'Le sequente gruppos global ha essite configurate.
@@ -19125,8 +19136,8 @@ $messages['ko'] = array(
 	'centralauth-list-attached' => '아래의 위키에 있는 "$1" 계정들이 자동으로 통합 계정으로 묶였습니다:',
 	'centralauth-list-attached-dryrun' => '아래의 위키에 있는 "$1" 계정들을 자동으로 통합 계정으로 묶습니다:',
 	'centralauth-list-unattached-title' => '묶이지 않은 계정',
-	'centralauth-list-unattached' => '"$1" 계정은 다음 위키에서 자동적으로 당신의 계정임을 확인하지 못했습니다;
-당신의 주 계정과 비밀번호가 다를 수 있습니다:', # Fuzzy
+	'centralauth-list-unattached' => '"$1" {{PLURAL:$2|계정}}은 다음 {{PLURAL:$2|위키}}에서 자동적으로 당신의 계정임을 확인하지 못했습니다;
+당신의 주 계정과 비밀번호가 다를 수 있습니다:',
 	'centralauth-foreign-link' => '$2의 $1 사용자',
 	'centralauth-foreign-contributions' => '$2에서 {{PLURAL:$1|기여}} $1개',
 	'centralauth-merge-method-primary' => '주 위키',
@@ -20783,7 +20794,9 @@ $messages['lrc'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>فقط شلک دمو</div><br clear='all'/>",
 	'centralauth-error-locked' => 'شما نتونید ویرایشت بکید سی یه که حساوتو قلف بیه',
 	'centralauth-error-unmerged' => 'شما نتونید ویرایشت بکید سی یه که حساوتو یکاگری نبیه',
+	'centralauth-readmore-text' => ":''[[متا:هومیاری:وامین اومائن یکاگری بیه|بیشتر دباره بحونیت '''وامین اومائن یکاگری بیه ''']]…''",
 	'centralauth-list-home-title' => 'سرآسونه ويكی',
+	'centralauth-list-home-dryrun' => 'پاسورد و نشونی ایمیل که سی ویکی نیایته سی حساو یکاگری بیه تو استفاده بوئه.',
 	'centralauth-list-attached-title' => 'حساویا یکی بیه',
 	'centralauth-list-unattached-title' => 'حساو جگا بیه.',
 	'centralauth-foreign-link' => 'كارور $1 د $2',
@@ -20795,14 +20808,20 @@ $messages['lrc'] = array(
 	'centralauth-merge-method-admin' => 'حساو دیووندار من',
 	'centralauth-merge-method-new' => 'حساو تازه',
 	'centralauth-merge-method-login' => 'د حالت ورود راس بیه',
+	'centralauth-merge-method-primary-desc' => 'ای ویکی وا ای حساو د اساس سریک سازی بیه.
+بنیسد که یه ممکنه د سرآسونه ویکی کارور فرخ داشتوه.',
 	'centralauth-finish-title' => 'آخر گوشه',
 	'centralauth-finish-password' => 'رمز',
 	'centralauth-finish-login' => 'وارد بيئن',
 	'centralauth-finish-send-confirmation' => 'رمز ايميل',
 	'centralauth-finish-noconfirms' => 'هیچ حساوی وا کارورد ای پاسورد مئکم نبیه.',
+	'centralauth-merge-attempt' => "''' پاسورد دئه بیه نه سی حساویا یکاگر نبیه وارسی بیکد…'''",
+	'centralauth-attach-list-attached' => 'حساو یکاگری نبیه که نومش "$1" هئ شامل حساویا وانها بوئه:',
 	'centralauth-attach-title' => 'حساو محكم بكيد',
 	'centralauth-attach-submit' => 'حساو مالکنون کرده',
+	'centralauth-attach-success' => 'حساو رئته د حساو یکاگری نبیه .',
 	'centralauth' => 'مدیر جهان ون حساو',
+	'centralauth-admin-intro' => 'ای مئن پیوست بوئه سی دیوونداری حساویا جهونی استفاده بوئه.',
 	'centralauth-admin-manage' => 'دونسمنیا حساو مدیریت بکیت',
 	'centralauth-admin-username' => 'نوم كاروری:',
 	'centralauth-admin-lookup-ro' => 'دونسمنيا كارور بوين',
@@ -20874,6 +20893,7 @@ $messages['lrc'] = array(
 	'centralauth-admin-action-lock-lock' => 'حساويا انتخاو بيه قلفه بوئه',
 	'centralauth-admin-action-lock-unlock' => 'حساويا انتخاو بيه قلف نبوئه',
 	'centralauth-admin-action-hide-none' => 'حساویا انتخاو بیه قام نبوئه',
+	'centralauth-admin-action-hide-lists' => 'حساویا انتخاو بیئنه د نوم گه یا عمومی قام کو',
 	'centralauth-admin-action-hide-oversight' => 'حساویا گزینشت بیه نه همش قام کو',
 	'centralauth-admin-multi-bot' => 'تغيريا تازه',
 	'centralauth-seconds-ago' => '$1 {{جمی:$1|ثانیه|ثانیه یا}} دما', # Fuzzy
@@ -22970,6 +22990,7 @@ $messages['mr'] = array(
 	'centralauth-centralautologin-badstate-local' => '"$1" स्थिती ही स्थानिक विकित वैध नाही',
 	'centralauth-centralautologin-badwiki' => '"$1" हा विकि केंद्रिय सनोंद प्रवेशास प्राधिकृत नाही',
 	'centralauth-centralautologin-logged-in' => 'आपण $1 म्हणून केंद्रियरित्या सनोंद-प्रवेशित आहात. आपल्या सदस्यमांडणीस उपयोजन(अप्लाय) करण्यास या पानाचे पुनर्भारण(रिलोड) करा.',
+	'centralauth-centralautologin-logged-in-nouser' => 'आपण $1 म्हणून केंद्रियरित्या सनोंद-प्रवेशित आहात. आपल्या सदस्यमांडणीस उपयोजन(अप्लाय) करण्यास या पानाचे पुनर्भारण(रिलोड) करा.', # Fuzzy
 	'globalgroupmembership' => 'वैश्विक गटातील सदस्यत्व',
 	'globalgrouppermissions' => 'वैश्विक गट व्यवस्थापन',
 	'centralauth-globalgroupperms-grouplist' => 'खाली दिलेले वैश्विक गट उपलब्ध आहेत. तुम्ही कुठल्याही गटाला दिलेले अधिकार पाहू अथवा बदलू शकता. एखादा गट काढून टाकायचा असल्यास त्यातील सर्व अधिकार काढून टाका.',
@@ -29113,6 +29134,7 @@ $messages['ru'] = array(
 
 Пожалуйста, просмотрите на этом сайте политику конфиденциальности, которая написана в доступной форме, чтобы определить, каким образом может использоваться любая собранная информация.',
 	'centralauth-centralautologin-logged-in' => 'Вы авторизовались глобально как $1. Перезагрузите страницу, чтобы применились ваши персональные настройки.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Вы глобально авторизовались. Перезагрузите страницу, чтобы применились ваши пользовательские настройки.',
 	'globalgroupmembership' => 'Членство в глобальных группах',
 	'globalgrouppermissions' => 'Управление глобальными группами',
 	'centralauth-globalgroupperms-grouplist' => 'Были настроены следующие глобальные группы.
