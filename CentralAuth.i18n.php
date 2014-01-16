@@ -1027,7 +1027,11 @@ CORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/',
 This provides an explanation for the [[:w:en:P3P|P3P]] hack that allows IE to set cookies. The text is technical and is only linked from a url in an http header response, so it is not something end users will generally find.',
 	'centralauth-centralautologin-logged-in' => 'Message displayed by JavaScript when the auto-login succeeds. Parameters:
 * $1 - username
-* $2 - (Optional) user gender code, for GENDER support',
+* $2 - (Optional) user gender code, for GENDER support
+See also:
+* {{msg-mw|Centralauth-centralautologin-logged-in-nouser}}',
+	'centralauth-centralautologin-logged-in-nouser' => 'See also:
+* {{msg-mw|Centralauth-centralautologin-logged-in}}',
 	'globalgroupmembership' => '{{doc-special|GlobalGroupMembership}}',
 	'globalgrouppermissions' => '{{doc-special|GlobalGroupPermissions}}
 See example: [[w:Special:GlobalGroupPermissions]] and [[w:Special:SpecialPages]]',
@@ -9002,6 +9006,7 @@ Pśemjenjenje wustatkujo, až lokalne konto wótwńoźujo se z globalnego wužyw
 	'centralauth-centralautologin-badwiki' => 'Wiki "$1" njejo płaśiwy za centralne pśizjawjenje',
 	'centralauth-centralautologin-corsfail' => 'Pśeglědanje CORS-póchada njejo se raźiło',
 	'centralauth-centralautologin-logged-in' => 'Sy centralnje ako $1 pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Sy centralnje pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.',
 	'globalgroupmembership' => 'Cłonkojstwo w globalnych kupkach',
 	'globalgrouppermissions' => 'Zastojanje globalnych kupkow',
 	'centralauth-globalgroupperms-grouplist' => 'Slědujuce globalne kupki su konfigurěrowane.
@@ -10443,6 +10448,9 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-centralautologin-badparams' => 'Määratud autentimisparameetrid olid vigased.',
 	'centralauth-centralautologin-lostsession' => 'Seansiandmed läksid kaotsi.',
 	'centralauth-centralautologin-badstate' => 'Vigane olek "$1"',
+	'centralauth-centralautologin-badstate-central' => 'Olek "$1" ei sobi keskses vikis.',
+	'centralauth-centralautologin-badstate-local' => 'Olek "$1" ei sobi kohalikus vikis.',
+	'centralauth-centralautologin-badwiki' => 'Viki "$1" ei sobi keskse sisselogimise jaoks.',
 	'centralauth-centralautologin-logged-in' => 'Oled keskselt sisse logitud nimega $1. Laadi lehekülg uuesti, et rakendada oma kasutajaeelistused.',
 	'centralauth-centralautologin-logged-in-nouser' => 'Oled juba keskselt sisse logitud. Laadi lehekülg uuesti, et rakendada oma eelistused.',
 	'globalgroupmembership' => 'Liikmesus globaalsetes rühmades',
@@ -14860,6 +14868,7 @@ Sy tutu stronu požadał, bjeztoho zo by awtentifkaciske daty podał, tak zo so 
 
 Prošu přepruwuj wot čłowjeka čitajomne prawidła priwatnosće tutoho websydła, zo by zwěsćił, kak zhromadźene informacije bychu so wužiwali.',
 	'centralauth-centralautologin-logged-in' => 'Sy centralnje jako $1 přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Sy centralnje přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.',
 	'globalgroupmembership' => 'Čłonstwo w globalnych skupinach',
 	'globalgrouppermissions' => 'Zrjadowanje globalnych skupinow',
 	'centralauth-globalgroupperms-grouplist' => 'Slědowace globalne skupiny buchu konfigurowane.
@@ -26778,6 +26787,7 @@ A l'ha ciamà costa pàgina sensa dé ëd dàit d'autenticassion, donca chila a 
 
 Për piasì, ch'a lesa torna le régole d'arservatëssa lesìbij da le përson-e ëd cost sit për savèj coma tuta anformassion cujìa a podrìa esse dovrà.",
 	'centralauth-centralautologin-logged-in' => "A l'é intrà ant ël sistema ëd fasson sentralisà tanme $1. Ch'a cria torna la pàgina për apliché ij sò gust utent.",
+	'centralauth-centralautologin-logged-in-nouser' => "A l'é rintrà an tël sistema ëd fasson global. Ch'a caria torna la pàgina për apliché ij sò gust.",
 	'globalgroupmembership' => 'Apartenensa a partìe globaj',
 	'globalgrouppermissions' => 'Gestion ëd le partìe globaj',
 	'centralauth-globalgroupperms-grouplist' => "Le partìe globaj sì-dapress a son ëstàite configurà.
@@ -31944,7 +31954,7 @@ Razlog: $1',
 	'centralauth-hours-ago' => 'pre $1 {{PLURAL:$1|sat|sata|sati}}',
 	'centralauth-days-ago' => 'Pre $1 {{PLURAL:$1|1=dan|dana}}', # Fuzzy
 	'centralauth-months-ago' => 'Pre $1 {{PLURAL:$1|mesec|meseca|meseci}}',
-	'centralauth-years-ago' => 'Pre $1 {{PLURAL:$1|godinu|godine|godina}}',
+	'centralauth-years-ago' => 'pre {{PLURAL:$1|godinu dana|$1 godine|$1 godina}}',
 	'centralauth-prefs-status' => 'Stanje globalnog naloga:',
 	'centralauth-prefs-not-managed' => 'Ne koriste globalni nalog.',
 	'centralauth-prefs-unattached' => 'Nepotvrđeni.',
