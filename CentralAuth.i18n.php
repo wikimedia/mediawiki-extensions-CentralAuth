@@ -5607,7 +5607,7 @@ Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre ver
 	'centralauth-list-home-title' => 'Wiki pennañ',
 	'centralauth-list-home-dryrun' => "Ar ger-tremen hag ar chomlec'h postel merket evit ar wiki-mañ eo a vo implijet evit ho kont unvanet.",
 	'centralauth-list-attached-title' => 'Kontoù stag',
-	'centralauth-list-attached' => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :', # Fuzzy
+	'centralauth-list-attached' => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
 	'centralauth-list-attached-dryrun' => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :', # Fuzzy
 	'centralauth-list-unattached-title' => 'Kontoù distag',
 	'centralauth-list-unattached' => "N'eus ket bet gallet kadarnaat ent emgefre eo deoc'h ar c'hontoù \"\$1\" war al lec'hiennoù da-heul;
@@ -5663,6 +5663,7 @@ Mard eo deoc'h ar gont hollek ivez e c'hallit kendeuziñ ar c'hontoù-se en ur v
 	'centralauth-admin-info-editcount' => 'Niver hollek a gemmoù :',
 	'centralauth-admin-info-locked' => 'Prennet :',
 	'centralauth-admin-info-hidden' => 'Live kuzhet :',
+	'centralauth-admin-info-groups' => '{{PLURAL:$1|strollad|strolladoù}} en holl :',
 	'centralauth-admin-info-nogroups' => 'hini ebet',
 	'centralauth-admin-nohome' => 'dibosupl eo da dermeniñ',
 	'centralauth-admin-yes' => 'ya',
@@ -5726,6 +5727,7 @@ Abeg : $1',
 	'centralauth-listusers-attached' => "[[User:$1|bez ez eus dioutañ en un doare lec'hel]]",
 	'centralauth-listusers-nolocal' => "nann-staget pe n'eus ket outañ en un doare lec'hel",
 	'centralauth-admin-multi-username' => 'Ebarzhit un anv implijer pe meur a hini, unan dre linenn',
+	'centralauth-admin-multi-notfound' => "N'eus bet kavet anv implijer ebet gant an enklask.",
 	'centralauth-admin-multi-intro' => 'Hizivaat meur a gont hollek war un dro',
 	'centralauth-admin-action-lock-nochange' => 'Arabat cheñch ar morailhoù',
 	'centralauth-admin-action-lock-lock' => "Morailhañ ar c'hontoù diuzet",
@@ -22861,6 +22863,7 @@ $messages['mr'] = array(
 	'centralauth-admin-info-editcount' => 'एकूण संपादनसंख्या:',
 	'centralauth-admin-info-locked' => 'कुलुपबंद:',
 	'centralauth-admin-info-hidden' => 'लपविलेल्याची पातळी:',
+	'centralauth-admin-info-nogroups' => 'कोणतेच नाही',
 	'centralauth-admin-nohome' => 'निर्धारित करण्यास असमर्थ',
 	'centralauth-admin-yes' => 'होय',
 	'centralauth-admin-no' => 'नाही',
@@ -22878,6 +22881,7 @@ $messages['mr'] = array(
 	'centralauth-admin-list-attached-on' => 'वर जोडली',
 	'centralauth-admin-list-method' => 'पद्धत',
 	'centralauth-admin-list-editcount' => 'संपादन संख्या',
+	'centralauth-admin-list-groups' => 'गट',
 	'centralauth-admin-list-blocked' => 'प्रतिबन्धित (बंदी घातलेले)',
 	'centralauth-admin-unmerge' => 'निवडलेले अविलग करा',
 	'centralauth-admin-merge' => 'निवडलेली खाती विलीन करा',
@@ -24470,6 +24474,7 @@ Reden: $1',
 /** Nepali (नेपाली)
  * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
+ * @author Krish Dulal
  * @author RajeshPandey
  */
 $messages['ne'] = array(
@@ -24499,13 +24504,13 @@ $messages['ne'] = array(
 	'centralauth-list-home-title' => 'गृह विकि',
 	'centralauth-list-home-dryrun' => 'यस विकि दिइएको प्रवेश शव्द र ई-मेल ठेगाना  अन्य एकीकृत खाताहरुमा प्रयोग गरिनेछ।',
 	'centralauth-list-attached-title' => 'संलग्न खाताहरु',
-	'centralauth-list-attached' => '"$1" नाम गरेको खाता जो निम्नलिखित साइटहरुमा स्वतः एकीकृत खातामा सामेल गरियो:',
-	'centralauth-list-attached-dryrun' => '"$1" नाम गरेको खाता जो निम्नलिखित प्रत्येक साइटहरुमा स्वतः एकीकृत खातामा सामेल गरिनेछ:',
+	'centralauth-list-attached' => '"$1" नाम गरेको खाता जो निम्नलिखित साइटहरुमा स्वतः एकीकृत खातामा सामेल गरियो:', # Fuzzy
+	'centralauth-list-attached-dryrun' => '"$1" नाम गरेको खाता जो निम्नलिखित प्रत्येक साइटहरुमा स्वतः एकीकृत खातामा सामेल गरिनेछ:', # Fuzzy
 	'centralauth-list-unattached-title' => 'असंलग्न खाताहरु',
 	'centralauth-foreign-link' => '$2मा $1 प्रयोगकर्ता',
-	'centralauth-foreign-contributions' => ' $2मा $1 {{PLURAL:$1|योगदान|योगदानहरु}}',
+	'centralauth-foreign-contributions' => ' $2मा $1 {{PLURAL:$1|योगदान|योगदानहरू}}',
 	'centralauth-merge-method-primary' => 'गृह विकि',
-	'centralauth-merge-method-empty' => 'योगदानहरु छैनन्',
+	'centralauth-merge-method-empty' => 'योगदानहरू छैनन्',
 	'centralauth-merge-method-mail' => 'ईमेलद्वारा सुनिश्चित',
 	'centralauth-merge-method-password' => 'प्रवेश शव्दद्वारा सुनिश्चित',
 	'centralauth-merge-method-admin' => 'प्रबन्धक-सम्मिलित खाता',
@@ -35857,6 +35862,7 @@ $messages['ur'] = array(
  * @author Sociologist
  */
 $messages['uz'] = array(
+	'centralauth-groupname' => 'Vikimedia Fondi',
 	'centralauth-merge-method-login-desc' => 'Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.',
 	'centralauth-finish-password' => 'Maxfiy soʻz:',
 	'centralauth-admin-info-username' => 'Foydalanuvchi nomi:',
@@ -35866,6 +35872,7 @@ $messages['uz'] = array(
 	'centralauth-prefs-count-unattached' => "Foydalanuvchi nomingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
 	'centralauth-prefs-manage' => 'Global hisob yozuvini boshqarish',
 	'centralauth-prefs-view' => 'Foydalanuvchi haqida global maʼlumotlarni koʻrish', # Fuzzy
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:',
 	'centralauth-rightslog-entry-usergroups' => '$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi',
 );
 
