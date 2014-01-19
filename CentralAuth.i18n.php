@@ -2981,6 +2981,7 @@ Vusté solicitó esta páxina ensin dar dengún datu d'autenticación, de mou qu
 
 Por favor revise la política de proteición de datos lleíble por humanos d'esti sitiu pa determinar cómo pue usase la información collechada.",
 	'centralauth-centralautologin-logged-in' => "Tien fechu l'aniciu de sesión central como $1. Recargue la páxina p'aplicar la so configuración d'usuariu.",
+	'centralauth-centralautologin-logged-in-nouser' => "Tien fechu l'aniciu de sesión central. Recargue la páxina p'aplicar la so configuración d'usuariu.",
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Remanamientu de grupos globales',
 	'centralauth-globalgroupperms-grouplist' => 'Se configuraron los grupos globales darréu.
@@ -10446,6 +10447,9 @@ Kui kasutajanime muuta, eraldatakse kohalik konto globaalsest.',
 	'centralauth-rightslog-set-optin' => 'kaasamispõhise',
 	'centralauth-rightslog-set-optout' => 'loobumispõhise',
 	'centralautologin' => 'Keskne sisselogimine',
+	'centralauth-centralautologin-desc' => 'See lehekülg on kasutusel MediaWiki tarkvara siseselt.
+Kui külastad lingitud domeeni ja pole sisse logitud, kontrollitakse keskses sisselogimissüsteemis selle lehekülje abil, kas oled kesksesse domeeni sisse logitud.
+Tegid selle lehekülje päringu autentimisandmeteta, seega ei tee see midagi.',
 	'centralauth-centralautologin-alreadyloggedinlocally' => 'Oled kohalikult juba sisse loginud.',
 	'centralauth-centralautologin-badparams' => 'Määratud autentimisparameetrid olid vigased.',
 	'centralauth-centralautologin-lostsession' => 'Seansiandmed läksid kaotsi.',
@@ -20860,6 +20864,7 @@ $messages['lrc'] = array(
 دلیل: $2',
 	'centralauth-admin-blocked-indef' => 'وا دیاری قلف بیه.
 دلیل: $1',
+	'centralauth-admin-blocklog' => 'پهرستنومه قلف بیه',
 	'centralauth-admin-list-localwiki' => 'ويكی ولاتی',
 	'centralauth-admin-list-attached-on' => 'چسبسه د:',
 	'centralauth-admin-list-method' => 'روشت',
@@ -20903,6 +20908,7 @@ $messages['lrc'] = array(
 	'centralauth-admin-action-lock-nochange' => 'قلفيانه آلشت نكيد',
 	'centralauth-admin-action-lock-lock' => 'حساويا انتخاو بيه قلفه بوئه',
 	'centralauth-admin-action-lock-unlock' => 'حساويا انتخاو بيه قلف نبوئه',
+	'centralauth-admin-action-hide-nochange' => 'ریترازیا قام بیه نه آلشت نکید',
 	'centralauth-admin-action-hide-none' => 'حساویا انتخاو بیه قام نبوئه',
 	'centralauth-admin-action-hide-lists' => 'حساویا انتخاو بیئنه د نوم گه یا عمومی قام کو',
 	'centralauth-admin-action-hide-oversight' => 'حساویا گزینشت بیه نه همش قام کو',
@@ -20924,6 +20930,8 @@ $messages['lrc'] = array(
 	'centralauth-renameuser-reserved' => 'نوم کاروری 2 سی حساو جهونی ذخیره بیه.', # Fuzzy
 	'centralauth-invalid-wiki' => 'چنی پایگا دونسمنی ئی نئش:$1',
 	'centralauth-account-exists' => 'نبوئه حساو بسازیت:حساو کاروری حاسته بیه ایسه ها د سیستم یکی بیه وامئن اومائن.',
+	'centralauth-login-error-locked' => 'نبوئه بیایت وامین سی یه یه حساوتو د کل قلف بیه.',
+	'centralauth-log-name' => 'پهرستنومه حساو جهونی',
 	'centralauth-log-entry-delete' => ' حساو جهونی "$1" پاک بیه',
 	'centralauth-log-entry-lock' => 'حساو جهونی  "$1"  قلف بیه',
 	'centralauth-log-entry-unlock' => 'حساو جهونی  "$1" قلف نبیه',
@@ -20934,7 +20942,9 @@ $messages['lrc'] = array(
 	'centralauth-log-status-hidden' => 'قام بيه',
 	'centralauth-log-status-oversighted' => 'بیش د حد دیئه بیه',
 	'centralauth-log-status-none' => '(هيش كوم)',
+	'centralauth-rightslog-name' => 'پهرستنومه حقوق جهونی',
 	'centralauth-rightslog-entry-grouprename' => 'گرو $2 د $1 د نو نوم بنیت',
+	'centralauth-rightslog-header' => 'ای پهرستنومه عملیاتی ری گرویا جهونی ها دش:آلشتیا اندوم بیئن و اجازه یا',
 	'centralauth-rightslog-entry-newset' => '$1دسه ویکی $2 وا ویکیا نهایی درست بیه:$3',
 	'centralauth-rightslog-entry-setrename' => 'دسه ویکی نه د  "$2" تا "$1" دوواره نوم بنیئت',
 	'centralauth-rightslog-entry-setnewtype' => 'شلک "$1" سی $2تا $3 آلشت بیه',
@@ -28587,11 +28597,11 @@ Ne dispiace!",
 	'centralauth-list-home-title' => 'Càse uicchi',
 	'centralauth-list-home-dryrun' => "'A passuord e 'u 'ndirizze e-mail ca è mise jndr'à sta uicchi avènene ausate pe aunificà le cunde tune.",
 	'centralauth-list-attached-title' => 'Cunde utinde allegate',
-	'centralauth-list-attached' => '\'U cunde utende nomenate "$1" sus a ognune de le seguende site ha state automaticamende attaccate a \'u cunde aunificate:',
-	'centralauth-list-attached-dryrun' => '\'U cunde utende nomenate "$1" sus a ognune de le seguende site adda essere automaticamende attaccate a \'u cunde aunificate:',
+	'centralauth-list-attached' => 'Le cunde utende nomenate "$1" sus a ognune de le seguende site onne state automaticamende attaccate a \'u cunde aunificate:',
+	'centralauth-list-attached-dryrun' => 'Le cunde utende nomenate "$1" sus a ognune de le seguende site avènene automaticamende attaccate a \'u cunde aunificate:',
 	'centralauth-list-unattached-title' => 'Cunde utinde libbere',
-	'centralauth-list-unattached' => "'U cunde \"\$1\" non ge pò essere confermate automaticamende sus a le seguende site;
-assaije vote ste 'na differenze 'mbrà 'a passuord toje d'u cunde prengepàle:",
+	'centralauth-list-unattached' => '{{PLURAL:$2|\'U cunde|Le cunde}} "$1" non ge pò essere confermate automaticamende sus a {{PLURAL:$2|\'u seguende site|le seguende site}};
+assaije vote {{PLURAL:$2|ste \'na|stonne}} differenze \'mbrà \'a passuord toje d\'u cunde prengepàle:',
 	'centralauth-foreign-link' => 'Utende $1 sus a $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|condebbute|condrebbute}} sus a $2',
 	'centralauth-merge-method-primary' => 'casa uicchi',
@@ -28641,6 +28651,7 @@ Otre cunde angore non g'onne state confermate.",
 	'centralauth-admin-info-editcount' => 'Cangiaminde totale:',
 	'centralauth-admin-info-locked' => 'Bloccate:',
 	'centralauth-admin-info-hidden' => 'Levèlle scunnute:',
+	'centralauth-admin-info-nogroups' => 'ninde',
 	'centralauth-admin-nohome' => "'ngapace de determinà",
 	'centralauth-admin-yes' => 'si',
 	'centralauth-admin-no' => 'no',
@@ -28658,6 +28669,7 @@ Mutive: $1',
 	'centralauth-admin-list-attached-on' => 'Allegate a',
 	'centralauth-admin-list-method' => 'Metode',
 	'centralauth-admin-list-editcount' => 'Condegge de le cangiaminde',
+	'centralauth-admin-list-groups' => 'Gruppe',
 	'centralauth-admin-list-blocked' => 'Bloccate',
 	'centralauth-admin-unmerge' => 'Scucchiámende selezionate',
 	'centralauth-admin-merge' => 'Aunìone selezionate',
@@ -30238,9 +30250,13 @@ $messages['sgs'] = array(
 );
 
 /** Serbo-Croatian (srpskohrvatski / српскохрватски)
+ * @author Kolega2357
  * @author OC Ripper
  */
 $messages['sh'] = array(
+	'centralauth-incomplete' => 'Unifikacija logina nije potpuna!',
+	'centralauth-login-progress' => 'Prijavljivanje na ostale Wikimedijine projekte - Пријављивање на остале Викимедијине пројекте:',
+	'centralauth-logout-progress' => 'Odjavljivanje sa ostalih Wikimedijinih projekata - Одјављивање са осталих Викимедијиних пројеката:',
 	'centralauth-editset-submit' => 'Unesi',
 );
 
@@ -31786,7 +31802,7 @@ $messages['sr-ec'] = array(
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ништа)',
 	'centralauth-editset-usage' => 'Коришћен у групама:',
-	'centralauth-editset-badwikis' => 'Следећи {{PLURAL:$2|1=вики|викији}} не постоје: $1.', # Fuzzy
+	'centralauth-editset-badwikis' => 'Следећи {{PLURAL:$2|вики|викији}} не постоје: $1.',
 	'centralauth-editset-success' => 'Вики скуп је промењен.',
 	'centralauth-editset-success-delete' => 'Вики-скуп је обрисан.',
 	'centralauth-editset-return' => 'Повратак на главни преглед',
@@ -32068,7 +32084,7 @@ Možete da ih pregledate i izmenite, ili pak da napravite novi skup.',
 	'centralauth-editset-grouplink' => '[[Special:GlobalGroupPermissions/$1|$1]]',
 	'centralauth-editset-nouse' => '(ništa)',
 	'centralauth-editset-usage' => 'Korišćen u grupama:',
-	'centralauth-editset-badwikis' => 'Sledeći {{PLURAL:$2|1=viki|vikiji}} ne postoje: $1.', # Fuzzy
+	'centralauth-editset-badwikis' => 'Sledeći {{PLURAL:$2|viki|vikiji}} ne postoje: $1.',
 	'centralauth-editset-success' => 'Uspešno promenjen skup vikija.',
 	'centralauth-editset-success-delete' => 'Viki-skup je obrisan.',
 	'centralauth-editset-return' => 'Povratak na glavni pregled',
