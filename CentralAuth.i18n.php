@@ -24647,6 +24647,7 @@ $messages['niu'] = array(
 
 /** Dutch (Nederlands)
  * @author Amire80
+ * @author Arent
  * @author Bever
  * @author Ciell
  * @author HanV
@@ -24925,6 +24926,7 @@ U hebt deze pagina opgevraagd zonder aanmeldgegevens te verstrekken en in dat ge
 
 Controleer het door mensen te lezen privacybeleid van deze site om te bepalen hoe deze verzamelde gegevens mag gebruiken.',
 	'centralauth-centralautologin-logged-in' => 'U bent centraal aangemeld als "$1". Herlaad de pagina om uw gebruikersinstellingen toe te passen.',
+	'centralauth-centralautologin-logged-in-nouser' => 'U bent centraal aangemeld. Herlaad de pagina om uw gebruikersinstellingen toe te passen.',
 	'globalgroupmembership' => 'Lidmaatschap van globale groepen',
 	'globalgrouppermissions' => 'Globaal groepsbeheer',
 	'centralauth-globalgroupperms-grouplist' => 'De onderstaande globale groepen zijn ingesteld.
