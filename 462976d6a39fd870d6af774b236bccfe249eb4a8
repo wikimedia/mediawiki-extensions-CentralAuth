@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aef5673e_5cb92377",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1417,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-01-22T06:39:07Z",
+      "side": 1,
+      "message": "The formatter is not the engine. Take a look at $wgRCEngines",
+      "revId": "462976d6a39fd870d6af774b236bccfe249eb4a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
