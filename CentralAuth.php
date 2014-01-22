@@ -24,7 +24,7 @@ $wgExtensionCredits['specialpage'][] = array(
  * If this is not on the primary database connection, don't forget
  * to also set up $wgDBservers to have an entry with a groupLoads
  * setting for the 'CentralAuth' group. Alternatively you can use
- * $wgLBFactoryConf to set up an LBFactoryMulti object.
+ * $wgLBFactoryConf to set up an LBFactory_Multi object.
  *
  * To use a database with a table prefix, set this variable to
  * "{$database}-{$prefix}".
@@ -241,6 +241,8 @@ $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.p
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
+$wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
+$wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
