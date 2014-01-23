@@ -5299,8 +5299,8 @@ $messages['bn'] = array(
 	'centralauth-merge-home-password' => 'আপনি যে শব্দচাবি প্রদান করেছেন, আপনার স্থানীয় উইকির (নিম্নে তালিকাভুক্ত) এই অ্যাকাউন্টে অন্য শব্দচাবি রয়েছে। দয়াকরে আপনার স্থানীয় অ্যাকাউন্টের জন্য শব্দচাবি প্রদান করুন।',
 	'centralauth-complete' => 'অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!',
 	'centralauth-incomplete' => 'অ্যাকাউন্ট একত্রীকরণ নিষ্পন্ন হয়নি!',
-	'centralauth-complete-text' => 'আপনি এখন যেকোন উইকিমিডিয়া উইকি সাইটে অ্যাকাউন্ট তৈরি ছাড়াই লগ-ইন করতে পারবেন; উইকিপিডিয়া, উইকশনারি, উইকিবুক এবং সকল ভাষায় তাদের সহ প্রকল্পসমূহে  একই ব্যবহারকারী নাম এবং শব্দচাবি কাজ করবে।', # Fuzzy
-	'centralauth-incomplete-text' => 'একবার আপনার লগ-ইন একীভূত হয়ে গেলে, আপনি যেকোন উইকিমিডিয়া উইকিতে নতুন অ্যাকাউন্ট তৈরি করা ছাড়াই লগ-ইন করতে পারবেন; উইকিপিডিয়া, উইকশনারি, উইকিবুক এবং সকল ভাষায় তাদের সহ প্রকল্পসমূহে একই ব্যবহারকারী নাম এবং শব্দচাবি কাজ করবে।', # Fuzzy
+	'centralauth-complete-text' => 'আপনি এখন যেকোন {{int:Centralauth-groupname}} উইকি সাইটে অ্যাকাউন্ট তৈরি ছাড়াই লগ-ইন করতে পারবেন।',
+	'centralauth-incomplete-text' => 'একবার আপনার লগ-ইন একীভূত হয়ে গেলে, আপনি যেকোন {{int:Centralauth-groupname}} উইকিতে নতুন অ্যাকাউন্ট তৈরি করা ছাড়াই লগ-ইন করতে পারবেন',
 	'centralauth-not-owner-text' => 'ব্যবহারকারী নাম "$1" সয়ংক্রিয়ভাবে $2 তে অ্যাকাউন্টের মালিকের জন্য বরাদ্দ হয়েছে।
 
 যদি আপনিই তিনি হন, তাহলে এখনে দেওয়া মূল/মাস্টার শব্দচাবি দিতে লগ-ইন করে লগ-ইন একীভূতকরণ শেষ করতে পারেন:',
@@ -5357,6 +5357,7 @@ $messages['bn'] = array(
 	'centralauth-admin-info-editcount' => 'মোট সম্পাদনাসংখ্যা:',
 	'centralauth-admin-info-locked' => 'বন্ধ:',
 	'centralauth-admin-info-hidden' => 'লুকানোর মাত্রা:',
+	'centralauth-admin-info-nogroups' => 'কিছু নয়',
 	'centralauth-admin-yes' => 'হ্যাঁ',
 	'centralauth-admin-no' => 'না',
 	'centralauth-admin-hidden-list' => 'সর্বসাধারণের তালিকা থেকে',
@@ -5367,6 +5368,7 @@ $messages['bn'] = array(
 	'centralauth-admin-list-attached-on' => 'সংযুক্ত',
 	'centralauth-admin-list-method' => 'পদ্ধতি',
 	'centralauth-admin-list-editcount' => 'সম্পাদনা সংখ্যা',
+	'centralauth-admin-list-groups' => 'দলসমূহ',
 	'centralauth-admin-list-blocked' => 'বাধা দেওয়া হয়েছে',
 	'centralauth-admin-unmerge' => 'নির্বাচিতসমূহ বিচ্ছিন্ন করো',
 	'centralauth-admin-merge' => 'নির্বাচিতসমূহ একীভূত করো',
@@ -5400,6 +5402,7 @@ $messages['bn'] = array(
 	'centralauth-listusers-locked' => 'বন্ধ',
 	'centralauth-listusers-attached' => '[[User:$1|স্থানীয় ভাবে রয়েছে]]',
 	'centralauth-listusers-nolocal' => 'বিচ্ছিন্ন অথবা স্থানীয় ভাবে বিদ্যমান নয়',
+	'centralauth-admin-multi-bot' => 'সাম্প্রতিক পরিবর্তনসমূহ',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|সেকেন্ড|সেকেন্ড}} পূর্বে',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|মিনিট|মিনিট}} পূর্বে',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|ঘন্টা|ঘন্টা}} পূর্বে',
@@ -5420,11 +5423,11 @@ $messages['bn'] = array(
 	'centralauth-renameuser-reserved' => 'ব্যবহারকারী $2 গ্লোবাল অ্যাকাউন্টের জন্য বরাদ্দ আছে।', # Fuzzy
 	'centralauth-invalid-wiki' => 'এমন কোন ডাটাবেজ নাই: $1',
 	'centralauth-account-exists' => 'অ্যাকাউন্ট তৈরি করা যাবে না: অনুরোধকৃত ব্যবহারকারী নাম ইতিমধ্যে একীভূত লগইন সিস্টেমের জন্য নেওয়া হয়েছে।',
-	'centralauth-account-exists-reset' => '$1 ব্যবহারকারী নামটি এই উইকিতে নিবন্ধন করা নেই। কিন্তু কেন্দ্রীয় লগইন ব্যবস্থায় এটি তালিকাঘুক্ত রয়েছে।', # Fuzzy
+	'centralauth-account-exists-reset' => '$1 ব্যবহারকারী নামটি এই উইকিতে নিবন্ধন করা নেই, কিন্তু আপনি [[Special:CentralAuth/$1|যেকোন উইকিতে এর]] পাসওয়ার্ডটি পুনরায় সেট করতে পারবেন।',
 	'centralauth-login-progress' => 'যে সকল উইকিতে আপনাকে লগইন করা হয়েছে {{int:Centralauth-groupname}}:',
-	'centralauth-logout-progress' => 'যে সকল উইকি থেকে আপনাকে লগআউট করা হয়েছে {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}-এর যে সকল উইকি থেকে আপনাকে লগআউট করা হয়েছে:',
 	'centralauth-login-no-others' => 'আপনি সফলভাবে {{int:Centralauth-groupname}} এর একটি প্রকল্পে লগইন করেছেন।',
-	'centralauth-logout-no-others' => 'আপনি সয়ংক্রিয়ভাবে {{int:Centralauth-groupname}} এর অন্যান্য প্রকল্পগুলো থেকেও লগআউট হয়েছেন।', # Fuzzy
+	'centralauth-logout-no-others' => 'আপনি সয়ংক্রিয়ভাবে {{int:Centralauth-groupname}}-এর অন্যান্য প্রকল্পগুলো থেকেও লগআউট হয়েছেন।',
 	'centralauth-hidden-blockreason' => '$3 কারণে $2 সময়ে $1 এই গ্লোবাল অ্যাকাউন্টটি হাইড করেছেন',
 	'centralauth-log-name' => 'গ্লোবাল অ্যাকাউন্ট লগ',
 	'centralauth-log-header' => 'এটি গ্লোবাল অ্যাকাউন্ট পরিচালনার কার্যক্রম লগ:মুছে ফেলা, বন্ধ এবং পুনরায় চালু করা।',
@@ -17389,7 +17392,8 @@ $messages['ja'] = array(
 	'centralauth-centralautologin-badstate-central' => '状態「$1」は中央ウィキで有効ではありません。',
 	'centralauth-centralautologin-badstate-local' => '状態「$1」はローカルウィキで有効ではありません。',
 	'centralauth-centralautologin-badwiki' => 'ウィキ「$1」は中央管理ログインとして有効ではありません',
-	'centralauth-centralautologin-logged-in' => '現在、$1 としてログインしています。利用者設定を適用するにはページを再読み込みしてください。',
+	'centralauth-centralautologin-logged-in' => '現在、$1 として一元的にログインしています。利用者設定を適用するにはページを再読み込みしてください。',
+	'centralauth-centralautologin-logged-in-nouser' => '一元的にログインしています。利用者設定を適用するにはページを再読み込みしてください。',
 	'globalgroupmembership' => 'グローバルグループへの所属',
 	'globalgrouppermissions' => 'グローバルグループの管理',
 	'centralauth-globalgroupperms-grouplist' => '以下のグローバルグループが設定されています。
@@ -31939,7 +31943,7 @@ Razlog: $1',
 	'centralauth-admin-bad-input' => 'Loše označavanje sjedinjavanja',
 	'centralauth-admin-none-selected' => 'Nijedan nalog nije označen za izmenu.',
 	'centralauth-admin-already-unmerged' => 'Preskačem $1, već je rastavljen.',
-	'centralauth-admin-unmerge-success' => 'Uspešno {{PLURAL:$1|1=razdvojen|razdvojeno}} $1 {{PLURAL:$1|1=nalog|naloga}}', # Fuzzy
+	'centralauth-admin-unmerge-success' => 'Uspešno {{PLURAL:$1|razdvojen|razdvojeno}} $1 {{PLURAL:$1|nalog|naloga}}',
 	'centralauth-admin-delete-title' => 'Obriši nalog',
 	'centralauth-admin-delete-description' => 'Brisanje globalnog naloga će takođe obrisati globalna podešavanja, razdvojiti sve lokalne naloge, i omogućiti drugim korisnicima da preuzmu to globalno ime. Svi lokalni nalozi će i dalje postojati. Lozinke lokalnih naloga koje su važile pre spajanja u globalni nalog će biti vraćene na svoje pređašnje vrednosti.',
 	'centralauth-admin-delete-button' => 'Obriši ovaj nalog',
@@ -31978,7 +31982,7 @@ Razlog: $1',
 	'centralauth-seconds-ago' => 'pre $1 {{PLURAL:$1|sekundu|sekunde|sekundi}}',
 	'centralauth-minutes-ago' => 'pre $1 {{PLURAL:$1|minutu|minute|minuta}}',
 	'centralauth-hours-ago' => 'pre $1 {{PLURAL:$1|sat|sata|sati}}',
-	'centralauth-days-ago' => 'Pre $1 {{PLURAL:$1|1=dan|dana}}', # Fuzzy
+	'centralauth-days-ago' => 'Pre $1 {{PLURAL:$1|dan|dana}}',
 	'centralauth-months-ago' => 'Pre $1 {{PLURAL:$1|mesec|meseca|meseci}}',
 	'centralauth-years-ago' => 'pre {{PLURAL:$1|godinu dana|$1 godine|$1 godina}}',
 	'centralauth-prefs-status' => 'Stanje globalnog naloga:',
@@ -31987,7 +31991,7 @@ Razlog: $1',
 	'centralauth-prefs-complete' => 'Sve je u redu!',
 	'centralauth-prefs-migration' => 'U premeštanju.',
 	'centralauth-prefs-count-attached' => 'Vaš nalog je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}}.',
-	'centralauth-prefs-count-unattached' => 'Nepotvrđeni nalozi sa vašim nadimkom su preostali na $1 {{PLURAL:$1|1=projektu|projekata}}.', # Fuzzy
+	'centralauth-prefs-count-unattached' => 'Na $1 {{PLURAL:$1|projektu|projekta|projekata}} su ostali nepotvrđeni nalozi s vašim imenom.',
 	'centralauth-prefs-detail-unattached' => 'Ovaj projekat nije potvrđen kao pripadajući globalnom nalogu.',
 	'centralauth-prefs-manage' => 'Upravljajte globalnim nalogom',
 	'centralauth-prefs-view' => 'Prikaži globalne podatke korisnika', # Fuzzy
@@ -35026,6 +35030,7 @@ $messages['ts'] = array(
 );
 
 /** Tatar (Cyrillic script) (татарча)
+ * @author Ilnur efende
  * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
@@ -35096,6 +35101,7 @@ $messages['tt-cyrl'] = array(
 	'centralauth-admin-list-blocked' => 'Блоклау',
 	'centralauth-admin-unmerge' => 'Сайланганнарны аеру',
 	'centralauth-admin-merge' => 'Сайланганнарны берләштерү',
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|cәгать}} элек',
 	'centralauth-prefs-status' => 'Глобаль кулланучы хисапнамәсе:',
 	'centralauth-prefs-not-managed' => 'Гомуми кулланучы хисапнамәсе кулланылмый',
 	'centralauth-prefs-unattached' => 'Расланмаган',
