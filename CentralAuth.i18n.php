@@ -20901,6 +20901,7 @@ $messages['lrc'] = array(
 	'centralauth-admin-status-submit' => 'شلك وادارش',
 	'centralauth-admin-status-nonexistent' => 'خطا: حساو جهونی  "<nowiki>$1</nowiki>" نئیش.',
 	'centralauth-admin-logsnippet' => 'حساو جهونی دمایی آلشت بیه',
+	'centralauth-admin-not-authorized' => 'شما د انجوم دئن ای کار دسرسی ناریت',
 	'globalusers' => 'نوم گه حساویا جهونی',
 	'centralauth-listusers-locked' => 'قلف بيه',
 	'centralauth-listusers-attached' => '[[User:$1|د شلك ولاتی هيئش]]',
@@ -23018,7 +23019,7 @@ $messages['mr'] = array(
 	'centralauth-centralautologin-badstate-local' => '"$1" स्थिती ही स्थानिक विकित वैध नाही',
 	'centralauth-centralautologin-badwiki' => '"$1" हा विकि केंद्रिय सनोंद प्रवेशास प्राधिकृत नाही',
 	'centralauth-centralautologin-logged-in' => 'आपण $1 म्हणून केंद्रियरित्या सनोंद-प्रवेशित आहात. आपल्या सदस्यमांडणीस उपयोजन(अप्लाय) करण्यास या पानाचे पुनर्भारण(रिलोड) करा.',
-	'centralauth-centralautologin-logged-in-nouser' => 'आपण $1 म्हणून केंद्रियरित्या सनोंद-प्रवेशित आहात. आपल्या सदस्यमांडणीस उपयोजन(अप्लाय) करण्यास या पानाचे पुनर्भारण(रिलोड) करा.', # Fuzzy
+	'centralauth-centralautologin-logged-in-nouser' => 'आपण केंद्रियरित्या सनोंद-प्रवेशित आहात. आपल्या सदस्यमांडणीस उपयोजन(अप्लाय) करण्यास या पानाचे पुनर्भारण(रिलोड) करा.',
 	'globalgroupmembership' => 'वैश्विक गटातील सदस्यत्व',
 	'globalgrouppermissions' => 'वैश्विक गट व्यवस्थापन',
 	'centralauth-globalgroupperms-grouplist' => 'खाली दिलेले वैश्विक गट उपलब्ध आहेत. तुम्ही कुठल्याही गटाला दिलेले अधिकार पाहू अथवा बदलू शकता. एखादा गट काढून टाकायचा असल्यास त्यातील सर्व अधिकार काढून टाका.',
@@ -30261,7 +30262,27 @@ $messages['sgs'] = array(
  * @author OC Ripper
  */
 $messages['sh'] = array(
+	'mergeaccount' => 'Stanje objedinjavanja prijave',
+	'centralauth-groupname' => 'Wikimedija Fondacija',
 	'centralauth-incomplete' => 'Unifikacija logina nije potpuna!',
+	'centralauth' => 'Globalno upravljanje korisnicima',
+	'centralauth-admin-manage' => 'Upravljanje korisničkim podacima',
+	'centralauth-admin-lookup-ro' => 'Pogledaj korisničke podatke',
+	'centralauth-admin-lookup-rw' => 'Upravljanje korisničkim nalogom',
+	'centralauth-admin-blocked' => 'Blokada ističe $3 u $4. Razlog: $2',
+	'centralauth-admin-blocked-indef' => 'Trajno blokiran. Razlog: $1',
+	'centralauth-admin-bad-input' => 'Neodgovarajući izbor za spajanje',
+	'centralauth-admin-already-unmerged' => 'Preskačem $1, već je razdvojen',
+	'centralauth-admin-delete-title' => 'Brisanje naloga',
+	'centralauth-admin-delete-description' => 'Brisanje globalnog naloga će takođe obrisati globalna podešavanja, razdvojiti sve lokalne naloge, i omogućiti drugim korisnicima da preuzmu to globalno ime.
+Svi lokalni nalozi će i dalje postojati.
+Lozinke lokalnih naloga koje su važile pre spajanja u globalni nalog će biti vraćene na svoje pređašnje vrednosti.',
+	'centralauth-admin-delete-button' => 'Obriši ovaj nalog',
+	'centralauth-admin-delete-confirm' => 'Da li stvarno želite da obrišete ovaj nalog?',
+	'centralauth-admin-delete-success' => 'Globalni nalog za „<nowiki>$1</nowiki>” je obrisan',
+	'centralauth-admin-delete-nonexistent' => 'Greшka: globalni nalog „$1” ne postoji.',
+	'centralauth-account-exists' => 'Ne mogu da napravim nalog: traženo korisničko ime je već zauzeto u sistemu objedinjene prijave.',
+	'centralauth-account-exists-reset' => 'Korisničko ime [[Special:CentralAuth/$1|$1]] nije registrovano na ovom wikiju, ali postoji u sistemu za ujedinjenu prijavu.',
 	'centralauth-login-progress' => 'Prijavljivanje na ostale Wikimedijine projekte - Пријављивање на остале Викимедијине пројекте:',
 	'centralauth-logout-progress' => 'Odjavljivanje sa ostalih Wikimedijinih projekata - Одјављивање са осталих Викимедијиних пројеката:',
 	'centralauth-editset-submit' => 'Unesi',
