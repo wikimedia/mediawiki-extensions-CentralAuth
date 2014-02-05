@@ -16596,11 +16596,11 @@ Ef þú átt þennan aðgang, þá er hægt að ljúka samræmingu aðgangana me
 	'centralauth-list-home-title' => 'Heimawiki',
 	'centralauth-list-home-dryrun' => 'Uppgefið lykilorð og netfang aðgangsins á þessum wiki verður notað fyrir samræmda aðganginn þinn.',
 	'centralauth-list-attached-title' => 'Samræmdir aðgangar',
-	'centralauth-list-attached' => 'Aðgangi að nafni "$1" á eftirfarandi síðum var bætt við samræmda aðganginn:',
-	'centralauth-list-attached-dryrun' => 'Aðgangi að nafni "$1" á eftirfarandi síðum verður sjálfvirkt bætt við samræmda aðganginn:',
+	'centralauth-list-attached' => 'Aðgangi að nafni "$1" á eftirfarandi síðum var bætt við samræmda aðganginn:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Aðgangi að nafni "$1" á eftirfarandi síðum verður sjálfvirkt bætt við samræmda aðganginn:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Samræmdir aðgangar',
 	'centralauth-list-unattached' => 'Mistókst að samræma aðganginn "$1" við aðgang þinn, því það mistókst að sannreyna að aðgangurinn sé í þinni eigu á eftirfarandi síðum;
-líklegast hefur aðgangurinn annað lykilorð en aðal aðgangurinn þinn:',
+líklegast hefur aðgangurinn annað lykilorð en aðal aðgangurinn þinn:', # Fuzzy
 	'centralauth-foreign-link' => 'Notandi $1 á $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|breyting|breytingar}} á $2',
 	'centralauth-merge-method-primary' => 'heimawiki',
@@ -16721,8 +16721,8 @@ Lykilorð svæðisbundinna aðganga verða þau sömu og fyrir samræmingu aðga
 	'centralauth-prefs-unattached' => 'Óstaðfestur',
 	'centralauth-prefs-complete' => 'Allt á hreinu!',
 	'centralauth-prefs-migration' => 'Verið er að samræma aðganginn',
-	'centralauth-prefs-count-attached' => 'Aðgangurinn þinn er virkur á {{PLURAL:$1|einu verkefni|$1 verkefnum}}',
-	'centralauth-prefs-count-unattached' => 'Óstaðfestir aðgangar með þínu notendanafni eru enn á {{PLURAL:$1|einu verkefni|$1 verkefnum}}',
+	'centralauth-prefs-count-attached' => 'Aðgangurinn þinn er virkur á $1 {{PLURAL:$1|verkefni|verkefnum}}',
+	'centralauth-prefs-count-unattached' => 'Óstaðfestir aðgangar með þínu notendanafni eru enn á $1 {{PLURAL:$1|verkefni|verkefnum}}',
 	'centralauth-prefs-detail-unattached' => 'Þetta verkefni hefur ekki staðfest altæka notendur.',
 	'centralauth-prefs-manage' => 'Stjórnun þíns altæka aðgangs',
 	'centralauth-prefs-view' => 'Skoða upplýsingar altæks notanda', # Fuzzy
@@ -20980,6 +20980,7 @@ $messages['lrc'] = array(
 	'centralauth-seconds-ago' => '$1 {{جمی:$1|ثانیه|ثانیه یا}} دما', # Fuzzy
 	'centralauth-minutes-ago' => '$1 {{جمی:$1|دیقه|دیقه یا}} دما', # Fuzzy
 	'centralauth-hours-ago' => '$1 {{جمی:$1|ساعت|ساعتیا}} دما', # Fuzzy
+	'centralauth-days-ago' => '$1 {{جمی:$1|روز|روزیا}} دما', # Fuzzy
 	'centralauth-months-ago' => '$1 {{جمی:$1|ما|مایا}}دما', # Fuzzy
 	'centralauth-years-ago' => '$1 {{جمی:$1|سال|سالیا}} دما', # Fuzzy
 	'centralauth-prefs-not-managed' => 'د حساو یه شلک بیه استفاده نبیه',
@@ -36041,8 +36042,8 @@ $messages['uz'] = array(
 	'centralauth-admin-info-username' => 'Foydalanuvchi nomi:',
 	'centralauth-prefs-status' => 'Global hisob holati:',
 	'centralauth-prefs-complete' => 'Hammasi joyida!',
-	'centralauth-prefs-count-attached' => 'Sizning hisobingiz $1 ta loyihada faol.', # Fuzzy
-	'centralauth-prefs-count-unattached' => "Foydalanuvchi nomingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
+	'centralauth-prefs-count-attached' => 'Hisob yozuvingiz $1 ta {{PLURAL:$1|loyihada}} faol.',
+	'centralauth-prefs-count-unattached' => "Hisob yozuvingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
 	'centralauth-prefs-manage' => 'Global hisob yozuvini boshqarish',
 	'centralauth-prefs-view' => 'Foydalanuvchi haqida global maʼlumotlarni koʻrish', # Fuzzy
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:',
