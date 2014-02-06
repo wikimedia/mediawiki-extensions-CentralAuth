@@ -31370,6 +31370,7 @@ $messages['so'] = array(
 	'centralauth-merge-method-new' => 'Akoon cusub',
 	'centralauth-merge-method-new-desc' => 'Waxa ay muujinaysaa  in la sameeyey akoon caalami ah si iskeed ah markii la sameeyey akoonkaan maxalliga ah.',
 	'centralauth-prefs-complete' => 'Isku Hagaaji dhaam!',
+	'centralauth-prefs-count-attached' => 'Akoonkaada wuxuu ka dhaq-dhaqaaqaa $1 mashruuc {{PLURAL:$1|bog|bogag}}.',
 	'centralauth-prefs-manage' => 'Maamul akoonkaada guud',
 	'centralauth-prefs-view' => 'Itus macluumaadka gude galaha', # Fuzzy
 	'centralauth-login-progress' => 'Waxaa kudaha ugalaysaa wikiyaasha kale ee {{int:Centralauth-groupname}}:',
