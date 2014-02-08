@@ -1906,6 +1906,7 @@ $messages['ar'] = array(
 	'centralauth-admin-info-editcount' => 'مجموع عدد التعديلات:',
 	'centralauth-admin-info-locked' => 'مقفل:',
 	'centralauth-admin-info-hidden' => 'مستوى مخفي:',
+	'centralauth-admin-info-nogroups' => 'لا شيء',
 	'centralauth-admin-nohome' => 'لا يمكن التحديد',
 	'centralauth-admin-yes' => 'نعم',
 	'centralauth-admin-no' => 'لا',
@@ -1921,6 +1922,7 @@ $messages['ar'] = array(
 	'centralauth-admin-list-attached-on' => 'مرتبطة',
 	'centralauth-admin-list-method' => 'طريقة',
 	'centralauth-admin-list-editcount' => 'عدد التعديلات',
+	'centralauth-admin-list-groups' => 'المجموعات',
 	'centralauth-admin-list-blocked' => 'محظور',
 	'centralauth-admin-unmerge' => 'تم اختيار الفصل',
 	'centralauth-admin-merge' => 'تم اختيار الدمج',
@@ -1968,7 +1970,7 @@ $messages['ar'] = array(
 	'centralauth-listusers-nolocal' => 'غير مرتبط أو غير موجود محليا',
 	'centralauth-admin-multi-username' => 'أدخل اسم مستخدم أو اكثر، مفصولين بسطر جديد',
 	'centralauth-admin-multi-notfound' => 'لم يرجع البحث أية أسماء مستخدمين.',
-	'centralauth-admin-multi-searchprefix' => 'أو ابحث عن حسابات مع بادئة', # Fuzzy
+	'centralauth-admin-multi-searchprefix' => 'أو ابحث عن أسماء مستخدمين مع بادئة',
 	'centralauth-seconds-ago' => 'منذ {{PLURAL:$1|أقل من ثانية|ثانية واحدة|ثانيتين|$1 ثوانٍ|$1 ثانية}}',
 	'centralauth-minutes-ago' => 'منذ {{PLURAL:$1|أقل من دقيقة|دقيقة واحدة|دقيقتين|$1 دقائق|$1 دقيقة}}',
 	'centralauth-hours-ago' => 'منذ $1 {{PLURAL:$1|ساعة|ساعة}}',
@@ -1984,10 +1986,10 @@ $messages['ar'] = array(
 	'centralauth-prefs-count-unattached' => 'حسابات غير مؤكدة باسمك موجودة في $1 {{PLURAL:$1|مشروع|مشروع}}.',
 	'centralauth-prefs-detail-unattached' => 'موقع المشروع هذا لم يتم تأكيده كمنتمي للحساب العام.',
 	'centralauth-prefs-manage' => 'أدر حسابك العام',
-	'centralauth-prefs-view' => 'عرض معلومات المستخدم العام', # Fuzzy
+	'centralauth-prefs-view' => 'عرض معلومات المستخدم العام',
 	'centralauth-renameuser-merged' => 'المستخدم $1 انتقل إلى نظام الدخول الموحد.
 إعادة تسميته ستؤدي إلى أن المستخدم المحلي سينفصل عن المستخدم العام.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'المستخدم $2 محجوز لحساب عام.', # Fuzzy
+	'centralauth-renameuser-reserved' => 'المستخدم $2 محجوز لحساب عام.',
 	'centralauth-invalid-wiki' => 'لا توجد قاعدة بيانات ويكي كهذه: $1',
 	'centralauth-account-exists' => 'لم يمكن إنشاء الحساب: اسم المستخدم المطلوب مأخوذ بالفعل في نظام الدخول الموحد.',
 	'centralauth-account-exists-reset' => 'اسم المستخدم $1 غير مسجل على هذا الويكي، ولكنه موجود في نظام الدخول الموحد.', # Fuzzy
@@ -2047,10 +2049,10 @@ $messages['ar'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|قائمة المستخدمين بالصلاحيات $2]]',
 	'centralauth-editgroup-restrictions' => 'مجموعة الويكيات حيث هذه المجموعة نشطة:',
 	'centralauth-editgroup-noset' => '(لا شيء)',
-	'centralauth-editgroup-submit' => 'احفظ التغييرات على سماحات المجموعة', # Fuzzy
+	'centralauth-editgroup-submit' => 'حفظ التغييرات على المجموعة العامة',
 	'centralauth-editgroup-perms' => 'السماحات المصاحبة:',
 	'centralauth-editgroup-reason' => 'السبب:',
-	'centralauth-editgroup-success' => 'سماحات المجموعة تم تغييرها', # Fuzzy
+	'centralauth-editgroup-success' => 'المجموعة العامة تم تغييرها',
 	'centralauth-editgroup-success-text' => 'أنت غيرت بنجاح سماحات المجموعة للمجموعة $1.
 [[Special:GlobalGroupPermissions|الرجوع إلى إدارة المجموعة]]', # Fuzzy
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|عدل]])',
@@ -2097,7 +2099,7 @@ $messages['ar'] = array(
 	'right-centralauth-autoaccount' => 'الدخول تلقائيا بواسطة الحساب العام',
 	'right-centralauth-unmerge' => 'إلغاء دمج الحسابات العامة.',
 	'right-centralauth-lock' => 'إقفال أو فتح الحساب العام',
-	'right-centralauth-oversight' => 'حضر الحسابات العامة', # Fuzzy
+	'right-centralauth-oversight' => 'أخف الحساب العام',
 	'right-centralauth-merge' => 'دمج حسابهم',
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'المجموعات العامة التي ينتمي لها الحساب',
@@ -6664,7 +6666,7 @@ $messages['ce'] = array(
 	'centralauth-listusers-nolocal' => 'цхьаьнатоьхна яц я локальни яц',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|секунд}} хьалха',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|минут}} хьалха',
-	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьт}} хьалха', # Fuzzy
+	'centralauth-hours-ago' => '$1 {{PLURAL:$1|сахьт}} хьалха',
 	'centralauth-days-ago' => '$1 {{PLURAL:$1|де}} хьалха',
 	'centralauth-months-ago' => '$1 {{PLURAL:$1|бутт}} хьалха',
 	'centralauth-years-ago' => '$1 {{PLURAL:$1|шо}} хьалха',
@@ -10627,6 +10629,7 @@ See kinnituskood aegub kuupäeval $6, kell $7.',
  * @author Bengoa
  * @author Joxemai
  * @author Kobazulo
+ * @author Subi
  * @author Unai Fdz. de Betoño
  * @author Xabier Armendaritz
  * @author පසිඳු කාවින්ද
@@ -10666,6 +10669,7 @@ $messages['eu'] = array(
 	'centralauth-admin-info-editcount' => 'Edizio kopurua, guztira:',
 	'centralauth-admin-info-locked' => 'Babestua:',
 	'centralauth-admin-info-hidden' => 'Ezkutuko maila:',
+	'centralauth-admin-info-groups' => 'Talde {{PLURAL:$1|globala|globalak}}:',
 	'centralauth-admin-yes' => 'bai',
 	'centralauth-admin-no' => 'ez',
 	'centralauth-admin-blocked' => 'Blokeatua. Blokeoa egun honetan $3 bukatuko da, $4 orduetan.
@@ -10674,6 +10678,7 @@ Arrazoia: $2',
 	'centralauth-admin-list-localwiki' => 'Wiki lokala',
 	'centralauth-admin-list-method' => 'Metodoa',
 	'centralauth-admin-list-editcount' => 'Edizio kontagailua',
+	'centralauth-admin-list-groups' => 'Taldeak',
 	'centralauth-admin-list-blocked' => 'Blokeatua',
 	'centralauth-admin-delete-title' => 'Kontua ezabatu',
 	'centralauth-admin-delete-button' => 'Kontu hau ezabatu',
