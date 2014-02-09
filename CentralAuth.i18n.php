@@ -10142,6 +10142,7 @@ Se ha solicitado esta página sin proporcionar ningún tipo de datos de autentic
 	'centralauth-centralautologin-p3p-explanation' => 'Algunos navegadores requieren un P3P de cookies para ser enviados o recibidos en algunos casos, incluyendo la verificación del inicio de sesión SUL. Se trata de un aro innecesario para saltar a través de esta situación, teniendo en cuenta que todas las páginas que están en el mismo grupo de wiki y P3P es en su mayoría son obsoletos y abandonados; Afortunadamente, la política con el enlace a esta página en la actualidad se considera "lo suficientemente buena" por parte de estos navegadores, en sus configuraciones por defecto.
 Por favor revise la política de privacidad de este sitio para determinar cómo puede utilizarse cualquier información.',
 	'centralauth-centralautologin-logged-in' => 'Has iniciado sesión globalmente como «$1». Carga la página de nuevo para aplicar la configuración del usuario.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Has iniciado sesión globalmente. Carga la página de nuevo para aplicar la configuración del usuario.',
 	'globalgroupmembership' => 'Pertenencia a grupos globales',
 	'globalgrouppermissions' => 'Administración de grupos globales',
 	'centralauth-globalgroupperms-grouplist' => 'Los siguientes grupos globales han sido configurados.
@@ -17939,6 +17940,7 @@ Anda dapat melihat dan mengubahnya, atau membuat set baru.',
  * @author Dawid Deutschland
  * @author Malafaya
  * @author Nodar Kherkheulidze
+ * @author Tokoko
  * @author გიორგიმელა
  */
 $messages['ka'] = array(
@@ -17991,11 +17993,11 @@ $messages['ka'] = array(
 	'centralauth-list-home-title' => 'მშობლიური ვიკი',
 	'centralauth-list-home-dryrun' => 'თქვენი გაერთიანებული ანგარიშისთვის გამოყენებული იქნება ამ ვიკი-პროექტში მითითებული პაროლი და ელ. ფოსტის მისამართი.',
 	'centralauth-list-attached-title' => 'მიმაგრებული ანგარიშები',
-	'centralauth-list-attached' => 'ანგარიში სახელწოდებით "$1" ავტომატურად მიუერთდა გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:',
-	'centralauth-list-attached-dryrun' => 'ანგარიში სახელწოდებით "$1" ავტომატურად მიუერთება გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:',
+	'centralauth-list-attached' => 'ანგარიში სახელწოდებით "$1" ავტომატურად მიუერთდა გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'ანგარიში სახელწოდებით "$1" ავტომატურად მიუერთება გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:', # Fuzzy
 	'centralauth-list-unattached-title' => 'არა-მიერთებული ანგარიშები',
 	'centralauth-list-unattached' => 'ანგარიშის "$1" თქვენდამი კუთვნილება ვერ დასტურდება ავტომატურად შემდეგ საიტებზე;
-შესაძლოა, მათ თქვენი ძირითადი ანგარიშისგან განხვავებული პაროლი აქვთ:',
+შესაძლოა, მათ თქვენი ძირითადი ანგარიშისგან განხვავებული პაროლი აქვთ:', # Fuzzy
 	'centralauth-foreign-link' => 'მომხმარებელი $1  $2-ში',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|ცვლილება|ცვლილება}} $2-ში',
 	'centralauth-merge-method-primary' => 'მშობლიური ვიკი',
@@ -18047,6 +18049,8 @@ $messages['ka'] = array(
 	'centralauth-admin-info-editcount' => 'სრული რედაქტირებათა მთვლელი:',
 	'centralauth-admin-info-locked' => 'დაიბლოკა:',
 	'centralauth-admin-info-hidden' => 'დამალულია:',
+	'centralauth-admin-info-groups' => 'გლობალური {{PLURAL:$1|ჯგუფის|ჯგუფების}} წევრი:',
+	'centralauth-admin-info-nogroups' => 'არცერთი',
 	'centralauth-admin-nohome' => 'შეუძლებელია განსაზღვრა',
 	'centralauth-admin-yes' => 'ჰო',
 	'centralauth-admin-no' => 'არა',
@@ -18062,6 +18066,7 @@ $messages['ka'] = array(
 	'centralauth-admin-list-attached-on' => 'გაერთიანდა',
 	'centralauth-admin-list-method' => 'მეთოდი',
 	'centralauth-admin-list-editcount' => 'რედაქტირებათა მთვლელი',
+	'centralauth-admin-list-groups' => 'ჯგუფები',
 	'centralauth-admin-list-blocked' => 'დაბლოკილია',
 	'centralauth-admin-unmerge' => 'არჩეულის დაყოფა',
 	'centralauth-admin-merge' => 'არჩეულის გაერთიანება',
@@ -18106,6 +18111,7 @@ $messages['ka'] = array(
 	'centralauth-admin-logsnippet' => 'გლობალური ანგარიშის წინა ცვლილებები',
 	'centralauth-admin-suppressreason' => 'გლობალურად შეჩერდა $1-ის მიერ. მიზეზი: $2',
 	'centralauth-admin-not-authorized' => 'თქვენ არ გაქვთ ამ მოქმედების შესრულების ნებართვა',
+	'centralauth-admin-too-many-edits' => 'გლობალურ ანგარიშს "<nowiki>$1</nowiki>" აქვს $2-ზე მეტი რედაქტირება და მისი დამალვა შეუძლებელია.',
 	'globalusers' => 'გლობალური ანგარიშების სია',
 	'centralauth-listusers-locked' => 'ჩაკწტილია',
 	'centralauth-listusers-attached' => '[[User:$1|ლოკალურად არსებობს]]',
@@ -18122,6 +18128,8 @@ $messages['ka'] = array(
 	'centralauth-admin-action-hide-none' => 'არჩეული ანგარიშების გამოჩენა',
 	'centralauth-admin-action-hide-lists' => 'არჩეული ანგარიშების დამალვა საჯარო სიიდან',
 	'centralauth-admin-action-hide-oversight' => 'არჩეული ანგარიშების სრულად დამალვა',
+	'centralauth-admin-multi-bot' => 'ბოლო ცვლილებები',
+	'centralauth-admin-multi-botcheck' => 'მონიშნე რედაქტირებები [[Special:RecentChanges|{{int:recentchanges}}]], როგორც ბოტის.',
 	'centralauth-seconds-ago' => '$1 წამის წინ',
 	'centralauth-minutes-ago' => '$1 წუთის წინ',
 	'centralauth-hours-ago' => '$1 საათის წინ',
@@ -18149,6 +18157,7 @@ $messages['ka'] = array(
 	'centralauth-login-no-others' => 'თქვენ ავტომატურად შეხვედით {{int:Centralauth-groupname}}-ის ყველა პროექტში.',
 	'centralauth-logout-no-others' => 'You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'გლობალურად დამალა მომხმარებელმა $1 $2 შემდეგი მიზეზის გამო: $3',
+	'centralauth-login-error-locked' => 'თქვერ არ შეგიძლიათ შესვლა, რადგან თქვენი ანგარიში დაბლოკილია.',
 	'centralauth-log-name' => 'გლობალური ანგარიშების ჟურნალი',
 	'centralauth-log-header' => 'ეს ჟურნალი შეიცავს ინფორმაციას წაშლის, დაბლოკვისა და ბლოკის მოხსნის შესახებ',
 	'centralauth-log-entry-delete' => 'წაიშალა გლობალური ანგარიში „$1“',
@@ -18176,6 +18185,11 @@ $messages['ka'] = array(
 	'centralauth-rightslog-entry-deleteset' => 'წაშლილი "$1" ვიკი-ნაკრები',
 	'centralauth-rightslog-set-optin' => 'დაშვების პრინციპით',
 	'centralauth-rightslog-set-optout' => 'გამორიცხვის პრინციპით',
+	'centralautologin' => 'გლობალური შესვლა',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'თქვენ უკვე შესული ხართ ლოკალურ პროექტში.',
+	'centralauth-centralautologin-lostsession' => 'სესიის მონაცემები დაიკარგა',
+	'centralauth-centralautologin-badstate' => 'არასწორი სათაური "$1"',
+	'centralauth-centralautologin-logged-in' => 'თქვენ ჯერ არ ხართ სისტემაში გლობალურად შესული, როგორც $1. გადატვირთეთ გვერდი.',
 	'globalgroupmembership' => 'წევრობა გლობალურ ჯგუფებში',
 	'globalgrouppermissions' => 'გლობალური ჯგუფების მართვა',
 	'centralauth-globalgroupperms-grouplist' => 'დაყენებულია შემდეგი გლობალური ჯგუფების კონფიგურაცია.
