@@ -1988,9 +1988,9 @@ $messages['ar'] = array(
 	'centralauth-admin-multi-botcheck' => 'علم المدخلات الموجودة في [[Special:RecentChanges|{{int:recentchanges}}] كتعديلات بوت.', # Fuzzy
 	'centralauth-seconds-ago' => 'منذ {{PLURAL:$1|أقل من ثانية|ثانية واحدة|ثانيتين|$1 ثوانٍ|$1 ثانية}}',
 	'centralauth-minutes-ago' => 'منذ {{PLURAL:$1|أقل من دقيقة|دقيقة واحدة|دقيقتين|$1 دقائق|$1 دقيقة}}',
-	'centralauth-hours-ago' => 'منذ $1 {{PLURAL:$1|ساعة|ساعة}}',
+	'centralauth-hours-ago' => 'منذ {{PLURAL:$1|أقل من ساعة|ساعة واحدة|ساعتين| $1 ساعات|$1 ساعة|$1 ساعة}}', # Fuzzy
 	'centralauth-days-ago' => 'منذ {{PLURAL:$1|أقل من يوم|يوم واحد|يومين|$1 أيام|$1 يومًا|$1 يوم}}',
-	'centralauth-months-ago' => 'منذ $1 {{PLURAL:$1|شهر|شهر}}',
+	'centralauth-months-ago' => 'منذ {{PLURAL:$1|أقل من شهر|شهر|شهرين| $1 أشهر| $1 شهراً| $1 شهر}}',
 	'centralauth-years-ago' => 'منذ {{PLURAL:$1||سنة واحدة|سنتين|$1 سنين|$1 سنة}}',
 	'centralauth-prefs-status' => 'حالة الحساب العام:',
 	'centralauth-prefs-not-managed' => 'لا يستخدم الحساب الموحد',
@@ -2129,6 +2129,8 @@ $messages['ar'] = array(
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'المجموعات العامة التي ينتمي لها الحساب',
 	'action-centralauth-lock' => 'إقفال أو فتح حسابات عامة',
+	'centralloginsuccesful' => 'تم الدخول بشكل صحيح',
+	'centralauth-completelogin-back' => 'ارجع إلى الصفحة السابقة',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
