@@ -2048,6 +2048,7 @@ $messages['ar'] = array(
 	'centralauth-centralautologin-badparams' => 'معاملات الإستيثاق المحددة غير صحيحة',
 	'centralauth-centralautologin-lostsession' => 'لقد فقدت بيانات الجلسة',
 	'centralauth-centralautologin-badstate' => 'حالة غير صحيحة "$1"',
+	'centralauth-centralautologin-corsfail' => 'فشلت عملية التحقق من أصل نص كورز (CORS)',
 	'globalgroupmembership' => 'العضوية في المجموعات العامة',
 	'globalgrouppermissions' => 'التحكم بالمجموعة العامة',
 	'centralauth-globalgroupperms-grouplist' => 'المجموعات العامة التالية تم ضبطها.
@@ -2129,8 +2130,23 @@ $messages['ar'] = array(
 	'right-globalgrouppermissions' => 'التحكم بالمجموعات العامة',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'المجموعات العامة التي ينتمي لها الحساب',
 	'action-centralauth-lock' => 'إقفال أو فتح حسابات عامة',
-	'centralloginsuccesful' => 'تم الدخول بشكل صحيح',
-	'centralauth-completelogin-back' => 'ارجع إلى الصفحة السابقة',
+	'centralloginsuccesful' => 'تم تسجيل الدخول بنجاح',
+	'centralauth-completelogin-back' => 'العودة إلى الصفحة السابقة.',
+	'centralauth-warning-notloggedin' => 'أنت غير مسجل بحسابك حاليا',
+	'centralauth-finishglobaliseemail_body' => 'تم إقتران بريدك الإلكتروني بالحساب "$2" على كل مشاريع ويكيميديا والويكي الرئيسية لحسابك هي {{SITENAME}}.
+
+لتأكيد ملكيتك لهذا الحساب قم بدمج أياً من الحسابات الخاصة بك والتي لا يمكن دمجها من قبلنا تلقائياً والتي يمكنها أن تساعدك على إسترجاع حسابك إذا نسيت كلمة السر. الرجاء فتح هذا الرابط في المتصفح الخاص بك.
+
+
+$3
+
+إذا كنت *لا* تملك هذا الحساب، الرجاء إستخدام هذا الرابط لإلغاء هذه الرسالة المختصة بتأكيد البريد الإلكتروني:
+
+
+$5
+
+
+تنتهي صلاحية كود التأكيد يوم $6 الساعة $7.',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
