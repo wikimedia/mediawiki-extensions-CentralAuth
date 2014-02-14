@@ -2048,6 +2048,10 @@ $messages['ar'] = array(
 	'centralauth-centralautologin-badparams' => 'معاملات الإستيثاق المحددة غير صحيحة',
 	'centralauth-centralautologin-lostsession' => 'لقد فقدت بيانات الجلسة',
 	'centralauth-centralautologin-badstate' => 'حالة غير صحيحة "$1"',
+	'centralauth-centralautologin-notposted' => 'يجب إرسال نموذج الولوج المركزي',
+	'centralauth-centralautologin-badstate-central' => 'الحالة "$1" غير مسموح بها على الويكي المركزية',
+	'centralauth-centralautologin-badstate-local' => 'الحالة "$1" غير مسموح بها على الويكي المحلية',
+	'centralauth-centralautologin-badwiki' => 'لا يمكن الولوج إلى الويكي "$1" باستخدام الحساب الموحد',
 	'centralauth-centralautologin-corsfail' => 'فشلت عملية التحقق من أصل نص كورز (CORS)',
 	'centralauth-centralautologin-p3p-explanation' => 'تتطلب بعض المتصفحات وجود سياسة بي 3 بي مدمجة لملفات تعريف الإرتباط (cookies) لكي يكون من الممكن إرسالها أو تلقيها في حالات معينة بما في ذلك حالة التحقق من تسجيل الدخول بإستخدام الحساب الموحد. وهذا متطلب غير ضروري لهذه الحالة أخذاً في الإعتبار أن كل الصفحات المتعلقة بالموضوع موجودة على نفس مجموعة الويكي وأن  بي 3 بي تعتبر تقنية عتيقة ومهجورة. لحسن الحظ تعتبر سياسة تقييم ما هو باطل أو غير صحيح (invalid policy) التي تربط إلى هذه الصفحة "جيدة بما فيه الكفاية" من قبل الإعدادت الإفتراضية لهذه المتصفحات.
 
@@ -2085,13 +2089,12 @@ $messages['ar'] = array(
 	'centralauth-editgroup-perms' => 'السماحات المصاحبة:',
 	'centralauth-editgroup-reason' => 'السبب:',
 	'centralauth-editgroup-success' => 'المجموعة العامة تم تغييرها',
-	'centralauth-editgroup-success-text' => 'أنت غيرت بنجاح سماحات المجموعة للمجموعة $1.
-[[Special:GlobalGroupPermissions|الرجوع إلى إدارة المجموعة]]', # Fuzzy
+	'centralauth-editgroup-success-text' => 'لقد قمت بتحديث المجموعة $1 بنجاح.
+[[Special:GlobalGroupPermissions|ارجع إلى صفحة إدارة المجموعة]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|عدل]])',
 	'centralauth-editgroup-nowikiset' => 'لا شيء، وتنطبق على كل الويكيات.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'الويكي حيث يمتلك حسابا:',
-	'centralauth-globalgroupmembership-badknownwiki' => "المستخدم العام '''$1''' ليس نشطا على الويكي الذي حددته (''$2'').
-ربما تكون تحاول إعطاء صلاحيات للمستخدم الخاطئ!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "حساب المستخدم العام '''$1''' ليس نشطا على الويكي التي قمت بتحديدها (''$2''). ربما تحاول إعطاء صلاحيات للمستخدم الخاطئ!",
 	'centralauth-editset' => 'مجموعات الويكي',
 	'centralauth-editset-legend-rw' => 'تحرير أو إنشاء مجموعة ويكي',
 	'centralauth-editset-legend-ro' => 'قائمة مجموعات الويكي',
@@ -2125,7 +2128,7 @@ $messages['ar'] = array(
 	'centralauth-editset-success' => 'تم تغيير مجموعة الويكي بنجاح.',
 	'centralauth-editset-success-delete' => 'تم حذف مجموعة الويكي بنجاح.',
 	'centralauth-editset-return' => 'رجوع إلى القائمة الرئيسية',
-	'centralauth-block-already-locked' => 'الحساب [[Special:CentralAuth/$1|$1]] مقفل بالفعل عموما.', # Fuzzy
+	'centralauth-block-already-locked' => 'الحساب [[Special:CentralAuth/$1|$1]] مقفل بالفعل على المستوى العام.',
 	'centralauth-readonly' => 'قاعدة بيانات الدخول الموحد مقفلة',
 	'centralauth-readonlytext' => 'قاعدة بيانات الدخول الموحد مقفلة حالياً ولا تستقبل مدخلات جديدة أو تعديلات أخرى، وذلك ربما بسبب الصيانة الروتينية، وبعد انتهائها ستعود إلى العمل كالعادة.',
 	'right-globalgroupmembership' => 'تعديل العضوية للمجموعات العامة',
@@ -2141,7 +2144,12 @@ $messages['ar'] = array(
 	'centralloginsuccesful' => 'تم تسجيل الدخول بنجاح',
 	'centralauth-completelogin-back' => 'العودة إلى الصفحة السابقة.',
 	'centralauth-error-nologinattempt' => 'ليس هناك محاولة جارية لتسجيل الدخول لجلستك الحالية',
+	'centralauth-error-badtoken' => 'شهادة الإستيثاق التي تم توفيرها منتهية الصلاحية أو غير صالحة.',
+	'centralauth-error-token-wrongattempt' => 'شهادة الإستيثاق لا تنتمي إلى محاولة الولوج الخاصة بك الحالية. قد يكون هناك من يحاول الولوج بإسمك باستخدام حساب مشبوه.',
+	'centralauth-error-token-wronguser' => 'الشهادة غير مطابقة مع إسم المستخدم الخاص بجلستك القائمة. هناك من يحاول الولوج بإسمك باستخدام حساب مشبوه. إذا كنت تحاول الولوج بحساب آخر، الرجاء تسجيل الخروج أولاً.',
 	'centralauth-warning-notloggedin' => 'أنت غير مسجل بحسابك حاليا',
+	'centralauth-warning-notattached' => 'الحساب المحلي غير مرتبط بحساب موحد.',
+	'centralauth-finishglobaliseemail_subject' => 'تأكيد الحساب على {{SITENAME}}',
 	'centralauth-finishglobaliseemail_body' => 'تم إقتران بريدك الإلكتروني بالحساب "$2" على كل مشاريع ويكيميديا والويكي الرئيسية لحسابك هي {{SITENAME}}.
 
 لتأكيد ملكيتك لهذا الحساب قم بدمج أياً من الحسابات الخاصة بك والتي لا يمكن دمجها من قبلنا تلقائياً والتي يمكنها أن تساعدك على إسترجاع حسابك إذا نسيت كلمة السر. الرجاء فتح هذا الرابط في المتصفح الخاص بك.
@@ -22222,8 +22230,8 @@ $messages['mk'] = array(
 	'centralauth-admin-action-hide-oversight' => 'Целосно скриј ги избраните сметки',
 	'centralauth-admin-multi-bot' => 'Скорешни промени',
 	'centralauth-admin-multi-botcheck' => 'Означувај ги ставките во [[Special:RecentChanges|{{int:recentchanges}}]] како ботовски ставки.',
-	'centralauth-seconds-ago' => 'пред $1 {{PLURAL:$1|секунда|секунди}}',
-	'centralauth-minutes-ago' => 'пред $1 {{PLURAL:$1|минута|минути}}',
+	'centralauth-seconds-ago' => 'пред {{PLURAL:$1|една секунда|$1 секунди}}',
+	'centralauth-minutes-ago' => 'пред {{PLURAL:$1|една минута|$1 минути}}',
 	'centralauth-hours-ago' => 'пред $1 {{PLURAL:$1|час|часа}}',
 	'centralauth-days-ago' => 'пред $1 {{PLURAL:$1|ден|дена}}',
 	'centralauth-months-ago' => 'пред $1 {{PLURAL:$1|месец|месеци}}',
