@@ -2514,7 +2514,7 @@ $messages['as'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>কেৱল পৰীক্ষামূলক অৱস্থা</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => "একাউণ্ট একত্ৰীকৰণ বৰ্তমান ডেম'/ডিবাগিং অৱস্থাত আছে, গতিকে মূল একত্ৰীকৰণ কাম নিষ্ক্ৰিয় হৈ আছে।
 ক্ষমা কৰিব!",
-	'centralauth-error-locked' => 'আপুনি সম্পাদনা কৰিব নোৱাৰে কাৰণ আপোনাৰ একাউণ্টটো বন্ধ হৈ আছে।',
+	'centralauth-error-locked' => 'আপোনাৰ একাউণ্টটো বন্ধ হৈ আছে কাৰণে আপুনি সম্পাদনা কৰিব নোৱাৰে।',
 	'centralauth-error-unmerged' => 'আপুনি সম্পাদনা কৰিব নোৱাৰে কাৰণ আপোনাৰ একাউণ্টটো একত্ৰীকৰণ কৰা হোৱা নাই।',
 	'centralauth-readmore-text' => "''[[meta:Help:Unified login|'''একত্ৰিত লগ্‌ ইন'''ৰ বিষয়ে অধিক জানক]]…''",
 	'centralauth-list-home-title' => 'মুখ্য ৱিকি',
@@ -2523,8 +2523,8 @@ $messages['as'] = array(
 	'centralauth-list-attached' => 'তলত দিয়া ছাইটসমূহৰ "$1" নামৰ একাউণ্টটো স্বয়ংক্ৰিয়ভাৱে একত্ৰিত একাউণ্টৰ লগত সংযোগ কৰা হৈছে:', # Fuzzy
 	'centralauth-list-attached-dryrun' => 'তলত দিয়া ছাইটসমূহৰ "$1" নামৰ একাউণ্টটো স্বয়ংক্ৰিয়ভাৱে একত্ৰিত একাউণ্টৰ লগত সংযোজিত কৰা হ\'ব:', # Fuzzy
 	'centralauth-list-unattached-title' => 'অসংযোজিত একাউণ্ট',
-	'centralauth-list-unattached' => '"$1" একাউণ্টটো তলৰ ছাইটসমূহত আপোনাৰ হয়নে নহয় সেয়া স্বয়ংক্ৰিয়ভাৱে নিশ্চিত কৰিব পৰা নগ\'ল;
-সম্ভৱতঃ সেইবোৰৰ গুপ্তশব্দ আপোনাৰ প্ৰাথমিক একাউণ্টতকৈ বেলেগ:', # Fuzzy
+	'centralauth-list-unattached' => '{{PLURAL:$2|ছাইটটোত|ছাইটসমূহত}} থকা "$1" নামৰ {{PLURAL:$2|একাউণ্টটো|একাউণ্টকেইটা}} আপোনাৰ হয়নে নহয় সেয়া স্বয়ংক্ৰিয়ভাৱে নিশ্চিত কৰিব পৰা নগ\'ল;
+সম্ভৱতঃ {{PLURAL:$2|ইয়াৰ|সেইবোৰৰ}} গুপ্তশব্দ আপোনাৰ প্ৰাথমিক একাউণ্টতকৈ বেলেগ:',
 	'centralauth-foreign-link' => '$2ত ব্যৱহাৰকাৰী $1',
 	'centralauth-foreign-contributions' => '$2ত $1 {{PLURAL:$1|বৰঙণি|বৰঙণি}}',
 	'centralauth-merge-method-primary' => 'মুখ্য ৱিকি',
@@ -2648,7 +2648,7 @@ $messages['as'] = array(
 	'centralauth-prefs-unattached' => 'অনিশ্চিত',
 	'centralauth-prefs-complete' => 'সকলো ক্ৰমত আছে!',
 	'centralauth-prefs-migration' => 'প্ৰব্ৰজন হৈ আছে',
-	'centralauth-prefs-count-attached' => 'আপোনাৰ একাউণ্টটো $1 প্ৰকল্প {{PLURAL:$1|ছাইট|ছাইটসমূহ}}ত সক্ৰিয় হৈ আছে।',
+	'centralauth-prefs-count-attached' => 'আপোনাৰ একাউণ্টটো $1টা প্ৰকল্প {{PLURAL:$1|ছাইটত}}ত সক্ৰিয় হৈ আছে।',
 	'centralauth-prefs-count-unattached' => 'আপোনাৰ নাম থকা অনিশ্চিত একাউণ্ট $1 {{PLURAL:$1|প্ৰকল্প|প্ৰকল্পসমূহ}}ত আছে।',
 	'centralauth-prefs-detail-unattached' => 'এই প্ৰকল্প ছাইট গোলকীয় একাউণ্টৰ অন্তৰ্গত বুলি নিশ্চিত কৰা হোৱা নাই।',
 	'centralauth-prefs-manage' => 'আপোনাৰ গোলকীয় একাউণ্টৰ ব্যৱস্থাপনা কৰক',
@@ -5674,7 +5674,7 @@ Mard eo c\'hwi e c\'hallot kas da benn vat an argerzh kendeuziñ kontoù dre ver
 	'centralauth-list-home-dryrun' => "Ar ger-tremen hag ar chomlec'h postel merket evit ar wiki-mañ eo a vo implijet evit ho kont unvanet.",
 	'centralauth-list-attached-title' => 'Kontoù stag',
 	'centralauth-list-attached' => 'Staget war-eeun eo bet ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :',
-	'centralauth-list-attached-dryrun' => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" d\'ar gont unvan evit ar raktresoù da-heul :', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Staget war-eeun e vo ar c\'hontoù implijer anvet "$1" ouzh ar gont unvan evit ar lec\'hiennoù-mañ :',
 	'centralauth-list-unattached-title' => 'Kontoù distag',
 	'centralauth-list-unattached' => "N'eus ket bet gallet kadarnaat ent emgefre eo deoc'h ar c'hontoù \"\$1\" war al lec'hiennoù da-heul;
 evit doare zo bet lakaet evito ur ger-tremen disheñvel diouzh hini ho kont pennañ :", # Fuzzy
@@ -5792,6 +5792,7 @@ Abeg : $1',
 	'centralauth-listusers-locked' => 'prennet',
 	'centralauth-listusers-attached' => "[[User:$1|bez ez eus dioutañ en un doare lec'hel]]",
 	'centralauth-listusers-nolocal' => "nann-staget pe n'eus ket outañ en un doare lec'hel",
+	'multilock' => 'Stankañ meur a gont hollek',
 	'centralauth-admin-multi-username' => 'Ebarzhit un anv implijer pe meur a hini, unan dre linenn',
 	'centralauth-admin-multi-notfound' => "N'eus bet kavet anv implijer ebet gant an enklask.",
 	'centralauth-admin-multi-intro' => 'Hizivaat meur a gont hollek war un dro',
@@ -5830,6 +5831,7 @@ Adenvel anezhañ a zistago anezhañ d'an hini unvanet.", # Fuzzy
 	'centralauth-login-no-others' => "Kevreet oc'h bet ez emgefre da raktresoù all {{int:Centralauth-groupname}}.",
 	'centralauth-logout-no-others' => "Digevreet oc'h bet ez emgefre da raktresoù all eus {{int:Centralauth-groupname}}.",
 	'centralauth-hidden-blockreason' => 'kuzhet en un doare hollek gant $1 war $2 evit an abeg da-heul : $3',
+	'centralauth-login-error-locked' => "N'hallit ket kevreañ rak stanket eo ho kont en un doare hollek.",
 	'centralauth-log-name' => "Marilh ar c'hontoù hollek",
 	'centralauth-log-header' => "Ar marilh-mañ a zo ennañ oberoù ar c'hontoù hollek : dilemel, prennañ ha dibrenañ.",
 	'centralauth-log-entry-delete' => 'en deus diverket ar gont hollek "$1"',
@@ -5890,7 +5892,7 @@ Ur strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Roll an implijerien dezho ar gwirioù $2]]',
 	'centralauth-editgroup-restrictions' => "C'hoari wikioù evit pere eo oberiant ar strollad :",
 	'centralauth-editgroup-noset' => '(hini ebet)',
-	'centralauth-editgroup-submit' => "Enrollañ ar c'hemmoù da aotreoù ar strollad", # Fuzzy
+	'centralauth-editgroup-submit' => "Enrollañ ar c'hemmoù d'ar strollad hollek",
 	'centralauth-editgroup-perms' => 'Aotreoù deroet :',
 	'centralauth-editgroup-reason' => 'Abeg :',
 	'centralauth-editgroup-success' => 'Cheñchet eo ar strollad hollek',
@@ -33674,6 +33676,7 @@ $messages['te'] = array(
 	'centralauth-admin-yes' => 'అవును',
 	'centralauth-admin-no' => 'కాదు',
 	'centralauth-admin-hidden-list' => 'బహిరంగ జాబితాల నుండి',
+	'centralauth-admin-hidden-oversight' => 'ఉపేక్షించినది',
 	'centralauth-admin-list-legend-ro' => 'స్థానిక ఖాతాల యొక్క జాబితా',
 	'centralauth-admin-list-legend-rw' => 'స్థానిక ఖాతాలను నిర్విలీనంచేయి',
 	'centralauth-admin-unattached' => 'జోడించనివి',
@@ -33694,6 +33697,7 @@ $messages['te'] = array(
 	'centralauth-admin-unmerge-success' => '$1 {{PLURAL:$1|ఖాతాను|ఖాతాలను}} జయప్రదంగా విడదీసాం',
 	'centralauth-admin-delete-title' => 'ఖాతాని తొలగించు',
 	'centralauth-admin-delete-button' => 'ఈ ఖాతాని తొలగించు',
+	'centralauth-admin-delete-confirm' => 'మీరు నిజంగానే ఈ ఖాతా తొలగించాలనుకుంటున్నారా?',
 	'centralauth-admin-delete-success' => '"<nowiki>$1</nowiki>" కు చెందిన సార్వత్రిక ఖాతాను జయప్రదంగా తొలగించాం',
 	'centralauth-admin-nonexistent' => '"<nowiki>$1</nowiki>" కు సార్వత్రిక ఖాతా లేదు',
 	'centralauth-admin-delete-nonexistent' => 'లోపం: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
@@ -33764,6 +33768,7 @@ $messages['te'] = array(
 	'centralauth-log-entry-chgstatus' => 'సార్వత్రిక ఖాతా "$1" స్థితిని మార్చాం: $2 సెట్ చేసాం; $3 అన్సెట్ చేసాం',
 	'centralauth-log-status-locked' => 'తాళం వెయ్యబడింది',
 	'centralauth-log-status-hidden' => 'దాచబడింది',
+	'centralauth-log-status-oversighted' => 'ఉపేక్షించినది',
 	'centralauth-log-status-none' => '(ఏదీకాదు)',
 	'centralauth-rightslog-name' => 'సార్వత్రిక హక్కుల చిట్టా',
 	'centralauth-rightslog-entry-usergroups' => '$1 యొక్క సార్వత్రిక గుంపు సభ్యత్వాన్ని $2 నుండి $3 కు మార్చాం',
@@ -33773,6 +33778,7 @@ $messages['te'] = array(
 	'centralauth-rightslog-header' => 'సార్వత్రిక గుంపులపై జరిగిన చర్యల చిట్టా ఇది: సభ్యత్వం మరియు అనుమతుల మార్పులు',
 	'centralauth-rightslog-entry-setnewtype' => '"$1" యొక్క రకాన్ని $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-entry-setchange' => "''$1'' లోని వికీలు మార్చబడ్డాయి: కలిపినవి: $2; తీసేసినవి: $3",
+	'centralautologin' => 'కేంద్రీకృత ప్రవేశం',
 	'centralauth-centralautologin-lostsession' => 'సెషను డేటా పోయింది',
 	'globalgroupmembership' => 'సార్వత్రిక గుంపుల్లో సభ్యత్వం',
 	'globalgrouppermissions' => 'సార్వత్రిక గుంపు నిర్వహణ',

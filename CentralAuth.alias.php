@@ -45,6 +45,7 @@ $specialPageAliases['arz'] = array(
 	'GlobalGroupPermissions' => array( 'اذن_الجروپ_العامه' ),
 	'WikiSets' => array( 'تعديل_مجموعات_الويكى' ),
 	'GlobalUsers' => array( 'يوزرات_عامين' ),
+	'MultiLock' => array( 'قفل_متعدد' ),
 );
 
 /** Assamese (অসমীয়া) */
@@ -732,9 +733,9 @@ $specialPageAliases['yi'] = array(
 $specialPageAliases['zh-hans'] = array(
 	'CentralAuth' => array( '中央认证' ),
 	'MergeAccount' => array( '合并账户', '整合账户' ),
-	'GlobalGroupMembership' => array( '全局用户权限', '全域组成员资格' ),
+	'GlobalGroupMembership' => array( '全域用户权限', '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),
-	'WikiSets' => array( '编辑维基组' ),
+	'WikiSets' => array( 'Wiki组', '编辑Wiki组', '维基组', '编辑维基组' ),
 	'GlobalUsers' => array( '全域用户' ),
 	'MultiLock' => array( '批量锁定' ),
 );
@@ -743,9 +744,9 @@ $specialPageAliases['zh-hans'] = array(
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
 	'MergeAccount' => array( '整合賬戶' ),
-	'GlobalGroupMembership' => array( '全域用戶權利', '全域組成員資格', '全域用戶權限' ),
+	'GlobalGroupMembership' => array( '全域用戶權限', '全域組成員資格' ),
 	'GlobalGroupPermissions' => array( '全域組權限' ),
-	'WikiSets' => array( '編輯Wiki組' ),
+	'WikiSets' => array( 'Wiki組', '編輯Wiki組', '維基組', '編輯維基組' ),
 	'GlobalUsers' => array( '全域用戶' ),
 	'MultiLock' => array( '批量鎖定' ),
 );
