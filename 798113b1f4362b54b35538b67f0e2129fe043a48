@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_1b1a7473",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-02-23T18:16:39Z",
+      "side": 1,
+      "message": "You either should run $this-\u003eloadState() first or just use $this-\u003egetId()",
+      "revId": "798113b1f4362b54b35538b67f0e2129fe043a48",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
