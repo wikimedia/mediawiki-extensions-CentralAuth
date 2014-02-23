@@ -58,6 +58,12 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
+		// per bug 47991
+		$this->getOutput()->setHTMLTitle( $this->msg(
+			'pagetitle',
+			$this->msg( 'centralauth-admin-title', $this->mUserName )->plain()
+		) );
+
 		$this->mGlobalUser = $globalUser = new CentralAuthUser( $this->mUserName );
 
 		if ( !$globalUser->exists() ||
