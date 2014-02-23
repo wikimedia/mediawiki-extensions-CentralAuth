@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_1b3154e9",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 535
+      },
+      "writtenOn": "2014-02-23T18:31:06Z",
+      "side": 1,
+      "message": "Now it uses getId()",
+      "revId": "8659a55508a79a1ad47168f27761b8460e308552",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
