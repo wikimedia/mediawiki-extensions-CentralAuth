@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_e975c52d",
+        "filename": "CentralAuth.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-02-23T11:15:34Z",
+      "side": 1,
+      "message": "maybe \"but not the heading on the page\" or so? Slightly confusing atm",
+      "revId": "1b3ad65e2cf48fba722247b8faf7007c115401ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_097b5124",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-02-23T11:15:34Z",
+      "side": 1,
+      "message": "why in content language? I don\u0027t see a reason to force users to read in anything but the language they selected",
+      "revId": "1b3ad65e2cf48fba722247b8faf7007c115401ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
