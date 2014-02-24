@@ -762,7 +762,7 @@ Parameters:
 * $1 - username
 * $2 - number of edits',
 	'centralauth-admin-title' => '{{Gender}}
-The page title of Special:CentralAuth (when a username is given) in your browser bar (HTML title), but not the page title in the heading.
+The page title of [[Special:CentralAuth]] (when a username is given) in your browser bar (HTML title), but not the page title in the heading.
 
 Parameters:
 * $1 - the username
@@ -12018,6 +12018,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-admin-suppressreason' => 'Supprimé globalement par $1 pour le motif suivant : $2',
 	'centralauth-admin-not-authorized' => 'Vous n’avez pas les droits pour effectuer cette action',
 	'centralauth-admin-too-many-edits' => 'Le compte global « <nowiki>$1</nowiki> » a plus de $2 {{PLURAL:$2|modification|modifications}} et ne peut être masqué.',
+	'centralauth-admin-title' => 'Gestionnaire de compte global pour $1',
 	'globalusers' => 'Liste des comptes globaux',
 	'centralauth-listusers-locked' => 'bloqué',
 	'centralauth-listusers-attached' => '[[User:$1|existe localement]]',
@@ -15666,6 +15667,7 @@ Le contrasignos pro contos local create ante le fusion se revertera a lor valore
 	'centralauth-admin-suppressreason' => 'Supprimite globalmente per $1 pro le motivo sequente: $2',
 	'centralauth-admin-not-authorized' => 'Tu non ha le permissiones necessari pro exequer iste action.',
 	'centralauth-admin-too-many-edits' => 'Le conto global "<nowiki>$1</nowiki>" ha plus de $2 {{PLURAL:$2|modification|modificationes}} e non pote esser celate.',
+	'centralauth-admin-title' => 'Gestion de conto global pro $1',
 	'globalusers' => 'Lista de contos global',
 	'centralauth-listusers-locked' => 'serrate',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
@@ -17061,6 +17063,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non hai i diritti per eseguire questa azione.',
 	'centralauth-admin-too-many-edits' => 'L\'utenza globale "<nowiki>$1</nowiki>" ha più di $2 {{PLURAL:$2|contributo|contributi}} e non può essere nascosta.',
+	'centralauth-admin-title' => "Gestione dell'utenza globale per $1",
 	'globalusers' => 'Elenco degli utenti globali',
 	'centralauth-listusers-locked' => 'bloccato',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmente]]',
@@ -17454,6 +17457,7 @@ $messages['ja'] = array(
 	'centralauth-admin-suppressreason' => 'あなたは以下の理由で、$1 によってグローバルに秘匿されています: $2',
 	'centralauth-admin-not-authorized' => 'あなたにはこの操作を実行する権限がありません',
 	'centralauth-admin-too-many-edits' => 'グローバルアカウント「<nowiki>$1</nowiki>」は編集回数が $2 {{PLURAL:$2|件}}を超過しているため非表示にできません。',
+	'centralauth-admin-title' => '$1 のグローバルアカウント管理',
 	'globalusers' => 'グローバルアカウント一覧',
 	'centralauth-listusers-locked' => 'ロックされている',
 	'centralauth-listusers-attached' => '[[User:$1|ローカルに作成済み]]',
@@ -21067,6 +21071,7 @@ $messages['lrc'] = array(
 	'centralauth-admin-status-nonexistent' => 'خطا: حساو جهونی  "<nowiki>$1</nowiki>" نئیش.',
 	'centralauth-admin-logsnippet' => 'حساو جهونی دمایی آلشت بیه',
 	'centralauth-admin-not-authorized' => 'شما د انجوم دئن ای کار دسرسی ناریت',
+	'centralauth-admin-title' => 'مدیر حساو جهونی سی $1',
 	'globalusers' => 'نوم گه حساویا جهونی',
 	'centralauth-listusers-locked' => 'قلف بيه',
 	'centralauth-listusers-attached' => '[[User:$1|د شلك ولاتی هيئش]]',
@@ -26905,6 +26910,7 @@ Le ciav për ij cont locaj creà prima dl'unificassion a tornëran ai sò valor 
 	'centralauth-admin-suppressreason' => 'Scancelà globalment da $1 për le rason sì-dapress: $2',
 	'centralauth-admin-not-authorized' => "A l'ha pa ij drit ëd fé costa assion",
 	'centralauth-admin-too-many-edits' => "Ël cont global «<nowiki>$1</nowiki>» a l'ha pi che che $2 {{PLURAL:$2|modìfica|modìfiche}} e a peul pa esse stërmà.",
+	'centralauth-admin-title' => 'Mansé ëd cont global për $1',
 	'globalusers' => 'Lista dij cont globaj',
 	'centralauth-listusers-locked' => 'blocà',
 	'centralauth-listusers-attached' => '[[User:$1|a esist localment]]',
@@ -32971,6 +32977,7 @@ Denna funktion är av säkerhetsskäl nu inaktiverad.',
 	'centralauth-admin-suppressreason' => 'Globalt undanhållen av $1 av följande anledning: $2',
 	'centralauth-admin-not-authorized' => 'Du har inte behörighet att utföra denna åtgärd.',
 	'centralauth-admin-too-many-edits' => 'Det globala kontot "<nowiki>$1</nowiki>" har över $2 {{PLURAL:$2|redigering|redigeringar}} och kan inte döljas.',
+	'centralauth-admin-title' => 'Global kontohantering för $1',
 	'globalusers' => 'Lista över globala konton',
 	'centralauth-listusers-locked' => 'låst',
 	'centralauth-listusers-attached' => '[[User:$1|existerar lokalt]]',
@@ -34597,6 +34604,7 @@ Olaryň islendigini görüp ýa-da redaktirläp bilersiňiz, ýa-da täze toplum
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author Jewel457
  * @author Namayan
  * @author Sky Harbor
  */
@@ -34655,10 +34663,10 @@ Paumanhin!",
 	'centralauth-list-home-title' => 'Tahanang wiki',
 	'centralauth-list-home-dryrun' => 'Ang nakatakda mong hudyat at adres ng e-liham sa wiking ito ay gagamitin para sa iyong pinag-isang kuwenta.',
 	'centralauth-list-attached-title' => 'Mga kuwentang nakakabit',
-	'centralauth-list-attached' => 'Ang kuwentang pinangalanang "$1" sa bawat isang sumusunod na mga sityo (sayt) ay kusang ikinabit sa pinagsanib na akawnt:',
-	'centralauth-list-attached-dryrun' => 'Ang kuwentang pinangalanang "$1" na nasa bawat isang sumusunod na mga sityo (sayt) ay kusang ikakabit sa pinag-isang akawnt:',
+	'centralauth-list-attached' => 'Ang kuwentang pinangalanang "$1" sa bawat isang sumusunod na mga sityo (sayt) ay kusang ikinabit sa pinagsanib na akawnt:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'Ang kuwentang pinangalanang "$1" na nasa bawat isang sumusunod na mga sityo (sayt) ay kusang ikakabit sa pinag-isang akawnt:', # Fuzzy
 	'centralauth-list-unattached-title' => "Mga kuwentang 'di-nakakabit",
-	'centralauth-list-unattached' => 'Ang kuwentang "$1" ay hindi kusang mapatototohanan bilang pag-aari mo sa sumusunod na mga sityo/sayt; mas malamang na mayroon silang isang naiibang hudyat mula sa pangunahing akawnt mo:',
+	'centralauth-list-unattached' => 'Ang kuwentang "$1" ay hindi kusang mapatototohanan bilang pag-aari mo sa sumusunod na mga sityo/sayt; mas malamang na mayroon silang isang naiibang hudyat mula sa pangunahing akawnt mo:', # Fuzzy
 	'centralauth-foreign-link' => 'Tagagamit na $1 sa $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kontribusyon|mga kontribusyon}} sa $2',
 	'centralauth-merge-method-primary' => 'tahanang wiki',
@@ -34763,6 +34771,7 @@ Ang mga hudyat para sa mga katutubong kuwenta na nilikha bago pa maganap ang pag
 ** hindi angkop na kabatirang pangsarili',
 	'centralauth-admin-logsnippet' => 'Nakaraang mga pagbabago sa pandaigdigang akawnt',
 	'centralauth-admin-suppressreason' => 'Pandaigdigang pinigil ni $1 dahil sa sumusunod na dahilan: $2',
+	'centralauth-admin-title' => 'Pangkalahatang tagapamahala ng akawnt', # Fuzzy
 	'globalusers' => 'Talaan ng pandaigdigang tagagamit', # Fuzzy
 	'centralauth-listusers-locked' => 'nakakandado',
 	'centralauth-listusers-attached' => '[[User:$1|umiiral sa pook (lokal) lamang]]',
