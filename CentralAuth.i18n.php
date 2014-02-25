@@ -6734,6 +6734,7 @@ $messages['ce'] = array(
 ** Декъашхой хьийзабар, кхерамаш тиссар
 ** Масийтта лараман яздар зуламан лелаяр
 ** Магийтина йоцу декъашхочун цӀе',
+	'centralauth-admin-title' => 'Глобальни декъашхочун дӀаяздаран менеджер $1',
 	'globalusers' => 'Масхьара декъашхойн могIам', # Fuzzy
 	'centralauth-listusers-locked' => 'гӀора йе',
 	'centralauth-listusers-attached' => '[[User:$1|декъашхочун дӀаяздар локально ду]]',
@@ -7157,6 +7158,7 @@ Hesla lokálních účtů vytvořených před sloučením se vrátí na svoje p�
 	'centralauth-admin-suppressreason' => 'Globálně utajil $1 se zdůvodněním: $2',
 	'centralauth-admin-not-authorized' => 'K provedení této akce nemáte oprávnění',
 	'centralauth-admin-too-many-edits' => 'Globální účet „<nowiki>$1</nowiki>“ má více než $2 {{PLURAL:$2|editaci|editace|editací}} a nelze ho skrýt.',
+	'centralauth-admin-title' => 'Správa globálních účtů {{GENDER:$1|uživatele|uživatelky}} $1',
 	'globalusers' => 'Seznam globálních uživatelů',
 	'centralauth-listusers-locked' => 'zamčený',
 	'centralauth-listusers-attached' => '[[User:$1|existuje lokálně]]',
@@ -13677,6 +13679,7 @@ $messages['haw'] = array(
  * @author Rotem Liss
  * @author Rotemliss
  * @author YaronSh
+ * @author Yona b
  * @author אור שפירא
  * @author דולב
  * @author חיים
@@ -13846,6 +13849,7 @@ $messages['he'] = array(
 	'centralauth-admin-suppressreason' => 'הסתיר באופן גלובלי את $1 מהסיבה הבאה: $2',
 	'centralauth-admin-not-authorized' => 'אין לך הרשאות לביצוע פעולה זו',
 	'centralauth-admin-too-many-edits' => 'לחשבון הגלובלי "<nowiki>$1</nowiki>" יש יותר{{PLURAL:$2|מעריכה אחת|מ־$1 עריכות}} ולא ניתן להחביא אותו.',
+	'centralauth-admin-title' => 'מנהל החשבונות הגלובלי של $1',
 	'globalusers' => 'רשימת חשבונות גלובליים',
 	'centralauth-listusers-locked' => 'נעול',
 	'centralauth-listusers-attached' => '[[User:$1|[[User:$1|קיים באתר זה]]]]',
@@ -24236,10 +24240,26 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-admin-logsnippet' => 'Tidligere endringer av global konto',
 	'centralauth-admin-suppressreason' => 'Globalt undertrykt av $1 av følgende årsak: $2',
 	'centralauth-admin-not-authorized' => 'Du har ikke rettigheter til å utføre denne handlingen.',
-	'globalusers' => 'Global brukerliste', # Fuzzy
+	'centralauth-admin-too-many-edits' => 'Den globale brukerkontoen "<nowiki>$1</nowiki>" har flere enn $2 {{PLURAL:$2|redigering|redigeringer}} og kan ikke skjules.',
+	'centralauth-admin-title' => 'Global brukerkonto-administrator for $1',
+	'globalusers' => 'Global brukerkontoliste',
 	'centralauth-listusers-locked' => 'låst',
 	'centralauth-listusers-attached' => '[[User:$1|finnes lokalt]]',
 	'centralauth-listusers-nolocal' => 'ikke slått sammen eller finnes ikke lokalt',
+	'multilock' => 'Lås multiple globale brukerkontoer',
+	'centralauth-admin-multi-username' => 'Legg inn ett eller flere brukernavn adskilt med linjeskift',
+	'centralauth-admin-multi-notfound' => 'Søket fant ingen brukernavn.',
+	'centralauth-admin-multi-searchprefix' => 'Eller søk etter brukernavn med prefiks',
+	'centralauth-admin-multi-intro' => 'Oppdater multiple globale brukerkontoer i en operasjon',
+	'centralauth-admin-action-lock-nochange' => 'Endre endre på låsene',
+	'centralauth-admin-action-lock-lock' => 'Lås utvalgte brukerkontoer',
+	'centralauth-admin-action-lock-unlock' => 'Lås opp utvalgte brukerkontoer',
+	'centralauth-admin-action-hide-nochange' => 'Ikke endre på skjulte nivåer',
+	'centralauth-admin-action-hide-none' => 'Vis igjen utvalgte brukerkontoer',
+	'centralauth-admin-action-hide-lists' => 'Skjule utvalgte brukerkontoer fra offentlige lister',
+	'centralauth-admin-action-hide-oversight' => 'Skjul utvalgte kontoer fullstendig',
+	'centralauth-admin-multi-bot' => 'Siste endringer',
+	'centralauth-admin-multi-botcheck' => 'Angi revisjoner i [[Special:RecentChanges|{{int:recentchanges}}]] som bot-revisjoner.',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|sekund|sekunder}} siden',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|minutt|minutter}} siden',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|time|timer}} siden',
@@ -24255,17 +24275,18 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-prefs-count-unattached' => 'Det er fortsatt ubekreftede kontoer med ditt navn på $1 {{PLURAL:$1|prosjekt|prosjekter}}.',
 	'centralauth-prefs-detail-unattached' => 'Det er ikke bekreftet at denne kontoen er slått sammen med hovedkontoen.',
 	'centralauth-prefs-manage' => 'Behandle hovedkontoen din',
-	'centralauth-prefs-view' => 'Vis global brukerinformasjon', # Fuzzy
-	'centralauth-renameuser-merged' => 'Brukeren $1 har gått over til det globale kontosystemet. Å endre navnet på kontoen vil føre til at den lokale brukeren skilles fra den globale kontoen.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'Brukernavnet $2 er reservert for en global konto.', # Fuzzy
+	'centralauth-prefs-view' => 'Vis global brukerkontoinformasjon',
+	'centralauth-renameuser-merged' => 'Bruker $1 er flyttet over til det globale brukerkontosystemet. Å endre navnet på brukerkontoen vil føre til at den lokale brukerkontoen skilles fra den globale brukerkontoen.',
+	'centralauth-renameuser-reserved' => 'Brukernavnet $2 er reservert for en global brukerkonto.',
 	'centralauth-invalid-wiki' => 'Ingen slik database: $1',
 	'centralauth-account-exists' => 'Kan ikke opprette konto. Det angitte brukernavnet er allerede tatt i bruk av en global konto.',
-	'centralauth-account-exists-reset' => 'Brukernavnet $1 er ikke registrert på denne wikien, men det finnes i det globale innloggingssystemet.', # Fuzzy
-	'centralauth-login-progress' => 'Logger deg inn på {{int:Centralauth-groupname}}s øvrige wikier:', # Fuzzy
-	'centralauth-logout-progress' => 'Logger deg ut av øvrige wikier under {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-account-exists-reset' => 'Brukernavnet $1 er ikke registrert på denne wikien, men du kan nullstille tilhørende passord på [[Special:CentralAuth/$1|en wiki der det brukes].', # Fuzzy
+	'centralauth-login-progress' => 'Logger deg inn på {{int:Centralauth-groupname}}s alle wikier:',
+	'centralauth-logout-progress' => 'Logger deg ut av øvrige wikier under {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Du har blitt automatisk innlogget på andre prosjekter av {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Du har blitt automatisk utlogget av andre prosjekter av {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Du har blitt automatisk utlogget fra andre prosjekter tilhørende {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalt skjult av $1 på $2 med følgende årsak: $3',
+	'centralauth-login-error-locked' => 'Du kan ikke logge inn fordi din brukerkonto er globalt låst.',
 	'centralauth-log-name' => 'Logg for behandling av globale kontoer',
 	'centralauth-log-header' => 'Denne loggen inneholder hendelser relatert til globale kontoer: slettinger, låsinger og opplåsinger.',
 	'centralauth-log-entry-delete' => 'slettet den globale kontoen «<nowii>$1</nowiki>»',
@@ -24284,6 +24305,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-rightslog-entry-groupperms' => 'endret gruppetillatelser for $1 fra $2 til $3',
 	'centralauth-rightslog-entry-groupperms2' => 'endret brukerrettighetene til $1. Tilføyde $2; fjernet $3',
 	'centralauth-rightslog-entry-groupperms3' => 'endret hvilke wikisett som gjelder for $1, fra $2 til $3',
+	'centralauth-rightslog-entry-grouprename' => 'endret gruppenavn $2 til $1',
 	'centralauth-rightslog-header' => 'Denne loggen inneholder endringer i globale rettigheter, inkludert endringer i gruppemedlemsskap og tillatelsene forskjellige grupper har.',
 	'centralauth-rightslog-entry-newset' => 'opprettet $2 wikisett «$1» med følgende wikier: $3',
 	'centralauth-rightslog-entry-setrename' => 'endret navn på wikisettet «$2» til «$1»',
@@ -24292,6 +24314,19 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-rightslog-entry-deleteset' => 'slettet wikisett «$1»',
 	'centralauth-rightslog-set-optin' => 'innmeldingsbasert',
 	'centralauth-rightslog-set-optout' => 'utmeldingsbasert',
+	'centralautologin' => 'Sentral innlogging',
+	'centralauth-centralautologin-desc' => 'Denne spesialsiden er brukt internt av MediaWiki.
+Når du besøker et lenket domene uten innlogging, vil det sentale innloggingssystemet bruke denne siden for å avgjøre om du er innlogged på det sentrale domenet.
+Du har spurt etter denne siden uten å angi autentiseringsdata, så ingenting skjer.',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Du er allerede lokalt innlogget',
+	'centralauth-centralautologin-badparams' => 'Angitte autentiseringsparametre var ugyldige',
+	'centralauth-centralautologin-lostsession' => 'Sesjonsdata gikk tapt',
+	'centralauth-centralautologin-badstate' => 'Ugyldig tilstand "$1"',
+	'centralauth-centralautologin-notposted' => 'Sentralt innloggingsskjema må sendes inn',
+	'centralauth-centralautologin-badstate-central' => 'Tilstand "$1" er ugyldig på den sentrale wikien',
+	'centralauth-centralautologin-badstate-local' => 'Tilstand "$1" er ugyldig på den lokale wikien',
+	'centralauth-centralautologin-badwiki' => 'Wiki "$1" er ugyldig for sentral innlogging',
+	'centralauth-centralautologin-corsfail' => 'CORS opprinnelseskontroll feilet',
 	'globalgroupmembership' => 'Medlemskap i globale grupper',
 	'globalgrouppermissions' => 'Behandling av globale grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Følgende globale grupper har blitt konfigurert.
@@ -31943,6 +31978,7 @@ $messages['sr-ec'] = array(
 Сви локални налози ће и даље постојати.
 Лозинке локалних налога које су важиле пре спајања у глобални налог ће бити враћене на своје пређашње вредности.',
 	'centralauth-admin-delete-button' => 'Обриши овај налог',
+	'centralauth-admin-delete-confirm' => 'Да ли стварно желите да обришете овај налог?',
 	'centralauth-admin-delete-success' => 'Глобални налог за „<nowiki>$1</nowiki>“ је обрисан',
 	'centralauth-admin-nonexistent' => 'Не постоји глобални налог за „<nowiki>$1</nowiki>“',
 	'centralauth-admin-delete-nonexistent' => 'Грешка: глобални налог „<nowiki>$1</nowiki>“ не постоји.',
@@ -32228,6 +32264,7 @@ Razlog: $1',
 	'centralauth-admin-delete-title' => 'Obriši nalog',
 	'centralauth-admin-delete-description' => 'Brisanje globalnog naloga će takođe obrisati globalna podešavanja, razdvojiti sve lokalne naloge, i omogućiti drugim korisnicima da preuzmu to globalno ime. Svi lokalni nalozi će i dalje postojati. Lozinke lokalnih naloga koje su važile pre spajanja u globalni nalog će biti vraćene na svoje pređašnje vrednosti.',
 	'centralauth-admin-delete-button' => 'Obriši ovaj nalog',
+	'centralauth-admin-delete-confirm' => 'Da li stvarno želite da obrišete ovaj nalog?',
 	'centralauth-admin-delete-success' => 'Uspešno obrisan globalni nalog za „<nowiki>$1</nowiki>“',
 	'centralauth-admin-nonexistent' => 'Ne postoji globalni nalog za „<nowiki>$1</nowiki>“',
 	'centralauth-admin-delete-nonexistent' => 'Greška: globalni nalog „<nowiki>$1</nowiki>“ ne postoji.',
@@ -33815,6 +33852,7 @@ $messages['te'] = array(
 	'centralauth-rightslog-entry-setchange' => "''$1'' లోని వికీలు మార్చబడ్డాయి: కలిపినవి: $2; తీసేసినవి: $3",
 	'centralautologin' => 'కేంద్రీకృత ప్రవేశం',
 	'centralauth-centralautologin-lostsession' => 'సెషను డేటా పోయింది',
+	'centralauth-centralautologin-badstate' => 'చెల్లని స్థితి "$1"',
 	'globalgroupmembership' => 'సార్వత్రిక గుంపుల్లో సభ్యత్వం',
 	'globalgrouppermissions' => 'సార్వత్రిక గుంపు నిర్వహణ',
 	'centralauth-globalgroupperms-grouplist' => 'కింది సార్వత్రిక గుంపులు తయారయి ఉన్నాయి.
@@ -36599,6 +36637,7 @@ $messages['vep'] = array(
 /** Vietnamese (Tiếng Việt)
  * @author Cheers!
  * @author Minh Nguyen
+ * @author Skye Darcy
  * @author Vinhtantran
  */
 $messages['vi'] = array(
@@ -36769,6 +36808,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-admin-suppressreason' => 'Đã bị $1 cưỡng đoạt toàn cục vì lý do sau: $2',
 	'centralauth-admin-not-authorized' => 'Bạn không được phép thực hiện tác vụ này',
 	'centralauth-admin-too-many-edits' => 'Không thể ẩn tài khoản toàn cục “<nowiki>$1</nowiki>” vì nó đã sửa đổi hơn $2 lần.',
+	'centralauth-admin-title' => 'Quản lí tài khoản toàn cầu cho $1',
 	'globalusers' => 'Danh sách tài khoản toàn cục',
 	'centralauth-listusers-locked' => 'đã khóa',
 	'centralauth-listusers-attached' => '[[User:$1|tồn tại địa phương]]',
