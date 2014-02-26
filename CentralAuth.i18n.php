@@ -1799,6 +1799,7 @@ $messages['ang'] = array(
  * @author Calak
  * @author Ciphers
  * @author DRIHEM
+ * @author Emara
  * @author Loya
  * @author Meno25
  * @author Mido
@@ -1977,6 +1978,7 @@ $messages['ar'] = array(
 	'centralauth-admin-suppressreason' => 'على الصعيد العام تم حضر $1 للسبب التالي:$2',
 	'centralauth-admin-not-authorized' => 'ليس لديك السماحات المطلوبة للقيام بهذا الفعل.',
 	'centralauth-admin-too-many-edits' => 'لدى الحساب العام "<nowiki>$1</nowiki>" ما يزيد عن $2 {{PLURAL:$2|تعديل|تعديل}} ولا يمكن إخفائه.', # Fuzzy
+	'centralauth-admin-title' => 'إدارة الحساب الموحد $1',
 	'globalusers' => 'قائمة الحسابات العامة',
 	'centralauth-listusers-locked' => 'مغلق',
 	'centralauth-listusers-attached' => '[[User:$1|موجود محليا]]',
@@ -2962,6 +2964,7 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-admin-suppressreason' => 'Desaniciada globalmente por $1 pol motivu darréu: $2',
 	'centralauth-admin-not-authorized' => 'Nun tien permisos pa facer esta aición',
 	'centralauth-admin-too-many-edits' => 'La cuenta global "<nowiki>$1</nowiki>" tien más de $2 {{PLURAL:$2|edición|ediciones}} y nun se pue tapecer.',
+	'centralauth-admin-title' => 'Alministrador de cuenta global pa $1',
 	'globalusers' => 'Llista de cuentes globales',
 	'centralauth-listusers-locked' => 'candáu',
 	'centralauth-listusers-attached' => '[[User:$1|esiste llocalmente]]',
@@ -4253,11 +4256,11 @@ Sori!',
 	'centralauth-list-home-title' => 'Pagharongon kan wiki',
 	'centralauth-list-home-dryrun' => 'An pasa-taramon asin e-surat na estada sa wiking ini gagamiton para sa saimong pinagkasararong panindog.',
 	'centralauth-list-attached-title' => 'Nakadukot na mga panindog',
-	'centralauth-list-attached' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pinagdukot na sa pinagkasararong panindog:',
-	'centralauth-list-attached-dryrun' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pagdudukuton sa pinagkasararong panindog:',
+	'centralauth-list-attached' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pinagdukot na sa pinagkasararong panindog:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'An panindog na pinagngaranan na "$1" sa lambang minasurunod na mga sityo awtomatikong pagdudukuton sa pinagkasararong panindog:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Daeng kadukot na mga panindog',
 	'centralauth-list-unattached' => 'An panindog na "$1" dae awtomatikong makukumpirma bilang pagsadire mo sa mga minasunod na mga sityo;
-seguradong sinda igwa nin manlaen-laen na sekretong panglaog sa saimong pangenot na panindog:',
+seguradong sinda igwa nin manlaen-laen na sekretong panglaog sa saimong pangenot na panindog:', # Fuzzy
 	'centralauth-foreign-link' => 'Paragamit $1 sa $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|kaarambagan|mga kaarambagan}} sa $2',
 	'centralauth-merge-method-primary' => 'ginikanang wiki',
@@ -4367,6 +4370,7 @@ An mga pasa-taramon para sa lokal na mga panindog bago pa man an pagkakasararo i
 	'centralauth-admin-logsnippet' => 'Nakaaging pankinaban na mga kaliwatan nin panindog',
 	'centralauth-admin-suppressreason' => 'Pankinabanon na pagpupugol ni $1 para sa minasunod na rason: $2',
 	'centralauth-admin-not-authorized' => 'Ika mayo nin mga permiso tanganing gibohon an aksyon na ini',
+	'centralauth-admin-title' => 'Pankinaban na tagapagmaneho nin panindog para ki $1',
 	'globalusers' => 'Pankinaban na listahan nin mga panindog',
 	'centralauth-listusers-locked' => 'ikinandado',
 	'centralauth-listusers-attached' => '[[User:$1|lokal na eksistido]]',
@@ -14064,6 +14068,7 @@ $5
  * @author Shyam123.ckp
  * @author Siddhartha Ghai
  * @author Suman
+ * @author Vivek Rai
  * @author आलोक
  */
 $messages['hi'] = array(
@@ -14239,6 +14244,7 @@ $messages['hi'] = array(
 	'centralauth-admin-logsnippet' => 'वैश्विक खाते में पिछले बदलाव',
 	'centralauth-admin-suppressreason' => 'निम्नलिखित कारण के लिये $1 द्वारा छुपा दिया गया हे। कारण: $2',
 	'centralauth-admin-not-authorized' => 'आपके पास यह कार्य करने की अनुमति नहीं है',
+	'centralauth-admin-title' => 'वैश्विक खाता प्रबंधन', # Fuzzy
 	'globalusers' => 'वैश्विक खाता सूची',
 	'centralauth-listusers-locked' => 'लॉक किया हुआ',
 	'centralauth-listusers-attached' => '[[User:$1|स्थानीय रूप से मौजूद]]',
@@ -19444,6 +19450,7 @@ $messages['ko'] = array(
 	'centralauth-admin-suppressreason' => '통합 계정이 다음과 같은 이유로 $1 사용자에 의해 완전히 숨겨졌습니다: $2',
 	'centralauth-admin-not-authorized' => '이 작업을 수행할 권한이 없습니다',
 	'centralauth-admin-too-many-edits' => '글로벌 계정 "<nowiki> $1 </nowiki>"는  편집횟수가 $2   {{PLURAL:$2|회}}를 초과하여 숨길 수 없습니다.',
+	'centralauth-admin-title' => '$1 계정의 통합 계정 관리자',
 	'globalusers' => '통합 계정 목록',
 	'centralauth-listusers-locked' => '잠겨짐',
 	'centralauth-listusers-attached' => '[[User:$1|로컬에 존재]]',
@@ -24280,7 +24287,7 @@ Denne funksjonen er deaktivert nå av sikkerhetshensyn.',
 	'centralauth-renameuser-reserved' => 'Brukernavnet $2 er reservert for en global brukerkonto.',
 	'centralauth-invalid-wiki' => 'Ingen slik database: $1',
 	'centralauth-account-exists' => 'Kan ikke opprette konto. Det angitte brukernavnet er allerede tatt i bruk av en global konto.',
-	'centralauth-account-exists-reset' => 'Brukernavnet $1 er ikke registrert på denne wikien, men du kan nullstille tilhørende passord på [[Special:CentralAuth/$1|en wiki der det brukes].', # Fuzzy
+	'centralauth-account-exists-reset' => 'Brukernavnet $1 er ikke registrert på denne wikien, men du kan nullstille tilhørende passord på [[Special:CentralAuth/$1|en wiki der det brukes]].',
 	'centralauth-login-progress' => 'Logger deg inn på {{int:Centralauth-groupname}}s alle wikier:',
 	'centralauth-logout-progress' => 'Logger deg ut av øvrige wikier under {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Du har blitt automatisk innlogget på andre prosjekter av {{int:Centralauth-groupname}}.',
@@ -24327,6 +24334,11 @@ Du har spurt etter denne siden uten å angi autentiseringsdata, så ingenting sk
 	'centralauth-centralautologin-badstate-local' => 'Tilstand "$1" er ugyldig på den lokale wikien',
 	'centralauth-centralautologin-badwiki' => 'Wiki "$1" er ugyldig for sentral innlogging',
 	'centralauth-centralautologin-corsfail' => 'CORS opprinnelseskontroll feilet',
+	'centralauth-centralautologin-p3p-explanation' => 'Noen nettlesere krever at en P3P-kompakt policy for cookies skal sendes eller mottas i noen tilfeller, herunder situasjonen som gjelder SUL-innloggingskontroll. Dette er her et unødvendig hinder tatt i betraktning at alle sidene dette gjelder er i den samme wikigruppen og at P3P for det mest er foreldet og forlatt; heldigvis betraktes den ugyldige policy-knytningen til denne siden som "god nok" av disse nettlesernes standard konfigurering.
+
+Vær vennlig å gå gjennom dette nettstedets beskrivelse av sin fortrolighetspolicy for å avgjøre hvordan innsamlet informasjon kan bli brukt.',
+	'centralauth-centralautologin-logged-in' => 'Du er sentralt innlogget som $1. Oppdater siden for at dine innstillinger skal få effekt.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Du er sentralt innlogget. Oppdater siden for at dine innstillinger skal få effekt.',
 	'globalgroupmembership' => 'Medlemskap i globale grupper',
 	'globalgrouppermissions' => 'Behandling av globale grupper',
 	'centralauth-globalgroupperms-grouplist' => 'Følgende globale grupper har blitt konfigurert.
@@ -24345,20 +24357,25 @@ En gruppe kan slettes ved å fjerne alle rettigheter fra den.',
 	'centralauth-editgroup-name' => 'Gruppenavn:',
 	'centralauth-editgroup-display' => 'Oversatt gruppenavn:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|rediger]])',
+	'centralauth-editgroup-invalid-name' => 'Det er angitt et ugyldig gruppenavn',
 	'centralauth-editgroup-member' => 'Oversatt navn på gruppemedlemmer:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|rediger]])',
 	'centralauth-editgroup-members' => 'Medlemsliste:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Liste over brukere med $2-rettigheter]]',
 	'centralauth-editgroup-restrictions' => 'Wikisett der denne gruppen er aktiv:',
+	'centralauth-editgroup-rename-taken' => 'Navnendringen mislyktes: Det finnes allerede en gruppe med navnet $1.',
 	'centralauth-editgroup-noset' => '(ingen)',
-	'centralauth-editgroup-submit' => 'Lagre endringer i gruppetillatelser', # Fuzzy
+	'centralauth-editgroup-submit' => 'Lagre endringer for globale grupper',
 	'centralauth-editgroup-perms' => 'Gitte tillatelser:',
 	'centralauth-editgroup-reason' => 'Årsak:',
-	'centralauth-editgroup-success' => 'Gruppetillatelser endret', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Du har endret gruppetillatelsene til gruppen $1. [[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]', # Fuzzy
+	'centralauth-editgroup-success' => 'Globalgruppen er endret',
+	'centralauth-editgroup-success-text' => 'Du har endret den globale gruppen $1.
+[[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|rediger]])',
+	'centralauth-editgroup-nowikiset' => 'Ingen, gjelder alle wikier.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Wiki der vedkommende har en konto:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Den globale brukeren '''$1''' er ikke aktiv på det angitte prosjektet (<i>$2</i>). Det er mulig at du prøver å gi rettighetene til gal bruker.", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "Den globale kontoen '''$1''' er ikke aktiv på den angitte wikien (''$2'').
+Det er mulig at du prøver å gi rettigheter til feil bruker.",
 	'centralauth-editset' => 'Wikisett',
 	'centralauth-editset-legend-rw' => 'Rediger eller opprett wikisett',
 	'centralauth-editset-legend-ro' => 'Liste over wikisett',
@@ -24392,16 +24409,42 @@ Du kan se og endre noen av disse eller opprette et nytt sett.',
 	'centralauth-editset-success' => 'Endret wikisett.',
 	'centralauth-editset-success-delete' => 'Slettet wikisett.',
 	'centralauth-editset-return' => 'Tilbake til hovedvisning',
-	'centralauth-block-already-locked' => 'Brukeren [[Special:CentralAuth/$1|$1]] er allerede låst globalt.', # Fuzzy
+	'centralauth-block-already-locked' => 'Konto [[Special:CentralAuth/$1|$1]] er allerede globalt låst.',
 	'centralauth-readonly' => 'CentralAuth-databasen er låst',
 	'centralauth-readonlytext' => 'CentralAuth-databasen er låst for nytt innhold og andre endringer, sannsynligvis på grunn av rutinemessig vedlikehold. Den vil snart fungere som vanlig igjen.',
 	'right-globalgroupmembership' => 'Rediger medlemskap i globale grupper',
 	'right-centralauth-autoaccount' => 'Automatisk innlogging med globalkonto',
 	'right-centralauth-unmerge' => 'Flett opp global konto',
-	'right-centralauth-lock' => 'Lås eller skjul global konto', # Fuzzy
-	'right-centralauth-oversight' => 'Undertrykk global konto', # Fuzzy
+	'right-centralauth-lock' => 'Lås eller frigjør global konto',
+	'right-centralauth-oversight' => 'Undertrykk eller skjul global konto',
 	'right-centralauth-merge' => 'Slå sammen kontoene deres',
 	'right-globalgrouppermissions' => 'Behandle av globale grupper',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Globale grupper som brukeren tilhører',
+	'action-centralauth-lock' => 'lås eller frigjør globale kontoer',
+	'centrallogin' => 'Sentral brukerinnlogging',
+	'centralloginsuccesful' => 'Innlogging vellykket',
+	'centralauth-completelogin-back' => 'Tilbake til forrige side.',
+	'centralauth-error-nologinattempt' => 'Ingen aktive innloggingsforsøk pågår for din sesjon.',
+	'centralauth-error-badtoken' => 'Den angitte autentiseringsnøkkelen er enten utgått eller ugyldig.',
+	'centralauth-error-token-wrongattempt' => 'Autentiseringsnøkkelen tilhører ikke din pågående innlogging.
+Noen prøver kanskje å logge deg inn med en ondsinnet konto.',
+	'centralauth-error-token-wronguser' => 'Nøkkelen passer ikke med din sesjons brukernavn.
+Noen prøver kanskje å logge deg inn med en ondsinnet konto.
+Hvis du bare gjorde et forsøk på å logge inn som en annen bruker, vær vennlig å logge ut først.',
+	'centralauth-warning-notloggedin' => 'Du er ikke innlogget for øyeblikket.',
+	'centralauth-warning-notattached' => 'Den lokale kontoen er ikke tilknyttet en global konto.',
+	'centralauth-finishglobaliseemail_subject' => 'Kontobekrefelse for {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Din e-postadresse er nå knyttet til konto "$2" på alle Wikimedia-prosjekter med hovedkonto på {{SITENAME}}.
+
+For å bekrefte at denne kontoen virkelig tilhører deg, flett inn de kontoer som ikke kunne tilknyttes automatisk. Gjør det mulig å gjenvinne kontoen dersom du skulle miste passordet, ved å åpne denne lenken i nettleseren:
+
+$3
+
+Hvis kontoen *ikke* tilhører deg, følg denne lenken for å avbryte bekreftelsen av e-post-adressen:
+
+$5
+
+Denne bekreftelseskoden vil utløpe $6 $7.',
 );
 
 /** Low German (Plattdüütsch)
@@ -30463,6 +30506,13 @@ Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
 	'centralauth-editset-nouse' => '(nuddu)',
 );
 
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'centralauth-admin-title' => 'Global accoont manager fer $1',
+);
+
 /** Northern Sami (sámegiella)
  * @author Jeblad
  */
@@ -32908,7 +32958,7 @@ Om du är ägaren av det kontot, så kan du slutföra sammanslagningen genom att
 	'centralauth-list-unattached-title' => 'Ej anslutna konton',
 	'centralauth-list-unattached' => 'På följande {{PLURAL:$2|webbplats|webbplatser}} kunde det inte automatiskt bekräftas att {{PLURAL:$2|kontot|kontona}} "$1" tillhör dig; det beror troligen på att {{PLURAL:$2|det|de}} har ett annat lösenord än ditt huvudkonto:',
 	'centralauth-foreign-link' => 'Användare $1 på $2',
-	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|bidrag|bidrag}} på $2',
+	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|bidrag}} på $2',
 	'centralauth-merge-method-primary' => 'hemwiki',
 	'centralauth-merge-method-empty' => 'inga bidrag',
 	'centralauth-merge-method-mail' => 'bekräftat via e-post',
@@ -33660,7 +33710,7 @@ $messages['te'] = array(
 	'centralauth-desc' => '{{int:Centralauth-groupname}} వికీలన్నింటిలో [[Special:MergeAccount|ఖాతాని విలీనం చేయి]]',
 	'centralauth-mergeaccount-desc' => 'వాడుకరి ఏకీకృత ప్రవేశానికై [[Special:MergeAccount|బహుళ ఖాతాలను విలీనం చేస్తుంది]]',
 	'centralauth-merge-denied' => 'క్షమించండి, ఈ పేజీని చూడడానికి మీరు అనుమతి లేదు.',
-	'centralauth-merge-notlogged' => 'మీ ఖాతాలు పూర్తిగా విలీనమయినవని సరిచూసుకునేందుకు, దయచేసి <span class="plainlinks">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} లోనికి ప్రవేశించండి]</span>.', # Fuzzy
+	'centralauth-merge-notlogged' => 'మీ ఖాతాలు పూర్తిగా విలీనమయ్యాయో లేదో చూసుకునేందుకు, <span class="plainlinks">[$1 లాగినవండి]</span>.',
 	'centralauth-merge-welcome' => "'''మీ వాడుకరి ఖాతా ఇంకా {{int:Centralauth-groupname}} యొక్క ఏకీకృత ప్రవేశపు వ్యవస్థ లోనికి విలీనం కాలేదు.'''
 
 మీ ఖాతాలని విలీనం చేస్తే, {{int:Centralauth-groupname}} యొక్క అన్ని ప్రాజెక్టు వికీలలోనికి అందుబాటులో ఉన్న అన్ని భాషలలోనికి ఒకే వాడుకరి పేరు మరియు సంకేతపదం ఉపయోగించి మీరు ప్రవేశించవచ్చు.
@@ -33696,12 +33746,13 @@ $messages['te'] = array(
 	'centralauth-notice-dryrun' => "<div class='successbox'>డెమో మాత్రమే</div><br clear='all'/>",
 	'centralauth-disabled-dryrun' => 'ఖాతా ఏకీకరణ ప్రస్తుతం డెమో / పరీక్షా స్థితిలో ఉంది, కనుక వాస్తవ విలీన కలాపాలని అచేతనం చేసాము. క్షమించండి!',
 	'centralauth-error-locked' => 'మీ ఖాతాని స్తంభింపజేసినందున మీరు మార్చలేరు.',
+	'centralauth-error-unmerged' => 'మీరు సవరించలేరు. ఎందుకంటే మీ ఖాతా ఏకీకృతం కాలేదు.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login|'''ఏకీకృత ప్రవేశం''' గురించి మరింత తెలుసుకోండి]]...''",
 	'centralauth-list-home-title' => 'ప్రధాన వికీ',
 	'centralauth-list-home-dryrun' => 'ఈ వికీలోని మీ సంకేతపదం మరియు ఈ-మెయిల్ చిరునామాని మీ ఏకీకృత ఖాతాకి ఉపయోగిస్తాం.',
 	'centralauth-list-attached-title' => 'జోడించిన ఖాతాలు',
-	'centralauth-list-attached' => 'క్రింది సైట్లలోని "$1" అనే పేరుగల ఖాతాని ఏకీకృత ఖాతాకి ఆటోమెటిగ్గా జోడించాం:', # Fuzzy
-	'centralauth-list-attached-dryrun' => 'ఈ క్రింద పేర్కొన్న సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకి జోడించబడతాయి:', # Fuzzy
+	'centralauth-list-attached' => 'కింది సైట్లలోని "$1" అనే పేరుగల ఖాతాలన్నిటినీ ఏకీకృత ఖాతాకు ఆటోమేటిగ్గా జోడించాం:',
+	'centralauth-list-attached-dryrun' => 'కింది సైట్లలోని "$1" పేరున్న ఖాతాలన్నీ ఆటోమేటిగ్గా ఏకీకృత ఖాతాకు జోడించబడతాయి:',
 	'centralauth-list-unattached-title' => 'జోడించని ఖాతాలు',
 	'centralauth-list-unattached' => 'ఈ క్రింద పేర్కొన్న సైట్లలో "$1" అనే ఖాతా మీదే అని నిర్ధారించలేకున్నాం; బహుశా వీటిల్లో సంకేతపదం మీ ప్రధాన ఖాతాది కాక వేరేది అయివుండవచ్చు:', # Fuzzy
 	'centralauth-foreign-link' => '$2లో వాడుకరి $1',
@@ -33786,7 +33837,7 @@ $messages['te'] = array(
 	'centralauth-admin-status-hidden-list' => 'బహిరంగ జాబితాల నుంచి ఈ ఖాతా దాచబడి ఉంది',
 	'centralauth-admin-status-hidden-oversight' => 'ఖాతా పూర్తిగా దాచబడింది',
 	'centralauth-admin-status-submit' => 'స్థితిని అమర్చు',
-	'centralauth-admin-status-nonexistent' => 'పొరపాటు: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
+	'centralauth-admin-status-nonexistent' => 'లోపం: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేదు.',
 	'centralauth-admin-setstatus-success' => 'ఈ సార్వత్రిక ఖాతా యొక్క స్థితిని మీరు విజయవంతంగా మార్చారు.',
 	'centralauth-admin-status-reasons' => '* తాళం వేసేందుకు సాధారణ కారణాలు
 ** దుశ్చర్య-కోసం మాత్రమే ఖాతా
@@ -33820,15 +33871,16 @@ $messages['te'] = array(
 	'centralauth-prefs-view' => 'సార్వత్రిక ఖాతా సమాచారాన్ని చూడండి',
 	'centralauth-renameuser-merged' => 'వాడుకరి $1 ను ఏకీకృత లాగిన్ వ్యవస్థకు చేర్చాం.
 దాని పేరు మారిస్తే, స్థానిక వాడుకరి సార్వత్రిక వాడుకరి నుండి విడివడిపోతుంది.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'వాడుకరి $2, ఓ సార్వత్రిక ఖాతా కోసం రిజర్వు చేయబడి ఉంది.', # Fuzzy
+	'centralauth-renameuser-reserved' => 'వాడుకరి పేరు $2, ఓ సార్వత్రిక ఖాతా కోసం రిజర్వు చేయబడి ఉంది.',
 	'centralauth-invalid-wiki' => 'ఇలాంటి వికీ లేదు DB: $1',
 	'centralauth-account-exists' => 'ఖాతాను సృష్టించలేకున్నాం: మీరడిగిన వాడుకరిపేరుని ఏకీకృత ప్రవేశ వ్యవస్థలో ఈసరికే తీసేసుకున్నారు.',
 	'centralauth-account-exists-reset' => 'వాడుకరిపేరు $1 ఈ వికీలో నమోదై లేదు. కానీ ఇది సార్వత్రిక లాగిన్ వ్యవస్థలో ఈసరికే ఉనికిలో ఉంది.', # Fuzzy
-	'centralauth-login-progress' => '{{int:Centralauth-groupname}} వికీల లోనికి మీరు ప్రవేశిస్తున్నారు:', # Fuzzy
-	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} వికీల నుండి మీరు నిష్క్రమిస్తున్నారు:', # Fuzzy
+	'centralauth-login-progress' => '{{int:Centralauth-groupname}} యొక్క వికీల లోకి మిమ్మల్ని లాగిన్ చేస్తున్నాం:',
+	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} యొక్క ఇతర వికీల నుండి మిమ్మల్ని లాగౌట్ చేస్తున్నాం:',
 	'centralauth-login-no-others' => 'మీరు {{int:Centralauth-groupname}} వారి ఇతర ప్రాజెక్టుల్లోకి ఆటోమాటిగ్గా లాగిన్ అయిపోయారు.',
-	'centralauth-logout-no-others' => 'మీరు {{int:Centralauth-groupname}} వారి ఇతర ప్రాజెక్టుల్లోంచి ఆటోమాటిగ్గా లాగౌటైపోయారు.', # Fuzzy
+	'centralauth-logout-no-others' => 'మీరు {{int:Centralauth-groupname}} యొక్క ఇతర ప్రాజెక్టుల్లోంచి ఆటోమాటిగ్గా లాగౌటైపోయారు.',
 	'centralauth-hidden-blockreason' => '$2 వద్ద $1 దాచారు. కారణం: $3',
+	'centralauth-login-error-locked' => 'మీ ఖాతాను సార్వత్రికంగా స్థంభింపజేసినందున మీరు లాగిన్ కాలేరు.',
 	'centralauth-log-name' => 'సార్వత్రిక ఖాతాల చిట్టా',
 	'centralauth-log-header' => 'ఈ లాగ్‌లో సార్వత్రిక ఖాతాల ద్వారా జరిగిన పనులు ఉంటాయి: త్లగింపులు, లాకులు, అన్‌లాకులు',
 	'centralauth-log-entry-delete' => 'సార్వత్రిక ఖాతా "$1" ను తొలగించాం',
