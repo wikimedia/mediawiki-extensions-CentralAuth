@@ -266,6 +266,24 @@
     },
     {
       "key": {
+        "uuid": "4e04eb01_678e6035",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 535
+      },
+      "writtenOn": "2014-02-27T19:50:19Z",
+      "side": 1,
+      "message": "Which line number is the comment you mean?",
+      "parentUuid": "AAAAnH////A\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//ytY\u003d",
         "filename": "CentralAuthUserPage.php",
         "patchSetId": 2
@@ -295,6 +313,24 @@
       "side": 1,
       "message": "I\u0027ll throw some comments into the code.",
       "parentUuid": "AAAARX//ytY\u003d",
+      "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_47912451",
+        "filename": "CentralAuthUserPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 535
+      },
+      "writtenOn": "2014-02-27T19:50:19Z",
+      "side": 1,
+      "message": "Still working on this?",
+      "parentUuid": "AAAAnH///+M\u003d",
       "revId": "85e75bb9a4a7ae6e3da74580e27f9c11a1b2f7c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
