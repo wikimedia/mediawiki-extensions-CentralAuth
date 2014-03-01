@@ -14,6 +14,10 @@ class CreateLocalAccount extends Maintenance {
 	}
 
 	public function execute() {
+		if ( !class_exists( 'CentralAuthUser' ) ) {
+			$this->error( "CentralAuth isn't enabled on this wiki\n", 1 );
+		}
+
 		$username = $this->getArg( 0 );
 		if ( !User::isValidUserName( $username ) ) {
 			$this->error( "'$username' is an invalid username\n", 1 );
