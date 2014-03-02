@@ -1865,7 +1865,7 @@ $messages['ar'] = array(
 	'centralauth-list-attached' => 'تم إلحاق الحساب المسمى "$1" على كل من المواقع التالية تلقائياً بالحساب الموحد:',
 	'centralauth-list-attached-dryrun' => 'سيتم إلحاق الحساب المسمى "$1" على كل من المواقع التالية تلقائياً بالحساب الموحد:',
 	'centralauth-list-unattached-title' => 'حسابات غير ملحقة',
-	'centralauth-list-unattached' => 'لا يمكن تأكيد ملكيتك للحساب "$1" تلقائياً على المواقع التالية {{PLURAL:$2|site|sites}}؛ على الأرجح لأنهم يمتلكون كلمة سر مختلفة عن حسابك الأساسي:',
+	'centralauth-list-unattached' => 'لا يمكن تأكيد ملكيتك للحساب "$1" تلقائياً على المواقع التالية {{PLURAL:$2|موقع|مواقع}}؛ على الأرجح لأنهم يمتلكون كلمة سر مختلفة عن حسابك الأساسي:',
 	'centralauth-foreign-link' => 'المستخدم $1 في $2',
 	'centralauth-foreign-contributions' => '{{PLURAL:$1|لا مساهمات|مساهمة واحدة|مساهمتان|$1 مساهمات|$1 مساهمة|$1 مساهمة}} في $2',
 	'centralauth-merge-method-primary' => 'الويكي الأساسي',
@@ -1917,7 +1917,7 @@ $messages['ar'] = array(
 	'centralauth-admin-info-editcount' => 'مجموع عدد التعديلات:',
 	'centralauth-admin-info-locked' => 'مقفل:',
 	'centralauth-admin-info-hidden' => 'مستوى مخفي:',
-	'centralauth-admin-info-groups' => 'ال Global {{PLURAL:$1|group|groups}}:',
+	'centralauth-admin-info-groups' => 'ال{{PLURAL:$1|مجموعة|مجموعات}} العامة:',
 	'centralauth-admin-info-nogroups' => 'لا شيء',
 	'centralauth-admin-nohome' => 'لا يمكن التحديد',
 	'centralauth-admin-yes' => 'نعم',
@@ -2043,7 +2043,7 @@ $messages['ar'] = array(
 	'centralauth-rightslog-entry-groupperms' => 'غير سماحات المجموعة ل$1 من $2 إلى $3',
 	'centralauth-rightslog-entry-groupperms2' => 'غير صلاحيات المجموعة ل$1. أضاف $2؛ أزال $3',
 	'centralauth-rightslog-entry-groupperms3' => 'غير مجموعة الويكيات المحددة ل$1 من $2 إلى $3',
-	'centralauth-rightslog-entry-grouprename' => 'تم تغيير إسم المجموعة من $2 إلى $1',
+	'centralauth-rightslog-entry-grouprename' => 'تم تغيير اسم المجموعة من $2 إلى $1',
 	'centralauth-rightslog-header' => 'هذا السجل يسجل التغييرات للصلاحيات العامة، بما في ذلك التغييرات لعضوية المجموعات والسماحات المعطاة للمجموعات.',
 	'centralauth-rightslog-entry-newset' => 'أنشأ $2 مجموعة الويكي $1 بالويكيات التالية: $3',
 	'centralauth-rightslog-entry-setrename' => 'أعاد تسمية مجموعة الويكي "$2" باسم "$1"',
@@ -7893,6 +7893,7 @@ Adgangskoderne til lokale kontoer oprettet før sammenlægningen vil gå tilbage
 	'centralauth-admin-suppressreason' => 'Globalt undertrykt af $1 med følgende begrundelse: $2',
 	'centralauth-admin-not-authorized' => 'Du har ikke tilstrækkelige rettigheder til at udføre denne handling.',
 	'centralauth-admin-too-many-edits' => 'Den globale konto "<nowiki>$1</nowiki>" har over $2 {{PLURAL:$2|redigering|redigeringer}} og kan ikke skjules.',
+	'centralauth-admin-title' => 'Global kontoadministration for $1',
 	'globalusers' => 'Liste over globale brugerkonti',
 	'centralauth-listusers-locked' => 'låst',
 	'centralauth-listusers-attached' => '[[User:$1|findes lokalt]]',
@@ -14244,7 +14245,8 @@ $messages['hi'] = array(
 	'centralauth-admin-logsnippet' => 'वैश्विक खाते में पिछले बदलाव',
 	'centralauth-admin-suppressreason' => 'निम्नलिखित कारण के लिये $1 द्वारा छुपा दिया गया हे। कारण: $2',
 	'centralauth-admin-not-authorized' => 'आपके पास यह कार्य करने की अनुमति नहीं है',
-	'centralauth-admin-title' => 'वैश्विक खाता प्रबंधन', # Fuzzy
+	'centralauth-admin-too-many-edits' => '"<nowiki>$1</nowiki>" वैश्विक खाते के $2 से अधिक {{PLURAL:$2|सम्पादन}} हैं और इसे छुपाया नहीं जा सकता।',
+	'centralauth-admin-title' => '$1 के लिए वैश्विक खाता प्रबंधन',
 	'globalusers' => 'वैश्विक खाता सूची',
 	'centralauth-listusers-locked' => 'लॉक किया हुआ',
 	'centralauth-listusers-attached' => '[[User:$1|स्थानीय रूप से मौजूद]]',
@@ -14290,6 +14292,7 @@ $messages['hi'] = array(
 	'centralauth-login-no-others' => 'आपको स्वचालित रूप से {{int:Centralauth-groupname}} की अन्य परियोजनाओं में लॉग इन कर दिया गया है।',
 	'centralauth-logout-no-others' => 'आपको स्वचालित रूप से {{int:Centralauth-groupname}} की अन्य परियोजनाओं से लॉग आउट कर दिया गया है।',
 	'centralauth-hidden-blockreason' => '$1 द्वारा वैश्विक रूप से छुपाया गया $2 पर निम्नलिखित कारण के साथ: $3',
+	'centralauth-login-error-locked' => 'आप लॉग इन नहीं कर सकते क्योंकि आपका खाता वैश्विक रूप से अवरुद्ध है।',
 	'centralauth-log-name' => 'वैश्विक खाता लॉग',
 	'centralauth-log-header' => 'इस लॉग में वैश्विक खातों से संबंधित कार्य दर्शाये गये हैं: खाते हटाना, लॉक करना तथा लॉक हटाना।',
 	'centralauth-log-entry-delete' => '"$1" वैश्विक खाता हटाया गया है',
@@ -14331,6 +14334,7 @@ $messages['hi'] = array(
 	'centralauth-centralautologin-badwiki' => '"$1" विकि वैश्विक लॉगिन के लिए मान्य नहीं है',
 	'centralauth-centralautologin-corsfail' => 'CORS (Cross-Origin Resource Sharing) स्रोत जाँच विफल हुई',
 	'centralauth-centralautologin-logged-in' => 'आप वैश्विक रूप से $1 सदस्यनाम से लॉगिन कर चुके हैं। अपनी सदस्य वरीयताएँ लागू करने के लिए पृष्ठ रीलोड करें।',
+	'centralauth-centralautologin-logged-in-nouser' => 'आप वैश्विक रूप से लॉगिन कर चुके हैं। अपनी सदस्य वरीयताएँ लागू करने के लिए पृष्ठ रीलोड करें।',
 	'globalgroupmembership' => 'वैश्विक सदस्य-समूह सदस्यता',
 	'globalgrouppermissions' => 'वैश्विक सदस्य-समूह व्यवस्थापन',
 	'centralauth-globalgroupperms-grouplist' => 'निम्नोक्त वैश्विक सदस्य-समूहों का जमाव किया गया है।
@@ -15203,6 +15207,7 @@ Yon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anb
  * @author KossuthRad
  * @author Misibacsi
  * @author Samat
+ * @author Tacsipacsi
  * @author Tgr
  */
 $messages['hu'] = array(
@@ -15259,9 +15264,9 @@ Ha ez te vagy, akkor a gazda jelszavának megadásával erősítsd meg az itteni
 	'centralauth-list-home-dryrun' => 'Az ezen a wikin beállított jelszavad és e-mail címed lesz használva az egységesített felhasználói fiókodnál.',
 	'centralauth-list-attached-title' => 'Csatolt felhasználói fiókok',
 	'centralauth-list-attached' => 'A(z) „$1” nevű felhasználói fiókok automatikusan csatolva lettek az egységesített felhasználói fiókhoz:',
-	'centralauth-list-attached-dryrun' => 'A(z) „$1” nevű felhasználói fiókok automatikusan csatolva lesznek az egységesített felhasználói fiókhoz:',
+	'centralauth-list-attached-dryrun' => 'A(z) „$1” nevű felhasználói fiókok automatikusan csatolva lesznek az egységesített felhasználói fiókhoz:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Csatolatlan felhasználói fiókok',
-	'centralauth-list-unattached' => 'A(z) „$1” nevű felhasználói fiókról nem sikerült automatikusan megállapítani, hogy hozzád tartozik az alábbi oldalakon; valószínűleg más jelszóval rendelkeznek:',
+	'centralauth-list-unattached' => 'A(z) „$1” nevű felhasználói {{PLURAL:$2|fiókról|fiókokról}} nem sikerült automatikusan megállapítani, hogy hozzád {{PLURAL:$2|tartozik|tartoznak}}-e az alábbi {{PLURAL:$2|oldalon|oldalakon}}; valószínűleg más jelszóval {{PLURAL:$2|rendelkezik|rendelkeznek}}:',
 	'centralauth-foreign-link' => '$1 szerkesztő, $2',
 	'centralauth-foreign-contributions' => '$1közreműködés itt: $2',
 	'centralauth-merge-method-primary' => 'elsődleges wiki',
@@ -15295,15 +15300,15 @@ Vannak további azonosítók, amik még nincsenek megerősítve.',
 	'centralauth-attach-text' => 'Ez a felhasználói fiók még nincs integrálva az egységesített fiókba. Ha a globális fiók a tied, egységesítheted azzal, hogy megadod a jelszavadat:',
 	'centralauth-attach-submit' => 'Felhasználói fiók költöztetése',
 	'centralauth-attach-success' => 'A felhasználói fiók sikeresen integrálva lett az egységesített fiókba.',
-	'centralauth' => 'Globális felhasználói fiók kezelő', # Fuzzy
+	'centralauth' => 'Globális felhasználói fiók kezelő',
 	'centralauth-admin-intro' => 'Ezen a felületen adminisztrálhatóak a globális felhasználói fiókok.',
-	'centralauth-admin-manage' => 'Felhasználói adatok beállítása', # Fuzzy
+	'centralauth-admin-manage' => 'Felhasználói adatok kezelése',
 	'centralauth-admin-username' => 'Felhasználói név:',
 	'centralauth-admin-lookup-ro' => 'Felhasználói információ megtekintése',
 	'centralauth-admin-lookup-rw' => 'Felhasználói fiók kezelése',
 	'centralauth-admin-permission' => 'Csak helytartók integrálhatják más emberek számára a fiókjukat.',
 	'centralauth-admin-no-unified' => 'Ehhez a felhasználói névhez nem tartozik egységesített fiók.',
-	'centralauth-admin-info-header' => 'Globális felhasználó-információ', # Fuzzy
+	'centralauth-admin-info-header' => 'Globális felhasználói fiók információ',
 	'centralauth-admin-info-id' => 'Azonosító:',
 	'centralauth-admin-info-registered' => 'Regisztráció ideje:',
 	'centralauth-admin-info-home' => 'Elsődleges wiki:',
@@ -15365,7 +15370,7 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 ** nem megfelelő felhasználói információ',
 	'centralauth-admin-logsnippet' => 'Legutóbbi globálisfiók-változások',
 	'centralauth-admin-suppressreason' => '$1 globálisan elrejtette a következő ok miatt: $2',
-	'globalusers' => 'Globális felhasználólista', # Fuzzy
+	'globalusers' => 'Globális felhasználólista',
 	'centralauth-listusers-locked' => 'zárolva',
 	'centralauth-listusers-attached' => '[[User:$1|helyben létezik]]',
 	'centralauth-listusers-nolocal' => 'nincs csatolva vagy helyben nem létezik',
@@ -15384,17 +15389,17 @@ A helyi fiókok jelszavai visszaállnak az egyesítés előtti értékükre.',
 	'centralauth-prefs-count-unattached' => '$1 nem megerősített felhasználói fiók van a neveddel $1 oldalon.',
 	'centralauth-prefs-detail-unattached' => 'Még nem lett megerősítve, hogy az oldal a globális felhasználói fiókodhoz tartozik.',
 	'centralauth-prefs-manage' => 'Globális felhasználói fiók beállítása',
-	'centralauth-prefs-view' => 'Globális felhasználói adatok', # Fuzzy
+	'centralauth-prefs-view' => 'Globális felhasználói adatok',
 	'centralauth-renameuser-merged' => '$1 fiókja integrálva van az egységesített bejelentkezési rendszerbe.
-Átnevezésével a helyi fiók le lesz csatolva a globálisról.', # Fuzzy
-	'centralauth-renameuser-reserved' => 'A(z) $2 név már egy globális fiók számára van fenntartva.', # Fuzzy
+Átnevezésével a helyi fiók le lesz csatolva a globálisról.',
+	'centralauth-renameuser-reserved' => 'A(z) $2 név már egy globális fiók számára van fenntartva.',
 	'centralauth-invalid-wiki' => 'Nincs ilyen adatbázis: $1',
 	'centralauth-account-exists' => 'Nem sikerült új felhasználót létrehozni: az egységes bejelentkezési rendszerben már van ilyen felhasználónév.',
 	'centralauth-account-exists-reset' => 'Nincs $1 nevű felhasználó regisztrálva ezen a wikin, de létezik egy egységesített bejelentkezési rendszerben.', # Fuzzy
-	'centralauth-login-progress' => 'Bejelentkeztetlek {{int:Centralauth-groupname}} többi projektjébe is:', # Fuzzy
-	'centralauth-logout-progress' => 'Kijelentkeztetlek {{int:Centralauth-groupname}} többi projektjéből is:', # Fuzzy
+	'centralauth-login-progress' => 'Bejelentkeztetlek {{int:Centralauth-groupname}} többi projektjébe is:',
+	'centralauth-logout-progress' => 'Kijelentkeztetlek {{int:Centralauth-groupname}} többi projektjéből is:',
 	'centralauth-login-no-others' => 'Automatikusan bejelentkeztél {{int:Centralauth-groupname}} más projektjeibe is.',
-	'centralauth-logout-no-others' => 'Automatikusan kijelentkeztél {{int:Centralauth-groupname}} más projektjeiből is.', # Fuzzy
+	'centralauth-logout-no-others' => 'Automatikusan kijelentkeztél {{int:Centralauth-groupname}} más projektjeiből is.',
 	'centralauth-hidden-blockreason' => '$1 globálisan elrejtette $2-kor a következő ok miatt: $3',
 	'centralauth-log-name' => 'Globálisfiók-kezelési napló',
 	'centralauth-log-header' => 'Ez a napló a globális felhasználói nevekhez kapcsolódó műveleteket (törlés, lezárás, feloldás) listázza.',
@@ -15447,16 +15452,16 @@ Egy csoport csak akkor létezhet, ha jogok vannak hozzá rendelve.',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 jogokkal rendelkező szerkesztők listája]]',
 	'centralauth-editgroup-restrictions' => 'Wikicsoportok, ahol ez a csoport aktív:',
 	'centralauth-editgroup-noset' => '(semmi)',
-	'centralauth-editgroup-submit' => 'Csoport jogainak megváltoztatása', # Fuzzy
+	'centralauth-editgroup-submit' => 'Globális csoport jogainak megváltoztatása',
 	'centralauth-editgroup-perms' => 'Hozzátartozó jogok:',
 	'centralauth-editgroup-reason' => 'Indoklás:',
-	'centralauth-editgroup-success' => 'A csoporthoz tartozó jogok megváltoztatva', # Fuzzy
-	'centralauth-editgroup-success-text' => 'Sikeresen megváltoztattad a(z) $1 csoporthoz tartozó jogokat.
-[[Special:GlobalGroupPermissions|Vissza a csoportkezelőhöz]]', # Fuzzy
+	'centralauth-editgroup-success' => 'A globális csoporthoz tartozó jogok megváltoztatva',
+	'centralauth-editgroup-success-text' => 'Sikeresen megváltoztattad a(z) $1 globális csoporthoz tartozó jogokat.
+[[Special:GlobalGroupPermissions|Vissza a csoportkezelőhöz]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|szerkesztés]])',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Válassz ki egy wikit, ahol van felhasználói fiókja:',
 	'centralauth-globalgroupmembership-badknownwiki' => "'''$1''' nem aktív az általad kiválasztott wikin ('' $2 '').
-Valószínűleg rossz felhasználó számára akarsz jogokat adni.", # Fuzzy
+Valószínűleg rossz felhasználó számára akarsz jogokat adni.",
 	'centralauth-editset' => 'Wikicsoportok',
 	'centralauth-editset-legend-rw' => 'Wikicsoport szerkesztése vagy létrehozása',
 	'centralauth-editset-legend-ro' => 'Wikicsoportok listája',
@@ -15490,13 +15495,13 @@ Megtekintheted, módosíthatod őket vagy újakat hozhatsz létre.',
 	'centralauth-editset-success' => 'A wikicsoport változásai sikeresen el lettek mentve.',
 	'centralauth-editset-success-delete' => 'Wikicsoport sikeresen törölve.',
 	'centralauth-editset-return' => 'Visszatérés a főoldalra',
-	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] felhasználó már globálisan zárolva.', # Fuzzy
+	'centralauth-block-already-locked' => '[[Special:CentralAuth/$1|$1]] felhasználói fiók már globálisan zárolva van.',
 	'centralauth-readonly' => 'CentralAuth adatbázis zárolva',
 	'centralauth-readonlytext' => 'A CentralAuth adatbázis jelenleg zárolva van, így új bejegyzések és módosítások nem hajthatók végre. Ennek oka valószínűleg rutin adatbázis-karbantartás, amely végrehajtása  után ismét minden a megszokott lesz.',
 	'right-globalgroupmembership' => 'globális csoportok tagjainak szerkesztése',
 	'right-centralauth-autoaccount' => 'Automatikus bejelentkezés a globális fiókba',
 	'right-centralauth-unmerge' => 'Globális fiók szétválasztása',
-	'right-centralauth-lock' => 'Globális fiók elrejtése vagy zárolása', # Fuzzy
+	'right-centralauth-lock' => 'Globális fiók zárolása vagy feloldása',
 	'right-centralauth-oversight' => 'Globális fiók elrejtése', # Fuzzy
 	'right-centralauth-merge' => 'saját fiókok egyesítése',
 	'right-globalgrouppermissions' => 'globális csoportok kezelése',
@@ -16902,6 +16907,7 @@ Hóp má eyða með því að fjarlægja öll réttindi hans.',
  * @author Darth Kule
  * @author F. Cosoleto
  * @author Gianfranco
+ * @author Maria victoria
  * @author Melos
  * @author Nemo bis
  * @author Pietrodn
@@ -17073,7 +17079,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non hai i diritti per eseguire questa azione.',
 	'centralauth-admin-too-many-edits' => 'L\'utenza globale "<nowiki>$1</nowiki>" ha più di $2 {{PLURAL:$2|contributo|contributi}} e non può essere nascosta.',
-	'centralauth-admin-title' => "Gestione dell'utenza globale per $1",
+	'centralauth-admin-title' => 'Global account manager per$1',
 	'globalusers' => 'Elenco degli utenti globali',
 	'centralauth-listusers-locked' => 'bloccato',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmente]]',
@@ -18208,6 +18214,7 @@ $messages['ka'] = array(
 	'centralauth-admin-suppressreason' => 'გლობალურად შეჩერდა $1-ის მიერ. მიზეზი: $2',
 	'centralauth-admin-not-authorized' => 'თქვენ არ გაქვთ ამ მოქმედების შესრულების ნებართვა',
 	'centralauth-admin-too-many-edits' => 'გლობალურ ანგარიშს "<nowiki>$1</nowiki>" აქვს $2-ზე მეტი რედაქტირება და მისი დამალვა შეუძლებელია.',
+	'centralauth-admin-title' => 'გლობალური ანგარიშის მართვა მომხმარებლისთვის $1',
 	'globalusers' => 'გლობალური ანგარიშების სია',
 	'centralauth-listusers-locked' => 'ჩაკწტილია',
 	'centralauth-listusers-attached' => '[[User:$1|ლოკალურად არსებობს]]',
@@ -25106,6 +25113,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-admin-suppressreason' => 'Globaal onderdrukt door $1 met reden: $2',
 	'centralauth-admin-not-authorized' => 'U hebt geen rechten om deze handeling uit te voeren.',
 	'centralauth-admin-too-many-edits' => 'Het globale account "<nowiki>$1</nowiki>" heeft meer dan $2 {{PLURAL:$2|edit|edits}} en kan niet verborgen worden.',
+	'centralauth-admin-title' => 'Globale accountmanager voor $1',
 	'globalusers' => 'Gebruikerslijst (globaal)',
 	'centralauth-listusers-locked' => 'afgeschermd',
 	'centralauth-listusers-attached' => '[[User:$1|bestaat lokaal]]',
@@ -26639,6 +26647,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-admin-suppressreason' => 'Centralnie ukryte przez $1 z powodu – $2',
 	'centralauth-admin-not-authorized' => 'Nie masz uprawnień do wykonywania tej akcji',
 	'centralauth-admin-too-many-edits' => 'Konto globalne „<nowiki>$1</nowiki>” ma ponad $2 {{PLURAL:$2|edycję|edycje|edycji}} i nie może zostać ukryte.',
+	'centralauth-admin-title' => 'Zarządzanie kontem uniwersalnym dla $1',
 	'globalusers' => 'Lista kont uniwersalnych',
 	'centralauth-listusers-locked' => 'zablokowane',
 	'centralauth-listusers-attached' => '[[User:$1|istnieje lokalnie]]',
@@ -26796,6 +26805,7 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego', # Fuzzy
 	'right-centralauth-merge' => 'Łączenie swojego konta',
 	'right-globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupy globalne, do których należy użytkownik',
 	'centralloginsuccesful' => 'Zalogowano pomyślnie',
 	'centralauth-completelogin-back' => 'Powrót do poprzedniej strony.',
 	'centralauth-warning-notloggedin' => 'Nie jesteś aktualnie zalogowany.',
@@ -30633,6 +30643,7 @@ $messages['shi'] = array(
 
 /** Sinhala (සිංහල)
  * @author Budhajeewa
+ * @author Sahan.ssw
  * @author Singhalawap
  * @author Thameera123
  * @author තඹරු විජේසේකර
@@ -30697,10 +30708,10 @@ $messages['si'] = array(
 	'centralauth-list-home-title' => 'ප්‍රධාන විකිය',
 	'centralauth-list-home-dryrun' => 'මෙම විකියෙහි පරිස්ථාපනය කර ඇති මුරපදය හා විද්‍යුත්-තැපැල් ලිපිනය ඔබගේ සංයුක්ත කෙරුණු ගිණුම සඳහා භාවිතා කෙරේ.',
 	'centralauth-list-attached-title' => 'බැඳි  ගිණුම්',
-	'centralauth-list-attached' => 'පහත එක් එක් අඩවියන්හි "$1" යන නමැති ගිණුම, සංයුක්ත කෙරුණු ගිණුමට ස්වයංක්‍රීය ලෙස අමුණා ඇත:',
-	'centralauth-list-attached-dryrun' => 'පහත එක් එක් අඩවියන්හි "$1" යන නමැති ගිණුම, සංයුක්ත කෙරුණු ගිණුමට ස්වයංක්‍රීය ලෙස  ඇමිණෙනු ඇත:',
+	'centralauth-list-attached' => 'පහත එක් එක් අඩවියන්හි "$1" යන නමැති ගිණුම, සංයුක්ත කෙරුණු ගිණුමට ස්වයංක්‍රීය ලෙස අමුණා ඇත:', # Fuzzy
+	'centralauth-list-attached-dryrun' => 'පහත එක් එක් අඩවියන්හි "$1" යන නමැති ගිණුම, සංයුක්ත කෙරුණු ගිණුමට ස්වයංක්‍රීය ලෙස  ඇමිණෙනු ඇත:', # Fuzzy
 	'centralauth-list-unattached-title' => 'නොබැඳි ගිණුම්',
-	'centralauth-list-unattached' => 'පහත අඩවියන්ගේ "$1" ගිණුම ඔබට අයත් බැව් ස්‍වයංක්‍රීයව තහවුරු කරගත නොහැක; ඔබගේ ප්‍රාථමික ගිණුමට වඩා වෙනස් මුරපදයන් ඒවායේ භාවිතා කොට ඇතුවා විය හැකියි.',
+	'centralauth-list-unattached' => 'පහත අඩවියන්ගේ "$1" ගිණුම ඔබට අයත් බැව් ස්‍වයංක්‍රීයව තහවුරු කරගත නොහැක; ඔබගේ ප්‍රාථමික ගිණුමට වඩා වෙනස් මුරපදයන් ඒවායේ භාවිතා කොට ඇතුවා විය හැකියි.', # Fuzzy
 	'centralauth-foreign-link' => '$2 හී $1 පරිශීලක',
 	'centralauth-foreign-contributions' => '$2 හී {{PLURAL:$1|දායකත්වය|දායකත්ව}} $1 යි',
 	'centralauth-merge-method-primary' => 'ජනක විකිය',
@@ -30807,6 +30818,7 @@ $messages['si'] = array(
 ** නොගැළපෙන පෞද්ගලික තොරතුරු',
 	'centralauth-admin-logsnippet' => 'පෙරකළ ගෝලීය ගිණුම් වෙනස්කම්',
 	'centralauth-admin-suppressreason' => '$1 මගින් පහත හේතුව නිසා ගෝලීයව යටපත් කරන ලදී: $2',
+	'centralauth-admin-title' => '$1 සඳහා විශ්ව ගිණුම් කළමනාකරු',
 	'globalusers' => 'ගෝලීය පරිශීලක ලයිස්තුව', # Fuzzy
 	'centralauth-listusers-locked' => 'අගුලුලා ඇත',
 	'centralauth-listusers-attached' => '[[User:$1|මෙහි පවතී]]',
@@ -33756,6 +33768,7 @@ $messages['te'] = array(
 	'centralauth-list-unattached-title' => 'జోడించని ఖాతాలు',
 	'centralauth-list-unattached' => 'ఈ క్రింద పేర్కొన్న సైట్లలో "$1" అనే ఖాతా మీదే అని నిర్ధారించలేకున్నాం; బహుశా వీటిల్లో సంకేతపదం మీ ప్రధాన ఖాతాది కాక వేరేది అయివుండవచ్చు:', # Fuzzy
 	'centralauth-foreign-link' => '$2లో వాడుకరి $1',
+	'centralauth-foreign-contributions' => '$2 లో $1 {{PLURAL:$1|రచన|రచనలు}}',
 	'centralauth-merge-method-primary' => 'ప్రధాన వికీ',
 	'centralauth-merge-method-empty' => 'రచనలేమీ లేవు',
 	'centralauth-merge-method-mail' => 'ఈ-మెయిలు ద్వారా నిర్ధారించారు',
@@ -33794,6 +33807,7 @@ $messages['te'] = array(
 	'centralauth-admin-info-editcount' => 'మొత్తం మార్పుల సంఖ్య:',
 	'centralauth-admin-info-locked' => 'లాకు చేసినవి:',
 	'centralauth-admin-info-hidden' => 'దాపుడు స్థాయి:',
+	'centralauth-admin-info-groups' => 'భౌగోళిక {{PLURAL:$1|గుంపు|గుంపులు}}:',
 	'centralauth-admin-info-nogroups' => 'ఏమీలేదు',
 	'centralauth-admin-nohome' => 'నిర్ధారించలేకున్నాం',
 	'centralauth-admin-yes' => 'అవును',
@@ -33827,6 +33841,7 @@ $messages['te'] = array(
 	'centralauth-token-mismatch' => 'సారీ, సెషను డేటా పోవడం వలన మీ ఫారమును సమర్పణను ప్రాసెస్ చెయ్యలేకపోతున్నాం.',
 	'centralauth-admin-reason' => 'కారణం:',
 	'centralauth-admin-reason-other' => 'ఇతర/అదనపు కారణం:',
+	'centralauth-admin-unhide-nonexistent' => 'లోపం: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేనే లేదు.',
 	'centralauth-admin-status' => 'సార్వత్రిక ఖాతా స్థితిని అమర్చు',
 	'centralauth-admin-status-intro' => 'ఈ సార్వత్రిక ఖాతా యొక్క స్థితిని మార్చడానికి మీరు ఈ ఫారాన్ని ఉపయోగించవచ్చు',
 	'centralauth-admin-status-locked' => 'సంరక్షించబడినవి:',
@@ -33848,10 +33863,17 @@ $messages['te'] = array(
 	'centralauth-admin-logsnippet' => 'గత సార్వత్రిక ఖాతా మార్పులు',
 	'centralauth-admin-suppressreason' => '$1 సార్వత్రికంగా అణచివేసారు. కారణం: $2',
 	'centralauth-admin-not-authorized' => 'ఈ పని చేయడానికి మీకు అనుమతి లేదు',
+	'centralauth-admin-too-many-edits' => 'సార్వత్రిక ఖాతా "<nowiki>$1</nowiki>" కు $2 కు పైబడిన {{PLURAL:$2|మార్పుచేర్పు|మార్పుచేర్పులు}} ఉన్నాయి, దాన్ని దాచడం కుదరదు.',
+	'centralauth-admin-title' => '$1 కోసం సార్వత్రిక ఖాతా నిర్వాహకుడు',
 	'globalusers' => 'సార్వత్రిక ఖాతాల జాబితా',
 	'centralauth-listusers-locked' => 'లాకు అయింది',
 	'centralauth-listusers-attached' => '[[User:$1|స్థానికంగా ఉనికిలో ఉంది]]',
 	'centralauth-listusers-nolocal' => 'దేనికీ జోడించి లేదు, లేదా స్థానికంగా లేదు',
+	'centralauth-admin-multi-notfound' => 'వెతుకులాటలో వాడుకరి ఎవరూ దొరకలేదు.',
+	'centralauth-admin-action-lock-unlock' => 'ఎంపిక చేసిన ఖాతాలకు తాళం తియ్యి',
+	'centralauth-admin-action-hide-none' => 'ఎంచుకున్న ఖాతాలను తిరిగి చూపించు',
+	'centralauth-admin-action-hide-lists' => 'బహిరంగ జాబితాలనుంచి ఎంచుకున్న ఖాతాలను దాచిపెట్టు',
+	'centralauth-admin-action-hide-oversight' => 'ఎంచుకున్న ఖాతాలను పూర్తిగా దాచిపెట్టు',
 	'centralauth-admin-multi-bot' => 'ఇటీవలి మార్పులు',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|క్షణం|క్షణాల}} క్రితం',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|నిమిషం|నిమిషాల}} క్రితం',
@@ -33899,6 +33921,7 @@ $messages['te'] = array(
 	'centralauth-rightslog-entry-groupperms' => '$1 యొక్క గుంపు అనుమతులను $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-entry-groupperms2' => '$1 యొక్క గుంపు అనుమతులను మార్చాం. $2 ఇచ్చాం; $3 తీసేసాం',
 	'centralauth-rightslog-entry-groupperms3' => '$1 కోసం సెట్ చేసిన గుంపు నిరోధక వికీలను $2 నుండి $3 కు మార్చాం',
+	'centralauth-rightslog-entry-grouprename' => '$2 గుంపు పేరును $1 గా మార్చాం',
 	'centralauth-rightslog-header' => 'సార్వత్రిక గుంపులపై జరిగిన చర్యల చిట్టా ఇది: సభ్యత్వం మరియు అనుమతుల మార్పులు',
 	'centralauth-rightslog-entry-setnewtype' => '"$1" యొక్క రకాన్ని $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-entry-setchange' => "''$1'' లోని వికీలు మార్చబడ్డాయి: కలిపినవి: $2; తీసేసినవి: $3",
@@ -33929,7 +33952,7 @@ $messages['te'] = array(
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 అనుమతులు కలిగిన వాడుకరుల జాబితా]]',
 	'centralauth-editgroup-restrictions' => 'ఈ గుంపు చురుగ్గా ఉన్న వికీల సమూహం',
 	'centralauth-editgroup-noset' => '(ఏమీలేదు)',
-	'centralauth-editgroup-submit' => 'గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు', # Fuzzy
+	'centralauth-editgroup-submit' => 'భౌగోళిక గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు',
 	'centralauth-editgroup-perms' => 'ఇచ్చిన అనుమతులు:',
 	'centralauth-editgroup-reason' => 'కారణం:',
 	'centralauth-editgroup-success' => 'గుంపు అనుమతులను మార్చాం', # Fuzzy
@@ -33975,6 +33998,7 @@ $messages['te'] = array(
 	'right-globalgrouppermissions' => 'సార్వత్రిక గుంపులను నిర్వహించు',
 	'centralloginsuccesful' => 'ప్రవేశం విజయవంతం',
 	'centralauth-completelogin-back' => 'మునుపటి పుటకు తిరిగి వెళ్ళు.',
+	'centralauth-warning-notloggedin' => 'ప్రస్తుతం మీరు లాగినై లేరు.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} ఖాతా నిర్ధారణ',
 	'centralauth-finishglobaliseemail_body' => 'అన్ని వికీమీడియా ప్రాజెక్టులలోనూ మీ ఈమెయిలు చిరునామా "$2" అనే ఖాతాకు అనుసంధానించబడింది, మీ ముఖ్య ఖాతా {{SITENAME}}లో ఉంటుంది.
 
@@ -35949,6 +35973,7 @@ $messages['uk'] = array(
 	'centralauth-admin-suppressreason' => 'Глобально прихований $1 з такої причини: $2',
 	'centralauth-admin-not-authorized' => 'Ви не маєте дозволу виконувати цю дію',
 	'centralauth-admin-too-many-edits' => 'Глобальний обліковий запис "<nowiki>$1</nowiki>" має понад $2 {{PLURAL:$2|редагування|редагування|редагувань}} і не може бути схований.',
+	'centralauth-admin-title' => 'Менеджер глобального облікового запису для $1',
 	'globalusers' => 'Список глобальних облікових записів',
 	'centralauth-listusers-locked' => 'заблокований',
 	'centralauth-listusers-attached' => '[[User:$1|існує локально]]',
