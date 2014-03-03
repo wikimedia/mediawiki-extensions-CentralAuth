@@ -17079,7 +17079,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-admin-suppressreason' => 'Globalmente soppresso da $1 per il motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non hai i diritti per eseguire questa azione.',
 	'centralauth-admin-too-many-edits' => 'L\'utenza globale "<nowiki>$1</nowiki>" ha più di $2 {{PLURAL:$2|contributo|contributi}} e non può essere nascosta.',
-	'centralauth-admin-title' => 'Global account manager per$1',
+	'centralauth-admin-title' => "Gestione dell'utenza globale per $1",
 	'globalusers' => 'Elenco degli utenti globali',
 	'centralauth-listusers-locked' => 'bloccato',
 	'centralauth-listusers-attached' => '[[User:$1|esiste localmente]]',
@@ -27650,6 +27650,7 @@ $messages['ps'] = array(
  * @author Giro720
  * @author Hamilton Abreu
  * @author Helder.wiki
+ * @author Imperadeiro98
  * @author João Sousa
  * @author Lijealso
  * @author Luckas
@@ -27682,7 +27683,7 @@ A palavra-chave e o endereço de correio electrónico serão comparados aos das 
 Não serão feitas alterações até que confirme que está tudo correto.',
 	'centralauth-merge-step1-submit' => 'Confirmar informações de autenticação',
 	'centralauth-merge-step2-title' => 'Confirmar contas adicionais',
-	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com a da wiki de acolhimento.
+	'centralauth-merge-step2-detail' => 'Algumas das contas não coincidem com a da wiki de origem.
 Caso essas contas lhe pertençam, será possível confirmá-lo fornecendo a palavra-chave das mesmas.',
 	'centralauth-merge-step2-submit' => 'Confirmar informações de autenticação',
 	'centralauth-merge-dryrun-complete' => 'Todas as contas existentes podem ser unificadas automaticamente!
@@ -27693,7 +27694,7 @@ Poderá fundi-las mais tarde.
 
 Ainda não foram feitas alterações às suas contas.',
 	'centralauth-merge-dryrun-or' => "'''ou'''",
-	'centralauth-merge-dryrun-home' => 'Não foi possível confirmar que é o proprietário da conta com o seu nome de utilizador na wiki de acolhimento.
+	'centralauth-merge-dryrun-home' => 'Não foi possível confirmar que é o proprietário da conta com o seu nome de utilizador na wiki de origem.
 
 Foi determinado que a conta principal do seu nome de utilizador está numa outra wiki. Siga a seguinte ligação e autentique-se nessa wiki para terminar a fusão de contas.',
 	'centralauth-merge-step3-title' => 'Criar conta global',
@@ -27702,7 +27703,7 @@ Foi determinado que a conta principal do seu nome de utilizador está numa outra
 	'centralauth-merge-no-accounts' => 'Não foram encontradas contas que correspondam ao seu nome, na tabela central de contas!
 A base de dados deve estar corrompida.',
 	'centralauth-merge-home-password' => 'A wiki de acolhimento desta conta (listada abaixo) tem uma palavra-chave diferente da que forneceu.
-Por favor, introduza a palavra-chave da wiki de acolhimento.',
+Por favor, introduza a palavra-chave da wiki de origem.',
 	'centralauth-complete' => 'Unificação da autenticação completa!',
 	'centralauth-incomplete' => 'Unificação da autenticação incompleta!',
 	'centralauth-complete-text' => 'Agora pode entrar em qualquer wiki {{int:Centralauth-groupname}} sem ter de criar uma conta nova.',
@@ -27716,24 +27717,25 @@ Desculpe.',
 	'centralauth-error-locked' => 'Não pode editar porque a sua conta está bloqueada.',
 	'centralauth-error-unmerged' => 'Não pode editar porque a sua conta não está unificada.',
 	'centralauth-readmore-text' => ":''[[meta:Help:Unified login/pt|Leia mais sobre a '''autenticação unificada''']]...''",
-	'centralauth-list-home-title' => 'Wiki de acolhimento',
+	'centralauth-list-home-title' => 'Wiki de origem',
 	'centralauth-list-home-dryrun' => 'A palavra-chave e endereço de correio electrónico definidos nesta wiki serão usados para a sua conta global.',
 	'centralauth-list-attached-title' => 'Contas acopladas',
 	'centralauth-list-attached' => 'As contas com o nome "$1" nos seguintes sítios foram automaticamente acopladas à conta global:',
 	'centralauth-list-attached-dryrun' => 'As contas com o nome "$1" nos seguintes sítios serão automaticamente acopladas à conta global:',
 	'centralauth-list-unattached-title' => 'Contas não acopladas',
-	'centralauth-list-unattached' => 'Não foi possível confirmar automaticamente que a conta "$1" lhe pertence nos seguintes sites (provavelmente, porque a palavra-chave da conta primária é diferente):', # Fuzzy
-	'centralauth-foreign-link' => 'Utilizador $1 na $2',
+	'centralauth-list-unattached' => 'Não foi possível confirmar automaticamente que {{PLURAL:$2|a conta "$1" lhe pertence|as contas "$1" lhe pertencem}} {{PLURAL:$2|no seguinte sítio|nos seguintes sítios}}
+(provavelmente, porque {{PLURAL:$2|tem|têm}} uma palavra-chave diferente da conta primária):',
+	'centralauth-foreign-link' => 'Utilizador $1 em $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|contribuição|contribuições}} em $2',
-	'centralauth-merge-method-primary' => "wiki de acolhimento ''(home wiki)''",
+	'centralauth-merge-method-primary' => 'wiki de origem',
 	'centralauth-merge-method-empty' => 'sem contribuições',
 	'centralauth-merge-method-mail' => 'confirmação por correio electrónico',
 	'centralauth-merge-method-password' => 'confirmação por palavra-chave',
 	'centralauth-merge-method-admin' => 'conta fundida por administrador',
 	'centralauth-merge-method-new' => 'conta nova',
 	'centralauth-merge-method-login' => 'criada ao entrar',
-	'centralauth-merge-method-primary-desc' => "Esta é a wiki a partir da qual a conta foi inicialmente fundida.
-Note que pode ser diferente da wiki de acolhimento ''(home wiki)'' do utilizador.",
+	'centralauth-merge-method-primary-desc' => 'Esta é a wiki a partir da qual a conta foi inicialmente fundida.
+Note que pode ser diferente da wiki de origem do utilizador.',
 	'centralauth-merge-method-empty-desc' => 'Indica que a conta local foi fundida porque não tinha feito edições.',
 	'centralauth-merge-method-mail-desc' => 'Indica que a conta local foi fundida porque o seu endereço de correio electrónico correspondia ao da conta principal.',
 	'centralauth-merge-method-password-desc' => 'Indica que a conta local foi fundida porque o utilizador especificou uma palavra-chave válida.',
@@ -27873,9 +27875,9 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-renameuser-reserved' => 'O nome de utilizador $2 está reservado para uma conta global.',
 	'centralauth-invalid-wiki' => 'Não existe uma base de dados para a wiki: $1',
 	'centralauth-account-exists' => 'Não é possível criar a conta: o nome de utilizador pretendido já está a ser utilizado no sistema de autenticação unificada.',
-	'centralauth-account-exists-reset' => 'O utilizador $1 não está registado nesta wiki, mas existe no sistema de autentificação unificada', # Fuzzy
-	'centralauth-login-progress' => 'Está a ser autenticad{{GENDER:$1|o|a|o/a}} nas wikis da {{int:Centralauth-groupname}}:', # Fuzzy
-	'centralauth-logout-progress' => 'A sair das outras wikis da {{int:Centralauth-groupname}}:', # Fuzzy
+	'centralauth-account-exists-reset' => 'O utilizador $1 não está registado nesta wiki, mas pode redefinir a palavra-chave [[Special:CentralAuth/$1|numa wiki onde está registado]]',
+	'centralauth-login-progress' => 'Entrando em wikis de {{int:Centralauth-groupname}}:',
+	'centralauth-logout-progress' => 'A terminar a sessão nas outras wikis da {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Foi automaticamente desautenticado das wikis {{int:Centralauth-groupname}}.', # Fuzzy
 	'centralauth-hidden-blockreason' => 'globalmente ocultada por $1 na $2 com o seguinte motivo: $3',
@@ -33892,11 +33894,11 @@ $messages['te'] = array(
 	'centralauth-prefs-manage' => 'మీ సార్వత్రిక ఖాతాను నిర్వహించుకోండి',
 	'centralauth-prefs-view' => 'సార్వత్రిక ఖాతా సమాచారాన్ని చూడండి',
 	'centralauth-renameuser-merged' => 'వాడుకరి $1 ను ఏకీకృత లాగిన్ వ్యవస్థకు చేర్చాం.
-దాని పేరు మారిస్తే, స్థానిక వాడుకరి సార్వత్రిక వాడుకరి నుండి విడివడిపోతుంది.', # Fuzzy
+దాని పేరు మారిస్తే, స్థానిక ఖాతా సార్వత్రిక ఖాతా నుండి విడిపోతుంది.',
 	'centralauth-renameuser-reserved' => 'వాడుకరి పేరు $2, ఓ సార్వత్రిక ఖాతా కోసం రిజర్వు చేయబడి ఉంది.',
 	'centralauth-invalid-wiki' => 'ఇలాంటి వికీ లేదు DB: $1',
 	'centralauth-account-exists' => 'ఖాతాను సృష్టించలేకున్నాం: మీరడిగిన వాడుకరిపేరుని ఏకీకృత ప్రవేశ వ్యవస్థలో ఈసరికే తీసేసుకున్నారు.',
-	'centralauth-account-exists-reset' => 'వాడుకరిపేరు $1 ఈ వికీలో నమోదై లేదు. కానీ ఇది సార్వత్రిక లాగిన్ వ్యవస్థలో ఈసరికే ఉనికిలో ఉంది.', # Fuzzy
+	'centralauth-account-exists-reset' => 'వాడుకరిపేరు $1 ఈ వికీలో నమోదై లేదు. కానీ దీని సంకేత పదాన్ని [[Special:CentralAuth/$1|ఇక్కడ]] రీసెట్ చేసుకోవచ్చు.',
 	'centralauth-login-progress' => '{{int:Centralauth-groupname}} యొక్క వికీల లోకి మిమ్మల్ని లాగిన్ చేస్తున్నాం:',
 	'centralauth-logout-progress' => '{{int:Centralauth-groupname}} యొక్క ఇతర వికీల నుండి మిమ్మల్ని లాగౌట్ చేస్తున్నాం:',
 	'centralauth-login-no-others' => 'మీరు {{int:Centralauth-groupname}} వారి ఇతర ప్రాజెక్టుల్లోకి ఆటోమాటిగ్గా లాగిన్ అయిపోయారు.',
@@ -33955,12 +33957,13 @@ $messages['te'] = array(
 	'centralauth-editgroup-submit' => 'భౌగోళిక గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు',
 	'centralauth-editgroup-perms' => 'ఇచ్చిన అనుమతులు:',
 	'centralauth-editgroup-reason' => 'కారణం:',
-	'centralauth-editgroup-success' => 'గుంపు అనుమతులను మార్చాం', # Fuzzy
-	'centralauth-editgroup-success-text' => 'మీరు $1 గుంపుకు అనుమతులను జయప్రదంగా మార్చారు.
-[[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణకు]]', # Fuzzy
+	'centralauth-editgroup-success' => 'సార్వత్రిక గుంపు అనుమతులను మార్చాం',
+	'centralauth-editgroup-success-text' => 'సార్వత్రిక గుంపు $1 కి అనుమతులను జయప్రదంగా మార్చాం.
+[[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణ]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|మార్చండి]])',
+	'centralauth-editgroup-nowikiset' => 'ఏమీ లేదు, అన్నీ వికీలకు అన్వయిస్తుంది.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'వారికి ఖాతా కలిగిన ఒక వికీ:',
-	'centralauth-globalgroupmembership-badknownwiki' => "సర్వత్రిక వాడుకరి '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేరు. మీరు హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేదు, గమనించండి!", # Fuzzy
+	'centralauth-globalgroupmembership-badknownwiki' => "సార్వత్రిక ఖాతా '''$1''' మీరు ఇచ్చిన వికీ ('''$2''') లో సచేతనంగా లేదు. హక్కులను సరైన వాడుకరికి ఇస్తున్నట్లు లేరు, గమనించండి!",
 	'centralauth-editset' => 'వికీ సమితులు',
 	'centralauth-editset-legend-rw' => 'వికీ సెట్ సృష్టించు లేక మార్చు',
 	'centralauth-editset-legend-ro' => 'వికీ సమితుల యొక్క జాబితా',
@@ -33970,6 +33973,7 @@ $messages['te'] = array(
 	'centralauth-editset-item-rw' => '[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|తొలగించు]])',
 	'centralauth-editset-new' => 'ఓ కొత్త సెట్ ను సృష్టించు',
 	'centralauth-editset-notfound' => '"$1" వికీ సమితి కనబడలేదు.',
+	'centralauth-editset-optin' => 'కావలసిన వాటి ఆధారంగా (ఎంపిక చేసిన వికీలు మాత్రమే)',
 	'centralauth-editset-legend-edit' => 'వికీ సెట్ "$1" ని మారుస్తున్నారు',
 	'centralauth-editset-legend-view' => 'వికీ సమితి "$1"',
 	'centralauth-editset-legend-new' => 'కొత్త వికీ సమితి సృష్టింపు',
@@ -33993,12 +33997,16 @@ $messages['te'] = array(
 	'right-globalgroupmembership' => 'సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు',
 	'right-centralauth-unmerge' => 'సార్వత్రిక ఖాతాను విడదీయి',
 	'right-centralauth-lock' => 'సార్వత్రిక ఖాతాకు తాళం వెయ్యి లేదా దాచు',
-	'right-centralauth-oversight' => 'సార్వత్రిక ఖాతాను అణచి పెట్టు', # Fuzzy
+	'right-centralauth-oversight' => 'సార్వత్రిక ఖాతాను అణచి పెట్టు లేదా దాచు',
 	'right-centralauth-merge' => 'వారి ఖాతాలను విలీనం చెయ్యి',
 	'right-globalgrouppermissions' => 'సార్వత్రిక గుంపులను నిర్వహించు',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'వాడుకరి తాలూకు సార్వత్రిక గుంపులు',
+	'action-centralauth-lock' => 'సార్వత్రిక ఖాతాలను తాళం వేయి లేదా తీయి',
+	'centrallogin' => 'కేంద్రీకృత వాడుకరి ప్రవేశం',
 	'centralloginsuccesful' => 'ప్రవేశం విజయవంతం',
 	'centralauth-completelogin-back' => 'మునుపటి పుటకు తిరిగి వెళ్ళు.',
 	'centralauth-warning-notloggedin' => 'ప్రస్తుతం మీరు లాగినై లేరు.',
+	'centralauth-warning-notattached' => 'ప్రాంతీయ ఖాతా సార్వత్రిక ఖాతాతో అనుసంధానం కాలేదు.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} ఖాతా నిర్ధారణ',
 	'centralauth-finishglobaliseemail_body' => 'అన్ని వికీమీడియా ప్రాజెక్టులలోనూ మీ ఈమెయిలు చిరునామా "$2" అనే ఖాతాకు అనుసంధానించబడింది, మీ ముఖ్య ఖాతా {{SITENAME}}లో ఉంటుంది.
 
