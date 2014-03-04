@@ -34006,7 +34006,7 @@ $messages['te'] = array(
 	'centralloginsuccesful' => 'ప్రవేశం విజయవంతం',
 	'centralauth-completelogin-back' => 'మునుపటి పుటకు తిరిగి వెళ్ళు.',
 	'centralauth-warning-notloggedin' => 'ప్రస్తుతం మీరు లాగినై లేరు.',
-	'centralauth-warning-notattached' => 'ప్రాంతీయ ఖాతా సార్వత్రిక ఖాతాతో అనుసంధానం కాలేదు.',
+	'centralauth-warning-notattached' => 'స్థానిక ఖాతా సార్వత్రిక ఖాతాతో అనుసంధానం కాలేదు.',
 	'centralauth-finishglobaliseemail_subject' => '{{SITENAME}} ఖాతా నిర్ధారణ',
 	'centralauth-finishglobaliseemail_body' => 'అన్ని వికీమీడియా ప్రాజెక్టులలోనూ మీ ఈమెయిలు చిరునామా "$2" అనే ఖాతాకు అనుసంధానించబడింది, మీ ముఖ్య ఖాతా {{SITENAME}}లో ఉంటుంది.
 
