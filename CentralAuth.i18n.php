@@ -9961,6 +9961,7 @@ Vi povas vidi kaj modifi iujn el ili, aŭ krei novan vikiaron.',
  * @author Remember the dot
  * @author Sanbec
  * @author Savh
+ * @author Sporeunai
  * @author Titoxd
  * @author Toliño
  * @author Translationista
@@ -10138,6 +10139,7 @@ Las contraseñas de cuentas locales creadas antes de la fusión volverán a sus 
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 por la siguiente razón: $2',
 	'centralauth-admin-not-authorized' => 'No tienes permisos para realizar esta acción',
 	'centralauth-admin-too-many-edits' => 'La cuenta global "<nowiki>$1</nowiki>" tiene más de $2   {{PLURAL:$2|edición|ediciones}} y no puede ocultarse.',
+	'centralauth-admin-title' => 'Gestor de cuentas globales', # Fuzzy
 	'globalusers' => 'Lista de usuarios globales',
 	'centralauth-listusers-locked' => 'bloqueado',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
@@ -11213,18 +11215,18 @@ $messages['fa'] = array(
 	'centralauth-warning-notloggedin' => 'شما در حال حاضر ثبت ورود نشده‌اید.',
 	'centralauth-warning-notattached' => 'حساب محلی به یک حساب سراسری نپیوسته است.',
 	'centralauth-finishglobaliseemail_subject' => 'تأیید حساب {{SITENAME}}',
-	'centralauth-finishglobaliseemail_body' => 'نشانی رایانامه شما با توجه به حساب شما «$2» در تمامی پروژه ها هماهنگ شده است. حساب اصلی شما نیز در {{SITENAME}} قراردارد.
+	'centralauth-finishglobaliseemail_body' => 'نشانی رایانامه شما با توجه به حساب شما «$2» در تمامی پروژه ها هماهنگ شده‌است. حساب اصلی شما نیز در {{SITENAME}} قرار دارد.
 
-برای تایید آنکه این اکانت واقعا به شما تعلق دارد. البته توجه داشته باشید که ادغام حساب های کاربری نمیتواندبه صورت خودکار انجام شود.
-همچنین اگر شما گذرواژه حساب خودتان را گم کرده اید میتوانید از پیوند زیر استفاده نمایید.
+برای تأیید آنکه این حساب واقعاً به شما تعلق دارد. البته توجه داشته باشید که ادغام حساب‌های کاربری نمی‌تواند به صورت خودکار انجام شود.
+همچنین اگر شما گذرواژهٔ حساب خودتان را گم کرده‌اید می‌توانید از پیوند زیر استفاده نمایید.
 
 $3
 
-اگر این حساب متعلق به شما نیست، لطفا وارد پیوند زیر شده تا این درخواست منقضی گردد.
+اگر این حساب متعلق به شما نیست، لطفاً وارد پیوند زیر شده تا این درخواست منقضی گردد.
 
 $5
 
-این درخواست در تاریخ $6 ساعت $7 منقضی می شود.',
+این درخواست در تاریخ $6 ساعت $7 منقضی می‌شود.',
 );
 
 /** Finnish (suomi)
@@ -16231,19 +16233,19 @@ $messages['ig'] = array(
 $messages['ilo'] = array(
 	'mergeaccount' => 'Kasasaad ti panagkaykaysa ti panagserrek',
 	'centralauth-groupname' => 'Pundasion ti Wikimedia',
-	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilangan]] ti amin a wiki iti {{int:Centralauth-groupname}}',
-	'centralauth-antispoof-desc' => 'Agnayon ti teknolohia nga AntiSpoof idiay CentralAuth',
-	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponenna dagiti nadumaduma pakabilangan]] para iti Maysa a Pagserrek ti Agar-aramat',
+	'centralauth-desc' => '[[Special:MergeAccount|Pagtiponen ti pakabilangan]] kadagiti amin a wiki iti {{int:Centralauth-groupname}}',
+	'centralauth-antispoof-desc' => 'Agnayon ti teknolohia ti AntiSpoof idiay CentralAuth',
+	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Pagtitiponenna dagiti nadumaduma a pakabilangan]] para iti Agmaymaysa a Pagserrek ti Agar-aramat',
 	'centralauth-merge-denied' => 'Pasensian a, awan ti pammalubosmo a sumrek iti daytoy a panid',
 	'centralauth-merge-notlogged' => 'Pangngaasi a <span class="plainlinks">[$1 sumrekka]</span> tapno makitam no dagiti pakabilangam ket napnon a naipagtitipon.',
-	'centralauth-merge-welcome' => "'''Ti pakabilangam ket saan pay a naipan idiay sistema iti pinagtipon a pagserrek {{int:Centralauth-groupname}}.'''
+	'centralauth-merge-welcome' => "'''Ti pakabilangam ket saan pay a naipan idiay sistema iti naipagkaykaysa a pagserrek ti {{int:Centralauth-groupname}}.'''
 
-No pinilim nga ipapan dagiti pakabilangam, mabalinmonto nga usaren ti naganmo ken kontrasenias iti amin a wiki ti  {{int:Centralauth-groupname}} iti amin a pagsasao.
+No piliem nga ikaykaysa dagiti pakabilangam, mabalinmonton nga usaren ti naganmo ken kontrasenias kadagiti amin a wiki ti  {{int:Centralauth-groupname}} kadagiti amin a pagsasao.
 
-No adda metten nakaala ti naganmo iti sabali a pagsaadan daytoy ket saanna a riribuken, ngem mabalinmo ti makisao kaniada wenno dagiti administrador.",
+No adda metten nakaala ti naganmo iti sabali a sitio daytoy ket saanna a riribuken, ngem mabalinmo ti makisao kaniada wenno dagiti administrador.",
 	'centralauth-merge-step1-title' => 'Mangrugi ti panagkaykaysa ti panagserrek',
 	'centralauth-merge-step1-detail' => 'Pangngaasi nga ikabilmo ti kontrasenias ti pakabilangam.
-Ti bukodmo a kontrasenias ken ti nakarehistro nga esurat a pagtaengam ket maipadpada kadagiti pakabilangam iti sabali a wiki tapno mapasingkedan nga agpada dagitoy.
+Ti bukodmo a kontrasenias ken ti nakarehistro nga esurat a pagtaengam ket maipadpada kadagiti pakabilangam kadagiti sabali a wiki tapno mapasingkedan nga agpada dagitoy.
 Awanto dagiti masukatan aginggana intono mapasingkedam a nalimpia aminen.',
 	'centralauth-merge-step1-submit' => 'Pasingkedan ti pakaammo ti pagserrek',
 	'centralauth-merge-step2-title' => 'Pasingkedan dagiti dadduma pay a pakabilangan',
@@ -16252,21 +16254,21 @@ No dagitoy a pakabilangam ket kukuam, mapasingkedam a kukuam no mangtedka ti kon
 	'centralauth-merge-step2-submit' => 'Pasingkedan ti pakaammo ti pagserrek',
 	'centralauth-merge-dryrun-complete' => 'Dagiti amin nga adda a pakabilangan ket mabalin nga automatiko a maipagkaykaysa:
 
-Awan pay dagiti nasukatan kadagita pakabilangam.',
+Awan pay dagiti nasukatan kadagita a pakabilangam.',
 	'centralauth-merge-dryrun-incomplete' => 'Mabalinmon ti agtuloy, ngem adda met dagiti pakabilangan a saan nga automatiko a mapasingkedan ken saanto a dagus a maiyakar.
-Mabalinmonto a pagtiponen dagitoy no madamdama.
+Mabalinmonton a pagtiponen dagitoy no madamdama.
 
 Awan pay dagiti nasukatan kadagiti pakabilangam.',
 	'centralauth-merge-dryrun-or' => "'''wenno'''",
 	'centralauth-merge-dryrun-home' => 'Ti sistema ti panagiyakar ket saan a makapasingked a sika ti akinkukua ti balay a wiki a pakabilangan para iti naganmo nga agar-aramat.
 
-Ti sabali a wiki ket naikeddeng a kas ti balay a wiki a pakabilangan para iti naganmo nga agar-aramat; surutem ti silpo dita baba ken sumrekka idiay tapno malpasmo ti panagiyakar ti pakabilangam.',
+Ti sabali a wiki ket naikeddeng a kas ti balay a wiki a pakabilangan para iti naganmo nga agar-aramat; surotem ti silpo dita baba ken sumrekka idiay tapno malpasmo ti panangiyakar ti pakabilangam.',
 	'centralauth-merge-step3-title' => 'Agaramid ti naipagkaykaysa a pakabilangan',
 	'centralauth-merge-step3-detail' => 'Sisasaganakan nga agaramid ti naipagkaykaysa a pakabilangam, nga adda dagiti sumaganad a naikabit a wiki:',
 	'centralauth-merge-step3-submit' => 'Pagkaykaysaen dagiti pakabilangan',
 	'centralauth-merge-no-accounts' => 'Awan ti nabirukan kadagiti pakabilangan a maipada ti naganmo a nabirukan idiay pagsurotan a tabla ti sentro a pakabilangan!
 Mabalin a nadadael ti database.',
-	'centralauth-merge-home-password' => 'Ti wiki a balay para iti daytoy a pakabilangan (nailista dita baba) ket addaan ti sabali a kontrasenias ngem iti inkabil mo.
+	'centralauth-merge-home-password' => 'Ti wiki a balay para iti daytoy a pakabilangan (nailista dita baba) ket addaan ti sabali a kontrasenias ngem iti inkabilmo.
 Pangngaasi nga ikabilmo ti kontrasenias para iti wiki a balaymo.',
 	'centralauth-complete' => 'Nalpasen ti panagkaykaysa ti panagserrek!',
 	'centralauth-incomplete' => 'Saan pay a nalpas ti panagkaykaysa ti panagserrek!',
@@ -16284,16 +16286,16 @@ Pasensian a!',
 	'centralauth-list-home-title' => 'Wiki a balay',
 	'centralauth-list-home-dryrun' => 'Ti kontrasenias ken esurat a pagtaengam a naiyasentar iti daytoy a wiki ket mausarto para iti panagkaykaysa ti pakabilangam.',
 	'centralauth-list-attached-title' => 'Dagiti naikabit a pakabilangan',
-	'centralauth-list-attached' => 'Ti pakabilangan a nainagan ti "$1" kadagiti sumaganad a sito ket automatikonto a maikabit iti panagkaykaysa a pakabilangan:',
-	'centralauth-list-attached-dryrun' => 'Ti pakabilangan a nainagan ti "$1" kadagiti sumaganad a sitio ket automatikonto a maikabit iti panagkaykaysa a pakabilangan:',
+	'centralauth-list-attached' => 'Dagiti pakabilangan a nanaganan ti "$1" kadagiti tunggal maysa a sumaganad a sitio ket automatikonto a maikabit iti naikaykaysa a pakabilangan:',
+	'centralauth-list-attached-dryrun' => 'Dagiti pakabilangan a nanaganan ti "$1" kadagiti tunggal maysa a sumaganad a sitio ket automatikonto a maikabit iti naikaykaysa a pakabilangan:',
 	'centralauth-list-unattached-title' => 'Dagiti saan a naikabit a pakabilangan',
-	'centralauth-list-unattached' => 'Ti pakabilangan "$1" ket saan a mabalin nga automatiko a mapasingkedan a kas kukuam kadagiti sumagad a sitio;
-mabalin a dagitoy ket adda ti sabali a kontrasenias manipud ti nangruna a pakabilangam:',
+	'centralauth-list-unattached' => '{{PLURAL:$2|Ti pakabilangan|Dagiti pakabilangan}} a nanaganan ti "$1" ket saan a mabalin nga automatiko a mapasingkedan a kas tagikuam {{PLURAL:$2|iti sumaganad a sitio|kadagiti sumaganad a sitio}};
+mabalin a {{PLURAL:$2|daytoy ket|dagitoy ket}} addaan ti sabali a kontrasenias manipud ti nangruna a pakabilangam:',
 	'centralauth-foreign-link' => 'Agar-aramat $1 idiay $2',
 	'centralauth-foreign-contributions' => '$1 {{PLURAL:$1|naaramid|a naar-aramid}} idiay $2',
 	'centralauth-merge-method-primary' => 'wiki a balay',
-	'centralauth-merge-method-empty' => 'awan dagiti naaramid',
-	'centralauth-merge-method-mail' => 'napasingkedan ti esurat',
+	'centralauth-merge-method-empty' => 'awan dagiti naar-aramid',
+	'centralauth-merge-method-mail' => 'napasingkedan babaen ti esurat',
 	'centralauth-merge-method-password' => 'napasingkedan babaen ti kontrasenias',
 	'centralauth-merge-method-admin' => 'pinagtitipon ti admin a pakabilangan',
 	'centralauth-merge-method-new' => 'baro a pakabilangan',
@@ -16313,7 +16315,7 @@ Dayta a langa ket nabaldadon gapu ti seguridad a rasrason.',
 	'centralauth-finish-login' => 'Sumrek',
 	'centralauth-finish-send-confirmation' => 'Esuratan ti kontrasenias',
 	'centralauth-finish-problems' => 'Addaanka ti parikut, wenno saanmo kadi a kukua dagitoy sabsabali a pakabilangan?
-[[meta:Help:Unified login problems|Kasanu ti agsapul ti tulong]]…',
+[[meta:Help:Unified login problems|Kasano ti agsapul ti tulong]]…',
 	'centralauth-finish-noconfirms' => 'Awan dagiti pakabilangan a mapasingkedan nga agus-usar iti daytoy a kontrasenias.',
 	'centralauth-finish-incomplete' => 'Adda idi dagiti nadumduma a pakabilangan a naipagtipon nga inusar iti daytoy a kontrasenias.
 Dagiti sabali a pakabilangan ket saan pay a napasingkedan.',
@@ -16321,18 +16323,18 @@ Dagiti sabali a pakabilangan ket saan pay a napasingkedan.',
 	'centralauth-attach-list-attached' => 'Ti naipagkaykaysa a pakabilangan nga agnagan ti "$1" ket mangiraman kadagiti sumaganad a pakabilangan:',
 	'centralauth-attach-title' => 'Pasingkedan ti pakabilangan',
 	'centralauth-attach-text' => 'Daytoy a pakabilangan ket saan pay naiyakar iti panagkaykaysa ti pakabilangan.
-No kukuam pay ti sangalubongan a pakabilangan, mabalinmo a pagtiponen daytoy a pakabilangan no imakiniliam ti kontrasenias ti sangalubongan a pakabilangan.',
+No kukuam pay ti global a pakabilangan, mabalinmo a pagtiponen daytoy a pakabilangan no imakiniliam ti kontrasenias ti sangalubongan a pakabilangan.',
 	'centralauth-attach-submit' => 'Iyakar ti pakabilangan',
 	'centralauth-attach-success' => 'Ti pakabilangan ket naiyakar idi iti panagkaykaysa a pakabilangan.',
-	'centralauth' => 'Panagtaripato ti sangalubongan a pakabilangan',
-	'centralauth-admin-intro' => 'Daytoy nga interface ket mabalin a mausar para iti administrasion kadagiti sangalubongan a pakabilangan.',
+	'centralauth' => 'Panagtaripato ti global a pakabilangan',
+	'centralauth-admin-intro' => 'Daytoy nga interface ket mabalin a mausar para iti administrasion kadagiti gobal a pakabilangan.',
 	'centralauth-admin-manage' => 'Taripatuen ti datos ti pakabilangan',
 	'centralauth-admin-username' => 'Nagan ti agar-aramat:',
 	'centralauth-admin-lookup-ro' => 'Kitaen ti pakaammo ti agar-aramat',
 	'centralauth-admin-lookup-rw' => 'Taripatuen ti pakabilangan ti agar-aramat',
 	'centralauth-admin-permission' => 'Dagiti laeng mayordormo ti makaiyakar kadagiti pakabilangan ti sabali a tattao para kaniada.',
 	'centralauth-admin-no-unified' => 'Awan ti naipagkaykaysa a pakabilangan para iti daytoy a nagan ti agar-aramat.',
-	'centralauth-admin-info-header' => 'Pakaammo ti sangalubongan a pakabilangan',
+	'centralauth-admin-info-header' => 'Pakaammo ti global a pakabilangan',
 	'centralauth-admin-info-username' => 'Nagan ti agar-aramat:',
 	'centralauth-admin-info-id' => 'ID ti agar-aramat:',
 	'centralauth-admin-info-registered' => 'Nakarehistro:',
@@ -16340,7 +16342,9 @@ No kukuam pay ti sangalubongan a pakabilangan, mabalinmo a pagtiponen daytoy a p
 	'centralauth-admin-info-editcount' => 'Dagup a bilang ti inurnos:',
 	'centralauth-admin-info-locked' => 'Napengdan:',
 	'centralauth-admin-info-hidden' => 'Nailemmeng nga agpang:',
-	'centralauth-admin-nohome' => 'saan a naammuan',
+	'centralauth-admin-info-groups' => 'Global a {{PLURAL:$1|grupo|grupgrupo}}:',
+	'centralauth-admin-info-nogroups' => 'awan',
+	'centralauth-admin-nohome' => 'saan a naikeddeng',
 	'centralauth-admin-yes' => 'wen',
 	'centralauth-admin-no' => 'saan',
 	'centralauth-admin-hidden-list' => 'manipud kadagiti publiko a listaan',
@@ -16353,10 +16357,11 @@ Rason: $2',
 	'centralauth-admin-blocked-indef' => 'Naserran inggat-ingana.
 Rason: $1',
 	'centralauth-admin-blocklog' => 'listaan ti naserraan',
-	'centralauth-admin-list-localwiki' => 'Lokal  a wiki',
+	'centralauth-admin-list-localwiki' => 'Lokal a wiki',
 	'centralauth-admin-list-attached-on' => 'Naikabit iti',
 	'centralauth-admin-list-method' => 'Pamay-an',
 	'centralauth-admin-list-editcount' => 'Bilang ti inurnos',
+	'centralauth-admin-list-groups' => 'Grupgrupo',
 	'centralauth-admin-list-blocked' => 'Naserraan',
 	'centralauth-admin-unmerge' => 'Ikkaten ti pannakaiyakar ti napili',
 	'centralauth-admin-merge' => 'Iyakar ti napili',
@@ -16365,47 +16370,49 @@ Rason: $1',
 	'centralauth-admin-already-unmerged' => 'Lablabsen ti $1, nalpasen a naikkat ti pannakaiyakarna',
 	'centralauth-admin-unmerge-success' => 'Balligi ti panagikkat ti $1 nga inyakar {{PLURAL:$1|a pakabilangan|a pakabilbilangan}}',
 	'centralauth-admin-delete-title' => 'Ikkaten ti pakabilangan',
-	'centralauth-admin-delete-description' => 'Ti panaggikkat ti sangalubongan a pakibilangan ket mangikkat ti aniaman a sangalubongan a kaykayatan, ikkatenna amin dagiti lokal a pakabilangan, ken baybay-anna a mawaya ti sangalubongan a nagan tapno mausar ti sabali nga agar-aramat.',
+	'centralauth-admin-delete-description' => 'Ti panaggikkat ti global a pakibilangan ket mangikkat ti aniaman a global a kaykayatan, ikkatenna amin dagiti lokal a pakabilangan, ken baybay-anna a mawaya ti global a nagan tapno mausar ti sabali nga agar-aramat.',
 	'centralauth-admin-delete-button' => 'Ikkaten daytoy a pakabilangan',
 	'centralauth-admin-delete-confirm' => 'Kayatmo kadi nga ikkaten daytoy a pakabilangan?',
-	'centralauth-admin-delete-success' => 'Balligi ti panag-ikkat ti sangalubongan a pakabilangan para kenni "<nowiki>$1</nowiki>"',
-	'centralauth-admin-nonexistent' => 'Awan ti sangalubongan a pakabilangan para kenni "<nowiki>$1</nowiki>"',
-	'centralauth-admin-delete-nonexistent' => 'Biddut: awan ti sangalubongan a pakabilangan iti "<nowiki>$1</nowiki>".',
+	'centralauth-admin-delete-success' => 'Balligi ti panag-ikkat ti global a pakabilangan para kenni "<nowiki>$1</nowiki>"',
+	'centralauth-admin-nonexistent' => 'Awan ti global a pakabilangan para kenni "<nowiki>$1</nowiki>"',
+	'centralauth-admin-delete-nonexistent' => 'Biddut: awan ti global a pakabilangan iti "<nowiki>$1</nowiki>".',
 	'centralauth-token-mismatch' => 'Pasensian a, saanmi a maaramid ti naitedmo a porma ngamin ket napukaw ti sesion ti datos.',
 	'centralauth-state-mismatch' => 'Biddut: Naduktalan ti maysa a suppiat ti panagurnos para iti daytoy nga agar-aramat. Pangngaasi a pasingkedam ti binaliwam ken padasem manen.',
 	'centralauth-admin-reason' => 'Rason:',
 	'centralauth-admin-reason-other' => 'Sabali/dadduma pay a rason:',
 	'centralauth-admin-unhide-nonexistent' => 'Biddut: awan ti sangalubongan a pakabilangan iti "<nowiki>$1</nowiki>".',
-	'centralauth-admin-status' => 'Idisso ti kasasaad ti sangalubongan a pakabilangan',
-	'centralauth-admin-status-intro' => 'Mausarmo daytoy a porma tapno masukatan ti kasasaad iti daytoy a sangalubongan a pakabilangan.',
+	'centralauth-admin-status' => 'Isaad ti kasasaad ti global a pakabilangan',
+	'centralauth-admin-status-intro' => 'Mausarmo daytoy a porma tapno masukatan ti kasasaad iti daytoy a global a pakabilangan.',
 	'centralauth-admin-status-locked' => 'Napengdan:',
 	'centralauth-admin-status-locked-no' => 'Ti pakabilangan ket saan a napengdan',
-	'centralauth-admin-status-locked-yes' => 'Ti pakabilangan ket napengdan iti pinag-urnos',
+	'centralauth-admin-status-locked-yes' => 'Ti pakabilangan ket napengdan iti panag-urnos',
 	'centralauth-admin-status-hidden' => 'Nailemmeng:',
 	'centralauth-admin-status-hidden-no' => 'Ti pakabilangan ket saan a nailemmeng',
 	'centralauth-admin-status-hidden-list' => 'Ti pakabilangan ket nailemmeng kadagiti publiko a listaan',
 	'centralauth-admin-status-hidden-oversight' => 'Ti pakabilangan ket kompleto a nailemmeng',
-	'centralauth-admin-status-submit' => 'Idisso ti kasasaad',
-	'centralauth-admin-status-nonexistent' => 'Biddut: awan ti sangalubongan a pakabilangan iti "<nowiki>$1</nowiki>".',
-	'centralauth-admin-setstatus-success' => 'Nagballigika a nangsukat ti kasasaad iti daytoy a sangalubongan a pakabilangan.',
+	'centralauth-admin-status-submit' => 'Isaad ti kasasaad',
+	'centralauth-admin-status-nonexistent' => 'Biddut: awan ti global a pakabilangan iti "<nowiki>$1</nowiki>".',
+	'centralauth-admin-setstatus-success' => 'Nagballigika a nangsukat ti kasasaad iti daytoy a global a pakabilangan.',
 	'centralauth-admin-status-reasons' => '* Dagiti kadawyan a rason ti panagserra
 ** bandalismo a pakabilangan laeng
 ** spam a pakabilangan laeng
 * Kadawyan a panagserra ken panagilemmeng a rasrason
 ** abusado a nagan ti agar-aramat
 ** di maiparbeng a bukod a pakaammo',
-	'centralauth-admin-logsnippet' => 'Dagiti dati a panagsukat ti sangalubongan a pakabilangan',
-	'centralauth-admin-suppressreason' => 'Sangalubongan a pinasardeng babaen ni $1 para iti sumaganad a rason: $2',
-	'centralauth-admin-not-authorized' => 'Awan pammalubosmo nga agarmid iti daytoy a tignay',
-	'globalusers' => 'Sangalubongan a listaan ti pakabilangan',
+	'centralauth-admin-logsnippet' => 'Dagiti dati a panagsukat ti global a pakabilangan',
+	'centralauth-admin-suppressreason' => 'Global a pinasardeng babaen ni $1 para iti sumaganad a rason: $2',
+	'centralauth-admin-not-authorized' => 'Awan dagiti pammalubosmo nga agarmid iti daytoy a tignay',
+	'centralauth-admin-too-many-edits' => 'Ti global a pakabilangan ti "<nowiki>$1</nowiki>" ket addaan ti sumurok a $2 nga {{PLURAL:$2|inurnos|inur-urnos}} ken saan a mabalin a mailemmeng.',
+	'centralauth-admin-title' => 'Panagtaripato ti global a pakabilangan para kenni $1',
+	'globalusers' => 'Global a listaan ti pakabilangan',
 	'centralauth-listusers-locked' => 'naserraan',
 	'centralauth-listusers-attached' => '[[User:$1|ket lokal nga adda]]',
 	'centralauth-listusers-nolocal' => 'saan a naikabit wenno lokal nga awan',
-	'multilock' => 'Pengdan dagiti nadumaduma a sangalubongan a pakabilangan',
+	'multilock' => 'Pengdan dagiti nadumaduma a global a pakabilangan',
 	'centralauth-admin-multi-username' => 'Agikabil ti maysa wenno ad-adu a nagan ti agar-aramat, a sinaen babaen ti baro a linia',
 	'centralauth-admin-multi-notfound' => 'Ti panagbiruk ket saan a nangisubli dagiti nagan ti agar-aramat.',
 	'centralauth-admin-multi-searchprefix' => 'Wenno, agbiruk kadagiti nagan ti agar-aramat nga adda iti pasaruno',
-	'centralauth-admin-multi-intro' => 'Maminsanka nga agpabaro kadagiti nadumaduma a sangalubongan a pakabilangan',
+	'centralauth-admin-multi-intro' => 'Maminsanka nga agpabaro kadagiti nadumaduma a global a pakabilangan',
 	'centralauth-admin-action-lock-nochange' => 'Saan a sukatan dagiti serra',
 	'centralauth-admin-action-lock-lock' => 'Serraan dagiti napili a pakabilangan',
 	'centralauth-admin-action-lock-unlock' => 'Ikkaten ti serra dagiti napili a pakabilangan',
@@ -16421,19 +16428,19 @@ Rason: $1',
 	'centralauth-days-ago' => '$1 idi nga {{PLURAL:$1|aldaw|al-aldaw}}',
 	'centralauth-months-ago' => '$1 idi a {{PLURAL:$1|bulan|bul-bulan}}',
 	'centralauth-years-ago' => '$1 idi a {{PLURAL:$1|tawen|taw-tawen}}',
-	'centralauth-prefs-status' => 'Kasasaad ti sangalubongan a pakabilangan:',
+	'centralauth-prefs-status' => 'Kasasaad ti global a pakabilangan:',
 	'centralauth-prefs-not-managed' => 'Saan nga agus-usar ti naipagkaykaysa a pakabilangan',
-	'centralauth-prefs-unattached' => 'Saan a napasingkedan',
+	'centralauth-prefs-unattached' => 'Di a napasingkedan',
 	'centralauth-prefs-complete' => 'Nalimpia aminen!',
 	'centralauth-prefs-migration' => 'Agdama a maiyakar',
 	'centralauth-prefs-count-attached' => 'Nasiglat ti pakabilangam iti $1 a gandat {{PLURAL:$1|ti sitio|dagiti sitio}}.',
 	'centralauth-prefs-count-unattached' => 'Dagiti saan a napasingkedan a pakabilangan ket addaan iti $1 {{PLURAL:$1|a gandat|a gangandat}}.',
-	'centralauth-prefs-detail-unattached' => 'Daytoy a sitio ti gandat ket saan pay a napasingkedan a kasla tagikua ti sangalubongan a pakabilangan.',
-	'centralauth-prefs-manage' => 'Taripatuem ti sangalubongan a pakabilangam',
-	'centralauth-prefs-view' => 'Kitaen ti sangalubongan a pakaammo ti pakabilangan',
+	'centralauth-prefs-detail-unattached' => 'global a pakabilangan.',
+	'centralauth-prefs-manage' => 'Taripatuem ti global a pakabilangam',
+	'centralauth-prefs-view' => 'Kitaen ti pakaammo ti global a pakabilangan',
 	'centralauth-renameuser-merged' => 'Naiyakaren ti agar-aramat $1 iti sistema ti panagkaykaysa ti panagserrek.
-Ti pananginagan manen daytoy ket pagbanagan ti pannakaikkat ti lokal a pakabilangan manipud iti sangalubogan.',
-	'centralauth-renameuser-reserved' => 'Ti nagan ti agar-aramat $2 ket naireserba para iti sangalubongan a pakabilangan.',
+Ti pananginagan manen daytoy ket pagbanagan ti pannakaikkat ti lokal a pakabilangan manipud iti global.',
+	'centralauth-renameuser-reserved' => 'Ti nagan ti agar-aramat $2 ket naireserba para iti global a pakabilangan.',
 	'centralauth-invalid-wiki' => 'Awan ti kastoy a database ti wiki: $1',
 	'centralauth-account-exists' => 'Saan a makaaramid ti pakabilangan: ti kiniddaw a nagan ti agar-aramat ket naalan idiay sistema ti panagkaykaysa ti panagserrek.',
 	'centralauth-account-exists-reset' => 'Ti nagan ti agar-aramat $1 ket saan a nairehisto iti daytoy a wiki, ngem mabalinmo nga iyasentar manen ti kontrasenias iti [[Special:CentralAuth/$1|wiki nga ayanna]].',
@@ -16441,28 +16448,29 @@ Ti pananginagan manen daytoy ket pagbanagan ti pannakaikkat ti lokal a pakabilan
 	'centralauth-logout-progress' => 'Iruarkan manipud kadagiti sabali a wiki iti {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Naiserrekkan nga automatiko kadagiti sabali a gandat iti {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Automatikokan a nairuar kadagiti sabali a gandat iti {{int:Centralauth-groupname}}.',
-	'centralauth-hidden-blockreason' => 'sangalubongan a nailemmeng babaen ni $1 idiay $2 nga addaan ti sumaganad a rason: $3',
-	'centralauth-log-name' => 'Listaan ti sangalubongan a pakabilangan',
-	'centralauth-log-header' => 'Daytoy a listaan ket aglaon kadagiti operasion babaen dagiti sangalubongan a pakabilangan: dagiti panagikkat, panagserra ken panaglukat.',
-	'centralauth-log-entry-delete' => 'inikkat ti sangalubongan a pakabilangan ni "$1"',
-	'centralauth-log-entry-lock' => 'naserraan ti sangalubongan a pakabilangan ni "$1"',
-	'centralauth-log-entry-unlock' => 'linukatan ti sangalubongan a pakabilangan ni "$1"',
-	'centralauth-log-entry-hide' => 'inlemmeng ti sangalubongan a pakabilangan ni "$1"',
-	'centralauth-log-entry-unhide' => 'inpakita ti sangalubongan a pakabilangan ni "$1"',
-	'centralauth-log-entry-lockandhide' => 'sinerraan ken inlemmeng ti sangalubongan a pakabilangan ni "$1"',
-	'centralauth-log-entry-chgstatus' => 'sinukatan ti kasasaad ti sangalubongan a pakabilangan ni "$1": Idisso ti $2; Ikkaten ti disso ti $3',
+	'centralauth-hidden-blockreason' => 'global a nailemmeng babaen ni $1 idiay $2 nga addaan ti sumaganad a rason: $3',
+	'centralauth-login-error-locked' => 'Saanka a makastrek gaputa ti pakabilangam ket global a naserraan.',
+	'centralauth-log-name' => 'Listaan ti global a pakabilangan',
+	'centralauth-log-header' => 'Daytoy a listaan ket aglaon kadagiti operasion babaen dagiti global a pakabilangan: dagiti panagikkat, panagserra ken panaglukat.',
+	'centralauth-log-entry-delete' => 'inikkat ti global a pakabilangan ni "$1"',
+	'centralauth-log-entry-lock' => 'naserraan ti global a pakabilangan ni "$1"',
+	'centralauth-log-entry-unlock' => 'linukatan ti global a pakabilangan ni "$1"',
+	'centralauth-log-entry-hide' => 'inlemmeng ti global a pakabilangan ni "$1"',
+	'centralauth-log-entry-unhide' => 'inpakita ti global a pakabilangan ni "$1"',
+	'centralauth-log-entry-lockandhide' => 'sinerraan ken inlemmeng ti global a pakabilangan ni "$1"',
+	'centralauth-log-entry-chgstatus' => 'sinukatan ti kasasaad ti global a pakabilangan ni "$1": Isaad ti $2; Di isaad ti $3',
 	'centralauth-log-status-locked' => 'naserraan',
 	'centralauth-log-status-hidden' => 'nailemmeng',
 	'centralauth-log-status-oversighted' => 'napalasinan',
 	'centralauth-log-status-none' => '(awan)',
-	'centralauth-rightslog-name' => 'Listaan dagiti sangalubongan a karbengan',
-	'centralauth-rightslog-entry-usergroups' => 'nasukatan ti sangalubongan a pannakaikameng ti grupo para kenni $1 manipud ti $2 iti $3',
+	'centralauth-rightslog-name' => 'Listaan dagiti global a karbengan',
+	'centralauth-rightslog-entry-usergroups' => 'nasukatan ti global a pannakaikameng ti grupo para kenni $1 manipud ti $2 iti $3',
 	'centralauth-rightslog-entry-groupperms' => 'nasukatan ti pannakaikameng ti grupo para kenni $1 manipud ti $2 iti $3',
 	'centralauth-rightslog-entry-groupperms2' => 'sinukatan ti grupo a pammalubos para kenni $1. Ninayonan ti $2; Inikkat ti $3',
 	'centralauth-rightslog-entry-groupperms3' => 'sinukatan ti grupo kadagiti naiparit a disso ti wiki para kenni $1 manipud ti $2 iti $3',
 	'centralauth-rightslog-entry-grouprename' => 'ninaganan manen ti grupo $2 iti $1',
-	'centralauth-rightslog-header' => 'Daytoy a listaan ket aglaon kadagiti operasion kadagiti sangalubongan a grupo: dagiti sinuksukatan iti pannakaikameng ken dagiti pammalubos',
-	'centralauth-rightslog-entry-newset' => 'inaramid ti $2 a disso ti wiki ti $1 kadagiti sumagad a wiki: $3',
+	'centralauth-rightslog-header' => 'Daytoy a listaan ket aglaon kadagiti operasion kadagiti global a grupo: dagiti sinuksukatan iti pannakaikameng ken dagiti pammalubos',
+	'centralauth-rightslog-entry-newset' => 'inaramid ti $2 a disso ti wiki ti $1 kadagiti sumaganad a wiki: $3',
 	'centralauth-rightslog-entry-setrename' => 'ninaganan manen ti disso ti wiki "$2" iti "$1"',
 	'centralauth-rightslog-entry-setnewtype' => 'sinukatan ti kita iti "$1" manipud ti $2 iti $3',
 	'centralauth-rightslog-entry-setchange' => 'sinukatan dagiti wiki idiay "$1": ninayonan ti: $2; inikkat ti: $3',
@@ -16471,9 +16479,9 @@ Ti pananginagan manen daytoy ket pagbanagan ti pannakaikkat ti lokal a pakabilan
 	'centralauth-rightslog-set-optout' => 'naibatay ti saan a panagpili',
 	'centralautologin' => 'Sentral a pagserrekan',
 	'centralauth-centralautologin-desc' => 'Daytoy nga espesial a panid ket akin-uneg nga inus-usar babaen ti MediaWiki.
-No bisitaem ti naisilpo a pagturayan bayat a saanka a nakastrek, ti sistema ti sentar a pagserrekan ket usarenna daytoy a panid tapno maammuanna no nakastrekka iti sentral a pagturayan.
+No bisitaem ti naisilpo a dominio bayat a saanka a nakastrek, ti sistema ti sentral a pagserrekan ket usarenna daytoy a panid tapno maammuanna no nakastrekka iti sentral a dominio.
 Kiniddawmo daytoy a panid nga awan ti panangited ti datos a pammasingked, isunga awan aramidenna.',
-	'centralauth-centralautologin-alreadyloggedinlocally' => 'Nakastrekkan a lokal',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'Lokalka metten a nakastrek',
 	'centralauth-centralautologin-badparams' => 'Imbalido dagiti nainaganan a pammasingked a parametro',
 	'centralauth-centralautologin-lostsession' => 'Napukaw idi ti sesion ti datos',
 	'centralauth-centralautologin-badstate' => 'Imbalido a kasasaad "$1"',
@@ -16485,44 +16493,45 @@ Kiniddawmo daytoy a panid nga awan ti panangited ti datos a pammasingked, isunga
 	'centralauth-centralautologin-p3p-explanation' => 'Dagiti dadduma a pagbasabasa ket makasapulda ti kompakto nga annuroten ti P3P para kadagiti galieta a maipatulod wenno maawat kadagiti dadduma a kaso, a mairaman ti situasion a pakairamanan ti panagkita ti panagserrek ti SUL. Daytoy ket awan serbina silo a laktawan iti daytoy a situasion, gaputa amin a panid ti wiki a nairaman iti isumet laeng a grupo ken P3P ket baak ken napanawanen; daksanggasat met, ti imbalido nga annuroten a mangisilpo iti daytoy a panid ket agdama a naikedkeddeng a "nasayaaten" babaen dagiti kasisigud a pannakaaramid dagiti pagbasabasa.
 
 Pangngaasi nga irepaso ti mabalin a mabasa ti tao ti kinapribado nga annuroten daytoy a sitio tapno makeddengan no kasano ti panangusar ti aniaman a nakolekta a pakaammo.',
-	'centralauth-centralautologin-logged-in' => 'Agdamaka nakastrek a kas ni $1. Ikargam manen ti panid tapno maipakat dagiti disso ti aramatmo.',
-	'globalgroupmembership' => 'Pannakaikameng kadagiti sangalubongan a grupo',
-	'globalgrouppermissions' => 'Sangalubongan a panagtaripato ti grupo',
-	'centralauth-globalgroupperms-grouplist' => 'Dagiti sumaganad a sangalubongan a grupo ket naaramiden.
+	'centralauth-centralautologin-logged-in' => 'Agdamaka nakastrek a kas ni $1. Ikargam manen ti panid tapno maipakat dagiti pannakaisaadmo nga agar-aramat.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Setralka a nakastrek. Ikargam manen ti panid tapno maipakat dagiti pannakaisaadmo nga agar-aramat.',
+	'globalgroupmembership' => 'Pannakaikameng kadagiti global a grupo',
+	'globalgrouppermissions' => 'Global a panagtaripato ti grupo',
+	'centralauth-globalgroupperms-grouplist' => 'Naaramiden dagiti sumaganad a global a grupo .
 Makitam wenno maurnosmo dagiti pammalubos a nainagan ti maysa a grupo, no adda pammalubosmo.
 Ti maysa a grupo ket mabalin amaikkat babaen ti panagikkat kadagiti amin a karbenganna.',
 	'centralauth-globalgroupperms-grouplistitem' => '$1 ([[Special:GlobalGroupPermissions/$2|kitaen/urnosen]])',
-	'centralauth-globalgroupperms-nogroups' => 'Awan kadagiti sangalubongan a grupo ti naipalawag.',
+	'centralauth-globalgroupperms-nogroups' => 'Awan dagiti naipalawag a global a grupo.',
 	'centralauth-existinggroup-legend' => 'Dagiti adda a grupo',
 	'centralauth-newgroup-legend' => 'Agaramid ti baro a grupo',
 	'centralauth-newgroup-intro' => 'Mausarmo daytoy a porma tapno manginaganka kadagiti pammalubos iti baro a grupo.
 Pammmo a ti grupo ket awan mailaksid no adda karbengan a nakainagananna.',
 	'centralauth-globalgroupperms-newgroupname' => 'Baro a nagan ti grupo:',
 	'centralauth-globalgroupperms-creategroup-submit' => 'Manginagan kadagiti pammalubos',
-	'centralauth-editgroup-subtitle' => 'Ururnosen ti $1',
-	'centralauth-editgroup-subtitle-readonly' => 'Kitaen $1',
+	'centralauth-editgroup-subtitle' => 'Ur-urnosen ti $1',
+	'centralauth-editgroup-subtitle-readonly' => 'Kitaen ti $1',
 	'centralauth-editgroup-fieldset' => 'Dagiti pammalubos para kenni $1',
 	'centralauth-editgroup-name' => 'Nagan ti grupo:',
 	'centralauth-editgroup-display' => 'Lokal a nagan ti grupo:',
 	'centralauth-editgroup-display-edit' => '$2 ([[MediaWiki:Group-$1|urnosen]])',
-	'centralauth-editgroup-invalid-name' => 'Imbalido ti naited a nagan ti sangalubongan a grupo',
+	'centralauth-editgroup-invalid-name' => 'Imbalido ti naited a nagan ti global a grupo',
 	'centralauth-editgroup-member' => 'Lokal a nagan dagiti kameng ti grupo:',
 	'centralauth-editgroup-member-edit' => '$2 ([[MediaWiki:Group-$1-member|urnosen]])',
 	'centralauth-editgroup-members' => 'Listaan ti kameng:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|Listaan dagiti agar-aramat nga addaan kadagiti $2 a karbengan]]',
-	'centralauth-editgroup-restrictions' => 'Disso dagiti wiki a nasiglat daytoy a grupo:',
-	'centralauth-editgroup-rename-taken' => 'Napay ti pananginagan manen:Adda metten ti grupo a nanaganan ti $1.',
+	'centralauth-editgroup-restrictions' => 'Disso dagiti wiki a nasiglat iti daytoy a grupo:',
+	'centralauth-editgroup-rename-taken' => 'Napaay ti pananginagan manen:Adda metten ti grupo a nanaganan iti $1.',
 	'centralauth-editgroup-noset' => '(awan)',
-	'centralauth-editgroup-submit' => 'Idulin dagiti panagisukat kadagiti pammalubos ti sangalubongan a grupo',
+	'centralauth-editgroup-submit' => 'Idulin dagiti panagisukat kadagiti pammalubos ti global a grupo',
 	'centralauth-editgroup-perms' => 'Dagiti nainaganan a pammalubos:',
 	'centralauth-editgroup-reason' => 'Rason:',
-	'centralauth-editgroup-success' => 'Nasukatan dagiti pammalubos ti sangalubongan a grupo',
-	'centralauth-editgroup-success-text' => 'Nagballigi ti panagsukat ti sangalubongan a grupo ti $1.
+	'centralauth-editgroup-success' => 'Nasukatan dagiti pammalubos ti global a grupo',
+	'centralauth-editgroup-success-text' => 'Nagballigi ti panagsukat ti global a grupo ti $1.
 [[Special:GlobalGroupPermissions|Agsubli iti panagtaripato ti grupo]]',
 	'centralauth-editgroup-editsets' => '([[Special:EditWikiSets|urnosen]])',
 	'centralauth-editgroup-nowikiset' => 'Awan, maipakat kadagiti amin a wiki.',
 	'centralauth-globalgrouppermissions-knownwiki' => 'Ti wiki nga addaan kadagiti pakabilanganda:',
-	'centralauth-globalgroupmembership-badknownwiki' => "Ti sangalubongan a pakabilangan ni '''$1''' ket saan a nasiglat iti wiki a nainaganam ('' $2 '') .
+	'centralauth-globalgroupmembership-badknownwiki' => "Ti global a pakabilangan ni '''$1''' ket saan a nasiglat iti wiki a nainaganam ('' $2 '') .
 Mabalin a padpadasen ti manginagan kadagiti karbengan iti saan a husto nga agar-aramat!",
 	'centralauth-editset' => 'Disso dagiti wiki',
 	'centralauth-editset-legend-rw' => 'Agurnos wenno agaramid ti disso ti wiki',
@@ -16547,28 +16556,28 @@ Mabalinmo ti mangkita ken mangbaliw ti aniaman kaniada, wenno agaramid ti baro a
 	'centralauth-editset-reason' => 'Rason:',
 	'centralauth-editset-submit' => 'Ited',
 	'centralauth-editset-submit-delete' => 'Ikkaten',
-	'centralauth-editset-badname' => 'Imbalido wenno awan ti nagyan nagan ti disso.',
+	'centralauth-editset-badname' => 'Imbalido wenno awan ti nagyan a nagan ti disso.',
 	'centralauth-editset-badtype' => 'Imbalido a kita ti disso.',
 	'centralauth-editset-setexists' => 'Ti disso nga addaan iti dayta a nagan ket adda metten',
 	'centralauth-editset-nowikis' => 'Awan dagiti wiki a nainaganan.',
 	'centralauth-editset-nouse' => '(awan)',
 	'centralauth-editset-usage' => 'Inusar kadagiti grupo:',
-	'centralauth-editset-badwikis' => 'Ti sumaganad a {{PLURAL:$2|a wiki|a wik-wiki}} ket awan: $1.',
+	'centralauth-editset-badwikis' => '{{PLURAL:$2|Ti sumaganad a wiki|Dagiti sumaganad a wiki}} ket awan: $1.',
 	'centralauth-editset-success' => 'Balligi ti panagsukat ti disso ti wiki.',
 	'centralauth-editset-success-delete' => 'Balligi ti panagikkat ti disso ti wiki.',
 	'centralauth-editset-return' => 'Agsubli ti nangruna a panagkita',
-	'centralauth-block-already-locked' => 'Ti pakabilangan ni [[Special:CentralAuth/$1|$1]] ket sangalubonganen a naseraan.',
+	'centralauth-block-already-locked' => 'Ti pakabilangan ni [[Special:CentralAuth/$1|$1]] ket global a naseraan.',
 	'centralauth-readonly' => 'Ti database ti CentralAuth ket naserraan',
 	'centralauth-readonlytext' => 'Ti database ti CentralAuth ket agdama a naserraan kadagiti baro nga ikabil ken dagiti sabali panagbalbaliw, mabalin a para iti kadawyan a panagsimpa, kalpasanna ket agsublinto a kadawyan.',
-	'right-globalgroupmembership' => 'Baliwan ti pannakaikameng kadagiti sangalubongan a grupo',
-	'right-centralauth-autoaccount' => 'Automatiko a sumrek iti sangalubongan a pakabilangan',
-	'right-centralauth-unmerge' => 'Ikkaten ti panagtipon ti sangalubongan a pakabilangan',
-	'right-centralauth-lock' => 'Serraan wenno lukatan ti sangalubongan a pakabilangan',
-	'right-centralauth-oversight' => 'Pasardengen wenno ilemmeng ti sangalubongan a pakabilangan',
+	'right-globalgroupmembership' => 'Baliwan ti pannakaikameng kadagiti global a grupo',
+	'right-centralauth-autoaccount' => 'Automatiko a sumrek iti global a pakabilangan',
+	'right-centralauth-unmerge' => 'Ikkaten ti panagtipon ti global a pakabilangan',
+	'right-centralauth-lock' => 'Serraan wenno lukatan ti global a pakabilangan',
+	'right-centralauth-oversight' => 'Pasardengen wenno ilemmeng ti global a pakabilangan',
 	'right-centralauth-merge' => 'Pagtiponen ti pakabilanganda',
-	'right-globalgrouppermissions' => 'Taripatuen dagiti sangalubongan a grupo',
-	'abusefilter-edit-builder-vars-global-user-groups' => 'Dagiti sanglubongan a grupo nga ayan ti agar-aramat',
-	'action-centralauth-lock' => 'serraan wenno lukatan dagiti sangalubongan a pakabilangan',
+	'right-globalgrouppermissions' => 'Taripatuen dagiti global a grupo',
+	'abusefilter-edit-builder-vars-global-user-groups' => 'Dagiti global a grupo nga ayan ti agar-aramat',
+	'action-centralauth-lock' => 'serraan wenno lukatan dagiti global a pakabilangan',
 	'centrallogin' => 'Setral a paserrekan ti agar-aramat',
 	'centralloginsuccesful' => 'Balligi ti panagserrek',
 	'centralauth-completelogin-back' => 'Agsubli iti dati a panid.',
@@ -16579,10 +16588,10 @@ Mabalin nga adda sabali a mangpadpadas a mangiserrek kenka babaen ti makapadakes
 	'centralauth-error-token-wronguser' => 'Ti tandaan ket saan a maipada iti sesion ti naganmo nga agar-aramat.
 Mabalin nga adda mangpadpadas a mangiserrek kenka babaen ti makapadakes a pakabilangan.
 No padpadasem laeng ti sumrek a kas sabali nga agar-aramat, pangngaasi nga umunaka pay a rummuar.',
-	'centralauth-warning-notloggedin' => 'Saanka nga agdama a nakstrek.',
-	'centralauth-warning-notattached' => 'Ti lokal a pakabilangan ket saan a naikabit iti maysa a sangalubongan.',
+	'centralauth-warning-notloggedin' => 'Saanka nga agdama a nakastrek.',
+	'centralauth-warning-notattached' => 'Ti lokal a pakabilangan ket saan a naikabit iti global.',
 	'centralauth-finishglobaliseemail_subject' => 'Pammasingked ti pakabilangan ti {{SITENAME}}',
-	'centralauth-finishglobaliseemail_body' => 'Ti esurat a pagtaengam ket naidisson a mainaig
+	'centralauth-finishglobaliseemail_body' => 'Ti esurat a pagtaengam ket naisaaden a mainaig
 iti pakabilangan ni "$2" kadagiti amin a gandat ti Wikimedia, a ti nangruna a pakabilangam ket adda iti {{SITENAME}}.
 
 Tapno mapasingkedam a daytoy a pakabilangan ket agpayso a kukuam, itiponmo dagiti aniaman
@@ -27880,7 +27889,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-login-progress' => 'Entrando em wikis de {{int:Centralauth-groupname}}:',
 	'centralauth-logout-progress' => 'A terminar a sessão nas outras wikis da {{int:Centralauth-groupname}}:',
 	'centralauth-login-no-others' => 'Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
-	'centralauth-logout-no-others' => 'Foi automaticamente desautenticado das wikis {{int:Centralauth-groupname}}.', # Fuzzy
+	'centralauth-logout-no-others' => 'Deixou automaticamente de estar autenticado de outros projetos {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalmente ocultada por $1 na $2 com o seguinte motivo: $3',
 	'centralauth-log-name' => 'Registo de contas globais',
 	'centralauth-log-header' => 'Este registo contém operações sobre contas globais: remoções, bloqueios e desbloqueios.',
@@ -31997,7 +32006,7 @@ $messages['sr-ec'] = array(
 Ако је и глобални налог Ваш, онда можете да га спојите с овим налогом тако што ћете унети лозинку глобалног налога:',
 	'centralauth-attach-submit' => 'Пренеси налог',
 	'centralauth-attach-success' => 'Налог је премештен у обједињени налог.',
-	'centralauth' => 'Глобално управљање корисницима', # Fuzzy
+	'centralauth' => 'Глобално управљање налогом',
 	'centralauth-admin-intro' => 'Ово интерфејс може да се користи за администрацију глобалних налога.',
 	'centralauth-admin-manage' => 'Управљање корисничким подацима', # Fuzzy
 	'centralauth-admin-username' => 'Корисничко име:',
@@ -32071,6 +32080,7 @@ $messages['sr-ec'] = array(
 ** неприкладни лични подаци',
 	'centralauth-admin-logsnippet' => 'Претходне промене глобалног налога',
 	'centralauth-admin-suppressreason' => 'Глобално сакривен од $1 због следећег разлога: $2',
+	'centralauth-admin-title' => 'Глобално управљање налогом за $1',
 	'globalusers' => 'Списак глобалних налога',
 	'centralauth-listusers-locked' => 'закључан',
 	'centralauth-listusers-attached' => '[[User:$1|постоји локално]]',
@@ -32283,7 +32293,7 @@ Sada je ta funkcija onemogućena iz bezbednosnih razloga.',
 Ako je i globalni nalog Vaš, onda možete da ga spojite s ovim nalogom tako što ćete uneti lozinku globalnog naloga:',
 	'centralauth-attach-submit' => 'premeštanje naloga',
 	'centralauth-attach-success' => 'Nalog je premešten u ujedinjeni nalog.',
-	'centralauth' => 'Globalno upravljanje korisnicima', # Fuzzy
+	'centralauth' => 'Globalno upravljanje nalogom',
 	'centralauth-admin-intro' => 'Ovo interfejs može da se koristi za administraciju globalnih naloga.',
 	'centralauth-admin-manage' => 'Upravljanje korisničkim podacima',
 	'centralauth-admin-username' => 'Korisničko ime:',
@@ -32357,6 +32367,7 @@ Razlog: $1',
 ** neprikladni lični podaci',
 	'centralauth-admin-logsnippet' => 'Prethodne promene globalnog naloga',
 	'centralauth-admin-suppressreason' => 'Globalno sakriven od $1 zbog sledećeg razloga: $2',
+	'centralauth-admin-title' => 'Globalno upravljanje nalogom za $1',
 	'globalusers' => 'Globalni spisak korisnika', # Fuzzy
 	'centralauth-listusers-locked' => 'zaključan',
 	'centralauth-listusers-attached' => '[[User:$1|postoji lokalno]]',
