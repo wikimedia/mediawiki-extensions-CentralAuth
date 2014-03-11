@@ -12767,6 +12767,7 @@ Os contrasinais das contas locais creados antes da fusión serán revertidos aos
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 polo seguinte motivo: $2',
 	'centralauth-admin-not-authorized' => 'Non ten os permisos necesarios para levar a cabo esta acción',
 	'centralauth-admin-too-many-edits' => 'A conta global "<nowiki>$1</nowiki>" ten máis de $2 {{PLURAL:$2|edición|edicións}} e non se pode agochar.',
+	'centralauth-admin-title' => 'Xestor da conta global para $1',
 	'globalusers' => 'Lista de contas globais',
 	'centralauth-listusers-locked' => 'protexido',
 	'centralauth-listusers-attached' => '[[User:$1|existe neste wiki]]',
