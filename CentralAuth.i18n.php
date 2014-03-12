@@ -189,6 +189,7 @@ The passwords for local accounts created before the merge will revert to their p
 	'centralauth-state-mismatch'           => 'Error: An edit conflict for this user was detected. Please verify your change and try again.',
 	'centralauth-admin-reason'             => 'Reason:',
 	'centralauth-admin-reason-other'       => 'Other/additional reason:',
+	'centralauth-admin-reason-other-select'=> 'Other reason:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: the global account "<nowiki>$1</nowiki>" does not exist.',
 	'centralauth-admin-status'             => 'Set global account status',
 	'centralauth-admin-status-intro'       => 'You can use this form to change the status of this global account.',
@@ -720,6 +721,7 @@ See also:
 	'centralauth-state-mismatch' => 'Error message when another admin has updated the user, and an edit conflict was detected',
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
+	'centralauth-admin-reason-other-select' => 'Shown on the Special:CentralAuth form in the drop down menu.',
 	'centralauth-admin-unhide-nonexistent' => "Used as error message. Parameters:
 * $1 - global account's name",
 	'centralauth-admin-status' => 'This message is used as label of fieldset.',
