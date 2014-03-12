@@ -1052,12 +1052,12 @@ class CentralAuthUser extends AuthPluginUser {
 		$centralDB->begin();
 		# Delete and lock the globaluser row
 		$centralDB->delete( 'globaluser', array( 'gu_name' => $this->mName ), __METHOD__ );
-		# Delete all global user groups for the user
-		$centralDB->delete( 'global_user_groups', array( 'gug_user' => $this->getId() ), __METHOD__ );
 		if ( !$centralDB->affectedRows() ) {
 			$centralDB->commit();
 			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
 		}
+		# Delete all global user groups for the user
+		$centralDB->delete( 'global_user_groups', array( 'gug_user' => $this->getId() ), __METHOD__ );
 		# Delete the localuser rows
 		$centralDB->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
 		$centralDB->commit();
