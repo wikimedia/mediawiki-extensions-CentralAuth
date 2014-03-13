@@ -12,21 +12,51 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		parent::__construct( 'CentralAutoLogin' );
 	}
 
+	/**
+	 * Get contents of a javascript file for inline use.
+	 *
+	 * Roughly based MediaWiki core methods:
+	 * - ResourceLoader::filter()
+	 * - ResourceLoaderFileModule::readScriptFiles()
+	 *
+	 * @param string $name Path to file relative to /modules/inline/
+	 * @return string Minified script
+	 * @throws MWException If file doesn't exist
+	 */
+	protected static function getInlineScript( $name ) {
+		// Get file
+		$filePath = __DIR__ . '/../modules/inline/' . $name;
+		if ( !file_exists( $filePath ) ) {
+			throw new MWException( __METHOD__ . ": file not found: \"$filePath\"" );
+		}
+		$contents = file_get_contents( $filePath );
+
+		// Try minified from cache
+		$key = wfMemcKey( 'centralauth', 'minify-js', md5( $contents ) );
+		$cache = wfGetCache( CACHE_ANYTHING );
+		$cacheEntry = $cache->get( $key );
+		if ( is_string( $cacheEntry ) ) {
+			return $cacheEntry;
+		}
+
+		// Compute new value
+		$result = '';
+		try {
+			$result = JavaScriptMinifier::minify( $contents ) . "\n/* cache key: $key */";
+			$cache->set( $key, $result );
+		} catch ( Exception $e ) {
+			MWExceptionHandler::logException( $e );
+			wfDebugLog( 'CentralAuth', __METHOD__ . ": minification failed for $name: $e" );
+			$result = ResourceLoader::formatException( $e ) . "\n" . $contents;
+		}
+
+		return $result;
+	}
+
 	function execute( $par ) {
 		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
 
 		$request = $this->getRequest();
-
-		// This script sets CentralAuthAnon to 1 day in the future
-		$notLoggedInScript = <<<EOJS
-var t = new Date();
-t.setTime( t.getTime() + 86400000 );
-if ( 'localStorage' in window ) {
-	localStorage.setItem( 'CentralAuthAnon', t.getTime() );
-} else {
-	document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';
-}
-EOJS;
 
 		$this->loginWiki = $wgCentralAuthLoginWiki;
 		if ( !$this->loginWiki ) {
@@ -37,7 +67,7 @@ EOJS;
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
 				$this->loginWiki = $fromwiki;
 			}
-		} elseif( $request->getVal( 'from' ) === wfWikiId() && $wgCentralAuthLoginWiki !== wfWikiId() ) {
+		} elseif ( $request->getVal( 'from' ) === wfWikiId() && $wgCentralAuthLoginWiki !== wfWikiId() ) {
 			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
 			$this->do302Redirect( $wgCentralAuthLoginWiki, $par, $request->getValues() );
 			return;
@@ -155,7 +185,7 @@ EOJS;
 			if ( $this->getUser()->isLoggedIn() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
-				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
+				$this->doFinalOutput( false, 'Not centrally logged in', self::getInlineScript( 'anon-set.js' ) );
 				return;
 			}
 
@@ -204,7 +234,7 @@ EOJS;
 
 
 			if ( $gu_id <= 0 ) {
-				$this->doFinalOutput( false, 'Not centrally logged in', $notLoggedInScript );
+				$this->doFinalOutput( false, 'Not centrally logged in', self::getInlineScript( 'anon-set.js' ) );
 				return;
 			}
 
@@ -376,18 +406,11 @@ EOJS;
 				}
 			}
 			if ( !$centralUser->isAttached() ) {
-				$this->doFinalOutput( false, 'Local user is not attached', $notLoggedInScript );
+				$this->doFinalOutput( false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
 				return;
 			}
 
-			$script = <<<EOJS
-if ( 'localStorage' in window ) {
-	localStorage.removeItem( 'CentralAuthAnon' );
-}
-if ( /(^|; )CentralAuthAnon=/.test( document.cookie ) ) {
-	document.cookie = 'CentralAuthAnon=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
-}
-EOJS;
+			$script = self::getInlineScript( 'anon-remove.js' );
 
 			// If we're returning to returnto, do that
 			if ( $request->getCheck( 'return' ) ) {
@@ -409,7 +432,7 @@ EOJS;
 
 				$redirectUrl = $returnToTitle->getFullURL( $returnToQuery );
 
-				$script .= 'location.href = ' . Xml::encodeJsVar( $redirectUrl ) . ';';
+				$script .= "\nlocation.href = " . Xml::encodeJsVar( $redirectUrl ) . ';';
 
 				$this->doFinalOutput( true, 'success', $script );
 				return;
@@ -431,7 +454,7 @@ EOJS;
 			$code = $this->getUser()->getOption( 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
 			wfRunHooks( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
-			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
+			$script .= "\n" . Xml::encodeJsCall( 'mediaWiki.messages.set', array(
 				array(
 					'centralauth-centralautologin-logged-in' =>
 						wfMessage( 'centralauth-centralautologin-logged-in' )
@@ -447,64 +470,10 @@ EOJS;
 				)
 			) );
 
-
-			$script .= <<<EOJS
-( function ( mw, $ ) {
-	mw.loader.using( 'mediawiki.Uri', function () {
-		var current, login;
-
-		// Set returnto and returntoquery so the logout link in the returned
-		// html is correct.
-		current = new mw.Uri();
-		delete current.query.title;
-		delete current.query.returnto;
-		delete current.query.returntoquery;
-
-		login = new mw.Uri(
-			mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/toolslist' )
-		);
-		login.query.returnto = mw.config.get( 'wgPageName' );
-		login.query.returntoquery = current.getQueryString();
-
-		$.getJSON( login.toString() )
-		.done( function ( data ) {
-			if ( data.toolslist ) {
-				$( '#p-personal ul' ).html( data.toolslist );
-				$( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );
-				mw.hook( 'centralauth-p-personal-reset' ).fire();
-			} else if ( data.notify ) {
-				mw.notify(
-					mw.message(
-						'centralauth-centralautologin-logged-in',
-						data.notify.username,
-						data.notify.gender
-					),
-					{
-						title: mw.message( 'centralautologin' ),
-						autoHide: false,
-						tag: 'CentralAutoLogin'
-					}
-				);
-			}
-		} )
-		.fail( function () {
-			// This happens if the user is logged in securely,
-			// while also auto-loggedin from an http page.
-			mw.notify(
-				mw.message( 'centralauth-centralautologin-logged-in-nouser' ),
-				{
-					title: mw.message( 'centralautologin' ),
-					autoHide: false,
-					tag: 'CentralAutoLogin'
-				}
-			);
-		} );
-	} );
-}( mediaWiki, jQuery ) );
-EOJS;
+			$script .= "\n" . self::getInlineScript( 'autologin.js' );
 
 			// And for good measure, add the edge login HTML images to the page.
-			$script .= Xml::encodeJsCall( "jQuery( 'body' ).append", array(
+			$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", array(
 				CentralAuthHooks::getEdgeLoginHTML()
 			) );
 
