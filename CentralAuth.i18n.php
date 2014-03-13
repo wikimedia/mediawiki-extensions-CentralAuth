@@ -721,7 +721,8 @@ See also:
 	'centralauth-state-mismatch' => 'Error message when another admin has updated the user, and an edit conflict was detected',
 	'centralauth-admin-reason' => '{{Identical|Reason}}',
 	'centralauth-admin-reason-other' => '{{Identical|Other/additional reason}}',
-	'centralauth-admin-reason-other-select' => 'Shown on the Special:CentralAuth form in the drop down menu.',
+	'centralauth-admin-reason-other-select' => 'Shown on the [[Special:CentralAuth]] form in the drop down menu.
+{{Identical|Other reason}}',
 	'centralauth-admin-unhide-nonexistent' => "Used as error message. Parameters:
 * $1 - global account's name",
 	'centralauth-admin-status' => 'This message is used as label of fieldset.',
@@ -8253,6 +8254,7 @@ Die Passwörter für die lokalen Benutzerkonten werden auf das ursprüngliche Pa
 	'centralauth-state-mismatch' => 'Fehler: Es wurde ein Bearbeitungskonflikt für diesen Benutzer entdeckt. Bitte überprüfe deine Änderungen und versuche es erneut.',
 	'centralauth-admin-reason' => 'Grund:',
 	'centralauth-admin-reason-other' => 'Anderer/ergänzender Grund:',
+	'centralauth-admin-reason-other-select' => 'Anderer Grund:',
 	'centralauth-admin-unhide-nonexistent' => 'Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.',
 	'centralauth-admin-status' => 'Globalen Kontenstatus ändern',
 	'centralauth-admin-status-intro' => 'Du kannst dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern',
@@ -11006,6 +11008,7 @@ $messages['fa'] = array(
 	'centralauth-state-mismatch' => 'خطا: یک تعارض ویرایشی برای این کاربر شناسایی شد. لطفاً تغییر خود را تأیید کنید و دوباره تلاش نمایید.',
 	'centralauth-admin-reason' => 'دلیل:',
 	'centralauth-admin-reason-other' => 'دلیل دیگر/اضافی:',
+	'centralauth-admin-reason-other-select' => 'دلیل دیگر:',
 	'centralauth-admin-unhide-nonexistent' => 'خطا: حساب کاربری مشترک «<nowiki>$1</nowiki>» وجود ندارد.',
 	'centralauth-admin-status' => 'تنظیم وضعیت حساب سراسری',
 	'centralauth-admin-status-intro' => 'شما می‌توانید فرم زیر را برای تغییر وضعیت این حساب سراسری استفاده کنید.',
@@ -12006,6 +12009,7 @@ Les mots de passe pour les comptes locaux créés avant leur fusion retrouveront
 	'centralauth-state-mismatch' => 'Erreur : Un conflit d’édition avec cet utilisateur a été détecté. Merci de vérifier votre modification et de réessayer.',
 	'centralauth-admin-reason' => 'Motif :',
 	'centralauth-admin-reason-other' => 'Motif autre ou supplémentaire :',
+	'centralauth-admin-reason-other-select' => 'Autre motif :',
 	'centralauth-admin-unhide-nonexistent' => 'Erreur : le compte global « <nowiki>$1</nowiki> » n’existe pas.',
 	'centralauth-admin-status' => 'Changer le statut du compte global',
 	'centralauth-admin-status-intro' => 'Vous pouvez utiliser ce formulaire pour changer le statut de ce compte global',
@@ -13668,11 +13672,12 @@ $messages['hak'] = array(
 
 /** Hawaiian (Hawai`i)
  * @author Kalani
+ * @author Kolonahe
  * @author Singularity
  */
 $messages['haw'] = array(
 	'mergeaccount' => 'Kūlana o ko ka ʻeʻe hui pū ʻana',
-	'centralauth-groupname' => 'ke Kahua Wikimedia',
+	'centralauth-groupname' => 'ke Kahua Wikimikia',
 	'centralauth-merge-dryrun-or' => "'''a i ʻole'''",
 	'centralauth-list-home-title' => 'Wiki home',
 	'centralauth-merge-method-primary' => 'wiki home',
@@ -17073,6 +17078,7 @@ Le password per le utenze locali create prima della fusione torneranno ai loro v
 	'centralauth-state-mismatch' => 'Errore: è stato rilevato un conflitto di modifica per questo utente. Verifica la tua modifica e prova di nuovo.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Altri motivi/dettagli:',
+	'centralauth-admin-reason-other-select' => 'Altro motivo:',
 	'centralauth-admin-unhide-nonexistent' => 'Errore: l\'utenza globale "<nowiki>$1</nowiki>" non esiste.',
 	'centralauth-admin-status' => "Impostare lo stato dell'utenza globale",
 	'centralauth-admin-status-intro' => 'È possibile utilizzare questo modulo per modificare lo stato di questo utente globale',
@@ -17467,6 +17473,7 @@ $messages['ja'] = array(
 	'centralauth-state-mismatch' => 'エラー: この利用者について編集の競合が検出されました。変更内容を確認し、やり直してください。',
 	'centralauth-admin-reason' => '理由:',
 	'centralauth-admin-reason-other' => 'その他の理由:',
+	'centralauth-admin-reason-other-select' => 'その他の理由:',
 	'centralauth-admin-unhide-nonexistent' => 'エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。',
 	'centralauth-admin-status' => 'グローバルアカウントの状態の設定',
 	'centralauth-admin-status-intro' => 'このフォームでは、このグローバルアカウントの状態を変更できます。',
@@ -22254,6 +22261,7 @@ $messages['mk'] = array(
 	'centralauth-state-mismatch' => 'Грешка: Утврдена е спротиставеност во уредувањето на овој корисник. Потврдете ги вашите промени и обидете се повторно.',
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-reason-other' => 'Друга/дополнителна причина:',
+	'centralauth-admin-reason-other-select' => 'Друга причина:',
 	'centralauth-admin-unhide-nonexistent' => 'Грешка: глобалната сметка „<nowiki>$1</nowiki>“ не постои.',
 	'centralauth-admin-status' => 'Постави статус на глобална корисничка сметка',
 	'centralauth-admin-status-intro' => 'Можете да го употребите овој образец за да го промените статусот на оваа глобална сметка',
@@ -25130,7 +25138,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-admin-suppressreason' => 'Globaal onderdrukt door $1 met reden: $2',
 	'centralauth-admin-not-authorized' => 'U hebt geen rechten om deze handeling uit te voeren.',
 	'centralauth-admin-too-many-edits' => 'Het globale account "<nowiki>$1</nowiki>" heeft meer dan $2 {{PLURAL:$2|edit|edits}} en kan niet verborgen worden.',
-	'centralauth-admin-title' => 'Globale accountmanager voor $1',
+	'centralauth-admin-title' => 'Globaal gebruikersbeheer voor $1',
 	'globalusers' => 'Gebruikerslijst (globaal)',
 	'centralauth-listusers-locked' => 'afgeschermd',
 	'centralauth-listusers-attached' => '[[User:$1|bestaat lokaal]]',
@@ -26476,6 +26484,7 @@ $messages['pfl'] = array(
 );
 
 /** Polish (polski)
+ * @author Ankry
  * @author Beau
  * @author BeginaFelicysym
  * @author Chrumps
@@ -26551,7 +26560,7 @@ Jeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego p
 	'centralauth-list-home-title' => 'Macierzysta wiki',
 	'centralauth-list-home-dryrun' => 'Ustawione na tej wiki hasło oraz adres e‐mail będą wykorzystywane przez Twoje konto uniwersalne.',
 	'centralauth-list-attached-title' => 'Powiązane konta użytkownika',
-	'centralauth-list-attached' => 'Konto o nazwie „$1” we wszystkich tych witrynach zostało automatycznie przypisane do konta uniwersalnego:', # Fuzzy
+	'centralauth-list-attached' => 'Konto o nazwie „$1” we wszystkich tych witrynach zostało automatycznie przypisane do konta uniwersalnego:',
 	'centralauth-list-attached-dryrun' => 'Konto o nazwie „$1” we wszystkich tych witrynach zostanie automatycznie przypisane do konta uniwersalnego:', # Fuzzy
 	'centralauth-list-unattached-title' => 'Niepowiązane konta',
 	'centralauth-list-unattached' => 'Dla witryn wymienionych poniżej konto o nazwie „$1” nie może zostać automatycznie przyłączone do konta uniwersalnego. Najbardziej prawdopodobną przyczyną problemów jest ustawienie dla tych witryn innego hasła niż dla konta macierzystego.', # Fuzzy
@@ -26709,6 +26718,7 @@ Jeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do 
 	'centralauth-login-no-others' => 'Zostałeś automatycznie zalogowany do innych projektów z {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Zostałeś automatycznie wylogowany z innych projektów z {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'centralnie ukryte przez $1 o $2 ponieważ $3',
+	'centralauth-login-error-locked' => 'Nie możesz się zalogować, gdyż twoje konto jest zablokowane globalnie.',
 	'centralauth-log-name' => 'Rejestr zarządzania kontami uniwersalnymi',
 	'centralauth-log-header' => 'Rejestr zawiera zdarzenia dotyczące kont uniwersalnych: usunięcia, zablokowania i odblokowania.',
 	'centralauth-log-entry-delete' => 'usunął konto uniwersalne „$1”',
@@ -29356,6 +29366,7 @@ $messages['ru'] = array(
 	'centralauth-state-mismatch' => 'Ошибка: был обнаружен конфликт редактирования для этого пользователя. Проверьте ваши изменения и повторите попытку.',
 	'centralauth-admin-reason' => 'Причина:',
 	'centralauth-admin-reason-other' => 'Другая/дополнительная причина:',
+	'centralauth-admin-reason-other-select' => 'Другая причина:',
 	'centralauth-admin-unhide-nonexistent' => 'Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.',
 	'centralauth-admin-status' => 'Установить глобальный статус учётной записи',
 	'centralauth-admin-status-intro' => 'Вы можете использовать эту форму для изменения статуса этой глобальной учётной записи',
@@ -30540,6 +30551,7 @@ Nu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
  * @author John Reid
  */
 $messages['sco'] = array(
+	'centralauth-admin-reason-other-select' => 'Ither raison:',
 	'centralauth-admin-title' => 'Global accoont manager fer $1',
 );
 
@@ -33863,6 +33875,7 @@ $messages['te'] = array(
 	'centralauth-token-mismatch' => 'సారీ, సెషను డేటా పోవడం వలన మీ ఫారమును సమర్పణను ప్రాసెస్ చెయ్యలేకపోతున్నాం.',
 	'centralauth-admin-reason' => 'కారణం:',
 	'centralauth-admin-reason-other' => 'ఇతర/అదనపు కారణం:',
+	'centralauth-admin-reason-other-select' => 'ఇతర కారణం:',
 	'centralauth-admin-unhide-nonexistent' => 'లోపం: "<nowiki>$1</nowiki>" అనే సార్వత్రిక ఖాతా లేనే లేదు.',
 	'centralauth-admin-status' => 'సార్వత్రిక ఖాతా స్థితిని అమర్చు',
 	'centralauth-admin-status-intro' => 'ఈ సార్వత్రిక ఖాతా యొక్క స్థితిని మార్చడానికి మీరు ఈ ఫారాన్ని ఉపయోగించవచ్చు',
@@ -33891,7 +33904,11 @@ $messages['te'] = array(
 	'centralauth-listusers-locked' => 'లాకు అయింది',
 	'centralauth-listusers-attached' => '[[User:$1|స్థానికంగా ఉనికిలో ఉంది]]',
 	'centralauth-listusers-nolocal' => 'దేనికీ జోడించి లేదు, లేదా స్థానికంగా లేదు',
+	'multilock' => 'బహుళ బహిరంగ ఖాతాలకు తాళం వెయ్యి',
+	'centralauth-admin-multi-username' => 'ఒకటి లేదా అంతకన్నా ఎక్కువ వాడుకరి పేర్లను, ఒక్కోటి ఒక్కో లైనులో ఇవ్వండి',
 	'centralauth-admin-multi-notfound' => 'వెతుకులాటలో వాడుకరి ఎవరూ దొరకలేదు.',
+	'centralauth-admin-multi-searchprefix' => 'లేదా, ముందుపేరుతో వాడుకరులకోసం వెతకండి',
+	'centralauth-admin-multi-intro' => 'బహుళ బహిరంగ ఖాతాలను ఒక్కసారిగా మార్చు',
 	'centralauth-admin-action-lock-unlock' => 'ఎంపిక చేసిన ఖాతాలకు తాళం తియ్యి',
 	'centralauth-admin-action-hide-none' => 'ఎంచుకున్న ఖాతాలను తిరిగి చూపించు',
 	'centralauth-admin-action-hide-lists' => 'బహిరంగ జాబితాలనుంచి ఎంచుకున్న ఖాతాలను దాచిపెట్టు',
@@ -33947,7 +33964,10 @@ $messages['te'] = array(
 	'centralauth-rightslog-header' => 'సార్వత్రిక గుంపులపై జరిగిన చర్యల చిట్టా ఇది: సభ్యత్వం మరియు అనుమతుల మార్పులు',
 	'centralauth-rightslog-entry-setnewtype' => '"$1" యొక్క రకాన్ని $2 నుండి $3 కు మార్చాం',
 	'centralauth-rightslog-entry-setchange' => "''$1'' లోని వికీలు మార్చబడ్డాయి: కలిపినవి: $2; తీసేసినవి: $3",
+	'centralauth-rightslog-set-optin' => 'ఎంచుకున్న వాటి ఆధారంగా',
+	'centralauth-rightslog-set-optout' => 'ఎంచుకోని వాటి ఆధారంగా',
 	'centralautologin' => 'కేంద్రీకృత ప్రవేశం',
+	'centralauth-centralautologin-alreadyloggedinlocally' => 'మీరు ఇదివరకే ప్రాంతీయంగా ప్రవేశించి ఉన్నారు',
 	'centralauth-centralautologin-lostsession' => 'సెషను డేటా పోయింది',
 	'centralauth-centralautologin-badstate' => 'చెల్లని స్థితి "$1"',
 	'globalgroupmembership' => 'సార్వత్రిక గుంపుల్లో సభ్యత్వం',
@@ -35472,6 +35492,7 @@ $messages['ts'] = array(
 /** Tatar (Cyrillic script) (татарча)
  * @author Ilnur efende
  * @author Ильнар
+ * @author Умар
  */
 $messages['tt-cyrl'] = array(
 	'mergeaccount' => 'Гомуми кулланучы язмаларының торышы',
@@ -35517,6 +35538,7 @@ $messages['tt-cyrl'] = array(
 	'centralauth-merge-method-admin' => 'идарәче - гомуми кулланучы язмасы',
 	'centralauth-merge-method-new' => 'яңа кулланучы язмасы',
 	'centralauth-merge-method-login' => 'системага кергән очракта ясалган',
+	'centralauth-finish-login' => 'Керү',
 	'centralauth' => 'Глобаль кулланучы язмаларының менеджеры', # Fuzzy
 	'centralauth-admin-manage' => 'Куланучы язмалары белән идарә итү', # Fuzzy
 	'centralauth-admin-username' => 'Кулланучы исеме:',
@@ -35541,7 +35563,12 @@ $messages['tt-cyrl'] = array(
 	'centralauth-admin-list-blocked' => 'Блоклау',
 	'centralauth-admin-unmerge' => 'Сайланганнарны аеру',
 	'centralauth-admin-merge' => 'Сайланганнарны берләштерү',
+	'centralauth-seconds-ago' => '$1 секунд элек', # Fuzzy
+	'centralauth-minutes-ago' => '$1 минут элек', # Fuzzy
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|cәгать}} элек',
+	'centralauth-days-ago' => '$1 көн элек', # Fuzzy
+	'centralauth-months-ago' => '$1 ай элек', # Fuzzy
+	'centralauth-years-ago' => '$1 ел элек', # Fuzzy
 	'centralauth-prefs-status' => 'Глобаль кулланучы хисапнамәсе:',
 	'centralauth-prefs-not-managed' => 'Гомуми кулланучы хисапнамәсе кулланылмый',
 	'centralauth-prefs-unattached' => 'Расланмаган',
@@ -36890,6 +36917,7 @@ Mật khẩu của các tài khoản địa phương đã có trước khi hợp
 	'centralauth-state-mismatch' => 'Lỗi: Đã phát hiện mâu thuẫn sửa đổi cho người dùng này. Xin vui lòng kiểm tra thay đổi của bạn và thử lại.',
 	'centralauth-admin-reason' => 'Lý do:',
 	'centralauth-admin-reason-other' => 'Lý do khác:',
+	'centralauth-admin-reason-other-select' => 'Lý do khác:',
 	'centralauth-admin-unhide-nonexistent' => 'Lỗi: tài khoản toàn cục "<nowiki>$1</nowiki>" không tồn tại.',
 	'centralauth-admin-status' => 'Đặt trạng thái toàn hệ thống',
 	'centralauth-admin-status-intro' => 'Biểu mẫu này để thay đổi trạng thái của tài khoản toàn hệ thống này',
@@ -37965,6 +37993,7 @@ $messages['zh-hans'] = array(
 	'centralauth-state-mismatch' => '错误：检测到对此用户发生编辑冲突。请确认您的更改并重试。',
 	'centralauth-admin-reason' => '原因：',
 	'centralauth-admin-reason-other' => '其他/附加原因：',
+	'centralauth-admin-reason-other-select' => '其他原因：',
 	'centralauth-admin-unhide-nonexistent' => '错误：全域账户"<nowiki>$1</nowiki>"不存在。',
 	'centralauth-admin-status' => '设置全域帐号状态',
 	'centralauth-admin-status-intro' => '你可以使用这个表单来更改这个全域帐号的状态',
@@ -38344,6 +38373,7 @@ $messages['zh-hant'] = array(
 	'centralauth-state-mismatch' => '錯誤：檢測到此用戶的編輯编辑衝突。請確認您的更改並重試。',
 	'centralauth-admin-reason' => '理由：',
 	'centralauth-admin-reason-other' => '其它／附加的理由：',
+	'centralauth-admin-reason-other-select' => '其他原因：',
 	'centralauth-admin-unhide-nonexistent' => '{{int:Centralauth-admin-hide-nonexistent}}',
 	'centralauth-admin-status' => '設定全域帳號狀態',
 	'centralauth-admin-status-intro' => '你可以使用這個表單來更改這個全域帳號的狀態',
