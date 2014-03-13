@@ -17,13 +17,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 
-		$notLoggedInScript = "var t = new Date();" .
-			"t.setTime( t.getTime() + 86400000 );" .
-			"if ( 'localStorage' in window ) {" .
-			"localStorage.setItem( 'CentralAuthAnon', t.getTime() );" .
-			"} else {" .
-			"document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';" .
-			"}";
+		// This script sets CentralAuthAnon to 1 day in the future
+		$notLoggedInScript = <<<EOJS
+var t = new Date();
+t.setTime( t.getTime() + 86400000 );
+if ( 'localStorage' in window ) {
+	localStorage.setItem( 'CentralAuthAnon', t.getTime() );
+} else {
+	document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';
+}
+EOJS;
 
 		$this->loginWiki = $wgCentralAuthLoginWiki;
 		if ( !$this->loginWiki ) {
@@ -77,7 +80,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 				$this->doFinalOutput( true, 'OK', $json, 'json' );
 			} else {
-				$this->doFinalOutput( false, 'Not logged in' );
+				$this->doFinalOutput( false, 'Not logged in', '', 'json' );
 			}
 			return;
 
@@ -377,12 +380,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$script = "if ( 'localStorage' in window ) {" .
-				"localStorage.removeItem( 'CentralAuthAnon' );" .
-				"}" .
-				"if ( /(^|; )CentralAuthAnon=/.test( document.cookie ) ) {" .
-				"document.cookie = 'CentralAuthAnon=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';" .
-				"}\n";
+			$script = <<<EOJS
+if ( 'localStorage' in window ) {
+	localStorage.removeItem( 'CentralAuthAnon' );
+}
+if ( /(^|; )CentralAuthAnon=/.test( document.cookie ) ) {
+	document.cookie = 'CentralAuthAnon=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
+}
+EOJS;
 
 			// If we're returning to returnto, do that
 			if ( $request->getCheck( 'return' ) ) {
@@ -404,7 +409,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$redirectUrl = $returnToTitle->getFullURL( $returnToQuery );
 
-				$script .= "window.location.href = " . Xml::encodeJsVar( $redirectUrl ) . ';';
+				$script .= 'location.href = ' . Xml::encodeJsVar( $redirectUrl ) . ';';
 
 				$this->doFinalOutput( true, 'success', $script );
 				return;
@@ -427,61 +432,73 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$code = RequestContext::sanitizeLangCode( $code );
 			wfRunHooks( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
 			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
-				'centralauth-centralautologin-logged-in',
-				wfMessage( 'centralauth-centralautologin-logged-in' )
-					->inLanguage( $code )->plain()
-			) );
-			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
-				'centralauth-centralautologin-logged-in-nouser',
-				wfMessage( 'centralauth-centralautologin-logged-in-nouser' )
-					->inLanguage( $code )->plain()
-			) );
-			$script .= Xml::encodeJsCall( 'mediaWiki.messages.set', array(
-				'centralautologin',
-				wfMessage( 'centralautologin' )->inLanguage( $code )->plain()
+				array(
+					'centralauth-centralautologin-logged-in' =>
+						wfMessage( 'centralauth-centralautologin-logged-in' )
+							->inLanguage( $code )->plain(),
+
+					'centralauth-centralautologin-logged-in-nouser' =>
+						wfMessage( 'centralauth-centralautologin-logged-in-nouser' )
+							->inLanguage( $code )->plain(),
+
+					'centralautologin' =>
+						wfMessage( 'centralautologin' )
+							->inLanguage( $code )->plain(),
+				)
 			) );
 
 
 			$script .= <<<EOJS
 ( function ( mw, $ ) {
 	mw.loader.using( 'mediawiki.Uri', function () {
-		var url, u;
+		var current, login;
 
 		// Set returnto and returntoquery so the logout link in the returned
 		// html is correct.
-		u = new mediaWiki.Uri( location.href );
-		delete u.query.title;
-		delete u.query.returnto;
-		delete u.query.returntoquery;
-		url = new mediaWiki.Uri(
+		current = new mw.Uri();
+		delete current.query.title;
+		delete current.query.returnto;
+		delete current.query.returntoquery;
+
+		login = new mw.Uri(
 			mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/toolslist' )
 		);
-		url.query.returnto = mw.config.get( 'wgPageName' );
-		url.query.returntoquery = u.getQueryString();
+		login.query.returnto = mw.config.get( 'wgPageName' );
+		login.query.returntoquery = current.getQueryString();
 
-		$.getJSON( url.toString(), function ( data ) {
+		$.getJSON( login.toString() )
+		.done( function ( data ) {
 			if ( data.toolslist ) {
 				$( '#p-personal ul' ).html( data.toolslist );
 				$( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );
 				mw.hook( 'centralauth-p-personal-reset' ).fire();
 			} else if ( data.notify ) {
 				mw.notify(
-					mw.message( 'centralauth-centralautologin-logged-in',
+					mw.message(
+						'centralauth-centralautologin-logged-in',
 						data.notify.username,
 						data.notify.gender
 					),
-					{"title":mw.message('centralautologin'),"autoHide":false,"tag":"CentralAutoLogin"}
+					{
+						title: mw.message( 'centralautologin' ),
+						autoHide: false,
+						tag: 'CentralAutoLogin'
+					}
 				);
 			}
 		} )
-		.error(function() {
+		.fail( function () {
 			// This happens if the user is logged in securely,
-			// but auto-loggedin from an http page.
+			// while also auto-loggedin from an http page.
 			mw.notify(
 				mw.message( 'centralauth-centralautologin-logged-in-nouser' ),
-				{"title":mw.message('centralautologin'),"autoHide":false,"tag":"CentralAutoLogin"}
+				{
+					title: mw.message( 'centralautologin' ),
+					autoHide: false,
+					tag: 'CentralAutoLogin'
+				}
 			);
-		});
+		} );
 	} );
 }( mediaWiki, jQuery ) );
 EOJS;
@@ -529,11 +546,11 @@ EOJS;
 				readfile( __DIR__ . '/../1x1.png' );
 			}
 		} elseif ( $type === 'json' ) {
-			header( 'Content-Type: application/json' );
+			header( 'Content-Type: application/json; charset=utf-8' );
 			header( "X-CentralAuth-Status: $status" );
 			echo $body;
 		} else {
-			header( 'Content-Type: text/javascript' );
+			header( 'Content-Type: text/javascript; charset=utf-8' );
 			echo "/* $status */\n$body";
 		}
 	}
