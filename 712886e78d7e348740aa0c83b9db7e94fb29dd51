@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e0177f3_50625007",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-13T04:36:47Z",
+      "side": 1,
+      "message": "Fixed in I2d7f27520f3799.",
+      "parentUuid": "291c1151_5f5fa1e1",
+      "revId": "712886e78d7e348740aa0c83b9db7e94fb29dd51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "291c1151_3f4e6539",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 1
