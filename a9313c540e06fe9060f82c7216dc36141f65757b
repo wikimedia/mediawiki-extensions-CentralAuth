@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e0177f3_b0ef5482",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-13T03:10:46Z",
+      "side": 1,
+      "message": "This causes a parse error in the JSON client-side because it doesn\u0027t provide type\u003djson, and ok\u003dfalse doesn\u0027t result in an HTTP error status code, so the client side request succeeds in response to getJSON and it fails trying to parse that javascript comment put there by doFinalOutput that got there because there is no type\u003djson.",
+      "revId": "a9313c540e06fe9060f82c7216dc36141f65757b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e0177f3_30d464be",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-13T03:10:46Z",
+      "side": 1,
+      "message": "These should be combined in a single .set() call for all three instead of separate ones.",
+      "revId": "a9313c540e06fe9060f82c7216dc36141f65757b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e0177f3_10e16897",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-13T03:10:46Z",
+      "side": 1,
+      "message": "Either use the callback argument or the promise, using half of each is confusing.\n\n $.getJSON( url, function ( data ) { .. } )\n\nor:\n\n $.getJSON( url )\n .done( function ( data ) { .. } )\n .fail( function () { .. } );\n\nAlso, for a while now, error() has been deprecated in favour of .fail() for consistency with between the AJAX and Promise interface.",
+      "revId": "a9313c540e06fe9060f82c7216dc36141f65757b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e0177f3_f0dddce2",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-13T03:10:46Z",
+      "side": 1,
+      "message": "* Use single quotes.\n* Drop redundant quotes around keys.\n* Why is this particular line minified and the rest not?",
+      "revId": "a9313c540e06fe9060f82c7216dc36141f65757b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e0177f3_d0eae072",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-13T03:10:46Z",
+      "side": 1,
+      "message": "(not new in this commit), this should set charset\u003dutf-8, like MediaWiki core does for index.php text/html, like api.php does for application/json, and like ResourceLoader does for css and javascript.",
+      "revId": "a9313c540e06fe9060f82c7216dc36141f65757b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
