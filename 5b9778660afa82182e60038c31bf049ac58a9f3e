@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_42272360",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-03-14T18:44:43Z",
+      "side": 1,
+      "message": "Should this use CentralAuthUser::memcKey, or wfForeignMemcKey( \u0027centralauth\u0027, ... ), so these aren\u0027t fragmented in memcache by wiki?",
+      "revId": "5b9778660afa82182e60038c31bf049ac58a9f3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_a28cbf3b",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-03-14T18:44:43Z",
+      "side": 1,
+      "message": "JavaScriptMinifier::minify returns a string, so shouldn\u0027t this return the cached version if it is a string?",
+      "revId": "5b9778660afa82182e60038c31bf049ac58a9f3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
