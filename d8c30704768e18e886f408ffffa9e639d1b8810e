@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_62cea7bb",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-03-14T18:27:10Z",
+      "side": 1,
+      "message": "Since this script goes to all anonymous users on all wikis, is it really worth putting the comment in here?",
+      "revId": "d8c30704768e18e886f408ffffa9e639d1b8810e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
