@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee14bf34_87f2e501",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-16T21:17:12Z",
+      "side": 1,
+      "message": "I saw CentralAuthUser::memcKey, but found it oddly constructed and in a strange class. wfForeignMemcKey makes sense.\n\nHowever is the wikiid actually different, or do we make this request to the central wiki? Hardcoding \u0027centralauth\u0027 seems bad, should probably use $wgCentralAuthLoginWiki as foreign wikiid, and then \u0027centralauth\u0027.\n\nHowever from what I can see, this request is already made in context of loginwiki, and if we would have multiple clusters or loginwikis, the request being to the right wiki takes care of it naturally here.",
+      "parentUuid": "ee14bf34_42272360",
+      "revId": "5b9778660afa82182e60038c31bf049ac58a9f3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee14bf34_a28cbf3b",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-14T18:44:43Z",
       "side": 1,
       "message": "JavaScriptMinifier::minify returns a string, so shouldn\u0027t this return the cached version if it is a string?",
+      "revId": "5b9778660afa82182e60038c31bf049ac58a9f3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_67f7d1f3",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-16T21:17:12Z",
+      "side": 1,
+      "message": "Yes, exactly. I negated this while debugging something. Good catch.\n\nFixed.",
+      "parentUuid": "ee14bf34_a28cbf3b",
       "revId": "5b9778660afa82182e60038c31bf049ac58a9f3e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
