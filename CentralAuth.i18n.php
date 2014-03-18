@@ -2944,6 +2944,7 @@ Les claves de les cuentes llocales creaes enantes de la fusión van tornar a los
 	'centralauth-state-mismatch' => "Error: Detectose un conflictu d'edición pa esti usuariu. Por favor compruebe'l cambiu y vuelva a intentalo.",
 	'centralauth-admin-reason' => 'Motivu:',
 	'centralauth-admin-reason-other' => 'Motivu distintu/adicional:',
+	'centralauth-admin-reason-other-select' => 'Otru motivu:',
 	'centralauth-admin-unhide-nonexistent' => 'Error: la cuenta global "<nowiki>$1</nowiki>" nun esiste.',
 	'centralauth-admin-status' => "Configurar l'estáu de cuenta global",
 	'centralauth-admin-status-intro' => "Pues usar esti formulariu pa camudar l'estáu d'esta cuenta global.",
@@ -26839,12 +26840,13 @@ Każdy z nich możesz przeglądać oraz modyfikować, możesz także utworzyć n
 	'centralauth-editset-success' => 'Zmodyfikowano zbiór wiki.',
 	'centralauth-editset-success-delete' => 'Usunięto zbiór wiki.',
 	'centralauth-editset-return' => 'Powrót do głównego widoku',
+	'centralauth-block-already-locked' => 'Konto [[Special:CentralAuth/$1|$1]] zostało już globalnie zablokowane.',
 	'centralauth-readonly' => 'Baza danych CentralAuth jest zablokowana',
 	'centralauth-readonlytext' => 'Baza danych CentralAuth jest zablokowana do dodawania nowych wpisów i edycji, prawdopodobnie na czas rutynowej konserwacji bazy danych, po której powróci do normalności.',
 	'right-globalgroupmembership' => 'Zmiana przynależności do grup globalnych',
 	'right-centralauth-autoaccount' => 'Automatyczne logowanie na konto uniwersalne',
 	'right-centralauth-unmerge' => 'Rozdzielenie konta uniwersalnego',
-	'right-centralauth-lock' => 'Blokowanie lub ukrywanie konta uniwersalnego', # Fuzzy
+	'right-centralauth-lock' => 'Blokowanie lub odblokowanie konta uniwersalnego',
 	'right-centralauth-oversight' => 'Utajnianie konta uniwersalnego', # Fuzzy
 	'right-centralauth-merge' => 'Łączenie swojego konta',
 	'right-globalgrouppermissions' => 'Zarządzanie grupami globalnymi',
