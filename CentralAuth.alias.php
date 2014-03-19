@@ -737,7 +737,7 @@ $specialPageAliases['zh-hans'] = array(
 	'MergeAccount' => array( '合并账户', '整合账户' ),
 	'GlobalGroupMembership' => array( '全域用户权限', '全域组成员资格' ),
 	'GlobalGroupPermissions' => array( '全域组权限' ),
-	'WikiSets' => array( 'Wiki组', '编辑Wiki组', '维基组', '编辑维基组' ),
+	'WikiSets' => array( 'Wiki集合', '编辑Wiki集合' ),
 	'GlobalUsers' => array( '全域用户' ),
 	'MultiLock' => array( '批量锁定' ),
 );
