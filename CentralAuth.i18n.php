@@ -11263,7 +11263,7 @@ $5
 $messages['fi'] = array(
 	'mergeaccount' => 'Käyttäjätunnusten yhdistämisen tila',
 	'centralauth-groupname' => 'Wikimedia Foundation',
-	'centralauth-desc' => 'Mahdollistaa [[Special:MergeAccount|käyttäjätunnusten yhdistämisen]] {{int:Centralauth-groupname}} -wikeissä.',
+	'centralauth-desc' => '[[Special:MergeAccount|Käyttäjätunnusten yhdistäminen]] {{int:Centralauth-groupname}} -wikeissä.',
 	'centralauth-antispoof-desc' => 'Lisää AntiSpoof-tekniikan CentralAuthiin',
 	'centralauth-mergeaccount-desc' => '[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.',
 	'centralauth-merge-denied' => 'Et ole oikeutettu käyttämään tätä sivua.',
@@ -11274,11 +11274,12 @@ Jos päivität tunnuksesi, voit jatkossa kirjautua kaikkiin {{int:Centralauth-gr
 
 Jos käyttäjänimesi on jo varattu toisessa projektissa, yhdistäminen ei haittaa näitä toisia käyttäjiä, mutta antaa sinulle mahdollisuuden neuvotella käyttäjänimestä näiden toisten käyttäjien kanssa, tai myöhemmin ylläpitäjän kanssa.",
 	'centralauth-merge-step1-title' => 'Aloita tunnusten yhdistäminen',
-	'centralauth-merge-step1-detail' => 'Anna tunnuksesi salasana tähän.
-Salasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä oleviin tunnuksiin, niiden samuuden varmistamiseksi. Mitään muutoksia ei toteuteta ennen kuin varmistat, että kaikki näyttää hyvältä.',
+	'centralauth-merge-step1-detail' => 'Anna tunnukseesi liittyvä salasana tähän.
+Salasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä oleviin tunnuksiin ja varmistetaan, että ne ovat samat.
+Mitään muutoksia ei tehdä ennen kuin varmistat, että kaikki on kunnossa.',
 	'centralauth-merge-step1-submit' => 'Vahvista sisäänkirjautumistiedot',
 	'centralauth-merge-step2-title' => 'Muiden tunnusten yhdistäminen',
-	'centralauth-merge-step2-detail' => 'Joidenkin käyttäjätunnusten samuutta kotiwikin käyttäjätunnukseen ei voitu varmistaa. Jos nämä tunnukset kuuluvat sinulle, voit todistaa niiden kuuluvan sinulle antamalla niiden salasanan.',
+	'centralauth-merge-step2-detail' => 'Joidenkin käyttäjätunnusten samanlaisuutta kotiwikin käyttäjätunnuksen kanssa ei voitu todeta. Jos nämä tunnukset kuuluvat sinulle, voit varmistaa että ne ovat sinun omiasi antamalla niiden salasanan.',
 	'centralauth-merge-step2-submit' => 'Vahvista yhdistäminen',
 	'centralauth-merge-dryrun-complete' => 'Kaikki käyttäjätunnuksesi voidaan yhdistää automaattisesti.
 
@@ -11288,7 +11289,7 @@ Sinulle tulee myöhemmin mahdollisuus yhdistää ne.
 
 Mitään muutoksia ei ole vielä tehty.',
 	'centralauth-merge-dryrun-or' => "'''tai'''",
-	'centralauth-merge-dryrun-home' => 'Järjestelmä ei pystynyt varmentamaan, että oletko kotiwikisi käyttäjätunnuksen omistaja tällä käyttäjänimellä.
+	'centralauth-merge-dryrun-home' => 'Järjestelmä ei pystynyt varmentamaan, että sinä olet kotiwikisi käyttäjätunnuksen omistaja tällä käyttäjänimellä.
 
 Käyttäjänimesi kotiwikiksi on arvioitu toinen wiki; napsauta seuraavaa linkkiä ja kirjaudu sisään viimeistelläksesi käyttäjätunnuksien yhdistämisen.',
 	'centralauth-merge-step3-title' => 'Yhdistetyn käyttäjätunnuksen luominen',
@@ -11299,7 +11300,7 @@ Tietokanta on saattanut vioittua.',
 	'centralauth-merge-home-password' => 'Tämän tunnuksen kotiwikissä (listattu alla) on eri salasana kuin syöttämäsi salasana.
 Anna kotiwikisi salasana.',
 	'centralauth-complete' => 'Käyttäjätunnusten yhdistäminen on valmis.',
-	'centralauth-incomplete' => 'Käyttäjätunnusten yhdistäminen ei ole valmis.',
+	'centralauth-incomplete' => 'Käyttäjätunnusten yhdistäminen on jäänyt kesken!',
 	'centralauth-complete-text' => 'Voit nyt kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.',
 	'centralauth-incomplete-text' => 'Kun kaikki tunnuksesi on yhdistetty, voit kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.',
 	'centralauth-not-owner-text' => 'Käyttäjänimi ”$1” annettiin automaattisesti käyttäjätunnuksen $2 omistajalle.
@@ -11325,7 +11326,7 @@ Jos tämä tunnus on sinun, voi viimeistellä tunnusten yhdistämisen antamalla 
 	'centralauth-merge-method-password' => 'vahvistettu salasanalla',
 	'centralauth-merge-method-admin' => 'ylläpitäjän yhdistämä käyttäjätunnus',
 	'centralauth-merge-method-new' => 'uusi tunnus',
-	'centralauth-merge-method-login' => 'luotu kirjautumalla',
+	'centralauth-merge-method-login' => 'luotu kirjautumishetkellä',
 	'centralauth-merge-method-primary-desc' => 'Tämä on wiki, jossa käyttäjätunnus alun perin yhdistettiin.
 Huomaa, että se saattaa olla eri kuin wiki, jossa käyttäjätunnus luotiin.',
 	'centralauth-merge-method-empty-desc' => 'Tarkoittaa, että paikallinen tunnus yhdistettiin, koska sillä ei ollut muokkauksia.',
@@ -11403,6 +11404,7 @@ Ennen yhdistämistä luotujen paikallisten tunnusten salasanat palautuvat yhdist
 	'centralauth-admin-nonexistent' => 'Järjestelmänlaajuista käyttäjätunnusta <nowiki>$1</nowiki> ei ole.',
 	'centralauth-admin-delete-nonexistent' => 'Järjestelmänlaajuista käyttäjätunnusta <nowiki>$1</nowiki> ei ole olemassa.',
 	'centralauth-token-mismatch' => 'Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.',
+	'centralauth-state-mismatch' => 'Virhe: Päällekkäinen muokkaus tämän käyttäjän kanssa on havaittu. Varmista muutoksesi ja yritä uudelleen.',
 	'centralauth-admin-reason' => 'Syy',
 	'centralauth-admin-reason-other' => 'Muu syy tai tarkennus',
 	'centralauth-admin-reason-other-select' => 'Muu syy:',
@@ -25132,6 +25134,7 @@ De wachtwoorden voor de lokale gebruikers worden teruggezet naar de wachtwoorden
 	'centralauth-state-mismatch' => 'Fout: er is een bewerkingsconflict geconstateerd voor deze gebruiker. Controleer uw wijziging en probeer het opnieuw.',
 	'centralauth-admin-reason' => 'Reden:',
 	'centralauth-admin-reason-other' => 'Andere reden:',
+	'centralauth-admin-reason-other-select' => 'Andere reden:',
 	'centralauth-admin-unhide-nonexistent' => 'Fout: de globale gebruiker "<nowiki>$1</nowiki>" bestaat niet.',
 	'centralauth-admin-status' => 'Globale gebruikerstatus instellen',
 	'centralauth-admin-status-intro' => 'U kunt dit formulier gebruiken om de status van deze globale gebruiker te wijzigen',
@@ -34182,6 +34185,11 @@ $messages['te'] = array(
 	'centralauth-merge-method-admin' => 'ఖాతాని నిర్వాహకులు విలీనం చేసారు',
 	'centralauth-merge-method-new' => 'కొత్త ఖాతా',
 	'centralauth-merge-method-login' => 'ప్రవేశించినపుడు సృష్టించారు',
+	'centralauth-merge-method-primary-desc' => 'ఖాతాను తొలిగా విలీనం చేసినది ఈ వికీవద్దనే. ఈ వాడుకరి యొక్క స్వంత వికీ ఇది కాకపోవచ్చని గమనించండి.',
+	'centralauth-merge-method-empty-desc' => 'స్థానిక ఖాతాలో మార్పుచేర్పులేమీ లేనందువలన అది విలీనమయిందని సూచిస్తుంది.',
+	'centralauth-merge-method-mail-desc' => 'స్థానిక ఖాతాలోని ఈమెయిలైడీ ప్రధాన ఖాతాయొక్క ఈమెయిలైడీతో సరిపోయింది కాబట్టి అది విలీనమయిందని సూచిస్తుంది.',
+	'centralauth-merge-method-password-desc' => 'వాడుకరి సరైన సంకేతపదం ఇచ్చినందువలన స్థానిక ఖాతా విలీనమయిందని సూచిస్తుంది.',
+	'centralauth-merge-method-admin-desc' => 'స్థానిక ఖాతాను స్టీవార్డులు స్వహస్తాలతో విలీనం చేసారని సూచిస్తుంది. భద్రతా కారణాల రీత్యా ఆ అంశాన్ని అశక్తం చేసాం.',
 	'centralauth-finish-title' => 'విలీనం ముగించు',
 	'centralauth-finish-text' => 'ఈ ఖాతాలు మీవే అయితే, వాటి సంకేతపదాలను ఇక్కడ ఇవ్వడం ద్వారా ప్రవేశపు ఏకీకరణ ప్రక్రియని ముగించవచ్చు:',
 	'centralauth-finish-password' => 'సంకేతపదం:',
@@ -34281,11 +34289,15 @@ $messages['te'] = array(
 	'centralauth-admin-multi-notfound' => 'వెతుకులాటలో వాడుకరి ఎవరూ దొరకలేదు.',
 	'centralauth-admin-multi-searchprefix' => 'లేదా, ఏదైనా ఆదిపదంతో వాడుకరులకోసం వెతకండి',
 	'centralauth-admin-multi-intro' => 'బహుళ బహిరంగ ఖాతాలను ఒక్కసారిగా మార్చు',
+	'centralauth-admin-action-lock-nochange' => 'తాళాలను మార్చవద్దు',
+	'centralauth-admin-action-lock-lock' => 'ఎంచుకున్న ఖాతాలకు తాళం వెయ్యి',
 	'centralauth-admin-action-lock-unlock' => 'ఎంపిక చేసిన ఖాతాలకు తాళం తియ్యి',
+	'centralauth-admin-action-hide-nochange' => 'దాపు స్థాయిలను మార్చవద్దు',
 	'centralauth-admin-action-hide-none' => 'ఎంచుకున్న ఖాతాలను తిరిగి చూపించు',
 	'centralauth-admin-action-hide-lists' => 'బహిరంగ జాబితాలనుంచి ఎంచుకున్న ఖాతాలను దాచిపెట్టు',
 	'centralauth-admin-action-hide-oversight' => 'ఎంచుకున్న ఖాతాలను పూర్తిగా దాచిపెట్టు',
 	'centralauth-admin-multi-bot' => 'ఇటీవలి మార్పులు',
+	'centralauth-admin-multi-botcheck' => '[[Special:RecentChanges|{{int:recentchanges}}]] లోని ఎంట్రీలను బాట్ మార్పులుగా చూపించు',
 	'centralauth-seconds-ago' => '$1 {{PLURAL:$1|క్షణం|క్షణాల}} క్రితం',
 	'centralauth-minutes-ago' => '$1 {{PLURAL:$1|నిమిషం|నిమిషాల}} క్రితం',
 	'centralauth-hours-ago' => '$1 {{PLURAL:$1|గంట|గంటల}} క్రితం',
@@ -34365,6 +34377,7 @@ $messages['te'] = array(
 	'centralauth-editgroup-members' => 'సభ్యుల జాబితా:',
 	'centralauth-editgroup-members-link' => '[[Special:GlobalUsers/$1|$2 అనుమతులు కలిగిన వాడుకరుల జాబితా]]',
 	'centralauth-editgroup-restrictions' => 'ఈ గుంపు చురుగ్గా ఉన్న వికీల సమూహం',
+	'centralauth-editgroup-rename-taken' => 'పేరుమార్పు విఫలమైంది: $1 పేరుతో ఈసరికే ఓ గుంపు ఉంది.',
 	'centralauth-editgroup-noset' => '(ఏమీలేదు)',
 	'centralauth-editgroup-submit' => 'భౌగోళిక గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు',
 	'centralauth-editgroup-perms' => 'ఇచ్చిన అనుమతులు:',
@@ -38451,15 +38464,15 @@ $messages['zh-hans'] = array(
 	'centralauth-log-status-none' => '（无）',
 	'centralauth-rightslog-name' => '全局权限日志',
 	'centralauth-rightslog-entry-usergroups' => '更改$1的全局用户组自$2至$3',
-	'centralauth-rightslog-entry-groupperms' => '已经更改$1的成员组许可由$2到$3',
+	'centralauth-rightslog-entry-groupperms' => '更改$1的用户组权限自$2至$3',
 	'centralauth-rightslog-entry-groupperms2' => '已经更改$1的成员组许可。加入$2；移除$3',
 	'centralauth-rightslog-entry-groupperms3' => '更改$1的用户组限制维基集合从$2至$3',
 	'centralauth-rightslog-entry-grouprename' => '重命名$2为$1',
 	'centralauth-rightslog-header' => '这个日志包含了全域组之动作：组及许可更改',
 	'centralauth-rightslog-entry-newset' => '创建$2维基集合$1包含以下维基：$3',
 	'centralauth-rightslog-entry-setrename' => '重命名维基集合“$2”为“$1”',
-	'centralauth-rightslog-entry-setnewtype' => '将"$1"的类型由$2改为$3',
-	'centralauth-rightslog-entry-setchange' => '"$1"中更改了的维基: 已添加 $2; 已移除 $3',
+	'centralauth-rightslog-entry-setnewtype' => '更改“$1”的类型自$2至$3',
+	'centralauth-rightslog-entry-setchange' => '更改“$1”中的wiki：添加：$2；删除：$3',
 	'centralauth-rightslog-entry-deleteset' => '删除维基集合“$1”',
 	'centralauth-rightslog-set-optin' => '选择的基础',
 	'centralauth-rightslog-set-optout' => '基于的退出',

@@ -143,6 +143,7 @@ $specialPageAliases['diq'] = array(
 	'GlobalGroupPermissions' => array( 'GlobalGrubaİcazeti' ),
 	'WikiSets' => array( 'SazanéWikiBıvırne' ),
 	'GlobalUsers' => array( 'KarberéGlobali' ),
+	'MultiLock' => array( 'ZafınKılit' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
