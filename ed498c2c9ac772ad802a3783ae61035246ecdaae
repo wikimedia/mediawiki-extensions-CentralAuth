@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_807bc1ea",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-03-22T01:47:46Z",
+      "side": 1,
+      "message": "this isn\u0027t \"heavy\" enough to take down the site, so not using a Poolcounter over here should be fine",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
