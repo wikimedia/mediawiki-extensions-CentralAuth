@@ -131,7 +131,7 @@ class GlobalUsersPager extends UsersPager {
 		if ( $row->lu_attached_method ) {
 			$info[] = $this->msg( 'centralauth-listusers-attached', $row->gu_name )->text();
 		} else {
-			$info[] = $this->msg( 'centralauth-listusers-nolocal' )->text();
+			array_unshift( $info, $this->msg( 'centralauth-listusers-nolocal' )->text() );
 		}
 		$groups = $this->getUserGroups( $row );
 
