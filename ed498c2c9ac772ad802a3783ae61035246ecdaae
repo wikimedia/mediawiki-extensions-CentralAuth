@@ -16,6 +16,74 @@
       "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_76fe2e68",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-03-24T17:10:51Z",
+      "side": 1,
+      "message": "Is it worth mentioning which file was failing the minification?",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_16eff2ae",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-03-24T17:10:51Z",
+      "side": 1,
+      "message": "I wonder whether it would be better to return the unminified js to the client along with the error message, so the CA scripting doesn\u0027t break.\n\nI\u0027d hope this Should Never Happen, anyway, making this a moot point (using the US definition).",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_164ed2dd",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-03-24T17:10:51Z",
+      "side": 1,
+      "message": "This variable only exists to avoid code duplication, so you should remove it and just call self::getInlineScript( \u0027anon-set.js\u0027 ) directly in the three cases where it\u0027s actually needed.\n\nThat saves loading the file in the many cases where it\u0027s not needed.",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_d6173aa7",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-03-24T17:10:51Z",
+      "side": 1,
+      "message": "Why not just \"\\nlocation.href \u003d \"?",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
