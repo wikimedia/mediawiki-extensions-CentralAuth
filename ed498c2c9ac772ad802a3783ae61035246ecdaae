@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee14bf34_d6ebba75",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-24T18:07:23Z",
+      "side": 1,
+      "message": "Indeed, this comes straight out of ResourceLoader where these misses happen all the time and that\u0027s handled by a much smaller cluster of apaches than the main apaches handling this CentralAuth request, and getting a much larger amount of different code and requests to minify (although we don\u0027t serve 304 here).",
+      "parentUuid": "ee14bf34_807bc1ea",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee14bf34_76fe2e68",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-24T17:10:51Z",
       "side": 1,
       "message": "Is it worth mentioning which file was failing the minification?",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_f6f35e67",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-24T18:07:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee14bf34_76fe2e68",
       "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee14bf34_36a8b61c",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-24T18:07:23Z",
+      "side": 1,
+      "message": "Done.\n\nThere\u0027s reasons for not doing this in ResourceLoader (where I copied this from), but it makes perfect here.\n\nIt would make sense in general in ResourceLoader as well, though not in the context we currently use the minifier there.",
+      "parentUuid": "ee14bf34_16eff2ae",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee14bf34_164ed2dd",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 5
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ee14bf34_169012f0",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-24T18:07:23Z",
+      "side": 1,
+      "message": "I initially didn\u0027t do that because I wasn\u0027t sure whether the cases are mutually exclusive (to keep the change simple), but it\u0027s quite clear that they are.\n\nFixed.",
+      "parentUuid": "ee14bf34_164ed2dd",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee14bf34_d6173aa7",
         "filename": "specials/SpecialCentralAutoLogin.php",
         "patchSetId": 5
@@ -81,6 +153,24 @@
       "writtenOn": "2014-03-24T17:10:51Z",
       "side": 1,
       "message": "Why not just \"\\nlocation.href \u003d \"?",
+      "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_76b62e87",
+        "filename": "specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-24T18:07:23Z",
+      "side": 1,
+      "message": "Separate concerns, atomic change, consistent change compared to the other lines, readability. Meh.",
+      "parentUuid": "ee14bf34_d6173aa7",
       "revId": "ed498c2c9ac772ad802a3783ae61035246ecdaae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
