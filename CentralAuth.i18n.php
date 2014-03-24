@@ -27722,6 +27722,7 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (português)
+ * @author Fúlvio
  * @author GTNS
  * @author Giro720
  * @author Hamilton Abreu
@@ -27891,6 +27892,7 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-state-mismatch' => 'Erro: Um conflito de edição para este utilizador foi detectado. Por favor, verifique a sua alteração e tente novamente.',
 	'centralauth-admin-reason' => 'Motivo:',
 	'centralauth-admin-reason-other' => 'Motivo adicional ou outro:',
+	'centralauth-admin-reason-other-select' => 'Outro motivo:',
 	'centralauth-admin-unhide-nonexistent' => 'Erro: a conta global "<nowiki>$1</nowiki>" não existe.',
 	'centralauth-admin-status' => 'Definir o estado da conta global',
 	'centralauth-admin-status-intro' => 'Pode usar este formulário para alterar o estado desta conta global.',
@@ -27913,6 +27915,8 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-admin-logsnippet' => 'Alterações anteriores à conta global',
 	'centralauth-admin-suppressreason' => 'Suprimida globalmente por $1 pela seguinte razão: $2',
 	'centralauth-admin-not-authorized' => 'Não possui privilégios para executar esta acção',
+	'centralauth-admin-too-many-edits' => 'A conta global "<nowiki>$1</nowiki>" possui mais de $2 {{PLURAL:$2|edição|edições}} e não pode ficar mais oculta.',
+	'centralauth-admin-title' => 'Gerenciador de contas globais para $1',
 	'globalusers' => 'Lista global de utilizadores',
 	'centralauth-listusers-locked' => 'bloqueada',
 	'centralauth-listusers-attached' => '[[User:$1|existe localmente]]',
@@ -27930,6 +27934,7 @@ As palavras-chave das contas locais criadas antes da fusão serão revertidas pa
 	'centralauth-admin-action-hide-lists' => 'Ocultar as contas seleccionadas das listas públicas',
 	'centralauth-admin-action-hide-oversight' => 'Ocultar completamente as contas seleccionadas',
 	'centralauth-admin-multi-bot' => 'Alterações recentes',
+	'centralauth-admin-multi-botcheck' => 'Marcar as entradas em [[Special:RecentChanges|{{int:recentchanges}}]] como entradas de bot.',
 	'centralauth-seconds-ago' => 'há $1 {{PLURAL:$1|segundo|segundos}} atrás',
 	'centralauth-minutes-ago' => 'há $1 {{PLURAL:$1|minuto|minutos}} atrás',
 	'centralauth-hours-ago' => 'há $1 {{PLURAL:$1|hora|horas}} atrás',
@@ -27957,6 +27962,7 @@ Alterar o nome de utilizador vai desacoplar esta conta local da conta global.',
 	'centralauth-login-no-others' => 'Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.',
 	'centralauth-logout-no-others' => 'Deixou automaticamente de estar autenticado de outros projetos {{int:Centralauth-groupname}}.',
 	'centralauth-hidden-blockreason' => 'globalmente ocultada por $1 na $2 com o seguinte motivo: $3',
+	'centralauth-login-error-locked' => 'Você não pode se autenticar pois sua conta está globalmente bloqueada.',
 	'centralauth-log-name' => 'Registo de contas globais',
 	'centralauth-log-header' => 'Este registo contém operações sobre contas globais: remoções, bloqueios e desbloqueios.',
 	'centralauth-log-entry-delete' => 'eliminou a conta global "$1"',
@@ -27991,7 +27997,16 @@ Quando visita um domínio vinculado enquanto não estiver conectado, o sistema d
 	'centralauth-centralautologin-badparams' => 'Os parâmetros de autenticação especificados eram inválidos',
 	'centralauth-centralautologin-lostsession' => 'Dados de sessão foram perdidos',
 	'centralauth-centralautologin-badstate' => 'Estado inválido "$1"',
+	'centralauth-centralautologin-notposted' => 'O formulário de autenticação central deve ser publicado',
+	'centralauth-centralautologin-badstate-central' => 'O estado "$1" não é válido na wiki central',
+	'centralauth-centralautologin-badstate-local' => 'O estado "$1" não é válido na wiki local',
+	'centralauth-centralautologin-badwiki' => 'A wiki "$1" não é válida para a autenticação central',
+	'centralauth-centralautologin-corsfail' => 'A verificação de origem de CORS não teve êxito',
+	'centralauth-centralautologin-p3p-explanation' => 'Alguns navegadores web necessitam de uma política compacta P3P para que os cookies sejam enviados ou recebidos, em alguns casos, incluindo situações envolvendo a verificação da autenticação pelo SUL. Neste caso, este é um requisito desnecessário, tendo em vista que todas as páginas que fazem parte do mesmo grupo wiki e de P3P são consideradas obsoletas e abandonadas; felizmente, a política que actualmente possui ligação a esta página é considerada "boa o suficiente" por estes navegadores web, em suas configurações padrão.
+
+Por favor, revise a política deste site, a fim de determinar como pode ser utilizada qualquer informação.',
 	'centralauth-centralautologin-logged-in' => 'Está autenticado centralmente como $1. Recarregue a página para aplicar as suas configurações de utilizador.',
+	'centralauth-centralautologin-logged-in-nouser' => 'Você está autenticado globalmente. Recarregue a página para aplicar suas configurações de usuário.',
 	'globalgroupmembership' => 'Membros de grupos globais',
 	'globalgrouppermissions' => 'Administração de grupos globais',
 	'centralauth-globalgroupperms-grouplist' => 'Foram configurados os seguintes grupos globais.
@@ -28075,9 +28090,30 @@ Pode ver ou modificar qualquer um deles, ou criar um novo.',
 	'right-globalgrouppermissions' => 'Administrar grupos globais',
 	'abusefilter-edit-builder-vars-global-user-groups' => 'Grupos globais em que o utilizador está',
 	'action-centralauth-lock' => 'bloquear ou desbloquear contas globais',
+	'centrallogin' => 'Autenticação central',
 	'centralloginsuccesful' => 'Autenticação bem sucedida',
 	'centralauth-completelogin-back' => 'Regressar à página anterior.',
 	'centralauth-error-nologinattempt' => 'Nenhuma tentativa de autenticação activa em andamento para a sua sessão.',
+	'centralauth-error-badtoken' => 'O token de autenticação fornecido expirou ou não é válida.',
+	'centralauth-error-token-wrongattempt' => 'O token de autenticação não pertence à sua tentativa actual de autenticar-se.
+Alguém pode estar tentando autenticar-se através de sua conta.',
+	'centralauth-error-token-wronguser' => 'O token não corresponde ao seu nome de usuário nesta sessão.
+Alguém pode estar tentando associá-lo a uma conta maliciosa.
+Se está tentando apenas autenticar-se como outro usuário, por favor saia primeiro de sua conta actual.',
+	'centralauth-warning-notloggedin' => 'Você não está autenticado.',
+	'centralauth-warning-notattached' => 'A conta local não está associada a uma global.',
+	'centralauth-finishglobaliseemail_subject' => 'Confirmação de conta em {{SITENAME}}',
+	'centralauth-finishglobaliseemail_body' => 'Seu endereço de e-mail foi associado à conta "$2" em todos os projectos Wikimedia, com sua conta principal localizada em {{SITENAME}}.
+
+Para confirmar que esta conta realmente é sua, associar qualquer conta sua que não pudemos juntar automaticamente e permitir a recuperação da conta caso se esqueça da palavra-chave, abra esta ligação em seu navegador web:
+
+$3
+
+Se a conta *não* pertence a você, clique nesta ligação para cancelar o e-mail de confirmação:
+
+$5
+
+Este código de confirmação expira em $6, às $7.',
 );
 
 /** Brazilian Portuguese (português do Brasil)
