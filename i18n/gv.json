@@ -1,0 +1,25 @@
+{
+    "@metadata": {
+        "authors": [
+            "MacTire02",
+            "Shimmin Beg"
+        ]
+    },
+    "centralauth-merge-dryrun-or": "'''ny'''",
+    "centralauth-list-home-title": "Wiki thie",
+    "centralauth-merge-method-primary": "wiki thie",
+    "centralauth-merge-method-new": "coontys noa",
+    "centralauth-finish-password": "Fockle yn arrey:",
+    "centralauth-finish-login": "Log stiagh",
+    "centralauth-admin-username": "Dt'ennym ymmydeyr:",
+    "centralauth-admin-info-hidden": "Keim follit:",
+    "centralauth-admin-yes": "ta",
+    "centralauth-admin-no": "cha",
+    "centralauth-admin-list-localwiki": "Wiki ynnydagh",
+    "centralauth-admin-list-method": "Saase",
+    "centralauth-admin-delete-title": "Scryss coontys",
+    "centralauth-admin-delete-button": "Scryss y coontys shoh",
+    "centralauth-admin-reason": "Fa:",
+    "centralauth-editgroup-reason": "Fa:",
+    "centralauth-editset-reason": "Fa:"
+}

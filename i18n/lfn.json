@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+        "authors": [
+            "Malafaya"
+        ]
+    },
+    "centralauth-merge-dryrun-or": "'''o'''",
+    "centralauth-admin-yes": "si",
+    "centralauth-admin-no": "no",
+    "centralauth-admin-list-method": "Metodo",
+    "centralauth-editgroup-name": "Nom de la grupo:",
+    "centralauth-editset-name": "Nom:"
+}

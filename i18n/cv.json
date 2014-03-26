@@ -1,0 +1,19 @@
+{
+    "@metadata": {
+        "authors": [
+            "Salam"
+        ]
+    },
+    "centralauth-seconds-ago": "$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла",
+    "centralauth-minutes-ago": "$1 {{PLURAL:$1|1=минут|минут}} каялла",
+    "centralauth-hours-ago": "$1 {{PLURAL:$1|1=сехет|сехет}} каялла",
+    "centralauth-days-ago": "$1 {{PLURAL:$1|1=кун|кун}} каялла",
+    "centralauth-months-ago": "$1 {{PLURAL:$1|1=уйӑх|уйӑх}} каялла",
+    "centralauth-years-ago": "$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла",
+    "centralauth-editgroup-noset": "(çук)",
+    "centralauth-editgroup-reason": "Сӑлтав:",
+    "centralauth-editgroup-success": "Ушкӑн ирӗкӗсем улӑштарнӑ.",
+    "centralauth-editset-name": "Ят:",
+    "centralauth-editset-reason": "Сӑлтав:",
+    "centralauth-editset-submit-delete": "Тӗпле"
+}

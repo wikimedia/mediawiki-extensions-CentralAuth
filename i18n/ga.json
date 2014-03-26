@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Alison",
+            "පසිඳු කාවින්ද"
+        ]
+    },
+    "centralauth-finish-password": "D'fhocal faire:",
+    "centralauth-finish-login": "Logáil isteach",
+    "centralauth-admin-username": "Ainm úsáideora:",
+    "centralauth-admin-reason": "Fáth:",
+    "centralauth-editgroup-reason": "Fáth:",
+    "centralauth-editset-name": "Ainm:",
+    "centralauth-editset-type": "Saghas:",
+    "centralauth-editset-reason": "Fáth:",
+    "centralauth-editset-submit-delete": "Scrios"
+}

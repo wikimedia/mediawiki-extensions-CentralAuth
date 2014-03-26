@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Crazymadlover",
+            "LeighvsOptimvsMaximvs",
+            "Omnipaedista"
+        ]
+    },
+    "centralauth-merge-dryrun-or": "'''ἢ'''",
+    "centralauth-finish-title": "Τελεῖν τὴν συγχώνευσιν",
+    "centralauth-finish-password": "Σῆμα:",
+    "centralauth-finish-login": "Συνδεῖσθαι",
+    "centralauth-finish-send-confirmation": "Πέμπειν ἠλεκτρονικῇ ἐπιστολῇ τὸ σύνθημα",
+    "centralauth-admin-username": "Ὄνομα χρωμένου:",
+    "centralauth-admin-info-id": "Ταυτότης χρωμένου:",
+    "centralauth-admin-info-registered": "Ἐγγεγραμμένος:",
+    "centralauth-admin-info-locked": "Κεκλῃσμένος:",
+    "centralauth-admin-info-hidden": "Κεκρυμμένον ἐπίπεδον:",
+    "centralauth-admin-yes": "ναί",
+    "centralauth-admin-no": "οὐ",
+    "centralauth-admin-list-attached-on": "Ἐπισυνημμένη ἐπὶ τοῦ",
+    "centralauth-admin-list-method": "Μέθοδος",
+    "centralauth-admin-unmerge": "Ἀποσυγχωνεύειν τὰ ἐπειλεγμένα",
+    "centralauth-admin-merge": "Ἐπειλεγμένων συγχώνευσις",
+    "centralauth-admin-reason": "Αἰτία:",
+    "centralauth-listusers-locked": "κεκλῃσμένη",
+    "centralauth-listusers-attached": "[[User:$1|τοπικῶς ἐστίν]]",
+    "centralauth-prefs-complete": "Ἅπαντα ἐν τάξει!",
+    "centralauth-invalid-wiki": "Οὐδεμία τοιαύτη βάσις δεδομένων βίκι: $1",
+    "centralauth-existinggroup-legend": "Ὑπάρχουσαι ὁμάδες",
+    "centralauth-editgroup-subtitle": "Μεταγράφειν $1",
+    "centralauth-editgroup-name": "Ὄνομα ὁμάδος:",
+    "centralauth-editgroup-noset": "(οὐδέν)",
+    "centralauth-editset-name": "Ὄνομα:",
+    "centralauth-editset-type": "Τύπος:",
+    "centralauth-editset-wikis": "Τὰ βίκι:",
+    "centralauth-editset-reason": "Αἰτία:",
+    "centralauth-editset-submit": "Ὑποβάλλειν",
+    "centralauth-editset-nouse": "(οὐδέν)"
+}

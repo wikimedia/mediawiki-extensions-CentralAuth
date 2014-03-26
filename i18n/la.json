@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Rafaelgarcia",
+            "SPQRobin",
+            "UV"
+        ]
+    },
+    "centralauth-groupname": "Wikimedia Foundation",
+    "centralauth-finish-password": "Tessera:",
+    "centralauth-admin-username": "Nomen usoris:",
+    "centralauth-prefs-status": "Status rationis globalis:",
+    "centralauth-prefs-not-managed": "Ratio unificata non adhibita",
+    "centralauth-prefs-manage": "Administrare tuam rationem globalem",
+    "centralauth-login-progress": "Aperiens conventa in aliis {{grammar:genitive|{{int:Centralauth-groupname}}}} inceptis:",
+    "centralauth-logout-progress": "Concludens conventa in aliis {{grammar:genitive|{{int:Centralauth-groupname}}}} inceptis:"
+}

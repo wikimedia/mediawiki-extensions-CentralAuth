@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "VASANTH S.N."
+        ]
+    },
+    "centralauth-finish-login": "ಲಾಗಿನ್ ಆಲೆ",
+    "centralauth-finish-send-confirmation": "ಪೊಸ ಪಾಸ್-ವರ್ಡ್’ನ್ ಇ-ಮೇಲ್ ಮಲ್ಪುಲೆ",
+    "centralauth-admin-username": "ಸದಸ್ಯೆರ್ನ ಪುದರ್:",
+    "centralauth-admin-info-id": "ಸದಸ್ಯೆರನ  ID",
+    "centralauth-admin-yes": "ಅಂದ್",
+    "centralauth-admin-no": "ಅತ್ತ್",
+    "centralauth-admin-list-localwiki": "ಸ್ಠಳೀಯ ವಿಕಿ",
+    "centralauth-admin-delete-title": "ಖಾತೆನ್ ಮಾಜಾಲೆ",
+    "centralauth-admin-reason": "ಕಾರಣ",
+    "centralauth-admin-status-hidden": "ದೆಂಗಾನ",
+    "centralauth-prefs-complete": "ಮಾತಾ ಸರಿ ಉಂಡು!",
+    "centralauth-log-status-hidden": "ದೆಂಗಾದಿನ",
+    "centralauth-globalgroupperms-newgroupname": "ಪೊಸ ಗುಂಪುದ ಪುದರ್",
+    "centralauth-editgroup-name": "ಗುಂಪುದ ಪುದರ್",
+    "centralauth-editgroup-display": "ಗುಂಪುದ ಸ್ಠ್ಳಳೀಯ ಪುದರ್",
+    "centralauth-editgroup-reason": "ಕಾರಣ",
+    "centralauth-editset-name": "ಪುದರ್",
+    "centralauth-editset-wikis": "ವಿಕಿಲು",
+    "centralauth-editset-reason": "ಕಾರಣ",
+    "centralauth-editset-submit": "ಒಪ್ಪಿಸಾಲೆ",
+    "centralauth-editset-submit-delete": "ಮಾಜಾಲೆ"
+}

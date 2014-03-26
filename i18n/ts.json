@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Thuvack"
+        ]
+    },
+    "centralauth-merge-dryrun-or": "'''kumbe'''",
+    "centralauth-merge-method-new": "Akhawunti yintswa",
+    "centralauth-finish-password": "Vito-mpfungulo:",
+    "centralauth-attach-title": "Tiyisekisa akhawunti",
+    "centralauth-admin-username": "Vito ra muthirisi:",
+    "centralauth-admin-info-registered": "Tsarisile:",
+    "centralauth-admin-yes": "Ina",
+    "centralauth-admin-no": "E e"
+}

@@ -247,6 +247,7 @@ $wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourf
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
 
+$wgMessagesDirs['SpecialCentralAuth'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
 $wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/CentralAuth.notranslate-alias.php";

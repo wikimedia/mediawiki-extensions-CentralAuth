@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+        "authors": [
+            "Filzstift",
+            "Geitost"
+        ]
+    },
+    "centralauth-merge-dryrun-home": "Das Migrationssystem konnte nicht bestätigen, dass du der Eigentümer des Heimatwiki-Benutzerkontos für diesen Benutzernamen bist.\n\nEin anderes Wiki wurde für deinen Benutzernamen als Heimatwiki bestimmt; folge dem unten stehenden Link und melde dich dort an, um die Benutzerkonten-Zusammenführung abzuschliessen.",
+    "centralauth-editset-notfound": "Wikigruppe «$1» wurde nicht gefunden.",
+    "centralauth-editset-optout": "Opt-out (umfasst alle Wikis ausser den angegebenen)",
+    "centralauth-editset-legend-view": "Wikigruppe «$1»",
+    "centralauth-readonlytext": "Die CentralAuth-Datenbank ist derzeit für neue Einträge und andere Änderungen gesperrt. Dies ist wahrscheinlich aufgrund routinemässiger Wartungsarbeiten der Fall, nach deren Abschluss die Datenbank wieder regulär verfügbar sein wird."
+}

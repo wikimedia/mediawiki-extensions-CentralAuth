@@ -1,0 +1,36 @@
+{
+    "@metadata": {
+        "authors": [
+            "Yury Tarasievich",
+            "Тест",
+            "Хомелка"
+        ]
+    },
+    "mergeaccount": "Стан уніфікацыі рахункаў",
+    "centralauth-groupname": "Фонд Вікімедыя",
+    "centralauth-desc": "[[Special:MergeAccount|Аб'яднанне рахункаў]] на вікі-пляцоўках {{int:Centralauth-groupname}}",
+    "centralauth-mergeaccount-desc": "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў]] у Адзінае Прадстаўленне",
+    "centralauth-merge-denied": "На жаль, вам не дазволены доступ да гэтай старонкі.",
+    "centralauth-merge-step3-submit": "Аб'яднаць рахункі",
+    "centralauth-complete": "Аб'яднанне рахункаў завершана!",
+    "centralauth-incomplete": "Аб'яднанне рахункаў не завершана!",
+    "centralauth-finish-password": "Пароль:",
+    "centralauth-admin-username": "Імя ўдзельніка:",
+    "centralauth-admin-yes": "так",
+    "centralauth-admin-no": "не",
+    "centralauth-admin-reason": "Прычына:",
+    "centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|аў}} таму",
+    "centralauth-minutes-ago": "$1 мінут{{PLURAL:$1|у|аў}} таму",
+    "centralauth-hours-ago": "$1 гадзін{{PLURAL:$1|у|аў}} таму",
+    "centralauth-days-ago": "$1 {{PLURAL:$1|дзень|дзён}} таму",
+    "centralauth-months-ago": "$1 месяц{{PLURAL:$1||аў}} таму",
+    "centralauth-years-ago": "$1 {{PLURAL:$1|год|гадоў}} таму",
+    "centralauth-prefs-status": "Стан глабальнага рахунку:",
+    "centralauth-prefs-not-managed": "Уніфікаваны рахунак не ўжываецца",
+    "centralauth-prefs-unattached": "Не пацверджана",
+    "centralauth-prefs-complete": "Усё ў парадку!",
+    "centralauth-prefs-migration": "Адбываецца перанос",
+    "centralauth-editgroup-reason": "Прычына:",
+    "centralauth-editset-type": "Тып:",
+    "centralauth-editset-reason": "Прычына:"
+}

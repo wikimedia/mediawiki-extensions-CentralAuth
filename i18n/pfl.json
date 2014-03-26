@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Manuae",
+            "Xqt"
+        ]
+    },
+    "centralauth-merge-denied": "Dud uns leed, awa du derfschd do nix mache.",
+    "centralauth-merge-dryrun-or": "'''oda'''",
+    "centralauth-error-locked": "Du konschd do nix mache, wail gschberd bischd.",
+    "centralauth-merge-method-empty": "Hod kä Baidräsch",
+    "centralauth-admin-yes": "Ja",
+    "centralauth-admin-no": "Nä",
+    "centralauth-admin-delete-button": "S'Kondo vum Benudza lesche",
+    "centralauth-admin-reason": "Grund:",
+    "centralauth-admin-reason-other": "Annare Grund:",
+    "centralauth-admin-status-locked": "Gschberd:",
+    "centralauth-admin-status-locked-no": "S'Kondo vum Benudza isch ned gschberd",
+    "centralauth-admin-status-locked-yes": "S'Kondo vum Benudza is gschberd fas Schaffe",
+    "centralauth-admin-status-hidden": "Vaschdegld:",
+    "centralauth-admin-status-hidden-no": "S'Kondo vum Benudza isch ned vaschdegld",
+    "centralauth-admin-status-hidden-oversight": "S'Kondo isch gons vaschdegld",
+    "centralauth-listusers-locked": "gschberd",
+    "centralauth-prefs-unattached": "Ned iwabriefd",
+    "centralauth-log-status-locked": "gschberd",
+    "centralauth-log-status-hidden": "Vaschdegld",
+    "centralauth-log-status-none": "(kään)",
+    "centralauth-editgroup-noset": "(kään)",
+    "centralauth-editset-submit-delete": "Lesche",
+    "centralauth-editset-nouse": "(kään)"
+}
