@@ -266,7 +266,7 @@
     "centralauth-newgroup-intro": "您可以用这个表格去指定一个新组的权限。要留意的就是该组不会存在，除非它有指定许可。",
     "centralauth-globalgroupperms-newgroupname": "新用户组名：",
     "centralauth-globalgroupperms-creategroup-submit": "指定许可",
-    "centralauth-editgroup-subtitle": "编辑$1",
+    "centralauth-editgroup-subtitle": "编辑“$1”",
     "centralauth-editgroup-subtitle-readonly": "查看$1",
     "centralauth-editgroup-fieldset": "$1的许可",
     "centralauth-editgroup-name": "组名：",
