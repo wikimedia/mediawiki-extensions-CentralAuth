@@ -361,6 +361,7 @@ $wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
 $wgLogActions['globalauth/lockandhid'] = 'centralauth-log-entry-lockandhide';
 $wgLogActions['globalauth/setstatus'] = 'centralauth-log-entry-chgstatus';
 $wgLogActions['suppress/setstatus'] = 'centralauth-log-entry-chgstatus';
+$wgLogActions['globalauth/detach'] = 'centralauth-log-entry-detach';
 
 $wgLogTypes[]                          = 'gblrights';
 $wgLogNames['gblrights']               = 'centralauth-rightslog-name';
