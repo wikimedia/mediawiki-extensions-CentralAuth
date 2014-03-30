@@ -1013,6 +1013,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->invalidateCache();
+		$this->logAction( 'detach', $reason = '', array( "removed" => implode( ', ', $valid ) ) );
 
 		return $status;
 	}
