@@ -132,7 +132,7 @@
     "centralauth-admin-list-method": "方法",
     "centralauth-admin-list-editcount": "编辑次数",
     "centralauth-admin-list-groups": "用户组",
-    "centralauth-admin-list-blocked": "封禁",
+    "centralauth-admin-list-blocked": "已封禁",
     "centralauth-admin-unmerge": "拆分选中的账户",
     "centralauth-admin-merge": "合并选中的账户",
     "centralauth-admin-bad-input": "合并所选项时发生错误",
