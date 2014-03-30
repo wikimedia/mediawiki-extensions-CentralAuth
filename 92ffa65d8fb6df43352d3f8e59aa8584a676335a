@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae0e4726_87cad248",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-03-30T22:45:58Z",
+      "side": 1,
+      "message": "Space around array items and function parameters please\n\nE.g. like this:\n$this-\u003elogAction( \u0027detach\u0027, $reason \u003d \u0027\u0027, array( \"removed\" \u003d\u003e implode( \u0027, \u0027, $valid ) ) );",
+      "revId": "92ffa65d8fb6df43352d3f8e59aa8584a676335a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
