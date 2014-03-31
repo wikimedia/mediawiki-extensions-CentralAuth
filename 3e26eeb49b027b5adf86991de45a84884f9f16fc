@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae0e4726_424a68c9",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-31T06:52:45Z",
+      "side": 1,
+      "message": "This should be a new style log event with improved i18n. See https://www.mediawiki.org/wiki/Logging_to_Special:Log",
+      "revId": "3e26eeb49b027b5adf86991de45a84884f9f16fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
