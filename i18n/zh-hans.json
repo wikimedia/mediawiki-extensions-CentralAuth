@@ -169,7 +169,7 @@
     "centralauth-admin-suppressreason": "由$1全域隐藏，原因：$2",
     "centralauth-admin-not-authorized": "您没有权限来执行此操作",
     "centralauth-admin-too-many-edits": "全局账户“<nowiki>$1</nowiki>”已有超过$2次编辑，无法被隐藏。",
-    "centralauth-admin-title": "对$1全域账户管理",
+    "centralauth-admin-title": "$1的全局账户管理器",
     "globalusers": "全域账户列表",
     "centralauth-listusers-locked": "锁定",
     "centralauth-listusers-attached": "[[User:$1|于本地存在]]",
