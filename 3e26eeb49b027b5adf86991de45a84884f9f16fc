@@ -16,6 +16,24 @@
       "revId": "3e26eeb49b027b5adf86991de45a84884f9f16fc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_2159a95d",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 286
+      },
+      "writtenOn": "2014-04-01T00:43:03Z",
+      "side": 1,
+      "message": "I don\u0027t really understand what you mean. Can you elaborate a little bit please?",
+      "parentUuid": "ae0e4726_424a68c9",
+      "revId": "3e26eeb49b027b5adf86991de45a84884f9f16fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
