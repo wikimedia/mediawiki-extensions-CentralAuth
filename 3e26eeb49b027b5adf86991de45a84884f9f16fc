@@ -34,6 +34,24 @@
       "revId": "3e26eeb49b027b5adf86991de45a84884f9f16fc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_88e8950c",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-01T07:43:56Z",
+      "side": 1,
+      "message": "The log entry should read:\n\n $1 {{GENDER:$2|detached}} $3 from local accounts at $4\n\nYou should implement a log formatter as described in https://www.mediawiki.org/wiki/Logging_to_Special:Log#1.19_and_later",
+      "parentUuid": "ae0e4726_2159a95d",
+      "revId": "3e26eeb49b027b5adf86991de45a84884f9f16fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
