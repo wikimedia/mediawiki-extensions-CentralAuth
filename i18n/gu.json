@@ -88,6 +88,7 @@
     "centralauth-admin-permission": "અન્ય લોકોના ખાતાને માત્ર કર્મચારીઓ જ વિલીન કરી શકે છે.",
     "centralauth-admin-no-unified": "આ સભ્યનામ માટે કોઈ સંગઠિત ખાતું નથી.",
     "centralauth-admin-info-header": "વૈશ્વિક ખાતાની માહિતી",
+    "centralauth-admin-info-username": "સભ્યનામ:",
     "centralauth-admin-info-id": "સભ્ય નામ",
     "centralauth-admin-info-registered": "નોંધેલ:",
     "centralauth-admin-info-home": "ઘર વિકિ:",
@@ -109,6 +110,7 @@
     "centralauth-admin-list-attached-on": "પર જોડાયેલું",
     "centralauth-admin-list-method": "પધ્ધતિ",
     "centralauth-admin-list-editcount": "ફેરફારોની સંખ્યા",
+    "centralauth-admin-list-groups": "સમૂહો",
     "centralauth-admin-list-blocked": "પ્રતિબંધીત",
     "centralauth-admin-unmerge": "અસંમિલીત પસમ્દ કરાયા",
     "centralauth-admin-merge": "અંકિત વસ્તુઓ સંમિલીત કરો",
@@ -125,6 +127,7 @@
     "centralauth-token-mismatch": "માફ કરશો, સત્ર માહિતીનો ક્ષય થવાથી અમે તમારું ફોર્મ જમા કરી શકીશું નહી.",
     "centralauth-admin-reason": "કારણ:",
     "centralauth-admin-reason-other": "અન્ય/વધારાનું કારણ:",
+    "centralauth-admin-reason-other-select": "બીજું કારણ:",
     "centralauth-admin-unhide-nonexistent": "ક્ષતિ: વૈશ્વિક ખાતું \"<nowiki>$1</nowiki>\" અસ્તિત્વ ધરાવતું નથી.",
     "centralauth-admin-status": "વૈશ્વિક ખાતાનું સ્તર નક્કી કરો",
     "centralauth-admin-status-intro": "તમે આ ફોર્મ વાપરીને આ વૈશ્વિક ખાતાની સ્થિતિ બદલી શકો છો.",
@@ -267,5 +270,6 @@
     "right-centralauth-lock": "વૈશ્વીક ખાતું સ્થગિત કે અસ્થગિત કરો",
     "right-centralauth-oversight": "વૈશ્વીક ખાતાને નાબૂદ કરો કે છુપાવો",
     "right-centralauth-merge": "તેમના ખાતા સંમિલીત કરો",
-    "right-globalgrouppermissions": "વૈશ્વીક સમૂહનું વ્યવસ્થાપન"
+    "right-globalgrouppermissions": "વૈશ્વીક સમૂહનું વ્યવસ્થાપન",
+    "centralloginsuccesful": "પ્રવેશ સફળ"
 }
