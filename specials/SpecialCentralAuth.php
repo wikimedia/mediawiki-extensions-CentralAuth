@@ -366,7 +366,7 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 			$content .= $this->foreignUserLink( $row['wiki'] ) .
 				Xml::closeElement( 'td' ) .
-				Xml::openElement( 'td', array( 'colspan' => '4' ) ) .
+				Xml::openElement( 'td', array( 'colspan' => '5' ) ) .
 				$notMerged .
 				Xml::closeElement( 'td' ) .
 				Xml::closeElement( 'tr' ) . "\n";
