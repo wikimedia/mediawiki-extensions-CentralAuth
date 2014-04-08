@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_d0e4fda5",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-04-08T22:00:10Z",
+      "side": 1,
+      "message": "gu_auth_token",
+      "revId": "3ddc2b050e8cd5c66df15c07746d8f8c75ce140e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_b0e9817d",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-04-08T22:00:10Z",
+      "side": 1,
+      "message": "Is the \u0027nulls\u0027 stuff needed here?",
+      "revId": "3ddc2b050e8cd5c66df15c07746d8f8c75ce140e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_d09bdd19",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-04-08T22:00:10Z",
+      "side": 1,
+      "message": "Shouldn\u0027t that be $min \u003c\u003d $maxid. If there were 1000 rows (with batch 300) you\u0027d have:\n0-300\n300-600\n600-900\n900-1200 \u003c-- this would break out before happening",
+      "revId": "3ddc2b050e8cd5c66df15c07746d8f8c75ce140e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
