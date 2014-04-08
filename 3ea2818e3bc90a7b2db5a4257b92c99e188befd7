@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_30a33141",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-04-08T22:10:41Z",
+      "side": 1,
+      "message": "nullsOnly has been removed",
+      "revId": "3ea2818e3bc90a7b2db5a4257b92c99e188befd7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_50a6ad51",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-04-08T22:10:41Z",
+      "side": 1,
+      "message": "nullsOnly has been removed",
+      "revId": "3ea2818e3bc90a7b2db5a4257b92c99e188befd7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
