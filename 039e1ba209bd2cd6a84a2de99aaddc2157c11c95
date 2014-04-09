@@ -16,6 +16,24 @@
       "revId": "039e1ba209bd2cd6a84a2de99aaddc2157c11c95",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_71a648c0",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-04-09T17:14:17Z",
+      "side": 1,
+      "message": "I suppose that would be:\n\n$dbw\u003d CentralAuthUser::getCentralDB( DB_MASTER );\n$lb \u003d  wfGetLB( $wgCentralAuthDatabase );\n...\n$lb-\u003ewaitForAll( $dbw-\u003egetMasterPos() );",
+      "parentUuid": "8e23439c_6829bd35",
+      "revId": "039e1ba209bd2cd6a84a2de99aaddc2157c11c95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
