@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_f19ff853",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-04-09T17:30:49Z",
+      "side": 1,
+      "message": "Actually this works too.",
+      "revId": "e25c29926d24ba49f6c8086ae36809f9131fbd65",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
