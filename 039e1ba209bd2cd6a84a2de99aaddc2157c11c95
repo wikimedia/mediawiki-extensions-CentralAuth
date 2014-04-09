@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_6829bd35",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-04-09T10:28:55Z",
+      "side": 1,
+      "message": "now we should really consider waiting for the correct slaves over here, I guess (If you plan to run a few instances)",
+      "revId": "039e1ba209bd2cd6a84a2de99aaddc2157c11c95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
