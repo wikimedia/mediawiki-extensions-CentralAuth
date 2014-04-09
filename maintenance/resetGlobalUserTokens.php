@@ -41,6 +41,8 @@ class ResetGlobalUserTokens extends Maintenance {
 		parent::__construct();
 		$this->mDescription = "Reset the user_token of all users on the wiki. Note that this may log some of them out.";
 		$this->addOption( 'nowarn', "Hides the 5 seconds warning", false, false );
+		$this->addOption( 'minid', "Start processing after this gu_id, default is 0", false, true );
+		$this->addOption( 'maxid', "Stop processing after this gu_id, default is MAX(gu_id) in globalusers", false, true );
 		$this->setBatchSize( 1000 );
 	}
 
@@ -57,22 +59,19 @@ class ResetGlobalUserTokens extends Maintenance {
 
 		// We list user by user_id from one of the slave database
 		$dbr = CentralAuthUser::getCentralDB( DB_SLAVE );
+		$maxid = $this->getOption( 'maxid', -1 );
 
-		$where = array();
-
-		$maxid = $dbr->selectField( 'globaluser', 'MAX(gu_id)', array(), __METHOD__ );
-
-		$min = 0;
-		$max = $this->mBatchSize;
+		if ( $maxid == -1 ) {
+			$maxid = $dbr->selectField( 'globaluser', 'MAX(gu_id)', array(), __METHOD__ );
+		}
+		$min = $this->getOption( 'minid', 0 );
+		$max = $min + $this->mBatchSize;
 
 		do {
 			$result = $dbr->select( 'globaluser',
 				array( 'gu_id', 'gu_name' ),
-				array_merge(
-					$where,
-					array( 'gu_id > ' . $dbr->addQuotes( $min ),
-						'gu_id <= ' . $dbr->addQuotes( $max )
-					)
+				array( 'gu_id > ' . $dbr->addQuotes( $min ),
+					'gu_id <= ' . $dbr->addQuotes( $max )
 				),
 				__METHOD__
 			);
@@ -84,9 +83,13 @@ class ResetGlobalUserTokens extends Maintenance {
 			$min = $max;
 			$max = $min + $this->mBatchSize;
 
+			if ( $max > $maxid ) {
+				$max = $maxid;
+			}
+
 			wfWaitForSlaves();
 
-		} while ( $min <= $maxid );
+		} while ( $min < $maxid );
 
 	}
 
