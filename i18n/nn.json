@@ -198,6 +198,7 @@
     "centralauth-rightslog-entry-deleteset": "sletta wikisettet «$1»",
     "centralauth-rightslog-set-optin": "innmeldingsbasert",
     "centralauth-rightslog-set-optout": "utmeldingsbasert",
+    "centralauth-centralautologin-logged-in": "Du er sentralt innlogga som $1. Last opp att sida for at brukarinnstillingane dine skal verta verksame.",
     "globalgroupmembership": "Medlemskap i globale grupper",
     "globalgrouppermissions": "Handsaming av globale grupper",
     "centralauth-globalgroupperms-grouplist": "Følgjande globale grupper er stilte inn.\nDu kan syna og endra løyva som er gjevne til kvar gruppa, om du har løyve til det.\nEi gruppa kan verta sletta ved å taka vekk alle rettane frå ho.",

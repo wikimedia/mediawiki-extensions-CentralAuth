@@ -191,7 +191,7 @@
     "centralauth-days-ago": "{{PLURAL:$1|wczoraj|$1 dni temu}}",
     "centralauth-months-ago": "{{PLURAL:$1|miesiąc|$1 miesiące|$1 miesięcy}} temu",
     "centralauth-years-ago": "{{PLURAL:$1|rok|$1 lata|$1 lat}} temu",
-    "centralauth-prefs-status": "Stan konta uniwersalnego",
+    "centralauth-prefs-status": "Stan konta uniwersalnego:",
     "centralauth-prefs-not-managed": "nie używasz konta uniwersalnego",
     "centralauth-prefs-unattached": "niepotwierdzone",
     "centralauth-prefs-complete": "wszystko w porządku",
