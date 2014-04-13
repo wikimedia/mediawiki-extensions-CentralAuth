@@ -658,6 +658,7 @@ $specialPageAliases['su'] = array(
 $specialPageAliases['sv'] = array(
 	'CentralAuth' => array( 'Gemensam_inloggning' ),
 	'MergeAccount' => array( 'Slå_ihop_konton' ),
+	'GlobalGroupMembership' => array( 'Globala_användarrättigheter' ),
 	'GlobalGroupPermissions' => array( 'Globala_grupper' ),
 	'WikiSets' => array( 'Wikiset' ),
 	'GlobalUsers' => array( 'Globala_användare' ),

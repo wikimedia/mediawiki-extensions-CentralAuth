@@ -32,7 +32,7 @@
     "centralauth-incomplete-text": "Tad, kad tavi konti būs apvienoti, tu varēsi ielogoties jebkurā {{int:Centralauth-groupname}} projektā neveidojot jaunu kontu.",
     "centralauth-not-owner-text": "Lietotāja vārds \"$1\" tika automātiski piesaistīts konta $2 īpašniekam.\n\nJa tas esi tu, tad tu var pabeigt kontu apvienošanas procesu, vienkārši šeit ierakstot savu $2 konta paroli:",
     "centralauth-error-locked": "Tu nevari rediģēt, jo tavs konts ir bloķēts.",
-    "centralauth-readmore-text": ":''[[meta:Help:Unified login|Lasiet vairāk par '''vienoto pieslēgšanos''']]…''",
+    "centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Lasiet vairāk par '''vienoto pieslēgšanos''']]…''",
     "centralauth-list-home-title": "Mājas wiki",
     "centralauth-list-attached-title": "Pievienotie konti",
     "centralauth-list-attached": "Konts ar nosaukumu \"$1\" katrā no tālāk norādītajām vietnēm ir ticis pievienots apvienotajam kontam:",

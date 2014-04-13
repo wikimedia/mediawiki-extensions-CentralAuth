@@ -1,7 +1,5 @@
 {
-    "@metadata": {
-        "authors": []
-    },
+    "@metadata": [],
     "mergeaccount": "Tirkelgi birizdendirw küýi",
     "centralauth-desc": "Wikimedia qorı wïkïler arasında [[Special:MergeAccount|tirkelgi biriktirw]]",
     "centralauth-mergeaccount-desc": "Jalğız tirkelgimen kirw üşin [[Special:MergeAccount|birneşe tirkelgini biriktirw]]",
@@ -28,7 +26,7 @@
     "centralauth-not-owner-text": "«$1» qatıswşı atı $2 degendegi tirkelgi ïesine özdiktik tüýistirilgen.\n\nBul öziñiz bolsañız, tirkelgi birizdendirw üderisin bitirw üşin, basqı qupïya söziñizdi kädimgideý mında engiziñiz:",
     "centralauth-notice-dryrun": "<div class='successbox'>Tek tanısıp şığw küýi</div><br clear='all'/>",
     "centralauth-disabled-dryrun": "Tirkelgi birizdendirw ağımda körsetw / minetw küýinde tur, sonımen kökeýkesti biriktirw äreketteri öşirilgen. Ğafw etiñiz!",
-    "centralauth-readmore-text": ":''[[meta:Help:Unified login|'''Biregeýlendirilgen kirw''' twralı köbirek oqıñız]]...''",
+    "centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''Biregeýlendirilgen kirw''' twralı köbirek oqıñız]]...''",
     "centralauth-list-home-title": "Meken wïkï",
     "centralauth-list-home-dryrun": "Bul wïkïde engizilgen qupïya söz ben e-poşta mekenjaýı birizdendirilgen tirkelgiñiz üşin paýdalanıladı.",
     "centralauth-list-attached-title": "Tirkesken tirkelgiler",
@@ -49,7 +47,7 @@
     "centralauth-finish-password": "Qupïya söziñiz:",
     "centralauth-finish-login": "Kirw",
     "centralauth-finish-send-confirmation": "Qupïya sözdi xatpen jiberw",
-    "centralauth-finish-problems": "Olqılıqtarıñız bar ma, ne osı basqa tirkelgilerdiñ ïesi öziñiz emes pe?\n[[meta:Help:Unified login problems|Kömek qalaý tabıladı]]…",
+    "centralauth-finish-problems": "Olqılıqtarıñız bar ma, ne osı basqa tirkelgilerdiñ ïesi öziñiz emes pe?\n[[meta:Special:MyLanguage/Help:Unified login|Kömek qalaý tabıladı]]…",
     "centralauth-finish-noconfirms": "Bul qupïya sözdi qoldanıp eş tirkelgi quptalmadı.",
     "centralauth-finish-incomplete": "Bul qupïya sözdi qoldanıp birneşe tirkelgi biriktirildi.\nOther accounts are not yet confirmed.",
     "centralauth-merge-attempt": "'''Jetistirilgen qupïya sözdi qalğan biriktirilmegen tirkelgiler qaraý tekserwde…'''",
