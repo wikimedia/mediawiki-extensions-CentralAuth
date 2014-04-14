@@ -81,7 +81,7 @@
     "centralauth-finish-password": "パスワード:",
     "centralauth-finish-login": "ログイン",
     "centralauth-finish-send-confirmation": "パスワードをメールで送信",
-    "centralauth-finish-problems": "トラブルが発生しました。これらは本当にあなたのアカウントですか?\n[[meta:Special:MyLanguage/Help:Unified login|ヘルプを確認してください]]...",
+    "centralauth-finish-problems": "トラブルが発生しました。これらは本当にあなたのアカウントですか?\n[[meta:Special:MyLanguage/Help:Unified login|ヘルプを確認してください]]…",
     "centralauth-finish-noconfirms": "このパスワードではどのアカウントも認証できませんでした。",
     "centralauth-finish-incomplete": "このパスワードを使用してアカウントをいくつか統合しました。\n他にもまだ認証されていないアカウントがあります。",
     "centralauth-merge-attempt": "'''まだ統合されていないアカウントに対して入力されたパスワードを確認しています…'''",
