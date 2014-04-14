@@ -1,0 +1,1 @@
+require "mediawiki_selenium"
