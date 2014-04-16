@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Natsubee"
-        ]
-    },
-    "centralauth-merge-denied": "Taflatse, womeɖe mɔ na wò bena na kpɔ axa sia o.",
-    "centralauth-finish-login": "Ge ɖe eme",
-    "centralauth-admin-delete-button": "Tutu ŋkɔ sia",
-    "centralauth-log-status-hidden": "woɣlae",
-    "centralauth-editset-name": "Ŋkɔ:",
-    "centralauth-editset-submit": "Ɖoe ɖa",
-    "centralauth-editset-submit-delete": "Tutui"
+	"@metadata": {
+		"authors": [
+			"Natsubee"
+		]
+	},
+	"centralauth-merge-denied": "Taflatse, womeɖe mɔ na wò bena na kpɔ axa sia o.",
+	"centralauth-finish-login": "Ge ɖe eme",
+	"centralauth-admin-delete-button": "Tutu ŋkɔ sia",
+	"centralauth-log-status-hidden": "woɣlae",
+	"centralauth-editset-name": "Ŋkɔ:",
+	"centralauth-editset-submit": "Ɖoe ɖa",
+	"centralauth-editset-submit-delete": "Tutui"
 }

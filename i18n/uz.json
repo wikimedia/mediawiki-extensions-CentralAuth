@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "CoderSI",
-            "Sociologist"
-        ]
-    },
-    "centralauth-groupname": "Vikimedia Fondi",
-    "centralauth-merge-method-login-desc": "Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.",
-    "centralauth-finish-password": "Maxfiy soʻz:",
-    "centralauth-admin-info-username": "Foydalanuvchi nomi:",
-    "centralauth-prefs-status": "Global hisob holati:",
-    "centralauth-prefs-complete": "Hammasi joyida!",
-    "centralauth-prefs-count-attached": "Hisob yozuvingiz $1 ta {{PLURAL:$1|loyihada}} faol.",
-    "centralauth-prefs-count-unattached": "Hisob yozuvingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
-    "centralauth-prefs-manage": "Global hisob yozuvini boshqarish",
-    "centralauth-prefs-view": "Foydalanuvchi haqida global maʼlumotlarni koʻrish",
-    "centralauth-logout-progress": "{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:",
-    "centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi"
+	"@metadata": {
+		"authors": [
+			"CoderSI",
+			"Sociologist"
+		]
+	},
+	"centralauth-groupname": "Vikimedia Fondi",
+	"centralauth-merge-method-login-desc": "Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.",
+	"centralauth-finish-password": "Maxfiy soʻz:",
+	"centralauth-admin-info-username": "Foydalanuvchi nomi:",
+	"centralauth-prefs-status": "Global hisob holati:",
+	"centralauth-prefs-complete": "Hammasi joyida!",
+	"centralauth-prefs-count-attached": "Hisob yozuvingiz $1 ta {{PLURAL:$1|loyihada}} faol.",
+	"centralauth-prefs-count-unattached": "Hisob yozuvingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
+	"centralauth-prefs-manage": "Global hisob yozuvini boshqarish",
+	"centralauth-prefs-view": "Foydalanuvchi haqida global maʼlumotlarni koʻrish",
+	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:",
+	"centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi"
 }

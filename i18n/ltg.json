@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Dark Eagle"
-        ]
-    },
-    "centralauth-merge-dryrun-or": "'''ci'''",
-    "centralauth-finish-password": "Paroļs:",
-    "centralauth-admin-yes": "nui",
-    "centralauth-admin-no": "nā",
-    "centralauth-admin-reason": "Īmesle:",
-    "centralauth-editgroup-reason": "Īmesle:",
-    "centralauth-editset-name": "Pasauka:",
-    "centralauth-editset-reason": "Īmesle:"
+	"@metadata": {
+		"authors": [
+			"Dark Eagle"
+		]
+	},
+	"centralauth-merge-dryrun-or": "'''ci'''",
+	"centralauth-finish-password": "Paroļs:",
+	"centralauth-admin-yes": "nui",
+	"centralauth-admin-no": "nā",
+	"centralauth-admin-reason": "Īmesle:",
+	"centralauth-editgroup-reason": "Īmesle:",
+	"centralauth-editset-name": "Pasauka:",
+	"centralauth-editset-reason": "Īmesle:"
 }

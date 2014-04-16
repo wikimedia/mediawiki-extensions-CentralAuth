@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kernoweger",
-            "Nrowe"
-        ]
-    },
-    "centralauth-groupname": "an Fondyans Wikimedia",
-    "centralauth-prefs-status": "Studh agas akont ollvysel:",
-    "centralauth-prefs-not-managed": "Nyns esowgh ow tevnydhya akont ollvysel",
-    "centralauth-prefs-unattached": "Heb y afydhya",
-    "centralauth-prefs-complete": "Puptra yw da!",
-    "centralauth-prefs-migration": "Ow tivroa",
-    "centralauth-prefs-count-attached": "Byw yw agas akont war $1 {{PLURAL:$1|wiasva|gwiasva}} ragdres.",
-    "centralauth-prefs-count-unattached": "Yma akontow heb aga afydhya a's teves agas hanow hwath war $1 {{PLURAL:$1|ragdres}}.",
-    "centralauth-prefs-detail-unattached": "Ny afydhyas bos an akont ollvysel perhennek an wiasva ragdres-ma.",
-    "centralauth-prefs-manage": "Dyghtya agas akont ollvysel",
-    "centralauth-prefs-view": "Gweles kedhlow an devnydhyer ollvysel",
-    "centralauth-renameuser-merged": "An devnydhyer $1 re beu divroas dhe'n system omgelmi kesunyes.\nY dhashenwel a gaws distaga an devnydhyer leel dhyworth an huni ollvysel.",
-    "centralauth-renameuser-reserved": "Gwithys yw an hanow devnydhyer $2 rag akont ollvysel.",
-    "centralauth-account-exists": "Ny yllir gwruthyl an akont; kemerys yw an hanow devnydhyer govynnys seulabrys y'n system omgelmi kesunyes.",
-    "centralauth-account-exists-reset": "Nyns yw an hanow devnydhyer $1 kovskrifys war an wiki-ma, mes yma y'n system omgelmi kesunyes.",
-    "centralauth-login-progress": "Orth agas omgelmi orth wikiow {{int:Centralauth-groupname}}:",
-    "centralauth-logout-progress": "Orth agas digelmi dhyworth wikiow erel {{int:Centralauth-groupname}}:"
+	"@metadata": {
+		"authors": [
+			"Kernoweger",
+			"Nrowe"
+		]
+	},
+	"centralauth-groupname": "an Fondyans Wikimedia",
+	"centralauth-prefs-status": "Studh agas akont ollvysel:",
+	"centralauth-prefs-not-managed": "Nyns esowgh ow tevnydhya akont ollvysel",
+	"centralauth-prefs-unattached": "Heb y afydhya",
+	"centralauth-prefs-complete": "Puptra yw da!",
+	"centralauth-prefs-migration": "Ow tivroa",
+	"centralauth-prefs-count-attached": "Byw yw agas akont war $1 {{PLURAL:$1|wiasva|gwiasva}} ragdres.",
+	"centralauth-prefs-count-unattached": "Yma akontow heb aga afydhya a's teves agas hanow hwath war $1 {{PLURAL:$1|ragdres}}.",
+	"centralauth-prefs-detail-unattached": "Ny afydhyas bos an akont ollvysel perhennek an wiasva ragdres-ma.",
+	"centralauth-prefs-manage": "Dyghtya agas akont ollvysel",
+	"centralauth-prefs-view": "Gweles kedhlow an devnydhyer ollvysel",
+	"centralauth-renameuser-merged": "An devnydhyer $1 re beu divroas dhe'n system omgelmi kesunyes.\nY dhashenwel a gaws distaga an devnydhyer leel dhyworth an huni ollvysel.",
+	"centralauth-renameuser-reserved": "Gwithys yw an hanow devnydhyer $2 rag akont ollvysel.",
+	"centralauth-account-exists": "Ny yllir gwruthyl an akont; kemerys yw an hanow devnydhyer govynnys seulabrys y'n system omgelmi kesunyes.",
+	"centralauth-account-exists-reset": "Nyns yw an hanow devnydhyer $1 kovskrifys war an wiki-ma, mes yma y'n system omgelmi kesunyes.",
+	"centralauth-login-progress": "Orth agas omgelmi orth wikiow {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Orth agas digelmi dhyworth wikiow erel {{int:Centralauth-groupname}}:"
 }

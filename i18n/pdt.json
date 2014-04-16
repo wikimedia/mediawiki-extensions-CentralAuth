@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Slomox"
-        ]
-    },
-    "centralauth-finish-password": "Passwuat:",
-    "centralauth-admin-username": "Bruckernome:"
+	"@metadata": {
+		"authors": [
+			"Slomox"
+		]
+	},
+	"centralauth-finish-password": "Passwuat:",
+	"centralauth-admin-username": "Bruckernome:"
 }

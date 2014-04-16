@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Herr Kriss"
-        ]
-    },
-    "centralauth-merge-dryrun-or": "'''abo'''",
-    "centralauth-admin-yes": "ja",
-    "centralauth-admin-no": "ńy"
+	"@metadata": {
+		"authors": [
+			"Herr Kriss"
+		]
+	},
+	"centralauth-merge-dryrun-or": "'''abo'''",
+	"centralauth-admin-yes": "ja",
+	"centralauth-admin-no": "ńy"
 }

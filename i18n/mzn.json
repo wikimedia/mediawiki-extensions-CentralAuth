@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mehdi",
-            "محک"
-        ]
-    },
-    "centralauth-merge-method-login": "بساته بَیی، دله بموئن په",
-    "centralauth-admin-blocked-indef": "بی‌پایون قطع‌دسترسی بیه. ونه دلیل:$1",
-    "centralauth-admin-multi-bot": "تازه دگاردسته‌ئون"
+	"@metadata": {
+		"authors": [
+			"Mehdi",
+			"محک"
+		]
+	},
+	"centralauth-merge-method-login": "بساته بَیی، دله بموئن په",
+	"centralauth-admin-blocked-indef": "بی‌پایون قطع‌دسترسی بیه. ونه دلیل:$1",
+	"centralauth-admin-multi-bot": "تازه دگاردسته‌ئون"
 }

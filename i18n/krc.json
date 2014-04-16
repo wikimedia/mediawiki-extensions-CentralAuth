@@ -1,29 +1,29 @@
 {
-    "@metadata": {
-        "authors": [
-            "Iltever"
-        ]
-    },
-    "centralauth-admin-yes": "хоу",
-    "centralauth-admin-no": "огъай",
-    "centralauth-admin-delete-button": "Бу аккаунтну кетер",
-    "centralauth-admin-reason": "Чурум:",
-    "globalusers": "Къошулуучуланы глобал списогу",
-    "centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} алгъа",
-    "centralauth-minutes-ago": "$1 {{PLURAL:$1|минут}} алгъа",
-    "centralauth-hours-ago": "$1 {{PLURAL:$1|сагъат}} алгъа",
-    "centralauth-days-ago": "$1 {{PLURAL:$1|кюн}} алгъа",
-    "centralauth-months-ago": "$1 {{PLURAL:$1|ай}} алгъа",
-    "centralauth-years-ago": "$1 {{PLURAL:$1|джыл}} алгъа",
-    "centralauth-prefs-status": "Глобал тергеу джазыуну халы:",
-    "centralauth-prefs-complete": "Хар не да табды!",
-    "centralauth-prefs-count-attached": "Сизни тергеу джазыуугъуз $1 {{PLURAL:$1|1=проектде|проектде}} тириди.",
-    "centralauth-prefs-manage": "Глобал тергеу джазыуну джюрютюу",
-    "centralauth-prefs-view": "Къошулуучуну юсюнден глобал билгилеге къарау",
-    "centralauth-login-progress": "Сеанс Викимедиа Фондну башха проектлеринде да хайырланады:",
-    "centralauth-logout-progress": "Сеанс Викимедиа Фондну башха проектлеринде да бошалгъанды:",
-    "globalgrouppermissions": "Глобал группаланы джюрютюу",
-    "centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|къарау/тюрлендириу]])",
-    "centralauth-editgroup-reason": "Чурум:",
-    "centralauth-editgroup-editsets": "([[Special:EditWikiSets|тюрлендир]])"
+	"@metadata": {
+		"authors": [
+			"Iltever"
+		]
+	},
+	"centralauth-admin-yes": "хоу",
+	"centralauth-admin-no": "огъай",
+	"centralauth-admin-delete-button": "Бу аккаунтну кетер",
+	"centralauth-admin-reason": "Чурум:",
+	"globalusers": "Къошулуучуланы глобал списогу",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} алгъа",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|минут}} алгъа",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|сагъат}} алгъа",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|кюн}} алгъа",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|ай}} алгъа",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|джыл}} алгъа",
+	"centralauth-prefs-status": "Глобал тергеу джазыуну халы:",
+	"centralauth-prefs-complete": "Хар не да табды!",
+	"centralauth-prefs-count-attached": "Сизни тергеу джазыуугъуз $1 {{PLURAL:$1|1=проектде|проектде}} тириди.",
+	"centralauth-prefs-manage": "Глобал тергеу джазыуну джюрютюу",
+	"centralauth-prefs-view": "Къошулуучуну юсюнден глобал билгилеге къарау",
+	"centralauth-login-progress": "Сеанс Викимедиа Фондну башха проектлеринде да хайырланады:",
+	"centralauth-logout-progress": "Сеанс Викимедиа Фондну башха проектлеринде да бошалгъанды:",
+	"globalgrouppermissions": "Глобал группаланы джюрютюу",
+	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|къарау/тюрлендириу]])",
+	"centralauth-editgroup-reason": "Чурум:",
+	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|тюрлендир]])"
 }

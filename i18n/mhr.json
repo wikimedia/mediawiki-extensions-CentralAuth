@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Сай"
-        ]
-    },
-    "centralauth-finish-password": "Шолыпмут:",
-    "centralauth-admin-username": "Пайдаланышын лӱмжӧ:",
-    "centralauth-admin-reason": "Амал:",
-    "centralauth-editset-reason": "Амал:"
+	"@metadata": {
+		"authors": [
+			"Сай"
+		]
+	},
+	"centralauth-finish-password": "Шолыпмут:",
+	"centralauth-admin-username": "Пайдаланышын лӱмжӧ:",
+	"centralauth-admin-reason": "Амал:",
+	"centralauth-editset-reason": "Амал:"
 }

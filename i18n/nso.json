@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mohau"
-        ]
-    },
-    "centralauth-foreign-link": "Mošomiši $1 go $2",
-    "centralauth-finish-password": "Ditlhaka tša siphiri:",
-    "centralauth-admin-username": "Leina la mošomiši:"
+	"@metadata": {
+		"authors": [
+			"Mohau"
+		]
+	},
+	"centralauth-foreign-link": "Mošomiši $1 go $2",
+	"centralauth-finish-password": "Ditlhaka tša siphiri:",
+	"centralauth-admin-username": "Leina la mošomiši:"
 }

@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Zanatos"
-        ]
-    },
-    "centralauth-admin-yes": "yah",
-    "centralauth-admin-no": "oho"
+	"@metadata": {
+		"authors": [
+			"Zanatos"
+		]
+	},
+	"centralauth-admin-yes": "yah",
+	"centralauth-admin-no": "oho"
 }

@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "Karthi.dr",
-            "Thakurji"
-        ]
-    },
-    "centralauth-merge-method-empty": "koi yogdaan nai hae",
-    "centralauth-finish-password": "Password:",
-    "centralauth-finish-login": "Login karo",
-    "centralauth-admin-username": "Sadasya ke naam:",
-    "centralauth-admin-info-id": "Sadasya ke ID:",
-    "centralauth-admin-yes": "haan",
-    "centralauth-admin-no": "nai",
-    "centralauth-admin-list-editcount": "Badlao count",
-    "centralauth-admin-reason": "Kaaran:",
-    "centralauth-admin-reason-other": "Duusra/aur kaaran:",
-    "centralauth-editgroup-noset": "(kuchh nai)",
-    "centralauth-editgroup-reason": "Kaaran:",
-    "centralauth-editset-name": "Naam:",
-    "centralauth-editset-reason": "Kaaran:",
-    "centralauth-editset-submit": "Submit karo",
-    "centralauth-editset-submit-delete": "Mitao",
-    "centralauth-editset-nouse": "(kuchh nai)"
+	"@metadata": {
+		"authors": [
+			"Karthi.dr",
+			"Thakurji"
+		]
+	},
+	"centralauth-merge-method-empty": "koi yogdaan nai hae",
+	"centralauth-finish-password": "Password:",
+	"centralauth-finish-login": "Login karo",
+	"centralauth-admin-username": "Sadasya ke naam:",
+	"centralauth-admin-info-id": "Sadasya ke ID:",
+	"centralauth-admin-yes": "haan",
+	"centralauth-admin-no": "nai",
+	"centralauth-admin-list-editcount": "Badlao count",
+	"centralauth-admin-reason": "Kaaran:",
+	"centralauth-admin-reason-other": "Duusra/aur kaaran:",
+	"centralauth-editgroup-noset": "(kuchh nai)",
+	"centralauth-editgroup-reason": "Kaaran:",
+	"centralauth-editset-name": "Naam:",
+	"centralauth-editset-reason": "Kaaran:",
+	"centralauth-editset-submit": "Submit karo",
+	"centralauth-editset-submit-delete": "Mitao",
+	"centralauth-editset-nouse": "(kuchh nai)"
 }

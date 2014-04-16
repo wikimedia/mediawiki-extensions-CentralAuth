@@ -1,24 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "Srtxg"
-        ]
-    },
-    "centralauth-groupname": "del Fondåcion Wikimedia",
-    "centralauth-merge-step3-detail": "Asteure, vos estoz presse po-z ahiver on conte unike, avou les Wikis ki shuvèt:",
-    "centralauth-complete": "Li rmetaedje-eshonne des contes est tot fwait!",
-    "centralauth-incomplete": "Li rmetaedje-eshonne des contes n' a nén stî tot fwait !",
-    "centralauth-complete-text": "Asteure, vos vos ploz raloyî a tolminme ké  pordjet {{int:Centralauth-groupname}}, sins aveur dandjî d' on novea conte; li minme no d’uzeu et l' minme sicret rotnut avou totes les waibes et tos les lingaedjes do pordjet.",
-    "centralauth-incomplete-text": "On côp k' les contes seront rmetous eshonne, vos vos pôroz raloyî so tolminme ké pordjet {{int:Centralauth-groupname}} sins aveur a-z ahiver on novea conte; li minme no d' uzeu et di scret iront po totes les waibes et tos les lingaedjes do pordjet.",
-    "centralauth-finish-password": "Sicret:",
-    "centralauth-attach-list-attached": "Li conte unike «$1» comprind les contes ki shuvnut:",
-    "centralauth-attach-title": "Acertiner l' conte",
-    "centralauth-attach-text": "Ci conte ci n’ a nén co stî rmetou avou vosse conte unike.\nSi l' conte unike, c' est da vosse ossu, vos les ploz rmete eshonne tot tapant li scret do conte unike:",
-    "centralauth-attach-submit": "Rimete les contes eshonne",
-    "centralauth-attach-success": "Li conte a stî rmetou sol conte unike.",
-    "centralauth-admin-username": "No d' elodjaedje:",
-    "centralauth-admin-yes": "oyi",
-    "centralauth-admin-no": "neni",
-    "centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|conte|contes}} rischåyîs comifåt",
-    "centralauth-account-exists": "Vos n' sårîz ahiver ç' conte la: li no d' uzeu est ddja eployî dins l' sistinme des contes unikes."
+	"@metadata": {
+		"authors": [
+			"Srtxg"
+		]
+	},
+	"centralauth-groupname": "del Fondåcion Wikimedia",
+	"centralauth-merge-step3-detail": "Asteure, vos estoz presse po-z ahiver on conte unike, avou les Wikis ki shuvèt:",
+	"centralauth-complete": "Li rmetaedje-eshonne des contes est tot fwait!",
+	"centralauth-incomplete": "Li rmetaedje-eshonne des contes n' a nén stî tot fwait !",
+	"centralauth-complete-text": "Asteure, vos vos ploz raloyî a tolminme ké  pordjet {{int:Centralauth-groupname}}, sins aveur dandjî d' on novea conte; li minme no d’uzeu et l' minme sicret rotnut avou totes les waibes et tos les lingaedjes do pordjet.",
+	"centralauth-incomplete-text": "On côp k' les contes seront rmetous eshonne, vos vos pôroz raloyî so tolminme ké pordjet {{int:Centralauth-groupname}} sins aveur a-z ahiver on novea conte; li minme no d' uzeu et di scret iront po totes les waibes et tos les lingaedjes do pordjet.",
+	"centralauth-finish-password": "Sicret:",
+	"centralauth-attach-list-attached": "Li conte unike «$1» comprind les contes ki shuvnut:",
+	"centralauth-attach-title": "Acertiner l' conte",
+	"centralauth-attach-text": "Ci conte ci n’ a nén co stî rmetou avou vosse conte unike.\nSi l' conte unike, c' est da vosse ossu, vos les ploz rmete eshonne tot tapant li scret do conte unike:",
+	"centralauth-attach-submit": "Rimete les contes eshonne",
+	"centralauth-attach-success": "Li conte a stî rmetou sol conte unike.",
+	"centralauth-admin-username": "No d' elodjaedje:",
+	"centralauth-admin-yes": "oyi",
+	"centralauth-admin-no": "neni",
+	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|conte|contes}} rischåyîs comifåt",
+	"centralauth-account-exists": "Vos n' sårîz ahiver ç' conte la: li no d' uzeu est ddja eployî dins l' sistinme des contes unikes."
 }

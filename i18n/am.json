@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Codex Sinaiticus"
-        ]
-    },
-    "centralauth-admin-yes": "አዎ",
-    "centralauth-admin-reason": "ምክንያት:",
-    "centralauth-editset-name": "ስም:",
-    "centralauth-editset-reason": "ምክንያት:"
+	"@metadata": {
+		"authors": [
+			"Codex Sinaiticus"
+		]
+	},
+	"centralauth-admin-yes": "አዎ",
+	"centralauth-admin-reason": "ምክንያት:",
+	"centralauth-editset-name": "ስም:",
+	"centralauth-editset-reason": "ምክንያት:"
 }

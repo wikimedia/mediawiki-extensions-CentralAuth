@@ -1,26 +1,26 @@
 {
-    "@metadata": {
-        "authors": [
-            "Rachitrali"
-        ]
-    },
-    "centralauth-admin-info-id": "ممبارو لمبار:/User ID:",
-    "centralauth-admin-info-registered": "رجسٹرڈ:",
-    "centralauth-admin-info-locked": "بند:",
-    "centralauth-admin-yes": "دی",
-    "centralauth-admin-no": "نو",
-    "centralauth-admin-blocklog": "پاوبندی لیگیکو چٹ",
-    "centralauth-admin-list-localwiki": "مقامی وکی",
-    "centralauth-admin-list-attached-on": "منسلک شیر/Attached on",
-    "centralauth-admin-list-method": "طریقہ کار",
-    "centralauth-admin-list-editcount": "اشمارا ترمیم کورے",
-    "centralauth-admin-list-blocked": "بلاک کاردو/Blocked",
-    "centralauth-admin-unmerge": "منتخب نو کاردو ضم/Unmerge selected",
-    "centralauth-admin-merge": "منتخب ضم/Merge selected",
-    "centralauth-admin-bad-input": "باطل ضم انتخاب/Invalid merge selection",
-    "centralauth-admin-none-selected": "کا اکاؤنٹسا ترمیمو بچے منتخب آریر.",
-    "centralauth-admin-delete-title": "اکاؤنٹو خارج کورے",
-    "centralauth-admin-delete-button": "ھیہ اکاؤنٹو حذف کورے(بوغاوے)",
-    "centralauth-admin-reason": "واجھہ",
-    "centralauth-admin-status-hidden": "کھوشت"
+	"@metadata": {
+		"authors": [
+			"Rachitrali"
+		]
+	},
+	"centralauth-admin-info-id": "ممبارو لمبار:/User ID:",
+	"centralauth-admin-info-registered": "رجسٹرڈ:",
+	"centralauth-admin-info-locked": "بند:",
+	"centralauth-admin-yes": "دی",
+	"centralauth-admin-no": "نو",
+	"centralauth-admin-blocklog": "پاوبندی لیگیکو چٹ",
+	"centralauth-admin-list-localwiki": "مقامی وکی",
+	"centralauth-admin-list-attached-on": "منسلک شیر/Attached on",
+	"centralauth-admin-list-method": "طریقہ کار",
+	"centralauth-admin-list-editcount": "اشمارا ترمیم کورے",
+	"centralauth-admin-list-blocked": "بلاک کاردو/Blocked",
+	"centralauth-admin-unmerge": "منتخب نو کاردو ضم/Unmerge selected",
+	"centralauth-admin-merge": "منتخب ضم/Merge selected",
+	"centralauth-admin-bad-input": "باطل ضم انتخاب/Invalid merge selection",
+	"centralauth-admin-none-selected": "کا اکاؤنٹسا ترمیمو بچے منتخب آریر.",
+	"centralauth-admin-delete-title": "اکاؤنٹو خارج کورے",
+	"centralauth-admin-delete-button": "ھیہ اکاؤنٹو حذف کورے(بوغاوے)",
+	"centralauth-admin-reason": "واجھہ",
+	"centralauth-admin-status-hidden": "کھوشت"
 }

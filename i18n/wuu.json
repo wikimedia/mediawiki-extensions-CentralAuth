@@ -1,8 +1,6 @@
 {
-    "@metadata": {
-        "authors": []
-    },
-    "centralauth-admin-reason": "理由：",
-    "centralauth-editgroup-reason": "理由：",
-    "centralauth-editset-reason": "理由："
+	"@metadata": [],
+	"centralauth-admin-reason": "理由：",
+	"centralauth-editgroup-reason": "理由：",
+	"centralauth-editset-reason": "理由："
 }

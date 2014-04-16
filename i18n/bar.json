@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bua333",
-            "Mucalexx"
-        ]
-    },
-    "mergeaccount": "Staatus voh da Benutzerkontozåmmfyrung",
-    "centralauth-groupname": "vo da Wikimedia Foundation",
-    "centralauth-desc": "Dameeglicht a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmmfyrn voh Benutzerkontos in Wikis ({{int:Centralauth-groupname}})",
-    "centralauth-mergeaccount-desc": "Ergänzt a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmfyrn voh mererne Benutzerkontos fys ''Single User Login''",
-    "centralauth-merge-denied": "Tschudige, ower du host koah Berechtigung fyr de Seiten do.",
-    "centralauth-merge-step1-title": "Auhfaung voh da Benutzerkóntó-Zaummfiarung",
-    "centralauth-merge-step1-detail": "Bittscheh gib deih Posswort eih.\nEs werd zaumm mid deiner eihtroogernen E-Mail-Adress mid Benutzerkontos in d' aundern Wikis obglichen, um Ywereihstimmungen z' finden.\nEs werd koah Änderrung vurgnummer, bis du bstätigst, daas oiss richtig is.",
-    "centralauth-merge-step1-submit": "Auhmödeinformaziónen bstäting",
-    "centralauth-merge-step2-title": "Weiderne Benutzerkontós bstäting",
-    "centralauth-list-home-title": "Hoamadwiki",
-    "centralauth-merge-method-primary": "Hoamadwiki",
-    "centralauth-merge-method-empty": "koane Benutzerbeitrég",
-    "centralauth-merge-method-mail": "bstäting durch E-Mail-Adress",
-    "centralauth-merge-method-password": "bstäting durch Posswort",
-    "centralauth-merge-method-admin": "durch an Administraator zåmmgfyrds Benutzerkontó",
-    "centralauth-merge-method-new": "neichs Benutzerkontó",
-    "centralauth-admin-username": "Benutzernåm:",
-    "centralauth-admin-yes": "jo",
-    "centralauth-admin-no": "na",
-    "centralauth-admin-list-editcount": "Beorweitungszöer",
-    "centralauth-admin-delete-button": "Dés Benutzerkóntó léschen",
-    "centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|beorweiten]])",
-    "centralauth-editgroup-editsets": "([[Special:EditWikiSets|beorweiten]])"
+	"@metadata": {
+		"authors": [
+			"Bua333",
+			"Mucalexx"
+		]
+	},
+	"mergeaccount": "Staatus voh da Benutzerkontozåmmfyrung",
+	"centralauth-groupname": "vo da Wikimedia Foundation",
+	"centralauth-desc": "Dameeglicht a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmmfyrn voh Benutzerkontos in Wikis ({{int:Centralauth-groupname}})",
+	"centralauth-mergeaccount-desc": "Ergänzt a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmfyrn voh mererne Benutzerkontos fys ''Single User Login''",
+	"centralauth-merge-denied": "Tschudige, ower du host koah Berechtigung fyr de Seiten do.",
+	"centralauth-merge-step1-title": "Auhfaung voh da Benutzerkóntó-Zaummfiarung",
+	"centralauth-merge-step1-detail": "Bittscheh gib deih Posswort eih.\nEs werd zaumm mid deiner eihtroogernen E-Mail-Adress mid Benutzerkontos in d' aundern Wikis obglichen, um Ywereihstimmungen z' finden.\nEs werd koah Änderrung vurgnummer, bis du bstätigst, daas oiss richtig is.",
+	"centralauth-merge-step1-submit": "Auhmödeinformaziónen bstäting",
+	"centralauth-merge-step2-title": "Weiderne Benutzerkontós bstäting",
+	"centralauth-list-home-title": "Hoamadwiki",
+	"centralauth-merge-method-primary": "Hoamadwiki",
+	"centralauth-merge-method-empty": "koane Benutzerbeitrég",
+	"centralauth-merge-method-mail": "bstäting durch E-Mail-Adress",
+	"centralauth-merge-method-password": "bstäting durch Posswort",
+	"centralauth-merge-method-admin": "durch an Administraator zåmmgfyrds Benutzerkontó",
+	"centralauth-merge-method-new": "neichs Benutzerkontó",
+	"centralauth-admin-username": "Benutzernåm:",
+	"centralauth-admin-yes": "jo",
+	"centralauth-admin-no": "na",
+	"centralauth-admin-list-editcount": "Beorweitungszöer",
+	"centralauth-admin-delete-button": "Dés Benutzerkóntó léschen",
+	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|beorweiten]])",
+	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|beorweiten]])"
 }

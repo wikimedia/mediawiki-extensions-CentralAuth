@@ -1,34 +1,34 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ukabia"
-        ]
-    },
-    "centralauth-merge-method-primary": "wiki nke úlọ",
-    "centralauth-finish-password": "Okwúngáfè:",
-    "centralauth-finish-login": "Banyé",
-    "centralauth-admin-info-id": "ID ọ'bànifé:",
-    "centralauth-admin-info-home": "Wiki nke úlọ:",
-    "centralauth-admin-info-locked": "Gbàchịrị:",
-    "centralauth-admin-yes": "eeh",
-    "centralauth-admin-no": "mbà",
-    "centralauth-admin-list-blocked": "Kàchịrị",
-    "centralauth-admin-reason": "Mgbághapụtà:",
-    "centralauth-admin-status-hidden": "Zonarịrị:",
-    "centralauth-listusers-locked": "gbàchịrị",
-    "centralauth-hours-ago": "{{PLURAL:$1|àmànì|àmànì}} $1 gárá",
-    "centralauth-days-ago": "{{PLURAL:$1|chi|chi}} $1 gárá",
-    "centralauth-months-ago": "{{PLURAL:$1|önwa|önwa}} $1 gárá",
-    "centralauth-years-ago": "{PLURAL:$1|afọr|afọr}} $1 gárá",
-    "centralauth-log-status-locked": "gbàchịrị",
-    "centralauth-log-status-none": "(efù)",
-    "centralauth-editgroup-subtitle": "I rüwa $1",
-    "centralauth-editgroup-reason": "Mgbághapụtà:",
-    "centralauth-editset-name": "Áhà:",
-    "centralauth-editset-type": "Ùdị:",
-    "centralauth-editset-wikis": "Wiki:",
-    "centralauth-editset-reason": "Mgbághapụtà:",
-    "centralauth-editset-submit": "Dànyé",
-    "centralauth-editset-submit-delete": "Kàcha",
-    "centralauth-editset-nouse": "(efù)"
+	"@metadata": {
+		"authors": [
+			"Ukabia"
+		]
+	},
+	"centralauth-merge-method-primary": "wiki nke úlọ",
+	"centralauth-finish-password": "Okwúngáfè:",
+	"centralauth-finish-login": "Banyé",
+	"centralauth-admin-info-id": "ID ọ'bànifé:",
+	"centralauth-admin-info-home": "Wiki nke úlọ:",
+	"centralauth-admin-info-locked": "Gbàchịrị:",
+	"centralauth-admin-yes": "eeh",
+	"centralauth-admin-no": "mbà",
+	"centralauth-admin-list-blocked": "Kàchịrị",
+	"centralauth-admin-reason": "Mgbághapụtà:",
+	"centralauth-admin-status-hidden": "Zonarịrị:",
+	"centralauth-listusers-locked": "gbàchịrị",
+	"centralauth-hours-ago": "{{PLURAL:$1|àmànì|àmànì}} $1 gárá",
+	"centralauth-days-ago": "{{PLURAL:$1|chi|chi}} $1 gárá",
+	"centralauth-months-ago": "{{PLURAL:$1|önwa|önwa}} $1 gárá",
+	"centralauth-years-ago": "{PLURAL:$1|afọr|afọr}} $1 gárá",
+	"centralauth-log-status-locked": "gbàchịrị",
+	"centralauth-log-status-none": "(efù)",
+	"centralauth-editgroup-subtitle": "I rüwa $1",
+	"centralauth-editgroup-reason": "Mgbághapụtà:",
+	"centralauth-editset-name": "Áhà:",
+	"centralauth-editset-type": "Ùdị:",
+	"centralauth-editset-wikis": "Wiki:",
+	"centralauth-editset-reason": "Mgbághapụtà:",
+	"centralauth-editset-submit": "Dànyé",
+	"centralauth-editset-submit-delete": "Kàcha",
+	"centralauth-editset-nouse": "(efù)"
 }

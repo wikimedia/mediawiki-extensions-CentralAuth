@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Jose77"
-        ]
-    },
-    "centralauth-finish-password": "Kontra-senyas:",
-    "centralauth-finish-login": "Mag sulod",
-    "centralauth-admin-username": "Ngalan sang Manog-gamit:",
-    "centralauth-admin-reason": "Rason:"
+	"@metadata": {
+		"authors": [
+			"Jose77"
+		]
+	},
+	"centralauth-finish-password": "Kontra-senyas:",
+	"centralauth-finish-login": "Mag sulod",
+	"centralauth-admin-username": "Ngalan sang Manog-gamit:",
+	"centralauth-admin-reason": "Rason:"
 }

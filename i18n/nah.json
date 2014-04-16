@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fluence",
-            "Ricardo gs",
-            "Teòtlalili"
-        ]
-    },
-    "centralauth-merge-dryrun-or": "'''nòso'''",
-    "centralauth-list-home-title": "Wikichànë",
-    "centralauth-merge-method-primary": "wikinelwatl",
-    "centralauth-admin-username": "Tlatequitiltilīltōcāitl:",
-    "centralauth-admin-info-id": "Tlatequitiltilīlli ID:",
-    "centralauth-admin-yes": "quēmah",
-    "centralauth-admin-no": "ahmo",
-    "centralauth-admin-reason": "Tlèka:",
-    "centralauth-editgroup-noset": "(ahtlein)",
-    "centralauth-editset-name": "Tōcāitl:",
-    "centralauth-editset-reason": "Tlèka:"
+	"@metadata": {
+		"authors": [
+			"Fluence",
+			"Ricardo gs",
+			"Teòtlalili"
+		]
+	},
+	"centralauth-merge-dryrun-or": "'''nòso'''",
+	"centralauth-list-home-title": "Wikichànë",
+	"centralauth-merge-method-primary": "wikinelwatl",
+	"centralauth-admin-username": "Tlatequitiltilīltōcāitl:",
+	"centralauth-admin-info-id": "Tlatequitiltilīlli ID:",
+	"centralauth-admin-yes": "quēmah",
+	"centralauth-admin-no": "ahmo",
+	"centralauth-admin-reason": "Tlèka:",
+	"centralauth-editgroup-noset": "(ahtlein)",
+	"centralauth-editset-name": "Tōcāitl:",
+	"centralauth-editset-reason": "Tlèka:"
 }

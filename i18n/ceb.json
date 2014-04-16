@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Abastillas"
-        ]
-    },
-    "centralauth-finish-password": "Pasword:",
-    "centralauth-finish-login": "Dayon",
-    "centralauth-finish-send-confirmation": "I-''e-mail'' ang pasword",
-    "centralauth-admin-username": "Ngalan",
-    "centralauth-admin-reason": "Rason:",
-    "centralauth-seconds-ago": "$1 {{PLURAL:$1|ka segundo|ka segundo}} ang milabay",
-    "centralauth-minutes-ago": "$1 {{PLURAL:$1|ka gutlo|ka gutlo}} ang milabay",
-    "centralauth-hours-ago": "$1 {{PLURAL:$1|ka oras|ka oras}} ang milabay",
-    "centralauth-days-ago": "$1 {{PLURAL:$1|ka adlaw|ka adlaw}} ang milabay",
-    "centralauth-months-ago": "$1 {{PLURAL:$1|ka bulan|ka bulan}} ang milabay",
-    "centralauth-years-ago": "$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay"
+	"@metadata": {
+		"authors": [
+			"Abastillas"
+		]
+	},
+	"centralauth-finish-password": "Pasword:",
+	"centralauth-finish-login": "Dayon",
+	"centralauth-finish-send-confirmation": "I-''e-mail'' ang pasword",
+	"centralauth-admin-username": "Ngalan",
+	"centralauth-admin-reason": "Rason:",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|ka segundo|ka segundo}} ang milabay",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|ka gutlo|ka gutlo}} ang milabay",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|ka oras|ka oras}} ang milabay",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|ka adlaw|ka adlaw}} ang milabay",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|ka bulan|ka bulan}} ang milabay",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|ka tuig|ka tuig}} ang milabay"
 }
