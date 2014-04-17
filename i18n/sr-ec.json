@@ -202,6 +202,7 @@
 	"centralauth-rightslog-set-optout": "засновани на одустајању",
 	"centralautologin": "Јединствена пријава",
 	"centralauth-centralautologin-logged-in": "Јединствено сте пријављени као $1. Освежите страницу да примените ваша корисничка подешавања.",
+	"centralauth-centralautologin-logged-in-nouser": "Јединствено сте пријављени. Освежите страницу да примените ваша корисничка подешавања.",
 	"globalgroupmembership": "Чланство у глобалним групама.",
 	"globalgrouppermissions": "Управљање глобалним групама",
 	"centralauth-globalgroupperms-grouplist": "Следеће глобалне групе су подешене.\nМожете прегледати и мењати права додата групи, уколико имате приступ истој.\nГрупа се брише уклањањем свих права из исте.",
