@@ -67,7 +67,7 @@
 	"centralauth-finish-password": "Ciav:",
 	"centralauth-finish-login": "Rintré ant ël sistema",
 	"centralauth-finish-send-confirmation": "Mandé la ciav për pòsta eletrònica",
-	"centralauth-finish-problems": "Ha-lo dle gran-e, ò pura l'é-lo pa chiel/chila ël titolar d'ës cont-sì? Ch'a varda [[meta:Special:MyLanguage/Help:Unified login|coma trové d'agiut]]...",
+	"centralauth-finish-problems": "Ha-lo dle gran-e, ò pura é-lo pa chiel o chila ël titolar d'ës cont-sì? Ch'a varda [[meta:Special:MyLanguage/Help:Unified login|coma trové d'agiut]]...",
 	"centralauth-finish-noconfirms": "Gnun cont a l'ha podù esse confirmà an dovrand sta ciav-sì.",
 	"centralauth-finish-incomplete": "Vàire cont a son ëstàit unificà an dovrand sta ciav-sì.\nD'àutri cont a son ancó pa stàit confirmà.",
 	"centralauth-merge-attempt": "'''I soma antramentr che i controloma le ciav ch'a l'ha butà con cole dij cont anco' da mës-cé...'''",
