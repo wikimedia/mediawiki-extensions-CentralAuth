@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_26c0467e",
+        "filename": "db_patches/patch-renameuser.sql",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-19T08:43:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeebdf60_3f165ef7",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_bff70ef2",
         "filename": "specials/SpecialGlobalRenameUser.php",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-26T23:58:32Z",
       "side": 1,
       "message": "localuser table is never updated",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_e635aea4",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-19T08:43:29Z",
+      "side": 1,
+      "message": "The LocalRenameUserJob calls RenameuserSQL, which runs two hooks (RenameUserPreRename and RenameUserComplete) which CA listens to and should cause updates to the localuser table. I\u0027ll test it to see what\u0027s not working properly.",
+      "parentUuid": "eeebdf60_bff70ef2",
       "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2013-12-26T23:58:32Z",
       "side": 1,
       "message": "Getting the warning: Did not find alias for special page \u0027RenameProgress\u0027.",
+      "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_a63b3696",
+        "filename": "specials/SpecialRenameProgress.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-19T08:43:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeebdf60_df0652d1",
       "revId": "19d9c8f7e7b6ed53da940c7397dbab002bde60e7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
