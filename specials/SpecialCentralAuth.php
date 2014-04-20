@@ -455,15 +455,21 @@ class SpecialCentralAuth extends SpecialPage {
 	function formatBlockStatus( $row ) {
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
-				$reason = $row['block-reason'];
-				return $this->msg( 'centralauth-admin-blocked-indef', array( $reason ) )->parse();
+				$text = $this->msg( 'centralauth-admin-blocked-indef2' )->parse();
 			} else {
 				$expiry = $this->getLanguage()->timeanddate( $row['block-expiry'], true );
 				$expiryd = $this->getLanguage()->date( $row['block-expiry'], true );
 				$expiryt = $this->getLanguage()->time( $row['block-expiry'], true );
-				$reason = $row['block-reason'];
 
-				$text = $this->msg( 'centralauth-admin-blocked', $expiry, $reason, $expiryd, $expiryt )->parse();
+				$text = $this->msg( 'centralauth-admin-blocked2', $expiry, $expiryd, $expiryt )->parse();
+			}
+
+			if ( $row['block-reason'] ) {
+				$text .= ' ' . $this->msg( 'centralauth-admin-blocked-reason', $row['block-reason'] )->parse();
+			}
+
+			if ( $row['block-expiry'] == 'infinity' ) {
+				return $text;
 			}
 		} else {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
