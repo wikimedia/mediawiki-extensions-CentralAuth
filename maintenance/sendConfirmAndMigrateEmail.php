@@ -71,17 +71,17 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	}
 
 	function resendConfirmationEmail( $username ) {
-		global $wgDBname;
+		$wikiID = wfWikiID();
 
 		$this->total++;
-		$this->output( "Sending confirmation email for: '$username@$wgDBname'\n" );
+		$this->output( "Sending confirmation email for: '$username@$wikiID'\n" );
 
 		// we want to start with the local user
 		$user = EmailableUser::newFromName( $username );
 		$user->load();
 
 		if ( $user->isEmailConfirmed() ) {
-			$this->output( "ERROR: The user '$username@$wgDBname' already has a confirmed email address\n" );
+			$this->output( "ERROR: The user '$username@$wikiID' already has a confirmed email address\n" );
 			return;
 		}
 
@@ -92,7 +92,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			return;
 		}
 		if( !$central->isAttached() ) {
-			$this->output( "ERROR: '$username@$wgDBname' is not attached to the global user\n" );
+			$this->output( "ERROR: '$username@$wikiID' is not attached to the global user\n" );
 			return;
 		}
 
@@ -105,7 +105,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		if ( $user->sendConfirmAndMigrateMail() ) {
 			$this->sent++;
 		} else {
-			$this->output( "ERROR: Sending confirm and migrate email failed for '$username@$wgDBname'\n" );
+			$this->output( "ERROR: Sending confirm and migrate email failed for '$username@$wikiID'\n" );
 		}
 
 	}
