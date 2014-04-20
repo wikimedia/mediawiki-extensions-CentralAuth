@@ -1851,7 +1851,11 @@ class CentralAuthUser extends AuthPluginUser {
 
 		// And while we're in here, look for user blocks :D
 		$result = $db->select( 'ipblocks',
-			array( 'ipb_expiry', 'ipb_reason' ),
+			array(
+				'ipb_expiry', 'ipb_reason', 'ipb_block_email',
+				'ipb_anon_only', 'ipb_create_account', 'ipb_enable_autoblock',
+				'ipb_allow_usertalk',
+			),
 			array( 'ipb_user' => $data['id'] ),
 			__METHOD__ );
 		global $wgLang;
@@ -1859,6 +1863,11 @@ class CentralAuthUser extends AuthPluginUser {
 			if ( $wgLang->formatExpiry( $row->ipb_expiry, TS_MW ) > wfTimestampNow() ) {
 				$data['block-expiry'] = $row->ipb_expiry;
 				$data['block-reason'] = $row->ipb_reason;
+				$data['block-anononly'] = (bool)$row->ipb_anon_only;
+				$data['block-nocreate'] = (bool)$row->ipb_create_account;
+				$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
+				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
+				$data['block-noemail'] = (bool)$row->ipb_block_email;
 				$data['blocked'] = true;
 			}
 		}

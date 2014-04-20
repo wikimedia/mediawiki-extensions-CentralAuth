@@ -454,16 +454,25 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	function formatBlockStatus( $row ) {
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
+			// Prep block options
+			$flags = array();
+			foreach( array( 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ) as $option ) {
+				if ( $row['block-' . $option] ) {
+					$flags[] = $option;
+				}
+			}
+			$flags = implode( ',', $flags );
+			$optionMessage = $flags ? LogPage::formatBlockFlags( $flags, $this->getLanguage() ) : '';
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$reason = $row['block-reason'];
-				return $this->msg( 'centralauth-admin-blocked-indef', array( $reason ) )->parse();
+				return $this->msg( 'centralauth-admin-blocked-indef', array( $reason, $optionMessage ) )->parse();
 			} else {
 				$expiry = $this->getLanguage()->timeanddate( $row['block-expiry'], true );
 				$expiryd = $this->getLanguage()->date( $row['block-expiry'], true );
 				$expiryt = $this->getLanguage()->time( $row['block-expiry'], true );
 				$reason = $row['block-reason'];
 
-				$text = $this->msg( 'centralauth-admin-blocked', $expiry, $reason, $expiryd, $expiryt )->parse();
+				$text = $this->msg( 'centralauth-admin-blocked', $expiry, $reason, $expiryd, $expiryt, $optionMessage )->parse();
 			}
 		} else {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
