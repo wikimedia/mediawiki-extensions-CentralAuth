@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_4c9ec359",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1869,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-04-20T17:15:12Z",
+      "side": 1,
+      "message": "This is backwards. The database column naming is fine. This should be !(bool)$row-\u003eipb_allow_usertalk;",
+      "revId": "bad7d9f2100de734db68ec2afd7d65286449e7e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_6ca17f90",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-04-20T17:15:12Z",
+      "side": 1,
+      "message": "Space needs to be added in the code as there may be no options.\n(The reason field also has this issue but it\u0027s not part of this commit)",
+      "revId": "bad7d9f2100de734db68ec2afd7d65286449e7e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
