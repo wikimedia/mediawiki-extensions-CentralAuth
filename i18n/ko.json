@@ -299,7 +299,7 @@
 	"centralauth-editset-wikis": "위키:",
 	"centralauth-editset-restwikis": "위에 포함되지 않은 위키:",
 	"centralauth-editset-reason": "이유:",
-	"centralauth-editset-submit": "저장",
+	"centralauth-editset-submit": "제출",
 	"centralauth-editset-submit-delete": "삭제",
 	"centralauth-editset-badname": "설정 이름이 잘못되었거나 비었습니다.",
 	"centralauth-editset-badtype": "잘못된 집합 유형입니다.",

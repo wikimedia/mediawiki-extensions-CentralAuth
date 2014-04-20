@@ -232,6 +232,7 @@
 	"centralauth-editset-reason": "Себебі:",
 	"centralauth-editset-submit": "Жіберу",
 	"centralauth-editset-submit-delete": "Жою",
+	"centralauth-editset-setexists": "Мұндай атаумен әлдеқашан бар ма тексеріп алыңыз.",
 	"centralauth-editset-usage": "Пайдаланған топтар:",
 	"right-globalgroupmembership": "Ғаламдық топтарға кіруін өзгерту",
 	"right-centralauth-merge": "Тіркелгілерін біріктіру",
