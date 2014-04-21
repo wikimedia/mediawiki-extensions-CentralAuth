@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_95429e61",
+        "filename": "specials/SpecialRenameProgress.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-04-21T12:36:55Z",
+      "side": 1,
+      "message": "Space after \u0027foreach\u0027.",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
