@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e23439c_4dbb5a23",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-04-21T20:22:04Z",
+      "side": 1,
+      "message": "Can you just use CentralAuthUser-\u003eattachedOn( wfWikiID() ), so we get this out of the cache?",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_edac669f",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-04-21T20:22:04Z",
+      "side": 1,
+      "message": "Since this is called on every logged in page hit, I think this needs to be cached. Currently, we only hit memcache to load the user object on reads.",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_502e518a",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-04-21T20:22:04Z",
+      "side": 1,
+      "message": "Is there a good reason to wait on localnames? I don\u0027t think we could get in a situation where the status table had its row deleted, but the localuser table didn\u0027t get updated... but if we didn\u0027t we potentially are in the situation where a user can take over the edits of another user. It seems like doing all the updates to the centralauth db in one commit would be safer.",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_95429e61",
         "filename": "specials/SpecialRenameProgress.php",
         "patchSetId": 25
