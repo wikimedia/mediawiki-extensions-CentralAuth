@@ -112,8 +112,6 @@
 	"centralauth-admin-list-legend-ro": "Helyi fiókok listája",
 	"centralauth-admin-list-legend-rw": "Helyi fiók leválasztása",
 	"centralauth-admin-unattached": "nem csatolt",
-	"centralauth-admin-blocked": "Blokkolva, lejárat: $3 $4. Indoklás: $2",
-	"centralauth-admin-blocked-indef": "Határozatlan időre blokkolva. Indoklás: $1",
 	"centralauth-admin-blocklog": "blokkolási napló",
 	"centralauth-admin-list-localwiki": "Helyi wiki",
 	"centralauth-admin-list-attached-on": "Csatolás dátuma",

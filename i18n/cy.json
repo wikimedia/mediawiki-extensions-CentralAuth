@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Rhestr y cyfrifon lleol",
 	"centralauth-admin-list-legend-rw": "Dad-gyfuno cyfrifon lleol",
 	"centralauth-admin-unattached": "heb ei atodi",
-	"centralauth-admin-blocked": "Blociwyd, tan $3 am $4.\nRheswm: $2",
-	"centralauth-admin-blocked-indef": "Blociwyd am gyfnod amhenodol.\nRheswm: $1",
 	"centralauth-admin-blocklog": "lòg blocio",
 	"centralauth-admin-list-localwiki": "Wici lleol",
 	"centralauth-admin-list-attached-on": "Atodwyd am",

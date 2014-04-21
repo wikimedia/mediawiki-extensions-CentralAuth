@@ -87,8 +87,6 @@
 	"centralauth-admin-list-legend-ro": "Listi yvir lokalar kontur",
 	"centralauth-admin-list-legend-rw": "Skul sundur lokalar kontur",
 	"centralauth-admin-unattached": "uttan tilknýti",
-	"centralauth-admin-blocked": "Sperring, gongur út $3 kl. $4.\nOrsøk: $2",
-	"centralauth-admin-blocked-indef": "Sperrað í óbestemta tíð.\nOrsøk: $1",
 	"centralauth-admin-blocklog": "sperringarloggur",
 	"centralauth-admin-list-localwiki": "Lokal wiki",
 	"centralauth-admin-list-attached-on": "Tilknýtt á",

@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Lokale-gebroekerslies",
 	"centralauth-admin-list-legend-rw": "Koppel lokaal gebroekers los",
 	"centralauth-admin-unattached": "ónverbónje",
-	"centralauth-admin-blocked": "Geblok mit verloupdatum op $3 bie $4.\nRaej: $2",
-	"centralauth-admin-blocked-indef": "Veur ónbepaolde tied geblokkeerd.\nRaej: $1.",
 	"centralauth-admin-blocklog": "Blokkeerlogbook",
 	"centralauth-admin-list-localwiki": "Lekaol wiki",
 	"centralauth-admin-list-attached-on": "Verbónje op",

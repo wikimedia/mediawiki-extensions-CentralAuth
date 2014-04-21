@@ -100,8 +100,6 @@
 	"centralauth-admin-list-legend-ro": "Zoznam lokálnych účtov",
 	"centralauth-admin-list-legend-rw": "Zrušiť zlúčenie lokálnych účtov",
 	"centralauth-admin-unattached": "nepripojené",
-	"centralauth-admin-blocked": "Zablokovaný do $3 $4. Dôvod: $2",
-	"centralauth-admin-blocked-indef": "Zablokovaný na neurčito. Dôvod: $1",
 	"centralauth-admin-blocklog": "záznam blokovaní",
 	"centralauth-admin-list-localwiki": "Lokálna wiki",
 	"centralauth-admin-list-attached-on": "Pripojené k",

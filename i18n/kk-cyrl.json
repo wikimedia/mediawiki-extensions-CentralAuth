@@ -92,8 +92,6 @@
 	"centralauth-admin-list-legend-ro": "Жергілікті тіркелімдер тізімі",
 	"centralauth-admin-list-legend-rw": "Жергілікті тіркелімдерді біріктірмеу",
 	"centralauth-admin-unattached": "Тіркеспеген",
-	"centralauth-admin-blocked": "Бұғатталған, бітіуге таяу $3  $4.\nСебебі: $2",
-	"centralauth-admin-blocked-indef": "Шексіз бұғатталған.\nСебебі: $1",
 	"centralauth-admin-blocklog": "Бұғаттау журналы",
 	"centralauth-admin-list-localwiki": "Жергілікті уики",
 	"centralauth-admin-list-attached-on": "Қашан тіркелген",

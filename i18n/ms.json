@@ -104,8 +104,6 @@
 	"centralauth-admin-list-legend-ro": "Senarai akaun tempatan",
 	"centralauth-admin-list-legend-rw": "Nyahgabungkan akaun tempatan",
 	"centralauth-admin-unattached": "tidak dicantumkan",
-	"centralauth-admin-blocked": "Disekat dengan tarikh luput pada $3 pukul $4. Alasannya: $2",
-	"centralauth-admin-blocked-indef": "Disekat selama-lamanya. Sebab: $1",
 	"centralauth-admin-blocklog": "log sekatan",
 	"centralauth-admin-list-localwiki": "Wiki tempatan",
 	"centralauth-admin-list-attached-on": "Dicantumkan pada",

@@ -92,8 +92,6 @@
 	"centralauth-admin-list-legend-ro": "Leet o local accoonts",
 	"centralauth-admin-list-legend-rw": "Onmerge local accoonts",
 	"centralauth-admin-unattached": "na attached",
-	"centralauth-admin-blocked": "Blockt, expires $3 at $4.\nRaison: $2",
-	"centralauth-admin-blocked-indef": "Blockt indefinitelie.\nRaison: $1",
 	"centralauth-admin-list-attached-on": "Attached oan",
 	"centralauth-admin-list-method": "Methid",
 	"centralauth-admin-list-editcount": "Eedit coont",

@@ -107,8 +107,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de contas locais",
 	"centralauth-admin-list-legend-rw": "Anular a fusión de contas locais",
 	"centralauth-admin-unattached": "non relacionadas",
-	"centralauth-admin-blocked": "O bloqueo caduca o $3 ás $4. Motivo: $2",
-	"centralauth-admin-blocked-indef": "Bloqueado indefinidamente. Motivo: $1",
 	"centralauth-admin-blocklog": "rexistro de bloqueos",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Relacionadas en",

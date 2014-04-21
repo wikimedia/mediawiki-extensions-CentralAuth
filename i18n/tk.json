@@ -70,8 +70,6 @@
 	"centralauth-admin-list-legend-ro": "Ýerli hasaplaryň sanawy",
 	"centralauth-admin-list-legend-rw": "Ýerli hasaplary bölekle",
 	"centralauth-admin-unattached": "çatylmadyk",
-	"centralauth-admin-blocked": "$3, $4 senesine çenli blokirlenen. Sebäp: $2",
-	"centralauth-admin-blocked-indef": "Möhletsiz blokirlendi. Sebäp: $1",
 	"centralauth-admin-blocklog": "blokirleme gündeligi",
 	"centralauth-admin-list-localwiki": "Ýerli wiki",
 	"centralauth-admin-list-attached-on": "Goşundylanan",

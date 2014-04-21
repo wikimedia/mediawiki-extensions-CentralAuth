@@ -98,8 +98,6 @@
 	"centralauth-admin-list-legend-ro": "Leß met Zohjäng op einzel Wikis",
 	"centralauth-admin-list-legend-rw": "Donn de zosammejelaate Zohjäng wider usenein",
 	"centralauth-admin-unattached": "nit zosamme jelaat",
-	"centralauth-admin-blocked": "Jeshpert bes aam $3 öm $4 Uhr.\nDer Jrond: $2.",
-	"centralauth-admin-blocked-indef": "För iewisch jeshperrt wäje: $1",
 	"centralauth-admin-blocklog": "et Logboch met de Metmaacher-Sperre",
 	"centralauth-admin-list-localwiki": "Heh dat Wiki",
 	"centralauth-admin-list-attached-on": "Zosamme jelaat aam",

@@ -100,8 +100,6 @@
 	"centralauth-admin-list-legend-ro": "Lista kan lokal na mga panindog",
 	"centralauth-admin-list-legend-rw": "Dae pinagkasararong lokal na mga panindog",
 	"centralauth-admin-unattached": "dae nakadukot",
-	"centralauth-admin-blocked": "Pinagkubkob, matapos sa petsa $3 mga alas $4.\nRason: $2",
-	"centralauth-admin-blocked-indef": "Pinagkubkob na mayong siyertong tapos.\nRason: $1",
 	"centralauth-admin-blocklog": "tala nin pagkubkob",
 	"centralauth-admin-list-localwiki": "Lokal na wiki",
 	"centralauth-admin-list-attached-on": "Nakadukot sa",

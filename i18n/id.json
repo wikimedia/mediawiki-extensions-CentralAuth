@@ -106,8 +106,6 @@
 	"centralauth-admin-list-legend-ro": "Daftar akun lokal",
 	"centralauth-admin-list-legend-rw": "Jangan gabung akun lokal",
 	"centralauth-admin-unattached": "tidak tergabung",
-	"centralauth-admin-blocked": "Blokir, berakhir $3 pukul $4. Alasan: $2",
-	"centralauth-admin-blocked-indef": "Blokir selamanya.\nAlasan:$1",
 	"centralauth-admin-blocklog": "Catatan pemblokiran",
 	"centralauth-admin-list-localwiki": "Wiki lokal",
 	"centralauth-admin-list-attached-on": "Tergabung pada",

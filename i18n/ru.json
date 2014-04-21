@@ -118,8 +118,6 @@
 	"centralauth-admin-list-legend-ro": "Список локальных учётных записей",
 	"centralauth-admin-list-legend-rw": "Разделение локальных учётных записей",
 	"centralauth-admin-unattached": "не присоединён",
-	"centralauth-admin-blocked": "Заблокирован до $3 $4. Причина: $2",
-	"centralauth-admin-blocked-indef": "Заблокирован бессрочно. Причина: $1",
 	"centralauth-admin-blocklog": "журнал блокировок",
 	"centralauth-admin-list-localwiki": "Локальный вики-проект",
 	"centralauth-admin-list-attached-on": "Присоединён",

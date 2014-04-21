@@ -100,8 +100,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de comptes locals",
 	"centralauth-admin-list-legend-rw": "Desfusionar de comptes locals",
 	"centralauth-admin-unattached": "pas estacat(s)",
-	"centralauth-admin-blocked": "Blocat amb expiracion lo $3 a $4. Motiu : $2",
-	"centralauth-admin-blocked-indef": "Blocat indefinidament. Rason : $1",
 	"centralauth-admin-blocklog": "jornal de blocatges",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Estacats sus",

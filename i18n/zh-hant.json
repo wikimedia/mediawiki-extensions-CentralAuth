@@ -119,8 +119,6 @@
 	"centralauth-admin-list-legend-ro": "本地帳戶名單",
 	"centralauth-admin-list-legend-rw": "取消合併本地帳戶",
 	"centralauth-admin-unattached": "未附屬的帳戶",
-	"centralauth-admin-blocked": "已經封禁，將於$3 $4到期。\n原因：$2",
-	"centralauth-admin-blocked-indef": "無限期封禁。原因： $1",
 	"centralauth-admin-blocklog": "查封日誌",
 	"centralauth-admin-list-localwiki": "本地維基",
 	"centralauth-admin-list-attached-on": "合併時間",

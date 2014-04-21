@@ -103,8 +103,6 @@
 	"centralauth-admin-list-legend-ro": "Daptar akun lokal",
 	"centralauth-admin-list-legend-rw": "Pisahaké akun lokal",
 	"centralauth-admin-unattached": "ora kalampiraké",
-	"centralauth-admin-blocked": "Diblokir, entèk $3 dhèk $4.\nAlesan: $2",
-	"centralauth-admin-blocked-indef": "Blokir saklawasé.\nAlesan: $1",
 	"centralauth-admin-blocklog": "blokir log",
 	"centralauth-admin-list-localwiki": "Wiki lokal",
 	"centralauth-admin-list-attached-on": "Kelèt ing",

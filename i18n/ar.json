@@ -117,8 +117,6 @@
 	"centralauth-admin-list-legend-ro": "قائمة الحسابات المحلية",
 	"centralauth-admin-list-legend-rw": "إلغاء دمج الحسابات المحلية",
 	"centralauth-admin-unattached": "حسابات غير مرتبطة",
-	"centralauth-admin-blocked": "ممنوع بتاريخ انتهاء $3 في $4. السبب: $2",
-	"centralauth-admin-blocked-indef": "ممنوع دائما. السبب: $1",
 	"centralauth-admin-blocklog": "سجل المنع",
 	"centralauth-admin-list-localwiki": "الويكي المحلي",
 	"centralauth-admin-list-attached-on": "مرتبطة",

@@ -114,8 +114,6 @@
 	"centralauth-admin-list-legend-ro": "로컬 계정 목록",
 	"centralauth-admin-list-legend-rw": "로컬 계정 분리하기",
 	"centralauth-admin-unattached": "묶이지 않음",
-	"centralauth-admin-blocked": "$3 $4까지 차단되었습니다.\n이유: $2",
-	"centralauth-admin-blocked-indef": "무기한 차단되었습니다.\n이유: $1",
 	"centralauth-admin-blocklog": "차단 기록",
 	"centralauth-admin-list-localwiki": "로컬 위키",
 	"centralauth-admin-list-attached-on": "통합된 시간",

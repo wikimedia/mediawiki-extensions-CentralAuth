@@ -116,8 +116,6 @@
 	"centralauth-admin-list-legend-ro": "Lijst met lokale gebruikers",
 	"centralauth-admin-list-legend-rw": "Lokale gebruikers loskoppelen",
 	"centralauth-admin-unattached": "niet verbonden",
-	"centralauth-admin-blocked": "Geblokkeerd met de vervaldatum $3 om $4.\nReden: $2",
-	"centralauth-admin-blocked-indef": "Voor onbepaalde tijd geblokkeerd.\nReden: $1",
 	"centralauth-admin-blocklog": "blokkeerlogboek",
 	"centralauth-admin-list-localwiki": "Lokale wiki",
 	"centralauth-admin-list-attached-on": "Gekoppeld op",

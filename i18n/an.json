@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de cuentas locals",
 	"centralauth-admin-list-legend-rw": "Deseparar cuentas locals",
 	"centralauth-admin-unattached": "Cuentas no ligatas",
-	"centralauth-admin-blocked": "Bloqueyau, circumduz o $3 a las $4.\nRazón: $2",
-	"centralauth-admin-blocked-indef": "Bloqueyau indefinidament.\nRazón: $1",
 	"centralauth-admin-blocklog": "rechistro de bloqueyos",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Combinata o",

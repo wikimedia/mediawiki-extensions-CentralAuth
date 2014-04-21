@@ -96,8 +96,6 @@
 	"centralauth-admin-list-legend-ro": "Lista des comptos locals",
 	"centralauth-admin-list-legend-rw": "Dèfusionar des comptos locals",
 	"centralauth-admin-unattached": "pas rapondu",
-	"centralauth-admin-blocked": "Blocâ avouéc èxpiracion lo $3 a $4.\nRêson : $2",
-	"centralauth-admin-blocked-indef": "Blocâ sen fin.\nRêson : $1",
 	"centralauth-admin-blocklog": "jornal des blocâjos",
 	"centralauth-admin-list-localwiki": "Vouiqui local",
 	"centralauth-admin-list-attached-on": "Rapondu a",

@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Локаль иҫәп яҙмалары исемлеге",
 	"centralauth-admin-list-legend-rw": "Берләштелмәгән локаль иҫәп яҙмалары",
 	"centralauth-admin-unattached": "берләштерелмәгән",
-	"centralauth-admin-blocked": "$3 $4 тиклем бикле.\nСәбәбе: $2",
-	"centralauth-admin-blocked-indef": "Билдәһеҙ ваҡытҡа бикле.\nСәбәбе: $1",
 	"centralauth-admin-blocklog": "блоклау яҙмалары",
 	"centralauth-admin-list-localwiki": "Локаль вики",
 	"centralauth-admin-list-attached-on": "Берләштерелгән",

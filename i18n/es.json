@@ -134,8 +134,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de cuentas locales",
 	"centralauth-admin-list-legend-rw": "Desadjuntar cuentas locales",
 	"centralauth-admin-unattached": "no adjunta",
-	"centralauth-admin-blocked": "Bloqueado, expira  el $3 a las $4. Razón: $2",
-	"centralauth-admin-blocked-indef": "Bloqueado indefinidamente. Razón: $1",
 	"centralauth-admin-blocklog": "registro de bloqueos",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Vinculada el",

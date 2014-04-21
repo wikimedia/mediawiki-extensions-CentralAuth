@@ -103,8 +103,6 @@
 	"centralauth-admin-list-legend-ro": "Список на локални сметки",
 	"centralauth-admin-list-legend-rw": "Оддели локални кориснички сметки",
 	"centralauth-admin-unattached": "неприсоединета",
-	"centralauth-admin-blocked": "Блокот истекува на $3 во $4 ч. Причина за блокот: $2",
-	"centralauth-admin-blocked-indef": "Блокиран бесконечно. Причина: $1",
 	"centralauth-admin-blocklog": "дневник на блокирања",
 	"centralauth-admin-list-localwiki": "Локално вики",
 	"centralauth-admin-list-attached-on": "Приложена кон",

@@ -102,8 +102,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de contos local",
 	"centralauth-admin-list-legend-rw": "Disfusionar contos local",
 	"centralauth-admin-unattached": "non attachate",
-	"centralauth-admin-blocked": "Blocate con expiration le $3 a $4. Motivo: $2",
-	"centralauth-admin-blocked-indef": "Blocate pro tempore indeterminate. Motivo: $1",
 	"centralauth-admin-blocklog": "registro de blocadas",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Attachate le",

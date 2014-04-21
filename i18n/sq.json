@@ -100,8 +100,6 @@
 	"centralauth-admin-list-legend-ro": "Lista e llogarive lokale",
 	"centralauth-admin-list-legend-rw": "Çshkrini llogaritë lokale",
 	"centralauth-admin-unattached": "jo e bashkëngjitur",
-	"centralauth-admin-blocked": "Bllokuar, skadon më $3 në $4\nArsyeja: $2",
-	"centralauth-admin-blocked-indef": "Bllokuar për një kohë të pacaktuar.\nArsyeja: $1",
 	"centralauth-admin-blocklog": "regjistri i bllokimeve",
 	"centralauth-admin-list-localwiki": "Wki lokal",
 	"centralauth-admin-list-attached-on": "Bashkangjitur në",

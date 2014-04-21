@@ -116,8 +116,6 @@
 	"centralauth-admin-list-legend-ro": "ローカルアカウントの一覧",
 	"centralauth-admin-list-legend-rw": "ローカルアカウントの統合解除",
 	"centralauth-admin-unattached": "未統合",
-	"centralauth-admin-blocked": "ブロックされています。期限 $3 $4。\n理由: $2",
-	"centralauth-admin-blocked-indef": "無期限ブロックされました。\n理由: $1",
 	"centralauth-admin-blocklog": "ブロック記録",
 	"centralauth-admin-list-localwiki": "ローカルウィキ",
 	"centralauth-admin-list-attached-on": "統合日時",

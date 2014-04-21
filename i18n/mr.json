@@ -112,8 +112,6 @@
 	"centralauth-admin-list-legend-ro": "स्थानिक खात्यांची यादी",
 	"centralauth-admin-list-legend-rw": "एकत्रीकरण न झालेले स्थानिक खाते",
 	"centralauth-admin-unattached": "जुळलेली नाहीत",
-	"centralauth-admin-blocked": "अवरुद्ध केले, $3ला $4 यावेळी समाप्त होत आहे.\nकारण : $2",
-	"centralauth-admin-blocked-indef": "अनिश्चित काळासाठी प्रतिबंधित (बंदी)\nकारण :$1",
 	"centralauth-admin-blocklog": "रोध नोंदी",
 	"centralauth-admin-list-localwiki": "स्थानिक विकि",
 	"centralauth-admin-list-attached-on": "वर जोडली",

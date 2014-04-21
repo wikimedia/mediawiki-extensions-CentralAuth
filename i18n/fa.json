@@ -114,8 +114,6 @@
 	"centralauth-admin-list-legend-ro": "فهرست حساب‌های محلی",
 	"centralauth-admin-list-legend-rw": "حساب‌های محلی را جدا کن",
 	"centralauth-admin-unattached": "متصل نشده‌است",
-	"centralauth-admin-blocked": "قطع دسترسی، خاتمه در $3 ساعت $4. دلیل: $2",
-	"centralauth-admin-blocked-indef": "قطع دسترسی بی‌پایان. دلیل: $1",
 	"centralauth-admin-blocklog": "سیاههٔ بسته‌شدن‌ها",
 	"centralauth-admin-list-localwiki": "ویکی محلی",
 	"centralauth-admin-list-attached-on": "متصل‌شده در",

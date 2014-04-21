@@ -104,8 +104,6 @@
 	"centralauth-admin-list-legend-ro": "Lista conturilor locale",
 	"centralauth-admin-list-legend-rw": "Anulează unificarea conturilor locale",
 	"centralauth-admin-unattached": "neatașat(e)",
-	"centralauth-admin-blocked": "Blocat, expiră $3 la $4.\nMotivul: $2",
-	"centralauth-admin-blocked-indef": "Blocat pe termen nelimitat.\nMotivul: $1",
 	"centralauth-admin-blocklog": "jurnal blocări",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Atașat la",

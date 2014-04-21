@@ -103,8 +103,6 @@
 	"centralauth-admin-list-legend-ro": "Listo de lokaj kontoj",
 	"centralauth-admin-list-legend-rw": "Malkunigi lokajn kontojn",
 	"centralauth-admin-unattached": "ne afiŝita",
-	"centralauth-admin-blocked": "Forbarita kun findato de $3, $4. Kialo: $2",
-	"centralauth-admin-blocked-indef": "Forbaris senfine. Kialo: $1",
 	"centralauth-admin-blocklog": "protokolo de forbaroj",
 	"centralauth-admin-list-localwiki": "Loka vikio",
 	"centralauth-admin-list-attached-on": "Ligita al",

@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de le utense locali",
 	"centralauth-admin-list-legend-rw": "Separa utense locali",
 	"centralauth-admin-unattached": "mìa colegà",
-	"centralauth-admin-blocked": "Blocà fin al $3 a le $4. Motivo: $2",
-	"centralauth-admin-blocked-indef": "Blocà sensa scadensa. Motivo: $1",
 	"centralauth-admin-blocklog": "registro dei blochi",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Colegado el",

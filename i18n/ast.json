@@ -101,8 +101,6 @@
 	"centralauth-admin-list-legend-ro": "Llista de cuentes llocales",
 	"centralauth-admin-list-legend-rw": "Anular la fusión de cuentes llocales",
 	"centralauth-admin-unattached": "non asociaes",
-	"centralauth-admin-blocked": "Bloquiáu, espira'l $3 a les $4.\nMotivu: $2",
-	"centralauth-admin-blocked-indef": "Bloquiáu de mou indefiníu.\nMotivu: $1",
 	"centralauth-admin-blocklog": "rexistru de bloqueos",
 	"centralauth-admin-list-localwiki": "Wiki llocal",
 	"centralauth-admin-list-attached-on": "Asociada a",

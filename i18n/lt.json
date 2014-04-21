@@ -96,8 +96,6 @@
 	"centralauth-admin-list-legend-ro": "Vietinių paskyrų sąrašas",
 	"centralauth-admin-list-legend-rw": "Atskirti vietines paskyras",
 	"centralauth-admin-unattached": "neprijungta",
-	"centralauth-admin-blocked": "Blokuotas, baigiasi $3 $4. Priežastis: $2",
-	"centralauth-admin-blocked-indef": "Užblokuotas neribotam laikui. Priežastis: $1",
 	"centralauth-admin-blocklog": "Blokavimų sąrašas",
 	"centralauth-admin-list-localwiki": "Vietinis projektas",
 	"centralauth-admin-list-attached-on": "Prijungta prie",

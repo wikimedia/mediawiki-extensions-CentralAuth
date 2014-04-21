@@ -110,8 +110,6 @@
 	"centralauth-admin-list-legend-ro": "רשימת חשבונות מקומיים",
 	"centralauth-admin-list-legend-rw": "ביטול המיזוג של חשבונות מקומיים",
 	"centralauth-admin-unattached": "חשבונות בלתי ממוזגים",
-	"centralauth-admin-blocked": "חסום עד $4, $3. סיבה: $2",
-	"centralauth-admin-blocked-indef": "חסום לזמן בלתי מוגבל. סיבה: $1",
 	"centralauth-admin-blocklog": "יומן חסימות",
 	"centralauth-admin-list-localwiki": "האתר המקומי",
 	"centralauth-admin-list-attached-on": "מוזג בתאריך",

@@ -115,8 +115,6 @@
 	"centralauth-admin-list-legend-ro": "Oversigt over lokale konti",
 	"centralauth-admin-list-legend-rw": "Ophæv fletning af lokale konti",
 	"centralauth-admin-unattached": "ikke tilknyttet",
-	"centralauth-admin-blocked": "Blokeret til $3 $4. Årsag: $2",
-	"centralauth-admin-blocked-indef": "Blokeret uendeligt. Årsag: $1",
 	"centralauth-admin-blocklog": "blokeringslog",
 	"centralauth-admin-list-localwiki": "Lokal wiki",
 	"centralauth-admin-list-attached-on": "Tilknyttet",

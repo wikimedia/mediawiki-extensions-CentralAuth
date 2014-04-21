@@ -106,8 +106,6 @@
 	"centralauth-admin-list-legend-ro": "Kohalike kontode loend",
 	"centralauth-admin-list-legend-rw": "Kohalike kontode lahutamine",
 	"centralauth-admin-unattached": "ühendamata",
-	"centralauth-admin-blocked": "Blokeeritud aegumistähtajaga $3 kell $4.\nPõhjus: $2",
-	"centralauth-admin-blocked-indef": "Blokeeritud igaveseks.\nPõhjus: $1",
 	"centralauth-admin-blocklog": "blokeerimislogi",
 	"centralauth-admin-list-localwiki": "Kohalik viki",
 	"centralauth-admin-list-attached-on": "Ühendatud",

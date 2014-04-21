@@ -97,8 +97,6 @@
 	"centralauth-admin-list-legend-ro": "स्थानीयाभिलेखानां सूची",
 	"centralauth-admin-list-legend-rw": "स्थानीयाभिलेखाः पृथक्क्रियताम्",
 	"centralauth-admin-unattached": "न योजितम्",
-	"centralauth-admin-blocked": "अवरुद्धम्, $3 दिनाङ्के  $4 समये समाप्यते  ।\nकारणम्:$2",
-	"centralauth-admin-blocked-indef": "अनिश्चितकालपर्यन्तम् अवरुद्धम् ।\nकारणम्:$1",
 	"centralauth-admin-blocklog": "अवरुद्धा सूची",
 	"centralauth-admin-list-localwiki": "स्थानीयविकि",
 	"centralauth-admin-list-attached-on": "दिनाङ्के योजितम्",

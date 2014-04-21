@@ -136,7 +136,6 @@
 	"centralauth-admin-unattached": "{{Identical|Unattached accounts}}",
 	"centralauth-admin-notblocked": "{{notranslate}}",
 	"centralauth-admin-blocked2": "Used in [[Special:CentralAuth]] to show block status. Parameters:\n* $1 - (Unused) the date/time of expiry\n* $2 - the date of expiry\n* $3 - the time of expiry\nSee also:\n* {{msg-mw|Centralauth-admin-blocked-indef2}}",
-	"centralauth-admin-blocked-indef2": "Used in [[Special:CentralAuth]] to show block status.\nSee also:\n* {{msg-mw|Centralauth-admin-blocked2}}",
 	"centralauth-admin-blocked-reason": "Used in [[Special:CentralAuth]] to show block reason. Parameters:\n* $1 - reason",
 	"centralauth-admin-blocklog": "Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-list-localwiki": "Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Local wiki}}",

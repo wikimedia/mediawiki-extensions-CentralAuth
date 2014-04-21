@@ -94,8 +94,6 @@
 	"centralauth-admin-list-legend-ro": "Spisak lokalnih naloga",
 	"centralauth-admin-list-legend-rw": "Razdvoji lokalne naloge",
 	"centralauth-admin-unattached": "nije povezano",
-	"centralauth-admin-blocked": "Blokiran, ističe $3 u $4.\nRazlog: $2",
-	"centralauth-admin-blocked-indef": "Trajno blokiran.\nRazlog: $1",
 	"centralauth-admin-blocklog": "istorija blokiranja",
 	"centralauth-admin-list-localwiki": "Lokalni viki",
 	"centralauth-admin-list-attached-on": "Priključeno",

@@ -88,8 +88,6 @@
 	"centralauth-admin-list-legend-ro": "Béréndélan akun lokal",
 	"centralauth-admin-list-legend-rw": "Pisahkeun akun lokal",
 	"centralauth-admin-unattached": "Rekening nu teu kawengku",
-	"centralauth-admin-blocked": "Dipeungpeuk nepi ka $3 jam $4.\nAlesan: $2",
-	"centralauth-admin-blocked-indef": "Dipeungpeuk salamina.\nAlesan: $1",
 	"centralauth-admin-blocklog": "log peungpeuk",
 	"centralauth-admin-list-localwiki": "Wiki lokal",
 	"centralauth-admin-list-attached-on": "Kawengku di",

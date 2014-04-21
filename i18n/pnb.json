@@ -96,8 +96,6 @@
 	"centralauth-admin-list-legend-ro": "لوکل اکاؤنٹ دی لسٹ",
 	"centralauth-admin-list-legend-rw": "لوکل اکاؤنٹ وکھریاں کرو",
 	"centralauth-admin-unattached": "نئیں جڑیا",
-	"centralauth-admin-blocked": "روکیا گیا، $3 نوں $4 وجے روک ہٹے گی۔\nوجہ: $2",
-	"centralauth-admin-blocked-indef": "انجان ویلے آستے روکیا ہویا اے۔\nوجہ: $1",
 	"centralauth-admin-blocklog": "لاگ روکو",
 	"centralauth-admin-list-localwiki": "لوکل وکی",
 	"centralauth-admin-list-attached-on": "جڑیا",

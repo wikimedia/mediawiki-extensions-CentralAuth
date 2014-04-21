@@ -109,8 +109,6 @@
 	"centralauth-admin-list-legend-ro": "Yerel hesapların listesi",
 	"centralauth-admin-list-legend-rw": "Yerel hesapları çöz",
 	"centralauth-admin-unattached": "eklenmemiş",
-	"centralauth-admin-blocked": "$3 $4 tarihine kadar engellendi. Sebep: $2",
-	"centralauth-admin-blocked-indef": "Süresiz engellendi. Sebep: $1",
 	"centralauth-admin-blocklog": "Engelleme kayıtları",
 	"centralauth-admin-list-localwiki": "Yerel viki",
 	"centralauth-admin-list-attached-on": "Eklenme",

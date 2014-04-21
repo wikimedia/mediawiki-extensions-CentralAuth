@@ -111,8 +111,6 @@
 	"centralauth-admin-list-legend-ro": "Llista de comptes locals",
 	"centralauth-admin-list-legend-rw": "Separa els comptes locals",
 	"centralauth-admin-unattached": "No s'ha adjuntat",
-	"centralauth-admin-blocked": "Blocat, expira el $3 a $4. Motius: $2",
-	"centralauth-admin-blocked-indef": "Blocat indefinidament. Motius: $1",
 	"centralauth-admin-blocklog": "registre de bloquejos",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Associats el",

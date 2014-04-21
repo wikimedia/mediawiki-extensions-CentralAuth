@@ -117,8 +117,6 @@
 	"centralauth-admin-list-legend-ro": "Lista de contas locais",
 	"centralauth-admin-list-legend-rw": "Anular fusão das contas locais",
 	"centralauth-admin-unattached": "não acopladas",
-	"centralauth-admin-blocked": "Bloqueado com validade $3 em $4.\nMotivo: $2",
-	"centralauth-admin-blocked-indef": "Bloqueado indefinidamente.\nMotivo: $1",
 	"centralauth-admin-blocklog": "registo de bloqueios",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Acoplada em",

@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Liste de le account locale",
 	"centralauth-admin-list-legend-rw": "Scucchie le account locale",
 	"centralauth-admin-unattached": "none allegate",
-	"centralauth-admin-blocked": "Bloccate, scade 'u $3 a le $4.\nMutive: $2",
-	"centralauth-admin-blocked-indef": "Bloccate pe sembre.\nMutive: $1",
 	"centralauth-admin-blocklog": "archivije de le bloccaminde",
 	"centralauth-admin-list-localwiki": "Uicchi locale",
 	"centralauth-admin-list-attached-on": "Allegate a",

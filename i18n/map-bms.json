@@ -72,8 +72,6 @@
 	"centralauth-admin-list-legend-ro": "Daftar akun lokal",
 	"centralauth-admin-list-legend-rw": "Aja nggabungna akun lokal",
 	"centralauth-admin-unattached": "ora dilampirna",
-	"centralauth-admin-blocked": "Diblokir, nganti tanggal $3 jam $4.\nAlesane: $2",
-	"centralauth-admin-blocked-indef": "Diblokir selawase.\nAlesane: $1",
 	"centralauth-admin-blocklog": "log pamblokiran",
 	"centralauth-admin-list-localwiki": "Wiki lokal",
 	"centralauth-admin-list-attached-on": "Kelèt nang",

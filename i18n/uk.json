@@ -118,8 +118,6 @@
 	"centralauth-admin-list-legend-ro": "Список локальних облікових записів",
 	"centralauth-admin-list-legend-rw": "Роз'єднати локальні облікові записи",
 	"centralauth-admin-unattached": "не приєднані",
-	"centralauth-admin-blocked": "Заблокований до $4 $3. Причина: $2",
-	"centralauth-admin-blocked-indef": "Заблокований безстроково. Причина: $1",
 	"centralauth-admin-blocklog": "журнал блокувань",
 	"centralauth-admin-list-localwiki": "Локальна вікі",
 	"centralauth-admin-list-attached-on": "Приєднаний",

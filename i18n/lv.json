@@ -75,8 +75,6 @@
 	"centralauth-admin-list-legend-ro": "Lokālo kontu saraksts",
 	"centralauth-admin-list-legend-rw": "Atsaistīt lokālos kontus",
 	"centralauth-admin-unattached": "nav pievienots",
-	"centralauth-admin-blocked": "Bloķēts līdz $3 plkst. $4.\nIemesls: $2",
-	"centralauth-admin-blocked-indef": "Bloķēts uz nenoteiktu laiku.\nIemesls: $1",
 	"centralauth-admin-blocklog": "bloķēšanas reģistrs",
 	"centralauth-admin-list-localwiki": "Vietējais wiki",
 	"centralauth-admin-list-attached-on": "Pievienots",

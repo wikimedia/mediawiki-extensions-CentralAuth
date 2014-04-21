@@ -103,8 +103,6 @@
 	"centralauth-admin-list-legend-ro": "Seznam lokalnih računov",
 	"centralauth-admin-list-legend-rw": "Razdruži lokalne račune",
 	"centralauth-admin-unattached": "ni priključen",
-	"centralauth-admin-blocked": "Blokiran, poteče dne $3 ob $4.\nRazlog: $2",
-	"centralauth-admin-blocked-indef": "Blokiran za nedoločen čas.\nRazlog: $1",
 	"centralauth-admin-blocklog": "dnevnik blokiranja",
 	"centralauth-admin-list-localwiki": "Lokalni wiki",
 	"centralauth-admin-list-attached-on": "Priključen",

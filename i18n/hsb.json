@@ -102,8 +102,6 @@
 	"centralauth-admin-list-legend-ro": "Lisćina lokalnych kontow",
 	"centralauth-admin-list-legend-rw": "Zjednoćenje lokalnych kontow zběhnyć",
 	"centralauth-admin-unattached": "njepřipowěsnjeny",
-	"centralauth-admin-blocked": "Blokowany hač do $3 $4. Přičina: $2",
-	"centralauth-admin-blocked-indef": "Na njewěsty čas zablokowany. Přičina: $1",
 	"centralauth-admin-blocklog": "protokol zablokowanjow",
 	"centralauth-admin-list-localwiki": "Lokalny wiki",
 	"centralauth-admin-list-attached-on": "Připójsnjeny na",

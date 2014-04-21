@@ -78,8 +78,6 @@
 	"centralauth-admin-list-legend-ro": "نوم گه حساویه محلی",
 	"centralauth-admin-list-legend-rw": "حساویا ولاتی بی حاشیه",
 	"centralauth-admin-unattached": "وصل نبيه",
-	"centralauth-admin-blocked": "قلف بیه, سررسست $3 د $4.\nدلیل: $2",
-	"centralauth-admin-blocked-indef": "وا دیاری قلف بیه.\nدلیل: $1",
 	"centralauth-admin-blocklog": "پهرستنومه قلف بیه",
 	"centralauth-admin-list-localwiki": "ويكی ولاتی",
 	"centralauth-admin-list-attached-on": "چسبسه د:",

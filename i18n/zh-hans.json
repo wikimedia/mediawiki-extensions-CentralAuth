@@ -125,8 +125,6 @@
 	"centralauth-admin-list-legend-ro": "本地账户列表",
 	"centralauth-admin-list-legend-rw": "拆分本地账户",
 	"centralauth-admin-unattached": "未附属的帐户",
-	"centralauth-admin-blocked": "已封禁，将于$3 $4过期。原因：$2",
-	"centralauth-admin-blocked-indef": "永久封禁。原因：$1",
 	"centralauth-admin-blocklog": "封禁日志",
 	"centralauth-admin-list-localwiki": "本地维基",
 	"centralauth-admin-list-attached-on": "添加时间",

@@ -129,8 +129,6 @@
 	"centralauth-admin-list-legend-ro": "Liste des comptes locaux",
 	"centralauth-admin-list-legend-rw": "Annuler la fusion des comptes locaux",
 	"centralauth-admin-unattached": "non-rattaché",
-	"centralauth-admin-blocked": "Bloqué avec expiration le $3 à $4. Motif : $2",
-	"centralauth-admin-blocked-indef": "Bloqué indéfiniment. Motif : $1",
 	"centralauth-admin-blocklog": "journal des blocages",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Rattaché à",

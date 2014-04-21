@@ -100,8 +100,6 @@
 	"centralauth-admin-list-legend-ro": "స్థానిక ఖాతాల యొక్క జాబితా",
 	"centralauth-admin-list-legend-rw": "స్థానిక ఖాతాలను నిర్విలీనంచేయి",
 	"centralauth-admin-unattached": "జోడించనివి",
-	"centralauth-admin-blocked": "నిరోధించారు, $3 నాడు $4కి కాలంచెల్లుతుంది. కారణం: $2",
-	"centralauth-admin-blocked-indef": "నిరవధికంగా నిరోధించారు. కారణం: $1",
 	"centralauth-admin-blocklog": "నిరోధాల చిట్టా",
 	"centralauth-admin-list-localwiki": "స్థానిక వికీ",
 	"centralauth-admin-list-attached-on": "అనుసంధించిన తేదీ",

@@ -104,8 +104,6 @@
 	"centralauth-admin-list-legend-ro": "ප්‍රාදේශීය ගිණුම් ලයිස්තුව",
 	"centralauth-admin-list-legend-rw": "පෙදෙසි ගිණුම් වෙන් කරන්න",
 	"centralauth-admin-unattached": "නොබැඳි ගිණුම්",
-	"centralauth-admin-blocked": "වාරණය කරන ලදී. $3, $4 දී කල් ඉකුත්වේ.\nහේතුව: $2",
-	"centralauth-admin-blocked-indef": "අනිශ්චිත කාලයකට වාරණය කරන ලදී.\nහේතුව: $1",
 	"centralauth-admin-blocklog": "වාරණ ලොග් සටහන",
 	"centralauth-admin-list-localwiki": "ස්ථානික විකිය",
 	"centralauth-admin-list-attached-on": "බැඳී ඇත්තේ",

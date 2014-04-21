@@ -101,8 +101,6 @@
 	"centralauth-admin-list-legend-ro": "স্থানীয় একাউণ্টসমূহৰ তালিকা",
 	"centralauth-admin-list-legend-rw": "স্থানীয় একাউণ্টৰ একত্ৰীকৰণ নোহোৱা কৰক",
 	"centralauth-admin-unattached": "সংয়ুক্ত নহয়",
-	"centralauth-admin-blocked": "বাৰণ কৰা হৈছে, $3 তাৰিখৰ $4 সময়ত উকলিব।\nকাৰণ: $2",
-	"centralauth-admin-blocked-indef": "অনিৰ্দিষ্ট সময়ৰ বাবে বাৰণ কৰা হৈছে।\nকাৰণ: $1",
 	"centralauth-admin-blocklog": "ল'গ বাৰণ কৰক",
 	"centralauth-admin-list-localwiki": "স্থানীয় ৱিকি",
 	"centralauth-admin-list-attached-on": "সংযুক্ত হৈ আছে",

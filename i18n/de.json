@@ -111,8 +111,6 @@
 	"centralauth-admin-list-legend-ro": "Liste lokaler Konten",
 	"centralauth-admin-list-legend-rw": "Zusammenführung für lokale Benutzerkonten aufheben",
 	"centralauth-admin-unattached": "nicht verbunden",
-	"centralauth-admin-blocked": "Gesperrt bis $3 um $4. Grund: $2",
-	"centralauth-admin-blocked-indef": "Unbeschränkt gesperrt. Grund: $1",
 	"centralauth-admin-blocklog": "Benutzersperr-Logbuch",
 	"centralauth-admin-list-localwiki": "Lokales Wiki",
 	"centralauth-admin-list-attached-on": "Verbunden seit",

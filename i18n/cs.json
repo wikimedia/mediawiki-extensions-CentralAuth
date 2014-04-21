@@ -105,8 +105,6 @@
 	"centralauth-admin-list-legend-ro": "Seznam místních účtů",
 	"centralauth-admin-list-legend-rw": "Rozloučit místní účty",
 	"centralauth-admin-unattached": "nepřipojeno",
-	"centralauth-admin-blocked": "Zablokován do $3 $4. Zdůvodnění: $2",
-	"centralauth-admin-blocked-indef": "Zablokováno do odvolání. Zdůvodnění: $1",
 	"centralauth-admin-blocklog": "kniha zablokování",
 	"centralauth-admin-list-localwiki": "Místní wiki",
 	"centralauth-admin-list-attached-on": "Připojené k",

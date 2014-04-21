@@ -98,8 +98,6 @@
 	"centralauth-admin-list-legend-ro": "Списак локалних налога",
 	"centralauth-admin-list-legend-rw": "Раздвоји локалне налоге",
 	"centralauth-admin-unattached": "неповезано",
-	"centralauth-admin-blocked": "Блокада истиче $3 у $4. Разлог: $2",
-	"centralauth-admin-blocked-indef": "Трајно блокиран. Разлог: $1",
 	"centralauth-admin-blocklog": "историја блокирања",
 	"centralauth-admin-list-localwiki": "Локални вики",
 	"centralauth-admin-list-attached-on": "Прикључено",

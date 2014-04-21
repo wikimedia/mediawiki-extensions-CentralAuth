@@ -102,8 +102,6 @@
 	"centralauth-admin-list-legend-ro": "Lista dij cont locaj",
 	"centralauth-admin-list-legend-rw": "Unifiché nen ij cont locaj",
 	"centralauth-admin-unattached": "pa tacà",
-	"centralauth-admin-blocked": "Blocà, a finiss ël $3 a $4.\nRason: $2",
-	"centralauth-admin-blocked-indef": "Blocà a l'infinì.\nRason: $1",
 	"centralauth-admin-blocklog": "registr dij blocagi",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Tacà a",

@@ -80,8 +80,6 @@
 	"centralauth-admin-yes": "Jo",
 	"centralauth-admin-no": "Nee",
 	"centralauth-admin-unattached": "Nich verbunnene Brukerkonten",
-	"centralauth-admin-blocked": "Sperrt bet $3 üm $4. Grund: $2",
-	"centralauth-admin-blocked-indef": "Unbeschränkt sperrt. Grund: $1",
 	"centralauth-admin-list-localwiki": "Lokal Wiki",
 	"centralauth-admin-list-attached-on": "Verbunnen mit",
 	"centralauth-admin-list-method": "Methood",

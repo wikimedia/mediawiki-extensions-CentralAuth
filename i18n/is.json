@@ -98,8 +98,6 @@
 	"centralauth-admin-list-legend-ro": "Listi yfir staðbundna aðganga",
 	"centralauth-admin-list-legend-rw": "Aðgreina svæðisbundna aðganga",
 	"centralauth-admin-unattached": "ótengdur",
-	"centralauth-admin-blocked": "Bannaður, rennur út $3, kl $4.\nÁstæða: $2",
-	"centralauth-admin-blocked-indef": "Bannaður í ótiltekinn tíma.\nÁstæða: $1",
 	"centralauth-admin-blocklog": "Bönnunarskrá",
 	"centralauth-admin-list-localwiki": "Svæðisbundinn wiki",
 	"centralauth-admin-list-attached-on": "Tengdist þann",

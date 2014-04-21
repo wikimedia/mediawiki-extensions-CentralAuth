@@ -110,8 +110,6 @@
 	"centralauth-admin-list-legend-ro": "स्थानीय खातों की सूची",
 	"centralauth-admin-list-legend-rw": "स्थानीय खाते अलग करें",
 	"centralauth-admin-unattached": "ना जुड़े हुए खाते",
-	"centralauth-admin-blocked": "अवरुद्ध किया गया हे, $3 को $4 बजे अवरोध समाप्त हो जायेगा।\nकारण: $2",
-	"centralauth-admin-blocked-indef": "अनिश्चित काल के लिए अवरुद्ध किया गया हे।\nकारण: $1",
 	"centralauth-admin-blocklog": "अवरोध लॉग",
 	"centralauth-admin-list-localwiki": "स्थानीय विकि",
 	"centralauth-admin-list-attached-on": "खाता जोड़ा गया",

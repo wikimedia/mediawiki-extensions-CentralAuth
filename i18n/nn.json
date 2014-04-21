@@ -105,8 +105,6 @@
 	"centralauth-admin-list-legend-ro": "Liste over lokale kontoar",
 	"centralauth-admin-list-legend-rw": "Flett opp lokale kontoar",
 	"centralauth-admin-unattached": "ikkje tilslutta",
-	"centralauth-admin-blocked": "Blokkert til $3 $4. Årsak: $2",
-	"centralauth-admin-blocked-indef": "Blokkert endelaust. Årsak: $1",
 	"centralauth-admin-blocklog": "blokkeringslogg",
 	"centralauth-admin-list-localwiki": "Lokal wiki",
 	"centralauth-admin-list-attached-on": "Samanslåingsdato",

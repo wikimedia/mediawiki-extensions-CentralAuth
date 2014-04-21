@@ -119,8 +119,6 @@
 	"centralauth-admin-list-legend-ro": "Lista över lokala konton",
 	"centralauth-admin-list-legend-rw": "Ta isär lokala konton",
 	"centralauth-admin-unattached": "ej ansluten",
-	"centralauth-admin-blocked": "Blockerad med utgångstid på $3 vid $4. Anledning: $2",
-	"centralauth-admin-blocked-indef": "Blockerat oändligt. Anledning: $1",
 	"centralauth-admin-blocklog": "blockeringslogg",
 	"centralauth-admin-list-localwiki": "Lokal wiki",
 	"centralauth-admin-list-attached-on": "Anslutningsdatum",

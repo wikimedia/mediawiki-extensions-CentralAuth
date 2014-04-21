@@ -101,8 +101,6 @@
 	"centralauth-admin-list-legend-ro": "Lisćina lokalnych kontow",
 	"centralauth-admin-list-legend-rw": "Zjadnosénje lokalnych kontow anulěrowaś",
 	"centralauth-admin-unattached": "njepśipowjesony",
-	"centralauth-admin-blocked": "Blokěrowany až do $3 $4. Pśicyna: $2",
-	"centralauth-admin-blocked-indef": "Na njewěsty cas blokěrowany. Pśicyna: $1",
 	"centralauth-admin-blocklog": "protokol blokěrowanjow",
 	"centralauth-admin-list-localwiki": "Lokalny wiki",
 	"centralauth-admin-list-attached-on": "Pśipowjesony k",

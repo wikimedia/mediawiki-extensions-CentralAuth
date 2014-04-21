@@ -80,8 +80,6 @@
 	"centralauth-admin-list-legend-ro": "รายการบัญชีท้องถิ่น",
 	"centralauth-admin-list-legend-rw": "ยกเลิกการรวมบัญชีท้องถิ่น",
 	"centralauth-admin-unattached": "ไม่ได้เชื่อมกัน",
-	"centralauth-admin-blocked": "ผู้ใช้ถูกบล็อกแล้ว ซึ่งจะหมดอายุเมื่อ $3 เวลา $4 เหตุผล: $2",
-	"centralauth-admin-blocked-indef": "ผู้ใช้ถูกบล็อกโดยถาวรแล้ว เหตุผล: $1",
 	"centralauth-admin-blocklog": "ปูมการบล็อก",
 	"centralauth-admin-list-localwiki": "วิกิเหย้า",
 	"centralauth-admin-list-method": "วิธีการ",

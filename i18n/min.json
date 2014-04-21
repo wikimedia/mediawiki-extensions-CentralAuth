@@ -35,8 +35,6 @@
 	"centralauth-admin-list-legend-ro": "Daftar akun lokal",
 	"centralauth-admin-list-legend-rw": "Jan gabuang akun lokal",
 	"centralauth-admin-unattached": "indak tagabuang",
-	"centralauth-admin-blocked": "Disakek, sampai $3 pukua $4. Alasan: $2",
-	"centralauth-admin-blocked-indef": "Disakek salamonyo.\nAlasan:$1",
 	"centralauth-admin-blocklog": "log sakek",
 	"centralauth-admin-list-localwiki": "Wiki lokal",
 	"centralauth-admin-list-attached-on": "Tagabuang pado",

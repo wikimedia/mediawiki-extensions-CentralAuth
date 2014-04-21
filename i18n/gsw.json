@@ -97,8 +97,6 @@
 	"centralauth-admin-list-legend-ro": "Lischt vu lokale Benutzerkonte",
 	"centralauth-admin-list-legend-rw": "Lokali Benutzerkonte abhänke",
 	"centralauth-admin-unattached": "nit verbunde",
-	"centralauth-admin-blocked": "Gsperrt bis am $3 am $4. Grund: $2",
-	"centralauth-admin-blocked-indef": "Uubschränkt gsperrt. Grund: $1",
 	"centralauth-admin-blocklog": "Sperrlogbuech",
 	"centralauth-admin-list-localwiki": "Lokal Wiki",
 	"centralauth-admin-list-attached-on": "Verbunde mit",

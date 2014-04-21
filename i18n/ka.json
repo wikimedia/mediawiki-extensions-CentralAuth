@@ -108,8 +108,6 @@
 	"centralauth-admin-list-legend-ro": "ადგილობრივი ანგარიშების სია",
 	"centralauth-admin-list-legend-rw": "ადგილობრივი ანგარიშების განცალკევება",
 	"centralauth-admin-unattached": "დაუკავშირებელი",
-	"centralauth-admin-blocked": "დაბლოკილია $3 $4-მდე. მიზეზი: $2",
-	"centralauth-admin-blocked-indef": "სამუდამოდ დაიბლოკა. მიზეზი: $1",
 	"centralauth-admin-blocklog": "დაბლოკილთა აღრიცხვა",
 	"centralauth-admin-list-localwiki": "ადგილობრივი ვიკი-პროექტი:",
 	"centralauth-admin-list-attached-on": "გაერთიანდა",

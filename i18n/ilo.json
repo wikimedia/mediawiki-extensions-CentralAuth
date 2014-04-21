@@ -101,8 +101,6 @@
 	"centralauth-admin-list-legend-ro": "Listaan dagiti lokal a pakabilangan",
 	"centralauth-admin-list-legend-rw": "Ikkaten ti panagtipon dagiti lokal a pakabilangan",
 	"centralauth-admin-unattached": "saan a naikabit",
-	"centralauth-admin-blocked": "Naserraan, agpaso intono $3 iti $4.\nRason: $2",
-	"centralauth-admin-blocked-indef": "Naserran inggat-ingana.\nRason: $1",
 	"centralauth-admin-blocklog": "listaan ti naserraan",
 	"centralauth-admin-list-localwiki": "Lokal a wiki",
 	"centralauth-admin-list-attached-on": "Naikabit idi",

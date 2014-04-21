@@ -103,8 +103,6 @@
 	"centralauth-admin-list-legend-ro": "Сьпіс лякальных рахункаў",
 	"centralauth-admin-list-legend-rw": "Разьяднаць лякальныя рахункі",
 	"centralauth-admin-unattached": "недалучаны",
-	"centralauth-admin-blocked": "Заблякаваны да $3, $4. Прычына: $2",
-	"centralauth-admin-blocked-indef": "Заблякаваны назаўсёды. Прычына: $1",
 	"centralauth-admin-blocklog": "журнал блякаваньняў",
 	"centralauth-admin-list-localwiki": "Лякальная вікі",
 	"centralauth-admin-list-attached-on": "Далучаны ў",

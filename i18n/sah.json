@@ -96,8 +96,6 @@
 	"centralauth-admin-list-legend-ro": "Олохтоох ааттар тиһиктэрэ",
 	"centralauth-admin-list-legend-rw": "Холбонуллубатах олохтоох ааттар",
 	"centralauth-admin-unattached": "холбонуллубатах",
-	"centralauth-admin-blocked": "Хааччахтаммыт: $3, $4. Төрүөтэ: $2",
-	"centralauth-admin-blocked-indef": "Болдьоҕо суох бобуллубут. Төрүөтэ: $1",
 	"centralauth-admin-blocklog": "хааччахтааһын сурунаала",
 	"centralauth-admin-list-localwiki": "Локальнай биики",
 	"centralauth-admin-list-attached-on": "Холбонулунна",

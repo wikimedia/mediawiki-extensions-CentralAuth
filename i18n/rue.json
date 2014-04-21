@@ -96,8 +96,6 @@
 	"centralauth-admin-list-legend-ro": "Список локалных конт",
 	"centralauth-admin-list-legend-rw": "Розлучіти локалны конта",
 	"centralauth-admin-unattached": "неприпоєне",
-	"centralauth-admin-blocked": "Заблокованый до $4 $3.\nПричіна: $2",
-	"centralauth-admin-blocked-indef": "Заблокованый  до одволаня. Причіна: $1",
 	"centralauth-admin-blocklog": "лоґ блокованя",
 	"centralauth-admin-list-localwiki": "Локална вікі",
 	"centralauth-admin-list-attached-on": "Припоєне ку",

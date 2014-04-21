@@ -103,8 +103,6 @@
 	"centralauth-admin-list-legend-ro": "સ્થાનીય ખાતાની યાદી",
 	"centralauth-admin-list-legend-rw": "સ્થાનિક ખતાઓને છૂટા પાડો",
 	"centralauth-admin-unattached": "ફાઈલ ન ચડાવાઈ",
-	"centralauth-admin-blocked": "રોક લગાડેલ: રોક સમાપ્તિની તિથી: $3 ના $4.\nકારણ : $2",
-	"centralauth-admin-blocked-indef": "અનિશ્ચિત કાલીન પ્રતિબંધ.\nકારણ: $1",
 	"centralauth-admin-blocklog": "પ્રતિબંધ સૂચિ",
 	"centralauth-admin-list-localwiki": "સ્થાનિક વિકિ",
 	"centralauth-admin-list-attached-on": "પર જોડાયેલું",

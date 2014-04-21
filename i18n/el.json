@@ -111,8 +111,6 @@
 	"centralauth-admin-list-legend-ro": "Κατάλογος τοπικών λογαριασμών",
 	"centralauth-admin-list-legend-rw": "Κατάργηση συγχώνευσης τοπικών λογαριασμών",
 	"centralauth-admin-unattached": "ανεπισύναπτος",
-	"centralauth-admin-blocked": "Φραγμένος, λήγει $3 στις $4. Αιτία: $2",
-	"centralauth-admin-blocked-indef": "Αόριστα φραγμένος. Αιτία: $1",
 	"centralauth-admin-blocklog": "Αρχείο καταγραφής φραγών",
 	"centralauth-admin-list-localwiki": "Τοπικό εγχείρημα",
 	"centralauth-admin-list-attached-on": "Επισυνάπτεται σε",

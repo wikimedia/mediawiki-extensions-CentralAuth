@@ -65,8 +65,6 @@
 	"centralauth-admin-list-legend-ro": "Puystulla rakiqunakuna",
 	"centralauth-admin-list-legend-rw": "Puystulla rakiqunakunata rakinachiy",
 	"centralauth-admin-unattached": "mana yapasqa",
-	"centralauth-admin-blocked": "Hark'asqam $3 p'unchawkama, $4 pachakama. Kayrayku: $2",
-	"centralauth-admin-blocked-indef": "Wiña-wiñaypaq hark'asqa.\nKayrayku: $1",
 	"centralauth-admin-blocklog": "hark'ay hallch'a",
 	"centralauth-admin-list-localwiki": "Puystulla wiki",
 	"centralauth-admin-list-attached-on": "Kayman huñumusqa:",

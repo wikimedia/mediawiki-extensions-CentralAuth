@@ -99,8 +99,6 @@
 	"centralauth-admin-list-legend-ro": "Lista ta' kontijiet lokali",
 	"centralauth-admin-list-legend-rw": "Skonnettja l-kontijiet lokali",
 	"centralauth-admin-unattached": "kont mhux kollegat",
-	"centralauth-admin-blocked": "Imblukkat sa $3 fil-$4.\nRaġuni: $2",
-	"centralauth-admin-blocked-indef": "Imblukkat indefinittivament.\nRaġuni: $1",
 	"centralauth-admin-blocklog": "reġistru tal-blokki",
 	"centralauth-admin-list-localwiki": "Wiki lokali",
 	"centralauth-admin-list-attached-on": "Kollegat nhar",
