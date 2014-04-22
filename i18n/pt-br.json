@@ -17,7 +17,8 @@
 			"Teles",
 			"TheGabrielZaum",
 			"Tuliouel",
-			"555"
+			"555",
+			"Agripinoduarte"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -114,6 +115,9 @@
 	"centralauth-admin-list-legend-ro": "Lista de contas locais",
 	"centralauth-admin-list-legend-rw": "Desfazer a unificação das contas locais",
 	"centralauth-admin-unattached": "não unificadas",
+	"centralauth-admin-blocked2": "Bloqueado, expira $2 às $3.",
+	"centralauth-admin-blocked2-indef": "Bloqueado indefinidamente.",
+	"centralauth-admin-blocked-reason": "Motivo: $1",
 	"centralauth-admin-blocklog": "registro de bloqueio",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Unificada em",

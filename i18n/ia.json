@@ -102,6 +102,8 @@
 	"centralauth-admin-list-legend-ro": "Lista de contos local",
 	"centralauth-admin-list-legend-rw": "Disfusionar contos local",
 	"centralauth-admin-unattached": "non attachate",
+	"centralauth-admin-blocked2-indef": "Blocate a tempore indeterminate.",
+	"centralauth-admin-blocked-reason": "Motivo: $1",
 	"centralauth-admin-blocklog": "registro de blocadas",
 	"centralauth-admin-list-localwiki": "Wiki local",
 	"centralauth-admin-list-attached-on": "Attachate le",

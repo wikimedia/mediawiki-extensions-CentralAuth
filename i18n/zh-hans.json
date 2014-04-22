@@ -26,7 +26,8 @@
 			"Zhuyifei1999",
 			"下一次登录",
 			"阿pp",
-			"乌拉跨氪"
+			"乌拉跨氪",
+			"Kuailong"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -125,6 +126,9 @@
 	"centralauth-admin-list-legend-ro": "本地账户列表",
 	"centralauth-admin-list-legend-rw": "拆分本地账户",
 	"centralauth-admin-unattached": "未附属的帐户",
+	"centralauth-admin-blocked2": "已封禁，将于$2 $3失效。",
+	"centralauth-admin-blocked2-indef": "无限期封禁。",
+	"centralauth-admin-blocked-reason": "原因：$1",
 	"centralauth-admin-blocklog": "封禁日志",
 	"centralauth-admin-list-localwiki": "本地维基",
 	"centralauth-admin-list-attached-on": "添加时间",
@@ -229,7 +233,7 @@
 	"centralauth-log-status-none": "（无）",
 	"centralauth-rightslog-name": "全域权限日志",
 	"centralauth-rightslog-entry-usergroups": "已将$1的全域用户组由$2改为$3",
-	"centralauth-rightslog-entry-groupperms": "已将$1的用户组权限由$2改为$3",
+	"centralauth-rightslog-entry-groupperms": "更改$1的用户组权限自$2至$3",
 	"centralauth-rightslog-entry-groupperms2": "已经更改$1的成员组许可。加入$2；移除$3",
 	"centralauth-rightslog-entry-groupperms3": "更改$1的用户组限制维基集合从$2至$3",
 	"centralauth-rightslog-entry-grouprename": "重命名$2为$1",
