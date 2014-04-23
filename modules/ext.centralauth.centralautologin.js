@@ -6,7 +6,7 @@
 
 	// Do we already know we're logged out centrally?
 	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Userlogin' ) {
-		if ( 'localStorage' in window && +localStorage.getItem( 'CentralAuthAnon' ) > new Date().getTime() ) {
+		if ( 'localStorage' in window && window.localStorage && +localStorage.getItem( 'CentralAuthAnon' ) > new Date().getTime() ) {
 			return;
 		}
 

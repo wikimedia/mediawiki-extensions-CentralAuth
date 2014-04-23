@@ -1,6 +1,6 @@
 ( function ( mw ) {
 	if ( mw.config.get( 'wgUserName' ) !== null ) {
-		if ( 'localStorage' in window ) {
+		if ( 'localStorage' in window && window.localStorage ) {
 			localStorage.removeItem( 'CentralAuthAnon' );
 		}
 		if ( /(^|; )CentralAuthAnon=1/.test( document.cookie ) ) {
