@@ -22,7 +22,8 @@
 			"WTM",
 			"Wedkarski",
 			"Woytecr",
-			"Ymar"
+			"Ymar",
+			"Alan ffm"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -121,6 +122,9 @@
 	"centralauth-admin-list-legend-ro": "Spis kont lokalnych",
 	"centralauth-admin-list-legend-rw": "Odłącz konta lokalne",
 	"centralauth-admin-unattached": "niedołączone",
+	"centralauth-admin-blocked2": "Zablokowany, wygasa $2 $3.",
+	"centralauth-admin-blocked2-indef": "Zablokowane bezterminowo.",
+	"centralauth-admin-blocked-reason": "Powód: $1",
 	"centralauth-admin-blocklog": "rejestr blokad",
 	"centralauth-admin-list-localwiki": "Lokalna wiki",
 	"centralauth-admin-list-attached-on": "Czas dołączenia",

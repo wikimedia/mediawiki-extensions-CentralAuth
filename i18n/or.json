@@ -100,6 +100,7 @@
 	"centralauth-admin-list-legend-ro": "ସ୍ଥାନୀୟ ଖାତାଗୁଡ଼ିକର ତାଲିକା",
 	"centralauth-admin-list-legend-rw": "ଯୋଡ଼ି ରହିଥିବା ସ୍ଥାନୀୟ ଖାତାଗୁଡ଼ିକୁ ଅଲଗା କରିଦେବେ",
 	"centralauth-admin-unattached": "ଯୋଡ଼ିହୋଇ ନାହିଁ",
+	"centralauth-admin-blocked-reason": "କାରଣ: $1",
 	"centralauth-admin-blocklog": "ଲଗଟିକୁ ଅଟକାଇଦେବେ",
 	"centralauth-admin-list-localwiki": "ସ୍ଥାନୀୟ ଉଇକି",
 	"centralauth-admin-list-attached-on": "କାହା ସହ ଯୋଡ଼ା:",
