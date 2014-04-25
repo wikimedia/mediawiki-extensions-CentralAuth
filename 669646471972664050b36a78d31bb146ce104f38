@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_2298f979",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-04-25T23:38:11Z",
+      "side": 1,
+      "message": "So that\u0027s going to put a lot of extra object in memcache. I was originally thinking of adding something on the already cached CentralAuthUser object to flag if it\u0027s being renamed. Then you just have to purge it when you start a rename, and it\u0027s an extra join when we\u0027re already querying the db.\n\nThis approach wouldn\u0027t be horrible, but if we can find a way to only cache when we\u0027re renaming, that would be better.",
+      "revId": "669646471972664050b36a78d31bb146ce104f38",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
