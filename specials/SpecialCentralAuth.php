@@ -455,7 +455,7 @@ class SpecialCentralAuth extends SpecialPage {
 	function formatBlockStatus( $row ) {
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
-				$text = $this->msg( 'centralauth-admin-blocked-indef2' )->parse();
+				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->parse();
 			} else {
 				$expiry = $this->getLanguage()->timeanddate( $row['block-expiry'], true );
 				$expiryd = $this->getLanguage()->date( $row['block-expiry'], true );
