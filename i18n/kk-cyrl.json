@@ -135,7 +135,7 @@
 	"centralauth-admin-not-authorized": "Бұл әрекетті орындауға рұқсатыңыз жоқ",
 	"globalusers": "Ғаламдық тіркелгі тізімі",
 	"centralauth-listusers-locked": "құлыпталған",
-	"centralauth-listusers-attached": "[[User:$1|жергілікті бар]]",
+	"centralauth-listusers-attached": "[[User:$1|жергілікте бар]]",
 	"centralauth-listusers-nolocal": "тіркеспеген не жергілікті емес",
 	"multilock": "Бірнеше ғаламдық тіркелгілерді құлыптау",
 	"centralauth-admin-multi-username": "Бір немесе бірнеше қатысушы есімдерін енгізіңіз, жаңа жолдар бойынша бөлінеді",

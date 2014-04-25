@@ -6,7 +6,8 @@
 			"KuboF",
 			"LyzTyphone",
 			"Michawiki",
-			"Yekrats"
+			"Yekrats",
+			"Tlustulimu"
 		]
 	},
 	"mergeaccount": "Statuso de unuigado de salutnomoj",
@@ -70,7 +71,7 @@
 	"centralauth-finish-password": "Pasvorto:",
 	"centralauth-finish-login": "Ensaluti",
 	"centralauth-finish-send-confirmation": "Retpoŝti pasvorton",
-	"centralauth-finish-problems": "Ĉu vi ekhavas problemon, aŭ ve ne estas la posedanto de ĉi tiuj aliaj kontoj?\n[[meta:Special:MyLanguage/Help:Unified login|Kiel trovi helpon]]...",
+	"centralauth-finish-problems": "Ĉu vi ekhavas problemon, aŭ vi ne estas la posedanto de ĉi tiuj aliaj kontoj?\n[[meta:Special:MyLanguage/Help:Unified login|Kiel trovi helpon]]...",
 	"centralauth-finish-noconfirms": "Neniu konto povis esti konfirmita uzante ĉi tiun pasvorton.",
 	"centralauth-finish-incomplete": "Pluraj kontoj estis unuigitaj uzante ĉi tiun pasvorton.\nAliaj kontoj ne jam estas konfirmitaj.",
 	"centralauth-merge-attempt": "'''Kontrolo de la provizita pasvorto kontraŭ restantaj nekunfanditaj kontoj…'''",
