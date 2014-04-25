@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_e14b2661",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-25T03:34:48Z",
+      "side": 1,
+      "message": "I used CentralAuthUser-\u003eisAttached()",
+      "parentUuid": "8e23439c_4dbb5a23",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_edac669f",
         "filename": "CentralAuthUser.php",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-21T20:22:04Z",
       "side": 1,
       "message": "Since this is called on every logged in page hit, I think this needs to be cached. Currently, we only hit memcache to load the user object on reads.",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_8156b207",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-25T03:34:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_edac669f",
       "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_4163fad8",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-25T03:34:48Z",
+      "side": 1,
+      "message": "localnames is supposed to represent the contents of the local `user` table, so I think it should only be updated whenever the local account is actually renamed.\n\nlocaluser OTOH, can and should be done here, so I\u0027ve done that.",
+      "parentUuid": "8e23439c_502e518a",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_95429e61",
         "filename": "specials/SpecialRenameProgress.php",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-21T12:36:55Z",
       "side": 1,
       "message": "Space after \u0027foreach\u0027.",
+      "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_613f16b2",
+        "filename": "specials/SpecialRenameProgress.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-04-25T03:34:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_95429e61",
       "revId": "2bd3507f9460466b17e99c8237b922b47981fb6d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
