@@ -128,7 +128,7 @@
 	"centralauth-admin-list-method": "創建方法",
 	"centralauth-admin-list-editcount": "編輯次數",
 	"centralauth-admin-list-groups": "群組",
-	"centralauth-admin-list-blocked": "封鎖",
+	"centralauth-admin-list-blocked": "封禁資訊",
 	"centralauth-admin-unmerge": "解除已選取的帳戶",
 	"centralauth-admin-merge": "整合已選取的",
 	"centralauth-admin-bad-input": "不正確的整合選擇",

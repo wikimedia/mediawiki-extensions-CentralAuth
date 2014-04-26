@@ -102,6 +102,8 @@
 	"centralauth-admin-list-legend-ro": "Lëscht vun de lokale Benotzerkonten",
 	"centralauth-admin-list-legend-rw": "Lokal Benotzerkonten nees trennen",
 	"centralauth-admin-unattached": "net verbonn",
+	"centralauth-admin-blocked2-indef": "Onbegrenzt gespaart.",
+	"centralauth-admin-blocked-reason": "Grond: $1",
 	"centralauth-admin-blocklog": "Spärlescht",
 	"centralauth-admin-list-localwiki": "Lokal Wiki",
 	"centralauth-admin-list-attached-on": "Verbonn mat",
