@@ -6,7 +6,8 @@
 			"Li-sung",
 			"Matěj Grabovský",
 			"Michaelbrabec",
-			"Mormegil"
+			"Mormegil",
+			"Matěj Suchánek"
 		]
 	},
 	"mergeaccount": "Stav sjednocení přihlašovacích účtů",
@@ -70,7 +71,7 @@
 	"centralauth-finish-password": "Heslo:",
 	"centralauth-finish-login": "Přihlásit se",
 	"centralauth-finish-send-confirmation": "Zaslat heslo emailem",
-	"centralauth-finish-problems": "Máte problém nebo nejste vlastníkem těchto účtů? [[meta:Special:MyLanguage/Help:Unified login|Jak hledat pomoc]]…",
+	"centralauth-finish-problems": "Máte problém nebo nejste vlastníkem těchto účtů? [[meta:Special:MyLanguage/Help:Unified login|Jak najít pomoc]]…",
 	"centralauth-finish-noconfirms": "Tímto heslem se nepodařilo potvrdit žádný účet.",
 	"centralauth-finish-incomplete": "Použitím tohoto hesla bylo sloučeno několik účtů. Další účty zatím nejsou potvrzeny.",
 	"centralauth-merge-attempt": "'''Prověřuje se, zda poskytnuté heslo odpovídá zbylým nesloučeným účtům...'''",

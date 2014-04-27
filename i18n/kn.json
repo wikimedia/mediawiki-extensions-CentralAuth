@@ -48,6 +48,7 @@
 	"centralauth-admin-list-legend-ro": "ಸ್ಥಳೀಯ ಖಾತೆಗಳ ಪಟ್ಟಿ",
 	"centralauth-admin-list-legend-rw": "ಸ್ಥಳೀಯ ಖಾತೆಗಳನ್ನು ಬೇರೆಗೊಳಿಸಿ",
 	"centralauth-admin-unattached": "ಜೊತೆಗೂಡಿಸಿಲ್ಲ",
+	"centralauth-admin-blocked-reason": "ಕಾರಣ: $1",
 	"centralauth-admin-blocklog": "ತಡೆಹಿಡಿಯುವಿಕೆ ದಾಖಲೆ",
 	"centralauth-admin-list-localwiki": "ಪ್ರಾದೇಶಿಕ ವಿಕಿ",
 	"centralauth-admin-delete-title": "ಖಾತೆಯನ್ನು ಅಳಿಸಿ",
