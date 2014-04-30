@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_6b40f338",
+        "filename": "specials/SpecialWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-04-30T20:06:30Z",
+      "side": 1,
+      "message": "would it make sense to just return if this is 0? I guess so... and that\u0027s a much smarter solution then",
+      "revId": "efbe57f4ab903352498428d5556042df180a7ae8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
