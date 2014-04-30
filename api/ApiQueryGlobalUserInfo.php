@@ -51,6 +51,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$data['home'] = $user->getHomeWiki();
 			$data['id'] = $user->getId();
 			$data['registration'] = wfTimestamp( TS_ISO_8601, $user->getRegistration() );
+			$data['name'] = $user->getName();
 
 			if ( $user->isLocked() ) {
 				$data['locked'] = '';
