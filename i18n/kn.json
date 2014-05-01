@@ -55,8 +55,13 @@
 	"centralauth-admin-delete-button": "ಈ ಖಾತೆಯನ್ನು ಅಳಿಸಿ",
 	"centralauth-admin-reason": "ಕಾರಣ:",
 	"centralauth-admin-reason-other": "ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:",
+	"centralauth-listusers-locked": "ಹಿಡಿದಿಡಲಾಗಿದೆ",
+	"centralauth-admin-multi-bot": "ಇತ್ತೀಚಿನ ಬದಲಾವಣೆಗಳು",
 	"centralauth-editgroup-reason": "ಕಾರಣ:",
 	"centralauth-editset-name": "ಹೆಸರು:",
 	"centralauth-editset-reason": "ಕಾರಣ:",
-	"centralauth-editset-submit-delete": "ಅಳಿಸು"
+	"centralauth-editset-submit": "ಒಪ್ಪಿಸು",
+	"centralauth-editset-submit-delete": "ಅಳಿಸು",
+	"centralauth-editset-nouse": "(ಯಾವೂ ಇಲ್ಲ)",
+	"centralloginsuccesful": "ಲಾಗಿನ್ ಯಶಸ್ವಿ"
 }

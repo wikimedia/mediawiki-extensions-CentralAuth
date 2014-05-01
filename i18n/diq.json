@@ -106,6 +106,7 @@
 	"centralauth-admin-list-legend-ro": "Listeyê hesabanê lokali",
 	"centralauth-admin-list-legend-rw": "Hesabe lokali lete bike",
 	"centralauth-admin-unattached": "ataç nibiyo",
+	"centralauth-admin-blocked-reason": "Sebeb: $1",
 	"centralauth-admin-blocklog": "Qeydê kılit-kerdışi",
 	"centralauth-admin-list-localwiki": "Lokal Wiki",
 	"centralauth-admin-list-attached-on": "Dekewten",
