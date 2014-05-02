@@ -660,7 +660,7 @@ $specialPageAliases['sv'] = array(
 	'MergeAccount' => array( 'Slå_ihop_konton' ),
 	'GlobalGroupMembership' => array( 'Globala_användarrättigheter' ),
 	'GlobalGroupPermissions' => array( 'Globala_grupper' ),
-	'WikiSets' => array( 'Wikiset' ),
+	'WikiSets' => array( 'Wikiset', 'Wikigrupp' ),
 	'GlobalUsers' => array( 'Globala_användare' ),
 );
 
