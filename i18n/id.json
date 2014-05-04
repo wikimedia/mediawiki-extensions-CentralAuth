@@ -9,7 +9,8 @@
 			"IvanLanin",
 			"Iwan Novirion",
 			"Kenrick95",
-			"Rex"
+			"Rex",
+			"C5st4wr6ch"
 		]
 	},
 	"mergeaccount": "Status penggabungan log masuk",
@@ -126,6 +127,7 @@
 	"centralauth-admin-nonexistent": "Tidak ada akun global dengan nama \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-delete-nonexistent": "Kesalahan: akun global \"<nowiki>$1</nowiki>\" tidak ditemukan.",
 	"centralauth-token-mismatch": "Maaf, kami tidak dapat mengolah pengiriman formulir Anda akibat terhapusnya data sesi.",
+	"centralauth-state-mismatch": "Terdeteksi konflik penyuntingan untuk pengguna ini. Silakan verifikasi perubahan Anda dan coba lagi.",
 	"centralauth-admin-reason": "Alasan:",
 	"centralauth-admin-reason-other": "Alasan lain/tambahan:",
 	"centralauth-admin-unhide-nonexistent": "Kesalahan: akun global \"<nowiki>$1</nowiki>\" tidak ditemukan.",
@@ -144,7 +146,8 @@
 	"centralauth-admin-status-reasons": "* Alasan kunci\n** akun vandalisme\n** akun spam\n* Alasan kunci-dan-sembunyikan\n** penyalahgunaan nama pengguna\n** informasi pribadi yang tidak pantas",
 	"centralauth-admin-logsnippet": "Perubahan akun global sebelumnya",
 	"centralauth-admin-suppressreason": "Dihapus secara global oleh $1 dengan alasan berikut: $2",
-	"globalusers": "Daftar pengguna global",
+	"centralauth-admin-too-many-edits": "Akun global \"<nowiki>$1</nowiki>\" memiliki lebih dari $2 {{PLURAL:$2|suntingan|suntingan}} dan tidak dapat disembunyikan.",
+	"globalusers": "Daftar akun global",
 	"centralauth-listusers-locked": "terkunci",
 	"centralauth-listusers-attached": "[[User:$1|ada di wiki lokal]]",
 	"centralauth-listusers-nolocal": "bukan akun global atau tidak ada di wiki lokal",
@@ -271,5 +274,6 @@
 	"right-centralauth-lock": "Kunci atau sembunyikan akun global",
 	"right-centralauth-oversight": "Hapus akun global",
 	"right-centralauth-merge": "Menggabungkan akun mereka",
-	"right-globalgrouppermissions": "Pengaturan kelompok global"
+	"right-globalgrouppermissions": "Pengaturan kelompok global",
+	"centralauth-warning-notloggedin": "Anda saat ini tidak masuk log."
 }
