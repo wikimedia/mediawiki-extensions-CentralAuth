@@ -154,7 +154,7 @@
 	"centralauth-admin-status-submit": "Definir estado",
 	"centralauth-admin-status-nonexistent": "Erro: a conta global \"<nowiki>$1</nowiki>\" não existe.",
 	"centralauth-admin-setstatus-success": "Você alterou com sucesso o estado desta conta global.",
-	"centralauth-admin-status-reasons": "* Razões comuns para bloqueio\n** conta usada só para vandalismo\n** conta usada só para spam\n* Razões comuns para bloqueio e ocultação\n** nome de utilizador abusivo\n** informação pessoal não apropriada",
+	"centralauth-admin-status-reasons": "* Razões comuns para bloqueio\n** conta usada só para vandalismo\n** conta usada só para spam\n* Razões comuns para bloqueio e ocultação\n** nome de usuário abusivo\n** informação pessoal não apropriada",
 	"centralauth-admin-logsnippet": "Alterações anteriores à conta global",
 	"centralauth-admin-suppressreason": "Suprimida globalmente por $1 pela seguinte razão: $2",
 	"centralauth-admin-not-authorized": "Você não tem permissão para realizar esta ação.",

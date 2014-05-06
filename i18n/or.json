@@ -222,7 +222,7 @@
 	"centralauth-editgroup-reason": "କାରଣ:",
 	"centralauth-editgroup-success": "ଗୋଠ ଅନୁମତିମାନ ବଦଳାଗଲା",
 	"centralauth-editgroup-success-text": "ଆପଣ ସଫଳ ଭାବେ $1 ଗୋଠ ଲାଗି ଗୋଠର ଅନୁମତି ବଦଳାଇଦେଲେ ।\n[[Special:GlobalGroupPermissions|ଗୋଠ ପରିଚାଳନାକୁ ଲେଉଟିବେ]]",
-	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|ବଦଳ]])",
+	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|ସମ୍ପାଦନା]])",
 	"centralauth-globalgrouppermissions-knownwiki": "ସେହି ଉଇକି ଯେଉଁଥିରେ ସେମାନଙ୍କର ଖାତାମାନ ଅଛି :",
 	"centralauth-globalgroupmembership-badknownwiki": "ବିଶ୍ଵ ଏକୀକରଣ କରାଯାଇଥିବା ସଭ୍ୟ '''$1''' ଆପଣ ଦେଇଥିବା ଉଇକିରେ ସଚଳ ନାହାନ୍ତି ('' $2 '') ।\nଆପଣ ବୋଧେ ଜଣେ ଭୁଲ ସଭ୍ୟଙ୍କୁ ଅଧିକାର ଦେବା ପାଇଁ ଚେଷ୍ଟା କରୁଛନ୍ତି ।",
 	"centralauth-editset": "ଉଇକି ଗୋଠ",
