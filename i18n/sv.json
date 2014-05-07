@@ -120,7 +120,7 @@
 	"centralauth-admin-list-legend-ro": "Lista över lokala konton",
 	"centralauth-admin-list-legend-rw": "Separera lokala konton",
 	"centralauth-admin-unattached": "ej ansluten",
-	"centralauth-admin-blocked2": "Blockerad, upphör $2, $3.",
+	"centralauth-admin-blocked2": "Blockerad, upphör den $2, kl. $3.",
 	"centralauth-admin-blocked2-indef": "Blockerade på obestämd tid.",
 	"centralauth-admin-blocked-reason": "Orsak: $1",
 	"centralauth-admin-blocklog": "blockeringslogg",
