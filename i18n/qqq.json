@@ -133,7 +133,7 @@
 	"centralauth-admin-hidden-oversight": "Means that some deleted content or other information has been hidden by someone having the power of 'Oversight'.\n\nSee [[meta:Oversight|meta]] for explanation of 'oversight' or 'revision delete' function.\n\nUsed on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager special page] as one of the possible entries after the colon in {{msg-mw|Centralauth-admin-info-hidden}}.\n{{Identical|Oversighted}}",
 	"centralauth-admin-list-legend-ro": "Header on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-list-legend-rw": "Fieldset header ([[:File:CentralAuth admin.png|screenshot]])",
-	"centralauth-admin-unattached": "{{Identical|Unattached accounts}} Used cell contents on [[Special:CentralAuth]] when a user is listed that is not attached to a global user. [https://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=siebrand&uselang=en example]",
+	"centralauth-admin-unattached": "Used cell contents on [[Special:CentralAuth]] when a user is listed that is not attached to a global user. [https://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=siebrand&uselang=en example]\n{{Identical|Unattached accounts}}",
 	"centralauth-admin-notblocked": "{{notranslate}}",
 	"centralauth-admin-blocked2": "Used in [[Special:CentralAuth]] to show block status. Parameters:\n* $1 - (Unused) the date/time of expiry\n* $2 - the date of expiry\n* $3 - the time of expiry\nSee also:\n* {{msg-mw|Centralauth-admin-blocked-indef2}}",
 	"centralauth-admin-blocked-reason": "Used in [[Special:CentralAuth]] to show block reason. Parameters:\n* $1 - reason",

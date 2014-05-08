@@ -246,6 +246,7 @@
 	"centralauth-centralautologin-alreadyloggedinlocally": "Jesteś już zalogowany lokalnie",
 	"centralauth-centralautologin-badparams": "Podane parametry uwierzytelnienia są nieprawidłowe",
 	"centralauth-centralautologin-lostsession": "Dane sesji zostały utracone",
+	"centralauth-centralautologin-badstate": "Nieprawidłowy stan „$1”",
 	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Zostałeś centralnie zalogowany|Zostałaś centralnie zalogowana|Zalogowano cię centralnie}} jako $1. Przeładuj stronę, aby zastosować ustawienia użytkownika.",
 	"centralauth-centralautologin-logged-in-nouser": "Jesteś centralnie zalogowany. Przeładuj stronę, aby stosować ustawienia użytkownika.",
 	"globalgroupmembership": "Przynależność do grup globalnych",
