@@ -43,7 +43,7 @@
 	"centralauth-list-attached": "Los comptes nomenats « $1 » sus cadun dels sites seguents son estats estacats automaticament al compte unificat :",
 	"centralauth-list-attached-dryrun": "Lo compte nomenats « $1 » sus cadun dels sites seguents serà estacat automaticament al compte unificat :",
 	"centralauth-list-unattached-title": "Comptes non ratachats",
-	"centralauth-list-unattached": "Lo compte d'utilizaire « $1 » pòt èsser confirmat automaticament pels sites que seguisson ; an probablament un senhal diferent de vòstre compte mèstre :",
+	"centralauth-list-unattached": "{{PLURAL:$2|Lo compte nomenat|Los comptes nomenats}} « $1 » pòdon pas èsser confirmats automaticament coma vòstre {{PLURAL:$2|sul site seguent|suls sites seguents}} ; {{PLURAL:$2|a|an}} probablament un senhal diferent del de vòstre compte principal :",
 	"centralauth-foreign-link": "Utilizaire $1 sus $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribucion|contribucions}} sus $2",
 	"centralauth-merge-method-primary": "wiki principal",
