@@ -156,7 +156,7 @@ CREATE TABLE wikiset (
   -- 2048 wikis. More than we need
   ws_wikis blob not null,
 
-  PRIMARY KEY ws_id (ws_id),
+  PRIMARY KEY (ws_id),
   UNIQUE ws_name (ws_name)
 ) /*$wgDBTableOptions*/;
 
