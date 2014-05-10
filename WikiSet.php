@@ -186,6 +186,7 @@ class WikiSet {
 	 */
 	public function commit() {
 		$dbw = CentralAuthUser::getCentralDB();
+		$dbw->begin();
 		$dbw->replace( 'wikiset', array( 'ws_id' ),
 			array(
 				'ws_id' => $this->mId,
@@ -194,10 +195,10 @@ class WikiSet {
 				'ws_wikis' => implode( ',', $this->mWikis ),
 			), __METHOD__
 		);
-		$dbw->commit();
 		if ( !$this->mId ) {
 			$this->mId = $dbw->insertId();
 		}
+		$dbw->commit();
 		$this->purge();
 		return (bool)$dbw->affectedRows();
 	}
