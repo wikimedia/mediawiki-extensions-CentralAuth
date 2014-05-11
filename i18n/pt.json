@@ -80,7 +80,7 @@
 	"centralauth-finish-title": "Completar fusão",
 	"centralauth-finish-text": "Se estas contas lhe pertencem, pode concluir a autenticação unificada introduzindo as palavras-chave das outras contas aqui:",
 	"centralauth-finish-password": "Palavra-chave:",
-	"centralauth-finish-login": "Utilizador",
+	"centralauth-finish-login": "Entrar",
 	"centralauth-finish-send-confirmation": "Enviar palavra-chave por correio electrónico",
 	"centralauth-finish-problems": "Está com problemas ou estas outras contas não são suas? [[meta:Special:MyLanguage/Help:Unified login|Como obter ajuda]]...",
 	"centralauth-finish-noconfirms": "Não foi possível confirmar nenhuma conta usando esta palavra-chave.",
