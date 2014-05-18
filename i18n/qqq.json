@@ -357,5 +357,7 @@
 	"centralauth-warning-notloggedin": "Used as error message.",
 	"centralauth-warning-notattached": "Used as error message.",
 	"centralauth-finishglobaliseemail_subject": "Subject field for account confirmation emails",
-	"centralauth-finishglobaliseemail_body": "Body text for account confirmation emails. Parameters:\n* $1 - the IP address of the user or server script that triggered the reminder - not needed\n* $2 - the name of the user account\n* $3 - a URL to [[Special:MergeAccount]], which also confirms email\n* $4 - a timestamp (unused)\n* $5 - a URL to [[Special:InvalidateEmail]]\n* $6 - a date\n* $7 - a time"
+	"centralauth-finishglobaliseemail_body": "Body text for account confirmation emails. Parameters:\n* $1 - the IP address of the user or server script that triggered the reminder - not needed\n* $2 - the name of the user account\n* $3 - a URL to [[Special:MergeAccount]], which also confirms email\n* $4 - a timestamp (unused)\n* $5 - a URL to [[Special:InvalidateEmail]]\n* $6 - a date\n* $7 - a time",
+	"centralauth-contribs-locked": "This is displayed on [[Special:Contributions]] for locked accounts when we cannot display the log entry. Parameters:\n* $1 - the username",
+	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}"
 }
