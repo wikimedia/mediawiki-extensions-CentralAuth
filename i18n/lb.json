@@ -227,6 +227,7 @@
 	"centralauth-centralautologin-badstate-local": "Status \"$1\" ass net valabel op der lokaler Wiki",
 	"centralauth-centralautologin-badwiki": "D'Wiki \"$1\" ass net valabel fir den zentrale Login",
 	"centralauth-centralautologin-logged-in": "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
+	"centralauth-centralautologin-logged-in-nouser": "Dir sidd zentral ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	"globalgroupmembership": "Member a globale Gruppen",
 	"globalgrouppermissions": "Gestioun vun de globale Gruppen",
 	"centralauth-globalgroupperms-grouplist": "Dës global Gruppe goufe konfiguréiert.\nDir kënnt d'Rechter déi engem Grupp zougedeelt goufe kucken an änneren, wann Dir déi dofir erfuedert Rechter hutt.\nE Grupp ka geläscht ginn andeems en all Rechter ewechgeholl kritt.",

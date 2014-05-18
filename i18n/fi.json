@@ -97,7 +97,7 @@
 	"centralauth-admin-no-unified": "Käyttäjänimellä ei ole yhdistettyä käyttäjätunnusta.",
 	"centralauth-admin-info-header": "Järjestelmänlaajuiset käyttäjätiedot",
 	"centralauth-admin-info-username": "Käyttäjätunnus",
-	"centralauth-admin-info-id": "Tunniste",
+	"centralauth-admin-info-id": "Käyttäjänumero:",
 	"centralauth-admin-info-registered": "Rekisteröity",
 	"centralauth-admin-info-home": "Kotiwiki",
 	"centralauth-admin-info-editcount": "Muokkauksia yhteensä",
