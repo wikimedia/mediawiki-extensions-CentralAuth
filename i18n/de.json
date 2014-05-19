@@ -144,7 +144,7 @@
 	"centralauth-admin-status-intro": "Du kannst dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern",
 	"centralauth-admin-status-locked": "Gesperrt:",
 	"centralauth-admin-status-locked-no": "Benutzerkonto ist nicht gesperrt",
-	"centralauth-admin-status-locked-yes": "Benutzerkonto ist für Bearbeitungen gesperrt",
+	"centralauth-admin-status-locked-yes": "Benutzerkonto ist vom Einloggen gesperrt",
 	"centralauth-admin-status-hidden": "Versteckt:",
 	"centralauth-admin-status-hidden-no": "Benutzerkonto ist nicht versteckt",
 	"centralauth-admin-status-hidden-list": "Benutzerkonto ist in allen öffentlichen Listen versteckt",

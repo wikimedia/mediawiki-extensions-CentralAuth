@@ -40,7 +40,7 @@
 	"centralauth-merge-step3-submit": "Yhdistä tunnukset",
 	"centralauth-merge-no-accounts": "Nimeäsi vastaavaa käyttäjätunnusta ei löytynyt keskitetystä tunnusten seurantataulusta!\nTietokanta on saattanut vioittua.",
 	"centralauth-merge-home-password": "Tämän tunnuksen kotiwikissä (listattu alla) on eri salasana kuin syöttämäsi salasana.\nAnna kotiwikisi salasana.",
-	"centralauth-complete": "Käyttäjätunnusten yhdistäminen on valmis.",
+	"centralauth-complete": "Käyttäjätunnusten yhdistäminen on tehty.",
 	"centralauth-incomplete": "Käyttäjätunnusten yhdistäminen on jäänyt kesken!",
 	"centralauth-complete-text": "Voit nyt kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.",
 	"centralauth-incomplete-text": "Kun kaikki tunnuksesi on yhdistetty, voit kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.",
