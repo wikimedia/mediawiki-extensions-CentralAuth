@@ -230,6 +230,9 @@ class SpecialWikiSets extends SpecialPage {
 			return '';
 		}
 		$count = count( $list );
+		if ( $count == 0 ) {
+			return $this->msg( 'centralauth-editset-nowikis' )->parse();
+		}
 		# If there are less items than columns, limit the number of columns
 		$columns = $count < $columns ? $count : $columns;
 		$itemsPerCol = ceil( $count / $columns );
