@@ -97,7 +97,7 @@
 	"centralauth-finish-title": "Finalizar la fusión",
 	"centralauth-finish-text": "Si estas cuentas le pertenecen, puede finalizar el proceso de unificación símplemente tecleando las contraseñas de las otras cuentas aquí:",
 	"centralauth-finish-password": "Contraseña:",
-	"centralauth-finish-login": "Iniciar sesión",
+	"centralauth-finish-login": "Acceder",
 	"centralauth-finish-send-confirmation": "Mandar contraseña por correo electrónico",
 	"centralauth-finish-problems": "¿Estás teniendo problema, o no eres el dueño de estas cuentas?\n[[meta:Special:MyLanguage/Help:Unified login|Como encontar ayuda]]…",
 	"centralauth-finish-noconfirms": "No se puede confirmar ninguna cuenta usando esta contraseña.",
