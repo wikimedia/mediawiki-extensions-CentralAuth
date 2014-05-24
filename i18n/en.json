@@ -301,6 +301,7 @@
     "centralauth-editset-nowikis": "No wikis specified.",
     "centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
     "centralauth-editset-nouse": "(none)",
+    "centralauth-editset-nowikis": "(none)",
     "centralauth-editset-usage": "Used in groups:",
     "centralauth-editset-badwikis": "The following {{PLURAL:$2|wiki does not|wikis do not}} exist: $1.",
     "centralauth-editset-success": "Successfully changed wiki set.",
