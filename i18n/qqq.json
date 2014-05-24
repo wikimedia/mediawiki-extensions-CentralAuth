@@ -321,6 +321,7 @@
 	"centralauth-editset-type": "{{Identical|Type}}",
 	"centralauth-editset-wikis": "List of wiki databases defined in this wiki set (either opt-in or opt-out).\n{{Identical|Wiki}}",
 	"centralauth-editset-restwikis": "All wiki databases *not* defined in this wiki set (either opt-in or opt-out)",
+	"centralauth-editset-nowikis": "Used if there are no wikis in a table (either included or excluded).\n\nPreceded by {{msg-mw|Centralauth-editset-wikis}} or {{msg-mw|Centralauth-editset-restwikis}}.\n{{Identical|None}}",
 	"centralauth-editset-reason": "{{Identical|Reason}}",
 	"centralauth-editset-submit": "{{Identical|Submit}}",
 	"centralauth-editset-submit-delete": "{{Identical|Delete}}",
