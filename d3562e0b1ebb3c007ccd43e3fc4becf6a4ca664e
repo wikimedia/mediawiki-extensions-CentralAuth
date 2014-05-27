@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_7763ed3b",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-05-27T11:14:15Z",
+      "side": 1,
+      "message": "This is imho too generic. Should at least have one or more of \u0027User\u0027, \u0027Account\u0027, \u0027Global\u0027 or \u0027CentralAuth\u0027 specified.",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
