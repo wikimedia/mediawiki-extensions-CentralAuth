@@ -67,6 +67,23 @@
       "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_57feb136",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-05-27T11:23:35Z",
+      "side": 1,
+      "message": "May be so, but can we point it to something less visible than the Main Page in that case?",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
