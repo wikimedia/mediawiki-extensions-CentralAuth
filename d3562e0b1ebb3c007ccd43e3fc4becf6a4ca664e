@@ -16,6 +16,57 @@
       "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_37557553",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-05-27T11:22:27Z",
+      "side": 1,
+      "message": "Commented out code?",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_1752796a",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-05-27T11:22:27Z",
+      "side": 1,
+      "message": "Can we haz less lolwut exception message? I believe this is exposed to users in some cases, and in any case is the main entry in the error logs.\n\nEven if no more information is available, something more descriptive and unique would make this a lot easier to deal with (e.g. \"Local user rename failed\").",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_d7eac172",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-05-27T11:22:27Z",
+      "side": 1,
+      "message": "\"Couldn\u0027t\" or \"Could not\". \"Couldnt\" isn\u0027t a word.",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
