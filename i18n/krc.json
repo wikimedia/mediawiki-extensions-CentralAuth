@@ -4,6 +4,16 @@
 			"Iltever"
 		]
 	},
+	"centralauth-groupname": "Викимедиа фонда",
+	"centralauth-merge-dryrun-or": "неда",
+	"centralauth-merge-step3-title": "Бирикген аккаунт къурау",
+	"centralauth-notice-dryrun": "<div class='successbox'>Демо режим</div><br clear='all'/>",
+	"centralauth-list-home-title": "«Юй» вики-проект",
+	"centralauth-foreign-link": "$2 проекде $1 къошулуучу",
+	"centralauth-foreign-contributions": "$2 проектде $1 {{PLURAL:$1|тюрлендириу}}",
+	"centralauth-merge-method-primary": "«юй» вики-проект",
+	"centralauth-merge-method-empty": "къошум джокъ",
+	"centralauth-merge-method-new": "джангы тергеу джазыу",
 	"centralauth-admin-yes": "хоу",
 	"centralauth-admin-no": "огъай",
 	"centralauth-admin-delete-button": "Бу аккаунтну кетер",
