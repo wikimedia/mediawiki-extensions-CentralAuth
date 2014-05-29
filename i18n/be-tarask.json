@@ -181,7 +181,7 @@
 	"centralauth-renameuser-reserved": "Імя ўдзельніка $2 зарэзэрваванае для глябальнага рахунку.",
 	"centralauth-invalid-wiki": "Не існуе такой базы зьвестак вікі: $1",
 	"centralauth-account-exists": "Немагчыма стварыць рахунак: гэтая назва ўжо занятая адзіным рахункам.",
-	"centralauth-account-exists-reset": "Удзельнік «$1» не зарэгістраваны ў {{GRAMMAR:месны|{{SITENAME}}}}, але ён мае адзіны рахунак.",
+	"centralauth-account-exists-reset": "Удзельнік «$1» не зарэгістраваны ў гэтай вікі, але вы можаце скінуць яго пароль у [[Special:CentralAuth/$1|тых вікі, дзе ён прысутнічае]].",
 	"centralauth-login-progress": "Адбываецца ўваход у сыстэму і ў іншых праектах {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Адбываецца выхад з сыстэмы і ў іншых праектах {{int:Centralauth-groupname}}:",
 	"centralauth-login-no-others": "Вы аўтаматычна ўвайшлі ў іншыя праекты {{GRAMMAR:родны|{{int:Centralauth-groupname}}}}.",
