@@ -27,7 +27,8 @@
 			"下一次登录",
 			"阿pp",
 			"乌拉跨氪",
-			"Kuailong"
+			"Kuailong",
+			"Mywood"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -340,7 +341,7 @@
 	"centralloginsuccesful": "登录成功",
 	"centralauth-completelogin-back": "返回前一页",
 	"centralauth-error-nologinattempt": "你的会话没有主动登入尝试正在进行。",
-	"centralauth-error-badtoken": "提供的身份令牌已过期或无效。",
+	"centralauth-error-badtoken": "提供的身份验证密钥过期或无效。",
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
 	"centralauth-warning-notloggedin": "您目前没有登录。",
