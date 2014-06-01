@@ -25,6 +25,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanOversight = $this->getUser()->isAllowed( 'centralauth-oversight' );
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
 
+		$this->getOutput()->setPageTitle( $this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' ) );
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->getOutput()->addJsConfigVars( 'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions() );
@@ -61,7 +62,10 @@ class SpecialCentralAuth extends SpecialPage {
 		// per bug 47991
 		$this->getOutput()->setHTMLTitle( $this->msg(
 			'pagetitle',
-			$this->msg( 'centralauth-admin-title', $this->mUserName )->plain()
+			$this->msg(
+				$this->mCanEdit ? 'centralauth-admin-title' : 'centralauth-admin-title-ro',
+				$this->mUserName
+			)->plain()
 		) );
 
 		$this->mGlobalUser = $globalUser = new CentralAuthUser( $this->mUserName );
@@ -175,13 +179,13 @@ class SpecialCentralAuth extends SpecialPage {
 
 	function showUsernameForm() {
 		global $wgScript;
-		$lookup = $this->mCanEdit ?
-			$this->msg( 'centralauth-admin-lookup-rw' )->text() :
-			$this->msg( 'centralauth-admin-lookup-ro' )->text();
+		$lookup = $this->msg(
+			$this->mCanEdit ? 'centralauth-admin-lookup-rw' : 'centralauth-admin-lookup-ro'
+		)->text();
 
 		$html = Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$html .= Xml::fieldset(
-			$this->msg( 'centralauth-admin-manage' )->text(),
+			$this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )->text(),
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::openElement( 'p' ) .
 				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
