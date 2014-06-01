@@ -16,7 +16,8 @@
 			"Schu",
 			"Shirayuki",
 			"Whym",
-			"青子守歌"
+			"青子守歌",
+			"Rxy"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -116,6 +117,8 @@
 	"centralauth-admin-list-legend-ro": "ローカルアカウントの一覧",
 	"centralauth-admin-list-legend-rw": "ローカルアカウントの統合解除",
 	"centralauth-admin-unattached": "未統合",
+	"centralauth-admin-blocked2": "$2 $3 まで投稿ブロック中。",
+	"centralauth-admin-blocked-reason": "理由: $1",
 	"centralauth-admin-blocklog": "ブロック記録",
 	"centralauth-admin-list-localwiki": "ローカルウィキ",
 	"centralauth-admin-list-attached-on": "統合日時",
