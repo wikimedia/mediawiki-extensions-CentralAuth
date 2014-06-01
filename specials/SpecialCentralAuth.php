@@ -25,6 +25,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanOversight = $this->getUser()->isAllowed( 'centralauth-oversight' );
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
 
+		$this->getOutput()->setPageTitle( $this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' ) );
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->getOutput()->addJsConfigVars( 'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions() );
@@ -181,7 +182,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$html = Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$html .= Xml::fieldset(
-			$this->msg( 'centralauth-admin-manage' )->text(),
+			$this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )->text(),
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::openElement( 'p' ) .
 				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
