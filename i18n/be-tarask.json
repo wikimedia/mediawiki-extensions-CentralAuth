@@ -253,7 +253,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|рэдагаваць]])",
 	"centralauth-editgroup-nowikiset": "Няма, пашырана на ўсі вікі.",
 	"centralauth-globalgrouppermissions-knownwiki": "Вікі, у якіх яны маюць рахункі:",
-	"centralauth-globalgroupmembership-badknownwiki": "Глябальны ўдзельнік '''$1''' не актыўны ў пазначанай Вамі вікі ('' $2 '').\nМагчыма Вы спрабуеце прызначыць правы не таму ўдзельніку!",
+	"centralauth-globalgroupmembership-badknownwiki": "Глябальны рахунак '''$1''' не актыўны ў пазначанай Вамі вікі (''$2'').\nМагчыма, Вы спрабуеце прызначыць правы не таму ўдзельніку!",
 	"centralauth-editset": "Наборы вікі",
 	"centralauth-editset-legend-rw": "Рэдагаваньне альбо стварэньне набору вікі",
 	"centralauth-editset-legend-ro": "Сьпіс набораў вікі",
