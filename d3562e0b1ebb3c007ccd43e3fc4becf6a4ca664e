@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_dc7c411e",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-03T17:26:54Z",
+      "side": 1,
+      "message": "Changed to GlobalRenameProgress.",
+      "parentUuid": "4e1dcb5b_7763ed3b",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_37557553",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-27T11:22:27Z",
       "side": 1,
       "message": "Commented out code?",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_3cafb593",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-03T17:26:54Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "4e1dcb5b_37557553",
       "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_7c8c0d3b",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-03T17:26:54Z",
+      "side": 1,
+      "message": "Good point. Changed to \"RenameuserSQL::rename returned false.\", which better describes what happened.",
+      "parentUuid": "4e1dcb5b_1752796a",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_d7eac172",
         "filename": "LocalRenameUserJob.php",
         "patchSetId": 32
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_5c915151",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-03T17:26:54Z",
+      "side": 1,
+      "message": "Went with Could not.",
+      "parentUuid": "4e1dcb5b_d7eac172",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_57feb136",
         "filename": "specials/SpecialGlobalRenameUser.php",
         "patchSetId": 32
@@ -81,6 +153,24 @@
       "writtenOn": "2014-05-27T11:23:35Z",
       "side": 1,
       "message": "May be so, but can we point it to something less visible than the Main Page in that case?",
+      "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_7ca52db1",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-03T17:26:54Z",
+      "side": 1,
+      "message": "Ok, I switched it to Title::newFromText( \u0027Global rename job\u0027 ).",
+      "parentUuid": "4e1dcb5b_57feb136",
       "revId": "d3562e0b1ebb3c007ccd43e3fc4becf6a4ca664e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
