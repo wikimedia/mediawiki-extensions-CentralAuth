@@ -105,6 +105,7 @@
 	"centralauth-admin-list-legend-ro": "Roll ar c'hontoù lec'hel",
 	"centralauth-admin-list-legend-rw": "Nullañ kendeuzadur ar c'hontoù lec'hel",
 	"centralauth-admin-unattached": "distag",
+	"centralauth-admin-blocked-reason": "Abeg : $1",
 	"centralauth-admin-blocklog": "Roll ar stankadennoù",
 	"centralauth-admin-list-localwiki": "Wiki lec'hel",
 	"centralauth-admin-list-attached-on": "Stag ouzh",
