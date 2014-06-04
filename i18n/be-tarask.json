@@ -282,7 +282,7 @@
 	"centralauth-editset-nowikis": "Ня вызначаны вікі.",
 	"centralauth-editset-nouse": "(няма)",
 	"centralauth-editset-usage": "Выкарыстоўваецца ў групах:",
-	"centralauth-editset-badwikis": "{{PLURAL:$2|1=Наступнай вікі|Наступных вікі}} не існуе: $1.",
+	"centralauth-editset-badwikis": "{{PLURAL:$2|1=Наступная вікі не існуе|Наступныя вікі не існуюць}}: $1.",
 	"centralauth-editset-success": "Набор вікі пасьпяхова зьменены.",
 	"centralauth-editset-success-delete": "Набор вікі пасьпяхова выдалены.",
 	"centralauth-editset-return": "Вярнуцца да галоўнай формы",
