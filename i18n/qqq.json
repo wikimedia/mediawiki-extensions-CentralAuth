@@ -136,7 +136,7 @@
 	"centralauth-admin-unattached": "Used cell contents on [[Special:CentralAuth]] when a user is listed that is not attached to a global user. [https://meta.wikimedia.org/w/index.php?title=Special%3ACentralAuth&target=siebrand&uselang=en example]\n{{Identical|Unattached accounts}}",
 	"centralauth-admin-notblocked": "{{notranslate}}",
 	"centralauth-admin-blocked2": "Used in [[Special:CentralAuth]] to show block status. Parameters:\n* $1 - (Unused) the date/time of expiry\n* $2 - the date of expiry\n* $3 - the time of expiry\nSee also:\n* {{msg-mw|Centralauth-admin-blocked-indef2}}",
-	"centralauth-admin-blocked-reason": "Used in [[Special:CentralAuth]] to show block reason. Parameters:\n* $1 - reason",
+	"centralauth-admin-blocked-reason": "Used in [[Special:CentralAuth]] to show block reason. Parameters:\n* $1 - reason\n{{Identical|Reason}}",
 	"centralauth-admin-blocklog": "Tool tip in list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-list-localwiki": "Column header on list of local accounts on [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Local wiki}}",
 	"centralauth-admin-list-attached-on": "Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:meta:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
