@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e3593d1_7c8b0673",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "integer",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3593d1_5c80424b",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "User $user (class name first)",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3593d1_bcb96e2b",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "SpecialPage $sp",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3593d1_1c9ababd",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "just return is isAnon, makes this easier to read",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3593d1_fc96d696",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "same here... just return if the conditions aren\u0027t met",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3593d1_7cf2e604",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1002,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "didn\u0027t test... but shouldn\u0027t that be !\u003d\u003d 0 ?",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3593d1_3c857e5b",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-07T20:03:37Z",
+      "side": 1,
+      "message": "should return bool, as all hook handlers (should) do",
+      "revId": "3106d56b430aef82382b0906f75b7008bc163b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
