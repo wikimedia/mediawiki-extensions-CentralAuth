@@ -288,6 +288,7 @@ $wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
 $wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
 $wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
 $wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect';
+$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
