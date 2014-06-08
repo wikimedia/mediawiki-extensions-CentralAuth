@@ -277,5 +277,6 @@
 	"centralloginsuccesful": "Uspešno prijavljivanje",
 	"centralauth-completelogin-back": "Nazad na prethodnu stranicu.",
 	"centralauth-error-nologinattempt": "Nema prijava u toku za vašu sesiju.",
+	"centralauth-error-badtoken": "Navedeni token za autentifikaciju je istekao ili je pogrešan.",
 	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni."
 }
