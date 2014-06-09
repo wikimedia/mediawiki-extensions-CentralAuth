@@ -8,7 +8,8 @@
 			"Mopza",
 			"Octahedron80",
 			"Passawuth",
-			"Woraponboonkerd"
+			"Woraponboonkerd",
+			"Nullzero"
 		]
 	},
 	"mergeaccount": "สถานะการรวมชื่อล็อกอิน",
@@ -108,7 +109,9 @@
 	"centralauth-prefs-status": "สถานะบัญชีผู้ใช้กลาง:",
 	"centralauth-prefs-not-managed": "ไม่ได้ใช้บัญชีกลาง",
 	"centralauth-prefs-unattached": "ไม่ได้ถูกยืนยัน",
+	"centralauth-prefs-migration": "อยู่ในระหว่างการถ่ายโอน",
 	"centralauth-prefs-count-attached": "ชื่อผู้ใช้ของคุณใช้งานได้ใน $1 โครงการ",
+	"centralauth-prefs-count-unattached": "ชื่อผู้ใช้ของคุณยังไม่ได้รับการยืนยันในอีก $1 โครงการ",
 	"centralauth-prefs-manage": "บริหารบัญชีกลางของคุณ",
 	"centralauth-prefs-view": "ดูสนเทศบัญชีกลาง",
 	"centralauth-invalid-wiki": "ไม่มีฐานข้อมูลวิกินี้: $1",
