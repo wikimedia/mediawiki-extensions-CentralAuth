@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_ba43b042",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-10T21:01:29Z",
+      "side": 1,
+      "message": "Use Title::makeTitleSafe( NS_USER, \"$user@global\" ); (I think...)",
+      "revId": "7b211dc39911324ea5b793ffc6ef12b1f1f0162c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_fa3938cc",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-06-10T21:01:29Z",
+      "side": 1,
+      "message": "Use $out-\u003ewrapWikiMsg(\u0027\u003cdiv ...\u003e$1\u003c/div\u003e\u0027, \u0027centralauth-contribs-locked\u0027, array( $user ) );",
+      "revId": "7b211dc39911324ea5b793ffc6ef12b1f1f0162c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
