@@ -39,8 +39,6 @@
 	"centralauth-admin-info-locked": "Zaključan:",
 	"centralauth-admin-info-hidden": "Sakriven:",
 	"centralauth-admin-info-groups": "Globalne grupe:",
-	"centralauth-admin-blocked": "Blokada ističe $3 u $4. Razlog: $2",
-	"centralauth-admin-blocked-indef": "Trajno blokiran. Razlog: $1",
 	"centralauth-admin-bad-input": "Neodgovarajući izbor za spajanje",
 	"centralauth-admin-already-unmerged": "Preskačem $1, već je razdvojen",
 	"centralauth-admin-delete-title": "Brisanje naloga",
@@ -93,6 +91,8 @@
 	"centralauth-editset-reason": "Razlog:",
 	"centralauth-editset-submit": "Unesi",
 	"centralauth-editset-submit-delete": "Obriši",
+	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
 	"right-centralauth-autoaccount": "Samoprijavljivanje sa globalnim nalogom",
+	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
 	"centralloginsuccesful": "Prijavljivanje uspješno"
 }
