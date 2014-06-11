@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_f09b9966",
+        "filename": "central-auth.sql",
+        "patchSetId": 40
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 915
+      },
+      "writtenOn": "2014-06-11T02:30:27Z",
+      "side": 1,
+      "message": "The patch file has UNIQUE KEY. Which is it?\n\n(preferably unique so it can be a primary key for online schema changes)",
+      "revId": "b66ec83400569b6edb3264517665c07999aae6c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
