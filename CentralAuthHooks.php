@@ -1591,4 +1591,23 @@ class CentralAuthHooks {
 
 		return $caUser->attachedOn( $global ) && $caUser->attachedOn( $local );
 	}
+
+	/**
+	 * Hook for UserMerge extension after an account is deleted
+	 * @param User &$user account that was just deleted
+	 * @return bool
+	 */
+	public static function onDeleteAccount( User &$user ) {
+		$caUser = CentralAuthUser::getInstance( $user );
+
+		if ( $caUser->isAttached() ) {
+			// Clean up localuser table.
+			$caUser->adminUnattach( array( wfWikiID() ) );
+		}
+
+		// Clean up localnames table.
+		$caUser->removeLocalName( wfWikiID() );
+
+		return true;
+	}
 }
