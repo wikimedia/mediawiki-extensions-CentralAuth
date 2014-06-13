@@ -34,10 +34,12 @@
 	"centralauth-incomplete-text": "Декъашхочун дӀаяздарш цхьаьнатохар чекх делча, хӀора {{int:Centralauth-groupname}} проектехь ахьа дӀаяздар кхолла дезар дац.",
 	"centralauth-not-owner-text": "Декъашхочун «$1» цӀе автоматически дола яьккхи $2 проектехь дӀаяздар долчун.\n\nИ дӀаяздар хьай делахь хьа йиш ю декъашхочун дӀаяздарш цхьаьнатохар чекхдаккха хьай коьрта дӀаяздаран пароль язйина:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Гайтаран дӀахӀоттам</div><br clear='all'/>",
+	"centralauth-disabled-dryrun": "Декъашхойн дӀаяздарш вовшахтохар таллийн (тадечу) хьолехь болх беш ду, вовшахтуху опцеш дӀадайина ду. Бехк ма била.",
 	"centralauth-error-locked": "Хьа таро яц хийцамаш бан хьан декъашхочун дӀаяздар блоктоьхна хилар бахьнехь.",
 	"centralauth-error-unmerged": "Хьа таро яц хийцамаш бан, ахьа юкъара декъашхочун дӀаяздар кхоллар кхочушдина ца хилар бахьнехь.",
 	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''Юкъара декъашхочун дӀаяздарх''']]…'' лаьцна кхин хаар",
 	"centralauth-list-home-title": "«ЦӀера» вики-проект",
+	"centralauth-list-home-dryrun": "Хьан декъашхочун дӀаяздарна паролан маьӀна а электронан адресаш а лелор ду хӀокху вики-проектехь.",
 	"centralauth-list-attached-title": "Юкъа тоьхна декъашхочун дӀаяздарш",
 	"centralauth-list-attached": "«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьаьнатоьхна лахара сайташ чохь:",
 	"centralauth-list-attached-dryrun": "«$1» цӀарца долу декъашхочун дӀаяздарш автоматически цхьанатухур ду лахара сайташ чохь:",
@@ -244,6 +246,7 @@
 	"centralauth-editset": "Вики гӀирсашан гулам",
 	"centralauth-editset-legend-rw": "Википедин гулам хийцар я кхоллар",
 	"centralauth-editset-legend-ro": "Вики гӀирсашан могӀам",
+	"centralauth-editset-intro-rw": "ХӀара викин гуламаш хӀинцале кхоьллина бу.\nХьан йиш ю царах муьлха хьажа я таян, я керланиг кхолла.",
 	"centralauth-editset-intro-ro": "Лахахь гайтина, болуш болу вики гӀирсашан гулам.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|дӀаяккха]])",
 	"centralauth-editset-new": "Кхолла керла гулам",
@@ -274,6 +277,7 @@
 	"centralauth-editset-return": "ЮхагӀо коьрта хьоле",
 	"centralauth-block-already-locked": "Декъашхочун дӀаяздар [[Special:CentralAuth/$1|$1]] хӀинцале глобально блоктоьхна ду.",
 	"centralauth-readonly": "хаамийн базан CentralAuth блоктоьхна",
+	"centralauth-readonlytext": "CentralAuth база хӀинца йолу хана хицамаш ца байта блоктохна ю, база карлайокхуш хила там бу болх чекх баьлча юху болх бира бу.",
 	"right-globalgroupmembership": "глобальни тобанаш чохь дакъалацар хийцар",
 	"right-centralauth-autoaccount": "глобальни декъашхочун дӀаяздар тӀера aвтоматически чубовлар",
 	"right-centralauth-unmerge": "глобальни дӀаяздарш вовшах дахар",
@@ -292,5 +296,6 @@
 	"centralauth-error-token-wronguser": "Хьан сесси декъашхочун цӀарца йогӀуш яц.\nЦхьаъ зуламан дӀаяздарца болх боло гӀерташ хила мега.\nХьой кхечу дӀаяздарца болх боло гӀертахь, дехар до, цӀа хьалха хӀара сеанс дӀаерзае.",
 	"centralauth-warning-notloggedin": "Ахьа системин чохь болх беш бац.",
 	"centralauth-warning-notattached": "Локальни дӀаяздар глобальнин юкъа тоьхна дац.",
-	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} проектехь декъашхочун дӀаяздар бакъдан"
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} проектехь декъашхочун дӀаяздар бакъдан",
+	"centralauth-finishglobaliseemail_body": "Хьан электронан адрес «$2» дӀаяздарх тесна Викимедиан массо проекташкахь, {{SITENAME}} проектехь долу коьрта дӀаяздарца.\n\nХӀара дӀаяздар хьайн хилар бакъдан хьай браузер чу хьажорг йилла:\n\n$3\n\nДӀаяздар хьайн дацахь хьажорган чу а гӀой электронан адрес юхадакха:\n\n$5\n\nХӀара кон бакъяр чекхдолу $6 $7."
 }
