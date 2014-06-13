@@ -311,6 +311,9 @@ $wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUse
 // For GlobalCssJs
 $wgHooks['LoadGlobalCssJs'][] = 'CentralAuthHooks::onLoadGlobalCssJs';
 
+// For UserMerge
+$wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
+
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
 $wgAvailableRights[] = 'centralauth-lock';
