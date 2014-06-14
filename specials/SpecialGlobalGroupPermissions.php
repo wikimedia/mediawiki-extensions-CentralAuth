@@ -222,6 +222,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		if ( !$editable ) {
 			$attribs['disabled'] = 'disabled';
+			if ( !$assignedRights ) {
+				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
+					array( 'centralauth-editgroup-nonexistent', $group ) );
+			}
 		}
 
 		foreach ( $rights as $right ) {

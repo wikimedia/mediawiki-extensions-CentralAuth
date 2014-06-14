@@ -282,6 +282,7 @@
 	"centralauth-editgroup-subtitle-readonly": "Subtitle for Special:GlobalGroupPermissions for users without edit right.\nParameters:\n* $1 - Name of the group",
 	"centralauth-editgroup-fieldset": "Used as fieldset label. Parameters:\n* $1 - group name",
 	"centralauth-editgroup-name": "Used as label for \"Global group name\" input box.",
+	"centralauth-editgroup-nonexistent": "Error shown when a global group does not exist (i.e., has no rights assigned).\n\nParameters:\n* $1 - group name",
 	"centralauth-editgroup-display": "This is a label for a localised group name.",
 	"centralauth-editgroup-display-edit": "\"edit\" is link text.\n\nParameters:\n* $1 - group name\n* $2 - group name (localized) e.g. {{msg-mw|group-editor}}, {{msg-mw|group-sysop}}",
 	"centralauth-editgroup-invalid-name": "Error shown in case the name given for the global group is invalid",
