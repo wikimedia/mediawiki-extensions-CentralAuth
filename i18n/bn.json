@@ -132,7 +132,7 @@
 	"centralauth-admin-multi-bot": "সাম্প্রতিক পরিবর্তনসমূহ",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|সেকেন্ড|সেকেন্ড}} পূর্বে",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|মিনিট|মিনিট}} পূর্বে",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|ঘন্টা|ঘন্টা}} পূর্বে",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|ঘণ্টা}} পূর্বে",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|দিন|দিন}} পূর্বে",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|মাস|মাস}} পূর্বে",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|বছর|বছর}} পূর্বে",
