@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_7971b60a",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-15T15:21:40Z",
+      "side": 1,
+      "message": "this isn\u0027t the renameuser extension, thus shouldn\u0027t make log entries for it",
+      "revId": "4f10c82569bf143365bee3d769b81685009191ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
