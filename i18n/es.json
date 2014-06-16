@@ -35,7 +35,8 @@
 			"Titoxd",
 			"Toliño",
 			"Translationista",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Themasterriot"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -61,7 +62,7 @@
 	"centralauth-merge-step3-submit": "Unificar las cuentas",
 	"centralauth-merge-no-accounts": "¡No existen cuentas que coincidan con tu nombre en la tabla central de búsqueda de cuentas!\nLa base de datos puede estar dañada.",
 	"centralauth-merge-home-password": "La wiki de origen de la cuenta listada más abajo tiene una contraseña diferente a la que ha introducido.<br />\nPor favor, introduzca la contraseña.",
-	"centralauth-complete": "Se ha completad la unificación de cuentas.",
+	"centralauth-complete": "Se ha completado la unificación de las cuentas",
 	"centralauth-incomplete": "No se ha completado la unificación de cuentas.",
 	"centralauth-complete-text": "Ahora puedes iniciar sesión en cualquier wiki de {{int:Centralauth-groupname}} sin crear una cuenta nueva;",
 	"centralauth-incomplete-text": "Una vez que tus cuentas hayan sido unificadas, podrás ingresar a cualquier wiki de {{int:Centralauth-groupname}} sin crear una cuenta nueva",
