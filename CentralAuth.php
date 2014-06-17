@@ -446,7 +446,7 @@ if ( class_exists( 'AntiSpoof' ) ) {
 	$wgExtensionCredits['antispam'][] = array(
 		'path' => __FILE__,
 		'name' => 'AntiSpoof for CentralAuth',
-		'url' => 'https://www.mediawiki.org/wiki/Extension:AntiSpoof',
+		'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 		'author' => 'Sam Reed',
 		'descriptionmsg' => 'centralauth-antispoof-desc',
 	);
