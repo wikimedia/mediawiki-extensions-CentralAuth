@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_9033000a",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-06-17T13:50:18Z",
+      "side": 1,
+      "message": "Please change \"info\" to \"information\". Also twice below. Optionally, please update the two pre-existing cases of \"info\" to \"information\" (lines 84 and 88).",
+      "revId": "b1b9bea23a75c5034cb4a25d56ddbcf4716aa523",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_e40a8d23",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-06-17T13:50:18Z",
+      "side": 1,
+      "message": "How is this identical to \"Global account manager\"? I.e. it isn\u0027t. Please update. See https://www.mediawiki.org/wiki/I18n#Message_documentation for relevant qqq related hints.",
+      "revId": "b1b9bea23a75c5034cb4a25d56ddbcf4716aa523",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
