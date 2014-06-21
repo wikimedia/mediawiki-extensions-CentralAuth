@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_c5819efe",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-06-21T20:32:44Z",
+      "side": 1,
+      "message": "See issue from PS1",
+      "revId": "f8e97e69fe4830bd82bcecd0d28f5e2285128a1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
