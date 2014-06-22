@@ -250,6 +250,7 @@
 	"centralauth-editgroup-name": "Ryhmän nimi",
 	"centralauth-editgroup-display": "Ryhmän käännetty nimi:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|muokkaa]])",
+	"centralauth-editgroup-invalid-name": "Virheellinen järjestelmänlaajuisen ryhmän nimi annettu",
 	"centralauth-editgroup-member": "Ryhmän jäsenten käännetty nimi:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|muokkaa]])",
 	"centralauth-editgroup-members": "Jäsenluettelo:",
