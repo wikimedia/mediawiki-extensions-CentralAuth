@@ -94,7 +94,7 @@ class CentralAuthTestUser {
 
 		$attrs += array(
 			'gu_id' => '1000',
-			'gu_password' => User::crypt( $password ),
+			'gu_password' => User::getPasswordFactory()->newFromPlaintext( $password )->toString(),
 			'gu_salt' => '',
 			'gu_auth_token' => '1234',
 			'gu_locked' => 0,

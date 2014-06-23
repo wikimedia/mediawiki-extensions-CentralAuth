@@ -1492,7 +1492,6 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		list( $salt, $crypt ) = $this->getPasswordHash();
-
 		if ( $this->matchHash( $password, $salt, $crypt ) ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
@@ -1528,17 +1527,26 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
-		if ( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
-			return true;
+		$matched = false;
+		$passwordFactory = User::getPasswordFactory();
+		$hash = $passwordFactory->newFromCiphertext( $encrypted );
+		if ( $hash->equals( $plaintext ) ) {
+			$matched = true;
 		} elseif ( function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			if ( User::comparePasswords( $encrypted, $latin1, $salt ) ) {
-				return true;
+			if ( $hash->equals( $latin1 ) ) {
+				$matched = true;
 			}
 		}
-		return false;
+
+		if ( $matched && $passwordFactory->needsUpdate( $hash ) ) {
+			$this->setPassword( $plaintext, false );
+			$this->saveSettings();
+		}
+
+		return $matched;
 	}
 
 	/**
@@ -1988,15 +1996,19 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {
-		return array( '', User::crypt( $password ) );
+		return array(
+			'',
+			User::getPasswordFactory()->newFromPlaintext( $password )->toString()
+		);
 	}
 
 	/**
 	 * Set the account's password
 	 * @param $password String plaintext
+	 * @param $resetAuthToken bool if we should reset the login token
 	 * @return Bool true
 	 */
-	function setPassword( $password ) {
+	function setPassword( $password, $resetAuthToken = true ) {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
 		$this->mPassword = $hash;
@@ -2016,8 +2028,9 @@ class CentralAuthUser extends AuthPluginUser {
 		wfDebugLog( 'CentralAuth',
 			"Set global password for '$this->mName'" );
 
-		// Reset the auth token.
-		$this->resetAuthToken();
+		if ( $resetAuthToken ) {
+			$this->resetAuthToken();
+		}
 		$this->invalidateCache();
 		return true;
 	}
