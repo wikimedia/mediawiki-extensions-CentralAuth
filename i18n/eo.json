@@ -166,7 +166,7 @@
 	"centralauth-renameuser-merged": "Uzanto $1 estis migrita al la unuigita salutsistemo.\nRenomado de ĝi kaŭzos la lokan uzanto esti malkonektita de la ĝeneralan uzanton.",
 	"centralauth-renameuser-reserved": "Uzanto $2 estas rezerva por ĝenerala konto.",
 	"centralauth-invalid-wiki": "Nenia vikia datumbazo: $1",
-	"centralauth-account-exists": "Neeblis krei konton: la petita uzulnomo estas jam uzita en la unuigita salutsistemo.",
+	"centralauth-account-exists": "Ne eblis krei konton: la petita uzantonomo estas jam uzata en la unuigita salutsistemo.",
 	"centralauth-account-exists-reset": "La salutnomo $1 ne estas registrita en ĉi tiu vikio, sed ĝi ekzistas en la ĝenerala salut-sistemo.",
 	"centralauth-login-progress": "Ensalutante vin en la vikioj de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Elsalutante vin al la aliaj vikioj de {{int:Centralauth-groupname}}:",
