@@ -1996,7 +1996,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return void
 	 */
 	static function setCookie( $name, $value, $exp = -1, $secure = null, $prefix = false ) {
-		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieExpiration;
+		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgLoginCookieExpiration,
+			$wgCookieExpiration;
 
 		if ( CentralAuthHooks::hasApiToken() ) {
 			throw new MWException( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
@@ -2005,7 +2006,13 @@ class CentralAuthUser extends AuthPluginUser {
 		self::setP3P();
 
 		if ( $exp == -1 ) {
-			$exp = time() + $wgCookieExpiration;
+			$exp = time();
+
+			if ( $wgLoginCookieExpiration ) {
+				$exp += $wgLoginCookieExpiration;
+			} else {
+				$exp += $wgCookieExpiration;
+			}
 		} elseif ( $exp == 0 ) {
 			// Session cookie
 			$exp = null;
