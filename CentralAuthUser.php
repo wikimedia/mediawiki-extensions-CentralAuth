@@ -1467,7 +1467,6 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		list( $salt, $crypt ) = $this->getPasswordHash();
-
 		if ( $this->matchHash( $password, $salt, $crypt ) ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
@@ -1503,17 +1502,24 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
-		if ( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
-			return true;
+		$status = Status::newFatal();
+		$passwordFactory = User::getPasswordFactory();
+		$hash = $passwordFactory->newFromCiphertext( $encrypted );
+		if ( $hash->equals( $password ) ) {
+			$status = Status::newGood();
 		} elseif ( function_exists( 'iconv' ) ) {
-			// Some wikis were converted from ISO 8859-1 to UTF-8;
-			// retained hashes may contain non-latin chars.
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			if ( User::comparePasswords( $encrypted, $latin1, $salt ) ) {
-				return true;
+			if ( $hash->equals( $latin1 ) ) {
+				$status = Status::newGood();
 			}
 		}
-		return false;
+
+		if ( $status->isGood() && $passwordFactory->needsUpdate( $hash ) ) {
+			$this->setPassword( $password, false );
+			$this->saveSettings();
+		}
+
+		return $status->isGood();
 	}
 
 	/**
@@ -1914,15 +1920,19 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {
-		return array( '', User::crypt( $password ) );
+		return array(
+			'',
+			User::getPasswordFactory()->newFromPlaintext( $password )->toString()
+		);
 	}
 
 	/**
 	 * Set the account's password
 	 * @param $password String plaintext
+	 * @param $resetAuthToken bool if we should reset the login token
 	 * @return Bool true
 	 */
-	function setPassword( $password ) {
+	function setPassword( $password, $resetAuthToken = true ) {
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
 		$this->mPassword = $hash;
@@ -1942,8 +1952,9 @@ class CentralAuthUser extends AuthPluginUser {
 		wfDebugLog( 'CentralAuth',
 			"Set global password for '$this->mName'" );
 
-		// Reset the auth token.
-		$this->resetAuthToken();
+		if ( $resetAuthToken ) {
+			$this->resetAuthToken();
+		}
 		$this->invalidateCache();
 		return true;
 	}
