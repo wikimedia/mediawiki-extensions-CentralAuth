@@ -2005,7 +2005,7 @@ class CentralAuthUser extends AuthPluginUser {
 		self::setP3P();
 
 		if ( $exp == -1 ) {
-			$exp = time() + $wgCookieExpiration;
+			$exp = time() + $wgLoginCookieExpiration;
 		} elseif ( $exp == 0 ) {
 			// Session cookie
 			$exp = null;
