@@ -234,8 +234,13 @@ class CentralAuthHooks {
 				),
 			);
 
-		$after = array_key_exists( 'registrationdate', $preferences ) ? 'registrationdate' : 'editcount';
-		$preferences = wfArrayInsertAfter( $preferences, $prefInsert, $after );
+		if ( array_key_exists( 'registrationdate', $preferences ) ) {
+			$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'registrationdate' );
+		} elseif  ( array_key_exists( 'editcount', $preferences ) ) {
+			$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'editcount' );
+		} else {
+			$preferences += $prefInsert;
+		}
 
 		return true;
 	}
