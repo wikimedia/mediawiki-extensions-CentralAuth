@@ -52,7 +52,7 @@ class CheckLocalNames extends Maintenance {
 				'localnames',
 				array( 'ln_wiki' ),
 				"",
-				__FUNCTION__,
+				__METHOD__,
 				array(
 					 "DISTINCT",
 					 "ORDER BY" => "ln_wiki ASC"
@@ -66,7 +66,7 @@ class CheckLocalNames extends Maintenance {
 
 		// iterate through the wikis
 		foreach( $wikis as $wiki ) {
-			$localdb = wfGetLB( $wiki )->getConnection( DB_SLAVE , array(), $wiki );
+			$localdb = wfGetDB( DB_SLAVE , array(), $wiki );
 			$lastUsername = "";
 
 			$this->output( "Checking localnames for $wiki ...\n" );
@@ -76,12 +76,12 @@ class CheckLocalNames extends Maintenance {
 				$this->output( "\t ... querying from '$lastUsername'\n" );
 				$result = $centralSlave->select(
 					'localnames',
-					array( 'ln_user' ),
+					array( 'ln_name' ),
 					array(
 						 "ln_wiki" => $wiki,
-						 "ln_user > " . $centralSlave->addQuotes( $lastUsername )
+						 "ln_name > " . $centralSlave->addQuotes( $lastUsername )
 					),
-					__FUNCTION__,
+					__METHOD__,
 					array(
 						 "LIMIT" => $this->batchSize,
 						 "ORDER BY" => "ln_name ASC"
@@ -93,14 +93,14 @@ class CheckLocalNames extends Maintenance {
 					$localUser = $localdb->select(
 						'user',
 						array( 'user_name' ),
-						array( "user_name" => $u->user_name ),
-						__FUNCTION__
+						array( "user_name" => $u->ln_name ),
+						__METHOD__
 					);
 
 					// check to see if the user did not exist in the local user table
 					if( $localUser->numRows() == 0 ) {
 						if( $this->verbose ) {
-							$this->output( "Local user not found for localname entry $u->user_name@$wiki\n" );
+							$this->output( "Local user not found for localname entry $u->ln_name@$wiki\n" );
 						}
 						$this->total++;
 						if( !$this->dryrun ){
@@ -109,15 +109,15 @@ class CheckLocalNames extends Maintenance {
 								'localnames',
 								array(
 									 "ln_wiki" => $wiki,
-									 "ln_user" => $u->user_name
+									 "ln_user" => $u->ln_name
 								),
-								__FUNCTION__
+								__METHOD__
 							);
 							// TODO: is there anyway to check the success of the delete?
 							$this->deleted++;
 						}
 					}
-					$lastUsername = $u->user_name;
+					$lastUsername = $u->ln_name;
 				}
 
 			} while ( $result->numRows() > 0 );
