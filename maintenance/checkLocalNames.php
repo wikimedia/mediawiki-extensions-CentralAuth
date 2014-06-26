@@ -31,9 +31,12 @@ class CheckLocalNames extends Maintenance {
 		if ( $this->getOption( 'delete', false ) === true ) {
 			$this->dryrun = false;
 		}
-		if ( $this->getOption( 'wiki', false ) !== false ) {
-			$this->wiki = true;
+
+		$wiki = $this->getOption( 'wiki', false );
+		if ( $wiki !== false ) {
+			$this->wiki = $wiki;
 		}
+
 		if ( $this->getOption( 'verbose', false ) !== false ) {
 			$this->verbose = true;
 		}
