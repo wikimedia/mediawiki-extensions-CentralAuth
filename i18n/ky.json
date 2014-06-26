@@ -3,7 +3,8 @@
 		"authors": [
 			"Chorobek",
 			"Growingup",
-			"Викиней"
+			"Викиней",
+			"Connexx"
 		]
 	},
 	"mergeaccount": "Эсеп жазууларды бириктирүү абалы",
@@ -40,13 +41,17 @@
 	"centralauth-admin-delete-title": "Эсеп жазууну өчүрүү",
 	"centralauth-admin-delete-button": "Бул эсеп жазууну өчүрүү",
 	"centralauth-admin-reason": "Себеп:",
+	"centralauth-admin-status": "Глобалдык аккаунт статусун кошуу",
 	"centralauth-admin-status-locked": "Бөгөттөлгөн:",
 	"centralauth-admin-status-hidden": "Жашыруун:",
 	"centralauth-listusers-locked": "бөгөттөлгөн",
 	"centralauth-admin-action-lock-lock": "Тандалган эсеп жазууларды бөгөттөө",
 	"centralauth-admin-action-lock-unlock": "Тандалган эсеп жазууларды бошотуу",
 	"centralauth-admin-multi-bot": "Соңку өзгөртүүлөр",
+	"centralauth-prefs-status": "Аккаунтун глобалдык статусу:",
 	"centralauth-prefs-complete": "Баардыгы жайында!",
+	"centralauth-prefs-manage": "Глобалдык аккаунтуңузду башкаруу",
+	"centralauth-prefs-view": "Аккаунттун глобалдык маалыматын көрүү",
 	"centralauth-log-status-locked": "бөгөттөлгөн",
 	"centralauth-log-status-hidden": "жашыруун",
 	"centralauth-log-status-none": "(жок)",

@@ -5,6 +5,8 @@
 			"Botuzhaleny-sodamo"
 		]
 	},
+	"centralauth-merge-step1-submit": "Кемекстамс совамодо содамочинть",
+	"centralauth-merge-step2-submit": "Кемекстамс совамодо содамочинть",
 	"centralauth-merge-dryrun-or": "'''эли'''",
 	"centralauth-merge-step3-submit": "Вейтьсэндямс совамо таркатнень",
 	"centralauth-merge-method-empty": "путовкст арасть",
@@ -26,6 +28,7 @@
 	"centralauth-admin-status-hidden": "Кекшезь:",
 	"centralauth-admin-status-hidden-no": "Совамо таркась апак кекше",
 	"centralauth-listusers-locked": "сёлгозь",
+	"centralauth-admin-multi-bot": "Чиень полавтнемат-лиякстомтомат",
 	"centralauth-prefs-unattached": "Апак кемекста",
 	"centralauth-log-status-locked": "сёлгозь",
 	"centralauth-log-status-hidden": "кекшезь",
