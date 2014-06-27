@@ -205,7 +205,7 @@
 	"centralauth-login-no-others": "{{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그인되었습니다.",
 	"centralauth-logout-no-others": "{{int:Centralauth-groupname}}의 다른 프로젝트에서 자동적으로 로그아웃되었습니다.",
 	"centralauth-hidden-blockreason": "통합 계정이 다음과 같은 이유로 $1 사용자에 의해 $2에 숨겨졌습니다: $3",
-	"centralauth-login-error-locked": "계정이 전 영역에 걸쳐 잠겨 있으므로 로그인 할 수 없습니다.",
+	"centralauth-login-error-locked": "당신의 계정이 전역으로 잠겼기 때문에 로그인할 수 없습니다.",
 	"centralauth-log-name": "통합 계정 기록",
 	"centralauth-log-header": "이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.",
 	"centralauth-log-entry-delete": "사용자가 \"$1\" 통합 계정을 삭제했습니다",
