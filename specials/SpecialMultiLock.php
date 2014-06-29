@@ -440,12 +440,24 @@ class SpecialMultiLock extends SpecialPage {
 	 */
 	function showLogExtract() {
 		$text = '';
+		$dbr = wfGetDB( DB_SLAVE );
 		$numRows = LogEventsList::showLogExtract(
 			$text,
 			array( 'globalauth', 'suppress' ),
 			'',
 			'',
-			array( 'showIfEmpty' => true ) );
+			array(
+				'conds' => array(
+					$dbr->makeList(
+						array(
+							'log_action' => 'setstatus',
+							'log_type' => 'globalauth',
+						),
+						LIST_OR
+					)
+				), // bug 57253
+				'showIfEmpty' => true
+			) );
 		if ( $numRows ) {
 			$this->getOutput()->addHTML(
 				Xml::fieldset( $this->msg( 'centralauth-admin-logsnippet' )->text(), $text )
