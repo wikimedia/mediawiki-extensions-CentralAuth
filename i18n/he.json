@@ -274,6 +274,7 @@
 	"centralauth-editgroup-success-text": "שינית בהצלחה את הקבוצה הגלובלית $1.\n[[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|עריכה]])",
 	"centralauth-editgroup-nowikiset": "אין, זה חל על כל אתרי הוויקי.",
+	"centralauth-editgroup-nonexistent": "הקבוצה הגלובלית \"$1\" אינה קיימת עכשיו.",
 	"centralauth-globalgrouppermissions-knownwiki": "אתר שבו יש להם חשבון משתמש:",
 	"centralauth-globalgroupmembership-badknownwiki": "החשבון הגלובלי '''$1''' אינו פעיל באתר הוויקי שציינתם (\"$2\").\nייתכן שאתם מנסים לשנות את ההרשאות של המשתמש הלא נכון!",
 	"centralauth-editset": "עריכת קבוצות אתרי ויקי",

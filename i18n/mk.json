@@ -267,6 +267,7 @@
 	"centralauth-editgroup-success-text": "Успешно подновена глобалната група $1.\n[[Special:GlobalGroupPermissions|Назад кон раководењето со групи]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|уреди]])",
 	"centralauth-editgroup-nowikiset": "Нема. Важи за сите викија.",
+	"centralauth-editgroup-nonexistent": "Глобалната група „$1“ во моментов не постои.",
 	"centralauth-globalgrouppermissions-knownwiki": "Вики на кое имаат сметка:",
 	"centralauth-globalgroupmembership-badknownwiki": "Глобалната сметка '''$1''' не е активна на викито кое го назначивте ('' $2 '').\nМожеби се обидувате да доделите права на погрешен корисник!",
 	"centralauth-editset": "Збирови викија",

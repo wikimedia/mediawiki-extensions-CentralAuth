@@ -267,6 +267,7 @@
 	"centralauth-editgroup-success-text": "Oled edukalt globaalset rühma $1 uuendanud.\n[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|muuda]])",
 	"centralauth-editgroup-nowikiset": "Puudub, kehtib kõigis vikides.",
+	"centralauth-editgroup-nonexistent": "Globaalne rühm \"$1\" puudub praegu.",
 	"centralauth-globalgrouppermissions-knownwiki": "Vikid, kus neil on konto:",
 	"centralauth-globalgroupmembership-badknownwiki": "Globaalne konto '''$1''' pole valitud vikis ('' $2 '') aktiivne.\nVeendu, et sa ei ürita valele kasutajale õiguseid anda!",
 	"centralauth-editset": "Vikikomplektid",

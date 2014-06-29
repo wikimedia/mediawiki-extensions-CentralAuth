@@ -275,6 +275,7 @@
 	"centralauth-editgroup-success-text": "Die globale Gruppe „$1“ wurde erfolgreich aktualisiert.\n[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|bearbeiten]])",
 	"centralauth-editgroup-nowikiset": "Keine, gilt für alle Wikis.",
+	"centralauth-editgroup-nonexistent": "Die globale Gruppe „$1“ ist noch nicht vorhanden.",
 	"centralauth-globalgrouppermissions-knownwiki": "Wähle ein Wiki, auf dem sie ein Benutzerkonto haben:",
 	"centralauth-globalgroupmembership-badknownwiki": "Das globale Benutzerkonto „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Du könntest irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
 	"centralauth-editset": "Wikigruppen",
