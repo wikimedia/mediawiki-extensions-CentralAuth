@@ -284,6 +284,7 @@
 	"centralauth-editgroup-success-text": "Uppdaterat den globala gruppen $1.\n[[Special:GlobalGroupPermissions|Tillbaka till grupphantering]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|redigera]])",
 	"centralauth-editgroup-nowikiset": "Ingen, gäller för alla wikier.",
+	"centralauth-editgroup-nonexistent": "Den globala gruppen \"$1\" finns för närvarande inte.",
 	"centralauth-globalgrouppermissions-knownwiki": "Wiki där de har ett konto:",
 	"centralauth-globalgroupmembership-badknownwiki": "Det globala kontot '''$1''' är inte aktivt på wikin du specifierade ('' $2 '').\nDu kanske försöker tilldela rättigheterna till fel användare!",
 	"centralauth-editset": "Wikigrupp",

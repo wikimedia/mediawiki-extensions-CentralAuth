@@ -267,6 +267,7 @@
 	"centralauth-editgroup-success-text": "Bạn đã thay đổi thành công nhóm toàn cục $1. [[Special:GlobalGroupPermissions|Quay lại quản lý nhóm]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|sửa]])",
 	"centralauth-editgroup-nowikiset": "Không có; áp dụng cho tất cả mọi wiki.",
+	"centralauth-editgroup-nonexistent": "Nhóm toàn cục “$1” hiện không tồn tại.",
 	"centralauth-globalgrouppermissions-knownwiki": "Wiki chứa tài khoản của họ:",
 	"centralauth-globalgroupmembership-badknownwiki": "Tài khoản toàn cục '''$1''' không hoạt động trên wiki bạn chỉ định (''$2''). Có thể bạn đang gán quyền sai thành viên!",
 	"centralauth-editset": "Tập wiki",

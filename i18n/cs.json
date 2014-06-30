@@ -270,6 +270,7 @@
 	"centralauth-editgroup-success-text": "Globální skupina $1 úspěšně změněna.\n[[Special:GlobalGroupPermissions|Návrat na správu skupin]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|upravit]])",
 	"centralauth-editgroup-nowikiset": "Žádná, vztahuje se na všechny wiki.",
+	"centralauth-editgroup-nonexistent": "Globální skupina „$1“ neexistuje.",
 	"centralauth-globalgrouppermissions-knownwiki": "Vyberte wiki, na níž má účet:",
 	"centralauth-globalgroupmembership-badknownwiki": "Globální uživatel  '''$1''' není aktivní na wiki, kterou jste uvedli (''$2''). Možná se pokoušíte přidělit práva nesprávnému uživateli.",
 	"centralauth-editset": "Sady wiki",

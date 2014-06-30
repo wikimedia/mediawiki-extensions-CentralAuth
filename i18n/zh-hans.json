@@ -28,7 +28,8 @@
 			"阿pp",
 			"乌拉跨氪",
 			"Kuailong",
-			"Mywood"
+			"Mywood",
+			"Impersonator 1"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -291,6 +292,7 @@
 	"centralauth-editgroup-success-text": "已成功更新全域组$1。\n[[Special:GlobalGroupPermissions|回到组管理]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|编辑]])",
 	"centralauth-editgroup-nowikiset": "无，适用所有wiki。",
+	"centralauth-editgroup-nonexistent": "全域组“$1”当前不存在。",
 	"centralauth-globalgrouppermissions-knownwiki": "他拥有账户的wiki：",
 	"centralauth-globalgroupmembership-badknownwiki": "该全域帐户'''$1'''在您所指定的wiki（'' $2 ''）中并不活跃。您可能正在尝试指定错的用户!",
 	"centralauth-editset": "维基集合",

@@ -278,6 +278,7 @@
 	"centralauth-editgroup-success-text": "グローバルグループ $1 を更新しました。\n[[Special:GlobalGroupPermissions|グループ操作に戻る]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|編集]])",
 	"centralauth-editgroup-nowikiset": "なし、すべてのウィキに適用されます。",
+	"centralauth-editgroup-nonexistent": "現在、グローバル グループ「$1」は存在しません。",
 	"centralauth-globalgrouppermissions-knownwiki": "アカウントがあるウィキ:",
 	"centralauth-globalgroupmembership-badknownwiki": "グローバルアカウント '''$1''' は指定したウィキ ('' $2 '') では活動していません。\n間違った利用者に権限を付与しようとしているおそれがあります!",
 	"centralauth-editset": "ウィキ集合",

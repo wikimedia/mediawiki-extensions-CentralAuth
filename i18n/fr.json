@@ -293,6 +293,7 @@
 	"centralauth-editgroup-success-text": "Groupe global $1 bien mis à jour.\n[[Special:GlobalGroupPermissions|Revenir à la gestion des groupes]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|modifier]])",
 	"centralauth-editgroup-nowikiset": "Aucun, s’applique à tous les wikis.",
+	"centralauth-editgroup-nonexistent": "Le groupe global « $1 » n’existe pas.",
 	"centralauth-globalgrouppermissions-knownwiki": "Wiki sur lequel ils ont un compte :",
 	"centralauth-globalgroupmembership-badknownwiki": "Le compte global '''$1''' n’est pas actif sur le wiki que vous avez indiqué (''$2'').\nIl se peut que vous tentiez d’assigner des droits au mauvais utilisateur !",
 	"centralauth-editset": "Jeux de wikis",

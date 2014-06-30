@@ -13,7 +13,8 @@
 			"Misibacsi",
 			"Samat",
 			"Tacsipacsi",
-			"Tgr"
+			"Tgr",
+			"ViDam"
 		]
 	},
 	"mergeaccount": "Felhasználói fiókok egyesítésének állapota",
@@ -236,6 +237,7 @@
 	"centralauth-editgroup-success": "A globális csoporthoz tartozó jogok megváltoztatva",
 	"centralauth-editgroup-success-text": "Sikeresen megváltoztattad a(z) $1 globális csoporthoz tartozó jogokat.\n[[Special:GlobalGroupPermissions|Vissza a csoportkezelőhöz]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|szerkesztés]])",
+	"centralauth-editgroup-nonexistent": "A \"$1\" globális csoport még nem létezik.",
 	"centralauth-globalgrouppermissions-knownwiki": "Válassz ki egy wikit, ahol van felhasználói fiókja:",
 	"centralauth-globalgroupmembership-badknownwiki": "'''$1''' nem aktív az általad kiválasztott wikin ('' $2 '').\nValószínűleg rossz felhasználó számára akarsz jogokat adni.",
 	"centralauth-editset": "Wikicsoportok",
