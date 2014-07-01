@@ -13,7 +13,7 @@
 -- we know we have to sweep all the local databases and populate
 -- the localnames table.
 --
-CREATE TABLE globalnames (
+CREATE TABLE IF NOT EXISTS /*_*/globalnames (
   gn_name varchar(255) binary not null,
   primary key (gn_name)
 ) /*$wgDBTableOptions*/;
@@ -29,7 +29,7 @@ CREATE TABLE globalnames (
 -- separate databases to look for unmigrated accounts every time we log in;
 -- only existing databases not yet migrated have to be loaded.
 --
-CREATE TABLE localnames (
+CREATE TABLE IF NOT EXISTS /*_*/localnames (
   ln_wiki varchar(255) binary not null,
   ln_name varchar(255) binary not null,
 
@@ -40,7 +40,7 @@ CREATE TABLE localnames (
 --
 -- Global account data.
 --
-CREATE TABLE globaluser (
+CREATE TABLE IF NOT EXISTS /*_*/globaluser (
   -- Internal unique ID for the authentication server
   gu_id int auto_increment,
 
@@ -100,7 +100,7 @@ CREATE TABLE globaluser (
 --
 -- All local DBs will be swept on an opt-in check event.
 --
-CREATE TABLE localuser (
+CREATE TABLE IF NOT EXISTS /*_*/localuser (
   lu_wiki varchar(255) binary not null,
   lu_name varchar(255) binary not null,
 
@@ -122,7 +122,7 @@ CREATE TABLE localuser (
 
 
 -- Global user groups.
-CREATE TABLE global_user_groups (
+CREATE TABLE IF NOT EXISTS /*_*/global_user_groups (
   gug_user int(11) not null,
   gug_group varchar(255) not null,
 
@@ -132,7 +132,7 @@ CREATE TABLE global_user_groups (
 ) /*$wgDBTableOptions*/;
 
 -- Global group permissions.
-CREATE TABLE global_group_permissions (
+CREATE TABLE IF NOT EXISTS /*_*/global_group_permissions (
   ggp_group varchar(255) not null,
   ggp_permission varchar(255) not null,
 
@@ -143,7 +143,7 @@ CREATE TABLE global_group_permissions (
 
 -- Sets of wikis (for things like restricting global groups)
 -- May be defined in two ways: only specified wikis or all wikis except opt-outed
-CREATE TABLE wikiset (
+CREATE TABLE IF NOT EXISTS /*_*/wikiset (
   -- ID of wikiset
   ws_id int auto_increment,
   -- Display name of wikiset
@@ -161,7 +161,7 @@ CREATE TABLE wikiset (
 ) /*$wgDBTableOptions*/;
 
 -- Allow certain global groups to have their permissions only on certain wikis
-CREATE TABLE global_group_restrictions (
+CREATE TABLE IF NOT EXISTS /*_*/global_group_restrictions (
   -- Group to restrict
   ggr_group varchar(255) not null,
   -- Wikiset to use
@@ -172,7 +172,7 @@ CREATE TABLE global_group_restrictions (
 ) /*$wgDBTableOptions*/;
 
 -- Table for global rename status
-CREATE TABLE renameuser_status (
+CREATE TABLE IF NOT EXISTS /*_*/renameuser_status (
   -- Old name being renamed from
   ru_oldname varchar(255) binary not null,
   -- New name being renamed to
