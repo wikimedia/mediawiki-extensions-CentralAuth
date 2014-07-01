@@ -8,79 +8,66 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once "$IP/maintenance/commandLine.inc";
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Copy user data for this wiki into the globalnames and localnames table
  */
-function migratePassZero() {
-	global $wgDBname;
-	$dbr = wfGetDB( DB_REPLICA );
-	$chunkSize = 1000;
+class MigratePassZero extends Maintenance {
 
-	$start = microtime( true );
-	$migrated = 0;
-	$users = [];
+	function execute() {
+		global $wgDBname;
+		$this->output( "CentralAuth migration pass 0:" );
+		$this->output( "$wgDBname preparing migration data..." );
+		$this->doPassZero();
+		$this->output( "done." );
+	}
 
-	// List all user accounts on this wiki in the migration table
-	// on the central authentication server.
+	function doPassZero() {
+		global $wgDBname;
+		$dbr = $this->getDB( DB_REPLICA );
+		$chunkSize = 1000;
 
-	$lastUser = $dbr->selectField( 'user', 'MAX(user_id)', '', __FUNCTION__ );
-	for ( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
-		$max = $min + $chunkSize - 1;
-		$result = $dbr->select( 'user',
-			[ 'user_id', 'user_name' ],
-			"user_id BETWEEN $min AND $max",
-			__FUNCTION__ );
+		$start = microtime( true );
+		$migrated = 0;
+		$users = [];
 
-		foreach ( $result as $row ) {
-			$users[intval( $row->user_id )] = $row->user_name;
-			++$migrated;
-		}
+		// List all user accounts on this wiki in the migration table
+		// on the central authentication server.
 
-		CentralAuthUser::storeMigrationData( $wgDBname, $users );
-		$users = []; // clear the array for the next pass
+		$lastUser = $dbr->selectField( 'user', 'MAX(user_id)', '', __FUNCTION__ );
+		for ( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
+			$max = $min + $chunkSize - 1;
+			$result = $dbr->select( 'user',
+				[ 'user_id', 'user_name' ],
+				"user_id BETWEEN $min AND $max",
+				__FUNCTION__ );
 
-		$delta = microtime( true ) - $start;
-		$rate = ( $delta == 0.0 ) ? 0.0 : $migrated / $delta;
-		printf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
-			$wgDBname,
-			$migrated,
-			min( $max, $lastUser ) / $lastUser * 100.0,
-			$delta,
-			$rate );
+			foreach ( $result as $row ) {
+				$users[intval( $row->user_id )] = $row->user_name;
+				++$migrated;
+			}
 
-		if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
-			echo "Waiting for slaves to catch up ... ";
-			CentralAuthUtils::waitForSlaves();
-			echo "done\n";
+			CentralAuthUser::storeMigrationData( $wgDBname, $users );
+			$users = []; // clear the array for the next pass
+
+			$delta = microtime( true ) - $start;
+			$rate = ( $delta == 0.0 ) ? 0.0 : $migrated / $delta;
+			$this->output( sprintf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).",
+				$wgDBname,
+				$migrated,
+				min( $max, $lastUser ) / $lastUser * 100.0,
+				$delta,
+				$rate ) );
+
+			if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
+				$this->output( "Waiting for slaves to catch up ... " );
+				CentralAuthUtils::waitForSlaves();
+				$this->output( "done" );
+			}
 		}
 	}
 }
 
-/**
- * @param int $userId
- * @return int
- */
-function getEditCount( $userId ) {
-	return countEdits( $userId, 'revision', 'rev_user' );
-}
-
-/**
- * @param int $userId
- * @param string $table
- * @param string $field
- * @return int
- */
-function countEdits( $userId, $table, $field ) {
-	$dbr = wfGetDB( DB_REPLICA );
-	$count = $dbr->selectField( $table, 'COUNT(*)',
-		[ $field => $userId ],
-		__METHOD__ );
-	return intval( $count );
-}
-
-echo "CentralAuth migration pass 0:\n";
-echo "$wgDBname preparing migration data...\n";
-migratePassZero();
-echo "done.\n";
+$maintClass = 'MigratePassZero';
+require_once RUN_MAINTENANCE_IF_MAIN;
