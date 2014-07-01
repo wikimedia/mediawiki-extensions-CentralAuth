@@ -254,6 +254,7 @@ $wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/GlobalRename/GlobalRenam
 $wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/GlobalRename/GlobalRenameUserValidator.php";
 $wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
 $wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/GlobalRename/GlobalRenameUserLogger.php";
+$wgAutoloadClasses['CentralAuthDBTest'] = "$caBase/tests/CentralAuthDBTest.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -303,6 +304,7 @@ $wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
 $wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
 $wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
 $wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect';
+$wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
