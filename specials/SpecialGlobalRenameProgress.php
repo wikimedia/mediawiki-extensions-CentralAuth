@@ -1,6 +1,11 @@
 <?php
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
+	/**
+	 * @var GlobalRenameUserStatus
+	 */
+	private $renameuserStatus;
+
 	function __construct() {
 		parent::__construct( 'GlobalRenameProgress' );
 	}
@@ -38,30 +43,24 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			return false;
 		}
 		$out = $this->getOutput();
-		$dbr = CentralAuthUser::getCentralSlaveDB();
-		$res = $dbr->select(
-			'renameuser_status',
-			array( 'ru_wiki', 'ru_status', 'ru_newname' ),
-			array( $dbr->makeList( array( 'ru_oldname' => $name, 'ru_newname' => $name ), LIST_OR ) ),
-			__METHOD__
-		);
 
-		if ( $res->numRows() === 0 ) {
+		$this->renameuserStatus = new GlobalRenameUserStatus( $name );
+		$names = $this->renameuserStatus->getNames();
+		if ( !$names ) {
 			$out->addWikiMsg( 'centralauth-rename-notinprogress', $name );
 			$this->getForm()->displayForm( false );
 			$this->showLogExtract( $name );
 			return true;
 		}
+
+		list( $oldName, $newName ) = $names;
+
+		$statuses = $this->renameuserStatus->getStatuses();
+
 		$this->getForm()->displayForm( false );
-		$statuses = array();
-		$newname = null;
-		foreach ( $res as $row ) {
-			$statuses[$row->ru_wiki] = $row->ru_status;
-			$newname = $row->ru_newname;
-		}
 		// $newname will always be defined since we check
 		// for 0 result rows above
-		$caUser = new CentralAuthUser( $newname );
+		$caUser = new CentralAuthUser( $newName );
 		$attached = $caUser->listAttached();
 		foreach ( $attached as $wiki ) {
 			// If it's not in the db table, and there is
@@ -87,7 +86,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$table .= Html::closeElement( 'table' );
 		$fieldset = Xml::fieldset( $this->msg( 'centralauth-rename-progress-fieldset' )->text(), $table );
 
-		$this->showLogExtract( $newname );
+		$this->showLogExtract( $newName );
 		$out->addHTML( $fieldset );
 		return true;
 	}

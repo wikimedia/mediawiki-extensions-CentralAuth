@@ -1761,19 +1761,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array|bool
 	 */
 	public function renameInProgressOn( $wiki ) {
-		$dbw = self::getCentralDB();
+		$renameState = new GlobalRenameUserStatus( $this->mName );
 
-		$row = $dbw->selectRow(
-			'renameuser_status',
-			array( 'ru_oldname', 'ru_newname' ),
-			array( $dbw->makeList(
-				array( 'ru_oldname' => $this->mName, 'ru_newname' => $this->mName ),
-				LIST_OR
-			), 'ru_wiki' => $wiki ),
-			__METHOD__
-		);
-		if ( $row !== false ) {
-			return array( $row->ru_oldname, $row->ru_newname );
+		// Use master as this is being used for various critical things
+		$names = $renameState->getNames( $wiki, 'master' );
+
+		if ( $names ) {
+			return $names;
 		} else {
 			return false;
 		}

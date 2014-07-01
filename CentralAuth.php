@@ -247,7 +247,13 @@ $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormat
 $wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/LocalRenameUserJob.php";
 $wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/specials/SpecialGlobalRenameUser.php";
 $wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/specials/SpecialGlobalRenameProgress.php";
-$wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/GlobalRenameLogFormatter.php";
+$wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/GlobalRename/GlobalRenameLogFormatter.php";
+
+$wgAutoloadClasses['GlobalRenameUser'] = "$caBase/GlobalRename/GlobalRenameUser.php";
+$wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/GlobalRename/GlobalRenameUserStatus.php";
+$wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/GlobalRename/GlobalRenameUserValidator.php";
+$wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
+$wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/GlobalRename/GlobalRenameUserLogger.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
