@@ -19,6 +19,7 @@ class MigrateAccount extends Maintenance {
 		$this->batchSize = 1000;
 		$this->autoMigrate = false;
 		$this->resetToken = false;
+		$this->suppressRC = false;
 
 		$this->addOption( 'auto', 'Allows migration using CentralAuthUser::attemptAutoMigration defaults', false, false );
 		$this->addOption( 'userlist', 'List of usernames to migrate in the format username\thomewiki, where \thomewiki is optional', false, true );
@@ -27,6 +28,7 @@ class MigrateAccount extends Maintenance {
 		$this->addOption( 'safe', 'Only migrates accounts with one instance of the username across all wikis', false, false );
 		$this->addOption( 'attachmissing', 'Attach matching local accounts to global account', false, false );
 		$this->addOption( 'resettoken', 'Allows for the reset of auth tokens in certain circumstances', false, false );
+		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
 	}
 
 	public function execute() {
@@ -41,6 +43,10 @@ class MigrateAccount extends Maintenance {
 		}
 		if ( $this->getOption( 'resettoken', false ) !== false ) {
 			$this->resetToken = true;
+		}
+
+		if ( $this->getOption( 'suppressrc', false ) !== false ) {
+			$this->suppressRC = true;
 		}
 
 		// check to see if we are processing a single username
@@ -111,7 +117,7 @@ class MigrateAccount extends Maintenance {
 						&& !is_null( $local['emailAuthenticated'] )
 					){
 						$this->output( "ATTACHING: $username@$wiki\n" );
-						$central->attach( $wiki, 'mail' );
+						$central->attach( $wiki, 'mail', /** $sendToRC = */ !$this->suppressRC );
 					}
 				}
 			} else {
@@ -163,10 +169,10 @@ class MigrateAccount extends Maintenance {
 			// all of the emails are the same and confirmed
 			if ( $emailMatch ) {
 				$this->output( "Email addresses match and are confirmed for: $username\n" );
-				$central->storeAndMigrate();
+				$central->storeAndMigrate( !$this->suppressRC );
 			} else {
 				if ( isset( $central->mHomeWiki ) || $this->autoMigrate ) {
-					$central->storeAndMigrate();
+					$central->storeAndMigrate( !$this->suppressRC );
 				} else {
 					$this->output( "ERROR: Auto migration is disabled and email addresses do not match for: $username\n" );
 				}

@@ -617,13 +617,14 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * @param array $passwords
+	 * @param bool $sendToRC
 	 * @return bool
 	 */
-	public function storeAndMigrate( $passwords = array() ) {
+	public function storeAndMigrate( $passwords = array(), $sendToRC = true ) {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 
-		$ret = $this->attemptAutoMigration( $passwords );
+		$ret = $this->attemptAutoMigration( $passwords, $sendToRC );
 
 		$dbw->commit();
 		return $ret;
@@ -804,9 +805,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @fixme add some locking or something
 	 *
 	 * @param $passwords Array
+	 * @param $sendToRC bool
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration( $passwords = array() ) {
+	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true ) {
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
@@ -860,7 +862,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->startTransaction();
 
 		foreach ( $attach as $wiki => $method ) {
-			$this->attach( $wiki, $method );
+			$this->attach( $wiki, $method, $sendToRC );
 		}
 
 		$this->endTransaction();
@@ -1380,11 +1382,12 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Add a local account record for the given wiki to the central database.
 	 * @param $wikiID String
 	 * @param $method String
+	 * @param $sendToRC bool
 	 *
 	 * Prerequisites:
 	 * - completed migration state
 	 */
-	public function attach( $wikiID, $method = 'new' ) {
+	public function attach( $wikiID, $method = 'new', $sendToRC = true ) {
 		$dbw = self::getCentralDB();
 		$dbw->insert( 'localuser',
 			array(
@@ -1409,16 +1412,18 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->invalidateCache();
-		global $wgCentralAuthRC;
+		if ( $sendToRC ) {
+			global $wgCentralAuthRC;
 
-		$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
+			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
 
-		foreach ( $wgCentralAuthRC as $rc ) {
-			/** @var CARCFeedFormatter $formatter */
-			$formatter = new $rc['formatter']();
-			/** @var RCFeedEngine $engine */
-			$engine = RecentChange::getEngine( $rc['uri'] );
-			$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
+			foreach ( $wgCentralAuthRC as $rc ) {
+				/** @var CARCFeedFormatter $formatter */
+				$formatter = new $rc['formatter']();
+				/** @var RCFeedEngine $engine */
+				$engine = RecentChange::getEngine( $rc['uri'] );
+				$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
+			}
 		}
 	}
 
