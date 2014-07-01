@@ -1409,16 +1409,19 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->invalidateCache();
-		global $wgCentralAuthRC;
 
-		$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
+		if ( PHP_SAPI !== 'cli' ) { // Don't spam RC if we're running a maint. script
+			global $wgCentralAuthRC;
 
-		foreach ( $wgCentralAuthRC as $rc ) {
-			/** @var CARCFeedFormatter $formatter */
-			$formatter = new $rc['formatter']();
-			/** @var RCFeedEngine $engine */
-			$engine = RecentChange::getEngine( $rc['uri'] );
-			$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
+			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
+
+			foreach ( $wgCentralAuthRC as $rc ) {
+				/** @var CARCFeedFormatter $formatter */
+				$formatter = new $rc['formatter']();
+				/** @var RCFeedEngine $engine */
+				$engine = RecentChange::getEngine( $rc['uri'] );
+				$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
+			}
 		}
 	}
 
