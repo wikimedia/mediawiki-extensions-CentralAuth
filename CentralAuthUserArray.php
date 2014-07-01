@@ -68,15 +68,14 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		if ( $row !== false ) {
 			if ( isset( $this->globalData[$row->user_name] ) ) {
 				$caRow = $this->globalData[$row->user_name];
-				// Split the renameuser info into its own object.
+
+				// Like taken from GlobalRenameUserStatus::getNames
+				$renameUser = array();
 				if ( $caRow->ru_oldname ) {
-					$renameUserRow = new stdClass;
-					$renameUserRow->ru_oldname = $caRow->ru_oldname;
-					$renameUserRow->ru_newname = $caRow->ru_newname;
-				} else {
-					$renameUserRow = false;
+					$renameUser = array( $caRow->ru_oldname, $caRow->ru_newname );
 				}
-				$this->current->centralAuthObj = CentralAuthUser::newFromRow( $caRow, $renameUserRow );
+
+				$this->current->centralAuthObj = CentralAuthUser::newFromRow( $caRow, $renameUser );
 			} else {
 				$this->current->centralAuthObj = CentralAuthUser::newUnattached( $row->user_name );
 			}
