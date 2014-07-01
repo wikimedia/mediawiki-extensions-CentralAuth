@@ -748,10 +748,10 @@ $specialPageAliases['zh-hans'] = array(
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
 	'MergeAccount' => array( '合併賬戶' ),
-	'GlobalGroupMembership' => array( '全域用戶權限', '全域組成員資格' ),
+	'GlobalGroupMembership' => array( '全域使用者權限' ),
 	'GlobalGroupPermissions' => array( '全域組權限' ),
-	'WikiSets' => array( 'Wiki組', '編輯Wiki組', '維基組', '編輯維基組' ),
-	'GlobalUsers' => array( '全域用戶' ),
+	'WikiSets' => array( 'Wiki組', '編輯Wiki組' ),
+	'GlobalUsers' => array( '全域使用者' ),
 	'MultiLock' => array( '批量鎖定' ),
 );
 
