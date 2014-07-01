@@ -251,6 +251,7 @@ $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyErr
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
 $wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
 $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormatter.php";
+$wgAutoloadClasses['CentralAuthDBTest'] = "$caBase/tests/CentralAuthDBTest.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -296,6 +297,7 @@ $wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
 $wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
 $wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
 $wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect';
+$wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
