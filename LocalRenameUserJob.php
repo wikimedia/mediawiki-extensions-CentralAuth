@@ -5,6 +5,10 @@
  * This is intended to be run on each wiki individually
  */
 class LocalRenameUserJob extends Job {
+	/**
+	 * @var GlobalRenameUserStatus
+	 */
+	private $renameuserStatus;
 
 	/**
 	 * @param Title $title
@@ -20,10 +24,14 @@ class LocalRenameUserJob extends Job {
 			$this->updateStatus( 'failed' );
 			throw new MWException( 'Extension:Renameuser is not installed' );
 		}
-		$this->updateStatus( 'inprogress' );
 		$from = $this->params['from'];
 		$to = $this->params['to'];
+
+		$this->renameuserStatus = new GlobalRenameUserStatus( $from );
+		$this->updateStatus( 'inprogress' );
+
 		$oldUser = User::newFromName( $from );
+
 		$rename = new RenameuserSQL(
 			$from,
 			$to,
@@ -122,12 +130,8 @@ class LocalRenameUserJob extends Job {
 	}
 
 	public function done() {
-		$dbw = CentralAuthUser::getCentralDB();
-		$dbw->delete(
-			'renameuser_status',
-			array( 'ru_oldname' => $this->params['from'], 'ru_wiki' => wfWikiID() ),
-			__METHOD__
-		);
+		$this->renameuserStatus->done( wfWikiID() );
+
 		$caNew = new CentralAuthUser( $this->params['to'] );
 		$caOld = new CentralAuthUser( $this->params['from'] );
 		$caNew->quickInvalidateCache();
@@ -135,12 +139,6 @@ class LocalRenameUserJob extends Job {
 	}
 
 	public function updateStatus( $status ) {
-		$dbw = CentralAuthUser::getCentralDB();
-		$dbw->update(
-			'renameuser_status',
-			array( 'ru_status' => $status ),
-			array( 'ru_oldname' => $this->params['from'], 'ru_wiki' => wfWikiID() ),
-			__METHOD__
-		);
+		$this->renameuserStatus->setStatus( wfWikiID(), $status );
 	}
 }

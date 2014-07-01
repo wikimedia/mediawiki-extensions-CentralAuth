@@ -114,13 +114,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
 	 * @param $row ResultWrapper|object
-	 * @param $renameUserRow stdClass|bool
+	 * @param $renameUser array Empty if no rename is going on, else (oldname, newname)
 	 * @param $fromMaster bool
 	 * @return CentralAuthUser
 	 */
-	public static function newFromRow( $row, $renameUserRow, $fromMaster = false ) {
+	public static function newFromRow( $row, $renameUser, $fromMaster = false ) {
 		$caUser = new self( $row->gu_name );
-		$caUser->loadFromRow( $row, $renameUserRow, $fromMaster );
+		$caUser->loadFromRow( $row, $renameUser, $fromMaster );
 		return $caUser;
 	}
 
@@ -132,7 +132,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public static function newUnattached( $name, $fromMaster = false ) {
 		$caUser = new self( $name );
-		$caUser->loadFromRow( false, false, $fromMaster );
+		$caUser->loadFromRow( false, array(), $fromMaster );
 		return $caUser;
 	}
 
@@ -195,17 +195,10 @@ class CentralAuthUser extends AuthPluginUser {
 			)
 		);
 
-		$renameUserRow = $dbw->selectRow(
-			array( 'renameuser_status' ),
-			array( 'ru_oldname', 'ru_newname' ),
-			array( $dbw->makeList(
-				array( 'ru_oldname' => $this->mName, 'ru_newname' => $this->mName ),
-				LIST_OR
-			) ),
-			__METHOD__
-		);
+		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
+		$renameUser = $renameUserStatus->getNames( null, 'master' );
 
-		$this->loadFromRow( $row, $renameUserRow, true );
+		$this->loadFromRow( $row, $renameUser, true );
 		$this->saveToCache();
 		wfProfileOut( __METHOD__ );
 	}
@@ -263,10 +256,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Load user state from a joined globaluser/localuser row
 	 *
 	 * @param $row ResultWrapper|object|bool
-	 * @param $renameUserRow stdClass|bool
+	 * @param $renameUser array Empty if no rename is going on, else (oldname, newname)
 	 * @param $fromMaster bool
 	 */
-	protected function loadFromRow( $row, $renameUserRow, $fromMaster = false ) {
+	protected function loadFromRow( $row, $renameUser, $fromMaster = false ) {
 		if ( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
 			$this->mIsAttached = ( $row->lu_wiki !== null );
@@ -289,8 +282,8 @@ class CentralAuthUser extends AuthPluginUser {
 			$this->mHidden = '';
 		}
 
-		if ( $renameUserRow ) {
-			$this->mBeingRenamedArray = array( $renameUserRow->ru_oldname, $renameUserRow->ru_newname );
+		if ( $renameUser ) {
+			$this->mBeingRenamedArray = $renameUser;
 			$this->mBeingRenamed = implode( '|', $this->mBeingRenamedArray );
 		} else {
 			$this->mBeingRenamedArray = array();
@@ -1767,19 +1760,13 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array|bool
 	 */
 	public function renameInProgressOn( $wiki ) {
-		$dbw = self::getCentralDB();
+		$renameState = new GlobalRenameUserStatus( $this->mName );
 
-		$row = $dbw->selectRow(
-			'renameuser_status',
-			array( 'ru_oldname', 'ru_newname' ),
-			array( $dbw->makeList(
-				array( 'ru_oldname' => $this->mName, 'ru_newname' => $this->mName ),
-				LIST_OR
-			), 'ru_wiki' => $wiki ),
-			__METHOD__
-		);
-		if ( $row !== false ) {
-			return array( $row->ru_oldname, $row->ru_newname );
+		// Use master as this is being used for various critical things
+		$names = $renameState->getNames( $wiki, 'master' );
+
+		if ( $names ) {
+			return $names;
 		} else {
 			return false;
 		}
