@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_a1b6aad5",
+        "filename": "GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-02T17:13:18Z",
+      "side": 1,
+      "message": "Done :/",
+      "parentUuid": "ae43a74e_90ff72fc",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_3010c652",
         "filename": "GlobalRename/GlobalRenameUser.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-02T05:38:34Z",
       "side": 1,
       "message": "Missing @return tag",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_41c7fe4a",
+        "filename": "GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-02T17:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae43a74e_3010c652",
       "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_c1dace20",
+        "filename": "GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-02T17:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae43a74e_8d207da9",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_0d0c8d44",
         "filename": "specials/SpecialGlobalRenameUser.php",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_81e5e6a1",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-02T17:13:18Z",
+      "side": 1,
+      "message": "Fixed... not sure it\u0027s needed to fix this in the old patch also",
+      "parentUuid": "ae43a74e_0d0c8d44",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_cd056518",
         "filename": "specials/SpecialGlobalRenameUser.php",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-07-02T05:38:34Z",
       "side": 1,
       "message": "By not using CentralAuthUser::getInstance, we lose a bit of caching here...",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_61e7a2e0",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-02T17:13:18Z",
+      "side": 1,
+      "message": "This class does so \"horrible\" things (renames) that I doubt this matters... fixed anyway",
+      "parentUuid": "ae43a74e_cd056518",
       "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
