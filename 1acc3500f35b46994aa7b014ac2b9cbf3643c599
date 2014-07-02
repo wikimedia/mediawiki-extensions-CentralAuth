@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_90ff72fc",
+        "filename": "GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-02T05:38:34Z",
+      "side": 1,
+      "message": "callable type hint is PHP 5.4 :(",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_3010c652",
+        "filename": "GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-02T05:38:34Z",
+      "side": 1,
+      "message": "Missing @return tag",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_8d207da9",
+        "filename": "GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-02T05:38:34Z",
+      "side": 1,
+      "message": "Can we have this take either DB_SLAVE or DB_MASTER for readability?",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_0d0c8d44",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-02T05:38:34Z",
+      "side": 1,
+      "message": "Just noticed that we don\u0027t validate $data[\u0027oldname\u0027] is a valid username. Should we fix that in my patch or yours?",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_cd056518",
+        "filename": "specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-02T05:38:34Z",
+      "side": 1,
+      "message": "By not using CentralAuthUser::getInstance, we lose a bit of caching here...",
+      "revId": "1acc3500f35b46994aa7b014ac2b9cbf3643c599",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
