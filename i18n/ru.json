@@ -283,6 +283,7 @@
 	"centralauth-editgroup-success-text": "Вы успешно изменили права глобальной группы $1.\n[[Special:GlobalGroupPermissions|Вернуться к управлению группами]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|изменить]])",
 	"centralauth-editgroup-nowikiset": "Нет, применяется для всех вики.",
+	"centralauth-editgroup-nonexistent": "Глобальная группа «$1» в настоящее время не существует.",
 	"centralauth-globalgrouppermissions-knownwiki": "Вики, на которой они имеют учётные записи:",
 	"centralauth-globalgroupmembership-badknownwiki": "Глобальная учётная запись '''$1''' не активна на указанной вами вики (''$2''). Возможно, вы пытаетесь назначить права не тому участнику!",
 	"centralauth-editset": "Наборы вики",

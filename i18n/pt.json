@@ -281,6 +281,7 @@
 	"centralauth-editgroup-success-text": "Alterou com sucesso as permissões do grupo $1.\n[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|editar]])",
 	"centralauth-editgroup-nowikiset": "Nenhum, aplica-se a todas as wikis.",
+	"centralauth-editgroup-nonexistent": "O grupo global \"$1\" não existe atualmente.",
 	"centralauth-globalgrouppermissions-knownwiki": "Seleccione uma wiki onde possua uma conta:",
 	"centralauth-globalgroupmembership-badknownwiki": "O utilizador global '''$1''' não está activo na wiki que especificou (''$2'').\nPode estar a tentar atribuir direitos ao utilizador errado!",
 	"centralauth-editset": "Conjuntos de wikis",
