@@ -80,7 +80,7 @@
 	"centralauth-attach-text": "Ĉi tiu konto ne jam estis migrigita al unuigita konto.\nSe la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi tajpas la pasvorton de la ĝenerala konto:",
 	"centralauth-attach-submit": "Migri konton",
 	"centralauth-attach-success": "La konto estis migrigita al la unuigita konto.",
-	"centralauth": "Administranto de ĝeneralaj uzantoj",
+	"centralauth": "Administranto de ĝeneralaj kontoj",
 	"centralauth-admin-intro": "Ĉi tiu interfaco estas uzebla por administrado de ĝeneralaj kontoj.",
 	"centralauth-admin-manage": "Prizorgi kontajn datenojn",
 	"centralauth-admin-username": "Salutnomo:",

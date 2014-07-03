@@ -332,5 +332,18 @@
 	"centralauth-warning-notloggedin": "Du bist derzeit nicht angemeldet.",
 	"centralauth-warning-notattached": "Das lokale Benutzerkonto ist mit keinem globalen Konto verbunden.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}}-Benutzerkontenbestätigung",
-	"centralauth-finishglobaliseemail_body": "Deine E-Mail-Adresse wurde mit dem Benutzerkonto „$2“ auf allen\nWikimedia-Projekten verknüpft, mit deinem Hauptkonto auf {{SITENAME}}.\n\nUm zu bestätigen, dass dieses Benutzerkonto wirklich dir gehört und um\ndeine Konten zusammenzuführen, was wir nicht automatisch durchführen\nkonnten, und dein Benutzerkonto wiederherzustellen, falls du dein\nPasswort verloren hast, öffne bitte diesen Link in deinem Browser:\n\n$3\n\nFalls das Konto *nicht* dir gehört, folge diesem Link, um die\nE-Mail-Adressbestätigung abzubrechen:\n\n$5\n\nDieser Bestätigungscode läuft am $6 um $7 ab."
+	"centralauth-finishglobaliseemail_body": "Deine E-Mail-Adresse wurde mit dem Benutzerkonto „$2“ auf allen\nWikimedia-Projekten verknüpft, mit deinem Hauptkonto auf {{SITENAME}}.\n\nUm zu bestätigen, dass dieses Benutzerkonto wirklich dir gehört und um\ndeine Konten zusammenzuführen, was wir nicht automatisch durchführen\nkonnten, und dein Benutzerkonto wiederherzustellen, falls du dein\nPasswort verloren hast, öffne bitte diesen Link in deinem Browser:\n\n$3\n\nFalls das Konto *nicht* dir gehört, folge diesem Link, um die\nE-Mail-Adressbestätigung abzubrechen:\n\n$5\n\nDieser Bestätigungscode läuft am $6 um $7 ab.",
+	"globalrenameuser": "Globalen Benutzer umbenennen",
+	"centralauth-rename-form-oldname": "Aktueller Benutzername",
+	"centralauth-rename-form-newname": "Neuer Benutzername",
+	"centralauth-rename-form-reason": "Grund",
+	"centralauth-rename-cannotself": "Du kannst dich nicht selbst umbenennen.",
+	"centralauth-rename-progress-username": "Benutzername",
+	"centralauth-rename-table-domain": "Lokales Wiki",
+	"centralauth-rename-table-status": "Status",
+	"centralauth-rename-table-status-inprogress": "In Bearbeitung",
+	"centralauth-rename-table-status-queued": "In der Warteschlange",
+	"centralauth-rename-table-status-done": "Fertig",
+	"centralauth-rename-viewprogress": "Fortschritt anzeigen",
+	"centralauth-rename-progress-logs-fieldset": "Logbucheinträge"
 }
