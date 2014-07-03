@@ -41,6 +41,7 @@
 	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-login-progress}}\n* {{msg-mw|centralauth-logout-progress}}",
 	"centralauth-desc": "{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}",
 	"centralauth-antispoof-desc": "{{desc|name=AntiSpoof for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:AntiSpoof}}",
+	"centralauth-rename-desc": "{{desc|name=Renameuser for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}",
 	"centralauth-mergeaccount-desc": "Description of the special page [[Special:MergeAccount]]",
 	"centralauth-merge-denied": "Error message displayed when trying to visit a web page without having the correct permissions.",
 	"centralauth-merge-notlogged": "Notice displayed when visiting a page while not logged in.\n\nFollowed by the message {{msg-mw|Centralauth-readmore-text}}.\n\nParameters:\n* $1 - a link which points to [[Special:UserLogin]].",

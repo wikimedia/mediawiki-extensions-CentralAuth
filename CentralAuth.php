@@ -477,6 +477,21 @@ if ( class_exists( 'AntiSpoof' ) ) {
 	$wgHooks['RenameUserComplete'][] = 'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
 }
 
+// Use an extension function so credits only appear on wikis with
+// Extension:Renameuser installed
+$wgExtensionFunctions[] = function() {
+	global $wgExtensionCredits;
+	if ( class_exists( 'RenameuserSQL' ) ) {
+		$wgExtensionCredits['specialpage'][] = array(
+			'path' => __FILE__,
+			'name' => 'Renameuser for CentralAuth',
+			'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
+			'author' => array( 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ),
+			'descriptionmsg' => 'centralauth-rename-desc',
+		);
+	}
+};
+
 /**
  * @param $type
  * @param $action
