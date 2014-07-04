@@ -330,5 +330,15 @@
 	"centralauth-warning-notloggedin": "Nie jesteś aktualnie zalogowany.",
 	"centralauth-warning-notattached": "Lokalne konto nie jest podłączone do globalnego.",
 	"centralauth-finishglobaliseemail_subject": "Potwierdzenie konta na {{GRAMMAR:MS.lp|{{SITENAME}}}}",
-	"centralauth-finishglobaliseemail_body": "Twój adres e-mail został powiązany z kontem „$2” na wszystkich projektach Wikimediów, z kontem na {{GRAMMAR:MS.lp|{{SITENAME}}}} ustawionym jako główne.\n\nAby potwierdzić, że to konto faktycznie należy do Ciebie, połączyć z nim wszystkie te, które nie mogły zostać połączone automatycznie oraz umożliwić Ci odzyskanie hasła, przejdź pod poniższy link:\n\n$3\n\nJeśli to konto *nie* należy do Ciebie, przejdź pod ten link, aby anulować potwierdzenie adresu e-mail:\n\n$5\n\nKod potwierdzający wygasa $6, o godzinie $7."
+	"centralauth-finishglobaliseemail_body": "Twój adres e-mail został powiązany z kontem „$2” na wszystkich projektach Wikimediów, z kontem na {{GRAMMAR:MS.lp|{{SITENAME}}}} ustawionym jako główne.\n\nAby potwierdzić, że to konto faktycznie należy do Ciebie, połączyć z nim wszystkie te, które nie mogły zostać połączone automatycznie oraz umożliwić Ci odzyskanie hasła, przejdź pod poniższy link:\n\n$3\n\nJeśli to konto *nie* należy do Ciebie, przejdź pod ten link, aby anulować potwierdzenie adresu e-mail:\n\n$5\n\nKod potwierdzający wygasa $6, o godzinie $7.",
+	"centralauth-rename-form-oldname": "Obecna nazwa użytkownika",
+	"centralauth-rename-form-newname": "Nowa nazwa użytkownika",
+	"centralauth-rename-form-reason": "Powód",
+	"centralauth-rename-form-movepages": "Przenieś strony użytkownika",
+	"centralauth-rename-form-suppressredirects": "Pomiń tworzenie przekierowań",
+	"centralauth-rename-progress-username": "Nazwa użytkownika",
+	"centralauth-rename-table-domain": "Lokalna wiki",
+	"centralauth-rename-table-status": "Status",
+	"centralauth-rename-table-status-inprogress": "W toku",
+	"centralauth-rename-table-status-queued": "W kolejce"
 }

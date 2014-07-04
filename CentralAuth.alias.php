@@ -135,6 +135,8 @@ $specialPageAliases['de'] = array(
 	'WikiSets' => array( 'Wikigruppen', 'Wikigruppen_bearbeiten', 'Wikisets_bearbeiten' ),
 	'GlobalUsers' => array( 'Globale_Benutzerliste' ),
 	'MultiLock' => array( 'Mehrfachsperre' ),
+	'GlobalRenameUser' => array( 'Globale_Benutzerumbenennung' ),
+	'GlobalRenameProgress' => array( 'Globaler_Umbenennungsfortschritt' ),
 );
 
 /** Zazaki (Zazaki) */

@@ -169,5 +169,10 @@
 	"centralauth-editset-nouse": "(nav)",
 	"centralauth-editset-usage": "Izmantots grupās:",
 	"centralauth-editset-return": "Atgriezties galvenajā skatā",
-	"right-centralauth-lock": "Slēgt vai noslēpt globālo kontu"
+	"right-centralauth-lock": "Slēgt vai noslēpt globālo kontu",
+	"centralauth-rename-form-oldname": "Pašreizējais lietotāja vārds",
+	"centralauth-rename-form-reason": "Iemesls",
+	"centralauth-rename-progress-username": "Lietotājvārds",
+	"centralauth-rename-table-status": "Statuss",
+	"centralauth-rename-progress-logs-fieldset": "Žurnāla ieraksti"
 }

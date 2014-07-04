@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nepaboy"
+		]
+	},
+	"right-centralauth-rename": "वैश्विक खाता के नाम परिवर्तन",
+	"action-centralauth-rename": "वैश्विक खाता के पुनः नामित करीं",
+	"globalrenameprogress": "वैश्विक नाम परिवर्तन प्रगति",
+	"globalrenameprogress-legend": "वैश्विक प्रयोगकर्ता नाम परिवर्तन के प्रगति देखीं",
+	"globalrenameuser": "वैश्विक प्रयोगकर्ता के पुनः नामित करीं",
+	"globalrenameuser-legend": "वैश्विक प्रयोगकर्ता नाम परिवर्तन",
+	"centralauth-rename-abortlogin": "राउर खाता के पुन: नामित करे के काम जारी बा।\n[[Special:GlobalRenameProgress/$1|स्थिति देखीं]]।",
+	"centralauth-rename-form-oldname": "हाल के प्रयोगकर्ता नाम",
+	"centralauth-rename-form-newname": "नया सदस्यनाम",
+	"centralauth-rename-form-reason": "कारण",
+	"centralauth-rename-form-movepages": "प्रयोगकर्ता पन्ना के स्थान परिवर्तन करीं",
+	"centralauth-rename-form-suppressredirects": "पुनर्निर्देश सृजन के रोकीं",
+	"centralauth-rename-notinstalled": "प्रयोगकर्ता पुनः नामांकन विस्तार स्थापित नईखे भईल।",
+	"centralauth-rename-doesnotexist": "उपलब्ध करावल गईल खाता मौजूद नईखे।",
+	"centralauth-rename-alreadyexists": "निवेदन करल गईल प्रयोगकर्ता नाम पहिले से प्रयोग में बा।",
+	"centralauth-rename-badusername": "अनुरोध करल गईल उपयोगकर्ता नाम मान्य नईखे।",
+	"centralauth-rename-cannotself": "रउआ स्वयं के नाम परिवर्तन ना कर सकत बानी।",
+	"centralauth-rename-alreadyinprogress": "इ प्रयोगकर्ता खातिर नाम परिवर्तन करे के काम पहिले से ही प्रगति में बा।",
+	"centralauth-renameuser-global-inprogress": "$1 खातिर वैश्विक नाम परिवर्तन पहिले से\n[[Special:GlobalRenameProgress/$1|progress]] में बा।",
+	"centralauth-rename-queued": "$1 से $2 में नाम परिवर्तन करे के काम $3 पर कतारबद्ध बा।\n\nप्रगति देखीं\n[[Special:GlobalRenameProgress/$2]] पर।",
+	"centralauth-rename-progress-username": "सदस्यनाम",
+	"centralauth-rename-notinprogress": "$1 खातिर कौनो नाम परिवर्तन के काम प्रगति में नईखे।\nहो सकता उ पहिले ही हो चुकल होखे।",
+	"centralauth-rename-table-domain": "स्थानीय विकी",
+	"centralauth-rename-table-status": "स्थिति",
+	"centralauth-rename-table-status-inprogress": "प्रगति में",
+	"centralauth-rename-table-status-queued": "कतारबद्ध",
+	"centralauth-rename-table-status-done": "पूर्ण",
+	"centralauth-rename-viewprogress": "प्रगति देखीं",
+	"centralauth-rename-progress-fieldset": "क्षेत्रीय खाता के सूची",
+	"centralauth-rename-progress-logs-fieldset": "लॉग एंट्री",
+	"centralauth-rename-movelog": "जब प्रयोगकर्ता के नाम पुनः नामित होत रहल, पन्ना के स्थान स्वतः परिवर्तन हो गईल \"[[Special:CentralAuth/$1|$1]]\" से \"[[Special:CentralAuth/$2|$2]]\"",
+	"log-name-gblrename": "वैश्विक नाम परिवर्तन लॉग",
+	"log-description-gblrename": "इ लॉग प्रयोगकर्ता के वैश्विक नाम परिवर्तन के ट्रैक करेला(पता लगावेला)।"
+}

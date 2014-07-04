@@ -34,7 +34,9 @@
 			"Toliño",
 			"Umherirrender",
 			"Yekrats",
-			"דולב"
+			"דולב",
+			"Amire80",
+			"Liuxinyu970226"
 		]
 	},
 	"mergeaccount": "{{doc-special|MergeAccount}}",
@@ -369,7 +371,7 @@
 	"centralauth-rename-abortlogin": "Error message shown to the user when they try logging in while their account is being renamed.\n\n$1 is the user\"s username",
 	"centralauth-rename-form-oldname": "Label for form field of name of account to rename",
 	"centralauth-rename-form-newname": "Label for form field of new account name",
-	"centralauth-rename-form-reason": "Label for form field of log reason for the rename",
+	"centralauth-rename-form-reason": "{{Identical|Reason}}\nLabel for form field of log reason for the rename",
 	"centralauth-rename-form-movepages": "Label for checkbox of whether to move the user\"s userpages",
 	"centralauth-rename-form-suppressredirects": "Label for checkbox of whether to suppress redirects when moving the user\"s userpages",
 	"centralauth-rename-notinstalled": "Error message if the RenameUser extension is not installed.",
@@ -381,17 +383,18 @@
 	"centralauth-rename-alreadyinprogress": "Error message if the user is already being renamed.",
 	"centralauth-renameuser-global-inprogress": "Error message shown on Special:RenameUser if a local rename is attempted while a global one is in progress.\n\n* $1 is the user being renamed's username",
 	"centralauth-rename-queued": "Message shown after the rename has started.\n\n* $1 is the user's old name\n* $2 is the user's new name\n* $3 is a list of the database names where rename jobs have been queued",
-	"centralauth-rename-progress-username": "Label for username form field on Special:RenameProgress",
+	"centralauth-rename-progress-username": "{{identical|Username}}\nLabel for username form field on Special:RenameProgress",
 	"centralauth-rename-notinprogress": "Message shown when there is no rename in progress for the provided user\n* $1 is the username",
-	"centralauth-rename-table-domain": "Table column header for domain name of wiki",
-	"centralauth-rename-table-status": "Table column header for status of rename",
+	"centralauth-rename-table-domain": "{{Identical|Local wiki}}\nTable column header for domain name of wiki",
+	"centralauth-rename-table-status": "{{Identical|Status}}\nTable column header for status of rename",
 	"centralauth-rename-table-status-inprogress": "Status displayed if the job is still in progress",
 	"centralauth-rename-table-status-queued": "Status displayed if the job is still queued",
-	"centralauth-rename-table-status-done": "Status displayed if the job has completed successfully",
+	"centralauth-rename-table-status-done": "{{Identical|Done}}\nStatus displayed if the job has completed successfully",
 	"centralauth-rename-viewprogress": "Text for submit button Special:RenameProgress",
 	"centralauth-rename-progress-fieldset": "Text on fieldset around rename progress table",
 	"centralauth-rename-progress-logs-fieldset": "Text on fieldset around log entries",
 	"centralauth-rename-movelog": "Move log comment used when automatically moving user pages\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"log-name-gblrename": "Log page title",
-	"log-description-gblrename": "Log page description"
+	"log-description-gblrename": "Log page description",
+	"logentry-gblrename-rename": "{{Logentry}}"
 }
