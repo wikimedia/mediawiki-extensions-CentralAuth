@@ -433,6 +433,7 @@ $wgResourceModules['ext.centralauth'] = array(
 		'centralauth-completelogin-back',
 	),
 ) + $commonModuleInfo;
+
 $wgResourceModules['ext.centralauth.centralautologin'] = array(
 	'scripts' => 'ext.centralauth.centralautologin.js',
 	'styles' => 'ext.centralauth.centralautologin.css',
@@ -454,8 +455,19 @@ $wgResourceModules['ext.centralauth.noflash'] = array(
 $wgResourceModules['ext.centralauth.globalusers'] = array(
 	'styles' => 'ext.centralauth.globalusers.css',
 ) + $commonModuleInfo;
+
 $wgResourceModules['ext.centralauth.globalgrouppermissions'] = array(
 	'styles' => 'ext.centralauth.globalgrouppermissions.css',
+) + $commonModuleInfo;
+
+$wgResourceModules['ext.centralauth.globalrenameuser'] = array(
+	'scripts' => 'ext.centralauth.globalrenameuser.js',
+        'dependencies' => array(
+                'mediawiki.util'
+	),
+	'messages' => array(
+		'centralauth-rename-confirm',
+	)
 ) + $commonModuleInfo;
 
 // If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
