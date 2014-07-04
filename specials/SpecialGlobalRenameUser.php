@@ -17,6 +17,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	}
 
 	/**
+	 * @param string $par Subpage string if one was specified
+	 */
+	public function execute( $par ) {
+		parent::execute( $par );
+		$this->getOutput()->addModules( 'ext.centralauth.globalrenameuser' );
+	}
+
+	/**
 	 * @return array
 	 */
 	function getFormFields() {
