@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_85395ff1",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-04T21:00:01Z",
+      "side": 1,
+      "message": "\"to globally rename this user\"?",
+      "revId": "1edfe28a8059f89c51f15dc74df325e7cc3f196b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
