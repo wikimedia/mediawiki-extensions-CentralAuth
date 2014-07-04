@@ -8,7 +8,6 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function execute( $subpage ) {
-		global $wgUser;
 		$this->setHeaders();
 
 		if ( !is_null( $subpage ) && preg_match( "/^[0-9a-zA-Z]{32}$/", $subpage ) ) {
@@ -24,7 +23,7 @@ class SpecialMergeAccount extends SpecialPage {
 			}
 		}
 
-		if ( !$this->userCanExecute( $wgUser ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-merge-denied' );
 			$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
 			return;
