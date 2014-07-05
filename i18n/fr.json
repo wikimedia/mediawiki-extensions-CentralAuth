@@ -29,7 +29,8 @@
 			"Tititou36",
 			"Urhixidur",
 			"Verdy p",
-			"Wyz"
+			"Wyz",
+			"Linedwell"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -384,6 +385,7 @@
 	"centralauth-rename-progress-fieldset": "Liste des comptes locaux",
 	"centralauth-rename-progress-logs-fieldset": "Entrées du journal",
 	"centralauth-rename-movelog": "Page automatiquement déplacée lors du renommage de l’utilisateur « [[Special:CentralAuth/$1|$1]] » en « [[Special:CentralAuth/$2|$2]] »",
+	"centralauth-rename-confirm": "Voulez-vous vraiment renommer globalement cet utilisateur ?",
 	"log-name-gblrename": "Journal des renommages globaux",
 	"log-description-gblrename": "Ce journal trace les renommages globaux des utilisateurs.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} a renommé globalement $4 en $5"

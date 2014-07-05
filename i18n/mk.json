@@ -358,6 +358,7 @@
 	"centralauth-rename-progress-fieldset": "Список на локални сметки",
 	"centralauth-rename-progress-logs-fieldset": "Дневнички записи",
 	"centralauth-rename-movelog": "Автоматски преместена страницата при преименување на корисникот „[[Special:CentralAuth/$1|$1]]“ во „[[Special:CentralAuth/$2|$2]]“",
+	"centralauth-rename-confirm": "Дали навистина сакате глобално да го преименувате корисников?",
 	"log-name-gblrename": "Дневник на глобални преименувања",
 	"log-description-gblrename": "Овој дневник ги следи глобалните преименувања на корисници.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобално го преименува $4 во $5"

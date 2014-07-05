@@ -311,5 +311,17 @@
 	"centralauth-error-badtoken": "Déi Authentifizéierung déi Dir uginn hutt ass entweder ofgelaf oder net valabel.",
 	"centralauth-warning-notloggedin": "Dir sidd elo net ageloggt.",
 	"centralauth-warning-notattached": "De lokale Benotzerkont ass net mat engem globale Benotzerkont verbonn.",
-	"centralauth-finishglobaliseemail_subject": "Confirmatioun vum {{SITENAME}} Benotzerkont"
+	"centralauth-finishglobaliseemail_subject": "Confirmatioun vum {{SITENAME}} Benotzerkont",
+	"globalrenameuser": "Globale Benotzer ëmbenennen",
+	"centralauth-rename-form-oldname": "Aktuelle Benotzernumm",
+	"centralauth-rename-form-newname": "Neie Benotzernumm",
+	"centralauth-rename-form-reason": "Grond",
+	"centralauth-rename-form-movepages": "Benotzersäite réckelen",
+	"centralauth-rename-cannotself": "Dir kënnt Iech net selwer ëmbenennen.",
+	"centralauth-rename-progress-username": "Benotzernumm",
+	"centralauth-rename-table-domain": "Lokal Wiki",
+	"centralauth-rename-table-status-inprogress": "Am Gaang",
+	"centralauth-rename-table-status-done": "Fäerdeg",
+	"centralauth-rename-progress-fieldset": "Lëscht vun de lokale Benotzerkonten",
+	"logentry-gblrename-rename": "$1 huet $4 global {{GENDER:$2|ëmbenannt}} op $5"
 }

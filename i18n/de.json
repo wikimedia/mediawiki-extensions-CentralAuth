@@ -366,6 +366,7 @@
 	"centralauth-rename-progress-fieldset": "Liste lokaler Benutzerkonten",
 	"centralauth-rename-progress-logs-fieldset": "Logbucheinträge",
 	"centralauth-rename-movelog": "Seite während der Umbenennung des Benutzers „[[Special:CentralAuth/$1|$1]]“ in „[[Special:CentralAuth/$2|$2]]“ automatisch verschoben",
+	"centralauth-rename-confirm": "Möchtest du wirklich diesen Benutzer global umbenennen?",
 	"log-name-gblrename": "Globales Umbenennungs-Logbuch",
 	"log-description-gblrename": "Dies ist ein Logbuch globaler Benutzerumbenennungen.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|$2}} hat „$4“ global in „$5“ umbenannt"

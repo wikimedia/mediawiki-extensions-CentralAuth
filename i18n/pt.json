@@ -370,6 +370,7 @@
 	"centralauth-rename-progress-fieldset": "Lista de contas locais",
 	"centralauth-rename-progress-logs-fieldset": "Registo de entradas",
 	"centralauth-rename-movelog": "A página foi movida automaticamente enquanto o(a) utilizador(a) era renomeado(a) \n\"[[Special:CentralAuth/$1|$1]]\" para \"[[Special:CentralAuth/$2|$2]]\"",
+	"centralauth-rename-confirm": "Tem a certeza que pretende renomear esta conta globalmente?",
 	"log-name-gblrename": "Registo de renomeação global",
 	"log-description-gblrename": "Este registo informa sobre a renomeação global de utilizadores.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renomeou}} globalmente a conta $4 para $5"

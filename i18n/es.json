@@ -36,7 +36,8 @@
 			"Toliño",
 			"Translationista",
 			"Vivaelcelta",
-			"Themasterriot"
+			"Themasterriot",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -359,13 +360,20 @@
 	"centralauth-warning-notattached": "La cuenta local no está unida a una global.",
 	"centralauth-finishglobaliseemail_subject": "Confirmación de la cuenta de {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "Se ha asociado tu dirección de correo electrónico con la cuenta\n«$2» en todos los proyectos de Wikimedia, y tu cuenta principal\nes la de {{SITENAME}}.\n\nPara confirmar que esta cuenta realmente te pertenece, fusionar cualquier\ncuenta tuya que no hayamos podido fusionar automáticamente, y permitirte\nrecuperar la cuenta si olvidas la contraseña, abre este enlace en el navegador:\n\n$3\nSi la cuenta *no* te pertenece, sigue este enlace para cancelar la confirmación\nde la dirección de correo electrónico:\n\n$5\n\nEste código de confirmación caducará el $6 a las $7.",
+	"right-centralauth-rename": "Renombra cuentas globales",
+	"globalrenameprogress": "Progreso de renombramiento global",
+	"globalrenameprogress-legend": "Ver el progreso de renombramiento global",
+	"globalrenameuser": "Renombrar usuario global",
+	"globalrenameuser-legend": "Renombrar usuario global",
 	"centralauth-rename-form-oldname": "Nombre de usuario actual",
 	"centralauth-rename-form-newname": "Nombre de usuario nuevo",
 	"centralauth-rename-form-reason": "Motivo",
+	"centralauth-rename-form-suppressredirects": "Suprimir la creación de redirecciones",
 	"centralauth-rename-notinstalled": "La extensión Renameuser no está instalada.",
 	"centralauth-rename-doesnotexist": "La cuenta proporcionada no existe.",
 	"centralauth-rename-alreadyexists": "El nombre de usuario solicitado ya existe.",
 	"centralauth-rename-badusername": "El nombre de usuario solicitado no es válido.",
+	"centralauth-rename-cannotself": "No puedes renombrarte a ti mismo.",
 	"centralauth-rename-progress-username": "Nombre de usuario",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
@@ -375,5 +383,6 @@
 	"centralauth-rename-viewprogress": "Ver el progreso",
 	"centralauth-rename-progress-fieldset": "Lista de cuentas locales",
 	"centralauth-rename-progress-logs-fieldset": "Entradas del registro",
+	"log-name-gblrename": "Registro de renombramiento global",
 	"log-description-gblrename": "Este registro muestra una lista de los cambios de nombre de los usuarios."
 }

@@ -458,6 +458,8 @@ $specialPageAliases['mk'] = array(
 	'WikiSets' => array( 'ВикиКомплети' ),
 	'GlobalUsers' => array( 'ГлобалниКорисници' ),
 	'MultiLock' => array( 'ПовеќекратноЗаклучување' ),
+	'GlobalRenameUser' => array( 'ГлобалноПреименувањеКорисник' ),
+	'GlobalRenameProgress' => array( 'ГлобалноПреименувањеНапредок' ),
 );
 
 /** Malayalam (മലയാളം) */
@@ -746,6 +748,8 @@ $specialPageAliases['zh-hans'] = array(
 	'WikiSets' => array( 'Wiki集合', '编辑wiki集合' ),
 	'GlobalUsers' => array( '全域用户' ),
 	'MultiLock' => array( '批量锁定' ),
+	'GlobalRenameUser' => array( '全域重命名用户' ),
+	'GlobalRenameProgress' => array( '全域重命名状态' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
