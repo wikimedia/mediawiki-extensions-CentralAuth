@@ -16,6 +16,24 @@
       "revId": "2220a43b759c67cd8842cfe0746118a2e821205d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_76906f4e",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-05T22:52:59Z",
+      "side": 1,
+      "message": "Ok, I checked, and out of the 18571 broken accounts, 18347 have an edit count of 0.",
+      "parentUuid": "ae43a74e_1b1dcc14",
+      "revId": "2220a43b759c67cd8842cfe0746118a2e821205d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
