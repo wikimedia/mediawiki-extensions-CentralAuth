@@ -27,6 +27,7 @@ class MigrateAccount extends Maintenance {
 		$this->addOption( 'homewiki', 'The wiki to set as the homewiki. Can only be used with --username', false, true, 'h' );
 		$this->addOption( 'safe', 'Only migrates accounts with one instance of the username across all wikis', false, false );
 		$this->addOption( 'attachmissing', 'Attach matching local accounts to global account', false, false );
+		$this->addOption( 'attachbroken', 'Attach broken local accounts to the global account', false, false );
 		$this->addOption( 'resettoken', 'Allows for the reset of auth tokens in certain circumstances', false, false );
 		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
 	}
@@ -118,6 +119,18 @@ class MigrateAccount extends Maintenance {
 					){
 						$this->output( "ATTACHING: $username@$wiki\n" );
 						$central->attach( $wiki, 'mail', /** $sendToRC = */ !$this->suppressRC );
+					}
+				}
+			} elseif ( $this->getOption( 'attachbroken', false ) ) {
+				// This option is for bug 61876 / bug 39996 where the account has
+				// an empty password and email set, and became unattached.
+				// Since there is no way an account can have an empty password manually
+				// it has to be due to a CentralAuth bug. So just attach it then.
+				foreach ( $unattached as $wiki => $local ) {
+					if ( $local['email'] === '' && $local['password'] === '' ){
+						$this->output( "ATTACHING: $username@$wiki\n" );
+						// Ironically, the attachment is made due to lack of a password.
+						$central->attach( $wiki, 'password', /** $sendToRC = */ !$this->suppressRC );
 					}
 				}
 			} else {
