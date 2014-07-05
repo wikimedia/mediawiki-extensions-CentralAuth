@@ -380,7 +380,7 @@
 	"centralauth-rename-unattached-intheway": "Error message if there are unattached accounts using the new username.",
 	"centralauth-rename-badusername": "Error message if the new username is not valid.",
 	"centralauth-rename-cannotself": "Error message if the user tries renaming themselves.",
-	"centralauth-rename-alreadyinprogress": "Error message if the user is already being renamed.",
+	"centralauth-rename-alreadyinprogress": "Error message if the user is already being renamed. $1 the new username.",
 	"centralauth-renameuser-global-inprogress": "Error message shown on Special:RenameUser if a local rename is attempted while a global one is in progress.\n\n* $1 is the user being renamed's username",
 	"centralauth-rename-queued": "Message shown after the rename has started.\n\n* $1 is the user's old name\n* $2 is the user's new name\n* $3 is a list of the database names where rename jobs have been queued",
 	"centralauth-rename-progress-username": "{{identical|Username}}\nLabel for username form field on Special:RenameProgress",
