@@ -38,8 +38,9 @@ class GlobalRenameUserValidator {
 		}
 
 		// Check we're not currently renaming the user
-		if ( $caOldUser->renameInProgress() ) {
-			$status->fatal( 'centralauth-rename-alreadyinprogress' );
+		$renameState = $caOldUser->renameInProgress();
+		if ( $renameState ) {
+			$status->fatal( 'centralauth-rename-alreadyinprogress', $renameState[1] );
 		}
 
 		return $status;
