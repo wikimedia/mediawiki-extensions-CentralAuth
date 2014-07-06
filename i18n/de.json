@@ -352,7 +352,7 @@
 	"centralauth-rename-unattached-intheway": "Es gibt nicht verbundene Benutzerkonten, die den angeforderten Benutzernamen verwenden.",
 	"centralauth-rename-badusername": "Der angeforderte Benutzername ist ungültig.",
 	"centralauth-rename-cannotself": "Du kannst dich nicht selbst umbenennen.",
-	"centralauth-rename-alreadyinprogress": "Es läuft bereits eine Umbenennung für diesen Benutzer.",
+	"centralauth-rename-alreadyinprogress": "Es [[Special:GlobalRenameProgress/$1|läuft]] bereits eine Umbenennung für diesen Benutzer.",
 	"centralauth-renameuser-global-inprogress": "Es ist bereits eine globale Umbenennung für $1 in [[Special:GlobalRenameProgress/$1|Bearbeitung]].",
 	"centralauth-rename-queued": "Aufträge zur Umbenennung von „$1“ in „$2“ wurden auf $3 der Warteschlange hinzugefügt.\n\nDu kannst den Fortschritt unter [[Special:GlobalRenameProgress/$2]] ansehen.",
 	"centralauth-rename-progress-username": "Benutzername",

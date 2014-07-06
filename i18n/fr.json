@@ -30,7 +30,8 @@
 			"Urhixidur",
 			"Verdy p",
 			"Wyz",
-			"Linedwell"
+			"Linedwell",
+			"SnowedEarth"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -371,7 +372,7 @@
 	"centralauth-rename-unattached-intheway": "Il y a des comptes non attachés utilisant le nom d’utilisateur demandé.",
 	"centralauth-rename-badusername": "Le nom d’utilisateur demandé n’est pas valide.",
 	"centralauth-rename-cannotself": "Vous ne pouvez vous renommer vous-même.",
-	"centralauth-rename-alreadyinprogress": "Il y a déjà un renommage en cours pour cet utilisateur.",
+	"centralauth-rename-alreadyinprogress": "Il y a déjà un renommage en cours pour cet utilisateur dans[[Special:GlobalRenameProgress/$1|progress]].",
 	"centralauth-renameuser-global-inprogress": "Il y a déjà un renommage global en [[Special:GlobalRenameProgress/$1|cours]] pour $1.",
 	"centralauth-rename-queued": "Les tâches pour renommer $1 en $2 ont été mises en file dans $3.\n\nAfficher la progression depuis [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-progress-username": "Nom d’utilisateur",

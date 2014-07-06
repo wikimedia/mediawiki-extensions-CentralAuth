@@ -369,7 +369,7 @@
 	"centralauth-rename-unattached-intheway": "有独立的账户使用请求的用户名。",
 	"centralauth-rename-badusername": "请求的用户名无效。",
 	"centralauth-rename-cannotself": "您不能重命名您自己。",
-	"centralauth-rename-alreadyinprogress": "对此用户的重命名已在进行中。",
+	"centralauth-rename-alreadyinprogress": "对此用户的重命名已在[[Special:GlobalRenameProgress/$1|进行中]]。",
 	"centralauth-renameuser-global-inprogress": "对$1的全域重命名[[Special:GlobalRenameProgress/$1|已在进行中]]。",
 	"centralauth-rename-queued": "重命名$1至$2的工作已加入$3的队列。在[[Special:GlobalRenameProgress/$2]]查看进展。",
 	"centralauth-rename-progress-username": "用户名",
@@ -383,6 +383,7 @@
 	"centralauth-rename-progress-fieldset": "本地账户列表",
 	"centralauth-rename-progress-logs-fieldset": "日志记录",
 	"centralauth-rename-movelog": "重命名“[[Special:CentralAuth/$1|$1]]”至“[[Special:CentralAuth/$2|$2]]”用户自动移动页面",
+	"centralauth-rename-confirm": "您真希望全域重命名此用户？",
 	"log-name-gblrename": "全域重命名日志",
 	"log-description-gblrename": "此日志跟踪全域重命名用户。",
 	"logentry-gblrename-rename": "$1{{GENDER:$2}}已全域重命名$4至$5"

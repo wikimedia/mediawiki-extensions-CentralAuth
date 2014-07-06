@@ -361,7 +361,7 @@
 	"centralauth-rename-unattached-intheway": "Есть неприсоединённые учётные записи, использующие запрашиваемое имя пользователя.",
 	"centralauth-rename-badusername": "Запрашиваемое имя пользователя является недопустимым.",
 	"centralauth-rename-cannotself": "Вы не можете переименовать сами себя.",
-	"centralauth-rename-alreadyinprogress": "Переименование этого участника уже в процессе.",
+	"centralauth-rename-alreadyinprogress": "Глобальное переименование для этого участника находится в [[Special:GlobalRenameProgress/$1|процессе]].",
 	"centralauth-renameuser-global-inprogress": "Глобальное переименование для $1 уже находится в [[Special:GlobalRenameProgress/$1|процессе]].",
 	"centralauth-rename-queued": "Задачи для переименования $1 в $2 были поставлены в очередь на $3.\n\nПрогресс можно посмотреть на [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-progress-username": "Имя пользователя",
@@ -375,6 +375,7 @@
 	"centralauth-rename-progress-fieldset": "Список локальных учётных записей",
 	"centralauth-rename-progress-logs-fieldset": "Записи журнала",
 	"centralauth-rename-movelog": "Автоматическое переименование страницы при переименовании участника «[[Special:CentralAuth/$1|$1]]» в «[[Special:CentralAuth/$2|$2]]»",
+	"centralauth-rename-confirm": "Вы действительно хотите глобально переименовать участника?",
 	"log-name-gblrename": "Журнал глобального переименования",
 	"log-description-gblrename": "Этот журнал отслеживает глобальные переименование пользователей.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально переименовал $4 в $5"

@@ -3,7 +3,8 @@
 		"authors": [
 			"Ilnur efende",
 			"Ильнар",
-			"Умар"
+			"Умар",
+			"Marat-avgust"
 		]
 	},
 	"mergeaccount": "Гомуми кулланучы язмаларының торышы",
@@ -66,7 +67,7 @@
 	"centralauth-admin-list-blocked": "Блоклау",
 	"centralauth-admin-unmerge": "Сайланганнарны аеру",
 	"centralauth-admin-merge": "Сайланганнарны берләштерү",
-	"centralauth-seconds-ago": "$1 секунд элек",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} элек",
 	"centralauth-minutes-ago": "$1 минут элек",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|cәгать}} элек",
 	"centralauth-days-ago": "$1 көн элек",

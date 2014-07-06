@@ -14,7 +14,8 @@
 			"Samat",
 			"Tacsipacsi",
 			"Tgr",
-			"ViDam"
+			"ViDam",
+			"Csega"
 		]
 	},
 	"mergeaccount": "Felhasználói fiókok egyesítésének állapota",
@@ -282,5 +283,20 @@
 	"right-centralauth-oversight": "Globális fiók elrejtése",
 	"right-centralauth-merge": "saját fiókok egyesítése",
 	"right-globalgrouppermissions": "globális csoportok kezelése",
-	"centralloginsuccesful": "Sikeres bejelentkezés"
+	"centralloginsuccesful": "Sikeres bejelentkezés",
+	"action-centralauth-rename": "globális fiókok átnevezése",
+	"globalrenameuser-legend": "Globális felhasználó átnevezése",
+	"centralauth-rename-form-oldname": "Jelenlegi felhasználónév",
+	"centralauth-rename-form-newname": "Új felhasználónév",
+	"centralauth-rename-form-reason": "Indoklás",
+	"centralauth-rename-doesnotexist": "A megadott fiók nem létezik.",
+	"centralauth-rename-badusername": "A kért felhasználónév érvénytelen.",
+	"centralauth-rename-progress-username": "Felhasználó",
+	"centralauth-rename-table-status": "Állapot",
+	"centralauth-rename-table-status-inprogress": "Folyamatban",
+	"centralauth-rename-table-status-queued": "Várólistán",
+	"centralauth-rename-table-status-done": "Kész",
+	"centralauth-rename-progress-fieldset": "Helyi fiókok listája",
+	"centralauth-rename-progress-logs-fieldset": "Naplóbejegyzések",
+	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését."
 }

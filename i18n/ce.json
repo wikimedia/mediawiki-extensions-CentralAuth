@@ -328,6 +328,7 @@
 	"centralauth-rename-viewprogress": "Хьажа кхочуш даре",
 	"centralauth-rename-progress-fieldset": "Локальни дӀаяздрийн могӀаме хьажа",
 	"centralauth-rename-progress-logs-fieldset": "Тептаран дӀаяздарш",
+	"centralauth-rename-confirm": "Хьуна бакъалла лаьий хӀокху декъашхочун цӀе глобально хийца?",
 	"log-name-gblrename": "Глобальни цӀераш хийцаран тептар",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально цӀе хийцина $4 → $5"
 }
