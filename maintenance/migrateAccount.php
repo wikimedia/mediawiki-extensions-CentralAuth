@@ -108,6 +108,8 @@ class MigrateAccount extends Maintenance {
 		 * Migration with an existing global account
 		 */
 		if ( $central->exists() ) {
+			$this->output( "INFO: A global account already exists for: $username\n" );
+
 			if (
 				$this->getOption( 'attachmissing', false )
 				&& !is_null( $central->getEmailAuthenticationTimestamp() )
@@ -121,7 +123,9 @@ class MigrateAccount extends Maintenance {
 						$central->attach( $wiki, 'mail', /** $sendToRC = */ !$this->suppressRC );
 					}
 				}
-			} elseif ( $this->getOption( 'attachbroken', false ) ) {
+			}
+
+			if ( $this->getOption( 'attachbroken', false ) ) {
 				// This option is for bug 61876 / bug 39996 where the account has
 				// an empty password and email set, and became unattached.
 				// Since there is no way an account can have an empty password manually
@@ -136,8 +140,6 @@ class MigrateAccount extends Maintenance {
 						$central->attach( $wiki, 'password', /** $sendToRC = */ !$this->suppressRC );
 					}
 				}
-			} else {
-				$this->output( "ERROR: A global account already exists for: $username\n" );
 			}
 		}
 		/**
