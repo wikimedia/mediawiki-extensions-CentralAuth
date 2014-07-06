@@ -114,7 +114,7 @@ class MigrateAccount extends Maintenance {
 			){
 				foreach ( $unattached as $wiki => $local ) {
 					if (
-						$central->getEmail() == $local['email']
+						$central->getEmail() === $local['email']
 						&& !is_null( $local['emailAuthenticated'] )
 					){
 						$this->output( "ATTACHING: $username@$wiki\n" );
