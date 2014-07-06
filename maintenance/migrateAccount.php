@@ -9,7 +9,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class MigrateAccount extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Migrates the specified local account to a global account";
+		$this->mDescription = "Migrates the specified usernames to a global account if email matches and there are no conflicts";
 		$this->start = microtime( true );
 		$this->partial = 0;
 		$this->migrated = 0;
@@ -21,13 +21,13 @@ class MigrateAccount extends Maintenance {
 		$this->resetToken = false;
 		$this->suppressRC = false;
 
-		$this->addOption( 'auto', 'Allows migration using CentralAuthUser::attemptAutoMigration defaults', false, false );
-		$this->addOption( 'userlist', 'List of usernames to migrate in the format username\thomewiki, where \thomewiki is optional', false, true );
-		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
+		$this->addOption( 'auto', 'Extended migration: ALWAYS create a global account for the username where missing and merge all the local accounts which match its email; the winner is picked using CentralAuthUser::attemptAutoMigration defaults, or forced to "homewiki" where specified by --userlist or --homewiki', false, false );
+		$this->addOption( 'userlist', 'List of usernames to migrate in the format username\thomewiki, where \thomewiki is optional and overrides the default winner if specified', false, true );
+		$this->addOption( 'username', 'The username to migrate', false, true, 'u' );
 		$this->addOption( 'homewiki', 'The wiki to set as the homewiki. Can only be used with --username', false, true, 'h' );
-		$this->addOption( 'safe', 'Only migrates accounts with one instance of the username across all wikis', false, false );
-		$this->addOption( 'attachmissing', 'Attach matching local accounts to global account', false, false );
-		$this->addOption( 'attachbroken', 'Attach broken local accounts to the global account', false, false );
+		$this->addOption( 'safe', 'Skip usernames used more than once across all wikis', false, false );
+		$this->addOption( 'attachmissing', 'Attach matching local accounts to an existing global account', false, false );
+		$this->addOption( 'attachbroken', 'Attach broken local accounts to the existing global account', false, false );
 		$this->addOption( 'resettoken', 'Allows for the reset of auth tokens in certain circumstances', false, false );
 		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
 	}
@@ -50,7 +50,7 @@ class MigrateAccount extends Maintenance {
 			$this->suppressRC = true;
 		}
 
-		// check to see if we are processing a single username
+		// Check to see if we are processing a single username
 		if ( $this->getOption( 'username', false ) !== false ) {
 			$username = $this->getOption( 'username' );
 			$homewiki = $this->getOption( 'homewiki', null );
@@ -166,9 +166,9 @@ class MigrateAccount extends Maintenance {
 				$central->mHomeWiki = $homewiki;
 			}
 
-			// check that all unattached (ie ALL) accounts have a confirmed email
-			// address and that the addresses are all the same.  we are using this
-			// to match accounts to the same user since we can't use the password
+			// Check that all unattached (i.e. ALL) accounts have a confirmed email
+			// address and that the addresses are all the same. We are using this
+			// to match accounts to the same user, since we can't use the password.
 			$emailMatch = true;
 			$email = null;
 			foreach ( $unattached as $local ) {
@@ -182,7 +182,8 @@ class MigrateAccount extends Maintenance {
 				break;
 			}
 
-			// all of the emails are the same and confirmed
+			// All of the emails are the same and confirmed? Merge all the accounts.
+			// They aren't? Skip, or merge the winner if --auto was specified.
 			if ( $emailMatch ) {
 				$this->output( "Email addresses match and are confirmed for: $username\n" );
 				$central->storeAndMigrate( !$this->suppressRC );
