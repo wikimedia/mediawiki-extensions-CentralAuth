@@ -445,7 +445,12 @@ class SpecialMultiLock extends SpecialPage {
 			array( 'globalauth', 'suppress' ),
 			'',
 			'',
-			array( 'showIfEmpty' => true ) );
+			array(
+				'conds' => array(
+					'log_action' => 'setstatus' // bug 57253
+				),
+				'showIfEmpty' => true
+			) );
 		if ( $numRows ) {
 			$this->getOutput()->addHTML(
 				Xml::fieldset( $this->msg( 'centralauth-admin-logsnippet' )->text(), $text )
