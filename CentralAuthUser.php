@@ -846,10 +846,12 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
 
+		// Pick all the local accounts matching the "master" home account
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
 		// storeGlobalData clears $this->mHomeWiki
 		$homeWiki = $this->mHomeWiki;
+		// Actually do the migration
 		$ok = $this->storeGlobalData(
 				$home['id'],
 				$home['password'],
