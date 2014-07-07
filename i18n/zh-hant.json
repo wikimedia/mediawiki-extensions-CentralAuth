@@ -339,5 +339,11 @@
 	"centralauth-warning-notloggedin": "您目前未有登入。",
 	"centralauth-warning-notattached": "本地帳戶未有附加到全域帳戶。",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} 帳戶確認",
-	"centralauth-finishglobaliseemail_body": "你的電郵地址與維基媒體計劃上的用戶「$2」連結，該用戶的主賬號位於{{SITENAME}}。\n\n為確保此賬號確實屬於閣下、合併你的所有賬號及容許你可以於失去密碼後恢復密碼，請開啟以下連結：\n\n$3\n\n若此賬號*並不*屬於閣下，請按以下連結以取消賬號確認：\n\n$5\n\n此確認號碼將於$6$7過期。"
+	"centralauth-finishglobaliseemail_body": "你的電郵地址與維基媒體計劃上的用戶「$2」連結，該用戶的主賬號位於{{SITENAME}}。\n\n為確保此賬號確實屬於閣下、合併你的所有賬號及容許你可以於失去密碼後恢復密碼，請開啟以下連結：\n\n$3\n\n若此賬號*並不*屬於閣下，請按以下連結以取消賬號確認：\n\n$5\n\n此確認號碼將於$6$7過期。",
+	"centralauth-rename-form-newname": "新使用者名稱",
+	"centralauth-rename-form-movepages": "移動使用者頁面",
+	"centralauth-rename-progress-username": "使用者名",
+	"centralauth-rename-table-domain": "在地wiki",
+	"centralauth-rename-table-status": "狀態",
+	"centralauth-rename-table-status-done": "完成"
 }

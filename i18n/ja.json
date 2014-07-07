@@ -306,7 +306,7 @@
 	"centralauth-editset-badname": "ウィキ集合の名前が無効または空です。",
 	"centralauth-editset-badtype": "ウィキ集合の種類が無効です。",
 	"centralauth-editset-setexists": "指定した名前のウィキ集合は既に存在します。",
-	"centralauth-editset-nowikis": "ウィキを指定していません。",
+	"centralauth-editset-nowikis": "(なし)",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(なし)",
 	"centralauth-editset-usage": "以下のグループで使用:",

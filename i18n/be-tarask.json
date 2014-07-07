@@ -279,7 +279,7 @@
 	"centralauth-editset-badname": "Няслушная ці пустая назва набору.",
 	"centralauth-editset-badtype": "Няслушны тып набору.",
 	"centralauth-editset-setexists": "Набор з такой назвай ужо існуе",
-	"centralauth-editset-nowikis": "Ня вызначаны вікі.",
+	"centralauth-editset-nowikis": "(няма)",
 	"centralauth-editset-nouse": "(няма)",
 	"centralauth-editset-usage": "Выкарыстоўваецца ў групах:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|1=Наступная вікі не існуе|Наступныя вікі не існуюць}}: $1.",

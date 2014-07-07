@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"GunChleoc"
+		]
+	},
+	"mergeaccount": "Staid aontachadh an logaidh a-steach",
+	"centralauth-groupname": "Wikimedia Foundation",
+	"centralauth-desc": "[[Special:MergeAccount|Aontaich cunntasan]] air fheadh nan uicidhean aig {{int:Centralauth-groupname}}",
+	"centralauth-antispoof-desc": "Cuiridh seo teicneolas AntiSpoof ri CentralAuth",
+	"centralauth-rename-desc": "Cuiridh seo teicneolas Renameuser ri CentralAuth",
+	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Aontaichidh seo iomadh cunntas]] airson logadh a-steach leis an aon chunntas",
+	"centralauth-merge-denied": "Duilich ach chan eil cead agad gus an duilleag seo inntrigeadh.",
+	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Logh a-steach]</span> gus sùil a thoirt an deach na cunntasan agad aontachadh gu slàn.",
+	"centralauth-merge-step1-title": "Tòisich air aontachadh an logaidh a-steach",
+	"centralauth-merge-step1-submit": "Dearbhaich fiosrachadh an logaidh a-steach",
+	"centralauth-merge-step2-title": "Dearbhaich barrachd chunntasan",
+	"centralauth-merge-step2-submit": "Dearbhaich fiosrachadh an logaidh a-steach"
+}

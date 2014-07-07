@@ -266,7 +266,7 @@
 	"centralauth-editset-badname": "Érvénytelen vagy üres csoportnevet adtál meg.",
 	"centralauth-editset-badtype": "Érvénytelen csoporttípus.",
 	"centralauth-editset-setexists": "Már létezik ilyen nevű csoport",
-	"centralauth-editset-nowikis": "Nem adtál meg wikiket.",
+	"centralauth-editset-nowikis": "(nincs)",
 	"centralauth-editset-nouse": "(semmi)",
 	"centralauth-editset-usage": "Ezekben a csoportokban van használva:",
 	"centralauth-editset-badwikis": "A következő {{PLURAL:$2|wiki nem létezik|wikik nem léteznek}}: $1.",

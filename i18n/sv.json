@@ -21,7 +21,8 @@
 			"Skalman",
 			"Stefan2",
 			"WikiPhoenix",
-			"Fader"
+			"Fader",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "Status för gemensam inloggning",
@@ -357,7 +358,7 @@
 	"centralauth-rename-unattached-intheway": "Det finns okopplade konton som använder det begärda användarnamnet.",
 	"centralauth-rename-badusername": "Det begärda användarnamnet är ogiltigt.",
 	"centralauth-rename-cannotself": "Du kan inte byta namn på dig själv.",
-	"centralauth-rename-alreadyinprogress": "Det finns redan ett namnbyte på gång för denna användare.",
+	"centralauth-rename-alreadyinprogress": "Det finns redan ett namnbyte [[Special:GlobalRenameProgress/$1|på gång]] för denna användare.",
 	"centralauth-renameuser-global-inprogress": "Det finns redan ett globalt namnbyte [[Special:GlobalRenameProgress/$1|på gång]] för $1.",
 	"centralauth-rename-progress-username": "Användarnamn",
 	"centralauth-rename-notinprogress": "Det finns inga pågående namnbyten för $1. De kan redan ha avslutats.",

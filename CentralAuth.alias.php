@@ -761,6 +761,8 @@ $specialPageAliases['zh-hant'] = array(
 	'WikiSets' => array( 'Wiki組', '編輯Wiki組' ),
 	'GlobalUsers' => array( '全域使用者' ),
 	'MultiLock' => array( '批量鎖定' ),
+	'GlobalRenameUser' => array( '全域重命名使用者' ),
+	'GlobalRenameProgress' => array( '全域重命名狀態' ),
 );
 
 /** Chinese (Hong Kong) (中文（香港）‎) */

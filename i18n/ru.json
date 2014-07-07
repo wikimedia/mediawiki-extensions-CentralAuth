@@ -19,7 +19,8 @@
 			"Putnik",
 			"VasilievVV",
 			"Александр Сигачёв",
-			"Тест"
+			"Тест",
+			"Meshkov.a"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -312,7 +313,7 @@
 	"centralauth-editset-badname": "Пустое или недопустимое название набора.",
 	"centralauth-editset-badtype": "Недопустимый тип набора.",
 	"centralauth-editset-setexists": "Набор с таким названием уже существует",
-	"centralauth-editset-nowikis": "Не указаны вики.",
+	"centralauth-editset-nowikis": "(нет)",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(нет)",
 	"centralauth-editset-usage": "Используется для групп:",
