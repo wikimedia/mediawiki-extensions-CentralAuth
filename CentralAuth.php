@@ -462,8 +462,8 @@ $wgResourceModules['ext.centralauth.globalgrouppermissions'] = array(
 
 $wgResourceModules['ext.centralauth.globalrenameuser'] = array(
 	'scripts' => 'ext.centralauth.globalrenameuser.js',
-        'dependencies' => array(
-                'mediawiki.util'
+	'dependencies' => array(
+		'mediawiki.util'
 	),
 	'messages' => array(
 		'centralauth-rename-confirm',
