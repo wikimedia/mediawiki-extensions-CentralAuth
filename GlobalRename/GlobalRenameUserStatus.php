@@ -140,18 +140,26 @@ class GlobalRenameUserStatus {
 	/**
 	 * @param array $rows
 	 *
-	 * @return integer
+	 * @return bool
 	 */
 	public function setStatuses( array $rows ) {
 		$dbw = $this->getDB( DB_MASTER );
 
+		$dbw->begin( __METHOD__ );
 		$dbw->insert(
 			'renameuser_status',
 			$rows,
-			__METHOD__
+			__METHOD__,
+			array( 'IGNORE' )
 		);
+		if ( $dbw->affectedRows() !== count( $rows ) ) {
+			// Race condition, the rename was already started
+			$dbw->rollback( __METHOD__ );
+			return false;
+		}
+		$dbw->commit( __METHOD__ );
 
-		return $dbw->affectedRows();
+		return true;
 	}
 
 	/**
