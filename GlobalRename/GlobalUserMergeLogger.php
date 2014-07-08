@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Log a global rename into the local log
+ * Log a global merge into the local log
  *
  * @license GNU GPL v2+
- * @author Marius Hoch < hoo@online.de >
+ * @author Kunal Mehta
  */
 
-class GlobalRenameUserLogger implements IGlobalRenameUserLogger {
+class GlobalUserMergeLogger implements IGlobalRenameUserLogger {
 	/**
 	 * @var User
 	 */
@@ -26,7 +26,7 @@ class GlobalRenameUserLogger implements IGlobalRenameUserLogger {
 	 * @param string $reason
 	 */
 	public function log( $oldName, $newName, $reason ) {
-		$logEntry = new ManualLogEntry( 'gblrename', 'rename' );
+		$logEntry = new ManualLogEntry( 'gblrename', 'merge' );
 		$logEntry->setPerformer( $this->performingUser );
 
 		$logEntry->setTarget(
