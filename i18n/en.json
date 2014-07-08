@@ -368,5 +368,16 @@
 	"centralauth-rename-confirm" : "Do you really want to globally rename this user?",
 	"log-name-gblrename": "Global rename log",
 	"log-description-gblrename": "This log tracks the global renaming of users.",
-	"logentry-gblrename-rename" : "$1 globally {{GENDER:$2|renamed}} $4 to $5"
+	"logentry-gblrename-rename" : "$1 globally {{GENDER:$2|renamed}} $4 to $5",
+	"globalusermerge": "Merge global user",
+	"globalusermerge-legend": "Merge global user",
+	"centralauth-usermerge-form-newuser": "Final username",
+	"centralauth-usermerge-form-usernames": "Current usernames",
+	"centralauth-usermerge-form-usernames-help": "Each username should be separated by a newline.",
+	"centralauth-usermerge-form-reason": "Reason",
+	"centralauth-usermerge-notinstalled": "The UserMerge extension is not installed.",
+	"logentry-gblrename-merge": "$1 globally {{GENDER:$2|merged}} $4 into $5",
+	"centralauth-usermerge-queued": "Merges for $1 into $2 have been queued.",
+	"centralauth-usermerge-invalid": "There is no global account with the name \"$1\".",
+	"centralauth-usermerge-already": "There is already a global rename or merge in progress for $1."
 }

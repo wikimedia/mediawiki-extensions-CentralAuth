@@ -40,6 +40,18 @@ class GlobalRenameUserStatus {
 		}
 	}
 
+	public function begin() {
+		$this->getDB( DB_MASTER )->begin( __CLASS__ );
+	}
+
+	public function commit() {
+		$this->getDB( DB_MASTER )->commit( __CLASS__ );
+	}
+
+	public function rollback() {
+		$this->getDB( DB_MASTER )->rollback( __CLASS__ );
+	}
+
 	/**
 	 * Get the where clause to query rows by either old or new name
 	 *
