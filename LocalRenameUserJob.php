@@ -4,12 +4,7 @@
  * Job class to rename a user locally
  * This is intended to be run on each wiki individually
  */
-class LocalRenameUserJob extends Job {
-	/**
-	 * @var GlobalRenameUserStatus
-	 */
-	private $renameuserStatus;
-
+class LocalRenameUserJob extends LocalRenameJob {
 	/**
 	 * @var bool
 	 */
@@ -29,28 +24,13 @@ class LocalRenameUserJob extends Job {
 		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
 	}
 
-	public function run() {
-		$this->renameuserStatus = new GlobalRenameUserStatus( $this->params['from'] );
-		try {
-			$this->doRename();
-		} catch ( Exception $e ) {
-			// This will lock the user out of their account
-			// until a sysadmin intervenes
-			$this->updateStatus( 'failed' );
-			throw $e;
-		}
-
-		return true;
-	}
-
-	public function doRename() {
+	public function doRun() {
 		if ( !class_exists( 'RenameuserSQL' ) ) {
 			throw new MWException( 'Extension:Renameuser is not installed' );
 		}
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
-		$this->renameuserStatus = new GlobalRenameUserStatus( $from );
 		$this->updateStatus( 'inprogress' );
 
 		$oldUser = User::newFromName( $from );
@@ -71,35 +51,6 @@ class LocalRenameUserJob extends Job {
 			$this->movePages();
 		}
 		$this->done();
-	}
-
-	/**
-	 * Get the user object for the user who is doing the renaming
-	 * "Auto-create" if it doesn't exist yet.
-	 * @return User
-	 */
-	public function getRenameUser() {
-		$user = User::newFromName( $this->params['renamer'] );
-		$caUser = CentralAuthUser::getInstance( $user );
-		// FIXME:
-		// Race condition where the renamer isn't attached here, but
-		// someone creates an account in the meantime and then bad
-		// stuff could happen...
-		// For the meantime, just use a system account
-		if ( !$caUser->attachedOn( wfWikiID() ) && $user->getId() !== 0 ) {
-			return User::newFromName( 'Global rename script' );
-		} elseif ( $user->getId() == 0 ) {
-			// No local user, lets "auto-create" one
-			if ( CentralAuthHooks::attemptAddUser( $user ) ) {
-				return User::newFromName( $user->getName() ); // So the internal cache is reloaded
-			} else {
-				// Auto-creation didn't work, fallback on the system account.
-				return User::newFromName( 'Global rename script' );
-			}
-		} else {
-			// Account is attached and exists, just use it :)
-			return $user;
-		}
 	}
 
 	/**
@@ -191,16 +142,9 @@ class LocalRenameUserJob extends Job {
 		$wgUser = $oldUser; // good manners to cleanup
 	}
 
-	public function done() {
-		$this->renameuserStatus->done( wfWikiID() );
-
-		$caNew = new CentralAuthUser( $this->params['to'] );
+	protected function done() {
+		parent::done();
 		$caOld = new CentralAuthUser( $this->params['from'] );
-		$caNew->quickInvalidateCache();
 		$caOld->quickInvalidateCache();
-	}
-
-	public function updateStatus( $status ) {
-		$this->renameuserStatus->setStatus( wfWikiID(), $status );
 	}
 }
