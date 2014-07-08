@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_11fceed4",
+        "filename": "i18n/en.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-08T07:30:03Z",
+      "side": 1,
+      "message": "I think that \"CentralAuth\" as a term should be avoided. Isn\u0027t there a \"global block log\" (preferably a message) or something to refer to?",
+      "revId": "a57ccec90eafac9931f8cf0d2881bc99c3c71e51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
