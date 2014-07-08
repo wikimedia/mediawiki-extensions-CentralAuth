@@ -49,7 +49,7 @@ class GlobalRenameUser {
 	private $databaseUpdates;
 
 	/**
-	 * @var GlobalRenameUserLogger
+	 * @var IGlobalRenameUserLogger
 	 */
 	private $logger;
 
@@ -62,7 +62,7 @@ class GlobalRenameUser {
 	 * @param GlobalRenameUserStatus $renameuserStatus
 	 * @param callable $jobQueueGroupGenerator Callable for getting a job queue group for a given wiki
 	 * @param GlobalRenameUserDatabaseUpdates $databaseUpdates
-	 * @param GlobalRenameUserLogger $logger
+	 * @param IGlobalRenameUserLogger $logger
 	 */
 	public function __construct(
 		User $performingUser,
@@ -73,7 +73,7 @@ class GlobalRenameUser {
 		GlobalRenameUserStatus $renameuserStatus,
 		/* callable */ $jobQueueGroupGenerator,
 		GlobalRenameUserDatabaseUpdates $databaseUpdates,
-		GlobalRenameUserLogger $logger
+		IGlobalRenameUserLogger $logger
 	) {
 		$this->performingUser = $performingUser;
 		$this->oldUser = $oldUser;
@@ -84,6 +84,44 @@ class GlobalRenameUser {
 		$this->jobQueueGroupGenerator = $jobQueueGroupGenerator;
 		$this->databaseUpdates = $databaseUpdates;
 		$this->logger = $logger;
+	}
+
+	private function addLogEntry( $reason ) {
+		$this->logger->log(
+			$this->oldUser->getName(),
+			$this->newUser->getName(),
+			$reason
+		);
+
+	}
+
+	private function clearCaches() {
+		$this->oldCAUser->quickInvalidateCache();
+		$this->newCAUser->quickInvalidateCache();
+	}
+
+	public function merge( array $options ) {
+		$oldWikis = $this->oldCAUser->listAttached();
+		$newWikis = $this->newCAUser->listAttached();
+
+		$status = $this->setRenameStatuses( $oldWikis );
+		if ( !$status->isOK() ) {
+			return $status;
+		}
+
+		$this->databaseUpdates->remove( $this->oldUser->getName() );
+
+		$this->clearCaches();
+
+		$mergeWikis = array_intersect( $oldWikis, $newWikis );
+		$renameWikis = array_intersect( $oldWikis, $mergeWikis );
+
+		$this->injectLocalUserMergeJobs( $mergeWikis, array() );
+		$this->injectLocalRenameUserJobs( $renameWikis, array() );
+
+		$this->addLogEntry( $options['reason'] );
+
+		return Status::newGood();
 	}
 
 	/**
@@ -111,16 +149,11 @@ class GlobalRenameUser {
 		// the renameInProgress function. Probably.
 
 		// Clear some caches...
-		$this->oldCAUser->quickInvalidateCache();
-		$this->newCAUser->quickInvalidateCache();
+		$this->clearCaches();
 
 		$this->injectLocalRenameUserJobs( $wikis, $options );
 
-		$this->logger->log(
-			$this->oldUser->getName(),
-			$this->newUser->getName(),
-			$options['reason']
-		);
+		$this->addLogEntry( $options['reason'] );
 
 		return Status::newGood();
 	}
@@ -152,12 +185,27 @@ class GlobalRenameUser {
 
 	/**
 	 * @param array $options
-	 * @param array $wikis
 	 *
-	 * @return Status
+	 * @return Job
+	 */
+	private function getLocalUserMergeJobs( array $options ) {
+		//
+	}
+
+	private function injectLocalUserMergeJobs( array $wikis, array $options ) {
+		$job = $this->getLocalUserMergeJobs( $options );
+		// Submit the jobs.
+		foreach( $wikis as $wiki ) {
+			call_user_func( $this->jobQueueGroupGenerator, $wiki )->push( $job );
+		}
+	}
+
+	/**
+	 * @param array $wikis
+	 * @param array $options
 	 */
 	private function injectLocalRenameUserJobs( array $wikis, array $options ) {
-		$job = $this->getJob( $options );
+		$job = $this->getLocalRenameUserJob( $options );
 		// Submit the jobs.
 		foreach( $wikis as $wiki ) {
 			call_user_func( $this->jobQueueGroupGenerator, $wiki )->push( $job );
@@ -167,9 +215,9 @@ class GlobalRenameUser {
 	/**
 	 * @param array $options
 	 *
-	 * @return Job
+	 * @return LocalRenameUserJob
 	 */
-	private function getJob( array $options ) {
+	private function getLocalRenameUserJob( array $options ) {
 		$params = array(
 			'from' => $this->oldUser->getName(),
 			'to' => $this->newUser->getName(),

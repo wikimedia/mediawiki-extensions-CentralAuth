@@ -7,7 +7,7 @@
  * @author Marius Hoch < hoo@online.de >
  */
 
-class GlobalRenameUserLogger {
+class GlobalRenameUserLogger implements IGlobalRenameUserLogger {
 	/**
 	 * @var User
 	 */
