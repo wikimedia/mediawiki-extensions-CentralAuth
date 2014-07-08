@@ -16,6 +16,28 @@ class GlobalRenameUserDatabaseUpdates {
 	}
 
 	/**
+	 * @param string $name
+	 */
+	public function remove( $name ) {
+		$dbw = $this->getDB();
+
+		$dbw->begin( __METHOD__ );
+		$dbw->delete(
+			'globaluser',
+			array( 'gu_name' => $name ),
+			__METHOD__
+		);
+
+		$dbw->delete(
+			'localuser',
+			array( 'lu_name' => $name ),
+			__METHOD__
+		);
+
+		$dbw->commit( __METHOD__ );
+	}
+
+	/**
 	 * @param string $oldname
 	 * @param string $newname
 	 */

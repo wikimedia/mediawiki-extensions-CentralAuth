@@ -244,8 +244,11 @@ $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyErr
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
 $wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
 $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormatter.php";
+$wgAutoloadClasses['LocalCentralAuthJob'] = "$caBase/LocalCentralAuthJob.php";
 $wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/LocalRenameUserJob.php";
+$wgAutoloadClasses['LocalUserMergeJob'] = "$caBase/LocalUserMergeJob.php";
 $wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/specials/SpecialGlobalRenameUser.php";
+$wgAutoloadClasses['SpecialGlobalUserMerge'] = "$caBase/specials/SpecialGlobalUserMerge.php";
 $wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/specials/SpecialGlobalRenameProgress.php";
 $wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/GlobalRename/GlobalRenameLogFormatter.php";
 
@@ -253,7 +256,9 @@ $wgAutoloadClasses['GlobalRenameUser'] = "$caBase/GlobalRename/GlobalRenameUser.
 $wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/GlobalRename/GlobalRenameUserStatus.php";
 $wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/GlobalRename/GlobalRenameUserValidator.php";
 $wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
+$wgAutoloadClasses['IGlobalRenameUserLogger'] = "$caBase/GlobalRename/IGlobalRenameUserLogger.php";
 $wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/GlobalRename/GlobalRenameUserLogger.php";
+$wgAutoloadClasses['GlobalUserMergeLogger'] = "$caBase/GlobalRename/GlobalUserMergeLogger.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -337,6 +342,7 @@ $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
 $wgAvailableRights[] = 'centralauth-autoaccount';
 $wgAvailableRights[] = 'centralauth-rename';
+$wgAvailableRights[] = 'centralauth-usermerge';
 
 $wgGroupPermissions['steward']['centralauth-unmerge'] = true;
 $wgGroupPermissions['steward']['centralauth-lock'] = true;
@@ -354,6 +360,7 @@ $wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
 $wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
 $wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
 $wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
+$wgSpecialPages['GlobalUserMerge'] = 'SpecialGlobalUserMerge';
 $wgSpecialPageGroups['CentralAuth'] = 'users';
 $wgSpecialPageGroups['MergeAccount'] = 'login';
 $wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
