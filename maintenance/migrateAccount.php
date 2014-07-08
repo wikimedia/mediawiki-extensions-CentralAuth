@@ -188,10 +188,10 @@ class MigrateAccount extends Maintenance {
 			// They aren't? Skip, or merge the winner if --auto was specified.
 			if ( $emailMatch ) {
 				$this->output( "Email addresses match and are confirmed for: $username\n" );
-				$central->storeAndMigrate( !$this->suppressRC );
+				$central->storeAndMigrate( array(), !$this->suppressRC );
 			} else {
 				if ( isset( $central->mHomeWiki ) || $this->autoMigrate ) {
-					$central->storeAndMigrate( !$this->suppressRC );
+					$central->storeAndMigrate( array(), !$this->suppressRC );
 				} else {
 					$this->output( "ERROR: Auto migration is disabled and email addresses do not match for: $username\n" );
 				}
