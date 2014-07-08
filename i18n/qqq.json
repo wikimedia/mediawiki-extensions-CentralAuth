@@ -400,5 +400,17 @@
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed",
 	"log-name-gblrename": "Log page title",
 	"log-description-gblrename": "Log page description",
-	"logentry-gblrename-rename": "{{Logentry}}"
+	"logentry-gblrename-rename": "{{Logentry}}",
+	"globalusermerge": "Name of special page",
+	"globalusermerge-legend": "Legend of fieldset surrounding the form",
+	"centralauth-usermerge-form-newuser": "Label for form field",
+	"centralauth-usermerge-form-usernames": "Label for form field",
+	"centralauth-usermerge-form-usernames-help": "Help message for {{mw-msg|centralauth-usermerge-form-usernames}}",
+	"centralauth-usermerge-form-reason": "Label for form field",
+	"centralauth-usermerge-notinstalled": "Error message shown if Extension:UserMerge is not installed",
+	"logentry-gblrename-merge": "{{logentry}}",
+	"centralauth-usermerge-queued": "Message shown after successfully submitting the form. $1 is a comma list of users who are being merged into $2, the final username.",
+	"centralauth-usermerge-invalid": "Error message shown if the user enters invalid input. $1 is the invalid input",
+	"centralauth-usermerge-already": "Error message if a user is already being globally renamed or merged. $1 is the user's name."
+
 }
