@@ -142,8 +142,10 @@ class GlobalRenameUser {
 			);
 		}
 
-		if ( $this->renameuserStatus->setStatuses( $rows ) === 0 ) {
+		$status = $this->renameuserStatus->setStatuses( $rows );
+		if ( !$status->isOK() ) {
 			// Race condition: Another admin already started the rename!
+			// Use a new Status object to pass the name as a parameter
 			return Status::newFatal( 'centralauth-rename-alreadyinprogress', $this->newUser->getName() );
 		}
 

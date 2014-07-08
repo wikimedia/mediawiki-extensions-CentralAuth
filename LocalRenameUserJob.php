@@ -4,12 +4,7 @@
  * Job class to rename a user locally
  * This is intended to be run on each wiki individually
  */
-class LocalRenameUserJob extends Job {
-	/**
-	 * @var GlobalRenameUserStatus
-	 */
-	private $renameuserStatus;
-
+class LocalRenameUserJob extends LocalRenameJob {
 	/**
 	 * @var bool
 	 */
@@ -29,28 +24,13 @@ class LocalRenameUserJob extends Job {
 		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
 	}
 
-	public function run() {
-		$this->renameuserStatus = new GlobalRenameUserStatus( $this->params['from'] );
-		try {
-			$this->doRename();
-		} catch ( Exception $e ) {
-			// This will lock the user out of their account
-			// until a sysadmin intervenes
-			$this->updateStatus( 'failed' );
-			throw $e;
-		}
-
-		return true;
-	}
-
-	public function doRename() {
+	public function doRun() {
 		if ( !class_exists( 'RenameuserSQL' ) ) {
 			throw new MWException( 'Extension:Renameuser is not installed' );
 		}
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
-		$this->renameuserStatus = new GlobalRenameUserStatus( $from );
 		$this->updateStatus( 'inprogress' );
 
 		$oldUser = User::newFromName( $from );
@@ -191,16 +171,9 @@ class LocalRenameUserJob extends Job {
 		$wgUser = $oldUser; // good manners to cleanup
 	}
 
-	public function done() {
-		$this->renameuserStatus->done( wfWikiID() );
-
-		$caNew = new CentralAuthUser( $this->params['to'] );
+	protected function done() {
+		parent::done();
 		$caOld = new CentralAuthUser( $this->params['from'] );
-		$caNew->quickInvalidateCache();
 		$caOld->quickInvalidateCache();
-	}
-
-	public function updateStatus( $status ) {
-		$this->renameuserStatus->setStatus( wfWikiID(), $status );
 	}
 }
