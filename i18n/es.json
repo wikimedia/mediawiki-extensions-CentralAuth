@@ -330,7 +330,7 @@
 	"centralauth-editset-badname": "El nombre del grupo no es válido o está vacío.",
 	"centralauth-editset-badtype": "Tipo de grupo no válido.",
 	"centralauth-editset-setexists": "Ya existe un grupo con ese nombre",
-	"centralauth-editset-nowikis": "No se ha especificado ninguna wiki.",
+	"centralauth-editset-nowikis": "(ninguna)",
 	"centralauth-editset-nouse": "(ninguno)",
 	"centralauth-editset-usage": "Grupos de usuarios que lo usan:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Este wiki no existe|Estos wikis no existen}}: $1.",

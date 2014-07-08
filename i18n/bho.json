@@ -4,6 +4,12 @@
 			"Nepaboy"
 		]
 	},
+	"centralauth-ro": "वैश्विक खाता के जानकारी",
+	"centralauth-admin-view": "खाता के जानकारी देखीं",
+	"centralauth-admin-lookup-ro": "प्रयोगकर्ता के जानकारी देखीं",
+	"centralauth-admin-info-header": "वैश्विक खाता के जानकारी",
+	"centralauth-admin-title-ro": "$1 के वैश्विक खाता के जानकारी",
+	"centralauth-editset-nowikis": "(कौनो नाही)",
 	"right-centralauth-rename": "वैश्विक खाता के नाम परिवर्तन",
 	"action-centralauth-rename": "वैश्विक खाता के पुनः नामित करीं",
 	"globalrenameprogress": "वैश्विक नाम परिवर्तन प्रगति",
@@ -21,7 +27,7 @@
 	"centralauth-rename-alreadyexists": "निवेदन करल गईल प्रयोगकर्ता नाम पहिले से प्रयोग में बा।",
 	"centralauth-rename-badusername": "अनुरोध करल गईल उपयोगकर्ता नाम मान्य नईखे।",
 	"centralauth-rename-cannotself": "रउआ स्वयं के नाम परिवर्तन ना कर सकत बानी।",
-	"centralauth-rename-alreadyinprogress": "इ प्रयोगकर्ता खातिर नाम परिवर्तन करे के काम पहिले से ही प्रगति में बा।",
+	"centralauth-rename-alreadyinprogress": "इ प्रयोगकर्ता खातिर नाम परिवर्तन करे के काम पहिले से हि [[Special:GlobalRenameProgress/$1|प्रगति]] में बा।",
 	"centralauth-renameuser-global-inprogress": "$1 खातिर वैश्विक नाम परिवर्तन पहिले से\n[[Special:GlobalRenameProgress/$1|progress]] में बा।",
 	"centralauth-rename-queued": "$1 से $2 में नाम परिवर्तन करे के काम $3 पर कतारबद्ध बा।\n\nप्रगति देखीं\n[[Special:GlobalRenameProgress/$2]] पर।",
 	"centralauth-rename-progress-username": "सदस्यनाम",
