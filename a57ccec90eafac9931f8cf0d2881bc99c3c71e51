@@ -16,6 +16,24 @@
       "revId": "a57ccec90eafac9931f8cf0d2881bc99c3c71e51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_65859a5a",
+        "filename": "i18n/en.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 535
+      },
+      "writtenOn": "2014-07-09T20:20:29Z",
+      "side": 1,
+      "message": "The global lock log is only accessible from the wiki where the lock was performed (on WMF wikis, almost always Meta, but there\u0027s no way to determine which wiki), but Special:CentralAuth at least shows more details about the global account such as all local blocks and lock status.\n\nWhat term would be better? \"See global account details for more information\" (or switch \"details\" and \"info\")?",
+      "parentUuid": "8e28a382_11fceed4",
+      "revId": "a57ccec90eafac9931f8cf0d2881bc99c3c71e51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
