@@ -85,8 +85,10 @@
 	"centralauth-attach-submit": "Hesabı taşı",
 	"centralauth-attach-success": "Hesap, birleşik hesaba taşındı.",
 	"centralauth": "Küresel hesap yöneticisi",
+	"centralauth-ro": "Küresel hesap bilgileri",
 	"centralauth-admin-intro": "Bu arayüz küresel hesapların yönetimi için kullanılabilir.",
 	"centralauth-admin-manage": "Hesap verisini yönet",
+	"centralauth-admin-view": "Hesap bilgilerini görüntüle",
 	"centralauth-admin-username": "Kullanıcı adı:",
 	"centralauth-admin-lookup-ro": "Kullanıcı bilgilerini görüntüleyin",
 	"centralauth-admin-lookup-rw": "Kullanıcı hesabını yönet",
@@ -322,5 +324,13 @@
 	"centralauth-error-badtoken": "Sağlanan yetkilendirme izinin süresi dolmuş ya da geçersiz.",
 	"centralauth-warning-notloggedin": "Şu anda oturum açmadınız.",
 	"centralauth-warning-notattached": "Yerel hesap küresel olana bağlı değil.",
-	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} hesap onayı"
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} hesap onayı",
+	"globalrenameuser-legend": "Küresel kullanıcıyı yeniden adlandır",
+	"centralauth-rename-form-oldname": "Mevcut kullanıcı adı",
+	"centralauth-rename-form-newname": "Yeni kullanıcı adı",
+	"centralauth-rename-form-reason": "Gerekçe",
+	"centralauth-rename-badusername": "İstenen kullanıcı adı geçerli değil.",
+	"centralauth-rename-progress-username": "Kullanıcı adı",
+	"centralauth-rename-table-domain": "Yerel viki",
+	"centralauth-rename-table-status": "Durum"
 }

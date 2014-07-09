@@ -257,7 +257,7 @@
 	"centralauth-editset-badname": "Neispravno ili prazno ime skupa.",
 	"centralauth-editset-badtype": "Nepoznat tip skupa.",
 	"centralauth-editset-setexists": "Skup s tim nazivom već postoji",
-	"centralauth-editset-nowikis": "Nijedan viki nije određen.",
+	"centralauth-editset-nowikis": "(nema)",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(ništa)",
 	"centralauth-editset-usage": "Korišćen u grupama:",

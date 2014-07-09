@@ -15,5 +15,13 @@
 	"centralauth-merge-step1-title": "Tòisich air aontachadh an logaidh a-steach",
 	"centralauth-merge-step1-submit": "Dearbhaich fiosrachadh an logaidh a-steach",
 	"centralauth-merge-step2-title": "Dearbhaich barrachd chunntasan",
-	"centralauth-merge-step2-submit": "Dearbhaich fiosrachadh an logaidh a-steach"
+	"centralauth-merge-step2-submit": "Dearbhaich fiosrachadh an logaidh a-steach",
+	"centralauth-admin-yes": "tha",
+	"centralauth-admin-no": "chan eil",
+	"centralauth-seconds-ago": "o chionn $1 {{PLURAL:$1|diog|dhiog|diogan|diog}}",
+	"centralauth-minutes-ago": "o chionn $1 {{PLURAL:$1|mhionaid|mhionaid|mionaidean|mionaid}}",
+	"centralauth-hours-ago": "o chionn $1 {{PLURAL:$1|uair|uair|uairean|uair}}",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|latha|latha|làithean|latha}}",
+	"centralauth-months-ago": "o chionn $1 {{PLURAL:$1|mhìos|mhìos|mìosan|mìos}}",
+	"centralauth-years-ago": "o chionn $1 {{PLURAL:$1|bhliadhna|bhliadhna|bliadhnaichean|bliadhna}}"
 }

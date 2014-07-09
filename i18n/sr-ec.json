@@ -144,6 +144,7 @@
 	"centralauth-admin-suppressreason": "Глобално сакривен од $1 због следећег разлога: $2",
 	"centralauth-admin-not-authorized": "Немате дозволу да извршите ову радњу",
 	"centralauth-admin-title": "Глобално управљање налогом за $1",
+	"centralauth-admin-title-ro": "Информације за глобални налог $1",
 	"globalusers": "Списак глобалних налога",
 	"centralauth-listusers-locked": "закључан",
 	"centralauth-listusers-attached": "[[User:$1|постоји локално]]",
@@ -261,7 +262,7 @@
 	"centralauth-editset-badname": "Неисправно или празно име скупа.",
 	"centralauth-editset-badtype": "Непознат тип скупа.",
 	"centralauth-editset-setexists": "Скуп с тим називом већ постоји",
-	"centralauth-editset-nowikis": "Нема назначеног викија.",
+	"centralauth-editset-nowikis": "(нема)",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(ништа)",
 	"centralauth-editset-usage": "Коришћен у групама:",
@@ -282,5 +283,11 @@
 	"centralauth-completelogin-back": "Назад на претходну страницу.",
 	"centralauth-error-nologinattempt": "Нема пријава у току за вашу сесију.",
 	"centralauth-error-badtoken": "Наведени жетон за аутентификацију је истекао или је погрешан.",
-	"centralauth-warning-notloggedin": "Тренутно нисте пријављени."
+	"centralauth-warning-notloggedin": "Тренутно нисте пријављени.",
+	"centralauth-rename-alreadyexists": "Тражено корисничко име већ постоји.",
+	"centralauth-rename-badusername": "Тражено корисничко име није ваљано.",
+	"centralauth-rename-alreadyinprogress": "Једно преименовање за овог корисника је већ [[Special:GlobalRenameProgress/$1|у току]].",
+	"centralauth-rename-movelog": "Аутоматско премештање странице због преименовања корисника „[[Special:CentralAuth/$1|$1]]“ у „[[Special:CentralAuth/$2|$2]]“",
+	"centralauth-rename-confirm": "Да ли желите да глобално преименујете овог корисника?",
+	"log-description-gblrename": "Овај дневник приказује глобално преименоване кориснике."
 }

@@ -276,7 +276,7 @@
 	"centralauth-editset-badname": "Neveljavno ali prazno ime skupine.",
 	"centralauth-editset-badtype": "Neveljavna vrsta skupine.",
 	"centralauth-editset-setexists": "Množica s tem imenom že obstaja",
-	"centralauth-editset-nowikis": "Izbran ni noben wiki.",
+	"centralauth-editset-nowikis": "(brez)",
 	"centralauth-editset-nouse": "(nobenih)",
 	"centralauth-editset-usage": "Uporabljeno v skupinah:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Naslednji wiki ne obstaja|Naslednja wikija ne obstajata|Naslednji wikiji ne obstajajo}}: $1.",
