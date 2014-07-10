@@ -34,6 +34,24 @@
       "revId": "a57ccec90eafac9931f8cf0d2881bc99c3c71e51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_466181cf",
+        "filename": "i18n/en.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-10T07:31:11Z",
+      "side": 1,
+      "message": "I\u0027d go with your suggestion, or the switched version; whichever you prefer :).\n\nCheers!",
+      "parentUuid": "8e28a382_65859a5a",
+      "revId": "a57ccec90eafac9931f8cf0d2881bc99c3c71e51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
