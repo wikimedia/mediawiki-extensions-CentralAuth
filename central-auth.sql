@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS /*_*/globaluser (
   gu_name varchar(255) binary,
 
   -- Timestamp and method used to create the global account
-  gu_enabled varchar(14) not null,
-  gu_enabled_method enum('opt-in', 'batch', 'auto', 'admin'),
+  gu_enabled varchar(14) not null default '',
+  gu_enabled_method enum('opt-in', 'batch', 'auto', 'admin') default null,
 
   -- Local database name of the user's 'home' wiki.
   -- By default, the 'winner' of a migration check for old accounts
