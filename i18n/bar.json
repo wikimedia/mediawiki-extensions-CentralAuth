@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bua333",
-			"Mucalexx"
+			"Mucalexx",
+			"Matthias Klostermayr"
 		]
 	},
 	"mergeaccount": "Staatus voh da Benutzerkontozåmmfyrung",
@@ -27,5 +28,6 @@
 	"centralauth-admin-list-editcount": "Beorweitungszöer",
 	"centralauth-admin-delete-button": "Dés Benutzerkóntó léschen",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|beorweiten]])",
-	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|beorweiten]])"
+	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|beorweiten]])",
+	"centralauth-rename-form-suppressredirects": "As Eirichtn vo Weidaloatunga vahindan."
 }

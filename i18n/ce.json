@@ -317,7 +317,7 @@
 	"centralauth-rename-unattached-intheway": "ТӀетоьхна доцу декъашхочун дӀаяздар ду хӀокху декъашхочун царца.",
 	"centralauth-rename-badusername": "Иштта декъашхочун цӀе магийна яц.",
 	"centralauth-rename-cannotself": "Хьан аьтту бац хьай цӀе хийца.",
-	"centralauth-rename-alreadyinprogress": "ХӀокху декъашхочун цӀе хийцар хӀинцале дӀадоьдуш ду.",
+	"centralauth-rename-alreadyinprogress": "ХӀокху декъашхочун глобальни цӀе хийцар хӀинцале  [[Special:GlobalRenameProgress/$1|дӀадоьдуш ду]].",
 	"centralauth-renameuser-global-inprogress": "Глобальни цӀе хийцар $1 [[Special:GlobalRenameProgress/$1|кхузахь дӀадоьдуш ду]].",
 	"centralauth-rename-progress-username": "Декъашхочун цӀе",
 	"centralauth-rename-table-domain": "Локальни вики-проект",
