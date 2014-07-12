@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_6001ec70",
+        "filename": "central-auth.sql",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-12T20:28:46Z",
+      "side": 1,
+      "message": "The database updater normally handles the IF NOT EXISTS stuff...maybe just do that check before creating the database in the test case?",
+      "revId": "e5d9fc6de7cd6db6dbccfac5f6753f5b039ce47d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c0f1c093",
+        "filename": "tests/CentralAuthDBTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-12T20:28:46Z",
+      "side": 1,
+      "message": "if ( !$db-\u003etableExists() ) { ... }",
+      "revId": "e5d9fc6de7cd6db6dbccfac5f6753f5b039ce47d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_80d4d8ed",
+        "filename": "tests/CentralAuthDBTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-12T20:28:46Z",
+      "side": 1,
+      "message": "Not needed?",
+      "revId": "e5d9fc6de7cd6db6dbccfac5f6753f5b039ce47d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a0eeb4af",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-12T20:28:46Z",
+      "side": 1,
+      "message": "@covers tags?",
+      "revId": "e5d9fc6de7cd6db6dbccfac5f6753f5b039ce47d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_4035d041",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-12T20:28:46Z",
+      "side": 1,
+      "message": "missing @covers",
+      "revId": "e5d9fc6de7cd6db6dbccfac5f6753f5b039ce47d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
