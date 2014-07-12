@@ -11,6 +11,11 @@ class LocalRenameUserJob extends Job {
 	private $renameuserStatus;
 
 	/**
+	 * @var int|bool
+	 */
+	private $posOfAbuseFilterHook;
+
+	/**
 	 * @param Title $title
 	 * @param array $params
 	 * @param int $id
@@ -82,6 +87,24 @@ class LocalRenameUserJob extends Job {
 	}
 
 	/**
+	 * FIXME: on a scale one to evil, this is super evil
+	 */
+	private function disableAbuseFilters() {
+		global $wgHooks;
+		$this->posOfAbuseFilterHook = array_search( 'AbuseFilterHooks::onAbortMove', $wgHooks['AbortMove'] );
+		if ( $this->posOfAbuseFilterHook !== false ) {
+			unset( $wgHooks['AbortMove'][$this->posOfAbuseFilterHook] );
+		}
+	}
+
+	private function unDisableAbuseFilters() {
+		global $wgHooks;
+		if ( $this->posOfAbuseFilterHook !== false ) {
+			$wgHooks['AbortMove'][$this->posOfAbuseFilterHook] = 'AbuseFilterHooks::onAbortMove';
+		}
+	}
+
+	/**
 	 * Logic is mainly borrowed from SpecialRenameuser
 	 */
 	public function movePages() {
@@ -122,7 +145,18 @@ class LocalRenameUserJob extends Job {
 					->params( $from, $to )
 					->inContentLanguage()
 					->text();
-				$oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+				$errors = $oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+				if ( is_array( $errors ) ) {
+					// Prevent AbuseFilter from interfering with our page moves (bug 67875)
+					if ( $errors[0][0] === 'hookaborted' ) {
+						// log it
+						wfDebugLog( 'CentralAuthRename', "Page move prevented: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
+						$this->disableAbuseFilters();
+						// Do it again
+						$oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+						$this->unDisableAbuseFilters();
+					}
+				}
 			}
 		}
 
