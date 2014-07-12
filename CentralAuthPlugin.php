@@ -204,6 +204,10 @@ class CentralAuthPlugin extends AuthPlugin {
 				$central->register( $password, $email );
 				$central->attach( wfWikiID(), 'new' );
 			}
+			// Note: If $wgCentralAuthPreventUnattached is enabled,
+			// accounts where a global does not exist, but there are
+			// unattached accounts will have been denied creation in
+			// the AbortNewAccount hook.
 		}
 		return true;
 	}
