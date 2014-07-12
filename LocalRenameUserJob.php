@@ -11,6 +11,16 @@ class LocalRenameUserJob extends Job {
 	private $renameuserStatus;
 
 	/**
+	 * @var int|bool
+	 */
+	private $posOfAbuseFilterHook;
+
+	/**
+	 * @var bool
+	 */
+	private $setTBOverride;
+
+	/**
 	 * @param Title $title
 	 * @param array $params
 	 * @param int $id
@@ -82,6 +92,32 @@ class LocalRenameUserJob extends Job {
 	}
 
 	/**
+	 * FIXME: on a scale one to evil, this is super evil
+	 */
+	private function disableMoveBlockingThings() {
+		global $wgHooks, $wgUser;
+		$this->posOfAbuseFilterHook = array_search( 'AbuseFilterHooks::onAbortMove', $wgHooks['AbortMove'] );
+		if ( $this->posOfAbuseFilterHook !== false ) {
+			unset( $wgHooks['AbortMove'][$this->posOfAbuseFilterHook] );
+		}
+
+		if ( !$wgUser->isAllowed( 'tboverride' ) ) {
+			$wgUser->mRights[] = 'tboverride';
+			$this->setTBOverride = true;
+		}
+	}
+
+	private function enableMoveBlockingThings() {
+		global $wgHooks, $wgUser;
+		if ( $this->posOfAbuseFilterHook !== false ) {
+			$wgHooks['AbortMove'][$this->posOfAbuseFilterHook] = 'AbuseFilterHooks::onAbortMove';
+		}
+		if ( $this->setTBOverride ) {
+			$wgUser->mRights = array_diff( $wgUser->mRights, array( 'tboverride' ) );
+		}
+	}
+
+	/**
 	 * Logic is mainly borrowed from SpecialRenameuser
 	 */
 	public function movePages() {
@@ -124,12 +160,15 @@ class LocalRenameUserJob extends Job {
 					->text();
 				$errors = $oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
 				if ( is_array( $errors ) ) {
+					// AbuseFilter or TitleBlacklist might be interfering, bug 67875
 					if ( $errors[0][0] === 'hookaborted' ) {
-						// AbuseFilter or TitleBlacklist might be interfering, bug 67875
 						wfDebugLog( 'CentralAuthRename', "Page move prevented by hook: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
+						$this->disableMoveBlockingThings();
+						// Do it again
+						$oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+						$this->enableMoveBlockingThings();
 					}
 				}
-
 			}
 		}
 
