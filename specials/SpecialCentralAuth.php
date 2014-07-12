@@ -192,7 +192,9 @@ class SpecialCentralAuth extends SpecialPage {
 					'target', 'target', 25, $this->mUserName ) .
 				Xml::closeElement( 'p' ) .
 				Xml::openElement( 'p' ) .
-				Xml::submitButton( $lookup ) .
+				Xml::submitButton( $lookup,
+					array( 'id' => 'centralauth-submit-find' )
+				) .
 				Xml::closeElement( 'p' )
 		);
 		$html .= Xml::closeElement( 'form' );
