@@ -11,6 +11,16 @@ class LocalRenameUserJob extends Job {
 	private $renameuserStatus;
 
 	/**
+	 * @var bool
+	 */
+	private $setAFOverride;
+
+	/**
+	 * @var bool
+	 */
+	private $setTBOverride;
+
+	/**
 	 * @param Title $title
 	 * @param array $params
 	 * @param int $id
@@ -82,6 +92,35 @@ class LocalRenameUserJob extends Job {
 	}
 
 	/**
+	 * FIXME: on a scale one to evil, this is super evil
+	 */
+	private function disableMoveBlockingThings() {
+		global $wgUser;
+		if ( !$wgUser->isAllowed( 'abusefilter-bypass' ) ) {
+			$wgUser->mRights[] = 'abusefilter-bypass';
+			$this->setAFOverride = true;
+		}
+
+		if ( !$wgUser->isAllowed( 'tboverride' ) ) {
+			$wgUser->mRights[] = 'tboverride';
+			$this->setTBOverride = true;
+		}
+	}
+
+	private function enableMoveBlockingThings() {
+		global $wgUser;
+		$rights = array();
+		if ( $this->setAFOverride ) {
+			$rights[] = 'abusefilter-bypass';
+		}
+		if ( $this->setTBOverride ) {
+			$rights[] = 'tboverride';
+		}
+
+		$wgUser->mRights = array_diff( $wgUser->mRights, $rights );
+	}
+
+	/**
 	 * Logic is mainly borrowed from SpecialRenameuser
 	 */
 	public function movePages() {
@@ -124,12 +163,15 @@ class LocalRenameUserJob extends Job {
 					->text();
 				$errors = $oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
 				if ( is_array( $errors ) ) {
+					// AbuseFilter or TitleBlacklist might be interfering, bug 67875
 					if ( $errors[0][0] === 'hookaborted' ) {
-						// AbuseFilter or TitleBlacklist might be interfering, bug 67875
 						wfDebugLog( 'CentralAuthRename', "Page move prevented by hook: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
+						$this->disableMoveBlockingThings();
+						// Do it again
+						$oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+						$this->enableMoveBlockingThings();
 					}
 				}
-
 			}
 		}
 
