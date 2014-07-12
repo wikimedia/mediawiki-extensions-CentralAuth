@@ -329,6 +329,7 @@
 	"centralauth-rename-form-oldname": "Mevcut kullanıcı adı",
 	"centralauth-rename-form-newname": "Yeni kullanıcı adı",
 	"centralauth-rename-form-reason": "Gerekçe",
+	"centralauth-rename-alreadyexists": "İstenen kullanıcı adı zaten mevcut.",
 	"centralauth-rename-badusername": "İstenen kullanıcı adı geçerli değil.",
 	"centralauth-rename-progress-username": "Kullanıcı adı",
 	"centralauth-rename-table-domain": "Yerel viki",

@@ -269,6 +269,8 @@ $specialPageAliases['he'] = array(
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
 	'WikiSets' => array( 'עריכת_קבוצות_אתרי_ויקי' ),
 	'GlobalUsers' => array( 'משתמשים_כלליים' ),
+	'GlobalRenameUser' => array( 'שינוי_שם_משתמש_גלובלי' ),
+	'GlobalRenameProgress' => array( 'התקדמות_שינוי_שם_משתמש_גלובלי' ),
 );
 
 /** Hindi (हिन्दी) */
