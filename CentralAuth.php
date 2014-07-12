@@ -214,6 +214,12 @@ $wgCentralAuthReadOnly = false;
 $wgCentralAuthUseEventLogging = false;
 
 /**
+ * Don't allow new unattached accounts to be created
+ * @var bool
+ */
+$wgCentralAuthPreventUnattached = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;

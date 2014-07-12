@@ -251,8 +251,20 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onAbortNewAccount( $user, &$abortError ) {
+		global $wgCentralAuthPreventUnattached;
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists() || $centralUser->renameInProgressOn( wfWikiID() ) ) {
+			$abortError = wfMessage( 'centralauth-account-exists' )->text();
+			return false;
+		}
+
+		if ( $wgCentralAuthPreventUnattached && !$centralUser->exists()
+			&& $centralUser->listUnattached()
+		) {
+			// If no global account exists and there are unattached accounts,
+			// don't let a new unattached account get created. We'll pretend
+			// that the name is already taken, because someone will eventually
+			// get it. See bug 67901.
 			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
 		}
