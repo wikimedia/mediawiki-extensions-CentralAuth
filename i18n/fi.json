@@ -326,7 +326,7 @@
 	"action-centralauth-rename": "uudelleennimetä järjestelmänlaajuisia tunnuksia",
 	"globalrenameprogress": "Järjestelmänlaajuinen uudelleennimeäminen käynnissä",
 	"globalrenameprogress-legend": "Näytä järjestelmänlaajuisen uudelleennimeämisen edistyminen",
-	"globalrenameuser": "Uudelleennimeä järjestelmänlaajuinen käyttäjä",
+	"globalrenameuser": "Vaihda järjestelmänlaajuisen käyttäjän tunnus",
 	"globalrenameuser-legend": "Uudelleennimeä järjestelmänlaajuinen käyttäjä",
 	"centralauth-rename-abortlogin": "Sinun tunnuksesi uudelleennimeäminen on käynnissä. [[Special:GlobalRenameProgress/$1|Näytä tila]].",
 	"centralauth-rename-form-oldname": "Nykyinen käyttäjätunnus",
@@ -343,5 +343,7 @@
 	"centralauth-rename-table-status-done": "Valmis",
 	"centralauth-rename-viewprogress": "Näytä edistyminen",
 	"centralauth-rename-progress-fieldset": "Luettelo paikallisista tunnuksista",
-	"centralauth-rename-progress-logs-fieldset": "Lokimerkinnät"
+	"centralauth-rename-progress-logs-fieldset": "Lokimerkinnät",
+	"log-name-gblrename": "Järjestelmänlaajuinen tunnusten vaihto",
+	"log-description-gblrename": "Tässä lokissa ovat järjestelmänlaajuisesti tehdyt käyttäjätunnusten vaihdot."
 }

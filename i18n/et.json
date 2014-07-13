@@ -295,7 +295,7 @@
 	"centralauth-editset-badname": "Vigane või tühi komplekti nimi.",
 	"centralauth-editset-badtype": "Vigane komplekti tüüp.",
 	"centralauth-editset-setexists": "Sellise nimega komplekt on juba olemas.",
-	"centralauth-editset-nowikis": "Ühtegi vikit pole määratud.",
+	"centralauth-editset-nowikis": "(puudub)",
 	"centralauth-editset-nouse": "(puuduvad)",
 	"centralauth-editset-usage": "Kasutatud rühmades:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Järgmist vikit|Järgmisi vikisid}} pole: $1.",
