@@ -16,6 +16,24 @@
       "revId": "a83538bd3ba7f2a631992df1cf682e483d0fabe6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e664d4e3",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-13T00:39:07Z",
+      "side": 1,
+      "message": "Not really. If there\u0027s an error before the hookaborted one, it means something else failed, and there\u0027s probably a good reason the move was aborted. Those include stuff like bad cross-namespaces moves (File: --\u003e not-File) or content model namespace issues, or trying to move a page to itself.",
+      "parentUuid": "8e28a382_8644f04b",
+      "revId": "a83538bd3ba7f2a631992df1cf682e483d0fabe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
