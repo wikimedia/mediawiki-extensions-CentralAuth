@@ -16,6 +16,24 @@
       "revId": "a1f5f45f1f07a4fc71d06d7a13eea40db1dc93dc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_667104a7",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-13T00:36:54Z",
+      "side": 1,
+      "message": "Yeah, forgot the check while rebasing.\n\nSince TitleBlacklist has a userright to override with, lets just give the user the tboverride right.\n\nThe error message that is in $errors[0][1] is parsed html, so it\u0027s not really convenient to figure out whether it\u0027s AF or TB.",
+      "parentUuid": "8e28a382_464f286f",
+      "revId": "a1f5f45f1f07a4fc71d06d7a13eea40db1dc93dc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
