@@ -122,7 +122,14 @@ class LocalRenameUserJob extends Job {
 					->params( $from, $to )
 					->inContentLanguage()
 					->text();
-				$oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+				$errors = $oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
+				if ( is_array( $errors ) ) {
+					if ( $errors[0][0] === 'hookaborted' ) {
+						// AbuseFilter or TitleBlacklist might be interfering, bug 67875
+						wfDebugLog( 'CentralAuthRename', "Page move prevented by hook: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
+					}
+				}
+
 			}
 		}
 
