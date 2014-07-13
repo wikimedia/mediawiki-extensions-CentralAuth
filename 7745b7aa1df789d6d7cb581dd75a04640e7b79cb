@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_c63af8bf",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-07-13T00:35:58Z",
+      "side": 1,
+      "message": "we also need to make sure we\u0027re disabling other relevant AbortMove hooks - e.g. from TitleBlacklist",
+      "revId": "7745b7aa1df789d6d7cb581dd75a04640e7b79cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
