@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_8644f04b",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-07-13T00:36:48Z",
+      "side": 1,
+      "message": "Don\u0027t we need to look at all errors for one of them being hookaborted?",
+      "revId": "a83538bd3ba7f2a631992df1cf682e483d0fabe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
