@@ -16,6 +16,24 @@
       "revId": "cc9999ab916d3a244c3393e1613899c6f0d55ab0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_11bef160",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-14T22:21:43Z",
+      "side": 1,
+      "message": "It\u0027s sortof correct, but maybe a message with something like, \"Cannot create account: the requested username would conflict with another username in the unified login system.\"",
+      "parentUuid": "8e28a382_fe5a22f8",
+      "revId": "cc9999ab916d3a244c3393e1613899c6f0d55ab0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
