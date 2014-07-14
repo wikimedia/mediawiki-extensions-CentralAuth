@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e28a382_8794e78e",
+        "filename": "GlobalRename/GlobalRenameUserDatabaseUpdates.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-14T13:54:00Z",
+      "side": 1,
+      "message": "this needs at least an explanation. Also it might be better to move it into an own class",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_3af0af61",
         "filename": "GlobalRename/GlobalUserMerge.php",
         "patchSetId": 7
@@ -13,6 +30,41 @@
       "writtenOn": "2014-07-14T06:12:35Z",
       "side": 1,
       "message": "I don\u0027t like this, but can\u0027t really think of a better way.",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_27f3f308",
+        "filename": "GlobalRename/GlobalUserMerge.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-14T13:54:00Z",
+      "side": 1,
+      "message": "move this logic into GlobalRenameUserStatus please... transaction stuff shouldn\u0027t be exposed here",
+      "parentUuid": "8e28a382_3af0af61",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c79aefbc",
+        "filename": "LocalCentralAuthJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-14T13:54:00Z",
+      "side": 1,
+      "message": "class name is misleading... this isn\u0027t a generic CentralAuth thing, but a user rename/ merge thing",
       "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
