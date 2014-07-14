@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_3af0af61",
+        "filename": "GlobalRename/GlobalUserMerge.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-14T06:12:35Z",
+      "side": 1,
+      "message": "I don\u0027t like this, but can\u0027t really think of a better way.",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_1ae5f39f",
+        "filename": "LocalUserMergeJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-14T06:12:35Z",
+      "side": 1,
+      "message": "Maybe we should have an \"internal\" version of attemptAddUser without any validation checks beforehand that handles this logic, and use it here and in attemptAddUser?",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
