@@ -15,6 +15,7 @@
 	"mergeaccount": "Стање обједињавања пријаве",
 	"centralauth-groupname": "Задужбине Викимедије",
 	"centralauth-desc": "[[Special:MergeAccount|Спајање налога]] с више викија на {{int:Centralauth-groupname}}",
+	"centralauth-rename-desc": "Омогућује преименовање глобалних налога",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Спаја више налога]] ради коришћења јединствене корисничке пријаве",
 	"centralauth-merge-denied": "Немате права приступа овој страници.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Пријавите се]</span> да проверите да ли су ваши налози потпуно спојени.",
@@ -236,7 +237,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|уреди]])",
 	"centralauth-editgroup-nowikiset": "Нема, примењиво на све викије.",
 	"centralauth-globalgrouppermissions-knownwiki": "Вики на коме има налог:",
-	"centralauth-globalgroupmembership-badknownwiki": "Глобални корисник '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
+	"centralauth-globalgroupmembership-badknownwiki": "Глобални налог '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
 	"centralauth-editset": "Скупови Викија",
 	"centralauth-editset-legend-rw": "Уреди или направи вики-скуп",
 	"centralauth-editset-legend-ro": "Списак вики-скупова",
@@ -289,5 +290,6 @@
 	"centralauth-rename-alreadyinprogress": "Једно преименовање за овог корисника је већ [[Special:GlobalRenameProgress/$1|у току]].",
 	"centralauth-rename-movelog": "Аутоматско премештање странице због преименовања корисника „[[Special:CentralAuth/$1|$1]]“ у „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-confirm": "Да ли желите да глобално преименујете овог корисника?",
+	"log-name-gblrename": "Дневник глобалних преименовања",
 	"log-description-gblrename": "Овај дневник приказује глобално преименоване кориснике."
 }

@@ -27,7 +27,7 @@
 	"centralauth-groupname": "Фонда Викимедиа",
 	"centralauth-desc": "[[Special:MergeAccount|Объединение учётных]] записей в вики-проектах {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Добавляет технологию AntiSpoof в CentralAuth",
-	"centralauth-rename-desc": "Добавляет технологию Renamuser в CentralAuth",
+	"centralauth-rename-desc": "Позволяет переименовывать глобальные учётные записи",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Объединяет несколько учётных записей]] в единую учётную запись участника (Single User Login)",
 	"centralauth-merge-denied": "Извините, у вас недостаточно прав для доступа к этой странице.",
 	"centralauth-merge-notlogged": "Пожалуйста, <span class=\"plainlinks\">[$1 авторизуйтесь]</span>, чтобы проверить были ли ваши учётные записи полностью объединены.",

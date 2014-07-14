@@ -261,5 +261,12 @@
 	"centralauth-editset-return": "Attende til hovudvising",
 	"right-globalgroupmembership": "Endra medlemskap i globale grupper",
 	"right-centralauth-merge": "Slå saman kontoane sine",
-	"right-globalgrouppermissions": "Handsama globale grupper"
+	"right-globalgrouppermissions": "Handsama globale grupper",
+	"right-centralauth-rename": "Døypa om globale kontoar",
+	"action-centralauth-rename": "døypa om globale kontoar",
+	"globalrenameprogress": "Framgang på global omdøyping",
+	"globalrenameprogress-legend": "Sjå framgang på global omdøyping",
+	"globalrenameuser": "Døyp om global brukar",
+	"globalrenameuser-legend": "Døyp om global brukar",
+	"centralauth-rename-abortlogin": "Kontoen din held no på å døypast om. [[Special:GlobalRenameProgress/$1|Sjå stoda]]."
 }

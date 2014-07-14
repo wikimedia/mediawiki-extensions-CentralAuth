@@ -36,7 +36,7 @@
 	"centralauth-groupname": "维基媒体基金会",
 	"centralauth-desc": "[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的维基帐号",
 	"centralauth-antispoof-desc": "给中央认证添加 AntiSpoof 技术",
-	"centralauth-rename-desc": "给中央认证加入重命名用户技术",
+	"centralauth-rename-desc": "允许更改全域账户",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|将多个账户合并]]为单一用户账户",
 	"centralauth-merge-denied": "很抱歉，您没有权限访问这个页面",
 	"centralauth-merge-notlogged": "请<span class=\"plainlinks\">[$1 登录]</span>并检查您的账号是否已被完全合并。",

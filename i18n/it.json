@@ -22,7 +22,7 @@
 	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-desc": "[[Special:MergeAccount|Unifica le tue utenze]] sui siti gestiti da {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Aggiunge la tecnologia di AntiSpoof a CentralAuth",
-	"centralauth-rename-desc": "Aggiunge la tecnologia di Renamuser a CentralAuth",
+	"centralauth-rename-desc": "Consente di rinominare le utenze globali",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Unifica le tue utenze]] in un'utenza globale",
 	"centralauth-merge-denied": "Non si dispone dei permessi necessari per accedere a questa pagina.",
 	"centralauth-merge-notlogged": "Si prega di <span class=\"plainlinks\">[$1 effettuare il login]</span> per verificare se il processo di unificazione delle proprie utenze è completo.",

@@ -18,7 +18,7 @@
 	"centralauth-groupname": "קרן ויקימדיה",
 	"centralauth-desc": "[[Special:MergeAccount|מיזוג חשבונות]] בין אתרי {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "הוספת טכנולוגיה למניעת זיוף (AntiSpoof) ל־CentralAuth",
-	"centralauth-rename-desc": "הוספת טכנולוגיית שינוי שם משתמש (Renameuser) ל־CentralAuth",
+	"centralauth-rename-desc": "אפשרות לשנות שמות משתמש באופן גלובלי",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|מיזוג מספר חשבונות]] עבור חשבון המשתמש המאוחד",
 	"centralauth-merge-denied": "מצטערים, אין לך הרשאה להשתמש בדף זה.",
 	"centralauth-merge-notlogged": "אנא <span class=\"plainlinks\">[$1 היכנסו לחשבון]</span> כדי לבדוק האם חשבונותיכם מוזגו במלואם.",

@@ -194,6 +194,8 @@ $specialPageAliases['et'] = array(
 	'GlobalGroupPermissions' => array( 'Globaalse_rühma_haldamine' ),
 	'WikiSets' => array( 'Vikikomplektid' ),
 	'GlobalUsers' => array( 'Globaalsed_kasutajad' ),
+	'GlobalRenameUser' => array( 'Globaalne_kasutajanime_muutmine' ),
+	'GlobalRenameProgress' => array( 'Globaalse_ümbernimetamise_seis' ),
 );
 
 /** Persian (فارسی) */

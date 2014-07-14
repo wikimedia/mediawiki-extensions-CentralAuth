@@ -26,7 +26,7 @@
 	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-desc": "[[Special:MergeAccount|Página especial]] para fundir contas nas wikis \"{{int:Centralauth-groupname}}\"",
 	"centralauth-antispoof-desc": "Adiciona tecnologia AntiSpoof ao CentralAuth",
-	"centralauth-rename-desc": "Adiciona a tecnologia Renameuser à extensão CentralAuth",
+	"centralauth-rename-desc": "Permite renomear contas globais",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Funde diversas contas]] para a Autenticação Unificada",
 	"centralauth-merge-denied": "Desculpe, não tem permissão para aceder a esta página.",
 	"centralauth-merge-notlogged": "Por favor, <span class=\"plainlinks\">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.",

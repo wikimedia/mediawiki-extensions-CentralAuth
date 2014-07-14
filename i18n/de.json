@@ -18,7 +18,7 @@
 	"centralauth-groupname": "der Wikimedia Foundation",
 	"centralauth-desc": "Ergänzt eine [[Special:MergeAccount|Spezialseite]] zum Zusammenführen von Benutzerkonten in Wikis {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Ermöglicht CentralAuth die Nutzung der AntiSpoof-Technologie",
-	"centralauth-rename-desc": "Ergänzt CentralAuth um eine Benutzerumbenennungs-Technologie",
+	"centralauth-rename-desc": "Ermöglicht die Umbenennung globaler Benutzerkonten",
 	"centralauth-mergeaccount-desc": "Ergänzt eine [[Special:MergeAccount|Spezialseite]] zum Zusammenführen mehrerer Benutzerkonten für das ''Single User Login''",
 	"centralauth-merge-denied": "Du hast nicht die erforderliche Berechtigung, um diese Seite aufrufen zu können.",
 	"centralauth-merge-notlogged": "Bitte <span class=\"plainlinks\">[$1 melde dich an]</span>, um zu prüfen, ob deine Benutzerkonten vollständig zusammengeführt wurden.",
