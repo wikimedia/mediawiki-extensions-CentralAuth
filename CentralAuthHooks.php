@@ -943,12 +943,19 @@ class CentralAuthHooks {
 		}
 
 		// Checks passed, create the user
-		wfDebug( __METHOD__ . ": creating new user\n" );
-		$status = $user->addToDatabase();
+		wfDebugLog( 'Bug39996', __METHOD__ . ": creating new user ($userName)\n" );
+		try {
+			$status = $user->addToDatabase();
+		} catch ( MWException $e ) {
+			wfDebugLog( 'Bug39996', __METHOD__ . "User::addToDatabase for \"$userName\" threw an exception:"
+				. " {$e->getMessage()}" );
+			throw $e;
+		}
+
 		if ( $status === null ) {
 			// MW before 1.21 -- ok, continue
 		} elseif ( !$status->isOK() ) {
-			wfDebug( __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
+			wfDebugLog( 'Bug39996', __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
 			return false;
 		}
 

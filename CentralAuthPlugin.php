@@ -241,6 +241,9 @@ class CentralAuthPlugin extends AuthPlugin {
 				$this->updateUser( $user );
 				// Log the autocreation just happened
 				$user->addNewUserLogEntryAutoCreate();
+			} else {
+				wfDebugLog( 'Bug39996', __METHOD__ . ": CentralAuthUser::exists returned false for "
+					. "\"{$user->getName()}\" even though \$autocreate = true." );
 			}
 		}
 	}
