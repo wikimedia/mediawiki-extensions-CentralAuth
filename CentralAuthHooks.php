@@ -947,7 +947,7 @@ class CentralAuthHooks {
 		try {
 			$status = $user->addToDatabase();
 		} catch ( MWException $e ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . "User::addToDatabase for \"$userName\" threw an exception:"
+			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
 				. " {$e->getMessage()}" );
 			throw $e;
 		}
