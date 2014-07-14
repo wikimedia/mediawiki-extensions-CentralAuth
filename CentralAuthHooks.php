@@ -961,28 +961,6 @@ class CentralAuthHooks {
 			return false;
 		}
 
-		// Give other extensions a chance to stop auto creation, but they cannot
-		// change $userName, because CentralAuth expects user names on all wikis
-		// are the same.
-		//
-		// * $user (and usually $wgUser) is the half-created User object and
-		//   should not be accessed in any way since calling any User methods
-		//   in its half-initialised state will give incorrect results.
-		//
-		// * $userName is the new user name
-		//
-		// * $anon is an anonymous user object which can be safely used for
-		//   permissions checks.
-		//
-		// NOTE! This hook is deprecated, please use AbortAutoAccount.
-		//
-		if ( !wfRunHooks( 'CentralAuthAutoCreate', array( $user, $userName, $anon ) ) ) {
-			wfDebug( __METHOD__ . ": denied by other extensions\n" );
-			$session['auto-create-blacklist'][] = wfWikiID();
-			CentralAuthUser::setSession( $session );
-			return false;
-		}
-
 		// Give other extensions a chance to stop auto creation.
 		$user->loadDefaults( $userName );
 		$abortMessage = '';
