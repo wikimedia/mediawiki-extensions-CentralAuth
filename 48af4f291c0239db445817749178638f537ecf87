@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_c62e6aa0",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "this stuff is not in a NS",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_293741e2",
+        "filename": "tests/CentralAuthDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "this is not a test... name it CentralAuthDatabaseTestCase or so",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_49204d96",
+        "filename": "tests/CentralAuthDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "That should not be here... create a helper class for creating dummy data, but this doesn\u0027t belong into a test case",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_496e0dc6",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "the class name looks bad for some reason... I would favor it, if you could spell out Database",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_49572d06",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "assertSame if you want to compare with such values (as null \u003d\u003d false and \u0027foo\u0027 \u003d\u003d true), please (PHP sucks...)\n\nAlso it\u0027s assertWhatever( $expected, $result, \"Some message\" );",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e947f94e",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "Expectation goes first",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a971f1a8",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "initial lower case?!",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_8974f597",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "initial lower case?!",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_296501de",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "the class name looks bad for some reason... I would favor it, if you could spell out Database",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e95ed916",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "assertSame",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c959dd2e",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "assertSame",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a9a0d1f1",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T00:44:57Z",
+      "side": 1,
+      "message": "assertSame",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
