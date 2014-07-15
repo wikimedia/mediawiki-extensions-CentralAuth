@@ -14,7 +14,7 @@
 	"centralauth-groupname": "nadace Wikimedia",
 	"centralauth-desc": "[[Special:MergeAccount|Sloučení účtů]] na jednotlivých wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}",
 	"centralauth-antispoof-desc": "Přidává do CentralAuth technologii AntiSpoof",
-	"centralauth-rename-desc": "Přidává do CentralAuth technologii přejmenovávání uživatelů",
+	"centralauth-rename-desc": "Umožňuje přejmenovávat globální uživatelské účty",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Sloučení účtů]] pro jednotné přihlašování",
 	"centralauth-merge-denied": "Na tuto stránku nemáte přístup.",
 	"centralauth-merge-notlogged": "Pokud se <span class=\"plainlinks\">[$1 přihlásíte]</span>, budete moci zkontrolovat, zda vaše účty byly sloučeny.",
@@ -363,5 +363,6 @@
 	"centralauth-rename-viewprogress": "Zobrazit průběh",
 	"centralauth-rename-progress-fieldset": "Seznam místních účtů",
 	"centralauth-rename-movelog": "Automatické přesunutí stránky kvůli přejmenování uživatele „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
+	"centralauth-rename-confirm": "Opravdu chcete globálně přejmenovat tohoto uživatele?",
 	"logentry-gblrename-rename": "$1 globálně {{GENDER:$2|přejmenoval|přejmenovala}} uživatelský účet $4 na $5"
 }

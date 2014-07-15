@@ -37,6 +37,8 @@ $specialPageAliases['ar'] = array(
 	'WikiSets' => array( 'تعديل_مجموعات_الويكي' ),
 	'GlobalUsers' => array( 'مستخدمون_عامون' ),
 	'MultiLock' => array( 'قفل_متعدد' ),
+	'GlobalRenameUser' => array( 'إعادة_تسمية_مستخدم_عامة' ),
+	'GlobalRenameProgress' => array( 'تطور_إعادة_تسمية_عامة' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
@@ -48,6 +50,8 @@ $specialPageAliases['arz'] = array(
 	'WikiSets' => array( 'تعديل_مجموعات_الويكى' ),
 	'GlobalUsers' => array( 'يوزرات_عامين' ),
 	'MultiLock' => array( 'قفل_متعدد' ),
+	'GlobalRenameUser' => array( 'سمي_تاني_يوزر_عام' ),
+	'GlobalRenameProgress' => array( 'تطور_سمي_يوزر_عام' ),
 );
 
 /** Assamese (অসমীয়া) */
