@@ -34,6 +34,24 @@
       "revId": "cc9999ab916d3a244c3393e1613899c6f0d55ab0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c942fd3e",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-15T00:44:21Z",
+      "side": 1,
+      "message": "Ok, going with that.",
+      "parentUuid": "8e28a382_11bef160",
+      "revId": "cc9999ab916d3a244c3393e1613899c6f0d55ab0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
