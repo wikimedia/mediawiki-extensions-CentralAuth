@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_fa5c5950",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "My fault, done.",
+      "parentUuid": "8e28a382_c62e6aa0",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_293741e2",
         "filename": "tests/CentralAuthDBTest.php",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-15T00:44:57Z",
       "side": 1,
       "message": "this is not a test... name it CentralAuthDatabaseTestCase or so",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f5bd8a17",
+        "filename": "tests/CentralAuthDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_293741e2",
       "revId": "48af4f291c0239db445817749178638f537ecf87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_7523da54",
+        "filename": "tests/CentralAuthDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure I see the reason for breaking this out. It\u0027s unfortunate that the test case has to handle the DB setup, but breaking it out into a helper seems like it would cause more issues. Unless you\u0027re thinking to test the test setup?",
+      "parentUuid": "8e28a382_49204d96",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_496e0dc6",
         "filename": "tests/CentralAuthHooksDBTest.php",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-15T00:44:57Z",
       "side": 1,
       "message": "the class name looks bad for some reason... I would favor it, if you could spell out Database",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_156a567e",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "I went with \"UsingDatabase\". Since I see this as an initial set of tests just to get initial functionality coverage before we refactor the classes, I\u0027m hoping that naming will be fairly temporary. But we can bikeshed on the followup patch if needed.",
+      "parentUuid": "8e28a382_496e0dc6",
       "revId": "48af4f291c0239db445817749178638f537ecf87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_b5870266",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Thanks! I assumed Equals did a strict comparison. TIL..",
+      "parentUuid": "8e28a382_49572d06",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_e947f94e",
         "filename": "tests/CentralAuthHooksDBTest.php",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-15T00:44:57Z",
       "side": 1,
       "message": "Expectation goes first",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_1596d697",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_e947f94e",
       "revId": "48af4f291c0239db445817749178638f537ecf87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_f5946a8f",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_a971f1a8",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8974f597",
         "filename": "tests/CentralAuthHooksDBTest.php",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2014-07-15T00:44:57Z",
       "side": 1,
       "message": "initial lower case?!",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_d58f2e77",
+        "filename": "tests/CentralAuthHooksDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_8974f597",
       "revId": "48af4f291c0239db445817749178638f537ecf87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_f5eb4a07",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "I went with \"UsingDatabase\" instead of DB everywhere. Hopefully it will go away soon.",
+      "parentUuid": "8e28a382_296501de",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_e95ed916",
         "filename": "tests/CentralAuthUserDBTest.php",
         "patchSetId": 10
@@ -166,6 +328,24 @@
       "writtenOn": "2014-07-15T00:44:57Z",
       "side": 1,
       "message": "assertSame",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_b5eee21d",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_e95ed916",
       "revId": "48af4f291c0239db445817749178638f537ecf87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_95f1a600",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_c959dd2e",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_a9a0d1f1",
         "filename": "tests/CentralAuthUserDBTest.php",
         "patchSetId": 10
@@ -200,6 +398,24 @@
       "writtenOn": "2014-07-15T00:44:57Z",
       "side": 1,
       "message": "assertSame",
+      "revId": "48af4f291c0239db445817749178638f537ecf87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_75f87ae2",
+        "filename": "tests/CentralAuthUserDBTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-15T16:51:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_a9a0d1f1",
       "revId": "48af4f291c0239db445817749178638f537ecf87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
