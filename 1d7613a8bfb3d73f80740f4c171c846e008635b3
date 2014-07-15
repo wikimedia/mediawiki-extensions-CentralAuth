@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_15c49693",
+        "filename": "tests/CentralAuthTestCaseUsingDatabase.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-15T16:44:18Z",
+      "side": 1,
+      "message": "this still doesn\u0027t belong here... just push it into a helper class that can invoked by the child classes",
+      "revId": "1d7613a8bfb3d73f80740f4c171c846e008635b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
