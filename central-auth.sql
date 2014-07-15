@@ -13,7 +13,7 @@
 -- we know we have to sweep all the local databases and populate
 -- the localnames table.
 --
-CREATE TABLE globalnames (
+CREATE TABLE /*_*/globalnames (
   gn_name varchar(255) binary not null,
   primary key (gn_name)
 ) /*$wgDBTableOptions*/;
@@ -29,20 +29,21 @@ CREATE TABLE globalnames (
 -- separate databases to look for unmigrated accounts every time we log in;
 -- only existing databases not yet migrated have to be loaded.
 --
-CREATE TABLE localnames (
+CREATE TABLE /*_*/localnames (
   ln_wiki varchar(255) binary not null,
   ln_name varchar(255) binary not null,
 
-  primary key (ln_wiki, ln_name),
-  key (ln_name, ln_wiki)
+  primary key (ln_wiki, ln_name)
 ) /*$wgDBTableOptions*/;
+
+CREATE INDEX /*i*/ln_name_wiki ON /*_*/localnames (ln_name, ln_wiki);
 
 --
 -- Global account data.
 --
-CREATE TABLE globaluser (
+CREATE TABLE /*_*/globaluser (
   -- Internal unique ID for the authentication server
-  gu_id int auto_increment,
+  gu_id int primary key auto_increment,
 
   -- Username.
   gu_name varchar(255) binary,
@@ -84,15 +85,13 @@ CREATE TABLE globaluser (
   gu_password_reset_expiration varchar(14) binary,
 
   -- Random key for crosswiki authentication tokens
-  gu_auth_token varbinary(32) NULL,
-
-  primary key (gu_id),
-  unique key (gu_name),
-  key (gu_email),
-
-  key gu_locked( gu_name(255), gu_locked ),
-  key gu_hidden( gu_name(255), gu_hidden(255) )
+  gu_auth_token varbinary(32) NULL
 ) /*$wgDBTableOptions*/;
+
+CREATE UNIQUE INDEX /*i*/gu_name ON /*_*/globaluser (gu_name);
+CREATE INDEX /*i*/gu_email ON /*_*/globaluser (gu_email);
+CREATE INDEX /*i*/gu_locked ON /*_*/globaluser ( gu_name(255), gu_locked );
+CREATE INDEX /*i*/gu_hidden ON /*_*/globaluser ( gu_name(255), gu_hidden(255) );
 
 --
 -- Local linkage info, listing which wikis the username is attached
@@ -100,7 +99,7 @@ CREATE TABLE globaluser (
 --
 -- All local DBs will be swept on an opt-in check event.
 --
-CREATE TABLE localuser (
+CREATE TABLE /*_*/localuser (
   lu_wiki varchar(255) binary not null,
   lu_name varchar(255) binary not null,
 
@@ -116,36 +115,38 @@ CREATE TABLE localuser (
     'login'
   ),
 
-  primary key (lu_wiki, lu_name),
-  key (lu_name, lu_wiki)
+  primary key (lu_wiki, lu_name)
 ) /*$wgDBTableOptions*/;
 
+CREATE INDEX /*i*/lu_name_wiki ON /*_*/localuser (lu_name, lu_wiki);
 
 -- Global user groups.
-CREATE TABLE global_user_groups (
+CREATE TABLE /*_*/global_user_groups (
   gug_user int(11) not null,
   gug_group varchar(255) not null,
 
-  PRIMARY KEY (gug_user,gug_group),
-  KEY (gug_user),
-  key (gug_group)
+  PRIMARY KEY (gug_user,gug_group)
 ) /*$wgDBTableOptions*/;
 
+CREATE INDEX /*i*/gug_user ON /*_*/global_user_groups (gug_user);
+CREATE INDEX /*i*/gug_group ON /*_*/global_user_groups (gug_group);
+
 -- Global group permissions.
-CREATE TABLE global_group_permissions (
+CREATE TABLE /*_*/global_group_permissions (
   ggp_group varchar(255) not null,
   ggp_permission varchar(255) not null,
 
-  PRIMARY KEY (ggp_group, ggp_permission),
-  KEY (ggp_group),
-  KEY (ggp_permission)
+  PRIMARY KEY (ggp_group, ggp_permission)
 ) /*$wgDBTableOptions*/;
+
+CREATE INDEX /*i*/ggp_group ON /*_*/global_group_permissions (ggp_group);
+CREATE INDEX /*i*/ggp_permission ON /*_*/global_group_permissions (ggp_permission);
 
 -- Sets of wikis (for things like restricting global groups)
 -- May be defined in two ways: only specified wikis or all wikis except opt-outed
-CREATE TABLE wikiset (
+CREATE TABLE /*_*/wikiset (
   -- ID of wikiset
-  ws_id int auto_increment,
+  ws_id int primary key auto_increment,
   -- Display name of wikiset
   ws_name varchar(255) not null,
   -- Type of set: opt-in or opt-out
@@ -154,25 +155,25 @@ CREATE TABLE wikiset (
   -- Because we can just use such simple list, we don't need complicated queries on it
   -- Let's suppose that max length of db name is 31 (32 with ","), then we have space for
   -- 2048 wikis. More than we need
-  ws_wikis blob not null,
-
-  PRIMARY KEY (ws_id),
-  UNIQUE ws_name (ws_name)
+  ws_wikis blob not null
 ) /*$wgDBTableOptions*/;
 
+CREATE UNIQUE INDEX /*i*/ws_name ON /*_*/wikiset (ws_name);
+
 -- Allow certain global groups to have their permissions only on certain wikis
-CREATE TABLE global_group_restrictions (
+CREATE TABLE /*_*/global_group_restrictions (
   -- Group to restrict
   ggr_group varchar(255) not null,
   -- Wikiset to use
   ggr_set int not null,
 
-  PRIMARY KEY (ggr_group),
-  KEY (ggr_set)
+  PRIMARY KEY (ggr_group)
 ) /*$wgDBTableOptions*/;
 
+CREATE INDEX /*i*/ggr_set ON /*_*/global_group_restrictions (ggr_set);
+
 -- Table for global rename status
-CREATE TABLE renameuser_status (
+CREATE TABLE /*_*/renameuser_status (
   -- Old name being renamed from
   ru_oldname varchar(255) binary not null,
   -- New name being renamed to
@@ -180,7 +181,7 @@ CREATE TABLE renameuser_status (
   -- WikiID
   ru_wiki varchar(255) binary not null,
   -- current state of the renaming
-  ru_status enum ('queued', 'inprogress', 'failed'),
-
-  UNIQUE KEY `ru_oldname` (`ru_oldname`, `ru_wiki`)
+  ru_status enum ('queued', 'inprogress', 'failed')
 ) /*$wgDBTableOptions*/;
+
+CREATE UNIQUE INDEX /*i*/ru_oldname ON /*_*/renameuser_status (ru_oldname, ru_wiki);
