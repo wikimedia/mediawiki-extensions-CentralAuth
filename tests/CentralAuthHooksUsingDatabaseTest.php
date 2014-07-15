@@ -51,4 +51,37 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 		);
 	}
 
+	protected function setUp() {
+		$u = new CentralAuthTestUser(
+			'GlobalUser',
+			'GUP@ssword',
+			array( 'gu_id' => '1001' ),
+			array(
+				array( wfWikiID(), 'primary' ),
+				array( 'enwiki', 'primary' ),
+				array( 'dewiki', 'login' ),
+				array( 'metawiki', 'password' ),
+			)
+		);
+		$u->save( $this->db );
+
+		$u = new CentralAuthTestUser(
+			'GlobalLockedUser',
+			'GLUP@ssword',
+			array(
+				'gu_id' => '1003',
+				'gu_locked' => 1,
+				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+				'gu_email' => 'testlocked@localhost',
+				'gu_home_db' => 'metawiki',
+			),
+			array(
+				array( 'metawiki', 'primary' ),
+			)
+		);
+		$u->save( $this->db );
+		parent::setUp();
+	}
+
+
 }

@@ -48,4 +48,20 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 		);
 	}
 
+	protected function setUp() {
+		$user = new CentralAuthTestUser(
+			'GlobalUser',
+			'GUP@ssword',
+			array( 'gu_id' => '1001' ),
+			array(
+				array( wfWikiID(), 'primary' ),
+				array( 'enwiki', 'primary' ),
+				array( 'dewiki', 'login' ),
+				array( 'metawiki', 'password' ),
+			)
+		);
+		$user->save( $this->db );
+		parent::setUp();
+	}
+
 }
