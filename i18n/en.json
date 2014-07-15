@@ -192,6 +192,7 @@
 	"centralauth-renameuser-reserved": "Username $2 is reserved for a global account.",
 	"centralauth-invalid-wiki": "No such wiki database: $1",
 	"centralauth-account-exists": "Cannot create account: the requested username is already taken in the unified login system.",
+	"centralauth-account-unattached-exists": "Cannot create account: the requested username would conflict with another username in the unified login system",
 	"centralauth-account-exists-reset": "The username $1 is not registered on this wiki, but you can reset its password on [[Special:CentralAuth/$1|a wiki where it is]].",
 	"centralauth-login-progress": "Logging you in to wikis of {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Logging you out from other wikis of {{int:Centralauth-groupname}}:",

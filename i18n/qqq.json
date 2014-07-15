@@ -226,6 +226,7 @@
 	"centralauth-renameuser-reserved": "Parameters:\n* $1 - old username (Unused)\n* $2 - new username",
 	"centralauth-invalid-wiki": "Error message. Parameters:\n* $1 - wiki name",
 	"centralauth-account-exists": "Used as error message.",
+	"centralauth-account-unattached-exists": "Used as error message.",
 	"centralauth-account-exists-reset": "Used as error message.\n\nParameters:\n* $1 - global user's name",
 	"centralauth-login-progress": "{{gender}}\nRefers to {{msg-mw|Centralauth-groupname}}.\n\nParameters:\n* $1 - (Optional) the user name of the logged in user\nSee also:\n* {{msg-mw|Centralauth-logout-progress}}",
 	"centralauth-logout-progress": "{{gender}}\nRefers to {{msg-mw|Centralauth-groupname}}.\n\nParameters:\n* $1 - (Optional) the user name of the logged out user\nSee also:\n* {{msg-mw|Centralauth-login-progress}}",
