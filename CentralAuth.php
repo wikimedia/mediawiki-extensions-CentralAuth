@@ -254,7 +254,7 @@ $wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/GlobalRename/GlobalRenam
 $wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/GlobalRename/GlobalRenameUserValidator.php";
 $wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
 $wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/GlobalRename/GlobalRenameUserLogger.php";
-$wgAutoloadClasses['CentralAuthDBTest'] = "$caBase/tests/CentralAuthDBTest.php";
+$wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/CentralAuthTestCaseUsingDatabase.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";

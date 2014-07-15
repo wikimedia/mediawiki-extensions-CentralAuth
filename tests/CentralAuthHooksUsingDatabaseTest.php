@@ -3,7 +3,7 @@
  * Basic tests for CentralAuthHooks
  * @group CentralAuthDB
  */
-class CentralAuthHooksDBTest extends CentralAuthDBTest {
+class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
 
 
 	/**
@@ -13,7 +13,7 @@ class CentralAuthHooksDBTest extends CentralAuthDBTest {
 	public function testOnAbortNewAccount( $user, $result) {
 		$error = '';
 		$hookResult = CentralAuthHooks::onAbortNewAccount( $user, $error );
-		$this->assertEquals( $hookResult, $result );
+		$this->assertSame( $result, $hookResult );
 	}
 
 	public function provideAbortNewAccount() {
@@ -33,21 +33,21 @@ class CentralAuthHooksDBTest extends CentralAuthDBTest {
 		$retval = 0;
 		$msg = '';
 		$hookResult = CentralAuthHooks::onAbortLogin( $user, '', $retval, $msg );
-		$this->assertEquals( $hookResult, $result, $test );
+		$this->assertEquals( $result, $hookResult, $test );
 	}
 
 	public function provideAbortLogin() {
-		$User = User::newFromName( 'GlobalUser' );
-		$LockedUser = User::newFromName( 'GlobalLockedUser' );
+		$user = User::newFromName( 'GlobalUser' );
+		$lockedUser = User::newFromName( 'GlobalLockedUser' );
 
 		// We can fake out CentralAuthUser::getInstance() by adding centralAuthObj
-		$NoUser = User::newFromName( 'NoUser' );
-		$NoUser->centralAuthObj = CentralAuthUser::newUnattached( 'NoUser' );
+		$noUser = User::newFromName( 'NoUser' );
+		$noUser->centralAuthObj = CentralAuthUser::newUnattached( 'NoUser' );
 
 		return array(
-			array( $User, true, 'Attached user can login' ),
-			array( $NoUser, true, 'Unattached user can login' ),
-			array( $LockedUser, false, 'Locked User cannot login' ),
+			array( $user, true, 'Attached user can login' ),
+			array( $noUser, true, 'Unattached user can login' ),
+			array( $lockedUser, false, 'Locked User cannot login' ),
 		);
 	}
 

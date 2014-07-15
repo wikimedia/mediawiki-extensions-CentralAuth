@@ -4,7 +4,7 @@
  * @group CentralAuthDB
  */
 
-class CentralAuthUserDBTest extends CentralAuthDBTest {
+class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
 
 	/**
 	 * @covers CentralAuthUser::exists
@@ -14,10 +14,10 @@ class CentralAuthUserDBTest extends CentralAuthDBTest {
 	 */
 	public function testBasicAttrs() {
 		$caUser = new CentralAuthUser( 'GlobalUser' );
-		$this->assertEquals( true, $caUser->exists() );
+		$this->assertSame( true, $caUser->exists() );
 		$this->assertEquals( 1001, $caUser->getId() );
 		$this->assertEquals( wfWikiID(), $caUser->getHomeWiki() );
-		$this->assertEquals( false, $caUser->isLocked() );
+		$this->assertSame( false, $caUser->isLocked() );
 		$this->assertEquals(
 			CentralAuthUser::HIDDEN_NONE,
 			$caUser->getHiddenLevel()
@@ -42,7 +42,7 @@ class CentralAuthUserDBTest extends CentralAuthDBTest {
 			32,
 			strlen( $token )
 		);
-		$this->assertEquals(
+		$this->assertSame(
 			0,
 			preg_match( '/[^a-f0-9]/', $token )
 		);

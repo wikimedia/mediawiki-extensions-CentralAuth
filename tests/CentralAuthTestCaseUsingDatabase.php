@@ -2,7 +2,7 @@
 /**
  * Setup database tests for centralauth
  */
-abstract class CentralAuthDBTest extends MediaWikiTestCase {
+abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 
 	public static $centralauthTables = array(
 		'global_group_permissions',
