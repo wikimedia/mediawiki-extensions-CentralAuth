@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_74307253",
+        "filename": "GlobalRename/GlobalRenameUserDatabaseUpdates.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-16T17:50:23Z",
+      "side": 1,
+      "message": "Added an explanation and made the inline comments clearer",
+      "parentUuid": "8e28a382_8794e78e",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_3af0af61",
         "filename": "GlobalRename/GlobalUserMerge.php",
         "patchSetId": 7
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_94bbdeb9",
+        "filename": "GlobalRename/GlobalUserMerge.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-16T17:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_27f3f308",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_c79aefbc",
         "filename": "LocalCentralAuthJob.php",
         "patchSetId": 7
@@ -65,6 +101,24 @@
       "writtenOn": "2014-07-14T13:54:00Z",
       "side": 1,
       "message": "class name is misleading... this isn\u0027t a generic CentralAuth thing, but a user rename/ merge thing",
+      "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f4990281",
+        "filename": "LocalCentralAuthJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-16T17:50:23Z",
+      "side": 1,
+      "message": "Changed to LocalRenameJob",
+      "parentUuid": "8e28a382_c79aefbc",
       "revId": "dd3ed8e9892a03834f2204c5f2f5aa8b324686bb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
