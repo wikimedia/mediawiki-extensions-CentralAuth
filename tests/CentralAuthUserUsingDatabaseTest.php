@@ -48,4 +48,25 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 		);
 	}
 
+	/**
+	 * Setup a fresh set of global users for each test.
+	 * Note: MediaWikiTestCase::resetDB() will delete all tables between
+	 * test runs, so no explicite tearDown() is needed.
+	 */
+	protected function setUp() {
+		parent::setUp();
+		$user = new CentralAuthTestUser(
+			'GlobalUser',
+			'GUP@ssword',
+			array( 'gu_id' => '1001' ),
+			array(
+				array( wfWikiID(), 'primary' ),
+				array( 'enwiki', 'primary' ),
+				array( 'dewiki', 'login' ),
+				array( 'metawiki', 'password' ),
+			)
+		);
+		$user->save( $this->db );
+	}
+
 }
