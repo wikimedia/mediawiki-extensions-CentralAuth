@@ -17,7 +17,8 @@
 			"Shirayuki",
 			"Whym",
 			"青子守歌",
-			"Rxy"
+			"Rxy",
+			"What here area team"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -92,8 +93,10 @@
 	"centralauth-attach-submit": "アカウントを移行",
 	"centralauth-attach-success": "このアカウントは、統一アカウントに移行されました。",
 	"centralauth": "グローバルアカウント管理",
+	"centralauth-ro": "グローバルアカウント情報",
 	"centralauth-admin-intro": "このインターフェイスでは、グローバルアカウントを管理できます。",
 	"centralauth-admin-manage": "アカウントデータの管理",
+	"centralauth-admin-view": "アカウント情報を閲覧",
 	"centralauth-admin-username": "利用者名:",
 	"centralauth-admin-lookup-ro": "利用者情報を閲覧",
 	"centralauth-admin-lookup-rw": "利用者アカウントを管理",
