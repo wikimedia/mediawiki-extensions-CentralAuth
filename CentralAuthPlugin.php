@@ -8,6 +8,24 @@
  */
 
 class CentralAuthPlugin extends AuthPlugin {
+
+	/**
+	 * Username forced on the user by single user login migration.
+	 *
+	 * This is a sneaky hack to pass state between authenticate() and
+	 * updateUser(). It should in no way be seen as clean API technique or
+	 * a reasonable best practice for data encapsulation. If at some point in
+	 * the future PHP suddenly becomes a concurrent language where the shared
+	 * nothing request contract is broken, this will have to be moved into
+	 * whatever threadlocal mechanism that sick and twisted world provides. On
+	 * the other hand, if that world comes to pass most of MediaWiki will melt
+	 * in a puddle of hot slag anyway because of our habit of using globals to
+	 * track state *everywhere*. hic sunt dracones.
+	 *
+	 * @var string $sulMigrationName
+	 */
+	private $sulMigrationName = null;
+
 	/**
 	 * Check whether there exists a user account with the given name.
 	 * The name will be normalized to MediaWiki's requirements, so
@@ -35,9 +53,33 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function authenticate( $username, $password ) {
-		global $wgCentralAuthAutoMigrate;
+		global $wgCentralAuthAutoMigrate, $wgCentralAuthCheckSULMigration;
 
 		$central = new CentralAuthUser( $username );
+		$passwordMatch = self::checkPassword( $central, $password );
+
+		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
+			// Check to see if this is a user who was affected by a global username
+			// collision during a forced migration to central auth accounts.
+			$renamedUsername = $username . '~' . wfWikiID();
+			wfDebugLog( 'SUL',
+				"Checking for migration of '{$username}' to '{$renamedUsername}'"
+			);
+
+			$renamed = new CentralAuthUser( $renamedUsername );
+			$passwordMatch = self::checkPassword( $renamed, $password );
+
+			// Remember that the user was authenticated under a different name.
+			if ( $passwordMatch ) {
+				$this->sulMigrationName = $renamedUsername;
+			}
+
+			// Since we are falling back to check a force migrated user, we are done
+			// regardless of password match status. We don't want to try to
+			// automigrate or check detached accounts.
+			return $passwordMatch;
+		}
+
 		if ( !$central->exists() ) {
 			wfDebugLog(
 				'CentralAuth',
@@ -45,8 +87,6 @@ class CentralAuthPlugin extends AuthPlugin {
 			);
 			return false;
 		}
-
-		$passwordMatch = $central->authenticate( $password ) == "ok";
 
 		if ( $passwordMatch && $wgCentralAuthAutoMigrate ) {
 			// If the user passed in the global password, we can identify
@@ -82,6 +122,18 @@ class CentralAuthPlugin extends AuthPlugin {
 		return $passwordMatch;
 	}
 
+
+	/**
+	 * Check the user's password.
+	 *
+	 * @param CentralAuthUser $user
+	 * @param string $password
+	 * @return bool
+	 */
+	protected static function checkPassword( CentralAuthUser $user, $password ) {
+		return $user->authenticate( $password ) == "ok";
+	}
+
 	/**
 	 * Check if a user should authenticate locally if the global authentication fails.
 	 * If either this or strict() returns true, local authentication is not used.
@@ -109,6 +161,22 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return bool
 	 */
 	public function updateUser( &$user ) {
+		global $wgCentralAuthCheckSULMigration;
+
+		if ( $wgCentralAuthCheckSULMigration && $this->sulMigrationName !== null ) {
+			wfDebugLog( 'SUL', "Coercing user to '{$this->sulMigrationName}'" );
+
+			// Create a new user object using the post-migration name
+			$user = User::newFromName( $this->sulMigrationName );
+
+			// Annotate the user so we can tell them about the change to their
+			// username.
+			$user->sulRenamed = true;
+
+			// Clear the state hack
+			$this->sulMigrationName = null;
+		}
+
 		$central = CentralAuthUser::getInstance( $user );
 		if ( $central->exists() && $central->isAttached() &&
 			$central->getEmail() != $user->getEmail() )
