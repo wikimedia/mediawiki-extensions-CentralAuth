@@ -71,6 +71,12 @@ class CentralAuthTestUser {
 	private $wikis;
 
 	/**
+	 * If we should create the local wiki user too. Usually we do, but
+	 * sometimes we want to test when it doesn't.
+	 */
+	private $createLocal;
+
+	/**
 	 * @param string $username the username
 	 * @param string $password password for the account
 	 * @param array $attrs associative array of global user attributs
@@ -80,14 +86,15 @@ class CentralAuthTestUser {
 		$username,
 		$password,
 		array $attrs = array(),
-		array $wikis = array()
+		array $wikis = array(),
+		$createLocal = true
 	) {
 		$this->username = $username;
 		$this->password = $password;
 
 		$attrs += array(
 			'gu_id' => '1000',
-			'gu_password' => '1234567890',
+			'gu_password' => User::crypt( $password ),
 			'gu_salt' => '',
 			'gu_auth_token' => '1234',
 			'gu_locked' => 0,
@@ -122,6 +129,8 @@ class CentralAuthTestUser {
 				'lu_attached_method' => $wiki[1],
 			);
 		}
+
+		$this->createLocal = $createLocal;
 	}
 
 	/**
@@ -130,11 +139,13 @@ class CentralAuthTestUser {
 	 */
 	public function save( $db ) {
 		// Setup local wiki user
-		$user = User::newFromName( $this->username );
-		if ( $user->idForName() == 0 ) {
-			$user->addToDatabase();
-			$user->setPassword( $this->password );
-			$user->saveSettings();
+		if ( $this->createLocal ) {
+			$user = User::newFromName( $this->username );
+			if ( $user->idForName() == 0 ) {
+				$user->addToDatabase();
+				$user->setPassword( $this->password );
+				$user->saveSettings();
+			}
 		}
 
 		// Setup global user
