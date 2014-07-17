@@ -382,6 +382,17 @@ class CentralAuthHooks {
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthCookies;
+		global $wgCentralAuthCheckSULMigration;
+
+		if ( $wgCentralAuthCheckSULMigration &&
+			isset( $user->sulRenamed ) &&
+			$user->sulRenamed === true
+		) {
+			// Add a flag in the user's session to track that they authenticated
+			// with a pre-migration username.
+			$request = $user->getRequest();
+			$request->setSessionData( 'CentralAuthForcedRename', true );
+		}
 
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
@@ -698,6 +709,9 @@ class CentralAuthHooks {
 			CentralAuthUser::deleteGlobalCookies();
 			$centralUser->resetAuthToken();
 		}
+
+		// Clean up any possible forced rename markers
+		$user->getRequest()->setSessionData( 'CentralAuthForcedRename', null );
 
 		return true;
 	}
