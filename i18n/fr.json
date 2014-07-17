@@ -220,6 +220,7 @@
 	"centralauth-renameuser-reserved": "Le nom d’utilisateur $2 est réservé pour un compte global.",
 	"centralauth-invalid-wiki": "Base de données wiki inexistante : $1",
 	"centralauth-account-exists": "Impossible de créer le compte : le nom d’utilisateur demandé est déjà pris dans le système d’identification unifiée.",
+	"centralauth-account-unattached-exists": "Impossible de créer un compte : le nom d’utilisateur demandé rentrerait en conflit avec un autre nom d’utilisateur dans le système de connexion unifié",
 	"centralauth-account-exists-reset": "Le nom d’utilisateur $1 n’est pas enregistré sur ce wiki, mais vous pouvez réinitialiser son mot de passe sur [[Special:CentralAuth/$1|un wiki où il se trouve]].",
 	"centralauth-login-progress": "Vous êtes en cours de connexion aux wikis de {{int:Centralauth-groupname}} :",
 	"centralauth-logout-progress": "Vous êtes en cours de déconnexion des autres wikis de {{int:Centralauth-groupname}} :",

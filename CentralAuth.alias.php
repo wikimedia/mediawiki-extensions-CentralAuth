@@ -676,6 +676,8 @@ $specialPageAliases['sv'] = array(
 	'GlobalGroupPermissions' => array( 'Globala_grupper' ),
 	'WikiSets' => array( 'Wikiset', 'Wikigrupp' ),
 	'GlobalUsers' => array( 'Globala_användare' ),
+	'GlobalRenameUser' => array( 'Globalt_användarnamnsbyte' ),
+	'GlobalRenameProgress' => array( 'Globalt_namnbytesförlopp' ),
 );
 
 /** Swahili (Kiswahili) */

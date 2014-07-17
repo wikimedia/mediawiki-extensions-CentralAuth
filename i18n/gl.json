@@ -345,5 +345,6 @@
 	"centralauth-rename-form-reason": "Motivo",
 	"centralauth-rename-form-movepages": "Mover as páxinas de usuario",
 	"centralauth-rename-form-suppressredirects": "Suprimir a creación de redireccións",
-	"centralauth-rename-notinstalled": "A extensión de renomeamento de usuarios (Renameuser) non está instalada."
+	"centralauth-rename-notinstalled": "A extensión de renomeamento de usuarios (Renameuser) non está instalada.",
+	"centralauth-rename-doesnotexist": "A conta especificada non existe."
 }
