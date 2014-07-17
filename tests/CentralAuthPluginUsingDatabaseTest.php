@@ -17,7 +17,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 			'GUP@ssword',
 			array( 'gu_id' => '1001' ),
 			array(
-				array( wfWikiID(), 'primary' ),
+				array( self::safeWfWikiID(), 'primary' ),
 				array( 'enwiki', 'primary' ),
 				array( 'dewiki', 'login' ),
 				array( 'metawiki', 'password' ),
@@ -38,7 +38,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 			),
 			array(
 				array( 'metawiki', 'primary' ),
-				array( wfWikiID(), 'password' ),
+				array( self::safeWfWikiID(), 'password' ),
 			)
 		);
 		$u->save( $this->db );
@@ -87,6 +87,17 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 			$user->setPassword( 'ANUP@ssword' );
 			$user->saveSettings();
 		}
+
+		// Global user who was renamed when migrated
+		$u = new CentralAuthTestUser(
+			'GlobalUser~' . self::safeWfWikiID(),
+			'GURP@ssword',
+			array( 'gu_id' => '1006' ),
+			array(
+				array( self::safeWfWikiID(), 'primary' ),
+			)
+		);
+		$u->save( $this->db );
 	}
 
 
@@ -167,6 +178,99 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	}
 
 	/**
+	 * @dataProvider provideAuthenticateWithPreRenameUsername
+	 * @covers CentralAuthPlugin::authenticate
+	 */
+	public function testAuthenticateWithPreRenameUsername(
+		$username, $password, $checkMigration,
+		$expectAuth, $expectMigrationName,
+		$test
+	) {
+		$auth = new CentralAuthPlugin();
+		$this->setMwGlobals( array(
+			'wgCentralAuthCheckSULMigration' => $checkMigration,
+		) );
+
+		$this->assertSame( $expectAuth, $auth->authenticate( $username, $password ),
+			"{$test}; authenticate"
+		);
+		$this->assertSame( $expectMigrationName, $auth->sulMigrationName,
+			"{$test}; sulMigrationName"
+		);
+	}
+
+	public function provideAuthenticateWithPreRenameUsername() {
+		return array(
+			array(
+				'GlobalUser', 'GURP@ssword', false,
+				false, null,
+				'wgCentralAuthCheckSULMigration disabled',
+			),
+			array(
+				'GlobalUser', 'GURP@ssword', true,
+				true, 'GlobalUser~' . self::safeWfWikiID(),
+				'wgCentralAuthCheckSULMigration enabled; correct password',
+			),
+			array(
+				'GlobalUser', 'not_my_password', true,
+				false, null,
+				'wgCentralAuthCheckSULMigration enabled; incorrect password',
+			),
+		);
+	}
+
+	/**
+	 * @dataProvider provideUpdateUserRenameAnnotation
+	 * @covers CentralAuthPlugin::updateUser
+	 */
+	public function testUpdateUserRenameAnnotation(
+		$username, $checkMigration, $migrationName,
+		$expectAnnotated, $expectRename,
+		$test
+	) {
+		$auth = new CentralAuthPlugin();
+		$this->setMwGlobals( array(
+			'wgCentralAuthCheckSULMigration' => $checkMigration,
+		) );
+		$auth->sulMigrationName = $migrationName;
+
+		$user = User::newFromName( $username );
+		$auth->updateUser( $user );
+
+		$this->assertSame( $expectAnnotated, isset( $user->sulRenamed ),
+			"{$test}; annotated"
+		);
+		$this->assertSame( $expectRename, $username !== $user->getName(),
+			"{$test}; renamed"
+		);
+	}
+
+	public function provideUpdateUserRenameAnnotation() {
+		return array(
+			array(
+				'GlobalUser', false, 'GlobalUser~' . self::safeWfWikiID(),
+				false, false,
+				'wgCentralAuthCheckSULMigration disabled; sulMigrationName set',
+			),
+			array(
+				'GlobalUser', false, null,
+				false, false,
+				'wgCentralAuthCheckSULMigration disabled; sulMigrationName unset',
+			),
+			array(
+				'GlobalUser', true, 'GlobalUser~' . self::safeWfWikiID(),
+				true, true,
+				'wgCentralAuthCheckSULMigration enabled; sulMigrationName set',
+			),
+			array(
+				'GlobalUser', true, null,
+				false, false,
+				'wgCentralAuthCheckSULMigration enabled; sulMigrationName unset',
+			),
+		);
+	}
+
+	/**
 	 * TODO: CentralAuthPlugin::updateUser
 	 */
 
@@ -174,4 +278,23 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	 * TODO: CentralAuthPlugin::addUser - calls CentralAuthUser::importLocalNames()
 	 */
 
+	/**
+	 * Wrapper for wfWikiID that ensures that the returned value always ends
+	 * with a db prefix.
+	 *
+	 * When phpunit is running tests, wfWikiID() returns a different value
+	 * inside a test from the value that it returns during a dataProvider call.
+	 *
+	 * Bug: 68231
+	 * @return string
+	 * @see wfWikiID()
+	 */
+	protected static function safeWfWikiID() {
+		$wikiId = wfWikiID();
+		$suffix = '-' . self::DB_PREFIX;
+		if ( substr( $wikiId, -strlen( $suffix ) ) !== $suffix ) {
+			$wikiId = "{$wikiId}{$suffix}";
+		}
+		return $wikiId;
+	}
 }

@@ -242,6 +242,13 @@ $wgCentralAuthEnableUserMerge = false;
 $wgCentralAuthEnableGlobalRenameRequest = false;
 
 /**
+ * Enable special logic to attempt to ease the user facing impact of forced
+ * user migrations.
+ * @var bool
+ */
+$wgCentralAuthCheckSULMigration = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
