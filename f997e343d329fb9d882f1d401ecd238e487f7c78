@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_e936c3e3",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-17T04:54:38Z",
+      "side": 1,
+      "message": "You can use $user-\u003egetRequest();",
+      "revId": "f997e343d329fb9d882f1d401ecd238e487f7c78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c931c7eb",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-17T04:54:38Z",
+      "side": 1,
+      "message": "I think this needs to be moved ahead of the $central-\u003eexists() check.\n\nA renamed to A~xxwiki\n\nA (global account) gets rename to Foo.\n\nNo global account at A, and user now known as A~xxwiki tries logging in with old name.",
+      "revId": "f997e343d329fb9d882f1d401ecd238e487f7c78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
