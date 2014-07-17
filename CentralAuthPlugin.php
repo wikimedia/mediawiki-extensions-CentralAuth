@@ -8,6 +8,13 @@
  */
 
 class CentralAuthPlugin extends AuthPlugin {
+
+	/**
+	 * Username forced on the user by single user login migration.
+	 * @var string $sulMigrationName
+	 */
+	public $sulMigrationName = null;
+
 	/**
 	 * Check whether there exists a user account with the given name.
 	 * The name will be normalized to MediaWiki's requirements, so
@@ -35,7 +42,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function authenticate( $username, $password ) {
-		global $wgCentralAuthAutoMigrate;
+		global $wgCentralAuthAutoMigrate, $wgCentralAuthCheckSULMigration;
 
 		$central = new CentralAuthUser( $username );
 		if ( !$central->exists() ) {
@@ -47,6 +54,19 @@ class CentralAuthPlugin extends AuthPlugin {
 		}
 
 		$passwordMatch = $central->authenticate( $password ) == "ok";
+
+		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
+			// Check to see if this is a user who was affected by a global username
+			// collision during a forced migration to central auth accounts.
+			$wiki = wfWikiID();
+			$this->sulMigrationName = "{$username}~{$wiki}";
+			wfDebugLog( 'SUL',
+				"Checking for migration of '{$username}' to '{$this->sulMigrationName}'"
+			);
+			$renamed = new CentralAuthUser( $this->sulMigrationName );
+			$passwordMatch = $renamed->exists() &&
+				$renamed->authenticate( $password ) == "ok";
+		}
 
 		if ( $passwordMatch && $wgCentralAuthAutoMigrate ) {
 			// If the user passed in the global password, we can identify
@@ -109,13 +129,26 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return bool
 	 */
 	public function updateUser( &$user ) {
+		global $wgCentralAuthCheckSULMigration;
+
 		$central = CentralAuthUser::getInstance( $user );
-		if ( $central->exists() && $central->isAttached() &&
-			$central->getEmail() != $user->getEmail() )
-		{
-			$user->setEmail( $central->getEmail() );
-			$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
-			$user->saveSettings();
+		if ( $central->exists() && $central->isAttached() ) {
+			if ( $wgCentralAuthCheckSULMigration &&
+				isset( $this->sulMigrationName )
+			) {
+				wfDebugLog( 'SUL', "Coercing user to '{$this->sulMigrationName}'" );
+				// Create a new user object using the post-migration name
+				$user = User::newFromName( $this->sulMigrationName );
+				// Annotate the user so we can tell them about the change to their
+				// username.
+				$user->sulRenamed = true;
+			}
+
+			if ( $central->getEmail() != $user->getEmail() ) {
+				$user->setEmail( $central->getEmail() );
+				$user->mEmailAuthenticated = $central->getEmailAuthenticationTimestamp();
+				$user->saveSettings();
+			}
 		}
 		return true;
 	}
