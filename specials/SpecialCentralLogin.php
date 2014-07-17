@@ -135,6 +135,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 */
 	protected function doLoginComplete( $token ) {
 		global $wgUser, $wgMemc, $wgSecureLogin;
+		global $wgCentralAuthCheckSULMigration;
 
 		$request = $this->getRequest();
 
@@ -240,6 +241,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
+		if ( $wgCentralAuthCheckSULMigration &&
+			$request->getSessionData( 'CentralAuthForcedRename' ) === true
+		) {
+			wfDebugLog( 'SUL',
+				"Login completed for renamed user '{$wgUser->getName()}'"
+			);
+		}
 	}
 
 	protected function showLoginStatus() {
