@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_d4b6ed84",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-07-18T18:24:36Z",
+      "side": 1,
+      "message": "Updating state before we know if the $username~$wiki user exists seems like it might come back to bite us. I\u0027d rather a flag explicitly indicate that we used the alternate name to successfully login, and keep it unset otherwise.",
+      "revId": "a223e8f01d2f7e683b402f344de2d776314ef390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
