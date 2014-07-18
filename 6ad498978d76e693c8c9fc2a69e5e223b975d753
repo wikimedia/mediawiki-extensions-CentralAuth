@@ -34,6 +34,24 @@
       "revId": "6ad498978d76e693c8c9fc2a69e5e223b975d753",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_d99aab74",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-18T12:09:42Z",
+      "side": 1,
+      "message": "Yes (and other extensions). The - probably unwritten - convention is to use a capital letter after colon.",
+      "parentUuid": "8e28a382_eab0ebd9",
+      "revId": "6ad498978d76e693c8c9fc2a69e5e223b975d753",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
