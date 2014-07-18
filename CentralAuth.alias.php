@@ -211,6 +211,8 @@ $specialPageAliases['fa'] = array(
 	'WikiSets' => array( 'ویرایش_مجموعه‌های_ویکی' ),
 	'GlobalUsers' => array( 'کاربران_سراسری' ),
 	'MultiLock' => array( 'چندقفلی' ),
+	'GlobalRenameUser' => array( 'تغییر_سراسری_نام_کاربر' ),
+	'GlobalRenameProgress' => array( 'پیشرفت_تغییر_نام_سراسری' ),
 );
 
 /** Finnish (suomi) */
