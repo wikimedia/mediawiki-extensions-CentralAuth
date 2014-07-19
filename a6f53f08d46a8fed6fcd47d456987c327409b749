@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_dbb058da",
+        "filename": "GlobalRename/GlobalUserMergeLogFormatter.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-19T02:31:25Z",
+      "side": 1,
+      "message": "As written right now it is, but this is wrong. This should be using Title::newFromText( \"Special:CentralAuth/$name\" ) is $this-\u003eplaintext is enabled, so IRC feed doesn\u0027t get localized entries.",
+      "parentUuid": "8e28a382_0a820ccd",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_4a4ed4c5",
         "filename": "LocalRenameJob.php",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_1bb700d5",
+        "filename": "LocalRenameJob.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-19T02:31:25Z",
+      "side": 1,
+      "message": "Not really anymore, I just copied this function exactly from LocalRenameUserJob.php. I\u0027ll remove it.",
+      "parentUuid": "8e28a382_4a4ed4c5",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_07a44503",
         "filename": "specials/SpecialGlobalUserMerge.php",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-18T20:29:01Z",
       "side": 1,
       "message": "Don\u0027t we assume the target user already exists? If so, do we need to check it\u0027s creatable? Also, it seems like there should be a \"|| $newUser-\u003eisAnon()\" in the if bellow. Unless there\u0027s some reason we want to merge to a new username?",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_fbad5481",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-19T02:31:25Z",
+      "side": 1,
+      "message": "Yeah, we check that they already exist, so this is useless.\n\nThe-\u003eisAnon() check might not work if they don\u0027t have an account attached on this wiki.",
+      "parentUuid": "8e28a382_07a44503",
       "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2014-07-18T20:29:01Z",
       "side": 1,
       "message": "Hmm, make it static so you don\u0027t have to do $us?",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_5bbc68b1",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-19T02:31:25Z",
+      "side": 1,
+      "message": "Interestingly, you can\u0027t use \"self::\" in a closure either (until 5.4 I think), but specifying the full class name will work.",
+      "parentUuid": "8e28a382_0ade8c14",
       "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
