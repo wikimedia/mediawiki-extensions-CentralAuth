@@ -400,6 +400,8 @@ $specialPageAliases['ko'] = array(
 	'WikiSets' => array( '위키집합', '위키집합편집' ),
 	'GlobalUsers' => array( '통합계정목록', '공통계정목록' ),
 	'MultiLock' => array( '다중잠금' ),
+	'GlobalRenameUser' => array( '전역사용자이름바꾸기' ),
+	'GlobalRenameProgress' => array( '전역이름바꾸기진행' ),
 );
 
 /** Colognian (Ripoarisch) */
