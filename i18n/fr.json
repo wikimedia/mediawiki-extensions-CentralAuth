@@ -31,14 +31,15 @@
 			"Verdy p",
 			"Wyz",
 			"Linedwell",
-			"SnowedEarth"
+			"SnowedEarth",
+			"Orikrin1998"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
 	"centralauth-groupname": "la Wikimedia Foundation",
 	"centralauth-desc": "[[Special:MergeAccount|Fusionne un compte utilisateur]] sur les wikis de {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Ajoute la technologie AntiSpoof à CentralAuth",
-	"centralauth-rename-desc": "Ajoute le renommage des comptes globaux",
+	"centralauth-rename-desc": "Permettre le renommage des comptes globaux",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Fusionne plusieurs comptes]] pour l’identification unique",
 	"centralauth-merge-denied": "Désolé, vous ne disposez pas des droits d’accès à cette page.",
 	"centralauth-merge-notlogged": "Veuillez <span class=\"plainlinks\">[$1 vous connecter]</span> pour vérifier si vos comptes ont été complètement fusionnés.",

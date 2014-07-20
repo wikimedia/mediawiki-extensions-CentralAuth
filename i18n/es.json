@@ -44,7 +44,7 @@
 	"centralauth-groupname": "la Fundación Wikimedia",
 	"centralauth-desc": "[[Special:MergeAccount|Fusiona cuentas]] entre wikis de {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Añade la tecnología de AntiSpoof a CentralAuth.",
-	"centralauth-rename-desc": "Añade la tecnología Renameuser a CentralAuth",
+	"centralauth-rename-desc": "Permite renombrar las cuentas globales",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Fusiona múltiples cuentas]] para la Identificación de Unificada del Usuario (SUL)",
 	"centralauth-merge-denied": "Lo sentimos, no tienes permisos para acceder a esta página.",
 	"centralauth-merge-notlogged": "Por favor <span class=\"plainlinks\">[$1 inicie sesión]</span> para comprobar si sus cuentas se han fusionado completamente.",

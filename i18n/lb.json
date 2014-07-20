@@ -10,7 +10,7 @@
 	"centralauth-groupname": "der Wikimedia Fondatioun",
 	"centralauth-desc": "Benotzerkonten op de Wikie vun  {{int:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]",
 	"centralauth-antispoof-desc": "Setzt AntiSpoof Technologie bei CentralAuth derbäi",
-	"centralauth-rename-desc": "Setzt Renameuserf Technologie bei CentralAuth derbäi",
+	"centralauth-rename-desc": "Erlaabt et global Benotzerkonten ëmzebenennen",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Zesammeleeë vu méi Benotzerkonte]] fir de ''Single User Login''",
 	"centralauth-merge-denied": "Pardon, Dir hutt net déi néideg Rechter fir op dës Säit ze goen.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Loggt Iech w.e.g. an]</span> fir nozekucken ob all Är Benotzerkonte ganz zesummegefouert goufen.",
