@@ -1,7 +1,6 @@
 <?php
 
 class CentralAuthHooks {
-
 	/**
 	 * Check whether we're in API mode and the "centralauthtoken" parameter was
 	 * sent.
@@ -1753,6 +1752,34 @@ class CentralAuthHooks {
 			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
 				$files[] = $fileInfo->getPathname();
 			}
+		}
+		return true;
+	}
+
+	/**
+	 * Handler for PostLoginRedirect
+	 * @param string $returnTo The page to return to
+	 * @param array $returnToQuery Url parameters
+	 * @param string $type Type of login redirect
+	 */
+	public static function onPostLoginRedirect(
+		&$returnTo, &$returnToQuery, &$type
+	) {
+		global $wgCentralAuthCheckSULMigration, $wgUser;
+		if ( $wgCentralAuthCheckSULMigration &&
+			$wgUser->getRequest()->getSessionData( 'CentralAuthForcedRename' ) === true &&
+			( $type == 'success' || $type == 'successredirect' )
+		) {
+			wfDebugLog( 'SUL', 'Redirecting user to Special:SulRenameWarning' );
+			// Store current redirect target in session so we can provide a link
+			// later.
+			$wgUser->getRequest()->setSessionData( 'SulRenameWarning', array(
+				'returnTo' => $returnTo,
+				'returnToQuery' => $returnToQuery,
+			) );
+			$returnTo = SpecialPageFactory::getLocalNameFor( 'Special:SulRenameWarning' );
+			$returnToQuery = array();
+			return false;
 		}
 		return true;
 	}

@@ -369,5 +369,8 @@
 	"centralauth-rename-confirm" : "Do you really want to globally rename this user?",
 	"log-name-gblrename": "Global rename log",
 	"log-description-gblrename": "This log tracks the global renaming of users.",
-	"logentry-gblrename-rename" : "$1 globally {{GENDER:$2|renamed}} $4 to $5"
+	"logentry-gblrename-rename" : "$1 globally {{GENDER:$2|renamed}} $4 to $5",
+	"sulrenamewarning-title" : "Your account has been renamed",
+	"sulrenamewarning-renamed" : "Your account '''$1''' has been renamed to '''$2''' during automatic migration to to the unified login system of {{int:Centralauth-groupname}}.",
+	"sulrenamewarning-usenew" : "Please use your new username '''$1''' when logging in in the future."
 }

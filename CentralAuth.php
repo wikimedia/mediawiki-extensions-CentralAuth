@@ -520,6 +520,17 @@ $wgExtensionFunctions[] = function() {
 	}
 };
 
+// TODO: merge all wgExtensionFunctions callbacks into a single hook function.
+$wgExtensionFunctions[] = function() use ($caBase) {
+	global $wgCentralAuthCheckSULMigration;
+	global $wgAutoloadClasses, $wgSpecialPages, $wgHooks;
+	if ( $wgCentralAuthCheckSULMigration ) {
+		$wgAutoloadClasses['SpecialSulRenameWarning'] = "$caBase/specials/SpecialSulRenameWarning.php";
+		$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
+		$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
+	}
+};
+
 /**
  * @param $type
  * @param $action
