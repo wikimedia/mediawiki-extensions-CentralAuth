@@ -21,6 +21,7 @@ $specialPageAliases['en'] = array(
 	'MultiLock' => array( 'MultiLock' ),
 	'GlobalRenameUser' => array( 'GlobalRenameUser' ),
 	'GlobalRenameProgress' => array( 'GlobalRenameProgress' ),
+	'SulRenameWarning' => array( 'SulRenameWarning' ),
 );
 
 /** Afrikaans (Afrikaans) */
