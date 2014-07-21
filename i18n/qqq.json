@@ -438,7 +438,6 @@
 	"globalrenamerequest-save-error": "Used as error message.",
 	"globalrenamerequest-status-title": "Page title when request is pending.",
 	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
-	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name.\n\nParameters:\n* $1 - the new username they should use",
 	"centralauth-usermerge-form-adduser": "Label on button that when clicked adds a new form field to input a username into.\n{{Identical|Add user}}",
 	"centralauth-usermerge-form-deleteuser": "Label on button that when clicked removes the associated form field.\n{{Identical|Remove user}}",
 	"globalrenamequeue": "{{doc-special|GlobalRenameQueue}}",
@@ -475,5 +474,9 @@
 	"globalrenamequeue-email-subject-approved": "Email subject line for approved request.",
 	"globalrenamequeue-email-subject-rejected": "Email subject line for rejected request.",
 	"globalrenamequeue-email-body-approved": "Email body for approved request.\n\n* $1 is the old username\n* $2 is the new username.",
-	"globalrenamequeue-email-body-rejected": "Email body for rejected request.\n\n* $1 is the old username.\n* $2 is the new username.\n* $3 is the message left by the user who processed the request."
+	"globalrenamequeue-email-body-rejected": "Email body for rejected request.\n\n* $1 is the old username.\n* $2 is the new username.\n* $3 is the message left by the user who processed the request.",
+	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name\n\n* $1 is the new username they should use.",
+	"sulrenamewarning-title" : "[[Special:SulRenameWarning]] title\n\n* $1 is the user's new name for GENDER",
+	"sulrenamewarning-renamed" : "Notice to user that their account has been renamed.\n\n* $1 is the user's old name\n* $2 is the user's new name",
+	"sulrenamewarning-usenew" : "Instructions to user to login with new name in the future\n\n* $1 is the user's new name"
 }
