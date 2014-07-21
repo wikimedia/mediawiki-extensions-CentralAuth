@@ -24,6 +24,7 @@ $specialPageAliases['en'] = array(
 	'GlobalUserMerge' => array( 'GlobalUserMerge' ),
 	'GlobalRenameRequest' => array( 'GlobalRenameRequest' ),
 	'GlobalRenameQueue' => array( 'GlobalRenameQueue' ),
+	'SulRenameWarning' => array( 'SulRenameWarning' ),
 );
 
 /** Afrikaans (Afrikaans) */
