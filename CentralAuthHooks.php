@@ -1,7 +1,6 @@
 <?php
 
 class CentralAuthHooks {
-
 	/**
 	 * Callback to register with $wgExtensionFunctions to complete configuration
 	 * after other initial configuration has completed. This can be used to
@@ -12,6 +11,7 @@ class CentralAuthHooks {
 		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
 		global $wgSpecialPages, $wgSpecialPageGroups, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
+		global $wgCentralAuthCheckSULMigration;
 		$caBase = __DIR__;
 
 		if ( class_exists( 'RenameuserSQL' ) ) {
@@ -75,6 +75,14 @@ class CentralAuthHooks {
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 			);
+		}
+
+		if ( $wgCentralAuthCheckSULMigration ) {
+			// Install hidden special page for renamed users
+			$wgAutoloadClasses['SpecialSulRenameWarning'] =
+				"$caBase/specials/SpecialSulRenameWarning.php";
+			$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
+			$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
 		}
 
 		if ( $wgCentralAuthCheckSULMigration ) {
@@ -1880,6 +1888,34 @@ class CentralAuthHooks {
 			'setglobalaccountstatus' => 'setglobalaccountstatus',
 			'deleteglobalaccount' => 'deleteglobalaccount',
 		);
+		return true;
+	}
+
+	/**
+	 * Handler for PostLoginRedirect
+	 * @param string $returnTo The page to return to
+	 * @param array $returnToQuery Url parameters
+	 * @param string $type Type of login redirect
+	 */
+	public static function onPostLoginRedirect(
+		&$returnTo, &$returnToQuery, &$type
+	) {
+		global $wgCentralAuthCheckSULMigration, $wgUser;
+		if ( $wgCentralAuthCheckSULMigration &&
+			$wgUser->getRequest()->getSessionData( 'CentralAuthForcedRename' ) === true &&
+			( $type == 'success' || $type == 'successredirect' )
+		) {
+			wfDebugLog( 'SUL', 'Redirecting user to Special:SulRenameWarning' );
+			// Store current redirect target in session so we can provide a link
+			// later.
+			$wgUser->getRequest()->setSessionData( 'SulRenameWarning', array(
+				'returnTo' => $returnTo,
+				'returnToQuery' => $returnToQuery,
+			) );
+			$returnTo = SpecialPageFactory::getLocalNameFor( 'Special:SulRenameWarning' );
+			$returnToQuery = array();
+			return false;
+		}
 		return true;
 	}
 }

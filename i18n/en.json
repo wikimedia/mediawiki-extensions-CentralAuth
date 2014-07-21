@@ -410,5 +410,8 @@
 	"globalrenamerequest-save-error": "Failed to save request, Please try again.",
 	"globalrenamerequest-status-title": "Rename request pending approval",
 	"globalrenamerequest-status-text": "Your username change request is current in progress and awaiting approval by a steward. You will be notified via email when the request is processed.\n\n;Current username:\n:$1\n;Requested username:\n:$2",
-	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead."
+	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead.",
+	"sulrenamewarning-title" : "{{GENDER:$1|Your}} account has been renamed",
+	"sulrenamewarning-renamed" : "{{GENDER:$2|Your}} account '''$1''' has been renamed to '''$2''' during automatic migration to to the unified login system of {{int:Centralauth-groupname}}.",
+	"sulrenamewarning-usenew" : "Please use {{GENDER:$1|your}} new username '''$1''' when logging in in the future."
 }
