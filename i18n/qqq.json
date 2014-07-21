@@ -401,5 +401,8 @@
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed",
 	"log-name-gblrename": "Log page title",
 	"log-description-gblrename": "Log page description",
-	"logentry-gblrename-rename": "{{Logentry}}"
+	"logentry-gblrename-rename": "{{Logentry}}",
+	"sulrenamewarning-title" : "[[Special:SulRenameWanring]] title",
+	"sulrenamewarning-renamed" : "Notice to user that their account has been renamed.\n\n* $1 is the user's old name\n*$2 is the user's new name",
+	"sulrenamewarning-usenew" : "Instructions to user to login with new name in the future"
 }
