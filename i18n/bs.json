@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"CERminator"
+			"CERminator",
+			"KWiki"
 		]
 	},
 	"mergeaccount": "Status spajanja korisničkih računa",
@@ -66,7 +67,7 @@
 	"centralauth-finish-noconfirms": "Nijedan račun nije mogao biti potvrđen koristeći ovu šifru.",
 	"centralauth-finish-incomplete": "Nekoliko računa je spojeno koristeći ovu šifru.\nOstali računi još nisu potvrđeni.",
 	"centralauth-merge-attempt": "'''Provjeravaju se navedene šifre sa ostalim nespojenim računima…'''",
-	"centralauth-attach-list-attached": "Unificirani račun pod imenom \"$1\" uključuje slijedeće račune:",
+	"centralauth-attach-list-attached": "Objedinjeni račun pod imenom \"$1\" uključuje sljedeće račune:",
 	"centralauth-attach-title": "Potvrdi račun",
 	"centralauth-attach-text": "Ovaj račun još nije premješten na unificirani račun.\nAko je ovaj globalni račun također Vaš, možete spojiti ovaj račun ako upišete šifru globalnog računa:",
 	"centralauth-attach-submit": "Premjesti račun",
@@ -149,7 +150,7 @@
 	"centralauth-prefs-complete": "Sve u redu!",
 	"centralauth-prefs-migration": "Prijenos u toku",
 	"centralauth-prefs-count-attached": "Vaš račun je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}} sajta.",
-	"centralauth-prefs-count-unattached": "Nepotvrđeni računi sa Vašim imenom ostali su na $1 {{PLURAL:$1|projektu|projekta|projekata}}.",
+	"centralauth-prefs-count-unattached": "Nepotvrđeni računi s Vašim imenom ostali su na $1 {{PLURAL:$1|projektu|projekta|projekata}}.",
 	"centralauth-prefs-detail-unattached": "Ovaj sajt projekta još nije potvrđen da pripada globalnom računu.",
 	"centralauth-prefs-manage": "Uredite Vaš globalni račun",
 	"centralauth-prefs-view": "Pogledaj podatke globalnog korisnika",
@@ -241,7 +242,7 @@
 	"centralauth-editset-submit-delete": "Obriši",
 	"centralauth-editset-badname": "Prazno ili nevaljano ime seta.",
 	"centralauth-editset-badtype": "Tip seta nije validan.",
-	"centralauth-editset-setexists": "Set sa takvim imenom već postoji",
+	"centralauth-editset-setexists": "Set s takvim imenom već postoji",
 	"centralauth-editset-nowikis": "Nijedan wiki nije naveden.",
 	"centralauth-editset-nouse": "(ništa)",
 	"centralauth-editset-usage": "Koristi se u grupama:",
