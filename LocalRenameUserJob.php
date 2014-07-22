@@ -20,8 +20,21 @@ class LocalRenameUserJob extends Job {
 	}
 
 	public function run() {
-		if ( !class_exists( 'RenameuserSQL' ) ) {
+		$this->renameuserStatus = new GlobalRenameUserStatus( $this->params['from'] );
+		try {
+			$this->doRename();
+		} catch ( Exception $e ) {
+			// This will lock the user out of their account
+			// until a sysadmin intervenes
 			$this->updateStatus( 'failed' );
+			throw $e;
+		}
+
+		return true;
+	}
+
+	public function doRename() {
+		if ( !class_exists( 'RenameuserSQL' ) ) {
 			throw new MWException( 'Extension:Renameuser is not installed' );
 		}
 		$from = $this->params['from'];
@@ -42,14 +55,12 @@ class LocalRenameUserJob extends Job {
 			// This should never happen!
 			// If it does happen, the user will be locked out of their account
 			// until a sysadmin intervenes...
-			$this->updateStatus( 'failed' );
 			throw new MWException( 'RenameuserSQL::rename returned false.' );
 		}
 		if ( $this->params['movepages'] ) {
 			$this->movePages();
 		}
 		$this->done();
-		return true;
 	}
 
 	/**
