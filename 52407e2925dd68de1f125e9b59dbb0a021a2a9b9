@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_44beb2ac",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-07-22T09:13:20Z",
+      "side": 1,
+      "message": "I think run is supposed to return bool",
+      "revId": "52407e2925dd68de1f125e9b59dbb0a021a2a9b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
