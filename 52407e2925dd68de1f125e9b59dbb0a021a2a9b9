@@ -16,6 +16,24 @@
       "revId": "52407e2925dd68de1f125e9b59dbb0a021a2a9b9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_04dc2a1b",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-22T09:15:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_44beb2ac",
+      "revId": "52407e2925dd68de1f125e9b59dbb0a021a2a9b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
