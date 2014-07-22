@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_985abd83",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-22T18:03:11Z",
+      "side": 1,
+      "message": "Should support GENDER on $1 and $2. Wrapping both in {{GENDER:$1|$1}} and {{GENDER:$2|$2}} respectively if it\u0027s already supported should suffice. Same below.",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_7857115c",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-22T18:03:11Z",
+      "side": 1,
+      "message": "Should support GENDER on $1.",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
