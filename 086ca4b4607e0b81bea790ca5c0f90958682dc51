@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_937dfeb2",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-22T20:46:57Z",
+      "side": 1,
+      "message": "Checking the values in the business logic as well is reasonable. I do that in the hook and I\u0027ll make sure that I do it in the special page as well. I don\u0027t see that installing conditionally is \"hard\". This anon function actually works. I started to make a prettier callback and then noticed that there is one wgExtensionsFunction hook here already and another config block that really should be moved to a hook as well. It seems like this would be nicer to clean up all together. I could make another patch to do that and then rebase this on that once it is merged (or mergeable).",
+      "parentUuid": "8e28a382_d385c6d4",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_732972e0",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_e5511512",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1768,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-22T20:46:57Z",
+      "side": 1,
+      "message": "GettingStarted is the only other place I\u0027ve found this hook used. They created it in I219353d and just didn\u0027t need that feature. Should be easy to fix in core.",
+      "parentUuid": "8e28a382_732972e0",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_985abd83",
         "filename": "i18n/en.json",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-22T18:03:11Z",
       "side": 1,
       "message": "Should support GENDER on $1 and $2. Wrapping both in {{GENDER:$1|$1}} and {{GENDER:$2|$2}} respectively if it\u0027s already supported should suffice. Same below.",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_45b8e924",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-22T20:46:57Z",
+      "side": 1,
+      "message": "There should be a gender macro on the username itself? I can\u0027t find anywhere else in CentralAuth that is done. The only gender macro used currently is for the word \"renamed\" itself in the log table for recording that someone renamed another user.",
+      "parentUuid": "8e28a382_985abd83",
       "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -98,6 +152,24 @@
       "writtenOn": "2014-07-22T20:01:01Z",
       "side": 1,
       "message": "Probably need an else case saying something like \"Your account is fine!\"",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2525dda9",
+        "filename": "specials/SpecialSulRenameWarning.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-22T20:46:57Z",
+      "side": 1,
+      "message": "Actually there should be no way to get into this page (at least with it\u0027s current functionality) unless your account was force migrated and you logged in with the old name. I need to bring logic in here to match the exclusion logic in the hook and then redirect you away if you aren\u0027t affected. Not sure where to send the user in that case...",
+      "parentUuid": "8e28a382_d30ee690",
       "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
