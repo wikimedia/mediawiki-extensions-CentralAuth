@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_1b8004c4",
+        "filename": "GlobalRename/GlobalUserMergeLogFormatter.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-23T00:39:05Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "8e28a382_dbb058da",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_4a4ed4c5",
         "filename": "LocalRenameJob.php",
         "patchSetId": 9
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_7b702806",
+        "filename": "LocalRenameJob.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-23T00:39:05Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "8e28a382_1bb700d5",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_07a44503",
         "filename": "specials/SpecialGlobalUserMerge.php",
         "patchSetId": 9
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "Yeah, we check that they already exist, so this is useless.\n\nThe-\u003eisAnon() check might not work if they don\u0027t have an account attached on this wiki.",
       "parentUuid": "8e28a382_07a44503",
+      "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_fb6bf813",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-23T00:39:05Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "8e28a382_fbad5481",
       "revId": "a6f53f08d46a8fed6fcd47d456987c327409b749",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
