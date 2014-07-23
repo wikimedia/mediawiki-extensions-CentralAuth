@@ -438,6 +438,7 @@ $specialPageAliases['lb'] = array(
 	'GlobalGroupPermissions' => array( 'Global_Grupperechter' ),
 	'WikiSets' => array( 'Wiki-Seten_änneren' ),
 	'GlobalUsers' => array( 'Global_Benotzer' ),
+	'GlobalRenameUser' => array( 'Global_Benotzerëmbenennung' ),
 );
 
 /** Lithuanian (lietuvių) */
