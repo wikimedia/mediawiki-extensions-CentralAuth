@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_cfa18f92",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-23T17:39:48Z",
+      "side": 1,
+      "message": "I think technically it\u0027s most likely that \"Your\" has a GENDER component, but I didn\u0027t want to tire you with that. And because I don\u0027t know the grammar of too many languages, I didn\u0027t want to make assumptions, other than that at least some languages would need it.",
+      "parentUuid": "8e28a382_45b8e924",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_7857115c",
         "filename": "i18n/en.json",
         "patchSetId": 1
