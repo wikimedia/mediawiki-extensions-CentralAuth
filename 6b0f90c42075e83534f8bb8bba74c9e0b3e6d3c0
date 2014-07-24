@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_18f6b4f6",
+        "filename": "tests/CentralAuthPluginUsingDatabaseTest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-24T20:44:13Z",
+      "side": 1,
+      "message": "All three of these helper methods could be hoisted up to MediaWikiTestCase. They might come in handy for someone else some day.",
+      "revId": "6b0f90c42075e83534f8bb8bba74c9e0b3e6d3c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
