@@ -52,6 +52,24 @@
       "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_78b81825",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-24T20:39:29Z",
+      "side": 1,
+      "message": "{{done}}\u0027ish. I made the property protected. I coded it up as an array keyed by username and it can work but it\u0027s false security because then you are stating that all users named \u0027JimBob\u0027 have been renamed. We don\u0027t have a access to the input username, the input password and the built user object all at the same time and that\u0027s what would be needed to make this state annotation safe for concurrency.\n\nI did add a huge and snarky comment about the situation to dissuade anyone from citing this usage as \"something we already do\" elsewhere.",
+      "parentUuid": "8e28a382_b3ec69b9",
+      "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
