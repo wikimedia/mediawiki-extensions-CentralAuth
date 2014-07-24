@@ -479,39 +479,8 @@ $wgResourceModules['ext.centralauth.globalrenameuser'] = array(
 	)
 ) + $commonModuleInfo;
 
-// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
-// Though, doing it this way, AntiSpoof has to be loaded/included first
-// I guess this is bug 30234
-if ( class_exists( 'AntiSpoof' ) ) {
-	$wgExtensionCredits['antispam'][] = array(
-		'path' => __FILE__,
-		'name' => 'AntiSpoof for CentralAuth',
-		'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
-		'author' => 'Sam Reed',
-		'descriptionmsg' => 'centralauth-antispoof-desc',
-	);
-	$wgAutoloadClasses['CentralAuthSpoofUser'] = "$caBase/AntiSpoof/CentralAuthSpoofUser.php";
-	$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] = "$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
-
-	$wgHooks['AbortNewAccount'][] = 'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
-	$wgHooks['AddNewAccount'][] = 'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
-	$wgHooks['RenameUserComplete'][] = 'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
-}
-
-// Use an extension function so credits only appear on wikis with
-// Extension:Renameuser installed
-$wgExtensionFunctions[] = function() {
-	global $wgExtensionCredits;
-	if ( class_exists( 'RenameuserSQL' ) ) {
-		$wgExtensionCredits['specialpage'][] = array(
-			'path' => __FILE__,
-			'name' => 'Renameuser for CentralAuth',
-			'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
-			'author' => array( 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ),
-			'descriptionmsg' => 'centralauth-rename-desc',
-		);
-	}
-};
+// Finish configuration after other extensions and settings are loaded.
+$wgExtensionFunctions[] = 'CentralAuthHooks::onRunExtensionFunctions';
 
 /**
  * @param $type
