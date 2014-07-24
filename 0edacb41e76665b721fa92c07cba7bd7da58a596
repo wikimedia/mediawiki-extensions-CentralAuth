@@ -16,6 +16,24 @@
       "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f3f6718b",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-24T03:03:38Z",
+      "side": 1,
+      "message": "I made it public so I could check the value from the unit test. Php is no fun when it comes to introspection of objects from the test harness.\n\nCan you describe a realistic use case where AuthPlugin::updateUser() would be called multiple times in a request to modify distinct User objects? Since PHP is single threaded and shared nothing I don\u0027t see the major harm in abusing a member variable to pass state from authenticate() to updateIUser(). I could null the member in updateUser() to \"cleanup\".\n\nThat being said, switching to a hash of old \u003d\u003e new wouldn\u0027t really cause any harm other than the negligible memory bloat of a PHP array.",
+      "parentUuid": "8e28a382_93116dfe",
+      "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
