@@ -78,6 +78,7 @@
 	"centralauth-attach-submit": "Benotzerkont migréieren",
 	"centralauth-attach-success": "De Benotzerkont gouf mat dem globale Benotzerkont zesummegeféiert.",
 	"centralauth": "Manager vu globale Benotzerkonten",
+	"centralauth-ro": "Informatioun vum globale Benotzerkont",
 	"centralauth-admin-intro": "Dës Spezialsäit ka benotzt gi fir global Benotzerkonten ze verwalten.",
 	"centralauth-admin-manage": "Date vu Benotzerkonte verwalten",
 	"centralauth-admin-view": "Informatioune vum Benotzerkont weisen",

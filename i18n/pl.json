@@ -23,7 +23,8 @@
 			"Wedkarski",
 			"Woytecr",
 			"Ymar",
-			"Alan ffm"
+			"Alan ffm",
+			"Rzuwig"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -352,5 +353,6 @@
 	"centralauth-rename-viewprogress": "Wyświetl postęp",
 	"centralauth-rename-progress-fieldset": "Lista kont lokalnych",
 	"centralauth-rename-progress-logs-fieldset": "Rejestr pozycji",
+	"log-name-gblrename": "Globalny rejestr zmian nazw użytkowników",
 	"logentry-gblrename-rename": "$1 globalnie {{GENDER:$2|zmienił|zmieniła}} nazwę $4 na $5"
 }
