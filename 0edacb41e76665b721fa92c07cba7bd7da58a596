@@ -34,6 +34,24 @@
       "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_b3ec69b9",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-24T03:07:35Z",
+      "side": 1,
+      "message": "http://php.net/manual/en/reflectionclass.getproperties.php looks like it would work.\n\nI can\u0027t think of a single time that would ever happen. But it just doesn\u0027t feel right. I\u0027m not super against the idea (why I didn\u0027t give it a -1), I\u0027m just not a fan of it.",
+      "parentUuid": "8e28a382_f3f6718b",
+      "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
