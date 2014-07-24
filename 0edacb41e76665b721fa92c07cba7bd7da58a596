@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_93116dfe",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-24T02:12:26Z",
+      "side": 1,
+      "message": "Does this need to be public?\n\nI don\u0027t think this belongs in this class either, AuthPlugin applies to all users, and isn\u0027t specific to the current user. But I don\u0027t really see an alternative.\n\nMaybe make it an array of $originalUsername \u003d\u003e $currentUsername?",
+      "revId": "0edacb41e76665b721fa92c07cba7bd7da58a596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
