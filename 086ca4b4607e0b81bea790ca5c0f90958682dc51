@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_c5d160fd",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-25T00:47:45Z",
+      "side": 1,
+      "message": "I\u0027m sure there are languages (French?) where \"your\" could be gendered. I count about 38 \"your\" references in this message file before I added these 3. I can mark them up however you think is best, but consistency is good too I think.",
+      "parentUuid": "8e28a382_cfa18f92",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_7857115c",
         "filename": "i18n/en.json",
         "patchSetId": 1
@@ -153,6 +171,24 @@
       "writtenOn": "2014-07-22T20:01:01Z",
       "side": 1,
       "message": "Needs an alias in CentralAuth.alias.php",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_25d944f8",
+        "filename": "specials/SpecialSulRenameWarning.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-25T00:47:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_13190edc",
       "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -188,6 +224,24 @@
       "side": 1,
       "message": "Actually there should be no way to get into this page (at least with it\u0027s current functionality) unless your account was force migrated and you logged in with the old name. I need to bring logic in here to match the exclusion logic in the hook and then redirect you away if you aren\u0027t affected. Not sure where to send the user in that case...",
       "parentUuid": "8e28a382_d30ee690",
+      "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e5de9cde",
+        "filename": "specials/SpecialSulRenameWarning.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-07-25T00:47:45Z",
+      "side": 1,
+      "message": "Added a permissions check. It may or may not turn out to be the right way to go. Until Brandon gets a minute to decide if this flow is even reasonable I don\u0027t think we should get to worried about it.",
+      "parentUuid": "8e28a382_2525dda9",
       "revId": "086ca4b4607e0b81bea790ca5c0f90958682dc51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
