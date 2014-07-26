@@ -17,7 +17,8 @@
 			"Servien",
 			"Siebrand",
 			"Southparkfan",
-			"TBloemink"
+			"TBloemink",
+			"Sjoerddebruin"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -91,8 +92,10 @@
 	"centralauth-attach-submit": "Gebruiker migreren",
 	"centralauth-attach-success": "De gebruiker is gemigreerd naar de samengevoegde gebruiker.",
 	"centralauth": "Globaal gebruikersbeheer",
+	"centralauth-ro": "Globale gebruikersgegevens",
 	"centralauth-admin-intro": "Deze interface kan gebruikt worden voor het beheer van globale gebruikers.",
 	"centralauth-admin-manage": "Gebruikersgegevens beheren",
+	"centralauth-admin-view": "Bekijk gebruikersgegevens",
 	"centralauth-admin-username": "Gebruikersnaam:",
 	"centralauth-admin-lookup-ro": "Gebruikersgegevens bekijken",
 	"centralauth-admin-lookup-rw": "Gebruiker beheren",
