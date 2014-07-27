@@ -321,7 +321,7 @@
 	"right-centralauth-autoaccount": "כניסה לחשבון הגלובלי באופן אוטומטי",
 	"right-centralauth-unmerge": "ביטול המיזוג של חשבון כללי",
 	"right-centralauth-lock": "נעילת או שחרור חשבון כללי",
-	"right-centralauth-oversight": "העלמת או הסתרת החשבון הכללי",
+	"right-centralauth-oversight": "העלמה או הסתרה של חשבון גלובלי",
 	"right-centralauth-merge": "מיזוג החשבון של המשתמש עצמו",
 	"right-globalgrouppermissions": "ניהול קבוצות כלליות",
 	"abusefilter-edit-builder-vars-global-user-groups": "קבוצות גלובליות שמשתמש זה חבר בהן",

@@ -20,7 +20,8 @@
 			"Waihorace",
 			"Wctaiwan",
 			"Wrightbus",
-			"Xiaomingyan"
+			"Xiaomingyan",
+			"LNDDYL"
 		]
 	},
 	"mergeaccount": "帳號統一狀態",
@@ -75,7 +76,7 @@
 	"centralauth-merge-method-login": "已建立於登入時",
 	"centralauth-merge-method-primary-desc": "這是該帳戶在維基系統中的最初合併。注意，它可能不同於真正維基的該用戶。",
 	"centralauth-merge-method-empty-desc": "表示該本地帳戶合併，因為它沒有修改。",
-	"centralauth-merge-method-mail-desc": "表示該本地帳戶合併，因為它的電子郵件地址和主要帳戶的電子郵件地址相匹配。",
+	"centralauth-merge-method-mail-desc": "表示該本地帳戶合併，因為它的電子郵件位址和主要帳戶的電子郵件位址相匹配。",
 	"centralauth-merge-method-password-desc": "表示該本地帳戶合併，因為用戶指定一個有效的密碼。",
 	"centralauth-merge-method-admin-desc": "表示該本地帳戶由監管員手動合併。\n因為安全原因，這項功能已被禁用。",
 	"centralauth-merge-method-new-desc": "表示全域帳戶時自動建立本地帳戶已建立。",
@@ -279,7 +280,7 @@
 	"centralauth-editgroup-restrictions": "在此組處於活躍的維基站點：",
 	"centralauth-editgroup-rename-taken": "重新命名失敗：已存在同名的群組 $1 。",
 	"centralauth-editgroup-noset": "（無）",
-	"centralauth-editgroup-submit": "保存更改到通用群組",
+	"centralauth-editgroup-submit": "儲存更改到通用群組",
 	"centralauth-editgroup-perms": "已指定的許可:",
 	"centralauth-editgroup-reason": "原因：",
 	"centralauth-editgroup-success": "通用群組已更改",

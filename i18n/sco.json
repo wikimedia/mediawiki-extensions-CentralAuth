@@ -267,7 +267,7 @@
 	"centralauth-editset-badname": "Onvalid or tuim set name.",
 	"centralauth-editset-badtype": "Onvalid set type.",
 	"centralauth-editset-setexists": "Set wi that name awreadie exeests",
-	"centralauth-editset-nowikis": "Nae wikis speceefied.",
+	"centralauth-editset-nowikis": "(nane)",
 	"centralauth-editset-nouse": "(nane)",
 	"centralauth-editset-usage": "Uised in groops:",
 	"centralauth-editset-badwikis": "The follaein {{PLURAL:$2|wiki disna|wikis dinna}} exeest: $1.",
