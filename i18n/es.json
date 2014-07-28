@@ -315,7 +315,7 @@
 	"centralauth-editset-intro-rw": "Los siguientes grupos de wikis ya han sido creados.\nPuedes verlos y modificarlos, o crear un grupo nuevo.",
 	"centralauth-editset-intro-ro": "Debajo está la lista de los grupos de wikis existentes.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|borrar]])",
-	"centralauth-editset-new": "Crear un nuevo grupo",
+	"centralauth-editset-new": "Crear un conjunto nuevo",
 	"centralauth-editset-notfound": "No se encontró el grupo de wikis «$1».",
 	"centralauth-editset-optin": "Inclusión optativa (sólo incluye los wikis especificados)",
 	"centralauth-editset-optout": "Exclusión optativa (incluye todos los wikis excepto los especificados)",

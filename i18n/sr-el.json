@@ -149,7 +149,7 @@
 	"centralauth-listusers-nolocal": "otkačen ili ne postoji lokalno",
 	"centralauth-admin-multi-bot": "Skorašnje izmene",
 	"centralauth-admin-multi-botcheck": "Označuje izmene u [[Special:RecentChanges|skorašnjim izmenama]] kao izmene bota.",
-	"centralauth-seconds-ago": "pre $1 {{PLURAL:$1|sekundu|sekunde|sekundi}}",
+	"centralauth-seconds-ago": "pre $1 {{PLURAL:$1|sekunde|sekunde|sekundi}}",
 	"centralauth-minutes-ago": "pre $1 {{PLURAL:$1|minutu|minute|minuta}}",
 	"centralauth-hours-ago": "pre $1 {{PLURAL:$1|sat|sata|sati}}",
 	"centralauth-days-ago": "Pre $1 {{PLURAL:$1|dan|dana}}",

@@ -237,7 +237,7 @@
 	"centralauth-editset-badname": "আপনি সঠিক নয় অথবা খালি সেট নাম দিয়েছেন।",
 	"centralauth-editset-badtype": "আপনি সেট ভুল ধরণ দিয়েছেন।",
 	"centralauth-editset-setexists": "এই নামের উইকি সেট আগেই রয়েছে",
-	"centralauth-editset-nowikis": "কোন উইকি নির্ধারণ করা হয়নি।",
+	"centralauth-editset-nowikis": "(কিছু নাই)",
 	"centralauth-editset-nouse": "(কিছু নাই)",
 	"centralauth-editset-usage": "গ্রুপে ব্যবহৃত হয়েছে:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|উইকি|উইকিসমূহ}} বিদ্যমান নয়: $1।",

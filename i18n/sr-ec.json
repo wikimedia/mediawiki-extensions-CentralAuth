@@ -153,7 +153,7 @@
 	"centralauth-listusers-nolocal": "непривезан или не постоји локално",
 	"centralauth-admin-multi-bot": "Скорашње измене",
 	"centralauth-admin-multi-botcheck": "Означује измене у [[Special:RecentChanges|скорашњим изменама]] као измене бота.",
-	"centralauth-seconds-ago": "пре $1 {{PLURAL:$1|секунде|секунди}}",
+	"centralauth-seconds-ago": "пре $1 {{PLURAL:$1|секунде|секунде|секунди}}",
 	"centralauth-minutes-ago": "пре $1 {{PLURAL:$1|минут|минута|минута}}",
 	"centralauth-hours-ago": "пре $1 {{PLURAL:$1|сат|сата|сати}}",
 	"centralauth-days-ago": "пре $1 {{PLURAL:$1|дан|дана|дана}}",

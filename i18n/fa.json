@@ -310,7 +310,7 @@
 	"centralauth-editset-nowikis": "هیچ ویکی‌ای مشخص نشد.",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(هیچ)",
-	"centralauth-editset-usage": "استفاده شده در گروه:",
+	"centralauth-editset-usage": "استفاده‌شده در گروه‌های:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|ویکی|ویکی‌های}} زیر وجود {{PLURAL:$2|ندارد|ندارند}}: $1.",
 	"centralauth-editset-success": "تنظیمات ویکی را با موفقیت تغییر داد.",
 	"centralauth-editset-success-delete": "مجموعه ویکی با موفقیت حذف شد.",
