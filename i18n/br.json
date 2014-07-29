@@ -285,7 +285,7 @@
 	"centralauth-editset-badname": "Direizh eo anv ar c'hoari a wikioù pe nann-titouret.",
 	"centralauth-editset-badtype": "Doare c'hoari direizh.",
 	"centralauth-editset-setexists": "Ur c'hoari wikioù gant an anv-se a zo dija",
-	"centralauth-editset-nowikis": "N'eus bet diferet wiki ebet.",
+	"centralauth-editset-nowikis": "(hini ebet)",
 	"centralauth-editset-nouse": "(hini ebet)",
 	"centralauth-editset-usage": "Implijet er strolladoù :",
 	"centralauth-editset-badwikis": "N'eus ket eus ar {{PLURAL:$2|wiki-mañ|wikioù-mañ}} : $1.",
@@ -308,5 +308,16 @@
 	"centralauth-completelogin-back": "Distreiñ d'ar bajenn a-raok.",
 	"centralauth-warning-notloggedin": "N'oc'h ket kevreet evit c'hoazh.",
 	"centralauth-warning-notattached": "n'eo ket stag ar gont lec'hel ouzh unan hollek.",
-	"centralauth-finishglobaliseemail_subject": "Kadarnaat ar gont {{SITENAME}}"
+	"centralauth-finishglobaliseemail_subject": "Kadarnaat ar gont {{SITENAME}}",
+	"right-centralauth-rename": "Adenvel kontoù hollek",
+	"action-centralauth-rename": "adenvel kontoù hollek",
+	"centralauth-rename-form-newname": "Anv implijer nevez",
+	"centralauth-rename-form-reason": "Abeg",
+	"centralauth-rename-doesnotexist": "N'eus ket eus ar gont pourchaset.",
+	"centralauth-rename-progress-username": "Anv implijer",
+	"centralauth-rename-table-domain": "Wiki lec'hel",
+	"centralauth-rename-table-status": "Statud",
+	"centralauth-rename-table-status-inprogress": "O vont en-dro",
+	"centralauth-rename-table-status-queued": "Lakaet el lostennad",
+	"centralauth-rename-table-status-done": "Graet"
 }

@@ -218,7 +218,7 @@
 	"centralauth-logout-no-others": "Zostałeś automatycznie wylogowany z innych projektów z {{int:Centralauth-groupname}}.",
 	"centralauth-hidden-blockreason": "centralnie ukryte przez $1 o $2 ponieważ $3",
 	"centralauth-login-error-locked": "Nie możesz się zalogować, gdyż twoje konto jest zablokowane globalnie.",
-	"centralauth-log-name": "Rejestr zarządzania kontami uniwersalnymi",
+	"centralauth-log-name": "Zarządzanie kontem uniwersalnym",
 	"centralauth-log-header": "Rejestr zawiera zdarzenia dotyczące kont uniwersalnych: usunięcia, zablokowania i odblokowania.",
 	"centralauth-log-entry-delete": "usunął konto uniwersalne „$1”",
 	"centralauth-log-entry-lock": "zablokował konto uniwersalne „$1”",
