@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_bcd091fb",
+        "filename": "CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-07-29T14:59:48Z",
+      "side": 1,
+      "message": "Status::newFatal requires an argument.",
+      "revId": "43c9f6acbe46d2889f79648ba3bca72bc1d1e5a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
