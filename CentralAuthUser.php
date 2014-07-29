@@ -1528,13 +1528,14 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
-		if ( User::comparePasswords( $encrypted, $plaintext, $salt ) ) {
+		$hash = User::getPasswordFactory()->newFromCiphertext( $encrypted );
+		if ( $hash->equals( $plaintext ) ) {
 			return true;
 		} elseif ( function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			if ( User::comparePasswords( $encrypted, $latin1, $salt ) ) {
+			if ( $hash->equals( $latin1 ) ) {
 				return true;
 			}
 		}
@@ -1988,7 +1989,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {
-		return array( '', User::crypt( $password ) );
+		return array(
+			'',
+			User::getPasswordFactory()->newFromPlaintext( $password )->toString()
+		);
 	}
 
 	/**
