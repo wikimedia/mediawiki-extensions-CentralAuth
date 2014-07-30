@@ -3,6 +3,51 @@
 class CentralAuthHooks {
 
 	/**
+	 * Callback to register with $wgExtensionFunctions to complete configuration
+	 * after other initial configuration has completed. This can be used to
+	 * avoid extension ordering issues and do things that are dependent on
+	 * feature flags.
+	 */
+	public static function onRunExtensionFunctions() {
+		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
+		$caBase = __DIR__;
+
+		if ( class_exists( 'RenameuserSQL' ) ) {
+			// Credits should only appear on wikis with Extension:Renameuser
+			// installed
+			$wgExtensionCredits['specialpage'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'Renameuser for CentralAuth',
+				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
+				'author' => array( 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ),
+				'descriptionmsg' => 'centralauth-rename-desc',
+			);
+		}
+
+		if ( class_exists( 'AntiSpoof' ) ) {
+			// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
+			$wgExtensionCredits['antispam'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'AntiSpoof for CentralAuth',
+				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
+				'author' => 'Sam Reed',
+				'descriptionmsg' => 'centralauth-antispoof-desc',
+			);
+			$wgAutoloadClasses['CentralAuthSpoofUser'] =
+				"$caBase/AntiSpoof/CentralAuthSpoofUser.php";
+			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
+				"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
+
+			$wgHooks['AbortNewAccount'][] =
+				'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
+			$wgHooks['AddNewAccount'][] =
+				'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
+			$wgHooks['RenameUserComplete'][] =
+				'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
+		}
+	}
+
+	/**
 	 * Check whether we're in API mode and the "centralauthtoken" parameter was
 	 * sent.
 	 *
