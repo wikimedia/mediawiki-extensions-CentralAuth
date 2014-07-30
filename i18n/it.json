@@ -374,7 +374,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Voci del registro",
 	"centralauth-rename-movelog": "Pagina spostata automaticamente durante la rinomina dell'utente \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Vuoi davvero rinominare globalmente questo utente?",
-	"log-name-gblrename": "Ridenominazioni globali",
+	"log-name-gblrename": "Utenti rinominati globalmente",
 	"log-description-gblrename": "Questi eventi registrano la ridenominazione globale degli utenti.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|ha rinominato}} globalmente $4 in $5"
 }
