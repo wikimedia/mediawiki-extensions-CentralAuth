@@ -133,7 +133,7 @@
 	"centralauth-admin-none-selected": "수정할 계정이 선택되지 않았습니다.",
 	"centralauth-admin-already-unmerged": "이미 병합 해제되었기 때문에, $1을 건너뜁니다",
 	"centralauth-admin-unmerge-success": "병합된 {{PLURAL:$1|계정}} $1개가 성공적으로 해제되었습니다",
-	"centralauth-admin-delete-title": "계정 지우기",
+	"centralauth-admin-delete-title": "계정 삭제",
 	"centralauth-admin-delete-description": "통합 계정 삭제는 모든 통합 설정을 삭제하고, 모든 로컬 계정을 분리하고, 다른 사람이 사용할 수 있도록 할 것입니다.\n모든 로컬의 계정은 계속 존재할 것입니다.\n통합 이전에 만든 로컬 계정의 비밀번호는 통합 이전의 비밀번호로 되돌려질 것입니다.",
 	"centralauth-admin-delete-button": "이 계정 삭제",
 	"centralauth-admin-delete-confirm": "정말로 이 계정을 삭제하겠습니까?",

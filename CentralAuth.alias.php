@@ -770,7 +770,7 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
-	'MergeAccount' => array( '合併賬戶' ),
+	'MergeAccount' => array( '合併帳戶' ),
 	'GlobalGroupMembership' => array( '全域使用者權限' ),
 	'GlobalGroupPermissions' => array( '全域組權限' ),
 	'WikiSets' => array( 'Wiki組', '編輯Wiki組' ),
