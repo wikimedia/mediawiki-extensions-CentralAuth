@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_b589a9f0",
+        "filename": "db_patches/patch-requestrename.sql",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-01T00:38:22Z",
+      "side": 1,
+      "message": "I\u0027d prefer not hardcoding a Wikimedia-ism (\"steward\") into the schema. Maybe \"rq_performer\"?",
+      "revId": "eaa3f057f7895ddcd2be6dafa6b01edb0e6b3b06",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
