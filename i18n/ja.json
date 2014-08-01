@@ -166,6 +166,7 @@
 	"centralauth-admin-not-authorized": "あなたにはこの操作を実行する権限がありません",
 	"centralauth-admin-too-many-edits": "グローバルアカウント「<nowiki>$1</nowiki>」は編集回数が $2 {{PLURAL:$2|件}}を超過しているため非表示にできません。",
 	"centralauth-admin-title": "$1 のグローバルアカウント管理",
+	"centralauth-admin-title-ro": "$1 のグローバルアカウント情報",
 	"globalusers": "グローバルアカウント一覧",
 	"centralauth-listusers-locked": "ロックされている",
 	"centralauth-listusers-attached": "[[User:$1|ローカルに作成済み]]",
@@ -184,6 +185,7 @@
 	"centralauth-admin-action-hide-lists": "選択したアカウントを公開一覧から秘匿",
 	"centralauth-admin-action-hide-oversight": "選択したアカウントを完全に秘匿",
 	"centralauth-admin-multi-bot": "最近の更新",
+	"centralauth-admin-multi-botcheck": "[[Special:RecentChanges|{{int:recentchanges}}]]上のエントリをボットとしてマークする。",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|秒}}前",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|分}}前",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|時間}}前",
@@ -204,6 +206,7 @@
 	"centralauth-renameuser-reserved": "利用者名 $2 はグローバルアカウントとして使用されています。",
 	"centralauth-invalid-wiki": "そのようなウィキ データベースはありません: $1",
 	"centralauth-account-exists": "アカウントが作成できません: 希望利用者名は統一ログインシステムで既に取得されています。",
+	"centralauth-account-unattached-exists": "アカウントを作成できません: 指定されたユーザー名は統一ログインシステム上で既に他のユーザーが使用しています。",
 	"centralauth-account-exists-reset": "利用者名 $1 はこのウィキには登録されていませんが、[[Special:CentralAuth/$1|利用者が登録されているウィキ]]でパスワードを再設定できます。",
 	"centralauth-login-progress": "{{int:Centralauth-groupname}}のウィキ群にログインしました:",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}}の他のウィキ群からもログアウトしました:",
@@ -341,5 +344,6 @@
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}}のアカウント確認",
 	"centralauth-finishglobaliseemail_body": "あなたのメールアドレスは全ウィキメディアプロジェクト上で「$2」というアカウントと関連付けられました。\n主アカウントは {{SITENAME}} にあります。\n\nこのアカウントが本当にあなたのものであることを確認し、自動的に統合できなかったアカウントを統合し、\nパスワードを忘れたときにアカウントを復活させられるようにするため、次のリンクをブラウザーで開いてください。\n\n$3\n\nこのアカウントがあなたのものでない場合は、次のリンクを開いてメールアドレスの確認を取り消してください。\n\n$5\n\nこの確認コードは $6 $7 に失効します。",
 	"right-centralauth-rename": "グローバルアカウントの名前を変更",
-	"action-centralauth-rename": "グローバルアカウントの名前の変更"
+	"action-centralauth-rename": "グローバルアカウントの名前の変更",
+	"logentry-gblrename-rename": "$1 $4 から $5 へグローバルに{{GENDER:$2|利用者名変更しました}}"
 }

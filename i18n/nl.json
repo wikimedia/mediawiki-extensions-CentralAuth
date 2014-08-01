@@ -18,7 +18,8 @@
 			"Siebrand",
 			"Southparkfan",
 			"TBloemink",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"JurgenNL"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -340,5 +341,6 @@
 	"centralauth-warning-notattached": "De lokale gebruiker is niet gekoppeld aan een globale gebruiker.",
 	"centralauth-finishglobaliseemail_subject": "Gebruikersbevestiging voor {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "Uw e-mailadres is gekoppeld aan de gebruikersnaam \"$2\" op alle projecten van Wikimedia. Uw primaire account is op {{SITENAME}}.\n\nU kunt bevestigen dat deze gebruikersnaam echt van u is via de volgende link:\n\n$3\n\nOok wordt het zo mogelijk uw wachtwoord op te vragen indien u dit vergeet. Als op andere Wikimedia-projecten de gebruikersnaam $2 eveneens bestaat, kunt u deze zo handmatig aan uw e-mailadres koppelen, indien dit niet automatisch is gebeurd.\n\nAls deze gebruikersnaam *niet* van u is, volg dan deze link om de bevestiging van het e-mailadres te annuleren:\n\n$5\n\nDeze bevestigingscode vervalt op $6 om $7.",
-	"globalrenameprogress": "Status van globale hernoeming"
+	"globalrenameprogress": "Status van globale hernoeming",
+	"centralauth-rename-movelog": "Automatisch hernoemd bij het hernoemen van account \"[[User:$1|$1]]\" naar \"[[User:$2|$2]]\""
 }

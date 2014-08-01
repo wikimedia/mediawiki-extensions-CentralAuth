@@ -484,6 +484,8 @@ $specialPageAliases['ml'] = array(
 	'WikiSets' => array( 'വിക്കിഗണങ്ങൾ_തിരുത്തുക' ),
 	'GlobalUsers' => array( 'ആഗോള_ഉപയോക്താക്കൾ' ),
 	'MultiLock' => array( 'അനവധിബന്ധിക്കൽ' ),
+	'GlobalRenameUser' => array( 'ആഗോളഉപയോക്തൃപുനർനാമകരണം' ),
+	'GlobalRenameProgress' => array( 'ആഗോളപുനർനാമകരണപുരോഗതി' ),
 );
 
 /** Marathi (मराठी) */
