@@ -1527,8 +1527,18 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Bool true on match.
 	 */
 	protected function matchHash( $plaintext, $salt, $encrypted ) {
+		global $wgPasswordSalt;
 		$matched = false;
 		$passwordFactory = User::getPasswordFactory();
+
+		if ( preg_match( '/^[0-9a-f]{32}$/', $encrypted ) ) {
+			if ( $wgPasswordSalt ) {
+				$encrypted = ":B:{$salt}:{$encrypted}";
+			} else {
+				$encrypted = ":A:{$encrypted}";
+			}
+		}
+
 		$hash = $passwordFactory->newFromCiphertext( $encrypted );
 		if ( $hash->equals( $plaintext ) ) {
 			$matched = true;
