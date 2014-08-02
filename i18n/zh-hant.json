@@ -109,7 +109,7 @@
 	"centralauth-admin-info-username": "使用者名稱：",
 	"centralauth-admin-info-id": "使用者 ID：",
 	"centralauth-admin-info-registered": "已註冊於：",
-	"centralauth-admin-info-home": "家 Wiki",
+	"centralauth-admin-info-home": "所在 Wiki：",
 	"centralauth-admin-info-editcount": "總編輯次數：",
 	"centralauth-admin-info-locked": "已鎖定：",
 	"centralauth-admin-info-hidden": "隱藏層級：",
