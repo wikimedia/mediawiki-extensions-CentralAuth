@@ -159,7 +159,7 @@ class MigrateAccount extends Maintenance {
 				return;
 			}
 
-			if ( isset( $homewiki ) ) {
+			if ( $homewiki !== null ) {
 				if ( !array_key_exists( $homewiki, $unattached ) ) {
 					$this->output( "ERROR: Unattached user not found for $username@$homewiki\n" );
 					return;
