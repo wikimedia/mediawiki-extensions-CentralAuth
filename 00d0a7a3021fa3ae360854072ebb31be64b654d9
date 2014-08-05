@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_594f426e",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-05T22:34:43Z",
+      "side": 1,
+      "message": "The origin account doesn\u0027t need to be global but the resulting account should be correct? I don\u0027t know how to actually word that better though either. The fact that we have some non-global accounts at the moment is a hysterical rasins problem really. This is for CentralAuth renames, which I think implies global.",
+      "parentUuid": "8e28a382_a8e7f2d1",
+      "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_c8d59eea",
         "filename": "central-auth.sql",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-05T18:08:01Z",
       "side": 1,
       "message": "Seems like this should be not null? I\u0027m not sure how we would consider a null value here.",
+      "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_19553afc",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-05T22:34:43Z",
+      "side": 1,
+      "message": "Agreed, this should have a not null constraint.",
+      "parentUuid": "8e28a382_c8d59eea",
       "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
