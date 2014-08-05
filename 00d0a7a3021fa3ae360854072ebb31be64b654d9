@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_a8e7f2d1",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-05T18:08:01Z",
+      "side": 1,
+      "message": "Since we specify accounts don\u0027t need to be global below, this comment seems a little confusing (maybe just me though).",
+      "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c8d59eea",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-05T18:08:01Z",
+      "side": 1,
+      "message": "Seems like this should be not null? I\u0027m not sure how we would consider a null value here.",
+      "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
