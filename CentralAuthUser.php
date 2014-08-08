@@ -1418,6 +1418,12 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'IGNORE' )
 		);
 
+		if ( $wikiID === wfWikiID() ) {
+			$this->resetState();
+		}
+
+		$this->invalidateCache();
+
 		if ( $dbw->affectedRows() == 0 ) {
 			wfDebugLog( 'CentralAuth',
 				"Race condition? Already attached $this->mName@$wikiID, just tried by '$method'" );
@@ -1425,12 +1431,6 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$wikiID by '$method'" );
-
-		if ( $wikiID == wfWikiID() ) {
-			$this->resetState();
-		}
-
-		$this->invalidateCache();
 
 		if ( $sendToRC ) {
 			global $wgCentralAuthRC;
