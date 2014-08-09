@@ -120,7 +120,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	}
 
 	public function needsToken() {
-		return true;
+		return 'deleteglobalaccount';
 	}
 
 	public function getTokenSalt() {

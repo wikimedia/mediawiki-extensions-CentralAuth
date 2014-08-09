@@ -246,6 +246,7 @@ $wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/api/ApiSetGlobalAccou
 $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.php";
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
+$wgAutoloadClasses['ApiCentralAuthToken'] = "$caBase/api/ApiCentralAuthToken.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/CentralAuthReadOnlyError.php";
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
 $wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
@@ -307,6 +308,7 @@ $wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthHooks::onApiTokensGetTokenTypes';
+$wgHooks['ApiQueryTokensRegisterTypes'][] = 'CentralAuthHooks::onApiQueryTokensRegisterTypes';
 $wgHooks['APIGetAllowedParams'][] = 'CentralAuthHooks::onAPIGetAllowedParams';
 $wgHooks['APIGetParamDescription'][] = 'CentralAuthHooks::onAPIGetParamDescription';
 $wgHooks['ApiCheckCanExecute'][] = 'CentralAuthHooks::onApiCheckCanExecute';
@@ -373,6 +375,7 @@ $wgSpecialPageGroups['MultiLock'] = 'users';
 
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
+$wgAPIModules['centralauthtoken'] = 'ApiCentralAuthToken';
 
 // API Query-Modules
 $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
