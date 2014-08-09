@@ -595,6 +595,7 @@ $specialPageAliases['pt'] = array(
 	'MergeAccount' => array( 'Fundir_conta' ),
 	'GlobalGroupMembership' => array( 'Grupos_globais' ),
 	'GlobalGroupPermissions' => array( 'Privilégios_globais_de_grupo' ),
+	'WikiSets' => array( 'Conjuntos_de_wikis' ),
 	'GlobalUsers' => array( 'Utilizadores_globais' ),
 );
 

@@ -373,6 +373,7 @@
 	"centralauth-rename-form-oldname": "Nombre de usuario actual",
 	"centralauth-rename-form-newname": "Nombre de usuario nuevo",
 	"centralauth-rename-form-reason": "Motivo",
+	"centralauth-rename-form-movepages": "Trasladar las páginas del usuario",
 	"centralauth-rename-form-suppressredirects": "Suprimir la creación de redirecciones",
 	"centralauth-rename-notinstalled": "La extensión Renameuser no está instalada.",
 	"centralauth-rename-doesnotexist": "La cuenta proporcionada no existe.",
