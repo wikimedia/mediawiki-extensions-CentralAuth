@@ -185,7 +185,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	}
 
 	public function needsToken() {
-		return true;
+		return 'setglobalaccountstatus';
 	}
 
 	public function getTokenSalt() {
