@@ -1417,6 +1417,7 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__,
 			array( 'IGNORE' )
 		);
+		$success = $dbw->affectedRows() === 1;
 
 		if ( $wikiID === wfWikiID() ) {
 			$this->resetState();
@@ -1424,7 +1425,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$this->invalidateCache();
 
-		if ( $dbw->affectedRows() == 0 ) {
+		if ( !$success ) {
 			wfDebugLog( 'CentralAuth',
 				"Race condition? Already attached $this->mName@$wikiID, just tried by '$method'" );
 			return;
