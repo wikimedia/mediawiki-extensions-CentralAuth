@@ -337,7 +337,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 
 		// Permissions
-		$newRights = array();
 		$addRights = array();
 		$removeRights = array();
 		$oldRights = $this->getAssignedRights( $group );
@@ -345,10 +344,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		foreach ( $allRights as $right ) {
 			$alreadyAssigned = in_array( $right, $oldRights );
-
-			if ( $this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
-				$newRights[] = $right;
-			}
 
 			if ( !$alreadyAssigned && $this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
 				$addRights[] = $right;
