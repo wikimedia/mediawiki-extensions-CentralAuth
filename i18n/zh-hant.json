@@ -34,7 +34,7 @@
 	"centralauth-merge-notlogged": "請 <span class=\"plainlinks\">[$1 登入]</span> 以檢查您的帳號已完整合併。",
 	"centralauth-merge-welcome": "'''您的使用者帳號尚未遷移至 {{int:Centralauth-groupname}} 的整合登入系統。'''\n\n您如果決定遷移您的帳號，您將可以使用相同的使用者名稱與密碼登入至 {{int:Centralauth-groupname}} 中所有的 Wiki 使用所有可用的語言。\n\n若已有其他人在其他網站使用了您的使用者名稱，這個動作不會影響到對方，但會給您機會讓您跟對方或跟管理員一同解決這個問題。",
 	"centralauth-merge-step1-title": "開始登入整合",
-	"centralauth-merge-step1-detail": "請在這裡輸入您的帳戶密碼。您的密碼以及註冊所用的電子郵件地址將會與其他計劃裡的帳戶資料進行比對，以確認彼此一致。所有資料在您確認沒有問題之前均不會更改。",
+	"centralauth-merge-step1-detail": "請在這裡輸入您的帳號密碼。您的密碼以及註冊所用的電子郵件地址將會與其他計劃裡的帳號資料進行比對，以確認彼此一致。所有資料在您確認沒有問題之前均不會更改。",
 	"centralauth-merge-step1-submit": "確認登入資訊",
 	"centralauth-merge-step2-title": "確認更多帳號",
 	"centralauth-merge-step2-detail": "部份帳號無法自動與您的所在 Wiki 整合。\n若這些帳號是屬於您的，您可以提供密碼來確認該帳號屬於您的。",
