@@ -55,7 +55,7 @@
 	"centralauth-merge-method-empty": "tiada sumbangan",
 	"centralauth-merge-method-mail": "pengesahan melalui e-mel",
 	"centralauth-merge-method-password": "pengesahan melalui kata laluan",
-	"centralauth-merge-method-admin": "akaun digabungkan oleh pentadbir",
+	"centralauth-merge-method-admin": "akaun digabungkan oleh penyelia",
 	"centralauth-merge-method-new": "akaun baru",
 	"centralauth-merge-method-login": "dicipta ketika log masuk",
 	"centralauth-merge-method-primary-desc": "Ini merupakan wiki di mana akaun ini asalnya digabungkan.\nPerhatikan bahawa ia mungkin berbeza daripada wiki utama sebenar pengguna tersebut.",
