@@ -274,8 +274,6 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|edit]])",
 	"centralauth-editgroup-nowikiset": "None, applies to all wikis.",
 	"centralauth-editgroup-nonexistent": "The global group \"$1\" does not currently exist.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki on which they have an account:",
-	"centralauth-globalgroupmembership-badknownwiki": "The global account '''$1''' is not active on the wiki you specified ('' $2 '').\nYou may be attempting to assign rights to the wrong user!",
 	"centralauth-editset": "Wiki sets",
 	"centralauth-editset-legend-rw": "Edit or create wiki set",
 	"centralauth-editset-legend-ro": "List of wiki sets",
