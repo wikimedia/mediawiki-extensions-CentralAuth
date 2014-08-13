@@ -1433,6 +1433,13 @@ class CentralAuthUser extends AuthPluginUser {
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$wikiID by '$method'" );
 
+		if ( $dbw->writesOrCallbacksPending() ) {
+			wfDebugLog(
+				'CentralAuth-Bug39996', __METHOD__ . ": Database::writesOrCallbacksPending() returns "
+					. "true after successful attach"
+			);
+		}
+
 		if ( $sendToRC ) {
 			global $wgCentralAuthRC;
 
