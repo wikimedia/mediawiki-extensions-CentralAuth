@@ -6,7 +6,10 @@
  */
 
 class SpecialGlobalGroupMembership extends UserrightsPage {
-	var $mGlobalUser;
+	/**
+	 * @var CentralAuthUser
+	 */
+	private $mGlobalUser;
 
 	function __construct() {
 		SpecialPage::__construct( 'GlobalGroupMembership' );
@@ -18,9 +21,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return String
 	 */
 	function getSuccessURL() {
-		$knownWikis = $this->mGlobalUser->listAttached();
-		$title = $this->getPageTitle( $this->mTarget );
-		return $title->getFullURL( 'wpKnownWiki=' . urlencode( $knownWikis[0] ) );
+		return $this->getPageTitle( $this->mTarget )->getFullURL();
 	}
 
 	/**
@@ -29,16 +30,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	function switchForm() {
 		global $wgScript;
 
-		$knownwiki = $this->getRequest()->getVal( 'wpKnownWiki' );
-		$knownwiki = $knownwiki ? $knownwiki : wfWikiId();
-
-		// Generate wiki selector
-		$selector = new XmlSelect( 'wpKnownWiki', 'wpKnownWiki', $knownwiki );
-
-		foreach ( CentralAuthUser::getWikiList() as $wiki ) {
-			$selector->addOption( $wiki );
-		}
-
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
@@ -46,8 +37,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', array(), $this->msg( 'userrights-lookup-user' )->text() ) .
 			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username', 30, $this->mTarget ) . ' <br />' .
-			Xml::label( $this->msg( 'centralauth-globalgrouppermissions-knownwiki' )->text(), 'wpKnownWiki' ) . ' ' .
-			$selector->getHTML() . '<br />' .
 			Xml::submitButton( $this->msg( 'editusergroup' )->text() ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
@@ -58,14 +47,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return array
 	 */
 	function changeableGroups() {
-		# # Should be a global user
 		if ( !$this->mGlobalUser->exists() || !$this->mGlobalUser->isAttached() ) {
 			return array();
 		}
 
 		$allGroups = CentralAuthUser::availableGlobalGroups();
 
-		# # Permission MUST be gained from global rights.
+		# Permission MUST be gained from global rights.
 		if ( $this->mGlobalUser->hasGlobalPermission( 'globalgroupmembership' ) ) {
 			# specify addself and removeself as empty arrays -- bug 16098
 			return array( 'add' => $allGroups, 'remove' =>  $allGroups, 'add-self' => array(), 'remove-self' => array() );
@@ -75,19 +63,14 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @param $username
+	 * @param string $username
 	 * @return Status
 	 */
 	function fetchUser( $username ) {
-		$knownwiki = $this->getRequest()->getVal( 'wpKnownWiki' );
-
 		$user = CentralAuthGroupMembershipProxy::newFromName( $username );
 
 		if ( !$user ) {
 			return Status::newFatal( 'nosuchusershort', $username );
-		} elseif ( !$this->getRequest()->getCheck( 'saveusergroups' ) && !$user->attachedOn( $knownwiki ) ) {
-			return Status::newFatal( 'centralauth-globalgroupmembership-badknownwiki',
-					$username, $knownwiki );
 		}
 
 		return Status::newGood( $user );
@@ -113,10 +96,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $oldGroups
-	 * @param $newGroups
-	 * @param $reason
+	 * @param User $user
+	 * @param array $oldGroups
+	 * @param array $newGroups
+	 * @param string $reason
 	 */
 	function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
 		$log = new LogPage( 'gblrights' );
