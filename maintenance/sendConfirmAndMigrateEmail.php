@@ -19,6 +19,13 @@ require_once( "$IP/maintenance/Maintenance.php" );
  * THIS MUST BE RUN ON THE LOCAL WIKI SO THAT THE EMAIL IS SENT IN THE CORRECT LANGUAGE
  */
 class SendConfirmAndMigrateEmail extends Maintenance {
+
+	/**
+	 * Whether to send to accounts with confirmed emails
+	 * @var bool
+	 */
+	private $sendToConfirmed;
+
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
@@ -29,9 +36,12 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
+		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
 	}
 
 	public function execute() {
+		$this->sendToConfirmed = $this->getOption( 'confirmed', false );
+
 		// check to see if we are processing a single username
 		if ( $this->getOption( 'username', false ) !== false ) {
 			$username = $this->getOption( 'username' );
@@ -80,7 +90,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$user = EmailableUser::newFromName( $username );
 		$user->load();
 
-		if ( $user->isEmailConfirmed() ) {
+		if ( !$this->sendToConfirmed && $user->isEmailConfirmed() ) {
 			$this->output( "ERROR: The user '$username@$wikiID' already has a confirmed email address\n" );
 			return;
 		}
