@@ -282,8 +282,6 @@
 	"centralauth-editgroup-success-text": "Du har ændret gruppetilladelsene til gruppen $1.\n[[Special:GlobalGroupPermissions|Tilbage til gruppeadministration]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|redigér]])",
 	"centralauth-editgroup-nowikiset": "Ingen, gælder for alle wiki-websteder.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki hvor vedkommende har en konto:",
-	"centralauth-globalgroupmembership-badknownwiki": "Den globale brugerkonto '''$1''' er ikke aktiv på det angivne wiki (''$2'').\nDu forsøger måske at give rettigheder til den forkerte brugerkonto.",
 	"centralauth-editset": "Wiki sæt",
 	"centralauth-editset-legend-rw": "Redigér eller opret wikisæt",
 	"centralauth-editset-legend-ro": "Oversigt over wikisæt",

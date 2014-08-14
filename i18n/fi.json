@@ -269,8 +269,6 @@
 	"centralauth-editgroup-success-text": "Ryhmän $1 käyttöoikeudet onnistuneesti päivitetty.\n[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|muokkaa]])",
 	"centralauth-editgroup-nowikiset": "Ei mitään, koskee kaikkia wikejä.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki, jossa käyttäjällä on tunnus:",
-	"centralauth-globalgroupmembership-badknownwiki": "Järjestelmänlaajuista tunnusta '''$1''' ei ole olemassa wikissä ''$2''.\nTarkista, ettet yritä muuttaa väärän käyttäjän oikeuksia!",
 	"centralauth-editset": "Wikijoukot",
 	"centralauth-editset-legend-rw": "Wikijoukkojen muokkaus ja poisto",
 	"centralauth-editset-legend-ro": "Luettelo wikijoukoista",

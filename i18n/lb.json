@@ -263,8 +263,6 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|änneren]])",
 	"centralauth-editgroup-nowikiset": "Keng, gëllt fir all Wikien.",
 	"centralauth-editgroup-nonexistent": "De globale Grupp \"$1\" gëtt et elo net.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki op där si e Benotzerkont hunn:",
-	"centralauth-globalgroupmembership-badknownwiki": "De globale Benotzerkont '''$1''' ass net op där Wiki aktiv déi Dir uginn hutt ('' $2 '').\nVläicht versicht Dir Rechter un e falsche Benotzer ze ginn.",
 	"centralauth-editset": "Grupp vu Wikien",
 	"centralauth-editset-legend-rw": "Grupp vu Wikien änneren oder uleeën",
 	"centralauth-editset-legend-ro": "Lëscht vu Wikigruppen",

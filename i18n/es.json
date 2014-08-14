@@ -307,8 +307,6 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|editar]])",
 	"centralauth-editgroup-nowikiset": "Ninguno, aplica a todos los wikis.",
 	"centralauth-editgroup-nonexistent": "El grupo global «$1» no existe actualmente.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki en que tienen una cuenta:",
-	"centralauth-globalgroupmembership-badknownwiki": "La cuenta global '''$1''' no está activo en el wiki que especificaste (''$2'').\n¡Puede que estés intentando dar derechos a un usuario incorrecto!",
 	"centralauth-editset": "Grupos de wikis",
 	"centralauth-editset-legend-rw": "Editar o crear un grupo de wikis",
 	"centralauth-editset-legend-ro": "Lista de grupos de wikis",

@@ -233,8 +233,6 @@
 	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|skoða/breyta]])",
 	"centralauth-globalgroupperms-nogroups": "Engir altækir hópar eru skilgreindir.",
 	"centralauth-existinggroup-legend": "Hópar sem til eru fyrir",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki vefsvæði þar sem viðkomandi hefur aðgang:",
-	"centralauth-globalgroupmembership-badknownwiki": "Altæki aðgangurinn „$1” er ekki virkur á wiki verkefninu sem þú tilgreindir („$2”)\nÞú gætir verið að veita röngum notanda réttindi!",
 	"centralauth-editset": "Wiki raðir",
 	"centralauth-editset-legend-ro": "Listi yfir wiki raðir",
 	"centralauth-editset-intro-ro": "Hér fyrir neðan er listi yfir wiki raðir sem eru til fyrir.",

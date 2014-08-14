@@ -272,8 +272,6 @@
 	"centralauth-editgroup-success-text": "Kumpulan sejagat $1 berjaya dikemaskinikan.\n[[Special:GlobalGroupPermissions|Kembali ke pengurusan kumpulan]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|ubah]])",
 	"centralauth-editgroup-nowikiset": "Tiada, semua wiki kena.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki yang mengandungi akaun mereka:",
-	"centralauth-globalgroupmembership-badknownwiki": "Akaun sejagat '''$1''' tidak aktif di wiki yang anda nyatakan ('' $2 '').\nBarangkali anda cuba memberikan hak kepada pengguna yang salah!",
 	"centralauth-editset": "Set wiki",
 	"centralauth-editset-legend-rw": "Sunting atau cipta set wiki",
 	"centralauth-editset-legend-ro": "Senarai set wiki",

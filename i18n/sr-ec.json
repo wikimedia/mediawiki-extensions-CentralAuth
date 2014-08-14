@@ -240,8 +240,6 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|уреди]])",
 	"centralauth-editgroup-nowikiset": "Нема, примењиво на све викије.",
 	"centralauth-editgroup-nonexistent": "Глобална група „$1“ тренутно не постоји.",
-	"centralauth-globalgrouppermissions-knownwiki": "Вики на коме има налог:",
-	"centralauth-globalgroupmembership-badknownwiki": "Глобални налог '''$1''' није активан на викију који си одредио/ла (''$2''). Можда покушаваш да доделиш права погрешном кориснику!",
 	"centralauth-editset": "Скупови Викија",
 	"centralauth-editset-legend-rw": "Уреди или направи вики-скуп",
 	"centralauth-editset-legend-ro": "Списак вики-скупова",
