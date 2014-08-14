@@ -163,7 +163,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
-		if ( !$user->getId() ) { // sanity
+		if ( !$user || !$user->getId() ) { // sanity
 			throw new MWException( "The user account logged into does not exist." );
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
