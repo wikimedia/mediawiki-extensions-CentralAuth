@@ -118,7 +118,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			CentralAuthUser::getInstance( $oldUser ),
 			$newUser,
 			CentralAuthUser::getInstance( $newUser ),
-			new GlobalRenameUserStatus( $this->newUsername ),
+			new GlobalRenameUserStatus( $newUser->getName() ),
 			'JobQueueGroup::singleton',
 			new GlobalRenameUserDatabaseUpdates(),
 			new GlobalRenameUserLogger( $this->getUser() )
