@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_34166a5b",
+        "filename": "GlobalRename/GlobalRenameUserDatabaseUpdates.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-16T01:43:37Z",
+      "side": 1,
+      "message": "With this we can end up with a localuser entry for a wiki-newname pair where the newname account doesn\u0027t exist on that local wiki. I don\u0027t think that\u0027s a problem, but maybe document it?",
+      "revId": "8750751e094f98efe67c3f35cf66d388c9a2fc8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_77fbd411",
+        "filename": "LocalRenameUserJob.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-16T01:43:37Z",
+      "side": 1,
+      "message": "Isn\u0027t this now duplicated from the parent? If so, DRY..",
+      "revId": "8750751e094f98efe67c3f35cf66d388c9a2fc8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_57fe9801",
+        "filename": "LocalUserMergeJob.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-16T01:43:37Z",
+      "side": 1,
+      "message": "Seems a little odd to do this without logging",
+      "revId": "8750751e094f98efe67c3f35cf66d388c9a2fc8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_1708102a",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-16T01:43:37Z",
+      "side": 1,
+      "message": "function visibility",
+      "revId": "8750751e094f98efe67c3f35cf66d388c9a2fc8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_37054c14",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-16T01:43:37Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this return a Status with the message set?",
+      "revId": "8750751e094f98efe67c3f35cf66d388c9a2fc8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f70ea436",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-08-16T01:43:37Z",
+      "side": 1,
+      "message": "Can this have a different name from the logger method to avoid confusion, since they\u0027re so similar?",
+      "revId": "8750751e094f98efe67c3f35cf66d388c9a2fc8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
