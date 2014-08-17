@@ -1408,6 +1408,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public function attach( $wikiID, $method = 'new', $sendToRC = true ) {
 		$dbw = self::getCentralDB();
+		$dbw->begin( __METHOD__ );
 		$dbw->insert( 'localuser',
 			array(
 				'lu_wiki'               => $wikiID,
@@ -1418,6 +1419,7 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'IGNORE' )
 		);
 		$success = $dbw->affectedRows() === 1;
+		$dbw->commit( __METHOD__ );
 
 		if ( $wikiID === wfWikiID() ) {
 			$this->resetState();
