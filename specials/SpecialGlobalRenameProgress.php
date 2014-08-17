@@ -38,7 +38,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	}
 
 	function onSubmit( array $data ) {
-		$name = $data['username'];
+		$name = User::getCanonicalName( $data['username'], 'usable' );
 		if ( !$name ) {
 			return false;
 		}
