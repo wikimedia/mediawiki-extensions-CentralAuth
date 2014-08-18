@@ -87,6 +87,24 @@
       "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_caf40f86",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-18T16:34:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_19553afc",
+      "revId": "00d0a7a3021fa3ae360854072ebb31be64b654d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
