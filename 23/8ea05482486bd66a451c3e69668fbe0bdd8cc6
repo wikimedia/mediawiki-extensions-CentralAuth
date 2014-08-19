@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Code-Review+1: CSteipp <csteipp@wikimedia.org>
+Code-Review+2: Legoktm <legoktm.wikipedia@gmail.com>
+Code-Review+1: Springle <springle@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 19 Aug 2014 20:22:06 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/150997
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
