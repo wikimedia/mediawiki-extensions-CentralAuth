@@ -1222,7 +1222,7 @@ class CentralAuthHooks {
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		if ( 	$wgDisableUnmergedEditing
-			&& $action === 'edit'
+			&& ( $action === 'edit' || $action === 'delete' )
 			&& !$centralUser->exists()
 			&& !$title->inNamespaces( NS_USER_TALK, NS_PROJECT_TALK )
 		) {
