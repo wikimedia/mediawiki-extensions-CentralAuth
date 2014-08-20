@@ -284,8 +284,6 @@
 	"centralauth-editgroup-success-text": "U hebt de globale groep \"$1\" bijgewerkt.\n[[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|bewerken]])",
 	"centralauth-editgroup-nowikiset": "Geen, van toepassing op alle wiki's.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki waarop hij of zij een gebruiker heeft:",
-	"centralauth-globalgroupmembership-badknownwiki": "De globale gebruiker '''$1''' is niet actief op de opgegeven wiki ('' $2 ''). Probeert u misschien rechten toe te kennen aan de verkeerde gebruiker?",
 	"centralauth-editset": "Wikigroepen",
 	"centralauth-editset-legend-rw": "Wikigroep aanmaken of bewerken",
 	"centralauth-editset-legend-ro": "Wikigroepen",
@@ -311,7 +309,7 @@
 	"centralauth-editset-badname": "U hebt een ongeldige of lege groepsnaam opgegeven.",
 	"centralauth-editset-badtype": "U hebt een ongeldig groepstype opgegeven.",
 	"centralauth-editset-setexists": "Er bestaat al een wikigroep met deze naam",
-	"centralauth-editset-nowikis": "Geen wiki's opgegeven.",
+	"centralauth-editset-nowikis": "(geen)",
 	"centralauth-editset-nouse": "(geen)",
 	"centralauth-editset-usage": "Gebruikt in groepen:",
 	"centralauth-editset-badwikis": "De volgende {{PLURAL:$2|wiki bestaat|wiki's bestaan}} niet: $1.",
@@ -342,5 +340,5 @@
 	"centralauth-finishglobaliseemail_subject": "Gebruikersbevestiging voor {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "Uw e-mailadres is gekoppeld aan de gebruikersnaam \"$2\" op alle projecten van Wikimedia. Uw primaire account is op {{SITENAME}}.\n\nU kunt bevestigen dat deze gebruikersnaam echt van u is via de volgende link:\n\n$3\n\nOok wordt het zo mogelijk uw wachtwoord op te vragen indien u dit vergeet. Als op andere Wikimedia-projecten de gebruikersnaam $2 eveneens bestaat, kunt u deze zo handmatig aan uw e-mailadres koppelen, indien dit niet automatisch is gebeurd.\n\nAls deze gebruikersnaam *niet* van u is, volg dan deze link om de bevestiging van het e-mailadres te annuleren:\n\n$5\n\nDeze bevestigingscode vervalt op $6 om $7.",
 	"globalrenameprogress": "Status van globale hernoeming",
-	"centralauth-rename-movelog": "Automatisch hernoemd bij het hernoemen van account \"[[User:$1|$1]]\" naar \"[[User:$2|$2]]\""
+	"centralauth-rename-movelog": "Automatisch hernoemd bij het hernoemen van account \"[[Special:CentralAuth/$1|$1]]\" naar \"[[Special:CentralAuth/$2|$2]]\""
 }
