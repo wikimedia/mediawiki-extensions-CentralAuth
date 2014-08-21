@@ -20,9 +20,11 @@ class GlobalRenameLogFormatter extends LogFormatter {
 	 * @return array
 	 */
 	protected function getCentralAuthLink( $name ) {
-		return Message::rawParam( Linker::link(
-				Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $name ),
-				htmlspecialchars( $name )
-		) );
+		$title = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $name );
+		if ( $this->plaintext ) {
+			return "[[{$title->getPrefixedText()}]]";
+		}
+
+		return Message::rawParam( Linker::link( $title, htmlspecialchars( $name ) ) );
 	}
 }
