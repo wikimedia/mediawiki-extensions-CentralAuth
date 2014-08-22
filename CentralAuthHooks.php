@@ -1518,7 +1518,7 @@ class CentralAuthHooks {
 		if ( $module instanceof ApiMain ) {
 			$desc['centralauthtoken'] = array(
 				'When accessing the API using a cross-domain AJAX request (CORS), use this to authenticate as the current SUL user.',
-				'Use action=tokens&type=centralauth on this wiki to retrieve the token, before making the CORS request. Each token may only be used once, and expires after 10 seconds.',
+				'Use action=centralauthtoken on this wiki to retrieve the token, before making the CORS request. Each token may only be used once, and expires after 10 seconds.',
 				'This should be included in any pre-flight request, and therefore should be included in the request URI (not the POST body).',
 			);
 		}
@@ -1785,6 +1785,14 @@ class CentralAuthHooks {
 				$files[] = $fileInfo->getPathname();
 			}
 		}
+		return true;
+	}
+
+	public static function onApiQueryTokensRegisterTypes( &$salts ) {
+		$salts += array(
+			'setglobalaccountstatus' => 'setglobalaccountstatus',
+			'deleteglobalaccount' => 'deleteglobalaccount',
+		);
 		return true;
 	}
 }
