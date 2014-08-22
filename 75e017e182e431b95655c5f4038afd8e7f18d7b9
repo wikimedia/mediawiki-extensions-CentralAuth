@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_de58a35b",
+        "filename": "api/ApiCentralAuthToken.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-22T19:22:42Z",
+      "side": 1,
+      "message": "I don\u0027t like that we have to duplicate this check from core, but this is a pretty special case.",
+      "revId": "75e017e182e431b95655c5f4038afd8e7f18d7b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
