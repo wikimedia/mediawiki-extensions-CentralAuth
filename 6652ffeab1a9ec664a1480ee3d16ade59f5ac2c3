@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_f2edceb5",
+        "filename": "GlobalRename/GlobalRenameUserDatabaseUpdates.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:20:59Z",
+      "side": 1,
+      "message": "this still doesn\u0027t belong here...",
+      "revId": "6652ffeab1a9ec664a1480ee3d16ade59f5ac2c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_d2ead29b",
+        "filename": "GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:20:59Z",
+      "side": 1,
+      "message": "This shouldn\u0027t make that assumption, just say it failed... this knowledge just doesn\u0027t belong into this class.",
+      "revId": "6652ffeab1a9ec664a1480ee3d16ade59f5ac2c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_12405aa7",
+        "filename": "GlobalRename/UserMergeNoopLogger.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:20:59Z",
+      "side": 1,
+      "message": "This interface name is terrible and should be changed... prefixing interface names with I is MediaWiki in 2009 :S (And it often unveils problems with inheritance/ naming in other parts)",
+      "revId": "6652ffeab1a9ec664a1480ee3d16ade59f5ac2c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_324356b8",
+        "filename": "LocalUserMergeJob.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:20:59Z",
+      "side": 1,
+      "message": "superfluous as the parent already does this AFAIS",
+      "revId": "6652ffeab1a9ec664a1480ee3d16ade59f5ac2c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_b22f46f3",
+        "filename": "LocalUserMergeJob.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:20:59Z",
+      "side": 1,
+      "message": "could bail out early here and save one level of indention",
+      "revId": "6652ffeab1a9ec664a1480ee3d16ade59f5ac2c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
