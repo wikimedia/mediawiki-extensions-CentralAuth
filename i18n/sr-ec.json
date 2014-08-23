@@ -189,7 +189,7 @@
 	"centralauth-log-entry-hide": "{{GENDER:|је сакрио|је сакрила|је сакрио}} глобални налог „$1“",
 	"centralauth-log-entry-unhide": "{{GENDER:|је открио|је открила|је открио}} глобални налог „$1“",
 	"centralauth-log-entry-lockandhide": "{{GENDER:|је закључао и сакрио|је закључала и сакрила|је закључао и сакрио}} глобални налог „$1“",
-	"centralauth-log-entry-chgstatus": "{{GENDER:|је променио|је променила|промени}} стање глобалног налога „$1“: постављено на $2; смењено на $3",
+	"centralauth-log-entry-chgstatus": "је променио стање глобалног налога „$1“: постављено на $2; уклоњено $3",
 	"centralauth-log-status-locked": "закључано",
 	"centralauth-log-status-hidden": "сакривено",
 	"centralauth-log-status-oversighted": "надгледано",
@@ -300,5 +300,6 @@
 	"centralauth-rename-movelog": "Аутоматско премештање странице због преименовања корисника „[[Special:CentralAuth/$1|$1]]“ у „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-confirm": "Да ли желите да глобално преименујете овог корисника?",
 	"log-name-gblrename": "Дневник глобалних преименовања",
-	"log-description-gblrename": "Овај дневник приказује глобално преименоване кориснике."
+	"log-description-gblrename": "Овај дневник приказује глобално преименоване кориснике.",
+	"logentry-gblrename-rename": "$1 је глобално {{GENDER:$2|преименовао|преименовала}} $4 у $5"
 }

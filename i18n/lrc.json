@@ -292,5 +292,6 @@
 	"centralauth-rename-table-status-done": "انجوم بی",
 	"centralauth-rename-viewprogress": "دیئن پئشکرد",
 	"centralauth-rename-progress-fieldset": "نوم گه حساویار ولاتی",
-	"centralauth-rename-confirm": "آیا شما د راستی میهایت نوم ای کاریار نه وه شکل سرتاسری آلشت بکیت؟"
+	"centralauth-rename-confirm": "آیا شما د راستی میهایت نوم ای کاریار نه وه شکل سرتاسری آلشت بکیت؟",
+	"log-name-gblrename": "پهرستنومه د نو نوم نیائن جهونی"
 }
