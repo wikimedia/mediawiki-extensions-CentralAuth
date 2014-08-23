@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_7210bead",
+        "filename": "tests/CentralAuthTestUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "not happy with this stuff going into this class... would be nice to not start creating mega classes in the new code again",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_12273a0f",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "header missing (@covers, @group, ... etc.)",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_b27d06e7",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "does the parent correctly declare this as a test using the DB? I guess so, just not sure",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_5215c29b",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "what if wfWikiID() is one of the wikis below? Does that still work?",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_322a36d8",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "Using the naming scheme suggested by PHPUnit this would be something like validateUserNameProvider (provider shouldn\u0027t go first)",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_f2238efe",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "not really true, it only covers some parts of it (and not the most relevant ones)",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_d22092f4",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-08-23T04:30:29Z",
+      "side": 1,
+      "message": "public function testOnSubmitInvalidName ?",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
