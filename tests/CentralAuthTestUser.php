@@ -77,6 +77,11 @@ class CentralAuthTestUser {
 	private $createLocal;
 
 	/**
+	 * Rows to insert into the renameuser_status table
+	 */
+	private $renameStatus = array();
+
+	/**
 	 * @param string $username the username
 	 * @param string $password password for the account
 	 * @param array $attrs associative array of global user attributs
@@ -133,9 +138,17 @@ class CentralAuthTestUser {
 		$this->createLocal = $createLocal;
 	}
 
+	public function setRenameInProgress( $old, $new, $wiki ) {
+		$this->renameStatus[] = array(
+			'ru_oldname' => $old,
+			'ru_newname' => $new,
+			'ru_wiki' => $wiki,
+		);
+	}
+
 	/**
 	 * Save the user into a centralauth database
-	 * @param Database $db
+	 * @param Databasebase $db
 	 */
 	public function save( $db ) {
 		// Setup local wiki user
@@ -179,6 +192,10 @@ class CentralAuthTestUser {
 
 		if ( count( $this->wikis ) ) {
 			$db->insert( 'localuser', $this->wikis, __METHOD__ );
+		}
+
+		if ( count( $this->renameStatus ) ) {
+			$db->insert( 'renameuser_status', $this->renameStatus, __METHOD__ );
 		}
 	}
 
