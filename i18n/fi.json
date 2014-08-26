@@ -264,7 +264,7 @@
 	"centralauth-editgroup-noset": "(ei mitään)",
 	"centralauth-editgroup-submit": "Tallenna ryhmän käyttöoikeuksien muutokset",
 	"centralauth-editgroup-perms": "Myönnetyt käyttöoikeudet:",
-	"centralauth-editgroup-reason": "Syy",
+	"centralauth-editgroup-reason": "Syy:",
 	"centralauth-editgroup-success": "Ryhmän käyttöoikeudet vaihdettu",
 	"centralauth-editgroup-success-text": "Ryhmän $1 käyttöoikeudet onnistuneesti päivitetty.\n[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|muokkaa]])",

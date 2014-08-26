@@ -361,7 +361,10 @@
 	"centralauth-rename-table-status-done": "Hotovo",
 	"centralauth-rename-viewprogress": "Zobrazit průběh",
 	"centralauth-rename-progress-fieldset": "Seznam místních účtů",
+	"centralauth-rename-progress-logs-fieldset": "Protokolovací záznamy",
 	"centralauth-rename-movelog": "Automatické přesunutí stránky kvůli přejmenování uživatele „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-confirm": "Opravdu chcete globálně přejmenovat tohoto uživatele?",
+	"log-name-gblrename": "Kniha globálních přejmenování",
+	"log-description-gblrename": "Toto je záznam globálních přejmenování uživatelů.",
 	"logentry-gblrename-rename": "$1 globálně {{GENDER:$2|přejmenoval|přejmenovala}} uživatelský účet $4 na $5"
 }

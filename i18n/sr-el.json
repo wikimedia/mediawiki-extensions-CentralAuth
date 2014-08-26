@@ -177,7 +177,7 @@
 	"centralauth-hidden-blockreason": "globalno sakriven od $1 u $2 zbog sledećeg razloga: $3",
 	"centralauth-log-name": "Dnevnik globalnih naloga",
 	"centralauth-log-header": "Ovaj log sadrži operacije nad globalnim nalozima: brisanje, zaključavanje i otključavanje.",
-	"centralauth-log-entry-delete": "obrisan globalni nalog \"$1\"",
+	"centralauth-log-entry-delete": "je obrisao globalni nalog „$1“",
 	"centralauth-log-entry-lock": "zaključan globalni nalog \"$1\"",
 	"centralauth-log-entry-unlock": "otključan globalni nalog \"$1\"",
 	"centralauth-log-entry-hide": "sakriven globalni nalog \"$1\"",

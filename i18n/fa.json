@@ -16,7 +16,8 @@
 			"Wayiran",
 			"ZxxZxxZ",
 			"پسر یاس",
-			"Calak"
+			"Calak",
+			"Alirezaaa"
 		]
 	},
 	"mergeaccount": "وضعیت یکی‌کردن حساب‌های کاربری",
@@ -280,8 +281,6 @@
 	"centralauth-editgroup-success-text": "گروه سراسری $1 با موفقیت به‌روز شد.\n[[Special:GlobalGroupPermissions|بازگشت به مدیریت گروه‌ها]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|ویرایش]])",
 	"centralauth-editgroup-nowikiset": "هیچ، در همهٔ ویکی‌ها به کار بسته می‌شود.",
-	"centralauth-globalgrouppermissions-knownwiki": "یک ویکی که در آن حساب دارید را انتخاب کنید:",
-	"centralauth-globalgroupmembership-badknownwiki": "حساب سراسری '''$1''' در ویکی که شما مشخص‌کرده‌اید ('' $2 '') فعال نیست. ممکن است در حال اختصاص‌دادن اختیارات به کاربر اشتباهی باشید!",
 	"centralauth-editset": "مجموعه‌های ویکی",
 	"centralauth-editset-legend-rw": "ویرایش یا ایجاد مجموعهٔ ویکی",
 	"centralauth-editset-legend-ro": "فهرست مجموعه‌های ویکی",
@@ -307,7 +306,7 @@
 	"centralauth-editset-badname": "نام نامجاز یا خالی مجموعه",
 	"centralauth-editset-badtype": "نوع نامجاز مجموعه.",
 	"centralauth-editset-setexists": "مجموعه‌ای با این نام از قبل وجود دارد",
-	"centralauth-editset-nowikis": "هیچ ویکی‌ای مشخص نشد.",
+	"centralauth-editset-nowikis": "(هیچ)",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(هیچ)",
 	"centralauth-editset-usage": "استفاده‌شده در گروه‌های:",

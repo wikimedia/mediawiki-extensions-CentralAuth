@@ -344,6 +344,7 @@
 	"centralauth-rename-form-movepages": "Przenieś strony użytkownika",
 	"centralauth-rename-form-suppressredirects": "Pomiń tworzenie przekierowań",
 	"centralauth-rename-doesnotexist": "Podane konto nie istnieje.",
+	"centralauth-rename-badusername": "Podana nazwa użytkownika jest nieprawidłowa.",
 	"centralauth-rename-cannotself": "Nie możesz zmienić swojej nazwy.",
 	"centralauth-rename-progress-username": "Nazwa użytkownika",
 	"centralauth-rename-notinprogress": "Nie ma obecnie zmian nazw dla $1. Zostały już wykonane.",
