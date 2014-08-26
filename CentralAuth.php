@@ -220,6 +220,12 @@ $wgCentralAuthUseEventLogging = false;
 $wgCentralAuthPreventUnattached = false;
 
 /**
+ * Feature flag for Special:GlobalRenameRequest
+ * @var bool
+ */
+$wgCentralAuthEnableGlobalRenameRequest = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
