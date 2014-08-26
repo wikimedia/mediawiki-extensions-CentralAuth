@@ -1,0 +1,12 @@
+.globalrenamerequest-field label {
+  font-weight:bold;
+}
+.globalrenamerequest-help {
+  font-size:smaller;
+  color:grey;
+  margin:-1em 0 .5em;
+}
+.globalrenamerequest-field.mw-htmlform-field-HTMLInfoField .mw-input {
+  display:inline;
+  margin-left:.5em;
+}
