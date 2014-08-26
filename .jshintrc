@@ -25,6 +25,7 @@
 
 	"predef": [
 		"mediaWiki",
-		"jQuery"
+		"jQuery",
+		"OO"
 	]
 }
