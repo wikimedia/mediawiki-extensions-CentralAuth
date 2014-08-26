@@ -10,6 +10,8 @@ class CentralAuthHooks {
 	 */
 	public static function onRunExtensionFunctions() {
 		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
+		global $wgSpecialPages, $wgSpecialPageGroups, $wgResourceModules;
+		global $wgCentralAuthEnableGlobalRenameRequest;
 		$caBase = __DIR__;
 
 		if ( class_exists( 'RenameuserSQL' ) ) {
@@ -44,6 +46,27 @@ class CentralAuthHooks {
 				'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
 			$wgHooks['RenameUserComplete'][] =
 				'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
+		}
+
+		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
+			$wgExtensionCredits['specialpage'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'GlobalRenameRequest',
+				'author' => 'Bryan Davis',
+				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
+				'descriptionmsg' => 'globalrenamerequest-desc',
+			);
+			$wgAutoloadClasses['SpecialGlobalRenameRequest'] =
+				"$caBase/specials/SpecialGlobalRenameRequest.php";
+			$wgAutoloadClasses['GlobalRenameRequest'] =
+				"$caBase/GlobalRename/GlobalRenameRequest.php";
+			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
+			$wgSpecialPageGroups['GlobalRenameRequest'] = 'login';
+			$wgResourceModules['ext.centralauth.globalrenamerequest'] = array(
+				'styles'        => 'ext.centralauth.globalrenamerequest.css',
+				'localBasePath' => "{$caBase}/modules",
+				'remoteExtPath' => 'CentralAuth/modules',
+			);
 		}
 	}
 
@@ -311,6 +334,12 @@ class CentralAuthHooks {
 			// that the name is already taken, because someone will eventually
 			// get it. See bug 67901.
 			$abortError = wfMessage( 'centralauth-account-unattached-exists' )->text();
+			return false;
+		}
+
+		// Block account creation if name is a pending rename request
+		if ( GlobalRenameRequest::nameHasPendingRequest( $user->getName() ) ) {
+			$abortError = wfMessage( 'centralauth-account-rename-exists' )->text();
 			return false;
 		}
 
