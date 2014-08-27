@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_61969551",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "No need for a default, all your code already specifies and it forces the author of the code to decide whether to use a slave or a master, plus it\u0027s clearer for the reader too.",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_21a08d99",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "Use selectRow so there\u0027s a limit 1?",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_018d9136",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "selectRow",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_e1916553",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "selectRow",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_21776d37",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "Why is this function responsible for canonical-izing the username?",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_c1866918",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "Status::newGood( false ) ?\n\nThat seems a bit weird.",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_a18b5d1f",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "API",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_c1fae972",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "-\u003eparse? -\u003eescaped?\n\nBelow too. Don\u0027t depend upon _toString.",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_a1ffdd61",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "o.O",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_61f1f591",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-27T01:07:10Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
