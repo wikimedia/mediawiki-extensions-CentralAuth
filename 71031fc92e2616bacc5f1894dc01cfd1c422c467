@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_a1a0fd3e",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_61969551",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_21a08d99",
         "filename": "GlobalRename/GlobalRenameRequest.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-27T01:07:10Z",
       "side": 1,
       "message": "Use selectRow so there\u0027s a limit 1?",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_818501b4",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_21a08d99",
       "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_618215ab",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_018d9136",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_e1916553",
         "filename": "GlobalRename/GlobalRenameRequest.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-27T01:07:10Z",
       "side": 1,
       "message": "selectRow",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_418f19d2",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_e1916553",
       "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_21de4ddf",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "I really put this call in for validation more than anything else. Making the canonicalized name the value carried by the Status object was sort of an after thought and is currently unused by the caller. It might come in handy with the ajax callback, but then again it might remain unused.",
+      "parentUuid": "4e322bf2_21776d37",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_c1866918",
         "filename": "GlobalRename/GlobalRenameRequest.php",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-27T01:07:10Z",
       "side": 1,
       "message": "Status::newGood( false ) ?\n\nThat seems a bit weird.",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_e1ef2581",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Based on the constructors and factories I saw for Status it seemed reasonable. It\u0027s really just shorthand for `$status \u003d new Status(); $status-\u003evalue \u003d $safe;` Yes, in some code branches the canonicalized name payload becomes a secondary signal that the request failed. In those branches the Status is toggled as well.",
+      "parentUuid": "4e322bf2_c1866918",
       "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_218c0ddb",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_a18b5d1f",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_c1fae972",
         "filename": "specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2014-08-27T01:07:10Z",
       "side": 1,
       "message": "-\u003eparse? -\u003eescaped?\n\nBelow too. Don\u0027t depend upon _toString.",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_e19605f3",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_c1fae972",
       "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_61fb3545",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "The design spec requested that a dynamic username suggestion be given in the UI. This is one way to do that. Brandon will need to be consulted to see if that is really what he wanted.",
+      "parentUuid": "4e322bf2_a1ffdd61",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_61f1f591",
         "filename": "specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2014-08-27T01:07:10Z",
       "side": 1,
       "message": "typo",
+      "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_c19b091a",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-08-27T02:22:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_61f1f591",
       "revId": "71031fc92e2616bacc5f1894dc01cfd1c422c467",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
