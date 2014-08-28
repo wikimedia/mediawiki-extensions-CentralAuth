@@ -76,6 +76,11 @@ class CentralAuthHooks {
 				'remoteExtPath' => 'CentralAuth/modules',
 			);
 		}
+
+		if ( $wgCentralAuthCheckSULMigration ) {
+			$wgHooks['LoginUserMigrated'][] =
+				'CentralAuthHooks::onLoginUserMigrated';
+		}
 	}
 
 	/**
@@ -431,6 +436,31 @@ class CentralAuthHooks {
 
 			default:
 				throw new MWException( "Unexpected result from CentralAuthUser::canAuthenticate()" );
+		}
+		return true;
+	}
+
+	/**
+	 * Inform a user that their username was renamed as part of SUL
+	 * Finalization, if their previous username doesn't exist any more (winner
+	 * was renamed).
+	 * @param User $user
+	 * @param string &$msg return error key, or return an array with key and params
+	 * @return bool
+	 */
+	public static function onLoginUserMigrated( $user, &$msg ) {
+		if ( $wgCentralAuthCheckSULMigration ) {
+			$centralUser = CentralAuthUser::getInstance( $user );
+			if ( $user->getID() === 0 && !$centralUser->exists() ) {
+				// If the local and global accounts don't exist,
+				// otherwise wgAuth will handle those.
+				$testName = $user->getName() . '~' . wfWikiID();
+				$test = new CentralAuthUser( $testName );
+				if ( $test->exists() && $test->isAttached() ) {
+					$msg = array( 'centralauth-abortlogin-renamed', $testName );
+					return false;
+				}
+			}
 		}
 		return true;
 	}
