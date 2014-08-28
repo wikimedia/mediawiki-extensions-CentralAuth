@@ -401,5 +401,6 @@
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed",
 	"log-name-gblrename": "Log page title",
 	"log-description-gblrename": "Log page description",
-	"logentry-gblrename-rename": "{{Logentry}}"
+	"logentry-gblrename-rename": "{{Logentry}}",
+	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name\n\n* $1 is the new username they should use."
 }
