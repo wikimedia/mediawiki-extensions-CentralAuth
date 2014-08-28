@@ -287,6 +287,7 @@ $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
 $wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
 $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
 $wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
+$wgHooks['CheckRenameLogin'][] = 'CentralAuthHooks::onCheckRenameLogin';
 $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
 $wgHooks['AbortAutoAccount'][] = 'CentralAuthHooks::onAbortAutoAccount';
 $wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
