@@ -442,5 +442,7 @@
 	"globalrenamerequest-submit-text": "Form button text.",
 	"globalrenamerequest-save-error": "Used as error message.",
 	"globalrenamerequest-status-title": "Page title when request is pending.",
-	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name"
+	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
+	"logentry-gblrename-rename": "{{Logentry}}",
+	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name\n\n* $1 is the new username they should use."
 }

@@ -436,6 +436,28 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * Inform a user that their username was renamed as part of SUL Finalization,
+	 * if their previous username doesn't exist any more (winner was renamed).
+	 * @param User $user
+	 * @param string &$msg return error key, or return an array with key and params
+	 * @return bool
+	 */
+	public static function onLoginUserMigrated( $user, &$msg ) {
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( $user->getID() === 0 && !$centralUser->exists() ) {
+			// If the local and global accounts don't exist,
+			// otherwise wgAuth will handle those.
+			$testName = $user->getName() . '~' . wfWikiID();
+			$test = new CentralAuthUser( $testName );
+			if ( $test->exists() && $test->isAttached() ) {
+				$msg = array( 'centralauth-abortlogin-renamed', $testName );
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
 	 * Show a nicer error when the user account does not exist on the local wiki, but
 	 * does exist globally
 	 * @param $users Array
