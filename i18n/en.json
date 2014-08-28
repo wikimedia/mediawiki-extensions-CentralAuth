@@ -409,5 +409,6 @@
 	"globalrenamerequest-submit-text": "Request name change",
 	"globalrenamerequest-save-error": "Failed to save request, Please try again.",
 	"globalrenamerequest-status-title": "Rename request pending approval",
-	"globalrenamerequest-status-text": "Your username change request is current in progress and awaiting approval by a steward. You will be notified via email when the request is processed.\n\n;Current username:\n:$1\n;Requested username:\n:$2"
+	"globalrenamerequest-status-text": "Your username change request is current in progress and awaiting approval by a steward. You will be notified via email when the request is processed.\n\n;Current username:\n:$1\n;Requested username:\n:$2",
+	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead."
 }
