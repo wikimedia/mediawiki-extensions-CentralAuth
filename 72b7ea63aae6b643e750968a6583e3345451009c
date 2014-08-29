@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_8dc3180a",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-29T06:37:21Z",
+      "side": 1,
+      "message": "Put $1 in quotes?",
+      "revId": "72b7ea63aae6b643e750968a6583e3345451009c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
