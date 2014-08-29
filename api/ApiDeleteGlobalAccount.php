@@ -99,18 +99,6 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		);
 	}
 
-	public function getResultProperties() {
-		return array(
-			'' => array(
-				'user' => 'string',
-				'reason' => array(
-					ApiBase::PROP_TYPE => 'string',
-					ApiBase::PROP_NULLABLE => true
-				)
-			)
-		);
-	}
-
 	public function mustBePosted() {
 		return true;
 	}
