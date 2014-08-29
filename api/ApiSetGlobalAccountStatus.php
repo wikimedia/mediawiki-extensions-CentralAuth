@@ -133,14 +133,6 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'badaccess-groups' ),
-			array( 'nosuchuser' ),
-			array( 'missingparam' )
-		) );
-	}
-
 	public function getDescription() {
 		return "Set a global user's status.";
 	}
