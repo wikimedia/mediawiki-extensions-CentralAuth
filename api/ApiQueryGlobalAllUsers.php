@@ -290,12 +290,6 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		return 'Enumerate all global users';
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'group-excludegroup', 'info' => 'group and excludegroup cannot be used together' ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=globalallusers',
