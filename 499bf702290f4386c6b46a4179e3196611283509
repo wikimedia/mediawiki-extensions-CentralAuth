@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_60fc6ed6",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-29T19:15:14Z",
+      "side": 1,
+      "message": "Need capital after colon",
+      "revId": "499bf702290f4386c6b46a4179e3196611283509",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_20de6671",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-29T19:15:14Z",
+      "side": 1,
+      "message": "\u003cbr/\u003e -\u003e \u003cbr /\u003e (space before slash).",
+      "revId": "499bf702290f4386c6b46a4179e3196611283509",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_e0e73e3a",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-29T19:15:14Z",
+      "side": 1,
+      "message": "* Lower case Username twice.\n* Steward lower case.",
+      "revId": "499bf702290f4386c6b46a4179e3196611283509",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
