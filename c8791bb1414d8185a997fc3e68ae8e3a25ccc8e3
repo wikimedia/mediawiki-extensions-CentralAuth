@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_43f5fcc6",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-29T19:57:56Z",
+      "side": 1,
+      "message": "Apologies, I should have been clearer here. When quoting in MediaWiki, we use double quotes.",
+      "revId": "c8791bb1414d8185a997fc3e68ae8e3a25ccc8e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
