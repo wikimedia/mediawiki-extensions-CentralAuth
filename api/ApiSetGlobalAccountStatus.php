@@ -152,30 +152,6 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		);
 	}
 
-	public function getResultProperties() {
-		return array(
-			'' => array(
-				'user' => array(
-					ApiBase::PROP_TYPE => 'string'
-				),
-				'locked' => array(
-					ApiBase::PROP_TYPE => 'boolean'
-				),
-				'hidden' => array(
-					ApiBase::PROP_TYPE => array(
-						CentralAuthUser::HIDDEN_NONE,
-						CentralAuthUser::HIDDEN_LISTS,
-						CentralAuthUser::HIDDEN_OVERSIGHT
-					)
-				),
-				'reason' => array(
-					ApiBase::PROP_TYPE => 'string',
-					ApiBase::PROP_NULLABLE => true
-				)
-			)
-		);
-	}
-
 	public function mustBePosted() {
 		return true;
 	}
