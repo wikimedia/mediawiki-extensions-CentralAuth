@@ -773,14 +773,14 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'CentralAuth' => array( '中央認證' ),
-	'MergeAccount' => array( '合併帳戶' ),
+	'MergeAccount' => array( '合併帳號' ),
 	'GlobalGroupMembership' => array( '全域使用者權限' ),
-	'GlobalGroupPermissions' => array( '全域組權限' ),
-	'WikiSets' => array( 'Wiki組', '編輯Wiki組' ),
+	'GlobalGroupPermissions' => array( '全域群組權限' ),
+	'WikiSets' => array( 'Wiki集合', '編輯Wiki集合' ),
 	'GlobalUsers' => array( '全域使用者' ),
-	'MultiLock' => array( '批量鎖定' ),
-	'GlobalRenameUser' => array( '全域重命名使用者' ),
-	'GlobalRenameProgress' => array( '全域重命名狀態' ),
+	'MultiLock' => array( '批次鎖定' ),
+	'GlobalRenameUser' => array( '全域重新命名使用者' ),
+	'GlobalRenameProgress' => array( '全域重新命名進度' ),
 );
 
 /** Chinese (Hong Kong) (中文（香港）‎) */
