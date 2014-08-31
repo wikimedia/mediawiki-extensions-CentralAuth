@@ -285,7 +285,7 @@
 	"centralauth-editset": "مجموعه‌های ویکی",
 	"centralauth-editset-legend-rw": "ویرایش یا ایجاد مجموعهٔ ویکی",
 	"centralauth-editset-legend-ro": "فهرست مجموعه‌های ویکی",
-	"centralauth-editset-intro-rw": "مجموعه‌های ویکی زیر تاکنون ایجاد شده‌اند.\nشما می‌توانید هر یک از آن‌ها را مشاهده یا تغییر دهید، یا مجموعه‌ای جدید ایجاد کنید.",
+	"centralauth-editset-intro-rw": "مجموعه‌های ویکی زیر تاکنون ایجاد شده‌اند.\nشما می‌توانید هر یک از آن‌ها را مشاهده یا تغییر دهید، یا مجموعه‌ای تازه ایجاد کنید.",
 	"centralauth-editset-intro-ro": "در پایین فهرست مجموعه‌های ویکی موجود قرار دارد.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|حذف]])",
 	"centralauth-editset-new": "ایجاد یک مجموعهٔ تازه",

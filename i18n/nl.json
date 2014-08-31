@@ -371,5 +371,5 @@
 	"centralauth-rename-confirm": "Wilt u echt de naam van deze gebruiker globaal wijzigen?",
 	"log-name-gblrename": "Logboek globale gebruikersnaamwijzigingen",
 	"log-description-gblrename": "Dit logboek bevat de gebruikersnamen die globaal gewijzigd zijn.",
-	"logentry-gblrename-rename": "$1 heeft $3 globaal {{GENDER:$2|hernoemd}} naar $5"
+	"logentry-gblrename-rename": "$1 heeft $4 globaal {{GENDER:$2|hernoemd}} naar $5"
 }
