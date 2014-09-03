@@ -1,3 +1,4 @@
+
 {
 	"@metadata": {
 		"authors": [
@@ -416,5 +417,6 @@
 	"centralauth-usermerge-already": "Error message if a user is already being globally renamed or merged. $1 is the user's name.",
 	"action-centralauth-usermerge": "{{doc-action|centralauth-usermerge}}",
 	"right-centralauth-usermerge": "{[doc-right|centralauth-usermerge}}",
-	"centralauth-usermerge-confirm": "Confirmation message displayed in a JavaScript alert before the form is submitted"
+	"centralauth-usermerge-confirm": "Confirmation message displayed in a JavaScript alert before the form is submitted",
+	"centralauth-usermerge-toomany": "Error message shown when a user tries to merge more than the maximum number of users. $1 is the maximum number of users that can be merged."
 }
