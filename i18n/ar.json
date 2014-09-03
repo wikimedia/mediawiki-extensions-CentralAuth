@@ -17,7 +17,8 @@
 			"Moemin05",
 			"OsamaK",
 			"زكريا",
-			"مشعل الحربي"
+			"مشعل الحربي",
+			"Ms.Rainbow"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -333,5 +334,18 @@
 	"centralauth-warning-notattached": "الحساب المحلي غير مرتبط بحساب موحد.",
 	"centralauth-finishglobaliseemail_subject": "تأكيد الحساب على {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "تم إقتران بريدك الإلكتروني بالحساب \"$2\" على كل مشاريع ويكيميديا والويكي الرئيسية لحسابك هي {{SITENAME}}.\n\nلتأكيد ملكيتك لهذا الحساب قم بدمج أياً من الحسابات الخاصة بك والتي لا يمكن دمجها من قبلنا تلقائياً والتي يمكنها أن تساعدك على إسترجاع حسابك إذا نسيت كلمة السر. الرجاء فتح هذا الرابط في المتصفح الخاص بك.\n\n\n$3\n\nإذا كنت *لا* تملك هذا الحساب، الرجاء إستخدام هذا الرابط لإلغاء هذه الرسالة المختصة بتأكيد البريد الإلكتروني:\n\n\n$5\n\n\nتنتهي صلاحية كود التأكيد يوم $6 الساعة $7.",
-	"log-name-gblrename": "سجل إعادة التسمية الشاملة"
+	"centralauth-rename-abortlogin": "يجري حاليًا إعادة تسمية حسابك أو دمجه. [[Special:GlobalRenameProgress/$1|عرض الحالة]]",
+	"log-name-gblrename": "سجل إعادة التسمية الشاملة",
+	"globalusermerge": "دمج المستخدم العالمي",
+	"centralauth-usermerge-form-newuser": "اسم المستخدم النهائي",
+	"centralauth-usermerge-form-usernames": "أسماء المستخدمين الحالية",
+	"centralauth-usermerge-form-usernames-help": "يجب فصل كل اسم بسطر جديد.",
+	"centralauth-usermerge-notinstalled": "لم يتم تثبيت ملحق دمج المستخدم.",
+	"centralauth-usermerge-disabled": "تم تعطيل أداة دمج المستخدم العالمي.",
+	"logentry-gblrename-merge": "$1 على الصعيد العالمي {{GENDER:$2|تم الدمج}} $4 مع $5",
+	"centralauth-usermerge-queued": "دمج $1 مع $2 على قائمة الانتظار.\n\nعرض العملية في [[Special:GlobalRenameProgress/$3]].",
+	"centralauth-usermerge-invalid": "لا يوجد حساب عامي بالاسم $1.",
+	"centralauth-usermerge-already": "هناك بالفعل إعادة تسمية عالمية أو دمج في العملية لـ $1.",
+	"right-centralauth-usermerge": "دمج العديد من المستخدمين عالميًا",
+	"centralauth-usermerge-confirm": "أتريد حقًا دمج هؤلاء المستخدمين العالميين؟"
 }

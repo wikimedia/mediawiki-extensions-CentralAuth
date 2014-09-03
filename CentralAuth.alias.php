@@ -769,6 +769,7 @@ $specialPageAliases['zh-hans'] = array(
 	'MultiLock' => array( '批量锁定' ),
 	'GlobalRenameUser' => array( '全域重命名用户' ),
 	'GlobalRenameProgress' => array( '全域重命名状态' ),
+	'GlobalUserMerge' => array( '全域用户合并' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */

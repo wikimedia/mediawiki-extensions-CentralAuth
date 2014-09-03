@@ -285,8 +285,6 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|編集]])",
 	"centralauth-editgroup-nowikiset": "なし、すべてのウィキに適用されます。",
 	"centralauth-editgroup-nonexistent": "現在、グローバル グループ「$1」は存在しません。",
-	"centralauth-globalgrouppermissions-knownwiki": "アカウントがあるウィキ:",
-	"centralauth-globalgroupmembership-badknownwiki": "グローバルアカウント '''$1''' は指定したウィキ ('' $2 '') では活動していません。\n間違った利用者に権限を付与しようとしているおそれがあります!",
 	"centralauth-editset": "ウィキ集合",
 	"centralauth-editset-legend-rw": "ウィキ集合の編集/作成",
 	"centralauth-editset-legend-ro": "ウィキ集合の一覧",
@@ -346,5 +344,17 @@
 	"right-centralauth-rename": "グローバルアカウントの名前を変更",
 	"action-centralauth-rename": "グローバルアカウントの名前の変更",
 	"log-name-gblrename": "グローバル名変更記録",
-	"logentry-gblrename-rename": "$1 $4 から $5 へグローバルに{{GENDER:$2|利用者名変更しました}}"
+	"logentry-gblrename-rename": "$1 $4 から $5 へグローバルに{{GENDER:$2|利用者名変更しました}}",
+	"globalusermerge": "グローバル利用者統合",
+	"centralauth-usermerge-form-newuser": "最終的な利用者名",
+	"centralauth-usermerge-form-usernames": "現在の利用者名",
+	"centralauth-usermerge-form-usernames-help": "各利用者名は改行で区切ってください。",
+	"centralauth-usermerge-form-reason": "理由",
+	"centralauth-usermerge-notinstalled": "UserMerge 拡張機能がインストールされていません。",
+	"centralauth-usermerge-disabled": "グローバル利用者統合ツールが無効になっています。",
+	"centralauth-usermerge-queued": "$1 の $2 への統合をキューに追加しました。\n\n進行状況は [[Special:GlobalRenameProgress/$3]] で閲覧できます。",
+	"centralauth-usermerge-invalid": "「$1」という名前のグローバルアカウントはありません。",
+	"action-centralauth-usermerge": "グローバルに複数の利用者を統合",
+	"right-centralauth-usermerge": "グローバルに複数の利用者を統合",
+	"centralauth-usermerge-confirm": "これらの利用者を本当にグローバルに統合しますか?"
 }

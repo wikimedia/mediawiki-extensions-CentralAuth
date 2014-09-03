@@ -197,7 +197,7 @@
 	"centralauth-log-status-oversighted": "надгледано",
 	"centralauth-log-status-none": "(ништа)",
 	"centralauth-rightslog-name": "Дневник глобалних права",
-	"centralauth-rightslog-entry-usergroups": "је променио глобално групно чланство за $1 из $2 у $3",
+	"centralauth-rightslog-entry-usergroups": "је променио чланство глобалне групе за $1 из $2 у $3",
 	"centralauth-rightslog-entry-groupperms": "је променио дозволе групе за $1 из $2 у $3",
 	"centralauth-rightslog-entry-groupperms2": "је променио дозволе групе за $1. Додато $2; Уклоњено $3",
 	"centralauth-rightslog-entry-groupperms3": "је променио ограничења групе за скупове викија за $1 из $2 у $3",

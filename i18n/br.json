@@ -323,5 +323,7 @@
 	"centralauth-rename-table-status-inprogress": "O vont en-dro",
 	"centralauth-rename-table-status-queued": "Lakaet el lostennad",
 	"centralauth-rename-table-status-done": "Graet",
-	"centralauth-rename-progress-fieldset": "Roll ar c'hontoù lec'hel"
+	"centralauth-rename-progress-fieldset": "Roll ar c'hontoù lec'hel",
+	"centralauth-usermerge-form-reason": "Abeg",
+	"centralauth-usermerge-invalid": "N'eus kont hollek ebet anvet \"$1\"."
 }

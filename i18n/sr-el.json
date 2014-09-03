@@ -189,7 +189,7 @@
 	"centralauth-log-status-oversighted": "nadgledano",
 	"centralauth-log-status-none": "(ništa)",
 	"centralauth-rightslog-name": "Dnevnik globalnih prava",
-	"centralauth-rightslog-entry-usergroups": "je promenio globalno grupno članstvo za $1 iz $2 u $3",
+	"centralauth-rightslog-entry-usergroups": "je promenio članstvo globalne grupe za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-groupperms": "je promenio dozvole grupe za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-groupperms2": "je promenio dozvole grupe za $1. Dodato $2; Uklonjeno $3",
 	"centralauth-rightslog-entry-groupperms3": "je promenio ograničenja grupe za skupove vikija za $1 iz $2 u $3",

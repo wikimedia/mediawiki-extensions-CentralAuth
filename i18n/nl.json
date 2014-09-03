@@ -348,7 +348,7 @@
 	"globalrenameprogress-legend": "Status van globale hernoeming weergeven",
 	"globalrenameuser": "Globale gebruiker hernoemen",
 	"globalrenameuser-legend": "Globale gebruiker hernoemen",
-	"centralauth-rename-abortlogin": "Uw gebruikersaccount wordt momenteel hernoemd. [[Special:GlobalRenameProgress/$1|De status bekijken]].",
+	"centralauth-rename-abortlogin": "Uw gebruikersaccount wordt momenteel hernoemd of samengevoegd. [[Special:GlobalRenameProgress/$1|De status bekijken]].",
 	"centralauth-rename-form-oldname": "Huidige gebruikersnaam",
 	"centralauth-rename-form-newname": "Nieuwe gebruikersnaam",
 	"centralauth-rename-form-reason": "Reden",
@@ -371,5 +371,11 @@
 	"centralauth-rename-confirm": "Wilt u echt de naam van deze gebruiker globaal wijzigen?",
 	"log-name-gblrename": "Logboek globale gebruikersnaamwijzigingen",
 	"log-description-gblrename": "Dit logboek bevat de gebruikersnamen die globaal gewijzigd zijn.",
-	"logentry-gblrename-rename": "$1 heeft $4 globaal {{GENDER:$2|hernoemd}} naar $5"
+	"logentry-gblrename-rename": "$1 heeft $4 globaal {{GENDER:$2|hernoemd}} naar $5",
+	"globalusermerge": "Globale gebruiker samenvoegen",
+	"globalusermerge-legend": "Globale gebruiker samenvoegen",
+	"centralauth-usermerge-form-usernames": "Huidige gebruikersnamen",
+	"centralauth-usermerge-form-reason": "Reden",
+	"action-centralauth-usermerge": "globaal meerdere gebruikers samenvoegen",
+	"centralauth-usermerge-confirm": "Weet u zeker dat u deze gebruikers globaal wilt samenvoegen?"
 }

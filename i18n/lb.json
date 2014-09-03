@@ -338,5 +338,14 @@
 	"centralauth-rename-progress-fieldset": "Lëscht vun de lokale Benotzerkonten",
 	"centralauth-rename-confirm": "Wëllt Dir dëse Benotzer wierklech global ëmbenennen?",
 	"log-name-gblrename": "Logbuch vun de globalen Ëmbennungen",
-	"logentry-gblrename-rename": "$1 huet $4 global {{GENDER:$2|ëmbenannt}} op $5"
+	"logentry-gblrename-rename": "$1 huet $4 global {{GENDER:$2|ëmbenannt}} op $5",
+	"globalusermerge": "Globale Benotzer zesummeleeën",
+	"globalusermerge-legend": "Globale Benotzer zesummeleeën",
+	"centralauth-usermerge-form-newuser": "Finale Benotzernumm",
+	"centralauth-usermerge-form-usernames": "Aktuell Benotzernimm",
+	"centralauth-usermerge-form-reason": "Grond",
+	"centralauth-usermerge-disabled": "Den Tool fir Benotzer global zesummenzeleeën ass ausgeschalt.",
+	"centralauth-usermerge-invalid": "Et gëtt kee globale Benotzerkont mam Numm \"$1\".",
+	"action-centralauth-usermerge": "global méi Benotzer z",
+	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën"
 }

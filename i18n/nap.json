@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chelin"
+			"Chelin",
+			"C.R."
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''o'''",
@@ -22,5 +23,10 @@
 	"centralauth-admin-yes": "sì",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "dda lista pubbreca",
-	"centralauth-admin-list-localwiki": "Wiki locale"
+	"centralauth-admin-list-localwiki": "Wiki locale",
+	"globalusermerge": "Aunione globale d'utente",
+	"centralauth-usermerge-form-newuser": "Nomme utente finale",
+	"centralauth-usermerge-form-usernames": "Nomme utente 'e mo",
+	"centralauth-usermerge-queued": "Ll'aunione 'e $1 dint'a $2 so' state mise ncoda.\n\nVide 'o stato 'e prugresso dint'a [[Special:GlobalRenameProgress/$3]].",
+	"right-centralauth-usermerge": "Aunisce globalmente cchiù utente"
 }

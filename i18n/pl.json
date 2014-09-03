@@ -358,5 +358,10 @@
 	"centralauth-rename-progress-logs-fieldset": "Rejestr pozycji",
 	"centralauth-rename-confirm": "Czy na pewno chcesz globalnie zmienić nazwę tego użytkownika?",
 	"log-name-gblrename": "Globalny rejestr zmian nazw użytkowników",
-	"logentry-gblrename-rename": "$1 globalnie {{GENDER:$2|zmienił|zmieniła}} nazwę $4 na $5"
+	"logentry-gblrename-rename": "$1 globalnie {{GENDER:$2|zmienił|zmieniła}} nazwę $4 na $5",
+	"centralauth-usermerge-form-newuser": "Końcowa nazwa użytkownika",
+	"centralauth-usermerge-form-usernames": "Obecne nazwy użytkowników",
+	"centralauth-usermerge-form-usernames-help": "Nazwa każdego użytkownika powinna być oddzielona znakiem nowej linii.",
+	"centralauth-usermerge-form-reason": "Powód",
+	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”."
 }
