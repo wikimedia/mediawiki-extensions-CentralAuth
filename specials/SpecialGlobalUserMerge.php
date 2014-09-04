@@ -123,6 +123,27 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	}
 
 	/**
+	 * Implement a rudimentary rate limiting system,
+	 * we can't use User::pingLImiter() because stewards
+	 * have the "noratelimit" userright
+	 *
+	 * Hardcoded to allow 1 merge per 60 seconds
+	 *
+	 * @return bool true if we should let the user proceed
+	 */
+	private function checkRateLimit() {
+		$cache = wfGetCache( CACHE_ANYTHING );
+		$key = 'centralauth:usermerge:' . md5( $this->getUser()->getName() );
+		$found = $cache->get( $key );
+		if ( $found === false ) {
+			$cache->set( $key, true, 60 );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
 	 * @param array $data
 	 * @return Status
 	 */
@@ -130,6 +151,10 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		$newUser = User::newFromName( $data['finaluser'], 'creatable' );
 		if ( !$newUser ) {
 			return Status::newFatal( 'centralauth-usermerge-invalidname' );
+		}
+
+		if ( !$this->checkRateLimit() ) {
+			return Status::newFatal( 'centralauth-usermerge-ratelimited' );
 		}
 
 		$this->newUsername = $newUser->getName();
