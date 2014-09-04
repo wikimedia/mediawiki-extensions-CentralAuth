@@ -37,7 +37,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Themasterriot",
-			"Macofe"
+			"Macofe",
+			"Mor"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -227,6 +228,7 @@
 	"centralauth-renameuser-reserved": "El nombre de usuario $2 está reservado para una cuenta global.",
 	"centralauth-invalid-wiki": "No existe tal wiki en la base de datos: $1",
 	"centralauth-account-exists": "No se puede crear la cuenta: el nombre de usuario solicitado ya existe en el sistema unificado de autenticación.",
+	"centralauth-account-unattached-exists": "No se puede crear la cuenta: el nombre de usuario solicitado entraría en conflicto con otro nombre de usuario en el sistema unificado de registro",
 	"centralauth-account-exists-reset": "El nombre de usuario $1 no está registrado en este wiki, pero puedes restablecer su contraseña en [[Special:CentralAuth/$1|una wiki donde lo esté]].",
 	"centralauth-login-progress": "Iniciando sesión en wikis de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Cerrando sesión en otros wikis de {{int:Centralauth-groupname}}:",
@@ -368,6 +370,7 @@
 	"globalrenameprogress-legend": "Ver el progreso de renombramiento global",
 	"globalrenameuser": "Renombrar usuario global",
 	"globalrenameuser-legend": "Renombrar usuario global",
+	"centralauth-rename-abortlogin": "En este momento tu cuenta está siendo renombrada o fusionada. [[Special:GlobalRenameProgress/$1|View the status]].",
 	"centralauth-rename-form-oldname": "Nombre de usuario actual",
 	"centralauth-rename-form-newname": "Nombre de usuario nuevo",
 	"centralauth-rename-form-reason": "Motivo",
@@ -390,5 +393,8 @@
 	"centralauth-rename-confirm": "¿Seguro quieres renombrar globalmente a este usuario?",
 	"log-name-gblrename": "Registro de renombramiento global",
 	"log-description-gblrename": "Este registro muestra una lista de los cambios de nombre de los usuarios.",
-	"logentry-gblrename-rename": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5"
+	"logentry-gblrename-rename": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5",
+	"centralauth-usermerge-form-usernames": "Nombres de usuario actuales",
+	"centralauth-usermerge-form-usernames-help": "Cada nombre de usuario debe estar separado por una línea nueva.",
+	"centralauth-usermerge-form-reason": "Razón"
 }
