@@ -340,6 +340,7 @@
 	"centralauth-finishglobaliseemail_body": "نشانی رایانامه شما با توجه به حساب شما «$2» در تمامی پروژه ها هماهنگ شده‌است. حساب اصلی شما نیز در {{SITENAME}} قرار دارد.\n\nبرای تأیید آنکه این حساب واقعاً به شما تعلق دارد. البته توجه داشته باشید که ادغام حساب‌های کاربری نمی‌تواند به صورت خودکار انجام شود.\nهمچنین اگر شما گذرواژهٔ حساب خودتان را گم کرده‌اید می‌توانید از پیوند زیر استفاده نمایید.\n\n$3\n\nاگر این حساب متعلق به شما نیست، لطفاً وارد پیوند زیر شده تا این درخواست منقضی گردد.\n\n$5\n\nاین درخواست در تاریخ $6 ساعت $7 منقضی می‌شود.",
 	"globalrenameprogress": "پیشرفت تغییر نام سراسری",
 	"globalrenameprogress-legend": "نمایش پیشرفت تغییر نام سراسری",
+	"centralauth-rename-abortlogin": "حساب کاربری شما در حال تغییرنام یا ادغام‌شدن است. [[Special:GlobalRenameProgress/$1|مشاهده وضعیت]].",
 	"centralauth-rename-form-newname": "نام کاربری تازه",
 	"centralauth-rename-form-reason": "دلیل",
 	"centralauth-rename-progress-username": "نام کاربری",
@@ -348,5 +349,19 @@
 	"centralauth-rename-table-status-queued": "در صف",
 	"centralauth-rename-table-status-done": "انجام شد",
 	"centralauth-rename-viewprogress": "نمایش پیشرفت",
-	"centralauth-rename-progress-fieldset": "فهرست حساب‌های محلی"
+	"centralauth-rename-progress-fieldset": "فهرست حساب‌های محلی",
+	"globalusermerge": "ادغام سراسری کاربر",
+	"globalusermerge-legend": "ادغام سراسری کاربر",
+	"centralauth-usermerge-form-newuser": "نام کاربری نهایی",
+	"centralauth-usermerge-form-usernames": "نام کاربری فعلی",
+	"centralauth-usermerge-form-usernames-help": "هر نام کاربری باید با یک خط تازه جدا شود.",
+	"centralauth-usermerge-form-reason": "دلیل",
+	"centralauth-usermerge-notinstalled": "افزونه UserMerge نصب نیست.",
+	"centralauth-usermerge-disabled": "ابزار ادغام سراسری کاربر غیرفعال است.",
+	"logentry-gblrename-merge": "$1 سراسری $4 را به $5 {{GENDER:$2|ادغام کرد}}",
+	"centralauth-usermerge-invalid": "هیچ حساب کاربری سراسری با نام «$1» وجود ندارد.",
+	"centralauth-usermerge-already": "از پیش یک تغییرنام یا ادغام سراسری برای $1 در جریان است.",
+	"action-centralauth-usermerge": "ادغام سراسری چند کاربر",
+	"right-centralauth-usermerge": "ادغام سراسری چند کاربر",
+	"centralauth-usermerge-confirm": "آیا واقعاً می‌خواهید این کاربران را سراسری ادغام کنید؟"
 }

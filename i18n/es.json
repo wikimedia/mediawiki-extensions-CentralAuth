@@ -370,7 +370,7 @@
 	"globalrenameprogress-legend": "Ver el progreso de renombramiento global",
 	"globalrenameuser": "Renombrar usuario global",
 	"globalrenameuser-legend": "Renombrar usuario global",
-	"centralauth-rename-abortlogin": "En este momento tu cuenta está siendo renombrada o fusionada. [[Special:GlobalRenameProgress/$1|View the status]].",
+	"centralauth-rename-abortlogin": "En este momento tu cuenta está siendo renombrada o fusionada. [[Special:GlobalRenameProgress/$1|Mira el estado]].",
 	"centralauth-rename-form-oldname": "Nombre de usuario actual",
 	"centralauth-rename-form-newname": "Nombre de usuario nuevo",
 	"centralauth-rename-form-reason": "Motivo",

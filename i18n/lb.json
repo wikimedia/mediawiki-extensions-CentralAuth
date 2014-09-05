@@ -318,6 +318,7 @@
 	"action-centralauth-rename": "global Benutzerkonten ëmbenennen",
 	"globalrenameuser": "Globale Benotzer ëmbenennen",
 	"globalrenameuser-legend": "Globale Benotzer ëmbenennen",
+	"centralauth-rename-abortlogin": "Äre Benotzerkont gëtt elo ëmbenannt oder zesummegeluecht. [[Special:GlobalRenameProgress/$1|KUckt de Status]].",
 	"centralauth-rename-form-oldname": "Aktuelle Benotzernumm",
 	"centralauth-rename-form-newname": "Neie Benotzernumm",
 	"centralauth-rename-form-reason": "Grond",
@@ -343,9 +344,13 @@
 	"globalusermerge-legend": "Globale Benotzer zesummeleeën",
 	"centralauth-usermerge-form-newuser": "Finale Benotzernumm",
 	"centralauth-usermerge-form-usernames": "Aktuell Benotzernimm",
+	"centralauth-usermerge-form-usernames-help": "All Benotzernumm soll duerch eng nei Linn getrennt sinn.",
 	"centralauth-usermerge-form-reason": "Grond",
+	"centralauth-usermerge-notinstalled": "D'Erweiderung UserMerge ass net installéiert.",
 	"centralauth-usermerge-disabled": "Den Tool fir Benotzer global zesummenzeleeën ass ausgeschalt.",
 	"centralauth-usermerge-invalid": "Et gëtt kee globale Benotzerkont mam Numm \"$1\".",
+	"centralauth-usermerge-already": "Et ass schonn eng global Ëmbenennung oder e globaalt Zesummeleeë fir $1 am Gaang.",
 	"action-centralauth-usermerge": "global méi Benotzer z",
-	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën"
+	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
+	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?"
 }

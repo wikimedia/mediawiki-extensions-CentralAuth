@@ -449,9 +449,13 @@ $specialPageAliases['lt'] = array(
 
 /** Malagasy (Malagasy) */
 $specialPageAliases['mg'] = array(
-	'MergeAccount' => array( 'Hampiray_ny_kaonty' ),
-	'GlobalGroupMembership' => array( 'Fahafahana_amin\'ny_sehatra_rehetra' ),
-	'GlobalGroupPermissions' => array( 'Fahafahan\'ny_vondrona_amin\'ny_sehatra_rehetra' ),
+	'MergeAccount' => array( 'Hampiray_ny_kaonty', 'HampirayKaonty' ),
+	'GlobalGroupMembership' => array( 'Zom-pikambana_maneran-tsehatra', 'ZompikambanaManerantsehatra' ),
+	'GlobalGroupPermissions' => array( 'Zom-bondrona_maneran-tsehatra', 'ZombondronaManerantsehatra' ),
+	'GlobalUsers' => array( 'Mpikambana_maneran-tsehatra', 'MpikambanaManerantsehatra' ),
+	'GlobalRenameUser' => array( 'Fanovan\'anaram-pikambana_maneran-tsehatra' ),
+	'GlobalRenameProgress' => array( 'Fandrosoan\'ny_fiovan\'anarana_maneran-tsehatra' ),
+	'GlobalUserMerge' => array( 'Fampitsoniham-pikambana_maneran-tsehatra' ),
 );
 
 /** Minangkabau (Baso Minangkabau) */

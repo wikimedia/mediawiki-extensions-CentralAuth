@@ -255,8 +255,6 @@
 	"centralauth-editgroup-success-text": "Grupul global $1 a fost actualizat cu succes.\n[[Special:GlobalGroupPermissions|Înapoi la gestionarea grupurilor]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|editare]])",
 	"centralauth-editgroup-nowikiset": "Niciunul, se aplică tuturor wikiurilor.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki pe care ei au un cont:",
-	"centralauth-globalgroupmembership-badknownwiki": "Contul global '''$1''' nu este activ pe wikiul specificat (''$2'').\nS-ar putea să încercați să atribuiți drepturi utilizatorului greșit!",
 	"centralauth-editset": "Wiki seturi",
 	"centralauth-editset-legend-rw": "Modificați sau creați set de wikiuri",
 	"centralauth-editset-legend-ro": "Listă de wiki seturi",
@@ -304,5 +302,7 @@
 	"centralauth-completelogin-back": "Înapoi la pagina precedentă.",
 	"centralauth-warning-notloggedin": "Nu sunteți autentificat în acest moment.",
 	"centralauth-warning-notattached": "Contul local nu este atașat unuia global.",
-	"centralauth-finishglobaliseemail_subject": "Confirmarea contului la {{SITENAME}}"
+	"centralauth-finishglobaliseemail_subject": "Confirmarea contului la {{SITENAME}}",
+	"centralauth-usermerge-notinstalled": "Extensia UserMerge nu este instalată.",
+	"action-centralauth-usermerge": "Motiv"
 }
