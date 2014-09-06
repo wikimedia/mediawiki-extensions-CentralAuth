@@ -66,6 +66,10 @@ class SpecialMergeAccount extends SpecialPage {
 		// do / don't have more accounts to merge
 
 		if ( $this->mAttemptMerge ) {
+			// First check the edit token
+			if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
+				throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
+			}
 			switch( $this->mMergeAction ) {
 			case "dryrun":
 				$this->doDryRunMerge();
