@@ -439,5 +439,32 @@
 	"globalrenamerequest-submit-text": "Form button text.",
 	"globalrenamerequest-save-error": "Used as error message.",
 	"globalrenamerequest-status-title": "Page title when request is pending.",
-	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name"
+	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
+	"globalrenamequeue": "{{doc-special|GlobalRenameQueue}}",
+	"globalrenamequeue-desc": "{{desc|name=Process global account rename requests|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}"
+	"globalrenamequeue-column-rq_name": "Table header.",
+	"globalrenamequeue-column-rq_newname": "Table header.",
+	"globalrenamequeue-column-rq_wiki": "Table header.",
+	"globalrenamequeue-column-rq_requested_ts": "Table header.",
+	"globalrenamequeue-column-row_actions": "Table header.",
+	"globalrenamequeue-column-rq_completed_ts": "Table header.",
+	"globalrenamequeue-column-rq_status": "Table header.",
+	"globalrenamequeue-column-rq_performer": "Table header.",
+	"globalrenamequeue-action-address": "Link text.",
+	"globalrenamequeue-request-title": "Page title when processing request.\n\n* $1 is the user's current name",
+	"globalrenamequeue-request-header": "Page content when processing
+	request.\n\n* $1 is the user's current name\n* $2 is a link to the user's
+	User page.\n* $3 is the user's requested name.",
+	"globalrenamequeue-request-userinfo": "Utility links for checking on user.\n\n* $1 is a link to the user's talk page.\n* $2 is a link to Special:Contributions.\n* $3 is a link to Special:Log.\n* $4 is a link to the SULInfo tool.\n* $5 is a link to the GUC tool.",
+	"globalrenamequeue-request-userinfo-global": "Utility links for checking on user.\n\n* $1 is a link to the user's talk page.\n* $2 is a link to Special:Contributions.\n* $3 is a link to Special:Log.\n* $4 is a link to the SULInfo tool.\n* $5 is a link to the GUC tool.\n* $6 is a link to Special:CentralAuth.",
+	"globalrenamequeue-request-reason": "Display for reason provided by user for rename.\n\n* $1 is reason text given by user. It will be parsed as wikitext.",
+	"globalrenamequeue-request-reason-sul": "Default reason for SUL rename requests.",
+	"globalrenamequeue-request-comments-label": "Form field label text.",
+	"globalrenamequeue-request-approve-text": "Form button text.",
+	"globalrenamequeue-request-deny-text": "Form button text.",
+	"globalrenamequeue-request-cancel-text": "Form button text.",
+	"globalrenamequeue-request-unknown-title": "Page title when invalud URL is requested.",
+	"globalrenamequeue-request-unknown-body": "Page content when invalid URL is requested.",
+	"globalrenamequeue-request-status-title": "Page title when viewing processed request.",
+	"globalrenamequeue-wip": "Error message during development.\n\n* $1 name of unimplemented feature."
 }
