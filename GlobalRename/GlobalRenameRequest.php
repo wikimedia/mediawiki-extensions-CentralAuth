@@ -230,6 +230,13 @@ class GlobalRenameRequest {
 		return $this->mStatus === self::PENDING;
 	}
 
+	/**
+	 * @return bool
+	 */
+	public function userIsGlobal() {
+		return $this->mWiki === null;
+	}
+
 	public function save() {
 		$dbw = self::getDB( DB_MASTER );
 		if ( $this->mId === null ) {
