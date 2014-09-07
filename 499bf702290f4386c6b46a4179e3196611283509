@@ -50,6 +50,23 @@
       "revId": "499bf702290f4386c6b46a4179e3196611283509",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_cfdaf820",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-07T17:45:45Z",
+      "side": 1,
+      "message": "Apparently I made renameuser_queue.rq_wiki have a `not null` constraint in I61acceb4ea3bce5b03a1408c89f21559b928c623 which is dumb because I remember planning on using a null wiki to mark global rename requests at the time I created the table.\n\nShould I amend the rq_wiki column in the table with this commit or add a new boolean column to flag the state difference?",
+      "revId": "499bf702290f4386c6b46a4179e3196611283509",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
