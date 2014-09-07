@@ -1734,7 +1734,7 @@ class CentralAuthHooks {
 			strncmp( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/', 25 ) !== 0;
 	}
 
-	/*
+	/**
 	 * @param User $user
 	 * @param string $global wikiID of global wiki
 	 * @param string $local wikiID of wiki user is currently on
