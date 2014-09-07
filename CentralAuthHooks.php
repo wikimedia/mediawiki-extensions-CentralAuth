@@ -75,6 +75,23 @@ class CentralAuthHooks {
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 			);
+
+			$wgExtensionCredits['specialpage'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'GlobalRenameQueue',
+				'author' => 'Bryan Davis',
+				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
+				'descriptionmsg' => 'globalrenamequeue-desc',
+			);
+			$wgAutoloadClasses['SpecialGlobalRenameQueue'] =
+				"$caBase/specials/SpecialGlobalRenameQueue.php";
+			$wgSpecialPages['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
+			$wgSpecialPageGroups['GlobalRenameQueue'] = 'users';
+			$wgResourceModules['ext.centralauth.globalrenamequeue'] = array(
+				'styles'        => 'ext.centralauth.globalrenamequeue.less',
+				'localBasePath' => "{$caBase}/modules",
+				'remoteExtPath' => 'CentralAuth/modules',
+			);
 		}
 	}
 
