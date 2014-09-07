@@ -357,6 +357,9 @@ $wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUse
 // For GlobalCssJs
 $wgHooks['LoadGlobalCssJs'][] = 'CentralAuthHooks::onLoadGlobalCssJs';
 
+// For GlobalUserPage
+$wgHooks['LoadGlobalUserPage'][] = 'CentralAuthHooks::onLoadGlobalUserPage';
+
 // For UserMerge
 $wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
 
