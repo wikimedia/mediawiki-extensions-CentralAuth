@@ -16,6 +16,24 @@
       "revId": "6dc83312bf1b9a8441eab8f082efcac50655ae44",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_c28c0f35",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-07T21:16:06Z",
+      "side": 1,
+      "message": "Yes, but I think it\u0027s clearer to have different functions for each hook since they belong to different extensions, even if they do the exact same thing.",
+      "parentUuid": "2e2fb78d_4f2ba8db",
+      "revId": "6dc83312bf1b9a8441eab8f082efcac50655ae44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
