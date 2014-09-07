@@ -375,7 +375,10 @@
 	"globalusermerge": "Globale gebruiker samenvoegen",
 	"globalusermerge-legend": "Globale gebruiker samenvoegen",
 	"centralauth-usermerge-form-usernames": "Huidige gebruikersnamen",
+	"centralauth-usermerge-form-usernames-help": "Iedere gebruikersnaam moet op een nieuwe regel geplaatst worden.",
 	"centralauth-usermerge-form-reason": "Reden",
+	"centralauth-usermerge-invalid": "Er bestaat geen globaal account met de naam: $1",
 	"action-centralauth-usermerge": "globaal meerdere gebruikers samenvoegen",
+	"right-centralauth-usermerge": "Meerdere gebruikers globaal samenvoegen",
 	"centralauth-usermerge-confirm": "Weet u zeker dat u deze gebruikers globaal wilt samenvoegen?"
 }

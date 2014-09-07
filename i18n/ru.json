@@ -381,5 +381,11 @@
 	"centralauth-rename-confirm": "Вы действительно хотите глобально переименовать участника?",
 	"log-name-gblrename": "Журнал глобального переименования",
 	"log-description-gblrename": "Этот журнал отслеживает глобальные переименование пользователей.",
-	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально переименовал $4 в $5"
+	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально переименовал $4 в $5",
+	"globalusermerge": "Объединение глобальных учётных записей",
+	"globalusermerge-legend": "Объединение глобальных учётных записей",
+	"centralauth-usermerge-form-newuser": "Окончательное имя участника",
+	"centralauth-usermerge-form-usernames": "Текущие имена участника",
+	"centralauth-usermerge-form-reason": "Причина",
+	"centralauth-usermerge-notinstalled": "Расширение UserMerge не устанавлено."
 }

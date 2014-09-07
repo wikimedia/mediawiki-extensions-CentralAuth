@@ -54,7 +54,7 @@
 	"centralauth-disabled-dryrun": "アカウントの統一は現在、デモ / デバッグモードであるため、実際の統合操作は実行されません。\n申し訳ありません!",
 	"centralauth-error-locked": "あなたのアカウントはロックされているため、編集はできません。",
 	"centralauth-error-unmerged": "あなたのアカウントは統合されていないため、編集はできません。",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''統一ログイン'''についての詳しい説明]]…''",
+	"centralauth-readmore-text": ":''<span class=\"plainlinks\">[https://meta.wikimedia.org/wiki/Special:MyLanguage/Help:Unified_login '''統一ログイン'''についての詳しい説明]…</span>''",
 	"centralauth-list-home-title": "ホームウィキ",
 	"centralauth-list-home-dryrun": "このウィキで設定されたパスワードとメールアドレスが統合されたアカウントに設定されます。",
 	"centralauth-list-attached-title": "関連付けされるアカウント",

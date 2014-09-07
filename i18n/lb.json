@@ -348,6 +348,8 @@
 	"centralauth-usermerge-form-reason": "Grond",
 	"centralauth-usermerge-notinstalled": "D'Erweiderung UserMerge ass net installéiert.",
 	"centralauth-usermerge-disabled": "Den Tool fir Benotzer global zesummenzeleeën ass ausgeschalt.",
+	"logentry-gblrename-merge": "$1 huet $4 global {{GENDER:$2|zesummegeluecht}} op $5",
+	"centralauth-usermerge-queued": "Zesummeféierunge fir $1 a(n) $2 waarden drop gemaach ze ginn.\n\nKuckt d'Entwécklung op [[Special:GlobalRenameProgress/$3]].",
 	"centralauth-usermerge-invalid": "Et gëtt kee globale Benotzerkont mam Numm \"$1\".",
 	"centralauth-usermerge-already": "Et ass schonn eng global Ëmbenennung oder e globaalt Zesummeleeë fir $1 am Gaang.",
 	"action-centralauth-usermerge": "global méi Benotzer z",
