@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_4f2ba8db",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-09-07T18:20:04Z",
+      "side": 1,
+      "message": "Couldn\u0027t you just have both of these point directly to isUserTheSameOn?",
+      "revId": "6dc83312bf1b9a8441eab8f082efcac50655ae44",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
