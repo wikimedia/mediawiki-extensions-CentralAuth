@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_65b325fe",
+        "filename": "EmailableUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-09-08T01:50:11Z",
+      "side": 1,
+      "message": "Urgh. I\u0027m pretty sure if I saw bug 6957 (the bug that hack is supposed to work around) these days I\u0027d mark it resolved invalid.",
+      "revId": "66a5b0a1fa09f4e7507e78dd501cd98d44cf6408",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_25ce3d87",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-09-08T01:50:11Z",
+      "side": 1,
+      "message": "Why do we not just pass this as a parameter, or access it directly from resendConfirmationEmail?",
+      "revId": "66a5b0a1fa09f4e7507e78dd501cd98d44cf6408",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
