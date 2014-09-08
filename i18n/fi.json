@@ -343,5 +343,6 @@
 	"centralauth-rename-progress-fieldset": "Luettelo paikallisista tunnuksista",
 	"centralauth-rename-progress-logs-fieldset": "Lokimerkinnät",
 	"log-name-gblrename": "Järjestelmänlaajuinen tunnusten vaihto",
-	"log-description-gblrename": "Tässä lokissa ovat järjestelmänlaajuisesti tehdyt käyttäjätunnusten vaihdot."
+	"log-description-gblrename": "Tässä lokissa ovat järjestelmänlaajuisesti tehdyt käyttäjätunnusten vaihdot.",
+	"centralauth-usermerge-form-reason": "Syy"
 }
