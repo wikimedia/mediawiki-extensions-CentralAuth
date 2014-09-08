@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_05a461ae",
+        "filename": "maintenance/migratePass0.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-09-08T02:05:09Z",
+      "side": 1,
+      "message": "Where is this used anyway?",
+      "revId": "f464182c170d99d4056362b74f625f72d98d05f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_25951d43",
+        "filename": "maintenance/migratePass0.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-09-08T02:05:09Z",
+      "side": 1,
+      "message": "Can\u0027t we also $this-\u003egetDB here?",
+      "revId": "f464182c170d99d4056362b74f625f72d98d05f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
