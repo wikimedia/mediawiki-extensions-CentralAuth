@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_a017bb55",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-08T12:56:54Z",
+      "side": 1,
+      "message": "Parameters $1 and $2 have not been documented. For the other messages that doesn\u0027t matter too much, because the contents are fairly self-explanatory, but here that\u0027s not the case.",
+      "revId": "fb77aaf13690db8021bd1381ad53e601a0367d2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
