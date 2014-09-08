@@ -521,7 +521,7 @@ class CentralAuthHooks {
 		}
 
 		// Check that this is actually for a special login page view
-		if ( $context->getTitle()->isSpecial( 'Userlogin' ) ) {
+		if ( $context->getTitle()->isSpecial( 'Userlogin' ) && $request->wasPosted() ) {
 			// User will be redirected to Special:CentralLogin/start (central wiki),
 			// then redirected back to Special:CentralLogin/complete (this wiki).
 			// Sanity check that "returnto" is not one of the central login pages. If it
