@@ -303,6 +303,7 @@ $wgAutoloadClasses['UserMergeNoopLogger'] = "$caBase/includes/GlobalRename/UserM
 $wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/CentralAuthTestCaseUsingDatabase.php";
 $wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/CentralAuthTestUser.php";
 
+$wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/UsersToRename/UsersToRenameDatabaseUpdates.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
