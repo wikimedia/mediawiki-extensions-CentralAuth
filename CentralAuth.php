@@ -282,6 +282,8 @@ $wgAutoloadClasses['UserMergeNoopLogger'] = "$caBase/GlobalRename/UserMergeNoopL
 $wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/CentralAuthTestCaseUsingDatabase.php";
 $wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/CentralAuthTestUser.php";
 
+$wgAutoloadClasses['ApiQueryUsersToRename'] = "$caBase/api/ApiQueryUsersToRename.php";
+$wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/UsersToRename/UsersToRenameDatabaseUpdates.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
@@ -404,6 +406,7 @@ $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
 $wgAPIListModules['globalgroups'] = 'ApiQueryGlobalGroups';
 $wgAPIListModules['wikisets'] = 'ApiQueryWikiSets';
 $wgAPIListModules['globalallusers'] = 'ApiQueryGlobalAllUsers';
+$wgAPIListModules['userstorename'] = 'ApiQueryUsersToRename';
 
 $wgLogTypes[]                      = 'globalauth';
 $wgLogNames['globalauth']          = 'centralauth-log-name';
