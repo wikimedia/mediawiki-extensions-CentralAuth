@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_4aeee987",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T18:27:23Z",
+      "side": 1,
+      "message": "I think this should just be renameInProgress(), but what you really want to know whether the name is being renamed away from or to there. \n\n$progress \u003d $centralUser-\u003erenameInProgress();\nif ( $progress \u0026\u0026 $safe \u003d\u003d\u003d $progress[1] ) {\n    // bad, we\u0027re renaming a user to $safe;\n}",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_8a75f12e",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T18:27:23Z",
+      "side": 1,
+      "message": "Do we want to automatically redirect them like we started doing in core?",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_0ae7c1e0",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T18:27:23Z",
+      "side": 1,
+      "message": "So here you end up making two queries right after another, one to check if there is a request, and a second to load the full request. Can we just combine the two?\n\n$req \u003d GlobalRenameRequest::newFromUser( $username, $wiki );\nif ( $req-\u003egetId() ) {\n    $req-\u003egetNewName();\n}",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_aa242d08",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T18:27:23Z",
+      "side": 1,
+      "message": "Explicitly specify an output format like -\u003etext() or -\u003eescaped().",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_ea2a35d6",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T18:27:23Z",
+      "side": 1,
+      "message": "Also check Sanitizer::validateEmail()",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_8a761100",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T18:27:23Z",
+      "side": 1,
+      "message": "We probably should send out a confirmation email?\n\n$user-\u003esendConfirmationMail( \u0027set\u0027 );",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
