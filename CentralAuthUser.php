@@ -111,6 +111,27 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Get a CentralAuthUser object from a user's id
+	 *
+	 * @param int $id
+	 * @return CentralAuthUser|bool false if no user exists with that id
+	 */
+	public static function newFromId( $id ) {
+		$name = self::getCentralSlaveDB()->selectField(
+			'globaluser',
+			'gu_name',
+			array( 'gu_id' => $id ),
+			__METHOD__
+		);
+
+		if ( $name ) {
+			return new CentralAuthUser( $name );
+		} else {
+			return false;
+		}
+	}
+
+	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
 	 * @param $row ResultWrapper|object
