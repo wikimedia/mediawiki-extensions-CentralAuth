@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_01956742",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-09T20:53:05Z",
+      "side": 1,
+      "message": "Too much puppet. I was making the \u003d\u003e align. Easy fix.",
+      "parentUuid": "2e2fb78d_a12333a5",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_c142bf3e",
         "filename": "specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2014-09-09T20:44:37Z",
       "side": 1,
       "message": "ehhhhhhhhhhhhhhhhh.",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_01ce8786",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-09T20:53:05Z",
+      "side": 1,
+      "message": "Teach me. I wanted to allow wikitext in the request form to make providing links and stuff easier. Is this a horrible idea? Or just a horrible execution on the backend?",
+      "parentUuid": "2e2fb78d_c142bf3e",
       "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_61b0abf1",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-09T20:53:05Z",
+      "side": 1,
+      "message": "Yeah using addModuleStyles would work. I thought I read something that said that addModules was preferred because it is async and does something better for front end cache. It does make an ugly reflow of the page when the styles come in though for sure.",
+      "parentUuid": "2e2fb78d_8174b797",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_c1599f2e",
         "filename": "specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -81,6 +135,24 @@
       "writtenOn": "2014-09-09T20:44:37Z",
       "side": 1,
       "message": "Lets not hardcode these, instead pass the raw username to the message, and let people create local overrides to add these links on meta.",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_219aa375",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-09T20:53:05Z",
+      "side": 1,
+      "message": "So what should we put in the default message? I think you\u0027re right that hardcoding tool names like this clunky. I was basically just trying to recreate part of https://meta.wikimedia.org/wiki/Template:SRUC anyway.",
+      "parentUuid": "2e2fb78d_c1599f2e",
       "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
