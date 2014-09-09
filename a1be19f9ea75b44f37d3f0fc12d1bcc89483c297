@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_5e17ca56",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T20:44:37Z",
+      "side": 1,
+      "message": "spacing :o",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_a12333a5",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T20:44:37Z",
+      "side": 1,
+      "message": "weird spacing?",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_c142bf3e",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T20:44:37Z",
+      "side": 1,
+      "message": "ehhhhhhhhhhhhhhhhh.",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_8174b797",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T20:44:37Z",
+      "side": 1,
+      "message": "addModuleStyles since these are all styles?",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_c1599f2e",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-09T20:44:37Z",
+      "side": 1,
+      "message": "Lets not hardcode these, instead pass the raw username to the message, and let people create local overrides to add these links on meta.",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
