@@ -135,7 +135,7 @@ class CentralAuthTestUser {
 
 	/**
 	 * Save the user into a centralauth database
-	 * @param Database $db
+	 * @param DatabaseBase $db
 	 */
 	public function save( $db ) {
 		// Setup local wiki user
