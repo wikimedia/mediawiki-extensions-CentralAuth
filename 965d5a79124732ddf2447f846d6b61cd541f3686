@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_5788cdeb",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-09-10T00:07:44Z",
+      "side": 1,
+      "message": "Document the conditions that are needed for this to give useful results?",
+      "revId": "965d5a79124732ddf2447f846d6b61cd541f3686",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
