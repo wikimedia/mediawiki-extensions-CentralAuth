@@ -60,6 +60,23 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	}
 
 	/**
+	 * @covers CentralAuthUser::register
+	 */
+	public function testRegister() {
+		$caNewUser = new CentralAuthUser( 'NewGlobalUser' );
+
+		$this->assertSame(
+			false,
+			$caNewUser->exists()
+		);
+		$caNewUser->register( '1234567890', 'test@test.com' );
+		$this->assertSame(
+			true,
+			$caNewUser->exists()
+		);
+	}
+
+	/**
 	 * Setup a fresh set of global users for each test.
 	 * Note: MediaWikiTestCase::resetDB() will delete all tables between
 	 * test runs, so no explicite tearDown() is needed.

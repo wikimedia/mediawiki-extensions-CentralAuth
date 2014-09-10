@@ -68,7 +68,7 @@ class CentralAuthTestUser {
 	 * Array of attachments to insert into localuser
 	 * @var array of arrays
 	 */
-	private $wikis;
+	private $localUserRows;
 
 	/**
 	 * If we should create the local wiki user too. Usually we do, but
@@ -120,9 +120,9 @@ class CentralAuthTestUser {
 		$this->enabled = $attrs['gu_enabled'];
 		$this->enabledMethod = $attrs['gu_enabled_method'];
 
-		$this->wikis = array();
+		$this->localUserRows = array();
 		foreach ( $wikis as $wiki ) {
-			$this->wikis[] = array(
+			$this->localUserRows[] = array(
 				'lu_wiki' => $wiki[0],
 				'lu_name' => $this->username,
 				'lu_attached_timestamp' => $this->registration,
@@ -140,12 +140,7 @@ class CentralAuthTestUser {
 	public function save( DatabaseBase $db ) {
 		// Setup local wiki user
 		if ( $this->createLocal ) {
-			$user = User::newFromName( $this->username );
-			if ( $user->idForName() == 0 ) {
-				$user->addToDatabase();
-				$user->setPassword( $this->password );
-				$user->saveSettings();
-			}
+			$this->createLocalAccount();
 		}
 
 		// Setup global user
@@ -177,9 +172,60 @@ class CentralAuthTestUser {
 			__METHOD__
 		);
 
-		if ( count( $this->wikis ) ) {
-			$db->insert( 'localuser', $this->wikis, __METHOD__ );
+		if ( count( $this->localUserRows ) ) {
+			$this->saveLocalUser( $db, $this->localUserRows );
+			foreach ( $this->localUserRows as $wiki ) {
+				$this->saveLocalName( $db, $wiki['lu_wiki'] );
+			}
 		}
+	}
+
+	public function createLocalAccount() {
+		$user = User::newFromName( $this->username );
+		if ( $user->idForName() == 0 ) {
+			$user->addToDatabase();
+			$user->setPassword( $this->password );
+			$user->saveSettings();
+		}
+	}
+
+	public function saveLocalUser( $db, $rows ) {
+		$db->insert( 'localuser', $rows, __METHOD__ );
+	}
+
+	public function saveLocalName( $db, $wiki ) {
+		$db->insert( 'localnames',
+			array(
+				'ln_wiki' => $wiki,
+				'ln_name' => $this->username
+			),
+			__METHOD__
+		);
+	}
+
+	/**
+	 *
+	 * @param $fields
+	 */
+	public function saveRemote( $remoteDB, $fields = array() ) {
+		$fields += array(
+			'user_id' => $remoteDB->nextSequenceValue( 'user_user_id_seq' ),
+			'user_email' => $this->email,
+			'user_email_authenticated' => $this->emailAuthenticated,
+			'user_password' => $this->passHash,
+			'user_editcount' => 1,
+			'user_name' => $this->username,
+		);
+
+		// We only need the data for CentralAuthUser::localUserData()
+		// 'user_id', 'user_email', 'user_email_authenticated', 'user_password',
+		// 'user_editcount', 'user_name'
+		$remoteDB->insert( 'user',
+			$fields
+			, __METHOD__,
+			array( 'IGNORE' )
+		);
+
 	}
 
 }
