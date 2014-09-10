@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_2dde0d15",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-09-10T22:40:57Z",
+      "side": 1,
+      "message": "I\u0027m getting different results based on the batch size... I think because this is being used without an order by?",
+      "revId": "eecb61df39f0f90d568d9fc73033c47723504681",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_0de591d7",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-09-10T22:40:57Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "eecb61df39f0f90d568d9fc73033c47723504681",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
