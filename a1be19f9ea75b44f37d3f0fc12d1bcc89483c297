@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_0381e7fc",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-10T17:40:20Z",
+      "side": 1,
+      "message": "Seems like addModuleStyles should be fine (and better UX): \"In practice you should only use OutputPage::addModuleStyles for stylesheets that are required for basic presentation of server-generated content (PHP output and the core Skin). Separate this CSS from modules with JavaScript and styling of dynamically-generated content, and don\u0027t have JavaScript modules depend on it, otherwise ResourceLoader may load modules twice.\" -- https://www.mediawiki.org/wiki/ResourceLoader/Developing_with_ResourceLoader#Loading_modules",
+      "parentUuid": "2e2fb78d_61b0abf1",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_c1599f2e",
         "filename": "specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
