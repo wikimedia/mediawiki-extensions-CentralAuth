@@ -16,6 +16,24 @@
       "revId": "965d5a79124732ddf2447f846d6b61cd541f3686",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_e3c13b35",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-10T17:42:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_5788cdeb",
+      "revId": "965d5a79124732ddf2447f846d6b61cd541f3686",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
