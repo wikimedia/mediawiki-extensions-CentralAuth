@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_64d30706",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_96aaae6b",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_16aebe7d",
         "filename": "i18n/en.json",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-11T11:04:32Z",
       "side": 1,
       "message": "Don\u0027t use bullet. Use {{int:pipe-separator}} for consistency in these types of lists. You could also choose to use Language::pipeList and get rid of this message altogether at the cost of giving up some customisation options, but I think that\u0027s worth it.\n\nSame below.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_e93eb086",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Changed completely based on feedback from Legoktm",
+      "parentUuid": "2e2fb78d_16aebe7d",
       "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_c941b40f",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_d6c71649",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_b6c24a37",
         "filename": "i18n/en.json",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-11T11:04:32Z",
       "side": 1,
       "message": "Please use \u003cstrong\u003e instead of \u0027\u0027\u0027",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_a948a832",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Done, but I didn\u0027t change wiki markup for strong in other messages not introduced by me.",
+      "parentUuid": "2e2fb78d_b6c24a37",
       "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_0938dc99",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_96c18e35",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_76bce2b1",
         "filename": "i18n/en.json",
         "patchSetId": 3
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_2935d8a3",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_76bce2b1",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_56db2625",
         "filename": "i18n/en.json",
         "patchSetId": 3
@@ -115,6 +223,24 @@
       "writtenOn": "2014-09-11T11:04:32Z",
       "side": 1,
       "message": "Rename should be lower case.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_49bee4fb",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_56db2625",
       "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
