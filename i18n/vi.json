@@ -4,7 +4,8 @@
 			"Cheers!",
 			"Minh Nguyen",
 			"Skye Darcy",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Trần Nguyễn Minh Huy"
 		]
 	},
 	"mergeaccount": "Tình trạng hợp nhất tài khoản",
@@ -273,8 +274,6 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|sửa]])",
 	"centralauth-editgroup-nowikiset": "Không có; áp dụng cho tất cả mọi wiki.",
 	"centralauth-editgroup-nonexistent": "Nhóm toàn cục “$1” hiện không tồn tại.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki chứa tài khoản của họ:",
-	"centralauth-globalgroupmembership-badknownwiki": "Tài khoản toàn cục '''$1''' không hoạt động trên wiki bạn chỉ định (''$2''). Có thể bạn đang gán quyền sai thành viên!",
 	"centralauth-editset": "Tập wiki",
 	"centralauth-editset-legend-rw": "Sửa hoặc tạo tập wiki",
 	"centralauth-editset-legend-ro": "Danh sách các tập wiki",
@@ -336,7 +335,7 @@
 	"globalrenameprogress-legend": "Xem tiến độ đổi tên toàn cục",
 	"globalrenameuser": "Đổi tên thành viên toàn cục",
 	"globalrenameuser-legend": "Đổi tên thành viên toàn cục",
-	"centralauth-rename-abortlogin": "Tài khoản của bạn hiện đang được đổi tên. [[Special:GlobalRenameProgress/$1|Xem trạng thái]].",
+	"centralauth-rename-abortlogin": "Tài khoản của bạn hiện đang được đổi tên hoặc hợp nhất. [[Special:GlobalRenameProgress/$1|Xem trạng thái]].",
 	"centralauth-rename-form-oldname": "Tên người dùng hiện tại",
 	"centralauth-rename-form-newname": "Tên người dùng mới",
 	"centralauth-rename-form-reason": "Lý do",
@@ -365,5 +364,20 @@
 	"centralauth-rename-confirm": "Bạn có chắc chắn muốn đổi tên thành viên này toàn cục?",
 	"log-name-gblrename": "Nhật trình đổi tên toàn cục",
 	"log-description-gblrename": "Nhật trình này có các tác vụ đổi tên thành viên toàn cục.",
-	"logentry-gblrename-rename": "$1 {{GENDER:$2}}đã đổi tên $4 thành $5 toàn cục"
+	"logentry-gblrename-rename": "$1 {{GENDER:$2}}đã đổi tên $4 thành $5 toàn cục",
+	"globalusermerge": "Hợp nhất tài khoản người dùng toàn cục",
+	"globalusermerge-legend": "Hợp nhất tài khoản người dùng toàn cục",
+	"centralauth-usermerge-form-newuser": "Tên người dùng cuối",
+	"centralauth-usermerge-form-usernames": "Những tên người dùng hiện tại",
+	"centralauth-usermerge-form-usernames-help": "Mỗi tên người dùng nên được tách ra bằng cách xuống dòng.",
+	"centralauth-usermerge-form-reason": "Lý do",
+	"centralauth-usermerge-notinstalled": "Phần mở rộng UserMerge chưa được cài đặt.",
+	"centralauth-usermerge-disabled": "Công cụ hợp nhất tài khoản người dùng toàn cục đã bị vô hiệu hóa.",
+	"logentry-gblrename-merge": "$1 đã {{GENDER:$2|hợp nhất}} tài khoản $4 thành tài khoản $5 trên toàn cục",
+	"centralauth-usermerge-queued": "Việc hợp nhất $1 thành $2 đang trong hàng đợi.\n\nXem tiến độ tại [[Special:GlobalRenameProgress/$3]].",
+	"centralauth-usermerge-invalid": "Không có tài khoản toàn cục nào dùng tên \"$1\".",
+	"centralauth-usermerge-already": "Đã có một tiến trình đổi tên hay hợp nhất tài khoản toàn cục cho $1.",
+	"action-centralauth-usermerge": "hợp nhất tài khoản của người dùng trên toàn cục",
+	"right-centralauth-usermerge": "Hợp nhất tài khoản của người dùng trên toàn cục",
+	"centralauth-usermerge-confirm": "Bạn có chắc chắn về việc hợp nhất những người dùng này trên toàn cục không?"
 }
