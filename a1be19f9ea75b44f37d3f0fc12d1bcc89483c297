@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_9c0bed2c",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_5e17ca56",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_a12333a5",
         "filename": "specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_7c060125",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_01956742",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_c142bf3e",
         "filename": "specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -83,6 +119,24 @@
       "side": 1,
       "message": "Teach me. I wanted to allow wikitext in the request form to make providing links and stuff easier. Is this a horrible idea? Or just a horrible execution on the backend?",
       "parentUuid": "2e2fb78d_c142bf3e",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_90c2b137",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:11Z",
+      "side": 1,
+      "message": "I chatted with Chris and he explained why this is a bad idea. I will kill it.",
+      "parentUuid": "2e2fb78d_01ce8786",
       "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -142,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_30fd3d05",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_0381e7fc",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_c1599f2e",
         "filename": "specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -171,6 +243,24 @@
       "side": 1,
       "message": "So what should we put in the default message? I think you\u0027re right that hardcoding tool names like this clunky. I was basically just trying to recreate part of https://meta.wikimedia.org/wiki/Template:SRUC anyway.",
       "parentUuid": "2e2fb78d_c1599f2e",
+      "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_c4f51b81",
+        "filename": "specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T23:14:11Z",
+      "side": 1,
+      "message": "Default message is now basically a placeholder that can be replaced per-wiki with something much fancier. Message has 3 keys:\n\n* Current username\n* FQDN of user\u0027s home wiki\n* Requested username\n\nThis set of things aligns well with the current [[:meta:Template:SRUC]] and can be used to make a nice template that links to whatever the Stewards want.",
+      "parentUuid": "2e2fb78d_219aa375",
       "revId": "a1be19f9ea75b44f37d3f0fc12d1bcc89483c297",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
