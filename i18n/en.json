@@ -393,7 +393,6 @@
 	"globalusermerge-legend": "Merge global user",
 	"centralauth-usermerge-form-newuser": "Final username",
 	"centralauth-usermerge-form-usernames": "Current usernames",
-	"centralauth-usermerge-form-usernames-help": "Each username should be separated by a newline.",
 	"centralauth-usermerge-form-reason": "Reason",
 	"centralauth-usermerge-notinstalled": "The UserMerge extension is not installed.",
 	"centralauth-usermerge-disabled": "The global user merge tool is disabled.",
@@ -430,5 +429,7 @@
 	"globalrenamerequest-save-error": "Failed to save request. Please try again.",
 	"globalrenamerequest-status-title": "Rename request pending approval",
 	"globalrenamerequest-status-text": "Your username change request is currently in progress and awaiting approval by a steward. You will be notified via email when the request is processed.\n\n;Current username:\n:$1\n;Requested username:\n:$2",
-	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead."
+	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead.",
+	"centralauth-usermerge-form-adduser": "Add user",
+	"centralauth-usermerge-form-deleteuser": "Remove user"
 }
