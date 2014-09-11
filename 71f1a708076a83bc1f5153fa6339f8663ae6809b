@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_86e71b0d",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-09-11T20:28:30Z",
+      "side": 1,
+      "message": "You removed this in en.json, why not here too?",
+      "revId": "71f1a708076a83bc1f5153fa6339f8663ae6809b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
