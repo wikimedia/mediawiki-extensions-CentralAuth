@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "2e2fb78d_9069968a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "done.",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_7064eaae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Broken out as bug 70623",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_4aeee987",
         "filename": "GlobalRename/GlobalRenameRequest.php",
         "patchSetId": 7
@@ -13,6 +47,24 @@
       "writtenOn": "2014-09-09T18:27:23Z",
       "side": 1,
       "message": "I think this should just be renameInProgress(), but what you really want to know whether the name is being renamed away from or to there. \n\n$progress \u003d $centralUser-\u003erenameInProgress();\nif ( $progress \u0026\u0026 $safe \u003d\u003d\u003d $progress[1] ) {\n    // bad, we\u0027re renaming a user to $safe;\n}",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_6758b659",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_4aeee987",
       "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -36,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_41412f0d",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_8a75f12e",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_0ae7c1e0",
         "filename": "specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 7
@@ -47,6 +117,24 @@
       "writtenOn": "2014-09-09T18:27:23Z",
       "side": 1,
       "message": "So here you end up making two queries right after another, one to check if there is a request, and a second to load the full request. Can we just combine the two?\n\n$req \u003d GlobalRenameRequest::newFromUser( $username, $wiki );\nif ( $req-\u003egetId() ) {\n    $req-\u003egetNewName();\n}",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_8365d743",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Ok, you tricked me into making GlobalRenameRequest a smart model object like CentralAuthUser instead of a static utility class. Protected members with public getter/setters and the whole bit. I hate this sort of java in php code but meh.",
+      "parentUuid": "2e2fb78d_0ae7c1e0",
       "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_c7108a55",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_aa242d08",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_ea2a35d6",
         "filename": "specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 7
@@ -87,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_a70b3e25",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_ea2a35d6",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_8a761100",
         "filename": "specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 7
@@ -98,6 +222,24 @@
       "writtenOn": "2014-09-09T18:27:23Z",
       "side": 1,
       "message": "We probably should send out a confirmation email?\n\n$user-\u003esendConfirmationMail( \u0027set\u0027 );",
+      "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_27962ef4",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-11T00:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_8a761100",
       "revId": "0bc4195cfbf51083be0e3a71d176c0adaf4b330b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
