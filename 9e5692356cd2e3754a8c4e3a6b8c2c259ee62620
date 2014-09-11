@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_96aaae6b",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "Why use an underscore in the key? It\u0027s preferred to only use hyphens. See https://www.mediawiki.org/wiki/I18n#Adding_new_messages for details on key names.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_16aebe7d",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "Don\u0027t use bullet. Use {{int:pipe-separator}} for consistency in these types of lists. You could also choose to use Language::pipeList and get rid of this message altogether at the cost of giving up some customisation options, but I think that\u0027s worth it.\n\nSame below.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_d6c71649",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "See above.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_b6c24a37",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "Please use \u003cstrong\u003e instead of \u0027\u0027\u0027",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_96c18e35",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "Reasoning should be lower case.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_76bce2b1",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "Rename should be lower case.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_56db2625",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-11T11:04:32Z",
+      "side": 1,
+      "message": "Rename should be lower case.",
+      "revId": "9e5692356cd2e3754a8c4e3a6b8c2c259ee62620",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
