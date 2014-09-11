@@ -372,7 +372,6 @@
 	"globalusermerge-legend": "Merge global user",
 	"centralauth-usermerge-form-newuser": "Final username",
 	"centralauth-usermerge-form-usernames": "Current usernames",
-	"centralauth-usermerge-form-usernames-help": "Each username should be separated by a newline.",
 	"centralauth-usermerge-form-reason": "Reason",
 	"centralauth-usermerge-notinstalled": "The UserMerge extension is not installed.",
 	"centralauth-usermerge-disabled": "The global user merge tool is disabled.",
@@ -382,5 +381,7 @@
 	"centralauth-usermerge-already": "There is already a global rename or merge in progress for $1.",
 	"action-centralauth-usermerge": "globally merge multiple users",
 	"right-centralauth-usermerge": "Globally merge multiple users",
-	"centralauth-usermerge-confirm": "Do you really want to globally merge these users?"
+	"centralauth-usermerge-confirm": "Do you really want to globally merge these users?",
+	"centralauth-usermerge-form-adduser": "Add user",
+	"centralauth-usermerge-form-deleteuser": "Remove user"
 }

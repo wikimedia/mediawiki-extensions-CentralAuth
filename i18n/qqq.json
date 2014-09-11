@@ -414,5 +414,7 @@
 	"centralauth-usermerge-already": "Error message if a user is already being globally renamed or merged.\n\nParmaeters:\n* $1 - the user's username",
 	"action-centralauth-usermerge": "{{doc-action|centralauth-usermerge}}",
 	"right-centralauth-usermerge": "{{doc-right|centralauth-usermerge}}",
-	"centralauth-usermerge-confirm": "Confirmation message displayed in a JavaScript alert before the form is submitted.\n\nSee also:\n* {{msg-mw|Centralauth-rename-confirm}}"
+	"centralauth-usermerge-confirm": "Confirmation message displayed in a JavaScript alert before the form is submitted.\n\nSee also:\n* {{msg-mw|Centralauth-rename-confirm}}",
+	"centralauth-usermerge-form-adduser": "Label on button that when clicked adds a new form field to input a username into",
+	"centralauth-usermerge-form-deleteuser": "Label on button that when clicked removes the associated form field"
 }

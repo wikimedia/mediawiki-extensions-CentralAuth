@@ -3,9 +3,9 @@
 class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	/**
-	 * @var string[]
+	 * @var CentralAuthUser[]
 	 */
-	private $users;
+	private $oldCAUsers = array();
 
 	/**
 	 * @var string
@@ -44,23 +44,22 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 				'label-message' => 'centralauth-usermerge-form-newuser',
 				'type' => 'text',
 				'required' => true,
-				'validation-callback' => function( $name ) use ( $us ) {
-						$status = $us->validateUsername( $name );
-						if ( !$status->isOK() ) {
-							return $status->getHTML();
-						}
-
-						return true;
-					}
+				'validation-callback' => array( $this, 'validateUsername' ),
 			),
 			'usernames' => array(
 				'id' => 'mw-globalusermerge-usernames',
 				'name' => 'usernames',
 				'label-message' => 'centralauth-usermerge-form-usernames',
-				'type' => 'textarea',
-				'required' => true,
-				'validation-callback' => array( $this, 'validateUsernames' ),
-				'help-message' => 'centralauth-usermerge-form-usernames-help',
+				'type' => 'cloner',
+				'format' => 'table',
+				'create-button-message' => 'centralauth-usermerge-form-adduser',
+				'delete-button-message' => 'centralauth-usermerge-form-deleteuser',
+				'fields' => array(
+					'name' => array(
+						'type' => 'text',
+						'validation-callback' => array( $this, 'validateUsername' ),
+					),
+				),
 			),
 			'reason' => array(
 				'id' => 'mw-globalusermerge-reason',
@@ -73,40 +72,26 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	/**
 	 * @param $name
-	 * @return Status
+	 * @return string|bool
 	 */
 	public function validateUsername( $name ) {
+		if ( $name === null || $name === '' ) {
+			// blank cloner field, bypass.
+			return true;
+		}
+
 		$name = User::getCanonicalName( $name, 'usable' );
 		if ( !$name ) {
-			return Status::newFatal( $this->msg( 'centralauth-usermerge-invalid', $name ) );
+			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
 		}
 		$caUser = new CentralAuthUser( $name );
 		if ( !$caUser->exists() ) {
-			return Status::newFatal( $this->msg( 'centralauth-usermerge-invalid', $name ) );
+			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
 		}
 
 		if ( $caUser->renameInProgress() ) {
-			return Status::newFatal( $this->msg( 'centralauth-usermerge-already', $name ) );
+			return $this->msg( 'centralauth-usermerge-already', $name )->escaped();
 		}
-
-		return Status::newGood();
-	}
-
-	public function validateUsernames( $text ) {
-		$users = explode( "\n", trim( $text ) );
-		foreach ( $users as $user ) {
-			$status = $this->validateUsername( $user );
-			if ( !$status->isOK() ) { // not valid
-				return $status->getHTML();
-			}
-		}
-
-		if ( !$users ) {
-			return $this->msg( 'centralauth-usermerge-nousers' )->escaped();
-		}
-
-		// All the users are valid
-		$this->users = $users;
 
 		return true;
 	}
@@ -121,14 +106,21 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-usermerge-invalidname' );
 		}
 
+		foreach ( $data['usernames'] as $field ) {
+			if ( $field['name'] ) {
+				$this->oldCAUsers[] = new CentralAuthUser( $field['name'] );
+			}
+		}
+
+		if ( !$this->oldCAUsers ) {
+			return $this->msg( 'centralauth-usermerge-nousers' )->escaped();
+		}
+
 		$this->newUsername = $newUser->getName();
 
-		$oldCAUsers = array_map( function( $name ) {
-			return new CentralAuthUser( $name );
-		}, $this->users );
 		$globalUserMerge = new GlobalUserMerge(
 			$this->getUser(),
-			$oldCAUsers,
+			$this->oldCAUsers,
 			CentralAuthUser::getInstance( $newUser ),
 			 new GlobalRenameUserStatus( $newUser->getName() ),
 			'JobQueueGroup::singleton',
@@ -156,9 +148,9 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	public function onSuccess() {
 		$lang = $this->getLanguage();
 		$us = $this;
-		$globalUsers = array_map( function ( $name ) use ( $us ) {
-			return $us->getLocalizedCentralAuthLink( $name );
-		}, $this->users );
+		$globalUsers = array_map( function ( CentralAuthUser $user ) use ( $us ) {
+			return $us->getLocalizedCentralAuthLink( $user->getName() );
+		}, $this->oldCAUsers );
 		$userList = $lang->commaList( $globalUsers );
 
 		$msg = $this->msg( 'centralauth-usermerge-queued' )
