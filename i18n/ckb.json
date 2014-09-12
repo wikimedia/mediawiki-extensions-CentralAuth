@@ -33,8 +33,6 @@
 	"centralauth-admin-yes": "بەڵێ",
 	"centralauth-admin-no": "نەخێر",
 	"centralauth-admin-list-legend-ro": "پێرستی ھەژمارە خۆماڵییەکان",
-	"centralauth-admin-blocked": "بەربەست کراوە، لە $3، $4 ماوەی بەسەر دەچێ.\nھۆکار: $2",
-	"centralauth-admin-blocked-indef": "بەربەسراوی بێسنوور.\nھۆکار: $1",
 	"centralauth-admin-blocklog": "لۆگی بەربەستن",
 	"centralauth-admin-list-localwiki": "ویکیی خۆماڵی",
 	"centralauth-admin-list-method": "شێواز",
@@ -74,5 +72,6 @@
 	"right-centralauth-unmerge": "جیاکردنەوەی ھەژماری جیھانی",
 	"right-centralauth-lock": "داخستن یان کردنەوەی ھەژماری جیھانی",
 	"right-centralauth-oversight": "شاردنەوەی ھەژماری جیھانی",
-	"right-centralauth-merge": "کردنەیەکی ھەژمارەکەیان"
+	"right-centralauth-merge": "کردنەیەکی ھەژمارەکەیان",
+	"centralauth-rename-movelog": "لە کاتی گۆڕینی ناوب بەکارھێنەر «$1» بۆ «$2»، پەڕە بە شێوەی خۆگەڕ گوازرایەوە"
 }

@@ -293,6 +293,7 @@
 	"centralauth-error-badtoken": "Наведени жетон за аутентификацију је истекао или је погрешан.",
 	"centralauth-warning-notloggedin": "Тренутно нисте пријављени.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} — Потврда налога",
+	"action-centralauth-rename": "преименовање глобалних налога",
 	"centralauth-rename-form-oldname": "Тренутно корисничко име",
 	"centralauth-rename-form-newname": "Ново корисничко име",
 	"centralauth-rename-form-reason": "Разлог",
