@@ -101,6 +101,23 @@
       "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_1cc5b30d",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-12T19:05:11Z",
+      "side": 1,
+      "message": "We should also probably check that this \"recommended\" username is not already in use...",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
