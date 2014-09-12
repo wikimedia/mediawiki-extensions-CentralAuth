@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+1: Jack Phoenix <jack@countervandalism.net>
+Code-Review+2: BryanDavis <bdavis@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Fri, 12 Sep 2014 22:36:32 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/158916
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
