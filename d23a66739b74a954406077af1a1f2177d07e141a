@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_6dc2c33a",
+        "filename": ".jshintrc",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-12T23:56:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_5520b3f1",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_15c8eb23",
         "filename": "CentralAuthHooks.php",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-12T18:30:49Z",
       "side": 1,
       "message": "Does this code actually use any oojs? Or is it just oojs-ui which already has a dependency upon it?",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_4dc14732",
+        "filename": "CentralAuthHooks.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-12T23:56:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_15c8eb23",
       "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_6dc9a354",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-12T23:56:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_b572370e",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_b5591792",
         "filename": "GlobalRename/GlobalRenameRequest.php",
         "patchSetId": 12
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_cdfbf775",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-12T23:56:10Z",
+      "side": 1,
+      "message": "I added an exception when invalid. The caller should make sure the name is valid before setting, but defense in depth seems prudent now that this is \"smart\" object.",
+      "parentUuid": "2e2fb78d_b5591792",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_15822bcd",
         "filename": "modules/ext.centralauth.globalrenamerequest.css",
         "patchSetId": 12
@@ -81,6 +153,24 @@
       "writtenOn": "2014-09-12T18:30:49Z",
       "side": 1,
       "message": "Would be nice if we could prefix the class names with mw-",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_cd3ad732",
+        "filename": "modules/ext.centralauth.globalrenamerequest.css",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-12T23:56:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_15822bcd",
       "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -115,6 +205,24 @@
       "writtenOn": "2014-09-12T19:05:11Z",
       "side": 1,
       "message": "We should also probably check that this \"recommended\" username is not already in use...",
+      "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_cd5f7776",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-12T23:56:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2fb78d_1cc5b30d",
       "revId": "d23a66739b74a954406077af1a1f2177d07e141a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
