@@ -208,8 +208,8 @@
 	"centralauth-logout-no-others": "Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.",
 	"centralauth-hidden-blockreason": "piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3",
 	"centralauth-login-error-locked": "Et voi kirjautua sisään, koska tunnuksesi on lukittu järjestelmänlaajuisesti.",
-	"centralauth-log-name": "Järjestelmänlaajuisten tunnusten käsittelyloki",
-	"centralauth-log-header": "Tässä lokissa on järjestelmänlaajuisten käyttäjätunnusten poistamiset sekä lukitsemiset ja avaamiset.",
+	"centralauth-log-name": "Järjestelmänlaajuisten tunnusten käsittelyn loki",
+	"centralauth-log-header": "Tämä loki sisältää toimenpiteitä, jotka koskevat järjestelmänlaajuisia käyttäjätunnuksia: niiden poistaminen, lukitseminen ja lukituksen avaaminen.",
 	"centralauth-log-entry-delete": "poisti järjestelmänlaajuisen käyttäjätunnuksen $1",
 	"centralauth-log-entry-lock": "lukitsi järjestelmänlaajuisen käyttäjätunnuksen $1",
 	"centralauth-log-entry-unlock": "avasi järjestelmänlaajuisen käyttäjätunnuksen $1",
@@ -342,7 +342,7 @@
 	"centralauth-rename-viewprogress": "Näytä edistyminen",
 	"centralauth-rename-progress-fieldset": "Luettelo paikallisista tunnuksista",
 	"centralauth-rename-progress-logs-fieldset": "Lokimerkinnät",
-	"log-name-gblrename": "Järjestelmänlaajuinen tunnusten vaihto",
+	"log-name-gblrename": "Järjestelmänlaajuisen tunnusten vaihtojen loki",
 	"log-description-gblrename": "Tässä lokissa ovat järjestelmänlaajuisesti tehdyt käyttäjätunnusten vaihdot.",
 	"centralauth-usermerge-form-reason": "Syy"
 }

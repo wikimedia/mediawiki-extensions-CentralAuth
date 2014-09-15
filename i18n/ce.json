@@ -254,11 +254,11 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|хийца]])",
 	"centralauth-editgroup-nowikiset": "ХӀахӀа, массо википедешкахь пайда уьйцуш ю.",
 	"centralauth-editgroup-nonexistent": "Глобальни тоба «$1» хӀинца а яц.",
-	"centralauth-editset": "Вики гӀирсашан гулам",
+	"centralauth-editset": "Вики гӀирсийн гулам",
 	"centralauth-editset-legend-rw": "Википедин гулам хийцар я кхоллар",
-	"centralauth-editset-legend-ro": "Вики гӀирсашан могӀам",
+	"centralauth-editset-legend-ro": "Вики гӀирсийн могӀам",
 	"centralauth-editset-intro-rw": "ХӀара викин гуламаш хӀинцале кхоьллина бу.\nХьан йиш ю царах муьлха хьажа я таян, я керланиг кхолла.",
-	"centralauth-editset-intro-ro": "Лахахь гайтина, болуш болу вики гӀирсашан гулам.",
+	"centralauth-editset-intro-ro": "Лахахь гайтина, болуш болу вики гӀирсийн гулам.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|дӀаяккха]])",
 	"centralauth-editset-new": "Кхолла керла гулам",
 	"centralauth-editset-notfound": "Википедин гулам «$1» цакарий.",
@@ -342,5 +342,6 @@
 	"centralauth-rename-confirm": "Хьуна бакъалла лаьий хӀокху декъашхочун цӀе глобально хийца?",
 	"log-name-gblrename": "Глобальни цӀераш хийцаран тептар",
 	"log-description-gblrename": "ХӀокху тептар чохь гойту декъашхойн глобальни цӀераш хийцар.",
-	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально цӀе хийцина $4 → $5"
+	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально цӀе хийцина $4 → $5",
+	"centralauth-usermerge-form-reason": "Бахьна"
 }
