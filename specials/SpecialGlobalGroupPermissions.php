@@ -212,10 +212,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	function buildCheckboxes( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
 
-		$rights = User::getAllRights();
 		$assignedRights = $this->getAssignedRights( $group );
 
-		sort( $rights );
 
 		$checkboxes = array();
 		$attribs = array();
@@ -228,8 +226,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			}
 		}
 
+		$rights = User::getAllRights();
+		sort( $rights );
+
 		foreach ( $rights as $right ) {
-			# Build a checkbox.
+			// Build a checkbox
 			$checked = in_array( $right, $assignedRights );
 
 			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
@@ -246,28 +247,15 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$count = count( $checkboxes );
 
-		$firstCol = round( $count / 2 );
+		$html =  Html::openElement( 'div', array( 'class' => 'mw-centralauth-rights' ) )
+			. '<ul>';
 
-		$checkboxes1 = array_slice( $checkboxes, 0, $firstCol );
-		$checkboxes2 = array_slice( $checkboxes, $firstCol );
-
-		$html = Xml::openElement( 'table' ) . Xml::openElement( 'tbody' ) .
-			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . Xml::openElement( 'ul' );
-
-		foreach ( $checkboxes1 as $cb ) {
+		foreach ( $checkboxes as $cb ) {
 			$html .= $cb;
 		}
 
-		$html .= Xml::closeElement( 'ul' ) . Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td' ) . Xml::openElement( 'ul' );
-
-		foreach ( $checkboxes2 as $cb ) {
-			$html .= $cb;
-		}
-
-		$html .= Xml::closeElement( 'ul' ) . Xml::closeElement( 'td' ) .
-			Xml::closeElement( 'tr' ) . Xml::closeElement( 'tbody' ) .
-			Xml::closeElement( 'table' );
+		$html .= '</ul>'
+			. Html::closeElement( 'div' );
 
 		return $html;
 	}
