@@ -17,4 +17,29 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		$this->assertEquals( 'FooBar', $ca->getName() );
 		$this->assertFalse( $ca->isAttached() );
 	}
+
+	/**
+	 * @covers CentralAuthUser::getHomeWiki
+	 * @dataProvider provideGetHomeWiki
+	 */
+	public function testGetHomeWiki( $attached, $expected ) {
+		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
+		$ca = $this->getMockBuilder( 'CentralAuthUser' )
+			->disableOriginalConstructor()
+			->setMethods( array( 'queryAttached' ) )
+			->getMock();
+
+		$ca->expects( $this->any() )->method( 'queryAttached' )->will( $this->returnValue( $attached ) );
+		$this->assertEquals( $expected, $ca->getHomeWiki() );
+	}
+
+	public function provideGetHomeWiki() {
+		return array(
+			array( array(), null ),
+			array( array( 'foowiki' => array( 'attachedMethod' => 'new' ) ), 'foowiki' ),
+			array( array( 'foowiki' => array( 'attachedMethod' => 'primary' ) ), 'foowiki' ),
+			array( array( 'foowiki' => array( 'attachedMethod' => 'new' ), 'bazwiki' => array( 'attachedMethod' => 'password' ) ), 'foowiki' ),
+			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ) ), null ),
+		);
+	}
 }
