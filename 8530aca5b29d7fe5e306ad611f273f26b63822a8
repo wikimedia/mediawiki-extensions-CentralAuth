@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "2e2fb78d_93f4d7cb",
+        "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-09-16T22:17:36Z",
+      "side": 1,
+      "message": "It does",
+      "parentUuid": "4e322bf2_b27d06e7",
+      "revId": "8530aca5b29d7fe5e306ad611f273f26b63822a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_5215c29b",
         "filename": "tests/specials/SpecialGlobalUserMergeTest.php",
         "patchSetId": 1
