@@ -2124,7 +2124,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return void
 	 */
 	static function setCookie( $name, $value, $exp = -1, $secure = null, $prefix = false ) {
-		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain, $wgCookieExpiration;
+		global $wgCentralAuthCookiePrefix, $wgCentralAuthCookieDomain,
+			$wgCookieExpiration, $wgCentralAuthCookiePath;
 
 		if ( CentralAuthHooks::hasApiToken() ) {
 			throw new MWException( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
@@ -2149,7 +2150,7 @@ class CentralAuthUser extends AuthPluginUser {
 		RequestContext::getMain()->getRequest()->response()->setcookie(
 			$name, $value, $exp, array(
 				'prefix' => $prefix,
-				'path' => '/',
+				'path' => $wgCentralAuthCookiePath,
 				'domain' => $wgCentralAuthCookieDomain,
 				'secure' => $secure,
 			)

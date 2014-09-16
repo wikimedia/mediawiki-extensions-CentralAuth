@@ -98,6 +98,13 @@ $wgCentralAuthCookieDomain = '';
 $wgCentralAuthCookiePrefix = 'centralauth_';
 
 /**
+ * Path for CentralAuth global authentication cookies. Set this variable if you
+ * want to restrict cookies to a certain path within the domain specified by
+ * $wgCentralAuthCookieDomain.
+ */
+$wgCentralAuthCookiePath = '/';
+
+/**
  * List of wiki IDs which should be called on login to try to set third-party
  * cookies for the global session state.
  *
