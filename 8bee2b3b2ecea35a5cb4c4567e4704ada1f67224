@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_b8ae9029",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2014-09-16T21:42:35Z",
+      "side": 1,
+      "message": "\"Only $1 {{PLURAL:$1|user|users}} can...\"?",
+      "revId": "8bee2b3b2ecea35a5cb4c4567e4704ada1f67224",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
