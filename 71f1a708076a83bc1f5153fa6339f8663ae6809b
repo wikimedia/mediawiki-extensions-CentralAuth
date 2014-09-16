@@ -16,6 +16,24 @@
       "revId": "71f1a708076a83bc1f5153fa6339f8663ae6809b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_f31afb6d",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-16T21:49:25Z",
+      "side": 1,
+      "message": "TWN will automatically take care of it on the next export.",
+      "parentUuid": "2e2fb78d_86e71b0d",
+      "revId": "71f1a708076a83bc1f5153fa6339f8663ae6809b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
