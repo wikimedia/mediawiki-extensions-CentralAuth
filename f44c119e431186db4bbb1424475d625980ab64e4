@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_f52308b3",
+        "filename": "i18n/en.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-16T13:19:50Z",
+      "side": 1,
+      "message": "This could me more of a complete phrase as:\n\n \\\"$1\\\" is not yet implemented.",
+      "revId": "f44c119e431186db4bbb1424475d625980ab64e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
