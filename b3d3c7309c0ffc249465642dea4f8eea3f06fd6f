@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_aa4bdf86",
+        "filename": "tests/CentralAuthUserTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2014-09-16T10:11:04Z",
+      "side": 1,
+      "message": "I am very confused..\nThis test doesn\u0027t really work as you are directly testing a mock object..?",
+      "revId": "b3d3c7309c0ffc249465642dea4f8eea3f06fd6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_8a64a312",
+        "filename": "tests/CentralAuthUserTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2014-09-16T10:11:04Z",
+      "side": 1,
+      "message": "infact getHomeWiki doesnt / shouldn\u0027t exist in this mock?\nIs there a bit of the way mocks work that I am missing?",
+      "revId": "b3d3c7309c0ffc249465642dea4f8eea3f06fd6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
