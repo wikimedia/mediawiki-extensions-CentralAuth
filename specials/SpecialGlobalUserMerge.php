@@ -3,6 +3,12 @@
 class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	/**
+	 * Maximum number of users that can be
+	 * merged at once
+	 */
+	const MAX_USERS_TO_MERGE = 5;
+
+	/**
 	 * @var string[]
 	 */
 	private $users;
@@ -94,6 +100,11 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	public function validateUsernames( $text ) {
 		$users = explode( "\n", trim( $text ) );
+		if ( count( $users ) > self::MAX_USERS_TO_MERGE ) {
+			return $this->msg( 'centralauth-usermerge-toomany' )
+				->numParams( self::MAX_USERS_TO_MERGE )->escaped();
+		}
+
 		foreach ( $users as $user ) {
 			$status = $this->validateUsername( $user );
 			if ( !$status->isOK() ) { // not valid
