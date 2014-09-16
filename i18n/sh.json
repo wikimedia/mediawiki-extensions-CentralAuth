@@ -71,8 +71,6 @@
 	"centralauth-editgroup-success-text": "Uspešno ste promenili prava grupi $1. [[Special:GlobalGroupPermissions|Porvratak na upravljanje grupama]].",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|uredi]])",
 	"centralauth-editgroup-nowikiset": "Prihvaćen na svim wikijima",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki na kome ima nalog:",
-	"centralauth-globalgroupmembership-badknownwiki": "Globalni korisnik '''$1''' nije aktivan na wikiju koji si odredio/la (''$2''). Možda pokušavaš da dodeliš prava pogrešnom korisniku!",
 	"centralauth-editset": "Wiki set",
 	"centralauth-editset-legend-rw": "Uređivanje ili kreiranje wiki seta",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|obriši]])",
@@ -94,5 +92,6 @@
 	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
 	"right-centralauth-autoaccount": "Samoprijavljivanje sa globalnim nalogom",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
-	"centralloginsuccesful": "Prijavljivanje uspješno"
+	"centralloginsuccesful": "Prijavljivanje uspješno",
+	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“"
 }

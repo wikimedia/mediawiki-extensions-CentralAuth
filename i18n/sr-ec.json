@@ -309,5 +309,6 @@
 	"log-name-gblrename": "Дневник глобалних преименовања",
 	"log-description-gblrename": "Овај дневник приказује глобално преименоване кориснике.",
 	"logentry-gblrename-rename": "$1 је глобално {{GENDER:$2|преименовао|преименовала}} $4 у $5",
-	"centralauth-usermerge-form-reason": "Разлог"
+	"centralauth-usermerge-form-reason": "Разлог",
+	"logentry-gblrename-merge": "$1 је глобално {{GENDER:$2|спојио|спојила}} $4 у $5"
 }
