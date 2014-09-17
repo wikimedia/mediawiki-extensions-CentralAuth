@@ -334,7 +334,7 @@
 	"globalrenameprogress-legend": "Globaalse ümbernimetamise seisu vaatamine",
 	"globalrenameuser": "Globaalse kasutaja ümbernimetamine",
 	"globalrenameuser-legend": "Globaalse kasutaja ümbernimetamine",
-	"centralauth-rename-abortlogin": "Sinu konto nime muudetakse praegu. [[Special:GlobalRenameProgress/$1|Vaata seisu]].",
+	"centralauth-rename-abortlogin": "Sinu kontot nimetatakse parasjagu ümber või ühendatakse. [[Special:GlobalRenameProgress/$1|Vaata seisu]].",
 	"centralauth-rename-form-oldname": "Praegune kasutajanimi",
 	"centralauth-rename-form-newname": "Uus kasutajanimi",
 	"centralauth-rename-form-reason": "Põhjus",
@@ -363,5 +363,6 @@
 	"centralauth-rename-confirm": "Kas tahad tõesti globaalselt selle konto nime muuta?",
 	"log-name-gblrename": "Globaalse ümbernimetamise logi",
 	"log-description-gblrename": "Siia on logitud kasutajate globaalne ümbernimetamine.",
-	"logentry-gblrename-rename": "$1 {{GENDER:$2|muutis}} globaalselt kasutaja $4 nime; uus nimi: $5"
+	"logentry-gblrename-rename": "$1 {{GENDER:$2|muutis}} globaalselt kasutaja $4 nime; uus nimi: $5",
+	"centralauth-usermerge-form-reason": "Põhjus"
 }

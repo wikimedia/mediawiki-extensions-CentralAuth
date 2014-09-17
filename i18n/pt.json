@@ -392,5 +392,7 @@
 	"centralauth-usermerge-already": "Já existe uma renomeação ou fusão global em andamento para $1.",
 	"action-centralauth-usermerge": "fundir globalmente vários utilizadores",
 	"right-centralauth-usermerge": "Fundir globalmente vários utilizadores",
-	"centralauth-usermerge-confirm": "Tem a certeza que pretende fundir estes utilizadores globalmente?"
+	"centralauth-usermerge-confirm": "Tem a certeza que pretende fundir estes utilizadores globalmente?",
+	"centralauth-usermerge-toomany": "Apenas $1 {{PLURAL:$1|utilizador pode ser fundido|utilizadores podem ser fundidos}} ao mesmo tempo.",
+	"centralauth-usermerge-ratelimited": "Como medida de segurança, só é permitido fundir uma conta por minuto. Por favor, tente novamente depois de passar um minuto."
 }

@@ -366,5 +366,6 @@
 	"centralauth-usermerge-form-usernames-help": "Nazwa każdego użytkownika powinna być oddzielona znakiem nowej linii.",
 	"centralauth-usermerge-form-reason": "Powód",
 	"centralauth-usermerge-notinstalled": "Rozszerzenie UserMerge nie jest zainstalowane.",
-	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”."
+	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”.",
+	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz."
 }

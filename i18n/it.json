@@ -389,5 +389,6 @@
 	"centralauth-usermerge-already": "C'è già una rinomina o unione globale in corso per $1.",
 	"action-centralauth-usermerge": "unire globalmente più utenti",
 	"right-centralauth-usermerge": "Unisce globalmente più utenti",
-	"centralauth-usermerge-confirm": "Vuoi davvero unire globalmente questi utenti?"
+	"centralauth-usermerge-confirm": "Vuoi davvero unire globalmente questi utenti?",
+	"centralauth-usermerge-toomany": "{{PLURAL:$1|Può|Possono}} essere {{PLURAL:$1|unito|uniti}} solo $1 {{PLURAL:$1|utente|utenti}} alla volta."
 }
