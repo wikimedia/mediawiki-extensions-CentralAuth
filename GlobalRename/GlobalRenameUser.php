@@ -177,6 +177,7 @@ class GlobalRenameUser {
 			'renamer' => $this->performingUser->getName(),
 			'movepages' => $options['movepages'],
 			'suppressredirects' => $options['suppressredirects'],
+			'promotetoglobal' => false,
 		);
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!

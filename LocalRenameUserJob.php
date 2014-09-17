@@ -21,6 +21,10 @@ class LocalRenameUserJob extends LocalRenameJob {
 	 * @param int $id
 	 */
 	public function __construct( $title, $params, $id = 0 ) {
+		// For back-compat
+		if ( !isset( $params['promotetoglobal'] ) ) {
+			$params['promotetoglobal'] = false;
+		}
 		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
 	}
 
@@ -47,6 +51,11 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// until a sysadmin intervenes...
 			throw new MWException( 'RenameuserSQL::rename returned false.' );
 		}
+
+		if ( $this->params['promotetoglobal'] ) {
+			$this->promoteToGlobal();
+		}
+
 		if ( $this->params['movepages'] ) {
 			$this->movePages();
 		}
@@ -82,6 +91,23 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 
 		$wgUser->mRights = array_diff( $wgUser->mRights, $rights );
+	}
+
+	private function promoteToGlobal() {
+		$newName = $this->params['to'];
+		$caUser = new CentralAuthUser( $newName );
+		$status = $caUser->promoteToGlobal( wfWikiID() );
+		if ( !$status->isOK() ) {
+			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
+				// Ehh, what?
+				throw new MWException( "Tried to promote '$newName' to a global account except it doesn't exist locally" );
+			} elseif ( $status->hasMessage( 'promote-already-exists' ) ) {
+				// Even more wtf.
+				throw new MWException( "Tried to promote '$newName' to a global account except it already exists" );
+			}
+		}
+
+		$caUser->quickInvalidateCache();
 	}
 
 	/**
