@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_a9bc9d1b",
+        "filename": "tests/CentralAuthUserTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2014-09-17T21:54:46Z",
+      "side": 1,
+      "message": "woo!, never really used setMethods before!",
+      "parentUuid": "2e2fb78d_8d4f1339",
+      "revId": "b3d3c7309c0ffc249465642dea4f8eea3f06fd6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_8a64a312",
         "filename": "tests/CentralAuthUserTest.php",
         "patchSetId": 2
