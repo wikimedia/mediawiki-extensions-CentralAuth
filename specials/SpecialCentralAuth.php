@@ -1,22 +1,30 @@
 <?php
 
 class SpecialCentralAuth extends SpecialPage {
-	var $mUserName, $mCanUnmerge, $mCanLock, $mCanOversight, $mCanEdit;
+	private $mUserName, $mCanUnmerge, $mCanLock, $mCanOversight, $mCanEdit;
 
 	/**
 	 * @var CentralAuthUser
 	 */
-	var $mGlobalUser;
+	private $mGlobalUser;
 
-	var $mAttachedLocalAccounts, $mUnattachedLocalAccounts;
+	/**
+	 * @var array
+	 */
+	private $mAttachedLocalAccounts;
 
-	var $mMethod, $mPosted, $mWikis;
+	/**
+	 * @var array
+	 */
+	private $mUnattachedLocalAccounts;
 
-	function __construct() {
+	private $mMethod, $mPosted, $mWikis;
+
+	public function __construct() {
 		parent::__construct( 'CentralAuth' );
 	}
 
-	function execute( $subpage ) {
+	public function execute( $subpage ) {
 		global $wgContLang;
 		$this->setHeaders();
 
@@ -70,10 +78,10 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$this->mGlobalUser = $globalUser = new CentralAuthUser( $this->mUserName );
 
-		if ( !$globalUser->exists() ||
-			( ( $globalUser->isOversighted() || $globalUser->isHidden() ) && !$this->mCanOversight ) ) {
-			$this->showError( 'centralauth-admin-nonexistent', $this->mUserName );
-			$this->showUsernameForm();
+		if ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) && !$this->mCanOversight ) {
+			// Claim that there's nothing if the global account is hidden and the user is not
+			// allowed to see it.
+			$this->showNonexistentError();
 			return;
 		}
 
@@ -82,11 +90,17 @@ class SpecialCentralAuth extends SpecialPage {
 			$continue = $this->doSubmit();
 		}
 
-		$this->mAttachedLocalAccounts = $this->mGlobalUser->queryAttached();
-		$this->mUnattachedLocalAccounts = $this->mGlobalUser->queryUnattached();
+		$this->mAttachedLocalAccounts = $globalUser->queryAttached();
+		$this->mUnattachedLocalAccounts = $globalUser->queryUnattached();
+
+		if ( !$globalUser->exists() && !count( $this->mUnattachedLocalAccounts ) ) {
+			// Nothing to see here
+			$this->showNonexistentError();
+			return;
+		}
 
 		$this->showUsernameForm();
-		if ( $continue ) {
+		if ( $continue && $globalUser->exists()  ) {
 			$this->showInfo();
 			if ( $this->mCanLock ) {
 				$this->showStatusForm();
@@ -96,13 +110,22 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 			$this->showLogExtract();
 			$this->showWikiLists();
+		} elseif ( $continue && !$globalUser->exists() ) {
+			// No global account, but we can still list the local ones
+			$this->showError( 'centralauth-admin-nonexistent', $this->mUserName );
+			$this->showWikiLists();
 		}
+	}
+
+	private function showNonexistentError() {
+		$this->showError( 'centralauth-admin-nonexistent', $this->mUserName );
+		$this->showUsernameForm();
 	}
 
 	/**
 	 * @return bool Returns true if the normal form should be displayed
 	 */
-	function doSubmit() {
+	public function doSubmit() {
 		$deleted = false;
 		$globalUser = $this->mGlobalUser;
 		$stateCheck = ( $this->getRequest()->getVal( 'wpUserState' ) === $globalUser->getStateHash( true ) );
@@ -162,22 +185,22 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @param $wikitext string
 	 */
-	function showStatusError( $wikitext ) {
+	private function showStatusError( $wikitext ) {
 		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $wikitext );
 		$this->getOutput()->addHTML( $this->getOutput()->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
 	}
 
-	function showError( /* varargs */ ) {
+	private function showError( /* varargs */ ) {
 		$args = func_get_args();
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 	}
 
-	function showSuccess( /* varargs */ ) {
+	private function showSuccess( /* varargs */ ) {
 		$args = func_get_args();
 		$this->getOutput()->wrapWikiMsg( '<div class="success">$1</div>', $args );
 	}
 
-	function showUsernameForm() {
+	private function showUsernameForm() {
 		global $wgScript;
 		$lookup = $this->msg(
 			$this->mCanEdit ? 'centralauth-admin-lookup-rw' : 'centralauth-admin-lookup-ro'
@@ -202,10 +225,11 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $span
-	 * @return String
+	 * @param int $span
+	 * @return string
 	 */
-	function prettyTimespan( $span ) {
+	public function prettyTimespan( $span ) {
+		// @FIXME: This is nastily being used in SpecialMultiLock... fix that
 		$units = array(
 			'seconds' => 60,
 			'minutes' => 60,
@@ -225,7 +249,7 @@ class SpecialCentralAuth extends SpecialPage {
 		return $this->msg( "centralauth-$unit-ago" )->numParams( $span )->text();
 	}
 
-	function showInfo() {
+	private function showInfo() {
 		$globalUser = $this->mGlobalUser;
 
 		$reg = $globalUser->getRegistration();
@@ -275,19 +299,19 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->getOutput()->addHTML( $out );
 	}
 
-	function showWikiLists() {
+	private function showWikiLists() {
 		$merged = $this->mAttachedLocalAccounts;
 		$remainder = $this->mUnattachedLocalAccounts;
 
-		$legend = $this->mCanUnmerge ?
+		$legend = $this->mCanUnmerge && $this->mGlobalUser->exists() ?
 			$this->msg( 'centralauth-admin-list-legend-rw' )->escaped() :
 			$this->msg( 'centralauth-admin-list-legend-ro' )->escaped();
 
 		$this->getOutput()->addHTML( Xml::fieldset( $legend ) );
 		$this->getOutput()->addHTML( $this->listHeader() );
-		$this->getOutput()->addHTML( $this->listMerged( $merged ) );
+		$this->getOutput()->addHTML( $this->listAccounts( $merged ) );
 		if ( $remainder ) {
-			$this->getOutput()->addHTML( $this->listRemainder( $remainder ) );
+			$this->getOutput()->addHTML( $this->listAccounts( $remainder ) );
 		}
 		$this->getOutput()->addHTML( $this->listFooter() );
 		$this->getOutput()->addHTML( Xml::closeElement( 'fieldset' ) );
@@ -296,7 +320,7 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @return string
 	 */
-	function listHeader() {
+	private function listHeader() {
 		$columns = array(
 			"localwiki",   // centralauth-admin-list-localwiki
 			"attached-on", // centralauth-admin-list-attached-on
@@ -315,7 +339,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) .
 			"\n" . Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
-		if ( $this->mCanUnmerge ) {
+		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
 			$header .= Xml::openElement( 'th' ) . Xml::closeElement( 'th' );
 		}
 		foreach ( $columns as $c ) {
@@ -333,9 +357,9 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @return string
 	 */
-	function listFooter() {
+	private function listFooter() {
 		$footer = '';
-		if ( $this->mCanUnmerge ) {
+		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
 			$footer .= Xml::openElement( 'tr' ) .
 				Xml::openElement( 'td', array( "style" => "border-right: none;" ) ) .
 				Xml::closeElement( 'td' ) .
@@ -354,65 +378,55 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $list
+	 * @param array $list
 	 * @return string
 	 */
-	function listMerged( $list ) {
+	private function listAccounts( array $list ) {
 		ksort( $list );
-		return implode( "\n", array_map( array( $this, 'listMergedWikiItem' ), $list ) );
+		return implode( "\n", array_map( array( $this, 'listWikiItem' ), $list ) );
 	}
 
 	/**
-	 * @param $list
+	 * @param array $row
 	 * @return string
 	 */
-	function listRemainder( $list ) {
-		ksort( $list );
-		$notMerged = $this->msg( 'centralauth-admin-unattached' )->parse();
-		$rows = array();
-		foreach ( $list as $row ) {
-			$content = Xml::openElement( 'tr', array( "class" => "unattached-row" ) ) . Xml::openElement( 'td' );
-			if ( $this->mCanUnmerge ) {
-				$content .= Xml::closeElement( 'td' ) . Xml::openElement( 'td' );
-			}
-			$content .= $this->foreignUserLink( $row['wiki'] ) .
-				Xml::closeElement( 'td' ) .
-				Xml::openElement( 'td', array( 'colspan' => '5' ) ) .
-				$notMerged .
-				Xml::closeElement( 'td' ) .
-				Xml::closeElement( 'tr' ) . "\n";
-			$rows[] = $content;
-		}
-		return implode( "\n", $rows );
-	}
-
-	/**
-	 * @param $row
-	 * @return string
-	 */
-	function listMergedWikiItem( $row ) {
+	private function listWikiItem( array $row ) {
 		if ( $row === null ) {
 			// https://bugzilla.wikimedia.org/show_bug.cgi?id=28767
 			// It seems sometimes local accounts aren't correctly created
 			// Revisiting the wiki solves the issue
 			return '';
 		}
+
 		$html = Xml::openElement( 'tr' );
-		if ( $this->mCanUnmerge ){
-			$html .= Xml::openElement( 'td' ) .
-				$this->adminCheck( $row['wiki'] ) .
-				Xml::closeElement( 'td' );
+
+		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
+			if ( !empty( $row['attachedMethod'] ) ) {
+				$html .= Xml::openElement( 'td' ) .
+					$this->adminCheck( $row['wiki'] ) .
+					Xml::closeElement( 'td' );
+			} else {
+				// Account is unattached, don't show checkbox to detach
+				$html .= Xml::element( 'td' );
+			}
 		}
+
 		$html .= Xml::openElement( 'td' ) .
 			$this->foreignUserLink( $row['wiki'] ) .
-			Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td', array( 'data-sort-value' =>  htmlspecialchars( $row['attachedTimestamp'] ) ) ) .
-			// visible date and time in users preference
-			htmlspecialchars( $this->getLanguage()->timeanddate( $row['attachedTimestamp'], true ) ) .
-			Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td', array( 'style' => "text-align: center;" ) ) .
-			$this->formatMergeMethod( $row['attachedMethod'] ) .
-			Xml::closeElement( 'td' ) .
+			Xml::closeElement( 'td' );
+
+		$attachedTimestamp = isset( $row['attachedTimestamp'] ) ? $row['attachedTimestamp'] : '';
+
+		$html .= $this->getAttachedTimestampField( $attachedTimestamp ) .
+			Xml::openElement( 'td', array( 'style' => "text-align: center;" ) );
+
+		if ( empty( $row['attachedMethod'] ) ) {
+			$html .= $this->msg( 'centralauth-admin-unattached' )->parse();
+		} else {
+			$html .= $this->formatMergeMethod( $row['attachedMethod'] );
+		}
+
+		$html .= Xml::closeElement( 'td' ) .
 			Xml::openElement( 'td' ) .
 			$this->formatBlockStatus( $row ) .
 			Xml::closeElement( 'td' ) .
@@ -428,10 +442,29 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $method
+	 * @param string|null $attachedTimestamp
+	 *
 	 * @return string
 	 */
-	function formatMergeMethod( $method ) {
+	private function getAttachedTimestampField( $attachedTimestamp ) {
+		if ( !$attachedTimestamp ) {
+			$html = Xml::openElement( 'td', array( 'data-sort-value' =>  '0' ) ) .
+				$this->msg( 'centralauth-admin-unattached' )->parse();
+		} else {
+			$html = Xml::openElement( 'td', array( 'data-sort-value' =>  htmlspecialchars( $attachedTimestamp ) ) ) .
+				// visible date and time in users preference
+				htmlspecialchars( $this->getLanguage()->timeanddate( $attachedTimestamp, true ) );
+		}
+
+		$html .= Xml::closeElement( 'td' );
+		return $html;
+	}
+
+	/**
+	 * @param string $method
+	 * @return string
+	 */
+	private function formatMergeMethod( $method ) {
 		global $wgExtensionAssetsPath;
 
 		// Give grep a chance to find the usages:
@@ -463,7 +496,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param $row
 	 * @return String
 	 */
-	function formatBlockStatus( $row ) {
+	private function formatBlockStatus( $row ) {
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->parse();
@@ -499,7 +532,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 * @throws MWException
 	 */
-	function formatEditcount( $row ) {
+	private function formatEditcount( $row ) {
 		$wiki = WikiMap::getWiki( $row['wiki'] );
 		if ( !$wiki ) {
 			throw new MWException( "Invalid wiki: {$row['wiki']}" );
@@ -519,7 +552,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param $row
 	 * @return string
 	 */
-	function formatGroups( $row ) {
+	private function formatGroups( $row ) {
 		if ( !count( $row['groups'] ) ) {
 			return '';
 		}
@@ -527,10 +560,11 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $level
+	 * @param string $level
 	 * @return String
 	 */
-	function formatHiddenLevel( $level ) {
+	public function formatHiddenLevel( $level ) {
+		// @FIXME: This shouldn't be used in SpecialMultiLock
 		switch( $level ) {
 			case CentralAuthUser::HIDDEN_NONE:
 				return $this->msg( 'centralauth-admin-no' )->escaped();
@@ -543,20 +577,9 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $element
-	 * @param $cols
-	 * @return string
-	 */
-	function tableRow( $element, $cols ) {
-		return "<tr><$element>" .
-			implode( "</$element><$element>", $cols ) .
-			"</$element></tr>";
-	}
-
-	/**
-	 * @param $wikiID
-	 * @param $title
-	 * @param $text
+	 * @param string $wikiID
+	 * @param string $title
+	 * @param string $text
 	 * @param string $hint
 	 * @param string $params
 	 * @return string
@@ -585,11 +608,11 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikiID
+	 * @param string $wikiID
 	 * @return string
 	 * @throws MWException
 	 */
-	function foreignUserLink( $wikiID ) {
+	private function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
 			throw new MWException( "Invalid wiki: $wikiID" );
@@ -605,17 +628,17 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikiID
+	 * @param string $wikiID
 	 * @return string
 	 */
-	function adminCheck( $wikiID ) {
+	private function adminCheck( $wikiID ) {
 		return Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
 	}
 
 	/**
-	 * @param $action String: Only 'delete' supported
+	 * @param string $action Only 'delete' supported
 	 */
-	function showActionForm( $action ) {
+	private function showActionForm( $action ) {
 		$this->getOutput()->addHTML(
 			# to be able to find messages: centralauth-admin-delete-title,
 			# centralauth-admin-delete-description, centralauth-admin-delete-button
@@ -634,7 +657,7 @@ class SpecialCentralAuth extends SpecialPage {
 			) . Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' ) );
 	}
 
-	function showStatusForm() {
+	private function showStatusForm() {
 		// Allows locking, hiding, locking and hiding.
 		$form = '';
 		$form .= Xml::fieldset( $this->msg( 'centralauth-admin-status' )->text() );
@@ -715,10 +738,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->getOutput()->addHTML( $form );
 	}
 
-	/**
-	 *
-	 */
-	function showLogExtract() {
+	private function showLogExtract() {
 		$user = $this->mGlobalUser->getName();
 		$text = '';
 		$logTypes = array( 'globalauth' );
@@ -742,9 +762,9 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @return int|string
+	 * @return string
 	 */
-	function determineHomeWiki() {
+	private function determineHomeWiki() {
 		foreach ( $this->mAttachedLocalAccounts as $wiki => $acc ) {
 			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
 				return $this->foreignUserLink( $wiki );
@@ -758,7 +778,7 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @return int
 	 */
-	function evaluateTotalEditcount() {
+	private function evaluateTotalEditcount() {
 		$total = 0;
 		foreach ( $this->mAttachedLocalAccounts as $acc ) {
 			$total += $acc['editCount'];
@@ -769,7 +789,7 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @return array
 	 */
-	function getMergeMethodDescriptions() {
+	private function getMergeMethodDescriptions() {
 		// Give grep a chance to find the usages:
 		//  centralauth-merge-method-primary, centralauth-merge-method-new, centralauth-merge-method-empty,
 		//  centralauth-merge-method-password, centralauth-merge-method-mail, centralauth-merge-method-admin,
