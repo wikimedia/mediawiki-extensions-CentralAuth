@@ -657,13 +657,14 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param array $passwords
 	 * @param bool $sendToRC
 	 * @param bool $safe Only allow migration if all users can be migrated
+	 * @param bool $checkHome Re-check the user's ownership of the home wiki
 	 * @return bool
 	 */
-	public function storeAndMigrate( $passwords = array(), $sendToRC = true, $safe = false ) {
+	public function storeAndMigrate( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 
-		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe );
+		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
 
 		$dbw->commit();
 		return $ret;
@@ -846,9 +847,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param $passwords Array
 	 * @param $sendToRC bool
 	 * @param $safe bool Only migrate if all accounts can be merged
+	 * @param $checkHome bool Re-check the user's ownership of the home wiki
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true, $safe = false ) {
+	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
@@ -866,6 +868,15 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$home = $migrationSet[$this->mHomeWiki];
+
+		// Check home wiki when the user is initiating this merge, just
+		// like we did in migrationDryRun
+		if ( $checkHome && !$this->matchHashes( $passwords, $home['id'], $home['password'] ) ) {
+			wfDebugLog( 'CentralAuth',
+				"auto migrate: failed password match to home {$this->mHomeWiki}" );
+			return false;
+		}
+
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
 
