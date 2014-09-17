@@ -198,7 +198,8 @@ CREATE TABLE /*_*/renameuser_queue (
   rq_name varchar(255) binary not null,
 
   -- WikiID of home wiki for requesting user
-  rq_wiki varchar(255) binary not null,
+  -- Will be null if user is a CentralAuth account
+  rq_wiki varchar(255) binary,
 
   -- New name being requested
   rq_newname varchar(255) binary not null,
