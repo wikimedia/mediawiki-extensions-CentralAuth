@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_d600083b",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-09-17T17:39:58Z",
+      "side": 1,
+      "message": "Something for the @todo list: Cloner should have a \"max\" parameter that hides the \"add\" button when there are enough, and does this check in the field verification.",
+      "revId": "d2a30c1e72839a82dd31ec4183efc8a437862674",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
