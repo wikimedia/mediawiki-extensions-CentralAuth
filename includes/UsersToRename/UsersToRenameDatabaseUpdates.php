@@ -2,6 +2,8 @@
 
 class UsersToRenameDatabaseUpdates {
 
+	const RENAMED = 8;
+
 	/**
 	 * @var DatabaseBase
 	 */
@@ -9,6 +11,23 @@ class UsersToRenameDatabaseUpdates {
 
 	public function __construct( DatabaseBase $db ) {
 		$this->db = $db;
+	}
+
+	public function markRenamed( $name, $wiki ) {
+		$this->db->update(
+			'users_to_rename',
+			array( 'utr_status' => self::RENAMED ),
+			array( 'utr_wiki' => $wiki, 'utr_name' => $name ),
+			__METHOD__
+		);
+	}
+
+	public function remove( $name, $wiki ) {
+		$this->db->delete(
+			'users_to_rename',
+			array( 'utr_wiki' => $wiki, 'utr_name' => $name ),
+			__METHOD__
+		);
 	}
 
 	/**
