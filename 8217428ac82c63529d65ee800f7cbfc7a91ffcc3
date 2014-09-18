@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_ac7a6be5",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-09-18T00:32:03Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure it will, we do that all the time in WMDE projects",
+      "parentUuid": "ee62ffec_ec706309",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee62ffec_cc7c7f1e",
         "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
         "patchSetId": 3
