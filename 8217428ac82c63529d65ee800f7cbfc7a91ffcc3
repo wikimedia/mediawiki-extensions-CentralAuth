@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_ec706309",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-18T00:30:38Z",
+      "side": 1,
+      "message": "Well https://phpunit.de/manual/3.7/en/appendixes.annotations.html only discusses methods, will coverage reports still work properly if it\u0027s specified for the class once?",
+      "parentUuid": "ee62ffec_cccebf86",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee62ffec_cc7c7f1e",
         "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
         "patchSetId": 3
