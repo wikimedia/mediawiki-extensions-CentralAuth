@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ee62ffec_2c39db3e",
+        "filename": "specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-09-18T00:36:16Z",
+      "side": 1,
+      "message": "Status|string",
+      "revId": "d2a30c1e72839a82dd31ec4183efc8a437862674",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2fb78d_d600083b",
         "filename": "specials/SpecialGlobalUserMerge.php",
         "patchSetId": 2
