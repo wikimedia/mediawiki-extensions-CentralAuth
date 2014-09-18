@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_2ce1dbfb",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-09-18T00:00:39Z",
+      "side": 1,
+      "message": "\u003d :D",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_8c768738",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-09-18T00:00:39Z",
+      "side": 1,
+      "message": "why not give this an option $exists parameter as you seem to change this a lot below?",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_cccebf86",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-09-18T00:00:39Z",
+      "side": 1,
+      "message": "Just put this into the doc of the class",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_cc7c7f1e",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-09-18T00:00:39Z",
+      "side": 1,
+      "message": "Would probably be interesting to have this for only the old and only the new user being renamed in progress.",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
