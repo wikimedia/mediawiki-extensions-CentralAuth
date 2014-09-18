@@ -404,5 +404,6 @@
 	"action-centralauth-usermerge": "全域合并多个用户",
 	"right-centralauth-usermerge": "全域合并多个用户",
 	"centralauth-usermerge-confirm": "您真希望全域合并这些用户？",
-	"centralauth-usermerge-toomany": "每次只能合并$1位用户。"
+	"centralauth-usermerge-toomany": "每次只能合并$1位用户。",
+	"centralauth-usermerge-ratelimited": "出于安全原因，您只允许每分钟全域合并一位用户。请等待一分钟后再重试。"
 }

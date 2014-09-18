@@ -390,5 +390,6 @@
 	"action-centralauth-usermerge": "unire globalmente più utenti",
 	"right-centralauth-usermerge": "Unisce globalmente più utenti",
 	"centralauth-usermerge-confirm": "Vuoi davvero unire globalmente questi utenti?",
-	"centralauth-usermerge-toomany": "{{PLURAL:$1|Può|Possono}} essere {{PLURAL:$1|unito|uniti}} solo $1 {{PLURAL:$1|utente|utenti}} alla volta."
+	"centralauth-usermerge-toomany": "{{PLURAL:$1|Può|Possono}} essere {{PLURAL:$1|unito|uniti}} solo $1 {{PLURAL:$1|utente|utenti}} alla volta.",
+	"centralauth-usermerge-ratelimited": "Come misura di sicurezza, ti è consentito unire globalmente solo un utente al minuto. Riprova fra un minuto."
 }

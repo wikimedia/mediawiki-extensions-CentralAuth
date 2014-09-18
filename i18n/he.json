@@ -385,5 +385,7 @@
 	"centralauth-usermerge-already": "כבר התחיל תהליך שינוי שם גלובלי עבור $1.",
 	"action-centralauth-usermerge": "למזג גלובלית חשבונות משמש מרובים",
 	"right-centralauth-usermerge": "מיזוג גלובלי של חשבונות מרובים",
-	"centralauth-usermerge-confirm": "האם ברצונך באמת למזג את החשבונות האלה גלובלית?"
+	"centralauth-usermerge-confirm": "האם ברצונך באמת למזג את החשבונות האלה גלובלית?",
+	"centralauth-usermerge-toomany": "אפשר למזג רק {{PLURAL:$1|משתמש אחד|$1 משתמשים}} בפעם אחת.",
+	"centralauth-usermerge-ratelimited": "בתור אמצעי אבטחה, מותר לך למזג משתמש גלובלי פעם בדקה. נא להמתין ולנסות שוב בעוד דקה."
 }
