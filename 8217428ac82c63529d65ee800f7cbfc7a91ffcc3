@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_4886321a",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2014-09-18T22:26:13Z",
+      "side": 1,
+      "message": "\u003do",
+      "parentUuid": "ee62ffec_2ce1dbfb",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee62ffec_8c768738",
         "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
         "patchSetId": 3
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "I\u0027m pretty sure it will, we do that all the time in WMDE projects",
       "parentUuid": "ee62ffec_ec706309",
+      "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_6891f651",
+        "filename": "tests/GlobalRename/GlobalRenameUserValidatorTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2014-09-18T22:26:13Z",
+      "side": 1,
+      "message": "Yes it will :) (Hoo is correct)\n\nWhen your code is nicely split up generally you don\u0027t have to be so specific with what things cover :)\nAs core is such a bundle of spaghetti fun I used per method covers tags :)",
+      "parentUuid": "ee62ffec_ac7a6be5",
       "revId": "8217428ac82c63529d65ee800f7cbfc7a91ffcc3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
