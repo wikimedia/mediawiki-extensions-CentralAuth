@@ -388,5 +388,7 @@
 	"centralauth-usermerge-form-newuser": "Окончательное имя участника",
 	"centralauth-usermerge-form-usernames": "Текущие имена участника",
 	"centralauth-usermerge-form-reason": "Причина",
-	"centralauth-usermerge-notinstalled": "Расширение UserMerge не устанавлено."
+	"centralauth-usermerge-notinstalled": "Расширение UserMerge не устанавлено.",
+	"action-centralauth-usermerge": "глобальное объединение нескольких участников",
+	"right-centralauth-usermerge": "Глобальное объединение нескольких участников"
 }

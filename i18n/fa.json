@@ -394,5 +394,7 @@
 	"centralauth-usermerge-already": "از پیش یک تغییرنام یا ادغام سراسری برای $1 در جریان است.",
 	"action-centralauth-usermerge": "ادغام سراسری چند کاربر",
 	"right-centralauth-usermerge": "ادغام سراسری چند کاربر",
-	"centralauth-usermerge-confirm": "آیا واقعاً می‌خواهید این کاربران را سراسری ادغام کنید؟"
+	"centralauth-usermerge-confirm": "آیا واقعاً می‌خواهید این کاربران را سراسری ادغام کنید؟",
+	"centralauth-usermerge-toomany": "فقط $1 {{PLURAL:$1|کاربر}} می‌تواند در یک زمان ادغام شود.",
+	"centralauth-usermerge-ratelimited": "به عنوان یک اقدام امنیتی شما تنها مجاز ادغام سراسری کاربر در دقیقه هستید. لطفاً دوباره پس از یک دقیقه تلاش کنید."
 }

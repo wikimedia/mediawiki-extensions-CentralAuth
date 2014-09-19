@@ -14,7 +14,8 @@
 			"Silvonen",
 			"Str4nd",
 			"Stryn",
-			"Tarmo"
+			"Tarmo",
+			"SMAUG"
 		]
 	},
 	"mergeaccount": "Käyttäjätunnusten yhdistämisen tila",
@@ -342,7 +343,14 @@
 	"centralauth-rename-viewprogress": "Näytä edistyminen",
 	"centralauth-rename-progress-fieldset": "Luettelo paikallisista tunnuksista",
 	"centralauth-rename-progress-logs-fieldset": "Lokimerkinnät",
+	"centralauth-rename-confirm": "Haluatko varmasti nimetä tämän käyttäjän uudelleen järjestelmänlaajuisesti?",
 	"log-name-gblrename": "Järjestelmänlaajuisen tunnusten vaihtojen loki",
 	"log-description-gblrename": "Tässä lokissa ovat järjestelmänlaajuisesti tehdyt käyttäjätunnusten vaihdot.",
-	"centralauth-usermerge-form-reason": "Syy"
+	"globalusermerge": "Yhdistä järjestelmänlaajuinen tunnus",
+	"globalusermerge-legend": "Yhdistä järjestelmänlaajuinen tunnus",
+	"centralauth-usermerge-form-newuser": "Tuleva käyttäjätunnus",
+	"centralauth-usermerge-form-usernames": "Nykyinen käyttäjätunnus",
+	"centralauth-usermerge-form-reason": "Syy",
+	"centralauth-usermerge-disabled": "Järjestelmänlaajuinen käyttäjien yhdistämistyökalu on poistettu käytöstä.",
+	"centralauth-usermerge-invalid": "Nimellä \"$1\" ei ole järjestelmänlaajuista käyttäjätunnusta."
 }
