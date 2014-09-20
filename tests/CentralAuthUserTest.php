@@ -9,6 +9,23 @@
 class CentralAuthUserTest extends MediaWikiTestCase {
 
 	/**
+	 * @covers CentralAuthUser::getInstance
+	 */
+	public function testGetInstance() {
+		$user = User::newFromName( 'FooBarBaz' );
+		unset( $user->centralAuthObj );
+		$caUser = CentralAuthUser::getInstance( $user );
+		$this->assertInstanceOf( 'CentralAuthUser', $caUser );
+		$this->assertEquals( $user->getName(), $caUser->getName() );
+		$this->assertSame( $user->centralAuthObj, $caUser );
+
+		// Now test it just reads from the cache, no matter what
+		$user2 = User::newFromName( 'BazBarFoo' );
+		$user2->centralAuthObj = 'blahblahblah';
+		$this->assertEquals( 'blahblahblah', CentralAuthUser::getInstance( $user2 ) );
+	}
+
+	/**
 	 * @covers CentralAuthUser::newUnattached
 	 */
 	public function testNewUnattached() {
