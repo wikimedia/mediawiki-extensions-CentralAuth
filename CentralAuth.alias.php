@@ -756,6 +756,9 @@ $specialPageAliases['vi'] = array(
 	'WikiSets' => array( 'Bộ_wiki' ),
 	'GlobalUsers' => array( 'Danh_sách_thành_viên_toàn_cục', 'Danh_sách_thành_viên_toàn_cầu', 'Danh_sách_người_dùng_thống_nhất' ),
 	'MultiLock' => array( 'Khóa_tài_khoản_toàn_cục' ),
+	'GlobalRenameUser' => array( 'Đổi_tên_thành_viên_toàn_cục', 'Đổi_tên_người_dùng_toàn_cục' ),
+	'GlobalRenameProgress' => array( 'Tiến_độ_đổi_tên_toàn_cục' ),
+	'GlobalUserMerge' => array( 'Hợp_nhất_người_dùng_toàn_cục', 'Hợp_nhất_thành_viên_toàn_cục' ),
 );
 
 /** Yiddish (ייִדיש) */

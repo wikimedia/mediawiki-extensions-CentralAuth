@@ -396,5 +396,7 @@
 	"centralauth-usermerge-already": "Det finns redan ett globalt namnbyte eller sammanslagning på gång för $1.",
 	"action-centralauth-usermerge": "globalt slå samman flera användare",
 	"right-centralauth-usermerge": "Globalt slå samman flera användare",
-	"centralauth-usermerge-confirm": "Vill du verkligen globalt slå samman dessa användare?"
+	"centralauth-usermerge-confirm": "Vill du verkligen globalt slå samman dessa användare?",
+	"centralauth-usermerge-toomany": "Bara $1 {{PLURAL:$1|användare}} kan slås samman på en gång.",
+	"centralauth-usermerge-ratelimited": "Som en säkerhetsåtgärd får du endast globalt slå samman en användare en gång per minut. Försök igen efter en minut."
 }

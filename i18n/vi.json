@@ -379,5 +379,7 @@
 	"centralauth-usermerge-already": "Đã có một tiến trình đổi tên hay hợp nhất tài khoản toàn cục cho $1.",
 	"action-centralauth-usermerge": "hợp nhất tài khoản của người dùng trên toàn cục",
 	"right-centralauth-usermerge": "Hợp nhất tài khoản của người dùng trên toàn cục",
-	"centralauth-usermerge-confirm": "Bạn có chắc chắn về việc hợp nhất những người dùng này trên toàn cục không?"
+	"centralauth-usermerge-confirm": "Bạn có chắc chắn về việc hợp nhất những người dùng này trên toàn cục không?",
+	"centralauth-usermerge-toomany": "Chỉ có thể hợp nhất $1 người dùng cùng lúc.",
+	"centralauth-usermerge-ratelimited": "Để bảo đảm an toàn, bạn chỉ được phép hợp nhất toàn cục mỗi phút một người dùng. Xin hãy thử lại sau một phút."
 }

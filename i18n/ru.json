@@ -390,5 +390,7 @@
 	"centralauth-usermerge-form-reason": "Причина",
 	"centralauth-usermerge-notinstalled": "Расширение UserMerge не устанавлено.",
 	"action-centralauth-usermerge": "глобальное объединение нескольких участников",
-	"right-centralauth-usermerge": "Глобальное объединение нескольких участников"
+	"right-centralauth-usermerge": "Глобальное объединение нескольких участников",
+	"centralauth-usermerge-confirm": "Вы действительно хотите глобально объединить этих участников?",
+	"centralauth-usermerge-toomany": "За раз может быть объедин{{PLURAL:$1|ён|ены|ено}} только $1 участник{{PLURAL:$1||ов|а}}"
 }

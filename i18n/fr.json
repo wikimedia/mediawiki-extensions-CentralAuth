@@ -407,5 +407,7 @@
 	"centralauth-usermerge-already": "Il y a déjà un renommage ou une fusion global en cours pour $1.",
 	"action-centralauth-usermerge": "fusionner globalement plusieurs utilisateurs",
 	"right-centralauth-usermerge": "Fusionner globalement plusieurs utilisateurs",
-	"centralauth-usermerge-confirm": "Voulez-vous vraiment fusionner globalement ces utilisateurs ?"
+	"centralauth-usermerge-confirm": "Voulez-vous vraiment fusionner globalement ces utilisateurs ?",
+	"centralauth-usermerge-toomany": "{{PLURAL:$1|Un seul utilisateur peut être fusionné|Seulement $1 utilisateurs peuvent être fusionnés}} à la fois.",
+	"centralauth-usermerge-ratelimited": "Par mesure de sécurité, vous n’êtes autorisé qu’à fusionner globalement un utilisateur qu’une fois par minute. Veuillez réessayer après une minute."
 }

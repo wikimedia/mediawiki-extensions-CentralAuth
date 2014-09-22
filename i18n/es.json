@@ -394,7 +394,13 @@
 	"log-name-gblrename": "Registro de renombramiento global",
 	"log-description-gblrename": "Este registro muestra una lista de los cambios de nombre de los usuarios.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5",
+	"globalusermerge": "Fusionar usuario global",
+	"globalusermerge-legend": "Fusionar usuario global",
+	"centralauth-usermerge-form-newuser": "Nombre de usuario final",
 	"centralauth-usermerge-form-usernames": "Nombres de usuario actuales",
 	"centralauth-usermerge-form-usernames-help": "Cada nombre de usuario debe estar separado por una línea nueva.",
-	"centralauth-usermerge-form-reason": "Motivo"
+	"centralauth-usermerge-form-reason": "Motivo",
+	"centralauth-usermerge-notinstalled": "La extensión UserMerge no está instalada.",
+	"centralauth-usermerge-invalid": "No existe ninguna cuenta global llamada «$1».",
+	"right-centralauth-usermerge": "Fusionar varios usuarios globalmente"
 }

@@ -304,5 +304,5 @@
 	"centralauth-warning-notattached": "Contul local nu este atașat unuia global.",
 	"centralauth-finishglobaliseemail_subject": "Confirmarea contului la {{SITENAME}}",
 	"centralauth-usermerge-notinstalled": "Extensia UserMerge nu este instalată.",
-	"action-centralauth-usermerge": "Motiv"
+	"action-centralauth-usermerge": "uniți la nivel global utilizatori multipli"
 }
