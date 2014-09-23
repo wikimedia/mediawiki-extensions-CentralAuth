@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_318fcfd3",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-23T18:58:47Z",
+      "side": 1,
+      "message": "I think we should check against global AntiSpoof at least. But since it\u0027s clearly documented, fine for a follow up patch.",
+      "revId": "37fdefcc7ba3c14ea17dfb1f643f88a895ae9079",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_712ae7d8",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-09-23T18:58:47Z",
+      "side": 1,
+      "message": "isNameAvailable returns a status, so needs -\u003eisOK()",
+      "revId": "37fdefcc7ba3c14ea17dfb1f643f88a895ae9079",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
