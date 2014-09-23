@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_fd8c663c",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-23T21:46:35Z",
+      "side": 1,
+      "message": "Using the normal \u0027CentralAuth\u0027 bucket seems fine. I added \"CentralAuthMigration: \" as a prefix to these 3 messages too just to make find them with grep/logstash easier.",
+      "parentUuid": "ee62ffec_7de19628",
+      "revId": "31e3c2342794c31710758e3e24caf772b58535bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee62ffec_5dded271",
         "filename": "CentralAuthPlugin.php",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_bd86ee16",
+        "filename": "CentralAuthPlugin.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-23T21:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee62ffec_5dded271",
+      "revId": "31e3c2342794c31710758e3e24caf772b58535bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee62ffec_1de85a0a",
         "filename": "specials/SpecialCentralLogin.php",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-23T21:23:06Z",
       "side": 1,
       "message": ".",
+      "revId": "31e3c2342794c31710758e3e24caf772b58535bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_fdb226e3",
+        "filename": "specials/SpecialCentralLogin.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-23T21:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee62ffec_1de85a0a",
       "revId": "31e3c2342794c31710758e3e24caf772b58535bf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
