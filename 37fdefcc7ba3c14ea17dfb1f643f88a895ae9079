@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee62ffec_a795bd37",
+        "filename": "GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-23T20:07:59Z",
+      "side": 1,
+      "message": "Should I really just run the AbortNewAccount hooks instead of picking and choosing what checks to make? Or are they too expensive for something that may get turned into an ajax call that is triggered on form input?",
+      "parentUuid": "ee62ffec_318fcfd3",
+      "revId": "37fdefcc7ba3c14ea17dfb1f643f88a895ae9079",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee62ffec_712ae7d8",
         "filename": "specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-23T18:58:47Z",
       "side": 1,
       "message": "isNameAvailable returns a status, so needs -\u003eisOK()",
+      "revId": "37fdefcc7ba3c14ea17dfb1f643f88a895ae9079",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_47fba144",
+        "filename": "specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-09-23T20:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee62ffec_712ae7d8",
       "revId": "37fdefcc7ba3c14ea17dfb1f643f88a895ae9079",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
