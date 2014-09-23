@@ -278,6 +278,7 @@ $specialPageAliases['he'] = array(
 	'GlobalGroupPermissions' => array( 'הרשאות_קבוצות_כלליות' ),
 	'WikiSets' => array( 'עריכת_קבוצות_אתרי_ויקי' ),
 	'GlobalUsers' => array( 'משתמשים_כלליים' ),
+	'MultiLock' => array( 'נעילה_מרובה' ),
 	'GlobalRenameUser' => array( 'שינוי_שם_משתמש_גלובלי' ),
 	'GlobalRenameProgress' => array( 'התקדמות_שינוי_שם_משתמש_גלובלי' ),
 );
@@ -310,7 +311,7 @@ $specialPageAliases['hsb'] = array(
 	'GlobalUsers' => array( 'Globalni_wužiwarjo' ),
 );
 
-/** 湘语 (湘语) */
+/** Xiang Chinese (湘语) */
 $specialPageAliases['hsn'] = array(
 	'CentralAuth' => array( '中心认证' ),
 	'MergeAccount' => array( '合并账户' ),
@@ -692,6 +693,7 @@ $specialPageAliases['sv'] = array(
 	'GlobalUsers' => array( 'Globala_användare' ),
 	'GlobalRenameUser' => array( 'Globalt_användarnamnsbyte' ),
 	'GlobalRenameProgress' => array( 'Globalt_namnbytesförlopp' ),
+	'GlobalUserMerge' => array( 'Global_användarsammanslagning' ),
 );
 
 /** Swahili (Kiswahili) */
@@ -739,7 +741,7 @@ $specialPageAliases['ur'] = array(
 	'GlobalUsers' => array( 'عالمی_صارفین' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'MergeAccount' => array( 'UnissiUtense' ),
 	'GlobalGroupMembership' => array( 'DiritiUtenteGlobali' ),
