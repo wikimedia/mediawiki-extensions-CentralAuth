@@ -200,6 +200,7 @@
 	"centralauth-invalid-wiki": "אין מסד נתונים בשם $1",
 	"centralauth-account-exists": "לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.",
 	"centralauth-account-unattached-exists": "לא ניתן ליצור חשבון: שם המשתמש המבוקש יתנגש עם שם משתמש אחר במערכת הכניסה המאוחדת",
+	"centralauth-account-rename-exists": "לא ניתן ליצור חשבון: השם המבוקש יתנגש עם שם אחרבמערכת הכניסה המאוחדת",
 	"centralauth-account-exists-reset": "שם המשתמש $1 אינו רשום בוויקי הזה, אבל אפשר לאפס את הססמה שלו ב[[Special:CentralAuth/$1|אחד מהאתרים שבהם הוא כן]].",
 	"centralauth-login-progress": "מתבצעת כניסה לחשבונך באתרי ויקי של {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "מתבצעת יציאה מהחשבון באתרים אחרים של {{int:Centralauth-groupname}}:",
@@ -387,5 +388,13 @@
 	"right-centralauth-usermerge": "מיזוג גלובלי של חשבונות מרובים",
 	"centralauth-usermerge-confirm": "האם ברצונך באמת למזג את החשבונות האלה גלובלית?",
 	"centralauth-usermerge-toomany": "אפשר למזג רק {{PLURAL:$1|משתמש אחד|$1 משתמשים}} בפעם אחת.",
-	"centralauth-usermerge-ratelimited": "בתור אמצעי אבטחה, מותר לך למזג משתמש גלובלי פעם בדקה. נא להמתין ולנסות שוב בעוד דקה."
+	"centralauth-usermerge-ratelimited": "בתור אמצעי אבטחה, מותר לך למזג משתמש גלובלי פעם בדקה. נא להמתין ולנסות שוב בעוד דקה.",
+	"globalrenamerequest-desc": "בקשת שינוי שם חשבון גלובלי",
+	"globalrenamerequest": "בקשת איחוד שינוי שם",
+	"globalrenamerequest-legend": "בקשת איחוד שינוי שם",
+	"globalrenamerequest-forced": "קרן ויקימדיה מאחדת שמות משתמש בכל המיזמים. זיהינו ששם המשתמש שלך משמש באתרי ויקי אחרים וצריך להשתנות כדי לסיים את האיחוד הזה. כתוצאה מזה, עליך לבחור שם משתמש חדש בשביל להמשיך.",
+	"globalrenamerequest-pretext": "נא לבחור שם משתמש חדש שיזהה אותך בכל המיזמים.\n\nכל התרומות הקודמות שלך תחוברנה עם שם המשתמש החדש הזה.\n\nאחרי בקשת שם המשתמש החדש, לדיילים במיזם תישלח הודעה לבצע את שינוי השם. כשהתהליך יושלם, תישלח הודעה אליך.",
+	"globalrenamerequest-username-label": "שם משתמש נוכחי:",
+	"globalrenamerequest-username-help": "זהו שם המשתמש הנוכחי שלך. הוא ישונה לשם שביקשת.",
+	"globalrenamerequest-newname-label": "השם המבוקש"
 }

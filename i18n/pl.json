@@ -212,6 +212,7 @@
 	"centralauth-invalid-wiki": "Nie istnieje wiki DB: $1",
 	"centralauth-account-exists": "Utworzenie konta nie jest możliwe: wybrana nazwa użytkownika jest zajęta przez konto uniwersalne.",
 	"centralauth-account-unattached-exists": "Utworzenie konta nie jest możliwe: wybrana nazwa użytkownika byłaby w konflikcie z inną nazwą w systemie ujednoliconej nazwy użytkownika.",
+	"centralauth-account-rename-exists": "Nie można utworzyć konta: wybrana nazwa użytkownika byłaby w konflikcie z inną nazwą w systemie ujednoliconej nazwy użytkownika",
 	"centralauth-account-exists-reset": "Nazwa użytkownika $1 nie jest zarejestrowana na tej wiki, ale możesz zresetować jego hasło na [[Special:CentralAuth/$1|wiki, na której jest zarejestrowana]].",
 	"centralauth-login-progress": "{{GENDER:|Zostałeś zalogowany|Zostałaś zalogowana|Zalogowano Cię}} także do innych wiki {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Wylogowano także z innych wiki {{int:Centralauth-groupname}}:",
@@ -367,5 +368,8 @@
 	"centralauth-usermerge-form-reason": "Powód",
 	"centralauth-usermerge-notinstalled": "Rozszerzenie UserMerge nie jest zainstalowane.",
 	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”.",
-	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz."
+	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz.",
+	"globalrenamerequest-email-label": "Adres e‐mail",
+	"globalrenamerequest-email-help": "Wpisz swój adres e-mail.",
+	"globalrenamerequest-email-why-label": "Dlaczego?"
 }

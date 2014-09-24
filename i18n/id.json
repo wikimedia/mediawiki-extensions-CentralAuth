@@ -10,7 +10,9 @@
 			"Iwan Novirion",
 			"Kenrick95",
 			"Rex",
-			"C5st4wr6ch"
+			"C5st4wr6ch",
+			"Ahdan",
+			"Lukman Tomayahu"
 		]
 	},
 	"mergeaccount": "Status penggabungan log masuk",
@@ -173,6 +175,7 @@
 	"centralauth-renameuser-reserved": "Pengguna $2 telah dicadangkan sebagai akun global.",
 	"centralauth-invalid-wiki": "DB wiki tidak ditemukan: $1",
 	"centralauth-account-exists": "Akun tidak dapat dibuat: nama pengguna ini telah terdaftar di sistem akun global.",
+	"centralauth-account-rename-exists": "Tidak dapat membuat account. Username yang diminta akan konflik dengan nama pengguna lain dalam sistem unified login",
 	"centralauth-account-exists-reset": "Nama pengguna $1 tidak terdaftar di wiki ini, tapi terdaftar dalam sistem masuk terpadu.",
 	"centralauth-login-progress": "Anda masuk log juga pada {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Anda keluar log juga pada {{int:Centralauth-groupname}}:",
@@ -233,8 +236,6 @@
 	"centralauth-editgroup-success": "Perubahan hak kelompok telah tersimpan",
 	"centralauth-editgroup-success-text": "Anda telah berhasil mengubah hak kelompok $1.\n[[Special:GlobalGroupPermissions|Kembali ke manajemen kelompok]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|sunting]])",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki di mana mereka memiliki akun:",
-	"centralauth-globalgroupmembership-badknownwiki": "Pengguna global '''$1''' tidak aktif di wiki yang Anda pilih ('' $2 ''). Anda mungkin memberikan hak ke pengguna yang salah!",
 	"centralauth-editset": "Set wiki",
 	"centralauth-editset-legend-rw": "Sunting atau buat set wiki",
 	"centralauth-editset-legend-ro": "Daftar set wiki",
@@ -277,5 +278,17 @@
 	"right-centralauth-oversight": "Hapus akun global",
 	"right-centralauth-merge": "Menggabungkan akun mereka",
 	"right-globalgrouppermissions": "Pengaturan kelompok global",
-	"centralauth-warning-notloggedin": "Anda saat ini tidak masuk log."
+	"centralauth-warning-notloggedin": "Anda saat ini tidak masuk log.",
+	"globalrenamerequest-pretext": "Pilih username baru untuk diketahui di seluruh proyek.\n\nSemua kontribusi sebelumnya akan terhubung dengan nama pengguna baru ini.\n\nSetelah Anda meminta nama pengguna baru, pemberitahuan akan di kirim ke pelayan proyek untuk melakukan perubahan nama. Anda akan diberitahu ketika proses ini selesai.",
+	"globalrenamerequest-username-help": "Ini adalah nama pengguna anda saat ini. Nama pengguna akan berubah jadi nama yang anda pilih",
+	"globalrenamerequest-newname-err-taken": "Nama pengguna sudah digunakan. Mohon pilih nama yang lain.",
+	"globalrenamerequest-email-label": "Alamat surel",
+	"globalrenamerequest-email-help": "Masukkan alamat surel Anda",
+	"globalrenamerequest-email-why-label": "Mengapa?",
+	"globalrenamerequest-email2-help": "Untuk konfirmasi harap masukkan alamat email seperti di atas.",
+	"globalrenamerequest-email-mismatch": "Alamat email berbeda. <br /> Mohon cek kedua nya dan coba lagi",
+	"globalrenamerequest-email-invalid": "Alamat email yang disediakan tidak valid",
+	"globalrenamerequest-reason-label": "Alasan untuk permintaan",
+	"globalrenamerequest-save-error": "Gagal untuk menyimpan permintaan, silakan coba lagi.",
+	"globalrenamerequest-status-title": "Permintaan ubah nama menunggu persetujuan."
 }

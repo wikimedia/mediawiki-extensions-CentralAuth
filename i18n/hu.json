@@ -305,5 +305,17 @@
 	"centralauth-rename-table-status-done": "Kész",
 	"centralauth-rename-progress-fieldset": "Helyi fiókok listája",
 	"centralauth-rename-progress-logs-fieldset": "Naplóbejegyzések",
-	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését."
+	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését.",
+	"globalrenamerequest-desc": "Globális fiókátnevezés kérése",
+	"globalrenamerequest": "Egyesítési átnevezési kérelem",
+	"globalrenamerequest-legend": "Egyesítési átnevezési kérelem",
+	"globalrenamerequest-newname-err-invalid": "Érvénytelen felhasználónevet adtál meg.",
+	"globalrenamerequest-newname-err-taken": "A megadott felhasználónév már foglalt. Kérjük, válassz másikat!",
+	"globalrenamerequest-email-label": "Email cím",
+	"globalrenamerequest-email-help": "Add meg az email címed.",
+	"globalrenamerequest-email-why-label": "Miért?",
+	"globalrenamerequest-email-mismatch": "Az emailcímek különböznek.<br />Kérjük, ellenőrizd őket, majd próbáld újra.",
+	"globalrenamerequest-email-invalid": "A megadott email cím érvénytelen.",
+	"globalrenamerequest-reason-label": "A kérelem indoka",
+	"globalrenamerequest-status-title": "Átnevezési kérelem jóváhagyása függőben"
 }

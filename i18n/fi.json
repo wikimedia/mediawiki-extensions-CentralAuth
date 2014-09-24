@@ -349,7 +349,7 @@
 	"globalusermerge": "Yhdistä järjestelmänlaajuinen tunnus",
 	"globalusermerge-legend": "Yhdistä järjestelmänlaajuinen tunnus",
 	"centralauth-usermerge-form-newuser": "Tuleva käyttäjätunnus",
-	"centralauth-usermerge-form-usernames": "Nykyinen käyttäjätunnus",
+	"centralauth-usermerge-form-usernames": "Nykyiset käyttäjätunnukset",
 	"centralauth-usermerge-form-reason": "Syy",
 	"centralauth-usermerge-disabled": "Järjestelmänlaajuinen käyttäjien yhdistämistyökalu on poistettu käytöstä.",
 	"centralauth-usermerge-invalid": "Nimellä \"$1\" ei ole järjestelmänlaajuista käyttäjätunnusta."

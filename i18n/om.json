@@ -4,5 +4,8 @@
 			"Tumsaa"
 		]
 	},
-	"centralauth-editset-nowikis": "(homtaa)"
+	"centralauth-editset-nowikis": "(homtaa)",
+	"globalrenamerequest-email-help": "Imeelii kee galchi",
+	"globalrenamerequest-email-why-label": "Maalif?",
+	"globalrenamerequest-email2-label": "Imeelii kee mirkaneessi"
 }

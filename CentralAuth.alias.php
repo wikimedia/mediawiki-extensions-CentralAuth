@@ -143,6 +143,8 @@ $specialPageAliases['de'] = array(
 	'MultiLock' => array( 'Mehrfachsperre' ),
 	'GlobalRenameUser' => array( 'Globale_Benutzerumbenennung' ),
 	'GlobalRenameProgress' => array( 'Globaler_Umbenennungsfortschritt' ),
+	'GlobalUserMerge' => array( 'Globale_Benutzerzusammenführung' ),
+	'GlobalRenameRequest' => array( 'Globale_Umbenennungsanfrage' ),
 );
 
 /** Zazaki (Zazaki) */
