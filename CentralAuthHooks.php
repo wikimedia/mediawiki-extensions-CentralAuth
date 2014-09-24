@@ -12,6 +12,8 @@ class CentralAuthHooks {
 		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
 		global $wgSpecialPages, $wgSpecialPageGroups, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
+		global $wgCentralAuthCheckSULMigration;
+
 		$caBase = __DIR__;
 
 		if ( class_exists( 'RenameuserSQL' ) ) {
