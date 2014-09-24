@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_f38b7719",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-09-24T00:19:12Z",
+      "side": 1,
+      "message": "Why not page on (name,wiki)? Right now, just using \"ln_name \u003e X\" will not have duplicates, but it might skip some pairs. Say the first 800 were one user and the next 500 another user, you\u0027d only get 200 of that second user and would skip past them on the next iteration. Not sure how likely that actually is given our data set though.",
+      "revId": "aa13f5140a1e89ac07b59a70f33e549fbe00fd36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
