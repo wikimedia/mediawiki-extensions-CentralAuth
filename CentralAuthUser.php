@@ -656,14 +656,13 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * @param array $passwords
 	 * @param bool $sendToRC
-	 * @param bool $safe Only allow migration if all users can be migrated
 	 * @return bool
 	 */
-	public function storeAndMigrate( $passwords = array(), $sendToRC = true, $safe = false ) {
+	public function storeAndMigrate( $passwords = array(), $sendToRC = true ) {
 		$dbw = self::getCentralDB();
 		$dbw->begin();
 
-		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe );
+		$ret = $this->attemptAutoMigration( $passwords, $sendToRC );
 
 		$dbw->commit();
 		return $ret;
@@ -845,10 +844,9 @@ class CentralAuthUser extends AuthPluginUser {
 	 *
 	 * @param $passwords Array
 	 * @param $sendToRC bool
-	 * @param $safe bool Only migrate if all accounts can be merged
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true, $safe = false ) {
+	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true ) {
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
@@ -871,11 +869,6 @@ class CentralAuthUser extends AuthPluginUser {
 
 		// Pick all the local accounts matching the "master" home account
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
-
-		if ( $safe && count( $attach ) !== count( $migrationSet ) ) {
-			wfDebugLog( 'CentralAuth', "Safe auto-migration for '$this->mName' failed" );
-			return false;
-		}
 
 		// storeGlobalData clears $this->mHomeWiki
 		$homeWiki = $this->mHomeWiki;
