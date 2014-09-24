@@ -358,22 +358,14 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function listFooter() {
-		$footer = '';
-		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
-			$footer .= Xml::openElement( 'tr' ) .
-				Xml::openElement( 'td', array( "style" => "border-right: none;" ) ) .
-				Xml::closeElement( 'td' ) .
-				Xml::openElement( 'td', array(
-					"style" => "border-left: none;",
-					"colspan" => "5"
-				) ) .
-				Xml::submitButton( $this->msg( 'centralauth-admin-unmerge' )->text() ) .
-				Xml::closeElement( 'td' ) .
-				Xml::closeElement( 'tr' );
-		}
-		$footer .= Xml::closeElement( 'tbody' ) .
+		$footer = Xml::closeElement( 'tbody' ) .
 			Xml::closeElement( 'table' ) .
 			Xml::closeElement( 'form' );
+
+		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
+			$footer .= Xml::submitButton( $this->msg( 'centralauth-admin-unmerge' )->text() );
+		}
+
 		return $footer;
 	}
 
