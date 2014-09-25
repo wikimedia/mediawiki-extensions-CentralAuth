@@ -9,7 +9,8 @@
 			"TRYPPN",
 			"Trengarasu",
 			"செல்வா",
-			"மதனாஹரன்"
+			"மதனாஹரன்",
+			"ElangoRamanujam"
 		]
 	},
 	"mergeaccount": "உள்நுழைவு ஒருங்கிணைப்பு நிலை",
@@ -74,13 +75,10 @@
 	"centralauth-admin-permission": "மேலாளர்களால்  மட்டுமே மற்ற நபர்களின் கணக்கை அவர்களுக்காக ஒன்று சேர்க்க முடியும்.",
 	"centralauth-admin-no-unified": "இந்த பயனருக்கு ஒருங்கிணைக்கப்பட்ட கணக்கு எதுவும் இல்லை.",
 	"centralauth-admin-info-header": "உலகளாவிய பயனர் விவரம்",
-	"centralauth-admin-info-id": "பயனர்:",
 	"centralauth-admin-info-registered": "பதிவுசெய்யப்பட்டது:",
-	"centralauth-admin-info-home": "உள் விக்கி:",
 	"centralauth-admin-info-editcount": "மொத்தத் தொகுப்பெண்ணிக்கை:",
 	"centralauth-admin-info-locked": "மூடப்பட்டது:",
 	"centralauth-admin-info-hidden": "மறைக்கப்பட்ட நிலை:",
-	"centralauth-admin-nohome": "தீர்மானிக்க முடியவில்லை",
 	"centralauth-admin-yes": "ஆம்",
 	"centralauth-admin-no": "இல்லை",
 	"centralauth-admin-hidden-list": "பொதுப்பட்டியல்களில் இருந்து",
@@ -88,8 +86,6 @@
 	"centralauth-admin-list-legend-ro": "உள் கணக்குகளின் பட்டியல்",
 	"centralauth-admin-list-legend-rw": "உள் கணக்குகளை பிரிக்கவும்.",
 	"centralauth-admin-unattached": "இணைக்கப்படவில்லை",
-	"centralauth-admin-blocked": "$3  ல்  $4 மணிக்கு தடுக்கப்பட்டது காலாவதியாகும்   .\nகாரணம்:$2",
-	"centralauth-admin-blocked-indef": "காலவரையறையின்றி தடுக்கப்பட்டுள்ளது.\nகாரணம்:$1",
 	"centralauth-admin-blocklog": "தடைப் பதிகை",
 	"centralauth-admin-list-localwiki": "உள் விக்கி",
 	"centralauth-admin-list-attached-on": "இணைக்கப்பட்ட நாள்",
@@ -201,8 +197,6 @@
 	"centralauth-editgroup-reason": "காரணம்:",
 	"centralauth-editgroup-success": "குழு அனுமதிகள் மாற்றப்பட்டது",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|தொகுப்பு]]",
-	"centralauth-globalgrouppermissions-knownwiki": "அவர்கள் பயனர் கணக்கு கொண்டுள்ள விக்கி:",
-	"centralauth-globalgroupmembership-badknownwiki": "உலகப் பயனர் '''$1''' நீங்கள் குறிப்பிட்ட விக்கியில் ('' $2 '') இயங்குநிலையில் இல்லை.\nநீங்கள் தவறான பயனருக்கு உரிமைகளை வழங்க முயல வாய்ப்புண்டு!",
 	"centralauth-editset": "விக்கி தொகுப்புகள்",
 	"centralauth-editset-legend-rw": "விக்கி தொகுப்பை உருவாக்கு அல்லது திருத்து",
 	"centralauth-editset-legend-ro": "விக்கி தொகுப்புகளின் பட்டியல்",
@@ -243,5 +237,10 @@
 	"right-centralauth-lock": "உலகளாவிய கணக்கை பூட்டு அல்லது மறை",
 	"right-centralauth-oversight": "உலகளாவிய கணக்கை ஒடுக்கவும்",
 	"right-centralauth-merge": "அவர்களின் கணக்குகளை ஒன்றுசேர்",
-	"right-globalgrouppermissions": "உலகளாவிய குழுக்களை நிர்வகி"
+	"right-globalgrouppermissions": "உலகளாவிய குழுக்களை நிர்வகி",
+	"globalrenamerequest-username-label": "தற்போதைய பயனர் பெயர்:",
+	"globalrenamerequest-username-help": "இது தங்களின் தற்போதைய பயனர்பெயர்.  தாங்கள் தற்போது தேர்ந்த பெயருக்கு இது மாற்றப்படும்",
+	"globalrenamerequest-newname-label": "கோரப்பட்ட பயனர்பெயர்",
+	"globalrenamerequest-newname-help": "தாங்கள் உபயோகிக்க விழையும் புதிய பயனர்பெயர், எ-டு., \"$1\".",
+	"globalrenamerequest-email-why-label": "ஏன்?"
 }

@@ -105,15 +105,12 @@
 	"centralauth-admin-no-unified": "Er is geen samengevoegde gebruiker voor deze gebruikersnaam.",
 	"centralauth-admin-info-header": "Gegevens globale gebruiker",
 	"centralauth-admin-info-username": "Gebruikersnaam:",
-	"centralauth-admin-info-id": "Gebruikersnummer:",
 	"centralauth-admin-info-registered": "Geregistreerd:",
-	"centralauth-admin-info-home": "Thuiswiki:",
 	"centralauth-admin-info-editcount": "Totaal aantal bewerkingen:",
 	"centralauth-admin-info-locked": "Vergrendeld:",
 	"centralauth-admin-info-hidden": "Verborgen:",
 	"centralauth-admin-info-groups": "Globale {{PLURAL:$1|groep|groepen}}:",
 	"centralauth-admin-info-nogroups": "geen",
-	"centralauth-admin-nohome": "niet vast te stellen",
 	"centralauth-admin-yes": "ja",
 	"centralauth-admin-no": "nee",
 	"centralauth-admin-hidden-list": "niet in publieke lijsten",
@@ -380,5 +377,9 @@
 	"centralauth-usermerge-invalid": "Er bestaat geen globaal account met de naam: $1",
 	"action-centralauth-usermerge": "globaal meerdere gebruikers samenvoegen",
 	"right-centralauth-usermerge": "Meerdere gebruikers globaal samenvoegen",
-	"centralauth-usermerge-confirm": "Weet u zeker dat u deze gebruikers globaal wilt samenvoegen?"
+	"centralauth-usermerge-confirm": "Weet u zeker dat u deze gebruikers globaal wilt samenvoegen?",
+	"globalrenamerequest-username-label": "Huidige gebruikersnaam:",
+	"globalrenamerequest-email-label": "E-mailadres",
+	"globalrenamerequest-email-help": "Geef uw e-mailadres op.",
+	"globalrenamerequest-email-why-label": "Waarom?"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrisportelli",
-			"Roderick Mallia"
+			"Roderick Mallia",
+			"Leli Forte"
 		]
 	},
 	"mergeaccount": "Stat tat-twaħħid tal-utenzi",
@@ -85,13 +86,10 @@
 	"centralauth-admin-no-unified": "Ma jeżisti l-ebda kont imwaħħad għal dan l-isem tal-utent.",
 	"centralauth-admin-info-header": "Informazzjoni globali tal-utent",
 	"centralauth-admin-info-username": "Isem tal-utent:",
-	"centralauth-admin-info-id": "ID tal-utent:",
 	"centralauth-admin-info-registered": "Reġistrat:",
-	"centralauth-admin-info-home": "Wiki prinċipali:",
 	"centralauth-admin-info-editcount": "Total ta' modifiki:",
 	"centralauth-admin-info-locked": "Imblukkat:",
 	"centralauth-admin-info-hidden": "Moħbi:",
-	"centralauth-admin-nohome": "impossibbli li jiġi determinat",
 	"centralauth-admin-yes": "iva",
 	"centralauth-admin-no": "le",
 	"centralauth-admin-hidden-list": "mill-elenki pubbliċi",
@@ -161,6 +159,7 @@
 	"centralauth-renameuser-reserved": "L-utent $2 huwa riservat għal kont globali.",
 	"centralauth-invalid-wiki": "Ma teżisti l-ebda databażi tal-wiki: $1",
 	"centralauth-account-exists": "Il-kont ma jistax jinħoloq: l-isem tal-utent rikjest huwa diġà meħud fis-sistema tal-login unifikat.",
+	"centralauth-account-rename-exists": "Ma jistax joħloq kont: Hemm kunflitt bejn l-isem ta' utent mitlub u isem ta' utent ieħor fis-sistema unifikata tad-dħul fil-kont",
 	"centralauth-account-exists-reset": "L-isem tal-utent $1 mhuwiex reġistrat fuq din il-wiki, però jeżisti fis-sistema tal-login unifikat.",
 	"centralauth-login-progress": "Login effettwat fil-wikis l-oħra ta' {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Qed toħroġ mill-wikis l-oħra ta' {{int:Centralauth-groupname}}:",
@@ -220,8 +219,6 @@
 	"centralauth-editgroup-success": "Il-permessi tal-grupp ġew mibdula",
 	"centralauth-editgroup-success-text": "Għadek kif biddilt il-permessi tal-grupp għall-grupp $1.\n[[Special:GlobalGroupPermissions|Irritorna lura lejn il-ġestjoni tal-gruppi]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|editja]])",
-	"centralauth-globalgrouppermissions-knownwiki": "Agħżel wiki fuq liema għandu kont:",
-	"centralauth-globalgroupmembership-badknownwiki": "L-utent globali '''$1''' mhuwiex attiv fuq il-wiki li speċifikajt ('' $2 '').\nJista' jkun li qiegħed tipprova tagħti d-drittijiet lill-utent il-ħażin!",
 	"centralauth-editset": "Settijiet ta' wikis",
 	"centralauth-editset-legend-rw": "Immodifika jew oħloq sett ta' wikis",
 	"centralauth-editset-legend-ro": "Lista ta' settijiet ta' wikis",
@@ -262,5 +259,19 @@
 	"right-centralauth-lock": "Jimblokka jew jaħdi kont globali",
 	"right-centralauth-oversight": "Iħassar kont globali",
 	"right-centralauth-merge": "Iwaħħad il-kont tiegħu",
-	"right-globalgrouppermissions": "Jamministra l-gruppi globali"
+	"right-globalgrouppermissions": "Jamministra l-gruppi globali",
+	"globalrenamerequest": "Talba għal isem ġdid għall-unifikazzjoni",
+	"globalrenamerequest-legend": "Talba għal isem ġdid għall-unifikazzjoni",
+	"globalrenamerequest-pretext": "Agħżel isem ta' utent ġdid biex tkun magħrufa bih fil-proġetti kollha.\n\nIl-kontribuzzjonijiet tiegħek ta' qabel kollha se jidhru taħt dan l-isem ġdid.\n\nMeta tkun tlabt isem ta' utent ġdid, tinbagħt notifika lill-istewards tal-proġett biex iwettqu l-bidla tal-isem. Meta jitlesta dan il-proċess inti tkun notifikat.",
+	"globalrenamerequest-username-help": "Dan huwa l-isem ta' utent kurrenti tiegħek. Dan jinbidel għall-isem li tagħżel.",
+	"globalrenamerequest-newname-err-taken": "L-isem ta' utent li daħħalt diġà ttieħed Jekk jogħġbok, agħżel isem differenti.",
+	"globalrenamerequest-email-label": "Indirizz elettroniku",
+	"globalrenamerequest-email-help": "Daħħal l-indirizz elettroniku tiegħek",
+	"globalrenamerequest-email-why-label": "Għaliex?",
+	"globalrenamerequest-email2-help": "Daħħal l-istess indirizz elettroniku li daħħalt hawn fuq biex tikkonferma.",
+	"globalrenamerequest-email-mismatch": "L-indirizzi elettroniċi huma differenti.<br>Jekk jogħġbok iċċekkjahom it-tnejn u erġa' pprova.",
+	"globalrenamerequest-reason-label": "Ir-raġuni għat-talba",
+	"globalrenamerequest-save-error": "It-talba ma ssejvjatx. Jekk jogħġbok erġa' pprova.",
+	"globalrenamerequest-status-title": "Ibdel l-isem tat-talba sakemm tiġi approvata",
+	"globalrenamerequest-status-text": "It-talba tiegħek għal l-bidla tal-isem ta' utent qed tiġi proċessata u qed nistennew l-approvazzjoni minn steward. Tiġi notifikat bil-posta elettronika meta t-talba tkun proċessata għal kollox.\n\n;Isem ta' utent kurrenti:\n:$1\n;Isem ta' utent mitlub:\n:$2"
 }

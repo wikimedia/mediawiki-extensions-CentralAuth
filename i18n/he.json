@@ -97,15 +97,12 @@
 	"centralauth-admin-no-unified": "אין חשבון ממוזג בשם זה.",
 	"centralauth-admin-info-header": "מידע על החשבון הגלובלי",
 	"centralauth-admin-info-username": "שם משתמש:",
-	"centralauth-admin-info-id": "מספר משתמש:",
 	"centralauth-admin-info-registered": "נרשם:",
-	"centralauth-admin-info-home": "האתר הראשי:",
 	"centralauth-admin-info-editcount": "מספר עריכות כולל:",
 	"centralauth-admin-info-locked": "נעול:",
 	"centralauth-admin-info-hidden": "מוסתר:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|קבוצה גלובלית|קבוצות גלובליות}}:",
 	"centralauth-admin-info-nogroups": "אין",
-	"centralauth-admin-nohome": "אין אפשרות להחליט",
 	"centralauth-admin-yes": "כן",
 	"centralauth-admin-no": "לא",
 	"centralauth-admin-hidden-list": "מרשימות ציבוריות",
@@ -396,5 +393,6 @@
 	"globalrenamerequest-pretext": "נא לבחור שם משתמש חדש שיזהה אותך בכל המיזמים.\n\nכל התרומות הקודמות שלך תחוברנה עם שם המשתמש החדש הזה.\n\nאחרי בקשת שם המשתמש החדש, לדיילים במיזם תישלח הודעה לבצע את שינוי השם. כשהתהליך יושלם, תישלח הודעה אליך.",
 	"globalrenamerequest-username-label": "שם משתמש נוכחי:",
 	"globalrenamerequest-username-help": "זהו שם המשתמש הנוכחי שלך. הוא ישונה לשם שביקשת.",
-	"globalrenamerequest-newname-label": "השם המבוקש"
+	"globalrenamerequest-newname-label": "השם המבוקש",
+	"globalrenamerequest-newname-help": "נא להזין את השם שברצונך להשתמש בו, למשל \"$1\"."
 }
