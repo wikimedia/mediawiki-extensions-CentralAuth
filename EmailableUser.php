@@ -59,9 +59,17 @@ class EmailableUser extends User {
 		$expiration = wfTimestamp( TS_MW, $expires );
 		$this->mEmailTokenExpires = $expiration;
 
-		// create a "token url" for MergeAccount since we have added email
-		// confirmation there
-		$url = $this->getTokenUrl( 'MergeAccount', $token );
+		if ( $this->isEmailConfirmed() ) {
+			// Hack to bypass localization of 'Special:'
+			// @see User::getTokenUrl
+			$mergeAccountUrl = Title::makeTitle( NS_MAIN, 'Special:MergeAccount' )->getCanonicalURL();
+		} else {
+			// create a "token url" for MergeAccount since we have added email
+			// confirmation there
+			$mergeAccountUrl = $this->getTokenUrl( 'MergeAccount', $token );
+		}
+
+
 		$invalidateURL = $this->invalidationTokenUrl( $token );
 		$this->saveSettings();
 
@@ -70,7 +78,7 @@ class EmailableUser extends User {
 			wfMessage( "centralauth-finishglobaliseemail_body",
 				$this->getRequest()->getIP(),
 				$this->getName(),
-				$url,
+				$mergeAccountUrl,
 				$wgLang->timeanddate( $expiration, false ),
 				$invalidateURL,
 				$wgLang->date( $expiration, false ),
