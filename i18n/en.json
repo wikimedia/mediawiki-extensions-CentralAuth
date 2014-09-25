@@ -88,7 +88,6 @@
 	"centralauth-admin-no-unified": "No unified account for this username.",
 	"centralauth-admin-info-header": "Global account information",
 	"centralauth-admin-info-username": "Username:",
-	"centralauth-admin-info-id": "User ID:",
 	"centralauth-admin-info-registered": "Registered:",
 	"centralauth-admin-info-home": "Home wiki:",
 	"centralauth-admin-info-editcount": "Total editcount:",
