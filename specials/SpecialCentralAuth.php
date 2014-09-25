@@ -250,30 +250,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	private function showInfo() {
-		$globalUser = $this->mGlobalUser;
-
-		$reg = $globalUser->getRegistration();
-		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
-		$attribs = array(
-			'username' => $globalUser->getName(),
-			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
-			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
-			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
-			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
-		);
-
-		$groups = $globalUser->getGlobalGroups();
-		if ( $groups ) {
-			$groups = array_map( function ( $group ) {
-				return Linker::link(
-					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
-					htmlspecialchars( User::getGroupName( $group ) )
-				);
-			}, $groups );
-			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
-		} else {
-			$attribs['groups'] = $this->msg( 'centralauth-admin-info-nogroups' )->escaped();
-		}
+		$attribs = $this->getInfoFields();
 
 		// Give grep a chance to find the usages:
 		// centralauth-admin-info-username, centralauth-admin-info-registered,
@@ -295,6 +272,41 @@ class SpecialCentralAuth extends SpecialPage {
 			array( "id" => "mw-centralauth-info" )
 		);
 		$this->getOutput()->addHTML( $out );
+	}
+
+	/**
+	 * @return array
+	 */
+	private function getInfoFields() {
+		$globalUser = $this->mGlobalUser;
+
+		$reg = $globalUser->getRegistration();
+		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
+		$attribs = array(
+			'username' => $globalUser->getName(),
+			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
+			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
+			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
+		);
+
+		if ( $this->mCanOversight ) {
+			$attribs['hidden'] = $this->formatHiddenLevel( $globalUser->getHiddenLevel() );
+		}
+
+		$groups = $globalUser->getGlobalGroups();
+		if ( $groups ) {
+			$groups = array_map( function ( $group ) {
+				return Linker::link(
+					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
+					htmlspecialchars( User::getGroupName( $group ) )
+				);
+			}, $groups );
+			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
+		} else {
+			$attribs['groups'] = $this->msg( 'centralauth-admin-info-nogroups' )->escaped();
+		}
+
+		return $attribs;
 	}
 
 	private function showWikiLists() {
