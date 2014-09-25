@@ -258,7 +258,6 @@ class SpecialCentralAuth extends SpecialPage {
 			'username' => $globalUser->getName(),
 			'id' => $globalUser->getId(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
-			'home' => $this->determineHomeWiki(),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
 			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
 			'hidden' => $this->formatHiddenLevel( $globalUser->getHiddenLevel() )
@@ -279,7 +278,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		// Give grep a chance to find the usages:
 		// centralauth-admin-info-username, centralauth-admin-info-id, centralauth-admin-info-registered,
-		// centralauth-admin-info-home, centralauth-admin-info-editcount, centralauth-admin-info-locked,
+		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
 		// centralauth-admin-info-hidden, centralauth-admin-info-groups
 		$content = Xml::openElement( "ul" );
 		foreach ( $attribs as $tag => $data ) {
@@ -750,20 +749,6 @@ class SpecialCentralAuth extends SpecialPage {
 				$text
 			) );
 		}
-	}
-
-	/**
-	 * @return string
-	 */
-	private function determineHomeWiki() {
-		foreach ( $this->mAttachedLocalAccounts as $wiki => $acc ) {
-			if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
-				return $this->foreignUserLink( $wiki );
-			}
-		}
-
-		// Home account can be renamed or unmerged
-		return $this->msg( 'centralauth-admin-nohome' )->escaped();
 	}
 
 	/**

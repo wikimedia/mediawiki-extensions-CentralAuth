@@ -240,9 +240,6 @@ class SpecialMultiLock extends SpecialPage {
 				$out->getContext()->msg( 'centralauth-admin-username' )->escaped() .
 				'</th>' .
 				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-info-home')->escaped() .
-				'</th>' .
-				'<th>' .
 				$out->getContext()->msg( 'centralauth-admin-info-registered' )->escaped() .
 				'</th>' .
 				'<th>' .
@@ -287,7 +284,6 @@ class SpecialMultiLock extends SpecialPage {
 			} elseif ( $globalUser instanceof CentralAuthUser ) {
 				$guName = $globalUser->getName();
 				$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
-				$guWiki = $globalUser->getHomeWiki();
 				$guRegister = $sca->prettyTimespan(
 					wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $globalUser->getRegistration() )
 				);
@@ -305,7 +301,6 @@ class SpecialMultiLock extends SpecialPage {
 					)
 				);
 				$rowtext .= Html::element( 'td', array(), $guName );
-				$rowtext .= Html::element( 'td', array(), $guWiki );
 				$rowtext .= Html::element( 'td', array(), $guRegister );
 				$rowtext .= Html::element( 'td', array(), $guLocked );
 				$rowtext .= Html::element( 'td', array(), $guHidden );
