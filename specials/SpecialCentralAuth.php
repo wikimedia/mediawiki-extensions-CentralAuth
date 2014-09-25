@@ -256,7 +256,6 @@ class SpecialCentralAuth extends SpecialPage {
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
 			'username' => $globalUser->getName(),
-			'id' => $globalUser->getId(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
 			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
@@ -277,7 +276,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		// Give grep a chance to find the usages:
-		// centralauth-admin-info-username, centralauth-admin-info-id, centralauth-admin-info-registered,
+		// centralauth-admin-info-username, centralauth-admin-info-registered,
 		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
 		// centralauth-admin-info-hidden, centralauth-admin-info-groups
 		$content = Xml::openElement( "ul" );
