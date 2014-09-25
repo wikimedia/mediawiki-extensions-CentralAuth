@@ -1523,7 +1523,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		list( $salt, $crypt ) = $this->getPasswordHash();
-		if ( $this->matchHash( $password, $salt, $crypt ) ) {
+		if ( $this->matchHash( $password, $salt, $crypt, /* $update = */ true ) ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
 			return "ok";
@@ -1555,9 +1555,10 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param $plaintext  String User-provided password plaintext.
 	 * @param $salt       String The hash "salt", eg a local id for migrated passwords.
 	 * @param $encrypted  String Fully salted and hashed database crypto text from db.
+	 * @param $update     Boolean Whether to update the password if necessary
 	 * @return Bool true on match.
 	 */
-	protected function matchHash( $plaintext, $salt, $encrypted ) {
+	protected function matchHash( $plaintext, $salt, $encrypted, $update = false ) {
 		global $wgPasswordSalt;
 		$matched = false;
 		$passwordFactory = User::getPasswordFactory();
@@ -1582,7 +1583,7 @@ class CentralAuthUser extends AuthPluginUser {
 			}
 		}
 
-		if ( $matched && $passwordFactory->needsUpdate( $hash ) ) {
+		if ( $update && $matched && $passwordFactory->needsUpdate( $hash ) ) {
 			$this->setPassword( $plaintext, false );
 			$this->saveSettings();
 		}
@@ -2055,19 +2056,25 @@ class CentralAuthUser extends AuthPluginUser {
 		$this->mPassword = $hash;
 		$this->mSalt = $salt;
 
-		$dbw = self::getCentralDB();
-		$dbw->update( 'globaluser',
-			array(
-				'gu_salt'     => $salt,
-				'gu_password' => $hash,
-			),
-			array(
-				'gu_id' => $this->getId(),
-			),
-			__METHOD__ );
+		if ( $this->getId() ) {
+			$dbw = self::getCentralDB();
+			$dbw->update( 'globaluser',
+				array(
+					'gu_salt'     => $salt,
+					'gu_password' => $hash,
+				),
+				array(
+					'gu_id' => $this->getId(),
+				),
+				__METHOD__ );
 
-		wfDebugLog( 'CentralAuth',
-			"Set global password for '$this->mName'" );
+			wfDebugLog( 'CentralAuth',
+				"Set global password for '$this->mName'" );
+		} else {
+			wfDebugLog( 'CentralAuth',
+				__METHOD__ . " was called for a global user that doesn't exist ('$this->mName')." );
+		}
+
 
 		if ( $resetAuthToken ) {
 			$this->resetAuthToken();
