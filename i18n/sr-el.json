@@ -195,7 +195,7 @@
 	"centralauth-rightslog-entry-groupperms2": "je promenio dozvole grupe $1. Dodato $2; Uklonjeno $3",
 	"centralauth-rightslog-entry-groupperms3": "je promenio ograničenja grupe za skupove vikija za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-grouprename": "je preimenovao grupu $2 u $1",
-	"centralauth-rightslog-header": "Ova istorija sadrži operacije izvršene nad globalnim grupama: članstva i promene prava.",
+	"centralauth-rightslog-header": "Ovaj dnevnik sadrži operacije o globalnim grupama: promene u članstvu i dozvolama",
 	"centralauth-rightslog-entry-newset": "je napravio $1 skup vikija $2 sa sledećim vikijima: $3",
 	"centralauth-rightslog-entry-setrename": "je preimenovao skup vikija „$2“ u „$1“",
 	"centralauth-rightslog-entry-setnewtype": "je promenio tip grupe „$1“ sa $2 na $3",

@@ -146,6 +146,7 @@
 	"centralauth-admin-logsnippet": "Папярэднія зьмены глябальнага рахунку",
 	"centralauth-admin-suppressreason": "Глябальна схаваны $1 па наступнай прычыне: $2",
 	"centralauth-admin-not-authorized": "Вы ня маеце дазволу на выкананьне гэтага дзеяньня",
+	"centralauth-admin-title-ro": "Інфармацыя пра глябальны рахунак $1",
 	"globalusers": "Сьпіс глябальных рахункаў",
 	"centralauth-listusers-locked": "заблякаваныя",
 	"centralauth-listusers-attached": "[[User:$1|існуе лякальна]]",

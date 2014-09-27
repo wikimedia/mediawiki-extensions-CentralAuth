@@ -394,5 +394,21 @@
 	"globalrenamerequest-username-label": "שם משתמש נוכחי:",
 	"globalrenamerequest-username-help": "זהו שם המשתמש הנוכחי שלך. הוא ישונה לשם שביקשת.",
 	"globalrenamerequest-newname-label": "השם המבוקש",
-	"globalrenamerequest-newname-help": "נא להזין את השם שברצונך להשתמש בו, למשל \"$1\"."
+	"globalrenamerequest-newname-help": "נא להזין את השם שברצונך להשתמש בו, למשל \"$1\".",
+	"globalrenamerequest-newname-err-invalid": "לא כתבת שם משתמש תקין.",
+	"globalrenamerequest-newname-err-taken": "שם המשתמש הזה כבר בשימוש. נא לבחור שם אחר.",
+	"globalrenamerequest-email-label": "כתובת דוא\"ל",
+	"globalrenamerequest-email-help": "נא להזין כתובת דוא\"ל.",
+	"globalrenamerequest-email-why-label": "למה?",
+	"globalrenamerequest-email-why-explain": "<p>אנו זקוקים לכתובת הדוא\"ל שלך בתהליך הזה כדי לוודא שהגישה לחשבון שלך לא תאבד.</p><p>באפשרותך להסיר את כתובת הדוא\"ל שלך לאחר השלמת תהליך שינוי השם.</p>",
+	"globalrenamerequest-email2-label": "אישור כתובת הדוא\"ל",
+	"globalrenamerequest-email2-help": "נא להזין את אותה כתובת הדוא\"ל שהזנת לעיל לשם אישור.",
+	"globalrenamerequest-email-mismatch": "כתובת הדוא\"ל שונות.<br />נא לבדוק אותן ולנסות שוב.",
+	"globalrenamerequest-email-invalid": "הוזנה כתובת דוא\"ל בלתי־תקינה.",
+	"globalrenamerequest-reason-label": "סיבה לבקשה",
+	"globalrenamerequest-submit-text": "בקשת שינוי שם",
+	"globalrenamerequest-save-error": "הבקשה לא נשמרה. נא לנסות שוב.",
+	"globalrenamerequest-status-title": "בקשת שינוי השם מחכה לאישור",
+	"globalrenamerequest-status-text": "בקשת שינוי שם המשתמש שלך בטיפול והיא ממתינה לאישור של דייל. תישלח אליך הודעה בדוא\"ל כאשר עיבוד הבקשה יסתיים.\n\n;שם משתמש נוכחי:\n:$1\n;שם משתמש מבוקש:\n:$2",
+	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם."
 }

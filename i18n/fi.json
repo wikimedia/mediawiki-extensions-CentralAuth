@@ -304,7 +304,7 @@
 	"centralauth-readonlytext": "CentralAuth-tietokanta on lukittu eikä merkintöjä voi luoda tai muokata. Kyseessä on todennäköisesti tietokannan rutiiniylläpito, jonka jälkeen tietokanta toimii normaalisti.",
 	"right-globalgroupmembership": "Muokata järjestelmänlaajuisten ryhmien jäsenyyksiä",
 	"right-centralauth-autoaccount": "Kirjautua automaattisesti järjestelmänlaajuisella tunnuksella",
-	"right-centralauth-unmerge": "Erottaa järjestelmänlaajuinen tunnus",
+	"right-centralauth-unmerge": "Purkaa järjestelmänlaajuisen tunnuksen yhdistäminen",
 	"right-centralauth-lock": "Lukita tai avata järjestelmänlaajuinen tunnus",
 	"right-centralauth-oversight": "Häivyttää tai piilottaa järjestelmänlaajuinen tunnus",
 	"right-centralauth-merge": "Yhdistää omat tunnuksensa",

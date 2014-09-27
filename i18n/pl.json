@@ -367,6 +367,8 @@
 	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”.",
 	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz.",
 	"globalrenamerequest-username-label": "Obecna nazwa użytkownika:",
+	"globalrenamerequest-newname-help": "Wprowadź nową nazwę użytkownika, którą chcesz używać, np. „$1”.",
+	"globalrenamerequest-newname-err-invalid": "Nie podano poprawnej nazwy użytkownika.",
 	"globalrenamerequest-newname-err-taken": "Podana nazwa użytkownika jest już w użyciu. Wybierz inną nazwę.",
 	"globalrenamerequest-email-label": "Adres e‐mail",
 	"globalrenamerequest-email-help": "Wpisz swój adres e-mail.",
