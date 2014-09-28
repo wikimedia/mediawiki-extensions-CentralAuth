@@ -77,15 +77,12 @@
 	"centralauth-admin-no-unified": "ХӀокху декъашхочун цӀеран вовшвхтоьхна дӀаяздар дац.",
 	"centralauth-admin-info-header": "Глобальни декъашхойн дӀаяздарийн хаамаш",
 	"centralauth-admin-info-username": "Декъашхочун цӀе:",
-	"centralauth-admin-info-id": "Декъашхочун ID:",
 	"centralauth-admin-info-registered": "Декъашхочун дӀаяздар кхоьллина хан:",
-	"centralauth-admin-info-home": "«ЦӀера» вики-проект:",
 	"centralauth-admin-info-editcount": "Массо нисдарийн ларар:",
 	"centralauth-admin-info-locked": "ГӀорина:",
 	"centralauth-admin-info-hidden": "Хьулдаран локхалла:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальни тоба|Глобальни тобанаш}}:",
 	"centralauth-admin-info-nogroups": "хӀахӀа",
-	"centralauth-admin-nohome": "билгалдан цатарло",
 	"centralauth-admin-yes": "хӀаъ",
 	"centralauth-admin-no": "яц",
 	"centralauth-admin-hidden-list": "массо тӀекхочу могӀанийн юкъара",
@@ -343,5 +340,11 @@
 	"log-name-gblrename": "Глобальни цӀераш хийцаран тептар",
 	"log-description-gblrename": "ХӀокху тептар чохь гойту декъашхойн глобальни цӀераш хийцар.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально цӀе хийцина $4 → $5",
-	"centralauth-usermerge-form-reason": "Бахьна"
+	"globalusermerge": "Глобальни декъашхойн дӀаяздарш вовшахтохар",
+	"globalusermerge-legend": "Глобальни декъашхойн дӀаяздарш вовшахтохар",
+	"centralauth-usermerge-form-newuser": "Декъашхочун тӀаьххьара цӀе",
+	"centralauth-usermerge-form-reason": "Бахьна",
+	"right-centralauth-usermerge": "Массийта глобальни декъашхой вовшахтохар",
+	"globalrenamerequest-email-label": "Электронан почтан адрес",
+	"globalrenamerequest-email-why-label": "ХӀунда?"
 }

@@ -89,15 +89,12 @@
 	"centralauth-admin-no-unified": "Fir dëse Benotzernumm gëtt et kee globale Benotzerkont.",
 	"centralauth-admin-info-header": "Informatioun vum globale Benotzerkont",
 	"centralauth-admin-info-username": "Benotzernumm:",
-	"centralauth-admin-info-id": "Benotzernummer:",
 	"centralauth-admin-info-registered": "Ugemellt:",
-	"centralauth-admin-info-home": "Heemechts-Wiki:",
 	"centralauth-admin-info-editcount": "Gesamtzuel vun den Ännerungen",
 	"centralauth-admin-info-locked": "Gespaart:",
 	"centralauth-admin-info-hidden": "Verstoppten Niveau:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|Grupp|Gruppen}}:",
 	"centralauth-admin-info-nogroups": "keng",
-	"centralauth-admin-nohome": "konnt net erausfonnt ginn",
 	"centralauth-admin-yes": "jo",
 	"centralauth-admin-no": "neen",
 	"centralauth-admin-hidden-list": "vun ëffentleche Lëschten",
@@ -354,5 +351,9 @@
 	"centralauth-usermerge-already": "Et ass schonn eng global Ëmbenennung oder e globaalt Zesummeleeë fir $1 am Gaang.",
 	"action-centralauth-usermerge": "global méi Benotzer z",
 	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
-	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?"
+	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
+	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
+	"globalrenamerequest-email-help": "Gitt Är E-Mail-Adress an.",
+	"globalrenamerequest-email-why-label": "Firwat?",
+	"globalrenamerequest-reason-label": "Grond fir d'Ufro"
 }
