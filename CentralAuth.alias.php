@@ -223,7 +223,7 @@ $specialPageAliases['fa'] = array(
 $specialPageAliases['fi'] = array(
 	'CentralAuth' => array( 'Keskitetty_varmennus' ),
 	'MergeAccount' => array( 'Yhdistä_tunnus' ),
-	'GlobalUsers' => array( 'Yhdistetyt_tunnukset' ),
+	'GlobalUsers' => array( 'Globaalit_tunnukset' ),
 );
 
 /** French (français) */

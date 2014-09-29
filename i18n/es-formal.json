@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Baffo"
+		]
+	},
+	"globalrenamerequest-save-error": "No se puede guardar la solicitud. Inténtalo otra vez.",
+	"globalrenamerequest-status-text": "Su petición de cambio de nombre de usuario está actualmente en progreso y en espera de aprobación por un administrador. Usted será notificado por correo electrónico cuando se procesa la solicitud.\n\n;Nombre del usuario actual:\n:$1\n;Nombre de usuario solicitado:\n:$2"
+}

@@ -379,6 +379,7 @@
 	"right-centralauth-usermerge": "Meerdere gebruikers globaal samenvoegen",
 	"centralauth-usermerge-confirm": "Weet u zeker dat u deze gebruikers globaal wilt samenvoegen?",
 	"globalrenamerequest-username-label": "Huidige gebruikersnaam:",
+	"globalrenamerequest-newname-label": "Gevraagde gebruikersnaam",
 	"globalrenamerequest-email-label": "E-mailadres",
 	"globalrenamerequest-email-help": "Geef uw e-mailadres op.",
 	"globalrenamerequest-email-why-label": "Waarom?"

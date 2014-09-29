@@ -11,7 +11,8 @@
 			"Runningfridgesrule",
 			"Srhat",
 			"Suelnur",
-			"Sayginer"
+			"Sayginer",
+			"Kafkasmurat"
 		]
 	},
 	"mergeaccount": "Hesap birleştirme durumu",
@@ -96,15 +97,12 @@
 	"centralauth-admin-no-unified": "Bu kullanıcı adı için hiçbir birleşik hesap yok.",
 	"centralauth-admin-info-header": "Küresel hesap bilgileri",
 	"centralauth-admin-info-username": "Kullanıcı adı:",
-	"centralauth-admin-info-id": "Kullanıcı ID'si:",
 	"centralauth-admin-info-registered": "Kayıt:",
-	"centralauth-admin-info-home": "Ev vikisi:",
 	"centralauth-admin-info-editcount": "Toplam değişiklik sayısı",
 	"centralauth-admin-info-locked": "Kilitlenmiş:",
 	"centralauth-admin-info-hidden": "Gizlilik seviyesi:",
 	"centralauth-admin-info-groups": "Küresel {{PLURAL:$1|grup|gruplar}}:",
 	"centralauth-admin-info-nogroups": "yok",
-	"centralauth-admin-nohome": "belirlenemiyor",
 	"centralauth-admin-yes": "evet",
 	"centralauth-admin-no": "hayır",
 	"centralauth-admin-hidden-list": "umumi listelerden",
@@ -270,8 +268,6 @@
 	"centralauth-editgroup-success-text": "$1 küresel grubu başarıyla güncellendi.\n[[Special:GlobalGroupPermissions|Grup yönetimine geri dönün]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|değiştir]])",
 	"centralauth-editgroup-nowikiset": "Hiçbiri, tüm vikilerde uygulanır.",
-	"centralauth-globalgrouppermissions-knownwiki": "Bir hesaba sahip olunan Viki:",
-	"centralauth-globalgroupmembership-badknownwiki": "'''$1''' küresel hesabı belirttiğiniz vikide ('' $2 '') etkin değil.\nYanlış kullanıcıya yetki atamaya çalışıyor olabilirsiniz!",
 	"centralauth-editset": "Viki kümeleri",
 	"centralauth-editset-legend-rw": "Viki kümesini değiştir ya da oluştur",
 	"centralauth-editset-legend-ro": "Viki kümeleri listesi",
@@ -333,5 +329,6 @@
 	"centralauth-rename-badusername": "İstenen kullanıcı adı geçerli değil.",
 	"centralauth-rename-progress-username": "Kullanıcı adı",
 	"centralauth-rename-table-domain": "Yerel viki",
-	"centralauth-rename-table-status": "Durum"
+	"centralauth-rename-table-status": "Durum",
+	"globalrenamerequest-save-error": "İstek kaydedilemedi. Lütfen yeniden deneyin."
 }

@@ -24,7 +24,8 @@
 			"Woytecr",
 			"Ymar",
 			"Alan ffm",
-			"Rzuwig"
+			"Rzuwig",
+			"Darellur"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -366,7 +367,11 @@
 	"centralauth-usermerge-notinstalled": "Rozszerzenie UserMerge nie jest zainstalowane.",
 	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”.",
 	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz.",
+	"globalrenamerequest-desc": "Żądanie zmiany nazwy globalnej konta",
+	"globalrenamerequest-pretext": "Wybierz nową nazwę użytkownika mającą być znaną we wszystkich projektach.\n\nWszystkie poprzednie wkładu będą połączone z tą nową nazwą urzytkownika.\n\nOdkąd zażądałeś nowej nazwy użytkownika, powiadomienie zostanie wysłane do zarządców projektu by zmienić nazwę.  Będziesz powiadomiony, gdy proces ten się zakończy.",
 	"globalrenamerequest-username-label": "Obecna nazwa użytkownika:",
+	"globalrenamerequest-username-help": "To twoja nazwa użytkownika. Zostanie ona zastąpiona nazwą, którą wybierzesz.",
+	"globalrenamerequest-newname-label": "Żądana nazwa użytkownika",
 	"globalrenamerequest-newname-help": "Wprowadź nową nazwę użytkownika, którą chcesz używać, np. „$1”.",
 	"globalrenamerequest-newname-err-invalid": "Nie podano poprawnej nazwy użytkownika.",
 	"globalrenamerequest-newname-err-taken": "Podana nazwa użytkownika jest już w użyciu. Wybierz inną nazwę.",
@@ -374,6 +379,13 @@
 	"globalrenamerequest-email-help": "Wpisz swój adres e-mail.",
 	"globalrenamerequest-email-why-label": "Dlaczego?",
 	"globalrenamerequest-email2-label": "Potwierdź adres e‐mail",
+	"globalrenamerequest-email2-help": "Wprowadź ten sam adresu e-mail, który podałeś by potwierdzić.",
 	"globalrenamerequest-email-mismatch": "Adresy e-mail różnią się.<br />Proszę je sprawdzić i spróbować ponownie.",
-	"globalrenamerequest-email-invalid": "Wprowadzono niepoprawny adres e-mail."
+	"globalrenamerequest-email-invalid": "Wprowadzono niepoprawny adres e-mail.",
+	"globalrenamerequest-reason-label": "Powód żądania",
+	"globalrenamerequest-submit-text": "Żądanie zmiany nazwy",
+	"globalrenamerequest-save-error": "Nie udało się zapisać żądania. Proszę spróbować ponownie.",
+	"globalrenamerequest-status-title": "Zmień żądanie oczekujące na zatwierdzenie",
+	"globalrenamerequest-status-text": "Żądanie zmiany nazwy użytkownika jest obecnie w toku i oczekuje na zatwierdzenie przez zarządcę projektów Wikimedia. Zostaniesz powiadomiony za pośrednictwem wiadomości e-mail po przetworzeniu żądania.\n\n\n;Bieżąca nazwa użytkownika:\n:$1\n;Żądana nazwa użytkownika:\n:$2",
+	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy."
 }
