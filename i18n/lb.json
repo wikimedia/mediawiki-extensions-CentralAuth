@@ -353,6 +353,7 @@
 	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
 	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
+	"globalrenamerequest-email-label": "E-Mail-Adress",
 	"globalrenamerequest-email-help": "Gitt Är E-Mail-Adress an.",
 	"globalrenamerequest-email-why-label": "Firwat?",
 	"globalrenamerequest-reason-label": "Grond fir d'Ufro"

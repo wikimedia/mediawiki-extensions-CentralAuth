@@ -72,5 +72,5 @@
 	"right-centralauth-lock": "داخستن یان کردنەوەی ھەژماری جیھانی",
 	"right-centralauth-oversight": "شاردنەوەی ھەژماری جیھانی",
 	"right-centralauth-merge": "کردنەیەکی ھەژمارەکەیان",
-	"centralauth-rename-movelog": "لە کاتی گۆڕینی ناوی بەکارھێنەر «$1» بۆ «$2»، پەڕە بە شێوەی خۆگەڕ گوازرایەوە"
+	"centralauth-rename-movelog": "لە کاتی گۆڕینی ناوی بەکارھێنەر «[[Special:CentralAuth/$1|$1]]» بۆ «[[Special:CentralAuth/$2|$2]]»، پەڕە بە شێوەی خۆگەڕ گوازرایەوە"
 }

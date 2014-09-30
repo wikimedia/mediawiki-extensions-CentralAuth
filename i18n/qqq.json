@@ -36,7 +36,8 @@
 			"Yekrats",
 			"דולב",
 			"Amire80",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Robby"
 		]
 	},
 	"mergeaccount": "{{doc-special|MergeAccount}}",
@@ -426,7 +427,7 @@
 	"globalrenamerequest-newname-help": "Form field inline help.\n\n* $1 is a randomly generated username suggestion.",
 	"globalrenamerequest-newname-err-invalid": "Used as error message.",
 	"globalrenamerequest-newname-err-taken": "Used as error message.",
-	"globalrenamerequest-email-label": "Form field label.",
+	"globalrenamerequest-email-label": "Form field label.\n{{Identical|E-mail address}}",
 	"globalrenamerequest-email-help": "Form field inline help.",
 	"globalrenamerequest-email-why-label": "Label for popup dialog.\n{{Identical|Why}}",
 	"globalrenamerequest-email-why-explain": "Message for popup dialog.",

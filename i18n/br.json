@@ -104,6 +104,7 @@
 	"centralauth-admin-list-legend-ro": "Roll ar c'hontoù lec'hel",
 	"centralauth-admin-list-legend-rw": "Nullañ kendeuzadur ar c'hontoù lec'hel",
 	"centralauth-admin-unattached": "distag",
+	"centralauth-admin-blocked2": "Stanket, betek an $2 da $3.",
 	"centralauth-admin-blocked2-indef": "Stanket hep termen ebet.",
 	"centralauth-admin-blocked-reason": "Abeg : $1",
 	"centralauth-admin-blocklog": "Roll ar stankadennoù",
@@ -328,14 +329,19 @@
 	"centralauth-rename-table-status-done": "Graet",
 	"centralauth-rename-viewprogress": "Gwelet ar mont war-raok",
 	"centralauth-rename-progress-fieldset": "Roll ar c'hontoù lec'hel",
+	"centralauth-rename-confirm": "Ha sur oc'h e fell deoc'h adenvel an implijer-mañ en un doare hollek ?",
 	"log-name-gblrename": "Marilh adenvel hollek",
 	"centralauth-usermerge-form-reason": "Abeg",
 	"centralauth-usermerge-invalid": "N'eus kont hollek ebet anvet \"$1\".",
+	"globalrenamerequest-newname-label": "Anv implijer goulennet",
+	"globalrenamerequest-newname-help": "Merkit an anv implijer nevez a fell deoc'h implijout, da sk. \"$1\".",
+	"globalrenamerequest-newname-err-invalid": "N'ho peus ket lakaet un anv implijer reizh.",
 	"globalrenamerequest-email-label": "Chomlec'h postel",
 	"globalrenamerequest-email-help": "Skrivit ho chomlec'h postel.",
 	"globalrenamerequest-email-why-label": "Perak ?",
 	"globalrenamerequest-email2-label": "Kadarnaat ar chomlec'h postel",
 	"globalrenamerequest-email-invalid": "Pourchaset ez eus bet ur chomlec'h postel direizh.",
 	"globalrenamerequest-reason-label": "Abeg ar goulenn",
-	"globalrenamerequest-submit-text": "Goulenn ur cheñchamant anv"
+	"globalrenamerequest-submit-text": "Goulenn ur cheñchamant anv",
+	"globalrenamerequest-save-error": "N'eus ket bet gallet enrollañ ar goulenn. Esaeit an-dro, mar plij."
 }

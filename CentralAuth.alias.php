@@ -217,6 +217,8 @@ $specialPageAliases['fa'] = array(
 	'MultiLock' => array( 'چندقفلی' ),
 	'GlobalRenameUser' => array( 'تغییر_سراسری_نام_کاربر' ),
 	'GlobalRenameProgress' => array( 'پیشرفت_تغییر_نام_سراسری' ),
+	'GlobalUserMerge' => array( 'ادغام_کاربر_سراسری' ),
+	'GlobalRenameRequest' => array( 'درخواست_ادغام_کاربر_سراسری' ),
 );
 
 /** Finnish (suomi) */

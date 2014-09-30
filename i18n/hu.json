@@ -289,6 +289,7 @@
 	"right-globalgrouppermissions": "globális csoportok kezelése",
 	"centralloginsuccesful": "Sikeres bejelentkezés",
 	"action-centralauth-rename": "globális fiókok átnevezése",
+	"globalrenameprogress": "Globális átnevezés folyamata",
 	"globalrenameuser-legend": "Globális felhasználó átnevezése",
 	"centralauth-rename-form-oldname": "Jelenlegi felhasználónév",
 	"centralauth-rename-form-newname": "Új felhasználónév",
