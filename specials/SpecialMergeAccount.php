@@ -91,13 +91,22 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$globalUser = new CentralAuthUser( $this->mUserName );
 		if ( $globalUser->exists() ) {
-			if ( $globalUser->isAttached() ) {
-				$this->showCleanupForm();
-			} else {
-				$this->showAttachForm();
-			}
+			$this->showFormForExistingUsers( $globalUser );
 		} else {
 			$this->showWelcomeForm();
+		}
+	}
+
+	/**
+	 * Pick which form to show for a user that already exists
+	 *
+	 * @param CentralAuthUser $globalUser
+	 */
+	private function showFormForExistingUsers( CentralAuthUser $globalUser ) {
+		if ( $globalUser->isAttached() ) {
+			$this->showCleanupForm();
+		} else {
+			$this->showAttachForm();
 		}
 	}
 
@@ -181,7 +190,9 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
 
 		if ( $globalUser->exists() ) {
-			throw new MWException( "Already exists -- race condition" );
+			// Already exists - race condition
+			$this->showFormForExistingUsers( $globalUser );
+			return;
 		}
 
 		if ( $wgCentralAuthDryRun ) {
@@ -243,7 +254,9 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $globalUser->exists() ) {
-			throw new MWException( "Already exists -- race condition" );
+			// Already exists - race condition
+			$this->showFormForExistingUsers( $globalUser );
+			return;
 		}
 
 		$passwords = $this->getWorkingPasswords();
@@ -299,7 +312,9 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $globalUser->isAttached() ) {
-			throw new MWException( "Already attached -- race condition?" );
+			// Already attached - race condition
+			$this->showCleanupForm();
+			return;
 		}
 
 		if ( $wgCentralAuthDryRun ) {
