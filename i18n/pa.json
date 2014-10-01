@@ -4,7 +4,8 @@
 			"Aalam",
 			"Gman124",
 			"Satdeep gill",
-			"TariButtar"
+			"TariButtar",
+			"Babanwalia"
 		]
 	},
 	"mergeaccount": "ਲਾਗਇਨ ਯੂਨੀਫਕੇਸ਼ਨ ਹਾਲਤ",
@@ -22,7 +23,7 @@
 	"centralauth-error-locked": "ਤੁਸੀਂ ਸੋਧ ਨਹੀਂ ਸਕਦੇ, ਕਿਉਂਕਿ ਤੁਹਾਡਾ ਅਕਾਊਂਟ ਲਾਕ ਕੀਤਾ ਹੋਇਆ ਹੈ।",
 	"centralauth-list-home-title": "ਮੁੱਖ ਵਿਕਿ",
 	"centralauth-list-attached-title": "ਅਟੈਚ ਕੀਤੇ ਅਕਾਊਂਟ",
-	"centralauth-foreign-link": "$2 ਉੱਤੇ $1 ਯੂਜ਼ਰ",
+	"centralauth-foreign-link": "$2 ਉੱਤੇ ਵਰਤੋਂਕਾਰ $1",
 	"centralauth-merge-method-primary": "ਮੁੱਖ ਵਿਕਿ",
 	"centralauth-merge-method-empty": "ਕੋਈ ਯੋਗਦਾਨ ਨਹੀਂ",
 	"centralauth-merge-method-mail": "ਈਮੇਲ ਰਾਹੀਂ ਪੁਸ਼ਟੀ",
@@ -36,7 +37,6 @@
 	"centralauth-admin-lookup-ro": "ਵਰਤੋਂਕਾਰ ਜਾਣਕਾਰੀ ਵੇਖੋ",
 	"centralauth-admin-lookup-rw": "ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਦਾ ਪ੍ਰਬੰਧ ਕਰੋ",
 	"centralauth-admin-info-username": "ਵਰਤੋਂਕਾਰ ਨਾਂ:",
-	"centralauth-admin-info-id": "ਵਰਤੋਂਕਾਰ ਸ਼ਨਾਖਤੀ:",
 	"centralauth-admin-info-nogroups": "ਕੋਈ ਨਹੀਂ",
 	"centralauth-admin-yes": "ਹਾਂ",
 	"centralauth-admin-no": "ਨਹੀਂ",

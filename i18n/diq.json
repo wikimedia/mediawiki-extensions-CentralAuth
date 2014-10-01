@@ -90,15 +90,12 @@
 	"centralauth-admin-no-unified": "Ser ena name de hesabê yewbiyayî çini yo.",
 	"centralauth-admin-info-header": "Global malumaté hesabi",
 	"centralauth-admin-info-username": "Nameyê karberi:",
-	"centralauth-admin-info-id": "ID'ê Karberi",
 	"centralauth-admin-info-registered": "Qeyd biyayış:",
-	"centralauth-admin-info-home": "Wikiya keyi:",
 	"centralauth-admin-info-editcount": "Amarê vurnayışanê hemıne:",
 	"centralauth-admin-info-locked": "Kilit biyo:",
 	"centralauth-admin-info-hidden": "Sewiyaya nımıtiye:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|grube|grubi}}:",
 	"centralauth-admin-info-nogroups": "çıniyo",
-	"centralauth-admin-nohome": "nieşkena kerar bide",
 	"centralauth-admin-yes": "eya",
 	"centralauth-admin-no": "nê",
 	"centralauth-admin-hidden-list": "listeyanê kamuyi ra",
@@ -245,8 +242,6 @@
 	"centralauth-editgroup-success-text": "Qandé grubda $1'i izınécı şıma vırné.\n[[Special:GlobalGroupPermissions|Peyse béré idareya gruber]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|bivurne]])",
 	"centralauth-editgroup-nowikiset": "Çınya, péro wikiyand ravérena.",
-	"centralauth-globalgrouppermissions-knownwiki": "Wîkîyê ke hesabê tu esto:",
-	"centralauth-globalgroupmembership-badknownwiki": "Global hesabe'''$1''' wikida ('' $2 '') aktiv niya.\nMarak şımayé xırab karberiré icazet dané!",
 	"centralauth-editset": "Setanê wîkîyan",
 	"centralauth-editset-legend-rw": "Setanê wîkîyan bivurne ya zi biviraze",
 	"centralauth-editset-legend-ro": "Listeye setanê wîkîyan",
@@ -293,5 +288,7 @@
 	"centrallogin": "Merkezi hesabd ronıştış ak",
 	"centralloginsuccesful": "Hesab abıya",
 	"centralauth-completelogin-back": "Peyser şo perda verén.",
-	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} de malumata hesabi"
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} de malumata hesabi",
+	"globalrenamerequest-username-label": "Nameyê karberio nıkayên:",
+	"globalrenamerequest-email-why-label": "Çıra?"
 }
