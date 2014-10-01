@@ -272,6 +272,7 @@ $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/api/ApiQueryGlobalUserInfo.php";
 $wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/api/ApiDeleteGlobalAccount.php";
 $wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/api/ApiSetGlobalAccountStatus.php";
+$wgAutoloadClasses['ApiGlobalUserRights'] = "$caBase/api/ApiGlobalUserRights.php";
 $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/api/ApiQueryGlobalGroups.php";
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/api/ApiQueryGlobalAllUsers.php";
@@ -421,6 +422,7 @@ $wgSpecialPageGroups['MultiLock'] = 'users';
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
 $wgAPIModules['centralauthtoken'] = 'ApiCentralAuthToken';
+$wgAPIModules['globaluserrights'] = 'ApiGlobalUserRights';
 
 // API Query-Modules
 $wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';

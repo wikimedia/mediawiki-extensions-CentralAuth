@@ -23,7 +23,7 @@ class CentralAuthGroupMembershipProxy {
 	 * @return bool
 	 */
 	public static function whoIs( $wikiID, $id ) {
-		$user = self::newFromId( $wikiID, $id ); // FIXME: newFromId is undefined
+		$user = self::newFromId( $id );
 		if ( $user ) {
 			return $user->name;
 		} else {
@@ -39,6 +39,15 @@ class CentralAuthGroupMembershipProxy {
 		$name = User::getCanonicalName( $name );
 		$globalUser = new CentralAuthUser( $name );
 		return $globalUser->exists() ? new CentralAuthGroupMembershipProxy( $globalUser ) : null;
+	}
+
+	/**
+	 * @param $id
+	 * @return CentralAuthGroupMembershipProxy|null
+	 */
+	public static function newFromId( $id ) {
+		$globalUser = CentralAuthUser::newFromId( $id );
+		return $globalUser ? new CentralAuthGroupMembershipProxy( $globalUser ) : null;
 	}
 
 	/**
