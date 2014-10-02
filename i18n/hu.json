@@ -301,6 +301,7 @@
 	"centralauth-rename-table-status-inprogress": "Folyamatban",
 	"centralauth-rename-table-status-queued": "Várólistán",
 	"centralauth-rename-table-status-done": "Kész",
+	"centralauth-rename-viewprogress": "Folyamat megtekintése",
 	"centralauth-rename-progress-fieldset": "Helyi fiókok listája",
 	"centralauth-rename-progress-logs-fieldset": "Naplóbejegyzések",
 	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését.",

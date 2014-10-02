@@ -277,15 +277,21 @@
 	"right-globalgrouppermissions": "Pengaturan kelompok global",
 	"centralauth-warning-notloggedin": "Anda saat ini tidak masuk log.",
 	"globalrenamerequest-pretext": "Pilih username baru untuk diketahui di seluruh proyek.\n\nSemua kontribusi sebelumnya akan terhubung dengan nama pengguna baru ini.\n\nSetelah Anda meminta nama pengguna baru, pemberitahuan akan di kirim ke pelayan proyek untuk melakukan perubahan nama. Anda akan diberitahu ketika proses ini selesai.",
+	"globalrenamerequest-username-label": "Pengguna saat ini:",
 	"globalrenamerequest-username-help": "Ini adalah nama pengguna anda saat ini. Nama pengguna akan berubah jadi nama yang anda pilih",
+	"globalrenamerequest-newname-label": "Nama pengguna di minta",
+	"globalrenamerequest-newname-err-invalid": "Anda belum menetapkan nama pengguna",
 	"globalrenamerequest-newname-err-taken": "Nama pengguna sudah digunakan. Mohon pilih nama yang lain.",
 	"globalrenamerequest-email-label": "Alamat surel",
 	"globalrenamerequest-email-help": "Masukkan alamat surel Anda",
 	"globalrenamerequest-email-why-label": "Mengapa?",
+	"globalrenamerequest-email2-label": "Konfirmasi Alamat Email",
 	"globalrenamerequest-email2-help": "Untuk konfirmasi harap masukkan alamat email seperti di atas.",
 	"globalrenamerequest-email-mismatch": "Alamat email berbeda. <br /> Mohon cek kedua nya dan coba lagi",
 	"globalrenamerequest-email-invalid": "Alamat email yang disediakan tidak valid",
 	"globalrenamerequest-reason-label": "Alasan untuk permintaan",
 	"globalrenamerequest-save-error": "Gagal untuk menyimpan permintaan, silakan coba lagi.",
-	"globalrenamerequest-status-title": "Permintaan ubah nama menunggu persetujuan."
+	"globalrenamerequest-status-title": "Permintaan ubah nama menunggu persetujuan.",
+	"globalrenamerequest-status-text": "Permintaan perubahan nama sedang dalam proses dan menunggu persetujuan dari steward. Anda akan diberitahu melalui email ketika permintaan telah terproses",
+	"centralauth-abortlogin-renamed": "Akun anda telah berubah menjadi $1. Mohon gunakan nama pengguna itu"
 }

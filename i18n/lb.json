@@ -353,8 +353,14 @@
 	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
 	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
+	"globalrenamerequest-username-label": "Aktuelle Benotzernumm:",
+	"globalrenamerequest-newname-label": "Ugefrote Benotzernumm",
+	"globalrenamerequest-newname-err-invalid": "Dir hutt kee valabele Benotzernumm uginn.",
 	"globalrenamerequest-email-label": "E-Mail-Adress",
 	"globalrenamerequest-email-help": "Gitt Är E-Mail-Adress an.",
 	"globalrenamerequest-email-why-label": "Firwat?",
-	"globalrenamerequest-reason-label": "Grond fir d'Ufro"
+	"globalrenamerequest-email2-label": "E-Mailadress confirméieren",
+	"globalrenamerequest-email-invalid": "Net valabel E-Mail-Adressen uginn.",
+	"globalrenamerequest-reason-label": "Grond fir d'Ufro",
+	"globalrenamerequest-submit-text": "Ännerung vum Numm ufroen"
 }

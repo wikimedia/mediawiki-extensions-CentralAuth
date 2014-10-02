@@ -84,14 +84,11 @@
 	"centralauth-admin-no-unified": "Nisciune cunde aunifecate pè quiste nome.",
 	"centralauth-admin-info-header": "'Mbormaziune de le cunde globbale",
 	"centralauth-admin-info-username": "Nome utende:",
-	"centralauth-admin-info-id": "ID de l'utende:",
 	"centralauth-admin-info-registered": "Reggistrate:",
-	"centralauth-admin-info-home": "Casa uicchi:",
 	"centralauth-admin-info-editcount": "Cangiaminde totale:",
 	"centralauth-admin-info-locked": "Bloccate:",
 	"centralauth-admin-info-hidden": "Levèlle scunnute:",
 	"centralauth-admin-info-nogroups": "ninde",
-	"centralauth-admin-nohome": "'ngapace de determinà",
 	"centralauth-admin-yes": "si",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "da le elenghe pubbleche",
@@ -250,7 +247,6 @@
 	"centralauth-editgroup-success-text": "Aggiornamende d'u gruppe globbale $1 riuscite\n[[Special:GlobalGroupPermissions|Tuèrne a 'a gestione d'u gruppe]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|cange]])",
 	"centralauth-editgroup-nowikiset": "Ninde, appliche a tutte le uicchi.",
-	"centralauth-globalgrouppermissions-knownwiki": "Uicchi sus a cui se iacchie 'nu cunde:",
 	"centralauth-editset": "Apparecchie uicchi",
 	"centralauth-editset-legend-rw": "Cange o creje apparecchie uicchi",
 	"centralauth-editset-legend-ro": "Elenghe de le Uicchi",
@@ -301,5 +297,7 @@
 	"centralauth-error-badtoken": "'U gettone de l'autorizzazzione date jè scadute o invalide.",
 	"centralauth-warning-notloggedin": "Tu pe mò non ge sì collegate.",
 	"centralauth-warning-notattached": "'U cunde locale non g'è attaccate a une globbale.",
-	"centralauth-finishglobaliseemail_subject": "conferme d'u cunde de {{SITENAME}}"
+	"centralauth-finishglobaliseemail_subject": "conferme d'u cunde de {{SITENAME}}",
+	"globalrenamerequest-email-label": "Indirizze email",
+	"globalrenamerequest-email-why-label": "Purcé?"
 }

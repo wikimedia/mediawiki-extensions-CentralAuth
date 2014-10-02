@@ -800,6 +800,7 @@ $specialPageAliases['zh-hant'] = array(
 	'MultiLock' => array( '批次鎖定' ),
 	'GlobalRenameUser' => array( '全域重新命名使用者' ),
 	'GlobalRenameProgress' => array( '全域重新命名進度' ),
+	'GlobalUserMerge' => array( '全域用户合併' ),
 );
 
 /** Chinese (Hong Kong) (中文（香港）‎) */
