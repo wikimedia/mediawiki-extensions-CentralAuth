@@ -261,7 +261,8 @@ class SpecialCentralAuth extends SpecialPage {
 			$content .= Xml::openElement( "li" ) . Xml::openElement( "strong" );
 			$msg = $this->msg( "centralauth-admin-info-$tag" );
 			if ( $tag === 'groups' ) {
-				$msg->numParams( count( $groups ) );
+				// @TODO: This special case is ugly
+				$msg->numParams( count( $this->mGlobalUser->getGlobalGroups() ) );
 			}
 			$content .= $msg->escaped();
 			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
