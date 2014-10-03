@@ -1868,7 +1868,7 @@ class CentralAuthHooks {
 	 * Add phpunit tests
 	 */
 	public static function onUnitTestsList( array &$files ) {
-		$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/tests/' );
+		$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/../tests/' );
 		foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
 			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
 				$files[] = $fileInfo->getPathname();
