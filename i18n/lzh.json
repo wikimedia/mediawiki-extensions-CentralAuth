@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Itsmine",
-			"Jason924tw"
+			"Jason924tw",
+			"StephDC"
 		]
 	},
 	"centralauth-desc": "[[Special:MergeAccount|混一]]籍口",
@@ -15,5 +16,6 @@
 	"centralauth-admin-info-editcount": "總數計：",
 	"centralauth-years-ago": "$1年前",
 	"centralauth-prefs-complete": "成！",
-	"centralauth-rename-progress-username": "簿名"
+	"centralauth-rename-progress-username": "簿名",
+	"globalrenamerequest-email-why-label": "為何？"
 }

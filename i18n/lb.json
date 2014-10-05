@@ -354,13 +354,18 @@
 	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
 	"globalrenamerequest-username-label": "Aktuelle Benotzernumm:",
+	"globalrenamerequest-username-help": "Dëst ass Ären aktuelle Benotzernumm. E gëtt op deen Numm geännert deen Dir eraussicht.",
 	"globalrenamerequest-newname-label": "Ugefrote Benotzernumm",
+	"globalrenamerequest-newname-help": "Gitt den neie Benotzernumm an deen Dir benotze wëllt, z. Bsp. \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Dir hutt kee valabele Benotzernumm uginn.",
+	"globalrenamerequest-newname-err-taken": "De Benotzernumm deen agi gouf gëtt scho benotzt.\nSicht Iech w.e.g. een anere Benotzernumm.",
 	"globalrenamerequest-email-label": "E-Mail-Adress",
 	"globalrenamerequest-email-help": "Gitt Är E-Mail-Adress an.",
 	"globalrenamerequest-email-why-label": "Firwat?",
 	"globalrenamerequest-email2-label": "E-Mailadress confirméieren",
+	"globalrenamerequest-email2-help": "Gitt als Confirmatioun déiselwecht E-Mail-Adress an déi Dir hei driwwer aginn hutt.",
 	"globalrenamerequest-email-invalid": "Net valabel E-Mail-Adressen uginn.",
 	"globalrenamerequest-reason-label": "Grond fir d'Ufro",
-	"globalrenamerequest-submit-text": "Ännerung vum Numm ufroen"
+	"globalrenamerequest-submit-text": "Ännerung vum Numm ufroen",
+	"globalrenamerequest-save-error": "Ufro konnt net gespäichert ginn. Probéiert w.e.g. nach eng Kéier."
 }
