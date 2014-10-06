@@ -840,6 +840,40 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Promote an unattached account to a
+	 * global one, using the provided homewiki
+	 *
+	 * @param string $wiki
+	 * @return Status
+	 */
+	public function promoteToGlobal( $wiki ) {
+		$unattached = $this->queryUnattached();
+		if ( !isset( $unattached[$wiki] ) ) {
+			return Status::newFatal( 'promote-not-on-wiki' );
+		}
+
+		$info = $unattached[$wiki];
+
+		if ( $this->exists() ) {
+			return Status::newFatal( 'promote-already-exists' );
+		}
+
+		$ok = $this->storeGlobalData(
+			$info['id'],
+			$info['password'],
+			$info['email'],
+			$info['emailAuthenticated']
+		);
+		if ( !$ok ) {
+			// Race condition?
+			return Status::newFatal( 'promote-already-exists' );
+		}
+
+		$this->attach( $wiki, 'primary' );
+		return Status::newGood();
+	}
+
+	/**
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 *
