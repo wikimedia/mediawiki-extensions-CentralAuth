@@ -414,17 +414,17 @@
 	"globalrenamerequest-newname-err-invalid": "No se especificó ningún nombre de usuario válido.",
 	"globalrenamerequest-newname-err-taken": "El nombre de usuario proporcionado ya está en uso. Elige otro.",
 	"globalrenamerequest-email-label": "Dirección de correo electrónico",
-	"globalrenamerequest-email-help": "Introduzca su dirección de correo electrónico.",
+	"globalrenamerequest-email-help": "Escribe tu dirección de correo electrónico.",
 	"globalrenamerequest-email-why-label": "¿Por qué?",
 	"globalrenamerequest-email-why-explain": "<p>Necesitamos su dirección de correo electrónico durante este proceso para asegurarnos de que no pierda acceso a su cuenta.</p><p>Puede eliminar su dirección de correo electrónico una vez que el proceso se haya completado.</p>",
 	"globalrenamerequest-email2-label": "Confirme la dirección de correo electrónico",
 	"globalrenamerequest-email2-help": "Escribe la misma dirección de nuevo para confirmarla.",
-	"globalrenamerequest-email-mismatch": "Direcciones de correo electrónico diferencian.<br /> Por favor revise ambos e inténtelo de nuevo.",
+	"globalrenamerequest-email-mismatch": "Las direcciones de correo electrónico no coinciden.<br />Revísalas e inténtalo de nuevo.",
 	"globalrenamerequest-email-invalid": "La dirección de correo electrónico no es válida.",
 	"globalrenamerequest-reason-label": "Motivo de la solicitud",
 	"globalrenamerequest-submit-text": "Solicitud de cambio de nombre",
 	"globalrenamerequest-save-error": "No se pudo guardar la solicitud. Inténtalo de nuevo.",
 	"globalrenamerequest-status-title": "Solicitud de cambio de nombre pendiente de aprobación",
-	"globalrenamerequest-status-text": "Su petición de cambio de nombre de usuario está actualmente en progreso y en espera de aprobación por un administrador. Usted será notificado por correo electrónico cuando se procesa la solicitud.\n\n;Nombre del usuario actual:\n:$1\n;Nombre de usuario solicitado:\n:$2",
-	"centralauth-abortlogin-renamed": "Su cuenta fue renombrada a \" $1 \". Por favor utilice ese nombre de usuario."
+	"globalrenamerequest-status-text": "Se está procesando tu solicitud de cambio de nombre de usuario, que está supeditada a la aprobación de un ''steward''. Te notificaremos por correo electrónico cuando se procese la solicitud.\n\n;Nombre de usuario actual:\n:$1\n;Nombre de usuario solicitado:\n:$2",
+	"centralauth-abortlogin-renamed": "Se cambió el nombre de tu cuenta a «$1». Utiliza ese nombre de usuario."
 }

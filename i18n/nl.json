@@ -54,7 +54,7 @@
 	"centralauth-notice-dryrun": "<div class='successbox'>Alleen demonstratiemodus</div><br clear='all'/>",
 	"centralauth-disabled-dryrun": "Samenvoegen gebruikers is op dit moment beschikbaar in demonstratie- en debugmodus. Het samenvoegen van gebruikers is op dit moment dus niet mogelijk.",
 	"centralauth-error-locked": "U kunt niet bewerken omdat uw gebruiker geblokkeerd is.",
-	"centralauth-error-unmerged": "U kunt niet bewerken omdat uw gebruiker niet is samengevoegd.",
+	"centralauth-error-unmerged": "U kunt niet bewerken omdat uw account niet is samengevoegd.",
 	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Meer lezen over '''samengevoegd aanmelden''']]…''",
 	"centralauth-list-home-title": "Thuiswiki",
 	"centralauth-list-home-dryrun": "Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor uw samengevoegde gebruiker.",
