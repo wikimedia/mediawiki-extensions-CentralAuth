@@ -59,9 +59,9 @@ class CentralAuthHooks {
 				'descriptionmsg' => 'globalrenamerequest-desc',
 			);
 			$wgAutoloadClasses['SpecialGlobalRenameRequest'] =
-				"$caBase/specials/SpecialGlobalRenameRequest.php";
+				"$caBase/includes/specials/SpecialGlobalRenameRequest.php";
 			$wgAutoloadClasses['GlobalRenameRequest'] =
-				"$caBase/GlobalRename/GlobalRenameRequest.php";
+				"$caBase/includes/GlobalRename/GlobalRenameRequest.php";
 			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
 			$wgSpecialPageGroups['GlobalRenameRequest'] = 'login';
 			$wgResourceModules['ext.centralauth.globalrenamerequest'] = array(

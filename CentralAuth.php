@@ -283,9 +283,9 @@ $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormat
 $wgAutoloadClasses['LocalRenameJob'] = "$caBase/includes/LocalRenameJob/LocalRenameJob.php";
 $wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/includes/LocalRenameJob/LocalRenameUserJob.php";
 $wgAutoloadClasses['LocalUserMergeJob'] = "$caBase/includes/LocalRenameJob/LocalUserMergeJob.php";
-$wgAutoloadClasses['Specialincludes/GlobalRenameUser'] = "$caBase/includes/specials/SpecialGlobalRenameUser.php";
+$wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/includes/specials/SpecialGlobalRenameUser.php";
 $wgAutoloadClasses['SpecialGlobalUserMerge'] = "$caBase/includes/specials/SpecialGlobalUserMerge.php";
-$wgAutoloadClasses['Specialincludes/GlobalRenameProgress'] = "$caBase/includes/specials/SpecialGlobalRenameProgress.php";
+$wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/includes/specials/SpecialGlobalRenameProgress.php";
 $wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/includes/GlobalRename/GlobalRenameLogFormatter.php";
 $wgAutoloadClasses['GlobalUserMergeLogFormatter'] = "$caBase/includes/GlobalRename/GlobalUserMergeLogFormatter.php";
 
