@@ -314,6 +314,7 @@ $wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/Cen
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 $wgJobClasses['LocalRenameUserJob'] = 'LocalRenameUserJob';
 $wgJobClasses['LocalUserMergeJob'] = 'LocalUserMergeJob';
+$wgJobClasses['LocalPageMoveJob'] = 'LocalPageMoveJob';
 
 $wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
