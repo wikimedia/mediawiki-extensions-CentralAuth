@@ -22,7 +22,8 @@
 			"Wrightbus",
 			"Xiaomingyan",
 			"LNDDYL",
-			"EagerLin"
+			"EagerLin",
+			"Shirayuki"
 		]
 	},
 	"mergeaccount": "帳號整合狀態",
@@ -395,7 +396,7 @@
 	"action-centralauth-usermerge": "全域合併多位使用者",
 	"right-centralauth-usermerge": "全域合併多位使用者",
 	"centralauth-usermerge-confirm": "您確定要全域合併這些使用者？",
-	"centralauth-usermerge-toomany": "一次只能合併 $1 位{{PLURAL:$1|使用者|使用者}}。",
+	"centralauth-usermerge-toomany": "一次只能合併 $1 位{{PLURAL:$1|使用者}}。",
 	"centralauth-usermerge-ratelimited": "考量安全性問題，您每分鐘只允許全域合併一位使用者。 請稍後一分鐘再試。",
 	"globalrenamerequest-desc": "請求全域帳號重新命名",
 	"globalrenamerequest": "整合重新命名請求",

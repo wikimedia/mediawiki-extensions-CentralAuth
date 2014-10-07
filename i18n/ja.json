@@ -385,5 +385,6 @@
 	"centralauth-usermerge-invalid": "「$1」という名前のグローバルアカウントはありません。",
 	"action-centralauth-usermerge": "グローバルに複数の利用者を統合",
 	"right-centralauth-usermerge": "グローバルに複数の利用者を統合",
-	"centralauth-usermerge-confirm": "これらの利用者を本当にグローバルに統合しますか?"
+	"centralauth-usermerge-confirm": "これらの利用者を本当にグローバルに統合しますか?",
+	"centralauth-usermerge-toomany": "一度に統合できる利用者は $1 {{PLURAL:$1|名}}までです。"
 }

@@ -414,7 +414,7 @@
 	"action-centralauth-usermerge": "{{doc-action|centralauth-usermerge}}",
 	"right-centralauth-usermerge": "{{doc-right|centralauth-usermerge}}",
 	"centralauth-usermerge-confirm": "Confirmation message displayed in a JavaScript alert before the form is submitted.\n\nSee also:\n* {{msg-mw|Centralauth-rename-confirm}}",
-	"centralauth-usermerge-toomany": "Error message shown when a user tries to merge more than the maximum number of users. $1 is the maximum number of users that can be merged.",
+	"centralauth-usermerge-toomany": "Error message shown when a user tries to merge more than the maximum number of users.\n\nParameters:\n* $1 - the maximum number of users that can be merged",
 	"centralauth-usermerge-ratelimited": "Error message shown when a user hits the rate limit of one global merge per minute.",
 	"globalrenamerequest-desc": "{{desc|name=Request a global account rename|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}",
 	"globalrenamerequest": "{{doc-special|GlobalRenameRequest}}",
@@ -439,5 +439,5 @@
 	"globalrenamerequest-save-error": "Used as error message.",
 	"globalrenamerequest-status-title": "Page title when request is pending.",
 	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
-	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name\n\n* $1 is the new username they should use."
+	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name.\n\nParameters:\n* $1 - the new username they should use"
 }
