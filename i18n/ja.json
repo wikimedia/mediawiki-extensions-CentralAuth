@@ -386,5 +386,10 @@
 	"action-centralauth-usermerge": "グローバルに複数の利用者を統合",
 	"right-centralauth-usermerge": "グローバルに複数の利用者を統合",
 	"centralauth-usermerge-confirm": "これらの利用者を本当にグローバルに統合しますか?",
-	"centralauth-usermerge-toomany": "一度に統合できる利用者は $1 {{PLURAL:$1|名}}までです。"
+	"centralauth-usermerge-toomany": "一度に統合できる利用者は $1 {{PLURAL:$1|名}}までです。",
+	"globalrenamerequest-username-label": "現在の利用者名:",
+	"globalrenamerequest-newname-err-taken": "入力した利用者名は既に使用されています。別の利用者名を指定してください。",
+	"globalrenamerequest-email-label": "メールアドレス",
+	"globalrenamerequest-email-help": "メールアドレスを入力してください。",
+	"globalrenamerequest-email2-label": "メールアドレスの確認"
 }

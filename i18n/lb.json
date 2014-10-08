@@ -352,6 +352,7 @@
 	"action-centralauth-usermerge": "global méi Benotzer z",
 	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
 	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
+	"centralauth-usermerge-toomany": "Nëmme(n) $1 Benotzer {{Plural:$1|kann|kënnen}} an enger Kéier zesummegeluecht ginn.",
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
 	"globalrenamerequest-username-label": "Aktuelle Benotzernumm:",
 	"globalrenamerequest-username-help": "Dëst ass Ären aktuelle Benotzernumm. E gëtt op deen Numm geännert deen Dir eraussicht.",
