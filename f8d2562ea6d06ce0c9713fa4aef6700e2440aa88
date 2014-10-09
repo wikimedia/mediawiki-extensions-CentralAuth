@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8c5bf9_bf14a145",
+        "filename": "includes/LocalRenameJob/LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-09T17:45:00Z",
+      "side": 1,
+      "message": "Should this throwing an error really stop movePages()?",
+      "revId": "f8d2562ea6d06ce0c9713fa4aef6700e2440aa88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
