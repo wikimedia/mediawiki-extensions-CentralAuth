@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chelin",
-			"C.R."
+			"C.R.",
+			"Candalua"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''o'''",
@@ -18,10 +19,19 @@
 	"centralauth-admin-lookup-ro": "Vede 'nfromme utente",
 	"centralauth-admin-lookup-rw": "Gestione utenza",
 	"centralauth-admin-info-username": "Nomme utente:",
+	"centralauth-admin-info-nogroups": "nisciuno",
 	"centralauth-admin-yes": "sì",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "dda lista pubbreca",
 	"centralauth-admin-list-localwiki": "Wiki locale",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|seconde}} fà",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuto|minute}} fà",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|ora|ore}} fà",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|juorno|juorne}} fà",
+	"centralauth-log-status-none": "(nisciuno)",
+	"centralauth-editgroup-noset": "(nisciuno)",
+	"centralauth-editset-nowikis": "(nisciuno)",
+	"centralauth-editset-nouse": "(nisciuno)",
 	"globalusermerge": "Aunione globale d'utente",
 	"centralauth-usermerge-form-newuser": "Nomme utente finale",
 	"centralauth-usermerge-form-usernames": "Nomme utente 'e mo",

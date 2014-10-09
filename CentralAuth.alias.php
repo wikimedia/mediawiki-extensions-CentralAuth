@@ -409,6 +409,8 @@ $specialPageAliases['ko'] = array(
 	'MultiLock' => array( '다중잠금' ),
 	'GlobalRenameUser' => array( '전역사용자이름바꾸기' ),
 	'GlobalRenameProgress' => array( '전역이름바꾸기진행' ),
+	'GlobalUserMerge' => array( '전역사용자병합' ),
+	'GlobalRenameRequest' => array( '전역이름바꾸기요청' ),
 );
 
 /** Colognian (Ripoarisch) */

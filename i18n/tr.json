@@ -350,7 +350,7 @@
 	"globalrenamerequest-email-why-explain": "<p>Hesabınıza erişimi kaybetmemeniz için bu işlem sırasında e-posta adresi gerekir.</p><p>Yeniden adlandırma işlemi tamamlandıktan sonra e-posta adresinizi kaldırabilirsiniz.</p>",
 	"globalrenamerequest-email2-label": "E-posta adresini onaylayın",
 	"globalrenamerequest-email2-help": "Girdiğiniz e-posta adresini onaylamak aynı e-posta adresini tekrar girin.",
-	"globalrenamerequest-email-mismatch": "E-posta adresleri farklı.<br>Her ikisini de gözden geçirip yeniden deneyin.",
+	"globalrenamerequest-email-mismatch": "E-posta adresleri farklı.<br/>Her ikisini de gözden geçirip yeniden deneyin.",
 	"globalrenamerequest-email-invalid": "Girilen e-posta adresi geçersiz :p",
 	"globalrenamerequest-reason-label": "İstek nedeni",
 	"globalrenamerequest-submit-text": "İsim değişikliği talep edin",
