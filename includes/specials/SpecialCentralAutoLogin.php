@@ -25,7 +25,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 */
 	protected static function getInlineScript( $name ) {
 		// Get file
-		$filePath = __DIR__ . '/../modules/inline/' . $name;
+		$filePath = __DIR__ . '/../../modules/inline/' . $name;
 		if ( !file_exists( $filePath ) ) {
 			throw new MWException( __METHOD__ . ": file not found: \"$filePath\"" );
 		}
