@@ -140,7 +140,7 @@
 	"centralauth-token-mismatch": "Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.",
 	"centralauth-state-mismatch": "Virhe: Päällekkäinen muokkaus tämän käyttäjän kanssa on havaittu. Varmista muutoksesi ja yritä uudelleen.",
 	"centralauth-admin-reason": "Syy",
-	"centralauth-admin-reason-other": "Muu syy tai tarkennus",
+	"centralauth-admin-reason-other": "Muu syy tai tarkennus:",
 	"centralauth-admin-reason-other-select": "Muu syy:",
 	"centralauth-admin-unhide-nonexistent": "Virhe: Järjestelmänlaajuista käyttäjätunnusta <nowiki>$1</nowiki> ei ole olemassa.",
 	"centralauth-admin-status": "Aseta järjestelmänlaajuisen tunnuksen tila",
