@@ -1348,7 +1348,7 @@ class CentralAuthHooks {
 
 				if ( $wgCentralAuthUseEventLogging ) {
 					// Need to correlate user_id across wikis
-					efLogServerSideEvent( 'CentralAuth', 5690875,
+					EventLogging::logEvent( 'CentralAuth', 5690875,
 						array( 'version' => 1,
 							'userId' => $centralUser->getId(),
 							'action' => 'sul2-autologin-login'
