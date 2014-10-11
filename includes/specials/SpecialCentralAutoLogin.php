@@ -512,7 +512,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $ok && $wgCentralAuthLoginIcon && $type === 'icon' ) {
 				readfile( $wgCentralAuthLoginIcon );
 			} else {
-				readfile( __DIR__ . '/../1x1.png' );
+				readfile( __DIR__ . '/../../1x1.png' );
 			}
 		} elseif ( $type === 'json' ) {
 			header( 'Content-Type: application/json; charset=utf-8' );
