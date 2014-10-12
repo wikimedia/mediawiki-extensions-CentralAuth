@@ -50,5 +50,18 @@
 	"centralauth-admin-reason-other": "ਹੋਰ/ਵਾਧੂ ਕਾਰਨ:",
 	"centralauth-admin-reason-other-select": "ਹੋਰ ਕਾਰਨ:",
 	"centralauth-admin-status-hidden": "ਲੁਕਵਾਂ:",
-	"centralauth-admin-multi-bot": "ਤਾਜ਼ਾ ਤਬਦੀਲੀਆਂ"
+	"centralauth-admin-multi-bot": "ਤਾਜ਼ਾ ਤਬਦੀਲੀਆਂ",
+	"globalrenamerequest-desc": "ਵਿਆਪੀ ਖਾਤੇ ਦੇ ਮੁੜ-ਨਾਮਕਰਨ ਦੀ ਬੇਨਤੀ ਕਰੋ",
+	"globalrenamerequest-legend": "ਏਕੀਕਰਨ ਮੁੜ-ਨਾਮਕਰਨ ਦੀ ਬੇਨਤੀ",
+	"globalrenamerequest-username-label": "ਮੌਜੂਦਾ ਵਰਤੋਂਕਾਰ-ਨਾਂ:",
+	"globalrenamerequest-username-help": "ਇਹ ਤੁਹਾਡਾ ਮੌਜੂਦਾ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਹੈ। ਇਹਨੂੰ ਬਦਲ ਕੇ ਤੁਹਾਡੇ ਵੱਲੋਂ ਚੁਣਿਆ ਨਾਂ ਰੱਖ ਦਿੱਤਾ ਜਾਵੇਗਾ।",
+	"globalrenamerequest-newname-err-invalid": "ਤੁਸੀਂ ਕੋਈ ਸਹੀ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਨਹੀਂ ਦੱਸਿਆ।",
+	"globalrenamerequest-email-label": "ਈਮੇਲ ਪਤਾ",
+	"globalrenamerequest-email-help": "ਆਪਣਾ ਈਮੇਲ ਪਤਾ ਭਰੋ।",
+	"globalrenamerequest-email-why-label": "ਕਿਉਂ?",
+	"globalrenamerequest-email2-label": "ਈਮੇਲ ਪਤਾ ਤਸਦੀਕ ਕਰੋ",
+	"globalrenamerequest-email-invalid": "ਗ਼ਲਤ ਈਮੇਲ ਪਤਾ ਦਿੱਤਾ ਗਿਆ।",
+	"globalrenamerequest-reason-label": "ਬੇਨਤੀ ਦਾ ਕਾਰਨ",
+	"globalrenamerequest-submit-text": "ਨਾਂ ਬਦਲਣ ਦੀ ਬੇਨਤੀ ਕਰੋ",
+	"centralauth-abortlogin-renamed": "ਤੁਹਾਡੇ ਖਾਤੇ ਦਾ ਨਾਂ ਬਦਲ ਕੇ \"$1\" ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਉਹੀ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਵਰਤੋ ਜੀ।"
 }
