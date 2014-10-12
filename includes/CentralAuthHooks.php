@@ -725,9 +725,12 @@ class CentralAuthHooks {
 				if ( isset( $session['pending_name'] ) || isset( $session['pending_guid'] ) ) {
 					wfDebug( __METHOD__ . ": unintialized session\n" );
 					return true;
-				} else {
+				} elseif( isset( $session['token'] ) && isset( $session['user'] ) ) {
 					$token = $session['token'];
 					$userName = $session['user'];
+				} else {
+					wfDebug( __METHOD__ . ": no token or session\n" );
+					return true;
 				}
 			} else {
 				wfDebug( __METHOD__ . ": no token or session\n" );
