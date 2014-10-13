@@ -68,7 +68,7 @@
 	"centralauth-list-unattached-title": "未連結的帳號",
 	"centralauth-list-unattached": "無法自動確認下列網站中名稱為 \"$1\" 的{{PLURAL:$2|帳號|帳號}}是屬於您的，\n可能這些帳號的密碼與您的主要帳號密碼不同：",
 	"centralauth-foreign-link": "於 $2 的使用者 $1",
-	"centralauth-foreign-contributions": "於 $2 貢獻 $1次",
+	"centralauth-foreign-contributions": "於 $2 貢獻 $1 次",
 	"centralauth-merge-method-primary": "所在 Wiki",
 	"centralauth-merge-method-empty": "沒有任何貢獻",
 	"centralauth-merge-method-mail": "已由電子郵件確認",
