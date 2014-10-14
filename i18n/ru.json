@@ -386,6 +386,7 @@
 	"globalusermerge-legend": "Объединение глобальных учётных записей",
 	"centralauth-usermerge-form-newuser": "Окончательное имя участника",
 	"centralauth-usermerge-form-usernames": "Текущие имена участника",
+	"centralauth-usermerge-form-usernames-help": "Каждое имя участника должно начинаться с новой строки.",
 	"centralauth-usermerge-form-reason": "Причина",
 	"centralauth-usermerge-notinstalled": "Расширение UserMerge не устанавлено.",
 	"action-centralauth-usermerge": "глобальное объединение нескольких участников",

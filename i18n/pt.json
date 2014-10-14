@@ -19,7 +19,8 @@
 			"Vitorvicentevalente",
 			"Waldir",
 			"555",
-			"McDutchie"
+			"McDutchie",
+			"He7d3r"
 		]
 	},
 	"mergeaccount": "Estado da autenticação unificada",
@@ -356,6 +357,7 @@
 	"centralauth-rename-notinstalled": "A extensão Renameuser não está instalada.",
 	"centralauth-rename-doesnotexist": "A conta fornecida não existe.",
 	"centralauth-rename-alreadyexists": "O nome de utilizador(a) solicitado já existe.",
+	"centralauth-rename-unattached-intheway": "Existem contas desanexadas a utilizar o nome de utilizador solicitado.",
 	"centralauth-rename-badusername": "O nome de utilizador(a) solicitado não é valido.",
 	"centralauth-rename-cannotself": "Não pode renomear a sua própria conta.",
 	"centralauth-rename-alreadyinprogress": "Já existe um pedido [[Special:GlobalRenameProgress/$1|em progresso]] para renomear este(a) utilizador(a).",

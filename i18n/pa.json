@@ -63,5 +63,6 @@
 	"globalrenamerequest-email-invalid": "ਗ਼ਲਤ ਈਮੇਲ ਪਤਾ ਦਿੱਤਾ ਗਿਆ।",
 	"globalrenamerequest-reason-label": "ਬੇਨਤੀ ਦਾ ਕਾਰਨ",
 	"globalrenamerequest-submit-text": "ਨਾਂ ਬਦਲਣ ਦੀ ਬੇਨਤੀ ਕਰੋ",
+	"globalrenamerequest-save-error": "ਬੇਨਤੀ ਨਹੀਂ ਸਾਂਭੀ ਗਈ। ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ।",
 	"centralauth-abortlogin-renamed": "ਤੁਹਾਡੇ ਖਾਤੇ ਦਾ ਨਾਂ ਬਦਲ ਕੇ \"$1\" ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਉਹੀ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਵਰਤੋ ਜੀ।"
 }
