@@ -10,7 +10,7 @@
 	"centralauth-desc": "[[ویجه:یکی کردن حساو|یکی کردن حساو]] سی ویکیا{{مئن:مینجا سامونی-نوم گرو}}",
 	"centralauth-antispoof-desc": "تکنولوجی ضدکلوورداشتن نه د مینجاسامونی اضاف کو",
 	"centralauth-rename-desc": "اجازه نو کردن نوم حساویا",
-	"centralauth-mergeaccount-desc": "[[ویجه:یکی بیئن حساو|یکی بیئن حساویا]]سی وامئن اومائن یه گل کاریار",
+	"centralauth-mergeaccount-desc": "[[ویجه:یکی بیئن حساو|یکی بیئن حساویا]]سی وامین اومائن یه گل کاریار",
 	"centralauth-merge-denied": "بوخشه، شما نبوئه وه ای بلگه دسرسی داشتویت",
 	"centralauth-merge-notlogged": "لطف بکید <span class=\"plainlinks\">[$1 log in]</span> سی وارسی یه که حساوتو کلا وه یک شی وسه.",
 	"centralauth-merge-step1-title": "شرو د یکی کردن اومائن وامئن",
@@ -291,5 +291,18 @@
 	"centralauth-rename-progress-fieldset": "نوم گه حساویار ولاتی",
 	"centralauth-rename-progress-logs-fieldset": "داده واریا پهرستنومه",
 	"centralauth-rename-confirm": "آیا شما د راستی میهایت نوم ای کاریار نه وه شکل سرتاسری آلشت بکیت؟",
-	"log-name-gblrename": "پهرستنومه د نو نوم نیائن جهونی"
+	"log-name-gblrename": "پهرستنومه د نو نوم نیائن جهونی",
+	"globalusermerge": "د نو نوم هشتن سرتاسری کاریار",
+	"globalusermerge-legend": "د نو نوم هشتن سرتاسری کاریار",
+	"centralauth-usermerge-form-newuser": "آخری نوم کاریاری",
+	"centralauth-usermerge-form-usernames": "نوم کاریاری ایسنی",
+	"centralauth-usermerge-form-reason": "دليل",
+	"globalrenamerequest-username-label": "نوم کاریاری ایسنی:",
+	"globalrenamerequest-newname-label": "نوم کاریاری حاستنی",
+	"globalrenamerequest-email-label": "تیرنشون انجومانامه",
+	"globalrenamerequest-email-help": "تیر نشون انجومانامه تونه وارد بكيت",
+	"globalrenamerequest-email-why-label": "سی چی؟",
+	"globalrenamerequest-email2-label": "پشت راس کردن تیرنشون انجومانامه",
+	"globalrenamerequest-reason-label": "دلیل حاستن",
+	"globalrenamerequest-submit-text": "حاستن آلشت دئن نوم"
 }

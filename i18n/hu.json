@@ -59,7 +59,7 @@
 	"centralauth-list-unattached-title": "Csatolatlan felhasználói fiókok",
 	"centralauth-list-unattached": "A(z) „$1” nevű felhasználói {{PLURAL:$2|fiókról|fiókokról}} nem sikerült automatikusan megállapítani, hogy hozzád {{PLURAL:$2|tartozik|tartoznak}}-e az alábbi {{PLURAL:$2|oldalon|oldalakon}}; valószínűleg más jelszóval {{PLURAL:$2|rendelkezik|rendelkeznek}}:",
 	"centralauth-foreign-link": "$1 szerkesztő, $2",
-	"centralauth-foreign-contributions": "$1közreműködés itt: $2",
+	"centralauth-foreign-contributions": "$1 közreműködés itt: $2",
 	"centralauth-merge-method-primary": "elsődleges wiki",
 	"centralauth-merge-method-empty": "nincsenek szerkesztések",
 	"centralauth-merge-method-mail": "megerősítve e-mailen keresztül",
