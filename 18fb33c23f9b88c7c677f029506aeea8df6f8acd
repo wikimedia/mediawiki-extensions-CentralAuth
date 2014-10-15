@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e96e304_a56b6481",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-15T21:37:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e96e304_c9a574b3",
+      "revId": "18fb33c23f9b88c7c677f029506aeea8df6f8acd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e96e304_c9001470",
         "filename": "includes/LocalRenameJob/LocalRenameUserJob.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-15T00:49:59Z",
       "side": 1,
       "message": "26 per batch?",
+      "revId": "18fb33c23f9b88c7c677f029506aeea8df6f8acd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_050258be",
+        "filename": "includes/LocalRenameJob/LocalRenameUserJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-15T21:37:52Z",
+      "side": 1,
+      "message": "Changed to \u003e\u003d",
+      "parentUuid": "8e96e304_c9001470",
       "revId": "18fb33c23f9b88c7c677f029506aeea8df6f8acd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
