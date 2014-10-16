@@ -366,7 +366,6 @@
 	"globalusermerge-legend": "Спојување на глобален корисник",
 	"centralauth-usermerge-form-newuser": "Конечно корисничко име",
 	"centralauth-usermerge-form-usernames": "Тековни кориснички имиња",
-	"centralauth-usermerge-form-usernames-help": "Секое корисничко име треба да стои во нов ред",
 	"centralauth-usermerge-form-reason": "Причина",
 	"centralauth-usermerge-notinstalled": "Додатокот UserMerge не е воспоставен.",
 	"centralauth-usermerge-disabled": "Алатката за спојување на глобални корисници е исклучена.",
@@ -403,5 +402,7 @@
 	"globalrenamerequest-save-error": "Не можев да го зачувам барањето. Обидете се повторно.",
 	"globalrenamerequest-status-title": "Барањето за преименување чека на одобрение",
 	"globalrenamerequest-status-text": "Вашето барање за промена на корисничкото име е во тек на исполнување и чека на одобрение од стјуард. Ќе Ве известиме кога ќе завршиме со промената.\n\n;Сегашно корисничко име:\n:$1\n;Посакувано корисничко име:\n:$2",
-	"centralauth-abortlogin-renamed": "Вашата сметка е преименувана во „$1“. Користете го тоа корисничко име."
+	"centralauth-abortlogin-renamed": "Вашата сметка е преименувана во „$1“. Користете го тоа корисничко име.",
+	"centralauth-usermerge-form-adduser": "Додај корисник",
+	"centralauth-usermerge-form-deleteuser": "Отстрани корисник"
 }

@@ -377,7 +377,6 @@
 	"globalusermerge-legend": "グローバル利用者の統合",
 	"centralauth-usermerge-form-newuser": "最終的な利用者名",
 	"centralauth-usermerge-form-usernames": "現在の利用者名",
-	"centralauth-usermerge-form-usernames-help": "各利用者名は改行で区切ってください。",
 	"centralauth-usermerge-form-reason": "理由",
 	"centralauth-usermerge-notinstalled": "UserMerge 拡張機能がインストールされていません。",
 	"centralauth-usermerge-disabled": "グローバル利用者統合ツールが無効になっています。",
@@ -391,5 +390,7 @@
 	"globalrenamerequest-newname-err-taken": "入力した利用者名は既に使用されています。別の利用者名を指定してください。",
 	"globalrenamerequest-email-label": "メールアドレス",
 	"globalrenamerequest-email-help": "メールアドレスを入力してください。",
-	"globalrenamerequest-email2-label": "メールアドレスの確認"
+	"globalrenamerequest-email2-label": "メールアドレスの確認",
+	"centralauth-usermerge-form-adduser": "利用者を追加",
+	"centralauth-usermerge-form-deleteuser": "利用者を除去"
 }

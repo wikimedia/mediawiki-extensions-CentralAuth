@@ -15,7 +15,8 @@
 			"Str4nd",
 			"Stryn",
 			"Tarmo",
-			"SMAUG"
+			"SMAUG",
+			"MrTapsa"
 		]
 	},
 	"mergeaccount": "Käyttäjätunnusten yhdistämisen tila",
@@ -349,5 +350,7 @@
 	"centralauth-usermerge-form-usernames": "Nykyiset käyttäjätunnukset",
 	"centralauth-usermerge-form-reason": "Syy",
 	"centralauth-usermerge-disabled": "Järjestelmänlaajuinen käyttäjien yhdistämistyökalu on poistettu käytöstä.",
-	"centralauth-usermerge-invalid": "Nimellä \"$1\" ei ole järjestelmänlaajuista käyttäjätunnusta."
+	"centralauth-usermerge-invalid": "Nimellä \"$1\" ei ole järjestelmänlaajuista käyttäjätunnusta.",
+	"centralauth-usermerge-form-adduser": "Lisää käyttäjä",
+	"centralauth-usermerge-form-deleteuser": "Poista käyttäjä"
 }

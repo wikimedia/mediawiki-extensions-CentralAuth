@@ -368,7 +368,6 @@
 	"globalusermerge-legend": "ആഗോള ഉപയോക്താവിനെ ലയിപ്പിക്കുക",
 	"centralauth-usermerge-form-newuser": "അവസാന ഉപയോക്തൃനാമം",
 	"centralauth-usermerge-form-usernames": "ഇപ്പോഴത്തെ ഉപയോക്തൃനാമങ്ങൾ",
-	"centralauth-usermerge-form-usernames-help": "ഓരോ ഉപയോക്തൃനാമവും പുതിയവരിയിൽ കൊടുത്തിരിക്കണം.",
 	"centralauth-usermerge-form-reason": "കാരണം",
 	"centralauth-usermerge-notinstalled": "യൂസർമെർജ് അനുബന്ധം ഇൻസ്റ്റോൾ ചെയ്തിട്ടില്ല.",
 	"centralauth-usermerge-disabled": "ആഗോള ഉപയോക്തൃലയന ഉപകരണം സജ്ജമല്ല.",

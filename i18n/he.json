@@ -373,7 +373,6 @@
 	"globalusermerge-legend": "מיזוג חשבון גלובלי",
 	"centralauth-usermerge-form-newuser": "שם משתמש סופי",
 	"centralauth-usermerge-form-usernames": "שמות משתמש נוכחיים",
-	"centralauth-usermerge-form-usernames-help": "כל שם משתמש צריך להיות מופרד בירידת שורה.",
 	"centralauth-usermerge-form-reason": "סיבה",
 	"centralauth-usermerge-notinstalled": "ההרחבה UserMerge אינה מותקנת.",
 	"centralauth-usermerge-disabled": "כלי מיזוג החשבונות הגלובלי אינו מותקן.",
@@ -410,5 +409,7 @@
 	"globalrenamerequest-save-error": "הבקשה לא נשמרה. נא לנסות שוב.",
 	"globalrenamerequest-status-title": "בקשת שינוי השם מחכה לאישור",
 	"globalrenamerequest-status-text": "בקשת שינוי שם המשתמש שלך בטיפול והיא ממתינה לאישור של דייל. תישלח אליך הודעה בדוא\"ל כאשר עיבוד הבקשה יסתיים.\n\n;שם משתמש נוכחי:\n:$1\n;שם משתמש מבוקש:\n:$2",
-	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם."
+	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם.",
+	"centralauth-usermerge-form-adduser": "הוספת משתמש",
+	"centralauth-usermerge-form-deleteuser": "הסרת משתמש"
 }

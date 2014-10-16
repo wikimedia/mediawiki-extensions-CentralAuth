@@ -377,7 +377,6 @@
 	"globalusermerge-legend": "Unione globale utente",
 	"centralauth-usermerge-form-newuser": "Nome utente finale",
 	"centralauth-usermerge-form-usernames": "Nomi utente attuali",
-	"centralauth-usermerge-form-usernames-help": "Ogni nome utente deve essere separato da una nuova riga.",
 	"centralauth-usermerge-form-reason": "Motivo",
 	"centralauth-usermerge-notinstalled": "L'estensione UserMerge non è installata.",
 	"centralauth-usermerge-disabled": "Lo strumento di unione globale utenti è disabilitato.",
@@ -414,5 +413,7 @@
 	"globalrenamerequest-save-error": "Impossibile salvare la richiesta, riprova.",
 	"globalrenamerequest-status-title": "Richiesta di rinomina in attesa di approvazione",
 	"globalrenamerequest-status-text": "La tua richiesta di modifica del nome utente è attualmente in corso e in attesa di approvazione da uno steward. Ti verrà notificato via email quando la richiesta sarà stata elaborata.\n\n;Nome utente attuale:\n:$1\n;Nome utente richiesto:\n:$2",
-	"centralauth-abortlogin-renamed": "La tua utenza è stata rinominata in \"$1\". Usa questo nome."
+	"centralauth-abortlogin-renamed": "La tua utenza è stata rinominata in \"$1\". Usa questo nome.",
+	"centralauth-usermerge-form-adduser": "Aggiungi utente",
+	"centralauth-usermerge-form-deleteuser": "Rimuovi utente"
 }

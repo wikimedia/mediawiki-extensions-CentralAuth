@@ -369,7 +369,6 @@
 	"globalusermerge-legend": "Sloučení globálního uživatele",
 	"centralauth-usermerge-form-newuser": "Výsledné uživatelské jméno",
 	"centralauth-usermerge-form-usernames": "Stávající uživatelská jména",
-	"centralauth-usermerge-form-usernames-help": "Každé uživatelské jméno by mělo být na odděleném řádku",
 	"centralauth-usermerge-form-reason": "Důvod",
 	"centralauth-usermerge-notinstalled": "Není nainstalováno rozšíření UserMerge.",
 	"centralauth-usermerge-disabled": "Nástroj pro globální slučování uživatelů je vypnut.",
@@ -406,5 +405,7 @@
 	"globalrenamerequest-save-error": "Nepodařilo se uložit žádost. Zkuste to prosím znovu.",
 	"globalrenamerequest-status-title": "Probíhá schvalování žádosti o přejmenování",
 	"globalrenamerequest-status-text": "Vaše žádost o změnu uživatelského jméno se momentálně zpracovává a čeká se na schválení stevardem. Jakmile bude žádost zpracována, budeme vás informovat e-mailem.\n\n;Stávající uživatelské jméno:\n:$1\n;Požadované uživatelské jméno:\n:$2",
-	"centralauth-abortlogin-renamed": "Váš účet byl přejmenován na „$1“. Používejte prosím nové uživatelské jméno."
+	"centralauth-abortlogin-renamed": "Váš účet byl přejmenován na „$1“. Používejte prosím nové uživatelské jméno.",
+	"centralauth-usermerge-form-adduser": "Přidat uživatele",
+	"centralauth-usermerge-form-deleteuser": "Odebrat uživatele"
 }

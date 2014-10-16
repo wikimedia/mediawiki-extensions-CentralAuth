@@ -247,5 +247,7 @@
 	"globalrenamerequest-email-help": "தங்களின் மின்னஞ்சல் முகவரியை உள்ளிடுக.",
 	"globalrenamerequest-email-why-label": "ஏன்?",
 	"globalrenamerequest-email2-help": "மேலே தாங்கள் உள்ளிட்ட அதே மின்னஞ்சல் முகவரியை உறுதிப்படுத்த மீண்டும் உள்ளிடுக.",
-	"globalrenamerequest-save-error": "வேண்டுகோளை சேமிக்க இயலவில்லை.  மீண்டும் முயற்சிக்கவும்."
+	"globalrenamerequest-save-error": "வேண்டுகோளை சேமிக்க இயலவில்லை.  மீண்டும் முயற்சிக்கவும்.",
+	"centralauth-usermerge-form-adduser": "பயனரைச் சேர்க்கவும்",
+	"centralauth-usermerge-form-deleteuser": "பயனரை நீக்குக"
 }

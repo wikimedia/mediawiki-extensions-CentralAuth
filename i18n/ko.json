@@ -378,7 +378,6 @@
 	"globalusermerge-legend": "통합 계정 사용자 병합",
 	"centralauth-usermerge-form-newuser": "최종 사용자 이름",
 	"centralauth-usermerge-form-usernames": "현재 사용자 이름",
-	"centralauth-usermerge-form-usernames-help": "각각의 사용자명은 별도의 새 줄에 써야 합니다.",
 	"centralauth-usermerge-form-reason": "이유",
 	"centralauth-usermerge-notinstalled": "사용자병합 확장기능이 설치되지 않았습니다.",
 	"centralauth-usermerge-disabled": "통합 계정 사용자 병합 기능이 비활성화되어 있습니다.",

@@ -25,7 +25,8 @@
 			"Ymar",
 			"Alan ffm",
 			"Rzuwig",
-			"Darellur"
+			"Darellur",
+			"Py64"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -362,7 +363,6 @@
 	"logentry-gblrename-rename": "$1 globalnie {{GENDER:$2|zmienił|zmieniła}} nazwę $4 na $5",
 	"centralauth-usermerge-form-newuser": "Końcowa nazwa użytkownika",
 	"centralauth-usermerge-form-usernames": "Obecne nazwy użytkowników",
-	"centralauth-usermerge-form-usernames-help": "Nazwa każdego użytkownika powinna być oddzielona znakiem nowej linii.",
 	"centralauth-usermerge-form-reason": "Powód",
 	"centralauth-usermerge-notinstalled": "Rozszerzenie UserMerge nie jest zainstalowane.",
 	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”.",
@@ -378,6 +378,7 @@
 	"globalrenamerequest-email-label": "Adres e‐mail",
 	"globalrenamerequest-email-help": "Wpisz swój adres e-mail.",
 	"globalrenamerequest-email-why-label": "Dlaczego?",
+	"globalrenamerequest-email-why-explain": "<p>Potrzebujemy Twój adres email podczas tego procesu, aby upewnić się, że nie utracisz dostępu do Twojego konta.</p><p>Możesz usunąć adres email, kiedy proces zmiany nazwy zostanie ukończony.</p>",
 	"globalrenamerequest-email2-label": "Potwierdź adres e‐mail",
 	"globalrenamerequest-email2-help": "Wprowadź ten sam adresu e-mail, który podałeś by potwierdzić.",
 	"globalrenamerequest-email-mismatch": "Adresy e-mail różnią się.<br />Proszę je sprawdzić i spróbować ponownie.",
@@ -387,5 +388,7 @@
 	"globalrenamerequest-save-error": "Nie udało się zapisać żądania. Proszę spróbować ponownie.",
 	"globalrenamerequest-status-title": "Zmień żądanie oczekujące na zatwierdzenie",
 	"globalrenamerequest-status-text": "Żądanie zmiany nazwy użytkownika jest obecnie w toku i oczekuje na zatwierdzenie przez zarządcę projektów Wikimedia. Zostaniesz powiadomiony za pośrednictwem wiadomości e-mail po przetworzeniu żądania.\n\n\n;Bieżąca nazwa użytkownika:\n:$1\n;Żądana nazwa użytkownika:\n:$2",
-	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy."
+	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy.",
+	"centralauth-usermerge-form-adduser": "Dodaj użytkownika",
+	"centralauth-usermerge-form-deleteuser": "Usuń użytkownika"
 }

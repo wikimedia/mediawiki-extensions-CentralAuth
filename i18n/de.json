@@ -374,7 +374,6 @@
 	"globalusermerge-legend": "Globalen Benutzer zusammenführen",
 	"centralauth-usermerge-form-newuser": "Ziel-Benutzername",
 	"centralauth-usermerge-form-usernames": "Aktuelle Benutzernamen",
-	"centralauth-usermerge-form-usernames-help": "Jeder Benutzername sollte durch eine neue Zeile getrennt werden.",
 	"centralauth-usermerge-form-reason": "Grund",
 	"centralauth-usermerge-notinstalled": "Die UserMerge-Erweiterung ist nicht installiert.",
 	"centralauth-usermerge-disabled": "Das Werkzeug zur globalen Benutzerzusammenführung ist deaktiviert.",
@@ -411,5 +410,7 @@
 	"globalrenamerequest-save-error": "Anfrage konnte nicht gespeichert werden. Bitte erneut versuchen.",
 	"globalrenamerequest-status-title": "Bestätigung der Umbenennungsanfrage ausstehend",
 	"globalrenamerequest-status-text": "Deine Anfrage auf Benutzernamensänderung ist derzeit in Bearbeitung und benötigt die Zustimmung durch einen Steward. Du wirst per E-Mail benachrichtigt, wenn die Anfrage verarbeitet wurde.\n\n;Aktueller Benutzername:\n:$1\n;Gewünschter Benutzername:\n:$2",
-	"centralauth-abortlogin-renamed": "Dein Benutzerkonto wurde in „$1“ umbenannt. Bitte verwende stattdessen diesen Benutzernamen."
+	"centralauth-abortlogin-renamed": "Dein Benutzerkonto wurde in „$1“ umbenannt. Bitte verwende stattdessen diesen Benutzernamen.",
+	"centralauth-usermerge-form-adduser": "Benutzer hinzufügen",
+	"centralauth-usermerge-form-deleteuser": "Benutzer entfernen"
 }

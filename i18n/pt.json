@@ -382,7 +382,6 @@
 	"globalusermerge-legend": "Fusão global de utilizador(a)",
 	"centralauth-usermerge-form-newuser": "Nome de utilizador(a) final",
 	"centralauth-usermerge-form-usernames": "Nomes de utilizador(a) atuais:",
-	"centralauth-usermerge-form-usernames-help": "Cada nome de utilizador deve estar separado por uma nova linha.",
 	"centralauth-usermerge-form-reason": "Motivo",
 	"centralauth-usermerge-notinstalled": "A extensão UserMerge não está instalada.",
 	"centralauth-usermerge-disabled": "A ferramenta de renomeação de contas globais está desativada.",

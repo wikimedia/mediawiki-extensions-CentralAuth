@@ -385,7 +385,6 @@
 	"globalusermerge-legend": "Об'єднати глобального користувача",
 	"centralauth-usermerge-form-newuser": "Остаточне ім'я користувача",
 	"centralauth-usermerge-form-usernames": "Поточні імена користувачів",
-	"centralauth-usermerge-form-usernames-help": "Кожне ім'я користувача розділяється символом нового рядка.",
 	"centralauth-usermerge-form-reason": "Причина",
 	"centralauth-usermerge-notinstalled": "Розширення UserMerge не встановлено.",
 	"centralauth-usermerge-disabled": "Засіб злиття глобального користувача вимкнено.",
@@ -422,5 +421,7 @@
 	"globalrenamerequest-save-error": "Помилка при збереженні запиту. Спробуйте ще раз, будь ласка.",
 	"globalrenamerequest-status-title": "Зміна імені очікує підтвердження",
 	"globalrenamerequest-status-text": "Зміна вашого імені користувача зараз розглядається модератором проекту. По завершенні процесу ви отримаєте електронного листа.\n\n;Поточне ім'я:\n:$1\n;Нове ім'я:\n:$2",
-	"centralauth-abortlogin-renamed": "Ваш обліковий запис перейменовано на \"$1\". Будь ласка, відтепер використовуйте це ім'я користувача."
+	"centralauth-abortlogin-renamed": "Ваш обліковий запис перейменовано на \"$1\". Будь ласка, відтепер використовуйте це ім'я користувача.",
+	"centralauth-usermerge-form-adduser": "Додати користувача",
+	"centralauth-usermerge-form-deleteuser": "Прибрати користувача"
 }

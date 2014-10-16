@@ -373,5 +373,7 @@
 	"globalrenamerequest-save-error": "Permohonan gagal disimpan. Sila cuba lagi.",
 	"globalrenamerequest-status-title": "Permohonan untuk menukar nama menunggu kelulusan",
 	"globalrenamerequest-status-text": "Permohonan tukar nama pengguna anda sedang diusahakan dan menunggu kelulusan steward. Anda akan diberitahu melalui e-mel apabila permohonan ini diproses.\n\n;Nama pengguna sekarang:\n:$1\n;Nama pengguna yang dipohon:\n:$2",
-	"centralauth-abortlogin-renamed": "Akaun anda telah ditukar nama kepada \"$1\". Sila gunakan nama baru ini."
+	"centralauth-abortlogin-renamed": "Akaun anda telah ditukar nama kepada \"$1\". Sila gunakan nama baru ini.",
+	"centralauth-usermerge-form-adduser": "Tambah pengguna",
+	"centralauth-usermerge-form-deleteuser": "Gugurkan pengguna"
 }

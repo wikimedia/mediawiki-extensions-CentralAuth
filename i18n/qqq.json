@@ -403,7 +403,6 @@
 	"globalusermerge-legend": "Legend of fieldset surrounding the form",
 	"centralauth-usermerge-form-newuser": "Label for form field",
 	"centralauth-usermerge-form-usernames": "Label for form field",
-	"centralauth-usermerge-form-usernames-help": "Help message for {{msg-mw|Centralauth-usermerge-form-usernames}}.",
 	"centralauth-usermerge-form-reason": "Label for form field.\n{{Identical|Reason}}",
 	"centralauth-usermerge-notinstalled": "Error message shown if Extension:UserMerge is not installed",
 	"centralauth-usermerge-disabled": "Error message shown if the special page is disabled through $wgCentralAuthEnableUserMerge",
@@ -440,6 +439,6 @@
 	"globalrenamerequest-status-title": "Page title when request is pending.",
 	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
 	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name.\n\nParameters:\n* $1 - the new username they should use",
-	"centralauth-usermerge-form-adduser": "Label on button that when clicked adds a new form field to input a username into",
-	"centralauth-usermerge-form-deleteuser": "Label on button that when clicked removes the associated form field"
+	"centralauth-usermerge-form-adduser": "Label on button that when clicked adds a new form field to input a username into.\n{{Identical|Add user}}",
+	"centralauth-usermerge-form-deleteuser": "Label on button that when clicked removes the associated form field.\n{{Identical|Remove user}}"
 }
