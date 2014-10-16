@@ -102,6 +102,11 @@ class CentralAuthUser extends AuthPluginUser {
 			$wgCentralAuthDatabase );
 	}
 
+	public static function waitForSlaves() {
+		global $wgCentralAuthDatabase;
+		wfWaitForSlaves( false, $wgCentralAuthDatabase );
+	}
+
 	/**
 	 * @param $wikiID
 	 * @return DatabaseBase

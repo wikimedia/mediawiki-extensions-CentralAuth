@@ -47,8 +47,6 @@ class ResetGlobalUserTokens extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgCentralAuthDatabase;
-
 		if ( !$this->getOption( 'nowarn' ) ) {
 			$this->output( "The script is about to reset the user_token for ALL USERS in the database.\n" );
 			$this->output( "This may log some of them out and is not necessary unless you believe your\n" );
@@ -88,7 +86,7 @@ class ResetGlobalUserTokens extends Maintenance {
 				$max = $maxid;
 			}
 
-			wfWaitForSlaves( false, $wgCentralAuthDatabase );
+			CentralAuthUser::waitForSlaves();
 
 		} while ( $min < $maxid );
 
