@@ -59,8 +59,6 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgCentralAuthDatabase;
-
 		$dbw = CentralAuthUser::getCentralDB();
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
@@ -95,7 +93,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 			$this->output( "Inserted $count users who we will rename\n" );
 
 			$this->output( "Waiting for slaves...\n" );
-			wfWaitForSlaves( false, $wgCentralAuthDatabase );
+			CentralAuthUser::waitForSlaves();
 
 		} while ( $count !== 0 );
 	}

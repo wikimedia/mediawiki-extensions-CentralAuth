@@ -36,7 +36,7 @@ class PopulateHomeDB extends Maintenance {
 				$count++;
 			}
 			$this->output( "$count\n" );
-			wfWaitForSlaves( false, 'centralauth' );
+			CentralAuthUser::waitForSlaves();
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}

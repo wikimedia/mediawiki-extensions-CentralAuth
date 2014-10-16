@@ -82,7 +82,7 @@ class MigrateAccount extends Maintenance {
 				}
 				if ( $this->total % $this->batchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
-					wfWaitForSlaves( false, 'centralauth' );
+					CentralAuthUser::waitForSlaves();
 					$this->output( "done\n" );
 				}
 			}
