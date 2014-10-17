@@ -451,6 +451,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onLoginUserMigrated( $user, &$msg ) {
+		global $wgCentralAuthCheckSULMigration;
 		if ( $wgCentralAuthCheckSULMigration ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $user->getID() === 0 && !$centralUser->exists() ) {
