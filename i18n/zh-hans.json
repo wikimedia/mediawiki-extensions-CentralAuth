@@ -391,7 +391,6 @@
 	"globalusermerge-legend": "合并全域用户",
 	"centralauth-usermerge-form-newuser": "最终用户名",
 	"centralauth-usermerge-form-usernames": "当前用户名",
-	"centralauth-usermerge-form-usernames-help": "每个用户名应由换行符分隔。",
 	"centralauth-usermerge-form-reason": "原因",
 	"centralauth-usermerge-notinstalled": "UserMerge扩展未安装。",
 	"centralauth-usermerge-disabled": "全域用户合并工具被禁用。",
@@ -428,5 +427,7 @@
 	"globalrenamerequest-save-error": "保存申请失败，请重试。",
 	"globalrenamerequest-status-title": "重命名申请等待批准",
 	"globalrenamerequest-status-text": "您的用户名更改申请当前进行中，并等待监管员批准。您将在申请完成后接收到通知邮件。\n;当前用户名：\n:$1\n;申请的用户名：\n:$2",
-	"centralauth-abortlogin-renamed": "您的账户已重命名为“$1”。请改用新用户名。"
+	"centralauth-abortlogin-renamed": "您的账户已重命名为“$1”。请改用新用户名。",
+	"centralauth-usermerge-form-adduser": "添加用户",
+	"centralauth-usermerge-form-deleteuser": "移除用户"
 }

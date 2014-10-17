@@ -384,7 +384,6 @@
 	"globalusermerge-legend": "Slå ihop global användare",
 	"centralauth-usermerge-form-newuser": "Slutligt användarnamn",
 	"centralauth-usermerge-form-usernames": "Nuvarande användarnamn",
-	"centralauth-usermerge-form-usernames-help": "Varje användarnamn bör separeras av en radbrytning.",
 	"centralauth-usermerge-form-reason": "Anledning",
 	"centralauth-usermerge-notinstalled": "UserMerge-tillägget är inte installerat.",
 	"centralauth-usermerge-disabled": "Verktyget för globala sammanslagningar av användare är inaktiverat.",
@@ -421,5 +420,7 @@
 	"globalrenamerequest-save-error": "Det gick inte att spara begäran. Försök igen.",
 	"globalrenamerequest-status-title": "Namnbytesbegäran väntar på godkännande",
 	"globalrenamerequest-status-text": "Din begäran om användarnamnsbyte pågår just nu och inväntar godkännande från en steward. Du kommer att meddelas via e-post när begäran bearbetats.\n\n;Nuvarande användarnamn:\n:$1\n;Begärt användarnamn:\n:$2",
-	"centralauth-abortlogin-renamed": "Ditt konto bytte namn till \"$1\". Använd det användarnamnet istället."
+	"centralauth-abortlogin-renamed": "Ditt konto bytte namn till \"$1\". Använd det användarnamnet istället.",
+	"centralauth-usermerge-form-adduser": "Lägg till användare",
+	"centralauth-usermerge-form-deleteuser": "Ta bort användaren"
 }
