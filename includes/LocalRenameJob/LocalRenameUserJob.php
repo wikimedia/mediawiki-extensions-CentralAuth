@@ -6,14 +6,9 @@
  */
 class LocalRenameUserJob extends LocalRenameJob {
 	/**
-	 * @var bool
+	 * How many page moves per each job
 	 */
-	private $setAFOverride;
-
-	/**
-	 * @var bool
-	 */
-	private $setTBOverride;
+	const MOVES_PER_JOB = 25;
 
 	/**
 	 * @param Title $title
@@ -81,42 +76,9 @@ class LocalRenameUserJob extends LocalRenameJob {
 	}
 
 	/**
-	 * FIXME: on a of scale one to evil, this is super evil
-	 */
-	private function disableMoveBlockingThings() {
-		global $wgUser;
-		if ( !$wgUser->isAllowed( 'abusefilter-bypass' ) ) {
-			$wgUser->mRights[] = 'abusefilter-bypass';
-			$this->setAFOverride = true;
-		}
-
-		if ( !$wgUser->isAllowed( 'tboverride' ) ) {
-			$wgUser->mRights[] = 'tboverride';
-			$this->setTBOverride = true;
-		}
-	}
-
-	private function enableMoveBlockingThings() {
-		global $wgUser;
-		$rights = array();
-		if ( $this->setAFOverride ) {
-			$rights[] = 'abusefilter-bypass';
-			$this->setAFOverride = false;
-		}
-		if ( $this->setTBOverride ) {
-			$rights[] = 'tboverride';
-			$this->setTBOverride = false;
-		}
-
-		$wgUser->mRights = array_diff( $wgUser->mRights, $rights );
-	}
-
-	/**
-	 * Logic is mainly borrowed from SpecialRenameuser
+	 * Queue up jobs to move pages
 	 */
 	public function movePages() {
-		global $wgUser;
-
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
@@ -124,7 +86,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$toTitle = Title::makeTitleSafe( NS_USER, $to );
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$pages = $dbr->select(
+		$rows = $dbr->select(
 			'page',
 			array( 'page_namespace', 'page_title' ),
 			array(
@@ -135,38 +97,36 @@ class LocalRenameUserJob extends LocalRenameJob {
 			__METHOD__
 		);
 
-		// Need to play with $wgUser so the move log is attributed properly
-		$oldUser = $wgUser;
-		$wgUser = $this->getRenameUser();
+		$jobParams = array(
+			'to' => $to,
+			'from' => $from,
+			'renamer' => $this->getRenameUser()->getName(),
+			'suppressredirects' => $this->params['suppressredirects'],
+		);
+		$jobs = array();
+		$pages = array();
 
-		foreach ( $pages as $row ) {
+		foreach ( $rows as $row ) {
 			$oldPage = Title::newFromRow( $row );
 			$newPage = Title::makeTitleSafe( $row->page_namespace,
 				preg_replace( '!^[^/]+!', $toTitle->getDBkey(), $row->page_title ) );
-			# Do not autodelete or anything, title must not exist
-			if ( $newPage->exists() && !$oldPage->isValidMoveTarget( $newPage ) ) {
-				wfDebugLog( 'CentralAuthRename', "Could not move $oldPage to $newPage" );
-				// @todo log this somewhere publicly?
-			} else {
-				$msg = wfMessage( 'centralauth-rename-movelog' )
-					->params( $from, $to )
-					->inContentLanguage()
-					->text();
-				$errors = $oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
-				if ( is_array( $errors ) ) {
-					// AbuseFilter or TitleBlacklist might be interfering, bug 67875
-					if ( $errors[0][0] === 'hookaborted' ) {
-						wfDebugLog( 'CentralAuthRename', "Page move prevented by hook: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
-						$this->disableMoveBlockingThings();
-						// Do it again
-						$oldPage->moveTo( $newPage, false, $msg, !$this->params['suppressredirects'] );
-						$this->enableMoveBlockingThings();
-					}
-				}
+			$pages[$oldPage->getPrefixedText()] = $newPage->getPrefixedText();
+			if ( count( $pages ) >= self::MOVES_PER_JOB ) {
+				$jobs[] = new LocalPageMoveJob(
+					$jobParams + array( 'pages' => $pages )
+				);
+				$pages = array();
 			}
 		}
 
-		$wgUser = $oldUser; // good manners to cleanup
+		// Anything left over...
+		if ( $pages ) {
+			$jobs[] = new LocalPageMoveJob(
+				$jobParams + array( 'pages' => $pages )
+			);
+		}
+
+		JobQueueGroup::singleton()->push( $jobs );
 	}
 
 	protected function done() {

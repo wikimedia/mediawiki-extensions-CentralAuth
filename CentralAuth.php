@@ -284,6 +284,7 @@ $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormat
 $wgAutoloadClasses['LocalRenameJob'] = "$caBase/includes/LocalRenameJob/LocalRenameJob.php";
 $wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/includes/LocalRenameJob/LocalRenameUserJob.php";
 $wgAutoloadClasses['LocalUserMergeJob'] = "$caBase/includes/LocalRenameJob/LocalUserMergeJob.php";
+$wgAutoloadClasses['LocalPageMoveJob'] = "$caBase/includes/LocalRenameJob/LocalPageMoveJob.php";
 $wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/includes/specials/SpecialGlobalRenameUser.php";
 $wgAutoloadClasses['SpecialGlobalUserMerge'] = "$caBase/includes/specials/SpecialGlobalUserMerge.php";
 $wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/includes/specials/SpecialGlobalRenameProgress.php";
@@ -316,6 +317,7 @@ $wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/Cen
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 $wgJobClasses['LocalRenameUserJob'] = 'LocalRenameUserJob';
 $wgJobClasses['LocalUserMergeJob'] = 'LocalUserMergeJob';
+$wgJobClasses['LocalPageMoveJob'] = 'LocalPageMoveJob';
 
 $wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
