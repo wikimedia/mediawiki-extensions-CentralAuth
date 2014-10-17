@@ -670,6 +670,10 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbw->begin();
 
 		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
+		if ( $ret === true ) {
+			$spoof = new CentralAuthSpoofUser( $this->mName );
+			$spoof->record();
+		}
 
 		$dbw->commit();
 		return $ret;
@@ -876,6 +880,10 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->attach( $wiki, 'primary' );
+
+		$spoof = new CentralAuthSpoofUser( $this->mName );
+		$spoof->record();
+
 		return Status::newGood();
 	}
 
