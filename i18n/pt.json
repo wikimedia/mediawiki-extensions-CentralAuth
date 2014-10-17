@@ -418,5 +418,7 @@
 	"globalrenamerequest-save-error": "Falha ao guardar o pedido. Por favor, tente novamente.",
 	"globalrenamerequest-status-title": "Pedido de renomeação a aguardar aprovação",
 	"globalrenamerequest-status-text": "O seu pedido de mudança de nome de utilizador(a) está atualmente em progresso e a aguardar aprovação por um ''steward''. Será notificado via correio eletrónico quando o pedido for processado.\n\n;Nome de utilizador(a) atual:\n:$1\n;Nome de utilizador(a) solicitado:\n:$2",
-	"centralauth-abortlogin-renamed": "A sua conta foi renomeada para \"$1\". Por favor, use agora esse nome de utilizador(a)."
+	"centralauth-abortlogin-renamed": "A sua conta foi renomeada para \"$1\". Por favor, use agora esse nome de utilizador(a).",
+	"centralauth-usermerge-form-adduser": "Adicionar utilizador(a)",
+	"centralauth-usermerge-form-deleteuser": "Remover utilizador(a)"
 }
