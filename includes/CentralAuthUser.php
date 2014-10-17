@@ -670,9 +670,19 @@ class CentralAuthUser extends AuthPluginUser {
 		$dbw->begin();
 
 		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
+		if ( $ret === true ) {
+			$this->recordAntiSpoof();
+		}
 
 		$dbw->commit();
 		return $ret;
+	}
+
+	public function recordAntiSpoof() {
+		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+			$spoof = new CentralAuthSpoofUser( $this->mName );
+			$spoof->record();
+		}
 	}
 
 	/**
@@ -876,6 +886,9 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		$this->attach( $wiki, 'primary' );
+
+		$this->recordAntiSpoof();
+
 		return Status::newGood();
 	}
 
