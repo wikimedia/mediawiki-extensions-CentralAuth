@@ -408,8 +408,8 @@
 	"globalrenamerequest-submit-text": "בקשת שינוי שם",
 	"globalrenamerequest-save-error": "הבקשה לא נשמרה. נא לנסות שוב.",
 	"globalrenamerequest-status-title": "בקשת שינוי השם מחכה לאישור",
-	"globalrenamerequest-status-text": "בקשת שינוי שם המשתמש שלך בטיפול והיא ממתינה לאישור של דייל. תישלח אליך הודעה בדוא\"ל כאשר עיבוד הבקשה יסתיים.\n\n;שם משתמש נוכחי:\n:$1\n;שם משתמש מבוקש:\n:$2",
-	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם.",
 	"centralauth-usermerge-form-adduser": "הוספת משתמש",
-	"centralauth-usermerge-form-deleteuser": "הסרת משתמש"
+	"centralauth-usermerge-form-deleteuser": "הסרת משתמש",
+	"globalrenamerequest-status-text": "בקשת שינוי שם המשתמש שלך בטיפול והיא ממתינה לאישור של דייל. תישלח אליך הודעה בדוא\"ל כאשר עיבוד הבקשה יסתיים.\n\n;שם משתמש נוכחי:\n:$1\n;שם משתמש מבוקש:\n:$2",
+	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם."
 }

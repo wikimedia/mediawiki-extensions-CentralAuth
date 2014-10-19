@@ -147,6 +147,8 @@ $specialPageAliases['de'] = array(
 	'GlobalRenameProgress' => array( 'Globaler_Umbenennungsfortschritt' ),
 	'GlobalUserMerge' => array( 'Globale_Benutzerzusammenführung' ),
 	'GlobalRenameRequest' => array( 'Globale_Umbenennungsanfrage' ),
+	'GlobalRenameQueue' => array( 'Globale_Umbenennungs-Warteschlange' ),
+	'SulRenameWarning' => array( 'SUL-Umbenennungswarnung' ),
 );
 
 /** Zazaki (Zazaki) */
@@ -791,6 +793,8 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalRenameProgress' => array( '全域重命名状态' ),
 	'GlobalUserMerge' => array( '全域用户合并' ),
 	'GlobalRenameRequest' => array( '全域重命名申请' ),
+	'GlobalRenameQueue' => array( '全域重命名队列' ),
+	'SulRenameWarning' => array( 'SUL重命名警告' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */

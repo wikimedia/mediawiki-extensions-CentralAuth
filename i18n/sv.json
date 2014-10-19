@@ -419,8 +419,8 @@
 	"globalrenamerequest-submit-text": "Begär ändring av namn",
 	"globalrenamerequest-save-error": "Det gick inte att spara begäran. Försök igen.",
 	"globalrenamerequest-status-title": "Namnbytesbegäran väntar på godkännande",
-	"globalrenamerequest-status-text": "Din begäran om användarnamnsbyte pågår just nu och inväntar godkännande från en steward. Du kommer att meddelas via e-post när begäran bearbetats.\n\n;Nuvarande användarnamn:\n:$1\n;Begärt användarnamn:\n:$2",
-	"centralauth-abortlogin-renamed": "Ditt konto bytte namn till \"$1\". Använd det användarnamnet istället.",
 	"centralauth-usermerge-form-adduser": "Lägg till användare",
-	"centralauth-usermerge-form-deleteuser": "Ta bort användaren"
+	"centralauth-usermerge-form-deleteuser": "Ta bort användaren",
+	"globalrenamerequest-status-text": "Din begäran om användarnamnsbyte pågår just nu och inväntar godkännande från en steward. Du kommer att meddelas via e-post när begäran bearbetats.\n\n;Nuvarande användarnamn:\n:$1\n;Begärt användarnamn:\n:$2",
+	"centralauth-abortlogin-renamed": "Ditt konto bytte namn till \"$1\". Använd det användarnamnet istället."
 }

@@ -412,8 +412,8 @@
 	"globalrenamerequest-submit-text": "Richiesta cambio nome",
 	"globalrenamerequest-save-error": "Impossibile salvare la richiesta, riprova.",
 	"globalrenamerequest-status-title": "Richiesta di rinomina in attesa di approvazione",
-	"globalrenamerequest-status-text": "La tua richiesta di modifica del nome utente è attualmente in corso e in attesa di approvazione da uno steward. Ti verrà notificato via email quando la richiesta sarà stata elaborata.\n\n;Nome utente attuale:\n:$1\n;Nome utente richiesto:\n:$2",
-	"centralauth-abortlogin-renamed": "La tua utenza è stata rinominata in \"$1\". Usa questo nome.",
 	"centralauth-usermerge-form-adduser": "Aggiungi utente",
-	"centralauth-usermerge-form-deleteuser": "Rimuovi utente"
+	"centralauth-usermerge-form-deleteuser": "Rimuovi utente",
+	"globalrenamerequest-status-text": "La tua richiesta di modifica del nome utente è attualmente in corso e in attesa di approvazione da uno steward. Ti verrà notificato via email quando la richiesta sarà stata elaborata.\n\n;Nome utente attuale:\n:$1\n;Nome utente richiesto:\n:$2",
+	"centralauth-abortlogin-renamed": "La tua utenza è stata rinominata in \"$1\". Usa questo nome."
 }

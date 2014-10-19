@@ -295,5 +295,7 @@
 	"centralauth-rename-viewprogress": "Zobraziť priebeh",
 	"centralauth-rename-progress-fieldset": "Zoznam miestnych účtov",
 	"centralauth-rename-movelog": "Automatické presunutie stránky kvôli premenovaniu používateľa „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
+	"log-name-gblrename": "Záznam globálnych premenovaní",
+	"log-description-gblrename": "Toto je záznam globálnych premenovaní používateľov.",
 	"logentry-gblrename-rename": "$1 globálne {{GENDER:$2|premenoval|premenovala}} používateľský účet $4 na $5"
 }
