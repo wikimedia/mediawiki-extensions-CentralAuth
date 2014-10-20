@@ -102,6 +102,10 @@ class GlobalUserMerge {
 
 		// Now that we know all users are locked, update globaluser & localuser tables
 		foreach ( $this->oldCAUsers as $oldCAUser ) {
+			wfDebugLog( 'CentralAuthUserMerge',
+				"Deleting rows for {$oldCAUser->getName()} (id: {$oldCAUser->getId()}), attached on: "
+				. implode( ', ', $oldCAUser->listAttached() )
+			);
 			$this->databaseUpdates->merge( $oldCAUser->getName(), $this->newCAUser->getName() );
 		}
 
