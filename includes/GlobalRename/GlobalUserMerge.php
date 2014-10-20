@@ -102,7 +102,10 @@ class GlobalUserMerge {
 
 		// Now that we know all users are locked, update globaluser & localuser tables
 		foreach ( $this->oldCAUsers as $oldCAUser ) {
-			$this->databaseUpdates->merge( $oldCAUser->getName(), $this->newCAUser->getName() );
+			$this->databaseUpdates->merge(
+				$oldCAUser->getName(), $this->newCAUser->getName(),
+				$oldCAUser->getId(), $this->newCAUser->getId()
+			);
 		}
 
 		$this->clearCaches();

@@ -21,8 +21,10 @@ class GlobalUserMergeDatabaseUpdates {
 	 *
 	 * @param string $oldname
 	 * @param string $newname
+	 * @param int $oldid
+	 * @param int $newid
 	 */
-	public function merge( $oldname, $newname ) {
+	public function merge( $oldname, $newname, $oldid, $newid ) {
 		$dbw = $this->getDB();
 
 		$dbw->begin( __METHOD__ );
@@ -54,5 +56,7 @@ class GlobalUserMergeDatabaseUpdates {
 		);
 
 		$dbw->commit( __METHOD__ );
+
+		wfRunHooks( 'CentralAuthGlobalUserMerged', array( $oldname, $newname, $oldid, $newid ) );
 	}
 }
