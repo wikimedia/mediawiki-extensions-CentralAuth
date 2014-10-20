@@ -369,6 +369,7 @@
 	"centralauth-rename-table-status-done": "完了",
 	"centralauth-rename-viewprogress": "進捗の表示",
 	"centralauth-rename-progress-fieldset": "ローカルアカウントの一覧",
+	"centralauth-rename-progress-logs-fieldset": "記録項目",
 	"centralauth-rename-movelog": "「[[Special:CentralAuth/$1|$1]]」から「[[Special:CentralAuth/$2|$2]]」への利用者名変更に伴い、自動的にページが移動されました。",
 	"centralauth-rename-confirm": "この利用者に対するグローバルな利用者名の変更を本当に実施しますか?",
 	"log-name-gblrename": "グローバル名変更記録",
@@ -387,10 +388,17 @@
 	"centralauth-usermerge-confirm": "これらの利用者を本当にグローバルに統合しますか?",
 	"centralauth-usermerge-toomany": "一度に統合できる利用者は $1 {{PLURAL:$1|名}}までです。",
 	"globalrenamerequest-username-label": "現在の利用者名:",
+	"globalrenamerequest-newname-err-invalid": "有効なメールアドレスを指定していません。",
 	"globalrenamerequest-newname-err-taken": "入力した利用者名は既に使用されています。別の利用者名を指定してください。",
 	"globalrenamerequest-email-label": "メールアドレス:",
 	"globalrenamerequest-email-help": "メールアドレスを入力してください。",
 	"globalrenamerequest-email2-label": "メールアドレスの確認:",
 	"centralauth-usermerge-form-adduser": "利用者を追加",
-	"centralauth-usermerge-form-deleteuser": "利用者を除去"
+	"centralauth-usermerge-form-deleteuser": "利用者を除去",
+	"globalrenamequeue-column-rq-name": "利用者名",
+	"globalrenamequeue-column-rq-wiki": "ローカル ウィキ",
+	"globalrenamequeue-column-rq-status": "状態",
+	"globalrenamequeue-column-rq-performer": "実行者",
+	"globalrenamequeue-request-movepages": "利用者ページを移動",
+	"globalrenamequeue-request-cancel-text": "キャンセル"
 }
