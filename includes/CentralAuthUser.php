@@ -996,7 +996,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// Look for accounts we can match by password
 		foreach ( $rows as $row ) {
 			$wiki = $row['wiki'];
-			if ( $this->matchHash( $password, $row['id'], $row['password'] ) ) {
+			if ( $this->matchHash( $password, $row['id'], $row['password'] )->isGood() ) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $wiki by password" );
 				$this->attach( $wiki, 'password' );
@@ -1580,9 +1580,14 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		list( $salt, $crypt ) = $this->getPasswordHash();
-		if ( $this->matchHash( $password, $salt, $crypt, /* $update = */ true ) ) {
+		$status = $this->matchHash( $password, $salt, $crypt );
+		if ( $status->isGood() ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
+			if ( User::getPasswordFactory()->needsUpdate( $status->getValue() ) ) {
+				$this->setPassword( $password );
+				$this->saveSettings();
+			}
 			return "ok";
 		} else {
 			wfDebugLog( 'CentralAuth',
@@ -1612,10 +1617,9 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @param $plaintext  String User-provided password plaintext.
 	 * @param $salt       String The hash "salt", eg a local id for migrated passwords.
 	 * @param $encrypted  String Fully salted and hashed database crypto text from db.
-	 * @param $update     Boolean Whether to update the password if necessary
-	 * @return Bool true on match.
+	 * @return Status
 	 */
-	protected function matchHash( $plaintext, $salt, $encrypted, $update = false ) {
+	protected function matchHash( $plaintext, $salt, $encrypted ) {
 		global $wgPasswordSalt;
 		$matched = false;
 		$passwordFactory = User::getPasswordFactory();
@@ -1640,12 +1644,11 @@ class CentralAuthUser extends AuthPluginUser {
 			}
 		}
 
-		if ( $update && $matched && $passwordFactory->needsUpdate( $hash ) ) {
-			$this->setPassword( $plaintext, false );
-			$this->saveSettings();
+		if ( $matched ) {
+			return Status::newGood( $hash );
+		} else {
+			return Status::newFatal( 'bad' );
 		}
-
-		return $matched;
 	}
 
 	/**
@@ -1656,7 +1659,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	protected function matchHashes( $passwords, $salt, $encrypted ) {
 		foreach ( $passwords as $plaintext ) {
-			if ( $this->matchHash( $plaintext, $salt, $encrypted ) ) {
+			if ( $this->matchHash( $plaintext, $salt, $encrypted )->isGood() ) {
 				return true;
 			}
 		}
