@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_3cdd1174",
+        "filename": "db_patches/patch-users_to_rename.sql",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "Maybe the index should be (wiki,name)?",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_fce6c93e",
+        "filename": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "Confusing that these start at 4, which class uses 1 and 2? Maybe that could be in the same class somehow.",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_9cd5454a",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "Can this class/file be in proper camel case?",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_1cc935ae",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "Silly thing, but why not reuse the variables above?",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_3cc43194",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "Would it be useful to have another delimiter for the count? I guess it doesn\u0027t matter since we know that we have no db names ending in numbers.",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_5c3edd88",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "How does the string \"queued\" work? The field is not and ENUM and that method does not convert it to an int.",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_dc518dde",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "setStatuses uses IGNORE, and there is a chance for race conditions (e.g. the name being taken). It would be nice to check these before enqueing jobs...unless the job checks this and we do multiple passes to handle races...\n\nSince you are only inserting one row, if setStatuses returned the affected row count, it would be easy to know if a race happened here.",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_bc05a1c6",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:21:54Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the caller keep looping until there nothing to do, given the LIMIT?",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
