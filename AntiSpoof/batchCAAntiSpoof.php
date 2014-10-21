@@ -37,6 +37,10 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 		return 'gu_name';
 	}
 
+	protected function waitForSlaves() {
+		CentralAuthUser::waitForSlaves();
+	}
+
 	/**
 	 * @param $name string
 	 * @return CentralAuthSpoofUser
