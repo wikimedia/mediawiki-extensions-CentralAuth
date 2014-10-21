@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_1cecd5f1",
+        "filename": "includes/GlobalRename/GlobalUserMerge.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2014-10-21T00:34:35Z",
+      "side": 1,
+      "message": "Maybe the log could be JSON to better hande weird usernames and for scripts to unfsck things as needed.",
+      "revId": "208d523d9ad66b75842c3320beaeb02535a6aa0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
