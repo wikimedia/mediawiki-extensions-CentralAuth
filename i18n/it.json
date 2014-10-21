@@ -392,7 +392,7 @@
 	"globalrenamerequest-desc": "Richiesta di una rinomina globale dell'utenza",
 	"globalrenamerequest": "Richiesta rinomina unificata",
 	"globalrenamerequest-legend": "Richiesta rinomina unificata",
-	"globalrenamerequest-forced": "La Wikimedia Foundation sta unificando i nomi utente su tutti i progetti. Il tuo nome utente è stato identificato come già in uso su altre wiki e deve essere modificato per poter completare questa unificazione. Di conseguenza, è necessario che selezioni un nuovo nome utente per il futuro.",
+	"globalrenamerequest-forced": "La Wikimedia Foundation sta [[:mw:SUL_finalisation|unificando i nomi utente su tutti i progetti Wikimedia]]. Questo nome utente è stato identificato come già in uso su altre wiki Wikimedia e deve essere modificato per poter completare questa unificazione. Di conseguenza, è necessario che selezioni un nuovo nome utente.",
 	"globalrenamerequest-pretext": "Richiedi un nuovo nome utente per essere conosciuto in tutti i progetti.\n\nTutti i tuoi contributi precedenti saranno collegati a questo nuovo nome utente.\n\nDopo che avrai richiesto un nuovo nome utente, una notifica verrà inviata agli steward di Wikimedia per effettuare la rinomina. Sarai informato per email quando questo processo sarà completato.",
 	"globalrenamerequest-username-label": "Nome utente attuale:",
 	"globalrenamerequest-username-help": "Questo è il tuo nome utente ora.",
