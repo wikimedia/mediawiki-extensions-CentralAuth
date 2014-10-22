@@ -229,7 +229,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onAuthPluginSetup( &$auth ) {
-		$auth = new StubObject( 'wgAuth', 'CentralAuthPlugin' );
+		$auth = new CentralAuthPlugin;
 
 		// If the API 'centralauthtoken' parameter is set, we don't use the
 		// browser-supplied cookies. Now that $wgContLang is set up, we can
