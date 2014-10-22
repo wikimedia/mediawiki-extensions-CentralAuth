@@ -103,6 +103,8 @@ class GlobalUserMerge {
 		// Now that we know all users are locked, update globaluser & localuser tables
 		foreach ( $this->oldCAUsers as $oldCAUser ) {
 			$this->databaseUpdates->merge( $oldCAUser->getName(), $this->newCAUser->getName() );
+			// And update AntiSpoof while we're at it
+			$oldCAUser->removeAntiSpoof();
 		}
 
 		$this->clearCaches();

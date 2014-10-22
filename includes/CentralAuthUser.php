@@ -690,6 +690,17 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Remove the current username from the central AntiSpoof system
+	 * if that feature is enabled
+	 */
+	public function removeAntiSpoof() {
+		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+			$spoof = new CentralAuthSpoofUser( $this->mName );
+			$spoof->remove();
+		}
+	}
+
+	/**
 	 * Out of the given set of local account data, pick which will be the
 	 * initially-assigned home wiki.
 	 *
