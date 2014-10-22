@@ -361,6 +361,7 @@
 	"centralauth-rename-table-status-inprogress": "בתהליך",
 	"centralauth-rename-table-status-queued": "בתור",
 	"centralauth-rename-table-status-done": "בוצע",
+	"centralauth-rename-table-status-failed": "נכשלה",
 	"centralauth-rename-viewprogress": "הצגת ההתקדמות",
 	"centralauth-rename-progress-fieldset": "רשימת חשבונות מקומיים",
 	"centralauth-rename-progress-logs-fieldset": "רשומות יומן",
@@ -420,5 +421,11 @@
 	"globalrenamequeue-column-rq-wiki": "ויקי מקומי",
 	"globalrenamequeue-column-rq-requested-ts": "תאריך פתיחה",
 	"globalrenamequeue-column-row-actions": "פעולה",
+	"globalrenamequeue-column-rq-completed-ts": "תאריך סגירה",
+	"globalrenamequeue-column-rq-status": "מצב",
+	"globalrenamequeue-column-rq-performer": "בוצע על־ידי",
+	"globalrenamequeue-action-address": "כתובת",
+	"globalrenamequeue-action-view": "הצגה",
+	"globalrenamequeue-request-title": "לשנות את השם של \"$1\"?",
 	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם."
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Malafaya",
-			"Wyvernoid"
+			"Wyvernoid",
+			"सरोज कुमार ढकाल"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''o'''",
@@ -15,7 +16,6 @@
 	"centralauth-attach-title": "Konfirmar konto",
 	"centralauth-attach-submit": "Migrar konto",
 	"centralauth-admin-username": "Uzantonomo:",
-	"centralauth-admin-info-id": "ID dil uzanto:",
 	"centralauth-admin-yes": "yes",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-delete-title": "Efacar konto",

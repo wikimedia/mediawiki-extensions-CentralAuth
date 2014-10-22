@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"CERminator",
-			"KWiki"
+			"KWiki",
+			"Kolega2357"
 		]
 	},
 	"mergeaccount": "Status spajanja korisničkih računa",
@@ -81,13 +82,10 @@
 	"centralauth-admin-permission": "Samo stujardi mogu spajati račune drugih korisnika za njih.",
 	"centralauth-admin-no-unified": "Ne postoji unificirani račun za ovo korisničko ime.",
 	"centralauth-admin-info-header": "Informacije globalnog korisnika",
-	"centralauth-admin-info-id": "Korisnički ID:",
 	"centralauth-admin-info-registered": "Registriran:",
-	"centralauth-admin-info-home": "Osnovna wiki:",
 	"centralauth-admin-info-editcount": "Ukupan broj izmjena:",
 	"centralauth-admin-info-locked": "Zaključano:",
 	"centralauth-admin-info-hidden": "Sakriveni nivo:",
-	"centralauth-admin-nohome": "ne može se otkriti",
 	"centralauth-admin-yes": "da",
 	"centralauth-admin-no": "ne",
 	"centralauth-admin-hidden-list": "sa javnih spiskova",
@@ -217,8 +215,6 @@
 	"centralauth-editgroup-success": "Promijenjene dozvole grupe",
 	"centralauth-editgroup-success-text": "Uspješno se promijenili dopuštenja grupe za grupu $1.\n[[Special:GlobalGroupPermissions|Nazad na menadžment grupa]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|uredi]])",
-	"centralauth-globalgrouppermissions-knownwiki": "Wiki na kojima imaju račun:",
-	"centralauth-globalgroupmembership-badknownwiki": "Globalni korisnik '''$1''' nije aktivan na wikiju koji ste naveli ('' $2 '').\nMožda pokušavate dodati prava pogrešnom korisniku!",
 	"centralauth-editset": "Wiki setovi",
 	"centralauth-editset-legend-rw": "Uredi ili napravi wiki set",
 	"centralauth-editset-legend-ro": "Spisak wiki setova",
@@ -255,5 +251,6 @@
 	"right-centralauth-lock": "Zaključavanje ili sakrivanje globalnog računa",
 	"right-centralauth-oversight": "Sakrivanje globalnih računa",
 	"right-centralauth-merge": "Spajanje njegovog računa",
-	"right-globalgrouppermissions": "Upravljanje globalnim grupama"
+	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
+	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“"
 }

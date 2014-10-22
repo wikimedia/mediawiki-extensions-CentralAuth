@@ -6,7 +6,8 @@
 			"Herr Mlinka",
 			"MaGa",
 			"Roberta F.",
-			"SpeedyGonsales"
+			"SpeedyGonsales",
+			"Kolega2357"
 		]
 	},
 	"mergeaccount": "Status središnje prijave",
@@ -85,13 +86,10 @@
 	"centralauth-admin-permission": "Samo stjuardi mogu spajati suradničke račune umjesto njih.",
 	"centralauth-admin-no-unified": "Nema spojenih računa za ovaj nadimak/ime.",
 	"centralauth-admin-info-header": "Informacije o središnjem suradničkom računu",
-	"centralauth-admin-info-id": "ID suradnika:",
 	"centralauth-admin-info-registered": "Prijavljen:",
-	"centralauth-admin-info-home": "Početna wiki:",
 	"centralauth-admin-info-editcount": "Ukupno uređivanja:",
 	"centralauth-admin-info-locked": "Zaključano:",
 	"centralauth-admin-info-hidden": "Sakriven:",
-	"centralauth-admin-nohome": "ne može se odrediti",
 	"centralauth-admin-yes": "da",
 	"centralauth-admin-no": "ne",
 	"centralauth-admin-hidden-list": "iz javnih popisa",
@@ -219,8 +217,6 @@
 	"centralauth-editgroup-success": "Promijenjena prava skupine",
 	"centralauth-editgroup-success-text": "Uspješno ste promijenili prava za skupinu $1.\n[[Special:GlobalGroupPermissions|Vrati se na upravljanje skupinama]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|uredi]])",
-	"centralauth-globalgrouppermissions-knownwiki": "Wikiji na kojima imaju račun:",
-	"centralauth-globalgroupmembership-badknownwiki": "Globalni suradnik '''$1''' nije aktivan na wikiju kojeg se odabrali ('' $2 '').\nMožda pokušavate dodijeliti prava krivom suradniku!",
 	"centralauth-editset": "Uredi wiki skupove",
 	"centralauth-editset-legend-rw": "Uredi ili stvori wiki skup",
 	"centralauth-editset-legend-ro": "Popis wiki skupova",
@@ -257,5 +253,6 @@
 	"right-centralauth-lock": "Zaključaj ili sakrij globalni račun",
 	"right-centralauth-oversight": "Sakrivanje globalnog računa",
 	"right-centralauth-merge": "Spajanje svojih računa",
-	"right-globalgrouppermissions": "Uređivanje globalnih skupina"
+	"right-globalgrouppermissions": "Uređivanje globalnih skupina",
+	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja suradnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“"
 }
