@@ -391,6 +391,7 @@
 	"centralauth-rename-table-status-inprogress": "Status displayed if the job is still in progress",
 	"centralauth-rename-table-status-queued": "Status displayed if the job is still queued",
 	"centralauth-rename-table-status-done": "{{Identical|Done}}\nStatus displayed if the job has completed successfully",
+	"centralauth-rename-table-status-failed": "Status displayed if the job failed",
 	"centralauth-rename-viewprogress": "Text for submit button Special:RenameProgress",
 	"centralauth-rename-progress-fieldset": "Text on fieldset around rename progress table",
 	"centralauth-rename-progress-logs-fieldset": "Text on fieldset around log entries",

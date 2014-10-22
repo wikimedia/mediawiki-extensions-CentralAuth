@@ -381,6 +381,7 @@
 	"centralauth-rename-table-status-inprogress" : "In progress",
 	"centralauth-rename-table-status-queued" : "Queued",
 	"centralauth-rename-table-status-done" : "Done",
+	"centralauth-rename-table-status-failed" : "Failed",
 	"centralauth-rename-viewprogress" : "View progress",
 	"centralauth-rename-progress-fieldset" : "List of local accounts",
 	"centralauth-rename-progress-logs-fieldset": "Log entries",
