@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e936f18_3f44511c",
+        "filename": "db_patches/patch-users_to_rename.sql",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "We already have name,wiki as the unique index above. I just want to do queries for each individual wiki (I\u0027m thinking that we\u0027ll finalize one wiki at a time), so do we need to include name in the index?",
+      "parentUuid": "8e96e304_3cdd1174",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e96e304_fce6c93e",
         "filename": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-21T00:21:54Z",
       "side": 1,
       "message": "Confusing that these start at 4, which class uses 1 and 2? Maybe that could be in the same class somehow.",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_3ab0df3d",
+        "filename": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "Nothing does at the moment.",
+      "parentUuid": "8e96e304_fce6c93e",
       "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "6e936f18_df50cddb",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e96e304_9cd5454a",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e96e304_1cc935ae",
         "filename": "maintenance/renameALLtheusers.php",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-21T00:21:54Z",
       "side": 1,
       "message": "Silly thing, but why not reuse the variables above?",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_9f5a45f8",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e96e304_1cc935ae",
       "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "6e936f18_da93fba4",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "I\u0027m slightly concerned that we might go over the max username character limit, so I don\u0027t want to add anything in that\u0027s not totally necessary.",
+      "parentUuid": "8e96e304_3cc43194",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e96e304_5c3edd88",
         "filename": "maintenance/renameALLtheusers.php",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2014-10-21T00:21:54Z",
       "side": 1,
       "message": "How does the string \"queued\" work? The field is not and ENUM and that method does not convert it to an int.",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_fa90379a",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "This is being added to the renameuser_status table, and that column is:\n\n  ru_status enum (\u0027queued\u0027, \u0027inprogress\u0027, \u0027failed\u0027),",
+      "parentUuid": "8e96e304_5c3edd88",
       "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "6e936f18_9aed7325",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "GlobalRenameUserStatus::setStatuses() checks for the race condition, but we\u0027re not checking the return value in the script. Fixed.",
+      "parentUuid": "8e96e304_dc518dde",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e96e304_bc05a1c6",
         "filename": "maintenance/renameALLtheusers.php",
         "patchSetId": 5
@@ -132,6 +258,24 @@
       "writtenOn": "2014-10-21T00:21:54Z",
       "side": 1,
       "message": "Shouldn\u0027t the caller keep looping until there nothing to do, given the LIMIT?",
+      "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_3af21fe0",
+        "filename": "maintenance/renameALLtheusers.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T19:27:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e96e304_bc05a1c6",
       "revId": "cca161218958193d1e388779aa8eb08c8a99e4d1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
