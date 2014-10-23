@@ -16,6 +16,24 @@
       "revId": "f8b4bde44b8ca271f30ad1edc11e9c1e7e817538",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_f4904b48",
+        "filename": "maintenance/forceRenameUsers.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-23T22:58:15Z",
+      "side": 1,
+      "message": "Each individual rename? Or each iteration of the while loop?",
+      "parentUuid": "6e936f18_145e1718",
+      "revId": "f8b4bde44b8ca271f30ad1edc11e9c1e7e817538",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
