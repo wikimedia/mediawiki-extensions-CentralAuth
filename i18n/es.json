@@ -386,6 +386,7 @@
 	"centralauth-rename-table-status-inprogress": "En progreso",
 	"centralauth-rename-table-status-queued": "En espera",
 	"centralauth-rename-table-status-done": "Hecho",
+	"centralauth-rename-table-status-failed": "Falló",
 	"centralauth-rename-viewprogress": "Ver el progreso",
 	"centralauth-rename-progress-fieldset": "Lista de cuentas locales",
 	"centralauth-rename-progress-logs-fieldset": "Entradas del registro",

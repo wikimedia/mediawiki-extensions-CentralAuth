@@ -332,6 +332,7 @@
 	"centralauth-rename-table-status-inprogress": "Кхочушдеш ду",
 	"centralauth-rename-table-status-queued": "РогӀехь",
 	"centralauth-rename-table-status-done": "Кийчча ю",
+	"centralauth-rename-table-status-failed": "Тар цаделира",
 	"centralauth-rename-viewprogress": "Хьажа кхочуш даре",
 	"centralauth-rename-progress-fieldset": "Локальни дӀаяздрийн могӀаме хьажа",
 	"centralauth-rename-progress-logs-fieldset": "Тептаран дӀаяздарш",
