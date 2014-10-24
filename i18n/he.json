@@ -429,7 +429,7 @@
 	"globalrenamequeue-request-title": "לשנות את השם של \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> מבקש לשנות את השם אל <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "משתמש: $1 ויקי הבית: $2 שם חדש: $3 [[MediaWiki:Globalrenamequeue-request-userinfo-local|עריכה]]",
-	"globalrenamequeue-request-userinfo-global": "משתמש: $1 ויקי הבית: $2 שם חדש: $3 [[Wiki:Globalrenamequeue-request-userinfo-global|עריכה]]",
+	"globalrenamequeue-request-userinfo-global": "משתמש: $1 ויקי הבית: $2 שם חדש: $3 [[MediaWiki:Globalrenamequeue-request-userinfo-global|עריכה]]",
 	"globalrenamequeue-request-reason": "<strong>סיבה לבקשת שינוי שם</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "המשתמש קיבל הודעה על התגשות גלובלית בשם המשתמש בהכנה להשלמת מיזוג החשבונות.",
 	"globalrenamequeue-request-comments-label": "הערות/נימוקים",
@@ -450,5 +450,7 @@
 	"globalrenamequeue-email-body-approved": "הבקשה לשנות את השם \"$1\" אל \"$2\" אושרה.",
 	"globalrenamequeue-email-body-rejected": "הבקשה לשנות את השם \"$1\" אל \"$2\" נדחתה.\n\nהערה: $3",
 	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם.",
-	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה"
+	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה",
+	"sulrenamewarning-renamed": "שם החשבון {{GENDER:$2|שלך}} '''$1''' שוּנָה אל '''$2''' במהלך מעבר אוטומטי למערכת כניסה מאוחדת של {{int:Centralauth-groupname}}.",
+	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד."
 }

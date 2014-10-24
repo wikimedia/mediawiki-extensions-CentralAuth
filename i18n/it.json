@@ -415,5 +415,11 @@
 	"centralauth-usermerge-form-adduser": "Aggiungi utente",
 	"centralauth-usermerge-form-deleteuser": "Rimuovi utente",
 	"globalrenamerequest-status-text": "La tua richiesta di modifica del nome utente è attualmente in corso e in attesa di approvazione da uno steward. Ti verrà notificato via email quando la richiesta sarà stata elaborata.\n\n;Nome utente attuale:\n:$1\n;Nome utente richiesto:\n:$2",
+	"globalrenamequeue-nav-openqueue": "Richieste aperte",
+	"globalrenamequeue-nav-closedqueue": "Richieste chiuse",
+	"globalrenamequeue-column-rq-status": "Stato",
+	"globalrenamequeue-column-rq-performer": "Eseguito da",
+	"globalrenamequeue-action-address": "Indirizzo",
+	"globalrenamequeue-request-cancel-text": "Annulla",
 	"centralauth-abortlogin-renamed": "La tua utenza è stata rinominata in \"$1\". Usa questo nome."
 }

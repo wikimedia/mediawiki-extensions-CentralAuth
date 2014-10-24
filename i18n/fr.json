@@ -33,7 +33,8 @@
 			"Linedwell",
 			"SnowedEarth",
 			"Orikrin1998",
-			"Macofe"
+			"Macofe",
+			"Boniface"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -457,7 +458,7 @@
 	"globalrenamequeue-request-unknown-title": "Demande non trouvée",
 	"globalrenamequeue-request-unknown-body": "La demande de changement de nom n’a pas été trouvée.",
 	"globalrenamequeue-request-status-title": "Renommer de « $1 » à « $2 »",
-	"globalrenamequeue-view": ";De:\n:$1\n;À:\n:$2\n;Raison :\n:$3\n;Statut :\n:$4\n;Demandé :\n:$5\n;Termine :\n:$6\n;Par :\n:[$7 $8]\n;Notes :\n:$9",
+	"globalrenamequeue-view": ";De:\n:$1\n;À:\n:$2\n;Raison :\n:$3\n;Statut :\n:$4\n;Demandé :\n:$5\n;Terminé :\n:$6\n;Par :\n:[$7 $8]\n;Notes :\n:$9",
 	"globalrenamequeue-view-approved": "approuvé",
 	"globalrenamequeue-email-body-approved": "La demande de renommer « $1 » en « $2 » a été approuvé.",
 	"globalrenamequeue-email-body-rejected": "La demande de renommer « $1 » en « $2 » a été rejetée. \n\nRemarque : $3",
