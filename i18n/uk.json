@@ -373,6 +373,7 @@
 	"centralauth-rename-table-status-inprogress": "В процесі",
 	"centralauth-rename-table-status-queued": "У черзі",
 	"centralauth-rename-table-status-done": "Виконано",
+	"centralauth-rename-table-status-failed": "Помилка",
 	"centralauth-rename-viewprogress": "Переглянути прогрес",
 	"centralauth-rename-progress-fieldset": "Список локальних облікових записів",
 	"centralauth-rename-progress-logs-fieldset": "Записи в журналі",
