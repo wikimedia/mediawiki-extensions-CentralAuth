@@ -347,6 +347,7 @@
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-inprogress": "Dalam proses",
 	"centralauth-rename-table-status-done": "Selesai",
+	"centralauth-rename-table-status-failed": "Gagal",
 	"centralauth-rename-viewprogress": "Lihat perkembangan",
 	"centralauth-rename-progress-fieldset": "Senarai akaun tempatan",
 	"globalrenamerequest-desc": "Mohon tukar nama akaun sejagat",

@@ -355,7 +355,7 @@
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
 	"globalrenamerequest-username-label": "Aktuelle Benotzernumm:",
 	"globalrenamerequest-username-help": "Dëst ass elo Äre Benotzernumm.",
-	"globalrenamerequest-newname-label": "Ugefrote Benotzernumm",
+	"globalrenamerequest-newname-label": "Ugefrote Benotzernumm:",
 	"globalrenamerequest-newname-help": "Gitt den neie Benotzernumm an deen Dir benotze wëllt, z. Bsp. \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Dir hutt kee valabele Benotzernumm uginn.",
 	"globalrenamerequest-newname-err-taken": "De Benotzernumm deen agi gouf gëtt scho benotzt.\nSicht Iech w.e.g. een anere Benotzernumm.",

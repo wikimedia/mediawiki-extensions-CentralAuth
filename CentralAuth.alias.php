@@ -492,6 +492,8 @@ $specialPageAliases['mk'] = array(
 	'GlobalRenameProgress' => array( 'ГлобалноПреименувањеНапредок' ),
 	'GlobalUserMerge' => array( 'ГлобалноСпојувањеКорисник' ),
 	'GlobalRenameRequest' => array( 'ГлобалноСпојувањеБарање' ),
+	'GlobalRenameQueue' => array( 'РедицаГлобалноПреименување' ),
+	'SulRenameWarning' => array( 'ПредупредувањеПреименувањеSUL' ),
 );
 
 /** Malayalam (മലയാളം) */

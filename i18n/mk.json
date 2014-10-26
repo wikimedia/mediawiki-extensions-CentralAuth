@@ -354,6 +354,7 @@
 	"centralauth-rename-table-status-inprogress": "Во тек",
 	"centralauth-rename-table-status-queued": "Во редица",
 	"centralauth-rename-table-status-done": "Готово",
+	"centralauth-rename-table-status-failed": "Не успеа",
 	"centralauth-rename-viewprogress": "Погл. напредокот",
 	"centralauth-rename-progress-fieldset": "Список на месни сметки",
 	"centralauth-rename-progress-logs-fieldset": "Дневнички записи",
