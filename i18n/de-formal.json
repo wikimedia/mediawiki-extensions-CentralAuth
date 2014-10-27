@@ -40,7 +40,6 @@
 	"centralauth-globalgroupperms-grouplist": "Die folgenden globalen Gruppen wurden konfiguriert.\nSie können die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern Sie dazu berechtigt sind.\nEine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.",
 	"centralauth-newgroup-intro": "Sie können mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachten Sie, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.",
 	"centralauth-editgroup-success-text": "Sie haben die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.\n[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].",
-	"centralauth-globalgroupmembership-badknownwiki": "Der globale Benutzer „$1“ ist auf dem angegebenen Wiki ''($2)'' nicht aktiv. Sie könnten irrtümlicherweise einem falschen Benutzer die Rechte zuweisen!",
 	"centralauth-editset-intro-rw": "Die nachfolgenden Wikigruppen sind bereits angelegt.\nSie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.",
 	"centralauth-editset-badname": "Sie haben einen ungültigen oder leeren Gruppennamen angegeben.",
 	"centralauth-editset-badtype": "Sie haben einen ungültigen Typ angegeben."

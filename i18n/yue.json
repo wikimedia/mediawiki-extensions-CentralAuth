@@ -72,7 +72,6 @@
 	"centralauth-admin-username": "用戶名:",
 	"centralauth-admin-permission": "只有執行員先至可以為用戶合併其它人嘅戶口。",
 	"centralauth-admin-no-unified": "呢個用戶名無統一戶口。",
-	"centralauth-admin-info-id": "用戶ID:",
 	"centralauth-admin-info-registered": "註冊咗:",
 	"centralauth-admin-info-locked": "鎖咗:",
 	"centralauth-admin-info-hidden": "隱藏:",
@@ -158,8 +157,6 @@
 	"centralauth-editgroup-reason": "原因:",
 	"centralauth-editgroup-success": "組許可已經更改",
 	"centralauth-editgroup-success-text": "你已經成功噉改咗$1組嘅組許可。[[Special:GlobalGroupPermissions|返去組管理]]",
-	"centralauth-globalgrouppermissions-knownwiki": "揀一個響佢哋有戶口嘅wiki:",
-	"centralauth-globalgroupmembership-badknownwiki": "個全域用戶'''$1'''響你所指定嘅wiki('' $2 '')並唔活躍。你可能嘗試指定緊許可到錯嘅用戶!",
 	"right-globalgroupmembership": "編輯成員到全域組",
 	"right-centralauth-merge": "合併佢哋嘅戶口",
 	"right-globalgrouppermissions": "管理全域組"

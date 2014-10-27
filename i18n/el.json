@@ -97,13 +97,10 @@
 	"centralauth-admin-no-unified": "Δεν υπάρχει ενοποιημένος λογαριασμός για αυτό το όνομα χρήστη.",
 	"centralauth-admin-info-header": "Πληροφορίες καθολικού λογαριασμού",
 	"centralauth-admin-info-username": "Όνομα χρήστη:",
-	"centralauth-admin-info-id": "Ταυτότητα χρήστη:",
 	"centralauth-admin-info-registered": "Εγγράφηκε:",
-	"centralauth-admin-info-home": "Κεντρικό wiki:",
 	"centralauth-admin-info-editcount": "Συνολικός αριθμός επεξεργασιών:",
 	"centralauth-admin-info-locked": "Προστατευμένοι:",
 	"centralauth-admin-info-hidden": "Κρυμμένο επίπεδο:",
-	"centralauth-admin-nohome": "αδύνατος ο προσδιορισμός",
 	"centralauth-admin-yes": "ναι",
 	"centralauth-admin-no": "όχι",
 	"centralauth-admin-hidden-list": "από δημόσιους καταλόγους",
@@ -240,8 +237,6 @@
 	"centralauth-editgroup-success-text": "Επιτυχής ενημέρωση της καθολικής ομάδας $1.\n[[Special:GlobalGroupPermissions|Επιστροφή στη διαχείριση ομάδων]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|επεξεργασία]])",
 	"centralauth-editgroup-nowikiset": "Όχι, ισχύει σε όλα τα wikis.",
-	"centralauth-globalgrouppermissions-knownwiki": "Βίκι στο οποίο έχουν λογαριασμό:",
-	"centralauth-globalgroupmembership-badknownwiki": "Ο καθολικός λογαριασμός '''$1''' δεν είναι ενεργός στο wiki που καθορίσατε ('' $2 '').\nΜπορεί να προσπαθείτε να αναθέσετε δικαιώματα σε λάθος χρήστη!",
 	"centralauth-editset": "Σύνολα wiki",
 	"centralauth-editset-legend-rw": "Επεξεργασία ή δημιουργία συνόλου  wiki",
 	"centralauth-editset-legend-ro": "Κατάλογος συνόλων wiki",
@@ -284,5 +279,6 @@
 	"right-globalgrouppermissions": "Διαχείριση καθολικών λογαριασμών",
 	"centrallogin": "Κεντρική σύνδεση χρήστη",
 	"centralloginsuccesful": "Επιτυχής σύνδεση",
-	"centralauth-completelogin-back": "Επιστροφή στην προηγούμενη σελίδα."
+	"centralauth-completelogin-back": "Επιστροφή στην προηγούμενη σελίδα.",
+	"centralauth-rename-table-status-failed": "Απέτυχε"
 }

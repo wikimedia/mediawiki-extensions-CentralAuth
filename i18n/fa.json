@@ -382,7 +382,6 @@
 	"globalusermerge-legend": "ادغام سراسری کاربر",
 	"centralauth-usermerge-form-newuser": "نام کاربری نهایی",
 	"centralauth-usermerge-form-usernames": "نام کاربری فعلی",
-	"centralauth-usermerge-form-usernames-help": "هر نام کاربری باید با یک خط تازه جدا شود.",
 	"centralauth-usermerge-form-reason": "دلیل",
 	"centralauth-usermerge-notinstalled": "افزونه UserMerge نصب نیست.",
 	"centralauth-usermerge-disabled": "ابزار ادغام سراسری کاربر غیرفعال است.",

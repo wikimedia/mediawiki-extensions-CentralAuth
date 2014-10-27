@@ -12,7 +12,6 @@
 	"globalusermerge-legend": "Merge global user",
 	"centralauth-usermerge-form-newuser": "Destination username",
 	"centralauth-usermerge-form-usernames": "Current usernames",
-	"centralauth-usermerge-form-usernames-help": "Each username should be separated by a newline.",
 	"centralauth-usermerge-form-reason": "Reason",
 	"centralauth-usermerge-notinstalled": "The UserMerge extension is not installed.",
 	"centralauth-usermerge-disabled": "The global user merge tool is currently disabled.",

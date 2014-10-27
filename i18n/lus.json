@@ -25,13 +25,10 @@
 	"centralauth-admin-lookup-ro": "Hmangtu chungchang enna",
 	"centralauth-admin-lookup-rw": "Hmangtu siangchan enkawlna",
 	"centralauth-admin-info-header": "Hmangtu chanchin pumpui",
-	"centralauth-admin-info-id": "Hmangtu ID",
 	"centralauth-admin-info-registered": "Inziaklût:",
-	"centralauth-admin-info-home": "Wiki-pui:",
 	"centralauth-admin-info-editcount": "Siamţhat zât:",
 	"centralauth-admin-info-locked": "Inkalh:",
 	"centralauth-admin-info-hidden": "Thuhrûk chin:",
-	"centralauth-admin-nohome": "chhût chhuak thei lo",
 	"centralauth-admin-yes": "aw",
 	"centralauth-admin-no": "aih"
 }

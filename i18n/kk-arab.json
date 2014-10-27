@@ -61,7 +61,6 @@
 	"centralauth-admin-username": "قاتىسۋشى اتى:",
 	"centralauth-admin-permission": "باسقالاردىڭ تىركەلگىلەرىن تەك جەتەكشىلەر بىرىكتىرە الادى.",
 	"centralauth-admin-no-unified": "بۇل قاتىسۋشى اتى ٴۇشىن ەش بىرىزدەندىرىلگەن تىركەلگى جوق.",
-	"centralauth-admin-info-id": "قاتىسۋشى تەڭدەستىرگىشى:",
 	"centralauth-admin-info-registered": "جازىپ الىنۋى:",
 	"centralauth-admin-info-locked": "قۇلىپتالۋى:",
 	"centralauth-admin-info-hidden": "جاسىرىلعانى:",
@@ -140,8 +139,6 @@
 	"centralauth-editgroup-reason": "سەبەبى:",
 	"centralauth-editgroup-success": "توپ رۇقساتتارى وزگەرتىلدى",
 	"centralauth-editgroup-success-text": "$1 توبىنىڭ توپ رۇقساتتارىن ٴساتتى وزگەرتتىڭىز. [[Special:GlobalGroupPermissions|توپ رەتتەۋىنە قايتا كەلۋ]]",
-	"centralauth-globalgrouppermissions-knownwiki": "تىركەلگىسى بار ۋىيكىيدى بولەكتەڭىز:",
-	"centralauth-globalgroupmembership-badknownwiki": "'''$1''' عالامدىق قاتىسۋشى كەلتىرگەنىڭىز ۋىيكىيدە بەلسەندى ەمەس ('' $2 ''). رۇقساتتاردى ٴجونسىز قاتىسۋشىعا ٴتۇيىستىرۋ تالاپ ەتكەن بولارسىز!",
 	"right-globalgroupmembership": "عالامدىق توپتارعا كىرۋىن وزگەرتۋ",
 	"right-centralauth-merge": "تىركەلگىلەرىن بىرىكتىرۋ",
 	"right-globalgrouppermissions": "عالامدىق توپتاردى رەتتەۋ"

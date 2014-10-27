@@ -61,7 +61,6 @@
 	"centralauth-admin-username": "Qatıswşı atı:",
 	"centralauth-admin-permission": "Basqalardıñ tirkelgilerin tek jetekşiler biriktire aladı.",
 	"centralauth-admin-no-unified": "Bul qatıswşı atı üşin eş birizdendirilgen tirkelgi joq.",
-	"centralauth-admin-info-id": "Qatıswşı teñdestirgişi:",
 	"centralauth-admin-info-registered": "Jazıp alınwı:",
 	"centralauth-admin-info-locked": "Qulıptalwı:",
 	"centralauth-admin-info-hidden": "Jasırılğanı:",
@@ -140,8 +139,6 @@
 	"centralauth-editgroup-reason": "Sebebi:",
 	"centralauth-editgroup-success": "Top ruqsattarı özgertildi",
 	"centralauth-editgroup-success-text": "$1 tobınıñ top ruqsattarın sätti özgerttiñiz. [[Special:GlobalGroupPermissions|Top rettewine qaýta kelw]]",
-	"centralauth-globalgrouppermissions-knownwiki": "Tirkelgisi bar wïkïdi bölekteñiz:",
-	"centralauth-globalgroupmembership-badknownwiki": "'''$1''' ğalamdıq qatıswşı keltirgeniñiz wïkïde belsendi emes ('' $2 ''). Ruqsattardı jönsiz qatıswşığa tüýistirw talap etken bolarsız!",
 	"right-globalgroupmembership": "Ğalamdıq toptarğa kirwin özgertw",
 	"right-centralauth-merge": "Tirkelgilerin biriktirw",
 	"right-globalgrouppermissions": "Ğalamdıq toptardı rettew"
