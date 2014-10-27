@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_3b60d39f",
+        "filename": "includes/GlobalRename/GlobalRenameRequest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-10-27T01:49:26Z",
+      "side": 1,
+      "message": "why is this checking $this-\u003enewName before it\u0027s set?",
+      "revId": "4b80ac65ffdba0153b6826ef5b287c48a66f5ff7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
