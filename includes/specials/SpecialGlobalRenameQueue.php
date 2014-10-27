@@ -242,8 +242,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'type'          => 'textarea',
 					'rows'          => 5,
 				),
-				// The following checkboxes need to have their names stay in
+				// The following fields need to have their names stay in
 				// sync with the expectations of GlobalRenameUser::rename()
+				'reason' => array(
+					'id'            => 'mw-renamequeue-reason',
+					'label-message' => 'globalrenamequeue-request-reason-label',
+					'name'          => 'reason',
+					'type'          => 'text',
+				),
 				'movepages' => array(
 					'id'            => 'mw-renamequeue-movepages',
 					'name'          => 'movepages',
