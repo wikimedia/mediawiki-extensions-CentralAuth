@@ -145,7 +145,7 @@ class GlobalRenameRequest {
 	 */
 	public function setNewName( $newName ) {
 		$newName = User::getCanonicalName( $newName, 'creatable' );
-		if ( $this->newName === false ) {
+		if ( $newName === false ) {
 			throw new MWException( "Invalid username '{$newName}'" );
 		}
 		$this->newName = $newName;
