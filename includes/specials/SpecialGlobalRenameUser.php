@@ -12,6 +12,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $oldUsername;
 
+	/**
+	 * @var bool
+	 */
+	private $overrideAntiSpoof = false;
+
 	function __construct() {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 	}
@@ -61,7 +66,13 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				'name' => 'suppressredirects',
 				'label-message' => 'centralauth-rename-form-suppressredirects',
 				'type' => 'check',
-			)
+			),
+			'overrideantispoof' => array(
+				'id' => 'mw-globalrenameuser-overrideantispoof',
+				'name' => 'overrideantispoof',
+				'label-message' => 'centralauth-rename-form-overrideantispoof',
+				'type' => 'check'
+			),
 		);
 	}
 
@@ -91,6 +102,13 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-rename-badusername' );
 		}
 
+		if ( !$this->overrideAntiSpoof ) {
+			$spoofUser = new CentralAuthSpoofUser( $newUser->getName() );
+			if ( $spoofUser->getConflicts() ) {
+				return Status::newFatal( 'centralauth-rename-antispoofconflicts' );
+			}
+		}
+
 		$validator = new GlobalRenameUserValidator();
 		$status = $validator->validate( $oldUser, $newUser );
 
@@ -102,6 +120,10 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return Status
 	 */
 	function onSubmit( array $data ) {
+		if ( $data['overrideantispoof'] ) {
+			$this->overrideAntiSpoof = true;
+		}
+
 		$valid = $this->validate( $data );
 		if ( !$valid->isOK() ) {
 			return $valid;
