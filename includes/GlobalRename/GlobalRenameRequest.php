@@ -244,7 +244,7 @@ class GlobalRenameRequest {
 	public function save() {
 		$dbw = self::getDB( DB_MASTER );
 		if ( $this->id === null ) {
-			$this->reqested = wfTimestampNow();
+			$this->requested = wfTimestampNow();
 			$this->status = self::PENDING;
 			$dbw->insert(
 				'renameuser_queue',
@@ -253,7 +253,7 @@ class GlobalRenameRequest {
 					'rq_wiki'         => $this->wiki,
 					'rq_newname'      => $this->newName,
 					'rq_reason'       => $this->reason,
-					'rq_requested_ts' => $this->reqested,
+					'rq_requested_ts' => $this->requested,
 					'rq_status'       => $this->status,
 				),
 				__METHOD__
@@ -267,7 +267,7 @@ class GlobalRenameRequest {
 					'rq_wiki'         => $this->wiki,
 					'rq_newname'      => $this->newName,
 					'rq_reason'       => $this->reason,
-					'rq_requested_ts' => $this->reqested,
+					'rq_requested_ts' => $this->requested,
 					'rq_status'       => $this->status,
 					'rq_completed_ts' => $this->completed,
 					'rq_deleted'      => $this->deleted,
@@ -354,7 +354,7 @@ class GlobalRenameRequest {
 			$req->wiki = $row->wiki;
 			$req->newName = $row->newname;
 			$req->reason = $row->reason;
-			$req->reqested = $row->requested;
+			$req->requested = $row->requested;
 			$req->status = $row->status;
 			$req->completed = $row->completed;
 			$req->deleted = $row->deleted;
