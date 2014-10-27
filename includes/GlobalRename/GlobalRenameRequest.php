@@ -140,6 +140,7 @@ class GlobalRenameRequest {
 
 	/**
 	 * @param string $newName
+	 * @throws MWException if an invalid username is provided
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setNewName( $newName ) {
