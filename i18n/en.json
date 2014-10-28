@@ -472,5 +472,6 @@
 	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead.",
 	"sulrenamewarning-title" : "{{GENDER:$1|Your}} account has been renamed",
 	"sulrenamewarning-renamed" : "{{GENDER:$2|Your}} account '''$1''' has been renamed to '''$2''' during automatic migration to the unified login system of {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-usenew" : "Please use {{GENDER:$1|your}} new username '''$1''' when logging in in the future."
+	"sulrenamewarning-usenew" : "Please use {{GENDER:$1|your}} new username '''$1''' when logging in in the future.",
+	"centralauth-log-gblrename-oldname": "Previous username",
 }
