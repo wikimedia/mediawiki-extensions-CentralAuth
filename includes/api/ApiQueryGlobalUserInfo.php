@@ -155,6 +155,9 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'user' => 'User to get information about. Defaults to the current user',
@@ -169,10 +172,16 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Show information about a global user.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&meta=globaluserinfo',
@@ -180,7 +189,15 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&meta=globaluserinfo'
+				=> 'apihelp-query+globaluserinfo-example-1',
+			'action=query&meta=globaluserinfo&guiuser=Example&guiprop=groups|merged|unattached'
+				=> 'apihelp-query+globaluserinfo-example-2',
+		);
 	}
 }

@@ -74,6 +74,9 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'user' => 'User to delete.',
@@ -82,13 +85,29 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Delete a global user.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=deleteglobalaccount&user=Name&reason=Because+I+can',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=deleteglobalaccount&user=Example&reason=Because+I+can'
+				=> 'apihelp-deleteglobalaccount-example-1',
 		);
 	}
 
@@ -120,9 +139,5 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	public static function injectTokenFunction( &$list ) {
 		$list['deleteglobalaccount'] = array( __CLASS__, 'getToken' );
 		return true; // Hooks must return bool
-	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
 	}
 }

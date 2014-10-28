@@ -268,6 +268,9 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'from' => 'The user name to start enumerating from',
@@ -286,14 +289,32 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Enumerate all global users';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=globalallusers',
 			'api.php?action=query&list=globalallusers&agufrom=ABC&aguprop=lockinfo|groups|existslocally'
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=globalallusers'
+				=> 'apihelp-query+globalallusers-example-1',
+			'action=query&list=globalallusers&agufrom=ABC&aguprop=lockinfo|groups|existslocally'
+				=> 'apihelp-query+globalallusers-example-2',
 		);
 	}
 }

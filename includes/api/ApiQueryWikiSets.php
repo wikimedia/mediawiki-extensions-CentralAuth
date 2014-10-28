@@ -105,6 +105,9 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'from' => 'The name of the wiki set to start from',
@@ -119,10 +122,16 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Enumerate all wiki sets';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=wikisets',
@@ -130,7 +139,15 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=wikisets'
+				=> 'apihelp-query+wikisets-example-1',
+			'action=query&list=wikisets&wsprop=type&wslimit=200'
+				=> 'apihelp-query+wikisets-example-2',
+		);
 	}
 }
