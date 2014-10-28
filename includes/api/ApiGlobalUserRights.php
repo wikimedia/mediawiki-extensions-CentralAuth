@@ -34,14 +34,32 @@ class ApiGlobalUserRights extends ApiUserrights {
 		return CentralAuthUser::availableGlobalGroups();
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Add/remove a user to/from global groups.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=globaluserrights&user=FooBot&add=bot&remove=sysop&token=123ABC',
 			'api.php?action=globaluserrights&userid=123&add=bot|sysop&remove=staff&token=123ABC'
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=userrights&user=FooBot&add=bot&remove=sysop|bureaucrat&token=123ABC'
+				=> 'apihelp-globaluserrights-example-1',
+			'action=userrights&userid=123&add=bot&remove=sysop|bureaucrat&token=123ABC'
+				=> 'apihelp-globaluserrights-example-2',
 		);
 	}
 }

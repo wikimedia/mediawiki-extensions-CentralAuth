@@ -100,6 +100,9 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'prop' => array(
@@ -108,10 +111,16 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Enumerate all global groups';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=globalgroups',
@@ -119,7 +128,15 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=globalgroups'
+				=> 'apihelp-query+globalgroups-example-1',
+			'action=query&list=globalgroups&ggpprop=rights'
+				=> 'apihelp-query+globalgroups-example-2',
+		);
 	}
 }

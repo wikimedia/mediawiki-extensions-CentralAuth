@@ -74,18 +74,29 @@ class ApiCentralAuthToken extends ApiBase {
 		);
 	}
 
-	public function getParamDescription() {
-		return array(
-		);
-	}
-
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Fetch a centralauthtoken for making an authenticated request to an attached wiki.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=centralauthtoken',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=centralauthtoken'
+				=> 'apihelp-centralauthtoken-example-1',
 		);
 	}
 }

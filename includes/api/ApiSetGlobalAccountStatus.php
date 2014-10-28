@@ -122,6 +122,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'user' => 'User to change the status of.',
@@ -133,14 +136,32 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return "Set a global user's status.";
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=setglobalaccountstatus&user=Spammer&locked=lock&hidden=&reason=Spam',
 			'api.php?action=setglobalaccountstatus&user=Jimbo_Wales&locked=unlock&hidden=suppressed&reason=I%20can',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=setglobalaccountstatus&user=Example&locked=lock&hidden=&reason=Spam'
+				=> 'apihelp-setglobalaccountstatus-example-1',
+			'action=setglobalaccountstatus&user=Example&locked=unlock&hidden=suppressed&reason=I%20can'
+				=> 'apihelp-setglobalaccountstatus-example-2',
 		);
 	}
 
@@ -172,9 +193,5 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	public static function injectTokenFunction( &$list ) {
 		$list['setglobalaccountstatus'] = array( __CLASS__, 'getToken' );
 		return true; // Hooks must return bool
-	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
 	}
 }
