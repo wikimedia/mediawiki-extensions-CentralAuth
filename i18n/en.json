@@ -401,6 +401,7 @@
 	"centralauth-usermerge-queued": "Merges for $1 into $2 have been queued.\n\nView the progress at [[Special:GlobalRenameProgress/$3]].",
 	"centralauth-usermerge-invalid": "There is no global account with the name \"$1\".",
 	"centralauth-usermerge-already": "There is already a global rename or merge in progress for $1.",
+	"centralauth-usermerge-noself": "You cannot merge accounts with yourself.",
 	"action-centralauth-usermerge": "globally merge multiple users",
 	"right-centralauth-usermerge": "Globally merge multiple users",
 	"centralauth-usermerge-confirm": "Do you really want to globally merge these users?",
