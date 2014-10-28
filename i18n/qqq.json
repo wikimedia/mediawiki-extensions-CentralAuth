@@ -536,5 +536,6 @@
 	"apihelp-setglobalaccountstatus-param-reason": "{{doc-apihelp-param|setglobalaccountstatus|reason}}",
 	"apihelp-setglobalaccountstatus-param-statecheck": "{{doc-apihelp-param|setglobalaccountstatus|statecheck}}",
 	"apihelp-setglobalaccountstatus-example-1": "{{doc-apihelp-example|setglobalaccountstatus}}",
-	"apihelp-setglobalaccountstatus-example-2": "{{doc-apihelp-example|setglobalaccountstatus}}"
+	"apihelp-setglobalaccountstatus-example-2": "{{doc-apihelp-example|setglobalaccountstatus}}",
+	"centralauth-log-gblrename-oldname": "Label for field on Special:Log which allows filtering the global rename log by the previous username"
 }
