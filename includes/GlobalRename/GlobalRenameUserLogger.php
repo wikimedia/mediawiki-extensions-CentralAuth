@@ -38,6 +38,11 @@ class GlobalRenameUserLogger {
 			'4::olduser' => $oldName,
 			'5::newuser' => $newName,
 		) );
+
+		$logEntry->setRelations( array(
+			'oldname' => $oldName,
+		) );
+
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
 	}
