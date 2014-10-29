@@ -775,6 +775,9 @@ $specialPageAliases['vi'] = array(
 	'GlobalRenameUser' => array( 'Đổi_tên_thành_viên_toàn_cục', 'Đổi_tên_người_dùng_toàn_cục' ),
 	'GlobalRenameProgress' => array( 'Tiến_độ_đổi_tên_toàn_cục' ),
 	'GlobalUserMerge' => array( 'Hợp_nhất_người_dùng_toàn_cục', 'Hợp_nhất_thành_viên_toàn_cục' ),
+	'GlobalRenameRequest' => array( 'Yêu_cầu_đổi_tên_toàn_cục' ),
+	'GlobalRenameQueue' => array( 'Hàng_đợi_đổi_tên_toàn_cục' ),
+	'SulRenameWarning' => array( 'Cảnh_báo_đổi_tên_tài_khoản_hợp_nhất' ),
 );
 
 /** Yiddish (ייִדיש) */

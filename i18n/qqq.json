@@ -37,7 +37,8 @@
 			"דולב",
 			"Amire80",
 			"Liuxinyu970226",
-			"Robby"
+			"Robby",
+			"Legoktm"
 		]
 	},
 	"mergeaccount": "{{doc-special|MergeAccount}}",
@@ -433,6 +434,7 @@
 	"globalrenamerequest-email-why-explain": "Message for popup dialog.",
 	"globalrenamerequest-email2-label": "Form field label.",
 	"globalrenamerequest-email2-help": "Form field inline help.",
+	"globalrenamerequest-email-mismatch": "Error message shown when the user enters two different email addresses",
 	"globalrenamerequest-email-invalid": "Used as error message.",
 	"globalrenamerequest-reason-label": "Form field label.",
 	"globalrenamerequest-submit-text": "Form button text.",
@@ -443,6 +445,8 @@
 	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
 	"globalrenamequeue": "{{doc-special|GlobalRenameQueue}}",
 	"globalrenamequeue-desc": "{{desc|name=Process global account rename requests|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}",
+	"globalrenamequeue-nav-openqueue": "Text on a button that opens up the list of open requests in the global rename queue.",
+	"globalrenamequeue-nav-closedqueue": "Text on a button that opens up the list of closed requests in the global rename queue.",
 	"globalrenamequeue-column-rq-name": "Table header.\n{{Identical|Username}}",
 	"globalrenamequeue-column-rq-newname": "Table header.",
 	"globalrenamequeue-column-rq-wiki": "Table header.",
