@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_54cead87",
+        "filename": "includes/specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-10-30T13:50:07Z",
+      "side": 1,
+      "message": "User::getCanonicalName might return false and I think you should check that, before using it.",
+      "revId": "13cd98ee6b58ac755e5985aca102e49b0335d017",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
