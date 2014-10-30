@@ -90,6 +90,11 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		if ( !$name ) {
 			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
 		}
+
+		if ( $name === $this->getUser()->getName() ) {
+			return $this->msg( 'centralauth-usermerge-noself' )->escaped();
+		}
+
 		$caUser = new CentralAuthUser( $name );
 		if ( !$caUser->exists() ) {
 			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
@@ -139,7 +144,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 		foreach ( $data['usernames'] as $field ) {
 			if ( $field['name'] ) {
-				$this->oldCAUsers[] = new CentralAuthUser( $field['name'] );
+				$this->oldCAUsers[] = new CentralAuthUser( User::getCanonicalName( $field['name'] ) );
 			}
 		}
 
