@@ -16,6 +16,24 @@
       "revId": "7cff42a5a9d0fef3221043ad9a5485c5982c6efd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_9e43f466",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-10-30T07:41:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e936f18_bb95a7e8",
+      "revId": "7cff42a5a9d0fef3221043ad9a5485c5982c6efd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
