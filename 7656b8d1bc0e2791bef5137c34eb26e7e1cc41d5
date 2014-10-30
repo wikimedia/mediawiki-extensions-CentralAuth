@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_1476e539",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1952,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-10-30T14:00:10Z",
+      "side": 1,
+      "message": "There might be a user \"0\" ... ;)",
+      "revId": "7656b8d1bc0e2791bef5137c34eb26e7e1cc41d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_d4907d50",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1963,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-10-30T14:00:10Z",
+      "side": 1,
+      "message": "There might be a user \"0\" ... ;)",
+      "revId": "7656b8d1bc0e2791bef5137c34eb26e7e1cc41d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
