@@ -238,6 +238,7 @@
 	"right-centralauth-oversight": "உலகளாவிய கணக்கை ஒடுக்கவும்",
 	"right-centralauth-merge": "அவர்களின் கணக்குகளை ஒன்றுசேர்",
 	"right-globalgrouppermissions": "உலகளாவிய குழுக்களை நிர்வகி",
+	"centralauth-rename-table-status-failed": "தோல்வியடைந்தது",
 	"centralauth-usermerge-form-reason": "காரணம்",
 	"globalrenamerequest-username-label": "தற்போதைய பயனர் பெயர்:",
 	"globalrenamerequest-username-help": "இது தங்களின் தற்போதைய பயனர்பெயர்.  தாங்கள் தற்போது தேர்ந்த பெயருக்கு இது மாற்றப்படும்",

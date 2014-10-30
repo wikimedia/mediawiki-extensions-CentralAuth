@@ -382,6 +382,7 @@
 	"centralauth-usermerge-queued": "Zusammenführungen für $1 in $2 sind in der Warteschlange.\n\nDu kannst den Fortschritt unter [[Special:GlobalRenameProgress/$3]] einsehen.",
 	"centralauth-usermerge-invalid": "Es gibt kein globales Benutzerkonto mit dem Namen „$1“.",
 	"centralauth-usermerge-already": "Es gibt bereits eine in Bearbeitung befindliche globale Umbenennung oder Zusammenführung für $1.",
+	"centralauth-usermerge-noself": "Du kannst keine Benutzerkonten mit dir selbst zusammenführen.",
 	"action-centralauth-usermerge": "mehrere Benutzer global zusammenzuführen",
 	"right-centralauth-usermerge": "Mehrere Benutzer global zusammenführen",
 	"centralauth-usermerge-confirm": "Möchtest du wirklich diese Benutzer global zusammenführen?",
@@ -453,5 +454,6 @@
 	"centralauth-abortlogin-renamed": "Dein Benutzerkonto wurde in „$1“ umbenannt. Bitte verwende stattdessen diesen Benutzernamen.",
 	"sulrenamewarning-title": "{{GENDER:$1|Dein}} Benutzerkonto wurde umbenannt",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Dein}} Benutzerkonto '''$1''' wurde während der automatischen Migration zum vereinheitlichten Anmeldesystem {{int:Centralauth-groupname}} umbenannt in '''$2'''.",
-	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''."
+	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''.",
+	"globalrenamequeue-request-reason-label": "Öffentlicher Kommentar eines Logbucheintrags (falls akzeptiert)"
 }

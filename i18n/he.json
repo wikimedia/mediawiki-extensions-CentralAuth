@@ -381,6 +381,7 @@
 	"centralauth-usermerge-queued": "מיזוג $1 אל $2 הוכנס לתור.\n\nהצגת ההתקדמות בדף [[Special:GlobalRenameProgress/$3]].",
 	"centralauth-usermerge-invalid": "אין חשבון גלובלי בשם \"$1\".",
 	"centralauth-usermerge-already": "כבר התחיל תהליך שינוי שם גלובלי עבור $1.",
+	"centralauth-usermerge-noself": "לא ניתן לאחד חשבונות עם עצמך.",
 	"action-centralauth-usermerge": "למזג גלובלית חשבונות משמש מרובים",
 	"right-centralauth-usermerge": "מיזוג גלובלי של חשבונות מרובים",
 	"centralauth-usermerge-confirm": "האם ברצונך באמת למזג את החשבונות האלה גלובלית?",
@@ -452,5 +453,6 @@
 	"centralauth-abortlogin-renamed": "שם החשבון שלך שוּנה ל־\"$1\". נא להשתמש באותו השם.",
 	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה",
 	"sulrenamewarning-renamed": "שם החשבון {{GENDER:$2|שלך}} '''$1''' שוּנָה אל '''$2''' במהלך מעבר אוטומטי למערכת כניסה מאוחדת של {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד."
+	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד.",
+	"globalrenamequeue-request-reason-label": "הערה על שורת יומן ציבורית (אם זה מתקבל)"
 }
