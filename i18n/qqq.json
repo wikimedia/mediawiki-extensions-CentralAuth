@@ -42,7 +42,7 @@
 		]
 	},
 	"mergeaccount": "{{doc-special|MergeAccount}}",
-	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-login-progress}}\n* {{msg-mw|centralauth-logout-progress}}",
+	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-login-progress}}\n* {{msg-mw|centralauth-logout-progress}}\n{{Identical|Wikimedia Foundation}}",
 	"centralauth-desc": "{{desc|name=Central Auth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}",
 	"centralauth-antispoof-desc": "{{desc|name=AntiSpoof for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:AntiSpoof}}\nSee also:\n* {{msg-mw|Centralauth-rename-desc}}",
 	"centralauth-rename-desc": "{{desc|name=Renameuser for CentralAuth|url=http://www.mediawiki.org/wiki/Extension:CentralAuth}}\nSee also:\n* {{msg-mw|Centralauth-antispoof-desc}}",

@@ -375,6 +375,7 @@
 	"centralauth-usermerge-queued": "Việc hợp nhất $1 thành $2 đang trong hàng đợi.\n\nXem tiến độ tại [[Special:GlobalRenameProgress/$3]].",
 	"centralauth-usermerge-invalid": "Không có tài khoản toàn cục nào dùng tên “$1”.",
 	"centralauth-usermerge-already": "Đã có một tiến trình đổi tên hay hợp nhất tài khoản toàn cục cho $1.",
+	"centralauth-usermerge-noself": "Không thể hợp nhất tài khoản với chính bạn.",
 	"action-centralauth-usermerge": "hợp nhất tài khoản của người dùng trên toàn cục",
 	"right-centralauth-usermerge": "Hợp nhất tài khoản của người dùng trên toàn cục",
 	"centralauth-usermerge-confirm": "Bạn có chắc chắn về việc hợp nhất những người dùng này trên toàn cục không?",
@@ -446,5 +447,6 @@
 	"centralauth-abortlogin-renamed": "Tài khoản của bạn đã được đổi tên thành “$1”. Xin vui lòng sử dụng tên người dùng đó từ nay.",
 	"sulrenamewarning-title": "Tài khoản của {{GENDER:$1}}bạn đã được đổi tên",
 	"sulrenamewarning-renamed": "Tài khoản '''$1''' của bạn đã được đổi tên thành '''$2''' trong quá trình chuyển đổi qua hệ thống tài khoản hợp nhất của {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-usenew": "Xin vui lòng đăng nhập từ nay với tên người dùng mới '''$1'''."
+	"sulrenamewarning-usenew": "Xin vui lòng đăng nhập từ nay với tên người dùng mới '''$1'''.",
+	"globalrenamequeue-request-reason-label": "Tóm lược cho nhật trình công khai (nếu chấp nhận)"
 }

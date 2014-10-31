@@ -6,6 +6,14 @@
 			"Candalua"
 		]
 	},
+	"mergeaccount": "Stato d' 'o cunto aunificato",
+	"centralauth-groupname": "'a Wikimedia Foundation",
+	"centralauth-desc": "[[Special:MergeAccount|Aunifica 'e cunte]] nfrà wiki 'e {{int:Centralauth-groupname}}",
+	"centralauth-antispoof-desc": "Miette 'a tecnologgia AntiSpoof dint'a CentralAuth",
+	"centralauth-rename-desc": "Cunzente 'e cagnà 'o nomme a 'e cunte glubale",
+	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Aunisce l'utente vuoste]] dint'a nu cunto globale aunito",
+	"centralauth-merge-denied": "Spiacente, nun tenite 'o permesso pe' putè trasì dint'a sta paggena.",
+	"centralauth-merge-notlogged": "Pe' piacere <span class=\"plainlinks\">[$1 trasite]</span> pe' putè cuntrulla si 'e cunte so' state aunite e tutt' 'è appost.",
 	"centralauth-merge-dryrun-or": "'''o'''",
 	"centralauth-list-home-title": "Wiki prencepale",
 	"centralauth-foreign-link": "Utente $1 ncopp'â $2",
