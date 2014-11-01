@@ -374,6 +374,7 @@
 	"centralauth-usermerge-queued": "Спојувањата на $1 во $2 се ставени во редица.\n\nТекот на спојувањето можете да го погледате на [[Special:GlobalRenameProgress/$3]].",
 	"centralauth-usermerge-invalid": "Не постои глобална сметка наречена „$1“.",
 	"centralauth-usermerge-already": "Веќе е во тек глобално преименување или спојување на $1.",
+	"centralauth-usermerge-noself": "Не можете да спојувате сметки со самите себе.",
 	"action-centralauth-usermerge": "глобално спојување на повеќе корисници",
 	"right-centralauth-usermerge": "Глобално спојување на повеќе корисници",
 	"centralauth-usermerge-confirm": "Дали навистина сакате глобално да ги споите овие корисници?",
@@ -445,5 +446,6 @@
 	"centralauth-abortlogin-renamed": "Вашата сметка е преименувана во „$1“. Користете го тоа корисничко име.",
 	"sulrenamewarning-title": "{{GENDER:$1|Вашата}} сметка е отстранета",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Вашата}} сметка '''$1''' е преименувана во '''$2''' во текот на автоматскиот преод кон обединетиот најавен систем на {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-usenew": "Во иднина, за најава користете го {{GENDER:$1|вашето}} ново корисничко име '''$1'''."
+	"sulrenamewarning-usenew": "Во иднина, за најава користете го {{GENDER:$1|вашето}} ново корисничко име '''$1'''.",
+	"globalrenamequeue-request-reason-label": "Јавен коментар во дневнички запис (ако е за прифаќање)"
 }

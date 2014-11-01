@@ -124,7 +124,7 @@
 	"centralauth-admin-yes": "是",
 	"centralauth-admin-no": "否",
 	"centralauth-admin-hidden-list": "从公共名单",
-	"centralauth-admin-hidden-oversight": "监督己被执行",
+	"centralauth-admin-hidden-oversight": "已监督删除",
 	"centralauth-admin-list-legend-ro": "本地账户列表",
 	"centralauth-admin-list-legend-rw": "拆分本地账户",
 	"centralauth-admin-unattached": "未附属的帐户",
@@ -234,7 +234,7 @@
 	"centralauth-log-entry-chgstatus": "更改全局账户“$1”的状态：设置$2；取消设置$3",
 	"centralauth-log-status-locked": "已锁定",
 	"centralauth-log-status-hidden": "隐藏",
-	"centralauth-log-status-oversighted": "监督己被执行",
+	"centralauth-log-status-oversighted": "已监督删除",
 	"centralauth-log-status-none": "（无）",
 	"centralauth-rightslog-name": "全域权限日志",
 	"centralauth-rightslog-entry-usergroups": "已将$1的全域用户组由$2改为$3",
@@ -471,5 +471,6 @@
 	"centralauth-abortlogin-renamed": "您的账户已重命名为“$1”。请改用新用户名。",
 	"sulrenamewarning-title": "{{GENDER:$1|您}}的账户已被重命名",
 	"sulrenamewarning-renamed": "在自动迁移至{{int:Centralauth-groupname}}的统一登录系统过程中，{{GENDER:$2|您}}的账户'''$1'''已被重命名至'''$2'''。",
-	"sulrenamewarning-usenew": "今后，请使用{{GENDER:$1|您}}的新用户名'''$1'''登录。"
+	"sulrenamewarning-usenew": "今后，请使用{{GENDER:$1|您}}的新用户名'''$1'''登录。",
+	"globalrenamequeue-request-reason-label": "公开日志记录评论（如果接受）"
 }

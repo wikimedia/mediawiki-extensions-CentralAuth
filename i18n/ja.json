@@ -368,7 +368,7 @@
 	"centralauth-rename-table-status-inprogress": "処理中",
 	"centralauth-rename-table-status-queued": "待機中",
 	"centralauth-rename-table-status-done": "完了",
-	"centralauth-rename-table-status-failed": "失敗しました",
+	"centralauth-rename-table-status-failed": "失敗しました。",
 	"centralauth-rename-viewprogress": "進捗の表示",
 	"centralauth-rename-progress-fieldset": "ローカルアカウントの一覧",
 	"centralauth-rename-progress-logs-fieldset": "記録項目",
