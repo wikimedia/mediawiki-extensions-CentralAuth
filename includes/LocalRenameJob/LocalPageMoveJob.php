@@ -15,12 +15,13 @@ class LocalPageMoveJob extends Job {
 	private $setTBOverride;
 
 	/**
+	 * @param Title $title
 	 * @param array $params
 	 */
-	public function __construct( $params ) {
+	public function __construct( Title $title, $params ) {
 		parent::__construct(
 			'LocalPageMoveJob',
-			Title::newFromText( 'Global rename local page move job' ),
+			$title,
 			$params
 		);
 	}
