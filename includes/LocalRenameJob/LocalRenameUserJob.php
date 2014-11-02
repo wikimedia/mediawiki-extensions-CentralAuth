@@ -113,6 +113,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$pages[$oldPage->getPrefixedText()] = $newPage->getPrefixedText();
 			if ( count( $pages ) >= self::MOVES_PER_JOB ) {
 				$jobs[] = new LocalPageMoveJob(
+					Title::newFromText( 'LocalRenameUserJob' ),
 					$jobParams + array( 'pages' => $pages )
 				);
 				$pages = array();
@@ -122,6 +123,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		// Anything left over...
 		if ( $pages ) {
 			$jobs[] = new LocalPageMoveJob(
+				Title::newFromText( 'LocalRenameUserJob' ),
 				$jobParams + array( 'pages' => $pages )
 			);
 		}
