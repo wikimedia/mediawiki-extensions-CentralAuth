@@ -3,5 +3,8 @@
 
 source "https://rubygems.org"
 
-gem "mediawiki_selenium", "~> 0.3.0"
+gem "mediawiki_selenium",
+  git: "https://github.com/wikimedia/mediawiki-selenium.git",
+  branch: "env-abstraction-layer"
+
 gem "rubocop", require: false

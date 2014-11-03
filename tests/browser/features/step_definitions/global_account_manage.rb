@@ -7,7 +7,7 @@ When(/^I lookup an invalid user$/) do
 end
 
 When(/^I lookup a valid user$/) do
-  on(SpecialCentralAuthPage).lookup_user(ENV["MEDIAWIKI_USER"])
+  on(SpecialCentralAuthPage).lookup_user(user)
 end
 
 Then(/^target element should be there$/) do
