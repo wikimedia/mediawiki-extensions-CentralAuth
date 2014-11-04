@@ -455,5 +455,11 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Dein}} Benutzerkonto wurde umbenannt",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Dein}} Benutzerkonto '''$1''' wurde während der automatischen Migration zum vereinheitlichten Anmeldesystem {{int:Centralauth-groupname}} umbenannt in '''$2'''.",
 	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''.",
-	"globalrenamequeue-request-reason-label": "Öffentlicher Kommentar eines Logbucheintrags (falls akzeptiert)"
+	"globalrenamequeue-request-reason-label": "Öffentlicher Kommentar eines Logbucheintrags (falls akzeptiert)",
+	"apihelp-deleteglobalaccount-description": "Löscht einen globalen Benutzer.",
+	"apihelp-deleteglobalaccount-param-user": "Zu löschender Benutzer.",
+	"apihelp-globaluserrights-param-user": "Globaler Benutzername.",
+	"apihelp-globaluserrights-param-userid": "Globale Benutzerkennung.",
+	"apihelp-query+globalgroups-example-1": "Globale Gruppen auflisten",
+	"apihelp-query+wikisets-example-1": "Wikisätze auflisten"
 }

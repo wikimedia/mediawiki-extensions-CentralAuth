@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Snakesteuben"
+			"Snakesteuben",
+			"Robin0van0der0vliet"
 		]
 	},
 	"centralauth-admin-username": "Meidoggernamme:",
 	"centralauth-admin-yes": "ja",
-	"centralauth-editgroup-noset": "(gjin)"
+	"centralauth-editgroup-noset": "(gjin)",
+	"centralauth-editset-name": "Namme:"
 }

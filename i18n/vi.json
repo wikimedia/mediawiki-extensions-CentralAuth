@@ -5,7 +5,8 @@
 			"Minh Nguyen",
 			"Skye Darcy",
 			"Vinhtantran",
-			"Trần Nguyễn Minh Huy"
+			"Trần Nguyễn Minh Huy",
+			"Max20091"
 		]
 	},
 	"mergeaccount": "Tình trạng hợp nhất tài khoản",
@@ -448,5 +449,12 @@
 	"sulrenamewarning-title": "Tài khoản của {{GENDER:$1}}bạn đã được đổi tên",
 	"sulrenamewarning-renamed": "Tài khoản '''$1''' của bạn đã được đổi tên thành '''$2''' trong quá trình chuyển đổi qua hệ thống tài khoản hợp nhất của {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Xin vui lòng đăng nhập từ nay với tên người dùng mới '''$1'''.",
-	"globalrenamequeue-request-reason-label": "Tóm lược cho nhật trình công khai (nếu chấp nhận)"
+	"globalrenamequeue-request-reason-label": "Tóm lược cho nhật trình công khai (nếu chấp nhận)",
+	"apihelp-deleteglobalaccount-description": "Xóa thành viên toàn cục.",
+	"apihelp-globaluserrights-param-user": "Tên thành viên toàn cục.",
+	"apihelp-globaluserrights-param-userid": "Số thành viên toàn cục.",
+	"apihelp-globaluserrights-param-reason": "Lý do thay đổi.",
+	"apihelp-query+globalallusers-example-1": "Danh sách global user",
+	"apihelp-query+globaluserinfo-example-2": "Nhận được thông tin về global user [[User:Example|Example]]",
+	"apihelp-setglobalaccountstatus-param-reason": "Lý do cho việc thay đổi trạng thái của người dùng."
 }

@@ -93,7 +93,7 @@
 	"centralauth-admin-bad-input": "یکی کردن انتخاو  نامعتور",
 	"centralauth-admin-none-selected": "هیژ حساوی سی آلشت بیئن انتخاو نبیه",
 	"centralauth-admin-already-unmerged": "فیچستن$1، ایسه یکی نبیه.",
-	"centralauth-admin-unmerge-success": "$1 وا موفقییت جگا بیه {{جمی:$1|حساو|حساویا}}",
+	"centralauth-admin-unmerge-success": "$1 د خوئی جگا بیه {{جمی:$1|حساو|حساویا}}",
 	"centralauth-admin-delete-title": "حساو نه پاكسا كو",
 	"centralauth-admin-delete-button": "ای حساو پاك كو",
 	"centralauth-admin-delete-confirm": "آیا شما واقعن میهایت ای حساو پاکسا بکید",
@@ -325,7 +325,10 @@
 	"globalrenamequeue-column-rq-performer": "انجوم بیه وا",
 	"globalrenamequeue-action-address": "تیرنشون",
 	"globalrenamequeue-action-view": "ديئن",
+	"globalrenamequeue-request-movepages": "بلگه یا کاریار نه جا وه جا بکیت",
+	"globalrenamequeue-request-suppressredirects": "پاکساگری ساخت واگردونیا",
 	"globalrenamequeue-request-approve-text": "قوؤل کردن د نوم نیائن",
 	"globalrenamequeue-request-cancel-text": "انجوم شیوسن",
+	"globalrenamequeue-request-unknown-title": "حاسته شما نیئش",
 	"globalrenamequeue-view-rejected": "رد بیه"
 }

@@ -447,5 +447,17 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Вашата}} сметка е отстранета",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Вашата}} сметка '''$1''' е преименувана во '''$2''' во текот на автоматскиот преод кон обединетиот најавен систем на {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Во иднина, за најава користете го {{GENDER:$1|вашето}} ново корисничко име '''$1'''.",
-	"globalrenamequeue-request-reason-label": "Јавен коментар во дневнички запис (ако е за прифаќање)"
+	"globalrenamequeue-request-reason-label": "Јавен коментар во дневнички запис (ако е за прифаќање)",
+	"apihelp-centralauthtoken-description": "Дај шифра за централна најава за заверено барање до сврзано вики.",
+	"apihelp-centralauthtoken-example-1": "Дај шифра за централна најава",
+	"apihelp-deleteglobalaccount-description": "Избриши глобален корисник.",
+	"apihelp-deleteglobalaccount-param-user": "Корисник за бришење.",
+	"apihelp-deleteglobalaccount-param-reason": "Причина за бришење на корисникот.",
+	"apihelp-deleteglobalaccount-example-1": "Избриши ја глобалната сметка за [[User:Example]]",
+	"apihelp-globaluserrights-description": "Додај/отстрани корисник во/од глобални групи.",
+	"apihelp-globaluserrights-param-user": "Глобално корисничко име.",
+	"apihelp-globaluserrights-param-userid": "Глобална кориснична назнака.",
+	"apihelp-globaluserrights-param-add": "Стави го корисников во следниве глобални групи.",
+	"apihelp-globaluserrights-param-remove": "Отстрани го корисникот од следниве глобални групи.",
+	"apihelp-globaluserrights-param-reason": "Причина за промената."
 }
