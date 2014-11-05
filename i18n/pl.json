@@ -390,5 +390,8 @@
 	"centralauth-usermerge-form-adduser": "Dodaj użytkownika",
 	"centralauth-usermerge-form-deleteuser": "Usuń użytkownika",
 	"globalrenamerequest-status-text": "Żądanie zmiany nazwy użytkownika jest obecnie w toku i oczekuje na zatwierdzenie przez zarządcę projektów Wikimedia. Zostaniesz powiadomiony za pośrednictwem wiadomości e-mail po przetworzeniu żądania.\n\n\n;Bieżąca nazwa użytkownika:\n:$1\n;Żądana nazwa użytkownika:\n:$2",
-	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy."
+	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy.",
+	"apihelp-deleteglobalaccount-param-reason": "Powód usunięcie użytkownika.",
+	"apihelp-globaluserrights-param-reason": "Powód zmiany.",
+	"apihelp-query+globalallusers-param-dir": "Kierunek sortowania."
 }

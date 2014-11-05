@@ -454,7 +454,7 @@
 	"apihelp-globaluserrights-param-user": "Tên thành viên toàn cục.",
 	"apihelp-globaluserrights-param-userid": "Số thành viên toàn cục.",
 	"apihelp-globaluserrights-param-reason": "Lý do thay đổi.",
-	"apihelp-query+globalallusers-example-1": "Danh sách global user",
-	"apihelp-query+globaluserinfo-example-2": "Nhận được thông tin về global user [[User:Example|Example]]",
-	"apihelp-setglobalaccountstatus-param-reason": "Lý do cho việc thay đổi trạng thái của người dùng."
+	"apihelp-query+globalallusers-example-1": "Liệt kê các thành viên toàn cục",
+	"apihelp-query+globaluserinfo-example-2": "Lấy thông tin về thành viên toàn cục [[User:Example|Example]]",
+	"apihelp-setglobalaccountstatus-param-reason": "Lý do thay đổi trạng thái của người dùng."
 }

@@ -200,6 +200,7 @@
 	"centralauth-existinggroup-legend": "گرویایی که هئن",
 	"centralauth-newgroup-legend": "گروه تازه راس بكيد",
 	"centralauth-globalgroupperms-newgroupname": "نوم گرو تازه:",
+	"centralauth-globalgroupperms-creategroup-submit": "دئن اختیار",
 	"centralauth-editgroup-subtitle": "د حالت ويرايشت$1",
 	"centralauth-editgroup-subtitle-readonly": "دیئن$1",
 	"centralauth-editgroup-fieldset": "اجازه دئن سی $1",
@@ -215,6 +216,7 @@
 	"centralauth-editgroup-rename-taken": "دووراه نوم نیاین شکست حرد:د ایسه یه گل گرو وا نوم $1 هئ.",
 	"centralauth-editgroup-noset": "(هيش كوم)",
 	"centralauth-editgroup-submit": "آلشتیا گرو جهونی نه اماییه کو",
+	"centralauth-editgroup-perms": "اختیاریا دئه بیه:",
 	"centralauth-editgroup-reason": "دليل:",
 	"centralauth-editgroup-success": "آلشتیا گرو جهونی",
 	"centralauth-editgroup-editsets": "([[ویجه:ویرایشت دسه یا ویکی|ویرایشت]])",
@@ -328,7 +330,12 @@
 	"globalrenamequeue-request-movepages": "بلگه یا کاریار نه جا وه جا بکیت",
 	"globalrenamequeue-request-suppressredirects": "پاکساگری ساخت واگردونیا",
 	"globalrenamequeue-request-approve-text": "قوؤل کردن د نوم نیائن",
+	"globalrenamequeue-request-deny-text": "رد کردن د نو نوم نیائن",
 	"globalrenamequeue-request-cancel-text": "انجوم شیوسن",
 	"globalrenamequeue-request-unknown-title": "حاسته شما نیئش",
-	"globalrenamequeue-view-rejected": "رد بیه"
+	"globalrenamequeue-view-rejected": "رد بیه",
+	"apihelp-deleteglobalaccount-description": "پاکسا کردن کاریار جهونی.",
+	"apihelp-globaluserrights-param-user": "نوم کاریاری جهونی.",
+	"apihelp-globaluserrights-param-reason": "دلیل آلشت دئن.",
+	"apihelp-query+globalallusers-example-1": "نوم دیارکن کاریاریا جهونی"
 }

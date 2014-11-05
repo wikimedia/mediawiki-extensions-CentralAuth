@@ -5,8 +5,14 @@
 			"Robin0van0der0vliet"
 		]
 	},
-	"centralauth-admin-username": "Meidoggernamme:",
+	"centralauth-finish-password": "Wachtwurd:",
+	"centralauth-admin-username": "Brûkersnamme:",
+	"centralauth-admin-info-username": "Brûkersnamme:",
 	"centralauth-admin-yes": "ja",
+	"centralauth-admin-no": "nee",
 	"centralauth-editgroup-noset": "(gjin)",
-	"centralauth-editset-name": "Namme:"
+	"centralauth-editset-name": "Namme:",
+	"centralauth-rename-progress-username": "Brûkersnamme",
+	"globalrenamequeue-column-rq-name": "Brûkersnamme",
+	"globalrenamequeue-request-cancel-text": "Annulearje"
 }
