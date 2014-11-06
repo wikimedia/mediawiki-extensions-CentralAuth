@@ -1939,4 +1939,38 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * @param $type
+	 * @param WebRequest $request
+	 * @param array $qc
+	 * @return bool
+	 */
+	public static function onSpecialLogAddLogSearchRelations( $type, WebRequest $request, array &$qc ) {
+		if ( $type === 'gblrename' ) {
+			$oldname = User::getCanonicalName( $request->getVal( 'oldname' ) );
+			if ( $oldname !== false ) {
+				$qc = array( 'ls_field' => 'oldname', 'ls_value' => $oldname );
+			}
+		}
+
+		return true;
+	}
+
+	public static function onLogEventsListGetExtraInputs( $type, LogEventsList $list, &$input ) {
+		if ( $type === 'gblrename' ) {
+			$value = $list->getRequest()->getVal( 'oldname' );
+			if ( $value !== null ) {
+				$name = User::getCanonicalName( $value );
+				$value = $name !== false ? $name : '';
+			}
+			$input = Xml::inputLabel(
+				$list->msg( 'centralauth-log-gblrename-oldname' )->text(),
+				'oldname',
+				'mw-log-gblrename-oldname',
+				20,
+				$value
+			);
+		}
+	}
 }
