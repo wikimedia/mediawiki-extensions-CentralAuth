@@ -327,6 +327,7 @@
 	"globalrenamequeue-column-rq-performer": "انجوم بیه وا",
 	"globalrenamequeue-action-address": "تیرنشون",
 	"globalrenamequeue-action-view": "ديئن",
+	"globalrenamequeue-request-title": "د نو نوم نیائن \"$1\"؟",
 	"globalrenamequeue-request-movepages": "بلگه یا کاریار نه جا وه جا بکیت",
 	"globalrenamequeue-request-suppressredirects": "پاکساگری ساخت واگردونیا",
 	"globalrenamequeue-request-approve-text": "قوؤل کردن د نوم نیائن",
@@ -335,7 +336,14 @@
 	"globalrenamequeue-request-unknown-title": "حاسته شما نیئش",
 	"globalrenamequeue-view-rejected": "رد بیه",
 	"apihelp-deleteglobalaccount-description": "پاکسا کردن کاریار جهونی.",
+	"apihelp-deleteglobalaccount-param-user": "پاکسا کردن کاریار.",
+	"apihelp-deleteglobalaccount-param-reason": "دلیل پاکسا کردن کاریار.",
 	"apihelp-globaluserrights-param-user": "نوم کاریاری جهونی.",
+	"apihelp-globaluserrights-param-userid": "نوم دیارکن کاریاری جهونی.",
 	"apihelp-globaluserrights-param-reason": "دلیل آلشت دئن.",
-	"apihelp-query+globalallusers-example-1": "نوم دیارکن کاریاریا جهونی"
+	"apihelp-query+globalallusers-example-1": "نوم دیارکن کاریاریا جهونی",
+	"apihelp-query+globalgroups-example-1": "نومجاگه گرویا جهونی",
+	"apihelp-query+wikisets-param-orderbyname": "سر جا کردن نتیجه یا وا نوم.",
+	"apihelp-query+wikisets-example-1": "نومجاگه دسه یا ویکی",
+	"apihelp-query+wikisets-example-2": "نشو دئن دسه یا ویکی وا نوعشو"
 }
