@@ -462,6 +462,14 @@
 	"apihelp-deleteglobalaccount-param-user": "Zu löschender Benutzer.",
 	"apihelp-globaluserrights-param-user": "Globaler Benutzername.",
 	"apihelp-globaluserrights-param-userid": "Globale Benutzerkennung.",
+	"apihelp-globaluserrights-param-reason": "Grund für die Änderung.",
+	"apihelp-query+globalallusers-example-1": "Globale Benutzer auflisten",
+	"apihelp-query+globalgroups-description": "Alle globalen Gruppen aufzählen.",
 	"apihelp-query+globalgroups-example-1": "Globale Gruppen auflisten",
-	"apihelp-query+wikisets-example-1": "Wikisätze auflisten"
+	"apihelp-query+wikisets-param-limit": "Wie viele Wikisätze zurückgegeben werden sollen.",
+	"apihelp-query+wikisets-param-orderbyname": "Ergebnisse nach Namen sortieren.",
+	"apihelp-query+wikisets-example-1": "Wikisätze auflisten",
+	"apihelp-setglobalaccountstatus-description": "Legt den Status eines globalen Benutzers fest.",
+	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
+	"centralauth-log-gblrename-oldname": "Früherer Benutzername"
 }

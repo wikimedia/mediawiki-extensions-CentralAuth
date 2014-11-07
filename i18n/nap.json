@@ -179,6 +179,7 @@
 	"centralauth-prefs-unattached": "Nun cunfermato",
 	"centralauth-prefs-complete": "Tutt'appost!",
 	"centralauth-prefs-migration": "'N mmigraziune",
+	"centralauth-prefs-count-attached": "'O cunto vuosto è attivo ncopp'a $1 {{PLURAL:$1|pruggetto|pruggette}}.",
 	"centralauth-log-status-none": "(nisciuno)",
 	"centralauth-editgroup-noset": "(nisciuno)",
 	"centralauth-editset-nowikis": "(nisciuno)",

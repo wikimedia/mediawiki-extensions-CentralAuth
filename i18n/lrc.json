@@ -345,5 +345,6 @@
 	"apihelp-query+globalgroups-example-1": "نومجاگه گرویا جهونی",
 	"apihelp-query+wikisets-param-orderbyname": "سر جا کردن نتیجه یا وا نوم.",
 	"apihelp-query+wikisets-example-1": "نومجاگه دسه یا ویکی",
-	"apihelp-query+wikisets-example-2": "نشو دئن دسه یا ویکی وا نوعشو"
+	"apihelp-query+wikisets-example-2": "نشو دئن دسه یا ویکی وا نوعشو",
+	"centralauth-log-gblrename-oldname": "نوم کاریاری دمایی"
 }

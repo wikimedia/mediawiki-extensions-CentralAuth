@@ -5,7 +5,7 @@
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
-	"centralauth-groupname": "विकिमीडिया फाउंडेशन",
+	"centralauth-groupname": "विकिमेडिया फाउंडेशन",
 	"centralauth-desc": "{{int:Centralauth-groupname}} के विकिसभमे [[Special:MergeAccount|खाता एकत्रिकरण]] करु",
 	"centralauth-antispoof-desc": "CentralAuth मे AntiSpoof तकनीक जोडएत अछि",
 	"centralauth-rename-desc": "सभ खाता सभके नाम बदलवाक लेल स्विकारु",
@@ -30,5 +30,9 @@
 	"centralauth-finish-password": "कूटशब्द:",
 	"centralauth-finish-login": "लग इन",
 	"centralauth-finish-send-confirmation": "कूटशब्द ई-मेल से भेजु",
-	"centralauth-attach-title": "खाता प्रमाणित करु"
+	"centralauth-attach-title": "खाता प्रमाणित करु",
+	"centralauth-admin-yes": "हँ",
+	"centralauth-admin-no": "नै",
+	"centralauth-admin-hidden-list": "सार्वजनिक सूचिसं से नुकाएल गेल",
+	"centralauth-admin-multi-bot": "लगक परिवर्तन सभ"
 }

@@ -461,5 +461,6 @@
 	"sulrenamewarning-title": "A {{GENDER:$1|sua}} conta foi renomeada",
 	"sulrenamewarning-renamed": "A {{GENDER:$2|sua}} conta '''$1''' foi renomeada para '''$2''' durante a migração automática para o sistema de conta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Por favor, utilize o seu nome de {{GENDER:$1|utilizador|utilizadora|utilizador(a)}} \"$1\" no futuro quando iniciar a sessão.",
-	"apihelp-globaluserrights-param-user": "Nome de utilizador global."
+	"apihelp-globaluserrights-param-user": "Nome de utilizador global.",
+	"centralauth-log-gblrename-oldname": "Nome de utilizador(a) anterior"
 }

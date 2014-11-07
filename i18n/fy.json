@@ -14,5 +14,6 @@
 	"centralauth-editset-name": "Namme:",
 	"centralauth-rename-progress-username": "Brûkersnamme",
 	"globalrenamequeue-column-rq-name": "Brûkersnamme",
-	"globalrenamequeue-request-cancel-text": "Annulearje"
+	"globalrenamequeue-request-cancel-text": "Annulearje",
+	"centralauth-log-gblrename-oldname": "Foarrige brûkersnamme"
 }

@@ -403,5 +403,6 @@
 	"globalrenamequeue-column-rq-status": "状態",
 	"globalrenamequeue-column-rq-performer": "実行者",
 	"globalrenamequeue-request-movepages": "利用者ページを移動",
-	"globalrenamequeue-request-cancel-text": "キャンセル"
+	"globalrenamequeue-request-cancel-text": "キャンセル",
+	"centralauth-log-gblrename-oldname": "以前の利用者名"
 }

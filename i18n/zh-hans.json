@@ -499,5 +499,6 @@
 	"apihelp-setglobalaccountstatus-description": "设置全域用户状态。",
 	"apihelp-setglobalaccountstatus-param-user": "要更改状态的用户。",
 	"apihelp-setglobalaccountstatus-example-1": "锁定全域账户[[User:Example]]，原因“破坏”",
-	"apihelp-setglobalaccountstatus-example-2": "解除锁定并监督隐藏全域账户[[User:Example]]，原因“I can”"
+	"apihelp-setglobalaccountstatus-example-2": "解除锁定并监督隐藏全域账户[[User:Example]]，原因“I can”",
+	"centralauth-log-gblrename-oldname": "之前的用户名"
 }
