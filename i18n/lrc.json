@@ -302,6 +302,7 @@
 	"centralauth-usermerge-form-newuser": "آخری نوم کاریاری",
 	"centralauth-usermerge-form-usernames": "نوم کاریاری ایسنی",
 	"centralauth-usermerge-form-reason": "دليل",
+	"globalrenamerequest-desc": "حاستن د نوم نیائن حساو جهونی",
 	"globalrenamerequest-username-label": "نوم کاریاری ایسنی:",
 	"globalrenamerequest-username-help": "ایسه یه نوم کاریاری شومانه.",
 	"globalrenamerequest-newname-label": "نوم کاریاری حاستنی",
@@ -311,8 +312,10 @@
 	"globalrenamerequest-email-help": "تیر نشون انجومانامه تونه وارد بكيت",
 	"globalrenamerequest-email-why-label": "سی چی؟",
 	"globalrenamerequest-email2-label": "پشت راس کردن تیرنشون انجومانامه",
+	"globalrenamerequest-email-invalid": "تیرنشون انجومانامه تو نامعتوره.",
 	"globalrenamerequest-reason-label": "دلیل حاستن",
 	"globalrenamerequest-submit-text": "حاستن آلشت دئن نوم",
+	"globalrenamerequest-save-error": "اماییه کردن حاسته تو خو نبی. د نو تلاش بکیت.",
 	"centralauth-usermerge-form-adduser": "اضاف کردن کاریار",
 	"centralauth-usermerge-form-deleteuser": "ؤرداشتن کاریار",
 	"globalrenamequeue-nav-openqueue": "درحاستیا ایسنی",
@@ -334,6 +337,7 @@
 	"globalrenamequeue-request-deny-text": "رد کردن د نو نوم نیائن",
 	"globalrenamequeue-request-cancel-text": "انجوم شیوسن",
 	"globalrenamequeue-request-unknown-title": "حاسته شما نیئش",
+	"globalrenamequeue-view-approved": "بیتر بیه",
 	"globalrenamequeue-view-rejected": "رد بیه",
 	"apihelp-deleteglobalaccount-description": "پاکسا کردن کاریار جهونی.",
 	"apihelp-deleteglobalaccount-param-user": "پاکسا کردن کاریار.",
@@ -346,5 +350,6 @@
 	"apihelp-query+wikisets-param-orderbyname": "سر جا کردن نتیجه یا وا نوم.",
 	"apihelp-query+wikisets-example-1": "نومجاگه دسه یا ویکی",
 	"apihelp-query+wikisets-example-2": "نشو دئن دسه یا ویکی وا نوعشو",
+	"apihelp-setglobalaccountstatus-description": "میزو کردن حال و بال یه گل کاریار جهونی.",
 	"centralauth-log-gblrename-oldname": "نوم کاریاری دمایی"
 }

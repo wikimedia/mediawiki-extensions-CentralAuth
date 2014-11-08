@@ -498,5 +498,6 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промената на статусот на корисникот.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <username>:<hidden>:<locked> за утврдување на спротиставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
 	"apihelp-setglobalaccountstatus-example-1": "Заклучи ја слобалната сметка за [[User:Example]] со причината „Спам“",
-	"apihelp-setglobalaccountstatus-example-2": "Отклучи и притај ја глобалната сметка за [[User:Example]] со причината „Можам“"
+	"apihelp-setglobalaccountstatus-example-2": "Отклучи и притај ја глобалната сметка за [[User:Example]] со причината „Можам“",
+	"centralauth-log-gblrename-oldname": "Претходно корисничко име"
 }

@@ -290,6 +290,10 @@ $specialPageAliases['he'] = array(
 	'MultiLock' => array( 'נעילה_מרובה' ),
 	'GlobalRenameUser' => array( 'שינוי_שם_משתמש_גלובלי' ),
 	'GlobalRenameProgress' => array( 'התקדמות_שינוי_שם_משתמש_גלובלי' ),
+	'GlobalUserMerge' => array( 'מיזוג_חשבון_גלובלי' ),
+	'GlobalRenameRequest' => array( 'בקשת_שינוי_שם_גלובלית' ),
+	'GlobalRenameQueue' => array( 'תור_שינויי_שם_גלובלי' ),
+	'SulRenameWarning' => array( 'אזהרה_שינוי_שם_של_SUL' ),
 );
 
 /** Hindi (हिन्दी) */

@@ -158,7 +158,7 @@
 	"centralauth-minutes-ago": "пре $1 {{PLURAL:$1|минут|минута|минута}}",
 	"centralauth-hours-ago": "пре $1 {{PLURAL:$1|сат|сата|сати}}",
 	"centralauth-days-ago": "пре $1 {{PLURAL:$1|дан|дана|дана}}",
-	"centralauth-months-ago": "пре {{PLURAL:$1|месец дана|$1 месеца|$1 месеци}}",
+	"centralauth-months-ago": "пре $1 {{PLURAL:$1|месец|месеца|месеци}}",
 	"centralauth-years-ago": "пре {{PLURAL:$1|годину дана|$1 године|$1 година}}",
 	"centralauth-prefs-status": "Стање глобалног налога:",
 	"centralauth-prefs-not-managed": "Не користи се обједињени налог",
