@@ -39,7 +39,8 @@
 			"Themasterriot",
 			"Macofe",
 			"Mor",
-			"Jonathan rrr"
+			"Jonathan rrr",
+			"Alan"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -454,5 +455,8 @@
 	"globalrenamequeue-view-rejected": "rechazado",
 	"centralauth-abortlogin-renamed": "Se cambió el nombre de tu cuenta a «$1». Utiliza ese nombre de usuario.",
 	"sulrenamewarning-title": "Se renombró {{GENDER:$1|tu}} cuenta",
-	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro."
+	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
+	"apihelp-globaluserrights-param-user": "Nombre de usuario global.",
+	"apihelp-globaluserrights-param-userid": "ID de usuario global.",
+	"apihelp-globaluserrights-param-reason": "Razón para el cambio."
 }

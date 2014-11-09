@@ -345,6 +345,7 @@
 	"centralauth-rename-form-reason": "סיבה",
 	"centralauth-rename-form-movepages": "העברת דפי משתמש",
 	"centralauth-rename-form-suppressredirects": "לא ליצור הפניות",
+	"centralauth-rename-form-overrideantispoof": "לעקוף כל התנגשות של AntiSpoof",
 	"centralauth-rename-notinstalled": "ההרחבה Renameuser אינה מותקנת.",
 	"centralauth-rename-doesnotexist": "החשבון שניתן אינו קיים.",
 	"centralauth-rename-alreadyexists": "שם המשתמש המבוקש כבר קיים.",
@@ -354,6 +355,7 @@
 	"centralauth-rename-alreadyinprogress": "עבור המשתמש הזה כבר התחיל [[Special:GlobalRenameProgress/$1|תהליך שינוי שם]].",
 	"centralauth-renameuser-global-inprogress": "כבר [[Special:GlobalRenameProgress/$1|התחיל תהליך]] שינוי שם גלובלי עבור $1.",
 	"centralauth-rename-queued": "משימות לשינוי השם של $1 ל{{GRAMMAR:תחילית|$2}} הוכנסו לתור ב־$3.\n\nהצגת ההתקדמות בדף [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts": "שם משתמש שנבחר דומ מדי לשמות משתמש קיימים.",
 	"centralauth-rename-progress-username": "שם משתמש",
 	"centralauth-rename-notinprogress": "אין תהליכי שינוי שם נוכחי עבור $1. ייתכן שהם כבר הסתיימו.",
 	"centralauth-rename-table-domain": "ויקי מקומי",
@@ -454,5 +456,16 @@
 	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה",
 	"sulrenamewarning-renamed": "שם החשבון {{GENDER:$2|שלך}} '''$1''' שוּנָה אל '''$2''' במהלך מעבר אוטומטי למערכת כניסה מאוחדת של {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד.",
-	"globalrenamequeue-request-reason-label": "הערה על שורת יומן ציבורית (אם זה מתקבל)"
+	"globalrenamequeue-request-reason-label": "הערה על שורת יומן ציבורית (אם זה מתקבל)",
+	"apihelp-centralauthtoken-description": "אחזר centralauthtoken לביצוע בקשה מאומתת לוויקי משויך.",
+	"apihelp-centralauthtoken-example-1": "אחזור centralauthtoken",
+	"apihelp-deleteglobalaccount-description": "מחיקת משתמש גלובלי.",
+	"apihelp-deleteglobalaccount-param-user": "משתמש למחוק.",
+	"apihelp-deleteglobalaccount-param-reason": "סיבה למחיקת משתמש.",
+	"apihelp-deleteglobalaccount-example-1": "מחיקת חשבון גלובלי עבור [[User:Example]]",
+	"apihelp-globaluserrights-description": "הוספה/הסרה של משתמש אל/מתוך קבוצות גלובליות.",
+	"apihelp-globaluserrights-param-user": "שם משתמש גלובלי.",
+	"apihelp-globaluserrights-param-userid": "מזהה משתמש גלובלי.",
+	"apihelp-globaluserrights-param-add": "הספת משתמש לקבוצות הגלובליות האלו.",
+	"apihelp-globaluserrights-param-remove": "הסרת משתמש מהקבוצות הגלובליות האלו."
 }

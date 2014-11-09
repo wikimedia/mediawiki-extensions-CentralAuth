@@ -382,5 +382,6 @@
 	"globalrenamequeue-request-cancel-text": "Ofbriechen",
 	"globalrenamequeue-request-unknown-title": "Ufro net fonnt",
 	"globalrenamequeue-request-status-title": "\"$1\" an \"$2\" ëmbenennen",
-	"sulrenamewarning-title": "{{GENDER:$1|Äre}} Benotzerkont gouf ëmbenannt"
+	"sulrenamewarning-title": "{{GENDER:$1|Äre}} Benotzerkont gouf ëmbenannt",
+	"centralauth-log-gblrename-oldname": "Virege Benotzernumm"
 }
