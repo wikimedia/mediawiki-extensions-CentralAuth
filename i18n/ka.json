@@ -86,6 +86,7 @@
 	"centralauth-ro": "გლობალური ანგარიშის ინფორმაცია",
 	"centralauth-admin-intro": "ეს ინტერფეისი შესაძლოა გამოყენებული იქნას გლობალური ანგარიშების მართვისთვის.",
 	"centralauth-admin-manage": "ანგარიშის მონაცემების მართვა.",
+	"centralauth-admin-view": "ინფორმაცია ანგარიშის შესახებ",
 	"centralauth-admin-username": "მომხმარებლის სახელი:",
 	"centralauth-admin-lookup-ro": "მომხმარებლის ინფოს ნახვა",
 	"centralauth-admin-lookup-rw": "მომხმარებლის ანგარიშის მართვა",

@@ -187,6 +187,8 @@
 	"centralauth-renameuser-merged": "L'utente $1 è stato migrato mmerz'a nu sistema 'e cunto unico.\nSi vuje 'o cagnate nomme, l'utente lucale adda essere scucchiato 'a 'o cunto globbale.",
 	"centralauth-renameuser-reserved": "'O nomme $2 è reservato pe' nu cunto globbale.",
 	"centralauth-invalid-wiki": "Nisciuna database 'e wiki: $1",
+	"centralauth-account-exists": "Nun putite crià 'o cunto utente: 'o nomme utente ca circate è stato già pigliato int' 'o sistema 'e l'utente aunifecato.",
+	"centralauth-account-unattached-exists": "Nun se può crià 'o cunto: 'o nomme utente addimannato è in conflitto cu n'atu nomme utente dint' 'o sistema 'e cunte aunite.",
 	"centralauth-log-status-none": "(nisciuno)",
 	"centralauth-editgroup-noset": "(nisciuno)",
 	"centralauth-editset-nowikis": "(nisciuno)",

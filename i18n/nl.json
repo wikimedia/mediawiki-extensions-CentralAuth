@@ -398,5 +398,6 @@
 	"globalrenamequeue-request-deny-text": "Hernoeming afwijzen",
 	"globalrenamequeue-request-cancel-text": "Annuleren",
 	"globalrenamequeue-view-approved": "goedgekeurd",
-	"globalrenamequeue-view-rejected": "afgewezen"
+	"globalrenamequeue-view-rejected": "afgewezen",
+	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam"
 }

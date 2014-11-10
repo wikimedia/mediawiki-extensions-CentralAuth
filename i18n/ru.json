@@ -170,7 +170,7 @@
 	"centralauth-admin-title": "Менеджер глобальной учётной записи для $1",
 	"centralauth-admin-title-ro": "Данные глобальной учётной записи для участника $1",
 	"globalusers": "Глобальный список участников",
-	"centralauth-listusers-locked": "заморозить",
+	"centralauth-listusers-locked": "заблокирован",
 	"centralauth-listusers-attached": "[[User:$1|существует локально]]",
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-nolocal": "неприсоединённый или не существует локально",

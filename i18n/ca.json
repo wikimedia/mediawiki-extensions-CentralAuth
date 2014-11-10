@@ -331,5 +331,6 @@
 	"centralauth-finishglobaliseemail_subject": "Confirmació de compte de {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "La vostra adreça de correu ha estat associada\namb el compte « $2 » en tots els projectes de Wikimedia, essent el compte principal a {{SITENAME}}.\n\nPer confirmar que aquest compte realment us pertany, per fusionar tots els vostres\ncomptes que puguem fer automàticament, i per permetre que pugueu recuperar el vostre\ncompte si perdeu la contrasenya, obriu aquest enllaç en el vostre navegador:\n\n$3\n\nSi el compte *no* és vostre, seguiu aquest enllaç per cancel·lar la confirmació d'adreça de correu:\n\n$5\n\nAquest codi de confirmació expirarà el $6 a les $7.",
 	"centralauth-usermerge-form-adduser": "Afegeix un usuari",
-	"centralauth-usermerge-form-deleteuser": "Suprimeix l'usuari"
+	"centralauth-usermerge-form-deleteuser": "Suprimeix l'usuari",
+	"centralauth-log-gblrename-oldname": "Anterior nom d'usuari"
 }
