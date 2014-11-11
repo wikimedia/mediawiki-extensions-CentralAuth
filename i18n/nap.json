@@ -189,6 +189,7 @@
 	"centralauth-invalid-wiki": "Nisciuna database 'e wiki: $1",
 	"centralauth-account-exists": "Nun putite crià 'o cunto utente: 'o nomme utente ca circate è stato già pigliato int' 'o sistema 'e l'utente aunifecato.",
 	"centralauth-account-unattached-exists": "Nun se può crià 'o cunto: 'o nomme utente addimannato è in conflitto cu n'atu nomme utente dint' 'o sistema 'e cunte aunite.",
+	"centralauth-account-rename-exists": "Nun se può crià nu cunto: 'O nomme utente richiesto trasisse ncunflitto cu n'atu nomme utente dint' 'o sistema 'e cunte aunite.",
 	"centralauth-log-status-none": "(nisciuno)",
 	"centralauth-editgroup-noset": "(nisciuno)",
 	"centralauth-editset-nowikis": "(nisciuno)",

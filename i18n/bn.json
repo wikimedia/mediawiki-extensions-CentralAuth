@@ -247,5 +247,6 @@
 	"right-globalgrouppermissions": "গ্লোবাল গ্রুপ ব্যবস্থাপনা",
 	"centralloginsuccesful": "প্রবেশ সফল",
 	"centralauth-completelogin-back": "পূর্ববর্তী পাতায় ফিরুন।",
-	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} অ্যাকাউন্ট নিশ্চিতকরণ"
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} অ্যাকাউন্ট নিশ্চিতকরণ",
+	"centralauth-log-gblrename-oldname": "পূর্ববর্তী ব্যবহারকারী নাম"
 }
