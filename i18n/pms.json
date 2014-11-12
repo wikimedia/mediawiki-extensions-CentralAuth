@@ -331,5 +331,6 @@
 	"globalrenameprogress-legend": "Vëdde l'andament dl'arnominament global",
 	"globalrenameuser": "Arnominé n'utent global",
 	"globalrenameuser-legend": "Arnominé n'utent global",
-	"centralauth-rename-abortlogin": "Sò cont a l'é an camin ch'as arnòmina o ch'as fond.\n[[Special:GlobalRenameProgress/$1|Smon-e lë stat]]."
+	"centralauth-rename-abortlogin": "Sò cont a l'é an camin ch'as arnòmina o ch'as fond.\n[[Special:GlobalRenameProgress/$1|Smon-e lë stat]].",
+	"centralauth-rename-form-oldname": "Stranòm atual"
 }

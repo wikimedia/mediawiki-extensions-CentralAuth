@@ -406,7 +406,7 @@
 	"globalrenamerequest-status-title": "Probíhá schvalování žádosti o přejmenování",
 	"centralauth-usermerge-form-adduser": "Přidat uživatele",
 	"centralauth-usermerge-form-deleteuser": "Odebrat uživatele",
-	"globalrenamerequest-status-text": "Vaše žádost o změnu uživatelského jméno se momentálně zpracovává a čeká se na schválení stevardem. Jakmile bude žádost zpracována, budeme vás informovat e-mailem.\n\n;Stávající uživatelské jméno:\n:$1\n;Požadované uživatelské jméno:\n:$2",
+	"globalrenamerequest-status-text": "Vaše žádost o změnu uživatelského jména se momentálně zpracovává a čeká na schválení stevardem. Jakmile bude žádost zpracována, budeme vás informovat e-mailem.\n\n;Stávající uživatelské jméno:\n:$1\n;Požadované uživatelské jméno:\n:$2",
 	"centralauth-abortlogin-renamed": "Váš účet byl přejmenován na „$1“. Používejte prosím nové uživatelské jméno.",
 	"sulrenamewarning-title": "{{GENDER:$1|Váš}} uživatelský účet byl přejmenován"
 }
