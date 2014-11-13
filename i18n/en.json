@@ -526,5 +526,5 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "Optional MD5 of the expected current <username>:<hidden>:<locked>, to detect edit conflicts. Set <locked> to 1 for locked, 0 for unlocked.",
 	"apihelp-setglobalaccountstatus-example-1": "Lock the global account for [[User:Example]] with reason \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Unlock and suppress the global account for [[User:Example]] with reason \"I can\"",
-	"centralauth-log-gblrename-oldname": "Previous username"
+	"centralauth-log-gblrename-oldname": "Previous username:"
 }
