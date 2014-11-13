@@ -467,5 +467,6 @@
 	"apihelp-globaluserrights-param-user": "שם משתמש גלובלי.",
 	"apihelp-globaluserrights-param-userid": "מזהה משתמש גלובלי.",
 	"apihelp-globaluserrights-param-add": "הספת משתמש לקבוצות הגלובליות האלו.",
-	"apihelp-globaluserrights-param-remove": "הסרת משתמש מהקבוצות הגלובליות האלו."
+	"apihelp-globaluserrights-param-remove": "הסרת משתמש מהקבוצות הגלובליות האלו.",
+	"centralauth-log-gblrename-oldname": "שם משתמש קודם"
 }
