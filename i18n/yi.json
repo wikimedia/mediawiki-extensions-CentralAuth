@@ -173,5 +173,6 @@
 	"centralauth-editset-badwikis": "די פֿאלגנדע {{PLURAL:$2|וויקי עקזיסטירט נישט|וויקיס עקזיסטירן נישט}}: $1.",
 	"centralauth-editset-success": "וויקיגרופע דערפֿאלגרייך געענדערט.",
 	"centralauth-editset-success-delete": "וויקיגרופע דערפֿאלגרייך אויסגעמעקט.",
-	"right-globalgrouppermissions": "פארוואלטן גלאבאלע גרופעס"
+	"right-globalgrouppermissions": "פארוואלטן גלאבאלע גרופעס",
+	"centralauth-log-gblrename-oldname": "פריערדיגער באניצער־נאמען:"
 }

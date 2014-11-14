@@ -309,5 +309,9 @@
 	"centralauth-usermerge-form-reason": "Разлог",
 	"logentry-gblrename-merge": "$1 је глобално {{GENDER:$2|спојио|спојила}} $4 у $5",
 	"centralauth-usermerge-confirm": "Да ли желите да глобално спојите ове кориснике?",
-	"centralauth-usermerge-toomany": "Само $1 {{PLURAL:$1|корисника}} се може спојити истовремено."
+	"centralauth-usermerge-toomany": "Само $1 {{PLURAL:$1|корисника}} се може спојити истовремено.",
+	"globalrenamerequest-username-help": "Ово је сада ваше корисничко име.",
+	"globalrenamerequest-newname-label": "Жељено корисничко име:",
+	"globalrenamerequest-email-label": "Е-пошта:",
+	"globalrenamerequest-email2-label": "Потврда е-поште:"
 }
