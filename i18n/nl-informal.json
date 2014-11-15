@@ -13,7 +13,7 @@
 	"centralauth-merge-dryrun-incomplete": "Je bent nu klaar om verder te gaan, maar een aantal gebruikers konden niet automatisch bevestigd worden en worden dus niet automatisch gemigreerd. Die kan je op een later moment samenvoegen.\n\nEr zijn nog geen wijzigingen aan je gebruiker gemaakt.",
 	"centralauth-merge-dryrun-home": "Het migratiesysteem kon niet bevestigen dat jij de eigenaar bent van de gebruiker op de thuiswiki voor je gebruiker.\n\nEr is een andere wiki vastgesteld als thuiswiki voor je gebruiker; volg de link hieronder en meld je daar aan om je gebruikersmigratie te voltooien.",
 	"centralauth-merge-step3-detail": "Je kunt nu je samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki's:",
-	"centralauth-merge-no-accounts": "Er zijn geen gebruikers met jouw naam gevonden in de volgtabel voor globale gebruikers!\nDe database moet corrupt zijn.",
+	"centralauth-merge-no-accounts": "Er zijn geen gebruikers met jouw naam gevonden in de volgtabel voor globale gebruikers!\nDe database moet beschadigd zijn.",
 	"centralauth-merge-home-password": "De hieronder opgegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan jij hebt opgegeven.\nVoer het wachtwoord voor de thuiswiki in.",
 	"centralauth-complete-text": "Je kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.",
 	"centralauth-incomplete-text": "Als je gebruikers zijn samengevoegd kan je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.",

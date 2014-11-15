@@ -334,5 +334,19 @@
 	"centralauth-rename-abortlogin": "Sò cont a l'é an camin ch'as arnòmina o ch'as fond.\n[[Special:GlobalRenameProgress/$1|Smon-e lë stat]].",
 	"centralauth-rename-form-oldname": "Stranòm atual",
 	"centralauth-rename-form-newname": "Stranòm neuv",
-	"centralauth-rename-form-reason": "Rason"
+	"centralauth-rename-form-reason": "Rason",
+	"centralauth-rename-form-movepages": "Tramudé le pàgine prinsipaj ëd j'utent",
+	"centralauth-rename-form-suppressredirects": "Eliminé la creassion ëd ridiression",
+	"centralauth-rename-form-overrideantispoof": "Passé dzora a qualsëssìa conflit AntiSpoof",
+	"centralauth-rename-notinstalled": "L'estension për Arnominé j'utent a l'é nen anstalà.",
+	"centralauth-rename-doesnotexist": "Ël cont fornì a esist pa.",
+	"centralauth-rename-alreadyexists": "Lë stranòm ciamà a esist già.",
+	"centralauth-rename-unattached-intheway": "A-i é dij cont nen tacà ch'a deuvro lë stranòm ciamà.",
+	"centralauth-rename-badusername": "Lë stranòm ciamà a va nen bin.",
+	"centralauth-rename-cannotself": "A peul pa arnominé chiel-midem.",
+	"centralauth-rename-alreadyinprogress": "A-i é già n'arnominament [[Special:GlobalRenameProgress/$1|an cors]] për cost utent.",
+	"centralauth-renameuser-global-inprogress": "A-i é già n'arnominament global [[Special:GlobalRenameProgress/$1|an cors]] për $1.",
+	"centralauth-rename-queued": "Ij travaj për arnominé $1 a $2 a son ëstàit butà an coa an $3.\n\nSmon-e ij progress an [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts": "Lë stranòm sërnù a smija tròp a djë stranòm già esistent.",
+	"centralauth-rename-progress-username": "Stranòm"
 }

@@ -44,7 +44,7 @@
 	"centralauth-merge-step3-title": "Samengevoegde gebruiker aanmaken",
 	"centralauth-merge-step3-detail": "U kunt nu uw samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki's:",
 	"centralauth-merge-step3-submit": "Gebruikers samenvoegen",
-	"centralauth-merge-no-accounts": "Er zijn geen gebruikers met uw naam gevonden in de volgtabel voor globale gebruikers!\nDe database moet corrupt zijn.",
+	"centralauth-merge-no-accounts": "Er zijn geen gebruikers met uw naam gevonden in de volgtabel voor globale gebruikers!\nDe database moet beschadigd zijn.",
 	"centralauth-merge-home-password": "De hieronder opgegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan u hebt opgegeven.\nVoer het wachtwoord voor de thuiswiki in.",
 	"centralauth-complete": "Samenvoegen gebruikers afgerond!",
 	"centralauth-incomplete": "Samenvoegen gebruikers niet volledig!",
@@ -345,7 +345,7 @@
 	"globalrenameprogress-legend": "Status van globale hernoeming weergeven",
 	"globalrenameuser": "Globale gebruiker hernoemen",
 	"globalrenameuser-legend": "Globale gebruiker hernoemen",
-	"centralauth-rename-abortlogin": "Uw gebruikersaccount wordt momenteel hernoemd of samengevoegd. [[Special:GlobalRenameProgress/$1|De status bekijken]].",
+	"centralauth-rename-abortlogin": "Uw gebruiker wordt momenteel hernoemd of samengevoegd. [[Special:GlobalRenameProgress/$1|De status bekijken]].",
 	"centralauth-rename-form-oldname": "Huidige gebruikersnaam",
 	"centralauth-rename-form-newname": "Nieuwe gebruikersnaam",
 	"centralauth-rename-form-reason": "Reden",
@@ -399,5 +399,5 @@
 	"globalrenamequeue-request-cancel-text": "Annuleren",
 	"globalrenamequeue-view-approved": "goedgekeurd",
 	"globalrenamequeue-view-rejected": "afgewezen",
-	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam"
+	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam:"
 }
