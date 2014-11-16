@@ -388,6 +388,8 @@
 	"apihelp-query+globalallusers-example-1": "نوم دیارکن کاریاریا جهونی",
 	"apihelp-query+globalgroups-example-1": "نومجاگه گرویا جهونی",
 	"apihelp-query+globaluserinfo-description": "نشو دئن دونسمنیا دباره کاریار جهونی.",
+	"apihelp-query+globaluserinfo-example-1": "گرتن دونسمنی دباره کاریار جهونی ایسنی",
+	"apihelp-query+globaluserinfo-example-2": "گرتن دونسمنی دباره کاریار جهونی [[کاریار:نمونه|نمونه]]",
 	"apihelp-query+wikisets-param-from": "نوم ویکی سی شرو د میزوکاری بیه.",
 	"apihelp-query+wikisets-param-orderbyname": "سر جا کردن نتیجه یا وا نوم.",
 	"apihelp-query+wikisets-example-1": "نومجاگه دسه یا ویکی",
