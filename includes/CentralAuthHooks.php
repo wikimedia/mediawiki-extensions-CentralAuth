@@ -1217,6 +1217,49 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param $id user_id integer
+	 * @param User $user
+	 * @param SpecialPage $sp
+	 */
+	static function onSpecialContributionsBeforeMainOutput( $id, User $user, SpecialPage $sp ) {
+		if ( $user->isAnon() ) {
+			return true;
+		}
+
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( !$centralUser->exists() || !$centralUser->isAttached()
+			|| !$centralUser->isLocked() || $centralUser->isHidden()
+		) {
+			return true;
+		}
+
+		$out = $sp->getOutput();
+		$count = LogEventsList::showLogExtract(
+			$out,
+			array( 'globalauth' ),
+			MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global",
+			'',
+			array(
+				'lim' => 1,
+				'showIfEmpty' => false,
+				'msgKey' => array(
+					'centralauth-contribs-locked-log',
+					$user->getName()
+				),
+				'offset' => '',
+			)
+		);
+
+		if ( $count === 0 ) { // we couldn't load the log entry
+			$out->wrapWikiMsg( '<div class="mw-warning-with-logexcerpt">$1</div>',
+				array( 'centralauth-contribs-locked', $user )
+			);
+		}
+
+		return true;
+	}
+
+	/**
 	 * @param $groups
 	 * @return bool
 	 */

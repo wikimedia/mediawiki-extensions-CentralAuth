@@ -360,6 +360,7 @@ $wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect
 $wgHooks['LogEventsListGetExtraInputs'][] = 'CentralAuthHooks::onLogEventsListGetExtraInputs';
 $wgHooks['SpecialLogAddLogSearchRelations'][] = 'CentralAuthHooks::onSpecialLogAddLogSearchRelations';
 $wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
+$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
