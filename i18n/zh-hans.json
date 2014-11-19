@@ -489,6 +489,7 @@
 	"apihelp-globaluserrights-example-1": "将用户FooBot加入至全域用户组“bot”，并从“sysop”和“bureaucrat”全域用户组移除",
 	"apihelp-globaluserrights-example-2": "将ID为123的全域用户加入至“bot”全域用户组，并将其从全域用户组“sysop”和“bureaucrat”中移除",
 	"apihelp-query+globalallusers-description": "列举所有全域用户。",
+	"apihelp-query+globalallusers-param-dir": "排序方向。",
 	"apihelp-query+globalallusers-param-excludegroup": "在指定的全域用户组中排除用户。",
 	"apihelp-query+globalallusers-example-1": "全域用户列表",
 	"apihelp-query+globalgroups-description": "列举所有全域用户。",
