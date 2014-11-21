@@ -395,6 +395,7 @@
 	"apihelp-globaluserrights-param-add": "کاریار نه د ای گرویا جهونی اضاف بکیت.",
 	"apihelp-globaluserrights-param-remove": "کاریار نه د ای گرویا جهونی ؤرداریت.",
 	"apihelp-globaluserrights-param-reason": "دلیل آلشت دئن.",
+	"apihelp-query+globalallusers-param-prefix": "پی جوری سی کاریاریایی که وا ای کلیمه شرو بوئن.",
 	"apihelp-query+globalallusers-example-1": "نوم دیارکن کاریاریا جهونی",
 	"apihelp-query+globalgroups-example-1": "نومجاگه گرویا جهونی",
 	"apihelp-query+globaluserinfo-description": "نشو دئن دونسمنیا دباره کاریار جهونی.",
