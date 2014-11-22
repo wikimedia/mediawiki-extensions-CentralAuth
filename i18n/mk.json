@@ -499,5 +499,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <username>:<hidden>:<locked> за утврдување на спротиставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
 	"apihelp-setglobalaccountstatus-example-1": "Заклучи ја слобалната сметка за [[User:Example]] со причината „Спам“",
 	"apihelp-setglobalaccountstatus-example-2": "Отклучи и притај ја глобалната сметка за [[User:Example]] со причината „Можам“",
-	"centralauth-log-gblrename-oldname": "Претходно корисничко име"
+	"centralauth-log-gblrename-oldname": "Претходно корисничко име",
+	"centralauth-contribs-locked": "Оваа сметка е глобално заклучена.\nПовеќе информации ќе најдете во [[Special:CentralAuth/$1|подробностите за глобалната сметка]].",
+	"centralauth-contribs-locked-log": "Оваа сметка е глобално заклучена.\nПодолу е прикажана последната ставка во дневникот на заклучувања, за ваша информација:"
 }

@@ -484,5 +484,6 @@
 	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
 	"apihelp-globaluserrights-param-user": "Nombre de usuario global.",
 	"apihelp-globaluserrights-param-userid": "ID de usuario global.",
-	"apihelp-globaluserrights-param-reason": "Razón para el cambio."
+	"apihelp-globaluserrights-param-reason": "Razón para el cambio.",
+	"centralauth-contribs-locked": "Esta cuenta está bloqueada globalmente.\nVéase [[Special:CentralAuth/$1|detalles de cuenta global]] para más información."
 }

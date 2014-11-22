@@ -283,7 +283,7 @@
 	"centralauth-editset-badname": "ცარიელი ან არასწორი სახელი",
 	"centralauth-editset-badtype": "არასწორი ტიპი.",
 	"centralauth-editset-setexists": "ასეთი სახელწოდების მქონე ნაკრები უკვე არსებობს.",
-	"centralauth-editset-nowikis": "არცერთი ვიკი-პროექტია მითითებული.",
+	"centralauth-editset-nowikis": "(არცერთი)",
 	"centralauth-editset-nouse": "(არცერთი)",
 	"centralauth-editset-usage": "გამოიყენება ჯგუფებში:",
 	"centralauth-editset-badwikis": "შემდეგი {{PLURAL:$2|ვიკი-პროექტი არ|ვიკი-პროექტები არ}} არსებობს: $1.",
