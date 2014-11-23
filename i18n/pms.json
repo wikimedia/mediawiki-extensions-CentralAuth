@@ -366,5 +366,11 @@
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} a l'ha arnominà ëd fasson global $4 a $5",
 	"globalusermerge": "Fonde l'utent global",
 	"globalusermerge-legend": "Fonde l'utent global",
-	"centralauth-usermerge-form-newuser": "Stranòm final"
+	"centralauth-usermerge-form-newuser": "Stranòm final",
+	"centralauth-usermerge-form-usernames": "Stranòm atuaj",
+	"centralauth-usermerge-form-reason": "Rason",
+	"centralauth-usermerge-notinstalled": "L'estension UserMerge a l'é nen anstalà.",
+	"centralauth-usermerge-disabled": "L'utiss ëd fusion d'utent global a l'é disativà.",
+	"logentry-gblrename-merge": "$1 {{GENDER:$2|a l'ha fondù}} $4 an $5 ëd fasson global",
+	"centralauth-usermerge-queued": "La fusion ëd $1 an $2 a l'é stàita butà an coa.\n\nCh'a vëdda ij progress su [[Special:GlobalRenameProgress/$3]]."
 }
