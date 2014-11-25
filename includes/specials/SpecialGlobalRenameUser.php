@@ -106,8 +106,15 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 		if ( !$this->overrideAntiSpoof ) {
 			$spoofUser = new CentralAuthSpoofUser( $newUser->getName() );
-			if ( $spoofUser->getConflicts() ) {
-				return Status::newFatal( 'centralauth-rename-antispoofconflicts' );
+			$conflicts = $this->processAntiSpoofConflicts(
+				$oldUser->getName(),
+				$spoofUser->getConflicts()
+			);
+			if ( $conflicts ) {
+				return Status::newFatal(
+					'centralauth-rename-antispoofconflicts2',
+					$this->getLanguage()->commaList( $conflicts )
+				);
 			}
 		}
 
@@ -115,6 +122,24 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$status = $validator->validate( $oldUser, $newUser );
 
 		return $status;
+	}
+
+	protected function processAntiSpoofConflicts( $oldname, array $conflicts ) {
+		$display = array();
+		foreach ( $conflicts as $name ) {
+			if ( $name === $oldname ) {
+				// Not a conflict since the old usage will go away
+				continue;
+			}
+			$ca = new CentralAuthUser( $name );
+			if ( $ca->isHidden() ) {
+				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
+			} else {
+				$display[] = $name;
+			}
+		}
+
+		return $display;
 	}
 
 	/**
