@@ -35,6 +35,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$this->getOutput()->setPageTitle( $this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' ) );
 		$this->getOutput()->addModules( 'ext.centralauth' );
+		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->getOutput()->addJsConfigVars( 'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions() );
 
@@ -212,7 +213,8 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::openElement( 'p' ) .
 				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
-					'target', 'target', 25, $this->mUserName ) .
+					'target', 'target', 25, $this->mUserName,
+					array( 'class' => 'mw-autocomplete-global-user' ) ) .
 				Xml::closeElement( 'p' ) .
 				Xml::openElement( 'p' ) .
 				Xml::submitButton( $lookup,
