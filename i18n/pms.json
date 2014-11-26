@@ -390,5 +390,21 @@
 	"globalrenamerequest-username-help": "Cost a l'é sò stranom adess.",
 	"globalrenamerequest-newname-label": "Stranòm ciamà:",
 	"globalrenamerequest-newname-help": "Ch'a buta ël neuv ëstranòm ch'a veul dovré, për esempi «$1».",
-	"globalrenamerequest-newname-err-invalid": "A l'ha nen ëspessificà në stranòm vàlid."
+	"globalrenamerequest-newname-err-invalid": "A l'ha nen ëspessificà në stranòm vàlid.",
+	"globalrenamerequest-newname-err-taken": "Lë stranòm anserì a l'é già dovrà.\nPër piasì ch'a serna në stranòm diferent.",
+	"globalrenamerequest-email-label": "Adrëssa ëd pòsta eletrònica:",
+	"globalrenamerequest-email-help": "Ch'a buta soa adrëssa ëd pòsta eletrònica.",
+	"globalrenamerequest-email-why-label": "Perchè?",
+	"globalrenamerequest-email-why-explain": "<p>I l'oma damanca ëd n'adrëssa ëd pòsta eletrònica durant ëd process për esse sigur che chiel a perda pa l'Acess a 's cont.</p><p>A podrà sganfé costa adrëssa na vira che ël process d'arnominament a sarà livrà.</p>",
+	"globalrenamerequest-email2-label": "Confirmé l'adrëssa ëd pòsta eletrònica:",
+	"globalrenamerequest-email2-help": "Ch'a buta l'istessa adrëssa ëd pòsta eletrònica ch'a l'ha butà sì-dzora për confirmassion.",
+	"globalrenamerequest-email-mismatch": "J'adrësse ëd pòsta eletrònica a son diferente.<br />Për piasì, ch'a verìfica e ch'a preuva torna.",
+	"globalrenamerequest-email-invalid": "Adrëssa ëd pòsta eletrònica fornìa nen bon-a.",
+	"globalrenamerequest-reason-label": "Rason dl'arcesta",
+	"globalrenamerequest-submit-text": "Ciamé un cangiament ëd nòm",
+	"globalrenamerequest-save-error": "Falì a argistré l'arcesta. Për piasì, ch'a preuva torna.",
+	"globalrenamerequest-status-title": "Arcesta d'arnominament an atèisa d'aprovassion",
+	"centralauth-usermerge-form-adduser": "Gionté n'utent",
+	"centralauth-usermerge-form-deleteuser": "Gavé n'utent",
+	"globalrenamerequest-status-text": "Soa arcesta ëd cangé stranòm a l'é al moment an considerassion e a speta n'apovassion d'un responsàbil. A sarà anformà për pòsta eletrònica cand l'arcesta a sarà tratà.\n\n;Stranòm atual:\n:$1\n;Stranòm ciamà:\n:$2"
 }
