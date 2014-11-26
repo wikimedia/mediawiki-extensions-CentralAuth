@@ -528,6 +528,14 @@ $wgResourceModules['ext.centralauth.noflash'] = array(
 	'styles' => 'ext.centralauth.noflash.css',
 ) + $commonModuleInfo;
 
+$wgResourceModules['ext.centralauth.globaluserautocomplete'] = array(
+	'scripts' => 'ext.centralauth.globaluserautocomplete.js',
+	'dependencies' => array(
+		'jquery.suggestions',
+		'mediawiki.api'
+	)
+) + $commonModuleInfo;
+
 $wgResourceModules['ext.centralauth.globalusers'] = array(
 	'styles' => 'ext.centralauth.globalusers.css',
 ) + $commonModuleInfo;

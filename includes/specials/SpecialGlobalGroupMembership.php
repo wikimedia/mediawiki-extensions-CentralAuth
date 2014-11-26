@@ -30,13 +30,15 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	function switchForm() {
 		global $wgScript;
 
+		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
 			Html::hidden( 'title',  $this->getPageTitle() ) .
 			Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', array(), $this->msg( 'userrights-lookup-user' )->text() ) .
-			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username', 30, $this->mTarget ) . ' <br />' .
+			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username', 30, $this->mTarget,
+				array( 'class' => 'mw-autocomplete-global-user' ) ) . ' <br />' .
 			Xml::submitButton( $this->msg( 'editusergroup' )->text() ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
