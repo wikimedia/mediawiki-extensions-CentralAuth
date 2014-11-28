@@ -287,8 +287,11 @@ class SpecialCentralAuth extends SpecialPage {
 			'username' => $globalUser->getName(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
-			'locked' => $this->msg( $globalUser->isLocked() ? 'centralauth-admin-yes' : 'centralauth-admin-no' )->escaped(),
 		);
+
+		if ( $globalUser->isLocked() ) {
+			$attribs['locked'] = $this->msg( 'centralauth-admin-yes' )->escaped();
+		}
 
 		if ( $this->mCanOversight ) {
 			$attribs['hidden'] = $this->formatHiddenLevel( $globalUser->getHiddenLevel() );
