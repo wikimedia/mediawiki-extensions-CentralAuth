@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea06b5a_870d0944",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2014-11-28T18:21:13Z",
+      "side": 1,
+      "message": "code style: missing spaces around function params",
+      "revId": "2cdb973f9be87b62886fe50afcacd7059fa7cd22",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
