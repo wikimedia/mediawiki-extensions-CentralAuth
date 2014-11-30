@@ -469,6 +469,6 @@
 	"apihelp-globaluserrights-param-add": "הספת משתמש לקבוצות הגלובליות האלו.",
 	"apihelp-globaluserrights-param-remove": "הסרת משתמש מהקבוצות הגלובליות האלו.",
 	"centralauth-log-gblrename-oldname": "שם משתמש קודם",
-	"centralauth-contribs-locked": "החשבון הזה נעול גלובלית.\nר' [[Special:CentralAuth/$1|פרטים על חשבון גליבלי]] למידע נוסף.",
+	"centralauth-contribs-locked": "החשבון הזה נעול גלובלית.\nר' [[Special:CentralAuth/$1|פרטים על החשבון הגלובלי]] למידע נוסף.",
 	"centralauth-contribs-locked-log": "החשבון הזה נעול גלובלית.\nהעיול האחרון ביומן הנעילות ניתן להלן לעיון:"
 }
