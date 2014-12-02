@@ -325,6 +325,11 @@
 	"centralauth-warning-notattached": "'O cunto lucale nun è accucchiato a nu cunto globbale.",
 	"centralauth-finishglobaliseemail_subject": "Conferma 'o cunto ncopp'a {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "L'indirizzo vuosto 'e posta elettroneca è assuociato a l'utenza \"$2\" ncopp' 'e pruggette Wikimedia, cu l'utenza prencepale ncopp'a {{SITENAME}}.\n\nPe putè cunfermà ca st'utenza appartene overo a vuje, aunì tutte l'utenze addò nun fossero accucchiate automatecamente e putè arripiglià 'a password si v' 'a scurdate arapite stu collegamente int' 'o navigatore vuosto:\n\n$3\n\nSi l'utenza *nun* v'appartiene, jate int'a stu collegamento pe scancellà 'a cunferma 'e ll'indirizzo 'e posta elettronica:\n\n$5\n\nStu codece 'e cunferma ammaturarrà 'o $6 a 'e $7.",
+	"right-centralauth-rename": "Renommena ll'utente globbalmente",
+	"action-centralauth-rename": "renommena ll'utente globbalmente",
+	"globalrenameprogress": "Prugresso 'e renommena globbale",
+	"globalrenameprogress-legend": "Vedite 'o stato d'avvanzamento d' 'a renommena globbale",
+	"globalrenameuser": "Renommena cunto globbale",
 	"globalrenameuser-legend": "Renommena cunto globbale",
 	"centralauth-rename-abortlogin": "'O cunto vuosto è mò mò 'n fase e renommena o aunione.[[Special:GlobalRenameProgress/$1|Vedite 'o stato]].",
 	"centralauth-rename-form-oldname": "Nomme utente 'e mo",
@@ -366,7 +371,10 @@
 	"centralauth-usermerge-form-reason": "Mutivo",
 	"centralauth-usermerge-notinstalled": "L'estensione UserMerge nun è installata.",
 	"centralauth-usermerge-disabled": "'O strumiento d'unione globbale utente è stutato.",
+	"logentry-gblrename-merge": "$1 {{GENDER:$2|rinommenaje}} globbalmente $4 'n $5",
 	"centralauth-usermerge-queued": "Ll'aunione 'e $1 dint'a $2 so' state mise ncoda.\n\nVide 'o stato 'e prugresso dint'a [[Special:GlobalRenameProgress/$3]].",
+	"centralauth-usermerge-invalid": "Nun ce sta nu cunto globbale c' 'o nomme \"$1\".",
+	"centralauth-usermerge-already": "Ce sta già na renommena o aunione globbale 'n curzo pe' $1.",
 	"right-centralauth-usermerge": "Aunisce globalmente cchiù utente",
 	"globalrenamerequest-save-error": "Nun se può sarvà 'a richiesta, prova n'ata vota."
 }
