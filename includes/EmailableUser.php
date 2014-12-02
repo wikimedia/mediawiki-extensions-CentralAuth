@@ -47,7 +47,7 @@ class EmailableUser extends User {
 	 */
 	public function sendConfirmAndMigrateMail() {
 		global $wgLang;
-		$tokenLife = 28 * 24 * 60 * 60; // 28 days
+		$tokenLife = 14 * 24 * 60 * 60; // 14 days
 
 		$expiration = null; // gets passed-by-ref and defined in next line.
 		$token = $this->confirmationToken( $expiration );
