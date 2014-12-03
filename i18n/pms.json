@@ -406,5 +406,11 @@
 	"globalrenamerequest-status-title": "Arcesta d'arnominament an atèisa d'aprovassion",
 	"centralauth-usermerge-form-adduser": "Gionté n'utent",
 	"centralauth-usermerge-form-deleteuser": "Gavé n'utent",
-	"globalrenamerequest-status-text": "Soa arcesta ëd cangé stranòm a l'é al moment an considerassion e a speta n'apovassion d'un responsàbil. A sarà anformà për pòsta eletrònica cand l'arcesta a sarà tratà.\n\n;Stranòm atual:\n:$1\n;Stranòm ciamà:\n:$2"
+	"globalrenamerequest-status-text": "Soa arcesta ëd cangé stranòm a l'é al moment an considerassion e a speta n'apovassion d'un responsàbil. A sarà anformà për pòsta eletrònica cand l'arcesta a sarà tratà.\n\n;Stranòm atual:\n:$1\n;Stranòm ciamà:\n:$2",
+	"globalrenamequeue": "Coa dj'arceste d'arnominament global",
+	"globalrenamequeue-desc": "Ch'a trata j'arceste ëd cangiament ëd nòm global",
+	"globalrenamequeue-nav-openqueue": "Arceste an cors",
+	"globalrenamequeue-nav-closedqueue": "Arceste sarà",
+	"globalrenamequeue-column-rq-name": "Stranòm",
+	"globalrenamequeue-column-rq-newname": "Stranòm ciamà"
 }
