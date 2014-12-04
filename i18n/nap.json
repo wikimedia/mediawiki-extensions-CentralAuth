@@ -375,6 +375,8 @@
 	"centralauth-usermerge-queued": "Ll'aunione 'e $1 dint'a $2 so' state mise ncoda.\n\nVide 'o stato 'e prugresso dint'a [[Special:GlobalRenameProgress/$3]].",
 	"centralauth-usermerge-invalid": "Nun ce sta nu cunto globbale c' 'o nomme \"$1\".",
 	"centralauth-usermerge-already": "Ce sta già na renommena o aunione globbale 'n curzo pe' $1.",
+	"centralauth-usermerge-noself": "Nun putite aunì cunte pe cunto vuosto.",
+	"action-centralauth-usermerge": "aunisce globbalmente cchiù utente",
 	"right-centralauth-usermerge": "Aunisce globalmente cchiù utente",
 	"globalrenamerequest-save-error": "Nun se può sarvà 'a richiesta, prova n'ata vota."
 }

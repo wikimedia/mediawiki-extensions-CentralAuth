@@ -412,5 +412,22 @@
 	"globalrenamequeue-nav-openqueue": "Arceste an cors",
 	"globalrenamequeue-nav-closedqueue": "Arceste sarà",
 	"globalrenamequeue-column-rq-name": "Stranòm",
-	"globalrenamequeue-column-rq-newname": "Stranòm ciamà"
+	"globalrenamequeue-column-rq-newname": "Stranòm ciamà",
+	"globalrenamequeue-column-rq-wiki": "Wiki local",
+	"globalrenamequeue-column-rq-requested-ts": "Dàita ëd duvertura",
+	"globalrenamequeue-column-row-actions": "Assion",
+	"globalrenamequeue-column-rq-completed-ts": "Dàita ëd saradura",
+	"globalrenamequeue-column-rq-status": "Stat",
+	"globalrenamequeue-column-rq-performer": "Realisà da",
+	"globalrenamequeue-action-address": "Adrëssa",
+	"globalrenamequeue-action-view": "Smon-e",
+	"globalrenamequeue-request-title": "Arnominé «$1»?",
+	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> a ciama un cangiament ëd nòm a <strong>$3</strong>.",
+	"globalrenamequeue-request-userinfo-local": "utent: $1 wiki prinsipal: $2 neuv nòm: $3 [[MediaWiki:Globalrenamequeue-request-userinfo-local|modifiché]]",
+	"globalrenamequeue-request-userinfo-global": "utent: $1 wiki prinsipal: $2 nòm neuv: $3 [[MediaWiki:Globalrenamequeue-request-userinfo-global|modifiché]]",
+	"globalrenamequeue-request-reason": "<strong>Reason për ciamé ël cangiament ëd nòm</strong>\n:$1",
+	"globalrenamequeue-request-reason-sul": "Utent avisà ëd conflit ëd nòm global an vista dla finalisassion dla SUL.",
+	"globalrenamequeue-request-comments-label": "Nòte/rasonament",
+	"globalrenamequeue-request-movepages": "Tramudé le pàgine prinsipaj ëd j'utent",
+	"globalrenamequeue-request-suppressredirects": "Eliminé la creassion ëd ridiression"
 }
