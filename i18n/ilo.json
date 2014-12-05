@@ -497,5 +497,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "Pagpilian ti MD5 iti nanamnama nga agdama a <username>:<hidden>:<locked>, tapno maduktalan kadagiti suppiat ti panagurnos. Isaad ti <locked> iti 1 para iti naserraan, 0 para iti nalukatan.",
 	"apihelp-setglobalaccountstatus-example-1": "Serraan ti global a pakabilangan para kenni [[User:Example]] iti rason iti \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Lukatan ti serra ken pasardengen ti global a pakabilangan para kenni  [[User:Example]] iti rason iti \"Mabalinko\"",
-	"centralauth-log-gblrename-oldname": "Dati a nagan ti agar-aramat:"
+	"centralauth-log-gblrename-oldname": "Dati a nagan ti agar-aramat:",
+	"centralauth-contribs-locked": "Daytoy a pakabilangan ket global a naserran.\nKitaen dagiti [[Special:CentralAuth/$1|salaysay ti global a pakabilangan]] para iti adu pay a pakaammo.",
+	"centralauth-contribs-locked-log": "Daytoy a pakabilangan ket global a naserraan.\nTi kinaudi a naikabil iti listaan ti pannakaserra ket naited dita baba para iti reperensia:"
 }
