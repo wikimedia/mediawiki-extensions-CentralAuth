@@ -344,8 +344,17 @@
 	"globalusermerge": "Глобальни декъашхойн дӀаяздарш вовшахтохар",
 	"globalusermerge-legend": "Глобальни декъашхойн дӀаяздарш вовшахтохар",
 	"centralauth-usermerge-form-newuser": "Декъашхочун тӀаьххьара цӀе",
+	"centralauth-usermerge-form-usernames": "Декъашхочун карара цӀераш",
 	"centralauth-usermerge-form-reason": "Бахьна",
+	"centralauth-usermerge-notinstalled": "Шордийраг UserMerge дӀахӀоттийна яц.",
 	"right-centralauth-usermerge": "Массийта глобальни декъашхой вовшахтохар",
+	"globalrenamerequest-username-label": "Декъашхочун карара цӀе:",
+	"globalrenamerequest-username-help": "ХӀара хьан карара цӀе ю.",
+	"globalrenamerequest-newname-label": "Декъашхочун йоьхуш йолу цӀе:",
 	"globalrenamerequest-email-label": "Электронан почтан адрес",
-	"globalrenamerequest-email-why-label": "ХӀунда?"
+	"globalrenamerequest-email-help": "ДӀаязде хьан электронан почтан адрес.",
+	"globalrenamerequest-email-why-label": "ХӀунда?",
+	"globalrenamerequest-email2-label": "Бакъде электронан почтан адрес:",
+	"centralauth-usermerge-form-adduser": "ТӀетоха декъашхо",
+	"globalrenamequeue-request-title": "ЦӀе хуьйций? «$1»?"
 }

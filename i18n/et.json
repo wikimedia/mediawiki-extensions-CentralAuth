@@ -36,7 +36,7 @@
 	"centralauth-merge-home-password": "Selle konto koduvikil (loetletud allpool) on sisestatust erinev parool.\nPalun sisesta koduviki parool.",
 	"centralauth-complete": "Ühendkonto on loodud.",
 	"centralauth-incomplete": "Ühendkonto loomine pole lõpule viidud.",
-	"centralauth-complete-text": "Võid nüüd kõigisse vikidesse, mida haldab {{int:Centralauth-groupname}}, sisse logida uut kontot loomata.",
+	"centralauth-complete-text": "Saad nüüd uut kontot loomata sisse logida kõigis vikides, mida haldab {{int:Centralauth-groupname}}.",
 	"centralauth-incomplete-text": "Kui su ühendkonto on loodud, saad kõigisse {{int:Centralauth-groupname}} vikidesse uut kontot loomata sisse logida.",
 	"centralauth-not-owner-text": "Kasutajanimi \"$1\" anti automaatselt konto $2 omanikule.\nKui see oled sina, saad kontode ühendamise lõpetada, sisestades siia selle konto ülemparooli:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Üksnes proovimine</div><br clear='all'/>",

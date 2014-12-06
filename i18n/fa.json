@@ -422,9 +422,13 @@
 	"centralauth-usermerge-form-adduser": "افزودن کاربر",
 	"centralauth-usermerge-form-deleteuser": "حذف کاربر",
 	"globalrenamerequest-status-text": "درخواست تغییر نام کاربری شما در حال تکمیل است و منتظر تصویب توسط یک استیوارد است. \nدر صورت بررسی درخواست، به شما از طریق ایمیل اطلاع داده خواهد شد.\n\n;نام کاربری فعلی:\n:$1\n;نام کاربری درخواست‌شده:\n:$2",
+	"globalrenamequeue-nav-openqueue": "درخواست‌های باز",
+	"globalrenamequeue-nav-closedqueue": "درخواست‌های بسته‌شده",
 	"globalrenamequeue-column-rq-name": "نام کاربری",
 	"globalrenamequeue-column-rq-newname": "نام کاربری درخواستی:",
 	"globalrenamequeue-column-rq-wiki": "ویکی محلی",
+	"globalrenamequeue-column-rq-requested-ts": "داده‌های باز",
+	"globalrenamequeue-column-row-actions": "عملکرد",
 	"globalrenamequeue-column-rq-completed-ts": "تاریخ بسته‌شدن",
 	"globalrenamequeue-column-rq-status": "وضعیت",
 	"globalrenamequeue-column-rq-performer": "انجام‌شده توسط",
@@ -454,5 +458,6 @@
 	"apihelp-query+globalallusers-description": "شمارش همه کاربران سراسری",
 	"apihelp-query+globalallusers-param-from": "حساب کاربری آغازین جهت شمارش.",
 	"apihelp-query+globalallusers-param-to": "حساب کاربری جهت توقف شمارش.",
+	"apihelp-query+globalallusers-example-1": "فهرست کاربران سراسری",
 	"centralauth-log-gblrename-oldname": "نام کاربری قبلی:"
 }
