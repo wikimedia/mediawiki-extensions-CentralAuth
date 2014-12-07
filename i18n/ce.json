@@ -356,5 +356,19 @@
 	"globalrenamerequest-email-why-label": "ХӀунда?",
 	"globalrenamerequest-email2-label": "Бакъде электронан почтан адрес:",
 	"centralauth-usermerge-form-adduser": "ТӀетоха декъашхо",
-	"globalrenamequeue-request-title": "ЦӀе хуьйций? «$1»?"
+	"centralauth-usermerge-form-deleteuser": "{{GENDER:$2|ДӀаваккха|ДӀаяккха}} декъашхо",
+	"globalrenamequeue-nav-openqueue": "Делина дехарш",
+	"globalrenamequeue-nav-closedqueue": "ДӀачӀаьгӀна дехарш",
+	"globalrenamequeue-column-rq-name": "Декъашхочун цӀе",
+	"globalrenamequeue-column-rq-newname": "Декъашхочун йоьхуш йолу цӀе",
+	"globalrenamequeue-column-rq-wiki": "Локальни вики-проект",
+	"globalrenamequeue-column-rq-requested-ts": "Схьаеллина терахь",
+	"globalrenamequeue-column-row-actions": "Дийраш",
+	"globalrenamequeue-column-rq-completed-ts": "ДӀачӀаьгӀна терахь",
+	"globalrenamequeue-column-rq-status": "Статус",
+	"globalrenamequeue-action-address": "Адрес",
+	"globalrenamequeue-action-view": "Хьажар",
+	"globalrenamequeue-request-title": "ЦӀе хуьйций? «$1»?",
+	"globalrenamequeue-request-cancel-text": "Цаоьшу",
+	"centralauth-log-gblrename-oldname": "Хьалхалера декъашхочун цӀе:"
 }

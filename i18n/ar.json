@@ -18,7 +18,8 @@
 			"OsamaK",
 			"زكريا",
 			"مشعل الحربي",
-			"Ms.Rainbow"
+			"Ms.Rainbow",
+			"وهراني"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -157,7 +158,7 @@
 	"centralauth-admin-logsnippet": "تغييرات الحساب في كامل الموقع السابقة",
 	"centralauth-admin-suppressreason": "على الصعيد العام تم حضر $1 للسبب التالي:$2",
 	"centralauth-admin-not-authorized": "ليس لديك السماحات المطلوبة للقيام بهذا الفعل.",
-	"centralauth-admin-too-many-edits": "لدى الحساب العام \"<nowiki>$1</nowiki>\" ما يزيد عن $2 {{PLURAL:$2|تعديل|تعديل}} ولا يمكن إخفائه.",
+	"centralauth-admin-too-many-edits": "!لدى الحساب العام \"<nowiki>$1</nowiki>\" ما يزيد على {{PLURAL:$2||تعديل واحد|تعديلين|$2 تعديلات|$2 تعديلاً|$2 تعديل}} ولا يمكن إخفاؤه.",
 	"centralauth-admin-title": "إدارة الحساب الموحد $1",
 	"globalusers": "قائمة الحسابات العامة",
 	"centralauth-listusers-locked": "مغلق",
@@ -332,6 +333,13 @@
 	"centralauth-finishglobaliseemail_subject": "تأكيد الحساب على {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "تم إقتران بريدك الإلكتروني بالحساب \"$2\" على كل مشاريع ويكيميديا والويكي الرئيسية لحسابك هي {{SITENAME}}.\n\nلتأكيد ملكيتك لهذا الحساب قم بدمج أياً من الحسابات الخاصة بك والتي لا يمكن دمجها من قبلنا تلقائياً والتي يمكنها أن تساعدك على إسترجاع حسابك إذا نسيت كلمة السر. الرجاء فتح هذا الرابط في المتصفح الخاص بك.\n\n\n$3\n\nإذا كنت *لا* تملك هذا الحساب، الرجاء إستخدام هذا الرابط لإلغاء هذه الرسالة المختصة بتأكيد البريد الإلكتروني:\n\n\n$5\n\n\nتنتهي صلاحية كود التأكيد يوم $6 الساعة $7.",
 	"centralauth-rename-abortlogin": "يجري حاليًا إعادة تسمية حسابك أو دمجه. [[Special:GlobalRenameProgress/$1|عرض الحالة]]",
+	"centralauth-rename-form-reason": "السبب",
+	"centralauth-rename-form-movepages": "نقل صفحات المستخدم",
+	"centralauth-rename-cannotself": "لا يمكنك تغيير اسمك",
+	"centralauth-rename-table-domain": "ويكي محلي",
+	"centralauth-rename-table-status": "الحالة",
+	"centralauth-rename-table-status-inprogress": "في تقدم",
+	"centralauth-rename-table-status-queued": "في قائمة الانتظار",
 	"log-name-gblrename": "سجل إعادة التسمية الشاملة",
 	"globalusermerge": "دمج المستخدم العالمي",
 	"centralauth-usermerge-form-newuser": "اسم المستخدم النهائي",

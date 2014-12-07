@@ -350,7 +350,7 @@
 	"centralauth-warning-notloggedin": "您目前没有登录。",
 	"centralauth-warning-notattached": "本地账户未附属至全局账户。",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}}账户确认",
-	"centralauth-finishglobaliseemail_body": "你的电子邮件地址已经与所有维基媒体项目上的账户“$2”关联，你的主账户位于{{SITENAME}}。\n\n为了确认该账户确实属于你、合并你不能自动合并的账户以及使你能在忘记密码后恢复账户，请在你的浏览器中打开该链接：\n\n$3\n\n如果该账户*不*属于你，请点击该链接取消电子邮件地址确认：\n\n$5\n\n该确认码将于$6 $7过期。",
+	"centralauth-finishglobaliseemail_body": "您的电子邮件地址已经与所有维基媒体项目上的账户“$2”关联，您的主账户位于{{SITENAME}}。\n\n为了确认该账户确实属于您、合并您不能自动合并的账户以及使您能在忘记密码后恢复账户，请在您的浏览器中打开该链接：\n\n$3\n\n如果该账户*不*属于您，请点击该链接取消电子邮件地址确认：\n\n$5\n\n该确认码将于$6 $7过期。",
 	"right-centralauth-rename": "重命名全域账户",
 	"action-centralauth-rename": "重命名全域账户",
 	"globalrenameprogress": "全域重命名进度",
