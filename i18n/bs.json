@@ -3,7 +3,8 @@
 		"authors": [
 			"CERminator",
 			"KWiki",
-			"Kolega2357"
+			"Kolega2357",
+			"Palapa"
 		]
 	},
 	"mergeaccount": "Status spajanja korisničkih računa",
@@ -76,12 +77,14 @@
 	"centralauth": "Menadžer globalnih korisnika",
 	"centralauth-admin-intro": "Ovaj interfejs može se koristiti za administraciju globalnih računa.",
 	"centralauth-admin-manage": "Upravljanje korisničkim podacima",
+	"centralauth-admin-view": "Vidi informacije o računu",
 	"centralauth-admin-username": "Ime korisnika:",
 	"centralauth-admin-lookup-ro": "Pogledajte korisničke podatke",
 	"centralauth-admin-lookup-rw": "Upravljanje korisničkim računom",
 	"centralauth-admin-permission": "Samo stujardi mogu spajati račune drugih korisnika za njih.",
 	"centralauth-admin-no-unified": "Ne postoji unificirani račun za ovo korisničko ime.",
 	"centralauth-admin-info-header": "Informacije globalnog korisnika",
+	"centralauth-admin-info-username": "Korisničko ime:",
 	"centralauth-admin-info-registered": "Registriran:",
 	"centralauth-admin-info-editcount": "Ukupan broj izmjena:",
 	"centralauth-admin-info-locked": "Zaključano:",
@@ -252,5 +255,6 @@
 	"right-centralauth-oversight": "Sakrivanje globalnih računa",
 	"right-centralauth-merge": "Spajanje njegovog računa",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
+	"centralauth-rename-progress-username": "Korisničko ime",
 	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“"
 }

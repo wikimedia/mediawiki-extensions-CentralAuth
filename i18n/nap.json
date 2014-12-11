@@ -406,6 +406,7 @@
 	"globalrenamerequest-status-title": "Richiesta 'e renommena aspettanno a essere approvata",
 	"centralauth-usermerge-form-adduser": "Azzecca utente",
 	"centralauth-usermerge-form-deleteuser": "Lèva utente",
+	"globalrenamerequest-status-text": "'A richiesta toja 'e cagnà 'e nomme utente se sta facenno e se sta' aspettanno l'approvazione 'a nu steward. Te se mannarrà na mail quanno 'a richiesta fosse stata prucessata.\n\n;Nomme utente 'e mo':\n:$1\n;Nomme utente addimannato:\n:$2",
 	"globalrenamequeue": "Córa d' 'e richieste 'e renommena globbale",
 	"globalrenamequeue-desc": "Gistiona 'e richieste 'e renommena globbale",
 	"globalrenamequeue-nav-openqueue": "Richieste arapute",
@@ -420,5 +421,7 @@
 	"globalrenamequeue-column-rq-performer": "Fatto 'a",
 	"globalrenamequeue-action-address": "Indirizzo",
 	"globalrenamequeue-action-view": "Vide",
-	"globalrenamequeue-request-title": "Renommenà \"$1\"?"
+	"globalrenamequeue-request-title": "Renommenà \"$1\"?",
+	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> sta addimannanno d'essere renommenato 'n <strong>$3</strong>.",
+	"globalrenamequeue-request-userinfo-local": "utente: $1 wiki prencepale: $2 nuovo nomme: $3 [[MediaWiki:Globalrenamequeue-request-userinfo-local|càgna]]"
 }
