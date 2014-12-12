@@ -24,10 +24,14 @@ class LocalPageMoveJob extends Job {
 	public function run() {
 		$this->user = User::newFromName( $this->params['renamer'] );
 		foreach ( $this->params['pages'] as $current => $target ) {
-			$this->movePage(
-				Title::newFromText( $current ),
-				Title::newFromText( $target )
-			);
+			try {
+				$this->movePage(
+					Title::newFromText( $current ),
+					Title::newFromText( $target )
+				);
+			} catch ( Exception $e ) {
+				wfDebugLog( 'CentralAuthRename', "Exception while moving $current -> $target: {$e->getMessage()}" );
+			}
 		}
 	}
 
