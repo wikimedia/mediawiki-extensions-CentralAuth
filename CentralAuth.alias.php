@@ -815,12 +815,12 @@ $specialPageAliases['zh-hant'] = array(
 	'MergeAccount' => array( '合併帳號' ),
 	'GlobalGroupMembership' => array( '全域使用者權限' ),
 	'GlobalGroupPermissions' => array( '全域群組權限' ),
-	'WikiSets' => array( 'Wiki集合', '編輯Wiki集合' ),
+	'WikiSets' => array( 'Wiki 集合', '編輯Wiki集合' ),
 	'GlobalUsers' => array( '全域使用者' ),
 	'MultiLock' => array( '批次鎖定' ),
 	'GlobalRenameUser' => array( '全域重新命名使用者' ),
 	'GlobalRenameProgress' => array( '全域重新命名進度' ),
-	'GlobalUserMerge' => array( '全域用户合併' ),
+	'GlobalUserMerge' => array( '全域使用者合併', '全域用户合併' ),
 	'GlobalRenameRequest' => array( '全域重命名申請' ),
 );
 
