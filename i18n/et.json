@@ -371,5 +371,7 @@
 	"centralauth-usermerge-form-reason": "Põhjus",
 	"centralauth-usermerge-disabled": "Globaalse kasutaja ühendamisriist on keelatud.",
 	"action-centralauth-usermerge": "globaalselt mitut kasutajat ühendada",
-	"right-centralauth-usermerge": "Ühendada globaalselt mitu kasutajat"
+	"right-centralauth-usermerge": "Ühendada globaalselt mitu kasutajat",
+	"centralauth-contribs-locked": "See konto on globaalselt lukustatud.\nVaata [[Special:CentralAuth/$1|globaalse konto üksikasju]].",
+	"centralauth-contribs-locked-log": "See konto on globaalselt lukustatud.\nAllpool on toodud lukustamislogi viimane sissekanne:"
 }
