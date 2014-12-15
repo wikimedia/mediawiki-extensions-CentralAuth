@@ -20,7 +20,8 @@
 			"مشعل الحربي",
 			"Ms.Rainbow",
 			"وهراني",
-			"Shbib Al-Subaie"
+			"Shbib Al-Subaie",
+			"Omda4wady"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -352,6 +353,7 @@
 	"centralauth-rename-form-movepages": "نقل صفحات المستخدم",
 	"centralauth-rename-form-suppressredirects": "منع إنشاء التحويلات",
 	"centralauth-rename-cannotself": "لا يمكنك تغيير اسمك",
+	"centralauth-rename-progress-username": "اسم المستخدم",
 	"centralauth-rename-table-domain": "ويكي محلي",
 	"centralauth-rename-table-status": "الحالة",
 	"centralauth-rename-table-status-inprogress": "في تقدم",
@@ -360,6 +362,7 @@
 	"centralauth-rename-table-status-failed": "فشل",
 	"centralauth-rename-viewprogress": "عرض التقدّم",
 	"centralauth-rename-progress-fieldset": "قائمة الحسابات المحلية",
+	"centralauth-rename-progress-logs-fieldset": "ادخالات السجل",
 	"log-name-gblrename": "سجل إعادة التسمية الشاملة",
 	"globalusermerge": "دمج المستخدم العالمي",
 	"globalusermerge-legend": "دمج الحساب الموحد",
@@ -385,6 +388,7 @@
 	"globalrenamerequest-email-mismatch": "عناوين البريد الإلكتروني مُختلفة.<br />فضلاً تأكّد من تطابقها وحاول مرةً أخرى.",
 	"globalrenamerequest-email-invalid": "البريد الإلكتروني المُدرج غير صالح.",
 	"globalrenamerequest-reason-label": "سبب الطلب",
+	"globalrenamerequest-submit-text": "طلب تغيير الاسم",
 	"centralauth-usermerge-form-adduser": "إضافة المستخدم",
 	"centralauth-usermerge-form-deleteuser": "إزالة المستخدم",
 	"globalrenamequeue-nav-openqueue": "طلبات مفتوحة",
@@ -402,8 +406,13 @@
 	"globalrenamequeue-request-title": "إعادة تسمية $1؟",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> طلب إعادة التسمية إلى <strong>$3</strong>.",
 	"globalrenamequeue-request-reason": "<strong>سبب طلب إعادة التسمية</strong>\n:$1",
+	"globalrenamequeue-request-movepages": "نقل صفحات المستخدم",
 	"globalrenamequeue-request-approve-text": "قبول إعادة التسمية",
+	"globalrenamequeue-request-deny-text": "رفض اعادة التسمية",
 	"globalrenamequeue-request-cancel-text": "إلغاء",
+	"globalrenamequeue-request-unknown-title": "الطلب غير موجود",
 	"globalrenamequeue-view-approved": "مقبول",
-	"globalrenamequeue-view-rejected": "مرفوض"
+	"globalrenamequeue-view-rejected": "مرفوض",
+	"globalrenamequeue-email-subject-approved": "تم قبول طلب اعادة تسمية الحساب",
+	"centralauth-log-gblrename-oldname": "أسم المستخدم السابق :"
 }
