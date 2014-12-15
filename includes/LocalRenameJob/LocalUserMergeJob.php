@@ -23,14 +23,14 @@ class LocalUserMergeJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 
-		$this->maybeCreateNewUser( $to );
+		$toUser = $this->maybeCreateNewUser( $to );
 
 		$renamingUser = $this->getRenameUser();
 		foreach ( $from as $olduser ) {
 			// Merge the users in order
 			$um = new MergeUser(
 				User::newFromName( $olduser ),
-				User::newFromName( $to ),
+				$toUser,
 				new UserMergeNoopLogger()
 			);
 			$um->merge( $renamingUser );
@@ -55,6 +55,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 	 * then merge into it.
 	 *
 	 * @param string $newName
+	 * @return User
 	 * @throws MWException
 	 */
 	private function maybeCreateNewUser( $newName ) {
@@ -62,7 +63,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 		$user = User::newFromName( $newName );
 		if ( $user->getId() ) {
 			// User already exists, nothing to do.
-			return;
+			return $user;
 		}
 
 		// Logic from CentralAuthHooks::attemptAddUser
@@ -74,6 +75,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 		}
 		$wgAuth->initUser( $user, true );
 		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+		return $user;
 	}
 
 }
