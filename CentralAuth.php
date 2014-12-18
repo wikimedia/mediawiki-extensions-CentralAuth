@@ -256,6 +256,7 @@ $wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/includes/specials/SpecialCen
 $wgAutoloadClasses['SpecialCentralLogin'] = "$caBase/includes/specials/SpecialCentralLogin.php";
 $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/includes/specials/SpecialMergeAccount.php";
 $wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
+$wgAutoloadClasses['GlobalUsersPager'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['SpecialMultiLock'] = "$caBase/includes/specials/SpecialMultiLock.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
@@ -307,7 +308,7 @@ $wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/CentralAuthTestUser.p
 $wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/includes/UsersToRename/UsersToRenameDatabaseUpdates.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
-$wgAutoloadClasses['EmailableUser'] = "$caBase/EmailableUser.php";
+$wgAutoloadClasses['EmailableUser'] = "$caBase/includes/EmailableUser.php";
 
 $wgMessagesDirs['SpecialCentralAuth'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
