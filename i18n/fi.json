@@ -351,6 +351,17 @@
 	"centralauth-usermerge-form-reason": "Syy",
 	"centralauth-usermerge-disabled": "Järjestelmänlaajuinen käyttäjien yhdistämistyökalu on poistettu käytöstä.",
 	"centralauth-usermerge-invalid": "Nimellä \"$1\" ei ole järjestelmänlaajuista käyttäjätunnusta.",
+	"globalrenamerequest-email-label": "Sähköpostiosoite:",
+	"globalrenamerequest-email-help": "Anna sähköpostiosoitteesi.",
+	"globalrenamerequest-email-why-label": "Miksi?",
+	"globalrenamerequest-email2-label": "Vahvista sähköpostiosoitteesi:",
+	"globalrenamerequest-reason-label": "Syy pyynnölle",
 	"centralauth-usermerge-form-adduser": "Lisää käyttäjä",
-	"centralauth-usermerge-form-deleteuser": "Poista käyttäjä"
+	"centralauth-usermerge-form-deleteuser": "Poista käyttäjä",
+	"globalrenamequeue-request-cancel-text": "Peruuta",
+	"globalrenamequeue-view-approved": "hyväksytty",
+	"globalrenamequeue-view-rejected": "hylätty",
+	"centralauth-log-gblrename-oldname": "Aiempi käyttäjänimi:",
+	"centralauth-contribs-locked": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti.\nKatso lisätietoja toiminnosta [[Special:CentralAuth/$1|järjestelmänlaajuisen tunnuksen tiedot]].",
+	"centralauth-contribs-locked-log": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti. Alla on viimeisin lukituslokin merkintä:"
 }
