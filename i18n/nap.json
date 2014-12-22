@@ -441,5 +441,10 @@
 	"globalrenamequeue-view-approved": "appruvata",
 	"globalrenamequeue-view-rejected": "scartata",
 	"globalrenamequeue-email-subject-approved": "Richiesta 'e renommena d' 'o nomme utente appruvata",
-	"globalrenamequeue-email-subject-rejected": "Richiesta 'e renommena d' 'o nomme utente scartata"
+	"globalrenamequeue-email-subject-rejected": "Richiesta 'e renommena d' 'o nomme utente scartata",
+	"globalrenamequeue-email-body-approved": "'A richiesta pe' renommenà \"$1\" a \"$2\" è stata appruvata.",
+	"globalrenamequeue-email-body-rejected": "'A rechiesta 'e renommenà \"$1\" 'n \"$2\" è stata squagliata.\n\nNota: $3",
+	"centralauth-abortlogin-renamed": "'O cunto vuosto è stato renommenato \"$1\". Aúsa stu nomme.",
+	"sulrenamewarning-title": "{{GENDER:$1|'O cunto vuosto}} è stato renommenato",
+	"sulrenamewarning-renamed": "{{GENDER:$2|'O cunto vuosto}} '''$1''' è stato renommenato '''$2''' pe' tramente ca se faceva 'a migrazione a 'o sistema d'accesso aunito {{int:Centralauth-groupname}}."
 }

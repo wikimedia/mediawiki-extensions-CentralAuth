@@ -79,7 +79,7 @@
 	"centralauth-ro": "Глобални подаци налога",
 	"centralauth-admin-intro": "Ово интерфејс може да се користи за администрацију глобалних налога.",
 	"centralauth-admin-manage": "Управљање корисничким подацима",
-	"centralauth-admin-view": "Види информације налога",
+	"centralauth-admin-view": "Види информације о налогу",
 	"centralauth-admin-username": "Корисничко име:",
 	"centralauth-admin-lookup-ro": "Погледај корисничке податке",
 	"centralauth-admin-lookup-rw": "Управљање корисничким налогом",

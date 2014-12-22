@@ -75,7 +75,7 @@
 	"centralauth-ro": "Globalni podaci naloga",
 	"centralauth-admin-intro": "Ovo interfejs može da se koristi za administraciju globalnih naloga.",
 	"centralauth-admin-manage": "Upravljanje korisničkim podacima",
-	"centralauth-admin-view": "Vidi informacije naloga",
+	"centralauth-admin-view": "Vidi informacije o nalogu",
 	"centralauth-admin-username": "Korisničko ime:",
 	"centralauth-admin-lookup-ro": "Pogledaj korisničke podatke",
 	"centralauth-admin-lookup-rw": "Upravljanje korisničkim nalogom",
