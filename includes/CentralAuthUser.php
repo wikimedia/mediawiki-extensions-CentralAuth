@@ -794,7 +794,7 @@ class CentralAuthUser extends AuthPluginUser {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
 			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
-				// Same email addresss as primary means we know they could
+				// Same email addresss as primary or password confirmed means we know they could
 				// reset their password, so we give them the account.
 				// Authenticated email addresses only to prevent merges with malicious users
 				$method = 'mail';
@@ -908,6 +908,39 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Choose an email address to use from an array as obtained via self::queryUnattached
+	 *
+	 * @param array[] $wikisToAttach
+	 */
+	private function chooseEmail( $wikisToAttach ) {
+		if ( $this->mEmail ) {
+			return;
+		}
+
+		// Try authenticated emails first
+		foreach ( $wikisToAttach as $attachWiki ) {
+			if ( $attachWiki['email'] && $attachWiki['emailAuthenticated'] ) {
+				$this->mEmail = $attachWiki['email'];
+				$this->mEmailAuthenticated = $attachWiki['emailAuthenticated'];
+				break;
+			}
+		}
+
+		if ( $this->mEmail ) {
+			return;
+		}
+
+		// Let's try unconfirmed addresses, better than nothing
+		foreach ( $wikisToAttach as $attachWiki ) {
+			if ( $attachWiki['email'] ) {
+				$this->mEmail = $attachWiki['email'];
+				$this->mEmailAuthenticated = $attachWiki['emailAuthenticated'];
+				break;
+			}
+		}
+	}
+
+	/**
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 *
@@ -955,14 +988,20 @@ class CentralAuthUser extends AuthPluginUser {
 			return false;
 		}
 
+		$wikisToAttach = array_intersect_key( $migrationSet, $attach );
+
+		// The home wiki might not have an email set, but maybe an other account has one?
+		$this->chooseEmail( $wikisToAttach );
+
 		// storeGlobalData clears $this->mHomeWiki
 		$homeWiki = $this->mHomeWiki;
 		// Actually do the migration
 		$ok = $this->storeGlobalData(
-				$home['id'],
-				$home['password'],
-				$home['email'],
-				$home['emailAuthenticated'] );
+			$home['id'],
+			$home['password'],
+			$this->mEmail,
+			$this->mEmailAuthenticated
+		);
 
 		if ( !$ok ) {
 			wfDebugLog( 'CentralAuth',
