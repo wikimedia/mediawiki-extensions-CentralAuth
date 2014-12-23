@@ -350,6 +350,7 @@
 	"centralauth-rename-alreadyinprogress": "Người dùng này [[Special:GlobalRenameProgress/$1|đang được đổi tên]].",
 	"centralauth-renameuser-global-inprogress": "$1 [[Special:GlobalRenameProgress/$1|đang được đổi tên]] toàn cục.",
 	"centralauth-rename-queued": "Các công việc đổi tên $1 thành $2 đã được xếp hàng đợi trên $3.\n\nXem tiến trình tại [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts": "Tên người dùng được chọn quá giống với các tên của người dùng khác.",
 	"centralauth-rename-progress-username": "Tên người dùng",
 	"centralauth-rename-notinprogress": "$1 không phải đang được đổi tên. Việc đổi tên có thể hoàn thành rồi.",
 	"centralauth-rename-table-domain": "Wiki bộ phận",
@@ -475,5 +476,7 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Lý do thay đổi trạng thái của người dùng.",
 	"apihelp-setglobalaccountstatus-example-1": "Khóa tài khoản toàn cục của [[User:Example]] với lý do “Spam”",
 	"apihelp-setglobalaccountstatus-example-2": "Mở khóa và đàn áp tài khoản toàn cục của [[User:Example]] với lý do “Vì tôi có thể”",
-	"centralauth-log-gblrename-oldname": "Tên người dùng cũ"
+	"centralauth-log-gblrename-oldname": "Tên người dùng cũ",
+	"centralauth-contribs-locked": "Tài khoản này hiện đang bị khóa toàn cục.\nXem [[Special:CentralAuth/$1|chi tiết tài khoản toàn cục]].",
+	"centralauth-contribs-locked-log": "Tài khoản này hiện đang bị khóa toàn cục.\nMục nhật trình khóa gần nhất được ghi ở dưới để tiện theo dõi:"
 }
