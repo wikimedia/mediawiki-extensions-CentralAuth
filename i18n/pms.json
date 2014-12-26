@@ -187,9 +187,9 @@
 	"centralauth-renameuser-merged": "L'utent $1 a l'é stàit mudà al sistema d'intrada unificà.\nArnomélo a farà sì che ël cont local a sia dëstacà da col global.",
 	"centralauth-renameuser-reserved": "Lë stranòm $2 a l'é arservà për un cont global.",
 	"centralauth-invalid-wiki": "Pa gnun-a base ëd dàit wiki parèj: $1",
-	"centralauth-account-exists": "Ël cont a peul pa esse creà: lë stranòm utent ciamà a l'é già pijà ant ël sistema d'intrada unificà.",
-	"centralauth-account-unattached-exists": "Impossìbil creé un cont: lë stranòm ciamà a sarìa an conflit con m'autr ëstranòm ant ël sistema ëd conession unificà.",
-	"centralauth-account-rename-exists": "Impossìbil creé un cont: lë stranòm ciamà a sarìa an conflit con n'àutr ëstranòm ant ël sistema ëd conession unificà.",
+	"centralauth-account-exists": "Ël cont a peul pa esse creà: lë stranòm ciamà a l'é già pijà da n'utent an s'n'àutra wiki.",
+	"centralauth-account-unattached-exists": "Impossìbil creé ël cont: lë stranòm ciamà a sarìa an conflit con m'autr ëstranòm an s'n'àutra wiki.",
+	"centralauth-account-rename-exists": "Impossìbil creé ël cont: lë stranòm ciamà a sarìa an conflit con n'àutr ëstranòm ansima a n'àutrra wiki.",
 	"centralauth-account-exists-reset": "Lë stranòm $1 a l'é pa registrà ansima a costa wiki, ma a peul reinissialisé soa ciav an s' [[Special:CentralAuth/$1|na wiki anté ch'a-l l'é]].",
 	"centralauth-login-progress": "A l'é an camin ch'as colega a le wiki ëd {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "A l'é an camin ch'a seurt da j'àutre wiki ëd {{int:Centralauth-groupname}}:",
@@ -462,5 +462,14 @@
 	"apihelp-globaluserrights-param-remove": "Gavé l'utent da se partìe globaj.",
 	"apihelp-globaluserrights-param-reason": "Rason dla modìfica.",
 	"apihelp-globaluserrights-example-1": "Gionté l'utent FooBot a la partìa global «trigomiro», e gavelo da le partìe globaj «aministrator» e «mangiapapé»",
-	"apihelp-globaluserrights-example-2": "Gionté l'utent global con l'ID 123 a la partìa global «trigomiro», e gavelo da le partìe globaj «aministrator» e «mangiapapé»"
+	"apihelp-globaluserrights-example-2": "Gionté l'utent global con l'ID 123 a la partìa global «trigomiro», e gavelo da le partìe globaj «aministrator» e «mangiapapé»",
+	"apihelp-query+globalallusers-description": "Enumeré tuti j'utent globaj.",
+	"apihelp-query+globalallusers-param-from": "Lë stranòm dont parte a enumeré.",
+	"apihelp-query+globalallusers-param-to": "Lë stranòm al qual chité l'enumerassion.",
+	"apihelp-query+globalallusers-param-prefix": "Sërché tuti j'utent ch'a ancamin-o con ës valor.",
+	"apihelp-query+globalallusers-param-dir": "Diression d'ordinament.",
+	"apihelp-query+globalallusers-param-group": "Limité j'utent a le partìe globaj dàite.",
+	"apihelp-query+globalallusers-param-excludegroup": "Esclude j'utent dle partìe globaj dàite.",
+	"apihelp-query+globalallusers-param-prop": "Che anformassion anclude:\n;lockinfo:Si ël cont utent a l'é blocà.\n;groups:A lista le partìe globaj a le quaj a aparten l'utent. Sòn a ciama pi d'arsorse dël servent e a peul ësmon-e men d'arzultà dël lìmit.\n;existslocally:A gionta l'anformassion si l'utent a esist localman.",
+	"apihelp-query+globalallusers-param-limit": "Vàre stranòm ësmon-e an total."
 }
