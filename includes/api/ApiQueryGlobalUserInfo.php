@@ -101,7 +101,11 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				}
 				$result->addValue( array( 'query', $this->getModuleName(), 'merged' ), null, $a );
 			}
-			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				$result->defineIndexedTagName( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
+			} else {
+				$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
+			}
 		}
 		if ( $userExists && isset( $prop['editcount'] ) ) {
 			$editcount = 0;
@@ -125,7 +129,11 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				}
 				$result->addValue( array( 'query', $this->getModuleName(), 'unattached' ), null, $a );
 			}
-			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				$result->defineIndexedTagName( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
+			} else {
+				$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
+			}
 		}
 	}
 
