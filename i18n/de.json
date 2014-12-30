@@ -477,6 +477,7 @@
 	"apihelp-query+wikisets-example-1": "Wikisätze auflisten",
 	"apihelp-query+wikisets-example-2": "Wikisätze mit Typen anzeigen",
 	"apihelp-setglobalaccountstatus-description": "Legt den Status eines globalen Benutzers fest.",
+	"apihelp-setglobalaccountstatus-param-user": "Benutzer, von dem der Status geändert werden soll.",
 	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
 	"centralauth-log-gblrename-oldname": "Früherer Benutzername",
 	"centralauth-contribs-locked": "Dieses Benutzerkonto ist global gesperrt.\nSiehe die [[Special:CentralAuth/$1|Einzelheiten zum globalen Benutzerkonto]] für weitere Informationen.",

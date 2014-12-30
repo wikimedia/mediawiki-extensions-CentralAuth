@@ -478,5 +478,19 @@
 	"apihelp-query+globalgroups-param-prop": "Quali piezz' 'e nfurmazione s'avesser'azzeccà.",
 	"apihelp-query+globalgroups-example-1": "Lista 'e gruppe utente",
 	"apihelp-query+globalgroups-example-2": "Mmusta gruppe utente globbale ch' 'e diritte ca danno",
-	"apihelp-query+globaluserinfo-description": "Mmusta nfurmaziune ncopp'a n'utente globbale."
+	"apihelp-query+globaluserinfo-description": "Mmusta nfurmaziune ncopp'a n'utente globbale.",
+	"apihelp-query+globaluserinfo-param-user": "Utente ncopp' 'o quale s'avess'a piglià nfurmaziune. Predefinite pe ll'utente 'e mmò.",
+	"apihelp-query+globaluserinfo-example-1": "Piglia nfurmaziune ncopp'a l'utente globbale 'e mmò",
+	"apihelp-query+globaluserinfo-example-2": "Piglia nfurmaziune ncopp'a l'utente globbale [[User:Example|Esempio]]",
+	"apihelp-query+wikisets-description": "Enummera tutt' 'e nzieme wiki.",
+	"apihelp-query+wikisets-param-from": "'O nomme d' 'o nzieme wiki p'accummencià 'a cap'a isso.",
+	"apihelp-query+wikisets-param-prop": "Quale piezze nfurmazione s'avesser'azzeccà.\n;type:A-scigliuta-into 'e ll'utente(azzecca surtanto wiki specificate) o basate a a-scigliuta-fore  (azzecca tutt' 'e wiki eccettuanno 'e specificate).\n;wikisincluded:'E wiki mò accucchiate dint'a stu nzieme wiki.\n;wikisnotincluded:'E wiki ca mò nun stann'accucchiate dint'a stu nzieme wiki.",
+	"apihelp-query+wikisets-param-limit": "Quante nzieme wiki s'avesser'a turnà.",
+	"apihelp-query+wikisets-param-orderbyname": "Sistimà risultate pe' nomme.",
+	"apihelp-query+wikisets-example-1": "Lenco 'e nzieme 'e wiki",
+	"apihelp-query+wikisets-example-2": "Mmusta nzieme wiki ch' 'e tipe",
+	"apihelp-setglobalaccountstatus-description": "Miette 'o stato globbale 'e ll'uttente.",
+	"apihelp-setglobalaccountstatus-param-user": "Utente a se cagnà 'o stato.",
+	"apihelp-setglobalaccountstatus-param-locked": "Cagna ntutte 'e mmode si l'utente è bloccato o no.",
+	"apihelp-setglobalaccountstatus-param-hidden": "Càgna sempe ca l'utente nun fosse annascunnuto, annascunnuto d' 'e liste, o luvàto."
 }

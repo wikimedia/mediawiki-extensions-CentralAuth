@@ -471,5 +471,6 @@
 	"apihelp-query+globalallusers-param-group": "Limité j'utent a le partìe globaj dàite.",
 	"apihelp-query+globalallusers-param-excludegroup": "Esclude j'utent dle partìe globaj dàite.",
 	"apihelp-query+globalallusers-param-prop": "Che anformassion anclude:\n;lockinfo:Si ël cont utent a l'é blocà.\n;groups:A lista le partìe globaj a le quaj a aparten l'utent. Sòn a ciama pi d'arsorse dël servent e a peul ësmon-e men d'arzultà dël lìmit.\n;existslocally:A gionta l'anformassion si l'utent a esist localman.",
-	"apihelp-query+globalallusers-param-limit": "Vàre stranòm ësmon-e an total."
+	"apihelp-query+globalallusers-param-limit": "Vàre stranòm ësmon-e an total.",
+	"apihelp-query+globalallusers-example-1": "Listé j'utent globaj"
 }
