@@ -502,6 +502,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return String
 	 */
 	private function formatBlockStatus( $row ) {
+		$additionalHtml = '';
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->parse();
@@ -514,12 +515,23 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 
 			if ( $row['block-reason'] ) {
-				$text .= ' ' . $this->msg( 'centralauth-admin-blocked-reason', $row['block-reason'] )->parse();
+				$reason = Linker::formatLinksInComment(
+					$row['block-reason'],
+					null,
+					false,
+					$row['wiki']
+				);
+
+				$msg = $this->msg( 'centralauth-admin-blocked-reason' );
+				$msg->rawParams( '<span class="plainlinks">' . $reason . '</span>' );
+
+				$additionalHtml .= ' ' . $msg->parse();
 			}
 
 			if ( $row['block-expiry'] == 'infinity' ) {
-				return $text;
+				return $text . $additionalHtml;
 			}
+
 		} else {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
 		}
@@ -529,7 +541,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'Special:Log/block',
 			$text,
 			$this->msg( 'centralauth-admin-blocklog' )->text(),
-			'page=User:' . urlencode( $this->mUserName ) );
+			'page=User:' . urlencode( $this->mUserName ) ) . $additionalHtml;
 	}
 
 	/**
@@ -544,6 +556,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 		$wikiname = $wiki->getDisplayName();
 		$editCount = $this->getLanguage()->formatNum( intval( $row['editCount'] ) );
+
 		return self::foreignLink(
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
