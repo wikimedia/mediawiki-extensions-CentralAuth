@@ -433,5 +433,8 @@
 	"globalrenamequeue-action-view": "Просмотр",
 	"globalrenamequeue-request-title": "Переименовать «$1»?",
 	"globalrenamequeue-request-cancel-text": "Отмена",
-	"centralauth-abortlogin-renamed": "Ваш аккаунт был переименован в \"$1\". Пожалуйста, используйте это имя пользователя."
+	"centralauth-abortlogin-renamed": "Ваш аккаунт был переименован в \"$1\". Пожалуйста, используйте это имя пользователя.",
+	"apihelp-globaluserrights-param-reason": "Причина для изменения.",
+	"apihelp-query+globalallusers-param-dir": "Направление сортировки.",
+	"centralauth-log-gblrename-oldname": "Предыдущее имя участника:"
 }

@@ -195,7 +195,7 @@
 	"centralauth-renameuser-merged": "המשתמש $1 הועבר למערכת הכניסה המאוחדת.\nשינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הגלובלי.",
 	"centralauth-renameuser-reserved": "שם המתשמש $2 שמור לחשבון גלובלי.",
 	"centralauth-invalid-wiki": "אין מסד נתונים בשם $1",
-	"centralauth-account-exists": "לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש במערכת החשבונות הממוזגים.",
+	"centralauth-account-exists": "לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש של משתמש בוויקי אחר.",
 	"centralauth-account-unattached-exists": "לא ניתן ליצור חשבון: שם המשתמש המבוקש יתנגש עם שם משתמש אחר במערכת הכניסה המאוחדת",
 	"centralauth-account-rename-exists": "לא ניתן ליצור חשבון: השם המבוקש יתנגש עם שם אחרבמערכת הכניסה המאוחדת",
 	"centralauth-account-exists-reset": "שם המשתמש $1 אינו רשום באתר הוויקי הזה, אבל באפשרותך לאפס את הסיסמה שלו ב[[Special:CentralAuth/$1|אחד מהאתרים בהם הוא רשום]].",

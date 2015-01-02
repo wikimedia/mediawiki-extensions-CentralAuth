@@ -496,6 +496,7 @@
 	"apihelp-query+globalallusers-param-dir": "排序方向。",
 	"apihelp-query+globalallusers-param-group": "限定用户至指定的全域用户组。",
 	"apihelp-query+globalallusers-param-excludegroup": "在指定的全域用户组中排除用户。",
+	"apihelp-query+globalallusers-param-prop": "要包含的信息束：\n;lockinfo:用户账户是否被锁定。\n;groups:列出用户所在的全域用户组。这使用更多服务器资源并可能返回少于限制的结果。\n;existslocally:如果用户在本地存在就添加信息。",
 	"apihelp-query+globalallusers-param-limit": "返回的总计用户数。",
 	"apihelp-query+globalallusers-example-1": "全域用户列表",
 	"apihelp-query+globalallusers-example-2": "显示与以“ABC”开头的全域用户相关的信息",

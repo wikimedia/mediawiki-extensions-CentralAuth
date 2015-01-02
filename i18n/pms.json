@@ -472,5 +472,22 @@
 	"apihelp-query+globalallusers-param-excludegroup": "Esclude j'utent dle partìe globaj dàite.",
 	"apihelp-query+globalallusers-param-prop": "Che anformassion anclude:\n;lockinfo:Si ël cont utent a l'é blocà.\n;groups:A lista le partìe globaj a le quaj a aparten l'utent. Sòn a ciama pi d'arsorse dël servent e a peul ësmon-e men d'arzultà dël lìmit.\n;existslocally:A gionta l'anformassion si l'utent a esist localman.",
 	"apihelp-query+globalallusers-param-limit": "Vàre stranòm ësmon-e an total.",
-	"apihelp-query+globalallusers-example-1": "Listé j'utent globaj"
+	"apihelp-query+globalallusers-example-1": "Listé j'utent globaj",
+	"apihelp-query+globalallusers-example-2": "Smon-e d'anformassion an sj'utent globaj ch'a ancamin-o për «ABC»",
+	"apihelp-query+globalgroups-description": "Enumeré tute le partìe globaj.",
+	"apihelp-query+globalgroups-param-prop": "Che anformassion anclude.",
+	"apihelp-query+globalgroups-example-1": "Listé le partìe globaj",
+	"apihelp-query+globalgroups-example-2": "Smon-e le partìe globaj con ij drit che a garantisso",
+	"apihelp-query+globaluserinfo-description": "Smon-e j'anformassion an s'n'utent global.",
+	"apihelp-query+globaluserinfo-param-user": "Utent dont oten-e d'anformassion. Predefinì a l'utent atual.",
+	"apihelp-query+globaluserinfo-param-prop": "Che propietà oten-e:\n;groups:Oten-e na lista dle partìe globaj dont a aparten s'utent.\n;rights:Oten-e ne lista dij drit globaj che l'utent a l'ha.\n;merged:Oten-e na lista dij cont fondù.\n;unattached:Oten-e na lista dij cont nen tacà.\n;editcount:Oten-e ël conteur ëd modìfiche global dj'utent.",
+	"apihelp-query+globaluserinfo-example-1": "Oten-e d'anformassion an sl'utent global atual",
+	"apihelp-query+globaluserinfo-example-2": "Oten-e d'anformassion an sl'utent global [[User:Example|Esempi]]",
+	"apihelp-query+wikisets-description": "Enumeré tuti j'ansem ëd wiki.",
+	"apihelp-query+wikisets-param-from": "ël nòm ëd l'ansem ëd wiki d'andoa ancaminé.",
+	"apihelp-query+wikisets-param-prop": "Che anformassion anclude.\n;type:Basà an sl'anclusion (a anclud mach le wiki spessificà) o an sl'esclusion (a anclud tute le wiki gavà cole spessificà).\n;wikisincluded:Le wiki ch'a son comprèise ant l'ansem ëd wiki.\n;wikisnotincluded:Le wiki ch'a son nen comprèise ant l'ansem ëd wiki.",
+	"apihelp-query+wikisets-param-limit": "Quanti ansem ëd wiki smon-e.",
+	"apihelp-query+wikisets-param-orderbyname": "Ordiné j'arzultà për nòm.",
+	"apihelp-query+wikisets-example-1": "Listé j'ansem ëd wiki",
+	"apihelp-query+wikisets-example-2": "Smon-e j'ansem ëd wiki con soe sòrt"
 }
