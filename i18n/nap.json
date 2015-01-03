@@ -480,6 +480,7 @@
 	"apihelp-query+globalgroups-example-2": "Mmusta gruppe utente globbale ch' 'e diritte ca danno",
 	"apihelp-query+globaluserinfo-description": "Mmusta nfurmaziune ncopp'a n'utente globbale.",
 	"apihelp-query+globaluserinfo-param-user": "Utente ncopp' 'o quale s'avess'a piglià nfurmaziune. Predefinite pe ll'utente 'e mmò.",
+	"apihelp-query+globaluserinfo-param-prop": "Quale proprietà s'hann'a piglià:\n;groups:Piglia n'elenco 'e gruppe globbale a 'e quale l'utente appartene.\n;rights:Piglia n'elenco 'e diritte globbale ca chist'utente avesse.\n;merged:Piglia na lista 'e cunte aunite.\n;unattached:Piglia na lista 'e cunte nun aunite.\n;editcount:Piglia l'elenco e cagnamiente globbale d'utente.",
 	"apihelp-query+globaluserinfo-example-1": "Piglia nfurmaziune ncopp'a l'utente globbale 'e mmò",
 	"apihelp-query+globaluserinfo-example-2": "Piglia nfurmaziune ncopp'a l'utente globbale [[User:Example|Esempio]]",
 	"apihelp-query+wikisets-description": "Enummera tutt' 'e nzieme wiki.",
@@ -492,5 +493,12 @@
 	"apihelp-setglobalaccountstatus-description": "Miette 'o stato globbale 'e ll'uttente.",
 	"apihelp-setglobalaccountstatus-param-user": "Utente a se cagnà 'o stato.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cagna ntutte 'e mmode si l'utente è bloccato o no.",
-	"apihelp-setglobalaccountstatus-param-hidden": "Càgna sempe ca l'utente nun fosse annascunnuto, annascunnuto d' 'e liste, o luvàto."
+	"apihelp-setglobalaccountstatus-param-hidden": "Càgna sempe ca l'utente nun fosse annascunnuto, annascunnuto d' 'e liste, o luvàto.",
+	"apihelp-setglobalaccountstatus-param-reason": "Mutivo pe' ne cagnà 'o stato utente.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Opzionale MD5 p' 'o <username>:<hidden>:<locked> 'e mmo' aspettato, pe' ne putè scummiglià cunflitte 'e cagnamiento. Mpustate <locked> a 1 pe' bluccà, 0 pe' sbluccà.",
+	"apihelp-setglobalaccountstatus-example-1": "Bloccate 'o cunto globbale pe' [[User:Example]] cu mutivo 'e \"Spam\"",
+	"apihelp-setglobalaccountstatus-example-2": "Sbluccà e scancellà 'o cunto globbale pe' [[User:Example]] cu mutivo \"I pozzo\"",
+	"centralauth-log-gblrename-oldname": "Nomme utente 'e primma:",
+	"centralauth-contribs-locked": "Stu cunto è globbalmente bluccato.\nVedite [[Special:CentralAuth/$1|dettaglie 'e cunto globbale]] pe n'avé cchiù nfurmaziune.",
+	"centralauth-contribs-locked-log": "Stu cunto è bloccato globbalmente.\nL'urdemo riggistro 'e blocche è ripurtato ccà abbascio pe n'avé nu riferimento:"
 }

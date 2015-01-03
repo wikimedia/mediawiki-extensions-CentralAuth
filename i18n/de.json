@@ -465,6 +465,7 @@
 	"apihelp-globaluserrights-param-userid": "Globale Benutzerkennung.",
 	"apihelp-globaluserrights-param-add": "Fügt den Benutzer zu diesen globalen Gruppen hinzu.",
 	"apihelp-globaluserrights-param-reason": "Grund für die Änderung.",
+	"apihelp-query+globalallusers-description": "Alle globalen Benutzer auflisten.",
 	"apihelp-query+globalallusers-param-group": "Benutzer auf die angegebenen globalen Gruppen beschränken.",
 	"apihelp-query+globalallusers-example-1": "Globale Benutzer auflisten",
 	"apihelp-query+globalgroups-description": "Alle globalen Gruppen aufzählen.",

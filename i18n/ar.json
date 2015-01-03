@@ -361,6 +361,7 @@
 	"centralauth-rename-doesnotexist": "الحساب المذكور غير موجود.",
 	"centralauth-rename-alreadyexists": "اسم المستخدم المطلوب موجود",
 	"centralauth-rename-unattached-intheway": "توجد حسابات غير مرتبطة تستخدم اسم المستخدم المطلوب.",
+	"centralauth-rename-badusername": "اسم المستخدم المطلوب غير صالح.",
 	"centralauth-rename-cannotself": "لا يمكنك تغيير اسمك",
 	"centralauth-rename-alreadyinprogress": "هناك عملية إعادة تسمية هذا المستخدم [[Special:GlobalRenameProgress/$1|قيد المعالجة]].",
 	"centralauth-renameuser-global-inprogress": "هناك عملية إعادة تسمية الحساب الموحدللمستخدم $1 [[Special:GlobalRenameProgress/$1|قيد المعالجة]].",
