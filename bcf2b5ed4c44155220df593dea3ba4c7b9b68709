@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_079687f3",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-03T21:19:12Z",
+      "side": 1,
+      "message": "The function\u0027s name is \"getId\" ... I know that it works this way, but it\u0027s nicer to have it right.",
+      "revId": "bcf2b5ed4c44155220df593dea3ba4c7b9b68709",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
