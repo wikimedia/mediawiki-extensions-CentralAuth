@@ -19,11 +19,11 @@ class CreateLocalAccount extends Maintenance {
 		}
 
 		$username = $this->getArg( 0 );
-		if ( !User::isValidUserName( $username ) ) {
-			$this->error( "'$username' is an invalid username\n", 1 );
-		}
 
 		$user = User::newFromName( $username );
+		if ( $user === false ) {
+			$this->error( "'$username' is an invalid username\n", 1 );
+		}
 		// Normalize username
 		$username = $user->getName();
 		if ( $user->getId() ) {
