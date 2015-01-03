@@ -38,7 +38,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$from,
 			$to,
 			$oldUser->getId(),
-			array( 'checkIfUserExists' => false )
+			array( 'checkIfUserExists' => false, 'debugPrefix' => 'GlobalRename' )
 		);
 		if ( !$rename->rename() ) {
 			// This should never happen!
