@@ -49,6 +49,15 @@ $wgCentralAuthAutoNew = false;
 $wgCentralAuthAutoMigrate = false;
 
 /**
+ * If true, existing unattached accounts where no global account exists
+ * will be compared to see if a merge can be made based on passwords
+ * and emails with no clashes (all accounts merge).
+ *
+ * This was formerly controlled by $wgCentralAuthAutoMigrate
+ */
+$wgCentralAuthAutoMigrateNonGlobalAccounts = false;
+
+/**
  * If true, remaining accounts which have not been attached will be forbidden
  * from logging in until they are resolved.
  */
