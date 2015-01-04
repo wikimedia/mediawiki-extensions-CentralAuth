@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_5d3772e0",
+        "filename": "maintenance/populateGlobalRenameLogSearch.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-04T06:47:26Z",
+      "side": 1,
+      "message": "hehe",
+      "revId": "1a0d8efbda7094ddbff7adea3bf4267efc1432e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_7d3276f0",
+        "filename": "maintenance/populateGlobalRenameLogSearch.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-04T06:47:26Z",
+      "side": 1,
+      "message": "missing spaces",
+      "revId": "1a0d8efbda7094ddbff7adea3bf4267efc1432e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
