@@ -184,7 +184,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$set = WikiSet::newFromID( $default );
 			if ( $set ) {
 				return Linker::link(
-					SpecialPage::getTitleFor( 'WikiSets', $set->getName() ),
+					SpecialPage::getTitleFor( 'WikiSets', $set->getId() ),
 					htmlspecialchars( $set->getName() )
 				);
 			} else {
