@@ -489,5 +489,9 @@
 	"apihelp-query+wikisets-param-limit": "Quanti ansem ëd wiki smon-e.",
 	"apihelp-query+wikisets-param-orderbyname": "Ordiné j'arzultà për nòm.",
 	"apihelp-query+wikisets-example-1": "Listé j'ansem ëd wiki",
-	"apihelp-query+wikisets-example-2": "Smon-e j'ansem ëd wiki con soe sòrt"
+	"apihelp-query+wikisets-example-2": "Smon-e j'ansem ëd wiki con soe sòrt",
+	"apihelp-setglobalaccountstatus-description": "Definì në stat d'utent global.",
+	"apihelp-setglobalaccountstatus-param-user": "Utent dont lë stat a dev esse modificà.",
+	"apihelp-setglobalaccountstatus-param-locked": "Cangé si s'utent a l'é blocà o pa.",
+	"apihelp-setglobalaccountstatus-param-hidden": "Cangé si st'utent a l'é nen ëstërmà, stërmà da le liste, o dëscancelà."
 }

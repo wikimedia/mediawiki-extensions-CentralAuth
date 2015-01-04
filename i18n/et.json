@@ -370,8 +370,10 @@
 	"centralauth-usermerge-form-usernames": "Praegused kasutajanimed",
 	"centralauth-usermerge-form-reason": "Põhjus",
 	"centralauth-usermerge-disabled": "Globaalse kasutaja ühendamisriist on keelatud.",
+	"centralauth-usermerge-invalid": "Puudub globaalne konto nimega \"$1\".",
 	"action-centralauth-usermerge": "globaalselt mitut kasutajat ühendada",
 	"right-centralauth-usermerge": "Ühendada globaalselt mitu kasutajat",
+	"centralauth-abortlogin-renamed": "Sinu konto uus nimi on \"$1\". Palun kasuta seda nime.",
 	"centralauth-contribs-locked": "See konto on globaalselt lukustatud.\nVaata [[Special:CentralAuth/$1|globaalse konto üksikasju]].",
 	"centralauth-contribs-locked-log": "See konto on globaalselt lukustatud.\nAllpool on toodud lukustamislogi viimane sissekanne:"
 }
