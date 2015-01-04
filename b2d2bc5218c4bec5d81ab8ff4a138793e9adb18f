@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_3d439e44",
+        "filename": "specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-04T07:01:52Z",
+      "side": 1,
+      "message": "It would be nice to also pass the user name into this (yes, that has the flawed assumption that the local user with the name \u003d\u003d the global one of that name, but I think that\u0027s bearable).",
+      "revId": "b2d2bc5218c4bec5d81ab8ff4a138793e9adb18f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
