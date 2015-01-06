@@ -38,6 +38,11 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 */
 	private $dryrun;
 
+	/**
+	 * @var string|bool
+	 */
+	private $resume;
+
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
@@ -51,12 +56,14 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
 		$this->addOption( 'sleep', 'How long to wait in between emails (default 1 second)', false, true );
 		$this->addOption( 'dryrun', 'Don\'t actually send any emails', false, false );
+		$this->addOption( 'resume', 'Which username to resume from', false, true );
 	}
 
 	public function execute() {
 		$this->sendToConfirmed = $this->getOption( 'confirmed', false );
 		$this->sleep = (int)$this->getOption( 'sleep', 1 );
 		$this->dryrun = $this->hasOption( 'dryrun');
+		$this->resume = $this->getOption( 'resume', true );
 
 		// check to see if we are processing a single username
 		if ( $this->getOption( 'username', false ) !== false ) {
@@ -77,6 +84,12 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			}
 			while( $username = fgets( $file ) ) {
 				$username = trim( $username ); // trim the \n
+				if ( $this->resume !== true ) {
+					if ( $username === $this->resume ) {
+						$this->resume = true;
+					}
+					continue;
+				}
 				$this->resendConfirmationEmail( $username );
 
 				if ( $this->total % $this->batchSize == 0 ) {
