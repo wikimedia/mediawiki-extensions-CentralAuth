@@ -493,5 +493,12 @@
 	"apihelp-setglobalaccountstatus-description": "Definì në stat d'utent global.",
 	"apihelp-setglobalaccountstatus-param-user": "Utent dont lë stat a dev esse modificà.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cangé si s'utent a l'é blocà o pa.",
-	"apihelp-setglobalaccountstatus-param-hidden": "Cangé si st'utent a l'é nen ëstërmà, stërmà da le liste, o dëscancelà."
+	"apihelp-setglobalaccountstatus-param-hidden": "Cangé si st'utent a l'é nen ëstërmà, stërmà da le liste, o dëscancelà.",
+	"apihelp-setglobalaccountstatus-param-reason": "Rason për modifiché lë stat ëd l'utent.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 facoltativ ëd l'atual <username>:<hidden>:<locked> spetà, për trové ij conflit ëd modìfica. Buté <locked> a 1 për blocà, 0 për dësbloché.",
+	"apihelp-setglobalaccountstatus-example-1": "Bloché ël cont global për [[User:Example]] con la rason «Rumenta»",
+	"apihelp-setglobalaccountstatus-example-2": "Dësbloché e eliminé ël cont global për [[User:Example]] con la rason «I peuss»",
+	"centralauth-log-gblrename-oldname": "Stranòm precedent:",
+	"centralauth-contribs-locked": "Ës cont a l'é blocà ëd fasson global.\nVëdde [[Special:CentralAuth/$1|ij detaj dël cont global]] për pi d'anformassion.",
+	"centralauth-contribs-locked-log": "Ës cont a l'é blocà ëd fasson global.\nL'ùltima vos dl'argistr dij blocage a l'é fornìa sì sota për anformassion:"
 }
