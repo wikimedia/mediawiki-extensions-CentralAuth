@@ -26,6 +26,13 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 */
 	private $sendToConfirmed;
 
+	/**
+	 * How long to wait in between emails
+	 *
+	 * @var int
+	 */
+	private $sleep;
+
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
@@ -37,10 +44,12 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
 		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
+		$this->addOption( 'sleep', 'How long to wait in between emails', false, true );
 	}
 
 	public function execute() {
 		$this->sendToConfirmed = $this->getOption( 'confirmed', false );
+		$this->sleep = $this->getOption( 'sleep', 1 );
 
 		// check to see if we are processing a single username
 		if ( $this->getOption( 'username', false ) !== false ) {
@@ -114,6 +123,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 		if ( $user->sendConfirmAndMigrateMail() ) {
 			$this->sent++;
+			sleep( $this->sleep );
 		} else {
 			$this->output( "ERROR: Sending confirm and migrate email failed for '$username@$wikiID'\n" );
 		}
