@@ -33,6 +33,11 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 */
 	private $sleep;
 
+	/**
+	 * @var bool
+	 */
+	private $dryrun;
+
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
@@ -45,11 +50,13 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
 		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
 		$this->addOption( 'sleep', 'How long to wait in between emails', false, true );
+		$this->addOption( 'dryrun', 'Don\'t actually send any emails', false, false );
 	}
 
 	public function execute() {
 		$this->sendToConfirmed = $this->getOption( 'confirmed', false );
 		$this->sleep = $this->getOption( 'sleep', 1 );
+		$this->dryrun = $this->hasOption( 'dryrun');
 
 		// check to see if we are processing a single username
 		if ( $this->getOption( 'username', false ) !== false ) {
@@ -74,7 +81,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 				if ( $this->total % $this->batchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
-					wfWaitForSlaves( false );
+					if ( !$this->dryrun ) {
+						wfWaitForSlaves( false );
+					}
 					$this->output( "done\n" );
 				}
 			}
@@ -121,7 +130,13 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			return;
 		}
 
+		if ( $this->dryrun ) {
+			$this->output( "Would have sent email\n" );
+			return;
+		}
+
 		if ( $user->sendConfirmAndMigrateMail() ) {
+			$this->output( "Sent email to $username\n" );
 			$this->sent++;
 			sleep( $this->sleep );
 		} else {
