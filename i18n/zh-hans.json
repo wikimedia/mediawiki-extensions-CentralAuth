@@ -364,7 +364,7 @@
 	"centralauth-rename-form-movepages": "移动用户页",
 	"centralauth-rename-form-suppressredirects": "阻止重定向创建",
 	"centralauth-rename-form-overrideantispoof": "覆盖任何AntiSpoof冲突",
-	"centralauth-rename-notinstalled": "重命名用户拓展未安装。",
+	"centralauth-rename-notinstalled": "重命名用户扩展未安装。",
 	"centralauth-rename-doesnotexist": "提供的帐户不存在。",
 	"centralauth-rename-alreadyexists": "请求的用户名已存在。",
 	"centralauth-rename-unattached-intheway": "有独立的账户使用请求的用户名。",
