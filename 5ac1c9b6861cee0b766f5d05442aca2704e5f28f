@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_02434bb7",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-07T00:59:58Z",
+      "side": 1,
+      "message": "double space after true",
+      "revId": "5ac1c9b6861cee0b766f5d05442aca2704e5f28f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_2240cfa7",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-07T00:59:58Z",
+      "side": 1,
+      "message": "If $this-\u003eresume is a string, it will become false here (unless it is the first user name), thus all further entries will be skipped.",
+      "revId": "5ac1c9b6861cee0b766f5d05442aca2704e5f28f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
