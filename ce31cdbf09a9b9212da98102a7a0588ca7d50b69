@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_02f4ab82",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-07T00:53:47Z",
+      "side": 1,
+      "message": "note that the default is 1?",
+      "revId": "ce31cdbf09a9b9212da98102a7a0588ca7d50b69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_22f1af92",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-07T00:53:47Z",
+      "side": 1,
+      "message": "cast to int? Otherwise the above type hint is probably wrong",
+      "revId": "ce31cdbf09a9b9212da98102a7a0588ca7d50b69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
