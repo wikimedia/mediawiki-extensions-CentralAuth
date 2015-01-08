@@ -480,6 +480,7 @@
 	"apihelp-setglobalaccountstatus-description": "Legt den Status eines globalen Benutzers fest.",
 	"apihelp-setglobalaccountstatus-param-user": "Benutzer, von dem der Status geändert werden soll.",
 	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
+	"apihelp-setglobalaccountstatus-example-1": "Sperrt das globale Benutzerkonto für [[User:Example]] mit der Begründung „Spam“",
 	"centralauth-log-gblrename-oldname": "Früherer Benutzername",
 	"centralauth-contribs-locked": "Dieses Benutzerkonto ist global gesperrt.\nSiehe die [[Special:CentralAuth/$1|Einzelheiten zum globalen Benutzerkonto]] für weitere Informationen.",
 	"centralauth-contribs-locked-log": "Dieses Benutzerkonto ist global gesperrt.\nEs folgt der aktuellste Eintrag aus dem Sperr-Logbuch:"

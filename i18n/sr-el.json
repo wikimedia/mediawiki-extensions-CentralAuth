@@ -303,5 +303,9 @@
 	"log-description-gblrename": "Ovaj dnevnik prikazuje globalno preimenovane korisnike.",
 	"logentry-gblrename-rename": "$1 je globalno {{GENDER:$2|preimenovao|preimenovala}} $4 u $5",
 	"centralauth-usermerge-form-reason": "Razlog",
-	"logentry-gblrename-merge": "$1 je globalno {{GENDER:$2|spojio|spojila}} $4 u $5"
+	"logentry-gblrename-merge": "$1 je globalno {{GENDER:$2|spojio|spojila}} $4 u $5",
+	"globalrenamerequest-username-help": "Ovo je sada vaše korisničko ime.",
+	"globalrenamerequest-newname-label": "Željeno korisničko ime:",
+	"globalrenamerequest-email-label": "E-pošta:",
+	"globalrenamerequest-email2-label": "Potvrda e-pošte:"
 }
