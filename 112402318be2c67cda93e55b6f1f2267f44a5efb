@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_d35af9f8",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-01-08T20:30:20Z",
+      "side": 1,
+      "message": "I think this should just take a Password object, and callers should have to call getPasswordFromString.\n\nSame for matchHashes.",
+      "revId": "112402318be2c67cda93e55b6f1f2267f44a5efb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
