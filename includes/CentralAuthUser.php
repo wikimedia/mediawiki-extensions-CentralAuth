@@ -436,12 +436,13 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Return the password salt and hash.
-	 * @return array( salt, hash )
+	 * Return the password.
+	 *
+	 * @return Password
 	 */
-	public function getPasswordHash() {
+	protected function getPasswordObject() {
 		$this->loadState();
-		return array( $this->mSalt, $this->mPassword );
+		return $this->getPasswordFromString( $this->mPassword, $this->mSalt );
 	}
 
 	/**
@@ -772,13 +773,17 @@ class CentralAuthUser extends AuthPluginUser {
 			$passingMail[$this->mEmail] = true;
 		}
 
+		$accountPasswords = array();
 		// If we've got an authenticated password to work with, we can
 		// also assume their email addresses are useful for this purpose...
 		if ( $passwords ) {
-			foreach ( $migrationSet as $local ) {
+			foreach ( $migrationSet as $wiki => $local ) {
+				// Store the password object, so that we only have to compute it once
+				$accountPasswords[$wiki] = $this->getPasswordFromString( $local['password'],  $local['id'] );
+
 				if ( $local['email'] != ''
 					&& $local['emailAuthenticated']
-					&& $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+					&& $this->matchHashes( $passwords, $accountPasswords[$wiki] ) ) {
 					$passingMail[$local['email']] = true;
 				}
 			}
@@ -790,7 +795,7 @@ class CentralAuthUser extends AuthPluginUser {
 			if ( $wiki == $this->mHomeWiki ) {
 				// Primary account holder... duh
 				$method = 'primary';
-			} elseif ( $this->matchHashes( $passwords, $local['id'], $local['password'] ) ) {
+			} elseif ( $passwords && $this->matchHashes( $passwords, $accountPasswords[$wiki] ) ) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
 			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
@@ -1024,7 +1029,7 @@ class CentralAuthUser extends AuthPluginUser {
 		// Look for accounts we can match by password
 		foreach ( $rows as $row ) {
 			$wiki = $row['wiki'];
-			if ( $this->matchHash( $password, $row['id'], $row['password'] )->isGood() ) {
+			if ( $this->matchHash( $password, $this->getPasswordFromString( $row['password'], $row['id'] ) )->isGood() ) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $wiki by password" );
 				$this->attach( $wiki, 'password' );
@@ -1607,8 +1612,7 @@ class CentralAuthUser extends AuthPluginUser {
 			return $ret;
 		}
 
-		list( $salt, $crypt ) = $this->getPasswordHash();
-		$status = $this->matchHash( $password, $salt, $crypt );
+		$status = $this->matchHash( $password, $this->getPasswordObject() );
 		if ( $status->isGood() ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
@@ -1642,14 +1646,71 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * @param $plaintext  String User-provided password plaintext.
-	 * @param $salt       String The hash "salt", eg a local id for migrated passwords.
-	 * @param $encrypted  String Fully salted and hashed database crypto text from db.
+	 * @param string $plaintext User-provided password plaintext.
+	 * @param Password|string $saltOrPassword Password to check against or salt of a password
+	 * @param string|null $encrypted Null if Password was passed as 2nd param
+	 *
 	 * @return Status
 	 */
-	protected function matchHash( $plaintext, $salt, $encrypted ) {
-		global $wgPasswordSalt;
+	protected function matchHash( $plaintext, $saltOrPassword, $encrypted = null ) {
+		if ( $saltOrPassword instanceof Password ) {
+			$password = $saltOrPassword;
+		} else {
+			$password = $this->getPasswordFromString( $encrypted, $saltOrPassword );
+		}
+
 		$matched = false;
+
+		if ( $password->equals( $plaintext ) ) {
+			$matched = true;
+		} elseif ( !( $password instanceof Pbkdf2Password ) && function_exists( 'iconv' ) ) {
+			// Some wikis were converted from ISO 8859-1 to UTF-8;
+			// retained hashes may contain non-latin chars.
+			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
+			if ( $password->equals( $latin1 ) ) {
+				$matched = true;
+			}
+		}
+
+		if ( $matched ) {
+			return Status::newGood( $password );
+		} else {
+			return Status::newFatal( 'bad' );
+		}
+	}
+
+	/**
+	 * @param array $passwords
+	 * @param Password|string $saltOrPassword Password to check against or salt of a password
+	 * @param string|null $encrypted Null if Password was passed as 2nd param
+	 *
+	 * @return bool
+	 */
+	protected function matchHashes( array $passwords, $saltOrPassword, $encrypted = null ) {
+		if ( $saltOrPassword instanceof Password ) {
+			$password = $saltOrPassword;
+		} else {
+			$password = $this->getPasswordFromString( $encrypted, $saltOrPassword );
+		}
+
+		foreach ( $passwords as $plaintext ) {
+			if ( $this->matchHash( $plaintext, $password )->isGood() ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * @param $encrypted string Fully salted and hashed database crypto text from db.
+	 * @param $salt string The hash "salt", eg a local id for migrated passwords.
+	 *
+	 * @return Password
+	 */
+	private function getPasswordFromString( $encrypted, $salt ) {
+		global $wgPasswordSalt;
+
 		$passwordFactory = User::getPasswordFactory();
 
 		if ( preg_match( '/^[0-9a-f]{32}$/', $encrypted ) ) {
@@ -1660,38 +1721,7 @@ class CentralAuthUser extends AuthPluginUser {
 			}
 		}
 
-		$hash = $passwordFactory->newFromCiphertext( $encrypted );
-		if ( $hash->equals( $plaintext ) ) {
-			$matched = true;
-		} elseif ( function_exists( 'iconv' ) ) {
-			// Some wikis were converted from ISO 8859-1 to UTF-8;
-			// retained hashes may contain non-latin chars.
-			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			if ( $hash->equals( $latin1 ) ) {
-				$matched = true;
-			}
-		}
-
-		if ( $matched ) {
-			return Status::newGood( $hash );
-		} else {
-			return Status::newFatal( 'bad' );
-		}
-	}
-
-	/**
-	 * @param $passwords
-	 * @param $salt
-	 * @param $encrypted
-	 * @return bool
-	 */
-	protected function matchHashes( $passwords, $salt, $encrypted ) {
-		foreach ( $passwords as $plaintext ) {
-			if ( $this->matchHash( $plaintext, $salt, $encrypted )->isGood() ) {
-				return true;
-			}
-		}
-		return false;
+		return $passwordFactory->newFromCiphertext( $encrypted );
 	}
 
 	/**
