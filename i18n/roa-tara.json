@@ -175,7 +175,7 @@
 	"centralauth-renameuser-merged": "L'utende $1 ha state migrate verse 'nu sisteme de trasùte aunìficate.\nCe tu le renomine, l'utende locale adda essere scucchiáte da 'u cunde globbale.",
 	"centralauth-renameuser-reserved": "L'utende $2 jè reservate pè 'nu cunde globbale.",
 	"centralauth-invalid-wiki": "Nisciune database cumme uicchi: $1",
-	"centralauth-account-exists": "Non ge puè ccrejà 'u cunde utende: 'u nome de l'utende cercate ha state ggià pigghiate jndr'à 'u sisteme de le utinde aunificate.",
+	"centralauth-account-exists": "Non ge puè ccrejà 'u cunde utende: 'U nome de l'utende cercate ha state ggià pigghiate jndr'à 'u sisteme da 'n'utende de 'n'otra uicchi.",
 	"centralauth-login-progress": "Ste tràse jndr'à ste uicchi de {{int:Centralauth-groupname}}:",
 	"centralauth-login-no-others": "Tu è trasute automaticamende jndr'à l'otre pruggette de {{int:Centralauth-groupname}}.",
 	"centralauth-logout-no-others": "Tu è state automaticamende mise fore da l'otre pruggette de {{int:Centralauth-groupname}}.",
