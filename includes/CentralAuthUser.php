@@ -773,17 +773,20 @@ class CentralAuthUser extends AuthPluginUser {
 			$passingMail[$this->mEmail] = true;
 		}
 
-		$accountPasswords = array();
+		$passwordConfirmed = array();
 		// If we've got an authenticated password to work with, we can
 		// also assume their email addresses are useful for this purpose...
 		if ( $passwords ) {
 			foreach ( $migrationSet as $wiki => $local ) {
-				// Store the password object, so that we only have to compute it once
-				$accountPasswords[$wiki] = $this->getPasswordFromString( $local['password'],  $local['id'] );
+				// Test passwords only once here as comparing hashes is very expensive
+				$passwordConfirmed[$wiki] = $this->matchHashes(
+					$passwords,
+					$this->getPasswordFromString( $local['password'],  $local['id'] )
+				);
 
 				if ( $local['email'] != ''
 					&& $local['emailAuthenticated']
-					&& $this->matchHashes( $passwords, $accountPasswords[$wiki] ) ) {
+					&& $passwordConfirmed[$wiki] ) {
 					$passingMail[$local['email']] = true;
 				}
 			}
@@ -795,7 +798,7 @@ class CentralAuthUser extends AuthPluginUser {
 			if ( $wiki == $this->mHomeWiki ) {
 				// Primary account holder... duh
 				$method = 'primary';
-			} elseif ( $passwords && $this->matchHashes( $passwords, $accountPasswords[$wiki] ) ) {
+			} elseif ( isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
 			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
