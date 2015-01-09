@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_3e30d1e4",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-01-09T19:00:39Z",
+      "side": 1,
+      "message": "I had to reread this a few times to figure out what it was saying. Maybe,\n\n// Same email address as the primary account, or the same email address as another password confirmed account, means we know...",
+      "revId": "cbda94a83be193bb0b80fec3082b38a087fe09ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
