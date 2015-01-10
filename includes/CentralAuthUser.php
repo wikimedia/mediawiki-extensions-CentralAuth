@@ -709,12 +709,12 @@ class CentralAuthUser extends AuthPluginUser {
 	 * all privileged accounts or all accounts if none are privileged.
 	 *
 	 * @param array $migrationSet
-	 * @throws MWException
+	 * @throws Exception
 	 * @return string
 	 */
 	function chooseHomeWiki( $migrationSet ) {
 		if ( empty( $migrationSet ) ) {
-			throw new MWException( 'Logic error -- empty migration set in chooseHomeWiki' );
+			throw new Exception( 'Logic error -- empty migration set in chooseHomeWiki' );
 		}
 
 		// Sysops get priority
@@ -744,7 +744,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		if ( !isset( $homeWiki ) ) {
-			throw new MWException( "Logic error in migration: " .
+			throw new Exception( "Logic error in migration: " .
 				"Unable to determine primary account for $this->mName" );
 		}
 
@@ -1062,7 +1062,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * @static
-	 * @throws MWException
+	 * @throws Exception
 	 * @param  $list
 	 * @return array
 	 */
@@ -1072,7 +1072,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		if ( count( $valid ) != count( $list ) ) {
 			// fixme: handle this gracefully
-			throw new MWException( "Invalid input" );
+			throw new Exception( "Invalid input" );
 		}
 
 		return $valid;
@@ -2004,7 +2004,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Find any remaining migration records for this username which haven't gotten attached to some global account.
 	 * Formatted as associative array with some data.
 	 *
-	 * @throws MWException
+	 * @throws Exception
 	 * @return array
 	 */
 	public function queryUnattached() {
@@ -2014,7 +2014,7 @@ class CentralAuthUser extends AuthPluginUser {
 		foreach ( $wikiIDs as $wikiID ) {
 			$data = $this->localUserData( $wikiID );
 			if ( empty( $data ) ) {
-				throw new MWException(
+				throw new Exception(
 					"Bad user row looking up local user $this->mName@$wikiID" );
 			}
 			$items[$wikiID] = $data;
@@ -2237,7 +2237,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 *  false: Force NOT setting the secure attribute when setting the cookie
 	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
 	 * @param $prefix cookie prefix, or false to use $wgCentralAuthCookiePrefix
-	 * @throws MWException
+	 * @throws Exception
 	 * @return void
 	 */
 	static function setCookie( $name, $value, $exp = -1, $secure = null, $prefix = false ) {
@@ -2245,7 +2245,7 @@ class CentralAuthUser extends AuthPluginUser {
 			$wgCookieExpiration, $wgCentralAuthCookiePath;
 
 		if ( CentralAuthHooks::hasApiToken() ) {
-			throw new MWException( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
+			throw new Exception( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
 		}
 
 		self::setP3P();

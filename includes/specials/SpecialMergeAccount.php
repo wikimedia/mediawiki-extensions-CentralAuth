@@ -265,7 +265,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$passwords = $this->getWorkingPasswords();
 		if ( empty( $passwords ) ) {
-			throw new MWException( "Submission error -- invalid input" );
+			throw new Exception( "Submission error -- invalid input" );
 		}
 
 		$globalUser->storeAndMigrate( $passwords, /* $sendToRC = */ true,
@@ -280,11 +280,11 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
 
 		if ( !$globalUser->exists() ) {
-			throw new MWException( "User doesn't exist -- race condition?" );
+			throw new Exception( "User doesn't exist -- race condition?" );
 		}
 
 		if ( !$globalUser->isAttached() ) {
-			throw new MWException( "Can't cleanup merge if not already attached." );
+			throw new Exception( "Can't cleanup merge if not already attached." );
 		}
 
 		if ( $wgCentralAuthDryRun ) {
@@ -313,7 +313,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
 
 		if ( !$globalUser->exists() ) {
-			throw new MWException( "User doesn't exist -- race condition?" );
+			throw new Exception( "User doesn't exist -- race condition?" );
 		}
 
 		if ( $globalUser->isAttached() ) {
@@ -490,12 +490,12 @@ class SpecialMergeAccount extends SpecialPage {
 	/**
 	 * @param $wikiID string
 	 * @return string
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
-			throw new MWException( "Invalid wiki: $wikiID" );
+			throw new Exception( "Invalid wiki: $wikiID" );
 		}
 
 		$wikiname = $wiki->getDisplayName();

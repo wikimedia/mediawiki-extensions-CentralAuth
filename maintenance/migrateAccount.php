@@ -104,7 +104,7 @@ class MigrateAccount extends Maintenance {
 		$central = new CentralAuthUser( $username );
 		try {
 			$unattached = $central->queryUnattached();
-		} catch ( MWException $e ) {
+		} catch ( Exception $e ) {
 			// This might happen due to localnames inconsistencies (bug 67350)
 			$this->output( "ERROR: Fetching unattached accounts for $username failed." );
 			return;

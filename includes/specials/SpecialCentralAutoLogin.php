@@ -21,13 +21,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 *
 	 * @param string $name Path to file relative to /modules/inline/
 	 * @return string Minified script
-	 * @throws MWException If file doesn't exist
+	 * @throws Exception If file doesn't exist
 	 */
 	protected static function getInlineScript( $name ) {
 		// Get file
 		$filePath = __DIR__ . '/../../modules/inline/' . $name;
 		if ( !file_exists( $filePath ) ) {
-			throw new MWException( __METHOD__ . ": file not found: \"$filePath\"" );
+			throw new Exception( __METHOD__ . ": file not found: \"$filePath\"" );
 		}
 		$contents = file_get_contents( $filePath );
 
@@ -45,7 +45,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$result = JavaScriptMinifier::minify( $contents ) . "\n/* cache key: $key */";
 			$cache->set( $key, $result );
 		} catch ( Exception $e ) {
-			MWExceptionHandler::logException( $e );
+			ExceptionHandler::logException( $e );
 			wfDebugLog( 'CentralAuth', __METHOD__ . ": minification failed for $name: $e" );
 			$result = ResourceLoader::formatException( $e ) . "\n" . $contents;
 		}

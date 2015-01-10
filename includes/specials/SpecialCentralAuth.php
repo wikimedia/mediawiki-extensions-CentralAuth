@@ -550,12 +550,12 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @param $row
 	 * @return string
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	private function formatEditcount( $row ) {
 		$wiki = WikiMap::getWiki( $row['wiki'] );
 		if ( !$wiki ) {
-			throw new MWException( "Invalid wiki: {$row['wiki']}" );
+			throw new Exception( "Invalid wiki: {$row['wiki']}" );
 		}
 		$wikiname = $wiki->getDisplayName();
 		$editCount = $this->getLanguage()->formatNum( intval( $row['editCount'] ) );
@@ -604,7 +604,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param string $hint
 	 * @param string $params
 	 * @return string
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	public static function foreignLink( $wikiID, $title, $text, $hint = '', $params = '' ) {
 		if ( $wikiID instanceof WikiReference ) {
@@ -612,7 +612,7 @@ class SpecialCentralAuth extends SpecialPage {
 		} else {
 			$wiki = WikiMap::getWiki( $wikiID );
 			if ( !$wiki ) {
-				throw new MWException( "Invalid wiki: $wikiID" );
+				throw new Exception( "Invalid wiki: $wikiID" );
 			}
 		}
 
@@ -631,12 +631,12 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @param string $wikiID
 	 * @return string
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	private function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
-			throw new MWException( "Invalid wiki: $wikiID" );
+			throw new Exception( "Invalid wiki: $wikiID" );
 		}
 
 		$wikiname = $wiki->getDisplayName();

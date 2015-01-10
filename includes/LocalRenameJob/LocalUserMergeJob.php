@@ -16,7 +16,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 
 	public function doRun() {
 		if ( !class_exists( 'MergeUser' ) ) {
-			throw new MWException( 'Extension:UserMerge is not installed' );
+			throw new Exception( 'Extension:UserMerge is not installed' );
 		}
 		$from = $this->params['from'];
 		$to = $this->params['to'];
@@ -56,7 +56,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 	 *
 	 * @param string $newName
 	 * @return User
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	private function maybeCreateNewUser( $newName ) {
 		global $wgAuth;
@@ -71,7 +71,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 		$status = $user->addToDatabase();
 		if ( !$status->isOK() ) {
 			$this->updateStatus( 'failed' );
-			throw new MWException( "User::addToDatabase failed for $newName: {$status->getWikiText()}" );
+			throw new Exception( "User::addToDatabase failed for $newName: {$status->getWikiText()}" );
 		}
 		$wgAuth->initUser( $user, true );
 		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );

@@ -140,13 +140,13 @@ class GlobalRenameRequest {
 
 	/**
 	 * @param string $newName
-	 * @throws MWException if an invalid username is provided
+	 * @throws Exception if an invalid username is provided
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setNewName( $newName ) {
 		$newName = User::getCanonicalName( $newName, 'creatable' );
 		if ( $newName === false ) {
-			throw new MWException( "Invalid username '{$newName}'" );
+			throw new Exception( "Invalid username '{$newName}'" );
 		}
 		$this->newName = $newName;
 		return $this;
