@@ -180,7 +180,7 @@
 	"centralauth-renameuser-merged": "Uporabnika $1 smo preselili v sistem enotne prijave.\nNjegovo preimenovanje bo povzročilo ločitev lokalnega od globalnega računa.",
 	"centralauth-renameuser-reserved": "Uporabniško ime $2 je rezervirano za globalni račun.",
 	"centralauth-invalid-wiki": "Ni takšne zbirke podatkov wiki: $1",
-	"centralauth-account-exists": "Ne morem ustvariti računa: zahtevano uporabniško ime je že zasedeno v enotnem sistemu prijave.",
+	"centralauth-account-exists": "Ne morem ustvariti računa: zahtevano uporabniško ime je že zasedel uporabnik na drugem wikiju.",
 	"centralauth-account-exists-reset": "Uporabniško ime $1 ni registrirano na tem wikiju, vendar lahko ponastavite njegovo geslo na [[Special:CentralAuth/$1|wikiju, kjer je]].",
 	"centralauth-login-progress": "Prijavljanje v wikije {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Odjavljanje iz ostalih wikijev {{int:Centralauth-groupname}}:",
