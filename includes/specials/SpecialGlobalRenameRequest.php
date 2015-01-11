@@ -116,9 +116,14 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	* @param HTMLForm $form
 	*/
 	protected function alterForm( HTMLForm $form ) {
-		$form->setDisplayFormat( 'vform' );
-		$form->setWrapperLegend( false );
 		$form->setSubmitTextMsg( 'globalrenamerequest-submit-text' );
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getDisplayFormat() {
+		return 'vform';
 	}
 
 	/**
