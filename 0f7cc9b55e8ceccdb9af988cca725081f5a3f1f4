@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_26b2fae1",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-12T16:44:51Z",
+      "side": 1,
+      "message": "Only add this, if there are unattached accounts? Cause (especially after SULF) in most cases there wont, so this is just clutter",
+      "revId": "0f7cc9b55e8ceccdb9af988cca725081f5a3f1f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
