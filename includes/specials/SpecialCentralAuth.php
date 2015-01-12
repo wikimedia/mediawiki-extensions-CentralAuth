@@ -289,7 +289,12 @@ class SpecialCentralAuth extends SpecialPage {
 			'username' => $globalUser->getName(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
+			'attached' => htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) ),
 		);
+
+		if ( count( $this->mUnattachedLocalAccounts ) ) {
+			$attribs['unattached'] = htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mUnattachedLocalAccounts ) ) );
+		}
 
 		if ( $globalUser->isLocked() ) {
 			$attribs['locked'] = $this->msg( 'centralauth-admin-yes' )->escaped();
