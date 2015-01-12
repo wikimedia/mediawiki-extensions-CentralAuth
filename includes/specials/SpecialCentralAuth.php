@@ -289,6 +289,8 @@ class SpecialCentralAuth extends SpecialPage {
 			'username' => $globalUser->getName(),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
+			'attached' => htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) ),
+			'unattached' => htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mUnattachedLocalAccounts ) ) ),
 		);
 
 		if ( $globalUser->isLocked() ) {

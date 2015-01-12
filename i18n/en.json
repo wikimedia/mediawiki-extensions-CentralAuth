@@ -117,6 +117,8 @@
 	"centralauth-admin-info-hidden": "Hidden level:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|group|groups}}:",
 	"centralauth-admin-info-nogroups": "none",
+	"centralauth-admin-info-attached": "Number of attached accounts:",
+	"centralauth-admin-info-unattached": "Number of unattached accounts:",
 	"centralauth-admin-yes": "yes",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "from public lists",
