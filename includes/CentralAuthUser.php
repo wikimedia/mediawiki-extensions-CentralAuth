@@ -778,16 +778,16 @@ class CentralAuthUser extends AuthPluginUser {
 		// also assume their email addresses are useful for this purpose...
 		if ( $passwords ) {
 			foreach ( $migrationSet as $wiki => $local ) {
-				// Test passwords only once here as comparing hashes is very expensive
-				$passwordConfirmed[$wiki] = $this->matchHashes(
-					$passwords,
-					$this->getPasswordFromString( $local['password'],  $local['id'] )
-				);
+				if ( $local['email'] && $local['emailAuthenticated'] && !isset( $passingMail[$local['email']] ) ) {
+					// Test passwords only once here as comparing hashes is very expensive
+					$passwordConfirmed[$wiki] = $this->matchHashes(
+						$passwords,
+						$this->getPasswordFromString( $local['password'],  $local['id'] )
+					);
 
-				if ( $local['email'] != ''
-					&& $local['emailAuthenticated']
-					&& $passwordConfirmed[$wiki] ) {
-					$passingMail[$local['email']] = true;
+					if ( $passwordConfirmed[$wiki] ) {
+						$passingMail[$local['email']] = true;
+					}
 				}
 			}
 		}
@@ -798,14 +798,18 @@ class CentralAuthUser extends AuthPluginUser {
 			if ( $wiki == $this->mHomeWiki ) {
 				// Primary account holder... duh
 				$method = 'primary';
-			} elseif ( isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ) {
-				// Matches the pre-authenticated password, yay!
-				$method = 'password';
 			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
 				// Same email addresss as primary means we know they could
 				// reset their password, so we give them the account.
 				// Authenticated email addresses only to prevent merges with malicious users
 				$method = 'mail';
+			} elseif (
+				isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ||
+				!isset( $passwordConfirmed[$wiki] ) &&
+					$this->matchHashes( $passwords, $this->getPasswordFromString( $local['password'],  $local['id'] ) )
+			) {
+				// Matches the pre-authenticated password, yay!
+				$method = 'password';
 			} else {
 				// Can't automatically resolve this account.
 				//
@@ -1653,7 +1657,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * @param string $plaintext User-provided password plaintext.
-	 * @param Password|$password Password to check against or
+	 * @param Password $password Password to check against
 	 *
 	 * @return Status
 	 */
