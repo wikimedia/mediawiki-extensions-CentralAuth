@@ -196,6 +196,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		// Done as one big message so that stewards can create a local
 		// translation to customize the output as they see fit.
+		// @TODO: Do that actually in here... this is not how we do interfaces in 2015.
 		$viewMsg = $this->msg( 'globalrenamequeue-view',
 			$req->getName(),
 			$req->getNewName(),
