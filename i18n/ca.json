@@ -330,6 +330,13 @@
 	"centralauth-warning-notattached": "El compte local no està lligat a cap de global.",
 	"centralauth-finishglobaliseemail_subject": "Confirmació de compte de {{SITENAME}}",
 	"centralauth-finishglobaliseemail_body": "La vostra adreça de correu ha estat associada\namb el compte « $2 » en tots els projectes de Wikimedia, essent el compte principal a {{SITENAME}}.\n\nPer confirmar que aquest compte realment us pertany, per fusionar tots els vostres\ncomptes que puguem fer automàticament, i per permetre que pugueu recuperar el vostre\ncompte si perdeu la contrasenya, obriu aquest enllaç en el vostre navegador:\n\n$3\n\nSi el compte *no* és vostre, seguiu aquest enllaç per cancel·lar la confirmació d'adreça de correu:\n\n$5\n\nAquest codi de confirmació expirarà el $6 a les $7.",
+	"globalrenamerequest": "Sol·licitud de reanomenament unificat",
+	"globalrenamerequest-pretext": "Sol·liciteu un nou nom d'usuari amb el que voleu ser coneguts en el conjunt de projectes.\n\nTotes les contribucions anteriors seran associades a aquest nou nom d'usuari.\n\nQuan sol·liciteu un nou nom d'usuari, s'enviarà una notificació als stewards de Wikimedia per atendre la sol·licitud. Sereu informats per correu electrònic quan el procés estigui completat.",
+	"globalrenamerequest-username-label": "Nom d'usuari actual:",
+	"globalrenamerequest-username-help": "Aquest és el nom d'usuari que teniu ara mateix.",
+	"globalrenamerequest-newname-help": "Introduïu el nou nom d'usuari que voleu utilitzar, p. ex. «$1».",
+	"globalrenamerequest-reason-label": "Motiu de la sol·licitud",
+	"globalrenamerequest-submit-text": "Sol·licita el canvi de nom",
 	"centralauth-usermerge-form-adduser": "Afegeix un usuari",
 	"centralauth-usermerge-form-deleteuser": "Suprimeix l'usuari",
 	"centralauth-log-gblrename-oldname": "Anterior nom d'usuari"

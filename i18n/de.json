@@ -396,7 +396,7 @@
 	"globalrenamerequest-forced": "Die Wikimedia Foundation [[:mw:SUL_finalisation|vereinheitlicht Benutzernamen auf allen Projekten]]. Dieser Benutzername wurde in anderen Wikimedia-Wikis verwendet und musste geändert werden, um diese Vereinheitlichung abzuschließen. Deshalb musst du einen neuen Benutzernamen auswählen.",
 	"globalrenamerequest-pretext": "Beantrage einen neuen Benutzernamen, der für alle Projekte verwendet werden soll.\n\nAll deine früheren Beiträge werden mit diesem neuen Benutzernamen verknüpft.\n\nSobald du einen neuen Benutzernamen beantragt hast, wird eine Benachrichtigung an die Wikimedia-Stewards versandt, um die Umbenennung auszuführen. Du wirst per E-Mail benachrichtigt, wenn dieser Prozess abgeschlossen wurde.",
 	"globalrenamerequest-username-label": "Aktueller Benutzername:",
-	"globalrenamerequest-username-help": "Dies ist jetzt dein Benutzername.",
+	"globalrenamerequest-username-help": "Dies ist dein jetziger Benutzername.",
 	"globalrenamerequest-newname-label": "Gewünschter Benutzername:",
 	"globalrenamerequest-newname-help": "Gib den neuen Benutzernamen ein, den du verwenden willst, z.&nbsp;B. „$1“.",
 	"globalrenamerequest-newname-err-invalid": "Du hast keinen gültigen Benutzernamen angegeben.",
