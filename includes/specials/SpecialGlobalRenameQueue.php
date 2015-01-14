@@ -214,7 +214,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getComments()
 		)->parseAsBlock();
 
-		$this->getOutput()->addHtml( $viewMsg );
+		$this->getOutput()->addHtml( '<span class="plainlinks">' . $viewMsg . '</span>' );
 	}
 
 	/**
@@ -570,11 +570,12 @@ class RenameQueueTablePager extends TablePager {
 				break;
 			case 'rq_performer':
 				$steward = CentralAuthUser::newFromId( $value );
-				$formatted = WikiMap::foreignUserLink(
+				$formatted = '<span class="plainlinks">' .
+					WikiMap::foreignUserLink(
 					$steward->getHomeWiki(),
 					$steward->getName(),
 					$steward->getName()
-				);
+				) . '</span>';
 				break;
 			case 'row_actions':
 				$formatted = $this->formatActionValue( $this->mCurrentRow );
