@@ -227,7 +227,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-title', array( $req->getName() )
 		);
 
-		$form = new HTMLForm(
+		$form = HTMLForm::factory( 'vform',
 			array(
 				'rid' => array(
 					'default' => $req->getId(),
@@ -292,8 +292,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		);
 
 		$form->setId( 'mw-globalrenamequeue-request' );
-		$form->setDisplayFormat( 'vform' );
-		$form->setWrapperLegend( false );
 
 		if ( $req->userIsGlobal() ) {
 			$globalUser = new CentralAuthUser( $req->getName() );
