@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"عثمان خان شاہ"
 		]
 	},
 	"mergeaccount": "لاگ ان کے اتحاد کا درجہ",
@@ -41,6 +42,7 @@
 	"centralauth-admin-info-registered": "رجسٹرڈ:",
 	"centralauth-admin-info-locked": "بند:",
 	"centralauth-admin-info-hidden": "پوشیدہ سطح:",
+	"centralauth-admin-info-attached": "تعداد منسوب شدہ کھاتہ جات",
 	"centralauth-admin-yes": "جی ہاں",
 	"centralauth-admin-no": "نہیں",
 	"centralauth-admin-hidden-list": "عوامی کی فہرست سے",

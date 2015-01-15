@@ -26,7 +26,7 @@
 	"centralauth-rename-desc": "Lisää Renameuser-teknologian CentralAuth-työkaluun",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.",
 	"centralauth-merge-denied": "Et ole oikeutettu käyttämään tätä sivua.",
-	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Kirjaudu sisään]</span>, jos haluat tarkistaa, ovatko käyttäjätunnuksesi yhdistetty.",
+	"centralauth-merge-notlogged": "Ole hyvä ja <span class=\"plainlinks\">[$1 kirjaudu sisään]</span>, jos haluat katsoa, ovatko käyttäjätunnuksesi täysin yhdistetyt.",
 	"centralauth-merge-welcome": "'''Tunnustasi ei ole vielä siirretty yhden tunnuksen {{int:Centralauth-groupname}} -kirjautumisjärjestelmään.'''\n\nJos päivität tunnuksesi, voit jatkossa kirjautua kaikkiin {{int:Centralauth-groupname}} -hankkeisiin ja niiden kieliversioihin samalla käyttäjätunnuksella ja salasanalla.\n\nJos käyttäjänimesi on jo varattu toisessa projektissa, yhdistäminen ei haittaa näitä toisia käyttäjiä, mutta antaa sinulle mahdollisuuden neuvotella käyttäjänimestä näiden toisten käyttäjien kanssa, tai myöhemmin ylläpitäjän kanssa.",
 	"centralauth-merge-step1-title": "Aloita tunnusten yhdistäminen",
 	"centralauth-merge-step1-detail": "Anna tunnukseesi liittyvä salasana tähän.\nSalasanaasi ja asettamaasi sähköpostiosoitetta verrataan muissa wikeissä oleviin tunnuksiin ja varmistetaan, että ne ovat samat.\nMitään muutoksia ei tehdä ennen kuin varmistat, että kaikki on kunnossa.",

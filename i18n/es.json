@@ -367,7 +367,7 @@
 	"right-centralauth-rename": "Renombra cuentas globales",
 	"action-centralauth-rename": "renombrar cuentas globales",
 	"globalrenameprogress": "Progreso de renombramiento global",
-	"globalrenameprogress-legend": "Ver el progreso de renombramiento global",
+	"globalrenameprogress-legend": "Ver el progreso del cambio de nombre global",
 	"globalrenameuser": "Renombrar usuario global",
 	"globalrenameuser-legend": "Renombrar usuario global",
 	"centralauth-rename-abortlogin": "Se está renombrando o fusionando tu cuenta. [[Special:GlobalRenameProgress/$1|Consulta el estado]].",

@@ -81,6 +81,8 @@
 	"centralauth-admin-info-hidden": "ری ون قام بیه:",
 	"centralauth-admin-info-groups": "جهونی{{جمی:$1|گرو|گرویا}}:",
 	"centralauth-admin-info-nogroups": "هيش كوم",
+	"centralauth-admin-info-attached": "انازه حساویا وه یک دیسسه:",
+	"centralauth-admin-info-unattached": "انازه حساویا وه یک ندیسسه:",
 	"centralauth-admin-yes": "هری",
 	"centralauth-admin-no": "نه",
 	"centralauth-admin-hidden-list": "د ليستيا عمومی",

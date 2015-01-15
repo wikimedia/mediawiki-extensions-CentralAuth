@@ -375,7 +375,7 @@
 	"centralauth-rename-viewprogress": "نمایش پیشرفت",
 	"centralauth-rename-progress-fieldset": "فهرست حساب‌های محلی",
 	"centralauth-rename-progress-logs-fieldset": "مدخل‌های سیاهه",
-	"centralauth-rename-movelog": "هنگام تغییر نام کاربر «[[Special:CentralAuth/$1|$1]]» به «[[Special:CentralAuth/$2|$2]]»، صفحه به صورت خودکار منتقل شد",
+	"centralauth-rename-movelog": "هنگام تغییر نام کاربر «[[Special:CentralAuth/$1|$1]]» به «[[Special:CentralAuth/$2|$2]]»، صفحه به طور خودکار منتقل شد",
 	"centralauth-rename-confirm": "واقعاً می‌خواهید این نام کاربری را سراسری تغییر دهید؟",
 	"log-name-gblrename": "سیاهه تغییرنام سراسری",
 	"log-description-gblrename": "سیاهه تغییر نام سراسری کاربرها را دنبال می‌کند.",

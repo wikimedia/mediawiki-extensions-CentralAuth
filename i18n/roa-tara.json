@@ -303,5 +303,7 @@
 	"centralauth-rename-form-reason": "Mutive",
 	"centralauth-rename-form-movepages": "Spuèste le pàggene utinde",
 	"globalrenamerequest-email-label": "Indirizze email:",
-	"globalrenamerequest-email-why-label": "Purcé?"
+	"globalrenamerequest-email-why-label": "Purcé?",
+	"globalrenamequeue-request-userinfo-local": "* utende: [[Special:CentralAuth/$1]]\n* uicchi de partenze: $2\n* nome nuève: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* utende: [[Special:CentralAuth/$1]]\n* uicchi de partenze: $2\n* nome nuève: [[Special:CentralAuth/$3]]"
 }
