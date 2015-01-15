@@ -460,7 +460,7 @@ class CentralAuthHooks {
 				return false;
 
 			default:
-				throw new MWException( "Unexpected result from CentralAuthUser::canAuthenticate()" );
+				throw new Exception( "Unexpected result from CentralAuthUser::canAuthenticate()" );
 		}
 		return true;
 	}
@@ -1022,7 +1022,7 @@ class CentralAuthHooks {
 	 * Attempt to add a user to the database
 	 * Does the required authentication checks and updates for auto-creation
 	 * @param $user User
-	 * @throws MWException
+	 * @throws Exception
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user ) {
@@ -1088,14 +1088,14 @@ class CentralAuthHooks {
 		}
 		// Make sure the name has not been changed
 		if ( $user->getName() !== $userName ) {
-			throw new MWException( "AbortAutoAccount hook tried to change the user name" );
+			throw new Exception( "AbortAutoAccount hook tried to change the user name" );
 		}
 
 		// Checks passed, create the user
 		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: {$_SERVER['REQUEST_URI']}\n" );
 		try {
 			$status = $user->addToDatabase();
-		} catch ( MWException $e ) {
+		} catch ( Exception $e ) {
 			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
 				. " {$e->getMessage()}" );
 			throw $e;
@@ -1298,12 +1298,12 @@ class CentralAuthHooks {
 	 * @param $user User
 	 * @param $session
 	 * @param $cookies
-	 * @throws MWException
+	 * @throws Exception
 	 * @return bool
 	 */
 	static function onUserSetCookies( $user, &$session, &$cookies ) {
 		if ( self::hasApiToken() ) {
-			throw new MWException( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
+			throw new Exception( "Cannot set cookies when API 'centralauthtoken' parameter is given" );
 		}
 
 		global $wgCentralAuthCookies;
@@ -1798,7 +1798,7 @@ class CentralAuthHooks {
 		$user = User::newFromName( $user_name );
 		// One last sanity check
 		if ( $user->getId() == 0 ) {
-			throw new MWException( "Attached user couldn't be loaded from name" );
+			throw new Exception( "Attached user couldn't be loaded from name" );
 		}
 		return true;
 	}

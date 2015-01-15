@@ -25,7 +25,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 	public function doRun() {
 		if ( !class_exists( 'RenameuserSQL' ) ) {
-			throw new MWException( 'Extension:Renameuser is not installed' );
+			throw new Exception( 'Extension:Renameuser is not installed' );
 		}
 		$from = $this->params['from'];
 		$to = $this->params['to'];
@@ -44,7 +44,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// This should never happen!
 			// If it does happen, the user will be locked out of their account
 			// until a sysadmin intervenes...
-			throw new MWException( 'RenameuserSQL::rename returned false.' );
+			throw new Exception( 'RenameuserSQL::rename returned false.' );
 		}
 
 		if ( $this->params['movepages'] ) {
@@ -65,10 +65,10 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( !$status->isOK() ) {
 			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
 				// Eh, what?
-				throw new MWException( "Tried to promote '$newName' to a global account except it doesn't exist locally" );
+				throw new Exception( "Tried to promote '$newName' to a global account except it doesn't exist locally" );
 			} elseif ( $status->hasMessage( 'promote-already-exists' ) ) {
 				// Even more wtf.
-				throw new MWException( "Tried to prommote '$newName' to a global account except it already exists" );
+				throw new Exception( "Tried to prommote '$newName' to a global account except it already exists" );
 			}
 		}
 

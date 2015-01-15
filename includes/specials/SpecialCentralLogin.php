@@ -43,7 +43,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	/**
 	 * @param $token string
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	protected function doLoginStart( $token ) {
 		global $wgMemc;
@@ -59,9 +59,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$centralUser = new CentralAuthUser( $info['name'] );
 		if ( !$centralUser->exists() ) { // sanity
-			throw new MWException( "Global user '{$info['name']}' does not exist." );
+			throw new Exception( "Global user '{$info['name']}' does not exist." );
 		} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
-			throw new MWException( "Global user does not have ID '{$info['guid']}'." );
+			throw new Exception( "Global user does not have ID '{$info['guid']}'." );
 		}
 
 		$session = CentralAuthUser::getSession();
@@ -131,7 +131,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	/**
 	 * @param $token string
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	protected function doLoginComplete( $token ) {
 		global $wgUser, $wgMemc, $wgSecureLogin;
@@ -165,11 +165,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
 		if ( !$user || !$user->getId() ) { // sanity
-			throw new MWException( "The user account logged into does not exist." );
+			throw new Exception( "The user account logged into does not exist." );
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( !$centralUser->getId() ) { // sanity
-			throw new MWException( "The user account is not attached." );
+			throw new Exception( "The user account is not attached." );
 		}
 
 		// Delete the temporary token
