@@ -530,6 +530,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public function getHomeWiki() {
 		$this->loadState();
+
 		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
 			foreach ( $this->queryAttached() as $wiki => $acc ) {
 				if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
@@ -538,6 +539,17 @@ class CentralAuthUser extends AuthPluginUser {
 				}
 			}
 		}
+
+		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
+			$maxEdits = -1;
+			foreach ( $this->queryAttached() as $wiki => $acc ) {
+				if ( isset( $acc['editCount'] ) && $acc['editCount'] > $maxEdits ) {
+					$this->mHomeWiki = $wiki;
+					$maxEdits = $acc['editCount'];
+				}
+			}
+		}
+
 		return $this->mHomeWiki;
 	}
 
