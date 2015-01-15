@@ -526,18 +526,38 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * @return string
+	 * Return the id of the user's home wiki.
+	 *
+	 * @return string|null Null if the account has no attached wikis
 	 */
 	public function getHomeWiki() {
 		$this->loadState();
+		$attached = $this->queryAttached();
+
+		if ( !count( $attached ) ) {
+			return null;
+		}
+
 		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
-			foreach ( $this->queryAttached() as $wiki => $acc ) {
+			foreach ( $attached as $wiki => $acc ) {
 				if ( $acc['attachedMethod'] == 'primary' || $acc['attachedMethod'] == 'new' ) {
 					$this->mHomeWiki = $wiki;
 					break;
 				}
 			}
 		}
+
+		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
+			$this->mHomeWiki = reset( $attached ); // Make sure we always have some value
+			$maxEdits = -1;
+			foreach ( $attached as $wiki => $acc ) {
+				if ( isset( $acc['editCount'] ) && $acc['editCount'] > $maxEdits ) {
+					$this->mHomeWiki = $wiki;
+					$maxEdits = $acc['editCount'];
+				}
+			}
+		}
+
 		return $this->mHomeWiki;
 	}
 

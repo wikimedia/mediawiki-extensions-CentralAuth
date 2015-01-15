@@ -56,7 +56,21 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			array( array( 'foowiki' => array( 'attachedMethod' => 'new' ) ), 'foowiki' ),
 			array( array( 'foowiki' => array( 'attachedMethod' => 'primary' ) ), 'foowiki' ),
 			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ), 'bazwiki' => array( 'attachedMethod' => 'new' ) ), 'bazwiki' ),
-			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ) ), null ),
+			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ) ), 'foowiki' ),
+			array(
+				array(
+					'foowiki' => array( 'attachedMethod' => 'primary', 'editCount' => 4 ),
+					'barwiki' => array( 'attachedMethod' => 'password', 'editCount' => 6 )
+				),
+				'foowiki' // Primary account "wins" over edit count
+			),
+			array(
+				array(
+					'foowiki' => array( 'attachedMethod' => 'password', 'editCount' => 4 ),
+					'barwiki' => array( 'attachedMethod' => 'password', 'editCount' => 6 )
+				),
+				'barwiki'
+			)
 		);
 	}
 
