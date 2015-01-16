@@ -366,6 +366,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function doResolveRequest( $approved, $data ) {
 		$request = GlobalRenameRequest::newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
+		// Ensure that oldUser is populated from db before any possible rename
+		// occurs below.
+		$oldUser->getEmail();
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
 		$status = new Status;
 		if ( $approved ) {
