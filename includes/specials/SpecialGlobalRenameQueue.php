@@ -366,6 +366,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function doResolveRequest( $approved, $data ) {
 		$request = GlobalRenameRequest::newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
+		// Ensure that oldUser is populated before any possible rename occurs
+		// below. Getting the data from cache is as good as from the db for
+		// our purposes, so just ensure that an accessor is called to unstub
+		// the object.
+		$oldUser->getEmail();
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
 		$status = new Status;
 		if ( $approved ) {
