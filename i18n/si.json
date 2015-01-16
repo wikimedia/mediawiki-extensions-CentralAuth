@@ -9,7 +9,8 @@
 			"නන්දිමිතුරු",
 			"පසිඳු කාවින්ද",
 			"බිඟුවා",
-			"ශ්වෙත"
+			"ශ්වෙත",
+			"Thirsty"
 		]
 	},
 	"mergeaccount": "පිවිසීම් සංයුක්තකිරීම් තත්ත්වය",
@@ -94,6 +95,8 @@
 	"centralauth-admin-info-editcount": "සම්පූර්ණ සංස්කරණ ගණන:",
 	"centralauth-admin-info-locked": "අහුරා:",
 	"centralauth-admin-info-hidden": "සැඟවුනු මට්ටම:",
+	"centralauth-admin-info-attached": "ආදා ඇති ගිණුම් සංඛ්‍යාව",
+	"centralauth-admin-info-unattached": "ආදා නැති ගිණුම් සංඛ්‍යාව",
 	"centralauth-admin-yes": "ඔව්",
 	"centralauth-admin-no": "නැත",
 	"centralauth-admin-hidden-list": "පොදු ලයිස්තුවලින්",

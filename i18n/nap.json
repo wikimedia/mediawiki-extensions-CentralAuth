@@ -95,6 +95,8 @@
 	"centralauth-admin-info-hidden": "Livello annascunnuto:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Gruppo|Gruppe}} globbale:",
 	"centralauth-admin-info-nogroups": "nisciuno",
+	"centralauth-admin-info-attached": "Nummero 'e cunte azzeccate:",
+	"centralauth-admin-info-unattached": "Nummero 'e cunte scucchiate:",
 	"centralauth-admin-yes": "sì",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "dda lista pubbreca",
