@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae6ac7d6_122150f6",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-16T21:04:28Z",
+      "side": 1,
+      "message": "getEmail loads from cache (if possible), so I think you rather want User::loadFromDatabase",
+      "revId": "005e712f8fcc686db97bad7bb178c4c7837e66f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
