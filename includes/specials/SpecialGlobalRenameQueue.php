@@ -447,6 +447,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)->inContentLanguage()->text();
 				}
 
+				$type = $approved ? 'approval' : 'rejection';
+				wfDebugLog(
+					'CentralAuthRename',
+					"Sending $type email to User:{$oldUser->getName()}/{$oldUser->getEmail()}"
+				);
 				$oldUser->sendMail( $subject, $body );
 			} else {
 				$status->fatal( 'globalrenamequeue-request-savefailed' );
