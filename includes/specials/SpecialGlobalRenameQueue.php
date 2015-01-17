@@ -576,6 +576,11 @@ class RenameQueueTablePager extends TablePager {
 			case 'rq_completed_ts':
 				$formatted = $this->formatDateTime( $value );
 				break;
+			case 'rq_name':
+			case 'rq_newname':
+				$title = SpecialPage::getTitleFor( 'CentralAuth' , $value );
+				$formatted = Linker::link( $title, htmlspecialchars( $value ) );
+				break;
 			case 'rq_performer':
 				$steward = CentralAuthUser::newFromId( $value );
 				$formatted = WikiMap::foreignUserLink(
