@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae6ac7d6_9eea4772",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-17T21:19:23Z",
+      "side": 1,
+      "message": "You shouldn\u0027t wrap a block element in an inline element. Doesn\u0027t this produce invalid html?",
+      "revId": "e3e012ea972588a3d46a65ac02c0b5b3d4e187da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
