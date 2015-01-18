@@ -456,7 +456,7 @@
 	"globalrenamequeue-request-unknown-title": "الطلب غير موجود",
 	"globalrenamequeue-request-unknown-body": "طلب تغيير الاسم غير موجود.",
 	"globalrenamequeue-request-status-title": "غيِّر الاسم من «$1» إلى «$2»",
-	"globalrenamequeue-view": ";من:\n:$1\n;إلى:\n:$2\n;السبب:\n:$3\n;الوضع:\n:$4\n;وقت الطلب:\n:$5\n;وقت الإتمام:\n:$6\n;أنجزه:\n:[$7 $8]\n;ملاحظات:\n:$9",
+	"globalrenamequeue-view": ";من:\n:[[Special:CentralAuth/$1|$1]]\n;إلى:\n:[[Special:CentralAuth/$2|$2]]\n;السبب:\n:$3\n;الوضع:\n:$4\n;وقت الطلب:\n:$5\n;وقت الإتمام:\n:$6\n;أنجزه:\n:[$7 $8]\n;ملاحظات:\n:$9",
 	"globalrenamequeue-view-approved": "مقبول",
 	"globalrenamequeue-view-rejected": "مرفوض",
 	"globalrenamequeue-email-subject-approved": "تم قبول طلب اعادة تسمية الحساب",

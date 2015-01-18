@@ -456,7 +456,7 @@
 	"globalrenamequeue-request-unknown-title": "查無請求",
 	"globalrenamequeue-request-unknown-body": "查無重新命名請求。",
 	"globalrenamequeue-request-status-title": "重新命名 \"$1\" 為 \"$2\"",
-	"globalrenamequeue-view": ";從:\n:$1\n;至:\n:$2\n;原因:\n:$3\n;狀態:\n:$4\n;請求於:\n:$5\n;完成於:\n:$6\n;處理人:\n:[$7 $8]\n;說明:\n:$9",
+	"globalrenamequeue-view": ";從:\n:[[Special:CentralAuth/$1|$1]]\n;至:\n:[[Special:CentralAuth/$2|$2]]\n;原因:\n:$3\n;狀態:\n:$4\n;請求於:\n:$5\n;完成於:\n:$6\n;處理人:\n:[$7 $8]\n;說明:\n:$9",
 	"globalrenamequeue-view-approved": "已批准",
 	"globalrenamequeue-view-rejected": "已拒絕",
 	"globalrenamequeue-email-subject-approved": "已核准帳號重新命名請求",

@@ -2,13 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Aushulz",
-			"Gmelfi"
+			"Gmelfi",
+			"C.R."
 		]
 	},
 	"mergeaccount": "Prucessu d'unificazzioni di l'utenzi - status",
 	"centralauth-groupname": "la Wikimedia Foundation",
 	"centralauth-desc": "[[Special:MergeAccount|Unifica li tò utenzi]] supra li sita gistiti dâ {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Junci la ticnoluggìa di AntiSpoof a CentralAuth",
+	"centralauth-rename-desc": "",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Unifica li tò utenzi]] nti n'utenza glubbali",
 	"centralauth-merge-denied": "N'aviti a scusari, nun hai lu pirmissu di accèdiri â sta pàggina",
 	"centralauth-merge-notlogged": "Pi fauri <span class=\"plainlinks\">[$1 trasiti cô login]</span> pi virificari siddu lu prucessu di unificazzioni dê propri utenzi è cumpletu.",
@@ -19,6 +21,9 @@
 	"centralauth-merge-step2-title": "Cunfirma àutri utenzi",
 	"centralauth-merge-step2-detail": "Nun fu pussibbili liari autumaticamenti certuni dî tò utenzi a chiddu supra lu tò wiki principali. Siddu si lu titulari di sti utenzi, addimostra ca t'appartènunu nnicannu li password pi ogneduna di chissi.",
 	"centralauth-merge-step2-submit": "Cunfirma li nfurmazzioni di trasuta",
+	"centralauth-merge-dryrun-complete": "",
+	"centralauth-merge-dryrun-or": "'''o'''",
+	"centralauth-merge-step3-submit": "",
 	"centralauth-finish-password": "Parola chiavi:",
 	"centralauth-finish-login": "Trasi",
 	"centralauth": "Amministrazzioni dû login unificatu",

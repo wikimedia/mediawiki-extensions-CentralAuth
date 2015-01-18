@@ -435,7 +435,7 @@
 	"globalrenamequeue-request-unknown-title": "Speirin no foond",
 	"globalrenamequeue-request-unknown-body": "The rename speirin wis no foond.",
 	"globalrenamequeue-request-status-title": "Rename fae \"$1\" tae \"$2\"",
-	"globalrenamequeue-view": ";Fae:\n:$1\n;Tae:\n:$2\n;Raison:\n:$3\n;Status:\n:$4\n;Speird fer:\n:$5\n;Finished oan:\n:$6\n;Duin bi:\n:[$7 $8]\n;Myndins:\n:$9",
+	"globalrenamequeue-view": ";Fae:\n:[[Special:CentralAuth/$1|$1]]\n;Tae:\n:[[Special:CentralAuth/$2|$2]]\n;Raison:\n:$3\n;Status:\n:$4\n;Speird fer:\n:$5\n;Finished oan:\n:$6\n;Duin bi:\n:[$7 $8]\n;Myndins:\n:$9",
 	"globalrenamequeue-view-approved": "appruived",
 	"globalrenamequeue-view-rejected": "rejectit",
 	"globalrenamequeue-email-subject-approved": "Accoont rename speirin appruived",

@@ -437,7 +437,7 @@
 	"globalrenamequeue-request-unknown-title": "Arcesta nen trovà",
 	"globalrenamequeue-request-unknown-body": "L'arcesta ëd cangiament ëd nòm a l'é nen ëstàita trovà.",
 	"globalrenamequeue-request-status-title": "Arnominé da «$1» a «$2»",
-	"globalrenamequeue-view": ";Da:\n:$1\n;A:\n:$2\n;Rason:\n:$3\n;Statù:\n:$4\n;Ciamà:\n:$5\n;Completà:\n:$6\n;Fàit da:\n:[$7 $8]\n;Nòte:\n:$9",
+	"globalrenamequeue-view": ";Da:\n:[[Special:CentralAuth/$1|$1]]\n;A:\n:[[Special:CentralAuth/$2|$2]]\n;Rason:\n:$3\n;Statù:\n:$4\n;Ciamà:\n:$5\n;Completà:\n:$6\n;Fàit da:\n:[$7 $8]\n;Nòte:\n:$9",
 	"globalrenamequeue-view-approved": "aprovà",
 	"globalrenamequeue-view-rejected": "arfudà",
 	"globalrenamequeue-email-subject-approved": "Arcesta d'arnominament dël cont aprovà",

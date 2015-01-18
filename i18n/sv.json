@@ -456,7 +456,7 @@
 	"globalrenamequeue-request-unknown-title": "Begäran hittade inte",
 	"globalrenamequeue-request-unknown-body": "Namnbytesbegäran hittades inte",
 	"globalrenamequeue-request-status-title": "Byt namn från \"$1\" till \"$2\"",
-	"globalrenamequeue-view": ";Från:\n:$1\n;Till:\n:$2\n;Anledning:\n:$3\n;Status:\n:$4\n;Begärd den:\n:$5\n;Färdigt den:\n:$6\n;Gjort av:\n:[$7 $8]\n;Anmärkningar:\n:$9",
+	"globalrenamequeue-view": ";Från:\n:[[Special:CentralAuth/$1|$1]]\n;Till:\n:[[Special:CentralAuth/$2|$2]]\n;Anledning:\n:$3\n;Status:\n:$4\n;Begärd den:\n:$5\n;Färdigt den:\n:$6\n;Gjort av:\n:[$7 $8]\n;Anmärkningar:\n:$9",
 	"globalrenamequeue-view-approved": "godkänd",
 	"globalrenamequeue-view-rejected": "förkastad",
 	"globalrenamequeue-email-subject-approved": "Namnbyte av kontot godkändes",

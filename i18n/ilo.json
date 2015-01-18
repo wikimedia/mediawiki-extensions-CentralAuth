@@ -436,7 +436,7 @@
 	"globalrenamequeue-request-unknown-title": "Saan a nabirukan ti kiddaw",
 	"globalrenamequeue-request-unknown-body": "Ti kiddaw ti panaginagan manen ket saan a nabirukan.",
 	"globalrenamequeue-request-status-title": "Nanaganan manen manipud ti \"$1\" iti \"$2\"",
-	"globalrenamequeue-view": ";Manipud ti:\n:$1\n;Iti:\n:$2\n;Rason:\n:$3\n;Kasasaad:\n:$4\n;Kiniddaw:\n:$5\n;Nakompleto:\n:$6\n;Inaramid babaen ni:\n:[$7 $8]\n;Notnota:\n:$9",
+	"globalrenamequeue-view": ";Manipud ti:\n:[[Special:CentralAuth/$1|$1]]\n;Iti:\n:[[Special:CentralAuth/$2|$2]]\n;Rason:\n:$3\n;Kasasaad:\n:$4\n;Kiniddaw:\n:$5\n;Nakompleto:\n:$6\n;Inaramid babaen ni:\n:[$7 $8]\n;Notnota:\n:$9",
 	"globalrenamequeue-view-approved": "napasingkedan",
 	"globalrenamequeue-view-rejected": "pinaay",
 	"globalrenamequeue-email-subject-approved": "Napasingkedan ti kiddaw ti pakabilangan ti pananginagan manen",

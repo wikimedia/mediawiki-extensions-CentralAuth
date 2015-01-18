@@ -83,6 +83,7 @@
 	"centralauth-attach-submit": "Unificar a conta",
 	"centralauth-attach-success": "A conta pasou á conta unificada.",
 	"centralauth": "Xestor da conta global",
+	"centralauth-ro": "Información da conta global",
 	"centralauth-admin-intro": "Esta interface pode empregarse para a administración de contas globais.",
 	"centralauth-admin-manage": "Xestionar os datos da conta",
 	"centralauth-admin-view": "Ver a información da conta",

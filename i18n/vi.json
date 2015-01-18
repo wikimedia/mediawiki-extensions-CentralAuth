@@ -440,7 +440,7 @@
 	"globalrenamequeue-request-unknown-title": "Không tìm thấy yêu cầu",
 	"globalrenamequeue-request-unknown-body": "Không tìm thấy lời yêu cầu.",
 	"globalrenamequeue-request-status-title": "Đổi tên “$1” thành \"$2\"",
-	"globalrenamequeue-view": ";Từ:\n:$1\n;Thành:\n:$2\n;Lý do:\n:$3\n;Trạng thái:\n:$4\n;Lúc yêu cầu:\n:$5\n;Lúc thực hiện:\n:$6\n;Người thực hiện:\n:[$7 $8]\n;Ghi chú:\n:$9",
+	"globalrenamequeue-view": ";Từ:\n:[[Special:CentralAuth/$1|$1]]\n;Thành:\n:[[Special:CentralAuth/$2|$2]]\n;Lý do:\n:$3\n;Trạng thái:\n:$4\n;Lúc yêu cầu:\n:$5\n;Lúc thực hiện:\n:$6\n;Người thực hiện:\n:[$7 $8]\n;Ghi chú:\n:$9",
 	"globalrenamequeue-view-approved": "chấp nhận",
 	"globalrenamequeue-view-rejected": "từ chối",
 	"globalrenamequeue-email-subject-approved": "Lời yêu cầu đổi tên tài khoản được chấp nhận",

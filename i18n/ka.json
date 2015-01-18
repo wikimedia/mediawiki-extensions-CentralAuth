@@ -8,7 +8,8 @@
 			"Malafaya",
 			"Nodar Kherkheulidze",
 			"Tokoko",
-			"გიორგიმელა"
+			"გიორგიმელა",
+			"MIKHEIL"
 		]
 	},
 	"mergeaccount": "გაერთიანებული ანგარიშის მდგომარეობა",
@@ -100,6 +101,7 @@
 	"centralauth-admin-info-hidden": "დამალულია:",
 	"centralauth-admin-info-groups": "გლობალური {{PLURAL:$1|ჯგუფის|ჯგუფების}} წევრი:",
 	"centralauth-admin-info-nogroups": "არცერთი",
+	"centralauth-admin-info-attached": "მიბმული ანგარიშების რაოდენობა",
 	"centralauth-admin-yes": "ჰო",
 	"centralauth-admin-no": "არა",
 	"centralauth-admin-hidden-list": "საზოგადო სიებიდან",

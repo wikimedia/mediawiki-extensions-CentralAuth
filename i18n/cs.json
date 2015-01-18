@@ -441,7 +441,7 @@
 	"globalrenamequeue-request-unknown-title": "Žádost nenalezena",
 	"globalrenamequeue-request-unknown-body": "Žádost o přejmenování nebyla nalezena.",
 	"globalrenamequeue-request-status-title": "Přejmenování z „$1“ na „$2“",
-	"globalrenamequeue-view": ";Z:\n:$1\n;Na:\n:$2\n;Důvod:\n:$3\n;Stav:\n:$4\n;Požádáno:\n:$5\n;Dokončeno:\n:$6\n;{{GENDER:$8|Provedl|Provedla}}:\n:[$7 $8]\n;Poznámky:\n:$9",
+	"globalrenamequeue-view": ";Z:\n:[[Special:CentralAuth/$1|$1]]\n;Na:\n:[[Special:CentralAuth/$2|$2]]\n;Důvod:\n:$3\n;Stav:\n:$4\n;Požádáno:\n:$5\n;Dokončeno:\n:$6\n;{{GENDER:$8|Provedl|Provedla}}:\n:[$7 $8]\n;Poznámky:\n:$9",
 	"globalrenamequeue-view-approved": "schválená",
 	"globalrenamequeue-view-rejected": "odmítnutá",
 	"globalrenamequeue-email-subject-approved": "Žádost o přejmenování účtu schválena",

@@ -95,6 +95,7 @@
 	"centralauth-admin-info-hidden": "Verstoppten Niveau:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|Grupp|Gruppen}}:",
 	"centralauth-admin-info-nogroups": "keng",
+	"centralauth-admin-info-attached": "Zuel vun de verbonne Benotzerkonten:",
 	"centralauth-admin-yes": "jo",
 	"centralauth-admin-no": "neen",
 	"centralauth-admin-hidden-list": "vun ëffentleche Lëschten",

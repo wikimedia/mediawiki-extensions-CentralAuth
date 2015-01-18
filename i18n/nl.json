@@ -19,7 +19,8 @@
 			"Southparkfan",
 			"TBloemink",
 			"Sjoerddebruin",
-			"JurgenNL"
+			"JurgenNL",
+			"Savh"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -391,7 +392,7 @@
 	"globalrenamequeue-column-row-actions": "Handeling",
 	"globalrenamequeue-column-rq-status": "Status",
 	"globalrenamequeue-column-rq-performer": "Uitgevoerd door",
-	"globalrenamequeue-action-address": "Adres",
+	"globalrenamequeue-action-address": "Behandelen",
 	"globalrenamequeue-request-comments-label": "Notities/toelichting",
 	"globalrenamequeue-request-movepages": "Gebruikerspagina's hernoemen",
 	"globalrenamequeue-request-approve-text": "Hernoeming accepteren",
@@ -399,5 +400,6 @@
 	"globalrenamequeue-request-cancel-text": "Annuleren",
 	"globalrenamequeue-view-approved": "goedgekeurd",
 	"globalrenamequeue-view-rejected": "afgewezen",
-	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam:"
+	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam:",
+	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie [[Special:CentralAuth/$1|globale gebruikersgegevens]] voor meer informatie."
 }

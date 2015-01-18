@@ -450,7 +450,7 @@
 	"globalrenamequeue-request-unknown-title": "요청을 찾을 수 없습니다.",
 	"globalrenamequeue-request-unknown-body": "계정명 변경 요청을 찾을 수 없습니다.",
 	"globalrenamequeue-request-status-title": "\"$1\"에서 \"$2\"로 계정명 변경",
-	"globalrenamequeue-view": ";현재 계정명:\n:$1\n;요청된 계정명:\n:$2\n;이유:\n:$3\n;상태:\n:$4\n;요청된 시각:\n:$5\n;완료된 시각:\n:$6\n;완료한 사용자:\n:[$7 $8]\n;참고\n:$9",
+	"globalrenamequeue-view": ";현재 계정명:\n:[[Special:CentralAuth/$1|$1]]\n;요청된 계정명:\n:[[Special:CentralAuth/$2|$2]]\n;이유:\n:$3\n;상태:\n:$4\n;요청된 시각:\n:$5\n;완료된 시각:\n:$6\n;완료한 사용자:\n:[$7 $8]\n;참고\n:$9",
 	"globalrenamequeue-view-approved": "승인됨",
 	"globalrenamequeue-view-rejected": "거절됨",
 	"globalrenamequeue-email-subject-approved": "계정명 변경 요청 승인",

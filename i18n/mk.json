@@ -440,7 +440,7 @@
 	"globalrenamequeue-request-unknown-title": "Не го пронајдов барањето",
 	"globalrenamequeue-request-unknown-body": "Не го пронајдов барањето за преименување.",
 	"globalrenamequeue-request-status-title": "Преименување на „$1“ во „$2“",
-	"globalrenamequeue-view": ";Од:\n:$1\n;Во:\n:$2\n;Причина:\n:$3\n;Статус:\n:$4\n;Побарано:\n:$5\n;Извршено:\n:$6\n;Извршил:\n:[$7 $8]\n;Белешки:\n:$9",
+	"globalrenamequeue-view": ";Од:\n:[[Special:CentralAuth/$1|$1]]\n;Во:\n:[[Special:CentralAuth/$2|$2]]\n;Причина:\n:$3\n;Статус:\n:$4\n;Побарано:\n:$5\n;Извршено:\n:$6\n;Извршил:\n:[$7 $8]\n;Белешки:\n:$9",
 	"globalrenamequeue-view-approved": "одобрено",
 	"globalrenamequeue-view-rejected": "одбиено",
 	"globalrenamequeue-email-subject-approved": "Барањето за преименување на сметката е одобрено",

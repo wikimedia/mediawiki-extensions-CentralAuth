@@ -450,7 +450,7 @@
 	"globalrenamequeue-request-unknown-title": "Pedido não encontrado",
 	"globalrenamequeue-request-unknown-body": "O pedido de renomeação de conta não foi encontrado.",
 	"globalrenamequeue-request-status-title": "Renomear de \"$1\" para \"$2\"",
-	"globalrenamequeue-view": ";De:\n:$1\n;Para:\n:$2\n;Motivo:\n:$3\n;Estado:\n:$4\n;Solicitado em:\n:$5\n;Concluído em:\n:$6\n;Realizado por:\n:[$7 $8]\n;Notas:\n:$9",
+	"globalrenamequeue-view": ";De:\n:[[Special:CentralAuth/$1|$1]]\n;Para:\n:[[Special:CentralAuth/$2|$2]]\n;Motivo:\n:$3\n;Estado:\n:$4\n;Solicitado em:\n:$5\n;Concluído em:\n:$6\n;Realizado por:\n:[$7 $8]\n;Notas:\n:$9",
 	"globalrenamequeue-view-approved": "aprovado",
 	"globalrenamequeue-view-rejected": "rejeitado",
 	"globalrenamequeue-email-subject-approved": "Pedido de renomeação de conta aprovado",
