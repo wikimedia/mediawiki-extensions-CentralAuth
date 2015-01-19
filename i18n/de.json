@@ -463,6 +463,8 @@
 	"apihelp-deleteglobalaccount-description": "Löscht einen globalen Benutzer.",
 	"apihelp-deleteglobalaccount-param-user": "Zu löschender Benutzer.",
 	"apihelp-deleteglobalaccount-param-reason": "Grund für das Löschen des Benutzers.",
+	"apihelp-deleteglobalaccount-example-1": "Löscht das globale Benutzerkonto für [[User:Example]]",
+	"apihelp-globaluserrights-description": "Fügt einen Benutzer zu globalen Gruppen hinzu oder entfernt ihn.",
 	"apihelp-globaluserrights-param-user": "Globaler Benutzername.",
 	"apihelp-globaluserrights-param-userid": "Globale Benutzerkennung.",
 	"apihelp-globaluserrights-param-add": "Fügt den Benutzer zu diesen globalen Gruppen hinzu.",

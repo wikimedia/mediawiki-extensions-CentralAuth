@@ -58,7 +58,7 @@
 	"centralauth-merge-step2-submit": "Submit button for 'Begin Login Unification', first step for creating a global user account.",
 	"centralauth-merge-dryrun-complete": "Status message after a dry run to check if user accounts can be unified.",
 	"centralauth-merge-dryrun-incomplete": "Status message after a dry run to check if user accounts can be unified.",
-	"centralauth-merge-dryrun-or": "Message used on a separarate line as separator for user alternatives.",
+	"centralauth-merge-dryrun-or": "Message used on a separarate line as separator for user alternatives.\n{{Identical|Or}}",
 	"centralauth-merge-dryrun-home": "Status message after a dry run to check if user accounts can be unified.",
 	"centralauth-merge-step3-title": "Title for a form for account unification.",
 	"centralauth-merge-step3-detail": "Directions for form for account unification.",

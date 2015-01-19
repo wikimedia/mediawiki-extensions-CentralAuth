@@ -576,6 +576,12 @@ $specialPageAliases['nl'] = array(
 	'WikiSets' => array( 'WikigroepenBewerken' ),
 	'GlobalUsers' => array( 'GlobaleGebruikers' ),
 	'MultiLock' => array( 'MeervoudigAfsluiten' ),
+	'GlobalRenameUser' => array( 'GlobaalGebruikerhernoemen' ),
+	'GlobalRenameProgress' => array( 'VoortgangGlobaalHernoemen' ),
+	'GlobalUserMerge' => array( 'GlobaalGebruikerSamenvoegen' ),
+	'GlobalRenameRequest' => array( 'GlobaalHernoemingsverzoek' ),
+	'GlobalRenameQueue' => array( 'WachtrijGlobaalHernoemen' ),
+	'SulRenameWarning' => array( 'SulHernoemingswaarschuwing' ),
 );
 
 /** Norwegian Nynorsk (norsk nynorsk) */
