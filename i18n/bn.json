@@ -172,7 +172,7 @@
 	"centralauth-log-status-locked": "বন্ধ",
 	"centralauth-log-status-hidden": "লুকায়িত",
 	"centralauth-log-status-none": "(কিছু নাই)",
-	"centralauth-rightslog-name": "গ্লোবাল অধিকার লগ",
+	"centralauth-rightslog-name": "বৈশ্বিক অধিকার লগ",
 	"centralauth-rightslog-entry-usergroups": "$1 এর জন্য $2 থেকে $3 তে গ্লোবাল গ্রুপ সদস্যপদ পরিবর্তন করা হয়েছে",
 	"centralauth-rightslog-entry-groupperms": "$1 এর জন্য $2 থেকে $3 তে গ্রুপ অনুমতিসমূহ পরিবর্তন করা হয়েছে",
 	"centralauth-rightslog-entry-groupperms2": "$1 এর জন্য গ্রুপ অনুমতি পরিবর্তন করা হয়েছে। $2 যোগ; $3 বাদ দেওয়া হয়েছে",

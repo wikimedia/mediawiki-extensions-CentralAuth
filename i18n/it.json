@@ -15,7 +15,8 @@
 			"Nemo bis",
 			"Pietrodn",
 			"Wim b",
-			"Lucas2"
+			"Lucas2",
+			"Ricordisamoa"
 		]
 	},
 	"mergeaccount": "Processo di unificazione delle utenze - status",
@@ -217,7 +218,7 @@
 	"centralauth-log-entry-hide": "utenza globale \"$1\" nascosta",
 	"centralauth-log-entry-unhide": "utenza globale \"$1\" resa visibile",
 	"centralauth-log-entry-lockandhide": "utenza globale \"$1\" bloccata e nascosta",
-	"centralauth-log-entry-chgstatus": "cambiato stato per l'utenza globale \"$1: Impostato $2, Annullato $3",
+	"centralauth-log-entry-chgstatus": "ha cambiato lo stato per l'utenza globale \"$1\": Impostato $2, Annullato $3",
 	"centralauth-log-status-locked": "bloccato",
 	"centralauth-log-status-hidden": "nascosto",
 	"centralauth-log-status-oversighted": "la soppressione",
