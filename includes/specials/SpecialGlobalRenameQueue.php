@@ -193,6 +193,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		)->parseAsBlock();
 
 		$steward = CentralAuthUser::newFromId( $req->getPerformer() );
+		if ( $steward->isAttached() ) {
+			$stewardLink = Title::makeTitleSafe( NS_USER, $steward->getName() )->getFullURL();
+		} else {
+			$stewardLink = WikiMap::getForeignURL(
+				$steward->getHomeWiki(), "User:{$steward->getName()}"
+			);
+		}
 
 		// Done as one big message so that stewards can create a local
 		// translation to customize the output as they see fit.
@@ -208,9 +215,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->getLanguage()->userTimeAndDate(
 				$req->getCompleted(), $this->getUser()
 			),
-			WikiMap::getForeignURL(
-				$steward->getHomeWiki(), "User:{$steward->getName()}"
-			),
+			$stewardLink,
 			$steward->getName(),
 			$req->getComments()
 		)->parseAsBlock();
