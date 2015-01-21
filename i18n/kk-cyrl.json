@@ -11,6 +11,7 @@
 	"mergeaccount": "Тіркелгі біріздендіру күйі",
 	"centralauth-groupname": "Уикимедиа Қоры",
 	"centralauth-desc": "{{int:Centralauth-groupname}} уики жобалары арасында [[Special:MergeAccount|тіркелгі біріктіру]]",
+	"centralauth-rename-desc": "Ғаламдық тіркелгі өзгертулерін ерік беру",
 	"centralauth-mergeaccount-desc": "Жалғыз тіркелгімен кіру үшін [[Special:MergeAccount|бірнеше тіркелгіні біріктіру]]",
 	"centralauth-merge-denied": "Ғафу етіңіз, бұл бетті қатынау үшін рұқсатыңыз жоқ.",
 	"centralauth-merge-notlogged": "Тіркелгілеріңіз толық біріктелгенін тексеру үшін <span class=\"plainlinks\">[$1 кіріңіз]</span>.",

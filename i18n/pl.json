@@ -26,7 +26,8 @@
 			"Alan ffm",
 			"Rzuwig",
 			"Darellur",
-			"Py64"
+			"Py64",
+			"Tar Lócesilion"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -368,7 +369,7 @@
 	"centralauth-usermerge-invalid": "Nie istnieje konto uniwersalne o nazwie „$1”.",
 	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz.",
 	"globalrenamerequest-desc": "Żądanie zmiany nazwy globalnej konta",
-	"globalrenamerequest-pretext": "Wybierz nową nazwę użytkownika mającą być znaną we wszystkich projektach.\n\nWszystkie poprzednie wkładu będą połączone z tą nową nazwą urzytkownika.\n\nOdkąd zażądałeś nowej nazwy użytkownika, powiadomienie zostanie wysłane do zarządców projektu by zmienić nazwę.  Będziesz powiadomiony, gdy proces ten się zakończy.",
+	"globalrenamerequest-pretext": "Poproś o nową nazwę użytkownika, pod którą chcesz być znany we wszystkich projektach.\n\nCały dotychczasowy wkład zostanie przypisany tej nazwie użytkownika.\n\nJeśli poprosiłeś o nową nazwę użytkownika, zostanie wysłane powiadomienie do stewardów, by dokonali zmiany nazwy. Zostaniesz powiadomiony poprzez e-mail, gdy proces ten się zakończy.",
 	"globalrenamerequest-username-label": "Obecna nazwa użytkownika:",
 	"globalrenamerequest-username-help": "To twoja nazwa użytkownika. Zostanie ona zastąpiona nazwą, którą wybierzesz.",
 	"globalrenamerequest-newname-label": "Żądana nazwa użytkownika",
