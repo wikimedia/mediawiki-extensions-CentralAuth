@@ -234,5 +234,6 @@
 	"right-centralauth-merge": "Тіркелгілерін біріктіру",
 	"right-globalgrouppermissions": "Ғаламдық топтарды реттеу",
 	"centralloginsuccesful": "Кіруіңіз сәтті өтті",
-	"centralauth-completelogin-back": "Алдыңғы бетке қайта келу"
+	"centralauth-completelogin-back": "Алдыңғы бетке қайта келу",
+	"centralauth-warning-notloggedin": "сіз қазір жүйеге кіріп отырған жоқсыз."
 }
