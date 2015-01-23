@@ -70,6 +70,15 @@ $specialPageAliases['as'] = array(
 	'GlobalUsers' => array( 'গোলকীয়_ব্যৱহাৰকাৰী' ),
 );
 
+/** Avaric (авар) */
+$specialPageAliases['av'] = array(
+	'MergeAccount' => array( 'Учёталъулал_хъвай-хъвагІаязул_цолъи' ),
+	'GlobalGroupMembership' => array( 'Глобальные_права_участника', 'Глобальное_членство' ),
+	'GlobalGroupPermissions' => array( 'Права_глобальных_групп' ),
+	'WikiSets' => array( 'Наборы_вики' ),
+	'GlobalUsers' => array( 'Глобальные_участники' ),
+);
+
 /** Bashkir (башҡортса) */
 $specialPageAliases['ba'] = array(
 	'GlobalGroupMembership' => array( 'GlobalUserRights' ),
@@ -528,6 +537,7 @@ $specialPageAliases['mr'] = array(
 
 /** Malay (Bahasa Melayu) */
 $specialPageAliases['ms'] = array(
+	'CentralAuth' => array( 'Pusat_pengesahan' ),
 	'MergeAccount' => array( 'Gabungkan_akaun' ),
 	'GlobalGroupMembership' => array( 'Hak_kumpulan_sejagat' ),
 	'GlobalGroupPermissions' => array( 'Keizinan_kumpulan_sejagat' ),
