@@ -96,6 +96,7 @@
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|Grupp|Gruppen}}:",
 	"centralauth-admin-info-nogroups": "keng",
 	"centralauth-admin-info-attached": "Zuel vun de verbonne Benotzerkonten:",
+	"centralauth-admin-info-unattached": "Zuel vun den net-verbonnene Benotzerkonten:",
 	"centralauth-admin-yes": "jo",
 	"centralauth-admin-no": "neen",
 	"centralauth-admin-hidden-list": "vun ëffentleche Lëschten",
@@ -380,6 +381,7 @@
 	"centralauth-usermerge-form-deleteuser": "Benotzer ewechhuelen",
 	"globalrenamequeue-nav-closedqueue": "Ofgeschlossen Ufroen",
 	"globalrenamequeue-column-rq-name": "Benotzernumm",
+	"globalrenamequeue-column-rq-newname": "Ugefrote Benotzernumm",
 	"globalrenamequeue-column-rq-wiki": "Lokal Wiki",
 	"globalrenamequeue-column-row-actions": "Aktioun",
 	"globalrenamequeue-action-address": "Adress",
@@ -398,10 +400,12 @@
 	"apihelp-deleteglobalaccount-param-user": "Benotzer fir ze läschen.",
 	"apihelp-deleteglobalaccount-param-reason": "Grond fir d'Läsche vum Benotzer.",
 	"apihelp-globaluserrights-param-user": "Globale Benotzernumm.",
+	"apihelp-globaluserrights-param-userid": "Global Benotzernummer (ID).",
 	"apihelp-globaluserrights-param-reason": "Grond fir d'Ännerung.",
 	"apihelp-query+globalallusers-description": "All global Benotzer opzielen.",
 	"apihelp-query+globalallusers-example-1": "Global Benotzer opzielen",
 	"apihelp-query+globalgroups-description": "All global Gruppen opzielen.",
 	"apihelp-query+globalgroups-example-1": "Global Gruppen opzielen",
+	"apihelp-query+wikisets-param-orderbyname": "Resultater nom Numm zortéieren",
 	"centralauth-log-gblrename-oldname": "Virege Benotzernumm"
 }

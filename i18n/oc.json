@@ -160,7 +160,7 @@
 	"centralauth-renameuser-merged": "L’utilizaire $1 es estat migrat cap al sistèma de compte unificat. Un cambiament de nom local destacarà aqueste compte del compte global.",
 	"centralauth-renameuser-reserved": "Lo nom d'utilizaire $2 es reservat per un compte global.",
 	"centralauth-invalid-wiki": "Cap de banca de donada wiki : $1",
-	"centralauth-account-exists": "Impossible de crear lo compte : lo nom d’utilizaire demandat ja es actiu dins lo sistèma dels comptes unificats.",
+	"centralauth-account-exists": "Impossible de crear lo compte : lo nom d’utilizaire demandat ja es pres per un utilizaire d'un autre wiki.",
 	"centralauth-login-progress": "Sètz en cors de connexion als wikis de {{int:Centralauth-groupname}} :",
 	"centralauth-logout-progress": "Sètz en cors de desconnexion dels wikis de {{int:Centralauth-groupname}} :",
 	"centralauth-login-no-others": "Sètz estat(ada) connectat(ada) automaticament als autres projèctes de {{int:Centralauth-groupname}}.",

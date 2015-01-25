@@ -115,5 +115,10 @@
 	"centralauth-editset-nowikis": "Ez da fitxategirik zehaztu.",
 	"centralauth-editset-nouse": "(bat ere ez)",
 	"centralauth-editset-usage": "Sail hauetan erabilia:",
-	"centralauth-editset-badwikis": "Ondorengo {{PLURAL:$2|wikia|wikiak}} ez dira existitzen: $1."
+	"centralauth-editset-badwikis": "Ondorengo {{PLURAL:$2|wikia|wikiak}} ez dira existitzen: $1.",
+	"globalrenamerequest-email-label": "Helbide elektronikoa:",
+	"globalrenamerequest-email-help": "Sartu zure helbide elektronikoa.",
+	"globalrenamerequest-email-why-label": "Zergatik?",
+	"globalrenamerequest-email-why-explain": "<p>Helbide elektroniko bat behar dugu prozesu honek dirauen bitartean kontu honetarako sarbidea galtzen ez duzula ziurtatzeko.</p><p>Zure helbide elektronikoa ezaba dezakezu izen-aldaketa prozesua burutu bezain laster.</p>",
+	"globalrenamerequest-email2-label": "Berretsi helbide elektronikoa:"
 }

@@ -193,6 +193,8 @@
 	"centralauth-rightslog-entry-deleteset": "obrisani wiki skup \"$1\"",
 	"centralauth-rightslog-set-optin": "osnovom uključenih",
 	"centralauth-rightslog-set-optout": "osnovom isključenih",
+	"centralauth-centralautologin-logged-in": "Jedinstveno ste prijavljeni kao $1. Da biste aktivirali suradničke postavke, ponovno učitajte stranicu.",
+	"centralauth-centralautologin-logged-in-nouser": "Jedinstveno ste prijavljeni. Da biste aktivirali suradničke postavke, ponovno učitajte stranicu.",
 	"globalgroupmembership": "Članstvo u globalnim skupinama",
 	"globalgrouppermissions": "Uređivanje globalnih skupina",
 	"centralauth-globalgroupperms-grouplist": "Konfigurirane su sljedeće globalne skupine.\nMožete vidjeti ili urediti prava za pojedinu skupinu, ako imate odgovarajuće ovlasti.\nSkupina može biti obrisana uklanjanjem svih prava koja ima.",
