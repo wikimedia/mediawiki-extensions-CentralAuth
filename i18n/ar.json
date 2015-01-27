@@ -21,7 +21,8 @@
 			"Ms.Rainbow",
 			"وهراني",
 			"Shbib Al-Subaie",
-			"Omda4wady"
+			"Omda4wady",
+			"Khaled"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -114,6 +115,8 @@
 	"centralauth-admin-info-hidden": "مستوى مخفي:",
 	"centralauth-admin-info-groups": "ال{{PLURAL:$1|مجموعة|مجموعات}} العامة:",
 	"centralauth-admin-info-nogroups": "لا شيء",
+	"centralauth-admin-info-attached": "عدد الحسابات المرفقة:",
+	"centralauth-admin-info-unattached": "عدد الحسابات غير المرفقة:",
 	"centralauth-admin-yes": "نعم",
 	"centralauth-admin-no": "لا",
 	"centralauth-admin-hidden-list": "من القوائم العامة",

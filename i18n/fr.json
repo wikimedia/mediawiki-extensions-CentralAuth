@@ -35,7 +35,8 @@
 			"Orikrin1998",
 			"Macofe",
 			"Boniface",
-			"Grind24"
+			"Grind24",
+			"Weft"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -456,8 +457,8 @@
 	"globalrenamequeue-action-view": "Afficher",
 	"globalrenamequeue-request-title": "Renommer « $1 » ?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> demande un changement de nom à <strong> $3 </strong>.",
-	"globalrenamequeue-request-userinfo-local": "utilisateur : $1 wiki d’origine : $2 nouveau nom : $3 [[MediaWiki:Globalrenamequeue-request-userinfo-local|modifier]]",
-	"globalrenamequeue-request-userinfo-global": "utilisateur : $1 wiki d’origine : $2 nouveau nom : $3 [[MediaWiki:Globalrenamequeue-request-userinfo-global|modifier]]",
+	"globalrenamequeue-request-userinfo-local": "* utilisateur : [[Special:CentralAuth/$1]]\n* wiki d'origine : $2 \n* nouveau nom : [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* utilisateur : [[Special:CentralAuth/$1]]\n* wiki d'origine : $2 \n* nouveau nom : [[Special:CentralAuth/$3]]",
 	"globalrenamequeue-request-reason": "<strong>Raison pour demander le changement de nom</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Utilisateur avisé de conflit de nom global en vue de la finalisation de la SUL.",
 	"globalrenamequeue-request-comments-label": "Notes/réflexion",
