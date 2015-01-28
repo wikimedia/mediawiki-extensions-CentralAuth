@@ -56,5 +56,7 @@
 	"centralauth-editgroup-fieldset": "Rechten veur $1",
 	"centralauth-editgroup-members": "Lejenlieste:",
 	"centralauth-editgroup-noset": "(gien)",
-	"centralauth-editgroup-reason": "Reden:"
+	"centralauth-editgroup-reason": "Reden:",
+	"globalrenameprogress": "Staotus van globale herneuming",
+	"globalrenameprogress-legend": "Staotus van globale herneuming laoten zien"
 }

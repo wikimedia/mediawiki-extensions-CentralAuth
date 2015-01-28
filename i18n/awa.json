@@ -114,7 +114,7 @@
 	"centralauth-admin-action-lock-unlock": "चुनल खाता से लॉक हटावा जाय",
 	"centralauth-admin-action-hide-nochange": "लुकोआवेक स्तर ना बदला जाय",
 	"centralauth-admin-action-hide-none": "चुनल खाता फिर से देखावा जाय",
-	"centralauth-admin-multi-bot": "अबहिन कय बदलाव",
+	"centralauth-admin-multi-bot": "नँवा बदलाव",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सॅकेंड}} पहीले",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|मिनट}} पहीले",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|घंटा}} पहीले",
