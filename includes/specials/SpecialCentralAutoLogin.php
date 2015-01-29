@@ -54,7 +54,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgMemc, $wgUser, $wgCentralAuthLoginWiki;
+		global $wgMemc, $wgCentralAuthLoginWiki;
 
 		$request = $this->getRequest();
 
