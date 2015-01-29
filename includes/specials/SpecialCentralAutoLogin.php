@@ -45,7 +45,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$result = JavaScriptMinifier::minify( $contents ) . "\n/* cache key: $key */";
 			$cache->set( $key, $result );
 		} catch ( Exception $e ) {
-			ExceptionHandler::logException( $e );
+			MWExceptionHandler::logException( $e );
 			wfDebugLog( 'CentralAuth', __METHOD__ . ": minification failed for $name: $e" );
 			$result = ResourceLoader::formatException( $e ) . "\n" . $contents;
 		}
