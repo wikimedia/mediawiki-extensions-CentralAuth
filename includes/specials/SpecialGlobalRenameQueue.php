@@ -220,7 +220,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getComments()
 		)->parseAsBlock();
 
-		$this->getOutput()->addHtml( '<span class="plainlinks">' . $viewMsg . '</span>' );
+		$this->getOutput()->addHtml( '<div class="plainlinks">' . $viewMsg . '</div>' );
 	}
 
 	/**
