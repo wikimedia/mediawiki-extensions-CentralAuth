@@ -271,9 +271,6 @@ class SpecialMultiLock extends SpecialPage {
 			return;
 		}
 
-		$sca = new SpecialCentralAuth;
-		$sca->setContext( $this->getContext() );
-
 		$this->showTableHeader();
 
 		foreach ( $this->mGlobalUsers as $globalUser ) {
@@ -282,29 +279,7 @@ class SpecialMultiLock extends SpecialPage {
 			if ( $globalUser === false ) {
 				continue;
 			} elseif ( $globalUser instanceof CentralAuthUser ) {
-				$guName = $globalUser->getName();
-				$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
-				$guRegister = $sca->prettyTimespan(
-					wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $globalUser->getRegistration() )
-				);
-				$guLocked = $this->msg('centralauth-admin-status-locked-no')->escaped();
-				if ( $globalUser->isLocked() ) {
-					$guLocked = $this->msg('centralauth-admin-status-locked-yes')->escaped();
-				}
-				$guEditCount = htmlspecialchars( $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() ) );
-				$rowtext .= Html::rawElement( 'td', array(),
-					Html::input(
-						'wpActionTarget['.$guName.']',
-						$guName,
-						'checkbox',
-						array('checked' => 'checked')
-					)
-				);
-				$rowtext .= Html::element( 'td', array(), $guName );
-				$rowtext .= Html::element( 'td', array(), $guRegister );
-				$rowtext .= Html::element( 'td', array(), $guLocked );
-				$rowtext .= Html::element( 'td', array(), $guHidden );
-				$rowtext .= Html::element( 'td', array(), $guEditCount );
+				$rowtext .= $this->getUserTableRow( $globalUser );
 			} else {
 				$rowtext .= Html::element(
 					'td',
@@ -319,6 +294,50 @@ class SpecialMultiLock extends SpecialPage {
 
 		$out->addHTML( '</tbody></table>' );
 		$this->showStatusForm();
+	}
+
+	/**
+	 * @param CentralAuthUser $globalUser
+	 * @return string
+	 */
+	private function getUserTableRow( CentralAuthUser $globalUser ) {
+		$rowHtml = '';
+
+		// @TODO: Don't use methods from the special page directly,
+		// rather move them somewhere sane
+		$sca = new SpecialCentralAuth;
+		$sca->setContext( $this->getContext() );
+
+		$guName = $globalUser->getName();
+		$guLink = Linker::link( SpecialPage::getTitleFor( 'CentralAuth', $guName ), $guName );
+		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
+		$guRegister = $sca->prettyTimespan(
+			wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $globalUser->getRegistration() )
+		);
+		$guLocked = $this->msg('centralauth-admin-status-locked-no')->escaped();
+		if ( $globalUser->isLocked() ) {
+			$guLocked = $this->msg('centralauth-admin-status-locked-yes')->escaped();
+		}
+		$guEditCount = htmlspecialchars( $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() ) );
+		$rowHtml .= Html::rawElement( 'td', array(),
+			Html::input(
+				'wpActionTarget['.$guName.']',
+				$guName,
+				'checkbox',
+				array('checked' => 'checked')
+			)
+		);
+		$rowHtml .= Html::rawElement( 'td', array(), $guLink );
+		$rowHtml .= Html::element(
+			'td',
+			array( 'data-sort-value' => wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $globalUser->getRegistration() ) ),
+			$guRegister
+		);
+		$rowHtml .= Html::element( 'td', array(), $guLocked );
+		$rowHtml .= Html::element( 'td', array(), $guHidden );
+		$rowHtml .= Html::element( 'td', array(), $guEditCount );
+
+		return $rowHtml;
 	}
 
 	/**
