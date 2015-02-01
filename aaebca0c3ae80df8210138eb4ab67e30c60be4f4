@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1ed40cbe",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-02-01T01:56:20Z",
+      "side": 1,
+      "message": "Hmm... Remind me, can we just output the user name straight as HTML like this?",
+      "revId": "aaebca0c3ae80df8210138eb4ab67e30c60be4f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_dedd34e3",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-02-01T01:56:20Z",
+      "side": 1,
+      "message": "you\u0027re calculating this number twice now",
+      "revId": "aaebca0c3ae80df8210138eb4ab67e30c60be4f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
