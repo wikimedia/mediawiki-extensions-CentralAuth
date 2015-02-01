@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_81c3dd09",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-02-01T19:42:05Z",
+      "side": 1,
+      "message": "To ease code review",
+      "parentUuid": "6e7c4fa4_e1f171c9",
+      "revId": "aaebca0c3ae80df8210138eb4ab67e30c60be4f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_dedd34e3",
         "filename": "includes/specials/SpecialMultiLock.php",
         "patchSetId": 1
