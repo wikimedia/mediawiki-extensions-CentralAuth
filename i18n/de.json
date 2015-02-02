@@ -471,6 +471,7 @@
 	"apihelp-globaluserrights-param-reason": "Grund für die Änderung.",
 	"apihelp-query+globalallusers-description": "Alle globalen Benutzer auflisten.",
 	"apihelp-query+globalallusers-param-group": "Benutzer auf die angegebenen globalen Gruppen beschränken.",
+	"apihelp-query+globalallusers-param-excludegroup": "Benutzer in den angegebenen globalen Gruppen ausschließen.",
 	"apihelp-query+globalallusers-param-limit": "Welche Gesamtanzahl an Benutzernamen zurückgegeben werden soll.",
 	"apihelp-query+globalallusers-example-1": "Globale Benutzer auflisten",
 	"apihelp-query+globalgroups-description": "Alle globalen Gruppen aufzählen.",
