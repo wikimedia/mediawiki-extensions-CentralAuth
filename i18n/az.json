@@ -92,6 +92,7 @@
 	"centralauth-prefs-count-attached": "Sizin hesabınız $1 layihə saytında aktivdir.",
 	"centralauth-prefs-manage": "Qlobal hesabın idarə edilməsi",
 	"centralauth-prefs-view": "Qlobal istifadəçi hesabı məlumatlarına bax",
+	"centralauth-logout-progress": "Siz {{int:Centralauth-groupname}} digər layihələrində də sistemdən çıxarılacaqsınız:",
 	"centralauth-log-name": "Qlobal hesab gündəliyi",
 	"centralauth-log-entry-delete": "\"$1\" qlobal hesabı silindi",
 	"centralauth-log-entry-lock": "\"$1\" qlobal hesabı bloklandı",

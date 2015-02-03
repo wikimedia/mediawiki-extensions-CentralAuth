@@ -300,5 +300,18 @@
 	"centralauth-rename-confirm": "Ertu viss um að þú viljir endurnefna þennan notanda altækt?",
 	"log-name-gblrename": "Altæk endurnefningar skrá",
 	"log-description-gblrename": "Þessi skrá rekur endurnefningar notenda",
-	"logentry-gblrename-rename": "$1 {{GENDER:$2|endurnefndi}} $4 altækt í $5"
+	"logentry-gblrename-rename": "$1 {{GENDER:$2|endurnefndi}} $4 altækt í $5",
+	"globalrenamerequest-forced": "Wikimedia stofnuninn er að  [[:mw:SUL_finalisation|sameina notendanöfn á öllum Wikimedia verkefnum]]. Þetta notendanafn fannst á öðrum Wikimedia wiki verkefnum og til að ljúka sameiningunni þarf að breyta notendanafninu. Vegna þessa, þarft þú að velja þér nýtt notendanafn.",
+	"globalrenamerequest-pretext": "Sækja um nýtt notendanafn sem verður þekkt á öllum verkefnum.\n\nFyrri framlög þín munu tengjast þessu notendanafni.\n\nÞegar þú hefur óskað eftir nýju notendanafni verður send tilkynning til ráðsmanna um að framkvæma endurnenfninguna. Þú munt fá svar í tölvupósti hvenær því ferli er lokið.",
+	"globalrenamerequest-username-label": "Núverandi notendanafn:",
+	"globalrenamerequest-username-help": "Þetta er það notendanafn sem þú notar núna.",
+	"globalrenamerequest-newname-help": "Sláðu inn nýtt notendanafn sem þú villt nota, t.d. \"$1\".",
+	"globalrenamerequest-newname-err-invalid": "Þú hefur ekki tilgreint gilt notendanafn.",
+	"globalrenamerequest-newname-err-taken": "Notendanafnið er þegar í notkun. Vinsamlegast veldu annað nafn.",
+	"globalrenamerequest-email-label": "Netfang:",
+	"globalrenamerequest-email-help": "Sláðu inn netfangið þitt.",
+	"globalrenamerequest-email-why-label": "Afhverju?",
+	"globalrenamerequest-email2-label": "Staðfestu netfangið",
+	"globalrenamerequest-email2-help": "Sláðu inn sama netfangið og að ofan til staðfestingar.",
+	"globalrenamerequest-email-mismatch": "Netföngin eru ekki eins.<br />Vinsamlegat athugaðu þau og reyndu aftur."
 }
