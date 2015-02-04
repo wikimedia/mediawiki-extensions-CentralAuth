@@ -4,6 +4,15 @@
 			"Baloch Afghanistan"
 		]
 	},
+	"centralauth-merge-dryrun-or": "'''یا'''",
+	"centralauth-finish-password": "چیهر گال یا پاسورد:",
+	"centralauth-finish-login": "لوگین",
+	"centralauth-admin-info-nogroups": "(هیچ‌)",
+	"centralauth-admin-yes": "هان",
+	"centralauth-admin-no": "نه",
+	"centralauth-admin-reason": "دلیل:",
+	"centralauth-admin-reason-other": "دیگرین دلیل/اضافی:",
+	"centralauth-admin-reason-other-select": "دیگرین دلیل",
 	"centralauth-editset-nowikis": "(هیچ)",
 	"globalrenamequeue-view": ";شه:\n:[[Special:CentralAuth/$1|$1]]\n;بی:\n:[[Special:CentralAuth/$2|$2]]\n;دلیل:\n:$3\n;وضئیت:\n:$4\n;داته بوته ئین درخواست:\n:$5\n;کامل بوته ئین:\n:$6\n;انجام بوته بی واسطه:\n:[$7 $8]\n;توضیحات:\n:$9"
 }

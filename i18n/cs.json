@@ -391,7 +391,7 @@
 	"globalrenamerequest": "Žádost o přejmenování pro sjednocení",
 	"globalrenamerequest-legend": "Žádost o přejmenování pro sjednocení",
 	"globalrenamerequest-forced": "Nadace Wikimedia [[:mw:SUL_finalisation|sjednocuje uživatelská jména napříč všemi projekty]]. Bylo zjištěno, že toto uživatelské jméno se používá na jiných wiki nadace Wikimedia a pro dokončení tohoto sjednocování je potřeba ho změnit. To znamená, že si do budoucna musíte zvolit nové uživatelské jméno.",
-	"globalrenamerequest-pretext": "Vyberte si nové uživatelské jméno, kterým budete {{GENDER:|označován|označována|označováni}} na všech projektech.",
+	"globalrenamerequest-pretext": "Požádejte o nové uživatelské jméno, kterým budete {{GENDER:|označován|označována|označováni}} na všech projektech.\n\nVšechny vaše předchozí příspěvky budou připojeny k tomuto uživatelskému jménu.\n\nJakmile požádáte o nové uživatelské jméno, odešle se notifikace stevardům Wikimedia, kteří přejmenování provedou. Jakmile bude tento proces dokončen, budete {{GENDER:|informován|informována|informováni}} e-mailem.",
 	"globalrenamerequest-username-label": "Stávající uživatelské jméno:",
 	"globalrenamerequest-username-help": "Toto je vaše současné uživatelské jméno.",
 	"globalrenamerequest-newname-label": "Požadované uživatelské jméno:",
@@ -425,6 +425,8 @@
 	"globalrenamequeue-column-rq-completed-ts": "Datum uzavření",
 	"globalrenamequeue-column-rq-status": "Stav",
 	"globalrenamequeue-column-rq-performer": "Zpracovatel",
+	"globalrenamequeue-action-address": "Řešit",
+	"globalrenamequeue-action-view": "Zobrazit",
 	"globalrenamequeue-request-title": "Přejmenovat „$1“?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> žádá o přejmenování na <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* uživatel: [[Special:CentralAuth/$1]]\n* domácí wiki: $2\n* nové jméno: [[Special:CentralAuth/$3]]",
@@ -449,5 +451,11 @@
 	"globalrenamequeue-email-body-approved": "Žádost o přejmenování „$1“ na „$2“ byla schválena.",
 	"globalrenamequeue-email-body-rejected": "Žádost o přejmenování „$1“ na „$2“ byla odmítnuta.\n\nPoznámka: $3",
 	"centralauth-abortlogin-renamed": "Váš účet byl přejmenován na „$1“. Používejte prosím nové uživatelské jméno.",
-	"sulrenamewarning-title": "{{GENDER:$1|Váš}} uživatelský účet byl přejmenován"
+	"sulrenamewarning-title": "{{GENDER:$1|Váš}} uživatelský účet byl přejmenován",
+	"sulrenamewarning-renamed": "{{GENDER:$2|Váš}} uživatelský účet '''$1''' byl v průběhu automatické migrace na sjednocený systém přihlašování {{int:Centralauth-groupname}} přejmenován na '''$2'''.",
+	"sulrenamewarning-usenew": "Pro přihlašování v budoucnu prosím používejte {{GENDER:$1|své}} nové uživatelské jméno '''$1'''.",
+	"globalrenamequeue-request-reason-label": "Komentář do veřejného protokolu (při schválení)",
+	"centralauth-log-gblrename-oldname": "Předchozí uživatelské jméno:",
+	"centralauth-contribs-locked": "Tento účet je globálně uzamčen.\nVíce informací najdete v [[Special:CentralAuth/$1|podrobnostech globálního účtu]].",
+	"centralauth-contribs-locked-log": "Tento účet je globálně uzamčen.\nZde je pro přehled zobrazen nejnovější záznam z knihy uzamčení účtů:"
 }
