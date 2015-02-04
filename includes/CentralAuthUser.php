@@ -193,10 +193,8 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 
-		wfProfileIn( __METHOD__ );
 		// Check the cache
 		if ( !$recache && $this->loadFromCache() ) {
-			wfProfileOut( __METHOD__ );
 			return;
 		}
 
@@ -226,7 +224,6 @@ class CentralAuthUser extends AuthPluginUser {
 
 		$this->loadFromRow( $row, $renameUser, true );
 		$this->saveToCache();
-		wfProfileOut( __METHOD__ );
 	}
 
 	/**
@@ -325,7 +322,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return bool
 	 */
 	protected function loadFromCache( $cache = null, $fromMaster = false ) {
-		wfProfileIn( __METHOD__ );
 		if ( $cache == null ) {
 			global $wgMemc;
 			$cache = $wgMemc->get( $this->getCacheKey() );
@@ -336,13 +332,10 @@ class CentralAuthUser extends AuthPluginUser {
 			// Out of date cache.
 			wfDebugLog( 'CentralAuthVerbose', "Global User: cache miss for {$this->mName}, " .
 				"version {$cache['mVersion']}, expected {$this->mVersion}" );
-			wfProfileOut( __METHOD__ );
 			return false;
 		}
 
 		$this->loadFromCacheObject( $cache, $fromMaster );
-
-		wfProfileOut( __METHOD__ );
 
 		return true;
 	}
