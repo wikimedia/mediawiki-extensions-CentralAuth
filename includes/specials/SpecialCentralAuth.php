@@ -269,6 +269,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$content .= $msg->escaped();
 			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
 		}
+		$content .= Xml::closeElement( "ul" );
 		$out = Xml::fieldset(
 			$this->msg( 'centralauth-admin-info-header' )->escaped(),
 			$content,
