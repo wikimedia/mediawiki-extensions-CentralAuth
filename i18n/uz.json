@@ -16,5 +16,6 @@
 	"centralauth-prefs-manage": "Global hisob yozuvini boshqarish",
 	"centralauth-prefs-view": "Foydalanuvchi haqida global maʼlumotlarni koʻrish",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:",
-	"centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi"
+	"centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi",
+	"globalrenamerequest-newname-err-taken": "Bunday foydalanuvchi nomi avvalroq yaratilgan. Iltimos, boshqa nom tanlang."
 }
