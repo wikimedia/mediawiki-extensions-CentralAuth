@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_d51cfd6c",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-02-08T22:11:29Z",
+      "side": 1,
+      "message": "I think this should come before the parent::__construct call so that adding `?asc` and `?desc\u0027 to the url will still be able to change the sort order.",
+      "revId": "c852a40037dc9fcbf0bd268a416a656ed3fc13bc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
