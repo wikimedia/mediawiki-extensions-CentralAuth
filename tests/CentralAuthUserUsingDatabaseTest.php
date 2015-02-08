@@ -113,6 +113,15 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	}
 
 	/**
+	 * @covers CentralAuthHooks::onUserGetEmailAuthenticationTimestampp
+	 */
+	public function testLockedEmailDisabled() {
+		$user = User::newFromName( 'GlobalLockedUser' );
+		$this->assertFalse( $user->isEmailConfirmed() );
+		$this->assertFalse( $user->canReceiveEmail() );
+	}
+
+	/**
 	 * @covers CentralAuthUser::isHidden
 	 * @covers CentralAuthUser::isOversighted
 	 * @covers CentralAuthUser::getHiddenLevel
