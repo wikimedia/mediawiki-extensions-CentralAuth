@@ -502,6 +502,12 @@ class RenameQueueTablePager extends TablePager {
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
 		$this->setLimit( 25 );
 		parent::__construct( $context );
+
+		if ( $this->showOpenRequests() ) {
+			$this->mDefaultDirection = self::DIR_ASCENDING;
+		} else {
+			$this->mDefaultDirection = self::DIR_DESCENDING;
+		}
 	}
 
 	protected function showOpenRequests() {
@@ -636,7 +642,11 @@ class RenameQueueTablePager extends TablePager {
 	 * @return string
 	 */
 	public function getDefaultSort() {
-		return 'rq_requested_ts';
+		if ( $this->showOpenRequests() ) {
+			return 'rq_requested_ts';
+		} else {
+			return 'rq_completed_ts';
+		}
 	}
 
 	/**
