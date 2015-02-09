@@ -16,6 +16,24 @@
       "revId": "c852a40037dc9fcbf0bd268a416a656ed3fc13bc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_062008f1",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-02-09T18:18:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_d51cfd6c",
+      "revId": "c852a40037dc9fcbf0bd268a416a656ed3fc13bc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
