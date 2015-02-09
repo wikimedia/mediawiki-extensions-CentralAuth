@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_15291536",
+        "filename": "tests/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-02-09T00:05:41Z",
+      "side": 1,
+      "message": "wrong test class",
+      "revId": "59853fd9689af318c281a872d6ecf6e91709bd89",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
