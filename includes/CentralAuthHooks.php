@@ -1382,6 +1382,7 @@ class CentralAuthHooks {
 	 * @param &$out OutputPage
 	 * @param &$skin Skin
 	 * @return bool
+	 * @todo Add 1x1 images somewhere besides page content
 	 */
 	static function onBeforePageDisplay( &$out, &$skin ) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
@@ -1430,10 +1431,21 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * Build the HTML containing the 1x1 images
+	 * @return string
+	 */
 	static function getEdgeLoginHTML() {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
-		$html = '';
+		// Put images inside a div so that other code that manipulates page content can
+		// explicitly ignore them.
+		$html = Xml::openElement( 'div',
+			array(
+				'id' => 'central-auth-images',
+				'style' => 'position: absolute;',
+			)
+		);
 
 		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$wiki = WikiMap::getWiki( $wiki );
@@ -1449,7 +1461,7 @@ class CentralAuthHooks {
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
-					'style' => 'border: none; position: absolute;',
+					'style' => 'border: none;',
 				)
 			);
 		}
@@ -1468,10 +1480,12 @@ class CentralAuthHooks {
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
-					'style' => 'border: none; position: absolute;',
+					'style' => 'border: none;',
 				)
 			);
 		}
+
+		$html .= Xml::closeElement( 'div' );
 
 		return $html;
 	}
