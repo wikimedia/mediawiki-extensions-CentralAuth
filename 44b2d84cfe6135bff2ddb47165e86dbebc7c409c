@@ -16,6 +16,24 @@
       "revId": "44b2d84cfe6135bff2ddb47165e86dbebc7c409c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_d7ee29b1",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-02-11T20:05:46Z",
+      "side": 1,
+      "message": "Changed the documentation",
+      "parentUuid": "6e7c4fa4_77fe3568",
+      "revId": "44b2d84cfe6135bff2ddb47165e86dbebc7c409c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
