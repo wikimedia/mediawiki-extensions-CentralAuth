@@ -89,17 +89,23 @@ class CentralAuthGroupMembershipProxy {
 	/**
 	 * replaces addUserGroup
 	 * @param $group
+	 *
+	 * @return bool
 	 */
 	function addGroup( $group ) {
 		$this->mGlobalUser->addToGlobalGroups( $group );
+		return true;
 	}
 
 	/**
 	 * replaces removeUserGroup
 	 * @param $group
+	 *
+	 * @return bool
 	 */
 	function removeGroup( $group ) {
 		$this->mGlobalUser->removeFromGlobalGroups( $group );
+		return true;
 	}
 
 	/**
