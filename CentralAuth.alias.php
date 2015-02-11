@@ -220,6 +220,7 @@ $specialPageAliases['et'] = array(
 	'GlobalUsers' => array( 'Globaalsed_kasutajad' ),
 	'GlobalRenameUser' => array( 'Globaalne_kasutajanime_muutmine' ),
 	'GlobalRenameProgress' => array( 'Globaalse_ümbernimetamise_seis' ),
+	'GlobalRenameRequest' => array( 'Globaalse_ümbernimetamise_taotlus' ),
 );
 
 /** Persian (فارسی) */
