@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_77fe3568",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-02-11T20:04:51Z",
+      "side": 1,
+      "message": "You will actually skip the name given as --resume, but the documentation says you resume FROM it.",
+      "revId": "44b2d84cfe6135bff2ddb47165e86dbebc7c409c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
