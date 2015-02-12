@@ -1,15 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Khun Sar"
+			"Khun Sar",
+			"Adolfsar"
 		]
 	},
+	"centralauth-finish-title": "ႁူမ်ႈႁွမ်းၵၼ်ယဝ်ႉယဝ်ႉ",
 	"centralauth-finish-text": "သင်ၸိူဝ်ႉဝႃႈ account ၼႆႉပဵၼ်ၶွင်သူယူၸိုင် တႅမ်ႈသႂ်ႇမၢႆလပ်ႉတႃႇ account တၢင်ႇဢၼ်တီႈၼႆႉသေ ႁဵတ်းႁႂ်ႈၶၵ်ႉတွၼ်ႊၵၢၼ်လွၵ်ႉၶဝ်ႈယဝ်ႉတူဝ်ႈလႆႈယူႇ",
 	"centralauth-finish-password": "မၢႆလပ်ႉ",
 	"centralauth-finish-login": "လွၵ်ႉၶဝ်ႈ",
 	"centralauth-finish-send-confirmation": "မၢႆလပ်ႉဢီးမဵလ်း",
+	"centralauth-finish-problems": "မီးလွင်ႈၶွင်ႉၶမ်ဝႆႉႁိုဝ် ဢမ်ႇၼၼ် သူဢမ်ႇၸႂ်ႈၸဝ်ႈၶွင် ဢႅၵ်ႉၶၢဝ်ႉတၢင်ႇၸိူဝ်းၸိူဝ်းၼႆႉ? \n[[meta:Special:MyLanguage/Help:Unified login|How to find help]]…",
 	"centralauth-finish-noconfirms": "မၢႆလပ်ႉဢၼ်ၼႆႉ ဢမ်ႇၸၢင်ႊယိုၼ်ယၼ်မၵ်းမၼ်ႈပၼ်လႆႈ account သေဢၼ်",
 	"centralauth-finish-incomplete": "ၸႂ်ႉတိုဝ်းမၢႆလပ်ႉဢၼ်ၼႆႉလႄႈ account လၢႆလၢႆဢၼ်လႆႈလူႉလႅဝ်။ \naccount တၢင်ႇဢၼ်ၵေႃႈ ယင်းပႆႇမီးၵၢၼ်မၵ်းမၼ်ယိုၼ်ယၼ်",
+	"centralauth-merge-attempt": "'''ထတ်းတူၺ်းမၢႆလပ်ႉဢၼ်ပၼ်ဝႆႉ ဢၼ်သၢၼ်ၶတ်းတင်းဢႅၵ်ႉၶၢဝ်ႉဢၼ်ပႆႇလႆႈႁူမ်ႈႁူမ်းသေၵိုတ်းဝႆႉယူႇၸိူဝ်းၼၼ် …'''",
+	"centralauth-attach-list-attached": "ဢႅၵ်ႉၶၢဝ်ႉဢၼ်ႁူမ်ႈႁူမ်ႈဝႆႉဢၼ်မီးၸိုဝ်ႈဝႃႈ\"$1\" ၼၼ်ႉ ၶဝ်ႈပႃးဝႆႉ ဢႅၵ်ႉၶၢဝ်ႉၼင်ႇပႃႈတႂ်ႈၼႆႉယူႇ:",
 	"centralauth-attach-title": "ယိုၼ်ယၼ် account",
 	"centralauth-attach-submit": "ၶၢႆႉ account",
 	"centralauth-attach-success": "account လႆႈထုၵ်ႇၶၢႆႉၵႂႃႇၸူး account ႁူမ်ႈႁွမ်းၵၼ်ယဝ်ႉ",
