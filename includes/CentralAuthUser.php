@@ -2037,9 +2037,6 @@ class CentralAuthUser extends AuthPluginUser {
 
 			$localUser = $this->localUserData( $row->lu_wiki );
 
-			if ( $localUser === false ) {
-				continue;
-			}
 			// Just for fun, add local user data.
 			// Displayed in the steward interface.
 			$wikis[$row->lu_wiki] = array_merge( $wikis[$row->lu_wiki],
@@ -2064,10 +2061,6 @@ class CentralAuthUser extends AuthPluginUser {
 		$items = array();
 		foreach ( $wikiIDs as $wikiID ) {
 			$data = $this->localUserData( $wikiID );
-			if ( empty( $data ) ) {
-				throw new Exception(
-					"Bad user row looking up local user $this->mName@$wikiID" );
-			}
 			$items[$wikiID] = $data;
 		}
 
@@ -2078,7 +2071,8 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Fetch a row of user data needed for migration.
 	 *
 	 * @param $wikiID String
-	 * @return Array|bool
+	 * @throws Exception if local user not found
+	 * @return array
 	 */
 	protected function localUserData( $wikiID ) {
 		$lb = wfGetLB( $wikiID );
@@ -2099,7 +2093,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		if ( !$row ) {
 			$lb->reuseConnection( $db );
-			return false;
+			throw new Exception( "Could not find local user data for {$this->mName}@{$wikiID}" );
 		}
 
 		/** @var $row object */
