@@ -160,7 +160,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 	function report() {
 		$delta = microtime( true ) - $this->start;
-		$this->output( sprintf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",
+		$this->output( sprintf( "%s: %s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",
+			wfWikiID(),
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->total / $delta,
