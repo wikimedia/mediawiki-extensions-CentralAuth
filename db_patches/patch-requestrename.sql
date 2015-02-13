@@ -3,14 +3,15 @@
 -- home wiki and a work queue of pending renames for stewards.
 CREATE TABLE /*_*/renameuser_queue (
   -- Internal unique ID for the authentication server
-  rq_id int primary key auto_increment,
+  rq_id int PRIMARY KEY AUTO_INCREMENT,
 
   -- User requesting to be renamed
   -- Not a gu_id because user may not be global yet
   rq_name varchar(255) binary not null,
 
   -- WikiID of home wiki for requesting user
-  rq_wiki varchar(255) binary not null,
+  -- Will be null if user is a CentralAuth account
+  rq_wiki varchar(255) binary,
 
   -- New name being requested
   rq_newname varchar(255) binary not null,
@@ -35,7 +36,6 @@ CREATE TABLE /*_*/renameuser_queue (
 
   -- Steward's comments on the request
   rq_comments blob
-
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/rq_oldstatus ON /*_*/renameuser_queue (rq_name, rq_wiki, rq_status);
