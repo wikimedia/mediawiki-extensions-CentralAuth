@@ -1,21 +1,2 @@
--- Table to store a list of users
--- who will be renamed in the
--- glorious finalization.
-CREATE TABLE /*_*/users_to_rename (
-  -- id
-  utr_id int primary key auto_increment,
 
-  -- username
-  utr_name varchar(255) binary not null,
-
-  -- wiki the user is on
-  utr_wiki varchar(255) binary not null,
-
-  -- bitfield of a user's status
-  -- could be: notified via email, talk page, and finally: renamed
-  utr_status int default 0
-) /*$wgDBTableOptions*/;
-
-CREATE UNIQUE INDEX /*i*/utr_user ON /*_*/users_to_rename (utr_name, utr_wiki);
-CREATE INDEX /*i*/utr_notif ON /*_*/users_to_rename (utr_status);
-CREATE INDEX /*i*/utr_wiki ON /*_*/users_to_rename (utr_wiki);
+NDQKCgo4YWlsaW5nIGFnYWluLCB3aGF0IHNob3VsZCBJIGNoYW5eW91IHNldCB0aGUgdmFsdWUgcmVhbGx5IGhpZ2ggYW5kIGl0IHN0aWxsIHN0b3BwZWQuIE15IGd1ZXNzIGlzIHlvdSBtaWdodCBoYXZlbXByb3ZlIHRoaXMgcXVlc3Rpb24KYXNrZWQgQXByIDIgJzEzIGF0IDIzOjQwCgpUb29Db29MCjYsNzkwNjIyMzcKMQpjYWxsIGl0IGZyb20gdGhlIGNvbW1hbmQgbGluZSwgbm8gdGltZSBsaW1pdCB0aGF0IHdheSDigJMgdXNlcjU1Nzg0NiBBcHIgMiAnMTMgYXQgMjM6NDIKMgpzZXRfdGltZV9saW1pdCgwKSBhdCB0aGUgYmVnaW5pbmcgb2YgeW91ciBzY3JpcHQgd2lsbCBkaXNhYmxlIHRoZSB0aW1lIGxpbWl0LiBCdXQgeW91IGNhbiBoYXZlIG90aGVyIHJlYXNvbiBmb3IgYSBwcmVtYXR1cmUgc3RvcC4gSXQgY2FuIGJlIGEgcHJvYmxlbSB3aXRoIHlvdXIgREIgb3IgYSBwcm9ibGVtIHdpdGggdGhlIG1lbW9yeSAoaWYgeW91IGFyZSBjcmVhdGluZyBhIGxvdCBvIGEgbWVtb3J5IGlzc3VlLiDigJMgTWlrZSBCcmFudCBBcHIgMiAnMTMgYXQgMjM6NTEKc2hvdyAzIG1vcWYgWF4X2V4ZWN1dGlvbl90aW1lIHRvIDUwMDAwMDAwMDAwIGFuZCB5ZXQgaXQgc3RvcGVkIGF0IGNlcnRhaW4gcG9pbnQsIEkgZG9udCBrbm93IHdoYXQgZWxzZSBjb3VsZCBsaW1pdCB0aGUgZXhlY3V0aW9uIHRpbWUsIEkgaGF2ZSBiZWVuIHJ1bm5pbmcgdGhpcyBhIGxvdCBvZiB0aW1lcyBhbmQgSSBhbSB0aXJlZCBvZiB3YWl0aW5nIGFuZCBmY2hlY2tlZCB0aGUgZm9yIFBIUCBlcnJvcnMgaW4gdGhlIHBocCBmb2xkZXIgb2YgeGFtcHAgYnV0IGl0IGRpZG50IHNob3cgYW55dGhpbmcgYXQgdGhlIHRpbWUgdGhlIHNjcmlwdCBzdG9wcGVkLCBldmVyeXRpbWUgaXQggcmVjb3JkcyDigJMgVG9vQ29vTCBBcHIgMiAnMTMgYXQgMjM6NDUKMQpZb3Ugc2hvdWxkIHNob3cgeW91ciBjb2RlLiBNeSBndWVzcyBpcyB0aGF0IHF1ZXJ5IGV4ZWN1d
