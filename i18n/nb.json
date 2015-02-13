@@ -319,5 +319,12 @@
 	"centralauth-warning-notloggedin": "Du er ikke innlogget for øyeblikket.",
 	"centralauth-warning-notattached": "Den lokale kontoen er ikke tilknyttet en global konto.",
 	"centralauth-finishglobaliseemail_subject": "Kontobekrefelse for {{SITENAME}}",
-	"centralauth-finishglobaliseemail_body": "Din e-postadresse er nå knyttet til konto \"$2\" på alle Wikimedia-prosjekter med hovedkonto på {{SITENAME}}.\n\nFor å bekrefte at denne kontoen virkelig tilhører deg, flett inn de kontoer som ikke kunne tilknyttes automatisk. Gjør det mulig å gjenvinne kontoen dersom du skulle miste passordet, ved å åpne denne lenken i nettleseren:\n\n$3\n\nHvis kontoen *ikke* tilhører deg, følg denne lenken for å avbryte bekreftelsen av e-post-adressen:\n\n$5\n\nDenne bekreftelseskoden vil utløpe $6 $7."
+	"centralauth-finishglobaliseemail_body": "Din e-postadresse er nå knyttet til konto \"$2\" på alle Wikimedia-prosjekter med hovedkonto på {{SITENAME}}.\n\nFor å bekrefte at denne kontoen virkelig tilhører deg, flett inn de kontoer som ikke kunne tilknyttes automatisk. Gjør det mulig å gjenvinne kontoen dersom du skulle miste passordet, ved å åpne denne lenken i nettleseren:\n\n$3\n\nHvis kontoen *ikke* tilhører deg, følg denne lenken for å avbryte bekreftelsen av e-post-adressen:\n\n$5\n\nDenne bekreftelseskoden vil utløpe $6 $7.",
+	"globalrenamerequest": "Be om globalt brukernavn",
+	"globalrenamerequest-pretext": "Be om et nytt brukernavn som kan brukes på alle prosjekter.\n\nAlle dine tidligere bidrag vil knyttes til dette nye brukernavnet.\n\nNår du har bedt om et nytt brukernavn vil en melding sendes til Wikimedias forvaltere for å utføre navneendringen. Du vil få en epost når prosessen er ferdig.",
+	"globalrenamerequest-username-label": "Nåværende brukernavn:",
+	"globalrenamerequest-username-help": "Dette er brukernavnet du har nå.",
+	"globalrenamerequest-newname-label": "Ønsket brukernavn:",
+	"globalrenamerequest-reason-label": "Årsak for forespørselen",
+	"globalrenamerequest-submit-text": "Be om navneendring"
 }

@@ -115,6 +115,7 @@
 	"centralauth-admin-info-hidden": "Уровень сокрытия:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:",
 	"centralauth-admin-info-nogroups": "нет",
+	"centralauth-admin-info-attached": "Число присоединённых уч. записей:",
 	"centralauth-admin-yes": "да",
 	"centralauth-admin-no": "нет",
 	"centralauth-admin-hidden-list": "из общедоступных списков",

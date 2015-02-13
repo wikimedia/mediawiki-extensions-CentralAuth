@@ -3,7 +3,8 @@
 		"authors": [
 			"Yury Tarasievich",
 			"Тест",
-			"Хомелка"
+			"Хомелка",
+			"Дзяніс Тутэйшы"
 		]
 	},
 	"mergeaccount": "Стан уніфікацыі рахункаў",
@@ -19,9 +20,9 @@
 	"centralauth-admin-yes": "так",
 	"centralauth-admin-no": "не",
 	"centralauth-admin-reason": "Прычына:",
-	"centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|аў}} таму",
-	"centralauth-minutes-ago": "$1 мінут{{PLURAL:$1|у|аў}} таму",
-	"centralauth-hours-ago": "$1 гадзін{{PLURAL:$1|у|аў}} таму",
+	"centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|}} назад",
+	"centralauth-minutes-ago": "$1 мінут{{PLURAL:$1|у|ы|}} назад",
+	"centralauth-hours-ago": "$1 гадзін{{PLURAL:$1|у|ы|}} назад",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|дзень|дзён}} таму",
 	"centralauth-months-ago": "$1 месяц{{PLURAL:$1||аў}} таму",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гадоў}} таму",
