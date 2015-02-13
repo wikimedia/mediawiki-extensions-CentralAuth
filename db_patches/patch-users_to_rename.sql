@@ -3,7 +3,7 @@
 -- glorious finalization.
 CREATE TABLE /*_*/users_to_rename (
   -- id
-  utr_id int primary key auto_increment,
+  utr_id int PRIMARY KEY AUTO_INCREMENT,
 
   -- username
   utr_name varchar(255) binary not null,
