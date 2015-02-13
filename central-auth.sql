@@ -14,8 +14,7 @@
 -- the localnames table.
 --
 CREATE TABLE /*_*/globalnames (
-  gn_name varchar(255) binary not null,
-  primary key (gn_name)
+  gn_name varchar(255) binary not null PRIMARY KEY
 ) /*$wgDBTableOptions*/;
 
 --
@@ -43,7 +42,7 @@ CREATE INDEX /*i*/ln_name_wiki ON /*_*/localnames (ln_name, ln_wiki);
 --
 CREATE TABLE /*_*/globaluser (
   -- Internal unique ID for the authentication server
-  gu_id int primary key auto_increment,
+  gu_id int PRIMARY KEY AUTO_INCREMENT,
 
   -- Username.
   gu_name varchar(255) binary,
@@ -120,7 +119,7 @@ CREATE TABLE /*_*/localuser (
   lu_local_id int(10) unsigned default null,
   lu_global_id int(10) unsigned default null,
 
-  primary key (lu_wiki, lu_name)
+  PRIMARY KEY (lu_wiki, lu_name)
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/lu_name_wiki ON /*_*/localuser (lu_name, lu_wiki);
@@ -130,7 +129,7 @@ CREATE TABLE /*_*/global_user_groups (
   gug_user int(11) not null,
   gug_group varchar(255) not null,
 
-  PRIMARY KEY (gug_user,gug_group)
+  PRIMARY KEY (gug_user, gug_group)
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/gug_user ON /*_*/global_user_groups (gug_user);
@@ -151,7 +150,7 @@ CREATE INDEX /*i*/ggp_permission ON /*_*/global_group_permissions (ggp_permissio
 -- May be defined in two ways: only specified wikis or all wikis except opt-outed
 CREATE TABLE /*_*/wikiset (
   -- ID of wikiset
-  ws_id int primary key auto_increment,
+  ws_id int PRIMARY KEY AUTO_INCREMENT,
   -- Display name of wikiset
   ws_name varchar(255) not null,
   -- Type of set: opt-in or opt-out
@@ -168,11 +167,9 @@ CREATE UNIQUE INDEX /*i*/ws_name ON /*_*/wikiset (ws_name);
 -- Allow certain global groups to have their permissions only on certain wikis
 CREATE TABLE /*_*/global_group_restrictions (
   -- Group to restrict
-  ggr_group varchar(255) not null,
+  ggr_group varchar(255) not null PRIMARY KEY,
   -- Wikiset to use
-  ggr_set int not null,
-
-  PRIMARY KEY (ggr_group)
+  ggr_set int not null
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/ggr_set ON /*_*/global_group_restrictions (ggr_set);
@@ -196,7 +193,7 @@ CREATE UNIQUE INDEX /*i*/ru_oldname ON /*_*/renameuser_status (ru_oldname, ru_wi
 -- home wiki and a work queue of pending renames for stewards.
 CREATE TABLE /*_*/renameuser_queue (
   -- Internal unique ID for the authentication server
-  rq_id int primary key auto_increment,
+  rq_id int PRIMARY KEY AUTO_INCREMENT,
 
   -- User requesting to be renamed
   -- Not a gu_id because user may not be global yet
@@ -229,7 +226,6 @@ CREATE TABLE /*_*/renameuser_queue (
 
   -- Steward's comments on the request
   rq_comments blob
-
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/rq_oldstatus ON /*_*/renameuser_queue (rq_name, rq_wiki, rq_status);
@@ -241,7 +237,7 @@ CREATE INDEX /*i*/rq_requested_ts ON /*_*/renameuser_queue (rq_requested_ts);
 -- glorious finalization.
 CREATE TABLE /*_*/users_to_rename (
   -- id
-  utr_id int primary key auto_increment,
+  utr_id int PRIMARY KEY AUTO_INCREMENT,
 
   -- username
   utr_name varchar(255) binary not null,
