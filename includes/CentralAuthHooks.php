@@ -1193,6 +1193,7 @@ class CentralAuthHooks {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmailAuthenticationTimestamp( $timestamp );
+			$ca->saveSettings();
 		}
 		return true;
 	}
