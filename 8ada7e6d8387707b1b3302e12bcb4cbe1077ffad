@@ -16,6 +16,24 @@
       "revId": "8ada7e6d8387707b1b3302e12bcb4cbe1077ffad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_98ad2731",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-02-14T20:26:12Z",
+      "side": 1,
+      "message": "Yes this is here for SQLite.",
+      "parentUuid": "6e7c4fa4_98ff6731",
+      "revId": "8ada7e6d8387707b1b3302e12bcb4cbe1077ffad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
