@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_98ff6731",
+        "filename": "central-auth.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-02-14T20:18:28Z",
+      "side": 1,
+      "message": "auto_increment on a varchar?",
+      "revId": "8ada7e6d8387707b1b3302e12bcb4cbe1077ffad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
