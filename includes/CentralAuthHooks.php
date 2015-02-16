@@ -1140,7 +1140,12 @@ class CentralAuthHooks {
 	static function onUserGetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
-			$timestamp = $ca->getEmailAuthenticationTimestamp();
+			if ( $ca->isLocked() ) {
+				// Locked users shouldn't be receiving email (T87559)
+				$timestamp = null;
+			} else {
+				$timestamp = $ca->getEmailAuthenticationTimestamp();
+			}
 		}
 		return true;
 	}
