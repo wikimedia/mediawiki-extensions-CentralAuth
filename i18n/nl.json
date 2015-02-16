@@ -385,6 +385,8 @@
 	"globalrenamerequest-email-help": "Geef uw e-mailadres op.",
 	"globalrenamerequest-email-why-label": "Waarom?",
 	"globalrenamerequest-email2-label": "E-mailadres bevestigen:",
+	"globalrenamerequest-reason-label": "Reden voor het verzoek",
+	"globalrenamerequest-submit-text": "Verzoek naamswijziging",
 	"globalrenamequeue-nav-openqueue": "Open verzoeken",
 	"globalrenamequeue-nav-closedqueue": "Gesloten verzoeken",
 	"globalrenamequeue-column-rq-name": "Gebruikersnaam",

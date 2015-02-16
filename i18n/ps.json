@@ -138,5 +138,9 @@
 	"right-centralauth-lock": "نړيوال گڼون تړل يا ناتړل",
 	"right-centralauth-merge": "د هغوی گڼونونه سره اخږل",
 	"right-globalgrouppermissions": "نړېوالې ډلې مهارول",
-	"centralloginsuccesful": "غونډال کې بريالی ورننوتلۍ"
+	"centralloginsuccesful": "غونډال کې بريالی ورننوتلۍ",
+	"globalrenameprogress": "د نړېوال نوم بدلون پرمختگ",
+	"globalrenameprogress-legend": "د نړېوال نوم بدلون پرمختگ کتل",
+	"centralauth-rename-progress-username": "کارن-نوم",
+	"centralauth-rename-viewprogress": "پرمختگ کتل"
 }

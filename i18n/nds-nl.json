@@ -5,7 +5,7 @@
 			"Slomox"
 		]
 	},
-	"mergeaccount": "Staotus samenvoegen gebrukers",
+	"mergeaccount": "Staotus veur t samenvoegen van gebrukerskonto's",
 	"centralauth-groupname": "de Wikimedia Foundation",
 	"centralauth-desc": "[[Special:MergeAccount|Samenevoegden gebrukers]] in wiki's van {{int:Centralauth-groupname}}",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Meerdere gebrukers bie mekaar doon]] veur t eenmaolige inlogsysteem",
@@ -58,5 +58,6 @@
 	"centralauth-editgroup-noset": "(gien)",
 	"centralauth-editgroup-reason": "Reden:",
 	"globalrenameprogress": "Staotus van globale herneuming",
-	"globalrenameprogress-legend": "Staotus van globale herneuming laoten zien"
+	"globalrenameprogress-legend": "Staotus van globale herneuming laoten zien",
+	"globalrenamerequest-legend": "Uniforme naamswieziging anvragen"
 }

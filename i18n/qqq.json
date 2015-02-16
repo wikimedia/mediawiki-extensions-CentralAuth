@@ -454,7 +454,7 @@
 	"globalrenamequeue-nav-closedqueue": "Text on a button that opens up the list of closed requests in the global rename queue.",
 	"globalrenamequeue-column-rq-name": "Table header.\n{{Identical|Username}}",
 	"globalrenamequeue-column-rq-newname": "Table header.",
-	"globalrenamequeue-column-rq-wiki": "Table header.",
+	"globalrenamequeue-column-rq-wiki": "Table header.\n{{Identical|Local wiki}}",
 	"globalrenamequeue-column-rq-requested-ts": "Table header. The date of opening the request.",
 	"globalrenamequeue-column-row-actions": "Table header.\n{{Identical|Action}}",
 	"globalrenamequeue-column-rq-completed-ts": "Table header. The date of closing the request.",
