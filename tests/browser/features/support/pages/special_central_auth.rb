@@ -1,8 +1,7 @@
 class SpecialCentralAuthPage
   include PageObject
 
-  include URL
-  page_url URL.url("Special:CentralAuth")
+  page_url "Special:CentralAuth"
 
   text_field(:target_field, id: "target")
   div(:error_box, class: "error")
