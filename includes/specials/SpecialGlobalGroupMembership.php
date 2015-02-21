@@ -49,19 +49,29 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return array
 	 */
 	function changeableGroups() {
-		if ( !$this->mGlobalUser->exists() || !$this->mGlobalUser->isAttached() ) {
-			return array();
-		}
+		if (
+			$this->mGlobalUser->exists() &&
+			$this->mGlobalUser->isAttached() &&
+			# Permission MUST be gained from global rights.
+			$this->mGlobalUser->hasGlobalPermission( 'globalgroupmembership' )
+		) {
+			$allGroups = CentralAuthUser::availableGlobalGroups();
 
-		$allGroups = CentralAuthUser::availableGlobalGroups();
-
-		# Permission MUST be gained from global rights.
-		if ( $this->mGlobalUser->hasGlobalPermission( 'globalgroupmembership' ) ) {
 			# specify addself and removeself as empty arrays -- bug 16098
-			return array( 'add' => $allGroups, 'remove' =>  $allGroups, 'add-self' => array(), 'remove-self' => array() );
-		} else {
-			return array( 'add' => array(), 'remove' =>  array(), 'add-self' => array(), 'remove-self' => array() );
+			return array(
+				'add' => $allGroups,
+				'remove' =>  $allGroups,
+				'add-self' => array(),
+				'remove-self' => array()
+			);
 		}
+
+		return array(
+			'add' => array(),
+			'remove' =>  array(),
+			'add-self' => array(),
+			'remove-self' => array()
+		);
 	}
 
 	/**
