@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_8107b984",
+        "filename": "includes/GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-02-22T21:30:46Z",
+      "side": 1,
+      "message": "Maybe set $fname \u003d __METHOD__ and pass that to the closure.\n\nAlso you\u0027ll need the $that \u003d $this trick (or pass the where clause in) since we don\u0027t require 5.4 yet.",
+      "revId": "2f6fc9db343651feaa0704c8fa682d3adaa3e21a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_a1d435ee",
+        "filename": "includes/GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-02-22T21:30:46Z",
+      "side": 1,
+      "message": "Maybe set $fname \u003d __METHOD__ and pass that to the closure.\n\nAlso you\u0027ll need the $that \u003d $this trick (or pass the where clause in) since we don\u0027t require 5.4 yet.",
+      "revId": "2f6fc9db343651feaa0704c8fa682d3adaa3e21a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
