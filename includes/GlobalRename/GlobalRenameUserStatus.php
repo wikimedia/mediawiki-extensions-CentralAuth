@@ -121,20 +121,22 @@ class GlobalRenameUserStatus {
 	 *
 	 * @param string $wiki
 	 * @param string $status
-	 *
-	 * @return bool
 	 */
 	public function setStatus( $wiki, $status ) {
 		$dbw = $this->getDB( DB_MASTER );
+		$nameWhere = $this->getNameWhereClause( $dbw ); // Can be inlined easily once we require more than 5.3
+		$fname = __METHOD__;
 
-		$dbw->update(
-			'renameuser_status',
-			array( 'ru_status' => $status ),
-			array( $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ),
-			__METHOD__
+		$dbw->onTransactionPreCommitOrIdle(
+			function() use( $dbw, $status, $wiki, $nameWhere, $fname ) {
+				$dbw->update(
+					'renameuser_status',
+					array( 'ru_status' => $status ),
+					array( $nameWhere, 'ru_wiki' => $wiki ),
+					$fname
+				);
+			}
 		);
-
-		return $dbw->affectedRows() === 1;
 	}
 
 	/**
@@ -166,18 +168,20 @@ class GlobalRenameUserStatus {
 	 * Mark the process as done for a wiki (=> delete the renameuser_status row)
 	 *
 	 * @param string $wiki
-	 *
-	 * @return bool
 	 */
 	public function done( $wiki ) {
 		$dbw = $this->getDB( DB_MASTER );
+		$nameWhere = $this->getNameWhereClause( $dbw ); // Can be inlined easily once we require more than 5.3
+		$fname = __METHOD__;
 
-		$dbw->delete(
-			'renameuser_status',
-			array( $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ),
-			__METHOD__
+		$dbw->onTransactionPreCommitOrIdle(
+			function() use( $dbw, $wiki, $nameWhere, $fname ) {
+				$dbw->delete(
+					'renameuser_status',
+					array( $nameWhere, 'ru_wiki' => $wiki ),
+					$fname
+				);
+			}
 		);
-
-		return $dbw->affectedRows() === 1;
 	}
 }
