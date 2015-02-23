@@ -391,7 +391,7 @@
 	"centralauth-rename-notinprogress": "No existen cambios de nombre de usuario en curso para $1. Es posible que éste haya ya terminado.",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
-	"centralauth-rename-table-status-inprogress": "En progreso",
+	"centralauth-rename-table-status-inprogress": "En proceso",
 	"centralauth-rename-table-status-queued": "En espera",
 	"centralauth-rename-table-status-done": "Hecho",
 	"centralauth-rename-table-status-failed": "Falló",
