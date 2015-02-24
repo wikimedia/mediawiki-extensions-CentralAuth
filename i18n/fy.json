@@ -5,6 +5,8 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"centralauth-foreign-link": "Brûker $1 op $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bydrage|bydragen}} op $2",
 	"centralauth-finish-password": "Wachtwurd:",
 	"centralauth-admin-username": "Brûkersnamme:",
 	"centralauth-admin-info-username": "Brûkersnamme:",
