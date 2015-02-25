@@ -3,5 +3,9 @@
 		"authors": [
 			"Murma174"
 		]
-	}
+	},
+	"centralauth-foreign-link": "Brüker $1 üüb $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bidrach|bidracher}} üüb $2",
+	"centralauth-merge-method-login": "bi't uunmeldin maaget",
+	"centralauth-admin-blocklog": "Brükersper-logbuk"
 }
