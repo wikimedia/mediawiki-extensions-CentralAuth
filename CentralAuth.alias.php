@@ -46,6 +46,7 @@ $specialPageAliases['ar'] = array(
 	'GlobalUserMerge' => array( 'دمج_مستخدم_عام' ),
 	'GlobalRenameRequest' => array( 'طلب_إعادة_تسمية_عام' ),
 	'GlobalRenameQueue' => array( 'طابور|_إعادة_تسمية_عام' ),
+	'SulRenameWarning' => array( 'تحذير_إعادة_تسمية_إس_يو_إل' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */

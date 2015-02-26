@@ -460,7 +460,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Table header. The date of closing the request.",
 	"globalrenamequeue-column-rq-status": "Table header.\n{{Identical|Status}}",
 	"globalrenamequeue-column-rq-performer": "Table header for column that shows names of users that have approved to denied global rename requests. Also known as \"performers\".",
-	"globalrenamequeue-action-address": "Link text.\n{{Identical|Address}}",
+	"globalrenamequeue-action-address": "Link text. \"Address\" is used here in the meaning of \"[Click here to] address this global rename request\".",
 	"globalrenamequeue-action-view": "Link text.\n{{Identical|View}}",
 	"globalrenamequeue-request-title": "Page title when processing request.\n\n* $1 is the user's current name\n{{Identical|Rename}}",
 	"globalrenamequeue-request-header": "Page content when processing request.\n\n* $1 is the user's current name\n* $2 is a link to the user's User page.\n* $3 is the user's requested name.",

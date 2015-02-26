@@ -36,7 +36,8 @@
 			"Macofe",
 			"Boniface",
 			"Grind24",
-			"Weft"
+			"Weft",
+			"Hercule"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -59,7 +60,7 @@
 	"centralauth-merge-dryrun-or": "'''ou'''",
 	"centralauth-merge-dryrun-home": "Le système de migration n’a pas pu confirmer que vous êtes l{{GENDER:|e|a|e}} propriétaire du compte du wiki principal associé à votre nom d’utilisateur.\n\nUn autre wiki a été identifié comme étant l’hôte principal du compte associé à votre nom d’utilisateur ; suivez le lien ci-dessous et connectez-vous pour terminer la migration de votre compte.",
 	"centralauth-merge-step3-title": "Créer un compte unifié",
-	"centralauth-merge-step3-detail": "Vous êtes maintenant prêt{{GENDER:||e|(e)}} à créer votre compte unifié, auquel seront attachés les wikis suivants :",
+	"centralauth-merge-step3-detail": "Vous êtes maintenant prêt{{GENDER:||e}} à créer votre compte unifié, auquel seront attachés les wikis suivants :",
 	"centralauth-merge-step3-submit": "Unifier les comptes",
 	"centralauth-merge-no-accounts": "Aucun compte correspondant à votre nom n’a été trouvé dans la table centrale de suivi des comptes !\nLa base de donnée peut être corrompue.",
 	"centralauth-merge-home-password": "Le wiki principal associé à ce compte (listé ci-dessous) dispose d’un mot de passe différent de celui que vous avez entré.\nVeuillez entrer le mot de passe utilisé sur le wiki principal.",
@@ -230,7 +231,7 @@
 	"centralauth-login-progress": "Vous êtes en cours de connexion aux wikis de {{int:Centralauth-groupname}} :",
 	"centralauth-logout-progress": "Vous êtes en cours de déconnexion des autres wikis de {{int:Centralauth-groupname}} :",
 	"centralauth-login-no-others": "Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.",
-	"centralauth-logout-no-others": "Vous avez été automatiquement déconnecté{{GENDER:||e|(e)}} des autres projets de {{int:Centralauth-groupname}}.",
+	"centralauth-logout-no-others": "Vous avez été automatiquement déconnecté{{GENDER:||e}} des autres projets de {{int:Centralauth-groupname}}.",
 	"centralauth-hidden-blockreason": "masqué globalement par $1 sur $2 pour le motif suivant : $3",
 	"centralauth-login-error-locked": "Vous ne pouvez pas vous connecter parce que votre compte est bloqué globalement.",
 	"centralauth-log-name": "Journal des comptes globaux",

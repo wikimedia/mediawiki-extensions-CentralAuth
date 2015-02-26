@@ -11,7 +11,8 @@
 			"MichaelFrey",
 			"Raimond Spekking",
 			"Revolus",
-			"Umherirrender"
+			"Umherirrender",
+			"Vogone"
 		]
 	},
 	"mergeaccount": "Status der Benutzerkontenzusammenführung",
@@ -430,7 +431,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Schließungsdatum",
 	"globalrenamequeue-column-rq-status": "Status",
 	"globalrenamequeue-column-rq-performer": "Erledigt von",
-	"globalrenamequeue-action-address": "Adresse",
+	"globalrenamequeue-action-address": "Bearbeiten",
 	"globalrenamequeue-action-view": "Ansehen",
 	"globalrenamequeue-request-title": "„$1“ umbenennen?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> beantragt eine Umbenennung in <strong>$3</strong>.",
