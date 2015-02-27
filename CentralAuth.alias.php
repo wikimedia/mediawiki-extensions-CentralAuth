@@ -171,7 +171,7 @@ $specialPageAliases['diq'] = array(
 	'GlobalGroupMembership' => array( 'GlobalGrubaEzayan' ),
 	'GlobalGroupPermissions' => array( 'GlobalGrubaİcazeti' ),
 	'WikiSets' => array( 'SazanéWikiBıvırne' ),
-	'GlobalUsers' => array( 'KarberéGlobali' ),
+	'GlobalUsers' => array( 'KarberêGıloveri' ),
 	'MultiLock' => array( 'ZafınKılit' ),
 );
 

@@ -52,7 +52,7 @@
 	"centralauth-merge-method-mail": "ยืนยันทางอีเมล",
 	"centralauth-merge-method-password": "ยืนยันทางรหัสผ่าน",
 	"centralauth-merge-method-new": "บัญชีผู้ใช้",
-	"centralauth-merge-method-login": "ถูกสร้างขึ้นเมื่อล็อกอิน",
+	"centralauth-merge-method-login": "ถูกสร้างเมื่อล็อกอิน",
 	"centralauth-finish-title": "เสร็จสิ้นการรวม",
 	"centralauth-finish-password": "รหัสผ่าน:",
 	"centralauth-finish-login": "ล็อกอิน",
