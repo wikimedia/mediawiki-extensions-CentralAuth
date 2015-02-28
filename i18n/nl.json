@@ -112,6 +112,7 @@
 	"centralauth-admin-info-hidden": "Verborgen:",
 	"centralauth-admin-info-groups": "Globale {{PLURAL:$1|groep|groepen}}:",
 	"centralauth-admin-info-nogroups": "geen",
+	"centralauth-admin-info-attached": "Aantal verbonden accounts:",
 	"centralauth-admin-yes": "ja",
 	"centralauth-admin-no": "nee",
 	"centralauth-admin-hidden-list": "niet in publieke lijsten",
