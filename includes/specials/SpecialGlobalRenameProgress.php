@@ -51,9 +51,50 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		}
 	}
 
+	function showCurrentRenames() {
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$tables = array( 'renameuser_status' );
+		if ( !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
+			$join_conds = array( 'globaluser' => array(
+				'INNER JOIN', array( 'gu_name=ru_newname', 'gu_hidden=""' )
+			) );
+			$tables[] = 'globaluser';
+		} else {
+			$join_conds = array();
+		}
+
+		$res = $dbr->select(
+			$tables,
+			array( 'DISTINCT(ru_oldname) as ru_oldname', 'ru_newname' ),
+			array(),
+			__METHOD__,
+			array(),
+			$join_conds
+		);
+
+		$html = "<ul>\n";
+		$hasResults = false;
+		foreach ( $res as $row ) {
+			$hasResults = true;
+			$html .= '<li>' .
+				$this->msg( 'centralauth-rename-progress-item' )
+					->params( $row->ru_oldname, $row->ru_newname )->parse() .
+				"</li>\n";
+		}
+
+		if ( !$hasResults ) {
+			return;
+		}
+
+		$html .= "</ul>\n";
+		$html = $this->msg( 'centralauth-rename-progress-list-header' )->escaped() . $html;
+		$this->getOutput()->addHTML( $html );
+	}
+
 	function onSubmit( array $data ) {
 		$name = User::getCanonicalName( $data['username'], 'usable' );
 		if ( !$name ) {
+			$this->showCurrentRenames();
 			return false;
 		}
 		$out = $this->getOutput();
