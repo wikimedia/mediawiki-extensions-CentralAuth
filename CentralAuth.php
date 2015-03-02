@@ -314,6 +314,8 @@ $wgAutoloadClasses['UserMergeNoopLogger'] = "$caBase/includes/GlobalRename/UserM
 $wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/CentralAuthTestCaseUsingDatabase.php";
 $wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/CentralAuthTestUser.php";
 
+$wgAutoloadClasses['SpecialUsersWhoWillBeRenamed'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
+$wgAutoloadClasses['UsersWhoWillBeRenamedPager'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
 $wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/includes/UsersToRename/UsersToRenameDatabaseUpdates.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
@@ -427,6 +429,7 @@ $wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
 $wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
 $wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
 $wgSpecialPages['GlobalUserMerge'] = 'SpecialGlobalUserMerge';
+$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
 $wgSpecialPageGroups['CentralAuth'] = 'users';
 $wgSpecialPageGroups['MergeAccount'] = 'login';
 $wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
