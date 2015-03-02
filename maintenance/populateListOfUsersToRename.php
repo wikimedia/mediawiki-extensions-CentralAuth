@@ -97,7 +97,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 							}
 						}
 					}
-					$cache->set( $row->name, $home );
+					$cache->set( $row->name, $attachableWikis );
 				}
 
 				if ( !in_array( $row->wiki, $attachableWikis )  ) {
