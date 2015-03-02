@@ -530,5 +530,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "Unlock and suppress the global account for [[User:Example]] with reason \"I can\"",
 	"centralauth-log-gblrename-oldname": "Previous username:",
 	"centralauth-contribs-locked": "This account is globally locked.\nSee [[Special:CentralAuth/$1|global account details]] for more information.",
-	"centralauth-contribs-locked-log": "This account is globally locked.\nThe latest lock log entry is provided below for reference:"
+	"centralauth-contribs-locked-log": "This account is globally locked.\nThe latest lock log entry is provided below for reference:",
+	"userswhowillberenamed": "Users who will be renamed",
+	"centralauth-uwbr-name": "User name",
+	"centralauth-uwbr-registration": "Registration date",
+	"centralauth-uwbr-editcount": "Edit count",
+	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed."
 }
