@@ -71,19 +71,37 @@ class PopulateListOfUsersToRename extends Maintenance {
 				$this->lName = $row->name;
 				$this->lWiki = $row->wiki;
 				if ( $cache->has( $row->name ) ) {
-					$home = $cache->get( $row->name );
+					$attachableWikis = $cache->get( $row->name );
 				} else {
 					$ca = new CentralAuthUser( $row->name );
+					$attachableWikis = array();
+					$unattached = $ca->queryUnattached();
 					if ( $ca->exists() ) {
 						$home = $ca->getHomeWiki();
+						$attachableWikis[] = $home;
+						foreach ( $unattached as $wiki => $info ) {
+							if ( $ca->getEmailAuthenticationTimestamp() &&
+								$info['email'] === $ca->getEmail() && !is_null( $info['emailAuthenticated'] )
+							) {
+								$attachableWikis[] = $wiki;
+							}
+						}
 					} else {
-						$home = $ca->chooseHomeWiki( $ca->queryUnattached() );
+						$home = $ca->chooseHomeWiki( $unattached );
+						$attachableWikis[] = $home;
+						if ( $unattached[$home]['email'] && isset( $unattached[$home]['emailAuthenticated'] ) ) {
+							foreach ( $unattached as $wiki => $info ) {
+								if ( $wiki !== $home && $unattached[$home]['email'] === $info['email'] && isset( $info['emailAuthenticated'] ) ) {
+									$attachableWikis[] = $wiki;
+								}
+							}
+						}
 					}
 					$cache->set( $row->name, $home );
 				}
 
-				if ( $home !== $row->wiki ) {
-					// Unattached account which is not on the home wiki,
+				if ( !in_array( $row->wiki, $attachableWikis )  ) {
+					// Unattached account which is not attachable,
 					// so they're getting renamed :(
 					$insertRows[] = (array)$row;
 				}
