@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_5dccea37",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-03-02T21:17:53Z",
+      "side": 1,
+      "message": "I think you need to check $ca-\u003egetEmailAuthenticationTimestamp() here?",
+      "revId": "bd9a119031c8be71350249f38cc6d166f41034e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
