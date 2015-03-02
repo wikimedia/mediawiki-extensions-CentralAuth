@@ -37,9 +37,35 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		) );
 	}
 
+	function showCurrentRenames() {
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$res = $dbr->select(
+			'renameuser_status',
+			array( 'DISTINCT(ru_oldname) as ru_oldname', 'ru_newname' ),
+			array(),
+			__METHOD__
+		);
+		$html = "<ul>\n";
+		$hasResults = false;
+		foreach ( $res as $row ) {
+			$hasResults = true;
+			$html .= '<li>' .
+				$this->msg( 'centralauth-rename-progress-item' )
+					->params( $row->ru_oldname, $row->ru_newname )->parse() .
+				"</li>\n";
+		}
+		if ( !$hasResults ) {
+			return;
+		}
+		$html .= "</ul>\n";
+		$html = $this->msg( 'centralauth-rename-progress-list-header' )->escaped() . $html;
+		$this->getOutput()->addHTML( $html );
+	}
+
 	function onSubmit( array $data ) {
 		$name = User::getCanonicalName( $data['username'], 'usable' );
 		if ( !$name ) {
+			$this->showCurrentRenames();
 			return false;
 		}
 		$out = $this->getOutput();
