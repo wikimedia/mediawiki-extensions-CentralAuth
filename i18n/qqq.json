@@ -400,6 +400,8 @@
 	"centralauth-rename-viewprogress": "Text for submit button Special:RenameProgress",
 	"centralauth-rename-progress-fieldset": "Text on fieldset around rename progress table",
 	"centralauth-rename-progress-logs-fieldset": "Text on fieldset around log entries",
+	"centralauth-rename-progress-item": "Text for item in a list containing the currently active global renames",
+	"centralauth-rename-progress-list-header": "Text above the list of currently active global renames",
 	"centralauth-rename-movelog": "Move log comment used when automatically moving user pages\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed.\n\nSee also:\n* {{msg-mw|Centralauth-usermerge-confirm}}",
 	"log-name-gblrename": "Log page title",
