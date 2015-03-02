@@ -211,7 +211,7 @@
 	"centralauth-invalid-wiki": "無此 Wiki 資料庫：$1",
 	"centralauth-account-exists": "無法建立帳號：請求的用戶名已被另一個wiki上的用戶使用。",
 	"centralauth-account-unattached-exists": "無法建立帳號：請求的使用者名稱與其他wiki上的用戶名衝突",
-	"centralauth-account-rename-exists": "無法建立帳號：請求的用戶名將與其他wiki上的用戶名衝突",
+	"centralauth-account-rename-exists": "無法建立帳號：請求的使用者名稱將與其他 wiki 上的使用者名稱衝突。",
 	"centralauth-account-exists-reset": "使用者名稱 $1 並未在此 Wiki 註冊，但您仍可重設該使用者的密碼於 [[Special:CentralAuth/$1|其所在的 Wiki]]。",
 	"centralauth-login-progress": "您正登入 {{int:Centralauth-groupname}} 中的 Wiki：",
 	"centralauth-logout-progress": "您正登出於 {{int:Centralauth-groupname}} 中的其他 Wiki：",
