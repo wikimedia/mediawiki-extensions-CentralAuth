@@ -62,6 +62,10 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 			$names[] = $result->utr_name;
 		}
 
+		if ( !$names ) {
+			return;
+		}
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			array( 'user', 'ipblocks' ),
