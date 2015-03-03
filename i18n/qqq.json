@@ -541,5 +541,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "{{doc-apihelp-example|setglobalaccountstatus}}",
 	"centralauth-log-gblrename-oldname": "Label for field on Special:Log which allows filtering the global rename log by the previous username",
 	"centralauth-contribs-locked": "This is displayed on [[Special:Contributions]] for locked accounts when we cannot display the log entry. Parameters:\n* $1 - the username",
-	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}"
+	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}",
+	"userswhowillberenamed": "{{doc-special|UsersWhoWillBeRenamed}}",
+	"centralauth-uwbr-name": "Heading for column in table",
+	"centralauth-uwbr-registration": "Heading for column in table",
+	"centralauth-uwbr-editcount": "Heading for column in table",
+	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed."
 }
