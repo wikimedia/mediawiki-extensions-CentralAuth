@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_094710c0",
+        "filename": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-03-03T05:16:26Z",
+      "side": 1,
+      "message": "Did you mean to use min() on mLimit and 25 (like UnreviewedPagesPager) or to always force 25?",
+      "revId": "1594bad1e0a52f2a2450890ad026bd384f3456ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
