@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6e7c4fa4_b7a2e990",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-04T20:45:36Z",
+      "side": 1,
+      "message": "needs to call parent::__construct!",
+      "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_17f63df6",
         "filename": "maintenance/fixStuckGlobalRename.php",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2015-03-04T20:12:55Z",
       "side": 1,
       "message": "We want the new name here, not the old one (does the index depend on whether I pass --logwiki?)",
+      "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_57b595c9",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-04T20:45:36Z",
+      "side": 1,
+      "message": "Forget this, the constructor is the problem",
+      "parentUuid": "6e7c4fa4_17f63df6",
       "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
