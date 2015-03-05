@@ -75,6 +75,78 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	}
 
 	/**
+	 * @covers CentralAuthUser::chooseHomeWiki
+	 * @dataProvider provideChooseHomeWiki
+	 */
+	public function testChooseHomeWiki( $expected, $attached ) {
+		$ca = new CentralAuthUser( 'FooBar' );
+		$this->assertEquals( $expected, $ca->chooseHomeWiki( $attached ) );
+	}
+
+	public static function provideChooseHomeWiki() {
+		return array(
+			// Groups win
+			array( 'barwiki', array(
+				'foowiki' => array(
+					'groups' => array( 'sysop' ),
+				),
+				'barwiki' => array(
+					'groups' => array( 'checkuser' ),
+				),
+			) ),
+			// Groups tie, editcount wins
+			array( 'barwiki', array(
+				'foowiki' => array(
+					'groups' => array( 'sysop', 'checkuser' ),
+					'editCount' => '100',
+				),
+				'barwiki' => array(
+					'groups' => array( 'checkuser' ),
+					'editCount' => '100000000',
+				),
+			) ),
+			// No groups, Editcount wins
+			array( 'barwiki', array(
+				'foowiki' => array(
+					'groups' => array(),
+					'editCount' => '100'
+				),
+				'barwiki' => array(
+					'groups' => array(),
+					'editCount' => '1000'
+				),
+			) ),
+			// Edit count ties, super old registration (null) wins
+			array( 'foowiki', array(
+				'foowiki' => array(
+					'groups' => array(),
+					'editCount' => '5',
+					'registration' => null
+				),
+				'barwiki' => array(
+					'groups' => array(),
+					'editCount' => '5',
+					'registration' => '20150305220251',
+				),
+			) ),
+			// Edit count ties, registration wins
+			array( 'foowiki', array(
+				'foowiki' => array(
+					'groups' => array(),
+					'editCount' => '5',
+					'registration' => '20100305220251'
+				),
+				'barwiki' => array(
+					'groups' => array(),
+					'editCount' => '5',
+					'registration' => '20150305220251',
+				),
+			) )
+
+		);
+	}
+
+	/**
 	 * @covers CentralAuthUser::getPasswordFromString
 	 * @dataProvider provideGetPasswordFromString
 	 */
