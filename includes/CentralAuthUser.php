@@ -736,34 +736,46 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 
 		// Sysops get priority
-		$priorityGroups = array( 'sysop', 'bureaucrat', 'steward' );
-		$workingSet = array();
-		foreach ( $migrationSet as $wiki => $local ) {
-			if ( array_intersect( $priorityGroups, $local['groups'] ) ) {
-				if ( $local['editCount'] ) {
-					// Ignore unused sysop accounts
-					$workingSet[$wiki] = $local;
+		$found = array();
+		$priorityGroups = array( 'checkuser', 'oversight', 'bureaucrat', 'sysop' );
+		foreach ( $priorityGroups as $group ) {
+			foreach ( $migrationSet as $wiki => $local ) {
+				if ( in_array( $group, $local['groups'] ) ) {
+					$found[] = $wiki;
 				}
+			}
+			if ( count( $found ) === 1 ) {
+				// Easy!
+				return $found[0];
+			} elseif ( $found ) {
+				// We'll check edit counts now...
+				break;
 			}
 		}
 
-		if ( !$workingSet ) {
+		if ( !$found ) {
 			// No privileged accounts; look among the plebes...
-			$workingSet = $migrationSet;
+			$found = array_keys( $migrationSet );
 		}
 
 		$maxEdits = -1;
 		$homeWiki = null;
-		foreach ( $workingSet as $wiki => $local ) {
-			if ( $local['editCount'] > $maxEdits ) {
+		foreach ( $found as $wiki ) {
+			$count = $migrationSet[$wiki]['editCount'];
+			if ( $count > $maxEdits ) {
 				$homeWiki = $wiki;
-				$maxEdits = $local['editCount'];
+				$maxEdits = $count;
+			} elseif ( $count === $maxEdits ) {
+				// Tie, check earlier registration
+				// Note that registration might be "null", which means they're a super old account.
+				if ( $migrationSet[$wiki]['registration'] < $migrationSet[$homeWiki]['registration'] ) {
+					$homeWiki = $wiki;
+				} elseif ( $migrationSet[$wiki]['registration'] === $migrationSet[$homeWiki]['registration'] ) {
+					// Another tie? Screw it, pick one randomly.
+					$wikis = array( $wiki, $homeWiki );
+					$homeWiki = $wikis[mt_rand( 0, 1 )];
+				}
 			}
-		}
-
-		if ( !isset( $homeWiki ) ) {
-			throw new Exception( "Logic error in migration: " .
-				"Unable to determine primary account for $this->mName" );
 		}
 
 		return $homeWiki;
@@ -2082,7 +2094,9 @@ class CentralAuthUser extends AuthPluginUser {
 				'user_email',
 				'user_email_authenticated',
 				'user_password',
-				'user_editcount' );
+				'user_editcount',
+				'user_registration',
+			);
 		$conds = array( 'user_name' => $this->mName );
 		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		if ( !$row ) {
@@ -2104,6 +2118,8 @@ class CentralAuthUser extends AuthPluginUser {
 			'email' => $row->user_email,
 			'emailAuthenticated' =>
 				wfTimestampOrNull( TS_MW, $row->user_email_authenticated ),
+			'registration' =>
+				wfTimestampOrNull( TS_MW, $row->user_registration ),
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
 			'groups' => array(),
