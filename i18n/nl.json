@@ -404,5 +404,6 @@
 	"globalrenamequeue-view-approved": "goedgekeurd",
 	"globalrenamequeue-view-rejected": "afgewezen",
 	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam:",
-	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie [[Special:CentralAuth/$1|globale gebruikersgegevens]] voor meer informatie."
+	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie [[Special:CentralAuth/$1|globale gebruikersgegevens]] voor meer informatie.",
+	"centralauth-uwbr-editcount": "Aantal bewerkingen"
 }

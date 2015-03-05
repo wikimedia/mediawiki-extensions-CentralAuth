@@ -22,7 +22,7 @@
 	},
 	"mergeaccount": "Käyttäjätunnusten yhdistämisen tila",
 	"centralauth-groupname": "Wikimedia Foundation",
-	"centralauth-desc": "[[Special:MergeAccount|Käyttäjätunnusten yhdistäminen]] {{int:Centralauth-groupname}} -wikeissä.",
+	"centralauth-desc": "[[Special:MergeAccount|Käyttäjätunnusten yhdistäminen]] sivuston {{int:Centralauth-groupname}} wikeissä.",
 	"centralauth-antispoof-desc": "Lisää AntiSpoof-tekniikan CentralAuthiin",
 	"centralauth-rename-desc": "Lisää Renameuser-teknologian CentralAuth-työkaluun",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Yhdistää käyttäjätunnuksia]] kertakirjautumista varten.",
@@ -513,5 +513,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "Poista lukitus käyttäjän [[User:Example]] järjestelmänlaajuiselta tunnukselta ja häivytä kyseinen tunnus syyllä \"I can\"",
 	"centralauth-log-gblrename-oldname": "Aiempi käyttäjänimi:",
 	"centralauth-contribs-locked": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti.\nKatso [[Special:CentralAuth/$1|järjestelmänlaajuisen tunnuksen tiedot]] lisätietoja varten.",
-	"centralauth-contribs-locked-log": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti. Alla on viimeisin lukituslokin merkintä:"
+	"centralauth-contribs-locked-log": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti. Alla on viimeisin lukituslokin merkintä:",
+	"userswhowillberenamed": "Käyttäjät, joiden tunnuksen nimi vaihdetaan",
+	"centralauth-uwbr-name": "Tunnuksen nimi",
+	"centralauth-uwbr-registration": "Rekisteröinnin päivämäärä",
+	"centralauth-uwbr-editcount": "Muokkausten lukumäärä",
+	"centralauth-uwbr-intro": "Tällä sivulla on lueteltu ne tähän wikiin rekisteröityneet käyttäjät, joiden tunnuksen nimi tullaan vaihtamaan."
 }

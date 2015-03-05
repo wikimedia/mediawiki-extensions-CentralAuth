@@ -379,7 +379,7 @@
 	"centralauth-rename-confirm": "واقعاً می‌خواهید این نام کاربری را سراسری تغییر دهید؟",
 	"log-name-gblrename": "سیاهه تغییرنام سراسری",
 	"log-description-gblrename": "سیاهه تغییر نام سراسری کاربرها را دنبال می‌کند.",
-	"logentry-gblrename-rename": "$1 به طور سراسری $4 to $5 {{GENDER:$2|تغییر نام داد}}",
+	"logentry-gblrename-rename": "$1 به‌طور سراسری $4 را به $5 {{GENDER:$2|تغییرنام داد}}",
 	"globalusermerge": "ادغام سراسری کاربر",
 	"globalusermerge-legend": "ادغام سراسری کاربر",
 	"centralauth-usermerge-form-newuser": "نام کاربری نهایی",
@@ -459,5 +459,10 @@
 	"apihelp-query+globalallusers-param-from": "حساب کاربری آغازین جهت شمارش.",
 	"apihelp-query+globalallusers-param-to": "حساب کاربری جهت توقف شمارش.",
 	"apihelp-query+globalallusers-example-1": "فهرست کاربران سراسری",
-	"centralauth-log-gblrename-oldname": "نام کاربری قبلی:"
+	"centralauth-log-gblrename-oldname": "نام کاربری قبلی:",
+	"userswhowillberenamed": "کاربرانی که تغییر نام خواهند یافت",
+	"centralauth-uwbr-name": "نام کاربری",
+	"centralauth-uwbr-registration": "تاریخ ثبت نام",
+	"centralauth-uwbr-editcount": "شمار ویرایش‌ها",
+	"centralauth-uwbr-intro": "این صفحه کاربرانی که در این ویکی ثبت شده‌اند و تغییر نام  خواهند یافت را فهرست می‌کند."
 }

@@ -485,5 +485,10 @@
 	"apihelp-globaluserrights-param-user": "Nombre de usuario global.",
 	"apihelp-globaluserrights-param-userid": "ID de usuario global.",
 	"apihelp-globaluserrights-param-reason": "Razón para el cambio.",
-	"centralauth-contribs-locked": "Esta cuenta está bloqueada globalmente.\nVéase [[Special:CentralAuth/$1|detalles de cuenta global]] para más información."
+	"centralauth-contribs-locked": "Esta cuenta está bloqueada globalmente.\nVéase [[Special:CentralAuth/$1|detalles de cuenta global]] para más información.",
+	"userswhowillberenamed": "Usuarios que cambiarán de nombre",
+	"centralauth-uwbr-name": "Nombre de usuario",
+	"centralauth-uwbr-registration": "Fecha de registro",
+	"centralauth-uwbr-editcount": "Número de ediciones",
+	"centralauth-uwbr-intro": "Esta página lista los usuarios registrados en este wiki que cambiarán de nombre."
 }

@@ -98,6 +98,8 @@
 	"centralauth-admin-info-hidden": "മറഞ്ഞിരിക്കുന്നത്:",
 	"centralauth-admin-info-groups": "ആഗോള {{PLURAL:$1|സംഘം|സംഘങ്ങൾ}}:",
 	"centralauth-admin-info-nogroups": "ഒന്നുമില്ല",
+	"centralauth-admin-info-attached": "ബന്ധപ്പെടുത്തിയിരിക്കുന്ന അംഗത്വങ്ങളുടെ എണ്ണം:",
+	"centralauth-admin-info-unattached": "ബന്ധപ്പെടുത്താത്ത അംഗത്വങ്ങളുടെ എണ്ണം:",
 	"centralauth-admin-yes": "അതെ",
 	"centralauth-admin-no": "അല്ല",
 	"centralauth-admin-hidden-list": "പൊതു വേദികളിൽ നിന്നും",

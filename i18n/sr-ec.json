@@ -301,7 +301,9 @@
 	"centralauth-rename-progress-username": "Корисничко име",
 	"centralauth-rename-table-domain": "Локални вики",
 	"centralauth-rename-table-status-inprogress": "У току",
+	"centralauth-rename-table-status-queued": "На чекању",
 	"centralauth-rename-table-status-done": "Урађено",
+	"centralauth-rename-viewprogress": "Погледај",
 	"centralauth-rename-movelog": "Аутоматско премештање странице због преименовања корисника „[[Special:CentralAuth/$1|$1]]“ у „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-confirm": "Да ли желите да глобално преименујете овог корисника?",
 	"log-name-gblrename": "Дневник глобалних преименовања",
@@ -322,5 +324,10 @@
 	"globalrenamerequest-email-why-label": "Зашто?",
 	"globalrenamerequest-email2-label": "Потврда е-поште:",
 	"globalrenamerequest-reason-label": "Разлог",
-	"globalrenamerequest-submit-text": "Поднеси захтев"
+	"globalrenamerequest-submit-text": "Поднеси захтев",
+	"globalrenamequeue-request-cancel-text": "Откажи",
+	"sulrenamewarning-title": "{{GENDER:$1|Ваш}} налог је преименован",
+	"centralauth-uwbr-name": "Корисничко име",
+	"centralauth-uwbr-registration": "Датум регистрације",
+	"centralauth-uwbr-editcount": "Број измена"
 }

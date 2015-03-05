@@ -528,5 +528,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "解除锁定并监督隐藏全域账户[[User:Example]]，原因“I can”",
 	"centralauth-log-gblrename-oldname": "之前的用户名：",
 	"centralauth-contribs-locked": "此账户已被全域锁定。\n参见[[Special:CentralAuth/$1|全域账户详情]]以获取更多信息。",
-	"centralauth-contribs-locked-log": "此账户已被全域锁定。\n最近的锁定日志记录在下面提供以便参考："
+	"centralauth-contribs-locked-log": "此账户已被全域锁定。\n最近的锁定日志记录在下面提供以便参考：",
+	"userswhowillberenamed": "将被重命名的用户",
+	"centralauth-uwbr-name": "用户名",
+	"centralauth-uwbr-registration": "注册日期",
+	"centralauth-uwbr-editcount": "编辑计数",
+	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。"
 }

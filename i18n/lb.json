@@ -414,5 +414,7 @@
 	"apihelp-query+globalgroups-example-1": "Global Gruppen opzielen",
 	"apihelp-query+wikisets-param-orderbyname": "Resultater nom Numm zortéieren",
 	"apihelp-setglobalaccountstatus-param-reason": "Grond fir dem  Benotzer säi Status z'änneren.",
-	"centralauth-log-gblrename-oldname": "Virege Benotzernumm"
+	"centralauth-log-gblrename-oldname": "Virege Benotzernumm",
+	"userswhowillberenamed": "Benotzer déi ëmbenannt ginn",
+	"centralauth-uwbr-name": "Benotzernumm"
 }

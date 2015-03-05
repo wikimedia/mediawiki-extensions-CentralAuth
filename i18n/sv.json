@@ -22,7 +22,8 @@
 			"Stefan2",
 			"WikiPhoenix",
 			"Fader",
-			"McDutchie"
+			"McDutchie",
+			"Aaoo"
 		]
 	},
 	"mergeaccount": "Status för gemensam inloggning",
@@ -519,5 +520,6 @@
 	"apihelp-setglobalaccountstatus-example-2": "Lås upp och censurera det globala kontot för [[User:Example]] med motivationen \"I can\"",
 	"centralauth-log-gblrename-oldname": "Tidigare användarnamn:",
 	"centralauth-contribs-locked": "Detta kontot är globalt låst.\nSe [[Special:CentralAuth/$1|globala kontodetaljer]] för mer information.",
-	"centralauth-contribs-locked-log": "Detta kontot är globalt låst.\nDet senaste posten i lås-loggen ges nedan som referens:"
+	"centralauth-contribs-locked-log": "Detta kontot är globalt låst.\nDet senaste posten i lås-loggen ges nedan som referens:",
+	"centralauth-uwbr-name": "Användarnamn"
 }

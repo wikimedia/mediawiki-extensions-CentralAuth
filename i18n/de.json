@@ -494,5 +494,10 @@
 	"apihelp-setglobalaccountstatus-example-1": "Sperrt das globale Benutzerkonto für [[User:Example]] mit der Begründung „Spam“",
 	"centralauth-log-gblrename-oldname": "Früherer Benutzername",
 	"centralauth-contribs-locked": "Dieses Benutzerkonto ist global gesperrt.\nSiehe die [[Special:CentralAuth/$1|Einzelheiten zum globalen Benutzerkonto]] für weitere Informationen.",
-	"centralauth-contribs-locked-log": "Dieses Benutzerkonto ist global gesperrt.\nEs folgt der aktuellste Eintrag aus dem Sperr-Logbuch:"
+	"centralauth-contribs-locked-log": "Dieses Benutzerkonto ist global gesperrt.\nEs folgt der aktuellste Eintrag aus dem Sperr-Logbuch:",
+	"userswhowillberenamed": "Benutzer, die umbenannt werden",
+	"centralauth-uwbr-name": "Benutzername",
+	"centralauth-uwbr-registration": "Registrierungsdatum",
+	"centralauth-uwbr-editcount": "Bearbeitungszähler",
+	"centralauth-uwbr-intro": "Diese Seite listet auf diesem Wiki registrierte Benutzer auf, die umbenannt werden."
 }

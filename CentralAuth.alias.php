@@ -48,6 +48,7 @@ $specialPageAliases['ar'] = array(
 	'GlobalRenameRequest' => array( 'طلب_إعادة_تسمية_عام' ),
 	'GlobalRenameQueue' => array( 'طابور|_إعادة_تسمية_عام' ),
 	'SulRenameWarning' => array( 'تحذير_إعادة_تسمية_إس_يو_إل' ),
+	'UsersWhoWillBeRenamed' => array( 'المستخدمون_الذين_ستتم_إعادة_تسميتهم' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
@@ -163,6 +164,7 @@ $specialPageAliases['de'] = array(
 	'GlobalRenameRequest' => array( 'Globale_Umbenennungsanfrage' ),
 	'GlobalRenameQueue' => array( 'Globale_Umbenennungs-Warteschlange' ),
 	'SulRenameWarning' => array( 'SUL-Umbenennungswarnung' ),
+	'UsersWhoWillBeRenamed' => array( 'Umzubenennende_Benutzer' ),
 );
 
 /** Zazaki (Zazaki) */
@@ -238,6 +240,9 @@ $specialPageAliases['fa'] = array(
 	'GlobalRenameProgress' => array( 'پیشرفت_تغییر_نام_سراسری' ),
 	'GlobalUserMerge' => array( 'ادغام_کاربر_سراسری' ),
 	'GlobalRenameRequest' => array( 'درخواست_ادغام_کاربر_سراسری' ),
+	'GlobalRenameQueue' => array( 'صف_تغییر_نام_سراسری' ),
+	'SulRenameWarning' => array( 'هشدار_تغییر_نام_سراسری' ),
+	'UsersWhoWillBeRenamed' => array( 'کاربرانی_که_تغییر_نام_خواهند_یافت' ),
 );
 
 /** Finnish (suomi) */
@@ -826,6 +831,7 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalRenameRequest' => array( '全域重命名申请' ),
 	'GlobalRenameQueue' => array( '全域重命名队列' ),
 	'SulRenameWarning' => array( 'SUL重命名警告' ),
+	'UsersWhoWillBeRenamed' => array( '将被重命名的用户' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */

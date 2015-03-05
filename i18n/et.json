@@ -419,5 +419,10 @@
 	"sulrenamewarning-usenew": "Edaspidi kasuta palun sisselogimiseks uut kasutajanime '''$1'''.",
 	"centralauth-log-gblrename-oldname": "Eelnev kasutajanimi:",
 	"centralauth-contribs-locked": "See konto on globaalselt lukustatud.\nVaata [[Special:CentralAuth/$1|globaalse konto üksikasju]].",
-	"centralauth-contribs-locked-log": "See konto on globaalselt lukustatud.\nAllpool on toodud lukustamislogi viimane sissekanne:"
+	"centralauth-contribs-locked-log": "See konto on globaalselt lukustatud.\nAllpool on toodud lukustamislogi viimane sissekanne:",
+	"userswhowillberenamed": "Kasutajad, kelle nimi muudetakse",
+	"centralauth-uwbr-name": "Kasutajanimi",
+	"centralauth-uwbr-registration": "Registreerunud",
+	"centralauth-uwbr-editcount": "Redigeerimisi",
+	"centralauth-uwbr-intro": "Sellel leheküljel on loetletud siin vikis registreeritud kasutajad, kelle nimi muudetakse."
 }
