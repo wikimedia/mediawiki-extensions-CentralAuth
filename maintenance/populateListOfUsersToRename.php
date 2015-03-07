@@ -103,6 +103,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 				if ( !in_array( $row->wiki, $attachableWikis )  ) {
 					// Unattached account which is not attachable,
 					// so they're getting renamed :(
+					$this->output( "{$row->name}@{$row->wiki} is going to be renamed." );
 					$insertRows[] = (array)$row;
 				}
 			}
