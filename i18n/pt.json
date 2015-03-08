@@ -463,5 +463,7 @@
 	"sulrenamewarning-usenew": "Por favor, utilize o seu nome de {{GENDER:$1|utilizador|utilizadora|utilizador(a)}} \"$1\" no futuro quando iniciar a sessão.",
 	"apihelp-globaluserrights-param-user": "Nome de utilizador global.",
 	"centralauth-log-gblrename-oldname": "Nome de utilizador(a) anterior",
-	"centralauth-contribs-locked-log": "Esta conta está globalmente bloqueada.\nPara referência é apresentado abaixo o último registo de bloqueio:"
+	"centralauth-contribs-locked-log": "Esta conta está globalmente bloqueada.\nPara referência é apresentado abaixo o último registo de bloqueio:",
+	"centralauth-uwbr-name": "Nome de utilizador(a)",
+	"centralauth-uwbr-registration": "Data de registo"
 }

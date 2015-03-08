@@ -395,5 +395,8 @@
 	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy.",
 	"apihelp-deleteglobalaccount-param-reason": "Powód usunięcie użytkownika.",
 	"apihelp-globaluserrights-param-reason": "Powód zmiany.",
-	"apihelp-query+globalallusers-param-dir": "Kierunek sortowania."
+	"apihelp-query+globalallusers-param-dir": "Kierunek sortowania.",
+	"centralauth-uwbr-name": "Nazwa użytkownika",
+	"centralauth-uwbr-registration": "Data rejestracji",
+	"centralauth-uwbr-editcount": "Liczba edycji"
 }

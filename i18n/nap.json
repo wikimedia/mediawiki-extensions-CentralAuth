@@ -111,7 +111,7 @@
 	"centralauth-admin-list-localwiki": "Wiki locale",
 	"centralauth-admin-list-attached-on": "Azzeccato a",
 	"centralauth-admin-list-method": "Metodo",
-	"centralauth-admin-list-editcount": "Cagna cunto",
+	"centralauth-admin-list-editcount": "Cagnamiente 'a stu cunto",
 	"centralauth-admin-list-groups": "Gruppe",
 	"centralauth-admin-list-blocked": "Bloccato",
 	"centralauth-admin-unmerge": "Succhia scigliute",
@@ -502,5 +502,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "Sbluccà e scancellà 'o cunto globbale pe' [[User:Example]] cu mutivo \"I pozzo\"",
 	"centralauth-log-gblrename-oldname": "Nomme utente 'e primma:",
 	"centralauth-contribs-locked": "Stu cunto è globbalmente bluccato.\nVedite [[Special:CentralAuth/$1|dettaglie 'e cunto globbale]] pe n'avé cchiù nfurmaziune.",
-	"centralauth-contribs-locked-log": "Stu cunto è bloccato globbalmente.\nL'urdemo riggistro 'e blocche è ripurtato ccà abbascio pe n'avé nu riferimento:"
+	"centralauth-contribs-locked-log": "Stu cunto è bloccato globbalmente.\nL'urdemo riggistro 'e blocche è ripurtato ccà abbascio pe n'avé nu riferimento:",
+	"userswhowillberenamed": "Utente ca se renommenarrano",
+	"centralauth-uwbr-name": "Paggena utente",
+	"centralauth-uwbr-registration": "Data 'e riggistrazione",
+	"centralauth-uwbr-editcount": "Cagna cunto",
+	"centralauth-uwbr-intro": "Sta paggena elenca ll'utente riggistrate int'a sta wiki ca sarranno renommenate."
 }

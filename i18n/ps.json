@@ -142,5 +142,7 @@
 	"globalrenameprogress": "د نړېوال نوم بدلون پرمختگ",
 	"globalrenameprogress-legend": "د نړېوال نوم بدلون پرمختگ کتل",
 	"centralauth-rename-progress-username": "کارن-نوم",
-	"centralauth-rename-viewprogress": "پرمختگ کتل"
+	"centralauth-rename-viewprogress": "پرمختگ کتل",
+	"centralauth-uwbr-name": "کارن-نوم",
+	"centralauth-uwbr-editcount": "د سمونونو شمېر"
 }

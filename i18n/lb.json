@@ -416,5 +416,7 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Grond fir dem  Benotzer säi Status z'änneren.",
 	"centralauth-log-gblrename-oldname": "Virege Benotzernumm",
 	"userswhowillberenamed": "Benotzer déi ëmbenannt ginn",
-	"centralauth-uwbr-name": "Benotzernumm"
+	"centralauth-uwbr-name": "Benotzernumm",
+	"centralauth-uwbr-registration": "Datum vun der Umeldung",
+	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen"
 }

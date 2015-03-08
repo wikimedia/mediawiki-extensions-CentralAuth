@@ -376,5 +376,7 @@
 	"globalrenamequeue-action-view": "Хьажар",
 	"globalrenamequeue-request-title": "ЦӀе хуьйций? «$1»?",
 	"globalrenamequeue-request-cancel-text": "Цаоьшу",
-	"centralauth-log-gblrename-oldname": "Хьалхалера декъашхочун цӀе:"
+	"centralauth-log-gblrename-oldname": "Хьалхалера декъашхочун цӀе:",
+	"centralauth-uwbr-name": "Декъашхочун цӀе",
+	"centralauth-uwbr-registration": "ДӀаяздар кхолийна хан"
 }

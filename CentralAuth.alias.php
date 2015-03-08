@@ -314,6 +314,7 @@ $specialPageAliases['he'] = array(
 	'GlobalRenameRequest' => array( 'בקשת_שינוי_שם_גלובלית' ),
 	'GlobalRenameQueue' => array( 'תור_שינויי_שם_גלובלי' ),
 	'SulRenameWarning' => array( 'אזהרה_שינוי_שם_של_SUL' ),
+	'UsersWhoWillBeRenamed' => array( 'משתמשים_ששמם_ישונה' ),
 );
 
 /** Hindi (हिन्दी) */
@@ -475,7 +476,14 @@ $specialPageAliases['lb'] = array(
 	'GlobalGroupPermissions' => array( 'Global_Grupperechter' ),
 	'WikiSets' => array( 'Wiki-Seten_änneren' ),
 	'GlobalUsers' => array( 'Global_Benotzer' ),
+	'MultiLock' => array( 'Méifach_Spär' ),
 	'GlobalRenameUser' => array( 'Global_Benotzerëmbenennung' ),
+	'GlobalRenameProgress' => array( 'Progrès_vun_der_globaler_Ëmbenennung' ),
+	'GlobalUserMerge' => array( 'Global_Benotzer_Fusioun' ),
+	'GlobalRenameRequest' => array( 'Global_Ufro_fir_Benotzer_ëmzebenennen' ),
+	'GlobalRenameQueue' => array( 'Lëscht_vun_de_globalen_Ëmbenennungen_déi_am_Gaang_sinn' ),
+	'SulRenameWarning' => array( 'Warnung_bei_der_SUL_Ëmbenennung' ),
+	'UsersWhoWillBeRenamed' => array( 'Benotzer_déi_wäerten_ëmbenannt_ginn' ),
 );
 
 /** Lithuanian (lietuvių) */

@@ -478,5 +478,10 @@
 	"apihelp-query+globaluserinfo-description": "מציג מידע על משתמש גלובלי",
 	"centralauth-log-gblrename-oldname": "שם משתמש קודם",
 	"centralauth-contribs-locked": "החשבון הזה נעול גלובלית.\nר' [[Special:CentralAuth/$1|פרטים על החשבון הגלובלי]] למידע נוסף.",
-	"centralauth-contribs-locked-log": "החשבון הזה נעול גלובלית.\nהעיול האחרון ביומן הנעילות ניתן להלן לעיון:"
+	"centralauth-contribs-locked-log": "החשבון הזה נעול גלובלית.\nהעיול האחרון ביומן הנעילות ניתן להלן לעיון:",
+	"userswhowillberenamed": "משתמשים ששמם ישונה",
+	"centralauth-uwbr-name": "שם המשתמש",
+	"centralauth-uwbr-registration": "תאריך הרישום",
+	"centralauth-uwbr-editcount": "מספר העריכות",
+	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה."
 }

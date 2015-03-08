@@ -502,5 +502,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "Dësbloché e eliminé ël cont global për [[User:Example]] con la rason «I peuss»",
 	"centralauth-log-gblrename-oldname": "Stranòm precedent:",
 	"centralauth-contribs-locked": "Ës cont a l'é blocà ëd fasson global.\nVëdde [[Special:CentralAuth/$1|ij detaj dël cont global]] për pi d'anformassion.",
-	"centralauth-contribs-locked-log": "Ës cont a l'é blocà ëd fasson global.\nL'ùltima vos dl'argistr dij blocage a l'é fornìa sì sota për anformassion:"
+	"centralauth-contribs-locked-log": "Ës cont a l'é blocà ëd fasson global.\nL'ùltima vos dl'argistr dij blocage a l'é fornìa sì sota për anformassion:",
+	"userswhowillberenamed": "Utent ch'a saran arnominà",
+	"centralauth-uwbr-name": "Stranòm",
+	"centralauth-uwbr-registration": "Dàita d'anscrission",
+	"centralauth-uwbr-editcount": "Nùmer ëd modìfiche",
+	"centralauth-uwbr-intro": "Costa pàgina a lista j'utent anscrit a costa wiki ch'a saran arnominà."
 }

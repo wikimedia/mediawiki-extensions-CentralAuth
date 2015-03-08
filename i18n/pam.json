@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Val2397"
+			"Val2397",
+			"Leeheonjin"
 		]
 	},
-	"centralauth-admin-reason": "↓Sangkan:"
+	"centralauth-admin-reason": "↓Sangkan:",
+	"centralauth-uwbr-name": "Lagyu ning talagamit",
+	"centralauth-uwbr-registration": "Petsa ning rehistrasyun"
 }
