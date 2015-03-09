@@ -27,9 +27,8 @@ class ForceRenameUsers extends Maintenance {
 
 	public function execute() {
 		$dbw = CentralAuthUser::getCentralDB();
-		$dbr = CentralAuthUser::getCentralSlaveDB();
 		while ( true ) {
-			$rowsToRename = $this->findUsers( $this->getOption( 'dbname' ), $dbr, $dbw );
+			$rowsToRename = $this->findUsers( $this->getOption( 'dbname' ), $dbw );
 			if ( !$rowsToRename ) {
 				break;
 			}
@@ -92,21 +91,13 @@ class ForceRenameUsers extends Maintenance {
 
 	/**
 	 * @param string $wiki
-	 * @param DatabaseBase $dbr
 	 * @param DatabaseBase $dbw
 	 * @return stdClass[]
 	 */
-	protected function findUsers( $wiki, DatabaseBase $dbr, DatabaseBase $dbw ) {
-		$rows = $dbr->select(
-			'users_to_rename',
-			array( 'utr_name', 'utr_wiki' ),
-			array( 'utr_status' => UsersToRenameDatabaseUpdates::NOTIFIED, 'utr_wiki' => $wiki ),
-			__METHOD__,
-			array( 'LIMIT' => 50 )
-		);
-
+	protected function findUsers( $wiki, DatabaseBase $dbw ) {
 		$rowsToRename = array();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
+		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, 50 );
 
 		foreach ( $rows as $row ) {
 			$caUser = new CentralAuthUser( $row->utr_name );
