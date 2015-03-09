@@ -480,5 +480,10 @@
 	"apihelp-setglobalaccountstatus-example-2": "Mở khóa và đàn áp tài khoản toàn cục của [[User:Example]] với lý do “Vì tôi có thể”",
 	"centralauth-log-gblrename-oldname": "Tên người dùng cũ",
 	"centralauth-contribs-locked": "Tài khoản này hiện đang bị khóa toàn cục.\nXem [[Special:CentralAuth/$1|chi tiết tài khoản toàn cục]].",
-	"centralauth-contribs-locked-log": "Tài khoản này hiện đang bị khóa toàn cục.\nMục nhật trình khóa gần nhất được ghi ở dưới để tiện theo dõi:"
+	"centralauth-contribs-locked-log": "Tài khoản này hiện đang bị khóa toàn cục.\nMục nhật trình khóa gần nhất được ghi ở dưới để tiện theo dõi:",
+	"userswhowillberenamed": "Các thành viên sẽ được đổi tên",
+	"centralauth-uwbr-name": "Tên người dùng",
+	"centralauth-uwbr-registration": "Lúc mở tài khoản",
+	"centralauth-uwbr-editcount": "Số lần sửa đổi",
+	"centralauth-uwbr-intro": "Đây là danh sách các thành viên có tài khoản trên wiki này mà sẽ được đổi tên."
 }

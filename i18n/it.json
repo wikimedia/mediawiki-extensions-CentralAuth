@@ -479,5 +479,11 @@
 	"apihelp-query+globalallusers-description": "Enumera tutti gli utenti globali.",
 	"apihelp-query+globalallusers-param-from": "Il nome utente da cui iniziare il conteggio.",
 	"apihelp-query+globalallusers-param-to": "Il nome utente al quale interrompere il conteggio.",
-	"apihelp-query+globalallusers-param-prefix": "Ricerca per tutti gli utenti che iniziano con questo valore."
+	"apihelp-query+globalallusers-param-prefix": "Ricerca per tutti gli utenti che iniziano con questo valore.",
+	"apihelp-query+globalallusers-example-1": "Elenco utenti globali",
+	"apihelp-query+globalgroups-example-1": "Elenco gruppi globali",
+	"centralauth-log-gblrename-oldname": "Nome utente precedente:",
+	"centralauth-uwbr-name": "Nome utente",
+	"centralauth-uwbr-registration": "Data di registrazione",
+	"centralauth-uwbr-editcount": "Conteggio delle modifiche"
 }
