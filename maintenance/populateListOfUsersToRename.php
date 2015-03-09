@@ -24,6 +24,8 @@ class PopulateListOfUsersToRename extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->setBatchSize( 1000 );
+		$this->addOption( 'resume-name', 'Username to resume from', false, true );
+		$this->addOption( 'resume-wiki', 'Wiki to resume from', false, true );
 	}
 
 	/**
@@ -59,6 +61,8 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 
 	public function execute() {
+		$this->lName = $this->getOption( 'resume-name', '' );
+		$this->lWiki = $this->getOption( 'resume-wiki', '' );
 		$dbw = CentralAuthUser::getCentralDB();
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
@@ -103,7 +107,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 				if ( !in_array( $row->wiki, $attachableWikis )  ) {
 					// Unattached account which is not attachable,
 					// so they're getting renamed :(
-					$this->output( "{$row->name}@{$row->wiki} is going to be renamed." );
+					$this->output( "{$row->name}@{$row->wiki} is going to be renamed.\n" );
 					$insertRows[] = (array)$row;
 				}
 			}
