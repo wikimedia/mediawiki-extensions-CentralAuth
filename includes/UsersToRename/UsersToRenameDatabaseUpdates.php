@@ -14,13 +14,21 @@ class UsersToRenameDatabaseUpdates {
 		$this->db = $db;
 	}
 
-	public function markRenamed( $name, $wiki ) {
+	protected function updateStatus( $name, $wiki, $status ) {
 		$this->db->update(
 			'users_to_rename',
-			array( 'utr_status' => self::RENAMED ),
+			array( 'utr_status' => $status ),
 			array( 'utr_wiki' => $wiki, 'utr_name' => $name ),
 			__METHOD__
 		);
+	}
+
+	public function markNotified( $name, $wiki ) {
+		$this->updateStatus( $name, $wiki, self::NOTIFIED );
+	}
+
+	public function markRenamed( $name, $wiki ) {
+		$this->updateStatus( $name, $wiki, self::RENAMED );
 	}
 
 	public function remove( $name, $wiki ) {
@@ -62,5 +70,17 @@ class UsersToRenameDatabaseUpdates {
 			__METHOD__,
 			array( 'IGNORE' )
 		);
+	}
+
+	public function findUsers( $wiki, $status, $limit ) {
+		$rows = $this->db->select(
+			'users_to_rename',
+			array( 'utr_name', 'utr_wiki' ),
+			array( 'utr_status' => $status, 'utr_wiki' => $wiki ),
+			__METHOD__,
+			array( 'LIMIT' => $limit )
+		);
+
+		return $rows; // @todo this shouldn't return prefixed field names
 	}
 }
