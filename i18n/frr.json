@@ -7,5 +7,14 @@
 	"centralauth-foreign-link": "Brüker $1 üüb $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bidrach|bidracher}} üüb $2",
 	"centralauth-merge-method-login": "bi't uunmeldin maaget",
-	"centralauth-admin-blocklog": "Brükersper-logbuk"
+	"centralauth-admin-list-legend-ro": "List faan lokaal kontos",
+	"centralauth-admin-blocklog": "Brükersper-logbuk",
+	"centralauth-admin-list-editcount": "Taal faan feranrangen",
+	"centralauth-admin-title": "Globaal brükerkonto för $1 ferwalte",
+	"centralauth-prefs-status": "Globaal brükerkonten-status:",
+	"centralauth-prefs-complete": "Ales bi a rä!",
+	"centralauth-prefs-count-attached": "Din Brükerkonto as uun {{PLURAL:$1|ian projekt|$1 projekten}} aktiif.",
+	"centralauth-prefs-manage": "Globaal brükerkonto ferwalte",
+	"centralauth-prefs-view": "Globaal brükerkonto uunluke",
+	"centralauth-uwbr-editcount": "Taal faan feranrangen"
 }

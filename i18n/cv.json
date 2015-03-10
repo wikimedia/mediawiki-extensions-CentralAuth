@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Salam"
+			"Salam",
+			"Chuvash2014"
 		]
 	},
+	"centralauth-merge-method-new": "çĕнĕ аккаунт",
+	"centralauth-admin-info-nogroups": "çук",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|1=минут|минут}} каялла",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|1=сехет|сехет}} каялла",
@@ -15,5 +18,9 @@
 	"centralauth-editgroup-success": "Ушкӑн ирӗкӗсем улӑштарнӑ.",
 	"centralauth-editset-name": "Ят:",
 	"centralauth-editset-reason": "Сӑлтав:",
-	"centralauth-editset-submit-delete": "Тӗпле"
+	"centralauth-editset-submit-delete": "Тӗпле",
+	"centralauth-editset-nowikis": "(çук)",
+	"centralauth-editset-nouse": "(çук)",
+	"centralauth-log-gblrename-oldname": "Унччен усăкуракан ят:",
+	"centralauth-uwbr-name": "Усă куракан ят"
 }
