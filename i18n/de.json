@@ -478,6 +478,7 @@
 	"apihelp-query+globalallusers-param-limit": "Welche Gesamtanzahl an Benutzernamen zurückgegeben werden soll.",
 	"apihelp-query+globalallusers-example-1": "Globale Benutzer auflisten",
 	"apihelp-query+globalgroups-description": "Alle globalen Gruppen aufzählen.",
+	"apihelp-query+globalgroups-param-prop": "Welche Informationsteile eingeschlossen werden sollen.",
 	"apihelp-query+globalgroups-example-1": "Globale Gruppen auflisten",
 	"apihelp-query+globalgroups-example-2": "Zeigt globale Gruppen mit den Rechten, die sie gewähren.",
 	"apihelp-query+globaluserinfo-description": "Informationen über einen globalen Benutzer anzeigen.",

@@ -465,5 +465,6 @@
 	"centralauth-log-gblrename-oldname": "Nome de utilizador(a) anterior",
 	"centralauth-contribs-locked-log": "Esta conta está globalmente bloqueada.\nPara referência é apresentado abaixo o último registo de bloqueio:",
 	"centralauth-uwbr-name": "Nome de utilizador(a)",
-	"centralauth-uwbr-registration": "Data de registo"
+	"centralauth-uwbr-registration": "Data de registo",
+	"centralauth-uwbr-intro": "Esta página lista os utilizadores registados nesta wiki que serão renomeados."
 }
