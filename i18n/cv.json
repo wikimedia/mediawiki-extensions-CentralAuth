@@ -6,6 +6,7 @@
 		]
 	},
 	"centralauth-merge-method-new": "çĕнĕ аккаунт",
+	"centralauth-merge-method-login": "Кĕне чухне тăвăннă",
 	"centralauth-admin-info-nogroups": "çук",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|1=минут|минут}} каялла",
