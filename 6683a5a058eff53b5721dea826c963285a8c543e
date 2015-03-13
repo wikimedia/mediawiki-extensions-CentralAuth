@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1fe60640",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-13T23:25:45Z",
+      "side": 1,
+      "message": "It\u0027s actually used all time that function is being called, but I guess this is ok",
+      "revId": "6683a5a058eff53b5721dea826c963285a8c543e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_5fdc7e77",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-13T23:25:45Z",
+      "side": 1,
+      "message": "could have a type hint",
+      "revId": "6683a5a058eff53b5721dea826c963285a8c543e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
