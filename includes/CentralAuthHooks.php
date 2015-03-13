@@ -56,10 +56,6 @@ class CentralAuthHooks {
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
 				'descriptionmsg' => 'globalrenamerequest-desc',
 			);
-			$wgAutoloadClasses['SpecialGlobalRenameRequest'] =
-				"$caBase/includes/specials/SpecialGlobalRenameRequest.php";
-			$wgAutoloadClasses['GlobalRenameRequest'] =
-				"$caBase/includes/GlobalRename/GlobalRenameRequest.php";
 			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
 			$wgSpecialPageGroups['GlobalRenameRequest'] = 'login';
 			$wgResourceModules['ext.centralauth.globalrenamerequest'] = array(
@@ -83,8 +79,6 @@ class CentralAuthHooks {
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
 				'descriptionmsg' => 'globalrenamequeue-desc',
 			);
-			$wgAutoloadClasses['SpecialGlobalRenameQueue'] =
-				"$caBase/includes/specials/SpecialGlobalRenameQueue.php";
 			$wgSpecialPages['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
 			$wgSpecialPageGroups['GlobalRenameQueue'] = 'users';
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = array(
@@ -96,8 +90,6 @@ class CentralAuthHooks {
 
 		if ( $wgCentralAuthCheckSULMigration ) {
 			// Install hidden special page for renamed users
-			$wgAutoloadClasses['SpecialSulRenameWarning'] =
-				"$caBase/includes/specials/SpecialSulRenameWarning.php";
 			$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
 			$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
 		}
@@ -106,6 +98,27 @@ class CentralAuthHooks {
 			$wgHooks['LoginUserMigrated'][] =
 				'CentralAuthHooks::onLoginUserMigrated';
 		}
+	}
+
+	/**
+	 * This hook is used in cases where SpecialPageFactory::getPageList() is called before
+	 * $wgExtensionFunctions are run, which happens when E:ShortUrl is installed.
+	 *
+	 * @param array $list
+	 * @return bool
+	 */
+	public static function onSpecialPage_initList( &$list ) {
+		global $wgCentralAuthEnableGlobalRenameRequest, $wgCentralAuthCheckSULMigration;
+		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
+			$list['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
+			$list['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
+		}
+
+		if ( $wgCentralAuthCheckSULMigration ) {
+			$list['SulRenameWarning'] = 'SpecialSulRenameWarning';
+		}
+
+		return true;
 	}
 
 	/**
