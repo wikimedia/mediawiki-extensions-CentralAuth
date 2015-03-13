@@ -71,8 +71,12 @@ class ForceRenameNotification extends Maintenance {
 			foreach ( $markNotified as $row ) {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
-			$this->output( "Sleeping for $sleep seconds...\n" );
-			sleep( $sleep );
+			$queued = MassMessage::getQueuedCount();
+			while ( $queued > 100000 ) {
+				$this->output( "Currently $queued jobs, sleeping for 5 seconds...\n" );
+				sleep( 5 );
+				$queued = MassMessage::getQueuedCount();
+			}
 		}
 	}
 
