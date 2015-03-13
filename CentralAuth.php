@@ -267,6 +267,9 @@ $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/includes/specials/SpecialMe
 $wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['GlobalUsersPager'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['SpecialMultiLock'] = "$caBase/includes/specials/SpecialMultiLock.php";
+$wgAutoloadClasses['SpecialGlobalRenameRequest'] = "$caBase/includes/specials/SpecialGlobalRenameRequest.php";
+$wgAutoloadClasses['SpecialGlobalRenameQueue'] = "$caBase/includes/specials/SpecialGlobalRenameQueue.php";
+$wgAutoloadClasses['SpecialSulRenameWarning'] = "$caBase/includes/specials/SpecialSulRenameWarning.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/includes/CentralAuthHooks.php";
@@ -303,6 +306,7 @@ $wgAutoloadClasses['GlobalUserMergeLogFormatter'] = "$caBase/includes/GlobalRena
 
 $wgAutoloadClasses['GlobalRenameUser'] = "$caBase/includes/GlobalRename/GlobalRenameUser.php";
 $wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/includes/GlobalRename/GlobalRenameUserStatus.php";
+$wgAutoloadClasses['GlobalRenameRequest'] = "$caBase/includes/GlobalRename/GlobalRenameRequest.php";
 $wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/includes/GlobalRename/GlobalRenameUserValidator.php";
 $wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/includes/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
 $wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/includes/GlobalRename/GlobalRenameUserLogger.php";
@@ -373,6 +377,7 @@ $wgHooks['LogEventsListGetExtraInputs'][] = 'CentralAuthHooks::onLogEventsListGe
 $wgHooks['SpecialLogAddLogSearchRelations'][] = 'CentralAuthHooks::onSpecialLogAddLogSearchRelations';
 $wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
 $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
+$wgHooks['SpecialPage_initList'][] = 'CentralAuthHooks::onSpecialPage_initList';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
