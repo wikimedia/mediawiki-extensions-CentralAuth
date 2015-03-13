@@ -325,5 +325,6 @@
 	"globalrenamerequest-email-invalid": "A megadott email cím érvénytelen.",
 	"globalrenamerequest-reason-label": "A kérelem indoka",
 	"globalrenamerequest-status-title": "Átnevezési kérelem jóváhagyása függőben",
-	"globalrenamequeue-request-userinfo-global": "Szerkesztőnév: $1; elsődleges wiki: $2; igényelt név: $3 ([[MediaWiki:Globalrenamequeue-request-userinfo-global|szerkesztés]])"
+	"globalrenamequeue-request-userinfo-global": "Szerkesztőnév: $1; elsődleges wiki: $2; igényelt név: $3 ([[MediaWiki:Globalrenamequeue-request-userinfo-global|szerkesztés]])",
+	"centralauth-log-gblrename-oldname": "Korábbi felhasználónév:"
 }

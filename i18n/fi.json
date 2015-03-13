@@ -362,7 +362,6 @@
 	"centralauth-rename-alreadyinprogress": "Tätä käyttäjää koskeva nimeäminen [[Special:GlobalRenameProgress/$1|on jo käynnissä]].",
 	"centralauth-renameuser-global-inprogress": "Käyttäjää $1 koskeva järjestelmänlaajuinen nimeäminen [[Special:GlobalRenameProgress/$1|on jo käynnissä]].",
 	"centralauth-rename-queued": "Toimenpiteet käyttäjätunnuksen $1 siirtämiseksi nimelle $2 on asetettu työjonoon tietokannassa tai -kannoissa $3.\n\nTilanteen edistymistä voi seurata sivulla [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Valittu käyttäjänimi on liian samankaltainen olemassa olevien käyttäjänimien kanssa.",
 	"centralauth-rename-progress-username": "Käyttäjätunnus",
 	"centralauth-rename-notinprogress": "Käyttäjätunnusta $1 koskevia nimeämisiä ei ole käynnissä. Ne saattavat olla jo valmistuneet.",
 	"centralauth-rename-table-domain": "Paikallinen wiki",

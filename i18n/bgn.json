@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Baloch Afghanistan"
+			"Baloch Afghanistan",
+			"Ibrahim khashrowdi"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''یا'''",
@@ -10,6 +11,9 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|شراکت|شراکت ئان}} بئ $2 تا.",
 	"centralauth-merge-method-primary": "ویکی گیس",
 	"centralauth-merge-method-empty": "بیدون شه شراکت هان",
+	"centralauth-merge-method-mail": "تائید بوده گ\tۆ ایمیل ئا",
+	"centralauth-merge-method-password": "تائید بوته شه چیهرگالی نیمه گا",
+	"centralauth-merge-method-new": "ن\tۆکین هیساب",
 	"centralauth-merge-method-login": "جۆڑ کورتین په داخل بوتین بئ سایت ئا",
 	"centralauth-finish-password": "چیهر گال یا پاسورد:",
 	"centralauth-finish-login": "لوگین",
@@ -21,12 +25,20 @@
 	"centralauth-admin-info-nogroups": "(هیچ‌)",
 	"centralauth-admin-yes": "هان",
 	"centralauth-admin-no": "نه",
+	"centralauth-admin-blocked-reason": "دلیل: $1",
 	"centralauth-admin-blocklog": "بلاک بوته ئین ئانی سیاهه",
+	"centralauth-admin-list-localwiki": "مه ئلین ویکی",
+	"centralauth-admin-list-attached-on": "وسل بوته بئ",
+	"centralauth-admin-list-method": "میتود",
 	"centralauth-admin-list-groups": "گروپ هان",
 	"centralauth-admin-list-blocked": "قُلپ بوته ئین",
+	"centralauth-admin-delete-button": "ای هیساب ئی پاک کورتین",
 	"centralauth-admin-reason": "دلیل:",
 	"centralauth-admin-reason-other": "دیگرین دلیل/اضافی:",
 	"centralauth-admin-reason-other-select": "دیگرین دلیل",
+	"centralauth-admin-status-hidden": "چیهر:",
+	"centralauth-admin-status-hidden-no": "هیساب چیهر نه اینت.",
+	"centralauth-admin-status-submit": "وزی ئتی تنزیم",
 	"centralauth-listusers-locked": "قُلپ بوته ئین",
 	"centralauth-listusers-attached": "[[User:$1|بئ محلین رکما موجود اینت]]",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|ثانیه|ثانیه ئان}} دیما",

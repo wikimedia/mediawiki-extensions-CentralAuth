@@ -349,7 +349,6 @@
 	"centralauth-rename-alreadyinprogress": "A-i é già n'arnominament [[Special:GlobalRenameProgress/$1|an cors]] për cost utent.",
 	"centralauth-renameuser-global-inprogress": "A-i é già n'arnominament global [[Special:GlobalRenameProgress/$1|an cors]] për $1.",
 	"centralauth-rename-queued": "Ij travaj për arnominé $1 a $2 a son ëstàit butà an coa an $3.\n\nSmon-e ij progress an [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Lë stranòm sërnù a smija tròp a djë stranòm già esistent.",
 	"centralauth-rename-progress-username": "Stranòm",
 	"centralauth-rename-notinprogress": "A-i é gnun arnominament an cors për $1. A podrìo esse già finì.",
 	"centralauth-rename-table-domain": "Wiki local",

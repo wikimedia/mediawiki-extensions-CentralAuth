@@ -362,7 +362,6 @@
 	"centralauth-rename-alreadyinprogress": "C'è già una rinomina [[Special:GlobalRenameProgress/$1|in corso]] per questo utente.",
 	"centralauth-renameuser-global-inprogress": "C'è già una rinomina globale [[Special:GlobalRenameProgress/$1|in corso]] per $1.",
 	"centralauth-rename-queued": "I processi per rinominare $1 in $2 sono stati messi in coda su $3.\n\nVedi lo stato di avanzamento su [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Il nome utente scelto è troppo simile a quello di nomi utente esistenti.",
 	"centralauth-rename-progress-username": "Nome utente",
 	"centralauth-rename-notinprogress": "Non ci sono ridenominazioni in corso per $1. Potrebbe essere già terminata.",
 	"centralauth-rename-table-domain": "Wiki locale",
