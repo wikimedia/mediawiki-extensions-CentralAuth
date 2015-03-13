@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_6695378a",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-03-13T17:50:53Z",
+      "side": 1,
+      "message": "not sure how \"hidden\" the other name is at this point.",
+      "revId": "5656d3bbc0d4b9788cdb4760064b5f24b3f99d22",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
