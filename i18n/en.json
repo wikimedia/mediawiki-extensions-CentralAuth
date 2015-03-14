@@ -24,6 +24,7 @@
 			"Aaron Schulz",
 			"Peter Gehres",
 			"Raimond Spekking",
+			"Douglas Gardner",
 			"Brion Vibber"
 		]
 	},
@@ -535,6 +536,7 @@
 	"userswhowillberenamed": "Users who will be renamed",
 	"centralauth-uwbr-name": "User name",
 	"centralauth-uwbr-registration": "Registration date",
+	"centralauth-uwbr-registration-nodate": "< 2004",
 	"centralauth-uwbr-editcount": "Edit count",
 	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed."
 }
