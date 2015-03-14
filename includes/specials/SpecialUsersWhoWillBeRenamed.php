@@ -125,7 +125,12 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 					Linker::userToolLinksRedContribs( $user->getId(), $user->getName(), $user->getEditCount() );
 				break;
 			case 'user_registration':
-				$formatted = $this->formatDateTime( $user->getRegistration() );
+				$regDate = $user->getRegistration();
+				if ( $regDate === null ) {
+					$formatted = $this->msg( 'centralauth-uwbr-registration-nodate' )->escaped();
+				} else {
+					$formatted = $this->formatDateTime( $regdate );
+				}
 				break;
 			case 'user_editcount':
 				$formatted = $this->getLanguage()->formatNum( $user->getEditCount() );
