@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1019157e",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-03-14T19:33:14Z",
+      "side": 1,
+      "message": "I don\u0027t think we can put a specific year on this for all CentralAuth installations, can we?",
+      "revId": "7f61795544f98aac9b6f57e6d6d1771b2ce6b836",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_500f8d33",
+        "filename": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-03-14T19:33:14Z",
+      "side": 1,
+      "message": "code style - whitespace required around function parameters",
+      "revId": "7f61795544f98aac9b6f57e6d6d1771b2ce6b836",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
