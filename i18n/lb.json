@@ -333,6 +333,7 @@
 	"centralauth-rename-badusername": "Den ugefrote Benotzernumm ass net valabel.",
 	"centralauth-rename-cannotself": "Dir kënnt Iech net selwer ëmbenennen.",
 	"centralauth-rename-alreadyinprogress": "Et ass schonn eng ëmbennung fir dëse Benotzer [[Special:GlobalRenameProgress/$1|am Gaang]].",
+	"centralauth-rename-conflict-hidden": "Benotzernumm verstoppt",
 	"centralauth-rename-progress-username": "Benotzernumm",
 	"centralauth-rename-table-domain": "Lokal Wiki",
 	"centralauth-rename-table-status": "Status",

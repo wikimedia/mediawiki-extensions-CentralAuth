@@ -350,6 +350,8 @@
 	"centralauth-rename-alreadyinprogress": "Преименувањето на корисников е веќе [[Special:GlobalRenameProgress/$1|во тек]].",
 	"centralauth-renameuser-global-inprogress": "Корисникот $1 веќе е [[Special:GlobalRenameProgress/$1|во тек на преименување]].",
 	"centralauth-rename-queued": "Задачите за преименување на $1 во $2 чекаат во редица на $3.\n\nНапредокот можете да го погледате на [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts2": "Избраното корисничко име е премногу слично на постоечкото „$1“.",
+	"centralauth-rename-conflict-hidden": "корисничкото име е скриено",
 	"centralauth-rename-progress-username": "Корисничко име",
 	"centralauth-rename-notinprogress": "Нема преименувања во тек за $1. Може веќе да завршило.",
 	"centralauth-rename-table-domain": "Месно вики",
