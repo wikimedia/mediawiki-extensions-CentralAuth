@@ -354,7 +354,6 @@
 	"centralauth-rename-alreadyinprogress": "Ja existeix un canvi de nom [[Special:GlobalRenameProgress/$1|en curs]] per a aquest usuari.",
 	"centralauth-renameuser-global-inprogress": "Ja existeix un canvi de nom global [[Special:GlobalRenameProgress/$1|en curs]] per a $1.",
 	"centralauth-rename-queued": "Les tasques per canviar el nom $1 a $2 han estat posades en cua a $3.\n\nVegeu el progrés a [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "El nom d'usuari escollit és massa similar a altres noms existents.",
 	"centralauth-rename-progress-username": "Nom d'usuari",
 	"centralauth-rename-notinprogress": "No hi ha cap canvi de nom en curs per a $1. És possible que ja hagi acabat.",
 	"centralauth-rename-table-domain": "Wiki local",

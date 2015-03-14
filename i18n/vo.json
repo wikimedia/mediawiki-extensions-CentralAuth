@@ -160,5 +160,6 @@
 	"centralauth-editset-nouse": "(nonik)",
 	"centralauth-editset-usage": "Pagebon in grups:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Vük sököl no dabinon|Vüks sököl no dabinons}}: $1.",
-	"right-centralauth-merge": "Balön kalis onsik"
+	"right-centralauth-merge": "Balön kalis onsik",
+	"centralauth-uwbr-name": "Gebananem"
 }

@@ -53,6 +53,7 @@
 	"centralauth-list-unattached-title": "Nesusietos paskyros",
 	"centralauth-list-unattached": "Paskyra „$1“ šiose svetainėse negali būti automatiškai patvirtinta kaip priklausanti jums;\ntikriausiai jos slaptažodis kitoks nei jūsų pagrindinės paskyros:",
 	"centralauth-foreign-link": "$2 naudotojas $1",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|įnašas|įnašai|įnašų}} $2",
 	"centralauth-merge-method-primary": "pagrindinis projektas",
 	"centralauth-merge-method-empty": "nėra įnašo",
 	"centralauth-merge-method-mail": "patvirtinta elektroniniu paštu",
