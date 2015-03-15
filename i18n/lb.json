@@ -418,5 +418,6 @@
 	"userswhowillberenamed": "Benotzer déi ëmbenannt ginn",
 	"centralauth-uwbr-name": "Benotzernumm",
 	"centralauth-uwbr-registration": "Datum vun der Umeldung",
+	"centralauth-uwbr-registration-nodate": "Onbekannt",
 	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen"
 }

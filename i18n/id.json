@@ -16,7 +16,7 @@
 		]
 	},
 	"mergeaccount": "Status penggabungan log masuk",
-	"centralauth-groupname": "Yayasan Wikimedia",
+	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-desc": "[[Special:MergeAccount|Menggabungkan akun]] lintas wiki {{int:Centralauth-groupname}}",
 	"centralauth-antispoof-desc": "Tambahkan teknologi AntiSpoof ke CentralAuth",
 	"centralauth-rename-desc": "Izinkan perubahan nama akun global",

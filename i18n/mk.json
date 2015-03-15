@@ -508,6 +508,7 @@
 	"userswhowillberenamed": "Корисниците што ќе бидат преименувани",
 	"centralauth-uwbr-name": "Корисничко име",
 	"centralauth-uwbr-registration": "Датум на регистрација",
+	"centralauth-uwbr-registration-nodate": "непознат",
 	"centralauth-uwbr-editcount": "Број на уредувања",
 	"centralauth-uwbr-intro": "На страницава се наведени корисниците регистрирани на ова вики кои ќе бидат преименувани."
 }

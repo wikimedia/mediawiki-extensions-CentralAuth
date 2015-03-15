@@ -154,6 +154,7 @@
 	"globalrenamerequest-newname-label": "غوښتلی کارن-نوم:",
 	"globalrenamerequest-status-text": "د کارن-نوم بدلون غوښتنه مو د بدلون په بهير کې ده او د يوه کوربه لخوا د تاييدولو انتظار باسي.  کله چې غوښتنه مو ومنل شوه نو د برېښليک له لارې به خبر درکړل شي.\n\n;اوسنی کارن-نوم:\n:$1\n;غوښتلی کارن-نوم:\n:$2",
 	"globalrenamequeue-column-rq-newname": "غوښتلی کارن-نوم",
+	"globalrenamequeue-request-approve-text": "نوم بدلون منل",
 	"centralauth-uwbr-name": "کارن-نوم",
 	"centralauth-uwbr-editcount": "د سمونونو شمېر"
 }

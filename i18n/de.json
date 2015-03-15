@@ -12,7 +12,8 @@
 			"Raimond Spekking",
 			"Revolus",
 			"Umherirrender",
-			"Vogone"
+			"Vogone",
+			"Inkowik"
 		]
 	},
 	"mergeaccount": "Status der Benutzerkontenzusammenführung",
@@ -479,7 +480,7 @@
 	"apihelp-query+globalallusers-param-limit": "Welche Gesamtanzahl an Benutzernamen zurückgegeben werden soll.",
 	"apihelp-query+globalallusers-example-1": "Globale Benutzer auflisten",
 	"apihelp-query+globalgroups-description": "Alle globalen Gruppen aufzählen.",
-	"apihelp-query+globalgroups-param-prop": "Welche Informationsteile eingeschlossen werden sollen.",
+	"apihelp-query+globalgroups-param-prop": "Informationsteile, die eingeschlossen werden sollen.",
 	"apihelp-query+globalgroups-example-1": "Globale Gruppen auflisten",
 	"apihelp-query+globalgroups-example-2": "Zeigt globale Gruppen mit den Rechten, die sie gewähren.",
 	"apihelp-query+globaluserinfo-description": "Informationen über einen globalen Benutzer anzeigen.",
@@ -500,6 +501,7 @@
 	"userswhowillberenamed": "Benutzer, die umbenannt werden",
 	"centralauth-uwbr-name": "Benutzername",
 	"centralauth-uwbr-registration": "Registrierungsdatum",
+	"centralauth-uwbr-registration-nodate": "Unbekannt",
 	"centralauth-uwbr-editcount": "Bearbeitungszähler",
 	"centralauth-uwbr-intro": "Diese Seite listet auf diesem Wiki registrierte Benutzer auf, die umbenannt werden."
 }

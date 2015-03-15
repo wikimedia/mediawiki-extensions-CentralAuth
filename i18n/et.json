@@ -349,7 +349,6 @@
 	"centralauth-rename-alreadyinprogress": "Selle kasutaja ümbernimetamine juba [[Special:GlobalRenameProgress/$1|käib]].",
 	"centralauth-renameuser-global-inprogress": "Kasutaja $1 ümbernimetamine juba [[Special:GlobalRenameProgress/$1|käib]].",
 	"centralauth-rename-queued": "Nime muutmine ($1 → $2) on tööjärjes ($3).\n\nVaata edenemist leheküljel [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Valitud kasutajanimi on liiga sarnane juba olemas olevate kasutajanimedega.",
 	"centralauth-rename-progress-username": "Kasutajanimi",
 	"centralauth-rename-notinprogress": "Kasutaja $1 ümbernimetamine pole pooleli. Võimalik, et nimi on juba muudetud.",
 	"centralauth-rename-table-domain": "Kohalik viki",
@@ -423,6 +422,7 @@
 	"userswhowillberenamed": "Kasutajad, kelle nimi muudetakse",
 	"centralauth-uwbr-name": "Kasutajanimi",
 	"centralauth-uwbr-registration": "Registreerunud",
+	"centralauth-uwbr-registration-nodate": "Teadmata",
 	"centralauth-uwbr-editcount": "Redigeerimisi",
 	"centralauth-uwbr-intro": "Sellel leheküljel on loetletud siin vikis registreeritud kasutajad, kelle nimi muudetakse."
 }
