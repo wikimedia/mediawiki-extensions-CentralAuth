@@ -549,6 +549,7 @@
 	"userswhowillberenamed": "{{doc-special|UsersWhoWillBeRenamed}}",
 	"centralauth-uwbr-name": "Heading for column in table\n{{Identical|Username}}",
 	"centralauth-uwbr-registration": "Heading for column in table",
+	"centralauth-uwbr-registration-nodate": "Message displayed in place of a registration date when one has not been recorded\n{{Identical|Unknown}}",
 	"centralauth-uwbr-editcount": "Heading for column in table",
 	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed."
 }
