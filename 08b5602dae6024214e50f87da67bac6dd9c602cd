@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_2b8f007a",
+        "filename": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-15T01:51:41Z",
+      "side": 1,
+      "message": "$regDate",
+      "revId": "08b5602dae6024214e50f87da67bac6dd9c602cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
