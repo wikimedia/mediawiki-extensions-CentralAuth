@@ -119,6 +119,10 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 		// we want to start with the local user
 		$user = EmailableUser::newFromName( $username );
+		if ( $user === false ) {
+			$this->output( "ERROR: $username is an invalid username\n" );
+			return;
+		}
 		$user->load();
 
 		if ( !$this->sendToConfirmed && $user->isEmailConfirmed() ) {
