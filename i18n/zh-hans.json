@@ -533,6 +533,7 @@
 	"userswhowillberenamed": "将被重命名的用户",
 	"centralauth-uwbr-name": "用户名",
 	"centralauth-uwbr-registration": "注册日期",
+	"centralauth-uwbr-registration-nodate": "未知",
 	"centralauth-uwbr-editcount": "编辑计数",
 	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。"
 }

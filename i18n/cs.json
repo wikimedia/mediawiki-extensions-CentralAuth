@@ -353,7 +353,8 @@
 	"centralauth-rename-alreadyinprogress": "Přejmenování tohoto uživatele již [[Special:GlobalRenameProgress/$1|probíhá]].",
 	"centralauth-renameuser-global-inprogress": "Globální přejmenování tohoto uživatele již [[Special:GlobalRenameProgress/$1|probíhá]].",
 	"centralauth-rename-queued": "Úlohy pro přejmenování uživatelského účtu $1 na $2 byly odeslány na $3.\n\nPrůběh můžete sledovat na [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Zvolené uživatelské jméno je příliš podobné existujícím uživatelským jménům.",
+	"centralauth-rename-antispoofconflicts2": "Vybrané uživatelské jméno je příliš podobné existujícím uživatelským jménům: $1.",
+	"centralauth-rename-conflict-hidden": "uživatelské jméno skryto",
 	"centralauth-rename-progress-username": "Uživatelské jméno",
 	"centralauth-rename-notinprogress": "U uživatele $1 neprobíhá žádné přejmenování. Možná už bylo dokončeno.",
 	"centralauth-rename-table-domain": "Místní wiki",
@@ -457,5 +458,11 @@
 	"globalrenamequeue-request-reason-label": "Komentář do veřejného protokolu (při schválení)",
 	"centralauth-log-gblrename-oldname": "Předchozí uživatelské jméno:",
 	"centralauth-contribs-locked": "Tento účet je globálně uzamčen.\nVíce informací najdete v [[Special:CentralAuth/$1|podrobnostech globálního účtu]].",
-	"centralauth-contribs-locked-log": "Tento účet je globálně uzamčen.\nZde je pro přehled zobrazen nejnovější záznam z knihy uzamčení účtů:"
+	"centralauth-contribs-locked-log": "Tento účet je globálně uzamčen.\nZde je pro přehled zobrazen nejnovější záznam z knihy uzamčení účtů:",
+	"userswhowillberenamed": "Uživatelé, kteří budou přejmenováni",
+	"centralauth-uwbr-name": "Uživatelské jméno",
+	"centralauth-uwbr-registration": "Datum registrace",
+	"centralauth-uwbr-registration-nodate": "Neznámé",
+	"centralauth-uwbr-editcount": "Počet editací",
+	"centralauth-uwbr-intro": "Tato stránka uvádí uživatele registrované na této wiki, kteří budou přejmenováni."
 }
