@@ -5,10 +5,6 @@
  * This is intended to be run on each wiki individually
  */
 class LocalRenameUserJob extends LocalRenameJob {
-	/**
-	 * How many page moves per each job
-	 */
-	const MOVES_PER_JOB = 25;
 
 	/**
 	 * @param Title $title
@@ -104,27 +100,16 @@ class LocalRenameUserJob extends LocalRenameJob {
 			'suppressredirects' => $this->params['suppressredirects'],
 		);
 		$jobs = array();
-		$pages = array();
 
 		foreach ( $rows as $row ) {
 			$oldPage = Title::newFromRow( $row );
 			$newPage = Title::makeTitleSafe( $row->page_namespace,
 				preg_replace( '!^[^/]+!', $toTitle->getDBkey(), $row->page_title ) );
-			$pages[$oldPage->getPrefixedText()] = $newPage->getPrefixedText();
-			if ( count( $pages ) >= self::MOVES_PER_JOB ) {
-				$jobs[] = new LocalPageMoveJob(
-					Title::newFromText( 'LocalRenameUserJob' ),
-					$jobParams + array( 'pages' => $pages )
-				);
-				$pages = array();
-			}
-		}
-
-		// Anything left over...
-		if ( $pages ) {
 			$jobs[] = new LocalPageMoveJob(
 				Title::newFromText( 'LocalRenameUserJob' ),
-				$jobParams + array( 'pages' => $pages )
+				$jobParams + array( 'pages' => array(
+					$oldPage->getPrefixedText() => $newPage->getPrefixedText()
+				) )
 			);
 		}
 
