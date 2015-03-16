@@ -21,7 +21,8 @@
 			"Sjoerddebruin",
 			"JurgenNL",
 			"Savh",
-			"Mbch331"
+			"Mbch331",
+			"JensRiskin"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -359,6 +360,7 @@
 	"centralauth-rename-alreadyexists": "De gevraagde gebruikersnaam bestaat al.",
 	"centralauth-rename-badusername": "De gevraagde gebruikersnaam is niet geldig.",
 	"centralauth-rename-cannotself": "U kunt zichzelf niet hernoemen.",
+	"centralauth-rename-conflict-hidden": "gebruikersnaam verborgen",
 	"centralauth-rename-progress-username": "Gebruikersnaam",
 	"centralauth-rename-table-domain": "Lokale wiki",
 	"centralauth-rename-table-status": "Status",
@@ -408,6 +410,7 @@
 	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie [[Special:CentralAuth/$1|globale gebruikersgegevens]] voor meer informatie.",
 	"userswhowillberenamed": "Gerbuikers die hernoemd gaan worden",
 	"centralauth-uwbr-name": "Gebruikersnaam",
+	"centralauth-uwbr-registration-nodate": "Onbekend",
 	"centralauth-uwbr-editcount": "Aantal bewerkingen",
 	"centralauth-uwbr-intro": "Deze pagina toont een lijst van gebruikers die op deze wiki hernoemd zullen worden."
 }

@@ -16,7 +16,8 @@
 			"Pietrodn",
 			"Wim b",
 			"Lucas2",
-			"Ricordisamoa"
+			"Ricordisamoa",
+			"Toadino2"
 		]
 	},
 	"mergeaccount": "Processo di unificazione delle utenze - status",
@@ -484,5 +485,6 @@
 	"centralauth-log-gblrename-oldname": "Nome utente precedente:",
 	"centralauth-uwbr-name": "Nome utente",
 	"centralauth-uwbr-registration": "Data di registrazione",
+	"centralauth-uwbr-registration-nodate": "Sconosciuto",
 	"centralauth-uwbr-editcount": "Conteggio delle modifiche"
 }

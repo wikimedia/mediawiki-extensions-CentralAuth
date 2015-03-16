@@ -386,6 +386,8 @@
 	"centralauth-rename-alreadyinprogress": "Ya existe para este usuario un cambio de nombre [[Special:GlobalRenameProgress/$1|en curso]].",
 	"centralauth-renameuser-global-inprogress": "Existe un cambio de nombre global para $1 [[Special:GlobalRenameProgress/$1|en curso]]",
 	"centralauth-rename-queued": "Los trabajos para cambiar de nombre al usuario $1 hacia $2 han sido registrados y puestos a la cola en $3.\n\nVea el progreso en [[Special:GlobalRenameProgress/$2]]",
+	"centralauth-rename-antispoofconflicts2": "El nombre de usuario escogido es muy similar a otros nombres de usuario ya existentes: $1.",
+	"centralauth-rename-conflict-hidden": "nombre de usuario oculto",
 	"centralauth-rename-progress-username": "Nombre de usuario",
 	"centralauth-rename-notinprogress": "No existen cambios de nombre de usuario en curso para $1. Es posible que éste haya ya terminado.",
 	"centralauth-rename-table-domain": "Wiki local",
@@ -488,6 +490,7 @@
 	"userswhowillberenamed": "Usuarios que cambiarán de nombre",
 	"centralauth-uwbr-name": "Nombre de usuario",
 	"centralauth-uwbr-registration": "Fecha de registro",
+	"centralauth-uwbr-registration-nodate": "Desconocida",
 	"centralauth-uwbr-editcount": "Número de ediciones",
 	"centralauth-uwbr-intro": "Esta página lista los usuarios registrados en este wiki que cambiarán de nombre."
 }

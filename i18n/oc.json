@@ -269,5 +269,6 @@
 	"centrallogin": "Connexion utilizaire centralizada",
 	"centralloginsuccesful": "Identificacion capitada.",
 	"centralauth-completelogin-back": "Tornar a la pagina precedenta.",
-	"centralauth-finishglobaliseemail_subject": "Confirmacion de compte de {{SITENAME}}"
+	"centralauth-finishglobaliseemail_subject": "Confirmacion de compte de {{SITENAME}}",
+	"centralauth-uwbr-registration-nodate": "Desconegut"
 }

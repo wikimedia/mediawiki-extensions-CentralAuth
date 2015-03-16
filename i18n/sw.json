@@ -3,7 +3,8 @@
 		"authors": [
 			"Kwisha",
 			"Lloffiwr",
-			"Stephenwanjau"
+			"Stephenwanjau",
+			"Kipala"
 		]
 	},
 	"mergeaccount": "Kuunganishwa kwa hali ya kuingia",
@@ -123,5 +124,7 @@
 	"centralauth-editset-usage": "Imetumika katika vikundi:",
 	"centralauth-editset-success": "Imefaulu kubadilisha seti ya Wiki.",
 	"centralauth-editset-success-delete": "Imefaulu kufuta seti ya Wiki.",
-	"right-centralauth-merge": "Shikanisha akaunti yao"
+	"right-centralauth-merge": "Shikanisha akaunti yao",
+	"centralauth-rename-antispoofconflicts2": "Jina la mtumiaji ulilochagua linafanana mno na majina ambayo yapo tayari; badilisha",
+	"centralauth-uwbr-name": "Jina la mtumiaji:"
 }

@@ -4,5 +4,7 @@
 			"Xelgen"
 		]
 	},
-	"centralauth-foreign-link": "$2-ից $1 մասնակից"
+	"centralauth-foreign-link": "$2-ից $1 մասնակից",
+	"centralauth-merge-method-login": "ստեծղվել է մուտքի ժամանակ",
+	"centralauth-admin-blocklog": "արգելափակման տեղեկամատյան"
 }
