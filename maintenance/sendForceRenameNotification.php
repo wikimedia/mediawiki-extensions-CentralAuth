@@ -11,15 +11,15 @@ require_once "$IP/maintenance/Maintenance.php";
  * that they will be renamed. Requires the MassMessage extension
  *
  * Setup:
- *   - A file with your message in it, probably using a giant #switch to be localized.
- *     The string "{{WIKI}}" will be replaced by the wiki's database name.
+ *   - A directory with localized message files, named in the format of "$langCode.txt".
+ *     The string "{{WIKI}}" will be expanded to the current database name
  *   - A directory with localized subject files, named in the format of "$langCode.txt".
  *     A file for "en" must exist as it is the base fallback.
  */
 class ForceRenameNotification extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->addOption( 'message', 'Location of message', true, true );
+		$this->addOption( 'message', 'Location of directory with messages', true, true );
 		$this->addOption( 'subject', 'Location of directory with subjects', true, true );
 		$this->addOption( 'sleep', 'How long to sleep for', false, true );
 		$this->setBatchSize( 50 );
@@ -29,19 +29,14 @@ class ForceRenameNotification extends Maintenance {
 		if ( !class_exists( 'MassMessageServerSideJob' ) ) {
 			$this->error( 'This script requires the MassMessage extension', 1 );
 		}
-		$messageLocation = $this->getOption( 'message' );
-		$message = file_get_contents( $messageLocation );
-		$sleep = (int)$this->getOption( 'sleep', 1 );
-		if ( !$message ) {
-			$this->error( "Could not read $messageLocation", 1 );
-		}
+		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
 		$message = str_replace( '{{WIKI}}', wfWikiID(), $message );
 		$dbw = CentralAuthUser::getCentralDB();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$commonParams = array(
 			'class' => 'MassMessageServerSideJob',
 			'data' => array(
-				'subject' => $this->getSubject(),
+				'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
 				'message' => $message,
 			),
 		);
@@ -80,18 +75,17 @@ class ForceRenameNotification extends Maintenance {
 		}
 	}
 
-	protected function getSubject() {
+	protected function getLocalizedText( $dir ) {
 		$langCode = $this->getConfig()->get( 'LanguageCode' );
 		$fallbacks = Language::getFallbacksFor( $langCode );
 		array_unshift( $fallbacks, $langCode );
-		$dir = $this->getOption( 'subject' );
 		foreach ( $fallbacks as $code ) {
 			if ( file_exists( "$dir/$code.txt" ) ) {
 				return trim( file_get_contents( "$dir/$code.txt" ) );
 			}
 		}
 
-		$this->error( "Could not find a valid subject for $langCode.", 1 );
+		$this->error( "Could not find a valid localized file for $langCode.", 1 );
 	}
 }
 
