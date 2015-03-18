@@ -424,6 +424,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Data de tancament",
 	"globalrenamequeue-column-rq-status": "Estat",
 	"globalrenamequeue-column-rq-performer": "Fet per",
+	"globalrenamequeue-action-address": "Gestiona-ho",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> demana un canvi de nom a <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* usuari: [[Special:CentralAuth/$1]]\n* wiki d'origen: $2\n* nom nou: [[Special:CentralAuth/$3]]",
 	"globalrenamequeue-request-userinfo-global": "* usuari: [[Special:CentralAuth/$1]]\n* wiki d'origen: $2\n* nom nou: [[Special:CentralAuth/$3]]",

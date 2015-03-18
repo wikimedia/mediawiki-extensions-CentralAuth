@@ -147,5 +147,8 @@
 	"centralauth-editset-nouse": "(mana ima)",
 	"centralauth-editset-usage": "Kay huñukunapi llamk'achisqa:",
 	"centralauth-editset-badwikis": "Kay {{PLURAL:$2|wikiqa|wikikunaqa}} manam kanchu: $1.",
-	"centralauth-editset-return": "Qhapaq qhawanaman kutimuy"
+	"centralauth-editset-return": "Qhapaq qhawanaman kutimuy",
+	"globalrenamequeue-column-rq-requested-ts": "Kichariy p'unchaw",
+	"globalrenamequeue-column-rq-completed-ts": "Wichq'ay p'unchaw",
+	"centralauth-uwbr-registration": "Hallch'ay p'unchaw"
 }

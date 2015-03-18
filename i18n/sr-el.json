@@ -153,7 +153,7 @@
 	"centralauth-seconds-ago": "pre $1 {{PLURAL:$1|sekunde|sekunde|sekundi}}",
 	"centralauth-minutes-ago": "pre $1 {{PLURAL:$1|minutu|minute|minuta}}",
 	"centralauth-hours-ago": "pre $1 {{PLURAL:$1|sat|sata|sati}}",
-	"centralauth-days-ago": "Pre $1 {{PLURAL:$1|dan|dana}}",
+	"centralauth-days-ago": "pre $1 {{PLURAL:$1|dan|dana}}",
 	"centralauth-months-ago": "pre $1 {{PLURAL:$1|mesec|meseca|meseci}}",
 	"centralauth-years-ago": "pre {{PLURAL:$1|godinu dana|$1 godine|$1 godina}}",
 	"centralauth-prefs-status": "Stanje globalnog naloga:",

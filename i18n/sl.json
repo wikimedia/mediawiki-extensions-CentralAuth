@@ -295,5 +295,6 @@
 	"centralauth-error-nologinattempt": "Za vašo sejo ne poteka noben aktiven poskus prijave.",
 	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni.",
 	"centralauth-warning-notattached": "Lokalni račun ni pripet globalnemu.",
-	"centralauth-finishglobaliseemail_subject": "Potrditev računa {{SITENAME}}"
+	"centralauth-finishglobaliseemail_subject": "Potrditev računa {{SITENAME}}",
+	"globalrenamequeue-request-reason-sul": "Uporabnik je bil obveščen o konfliktu z globalnim imenom v pripravi na finalizacijo SUL."
 }

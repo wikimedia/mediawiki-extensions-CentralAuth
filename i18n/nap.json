@@ -349,6 +349,7 @@
 	"centralauth-rename-alreadyinprogress": "Esiste già na renommena [[Special:GlobalRenameProgress/$1|'n curzo]] pe st'utente.",
 	"centralauth-renameuser-global-inprogress": "Esiste già na renommena globbale [[Special:GlobalRenameProgress/$1|'n curzo]] pe' $1.",
 	"centralauth-rename-queued": "'A renommena 'e $1 a $2 è stata misa ncoda 'n $3.\n\nVide 'o stato 'e prugresso dint'a [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts2": "'O nomme utente scigliuto e troppo eguale a chillo 'e cocch'utente esistente: $1.",
 	"centralauth-rename-conflict-hidden": "nomme utente annascunnuto",
 	"centralauth-rename-progress-username": "Nomme utente",
 	"centralauth-rename-notinprogress": "Nun ce stanno renommene 'n prugresso pe' $1. Può darse chè già terminata.",

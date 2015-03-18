@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Gott wisst"
+		]
+	},
+	"centralauth-foreign-link": "Brūcend $1 on $2",
 	"centralauth-admin-username": "Brūcendnama:"
 }

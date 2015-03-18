@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Migraghvi",
-			"Namik"
+			"Namik",
+			"Soul Train"
 		]
 	},
+	"centralauth-groupname": "Викимедиа Фонд",
 	"centralauth-list-home-title": "КIвалин вики",
 	"centralauth-list-attached-title": "ГалкIурнавай аккаунтар",
 	"centralauth-list-unattached-title": "ГалкIур тавунвай аккаунтар",
@@ -47,7 +49,7 @@
 	"centralauth-editset-type": "Жуьре:",
 	"centralauth-editset-wikis": "Викияр:",
 	"centralauth-editset-reason": "Себеб:",
-	"centralauth-editset-submit": "Ракъурун",
+	"centralauth-editset-submit": "Хуьн",
 	"centralauth-editset-submit-delete": "Алудун",
 	"centralauth-editset-nouse": "(садни)"
 }
