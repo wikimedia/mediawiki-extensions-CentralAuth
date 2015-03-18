@@ -16,6 +16,24 @@
       "revId": "3196fa8da2ead81555ddb602cf76214233294011",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_2fc28b5d",
+        "filename": "includes/LocalRenameJob/LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-18T19:30:50Z",
+      "side": 1,
+      "message": "Yes, this patch goes together with I6845716ca0b565fca65dc78a254970e403ffe31d",
+      "parentUuid": "6e7c4fa4_0fd8ef56",
+      "revId": "3196fa8da2ead81555ddb602cf76214233294011",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
