@@ -44,8 +44,25 @@ class ForceRenameNotification extends Maintenance {
 			if ( $rows->numRows() === 0 ) {
 				break;
 			}
+			$lb = new LinkBatch;
+			foreach ( $rows as $row ) {
+				$title = Title::makeTitleSafe( NS_USER_TALK, $row->utr_name );
+				if ( !$title ) {
+					$this->output( "ERROR: Invalid username for {$row->utr_name}\n" );
+					continue;
+				}
+				$lb->addObj( $title );
+			}
+			$lb->execute();
 			foreach ( $rows as $row ) {
 				$title = 'User talk:' . $row->utr_name;
+				$titleObj = Title::newFromText( $title );
+				if ( $titleObj->isRedirect() ) {
+					// @fixme find a way to notify users with a redirected user-talk
+					$this->output( "Skipping {$title} because it is a redirect\n" );
+					$updates->markRedirectSkipped( $row->utr_name, $row->utr_wiki );
+					continue;
+				}
 				$jobs[] = new MassMessageServerSideJob(
 					Title::newFromText( $title ),
 					array(
