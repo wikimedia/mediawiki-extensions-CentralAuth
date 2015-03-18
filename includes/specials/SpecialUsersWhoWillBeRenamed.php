@@ -46,13 +46,14 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 
 	public function getQueryInfo() {
 		return array(
-			'tables' => 'users_to_rename',
+			'tables' => array( 'users_to_rename', 'localuser' ),
 			'fields' => array(
 				'utr_id',
 				'utr_name',
 				'utr_status',
 			),
-			'conds' => array( 'utr_wiki' => wfWikiID() ),
+			'conds' => array( 'utr_wiki' => wfWikiID(), 'lu_attached_method IS NULL' ),
+			'join_conds' => array( 'localuser' => array( 'LEFT JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ) ),
 		);
 	}
 
