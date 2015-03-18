@@ -182,6 +182,7 @@ class GlobalRenameUser {
 			'movepages' => $options['movepages'],
 			'suppressredirects' => $options['suppressredirects'],
 			'promotetoglobal' => false,
+			'reason' => $options['reason'],
 		);
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
