@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_0fd8ef56",
+        "filename": "includes/LocalRenameJob/LocalRenameUserJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-03-18T19:30:06Z",
+      "side": 1,
+      "message": "I\u0027m not sure why you\u0027re adding this to the constructor. Was that added in some version of Renameuser?",
+      "revId": "3196fa8da2ead81555ddb602cf76214233294011",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
