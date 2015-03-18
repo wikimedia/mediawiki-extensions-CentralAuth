@@ -71,6 +71,7 @@ class ForceRenameUsers extends Maintenance {
 
 		$this->log( "Set renameuser_status for {$newCAUser->getName()}." );
 
+		// @todo set a reason for log entries
 		$job = new LocalRenameUserJob(
 			Title::newFromText( 'Global rename job' ),
 			array(

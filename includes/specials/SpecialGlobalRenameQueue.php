@@ -409,6 +409,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'movepages' => true,
 						'suppressredirects' => true,
 						'promotetoglobal' => true,
+						'reason' => $data['reason'],
 					)
 				);
 				JobQueueGroup::singleton( $request->getWiki() )->push( $job );
