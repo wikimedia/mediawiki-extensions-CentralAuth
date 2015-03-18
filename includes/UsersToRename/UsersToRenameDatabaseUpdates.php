@@ -2,7 +2,17 @@
 
 class UsersToRenameDatabaseUpdates {
 
+	/**
+	 * Notified via talk apge
+	 */
 	const NOTIFIED = 4;
+	/**
+	 * A redirect, temporarily skipped
+	 */
+	const REDIRECT = 5;
+	/**
+	 * Renamed!
+	 */
 	const RENAMED = 8;
 
 	/**
@@ -29,6 +39,10 @@ class UsersToRenameDatabaseUpdates {
 
 	public function markRenamed( $name, $wiki ) {
 		$this->updateStatus( $name, $wiki, self::RENAMED );
+	}
+
+	public function markRedirectSkipped( $name, $wiki ) {
+		$this->updateStatus( $name, $wiki, self::REDIRECT );
 	}
 
 	public function remove( $name, $wiki ) {
