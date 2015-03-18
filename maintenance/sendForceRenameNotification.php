@@ -31,48 +31,61 @@ class ForceRenameNotification extends Maintenance {
 		}
 		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
 		$message = str_replace( '{{WIKI}}', wfWikiID(), $message );
+		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";
 		$dbw = CentralAuthUser::getCentralDB();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$commonParams = array(
-			'class' => 'MassMessageServerSideJob',
-			'data' => array(
-				'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
-				'message' => $message,
-			),
+			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
 		);
 		while ( true ) {
-			$pages = array();
+			$jobs = array();
 			$markNotified = array();
 			$rows = $updates->findUsers( wfWikiID(), 0, $this->mBatchSize );
 			if ( $rows->numRows() === 0 ) {
 				break;
 			}
 			foreach ( $rows as $row ) {
-				$pages[] = array(
-					'title' => 'User talk:' . $row->utr_name,
-					'wiki' => wfWikiID(),
+				$title = 'User talk:' . $row->utr_name;
+				$jobs[] = new MassMessageServerSideJob(
+					Title::newFromText( $title ),
+					array(
+						'title' => $title,
+						'message' => str_replace( '{{subst:PAGENAME}}', $row->utr_name, $message )
+					) + $commonParams
 				);
 				$this->output( "Will notify {$row->utr_name}\n" );
 				$markNotified[] = $row;
 			}
 
-			$job = new MassMessageSubmitJob(
-				Title::newFromText( __CLASS__ ),
-				$commonParams + array( 'pages' => $pages )
-			);
-			$count = count( $pages );
+			$count = count( $jobs );
 			$this->output( "Queued job for $count users.\n" );
-			JobQueueGroup::singleton()->push( $job );
+			JobQueueGroup::singleton()->push( $jobs );
 			foreach ( $markNotified as $row ) {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
-			$queued = MassMessage::getQueuedCount();
+			$this->output( "Waiting for slaves..." );
+			CentralAuthUser::waitForSlaves(); // users_to_rename
+			wfWaitForSlaves(); // And on the local wiki!
+			$this->output( " done.\n" );
+			$queued = $this->getQueuedCount();
 			while ( $queued > 100000 ) {
 				$this->output( "Currently $queued jobs, sleeping for 5 seconds...\n" );
 				sleep( 5 );
-				$queued = MassMessage::getQueuedCount();
+				$queued = $this->getQueuedCount();
 			}
 		}
+	}
+
+	protected function getQueuedCount() {
+		$group = JobQueueGroup::singleton();
+		$queue = $group->get( 'MassMessageServerSideJob' );
+		$pending = $queue->getSize();
+		$claimed = $queue->getAcquiredCount();
+		$abandoned = $queue->getAbandonedCount();
+		$active = max( $claimed - $abandoned, 0 );
+
+		$queued = $active + $pending;
+		return $queued;
 	}
 
 	protected function getLocalizedText( $dir ) {
