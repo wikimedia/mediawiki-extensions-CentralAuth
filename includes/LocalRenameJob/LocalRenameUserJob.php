@@ -16,6 +16,9 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( !isset( $params['promotetoglobal'] ) ) {
 			$params['promotetoglobal'] = false;
 		}
+		if ( !isset( $params['reason'] ) ) {
+			$params['reason'] = '';
+		}
 		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
 	}
 
@@ -34,7 +37,12 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$from,
 			$to,
 			$oldUser->getId(),
-			array( 'checkIfUserExists' => false, 'debugPrefix' => 'GlobalRename' )
+			$this->getRenameUser(),
+			array(
+				'checkIfUserExists' => false,
+				'debugPrefix' => 'GlobalRename',
+				'reason' => $this->params['reason'],
+			)
 		);
 		if ( !$rename->rename() ) {
 			// This should never happen!
