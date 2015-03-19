@@ -40,7 +40,6 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	public function __construct( SpecialPage $owner, IContextSource $context ) {
 		$this->owner = $owner;
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
-		$this->setLimit( 25 );
 		parent::__construct( $context );
 	}
 
