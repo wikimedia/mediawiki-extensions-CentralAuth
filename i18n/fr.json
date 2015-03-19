@@ -385,7 +385,8 @@
 	"centralauth-rename-alreadyinprogress": "Il y a déjà un renommage [[Special:GlobalRenameProgress/$1|en cours]] pour cet utilisateur.",
 	"centralauth-renameuser-global-inprogress": "Il y a déjà un renommage global en [[Special:GlobalRenameProgress/$1|cours]] pour $1.",
 	"centralauth-rename-queued": "Les tâches pour renommer $1 en $2 ont été mises en file dans $3.\n\nAfficher la progression depuis [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Le nom d’utilisateur choisi est trop semblable aux noms d’utilisateur existants.",
+	"centralauth-rename-antispoofconflicts2": "Le nom d’utilisateur choisi est trop semblable aux noms d’utilisateur existants : $1.",
+	"centralauth-rename-conflict-hidden": "nom d’utilisateur masqué",
 	"centralauth-rename-progress-username": "Nom d’utilisateur",
 	"centralauth-rename-notinprogress": "Il n’y a pas de renommage en cours pour $1. Ils peuvent s’être terminés.",
 	"centralauth-rename-table-domain": "Wiki local",
@@ -539,5 +540,10 @@
 	"centralauth-log-gblrename-oldname": "Nom d’utilisateur précédent :",
 	"centralauth-contribs-locked": "Ce compte est verrouillé globalement.\nVoyez [[Special:CentralAuth/$1|les détails du compte global]] pour plus d’information.",
 	"centralauth-contribs-locked-log": "Ce compte est verrouillé globalement.\nLa dernière entrée du journal des blocages est fournie ci-dessous à titre d’information :",
-	"centralauth-uwbr-name": "Nom utilisateur"
+	"userswhowillberenamed": "Utilisateurs qui seront renommés",
+	"centralauth-uwbr-name": "Nom utilisateur",
+	"centralauth-uwbr-registration": "Date d’inscription",
+	"centralauth-uwbr-registration-nodate": "Inconnu",
+	"centralauth-uwbr-editcount": "Compteur de modifications",
+	"centralauth-uwbr-intro": "Cette page liste les utilisateurs inscrits dans ce wiki qui seront renommés."
 }

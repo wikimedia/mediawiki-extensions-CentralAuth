@@ -116,6 +116,7 @@
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:",
 	"centralauth-admin-info-nogroups": "нет",
 	"centralauth-admin-info-attached": "Число присоединённых уч. записей:",
+	"centralauth-admin-info-unattached": "Количество непривязанных учётных записей:",
 	"centralauth-admin-yes": "да",
 	"centralauth-admin-no": "нет",
 	"centralauth-admin-hidden-list": "из общедоступных списков",
@@ -433,9 +434,19 @@
 	"globalrenamequeue-action-address": "Адрес",
 	"globalrenamequeue-action-view": "Просмотр",
 	"globalrenamequeue-request-title": "Переименовать «$1»?",
+	"globalrenamequeue-request-approve-text": "Принять переименование",
+	"globalrenamequeue-request-deny-text": "Отказать в переименовании",
 	"globalrenamequeue-request-cancel-text": "Отмена",
+	"globalrenamequeue-view-approved": "одобрен",
+	"globalrenamequeue-view-rejected": "отклонён",
+	"globalrenamequeue-email-subject-approved": "Запрос на переименование учётной записи одобрен",
+	"globalrenamequeue-email-subject-rejected": "Запрос на переименование учётной записи отклонён",
 	"centralauth-abortlogin-renamed": "Ваш аккаунт был переименован в \"$1\". Пожалуйста, используйте это имя пользователя.",
 	"apihelp-globaluserrights-param-reason": "Причина для изменения.",
 	"apihelp-query+globalallusers-param-dir": "Направление сортировки.",
-	"centralauth-log-gblrename-oldname": "Предыдущее имя участника:"
+	"centralauth-log-gblrename-oldname": "Предыдущее имя участника:",
+	"centralauth-uwbr-name": "Имя участника",
+	"centralauth-uwbr-registration": "Дата регистрации",
+	"centralauth-uwbr-registration-nodate": "Неизвестна",
+	"centralauth-uwbr-editcount": "Число правок"
 }
