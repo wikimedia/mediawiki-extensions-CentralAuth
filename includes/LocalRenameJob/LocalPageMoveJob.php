@@ -44,7 +44,7 @@ class LocalPageMoveJob extends Job {
 			->inContentLanguage()
 			->text();
 
-		$status = $mp->move( $this->user, $msg, true );
+		$status = $mp->move( $this->user, $msg, !$this->params['suppressredirects'] );
 		if ( !$status->isOK() ) {
 			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
 		}
