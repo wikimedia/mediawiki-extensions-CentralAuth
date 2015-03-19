@@ -255,6 +255,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'label-message' => 'globalrenamequeue-request-reason-label',
 					'name'          => 'reason',
 					'type'          => 'text',
+					'default'       => "[[{$this->getFullTitle()}]]",
 				),
 				'movepages' => array(
 					'id'            => 'mw-renamequeue-movepages',
