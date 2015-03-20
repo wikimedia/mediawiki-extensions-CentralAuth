@@ -5,7 +5,7 @@ class SpecialUsersWhoWillBeRenamed extends SpecialPage {
 		parent::__construct( 'UsersWhoWillBeRenamed' );
 	}
 
-	public function execute() {
+	public function execute( $subPage ) {
 		$this->setHeaders();
 		$pager = new UsersWhoWillBeRenamedPager( $this, $this->getContext() );
 		$this->getOutput()->addWikiMsg( 'centralauth-uwbr-intro' );
@@ -57,7 +57,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		);
 	}
 
-	protected function preprocessResults( ResultWrapper $results ) {
+	protected function preprocessResults( $results ) {
 		$names = array();
 		foreach ( $results as $result ) {
 			$names[] = $result->utr_name;
