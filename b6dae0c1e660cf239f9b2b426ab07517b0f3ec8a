@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_3fe867a2",
+        "filename": "maintenance/updateUsersToRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-03-20T18:52:48Z",
+      "side": 1,
+      "message": "w/s",
+      "revId": "b6dae0c1e660cf239f9b2b426ab07517b0f3ec8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_df305355",
+        "filename": "maintenance/updateUsersToRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-03-20T18:52:48Z",
+      "side": 1,
+      "message": "nice to use INNER/LEFT",
+      "revId": "b6dae0c1e660cf239f9b2b426ab07517b0f3ec8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_ff1c2fcd",
+        "filename": "maintenance/updateUsersToRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-03-20T18:52:48Z",
+      "side": 1,
+      "message": "either wait for slaves or use the master totally",
+      "revId": "b6dae0c1e660cf239f9b2b426ab07517b0f3ec8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
