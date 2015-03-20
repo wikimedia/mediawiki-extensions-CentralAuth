@@ -10,7 +10,8 @@
 			"Matasg",
 			"Siggis",
 			"Vogone",
-			"Vpovilaitis"
+			"Vpovilaitis",
+			"Pofka"
 		]
 	},
 	"mergeaccount": "Paskyros bendrinimo būsena",
@@ -267,5 +268,11 @@
 	"right-globalgrouppermissions": "Tvarkyti globaliąsias grupes",
 	"centralloginsuccesful": "Sėkmingai prisijungėte",
 	"centralauth-completelogin-back": "Grįžti į ankstesnį puslapį.",
-	"centralauth-warning-notloggedin": "Jūs nesate šiuo metu prisijungęs."
+	"centralauth-warning-notloggedin": "Jūs nesate šiuo metu prisijungęs.",
+	"centralauth-rename-antispoofconflicts2": "Pasirinktas naudotojo vardas pernelyg panašus į jau egzistuojantį(-ius): $1.",
+	"centralauth-rename-conflict-hidden": "naudotojo vardas paslėptas",
+	"centralauth-uwbr-name": "Naudotojo vardas",
+	"centralauth-uwbr-registration": "Registracijos data",
+	"centralauth-uwbr-registration-nodate": "Nežinomas",
+	"centralauth-uwbr-editcount": "Pakeitimų skaičius"
 }
