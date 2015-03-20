@@ -483,6 +483,7 @@
 	"userswhowillberenamed": "משתמשים ששמם ישונה",
 	"centralauth-uwbr-name": "שם המשתמש",
 	"centralauth-uwbr-registration": "תאריך הרישום",
+	"centralauth-uwbr-registration-nodate": "אינו ידוע",
 	"centralauth-uwbr-editcount": "מספר העריכות",
 	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה."
 }

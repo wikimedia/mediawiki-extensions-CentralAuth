@@ -4,5 +4,9 @@
 			"Oldstoneage"
 		]
 	},
+	"centralauth-foreign-link": "مستعملي $1 في $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|مساهمة|مساهمات}} في $2",
+	"centralauth-merge-method-login": "مخلوق وقت` تسجال الدخول",
+	"centralauth-admin-blocklog": "دفتار المنوعات",
 	"centralauth-rename-antispoofconflicts2": "سميّت` المستعملي المختار راه مشابه بزّاف شي سميّات راهم كاينين: $1."
 }

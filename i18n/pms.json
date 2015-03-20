@@ -349,6 +349,8 @@
 	"centralauth-rename-alreadyinprogress": "A-i é già n'arnominament [[Special:GlobalRenameProgress/$1|an cors]] për cost utent.",
 	"centralauth-renameuser-global-inprogress": "A-i é già n'arnominament global [[Special:GlobalRenameProgress/$1|an cors]] për $1.",
 	"centralauth-rename-queued": "Ij travaj për arnominé $1 a $2 a son ëstàit butà an coa an $3.\n\nSmon-e ij progress an [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts2": "Lë stranòm sërnù a smija tròp a djë stranòm già esistent: $1.",
+	"centralauth-rename-conflict-hidden": "stranòm stërmà",
 	"centralauth-rename-progress-username": "Stranòm",
 	"centralauth-rename-notinprogress": "A-i é gnun arnominament an cors për $1. A podrìo esse già finì.",
 	"centralauth-rename-table-domain": "Wiki local",
@@ -505,6 +507,7 @@
 	"userswhowillberenamed": "Utent ch'a saran arnominà",
 	"centralauth-uwbr-name": "Stranòm",
 	"centralauth-uwbr-registration": "Dàita d'anscrission",
+	"centralauth-uwbr-registration-nodate": "Pa conossù",
 	"centralauth-uwbr-editcount": "Nùmer ëd modìfiche",
 	"centralauth-uwbr-intro": "Costa pàgina a lista j'utent anscrit a costa wiki ch'a saran arnominà."
 }
