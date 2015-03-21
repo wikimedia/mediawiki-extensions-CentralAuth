@@ -377,6 +377,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		// our purposes, so just ensure that an accessor is called to unstub
 		// the object.
 		$oldUser->getEmail();
+		if ( $request->userIsGlobal() ) {
+			$notifyEmail = MailAddress::newFromUser( $oldUser );
+		} else {
+			$notifyEmail = $this->getRemoteUserMailAddress(
+				$request->getWiki(), $request->getName()
+			);
+		}
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
 		$status = new Status;
 		if ( $approved ) {
@@ -459,12 +466,52 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'CentralAuthRename',
 					"Sending $type email to User:{$oldUser->getName()}/{$oldUser->getEmail()}"
 				);
-				$oldUser->sendMail( $subject, $body );
+				$this->sendNotificationEmail( $notifyEmail, $subject, $body );
 			} else {
 				$status->fatal( 'globalrenamequeue-request-savefailed' );
 			}
 		}
 		return $status;
+	}
+
+	/**
+	 * Get a MailAddress for a user on a remote wiki
+	 *
+	 * @param string $wiki
+	 * @param string $username
+	 * @return MailAddress
+	 */
+	protected function getRemoteUserMailAddress( $wiki, $username ) {
+		$lb = wfGetLB( $wiki );
+		$remoteDB = $lb->getConnection( DB_SLAVE, array(), $wiki );
+		$row = $remoteDB->selectRow(
+			'user',
+			array( 'user_id' ),
+			array(
+				'user_name' => User::getCanonicalName( $username ),
+			),
+			__METHOD__
+		);
+		$address = new MailAddress(
+			$row->user_email, $row->user_name, $row->user_real_name
+		);
+		$lb->reuseConnection( $remoteDB );
+		return $address;
+	}
+
+	/**
+	 * Send an email notifying the user of the result of their request.
+	 *
+	 * @param MailAddress $to
+	 * @param string $subject
+	 * @param string $body
+	 * @return Status
+	 */
+	protected function sendNotificationEmail( MailAddress $to, $subject, $body ) {
+		global $wgPasswordSender;
+		$from = new MailAddress( $wgPasswordfrom,
+			wfMessage( 'emailfrom' )->inContentLanguage()->text() );
+		return UserMailer::send( $to, $from, $subject, $body );
 	}
 }
 
