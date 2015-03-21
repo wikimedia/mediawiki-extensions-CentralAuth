@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_27a0599a",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-21T00:33:30Z",
+      "side": 1,
+      "message": "why static?",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_679ad176",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-21T00:33:30Z",
+      "side": 1,
+      "message": "These fields aren\u0027t in the select above, where do they come from?",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_479d5568",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-21T00:33:30Z",
+      "side": 1,
+      "message": "why static?",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_0793dd5b",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-21T00:33:30Z",
+      "side": 1,
+      "message": "$wgPasswordfrom ?",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
