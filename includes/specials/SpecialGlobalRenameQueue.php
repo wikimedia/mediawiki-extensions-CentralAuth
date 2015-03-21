@@ -372,11 +372,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function doResolveRequest( $approved, $data ) {
 		$request = GlobalRenameRequest::newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
-		// Ensure that oldUser is populated before any possible rename occurs
-		// below. Getting the data from cache is as good as from the db for
-		// our purposes, so just ensure that an accessor is called to unstub
-		// the object.
-		$oldUser->getEmail();
+		if ( $request->userIsGlobal() || $request->getWiki() === wfWikiId() ) {
+			$notifyEmail = MailAddress::newFromUser( $oldUser );
+		} else {
+			$notifyEmail = $this->getRemoteUserMailAddress(
+				$request->getWiki(), $request->getName()
+			);
+		}
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
 		$status = new Status;
 		if ( $approved ) {
@@ -454,17 +456,65 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)->inContentLanguage()->text();
 				}
 
-				$type = $approved ? 'approval' : 'rejection';
-				wfDebugLog(
-					'CentralAuthRename',
-					"Sending $type email to User:{$oldUser->getName()}/{$oldUser->getEmail()}"
-				);
-				$oldUser->sendMail( $subject, $body );
+				if ( $notifyEmail !== null && $notifyEmail->address ) {
+					$type = $approved ? 'approval' : 'rejection';
+					wfDebugLog(
+						'CentralAuthRename',
+						"Sending $type email to User:{$oldUser->getName()}/{$notifyEmail->address}"
+					);
+					$this->sendNotificationEmail( $notifyEmail, $subject, $body );
+				}
 			} else {
 				$status->fatal( 'globalrenamequeue-request-savefailed' );
 			}
 		}
 		return $status;
+	}
+
+	/**
+	 * Get a MailAddress for a user on a remote wiki
+	 *
+	 * @param string $wiki
+	 * @param string $username
+	 * @return MailAddress|null
+	 */
+	protected function getRemoteUserMailAddress( $wiki, $username ) {
+		$lb = wfGetLB( $wiki );
+		$remoteDB = $lb->getConnection( DB_SLAVE, array(), $wiki );
+		$row = $remoteDB->selectRow(
+			'user',
+			array( 'user_email', 'user_name', 'user_real_name' ),
+			array(
+				'user_name' => User::getCanonicalName( $username ),
+			),
+			__METHOD__
+		);
+		if ( $row === false ) {
+			$address = null;
+		} else {
+			$address = new MailAddress(
+				$row->user_email, $row->user_name, $row->user_real_name
+			);
+		}
+		$lb->reuseConnection( $remoteDB );
+		return $address;
+	}
+
+	/**
+	 * Send an email notifying the user of the result of their request.
+	 *
+	 * @param MailAddress $to
+	 * @param string $subject
+	 * @param string $body
+	 * @return Status
+	 */
+	protected function sendNotificationEmail( MailAddress $to, $subject, $body ) {
+		global $wgPasswordSender;
+		$from = new MailAddress(
+			$wgPasswordSender,
+			wfMessage( 'emailsender' )->inContentLanguage()->text()
+		);
+		return UserMailer::send( $to, $from, $subject, $body );
 	}
 }
 
