@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_e7b341e6",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-21T00:42:10Z",
+      "side": 1,
+      "message": "Because the method doesn\u0027t depend on instance state, but I\u0027ll change because its not a big deal either way.",
+      "parentUuid": "6e7c4fa4_27a0599a",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_679ad176",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-21T00:33:30Z",
       "side": 1,
       "message": "These fields aren\u0027t in the select above, where do they come from?",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_27a619a9",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-21T00:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_679ad176",
       "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_07b99dc6",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-21T00:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_479d5568",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_0793dd5b",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-21T00:33:30Z",
       "side": 1,
       "message": "$wgPasswordfrom ?",
+      "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_67a0918d",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-21T00:42:10Z",
+      "side": 1,
+      "message": "bad search and replace",
+      "parentUuid": "6e7c4fa4_0793dd5b",
       "revId": "1cefab3485a42e0a00342b8e94cd1cfa900428ee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
