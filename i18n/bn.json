@@ -263,6 +263,7 @@
 	"centralauth-warning-notloggedin": "আপনি বর্তমানে প্রবেশ করেন নি।",
 	"centralauth-warning-notattached": "স্থানীয় অ্যাকাউন্ট বৈশ্বিকের সাথে সংযুক্ত করা হয়নি।",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} অ্যাকাউন্ট নিশ্চিতকরণ",
+	"globalrenameprogress": "বৈশ্বিক নামান্তরের অগ্রগতি",
 	"centralauth-rename-abortlogin": "আপনার অ্যাকাউন্টের বর্তমানে নাম পরিবর্তন বা একীভূত করা হচ্ছে। [[Special:GlobalRenameProgress/$1|অবস্থা দেখুন]]।",
 	"centralauth-rename-form-oldname": "বর্তমান ব্যবহারকারী নাম",
 	"centralauth-rename-form-newname": "নতুন ব্যবহারকারী নাম",
@@ -308,5 +309,6 @@
 	"globalrenamequeue-view-approved": "অনুমোদিত",
 	"globalrenamequeue-view-rejected": "প্রত্যাখ্যাত",
 	"apihelp-query+globalallusers-example-1": "বৈশ্বিক ব্যবহারকারীদের তালিকা",
-	"centralauth-log-gblrename-oldname": "পূর্ববর্তী ব্যবহারকারী নাম"
+	"centralauth-log-gblrename-oldname": "পূর্ববর্তী ব্যবহারকারী নাম",
+	"userswhowillberenamed": "ব্যবহারকারীগণ যারা নামান্তরিত হবেন"
 }

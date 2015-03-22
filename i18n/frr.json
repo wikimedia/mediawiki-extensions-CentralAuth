@@ -4,17 +4,28 @@
 			"Murma174"
 		]
 	},
+	"mergeaccount": "Stant faan't tuupfeeren faan brükerkontos",
 	"centralauth-foreign-link": "Brüker $1 üüb $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bidrach|bidracher}} üüb $2",
 	"centralauth-merge-method-login": "bi't uunmeldin maaget",
+	"centralauth": "Ferwaltang faan globaal brükerkontos",
 	"centralauth-admin-list-legend-ro": "List faan lokaal kontos",
 	"centralauth-admin-blocklog": "Brükersper-logbuk",
 	"centralauth-admin-list-editcount": "Taal faan feranrangen",
 	"centralauth-admin-title": "Globaal brükerkonto för $1 ferwalte",
+	"globalusers": "Fertiaknis faan globaal brükerkontos",
 	"centralauth-prefs-status": "Globaal brükerkonten-status:",
 	"centralauth-prefs-complete": "Ales bi a rä!",
 	"centralauth-prefs-count-attached": "Din Brükerkonto as uun {{PLURAL:$1|ian projekt|$1 projekten}} aktiif.",
 	"centralauth-prefs-manage": "Globaal brükerkonto ferwalte",
 	"centralauth-prefs-view": "Globaal brükerkonto uunluke",
+	"globalgrouppermissions": "Ferwaltang faan globaal brükersköölen",
+	"centralauth-editset": "Wiki-sköölen",
+	"centralauth-editset-legend-ro": "List mä Wiki-sköölen",
+	"centralauth-editset-intro-ro": "Jodiar Wiki-sköölen jaft at:",
+	"globalrenameprogress": "Stant faan't globaal amnäämen",
+	"globalrenamerequest": "Uunfraage am en iandüüdagen brükernööm",
+	"globalrenamerequest-legend": "Uunfraage am en iandüüdagen brükernööm",
+	"userswhowillberenamed": "Brükern, diar amnäämd wurd",
 	"centralauth-uwbr-editcount": "Taal faan feranrangen"
 }

@@ -354,6 +354,7 @@
 	"centralauth-rename-alreadyinprogress": "Ja existeix un canvi de nom [[Special:GlobalRenameProgress/$1|en curs]] per a aquest usuari.",
 	"centralauth-renameuser-global-inprogress": "Ja existeix un canvi de nom global [[Special:GlobalRenameProgress/$1|en curs]] per a $1.",
 	"centralauth-rename-queued": "Les tasques per canviar el nom $1 a $2 han estat posades en cua a $3.\n\nVegeu el progrés a [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts2": "El nom d'usuari escollit és massa similar a altres noms existents: $1",
 	"centralauth-rename-progress-username": "Nom d'usuari",
 	"centralauth-rename-notinprogress": "No hi ha cap canvi de nom en curs per a $1. És possible que ja hagi acabat.",
 	"centralauth-rename-table-domain": "Wiki local",
@@ -425,6 +426,7 @@
 	"globalrenamequeue-column-rq-status": "Estat",
 	"globalrenamequeue-column-rq-performer": "Fet per",
 	"globalrenamequeue-action-address": "Gestiona-ho",
+	"globalrenamequeue-request-title": "Canviar el nom de «$1»?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> demana un canvi de nom a <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* usuari: [[Special:CentralAuth/$1]]\n* wiki d'origen: $2\n* nom nou: [[Special:CentralAuth/$3]]",
 	"globalrenamequeue-request-userinfo-global": "* usuari: [[Special:CentralAuth/$1]]\n* wiki d'origen: $2\n* nom nou: [[Special:CentralAuth/$3]]",
@@ -449,5 +451,6 @@
 	"sulrenamewarning-title": "El {{GENDER:$1|vostre}} compte ha canviat de nom",
 	"sulrenamewarning-renamed": "El {{GENDER:$2|vostre}} compte '''$1''' ha canviat al nom '''$2''' durant la migració automàtica al sistema de sessions unificades de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Utilitzeu el {{GENDER:$1|vostre}} nou nom d'usuari '''$1''' per iniciar sessió a partir d'ara.",
+	"globalrenamequeue-request-reason-label": "Comentari de l'entrada pública del registre (si l'accepteu)",
 	"centralauth-log-gblrename-oldname": "Anterior nom d'usuari"
 }

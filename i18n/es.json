@@ -40,7 +40,8 @@
 			"Macofe",
 			"Mor",
 			"Jonathan rrr",
-			"Alan"
+			"Alan",
+			"Amitie 10g"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -226,9 +227,9 @@
 	"centralauth-renameuser-merged": "El usuario $1 ha sido migrado al sistema unificado de autenticación.\nRenombrarlo causará que el usuario local se separe del global.",
 	"centralauth-renameuser-reserved": "El nombre de usuario $2 está reservado para una cuenta global.",
 	"centralauth-invalid-wiki": "No existe tal wiki en la base de datos: $1",
-	"centralauth-account-exists": "No se puede crear la cuenta: el nombre de usuario solicitado ya existe en el sistema unificado de autenticación.",
-	"centralauth-account-unattached-exists": "No se puede crear la cuenta: el nombre de usuario solicitado entraría en conflicto con otro nombre de usuario en el sistema unificado de registro",
-	"centralauth-account-rename-exists": "No se puede crear la cuenta: el nombre de usuario solicitado entraría en conflicto con otro nombre de usuario en el sistema unificado de registro",
+	"centralauth-account-exists": "No se puede crear la cuenta: el nombre de usuario solicitado ya existe en otra wiki.",
+	"centralauth-account-unattached-exists": "No se puede crear la cuenta: el nombre de usuario solicitado entra en conflicto con otro usuario registrado en otra wiki.",
+	"centralauth-account-rename-exists": "No se puede crear la cuenta: el nombre de usuario solicitado puede entrar en conflicto con otro usuario en otra wiki.",
 	"centralauth-account-exists-reset": "El nombre de usuario $1 no está registrado en este wiki, pero puedes restablecer su contraseña en [[Special:CentralAuth/$1|una wiki donde lo esté]].",
 	"centralauth-login-progress": "Iniciando sesión en wikis de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Cerrando sesión en otros wikis de {{int:Centralauth-groupname}}:",
