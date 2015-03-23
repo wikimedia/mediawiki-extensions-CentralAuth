@@ -49,6 +49,7 @@
 	"centralauth-list-unattached-title": "Nespojeni suradnički računi",
 	"centralauth-list-unattached": "Suradnički račun \"$1\" ne može vam biti automatski pridružen na sljedećim projektima; najvjerojatnije ima različitu zaporku od vaše primarne:",
 	"centralauth-foreign-link": "Suradnik $1 na $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|uređivanje|uređivanja}} na $2",
 	"centralauth-merge-method-primary": "početna wiki",
 	"centralauth-merge-method-empty": "nema doprinosa",
 	"centralauth-merge-method-mail": "potvrđeno putem e-maila",

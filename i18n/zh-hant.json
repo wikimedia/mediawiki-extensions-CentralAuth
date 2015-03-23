@@ -60,7 +60,7 @@
 	"centralauth-disabled-dryrun": "帳號整合功能目前為展示/除錯模式，因此實際的合併功能已被關閉。\n抱歉！",
 	"centralauth-error-locked": "您的帳號已鎖定，您無法編輯。",
 	"centralauth-error-unmerged": "您的帳號尚未整合，您無法編輯。",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|了解更多有關 '''整合登入''' 的資訊]]…''",
+	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|瞭解更多有關 '''整合登入''' 的資訊]]…''",
 	"centralauth-list-home-title": "所在 Wiki",
 	"centralauth-list-home-dryrun": "在此 Wiki 的密碼與電子郵件位置將會用於您的整合帳號。",
 	"centralauth-list-attached-title": "已連結的帳號",

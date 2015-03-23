@@ -855,6 +855,8 @@ $specialPageAliases['zh-hant'] = array(
 	'GlobalRenameProgress' => array( '全域重新命名進度' ),
 	'GlobalUserMerge' => array( '全域使用者合併', '全域用户合併' ),
 	'GlobalRenameRequest' => array( '全域重命名申請' ),
+	'GlobalRenameQueue' => array( '全域重命名佇列' ),
+	'UsersWhoWillBeRenamed' => array( '將被重命名的使用者' ),
 );
 
 /** Chinese (Hong Kong) (中文（香港）‎) */
