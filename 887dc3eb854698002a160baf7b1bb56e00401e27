@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_0203c2c2",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-23T17:32:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_e7b4987e",
+      "revId": "887dc3eb854698002a160baf7b1bb56e00401e27",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_07baf46c",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-23T16:57:06Z",
       "side": 1,
       "message": "Just return false instead of trying to send to a non-existent email address?",
+      "revId": "887dc3eb854698002a160baf7b1bb56e00401e27",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_e2e32601",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-23T17:32:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_07baf46c",
       "revId": "887dc3eb854698002a160baf7b1bb56e00401e27",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
