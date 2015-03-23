@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_c7af1c28",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-23T16:57:06Z",
+      "side": 0,
+      "message": "This is no longer needed since MailAddress::newFromUser will do that for us.",
+      "revId": "8415f42481a74106648588a34d7e6cc7fa95ee88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
