@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_dc985320",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-23T15:11:00Z",
+      "side": 1,
+      "message": "Now returning a MailAddress with the email set to \u0027\u0027 when $row is false. This matches logic in MailAddress::newFromUser() if the email address is not set. This should only happen is some super weird edge case where the rename has already been performed.",
+      "parentUuid": "6e7c4fa4_bc28f7dd",
+      "revId": "400f0b6444752f88543863a726c043985acdcbd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_1c880b75",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Huh. I thought I copied this from User but apparently not. \"emailsender\" defaults to \"{{SITENAME}}\"; \"emailfrom\" defaults to \"From:\". The latter is obviously not correct.",
       "parentUuid": "6e7c4fa4_1c880b75",
+      "revId": "400f0b6444752f88543863a726c043985acdcbd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_fc9d0f0e",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-23T15:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_1c7fabde",
       "revId": "400f0b6444752f88543863a726c043985acdcbd4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
