@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_3c8dc785",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-23T12:28:45Z",
+      "side": 1,
+      "message": "This will fatal in case the above returns false... Maybe we should card against that?",
+      "revId": "400f0b6444752f88543863a726c043985acdcbd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1c880b75",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-23T12:28:45Z",
+      "side": 1,
+      "message": "User uses \"emailsender\" here, but you have to abuse \"emailfrom\" because we\u0027re not in the right wiki/ context?! :S Ok for now, I guess.",
+      "revId": "400f0b6444752f88543863a726c043985acdcbd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
