@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_bc28f7dd",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-23T14:53:33Z",
+      "side": 1,
+      "message": "It probably should have some protection in case the world goes completely crazy. The special page that populates the rename queue includes logic to require a user to add an email address if they don\u0027t already have one but it\u0027s a bit sloppy to rely on that here. The logic to handle this will need to be split between this function and sendNotificationEmail. sendNotificationEmail should return Status::newFatal( \u0027user-mail-no-addy\u0027 ) like UserMailer does when the $to address passed is empty/null.",
+      "parentUuid": "6e7c4fa4_3c8dc785",
+      "revId": "400f0b6444752f88543863a726c043985acdcbd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_1c880b75",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-23T12:28:45Z",
       "side": 1,
       "message": "User uses \"emailsender\" here, but you have to abuse \"emailfrom\" because we\u0027re not in the right wiki/ context?! :S Ok for now, I guess.",
+      "revId": "400f0b6444752f88543863a726c043985acdcbd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1c7fabde",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-03-23T14:53:33Z",
+      "side": 1,
+      "message": "Huh. I thought I copied this from User but apparently not. \"emailsender\" defaults to \"{{SITENAME}}\"; \"emailfrom\" defaults to \"From:\". The latter is obviously not correct.",
+      "parentUuid": "6e7c4fa4_1c880b75",
       "revId": "400f0b6444752f88543863a726c043985acdcbd4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
