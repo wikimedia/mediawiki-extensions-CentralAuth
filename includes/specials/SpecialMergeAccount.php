@@ -392,8 +392,11 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( $merged ) {
 			$this->getOutput()->addHTML( Xml::element( 'hr' ) );
-			$this->getOutput()->addWikiMsg( 'centralauth-list-attached',
-				$this->mUserName );
+			$this->getOutput()->addWikiMsg(
+				'centralauth-list-attached',
+				$this->mUserName,
+				count( $merged )
+			);
 			$this->getOutput()->addHTML( $this->listAttached( $merged ) );
 		}
 
@@ -607,7 +610,8 @@ class SpecialMergeAccount extends SpecialPage {
 			$html .= Html::rawElement( 'h3', array(),
 				$this->msg( 'centralauth-list-attached-title' )->escaped()
 			) . $this->msg( 'centralauth-list-attached-dryrun',
-				$this->getUser()->getName() )->parseAsBlock();
+				$this->getUser()->getName(),
+				count( $attached ) )->parseAsBlock();
 		}
 
 		$html .= $this->listAttached( $attached, $methods ) .
