@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_ccb87dc5",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-25T22:44:39Z",
+      "side": 1,
+      "message": "global $wgLocalInterwikis;\nif ( $wgLocalInterwikis ) {\n    $default \u003d \"[[{$wgLocalInterwikis[0]}:{$this-\u003egetFullTitle()}]]\";\n} else {\n    $default \u003d \"[[{$this-\u003egetFullTitle()}]]\";\n}",
+      "revId": "1e2c9e4a5afc9446dcb43e1de84218eedcfe4736",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
