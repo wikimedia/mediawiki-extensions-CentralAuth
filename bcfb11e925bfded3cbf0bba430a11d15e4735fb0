@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_a0a0a5f1",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-25T23:15:25Z",
+      "side": 1,
+      "message": "Oh, yes :S We should fix that, though",
+      "parentUuid": "6e7c4fa4_e043fd41",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_4c60edfb",
         "filename": "i18n/qqq.json",
         "patchSetId": 3
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "ru_oldname won\u0027t exist in `globaluser` since we move it over right away",
       "parentUuid": "6e7c4fa4_6c6e09ff",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_80ab29d3",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-25T23:15:25Z",
+      "side": 1,
+      "message": "Ah, right",
+      "parentUuid": "6e7c4fa4_00415939",
       "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
