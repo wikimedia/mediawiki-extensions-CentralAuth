@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_4098b1c2",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-25T23:18:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_4c60edfb",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_6c6e09ff",
         "filename": "includes/specials/SpecialGlobalRenameProgress.php",
         "patchSetId": 3
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Ah, right",
       "parentUuid": "6e7c4fa4_00415939",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_e090dd9a",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-25T23:18:55Z",
+      "side": 1,
+      "message": "Changed to INNER JOIN",
+      "parentUuid": "6e7c4fa4_80ab29d3",
       "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
