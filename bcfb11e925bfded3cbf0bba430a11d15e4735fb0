@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_8c4a8582",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-25T22:59:34Z",
+      "side": 1,
+      "message": "Please link $1 and $2 to [[Special:CentralAuth/$1|$1]]/[[Special:CentralAuth/$2|$2]]",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_4c60edfb",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-25T22:59:34Z",
+      "side": 1,
+      "message": "$1/$2 need documentation",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_6c6e09ff",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-03-25T22:59:34Z",
+      "side": 1,
+      "message": "What about ru_oldname? Also calling it explicitly INNER JOIN is good practice, IMO.",
+      "revId": "bcfb11e925bfded3cbf0bba430a11d15e4735fb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
