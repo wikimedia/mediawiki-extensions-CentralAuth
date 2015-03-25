@@ -18,7 +18,8 @@
 			"아라",
 			"Revi",
 			"IRTC1015",
-			"콩가루"
+			"콩가루",
+			"SeoJeongHo"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -484,6 +485,7 @@
 	"userswhowillberenamed": "계정명이 변경될 사용자",
 	"centralauth-uwbr-name": "사용자 이름",
 	"centralauth-uwbr-registration": "등록 날짜",
+	"centralauth-uwbr-registration-nodate": "알수 없음",
 	"centralauth-uwbr-editcount": "편집 수",
 	"centralauth-uwbr-intro": "이 문서는 이 위키에 등록된 사용자 중 계정명이 변경될 사용자를 나열하고 있습니다."
 }
