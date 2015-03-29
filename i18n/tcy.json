@@ -4,11 +4,13 @@
 			"VASANTH S.N."
 		]
 	},
+	"centralauth-foreign-link": "ಬಳಕೆದಾರ $1 $2ದ ಉಲಾಯಿ",
 	"centralauth-finish-login": "ಲಾಗಿನ್ ಆಲೆ",
 	"centralauth-finish-send-confirmation": "ಪೊಸ ಪಾಸ್-ವರ್ಡ್’ನ್ ಇ-ಮೇಲ್ ಮಲ್ಪುಲೆ",
 	"centralauth-admin-username": "ಸದಸ್ಯೆರ್ನ ಪುದರ್:",
 	"centralauth-admin-yes": "ಅಂದ್",
 	"centralauth-admin-no": "ಅತ್ತ್",
+	"centralauth-admin-blocklog": "ತಡೆಪತ್‍ನೈತ ದಾಖಲೆ",
 	"centralauth-admin-list-localwiki": "ಸ್ಠಳೀಯ ವಿಕಿ",
 	"centralauth-admin-delete-title": "ಖಾತೆನ್ ಮಾಜಾಲೆ",
 	"centralauth-admin-reason": "ಕಾರಣ",

@@ -362,6 +362,8 @@
 	"centralauth-rename-alreadyinprogress": "Tätä käyttäjää koskeva nimeäminen [[Special:GlobalRenameProgress/$1|on jo käynnissä]].",
 	"centralauth-renameuser-global-inprogress": "Käyttäjää $1 koskeva järjestelmänlaajuinen nimeäminen [[Special:GlobalRenameProgress/$1|on jo käynnissä]].",
 	"centralauth-rename-queued": "Toimenpiteet käyttäjätunnuksen $1 siirtämiseksi nimelle $2 on asetettu työjonoon tietokannassa tai -kannoissa $3.\n\nTilanteen edistymistä voi seurata sivulla [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts2": "Valittu käyttäjänimi on liian samankaltainen jo olemassa olevan käyttäjänimen kanssa: $1.",
+	"centralauth-rename-conflict-hidden": "käyttäjänimi piilotettu",
 	"centralauth-rename-progress-username": "Käyttäjätunnus",
 	"centralauth-rename-notinprogress": "Käyttäjätunnusta $1 koskevia nimeämisiä ei ole käynnissä. Ne saattavat olla jo valmistuneet.",
 	"centralauth-rename-table-domain": "Paikallinen wiki",
@@ -516,6 +518,7 @@
 	"userswhowillberenamed": "Käyttäjät, joiden tunnuksen nimi vaihdetaan",
 	"centralauth-uwbr-name": "Tunnuksen nimi",
 	"centralauth-uwbr-registration": "Rekisteröinnin päivämäärä",
+	"centralauth-uwbr-registration-nodate": "Tuntematon",
 	"centralauth-uwbr-editcount": "Muokkausten lukumäärä",
 	"centralauth-uwbr-intro": "Tällä sivulla on lueteltu ne tähän wikiin rekisteröityneet käyttäjät, joiden tunnuksen nimi tullaan vaihtamaan."
 }

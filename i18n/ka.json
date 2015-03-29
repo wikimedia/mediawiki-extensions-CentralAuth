@@ -9,7 +9,8 @@
 			"Nodar Kherkheulidze",
 			"Tokoko",
 			"გიორგიმელა",
-			"MIKHEIL"
+			"MIKHEIL",
+			"Otogi"
 		]
 	},
 	"mergeaccount": "გაერთიანებული ანგარიშის მდგომარეობა",
@@ -48,7 +49,7 @@
 	"centralauth-list-home-title": "მშობლიური ვიკი",
 	"centralauth-list-home-dryrun": "თქვენი გაერთიანებული ანგარიშისთვის გამოყენებული იქნება ამ ვიკი-პროექტში მითითებული პაროლი და ელ. ფოსტის მისამართი.",
 	"centralauth-list-attached-title": "მიმაგრებული ანგარიშები",
-	"centralauth-list-attached": "ანგარიში სახელწოდებით \"$1\" ავტომატურად მიუერთდა გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:",
+	"centralauth-list-attached": "ანგარიში სახელწოდებით „$1“ ავტომატურად მიუერთდა გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:",
 	"centralauth-list-attached-dryrun": "ანგარიში სახელწოდებით \"$1\" ავტომატურად მიუერთება გაერთიანებული ანგარიშის სისტემას შემდეგ საიტებზე:",
 	"centralauth-list-unattached-title": "არა-მიერთებული ანგარიშები",
 	"centralauth-list-unattached": "{{PLURAL:$2|ანგარიშის|ანგარიშების}}  \"$1\" თქვენდამი კუთვნილება ვერ დასტურდება ავტომატურად შემდეგ {{PLURAL:$2|საიტზე|საიტებზე}};შესაძლოა, {{PLURAL:$2|მას აქვს|მათ აქვთ}} თქვენი ძირითადი ანგარიშისგან განხვავებული პაროლი:",
@@ -308,5 +309,6 @@
 	"centralauth-completelogin-back": "დაბრუნდი წინა გვერდზე.",
 	"centralauth-warning-notloggedin": "თქვენ არ ხართ შესული სისტემაში",
 	"centralauth-warning-notattached": "ლოკალური ანგარიში არ არის დაკავშირებული გლობალურთან.",
-	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} ანგარიშის დადასტურება"
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} ანგარიშის დადასტურება",
+	"globalrenamequeue-request-cancel-text": "გაუქმება"
 }

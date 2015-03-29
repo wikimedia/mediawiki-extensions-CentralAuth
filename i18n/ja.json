@@ -20,7 +20,8 @@
 			"Rxy",
 			"What here area team",
 			"SkyDaisy9",
-			"朝彦"
+			"朝彦",
+			"Miya"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -403,6 +404,7 @@
 	"globalrenamerequest-desc": "グローバル・アカウントの改名を依頼する",
 	"globalrenamerequest": "アカウント統一改名依頼",
 	"globalrenamerequest-legend": "アカウント統一改名依頼",
+	"globalrenamerequest-pretext": "全プロジェクトにわたって使用する新しい利用者名を依頼してください。\n\nあなたのこれまでの編集履歴はすべてこの新しい利用者名に結び付けられます。\n\n新しい利用者名への改名を依頼すると、ウィキメディアのスチュワードに改名を実施するよう通知が送られます。対処が完了したら、電子メールであなたに通知が届きます。",
 	"globalrenamerequest-username-label": "現在の利用者名:",
 	"globalrenamerequest-username-help": "これがあなたの新しい利用者名です。",
 	"globalrenamerequest-newname-label": "希望利用者名:",

@@ -4,7 +4,8 @@
 			"George Animal",
 			"Ghybu",
 			"Gomada",
-			"Welathêja"
+			"Welathêja",
+			"Bikarhêner"
 		]
 	},
 	"centralauth-merge-dryrun-or": " '''an'''",
@@ -49,5 +50,7 @@
 	"centralauth-editset-type": "Cure:",
 	"centralauth-editset-reason": "Sedem:",
 	"centralauth-editset-submit": "Tomar bike",
-	"centralauth-editset-submit-delete": "Jê bibe"
+	"centralauth-editset-submit-delete": "Jê bibe",
+	"centralauth-uwbr-name": "Navê bikarhêner",
+	"centralauth-uwbr-registration-nodate": "Nenas"
 }
