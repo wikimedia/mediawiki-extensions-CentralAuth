@@ -251,6 +251,9 @@ class SpecialMultiLock extends SpecialPage {
 				'<th>' .
 				$out->getContext()->msg( 'centralauth-admin-info-editcount' )->escaped() .
 				'</th>' .
+				'<th>' .
+				$out->getContext()->msg( 'centralauth-admin-info-attached' )->escaped() .
+				'</th>' .
 			'</tr></thead>' .
 			'<tbody>';
 
@@ -283,7 +286,7 @@ class SpecialMultiLock extends SpecialPage {
 			} else {
 				$rowtext .= Html::element(
 					'td',
-					array( 'colspan' => 6 ),
+					array( 'colspan' => 7 ),
 					$globalUser
 				);
 			}
@@ -322,6 +325,7 @@ class SpecialMultiLock extends SpecialPage {
 			$guLocked = $this->msg('centralauth-admin-status-locked-yes')->escaped();
 		}
 		$guEditCount = htmlspecialchars( $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() ) );
+		$guAttachedLocalAccounts = htmlspecialchars( $this->getLanguage()->formatNum( count( $globalUser->queryAttached() ) ) );
 		$rowHtml .= Html::rawElement( 'td', array(),
 			Html::input(
 				'wpActionTarget['.$guName.']',
@@ -335,6 +339,7 @@ class SpecialMultiLock extends SpecialPage {
 		$rowHtml .= Html::element( 'td', array(), $guLocked );
 		$rowHtml .= Html::element( 'td', array(), $guHidden );
 		$rowHtml .= Html::element( 'td', array(), $guEditCount );
+		$rowHtml .= Html::element( 'td', array(), $guAttachedLocalAccounts );
 
 		return $rowHtml;
 	}
