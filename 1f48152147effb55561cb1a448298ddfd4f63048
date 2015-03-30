@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_4a12f164",
+        "filename": ".rubocop.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2015-03-30T14:47:44Z",
+      "side": 1,
+      "message": "trailing whitespace :)",
+      "revId": "1f48152147effb55561cb1a448298ddfd4f63048",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
