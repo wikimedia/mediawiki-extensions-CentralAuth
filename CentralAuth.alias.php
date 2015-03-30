@@ -664,6 +664,7 @@ $specialPageAliases['pt'] = array(
 $specialPageAliases['pt-br'] = array(
 	'CentralAuth' => array( 'Administração_global_de_contas', 'Administração_de_contas_globais' ),
 	'MergeAccount' => array( 'Mesclar_conta' ),
+	'GlobalGroupMembership' => array( 'Grupos_globais' ),
 	'GlobalUsers' => array( 'Usuários_globais' ),
 );
 

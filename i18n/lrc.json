@@ -424,5 +424,10 @@
 	"apihelp-setglobalaccountstatus-param-user": "کاریار سی آلشت دئن حال و بال.",
 	"apihelp-setglobalaccountstatus-param-locked": "ای پرسایشت نه که ای کاریار نهاگری بوئه یا نه آلشت بکیت.",
 	"apihelp-setglobalaccountstatus-param-reason": "دلیل آلشت دئن حال و بال کاریار.",
-	"centralauth-log-gblrename-oldname": "نوم کاریاری دمایی"
+	"centralauth-log-gblrename-oldname": "نوم کاریاری دمایی",
+	"centralauth-uwbr-name": "نوم کاریاری",
+	"centralauth-uwbr-registration": "گات ثوت نام",
+	"centralauth-uwbr-registration-nodate": "نادیار",
+	"centralauth-uwbr-editcount": "حساونه ویرایشت کو",
+	"centralauth-uwbr-intro": "بلگه نومگه کاریاریا ثوت نام بیه د ای ویکی که نومشو آلشتکاری بیه."
 }
