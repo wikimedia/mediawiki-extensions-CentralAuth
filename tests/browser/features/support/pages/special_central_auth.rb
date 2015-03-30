@@ -9,7 +9,7 @@ class SpecialCentralAuthPage
   fieldset(:centralauth_info, id:'mw-centralauth-info')
 
   def lookup_user( username )
-    self.target_field_element.when_present.send_keys(username)
+    target_field_element.when_present.send_keys(username)
     submit_element.when_present.click
   end
 end
