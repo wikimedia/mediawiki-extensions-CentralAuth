@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f52722af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2015-03-30T14:54:43Z",
+      "side": 1,
+      "message": "So what is the reason to update rubocop? Is that to get the AllCops:StyleGuideCopsOnly or is that due to ruby 2.2 ?\n\nPlease refine the commit message summary to explain why rubocop needs to be bumped :)",
+      "revId": "7bceaa50faa5109a6ffeeb57492377e6a41515f7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
