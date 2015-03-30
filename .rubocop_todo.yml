@@ -30,9 +30,3 @@ Style/SpaceAfterColon:
 # Cop supports --auto-correct.
 Style/SpaceInsideParens:
   Enabled: false
-
-# Offense count: 16
-# Cop supports --auto-correct.
-# Configuration parameters: SupportedStyles.
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
