@@ -16,7 +16,7 @@ Style/SignalException:
   Enabled: false
  
 Style/StringLiterals:
-  EnforcedStyle: single_quotes
+  EnforcedStyle: double_quotes
 
 Style/TrivialAccessors:
   ExactNameMatch: true
