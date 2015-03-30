@@ -1,6 +1,6 @@
 Given(/^I am using a global account$/) do
-  expect(api.meta("globaluserinfo").data).to_not include("missing"),
-    "the current acccount is not global"
+  expect(api.meta('globaluserinfo').data).to_not include('missing'),
+    'the current acccount is not global'
 end
 
 Given(/^I am logged in to the primary wiki domain$/) do
