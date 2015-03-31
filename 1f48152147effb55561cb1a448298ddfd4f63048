@@ -16,6 +16,24 @@
       "revId": "1f48152147effb55561cb1a448298ddfd4f63048",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_c9aa86cf",
+        "filename": ".rubocop.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2015-03-31T10:55:41Z",
+      "side": 1,
+      "message": "Oops. :) Looks like trailing whitespace is in the documentation HTML, but not in wikitext.\n\nhttps://www.mediawiki.org/wiki/Manual:Coding_conventions/Ruby#Base_configuration",
+      "parentUuid": "6e7c4fa4_4a12f164",
+      "revId": "1f48152147effb55561cb1a448298ddfd4f63048",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
