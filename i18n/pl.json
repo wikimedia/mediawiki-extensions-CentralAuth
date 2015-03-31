@@ -120,7 +120,7 @@
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupa globalna|Grupy globalne}}:",
 	"centralauth-admin-info-nogroups": "brak",
 	"centralauth-admin-info-attached": "Liczba przyłączonych kont:",
-	"centralauth-admin-info-unattached": "Liczba przyłączonych kont:",
+	"centralauth-admin-info-unattached": "Liczba nieprzyłączonych kont:",
 	"centralauth-admin-yes": "tak",
 	"centralauth-admin-no": "nie",
 	"centralauth-admin-hidden-list": "z publicznych list",
