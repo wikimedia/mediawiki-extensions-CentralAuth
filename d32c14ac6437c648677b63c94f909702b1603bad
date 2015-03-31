@@ -16,6 +16,24 @@
       "revId": "d32c14ac6437c648677b63c94f909702b1603bad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_89b00e3f",
+        "filename": ".rubocop.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2015-03-31T10:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_b51d2a67",
+      "revId": "d32c14ac6437c648677b63c94f909702b1603bad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
