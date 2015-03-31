@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_3a7d79b0",
+        "filename": ".rubocop.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2015-03-31T19:51:27Z",
+      "side": 1,
+      "message": "It is single_quotes in parent commit. Not sure why you change it to double_quotes then ignore all such occurences in the todo file.\n\nI am assuming it is a mistake.",
+      "revId": "9253ab1e07146a9fbe7115aede73c910af572a31",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_9a492d91",
+        "filename": ".rubocop_todo.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2015-03-31T19:51:27Z",
+      "side": 1,
+      "message": "Moving back to original single_quotes, you can remove that double_quotes todo.",
+      "revId": "9253ab1e07146a9fbe7115aede73c910af572a31",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
