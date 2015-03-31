@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_45f736d0",
+        "filename": "tests/browser/features/step_definitions/login_steps.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2015-03-31T19:53:44Z",
+      "side": 1,
+      "message": "That looks terribly wrong to me.",
+      "revId": "78e64a609d86d451bc3f0104f300075c153a11b7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
