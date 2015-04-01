@@ -409,6 +409,7 @@
 	"log-name-gblrename": "Log page title",
 	"log-description-gblrename": "Log page description",
 	"logentry-gblrename-rename": "{{Logentry}}\nAdditional parameters:\n* $4 - old username\n* $5 - new username\nSee also:\n* {{msg-mw|Logentry-gblrename-merge}}",
+	"logentry-gblrename-promote": "{{Logentry}}\nAdditional parameters:\n* $4 - old username\n* $5 - new username\nSee also:\n* {{msg-mw|Logentry-gblrename-merge}}",
 	"globalusermerge": "Name of special page",
 	"globalusermerge-legend": "Legend of fieldset surrounding the form",
 	"centralauth-usermerge-form-newuser": "Label for form field",

@@ -415,6 +415,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)
 				);
 				JobQueueGroup::singleton( $request->getWiki() )->push( $job );
+				// Now log it
+				$this->logPromotionRename(
+					$oldUser->getName(),
+					$request->getWiki(),
+					$newUser->getName(),
+					$data['reason']
+				);
 				$status = Status::newGood();
 			}
 		}
@@ -469,6 +476,19 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			}
 		}
 		return $status;
+	}
+
+	/**
+	 * Log a promotion to global rename in the global rename log
+	 *
+	 * @param string $oldName
+	 * @param string $wiki
+	 * @param string $newName
+	 * @param string $reason
+	 */
+	protected function logPromotionRename( $oldName, $wiki, $newName, $reason ) {
+		$logger = new GlobalRenameUserLogger( $this->getUser() );
+		$logger->logPromotion( $oldName, $wiki, $newName, $reason );
 	}
 
 	/**

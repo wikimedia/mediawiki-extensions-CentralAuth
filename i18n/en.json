@@ -396,6 +396,7 @@
 	"log-name-gblrename": "Global rename log",
 	"log-description-gblrename": "This log tracks the global renaming of users.",
 	"logentry-gblrename-rename" : "$1 globally {{GENDER:$2|renamed}} $4 to $5",
+	"logentry-gblrename-promote" : "$1 globally {{GENDER:$2|renamed}} $4 to $5",
 	"globalusermerge": "Merge global user",
 	"globalusermerge-legend": "Merge global user",
 	"centralauth-usermerge-form-newuser": "Final username",
