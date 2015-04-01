@@ -477,6 +477,7 @@ $wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms
 $wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
 $wgLogActionsHandlers['gblrights/grouprename'] = 'efHandleGrouprenameLogEntry';
 $wgLogActionsHandlers['gblrename/rename'] = 'GlobalRenameLogFormatter';
+$wgLogActionsHandlers['gblrename/promote'] = 'GlobalRenameLogFormatter';
 $wgLogActionsHandlers['gblrename/merge'] = 'GlobalUserMergeLogFormatter';
 
 foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type ) {
