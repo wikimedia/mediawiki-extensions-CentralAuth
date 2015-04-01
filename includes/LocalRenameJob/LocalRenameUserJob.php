@@ -31,6 +31,14 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 
+		if ( isset( $this->params['session'] ) ) {
+			// Don't carry over users or sessions because it's going to be wrong
+			// across wikis
+			$this->params['session']['userId'] = 0;
+			$this->params['session']['sessionId'] = '';
+			$callback = RequestContext::importScopedSession( $this->params['session'] );
+		}
+
 		$oldUser = User::newFromName( $from );
 
 		$rename = new RenameuserSQL(

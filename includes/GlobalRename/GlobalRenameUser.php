@@ -54,6 +54,11 @@ class GlobalRenameUser {
 	private $logger;
 
 	/**
+	 * @var array
+	 */
+	private $session;
+
+	/**
 	 * @param User $performingUser
 	 * @param User $oldUser
 	 * @param CentralAuthUser $oldCAUser
@@ -63,6 +68,7 @@ class GlobalRenameUser {
 	 * @param callable $jobQueueGroupGenerator Callable for getting a job queue group for a given wiki
 	 * @param GlobalRenameUserDatabaseUpdates $databaseUpdates
 	 * @param GlobalRenameUserLogger $logger
+	 * @param array $session output of RequestContext::exportSession()
 	 */
 	public function __construct(
 		User $performingUser,
@@ -73,7 +79,8 @@ class GlobalRenameUser {
 		GlobalRenameUserStatus $renameuserStatus,
 		/* callable */ $jobQueueGroupGenerator,
 		GlobalRenameUserDatabaseUpdates $databaseUpdates,
-		GlobalRenameUserLogger $logger
+		GlobalRenameUserLogger $logger,
+		array $session
 	) {
 		$this->performingUser = $performingUser;
 		$this->oldUser = $oldUser;
@@ -84,6 +91,7 @@ class GlobalRenameUser {
 		$this->jobQueueGroupGenerator = $jobQueueGroupGenerator;
 		$this->databaseUpdates = $databaseUpdates;
 		$this->logger = $logger;
+		$this->session = $session;
 	}
 
 	/**
@@ -183,6 +191,7 @@ class GlobalRenameUser {
 			'suppressredirects' => $options['suppressredirects'],
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
+			'session' => $this->session,
 		);
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!

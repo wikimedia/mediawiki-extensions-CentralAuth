@@ -161,6 +161,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$oldUser = User::newFromName( $this->oldUsername );
 		$newUser = User::newFromName( $this->newUsername, 'creatable' );
 
+		$session = $this->getContext()->exportSession();
 		$globalRenameUser = new GlobalRenameUser(
 			$this->getUser(),
 			$oldUser,
@@ -170,7 +171,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			new GlobalRenameUserStatus( $newUser->getName() ),
 			'JobQueueGroup::singleton',
 			new GlobalRenameUserDatabaseUpdates(),
-			new GlobalRenameUserLogger( $this->getUser() )
+			new GlobalRenameUserLogger( $this->getUser() ),
+			$session
 		);
 
 		return $globalRenameUser->rename( $data );
