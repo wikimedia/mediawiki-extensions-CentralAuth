@@ -1022,9 +1022,7 @@ class CentralAuthHooks {
 		wfSetupSession();
 		if ( $token != @$_SESSION['globalloggedin'] ) { // FIXME: Usage of @
 			$_SESSION['globalloggedin'] = $token;
-			if ( !wfReadOnly() ) {
-				$user->invalidateCache();
-			}
+			$user->touch();
 			wfDebug( __METHOD__ . ": Initialising session for $userName with token $token.\n" );
 		} else {
 			wfDebug( __METHOD__ . ": Session already initialised for $userName with token $token.\n" );
