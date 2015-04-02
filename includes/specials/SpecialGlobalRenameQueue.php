@@ -381,6 +381,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
 		$status = new Status;
+		$session = $this->getContext()->exportSession();
 		if ( $approved ) {
 			if ( $request->userIsGlobal() ) {
 				// Trigger a global rename job
@@ -394,7 +395,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					new GlobalRenameUserStatus( $newUser->getName() ),
 					'JobQueueGroup::singleton',
 					new GlobalRenameUserDatabaseUpdates(),
-					new GlobalRenameUserLogger( $this->getUser() )
+					new GlobalRenameUserLogger( $this->getUser() ),
+					$session
 				);
 
 				$status = $globalRenameUser->rename( $data );
@@ -412,6 +414,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'suppressredirects' => true,
 						'promotetoglobal' => true,
 						'reason' => $data['reason'],
+						'session' => $session,
 					)
 				);
 				JobQueueGroup::singleton( $request->getWiki() )->push( $job );
