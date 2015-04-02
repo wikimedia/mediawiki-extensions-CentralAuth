@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_aeeb799f",
+        "filename": ".rubocop.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2015-04-02T14:02:13Z",
+      "side": 1,
+      "message": "It is moved back to single_qotes with follow up commit https://gerrit.wikimedia.org/r/#/c/200557/\n\nSo drop it and submit a single change :) Much easier.",
+      "revId": "ae0f8fb93461496beb354fa0baf36568d925642d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
