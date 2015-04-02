@@ -3,7 +3,7 @@ Given(/^I am at Special:CentralAuth$/) do
 end
 
 When(/^I lookup an invalid user$/) do
-  on(SpecialCentralAuthPage).lookup_user("invalid centralauth user name")
+  on(SpecialCentralAuthPage).lookup_user('invalid centralauth user name')
 end
 
 When(/^I lookup a valid user$/) do
