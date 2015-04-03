@@ -486,6 +486,23 @@ $specialPageAliases['lb'] = array(
 	'UsersWhoWillBeRenamed' => array( 'Benotzer_déi_wäerten_ëmbenannt_ginn' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'MergeAccount' => array( 'سریک_کاری_حساو' ),
+	'GlobalGroupMembership' => array( 'حقوق_مین_زایاره_یی_کاریار،_اندوم_بیین_جهونی_گرو' ),
+	'GlobalGroupPermissions' => array( 'تصیقیا_جهونی_گرو' ),
+	'WikiSets' => array( 'میزونکاری_ویکی،_ویرایشت_میزونکاری_ویکی' ),
+	'GlobalUsers' => array( 'کاریاریا_جهونی' ),
+	'MultiLock' => array( 'چن_قلفه' ),
+	'GlobalRenameUser' => array( 'د_نو_نوم_نیائن_جهونی_کاریار' ),
+	'GlobalRenameProgress' => array( 'پیشکرد_د_نو_نوم_نیائن_کاریار' ),
+	'GlobalUserMerge' => array( 'سریک_کاری_جهونی_کاریار' ),
+	'GlobalRenameRequest' => array( 'حاست_د_نو_نوم_نیائن_جهونی' ),
+	'GlobalRenameQueue' => array( 'گی_بنی_د_نو_نوم_نیائن_جهونی' ),
+	'SulRenameWarning' => array( 'هشدار_تک_کاری_د_نو_نوم_نیائن' ),
+	'UsersWhoWillBeRenamed' => array( 'کاریاری_که_د_نوم_نیائه_بوئه' ),
+);
+
 /** Lithuanian (lietuvių) */
 $specialPageAliases['lt'] = array(
 	'MergeAccount' => array( 'Sujungti_sąskaitas' ),
@@ -785,8 +802,10 @@ $specialPageAliases['tt-cyrl'] = array(
 $specialPageAliases['uk'] = array(
 	'MergeAccount' => array( 'Об\'єднання_облікових_записів' ),
 	'GlobalGroupMembership' => array( 'Глобальні_права' ),
+	'GlobalGroupPermissions' => array( 'Права_глобальних_груп' ),
 	'WikiSets' => array( 'Набори_вікі' ),
 	'GlobalUsers' => array( 'Глобальні_користувачі' ),
+	'UsersWhoWillBeRenamed' => array( 'Користувачі', '_що_будуть_перейменовані' ),
 );
 
 /** Urdu (اردو) */
