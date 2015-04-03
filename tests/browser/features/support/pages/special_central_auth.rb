@@ -8,7 +8,7 @@ class SpecialCentralAuthPage
   button(:submit, id: 'centralauth-submit-find')
   fieldset(:centralauth_info, id: 'mw-centralauth-info')
 
-  def lookup_user( username )
+  def lookup_user(username)
     target_field_element.when_present.send_keys(username)
     submit_element.when_present.click
   end
