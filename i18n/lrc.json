@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bonevarluri",
-			"Mogoeilor"
+			"Mogoeilor",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "یه شلک کردن شلک اومائن وامین",
@@ -392,7 +393,7 @@
 	"apihelp-deleteglobalaccount-description": "پاکسا کردن کاریار جهونی.",
 	"apihelp-deleteglobalaccount-param-user": "پاکسا کردن کاریار.",
 	"apihelp-deleteglobalaccount-param-reason": "دلیل پاکسا کردن کاریار.",
-	"apihelp-deleteglobalaccount-example-1": "پاکسا کردن حساو جهونی سی[[کاریار:نمونه]]",
+	"apihelp-deleteglobalaccount-example-1": "پاکسا کردن حساو جهونی سی[[User:Example]]",
 	"apihelp-globaluserrights-description": "اضاف کردن/ؤرداشتن یه گل کاریا د دسه یا جهونی",
 	"apihelp-globaluserrights-param-user": "نوم کاریاری جهونی.",
 	"apihelp-globaluserrights-param-userid": "نوم دیارکن کاریاری جهونی.",

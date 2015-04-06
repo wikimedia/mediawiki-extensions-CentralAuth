@@ -97,6 +97,24 @@ $specialPageAliases['bg'] = array(
 	'GlobalUsers' => array( 'Списък_на_глобалните_сметки' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'CentralAuth' => array( 'متمرکیزین_داخل_بوتین' ),
+	'MergeAccount' => array( 'هیسابی_ادغام_کورتین' ),
+	'GlobalGroupMembership' => array( 'کارمرزوکی_سراسرین_اختیاران' ),
+	'GlobalGroupPermissions' => array( 'گروپی_سراسرین_اختیاران' ),
+	'WikiSets' => array( 'ویکی_ئی_مجموئه_ئی_دستکاری_کورتین' ),
+	'GlobalUsers' => array( 'سراسرین_کارمرزوکان' ),
+	'MultiLock' => array( 'چینکه_قُلپی' ),
+	'GlobalRenameUser' => array( 'کارمرزوکی_نامی_سراسرین_تغیر' ),
+	'GlobalRenameProgress' => array( 'سراسرین_نامی_تغیری_پیشرپت' ),
+	'GlobalUserMerge' => array( 'سراسرین_کارمرزوکی_ادغام' ),
+	'GlobalRenameRequest' => array( 'درخواست_په_سراسرین_کامرزوکی_ادغاما' ),
+	'GlobalRenameQueue' => array( 'سراسرین_نامی_سپ_ئی_تغیر' ),
+	'SulRenameWarning' => array( 'سراسرین_نامی_تغیر_ئی_هشدار' ),
+	'UsersWhoWillBeRenamed' => array( 'کار_مرزوکان_که_تغیر_نام_ئه_به_ینت' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'CentralAuth' => array( 'Uturitas_pusat' ),

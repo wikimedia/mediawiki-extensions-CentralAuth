@@ -21,7 +21,8 @@
 			"Ата",
 			"Тест",
 			"NataChe",
-			"Olion"
+			"Olion",
+			"Piramidion"
 		]
 	},
 	"mergeaccount": "Стан об'єднання облікових записів",
@@ -279,7 +280,7 @@
 	"centralauth-editgroup-member": "Локалізована назва членів групи:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|змінити]])",
 	"centralauth-editgroup-members": "Список членів:",
-	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|Список користувачів із правами $2]]",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|Список користувачів із правами «$2»]]",
 	"centralauth-editgroup-restrictions": "Набір вікі, в яких ця група діє:",
 	"centralauth-editgroup-rename-taken": "Перейменування не вдалося: вже є група з назвою $1.",
 	"centralauth-editgroup-noset": "(нема)",
@@ -369,7 +370,6 @@
 	"centralauth-rename-alreadyinprogress": "Перейменування цього користувача [[Special:GlobalRenameProgress/$1|вже відбувається]].",
 	"centralauth-renameuser-global-inprogress": "Глобальне перейменування $1 [[Special:GlobalRenameProgress/$1|уже відбувається]].",
 	"centralauth-rename-queued": "Роботи з перейменування $1 на $2 були поставлені в чергу у $3.\n\nСлідкувати за прогресом на [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts": "Обране ім'я користувача надто схоже на ті, що вже існують.",
 	"centralauth-rename-progress-username": "Ім'я користувача",
 	"centralauth-rename-notinprogress": "Немає чинних перейменувань для $1. Можливо, вони вже закінчились.",
 	"centralauth-rename-table-domain": "Локальна вікі",
