@@ -232,6 +232,10 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 *   false to fail validation without displaying an error.
 	 */
 	public function validateNewname ( $value, $alldata, HTMLForm $form ) {
+		if ( $value === null ) {
+			// Not submitted yet
+			return true;
+		}
 		$check = GlobalRenameRequest::isNameAvailable( $value );
 		return $check->isGood() ? true : (string) $check->getMessage();
 	}
