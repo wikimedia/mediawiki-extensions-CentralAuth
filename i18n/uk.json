@@ -333,7 +333,7 @@
 	"right-centralauth-unmerge": "Роз'єднання глобальних облікових записів",
 	"right-centralauth-lock": "Блокування або приховання глобального облікового запису",
 	"right-centralauth-oversight": "Придушення або приховування глобальних облікових записів",
-	"right-centralauth-merge": "Об'єднання облікових записів",
+	"right-centralauth-merge": "об'єднання облікових записів",
 	"right-globalgrouppermissions": "керування глобальними групами",
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальні групи, у яких знаходиться користувач",
 	"action-centralauth-lock": "блокування або розблокування глобальних облікових записів",
