@@ -85,7 +85,10 @@ CREATE TABLE /*_*/globaluser (
   gu_password_reset_expiration varchar(14) binary,
 
   -- Random key for crosswiki authentication tokens
-  gu_auth_token varbinary(32) NULL
+  gu_auth_token varbinary(32) NULL,
+
+  -- Value used for CAS operations
+  gu_cas_token integer unsigned NOT NULL default 1
 ) /*$wgDBTableOptions*/;
 
 CREATE UNIQUE INDEX /*i*/gu_name ON /*_*/globaluser (gu_name);
