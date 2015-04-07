@@ -539,5 +539,6 @@
 	"centralauth-uwbr-registration": "Registration date",
 	"centralauth-uwbr-registration-nodate": "Unknown",
 	"centralauth-uwbr-editcount": "Edit count",
-	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed."
+	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed.",
+	"centralauth-delete-empty-account": "Empty account"
 }

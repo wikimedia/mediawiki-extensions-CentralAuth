@@ -552,5 +552,6 @@
 	"centralauth-uwbr-registration": "Heading for column in table",
 	"centralauth-uwbr-registration-nodate": "Message displayed in place of a registration date when one has not been recorded\n{{Identical|Unknown}}",
 	"centralauth-uwbr-editcount": "Heading for column in table",
-	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed."
+	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed.",
+	"centralauth-delete-empty-account": "Used as the reason by the deleteEmptyAccounts.php maintenance script when deleting an account with no attached local accounts."
 }
