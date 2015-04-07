@@ -11,13 +11,14 @@ require_once( "$IP/maintenance/Maintenance.php" );
  * unattached accounts to their new names
  * with globalized accounts.
  *
+ * This script should be run on each wiki individually.
+ *
  * Requires populateUsersToRename.php to be run first
  */
 class ForceRenameUsers extends Maintenance {
 
 	public function __construct() {
 		$this->mDescription = 'Forcibly renames and migrates unattached accounts to global ones';
-		$this->addOption( 'dbname', 'Database name of the wiki to rename users from', true, true );
 	}
 
 	private function log( $msg ) {
@@ -28,7 +29,7 @@ class ForceRenameUsers extends Maintenance {
 	public function execute() {
 		$dbw = CentralAuthUser::getCentralDB();
 		while ( true ) {
-			$rowsToRename = $this->findUsers( $this->getOption( 'dbname' ), $dbw );
+			$rowsToRename = $this->findUsers( wfWikiID(), $dbw );
 			if ( !$rowsToRename ) {
 				break;
 			}
@@ -104,6 +105,10 @@ class ForceRenameUsers extends Maintenance {
 			$caUser = new CentralAuthUser( $row->utr_name );
 			if ( $caUser->attachedOn( $row->utr_wiki ) ) {
 				$this->output( "'{row->utr_name}' has become attached to a global account since the list as last generated." );
+				$updates->remove( $row->utr_name, $row->utr_wiki );
+			} elseif ( !User::isUsableName( $row->utr_name ) ) {
+				// Reserved for a system account, ignore
+				$this->output( "'{row->utr_name}' is a reserved username, skipping." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} else {
 				$rowsToRename[] = $row;
