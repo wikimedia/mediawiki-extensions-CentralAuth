@@ -393,6 +393,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Log entries",
 	"centralauth-rename-movelog" : "Automatically moved page while renaming the user \"[[Special:CentralAuth/$1|$1]]\" to \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm" : "Do you really want to globally rename this user?",
+	"centralauth-rename-deny": "Do you really want to deny this request?",
 	"log-name-gblrename": "Global rename log",
 	"log-description-gblrename": "This log tracks the global renaming of users.",
 	"logentry-gblrename-rename" : "$1 globally {{GENDER:$2|renamed}} $4 to $5",

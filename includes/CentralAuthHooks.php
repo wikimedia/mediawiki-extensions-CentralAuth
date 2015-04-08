@@ -82,6 +82,15 @@ class CentralAuthHooks {
 			$wgSpecialPages['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
 			$wgSpecialPageGroups['GlobalRenameQueue'] = 'users';
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = array(
+				'scripts'        => 'ext.centralauth.globalrenamequeue.js',
+				'localBasePath' => "{$caBase}/modules",
+				'remoteExtPath' => 'CentralAuth/modules',
+				'messages' => array(
+					'centralauth-rename-confirm',
+					'centralauth-rename-deny'
+				)
+			);
+			$wgResourceModules['ext.centralauth.globalrenamequeue.styles'] = array(
 				'styles'        => 'ext.centralauth.globalrenamequeue.less',
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',

@@ -339,8 +339,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'mediawiki.ui',
 			'mediawiki.ui.button',
 			'mediawiki.ui.input',
-			'ext.centralauth.globalrenamequeue',
+			'ext.centralauth.globalrenamequeue.styles',
 		) );
+		$out->addModules( 'ext.centralauth.globalrenamequeue' );
 
 		$status = $form->show();
 		if ( $status instanceof Status && $status->isOk() ) {
