@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_4214c744",
+        "filename": "maintenance/deleteEmptyAccounts.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-04-08T19:17:04Z",
+      "side": 1,
+      "message": "dbr",
+      "revId": "a72892fc9298b3bb0c459641a52c2e2e92974932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_222e6b8a",
+        "filename": "maintenance/deleteEmptyAccounts.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-04-08T19:17:04Z",
+      "side": 1,
+      "message": "Make this an i18n message?\n\nAnd do we need to set $wgUser to User:Maintenance script or something to make it log properly?",
+      "revId": "a72892fc9298b3bb0c459641a52c2e2e92974932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
