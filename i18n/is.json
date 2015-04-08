@@ -4,7 +4,8 @@
 			"Maxí",
 			"S.Örvarr.S",
 			"Snævar",
-			"Spacebirdy"
+			"Spacebirdy",
+			"Sveinn í Felli"
 		]
 	},
 	"mergeaccount": "Staða samræmingu aðganga",
@@ -217,7 +218,7 @@
 	"centralauth-centralautologin-badparams": "Þau auðkennis gildi sem voru gefin eru ógild",
 	"centralauth-centralautologin-lostsession": "Lotugögn týndust",
 	"centralauth-centralautologin-badstate": "Ógild staða „$1”",
-	"centralauth-centralautologin-notposted": "Miðlæga innskráningarformið þarf að vera sent",
+	"centralauth-centralautologin-notposted": "Miðlæga innskráningarformið verður að senda",
 	"centralauth-centralautologin-badstate-central": "Staðan „$1” er ekki gild fyrir miðlæga wiki vefsvæðið",
 	"centralauth-centralautologin-badstate-local": "Staðan „$1” er ekki gild fyrir staðbundna wiki vefsvæðið",
 	"centralauth-centralautologin-badwiki": "Wiki vefsvæðið „$1” er ekki gilt fyrir miðlæga innskráningu",

@@ -375,6 +375,7 @@
 	"log-name-gblrename": "יומן שינוי שם גלובלי",
 	"log-description-gblrename": "היומן הזה עוקב אחרי שינוי שם גלובלי של משתמשים.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|שינה|שינתה}} באופן גלובלי את השם $4 ל{{GRAMMAR:תחילית|$5}}",
+	"logentry-gblrename-promote": "$1 {{GENDER:$2|שינה|שינתה}} גלובלית את השם של $4 ל{{GRAMMAR|תחילית|$5}}",
 	"globalusermerge": "מיזוג חשבון גלובלי",
 	"globalusermerge-legend": "מיזוג חשבון גלובלי",
 	"centralauth-usermerge-form-newuser": "שם משתמש סופי",

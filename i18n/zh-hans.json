@@ -393,6 +393,7 @@
 	"log-name-gblrename": "全域重命名日志",
 	"log-description-gblrename": "此日志跟踪全域重命名用户。",
 	"logentry-gblrename-rename": "$1已全域{{GENDER:$2|重命名}}$4至$5",
+	"logentry-gblrename-promote": "$1将$4全域{{GENDER:$2|更名}}为$5",
 	"globalusermerge": "合并全域用户",
 	"globalusermerge-legend": "合并全域用户",
 	"centralauth-usermerge-form-newuser": "最终用户名",

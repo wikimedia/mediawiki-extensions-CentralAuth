@@ -368,6 +368,7 @@
 	"log-name-gblrename": "Дневник на глобални преименувања",
 	"log-description-gblrename": "Овој дневник ги следи глобалните преименувања на корисници.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобално го преименува $4 во $5",
+	"logentry-gblrename-promote": "$1 глобално {{GENDER:$2|го преименуваше}} корисникот $4 во $5",
 	"globalusermerge": "Спојување на глобален корисник",
 	"globalusermerge-legend": "Спојување на глобален корисник",
 	"centralauth-usermerge-form-newuser": "Конечно корисничко име",

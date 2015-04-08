@@ -171,7 +171,7 @@
 	"centralauth-renameuser-merged": "Korisnik $1 je prešao na sistem za prijavljivanje s ujedinjenim nalogom.\nPreimenovanje će uzrokovati da se lokalni nalog odvoji od globalnog.",
 	"centralauth-renameuser-reserved": "Korisničko ime $2 je rezervisano za globalni nalog.",
 	"centralauth-invalid-wiki": "Nema takve viki baze podataka: $1",
-	"centralauth-account-exists": "Ne mogu da otvorim nalog: traženo korisničko ime se već nalazi u sistemu za prijavljivanje s objedinjenim nalogom.",
+	"centralauth-account-exists": "Ne mogu da otvorim nalog: traženo korisničko ime je zauzeto.",
 	"centralauth-account-exists-reset": "Korisničko ime $1 nije registrovano na ovom vikiju, ali možete resetovati njegovu lozinku [[Special:CentralAuth/$1|ovde]].",
 	"centralauth-login-progress": "Prijavljujem vas na druge viki projekte {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Odjavljeni ste sa svih viki projekta {{int:Centralauth-groupname}}:",

@@ -367,6 +367,7 @@
 	"log-name-gblrename": "Argistr ëd j'arnominament globaj",
 	"log-description-gblrename": "S'argistr a marca j'arnominament globaj ëd j'utent.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} a l'ha arnominà ëd fasson global $4 a $5",
+	"logentry-gblrename-promote": "$1 {{GENDER:$2}} a l'ha arnominà ëd fasson global $4 a $5",
 	"globalusermerge": "Fonde l'utent global",
 	"globalusermerge-legend": "Fonde l'utent global",
 	"centralauth-usermerge-form-newuser": "Stranòm final",
