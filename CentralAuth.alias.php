@@ -507,9 +507,9 @@ $specialPageAliases['lb'] = array(
 /** لوری (لوری) */
 $specialPageAliases['lrc'] = array(
 	'MergeAccount' => array( 'سریک_کاری_حساو' ),
-	'GlobalGroupMembership' => array( 'حقوق_مین_زایاره_یی_کاریار،_اندوم_بیین_جهونی_گرو' ),
+	'GlobalGroupMembership' => array( 'حقوق_مین_زایاره_یی_کاریار', 'اندوم_بیین_جهونی_گرو' ),
 	'GlobalGroupPermissions' => array( 'تصیقیا_جهونی_گرو' ),
-	'WikiSets' => array( 'میزونکاری_ویکی،_ویرایشت_میزونکاری_ویکی' ),
+	'WikiSets' => array( 'میزونکاری_ویکی', 'ویرایشت_میزونکاری_ویکی' ),
 	'GlobalUsers' => array( 'کاریاریا_جهونی' ),
 	'MultiLock' => array( 'چن_قلفه' ),
 	'GlobalRenameUser' => array( 'د_نو_نوم_نیائن_جهونی_کاریار' ),

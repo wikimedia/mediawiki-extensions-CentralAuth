@@ -381,6 +381,7 @@
 	"log-name-gblrename": "Registo de renomeação global",
 	"log-description-gblrename": "Este registo informa sobre a renomeação global de utilizadores.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renomeou}} globalmente a conta $4 para $5",
+	"logentry-gblrename-promote": "$1 {{GENDER:$2|renomeou}} globalmente $4 para $5",
 	"globalusermerge": "Fusão global de utilizador(a)",
 	"globalusermerge-legend": "Fusão global de utilizador(a)",
 	"centralauth-usermerge-form-newuser": "Nome de utilizador(a) final",
