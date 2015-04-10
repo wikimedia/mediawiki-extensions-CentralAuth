@@ -37,6 +37,20 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		) );
 	}
 
+	/**
+	 * There's a race condition of some kind in cache purging (T94491),
+	 * so see if the cache still thinks they're being renamed and purge
+	 * it if it's wrong
+	 *
+	 * @param string $name
+	 */
+	function checkCachePurge( $name ) {
+		$ca = new CentralAuthUser( $name );
+		if ( $ca->renameInProgress() ) {
+			$ca->quickInvalidateCache();
+		}
+	}
+
 	function onSubmit( array $data ) {
 		$name = User::getCanonicalName( $data['username'], 'usable' );
 		if ( !$name ) {
@@ -47,6 +61,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$this->renameuserStatus = new GlobalRenameUserStatus( $name );
 		$names = $this->renameuserStatus->getNames();
 		if ( !$names ) {
+			$this->checkCachePurge( $name );
 			$out->addWikiMsg( 'centralauth-rename-notinprogress', $name );
 			$this->getForm()->displayForm( false );
 			$this->showLogExtract( $name );
