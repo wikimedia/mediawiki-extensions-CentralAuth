@@ -9,7 +9,8 @@
 			"Laaknor",
 			"Nghtwlkr",
 			"Njardarlogar",
-			"Stigmj"
+			"Stigmj",
+			"Kingu"
 		]
 	},
 	"mergeaccount": "Status for sammenslåing av kontoer",
@@ -352,7 +353,6 @@
 	"centralauth-rename-cannotself": "Du kan ikke endre navn på deg selv.",
 	"centralauth-rename-alreadyinprogress": "Det er allerede en navneendring [[Special:GlobalRenameProgress/$1|på gang]] for denne brukeren.",
 	"centralauth-renameuser-global-inprogress": "Det er allerede en navneendring [[Special:GlobalRenameProgress/$1|på gang]] for $1.",
-	"centralauth-rename-antispoofconflicts": "Det valgte brukernavnet er for likt eksisterende brukernavn.",
 	"centralauth-rename-progress-username": "Brukernavn",
 	"centralauth-rename-notinprogress": "Det er ingen navneendringer på gang for $1. Det kan hende det allerede er fullført.",
 	"centralauth-rename-table-domain": "Lokal wiki",
@@ -372,5 +372,6 @@
 	"globalrenamerequest-username-help": "Dette er brukernavnet du har nå.",
 	"globalrenamerequest-newname-label": "Ønsket brukernavn:",
 	"globalrenamerequest-reason-label": "Årsak for forespørselen",
-	"globalrenamerequest-submit-text": "Be om navneendring"
+	"globalrenamerequest-submit-text": "Be om navneendring",
+	"centralauth-uwbr-registration-nodate": "Ukjent"
 }

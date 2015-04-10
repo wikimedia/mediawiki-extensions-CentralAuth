@@ -40,7 +40,8 @@
 			"Robby",
 			"Legoktm",
 			"Caliburn",
-			"Pxos"
+			"Pxos",
+			"Metalhead64"
 		]
 	},
 	"mergeaccount": "{{doc-special|MergeAccount}}",
@@ -408,7 +409,7 @@
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed.\n\nSee also:\n* {{msg-mw|Centralauth-usermerge-confirm}}",
 	"log-name-gblrename": "Log page title",
 	"log-description-gblrename": "Log page description",
-	"logentry-gblrename-rename": "{{Logentry}}\nAdditional parameters:\n* $4 - old username\n* $5 - new username\nSee also:\n* {{msg-mw|Logentry-gblrename-merge}}\n* {{mw-msg|logentry-gblrename-promote}}",
+	"logentry-gblrename-rename": "{{Logentry}}\nAdditional parameters:\n* $4 - old username\n* $5 - new username\nSee also:\n* {{msg-mw|Logentry-gblrename-merge}}\n* {{msg-mw|Logentry-gblrename-promote}}",
 	"logentry-gblrename-promote": "{{Logentry}}\nAdditional parameters:\n* $4 - old username\n* $5 - new username\nSee also:\n* {{msg-mw|Logentry-gblrename-merge}}\n* {{msg-mw|logentry-gblrename-rename}}",
 	"globalusermerge": "Name of special page",
 	"globalusermerge-legend": "Legend of fieldset surrounding the form",
