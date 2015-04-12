@@ -21,7 +21,8 @@
 			"Agripinoduarte",
 			"Jefersonmoraes",
 			"He7d3r",
-			"Nemo bis"
+			"Nemo bis",
+			"TheEduGobi"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -187,7 +188,7 @@
 	"centralauth-prefs-unattached": "Não confirmado",
 	"centralauth-prefs-complete": "Tudo em ordem!",
 	"centralauth-prefs-migration": "Migrando",
-	"centralauth-prefs-count-attached": "A sua conta está ativa em $1 {{PLURAL:$1|sítio|sítios}} de projeto.",
+	"centralauth-prefs-count-attached": "Sua conta está ativa em $1 {{PLURAL:$1|site|sites}} do projeto.",
 	"centralauth-prefs-count-unattached": "Ainda existem contas não confirmadas com seu nome de usuário em $1 {{PLURAL:$1|projeto|projetos}}.",
 	"centralauth-prefs-detail-unattached": "Não foi confirmado que esta wiki esteja acoplada à conta global.",
 	"centralauth-prefs-manage": "Gerenciar sua conta global",
@@ -286,7 +287,7 @@
 	"centralauth-editset-badname": "Nome de conjunto inválido ou vazio.",
 	"centralauth-editset-badtype": "Tipo de conjunto inválido.",
 	"centralauth-editset-setexists": "Um conjunto com esse nome já existe",
-	"centralauth-editset-nowikis": "Nenhuma wiki especificada.",
+	"centralauth-editset-nowikis": "(nenhuma)",
 	"centralauth-editset-nouse": "(nenhum)",
 	"centralauth-editset-usage": "Usado nos grupos:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|A seguinte wiki não existe|As seguintes wikis não existem}}: $1.",
