@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_4b46fc27",
+        "filename": "modules/ext.centralauth.globalrenamequeue.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2015-04-13T23:31:14Z",
+      "side": 1,
+      "message": "Not to bikeshed, but would https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/jQuery.plugin.confirmable be an OK thing to use for this?",
+      "revId": "b75c3ebd8511f981b29944edce91951fd6c64335",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
