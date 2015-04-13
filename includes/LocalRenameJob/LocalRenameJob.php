@@ -41,6 +41,11 @@ abstract class LocalRenameJob extends Job {
 	 */
 	protected function getRenameUser() {
 		$user = User::newFromName( $this->params['renamer'] );
+		// If the username is a reserved name, don't worry about the account
+		// existing, just use it.
+		if ( !User::isUsableName( $user->getName() ) ) {
+			return $user;
+		}
 		$caUser = CentralAuthUser::getInstance( $user );
 		// Race condition where the renamer isn't attached here, but
 		// someone creates an account in the meantime and then bad
