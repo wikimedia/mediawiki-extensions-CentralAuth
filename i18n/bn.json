@@ -281,6 +281,7 @@
 	"centralauth-rename-progress-fieldset": "স্থানীয় অ্যাকাউন্টের তালিকা",
 	"log-name-gblrename": "বৈশ্বিক নামান্তরের লগ",
 	"logentry-gblrename-rename": "$1 বৈশ্বিকভাবে $4 কে $5-এ {{GENDER:$2|নামান্তরিত করেছেন}}",
+	"logentry-gblrename-promote": "$1 বৈশ্বিকভাবে $4 কে $5-এ {{GENDER:$2|নামান্তরিত করেছেন}}",
 	"centralauth-usermerge-form-usernames": "বর্তমান ব্যবহারকারী নাম",
 	"centralauth-usermerge-form-reason": "কারণ",
 	"globalrenamerequest": "একীকরণ পুনঃনামকরণের অনুরোধ",

@@ -4,6 +4,9 @@
 			"Rachitrali"
 		]
 	},
+	"centralauth-foreign-link": "$2 پر صارف $1",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} on $2",
+	"centralauth-merge-method-login": "لاگ ان بیتی ساوزینو ہوئے",
 	"centralauth-admin-info-registered": "رجسٹرڈ:",
 	"centralauth-admin-info-locked": "بند:",
 	"centralauth-admin-yes": "دی",
