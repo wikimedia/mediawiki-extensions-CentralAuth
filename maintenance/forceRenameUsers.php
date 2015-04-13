@@ -23,7 +23,7 @@ class ForceRenameUsers extends Maintenance {
 
 	private function log( $msg ) {
 		wfDebugLog( 'CentralAuthSULRename', $msg );
-		$this->output( $msg . '\n' );
+		$this->output( $msg . "\n" );
 	}
 
 	public function execute() {
