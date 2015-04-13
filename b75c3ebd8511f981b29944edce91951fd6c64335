@@ -34,6 +34,24 @@
       "revId": "b75c3ebd8511f981b29944edce91951fd6c64335",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_ab0d50ed",
+        "filename": "modules/ext.centralauth.globalrenamequeue.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-04-13T23:39:30Z",
+      "side": 1,
+      "message": "Yeah, let\u0027s keep this simple for now. There\u0027s also a similar confirm on Special:CentralAuth, btw",
+      "parentUuid": "6e7c4fa4_8b53b4e1",
+      "revId": "b75c3ebd8511f981b29944edce91951fd6c64335",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
