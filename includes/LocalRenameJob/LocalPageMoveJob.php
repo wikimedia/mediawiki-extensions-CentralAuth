@@ -22,6 +22,9 @@ class LocalPageMoveJob extends Job {
 	}
 
 	public function run() {
+		if ( isset( $this->params['session'] ) ) {
+			$callback = RequestContext::importScopedSession( $this->params['session'] );
+		}
 		$this->user = User::newFromName( $this->params['renamer'] );
 		foreach ( $this->params['pages'] as $current => $target ) {
 			$this->movePage(
