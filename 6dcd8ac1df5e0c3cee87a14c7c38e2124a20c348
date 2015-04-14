@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_94218f9f",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-04-14T22:59:34Z",
+      "side": 1,
+      "message": "I would just always do the join and make gu_hidden conditions depend on rights for simplicity",
+      "revId": "6dcd8ac1df5e0c3cee87a14c7c38e2124a20c348",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f429e37f",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-04-14T22:59:34Z",
+      "side": 1,
+      "message": "Was this tested? Seems like you should do a GROUP BY here. I\u0027m not sure what it means to do \"SELECT DISTINCT(a), b\".",
+      "revId": "6dcd8ac1df5e0c3cee87a14c7c38e2124a20c348",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
