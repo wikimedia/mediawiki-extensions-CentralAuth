@@ -16,6 +16,24 @@
       "revId": "ce796f239c24bebb76909f5a297ae6085b8e49ec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_7fa131f3",
+        "filename": "includes/CreateLocalAccountJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-04-14T17:38:04Z",
+      "side": 1,
+      "message": "I\u0027ll give it a try. FWIW maintenance/createLocalAccount.php also duplicates that logic to a fair extent (and should probably duplicate more, for proper error handling).",
+      "parentUuid": "6e7c4fa4_74663828",
+      "revId": "ce796f239c24bebb76909f5a297ae6085b8e49ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
