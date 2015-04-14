@@ -204,8 +204,6 @@
 	"centralauth-prefs-status": "Global account status:",
 	"centralauth-prefs-not-managed": "Not using unified account",
 	"centralauth-prefs-unattached": "Unconfirmed",
-	"centralauth-prefs-complete": "All in order!",
-	"centralauth-prefs-migration": "In migration",
 	"centralauth-prefs-count-attached": "Your account is active on $1 project {{PLURAL:$1|site|sites}}.",
 	"centralauth-prefs-count-unattached": "Unconfirmed accounts with your name remain on $1 {{PLURAL:$1|project|projects}}.",
 	"centralauth-prefs-detail-unattached": "This project site has not been confirmed as belonging to the global account.",
