@@ -407,6 +407,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Text on fieldset around log entries",
 	"centralauth-rename-movelog": "Move log comment used when automatically moving user pages\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed.\n\nSee also:\n* {{msg-mw|Centralauth-usermerge-confirm}}",
+	"centralauth-rename-deny": "Confirm text asking whether the global rename request should really be denied.",
 	"log-name-gblrename": "Log page title",
 	"log-description-gblrename": "Log page description",
 	"logentry-gblrename-rename": "{{Logentry}}\nAdditional parameters:\n* $4 - old username\n* $5 - new username\nSee also:\n* {{msg-mw|Logentry-gblrename-merge}}\n* {{msg-mw|Logentry-gblrename-promote}}",
