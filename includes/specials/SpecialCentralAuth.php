@@ -314,8 +314,6 @@ class SpecialCentralAuth extends SpecialPage {
 				);
 			}, $groups );
 			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
-		} else {
-			$attribs['groups'] = $this->msg( 'centralauth-admin-info-nogroups' )->escaped();
 		}
 
 		return $attribs;
