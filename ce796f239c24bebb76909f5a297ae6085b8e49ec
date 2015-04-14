@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_74663828",
+        "filename": "includes/CreateLocalAccountJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-04-14T17:06:51Z",
+      "side": 1,
+      "message": "Would it be better to call CentralAuthHooks::attemptAddUser directly, so we\u0027re not duplicating the logic here? If not, can we refactor them to share a common method for the checks?",
+      "revId": "ce796f239c24bebb76909f5a297ae6085b8e49ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
