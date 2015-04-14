@@ -1039,26 +1039,6 @@ class CentralAuthHooks {
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user ) {
-		global $wgAuth, $wgCentralAuthCreateOnView;
-
-		$userName = $user->getName();
-		// Denied by configuration?
-		if ( !$wgAuth->autoCreate() ) {
-			wfDebug( __METHOD__ . ": denied by configuration\n" );
-			return false;
-		}
-
-		if ( !$wgCentralAuthCreateOnView ) {
-			// Only create local accounts when we perform an active login...
-			// Don't freak people out on every page view
-			wfDebug( __METHOD__ . ": denied by \$wgCentralAuthCreateOnView\n" );
-			return false;
-		}
-
-		// Is the user blacklisted by the session?
-		// This is just a cache to avoid expensive DB queries in $user->isAllowedToCreateAccount().
-		// The user can log in via Special:UserLogin to bypass the blacklist and get a proper
-		// error message.
 		$session = CentralAuthUser::getSession();
 		if ( isset( $session['auto-create-blacklist'] )
 			&& in_array( wfWikiID(), (array)$session['auto-create-blacklist'] ) )
@@ -1067,69 +1047,19 @@ class CentralAuthHooks {
 			return false;
 		}
 
-		// Is the user blocked?
-		$anon = new User;
-		if ( !$anon->isAllowedAny( 'createaccount', 'centralauth-autoaccount' )
-			|| $anon->isBlockedFromCreateAccount() )
-		{
-			// Blacklist the user to avoid repeated DB queries subsequently
-			// First load the session again in case it changed while the above DB query was in progress
-			wfDebug( __METHOD__ . ": user is blocked from this wiki, blacklisting\n" );
-			$session['auto-create-blacklist'][] = wfWikiID();
-			CentralAuthUser::setSession( $session );
+		$canCacheFailure = false;
+		$status = CentralAuthUser::attemptAddUser( $user, $canCacheFailure );
+		if ( $status->isOK() ) {
+			return true;
+		} else {
+			wfDebug( __METHOD__ . ': ' . $status->getWikiText() . "\n" );
+			if ( $canCacheFailure ) {
+				// Blacklist the user to avoid repeated DB queries subsequently
+				$session['auto-create-blacklist'][] = wfWikiID();
+				CentralAuthUser::setSession( $session );
+			}
 			return false;
 		}
-
-		// Check for validity of username
-		if ( !User::isCreatableName( $userName ) ) {
-			wfDebug( __METHOD__ . ": Invalid username\n" );
-			$session['auto-create-blacklist'][] = wfWikiID();
-			CentralAuthUser::setSession( $session );
-			return false;
-		}
-
-		// Give other extensions a chance to stop auto creation.
-		$user->loadDefaults( $userName );
-		$abortMessage = '';
-		if ( !wfRunHooks( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
-			// In this case we have no way to return the message to the user,
-			// but we can log it.
-			wfDebug( __METHOD__ . ": denied by other extension: $abortMessage\n" );
-			$session['auto-create-blacklist'][] = wfWikiID();
-			CentralAuthUser::setSession( $session );
-			return false;
-		}
-		// Make sure the name has not been changed
-		if ( $user->getName() !== $userName ) {
-			throw new Exception( "AbortAutoAccount hook tried to change the user name" );
-		}
-
-		// Checks passed, create the user
-		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: {$_SERVER['REQUEST_URI']}\n" );
-		try {
-			$status = $user->addToDatabase();
-		} catch ( Exception $e ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
-				. " {$e->getMessage()}" );
-			throw $e;
-		}
-
-		if ( $status === null ) {
-			// MW before 1.21 -- ok, continue
-		} elseif ( !$status->isOK() ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
-			return false;
-		}
-
-		$wgAuth->initUser( $user, true );
-
-		# Notify hooks (e.g. Newuserlog)
-		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
-
-		# Update user count
-		DeferredUpdates::addUpdate( new SiteStatsUpdate( 0, 0, 0, 0, 1 ) );
-
-		return true;
 	}
 
 	/**

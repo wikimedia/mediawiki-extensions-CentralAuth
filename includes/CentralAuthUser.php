@@ -2813,4 +2813,96 @@ class CentralAuthUser extends AuthPluginUser {
 			$params
 		);
 	}
+
+	/**
+	 * Creates a local user and attaches it to the global account.
+	 * @param User $user The User object for the given username
+	 * @param bool $canCacheFailure Will be set to true if the reason for failure is deterministic
+	 *   and can be cached for this session
+	 * @throws Exception
+	 * @return Status
+	 */
+	public static function attemptAddUser( User $user, &$canCacheFailure = null ) {
+		global $wgAuth, $wgCentralAuthCreateOnView;
+		$canCacheFailure = false;
+		$userName = $user->getName();
+
+		// configuration checks
+		if ( !$wgAuth->autoCreate() ) {
+			return Status::newFatal( 'denied by configuration' );
+		} elseif ( !$wgCentralAuthCreateOnView ) {
+			// Only create local accounts when we perform an active login...
+			// Don't freak people out on every page view
+			return Status::newFatal( 'denied by $wgCentralAuthCreateOnView' );
+		}
+
+		// check if a local account can be created for this name; failure should be cached to limit
+		// expensive DB operations as this check is done on every request
+		$canCacheFailure = true;
+
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( $user->getId() !== 0 ) {
+			return Status::newFatal( 'local account already exists' );
+		} elseif ( !$centralUser->exists() ) {
+			return Status::newFatal( 'global account does not exist' );
+		} elseif ( $centralUser->attachedOn( wfWikiID() ) ) {
+			return Status::newFatal( 'global account is already attached to a different local account' );
+		}
+
+		// Is the user blocked?
+		$anon = new User;
+		if ( !$anon->isAllowedAny( 'createaccount', 'centralauth-autoaccount' )
+			 || $anon->isBlockedFromCreateAccount() )
+		{
+			return Status::newFatal( 'user is blocked from this wiki, blacklisting' );
+		}
+
+		// Check for validity of username
+		if ( !User::isCreatableName( $userName ) ) {
+			return Status::newFatal( 'Invalid username' );
+		}
+
+		// Give other extensions a chance to stop auto creation.
+		$user->loadDefaults( $userName );
+		$abortMessage = '';
+		if ( !Hooks::run( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
+			// In this case we have no way to return the message to the user,
+			// but we can log it.
+			return Status::newFatal( "denied by other extension: $abortMessage" );
+		} elseif ( $user->getName() !== $userName ) {
+			throw new Exception( "AbortAutoAccount hook tried to change the user name" );
+		}
+
+		// checks passed, create the user
+		// any failure after this is an unexpected DB error and should not block retries
+		$canCacheFailure = false;
+
+		$from = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'CLI';
+		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: $from\n" );
+		try {
+			$status = $user->addToDatabase();
+		} catch ( Exception $e ) {
+			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
+												. " {$e->getMessage()}" );
+			throw $e;
+		}
+
+		if ( $status === null ) {
+			// MW before 1.21 -- ok, continue
+		} elseif ( !$status->isOK() ) {
+			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
+			return $status;
+		}
+
+		// this will attach the account and log the autocreation
+		$wgAuth->initUser( $user, true );
+
+		# Notify hooks (e.g. Newuserlog)
+		Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
+
+		# Update user count
+		DeferredUpdates::addUpdate( new SiteStatsUpdate( 0, 0, 0, 0, 1 ) );
+
+		return $status;
+	}
 }
