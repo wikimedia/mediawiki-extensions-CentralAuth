@@ -134,6 +134,16 @@ $wgCentralAuthCookiePath = '/';
 $wgCentralAuthAutoLoginWikis = array();
 
 /**
+ * List of wiki IDs on which an attached local account should be created automatically when the
+ * global account is created.
+ *
+ * The wiki ID is typically the database name, except when table prefixes are
+ * used, in which case it is the database name, a hyphen separator, and then
+ * the table prefix.
+ */
+$wgCentralAuthAutoCreateWikis = array();
+
+/**
  * Local filesystem path to the icon returned by Special:CentralAutoLogin
  * Should be a 20x20px PNG.
  */
@@ -275,6 +285,7 @@ $wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/includes/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/includes/SuppressUserJob.php";
+$wgAutoloadClasses['CentralAuthCreateLocalAccountJob'] = "$caBase/includes/CreateLocalAccountJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/includes/WikiSet.php";
 $wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/includes/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/includes/CentralAuthUserArray.php";
@@ -333,6 +344,7 @@ $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 $wgJobClasses['LocalRenameUserJob'] = 'LocalRenameUserJob';
 $wgJobClasses['LocalUserMergeJob'] = 'LocalUserMergeJob';
 $wgJobClasses['LocalPageMoveJob'] = 'LocalPageMoveJob';
+$wgJobClasses['CentralAuthCreateLocalAccountJob'] = 'CentralAuthCreateLocalAccountJob';
 
 $wgHooks['SetupAfterCache'][] = 'CentralAuthHooks::onSetupAfterCache';
 $wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';

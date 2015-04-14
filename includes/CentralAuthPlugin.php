@@ -272,6 +272,7 @@ class CentralAuthPlugin extends AuthPlugin {
 				// @fixme is this even vaguely reliable? pah
 				$central->register( $password, $email );
 				$central->attach( wfWikiID(), 'new' );
+				$this->autoCreateAccounts( $central );
 			}
 			// Note: If $wgCentralAuthPreventUnattached is enabled,
 			// accounts where a global does not exist, but there are
@@ -327,5 +328,29 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	public function getUserInstance( User &$user ) {
 		return CentralAuthUser::getInstance( $user );
+	}
+
+	/**
+	 * Sets up jobs to create and attach a local account for the given user on every wiki listed in
+	 * $wgCentralAuthAutoCreateWikis.
+	 * @param CentralAuthUser $centralUser
+	 */
+	private function autoCreateAccounts( CentralAuthUser $centralUser ) {
+		global $wgCentralAuthAutoCreateWikis;
+
+		$name = $centralUser->getName();
+		$thisWiki = wfWikiID();
+		$session = RequestContext::getMain()->exportSession();
+		foreach ( $wgCentralAuthAutoCreateWikis as $wiki ) {
+			if ( $wiki === $thisWiki ) {
+				continue;
+			}
+			$job = Job::factory(
+				'CentralAuthCreateLocalAccountJob',
+				Title::makeTitleSafe( NS_USER, $name ),
+				array( 'name' => $name, 'from' => $thisWiki, 'session' => $session )
+			);
+			JobQueueGroup::singleton( $wiki )->push( $job );
+		}
 	}
 }
