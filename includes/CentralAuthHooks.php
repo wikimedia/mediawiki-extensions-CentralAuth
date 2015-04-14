@@ -383,71 +383,51 @@ class CentralAuthHooks {
 	static function onGetPreferences( $user, &$preferences ) {
 		global $wgLang;
 
-		if ( !$user->isAllowed( 'centralauth-merge' ) ) {
-			// Not allowed to merge, don't display merge information
-			return true;
-		}
-
 		// Possible states:
 		// - account not merged at all
 		// - global accounts exists, but this local account is unattached
 		// - this local account is attached, but migration incomplete
-		// - all local accounts are attached
+		// - all local accounts are attached (no $message shown)
 
 		$global = CentralAuthUser::getInstance( $user );
+		$unattached = count( $global->listUnattached() );
 		if ( $global->exists() ) {
-			if ( $global->isAttached() ) {
-				// Local is attached...
+			if ( $global->isAttached() && $unattached ) {
+				// Migration incomplete - unattached accounts at other wikis
 				$attached = count( $global->listAttached() );
-				$unattached = count( $global->listUnattached() );
-				if ( $unattached ) {
-					// Migration incomplete
-					$message = '<strong>' . wfMessage( 'centralauth-prefs-migration' )->parse() . '</strong>' .
-						'<br />' .
-						wfMessage( 'centralauth-prefs-count-attached' )->numParams( $attached )->parse() .
-						'<br />' .
-						wfMessage( 'centralauth-prefs-count-unattached' )->numParams( $unattached )->parse();
-				} else {
-					// Migration complete
-					$message = '<strong>' . wfMessage( 'centralauth-prefs-complete' )->parse() . '</strong>' .
-						'<br />' .
-						wfMessage( 'centralauth-prefs-count-attached' )->numParams( $attached )->parse();
-				}
-			} else {
-				// Account is in migration, but the local account is not attached
-				$message = '<strong>' . wfMessage( 'centralauth-prefs-unattached' )->parse() . '</strong>' .
+				$message = wfMessage( 'centralauth-prefs-unattached' )->parse() .
 					'<br />' .
-					wfMessage( 'centralauth-prefs-detail-unattached' )->parse();
+					wfMessage( 'centralauth-prefs-count-attached' )->numParams( $attached )->parse() .
+					'<br />' .
+					wfMessage( 'centralauth-prefs-count-unattached' )->numParams( $unattached )->parse();
+			} elseif ( !$global->isAttached() ) {
+				// Global account exists but the local account is not attached
+				$message = wfMessage( 'centralauth-prefs-detail-unattached' )->parse();
 			}
 		} else {
-			// Not migrated.
+			// No global account
 			$message = wfMessage( 'centralauth-prefs-not-managed' )->parse();
 		}
 
 		$manageLinks = array();
-		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
-			wfMessage( 'centralauth-prefs-manage' )->parse() );
+		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
+			$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
+				wfMessage( 'centralauth-prefs-manage' )->parse() );
+		}
 		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
 			wfMessage( 'centralauth-prefs-view' )->parse() );
-		$manageLinkList = wfMessage( 'parentheses', $wgLang->pipeList( $manageLinks ) )->text();
+		$manageLinkList = $wgLang->pipeList( $manageLinks );
 
-		$prefInsert =
-			array( 'globalaccountstatus' =>
-				array(
-					'section' => 'personal/info',
-					'label-message' => 'centralauth-prefs-status',
-					'type' => 'info',
-					'raw' => true,
-					'default' => "$message<br />$manageLinkList"
-				),
-			);
-
-		if ( array_key_exists( 'registrationdate', $preferences ) ) {
-			$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'registrationdate' );
-		} elseif  ( array_key_exists( 'editcount', $preferences ) ) {
-			$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'editcount' );
-		} else {
-			$preferences += $prefInsert;
+		$preferences['globalaccountstatus'] = array(
+			'section' => 'personal/info',
+			'label-message' => 'centralauth-prefs-status',
+			'type' => 'info',
+			'raw' => true,
+			'default' => $manageLinkList
+		);
+		if ( isset( $message ) ) {
+			$manageLinkList = wfMessage( 'parentheses', $manageLinkList )->text(); // looks weird otherwise
+			$preferences['globalaccountstatus']['default'] = "$message<br />$manageLinkList";
 		}
 
 		return true;
