@@ -553,6 +553,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return true;
 	}
 
+	/**
+	 * @param CentralAuthUser $centralUser
+	 * @param User $user
+	 * @return array
+	 */
 	private function getCentralSession( $centralUser, $user ) {
 		$centralSession = $centralUser->getSession();
 		$request = $this->getRequest();
