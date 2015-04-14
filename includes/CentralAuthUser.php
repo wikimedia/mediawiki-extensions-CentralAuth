@@ -1249,6 +1249,7 @@ class CentralAuthUser extends AuthPluginUser {
 			$wgMemc->delete( "$wiki:user:id:$id" );
 			$lb->reuseConnection( $localDB );
 		}
+		$wasSuppressed = $this->isOversighted();
 
 		$centralDB->begin();
 		# Delete and lock the globaluser row
@@ -1263,7 +1264,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$centralDB->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
 		$centralDB->commit();
 
-		$this->logAction( 'delete', $reason );
+		$this->logAction( 'delete', $reason, array(), /* $suppressLog = */ $wasSuppressed );
 		$this->invalidateCache();
 
 		return Status::newGood();
