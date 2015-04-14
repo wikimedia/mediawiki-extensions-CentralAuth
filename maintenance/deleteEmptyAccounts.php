@@ -65,6 +65,9 @@ class DeleteEmptyAccounts extends Maintenance {
 			foreach( $result as $row ) {
 				$this->process( $row->gu_name );
 			}
+			if ( $this->fix ) {
+				CentralAuthUser::waitForSlaves();
+			}
 		}
 
 		$this->output( "done.\n" );
