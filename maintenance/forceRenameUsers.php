@@ -19,6 +19,7 @@ class ForceRenameUsers extends Maintenance {
 
 	public function __construct() {
 		$this->mDescription = 'Forcibly renames and migrates unattached accounts to global ones';
+		$this->setBatchSize( 10 );
 	}
 
 	private function log( $msg ) {
@@ -37,15 +38,31 @@ class ForceRenameUsers extends Maintenance {
 			foreach ( $rowsToRename as $row ) {
 				$this->rename( $row, $dbw );
 			}
-
 			CentralAuthUser::waitForSlaves();
+			$count = $this->getCurrentRenameCount( $dbw );
+			while ( $count > 50 ) {
+				$this->output( "There are currently $count renames queued, pausing..." );
+				sleep( 5 );
+				$count = $this->getCurrentRenameCount( $dbw );
+			}
 		}
+	}
+
+	protected function getCurrentRenameCount( DatabaseBase $dbw ) {
+		$row = $dbw->selectRow(
+			array( 'renameuser_status'),
+			array( 'COUNT(*) as count' ),
+			array(),
+			__METHOD__
+		);
+		return (int)$row->count;
 	}
 
 	protected function rename( $row, DatabaseBase $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
 		$newNamePrefix = "$name~$wiki";
+		$this->output( "Beginning rename of $newNamePrefix" );
 		$newCAUser = new CentralAuthUser( $newNamePrefix );
 		$count = 0;
 		// Edge case: Someone created User:Foo~wiki manually.
@@ -54,6 +71,9 @@ class ForceRenameUsers extends Maintenance {
 		while ( $newCAUser->exists() ) {
 			$count++;
 			$newCAUser = new CentralAuthUser( $newNamePrefix . (string)$count );
+		}
+		if ( $newNamePrefix !== $newCAUser->getName() ) {
+			$this->output( "WARNING: New name is now {$newCAUser->getName()}" );
 		}
 		$this->log( "Renaming $name to {$newCAUser->getName()}." );
 
@@ -99,7 +119,7 @@ class ForceRenameUsers extends Maintenance {
 	protected function findUsers( $wiki, DatabaseBase $dbw ) {
 		$rowsToRename = array();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
-		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, 50 );
+		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize );
 
 		foreach ( $rows as $row ) {
 			$caUser = new CentralAuthUser( $row->utr_name );
