@@ -411,5 +411,6 @@
 	"userswhowillberenamed": "Użytkownicy, których nazwy zostaną zmienione",
 	"centralauth-uwbr-name": "Nazwa użytkownika",
 	"centralauth-uwbr-registration": "Data rejestracji",
-	"centralauth-uwbr-editcount": "Liczba edycji"
+	"centralauth-uwbr-editcount": "Liczba edycji",
+	"centralauth-delete-empty-account": "Puste konto"
 }

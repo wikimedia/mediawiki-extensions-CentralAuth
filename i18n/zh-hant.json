@@ -510,5 +510,6 @@
 	"centralauth-uwbr-registration": "註冊日期",
 	"centralauth-uwbr-registration-nodate": "不明",
 	"centralauth-uwbr-editcount": "編輯次數",
-	"centralauth-uwbr-intro": "此頁面列出在此 wiki 註冊的使用者中將要重新命名的使用者。"
+	"centralauth-uwbr-intro": "此頁面列出在此 wiki 註冊的使用者中將要重新命名的使用者。",
+	"centralauth-delete-empty-account": "空白帳號"
 }

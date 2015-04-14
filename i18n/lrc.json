@@ -39,7 +39,7 @@
 	"centralauth-list-unattached-title": "حساو جگا بیه.",
 	"centralauth-list-unattached": "{{PLURAL:$2|حساو|حساویا}} که چی \"$1\" نوم نیائه بینه نمی تونن چی{{PLURAL:$2|دیارگه|دیارگه یا}} هاری که مال شمان پشت راس بان؛\nبیشتر {{PLURAL:$2|وه|ونو}} که یه گل رازینه گواردن هنی د حساو اصلی شما دارن:",
 	"centralauth-foreign-link": "کاریار $1 د $2",
-	"centralauth-foreign-contributions": "$1 {{جمی:$1|هومیاری|هومیاریا}} د $2",
+	"centralauth-foreign-contributions": "$1 {{جمی:$1|هومیاری|هومیاریا}} د $2{{PLURAL:$1|}}",
 	"centralauth-merge-method-primary": "سرآسونه ويكی",
 	"centralauth-merge-method-empty": "بی هومياری",
 	"centralauth-merge-method-mail": "وا ايميل محكم بی",

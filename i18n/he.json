@@ -372,6 +372,7 @@
 	"centralauth-rename-progress-logs-fieldset": "רשומות יומן",
 	"centralauth-rename-movelog": "הדף הועבר אוטמטית בעת שינוי שם המשתמש \"[[Special:CentralAuth/$1|$1]]\" אל \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "האם ברצונך באמת לשנות גלובלית את שם המשתמש הזה?",
+	"centralauth-rename-deny": "האם ברצונך באמת לדחות את הבקשה הזאת?",
 	"log-name-gblrename": "יומן שינוי שם גלובלי",
 	"log-description-gblrename": "היומן הזה עוקב אחרי שינוי שם גלובלי של משתמשים.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|שינה|שינתה}} באופן גלובלי את השם $4 ל{{GRAMMAR:תחילית|$5}}",
@@ -486,5 +487,6 @@
 	"centralauth-uwbr-registration": "תאריך הרישום",
 	"centralauth-uwbr-registration-nodate": "אינו ידוע",
 	"centralauth-uwbr-editcount": "מספר העריכות",
-	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה."
+	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה.",
+	"centralauth-delete-empty-account": "חשבון ריק"
 }

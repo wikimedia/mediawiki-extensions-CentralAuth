@@ -421,5 +421,6 @@
 	"centralauth-uwbr-name": "Benotzernumm",
 	"centralauth-uwbr-registration": "Datum vun der Umeldung",
 	"centralauth-uwbr-registration-nodate": "Onbekannt",
-	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen"
+	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen",
+	"centralauth-delete-empty-account": "Eidele Benotzerkont"
 }

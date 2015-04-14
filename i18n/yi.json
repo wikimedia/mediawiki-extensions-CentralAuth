@@ -203,5 +203,6 @@
 	"centralauth-rename-table-status-failed": "דורכגעפֿאַלן",
 	"centralauth-rename-movelog": "אויטאמאטיש באוועגט בלאט ביים ענדערן באניצער־נאמען פון \"[[Special:CentralAuth/$1|$1]]\" צו \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-usermerge-form-reason": "אורזאַך",
-	"centralauth-log-gblrename-oldname": "פריערדיגער באניצער־נאמען:"
+	"centralauth-log-gblrename-oldname": "פריערדיגער באניצער־נאמען:",
+	"centralauth-delete-empty-account": "ליידיגע קאנטע"
 }

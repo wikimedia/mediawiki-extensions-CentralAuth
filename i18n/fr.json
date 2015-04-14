@@ -400,9 +400,11 @@
 	"centralauth-rename-progress-logs-fieldset": "Entrées du journal",
 	"centralauth-rename-movelog": "Page automatiquement déplacée lors du renommage de l’utilisateur « [[Special:CentralAuth/$1|$1]] » en « [[Special:CentralAuth/$2|$2]] »",
 	"centralauth-rename-confirm": "Voulez-vous vraiment renommer globalement cet utilisateur ?",
+	"centralauth-rename-deny": "Voulez-vous vraiment refuser cette demande ?",
 	"log-name-gblrename": "Journal des renommages globaux",
 	"log-description-gblrename": "Ce journal trace les renommages globaux des utilisateurs.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} a renommé globalement $4 en $5",
+	"logentry-gblrename-promote": "$1 a {{GENDER:$2|renommé}} de façon globale $4 en $5",
 	"globalusermerge": "Fusionner l’utilisateur global",
 	"globalusermerge-legend": "Fusionner l’utilisateur global",
 	"centralauth-usermerge-form-newuser": "Nom d’utilisateur final",
@@ -545,5 +547,6 @@
 	"centralauth-uwbr-registration": "Date d’inscription",
 	"centralauth-uwbr-registration-nodate": "Inconnu",
 	"centralauth-uwbr-editcount": "Compteur de modifications",
-	"centralauth-uwbr-intro": "Cette page liste les utilisateurs inscrits dans ce wiki qui seront renommés."
+	"centralauth-uwbr-intro": "Cette page liste les utilisateurs inscrits dans ce wiki qui seront renommés.",
+	"centralauth-delete-empty-account": "Compte vide"
 }

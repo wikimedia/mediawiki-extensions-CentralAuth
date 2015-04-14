@@ -10,7 +10,8 @@
 			"Trengarasu",
 			"செல்வா",
 			"மதனாஹரன்",
-			"ElangoRamanujam"
+			"ElangoRamanujam",
+			"AntanO"
 		]
 	},
 	"mergeaccount": "உள்நுழைவு ஒருங்கிணைப்பு நிலை",
@@ -239,6 +240,7 @@
 	"right-centralauth-merge": "அவர்களின் கணக்குகளை ஒன்றுசேர்",
 	"right-globalgrouppermissions": "உலகளாவிய குழுக்களை நிர்வகி",
 	"centralauth-rename-table-status-failed": "தோல்வியடைந்தது",
+	"centralauth-rename-deny": "இந்தக் கணக்கை உண்மையிலேயே மறுக்கிறீர்களா?",
 	"centralauth-usermerge-form-reason": "காரணம்",
 	"globalrenamerequest-username-label": "தற்போதைய பயனர் பெயர்:",
 	"globalrenamerequest-username-help": "இது தங்களின் தற்போதைய பயனர்பெயர்.",
@@ -251,5 +253,6 @@
 	"globalrenamerequest-save-error": "வேண்டுகோளை சேமிக்க இயலவில்லை.  மீண்டும் முயற்சிக்கவும்.",
 	"centralauth-usermerge-form-adduser": "பயனரைச் சேர்க்கவும்",
 	"centralauth-usermerge-form-deleteuser": "பயனரை நீக்குக",
-	"centralauth-log-gblrename-oldname": "முந்தைய பயனர்பெயர்"
+	"centralauth-log-gblrename-oldname": "முந்தைய பயனர்பெயர்",
+	"centralauth-delete-empty-account": "வெற்றுக் கணக்கு"
 }

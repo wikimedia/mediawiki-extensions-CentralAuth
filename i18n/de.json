@@ -375,6 +375,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Logbucheinträge",
 	"centralauth-rename-movelog": "Seite während der Umbenennung des Benutzers „[[Special:CentralAuth/$1|$1]]“ in „[[Special:CentralAuth/$2|$2]]“ automatisch verschoben",
 	"centralauth-rename-confirm": "Möchtest du wirklich diesen Benutzer global umbenennen?",
+	"centralauth-rename-deny": "Möchtest du diese Anfrage wirklich ablehnen?",
 	"log-name-gblrename": "Globales Umbenennungs-Logbuch",
 	"log-description-gblrename": "Dies ist ein Logbuch globaler Benutzerumbenennungen.",
 	"logentry-gblrename-rename": "$1 hat „$4“ global in „$5“ {{GENDER:$2|umbenannt}}",
@@ -504,5 +505,6 @@
 	"centralauth-uwbr-registration": "Registrierungsdatum",
 	"centralauth-uwbr-registration-nodate": "Unbekannt",
 	"centralauth-uwbr-editcount": "Bearbeitungszähler",
-	"centralauth-uwbr-intro": "Diese Seite listet auf diesem Wiki registrierte Benutzer auf, die umbenannt werden."
+	"centralauth-uwbr-intro": "Diese Seite listet auf diesem Wiki registrierte Benutzer auf, die umbenannt werden.",
+	"centralauth-delete-empty-account": "Leeres Benutzerkonto"
 }

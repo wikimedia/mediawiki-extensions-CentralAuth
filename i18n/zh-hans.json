@@ -29,7 +29,8 @@
 			"乌拉跨氪",
 			"Kuailong",
 			"Mywood",
-			"Impersonator 1"
+			"Impersonator 1",
+			"Cdz"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -390,6 +391,7 @@
 	"centralauth-rename-progress-logs-fieldset": "日志记录",
 	"centralauth-rename-movelog": "重命名“[[Special:CentralAuth/$1|$1]]”至“[[Special:CentralAuth/$2|$2]]”用户自动移动页面",
 	"centralauth-rename-confirm": "您真希望全域重命名此用户？",
+	"centralauth-rename-deny": "确定要拒绝这个请求吗？",
 	"log-name-gblrename": "全域重命名日志",
 	"log-description-gblrename": "此日志跟踪全域重命名用户。",
 	"logentry-gblrename-rename": "$1已全域{{GENDER:$2|重命名}}$4至$5",
@@ -536,5 +538,6 @@
 	"centralauth-uwbr-registration": "注册日期",
 	"centralauth-uwbr-registration-nodate": "未知",
 	"centralauth-uwbr-editcount": "编辑计数",
-	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。"
+	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。",
+	"centralauth-delete-empty-account": "空账户"
 }
