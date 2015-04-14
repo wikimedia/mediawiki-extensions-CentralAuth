@@ -1116,7 +1116,8 @@ class CentralAuthHooks {
 		}
 
 		// Checks passed, create the user
-		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: {$_SERVER['REQUEST_URI']}\n" );
+		$from = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'CLI';
+		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: $from\n" );
 		try {
 			$status = $user->addToDatabase();
 		} catch ( Exception $e ) {
