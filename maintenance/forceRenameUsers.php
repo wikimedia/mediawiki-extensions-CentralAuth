@@ -125,11 +125,11 @@ class ForceRenameUsers extends Maintenance {
 		foreach ( $rows as $row ) {
 			$caUser = new CentralAuthUser( $row->utr_name );
 			if ( $caUser->attachedOn( $row->utr_wiki ) ) {
-				$this->log( "'{row->utr_name}' has become attached to a global account since the list as last generated." );
+				$this->log( "'{$row->utr_name}' has become attached to a global account since the list as last generated." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( !User::isUsableName( $row->utr_name ) ) {
 				// Reserved for a system account, ignore
-				$this->log( "'{row->utr_name}' is a reserved username, skipping." );
+				$this->log( "'{$row->utr_name}' is a reserved username, skipping." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} else {
 				$rowsToRename[] = $row;
