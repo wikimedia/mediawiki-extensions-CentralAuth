@@ -123,8 +123,12 @@ class ForceRenameUsers extends Maintenance {
 		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize );
 
 		foreach ( $rows as $row ) {
+			$user = User::newFromName( $row->utr_name );
 			$caUser = new CentralAuthUser( $row->utr_name );
-			if ( $caUser->attachedOn( $row->utr_wiki ) ) {
+			if ( !$user->getId() ) {
+				$this->log( "'{$row->utr_name}' has been renamed since the last was list generated." );
+				$updates->remove( $row->utr_name, $row->utr_wiki );
+			} elseif ( $caUser->attachedOn( $row->utr_wiki ) ) {
 				$this->log( "'{$row->utr_name}' has become attached to a global account since the list as last generated." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( !User::isUsableName( $row->utr_name ) ) {
