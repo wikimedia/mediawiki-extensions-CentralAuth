@@ -19,6 +19,7 @@ class ForceRenameUsers extends Maintenance {
 
 	public function __construct() {
 		$this->mDescription = 'Forcibly renames and migrates unattached accounts to global ones';
+		$this->addOption( 'reason', 'Reason to use for log summaries', true, true );
 		$this->setBatchSize( 10 );
 	}
 
@@ -92,7 +93,6 @@ class ForceRenameUsers extends Maintenance {
 
 		$this->log( "Set renameuser_status for {$newCAUser->getName()}." );
 
-		// @todo set a reason for log entries
 		$job = new LocalRenameUserJob(
 			Title::newFromText( 'Global rename job' ),
 			array(
@@ -102,6 +102,7 @@ class ForceRenameUsers extends Maintenance {
 				'movepages' => true,
 				'suppressredirects' => true,
 				'promotetoglobal' => true,
+				'reason' => $this->getOption( 'reason' ),
 			)
 		);
 
