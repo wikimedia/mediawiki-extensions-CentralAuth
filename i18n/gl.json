@@ -369,8 +369,11 @@
 	"centralauth-rename-viewprogress": "Ver progreso",
 	"centralauth-rename-progress-fieldset": "Lista de contas locais",
 	"centralauth-rename-progress-logs-fieldset": "Entradas no rexistro",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ver progreso]])",
+	"centralauth-rename-progress-list-header": "Os seguintes renomeados globais están actualmente en progreso:",
 	"centralauth-rename-movelog": "A páxina foi movida automáticamente debido ao cambio de nome de usuario de \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Está seguro de querer cambiar o nome de usuario desta conta globalmente?",
+	"centralauth-rename-deny": "Está seguro que quere denegar esta solicitude?",
 	"log-name-gblrename": "Rexitro de cambios de nome globais",
 	"log-description-gblrename": "Este rexistro garda a información dos cambios de nome de usuario globais.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|mudou a conta}} globalmente de $4 a $5",
@@ -503,6 +506,7 @@
 	"apihelp-setglobalaccountstatus-param-locked": "Cambiar aínda que o usuario estea bloqueado.",
 	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar aínda que o usuario non estea oculto, estea oculto das listas ou eliminado.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo para cambiar o estado do usuario.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do actual <username>:<hidden>:<locked>, para detectar conflitos de edición. Fixe <locked> a 1 para bloquear, 0 para desbloquear.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloquear a conta global de [[User:Example]] có motivo \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Desbloquear e eliminar conta global para o [[User:Example]] co motivo \"Eu podo\"",
 	"centralauth-log-gblrename-oldname": "Nome de usuario anterior:",
@@ -513,5 +517,6 @@
 	"centralauth-uwbr-registration": "Data de rexistro",
 	"centralauth-uwbr-registration-nodate": "Descoñecido",
 	"centralauth-uwbr-editcount": "Conta de edicións",
-	"centralauth-uwbr-intro": "Esta páxina amosa unha lista de usuarios rexistrados nesta wiki que serán renomeados."
+	"centralauth-uwbr-intro": "Esta páxina amosa unha lista de usuarios rexistrados nesta wiki que serán renomeados.",
+	"centralauth-delete-empty-account": "Conta baleira"
 }

@@ -23,7 +23,8 @@
 			"Meshkov.a",
 			"NBS",
 			"Striking Blue",
-			"Kopcap94"
+			"Kopcap94",
+			"Mariya"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -382,6 +383,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Записи журнала",
 	"centralauth-rename-movelog": "Автоматическое переименование страницы при переименовании участника «[[Special:CentralAuth/$1|$1]]» в «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-confirm": "Вы действительно хотите глобально переименовать участника?",
+	"centralauth-rename-deny": "Вы действительно хотите удалить этот запрос?",
 	"log-name-gblrename": "Журнал глобального переименования",
 	"log-description-gblrename": "Этот журнал отслеживает глобальные переименование пользователей.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально переименовал $4 в $5",
@@ -448,5 +450,6 @@
 	"centralauth-uwbr-name": "Имя участника",
 	"centralauth-uwbr-registration": "Дата регистрации",
 	"centralauth-uwbr-registration-nodate": "Неизвестна",
-	"centralauth-uwbr-editcount": "Число правок"
+	"centralauth-uwbr-editcount": "Число правок",
+	"centralauth-delete-empty-account": "Пустая учетная запись"
 }

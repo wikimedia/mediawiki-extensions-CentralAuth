@@ -3,13 +3,18 @@
 		"authors": [
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amire80",
-			"GerardM"
+			"GerardM",
+			"عثمان خان شاہ"
 		]
 	},
 	"mergeaccount": "د يومخيزې ننوتنې دريځ",
 	"centralauth-groupname": "ويکيمېډيا بنسټ",
+	"centralauth-rename-desc": "په نړيواله توگه د ګڼوڼ نوم بدلولو اجازه وکړه",
+	"centralauth-merge-denied": "معافي غواړو، خو تاسې ته اجازه نشته چې دې مخ ته ورشئ",
+	"centralauth-merge-step1-title": "د لاګن يونيفيکيشن شورو کړئ",
 	"centralauth-merge-step1-submit": "د ننوتلو د مالوماتو تاييد",
 	"centralauth-merge-step2-title": "د نورو گڼونونو تاييد",
+	"centralauth-merge-step2-submit": "د ننوتلو د مالوماتو تاييد",
 	"centralauth-merge-dryrun-or": "'''يا'''",
 	"centralauth-merge-step3-title": "يو گډ گڼون جوړول",
 	"centralauth-merge-step3-submit": "گڼونونه سره يوځای کول",
@@ -32,6 +37,8 @@
 	"centralauth-attach-title": "د گڼون تاييد",
 	"centralauth-attach-submit": "گڼون لېږدول",
 	"centralauth": "نړېوال گڼون سمبالگر",
+	"centralauth-ro": "نړيوال گڼون مالومات",
+	"centralauth-admin-view": " گڼون مالومات وښايئ",
 	"centralauth-admin-username": "کارن-نوم:",
 	"centralauth-admin-lookup-ro": "د کارن مالومات کتل",
 	"centralauth-admin-lookup-rw": "کارن گڼون مهارول",

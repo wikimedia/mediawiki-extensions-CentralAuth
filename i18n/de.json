@@ -373,6 +373,8 @@
 	"centralauth-rename-viewprogress": "Fortschritt anzeigen",
 	"centralauth-rename-progress-fieldset": "Liste lokaler Benutzerkonten",
 	"centralauth-rename-progress-logs-fieldset": "Logbucheinträge",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Fortschritt ansehen]])",
+	"centralauth-rename-progress-list-header": "Die folgenden globalen Umbenennungen sind derzeit in Bearbeitung:",
 	"centralauth-rename-movelog": "Seite während der Umbenennung des Benutzers „[[Special:CentralAuth/$1|$1]]“ in „[[Special:CentralAuth/$2|$2]]“ automatisch verschoben",
 	"centralauth-rename-confirm": "Möchtest du wirklich diesen Benutzer global umbenennen?",
 	"centralauth-rename-deny": "Möchtest du diese Anfrage wirklich ablehnen?",

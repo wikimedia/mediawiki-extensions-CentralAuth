@@ -370,6 +370,8 @@
 	"centralauth-rename-viewprogress": "הצגת ההתקדמות",
 	"centralauth-rename-progress-fieldset": "רשימת חשבונות מקומיים",
 	"centralauth-rename-progress-logs-fieldset": "רשומות יומן",
+	"centralauth-rename-progress-item": "$1 ‏← $2 ([[Special:GlobalRenameProgress/$2|הצגת התקדמות]])",
+	"centralauth-rename-progress-list-header": "שינויי השם הגלובליים מתבצעים עכשיו:",
 	"centralauth-rename-movelog": "הדף הועבר אוטמטית בעת שינוי שם המשתמש \"[[Special:CentralAuth/$1|$1]]\" אל \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "האם ברצונך באמת לשנות גלובלית את שם המשתמש הזה?",
 	"centralauth-rename-deny": "האם ברצונך באמת לדחות את הבקשה הזאת?",

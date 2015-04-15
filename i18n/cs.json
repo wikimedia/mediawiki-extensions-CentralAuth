@@ -366,11 +366,15 @@
 	"centralauth-rename-viewprogress": "Zobrazit průběh",
 	"centralauth-rename-progress-fieldset": "Seznam místních účtů",
 	"centralauth-rename-progress-logs-fieldset": "Protokolovací záznamy",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|zobrazit průběh]])",
+	"centralauth-rename-progress-list-header": "Momentálně probíhají následující globální přejmenování:",
 	"centralauth-rename-movelog": "Automatické přesunutí stránky kvůli přejmenování uživatele „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-confirm": "Opravdu chcete globálně přejmenovat tohoto uživatele?",
+	"centralauth-rename-deny": "Opravdu chcete tuto žádost zamítnout?",
 	"log-name-gblrename": "Kniha globálních přejmenování",
 	"log-description-gblrename": "Toto je záznam globálních přejmenování uživatelů.",
 	"logentry-gblrename-rename": "$1 globálně {{GENDER:$2|přejmenoval|přejmenovala}} uživatelský účet $4 na $5",
+	"logentry-gblrename-promote": "$1 globálně {{GENDER:$2|přejmenoval|přejmenovala}} uživatelský účet $4 na $5",
 	"globalusermerge": "Sloučit globálního uživatele",
 	"globalusermerge-legend": "Sloučení globálního uživatele",
 	"centralauth-usermerge-form-newuser": "Výsledné uživatelské jméno",
@@ -464,5 +468,6 @@
 	"centralauth-uwbr-registration": "Datum registrace",
 	"centralauth-uwbr-registration-nodate": "Neznámé",
 	"centralauth-uwbr-editcount": "Počet editací",
-	"centralauth-uwbr-intro": "Tato stránka uvádí uživatele registrované na této wiki, kteří budou přejmenováni."
+	"centralauth-uwbr-intro": "Tato stránka uvádí uživatele registrované na této wiki, kteří budou přejmenováni.",
+	"centralauth-delete-empty-account": "Prázdný účet"
 }

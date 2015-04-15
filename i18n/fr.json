@@ -398,6 +398,8 @@
 	"centralauth-rename-viewprogress": "Afficher la progression",
 	"centralauth-rename-progress-fieldset": "Liste des comptes locaux",
 	"centralauth-rename-progress-logs-fieldset": "Entrées du journal",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|afficher la progression]])",
+	"centralauth-rename-progress-list-header": "Les renommages globaux suivants sont actuellement en cours :",
 	"centralauth-rename-movelog": "Page automatiquement déplacée lors du renommage de l’utilisateur « [[Special:CentralAuth/$1|$1]] » en « [[Special:CentralAuth/$2|$2]] »",
 	"centralauth-rename-confirm": "Voulez-vous vraiment renommer globalement cet utilisateur ?",
 	"centralauth-rename-deny": "Voulez-vous vraiment refuser cette demande ?",

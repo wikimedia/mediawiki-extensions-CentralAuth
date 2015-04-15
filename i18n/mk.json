@@ -363,6 +363,8 @@
 	"centralauth-rename-viewprogress": "Погл. напредокот",
 	"centralauth-rename-progress-fieldset": "Список на месни сметки",
 	"centralauth-rename-progress-logs-fieldset": "Дневнички записи",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|напредок]])",
+	"centralauth-rename-progress-list-header": "Во тек се следниве глобални преименувања:",
 	"centralauth-rename-movelog": "Автоматски преместена страницата при преименување на корисникот „[[Special:CentralAuth/$1|$1]]“ во „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-confirm": "Дали навистина сакате глобално да го преименувате корисников?",
 	"centralauth-rename-deny": "Дали навистина сакате да го одбиете барањево?",

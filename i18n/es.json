@@ -403,6 +403,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Entradas del registro",
 	"centralauth-rename-movelog": "Página trasladada automáticamente al cambiar el nombre del usuario \"[[Special:CentralAuth/$1|$1]]\" to \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "¿Seguro quieres renombrar globalmente a este usuario?",
+	"centralauth-rename-deny": "¿Seguro quieres denegar esta solicitud?",
 	"log-name-gblrename": "Registro de renombramiento global",
 	"log-description-gblrename": "Este registro muestra una lista de los cambios de nombre de los usuarios.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5",
@@ -498,5 +499,6 @@
 	"centralauth-uwbr-registration": "Fecha de registro",
 	"centralauth-uwbr-registration-nodate": "Desconocida",
 	"centralauth-uwbr-editcount": "Número de ediciones",
-	"centralauth-uwbr-intro": "Esta página lista los usuarios registrados en este wiki que cambiarán de nombre."
+	"centralauth-uwbr-intro": "Esta página lista los usuarios registrados en este wiki que cambiarán de nombre.",
+	"centralauth-delete-empty-account": "Cuenta vacía"
 }
