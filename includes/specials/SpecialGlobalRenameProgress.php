@@ -65,10 +65,10 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 		$res = $dbr->select(
 			$tables,
-			array( 'DISTINCT(ru_oldname) as ru_oldname', 'ru_newname' ),
+			array( 'ru_oldname', 'ru_newname' ),
 			array(),
 			__METHOD__,
-			array(),
+			array( 'DISTINCT' ),
 			$join_conds
 		);
 
