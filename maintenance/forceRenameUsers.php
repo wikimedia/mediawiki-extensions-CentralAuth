@@ -29,6 +29,9 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	public function execute() {
+		if ( !class_exists( 'CentralAuthUser' ) ) {
+			$this->error( 'CentralAuth is not installed on this wiki.', 1 );
+		}
 		$dbw = CentralAuthUser::getCentralDB();
 		while ( true ) {
 			$rowsToRename = $this->findUsers( wfWikiID(), $dbw );
