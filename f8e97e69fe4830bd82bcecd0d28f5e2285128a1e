@@ -16,6 +16,24 @@
       "revId": "f8e97e69fe4830bd82bcecd0d28f5e2285128a1e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f0db227e",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-04-16T12:39:23Z",
+      "side": 1,
+      "message": "Done. formatBlockStatus has changed significantly so i18n is not needed anymore.",
+      "parentUuid": "ee391fd1_c5819efe",
+      "revId": "f8e97e69fe4830bd82bcecd0d28f5e2285128a1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
