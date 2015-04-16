@@ -375,8 +375,11 @@
 	"centralauth-rename-viewprogress": "Näytä edistyminen",
 	"centralauth-rename-progress-fieldset": "Luettelo paikallisista tunnuksista",
 	"centralauth-rename-progress-logs-fieldset": "Lokimerkinnät",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|näytä eteneminen]])",
+	"centralauth-rename-progress-list-header": "Seuraavat järjestelmänlaajuiset nimeämiset ovat tällä hetkellä käynnissä:",
 	"centralauth-rename-movelog": "Siirsi sivun automaattisesti, kun käyttäjätunnus \"[[Special:CentralAuth/$1|$1]]\" muutettiin nimelle \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Haluatko varmasti nimetä tämän käyttäjän uudelleen järjestelmänlaajuisesti?",
+	"centralauth-rename-deny": "Haluatko todella hylätä tämän pyynnön?",
 	"log-name-gblrename": "Järjestelmänlaajuisen tunnusten vaihtojen loki",
 	"log-description-gblrename": "Tässä lokissa ovat järjestelmänlaajuisesti tehdyt käyttäjätunnusten vaihdot.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|siirsi}} käyttäjätunnuksen $4 järjestelmänlaajuisesti nimelle $5",
@@ -520,5 +523,6 @@
 	"centralauth-uwbr-registration": "Rekisteröinnin päivämäärä",
 	"centralauth-uwbr-registration-nodate": "Tuntematon",
 	"centralauth-uwbr-editcount": "Muokkausten lukumäärä",
-	"centralauth-uwbr-intro": "Tällä sivulla on lueteltu ne tähän wikiin rekisteröityneet käyttäjät, joiden tunnuksen nimi tullaan vaihtamaan."
+	"centralauth-uwbr-intro": "Tällä sivulla on lueteltu ne tähän wikiin rekisteröityneet käyttäjät, joiden tunnuksen nimi tullaan vaihtamaan.",
+	"centralauth-delete-empty-account": "Tyhjä tunnus"
 }

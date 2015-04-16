@@ -43,7 +43,7 @@
 	"centralauth-disabled-dryrun": "Kontode ühendamise süsteem on praegu proovirežiimis. Seetõttu kontosid tegelikult ei ühendata.",
 	"centralauth-error-locked": "Sa ei saa toimetada, sest su kasutaja on lukustatud.",
 	"centralauth-error-unmerged": "Sa ei saa redigeerida, sest su konto on ühendamata.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Loe veel '''kontode ühendamise''' kohta]]…''",
+	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Loe veel '''ühtse sisselogimise''' kohta]]…''",
 	"centralauth-list-home-title": "Koduviki",
 	"centralauth-list-home-dryrun": "Ühendkonto hakkab kasutama selles vikis kasutusel olevat parooli ja e-posti aadressi.",
 	"centralauth-list-attached-title": "Ühendatud kontod",
