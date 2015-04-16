@@ -1945,7 +1945,7 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 
-		if ( isset( $this->mAttachedList ) ) {
+		if ( isset( $this->mAttachedList ) && $this->mAttachedList !== '' ) {
 			// We have a list already, probably from the cache.
 			$this->mAttachedArray = explode( "\n", $this->mAttachedList );
 
