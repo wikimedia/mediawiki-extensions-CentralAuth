@@ -512,6 +512,14 @@ class SpecialCentralAuth extends SpecialPage {
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
+			$flags = array();
+			foreach( array( 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ) as $option ) {
+				if ( $row['block-' . $option] ) {
+					$flags[] = $option;
+				}
+			}
+			$flags = implode( ',', $flags );
+			$optionMessage = BlockLogFormatter::formatBlockFlags( $flags, $this->getLanguage() );
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->parse();
 			} else {
@@ -520,6 +528,10 @@ class SpecialCentralAuth extends SpecialPage {
 				$expiryt = $this->getLanguage()->time( $row['block-expiry'], true );
 
 				$text = $this->msg( 'centralauth-admin-blocked2', $expiry, $expiryd, $expiryt )->parse();
+			}
+
+			if ( $flags ) {
+				$additionalHtml .= ' ' . $optionMessage;
 			}
 
 			if ( $row['block-reason'] ) {
