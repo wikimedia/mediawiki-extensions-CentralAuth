@@ -9,12 +9,12 @@
 	},
 	"mergeaccount": "د يومخيزې ننوتنې دريځ",
 	"centralauth-groupname": "ويکيمېډيا بنسټ",
-	"centralauth-rename-desc": "په نړيواله توگه د ګڼوڼ نوم بدلولو اجازه وکړه",
-	"centralauth-merge-denied": "معافي غواړو، خو تاسې ته اجازه نشته چې دې مخ ته ورشئ",
-	"centralauth-merge-step1-title": "د لاګن يونيفيکيشن شورو کړئ",
+	"centralauth-rename-desc": "د نړېوالو گڼونونو نوم بدلون پرېښودل",
+	"centralauth-merge-denied": "وبخښئ، تاسې ته د دې مخ د لاسرسي پرېښه نشته.",
+	"centralauth-merge-step1-title": "يومخيزه ننوتنه پيلول",
 	"centralauth-merge-step1-submit": "د ننوتلو د مالوماتو تاييد",
 	"centralauth-merge-step2-title": "د نورو گڼونونو تاييد",
-	"centralauth-merge-step2-submit": "د ننوتلو د مالوماتو تاييد",
+	"centralauth-merge-step2-submit": "د ننوتلو مالومات تاييدول",
 	"centralauth-merge-dryrun-or": "'''يا'''",
 	"centralauth-merge-step3-title": "يو گډ گڼون جوړول",
 	"centralauth-merge-step3-submit": "گڼونونه سره يوځای کول",
@@ -38,7 +38,7 @@
 	"centralauth-attach-submit": "گڼون لېږدول",
 	"centralauth": "نړېوال گڼون سمبالگر",
 	"centralauth-ro": "نړيوال گڼون مالومات",
-	"centralauth-admin-view": " گڼون مالومات وښايئ",
+	"centralauth-admin-view": "گڼون مالومات کتل",
 	"centralauth-admin-username": "کارن-نوم:",
 	"centralauth-admin-lookup-ro": "د کارن مالومات کتل",
 	"centralauth-admin-lookup-rw": "کارن گڼون مهارول",
@@ -166,5 +166,6 @@
 	"globalrenamequeue-request-approve-text": "نوم بدلون منل",
 	"centralauth-uwbr-name": "کارن-نوم",
 	"centralauth-uwbr-registration-nodate": "ناجوت",
-	"centralauth-uwbr-editcount": "د سمونونو شمېر"
+	"centralauth-uwbr-editcount": "د سمونونو شمېر",
+	"centralauth-delete-empty-account": "تش گڼون"
 }

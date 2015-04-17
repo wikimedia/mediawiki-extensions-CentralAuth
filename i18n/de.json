@@ -491,6 +491,7 @@
 	"apihelp-query+globaluserinfo-param-user": "Benutzer, über den die Informationen abgerufen werden sollen. Standard: Aktueller Benutzer.",
 	"apihelp-query+globaluserinfo-example-1": "Ruft Informationen über den aktuellen globalen Benutzer ab",
 	"apihelp-query+wikisets-description": "Zählt alle Wikisätze auf.",
+	"apihelp-query+wikisets-param-from": "Der Name des Wikisatzes, von dem gestartet werden soll.",
 	"apihelp-query+wikisets-param-limit": "Wie viele Wikisätze zurückgegeben werden sollen.",
 	"apihelp-query+wikisets-param-orderbyname": "Ergebnisse nach Namen sortieren.",
 	"apihelp-query+wikisets-example-1": "Wikisätze auflisten",
