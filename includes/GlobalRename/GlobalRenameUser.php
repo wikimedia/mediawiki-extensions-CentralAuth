@@ -187,12 +187,9 @@ class GlobalRenameUser {
 			'from' => $this->oldUser->getName(),
 			'to' => $this->newUser->getName(),
 			'renamer' => $this->performingUser->getName(),
-			'movepages' => $options['movepages'],
-			'suppressredirects' => $options['suppressredirects'],
 			'promotetoglobal' => false,
-			'reason' => $options['reason'],
 			'session' => $this->session,
-		);
+		) + $options;
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
 		return new LocalRenameUserJob( $title, $params );
