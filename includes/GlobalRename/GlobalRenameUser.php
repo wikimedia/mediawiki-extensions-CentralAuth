@@ -192,6 +192,7 @@ class GlobalRenameUser {
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
 			'session' => $this->session,
+			'force' => isset( $options['force'] ) && $options['force'],
 		);
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
