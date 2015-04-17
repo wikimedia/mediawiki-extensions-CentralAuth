@@ -90,7 +90,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 
 		// Global user who was renamed when migrated
 		$u = new CentralAuthTestUser(
-			'GlobalUser~' . self::safeWfWikiID(),
+			'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 			'GURP@ssword',
 			array( 'gu_id' => '1006' ),
 			array(
@@ -208,7 +208,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 			),
 			array(
 				'GlobalUser', 'GURP@ssword', true,
-				true, 'GlobalUser~' . self::safeWfWikiID(),
+				true, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				'wgCentralAuthCheckSULMigration enabled; correct password',
 			),
 			array(
@@ -248,7 +248,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	public function provideUpdateUserRenameAnnotation() {
 		return array(
 			array(
-				'GlobalUser', false, 'GlobalUser~' . self::safeWfWikiID(),
+				'GlobalUser', false, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				false, false,
 				'wgCentralAuthCheckSULMigration disabled; sulMigrationName set',
 			),
@@ -258,7 +258,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 				'wgCentralAuthCheckSULMigration disabled; sulMigrationName unset',
 			),
 			array(
-				'GlobalUser', true, 'GlobalUser~' . self::safeWfWikiID(),
+				'GlobalUser', true, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				true, true,
 				'wgCentralAuthCheckSULMigration enabled; sulMigrationName set',
 			),

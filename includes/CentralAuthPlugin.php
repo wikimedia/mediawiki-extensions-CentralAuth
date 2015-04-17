@@ -51,23 +51,25 @@ class CentralAuthPlugin extends AuthPlugin {
 		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
 			// Check to see if this is a user who was affected by a global username
 			// collision during a forced migration to central auth accounts.
-			$renamedUsername = $username . '~' . wfWikiID();
-			wfDebugLog( 'CentralAuth',
-				"CentralAuthMigration: Checking for migration of '{$username}' to '{$renamedUsername}'"
-			);
+			$renamedUsername = User::getCanonicalName( $username . '~' . str_replace( '_', '-', wfWikiID() ) );
+			if ( $renamedUsername !== false ) {
+				wfDebugLog( 'CentralAuth',
+					"CentralAuthMigration: Checking for migration of '{$username}' to '{$renamedUsername}'"
+				);
 
-			$renamed = new CentralAuthUser( $renamedUsername );
-			$passwordMatch = self::checkPassword( $renamed, $password );
+				$renamed = new CentralAuthUser( $renamedUsername );
+				$passwordMatch = self::checkPassword( $renamed, $password );
 
-			// Remember that the user was authenticated under a different name.
-			if ( $passwordMatch ) {
-				$this->sulMigrationName = $renamedUsername;
+				// Remember that the user was authenticated under a different name.
+				if ( $passwordMatch ) {
+					$this->sulMigrationName = $renamedUsername;
+				}
+
+				// Since we are falling back to check a force migrated user, we are done
+				// regardless of password match status. We don't want to try to
+				// automigrate or check detached accounts.
+				return $passwordMatch;
 			}
-
-			// Since we are falling back to check a force migrated user, we are done
-			// regardless of password match status. We don't want to try to
-			// automigrate or check detached accounts.
-			return $passwordMatch;
 		}
 
 		if ( !$central->exists() ) {
