@@ -65,7 +65,11 @@ class ForceRenameUsers extends Maintenance {
 	protected function rename( $row, DatabaseBase $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
-		$newNamePrefix = "$name~$wiki";
+		$newNamePrefix = User::getCanonicalName( "$name~$wiki", 'usable' );
+		if ( !$newNamePrefix ) {
+			$this->log( "ERROR: New name '$name~$wiki' is not valid" );
+			return;
+		}
 		$this->log( "Beginning rename of $newNamePrefix" );
 		$newCAUser = new CentralAuthUser( $newNamePrefix );
 		$count = 0;
