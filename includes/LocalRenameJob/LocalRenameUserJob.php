@@ -40,6 +40,9 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 
 		$oldUser = User::newFromName( $from );
+		// Forcibly set the username, don't validate it at all in case we're renaming
+		// someone with an invalid username
+		$oldUser->mName = $from;
 
 		$rename = new RenameuserSQL(
 			$from,
