@@ -258,7 +258,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 				'wgCentralAuthCheckSULMigration disabled; sulMigrationName unset',
 			),
 			array(
-				'GlobalUser', true, 'GlobalUser~' . self::safeWfWikiID(),
+				'GlobalUser', true, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				true, true,
 				'wgCentralAuthCheckSULMigration enabled; sulMigrationName set',
 			),
