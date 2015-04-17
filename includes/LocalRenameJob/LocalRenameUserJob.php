@@ -39,11 +39,18 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
 		}
 
-		$oldUser = User::newFromName( $from );
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
-			// Forcibly set the username, don't validate it at all in case we're renaming
-			// someone with an invalid username
-			$oldUser->mName = $from;
+			// If we're dealing with an invalid username, load the data ourselves to avoid
+			// any normalization at all done by User or Title.
+			$row = wfGetDB( DB_MASTER )->selectRow(
+				'user',
+				User::selectFields(),
+				array( 'user_name' => $from ),
+				__METHOD__
+			);
+			$oldUser = User::newFromRow( $row );
+		} else {
+			$oldUser = User::newFromName( $from );
 		}
 
 		$rename = new RenameuserSQL(
