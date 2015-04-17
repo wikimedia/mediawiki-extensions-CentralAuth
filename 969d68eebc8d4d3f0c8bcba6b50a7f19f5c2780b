@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e76d7c5_10fe3536",
+        "filename": "includes/CentralAuthPlugin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-04-17T18:18:15Z",
+      "side": 1,
+      "message": "Maybe this replacement duplication should be change to one method",
+      "revId": "969d68eebc8d4d3f0c8bcba6b50a7f19f5c2780b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
