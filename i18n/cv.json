@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Salam",
-			"Chuvash2014"
+			"Chuvash2014",
+			"Iltever"
 		]
 	},
 	"centralauth-merge-method-new": "çĕнĕ аккаунт",
@@ -13,7 +14,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|1=минут|минут}} каялла",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|1=сехет|сехет}} каялла",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|1=кун|кун}} каялла",
-	"centralauth-months-ago": "$1 {{PLURAL:$1|1=уйӑх|уйӑх}} каялла",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|уйӑх}} каялла",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла",
 	"centralauth-editgroup-noset": "(çук)",
 	"centralauth-editgroup-reason": "Сӑлтав:",

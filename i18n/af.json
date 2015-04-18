@@ -43,6 +43,7 @@
 	"centralauth-list-attached": "Die rekening genaamd \"$1\" op die volgende webwerwe was outomaties aangeheg by die versmelte rekening:",
 	"centralauth-list-unattached-title": "Onaangehegde rekeninge",
 	"centralauth-foreign-link": "Gebruiker $1 op $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bydrae|bydraes}} op $2",
 	"centralauth-merge-method-primary": "tuiswiki",
 	"centralauth-merge-method-empty": "geen bydraes",
 	"centralauth-merge-method-mail": "met e-pos bevestig",

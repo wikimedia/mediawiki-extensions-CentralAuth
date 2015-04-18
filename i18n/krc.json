@@ -33,7 +33,7 @@
 	"centralauth-admin-reason": "Чурум:",
 	"centralauth-admin-reason-other-select": "Башха чурум:",
 	"centralauth-admin-status-hidden": "Джашырылгъан:",
-	"globalusers": "Къошулуучуланы глобал списогу",
+	"globalusers": "Къошулуучуланы глобал тизмеси",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} алгъа",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|минут}} алгъа",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|сагъат}} алгъа",

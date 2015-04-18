@@ -358,6 +358,8 @@
 	"centralauth-rename-viewprogress": "Fottschredd belohre",
 	"centralauth-rename-progress-fieldset": "Leß met Zohjäng op einzel Wikis",
 	"centralauth-rename-progress-logs-fieldset": "Enndrähsch em logbohch",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Donn Der der Fottschredd belohre]])",
+	"centralauth-rename-progress-list-header": "Heh di Ömdäufe vun Metmaacher sin em Momang för alle Wikki em Jang:",
 	"centralauth-rename-movelog": "Di Sigg wohd beim Ömdeufe vum Metmaacher „[[Special:CentralAuth/$1|$1]]“ op „[[Special:CentralAuth/$2|$2]]“ automattesch met ömjenannt.",
 	"centralauth-rename-confirm": "Wells De verhaftesch heh dä Metmaacher met jemeinsamme Aanmäldonge ömdeufe?",
 	"log-name-gblrename": "Et Logbohch vum Ömdeufe vun Metmaacher met jemeinsamme Aanmäldonge",
