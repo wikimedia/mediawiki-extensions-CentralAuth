@@ -1904,7 +1904,7 @@ class CentralAuthUser extends AuthPluginUser {
 		$rows = array();
 		foreach ( self::getWikiList() as $wikiID ) {
 			$lb = wfGetLB( $wikiID );
-			$dbr = $lb->getConnection( DB_MASTER, array(), $wikiID );
+			$dbr = $lb->getConnection( DB_SLAVE, array(), $wikiID );
 			$id = $dbr->selectField(
 				"`$wikiID`.`user`",
 				'user_id',
