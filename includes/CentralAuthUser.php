@@ -1536,30 +1536,43 @@ class CentralAuthUser extends AuthPluginUser {
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
-			$block = new Block(
-				/* $address */ $this->mName,
-				/* $user */ $data['id'],
-				/* $by */ 0,
-				/* $reason */ $blockReason,
-				/* $timestamp */ wfTimestampNow(),
-				/* $auto */ false,
-				/* $expiry */ $dbw->getInfinity(),
-				/* anonOnly */ false,
-				/* $createAccount */ true,
-				/* $enableAutoblock */ true,
-				/* $hideName (ipb_deleted) */ true,
-				/* $blockEmail */ true,
-				/* $allowUsertalk */ false,
-				/* $byName */ $by
-			);
-
-			# On normal block, BlockIp hook would be run here, but doing
-			# that from CentralAuth doesn't seem a good idea...
-
-			if ( !$block->insert( $dbw ) ) {
-				return array( 'ipb_already_blocked' );
+			$oldBlock = Block::newFromTarget( $this->mName, null, false, $dbw );
+			if ( $oldBlock === null ) { // Not blocked locally. Attempt a new block.
+				$block = new Block(
+					/* $address */ $this->mName,
+					/* $user */ $data['id'],
+					/* $by */ 0,
+					/* $reason */ $blockReason,
+					/* $timestamp */ wfTimestampNow(),
+					/* $auto */ false,
+					/* $expiry */ $dbw->getInfinity(),
+					/* anonOnly */ false,
+					/* $createAccount */ true,
+					/* $enableAutoblock */ true,
+					/* $hideName (ipb_deleted) */ true,
+					/* $blockEmail */ true,
+					/* $allowUsertalk */ false,
+					/* $byName */ $by
+				);
+				# On normal block, BlockIp hook would be run here, but doing
+				# that from CentralAuth doesn't seem a good idea...
+				$blockSuccess = $block->insert( $dbw );
+			} else { // Already blocked locally. Attempt to modify the existing block.
+				$oldBlock->setBlocker( $by );
+				$oldBlock->prevents( 'createaccount', true );
+				$oldBlock->prevents( 'sendemail', true );
+				$oldBlock->prevents( 'editownusertalk', true );
+				$oldBlock->isAutoblocking( true );
+				$oldBlock->mExpiry = 'infinity';
+				$oldBlock->mReason = $blockReason;
+				$oldBlock->mHideName = true;
+				$blockSuccess = $oldBlock->update( $dbw );
 			}
 			# Ditto for BlockIpComplete hook.
+			if ( !$blockSuccess ) {
+				wfDebugLog( 'CentralAuth', "HideUser block failed for $this->mName@$wiki." );
+				return;
+			}
 
 			RevisionDeleteUser::suppressUserName( $this->mName, $data['id'], $dbw );
 
