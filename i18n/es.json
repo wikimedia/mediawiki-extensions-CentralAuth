@@ -402,7 +402,7 @@
 	"centralauth-rename-viewprogress": "Ver el progreso",
 	"centralauth-rename-progress-fieldset": "Lista de cuentas locales",
 	"centralauth-rename-progress-logs-fieldset": "Entradas del registro",
-	"centralauth-rename-progress-list-header": "El siguiente cambio de nombre global está actualmente en progreso:",
+	"centralauth-rename-progress-list-header": "El siguiente cambio de nombre global está actualmente en curso:",
 	"centralauth-rename-movelog": "Página trasladada automáticamente al cambiar el nombre del usuario \"[[Special:CentralAuth/$1|$1]]\" to \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "¿Seguro quieres renombrar globalmente a este usuario?",
 	"centralauth-rename-deny": "¿Seguro quieres denegar esta solicitud?",

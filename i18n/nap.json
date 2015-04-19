@@ -362,11 +362,15 @@
 	"centralauth-rename-viewprogress": "Vide prugresso",
 	"centralauth-rename-progress-fieldset": "Lista 'e ll'acount locale",
 	"centralauth-rename-progress-logs-fieldset": "Voce d' 'o riggistro",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|mmusta 'o prugresso]])",
+	"centralauth-rename-progress-list-header": "'E renommenaziune globbale ccà abbascio se stann'arricettann:",
 	"centralauth-rename-movelog": "Paggena spustata automatecamente pe' tramente ca se fa 'a renommena 'e ll'utente \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Overo vulite renommenà globbalmente st'utente?",
+	"centralauth-rename-deny": "Overamente vulite mannà arreto sta richiesta?",
 	"log-name-gblrename": "Nomme dint' 'o riggistro globbale",
 	"log-description-gblrename": "Stu riggistro cuntene 'evente 'e renommena globbale 'e ll'utente.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|ave rinommenato}} globbalmente $4 'n $5",
+	"logentry-gblrename-promote": "$1 globbalmente {{GENDER:$2|renommenaje}} $4 a $5",
 	"globalusermerge": "Aunione globale d'utente",
 	"globalusermerge-legend": "Aunisce cunto globbale",
 	"centralauth-usermerge-form-newuser": "Nomme utente finale",
@@ -509,5 +513,6 @@
 	"centralauth-uwbr-registration": "Data 'e riggistrazione",
 	"centralauth-uwbr-registration-nodate": "Scanusciuto",
 	"centralauth-uwbr-editcount": "Cagna cunto",
-	"centralauth-uwbr-intro": "Sta paggena elenca ll'utente riggistrate int'a sta wiki ca sarranno renommenate."
+	"centralauth-uwbr-intro": "Sta paggena elenca ll'utente riggistrate int'a sta wiki ca sarranno renommenate.",
+	"centralauth-delete-empty-account": "Sbacanta cunto"
 }
