@@ -548,11 +548,6 @@ class SpecialCentralAuth extends SpecialPage {
 
 				$additionalHtml .= ' ' . $msg->parse();
 			}
-
-			if ( $row['block-expiry'] == 'infinity' ) {
-				return $text . $additionalHtml;
-			}
-
 		} else {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
 		}
@@ -562,7 +557,8 @@ class SpecialCentralAuth extends SpecialPage {
 			'Special:Log/block',
 			$text,
 			$this->msg( 'centralauth-admin-blocklog' )->text(),
-			'page=User:' . urlencode( $this->mUserName ) ) . $additionalHtml;
+			'page=User:' . urlencode( $this->mUserName )
+		) . $additionalHtml;
 	}
 
 	/**
