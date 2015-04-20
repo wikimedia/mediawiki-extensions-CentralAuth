@@ -50,11 +50,12 @@ class ApiDeleteGlobalAccount extends ApiBase {
 				'reason' => $params['reason']
 			) );
 		} else {
-			$this->getResult()->addValue(
-				'error',
-				null,
-				$this->getResult()->convertStatusToArray( $status )
-			);
+			if ( is_callable( array( $this, 'getErrorFormatter' ) ) ) {
+				$error = $this->getErrorFormatter()->arrayFromStatus( $status );
+			} else {
+				$error = $this->getResult()->convertStatusToArray( $status );
+			}
+			$this->getResult()->addValue( 'error', null, $error );
 		}
 	}
 
