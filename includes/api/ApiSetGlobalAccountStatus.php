@@ -75,11 +75,12 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 				'reason' => $reason
 			) );
 		} else {
-			$this->getResult()->addValue(
-				'error',
-				null,
-				$this->getResult()->convertStatusToArray( $status )
-			);
+			if ( is_callable( array( $this, 'getErrorFormatter' ) ) ) {
+				$error = $this->getErrorFormatter()->arrayFromStatus( $status );
+			} else {
+				$error = $this->getResult()->convertStatusToArray( $status );
+			}
+			$this->getResult()->addValue( 'error', null, $error );
 			$this->getResult()->addValue( null, $this->getModuleName(), array(
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),
