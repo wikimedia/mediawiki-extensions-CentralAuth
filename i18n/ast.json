@@ -93,7 +93,6 @@
 	"centralauth-admin-info-locked": "Candáu:",
 	"centralauth-admin-info-hidden": "Nivel d'anubrimientu:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupu global|Grupos globales}}:",
-	"centralauth-admin-info-nogroups": "dengún",
 	"centralauth-admin-info-attached": "Númberu de cuentes axuntes:",
 	"centralauth-admin-info-unattached": "Númberu de cuentes ensin axuntar:",
 	"centralauth-admin-yes": "sí",

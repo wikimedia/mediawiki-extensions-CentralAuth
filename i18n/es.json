@@ -135,7 +135,6 @@
 	"centralauth-admin-info-locked": "Deshabilitada globalmente:",
 	"centralauth-admin-info-hidden": "Nivel de ocultación:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupo|Grupos}} globales:",
-	"centralauth-admin-info-nogroups": "ninguno",
 	"centralauth-admin-yes": "sí",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "de los listados públicos",

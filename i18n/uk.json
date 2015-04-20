@@ -113,7 +113,6 @@
 	"centralauth-admin-info-locked": "Заблокований:",
 	"centralauth-admin-info-hidden": "Прихований рівень:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальна група|Глобальні групи}}:",
-	"centralauth-admin-info-nogroups": "немає",
 	"centralauth-admin-info-attached": "Кількість приєднаних облікових записів:",
 	"centralauth-admin-info-unattached": "Кількість неприєднаних облікових записів:",
 	"centralauth-admin-yes": "так",

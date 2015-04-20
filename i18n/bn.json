@@ -86,7 +86,6 @@
 	"centralauth-admin-info-locked": "বন্ধ:",
 	"centralauth-admin-info-hidden": "লুকানোর মাত্রা:",
 	"centralauth-admin-info-groups": "বৈশ্বিক {{PLURAL:$1|দল}}:",
-	"centralauth-admin-info-nogroups": "কিছু নয়",
 	"centralauth-admin-info-attached": "সংযুক্ত অ্যাকাউন্টের সংখ্যা:",
 	"centralauth-admin-info-unattached": "অসংযুক্ত অ্যাকাউন্টের সংখ্যা:",
 	"centralauth-admin-yes": "হ্যাঁ",

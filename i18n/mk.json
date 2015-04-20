@@ -95,7 +95,6 @@
 	"centralauth-admin-info-locked": "Заклучен:",
 	"centralauth-admin-info-hidden": "Ниво на скриеност:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Глобална група|Глобални групи}}:",
-	"centralauth-admin-info-nogroups": "ниедна",
 	"centralauth-admin-info-attached": "Број на приврзани сметки:",
 	"centralauth-admin-info-unattached": "Бтој на неприврзани сметки:",
 	"centralauth-admin-yes": "да",

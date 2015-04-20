@@ -121,7 +121,6 @@
 	"centralauth-admin-info-locked": "锁定：",
 	"centralauth-admin-info-hidden": "隐藏级别：",
 	"centralauth-admin-info-groups": "全域{{PLURAL:$1|用户组}}：",
-	"centralauth-admin-info-nogroups": "无",
 	"centralauth-admin-info-attached": "附加的账户数量：",
 	"centralauth-admin-info-unattached": "未附加的账户数量：",
 	"centralauth-admin-yes": "是",

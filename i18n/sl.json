@@ -92,7 +92,6 @@
 	"centralauth-admin-info-locked": "Zaklenjen:",
 	"centralauth-admin-info-hidden": "Raven skritosti:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Globalna skupina|Globalni skupini|Globalne skupine}}:",
-	"centralauth-admin-info-nogroups": "nobena",
 	"centralauth-admin-yes": "da",
 	"centralauth-admin-no": "ne",
 	"centralauth-admin-hidden-list": "iz javnih seznamov",

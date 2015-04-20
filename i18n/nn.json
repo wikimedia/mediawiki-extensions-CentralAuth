@@ -99,7 +99,6 @@
 	"centralauth-admin-info-locked": "Låst:",
 	"centralauth-admin-info-hidden": "Grad av løyning:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Global gruppe|Globale grupper}}:",
-	"centralauth-admin-info-nogroups": "ingen",
 	"centralauth-admin-yes": "ja",
 	"centralauth-admin-no": "nei",
 	"centralauth-admin-hidden-list": "frå offentlege lister",

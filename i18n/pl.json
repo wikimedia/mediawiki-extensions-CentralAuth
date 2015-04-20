@@ -118,7 +118,6 @@
 	"centralauth-admin-info-locked": "Zablokowane",
 	"centralauth-admin-info-hidden": "Ukryte",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupa globalna|Grupy globalne}}:",
-	"centralauth-admin-info-nogroups": "brak",
 	"centralauth-admin-info-attached": "Liczba przyłączonych kont:",
 	"centralauth-admin-info-unattached": "Liczba nieprzyłączonych kont:",
 	"centralauth-admin-yes": "tak",

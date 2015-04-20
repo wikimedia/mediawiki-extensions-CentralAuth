@@ -98,7 +98,6 @@
 	"centralauth-admin-info-locked": "Zamčeno:",
 	"centralauth-admin-info-hidden": "Úroveň skrytí:",
 	"centralauth-admin-info-groups": "Globální {{PLURAL:$1|skupina|skupiny}}:",
-	"centralauth-admin-info-nogroups": "žádná",
 	"centralauth-admin-info-attached": "Počet připojených účtů:",
 	"centralauth-admin-info-unattached": "Počet nepřipojených účtů:",
 	"centralauth-admin-yes": "ano",

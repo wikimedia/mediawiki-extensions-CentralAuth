@@ -107,7 +107,6 @@
 	"centralauth-admin-info-locked": "Bloquejat:",
 	"centralauth-admin-info-hidden": "Nivell ocult:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grup global|Grups globals}}:",
-	"centralauth-admin-info-nogroups": "cap",
 	"centralauth-admin-info-attached": "Nombre de comptes associats:",
 	"centralauth-admin-info-unattached": "Nombre de comptes no associats:",
 	"centralauth-admin-yes": "sí",

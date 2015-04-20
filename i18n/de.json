@@ -105,7 +105,6 @@
 	"centralauth-admin-info-locked": "Gesperrt:",
 	"centralauth-admin-info-hidden": "Versteckt:",
 	"centralauth-admin-info-groups": "Globale {{PLURAL:$1|Gruppe|Gruppen}}:",
-	"centralauth-admin-info-nogroups": "keine",
 	"centralauth-admin-info-attached": "Anzahl der verbundenen Benutzerkonten:",
 	"centralauth-admin-info-unattached": "Anzahl der nicht verbundenen Benutzerkonten:",
 	"centralauth-admin-yes": "Ja",

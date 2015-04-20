@@ -96,7 +96,6 @@
 	"centralauth-admin-info-locked": "Læst:",
 	"centralauth-admin-info-hidden": "Falinn:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Altækur hópur|Altækir hópar}}:",
-	"centralauth-admin-info-nogroups": "enginn",
 	"centralauth-admin-yes": "já",
 	"centralauth-admin-no": "nei",
 	"centralauth-admin-hidden-list": "frá almennum listum",

@@ -49,7 +49,6 @@
 	"centralauth-admin-info-locked": "تړل شوي:",
 	"centralauth-admin-info-hidden": "پټ پوړ:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|نړېواله ډله|نړېوالې ډلې}}:",
-	"centralauth-admin-info-nogroups": "هېڅ",
 	"centralauth-admin-yes": "هو",
 	"centralauth-admin-no": "نه",
 	"centralauth-admin-hidden-list": "د ټولگړي لړليک نه",

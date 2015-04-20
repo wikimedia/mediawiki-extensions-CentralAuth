@@ -115,7 +115,6 @@
 	"centralauth-admin-info-locked": "已鎖定：",
 	"centralauth-admin-info-hidden": "隱藏層級：",
 	"centralauth-admin-info-groups": "全域{{PLURAL:$1|群組}}：",
-	"centralauth-admin-info-nogroups": "無",
 	"centralauth-admin-info-attached": "已連結的帳號數量：",
 	"centralauth-admin-info-unattached": "未連結的帳號數量：",
 	"centralauth-admin-yes": "是",

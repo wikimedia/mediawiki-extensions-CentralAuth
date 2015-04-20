@@ -21,7 +21,6 @@
 	"centralauth-admin-info-username": "Къошулуучуну аты:",
 	"centralauth-admin-info-registered": "Регистрацияны ётгени:",
 	"centralauth-admin-info-groups": "Глобал {{PLURAL:$1|къауум|къауумла}}:",
-	"centralauth-admin-info-nogroups": "бир да",
 	"centralauth-admin-yes": "хоу",
 	"centralauth-admin-no": "огъай",
 	"centralauth-admin-blocked-reason": "Чурум: $1",

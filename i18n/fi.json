@@ -108,7 +108,6 @@
 	"centralauth-admin-info-locked": "Lukittu:",
 	"centralauth-admin-info-hidden": "Piilotuksen taso:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Järjestelmänlaajuinen ryhmä|Järjestelmänlaajuiset ryhmät}}:",
-	"centralauth-admin-info-nogroups": "ei mitään",
 	"centralauth-admin-info-attached": "Liitettyjen tunnusten lukumäärä:",
 	"centralauth-admin-info-unattached": "Liittämättömien tunnusten lukumäärä:",
 	"centralauth-admin-yes": "kyllä",

@@ -130,7 +130,6 @@
 	"centralauth-admin-info-locked": "Bloqué :",
 	"centralauth-admin-info-hidden": "Masqué :",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|groupe|groupes}} au total :",
-	"centralauth-admin-info-nogroups": "aucun",
 	"centralauth-admin-info-attached": "Nombre de comptes reliés :",
 	"centralauth-admin-info-unattached": "Nombre de comptes non reliés :",
 	"centralauth-admin-yes": "oui",
