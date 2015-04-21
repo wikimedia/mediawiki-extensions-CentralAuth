@@ -779,10 +779,18 @@ class CentralAuthHooks {
 			Hooks::run( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
 			CentralAuthUser::getSessionCache()->set( $key, $data, 60 );
 
+			$query = array( 'token' => $token );
+			// On account creation, where a central user is added to the DB,
+			// make sure the login wiki request actually sees the new row.
+			// ChronologyProtector does not work cross-domain (it uses cookies).
+			if ( CentralAuthUser::centralLBHasRecentMasterChanges() ) {
+				$query['CentralAuthLatest'] = 1;
+			}
+
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 			$context->getOutput()->redirect( // expands to PROTO_CURRENT
-				wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), "token=$token" )
+				wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), $query )
 			);
 			// Set $inject_html to some text to bypass the LoginForm redirection
 			$inject_html .= '<!-- do CentralAuth redirect -->';
