@@ -17,13 +17,15 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	/*private*/ var $mName;
 	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 5;
+	/*private*/ var $mVersion = 6;
 	/*private*/ var $mDelayInvalidation = 0;
 
 	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
 	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
 	var $mBeingRenamed, $mBeingRenamedArray;
 	protected $mAttachedInfo;
+	/** @var integer */
+	protected $mCasToken = 0;
 
 	static $mCacheVars = array(
 		'mGlobalId',
@@ -44,6 +46,7 @@ class CentralAuthUser extends AuthPluginUser {
 		# avoid unserialize() overhead
 		'mAttachedList',
 
+		'mCasToken',
 		'mVersion',
 	);
 
@@ -84,9 +87,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public static function getCentralDB() {
 		global $wgCentralAuthDatabase, $wgCentralAuthReadOnly;
+
 		if ( $wgCentralAuthReadOnly ) {
 			throw new CentralAuthReadOnlyError();
 		}
+
 		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
 			$wgCentralAuthDatabase );
 	}
@@ -98,12 +103,31 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_SLAVE, 'centralauth',
-			$wgCentralAuthDatabase );
+
+		return wfGetLB( $wgCentralAuthDatabase )->getConnection(
+			DB_SLAVE, 'centralauth', $wgCentralAuthDatabase );
 	}
 
+	/**
+	 * Check hasOrMadeRecentMasterChanges() on the CentralAuth load balancer
+	 * and whether 'CentralAuthLatest' is set for HTTP requests (which implies
+	 * that a write from a prior request needs to be seen here)
+	 *
+	 * @return bool
+	 */
+	public static function centralLBHasRecentMasterChanges() {
+		global $wgCentralAuthDatabase;
+
+		return RequestContext::getMain()->getRequest()->getCheck( 'CentralAuthLatest' )
+			|| wfGetLB( $wgCentralAuthDatabase )->hasOrMadeRecentMasterChanges();
+	}
+
+	/**
+	 * Wait for the CentralAuth DB slaves to catch up
+	 */
 	public static function waitForSlaves() {
 		global $wgCentralAuthDatabase;
+
 		wfWaitForSlaves( false, $wgCentralAuthDatabase );
 	}
 
@@ -113,6 +137,34 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	public static function getLocalDB( $wikiID ) {
 		return wfGetLB( $wikiID )->getConnection( DB_MASTER, array(), $wikiID );
+	}
+
+	/**
+	 * @return DatabaseBase Master or slave based on shouldUseMasterDB()
+	 * @throws CentralAuthReadOnlyError
+	 */
+	protected function getSafeReadDB() {
+		return $this->shouldUseMasterDB() ? self::getCentralDB() : self::getCentralSlaveDB();
+	}
+
+	/**
+	 * Get (and init if needed) the value of mFromMaster
+	 *
+	 * @return bool
+	 */
+	protected function shouldUseMasterDB() {
+		if ( $this->mFromMaster === null ) {
+			$this->mFromMaster = self::centralLBHasRecentMasterChanges();
+			// Use the master DB on POST since:
+			// (a) State changes may need to occur for centralauth tables
+			// (b) Such requests route to the master datacenter, so using the master is fast
+			// @TODO: dependency inject this as a flag...there are *many* callers though...
+			if ( RequestContext::getMain()->getRequest()->wasPosted() || PHP_SAPI === 'cli' ) {
+				$this->mFromMaster = true;
+			}
+		}
+
+		return $this->mFromMaster;
 	}
 
 	/**
@@ -200,16 +252,15 @@ class CentralAuthUser extends AuthPluginUser {
 
 		wfDebugLog( 'CentralAuthVerbose', "Loading state for global user {$this->mName} from DB" );
 
-		// Get the master. We want to make sure we've got up to date information
-		// since we're caching it.
-		$dbw = self::getCentralDB();
+		$fromMaster = $this->shouldUseMasterDB();
+		$db = $this->getSafeReadDB(); // matches $fromMaster above
 
-		$row = $dbw->selectRow(
+		$row = $db->selectRow(
 			array( 'globaluser', 'localuser' ),
 			array(
 				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
 				'gu_locked', 'gu_hidden', 'gu_registration', 'gu_email',
-				'gu_email_authenticated', 'gu_home_db',
+				'gu_email_authenticated', 'gu_home_db', 'gu_cas_token'
 			),
 			array( 'gu_name' => $this->mName ),
 			__METHOD__,
@@ -220,9 +271,9 @@ class CentralAuthUser extends AuthPluginUser {
 		);
 
 		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
-		$renameUser = $renameUserStatus->getNames( null, 'master' );
+		$renameUser = $renameUserStatus->getNames( null, $fromMaster ? 'master' : 'slave' );
 
-		$this->loadFromRow( $row, $renameUser, true );
+		$this->loadFromRow( $row, $renameUser, $fromMaster );
 		$this->saveToCache();
 	}
 
@@ -238,16 +289,16 @@ class CentralAuthUser extends AuthPluginUser {
 
 		wfDebugLog( 'CentralAuthVerbose', "Loading groups for global user {$this->mName}" );
 
-		$dbr = self::getCentralDB(); // We need the master.
+		$db = $this->getSafeReadDB();
 
-		$res = $dbr->select(
+		$res = $db->select(
 			array( 'global_group_permissions', 'global_user_groups' ),
 			array( 'ggp_permission', 'ggp_group' ),
 			array( 'ggp_group=gug_group', 'gug_user' => $this->getId() ),
 			__METHOD__
 		);
 
-		$resSets = $dbr->select(
+		$resSets = $db->select(
 			array( 'global_user_groups', 'global_group_restrictions', 'wikiset' ),
 			array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
 			array( 'ggr_group=gug_group', 'ggr_set=ws_id', 'gug_user' => $this->getId() ),
@@ -297,12 +348,14 @@ class CentralAuthUser extends AuthPluginUser {
 				wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
 			$this->mFromMaster = $fromMaster;
 			$this->mHomeWiki = $row->gu_home_db;
+			$this->mCasToken = $row->gu_cas_token;
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
 			$this->mFromMaster = $fromMaster;
 			$this->mLocked = false;
 			$this->mHidden = '';
+			$this->mCasToken = 0;
 		}
 
 		if ( $renameUser ) {
@@ -382,11 +435,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Save cachable data to memcached.
 	 */
 	protected function saveToCache() {
-		// Make sure the data is fresh
-		if ( isset( $this->mGlobalId ) && !$this->mFromMaster ) {
-			$this->resetState();
-		}
-
 	 	$obj = $this->getCacheObject();
 	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
 		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400 );
@@ -1805,15 +1853,20 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array
 	 */
 	private function doListUnattached() {
-		$dbw = self::getCentralDB();
+		// Make sure lazy-loading in listUnattached() works, as we
+		// may need to *switch* to using the DB master for this query
+		$db = self::centralLBHasRecentMasterChanges()
+			? self::getCentralDB()
+			: $this->getSafeReadDB();
 
-		$result = $dbw->select(
+		$result = $db->select(
 			array( 'localnames', 'localuser' ),
 			array( 'ln_wiki' ),
 			array( 'ln_name' => $this->mName, 'lu_name IS NULL' ),
 			__METHOD__,
 			array(),
-			array( 'localuser' => array( 'LEFT OUTER JOIN', array( 'ln_wiki=lu_wiki', 'ln_name=lu_name' ) ) )
+			array( 'localuser' => array( 'LEFT OUTER JOIN',
+				array( 'ln_wiki=lu_wiki', 'ln_name=lu_name' ) ) )
 		);
 
 		$dbs = array();
@@ -1952,9 +2005,9 @@ class CentralAuthUser extends AuthPluginUser {
 
 		wfDebugLog( 'CentralAuthVerbose', "Loading attached wiki list for global user {$this->mName} from DB" );
 
-		$dbw = self::getCentralDB();
+		$db = $this->getSafeReadDB();
 
-		$result = $dbw->select( 'localuser',
+		$result = $db->select( 'localuser',
 			array( 'lu_wiki' ),
 			array( 'lu_name' => $this->mName ),
 			__METHOD__ );
@@ -2029,9 +2082,9 @@ class CentralAuthUser extends AuthPluginUser {
 			return $this->mAttachedInfo;
 		}
 
-		$dbw = self::getCentralDB();
+		$db = $this->getSafeReadDB();
 
-		$result = $dbw->select(
+		$result = $db->select(
 			'localuser',
 			array(
 				'lu_wiki',
@@ -2499,6 +2552,8 @@ class CentralAuthUser extends AuthPluginUser {
 			return;
 		}
 
+		$newCasToken = $this->mCasToken + 1;
+
 		$dbw = self::getCentralDB();
 		$dbw->update( 'globaluser',
 			array( # SET
@@ -2509,14 +2564,28 @@ class CentralAuthUser extends AuthPluginUser {
 				'gu_hidden' => $this->getHiddenLevel(),
 				'gu_email' => $this->mEmail,
 				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp ),
-				'gu_home_db' => $this->getHomeWiki()
+				'gu_home_db' => $this->getHomeWiki(),
+				'gu_cas_token' => $newCasToken
 			),
 			array( # WHERE
-				'gu_id' => $this->mGlobalId
+				'gu_id' => $this->mGlobalId,
+				'gu_cas_token' => $this->mCasToken
 			),
 			__METHOD__
 		);
 
+		if ( !$dbw->affectedRows() ) {
+			// Maybe the problem was a missed cache update; clear it to be safe
+			$this->invalidateCache();
+			// User was changed in the meantime or loaded with stale data
+			MWExceptionHandler::logException( new MWException(
+				"CAS update failed on gu_cas_token for user ID '{$this->mGlobalId}';" .
+				"the version of the user to be saved is older than the current version."
+			) );
+			return;
+		}
+
+		$this->mCasToken = $newCasToken;
 		$this->invalidateCache();
 	}
 
