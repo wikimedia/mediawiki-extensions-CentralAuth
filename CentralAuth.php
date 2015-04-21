@@ -268,6 +268,12 @@ $wgCentralAuthEnableGlobalRenameRequest = false;
 $wgCentralAuthCheckSULMigration = false;
 
 /**
+ * Try to use slave DBs for reads instead of the master all the time
+ * @var bool
+ */
+$wgCentralAuthUseSlaves = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
