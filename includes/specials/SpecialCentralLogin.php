@@ -6,9 +6,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $subpage ) {
-
 		// Enforce $wgSecureLogin
 		global $wgSecureLogin;
+
 		$request = $this->getRequest();
 		if ( $wgSecureLogin
 			&& $request->detectProtocol() == 'http'
@@ -114,6 +114,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		);
 		$cache->set( $key, $data, 60 );
 
+		$query = array( 'token' => $token );
+		// On account creation, where a central user is added to the DB,
+		// make sure the local wiki request actually sees the new row.
+		// ChronologyProtector would otherwise delay if there is high lag.
+		if ( CentralAuthUser::centralLBHasRecentMasterChanges() ) {
+			$query['CentralAuthLatest'] = 1;
+		}
+
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 		$url = $wiki->getFullUrl( 'Special:CentralLogin/complete' );
@@ -124,7 +132,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		//currentProto = the login form's protocol, so we go back to here. May then redir to finalProto
 		$url = $info['currentProto'] . ':' . $url;
 
-		$url = wfAppendQuery( $url, array( 'token' => $token ) ); // expands to PROTO_CURRENT if $url doesn't have protocol
+		$url = wfAppendQuery( $url, $query ); // expands to PROTO_CURRENT if $url doesn't have protocol
 		Hooks::run( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
 		$this->getOutput()->redirect( $url );
 	}
