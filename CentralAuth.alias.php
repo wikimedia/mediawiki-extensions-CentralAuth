@@ -225,11 +225,14 @@ $specialPageAliases['eo'] = array(
 
 /** Spanish (español) */
 $specialPageAliases['es'] = array(
+	'CentralAuth' => array( 'Información_de_la_cuenta_global' ),
 	'MergeAccount' => array( 'Fusionar_cuenta_global', 'FusionarCuentaGlobal' ),
 	'GlobalGroupMembership' => array( 'Permisos_de_usuario_global', 'PermisosUsuarioGlobal' ),
 	'GlobalGroupPermissions' => array( 'Permisos_de_grupo_global', 'PermisosGrupoGlobal' ),
 	'WikiSets' => array( 'AjustesWiki', 'EditarAjustesWiki' ),
 	'GlobalUsers' => array( 'Usuarios_globales' ),
+	'GlobalRenameRequest' => array( 'Solicitud_de_renombrado_global' ),
+	'UsersWhoWillBeRenamed' => array( 'Usuarios_que_cambiarán_de_nombre', 'Usuarias_que_cambiarán_de_nombre' ),
 );
 
 /** Estonian (eesti) */

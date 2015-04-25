@@ -21,7 +21,8 @@
 			"What here area team",
 			"SkyDaisy9",
 			"朝彦",
-			"Miya"
+			"Miya",
+			"W.CC"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -61,8 +62,8 @@
 	"centralauth-list-home-title": "ホームウィキ",
 	"centralauth-list-home-dryrun": "このウィキで設定されたパスワードとメールアドレスが統合されたアカウントに設定されます。",
 	"centralauth-list-attached-title": "関連付けされるアカウント",
-	"centralauth-list-attached": "以下のサイトの「$1」というアカウントは、統一アカウントに自動的に関連付けられました:",
-	"centralauth-list-attached-dryrun": "以下のサイトの「$1」というアカウントは、統一アカウントに自動的に関連付けられます:",
+	"centralauth-list-attached": "{{PLURAL:$2|以下のサイトの「$1」というアカウント|以下のサイトの「$1」というアカウント群}}は、統一アカウントに自動的に関連付けられました:",
+	"centralauth-list-attached-dryrun": "{{PLURAL:$2|以下のサイトの「$1」というアカウント|以下のサイトの「$1」というアカウント群}}は、統一アカウントに自動的に関連付けられます:",
 	"centralauth-list-unattached-title": "関連付けされないアカウント",
 	"centralauth-list-unattached": "「$1」という{{PLURAL:$2|アカウント}}は、以下の{{PLURAL:$2|サイト}}であなたのアカウントとして自動承認されませんでした。\n{{PLURAL:$2|このアカウント|これらのアカウント}}は、最初に指定したアカウントとパスワードが異なる可能性が高いです:",
 	"centralauth-foreign-link": "$2 上の利用者 $1",
@@ -113,7 +114,6 @@
 	"centralauth-admin-info-locked": "ロック:",
 	"centralauth-admin-info-hidden": "秘匿レベル:",
 	"centralauth-admin-info-groups": "グローバル {{PLURAL:$1|グループ}}:",
-	"centralauth-admin-info-nogroups": "なし",
 	"centralauth-admin-info-attached": "関連付けられたアカウントの数",
 	"centralauth-admin-info-unattached": "関連付けられていないアカウントの数",
 	"centralauth-admin-yes": "はい",
