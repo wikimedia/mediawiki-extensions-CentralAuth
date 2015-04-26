@@ -46,6 +46,7 @@
 	"centralauth-list-unattached-title": "Nepripojeni računi",
 	"centralauth-list-unattached": "Račun \"$1\" nije mogao biti automatski potvrđen kao da pripada Vama na slijedećim sajtovima;\nmoguće je da taj račun ima različitu šifru od Vašeg glavnog računa:",
 	"centralauth-foreign-link": "Korisnik $1 na $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} na $2",
 	"centralauth-merge-method-primary": "osnovna wiki",
 	"centralauth-merge-method-empty": "nema doprinosa",
 	"centralauth-merge-method-mail": "potvrđeno putem e-maila",

@@ -6,7 +6,8 @@
 			"Spiritia",
 			"Stanqo",
 			"Turin",
-			"Vladimir Penov"
+			"Vladimir Penov",
+			"StanProg"
 		]
 	},
 	"mergeaccount": "Състояние на обединението на сметки",
@@ -50,6 +51,7 @@
 	"centralauth-list-unattached-title": "Неприкрепени сметки",
 	"centralauth-list-unattached": "Сметката „$1“ не може да бъде автоматично потвърдена като ваша собственост на следните сайтове;\nнай-вероятно има различна парола от основната сметка:",
 	"centralauth-foreign-link": "Потребител $1 от $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|принос|приноси}} на $2",
 	"centralauth-merge-method-primary": "домашно уики",
 	"centralauth-merge-method-empty": "няма приноси",
 	"centralauth-merge-method-mail": "потвърден по е-поща",
