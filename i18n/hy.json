@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xelgen"
+			"Xelgen",
+			"Դավիթ Սարոյան"
 		]
 	},
 	"centralauth-foreign-link": "$2-ից $1 մասնակից",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2-ում",
 	"centralauth-merge-method-login": "ստեծղվել է մուտքի ժամանակ",
 	"centralauth-admin-blocklog": "արգելափակման տեղեկամատյան"
 }

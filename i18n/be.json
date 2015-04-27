@@ -4,7 +4,8 @@
 			"Yury Tarasievich",
 			"Тест",
 			"Хомелка",
-			"Дзяніс Тутэйшы"
+			"Дзяніс Тутэйшы",
+			"Чаховіч Уладзіслаў"
 		]
 	},
 	"mergeaccount": "Стан уніфікацыі рахункаў",
@@ -15,10 +16,14 @@
 	"centralauth-merge-step3-submit": "Аб'яднаць рахункі",
 	"centralauth-complete": "Аб'яднанне рахункаў завершана!",
 	"centralauth-incomplete": "Аб'яднанне рахункаў не завершана!",
+	"centralauth-foreign-link": "Удзельнік $1 у $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|праўка ў $2|праўкі ў $2|правак у $2}}",
+	"centralauth-merge-method-login": "створаны пры ўваходзе ў сістэму",
 	"centralauth-finish-password": "Пароль:",
 	"centralauth-admin-username": "Імя ўдзельніка:",
 	"centralauth-admin-yes": "так",
 	"centralauth-admin-no": "не",
+	"centralauth-admin-blocklog": "журнал блакіровак",
 	"centralauth-admin-reason": "Прычына:",
 	"centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|}} назад",
 	"centralauth-minutes-ago": "$1 мінут{{PLURAL:$1|у|ы|}} назад",

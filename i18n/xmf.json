@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Silovan"
+		]
+	},
+	"centralauth-foreign-link": "მახვარებუ $1  $2-ს",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|თირუა|თირუა}} $2-ს",
+	"centralauth-admin-blocklog": "ბლოკირაფაშ ისტორია"
+}

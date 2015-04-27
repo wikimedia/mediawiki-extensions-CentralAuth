@@ -477,6 +477,8 @@
 	"apihelp-globaluserrights-param-remove": "Entfernt den Benutzer von diesen globalen Gruppen.",
 	"apihelp-globaluserrights-param-reason": "Grund für die Änderung.",
 	"apihelp-query+globalallusers-description": "Alle globalen Benutzer auflisten.",
+	"apihelp-query+globalallusers-param-from": "Der Benutzername, bei dem die Auflistung beginnen soll.",
+	"apihelp-query+globalallusers-param-to": "Der Benutzername, bei dem die Auflistung enden soll.",
 	"apihelp-query+globalallusers-param-prefix": "Sucht nach allen Benutzern, die mit diesem Wert beginnen.",
 	"apihelp-query+globalallusers-param-group": "Benutzer auf die angegebenen globalen Gruppen beschränken.",
 	"apihelp-query+globalallusers-param-excludegroup": "Benutzer in den angegebenen globalen Gruppen ausschließen.",
