@@ -1113,28 +1113,8 @@ class CentralAuthHooks {
 
 		// Checks passed, create the user
 		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: {$_SERVER['REQUEST_URI']}\n" );
-		try {
-			$status = $user->addToDatabase();
-		} catch ( Exception $e ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
-				. " {$e->getMessage()}" );
-			throw $e;
-		}
-
-		if ( $status === null ) {
-			// MW before 1.21 -- ok, continue
-		} elseif ( !$status->isOK() ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
-			return false;
-		}
-
-		$wgAuth->initUser( $user, true );
-
-		# Notify hooks (e.g. Newuserlog)
-		Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
-
-		# Update user count
-		DeferredUpdates::addUpdate( new SiteStatsUpdate( 0, 0, 0, 0, 1 ) );
+		$creator = new CentralAuthLocalAccountCreator( $userName );
+		$creator->create();
 
 		return true;
 	}

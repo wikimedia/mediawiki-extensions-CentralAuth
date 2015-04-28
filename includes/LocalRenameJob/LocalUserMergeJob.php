@@ -59,22 +59,16 @@ class LocalUserMergeJob extends LocalRenameJob {
 	 * @throws Exception
 	 */
 	private function maybeCreateNewUser( $newName ) {
-		global $wgAuth;
 		$user = User::newFromName( $newName );
 		if ( $user->getId() ) {
 			// User already exists, nothing to do.
 			return $user;
 		}
 
-		// Logic from CentralAuthHooks::attemptAddUser
-		$user->loadDefaults( $newName );
-		$status = $user->addToDatabase();
-		if ( !$status->isOK() ) {
-			$this->updateStatus( 'failed' );
-			throw new Exception( "User::addToDatabase failed for $newName: {$status->getWikiText()}" );
-		}
-		$wgAuth->initUser( $user, true );
-		Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
+		$creator = new CentralAuthLocalAccountCreator( $newName );
+		$creator->create();
+		$user->clearInstanceCache( 'name' );
+		$user->load( User::READ_LATEST );
 		return $user;
 	}
 
