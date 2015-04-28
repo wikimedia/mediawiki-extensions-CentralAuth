@@ -453,7 +453,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
 			$code = $this->getUser()->getOption( 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
-			wfRunHooks( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
+			Hooks::run( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
 			$script .= "\n" . Xml::encodeJsCall( 'mediaWiki.messages.set', array(
 				array(
 					'centralauth-centralautologin-logged-in' =>

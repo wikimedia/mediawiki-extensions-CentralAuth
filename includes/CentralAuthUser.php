@@ -1149,7 +1149,7 @@ class CentralAuthUser extends AuthPluginUser {
 		global $wgLocalDatabases;
 		static $wikiList;
 		if ( is_null( $wikiList ) ) {
-			wfRunHooks( 'CentralAuthWikiList', array( &$wikiList ) );
+			Hooks::run( 'CentralAuthWikiList', array( &$wikiList ) );
 			if ( is_null( $wikiList ) ) {
 				$wikiList = $wgLocalDatabases;
 			}

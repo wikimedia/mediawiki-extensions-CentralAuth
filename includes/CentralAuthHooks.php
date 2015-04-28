@@ -708,7 +708,7 @@ class CentralAuthHooks {
 				'finalProto'    => $finalProto, // http or https for very final page
 				'currentProto'  => $request->detectProtocol() // current proto (in case login is https, but final page is http)
 			);
-			wfRunHooks( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
+			Hooks::run( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
 			$wgMemc->set( $key, $data, 60 );
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
@@ -1098,7 +1098,7 @@ class CentralAuthHooks {
 		// Give other extensions a chance to stop auto creation.
 		$user->loadDefaults( $userName );
 		$abortMessage = '';
-		if ( !wfRunHooks( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
+		if ( !Hooks::run( 'AbortAutoAccount', array( $user, &$abortMessage ) ) ) {
 			// In this case we have no way to return the message to the user,
 			// but we can log it.
 			wfDebug( __METHOD__ . ": denied by other extension: $abortMessage\n" );
@@ -1131,7 +1131,7 @@ class CentralAuthHooks {
 		$wgAuth->initUser( $user, true );
 
 		# Notify hooks (e.g. Newuserlog)
-		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+		Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
 
 		# Update user count
 		DeferredUpdates::addUpdate( new SiteStatsUpdate( 0, 0, 0, 0, 1 ) );
@@ -1626,7 +1626,7 @@ class CentralAuthHooks {
 		// Allow other extensions (like OAuth) to temporarily prevent CentralAuth tokens.
 		// This is meant to be a temporary hack, until we establish a more unified Authz
 		// stack in core.
-		if ( !wfRunHooks( 'CentralAuthAbortCentralAuthToken' ) ) {
+		if ( !Hooks::run( 'CentralAuthAbortCentralAuthToken' ) ) {
 			return true;
 		}
 
@@ -1759,7 +1759,7 @@ class CentralAuthHooks {
 		}
 
 		$recommendReload = false;
-		wfRunHooks( 'CentralAuthIsUIReloadRecommended', array( $user, &$recommendReload ) );
+		Hooks::run( 'CentralAuthIsUIReloadRecommended', array( $user, &$recommendReload ) );
 		return $recommendReload;
 	}
 

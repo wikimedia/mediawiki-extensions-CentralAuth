@@ -74,7 +74,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 			throw new Exception( "User::addToDatabase failed for $newName: {$status->getWikiText()}" );
 		}
 		$wgAuth->initUser( $user, true );
-		wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+		Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
 		return $user;
 	}
 

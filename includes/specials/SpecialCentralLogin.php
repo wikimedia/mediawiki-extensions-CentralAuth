@@ -125,7 +125,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$url = $info['currentProto'] . ':' . $url;
 
 		$url = wfAppendQuery( $url, array( 'token' => $token ) ); // expands to PROTO_CURRENT if $url doesn't have protocol
-		wfRunHooks( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
+		Hooks::run( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
 		$this->getOutput()->redirect( $url );
 	}
 
@@ -209,7 +209,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Allow other extensions to modify the returnTo and returnToQuery
-		wfRunHooks( 'CentralAuthPostLoginRedirect', array(
+		Hooks::run( 'CentralAuthPostLoginRedirect', array(
 			&$attempt['returnTo'],
 			&$attempt['returnToQuery'],
 			$attempt['stickHTTPS'],

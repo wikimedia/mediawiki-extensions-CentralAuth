@@ -118,7 +118,7 @@ class GlobalUserMerge {
 			$this->databaseUpdates->merge( $oldName, $newName );
 			$oldCAUser->removeAntiSpoof();
 
-			wfRunHooks( 'CentralAuthGlobalUserMerged',
+			Hooks::run( 'CentralAuthGlobalUserMerged',
 				array( $oldName, $newName, $oldId, $newId ) );
 		}
 

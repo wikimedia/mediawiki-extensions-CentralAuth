@@ -43,7 +43,7 @@ class CreateLocalAccount extends Maintenance {
 			$wgAuth->updateUser( $user );
 
 			# Notify hooks (e.g. Newuserlog)
-			wfRunHooks( 'AuthPluginAutoCreate', array( $user ) );
+			Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
 
 			# Update user count
 			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
