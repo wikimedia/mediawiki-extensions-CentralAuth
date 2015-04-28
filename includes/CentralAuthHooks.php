@@ -1286,15 +1286,15 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $groups
+	 * @param &$vars
 	 * @return bool
 	 */
-	static function onMakeGlobalVariablesScript( $groups ) {
+	static function onMakeGlobalVariablesScript( &$vars ) {
 		global $wgUser;
 		if ( !$wgUser->isAnon() ) {
 			$centralUser = CentralAuthUser::getInstance( $wgUser );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
-				$groups['wgGlobalGroups'] = $centralUser->getGlobalGroups();
+				$vars['wgGlobalGroups'] = $centralUser->getGlobalGroups();
 			}
 		}
 		return true;
