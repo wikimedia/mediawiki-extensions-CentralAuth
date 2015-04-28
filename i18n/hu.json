@@ -105,7 +105,6 @@
 	"centralauth-admin-info-locked": "Lezárva:",
 	"centralauth-admin-info-hidden": "Rejtettségi szint:",
 	"centralauth-admin-info-groups": "Globális {{PLURAL:$1|csoport|csoportok}}",
-	"centralauth-admin-info-nogroups": "nincs",
 	"centralauth-admin-info-attached": "Csatolt fiókok száma:",
 	"centralauth-admin-info-unattached": "Nem csatolt fiókok száma:",
 	"centralauth-admin-yes": "igen",
@@ -335,5 +334,6 @@
 	"centralauth-usermerge-form-adduser": "Felhasználó hozzáadása",
 	"centralauth-usermerge-form-deleteuser": "Felhasználó eltávolítása",
 	"globalrenamequeue-request-userinfo-global": "* szerkesztő: [[Special:CentralAuth/$1]]\n* elsődleges wiki: $2\n* új név: [[Special:CentralAuth/$3]]",
-	"centralauth-log-gblrename-oldname": "Korábbi felhasználónév:"
+	"centralauth-log-gblrename-oldname": "Korábbi felhasználónév:",
+	"centralauth-delete-empty-account": "Üres fiók"
 }
