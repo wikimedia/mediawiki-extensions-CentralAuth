@@ -534,6 +534,7 @@ $wgResourceModules['ext.centralauth.centralautologin.clearcookie'] = array(
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.noflash'] = array(
+	'position' => 'top',
 	'styles' => 'ext.centralauth.noflash.css',
 ) + $commonModuleInfo;
 
@@ -546,10 +547,12 @@ $wgResourceModules['ext.centralauth.globaluserautocomplete'] = array(
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.globalusers'] = array(
+	'position' => 'top',
 	'styles' => 'ext.centralauth.globalusers.css',
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.centralauth.globalgrouppermissions'] = array(
+	'position' => 'top',
 	'styles' => 'ext.centralauth.globalgrouppermissions.css',
 ) + $commonModuleInfo;
 
