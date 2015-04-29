@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_df42b63e",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-04-29T17:10:56Z",
+      "side": 1,
+      "message": "It sort of is, inside $mp-\u003echeckPermissions().",
+      "revId": "aa0dc08c4d33452125394d9a8184430ec7e8d93e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
