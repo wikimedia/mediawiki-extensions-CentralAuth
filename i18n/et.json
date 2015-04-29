@@ -128,7 +128,7 @@
 	"centralauth-admin-delete-button": "Kustuta see konto",
 	"centralauth-admin-delete-confirm": "Kas tahad tõesti selle konto kustutada?",
 	"centralauth-admin-delete-success": "Globaalne konto \"<nowiki>$1</nowiki>\" on edukalt kustutatud.",
-	"centralauth-admin-nonexistent": "Kasutajal \"<nowiki>$1</nowiki>\" pole globaalset kontot.",
+	"centralauth-admin-nonexistent": "Globaalset kontot nimega \"<nowiki>$1</nowiki>\" pole.",
 	"centralauth-admin-delete-nonexistent": "Tõrge: Globaalset kontot \"<nowiki>$1</nowiki>\" pole olemas.",
 	"centralauth-token-mismatch": "Läkitatud vormi töötlemine ei õnnestunud seansiandmete kaotsimineku tõttu.",
 	"centralauth-state-mismatch": "Tõrge: Sattusid selle kasutajaga seoses redigeerimiskonflikti. Palun kontrolli oma muudatust ja proovi uuesti.",
