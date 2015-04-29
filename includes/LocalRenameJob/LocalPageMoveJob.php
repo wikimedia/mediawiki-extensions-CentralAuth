@@ -41,12 +41,6 @@ class LocalPageMoveJob extends Job {
 			wfDebugLog( 'CentralAuthRename', "Invalid page move: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
 			return;
 		}
-		// @todo should this check be in MovePage instead?
-		if ( $newPage->getArticleID( Title::GAID_FOR_UPDATE ) ) {
-			// Don't overwrite an existing page, bug T97536
-			wfDebugLog( 'CentralAuthRename', "Target page exists: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
-			return;
-		}
 
 		$msg = wfMessage( 'centralauth-rename-movelog' )
 			->params( $this->params['from'], $this->params['to'] )
