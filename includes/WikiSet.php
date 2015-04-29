@@ -126,8 +126,8 @@ class WikiSet {
 	 */
 	public static function newFromName( $name, $useCache = true ) {
 		if ( $useCache ) {
-			global $wgMemc;
-			$data = $wgMemc->get( self::memcKey( "name:" . md5( $name ) ) );
+			$cache = ObjectCache::getMainWANInstance();
+			$data = $cache->get( self::memcKey( "name:" . md5( $name ) ) );
 			if ( $data ) {
 				if ( $data['mVersion'] == self::VERSION ) {
 					$ws = new WikiSet( null, null );
@@ -157,8 +157,8 @@ class WikiSet {
 	 */
 	public static function newFromID( $id, $useCache = true ) {
 		if ( $useCache ) {
-			global $wgMemc;
-			$data = $wgMemc->get( self::memcKey( $id ) );
+			$cache = ObjectCache::getMainWANInstance();
+			$data = $cache->get( self::memcKey( $id ) );
 			if ( $data ) {
 				if ( $data['mVersion'] == self::VERSION ) {
 					$ws = new WikiSet( null, null );
@@ -215,20 +215,20 @@ class WikiSet {
 	}
 
 	public function purge() {
-		global $wgMemc;
-		$wgMemc->delete( self::memcKey( $this->mId ) );
-		$wgMemc->delete( self::memcKey( "name:" . md5( $this->mName ) ) );
+		$cache = ObjectCache::getMainWANInstance();
+		$cache->delete( self::memcKey( $this->mId ) );
+		$cache->delete( self::memcKey( "name:" . md5( $this->mName ) ) );
 	}
 
 	public function saveToCache() {
-		global $wgMemc;
+		$cache = ObjectCache::getMainWANInstance();
 		$data = array();
 		foreach ( self::$mCacheVars as $var ) {
 			if ( isset( $this->$var ) ) {
 				$data[$var] = $this->$var;
 			}
 		}
-		$wgMemc->set( self::memcKey( $this->mId ), $data );
+		$cache->set( self::memcKey( $this->mId ), $data );
 	}
 
 	/**
