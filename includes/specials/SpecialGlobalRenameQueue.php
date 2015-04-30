@@ -193,6 +193,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		)->parseAsBlock();
 
 		$steward = CentralAuthUser::newFromId( $req->getPerformer() );
+		if ( $steward === false ) {
+			throw new Exception(
+				"The perfomer's global user id ({$req->getPerformer()}) does not exist in the database"
+			);
+		}
 		if ( $steward->isAttached() ) {
 			$stewardLink = Title::makeTitleSafe( NS_USER, $steward->getName() )->getFullURL();
 		} else {
