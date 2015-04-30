@@ -143,8 +143,14 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		}
 
 		foreach ( $data['usernames'] as $field ) {
-			if ( $field['name'] ) {
-				$this->oldCAUsers[] = new CentralAuthUser( User::getCanonicalName( $field['name'] ) );
+			if ( trim( $field['name'] ) !== '' ) {
+				$name = User::getCanonicalName( $field['name'] );
+				if ( $name === $newUser->getName() ) {
+					// The new user is also specified as one of the targets,
+					// DWIM and ignore it
+					continue;
+				}
+				$this->oldCAUsers[] = new CentralAuthUser( $name );
 			}
 		}
 
