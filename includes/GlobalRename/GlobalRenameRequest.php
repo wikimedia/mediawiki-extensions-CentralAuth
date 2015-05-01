@@ -441,13 +441,6 @@ class GlobalRenameRequest {
 			return $status;
 		}
 
-		// Check to see if there are unattached accounts in the wiki family
-		// that would clash with the desired name.
-		if ( $centralUser->listUnattached() ) {
-			$status->fatal( 'globalrenamerequest-newname-err-taken' );
-			return $status;
-		}
-
 		return $status;
 	}
 
