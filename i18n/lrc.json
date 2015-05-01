@@ -500,6 +500,7 @@
 	"apihelp-setglobalaccountstatus-param-reason": "دلیل آلشت دئن حال و بال کاریار.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "ام دی بی 5 دل وه حایی ایسنی قوول بی<username>:<hidden>:<locked>، سی دیارکاری ری وه ری کاریا ویرایشتی.<locked> نه سی 1 که قلف بیه میزونکاری بکید، 0 واز بیه.",
 	"apihelp-setglobalaccountstatus-example-1": "قلف کردن سرتاسری حساو سی دلیل \"اسپم\" داشتن کاریار[[User:Example]]",
+	"apihelp-setglobalaccountstatus-example-2": "واز کردن قلف و نهاگری یه گل حساو سرتاسری سی [[User:Example]] وا ای دلیل \"مه می تونم\"",
 	"centralauth-log-gblrename-oldname": "نوم کاریاری دمایی",
 	"centralauth-contribs-locked": "ای حساو سرتاسری قلف بیه.\nسی دونسمنیا بیشتر سیل [[Special:CentralAuth/$1|جزئیات حساو سرتاسری]] بکیت",
 	"centralauth-contribs-locked-log": "ای حساو سرتاسری قلف بیه.\nنهاتری پهرستنومه قلف کردن د هار سی سرچشمه بیین اومائه:",
