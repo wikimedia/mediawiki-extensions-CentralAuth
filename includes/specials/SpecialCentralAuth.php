@@ -91,6 +91,17 @@ class SpecialCentralAuth extends SpecialPage {
 			$continue = $this->doSubmit();
 		}
 
+		// Show just a user friendly message when a rename is in progress
+		try {
+			$globalUser->queryAttached();
+		} catch ( Exception $e ) {
+			$renameStatus = new GlobalRenameUserStatus( $this->mUserName );
+			if ( count( $renameStatus->getStatuses() ) ) {
+				$this->showRenameInProgressError();
+				return;
+			}
+		}
+
 		$this->mAttachedLocalAccounts = $globalUser->queryAttached();
 		$this->mUnattachedLocalAccounts = $globalUser->queryUnattached();
 
@@ -99,6 +110,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->showNonexistentError();
 			return;
 		}
+
 
 		$this->showUsernameForm();
 		if ( $continue && $globalUser->exists()  ) {
@@ -121,6 +133,12 @@ class SpecialCentralAuth extends SpecialPage {
 	private function showNonexistentError() {
 		$this->showError( 'centralauth-admin-nonexistent', $this->mUserName );
 		$this->showUsernameForm();
+	}
+
+	private function showRenameInProgressError() {
+		$this->showError( 'centralauth-admin-rename-in-progress', $this->mUserName );
+		$special = new SpecialGlobalRenameProgress();
+		$special->showLogExtract( $this->mUserName );
 	}
 
 	/**
