@@ -31,7 +31,7 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|дзень|дзён}} таму",
 	"centralauth-months-ago": "$1 месяц{{PLURAL:$1||аў}} таму",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гадоў}} таму",
-	"centralauth-prefs-status": "Стан глабальнага рахунку:",
+	"centralauth-prefs-status": "Стан глабальнага рахунка:",
 	"centralauth-prefs-not-managed": "Уніфікаваны рахунак не ўжываецца",
 	"centralauth-prefs-unattached": "Не пацверджана",
 	"centralauth-prefs-complete": "Усё ў парадку!",
