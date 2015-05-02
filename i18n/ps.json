@@ -91,7 +91,7 @@
 	"centralauth-admin-multi-bot": "وروستي بدلونونه",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|ثانيه|ثانيې}} دمخه",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|دقيقه|دقيقې}} دمخه",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|ساعت|ساعته}} دمخه",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|گړۍ|گړۍ}} دمخه",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|ورځ|ورځې}} دمخه",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|مياشت|مياشتې}} دمخه",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|کال|کاله}} پخوا",
