@@ -171,6 +171,7 @@
 	"centralauth-admin-reason": "{{Identical|Reason}}",
 	"centralauth-admin-reason-other": "{{Identical|Other/additional reason}}",
 	"centralauth-admin-reason-other-select": "Shown on the [[Special:CentralAuth]] form in the drop down menu.\n\nSee also:\n* {{msg-mw|Centralauth-admin-status-reasons}}\n{{Identical|Other reason}}",
+	"centralauth-admin-rename-in-progress" : "Shown on [[Special:CentralAuth]] when the account is currently being renamed. Parameters:\n* $1 - global account's name",
 	"centralauth-admin-unhide-nonexistent": "Used as error message. Parameters:\n* $1 - global account's name",
 	"centralauth-admin-status": "This message is used as label of fieldset.",
 	"centralauth-admin-status-intro": "Introduction of the form.",
