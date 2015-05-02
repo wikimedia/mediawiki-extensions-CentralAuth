@@ -1,0 +1,470 @@
+{
+	"name": "Central Auth",
+	"author": "Brion Vibber",
+	"url": "https://www.mediawiki.org/wiki/Extension:CentralAuth",
+	"descriptionmsg": "centralauth-desc",
+	"type": "specialpage",
+	"GroupPermissions": {
+		"steward": {
+			"centralauth-unmerge": true,
+			"centralauth-lock": true,
+			"centralauth-oversight": true
+		},
+		"*": {
+			"centralauth-merge": true
+		}
+	},
+	"AvailableRights": [
+		"centralauth-merge",
+		"centralauth-unmerge",
+		"centralauth-lock",
+		"centralauth-oversight",
+		"globalgrouppermissions",
+		"globalgroupmembership",
+		"centralauth-autoaccount",
+		"centralauth-rename",
+		"centralauth-usermerge"
+	],
+	"ExtensionFunctions": [
+		"CentralAuthHooks::onRunExtensionFunctions"
+	],
+	"SpecialPages": {
+		"CentralAuth": "SpecialCentralAuth",
+		"CentralLogin": "SpecialCentralLogin",
+		"CentralAutoLogin": "SpecialCentralAutoLogin",
+		"MergeAccount": "SpecialMergeAccount",
+		"GlobalGroupMembership": "SpecialGlobalGroupMembership",
+		"GlobalGroupPermissions": "SpecialGlobalGroupPermissions",
+		"WikiSets": "SpecialWikiSets",
+		"GlobalUsers": "SpecialGlobalUsers",
+		"MultiLock": "SpecialMultiLock",
+		"GlobalRenameUser": "SpecialGlobalRenameUser",
+		"GlobalRenameProgress": "SpecialGlobalRenameProgress",
+		"GlobalUserMerge": "SpecialGlobalUserMerge",
+		"UsersWhoWillBeRenamed": "SpecialUsersWhoWillBeRenamed"
+	},
+	"SpecialPageGroups": {
+		"CentralAuth": "users",
+		"MergeAccount": "login",
+		"GlobalGroupMembership": "users",
+		"GlobalGroupPermissions": "users",
+		"WikiSets": "wiki",
+		"GlobalUsers": "users",
+		"MultiLock": "users"
+	},
+	"JobClasses": {
+		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
+		"LocalRenameUserJob": "LocalRenameUserJob",
+		"LocalUserMergeJob": "LocalUserMergeJob",
+		"LocalPageMoveJob": "LocalPageMoveJob"
+	},
+	"LogTypes": [
+		"globalauth",
+		"gblrights",
+		"gblrename"
+	],
+	"LogNames": {
+		"globalauth": "centralauth-log-name",
+		"gblrights": "centralauth-rightslog-name"
+	},
+	"LogHeaders": {
+		"globalauth": "centralauth-log-header",
+		"gblrights": "centralauth-rightslog-header"
+	},
+	"LogActions": {
+		"globalauth/delete": "centralauth-log-entry-delete",
+		"globalauth/lock": "centralauth-log-entry-lock",
+		"globalauth/unlock": "centralauth-log-entry-unlock",
+		"globalauth/hide": "centralauth-log-entry-hide",
+		"globalauth/unhide": "centralauth-log-entry-unhide",
+		"globalauth/lockandhid": "centralauth-log-entry-lockandhide",
+		"globalauth/setstatus": "centralauth-log-entry-chgstatus",
+		"suppress/setstatus": "centralauth-log-entry-chgstatus",
+		"suppress/cadelete": "centralauth-log-entry-delete",
+		"gblrights/usergroups": "centralauth-rightslog-entry-usergroups",
+		"gblrights/groupperms": "centralauth-rightslog-entry-groupperms",
+		"gblrights/groupprms2": "centralauth-rightslog-entry-groupperms2",
+		"gblrights/groupprms3": "centralauth-rightslog-entry-groupperms3"
+	},
+	"LogActionsHandlers": {
+		"gblrights/grouprename": "CentralAuthHooks::onHandleGrouprenameLogEntry",
+		"gblrename/rename": "GlobalRenameLogFormatter",
+		"gblrename/promote": "GlobalRenameLogFormatter",
+		"gblrename/merge": "GlobalUserMergeLogFormatter",
+		"gblrights/newset": "CentralAuthHooks::onHandleWikiSetLogEntry",
+		"gblrights/setrename": "CentralAuthHooks::onHandleWikiSetLogEntry",
+		"gblrights/setnewtype": "CentralAuthHooks::onHandleWikiSetLogEntry",
+		"gblrights/setchange": "CentralAuthHooks::onHandleWikiSetLogEntry",
+		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry"
+	},
+	"APIModules": {
+		"deleteglobalaccount": "ApiDeleteGlobalAccount",
+		"setglobalaccountstatus": "ApiSetGlobalAccountStatus",
+		"centralauthtoken": "ApiCentralAuthToken",
+		"globaluserrights": "ApiGlobalUserRights"
+	},
+	"APIMetaModules": {
+		"globaluserinfo": "ApiQueryGlobalUserInfo"
+	},
+	"APIListModules": {
+		"globalgroups": "ApiQueryGlobalGroups",
+		"wikisets": "ApiQueryWikiSets",
+		"globalallusers": "ApiQueryGlobalAllUsers"
+	},
+	"MessagesDirs": {
+		"SpecialCentralAuth": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"SpecialCentralAuthAliases": "CentralAuth.alias.php",
+		"SpecialCentralAuthAliasesNoTranslate": "CentralAuth.notranslate-alias.php"
+	},
+	"AutoloadClasses": {
+		"SpecialCentralAuth": "includes/specials/SpecialCentralAuth.php",
+		"SpecialCentralLogin": "includes/specials/SpecialCentralLogin.php",
+		"SpecialMergeAccount": "includes/specials/SpecialMergeAccount.php",
+		"SpecialGlobalUsers": "includes/specials/SpecialGlobalUsers.php",
+		"GlobalUsersPager": "includes/specials/SpecialGlobalUsers.php",
+		"SpecialMultiLock": "includes/specials/SpecialMultiLock.php",
+		"SpecialGlobalRenameRequest": "includes/specials/SpecialGlobalRenameRequest.php",
+		"SpecialGlobalRenameQueue": "includes/specials/SpecialGlobalRenameQueue.php",
+		"RenameQueueTablePager": "includes/specials/SpecialGlobalRenameQueue.php",
+		"SpecialSulRenameWarning": "includes/specials/SpecialSulRenameWarning.php",
+		"CentralAuthUser": "includes/CentralAuthUser.php",
+		"CentralAuthPlugin": "includes/CentralAuthPlugin.php",
+		"CentralAuthHooks": "includes/CentralAuthHooks.php",
+		"CentralAuthSuppressUserJob": "includes/SuppressUserJob.php",
+		"WikiSet": "includes/WikiSet.php",
+		"SpecialCentralAutoLogin": "includes/specials/SpecialCentralAutoLogin.php",
+		"CentralAuthUserArray": "includes/CentralAuthUserArray.php",
+		"CentralAuthUserArrayFromResult": "includes/CentralAuthUserArray.php",
+		"SpecialGlobalGroupMembership": "includes/specials/SpecialGlobalGroupMembership.php",
+		"CentralAuthGroupMembershipProxy": "includes/CentralAuthGroupMembershipProxy.php",
+		"SpecialGlobalGroupPermissions": "includes/specials/SpecialGlobalGroupPermissions.php",
+		"SpecialWikiSets": "includes/specials/SpecialWikiSets.php",
+		"ApiQueryGlobalUserInfo": "includes/api/ApiQueryGlobalUserInfo.php",
+		"ApiDeleteGlobalAccount": "includes/api/ApiDeleteGlobalAccount.php",
+		"ApiSetGlobalAccountStatus": "includes/api/ApiSetGlobalAccountStatus.php",
+		"ApiQueryGlobalGroups": "includes/api/ApiQueryGlobalGroups.php",
+		"ApiQueryWikiSets": "includes/api/ApiQueryWikiSets.php",
+		"ApiQueryGlobalAllUsers": "includes/api/ApiQueryGlobalAllUsers.php",
+		"ApiGlobalUserRights": "includes/api/ApiGlobalUserRights.php",
+		"ApiCentralAuthToken": "includes/api/ApiCentralAuthToken.php",
+		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
+		"CARCFeedFormatter": "rcfeed/CARCFeedFormatter.php",
+		"IRCColourfulCARCFeedFormatter": "rcfeed/IRCColourfulCARCFeedFormatter.php",
+		"JSONCARCFeedFormatter": "rcfeed/JSONCARCFeedFormatter.php",
+		"LocalRenameJob": "includes/LocalRenameJob/LocalRenameJob.php",
+		"LocalRenameUserJob": "includes/LocalRenameJob/LocalRenameUserJob.php",
+		"LocalUserMergeJob": "includes/LocalRenameJob/LocalUserMergeJob.php",
+		"LocalPageMoveJob": "includes/LocalRenameJob/LocalPageMoveJob.php",
+		"SpecialGlobalRenameUser": "includes/specials/SpecialGlobalRenameUser.php",
+		"SpecialGlobalUserMerge": "includes/specials/SpecialGlobalUserMerge.php",
+		"SpecialGlobalRenameProgress": "includes/specials/SpecialGlobalRenameProgress.php",
+		"GlobalRenameLogFormatter": "includes/GlobalRename/GlobalRenameLogFormatter.php",
+		"GlobalUserMergeLogFormatter": "includes/GlobalRename/GlobalUserMergeLogFormatter.php",
+		"GlobalRenameUser": "includes/GlobalRename/GlobalRenameUser.php",
+		"GlobalRenameUserStatus": "includes/GlobalRename/GlobalRenameUserStatus.php",
+		"GlobalRenameRequest": "includes/GlobalRename/GlobalRenameRequest.php",
+		"GlobalRenameUserValidator": "includes/GlobalRename/GlobalRenameUserValidator.php",
+		"GlobalRenameUserDatabaseUpdates": "includes/GlobalRename/GlobalRenameUserDatabaseUpdates.php",
+		"GlobalRenameUserLogger": "includes/GlobalRename/GlobalRenameUserLogger.php",
+		"GlobalUserMergeLogger": "includes/GlobalRename/GlobalUserMergeLogger.php",
+		"GlobalUserMerge": "includes/GlobalRename/GlobalUserMerge.php",
+		"GlobalUserMergeDatabaseUpdates": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
+		"CentralAuthTestCaseUsingDatabase": "tests/CentralAuthTestCaseUsingDatabase.php",
+		"CentralAuthTestUser": "tests/CentralAuthTestUser.php",
+		"SpecialUsersWhoWillBeRenamed": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
+		"UsersWhoWillBeRenamedPager": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
+		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
+		"EmailableUser": "includes/EmailableUser.php"
+	},
+	"ResourceModules": {
+		"ext.centralauth": {
+			"scripts": "ext.centralauth.js",
+			"styles": "ext.centralauth.css",
+			"dependencies": [
+				"mediawiki.util",
+				"jquery.spinner"
+			],
+			"messages": [
+				"centralauth-merge-method-primary",
+				"centralauth-merge-method-primary-desc",
+				"centralauth-merge-method-new",
+				"centralauth-merge-method-new-desc",
+				"centralauth-merge-method-empty",
+				"centralauth-merge-method-empty-desc",
+				"centralauth-merge-method-password",
+				"centralauth-merge-method-password-desc",
+				"centralauth-merge-method-mail",
+				"centralauth-merge-method-mail-desc",
+				"centralauth-merge-method-admin",
+				"centralauth-merge-method-admin-desc",
+				"centralauth-merge-method-login",
+				"centralauth-merge-method-login-desc",
+				"centralauth-admin-delete-confirm",
+				"centralauth-completelogin-back"
+			]
+		},
+		"ext.centralauth.centralautologin": {
+			"scripts": "ext.centralauth.centralautologin.js",
+			"styles": "ext.centralauth.centralautologin.css",
+			"position": "top",
+			"targets": [
+				"mobile",
+				"desktop"
+			],
+			"dependencies": [
+				"mediawiki.notify",
+				"mediawiki.jqueryMsg"
+			]
+		},
+		"ext.centralauth.centralautologin.clearcookie": {
+			"scripts": "ext.centralauth.centralautologin.clearcookie.js",
+			"position": "top",
+			"targets": [
+				"mobile",
+				"desktop"
+			]
+		},
+		"ext.centralauth.noflash": {
+			"position": "top",
+			"styles": "ext.centralauth.noflash.css"
+		},
+		"ext.centralauth.globaluserautocomplete": {
+			"scripts": "ext.centralauth.globaluserautocomplete.js",
+			"dependencies": [
+				"jquery.suggestions",
+				"mediawiki.api"
+			]
+		},
+		"ext.centralauth.globalusers": {
+			"position": "top",
+			"styles": "ext.centralauth.globalusers.css"
+		},
+		"ext.centralauth.globalgrouppermissions": {
+			"position": "top",
+			"styles": "ext.centralauth.globalgrouppermissions.css"
+		},
+		"ext.centralauth.globalrenameuser": {
+			"scripts": "ext.centralauth.globalrenameuser.js",
+			"dependencies": [
+				"mediawiki.util"
+			],
+			"messages": [
+				"centralauth-rename-confirm",
+				"centralauth-usermerge-confirm"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "CentralAuth/modules"
+	},
+	"Hooks": {
+		"SetupAfterCache": [
+			"CentralAuthHooks::onSetupAfterCache"
+		],
+		"AuthPluginSetup": [
+			"CentralAuthHooks::onAuthPluginSetup"
+		],
+		"AddNewAccount": [
+			"CentralAuthHooks::onAddNewAccount"
+		],
+		"GetPreferences": [
+			"CentralAuthHooks::onGetPreferences"
+		],
+		"AbortLogin": [
+			"CentralAuthHooks::onAbortLogin"
+		],
+		"AbortNewAccount": [
+			"CentralAuthHooks::onAbortNewAccount"
+		],
+		"AbortAutoAccount": [
+			"CentralAuthHooks::onAbortAutoAccount"
+		],
+		"UserLoginComplete": [
+			"CentralAuthHooks::onUserLoginComplete"
+		],
+		"UserLoadFromSession": [
+			"CentralAuthHooks::onUserLoadFromSession"
+		],
+		"UserLogout": [
+			"CentralAuthHooks::onUserLogout"
+		],
+		"UserLogoutComplete": [
+			"CentralAuthHooks::onUserLogoutComplete"
+		],
+		"GetCacheVaryCookies": [
+			"CentralAuthHooks::onGetCacheVaryCookies"
+		],
+		"ResourceLoaderGetConfigVars": [
+			"CentralAuthHooks::onResourceLoaderGetConfigVars"
+		],
+		"UserArrayFromResult": [
+			"CentralAuthHooks::onUserArrayFromResult"
+		],
+		"UserGetEmail": [
+			"CentralAuthHooks::onUserGetEmail"
+		],
+		"UserGetEmailAuthenticationTimestamp": [
+			"CentralAuthHooks::onUserGetEmailAuthenticationTimestamp"
+		],
+		"UserGetReservedNames": [
+			"CentralAuthHooks::onUserGetReservedNames"
+		],
+		"UserInvalidateEmailComplete": [
+			"CentralAuthHooks::onUserInvalidateEmailComplete"
+		],
+		"UserSetEmail": [
+			"CentralAuthHooks::onUserSetEmail"
+		],
+		"UserSaveSettings": [
+			"CentralAuthHooks::onUserSaveSettings"
+		],
+		"UserSetEmailAuthenticationTimestamp": [
+			"CentralAuthHooks::onUserSetEmailAuthenticationTimestamp"
+		],
+		"UserGetRights": [
+			"CentralAuthHooks::onUserGetRights"
+		],
+		"UserSetCookies": [
+			"CentralAuthHooks::onUserSetCookies"
+		],
+		"UserLoadDefaults": [
+			"CentralAuthHooks::onUserLoadDefaults"
+		],
+		"getUserPermissionsErrorsExpensive": [
+			"CentralAuthHooks::onGetUserPermissionsErrorsExpensive"
+		],
+		"MakeGlobalVariablesScript": [
+			"CentralAuthHooks::onMakeGlobalVariablesScript"
+		],
+		"SpecialPasswordResetOnSubmit": [
+			"CentralAuthHooks::onSpecialPasswordResetOnSubmit"
+		],
+		"OtherBlockLogLink": [
+			"CentralAuthHooks::getBlockLogLink"
+		],
+		"BeforePageDisplay": [
+			"CentralAuthHooks::onBeforePageDisplay"
+		],
+		"ApiTokensGetTokenTypes": [
+			"ApiDeleteGlobalAccount::injectTokenFunction",
+			"ApiSetGlobalAccountStatus::injectTokenFunction",
+			"CentralAuthHooks::onApiTokensGetTokenTypes"
+		],
+		"ApiQueryTokensRegisterTypes": [
+			"CentralAuthHooks::onApiQueryTokensRegisterTypes"
+		],
+		"APIGetAllowedParams": [
+			"CentralAuthHooks::onAPIGetAllowedParams"
+		],
+		"APIGetParamDescription": [
+			"CentralAuthHooks::onAPIGetParamDescription"
+		],
+		"ApiCheckCanExecute": [
+			"CentralAuthHooks::onApiCheckCanExecute"
+		],
+		"TestCanonicalRedirect": [
+			"CentralAuthHooks::onTestCanonicalRedirect"
+		],
+		"LogEventsListGetExtraInputs": [
+			"CentralAuthHooks::onLogEventsListGetExtraInputs"
+		],
+		"SpecialLogAddLogSearchRelations": [
+			"CentralAuthHooks::onSpecialLogAddLogSearchRelations"
+		],
+		"UnitTestsList": [
+			"CentralAuthHooks::onUnitTestsList"
+		],
+		"SpecialContributionsBeforeMainOutput": [
+			"CentralAuthHooks::onSpecialContributionsBeforeMainOutput"
+		],
+		"SpecialPage_initList": [
+			"CentralAuthHooks::onSpecialPage_initList"
+		],
+		"RenameUserWarning": [
+			"CentralAuthHooks::onRenameUserWarning"
+		],
+		"RenameUserPreRename": [
+			"CentralAuthHooks::onRenameUserPreRename"
+		],
+		"RenameUserComplete": [
+			"CentralAuthHooks::onRenameUserComplete"
+		],
+		"AbuseFilter-computeVariable": [
+			"CentralAuthHooks::abuseFilterComputeVariable"
+		],
+		"AbuseFilter-generateUserVars": [
+			"CentralAuthHooks::abuseFilterGenerateUserVars"
+		],
+		"AbuseFilter-builder": [
+			"CentralAuthHooks::abuseFilterBuilder"
+		],
+		"SecurePoll_GetUserParams": [
+			"CentralAuthHooks::onSecurePoll_GetUserParams"
+		],
+		"OAuthGetLocalUserFromCentralId": [
+			"CentralAuthHooks::onOAuthGetLocalUserFromCentralId"
+		],
+		"OAuthGetCentralIdFromLocalUser": [
+			"CentralAuthHooks::onOAuthGetCentralIdFromLocalUser"
+		],
+		"OAuthGetCentralIdFromUserName": [
+			"CentralAuthHooks::onOAuthGetCentralIdFromUserName"
+		],
+		"OAuthGetUserNamesFromCentralIds": [
+			"CentralAuthHooks::onOAuthGetUserNamesFromCentralIds"
+		],
+		"LoadGlobalCssJs": [
+			"CentralAuthHooks::onLoadGlobalCssJs"
+		],
+		"LoadGlobalUserPage": [
+			"CentralAuthHooks::onLoadGlobalUserPage"
+		],
+		"DeleteAccount": [
+			"CentralAuthHooks::onDeleteAccount"
+		]
+	},
+	"config": {
+		"CentralAuthDatabase": "centralauth",
+		"CentralAuthAutoNew": false,
+		"CentralAuthAutoMigrate": false,
+		"CentralAuthAutoMigrateNonGlobalAccounts": false,
+		"CentralAuthStrict": false,
+		"CentralAuthDryRun": false,
+		"CentralAuthCookies": false,
+		"CentralAuthLoginWiki": false,
+		"CentralAuthCookieDomain": "",
+		"CentralAuthCookiePrefix": "centralauth_",
+		"CentralAuthCookiePath": "/",
+		"CentralAuthLoginIcon": false,
+		"CentralAuthPrefsForUIReload": [
+			"skin",
+			"language",
+			"thumbsize",
+			"underline",
+			"stubthreshold",
+			"showhiddencats",
+			"justify",
+			"numberheadings",
+			"editondblclick",
+			"editsection",
+			"editsectiononrightclick",
+			"usenewrc",
+			"extendwatchlist"
+		],
+		"CentralAuthCookiesP3P": true,
+		"CentralAuthCreateOnView": false,
+		"DisableUnmergedEditing": false,
+		"CentralAuthWikisPerSuppressJob": 10,
+		"CentralAuthReadOnly": false,
+		"CentralAuthUseEventLogging": false,
+		"CentralAuthPreventUnattached": false,
+		"CentralAuthEnableUserMerge": false,
+		"CentralAuthEnableGlobalRenameRequest": false,
+		"CentralAuthCheckSULMigration": false
+	}
+}
