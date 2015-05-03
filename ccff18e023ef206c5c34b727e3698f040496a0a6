@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_a3877e13",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-05-03T06:52:47Z",
+      "side": 1,
+      "message": "Is throw $e; better than this?",
+      "revId": "ccff18e023ef206c5c34b727e3698f040496a0a6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
