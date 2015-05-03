@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_a3e21efe",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-05-03T05:31:31Z",
+      "side": 1,
+      "message": "if a rename isn\u0027t in progress, we should re-throw the exception.",
+      "revId": "e3ffd95b1541fac88a446ab3745a51ee05120a74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
