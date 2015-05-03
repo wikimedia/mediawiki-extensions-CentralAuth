@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ed113e2_a323fe52",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-05-03T05:13:17Z",
+      "side": 1,
+      "message": "Done. Docs say it works from the old name but apparently it does work for both old and new name.",
+      "parentUuid": "0ed113e2_28536d6f",
+      "revId": "f42bb9acd245fb951195aee1099ba9561d01a552",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ed113e2_6859758f",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0ed113e2_c3264263",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-05-03T05:13:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ed113e2_6859758f",
+      "revId": "f42bb9acd245fb951195aee1099ba9561d01a552",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ed113e2_8854d957",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-05-02T22:25:00Z",
       "side": 1,
       "message": "Does this require the old name or new name to be passed?",
+      "revId": "f42bb9acd245fb951195aee1099ba9561d01a552",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_631d1614",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-05-03T05:13:17Z",
+      "side": 1,
+      "message": "New name. Now retrieves the new name and pass that.",
+      "parentUuid": "0ed113e2_8854d957",
       "revId": "f42bb9acd245fb951195aee1099ba9561d01a552",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
