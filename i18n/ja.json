@@ -114,7 +114,7 @@
 	"centralauth-admin-info-locked": "ロック:",
 	"centralauth-admin-info-hidden": "秘匿レベル:",
 	"centralauth-admin-info-groups": "グローバル {{PLURAL:$1|グループ}}:",
-	"centralauth-admin-info-attached": "関連付けられたアカウントの数",
+	"centralauth-admin-info-attached": "関連付けられたアカウントの数:",
 	"centralauth-admin-info-unattached": "関連付けられていないアカウントの数",
 	"centralauth-admin-yes": "はい",
 	"centralauth-admin-no": "いいえ",
