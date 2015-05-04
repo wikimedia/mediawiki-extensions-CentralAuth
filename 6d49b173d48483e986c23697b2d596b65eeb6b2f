@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_c58abce3",
+        "filename": "CentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-05-04T21:54:51Z",
+      "side": 1,
+      "message": "one empty line should be enough",
+      "revId": "6d49b173d48483e986c23697b2d596b65eeb6b2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
