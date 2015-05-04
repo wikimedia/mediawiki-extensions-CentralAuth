@@ -95,7 +95,6 @@
 	"centralauth-admin-info-locked": "Kilit biyo:",
 	"centralauth-admin-info-hidden": "Sewiyaya nımıtiye:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|grube|grubi}}:",
-	"centralauth-admin-info-nogroups": "çıniyo",
 	"centralauth-admin-yes": "eya",
 	"centralauth-admin-no": "nê",
 	"centralauth-admin-hidden-list": "listeyanê kamuyi ra",

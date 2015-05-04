@@ -71,7 +71,6 @@
 	"centralauth-admin-info-locked": "ถูกล็อก:",
 	"centralauth-admin-info-hidden": "ระดับการซ่อน:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|กลุ่ม}}ทั่วโลก:",
-	"centralauth-admin-info-nogroups": "ไม่มี",
 	"centralauth-admin-yes": "ใช่",
 	"centralauth-admin-no": "ไม่ใช่",
 	"centralauth-admin-hidden-list": "จากรายการสาธารณะ",

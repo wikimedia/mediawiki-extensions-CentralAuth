@@ -498,7 +498,7 @@
 	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
 	"globalrenamequeue-request-reason-label": "Entrada de registro pública (en caso de aceptar)",
 	"apihelp-deleteglobalaccount-description": "Borrar un usuario global.",
-	"apihelp-deleteglobalaccount-param-user": "Usuario a borrar.",
+	"apihelp-deleteglobalaccount-param-user": "Cuenta de usuario que se borrará.",
 	"apihelp-deleteglobalaccount-param-reason": "Razón para borrar al usuario.",
 	"apihelp-deleteglobalaccount-example-1": "Eliminar la cuenta global de [[User:Example]]",
 	"apihelp-globaluserrights-param-user": "Nombre de usuario global.",

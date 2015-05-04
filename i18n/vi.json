@@ -97,7 +97,6 @@
 	"centralauth-admin-info-locked": "Bị cấm:",
 	"centralauth-admin-info-hidden": "Cấp ẩn:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1}}Nhóm toàn cục:",
-	"centralauth-admin-info-nogroups": "không có",
 	"centralauth-admin-info-attached": "Số tài khoản đính kèm:",
 	"centralauth-admin-info-unattached": "Số tài khoản chưa đính kèm:",
 	"centralauth-admin-yes": "có",

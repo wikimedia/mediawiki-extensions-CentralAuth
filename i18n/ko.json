@@ -110,7 +110,6 @@
 	"centralauth-admin-info-locked": "잠김 여부:",
 	"centralauth-admin-info-hidden": "숨김 여부:",
 	"centralauth-admin-info-groups": "글로벌 {{PLURAL:$1|그룹}}:",
-	"centralauth-admin-info-nogroups": "없음",
 	"centralauth-admin-info-attached": "묶인 계정의 수:",
 	"centralauth-admin-info-unattached": "묶이지 않은 계정의 수:",
 	"centralauth-admin-yes": "예",

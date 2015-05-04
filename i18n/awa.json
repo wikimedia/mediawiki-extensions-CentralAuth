@@ -57,7 +57,6 @@
 	"centralauth-admin-info-locked": "लॉक करा है:",
 	"centralauth-admin-info-hidden": "लुकुआवा है:",
 	"centralauth-admin-info-groups": "वैश्विक {{PLURAL:$1|समूह}}:",
-	"centralauth-admin-info-nogroups": "केहु नाई",
 	"centralauth-admin-yes": "हाँ",
 	"centralauth-admin-no": "नाहीँ",
 	"centralauth-admin-hidden-list": "सार्वजनिक सूचिन् से लुकुआवा है",

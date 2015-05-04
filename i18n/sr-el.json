@@ -88,7 +88,6 @@
 	"centralauth-admin-info-locked": "Zaključan:",
 	"centralauth-admin-info-hidden": "Sakriven:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Globalna grupa|Globalne grupe}}:",
-	"centralauth-admin-info-nogroups": "nema",
 	"centralauth-admin-info-attached": "Broj prikačenih naloga:",
 	"centralauth-admin-info-unattached": "Broj neprikačenih naloga:",
 	"centralauth-admin-yes": "da",

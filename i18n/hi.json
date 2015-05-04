@@ -103,7 +103,6 @@
 	"centralauth-admin-info-locked": "लॉक किया हुआ:",
 	"centralauth-admin-info-hidden": "छुपाया हुआ:",
 	"centralauth-admin-info-groups": "वैश्विक {{PLURAL:$1|समूह}}:",
-	"centralauth-admin-info-nogroups": "कोई नहीं",
 	"centralauth-admin-yes": "हाँ",
 	"centralauth-admin-no": "नहीं",
 	"centralauth-admin-hidden-list": "सार्वजनिक सूचियों से छुपाया हुआ",

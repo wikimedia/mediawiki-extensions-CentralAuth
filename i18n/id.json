@@ -103,7 +103,6 @@
 	"centralauth-admin-info-locked": "Terkunci:",
 	"centralauth-admin-info-hidden": "Tingkatan tersembunyi:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Kelompok|Kelompok-kelompok}} global:",
-	"centralauth-admin-info-nogroups": "tidak ada",
 	"centralauth-admin-info-attached": "Jumlah akun terkait:",
 	"centralauth-admin-info-unattached": "Jumlah akun tak terkait:",
 	"centralauth-admin-yes": "ya",

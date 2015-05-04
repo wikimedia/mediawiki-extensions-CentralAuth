@@ -94,7 +94,6 @@
 	"centralauth-admin-info-locked": "Blocà:",
 	"centralauth-admin-info-hidden": "Livel stërmà:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Partìa global|partìe globaj}}:",
-	"centralauth-admin-info-nogroups": "gnun-a",
 	"centralauth-admin-info-attached": "Nùmer ëd cont tacà:",
 	"centralauth-admin-info-unattached": "Nùmer ëd cont nen tacà:",
 	"centralauth-admin-yes": "é!",

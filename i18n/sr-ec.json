@@ -92,7 +92,6 @@
 	"centralauth-admin-info-locked": "Закључан:",
 	"centralauth-admin-info-hidden": "Сакривен:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Глобална група|Глобалне групе}}:",
-	"centralauth-admin-info-nogroups": "нема",
 	"centralauth-admin-info-attached": "Број прикачених налога:",
 	"centralauth-admin-info-unattached": "Број неприкачених налога:",
 	"centralauth-admin-yes": "да",

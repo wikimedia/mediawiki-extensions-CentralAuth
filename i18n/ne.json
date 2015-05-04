@@ -72,7 +72,6 @@
 	"centralauth-admin-info-locked": "प्रतिबन्धित:",
 	"centralauth-admin-info-hidden": "लुप्त(लुकेको) स्तर",
 	"centralauth-admin-info-groups": "वैश्विक {{PLURAL:$1|समूह|समूहहरू}}:",
-	"centralauth-admin-info-nogroups": "कुनै पनि होइन",
 	"centralauth-admin-info-attached": "संलग्न खाताहरूको संख्या:",
 	"centralauth-admin-yes": "हुन्छ",
 	"centralauth-admin-no": "हुन्न",

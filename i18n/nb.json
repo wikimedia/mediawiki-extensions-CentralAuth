@@ -101,7 +101,6 @@
 	"centralauth-admin-info-locked": "Låst:",
 	"centralauth-admin-info-hidden": "Skjult-nivå:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Global gruppe|Globale grupper}}:",
-	"centralauth-admin-info-nogroups": "ingen",
 	"centralauth-admin-info-attached": "Antall tilkoblede kontoer",
 	"centralauth-admin-info-unattached": "Antall utilkoblede kontoer:",
 	"centralauth-admin-yes": "ja",
