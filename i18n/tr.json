@@ -13,7 +13,8 @@
 			"Suelnur",
 			"Sayginer",
 			"Kafkasmurat",
-			"Violetanka"
+			"Violetanka",
+			"Stultiwikia"
 		]
 	},
 	"mergeaccount": "Hesap birleştirme durumu",
@@ -103,7 +104,6 @@
 	"centralauth-admin-info-locked": "Kilitlenmiş:",
 	"centralauth-admin-info-hidden": "Gizlilik seviyesi:",
 	"centralauth-admin-info-groups": "Küresel {{PLURAL:$1|grup|gruplar}}:",
-	"centralauth-admin-info-nogroups": "yok",
 	"centralauth-admin-yes": "evet",
 	"centralauth-admin-no": "hayır",
 	"centralauth-admin-hidden-list": "umumi listelerden",
@@ -112,7 +112,7 @@
 	"centralauth-admin-list-legend-rw": "Yerel hesapları çöz",
 	"centralauth-admin-unattached": "eklenmemiş",
 	"centralauth-admin-blocked2-indef": "Süresiz engellendi.",
-	"centralauth-admin-blocklog": "Engelleme kayıtları",
+	"centralauth-admin-blocklog": "engelleme kayıtları",
 	"centralauth-admin-list-localwiki": "Yerel viki",
 	"centralauth-admin-list-attached-on": "Eklenme",
 	"centralauth-admin-list-method": "Metot",
