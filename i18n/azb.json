@@ -268,6 +268,7 @@
 	"right-centralauth-merge": "حساب‌لاری بیرلش‌دیر",
 	"right-globalgrouppermissions": "سراسری گروه لاری ایداره ائت",
 	"centralloginsuccesful": "اوغورلو گیریش",
+	"centralauth-rename-form-oldname": "ایندیکی ایشلدن آدی",
 	"centralauth-rename-form-newname": "یئنی ایشلدن آدی:",
 	"centralauth-rename-form-reason": "ندن",
 	"centralauth-rename-form-movepages": "ایشلدن صفحه‌لرینی داشی",
@@ -295,5 +296,11 @@
 	"globalrenamequeue-column-rq-wiki": "یئرلی ویکی",
 	"globalrenamequeue-column-rq-requested-ts": "آچیق وئری",
 	"globalrenamequeue-column-rq-status": "دوروم",
-	"globalrenamequeue-request-cancel-text": "وازگئچ"
+	"globalrenamequeue-action-view": "گؤرست",
+	"globalrenamequeue-request-cancel-text": "وازگئچ",
+	"centralauth-uwbr-name": "ایشلدن آدی",
+	"centralauth-uwbr-registration": "آد یازدیرما تاریخی",
+	"centralauth-uwbr-registration-nodate": "بیلینمه‌ین",
+	"centralauth-uwbr-editcount": "دییشدیرمه سایی",
+	"centralauth-delete-empty-account": "بوْش حساب"
 }
