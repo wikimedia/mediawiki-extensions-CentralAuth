@@ -38,7 +38,7 @@ class ApiCentralAuthToken extends ApiBase {
 		$params = $this->extractRequestParams();
 
 		// If we're in JSON callback mode, no tokens can be obtained
-		if ( !is_null( $this->getMain()->getRequest()->getVal( 'callback' ) ) ) {
+		if ( $this->lacksSameOriginSecurity() ) {
 			$this->dieUsage( 'Cannot obtain a centralauthtoken when using a callback', 'hascallback' );
 		}
 
